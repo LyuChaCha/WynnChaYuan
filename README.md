@@ -23,7 +23,7 @@ Wynncraft 是多人遊戲。畫面上只剩中文的話，跟其他玩家討論�
 需要 [Wynntils](https://modrinth.com/mod/wynntils)（4.2 以上）與 Fabric API。
 
 把 jar 放進 `mods/`，進遊戲按 **F6** 開設定。
-首次啟動會自動在 `config/wynncollect/translations/` 產生翻譯工作檔。
+首次啟動會自動在 `config/wynnchayuan/translations/` 產生翻譯工作檔。
 
 ## 參與翻譯
 
@@ -40,12 +40,24 @@ Wynncraft 是多人遊戲。畫面上只剩中文的話，跟其他玩家討論�
 
 改完存檔，在遊戲內按 **F6 → 重新載入譯文檔**即可生效，不用重開遊戲。
 
+### 譯文從哪裡來
+
+預設 **GitHub**：進遊戲時從這個 repo 同步最新譯文，所以譯者的 PR 合併後，
+所有人下次進遊戲就更新了，**模組本身不必重新發布**。
+
+抓不到就用上次的快取，沒有快取就用 jar 內建的版本——斷網或 GitHub 掛掉
+只是「沒有最新的」，不會變成沒有翻譯。
+
+想自己試譯時，F6 把「譯文來源」切成**本機**，就只讀 config 目錄下的檔案。
+
+裝備依類型拆成三個檔（武器／防具／飾品），這樣多人同時翻不同類別不會衝突。
+
 ### 檔案分工
 
 | 檔案 | 內容 | 來源 |
 |---|---|---|
 | `ui-labels.json` | 介面標籤 | 手寫 |
-| `gear.json` | 裝備名稱與傳說敘述 | 官方 CDN |
+| `gear-weapon.json` `gear-armour.json` `gear-accessory.json` | 裝備名稱與傳說敘述 | 官方 CDN |
 | `ability.json` | 技能 | 官方 CDN |
 | `ingredient.json` `material.json` `tome.json` `aspect.json` `charm.json` | 材料等 | 官方 CDN |
 

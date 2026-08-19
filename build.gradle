@@ -11,7 +11,7 @@ base {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/wynncollect.accessWidener")
+    accessWidenerPath = file("src/main/resources/wynnchayuan.accessWidener")
 }
 
 repositories {
@@ -98,7 +98,7 @@ tasks.register('runChecks', JavaExec) {
     group = 'verification'
     description = '驗證符號判斷行為（不引入 JUnit，直接跑 main）'
     classpath = sourceSets.test.runtimeClasspath
-    mainClass = 'com.wynncollect.GlyphSplitterTest'
+    mainClass = 'com.wynnchayuan.GlyphSplitterTest'
 }
 
 // 沒有引入 JUnit，改用 runChecks；停掉標準 test 任務避免 build 失敗。
@@ -109,7 +109,7 @@ tasks.register('runTranslateChecks', JavaExec) {
     group = 'verification'
     description = '驗證翻譯來回與字型規則'
     classpath = sourceSets.test.runtimeClasspath
-    mainClass = 'com.wynncollect.TranslateTest'
+    mainClass = 'com.wynnchayuan.TranslateTest'
 }
 tasks.named('check') { dependsOn 'runTranslateChecks' }
 
@@ -117,6 +117,6 @@ tasks.register('runParityChecks', JavaExec) {
     group = 'verification'
     description = '驗證 Python 語料工具與 mod 端算出相同的模板'
     classpath = sourceSets.test.runtimeClasspath
-    mainClass = 'com.wynncollect.TemplateParityTest'
+    mainClass = 'com.wynnchayuan.TemplateParityTest'
 }
 tasks.named('check') { dependsOn 'runParityChecks' }
