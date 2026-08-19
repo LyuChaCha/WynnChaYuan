@@ -3,6 +3,14 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.2.1] - 2026-08-19
+
+### 變更
+
+- F6 標題列與卡片之間的留白加大
+- 小框內容整理過程會寫進 `overlay-debug-*.txt`（前三次），
+  用來查「框有出現但裡面空白」是卡在哪一步
+
 ## [1.2.0] - 2026-08-19
 
 ### 修正

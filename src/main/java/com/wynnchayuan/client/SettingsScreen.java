@@ -26,7 +26,7 @@ public final class SettingsScreen extends Screen {
     private static final int COL_W = 196;
     private static final int ROW = 31;          // 按鈕 20 + 說明 11
     private static final int PAD = 10;
-    private static final int TOP = 62;
+    private static final int TOP = 84;   // 標題列 41 + 卡片標題與留白
 
     private Component status = Component.empty();
     private EditBox colorBox;

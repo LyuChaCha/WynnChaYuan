@@ -89,6 +89,60 @@ public final class Boxes {
         if (hasContent) {
             lines.add(current);
         }
+        dump(source, texts, styles, lines);
         return lines;
+    }
+
+    /**
+     * 把整理過程寫出來，供對照。只寫前幾次就停。
+     *
+     * <p>小框空白時光看畫面完全查不出是哪一步——是沒有行、行是空的、
+     * 還是畫出來看不見。這裡把三者分開記錄。
+     */
+    private static int dumped = 0;
+
+    private static void dump(Component source, List<String> texts,
+                             List<Style> styles, List<Component> lines) {
+        if (dumped >= 3 || debugFile == null) {
+            return;
+        }
+        dumped++;
+        StringBuilder sb = new StringBuilder();
+        sb.append("=== 原始 ===").append(System.lineSeparator());
+        sb.append("getString: ").append(source.getString()).append(System.lineSeparator());
+
+        sb.append(System.lineSeparator())
+          .append("=== visit 拆出來的片段 ===").append(System.lineSeparator());
+        for (int i = 0; i < texts.size(); i++) {
+            Style st = styles.get(i);
+            sb.append(String.format("  [%d] font=%s color=%s len=%d text=%s%n",
+                    i,
+                    st.getFont() == null ? "(null)" : st.getFont().toString(),
+                    st.getColor() == null ? "(null)" : st.getColor().toString(),
+                    texts.get(i).length(),
+                    texts.get(i).replace("\n", "\\n")));
+        }
+
+        sb.append(System.lineSeparator())
+          .append("=== 整理後的行 ===").append(System.lineSeparator());
+        sb.append("行數: ").append(lines.size()).append(System.lineSeparator());
+        for (int i = 0; i < lines.size(); i++) {
+            Component line = lines.get(i);
+            sb.append(String.format("  [%d] len=%d %s%n",
+                    i, line.getString().length(), line.getString()));
+        }
+        try {
+            java.nio.file.Files.writeString(
+                    debugFile.resolveSibling("overlay-debug-" + dumped + ".txt"),
+                    sb.toString(), java.nio.charset.StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            // 診斷寫不出來就算了，不要影響遊戲
+        }
+    }
+
+    private static java.nio.file.Path debugFile;
+
+    public static void init(java.nio.file.Path path) {
+        debugFile = path;
     }
 }

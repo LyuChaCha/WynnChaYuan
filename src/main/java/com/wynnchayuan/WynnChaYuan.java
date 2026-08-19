@@ -71,6 +71,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         store = new CaptureStore(dir.resolve("captured.json"));
         config = new CollectorConfig(dir.resolve("config.json"));
         com.wynnchayuan.render.TooltipDebug.init(dir.resolve("tooltip-debug.json"));
+        com.wynnchayuan.render.Boxes.init(dir.resolve("overlay-debug.txt"));
 
         // 譯文放在 config/wynnchayuan/translations/ 下，格式與 corpus/workspace 相同，
         // 所以離線語料與遊戲內收集的內容可以直接混放。

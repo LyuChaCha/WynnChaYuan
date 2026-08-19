@@ -51,9 +51,9 @@ public final class Cards {
     /** 畫面頂端的標題列。 */
     public static void header(GuiGraphics g, Font font, int screenW, String title, String subtitle) {
         int accent = WynnChaYuan.config().accentARGB();
-        g.fill(0, 0, screenW, 40, 0xD00B1119);
-        g.fill(0, 40, screenW, 41, accent);
-        g.drawCenteredString(font, Component.literal(title), screenW / 2, 12, accent);
-        g.drawCenteredString(font, Component.literal(subtitle), screenW / 2, 25, 0x7A8794);
+        g.fill(0, 0, screenW, 46, 0xD00B1119);
+        g.fill(0, 46, screenW, 47, accent);
+        g.drawCenteredString(font, Component.literal(title), screenW / 2, 14, accent);
+        g.drawCenteredString(font, Component.literal(subtitle), screenW / 2, 28, 0x7A8794);
     }
 }
