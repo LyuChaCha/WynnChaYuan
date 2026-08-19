@@ -9,11 +9,16 @@ on:
   pull_request:
     paths:
       - 'src/main/resources/assets/wynnchayuan/translations/**'
-      - 'tools/validate.py'
+      - 'tools/**'
+      - '.github/workflows/validate-translations.yml'
   push:
     branches: [main]
     paths:
       - 'src/main/resources/assets/wynnchayuan/translations/**'
+      - 'tools/**'
+      - '.github/workflows/validate-translations.yml'
+  # 改了工具或想確認目前狀態時可以手動跑
+  workflow_dispatch:
 
 jobs:
   validate:
