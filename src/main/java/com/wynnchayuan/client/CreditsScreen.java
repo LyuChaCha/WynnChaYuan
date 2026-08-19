@@ -1,6 +1,7 @@
 package com.wynnchayuan.client;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.render.Colors;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -37,26 +38,26 @@ public final class CreditsScreen extends Screen {
         int cx = this.width / 2;
         int y = 30;
 
-        g.drawCenteredString(this.font, this.title, cx, y, 0xFFFFFF);
+        g.drawCenteredString(this.font, this.title, cx, y, Colors.TEXT);
         y += 14;
         g.drawCenteredString(this.font,
                 Component.literal("v" + WynnChaYuan.version()).withStyle(ChatFormatting.DARK_GRAY),
-                cx, y, 0x808080);
+                cx, y, Colors.DIM);
         y += 22;
 
         g.drawCenteredString(this.font,
                 Component.literal("Wynncraft 繁體中文翻譯").withStyle(ChatFormatting.GRAY),
-                cx, y, 0xA0A0A0);
+                cx, y, Colors.SUBTLE);
         y += 24;
 
         for (Section section : Credits.sections()) {
             g.drawCenteredString(this.font,
                     Component.literal(section.title()).withStyle(ChatFormatting.YELLOW),
-                    cx, y, 0xFFD24A);
+                    cx, y, Colors.HIGHLIGHT);
             y += 12;
             for (String name : section.names()) {
                 g.drawCenteredString(this.font,
-                        Component.literal(name).withStyle(ChatFormatting.WHITE), cx, y, 0xFFFFFF);
+                        Component.literal(name).withStyle(ChatFormatting.WHITE), cx, y, Colors.TEXT);
                 y += 11;
             }
             y += 8;
@@ -67,7 +68,7 @@ public final class CreditsScreen extends Screen {
                 "本模組依賴 Wynntils，物品與技能資料取自其公開 CDN",
                 "材質包符號與排版由 Wynncraft 提供，本模組僅顯示不修改")) {
             g.drawCenteredString(this.font,
-                    Component.literal(line).withStyle(ChatFormatting.DARK_GRAY), cx, y, 0x707070);
+                    Component.literal(line).withStyle(ChatFormatting.DARK_GRAY), cx, y, Colors.FAINT);
             y += 11;
         }
     }

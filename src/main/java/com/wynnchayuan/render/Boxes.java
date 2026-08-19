@@ -1,6 +1,7 @@
 package com.wynnchayuan.render;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.translate.SpaceOffset;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
@@ -44,6 +45,13 @@ public final class Boxes {
      * <p>tooltip 面板則相反：它在鏡像原本的版面，那邊必須保留偏移。
      * 兩種情境不能共用同一套處理。
      *
+     * <p>整行都是圖示、一個可讀字都沒有的行也會丟掉，理由同上：那是原本版面的
+     * 裝飾（名牌底圖的 {@code banner/pill}、血條），我們自己畫了背景，
+     * 再疊一張別人的底圖只會蓋掉譯文。
+     *
+     * <p>圖示<b>混在文字裡</b>的行則整行保留——那種圖示是內容的一部分
+     * （物品符號、元素圖示），丟掉會讓句子少一塊。
+     *
      * <p>換行也在這裡拆開——{@code drawString} 不會自己斷行，
      * 留著只會讓好幾行擠成一團。
      */
@@ -61,7 +69,7 @@ public final class Boxes {
 
         List<Component> lines = new ArrayList<>();
         MutableComponent current = Component.empty();
-        boolean hasContent = false;
+        boolean hasContent = false;   // 這一行有沒有「可讀」的字，純圖示不算
 
         for (int i = 0; i < texts.size(); i++) {
             Style style = styles.get(i);
@@ -80,7 +88,7 @@ public final class Boxes {
                 }
                 if (!chunks[c].isEmpty()) {
                     current.append(Component.literal(chunks[c]).withStyle(style));
-                    if (!chunks[c].isBlank()) {
+                    if (hasReadable(chunks[c])) {
                         hasContent = true;
                     }
                 }
@@ -93,6 +101,12 @@ public final class Boxes {
         return lines;
     }
 
+    /** 有沒有非圖示、非空白的字。整行都是圖示的話這裡會是 false。 */
+    private static boolean hasReadable(String text) {
+        return text.codePoints().anyMatch(cp ->
+                !Character.isWhitespace(cp) && !GlyphSplitter.isGlyphCodePoint(cp));
+    }
+
     /**
      * 把整理過程寫出來，供對照。只寫前幾次就停。
      *
@@ -103,7 +117,8 @@ public final class Boxes {
 
     private static void dump(Component source, List<String> texts,
                              List<Style> styles, List<Component> lines) {
-        if (dumped >= 3 || debugFile == null) {
+        // 只在收集模式下寫，一般玩家的 config 資料夾不需要多這幾個檔
+        if (dumped >= 3 || debugFile == null || !WynnChaYuan.config().collect()) {
             return;
         }
         dumped++;

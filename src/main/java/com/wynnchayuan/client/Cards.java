@@ -1,6 +1,7 @@
 package com.wynnchayuan.client;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.render.Colors;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
@@ -45,7 +46,7 @@ public final class Cards {
 
     /** 按鈕下方的說明文字。 */
     public static void hint(GuiGraphics g, Font font, int x, int y, String text) {
-        g.drawString(font, Component.literal(text), x, y, 0x7A8794);
+        g.drawString(font, Component.literal(text), x, y, Colors.HINT);
     }
 
     /** 畫面頂端的標題列。 */
@@ -54,6 +55,6 @@ public final class Cards {
         g.fill(0, 0, screenW, 46, 0xD00B1119);
         g.fill(0, 46, screenW, 47, accent);
         g.drawCenteredString(font, Component.literal(title), screenW / 2, 14, accent);
-        g.drawCenteredString(font, Component.literal(subtitle), screenW / 2, 28, 0x7A8794);
+        g.drawCenteredString(font, Component.literal(subtitle), screenW / 2, 28, Colors.HINT);
     }
 }

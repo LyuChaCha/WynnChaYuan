@@ -1,6 +1,7 @@
 package com.wynnchayuan.client;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.render.Colors;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -107,20 +108,20 @@ public final class PositionScreen extends Screen {
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
         super.render(g, mouseX, mouseY, delta);
 
-        g.drawCenteredString(this.font, this.title, this.width / 2, 16, 0xFFFFFF);
+        g.drawCenteredString(this.font, this.title, this.width / 2, 16, Colors.TEXT);
         g.drawCenteredString(this.font,
                 Component.literal("拖曳下面的方框到你想要的位置").withStyle(ChatFormatting.GRAY),
-                this.width / 2, 30, 0xA0A0A0);
+                this.width / 2, 30, Colors.SUBTLE);
         g.drawCenteredString(this.font,
                 Component.literal("X: " + x + "   Y: " + y).withStyle(ChatFormatting.DARK_GRAY),
-                this.width / 2, 44, 0x808080);
+                this.width / 2, 44, Colors.DIM);
 
         drawPreview(g);
 
         if (saved && System.currentTimeMillis() - savedAt < 2000) {
             g.drawCenteredString(this.font,
                     Component.literal("✔ 已儲存位置").withStyle(ChatFormatting.GREEN),
-                    this.width / 2, this.height - 48, 0xFFFFFF);
+                    this.width / 2, this.height - 48, Colors.TEXT);
         }
     }
 
@@ -153,7 +154,7 @@ public final class PositionScreen extends Screen {
 
         int ty = y + 6;
         for (Component line : sample) {
-            g.drawString(this.font, line, x + 6, ty, 0xFFFFFF);
+            g.drawString(this.font, line, x + 6, ty, Colors.TEXT);
             ty += this.font.lineHeight + 1;
         }
     }

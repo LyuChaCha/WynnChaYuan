@@ -148,7 +148,7 @@ public final class LookAtTranslator {
         Boxes.draw(graphics, x, y, w, h);
         int ty = y + 4;
         for (Component line : lines) {
-            graphics.drawString(mc.font, line, x + 4, ty, 0xFFFFFF);
+            graphics.drawString(mc.font, line, x + 4, ty, Colors.TEXT);
             ty += lineHeight;
         }
     }
