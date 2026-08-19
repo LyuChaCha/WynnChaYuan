@@ -115,12 +115,15 @@ public final class PositionScreen extends Screen {
 
     /** 畫一個假的翻譯面板，長得像實際會出現的樣子。 */
     private void drawPreview(GuiGraphics g) {
-        int border = dragging ? 0xFF7FE3FF : 0xFF5A4A8A;
-        g.fill(x, y, x + BOX_W, y + BOX_H, 0xE0100010);
-        g.fill(x, y, x + BOX_W, y + 1, border);
-        g.fill(x, y + BOX_H - 1, x + BOX_W, y + BOX_H, border);
-        g.fill(x, y, x + 1, y + BOX_H, border);
-        g.fill(x + BOX_W - 1, y, x + BOX_W, y + BOX_H, border);
+        // 用實際的主題色畫，這樣調位置時看到的就是遊戲裡的樣子
+        com.wynnchayuan.render.Boxes.draw(g, x, y, BOX_W, BOX_H);
+        if (dragging) {
+            int hl = 0x80FFFFFF;               // 拖曳中加一層高亮，看得出抓住了
+            g.fill(x, y, x + BOX_W, y + 1, hl);
+            g.fill(x, y + BOX_H - 1, x + BOX_W, y + BOX_H, hl);
+            g.fill(x, y, x + 1, y + BOX_H, hl);
+            g.fill(x + BOX_W - 1, y, x + BOX_W, y + BOX_H, hl);
+        }
 
         List<Component> sample = List.of(
                 Component.literal("翻譯面板").withStyle(ChatFormatting.AQUA),

@@ -26,10 +26,17 @@ public final class DialogueOverlay {
     private static final int BOTTOM_MARGIN = 70;
 
     private static final int PADDING = 4;
-    private static final int BACKGROUND = 0xC0100010;   // 與原版 tooltip 同色系
-    private static final int BORDER = 0xFF3A1E5C;
 
     private static volatile List<Component> current = List.of();
+
+    /**
+     * 最後一次收到對話內容的時間。
+     *
+     * <p>沒有這個的話框會永遠留在畫面上——對話事件只在對話進行中發，
+     * 走開之後就再也沒有東西來清它。改用「多久沒更新就隱藏」，
+     * 不必依賴一個其實不可靠的「對話結束」事件。
+     */
+    private static volatile long lastUpdate = 0;
 
     private DialogueOverlay() {}
 
@@ -55,16 +62,25 @@ public final class DialogueOverlay {
         // 少了這個，畫面上沒東西時完全不知道卡在哪一步
         WynnChaYuan.store().noteEvent(any ? "dialogue.shown" : "dialogue.noMatch");
         current = any ? List.copyOf(lines) : List.of();
+        if (any) {
+            lastUpdate = System.currentTimeMillis();
+        }
     }
 
     public static void clear() {
         current = List.of();
+        lastUpdate = 0;
     }
 
     /** 每幀呼叫。沒有內容時什麼都不畫。 */
     public static void render(GuiGraphics graphics) {
         List<Component> lines = current;
         if (lines.isEmpty()) {
+            return;
+        }
+        int hold = WynnChaYuan.config().dialogueHoldMs();
+        if (hold != Integer.MAX_VALUE && System.currentTimeMillis() - lastUpdate > hold) {
+            current = List.of();               // 停留夠久就收起來
             return;
         }
         Minecraft mc = Minecraft.getInstance();
@@ -79,11 +95,7 @@ public final class DialogueOverlay {
         int x = (graphics.guiWidth() - boxW) / 2;
         int y = graphics.guiHeight() - BOTTOM_MARGIN - boxH;
 
-        graphics.fill(x, y, x + boxW, y + boxH, BACKGROUND);
-        graphics.fill(x, y, x + boxW, y + 1, BORDER);
-        graphics.fill(x, y + boxH - 1, x + boxW, y + boxH, BORDER);
-        graphics.fill(x, y, x + 1, y + boxH, BORDER);
-        graphics.fill(x + boxW - 1, y, x + boxW, y + boxH, BORDER);
+        Boxes.draw(graphics, x, y, boxW, boxH);
 
         int textY = y + PADDING;
         for (Component line : lines) {

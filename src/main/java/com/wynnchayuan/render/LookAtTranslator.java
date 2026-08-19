@@ -43,6 +43,10 @@ public final class LookAtTranslator {
      */
     private static final Map<Entity, StyledText> LABELS = new WeakHashMap<>();
 
+    /** 上一次看到的譯文與時間，用來做「移開視線後再顯示一下」。 */
+    private static volatile Component lastShown = null;
+    private static volatile long lastSeen = 0;
+
     private LookAtTranslator() {}
 
     /** 由名牌事件呼叫，記下這個實體對應的原文。 */
@@ -63,16 +67,25 @@ public final class LookAtTranslator {
             return;
         }
         StyledText target = findAimedLabel(mc);
-        if (target == null) {
+        if (target != null) {
+            Component translated = LineTranslator.translate(target, WynnChaYuan.translations());
+            if (translated == null) {
+                noteOnce("nametag.noMatch");
+                return;                        // 沒有譯文就不打擾
+            }
+            noteOnce("nametag.shown");
+            lastShown = translated;
+            lastSeen = System.currentTimeMillis();
+            drawBubble(graphics, mc, translated);
             return;
         }
-        Component translated = LineTranslator.translate(target, WynnChaYuan.translations());
-        if (translated == null) {
-            noteOnce("nametag.noMatch");
-            return;                            // 沒有譯文就不打擾
+        // 視線稍微移開時不要立刻消失 —— 準心對著 NPC 本來就不容易穩住，
+        // 一離開就閃掉會讓人以為功能壞了。
+        int hold = WynnChaYuan.config().nametagHoldMs();
+        if (lastShown != null && hold > 0
+                && System.currentTimeMillis() - lastSeen < hold) {
+            drawBubble(graphics, mc, lastShown);
         }
-        noteOnce("nametag.shown");
-        drawBubble(graphics, mc, translated);
     }
 
     /** 找出玩家正對著的那個名牌。 */
@@ -121,11 +134,7 @@ public final class LookAtTranslator {
         int x = (graphics.guiWidth() - w) / 2;
         int y = graphics.guiHeight() / 2 + 16;   // 準心下方，不擋住準心本身
 
-        graphics.fill(x, y, x + w, y + h, 0xC0100010);
-        graphics.fill(x, y, x + w, y + 1, 0xFF3A1E5C);
-        graphics.fill(x, y + h - 1, x + w, y + h, 0xFF3A1E5C);
-        graphics.fill(x, y, x + 1, y + h, 0xFF3A1E5C);
-        graphics.fill(x + w - 1, y, x + w, y + h, 0xFF3A1E5C);
+        Boxes.draw(graphics, x, y, w, h);
         graphics.drawString(mc.font, text, x + 4, y + 4, 0xFFFFFF);
     }
 }

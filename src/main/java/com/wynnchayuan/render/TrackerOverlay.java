@@ -81,11 +81,7 @@ public final class TrackerOverlay {
         int x = LEFT_MARGIN;
         int y = TOP_OFFSET;
 
-        graphics.fill(x, y, x + boxW, y + boxH, BACKGROUND);
-        graphics.fill(x, y, x + boxW, y + 1, BORDER);
-        graphics.fill(x, y + boxH - 1, x + boxW, y + boxH, BORDER);
-        graphics.fill(x, y, x + 1, y + boxH, BORDER);
-        graphics.fill(x + boxW - 1, y, x + boxW, y + boxH, BORDER);
+        Boxes.draw(graphics, x, y, boxW, boxH);
 
         int textY = y + PADDING;
         for (Component line : lines) {

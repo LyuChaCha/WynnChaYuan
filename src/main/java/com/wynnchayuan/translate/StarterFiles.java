@@ -27,6 +27,7 @@ public final class StarterFiles {
     private static final List<String> BUNDLED = List.of(
             "ui-labels.json",
             "quest.json",
+            "npc.json",
             "gear-weapon.json",
             "gear-armour.json",
             "gear-accessory.json",

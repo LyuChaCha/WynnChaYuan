@@ -76,6 +76,17 @@ public final class CollectorConfig {
     /** 面板與原 tooltip 之間的間距（像素）。 */
     private int panelGap = 12;
 
+    /**
+     * 所有小框的主題色（框線）。以 {@code #RRGGBB} 存，方便手改設定檔。
+     */
+    private String accentColor = "#6FA8D8";
+
+    /** 對話框在最後一次更新後還顯示多久（毫秒）。 */
+    private int dialogueHoldMs = 6000;
+
+    /** 名牌譯文在移開視線後還顯示多久（毫秒）。 */
+    private int nametagHoldMs = 1500;
+
     /** 面板要跟著滑鼠，還是固定在畫面上某處。 */
     private PanelAnchor panelAnchor = PanelAnchor.FOLLOW;
 
@@ -114,6 +125,79 @@ public final class CollectorConfig {
 
     public int panelGap() {
         return panelGap;
+    }
+
+    /** 框線顏色，已含不透明度。 */
+    public int accentARGB() {
+        return 0xFF000000 | (parseHex(accentColor) & 0xFFFFFF);
+    }
+
+    /** 背景色：主題色壓暗，維持可讀性又看得出關聯。 */
+    public int backgroundARGB() {
+        int c = parseHex(accentColor);
+        int r = ((c >> 16) & 0xFF) / 6;
+        int g = ((c >> 8) & 0xFF) / 6;
+        int b = (c & 0xFF) / 6;
+        return 0xE0000000 | (r << 16) | (g << 8) | b;
+    }
+
+    public String accentColor() {
+        return accentColor;
+    }
+
+    /** @return 是否為合法的 #RRGGBB 並已套用 */
+    public boolean setAccentColor(String hex) {
+        String v = hex.strip();
+        if (!v.startsWith("#")) {
+            v = "#" + v;
+        }
+        if (!v.matches("#[0-9a-fA-F]{6}")) {
+            return false;
+        }
+        accentColor = v.toUpperCase();
+        save();
+        return true;
+    }
+
+    private static int parseHex(String hex) {
+        try {
+            return Integer.parseInt(hex.replace("#", ""), 16);
+        } catch (NumberFormatException e) {
+            return 0x6FA8D8;               // 設定檔被改壞時退回預設，不要讓畫面消失
+        }
+    }
+
+    public int dialogueHoldMs() {
+        return dialogueHoldMs;
+    }
+
+    /** 在 3／6／10／15 秒與「持續顯示」之間輪替。 */
+    public int cycleDialogueHold() {
+        int[] steps = {3000, 6000, 10000, 15000, Integer.MAX_VALUE};
+        dialogueHoldMs = next(steps, dialogueHoldMs);
+        save();
+        return dialogueHoldMs;
+    }
+
+    public int nametagHoldMs() {
+        return nametagHoldMs;
+    }
+
+    /** 在 0／1.5／3／5 秒之間輪替。 */
+    public int cycleNametagHold() {
+        int[] steps = {0, 1500, 3000, 5000};
+        nametagHoldMs = next(steps, nametagHoldMs);
+        save();
+        return nametagHoldMs;
+    }
+
+    private static int next(int[] steps, int current) {
+        for (int i = 0; i < steps.length; i++) {
+            if (steps[i] == current) {
+                return steps[(i + 1) % steps.length];
+            }
+        }
+        return steps[0];
     }
 
     /** 在 4/8/12/16/24 之間輪替。 */
@@ -253,6 +337,15 @@ public final class CollectorConfig {
             if (o.has("panelGap")) {
                 panelGap = o.get("panelGap").getAsInt();
             }
+            if (o.has("accentColor")) {
+                accentColor = o.get("accentColor").getAsString();
+            }
+            if (o.has("dialogueHoldMs")) {
+                dialogueHoldMs = o.get("dialogueHoldMs").getAsInt();
+            }
+            if (o.has("nametagHoldMs")) {
+                nametagHoldMs = o.get("nametagHoldMs").getAsInt();
+            }
             if (o.has("panelAnchor")) {
                 panelAnchor = PanelAnchor.valueOf(o.get("panelAnchor").getAsString());
             }
@@ -279,6 +372,9 @@ public final class CollectorConfig {
             o.addProperty("panelSide", panelSide.name());
             o.addProperty("translateItemNames", translateItemNames);
             o.addProperty("panelGap", panelGap);
+            o.addProperty("accentColor", accentColor);
+            o.addProperty("dialogueHoldMs", dialogueHoldMs);
+            o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());
             o.addProperty("fixedX", fixedX);
             o.addProperty("fixedY", fixedY);

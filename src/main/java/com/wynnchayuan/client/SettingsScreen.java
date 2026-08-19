@@ -5,6 +5,7 @@ import com.wynnchayuan.WynnChaYuan;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
@@ -26,6 +27,7 @@ public final class SettingsScreen extends Screen {
     private static final int ROW = 32;          // 按鈕 20 + 說明 12
 
     private Component status = Component.empty();
+    private EditBox colorBox;
 
     public SettingsScreen() {
         super(Component.literal("WynnChaYuan 設定"));
@@ -59,6 +61,14 @@ public final class SettingsScreen extends Screen {
             b.setMessage(gapLabel());
         });
 
+        colorBox = new EditBox(this.font, left, top + ROW * 5, COL_W - 46, 20,
+                Component.literal("框線顏色"));
+        colorBox.setValue(WynnChaYuan.config().accentColor());
+        colorBox.setMaxLength(7);
+        addRenderableWidget(colorBox);
+        addRenderableWidget(Button.builder(Component.literal("套用"), b -> applyColor())
+                .bounds(left + COL_W - 42, top + ROW * 5, 42, 20).build());
+
         // ---- 翻譯 ----
         addRow(right, top, this::itemNameLabel, b -> {
             boolean on = WynnChaYuan.config().toggleItemNames();
@@ -69,17 +79,25 @@ public final class SettingsScreen extends Screen {
             WynnChaYuan.config().cycleNametagMode();
             b.setMessage(nametagLabel());
         });
-        addRow(right, top + ROW * 2, this::collectLabel, b -> {
+        addRow(right, top + ROW * 2, this::nametagHoldLabel, b -> {
+            WynnChaYuan.config().cycleNametagHold();
+            b.setMessage(nametagHoldLabel());
+        });
+        addRow(right, top + ROW * 3, this::dialogueHoldLabel, b -> {
+            WynnChaYuan.config().cycleDialogueHold();
+            b.setMessage(dialogueHoldLabel());
+        });
+        addRow(right, top + ROW * 4, this::collectLabel, b -> {
             WynnChaYuan.config().toggleCollect();
             b.setMessage(collectLabel());
         });
-        addRow(right, top + ROW * 3, this::sourceLabel, b -> {
+        addRow(right, top + ROW * 5, this::sourceLabel, b -> {
             WynnChaYuan.config().toggleSource();
             b.setMessage(sourceLabel());
         });
         addRenderableWidget(Button.builder(
                 Component.literal("重新載入譯文檔"), b -> reload())
-                .bounds(right, top + ROW * 4, COL_W, 20).build());
+                .bounds(right, top + ROW * 6, COL_W, 20).build());
 
         addRenderableWidget(Button.builder(Component.literal("關於／貢獻者"),
                 b -> this.minecraft.setScreen(new CreditsScreen(this)))
@@ -136,6 +154,28 @@ public final class SettingsScreen extends Screen {
         return Component.literal("譯文來源：" + (github ? "GitHub（統一）" : "本機（測試）"));
     }
 
+    private Component nametagHoldLabel() {
+        int ms = WynnChaYuan.config().nametagHoldMs();
+        return Component.literal("名牌停留：" + (ms == 0 ? "立即消失" : (ms / 1000.0) + " 秒"));
+    }
+
+    private Component dialogueHoldLabel() {
+        int ms = WynnChaYuan.config().dialogueHoldMs();
+        return Component.literal("對話框停留："
+                + (ms == Integer.MAX_VALUE ? "持續顯示" : (ms / 1000) + " 秒"));
+    }
+
+    /** 套用色碼；格式不對就講清楚並還原，不要靜靜地忽略。 */
+    private void applyColor() {
+        if (WynnChaYuan.config().setAccentColor(colorBox.getValue())) {
+            colorBox.setValue(WynnChaYuan.config().accentColor());
+            status = Component.literal("✔ 已套用顏色").withStyle(ChatFormatting.GREEN);
+        } else {
+            colorBox.setValue(WynnChaYuan.config().accentColor());
+            status = Component.literal("✘ 色碼格式要像 #6FA8D8").withStyle(ChatFormatting.RED);
+        }
+    }
+
     private Component collectLabel() {
         return Component.literal("收集未翻譯字串：" + onOff(WynnChaYuan.config().collect()));
     }
@@ -167,7 +207,9 @@ public final class SettingsScreen extends Screen {
         int right = this.width / 2 + 10;
         int top = 52;
 
-        g.drawCenteredString(this.font, this.title, this.width / 2, 16, 0xFFFFFF);
+        int accent = WynnChaYuan.config().accentARGB();
+        g.drawCenteredString(this.font, this.title, this.width / 2, 16, accent);
+        g.fill(this.width / 2 - COL_W - 10, 28, this.width / 2 + COL_W + 10, 29, accent);
 
         header(g, left, top - 14, "顯示");
         header(g, right, top - 14, "翻譯");
@@ -177,12 +219,15 @@ public final class SettingsScreen extends Screen {
         hint(g, left, top + ROW * 2, "拖曳示意方框決定位置");
         hint(g, left, top + ROW * 3, "自動會依畫面空間左右讓位");
         hint(g, left, top + ROW * 4, "面板與原本 tooltip 之間留多寬");
+        hint(g, left, top + ROW * 5, "所有小框的框線色，例如 #6FA8D8");
 
         hint(g, right, top, "裝備名稱多是專有名詞，通常保留原文");
         hint(g, right, top + ROW, "注視時顯示可保留原文，方便跟人溝通");
-        hint(g, right, top + ROW * 2, "把沒翻到的句子記進 captured.json");
-        hint(g, right, top + ROW * 3, "GitHub 會在進遊戲時同步大家的最新翻譯");
-        hint(g, right, top + ROW * 4, "改完 json 按這個就生效，不用重開");
+        hint(g, right, top + ROW * 2, "視線移開後譯文還留多久");
+        hint(g, right, top + ROW * 3, "對話結束後小框多久收起來");
+        hint(g, right, top + ROW * 4, "把沒翻到的句子記進 captured.json");
+        hint(g, right, top + ROW * 5, "GitHub 會在進遊戲時同步大家的最新翻譯");
+        hint(g, right, top + ROW * 6, "改完 json 按這個就生效，不用重開");
 
         Component now = status.getString().isEmpty()
                 ? Component.literal(WynnChaYuan.translations().size() + " 條譯文已載入")
@@ -193,8 +238,9 @@ public final class SettingsScreen extends Screen {
     }
 
     private void header(GuiGraphics g, int x, int y, String text) {
-        g.drawString(this.font,
-                Component.literal(text).withStyle(ChatFormatting.YELLOW), x, y, 0xFFD24A);
+        int accent = WynnChaYuan.config().accentARGB();
+        g.drawString(this.font, Component.literal(text), x, y, accent);
+        g.fill(x, y + 10, x + COL_W, y + 11, (accent & 0x00FFFFFF) | 0x60000000);
     }
 
     /** 按鈕下方的一行說明。 */
