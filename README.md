@@ -27,6 +27,10 @@ Wynncraft 是多人遊戲。畫面上只剩中文的話，跟其他玩家討論�
 
 ## 參與翻譯
 
+**目前進度 135 / 9,132（1.5%），非常歡迎幫忙。**
+完整說明見 [CONTRIBUTING.md](CONTRIBUTING.md)——**不需要會寫程式**，
+在 GitHub 網頁上直接改就行。
+
 翻譯檔就是純 JSON，只要填 `dst`：
 
 ```json
@@ -92,6 +96,14 @@ fabric 版**放進 `libs/`（不隨本專案散布）。少了它建置會直接
 `gradle build` 會自動跑三組驗證：符號判斷、翻譯來回、以及
 「Python 語料工具與 mod 端算出相同模板」的一致性比對。最後這項尤其重要——
 兩邊規則只要有一點差異，遊戲裡就會靜默查不到譯文。
+
+## 工具
+
+```bash
+python tools/progress.py              # 翻譯進度
+python tools/progress.py --next 30    # 建議接下來翻哪些
+python tools/merge_captured.py <captured.json>   # 併入玩家收集到的字串
+```
 
 ## 重新生成語料
 

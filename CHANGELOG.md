@@ -3,6 +3,15 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [未發布]
+
+### 新增
+
+- `CONTRIBUTING.md`：翻譯參與指南，含不需要 Git 的網頁編輯流程
+- `tools/progress.py`：翻譯進度與「接下來翻哪些」建議
+- `tools/merge_captured.py`：把玩家收集到的字串併進工作檔
+- GitHub issue 範本：提交翻譯／提供收集結果／回報問題
+
 ## [1.1.0] - 2026-08-19
 
 ### 新增
