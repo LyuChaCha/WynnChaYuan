@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
@@ -80,6 +81,10 @@ public final class TrackerOverlay {
 
         int x = LEFT_MARGIN;
         int y = TOP_OFFSET;
+        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.TRACKER)) {
+            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.TRACKER);
+            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.TRACKER);
+        }
 
         Boxes.draw(graphics, x, y, boxW, boxH);
 

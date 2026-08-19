@@ -1,0 +1,30 @@
+# 譯文提交後自動檢查。
+#
+# 只擋機械性的錯：佔位符掉了、換行數不對、材質包符號被直接貼進譯文、
+# 地名被翻掉。這些無論翻得好不好都一定錯，讓機器擋掉，人就可以專心看
+# 「翻得對不對」——那才是人該做的部分。
+name: 檢查譯文
+
+on:
+  pull_request:
+    paths:
+      - 'src/main/resources/assets/wynnchayuan/translations/**'
+      - 'tools/validate.py'
+  push:
+    branches: [main]
+    paths:
+      - 'src/main/resources/assets/wynnchayuan/translations/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 檢查譯文格式
+        run: python tools/validate.py
+      - name: 顯示翻譯進度
+        if: always()
+        run: python tools/progress.py

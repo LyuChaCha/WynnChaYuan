@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
@@ -92,8 +93,13 @@ public final class DialogueOverlay {
         }
         boxW += PADDING * 2;
 
+        // 玩家自己擺過就照他的，否則用預設錨點（下方置中）
         int x = (graphics.guiWidth() - boxW) / 2;
         int y = graphics.guiHeight() - BOTTOM_MARGIN - boxH;
+        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.DIALOGUE)) {
+            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.DIALOGUE);
+            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.DIALOGUE);
+        }
 
         Boxes.draw(graphics, x, y, boxW, boxH);
 

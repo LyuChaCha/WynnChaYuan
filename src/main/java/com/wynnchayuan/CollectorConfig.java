@@ -116,6 +116,20 @@ public final class CollectorConfig {
     private int fixedX = 20;
     private int fixedY = 20;
 
+    /**
+     * 三個小框各自的位置。
+     *
+     * <p>沒有設過就用各自的預設錨點（對話在下方置中、追蹤在左上、名牌在準心下方），
+     * 所以 {@code null} 有意義，不能用 0 或 -1 當「未設定」——那些是合法座標。
+     *
+     * <p>存絕對像素而不是螢幕比例，是因為玩家實際在排的是「這個框不要壓到那個框」，
+     * 那是像素關係。換解析度會跑掉，但重設一次就好，比每次都要重新理解比例直觀。
+     */
+    private final java.util.EnumMap<Overlay, int[]> overlayPos = new java.util.EnumMap<>(Overlay.class);
+
+    /** 可以自由擺位的四個框。 */
+    public enum Overlay { TOOLTIP, DIALOGUE, TRACKER, NAMETAG }
+
     public CollectorConfig(Path file) {
         this.file = file;
         load();
@@ -299,6 +313,51 @@ public final class CollectorConfig {
         return panelAnchor;
     }
 
+    /** 這個框有沒有被擺過位置。沒有的話呼叫端該用自己的預設錨點。 */
+    public boolean hasOverlayPos(Overlay which) {
+        return which == Overlay.TOOLTIP || overlayPos.containsKey(which);
+    }
+
+    public int overlayX(Overlay which) {
+        if (which == Overlay.TOOLTIP) {
+            return fixedX;
+        }
+        int[] p = overlayPos.get(which);
+        return p == null ? 0 : p[0];
+    }
+
+    public int overlayY(Overlay which) {
+        if (which == Overlay.TOOLTIP) {
+            return fixedY;
+        }
+        int[] p = overlayPos.get(which);
+        return p == null ? 0 : p[1];
+    }
+
+    public void setOverlayPos(Overlay which, int x, int y) {
+        if (which == Overlay.TOOLTIP) {
+            setFixedPos(x, y);
+            return;
+        }
+        int[] old = overlayPos.get(which);
+        if (old != null && old[0] == x && old[1] == y) {
+            return;
+        }
+        overlayPos.put(which, new int[] {x, y});
+        save();
+    }
+
+    /** 回到預設錨點。 */
+    public void clearOverlayPos(Overlay which) {
+        if (which == Overlay.TOOLTIP) {
+            setFixedPos(20, 20);
+            return;
+        }
+        if (overlayPos.remove(which) != null) {
+            save();
+        }
+    }
+
     public int fixedX() {
         return fixedX;
     }
@@ -439,6 +498,19 @@ public final class CollectorConfig {
             if (o.has("panelAnchor")) {
                 panelAnchor = PanelAnchor.valueOf(o.get("panelAnchor").getAsString());
             }
+            if (o.has("overlayPos")) {
+                com.google.gson.JsonObject positions = o.getAsJsonObject("overlayPos");
+                for (Overlay which : Overlay.values()) {
+                    if (!positions.has(which.name())) {
+                        continue;
+                    }
+                    com.google.gson.JsonArray xy = positions.getAsJsonArray(which.name());
+                    if (xy != null && xy.size() == 2) {
+                        overlayPos.put(which,
+                                new int[] {xy.get(0).getAsInt(), xy.get(1).getAsInt()});
+                    }
+                }
+            }
             if (o.has("fixedX")) {
                 fixedX = o.get("fixedX").getAsInt();
             }
@@ -468,6 +540,14 @@ public final class CollectorConfig {
             o.addProperty("dialogueHoldMs", dialogueHoldMs);
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());
+            com.google.gson.JsonObject positions = new com.google.gson.JsonObject();
+            overlayPos.forEach((which, xy) -> {
+                com.google.gson.JsonArray arr = new com.google.gson.JsonArray();
+                arr.add(xy[0]);
+                arr.add(xy[1]);
+                positions.add(which.name(), arr);
+            });
+            o.add("overlayPos", positions);
             o.addProperty("fixedX", fixedX);
             o.addProperty("fixedY", fixedY);
             try (Writer w = Files.newBufferedWriter(file, StandardCharsets.UTF_8)) {

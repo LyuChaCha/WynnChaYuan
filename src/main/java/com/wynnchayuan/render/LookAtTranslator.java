@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
@@ -144,6 +145,10 @@ public final class LookAtTranslator {
         int h = lines.size() * lineHeight + 6;
         int x = (graphics.guiWidth() - w) / 2;
         int y = graphics.guiHeight() / 2 + 16;   // 準心下方，不擋住準心本身
+        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.NAMETAG)) {
+            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.NAMETAG);
+            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.NAMETAG);
+        }
 
         Boxes.draw(graphics, x, y, w, h);
         int ty = y + 4;
