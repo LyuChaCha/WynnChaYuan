@@ -1,0 +1,7 @@
+accessWidener	v2	named
+
+# Wynntils 的 PartStyle#getStyle() 會用到 Style 的私有建構子。
+# 遊戲裡是 Wynntils 自己的 accessWidener 打開的（我們依賴它，所以執行期本來就通），
+# 但獨立跑驗證程式時沒有 Fabric loader 套用 AW，會拿到 IllegalAccessError。
+# 這裡宣告同一條，讓開發與測試環境跟正式環境一致。
+accessible	method	net/minecraft/network/chat/Style	<init>	(Lnet/minecraft/network/chat/TextColor;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lnet/minecraft/network/chat/ClickEvent;Lnet/minecraft/network/chat/HoverEvent;Ljava/lang/String;Lnet/minecraft/network/chat/FontDescription;)V
