@@ -68,8 +68,10 @@ public final class LookAtTranslator {
         }
         Component translated = LineTranslator.translate(target, WynnChaYuan.translations());
         if (translated == null) {
+            noteOnce("nametag.noMatch");
             return;                            // 沒有譯文就不打擾
         }
+        noteOnce("nametag.shown");
         drawBubble(graphics, mc, translated);
     }
 
@@ -98,6 +100,18 @@ public final class LookAtTranslator {
             }
         }
         return best;
+    }
+
+    /**
+     * 每幀都會走到，所以只在狀態變了才記一次，否則計數會被灌爆。
+     */
+    private static String lastNoted = "";
+
+    private static void noteOnce(String event) {
+        if (!event.equals(lastNoted)) {
+            lastNoted = event;
+            WynnChaYuan.store().noteEvent(event);
+        }
     }
 
     /** 在準心下方畫一個小框。 */

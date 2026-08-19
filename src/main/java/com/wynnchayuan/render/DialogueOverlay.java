@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
@@ -50,6 +51,9 @@ public final class DialogueOverlay {
                 lines.add(LineTranslator.untranslated(line));
             }
         }
+        // 診斷：分得出「沒讀到對話」與「讀到了但沒譯文」——
+        // 少了這個，畫面上沒東西時完全不知道卡在哪一步
+        WynnChaYuan.store().noteEvent(any ? "dialogue.shown" : "dialogue.noMatch");
         current = any ? List.copyOf(lines) : List.of();
     }
 

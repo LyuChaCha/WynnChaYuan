@@ -1,5 +1,6 @@
 package com.wynnchayuan.render;
 
+import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
@@ -55,6 +56,7 @@ public final class TrackerOverlay {
                 lines.add(LineTranslator.untranslated(task));
             }
         }
+        WynnChaYuan.store().noteEvent(any ? "tracker.shown" : "tracker.noMatch");
         current = any ? List.copyOf(lines) : List.of();
     }
 

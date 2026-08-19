@@ -47,7 +47,11 @@ public final class PlayerDataFilter {
             " has invited you",
             " sent you a friend request",
             " has thrown a ",           // 「某某人丟了經驗炸彈」，夾帶玩家名
-            " of your XP to "           // 「將 X% 經驗貢獻給某公會」，夾帶公會名
+            " of your XP to ",          // 「將 X% 經驗貢獻給某公會」，夾帶公會名
+            " has just logged in",      // 上線通知，夾帶玩家名
+            " has just logged out",
+            " is now online",
+            " is now offline"
     );
 
     /** 座標，例如 {@code [-781, 89, -5563]}。 */

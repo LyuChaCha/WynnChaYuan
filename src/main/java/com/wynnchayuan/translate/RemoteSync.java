@@ -48,6 +48,7 @@ public final class RemoteSync {
     /** 要同步的檔案。與內建的那份一致。 */
     private static final List<String> FILES = List.of(
             "ui-labels.json",
+            "quest.json",
             "gear-weapon.json",
             "gear-armour.json",
             "gear-accessory.json",

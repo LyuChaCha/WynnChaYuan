@@ -26,6 +26,7 @@ public final class StarterFiles {
     /** 與 {@code src/main/resources/assets/wynnchayuan/translations/} 內容一致。 */
     private static final List<String> BUNDLED = List.of(
             "ui-labels.json",
+            "quest.json",
             "gear-weapon.json",
             "gear-armour.json",
             "gear-accessory.json",
