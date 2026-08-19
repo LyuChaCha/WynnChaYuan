@@ -239,6 +239,60 @@ public final class CollectorConfig {
         return true;
     }
 
+    /**
+     * 名牌翻譯的偵測距離（格）。
+     *
+     * <p>城裡 NPC 站得很密，距離放太遠會一直抓到後排的；曠野找 NPC 又希望
+     * 早一點看到。所以做成可調，而不是挑一個折衷值讓兩邊都不好用。
+     */
+    private double nametagRange = 24.0;
+
+    /**
+     * 準心與名牌的夾角上限（度）。
+     *
+     * <p>角度小＝要對得很準才顯示，適合 NPC 密集的地方；角度大＝掃過去就會跳，
+     * 適合找人。存成角度而不是餘弦值，因為設定畫面要給人看。
+     */
+    private double nametagAngle = 6.0;
+
+    public double nametagRange() {
+        return nametagRange;
+    }
+
+    public double nametagAngle() {
+        return nametagAngle;
+    }
+
+    /** @return 格式不對就回 false，讓呼叫端提示而不是靜靜吃掉 */
+    public boolean setNametagRange(String value) {
+        Double v = parseNumber(value);
+        if (v == null) {
+            return false;
+        }
+        nametagRange = Math.max(2.0, Math.min(v, 64.0));
+        save();
+        return true;
+    }
+
+    public boolean setNametagAngle(String value) {
+        Double v = parseNumber(value);
+        if (v == null) {
+            return false;
+        }
+        // 下限 1 度：再小幾乎對不準；上限 45 度：再大等於整個視野都算數
+        nametagAngle = Math.max(1.0, Math.min(v, 45.0));
+        save();
+        return true;
+    }
+
+    private static Double parseNumber(String value) {
+        try {
+            return Double.parseDouble(value.strip());
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     public boolean setNametagHoldSeconds(String value) {
         Integer sec = parseSeconds(value);
         if (sec == null) {
@@ -511,6 +565,12 @@ public final class CollectorConfig {
                     }
                 }
             }
+            if (o.has("nametagRange")) {
+                nametagRange = o.get("nametagRange").getAsDouble();
+            }
+            if (o.has("nametagAngle")) {
+                nametagAngle = o.get("nametagAngle").getAsDouble();
+            }
             if (o.has("fixedX")) {
                 fixedX = o.get("fixedX").getAsInt();
             }
@@ -548,6 +608,8 @@ public final class CollectorConfig {
                 positions.add(which.name(), arr);
             });
             o.add("overlayPos", positions);
+            o.addProperty("nametagRange", nametagRange);
+            o.addProperty("nametagAngle", nametagAngle);
             o.addProperty("fixedX", fixedX);
             o.addProperty("fixedY", fixedY);
             try (Writer w = Files.newBufferedWriter(file, StandardCharsets.UTF_8)) {
