@@ -113,6 +113,14 @@ tasks.register('runTranslateChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runTranslateChecks' }
 
+tasks.register('runSectionChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證第三方 tooltip 區塊的濾除規則'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.ThirdPartySectionsTest'
+}
+tasks.named('check') { dependsOn 'runSectionChecks' }
+
 tasks.register('runParityChecks', JavaExec) {
     group = 'verification'
     description = '驗證 Python 語料工具與 mod 端算出相同的模板'

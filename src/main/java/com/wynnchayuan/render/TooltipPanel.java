@@ -42,6 +42,9 @@ public final class TooltipPanel {
         if (tooltip == null || tooltip.isEmpty()) {
             return;
         }
+        // 別的模組加進清單、但 Wynntils 沒有畫出來的區塊要先拿掉，
+        // 否則面板會比原文多出好幾行，看起來像我們憑空生了內容。
+        tooltip = ThirdPartySections.strip(tooltip);
         List<Component> lines = translateLines(tooltip, store);
         // 只在物品換了才記一次，否則每幀都記會灌爆計數
         if (!tooltip.equals(lastDiagnosed)) {

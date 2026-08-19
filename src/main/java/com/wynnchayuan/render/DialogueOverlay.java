@@ -99,7 +99,7 @@ public final class DialogueOverlay {
 
         int textY = y + PADDING;
         for (Component line : lines) {
-            graphics.drawString(mc.font, line, x + PADDING, textY, 0xFFFFFF);
+            graphics.drawString(mc.font, line, x + PADDING, textY, Colors.TEXT);
             textY += lineHeight;
         }
     }

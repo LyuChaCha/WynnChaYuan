@@ -2,6 +2,7 @@ package com.wynnchayuan.client;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.render.Colors;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -307,7 +308,7 @@ public final class SettingsScreen extends Screen {
                         .withStyle(WynnChaYuan.translations().size() > 0
                                 ? ChatFormatting.GRAY : ChatFormatting.RED)
                 : status;
-        g.drawCenteredString(this.font, now, this.width / 2, this.height - 44, 0xFFFFFF);
+        g.drawCenteredString(this.font, now, this.width / 2, this.height - 44, Colors.TEXT);
     }
 
     @Override

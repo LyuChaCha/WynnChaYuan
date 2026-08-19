@@ -3,6 +3,30 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.4.1] - 2026-08-19
+
+### 修正
+
+- **對話框、名牌、任務追蹤框只有框沒有字。** 三個小框都用
+  `drawString(..., 0xFFFFFF)` 傳顏色，但那個參數是 **ARGB**——`0xFFFFFF`
+  的 alpha 是 `0x00`，文字照常排版卻完全透明。
+  - 同一個錯誤讓 F6 的說明文字、貢獻者頁、位置調整頁的文字全部隱形。
+    先前「顏色設定需要註解」的回報其實是註解一直都在，只是看不見。
+  - `TooltipPanel` 沒受影響，因為它走原版 `renderTooltip`，alpha 由原版補。
+  - 顏色集中到 `Colors`，之後新增繪製程式碼不會再漏掉 alpha。
+- 小框會濾掉整行都是圖示的裝飾行（名牌底圖的 `banner/pill`、血條）。
+  我們自己畫了背景，再疊一張原本版面的底圖只會蓋掉譯文。
+  圖示<b>混在文字裡</b>的行仍然整行保留。
+- **翻譯面板比原文多出 NORI／WYNNPOOL 區塊。** 這些行是 Nori、Wynnpool
+  兩個第三方模組加進事件清單的，但 Wynntils 實際畫出來的 tooltip 不含它們，
+  於是面板比原文多了好幾行、對不齊。現在會濾掉。
+  - 清單放在 `third-party-sections.json`，把同名檔案放進
+    `config/wynnchayuan/` 就能自己增修；想看這些區塊的譯文就把它清空。
+
+### 其他
+
+- `overlay-debug-*.txt` 診斷檔改成只在「收集未翻譯字串」開啟時才寫。
+
 ## [1.4.0] - 2026-08-19
 
 ### 新增
