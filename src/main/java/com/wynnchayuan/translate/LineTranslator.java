@@ -147,10 +147,17 @@ public final class LineTranslator {
      *
      * @return 要撐開的位置索引；沒有欄位結構時回傳 -1
      */
-    private static int findAlignPoint(List<Piece> pieces) {
+    static int findAlignPoint(List<Piece> pieces) {
+        // 情形一：用現成的對齊空白——但必須挑「後面還有文字」的那一個。
+        //
+        // 行尾常常還有一段留白當右邊距。差額加進那裡的話，整行寬度是對的
+        // （所以量起來沒問題），數值卻還黏在標籤旁邊，右邊空一大塊。
+        //
+        // 置中的行也一樣：{@code [空白] 文字 [空白]}，撐開尾端那個只會把
+        // 文字留在左邊，撐開前面那個才會置中。
         for (int i = pieces.size() - 1; i >= 0; i--) {
-            if (pieces.get(i).isSpace()) {
-                return i;                      // 情形一：用現成的
+            if (pieces.get(i).isSpace() && hasTextAfter(pieces, i)) {
+                return i;
             }
         }
         int i = pieces.size() - 1;
@@ -173,8 +180,18 @@ public final class LineTranslator {
         return hasDigit ? valueStart : -1;
     }
 
+    /** 這個位置之後還有沒有實際文字。沒有的話它只是行尾的留白邊距。 */
+    private static boolean hasTextAfter(List<Piece> pieces, int index) {
+        for (int i = index + 1; i < pieces.size(); i++) {
+            if (!pieces.get(i).isSpace() && !pieces.get(i).text().isBlank()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /** 這個空白之前有沒有任何文字。沒有的話它是縮排／置中用的。 */
-    private static boolean isLeading(List<Piece> pieces, int index) {
+    static boolean isLeading(List<Piece> pieces, int index) {
         for (int i = 0; i < index; i++) {
             if (!pieces.get(i).isSpace() && !pieces.get(i).text().isBlank()) {
                 return false;
@@ -232,7 +249,12 @@ public final class LineTranslator {
     }
 
     /** 組裝前的一個片段：一般文字，或一個帶寬度的對齊空白。 */
-    private record Piece(String text, Style style, int spacePx, boolean isSpace) {
+    /**
+     * 一行拆出來的片段。開放到 package 層級是為了讓
+     * {@code AlignPointTest} 測得到 {@link #findAlignPoint}——對齊是這個專案
+     * 反覆出問題的地方，而畫面上要靠肉眼比對幾個像素，很難察覺。
+     */
+    record Piece(String text, Style style, int spacePx, boolean isSpace) {
         static Piece text(String t, Style s) {
             return new Piece(t, s, 0, false);
         }

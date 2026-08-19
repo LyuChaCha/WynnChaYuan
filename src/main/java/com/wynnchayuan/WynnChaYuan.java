@@ -140,12 +140,41 @@ public final class WynnChaYuan implements ClientModInitializer {
                 + com.wynnchayuan.capture.PlaceNames.size() + " 筆（不翻譯，原樣保留）");
     }
 
-    /** 重新載入譯文檔，不用重開遊戲。改完 json 存檔後按一下就生效。 */
+    /**
+     * 重新載入譯文檔，不用重開遊戲。
+     *
+     * <p>只讀本機檔案。譯文來源設在 GitHub 時，這樣按下去只會把同一份舊快取
+     * 再讀一次——所以另外有 {@link #resyncTranslations}。
+     */
     public static void reloadTranslations() {
         Path dir = configDir.resolve("translations");
         StarterFiles.installIfEmpty(dir);   // 被清空的話順手補回來
         translations.setTranslateNames(config.translateItemNames());
         translations.loadAll(dir);
+    }
+
+    /**
+     * 重新從 GitHub 抓一次譯文，抓完再載入。
+     *
+     * <p>譯者在 GitHub 上改完之後，需要進遊戲對照才能確認翻得對不對。
+     * 沒有這個按鈕就得重開遊戲，來回一趟的成本高到沒人會認真校對。
+     *
+     * <p>網路動作放在背景執行緒，按下去畫面不會卡住；抓完再回到主執行緒載入。
+     *
+     * @param done 完成後在主執行緒呼叫，參數是要顯示給使用者的結果
+     */
+    public static void resyncTranslations(java.util.function.Consumer<String> done) {
+        Path dir = configDir.resolve("translations");
+        Thread worker = new Thread(() -> {
+            RemoteSync.fetchInto(dir);
+            String result = RemoteSync.lastResult();
+            net.minecraft.client.Minecraft.getInstance().execute(() -> {
+                reloadTranslations();
+                done.accept(result + "，共 " + translations.size() + " 條");
+            });
+        }, MOD_ID + "-resync");
+        worker.setDaemon(true);
+        worker.start();
     }
 
     /** F6 開啟設定面板。 */

@@ -34,16 +34,19 @@ public final class RemoteSync {
     /**
      * 依序嘗試的來源。
      *
-     * <p>jsDelivr 擺第一位：它是 CDN，全球有邊緣節點，而且<b>不吃 GitHub 的流量限制</b>。
-     * 玩家一多的時候，幾百個人同時連 raw.githubusercontent 有機會被擋，
-     * 走 CDN 則是它自己扛。
+     * <h2>為什麼 raw 在前、CDN 在後</h2>
+     * 原本反過來，結果是譯者在 GitHub 上合併之後<b>最多 12 小時</b>遊戲裡才會變——
+     * jsDelivr 的快取就是這麼久，而且它從來不會「失敗」，所以永遠退不到備援那條。
      *
-     * <p>raw.githubusercontent 留作備援：jsDelivr 的快取最長約 12 小時，
-     * 剛合併的翻譯想立刻拿到就得走 raw。所以 CDN 失敗時自動退到它。
+     * <p>對這個專案來說，翻譯剛改完就要看得到比省流量重要得多：譯者改完進遊戲
+     * 對照，是唯一能確認自己翻對的方法。改成 raw 在前之後，合併完重開就生效。
+     *
+     * <p>jsDelivr 留作備援，扛的是 raw 被擋掉或流量受限的情況——那時候拿到
+     * 稍微舊一點的譯文，總比完全沒有好。
      */
     private static final List<String> SOURCES = List.of(
-            "https://cdn.jsdelivr.net/gh/LyuChaCha/WynnChaYuan@main/" + PATH,
-            "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/" + PATH);
+            "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/" + PATH,
+            "https://cdn.jsdelivr.net/gh/LyuChaCha/WynnChaYuan@main/" + PATH);
 
     /** 要同步的檔案。清單來自 _index.json，新增譯文檔不必改這裡。 */
     private static List<String> files() {
@@ -66,6 +69,9 @@ public final class RemoteSync {
                 HttpRequest request = HttpRequest.newBuilder(URI.create(base + name))
                         .timeout(TIMEOUT)
                         .header("User-Agent", "WynnChaYuan")
+                        // 中間還可能有公司／ISP 的快取代理，一併請它們別給舊的
+                        .header("Cache-Control", "no-cache")
+                        .header("Pragma", "no-cache")
                         .GET()
                         .build();
                 HttpResponse<InputStream> response =
