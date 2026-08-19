@@ -107,7 +107,8 @@ public final class LineTranslator {
             // 這種行原本靠標籤夠長就自然排到欄位位置，伺服器沒插對齊字元。
             // 翻譯後標籤變短就沒東西撐開，數值會整個貼到標籤旁邊 ——
             // 所以就地補一個寬度 0 的空白，下面再把差額加進去。
-            pieces.add(alignAt, Piece.space(0, pieces.get(alignAt).style()));
+            pieces.add(alignAt, Piece.space(0,
+                    SpaceOffset.styleFor(pieces.get(alignAt).style())));
         }
 
         // 先照原樣組一次，然後「量」出整行差多少，而不是把各片段的差額「算」總和。
@@ -120,6 +121,12 @@ public final class LineTranslator {
         Component draft = assemble(pieces, -1, 0);
         int delta = originalWidth - widthOf(draft);
 
+        // 前導空白代表這行是「置中／縮排」而不是「標籤 + 數值」：
+        // 空白在最前面，後面才是文字。這種行要維持置中，
+        // 補的寬度只能是差額的一半 —— 補滿會把整行推到右邊去。
+        if (isLeading(pieces, alignAt)) {
+            delta /= 2;
+        }
         return assemble(pieces, alignAt, delta);
     }
 
@@ -150,10 +157,30 @@ public final class LineTranslator {
         while (i >= 0 && looksLikeValue(pieces.get(i).text())) {
             i--;
         }
-        // i 是最後一個文字片段；數值區從 i+1 開始。
-        // 兩邊都要有東西才算「標籤 + 數值」，否則就是一般句子。
         int valueStart = i + 1;
-        return (i >= 0 && valueStart < pieces.size()) ? valueStart : -1;
+        if (i < 0 || valueStart >= pieces.size()) {
+            return -1;                         // 全是數值或全是文字，沒有欄位結構
+        }
+        // 數值區裡必須真的有數字。否則像「1 x Doom Stone ◆◆◆」這種
+        // 以符號結尾的行也會被當成欄位，插進去的空白只會把符號推歪。
+        boolean hasDigit = false;
+        for (int j = valueStart; j < pieces.size(); j++) {
+            if (pieces.get(j).text().chars().anyMatch(Character::isDigit)) {
+                hasDigit = true;
+                break;
+            }
+        }
+        return hasDigit ? valueStart : -1;
+    }
+
+    /** 這個空白之前有沒有任何文字。沒有的話它是縮排／置中用的。 */
+    private static boolean isLeading(List<Piece> pieces, int index) {
+        for (int i = 0; i < index; i++) {
+            if (!pieces.get(i).isSpace() && !pieces.get(i).text().isBlank()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /** 這段文字看起來是數值而不是文案。 */

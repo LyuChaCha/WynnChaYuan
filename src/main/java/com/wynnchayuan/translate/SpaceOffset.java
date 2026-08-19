@@ -54,6 +54,19 @@ public final class SpaceOffset {
         return "space".equals(resource.id().getPath());
     }
 
+    /**
+     * 給「自己插入」的對齊字元用的樣式。
+     *
+     * <p>{@code U+D0000+n} 只有在 {@code minecraft:space} 字型底下才畫得出來。
+     * 沿用旁邊文字片段的樣式（通常是 {@code wynntils:language}）會找不到字形，
+     * 畫面上就是一個方框。
+     */
+    public static Style styleFor(Style base) {
+        return (base == null ? Style.EMPTY : base)
+                .withFont(new FontDescription.Resource(
+                        net.minecraft.resources.Identifier.withDefaultNamespace("space")));
+    }
+
     /** 解出這段空白字元代表的總寬度（像素）。 */
     public static int decode(String text) {
         if (text == null || text.isEmpty()) {
