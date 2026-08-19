@@ -30,6 +30,14 @@ public final class CollectorConfig {
     private boolean collect = true;
 
     /**
+     * 是否連介面 tooltip 也收集（公會選單、任務書、製作台…）。
+     *
+     * <p>預設關閉：裝備與技能已有官方資料，一直掃背包只會把真正缺的
+     * GUI 字串淹掉。想補 GUI 翻譯時再打開，逛一輪選單就夠。
+     */
+    private boolean collectGuiText = false;
+
+    /**
      * 譯文從哪裡來。
      *
      * <p>{@code GITHUB}：進遊戲時從 repo 同步，所有人看到同一份最新翻譯。
@@ -171,6 +179,40 @@ public final class CollectorConfig {
         return dialogueHoldMs;
     }
 
+    /**
+     * 直接設定秒數。0 或負數代表「持續顯示」。
+     *
+     * @return 是否為合法數字
+     */
+    public boolean setDialogueHoldSeconds(String value) {
+        Integer sec = parseSeconds(value);
+        if (sec == null) {
+            return false;
+        }
+        dialogueHoldMs = sec <= 0 ? Integer.MAX_VALUE : Math.min(sec, 600) * 1000;
+        save();
+        return true;
+    }
+
+    public boolean setNametagHoldSeconds(String value) {
+        Integer sec = parseSeconds(value);
+        if (sec == null) {
+            return false;
+        }
+        nametagHoldMs = Math.max(0, Math.min(sec, 60)) * 1000;
+        save();
+        return true;
+    }
+
+    /** 接受整數秒；空白或非數字回傳 null 讓呼叫端提示。 */
+    private static Integer parseSeconds(String value) {
+        try {
+            return Integer.parseInt(value.strip());
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+
     /** 在 3／6／10／15 秒與「持續顯示」之間輪替。 */
     public int cycleDialogueHold() {
         int[] steps = {3000, 6000, 10000, 15000, Integer.MAX_VALUE};
@@ -294,6 +336,16 @@ public final class CollectorConfig {
         return source;
     }
 
+    public boolean collectGuiText() {
+        return collectGuiText;
+    }
+
+    public boolean toggleCollectGuiText() {
+        collectGuiText = !collectGuiText;
+        save();
+        return collectGuiText;
+    }
+
     public boolean toggleCollect() {
         collect = !collect;
         save();
@@ -318,6 +370,9 @@ public final class CollectorConfig {
             }
             if (o.has("collect")) {
                 collect = o.get("collect").getAsBoolean();
+            }
+            if (o.has("collectGuiText")) {
+                collectGuiText = o.get("collectGuiText").getAsBoolean();
             }
             if (o.has("source")) {
                 source = Source.valueOf(o.get("source").getAsString());
@@ -367,6 +422,7 @@ public final class CollectorConfig {
             o.addProperty("showPanel", showPanel);
             o.addProperty("collect", collect);
             o.addProperty("source", source.name());
+            o.addProperty("collectGuiText", collectGuiText);
             o.addProperty("translateNametags", translateNametags);
             o.addProperty("nametagMode", nametagMode.name());
             o.addProperty("panelSide", panelSide.name());

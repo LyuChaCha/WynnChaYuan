@@ -30,6 +30,8 @@ public final class SettingsScreen extends Screen {
 
     private Component status = Component.empty();
     private EditBox colorBox;
+    private EditBox nametagHoldBox;
+    private EditBox dialogueHoldBox;
 
     public SettingsScreen() {
         super(Component.literal("WynnChaYuan"));
@@ -92,28 +94,35 @@ public final class SettingsScreen extends Screen {
             WynnChaYuan.config().cycleNametagMode();
             b.setMessage(nametagLabel());
         });
-        row(right, TOP + ROW * 2, this::nametagHoldLabel, b -> {
-            WynnChaYuan.config().cycleNametagHold();
-            b.setMessage(nametagHoldLabel());
-        });
-        row(right, TOP + ROW * 3, this::dialogueHoldLabel, b -> {
-            WynnChaYuan.config().cycleDialogueHold();
-            b.setMessage(dialogueHoldLabel());
-        });
+        nametagHoldBox = secondsBox(right, TOP + ROW * 2,
+                WynnChaYuan.config().nametagHoldMs());
+        addRenderableWidget(Button.builder(Component.literal("套用"),
+                b -> applySeconds(true))
+                .bounds(right + COL_W - 42, TOP + ROW * 2, 42, 20).build());
+
+        dialogueHoldBox = secondsBox(right, TOP + ROW * 3,
+                WynnChaYuan.config().dialogueHoldMs());
+        addRenderableWidget(Button.builder(Component.literal("套用"),
+                b -> applySeconds(false))
+                .bounds(right + COL_W - 42, TOP + ROW * 3, 42, 20).build());
 
         // ---- 資料 ----
         int dataY = dataY();
-        row(right, dataY, this::sourceLabel, b -> {
+        row(right, dataY, this::guiCollectLabel, b -> {
+            WynnChaYuan.config().toggleCollectGuiText();
+            b.setMessage(guiCollectLabel());
+        });
+        row(right, dataY + ROW, this::sourceLabel, b -> {
             WynnChaYuan.config().toggleSource();
             b.setMessage(sourceLabel());
         });
-        row(right, dataY + ROW, this::collectLabel, b -> {
+        row(right, dataY + ROW * 2, this::collectLabel, b -> {
             WynnChaYuan.config().toggleCollect();
             b.setMessage(collectLabel());
         });
         addRenderableWidget(Button.builder(
                 Component.literal("重新載入譯文檔"), b -> reload())
-                .bounds(right, dataY + ROW * 2, COL_W, 20).build());
+                .bounds(right, dataY + ROW * 3, COL_W, 20).build());
 
         // ---- 底部 ----
         addRenderableWidget(Button.builder(Component.literal("關於／貢獻者"),
@@ -121,6 +130,37 @@ public final class SettingsScreen extends Screen {
                 .bounds(this.width / 2 - 152, this.height - 28, 100, 20).build());
         addRenderableWidget(Button.builder(Component.literal("完成"), b -> onClose())
                 .bounds(this.width / 2 + 52, this.height - 28, 100, 20).build());
+    }
+
+    /** 秒數輸入框。持續顯示以 0 表示，比「999」直觀。 */
+    private EditBox secondsBox(int x, int y, int ms) {
+        EditBox box = new EditBox(this.font, x, y, COL_W - 46, 20,
+                Component.literal("秒數"));
+        box.setValue(ms == Integer.MAX_VALUE ? "0" : String.valueOf(ms / 1000));
+        box.setMaxLength(3);
+        addRenderableWidget(box);
+        return box;
+    }
+
+    private void applySeconds(boolean nametag) {
+        boolean ok = nametag
+                ? WynnChaYuan.config().setNametagHoldSeconds(nametagHoldBox.getValue())
+                : WynnChaYuan.config().setDialogueHoldSeconds(dialogueHoldBox.getValue());
+        if (ok) {
+            int ms = nametag ? WynnChaYuan.config().nametagHoldMs()
+                             : WynnChaYuan.config().dialogueHoldMs();
+            EditBox box = nametag ? nametagHoldBox : dialogueHoldBox;
+            box.setValue(ms == Integer.MAX_VALUE ? "0" : String.valueOf(ms / 1000));
+            status = Component.literal("✔ 已設定停留時間").withStyle(ChatFormatting.GREEN);
+        } else {
+            status = Component.literal("✘ 請輸入秒數（整數，0 = 持續顯示）")
+                    .withStyle(ChatFormatting.RED);
+        }
+    }
+
+    private Component guiCollectLabel() {
+        return Component.literal("收集介面文字："
+                + onOff(WynnChaYuan.config().collectGuiText()));
     }
 
     private void row(int x, int y, Supplier<Component> label, Consumer<Button> onPress) {
@@ -226,7 +266,7 @@ public final class SettingsScreen extends Screen {
         // 卡片要墊在按鈕底下，所以先於 super.render
         Cards.panel(g, left - 8, TOP - 20, COL_W + 16, ROW * 6 + 14);
         Cards.panel(g, right - 8, TOP - 20, COL_W + 16, ROW * 4 + 14);
-        Cards.panel(g, right - 8, dataY - 20, COL_W + 16, ROW * 3 + 14);
+        Cards.panel(g, right - 8, dataY - 20, COL_W + 16, ROW * 4 + 14);
 
         super.render(g, mouseX, mouseY, delta);
 
@@ -242,16 +282,20 @@ public final class SettingsScreen extends Screen {
         Cards.hint(g, this.font, left + 2, TOP + ROW * 2 + 21, "拖曳示意方框決定位置");
         Cards.hint(g, this.font, left + 2, TOP + ROW * 3 + 21, "自動會依畫面空間左右讓位");
         Cards.hint(g, this.font, left + 2, TOP + ROW * 4 + 21, "面板與原本 tooltip 之間留多寬");
-        Cards.hint(g, this.font, left + 2, TOP + ROW * 5 + 21, "所有小框的框線色，例如 #6FA8D8");
+        Cards.hint(g, this.font, left + 2, TOP + ROW * 5 + 21,
+                "框線顏色（16 進位色碼，例如 #6FA8D8）");
 
         Cards.hint(g, this.font, right + 2, TOP + 21, "裝備名稱多是專有名詞，通常保留原文");
         Cards.hint(g, this.font, right + 2, TOP + ROW + 21, "注視時顯示可保留原文，方便溝通");
-        Cards.hint(g, this.font, right + 2, TOP + ROW * 2 + 21, "視線移開後譯文還留多久");
-        Cards.hint(g, this.font, right + 2, TOP + ROW * 3 + 21, "對話結束後小框多久收起來");
+        Cards.hint(g, this.font, right + 2, TOP + ROW * 2 + 21,
+                "名牌停留秒數（0 = 持續顯示）");
+        Cards.hint(g, this.font, right + 2, TOP + ROW * 3 + 21,
+                "對話框停留秒數（0 = 持續顯示）");
 
-        Cards.hint(g, this.font, right + 2, dataY + 21, "GitHub 會同步大家的最新翻譯");
-        Cards.hint(g, this.font, right + 2, dataY + ROW + 21, "把沒翻到的句子記進 captured.json");
-        Cards.hint(g, this.font, right + 2, dataY + ROW * 2 + 21, "改完 json 按這個就生效");
+        Cards.hint(g, this.font, right + 2, dataY + 21, "公會、任務書等 GUI 的文字（預設關）");
+        Cards.hint(g, this.font, right + 2, dataY + ROW + 21, "GitHub 會同步大家的最新翻譯");
+        Cards.hint(g, this.font, right + 2, dataY + ROW * 2 + 21, "把沒翻到的句子記進 captured.json");
+        Cards.hint(g, this.font, right + 2, dataY + ROW * 3 + 21, "改完 json 按這個就生效");
 
         Component now = status.getString().isEmpty()
                 ? Component.literal(WynnChaYuan.translations().size() + " 條譯文已載入")

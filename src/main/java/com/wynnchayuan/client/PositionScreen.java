@@ -33,6 +33,10 @@ public final class PositionScreen extends Screen {
     private int grabX;
     private int grabY;
 
+    /** 儲存後短暫顯示確認 —— 按下去沒反應會讓人不確定有沒有存到。 */
+    private boolean saved = false;
+    private long savedAt = 0;
+
     public PositionScreen(Screen parent) {
         super(Component.literal("調整面板位置"));
         this.parent = parent;
@@ -58,7 +62,8 @@ public final class PositionScreen extends Screen {
         addRenderableWidget(Button.builder(Component.literal("儲存"), b -> {
             WynnChaYuan.config().setFixedPos(x, y);
             WynnChaYuan.config().saveIfDirty();
-            onClose();
+            saved = true;                      // 關閉前先讓使用者看到確認
+            savedAt = System.currentTimeMillis();
         }).bounds(cx + 55, bottom, 100, 20).build());
     }
 
@@ -111,6 +116,12 @@ public final class PositionScreen extends Screen {
                 this.width / 2, 44, 0x808080);
 
         drawPreview(g);
+
+        if (saved && System.currentTimeMillis() - savedAt < 2000) {
+            g.drawCenteredString(this.font,
+                    Component.literal("✔ 已儲存位置").withStyle(ChatFormatting.GREEN),
+                    this.width / 2, this.height - 48, 0xFFFFFF);
+        }
     }
 
     /** 畫一個假的翻譯面板，長得像實際會出現的樣子。 */
@@ -132,6 +143,13 @@ public final class PositionScreen extends Screen {
                 Component.literal("元素防禦       +34%").withStyle(ChatFormatting.GREEN),
                 Component.empty(),
                 Component.literal("（示意）").withStyle(ChatFormatting.DARK_GRAY));
+
+        // 框上方掛一個小標題，讓人知道這塊代表什麼
+        int accent = WynnChaYuan.config().accentARGB();
+        g.fill(x, y - 12, x + BOX_W, y - 1, 0xD00B1119);
+        g.fill(x, y - 12, x + BOX_W, y - 11, accent);
+        g.drawString(this.font,
+                Component.literal(dragging ? "拖曳中…" : "翻譯面板"), x + 4, y - 10, accent);
 
         int ty = y + 6;
         for (Component line : sample) {

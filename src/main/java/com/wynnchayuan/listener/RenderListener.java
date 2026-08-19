@@ -27,7 +27,13 @@ public final class RenderListener {
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onTooltip(ItemTooltipRenderEvent.Pre event) {
-        // 這裡刻意「只顯示、不收集」。
+        try {
+            // 介面 tooltip 的收集（預設關閉，見 GuiTextCapture 的說明）
+            GuiTextCapture.record(event.getTooltips());
+        } catch (Throwable t) {
+            WynnChaYuan.store().noteEvent("capture.guiError");
+        }
+        // 裝備與技能刻意「只顯示、不收集」。
         // 裝備與技能的文案可以從官方 CDN 完整離線取得（見 corpus/，9,063 條），
         // 在遊戲裡逐件掃描是重工，而且永遠不確定掃齊了沒有。
         // 收集只留給靜態資料拿不到的東西：對話、聊天、名牌、任務追蹤。
