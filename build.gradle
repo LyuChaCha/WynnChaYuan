@@ -1,0 +1,122 @@
+plugins {
+    id 'fabric-loom' version '1.13-SNAPSHOT'
+    id 'java'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/wynncollect.accessWidener")
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.fabricmc.net/' }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    // Wynntils 用 Mojang 官方名稱編譯，我們跟著用，才不會出現對不上的型別
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // Wynntils 只發佈到 Modrinth / CurseForge，沒有任何 Maven 發佈設定，
+    // 所以只能吃本機 jar。modCompileOnly 會讓 Loom 自動把 intermediary
+    // 重映射成 Mojang 名稱。把 fabric 版 jar 放進 libs/ 即可。
+    //
+    // 不要改用 maven.modrinth:wynntils:v4.2.8 —— 看起來可行，實測是壞的：
+    // Modrinth 的 fabric 與 neoforge 兩個版本共用同一個 version_number，
+    // 該座標實際會抓到 NeoForge jar（已驗證：回傳的檔案含 neoforge.mods.toml
+    // 而非 fabric.mod.json）。詳見 README。
+    modCompileOnly fileTree(dir: 'libs', include: ['wynntils-*-fabric*.jar'])
+}
+
+// 少了 Wynntils jar 的話，錯誤會是一長串「找不到 com.wynntils.*」，很難看出真正原因。
+// 這裡先擋下來並講清楚該做什麼。
+tasks.register('checkWynntilsJar') {
+    doLast {
+        def jars = fileTree(dir: 'libs', include: ['wynntils-*-fabric*.jar']).files
+        if (jars.isEmpty()) {
+            throw new GradleException(
+                "libs/ 裡找不到 Wynntils 的 fabric jar。\n" +
+                "請從 https://modrinth.com/mod/wynntils/versions 下載 fabric 版\n" +
+                "（檔名形如 wynntils-4.2.8-fabric+MC-1.21.11.jar）放進 collector/libs/。\n" +
+                "注意要 fabric 版，不是 neoforge 版。")
+        }
+        jars.each { jar ->
+            def isFabric = zipTree(jar).matching { include 'fabric.mod.json' }.files
+            if (isFabric.isEmpty()) {
+                throw new GradleException(
+                    "${jar.name} 不是 fabric jar（缺少 fabric.mod.json）。\n" +
+                    "很可能誤下載成 NeoForge 版，請換成 fabric 版。")
+            }
+        }
+    }
+}
+tasks.named('compileJava') { dependsOn 'checkWynntilsJar' }
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+    it.options.encoding = 'UTF-8'
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.archives_base_name}" }
+    }
+}
+
+// 驗證程式直接沿用 main 的 classpath —— 那份已經被 Loom 重映射成 Mojang 名稱，
+// 若改用未重映射的原始 jar，跑起來會是 intermediary 名稱而對不上。
+sourceSets {
+    test {
+        compileClasspath += sourceSets.main.compileClasspath + sourceSets.main.output
+        runtimeClasspath += sourceSets.main.compileClasspath + sourceSets.main.output
+    }
+}
+
+tasks.register('runChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證符號判斷行為（不引入 JUnit，直接跑 main）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynncollect.GlyphSplitterTest'
+}
+
+// 沒有引入 JUnit，改用 runChecks；停掉標準 test 任務避免 build 失敗。
+tasks.named('test') { enabled = false }
+tasks.named('check') { dependsOn 'runChecks' }
+
+tasks.register('runTranslateChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證翻譯來回與字型規則'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynncollect.TranslateTest'
+}
+tasks.named('check') { dependsOn 'runTranslateChecks' }
+
+tasks.register('runParityChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證 Python 語料工具與 mod 端算出相同的模板'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynncollect.TemplateParityTest'
+}
+tasks.named('check') { dependsOn 'runParityChecks' }

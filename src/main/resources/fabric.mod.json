@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "wynncollect",
+  "version": "${version}",
+  "name": "WynnCollect",
+  "description": "收集 Wynncraft 遊戲內尚未翻譯的字串，自動略過材質包符號。",
+  "authors": [],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.wynncollect.WynnCollect"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*",
+    "wynntils": ">=4.2.0 <5.0.0-"
+  },
+  "accessWidener": "wynncollect.accessWidener"
+}

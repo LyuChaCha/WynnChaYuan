@@ -1,0 +1,20 @@
+# 建置產物
+build/
+.gradle/
+*.class
+
+# Wynntils 的 jar —— 是別人的作品，不隨本專案散布。
+# 請自行從 https://modrinth.com/mod/wynntils/versions 下載 fabric 版放進 libs/
+libs/*.jar
+
+# 從官方 CDN 下載的原始資料，可用 tools/fetch.py 重新取得
+tools/raw/
+
+# 個人遊玩記錄，可能夾帶玩家名稱，不要進版控
+captured.json
+tooltip-debug-*.json
+
+# IDE
+.idea/
+*.iml
+.vscode/
