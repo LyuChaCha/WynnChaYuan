@@ -3,7 +3,7 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
-## [未發布]
+## [1.1.0] - 2026-08-19
 
 ### 新增
 
