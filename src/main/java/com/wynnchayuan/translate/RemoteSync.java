@@ -28,10 +28,22 @@ import java.util.List;
  */
 public final class RemoteSync {
 
-    /** 譯文檔在 repo 裡的位置。 */
-    private static final String BASE =
-            "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/"
-            + "src/main/resources/assets/wynnchayuan/translations/";
+    /** 譯文檔在 repo 裡的路徑。 */
+    private static final String PATH = "src/main/resources/assets/wynnchayuan/translations/";
+
+    /**
+     * 依序嘗試的來源。
+     *
+     * <p>jsDelivr 擺第一位：它是 CDN，全球有邊緣節點，而且<b>不吃 GitHub 的流量限制</b>。
+     * 玩家一多的時候，幾百個人同時連 raw.githubusercontent 有機會被擋，
+     * 走 CDN 則是它自己扛。
+     *
+     * <p>raw.githubusercontent 留作備援：jsDelivr 的快取最長約 12 小時，
+     * 剛合併的翻譯想立刻拿到就得走 raw。所以 CDN 失敗時自動退到它。
+     */
+    private static final List<String> SOURCES = List.of(
+            "https://cdn.jsdelivr.net/gh/LyuChaCha/WynnChaYuan@main/" + PATH,
+            "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/" + PATH);
 
     /** 要同步的檔案。與內建的那份一致。 */
     private static final List<String> FILES = List.of(
@@ -51,6 +63,40 @@ public final class RemoteSync {
     private static volatile String lastResult = "尚未同步";
 
     private RemoteSync() {}
+
+    /** 依序試每個來源，任一成功就算數。 */
+    private static boolean fetchOne(HttpClient client, Path cacheDir, String name) {
+        for (String base : SOURCES) {
+            try {
+                HttpRequest request = HttpRequest.newBuilder(URI.create(base + name))
+                        .timeout(TIMEOUT)
+                        .header("User-Agent", "WynnChaYuan")
+                        .GET()
+                        .build();
+                HttpResponse<InputStream> response =
+                        client.send(request, HttpResponse.BodyHandlers.ofInputStream());
+                if (response.statusCode() != 200) {
+                    continue;
+                }
+                Path tmp = cacheDir.resolve(name + ".tmp");
+                try (InputStream in = response.body()) {
+                    Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
+                }
+                // 先確認是合法 JSON 再蓋上去。半截或錯誤頁面蓋掉舊檔的話，
+                // 使用者會從「翻譯有點舊」變成「翻譯全沒了」。
+                String body = Files.readString(tmp, StandardCharsets.UTF_8);
+                if (body.isBlank() || !body.stripLeading().startsWith("{")) {
+                    Files.deleteIfExists(tmp);
+                    continue;
+                }
+                Files.move(tmp, cacheDir.resolve(name), StandardCopyOption.REPLACE_EXISTING);
+                return true;
+            } catch (Exception e) {
+                // 這個來源不通就試下一個
+            }
+        }
+        return false;
+    }
 
     public static String lastResult() {
         return lastResult;
@@ -79,32 +125,9 @@ public final class RemoteSync {
                 .build()) {
 
             for (String name : FILES) {
-                try {
-                    HttpRequest request = HttpRequest.newBuilder(URI.create(BASE + name))
-                            .timeout(TIMEOUT)
-                            .header("User-Agent", "WynnChaYuan")
-                            .GET()
-                            .build();
-                    HttpResponse<InputStream> response =
-                            client.send(request, HttpResponse.BodyHandlers.ofInputStream());
-                    if (response.statusCode() != 200) {
-                        failed++;
-                        continue;
-                    }
-                    Path tmp = cacheDir.resolve(name + ".tmp");
-                    try (InputStream in = response.body()) {
-                        Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
-                    }
-                    // 先驗證是合法 JSON 再蓋上去，免得半截檔案讓整份譯文失效
-                    String body = Files.readString(tmp, StandardCharsets.UTF_8);
-                    if (body.isBlank() || !body.stripLeading().startsWith("{")) {
-                        Files.deleteIfExists(tmp);
-                        failed++;
-                        continue;
-                    }
-                    Files.move(tmp, cacheDir.resolve(name), StandardCopyOption.REPLACE_EXISTING);
+                if (fetchOne(client, cacheDir, name)) {
                     ok++;
-                } catch (Exception e) {
+                } else {
                     failed++;
                 }
             }

@@ -99,15 +99,15 @@ public final class LineTranslator {
             return null;
         }
 
-        // 決定右對齊位置的是最後一個空白字元，差額補在它身上
-        int lastSpace = -1;
-        for (int i = 0; i < pieces.size(); i++) {
-            if (pieces.get(i).isSpace()) {
-                lastSpace = i;
-            }
+        int alignAt = findAlignPoint(pieces);
+        if (alignAt < 0) {
+            return assemble(pieces, -1, 0);    // 沒有欄位結構，不必調
         }
-        if (lastSpace < 0) {
-            return assemble(pieces, -1, 0);    // 沒有對齊空白，沒得調
+        if (!pieces.get(alignAt).isSpace()) {
+            // 這種行原本靠標籤夠長就自然排到欄位位置，伺服器沒插對齊字元。
+            // 翻譯後標籤變短就沒東西撐開，數值會整個貼到標籤旁邊 ——
+            // 所以就地補一個寬度 0 的空白，下面再把差額加進去。
+            pieces.add(alignAt, Piece.space(0, pieces.get(alignAt).style()));
         }
 
         // 先照原樣組一次，然後「量」出整行差多少，而不是把各片段的差額「算」總和。
@@ -120,7 +120,54 @@ public final class LineTranslator {
         Component draft = assemble(pieces, -1, 0);
         int delta = originalWidth - widthOf(draft);
 
-        return assemble(pieces, lastSpace, delta);
+        return assemble(pieces, alignAt, delta);
+    }
+
+    /**
+     * 找出這一行該在哪裡撐開寬度，也就是「標籤」與「數值」的交界。
+     *
+     * <p>tooltip 的欄位對齊有兩種情形，要分開處理：
+     *
+     * <ol>
+     *   <li><b>有對齊空白字元</b>：伺服器已經插好了，調整它即可</li>
+     *   <li><b>沒有</b>：原文標籤剛好夠長，自然就排到欄位位置。
+     *       翻譯後標籤變短，就得自己補一個</li>
+     * </ol>
+     *
+     * <p>第二種的交界怎麼找：從尾端往回走，把「看起來像數值」的片段
+     * （{@code +372}、{@code [94.0%]}、純空白）都算進數值區，
+     * 停在第一個真正的文字片段——那就是交界。
+     *
+     * @return 要撐開的位置索引；沒有欄位結構時回傳 -1
+     */
+    private static int findAlignPoint(List<Piece> pieces) {
+        for (int i = pieces.size() - 1; i >= 0; i--) {
+            if (pieces.get(i).isSpace()) {
+                return i;                      // 情形一：用現成的
+            }
+        }
+        int i = pieces.size() - 1;
+        while (i >= 0 && looksLikeValue(pieces.get(i).text())) {
+            i--;
+        }
+        // i 是最後一個文字片段；數值區從 i+1 開始。
+        // 兩邊都要有東西才算「標籤 + 數值」，否則就是一般句子。
+        int valueStart = i + 1;
+        return (i >= 0 && valueStart < pieces.size()) ? valueStart : -1;
+    }
+
+    /** 這段文字看起來是數值而不是文案。 */
+    private static boolean looksLikeValue(String text) {
+        String t = text.strip();
+        if (t.isEmpty()) {
+            return true;                       // 純空白，算在數值區
+        }
+        char c = t.charAt(0);
+        if (c == '+' || c == '-' || c == '[' || c == '(') {
+            return true;
+        }
+        // 純數字、百分比、分數這類
+        return t.chars().noneMatch(Character::isLetter);
     }
 
     /**
