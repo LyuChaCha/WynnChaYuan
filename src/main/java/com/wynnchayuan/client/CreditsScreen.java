@@ -18,6 +18,9 @@ import java.util.List;
  */
 public final class CreditsScreen extends Screen {
 
+    /** 頭像邊長。和文字高度接近，排在一起才不會一大一小。 */
+    private static final int HEAD = 12;
+
     private final Screen parent;
 
     public CreditsScreen(Screen parent) {
@@ -50,15 +53,17 @@ public final class CreditsScreen extends Screen {
                 cx, y, Colors.SUBTLE);
         y += 24;
 
-        for (Section section : Credits.sections()) {
-            g.drawCenteredString(this.font,
-                    Component.literal(section.title()).withStyle(ChatFormatting.YELLOW),
-                    cx, y, Colors.HIGHLIGHT);
-            y += 12;
-            for (String name : section.names()) {
+        for (Credits.Section section : Credits.sections()) {
+            drawSectionTitle(g, cx, y, section);
+            y += 14;
+            for (Credits.Member member : section.members()) {
+                drawMember(g, cx, y, member, section.color());
+                y += HEAD + 4;
+            }
+            if (section.members().isEmpty()) {
                 g.drawCenteredString(this.font,
-                        Component.literal(name).withStyle(ChatFormatting.WHITE), cx, y, Colors.TEXT);
-                y += 11;
+                        Component.literal("—— 等你加入 ——"), cx, y, Colors.FAINT);
+                y += 13;
             }
             y += 8;
         }
@@ -73,6 +78,47 @@ public final class CreditsScreen extends Screen {
         }
     }
 
+    /** 分區標題：左右各一條同色細線，比純文字更看得出是分隔。 */
+    private void drawSectionTitle(GuiGraphics g, int cx, int y, Credits.Section section) {
+        String role = section.role();
+        int color = section.color();
+        g.drawCenteredString(this.font, Component.literal(role), cx, y, color);
+
+        int half = this.font.width(role) / 2;
+        int faded = (color & 0x00FFFFFF) | 0x60000000;
+        g.fill(cx - half - 34, y + 3, cx - half - 6, y + 4, faded);
+        g.fill(cx + half + 6, y + 3, cx + half + 34, y + 4, faded);
+    }
+
+    /**
+     * 一位貢獻者：頭像、暱稱、Minecraft ID。
+     *
+     * <p>暱稱用分區的顏色，ID 用灰色 —— 兩者都用同一個顏色的話，
+     * 一眼看過去分不出哪個是稱呼、哪個是遊戲帳號。
+     */
+    private void drawMember(GuiGraphics g, int cx, int y, Credits.Member member, int color) {
+        String name = member.name();
+        String id = member.hasHead() ? member.mc() : "";
+        int gap = id.isEmpty() ? 0 : 6;
+
+        int nameW = this.font.width(name);
+        int idW = id.isEmpty() ? 0 : this.font.width(id);
+        int headW = member.hasHead() ? HEAD + 5 : 0;
+        int total = headW + nameW + gap + idW;
+
+        int x = cx - total / 2;
+        if (member.hasHead()) {
+            PlayerHeads.draw(g, member.mc(), x, y, HEAD);
+            x += HEAD + 5;
+        }
+        // 頭像 8px 高、文字 9px，讓文字對到頭像的視覺中線
+        int textY = y + (HEAD - 8) / 2;
+        g.drawString(this.font, Component.literal(name), x, textY, color);
+        if (!id.isEmpty()) {
+            g.drawString(this.font, Component.literal(id), x + nameW + gap, textY, Colors.DIM);
+        }
+    }
+
     @Override
     public void onClose() {
         this.minecraft.setScreen(parent);
@@ -83,6 +129,4 @@ public final class CreditsScreen extends Screen {
         return false;
     }
 
-    /** 名單的一個分區。 */
-    public record Section(String title, List<String> names) {}
 }

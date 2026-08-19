@@ -93,41 +93,104 @@ public final class LineTranslator {
             }
             any = true;
             Style display = forDisplay(style);
-            pieces.add(Piece.text(replaced, display));
+            pieces.add(Piece.translated(replaced, raw, display));
         }
         if (!any) {
             return null;
         }
 
-        int alignAt = findAlignPoint(pieces);
-        if (alignAt < 0) {
-            return assemble(pieces, -1, 0);    // 沒有欄位結構，不必調
-        }
-        if (!pieces.get(alignAt).isSpace()) {
-            // 這種行原本靠標籤夠長就自然排到欄位位置，伺服器沒插對齊字元。
-            // 翻譯後標籤變短就沒東西撐開，數值會整個貼到標籤旁邊 ——
-            // 所以就地補一個寬度 0 的空白，下面再把差額加進去。
-            pieces.add(alignAt, Piece.space(0,
-                    SpaceOffset.styleFor(pieces.get(alignAt).style())));
+        // 沒有任何現成的對齊空白，就在標籤與數值的交界補一個。
+        // 這種行原本靠標籤夠長自然排到欄位位置，伺服器沒插對齊字元；
+        // 翻譯後標籤變短就沒東西撐開，數值會整個貼到標籤旁邊。
+        if (!hasAlignSpace(pieces)) {
+            int boundary = findAlignPoint(pieces);
+            if (boundary >= 0 && !pieces.get(boundary).isSpace()) {
+                pieces.add(boundary, Piece.space(0,
+                        SpaceOffset.styleFor(pieces.get(boundary).style())));
+            }
         }
 
-        // 先照原樣組一次，然後「量」出整行差多少，而不是把各片段的差額「算」總和。
-        //
-        // 算的方式只要漏掉任何一項（片段間的空白、字型不同造成的字距差、
-        // 編碼後空白字元的實際寬度）就會差個幾像素，畫面上看得出來。
-        // 量整行則是把所有因素一次涵蓋進去，而且 U+D0000+n 的寬度精確等於 n 像素，
-        // 所以補一次就會準。
-        int originalWidth = widthOf(line);
-        Component draft = assemble(pieces, -1, 0);
-        int delta = originalWidth - widthOf(draft);
+        List<Piece> aligned = alignColumns(pieces);
 
-        // 前導空白代表這行是「置中／縮排」而不是「標籤 + 數值」：
-        // 空白在最前面，後面才是文字。這種行要維持置中，
-        // 補的寬度只能是差額的一半 —— 補滿會把整行推到右邊去。
-        if (isLeading(pieces, alignAt)) {
-            delta /= 2;
+        // 只有前導空白的行是「置中／縮排」而不是「標籤 + 數值」。
+        // 這種行沒有兩側都有文字的空白，上面那一輪不會動到它，
+        // 所以另外量整行、補一半 —— 補滿會把整行推到右邊去。
+        int lead = leadingSpace(aligned);
+        if (lead >= 0) {
+            int delta = widthOf(line) - widthOf(assemble(aligned, -1, 0));
+            return assemble(aligned, lead, delta / 2);
         }
-        return assemble(pieces, alignAt, delta);
+        return assemble(aligned, -1, 0);
+    }
+
+    /**
+     * 讓每一個對齊欄後面的內容，落回與原文相同的水平位置。
+     *
+     * <h2>為什麼要逐欄，不能只調一個</h2>
+     * 素材的數值行長這樣：
+     *
+     * <pre>
+     *   Spell Damage  [對齊空白 A]  +60 to  [對齊空白 B]  +75
+     * </pre>
+     *
+     * 兩個空白各自負責一欄：A 讓「最小值」對齊，B 讓「最大值」對齊。
+     * 只調其中一個的話，另一欄就會跑掉——而且<b>整行的總寬度仍然是對的</b>，
+     * 所以「量整行寬度」那種自我檢查完全看不出問題，只有肉眼盯著才發現
+     * 數值黏在標籤旁邊、右邊空一大塊。
+     *
+     * <p>做法是由左往右累計「翻譯後比原文寬了多少」（drift），每碰到一個
+     * 對齊空白就把累計的差額從它身上扣掉，然後歸零。這樣每一欄的起點都會
+     * 精準回到原文的位置，有幾欄就補幾次。
+     *
+     * <p>只補「兩側都有文字」的空白：行尾的留白邊距、行首的縮排都不是欄位
+     * 交界，動它們只會讓整行位移。
+     */
+    private static List<Piece> alignColumns(List<Piece> pieces) {
+        List<Piece> out = new ArrayList<>(pieces.size());
+        int drift = 0;
+        for (int i = 0; i < pieces.size(); i++) {
+            Piece p = pieces.get(i);
+            if (!p.isSpace()) {
+                drift += widthOf(literal(p.text(), p.style()))
+                        - widthOf(literal(p.origText(), p.style()));
+                out.add(p);
+                continue;
+            }
+            if (isAlignSpace(pieces, i)) {
+                out.add(Piece.space(p.spacePx() - drift, p.style()));
+                drift = 0;
+            } else {
+                out.add(p);
+            }
+        }
+        return out;
+    }
+
+    /** 兩側都有實際文字的空白，才是欄位交界。 */
+    static boolean isAlignSpace(List<Piece> pieces, int index) {
+        return pieces.get(index).isSpace()
+                && !isLeading(pieces, index)
+                && hasTextAfter(pieces, index);
+    }
+
+    private static boolean hasAlignSpace(List<Piece> pieces) {
+        for (int i = 0; i < pieces.size(); i++) {
+            if (isAlignSpace(pieces, i)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** 行首的縮排／置中空白；沒有就回傳 -1。 */
+    private static int leadingSpace(List<Piece> pieces) {
+        for (int i = 0; i < pieces.size(); i++) {
+            if (pieces.get(i).isSpace() && isLeading(pieces, i)
+                    && hasTextAfter(pieces, i)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -254,13 +317,19 @@ public final class LineTranslator {
      * {@code AlignPointTest} 測得到 {@link #findAlignPoint}——對齊是這個專案
      * 反覆出問題的地方，而畫面上要靠肉眼比對幾個像素，很難察覺。
      */
-    record Piece(String text, Style style, int spacePx, boolean isSpace) {
+    record Piece(String text, String origText, Style style, int spacePx, boolean isSpace) {
+        /** 沒有被翻譯的片段：原文就是它自己。 */
         static Piece text(String t, Style s) {
-            return new Piece(t, s, 0, false);
+            return new Piece(t, t, s, 0, false);
+        }
+
+        /** 翻譯過的片段。原文要留著，才算得出這一段寬度變了多少。 */
+        static Piece translated(String t, String orig, Style s) {
+            return new Piece(t, orig, s, 0, false);
         }
 
         static Piece space(int px, Style s) {
-            return new Piece("", s, px, true);
+            return new Piece("", "", s, px, true);
         }
     }
 

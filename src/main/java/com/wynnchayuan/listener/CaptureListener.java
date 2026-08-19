@@ -2,6 +2,7 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.DialogueBuffer;
+import com.wynnchayuan.capture.CombatText;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.CollectorConfig;
@@ -174,6 +175,12 @@ public final class CaptureListener {
      */
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onLabel(TextDisplayChangedEvent.Text event) {
+        // 傷害數字、閃避、格擋跟 NPC 名牌是同一種東西，事件層分不出來。
+        // 收集端也要擋：傷害數字每次都不一樣，收進去只會累積成幾千條
+        // 永遠不會有人翻的垃圾。
+        if (CombatText.isIndicator(event.getText())) {
+            return;
+        }
         event.getLabelInfo()
              .filter(NpcLabelInfo.class::isInstance)
              .map(NpcLabelInfo.class::cast)
@@ -217,6 +224,11 @@ public final class CaptureListener {
         try {
             StyledText original = event.getText();
             if (original == null || GlyphSplitter.isGlyphOnly(original)) {
+                return;
+            }
+            // 傷害數字、閃避、格擋也是用名牌實作的，事件層分不出來。
+            // 不擋的話打怪時每被打一下就會冒一個翻譯小框。
+            if (CombatText.isIndicator(original)) {
                 return;
             }
             if (mode == CollectorConfig.NametagMode.LOOK_AT) {

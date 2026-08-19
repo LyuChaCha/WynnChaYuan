@@ -113,6 +113,14 @@ tasks.register('runTranslateChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runTranslateChecks' }
 
+tasks.register('runCombatChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證戰鬥浮動提示的判斷'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.CombatTextTest'
+}
+tasks.named('check') { dependsOn 'runCombatChecks' }
+
 tasks.register('runAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證欄位對齊點的選擇'
