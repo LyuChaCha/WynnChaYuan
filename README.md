@@ -116,6 +116,27 @@ python tools/fetch.py    # 從官方 CDN 下載
 python tools/build.py    # 抽取、分類、參數化 → 工作檔
 ```
 
+## 團隊
+
+同一份名單也顯示在遊戲內（**F6 → 關於／貢獻者**），含 Minecraft 頭像。
+要加人只要改 [`credits.json`](src/main/resources/assets/wynnchayuan/credits.json)，不必動程式。
+
+### 開發者
+
+| 名稱 | Minecraft ID |
+|---|---|
+| LyuChaCha | `Green_teaTW` |
+
+### 贊助者
+
+| 名稱 | Minecraft ID |
+|---|---|
+| ㄉ綠 | `MlyuL` |
+
+### 貢獻者
+
+還沒有人 —— 翻一條就會出現在這裡。見 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
 ## 資料來源與致謝
 
 - 物品與技能資料取自 [Wynntils](https://github.com/Wynntils/Wynntils) 使用的公開 CDN

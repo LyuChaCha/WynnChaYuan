@@ -30,7 +30,6 @@ public final class SettingsScreen extends Screen {
 
     private Component status = Component.empty();
     private EditBox colorBox;
-    private EditBox nametagHoldBox;
     private EditBox dialogueHoldBox;
     private Button reloadButton;
 
@@ -72,7 +71,7 @@ public final class SettingsScreen extends Screen {
     }
 
     private int dataY() {
-        return TOP - 20 + cardH(5) + 20 + 20;   // 翻譯卡底部 + 間距 + 卡片標題
+        return TOP - 20 + cardH(4) + 20 + 20;   // 翻譯卡底部 + 間距 + 卡片標題
     }
 
     @Override
@@ -116,23 +115,17 @@ public final class SettingsScreen extends Screen {
             WynnChaYuan.translations().setTranslateNames(on);
             b.setMessage(itemNameLabel());
         });
-        row(right, TOP + rowH(), this::nametagLabel, b -> {
-            WynnChaYuan.config().cycleNametagMode();
-            b.setMessage(nametagLabel());
-        });
-        nametagHoldBox = secondsBox(right, TOP + rowH() * 2,
-                WynnChaYuan.config().nametagHoldMs());
-        addRenderableWidget(Button.builder(Component.literal("套用"),
-                b -> applySeconds(true))
-                .bounds(right + COL_W - 42, TOP + rowH() * 2, 42, 20).build());
+        addRenderableWidget(Button.builder(Component.literal("NPC 名牌設定…"),
+                b -> this.minecraft.setScreen(new NametagScreen(this)))
+                .bounds(right, TOP + rowH(), COL_W, 20).build());
 
-        dialogueHoldBox = secondsBox(right, TOP + rowH() * 3,
+        dialogueHoldBox = secondsBox(right, TOP + rowH() * 2,
                 WynnChaYuan.config().dialogueHoldMs());
         addRenderableWidget(Button.builder(Component.literal("套用"),
                 b -> applySeconds(false))
-                .bounds(right + COL_W - 42, TOP + rowH() * 3, 42, 20).build());
+                .bounds(right + COL_W - 42, TOP + rowH() * 2, 42, 20).build());
 
-        row(right, TOP + rowH() * 4, this::overlayLabel, b -> {
+        row(right, TOP + rowH() * 3, this::overlayLabel, b -> {
             WynnChaYuan.config().toggleOverlays();
             b.setMessage(overlayLabel());
         });
@@ -174,15 +167,11 @@ public final class SettingsScreen extends Screen {
         return box;
     }
 
-    private void applySeconds(boolean nametag) {
-        boolean ok = nametag
-                ? WynnChaYuan.config().setNametagHoldSeconds(nametagHoldBox.getValue())
-                : WynnChaYuan.config().setDialogueHoldSeconds(dialogueHoldBox.getValue());
-        if (ok) {
-            int ms = nametag ? WynnChaYuan.config().nametagHoldMs()
-                             : WynnChaYuan.config().dialogueHoldMs();
-            EditBox box = nametag ? nametagHoldBox : dialogueHoldBox;
-            box.setValue(ms == Integer.MAX_VALUE ? "0" : String.valueOf(ms / 1000));
+    private void applySeconds(boolean unusedNametagFlag) {
+        if (WynnChaYuan.config().setDialogueHoldSeconds(dialogueHoldBox.getValue())) {
+            int ms = WynnChaYuan.config().dialogueHoldMs();
+            dialogueHoldBox.setValue(
+                    ms == Integer.MAX_VALUE ? "0" : String.valueOf(ms / 1000));
             status = Component.literal("✔ 已設定停留時間").withStyle(ChatFormatting.GREEN);
         } else {
             status = Component.literal("✘ 請輸入秒數（整數，0 = 持續顯示）")
@@ -235,15 +224,6 @@ public final class SettingsScreen extends Screen {
 
     private Component itemNameLabel() {
         return Component.literal("翻譯物品名稱：" + onOff(WynnChaYuan.config().translateItemNames()));
-    }
-
-    private Component nametagLabel() {
-        String name = switch (WynnChaYuan.config().nametagMode()) {
-            case OFF -> "關閉";
-            case LOOK_AT -> "注視時顯示";
-            case REPLACE -> "直接取代原文";
-        };
-        return Component.literal("NPC 名牌：" + name);
     }
 
     private Component sourceLabel() {
@@ -320,7 +300,7 @@ public final class SettingsScreen extends Screen {
 
         // 卡片要墊在按鈕底下，所以先於 super.render
         Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(6));
-        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(5));
+        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(4));
         Cards.panel(g, right - 8, dataY - 20, COL_W + 16, cardH(4));
 
         super.render(g, mouseX, mouseY, delta);
@@ -341,12 +321,11 @@ public final class SettingsScreen extends Screen {
                 "框線顏色（16 進位色碼，例如 #6FA8D8）");
 
         Cards.hint(g, this.font, right + 4, TOP + hintDy(), "裝備名稱多是專有名詞，通常保留原文");
-        Cards.hint(g, this.font, right + 4, TOP + rowH() + hintDy(), "注視時顯示可保留原文，方便溝通");
+        Cards.hint(g, this.font, right + 4, TOP + rowH() + hintDy(),
+                "模式、停留秒數、偵測距離與夾角");
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 2 + hintDy(),
-                "名牌停留秒數（0 = 持續顯示）");
-        Cards.hint(g, this.font, right + 4, TOP + rowH() * 3 + hintDy(),
                 "對話框停留秒數（0 = 持續顯示）");
-        Cards.hint(g, this.font, right + 4, TOP + rowH() * 4 + hintDy(),
+        Cards.hint(g, this.font, right + 4, TOP + rowH() * 3 + hintDy(),
                 "NPC 對話與任務追蹤的翻譯小框");
 
         Cards.hint(g, this.font, right + 4, dataY + hintDy(), "公會、任務書等 GUI 的文字（預設關）");

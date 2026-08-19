@@ -369,7 +369,145 @@ public final class LineTranslator {
         if (translated == null || translated.isBlank()) {
             return null;
         }
-        return rebuild(translated, parts);
+        Component rebuilt = rebuild(translated, parts);
+        return rebuilt == null ? null : realign(line, rebuilt);
+    }
+
+    /**
+     * 把整行重建的結果重新對齊回原文的版面。
+     *
+     * <h2>為什麼這條路也需要</h2>
+     * {@link #rebuild} 會把原本的排版空白<b>原樣填回去</b>——那些偏移是按<b>英文的
+     * 寬度</b>算好的。鑑定提示那種置中的三行就是這樣壞掉的：
+     *
+     * <pre>
+     *     This item's power has been sealed,
+     *       an ◉ Item Identifier can unlock
+     *              its potential.
+     * </pre>
+     *
+     * 中文比英文短，前導偏移卻沒變，整排就往左偏，看起來像沒有置中。
+     *
+     * <h2>怎麼對回去</h2>
+     * 空白在原文與譯文之間是<b>一對一</b>的（{@code rebuild} 依序填回），
+     * 所以可以拿它們當錨點，把兩邊切成一樣多段，逐段比寬度：
+     *
+     * <ul>
+     *   <li>行首就是空白 → 這行是置中／縮排，前導偏移補<b>差額的一半</b></li>
+     *   <li>其餘的空白 → 兩側都有文字才是欄位交界，補<b>累計的位移</b>，
+     *       和 {@link #alignColumns} 同一套邏輯</li>
+     * </ul>
+     *
+     * <p>數量對不上就原樣返回。寧可維持現狀，也不要憑猜測動版面。
+     */
+    private static Component realign(StyledText original, Component rebuilt) {
+        List<Run> orig = runs(original.getComponent());
+        List<Run> made = runs(rebuilt);
+        int spaces = countSpaces(made);
+        if (spaces == 0 || spaces != countSpaces(orig)) {
+            return rebuilt;
+        }
+        List<Integer> origSeg = segmentWidths(orig);
+        List<Integer> madeSeg = segmentWidths(made);
+
+        int[] adjust = new int[spaces];
+        boolean leading = origSeg.get(0) == 0 && madeSeg.get(0) == 0;
+
+        if (leading) {
+            int delta = sum(origSeg) - sum(madeSeg);
+            adjust[0] = delta / 2;             // 置中：補滿會把整行推到右邊
+        }
+        int drift = 0;
+        for (int k = leading ? 1 : 0; k < spaces; k++) {
+            drift += madeSeg.get(k) - origSeg.get(k);
+            // 兩側都有文字才是欄位交界；行尾的留白邊距不能動
+            if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0) {
+                adjust[k] = -drift;
+                drift = 0;
+            }
+        }
+        return apply(made, adjust);
+    }
+
+    /** 一段連續的同型內容：不是排版空白，就是文字。 */
+    private record Run(boolean space, int px, Style style, String text) {}
+
+    private static List<Run> runs(Component component) {
+        List<Run> out = new ArrayList<>();
+        component.visit((style, text) -> {
+            if (!text.isEmpty()) {
+                out.add(isAdjustableSpace(style, text)
+                        ? new Run(true, SpaceOffset.decode(text), style, text)
+                        : new Run(false, 0, style, text));
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return out;
+    }
+
+    /**
+     * 這段空白能不能安全地重新編碼。
+     *
+     * <p>光看字型不夠：{@code minecraft:space} 底下也可能掛著<b>不是</b>寬度偏移的
+     * 字元（材質包自己定義的圖示就是這樣）。那種字元 {@code decode} 會得到 0，
+     * 重新編碼就變成完全不同的東西——畫面上是圖示憑空消失或變成方框。
+     *
+     * <p>所以要求它<b>編解碼能原樣繞回來</b>。繞不回來就當成普通文字原封不動抄過去。
+     */
+    private static boolean isAdjustableSpace(Style style, String text) {
+        return SpaceOffset.isSpaceFont(style)
+                && text.equals(SpaceOffset.encode(SpaceOffset.decode(text)));
+    }
+
+    private static int countSpaces(List<Run> runs) {
+        int n = 0;
+        for (Run r : runs) {
+            if (r.space()) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    /** 以空白為界切成幾段，每段的文字寬度。長度固定是「空白數 + 1」。 */
+    private static List<Integer> segmentWidths(List<Run> runs) {
+        List<Integer> out = new ArrayList<>();
+        int width = 0;
+        for (Run r : runs) {
+            if (r.space()) {
+                out.add(width);
+                width = 0;
+            } else {
+                width += widthOf(literal(r.text(), r.style()));
+            }
+        }
+        out.add(width);
+        return out;
+    }
+
+    private static int sum(List<Integer> values) {
+        int total = 0;
+        for (int v : values) {
+            total += v;
+        }
+        return total;
+    }
+
+    /** 把調整量套回第 n 個空白。 */
+    private static Component apply(List<Run> runs, int[] adjust) {
+        MutableComponent out = Component.empty();
+        int index = 0;
+        for (Run r : runs) {
+            if (!r.space()) {
+                out.append(literal(r.text(), r.style()));
+                continue;
+            }
+            String encoded = SpaceOffset.encode(r.px() + adjust[index++]);
+            if (!encoded.isEmpty()) {
+                out.append(literal(encoded, r.style()));
+            }
+        }
+        return out;
     }
 
     /**

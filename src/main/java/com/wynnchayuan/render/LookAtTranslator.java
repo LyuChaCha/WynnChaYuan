@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
@@ -31,11 +32,11 @@ import java.util.WeakHashMap;
  */
 public final class LookAtTranslator {
 
-    /** 視線與目標的夾角餘弦下限。0.995 約等於 5.7 度。 */
-    private static final double AIM_THRESHOLD = 0.995;
-
-    /** 超過這個距離就不顯示，避免遠處一堆名牌互相搶。 */
-    private static final double MAX_DISTANCE = 24.0;
+    /**
+     * 名牌實體本身幾乎沒有體積，直接拿它的碰撞箱去打射線會永遠打不中。
+     * 撐開成大約一個方塊，對應玩家眼中「名牌那一塊」的大小。
+     */
+    private static final double LABEL_BOX = 0.5;
 
     /**
      * 記錄看過的名牌。
@@ -90,31 +91,66 @@ public final class LookAtTranslator {
         }
     }
 
-    /** 找出玩家正對著的那個名牌。 */
+    /**
+     * 找出玩家正對著的那個名牌。
+     *
+     * <h2>為什麼不是「夾角最小的贏」</h2>
+     * 夾角會隨距離變小：遠處的 NPC 就算在畫面邊緣，夾角也可能比你面前這位還小。
+     * 只比夾角的話，站在攤位前面卻翻到後面那排的名字。
+     *
+     * <p>所以分兩層：
+     *
+     * <ol>
+     *   <li><b>準心真的打到誰</b>——用射線打名牌的碰撞箱，最近的那個贏。
+     *       這是「我就是在看他」的情況，最明確，優先權最高。</li>
+     *   <li>都沒打到才退回夾角錐，而且錐內<b>比距離</b>不比夾角——
+     *       近的優先，因為那才是玩家眼前的東西。</li>
+     * </ol>
+     *
+     * <p>距離與夾角都可以在設定裡調：城裡 NPC 站得密，錐要收窄；
+     * 曠野找人則希望掃過去就跳。沒有一個值兩邊都好用。
+     */
     private static StyledText findAimedLabel(Minecraft mc) {
+        double range = WynnChaYuan.config().nametagRange();
+        double minDot = Math.cos(Math.toRadians(WynnChaYuan.config().nametagAngle()));
+
         Vec3 eye = mc.player.getEyePosition();
         Vec3 look = mc.player.getLookAngle();
+        Vec3 end = eye.add(look.scale(range));
 
-        StyledText best = null;
-        double bestDot = AIM_THRESHOLD;
+        StyledText hit = null;
+        double hitDistance = Double.MAX_VALUE;
+        StyledText nearest = null;
+        double nearestDistance = Double.MAX_VALUE;
 
         for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
             Entity entity = e.getKey();
             if (entity == null || !entity.isAlive()) {
                 continue;
             }
-            Vec3 delta = entity.position().subtract(eye);
-            double distance = delta.length();
-            if (distance > MAX_DISTANCE || distance < 0.1) {
+            double distance = entity.position().distanceTo(eye);
+            if (distance > range || distance < 0.1) {
                 continue;
             }
-            double dot = look.dot(delta.scale(1.0 / distance));
-            if (dot > bestDot) {               // 越接近 1 表示越正對著
-                bestDot = dot;
-                best = e.getValue();
+            AABB box = entity.getBoundingBox().inflate(LABEL_BOX);
+            if (box.clip(eye, end).isPresent()) {
+                if (distance < hitDistance) {
+                    hitDistance = distance;
+                    hit = e.getValue();
+                }
+                continue;
+            }
+            if (hit != null) {
+                continue;                      // 已經有直接命中的，錐內的就不用看了
+            }
+            Vec3 delta = entity.position().subtract(eye);
+            if (look.dot(delta.scale(1.0 / distance)) >= minDot
+                    && distance < nearestDistance) {
+                nearestDistance = distance;
+                nearest = e.getValue();
             }
         }
-        return best;
+        return hit != null ? hit : nearest;
     }
 
     /**
