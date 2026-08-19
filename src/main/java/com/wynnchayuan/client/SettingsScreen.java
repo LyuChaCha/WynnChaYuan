@@ -55,9 +55,9 @@ public final class SettingsScreen extends Screen {
         int right = rightX();
 
         // ---- 顯示 ----
-        row(left, TOP, this::panelLabel, b -> {
-            WynnChaYuan.config().togglePanel();
-            b.setMessage(panelLabel());
+        row(left, TOP, this::tooltipModeLabel, b -> {
+            WynnChaYuan.config().cycleTooltipMode();
+            b.setMessage(tooltipModeLabel());
         });
         row(left, TOP + ROW, this::anchorLabel, b -> {
             WynnChaYuan.config().togglePanelAnchor();
@@ -105,6 +105,11 @@ public final class SettingsScreen extends Screen {
         addRenderableWidget(Button.builder(Component.literal("套用"),
                 b -> applySeconds(false))
                 .bounds(right + COL_W - 42, TOP + ROW * 3, 42, 20).build());
+
+        row(right, TOP + ROW * 4, this::overlayLabel, b -> {
+            WynnChaYuan.config().toggleOverlays();
+            b.setMessage(overlayLabel());
+        });
 
         // ---- 資料 ----
         int dataY = dataY();
@@ -170,8 +175,17 @@ public final class SettingsScreen extends Screen {
 
     // ------------------------------------------------------------ 標籤
 
-    private Component panelLabel() {
-        return Component.literal("翻譯面板：" + onOff(WynnChaYuan.config().showPanel()));
+    private Component tooltipModeLabel() {
+        String name = switch (WynnChaYuan.config().tooltipMode()) {
+            case PANEL -> "另開面板";
+            case REPLACE -> "就地取代";
+            case OFF -> "關閉";
+        };
+        return Component.literal("物品翻譯：" + name);
+    }
+
+    private Component overlayLabel() {
+        return Component.literal("對話／追蹤小框：" + onOff(WynnChaYuan.config().showOverlays()));
     }
 
     private Component anchorLabel() {
@@ -203,17 +217,6 @@ public final class SettingsScreen extends Screen {
             case REPLACE -> "直接取代原文";
         };
         return Component.literal("NPC 名牌：" + name);
-    }
-
-    private Component nametagHoldLabel() {
-        int ms = WynnChaYuan.config().nametagHoldMs();
-        return Component.literal("名牌停留：" + (ms == 0 ? "立即消失" : (ms / 1000.0) + " 秒"));
-    }
-
-    private Component dialogueHoldLabel() {
-        int ms = WynnChaYuan.config().dialogueHoldMs();
-        return Component.literal("對話框停留："
-                + (ms == Integer.MAX_VALUE ? "持續顯示" : (ms / 1000) + " 秒"));
     }
 
     private Component sourceLabel() {
@@ -265,7 +268,7 @@ public final class SettingsScreen extends Screen {
 
         // 卡片要墊在按鈕底下，所以先於 super.render
         Cards.panel(g, left - 8, TOP - 20, COL_W + 16, ROW * 6 + 14);
-        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, ROW * 4 + 14);
+        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, ROW * 5 + 14);
         Cards.panel(g, right - 8, dataY - 20, COL_W + 16, ROW * 4 + 14);
 
         super.render(g, mouseX, mouseY, delta);
@@ -277,7 +280,7 @@ public final class SettingsScreen extends Screen {
         Cards.title(g, this.font, right, TOP - 16, "翻譯");
         Cards.title(g, this.font, right, dataY - 16, "資料");
 
-        Cards.hint(g, this.font, left + 2, TOP + 21, "關掉之後仍然照常收集字串");
+        Cards.hint(g, this.font, left + 2, TOP + 21, "面板保留原文；取代則畫面較乾淨");
         Cards.hint(g, this.font, left + 2, TOP + ROW + 21, "固定位置時面板不跟著滑鼠跑");
         Cards.hint(g, this.font, left + 2, TOP + ROW * 2 + 21, "拖曳示意方框決定位置");
         Cards.hint(g, this.font, left + 2, TOP + ROW * 3 + 21, "自動會依畫面空間左右讓位");
@@ -291,6 +294,8 @@ public final class SettingsScreen extends Screen {
                 "名牌停留秒數（0 = 持續顯示）");
         Cards.hint(g, this.font, right + 2, TOP + ROW * 3 + 21,
                 "對話框停留秒數（0 = 持續顯示）");
+        Cards.hint(g, this.font, right + 2, TOP + ROW * 4 + 21,
+                "NPC 對話與任務追蹤的翻譯小框");
 
         Cards.hint(g, this.font, right + 2, dataY + 21, "公會、任務書等 GUI 的文字（預設關）");
         Cards.hint(g, this.font, right + 2, dataY + ROW + 21, "GitHub 會同步大家的最新翻譯");

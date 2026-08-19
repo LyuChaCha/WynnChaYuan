@@ -23,8 +23,20 @@ public final class CollectorConfig {
 
     private final Path file;
 
-    /** 是否顯示翻譯面板。用快捷鍵切換，關掉之後仍然照常收集。 */
-    private boolean showPanel = true;
+    /**
+     * 物品 tooltip 的翻譯呈現方式。
+     *
+     * <p>{@code PANEL} 在旁邊另開一塊，原文完全不動——預設值，最保險。
+     * {@code REPLACE} 直接把原文換成譯文，畫面乾淨但看不到英文原名。
+     * 兩者用的是同一套逐片段替換，格式保真程度一樣。
+     */
+    private TooltipMode tooltipMode = TooltipMode.PANEL;
+
+    /** PANEL 另開面板；REPLACE 就地取代；OFF 不翻譯物品。 */
+    public enum TooltipMode { PANEL, REPLACE, OFF }
+
+    /** 對話框與任務追蹤小框是否顯示。與 tooltip 無關，各自獨立。 */
+    private boolean showOverlays = true;
 
     /** 是否收集未翻譯字串。 */
     private boolean collect = true;
@@ -109,8 +121,27 @@ public final class CollectorConfig {
         load();
     }
 
-    public boolean showPanel() {
-        return showPanel;
+    public TooltipMode tooltipMode() {
+        return tooltipMode;
+    }
+
+    /** 在 面板 → 就地取代 → 關閉 之間輪替。 */
+    public TooltipMode cycleTooltipMode() {
+        TooltipMode[] all = TooltipMode.values();
+        tooltipMode = all[(tooltipMode.ordinal() + 1) % all.length];
+        save();
+        return tooltipMode;
+    }
+
+    /** 小框（對話、追蹤、名牌）的總開關。 */
+    public boolean showOverlays() {
+        return showOverlays;
+    }
+
+    public boolean toggleOverlays() {
+        showOverlays = !showOverlays;
+        save();
+        return showOverlays;
     }
 
     public boolean collect() {
@@ -352,12 +383,7 @@ public final class CollectorConfig {
         return collect;
     }
 
-    /** 切換面板顯示，並立刻存檔。 */
-    public boolean togglePanel() {
-        showPanel = !showPanel;
-        save();
-        return showPanel;
-    }
+
 
     private void load() {
         if (!Files.exists(file)) {
@@ -365,8 +391,17 @@ public final class CollectorConfig {
         }
         try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
             JsonObject o = JsonParser.parseReader(r).getAsJsonObject();
-            if (o.has("showPanel")) {
-                showPanel = o.get("showPanel").getAsBoolean();
+            if (o.has("tooltipMode")) {
+                tooltipMode = TooltipMode.valueOf(o.get("tooltipMode").getAsString());
+            } else if (o.has("showPanel")) {
+                // 舊設定檔：showPanel 為 false 代表不翻 tooltip
+                tooltipMode = o.get("showPanel").getAsBoolean()
+                        ? TooltipMode.PANEL : TooltipMode.OFF;
+            }
+            if (o.has("showOverlays")) {
+                showOverlays = o.get("showOverlays").getAsBoolean();
+            } else if (o.has("showPanel")) {
+                showOverlays = o.get("showPanel").getAsBoolean();
             }
             if (o.has("collect")) {
                 collect = o.get("collect").getAsBoolean();
@@ -419,7 +454,8 @@ public final class CollectorConfig {
         try {
             Files.createDirectories(file.getParent());
             JsonObject o = new JsonObject();
-            o.addProperty("showPanel", showPanel);
+            o.addProperty("tooltipMode", tooltipMode.name());
+            o.addProperty("showOverlays", showOverlays);
             o.addProperty("collect", collect);
             o.addProperty("source", source.name());
             o.addProperty("collectGuiText", collectGuiText);

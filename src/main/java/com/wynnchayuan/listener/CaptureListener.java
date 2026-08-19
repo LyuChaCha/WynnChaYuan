@@ -211,7 +211,7 @@ public final class CaptureListener {
      */
     private void translateNametag(TextDisplayChangedEvent.Text event) {
         CollectorConfig.NametagMode mode = WynnChaYuan.config().nametagMode();
-        if (!WynnChaYuan.config().showPanel() || mode == CollectorConfig.NametagMode.OFF) {
+        if (!WynnChaYuan.config().showOverlays() || mode == CollectorConfig.NametagMode.OFF) {
             return;
         }
         try {
