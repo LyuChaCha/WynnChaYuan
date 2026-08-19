@@ -58,7 +58,9 @@ def load(path: Path) -> list[dict]:
 
 
 def files() -> list[Path]:
-    found = sorted(TRANSLATIONS.glob("*.json"))
+    # 底線開頭的是設定檔（_index.json 之類），不是譯文
+    found = [p for p in sorted(TRANSLATIONS.glob("*.json"))
+             if not p.name.startswith("_")]
     return sorted(found, key=lambda p: PRIORITY.get(p.stem, 99))
 
 
