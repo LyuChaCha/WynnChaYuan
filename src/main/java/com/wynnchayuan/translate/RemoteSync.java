@@ -45,20 +45,13 @@ public final class RemoteSync {
             "https://cdn.jsdelivr.net/gh/LyuChaCha/WynnChaYuan@main/" + PATH,
             "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/" + PATH);
 
-    /** 要同步的檔案。與內建的那份一致。 */
-    private static final List<String> FILES = List.of(
-            "ui-labels.json",
-            "quest.json",
-            "npc.json",
-            "gear-weapon.json",
-            "gear-armour.json",
-            "gear-accessory.json",
-            "ability.json",
-            "ingredient.json",
-            "material.json",
-            "tome.json",
-            "aspect.json",
-            "charm.json");
+    /** 要同步的檔案。清單來自 _index.json，新增譯文檔不必改這裡。 */
+    private static List<String> files() {
+        List<String> names = new java.util.ArrayList<>();
+        names.add("_index.json");              // 先更新清單，才知道還有哪些新檔案
+        names.addAll(FileIndex.bundled());
+        return names;
+    }
 
     private static final Duration TIMEOUT = Duration.ofSeconds(15);
 
@@ -126,7 +119,7 @@ public final class RemoteSync {
                 .followRedirects(HttpClient.Redirect.NORMAL)
                 .build()) {
 
-            for (String name : FILES) {
+            for (String name : files()) {
                 if (fetchOne(client, cacheDir, name)) {
                     ok++;
                 } else {

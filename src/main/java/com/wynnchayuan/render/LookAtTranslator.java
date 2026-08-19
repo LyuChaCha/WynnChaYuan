@@ -9,6 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -129,12 +130,26 @@ public final class LookAtTranslator {
 
     /** 在準心下方畫一個小框。 */
     private static void drawBubble(GuiGraphics graphics, Minecraft mc, Component text) {
-        int w = mc.font.width(text) + 8;
-        int h = mc.font.lineHeight + 6;
+        // 名牌本來就是多行的，而且夾著 3D 版面用的對齊偏移 —— 都在這裡處理掉
+        List<Component> lines = Boxes.toLines(text);
+        if (lines.isEmpty()) {
+            return;
+        }
+        int lineHeight = mc.font.lineHeight + 1;
+        int w = 0;
+        for (Component line : lines) {
+            w = Math.max(w, mc.font.width(line));
+        }
+        w += 8;
+        int h = lines.size() * lineHeight + 6;
         int x = (graphics.guiWidth() - w) / 2;
         int y = graphics.guiHeight() / 2 + 16;   // 準心下方，不擋住準心本身
 
         Boxes.draw(graphics, x, y, w, h);
-        graphics.drawString(mc.font, text, x + 4, y + 4, 0xFFFFFF);
+        int ty = y + 4;
+        for (Component line : lines) {
+            graphics.drawString(mc.font, line, x + 4, ty, 0xFFFFFF);
+            ty += lineHeight;
+        }
     }
 }

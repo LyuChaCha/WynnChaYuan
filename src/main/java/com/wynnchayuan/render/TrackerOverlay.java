@@ -42,7 +42,7 @@ public final class TrackerOverlay {
             Component translated = LineTranslator.translate(styled, store);
             if (translated != null) {
                 any = true;
-                lines.add(translated);
+                lines.addAll(Boxes.toLines(translated));
             } else {
                 lines.add(LineTranslator.untranslated(styled));
             }
@@ -51,7 +51,7 @@ public final class TrackerOverlay {
             Component translated = LineTranslator.translate(task, store);
             if (translated != null) {
                 any = true;
-                lines.add(translated);
+                lines.addAll(Boxes.toLines(translated));
             } else {
                 lines.add(LineTranslator.untranslated(task));
             }

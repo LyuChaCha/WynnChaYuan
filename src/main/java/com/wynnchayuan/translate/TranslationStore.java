@@ -8,6 +8,7 @@ import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -72,8 +73,13 @@ public final class TranslationStore {
         }
 
         try (var files = Files.list(dir)) {
+            // 依 _index.json 的順序載入。順序有意義：後載入的會覆蓋先前同鍵的譯文，
+            // 所以專用檔（npc、quest）排在通用檔之後才能勝出。
+            List<String> order = FileIndex.forDirectory(dir);
             files.filter(p -> p.getFileName().toString().endsWith(".json"))
-                 .sorted()
+                 .filter(p -> !p.getFileName().toString().startsWith("_"))
+                 .sorted(java.util.Comparator.comparingInt(
+                         p -> indexOf(order, p.getFileName().toString())))
                  .forEach(this::load);
         } catch (Exception e) {
             lastResult = "讀取失敗：" + e.getMessage();
@@ -92,6 +98,12 @@ public final class TranslationStore {
             lastResult = "已載入 " + entries.size() + " 條譯文（" + loadedFiles + " 個檔案）";
             System.out.println("[WynnChaYuan] " + lastResult);
         }
+    }
+
+    /** 不在清單裡的檔案排到最後，但仍然會載入。 */
+    private static int indexOf(List<String> order, String name) {
+        int i = order.indexOf(name);
+        return i < 0 ? Integer.MAX_VALUE : i;
     }
 
     /** 上一次載入的人話結果，直接顯示給使用者看。 */

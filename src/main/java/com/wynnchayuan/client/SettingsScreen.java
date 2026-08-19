@@ -13,101 +13,117 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 /**
- * F6 開啟的設定面板。
+ * F6 開啟的設定畫面。
  *
- * <p>刻意只用原版 {@link Button}，不引入 Cloth Config／YACL——
+ * <p>分成三張卡片：顯示、翻譯、資料。純按鈕堆疊看不出哪些設定是一組的，
+ * 分卡之後不用看說明也大致猜得到。
+ *
+ * <p>只用原版 {@link Button} 與 {@link EditBox}，不引入 Cloth Config／YACL——
  * 設定就這幾項，多一個依賴只是多一個會壞掉的東西。
- *
- * <p>分成「顯示」與「翻譯」兩欄，每個按鈕下面附一行說明——
- * 光看「面板定位：固定位置」猜不出那是什麼意思。
  */
 public final class SettingsScreen extends Screen {
 
-    private static final int COL_W = 200;
-    private static final int ROW = 32;          // 按鈕 20 + 說明 12
+    private static final int COL_W = 196;
+    private static final int ROW = 31;          // 按鈕 20 + 說明 11
+    private static final int PAD = 10;
+    private static final int TOP = 62;
 
     private Component status = Component.empty();
     private EditBox colorBox;
 
     public SettingsScreen() {
-        super(Component.literal("WynnChaYuan 設定"));
+        super(Component.literal("WynnChaYuan"));
+    }
+
+    private int leftX() {
+        return this.width / 2 - COL_W - PAD;
+    }
+
+    private int rightX() {
+        return this.width / 2 + PAD;
+    }
+
+    private int dataY() {
+        return TOP + ROW * 5 + 34;
     }
 
     @Override
     protected void init() {
-        int left = this.width / 2 - COL_W - 10;
-        int right = this.width / 2 + 10;
-        int top = 52;
+        int left = leftX();
+        int right = rightX();
 
         // ---- 顯示 ----
-        addRow(left, top, this::panelLabel, b -> {
+        row(left, TOP, this::panelLabel, b -> {
             WynnChaYuan.config().togglePanel();
             b.setMessage(panelLabel());
         });
-        addRow(left, top + ROW, this::anchorLabel, b -> {
+        row(left, TOP + ROW, this::anchorLabel, b -> {
             WynnChaYuan.config().togglePanelAnchor();
             b.setMessage(anchorLabel());
         });
         addRenderableWidget(Button.builder(
                 Component.literal("調整面板位置…"),
                 b -> this.minecraft.setScreen(new PositionScreen(this)))
-                .bounds(left, top + ROW * 2, COL_W, 20).build());
-        addRow(left, top + ROW * 3, this::sideLabel, b -> {
+                .bounds(left, TOP + ROW * 2, COL_W, 20).build());
+        row(left, TOP + ROW * 3, this::sideLabel, b -> {
             WynnChaYuan.config().cyclePanelSide();
             b.setMessage(sideLabel());
         });
-        addRow(left, top + ROW * 4, this::gapLabel, b -> {
+        row(left, TOP + ROW * 4, this::gapLabel, b -> {
             WynnChaYuan.config().cyclePanelGap();
             b.setMessage(gapLabel());
         });
 
-        colorBox = new EditBox(this.font, left, top + ROW * 5, COL_W - 46, 20,
+        colorBox = new EditBox(this.font, left, TOP + ROW * 5, COL_W - 46, 20,
                 Component.literal("框線顏色"));
         colorBox.setValue(WynnChaYuan.config().accentColor());
         colorBox.setMaxLength(7);
         addRenderableWidget(colorBox);
         addRenderableWidget(Button.builder(Component.literal("套用"), b -> applyColor())
-                .bounds(left + COL_W - 42, top + ROW * 5, 42, 20).build());
+                .bounds(left + COL_W - 42, TOP + ROW * 5, 42, 20).build());
 
         // ---- 翻譯 ----
-        addRow(right, top, this::itemNameLabel, b -> {
+        row(right, TOP, this::itemNameLabel, b -> {
             boolean on = WynnChaYuan.config().toggleItemNames();
             WynnChaYuan.translations().setTranslateNames(on);
             b.setMessage(itemNameLabel());
         });
-        addRow(right, top + ROW, this::nametagLabel, b -> {
+        row(right, TOP + ROW, this::nametagLabel, b -> {
             WynnChaYuan.config().cycleNametagMode();
             b.setMessage(nametagLabel());
         });
-        addRow(right, top + ROW * 2, this::nametagHoldLabel, b -> {
+        row(right, TOP + ROW * 2, this::nametagHoldLabel, b -> {
             WynnChaYuan.config().cycleNametagHold();
             b.setMessage(nametagHoldLabel());
         });
-        addRow(right, top + ROW * 3, this::dialogueHoldLabel, b -> {
+        row(right, TOP + ROW * 3, this::dialogueHoldLabel, b -> {
             WynnChaYuan.config().cycleDialogueHold();
             b.setMessage(dialogueHoldLabel());
         });
-        addRow(right, top + ROW * 4, this::collectLabel, b -> {
-            WynnChaYuan.config().toggleCollect();
-            b.setMessage(collectLabel());
-        });
-        addRow(right, top + ROW * 5, this::sourceLabel, b -> {
+
+        // ---- 資料 ----
+        int dataY = dataY();
+        row(right, dataY, this::sourceLabel, b -> {
             WynnChaYuan.config().toggleSource();
             b.setMessage(sourceLabel());
         });
+        row(right, dataY + ROW, this::collectLabel, b -> {
+            WynnChaYuan.config().toggleCollect();
+            b.setMessage(collectLabel());
+        });
         addRenderableWidget(Button.builder(
                 Component.literal("重新載入譯文檔"), b -> reload())
-                .bounds(right, top + ROW * 6, COL_W, 20).build());
+                .bounds(right, dataY + ROW * 2, COL_W, 20).build());
 
+        // ---- 底部 ----
         addRenderableWidget(Button.builder(Component.literal("關於／貢獻者"),
                 b -> this.minecraft.setScreen(new CreditsScreen(this)))
-                .bounds(this.width / 2 - 155, this.height - 30, 100, 20).build());
-
+                .bounds(this.width / 2 - 152, this.height - 28, 100, 20).build());
         addRenderableWidget(Button.builder(Component.literal("完成"), b -> onClose())
-                .bounds(this.width / 2 - 50, this.height - 30, 100, 20).build());
+                .bounds(this.width / 2 + 52, this.height - 28, 100, 20).build());
     }
 
-    private void addRow(int x, int y, Supplier<Component> label, Consumer<Button> onPress) {
+    private void row(int x, int y, Supplier<Component> label, Consumer<Button> onPress) {
         addRenderableWidget(Button.builder(label.get(), onPress::accept)
                 .bounds(x, y, COL_W, 20).build());
     }
@@ -149,11 +165,6 @@ public final class SettingsScreen extends Screen {
         return Component.literal("NPC 名牌：" + name);
     }
 
-    private Component sourceLabel() {
-        boolean github = WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB;
-        return Component.literal("譯文來源：" + (github ? "GitHub（統一）" : "本機（測試）"));
-    }
-
     private Component nametagHoldLabel() {
         int ms = WynnChaYuan.config().nametagHoldMs();
         return Component.literal("名牌停留：" + (ms == 0 ? "立即消失" : (ms / 1000.0) + " 秒"));
@@ -165,15 +176,9 @@ public final class SettingsScreen extends Screen {
                 + (ms == Integer.MAX_VALUE ? "持續顯示" : (ms / 1000) + " 秒"));
     }
 
-    /** 套用色碼；格式不對就講清楚並還原，不要靜靜地忽略。 */
-    private void applyColor() {
-        if (WynnChaYuan.config().setAccentColor(colorBox.getValue())) {
-            colorBox.setValue(WynnChaYuan.config().accentColor());
-            status = Component.literal("✔ 已套用顏色").withStyle(ChatFormatting.GREEN);
-        } else {
-            colorBox.setValue(WynnChaYuan.config().accentColor());
-            status = Component.literal("✘ 色碼格式要像 #6FA8D8").withStyle(ChatFormatting.RED);
-        }
+    private Component sourceLabel() {
+        boolean github = WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB;
+        return Component.literal("譯文來源：" + (github ? "GitHub（統一）" : "本機（測試）"));
     }
 
     private Component collectLabel() {
@@ -184,7 +189,18 @@ public final class SettingsScreen extends Screen {
         return on ? "開" : "關";
     }
 
-    // ------------------------------------------------------------ 繪製
+    // ------------------------------------------------------------ 動作
+
+    /** 套用色碼；格式不對就講清楚並還原，不要靜靜地忽略。 */
+    private void applyColor() {
+        if (WynnChaYuan.config().setAccentColor(colorBox.getValue())) {
+            colorBox.setValue(WynnChaYuan.config().accentColor());
+            status = Component.literal("✔ 已套用顏色").withStyle(ChatFormatting.GREEN);
+        } else {
+            colorBox.setValue(WynnChaYuan.config().accentColor());
+            status = Component.literal("✘ 色碼格式要像 #6FA8D8").withStyle(ChatFormatting.RED);
+        }
+    }
 
     private void reload() {
         WynnChaYuan.reloadTranslations();
@@ -199,55 +215,50 @@ public final class SettingsScreen extends Screen {
         }
     }
 
+    // ------------------------------------------------------------ 繪製
+
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
+        int left = leftX();
+        int right = rightX();
+        int dataY = dataY();
+
+        // 卡片要墊在按鈕底下，所以先於 super.render
+        Cards.panel(g, left - 8, TOP - 20, COL_W + 16, ROW * 6 + 14);
+        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, ROW * 4 + 14);
+        Cards.panel(g, right - 8, dataY - 20, COL_W + 16, ROW * 3 + 14);
+
         super.render(g, mouseX, mouseY, delta);
 
-        int left = this.width / 2 - COL_W - 10;
-        int right = this.width / 2 + 10;
-        int top = 52;
+        Cards.header(g, this.font, this.width, "WynnChaYuan",
+                "Wynncraft 繁體中文翻譯 · v" + WynnChaYuan.version());
 
-        int accent = WynnChaYuan.config().accentARGB();
-        g.drawCenteredString(this.font, this.title, this.width / 2, 16, accent);
-        g.fill(this.width / 2 - COL_W - 10, 28, this.width / 2 + COL_W + 10, 29, accent);
+        Cards.title(g, this.font, left, TOP - 16, "顯示");
+        Cards.title(g, this.font, right, TOP - 16, "翻譯");
+        Cards.title(g, this.font, right, dataY - 16, "資料");
 
-        header(g, left, top - 14, "顯示");
-        header(g, right, top - 14, "翻譯");
+        Cards.hint(g, this.font, left + 2, TOP + 21, "關掉之後仍然照常收集字串");
+        Cards.hint(g, this.font, left + 2, TOP + ROW + 21, "固定位置時面板不跟著滑鼠跑");
+        Cards.hint(g, this.font, left + 2, TOP + ROW * 2 + 21, "拖曳示意方框決定位置");
+        Cards.hint(g, this.font, left + 2, TOP + ROW * 3 + 21, "自動會依畫面空間左右讓位");
+        Cards.hint(g, this.font, left + 2, TOP + ROW * 4 + 21, "面板與原本 tooltip 之間留多寬");
+        Cards.hint(g, this.font, left + 2, TOP + ROW * 5 + 21, "所有小框的框線色，例如 #6FA8D8");
 
-        hint(g, left, top, "關掉之後仍然照常收集字串");
-        hint(g, left, top + ROW, "固定位置時面板不跟著滑鼠跑");
-        hint(g, left, top + ROW * 2, "拖曳示意方框決定位置");
-        hint(g, left, top + ROW * 3, "自動會依畫面空間左右讓位");
-        hint(g, left, top + ROW * 4, "面板與原本 tooltip 之間留多寬");
-        hint(g, left, top + ROW * 5, "所有小框的框線色，例如 #6FA8D8");
+        Cards.hint(g, this.font, right + 2, TOP + 21, "裝備名稱多是專有名詞，通常保留原文");
+        Cards.hint(g, this.font, right + 2, TOP + ROW + 21, "注視時顯示可保留原文，方便溝通");
+        Cards.hint(g, this.font, right + 2, TOP + ROW * 2 + 21, "視線移開後譯文還留多久");
+        Cards.hint(g, this.font, right + 2, TOP + ROW * 3 + 21, "對話結束後小框多久收起來");
 
-        hint(g, right, top, "裝備名稱多是專有名詞，通常保留原文");
-        hint(g, right, top + ROW, "注視時顯示可保留原文，方便跟人溝通");
-        hint(g, right, top + ROW * 2, "視線移開後譯文還留多久");
-        hint(g, right, top + ROW * 3, "對話結束後小框多久收起來");
-        hint(g, right, top + ROW * 4, "把沒翻到的句子記進 captured.json");
-        hint(g, right, top + ROW * 5, "GitHub 會在進遊戲時同步大家的最新翻譯");
-        hint(g, right, top + ROW * 6, "改完 json 按這個就生效，不用重開");
+        Cards.hint(g, this.font, right + 2, dataY + 21, "GitHub 會同步大家的最新翻譯");
+        Cards.hint(g, this.font, right + 2, dataY + ROW + 21, "把沒翻到的句子記進 captured.json");
+        Cards.hint(g, this.font, right + 2, dataY + ROW * 2 + 21, "改完 json 按這個就生效");
 
         Component now = status.getString().isEmpty()
                 ? Component.literal(WynnChaYuan.translations().size() + " 條譯文已載入")
                         .withStyle(WynnChaYuan.translations().size() > 0
                                 ? ChatFormatting.GRAY : ChatFormatting.RED)
                 : status;
-        g.drawCenteredString(this.font, now, this.width / 2, this.height - 48, 0xFFFFFF);
-    }
-
-    private void header(GuiGraphics g, int x, int y, String text) {
-        int accent = WynnChaYuan.config().accentARGB();
-        g.drawString(this.font, Component.literal(text), x, y, accent);
-        g.fill(x, y + 10, x + COL_W, y + 11, (accent & 0x00FFFFFF) | 0x60000000);
-    }
-
-    /** 按鈕下方的一行說明。 */
-    private void hint(GuiGraphics g, int x, int y, String text) {
-        g.drawString(this.font,
-                Component.literal(text).withStyle(ChatFormatting.DARK_GRAY),
-                x + 2, y + 21, 0x808080);
+        g.drawCenteredString(this.font, now, this.width / 2, this.height - 44, 0xFFFFFF);
     }
 
     @Override

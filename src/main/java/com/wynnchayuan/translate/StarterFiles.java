@@ -23,20 +23,12 @@ import java.util.List;
  */
 public final class StarterFiles {
 
-    /** 與 {@code src/main/resources/assets/wynnchayuan/translations/} 內容一致。 */
-    private static final List<String> BUNDLED = List.of(
-            "ui-labels.json",
-            "quest.json",
-            "npc.json",
-            "gear-weapon.json",
-            "gear-armour.json",
-            "gear-accessory.json",
-            "ability.json",
-            "ingredient.json",
-            "material.json",
-            "tome.json",
-            "aspect.json",
-            "charm.json");
+    /** 清單來自 _index.json —— 新增譯文檔不必改這裡。 */
+    private static List<String> bundled() {
+        List<String> names = new java.util.ArrayList<>(FileIndex.bundled());
+        names.add("_index.json");              // 清單本身也要放出去，使用者才能自己加檔案
+        return names;
+    }
 
     private StarterFiles() {}
 
@@ -55,7 +47,7 @@ public final class StarterFiles {
         }
 
         int written = 0;
-        for (String name : BUNDLED) {
+        for (String name : bundled()) {
             try (InputStream in = StarterFiles.class.getResourceAsStream(
                     "/assets/wynnchayuan/translations/" + name)) {
                 if (in == null) {

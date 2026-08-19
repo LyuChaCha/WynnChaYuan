@@ -53,9 +53,9 @@ public final class DialogueOverlay {
             Component translated = LineTranslator.translate(line, store);
             if (translated != null) {
                 any = true;
-                lines.add(translated);
+                lines.addAll(Boxes.toLines(translated));
             } else {
-                lines.add(LineTranslator.untranslated(line));
+                lines.addAll(Boxes.toLines(LineTranslator.untranslated(line)));
             }
         }
         // 診斷：分得出「沒讀到對話」與「讀到了但沒譯文」——
