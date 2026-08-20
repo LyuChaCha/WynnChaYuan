@@ -20,10 +20,10 @@
 | Reflection | 遠程反傷 | **不是**「反射」。這是被遠程攻擊時反彈傷害 |
 | Thorns | 近戰反傷 | **不是**「荊棘」。與 Reflection 成對，這個是近戰 |
 | Exploding | 爆炸 | 擊殺時屍體爆炸的機率，不是「正在爆炸」 |
-| Scale | 詞綴 | Wynncraft 的裝備評分術語，不是「規模／比例」 |
+| Scale | 適性 | Wynncraft 的裝備評分術語，不是「規模／比例」 |
 | Loot(Bonus) | 寶物加成 | 影響掉落**掉落率**，不是掉落品質 |
 | Sprint Regen | 體力回復 | 回復的是奔跑用的體力，不是生命 |
-| Healing Efficiency | 治療效率 | 受到治療時的加成，不是自己治療別人 |
+| Healing Efficiency | 治療效率 | 技能和 Major ID 的治療效率 |
 
 ## 遊戲系統
 
@@ -32,8 +32,8 @@
 | Crafting Level | 製作等級 | |
 | Combat Level | 戰鬥等級 | |
 | Class Type | 職業類型 | |
-| Ingredient | 材料 | 製作用的原料 |
-| Ingredient Pouch | 材料袋 | |
+| Ingredient | 素材 | 製作用的素材，和 Material 一詞相對 |
+| Ingredient Pouch | 素材袋 | |
 | Emerald Pouch | 綠寶石袋 | |
 | Liquid Emeralds | 液態綠寶石 | Wynncraft 的高額貨幣單位 |
 | Item Identifier | 物品鑑定師 | NPC 職業，不是「鑑定道具」 |
@@ -69,7 +69,7 @@
 
 ## 職業
 
-職業名一律「**主職／轉職**」，中間用半形斜線。
+職業名一律「**主職/造型**」，中間用半形斜線。
 
 | 原文 | 譯文 |
 |---|---|
