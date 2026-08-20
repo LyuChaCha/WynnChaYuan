@@ -168,3 +168,11 @@ tasks.register('runParityChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.TemplateParityTest'
 }
 tasks.named('check') { dependsOn 'runParityChecks' }
+
+tasks.register('runStoreChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證跨行條目與「翻譯物品名稱」開關的範圍'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.TranslationStoreTest'
+}
+tasks.named('check') { dependsOn 'runStoreChecks' }
