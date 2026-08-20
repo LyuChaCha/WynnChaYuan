@@ -10,7 +10,7 @@
 
 不用安裝任何東西，不用會 Git。
 
-1. 到 [translations 資料夾](../../tree/main/src/main/resources/assets/wynnchayuan/translations)
+1. 到 [translations 資料夾](src/main/resources/assets/wynnchayuan/translations)
 2. 點你想翻的檔案（**建議從 `ui-labels.json` 或 `npc.json` 開始**，那些每天都看得到）
 3. 按右上角的 **鉛筆圖示**（Edit this file）
 4. 找到 `"dst": ""`，把中文填進去
@@ -146,7 +146,7 @@ python tools/validate.py ui-labels.json
 
 ## 不想碰 GitHub？
 
-開一個 [Issue](../../issues/new)，把你翻好的內容貼上來就好，格式像這樣：
+開一個 [Issue](https://github.com/LyuChaCha/WynnChaYuan/issues/new)，把你翻好的內容貼上來就好，格式像這樣：
 
 ```
 Combat Level = 戰鬥等級
