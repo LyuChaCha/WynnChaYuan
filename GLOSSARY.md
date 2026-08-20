@@ -15,6 +15,9 @@
 
 這些照字面翻是錯的，Wynncraft 的用法跟一般英文不同。
 
+此外，請注意若一個詞條有 % 則原樣加到後面，如 "Damage %" -> "傷害 %"
+若有 Raw 則不翻，如 "Damage" -> "傷害"
+
 | 原文 | 譯文 | 為什麼 |
 |---|---|---|
 | Reflection | 遠程反傷 | **不是**「反射」。這是被遠程攻擊時反彈傷害 |
@@ -24,6 +27,7 @@
 | Loot(Bonus) | 寶物加成 | 影響掉落**掉落率**，不是掉落品質 |
 | Sprint Regen | 體力回復 | 回復的是奔跑用的體力，不是生命 |
 | Healing Efficiency | 治療效率 | 技能和 Major ID 的治療效率 |
+| Stealing | 竊取綠寶石 | 正如其名 |
 
 ## 遊戲系統
 
@@ -32,6 +36,7 @@
 | Crafting Level | 製作等級 | |
 | Combat Level | 戰鬥等級 | |
 | Class Type | 職業類型 | |
+| Material | 原料 | 製作用的原料，和 Ingreident 一詞相對 |
 | Ingredient | 素材 | 製作用的素材，和 Material 一詞相對 |
 | Ingredient Pouch | 素材袋 | |
 | Emerald Pouch | 綠寶石袋 | |
@@ -51,6 +56,17 @@
 | Cooking | 烹飪 |
 | Alchemism | 鍊金 |
 | Scribing | 抄寫 |
+
+## 採集職業
+
+## 製作職業
+
+| 原文 | 譯文 |
+|---|---|
+| Fishing | 釣魚 |
+| Woodcutting | 伐木 |
+| Mining | 採礦 |
+| Farming | 農耕 |
 
 ## 屬性與元素
 
