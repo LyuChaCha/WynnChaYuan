@@ -23,8 +23,18 @@ public final class Boxes {
     private Boxes() {}
 
     public static void draw(GuiGraphics g, int x, int y, int w, int h) {
-        int bg = WynnChaYuan.config().backgroundARGB();
-        int border = WynnChaYuan.config().accentARGB();
+        draw(g, x, y, w, h, 1.0f);
+    }
+
+    /**
+     * 同上，但整個框（含邊線）乘上一個透明度，用來做淡出。
+     *
+     * <p>底色與邊線要一起淡，只淡其中一個的話收尾那幾幀會看到一個
+     * 沒有內容的空框，比直接消失還怪。
+     */
+    public static void draw(GuiGraphics g, int x, int y, int w, int h, float alpha) {
+        int bg = Colors.fade(WynnChaYuan.config().backgroundARGB(), alpha);
+        int border = Colors.fade(WynnChaYuan.config().accentARGB(), alpha);
         g.fill(x, y, x + w, y + h, bg);
         g.fill(x, y, x + w, y + 1, border);
         g.fill(x, y + h - 1, x + w, y + h, border);

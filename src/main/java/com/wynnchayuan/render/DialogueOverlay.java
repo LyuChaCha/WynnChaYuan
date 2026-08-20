@@ -79,9 +79,11 @@ public final class DialogueOverlay {
         if (lines.isEmpty()) {
             return;
         }
-        int hold = WynnChaYuan.config().dialogueHoldMs();
-        if (hold != Integer.MAX_VALUE && System.currentTimeMillis() - lastUpdate > hold) {
-            current = List.of();               // 停留夠久就收起來
+        // 停留時間到了之後淡出，而不是啪一聲不見。NPC 講下一句時
+        // lastUpdate 會被推後，透明度自然回到全滿——換內容不會有淡出。
+        float alpha = Fade.alphaFor(lastUpdate, WynnChaYuan.config().dialogueHoldMs());
+        if (alpha <= 0f) {
+            current = List.of();               // 淡完了才真的清掉
             return;
         }
         Minecraft mc = Minecraft.getInstance();
@@ -102,11 +104,12 @@ public final class DialogueOverlay {
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.DIALOGUE);
         }
 
-        Boxes.draw(graphics, x, y, boxW, boxH);
+        Boxes.draw(graphics, x, y, boxW, boxH, alpha);
 
         int textY = y + PADDING;
         for (Component line : lines) {
-            graphics.drawString(mc.font, line, x + PADDING, textY, Colors.TEXT);
+            graphics.drawString(mc.font, line, x + PADDING, textY,
+                    Colors.fade(Colors.TEXT, alpha));
             textY += lineHeight;
         }
     }

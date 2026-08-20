@@ -90,15 +90,17 @@ public final class LookAtTranslator {
             noteOnce("nametag.shown");
             lastShown = translated;
             lastSeen = System.currentTimeMillis();
-            drawBubble(graphics, mc, translated);
+            drawBubble(graphics, mc, translated, 1.0f);
             return;
         }
         // 視線稍微移開時不要立刻消失 —— 準心對著 NPC 本來就不容易穩住，
-        // 一離開就閃掉會讓人以為功能壞了。
+        // 一離開就閃掉會讓人以為功能壞了。停留時間到了之後淡出，不是啪一聲不見。
         int hold = WynnChaYuan.config().nametagHoldMs();
-        if (lastShown != null && hold > 0
-                && System.currentTimeMillis() - lastSeen < hold) {
-            drawBubble(graphics, mc, lastShown);
+        if (lastShown != null && hold > 0) {
+            float alpha = Fade.alphaFor(lastSeen, hold);
+            if (alpha > 0f) {
+                drawBubble(graphics, mc, lastShown, alpha);
+            }
         }
     }
 
@@ -184,8 +186,9 @@ public final class LookAtTranslator {
         }
     }
 
-    /** 在準心下方畫一個小框。 */
-    private static void drawBubble(GuiGraphics graphics, Minecraft mc, Component text) {
+    /** 在準心下方畫一個小框。{@code alpha} 用於停留結束後的淡出。 */
+    private static void drawBubble(GuiGraphics graphics, Minecraft mc,
+                                   Component text, float alpha) {
         // 名牌本來就是多行的，而且夾著 3D 版面用的對齊偏移 —— 都在這裡處理掉
         List<Component> lines = Boxes.toLines(text);
         if (lines.isEmpty()) {
@@ -206,10 +209,10 @@ public final class LookAtTranslator {
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.NAMETAG);
         }
 
-        Boxes.draw(graphics, x, y, w, h);
+        Boxes.draw(graphics, x, y, w, h, alpha);
         int ty = y + 4;
         for (Component line : lines) {
-            graphics.drawString(mc.font, line, x + 4, ty, Colors.TEXT);
+            graphics.drawString(mc.font, line, x + 4, ty, Colors.fade(Colors.TEXT, alpha));
             ty += lineHeight;
         }
     }
