@@ -22,6 +22,7 @@ TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations"
 
 # captured.json 的 domain 對應到哪個工作檔
 DOMAIN_TO_FILE = {
+    "label": "label.json",     # 突襲增益、地上的指示，不是 NPC 名字
     "quest": "quest.json",
     "npc": "npc.json",
     "chat": "quest.json",      # 系統訊息多半與任務流程相關，併在一起
