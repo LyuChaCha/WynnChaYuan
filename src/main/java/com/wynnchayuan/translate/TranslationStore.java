@@ -125,7 +125,7 @@ public final class TranslationStore {
             int before = entries.size();
 
             if (obj.has("entries") && obj.get("entries").isJsonObject()) {
-                readWorkspace(obj.getAsJsonObject("entries"));
+                readWorkspace(obj.getAsJsonObject("entries"), itemNames(obj));
             } else {
                 readFlat(obj);
             }
@@ -137,7 +137,30 @@ public final class TranslationStore {
         }
     }
 
-    private void readWorkspace(JsonObject entriesObj) {
+    /**
+     * 這個檔案裡的 {@code role: "name"} 算不算「物品名稱」。
+     *
+     * <h2>為什麼要問這個</h2>
+     * F6 的「翻譯物品名稱」是為了讓裝備名稱保持英文——對得上 wiki、
+     * 交易市場與社群討論。但先前的判斷是<b>只要 role 是 name 就算</b>，
+     * 於是 {@code ability.json} 裡的技能名稱也被一起關掉了；
+     * 技能名稱跟交易市場毫無關係，不該受這個開關影響。
+     *
+     * <p>判斷寫在資料裡（{@code _meta.itemNames}）而不是在這裡列一份 domain 清單，
+     * 是為了維持「新增一個譯文檔只要加進 _index.json，不必改 Java」。
+     * 沒寫的話當成物品——漏標一個裝備檔會讓開關<b>無聲失效</b>，
+     * 漏標一個技能檔頂多是名稱跟著關掉，後者看得出來。
+     */
+    private static boolean itemNames(JsonObject root) {
+        JsonElement meta = root.get("_meta");
+        if (meta == null || !meta.isJsonObject()) {
+            return true;
+        }
+        JsonElement flag = meta.getAsJsonObject().get("itemNames");
+        return flag == null || !flag.isJsonPrimitive() || flag.getAsBoolean();
+    }
+
+    private void readWorkspace(JsonObject entriesObj, boolean itemNames) {
         for (String key : entriesObj.keySet()) {
             JsonElement el = entriesObj.get(key);
             if (!el.isJsonObject()) {
@@ -150,7 +173,7 @@ public final class TranslationStore {
                 String srcKey = src.strip();
                 entries.put(srcKey, dst.strip());
                 noteBlockSize(srcKey);
-                if ("name".equals(optString(e, "role"))) {
+                if (itemNames && "name".equals(optString(e, "role"))) {
                     nameKeys.add(srcKey);
                 }
             }
