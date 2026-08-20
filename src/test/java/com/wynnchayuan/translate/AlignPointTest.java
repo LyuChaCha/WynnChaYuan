@@ -94,6 +94,26 @@ public final class AlignPointTest {
                         Piece.text("Doom Stone", Style.EMPTY),
                         Piece.text("◆◆◆", Style.EMPTY))) == -1);
 
+        // 「Class Type␠␠Mage/Dark Wizard」：間隔是字面空格，數值又是文字，
+        // 兩個條件都躲過前面的判斷，先前一路回傳 -1 完全沒被補償
+        List<Piece> literalGap = List.of(
+                Piece.text(" Class Type", Style.EMPTY),
+                Piece.text("  ", Style.EMPTY),
+                Piece.text("Mage/Dark Wizard", Style.EMPTY));
+        check("字面空格當間隔、數值是文字，也要認得出交界",
+                LineTranslator.findAlignPoint(literalGap) == 2);
+
+        // 一格空格是詞距不是欄位。這裡仍然會回傳一個位置（數值區起點），
+        // 擋下來的是呼叫端的 hasColumnGap ——「補不補」跟「交界在哪」是兩件事，
+        // 分開判斷才不會把「找不到交界」和「找到了但不該補」混為一談。
+        check("字面空格不足兩格時不算欄位（由 hasColumnGap 擋）",
+                !LineTranslator.hasColumnGap(List.of(
+                        Piece.text("Emerald Pouch", Style.EMPTY),
+                        Piece.text(" ", Style.EMPTY),
+                        Piece.text("[Tier 8]", Style.EMPTY)), 1));
+        check("兩格以上就算欄位",
+                LineTranslator.hasColumnGap(literalGap, 2));
+
         check("空白全在行尾時不當成對齊點",
                 LineTranslator.findAlignPoint(List.of(
                         Piece.text("Weekly Objectives", Style.EMPTY), margin)) == -1);

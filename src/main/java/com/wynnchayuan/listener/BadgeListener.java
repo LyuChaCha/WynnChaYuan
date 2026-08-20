@@ -36,11 +36,25 @@ import net.neoforged.bus.api.SubscribeEvent;
  */
 public final class BadgeListener {
 
+    /**
+     * 從 render state 取出實體 id。
+     *
+     * <p>{@code AvatarRenderState} 有這個欄位，但事件的型別是共通的
+     * {@code EntityRenderState}，所以要判型。取不到就回傳 -1，
+     * 呼叫端會退回比對名牌文字。
+     */
+    private static int entityIdOf(EntityRenderState state) {
+        return state instanceof net.minecraft.client.renderer.entity.state.AvatarRenderState avatar
+                ? avatar.id : -1;
+    }
+
     @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
     public void onPlayerNametag(PlayerNametagRenderEvent event) {
         try {
             EntityRenderState state = event.getEntityRenderState();
-            Component badge = Badges.forNameTag(state.nameTag);
+            // 認人優先看實體本身，不是名牌上的字——Wynntils 把名牌整個換掉了
+            // （階級前綴、donator 標記都是它加的），字面比對認不出來。
+            Component badge = Badges.forNameTag(state.nameTag, entityIdOf(state));
             if (badge == null) {
                 return;
             }
