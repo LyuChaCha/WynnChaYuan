@@ -117,7 +117,7 @@ tasks.register('runBlockChecks', JavaExec) {
     group = 'verification'
     description = '驗證置中／靠左的整塊判斷'
     classpath = sourceSets.test.runtimeClasspath
-    mainClass = 'com.wynnchayuan.BlockLayoutTest'
+    mainClass = 'com.wynnchayuan.translate.BlockLayoutTest'
 }
 tasks.named('check') { dependsOn 'runBlockChecks' }
 
