@@ -61,6 +61,17 @@ public final class LookAtTranslator {
     private static volatile Component lastShown = null;
     private static volatile long lastSeen = 0;
 
+    /**
+     * 上一段譯文是<b>誰</b>的。
+     *
+     * <p>「移開視線後再顯示一下」是為了不讓框在準心稍微晃開時閃掉，但它有個
+     * 副作用：那段字的來源消失之後，框還會照著停留時間繼續飄在畫面上。
+     * 突襲選增益就是這樣——選完了，那幾塊字沒了，框卻還在。
+     *
+     * <p>所以記住來源。來源不在了就立刻收掉，不走停留與淡出。
+     */
+    private static volatile Entity lastSource = null;
+
     private LookAtTranslator() {}
 
     /** 由名牌事件呼叫，記下這個實體對應的原文。 */
@@ -72,6 +83,8 @@ public final class LookAtTranslator {
 
     public static void clear() {
         LABELS.clear();
+        lastShown = null;
+        lastSource = null;
     }
 
     /** 每幀呼叫。沒有對著任何名牌時什麼都不畫。 */
@@ -80,7 +93,8 @@ public final class LookAtTranslator {
         if (mc == null || mc.player == null || LABELS.isEmpty()) {
             return;
         }
-        StyledText target = findAimedLabel(mc);
+        Entity aimed = findAimedLabel(mc);
+        StyledText target = aimed == null ? null : LABELS.get(aimed);
         if (target != null) {
             Component translated = LineTranslator.translate(target, WynnChaYuan.translations());
             if (translated == null) {
@@ -89,12 +103,21 @@ public final class LookAtTranslator {
             }
             noteOnce("nametag.shown");
             lastShown = translated;
+            lastSource = aimed;
             lastSeen = System.currentTimeMillis();
             drawBubble(graphics, mc, translated, 1.0f);
             return;
         }
         // 視線稍微移開時不要立刻消失 —— 準心對著 NPC 本來就不容易穩住，
         // 一離開就閃掉會讓人以為功能壞了。停留時間到了之後淡出，不是啪一聲不見。
+        if (lastSource != null
+                && (!lastSource.isAlive() || !LABELS.containsKey(lastSource))) {
+            // 那段字的來源已經不在了（例如突襲的增益選完就收掉）。
+            // 這種是「內容消失」不是「視線移開」，不該再停留。
+            lastShown = null;
+            lastSource = null;
+            return;
+        }
         int hold = WynnChaYuan.config().nametagHoldMs();
         if (lastShown != null && hold > 0) {
             float alpha = Fade.alphaFor(lastSeen, hold);
@@ -124,7 +147,7 @@ public final class LookAtTranslator {
      * <p>距離與夾角都可以在設定裡調：城裡 NPC 站得密，錐要收窄；
      * 曠野找人則希望掃過去就跳。沒有一個值兩邊都好用。
      */
-    private static StyledText findAimedLabel(Minecraft mc) {
+    private static Entity findAimedLabel(Minecraft mc) {
         double range = WynnChaYuan.config().nametagRange();
         double minDot = Math.cos(Math.toRadians(WynnChaYuan.config().nametagAngle()));
 
@@ -132,9 +155,9 @@ public final class LookAtTranslator {
         Vec3 look = mc.player.getLookAngle();
         Vec3 end = eye.add(look.scale(range));
 
-        StyledText hit = null;
+        Entity hit = null;
         double hitDistance = Double.MAX_VALUE;
-        StyledText nearest = null;
+        Entity nearest = null;
         double nearestPerp = Double.MAX_VALUE;
 
         for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
@@ -150,7 +173,7 @@ public final class LookAtTranslator {
             if (box.clip(eye, end).isPresent()) {
                 if (distance < hitDistance) {
                     hitDistance = distance;
-                    hit = e.getValue();
+                    hit = entity;
                 }
                 continue;
             }
@@ -168,7 +191,7 @@ public final class LookAtTranslator {
                                       MIN_AIM_RADIUS);
             if (perpendicular <= allowed && perpendicular < nearestPerp) {
                 nearestPerp = perpendicular;
-                nearest = e.getValue();
+                nearest = entity;
             }
         }
         return hit != null ? hit : nearest;

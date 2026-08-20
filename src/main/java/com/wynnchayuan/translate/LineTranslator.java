@@ -87,16 +87,18 @@ public final class LineTranslator {
             return null;
         }
         String[] dst = translated.split("\n", -1);
+        List<Component> built = rebuildAll(dst, parts);
+        if (built == null) {
+            return null;                       // 佔位符對不上，整段放棄
+        }
         if (dst.length != run.size()) {
-            return null;                       // 行數對不上，寧可不動
+            // 中文比英文緊湊，兩行的句子常常一行就講完。譯文面板是我們自己畫的，
+            // 行數不一樣沒關係——只是少了「原本那一行」可以拿來對齊，直接照原樣出。
+            return built;
         }
         List<Component> out = new ArrayList<>(run.size());
         for (int i = 0; i < run.size(); i++) {
-            Component rebuilt = rebuild(dst[i], parts.get(i));
-            if (rebuilt == null) {
-                return null;                   // 有一行填不回去就整段放棄
-            }
-            out.add(realign(run.get(i), rebuilt, centered[i]));
+            out.add(realign(run.get(i), built.get(i), centered[i]));
         }
         return out;
     }
@@ -948,50 +950,97 @@ public final class LineTranslator {
     // ------------------------------------------------------------ 內部
 
     private static Component rebuild(String translated, LineParts parts) {
-        List<Token> tokens = tokenize(translated);
-        long wantGlyphs = tokens.stream().filter(t -> t.kind() == Kind.GLYPH).count();
-        long wantPlaces = tokens.stream().filter(t -> t.kind() == Kind.PLACE).count();
-        long wantNumbers = tokens.stream().filter(t -> t.kind() == Kind.NUMBER).count();
-        long wantUsers = tokens.stream().filter(t -> t.kind() == Kind.USER).count();
-        if (wantGlyphs != parts.glyphs().size()
-                || wantPlaces != parts.places().size()
-                || wantNumbers != parts.numbers().size()
-                || wantUsers != parts.users().size()) {
-            return null;              // 譯者刪了或多加了佔位符，放棄這行
+        List<Component> one = rebuildAll(new String[] {translated}, List.of(parts));
+        return one == null ? null : one.get(0);
+    }
+
+    /**
+     * 把幾行譯文填回原文的碎片。
+     *
+     * <h2>為什麼行數可以不一樣</h2>
+     * 中文比英文緊湊，原文分成兩行的句子往往一行就講完了。硬要譯者湊出同樣的
+     * 行數，斷句會斷在莫名其妙的地方（見 issue #44）。我們的譯文面板是自己畫的，
+     * 幾行都沒關係。
+     *
+     * <p>所以佔位符不是逐行對，而是<b>整段照順序</b>取用：把整段的符號、地名、
+     * 數值、玩家名各自併成一個池子，譯文從頭到尾依序消耗。這樣譯者要把
+     * {@code {~}} 搬到上一行或下一行都可以，只要整段的數量對得上。
+     *
+     * @return 譯好的每一行；佔位符數量對不上時回傳 {@code null}
+     */
+    private static List<Component> rebuildAll(String[] translated, List<LineParts> parts) {
+        List<LineParts.Piece> glyphs = new ArrayList<>();
+        List<LineParts.Piece> places = new ArrayList<>();
+        List<LineParts.Piece> numbers = new ArrayList<>();
+        List<LineParts.Piece> users = new ArrayList<>();
+        List<LineParts.Piece> accents = new ArrayList<>();
+        for (LineParts part : parts) {
+            glyphs.addAll(part.glyphs());
+            places.addAll(part.places());
+            numbers.addAll(part.numbers());
+            users.addAll(part.users());
+            accents.addAll(part.accents());
         }
 
-        MutableComponent out = Component.empty();
-        Style textStyle = forDisplay(parts.textStyle());
-        boolean[] usedAccent = new boolean[parts.accents().size()];
+        List<List<Token>> lines = new ArrayList<>(translated.length);
+        long wantGlyphs = 0;
+        long wantPlaces = 0;
+        long wantNumbers = 0;
+        long wantUsers = 0;
+        for (String line : translated) {
+            List<Token> tokens = tokenize(line);
+            lines.add(tokens);
+            for (Token token : tokens) {
+                switch (token.kind()) {
+                    case GLYPH -> wantGlyphs++;
+                    case PLACE -> wantPlaces++;
+                    case NUMBER -> wantNumbers++;
+                    case USER -> wantUsers++;
+                    default -> { }
+                }
+            }
+        }
+        if (wantGlyphs != glyphs.size() || wantPlaces != places.size()
+                || wantNumbers != numbers.size() || wantUsers != users.size()) {
+            return null;              // 譯者刪了或多加了佔位符，整段放棄
+        }
+
+        Style textStyle = forDisplay(parts.get(0).textStyle());
+        boolean[] usedAccent = new boolean[accents.size()];
         int glyph = 0;
         int place = 0;
         int number = 0;
         int user = 0;
 
-        for (Token token : tokens) {
-            switch (token.kind()) {
-                case GLYPH -> {
-                    // 符號連同原樣式（含自訂字型）整段搬回，這是它顯示得出來的唯一方式
-                    LineParts.Piece p = parts.glyphs().get(glyph++);
-                    out.append(Component.literal(p.text()).withStyle(p.style()));
+        List<Component> out = new ArrayList<>(lines.size());
+        for (List<Token> tokens : lines) {
+            MutableComponent line = Component.empty();
+            for (Token token : tokens) {
+                switch (token.kind()) {
+                    case GLYPH -> {
+                        // 符號連同原樣式（含自訂字型）整段搬回，這是它顯示得出來的唯一方式
+                        LineParts.Piece piece = glyphs.get(glyph++);
+                        line.append(Component.literal(piece.text()).withStyle(piece.style()));
+                    }
+                    case PLACE -> {
+                        // 地名是專有名詞，原樣填回，永遠不翻譯
+                        LineParts.Piece piece = places.get(place++);
+                        line.append(literal(piece.text(), forDisplay(piece.style())));
+                    }
+                    case NUMBER -> {
+                        LineParts.Piece piece = numbers.get(number++);
+                        line.append(literal(piece.text(), forDisplay(piece.style())));
+                    }
+                    case USER -> {
+                        // 玩家名字原樣填回，跟地名一樣是專有名詞
+                        LineParts.Piece piece = users.get(user++);
+                        line.append(literal(piece.text(), forDisplay(piece.style())));
+                    }
+                    case TEXT -> appendText(line, token.text(), textStyle,
+                                            accents, usedAccent);
                 }
-                case PLACE -> {
-                    // 地名是專有名詞，原樣填回，永遠不翻譯
-                    LineParts.Piece p = parts.places().get(place++);
-                    out.append(literal(p.text(), forDisplay(p.style())));
-                }
-                case NUMBER -> {
-                    LineParts.Piece p = parts.numbers().get(number++);
-                    out.append(literal(p.text(), forDisplay(p.style())));
-                }
-                case USER -> {
-                    // 玩家名字原樣填回，跟地名一樣是專有名詞
-                    LineParts.Piece p = parts.users().get(user++);
-                    out.append(literal(p.text(), forDisplay(p.style())));
-                }
-                case TEXT -> appendText(out, token.text(), textStyle,
-                                        parts.accents(), usedAccent);
             }
+            out.add(line);
         }
         return out;
     }

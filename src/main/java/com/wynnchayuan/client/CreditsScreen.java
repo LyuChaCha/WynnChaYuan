@@ -22,6 +22,15 @@ public final class CreditsScreen extends Screen {
     /** 頭像邊長。和文字高度接近，排在一起才不會一大一小。 */
     private static final int HEAD = 12;
 
+    /** 頁尾兩行說明加上兩排按鈕要留多少空間。名單不能長進這一塊。 */
+    private static final int FOOTER_HEIGHT = 92;
+
+    /** 名單最多排幾欄。再多就會窄到名字跟 ID 擠在一起。 */
+    private static final int MAX_COLUMNS = 3;
+
+    /** 欄與欄之間的空隙。 */
+    private static final int COLUMN_GAP = 20;
+
     private final Screen parent;
 
     public CreditsScreen(Screen parent) {
@@ -77,22 +86,38 @@ public final class CreditsScreen extends Screen {
                 cx, y, Colors.SUBTLE);
         y += 24;
 
+        // 人變多之後一人一列會直接壓到頁尾說明與按鈕上（實際發生過）。
+        // 先算得下幾欄，再照那個欄數排——名單本來就是一堆短字串，分欄比捲動好讀。
+        int bottom = this.height - FOOTER_HEIGHT;
+        int columns = columnsThatFit(y, bottom);
+        int columnWidth = widestMember() + COLUMN_GAP;
+
         for (Credits.Section section : Credits.sections()) {
             drawSectionTitle(g, cx, y, section);
             y += 14;
-            for (Credits.Member member : section.members()) {
-                drawMember(g, cx, y, member, section.color());
-                y += HEAD + 4;
-            }
-            if (section.members().isEmpty()) {
+            List<Credits.Member> members = section.members();
+            if (members.isEmpty()) {
                 g.drawCenteredString(this.font,
                         Component.literal("—— 等你加入 ——"), cx, y, Colors.FAINT);
                 y += 13;
             }
+            int used = Math.min(columns, Math.max(1, members.size()));
+            int left = cx - used * columnWidth / 2;
+            for (int i = 0; i < members.size(); i++) {
+                int column = i % used;
+                int centre = left + column * columnWidth + columnWidth / 2;
+                drawMember(g, centre, y, members.get(i), section.color());
+                if (column == used - 1) {
+                    y += HEAD + 4;
+                }
+            }
+            if (members.size() % used != 0) {
+                y += HEAD + 4;          // 最後一列沒排滿，補上它的高度
+            }
             y += 8;
         }
 
-        y = this.height - 90;
+        y = this.height - FOOTER_HEIGHT + 8;
         for (String line : List.of(
                 "名單上的人，名牌上方會多一行標記 —— 只有裝了本模組的人看得到",
                 "本模組依賴 Wynntils，物品與技能資料取自其公開 CDN")) {
@@ -100,6 +125,53 @@ public final class CreditsScreen extends Screen {
                     Component.literal(line).withStyle(ChatFormatting.DARK_GRAY), cx, y, Colors.FAINT);
             y += 11;
         }
+    }
+
+    /**
+     * 名單排幾欄才塞得進 {@code top} 到 {@code bottom} 之間。
+     *
+     * <p>由少到多試，第一個放得下的就用——欄數越少越好讀。
+     * 到了上限還是放不下就用上限，寧可擠一點也不要蓋到按鈕。
+     */
+    private int columnsThatFit(int top, int bottom) {
+        for (int columns = 1; columns < MAX_COLUMNS; columns++) {
+            if (top + heightOf(columns) <= bottom) {
+                return columns;
+            }
+        }
+        return MAX_COLUMNS;
+    }
+
+    /** 名單排成這麼多欄時，整份要多高。 */
+    private int heightOf(int columns) {
+        int height = 0;
+        for (Credits.Section section : Credits.sections()) {
+            int count = section.members().size();
+            height += 14 + 8;                                  // 分區標題與段距
+            height += count == 0
+                    ? 13
+                    : (count + columns - 1) / columns * (HEAD + 4);
+        }
+        return height;
+    }
+
+    /** 最寬的那一位有多寬。所有欄同寬，名字才對得齊。 */
+    private int widestMember() {
+        int widest = 0;
+        for (Credits.Section section : Credits.sections()) {
+            for (Credits.Member member : section.members()) {
+                widest = Math.max(widest, memberWidth(member));
+            }
+        }
+        return widest;
+    }
+
+    private int memberWidth(Credits.Member member) {
+        int width = this.font.width(member.name());
+        if (member.hasHead()) {
+            width += HEAD + 5 + 6 + this.font.width(member.mc());
+        }
+        return width;
     }
 
     /** 分區標題：左右各一條同色細線，比純文字更看得出是分隔。 */

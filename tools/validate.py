@@ -122,11 +122,16 @@ def check_pair(path: str, key: str, src: str, dst: str,
         out.append(Problem("error", path, key,
                            f"佔位符寫錯：{wrong}（要正好是 {{#}} {{~}} {{p}} {{u}}，不能有空格或全形括號）"))
 
-    # 換行：技能說明是固定幾行的排版，行數變了整塊會擠掉
-    if src.count("\n") != dst.count("\n"):
-        out.append(Problem("error", path, key,
-                           f"換行數不符：原文 {src.count(chr(10))} 個，"
-                           f"譯文 {dst.count(chr(10))} 個"))
+    # 換行數不必一致。中文比英文緊湊，原文分兩行的句子往往一行就講完，
+    # 硬湊行數會斷在莫名其妙的地方（issue #44）。模組會把整段的佔位符依序填回，
+    # 行數不同也對得上。
+    #
+    # 只在譯文「比原文還多行」時提醒：那多半是誤按了換行，而且真的會把版面撐高。
+    if dst.count(chr(10)) > src.count(chr(10)):
+        out.append(Problem("warn", path, key,
+                           f"譯文行數比原文多（{src.count(chr(10)) + 1} → "
+                           f"{dst.count(chr(10)) + 1} 行）—— 中文通常更短，"
+                           f"確認一下是不是多按了換行"))
 
     # 材質包符號不能直接貼進譯文 —— 那些由程式填回原位，手寫的會是錯的碼位
     glyphs = {ch for ch in dst if is_glyph(ch)}

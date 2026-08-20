@@ -1,19 +1,148 @@
-# WynnChaYuan · Wynncraft 繁體中文翻譯
+# WynnChaYuan · Traditional Chinese for Wynncraft
 
-> **English:** Traditional Chinese (zh-TW) translation for **Wynncraft**.
-> By default it **does not replace the original text** — translations appear in a
-> separate panel so English names stay visible for talking with other players.
-> Requires [Wynntils](https://modrinth.com/mod/wynntils). Client-side only.
+**Summary field (English, required by Modrinth):**
+
+> Traditional Chinese (zh-TW) translation for Wynncraft — shown beside the original text, not replacing it. Requires Wynntils.
 
 ---
 
-## 這個模組在做什麼
+## English
+
+Traditional Chinese (zh-TW) translation for **Wynncraft**: items, abilities, NPCs,
+quests and menus.
+
+By default it **does not replace the original text**. Translations appear in a
+separate panel while the English stays exactly where it was.
+
+### Why not just replace the English?
+
+Two practical reasons.
+
+**Wynncraft is a multiplayer game.** If your screen only says the Chinese for
+*Blacksmith*, you cannot follow a conversation about going to see one. Veteran
+players, the trade market and the wiki all use English names.
+
+**Wynncraft's layout is held together by resource-pack glyphs.** Column alignment,
+element icons and borders are drawn with invisible spacing characters and custom
+fonts. Replacing text naively pulls tooltips apart.
+
+So the approach is: **keep the original, show the translation next to it.** Glance
+at it when you want the meaning; the English is still there when you need to talk
+to someone.
+
+> If you don't need the English, item translation can be switched to **in-place**
+> mode in the settings. Both modes use the same piece-by-piece replacement, so
+> icons, colours and column alignment are preserved identically — the only
+> difference is whether the original stays on screen.
+
+### What gets translated
+
+| Content | How it is shown |
+|---|---|
+| Item tooltips | A separate panel beside the tooltip, or in-place (optional) |
+| NPC nametags | A small box near the crosshair when you look at them; the nametag itself is untouched |
+| Quest dialogue | Its own box at the bottom of the screen |
+| Quest tracker | Its own box at the side of the screen |
+| Menus | Guild, content book, ability tree and other GUIs |
+
+All four boxes can be **dragged into position**, and they are shown together while
+you arrange them so you can tell whether they overlap.
+
+### Installing
+
+| Requirement | Version |
+|---|---|
+| Minecraft | 1.21.11 |
+| Loader | Fabric |
+| Dependencies | [Wynntils](https://modrinth.com/mod/wynntils) 4.2+ · Fabric API |
+
+Drop the jar into `mods/` and press **F6** in game. Translation working files are
+created on first launch.
+
+**Client-side only.** The server does not need it and cannot tell you are using it.
+
+### Settings (F6)
+
+- **Item translation** — separate panel / in-place / off
+- **Panel position** — follow the mouse or pin it; drag to arrange
+- **NPC nametags** — mode, hold time, detection range and aim angle
+- **Border colour** — any hex colour
+- **Translation source** — GitHub (shared) or local files, for testing your own
+
+### Translations update themselves
+
+Translations are not baked into the jar. The mod syncs the latest set from GitHub
+at startup, so **once a translation is merged, everyone gets it the next time they
+launch** — no new download needed. There is a re-fetch button in F6 if you want it
+immediately.
+
+Offline, it falls back to the last cached copy, then to the version bundled in the
+jar. Losing your connection means "not the newest", never "no translations".
+
+### Progress, and helping out
+
+**479 / 10,226 (4.7%) — help is very welcome.**
+
+Everything you see minute to minute is already done:
+
+| File | Progress |
+|---|---|
+| Item and UI labels | 205 / 205 ✅ |
+| Menus | 99 / 99 ✅ |
+| Wynntils UI | 31 / 31 ✅ |
+| NPC names | 62 / 221 |
+| Quests | 59 / 351 |
+| Ability descriptions | 6 / 1,240 |
+| Ingredients | 0 / 969 |
+| Gear lore | 0 / 6,379 |
+
+**No programming needed.** The translation files are plain JSON — click the pencil
+icon on GitHub and type.
+
+- [Contributing guide](https://github.com/LyuChaCha/WynnChaYuan/blob/main/CONTRIBUTING.md) (written in Traditional Chinese)
+- [Glossary](https://github.com/LyuChaCha/WynnChaYuan/blob/main/GLOSSARY.md) — e.g. `Reflection` is ranged thorns damage, not "a reflection"
+
+Submitted translations are checked automatically for placeholder counts,
+resource-pack glyphs pasted into the text, and place names left untranslated.
+Those are wrong regardless of translation quality, so a machine catches them and
+people can focus on whether the wording is right.
+
+### FAQ
+
+**Will this get me banned?**
+No. It is a client-side display mod. It does not modify packets, automate anything,
+or send anything anywhere.
+
+**Does it conflict with other Wynncraft mods?**
+The default panel mode does not modify tooltip content at all, so it does not
+interfere with other mods listening to the same event. Mods that add their own
+tooltip sections (Nori, Wynnpool) are explicitly handled.
+
+**Can my name be in the credits?**
+Translate one line and it will be. The list is under F6 → About/Contributors, with
+Minecraft heads — and people on it get an extra line above their nametag, visible
+only to others running this mod.
+
+### Licence and credits
+
+[MIT](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE).
+
+- Item and ability data come from the public CDN used by [Wynntils](https://modrinth.com/mod/wynntils)
+- Resource-pack glyphs and layout are Wynncraft's; this mod only displays them
+
+**Not affiliated with Wynncraft or the Wynntils team.** A community translation project.
+
+---
+
+## 繁體中文
+
+### 這個模組在做什麼
 
 把 Wynncraft 的物品、技能、NPC、任務與介面翻成繁體中文。
 
 但它**預設不會把原文換掉**——譯文顯示在旁邊另一塊面板，英文原名照樣留在畫面上。
 
-## 為什麼不直接換成中文
+### 為什麼不直接換成中文
 
 兩個現實問題：
 
@@ -31,7 +160,7 @@
 
 ---
 
-## 翻譯範圍
+### 翻譯範圍
 
 | 內容 | 呈現方式 |
 |---|---|
@@ -45,7 +174,7 @@
 
 ---
 
-## 安裝
+### 安裝
 
 | 需求 | 版本 |
 |---|---|
@@ -59,7 +188,7 @@
 
 ---
 
-## 設定（F6）
+### 設定（F6）
 
 - **物品翻譯**：另開面板 / 就地取代 / 關閉
 - **面板位置**：跟隨滑鼠或固定，可拖曳排版
@@ -69,7 +198,7 @@
 
 ---
 
-## 翻譯會自己更新，不用重新下載模組
+### 翻譯會自己更新，不用重新下載模組
 
 譯文不是寫死在 jar 裡的。模組啟動時會從 GitHub 同步最新版本，
 所以**譯者把翻譯合併進去，所有人下次進遊戲就拿到了**。
@@ -81,20 +210,21 @@
 
 ---
 
-## 目前進度與參與翻譯
+### 目前進度與參與翻譯
 
-**173 / 9,167（1.9%）——非常歡迎幫忙。**
+**479 / 10,226（4.7%）——非常歡迎幫忙。**
 
 日常最常看到的部分已經翻完：
 
 | 檔案 | 進度 |
 |---|---|
-| 物品介面標籤 | 85 / 85 ✅ |
-| NPC 名稱 | 36 / 36 ✅ |
-| 介面文字 | 34 / 34 ✅ |
-| 任務 | 15 / 15 ✅ |
-| 技能說明 | 3 / 1,240 |
-| 材料 | 0 / 969 |
+| 物品介面標籤 | 205 / 205 ✅ |
+| 介面文字 | 99 / 99 ✅ |
+| Wynntils 介面 | 31 / 31 ✅ |
+| NPC 名稱 | 62 / 221 |
+| 任務 | 59 / 351 |
+| 技能說明 | 6 / 1,240 |
+| 素材 | 0 / 969 |
 | 裝備敘述 | 0 / 6,379 |
 
 **不需要會寫程式。** 翻譯檔是純 JSON，在 GitHub 網頁上點鉛筆就能改。
@@ -103,12 +233,12 @@
 - [專有名詞對照表](https://github.com/LyuChaCha/WynnChaYuan/blob/main/GLOSSARY.md)
   （`Reflection` 是「遠程反傷」不是「反射」那類）
 
-送出的翻譯會自動跑格式檢查：佔位符數量、換行數、材質包符號、地名保留——
+送出的翻譯會自動跑格式檢查：佔位符數量、材質包符號、地名保留——
 這些無論翻得好不好都一定錯，讓機器擋掉，人就能專心看「翻得對不對」。
 
 ---
 
-## 常見問題
+### 常見問題
 
 **會不會被伺服器判定作弊？**
 不會。這是純客戶端的顯示模組，不改封包、不自動化任何操作，也不送出任何東西。
@@ -123,7 +253,7 @@
 
 ---
 
-## 授權與致謝
+### 授權與致謝
 
 [MIT](https://github.com/LyuChaCha/WynnChaYuan/blob/main/LICENSE)。
 
