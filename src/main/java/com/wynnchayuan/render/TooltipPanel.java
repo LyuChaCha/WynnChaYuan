@@ -2,6 +2,7 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.translate.BlockLayout;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
@@ -109,9 +110,13 @@ public final class TooltipPanel {
         List<Component> out = new ArrayList<>(tooltip.size());
         boolean anyTranslated = false;
 
-        for (Component line : tooltip) {
+        // 置中與靠左在單獨一行上長得一模一樣，得看整塊才分得出來
+        boolean[] centered = BlockLayout.centered(tooltip);
+
+        for (int i = 0; i < tooltip.size(); i++) {
+            Component line = tooltip.get(i);
             StyledText styled = StyledText.fromComponent(line);
-            Component translated = LineTranslator.translate(styled, store);
+            Component translated = LineTranslator.translate(styled, store, centered[i]);
             if (translated != null) {
                 anyTranslated = true;
                 out.add(translated);
