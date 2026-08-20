@@ -506,6 +506,20 @@ public final class LineTranslator {
         return out;
     }
 
+    /**
+     * 尾端的冒號算標點不算內容。
+     *
+     * <p>遊戲裡的 Major ID 顯示成 {@code "Altruism: "}，但語料的鍵是
+     * {@code "Altruism"}——只差一個冒號就查不到。剝掉再查，冒號本身會
+     * 原樣接回去（見 {@link #lookup} 的 prefix/suffix）。
+     *
+     * <p>只在<b>完全比對失敗之後</b>才會走到這裡，所以像 {@code "Rewards:"}
+     * 這種鍵本身就帶冒號的條目不受影響。
+     */
+    private static boolean isTrailingColon(char c) {
+        return c == ':' || c == '：';
+    }
+
     /** 整段文字畫出來有多寬（像素）。 */
     private static int widthOf(Component component) {
         Minecraft mc = Minecraft.getInstance();
@@ -795,7 +809,8 @@ public final class LineTranslator {
         while (end > start) {
             if (end >= start + glyph.length() && template.startsWith(glyph, end - glyph.length())) {
                 end -= glyph.length();
-            } else if (Character.isWhitespace(template.charAt(end - 1))) {
+            } else if (Character.isWhitespace(template.charAt(end - 1))
+                    || isTrailingColon(template.charAt(end - 1))) {
                 end--;
             } else {
                 break;
@@ -839,9 +854,11 @@ public final class LineTranslator {
         long wantGlyphs = tokens.stream().filter(t -> t.kind() == Kind.GLYPH).count();
         long wantPlaces = tokens.stream().filter(t -> t.kind() == Kind.PLACE).count();
         long wantNumbers = tokens.stream().filter(t -> t.kind() == Kind.NUMBER).count();
+        long wantUsers = tokens.stream().filter(t -> t.kind() == Kind.USER).count();
         if (wantGlyphs != parts.glyphs().size()
                 || wantPlaces != parts.places().size()
-                || wantNumbers != parts.numbers().size()) {
+                || wantNumbers != parts.numbers().size()
+                || wantUsers != parts.users().size()) {
             return null;              // 譯者刪了或多加了佔位符，放棄這行
         }
 
@@ -850,6 +867,7 @@ public final class LineTranslator {
         int glyph = 0;
         int place = 0;
         int number = 0;
+        int user = 0;
 
         for (Token token : tokens) {
             switch (token.kind()) {
@@ -865,6 +883,11 @@ public final class LineTranslator {
                 }
                 case NUMBER -> {
                     LineParts.Piece p = parts.numbers().get(number++);
+                    out.append(literal(p.text(), forDisplay(p.style())));
+                }
+                case USER -> {
+                    // 玩家名字原樣填回，跟地名一樣是專有名詞
+                    LineParts.Piece p = parts.users().get(user++);
                     out.append(literal(p.text(), forDisplay(p.style())));
                 }
                 case TEXT -> out.append(literal(token.text(), textStyle));
@@ -890,16 +913,17 @@ public final class LineTranslator {
 
     // ------------------------------------------------------------ 模板切詞
 
-    private enum Kind { TEXT, GLYPH, PLACE, NUMBER }
+    private enum Kind { TEXT, GLYPH, PLACE, NUMBER, USER }
 
     private record Token(Kind kind, String text) {}
 
-    /** 把模板切成「文字 / 符號佔位 / 數值佔位」的序列。 */
+    /** 把模板切成「文字 / 符號 / 地名 / 數值 / 玩家名」的序列。 */
     private static List<Token> tokenize(String template) {
         List<Token> out = new java.util.ArrayList<>();
         String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
         String place = GlyphSplitter.PLACE_PLACEHOLDER;
         String number = GlyphSplitter.NUMBER_PLACEHOLDER;
+        String user = GlyphSplitter.PLAYER_PLACEHOLDER;
         int i = 0;
         StringBuilder text = new StringBuilder();
 
@@ -916,6 +940,10 @@ public final class LineTranslator {
                 flush(text, out);
                 out.add(new Token(Kind.NUMBER, number));
                 i += number.length();
+            } else if (template.startsWith(user, i)) {
+                flush(text, out);
+                out.add(new Token(Kind.USER, user));
+                i += user.length();
             } else {
                 text.append(template.charAt(i++));
             }

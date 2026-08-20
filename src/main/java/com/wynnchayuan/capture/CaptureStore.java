@@ -39,6 +39,10 @@ public final class CaptureStore {
     private final Map<String, Captured> entries = new ConcurrentHashMap<>();
     private final AtomicBoolean dirty = new AtomicBoolean(false);
 
+    /** 收集順序的流水號。見 {@link Captured#seq}。 */
+    private final java.util.concurrent.atomic.AtomicInteger nextSeq =
+            new java.util.concurrent.atomic.AtomicInteger();
+
     /**
      * 各種事件的觸發次數，會寫進 _meta.events。
      *
@@ -62,11 +66,25 @@ public final class CaptureStore {
         public String ctx;      // 出現位置
         public int seen = 1;    // 遇到次數，用來排優先度
 
-        Captured(String src, String role, String domain, String ctx) {
+        /**
+         * 第幾個被收集到。
+         *
+         * <h2>為什麼要記順序</h2>
+         * 條目是用雜湊當鍵的，所以檔案裡的順序等於隨機。對<b>任務對話</b>來說
+         * 這是致命的：同一段對話的十幾句話會散在檔案各處，譯者看不出上下文，
+         * 也不知道誰接誰——「他說了什麼」和「他在回答什麼」是兩回事。
+         *
+         * <p>記下收集順序之後，合併工具就能照原始順序輸出，同一段對話自然
+         * 排在一起。
+         */
+        public int seq;
+
+        Captured(String src, String role, String domain, String ctx, int seq) {
             this.src = src;
             this.role = role;
             this.domain = domain;
             this.ctx = ctx;
+            this.seq = seq;
         }
     }
 
@@ -85,7 +103,8 @@ public final class CaptureStore {
             existing.seen++;
             return false;
         }
-        entries.put(key, new Captured(template.strip(), role, domain, ctx));
+        entries.put(key, new Captured(template.strip(), role, domain, ctx,
+                nextSeq.getAndIncrement()));
         dirty.set(true);
         return true;
     }
@@ -113,7 +132,9 @@ public final class CaptureStore {
         JsonObject root = new JsonObject();
         JsonObject meta = new JsonObject();
         meta.addProperty("count", entries.size());
-        meta.addProperty("note", "dst 留空代表尚未翻譯。{#} 是材質包符號，譯文必須原樣保留。");
+        meta.addProperty("note", "dst 留空代表尚未翻譯。{#} 是材質包符號、{~} 是數值、"
+                + "{p} 是地名、{u} 是玩家名字，譯文都必須原樣保留。"
+                + "seq 是收集順序，任務對話照它排就是原本的先後。");
         JsonObject events = new JsonObject();
         eventCounts.entrySet().stream()
                 .sorted(Map.Entry.comparingByKey())
@@ -146,7 +167,10 @@ public final class CaptureStore {
                 return;
             }
             for (String key : saved.keySet()) {
-                entries.put(key, GSON.fromJson(saved.get(key), Captured.class));
+                Captured c = GSON.fromJson(saved.get(key), Captured.class);
+                entries.put(key, c);
+                // 接續上次的流水號，重開遊戲之後收到的才會排在後面
+                nextSeq.updateAndGet(n -> Math.max(n, c.seq + 1));
             }
         } catch (Exception e) {
             System.err.println("[WynnChaYuan] 讀取失敗，將重新開始 " + file + ": " + e.getMessage());
