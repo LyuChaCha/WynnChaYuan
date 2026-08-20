@@ -22,12 +22,21 @@ import net.neoforged.bus.api.SubscribeEvent;
  * Wynntils 的功能在決定的，跟我們無關——我們只是在它旁邊多畫一行。
  * 這也順便把整個模組唯一的 mixin 拿掉了。
  *
+ * <h2>為什麼一定要 receiveCanceled</h2>
+ * 光是訂閱事件還不夠：NeoForge 的匯流排<b>預設不把已取消的事件發給後面的
+ * 監聽器</b>。而 Wynntils 正是<b>用取消來接管</b>名牌繪製的——所以
+ * 不加這個旗標的話，我們的監聽器在「有 donator 標記的玩家」身上
+ * 一次都不會被呼叫，也就是最需要它的那些人身上。
+ *
+ * <p>取消對我們沒有意義：那是 Wynntils 在說「原版不要畫」，不是在說
+ * 「誰都不要畫」。我們只是在它旁邊多加一行。
+ *
  * <p>用 {@link EventPriority#LOWEST}：等 Wynntils 決定完自己要怎麼畫，
  * 我們最後才加上去。
  */
 public final class BadgeListener {
 
-    @SubscribeEvent(priority = EventPriority.LOWEST)
+    @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
     public void onPlayerNametag(PlayerNametagRenderEvent event) {
         try {
             EntityRenderState state = event.getEntityRenderState();
