@@ -1,5 +1,6 @@
 package com.wynnchayuan.client;
 
+import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.render.Colors;
 import net.minecraft.ChatFormatting;
@@ -30,8 +31,31 @@ public final class CreditsScreen extends Screen {
 
     @Override
     protected void init() {
+        // 標記的開關放在名單這一頁，因為它就是「這份名單要不要顯示在遊戲裡」。
+        // 塞進 F6 主頁的話，看到那個選項的人不會知道它在講誰。
+        addRenderableWidget(Button.builder(badgeLabel(), b -> {
+            WynnChaYuan.config().toggleBadges();
+            b.setMessage(badgeLabel());
+        }).bounds(this.width / 2 - 155, this.height - 54, 150, 20).build());
+
+        addRenderableWidget(Button.builder(styleLabel(), b -> {
+            WynnChaYuan.config().cycleBadgeStyle();
+            b.setMessage(styleLabel());
+        }).bounds(this.width / 2 + 5, this.height - 54, 150, 20).build());
+
         addRenderableWidget(Button.builder(Component.literal("返回"), b -> onClose())
-                .bounds(this.width / 2 - 50, this.height - 30, 100, 20).build());
+                .bounds(this.width / 2 - 50, this.height - 28, 100, 20).build());
+    }
+
+    private Component badgeLabel() {
+        return Component.literal("遊戲內標記："
+                + (WynnChaYuan.config().showBadges() ? "開" : "關"));
+    }
+
+    private Component styleLabel() {
+        boolean gradient = WynnChaYuan.config().badgeStyle()
+                == CollectorConfig.BadgeStyle.GRADIENT;
+        return Component.literal("多重身分：" + (gradient ? "全部（漸層）" : "只顯示主要"));
     }
 
     @Override
@@ -68,10 +92,10 @@ public final class CreditsScreen extends Screen {
             y += 8;
         }
 
-        y = this.height - 62;
+        y = this.height - 90;
         for (String line : List.of(
-                "本模組依賴 Wynntils，物品與技能資料取自其公開 CDN",
-                "材質包符號與排版由 Wynncraft 提供，本模組僅顯示不修改")) {
+                "名單上的人，名牌上方會多一行標記 —— 只有裝了本模組的人看得到",
+                "本模組依賴 Wynntils，物品與技能資料取自其公開 CDN")) {
             g.drawCenteredString(this.font,
                     Component.literal(line).withStyle(ChatFormatting.DARK_GRAY), cx, y, Colors.FAINT);
             y += 11;

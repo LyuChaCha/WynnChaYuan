@@ -255,6 +255,40 @@ public final class CollectorConfig {
      */
     private double nametagAngle = 6.0;
 
+    /**
+     * 要不要顯示貢獻者標記。
+     *
+     * <p>預設開：這是給模組使用者之間互相認得出來用的，關掉就沒意義了。
+     * 但覺得畫面吵的人應該能關。
+     */
+    private boolean showBadges = true;
+
+    /** GRADIENT 多重身分逐字漸層；PRIMARY 只顯示第一個身分。 */
+    private BadgeStyle badgeStyle = BadgeStyle.GRADIENT;
+
+    public enum BadgeStyle { GRADIENT, PRIMARY }
+
+    public boolean showBadges() {
+        return showBadges;
+    }
+
+    public boolean toggleBadges() {
+        showBadges = !showBadges;
+        save();
+        return showBadges;
+    }
+
+    public BadgeStyle badgeStyle() {
+        return badgeStyle;
+    }
+
+    public BadgeStyle cycleBadgeStyle() {
+        badgeStyle = badgeStyle == BadgeStyle.GRADIENT
+                ? BadgeStyle.PRIMARY : BadgeStyle.GRADIENT;
+        save();
+        return badgeStyle;
+    }
+
     public double nametagRange() {
         return nametagRange;
     }
@@ -565,6 +599,12 @@ public final class CollectorConfig {
                     }
                 }
             }
+            if (o.has("showBadges")) {
+                showBadges = o.get("showBadges").getAsBoolean();
+            }
+            if (o.has("badgeStyle")) {
+                badgeStyle = BadgeStyle.valueOf(o.get("badgeStyle").getAsString());
+            }
             if (o.has("nametagRange")) {
                 nametagRange = o.get("nametagRange").getAsDouble();
             }
@@ -608,6 +648,8 @@ public final class CollectorConfig {
                 positions.add(which.name(), arr);
             });
             o.add("overlayPos", positions);
+            o.addProperty("showBadges", showBadges);
+            o.addProperty("badgeStyle", badgeStyle.name());
             o.addProperty("nametagRange", nametagRange);
             o.addProperty("nametagAngle", nametagAngle);
             o.addProperty("fixedX", fixedX);
