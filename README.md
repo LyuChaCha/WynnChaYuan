@@ -33,7 +33,8 @@ Wynncraft 是多人遊戲。畫面上只剩中文的話，跟其他玩家討論�
 
 **目前進度 135 / 9,132（1.5%），非常歡迎幫忙。**
 完整說明見 [CONTRIBUTING.md](CONTRIBUTING.md)——**不需要會寫程式**，
-在 GitHub 網頁上直接改就行。
+在 GitHub 網頁上直接改就行。專有名詞先查 [GLOSSARY.md](GLOSSARY.md)
+（`Reflection` 是「遠程反傷」不是「反射」那類）。
 
 翻譯檔就是純 JSON，只要填 `dst`：
 

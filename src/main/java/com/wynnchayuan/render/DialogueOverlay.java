@@ -97,7 +97,8 @@ public final class DialogueOverlay {
         int x = (graphics.guiWidth() - boxW) / 2;
         int y = graphics.guiHeight() - BOTTOM_MARGIN - boxH;
         if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.DIALOGUE)) {
-            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.DIALOGUE);
+            // 存的是水平中心 —— 框寬隨對話長短變，對齊左緣的話短句會偏左
+            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.DIALOGUE) - boxW / 2;
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.DIALOGUE);
         }
 

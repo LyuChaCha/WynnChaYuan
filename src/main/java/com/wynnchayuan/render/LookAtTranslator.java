@@ -201,7 +201,8 @@ public final class LookAtTranslator {
         int x = (graphics.guiWidth() - w) / 2;
         int y = graphics.guiHeight() / 2 + 16;   // 準心下方，不擋住準心本身
         if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.NAMETAG)) {
-            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.NAMETAG);
+            // 存的是水平中心 —— 名字長短差很多，對齊左緣的話短名會偏左
+            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.NAMETAG) - w / 2;
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.NAMETAG);
         }
 
