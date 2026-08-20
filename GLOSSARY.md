@@ -95,6 +95,16 @@
 | Assassin/Ninja | 刺客/忍者 |
 | Shaman/Skyseer | 薩滿/天視者 |
 
+## 職業武器
+
+| 原文 | 譯文 |
+|---|---|
+| Spears | 矛 |
+| Daggers | 匕首 |
+| Bows | 弓 |
+| Wands | 法杖 |
+| Reliks | 聖仗 |
+
 ## 攻擊速度
 
 固定用這七個，不要自己換詞。
