@@ -41,9 +41,11 @@
 | Ingredient | 素材 | 製作用的素材，和 Material 一詞相對 |
 | Ingredient Pouch | 素材袋 | |
 | Emerald Pouch | 綠寶石袋 | |
+| Mastery Tome | 精通書卷 | 同理，Tome 為書卷 |
 | Liquid Emeralds | 液態綠寶石 | Wynncraft 的高額貨幣單位 |
 | Item Identifier | 物品鑑定師 | NPC 職業，不是「鑑定道具」 |
 | Lootrun | Lootrun | **不翻**。社群通用說法，翻了反而對不上 |
+
 
 ## 製作職業
 
@@ -101,8 +103,8 @@
 | Spears | 矛 |
 | Daggers | 匕首 |
 | Bows | 弓 |
-| Wands | 法杖 |
-| Reliks | 聖仗 |
+| Wands | 魔杖 |
+| Reliks | 法器 |
 
 ## 攻擊速度
 
