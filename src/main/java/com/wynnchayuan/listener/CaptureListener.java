@@ -204,7 +204,16 @@ public final class CaptureListener {
             // 於是收到的 captured.json 裡混了一堆別人的攤位。
             if (!template.isBlank() && GlyphSplitter.hasLetter(template)
                     && !PlayerDataFilter.carriesPlayerData(template)) {
-                WynnChaYuan.store().record(template, "name", "npc", "npc/nametag");
+                // 浮在世界裡的字不只有 NPC 名牌：突襲裡選增益的那幾塊、
+                // 地上的指示與提示，用的都是同一種實作。混在 npc.json 裡的話
+                // 譯者要在幾百個 NPC 名字之間翻找，等於找不到，
+                // 所以 Wynntils 沒認成 NPC 的另外放一個檔。
+                boolean isNpc = event.getLabelInfo()
+                        .filter(NpcLabelInfo.class::isInstance).isPresent();
+                WynnChaYuan.store().record(
+                        template, "name",
+                        isNpc ? "npc" : "label",
+                        isNpc ? "npc/nametag" : "label/floating");
             }
         }
 
