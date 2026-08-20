@@ -36,6 +36,18 @@ public record LineParts(
         List<Piece> numbers,
         /** 玩家自己的名字。參數化之後一條譯文所有人通用，見 GlyphSplitter#PLAYER_PLACEHOLDER。 */
         List<Piece> users,
+        /**
+         * 樣式與整行不同的文字片段，例如被畫上底線、單獨換色的技能名。
+         *
+         * <p>重建譯文時整行套用同一個 {@code textStyle}，行內的樣式變化會被抹平——
+         * {@code Reduce the Mana cost of Bash.} 裡的 {@code Bash} 原本帶底線與專屬
+         * 顏色，譯文出來就成了一片平的。
+         *
+         * <p>技能名、地名這類詞照慣例<b>保持英文</b>，也就是原樣出現在譯文裡，
+         * 所以不必請譯者標記——比對得到就把原本的 {@link Style} 貼回去。
+         * 這樣連非原版的自訂顏色都對，因為搬的是樣式物件本身而不是某個顏色碼。
+         */
+        List<Piece> accents,
         Style textStyle) {
 
     /** 一個要填回去的碎片：文字加上它原本的樣式。 */
@@ -105,7 +117,7 @@ public record LineParts(
         List<Piece> places = new ArrayList<>();
         List<Piece> numbers = new ArrayList<>();
         List<Piece> users = new ArrayList<>();
-        Style textStyle = null;
+        List<Piece> runs = new ArrayList<>();
 
         StringBuilder glyphRun = new StringBuilder();
         Style glyphRunStyle = null;
@@ -156,8 +168,8 @@ public record LineParts(
                 glyphs.add(new Piece(lead, style));
             }
             String text = GlyphSplitter.stripGlyphChars(body);
-            if (textStyle == null && !text.isBlank()) {
-                textStyle = style;              // 譯文文字沿用第一段真正文字的樣式
+            if (!text.isBlank()) {
+                runs.add(new Piece(text, style));
             }
             appendParametrized(text, style, tmpl, places, numbers, users);
             if (!tail.isEmpty()) {
@@ -169,14 +181,62 @@ public record LineParts(
             glyphs.add(new Piece(glyphRun.toString(), glyphRunStyle));
         }
 
+        Style textStyle = mainStyle(runs);
         return new LineParts(
                 tmpl.toString().strip(),
                 List.copyOf(glyphs),
                 List.copyOf(places),
                 List.copyOf(numbers),
                 List.copyOf(users),
-                textStyle == null ? Style.EMPTY : textStyle);
+                accents(runs, textStyle),
+                textStyle);
     }
+
+    /**
+     * 整行文字的主樣式：<b>涵蓋字數最多</b>的那一個。
+     *
+     * <p>先前取的是「第一段真正文字」。句子以帶樣式的詞開頭時那就整個反了——
+     * {@code Bash deals damage} 會讓整行都被畫上底線，剩下的才是例外。
+     */
+    private static Style mainStyle(List<Piece> runs) {
+        Style best = null;
+        int bestLen = -1;
+        for (Piece candidate : runs) {
+            int len = 0;
+            for (Piece other : runs) {
+                if (java.util.Objects.equals(candidate.style(), other.style())) {
+                    len += other.text().length();
+                }
+            }
+            if (len > bestLen) {
+                bestLen = len;
+                best = candidate.style();
+            }
+        }
+        return best == null ? Style.EMPTY : best;
+    }
+
+    /**
+     * 樣式與主樣式不同、而且<b>認得出來</b>的片段。
+     *
+     * <p>太短的不收：一兩個字元在譯文裡到處都比對得到，貼錯位置比沒有樣式更糟。
+     * 純標點、純數字也不收——數字走 {@code {~}} 那條路，本來就會連樣式一起填回。
+     */
+    private static List<Piece> accents(List<Piece> runs, Style textStyle) {
+        List<Piece> out = new ArrayList<>();
+        for (Piece run : runs) {
+            String text = run.text().strip();
+            if (text.length() >= MIN_ACCENT_LENGTH
+                    && GlyphSplitter.hasLetter(text)
+                    && !java.util.Objects.equals(run.style(), textStyle)) {
+                out.add(new Piece(text, run.style()));
+            }
+        }
+        return List.copyOf(out);
+    }
+
+    /** 見 {@link #accents}。三個字元大約是最短的有意義單字。 */
+    private static final int MIN_ACCENT_LENGTH = 3;
 
     /**
      * 把一段文字裡的地名與數字換成佔位符，同時記下原文與樣式。

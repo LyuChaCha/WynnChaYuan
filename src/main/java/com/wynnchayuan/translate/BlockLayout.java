@@ -48,6 +48,14 @@ public final class BlockLayout {
      */
     private static final int TOLERANCE = 6;
 
+    /**
+     * 沒有分隔線時，一串連續的行至少要這麼多行才敢當成置中。
+     *
+     * <p>兩行的「巧合吻合」太容易發生——任兩行只要寬度差得夠少，
+     * 縮排 0 就會落在容差內。三行以上才有足夠的證據。
+     */
+    private static final int MIN_RUN = 3;
+
     private BlockLayout() {}
 
     /**
@@ -87,13 +95,54 @@ public final class BlockLayout {
             while (end < n && !blank[end]) {
                 end++;
             }
-            boolean centred = isCentredBlock(lead, content, start, end);
-            for (int i = start; i < end; i++) {
-                result[i] = centred;
-            }
+            markCentred(result, lead, content, start, end);
             start = end;
         }
         return result;
+    }
+
+    /**
+     * 標出這一段裡置中的行。
+     *
+     * <h2>為什麼不能只看整段</h2>
+     * tooltip 的分段<b>不一定有分隔線</b>。未鑑定物品就是這樣：
+     *
+     * <pre>
+     *   {@literal 🔒} Waist Apron              ← 靠左，縮排 0
+     *   [RARE] LEGGINGS                ← 靠左，縮排 0
+     *   This item's power has been sealed,   ← 置中，縮排 0（最寬的那行）
+     *     an {@literal ◉} Item Identifier can unlock  ← 置中，縮排 4
+     *            its potential.        ← 置中，縮排 52
+     * </pre>
+     *
+     * 名稱、稀有度跟後面那三行中間沒有任何分隔，整段一起判斷時前兩行對不上
+     * 置中的算式，於是<b>五行全部</b>被判成靠左，一行都沒調整——譯文變短之後
+     * 整塊往左塌。
+     *
+     * <p>所以整段對不上時，再找<b>段內最長的一串</b>吻合的行。要求至少
+     * {@value #MIN_RUN} 行，而且其中要有明顯的縮排：兩行的巧合太容易發生，
+     * 縮排全是 0 的清單則本來就不是置中。
+     */
+    private static void markCentred(boolean[] result, int[] lead, int[] content,
+                                    int start, int end) {
+        if (isCentredBlock(lead, content, start, end)) {
+            java.util.Arrays.fill(result, start, end, true);
+            return;
+        }
+        int bestFrom = -1;
+        int bestLen = 0;
+        for (int from = start; from + MIN_RUN <= end; from++) {
+            for (int to = end; to - from > bestLen && to - from >= MIN_RUN; to--) {
+                if (isCentredBlock(lead, content, from, to)) {
+                    bestFrom = from;
+                    bestLen = to - from;
+                    break;              // 由長到短試，第一個吻合的就是這個起點最長的
+                }
+            }
+        }
+        if (bestFrom >= 0) {
+            java.util.Arrays.fill(result, bestFrom, bestFrom + bestLen, true);
+        }
     }
 
     /**

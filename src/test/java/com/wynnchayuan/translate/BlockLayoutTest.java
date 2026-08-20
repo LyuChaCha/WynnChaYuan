@@ -125,11 +125,43 @@ public final class BlockLayoutTest {
                 !BlockLayout.centered(List.of(
                         line(0, "AAAA"), line(0, "BBBB")), WIDTH)[0]);
 
+        // 未鑑定物品：名稱與稀有度跟後面三行之間「沒有任何分隔線」。
+        // 整段一起判斷時前兩行對不上算式，結果五行全被判成靠左，
+        // 譯文變短之後整塊往左塌——螢幕上就是那三行說明沒有跟著置中。
+        // 寬度用每字 6 像素推：最寬的那行 34 字 = 204。
+        List<Component> unidentified = List.of(
+                line(0, "Waist Apron"),                          // 靠左，縮排 0
+                line(0, "[RARE] LEGGINGS"),                       // 靠左，縮排 0
+                line(0, "This item's power has been sealed,"),    // 置中，最寬
+                line(21, "an Item Identifier can unlock"),        // (204-162)/2
+                line(60, "its potential."));                      // (204-84)/2
+        boolean[] sealedInPlace = BlockLayout.centered(unidentified, WIDTH);
+        check("沒有分隔線時，仍認得出後面那串置中的說明",
+                !sealedInPlace[0] && !sealedInPlace[1] && sealedInPlace[2]
+                        && sealedInPlace[3] && sealedInPlace[4]);
+
+        // 反面：縮排全是 0 的清單不能被當成置中，加了縮排整段就歪掉。
+        check("縮排全是 0 的清單不算置中",
+                noneOf(BlockLayout.centered(List.of(
+                        line(0, "Can be used in recipes for"),
+                        line(0, "Tailoring"),
+                        line(0, "Weaponsmithing"),
+                        line(0, "Jeweling")), WIDTH)));
+
         System.out.println(failures == 0
                 ? "BlockLayout: 全部通過" : "BlockLayout: " + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    private static boolean noneOf(boolean[] flags) {
+        for (boolean f : flags) {
+            if (f) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static void check(String name, boolean ok) {

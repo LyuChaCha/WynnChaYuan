@@ -962,6 +962,7 @@ public final class LineTranslator {
 
         MutableComponent out = Component.empty();
         Style textStyle = forDisplay(parts.textStyle());
+        boolean[] usedAccent = new boolean[parts.accents().size()];
         int glyph = 0;
         int place = 0;
         int number = 0;
@@ -988,10 +989,65 @@ public final class LineTranslator {
                     LineParts.Piece p = parts.users().get(user++);
                     out.append(literal(p.text(), forDisplay(p.style())));
                 }
-                case TEXT -> out.append(literal(token.text(), textStyle));
+                case TEXT -> appendText(out, token.text(), textStyle,
+                                        parts.accents(), usedAccent);
             }
         }
         return out;
+    }
+
+    /**
+     * 接上一段譯文，並把原文裡帶特殊樣式的詞的樣式貼回去。
+     *
+     * <h2>為什麼做得到</h2>
+     * 技能名、地名這類詞照慣例<b>保持英文</b>——也就是原樣出現在譯文裡。
+     * {@code Reduce the Mana cost of Bash.} 翻成「降低 Bash 的魔力消耗。」，
+     * 那個 {@code Bash} 還在。原文裡它帶著底線與專屬顏色，比對得到就把
+     * 原本的 {@link Style} 搬回去。
+     *
+     * <p>搬的是樣式<b>物件</b>而不是某個顏色碼，所以非原版的自訂顏色也對——
+     * {@code §} 格式碼只表達得出十六個原版顏色，那些技能的顏色根本寫不出來。
+     *
+     * <h2>對不上的時候</h2>
+     * 譯者把那個詞翻成中文了，就比對不到，那一段照主樣式畫——也就是<b>現狀</b>，
+     * 不會更糟。每個詞只貼一次：同一個詞出現兩次而原文只有一個帶樣式時，
+     * 分不出該貼哪一個，貼錯位置比沒有樣式更糟。
+     */
+    private static void appendText(MutableComponent out, String text, Style base,
+                                   List<LineParts.Piece> accents, boolean[] used) {
+        int from = 0;
+        while (from < text.length()) {
+            int at = -1;
+            int which = -1;
+            for (int k = 0; k < accents.size(); k++) {
+                if (used[k]) {
+                    continue;
+                }
+                int found = text.indexOf(accents.get(k).text(), from);
+                if (found < 0) {
+                    continue;
+                }
+                // 位置靠前的優先；同一個位置取比較長的，短詞才不會卡在長詞裡面
+                boolean better = at < 0 || found < at
+                        || (found == at && accents.get(k).text().length()
+                                         > accents.get(which).text().length());
+                if (better) {
+                    at = found;
+                    which = k;
+                }
+            }
+            if (at < 0) {
+                out.append(literal(text.substring(from), base));
+                return;
+            }
+            if (at > from) {
+                out.append(literal(text.substring(from, at), base));
+            }
+            LineParts.Piece accent = accents.get(which);
+            out.append(literal(accent.text(), forDisplay(accent.style())));
+            used[which] = true;
+            from = at + accent.text().length();
+        }
     }
 
     /** 保留顏色與粗斜體，但把字型換成預設，中文才畫得出來。 */
