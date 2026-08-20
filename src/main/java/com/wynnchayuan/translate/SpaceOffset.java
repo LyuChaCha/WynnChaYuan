@@ -113,6 +113,32 @@ public final class SpaceOffset {
         return true;
     }
 
+    /**
+     * 這段文字尾端連續的寬度偏移。
+     *
+     * <p>Wynncraft 有時把欄位間隔<b>接在標籤後面同一個片段裡</b>，例如
+     * {@code "Durability" + U+CFFD7 + U+D0091}（往回 41 再往前 145）。
+     * 那是不折不扣的欄位間隔，只是沒有獨立成一個片段——不拆出來的話
+     * 補償程式碰不到它，譯文變短時數值就會往左跑。
+     *
+     * @return 尾端的偏移字元；沒有就回傳空字串
+     */
+    public static String trailingOffsets(String text) {
+        if (text == null || text.isEmpty()) {
+            return "";
+        }
+        int end = text.length();
+        while (end > 0) {
+            int cp = text.codePointBefore(end);
+            int px = cp - ZERO;
+            if (px < -LIMIT || px > LIMIT) {
+                break;
+            }
+            end -= Character.charCount(cp);
+        }
+        return text.substring(end);
+    }
+
     /** 解出這段空白字元代表的總寬度（像素）。負的也算，見 {@link #LIMIT}。 */
     public static int decode(String text) {
         if (text == null || text.isEmpty()) {

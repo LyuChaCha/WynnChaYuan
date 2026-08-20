@@ -98,7 +98,14 @@ public final class LineTranslator {
                 pieces.add(Piece.text(raw, style));
                 continue;
             }
-            Component replaced = translateOneSegment(raw, style, store);
+            // 欄位間隔有時直接接在標籤後面，同一個片段裡，例如
+            // 「Durability + 往回 41 + 往前 145」。那是間隔不是內容——
+            // 包在文字片段裡的話補償程式碰不到它，譯文變短數值就往左跑。
+            String tail = SpaceOffset.trailingOffsets(raw);
+            String body = raw.substring(0, raw.length() - tail.length());
+
+            Component replaced = body.isEmpty()
+                    ? null : translateOneSegment(body, style, store);
             if (replaced == null) {
                 pieces.add(Piece.text(raw, style));
                 continue;
@@ -106,7 +113,12 @@ public final class LineTranslator {
             any = true;
             // rebuild 已經把文字改成預設字型、圖示與偏移保留原字型，
             // 這裡不能再整段重新上色/換字型，否則偏移會失去寬度
-            pieces.add(Piece.translated(replaced, literal(raw, style)));
+            pieces.add(Piece.translated(replaced, literal(body, style)));
+            if (!tail.isEmpty()) {
+                // 用 space 字型重新編碼：那是保證認得偏移碼位的字型
+                pieces.add(Piece.space(SpaceOffset.decode(tail),
+                        SpaceOffset.styleFor(style)));
+            }
         }
         if (!any) {
             return null;
