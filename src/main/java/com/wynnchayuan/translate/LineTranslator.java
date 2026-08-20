@@ -125,13 +125,11 @@ public final class LineTranslator {
                     SpaceOffset.styleFor(pieces.get(boundary).style())));
         }
 
-        List<Piece> aligned = alignColumns(pieces);
-        // 只記有排版空白的行。沒有空白的行本來就不會有對齊問題，
-        // 記了只會把額度吃光——上一版就是被住宅選單的純文字行佔滿。
-        if (hasSpace(pieces)) {
-            LineDebug.pieces("逐片段 " + line.getStringWithoutFormatting(),
-                    describe(pieces, aligned));
-        }
+        List<Piece> aligned = settle(alignColumns(pieces), line);
+        // 每一行都記（同一句只記一次，見 LineDebug）。先前只記「有排版空白」的行，
+        // 結果真正壞掉的那些——間隔不是用空白字元做的——反而完全看不到。
+        LineDebug.pieces("逐片段 " + line.getStringWithoutFormatting(),
+                describe(pieces, aligned, line));
 
         // 只有前導空白的行是「置中／縮排」而不是「標籤 + 數值」。
         // 這種行沒有兩側都有文字的空白，上面那一輪不會動到它，
@@ -202,6 +200,40 @@ public final class LineTranslator {
             out.set(lastAdjusted,
                     Piece.space(Math.max(0, p.spacePx() - drift), p.style()));
         }
+        return out;
+    }
+
+    /**
+     * 收尾：把<b>量出來</b>的殘差補回最後一個對齊欄。
+     *
+     * <h2>為什麼算完還要量</h2>
+     * {@link #alignColumns} 是逐片段累加算出補償量的。只要有<b>任何一項</b>沒算進去
+     * ——片段之間的字距、字型換掉造成的寬度差、編碼後空白字元的實際寬度——
+     * 整行就會差那麼幾像素到幾十像素，而且完全看不出是哪一段漏了。
+     *
+     * <p>量整行則是把所有因素一次涵蓋。算對的話這裡的殘差是 0，什麼都不會動；
+     * 算漏了就在這裡補回來。這是自我修正，不是另一套演算法。
+     *
+     * <p>只在有對齊欄時才動——沒有欄位的行（散文、標題）本來就不必守住寬度。
+     */
+    private static List<Piece> settle(List<Piece> pieces, StyledText original) {
+        int last = -1;
+        for (int i = 0; i < pieces.size(); i++) {
+            if (isAlignSpace(pieces, i)) {
+                last = i;
+            }
+        }
+        if (last < 0) {
+            return pieces;
+        }
+        int shortfall = widthOf(original.getComponent())
+                - widthOf(assemble(pieces, -1, 0));
+        if (shortfall == 0) {
+            return pieces;
+        }
+        List<Piece> out = new ArrayList<>(pieces);
+        Piece p = out.get(last);
+        out.set(last, Piece.space(Math.max(0, p.spacePx() + shortfall), p.style()));
         return out;
     }
 
@@ -299,18 +331,16 @@ public final class LineTranslator {
         return spaces >= MIN_COLUMN_GAP;
     }
 
-    private static boolean hasSpace(List<Piece> pieces) {
-        for (Piece p : pieces) {
-            if (p.isSpace()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     /** 把補償前後的每個片段列出來，供診斷用。 */
-    private static String describe(List<Piece> before, List<Piece> after) {
+    private static String describe(List<Piece> before, List<Piece> after,
+                                   StyledText original) {
         StringBuilder sb = new StringBuilder();
+        // 整行寬度有沒有守住，是「這行對齊對不對」最直接的答案。
+        // 逐片段的數字要自己加總才看得出來，加總錯了又很難察覺。
+        int want = widthOf(original.getComponent());
+        int got = widthOf(assemble(after, -1, 0));
+        sb.append(String.format("  整行寬度 %d -> %d%s%n", want, got,
+                want == got ? "  (守住)" : "  ← 差 " + (got - want) + " px"));
         for (int i = 0; i < after.size(); i++) {
             Piece b = i < before.size() ? before.get(i) : null;
             Piece a = after.get(i);
