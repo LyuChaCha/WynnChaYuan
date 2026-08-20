@@ -77,7 +77,9 @@ public final class LineTranslator {
             PartStyle ps = part.getPartStyle();
             Style style = ps == null ? Style.EMPTY : ps.getStyle();
 
-            if (SpaceOffset.isSpaceFont(ps)) {
+            // 空白字型底下也可能掛著不是寬度偏移的字元（材質包自訂圖示）。
+            // 那種重新編碼會變成別的東西，所以只有編解碼繞得回來的才當空白。
+            if (SpaceOffset.isSpaceFont(ps) && isAdjustableSpace(style, raw)) {
                 pieces.add(Piece.space(SpaceOffset.decode(raw), style));
                 continue;
             }
@@ -99,15 +101,16 @@ public final class LineTranslator {
             return null;
         }
 
-        // 沒有任何現成的對齊空白，就在標籤與數值的交界補一個。
-        // 這種行原本靠標籤夠長自然排到欄位位置，伺服器沒插對齊字元；
-        // 翻譯後標籤變短就沒東西撐開，數值會整個貼到標籤旁邊。
-        if (!hasAlignSpace(pieces)) {
-            int boundary = findAlignPoint(pieces);
-            if (boundary >= 0 && !pieces.get(boundary).isSpace()) {
-                pieces.add(boundary, Piece.space(0,
-                        SpaceOffset.styleFor(pieces.get(boundary).style())));
-            }
+        // 標籤與數值的交界若還沒有對齊空白，就補一個。
+        //
+        // 「整行有沒有空白」是不夠的判斷：素材那種行在標籤與第一個數值之間
+        // 沒有空白（padding 塞在標籤片段裡），只有兩個數值之間有。看到後面
+        // 那個就以為不用補的話，差額會全部灌進第二欄——標籤和第一個數值黏在
+        // 一起，第二欄則被推過頭。要看的是<b>交界那個位置</b>本身。
+        int boundary = findAlignPoint(pieces);
+        if (boundary >= 0 && !pieces.get(boundary).isSpace()) {
+            pieces.add(boundary, Piece.space(0,
+                    SpaceOffset.styleFor(pieces.get(boundary).style())));
         }
 
         List<Piece> aligned = alignColumns(pieces);
@@ -173,15 +176,6 @@ public final class LineTranslator {
                 && hasTextAfter(pieces, index);
     }
 
-    private static boolean hasAlignSpace(List<Piece> pieces) {
-        for (int i = 0; i < pieces.size(); i++) {
-            if (isAlignSpace(pieces, i)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     /** 行首的縮排／置中空白；沒有就回傳 -1。 */
     private static int leadingSpace(List<Piece> pieces) {
         for (int i = 0; i < pieces.size(); i++) {
@@ -196,33 +190,50 @@ public final class LineTranslator {
     /**
      * 找出這一行該在哪裡撐開寬度，也就是「標籤」與「數值」的交界。
      *
-     * <p>tooltip 的欄位對齊有兩種情形，要分開處理：
+     * <p>從尾端往回走，把「看起來像數值」的片段（{@code +372}、{@code [94.0%]}、
+     * 純空白、對齊空白）都算進數值區，停在第一個真正的文字片段——那就是交界。
      *
-     * <ol>
-     *   <li><b>有對齊空白字元</b>：伺服器已經插好了，調整它即可</li>
-     *   <li><b>沒有</b>：原文標籤剛好夠長，自然就排到欄位位置。
-     *       翻譯後標籤變短，就得自己補一個</li>
-     * </ol>
+     * <p>回傳的位置<b>可能已經是一個對齊空白</b>（伺服器插好的），那就直接用；
+     * 也可能是數值本身，那就得自己補一個。呼叫端看那個位置是不是空白來決定。
      *
-     * <p>第二種的交界怎麼找：從尾端往回走，把「看起來像數值」的片段
-     * （{@code +372}、{@code [94.0%]}、純空白）都算進數值區，
-     * 停在第一個真正的文字片段——那就是交界。
+     * <p>刻意不做「整行找找看有沒有空白，有就用」——素材那種行在標籤與第一個
+     * 數值之間沒有空白，只有兩個數值之間有。看到後面那個就以為不用補的話，
+     * 差額會全部灌進第二欄。
      *
      * @return 要撐開的位置索引；沒有欄位結構時回傳 -1
      */
     static int findAlignPoint(List<Piece> pieces) {
-        // 情形一：用現成的對齊空白——但必須挑「後面還有文字」的那一個。
-        //
-        // 行尾常常還有一段留白當右邊距。差額加進那裡的話，整行寬度是對的
-        // （所以量起來沒問題），數值卻還黏在標籤旁邊，右邊空一大塊。
-        //
-        // 置中的行也一樣：{@code [空白] 文字 [空白]}，撐開尾端那個只會把
-        // 文字留在左邊，撐開前面那個才會置中。
-        for (int i = pieces.size() - 1; i >= 0; i--) {
-            if (pieces.get(i).isSpace() && hasTextAfter(pieces, i)) {
+        int firstAlign = firstAlignSpace(pieces);
+        int valueStart = valueRegionStart(pieces);
+
+        // 現成的空白在數值區<b>之前或正好在交界上</b>，它就是交界，直接用。
+        // 「Class Type｜Archer/Hunter」這種數值是文字的行只能靠這條認出來。
+        if (firstAlign >= 0 && (valueStart < 0 || firstAlign <= valueStart)) {
+            return firstAlign;
+        }
+        // 現成的空白在數值區裡面（素材的兩欄行就是這樣：標籤後面沒有空白，
+        // 只有兩個數值之間有）。那個不是標籤與數值的交界，要在數值區起點補。
+        return valueStart;
+    }
+
+    /** 由前往後第一個「兩側都有文字」的空白。 */
+    private static int firstAlignSpace(List<Piece> pieces) {
+        for (int i = 0; i < pieces.size(); i++) {
+            if (isAlignSpace(pieces, i)) {
                 return i;
             }
         }
+        return -1;
+    }
+
+    /**
+     * 數值區從哪裡開始。
+     *
+     * <p>從尾端往回走，把「看起來像數值」的片段都算進去，停在第一個真正的
+     * 文字片段。數值是文字（{@code Archer/Hunter}）時認不出來，回傳 -1，
+     * 那種情況靠現成的對齊空白判斷。
+     */
+    private static int valueRegionStart(List<Piece> pieces) {
         int i = pieces.size() - 1;
         while (i >= 0 && looksLikeValue(pieces.get(i).text())) {
             i--;
@@ -233,14 +244,12 @@ public final class LineTranslator {
         }
         // 數值區裡必須真的有數字。否則像「1 x Doom Stone ◆◆◆」這種
         // 以符號結尾的行也會被當成欄位，插進去的空白只會把符號推歪。
-        boolean hasDigit = false;
         for (int j = valueStart; j < pieces.size(); j++) {
             if (pieces.get(j).text().chars().anyMatch(Character::isDigit)) {
-                hasDigit = true;
-                break;
+                return valueStart;
             }
         }
-        return hasDigit ? valueStart : -1;
+        return -1;
     }
 
     /** 這個位置之後還有沒有實際文字。沒有的話它只是行尾的留白邊距。 */

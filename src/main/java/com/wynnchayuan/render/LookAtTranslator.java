@@ -39,6 +39,17 @@ public final class LookAtTranslator {
     private static final double LABEL_BOX = 0.5;
 
     /**
+     * 夾角錐再窄，也至少允許偏離視線這麼多格。
+     *
+     * <p>名牌浮在<b>頭頂</b>，玩家卻是對著<b>身體</b>看的。站在 NPC 面前兩格時，
+     * 那個高度差就是十幾度——純用夾角判定的話，明明就站在他面前卻什麼都不跳。
+     *
+     * <p>改成「離視線這條直線多遠」就沒有這個問題：這是世界座標的距離，
+     * 不隨距離變化。夾角設定則繼續管遠處——遠了才需要「對準」的語意。
+     */
+    private static final double MIN_AIM_RADIUS = 1.4;
+
+    /**
      * 記錄看過的名牌。
      *
      * <p>用 {@link WeakHashMap} 是刻意的：實體離開視野後 Minecraft 會回收它，
@@ -103,8 +114,9 @@ public final class LookAtTranslator {
      * <ol>
      *   <li><b>準心真的打到誰</b>——用射線打名牌的碰撞箱，最近的那個贏。
      *       這是「我就是在看他」的情況，最明確，優先權最高。</li>
-     *   <li>都沒打到才退回夾角錐，而且錐內<b>比距離</b>不比夾角——
-     *       近的優先，因為那才是玩家眼前的東西。</li>
+     *   <li>都沒打到才看<b>離視線多遠</b>，取最近的。名牌浮在頭頂而玩家
+     *       對著身體看，所以容許範圍除了夾角錐，還有一個不隨距離縮小的
+     *       下限（見 {@link #MIN_AIM_RADIUS}）。</li>
      * </ol>
      *
      * <p>距離與夾角都可以在設定裡調：城裡 NPC 站得密，錐要收窄；
@@ -121,7 +133,7 @@ public final class LookAtTranslator {
         StyledText hit = null;
         double hitDistance = Double.MAX_VALUE;
         StyledText nearest = null;
-        double nearestDistance = Double.MAX_VALUE;
+        double nearestPerp = Double.MAX_VALUE;
 
         for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
             Entity entity = e.getKey();
@@ -141,12 +153,19 @@ public final class LookAtTranslator {
                 continue;
             }
             if (hit != null) {
-                continue;                      // 已經有直接命中的，錐內的就不用看了
+                continue;                      // 已經有直接命中的，其他都不用看了
             }
+            // 這個名牌離視線那條直線多遠（垂直距離，世界座標）
             Vec3 delta = entity.position().subtract(eye);
-            if (look.dot(delta.scale(1.0 / distance)) >= minDot
-                    && distance < nearestDistance) {
-                nearestDistance = distance;
+            double along = delta.dot(look);
+            if (along <= 0) {
+                continue;                      // 在身後
+            }
+            double perpendicular = delta.subtract(look.scale(along)).length();
+            double allowed = Math.max(Math.sin(Math.acos(minDot)) * distance,
+                                      MIN_AIM_RADIUS);
+            if (perpendicular <= allowed && perpendicular < nearestPerp) {
+                nearestPerp = perpendicular;
                 nearest = e.getValue();
             }
         }
