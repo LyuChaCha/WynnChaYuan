@@ -38,6 +38,24 @@ public final class LineDebug {
         file = path;
     }
 
+    /**
+     * 記錄逐片段那條路的中間狀態。
+     *
+     * <p>只看最後的 Component 不夠：間隔「完全消失」與「補太少」在畫面上
+     * 都是歪掉，但成因完全不同——前者是空白被編碼成空字串，後者是差額算錯。
+     * 要分辨就得看到<b>每個空白補償前後的像素值</b>。
+     */
+    public static void pieces(String header, String detail) {
+        if (file == null || written >= LIMIT || !WynnChaYuan.config().collect()) {
+            return;
+        }
+        written++;
+        buffer.append("=== ").append(written).append(" · ").append(header)
+              .append(" ===").append(System.lineSeparator())
+              .append(detail).append(System.lineSeparator());
+        flush();
+    }
+
     /** 記一行。原文與譯文的片段並排，才看得出哪一段變了、變多少。 */
     public static void record(StyledText original, Component translated) {
         if (file == null || written >= LIMIT || translated == null
