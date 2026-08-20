@@ -28,6 +28,18 @@ public final class SpaceOffset {
     /** 寬度 0 的基準碼位。{@code U+D0000 + n} 即為 n 像素寬。 */
     private static final int ZERO = 0xD0000;
 
+    /**
+     * 允許的偏移範圍（像素）。
+     *
+     * <p>Wynncraft <b>也會用負偏移</b>——實際 tooltip 裡出現過 {@code U+CFFE7}
+     * （比基準低 25，也就是往回 25 像素）。原本這裡只認 {@code >= 0}，
+     * 負的一律當成 0，於是那些字元既解不出寬度、重新編碼又變成空字串。
+     *
+     * <p>範圍抓 ±1024：實際看到的都在 ±256 以內，留餘裕但不至於把
+     * 隨機的未指派碼位誤認成偏移。
+     */
+    private static final int LIMIT = 1024;
+
     private SpaceOffset() {}
 
     /** 這個樣式是不是對齊用的空白字型。 */
@@ -67,7 +79,7 @@ public final class SpaceOffset {
                         net.minecraft.resources.Identifier.withDefaultNamespace("space")));
     }
 
-    /** 解出這段空白字元代表的總寬度（像素）。 */
+    /** 解出這段空白字元代表的總寬度（像素）。負的也算，見 {@link #LIMIT}。 */
     public static int decode(String text) {
         if (text == null || text.isEmpty()) {
             return 0;
@@ -77,7 +89,7 @@ public final class SpaceOffset {
             int cp = text.codePointAt(i);
             i += Character.charCount(cp);
             int px = cp - ZERO;
-            if (px >= 0 && px <= 0xFFFF) {      // 落在這個字型的範圍內才算
+            if (px >= -LIMIT && px <= LIMIT) {  // 落在這個字型的範圍內才算
                 total += px;
             }
         }
@@ -87,12 +99,17 @@ public final class SpaceOffset {
     /**
      * 編回一個指定寬度的空白字元。
      *
-     * @return 寬度 &lt;= 0 時回傳空字串（負寬度沒辦法用這個字型表達）
+     * <p>負寬度也編得出來（碼位落在基準之下），因為 Wynncraft 本來就在用。
+     * 先前這裡對 {@code <= 0} 一律回傳空字串——那等於<b>把整個對齊空白刪掉</b>，
+     * 畫面上就是數值突然黏到標籤旁邊，而且完全看不出是被刪掉的。
+     *
+     * @return 寬度剛好是 0 時回傳空字串（本來就不必畫）
      */
     public static String encode(int pixels) {
-        if (pixels <= 0) {
+        if (pixels == 0) {
             return "";
         }
-        return new String(Character.toChars(ZERO + Math.min(pixels, 0xFFFF)));
+        int clamped = Math.max(-LIMIT, Math.min(pixels, LIMIT));
+        return new String(Character.toChars(ZERO + clamped));
     }
 }

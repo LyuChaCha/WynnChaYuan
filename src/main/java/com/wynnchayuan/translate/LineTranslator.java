@@ -115,8 +115,12 @@ public final class LineTranslator {
         }
 
         List<Piece> aligned = alignColumns(pieces);
-        LineDebug.pieces("逐片段 " + line.getStringWithoutFormatting(),
-                describe(pieces, aligned));
+        // 只記有排版空白的行。沒有空白的行本來就不會有對齊問題，
+        // 記了只會把額度吃光——上一版就是被住宅選單的純文字行佔滿。
+        if (hasSpace(pieces)) {
+            LineDebug.pieces("逐片段 " + line.getStringWithoutFormatting(),
+                    describe(pieces, aligned));
+        }
 
         // 只有前導空白的行是「置中／縮排」而不是「標籤 + 數值」。
         // 這種行沒有兩側都有文字的空白，上面那一輪不會動到它，
@@ -164,7 +168,10 @@ public final class LineTranslator {
                 continue;
             }
             if (isAlignSpace(pieces, i)) {
-                out.add(Piece.space(p.spacePx() - drift, p.style()));
+                // 欄位間隔不該變成負的——那會讓數值疊到標籤上。
+                // 但也絕不能因此變成 0 而消失：譯文比原文寬時，
+                // 正確的結果是「貼齊」，不是「刪掉整個間隔」。
+                out.add(Piece.space(Math.max(0, p.spacePx() - drift), p.style()));
                 lastAdjusted = i;
                 drift = 0;
             } else {
@@ -182,7 +189,8 @@ public final class LineTranslator {
         // 整行的總寬度就會跟原文相同，右緣自然重合。
         if (lastAdjusted >= 0 && drift != 0) {
             Piece p = out.get(lastAdjusted);
-            out.set(lastAdjusted, Piece.space(p.spacePx() - drift, p.style()));
+            out.set(lastAdjusted,
+                    Piece.space(Math.max(0, p.spacePx() - drift), p.style()));
         }
         return out;
     }
@@ -279,6 +287,15 @@ public final class LineTranslator {
             break;
         }
         return spaces >= MIN_COLUMN_GAP;
+    }
+
+    private static boolean hasSpace(List<Piece> pieces) {
+        for (Piece p : pieces) {
+            if (p.isSpace()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** 把補償前後的每個片段列出來，供診斷用。 */
