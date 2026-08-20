@@ -78,6 +78,7 @@ public final class LineTranslator {
         // 先把每個片段翻好，不急著組裝——寬度要等整行都翻完才量得準。
         List<Piece> pieces = new ArrayList<>();
         boolean any = false;
+        boolean percent = hasPercentValue(line);
 
         for (StyledTextPart part : line) {
             String raw = part.getString(null, StyleType.NONE);
@@ -105,7 +106,7 @@ public final class LineTranslator {
             String body = raw.substring(0, raw.length() - tail.length());
 
             Component replaced = body.isEmpty()
-                    ? null : translateOneSegment(body, style, store);
+                    ? null : translateOneSegment(body, style, store, percent);
             if (replaced == null) {
                 pieces.add(Piece.text(raw, style));
                 continue;
@@ -578,8 +579,41 @@ public final class LineTranslator {
      * <p>空白會影響版面（Wynncraft 用它對齊），所以只拿中間的實際內容去查，
      * 查到之後把空白原樣接回。
      */
+    /**
+     * 這一行的<b>數值</b>是不是百分比。
+     *
+     * <h2>為什麼要分</h2>
+     * 同一個標籤會有兩種形態：{@code Health Regen -605}（實數）與
+     * {@code Health Regen -162%}（百分比）。英文靠數值本身就分得出來，
+     * 中文卻常常需要不同的說法（「生命回復值」與「生命回復百分比」），
+     * 而它們的標籤文字一模一樣，一條譯文沒辦法同時對。
+     *
+     * <p>所以看數值：以正負號開頭、只有數字的那一段，結尾有沒有 {@code %}。
+     * 刻意不看整行有沒有 {@code %}——{@code +282 [53.8%]} 後面那個
+     * 是詞條品質，不是數值本身。
+     */
+    private static boolean hasPercentValue(StyledText line) {
+        for (StyledTextPart part : line) {
+            String text = part.getString(null, StyleType.NONE).strip();
+            if (text.isEmpty() || !VALUE.matcher(text).matches()) {
+                continue;
+            }
+            return text.endsWith("%");
+        }
+        return false;
+    }
+
+    /** 純粹的數值：可帶正負號、千分位、小數，可帶結尾百分號。 */
+    private static final java.util.regex.Pattern VALUE =
+            java.util.regex.Pattern.compile("[+-]?\\d[\\d,.]*%?");
+
+    /**
+     * @param percent 這一行的數值是百分比。會先找「標籤 + {@code %}」的鍵，
+     *                找不到才退回一般的鍵——所以沒有特地區分的標籤不受影響。
+     */
     private static Component translateOneSegment(String raw, Style style,
-                                                 TranslationStore store) {
+                                                 TranslationStore store,
+                                                 boolean percent) {
         String core = raw.strip();
         if (core.isEmpty() || !GlyphSplitter.hasLetter(core)) {
             return null;
@@ -591,7 +625,10 @@ public final class LineTranslator {
         // 借用整行的機制處理片段內的數值與地名參數化
         StyledText one = StyledText.fromComponent(Component.literal(core).withStyle(style));
         LineParts parts = LineParts.of(one);
-        String hit = lookup(parts.template(), store);
+        String hit = percent ? store.lookup(parts.template() + "%") : null;
+        if (hit == null) {
+            hit = lookup(parts.template(), store);
+        }
         if (hit == null) {
             return null;
         }
