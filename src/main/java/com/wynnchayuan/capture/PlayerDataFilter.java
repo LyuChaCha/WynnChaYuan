@@ -40,6 +40,7 @@ public final class PlayerDataFilter {
             " shouts:",                 // 玩家喊話
             "has logged into server",   // 上線廣播
             "has left the game",
+            " left the game",       // 沒有 has 的版本，一樣夾帶玩家名
             "'s friends (",             // 好友名單標題
             "[Server: ",                // 好友名單條目
             "Congratulations to",       // 別人的成就
@@ -71,6 +72,24 @@ public final class PlayerDataFilter {
     private static final Pattern PLAYER_SHOP =
             Pattern.compile("['’]s Shop(\\n|$)");
 
+    /**
+     * 中日韓文字。
+     *
+     * <h2>為什麼「出現中文」就該擋</h2>
+     * Wynncraft 的原文<b>全部是英文</b>。收集到的字串裡出現中文，只有兩種可能，
+     * 兩種都不該進語料：
+     *
+     * <ul>
+     *   <li><b>玩家自己打的字</b>——攤位招牌、名牌上的留言。那是別人的內容，
+     *       不是遊戲文案。</li>
+     *   <li><b>我們自己的譯文繞回來了</b>——就地取代模式下畫面上的 tooltip
+     *       已經是中文，再收集一次就會把譯文當成原文記下來。實際收到的
+     *       {@code captured.json} 裡就有「- 等級 {~} [...]」這種條目。</li>
+     * </ul>
+     */
+    private static final Pattern CJK = Pattern.compile(
+            "[\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff]");
+
     private PlayerDataFilter() {}
 
     /** 這段訊息是否夾帶玩家資料、不該被記錄。 */
@@ -83,7 +102,8 @@ public final class PlayerDataFilter {
                 return true;
             }
         }
-        if (COORDS.matcher(text).find() || PLAYER_SHOP.matcher(text).find()) {
+        if (COORDS.matcher(text).find() || PLAYER_SHOP.matcher(text).find()
+                || CJK.matcher(text).find()) {
             return true;
         }
         String self = localPlayerName();
