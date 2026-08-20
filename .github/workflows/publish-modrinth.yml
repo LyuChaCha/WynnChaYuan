@@ -47,7 +47,7 @@ jobs:
       - name: 上傳到 Modrinth
         uses: Kir-Antipov/mc-publish@v3.3
         with:
-          modrinth-id: CHANGE_ME
+          modrinth-id: mrp_iQuoPkDzVxwDbK1oLjNAPEuFPMCQQJzH7sCFU8LNYLD3UXUE1PmYXI2uVRU8
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           files: build/libs/!(*-sources).jar
           name: ${{ github.event.release.name }}
