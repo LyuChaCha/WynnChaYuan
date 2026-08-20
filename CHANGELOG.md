@@ -3,6 +3,17 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.21.1] - 2026-08-20
+
+### 修正
+
+- **關掉「翻譯物品名稱」時，技能名稱也被一起關掉了**（[#36](https://github.com/LyuChaCha/WynnChaYuan/issues/36)）。
+  那個開關是為了讓裝備名稱保持英文、對得上 wiki 與交易市場；技能名稱跟交易市場
+  毫無關係，不該受它影響。先前的判斷是「只要 `role` 是 `name` 就算物品名稱」。
+  - 改成由譯文檔自己宣告：`_meta.itemNames`。沒寫的當物品——漏標一個裝備檔會讓
+    開關<b>無聲失效</b>，漏標一個技能檔頂多是名稱跟著關掉，後者看得出來。
+  - `ability.json`、`major-id.json` 已標為 `false`。
+
 ## [1.21.0] - 2026-08-20
 
 ### 新增
