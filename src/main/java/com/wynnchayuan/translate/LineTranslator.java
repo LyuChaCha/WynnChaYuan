@@ -88,14 +88,15 @@ public final class LineTranslator {
                 pieces.add(Piece.text(raw, style));
                 continue;
             }
-            String replaced = translateOneSegment(raw, style, store);
+            Component replaced = translateOneSegment(raw, style, store);
             if (replaced == null) {
                 pieces.add(Piece.text(raw, style));
                 continue;
             }
             any = true;
-            Style display = forDisplay(style);
-            pieces.add(Piece.translated(replaced, raw, display));
+            // rebuild 已經把文字改成預設字型、圖示與偏移保留原字型，
+            // 這裡不能再整段重新上色/換字型，否則偏移會失去寬度
+            pieces.add(Piece.translated(replaced, literal(raw, style)));
         }
         if (!any) {
             return null;
@@ -162,8 +163,7 @@ public final class LineTranslator {
         for (int i = 0; i < pieces.size(); i++) {
             Piece p = pieces.get(i);
             if (!p.isSpace()) {
-                drift += widthOf(literal(p.text(), p.style()))
-                        - widthOf(literal(p.origText(), p.style()));
+                drift += widthOf(p.rendered()) - widthOf(p.orig());
                 out.add(p);
                 continue;
             }
@@ -311,9 +311,8 @@ public final class LineTranslator {
                         isAlignSpace(after, i) ? "  (對齊欄)" : "  (不調整)"));
             } else {
                 sb.append(String.format("  [%d] 文字 「%s」 <- 「%s」 寬 %d -> %d%n", i,
-                        a.text(), a.origText(),
-                        widthOf(literal(a.origText(), a.style())),
-                        widthOf(literal(a.text(), a.style()))));
+                        a.text(), a.orig().getString(),
+                        widthOf(a.orig()), widthOf(a.rendered())));
             }
         }
         return sb.toString();
@@ -400,7 +399,7 @@ public final class LineTranslator {
         for (int i = 0; i < pieces.size(); i++) {
             Piece p = pieces.get(i);
             if (!p.isSpace()) {
-                out.append(literal(p.text(), p.style()));
+                out.append(p.rendered());
                 continue;
             }
             int px = p.spacePx() + (i == adjustIndex ? adjustPx : 0);
@@ -429,19 +428,38 @@ public final class LineTranslator {
      * {@code AlignPointTest} 測得到 {@link #findAlignPoint}——對齊是這個專案
      * 反覆出問題的地方，而畫面上要靠肉眼比對幾個像素，很難察覺。
      */
-    record Piece(String text, String origText, Style style, int spacePx, boolean isSpace) {
-        /** 沒有被翻譯的片段：原文就是它自己。 */
+    record Piece(Component rendered, Component orig, Style style, int spacePx, boolean isSpace) {
+
+        /**
+         * 沒有被翻譯的片段：原封不動，連字型都不動。
+         */
         static Piece text(String t, Style s) {
-            return new Piece(t, t, s, 0, false);
+            Component c = literal(t, s);
+            return new Piece(c, c, s, 0, false);
         }
 
-        /** 翻譯過的片段。原文要留著，才算得出這一段寬度變了多少。 */
-        static Piece translated(String t, String orig, Style s) {
-            return new Piece(t, orig, s, 0, false);
+        /**
+         * 翻譯過的片段。
+         *
+         * <p>存的是 {@link Component} 而不是字串——這一段裡面可能<b>混著圖示與
+         * 排版偏移</b>，它們各自有自己的字型。先前這裡存字串，等於把字型全部
+         * 壓掉，再整段套上預設字型；排版偏移字元在預設字型底下<b>沒有寬度</b>，
+         * 於是欄位間隔整個消失，數值黏死在標籤旁。
+         *
+         * <p>原文也存 Component，因為量原始寬度必須用<b>原本的字型</b>——
+         * 用譯文的字型去量原文，算出來的差額是錯的。
+         */
+        static Piece translated(Component rendered, Component orig) {
+            return new Piece(rendered, orig, Style.EMPTY, 0, false);
         }
 
         static Piece space(int px, Style s) {
-            return new Piece("", "", s, px, true);
+            return new Piece(null, null, s, px, true);
+        }
+
+        /** 純文字，供「這看起來像數值嗎」之類的判斷使用。 */
+        String text() {
+            return rendered == null ? "" : rendered.getString();
         }
     }
 
@@ -451,7 +469,8 @@ public final class LineTranslator {
      * <p>空白會影響版面（Wynncraft 用它對齊），所以只拿中間的實際內容去查，
      * 查到之後把空白原樣接回。
      */
-    private static String translateOneSegment(String raw, Style style, TranslationStore store) {
+    private static Component translateOneSegment(String raw, Style style,
+                                                 TranslationStore store) {
         String core = raw.strip();
         if (core.isEmpty() || !GlyphSplitter.hasLetter(core)) {
             return null;
@@ -468,7 +487,20 @@ public final class LineTranslator {
             return null;
         }
         Component rebuilt = rebuild(hit, parts);
-        return rebuilt == null ? null : prefix + rebuilt.getString() + suffix;
+        if (rebuilt == null) {
+            return null;
+        }
+        // 前後空白用<b>原本的樣式</b>接回去。那些空白也可能是排版偏移，
+        // 改成預設字型就沒有寬度了。
+        MutableComponent out = Component.empty();
+        if (!prefix.isEmpty()) {
+            out.append(literal(prefix, style));
+        }
+        out.append(rebuilt);
+        if (!suffix.isEmpty()) {
+            out.append(literal(suffix, style));
+        }
+        return out;
     }
 
     /** 整行查表。散文與對話用這條路，因為它們需要跨片段重排語序。 */

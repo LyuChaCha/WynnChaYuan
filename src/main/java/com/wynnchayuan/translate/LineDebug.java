@@ -32,6 +32,15 @@ public final class LineDebug {
     private static int written = 0;
     private static StringBuilder buffer = new StringBuilder();
 
+    /**
+     * 已經記過的句子。
+     *
+     * <p>沒有這個的話，額度會被<b>同一行</b>洗光——tooltip 每幀都會重畫，
+     * 滑鼠停在某個東西上兩秒就寫滿 25 筆一模一樣的內容。前兩次收到的診斷檔
+     * 就是這樣，25 筆全是「點擊前往你的住宅」，真正要看的裝備行一筆都沒有。
+     */
+    private static final java.util.Set<String> seen = new java.util.HashSet<>();
+
     private LineDebug() {}
 
     public static void init(Path path) {
@@ -46,7 +55,8 @@ public final class LineDebug {
      * 要分辨就得看到<b>每個空白補償前後的像素值</b>。
      */
     public static void pieces(String header, String detail) {
-        if (file == null || written >= LIMIT || !WynnChaYuan.config().collect()) {
+        if (file == null || written >= LIMIT || !WynnChaYuan.config().collect()
+                || !seen.add(header)) {
             return;
         }
         written++;
@@ -59,7 +69,8 @@ public final class LineDebug {
     /** 記一行。原文與譯文的片段並排，才看得出哪一段變了、變多少。 */
     public static void record(StyledText original, Component translated) {
         if (file == null || written >= LIMIT || translated == null
-                || !WynnChaYuan.config().collect()) {
+                || !WynnChaYuan.config().collect()
+                || !seen.add(original.getStringWithoutFormatting())) {
             return;
         }
         written++;
