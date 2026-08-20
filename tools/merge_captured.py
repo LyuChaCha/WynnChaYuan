@@ -59,32 +59,40 @@ def main() -> None:
         print("captured.json 裡沒有任何條目。")
         return
 
-    # 依 seen 由多到少：常出現的先翻，效益最高
+    # 兩種排序，因為兩種內容的翻譯方式不一樣：
+    #
+    #   任務對話 → 照<b>收集順序</b>。同一段對話的十幾句話必須排在一起，
+    #              而且要照原本的先後——譯者看不出上下文就翻不對語氣，
+    #              也分不清誰在回答誰。
+    #   其他     → 照<b>出現次數</b>由多到少。那些是各自獨立的短詞，
+    #              先翻常看到的效益最高。
     by_file: dict[str, list[tuple[int, str]]] = {}
     for v in entries.values():
         target = DOMAIN_TO_FILE.get(v.get("domain"))
         text = v.get("src", "").strip()
         if not target or not text:
             continue
-        by_file.setdefault(target, []).append((v.get("seen", 1), text))
+        order = (v.get("seq", 0) if v.get("domain") == "quest"
+                 else -v.get("seen", 1))
+        by_file.setdefault(target, []).append((order, text))
 
     total_added = 0
     for name, rows in sorted(by_file.items()):
         path = TRANSLATIONS / name
         existing = load_flat(path)
         added = []
-        for seen, text in sorted(rows, reverse=True):
+        for order, text in sorted(rows):
             if text not in existing:
-                added.append((seen, text))
+                added.append((order, text))
 
         if not added:
             print(f"{name}: 沒有新條目")
             continue
 
         print(f"\n{name}: 新增 {len(added)} 條")
-        for seen, text in added[:8]:
+        for order, text in added[:8]:
             shown = text.replace("\n", " ⏎ ")
-            print(f"   (見過 {seen:>3} 次) {shown[:66]}")
+            print(f"   {shown[:70]}")
         if len(added) > 8:
             print(f"   … 另外 {len(added) - 8} 條")
 

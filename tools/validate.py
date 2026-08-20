@@ -34,10 +34,10 @@ GLOSSARY_FILE = ROOT / "GLOSSARY.md"
 TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations"
 PLACES_FILE = ROOT / "src/main/resources/assets/wynnchayuan/places.json"
 
-PLACEHOLDERS = ("{#}", "{~}", "{p}")
+PLACEHOLDERS = ("{#}", "{~}", "{p}", "{u}")
 
 # 看起來想寫佔位符但寫錯的樣子。這種錯在遊戲裡會原樣顯示出來。
-BAD_PLACEHOLDER = re.compile(r"[｛{]\s*[#~p]\s*[｝}]")
+BAD_PLACEHOLDER = re.compile(r"[｛{]\s*[#~pu]\s*[｝}]")
 
 
 def load_glossary() -> dict[str, str]:
@@ -120,7 +120,7 @@ def check_pair(path: str, key: str, src: str, dst: str,
     wrong = [b for b in bad if b not in PLACEHOLDERS]
     if wrong:
         out.append(Problem("error", path, key,
-                           f"佔位符寫錯：{wrong}（要正好是 {{#}} {{~}} {{p}}，不能有空格或全形括號）"))
+                           f"佔位符寫錯：{wrong}（要正好是 {{#}} {{~}} {{p}} {{u}}，不能有空格或全形括號）"))
 
     # 換行：技能說明是固定幾行的排版，行數變了整塊會擠掉
     if src.count("\n") != dst.count("\n"):

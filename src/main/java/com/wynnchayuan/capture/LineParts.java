@@ -34,6 +34,8 @@ public record LineParts(
         List<Piece> glyphs,
         List<Piece> places,
         List<Piece> numbers,
+        /** 玩家自己的名字。參數化之後一條譯文所有人通用，見 GlyphSplitter#PLAYER_PLACEHOLDER。 */
+        List<Piece> users,
         Style textStyle) {
 
     /** 一個要填回去的碎片：文字加上它原本的樣式。 */
@@ -57,6 +59,17 @@ public record LineParts(
      * <p>只認符號碼位，空白不算——空白是內容的一部分，抽掉會讓
      * {@code "Tailoring "} 變成 {@code "Tailoring"}，兩者的語料鍵不同。
      */
+    /** 本機玩家的帳號名稱；取不到就回傳 null。 */
+    private static String localPlayerName() {
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            String name = mc == null || mc.getUser() == null ? null : mc.getUser().getName();
+            return name == null || name.isBlank() ? null : name;
+        } catch (Throwable t) {
+            return null;
+        }
+    }
+
     private static String leadingGlyphs(String raw) {
         int n = 0;
         while (n < raw.length()) {
@@ -91,6 +104,7 @@ public record LineParts(
         List<Piece> glyphs = new ArrayList<>();
         List<Piece> places = new ArrayList<>();
         List<Piece> numbers = new ArrayList<>();
+        List<Piece> users = new ArrayList<>();
         Style textStyle = null;
 
         StringBuilder glyphRun = new StringBuilder();
@@ -145,7 +159,7 @@ public record LineParts(
             if (textStyle == null && !text.isBlank()) {
                 textStyle = style;              // 譯文文字沿用第一段真正文字的樣式
             }
-            appendParametrized(text, style, tmpl, places, numbers);
+            appendParametrized(text, style, tmpl, places, numbers, users);
             if (!tail.isEmpty()) {
                 tmpl.append(GlyphSplitter.GLYPH_PLACEHOLDER);
                 glyphs.add(new Piece(tail, style));
@@ -160,6 +174,7 @@ public record LineParts(
                 List.copyOf(glyphs),
                 List.copyOf(places),
                 List.copyOf(numbers),
+                List.copyOf(users),
                 textStyle == null ? Style.EMPTY : textStyle);
     }
 
@@ -169,7 +184,21 @@ public record LineParts(
      * <p>地名先比對：它可能含數字（少見但存在），先換成 {@code {p}} 就不會被拆開。
      */
     private static void appendParametrized(String text, Style style, StringBuilder tmpl,
-                                           List<Piece> places, List<Piece> numbers) {
+                                           List<Piece> places, List<Piece> numbers,
+                                           List<Piece> users) {
+        // 玩家名字最先抽掉。它可能長得像地名或含數字，先處理才不會被拆散。
+        String self = localPlayerName();
+        if (self != null) {
+            int at = text.indexOf(self);
+            if (at >= 0) {
+                appendParametrized(text.substring(0, at), style, tmpl, places, numbers, users);
+                tmpl.append(GlyphSplitter.PLAYER_PLACEHOLDER);
+                users.add(new Piece(self, style));
+                appendParametrized(text.substring(at + self.length()),
+                        style, tmpl, places, numbers, users);
+                return;
+            }
+        }
         Matcher place = PlaceNames.matcher(text);
         int from = 0;
         if (place != null) {

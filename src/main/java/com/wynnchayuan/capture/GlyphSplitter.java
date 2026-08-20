@@ -45,6 +45,19 @@ public final class GlyphSplitter {
     /** 代表一個地名。地名是專有名詞，永遠不翻譯，還原時原樣填回。 */
     public static final String PLACE_PLACEHOLDER = "{p}";
 
+    /**
+     * 代表<b>玩家自己的名字</b>。
+     *
+     * <h2>為什麼需要</h2>
+     * Wynncraft 的任務對話會直接叫玩家的名字（{@code "Great job, Steve!"}）。
+     * 那有兩個問題：收集起來會把名字寫進共享檔案，而且那條譯文只對那個人有用，
+     * 別人永遠對不上。
+     *
+     * <p>先前的做法是<b>整行丟掉</b>——連帶把一大批任務對話一起丟了。
+     * 改成參數化之後，一條譯文所有人通用，個資也不會外流。
+     */
+    public static final String PLAYER_PLACEHOLDER = "{u}";
+
     /** 數字（含小數、千分位、百分比），例如 {@code 28}、{@code 1,250}、{@code 0%}。 */
     private static final java.util.regex.Pattern NUMBERS =
             java.util.regex.Pattern.compile("\\d+(?:[.,]\\d+)*%?");
