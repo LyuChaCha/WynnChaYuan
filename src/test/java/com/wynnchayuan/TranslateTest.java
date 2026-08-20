@@ -118,6 +118,7 @@ public final class TranslateTest {
 
         customFontText(dir);
         layoutGlyphs(dir);
+        glyphsInsideText(dir);
         numericInTextFont(dir);
         formatFidelity(dir);
     }
@@ -178,6 +179,38 @@ public final class TranslateTest {
      * <p>取自實際 tooltip：物品名稱前後各有一個 minecraft:space 的排版字元，
      * 所以模板是 {@code {#}Doom Stone{#}}，而語料的鍵是純文字 {@code Doom Stone}。
      */
+    /**
+     * 排版偏移黏在<b>文字片段尾端</b>的情形。
+     *
+     * <p>實際 tooltip 裡的樣子：{@code "Jeweling" + U+D0004 + U+D0034}——
+     * 名稱與排版寬度在同一個片段。先前那些字元被直接丟掉，譯文一換上去
+     * 間隔就整個消失，數值黏死在標籤旁邊。素材 tooltip 的
+     * 「耐久度」「持續時間」「配方清單」全是這樣壞掉的。
+     */
+    private static void glyphsInsideText(Path dir) throws Exception {
+        System.out.println();
+        System.out.println("  -- 排版偏移黏在文字裡 --");
+        String offsets = new String(Character.toChars(0xD0004))
+                + new String(Character.toChars(0xD0034));
+        Component raw = Component.literal("Jeweling" + offsets);
+        StyledText line = StyledText.fromComponent(raw);
+
+        LineParts parts = LineParts.of(line);
+        check("尾端偏移被抽成佔位符（而不是丟掉）",
+                "Jeweling{#}".equals(parts.template()));
+        check("偏移原文被保管起來",
+                parts.glyphs().size() == 1 && offsets.equals(parts.glyphs().get(0).text()));
+
+        write(dir, "inside.json", "{\"Jeweling\": \"珠寶\"}");
+        Component out = LineTranslator.translate(line, load(dir));
+        check("查得到譯文", out != null);
+        if (out != null) {
+            check("譯文正確", out.getString().contains("珠寶"));
+            check("排版偏移有填回去 —— 少了它欄位間隔就整個消失",
+                    out.getString().endsWith(offsets));
+        }
+    }
+
     private static void layoutGlyphs(Path dir) throws Exception {
         System.out.println();
         System.out.println("  -- 首尾排版符號 --");

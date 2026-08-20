@@ -45,6 +45,47 @@ public record LineParts(
      * <p>逐個 part 走，才能把每個碎片的樣式對應到它所在的片段——
      * 先把整行拼成字串再套正規表示式的話，樣式資訊就丟掉了。
      */
+    /**
+     * 這段文字開頭（或結尾）連續的符號字元。
+     *
+     * <p>只認符號碼位，空白不算——空白是內容的一部分，抽掉會讓
+     * {@code "Tailoring "} 變成 {@code "Tailoring"}，兩者的語料鍵不同。
+     */
+    /**
+     * 這段文字開頭連續的符號字元。
+     *
+     * <p>只認符號碼位，空白不算——空白是內容的一部分，抽掉會讓
+     * {@code "Tailoring "} 變成 {@code "Tailoring"}，兩者的語料鍵不同。
+     */
+    private static String leadingGlyphs(String raw) {
+        int n = 0;
+        while (n < raw.length()) {
+            int cp = raw.codePointAt(n);
+            if (!GlyphSplitter.isGlyphCodePoint(cp)) {
+                break;
+            }
+            n += Character.charCount(cp);
+        }
+        return raw.substring(0, n);
+    }
+
+    /**
+     * 結尾連續的符號字元。
+     *
+     * @param floor 不要越過這個位置——開頭已經抽走的部分不能再被抽一次
+     */
+    private static String trailingGlyphs(String raw, int floor) {
+        int end = raw.length();
+        while (end > floor) {
+            int cp = raw.codePointBefore(end);
+            if (!GlyphSplitter.isGlyphCodePoint(cp)) {
+                break;
+            }
+            end -= Character.charCount(cp);
+        }
+        return raw.substring(end);
+    }
+
     public static LineParts of(StyledText line) {
         StringBuilder tmpl = new StringBuilder();
         List<Piece> glyphs = new ArrayList<>();
@@ -84,11 +125,31 @@ public record LineParts(
                 glyphRun.setLength(0);
             }
 
-            String text = GlyphSplitter.stripGlyphChars(raw);
+            // 文字片段的<b>頭尾</b>可能黏著排版偏移字元，例如
+            // {@code "Jeweling" + U+D0004 + U+D0034}。那些是排版寬度，
+            // 先前被 stripGlyphChars 直接丟掉——譯文一換上去，間隔就整個消失。
+            //
+            // 抽成 {@code {#}} 交給 glyphs 保管，還原時才填得回去。
+            // 只處理頭尾：夾在句子中間的圖示是內容的一部分，本來就不該進語料的鍵，
+            // 而且抽出來會讓 {@code {#}} 卡在模板中間，既有的譯文全部對不上。
+            String lead = leadingGlyphs(raw);
+            // 從 lead 之後才往回找，整段都是符號時兩邊才不會重疊
+            String tail = trailingGlyphs(raw, lead.length());
+            String body = raw.substring(lead.length(), raw.length() - tail.length());
+
+            if (!lead.isEmpty()) {
+                tmpl.append(GlyphSplitter.GLYPH_PLACEHOLDER);
+                glyphs.add(new Piece(lead, style));
+            }
+            String text = GlyphSplitter.stripGlyphChars(body);
             if (textStyle == null && !text.isBlank()) {
                 textStyle = style;              // 譯文文字沿用第一段真正文字的樣式
             }
             appendParametrized(text, style, tmpl, places, numbers);
+            if (!tail.isEmpty()) {
+                tmpl.append(GlyphSplitter.GLYPH_PLACEHOLDER);
+                glyphs.add(new Piece(tail, style));
+            }
         }
         if (!glyphRun.isEmpty()) {
             glyphs.add(new Piece(glyphRun.toString(), glyphRunStyle));
