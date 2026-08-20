@@ -10,7 +10,7 @@
  "entries": {
   "f2f828e950af": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "當你的 Mana Bank ✺ 到達 {~} 時，蹲下施放 Arcane Transfer 將會召喚出一顆 ball lightning 對附近敵人造成傷害並每 {~} 秒吸取 {~} 點法力值，直到你的魔力耗盡。",
+   "dst": "當你的 Mana Bank ✺ 達到 {~} 時，\n蹲下施放 Arcane Transfer\n會召喚一顆球狀閃電，對附近的\n敵人造成傷害，並持續吸取\n{~} 點魔力，每 {~} 秒一次，直到\n魔力耗盡為止。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -22,7 +22,7 @@
   },
   "507fdfa488eb": {
    "src": "Forms a shield around you that slightly reduces\nthe damage you take. Being hit will consume one\ncharge of the shield. Enemies that get too close\nwill take damage and be knocked away. ({~} charges)",
-   "dst": "在你周圍形成一個護盾，稍微減少你受到的傷害。被擊中會消耗盾牌的 one charge 。靠太近的敵人會受到傷害並被擊退。",
+   "dst": "在你周圍形成護盾，稍微減少你\n受到的傷害。被擊中會消耗護盾\n的一層充能。靠得太近的敵人會\n受到傷害並被擊退。（{~} 層充能）",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -34,7 +34,7 @@
   },
   "52dad460dd6c": {
    "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
-   "dst": "若 swap 中，沒有任何敵人引爆超過 {~} 個 Tricks， clone 將失去 -{~} 血量。若引爆 {#} 個超過門檻的 Trick，這些 Damage Spells 造成的傷害提高 {~}",
+   "dst": "若換位時沒有任何敵人被引爆超過 {~} 個 Tricks {#}，\nclone 會失去 -{~} 生命。不過，\n每多引爆一個超過門檻的 Trick {#}，\n那些 Damage Spells 就多造成 {~} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -46,7 +46,7 @@
   },
   "29412ca51f54": {
    "src": "Casting Uproot or Haunting Memory while\nholding shift will spend {~} points\nof Blood Pool {#} to cast a destructive beam\nthat chains between enemies and allies,\nand damages enemies every {~}s.",
-   "dst": "按住 shift 施放 Uproot 或 Haunting Memory 會消耗 points of Blood Pool 並施放一道破壞性光束，在敵人與友軍間跳躍並在每 {~} 秒對敵人造成傷害。",
+   "dst": "按住 shift 施放 Uproot 或\nHaunting Memory 會消耗 {~} 點\nBlood Pool {#} 施放一道破壞性光束，\n在敵人與友軍之間跳躍，\n並每 {~} 秒對敵人造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -58,7 +58,7 @@
   },
   "528c44d5f397": {
    "src": "Ripple consumes your Momentum {#},\nreleasing a powerful explosion that deals\nmassive damage and briefly blinds enemies.\nFor each stack of Momentum {#}, this\nexplosion deals +{~} more damage.",
-   "dst": "Ripple 將消耗你的 Momentum 並釋放威力強大的爆炸，造成大量傷害並短暫致盲敵人。每有一層 Momentum ，這次爆炸造成的傷害增加 +{~} 。",
+   "dst": "Ripple 會消耗你的 Momentum {#}，\n釋放一次威力強大的爆炸，造成\n大量傷害並短暫致盲敵人。\n每有一層 Momentum {#}，這次\n爆炸就多造成 +{~} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -70,7 +70,7 @@
   },
   "b1254048db56": {
    "src": "When you switch Masks, throw your previous one\nforwards. If it hits an enemy, it will attach for a\nshort time and debuff them. You will not receive\nthe effects of your Mask until it returns.",
-   "dst": "切換 Masks 時，",
+   "dst": "切換 Masks 時，把上一個往前扔出。\n命中敵人的話會附著一小段時間並\n使其虛弱。在它回來之前，你不會\n獲得該 Mask 的效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [

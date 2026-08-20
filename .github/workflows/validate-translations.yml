@@ -1,14 +1,31 @@
 # 譯文提交後自動檢查。
 #
 # 只擋機械性的錯：佔位符掉了、換行數不對、材質包符號被直接貼進譯文、
-# 地名被翻掉。這些無論翻得好不好都一定錯，讓機器擋掉，人就可以專心看
-# 「翻得對不對」——那才是人該做的部分。
+# 地名被翻掉、跨檔譯法不一致。這些無論翻得好不好都一定錯，讓機器擋掉，
+# 人就可以專心看「翻得對不對」——那才是人該做的部分。
+#
+# 為什麼譯文用 pull_request_target
+# --------------------------------
+# 一般的 pull_request 事件，對「第一次貢獻的人」需要維護者手動按
+# Approve and run 才會跑。實際發生的事情是：沒人按，檢查沒跑，PR 就被合併了
+# ——已經因此混進兩批壞掉的譯文（佔位符與換行數不符，遊戲裡會整行放棄翻譯）。
+#
+# pull_request_target 不需要核准，但它拿的是<b>有寫入權的 token</b>，所以
+# 絕對不能執行 PR 帶來的程式碼。這裡的做法是：
+#
+#   1. checkout <b>本倉庫</b>的程式（tools/validate.py 是可信的）
+#   2. 只把 PR 的<b>譯文 JSON</b> 取過來當資料
+#
+# JSON 是資料不是程式，不會被執行。動到 tools/ 的 PR 則走一般的
+# pull_request，那本來就該人工核准才跑——那是程式碼。
 name: 檢查譯文
 
 on:
-  pull_request:
+  pull_request_target:
     paths:
       - 'src/main/resources/assets/wynnchayuan/translations/**'
+  pull_request:
+    paths:
       - 'tools/**'
       - '.github/workflows/validate-translations.yml'
   push:
@@ -16,20 +33,31 @@ on:
     paths:
       - 'src/main/resources/assets/wynnchayuan/translations/**'
       - 'tools/**'
-      - '.github/workflows/validate-translations.yml'
-  # 改了工具或想確認目前狀態時可以手動跑
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: 取出本倉庫的程式
+        uses: actions/checkout@v4
+
+      - name: 取出 PR 的譯文檔（只取資料，不取程式）
+        if: github.event_name == 'pull_request_target'
+        run: |
+          git fetch origin "pull/${{ github.event.pull_request.number }}/head:pr"
+          git checkout pr -- src/main/resources/assets/wynnchayuan/translations/
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
       - name: 檢查譯文格式
         run: python tools/validate.py
+
       - name: 顯示翻譯進度
         if: always()
         run: python tools/progress.py
