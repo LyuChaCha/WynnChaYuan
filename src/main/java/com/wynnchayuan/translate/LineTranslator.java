@@ -115,6 +115,8 @@ public final class LineTranslator {
         }
 
         List<Piece> aligned = alignColumns(pieces);
+        LineDebug.pieces("逐片段 " + line.getStringWithoutFormatting(),
+                describe(pieces, aligned));
 
         // 只有前導空白的行是「置中／縮排」而不是「標籤 + 數值」。
         // 這種行沒有兩側都有文字的空白，上面那一輪不會動到它，
@@ -152,6 +154,7 @@ public final class LineTranslator {
     private static List<Piece> alignColumns(List<Piece> pieces) {
         List<Piece> out = new ArrayList<>(pieces.size());
         int drift = 0;
+        int lastAdjusted = -1;
         for (int i = 0; i < pieces.size(); i++) {
             Piece p = pieces.get(i);
             if (!p.isSpace()) {
@@ -162,10 +165,24 @@ public final class LineTranslator {
             }
             if (isAlignSpace(pieces, i)) {
                 out.add(Piece.space(p.spacePx() - drift, p.style()));
+                lastAdjusted = i;
                 drift = 0;
             } else {
                 out.add(p);
             }
+        }
+
+        // 最後一欄的<b>右緣</b>也要對回去。
+        //
+        // 上面那一輪只把「空白之前」的寬度變化補掉，所以數值的<b>起點</b>會落回
+        // 原位——但數值本身如果也被翻譯了（{@code Mage/Dark Wizard} →
+        // {@code 法師/黑巫師}），它的<b>結尾</b>就短了一截，右緣對不齊。
+        //
+        // Wynncraft 是把數值靠右排的，所以把剩下的差額一併加回最後一個對齊空白，
+        // 整行的總寬度就會跟原文相同，右緣自然重合。
+        if (lastAdjusted >= 0 && drift != 0) {
+            Piece p = out.get(lastAdjusted);
+            out.set(lastAdjusted, Piece.space(p.spacePx() - drift, p.style()));
         }
         return out;
     }
@@ -262,6 +279,27 @@ public final class LineTranslator {
             break;
         }
         return spaces >= MIN_COLUMN_GAP;
+    }
+
+    /** 把補償前後的每個片段列出來，供診斷用。 */
+    private static String describe(List<Piece> before, List<Piece> after) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < after.size(); i++) {
+            Piece b = i < before.size() ? before.get(i) : null;
+            Piece a = after.get(i);
+            if (a.isSpace()) {
+                sb.append(String.format("  [%d] 空白 %s px -> %s px%s%n", i,
+                        b == null ? "?" : String.valueOf(b.spacePx()),
+                        String.valueOf(a.spacePx()),
+                        isAlignSpace(after, i) ? "  (對齊欄)" : "  (不調整)"));
+            } else {
+                sb.append(String.format("  [%d] 文字 「%s」 <- 「%s」 寬 %d -> %d%n", i,
+                        a.text(), a.origText(),
+                        widthOf(literal(a.origText(), a.style())),
+                        widthOf(literal(a.text(), a.style()))));
+            }
+        }
+        return sb.toString();
     }
 
     /** 由前往後第一個「兩側都有文字」的空白。 */
