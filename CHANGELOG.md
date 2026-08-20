@@ -3,6 +3,21 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.23.1] - 2026-08-21
+
+### 修正
+
+- **`ui-labels.json` 整理過一輪。** 百分比一律寫成「…百分比」（`火屬性傷害百分比`），
+  不再用 `%` 符號。
+  - 移除 `Critical Damage%`、`Health%`、`Main Attack Damage%`、`Spell Damage%`——
+    這幾個沒有確認過實數與百分比並存，留著只會讓後面的人以為遊戲裡真的有兩種。
+  - 確認兩種都有的只有：`Health Regen`、五系的 `X Damage` / `X Main Attack Damage` /
+    `X Spell Damage`、`Elemental Damage`、`Elemental Spell Damage`、`Neutral Damage`。
+  - `XP Bonus` 改回對照表寫的「經驗加成」。
+- **檔案照用途分好類。** 加了底線開頭的分段標題（`_── 詞條 · 火屬性 ──`），
+  同一個詞條的實數／百分比／`Raw` 三種寫法排在一起，一眼就看得出少了哪一個。
+  底線開頭的鍵程式會跳過，只是給人看的。
+
 ## [1.23.0] - 2026-08-21
 
 ### 修正
