@@ -119,6 +119,9 @@ python tools/build.py    # 抽取、分類、參數化 → 工作檔
 ## 團隊
 
 同一份名單也顯示在遊戲內（**F6 → 關於／貢獻者**），含 Minecraft 頭像。
+名單上的人，**名牌上方會多一行標記**——顏色依身分，身分不只一種的會漸層，
+三種都有的是彩虹。只有裝了本模組的人看得到，可在同一頁關掉。
+
 要加人只要改 [`credits.json`](src/main/resources/assets/wynnchayuan/credits.json)，不必動程式。
 
 ### 開發者

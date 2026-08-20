@@ -26,5 +26,11 @@
     "fabric-api": "*",
     "wynntils": ">=4.2.0 <5.0.0-"
   },
+  "mixins": [
+    {
+      "config": "wynnchayuan.mixins.json",
+      "environment": "client"
+    }
+  ],
   "accessWidener": "wynnchayuan.accessWidener"
 }
