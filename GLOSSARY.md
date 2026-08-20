@@ -22,12 +22,13 @@
 |---|---|---|
 | Reflection | 遠程反傷 | **不是**「反射」。這是被遠程攻擊時反彈傷害 |
 | Thorns | 近戰反傷 | **不是**「荊棘」。與 Reflection 成對，這個是近戰 |
-| Exploding | 爆炸 | 擊殺時屍體爆炸的機率，不是「正在爆炸」 |
+| Exploding | 爆炸 | 攻擊時造成爆炸的機率，不是「正在爆炸」 |
 | Scale | 適性 | Wynncraft 的裝備評分術語，不是「規模／比例」 |
 | Loot(Bonus) | 寶物加成 | 影響掉落**掉落率**，不是掉落品質 |
 | Sprint Regen | 體力回復 | 回復的是奔跑用的體力，不是生命 |
 | Healing Efficiency | 治療效率 | 技能和 Major ID 的治療效率 |
 | Stealing | 竊取綠寶石 | 正如其名 |
+| Raid | 團隊副本 | 此指後期需要 4 人加入的副本，非指突襲 |
 
 ## 遊戲系統
 
@@ -56,8 +57,6 @@
 | Cooking | 烹飪 |
 | Alchemism | 鍊金 |
 | Scribing | 抄寫 |
-
-## 採集職業
 
 ## 製作職業
 
