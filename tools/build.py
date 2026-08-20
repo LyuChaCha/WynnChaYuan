@@ -115,6 +115,15 @@ def classify(text: str, has_font_attr: bool = False) -> str:
     return "term"
 
 
+# 這些領域的 role="name" 不是「物品名稱」。
+#
+# F6 的「翻譯物品名稱」是為了讓裝備名稱保持英文，對得上 wiki 與交易市場。
+# 技能名稱、Major ID 名稱跟交易市場毫無關係，不該被那個開關一起關掉。
+# 沒列在這裡的一律當物品——漏標一個裝備檔會讓開關無聲失效，
+# 漏標一個技能檔頂多是名稱跟著關掉，後者看得出來。
+NON_ITEM_DOMAINS = {"ability", "major-id"}
+
+
 def key_of(text: str) -> str:
     return hashlib.sha1(text.encode("utf-8")).hexdigest()[:12]
 
@@ -358,6 +367,7 @@ def merge_and_write(domain: str, collector: Collector, lang: str) -> tuple[int, 
     payload = {
         "_meta": {
             "domain": domain,
+            "itemNames": domain not in NON_ITEM_DOMAINS,
             "lang": lang,
             "generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "count": len(ordered),
