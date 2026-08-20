@@ -130,6 +130,7 @@ python tools/build.py    # 抽取、分類、參數化 → 工作檔
 | 名稱 | Minecraft ID |
 |---|---|
 | LyuChaCha | `Green_teaTW` |
+| 芋圓YuYuan | `s103064` |
 
 ### 贊助者
 
@@ -139,7 +140,18 @@ python tools/build.py    # 抽取、分類、參數化 → 工作檔
 
 ### 貢獻者
 
-還沒有人 —— 翻一條就會出現在這裡。見 [CONTRIBUTING.md](CONTRIBUTING.md)。
+| 名稱 | Minecraft ID |
+|---|---|
+| SCPNightsky | `SCP_Night_sky` |
+| 泥巴先生 | `MrMud8033112` |
+| 幻影Joker | `NOT_Joker` |
+| Pootato | `Pootato__` |
+| N02sAyLa | `eric18960` |
+| 兔寶 | `Reisen_U_Inaba` |
+| Jimmy | `0110jimmy` |
+| 雪花 | `ThEsnowF` |
+
+翻一條就會出現在這裡。見 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## 資料來源與致謝
 
