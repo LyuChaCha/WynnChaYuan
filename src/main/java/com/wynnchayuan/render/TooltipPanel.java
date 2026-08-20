@@ -105,24 +105,53 @@ public final class TooltipPanel {
     private static final ClientTooltipPositioner EXACT =
             (screenWidth, screenHeight, x, y, tooltipWidth, tooltipHeight) -> new Vector2i(x, y);
 
-    /** 逐行翻譯；查不到的行轉成灰色原文。 */
+    /**
+     * 翻譯整份 tooltip；查不到的行轉成灰色原文。
+     *
+     * <p>先試<b>整段</b>再退回逐行。技能說明那類的原文本來就是一整段
+     * （見 {@link LineTranslator#translateBlock}），逐行查表永遠查不到。
+     * 由長到短試，讓涵蓋比較多行的條目優先——短的那些多半只是碰巧撞上。
+     */
     private static List<Component> translateLines(List<Component> tooltip, TranslationStore store) {
-        List<Component> out = new ArrayList<>(tooltip.size());
+        int n = tooltip.size();
+        List<Component> out = new ArrayList<>(n);
         boolean anyTranslated = false;
 
         // 置中與靠左在單獨一行上長得一模一樣，得看整塊才分得出來
         boolean[] centered = BlockLayout.centered(tooltip);
 
-        for (int i = 0; i < tooltip.size(); i++) {
-            Component line = tooltip.get(i);
-            StyledText styled = StyledText.fromComponent(line);
-            Component translated = LineTranslator.translate(styled, store, centered[i]);
+        List<StyledText> styled = new ArrayList<>(n);
+        for (Component line : tooltip) {
+            styled.add(StyledText.fromComponent(line));
+        }
+
+        int i = 0;
+        while (i < n) {
+            int longest = Math.min(store.maxBlockLines(), n - i);
+            List<Component> block = null;
+            int used = 0;
+            for (int len = longest; len >= 2 && block == null; len--) {
+                boolean[] slice = new boolean[len];
+                System.arraycopy(centered, i, slice, 0, len);
+                block = LineTranslator.translateBlock(
+                        styled.subList(i, i + len), store, slice);
+                used = len;
+            }
+            if (block != null) {
+                out.addAll(block);
+                anyTranslated = true;
+                i += used;
+                continue;
+            }
+            Component translated =
+                    LineTranslator.translate(styled.get(i), store, centered[i]);
             if (translated != null) {
                 anyTranslated = true;
                 out.add(translated);
             } else {
-                out.add(LineTranslator.untranslated(styled));
+                out.add(LineTranslator.untranslated(styled.get(i)));
             }
+            i++;
         }
         // 一行都沒翻到就別畫了，不然只是把原文再灰色複製一遍
         return anyTranslated ? out : List.of();

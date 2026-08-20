@@ -1,5 +1,6 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.capture.GlyphSplitter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -70,7 +71,7 @@ public final class BlockLayout {
         boolean[] blank = new boolean[n];
         for (int i = 0; i < n; i++) {
             Component line = lines.get(i);
-            blank[i] = line.getString().isBlank();
+            blank[i] = isSeparator(line);
             lead[i] = leadingOffset(line);
             // 量出來的寬度含前導偏移，扣掉才是實際內容有多寬
             content[i] = Math.max(0, width.applyAsInt(line) - lead[i]);
@@ -123,6 +124,30 @@ public final class BlockLayout {
             int expected = (widest - content[i]) / 2;
             if (Math.abs(lead[i] - expected) > TOLERANCE) {
                 return false;      // 有一行對不上，這個縮排就不是為了置中
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 這一行是不是段落分隔。
+     *
+     * <h2>為什麼不能只看 {@code isBlank}</h2>
+     * tooltip 的分隔不一定是空行——很多是<b>由排版字元組成的分隔線</b>
+     * （{@code ◇} 那種、或純粹的寬度偏移）。那些行 {@code isBlank()} 是 false，
+     * 於是整份 tooltip 被當成<b>同一段</b>：未鑑定物品那三行置中的說明，
+     * 跟上面的物品名稱、稀有度擠在一起判斷，當然對不上置中的算式，
+     * 整段就被判成靠左，一行都沒有被調整。
+     *
+     * <p>改成看「有沒有可讀的字」。剝掉符號之後什麼都不剩的，就是分隔線。
+     */
+    private static boolean isSeparator(Component line) {
+        String text = line.getString();
+        for (int i = 0; i < text.length(); ) {
+            int cp = text.codePointAt(i);
+            i += Character.charCount(cp);
+            if (!Character.isWhitespace(cp) && !GlyphSplitter.isGlyphCodePoint(cp)) {
+                return false;
             }
         }
         return true;

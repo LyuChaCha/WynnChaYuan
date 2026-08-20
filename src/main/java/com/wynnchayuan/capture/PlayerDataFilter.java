@@ -87,6 +87,29 @@ public final class PlayerDataFilter {
      *       {@code captured.json} 裡就有「- 等級 {~} [...]」這種條目。</li>
      * </ul>
      */
+    /**
+     * 玩家自製物品的製作者署名，例如整整一行只有 {@code by eric18960}。
+     *
+     * <p>玩家做出來的裝備會在 lore 最後掛上做的人是誰。那一行永遠是別人的 ID，
+     * 翻不了也不該進共享語料——實際收到的 {@code npc.json} 裡就混進了兩筆。
+     */
+    private static final Pattern CRAFTED_BY =
+            Pattern.compile("(?m)^\\s*by \\S+\\s*$");
+
+    /**
+     * 經驗共享通知後面掛的那個人是誰，例如：
+     *
+     * <pre>
+     *   [+120 Combat XP]
+     *   [eric18960]
+     * </pre>
+     *
+     * <p>只擋「後面緊跟著一行括號名字」的情況——單獨的經驗提示是漂浮字，
+     * 那個要翻譯，不能一起擋掉。
+     */
+    private static final Pattern XP_SHARE_TARGET =
+            Pattern.compile("Combat XP]\\s*\\n\\s*\\[");
+
     private static final Pattern CJK = Pattern.compile(
             "[\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uf900-\\ufaff]");
 
@@ -103,6 +126,8 @@ public final class PlayerDataFilter {
             }
         }
         if (COORDS.matcher(text).find() || PLAYER_SHOP.matcher(text).find()
+                || CRAFTED_BY.matcher(text).find()
+                || XP_SHARE_TARGET.matcher(text).find()
                 || CJK.matcher(text).find()) {
             return true;
         }

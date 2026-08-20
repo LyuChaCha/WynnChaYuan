@@ -41,6 +41,67 @@ public final class LineTranslator {
     private LineTranslator() {}
 
     /**
+     * 一次翻一整段：把連續好幾行併成<b>一個鍵</b>去查。
+     *
+     * <h2>為什麼需要這條路</h2>
+     * 技能說明的原文本來就是一整段，官方 CDN 給的是含換行的一大串：
+     *
+     * <pre>
+     *   Forms a shield around you that slightly reduces
+     *   the damage you take. Being hit will consume
+     *   one charge of the shield.
+     * </pre>
+     *
+     * 遊戲畫面上是三行，鍵卻是這三行黏在一起的樣子。逐行查表<b>永遠查不到</b>，
+     * 而且失敗得無聲無息——{@code ability.json} 明明填了譯文卻毫無反應，
+     * 就是卡在這裡。
+     *
+     * <p>譯文的行數必須與原文一致（{@code tools/validate.py} 會擋），
+     * 於是可以逐行填回原本的排版，對齊照舊由 {@link #realign} 處理。
+     *
+     * @param centered 與 {@code run} 等長，見 {@link BlockLayout}
+     * @return 譯好的那幾行；沒有對應的整段條目時回傳 {@code null}
+     */
+    public static List<Component> translateBlock(List<StyledText> run,
+                                                 TranslationStore store,
+                                                 boolean[] centered) {
+        if (run.size() < 2) {
+            return null;                       // 單行走原本那條路就好
+        }
+        List<LineParts> parts = new ArrayList<>(run.size());
+        StringBuilder key = new StringBuilder();
+        for (StyledText line : run) {
+            LineParts p = LineParts.of(line);
+            parts.add(p);
+            if (key.length() > 0) {
+                key.append('\n');
+            }
+            key.append(p.template());
+        }
+        String template = key.toString();
+        if (!GlyphSplitter.hasLetter(template)) {
+            return null;
+        }
+        String translated = store.lookup(template);
+        if (translated == null || translated.isBlank()) {
+            return null;
+        }
+        String[] dst = translated.split("\n", -1);
+        if (dst.length != run.size()) {
+            return null;                       // 行數對不上，寧可不動
+        }
+        List<Component> out = new ArrayList<>(run.size());
+        for (int i = 0; i < run.size(); i++) {
+            Component rebuilt = rebuild(dst[i], parts.get(i));
+            if (rebuilt == null) {
+                return null;                   // 有一行填不回去就整段放棄
+            }
+            out.add(realign(run.get(i), rebuilt, centered[i]));
+        }
+        return out;
+    }
+
+    /**
      * @return 譯好的一行；查不到翻譯或佔位符對不上時回傳 {@code null}
      */
     public static Component translate(StyledText line, TranslationStore store) {
