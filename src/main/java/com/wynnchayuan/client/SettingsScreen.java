@@ -32,6 +32,7 @@ public final class SettingsScreen extends Screen {
     private EditBox colorBox;
     private EditBox dialogueHoldBox;
     private Button reloadButton;
+    private EditBox gapBox;
 
     public SettingsScreen() {
         super(Component.literal("WynnChaYuan"));
@@ -96,10 +97,13 @@ public final class SettingsScreen extends Screen {
             WynnChaYuan.config().cyclePanelSide();
             b.setMessage(sideLabel());
         });
-        row(left, TOP + rowH() * 4, this::gapLabel, b -> {
-            WynnChaYuan.config().cyclePanelGap();
-            b.setMessage(gapLabel());
-        });
+        gapBox = new EditBox(this.font, left, TOP + rowH() * 4, COL_W - 46, 20,
+                Component.literal("間距"));
+        gapBox.setValue(String.valueOf(WynnChaYuan.config().panelGap()));
+        gapBox.setMaxLength(3);
+        addRenderableWidget(gapBox);
+        addRenderableWidget(Button.builder(Component.literal("套用"), b -> applyGap())
+                .bounds(left + COL_W - 42, TOP + rowH() * 4, 42, 20).build());
 
         colorBox = new EditBox(this.font, left, TOP + rowH() * 5, COL_W - 46, 20,
                 Component.literal("框線顏色"));
@@ -179,6 +183,17 @@ public final class SettingsScreen extends Screen {
         }
     }
 
+    private void applyGap() {
+        if (WynnChaYuan.config().setPanelGap(gapBox.getValue())) {
+            // 超出範圍會被夾住，把實際生效的值寫回去，免得使用者以為沒生效
+            gapBox.setValue(String.valueOf(WynnChaYuan.config().panelGap()));
+            status = Component.literal("✔ 已設定間距").withStyle(ChatFormatting.GREEN);
+        } else {
+            status = Component.literal("✘ 請輸入整數像素（0–200）")
+                    .withStyle(ChatFormatting.RED);
+        }
+    }
+
     private Component guiCollectLabel() {
         return Component.literal("收集介面文字："
                 + onOff(WynnChaYuan.config().collectGuiText()));
@@ -216,10 +231,6 @@ public final class SettingsScreen extends Screen {
             case LEFT -> "固定左側";
         };
         return Component.literal("跟隨時放在：" + name);
-    }
-
-    private Component gapLabel() {
-        return Component.literal("與物品的間距：" + WynnChaYuan.config().panelGap() + " px");
     }
 
     private Component itemNameLabel() {
@@ -316,7 +327,8 @@ public final class SettingsScreen extends Screen {
         Cards.hint(g, this.font, left + 4, TOP + rowH() + hintDy(), "固定位置時面板不跟著滑鼠跑");
         Cards.hint(g, this.font, left + 4, TOP + rowH() * 2 + hintDy(), "拖曳示意方框決定位置");
         Cards.hint(g, this.font, left + 4, TOP + rowH() * 3 + hintDy(), "自動會依畫面空間左右讓位");
-        Cards.hint(g, this.font, left + 4, TOP + rowH() * 4 + hintDy(), "面板與原本 tooltip 之間留多寬");
+        Cards.hint(g, this.font, left + 4, TOP + rowH() * 4 + hintDy(),
+                "面板與原本 tooltip 之間留多寬（像素）");
         Cards.hint(g, this.font, left + 4, TOP + rowH() * 5 + hintDy(),
                 "框線顏色（16 進位色碼，例如 #6FA8D8）");
 

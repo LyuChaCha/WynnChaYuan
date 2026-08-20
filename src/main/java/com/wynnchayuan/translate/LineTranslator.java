@@ -366,7 +366,24 @@ public final class LineTranslator {
             }
             break;
         }
-        return spaces >= MIN_COLUMN_GAP;
+        if (spaces >= MIN_COLUMN_GAP) {
+            return true;
+        }
+        // 標籤長到剛好把數值頂到欄位上時，中間只會剩一個空格——
+        // 「Elemental Spell Damage +372」就是這樣，它跟同一份 tooltip 裡
+        // 其他詞條一樣寬，是不折不扣的欄位，卻因為只有一格而被擋掉。
+        //
+        // 用「數值以正負號開頭」把它跟「Emerald Pouch [Tier 8]」分開：
+        // 詞條的數值一定帶正負號，接在名稱後面的標籤則不會。
+        return spaces >= 1 && startsWithSign(pieces, boundary);
+    }
+
+    private static boolean startsWithSign(List<Piece> pieces, int boundary) {
+        if (boundary >= pieces.size()) {
+            return false;
+        }
+        String text = pieces.get(boundary).text().strip();
+        return !text.isEmpty() && (text.charAt(0) == '+' || text.charAt(0) == '-');
     }
 
     /** 把補償前後的每個片段列出來，供診斷用。 */

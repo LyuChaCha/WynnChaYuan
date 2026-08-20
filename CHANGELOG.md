@@ -3,6 +3,18 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.17.7] - 2026-08-20
+
+### 修正
+
+- 標籤很長、中間只剩一個空格的詞條沒有對齊（`Elemental Spell Damage +372`）。
+  用「數值帶正負號」把它跟 `Emerald Pouch [Tier 8]` 那種標籤分開。
+- 貢獻者標記與 Wynntils 的 donator 標記重疊，後畫的會蓋掉先畫的。標記往上挪一行。
+
+### 調整
+
+- 「與物品的間距」改成自由輸入像素（0–200），不再是固定的幾段。
+
 ## [1.17.6] - 2026-08-20
 
 ### 修正
