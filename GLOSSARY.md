@@ -61,7 +61,7 @@
 | Intelligence | 智慧 |
 | Defence | 防禦 |
 | Agility | 敏捷 |
-| Air / Earth / Thunder / Water / Fire | 風／土／雷／水／火 |
+| Air / Earth / Thunder / Water / Fire | 風／地／雷／水／火 |
 | Elemental Defence(s) | 元素防禦 |
 
 > 元素傷害統一寫成「**風屬性傷害**」而不是「風傷害」——
@@ -86,11 +86,11 @@
 | 原文 | 譯文 |
 |---|---|
 | Super Fast | 超快 |
-| Very Fast | 極快 |
+| Very Fast | 很快 |
 | Fast | 快速 |
 | Normal | 普通 |
 | Slow | 緩慢 |
-| Very Slow | 極慢 |
+| Very Slow | 很慢 |
 | Super Slow | 超慢 |
 
 ---
