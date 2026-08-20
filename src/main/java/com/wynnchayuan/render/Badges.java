@@ -71,16 +71,29 @@ public final class Badges {
     /**
      * 這個名牌該不該加標記，要加什麼。
      *
+     * @param nameTag  名牌上的文字，可能是 {@code null}
+     * @param entityId 這個名牌屬於哪個實體；{@code < 0} 表示不知道
      * @return 要畫的那一行；不是名單上的人就回傳 {@code null}
      */
-    public static Component forNameTag(Component nameTag) {
-        if (nameTag == null || !WynnChaYuan.config().showBadges()) {
+    public static Component forNameTag(Component nameTag, int entityId) {
+        if (!WynnChaYuan.config().showBadges()) {
             return null;
         }
         ensureLoaded();
         if (byName.isEmpty()) {
             return null;
         }
+        // 先問實體本身。名牌上的文字不可靠——Wynntils 會整個換掉它
+        // （階級前綴、donator 標記、公會標籤都是它加的），甚至可能清空。
+        // 帳號名稱則是這個玩家的事實，誰都改不了。
+        List<Role> byProfile = rolesOf(accountName(entityId));
+        if (byProfile != null) {
+            return build(byProfile);
+        }
+        if (nameTag == null) {
+            return null;
+        }
+        // 退路：名牌文字裡找得到名單上的 ID
         String plain = nameTag.getString();
         for (Map.Entry<String, Pattern> e : patterns.entrySet()) {
             if (e.getValue().matcher(plain).find()) {
@@ -88,6 +101,29 @@ public final class Badges {
             }
         }
         return null;
+    }
+
+    private static List<Role> rolesOf(String accountName) {
+        return accountName == null
+                ? null : byName.get(accountName.toLowerCase(Locale.ROOT));
+    }
+
+    /** 這個實體是哪個玩家的帳號名稱；不是玩家就回傳 {@code null}。 */
+    private static String accountName(int entityId) {
+        if (entityId < 0) {
+            return null;
+        }
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            if (mc == null || mc.level == null) {
+                return null;
+            }
+            net.minecraft.world.entity.Entity entity = mc.level.getEntity(entityId);
+            return entity instanceof net.minecraft.world.entity.player.Player player
+                    ? player.getGameProfile().name() : null;
+        } catch (Throwable t) {
+            return null;   // 這只是裝飾，查不到就退回看名牌文字
+        }
     }
 
     /**
