@@ -1,6 +1,7 @@
 package com.wynnchayuan.listener;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.CurrentQuest;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.render.TrackerOverlay;
@@ -26,6 +27,8 @@ public final class TrackerListener {
         WynnChaYuan.store().noteEvent("tracker.updated");
 
         String name = event.getName();
+        // 記下來給對話收集用：同一個任務的台詞才排得在一起
+        CurrentQuest.set(name);
         if (name != null && !name.isBlank()) {
             WynnChaYuan.store().record(
                     GlyphSplitter.stripGlyphChars(name).strip(),

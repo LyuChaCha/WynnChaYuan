@@ -106,6 +106,18 @@ public final class BlockLayoutTest {
         check("空行前的靠左段不受影響", !flags[0] && !flags[1]);
         check("空行後的置中段判得出來", flags[3] && flags[4]);
 
+        // tooltip 的分隔多半不是空行，而是由排版字元組成的分隔線。
+        // 只看 isBlank 的話整份 tooltip 會被當成同一段，置中的區塊
+        // 跟上面的名稱擠在一起判斷，結果整段被判成靠左、一行都沒調整。
+        List<Component> withDivider = new java.util.ArrayList<>(List.of(
+                line(0, "Waist Apron"),
+                Component.literal(new String(Character.toChars(0xD0010)))
+                        .withStyle(SPACE)));
+        withDivider.addAll(centredBlock(
+                "This item's power has been sealed,", "its potential."));
+        boolean[] div = BlockLayout.centered(withDivider, WIDTH);
+        check("符號組成的分隔線也算分段", !div[0] && div[2] && div[3]);
+
         check("空清單不會爆", BlockLayout.centered(List.of(), WIDTH).length == 0);
         check("單行沒有比較對象，當成靠左",
                 !BlockLayout.centered(List.of(line(20, "Solo")), WIDTH)[0]);

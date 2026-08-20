@@ -3,6 +3,7 @@ package com.wynnchayuan.listener;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.DialogueBuffer;
 import com.wynnchayuan.capture.CombatText;
+import com.wynnchayuan.capture.CurrentQuest;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.CollectorConfig;
@@ -125,7 +126,7 @@ public final class CaptureListener {
         }
         WynnChaYuan.store().record(
                 completed, "desc", "quest",
-                lastHadChoices ? "dialogue/choices" : "dialogue");
+                CurrentQuest.tag(lastHadChoices ? "dialogue/choices" : "dialogue"));
     }
 
     // ---------------------------------------------------------------- 聊天

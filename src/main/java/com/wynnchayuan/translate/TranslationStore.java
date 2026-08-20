@@ -34,6 +34,9 @@ public final class TranslationStore {
 
     private final Map<String, String> entries = new ConcurrentHashMap<>();
 
+    /** 見 {@link #maxBlockLines()}。載入時一併算出來，查詢時不必再掃一次。 */
+    private volatile int maxBlockLines = 1;
+
     /**
      * 來自 {@code role: "name"} 條目的鍵。
      *
@@ -57,6 +60,7 @@ public final class TranslationStore {
      */
     public void loadAll(Path dir) {
         entries.clear();
+        maxBlockLines = 1;
         nameKeys.clear();
         loadedFiles = 0;
 
@@ -145,6 +149,7 @@ public final class TranslationStore {
             if (src != null && dst != null && !dst.isBlank()) {
                 String srcKey = src.strip();
                 entries.put(srcKey, dst.strip());
+                noteBlockSize(srcKey);
                 if ("name".equals(optString(e, "role"))) {
                     nameKeys.add(srcKey);
                 }
@@ -160,7 +165,19 @@ public final class TranslationStore {
             JsonElement v = obj.get(key);
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
                 entries.put(key.strip(), v.getAsString().strip());
+                noteBlockSize(key.strip());
             }
+        }
+    }
+
+    /** 這個鍵跨了幾行，比目前記錄的多就更新。 */
+    private void noteBlockSize(String key) {
+        int lines = 1;
+        for (int i = key.indexOf('\n'); i >= 0; i = key.indexOf('\n', i + 1)) {
+            lines++;
+        }
+        if (lines > maxBlockLines) {
+            maxBlockLines = lines;
         }
     }
 
@@ -191,6 +208,20 @@ public final class TranslationStore {
             return null;                       // 使用者選擇不翻物品名稱
         }
         return entries.get(key);
+    }
+
+    /**
+     * 跨行條目最多幾行。
+     *
+     * <p>技能說明那類的原文<b>本來就是一整段</b>，CDN 給的是含換行的一大串。
+     * 逐行查表永遠查不到——遊戲畫面上是五行，鍵是那五行黏在一起的樣子，
+     * 兩者不可能相等。{@code ability.json} 翻了卻沒反應就是這個原因。
+     *
+     * <p>所以呼叫端得先試著把連續幾行併起來查。這裡回報最多要試到幾行，
+     * 沒有跨行條目時是 1，呼叫端就會跳過整段比對。
+     */
+    public int maxBlockLines() {
+        return maxBlockLines;
     }
 
     public int size() {

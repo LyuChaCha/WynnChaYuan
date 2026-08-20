@@ -60,7 +60,9 @@ PH_PLACE = "{p}"
 #
 # mod 端對應：GlyphSplitter.NUMBERS / PlaceNames.PATTERN
 
-NUMBER_RE = re.compile(r"\d+(?:[.,]\d+)*%?")
+# 前面緊接著字母的不算數值：A16-L31 是型號，抽成 A{~}-L{~} 之後
+# 譯者看到的是兩個沒有意義的佔位符，根本不知道那句話在講什麼。
+NUMBER_RE = re.compile(r"(?<![A-Za-z])\d+(?:[.,]\d+)*%?")
 
 
 def _load_places() -> list[str]:
