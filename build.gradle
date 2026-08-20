@@ -113,6 +113,14 @@ tasks.register('runTranslateChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runTranslateChecks' }
 
+tasks.register('runFadeChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證小框淡出的時間計算'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.FadeTest'
+}
+tasks.named('check') { dependsOn 'runFadeChecks' }
+
 tasks.register('runCombatChecks', JavaExec) {
     group = 'verification'
     description = '驗證戰鬥浮動提示的判斷'

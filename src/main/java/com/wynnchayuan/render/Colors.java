@@ -40,6 +40,24 @@ public final class Colors {
     private Colors() {}
 
     /**
+     * 把顏色的 alpha 乘上一個係數，用來做淡出。
+     *
+     * <p>只動 alpha、不動 RGB，是因為 {@code Font} 取樣式顏色時只拿 RGB，
+     * alpha 一律沿用傳進去的這個參數——所以整行文字（連同它自己的顏色）
+     * 會一起跟著淡，不需要逐段改樣式。
+     *
+     * @param fraction 0 完全透明、1 原樣
+     */
+    public static int fade(int argb, float fraction) {
+        int alpha = Math.round(((argb >>> 24) & 0xFF) * clamp(fraction));
+        return (alpha << 24) | (argb & 0xFFFFFF);
+    }
+
+    private static float clamp(float v) {
+        return v < 0f ? 0f : (v > 1f ? 1f : v);
+    }
+
+    /**
      * 補上不透明的 alpha。
      *
      * <p>給執行期算出來的顏色用——設定檔裡的色碼只有 RGB 六位。
