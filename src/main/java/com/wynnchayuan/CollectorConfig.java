@@ -124,6 +124,10 @@ public final class CollectorConfig {
      *
      * <p>存絕對像素而不是螢幕比例，是因為玩家實際在排的是「這個框不要壓到那個框」，
      * 那是像素關係。換解析度會跑掉，但重設一次就好，比每次都要重新理解比例直觀。
+     *
+     * <p>{@code DIALOGUE} 與 {@code NAMETAG} 存的是<b>水平中心</b>，其餘存左緣。
+     * 那兩個框的寬度隨內容長短變動：存左緣的話，玩家把示意框拖到正中央，
+     * 實際跳出來的短句卻會偏左——因為對齊的是左緣不是中心。
      */
     private final java.util.EnumMap<Overlay, int[]> overlayPos = new java.util.EnumMap<>(Overlay.class);
 

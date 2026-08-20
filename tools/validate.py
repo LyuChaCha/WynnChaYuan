@@ -30,6 +30,7 @@ import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+GLOSSARY_FILE = ROOT / "GLOSSARY.md"
 TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations"
 PLACES_FILE = ROOT / "src/main/resources/assets/wynnchayuan/places.json"
 
@@ -37,6 +38,36 @@ PLACEHOLDERS = ("{#}", "{~}", "{p}")
 
 # 看起來想寫佔位符但寫錯的樣子。這種錯在遊戲裡會原樣顯示出來。
 BAD_PLACEHOLDER = re.compile(r"[｛{]\s*[#~p]\s*[｝}]")
+
+
+def load_glossary() -> dict[str, str]:
+    """讀 GLOSSARY.md 裡的對照表。
+
+    直接解析 markdown 而不是另外開一份 json，是為了<b>只有一份</b>：
+    兩個檔案的話，改了一邊忘了另一邊，表就會開始說謊——而說謊的對照表
+    比沒有對照表更糟，因為大家會照著它翻。
+
+    只認「原文 | 譯文」這種兩欄以上的表格列，跳過表頭與分隔線。
+    含斜線的複合欄位（風／土／雷）跳過，那是說明不是對照。
+    """
+    terms: dict[str, str] = {}
+    if not GLOSSARY_FILE.is_file():
+        return terms
+
+    for line in GLOSSARY_FILE.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line.startswith("|") or line.startswith("|---"):
+            continue
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if len(cells) < 2:
+            continue
+        src, dst = cells[0], cells[1]
+        if not src or not dst or src in ("原文",) or set(dst) <= set("-: "):
+            continue
+        if "/" in src or "／" in src:
+            continue                   # 複合欄位，不是單一詞條
+        terms[src] = dst
+    return terms
 
 
 def load_places() -> set[str]:
@@ -66,7 +97,7 @@ class Problem:
 
 
 def check_pair(path: str, key: str, src: str, dst: str,
-               places: set[str]) -> list[Problem]:
+               places: set[str], glossary: dict[str, str]) -> list[Problem]:
     """檢查一組原文／譯文。"""
     out: list[Problem] = []
 
@@ -121,10 +152,19 @@ def check_pair(path: str, key: str, src: str, dst: str,
         out.append(Problem("warn", path, key,
                            f"譯文比原文長很多（{len(src)} → {len(dst)} 字），可能會撐爆版面"))
 
+    # 整條就是對照表裡的詞，卻翻成別的說法 —— 同一個詞兩種譯法，
+    # 玩家會以為是兩個不同的東西
+    agreed = glossary.get(src.strip())
+    if agreed and agreed != dst.strip():
+        out.append(Problem("warn", path, key,
+                           f"與對照表不一致：GLOSSARY.md 寫「{agreed}」。"
+                           f"要改譯法請先改 GLOSSARY.md，讓所有人一起跟著改"))
+
     return out
 
 
-def check_file(file: Path, places: set[str]) -> list[Problem]:
+def check_file(file: Path, places: set[str],
+               glossary: dict[str, str]) -> list[Problem]:
     name = file.name
     try:
         raw = file.read_text(encoding="utf-8")
@@ -146,7 +186,7 @@ def check_file(file: Path, places: set[str]) -> list[Problem]:
                 problems.append(Problem("error", name, key, "應該是物件"))
                 continue
             problems += check_pair(name, key, entry.get("src", ""),
-                                   entry.get("dst", ""), places)
+                                   entry.get("dst", ""), places, glossary)
     else:
         # 扁平格式：{原文: 譯文}
         for key, value in data.items():
@@ -155,13 +195,14 @@ def check_file(file: Path, places: set[str]) -> list[Problem]:
             if not isinstance(value, str):
                 problems.append(Problem("error", name, key, "譯文應該是字串"))
                 continue
-            problems += check_pair(name, key, key, value, places)
+            problems += check_pair(name, key, key, value, places, glossary)
 
     return problems
 
 
 def main(argv: list[str]) -> int:
     places = load_places()
+    glossary = load_glossary()
 
     if argv:
         files = [TRANSLATIONS / a for a in argv]
@@ -176,7 +217,7 @@ def main(argv: list[str]) -> int:
     errors = 0
     warnings = 0
     for file in files:
-        problems = check_file(file, places)
+        problems = check_file(file, places, glossary)
         if not problems:
             continue
         print(f"\n{file.name}")
@@ -188,7 +229,8 @@ def main(argv: list[str]) -> int:
                 warnings += 1
 
     print()
-    print(f"檢查了 {len(files)} 個檔案：{errors} 個錯誤，{warnings} 個警告")
+    print(f"檢查了 {len(files)} 個檔案：{errors} 個錯誤，{warnings} 個警告"
+          f"（對照表 {len(glossary)} 個詞）")
     if errors:
         print("錯誤必須修掉才能合併；警告請自己判斷是不是刻意的。")
     return 1 if errors else 0

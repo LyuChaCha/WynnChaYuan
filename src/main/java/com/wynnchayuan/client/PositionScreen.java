@@ -86,7 +86,10 @@ public final class PositionScreen extends Screen {
         CollectorConfig cfg = WynnChaYuan.config();
         for (Box box : boxes) {
             if (cfg.hasOverlayPos(box.which)) {
-                box.x = cfg.overlayX(box.which);
+                // 置中的框存的是中心，畫面上要換回左緣
+                box.x = centred(box.which)
+                        ? cfg.overlayX(box.which) - box.w / 2
+                        : cfg.overlayX(box.which);
                 box.y = cfg.overlayY(box.which);
                 clampIntoScreen(box);
             } else {
@@ -143,10 +146,22 @@ public final class PositionScreen extends Screen {
         box.y = Math.max(TITLE_H, Math.min(box.y, Math.max(TITLE_H, this.height - box.h)));
     }
 
+    /**
+     * 這個框的位置該存中心還是左緣。
+     *
+     * <p>對話框與名牌的寬度隨內容變動，存左緣的話拖到正中央、實際跳出來的
+     * 短句卻會偏左。翻譯面板與任務追蹤是左對齊的清單，存左緣才對。
+     */
+    private static boolean centred(Overlay which) {
+        return which == Overlay.DIALOGUE || which == Overlay.NAMETAG;
+    }
+
     private void save() {
         CollectorConfig cfg = WynnChaYuan.config();
         for (Box box : boxes) {
-            cfg.setOverlayPos(box.which, box.x, box.y);
+            cfg.setOverlayPos(box.which,
+                    centred(box.which) ? box.x + box.w / 2 : box.x,
+                    box.y);
         }
         cfg.saveIfDirty();
         saved = true;                          // 關閉前先讓使用者看到確認

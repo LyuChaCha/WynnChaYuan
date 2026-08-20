@@ -108,7 +108,8 @@ public final class LineTranslator {
         // 那個就以為不用補的話，差額會全部灌進第二欄——標籤和第一個數值黏在
         // 一起，第二欄則被推過頭。要看的是<b>交界那個位置</b>本身。
         int boundary = findAlignPoint(pieces);
-        if (boundary >= 0 && !pieces.get(boundary).isSpace()) {
+        if (boundary >= 0 && !pieces.get(boundary).isSpace()
+                && hasColumnGap(pieces, boundary)) {
             pieces.add(boundary, Piece.space(0,
                     SpaceOffset.styleFor(pieces.get(boundary).style())));
         }
@@ -214,6 +215,53 @@ public final class LineTranslator {
         // 現成的空白在數值區裡面（素材的兩欄行就是這樣：標籤後面沒有空白，
         // 只有兩個數值之間有）。那個不是標籤與數值的交界，要在數值區起點補。
         return valueStart;
+    }
+
+    /** 要幾格空白才算「這是一個對齊欄」而不只是詞與詞之間的間隔。 */
+    private static final int MIN_COLUMN_GAP = 2;
+
+    /**
+     * 交界處原本就有夠寬的間隔嗎？
+     *
+     * <h2>為什麼要問這個</h2>
+     * {@code Emerald Pouch [Tier 8]} 這種行，「數值」只是接在名稱後面<b>一個空格</b>，
+     * 不是右對齊的欄位。把它當欄位補償的話，譯文變短就會把 {@code [Tier 8]}
+     * 一路推到原文的右緣去——原本緊跟在名字後面的東西，突然飛到老遠。
+     *
+     * <p>真正的欄位在原文裡一定有一段明顯的留白（伺服器用它把數值排到定位）。
+     * 所以用「間隔有幾格」來分：一格是詞距，兩格以上才是欄位。
+     *
+     * <p>已經是排版空白字元（{@code minecraft:space}）的情況不會走到這裡——
+     * 那種本來就是欄位，呼叫端直接用。
+     */
+    private static boolean hasColumnGap(List<Piece> pieces, int boundary) {
+        int spaces = 0;
+        // 交界前那一段的尾端空白
+        for (int i = boundary - 1; i >= 0; i--) {
+            String text = pieces.get(i).text();
+            if (text.isEmpty()) {
+                continue;
+            }
+            int n = 0;
+            while (n < text.length()
+                    && Character.isWhitespace(text.charAt(text.length() - 1 - n))) {
+                n++;
+            }
+            spaces += n;
+            if (n < text.length()) {
+                break;                         // 不是整段空白，到此為止
+            }
+        }
+        // 交界之後緊接著的整段空白
+        for (int i = boundary; i < pieces.size(); i++) {
+            String text = pieces.get(i).text();
+            if (!text.isEmpty() && text.isBlank()) {
+                spaces += text.length();
+                continue;
+            }
+            break;
+        }
+        return spaces >= MIN_COLUMN_GAP;
     }
 
     /** 由前往後第一個「兩側都有文字」的空白。 */
@@ -379,7 +427,12 @@ public final class LineTranslator {
             return null;
         }
         Component rebuilt = rebuild(translated, parts);
-        return rebuilt == null ? null : realign(line, rebuilt);
+        if (rebuilt == null) {
+            return null;
+        }
+        Component result = realign(line, rebuilt);
+        LineDebug.record(line, result);
+        return result;
     }
 
     /**
