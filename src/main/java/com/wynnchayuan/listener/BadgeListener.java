@@ -22,16 +22,39 @@ import net.neoforged.bus.api.SubscribeEvent;
  * Wynntils 的功能在決定的，跟我們無關——我們只是在它旁邊多畫一行。
  * 這也順便把整個模組唯一的 mixin 拿掉了。
  *
+ * <h2>為什麼一定要 receiveCanceled</h2>
+ * 光是訂閱事件還不夠：NeoForge 的匯流排<b>預設不把已取消的事件發給後面的
+ * 監聽器</b>。而 Wynntils 正是<b>用取消來接管</b>名牌繪製的——所以
+ * 不加這個旗標的話，我們的監聽器在「有 donator 標記的玩家」身上
+ * 一次都不會被呼叫，也就是最需要它的那些人身上。
+ *
+ * <p>取消對我們沒有意義：那是 Wynntils 在說「原版不要畫」，不是在說
+ * 「誰都不要畫」。我們只是在它旁邊多加一行。
+ *
  * <p>用 {@link EventPriority#LOWEST}：等 Wynntils 決定完自己要怎麼畫，
  * 我們最後才加上去。
  */
 public final class BadgeListener {
 
-    @SubscribeEvent(priority = EventPriority.LOWEST)
+    /**
+     * 從 render state 取出實體 id。
+     *
+     * <p>{@code AvatarRenderState} 有這個欄位，但事件的型別是共通的
+     * {@code EntityRenderState}，所以要判型。取不到就回傳 -1，
+     * 呼叫端會退回比對名牌文字。
+     */
+    private static int entityIdOf(EntityRenderState state) {
+        return state instanceof net.minecraft.client.renderer.entity.state.AvatarRenderState avatar
+                ? avatar.id : -1;
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
     public void onPlayerNametag(PlayerNametagRenderEvent event) {
         try {
             EntityRenderState state = event.getEntityRenderState();
-            Component badge = Badges.forNameTag(state.nameTag);
+            // 認人優先看實體本身，不是名牌上的字——Wynntils 把名牌整個換掉了
+            // （階級前綴、donator 標記都是它加的），字面比對認不出來。
+            Component badge = Badges.forNameTag(state.nameTag, entityIdOf(state));
             if (badge == null) {
                 return;
             }

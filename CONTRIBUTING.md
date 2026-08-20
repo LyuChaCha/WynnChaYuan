@@ -8,14 +8,30 @@
 
 ## 最快的方式：在 GitHub 網頁上改
 
-不用安裝任何東西，不用會 Git。
+不用安裝任何東西，不用會 Git，**也不用先 fork**——按下鉛筆時 GitHub 會自動處理。
 
 1. 到 [translations 資料夾](src/main/resources/assets/wynnchayuan/translations)
 2. 點你想翻的檔案（**建議從 `ui-labels.json` 或 `npc.json` 開始**，那些每天都看得到）
 3. 按右上角的 **鉛筆圖示**（Edit this file）
 4. 找到 `"dst": ""`，把中文填進去
-5. 拉到最下面，按 **Commit changes** → 選 **Create a new branch and start a pull request**
-6. 送出
+5. 拉到最下面，按 **Commit changes**
+6. 跳出來的視窗選 **Create a new branch and start a pull request**，再按 **Propose changes**
+7. 下一頁按綠色的 **Create pull request** ← **這一步最容易漏掉**
+
+> ### 已經 fork 了但不知道下一步？
+>
+> **fork 只是把檔案複製到你自己的帳號底下，改了不會回到這裡。** 要讓翻譯生效，
+> 得再開一個 Pull Request：
+>
+> 1. 到<b>你自己那份</b> repo（網址是 `github.com/你的帳號/WynnChaYuan`）
+> 2. 上方會有一條 **This branch is N commits ahead** 的提示，點旁邊的
+>    **Contribute** → **Open pull request**
+> 3. 確認左邊是 `LyuChaCha/WynnChaYuan : main`、右邊是你的分支
+> 4. 按 **Create pull request**
+>
+> 沒有那條提示的話，代表你 fork 之後還沒有做任何修改。
+>
+> 送出之後會自動跑格式檢查，綠燈就等著被合併，紅燈的話點進去看它說哪裡錯。
 
 合併之後，**所有裝這個模組的人下次進遊戲就會拿到你的翻譯**——不需要重新下載模組。
 
@@ -100,6 +116,27 @@ python tools/validate.py ui-labels.json
 > 用來確認別人剛合併的翻譯。
 
 ### 第三道：人工審核（維護者）
+
+<details>
+<summary>維護者：怎麼合併 PR</summary>
+
+**只用綠色的 Merge pull request，不要用「bypass rules」那顆。**
+
+紅色／bypass 那顆的意思是「我知道檢查沒過，但我硬要合併」。已經因此混進
+兩批壞掉的譯文——其中一筆把「吸取 {~} 點魔力，每 {~} 秒」寫成
+「每 {~} 秒吸取 {~} 點」，佔位符是<b>依序</b>填回的，所以兩個數字會對調，
+玩家看到的數值是錯的，而且畫面上完全看不出來。那種錯只有機器擋得住。
+
+正常流程：
+
+1. PR 送出後自動跑檢查（譯文的 PR 不需要核准就會跑）
+2. 綠燈 → **Merge pull request** 直接可以按
+3. 紅燈 → 點 **Details** 看它說哪一條錯，請作者修，或自己 push 修正到那個分支
+
+檢查沒跑的話，多半是動到了 `tools/` 的 PR——那是程式碼，需要維護者按
+**Approve and run** 才會跑，那是刻意的。
+
+</details>
 
 所有 PR 都要有人看過才會合併。審的是機器看不出來的部分：
 
