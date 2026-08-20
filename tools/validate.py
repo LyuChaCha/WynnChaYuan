@@ -200,6 +200,41 @@ def check_file(file: Path, places: set[str],
     return problems
 
 
+def check_duplicates(files: list[Path]) -> list[Problem]:
+    """同一個原文出現在兩個檔案裡，而且譯法不同。
+
+    這種錯在遊戲裡<b>完全看不出來</b>：載入順序決定誰贏，改了輸的那一份
+    會覺得「我明明改了卻沒生效」。而且順序是 _index.json 決定的，
+    調整檔案順序就可能無聲地換掉譯文。
+
+    譯法相同的重複只是冗餘，不影響結果，所以只報不同的。
+    """
+    seen: dict[str, tuple[str, str]] = {}
+    out: list[Problem] = []
+    for file in files:
+        try:
+            data = json.loads(file.read_text(encoding="utf-8"))
+        except Exception:
+            continue                   # 格式問題由 check_file 負責回報
+        rows = (data["entries"] if isinstance(data.get("entries"), dict) else None)
+        pairs = ([(v.get("src", ""), v.get("dst", "")) for v in rows.values()]
+                 if rows else
+                 [(k, v) for k, v in data.items()
+                  if not k.startswith("_") and isinstance(v, str)])
+        for src, dst in pairs:
+            if not src or not dst:
+                continue
+            if src in seen and seen[src][1] != dst:
+                first_file, first_dst = seen[src]
+                out.append(Problem("error", file.name, src,
+                                   f"與 {first_file} 的譯法不同："
+                                   f"「{first_dst}」vs「{dst}」。"
+                                   f"載入順序決定誰生效，改到輸的那一份會沒反應"))
+            else:
+                seen.setdefault(src, (file.name, dst))
+    return out
+
+
 def main(argv: list[str]) -> int:
     places = load_places()
     glossary = load_glossary()
@@ -216,6 +251,15 @@ def main(argv: list[str]) -> int:
 
     errors = 0
     warnings = 0
+
+    dupes = check_duplicates(files)
+    if dupes:
+        print()
+        print("跨檔重複")
+        for p in dupes:
+            print(p)
+            errors += 1
+
     for file in files:
         problems = check_file(file, places, glossary)
         if not problems:
