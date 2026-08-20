@@ -1,10 +1,12 @@
 package com.wynnchayuan.translate;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.ToIntFunction;
 
 /**
  * 判斷 tooltip 裡哪些行是<b>置中</b>的。
@@ -22,21 +24,28 @@ import java.util.Optional;
  * 兩邊的第一行都是「偏移 0」，但正確的處理完全相反：置中的行譯文變短時要
  * <b>加大</b>縮排才會維持置中；靠左的行加了縮排就變成整段歪掉。
  *
- * <p>先前把所有有前導偏移的行都當成置中，結果是未鑑定物品修好了、
- * 配方清單卻被推成置中。單看一行資訊不足，只能<b>看整塊</b>。
- *
  * <h2>怎麼分</h2>
- * 置中的行，前導偏移必須<b>逐行不同</b>——那正是它用來對齊中線的方式。
- * 靠左的行則整塊共用同一個縮排。所以規則是：
+ * 置中的行，前導偏移必然滿足一條算式：
  *
- * <blockquote>同一塊裡的前導偏移<b>不全都相同</b> → 這一塊是置中的。</blockquote>
+ * <blockquote>{@code 偏移 ≈ (整塊最寬 − 本行寬) / 2}</blockquote>
+ *
+ * 逐行驗證這條算式，<b>每一行都吻合</b>才算這一塊是置中的。只要有一行對不上，
+ * 那個縮排就是別的用途（版面裝飾、清單縮排），整塊都不該動。
+ *
+ * <p>先前試過「偏移不全相同就是置中」，那太寬鬆——材料 tooltip 裡
+ * {@code 4 Crafting Level} 的偏移剛好和配方清單不同，整塊就被誤判成置中推歪了。
  *
  * <p>「一塊」以空行分隔。tooltip 本來就是用空行分段的，段落內的對齊方式一致。
- *
- * <p>全部相同的置中塊（每行等寬）會被判成靠左，但那種情況本來就不需要調整，
- * 兩種判斷的結果一樣。
  */
 public final class BlockLayout {
+
+    /**
+     * 偏移與算式的容許誤差（像素）。
+     *
+     * <p>伺服器算置中時會取整，所以不能要求完全相等。6 像素大約是一個字元寬，
+     * 放寬到這裡仍然遠小於「靠左」與「置中」之間的差距（動輒數十像素）。
+     */
+    private static final int TOLERANCE = 6;
 
     private BlockLayout() {}
 
@@ -46,16 +55,25 @@ public final class BlockLayout {
      * @return 與輸入等長；{@code true} 表示這一行的前導偏移該跟著譯文寬度調整
      */
     public static boolean[] centered(List<Component> lines) {
+        return centered(lines, BlockLayout::measure);
+    }
+
+    /** 供測試注入寬度計算——正式路徑要有字型才量得出來。 */
+    static boolean[] centered(List<Component> lines, ToIntFunction<Component> width) {
         int n = lines.size();
         boolean[] result = new boolean[n];
         if (n == 0) {
             return result;
         }
         int[] lead = new int[n];
+        int[] content = new int[n];
         boolean[] blank = new boolean[n];
         for (int i = 0; i < n; i++) {
-            lead[i] = leadingOffset(lines.get(i));
-            blank[i] = lines.get(i).getString().isBlank();
+            Component line = lines.get(i);
+            blank[i] = line.getString().isBlank();
+            lead[i] = leadingOffset(line);
+            // 量出來的寬度含前導偏移，扣掉才是實際內容有多寬
+            content[i] = Math.max(0, width.applyAsInt(line) - lead[i]);
         }
 
         int start = 0;
@@ -68,20 +86,46 @@ public final class BlockLayout {
             while (end < n && !blank[end]) {
                 end++;
             }
-            // 這一段裡的前導偏移只要不是全部相同，就是靠改縮排來對齊中線
-            boolean varies = false;
-            for (int i = start + 1; i < end; i++) {
-                if (lead[i] != lead[start]) {
-                    varies = true;
-                    break;
-                }
-            }
+            boolean centred = isCentredBlock(lead, content, start, end);
             for (int i = start; i < end; i++) {
-                result[i] = varies;
+                result[i] = centred;
             }
             start = end;
         }
         return result;
+    }
+
+    /**
+     * 這一段的每一行，前導偏移是不是都吻合置中的算式。
+     *
+     * <p>只有一行、或每行都一樣寬時，「置中」與「靠左」畫出來沒有差別，
+     * 一律當靠左——不動它最安全。
+     */
+    private static boolean isCentredBlock(int[] lead, int[] content, int start, int end) {
+        if (end - start < 2) {
+            return false;
+        }
+        int widest = 0;
+        int minLead = Integer.MAX_VALUE;
+        int maxLead = Integer.MIN_VALUE;
+        for (int i = start; i < end; i++) {
+            widest = Math.max(widest, lead[i] + content[i]);
+            minLead = Math.min(minLead, lead[i]);
+            maxLead = Math.max(maxLead, lead[i]);
+        }
+        // 縮排完全沒變化的話，這一塊「置中」與「靠左」畫出來一模一樣，
+        // 當靠左最安全。這條也擋掉窄區塊的誤判：兩行只差十幾像素時，
+        // 光靠容差會讓「縮排都是 0」剛好符合置中算式。
+        if (widest <= 0 || maxLead - minLead <= TOLERANCE) {
+            return false;
+        }
+        for (int i = start; i < end; i++) {
+            int expected = (widest - content[i]) / 2;
+            if (Math.abs(lead[i] - expected) > TOLERANCE) {
+                return false;      // 有一行對不上，這個縮排就不是為了置中
+            }
+        }
+        return true;
     }
 
     /**
@@ -104,5 +148,10 @@ public final class BlockLayout {
             return Optional.empty();
         }, Style.EMPTY);
         return px[0];
+    }
+
+    private static int measure(Component line) {
+        Minecraft mc = Minecraft.getInstance();
+        return mc == null || mc.font == null ? 0 : mc.font.width(line);
     }
 }
