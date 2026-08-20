@@ -66,7 +66,24 @@ public final class AlignPointTest {
         check("標籤在前時不算置中",
                 !LineTranslator.isLeading(labelValue, 1));
 
-        // --- 沒有現成空白時補在哪 -----------------------------------------
+        // --- 交界找在哪 ---------------------------------------------------
+        // 有現成對齊空白時，交界就落在那個空白上（呼叫端看到是空白就不補）
+        check("有現成對齊空白時交界落在空白上",
+                LineTranslator.findAlignPoint(labelValue) == 1
+                        && labelValue.get(1).isSpace());
+
+        // 素材那種行：標籤與第一個數值之間沒有空白，只有兩個數值之間有。
+        // 交界必須落在「第一個數值」上，呼叫端才會補進去；落在後面那個空白
+        // 的話，差額會全部灌進第二欄，標籤和第一個數值就黏在一起。
+        List<Piece> gapOnlyLater = List.of(
+                Piece.text("Combat Experience   ", Style.EMPTY),
+                Piece.text("+2% to", Style.EMPTY),
+                Piece.space(20, Style.EMPTY),
+                Piece.text("+7%", Style.EMPTY));
+        int boundary = LineTranslator.findAlignPoint(gapOnlyLater);
+        check("標籤後沒有空白時交界落在第一個數值（不是後面那個空白）",
+                boundary == 1 && !gapOnlyLater.get(1).isSpace());
+
         check("沒有對齊空白時找數值區起點",
                 LineTranslator.findAlignPoint(List.of(
                         Piece.text("Combat Level", Style.EMPTY),

@@ -1,0 +1,61 @@
+# 發佈 GitHub Release 時，自動把 jar 上傳到 Modrinth。
+#
+# 為什麼綁在 release 上，而不是每次推送
+# ------------------------------------
+# 每次推 main 就發一版的話，Modrinth 上會塞滿沒人要下載的中間版本，
+# 而且下載頁的「最新版」會一直跳動。綁在 release 上，發版這件事就只有
+# 一個入口：建立 GitHub Release，兩邊同時更新。
+#
+# 需要一次性設定（只有 repo 擁有者能做）
+# ------------------------------------
+#  1. 在 Modrinth 上建立專案，取得專案 ID（在 Settings 頁面）
+#  2. 產生 PAT：https://modrinth.com/settings/pats
+#     只需要勾 "Create versions" 與 "Write projects"
+#  3. GitHub → Settings → Secrets and variables → Actions → New secret
+#     名稱 MODRINTH_TOKEN，值就是那個 PAT
+#  4. 下面的 modrinth-id 換成你的專案 ID
+#
+# token 只存在 GitHub secret 裡，不會出現在程式碼或紀錄中。
+name: 發佈到 Modrinth
+
+on:
+  release:
+    types: [published]
+  # 設定好之前可以先手動試跑
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      # Wynntils 沒有 Maven 座標，要從 Modrinth 下載放進 libs/
+      - name: 取得 Wynntils
+        run: bash tools/fetch-wynntils.sh
+
+      - name: 建置
+        run: ./gradlew build --no-daemon
+
+      - name: 上傳到 Modrinth
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: CHANGE_ME
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          files: build/libs/!(*-sources).jar
+          name: ${{ github.event.release.name }}
+          version: ${{ github.event.release.tag_name }}
+          changelog: ${{ github.event.release.body }}
+          loaders: fabric
+          game-versions: 1.21.11
+          version-type: release
+          dependencies: |
+            fabric-api(required)
+            wynntils(required)
