@@ -26,7 +26,7 @@ import java.util.Optional;
  */
 public final class LineDebug {
 
-    private static final int LIMIT = 25;
+    private static final int LIMIT = 40;
 
     private static Path file;
     private static int written = 0;
