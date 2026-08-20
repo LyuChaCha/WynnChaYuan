@@ -77,9 +77,13 @@ public final class RenderListener {
             }
             List<Component> out = new java.util.ArrayList<>(original.size());
             boolean any = false;
-            for (Component line : original) {
+            // 置中與靠左要看整塊才分得出來，見 BlockLayout
+            boolean[] centered = com.wynnchayuan.translate.BlockLayout.centered(original);
+            for (int i = 0; i < original.size(); i++) {
+                Component line = original.get(i);
                 Component translated = LineTranslator.translate(
-                        StyledText.fromComponent(line), WynnChaYuan.translations());
+                        StyledText.fromComponent(line), WynnChaYuan.translations(),
+                        centered[i]);
                 if (translated != null) {
                     any = true;
                     out.add(translated);

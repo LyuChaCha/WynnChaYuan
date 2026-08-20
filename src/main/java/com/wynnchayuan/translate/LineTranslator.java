@@ -44,8 +44,17 @@ public final class LineTranslator {
      * @return 譯好的一行；查不到翻譯或佔位符對不上時回傳 {@code null}
      */
     public static Component translate(StyledText line, TranslationStore store) {
-        Component whole = translateWholeLine(line, store);
-        return whole != null ? whole : translateSegments(line, store);
+        return translate(line, store, true);
+    }
+
+    /**
+     * @param centered 這一行是不是置中的（見 {@link BlockLayout}）。
+     *                 靠左的行不能動前導縮排，動了整段就歪掉。
+     */
+    public static Component translate(StyledText line, TranslationStore store,
+                                      boolean centered) {
+        Component whole = translateWholeLine(line, store, centered);
+        return whole != null ? whole : translateSegments(line, store, centered);
     }
 
     /**
@@ -64,7 +73,8 @@ public final class LineTranslator {
      * <p>代價是無法跨片段調整語序（例如把「Combat Experience +6%」整句重排）。
      * 對「標籤 + 數值」這種結構沒有影響，也正是物品 tooltip 的主要形態。
      */
-    private static Component translateSegments(StyledText line, TranslationStore store) {
+    private static Component translateSegments(StyledText line, TranslationStore store,
+                                               boolean centered) {
         // 先把每個片段翻好，不急著組裝——寬度要等整行都翻完才量得準。
         List<Piece> pieces = new ArrayList<>();
         boolean any = false;
@@ -126,7 +136,7 @@ public final class LineTranslator {
         // 只有前導空白的行是「置中／縮排」而不是「標籤 + 數值」。
         // 這種行沒有兩側都有文字的空白，上面那一輪不會動到它，
         // 所以另外量整行、補一半 —— 補滿會把整行推到右邊去。
-        int lead = leadingSpace(aligned);
+        int lead = centered ? leadingSpace(aligned) : -1;
         if (lead >= 0) {
             int delta = widthOf(line) - widthOf(assemble(aligned, -1, 0));
             return assemble(aligned, lead, delta / 2);
@@ -504,7 +514,8 @@ public final class LineTranslator {
     }
 
     /** 整行查表。散文與對話用這條路，因為它們需要跨片段重排語序。 */
-    private static Component translateWholeLine(StyledText line, TranslationStore store) {
+    private static Component translateWholeLine(StyledText line, TranslationStore store,
+                                                boolean centered) {
         LineParts parts = LineParts.of(line);
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;                       // 純符號或純數值的行，沒東西可翻
@@ -517,7 +528,7 @@ public final class LineTranslator {
         if (rebuilt == null) {
             return null;
         }
-        Component result = realign(line, rebuilt);
+        Component result = realign(line, rebuilt, centered);
         LineDebug.record(line, result);
         return result;
     }
@@ -549,7 +560,8 @@ public final class LineTranslator {
      *
      * <p>數量對不上就原樣返回。寧可維持現狀，也不要憑猜測動版面。
      */
-    private static Component realign(StyledText original, Component rebuilt) {
+    private static Component realign(StyledText original, Component rebuilt,
+                                     boolean centered) {
         List<Run> orig = runs(original.getComponent());
         List<Run> made = runs(rebuilt);
         int spaces = countSpaces(made);
@@ -560,7 +572,7 @@ public final class LineTranslator {
         List<Integer> madeSeg = segmentWidths(made);
 
         int[] adjust = new int[spaces];
-        boolean leading = origSeg.get(0) == 0 && madeSeg.get(0) == 0;
+        boolean leading = centered && origSeg.get(0) == 0 && madeSeg.get(0) == 0;
 
         if (leading) {
             int delta = sum(origSeg) - sum(madeSeg);
