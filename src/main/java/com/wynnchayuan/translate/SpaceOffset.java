@@ -79,6 +79,40 @@ public final class SpaceOffset {
                         net.minecraft.resources.Identifier.withDefaultNamespace("space")));
     }
 
+    /**
+     * 這一整段是不是純粹的寬度偏移，可以安全地重新編碼。
+     *
+     * <h2>為什麼不用「編解碼繞得回來」判斷</h2>
+     * 先前是拿 {@code encode(decode(text)).equals(text)} 來判斷，那有兩個漏洞：
+     *
+     * <ul>
+     *   <li><b>0 像素的偏移永遠判定失敗</b>——{@code encode(0)} 回傳空字串。
+     *       未鑑定物品那三行置中就是被這個擋掉的：第一行的前導偏移剛好是 0，
+     *       於是整個空白沒被認出來，置中補償完全沒跑。</li>
+     *   <li><b>多個字元組成的偏移也失敗</b>——{@code decode} 會加總，
+     *       {@code encode} 只吐一個字元，字串當然對不起來。配方那種
+     *       「一行兩欄」的間隔就是多字元的，所以第二欄一直沒對齊。</li>
+     * </ul>
+     *
+     * <p>改成看<b>每個碼位是不是都落在偏移範圍內</b>。字型已經是
+     * {@code minecraft:space} 了，範圍內的碼位依定義就是寬度偏移，
+     * 不會是有意義的圖示。重新編碼只需要總寬度相同，字元數不必相同。
+     */
+    public static boolean isOffsetRun(String text) {
+        if (text == null || text.isEmpty()) {
+            return false;
+        }
+        for (int i = 0; i < text.length(); ) {
+            int cp = text.codePointAt(i);
+            i += Character.charCount(cp);
+            int px = cp - ZERO;
+            if (px < -LIMIT || px > LIMIT) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     /** 解出這段空白字元代表的總寬度（像素）。負的也算，見 {@link #LIMIT}。 */
     public static int decode(String text) {
         if (text == null || text.isEmpty()) {

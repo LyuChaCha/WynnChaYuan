@@ -78,8 +78,8 @@ public final class LineTranslator {
             Style style = ps == null ? Style.EMPTY : ps.getStyle();
 
             // 空白字型底下也可能掛著不是寬度偏移的字元（材質包自訂圖示）。
-            // 那種重新編碼會變成別的東西，所以只有編解碼繞得回來的才當空白。
-            if (SpaceOffset.isSpaceFont(ps) && isAdjustableSpace(style, raw)) {
+            // 那種重新編碼會變成別的東西，所以只有整段都是偏移的才當空白。
+            if (isAdjustableSpace(style, raw)) {
                 pieces.add(Piece.space(SpaceOffset.decode(raw), style));
                 continue;
             }
@@ -598,14 +598,14 @@ public final class LineTranslator {
      * 這段空白能不能安全地重新編碼。
      *
      * <p>光看字型不夠：{@code minecraft:space} 底下也可能掛著<b>不是</b>寬度偏移的
-     * 字元（材質包自己定義的圖示就是這樣）。那種字元 {@code decode} 會得到 0，
-     * 重新編碼就變成完全不同的東西——畫面上是圖示憑空消失或變成方框。
+     * 字元（材質包自己定義的圖示就是這樣）。那種字元重新編碼會變成完全不同的
+     * 東西——畫面上是圖示憑空消失或變成方框。
      *
-     * <p>所以要求它<b>編解碼能原樣繞回來</b>。繞不回來就當成普通文字原封不動抄過去。
+     * <p>判斷交給 {@link SpaceOffset#isOffsetRun}：看每個碼位是不是都落在偏移
+     * 範圍內。不是的話就當成普通文字原封不動抄過去。
      */
     private static boolean isAdjustableSpace(Style style, String text) {
-        return SpaceOffset.isSpaceFont(style)
-                && text.equals(SpaceOffset.encode(SpaceOffset.decode(text)));
+        return SpaceOffset.isSpaceFont(style) && SpaceOffset.isOffsetRun(text);
     }
 
     private static int countSpaces(List<Run> runs) {

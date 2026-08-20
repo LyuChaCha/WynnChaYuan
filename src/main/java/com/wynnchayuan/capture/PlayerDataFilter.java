@@ -58,6 +58,19 @@ public final class PlayerDataFilter {
     private static final Pattern COORDS =
             Pattern.compile("\\[-?\\d+,\\s*-?\\d+,\\s*-?\\d+]");
 
+    /**
+     * 玩家攤位的名牌，例如 {@code PoorChaCha's Shop}。
+     *
+     * <p>攤位名牌<b>整段都是玩家內容</b>：名稱是玩家 ID，下面那行是玩家自己
+     * 打的招牌字（實際收到的有中文、有梗圖字串）。這種東西既不該進語料，
+     * 也不該出現在別人的 captured.json 裡。
+     *
+     * <p>比對整段而不是只看第一行，因為模組拿到的是<b>整塊名牌</b>——
+     * 招牌字跟名稱在同一筆。
+     */
+    private static final Pattern PLAYER_SHOP =
+            Pattern.compile("['’]s Shop(\\n|$)");
+
     private PlayerDataFilter() {}
 
     /** 這段訊息是否夾帶玩家資料、不該被記錄。 */
@@ -70,7 +83,7 @@ public final class PlayerDataFilter {
                 return true;
             }
         }
-        if (COORDS.matcher(text).find()) {
+        if (COORDS.matcher(text).find() || PLAYER_SHOP.matcher(text).find()) {
             return true;
         }
         String self = localPlayerName();

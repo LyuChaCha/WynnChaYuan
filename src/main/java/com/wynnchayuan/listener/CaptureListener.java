@@ -198,7 +198,11 @@ public final class CaptureListener {
         StyledText full = event.getText();
         if (full != null && !GlyphSplitter.isGlyphOnly(full)) {
             String template = GlyphSplitter.toTemplate(full);
-            if (!template.isBlank() && GlyphSplitter.hasLetter(template)) {
+            // 名牌也要過濾玩家資料。玩家攤位的名牌整塊都是玩家內容——
+            // 名稱是 ID，下面是他自己打的招牌字。先前只有聊天走這道濾網，
+            // 於是收到的 captured.json 裡混了一堆別人的攤位。
+            if (!template.isBlank() && GlyphSplitter.hasLetter(template)
+                    && !PlayerDataFilter.carriesPlayerData(template)) {
                 WynnChaYuan.store().record(template, "name", "npc", "npc/nametag");
             }
         }
