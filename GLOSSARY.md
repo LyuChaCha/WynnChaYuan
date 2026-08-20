@@ -6,29 +6,60 @@
 這份表由 `tools/validate.py` 自動檢查：譯文檔裡把表中的詞翻成別的說法，
 送 PR 時 CI 會提出警告。**要改某個詞的譯法，先改這裡**，讓所有人一起跟著改。
 
-新增詞條的門檻：**「照字面翻會翻錯」或「翻了反而看不懂」**。
-`Health` → `生命` 這種一看就懂的不用寫進來，只會讓表變長沒人看。
+## 製作與採集
 
----
+| 原文 | 譯文 |
+|---|---|
+| Tailoring | 裁縫 |
+| Jeweling | 珠寶 |
+| Weaponsmithing | 武器鍛造 |
+| Armouring | 防具製作 |
+| Woodworking | 木工 |
+| Cooking | 烹飪 |
+| Alchemism | 鍊金 |
+| Scribing | 抄寫 |
+|  |  |
+| Fishing | 釣魚 |
+| Woodcutting | 伐木 |
+| Mining | 採礦 |
+| Farming | 農耕 |
 
-## 容易翻錯的
+## 職業內容相關
 
-這些照字面翻是錯的，Wynncraft 的用法跟一般英文不同。
+職業名一律「**主職/造型**」，中間用半形斜線。
 
-此外，請注意若一個詞條有 % 則原樣加到後面，如 "Damage %" -> "傷害 %"
-若有 Raw 則不翻，如 "Damage" -> "傷害"
+| 原文 | 譯文 |
+|---|---|
+| Mage/Dark Wizard | 法師/黑巫師 |
+| Archer/Hunter | 弓手/獵人 |
+| Warrior/Knight | 戰士/騎士 |
+| Assassin/Ninja | 刺客/忍者 |
+| Shaman/Skyseer | 薩滿/天視者 |
+| Spears | 矛 |
+| Daggers | 匕首 |
+| Bows | 弓 |
+| Wands | 魔杖 |
+| Reliks | 法器 |
 
-| 原文 | 譯文 | 為什麼 |
-|---|---|---|
-| Reflection | 遠程反傷 | **不是**「反射」。這是被遠程攻擊時反彈傷害 |
-| Thorns | 近戰反傷 | **不是**「荊棘」。與 Reflection 成對，這個是近戰 |
-| Exploding | 爆炸 | 攻擊時造成爆炸的機率，不是「正在爆炸」 |
-| Scale | 適性 | Wynncraft 的裝備評分術語，不是「規模／比例」 |
-| Loot(Bonus) | 寶物加成 | 影響掉落**掉落率**，不是掉落品質 |
-| Sprint Regen | 體力回復 | 回復的是奔跑用的體力，不是生命 |
-| Healing Efficiency | 治療效率 | 技能和 Major ID 的治療效率 |
-| Stealing | 竊取綠寶石 | 正如其名 |
-| Raid | 團隊副本 | 此指後期需要 4 人加入的副本，非指突襲 |
+職業基礎技能翻譯如下：(待補)
+| 順序 | 法師 | 弓手 | 戰士 | 刺客 | 薩滿 |
+|---|---|---|---|---|---|
+| 1st | Heal | Arrow Storm | Bash | Spin Attack | Totem |
+| 2nd | Teleport | Escape | Charge | Dash | Haul |
+| 3rd | Meteor | Arrow Bomb | Uppercut | Multihit | Aura |
+| 4th | Ice Snake | Arrow Shield | War Scream | Smoke Bomb | Uproot |
+
+## 攻擊速度
+
+| 原文 | 譯文 |
+|---|---|
+| Super Fast | 超快 |
+| Very Fast | 很快 |
+| Fast | 快速 |
+| Normal | 普通 |
+| Slow | 緩慢 |
+| Very Slow | 很慢 |
+| Super Slow | 超慢 |
 
 ## 遊戲系統
 
@@ -42,86 +73,126 @@
 | Ingredient Pouch | 素材袋 | |
 | Emerald Pouch | 綠寶石袋 | |
 | Mastery Tome | 精通書卷 | Tome 為書卷 |
-| Liquid Emeralds | 液態綠寶石 | Wynncraft 的高額貨幣單位 |
+| Liquid Emeralds | 液態綠寶石 | |
 | Item Identifier | 物品鑑定師 | NPC 職業，不是「鑑定道具」 |
-| Lootrun | Lootrun | **不翻**。社群通用說法，翻了反而對不上 |
+| Lootrun | Lootrun | **不翻** |
+| Dungeon | 地城 |  |
+| Raid | 團隊副本 | 此指後期需要 4 人加入的副本，非指突襲 |
+| Scale | 適性 | 此指裝備詞條經加權計算後得出評估該物品是否良好的值 |
 
-## 製作職業
+## 詞條相關：
+Wynncraft 中運用詞條的部分很多，遂記錄之：
 
-| 原文 | 譯文 |
-|---|---|
-| Tailoring | 裁縫 |
-| Jeweling | 珠寶 |
-| Weaponsmithing | 武器鍛造 |
-| Armouring | 防具製作 |
-| Woodworking | 木工 |
-| Cooking | 烹飪 |
-| Alchemism | 鍊金 |
-| Scribing | 抄寫 |
+### Skill Point
 
-## 製作職業
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Skill Point | 屬性點 | Ability Point 為技能點，兩者務必分清楚 |
+| Strength | 力量 | |
+| Dexterity | 靈巧 | |
+| Intelligence | 智慧 | |
+| Defense | 防禦 | |
+| Agility | 敏捷 | |
 
-| 原文 | 譯文 |
-|---|---|
-| Fishing | 釣魚 |
-| Woodcutting | 伐木 |
-| Mining | 採礦 |
-| Farming | 農耕 |
+### 攻擊、防禦屬性相關
 
-## 屬性與元素
-
-| 原文 | 譯文 |
-|---|---|
-| Strength | 力量 |
-| Dexterity | 靈巧 |
-| Intelligence | 智慧 |
-| Defence | 防禦 |
-| Agility | 敏捷 |
-| Air / Earth / Thunder / Water / Fire | 風／地／雷／水／火 |
-| Elemental Defence(s) | 元素防禦 |
-
-> 元素傷害統一寫成「**風屬性傷害**」而不是「風傷害」——
-> 少了「屬性」兩字會跟「風」這個字本身混淆。
-
-## 職業
-
-職業名一律「**主職/造型**」，中間用半形斜線。
-
-| 原文 | 譯文 |
-|---|---|
-| Mage/Dark Wizard | 法師/黑巫師 |
-| Archer/Hunter | 弓手/獵人 |
-| Warrior/Knight | 戰士/騎士 |
-| Assassin/Ninja | 刺客/忍者 |
-| Shaman/Skyseer | 薩滿/天視者 |
-
-## 職業武器
-
-| 原文 | 譯文 |
-|---|---|
-| Spears | 矛 |
-| Daggers | 匕首 |
-| Bows | 弓 |
-| Wands | 魔杖 |
-| Reliks | 法器 |
-
-## 攻擊速度
-
-固定用這七個，不要自己換詞。
-
-| 原文 | 譯文 |
-|---|---|
-| Super Fast | 超快 |
-| Very Fast | 很快 |
-| Fast | 快速 |
-| Normal | 普通 |
-| Slow | 緩慢 |
-| Very Slow | 很慢 |
-| Super Slow | 超慢 |
+Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
+其以 屬性 + 作用方式 + Damage + 作用乘區(Raw/%) 組合而成，前兩區可為空、Damage 一律譯為傷害。
+舉例而言，Elemental Spell Damage % 應翻譯作「元素法術傷害百分比」
+另外，防禦屬性亦遵循下列原則，如 Elemental Defence 譯為 「元素防禦」。
 
 ---
 
-## 一律保留原文的
+屬性：
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Neutral | 無屬性 | 此僅於詞條，若技能樹中出現 Neutral Damage 則應譯作基礎傷害 |
+| Elemental | 元素 | |
+| Earth | 地 | |
+| Thunder | 雷 | |
+| Water | 水 | |
+| Fire | 火 | |
+| Air | 風 | |
+
+---
+
+作用方式：
+| 原文 | 譯文 |
+|---|---|
+| Spell | 法術 |
+| Main Attack | 普攻 |
+
+---
+
+作用乘區：
+| 原文 | 譯文 |
+|---|---|
+| % | 百分比 |
+| Raw | (留空) |
+
+---
+
+不屬於該分類方法的完整詞條展示於下：
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Attack Speed | 攻擊速度 | |
+| Main Attack Range | 普攻距離 | |
+| Knockback | 擊退效果 | |
+| Critical Damage Bonus | 暴擊傷害百分比 | 此詞條沒有 Raw，故置於此 |
+
+### 生命與魔力
+
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Health | 生命 |  |
+| Raw Health Regen | 生命回復 |  |
+| Health Regen % | 生命回復百分比 | 遵循上部分的原則 |
+| Life Steal |  生命竊取 |  |
+| Healing Efficiency | 治療效率 |  |
+| Mana Regen | 魔力回復 |  |
+| Mana Steal | 魔力竊取 |  |
+| Max Mana | 最大魔力 |  |
+| Spell Cost % | 魔力消耗百分比 | 若為序數則譯作第X技能(X表小寫中文)，若為技能則參閱上文技能處 |
+| Spell Cost Raw | 魔力消耗 | 同上 |
+
+### 被動詞條
+
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Exploding | 爆炸 |  |
+| Poison | 中毒 |  |
+| Thorns | 近戰反傷 |  |
+| Reflection | 遠程反傷 |  |
+
+### 移動相關
+
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Walk Speed | 移動速度 |  |
+| Sprint | 體力 |  |
+| Sprint Regen | 體力回復 |  |
+| Jump Height | 跳躍高度 |  |
+
+### 經驗與採集
+
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Loot (Bonus) | 寶物加成 |  |
+| Loot Quality | 寶物品質 |  |
+| Stealing | 竊取綠寶石 |  |
+| XP Bonus | 經驗加成 |  |
+| Gather XP Bonus | 採集經驗 |  |
+| Gather Speed | 採集速度 |  |
+
+## 其他
+
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Part x | 第X部 | X 用中文小寫(一、二、三)，且與主要任務名字空一格半形空格|
+
+---
+
+## 一律保留原文
 
 翻了會跟其他玩家對不上話，或社群本來就講英文。
 
