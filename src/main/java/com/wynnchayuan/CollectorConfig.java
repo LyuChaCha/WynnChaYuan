@@ -379,19 +379,22 @@ public final class CollectorConfig {
         return steps[0];
     }
 
-    /** 在 4/8/12/16/24 之間輪替。 */
-    public int cyclePanelGap() {
-        int[] steps = {4, 8, 12, 16, 24};
-        int idx = 0;
-        for (int i = 0; i < steps.length; i++) {
-            if (steps[i] == panelGap) {
-                idx = i;
-                break;
-            }
+    /**
+     * 面板與原本 tooltip 之間留多寬。
+     *
+     * <p>原本是在 4/8/12/16/24 之間輪替，但「剛好合適」的值跟畫面大小、
+     * GUI 縮放、個人習慣都有關，給幾個固定值總有人差那麼幾像素。
+     *
+     * @return 格式不對就回 false，讓呼叫端提示而不是靜靜吃掉
+     */
+    public boolean setPanelGap(String value) {
+        Integer px = parseSeconds(value);      // 同樣是「整數就好」的解析
+        if (px == null) {
+            return false;
         }
-        panelGap = steps[(idx + 1) % steps.length];
+        panelGap = Math.max(0, Math.min(px, 200));
         save();
-        return panelGap;
+        return true;
     }
 
     public PanelAnchor panelAnchor() {

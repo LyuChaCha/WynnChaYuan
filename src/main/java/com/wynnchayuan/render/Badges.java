@@ -32,8 +32,14 @@ import java.util.regex.Pattern;
  */
 public final class Badges {
 
-    /** 標記要比名牌高多少（世界座標）。約一行的高度。 */
-    public static final double HEIGHT = 0.3;
+    /**
+     * 標記要比名牌高多少（世界座標）。
+     *
+     * <p>抓兩行的高度而不是一行：Wynntils 自己也會在名牌上下加東西
+     * （donator 標記、公會標籤），只抬一行會跟它疊在同一個位置，
+     * 後畫的那個會把先畫的蓋掉。
+     */
+    public static final double HEIGHT = 0.62;
 
     private static final String PREFIX = "WynnChaYuan ";
 
