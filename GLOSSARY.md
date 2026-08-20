@@ -21,7 +21,7 @@
 | Thorns | 近戰反傷 | **不是**「荊棘」。與 Reflection 成對，這個是近戰 |
 | Exploding | 爆炸 | 擊殺時屍體爆炸的機率，不是「正在爆炸」 |
 | Scale | 詞綴 | Wynncraft 的裝備評分術語，不是「規模／比例」 |
-| Loot Bonus | 寶物加成 | 影響掉落**品質**，不是掉落數量 |
+| Loot(Bonus) | 寶物加成 | 影響掉落**掉落率**，不是掉落品質 |
 | Sprint Regen | 體力回復 | 回復的是奔跑用的體力，不是生命 |
 | Healing Efficiency | 治療效率 | 受到治療時的加成，不是自己治療別人 |
 
