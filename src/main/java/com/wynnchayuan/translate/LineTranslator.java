@@ -188,10 +188,10 @@ public final class LineTranslator {
                 continue;
             }
             if (isAlignSpace(pieces, i)) {
-                // 欄位間隔不該變成負的——那會讓數值疊到標籤上。
-                // 但也絕不能因此變成 0 而消失：譯文比原文寬時，
-                // 正確的結果是「貼齊」，不是「刪掉整個間隔」。
-                out.add(Piece.space(Math.max(0, p.spacePx() - drift), p.style()));
+                // 不夾在 0 以上。Wynncraft 自己就在用負間隔——坐騎的
+                // 屬性列原文就是「-25px 再 +104px」這種寫法，夾成 0 之後
+                // 整行會多出 20 幾像素，八行一起往右跑。
+                out.add(Piece.space(p.spacePx() - drift, p.style()));
                 lastAdjusted = i;
                 drift = 0;
             } else {
@@ -209,8 +209,7 @@ public final class LineTranslator {
         // 整行的總寬度就會跟原文相同，右緣自然重合。
         if (lastAdjusted >= 0 && drift != 0) {
             Piece p = out.get(lastAdjusted);
-            out.set(lastAdjusted,
-                    Piece.space(Math.max(0, p.spacePx() - drift), p.style()));
+            out.set(lastAdjusted, Piece.space(p.spacePx() - drift, p.style()));
         }
         return out;
     }
@@ -245,7 +244,7 @@ public final class LineTranslator {
         }
         List<Piece> out = new ArrayList<>(pieces);
         Piece p = out.get(last);
-        out.set(last, Piece.space(Math.max(0, p.spacePx() + shortfall), p.style()));
+        out.set(last, Piece.space(p.spacePx() + shortfall, p.style()));
         return out;
     }
 
@@ -293,7 +292,34 @@ public final class LineTranslator {
         }
         // 現成的空白在數值區裡面（素材的兩欄行就是這樣：標籤後面沒有空白，
         // 只有兩個數值之間有）。那個不是標籤與數值的交界，要在數值區起點補。
-        return valueStart;
+        if (valueStart >= 0) {
+            return valueStart;
+        }
+        // 最後一種：間隔是<b>字面空格</b>、數值又是<b>文字</b>，兩個條件都躲過
+        // 上面的判斷。{@code Class Type␠␠Mage/Dark Wizard} 就是這樣——整行沒有
+        // 排版空白片段，數值區也找不到數字，於是一路回傳 -1，完全沒被補償。
+        return literalGapBoundary(pieces);
+    }
+
+    /**
+     * 以<b>字面空格</b>當間隔的欄位交界。
+     *
+     * <p>條件是：一整段都是空白的片段，前後都有實際內容，而且夠寬
+     * （見 {@link #MIN_COLUMN_GAP}）。一格空格是詞距，不是欄位。
+     *
+     * <p>回傳空白<b>之後</b>那個位置——補償要加在數值前面，才會把它推到定位。
+     */
+    private static int literalGapBoundary(List<Piece> pieces) {
+        for (int i = pieces.size() - 2; i > 0; i--) {
+            String text = pieces.get(i).text();
+            if (text.isEmpty() || !text.isBlank() || text.length() < MIN_COLUMN_GAP) {
+                continue;
+            }
+            if (!isLeading(pieces, i) && hasTextAfter(pieces, i)) {
+                return i + 1;
+            }
+        }
+        return -1;
     }
 
     /** 要幾格空白才算「這是一個對齊欄」而不只是詞與詞之間的間隔。 */
@@ -313,7 +339,7 @@ public final class LineTranslator {
      * <p>已經是排版空白字元（{@code minecraft:space}）的情況不會走到這裡——
      * 那種本來就是欄位，呼叫端直接用。
      */
-    private static boolean hasColumnGap(List<Piece> pieces, int boundary) {
+    static boolean hasColumnGap(List<Piece> pieces, int boundary) {
         int spaces = 0;
         // 交界前那一段的尾端空白
         for (int i = boundary - 1; i >= 0; i--) {
