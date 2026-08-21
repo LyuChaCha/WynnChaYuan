@@ -457,7 +457,7 @@ public final class LineTranslator {
                 // 不夾在 0 以上。Wynncraft 自己就在用負間隔——坐騎的
                 // 屬性列原文就是「-25px 再 +104px」這種寫法，夾成 0 之後
                 // 整行會多出 20 幾像素，八行一起往右跑。
-                out.add(Piece.space(p.spacePx() - drift, p.style()));
+                out.add(Piece.space(narrowed(p.spacePx(), p.spacePx() - drift), p.style()));
                 lastAdjusted = i;
                 drift = 0;
             } else {
@@ -475,7 +475,8 @@ public final class LineTranslator {
         // 整行的總寬度就會跟原文相同，右緣自然重合。
         if (lastAdjusted >= 0 && drift != 0) {
             Piece p = out.get(lastAdjusted);
-            out.set(lastAdjusted, Piece.space(p.spacePx() - drift, p.style()));
+            out.set(lastAdjusted,
+                    Piece.space(narrowed(p.spacePx(), p.spacePx() - drift), p.style()));
         }
         return out;
     }
@@ -587,6 +588,30 @@ public final class LineTranslator {
         }
         return -1;
     }
+
+    /**
+     * 間隔補償之後不能窄到把字黏在一起。
+     *
+     * <h2>為什麼需要下限</h2>
+     * 中文標籤比英文長時，補償算出來是<b>負的</b>——技能樹的
+     * {@code Fire Damage: +15%} 翻成「火屬性傷害百分比」之後就變成
+     * 「火屬性傷害百分比+15%」，字直接貼在一起，甚至被推出框外。
+     *
+     * <p>但不能一律夾在 0 以上：Wynncraft <b>自己</b>就在用負間隔，坐騎的屬性列
+     * 原文就是「-25px 再 +104px」，夾成 0 之後整行會多出二十幾像素。
+     *
+     * <p>所以只夾<b>原本是正的</b>那些。原本就是負的照原樣通過——那是排版設計，
+     * 不是我們算出來的。對不齊也比黏在一起好讀。
+     *
+     * @param original 原文的間隔
+     * @param adjusted 補償之後的間隔
+     */
+    private static int narrowed(int original, int adjusted) {
+        return original > 0 ? Math.max(MIN_GAP, adjusted) : adjusted;
+    }
+
+    /** 見 {@link #narrowed}。一個半形空格的寬度。 */
+    private static final int MIN_GAP = 4;
 
     /** 要幾格空白才算「這是一個對齊欄」而不只是詞與詞之間的間隔。 */
     private static final int MIN_COLUMN_GAP = 2;
