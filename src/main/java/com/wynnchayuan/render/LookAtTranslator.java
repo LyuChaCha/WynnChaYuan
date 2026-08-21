@@ -2,6 +2,7 @@ package com.wynnchayuan.render;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.client.Minecraft;
@@ -72,6 +73,14 @@ public final class LookAtTranslator {
      */
     private static volatile Entity lastSource = null;
 
+    /**
+     * 上一段譯文的<b>模板</b>（數字已經抽掉）。
+     *
+     * <p>戰鬥假人的名牌每被打一下就換一個數字，實體也可能整個換掉，
+     * 光比實體不夠。比模板才問得到「其實還是同一句話」。
+     */
+    private static volatile String lastTemplate = null;
+
     private LookAtTranslator() {}
 
     /**
@@ -135,6 +144,13 @@ public final class LookAtTranslator {
         LABELS.clear();
         lastShown = null;
         lastSource = null;
+        lastTemplate = null;
+    }
+
+    /** 這一段字跟上一次顯示的是不是同一句（只有數字不同不算變）。 */
+    private static boolean sameContent(StyledText text) {
+        return lastTemplate != null && text != null
+                && lastTemplate.equals(GlyphSplitter.toTemplate(text));
     }
 
     /** 每幀呼叫。沒有對著任何名牌時什麼都不畫。 */
@@ -149,7 +165,7 @@ public final class LookAtTranslator {
             Component translated = LineTranslator.translate(target, WynnChaYuan.translations());
             if (translated == null) {
                 noteOnce("nametag.noMatch");
-                if (aimed == lastSource && lastShown != null) {
+                if (lastShown != null && (aimed == lastSource || sameContent(target))) {
                     // 還在看同一個東西，只是它的字變了（戰鬥假人的傷害數字每擊都跳）。
                     // 這種時候把框收掉會讓它一直閃——維持上一次的譯文，
                     // 直到玩家真的看向別處。
@@ -161,6 +177,7 @@ public final class LookAtTranslator {
             noteOnce("nametag.shown");
             lastShown = translated;
             lastSource = aimed;
+            lastTemplate = GlyphSplitter.toTemplate(target);
             lastSeen = System.currentTimeMillis();
             drawBubble(graphics, mc, translated, 1.0f);
             return;

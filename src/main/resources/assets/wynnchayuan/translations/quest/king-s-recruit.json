@@ -1,0 +1,1250 @@
+{
+ "_meta": {
+  "quest": "King's Recruit",
+  "count": 124,
+  "translated": 0,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "King's Recruit#000": {
+   "src": "Awaken",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#001": {
+   "src": "Agh!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "King's Recruit#002": {
+   "src": "Hey, Player! You alright in there? Looks like we hit something.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 1",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "King's Recruit#003": {
+   "src": "Exit the caravan and talk to the Caravan Driver at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#004": {
+   "src": "Hm... I swear I hit this same darn boulder every time I make this trip. Sorry folks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Caravan Driver",
+   "source": "wiki"
+  },
+  "King's Recruit#005": {
+   "src": "Ah. Does this mean we have to walk all the way to {p} from here?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#006": {
+   "src": "Unfortunately so. Luckily, it's not that far from here. Just a straight path forward.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Caravan Driver",
+   "source": "wiki"
+  },
+  "King's Recruit#007": {
+   "src": "Well, nothing to do but keep moving! Tasim, Player, I'll race you to the gate!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#008": {
+   "src": "Wait, don't!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#009": {
+   "src": "... He's already gone. We'll have to catch up to him. Player, lead the way.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#010": {
+   "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#011": {
+   "src": "I don't suppose you know much about Wynn either, do you?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#012": {
+   "src": "Of course, the King of {p}'s been recruiting Fruma soldiers, but...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#013": {
+   "src": "That war of theirs must be getting pretty bad if they need this much support.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#014": {
+   "src": "Oh, there's Aledar! And the gate, by the looks of it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#015": {
+   "src": "There you two are! You'll have to be faster than that if you want to stand a chance against the undead.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#016": {
+   "src": "Yes, yes, we'll be faster next time. So, is this the gate marking the border between Wynn and Fruma?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#017": {
+   "src": "It looks like it, yep! Are you two ready for the start of our new lives?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#018": {
+   "src": "Player, why don't you do the honors? Go ahead and open that gate.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 3",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#019": {
+   "src": "Enter the Province of Wynn at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#020": {
+   "src": "Well, what are we waiting for? Let's go ahead and explore this province.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#021": {
+   "src": "Continue through the Wynn Province to the castle",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#022": {
+   "src": "So this is Wynn we've all been hearing about... It's beautiful.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 5",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#023": {
+   "src": "I guess the war hasn't made it this far. This is what we'll be fighting to protect.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 5",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#024": {
+   "src": "Hey, recruits! Come over here, I have something to tell you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 5",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#025": {
+   "src": "Talk to the Soldier at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#026": {
+   "src": "A soldier? What are you doing all the way out here?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#027": {
+   "src": "There's a bit of trouble up ahead. They sent me out here to intercept new recruits.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#028": {
+   "src": "If you want to survive out here, you're going to need this.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#029": {
+   "src": "And for you two.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#030": {
+   "src": "Woah, awesome!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#031": {
+   "src": "Hopefully we won't have to use these just yet.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#032": {
+   "src": "Good luck out there, recruits! Just follow this path, and there will be a bridge up ahead.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 6",
+   "speaker": "Soldier",
+   "source": "wiki"
+  },
+  "King's Recruit#033": {
+   "src": "Cross the bridge at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#034": {
+   "src": "Ah, this must be the bridge the soldier was talking about. But it certainly looks very...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#035": {
+   "src": "Well, let's not keep the King of {p} waiting!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#036": {
+   "src": "No, wait!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#037": {
+   "src": "Aledar!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#038": {
+   "src": "That sure was close!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#039": {
+   "src": "That's what I was trying to warn you about! Let's just get off this bridge before the rest of it collapses...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#040": {
+   "src": "Well, how are we meant to get to the other side of this ravine now? Ugh. Another thing gone wrong, just like-...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#041": {
+   "src": "... Aledar? What's wrong?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#042": {
+   "src": "That's... weird. I was just thinking about something from before Wynn, but... it's gone. I can't remember.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#043": {
+   "src": "Hm. I can't remember anything from Fruma either... Player, how about you?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#044": {
+   "src": "Nothing. It can't be a coincidence we all lost our memories at the same time, right?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#045": {
+   "src": "No, but... We can worry about that later. For now, we need to find a way past this ravine. Aledar, Player, you should look for a way across. I'll keep looking here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#046": {
+   "src": "Alright! Let's go, Player.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 7",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#047": {
+   "src": "Search for another way across the ravine at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#048": {
+   "src": "Woah! That sure did the trick, Player. Good thinking!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#049": {
+   "src": "Hey, Tasim! Come over here, Player found a way over!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#050": {
+   "src": "Continue onwards to [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#051": {
+   "src": "Phew! We made it over safely this time at least.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 9",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#052": {
+   "src": "If we just continue forward, we should make it to {p} in no time!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 9",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#053": {
+   "src": "Hmm? What's that guard doing here? We should probably talk to them if we want to pass through.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 9",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#054": {
+   "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#055": {
+   "src": "Halt, recruits!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#056": {
+   "src": "What? What's going on?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#057": {
+   "src": "A group of corrupted have sieged this underpass. I can't let you enter without any armour.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#058": {
+   "src": "Then what do we do? We have to get to {p}!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#059": {
+   "src": "Do you see that cave over there? Caves such as those often contain useful loot that can help keep you alive.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#060": {
+   "src": "If you enter the cave, you should be able to find some armour to protect you. After that return to me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#061": {
+   "src": "What do you say Player? Let's go see what's in that cave.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 10",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#062": {
+   "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#063": {
+   "src": "We should return to the guard to see if he'll let us through now!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 11",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#064": {
+   "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#065": {
+   "src": "So you found some armor, huh?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#066": {
+   "src": "Yes, a helmet! Will you let us pass now?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#067": {
+   "src": "Hold on there, recruit. Before you can equip a piece of armor you first have to identify it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#068": {
+   "src": "And how do we do that?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#069": {
+   "src": "You can identify items at Item Identifiers. They exist in every city across the whole world, and we keep one here for convenience.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#070": {
+   "src": "Identify your helmet at the Item Identifier and then return to me with it equipped. After you've done that I'll let you pass.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#071": {
+   "src": "Alright! Let's go, Player.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#072": {
+   "src": "I see you have your helmet on. Fantastic, you may now pass. Let me open this door for you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#073": {
+   "src": "Good luck in there recruits! Even with your armour it won't be so easy!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "wiki"
+  },
+  "King's Recruit#074": {
+   "src": "Enter the underpass at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#075": {
+   "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 14",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#076": {
+   "src": "Wow, that guard wasn't joking. This place is crawling with the corrupt.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 14",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#077": {
+   "src": "Well, we've got no choice but to make it through! Finally time for us to use these weapons we got. Let's go, Player.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#078": {
+   "src": "Player, you take the skeleton in the front. We'll handle the two zombies in the back!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 14",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#079": {
+   "src": "Defeat the Skeleton!",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#080": {
+   "src": "We did it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#081": {
+   "src": "This path opened up, let's continue through the underpass.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 15",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#082": {
+   "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 16",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#083": {
+   "src": "Over here! You're just what I needed!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 16",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#084": {
+   "src": "Talk to the Lieutenant at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#085": {
+   "src": "Finally, some backup! Wait a second... you're straight from Fruma aren't you?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#086": {
+   "src": "Oh well, this area should be clear by now. {p} is just up ahead, after all.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#087": {
+   "src": "Lieutenant, watch out behind you!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#088": {
+   "src": "Quick, you have to use an ability!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#089": {
+   "src": "Great job, Player!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#090": {
+   "src": "Wait, it's running away! We have to save the Lieutenant!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 17",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#091": {
+   "src": "Chase the Goliath to [-{~}, {~}, -{~}]!",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 18",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#092": {
+   "src": "Defeat the Goliath and free the Lieutenant.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 19",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#093": {
+   "src": "... That was close. Thanks for the save, recruits!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 19",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#094": {
+   "src": "I think you three are going to make good soldiers - not many can handle themselves like you just did.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 19",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#095": {
+   "src": "It seems that beast dropped something, you should check it out before heading to {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 19",
+   "speaker": "Lieutenant",
+   "source": "wiki"
+  },
+  "King's Recruit#096": {
+   "src": "Pick up the loot dropped by the Goliath.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 20",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#097": {
+   "src": "That item looks rare! Maybe there's an identifier around here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 20",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#098": {
+   "src": "Onward to {p}! We're almost there.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 20",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#099": {
+   "src": "Enter the castle at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#100": {
+   "src": "We... we made it! We really made it! Sure was a close call at the end.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#101": {
+   "src": "... Still think those corrupted don't stand a chance against you?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#102": {
+   "src": "Ha ha. Very funny. Ah, Player, there seems to be an identifier here for you to identify that rare helmet.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#103": {
+   "src": "And a blacksmith too, you can sell your old helmet there for some emeralds.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#104": {
+   "src": "Here it is, the end of our journey.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#105": {
+   "src": "The end of one adventure, but the beginning of another! Let's go inside and talk to the King!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 21",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#106": {
+   "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "King's Recruit#107": {
+   "src": "Welcome to the Province of Wynn! By your ragged appearance, I gather your journey here must have been quite the adventure.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#108": {
+   "src": "This, recruits, is the noble fort of {p}, one of the great cities of our province!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#109": {
+   "src": "As soldiers of Wynn, it is your duty to stem the tide of corrupted monsters ravaging this land.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#110": {
+   "src": "Although, you may want to gain some experience beforehand. Many lives are tragically lost every day...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#111": {
+   "src": "Take this [[Teleport Scrolls|[{p} Teleportation Scroll]]] to aid you in your journey. Upon use, it will instantly bring you back to this city, wherever you may be.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#112": {
+   "src": "With that, I must bid you farewell, more recruits may arrive at any time. Good luck out there, soldiers of Wynn!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "King's Recruit#113": {
+   "src": "So! Wynn, huh? It's pretty exciting to finally be here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#114": {
+   "src": "I can't wait to discover what it looks like for myself!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#115": {
+   "src": "Ha, well, I think I'm going to head in the direction of {p} soon, although there seems to be something called {p} on the way...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#116": {
+   "src": "Enough talking already! Let's get out there and help some people!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "King's Recruit#117": {
+   "src": "And he's gone again... Well, I'm sure we'll be seeing him soon enough. For now, let's just see what Wynn really is like.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#118": {
+   "src": "It's beautiful.... Oh! I almost forgot to tell you, Player.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#119": {
+   "src": "There's this handy item we were all given on our way here, the Content Book. It displays most things you can do in this world; Quests, Caves, and much, much more.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#120": {
+   "src": "It also lets you track any content you want, which will create beacons for you to follow.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#121": {
+   "src": "Here, why don't you try it out? Use your Content Book, and click on the highlighted quest.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#122": {
+   "src": "There you go! I'm going to head towards {p}, at the end of the {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "King's Recruit#123": {
+   "src": "You should meet me there once you've gotten a little stronger. Well, see you around, Player.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  }
+ }
+}

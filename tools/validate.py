@@ -263,6 +263,8 @@ def main(argv: list[str]) -> int:
     else:
         files = sorted(f for f in TRANSLATIONS.glob("*.json")
                        if not f.name.startswith("_"))
+        # 任務對話一個任務一個檔，放在子資料夾裡
+        files += sorted(TRANSLATIONS.glob("quest/*.json"))
 
     errors = 0
     warnings = 0

@@ -1,0 +1,570 @@
+{
+ "_meta": {
+  "quest": "Underice",
+  "count": 56,
+  "translated": 0,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Underice#000": {
+   "src": "Talk to Fredris in {p} at [{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#001": {
+   "src": "I'm having trouble with the fish in our lake recently and I am sure the problem lies within the lake itself.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 1",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#002": {
+   "src": "I would like to commission you to investigate, but since it's freezing cold in our lake you need something to protect you. I heard the people in {p} on the coast of Wynn have something that can help you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 1",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#003": {
+   "src": "Would you mind coming back with a [[Breathing Helmet|[Breathing Helmet I]]]? I think that should be everything you need.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 1",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#004": {
+   "src": "Return to {p} and bring Fredris a [[Breathing Helmet|[Breathing Helmet I]]]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#005": {
+   "src": "What is this thing supposed to be? You know, I would really appreciate your help, but this [[Breathing Helmet|[Breathing Helmet I]]] does not look like it's going to keep you protected.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 2",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#006": {
+   "src": "Would you mind heading to our local armour merchant and buying one of our [[Breathing Helmet|[Breathing Helmet II]]]? I don't want you to drown. Just come back with the helmet and I will tell you about my problem.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 2",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#007": {
+   "src": "Buy a [[Breathing Helmet|[Breathing Helmet II]]] and find the underwater cave",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#008": {
+   "src": "Explore the cave underneath the frozen lake in {p}",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#009": {
+   "src": "Who are you? You don't look like one of those villagers we stole the fi... Wait, they didn't send you to retrieve \"their\" fish, did they?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#010": {
+   "src": "For years we let them share the lake with us, the actual inhabitants of it, we were modest and took what we needed, we let them catch the rest. But then they went too far, they caught too much.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#011": {
+   "src": "We didn't have enough to eat, we were forced to steal their fish, we would have starved otherwise. And now they want their fish, our fish back? We can't do that, I hope you understand.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#012": {
+   "src": "However, we don't have to fight over the fish in the lake, we just need a [[Mythic Everlasting Pufferfish|[Mythic Everlasting Pufferfish]]], that would be enough, nothing else. We never wanted to steal the fish.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#013": {
+   "src": "If you want to help us and the villagers, just follow the stream that flows into this lake to the south, you will find the best fishing ground there. The pufferfish should be around there too.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#014": {
+   "src": "Follow the river south to find the fishing dock",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#015": {
+   "src": "Oh you look a bit lost, let me help you, I've lived here for a long time, I know every corner and every snowflake.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#016": {
+   "src": "You're searching for a [[Mythic Everlasting Pufferfish|[Mythic Everlasting Pufferfish]]]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#017": {
+   "src": "Sadly Strato is no longer alive. He used to work and live at the woodcutting camp northwest of {p}. We always met here, caught fish and told each other stories. I really miss those times...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#018": {
+   "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in water, maybe that will attract the pufferfish.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#019": {
+   "src": "Can I ask you something? As you might see I'm not the richest guy, or the youngest. If you manage to catch that fish, could you hand it over? I know we just met but you seem like somebody who would help an old man.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#020": {
+   "src": "Obtain the bait at the woodcutting camp northwest of {p}, use it to catch the fish and then give it to Calamaro or Gernald",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#021": {
+   "src": "Just look at those fish, I told you they love this bait.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#022": {
+   "src": "There it comes, the [[Mythic Everlasting Pufferfish|[Mythic Everlasting Pufferfish]]], I can't believe it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#023": {
+   "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift, please, promise me to never change.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Gernald",
+   "source": "wiki"
+  },
+  "Underice#024": {
+   "src": "You found a pufferfish! Who would have thought such a small thing could solve our problem. I will start bringing back the fish immediately, but first we will have a nice hot soup. Please take this as payback for your services.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#025": {
+   "src": "You can trade it at the shop right over there, it's hard to miss. I will give you a last advise, you don't want to eat that slimy fish.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#026": {
+   "src": "Meet up with Fredris in {p} and claim your reward",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#027": {
+   "src": "Oh you are done with whatever you were doing? I heard you ran around the whole place, I don't know if you were the right person to ask for help...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#028": {
+   "src": "I will just ask the next one who comes around, no need to have you run around all day. Take this, I appreciate your effort.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#029": {
+   "src": "A real disaster! I can't believe this is happening to me!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#030": {
+   "src": "I've been fishing for the last few days and I caught nothing! Zilch! This isn't normal!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#031": {
+   "src": "I spent my entire life fishing in this area! I wish I could dive under this ice to fix the problem myself...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#032": {
+   "src": "Do you think you could help me? You might actually be exactly what I need!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#033": {
+   "src": "Enter my shack, there you will find the entrance... Good luck!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#034": {
+   "src": "Explore under the ice to find a cause to the fish problem. You'll need the Breathing Helmet for this.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#035": {
+   "src": "Talk to Squidward in the Squid Village.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#036": {
+   "src": "Have I seen any fish? No, of course not! I don't even know what a fish looks like!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#037": {
+   "src": "Who could be stealing all those fish? I wonder! Actually...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#038": {
+   "src": "I'm sure Calamaro did it! He's just that kind of guy. He lives in that house down there.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#039": {
+   "src": "Find Calamaro in the Squid Village.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#040": {
+   "src": "Me? Stealing fish? You are out of your mind! It's obviously Kroken who is stealing them!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#041": {
+   "src": "He lives right on top of that waterfall right there, if you want to go talk to him.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 4",
+   "speaker": "Calamaro",
+   "source": "wiki"
+  },
+  "Underice#042": {
+   "src": "Find Kroken in the Squid Village.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#043": {
+   "src": "Do I look like someone who steals fish?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Kroken",
+   "source": "wiki"
+  },
+  "Underice#044": {
+   "src": "It's obvious that Squidward did it, he has tons of crates full of fish!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 5",
+   "speaker": "Kroken",
+   "source": "wiki"
+  },
+  "Underice#045": {
+   "src": "Talk back to Squidward.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#046": {
+   "src": "Okay, okay, fine! It was me all along... I know, what a shock, right?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 6",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#047": {
+   "src": "Okay, I got a proposition for you. Bring me [{~} Raw Fish] and I will stop, deal?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 6",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#048": {
+   "src": "Deal.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 6",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#049": {
+   "src": "Bring back {~} Raw Fish to Squidward.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#050": {
+   "src": "Good, you got the fish!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#051": {
+   "src": "You can trust me, I won't touch the fish in the frozen lake anymore!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 7",
+   "speaker": "Squidward",
+   "source": "wiki"
+  },
+  "Underice#052": {
+   "src": "Talk to Fredris to collect your reward.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Underice",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Underice#053": {
+   "src": "Your story really doesn't make sense. Villagers living in a squid village under the lake? Pff!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 8",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#054": {
+   "src": "However, if you can garantee me that my problem is gone, I'll trust you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 8",
+   "speaker": "Fredris",
+   "source": "wiki"
+  },
+  "Underice#055": {
+   "src": "Thank you for your help. Here, take these...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Underice",
+   "stage": "Stage 8",
+   "speaker": "Fredris",
+   "source": "wiki"
+  }
+ }
+}
