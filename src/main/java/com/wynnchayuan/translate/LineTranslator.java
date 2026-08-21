@@ -72,6 +72,11 @@ public final class LineTranslator {
         StringBuilder key = new StringBuilder();
         for (StyledText line : run) {
             LineParts p = LineParts.of(line);
+            if (p.template().isBlank()) {
+                // 段落之間的空行不能併進來。攤平查表會把它壓成一個空格，
+                // 於是整段連著空行一起被換掉——譯文出來就跟上一段黏在一起了。
+                return null;
+            }
             parts.add(p);
             if (key.length() > 0) {
                 key.append('\n');
@@ -103,7 +108,7 @@ public final class LineTranslator {
         }
         if (flowed) {
             // 查到的是完整一句，得自己折回原本那幾行的寬度
-            translated = wrapToWidth(translated, widestOf(run));
+            translated = wrapToBlock(translated, run);
         }
         String[] dst = translated.split("\n", -1);
         List<Component> built = rebuildAll(dst, parts, extra);
@@ -193,6 +198,40 @@ public final class LineTranslator {
             widest = Math.max(widest, widthOf(line.getComponent()));
         }
         return widest;
+    }
+
+    /**
+     * 折成跟原本那一塊<b>一樣的形狀</b>。
+     *
+     * <h2>為什麼不能只看寬度</h2>
+     * 目標寬度是量原文量出來的，而原文用的是 Wynncraft 自己的字型；量不準的話
+     * 折出來的行數就會比原本多，整塊往下長，看起來就「跑偏」了。
+     *
+     * <p>行數是<b>看得出來對不對</b>的：原本四行，折出來就不該超過四行。
+     * 超過就把目標寬度放寬一成再試——這樣量得再不準也收得回來。
+     */
+    private static String wrapToBlock(String text, List<StyledText> run) {
+        int width = widestOf(run);
+        if (width <= 0) {
+            return text;
+        }
+        String wrapped = wrapToWidth(text, width);
+        for (int attempt = 0; attempt < WRAP_RETRIES && lines(wrapped) > run.size(); attempt++) {
+            width = width * 11 / 10;
+            wrapped = wrapToWidth(text, width);
+        }
+        return wrapped;
+    }
+
+    /** 放寬幾次就放棄。每次一成，五次約多五成，量錯到這個程度另有問題。 */
+    private static final int WRAP_RETRIES = 5;
+
+    private static int lines(String text) {
+        int n = 1;
+        for (int i = text.indexOf(NEWLINE); i >= 0; i = text.indexOf(NEWLINE, i + 1)) {
+            n++;
+        }
+        return n;
     }
 
     /**

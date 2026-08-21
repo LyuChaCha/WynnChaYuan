@@ -198,20 +198,50 @@ public final class BlockLayout {
             minLead = Math.min(minLead, lead[i]);
             maxLead = Math.max(maxLead, lead[i]);
             // 置中的行，左右留白一樣寬，所以「本行內容 + 兩側留白」就是整塊的寬度。
-            // 每一行算出來的這個值都該相同——這比「拿最寬的那行當基準」穩：
-            // 只要有一行的寬度量得不準，當基準就會把整塊都帶歪。
+            // 每一行算出來的這個值都該相同。
             int span = content[i] + lead[i] * 2;
             minSpan = Math.min(minSpan, span);
             maxSpan = Math.max(maxSpan, span);
         }
-        // 縮排完全沒變化的話，這一塊「置中」與「靠左」畫出來一模一樣，
-        // 當靠左最安全。這條也擋掉窄區塊的誤判：兩行只差十幾像素時，
-        // 光靠容差會讓「縮排都是 0」剛好符合置中算式。
+        // 縮排完全沒變化的話，這一塊「置中」與「靠左」畫出來一模一樣，當靠左最安全。
         if (maxSpan <= 0 || maxLead - minLead <= TOLERANCE) {
             return false;
         }
-        return maxSpan - minSpan <= TOLERANCE * 2;
+        // 越長的行縮排越小——這是置中的定義，而且它<b>不受量測誤差影響</b>：
+        // 就算整塊的寬度都量偏了，長短的順序還是對的。
+        //
+        // 這條很重要。未鑑定物品那三行有兩行用 Wynncraft 自己的字型
+        // （language/wynncraft），量出來跟預設字型差得夠多，光比像素會對不上，
+        // 但長的行縮排小、短的行縮排大這件事永遠成立。
+        for (int i = start; i < end; i++) {
+            for (int j = i + 1; j < end; j++) {
+                if (contradicts(lead, content, i, j) || contradicts(lead, content, j, i)) {
+                    return false;
+                }
+            }
+        }
+        // 像素上的容差用<b>比例</b>而不是固定值：量測誤差會隨字型與行長放大，
+        // 固定幾像素在長行上太嚴，在短行上又太鬆。
+        int allowed = Math.max(TOLERANCE * 2, maxSpan * SPAN_TOLERANCE_PERCENT / 100);
+        return maxSpan - minSpan <= allowed;
     }
+
+    /**
+     * {@code a} 明顯比 {@code b} 長，縮排卻也明顯比較大——置中不可能長這樣。
+     *
+     * <p>兩邊都要求「明顯」，是因為量測本來就有誤差：差幾像素的兩行誰長誰短
+     * 說不準，拿它當否決條件會把真正置中的區塊擋掉。要否決就得是那種
+     * 一看就知道不對的差距。
+     */
+    private static boolean contradicts(int[] lead, int[] content, int a, int b) {
+        return content[a] - content[b] > RANK_SLACK && lead[a] - lead[b] > RANK_SLACK;
+    }
+
+    /** 見 {@link #contradicts}。約三個字元寬。 */
+    private static final int RANK_SLACK = TOLERANCE * 3;
+
+    /** 見 {@link #isCentredBlock}。整塊寬度的百分之幾以內都算吻合。 */
+    private static final int SPAN_TOLERANCE_PERCENT = 15;
 
     /**
      * 這一行是不是段落分隔。
