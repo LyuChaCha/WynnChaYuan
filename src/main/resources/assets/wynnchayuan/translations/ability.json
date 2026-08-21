@@ -5,7 +5,7 @@
     "lang": "zh_tw",
     "generated": "2026-08-19T12:14:19+00:00",
     "count": 1240,
-    "translated": 102,
+    "translated": 204,
     "note": "照技能樹的實際版面排序（職業 → 頁 → 列 → 欄），也就是遊戲裡由上而下、由左而右的順序。tree 欄位由 tools/order-abilities.py 產生。"
   },
   "entries": {
@@ -2278,7 +2278,7 @@
     },
     "022d69f1fa0f": {
       "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Players",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 傷害加成 (⚔) 給玩家",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -2401,7 +2401,7 @@
     },
     "6b95ce72375d": {
       "src": "{#}{#}Effect: +{~} ID Effectiveness (❈) to Allies",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 詞條效果 (❈) 給友軍",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -2680,7 +2680,7 @@
     },
     "300766ebffc5": {
       "src": "{#}{#}Effect: Invincibility (☗) to Allies",
-      "dst": "",
+      "dst": "{#}{#}效果：無敵 (☗) 給友軍",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -2737,7 +2737,7 @@
     },
     "3152be4c6c1f": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, to Tempest)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，對 Tempest）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -2830,7 +2830,7 @@
     },
     "da79ec812271": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per Swipe)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每次揮擊）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -2969,7 +2969,7 @@
     },
     "f6fd5e6d0834": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, to Comet)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，對 Comet）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -2980,7 +2980,7 @@
     },
     "5044f8ce520b": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, to Fireworks)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，對 Fireworks）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -3097,7 +3097,7 @@
     },
     "93e00934be27": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, detonate)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，引爆）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -3108,7 +3108,7 @@
     },
     "76d4ed2ed1f3": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, summon)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，召喚）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -3171,7 +3171,7 @@
     },
     "365f6e8aa0f9": {
       "src": "{#}{#}Effects: +{~} Damage Bonus (⚔) to Allies",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 傷害加成 (⚔) 給友軍",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -3232,7 +3232,7 @@
     },
     "df12d88cacf4": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, spell)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，法術）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -3567,7 +3567,7 @@
     },
     "5085eb3cc731": {
       "src": "{#}{#}Total Heal: {~} (of your max health)",
-      "dst": "",
+      "dst": "{#}{#}總治療量：{~}（你的最大生命）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -4025,7 +4025,7 @@
     },
     "a5ea979fc963": {
       "src": "{#}{#}Meteor Area of Effect: {~} Blocks (Circle-Shaped)",
-      "dst": "",
+      "dst": "{#}{#}隕石作用範圍：{~} 格（圓形）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -4036,7 +4036,7 @@
     },
     "db2416285194": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, for Meteor)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，隕石）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -4047,7 +4047,7 @@
     },
     "86ccfee4a7da": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, for Ophanim)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，Ophanim）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -4213,7 +4213,7 @@
     },
     "46fe5cd612ba": {
       "src": "{#}{#}Drift Range: {~} Blocks",
-      "dst": "",
+      "dst": "{#}{#}漂移範圍：{~} 格",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -4449,7 +4449,7 @@
     },
     "c5277bd98efa": {
       "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
-      "dst": "",
+      "dst": "{#}{#}效果：{~} 緩速 ({#}) 給敵人，每次命中（上限 {~}）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -4592,7 +4592,7 @@
     },
     "780d6162ea2c": {
       "src": "{#}{#}Delay: {~}s (per pulse)",
-      "dst": "",
+      "dst": "{#}{#}延遲：{~} 秒（每次脈衝）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -4603,7 +4603,7 @@
     },
     "0d97c146c150": {
       "src": "{#}{#}Pulse Self Heal: {~} (of your max health)",
-      "dst": "",
+      "dst": "{#}{#}脈衝自我治療：{~}（你的最大生命）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -4637,7 +4637,7 @@
     },
     "06ccf12fd577": {
       "src": "{#}{#}Target Radius: {~} Blocks (Circle-Shaped)",
-      "dst": "",
+      "dst": "{#}{#}目標半徑：{~} 格（圓形）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -4849,7 +4849,7 @@
     },
     "50669b3486cb": {
       "src": "{#}{#}Effects: +{~} Walk Speed",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 移動速度",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -4903,7 +4903,7 @@
     },
     "58fa315db261": {
       "src": "{#}{#}Cooldown: {~}s (Riftbound)",
-      "dst": "",
+      "dst": "{#}{#}冷卻時間：{~} 秒（Riftbound）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -5063,7 +5063,7 @@
     },
     "5fb05e7c8588": {
       "src": "{#}{#}Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 移動速度給友軍（每 {~} 秒，上限 +{~}）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -5143,7 +5143,7 @@
     },
     "b15ec84dc5d4": {
       "src": "{#}{#}Main Attack Damage: +{~}{#}(per {~} Walk Speed)",
-      "dst": "",
+      "dst": "{#}{#}普攻傷害：+{~}{#}（每 {~} 移動速度）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -5448,7 +5448,7 @@
     },
     "9f1d69d68705": {
       "src": "{#}{#}Health Regen: {~} per second (of your max health)",
-      "dst": "",
+      "dst": "{#}{#}生命回復：每秒 {~}（你的最大生命）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -5459,7 +5459,7 @@
     },
     "1fd030046202": {
       "src": "{#}{#}Mana Regen: {~} per second (of your max mana)",
-      "dst": "",
+      "dst": "{#}{#}魔力回復：每秒 {~}（你的最大魔力）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -5845,7 +5845,7 @@
     },
     "72981e56a191": {
       "src": "{#}{#}Vision: {~} Blocks (Circle-Shaped)",
-      "dst": "",
+      "dst": "{#}{#}視野：{~} 格（圓形）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6026,7 +6026,7 @@
     },
     "35fe21ddf4a0": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per Wisp)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每個 Wisp）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6037,7 +6037,7 @@
     },
     "cf1f4e39b5dc": {
       "src": "{#}{#}Total Heal: {~} (of max health)",
-      "dst": "",
+      "dst": "{#}{#}總治療量：{~}（最大生命）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6113,7 +6113,7 @@
     },
     "4b90019282ec": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, Fire)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，火）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6124,7 +6124,7 @@
     },
     "68dca3131824": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, Thunder)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，雷）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6135,7 +6135,7 @@
     },
     "e16e0228026a": {
       "src": "{#}{#}Vision: {~} Blocks",
-      "dst": "",
+      "dst": "{#}{#}視野：{~} 格",
       "role": "stat",
       "kind": "term",
       "ctx": [
@@ -6222,7 +6222,7 @@
     },
     "daba1e47609d": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, Collapse)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，Collapse）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6233,7 +6233,7 @@
     },
     "3b5efe40d8d7": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, Deadly Beam)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，Deadly Beam）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6411,7 +6411,7 @@
     },
     "26d4d854b4ad": {
       "src": "{#}{#}Main Attack Damage: -{~} (per arrow)",
-      "dst": "",
+      "dst": "{#}{#}普攻傷害：-{~}（每支箭）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6504,7 +6504,7 @@
     },
     "3fde5c5a86a7": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per arrow)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每支箭）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6614,7 +6614,7 @@
     },
     "a118228a3974": {
       "src": "{#}{#}Effect: +{~} Speed Bonus (➲) to Allies",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 速度加成 (➲) 給友軍",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6649,7 +6649,7 @@
     },
     "912e3a692883": {
       "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow/ray)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：-{~}（你的每秒傷害，每支箭／每道光線）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6834,7 +6834,7 @@
     },
     "c390799d7da3": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per shot)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每發）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -6891,7 +6891,7 @@
     },
     "f4e2aff0212c": {
       "src": "{#}{#}Damage Bonus: +{~} (per Focus)",
-      "dst": "",
+      "dst": "{#}{#}傷害加成：+{~}（每點 Focus）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -7031,7 +7031,7 @@
     },
     "c3bcf078c631": {
       "src": "{#}{#}Total Damage: {~} (Main Attack Damage, per arrow)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（普攻傷害，每支箭）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -7281,7 +7281,7 @@
     },
     "8b2ceb5ea2cb": {
       "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：-{~}（你的每秒傷害，每支箭）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -7351,7 +7351,7 @@
     },
     "0088ee0ebbe9": {
       "src": "{#}{#}Effects: -{~}{#}Damage Bonus ({#}) to Enemies",
-      "dst": "",
+      "dst": "{#}{#}效果：-{~}{#}傷害加成 ({#}) 給敵人",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -7432,7 +7432,7 @@
     },
     "8b75d799d897": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per shrapnel)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每片碎片）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -7607,7 +7607,7 @@
     },
     "3329ddf5e3c1": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, for Arrow Shield)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，箭盾）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -7618,7 +7618,7 @@
     },
     "57b5d893f1a1": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, for Guardian Angels, per shot)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，Guardian Angels，每發）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -7837,7 +7837,7 @@
     },
     "b1474bc74ddc": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per wave)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每波）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -7884,7 +7884,7 @@
     },
     "7c26a91e674f": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，Buckshot，每支箭）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -7990,7 +7990,7 @@
     },
     "6d6e18cedbdd": {
       "src": "{#}{#}Total Damage: -{~} (after piercing)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：-{~}（穿透之後）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -8564,7 +8564,7 @@
     },
     "90561f949f15": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, per arrow)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，每支箭）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -8576,7 +8576,7 @@
     },
     "166c324d3bef": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, per ray)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，每道光線）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -8742,7 +8742,7 @@
     },
     "9fbfa8a0291a": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, for Arrow Bomb)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，Arrow Bomb）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -8753,7 +8753,7 @@
     },
     "d40622dc9519": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, for Grape Bomb)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，Grape Bomb）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -8833,7 +8833,7 @@
     },
     "042574d890ae": {
       "src": "{#}{#}Effect: +{~} Walk Speed (➲) to Self",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 移動速度 (➲) 給自己",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -8867,7 +8867,7 @@
     },
     "1247b5dd2e9e": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, Arrow Bomb's smite)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，Arrow Bomb 的重擊）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -8953,7 +8953,7 @@
     },
     "ae152c359152": {
       "src": "{#}{#}Total Damage: +{~} (Main Attack Damage, per Twilight)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（普攻傷害，每點 Twilight）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -8964,7 +8964,7 @@
     },
     "de8e6f723e7c": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, per Twilight)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，每點 Twilight）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -9398,7 +9398,7 @@
     },
     "87da5f57819d": {
       "src": "{#}{#}Effect: Invisibility to Self",
-      "dst": "",
+      "dst": "{#}{#}效果：隱形給自己",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -9548,7 +9548,7 @@
     },
     "ac16e16acef3": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per strike)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每次打擊）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -10040,7 +10040,7 @@
     },
     "d5187788735c": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, over {~} hits)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，共 {~} 次命中）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -10229,7 +10229,7 @@
     },
     "1939dfc5b5bd": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per Trick)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每個 Trick）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -10289,7 +10289,7 @@
     },
     "cf9a949dcbfc": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per shuriken)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每枚手裏劍）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -10336,7 +10336,7 @@
     },
     "7d703bb03c32": {
       "src": "{#}{#}Multihit Damage: +{~} (of your DPS, per hit)",
-      "dst": "",
+      "dst": "{#}{#}連擊傷害：+{~}（你的每秒傷害，每次命中）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -10544,7 +10544,7 @@
     },
     "99181f4e4890": {
       "src": "{#} Thunder damage from you and",
-      "dst": "",
+      "dst": "{#} 來自你的雷屬性傷害，並且",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -10769,7 +10769,7 @@
     },
     "da16c5ebbd32": {
       "src": "{#} Earth damage from you and will explode",
-      "dst": "",
+      "dst": "{#} 來自你的地屬性傷害，並且會爆炸",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -11024,7 +11024,7 @@
     },
     "6d15732d6401": {
       "src": "{#} Fire damage from you.",
-      "dst": "",
+      "dst": "{#} 來自你的火屬性傷害。",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -11035,7 +11035,7 @@
     },
     "f063afb306da": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} Enkindle)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每 {~} 點 Enkindle）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -11190,7 +11190,7 @@
     },
     "9cb9ccb80131": {
       "src": "{#}{#}Area of Effect: +{~} Blocks (per bloom)",
-      "dst": "",
+      "dst": "{#}{#}作用範圍：+{~} 格（每次綻放）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -11470,7 +11470,7 @@
     },
     "acfdbd5b6e9f": {
       "src": "{#}{#}Explosion Damage: +{~}",
-      "dst": "",
+      "dst": "{#}{#}爆炸傷害：+{~}",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -11836,7 +11836,7 @@
     },
     "1cbb10db0c9d": {
       "src": "{#}(Damage is split between beams)",
-      "dst": "",
+      "dst": "{#}（傷害由各道光束分攤）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12204,7 +12204,7 @@
     },
     "b44413872a86": {
       "src": "{#}{#}Total Damage: -{~} (of your DPS, for Uproot, per hit)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：-{~}（你的每秒傷害，Uproot，每次命中）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12274,7 +12274,7 @@
     },
     "f36c86906ba1": {
       "src": "{#} Fanatic: +{~} Resistance Bonus to Self",
-      "dst": "",
+      "dst": "{#} Fanatic：+{~} 抗性加成給自己",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12285,7 +12285,7 @@
     },
     "b918194880fb": {
       "src": "{#} Heretic: +{~} Walk Speed to Self",
-      "dst": "",
+      "dst": "{#} Heretic：+{~} 移動速度給自己",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12296,7 +12296,7 @@
     },
     "7e96bfc54b37": {
       "src": "{#} Lunatic: +{~} Damage Bonus to Self",
-      "dst": "",
+      "dst": "{#} Lunatic：+{~} 傷害加成給自己",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12560,7 +12560,7 @@
     },
     "d41c168463fa": {
       "src": "{#}{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
-      "dst": "",
+      "dst": "{#}{#} Fanatic：-{~} 抗性加成 ({#}) 給敵人",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12571,7 +12571,7 @@
     },
     "3d847bf8187e": {
       "src": "{#}{#} Heretic: +{~} Slowness ({#}) to Enemies",
-      "dst": "",
+      "dst": "{#}{#} Heretic：+{~} 緩速 ({#}) 給敵人",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12582,7 +12582,7 @@
     },
     "16b074840c10": {
       "src": "{#}{#} Lunatic: -{~}{#}Damage Bonus ({#}) to Enemies",
-      "dst": "",
+      "dst": "{#}{#} Lunatic：-{~}{#}傷害加成 ({#}) 給敵人",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12593,7 +12593,7 @@
     },
     "718d0c014f70": {
       "src": "{#}{#}Effects:",
-      "dst": "",
+      "dst": "{#}{#}效果：",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12755,7 +12755,7 @@
     },
     "2edac2f60646": {
       "src": "{#}{#}Effect: +{~} Damage Bonus to Summons",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 傷害加成給召喚物",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12848,7 +12848,7 @@
     },
     "5159a03ec503": {
       "src": "{#}{#}Total Damage: +{~} (of your DPS, for Uproot, per hit)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：+{~}（你的每秒傷害，Uproot，每次命中）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12859,7 +12859,7 @@
     },
     "e65dc10bdc16": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, from Bleeding)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，流血）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12930,7 +12930,7 @@
     },
     "5a223145af2f": {
       "src": "{#} Fanatic: -{~} {#}{#}Totem Cost",
-      "dst": "",
+      "dst": "{#} Fanatic：-{~} {#}{#}圖騰消耗",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12941,7 +12941,7 @@
     },
     "4a9f57237bb5": {
       "src": "{#} Heretic: -{~} {#}{#}Haul Cost",
-      "dst": "",
+      "dst": "{#} Heretic：-{~} {#}{#}牽引消耗",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -12952,7 +12952,7 @@
     },
     "5e513eaf9dfe": {
       "src": "{#} Lunatic: -{~} {#}{#}Aura Cost",
-      "dst": "",
+      "dst": "{#} Lunatic：-{~} {#}{#}光環消耗",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13113,7 +13113,7 @@
     },
     "c7673b5ce4da": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} health)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，每 {~} 點生命）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13183,7 +13183,7 @@
     },
     "065e3007a996": {
       "src": "{#} Fanatic: +{~} Resistance Bonus (❁) to Allies",
-      "dst": "",
+      "dst": "{#} Fanatic：+{~} 抗性加成 (❁) 給友軍",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13195,7 +13195,7 @@
     },
     "566923b70b61": {
       "src": "{#} Heretic: +{~} Walk Speed to Allies",
-      "dst": "",
+      "dst": "{#} Heretic：+{~} 移動速度給友軍",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13207,7 +13207,7 @@
     },
     "5aca7df2a7ef": {
       "src": "{#} Lunatic: +{~} Damage Bonus (⚔) to Allies",
-      "dst": "",
+      "dst": "{#} Lunatic：+{~} 傷害加成 (⚔) 給友軍",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13219,7 +13219,7 @@
     },
     "bd6a12cbe948": {
       "src": "{#}{#}Cooldown: {~}s (per Chant)",
-      "dst": "",
+      "dst": "{#}{#}冷卻時間：{~} 秒（每次吟唱）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13315,7 +13315,7 @@
     },
     "dd2a876b1fb5": {
       "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies",
-      "dst": "",
+      "dst": "{#}{#}效果：{~} 緩速 ({#}) 給敵人",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13466,7 +13466,7 @@
     },
     "3f07b666370c": {
       "src": "{#}{#}Effect: +{~} Attack Speed to Puppets",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 攻擊速度給傀儡",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13526,7 +13526,7 @@
     },
     "6f5fa74b0433": {
       "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Puppets",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 傷害加成 (⚔) 給傀儡",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13606,7 +13606,7 @@
     },
     "7312504927e6": {
       "src": "{#} Fanatic: +{~} Resistance Bonus",
-      "dst": "",
+      "dst": "{#} Fanatic：+{~} 抗性加成",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13617,7 +13617,7 @@
     },
     "06012ad7f59c": {
       "src": "{#} Heretic: +{~} Walk Speed",
-      "dst": "",
+      "dst": "{#} Heretic：+{~} 移動速度",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13628,7 +13628,7 @@
     },
     "42f923f03a8c": {
       "src": "{#} Lunatic: +{~} Damage Bonus",
-      "dst": "",
+      "dst": "{#} Lunatic：+{~} 傷害加成",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13685,7 +13685,7 @@
     },
     "d8f680e0d001": {
       "src": "{#}{#}Effect: +{~} Walk Speed to Self",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 移動速度給自己",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13778,7 +13778,7 @@
     },
     "1e737fcaf8d9": {
       "src": "{#}{#}Effect: +{~} Attack Speed to Summons",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 攻擊速度給召喚物",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -13894,7 +13894,7 @@
     },
     "fc7b11fd5b9f": {
       "src": "{#}{#}Effects: +{~} Walk Speed to Self",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 移動速度給自己",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -14069,7 +14069,7 @@
     },
     "87186ab9c023": {
       "src": "{#}{#}Effect: +{~} damage to Eldritch Call (Per stack)",
-      "dst": "",
+      "dst": "{#}{#}效果：+{~} 傷害給 Eldritch Call（每層）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -14444,7 +14444,7 @@
     },
     "fc47779861ff": {
       "src": "{#}{#}Area of Effect: {~} Blocks (Circle-Shaped, Explosion)",
-      "dst": "",
+      "dst": "{#}{#}作用範圍：{~} 格（圓形，爆炸）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -14455,7 +14455,7 @@
     },
     "c1aeba9b8851": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, Attack)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，攻擊）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [
@@ -14466,7 +14466,7 @@
     },
     "c911fca82ad6": {
       "src": "{#}{#}Total Damage: {~} (of your DPS, Explosion)",
-      "dst": "",
+      "dst": "{#}{#}總傷害：{~}（你的每秒傷害，爆炸）",
       "role": "stat",
       "kind": "sentence",
       "ctx": [

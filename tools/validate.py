@@ -57,11 +57,21 @@ def load_glossary() -> dict[str, str]:
     if not GLOSSARY_FILE.is_file():
         return terms
 
+    # 只認表頭是「原文 | 譯文」的表。GLOSSARY 裡還有別種表——
+    # 角色語氣、雙關說明——那些第二欄不是譯文，讀進來會變成假的對照，
+    # 於是 npc.json 的「The Cook」被指控沒照對照表翻。
+    in_terms = False
     for line in GLOSSARY_FILE.read_text(encoding="utf-8").splitlines():
         line = line.strip()
-        if not line.startswith("|") or line.startswith("|---"):
+        if not line.startswith("|"):
+            in_terms = False
             continue
         cells = [c.strip() for c in line.strip("|").split("|")]
+        if len(cells) >= 2 and cells[0] == "原文" and cells[1] == "譯文":
+            in_terms = True
+            continue
+        if not in_terms or line.startswith("|---"):
+            continue
         if len(cells) < 2:
             continue
         src, dst = cells[0], cells[1]
@@ -157,7 +167,12 @@ def check_pair(path: str, key: str, src: str, dst: str,
                                f"原文有地名「{place}」但譯文裡找不到 —— 地名不翻譯"))
 
     # 首尾空白會影響對齊（Wynncraft 用它排版）
-    if (src[:1].isspace() != dst[:1].isspace()
+    # 全形標點自帶右側留白，後面刻意不接空格——模組也是這樣處理的。
+    # 不排除的話，每一條「標籤：」的譯文都會被警告一次。
+    dropped_after_punctuation = (src[-1:].isspace() and not dst[-1:].isspace()
+                                 and dst[-1:] in "：，。、！？；）」』】")
+    if not dropped_after_punctuation and (
+            src[:1].isspace() != dst[:1].isspace()
             or src[-1:].isspace() != dst[-1:].isspace()):
         out.append(Problem("warn", path, key,
                            "首尾空白與原文不一致 —— 那些空白是用來對齊欄位的"))

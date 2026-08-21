@@ -1181,7 +1181,7 @@ public final class LineTranslator {
     /**
      * @param percent 這一行的數值是百分比，優先找「標籤 + {@code %}」的鍵
      */
-    private static String lookup(String template, TranslationStore store, boolean percent) {
+    static String lookup(String template, TranslationStore store, boolean percent) {
         String exact = withPercent(template, store, percent);
         if (exact != null) {
             return exact;
@@ -1203,29 +1203,53 @@ public final class LineTranslator {
                 break;
             }
         }
+        // 尾巴分兩段剝。<b>先只剝空白與圖示、把冒號留著</b>——技能樹的鍵本來
+        // 就帶冒號（{@code "Damage:"}），冒號跟空白一起剝掉就永遠對不到那個鍵，
+        // 會退回 ui-labels 的無冒號版，接回原文的半形「: 」。同一個面板裡
+        // 於是「持續時間：」與「傷害: 」並存，兩種冒號、兩種間距。
+        int keepColon = trimEnd(template, start, glyph, false);
+        int end = trimEnd(template, start, glyph, true);
+        if (start == 0 && end == template.length()) {
+            return null;                       // 首尾沒有可剝的，不必重查
+        }
+        String hit = null;
+        int used = keepColon;
+        if (keepColon > end) {                 // 尾端真的有冒號可留
+            String withColon = template.substring(start, keepColon);
+            hit = withColon.isBlank() ? null : withPercent(withColon, store, percent);
+        }
+        if (hit == null) {
+            used = end;
+            String core = template.substring(start, end);
+            if (core.isBlank()) {
+                return null;
+            }
+            hit = withPercent(core, store, percent);
+        }
+        if (hit == null) {
+            return null;
+        }
+        return template.substring(0, start) + hit + reattach(hit, template.substring(used));
+    }
+
+    /**
+     * 從尾端往回剝，回報剝到哪裡。
+     *
+     * @param colons 連冒號一起剝。{@code false} 時只剝空白與圖示佔位符
+     */
+    private static int trimEnd(String template, int start, String glyph, boolean colons) {
         int end = template.length();
         while (end > start) {
             if (end >= start + glyph.length() && template.startsWith(glyph, end - glyph.length())) {
                 end -= glyph.length();
             } else if (Character.isWhitespace(template.charAt(end - 1))
-                    || isTrailingColon(template.charAt(end - 1))) {
+                    || (colons && isTrailingColon(template.charAt(end - 1)))) {
                 end--;
             } else {
                 break;
             }
         }
-        if (start == 0 && end == template.length()) {
-            return null;                       // 首尾沒有可剝的，不必重查
-        }
-        String core = template.substring(start, end);
-        if (core.isBlank()) {
-            return null;
-        }
-        String hit = withPercent(core, store, percent);
-        if (hit == null) {
-            return null;
-        }
-        return template.substring(0, start) + hit + reattach(hit, template.substring(end));
+        return end;
     }
 
     /**
@@ -1251,9 +1275,20 @@ public final class LineTranslator {
      * 到處都有莫名其妙的空格。中文排版本來也就不在全形標點後面加空格。
      */
     private static String reattach(String translated, String suffix) {
-        return suffix.isBlank() && !translated.isEmpty()
-                && isFullWidthPunctuation(translated.charAt(translated.length() - 1))
-                ? "" : suffix;
+        if (translated.isEmpty()) {
+            return suffix;
+        }
+        char last = translated.charAt(translated.length() - 1);
+        if (suffix.isBlank()) {
+            return isFullWidthPunctuation(last) ? "" : suffix;
+        }
+        // 尾巴是半形冒號——譯文那頭沒有帶冒號的鍵，只查到光禿禿的標籤。
+        // 接回原文的「: 」會讓半形冒號混進整片全形的面板裡，寬度也不一樣。
+        // 換成全形的，後面同樣不留空白。
+        if (isTrailingColon(suffix.charAt(0)) && suffix.substring(1).isBlank()) {
+            return isFullWidthPunctuation(last) ? "" : "：";
+        }
+        return suffix;
     }
 
     /** 自帶留白的全形標點。 */
