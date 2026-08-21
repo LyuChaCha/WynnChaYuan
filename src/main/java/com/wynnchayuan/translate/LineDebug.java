@@ -52,6 +52,8 @@ public final class LineDebug {
         // 版本寫在最前面。看回報的檔案時，第一個要排除的可能就是「他跑的是舊版」——
         // 譯文是從 GitHub 同步的，所以光看譯文內容分辨不出 jar 的新舊。
         buffer.append("# WynnChaYuan v").append(WynnChaYuan.version())
+              .append("　收集語料：")
+              .append(WynnChaYuan.config().collect() ? "開" : "關")
               .append(System.lineSeparator()).append(System.lineSeparator());
     }
 
@@ -65,8 +67,10 @@ public final class LineDebug {
     public static void layout(String detail) {
         // 自己一份額度。跟逐行診斷搶同一個 LIMIT 的話，滑過幾個 tooltip 就被
         // 佔滿，真正要看的那一份 tooltip 反而一筆都沒寫到。
-        if (file == null || layouts >= LAYOUT_LIMIT || !WynnChaYuan.config().collect()
-                || !seen.add("layout:" + detail)) {
+        // 刻意<b>不</b>看收集開關。這是繪製診斷不是語料收集——想回報版面問題的人
+        // 沒有理由得先打開收集。上一份回報就是這樣空的：收集是關的，
+        // 於是最需要的那段輸出一筆都沒有。額度只有 8 筆又會去重，寫不爆。
+        if (file == null || layouts >= LAYOUT_LIMIT || !seen.add("layout:" + detail)) {
             return;
         }
         layouts++;

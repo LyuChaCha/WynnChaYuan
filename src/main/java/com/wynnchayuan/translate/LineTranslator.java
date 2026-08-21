@@ -128,7 +128,7 @@ public final class LineTranslator {
      * <p>第二種看起來寬鬆，其實很安全：要誤中的話，冒號兩邊<b>都</b>得剛好是
      * 語料裡的條目；真的都在，那分別翻譯本來就是對的。
      */
-    private static String lookupFlowed(String template, TranslationStore store) {
+    static String lookupFlowed(String template, TranslationStore store) {
         String whole = store.lookupFlat(template);
         if (whole != null) {
             return whole;
@@ -137,7 +137,7 @@ public final class LineTranslator {
         if (colon <= 0 || colon > MAX_LABEL_LENGTH) {
             return null;
         }
-        String head = store.lookup(template.substring(0, colon));
+        String head = lookup(template.substring(0, colon), store);
         if (head == null || head.isBlank()) {
             return null;
         }
@@ -645,6 +645,14 @@ public final class LineTranslator {
         if (c == '+' || c == '-' || c == '[' || c == '(') {
             return true;
         }
+        // 範圍的連接詞。「-2414 to -1300」是<b>一個</b>數值，不是兩欄——
+        // 從後面往回找數值區時停在 to，數值區就只剩 -1300，
+        // 補償灌進 to 後面，畫面上就成了「-2414 to      -1300」。
+        //
+        // 只認整段剛好是 to 的。「to sell (」那種後面還接著別的，不算。
+        if (t.equalsIgnoreCase("to")) {
+            return true;
+        }
         // 純數字、百分比、分數這類
         return t.chars().noneMatch(Character::isLetter);
     }
@@ -1002,11 +1010,16 @@ public final class LineTranslator {
         String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
 
         int start = 0;
-        while (true) {
+        while (start < template.length()) {
             if (template.startsWith(glyph, start)) {
                 start += glyph.length();
-            } else if (start < template.length() && Character.isWhitespace(template.charAt(start))) {
+            } else if (Character.isWhitespace(template.charAt(start))) {
                 start++;
+            } else if (isDecoration(template.codePointAt(start))) {
+                // 行首的裝飾符號，例如 Major ID 的 ✦、技能樹的 ✔。
+                // 它們是<b>一般字元</b>不是材質包圖示，所以不會被抽成 {#}，
+                // 於是「✦ Altruism」永遠對不上語料裡的「Altruism」。
+                start += Character.charCount(template.codePointAt(start));
             } else {
                 break;
             }
@@ -1031,6 +1044,17 @@ public final class LineTranslator {
         }
         String hit = withPercent(core, store, percent);
         return hit == null ? null : template.substring(0, start) + hit + template.substring(end);
+    }
+
+    /**
+     * 這個字元是不是純裝飾。
+     *
+     * <p>只認 Unicode 分類是「其他符號」的：{@code ✦ ✔ ✤ ★}。刻意不含標點與
+     * 數學符號——{@code -} 與 {@code +} 出現在真正的鍵開頭（{@code - Converts up to}），
+     * 剝掉會讓那些條目查不到。
+     */
+    private static boolean isDecoration(int codePoint) {
+        return Character.getType(codePoint) == Character.OTHER_SYMBOL;
     }
 
     /**

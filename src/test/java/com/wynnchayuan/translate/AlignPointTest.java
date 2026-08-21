@@ -114,6 +114,17 @@ public final class AlignPointTest {
         check("兩格以上就算欄位",
                 LineTranslator.hasColumnGap(literalGap, 2));
 
+        // 範圍值：「-2414 to -1300」是一個數值。停在 to 的話補償會灌進
+        // to 後面，畫面上就成了「-2414 to      -1300」。
+        List<Piece> range = List.of(
+                Piece.text("Earth Main Attack Damage", Style.EMPTY),
+                Piece.space(20, Style.EMPTY),
+                Piece.text("-2414", Style.EMPTY),
+                Piece.text(" to ", Style.EMPTY),
+                Piece.text("-1300", Style.EMPTY));
+        check("範圍值不會被從中間拆開",
+                LineTranslator.findAlignPoint(range) == 1);
+
         check("空白全在行尾時不當成對齊點",
                 LineTranslator.findAlignPoint(List.of(
                         Piece.text("Weekly Objectives", Style.EMPTY), margin)) == -1);
