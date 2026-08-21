@@ -642,8 +642,13 @@ public final class LineTranslator {
         return original > 0 ? Math.max(MIN_GAP, adjusted) : adjusted;
     }
 
-    /** 見 {@link #narrowed}。一個半形空格的寬度。 */
-    private static final int MIN_GAP = 4;
+    /**
+     * 見 {@link #narrowed}。
+     *
+     * <p>本來是 4（一個半形空格）。技能樹的標籤改用半形冒號之後，冒號本身只有
+     * 2px 寬、右邊也沒有全形字自帶的留白，4px 讀起來就像數值黏在冒號上。
+     */
+    private static final int MIN_GAP = 6;
 
     /** 要幾格空白才算「這是一個對齊欄」而不只是詞與詞之間的間隔。 */
     private static final int MIN_COLUMN_GAP = 2;
@@ -1282,12 +1287,10 @@ public final class LineTranslator {
         if (suffix.isBlank()) {
             return isFullWidthPunctuation(last) ? "" : suffix;
         }
-        // 尾巴是半形冒號——譯文那頭沒有帶冒號的鍵，只查到光禿禿的標籤。
-        // 接回原文的「: 」會讓半形冒號混進整片全形的面板裡，寬度也不一樣。
-        // 換成全形的，後面同樣不留空白。
-        if (isTrailingColon(suffix.charAt(0)) && suffix.substring(1).isBlank()) {
-            // 譯文自己已經帶了冒號（不管全形半形）就不要再補一個
-            return isFullWidthPunctuation(last) || isTrailingColon(last) ? "" : "：";
+        // 尾巴是半形冒號，而譯文自己已經帶了冒號——別再補第二個。
+        if (isTrailingColon(suffix.charAt(0)) && suffix.substring(1).isBlank()
+                && isTrailingColon(last)) {
+            return suffix.substring(1);
         }
         return suffix;
     }
@@ -1307,13 +1310,48 @@ public final class LineTranslator {
      */
     private static String withPercent(String key, TranslationStore store, boolean percent) {
         if (percent) {
-            String hit = store.lookup(key + "%");
+            // 要先 strip 再接 %。模板尾端常常有一個空格，直接接會變成
+            // 「Fire Damage: %」——那個鍵不存在，於是<b>靜默</b>退回非百分比的
+            // 譯法，畫面上「+15%」的那一行被標成「火屬性傷害」。看起來只是
+            // 翻得不夠好，其實是查錯鍵了。
+            String hit = store.lookup(key.strip() + "%");
             if (hit != null) {
                 return hit;
             }
         }
-        return store.lookup(key);
+        String hit = store.lookup(key);
+        return hit != null ? hit : withQuality(key, store, percent);
     }
+
+    /**
+     * 詞條全部滾到最高或最低時，遊戲會在名稱前面加一個品質詞。
+     *
+     * <h2>症狀</h2>
+     * {@code Ephemeral Tome of Mysticism II} 在語料裡，但畫面上是
+     * {@code Perfect Ephemeral Tome of Mysticism II}——多出來的那個字讓整個名稱
+     * 查不到，看起來就是「這件物品的翻譯整個消失了」。100% 的物品才會遇到，
+     * 所以平常翻不出來，一拿到滿滾的東西就中。
+     *
+     * <p>剝掉前綴查名稱，再把前綴的譯文接回去。兩邊都要查得到才算數——
+     * 只查到一半就寧可整行不翻，免得中英混在一起。
+     */
+    private static String withQuality(String key, TranslationStore store, boolean percent) {
+        String core = key.strip();
+        for (String prefix : QUALITY_PREFIXES) {
+            if (!core.startsWith(prefix)) {
+                continue;
+            }
+            String name = withPercent(core.substring(prefix.length()), store, percent);
+            String word = store.lookup(prefix.strip());
+            if (name != null && word != null) {
+                return word + name;
+            }
+        }
+        return null;
+    }
+
+    /** 見 {@link #withQuality}。譯文放在 {@code ui-labels.json}，翻譯團隊可以改。 */
+    private static final String[] QUALITY_PREFIXES = {"Perfect ", "Defective "};
 
     /**
      * 還沒翻譯的行 —— <b>原封不動抄過去</b>。

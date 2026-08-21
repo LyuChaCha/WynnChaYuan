@@ -192,3 +192,14 @@ tasks.register('runLabelColonChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.LabelColonTest'
 }
 tasks.named('check') { dependsOn 'runLabelColonChecks' }
+
+tasks.register('runProbe', JavaExec) {
+    group = 'verification'
+    description = '臨時：查一個字串在語料裡查不查得到'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.Probe'
+}
+
+tasks.withType(JavaExec).configureEach {
+    jvmArgs('-Dfile.encoding=UTF-8', '-Dstdout.encoding=UTF-8', '-Dstderr.encoding=UTF-8')
+}
