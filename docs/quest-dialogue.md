@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**0 / 22,088 句已翻（0.0%），共 157 個任務，還沒有人動的有 157 個。**
+**33 / 22,088 句已翻（0.1%），共 157 個任務，還沒有人動的有 155 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -37,9 +37,7 @@
 | Pit of the Dead (Quest) | 12 |
 | Clearing the Camps | 14 |
 | The House of Twain (Quest) | 15 |
-| A Grave Mistake | 16 |
 | Pirate's Trove | 16 |
-| Cook Assistant | 17 |
 | Dwelling Walls | 17 |
 | Tower of Ascension (Quest) | 18 |
 | Stable Story | 19 |
@@ -53,7 +51,7 @@
 
 | 任務 | 檔案 | 句數 | 台詞 | 角色 | 進度 |
 |---|---|---|---|---|---|
-| A Grave Mistake | [`a-grave-mistake.json`](../src/main/resources/assets/wynnchayuan/translations/quest/a-grave-mistake.json) | 16 | 14 | 5 | — |
+| A Grave Mistake | [`a-grave-mistake.json`](../src/main/resources/assets/wynnchayuan/translations/quest/a-grave-mistake.json) | 16 | 14 | 5 | ✅ |
 | A Headless History | [`a-headless-history.json`](../src/main/resources/assets/wynnchayuan/translations/quest/a-headless-history.json) | 178 | 165 | 7 | — |
 | A Hunter's Calling | [`a-hunter-s-calling.json`](../src/main/resources/assets/wynnchayuan/translations/quest/a-hunter-s-calling.json) | 241 | 212 | 24 | — |
 | A Journey Beyond | [`a-journey-beyond.json`](../src/main/resources/assets/wynnchayuan/translations/quest/a-journey-beyond.json) | 243 | 225 | 7 | — |
@@ -80,7 +78,7 @@
 | Celebrations in Smoke | [`celebrations-in-smoke.json`](../src/main/resources/assets/wynnchayuan/translations/quest/celebrations-in-smoke.json) | 528 | 509 | 14 | — |
 | Clearing the Camps | [`clearing-the-camps.json`](../src/main/resources/assets/wynnchayuan/translations/quest/clearing-the-camps.json) | 14 | 11 | 1 | — |
 | Cluck Cluck | [`cluck-cluck.json`](../src/main/resources/assets/wynnchayuan/translations/quest/cluck-cluck.json) | 10 | 8 | 1 | — |
-| Cook Assistant | [`cook-assistant.json`](../src/main/resources/assets/wynnchayuan/translations/quest/cook-assistant.json) | 17 | 12 | 1 | — |
+| Cook Assistant | [`cook-assistant.json`](../src/main/resources/assets/wynnchayuan/translations/quest/cook-assistant.json) | 17 | 12 | 1 | ✅ |
 | Corrupted Betrayal | [`corrupted-betrayal.json`](../src/main/resources/assets/wynnchayuan/translations/quest/corrupted-betrayal.json) | 51 | 45 | 4 | — |
 | Cowfusion | [`cowfusion.json`](../src/main/resources/assets/wynnchayuan/translations/quest/cowfusion.json) | 223 | 206 | 5 | — |
 | Creeper Infiltration | [`creeper-infiltration.json`](../src/main/resources/assets/wynnchayuan/translations/quest/creeper-infiltration.json) | 44 | 38 | 1 | — |
