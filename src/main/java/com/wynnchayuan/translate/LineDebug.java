@@ -45,6 +45,29 @@ public final class LineDebug {
 
     public static void init(Path path) {
         file = path;
+        // 版本寫在最前面。看回報的檔案時，第一個要排除的可能就是「他跑的是舊版」——
+        // 譯文是從 GitHub 同步的，所以光看譯文內容分辨不出 jar 的新舊。
+        buffer.append("# WynnChaYuan v").append(WynnChaYuan.version())
+              .append(System.lineSeparator()).append(System.lineSeparator());
+    }
+
+    /**
+     * 記錄「這一份 tooltip 哪幾行判成置中」。
+     *
+     * <p>置中判斷失敗時，畫面上只看得到「沒有跟著置中」，看不出是<b>哪一步</b>
+     * 出錯：分段切錯、寬度量錯、還是算式差了幾像素。這三種的修法完全不同，
+     * 而我已經在這裡猜錯過兩次。所以把判斷的中間值直接寫出來。
+     */
+    public static void layout(String detail) {
+        if (file == null || written >= LIMIT || !WynnChaYuan.config().collect()
+                || !seen.add("layout:" + detail)) {
+            return;
+        }
+        written++;
+        buffer.append("=== ").append(written).append(" · 版面判斷 ===")
+              .append(System.lineSeparator())
+              .append(detail).append(System.lineSeparator());
+        flush();
     }
 
     /**

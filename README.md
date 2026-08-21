@@ -125,6 +125,10 @@ python tools/build.py    # 抽取、分類、參數化 → 工作檔
 
 要加人只要改 [`credits.json`](src/main/resources/assets/wynnchayuan/credits.json)，不必動程式。
 
+<!-- credits:begin -->
+
+<!-- 這一段由 tools/sync-credits.py 從 credits.json 產生，不要手動改。 -->
+
 ### 開發者
 
 | 名稱 | Minecraft ID |
@@ -136,6 +140,7 @@ python tools/build.py    # 抽取、分類、參數化 → 工作檔
 
 | 名稱 | Minecraft ID |
 |---|---|
+| LyuChaCha | `Green_teaTW` |
 | ㄉ綠 | `MlyuL` |
 
 ### 貢獻者
@@ -143,15 +148,28 @@ python tools/build.py    # 抽取、分類、參數化 → 工作檔
 | 名稱 | Minecraft ID |
 |---|---|
 | SCPNightsky | `SCP_Night_sky` |
+| LyuChaCha | `Green_teaTW` |
 | 泥巴先生 | `MrMud8033112` |
 | 幻影Joker | `NOT_Joker` |
 | Pootato | `Pootato__` |
 | N02sAyLa | `eric18960` |
-| 兔寶 | `Reisen_U_Inaba` |
+| 鳥鳥 | `Smellybird_` |
+| 98 | `Jackandmina98` |
 | Jimmy | `0110jimmy` |
 | 雪花 | `ThEsnowF` |
+| Roy | `aaroye` |
+| Chq | `Chqrish` |
+
+### 資料來源
+
+| 名稱 | Minecraft ID |
+|---|---|
+| Wynntils（物品／技能 CDN） | — |
+| Wynncraft | — |
 
 翻一條就會出現在這裡。見 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+<!-- credits:end -->
 
 ## 資料來源與致謝
 

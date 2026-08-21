@@ -38,6 +38,18 @@ public final class TranslationStore {
     private volatile int maxBlockLines = 1;
 
     /**
+     * 把所有空白（含換行）壓成單一空格之後的索引。
+     *
+     * <h2>為什麼需要另一份索引</h2>
+     * 長敘述在遊戲裡是<b>依 tooltip 寬度自動斷行</b>的，斷在哪裡取決於玩家的
+     * 畫面設定；語料裡存的則是沒斷行的完整句子。兩者永遠不會逐字相等，
+     * 所以 Major ID 的說明翻了也不會生效。
+     *
+     * <p>把兩邊的空白都正規化之後就對得上了——差別只在空白，文字是一樣的。
+     */
+    private final Map<String, String> flat = new ConcurrentHashMap<>();
+
+    /**
      * 來自 {@code role: "name"} 條目的鍵。
      *
      * <p>裝備名稱多半是專有名詞，翻了反而對不上社群討論與 wiki，
@@ -60,6 +72,7 @@ public final class TranslationStore {
      */
     public void loadAll(Path dir) {
         entries.clear();
+        flat.clear();
         maxBlockLines = 1;
         nameKeys.clear();
         loadedFiles = 0;
@@ -173,6 +186,7 @@ public final class TranslationStore {
                 String srcKey = src.strip();
                 entries.put(srcKey, dst.strip());
                 noteBlockSize(srcKey);
+                noteFlat(srcKey, dst.strip());
                 if (itemNames && "name".equals(optString(e, "role"))) {
                     nameKeys.add(srcKey);
                 }
@@ -189,9 +203,47 @@ public final class TranslationStore {
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
                 entries.put(key.strip(), v.getAsString().strip());
                 noteBlockSize(key.strip());
+                noteFlat(key.strip(), v.getAsString().strip());
             }
         }
     }
+
+    /**
+     * 空白正規化之後也記一份。
+     *
+     * <p>只收<b>夠長</b>的條目。短詞正規化之後很容易跟別的東西撞在一起，
+     * 而短詞本來就不會被自動斷行，不需要走這條路。
+     */
+    private void noteFlat(String key, String value) {
+        if (key.length() < MIN_FLAT_LENGTH) {
+            return;
+        }
+        String normalised = normalise(key);
+        if (!normalised.equals(key)) {
+            flat.putIfAbsent(normalised, value);
+        }
+    }
+
+    /** 把所有連續空白（含換行）壓成一個空格。 */
+    public static String normalise(String text) {
+        return text == null ? "" : text.strip().replaceAll("\s+", " ");
+    }
+
+    /**
+     * 查一段<b>可能被自動斷行</b>的長文字。
+     *
+     * @param text 已經把幾行併起來的模板
+     * @return 譯文；沒有對應條目時回傳 {@code null}
+     */
+    public String lookupFlat(String text) {
+        if (text == null || text.length() < MIN_FLAT_LENGTH) {
+            return null;
+        }
+        return flat.get(normalise(text));
+    }
+
+    /** 短於這個長度的不進正規化索引，見 {@link #noteFlat}。 */
+    private static final int MIN_FLAT_LENGTH = 24;
 
     /** 這個鍵跨了幾行，比目前記錄的多就更新。 */
     private void noteBlockSize(String key) {
