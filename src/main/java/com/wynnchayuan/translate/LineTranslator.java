@@ -83,12 +83,20 @@ public final class LineTranslator {
             return null;
         }
         String translated = store.lookup(template);
+        List<LineParts.Piece> extra = List.of();
         boolean flowed = false;
         if (translated == null || translated.isBlank()) {
             // 原文可能是被 tooltip 寬度自動斷行的，斷點跟語料對不上。
             // 把整段攤平成一行再查一次。
-            translated = lookupFlowed(template, store);
-            flowed = translated != null;
+            Flowed hit = lookupFlowedParts(template, store);
+            translated = hit == null ? null : hit.text();
+            flowed = hit != null;
+            if (hit != null && hit.label() != null) {
+                // 名稱那半在原文裡有自己的顏色（Major ID 的名稱是粉紅的），
+                // 而譯文是中文、跟原文對不起來，一般的樣式沿用比對不到。
+                // 這裡知道譯出來的名稱長什麼樣，直接當成一個「原樣出現的詞」交上去。
+                extra = labelAccent(hit.label(), parts.get(0));
+            }
         }
         if (translated == null || translated.isBlank()) {
             return null;
@@ -98,7 +106,7 @@ public final class LineTranslator {
             translated = wrapToWidth(translated, widestOf(run));
         }
         String[] dst = translated.split("\n", -1);
-        List<Component> built = rebuildAll(dst, parts);
+        List<Component> built = rebuildAll(dst, parts, extra);
         if (built == null) {
             return null;                       // 佔位符對不上，整段放棄
         }
@@ -128,10 +136,21 @@ public final class LineTranslator {
      * <p>第二種看起來寬鬆，其實很安全：要誤中的話，冒號兩邊<b>都</b>得剛好是
      * 語料裡的條目；真的都在，那分別翻譯本來就是對的。
      */
+    /**
+     * @param text 整段譯文
+     * @param label 「名稱：說明」的名稱那半；整段查到的情況是 {@code null}
+     */
+    record Flowed(String text, String label) {}
+
     static String lookupFlowed(String template, TranslationStore store) {
+        Flowed flowed = lookupFlowedParts(template, store);
+        return flowed == null ? null : flowed.text();
+    }
+
+    static Flowed lookupFlowedParts(String template, TranslationStore store) {
         String whole = store.lookupFlat(template);
         if (whole != null) {
-            return whole;
+            return new Flowed(whole, null);
         }
         int colon = template.indexOf(": ");
         if (colon <= 0 || colon > MAX_LABEL_LENGTH) {
@@ -146,7 +165,22 @@ public final class LineTranslator {
         if (tail == null) {
             tail = store.lookup(rest);
         }
-        return tail == null || tail.isBlank() ? null : head + ": " + tail;
+        return tail == null || tail.isBlank()
+                ? null : new Flowed(head + ": " + tail, head);
+    }
+
+    /**
+     * 把譯出來的名稱包成一個「原樣出現的詞」，帶著原文名稱的樣式。
+     *
+     * <p>拿的是<b>第一個</b>與整行主樣式不同的片段——「名稱：說明」的名稱就在
+     * 行首，而它跟後面的說明顏色不同，正是這樣才會被記成 accent。
+     * 找不到就回傳空的，那一段照主樣式畫，不會比現在更糟。
+     */
+    private static List<LineParts.Piece> labelAccent(String label, LineParts first) {
+        if (label.isBlank() || first.accents().isEmpty()) {
+            return List.of();
+        }
+        return List.of(new LineParts.Piece(label, first.accents().get(0).style()));
     }
 
     /** 「名稱：說明」的名稱最長到這裡。再長就不像標題了。 */
@@ -188,7 +222,10 @@ public final class LineTranslator {
             String piece = text.substring(i, end);
             int pieceWidth = widthOf(Component.literal(piece));
             if (width + pieceWidth > maxPx && i > lineStart) {
-                int cut = lastSpace > lineStart ? lastSpace : i;
+                // 退回上一個空白是為了不把<b>英文單字</b>切成兩半。中文可以在
+                // 任何字之間斷，退回去只會讓整行提早結束——「✦ 利他主義: 16」
+                // 之後就換行、剩下的擠成三行，就是這樣來的。
+                int cut = breaksWord(text, i) && lastSpace > lineStart ? lastSpace : i;
                 out.append(text, lineStart, cut).append(NEWLINE);
                 lineStart = text.charAt(cut) == ' ' ? cut + 1 : cut;
                 width = widthOf(Component.literal(text.substring(lineStart, i)));
@@ -201,6 +238,17 @@ public final class LineTranslator {
             i = end;
         }
         return out.append(text, lineStart, text.length()).toString();
+    }
+
+    /** 在這裡斷行會不會把一個英文單字切成兩半。 */
+    private static boolean breaksWord(String text, int at) {
+        return at > 0 && at < text.length()
+                && isWordChar(text.charAt(at - 1)) && isWordChar(text.charAt(at));
+    }
+
+    /** 不能從中間切開的字元：英數與連接號。中文不算。 */
+    private static boolean isWordChar(char c) {
+        return c < 0x2E80 && (Character.isLetterOrDigit(c) || c == '-' || c == '\'');
     }
 
     private static final char NEWLINE = '\n';
@@ -1117,11 +1165,16 @@ public final class LineTranslator {
      * @return 譯好的每一行；佔位符數量對不上時回傳 {@code null}
      */
     private static List<Component> rebuildAll(String[] translated, List<LineParts> parts) {
+        return rebuildAll(translated, parts, List.of());
+    }
+
+    private static List<Component> rebuildAll(String[] translated, List<LineParts> parts,
+                                              List<LineParts.Piece> extraAccents) {
         List<LineParts.Piece> glyphs = new ArrayList<>();
         List<LineParts.Piece> places = new ArrayList<>();
         List<LineParts.Piece> numbers = new ArrayList<>();
         List<LineParts.Piece> users = new ArrayList<>();
-        List<LineParts.Piece> accents = new ArrayList<>();
+        List<LineParts.Piece> accents = new ArrayList<>(extraAccents);
         for (LineParts part : parts) {
             glyphs.addAll(part.glyphs());
             places.addAll(part.places());

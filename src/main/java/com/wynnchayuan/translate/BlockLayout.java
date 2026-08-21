@@ -65,7 +65,7 @@ public final class BlockLayout {
      */
     public static boolean[] centered(List<Component> lines) {
         boolean[] result = centered(lines, BlockLayout::measure);
-        LineDebug.layout(explain(lines, result, BlockLayout::measure));
+        LayoutDebug.record(lines, result);
         return result;
     }
 
@@ -75,6 +75,10 @@ public final class BlockLayout {
      * <p>判斷失敗時畫面上只看得到「沒有跟著置中」，看不出是分段切錯、寬度量錯、
      * 還是算式差了幾像素——三種的修法完全不同。
      */
+    static String explain(List<Component> lines, boolean[] result) {
+        return explain(lines, result, BlockLayout::measure);
+    }
+
     static String explain(List<Component> lines, boolean[] result,
                           ToIntFunction<Component> width) {
         StringBuilder sb = new StringBuilder();
