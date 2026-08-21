@@ -209,6 +209,12 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Seaskipper Captain | 渡船船長 | |
 | the Morning Star | 晨星 | Majin 的稱號，要翻 |
 | House Thalas / Nasin | Thalas 家 / Nasin 家 | 家族名保留原文 |
+| the Cursed One | 受詛者 | 同 `the Cursed`。`A New Beginning` 起，玩家自己就是被通緝的那一個 |
+| Leaves in the Wind | 風中之葉 | Syndra 的反抗組織。`the Leaves` 也用同一個名字，別簡稱成「葉子」 |
+| young leaf | 小葉子 | Mora 對新成員的稱呼，接組織名的意象 |
+| identification papers | 身分文件 | 進城要查的那個 |
+| passport | 通行證 | Syndra 弄來的那份，跟 `papers` 分開 |
+| the Driver | （未定，暫留原文） | 檔案裡「由 the Driver 帶往本地」。像職稱又像代號，**待討論** |
 
 ---
 
@@ -246,8 +252,14 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Her Majesty | 從容、居高臨下 | 書面語、長句，從不提高音量。愈平靜愈可怕 |
 | Sovereign Majin | 浮誇、瞧不起人 | 華麗辭藻加尖刻嘲笑，愛用「嗯？」反問把人架住 |
 | Sovereign Zhiraok Nasin | 暴躁、滿嘴數學 | 見下方雙關表——**他的每一句話都要帶一個數學詞**，這是角色本身 |
+| Syndra | 沉穩、帶詩意 | 長句、從容，用自然的比喻（風、葉、根）。是領袖，不是說教者 |
+| Zeph | 嚴重口吃 | 原文用連字號重複字首（`th-there`、`w-wondering`）。中文用<b>重複首字加頓號</b>：「你、你在這裡啊」。每句都要有，但別多到讀不下去 |
+| Rex | 沒耐性、防備心重 | 短句、反問、常常話說一半就「算了」。她的刺是怕，不是壞 |
+| Mora | 溫厚的長輩 | 有點文氣，笑聲寫成「呵呵」，稱新人「小葉子」 |
+| Sui | 怯生生 | 句子短、常有「呃」，說完自己又收回去。Mora 的妹妹 |
+| Kaio | 看透了的老人 | 鄉音重、字句吞得多（`ain't`、`'n`、`nabbin'`），偶爾帶髒字。他講 Aledar 那一段是整個任務的重心 |
 
-已翻的任務可以直接當範本：`King's Recruit`（開場，124 句）、`Queen's Recruit`（Fruma 篇，673 句）、`Cook Assistant`、
+已翻的任務可以直接當範本：`King's Recruit`（開場，124 句）、`Queen's Recruit`（Fruma 篇，673 句）、`A New Beginning`（289 句）、`Cook Assistant`、
 `Clearing the Camps`。
 
 ---
@@ -269,6 +281,14 @@ Wynncraft 的任務名稱與台詞常常一語雙關。**能做出來就做出�
 | a miscalculation | 一次誤算 | 不要譯成「失策」 |
 | how much more irrational can we get | 我們還能有多無理 | `irrational` 同時是「不理性」與「無理數」。中文的「無理」剛好兩層都接住 |
 | calculate yourself out of dead last | 先把自己從倒數第一算出來 | Majin 反過來拿數學嗆 Zhiraok |
+| crunch the numbers | 算那些數字 | Zhiraok 講「處理公務」用的說法 |
+| how could that have factored out | 怎麼會因式分解成這樣 | 講「事情怎麼會變這樣」 |
+| fill the gaps | 把缺項補上 | 不要譯成「補足空白」，那不是數學詞 |
+| one positive in a sea of negatives | 一堆負數裡總算有一個正的 | 正負號的雙關 |
+| a toddler could calculate that | 連學步的小孩都算得出來 | |
+| I'd never bet on your odds | 絕不會押你的賠率 | 機率 |
+| keep it constant | 保持常數 | 他的道別語。不要譯成「保持穩定」 |
+| you interrupt my sequence | 你打斷我的數列 | 「打斷我做事」 |
 
 > 破碎、殘缺的台詞（`.;I. ,told;.`）是**刻意**的，那是氣氛的一部分。
 > 譯文要保留那種殘缺感，不要補成通順的句子。
