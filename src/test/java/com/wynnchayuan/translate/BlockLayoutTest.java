@@ -148,11 +148,53 @@ public final class BlockLayoutTest {
                         line(0, "Weaponsmithing"),
                         line(0, "Jeweling")), WIDTH)));
 
+        // 玩家實際回報的那一份 tooltip，數字取自 line-debug：
+        //   an ◉ Item Identifier can unlock  整行 163、縮排 4  -> 內容 159
+        //   詞條行整行都是 164、縮排 0
+        // 剩下兩行的寬度用預設字型估：170 與 60。
+        //
+        // 這裡用「像素」直接餵，不經過字型——要驗的是判斷邏輯本身。
+        int[] lead    = {  0,   0, 0,   4,  49, 0,  0,   0};
+        int[] content = { 90,  80, 170, 159, 60, 62, 164, 164};
+        check("回報的那份 tooltip：說明那三行判成置中",
+                centredAt(lead, content, 2) && centredAt(lead, content, 3)
+                        && centredAt(lead, content, 4));
+        check("同一份裡的詞條行不受影響", !centredAt(lead, content, 6));
+
+        // 同一份 tooltip，但那兩行改用 Wynncraft 自己的字型、量出來窄了一成半。
+        // 像素對不上了，但「長的行縮排小」這件事還是成立。
+        int[] offContent = { 90, 80, 145, 159, 51, 62, 164, 164};
+        check("字型量偏一成半，說明那三行仍判成置中",
+                centredAt(lead, offContent, 2) && centredAt(lead, offContent, 3)
+                        && centredAt(lead, offContent, 4));
+
+        // 反面：真正的縮排清單（越縮排的行反而越長）不能被當成置中
+        check("越縮排越長的清單不算置中",
+                !centredAt(new int[] {0, 0, 30}, new int[] {100, 90, 150}, 2));
+
         System.out.println(failures == 0
                 ? "BlockLayout: 全部通過" : "BlockLayout: " + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /** 直接餵像素，不經過字型——要驗的是判斷邏輯本身。 */
+    private static boolean centredAt(int[] lead, int[] content, int index) {
+        List<Component> lines = new java.util.ArrayList<>();
+        for (int i = 0; i < lead.length; i++) {
+            lines.add(line(lead[i], "x".repeat(Math.max(1, content[i] / 6))));
+        }
+        return BlockLayout.centered(lines, c -> {
+            String s = c.getString();
+            int px = 0;
+            for (int i = 0; i < s.length(); ) {
+                int cp = s.codePointAt(i);
+                i += Character.charCount(cp);
+                px += (cp >= 0xD0000 - 1024 && cp <= 0xD0000 + 1024) ? cp - 0xD0000 : 6;
+            }
+            return px;
+        })[index];
     }
 
     private static boolean noneOf(boolean[] flags) {

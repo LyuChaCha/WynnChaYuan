@@ -61,6 +61,11 @@ public final class LayoutDebug {
                   .append(" ===").append(System.lineSeparator())
                   .append(BlockLayout.explain(lines, centered))
                   .append(System.lineSeparator());
+            String block = buffer.substring(buffer.length() - 1
+                    - BlockLayout.explain(lines, centered).length());
+            // 同時印到遊戲紀錄。檔案寫得出來與否受權限、路徑、防毒影響，
+            // 而 latest.log 一定在——先前連續三次回報回來都是空的。
+            System.out.println("[WynnChaYuan] 版面判斷" + System.lineSeparator() + block);
             Files.writeString(file, buffer.toString(), StandardCharsets.UTF_8);
         } catch (Throwable t) {
             // 診斷寫不出來就算了，絕不能反過來弄壞畫面
