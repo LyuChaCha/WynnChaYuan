@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Finding the Light",
   "count": 99,
-  "translated": 0,
+  "translated": 99,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Finding the Light#000": {
    "src": "Find Lari in the {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 的 {p} 找到 Lari。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -18,7 +18,7 @@
   },
   "Finding the Light#001": {
    "src": "Awaken! Your guidance is needed!",
-   "dst": "",
+   "dst": "醒來！我們需要你的指引！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -27,8 +27,8 @@
    "source": "wiki"
   },
   "Finding the Light#002": {
-   "src": "...ah. . So you are needed here too, then?",
-   "dst": "",
+   "src": "...ah. {u}. So you are needed here too, then?",
+   "dst": "……啊。{u}。這麼說，這裡也需要你了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -38,7 +38,7 @@
   },
   "Finding the Light#003": {
    "src": "I am... TRYING... To awaken the Guardian of the Forest to receive its guidance, but it refuses to budge! Even the voice of Orphion provides no reaction.",
-   "dst": "",
+   "dst": "我正在……努力……喚醒森林守護者，想得到它的指引，可它就是不肯動！連 Orphion 的聲音都得不到半點回應。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -48,7 +48,7 @@
   },
   "Finding the Light#004": {
    "src": "I beg once more of you, awaken! Us two... Us two seek your wisdom!",
-   "dst": "",
+   "dst": "我再求你一次，醒來吧！我們兩個……我們兩個都在尋求你的智慧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -58,7 +58,7 @@
   },
   "Finding the Light#005": {
    "src": "I present you Orphion's barest light- Please, respond!",
-   "dst": "",
+   "dst": "我獻上 Orphion 最微薄的一縷光——拜託，回應我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -68,7 +68,7 @@
   },
   "Finding the Light#006": {
    "src": "Urgh... See? Nothing is happening. I'm at a loss of what to do. Maybe you can affect some change, considering what you've done before.",
-   "dst": "",
+   "dst": "唔……看到了吧？什麼都沒發生。我已經不知道還能做什麼了。也許你能讓事情有點轉機，畢竟你以前做過那些事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -78,7 +78,7 @@
   },
   "Finding the Light#007": {
    "src": "My pulse, it is time. I shall shine my light upon the roots of the Guardian. You and she must learn now.",
-   "dst": "",
+   "dst": "我的脈動，時候到了。我將把我的光照在守護者的根上。你與她，都必須在此刻學會。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -88,7 +88,7 @@
   },
   "Finding the Light#008": {
    "src": "Read the inscription at the bottom of the big tree.",
-   "dst": "",
+   "dst": "讀大樹底部的銘文。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -98,7 +98,7 @@
   },
   "Finding the Light#009": {
    "src": "An inscription! That wasn't there before! It was... That was completely instant. How did you even...?",
-   "dst": "",
+   "dst": "一段銘文！剛才根本沒有這個東西！那是……那是瞬間出現的。你到底是怎麼……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -108,7 +108,7 @@
   },
   "Finding the Light#010": {
    "src": "But, still! I knew I could be useful, let me translate this for you! As a stranger to Gavel you wouldn't know High Gavellian...",
-   "dst": "",
+   "dst": "不過，總算有進展了！我就知道我幫得上忙，讓我替你翻譯！你是 Gavel 的外人，不可能懂高階 Gavel 語……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -118,7 +118,7 @@
   },
   "Finding the Light#011": {
    "src": "It says... Secrets uncovered in the oldest of libraries in {p}.",
-   "dst": "",
+   "dst": "上面寫著……祕密藏在 {p} 最古老的圖書館裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -127,8 +127,8 @@
    "source": "wiki"
   },
   "Finding the Light#012": {
-   "src": "...of course. A place that Elves aren't allowed, but humans are. , you'll have to find this library on your own, it seems.",
-   "dst": "",
+   "src": "...of course. A place that Elves aren't allowed, but humans are. {u}, you'll have to find this library on your own, it seems.",
+   "dst": "……當然了。一個精靈不得進入、人類卻可以的地方。{u}，看來這座圖書館得由你自己去找了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -138,7 +138,7 @@
   },
   "Finding the Light#013": {
    "src": "Find the Church Library in the city of {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 的 {p} 城裡找到教堂圖書館。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -148,7 +148,7 @@
   },
   "Finding the Light#014": {
    "src": "Find a way up to the church bell at the top of the church.",
-   "dst": "",
+   "dst": "想辦法爬到教堂頂端的鐘那裡。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -158,7 +158,7 @@
   },
   "Finding the Light#015": {
    "src": "Explore the secret library and find a way to wake up the tree.",
-   "dst": "",
+   "dst": "探索祕密圖書館，找出喚醒那棵樹的方法。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -168,7 +168,7 @@
   },
   "Finding the Light#016": {
    "src": "Return to Lari at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, -{~}] 找 Lari。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -178,7 +178,7 @@
   },
   "Finding the Light#017": {
    "src": "Do you reject the light of Orphion? Waken, please!",
-   "dst": "",
+   "dst": "你要拒絕 Orphion 的光嗎？醒來，拜託你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -187,8 +187,8 @@
    "source": "wiki"
   },
   "Finding the Light#018": {
-   "src": "Urgh... , please tell me you were able to make some progress. The Guardian still refuses... To... WAKE!",
-   "dst": "",
+   "src": "Urgh... {u}, please tell me you were able to make some progress. The Guardian still refuses... To... WAKE!",
+   "dst": "唔……{u}，拜託告訴我你那邊有進展。守護者還是不肯……給我……醒過來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -198,7 +198,7 @@
   },
   "Finding the Light#019": {
    "src": "What is this? A spell scroll- Of the Waking Forest?! In {p}, of all places? Where it would have been... Impossible for me to go...",
-   "dst": "",
+   "dst": "這是什麼？一卷法術卷軸——喚醒森林的？！而且偏偏是在 {p}？那個我根本……根本進不去的地方……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -208,7 +208,7 @@
   },
   "Finding the Light#020": {
    "src": "So I am Orphion's chosen, yet I would not have been able to do what was asked of me. That... No, I can't dwell on that, let me see the scroll.",
-   "dst": "",
+   "dst": "所以我是 Orphion 的受選者，卻連交代給我的事都做不到。那……不，我不能糾結在這上面，讓我看看卷軸。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -218,7 +218,7 @@
   },
   "Finding the Light#021": {
    "src": "...hm. It says, The seeker must rest these words upon those of the Guardian.",
-   "dst": "",
+   "dst": "……嗯。上面說：求道者須將此言安放於守護者之言上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -228,7 +228,7 @@
   },
   "Finding the Light#022": {
    "src": "I suppose that means you need to place it by the inscription. So yet another task that you must finish...",
-   "dst": "",
+   "dst": "我想意思是你得把它放在銘文旁邊。所以，又是一件得由你完成的事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -238,7 +238,7 @@
   },
   "Finding the Light#023": {
    "src": "...go on, then, do it. I'm just needed here to be a translator for you thusfar, it seems.",
-   "dst": "",
+   "dst": "……去吧。到目前為止，我在這裡好像也就只剩替你翻譯的用處了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -248,7 +248,7 @@
   },
   "Finding the Light#024": {
    "src": "Use the spell on the inscription under the tree.",
-   "dst": "",
+   "dst": "對樹下的銘文使用法術。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -258,7 +258,7 @@
   },
   "Finding the Light#025": {
    "src": "Let me go ahead and read this, too. This will be tedious, I fear...",
-   "dst": "",
+   "dst": "這一段也讓我來讀吧。我想這會很費工夫……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -268,7 +268,7 @@
   },
   "Finding the Light#026": {
    "src": "It says... Awakening the Guardian of the Forest requires more than just magic. The home of the elves will house the answers and revelations...?",
-   "dst": "",
+   "dst": "上面說……喚醒森林守護者，需要的不只是魔法。精靈的家園將藏有答案與啟示……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -278,7 +278,7 @@
   },
   "Finding the Light#027": {
    "src": "That... This is finally my time! I still have a hand in this!! Finally, I can do something more than just holding stasis here!",
-   "dst": "",
+   "dst": "那……這總算輪到我了！我在這件事上還有份量！！我終於可以做點什麼，而不是只在這裡撐著僵局！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -287,8 +287,8 @@
    "source": "wiki"
   },
   "Finding the Light#028": {
-   "src": "Listen, . Achara... This is my time. I can finally help you more directly. I know the elders of {p}- They're sure to have answers!",
-   "dst": "",
+   "src": "Listen, {u}. Achara... This is my time. I can finally help you more directly. I know the elders of {p}- They're sure to have answers!",
+   "dst": "聽好，{u}。Achara……這是屬於我的時刻。我終於能更直接地幫上忙了。我認識 {p} 的長老們——他們一定有答案！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -298,7 +298,7 @@
   },
   "Finding the Light#029": {
    "src": "You truly have been helpful, even through my own worries. I must thank you, but you can relax now! I will be the one this time!",
-   "dst": "",
+   "dst": "你真的幫了大忙，即使我心裡一直在彆扭。我該謝謝你，但你現在可以放鬆了！這一次換我來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -308,7 +308,7 @@
   },
   "Finding the Light#030": {
    "src": "You can continue doing...whatever else it is you need doing. I have seen you helping in various places- Concern yourself with those for now. I can handle this.",
-   "dst": "",
+   "dst": "你可以去忙……你其他該忙的事。我看過你在各地幫忙——先去顧那些吧。這裡我應付得來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -318,7 +318,7 @@
   },
   "Finding the Light#031": {
    "src": "Pursue her, my pulse. She must take dire action- Alone, her light shall illuminate nothing. You must provide her direction.",
-   "dst": "",
+   "dst": "追上她，我的脈動。她必須採取決絕的行動——僅憑她自己，她的光照不亮任何東西。你必須為她指出方向。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -328,7 +328,7 @@
   },
   "Finding the Light#032": {
    "src": "Enter the portal Lari left behind",
-   "dst": "",
+   "dst": "進入 Lari 留下的傳送門。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -338,7 +338,7 @@
   },
   "Finding the Light#033": {
    "src": "Go to the hut Lari entered.",
-   "dst": "",
+   "dst": "前往 Lari 進入的小屋。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -348,7 +348,7 @@
   },
   "Finding the Light#034": {
    "src": "W-What? You- Why did you follow me? I can handle this! I can finally be useful again! Do you...not trust me?",
-   "dst": "",
+   "dst": "什——什麼？你——你為什麼要跟過來？這件事我應付得來！我終於又能派上用場了！你是……不信任我嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -358,7 +358,7 @@
   },
   "Finding the Light#035": {
    "src": "Please, just respect my wishes! If I need your help, I'll go find you- For now, just leave! You don't need to worry about this!",
-   "dst": "",
+   "dst": "拜託，就尊重我的意願一次！我需要你幫忙的話，我會去找你——現在，請你離開！這件事你不必操心！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -368,7 +368,7 @@
   },
   "Finding the Light#036": {
    "src": "Find a way to sneak into the hut.",
-   "dst": "",
+   "dst": "想辦法潛入小屋。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -378,7 +378,7 @@
   },
   "Finding the Light#037": {
    "src": "...if this human has truly done what you have said, then why do you spurn their aid? It is unlike you.",
-   "dst": "",
+   "dst": "……若這名人類真的做到了你所說的那些事，你又為何要推開他們的援手？這不像你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -388,7 +388,7 @@
   },
   "Finding the Light#038": {
    "src": "I know, I know. I just am in disbelief. They've been contacted by Orphion himself, allowed into the Taproot, they have a symbol of Orphion's blessing!!",
-   "dst": "",
+   "dst": "我知道，我知道。我只是不敢相信。Orphion 親自與他們接觸過，他們被允許進入 Taproot，他們身上帶著 Orphion 賜福的印記！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -398,7 +398,7 @@
   },
   "Finding the Light#039": {
    "src": "They just...walked up, after a thousand years of my putting my entire life into trying to save this province, and do everything I couldn't, in the span of weeks at most!",
-   "dst": "",
+   "dst": "他們就這樣……走了過來，而我把整整一千年的人生都投進去、只想救這個行省，他們卻在頂多幾週之內，把我做不到的事全做完了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -408,7 +408,7 @@
   },
   "Finding the Light#040": {
    "src": "Do you understand how infuriating this is? Can you comprehend such a thing, not having been in my position yourself?",
-   "dst": "",
+   "dst": "你明白這有多令人抓狂嗎？你自己沒站在我的位置上，能理解這種事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -418,7 +418,7 @@
   },
   "Finding the Light#041": {
    "src": "No. I cannot understand. But I also cannot understand how you are not grateful for this aid.",
-   "dst": "",
+   "dst": "不。我無法理解。但我同樣無法理解，你為何不對這份援手心懷感激。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -428,7 +428,7 @@
   },
   "Finding the Light#042": {
    "src": "I know I should be! It's all I've been able to think about. I should be ecstatic! The light will be saved, it should be everything I've dreamed of...",
-   "dst": "",
+   "dst": "我知道我應該感激！我腦子裡想的就只有這件事。我應該欣喜若狂才對！光將會得救，那本該是我夢寐以求的一切……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -438,7 +438,7 @@
   },
   "Finding the Light#043": {
    "src": "But it makes me feel like a complete failure. Like everything I have done has been for naught, that I have somehow been doing everything wrong!",
-   "dst": "",
+   "dst": "可是這讓我覺得自己是個徹頭徹尾的失敗者。好像我做過的一切都白費了，好像我一路以來全都做錯了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -448,7 +448,7 @@
   },
   "Finding the Light#044": {
    "src": "I know I have made mistakes. Dullahan would still be... Still be himself, if I had taken faster action, but I can't have done nothing right. I can't accept that.",
-   "dst": "",
+   "dst": "我知道我犯過錯。要是我當初動作快一點，Dullahan 現在還會是……還會是他自己。但我不可能一件事都沒做對。我沒辦法接受那樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -458,7 +458,7 @@
   },
   "Finding the Light#045": {
    "src": "This is my chance to prove I can still be useful- that Orphion choosing me wasn't a fluke! Please, the inscription said you would know where to go!",
-   "dst": "",
+   "dst": "這是我證明自己還有用的機會——證明 Orphion 選中我不是一場僥倖！拜託，銘文說您會知道該去哪裡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -468,7 +468,7 @@
   },
   "Finding the Light#046": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -478,7 +478,7 @@
   },
   "Finding the Light#047": {
    "src": "...even after a millennium, there is so very much for us all to learn. Fine then.",
-   "dst": "",
+   "dst": "……即便過了一千年，我們要學的東西依然多得很。那好吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -488,7 +488,7 @@
   },
   "Finding the Light#048": {
    "src": "But promise me to accept the aid you receive. This opportunity cannot be wasted, Lari.",
-   "dst": "",
+   "dst": "但你要答應我，接受你得到的援手。這個機會不容浪費，Lari。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -498,7 +498,7 @@
   },
   "Finding the Light#049": {
    "src": "...I have to do at least one thing right. I can't just keep up this holding pattern. I'll do whatever is necessary!",
-   "dst": "",
+   "dst": "……我至少得做對一件事。我不能再這樣原地打轉下去了。要做什麼我都做！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -508,7 +508,7 @@
   },
   "Finding the Light#050": {
    "src": "You must seek the Canned Abis plant, then. It rests within a cavern shaded by giant fern leaves.",
-   "dst": "",
+   "dst": "那麼，你必須去尋找 Canned Abis 這種植物。它長在一處被巨大蕨葉遮蔽的洞窟裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -518,7 +518,7 @@
   },
   "Finding the Light#051": {
    "src": "Thank you. I can finally do what I was meant to do! I won't let anything stop me this time!!",
-   "dst": "",
+   "dst": "謝謝您。我終於能做我本該做的事了！這一次我不會讓任何東西攔住我！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -528,7 +528,7 @@
   },
   "Finding the Light#052": {
    "src": "...Human, I can see you. Consider yourself lucky that she did not. Come talk to me.",
-   "dst": "",
+   "dst": "……人類，我看得見你。她沒看見，算你走運。過來說話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -538,7 +538,7 @@
   },
   "Finding the Light#053": {
    "src": "Talk to the Elder at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 跟長老談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -548,7 +548,7 @@
   },
   "Finding the Light#054": {
    "src": "So you are Orphion's new chosen, then. It is both surprising and not- Humans have an interesting reputation.",
-   "dst": "",
+   "dst": "所以你就是 Orphion 新的受選者。這既令人意外，也不令人意外——人類的名聲很有意思。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -558,7 +558,7 @@
   },
   "Finding the Light#055": {
    "src": "Often said as being able to get anything done, without limits, be it completing impossible tasks or breaking moral tenets.",
-   "dst": "",
+   "dst": "人們常說，人類什麼事都做得成，毫無限制——不論是完成不可能的任務，還是打破道德的戒律。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -568,7 +568,7 @@
   },
   "Finding the Light#056": {
    "src": "In this instance, however, you've both to do. Orphion has commanded it, has he not? And so you must, and for that I apologize.",
-   "dst": "",
+   "dst": "不過在這件事上，這兩樣你都得做。Orphion 已經下了令，不是嗎？所以你非做不可，而為此我向你致歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -578,7 +578,7 @@
   },
   "Finding the Light#057": {
    "src": "I have seen Lari's work- And she has done this land a priceless service. Alone, she has kept the Decay from creeping south, and thus the Guardian remains with us.",
-   "dst": "",
+   "dst": "我看過 Lari 的作為——她為這片土地立下了無價的功勞。是她一個人擋住了衰朽南下，守護者才得以留在我們身邊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -588,7 +588,7 @@
   },
   "Finding the Light#058": {
    "src": "However, her own morals prevent the situation from progressing. She cannot kill- And the source must be exterminated for light to once again fill the land.",
-   "dst": "",
+   "dst": "然而，正是她自己的道德讓局面無法推進。她下不了殺手——而唯有根除源頭，光才能再度充滿這片土地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -598,7 +598,7 @@
   },
   "Finding the Light#059": {
    "src": "Orphion's circumstances are dire- And so you must come to understand something. He is above us, in terms of morals. Such concepts do not apply to him.",
-   "dst": "",
+   "dst": "Orphion 的處境已經危急——所以有件事你必須明白。祂在道德的層次上高於我們。那些概念並不適用於祂。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -608,7 +608,7 @@
   },
   "Finding the Light#060": {
    "src": "As the embodiment of Light itself, he has no sense of morals- Merely survival and stasis. What he asks of us, many will balk at.",
-   "dst": "",
+   "dst": "身為光本身的化身，祂沒有道德觀——只有存續與維持。祂要求我們做的事，許多人會退避三舍。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -618,7 +618,7 @@
   },
   "Finding the Light#061": {
    "src": "It is a matter where morals must be set aside... And such a thing is one that Lari cannot abide by, for she has stubbornly clung to them for a thousand years.",
-   "dst": "",
+   "dst": "這是一件必須把道德擱在一旁的事……而那正是 Lari 無法接受的，因為她固執地守了那些東西一千年。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -628,7 +628,7 @@
   },
   "Finding the Light#062": {
    "src": "To break them... I will admit, I believe there to be some other way to solve these problems, but the fact of the matter is there simply is no time left.",
-   "dst": "",
+   "dst": "要打破它們……我承認，我相信這些問題還有別的解法，但事實是，已經沒有時間了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -638,7 +638,7 @@
   },
   "Finding the Light#063": {
    "src": "She must use the extent of her powers, and while she retains her pacifism that will not happen. I must ask you to follow her, as Orphion would wish.",
-   "dst": "",
+   "dst": "她必須用盡她全部的力量，而只要她還抱著那份不殺的堅持，那就不會發生。我必須請你跟著她，一如 Orphion 所願。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -648,7 +648,7 @@
   },
   "Finding the Light#064": {
    "src": "There is, unfortunately, no right to this. There is simply necessity- And there, you must push her to her limits. Seek the cave of the Canned Abis.",
-   "dst": "",
+   "dst": "很遺憾，這件事沒有所謂的對錯。只有不得不然——而在那裡，你必須把她逼到極限。去找 Canned Abis 的洞窟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -658,7 +658,7 @@
   },
   "Finding the Light#065": {
    "src": "It is north-east from here. The entrance is shaded by giant fern leaves. I only pray that this will be enough.",
-   "dst": "",
+   "dst": "從這裡往東北方。入口被巨大的蕨葉遮著。我只能祈禱這樣就夠了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -668,7 +668,7 @@
   },
   "Finding the Light#066": {
    "src": "Find the Canned Abis cave at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 找到 Canned Abis 洞窟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -678,7 +678,7 @@
   },
   "Finding the Light#067": {
    "src": "Find the plant inside the cave.",
-   "dst": "",
+   "dst": "在洞窟裡找到那株植物。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -688,7 +688,7 @@
   },
   "Finding the Light#068": {
    "src": "Return to the Tree at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, -{~}] 的大樹。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -698,7 +698,7 @@
   },
   "Finding the Light#069": {
    "src": "...I can't believe this. What am I doing wrong? What is it? There has to be some reason, what IS it?!",
-   "dst": "",
+   "dst": "……我不敢相信。我到底做錯了什麼？是哪裡？一定有什麼原因，到底是什麼？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -708,7 +708,7 @@
   },
   "Finding the Light#070": {
    "src": "There's not another inscription...it's just the same words! What does it mean by ‘’dire actions?!‘’ I've done everything I can think of!",
-   "dst": "",
+   "dst": "根本沒有新的銘文……還是同樣那幾句話！「決絕的行動」到底是什麼意思？！我想得到的我全做了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -718,7 +718,7 @@
   },
   "Finding the Light#071": {
    "src": "Is- Is this not dire enough? Is poring over you and putting aside my role and pride to someone else not EXTREME enough?!",
-   "dst": "",
+   "dst": "這——這樣還不夠決絕嗎？把自己剖開來檢視、把我的位置和我的驕傲都讓給別人，這樣還不夠極端嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -728,7 +728,7 @@
   },
   "Finding the Light#072": {
    "src": ".... I. I have to know. What did Orphion tell you, exactly? I can't stand not knowing any longer. Did he really replace me?",
-   "dst": "",
+   "dst": "……我。我必須知道。Orphion 到底跟你說了什麼？我再也受不了這樣蒙在鼓裡。他真的把我換掉了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -738,7 +738,7 @@
   },
   "Finding the Light#073": {
    "src": "I can't think of any other reason why everything for me has just...stopped working. Did he? Please, tell me-",
-   "dst": "",
+   "dst": "我想不出還有什麼別的理由，能解釋為什麼我這邊的一切就這樣……全都不管用了。是嗎？拜託，告訴我——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -748,7 +748,7 @@
   },
   "Finding the Light#074": {
    "src": "...wait... You... You have Canned Abis on you!! Where did you get that?!",
-   "dst": "",
+   "dst": "……等等……你……你身上有 Canned Abis！！你從哪裡拿到的？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -758,7 +758,7 @@
   },
   "Finding the Light#075": {
    "src": "You... There's no way you would've known that unless you... YOU! You eavesdropped on me!!",
-   "dst": "",
+   "dst": "你……你不可能會知道那個，除非你——是你！你偷聽了我說話！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -768,7 +768,7 @@
   },
   "Finding the Light#076": {
    "src": "You FOLLOWED ME into the cave even after I asked not to! You... After everything I said!! After you heard all those private thoughts!",
-   "dst": "",
+   "dst": "我明明叫你別跟來，你還是跟進洞窟裡了！你……在我說了那些話之後！！在你聽完那些私密的心事之後！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -778,7 +778,7 @@
   },
   "Finding the Light#077": {
    "src": "You STILL decided it was a good idea to come after me! What are you planning to accomplish like this?!",
-   "dst": "",
+   "dst": "你居然還覺得追上來是個好主意！你這樣到底想達成什麼？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -788,7 +788,7 @@
   },
   "Finding the Light#078": {
    "src": "What, are you thinking ‘’oh, let's follow the funny elf girl and see her FAIL, OVER and OVER AGAIN!?‘’ IS THAT IT?!",
-   "dst": "",
+   "dst": "怎麼，你是在想「哦，跟著那個好笑的精靈女孩，看她一次又一次失敗吧」？！是這樣嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -798,7 +798,7 @@
   },
   "Finding the Light#079": {
    "src": "You heard me then!! It's ALL out in the open! I can't succeed! You're there! You're doing everything I couldn't!",
-   "dst": "",
+   "dst": "那你都聽見了！！全都攤在陽光下了！我成不了事！你在那裡！我做不到的，你全都做到了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -808,7 +808,7 @@
   },
   "Finding the Light#080": {
    "src": "I'm NOT a failure! I'm not! I won't be! I refuse to be! You don't GET to watch me flounder and flail!!",
-   "dst": "",
+   "dst": "我不是失敗者！我不是！我不會是！我拒絕當那種東西！你沒資格站在那裡看我掙扎、看我出醜！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -818,7 +818,7 @@
   },
   "Finding the Light#081": {
    "src": "Battle Lari",
-   "dst": "",
+   "dst": "與 Lari 戰鬥",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -828,7 +828,7 @@
   },
   "Finding the Light#082": {
    "src": "Talk to the Guardian",
-   "dst": "",
+   "dst": "與守護者談話",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -838,7 +838,7 @@
   },
   "Finding the Light#083": {
    "src": "Wha- I... What just... What did I...?",
-   "dst": "",
+   "dst": "什——我……剛才怎麼……我做了什麼……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -848,7 +848,7 @@
   },
   "Finding the Light#084": {
    "src": "I j-just... I nearly...",
-   "dst": "",
+   "dst": "我剛、剛才……我差一點……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -858,7 +858,7 @@
   },
   "Finding the Light#085": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -868,7 +868,7 @@
   },
   "Finding the Light#086": {
    "src": "...GRAAAAAUGH!! TELL ME HOW THIS IS ‘’ENOUGH!‘’ TELL ME, NOW!",
-   "dst": "",
+   "dst": "……啊啊啊啊——！！告訴我這樣怎麼會「夠了」！現在就告訴我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -878,7 +878,7 @@
   },
   "Finding the Light#087": {
    "src": "I-I NEARLY KILLED THEM! I JUST BROKE AND DEFILED EVERYTHING I'VE EVER STOOD FOR!!",
-   "dst": "",
+   "dst": "我差一點就殺了他們！我親手粉碎、玷污了我這輩子所堅持的一切！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -888,7 +888,7 @@
   },
   "Finding the Light#088": {
    "src": "TELL ME!! HOW COULD THIS POSSIBLY BE THE ANSWER?! HOW COULD THIS BE WHAT NEEDED TO HAPPEN?!",
-   "dst": "",
+   "dst": "告訴我！！這怎麼可能會是答案？！這怎麼可能是非發生不可的事？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -898,7 +898,7 @@
   },
   "Finding the Light#089": {
    "src": "WHY WOULD I BE NEEDED TO... To...",
-   "dst": "",
+   "dst": "為什麼非得要我去……去……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -908,7 +908,7 @@
   },
   "Finding the Light#090": {
    "src": "T-Trying to murder them because they did what I couldn't isn't dark? How can you possibly think that?!",
-   "dst": "",
+   "dst": "因為他們做到了我做不到的事，我就想殺了他們——這不算墮入黑暗嗎？你怎麼可能這樣想？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -918,7 +918,7 @@
   },
   "Finding the Light#091": {
    "src": "What kind of guardian are you, permissing this kind of violence? How is anything I just did alright?",
-   "dst": "",
+   "dst": "你算什麼守護者，居然容許這種暴行？我剛才做的事，哪一點是可以的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -928,7 +928,7 @@
   },
   "Finding the Light#092": {
    "src": "...you. You can't possibly be saying that what I did was the right thing to do. I refuse to accept that.",
-   "dst": "",
+   "dst": "……你。你不可能是在說我剛才做的是對的。我拒絕接受這種說法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -938,7 +938,7 @@
   },
   "Finding the Light#093": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -948,7 +948,7 @@
   },
   "Finding the Light#094": {
    "src": "...then... Shouldn't I feel... I don't know. Shouldn't I feel less restrained? Less afraid? More... More free?",
-   "dst": "",
+   "dst": "……那麼……我不是應該覺得……我不知道。我不是應該覺得比較不受束縛？比較不害怕？比較……比較自由嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -958,7 +958,7 @@
   },
   "Finding the Light#095": {
    "src": "If what I've done was what needed to happen, why do I feel like the scum of the earth? Why do I feel so terrible?!",
-   "dst": "",
+   "dst": "如果我做的正是非做不可的事，為什麼我覺得自己像地上的爛泥？為什麼我這麼難受？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -968,7 +968,7 @@
   },
   "Finding the Light#096": {
    "src": "...I... I need time to process this. I... Do you understand how difficult this is to hear? To bear?",
-   "dst": "",
+   "dst": "……我……我需要時間消化這件事。我……你明白這有多難聽進去嗎？有多難承受嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -978,7 +978,7 @@
   },
   "Finding the Light#097": {
    "src": "My pulse, your light is brilliant... It has shone upon Lari, and soon her light will shine my way...",
-   "dst": "",
+   "dst": "我的脈動，你的光何其燦亮……它已照在 Lari 身上，不久之後，她的光也將照向我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
@@ -988,7 +988,7 @@
   },
   "Finding the Light#098": {
    "src": "Enter the roots, and witness the path to my realm. And then, prepare yourself. Muster your most blinding light...",
-   "dst": "",
+   "dst": "進入根中，見證通往我領域的道路。然後，做好準備。凝聚起你最耀眼的光……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Finding the Light",
