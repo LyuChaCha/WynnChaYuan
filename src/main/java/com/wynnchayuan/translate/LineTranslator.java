@@ -989,8 +989,11 @@ public final class LineTranslator {
             out.append(literal(prefix, style));
         }
         out.append(rebuilt);
-        if (!suffix.isEmpty()) {
-            out.append(literal(suffix, style));
+        // 全形標點自帶右側留白，後面不再接原文的半形空格——留白疊留白，
+        // 間隔就會變成兩倍。技能樹整片都是「標籤: 數值」，每一行都多這麼一塊。
+        String tail = reattach(rebuilt.getString(), suffix);
+        if (!tail.isEmpty()) {
+            out.append(literal(tail, style));
         }
         return out;
     }

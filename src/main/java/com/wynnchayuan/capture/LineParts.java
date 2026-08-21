@@ -226,13 +226,30 @@ public record LineParts(
         List<Piece> out = new ArrayList<>();
         for (Piece run : runs) {
             String text = run.text().strip();
-            if (text.length() >= MIN_ACCENT_LENGTH
-                    && GlyphSplitter.hasLetter(text)
-                    && !java.util.Objects.equals(run.style(), textStyle)) {
+            if (java.util.Objects.equals(run.style(), textStyle) || text.isEmpty()) {
+                continue;
+            }
+            // 一般的詞要夠長才收——短的在譯文裡到處都比對得到，貼錯位置更糟。
+            // 但<b>符號</b>不一樣：「✖」只有一個字元，卻是整行唯一的紅色，
+            // 而且它原樣留在譯文裡，比對不會出錯。先前被長度擋掉，
+            // 於是 ✖ 跟後面的標籤併成一段，紅色就沒了。
+            boolean word = text.length() >= MIN_ACCENT_LENGTH && GlyphSplitter.hasLetter(text);
+            if (word || isSymbolRun(text)) {
                 out.add(new Piece(text, run.style()));
             }
         }
         return List.copyOf(out);
+    }
+
+    /** 整段都是符號（沒有字母也沒有數字），例如 {@code ✖}、{@code ✦}、{@code ⚔}。 */
+    private static boolean isSymbolRun(String text) {
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (Character.isLetterOrDigit(c) || Character.isWhitespace(c)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /** 見 {@link #accents}。三個字元大約是最短的有意義單字。 */
