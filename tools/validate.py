@@ -178,6 +178,21 @@ def check_pair(path: str, key: str, src: str, dst: str,
     return out
 
 
+def is_generated(file: Path) -> bool:
+    """這個檔案是不是由別的檔案產生的。
+
+    產生物不該被檢查——它的內容<b>本來就</b>是別處的副本，跨檔比對必然報
+    「兩份譯法不同」。實際發生過：譯者改了 quest/ 底下的任務檔，
+    quest-dialogue.json 還是舊的，於是每一個翻譯 PR 都紅燈，
+    而譯者在網頁上根本沒辦法重新產生。
+    """
+    try:
+        data = json.loads(file.read_text(encoding="utf-8"))
+    except Exception:
+        return False
+    return bool(data.get("_meta", {}).get("generated"))
+
+
 def check_file(file: Path, places: set[str],
                glossary: dict[str, str]) -> list[Problem]:
     name = file.name
@@ -265,6 +280,7 @@ def main(argv: list[str]) -> int:
                        if not f.name.startswith("_"))
         # 任務對話一個任務一個檔，放在子資料夾裡
         files += sorted(TRANSLATIONS.glob("quest/*.json"))
+        files = [f for f in files if not is_generated(f)]
 
     errors = 0
     warnings = 0
