@@ -12,8 +12,8 @@
 |---|---|
 | Tailoring | 裁縫 |
 | Jeweling | 珠寶 |
-| Weaponsmithing | 武器鍛造 |
-| Armouring | 防具製作 |
+| Weaponsmithing | 鍛兵 |
+| Armouring | 鑄甲 |
 | Woodworking | 木工 |
 | Cooking | 烹飪 |
 | Alchemism | 鍊金 |
