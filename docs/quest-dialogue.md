@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**86 / 22,088 句已翻（0.4%），共 157 個任務，還沒有人動的有 150 個。**
+**210 / 22,088 句已翻（1.0%），共 157 個任務，還沒有人動的有 149 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -112,7 +112,7 @@
 | Ice Nations | [`ice-nations.json`](../src/main/resources/assets/wynnchayuan/translations/quest/ice-nations.json) | 26 | 22 | 2 | — |
 | Infested Plants | [`infested-plants.json`](../src/main/resources/assets/wynnchayuan/translations/quest/infested-plants.json) | 33 | 28 | 4 | — |
 | Jungle Fever | [`jungle-fever.json`](../src/main/resources/assets/wynnchayuan/translations/quest/jungle-fever.json) | 32 | 26 | 3 | — |
-| King's Recruit | [`king-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/quest/king-s-recruit.json) | 124 | 102 | 8 | — |
+| King's Recruit | [`king-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/quest/king-s-recruit.json) | 124 | 102 | 8 | ✅ |
 | Kingdom of Sand | [`kingdom-of-sand.json`](../src/main/resources/assets/wynnchayuan/translations/quest/kingdom-of-sand.json) | 60 | 51 | 8 | — |
 | Lava Springs | [`lava-springs.json`](../src/main/resources/assets/wynnchayuan/translations/quest/lava-springs.json) | 41 | 33 | 3 | — |
 | Lazarus Pit (Quest) | [`lazarus-pit-quest.json`](../src/main/resources/assets/wynnchayuan/translations/quest/lazarus-pit-quest.json) | 76 | 57 | 7 | — |
