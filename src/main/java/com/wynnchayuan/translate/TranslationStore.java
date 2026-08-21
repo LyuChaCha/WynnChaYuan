@@ -218,15 +218,14 @@ public final class TranslationStore {
         if (key.length() < MIN_FLAT_LENGTH) {
             return;
         }
-        String normalised = normalise(key);
-        if (!normalised.equals(key)) {
-            flat.putIfAbsent(normalised, value);
-        }
+        // 不能只收「正規化之後有變」的。語料裡的長句本來就沒有換行——
+        // 會斷行的是<b>畫面</b>，不是語料。查詢端才是那個帶著換行進來的。
+        flat.putIfAbsent(normalise(key), value);
     }
 
     /** 把所有連續空白（含換行）壓成一個空格。 */
     public static String normalise(String text) {
-        return text == null ? "" : text.strip().replaceAll("\s+", " ");
+        return text == null ? "" : text.strip().replaceAll("\\s+", " ");
     }
 
     /**
@@ -296,8 +295,19 @@ public final class TranslationStore {
      * 沒有跨行條目時是 1，呼叫端就會跳過整段比對。
      */
     public int maxBlockLines() {
-        return maxBlockLines;
+        // 攤平查表的對象是「依畫面寬度自動斷行」的長敘述——它在語料裡是<b>一行</b>，
+        // 所以 maxBlockLines 對它一無所知。先前就是這樣：Major ID 的說明在畫面上
+        // 佔四行，而 maxBlockLines 只有 2，那四行從來沒有被併起來試過。
+        return flat.isEmpty() ? maxBlockLines : Math.max(maxBlockLines, FLOWED_SCAN_LINES);
     }
+
+    /**
+     * 攤平查表最多把幾行併起來試。
+     *
+     * <p>長敘述在窄一點的畫面上斷成六、七行很常見。試到八行足夠，
+     * 而每個位置最多多查七次，量級完全可以忽略。
+     */
+    private static final int FLOWED_SCAN_LINES = 8;
 
     public int size() {
         return entries.size();

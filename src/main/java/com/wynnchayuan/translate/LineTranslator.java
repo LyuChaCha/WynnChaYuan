@@ -790,10 +790,7 @@ public final class LineTranslator {
         // 借用整行的機制處理片段內的數值與地名參數化
         StyledText one = StyledText.fromComponent(Component.literal(core).withStyle(style));
         LineParts parts = LineParts.of(one);
-        String hit = percent ? store.lookup(parts.template() + "%") : null;
-        if (hit == null) {
-            hit = lookup(parts.template(), store);
-        }
+        String hit = lookup(parts.template(), store, percent);
         if (hit == null) {
             return null;
         }
@@ -991,7 +988,14 @@ public final class LineTranslator {
      * {@code an {#}Item Identifier can unlock}），剝掉會改變語意。
      */
     private static String lookup(String template, TranslationStore store) {
-        String exact = store.lookup(template);
+        return lookup(template, store, false);
+    }
+
+    /**
+     * @param percent 這一行的數值是百分比，優先找「標籤 + {@code %}」的鍵
+     */
+    private static String lookup(String template, TranslationStore store, boolean percent) {
+        String exact = withPercent(template, store, percent);
         if (exact != null) {
             return exact;
         }
@@ -1025,8 +1029,26 @@ public final class LineTranslator {
         if (core.isBlank()) {
             return null;
         }
-        String hit = store.lookup(core);
+        String hit = withPercent(core, store, percent);
         return hit == null ? null : template.substring(0, start) + hit + template.substring(end);
+    }
+
+    /**
+     * 先試百分比版本的鍵，再試一般的。
+     *
+     * <h2>為什麼要獨立一支</h2>
+     * 這兩件事必須<b>疊在一起</b>：技能樹的標籤帶冒號（{@code Earth Damage:}），
+     * 先前是拿整個模板去接 {@code %}，變成 {@code Earth Damage:%}——那個鍵不存在，
+     * 於是退回一般的鍵，百分比的譯法永遠用不到。要先剝掉冒號，再接 {@code %}。
+     */
+    private static String withPercent(String key, TranslationStore store, boolean percent) {
+        if (percent) {
+            String hit = store.lookup(key + "%");
+            if (hit != null) {
+                return hit;
+            }
+        }
+        return store.lookup(key);
     }
 
     /**
