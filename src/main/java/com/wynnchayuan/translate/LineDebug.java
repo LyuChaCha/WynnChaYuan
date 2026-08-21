@@ -37,6 +37,13 @@ public final class LineDebug {
     private static Path file;
     private static int written = 0;
     private static int layouts = 0;
+    private static int held = 0;
+
+    /** 「守住」的行最多留幾筆當對照，其餘額度留給有問題的行。 */
+    private static final int HELD_QUOTA = 10;
+
+    /** 見 {@link #pieces}。與 LineTranslator 的輸出對應。 */
+    private static final String HELD = "(守住)";
 
     /** 版面判斷自己的額度，見 {@link #layout}。 */
     private static final int LAYOUT_LIMIT = 8;
@@ -71,9 +78,21 @@ public final class LineDebug {
      * 要分辨就得看到<b>每個空白補償前後的像素值</b>。
      */
     public static void pieces(String header, String detail) {
-        if (file == null || written >= LIMIT || !WynnChaYuan.config().collect()
-                || !seen.add(header)) {
+        if (file == null || written >= LIMIT || !WynnChaYuan.config().collect()) {
             return;
+        }
+        // 已經對齊好的行只留一小部分當對照。它們沒有問題，卻佔掉大半額度——
+        // 一份裝備 tooltip 就有三十幾行是「守住」的，於是真正歪掉的行
+        // （技能樹那些）永遠排不進來，連續五次回報都是這樣。
+        boolean fine = detail.contains(HELD);
+        if (fine && held >= HELD_QUOTA) {
+            return;
+        }
+        if (!seen.add(header)) {
+            return;
+        }
+        if (fine) {
+            held++;
         }
         written++;
         buffer.append("=== ").append(written).append(" · ").append(header)

@@ -3,6 +3,25 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.29.1] - 2026-08-21
+
+### 修正
+
+- **每個翻譯 PR 都被 CI 擋掉。** `quest-dialogue.json` 是從 `quest/` 底下<b>產生</b>的，
+  內容本來就是副本；譯者改了任務檔而合併檔還是舊的，跨檔重複檢查就報
+  「兩份譯法不同」。產生物參與這種檢查必然誤報——改用 `_meta.generated` 標記並跳過。
+  - 而且譯者多半在 GitHub 網頁上改，手邊沒有 Python，本來就不可能自己重新產生。
+    合併改由 CI 做：合進 `main` 之後自動重新產生合併檔與認領清單。
+- **兩個錯譯。** `Aldorei's Secret Part II` 被翻成「第一部」；
+  `Athletic Tome of Weapon Mastery III` 套到了 `Nimble Combat` 的譯名。
+- **技能樹裡的元素標籤沒翻**（`Fire:`、`Water:` 那些），夾在已翻的行中間特別突兀。
+
+### 診斷
+
+- **優先記「有問題」的行。** 已經對齊好的行只留 10 筆當對照——一份裝備 tooltip
+  就有三十幾行是「守住」的，額度被它們佔光，真正歪掉的技能樹一行都排不進來，
+  連續五次回報都是這樣。
+
 ## [1.29.0] - 2026-08-21
 
 ### 新增
