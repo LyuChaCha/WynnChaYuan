@@ -22,7 +22,21 @@ import net.minecraft.network.chat.Component;
 public final class NametagScreen extends Screen {
 
     private static final int W = 220;
-    private static final int ROW = 34;
+
+    /**
+     * 一個輸入欄位佔多高（說明 + 輸入框 + 間距）。
+     *
+     * <p>說明畫在<b>輸入框上方</b>。先前是畫在下方，於是每一行說明看起來都在
+     * 標示<b>下一個</b>欄位——「停留秒數」看起來標到了偵測距離的框，
+     * 最後一行說明還掉出面板外面。
+     */
+    private static final int FIELD_ROW = 37;
+
+    /** 第一個輸入欄位離面板頂端多遠。上面放模式按鈕與它的但書。 */
+    private static final int FIRST_FIELD = 47;
+
+    /** 說明離它所標示的輸入框多高。 */
+    private static final int LABEL_LIFT = 11;
 
     private final Screen parent;
 
@@ -54,24 +68,29 @@ public final class NametagScreen extends Screen {
             b.setMessage(modeLabel());
         }).bounds(x, y, W, 20).build());
 
-        holdBox = field(x, y + ROW, hold());
+        holdBox = field(x, fieldY(0), hold());
         addRenderableWidget(Button.builder(Component.literal("套用"),
-                b -> apply(Field.HOLD)).bounds(x + W - 42, y + ROW, 42, 20).build());
+                b -> apply(Field.HOLD)).bounds(x + W - 42, fieldY(0), 42, 20).build());
 
-        rangeBox = field(x, y + ROW * 2,
+        rangeBox = field(x, fieldY(1),
                 trim(WynnChaYuan.config().nametagRange()));
         addRenderableWidget(Button.builder(Component.literal("套用"),
-                b -> apply(Field.RANGE)).bounds(x + W - 42, y + ROW * 2, 42, 20).build());
+                b -> apply(Field.RANGE)).bounds(x + W - 42, fieldY(1), 42, 20).build());
 
-        angleBox = field(x, y + ROW * 3,
+        angleBox = field(x, fieldY(2),
                 trim(WynnChaYuan.config().nametagAngle()));
         addRenderableWidget(Button.builder(Component.literal("套用"),
-                b -> apply(Field.ANGLE)).bounds(x + W - 42, y + ROW * 3, 42, 20).build());
+                b -> apply(Field.ANGLE)).bounds(x + W - 42, fieldY(2), 42, 20).build());
 
         addRenderableWidget(Button.builder(Component.literal("回到預設值"), b -> resetAll())
                 .bounds(this.width / 2 - 105, this.height - 30, 100, 20).build());
         addRenderableWidget(Button.builder(Component.literal("返回"), b -> onClose())
                 .bounds(this.width / 2 + 5, this.height - 30, 100, 20).build());
+    }
+
+    /** 第 {@code index} 個輸入框的 y 座標。 */
+    private int fieldY(int index) {
+        return top() + FIRST_FIELD + index * FIELD_ROW;
     }
 
     private EditBox field(int x, int y, String value) {
@@ -140,7 +159,8 @@ public final class NametagScreen extends Screen {
         int x = left();
         int y = top();
 
-        Cards.panel(g, x - 10, y - 22, W + 20, ROW * 4 + 20);
+        int panelBottom = fieldY(2) + 20 + 8;
+        Cards.panel(g, x - 10, y - 22, W + 20, panelBottom - (y - 22));
         super.render(g, mouseX, mouseY, delta);
 
         g.drawCenteredString(this.font, this.title, this.width / 2, 22, Colors.TEXT);
@@ -149,17 +169,20 @@ public final class NametagScreen extends Screen {
                         .withStyle(ChatFormatting.GRAY),
                 this.width / 2, 36, Colors.SUBTLE);
 
-        Cards.hint(g, this.font, x + 2, y + 22, "取代原文則畫面上看不到英文名");
-        Cards.hint(g, this.font, x + 2, y + ROW + 22, "停留秒數（0 = 持續顯示）");
-        Cards.hint(g, this.font, x + 2, y + ROW * 2 + 22,
+        // 模式按鈕的但書，緊接在按鈕下面
+        Cards.hint(g, this.font, x + 2, y + 24, "取代原文則畫面上看不到英文名");
+
+        // 其餘每一行都是它「下方」那個輸入框的標題
+        Cards.hint(g, this.font, x + 2, fieldY(0) - LABEL_LIFT, "停留秒數（0 = 持續顯示）");
+        Cards.hint(g, this.font, x + 2, fieldY(1) - LABEL_LIFT,
                 "偵測距離：幾格內的名牌才算（2–64）");
-        Cards.hint(g, this.font, x + 2, y + ROW * 3 + 22,
+        Cards.hint(g, this.font, x + 2, fieldY(2) - LABEL_LIFT,
                 "準心夾角：幾度內才算在看它（1–45）");
 
         g.drawCenteredString(this.font,
                 Component.literal("城裡 NPC 站得密就把角度調小；曠野找人可以調大")
                         .withStyle(ChatFormatting.DARK_GRAY),
-                this.width / 2, y + ROW * 4 + 14, Colors.FAINT);
+                this.width / 2, panelBottom + 8, Colors.FAINT);
 
         if (!status.getString().isEmpty()) {
             g.drawCenteredString(this.font, status, this.width / 2, this.height - 46, Colors.TEXT);

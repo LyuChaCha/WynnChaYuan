@@ -83,8 +83,19 @@ public final class LineTranslator {
             return null;
         }
         String translated = store.lookup(template);
+        boolean flowed = false;
+        if (translated == null || translated.isBlank()) {
+            // 原文可能是被 tooltip 寬度自動斷行的，斷點跟語料對不上。
+            // 把整段攤平成一行再查一次。
+            translated = lookupFlowed(template, store);
+            flowed = translated != null;
+        }
         if (translated == null || translated.isBlank()) {
             return null;
+        }
+        if (flowed) {
+            // 查到的是完整一句，得自己折回原本那幾行的寬度
+            translated = wrapToWidth(translated, widestOf(run));
         }
         String[] dst = translated.split("\n", -1);
         List<Component> built = rebuildAll(dst, parts);
@@ -102,6 +113,97 @@ public final class LineTranslator {
         }
         return out;
     }
+
+    /**
+     * 查一段被自動斷行的長文字。
+     *
+     * <h2>兩種查法</h2>
+     * <ol>
+     *   <li><b>整段</b>攤平之後直接查。技能與物品的長敘述屬於這種。</li>
+     *   <li><b>「名稱：說明」</b>拆成兩半各查一次。Major ID 長這樣：
+     *       {@code Altruism: Allies within 16 blocks gain...}——名稱與說明在語料裡
+     *       是<b>兩筆</b>，畫面上卻擠在同一行，整段查永遠查不到。</li>
+     * </ol>
+     *
+     * <p>第二種看起來寬鬆，其實很安全：要誤中的話，冒號兩邊<b>都</b>得剛好是
+     * 語料裡的條目；真的都在，那分別翻譯本來就是對的。
+     */
+    private static String lookupFlowed(String template, TranslationStore store) {
+        String whole = store.lookupFlat(template);
+        if (whole != null) {
+            return whole;
+        }
+        int colon = template.indexOf(": ");
+        if (colon <= 0 || colon > MAX_LABEL_LENGTH) {
+            return null;
+        }
+        String head = store.lookup(template.substring(0, colon));
+        if (head == null || head.isBlank()) {
+            return null;
+        }
+        String rest = template.substring(colon + 2);
+        String tail = store.lookupFlat(rest);
+        if (tail == null) {
+            tail = store.lookup(rest);
+        }
+        return tail == null || tail.isBlank() ? null : head + ": " + tail;
+    }
+
+    /** 「名稱：說明」的名稱最長到這裡。再長就不像標題了。 */
+    private static final int MAX_LABEL_LENGTH = 40;
+
+    /** 這幾行裡最寬的一行有多寬。折行時當成目標寬度。 */
+    private static int widestOf(List<StyledText> run) {
+        int widest = 0;
+        for (StyledText line : run) {
+            widest = Math.max(widest, widthOf(line.getComponent()));
+        }
+        return widest;
+    }
+
+    /**
+     * 把一整句折成幾行，每行不超過 {@code maxPx}。
+     *
+     * <h2>為什麼要自己折</h2>
+     * 查到的譯文是完整一句，畫面上原本卻是好幾行。直接畫成一行會把面板撐得
+     * 比原本的 tooltip 還寬。
+     *
+     * <p>中文可以在任何字之間斷，英文不行——所以碰到英文單字時退回上一個空白。
+     * 佔位符（{@code {~}}）整組不能拆開，拆了就填不回去。
+     */
+    private static String wrapToWidth(String text, int maxPx) {
+        if (maxPx <= 0) {
+            return text;
+        }
+        StringBuilder out = new StringBuilder(text.length() + 8);
+        int lineStart = 0;
+        int width = 0;
+        int lastSpace = -1;
+        int i = 0;
+        while (i < text.length()) {
+            int close = text.charAt(i) == '{' ? text.indexOf('}', i) : -1;
+            int end = close > i
+                    ? close + 1                          // 佔位符整組
+                    : i + Character.charCount(text.codePointAt(i));
+            String piece = text.substring(i, end);
+            int pieceWidth = widthOf(Component.literal(piece));
+            if (width + pieceWidth > maxPx && i > lineStart) {
+                int cut = lastSpace > lineStart ? lastSpace : i;
+                out.append(text, lineStart, cut).append(NEWLINE);
+                lineStart = text.charAt(cut) == ' ' ? cut + 1 : cut;
+                width = widthOf(Component.literal(text.substring(lineStart, i)));
+                lastSpace = -1;
+            }
+            if (" ".equals(piece)) {
+                lastSpace = i;
+            }
+            width += pieceWidth;
+            i = end;
+        }
+        return out.append(text, lineStart, text.length()).toString();
+    }
+
+    private static final char NEWLINE = '\n';
 
     /**
      * @return 譯好的一行；查不到翻譯或佔位符對不上時回傳 {@code null}

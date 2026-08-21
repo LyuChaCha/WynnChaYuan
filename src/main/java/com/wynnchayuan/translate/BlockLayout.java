@@ -64,7 +64,38 @@ public final class BlockLayout {
      * @return 與輸入等長；{@code true} 表示這一行的前導偏移該跟著譯文寬度調整
      */
     public static boolean[] centered(List<Component> lines) {
-        return centered(lines, BlockLayout::measure);
+        boolean[] result = centered(lines, BlockLayout::measure);
+        LineDebug.layout(explain(lines, result, BlockLayout::measure));
+        return result;
+    }
+
+    /**
+     * 把置中判斷的中間值寫成人看得懂的樣子。
+     *
+     * <p>判斷失敗時畫面上只看得到「沒有跟著置中」，看不出是分段切錯、寬度量錯、
+     * 還是算式差了幾像素——三種的修法完全不同。
+     */
+    static String explain(List<Component> lines, boolean[] result,
+                          ToIntFunction<Component> width) {
+        StringBuilder sb = new StringBuilder();
+        int widest = 0;
+        for (int i = 0; i < lines.size(); i++) {
+            widest = Math.max(widest, width.applyAsInt(lines.get(i)));
+        }
+        for (int i = 0; i < lines.size(); i++) {
+            Component line = lines.get(i);
+            int lead = leadingOffset(line);
+            int content = Math.max(0, width.applyAsInt(line) - lead);
+            String text = line.getString().replace("\n", "  ");
+            sb.append(String.format(
+                    "  [%2d] %-8s 縮排 %4d  內容 %4d  置中應為 %4d  %s%n",
+                    i,
+                    isSeparator(line) ? "分隔線" : (result[i] ? "置中" : "靠左"),
+                    lead, content, (widest - content) / 2,
+                    text.length() > 34 ? text.substring(0, 34) + "…" : text));
+        }
+        sb.append(String.format("  整份最寬 %d px%n", widest));
+        return sb.toString();
     }
 
     /** 供測試注入寬度計算——正式路徑要有字型才量得出來。 */
