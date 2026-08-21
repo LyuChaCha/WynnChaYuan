@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/docs/icon.png" width="180" alt="WynnChaYuan">
+</p>
+
 # WynnChaYuan · Traditional Chinese for Wynncraft
 
 **Summary field (English, required by Modrinth):**
