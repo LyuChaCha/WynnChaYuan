@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**33 / 22,088 句已翻（0.1%），共 157 個任務，還沒有人動的有 155 個。**
+**86 / 22,088 句已翻（0.4%），共 157 個任務，還沒有人動的有 150 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -31,11 +31,6 @@
 
 | 任務 | 句數 |
 |---|---|
-| The Olmic Rune | 7 |
-| Cluck Cluck | 10 |
-| Lost Tower | 10 |
-| Pit of the Dead (Quest) | 12 |
-| Clearing the Camps | 14 |
 | The House of Twain (Quest) | 15 |
 | Pirate's Trove | 16 |
 | Dwelling Walls | 17 |
@@ -76,8 +71,8 @@
 | Burning Bonds | [`burning-bonds.json`](../src/main/resources/assets/wynnchayuan/translations/quest/burning-bonds.json) | 89 | 82 | 2 | — |
 | Canyon Condor | [`canyon-condor.json`](../src/main/resources/assets/wynnchayuan/translations/quest/canyon-condor.json) | 42 | 36 | 3 | — |
 | Celebrations in Smoke | [`celebrations-in-smoke.json`](../src/main/resources/assets/wynnchayuan/translations/quest/celebrations-in-smoke.json) | 528 | 509 | 14 | — |
-| Clearing the Camps | [`clearing-the-camps.json`](../src/main/resources/assets/wynnchayuan/translations/quest/clearing-the-camps.json) | 14 | 11 | 1 | — |
-| Cluck Cluck | [`cluck-cluck.json`](../src/main/resources/assets/wynnchayuan/translations/quest/cluck-cluck.json) | 10 | 8 | 1 | — |
+| Clearing the Camps | [`clearing-the-camps.json`](../src/main/resources/assets/wynnchayuan/translations/quest/clearing-the-camps.json) | 14 | 11 | 1 | ✅ |
+| Cluck Cluck | [`cluck-cluck.json`](../src/main/resources/assets/wynnchayuan/translations/quest/cluck-cluck.json) | 10 | 8 | 1 | ✅ |
 | Cook Assistant | [`cook-assistant.json`](../src/main/resources/assets/wynnchayuan/translations/quest/cook-assistant.json) | 17 | 12 | 1 | ✅ |
 | Corrupted Betrayal | [`corrupted-betrayal.json`](../src/main/resources/assets/wynnchayuan/translations/quest/corrupted-betrayal.json) | 51 | 45 | 4 | — |
 | Cowfusion | [`cowfusion.json`](../src/main/resources/assets/wynnchayuan/translations/quest/cowfusion.json) | 223 | 206 | 5 | — |
@@ -124,7 +119,7 @@
 | Lexdale Witch Trials | [`lexdale-witch-trials.json`](../src/main/resources/assets/wynnchayuan/translations/quest/lexdale-witch-trials.json) | 33 | 25 | 3 | — |
 | Lost Royalty | [`lost-royalty.json`](../src/main/resources/assets/wynnchayuan/translations/quest/lost-royalty.json) | 26 | 20 | 2 | — |
 | Lost Soles | [`lost-soles.json`](../src/main/resources/assets/wynnchayuan/translations/quest/lost-soles.json) | 61 | 51 | 7 | — |
-| Lost Tower | [`lost-tower.json`](../src/main/resources/assets/wynnchayuan/translations/quest/lost-tower.json) | 10 | 6 | 1 | — |
+| Lost Tower | [`lost-tower.json`](../src/main/resources/assets/wynnchayuan/translations/quest/lost-tower.json) | 10 | 6 | 1 | ✅ |
 | Lost in the Jungle | [`lost-in-the-jungle.json`](../src/main/resources/assets/wynnchayuan/translations/quest/lost-in-the-jungle.json) | 32 | 27 | 3 | — |
 | Maltic's Well | [`maltic-s-well.json`](../src/main/resources/assets/wynnchayuan/translations/quest/maltic-s-well.json) | 23 | 21 | 3 | — |
 | Master Piece | [`master-piece.json`](../src/main/resources/assets/wynnchayuan/translations/quest/master-piece.json) | 38 | 31 | 1 | — |
@@ -139,7 +134,7 @@
 | Out of my Mind | [`out-of-my-mind.json`](../src/main/resources/assets/wynnchayuan/translations/quest/out-of-my-mind.json) | 60 | 54 | 4 | — |
 | Overture to Despair | [`overture-to-despair.json`](../src/main/resources/assets/wynnchayuan/translations/quest/overture-to-despair.json) | 603 | 582 | 26 | — |
 | Pirate's Trove | [`pirate-s-trove.json`](../src/main/resources/assets/wynnchayuan/translations/quest/pirate-s-trove.json) | 16 | 11 | 1 | — |
-| Pit of the Dead (Quest) | [`pit-of-the-dead-quest.json`](../src/main/resources/assets/wynnchayuan/translations/quest/pit-of-the-dead-quest.json) | 12 | 9 | 1 | — |
+| Pit of the Dead (Quest) | [`pit-of-the-dead-quest.json`](../src/main/resources/assets/wynnchayuan/translations/quest/pit-of-the-dead-quest.json) | 12 | 9 | 1 | ✅ |
 | Point of No Return | [`point-of-no-return.json`](../src/main/resources/assets/wynnchayuan/translations/quest/point-of-no-return.json) | 42 | 30 | 3 | — |
 | Potion Making | [`potion-making.json`](../src/main/resources/assets/wynnchayuan/translations/quest/potion-making.json) | 31 | 27 | 2 | — |
 | Purple and Blue | [`purple-and-blue.json`](../src/main/resources/assets/wynnchayuan/translations/quest/purple-and-blue.json) | 84 | 76 | 3 | — |
@@ -180,7 +175,7 @@
 | The Maiden Tower | [`the-maiden-tower.json`](../src/main/resources/assets/wynnchayuan/translations/quest/the-maiden-tower.json) | 36 | 32 | 2 | — |
 | The Mercenary | [`the-mercenary.json`](../src/main/resources/assets/wynnchayuan/translations/quest/the-mercenary.json) | 141 | 131 | 8 | — |
 | The Missing Piece | [`the-missing-piece.json`](../src/main/resources/assets/wynnchayuan/translations/quest/the-missing-piece.json) | 582 | 513 | 15 | — |
-| The Olmic Rune | [`the-olmic-rune.json`](../src/main/resources/assets/wynnchayuan/translations/quest/the-olmic-rune.json) | 7 | 0 | 0 | — |
+| The Olmic Rune | [`the-olmic-rune.json`](../src/main/resources/assets/wynnchayuan/translations/quest/the-olmic-rune.json) | 7 | 0 | 0 | ✅ |
 | The Order of the Grook | [`the-order-of-the-grook.json`](../src/main/resources/assets/wynnchayuan/translations/quest/the-order-of-the-grook.json) | 217 | 205 | 9 | — |
 | The Passage (Quest) | [`the-passage-quest.json`](../src/main/resources/assets/wynnchayuan/translations/quest/the-passage-quest.json) | 24 | 21 | 2 | — |
 | The Price of Ingenuity | [`the-price-of-ingenuity.json`](../src/main/resources/assets/wynnchayuan/translations/quest/the-price-of-ingenuity.json) | 584 | 565 | 29 | — |
