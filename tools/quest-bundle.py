@@ -70,6 +70,9 @@ def build() -> dict:
         entries.update(json.loads(path.read_text(encoding="utf-8"))["entries"])
     return {
         "_meta": {
+            # 讓 validate.py 知道這是產生物。產生物參與「兩個檔案譯法不同」
+            # 的檢查一定會誤報——它的內容<b>本來就</b>是別的檔案的副本。
+            "generated": True,
             "domain": "quest-dialogue",
             "itemNames": False,
             "lang": "zh_tw",
