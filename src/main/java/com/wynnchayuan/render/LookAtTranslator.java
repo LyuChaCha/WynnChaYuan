@@ -81,6 +81,22 @@ public final class LookAtTranslator {
      */
     private static volatile String lastTemplate = null;
 
+    /** 這一段譯文是什麼時候<b>第一次</b>顯示的。見 {@link #MIN_SHOW_MS}。 */
+    private static volatile long shownAt = 0;
+
+    /**
+     * 一段譯文最少要顯示這麼久。
+     *
+     * <h2>為什麼需要下限</h2>
+     * 判斷是<b>每幀</b>做的，所以只要來源的字變了一下、或準心晃開一格，
+     * 框就會收掉再出現。戰鬥假人最明顯：它的字每被打一次就換一個數字，
+     * 於是框以每秒好幾次的頻率閃。
+     *
+     * <p>框出現得比人看得完還快就消失，比不顯示更糟。所以一旦顯示，
+     * 這段時間內就不再重新判斷——0.6 秒大約是看完一行中文的時間。
+     */
+    private static final long MIN_SHOW_MS = 600;
+
     private LookAtTranslator() {}
 
     /**
@@ -145,6 +161,7 @@ public final class LookAtTranslator {
         lastShown = null;
         lastSource = null;
         lastTemplate = null;
+        shownAt = 0;
     }
 
     /** 這一段字跟上一次顯示的是不是同一句（只有數字不同不算變）。 */
@@ -157,6 +174,12 @@ public final class LookAtTranslator {
     public static void render(GuiGraphics graphics) {
         Minecraft mc = Minecraft.getInstance();
         if (mc == null || mc.player == null || LABELS.isEmpty()) {
+            return;
+        }
+        // 還在最短顯示時間內，就不重新判斷——這是防閃爍的第一道，
+        // 也是唯一一道跟「看向哪裡」完全無關的。
+        if (lastShown != null && System.currentTimeMillis() - shownAt < MIN_SHOW_MS) {
+            drawBubble(graphics, mc, lastShown, 1.0f);
             return;
         }
         Entity aimed = findAimedLabel(mc);
@@ -175,9 +198,13 @@ public final class LookAtTranslator {
                 return;
             }
             noteOnce("nametag.shown");
+            String template = GlyphSplitter.toTemplate(target);
+            if (!template.equals(lastTemplate)) {
+                shownAt = System.currentTimeMillis();   // 換內容才重新計時
+            }
             lastShown = translated;
             lastSource = aimed;
-            lastTemplate = GlyphSplitter.toTemplate(target);
+            lastTemplate = template;
             lastSeen = System.currentTimeMillis();
             drawBubble(graphics, mc, translated, 1.0f);
             return;
