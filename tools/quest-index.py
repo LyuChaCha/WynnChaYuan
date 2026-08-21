@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -26,6 +27,12 @@ OUT = ROOT / "docs/quest-dialogue.md"
 
 # 一個人一次接得完的量。超過這個就建議先講一聲，免得卡著別人。
 SMALL = 20
+
+
+def slug(name: str) -> str:
+    """與 tools/quest-bundle.py 同一套規則，清單上的檔名才點得開。"""
+    s = re.sub(r"[^A-Za-z0-9]+", "-", name).strip("-")
+    return (s or "unnamed").lower()
 
 
 def main() -> int:
@@ -39,6 +46,7 @@ def main() -> int:
         q = quests.setdefault(entry["quest"], {
             "lines": 0, "done": 0, "dialogue": 0, "speakers": set(), "stages": set()})
         q["lines"] += 1
+        q["file"] = slug(entry["quest"])
         q["done"] += 1 if entry.get("dst", "").strip() else 0
         q["dialogue"] += 1 if entry.get("kind") == "dialogue" else 0
         if entry.get("speaker"):
@@ -58,9 +66,12 @@ def main() -> int:
         f"**{done:,} / {total:,} 句已翻（{done * 100 / total:.1f}%），"
         f"共 {len(quests)} 個任務，還沒有人動的有 {len(untouched)} 個。**",
         "",
-        "資料在 [`quest-dialogue.json`](../src/main/resources/assets/wynnchayuan/"
-        "translations/quest-dialogue.json)，鍵是「任務#序號」，"
-        "所以同一個任務的句子都排在一起，從上往下翻就好。",
+        "**一個任務一個檔案**，放在 [`translations/quest/`]"
+        "(../src/main/resources/assets/wynnchayuan/translations/quest/)。"
+        "接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。",
+        "",
+        "> 改完之後跑一次 `python tools/quest-bundle.py`——模組讀的是合併後的"
+        "`quest-dialogue.json`，那是產生物，不要直接改。",
         "",
         "每一條長這樣——`quest`、`stage`、`speaker` 是給你看上下文用的，**不用翻**：",
         "",
@@ -102,15 +113,18 @@ def main() -> int:
         "",
         "「台詞」是 NPC 講的話，其餘是任務目標（顯示在追蹤器上）。",
         "",
-        "| 任務 | 句數 | 台詞 | 角色 | 階段 | 進度 |",
+        "| 任務 | 檔案 | 句數 | 台詞 | 角色 | 進度 |",
         "|---|---|---|---|---|---|",
     ]
     for name in sorted(quests):
         q = quests[name]
         pct = q["done"] * 100 / q["lines"]
         mark = "✅" if pct >= 100 else (f"{pct:.0f}%" if q["done"] else "—")
-        out.append(f"| {name} | {q['lines']} | {q['dialogue']} | "
-                   f"{len(q['speakers'])} | {len(q['stages'])} | {mark} |")
+        out.append(
+            f"| {name} | [`{q['file']}.json`]"
+            f"(../src/main/resources/assets/wynnchayuan/translations/quest/"
+            f"{q['file']}.json) | {q['lines']} | {q['dialogue']} | "
+            f"{len(q['speakers'])} | {mark} |")
 
     out += ["", "---", "",
             "這份清單由 `tools/quest-index.py` 產生，翻譯有進度就重跑一次。"]

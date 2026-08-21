@@ -511,7 +511,11 @@ public final class LineTranslator {
         }
         List<Piece> out = new ArrayList<>(pieces);
         Piece p = out.get(last);
-        out.set(last, Piece.space(p.spacePx() + shortfall, p.style()));
+        // 這裡也要夾住下限。alignColumns 夾過了，但這一步會再動一次同一個空白——
+        // 技能樹的「風屬性傷害百分比+15%」就是從這個縫隙漏掉的：譯文比原文寬，
+        // shortfall 是負的，間隔被收成 0，字直接貼在一起。
+        out.set(last, Piece.space(narrowed(p.spacePx(), p.spacePx() + shortfall),
+                                  p.style()));
         return out;
     }
 

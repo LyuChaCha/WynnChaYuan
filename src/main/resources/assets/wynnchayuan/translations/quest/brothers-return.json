@@ -1,0 +1,940 @@
+{
+ "_meta": {
+  "quest": "Brothers Return",
+  "count": 93,
+  "translated": 0,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Brothers Return#000": {
+   "src": "Talk to Sayleros at .",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#001": {
+   "src": "Hey! Don't put that down there",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 1",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#002": {
+   "src": "Oh, hello there, adventurer! I was just looking for someone like you! My name is Sayleros. I lived in {p} my whole life, but recently decided to move to {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 1",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#003": {
+   "src": "You see, my older brother just passed. I would have taken care of it, if only I weren't so busy with the move!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 1",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#004": {
+   "src": "I had to leave it all to my younger brother, Drucksh. He's still in {p}, but well, he's not the most reliable...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 1",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#005": {
+   "src": "My older brother had amassed quite some wealth before he passed. He should have left us part of it in his will, only I don't exactly trust Drucksh to handle it...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 1",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#006": {
+   "src": "If you could go to {p} and see if Drucksh has the will, I would forever be in your debt, pal.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 1",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#007": {
+   "src": "Drucksh shouldn't be hard to find, he usually spends his time in the bar in {p}. Just follow this road out of {p} to get there.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 1",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#008": {
+   "src": "Find Drucksh at the bar in {p} at .",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#009": {
+   "src": "Thanks again for doing this, pal. Just follow this road out of {p} to get to {p}, Drucksh's usually at the bar there.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 2",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#010": {
+   "src": "Anythin' to drink?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 2",
+   "speaker": "Barkeep",
+   "source": "wiki"
+  },
+  "Brothers Return#011": {
+   "src": "Mmmmmgghh... aaauuugh... need... mmgh... more...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 2",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#012": {
+   "src": "Aauuughh... s-something... mmmmgh... to... drink... aaaughh...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 2",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#013": {
+   "src": "Find a way to make Drucksh tell you about the will.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#014": {
+   "src": "Aauuughh... s-something... mmmmgh... to... drink... aaaughh...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#015": {
+   "src": "Anythin' to drink?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Barkeep",
+   "source": "wiki"
+  },
+  "Brothers Return#016": {
+   "src": "Anythin' is possible. If ya have [{~} Emeralds] to spare, that is.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Barkeep",
+   "source": "wiki"
+  },
+  "Brothers Return#017": {
+   "src": "One {p} Whiskey, shipwrecked against the rocks, comin' right up.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Barkeep",
+   "source": "wiki"
+  },
+  "Brothers Return#018": {
+   "src": "Hey, Drucksh. Hey, can you hear me? Hey!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Barkeep",
+   "source": "wiki"
+  },
+  "Brothers Return#019": {
+   "src": "Ughhhhhh... W-what is it now?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#020": {
+   "src": "This nice fella got ya a drink. A {p} Whiskey, yer favourite.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Barkeep",
+   "source": "wiki"
+  },
+  "Brothers Return#021": {
+   "src": "Aauuughh... W-what d'you want?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#022": {
+   "src": "Hey! They paid for yer drink, ya know. Ya could at least try to be courteous.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Barkeep",
+   "source": "wiki"
+  },
+  "Brothers Return#023": {
+   "src": "Oh, s-shut up. I c-can pay for my own drinks!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#024": {
+   "src": "Well, call me if ya need anythin' else.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Barkeep",
+   "source": "wiki"
+  },
+  "Brothers Return#025": {
+   "src": "So... W-what did you want?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#026": {
+   "src": "W-will? W-what will?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#027": {
+   "src": "...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#028": {
+   "src": "Oh! Right, the will!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#029": {
+   "src": "Yeah, there ain't no will, pal. After brother died, those Bovemists came and picked 'im up.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#030": {
+   "src": "Gave 'im a proper funeral and everything. Shame my dear, oh so dear brother couldn't attend. What kind of person can't be there for their own brother's funeral, y'know?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#031": {
+   "src": "Well, I couldn't be there either, bein' here and all, but that's besides the point...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#032": {
+   "src": "Anyway, the Bishop gave me a bit of money for my troubles and sent me on my merry way. Then, I ended up here, and haven't left since!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#033": {
+   "src": "So, as I already told you... There ain't no will, pal! Forget it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#034": {
+   "src": "W-what? Sayleros told you about a will, a-and about money too, t-that brother left us?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#035": {
+   "src": "So then why did the Bishop...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#036": {
+   "src": "...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#037": {
+   "src": "S-stop! Hold your horses... That would mean...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#038": {
+   "src": "Hey, soldier! We're leaving, right now! W-we're gonna find that will!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 3",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#039": {
+   "src": "Speak to the Bishop Kaideus in {p} at .",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#040": {
+   "src": "Yes, yes. A little more to the right! Hurry!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#041": {
+   "src": "Hey! Priest man, guy, whatever! Where's my brother!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#042": {
+   "src": "Oh, it's you. For your information, the proper term of address is your excellency.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#043": {
+   "src": "You may have forgotten already, but I must inform you that your brother is indeed dead.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#044": {
+   "src": "Y-yes, I know all that, y-your priestliness. But where's my brother? I want to see 'im.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#045": {
+   "src": "You! Talk some sense into your, um, friend here. We buried his brother in the crypt here some time ago.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#046": {
+   "src": "Now, please leave this peaceful house of worship, you're causing a ruckus. I have some quite important business to attend to, you see.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#047": {
+   "src": "Hey! I'm not leaving without my brother! No way, pal!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#048": {
+   "src": "As I already told you, your brother is dead and buried. It's not like",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#049": {
+   "src": "Your excellency! Th-th-they've risen!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Apprentice Arkech",
+   "source": "wiki"
+  },
+  "Brothers Return#050": {
+   "src": "Holy Bovine! It's even worse than I feared!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#051": {
+   "src": "You, soldier! You better not stick your nose in this! It's not for the likes of you to mess with the affairs of the church!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#052": {
+   "src": "Now's our chance, pal! Go find my brother in the crypts! I-I'll stay behind, guarding the rear!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 4",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#053": {
+   "src": "Enter the crypt at and find Sayleros' Brother.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#054": {
+   "src": "Now's our chance, pal! Go find my brother in the crypts! I-I'll stay behind, guarding the rear!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 5",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#055": {
+   "src": "You better not stick your nose in this, soldier! It's not for the likes of you to mess with the affairs of the church!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 5",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#056": {
+   "src": "Don't ask me about anything! I just work here!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 5",
+   "speaker": "Worker",
+   "source": "wiki"
+  },
+  "Brothers Return#057": {
+   "src": "Return to the crypt at .",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#058": {
+   "src": "Find the first crypt key.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#059": {
+   "src": "Open the door at using the Crypt Basement Key.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#060": {
+   "src": "Find the second crypt key.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#061": {
+   "src": "Open the door at using the Sealed Crypt Key.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#062": {
+   "src": "Enter the sealed crypt at .",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 10",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#063": {
+   "src": "Defeat Sayleros' Brother!",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 11",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#064": {
+   "src": "Exit the sealed crypt at .",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 12",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#065": {
+   "src": "Bring back Sayleros' brother's will to .",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Brothers Return#066": {
+   "src": "As I've already told you a thousand times, I don't know what will you're talking about! Besides, I don't have the time for this!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#067": {
+   "src": "Y-you're back! Did you find 'im?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#068": {
+   "src": "I certainly hope you didn't use the usual methods of your sort...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#069": {
+   "src": "... B-brother! What are y-you doing here?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#070": {
+   "src": "Drucksh! Likewise, what are you doing here?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#071": {
+   "src": "W-well... I-I thought I'd take responsibility for our family for once...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#072": {
+   "src": "I thought I wouldn't live to see the day! Here I was, worried Drucksh wouldn't cooperate, but it seems like the two of you've got it all under control after all.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#073": {
+   "src": "Under control!? This... This... renegade stormed into the crypts and k-k-killed your brother!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#074": {
+   "src": "He's our brother, your priestliness! Let us w-worry about 'im and you can worry about your great cow in the sky, or whatever it is.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#075": {
+   "src": "That's right, your priestliness! Here, I'll take the will.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#076": {
+   "src": "Hey, brother, why don't we head to the ol' watering hole. For old brother's sake.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#077": {
+   "src": "Well, i-if it's for his sake, then I c-can hardly refuse, can I?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Drucksh",
+   "source": "wiki"
+  },
+  "Brothers Return#078": {
+   "src": "Please, take this as proof of my gratitude, pal. You really helped us out, in more ways than one.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Sayleros",
+   "source": "wiki"
+  },
+  "Brothers Return#079": {
+   "src": "Hey soldier! That's quite the gear you're lugging around. Anything I can do for you?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Alfe",
+   "source": "wiki"
+  },
+  "Brothers Return#080": {
+   "src": "Oh, really? I don't think I've seen you before, but I'm not so good with faces, especially armoured ones! I'm new to Wynn, just came through on the caravan. The name's Alfe, and yours?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Alfe",
+   "source": "wiki"
+  },
+  "Brothers Return#081": {
+   "src": "Player, huh? I think I've heard of you somewhere... Laen was regaling stories at the {p} bar, you helped them find some old book, yeah? And I think the Bishop mentioned...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Alfe",
+   "source": "wiki"
+  },
+  "Brothers Return#082": {
+   "src": "You! Back again to cause more mayhem, are we?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#083": {
+   "src": "No need to be so hostile, your excellency! We were just discussing our time here in Wynn. Player here even helped Laen find an old book of theirs, did you know that?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Alfe",
+   "source": "wiki"
+  },
+  "Brothers Return#084": {
+   "src": "Hm... Well, you certainly are not, my young apprentice. That much is true...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#085": {
+   "src": "Right, Player! We could really use your help here, isn't that right Kaideus?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Alfe",
+   "source": "wiki"
+  },
+  "Brothers Return#086": {
+   "src": "Another pair of hands on the task wouldn't hurt, you are right about that...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#087": {
+   "src": "Fine! You may inspect the texts, but only if you are very, very careful.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#088": {
+   "src": "Well, you see Player! I've been in {p} for the past little while helping to protect the city. But after Kaideus here stumbled across a shelf of old records I came here to help sort and clean them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Alfe",
+   "source": "wiki"
+  },
+  "Brothers Return#089": {
+   "src": "They're positively ancient! It's all nonsense to me, but Laen says they must be over a thousand years old!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Alfe",
+   "source": "wiki"
+  },
+  "Brothers Return#090": {
+   "src": "You recruits are much to excitable, but she is right. Having dedicated my life to this cathedral, I have not been afforded the opportunity to see much of the world beyond these plains.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#091": {
+   "src": "So, Player, why don't you take a look? You've traveled quite a bit, perhaps even to the lands described within. I may not like your methods, but perhaps, just this once, they may prove useful.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Bishop Kaideus",
+   "source": "wiki"
+  },
+  "Brothers Return#092": {
+   "src": "Well then, what would you like to read?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Brothers Return",
+   "stage": "Stage 13",
+   "speaker": "Alfe",
+   "source": "wiki"
+  }
+ }
+}
