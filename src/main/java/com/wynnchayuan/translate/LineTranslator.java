@@ -728,12 +728,31 @@ public final class LineTranslator {
                         String.valueOf(a.spacePx()),
                         isAlignSpace(after, i) ? "  (對齊欄)" : "  (不調整)"));
             } else {
-                sb.append(String.format("  [%d] 文字 「%s」 <- 「%s」 寬 %d -> %d%n", i,
-                        a.text(), a.orig().getString(),
-                        widthOf(a.orig()), widthOf(a.rendered())));
+                // 顏色也要印。顏色掉了在畫面上很明顯，但先前的診斷完全看不到，
+                // 只能靠截圖猜——猜了好幾輪都沒猜中。
+                sb.append(String.format("  [%d] 文字 「%s」 <- 「%s」 寬 %d -> %d  色 %s -> %s%n",
+                        i, a.text(), a.orig().getString(),
+                        widthOf(a.orig()), widthOf(a.rendered()),
+                        colourOf(a.orig()), colourOf(a.rendered())));
             }
         }
         return sb.toString();
+    }
+
+    /** 這一段的顏色，寫成 {@code #RRGGBB}；沒有指定就是「繼承」。 */
+    private static String colourOf(Component component) {
+        if (component == null) {
+            return "-";
+        }
+        String[] found = {"繼承"};
+        component.visit((style, text) -> {
+            if (!text.isEmpty() && style.getColor() != null) {
+                found[0] = style.getColor().serialize();
+                return java.util.Optional.of(true);
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return found[0];
     }
 
     /** 由前往後第一個「兩側都有文字」的空白。 */
@@ -1200,7 +1219,10 @@ public final class LineTranslator {
             return null;
         }
         String hit = withPercent(core, store, percent);
-        return hit == null ? null : template.substring(0, start) + hit + template.substring(end);
+        if (hit == null) {
+            return null;
+        }
+        return template.substring(0, start) + hit + reattach(hit, template.substring(end));
     }
 
     /**
@@ -1212,6 +1234,28 @@ public final class LineTranslator {
      */
     private static boolean isDecoration(int codePoint) {
         return Character.getType(codePoint) == Character.OTHER_SYMBOL;
+    }
+
+    /**
+     * 把剝掉的尾巴接回去，但<b>全形標點後面不接空白</b>。
+     *
+     * <h2>為什麼</h2>
+     * 全形冒號「：」本身就佔一個全形寬，右半邊是留白。原文的
+     * {@code "Total Damage: "} 尾端有個半形空格，照樣接回去就變成
+     * 「總傷害：␣」——留白疊留白，間隔變成兩倍寬。
+     *
+     * <p>技能樹整片都是「標籤: 數值」，每一行都多出這麼一塊，看起來就是
+     * 到處都有莫名其妙的空格。中文排版本來也就不在全形標點後面加空格。
+     */
+    private static String reattach(String translated, String suffix) {
+        return suffix.isBlank() && !translated.isEmpty()
+                && isFullWidthPunctuation(translated.charAt(translated.length() - 1))
+                ? "" : suffix;
+    }
+
+    /** 自帶留白的全形標點。 */
+    private static boolean isFullWidthPunctuation(char c) {
+        return "：，。、！？；）」』】".indexOf(c) >= 0;
     }
 
     /**
