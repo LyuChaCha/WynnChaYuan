@@ -175,6 +175,34 @@ public final class LineTranslator {
     }
 
     /**
+     * 整段共用的文字樣式：<b>涵蓋字數最多</b>的那一個。
+     *
+     * <h2>為什麼不能只看第一行</h2>
+     * 攤平查表出來的是一整句，重建時整段共用一個樣式。先前取第一行的——
+     * 但第一行常常是「名稱：」那半，顏色跟後面的說明不一樣（Major ID 的名稱
+     * 是粉紅的、技能說明是綠的），於是整段都被染成名稱的顏色，
+     * 說明的顏色就消失了。
+     *
+     * <p>改成看整段：哪個樣式涵蓋的字最多就用哪個。名稱那半會由
+     * {@link #labelAccent} 另外把自己的顏色帶回去。
+     */
+    private static Style dominantStyle(List<LineParts> parts) {
+        java.util.Map<Style, Integer> weight = new java.util.LinkedHashMap<>();
+        for (LineParts part : parts) {
+            weight.merge(part.textStyle(), part.template().length(), Integer::sum);
+        }
+        Style best = parts.get(0).textStyle();
+        int most = -1;
+        for (java.util.Map.Entry<Style, Integer> e : weight.entrySet()) {
+            if (e.getValue() > most) {
+                most = e.getValue();
+                best = e.getKey();
+            }
+        }
+        return best;
+    }
+
+    /**
      * 把譯出來的名稱包成一個「原樣出現的詞」，帶著原文名稱的樣式。
      *
      * <p>拿的是<b>第一個</b>與整行主樣式不同的片段——「名稱：說明」的名稱就在
@@ -1299,7 +1327,7 @@ public final class LineTranslator {
             return null;              // 譯者刪了或多加了佔位符，整段放棄
         }
 
-        Style textStyle = forDisplay(parts.get(0).textStyle());
+        Style textStyle = forDisplay(dominantStyle(parts));
         boolean[] usedAccent = new boolean[accents.size()];
         int glyph = 0;
         int place = 0;
