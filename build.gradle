@@ -176,3 +176,11 @@ tasks.register('runStoreChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.TranslationStoreTest'
 }
 tasks.named('check') { dependsOn 'runStoreChecks' }
+
+tasks.register('runMajorIdChecks', JavaExec) {
+    group = 'verification'
+    description = '用真正的語料驗證 Major ID 的說明查得到'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.MajorIdTest'
+}
+tasks.named('check') { dependsOn 'runMajorIdChecks' }
