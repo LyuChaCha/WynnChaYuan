@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Cluck Cluck",
   "count": 10,
-  "translated": 10,
+  "translated": 0,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Cluck Cluck#000": {
    "src": "Talk to Nohno on {p} at [-{~}, {~}, -{~}]",
-   "dst": "前往 {p} 找 Nohno，座標 [-{~}, {~}, -{~}]",
+   "dst": "在 {p} [-{~}, {~}, -{~}] 與 Nohno 説話。 ",
    "role": "desc",
    "kind": "objective",
    "quest": "Cluck Cluck",
@@ -18,7 +18,7 @@
   },
   "Cluck Cluck#001": {
    "src": "Hey, you aren't a chicken! Wait, you're a human! You can help me! Maybe you are the guy who helped my brother Yahya, but who knows, you humans all look the same to me.",
-   "dst": "嘿，你不是雞！等等，你是人類！你可以幫我！說不定你就是幫過我弟弟 Yahya 的那個人——誰知道呢，你們人類在我看來長得都一樣。",
+   "dst": "喂，你不是隻雞啊！等等，你是個人類，你能幫我！也許你就是幫助了我兄弟 Yahya 的人，但誰知道呢，對我來説你們人類看起來都差不多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -28,7 +28,7 @@
   },
   "Cluck Cluck#002": {
    "src": "I really love my chickens, but there is one that I just cannot control...",
-   "dst": "我真的很愛我的雞，但有一隻我怎麼樣都管不動……",
+   "dst": "我超愛我的雞們！但裏面有那麽一隻雞我制衡不了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -38,7 +38,7 @@
   },
   "Cluck Cluck#003": {
    "src": "His name is Cluckles, he was given to me by a man named Bob before he went to war, but when Bob never came back, Cluckles got angry...",
-   "dst": "牠叫 Cluckles，是一個叫 Bob 的人上戰場前送我的。可是 Bob 再也沒回來，Cluckles 就變得很暴躁……",
+   "dst": "他的名字叫 Cluckles ，是一個叫 Bob 的人去打仗前給我的。但是 Bob 再也沒有回來， Cluckles 就森七七了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -48,7 +48,7 @@
   },
   "Cluck Cluck#004": {
    "src": "He's really dangerous to keep on my lovely island, so I keep him in my basement...",
-   "dst": "把牠留在我這座可愛的小島上實在太危險，所以我把牠關在地下室……",
+   "dst": "他對於我美麗的小島實在是個大威脅，我逼不得已把他關進了地下室...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -58,7 +58,7 @@
   },
   "Cluck Cluck#005": {
    "src": "I want to take care of him, but my wife says it's too dangerous. Where's my wife you say? Oh, I think she's around here eating some grain.",
-   "dst": "我是想好好照顧牠啦，可是我老婆說太危險了。你問我老婆在哪？喔，她大概在附近吃穀子吧。",
+   "dst": "我也很想關照一下他，但我老婆說太危險了。你說我的老婆在哪裏？噢，我覺得她大概在附近吃穀物呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -68,7 +68,7 @@
   },
   "Cluck Cluck#006": {
    "src": "Anyway, I need you to go down there and... Take care of him for me. I would really appreciate it.",
-   "dst": "總之，我需要你下去……幫我「處理」一下牠。真的很感謝你。",
+   "dst": "所以呢，我需要你下去地下室，然後...幫我關照一下他。我會很感激的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -77,8 +77,8 @@
    "source": "wiki"
   },
   "Cluck Cluck#007": {
-   "src": "Bring back [{~} Cluckles' Favourite Feather] to Nohno.",
-   "dst": "把 [{~} Cluckles' Favourite Feather] 帶回去給 Nohno。",
+   "src": "Bring back [[Cluckles' Favourite Feather|[{~} Cluckles' Favourite Feather]]] to Nohno.",
+   "dst": "帶回 [[Cluckles' Favourite Feather|[{~} Cluckles' Favourite Feather]]] 給予 Nohno 。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cluck Cluck",
@@ -88,7 +88,7 @@
   },
   "Cluck Cluck#008": {
    "src": "What is this?! His feather? What did you do to Cluckles?! I wanted you to take care of him, not kill him!",
-   "dst": "這是什麼？！牠的羽毛？你對 Cluckles 做了什麼？！我是要你照顧牠，不是宰了牠啊！",
+   "dst": "這是什麽？他的羽毛？你對 Cluckles 做了什麽？！我只是要你照顧一下他，不是殺了他啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -98,7 +98,7 @@
   },
   "Cluck Cluck#009": {
    "src": "You monster! Leave this place now, and keep that feather to remind you of your hideous crime!",
-   "dst": "你這個怪物！立刻離開這裡，把那根羽毛留著，好好記住你犯下的滔天大罪！",
+   "dst": "你這個禽獸！帶著這個羽毛離開這裏，讓你好好記住你幹的差勁罪行！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
