@@ -3,6 +3,17 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.31.0] - 2026-08-21
+
+### 新增
+
+- **模組有 icon 了。** 原圖是 1023×1537 的直式，模組 icon 必須是正方形——
+  去掉四周透明區域之後<b>置中補成正方</b>再縮，直接拉伸會讓圖變形。
+  256×256 進 jar，512×512 給 README 與 Modrinth。
+- **技能樹的法術專屬標籤 54 條**（`Tornado Duration:`、`Slow Duration:`、
+  `(Circle-Shaped)` 這類）。只翻通用的 `Duration:` 會讓它們夾在已翻的行中間
+  特別突兀。
+
 ## [1.30.0] - 2026-08-21
 
 ### 修正
