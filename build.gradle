@@ -184,3 +184,11 @@ tasks.register('runMajorIdChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.MajorIdTest'
 }
 tasks.named('check') { dependsOn 'runMajorIdChecks' }
+
+tasks.register('runLabelColonChecks', JavaExec) {
+    group = 'verification'
+    description = '面板裡的冒號只能有一種——標籤查表不會退回半形冒號'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LabelColonTest'
+}
+tasks.named('check') { dependsOn 'runLabelColonChecks' }
