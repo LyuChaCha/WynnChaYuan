@@ -194,33 +194,43 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 
 ---
 
+## 世界觀相關
+
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Decay | 衰朽 | **未確定** |
+| Corruption | 腐敗 | **未確定** |
+|  |  |
+
+
 ## Fruma 篇（主線）
 
 `Queen's Recruit` 之後的主線都會用到這幾個詞，先在這裡定下來。
 
 | 原文 | 譯文 | 備註 |
 |---|---|---|
-| Sovereign | 統領 | Fruma 女王底下的議會成員，各自掌管一個轄區。不用「主權者」，那讀起來不像官職 |
+| Sovereign | 統領 | **(待討論)** |
 | Her Majesty | 女王陛下 | 說話者名稱用全稱，句中稱呼用「陛下」 |
-| Gendarme Soldier | 憲兵 | `gendarme` 本來就是憲兵，不是普通士兵 |
+| Gendarme Soldier | 憲兵 | `Gendarme` 本來就是憲兵，需與其做區分。|
 | Gendarme Commander | 憲兵指揮官 | |
-| Aelumia Guard | Aelumia 衛兵 | Aelumia 是轄區名，照地名慣例保留 |
-| the Cursed | 受詛者 | 指被抹去記憶、流放到 Wynn 的那批人。**這是關鍵劇情詞**，不要譯成「被詛咒的人」 |
-| blight | 災厄 | Fruma 對牆外世界的稱呼，帶著居高臨下的味道 |
-| Representative | 接待人員 | 分配房間的那位，不是「代表」 |
-| Seaskipper Captain | 渡船船長 | |
-| the Morning Star | 晨星 | Majin 的稱號，要翻 |
-| the Adjustor | 調律器 | Fruma 抹除記憶用的裝置。名字聽起來越像儀器越好，那正是它可怕的地方 |
-| Inquisitor | 審訊官 | 執行抹除的人 |
-| memory restorification orb | 記憶復原化球 | Picard 自己造的字（`restorification` 不是英文），中文也要留一點造字感，別修成通順的「記憶復原球」 |
+| Aelumia Guard | Aelumia 衛兵 | |
+| the Cursed | 受詛者 | **(待討論)** |
+| blight | 災厄 | Fruma 對牆外世界的稱呼 **(待討論)** |
+| Representative | 接待人員 | |
+| Seaskipper Captain | 渡船船長 | **(待討論)** |
+| the Morning Star | 晨星 | Majin 的稱號 **(待討論)** |
+| the Adjustor | 調律器 | Fruma 抹除記憶用的裝置 **(待確定、討論)** |
+| Inquisitor | 審訊官 | 執行抹除的人、ARG 中去外界偵查訊息的人 **(待確定、討論)** |
+| memory restorification orb | 記憶復原化球 | Picard 自己造的字（`Restorification` 不是英文），中文也要留一點造字感，別修成通順的「記憶復原球」**(待討論)** |
 | Royal Captain / Royal Guard | 皇家隊長／皇家衛兵 | Fruma 的王室部隊 |
-| House Thalas / Nasin | Thalas 家 / Nasin 家 | 家族名保留原文 |
-| the Cursed One | 受詛者 | 同 `the Cursed`。`A New Beginning` 起，玩家自己就是被通緝的那一個 |
-| Leaves in the Wind | 風中之葉 | Syndra 的反抗組織。`the Leaves` 也用同一個名字，別簡稱成「葉子」 |
-| young leaf | 小葉子 | Mora 對新成員的稱呼，接組織名的意象 |
-| identification papers | 身分文件 | 進城要查的那個 |
+| House Thalas / Nasin | Thalas 家 / Nasin 家 |  |
+| the Cursed One | 受詛者 | 同 `the Cursed`。 **(待討論)** |
+| Leaves in the Wind | 風中之葉 | Syndra 的反抗組織。 **(待討論)** |
+| young leaf | 小葉子 | Mora 對新成員的稱呼。 **(待討論)** |
+| identification papers | 身分文件 |  |
 | passport | 通行證 | Syndra 弄來的那份，跟 `papers` 分開 |
 | the Driver | （未定，暫留原文） | 檔案裡「由 the Driver 帶往本地」。像職稱又像代號，**待討論** |
+**請注意，這裡每一個單字都待討論**
 
 ---
 
@@ -272,9 +282,12 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Captain Ragon | 教官 | 條理分明、講解式的句子。他是在上課 |
 | Admiral Aegis | 上將 | 威嚴但不擺架子，會誇人 |
 | Kaio | 看透了的老人 | 鄉音重、字句吞得多（`ain't`、`'n`、`nabbin'`），偶爾帶髒字。他講 Aledar 那一段是整個任務的重心 |
+**請注意，這裡每一個語氣都未驗證準確性**
+
 
 已翻的任務可以直接當範本：`King's Recruit`（開場，124 句）、`Queen's Recruit`（Fruma 篇，673 句）、`A New Beginning`（289 句）、`Recover the Past`（264 句）、`Cook Assistant`、
 `Clearing the Camps`。
+**註記：不要**
 
 ---
 
@@ -306,6 +319,8 @@ Wynncraft 的任務名稱與台詞常常一語雙關。**能做出來就做出�
 
 > 破碎、殘缺的台詞（`.;I. ,told;.`）是**刻意**的，那是氣氛的一部分。
 > 譯文要保留那種殘缺感，不要補成通順的句子。
+
+註記：這邊要多想，不要直接丟上去。
 
 ---
 
