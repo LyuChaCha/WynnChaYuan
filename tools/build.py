@@ -66,15 +66,25 @@ NUMBER_RE = re.compile(r"(?<![A-Za-z])\d+(?:[.,]\d+)*%?")
 
 
 def _load_places() -> list[str]:
+    """地名清單。
+
+    先看 fetch.py 抓下來的原始檔，沒有就用<b>模組實際載入的那一份</b>——
+    runtime 用的是後者，兩邊不一致的話語料裡沒有 {p}、遊戲裡卻有，
+    含地名的條目就會全部查不到，而且從畫面上完全看不出原因。
+    """
     src = RAW / "places.json"
+    if not src.exists():
+        src = ROOT / "src/main/resources/assets/wynnchayuan/places.json"
     if not src.exists():
         return []
     try:
         data = json.loads(src.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
         return []
-    return sorted({p["name"].strip() for p in data.get("labels", [])
-                   if p.get("name", "").strip()})
+    names = {p["name"].strip() for p in data.get("labels", [])
+             if isinstance(p, dict) and p.get("name", "").strip()}
+    names |= {p.strip() for p in data.get("places", []) if str(p).strip()}
+    return sorted(names)
 
 
 PLACES = _load_places()
