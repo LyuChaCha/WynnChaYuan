@@ -50,6 +50,13 @@ UA = "WynnChaYuan/1.0 (https://github.com/LyuChaCha/WynnChaYuan)"
 
 # {{Dialogue|顏色|說話的人|台詞}}。台詞裡可能還有巢狀的 {{...}}，所以不能用貪婪比對。
 DIALOGUE = re.compile(r"\{\{Dialogue\|([^|}]*)\|([^|}]*)\|(.+?)\}\}(?=\s*$|\s*\n)", re.S)
+# 另一種寫法：* '''說話的人:''' 台詞
+#
+# wiki 上兩種格式並存，而且一頁只用一種。只認 {{Dialogue}} 的話，用這種寫法的
+# 頁面會一句台詞都抓不到——而那是一半以上的頁面。
+BOLD_LINE = re.compile(
+    r"^\*+\s*'''\s*([^':]{1,40}?)\s*:?\s*'''\s*:?\s*(.+?)\s*$", re.M)
+
 # » 開頭的是任務目標，遊戲裡顯示在追蹤器上
 OBJECTIVE = re.compile(r"^»\s*(.+?)\s*$", re.M)
 STAGE = re.compile(r"^==+ *(Stage [^=]+?) *=+$", re.M)
@@ -102,6 +109,8 @@ def parse(page: str, wikitext: str) -> list[dict]:
     marks = [(m.start(), "stage", m.group(1)) for m in STAGE.finditer(wikitext)]
     marks += [(m.start(), "line", (m.group(2), m.group(3)))
               for m in DIALOGUE.finditer(wikitext)]
+    marks += [(m.start(), "line", (m.group(1), m.group(2)))
+              for m in BOLD_LINE.finditer(wikitext)]
     marks += [(m.start(), "goal", m.group(1)) for m in OBJECTIVE.finditer(wikitext)]
     for _, kind, value in sorted(marks):
         if kind == "stage":
