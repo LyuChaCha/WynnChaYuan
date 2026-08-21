@@ -3,6 +3,21 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.37.0] - 2026-08-22
+
+### 新增
+
+- **翻完 `A New Beginning`，289 句。** 直接接在 `Queen's Recruit` 後面——
+  被趕出 Fruma 之後，玩家自己成了全境通緝的「受詛者」，在 Espren 被 Zeph 撿到，
+  加入 Syndra 的反抗組織「風中之葉」。最後 Kaio 在墳前那一段講的是 Aledar，
+  那是整個任務的重心。
+- **Zeph 的口吃翻出來了。** 原文用連字號重複字首（`th-there`、`w-wondering`），
+  中文用重複首字加頓號：「你、你在這裡啊」。每一句都有，但控制在讀得下去的密度。
+- Zhiraok 的數學梗延續：`crunch the numbers`（算那些數字）、
+  `factored out`（因式分解）、`one positive in a sea of negatives`（一堆負數裡
+  總算有一個正的）、道別語 `Keep it constant`（保持常數）。全部進了對照表。
+- 角色語氣表補上 Syndra、Zeph、Rex、Mora、Sui、Kaio。
+
 ## [1.36.0] - 2026-08-22
 
 ### 修正
