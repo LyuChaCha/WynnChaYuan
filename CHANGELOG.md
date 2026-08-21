@@ -3,6 +3,36 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.40.0] - 2026-08-22
+
+### 新增
+
+- **翻完 Wynn 的整條同伴線，557 句。** 從 `King's Recruit` 之後一路到記憶恢復，
+  正好接上已經翻好的 `Queen's Recruit`。校稿時是一段連續的故事：
+  - `Elemental Exercise`（65）、`Infested Plants`（33）、`Mushroom Man`（75）、
+    `Supply and Delivery`（76）、`Taking the Tower`（44）、`Recover the Past`（264）
+- **`Recover the Past` 是整條線的核心。** 它揭露 Fruma 送去 Wynn 的「新兵」，
+  其實是被抹除記憶、流放出境的罪犯與受詛者。Tasim 是因為救了 Aledar 才被抓——
+  Aledar 醒來的第一句話是「哦。你——你是受詛的」。
+  - 新定的譯名：`the Adjustor` 調律器、`Inquisitor` 審訊官、
+    `memory restorification orb` 記憶復原化球（`restorification` 是 Picard
+    自己造的字，中文也留了造字感）。
+  - 這一段全部寫進 `docs/world-and-story.md` 的第一幕，附原句。
+- 對照表補上八個角色的語氣：Caid、Yahya、Ope、Alvin 鎮長、Ragon 隊長、
+  Aegis 上將等。Yahya 的口吃與 Zeph 用同一套處理。
+
+### 修正
+
+- **上一版補 `{u}` 的規則太寬，補錯了一部分。** 「逗號前面有空白」會誤判——
+  `my weapon only uses , right?` 少的是<b>元素名</b>不是玩家名字，補上 `{u}`
+  等於把譯文寫錯。規則收緊成「逗號前面必須是句末標點」，從上一版重新推導，
+  222 條改成 182 條。少補幾條沒關係，補錯不行。
+- **清掉 10 條殘留的維基標記**（`{{RenderLocation`、`[[連結|顯示文字]]`、
+  多出來的 `}}`）。那些標記在遊戲畫面上都不存在，所以那些條目一樣永遠對不上。
+  新工具 `tools/strip-wiki-markup.py`。
+- `Taking the Tower` 與 `Supply and Delivery` 各有一條把<b>兩句台詞黏成一句</b>，
+  已拆回兩條。
+
 ## [1.39.0] - 2026-08-22
 
 ### 新增

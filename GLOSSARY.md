@@ -210,6 +210,10 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Representative | 接待人員 | 分配房間的那位，不是「代表」 |
 | Seaskipper Captain | 渡船船長 | |
 | the Morning Star | 晨星 | Majin 的稱號，要翻 |
+| the Adjustor | 調律器 | Fruma 抹除記憶用的裝置。名字聽起來越像儀器越好，那正是它可怕的地方 |
+| Inquisitor | 審訊官 | 執行抹除的人 |
+| memory restorification orb | 記憶復原化球 | Picard 自己造的字（`restorification` 不是英文），中文也要留一點造字感，別修成通順的「記憶復原球」 |
+| Royal Captain / Royal Guard | 皇家隊長／皇家衛兵 | Fruma 的王室部隊 |
 | House Thalas / Nasin | Thalas 家 / Nasin 家 | 家族名保留原文 |
 | the Cursed One | 受詛者 | 同 `the Cursed`。`A New Beginning` 起，玩家自己就是被通緝的那一個 |
 | Leaves in the Wind | 風中之葉 | Syndra 的反抗組織。`the Leaves` 也用同一個名字，別簡稱成「葉子」 |
@@ -259,9 +263,17 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Rex | 沒耐性、防備心重 | 短句、反問、常常話說一半就「算了」。她的刺是怕，不是壞 |
 | Mora | 溫厚的長輩 | 有點文氣，笑聲寫成「呵呵」，稱新人「小葉子」 |
 | Sui | 怯生生 | 句子短、常有「呃」，說完自己又收回去。Mora 的妹妹 |
+| Dr. Picard | 亢奮的學者 | 已列於上。他叫玩家「助手」，那是他一廂情願封的 |
+| Caid | 嘴硬、心虛 | 講話跳、愛辯解，被戳破就轉移話題。他的船是他唯一的驕傲 |
+| Reynauld | 話少、疲憊 | 已列於上。他在 Fruma 是收賄的軍官，這件事解釋了他為什麼那麼冷 |
+| Yahya | 嚴重口吃 | 與 Zeph 同一套處理：重複首字加頓號。他怕蜘蛛怕到說不出完整句子 |
+| Ope | 油腔滑調 | 一直在推銷、一直在賴帳。但他是 Alvin 鎮長的外甥，母親被蜘蛛害死 |
+| Mayor Alvin | 溫和、疲憊的長輩 | 講 Ope 的時候要留住那份護短又無奈 |
+| Captain Ragon | 教官 | 條理分明、講解式的句子。他是在上課 |
+| Admiral Aegis | 上將 | 威嚴但不擺架子，會誇人 |
 | Kaio | 看透了的老人 | 鄉音重、字句吞得多（`ain't`、`'n`、`nabbin'`），偶爾帶髒字。他講 Aledar 那一段是整個任務的重心 |
 
-已翻的任務可以直接當範本：`King's Recruit`（開場，124 句）、`Queen's Recruit`（Fruma 篇，673 句）、`A New Beginning`（289 句）、`Cook Assistant`、
+已翻的任務可以直接當範本：`King's Recruit`（開場，124 句）、`Queen's Recruit`（Fruma 篇，673 句）、`A New Beginning`（289 句）、`Recover the Past`（264 句）、`Cook Assistant`、
 `Clearing the Camps`。
 
 ---

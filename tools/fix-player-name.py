@@ -30,7 +30,10 @@ QUESTS = Path("src/main/resources/assets/wynnchayuan/translations/quest")
 
 RULES = [
     # 逗號前面有空白：名字被吃掉了，補在逗號前
-    (re.compile(r"(\S) ,"), r"\1 {u},"),
+    # 一定要卡「逗號前面是句末標點」。只要求「逗號前有空白」會誤判——
+    # `my weapon only uses , right?` 少的是<b>元素名</b>不是玩家名字，
+    # 補上 {u} 等於把譯文寫錯。少補幾條沒關係，補錯不行。
+    (re.compile(r"([.!?]) ,"), r"\1 {u},"),
     # 逗號後面緊接著標點
     (re.compile(r", (?=[.!?])"), ", {u}"),
     # 兩個標點中間空一格
