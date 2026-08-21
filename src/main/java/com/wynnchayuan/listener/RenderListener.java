@@ -75,29 +75,25 @@ public final class RenderListener {
             if (original == null || original.isEmpty()) {
                 return;
             }
-            List<Component> out = new java.util.ArrayList<>(original.size());
-            boolean any = false;
-            // 置中與靠左要看整塊才分得出來，見 BlockLayout
-            boolean[] centered = com.wynnchayuan.translate.BlockLayout.centered(original);
-            for (int i = 0; i < original.size(); i++) {
-                Component line = original.get(i);
-                Component translated = LineTranslator.translate(
-                        StyledText.fromComponent(line), WynnChaYuan.translations(),
-                        centered[i]);
-                if (translated != null) {
-                    any = true;
-                    out.add(translated);
-                } else {
-                    out.add(line);             // 沒翻到就保留原文，不要留空行
-                }
-            }
-            if (any) {
+            // 跟側邊面板<b>完全同一套</b>，包含跨行查表。先前這裡自己寫了一個
+            // 逐行迴圈，Major ID 與技能敘述那種一整段的原文永遠查不到，
+            // 於是同一件物品在面板模式有中文、在就地取代模式沒有。
+            List<Component> out = com.wynnchayuan.render.TooltipPanel
+                    .translateInPlace(original, WynnChaYuan.translations());
+            if (!out.isEmpty()) {
                 event.setTooltips(out);
                 WynnChaYuan.store().noteEvent("tooltip.replaced");
             }
         } catch (Throwable t) {
             WynnChaYuan.store().noteEvent("render.replaceError");
+            com.wynnchayuan.translate.ErrorDebug.note("tooltip.replace", firstLine(event), t);
         }
+    }
+
+    /** 出事時記一下當時在處理哪件物品，光有堆疊很難重現。 */
+    private static String firstLine(ItemTooltipRenderEvent.Pre event) {
+        List<Component> lines = event.getTooltips();
+        return lines == null || lines.isEmpty() ? null : lines.get(0).getString();
     }
 
     /**
@@ -121,6 +117,8 @@ public final class RenderListener {
         } catch (Throwable t) {
             // 渲染路徑上出錯絕不能讓遊戲崩潰，最多就是這一幀沒畫出面板
             WynnChaYuan.store().noteEvent("render.tooltipError");
+            com.wynnchayuan.translate.ErrorDebug.note("tooltip.panel",
+                    tooltip.isEmpty() ? null : tooltip.get(0).getString(), t);
         }
     }
 

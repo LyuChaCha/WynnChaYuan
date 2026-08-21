@@ -346,8 +346,20 @@ public final class LineTranslator {
      */
     public static Component translate(StyledText line, TranslationStore store,
                                       boolean centered) {
+        return translate(line, store, centered, true);
+    }
+
+    /**
+     * @param sharedColumn 這一行的數值站在整份 tooltip <b>共用的</b>對齊欄上。
+     *                     見 {@link BlockLayout#valueColumns}。只有真正的欄位
+     *                     才值得補償寬度差；不是欄位卻補了，中文標籤一短就會
+     *                     生出一大塊空白，看起來跟沒翻譯時一樣寬。
+     */
+    public static Component translate(StyledText line, TranslationStore store,
+                                      boolean centered, boolean sharedColumn) {
         Component whole = translateWholeLine(line, store, centered);
-        return whole != null ? whole : translateSegments(line, store, centered);
+        return whole != null ? whole
+                : translateSegments(line, store, centered, sharedColumn);
     }
 
     /**
@@ -367,7 +379,7 @@ public final class LineTranslator {
      * 對「標籤 + 數值」這種結構沒有影響，也正是物品 tooltip 的主要形態。
      */
     private static Component translateSegments(StyledText line, TranslationStore store,
-                                               boolean centered) {
+                                               boolean centered, boolean sharedColumn) {
         // 先把每個片段翻好，不急著組裝——寬度要等整行都翻完才量得準。
         List<Piece> pieces = new ArrayList<>();
         boolean any = false;
@@ -426,7 +438,7 @@ public final class LineTranslator {
         // 一起，第二欄則被推過頭。要看的是<b>交界那個位置</b>本身。
         int boundary = findAlignPoint(pieces);
         if (boundary >= 0 && !pieces.get(boundary).isSpace()
-                && hasColumnGap(pieces, boundary)) {
+                && hasColumnGap(pieces, boundary, sharedColumn)) {
             pieces.add(boundary, Piece.space(0,
                     SpaceOffset.styleFor(pieces.get(boundary).style())));
         }
@@ -668,6 +680,10 @@ public final class LineTranslator {
      * 那種本來就是欄位，呼叫端直接用。
      */
     static boolean hasColumnGap(List<Piece> pieces, int boundary) {
+        return hasColumnGap(pieces, boundary, true);
+    }
+
+    static boolean hasColumnGap(List<Piece> pieces, int boundary, boolean sharedColumn) {
         int spaces = 0;
         // 交界前那一段的尾端空白
         for (int i = boundary - 1; i >= 0; i--) {
@@ -703,7 +719,10 @@ public final class LineTranslator {
         //
         // 用「數值以正負號開頭」把它跟「Emerald Pouch [Tier 8]」分開：
         // 詞條的數值一定帶正負號，接在名稱後面的標籤則不會。
-        return spaces >= 1 && startsWithSign(pieces, boundary);
+        // 只剩一個空格時，得要整份 tooltip 真的有一個欄位落在這個 x 上才算數。
+        // 否則每一條「標籤: +數值」都會被當成欄位去補償，中文標籤短，
+        // 補出來就是一大塊空白。
+        return sharedColumn && spaces >= 1 && startsWithSign(pieces, boundary);
     }
 
     private static boolean startsWithSign(List<Piece> pieces, int boundary) {

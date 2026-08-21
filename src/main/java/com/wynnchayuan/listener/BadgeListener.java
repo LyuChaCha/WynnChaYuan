@@ -72,6 +72,7 @@ public final class BadgeListener {
         } catch (Throwable t) {
             // 這只是裝飾。名牌每幀會跑好幾次，出事絕不能拖垮畫面
             WynnChaYuan.store().noteEvent("render.badgeError");
+            com.wynnchayuan.translate.ErrorDebug.note("nametag.badge", null, t);
         }
     }
 }
