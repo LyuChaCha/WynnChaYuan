@@ -30,6 +30,10 @@ public final class LineDebug {
 
     private static Path file;
     private static int written = 0;
+    private static int layouts = 0;
+
+    /** 版面判斷自己的額度，見 {@link #layout}。 */
+    private static final int LAYOUT_LIMIT = 8;
     private static StringBuilder buffer = new StringBuilder();
 
     /**
@@ -59,12 +63,14 @@ public final class LineDebug {
      * 而我已經在這裡猜錯過兩次。所以把判斷的中間值直接寫出來。
      */
     public static void layout(String detail) {
-        if (file == null || written >= LIMIT || !WynnChaYuan.config().collect()
+        // 自己一份額度。跟逐行診斷搶同一個 LIMIT 的話，滑過幾個 tooltip 就被
+        // 佔滿，真正要看的那一份 tooltip 反而一筆都沒寫到。
+        if (file == null || layouts >= LAYOUT_LIMIT || !WynnChaYuan.config().collect()
                 || !seen.add("layout:" + detail)) {
             return;
         }
-        written++;
-        buffer.append("=== ").append(written).append(" · 版面判斷 ===")
+        layouts++;
+        buffer.append("=== 版面判斷 ").append(layouts).append(" ===")
               .append(System.lineSeparator())
               .append(detail).append(System.lineSeparator());
         flush();

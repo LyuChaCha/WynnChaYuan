@@ -186,27 +186,27 @@ public final class BlockLayout {
         if (end - start < 2) {
             return false;
         }
-        int widest = 0;
         int minLead = Integer.MAX_VALUE;
         int maxLead = Integer.MIN_VALUE;
+        int minSpan = Integer.MAX_VALUE;
+        int maxSpan = Integer.MIN_VALUE;
         for (int i = start; i < end; i++) {
-            widest = Math.max(widest, lead[i] + content[i]);
             minLead = Math.min(minLead, lead[i]);
             maxLead = Math.max(maxLead, lead[i]);
+            // 置中的行，左右留白一樣寬，所以「本行內容 + 兩側留白」就是整塊的寬度。
+            // 每一行算出來的這個值都該相同——這比「拿最寬的那行當基準」穩：
+            // 只要有一行的寬度量得不準，當基準就會把整塊都帶歪。
+            int span = content[i] + lead[i] * 2;
+            minSpan = Math.min(minSpan, span);
+            maxSpan = Math.max(maxSpan, span);
         }
         // 縮排完全沒變化的話，這一塊「置中」與「靠左」畫出來一模一樣，
         // 當靠左最安全。這條也擋掉窄區塊的誤判：兩行只差十幾像素時，
         // 光靠容差會讓「縮排都是 0」剛好符合置中算式。
-        if (widest <= 0 || maxLead - minLead <= TOLERANCE) {
+        if (maxSpan <= 0 || maxLead - minLead <= TOLERANCE) {
             return false;
         }
-        for (int i = start; i < end; i++) {
-            int expected = (widest - content[i]) / 2;
-            if (Math.abs(lead[i] - expected) > TOLERANCE) {
-                return false;      // 有一行對不上，這個縮排就不是為了置中
-            }
-        }
-        return true;
+        return maxSpan - minSpan <= TOLERANCE * 2;
     }
 
     /**

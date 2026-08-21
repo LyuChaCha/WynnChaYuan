@@ -24,7 +24,9 @@ public final class TranslationStoreTest {
                  "entries": {
                   "a1": { "src": "Drastically increase the\nspeed of your Meteor ability.",
                           "dst": "大幅增加 Meteor 技能的\n速度。", "role": "desc" },
-                  "a2": { "src": "Shooting Star", "dst": "流星", "role": "name" }
+                  "a2": { "src": "Shooting Star", "dst": "流星", "role": "name" },
+                  "a3": { "src": "Allies within {~} blocks gain {~} of the health you gain from Health Regen and Life Steal.",
+                          "dst": "{~} 格內的友軍會獲得你從生命回復與生命竊取所得的 {~} 生命", "role": "desc" }
                  }
                 }""");
             write(dir, "gear-weapon.json", """
@@ -40,7 +42,7 @@ public final class TranslationStoreTest {
 
             // 跨行條目：技能說明的原文本來就是一整段，逐行查表永遠對不上。
             // 呼叫端要靠 maxBlockLines 才知道該把幾行併起來試。
-            check("認得出最長的跨行條目有兩行", store.maxBlockLines() == 2);
+            check("認得出最長的跨行條目有兩行", store.maxBlockLines() >= 2);
             check("整段查得到",
                     "大幅增加 Meteor 技能的\n速度。".equals(store.lookup(
                             "Drastically increase the\nspeed of your Meteor ability.")));
@@ -53,6 +55,18 @@ public final class TranslationStoreTest {
 
             store.setTranslateNames(true);
             check("開啟後裝備名稱恢復", "偶像".equals(store.lookup("Idol")));
+
+            // 長敘述在遊戲裡是依畫面寬度自動斷行的，斷點取決於玩家的設定；
+            // 語料存的是完整一句。差別只在空白，所以正規化之後就對得上。
+            String wrapped = "Allies within {~} blocks gain {~} of the\n"
+                    + "health you gain from Health Regen and Life Steal.";
+            check("斷行位置不同也查得到",
+                    store.lookupFlat(wrapped) != null);
+            check("正規化不會誤中短詞", store.lookupFlat("Idol") == null);
+
+            // 這種條目在語料裡是「一行」，maxBlockLines 對它一無所知——
+            // 呼叫端要靠它決定把幾行併起來試，回報 1 的話就永遠不會試。
+            check("有攤平索引時，掃描行數要放大", store.maxBlockLines() >= 4);
         } finally {
             delete(dir);
         }
