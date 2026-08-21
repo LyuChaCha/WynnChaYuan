@@ -26,7 +26,13 @@ import java.util.Optional;
  */
 public final class LineDebug {
 
-    private static final int LIMIT = 40;
+    /**
+     * 最多記幾行。
+     *
+     * <p>從 40 加到 120：一份裝備 tooltip 就吃掉三十幾筆，玩家滑過兩件裝備之後
+     * 額度就滿了，真正要看的技能樹一行都排不進來——連續四次回報都是這樣。
+     */
+    private static final int LIMIT = 120;
 
     private static Path file;
     private static int written = 0;

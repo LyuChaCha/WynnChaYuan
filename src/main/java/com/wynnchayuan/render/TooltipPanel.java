@@ -65,23 +65,8 @@ public final class TooltipPanel {
         int screenH = graphics.guiHeight();
         int gap = WynnChaYuan.config().panelGap();
 
-        // 譯文可能比原文寬得多（技能說明尤其明顯）。不設上限的話面板會一路長到
-        // 畫面外，被 Minecraft 自己的邊界處理攔下來重排，文字就疊在一起了。
-        //
-        // 折行交給 Font.split：它認得樣式與字型，折出來的每一段都保留原本的顏色。
-        List<FormattedCharSequence> wrapped = new ArrayList<>();
-        int limit = Math.max(MIN_PANEL_WIDTH, screenW * MAX_PANEL_PERCENT / 100);
-        for (Component line : lines) {
-            List<FormattedCharSequence> parts = mc.font.split(line, limit);
-            if (parts.isEmpty()) {
-                wrapped.add(FormattedCharSequence.EMPTY);   // 空行要留著，那是分段
-            } else {
-                wrapped.addAll(parts);
-            }
-        }
-
-        int panelW = widthOf(mc, wrapped) + 8;  // 8 = tooltip 左右內距
-        int panelH = wrapped.size() * 10 + 8;
+        int panelW = width(mc, lines) + 8;      // 8 = tooltip 左右內距
+        int panelH = lines.size() * 10 + 8;
 
         int x;
         int y;
@@ -108,7 +93,8 @@ public final class TooltipPanel {
         x = Math.max(0, Math.min(x, Math.max(0, screenW - panelW)));
         y = Math.max(0, Math.min(y, Math.max(0, screenH - panelH)));
 
-        List<ClientTooltipComponent> components = wrapped.stream()
+        List<ClientTooltipComponent> components = lines.stream()
+                .map(Component::getVisualOrderText)
                 .map(ClientTooltipComponent::create)
                 .toList();
 
@@ -173,19 +159,9 @@ public final class TooltipPanel {
         return anyTranslated ? out : List.of();
     }
 
-    /** 面板最寬佔畫面的百分之幾。再寬就把原文擠出畫面了。 */
-    private static final int MAX_PANEL_PERCENT = 38;
-
-    /** 畫面很窄時的下限，免得折成一個字一行。 */
-    private static final int MIN_PANEL_WIDTH = 160;
-
-    private static int widthOf(Minecraft mc, List<FormattedCharSequence> lines) {
-        int max = 0;
-        for (FormattedCharSequence line : lines) {
-            max = Math.max(max, mc.font.width(line));
-        }
-        return max;
-    }
+    // 曾經在這裡用 Font.split 把過寬的面板折行，但那會把 Nori、Wynnpool 那類
+    // 模組畫的<b>進度條</b>拆掉——那些條是一整串排版符號，中間斷開就散了。
+    // 譯文過寬要處理，但不能用「照寬度硬折」這種對內容一無所知的做法。
 
     private static int width(Minecraft mc, List<Component> lines) {
         int max = 0;
