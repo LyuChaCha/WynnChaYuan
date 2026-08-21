@@ -54,7 +54,8 @@ def quest_of(ctx: str) -> str:
     parts.pop(0)
     if parts and parts[0] == "choices":
         parts.pop(0)
-    return " ".join(parts)
+    # 任務名稱後面用 # 接說話的 NPC，換成中點比較好讀
+    return " ".join(parts).replace("#", " · ")
 
 
 def main() -> None:

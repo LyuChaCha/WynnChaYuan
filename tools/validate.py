@@ -39,6 +39,9 @@ PLACEHOLDERS = ("{#}", "{~}", "{p}", "{u}")
 # 看起來想寫佔位符但寫錯的樣子。這種錯在遊戲裡會原樣顯示出來。
 BAD_PLACEHOLDER = re.compile(r"[｛{]\s*[#~pu]\s*[｝}]")
 
+# 帶編號的數值佔位符：{~1} 到 {~9}。指名要原文的第幾個數值。
+NUMBERED = re.compile(r"\{~[1-9]\}")
+
 
 def load_glossary() -> dict[str, str]:
     """讀 GLOSSARY.md 裡的對照表。
@@ -110,8 +113,15 @@ def check_pair(path: str, key: str, src: str, dst: str,
 
     # 佔位符：數量必須一模一樣。少一個 -> 遊戲裡那個數字／符號會憑空消失；
     # 多一個 -> 會有多餘的符號被塞進去或直接顯示成 {~}
+    numbered = len(NUMBERED.findall(dst))
     for ph in PLACEHOLDERS:
         want, got = src.count(ph), dst.count(ph)
+        if ph == "{~}":
+            # 帶編號的 {~1} 指名要第幾個數值，中文語序跟英文相反時會用到。
+            # 它不算「消耗一個」，所以只要「沒編號的 + 帶編號的」湊得出來就行。
+            if got + numbered >= want and got <= want:
+                continue
+            got += numbered
         if want != got:
             out.append(Problem("error", path, key,
                                f"佔位符 {ph} 數量不符：原文 {want} 個，譯文 {got} 個"))

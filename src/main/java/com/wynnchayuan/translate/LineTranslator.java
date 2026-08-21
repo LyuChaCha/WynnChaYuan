@@ -111,7 +111,7 @@ public final class LineTranslator {
             translated = wrapToBlock(translated, run);
         }
         String[] dst = translated.split("\n", -1);
-        List<Component> built = rebuildAll(dst, parts, extra);
+        List<Component> built = rebuildAll(dst, parts, extra, store);
         if (built == null) {
             return null;                       // 佔位符對不上，整段放棄
         }
@@ -182,10 +182,23 @@ public final class LineTranslator {
      * 找不到就回傳空的，那一段照主樣式畫，不會比現在更糟。
      */
     private static List<LineParts.Piece> labelAccent(String label, LineParts first) {
-        if (label.isBlank() || first.accents().isEmpty()) {
+        // 前面的 ✦ 或 {#} 要拿掉再比對。{#} 在重建時是<b>獨立的一個 token</b>，
+        // 連著它一起比對永遠對不上，名稱的顏色就這樣掉了。
+        String core = label;
+        while (!core.isEmpty()) {
+            if (core.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+                core = core.substring(GlyphSplitter.GLYPH_PLACEHOLDER.length());
+            } else if (Character.isWhitespace(core.charAt(0))
+                    || isDecoration(core.codePointAt(0))) {
+                core = core.substring(Character.charCount(core.codePointAt(0)));
+            } else {
+                break;
+            }
+        }
+        if (core.isBlank() || first.accents().isEmpty()) {
             return List.of();
         }
-        return List.of(new LineParts.Piece(label, first.accents().get(0).style()));
+        return List.of(new LineParts.Piece(core, first.accents().get(0).style()));
     }
 
     /** 「名稱：說明」的名稱最長到這裡。再長就不像標題了。 */
@@ -889,7 +902,7 @@ public final class LineTranslator {
         if (hit == null) {
             return null;
         }
-        Component rebuilt = rebuild(hit, parts);
+        Component rebuilt = rebuild(hit, parts, store);
         if (rebuilt == null) {
             return null;
         }
@@ -917,7 +930,7 @@ public final class LineTranslator {
         if (translated == null || translated.isBlank()) {
             return null;
         }
-        Component rebuilt = rebuild(translated, parts);
+        Component rebuilt = rebuild(translated, parts, store);
         if (rebuilt == null) {
             return null;
         }
@@ -1184,8 +1197,9 @@ public final class LineTranslator {
 
     // ------------------------------------------------------------ 內部
 
-    private static Component rebuild(String translated, LineParts parts) {
-        List<Component> one = rebuildAll(new String[] {translated}, List.of(parts));
+    private static Component rebuild(String translated, LineParts parts,
+                                     TranslationStore store) {
+        List<Component> one = rebuildAll(new String[] {translated}, List.of(parts), List.of(), store);
         return one == null ? null : one.get(0);
     }
 
@@ -1203,12 +1217,9 @@ public final class LineTranslator {
      *
      * @return 譯好的每一行；佔位符數量對不上時回傳 {@code null}
      */
-    private static List<Component> rebuildAll(String[] translated, List<LineParts> parts) {
-        return rebuildAll(translated, parts, List.of());
-    }
-
     private static List<Component> rebuildAll(String[] translated, List<LineParts> parts,
-                                              List<LineParts.Piece> extraAccents) {
+                                              List<LineParts.Piece> extraAccents,
+                                              TranslationStore store) {
         List<LineParts.Piece> glyphs = new ArrayList<>();
         List<LineParts.Piece> places = new ArrayList<>();
         List<LineParts.Piece> numbers = new ArrayList<>();
@@ -1227,6 +1238,7 @@ public final class LineTranslator {
         long wantPlaces = 0;
         long wantNumbers = 0;
         long wantUsers = 0;
+        int numbered = 0;
         for (String line : translated) {
             List<Token> tokens = tokenize(line);
             lines.add(tokens);
@@ -1234,14 +1246,27 @@ public final class LineTranslator {
                 switch (token.kind()) {
                     case GLYPH -> wantGlyphs++;
                     case PLACE -> wantPlaces++;
-                    case NUMBER -> wantNumbers++;
+                    case NUMBER -> {
+                        if (token.index() == 0) {
+                            wantNumbers++;      // 照順序取的才算消耗
+                        } else {
+                            numbered = Math.max(numbered, token.index());
+                        }
+                    }
                     case USER -> wantUsers++;
                     default -> { }
                 }
             }
         }
+        // 數值的數量必須剛好——少一個那個數字會憑空消失。
+        //
+        // 例外是譯文用了 {~1} 這種<b>指名</b>要第幾個的寫法：指名之後重複用、
+        // 跳過某一個都合理，只要指到的號碼真的存在。
+        boolean numbersOk = numbered == 0
+                ? wantNumbers == numbers.size()
+                : wantNumbers <= numbers.size() && numbered <= numbers.size();
         if (wantGlyphs != glyphs.size() || wantPlaces != places.size()
-                || wantNumbers != numbers.size() || wantUsers != users.size()) {
+                || !numbersOk || wantUsers != users.size()) {
             return null;              // 譯者刪了或多加了佔位符，整段放棄
         }
 
@@ -1268,7 +1293,12 @@ public final class LineTranslator {
                         line.append(literal(piece.text(), forDisplay(piece.style())));
                     }
                     case NUMBER -> {
-                        LineParts.Piece piece = numbers.get(number++);
+                        // 帶編號的直接指名要第幾個，沒編號的照順序取下一個
+                        int at = token.index() > 0 ? token.index() - 1 : number++;
+                        if (at < 0 || at >= numbers.size()) {
+                            return null;
+                        }
+                        LineParts.Piece piece = numbers.get(at);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
                     }
                     case USER -> {
@@ -1277,7 +1307,7 @@ public final class LineTranslator {
                         line.append(literal(piece.text(), forDisplay(piece.style())));
                     }
                     case TEXT -> appendText(line, token.text(), textStyle,
-                                            accents, usedAccent);
+                                            accents, usedAccent, store);
                 }
             }
             out.add(line);
@@ -1303,7 +1333,8 @@ public final class LineTranslator {
      * 分不出該貼哪一個，貼錯位置比沒有樣式更糟。
      */
     private static void appendText(MutableComponent out, String text, Style base,
-                                   List<LineParts.Piece> accents, boolean[] used) {
+                                   List<LineParts.Piece> accents, boolean[] used,
+                                   TranslationStore store) {
         int from = 0;
         while (from < text.length()) {
             int at = -1;
@@ -1325,6 +1356,16 @@ public final class LineTranslator {
                     which = k;
                 }
             }
+            // 技能名稱：語料裡只翻一次，所有提到它的敘述自動跟著換
+            TranslationStore.Term term = store == null ? null : store.findTerm(text, from);
+            if (term != null && (at < 0 || term.start() < at)) {
+                if (term.start() > from) {
+                    out.append(literal(text.substring(from, term.start()), base));
+                }
+                out.append(literal(term.translation(), base));
+                from = term.end();
+                continue;
+            }
             if (at < 0) {
                 out.append(literal(text.substring(from), base));
                 return;
@@ -1333,7 +1374,10 @@ public final class LineTranslator {
                 out.append(literal(text.substring(from, at), base));
             }
             LineParts.Piece accent = accents.get(which);
-            out.append(literal(accent.text(), forDisplay(accent.style())));
+            // 帶樣式的那一段如果剛好是個技能名稱，樣式與譯名兩個都要
+            String shown = store == null ? null : store.lookupTerm(accent.text());
+            out.append(literal(shown != null ? shown : accent.text(),
+                               forDisplay(accent.style())));
             used[which] = true;
             from = at + accent.text().length();
         }
@@ -1358,7 +1402,32 @@ public final class LineTranslator {
 
     private enum Kind { TEXT, GLYPH, PLACE, NUMBER, USER }
 
-    private record Token(Kind kind, String text) {}
+    /**
+     * @param index 指定要原文的第幾個數值（從 1 起）；{@code 0} 表示照順序取下一個
+     */
+    private record Token(Kind kind, String text, int index) {
+        Token(Kind kind, String text) {
+            this(kind, text, 0);
+        }
+    }
+
+    /** {@code {~N}} 的長度：左括號、波浪、一位數字、右括號。 */
+    private static final int NUMBERED_LENGTH = 4;
+
+    /**
+     * {@code template} 的 {@code at} 位置是不是 {@code {~1}} 這種帶編號的佔位符。
+     *
+     * @return 編號（1–9）；不是的話回傳 0
+     */
+    private static int numberedAt(String template, int at) {
+        if (at + NUMBERED_LENGTH > template.length()
+                || template.charAt(at) != '{' || template.charAt(at + 1) != '~'
+                || template.charAt(at + 3) != '}') {
+            return 0;
+        }
+        char digit = template.charAt(at + 2);
+        return digit >= '1' && digit <= '9' ? digit - '0' : 0;
+    }
 
     /** 把模板切成「文字 / 符號 / 地名 / 數值 / 玩家名」的序列。 */
     private static List<Token> tokenize(String template) {
@@ -1383,6 +1452,12 @@ public final class LineTranslator {
                 flush(text, out);
                 out.add(new Token(Kind.NUMBER, number));
                 i += number.length();
+            } else if (numberedAt(template, i) > 0) {
+                // {~1} {~2}：指定要原文的第幾個數值。中文語序常常跟英文相反，
+                // 「+2 to 10%」翻成「最多 10%，最少 +2」就需要調換。
+                flush(text, out);
+                out.add(new Token(Kind.NUMBER, "", numberedAt(template, i)));
+                i += NUMBERED_LENGTH;
             } else if (template.startsWith(user, i)) {
                 flush(text, out);
                 out.add(new Token(Kind.USER, user));
