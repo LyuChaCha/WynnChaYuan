@@ -58,29 +58,6 @@ public final class LineDebug {
     }
 
     /**
-     * 記錄「這一份 tooltip 哪幾行判成置中」。
-     *
-     * <p>置中判斷失敗時，畫面上只看得到「沒有跟著置中」，看不出是<b>哪一步</b>
-     * 出錯：分段切錯、寬度量錯、還是算式差了幾像素。這三種的修法完全不同，
-     * 而我已經在這裡猜錯過兩次。所以把判斷的中間值直接寫出來。
-     */
-    public static void layout(String detail) {
-        // 自己一份額度。跟逐行診斷搶同一個 LIMIT 的話，滑過幾個 tooltip 就被
-        // 佔滿，真正要看的那一份 tooltip 反而一筆都沒寫到。
-        // 刻意<b>不</b>看收集開關。這是繪製診斷不是語料收集——想回報版面問題的人
-        // 沒有理由得先打開收集。上一份回報就是這樣空的：收集是關的，
-        // 於是最需要的那段輸出一筆都沒有。額度只有 8 筆又會去重，寫不爆。
-        if (file == null || layouts >= LAYOUT_LIMIT || !seen.add("layout:" + detail)) {
-            return;
-        }
-        layouts++;
-        buffer.append("=== 版面判斷 ").append(layouts).append(" ===")
-              .append(System.lineSeparator())
-              .append(detail).append(System.lineSeparator());
-        flush();
-    }
-
-    /**
      * 記錄逐片段那條路的中間狀態。
      *
      * <p>只看最後的 Component 不夠：間隔「完全消失」與「補太少」在畫面上

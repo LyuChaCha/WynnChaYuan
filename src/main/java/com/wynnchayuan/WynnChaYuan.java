@@ -75,6 +75,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.render.Boxes.init(dir.resolve("overlay-debug.txt"));
         com.wynnchayuan.render.ThirdPartySections.load(dir);
         com.wynnchayuan.translate.LineDebug.init(dir.resolve("line-debug.txt"));
+        com.wynnchayuan.translate.LayoutDebug.init(dir.resolve("layout-debug.txt"));
 
         // 譯文放在 config/wynnchayuan/translations/ 下，格式與 corpus/workspace 相同，
         // 所以離線語料與遊戲內收集的內容可以直接混放。
