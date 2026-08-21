@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Pit of the Dead (Quest)",
   "count": 12,
-  "translated": 0,
+  "translated": 12,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Pit of the Dead (Quest)#000": {
    "src": "Talk to Merloni in {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 {p} 找 Merloni，座標 [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -18,7 +18,7 @@
   },
   "Pit of the Dead (Quest)#001": {
    "src": "Would you like to hear the tale of the pit of the dead?",
-   "dst": "",
+   "dst": "想聽聽亡者之坑的故事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -28,7 +28,7 @@
   },
   "Pit of the Dead (Quest)#002": {
    "src": "It is the pit where the corpses of the poor miners who discovered the Portal by the {p} are buried.",
-   "dst": "",
+   "dst": "那個坑裡埋的，是當年在 {p} 旁發現傳送門的那些可憐礦工。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -38,7 +38,7 @@
   },
   "Pit of the Dead (Quest)#003": {
    "src": "Those that had not already died had to be executed due to the insanity brought on from the corruption.",
-   "dst": "",
+   "dst": "沒當場死掉的，也因為腐化帶來的瘋狂而不得不被處決。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -48,7 +48,7 @@
   },
   "Pit of the Dead (Quest)#004": {
    "src": "Their spirits still haunt the grave and infect the minds of people who disturb them. It isn't pretty.",
-   "dst": "",
+   "dst": "他們的魂魄至今仍徘徊在那片墳地，侵蝕每個驚擾他們的人的心智。那畫面並不好看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -58,7 +58,7 @@
   },
   "Pit of the Dead (Quest)#005": {
    "src": "However, I heard rumours of those who were able to bathe in their waters and be accepted by them, to show no fear of the dead is to be admired.",
-   "dst": "",
+   "dst": "不過我聽過一些傳聞，說有人能浸入那片水中並被他們接納——對亡者毫無懼色，是值得敬佩的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -68,7 +68,7 @@
   },
   "Pit of the Dead (Quest)#006": {
    "src": "Maybe this shrine that I keep hearing about has something to do with it? It's apparently hidden deep inside the pit.",
-   "dst": "",
+   "dst": "或許我一直聽人提起的那座神龕跟這有關？據說就藏在坑的深處。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -78,7 +78,7 @@
   },
   "Pit of the Dead (Quest)#007": {
    "src": "Soldier, the pit is located south east of {p}, across the bridge behind us. I will write down the coordinates inside your quest book.",
-   "dst": "",
+   "dst": "士兵，那個坑在 {p} 的東南方，過了我們身後那座橋就是。我會把座標寫進你的任務書裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -88,7 +88,7 @@
   },
   "Pit of the Dead (Quest)#008": {
    "src": "Enter the pit. Learn it's mysteries, then come back to me.",
-   "dst": "",
+   "dst": "進去吧。弄清楚它的秘密，再回來找我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -98,7 +98,7 @@
   },
   "Pit of the Dead (Quest)#009": {
    "src": "Explore the pit at [{~}, {~}, -{~}] and find the shrine",
-   "dst": "",
+   "dst": "探索 [{~}, {~}, -{~}] 的深坑，找到神龕",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -108,7 +108,7 @@
   },
   "Pit of the Dead (Quest)#010": {
    "src": "Go back to {p} and tell Merloni that you succeeded",
-   "dst": "",
+   "dst": "回到 {p} 告訴 Merloni 你成功了",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -118,7 +118,7 @@
   },
   "Pit of the Dead (Quest)#011": {
    "src": "Very impressive! Here's your reward. I found it a while ago while walking around {p}. It probably fell off a skeleton!",
-   "dst": "",
+   "dst": "了不起！這是你的獎賞。我前陣子在 {p} 附近散步時撿到的，大概是從哪具骷髏身上掉下來的吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
