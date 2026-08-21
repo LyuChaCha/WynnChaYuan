@@ -114,13 +114,15 @@ public final class TooltipPanel {
      * （見 {@link LineTranslator#translateBlock}），逐行查表永遠查不到。
      * 由長到短試，讓涵蓋比較多行的條目優先——短的那些多半只是碰巧撞上。
      */
-    private static List<Component> translateLines(List<Component> tooltip, TranslationStore store) {
+    public static List<Component> translateLines(List<Component> tooltip, TranslationStore store) {
         int n = tooltip.size();
         List<Component> out = new ArrayList<>(n);
         boolean anyTranslated = false;
 
         // 置中與靠左在單獨一行上長得一模一樣，得看整塊才分得出來
         boolean[] centered = BlockLayout.centered(tooltip);
+        // 哪些行的數值真的站在共用的對齊欄上，見 BlockLayout.valueColumns
+        boolean[] columns = BlockLayout.valueColumns(tooltip);
 
         List<StyledText> styled = new ArrayList<>(n);
         for (Component line : tooltip) {
@@ -145,8 +147,8 @@ public final class TooltipPanel {
                 i += used;
                 continue;
             }
-            Component translated =
-                    LineTranslator.translate(styled.get(i), store, centered[i]);
+            Component translated = LineTranslator.translate(
+                    styled.get(i), store, centered[i], columns[i]);
             if (translated != null) {
                 anyTranslated = true;
                 out.add(translated);
@@ -157,6 +159,20 @@ public final class TooltipPanel {
         }
         // 一行都沒翻到就別畫了，不然只是把原文再灰色複製一遍
         return anyTranslated ? out : List.of();
+    }
+
+    /**
+     * 就地取代要用的版本：翻得到就換掉，翻不到的行<b>保留原文</b>。
+     *
+     * <p>與面板走的是同一套 {@link #translateLines}。先前就地取代自己寫了一個
+     * 逐行迴圈，<b>沒有跨行查表</b>——Major ID 與技能敘述那類原文本來就是一整段，
+     * 逐行永遠查不到，於是面板模式看得到中文、就地取代看到的還是英文。
+     * 同一份語料兩種結果，那是最難查的一種問題。
+     */
+    public static List<Component> translateInPlace(List<Component> tooltip,
+                                                   TranslationStore store) {
+        List<Component> translated = translateLines(tooltip, store);
+        return translated.isEmpty() ? List.of() : translated;
     }
 
     // 曾經在這裡用 Font.split 把過寬的面板折行，但那會把 Nori、Wynnpool 那類
