@@ -1,0 +1,53 @@
+# 任務對話合併成模組讀的那一份。
+#
+# 為什麼要自動做
+# --------------
+# 譯者改的是 translations/quest/ 底下一個任務一個檔——那是給人看的形態。
+# 模組讀的是合併後的 quest-dialogue.json，因為譯文是啟動時一個一個抓下來的，
+# 157 個檔就是 157 次連線。
+#
+# 但譯者多半在 GitHub 網頁上直接改，手邊沒有 Python，沒辦法自己重新產生。
+# 要求他們做，等於把每個翻譯 PR 都變成紅燈——實際發生過。
+#
+# 所以合併這件事由這裡做：合進 main 之後自動重新產生並提交。
+name: 重新產生任務對話合併檔
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/main/resources/assets/wynnchayuan/translations/quest/**'
+      - 'tools/quest-bundle.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 合併
+        run: |
+          python tools/quest-bundle.py
+          python tools/quest-index.py
+
+      - name: 有變動才提交
+        run: |
+          if git diff --quiet; then
+            echo "沒有變動。"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "重新產生任務對話合併檔與認領清單
+
+          由 rebuild-quest-bundle 工作流程自動提交。"
+          git push
