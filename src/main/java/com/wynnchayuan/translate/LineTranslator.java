@@ -1286,7 +1286,8 @@ public final class LineTranslator {
         // 接回原文的「: 」會讓半形冒號混進整片全形的面板裡，寬度也不一樣。
         // 換成全形的，後面同樣不留空白。
         if (isTrailingColon(suffix.charAt(0)) && suffix.substring(1).isBlank()) {
-            return isFullWidthPunctuation(last) ? "" : "：";
+            // 譯文自己已經帶了冒號（不管全形半形）就不要再補一個
+            return isFullWidthPunctuation(last) || isTrailingColon(last) ? "" : "：";
         }
         return suffix;
     }
