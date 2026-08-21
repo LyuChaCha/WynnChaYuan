@@ -1,14 +1,14 @@
 {
  "_meta": {
   "quest": "Supply and Delivery",
-  "count": 76,
-  "translated": 0,
+  "count": 77,
+  "translated": 76,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Supply and Delivery#000": {
    "src": "Talk to Ope in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~}, {~}, -{~}] 的 {p} 跟 Ope 談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -18,7 +18,7 @@
   },
   "Supply and Delivery#001": {
    "src": "Oh, man... What am I going to do now...",
-   "dst": "",
+   "dst": "唉，天啊……我現在該怎麼辦……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -28,7 +28,7 @@
   },
   "Supply and Delivery#002": {
    "src": "O-oh! H-hello soldier! Wow, what a coincidence that we're both here... in {p}... today...",
-   "dst": "",
+   "dst": "哦、哦！你、你好啊士兵！哇，我們今天居然都在……在 {p}……真巧啊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -38,7 +38,7 @@
   },
   "Supply and Delivery#003": {
    "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefitted from. I got the plant, and you... well. You gained experience?",
-   "dst": "",
+   "dst": "幹嘛？別用那種眼神看我！我們那次交易完全公平，雙方都得利。我拿到了植物，而你……嗯。你得到了經驗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -48,7 +48,7 @@
   },
   "Supply and Delivery#004": {
    "src": "Look, alright, I get it! But I can't pay you back either way. The mayor sent me here to pick up a crate of supplies for the village.",
-   "dst": "",
+   "dst": "聽著，好啦，我懂！可是我怎麼樣都還不了你錢。鎮長派我來這裡領一箱給村子的補給。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -58,7 +58,7 @@
   },
   "Supply and Delivery#005": {
    "src": "The issue is... I've already run out of money on- uh, unrelated purchases. And even if I had the money, I couldn't buy the supply crate anyway...",
-   "dst": "",
+   "dst": "問題是……我的錢已經花在——呃，別的事情上了。而且就算我有錢，我也買不到那箱補給……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -68,7 +68,7 @@
   },
   "Supply and Delivery#006": {
    "src": "Those two over there who run the market banned me from ever using it after I tried to buy out the world's supplies of magical powders.",
-   "dst": "",
+   "dst": "那邊管市集的那兩個人，在我試圖把全世界的魔法粉末都掃光之後，就永久禁止我使用市集了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -78,7 +78,7 @@
   },
   "Supply and Delivery#007": {
    "src": "Look, it's not my fault I'm making big market moves. I'm just, you know- smarter than all these other folks!",
-   "dst": "",
+   "dst": "聽著，我在市場上做大動作又不是我的錯。我只是，你知道的——比這裡其他人都聰明！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -88,7 +88,7 @@
   },
   "Supply and Delivery#008": {
    "src": "... The point is. I could really use your help right now! I- I promise, I'll pay you back for it this time.",
-   "dst": "",
+   "dst": "……總之。我現在真的很需要你幫忙！我——我保證，這次我一定還你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -98,7 +98,7 @@
   },
   "Supply and Delivery#009": {
    "src": "All you need to do is go over to the Trade Market, and buy the supply crate for me. Please?",
-   "dst": "",
+   "dst": "你只要走到貿易市集，幫我把那箱補給買下來就好。拜託？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -108,7 +108,7 @@
   },
   "Supply and Delivery#010": {
    "src": "Oh, man... What am I going to do now...",
-   "dst": "",
+   "dst": "唉，天啊……我現在該怎麼辦……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -118,7 +118,7 @@
   },
   "Supply and Delivery#011": {
    "src": "O-oh! H-hello soldier! Wow, what a coincidence that we're both here... in {p}... today...",
-   "dst": "",
+   "dst": "哦、哦！你、你好啊士兵！哇，我們今天居然都在……在 {p}……真巧啊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -128,7 +128,7 @@
   },
   "Supply and Delivery#012": {
    "src": "What? Don't look at me like that! We had a perfectly fair interaction which we both benefitted from. I got the plant, and you... well. You gained experience?",
-   "dst": "",
+   "dst": "幹嘛？別用那種眼神看我！我們那次交易完全公平，雙方都得利。我拿到了植物，而你……嗯。你得到了經驗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -138,7 +138,7 @@
   },
   "Supply and Delivery#013": {
    "src": "Look, alright, I get it! But I can't pay you back either way. The mayor sent me here to pick up a crate of supplies for the village.",
-   "dst": "",
+   "dst": "聽著，好啦，我懂！可是我怎麼樣都還不了你錢。鎮長派我來這裡領一箱給村子的補給。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -148,7 +148,7 @@
   },
   "Supply and Delivery#014": {
    "src": "The issue is... I've already run out of money on- uh, unrelated purchases. And even if I had the money, I couldn't buy the supply crate anyway...",
-   "dst": "",
+   "dst": "問題是……我的錢已經花在——呃，別的事情上了。而且就算我有錢，我也買不到那箱補給……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -158,7 +158,7 @@
   },
   "Supply and Delivery#015": {
    "src": "Those two over there who run the market banned me from ever using it after I tried to buy out the world's supplies of magical powders.",
-   "dst": "",
+   "dst": "那邊管市集的那兩個人，在我試圖把全世界的魔法粉末都掃光之後，就永久禁止我使用市集了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -168,7 +168,7 @@
   },
   "Supply and Delivery#016": {
    "src": "Look, it's not my fault I'm making big market moves. I'm just, you know- smarter than all these other folks!",
-   "dst": "",
+   "dst": "聽著，我在市場上做大動作又不是我的錯。我只是，你知道的——比這裡其他人都聰明！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -178,7 +178,7 @@
   },
   "Supply and Delivery#017": {
    "src": "... What? They also banned you from the market?! Well, great. What are we supposed to do now?",
-   "dst": "",
+   "dst": "……什麼？他們連你也一起禁了？！這下好了。那我們現在該怎麼辦？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -188,7 +188,7 @@
   },
   "Supply and Delivery#018": {
    "src": "Well, do you have any other friends we could get involved? There was... that other soldier guy, right? His name was... Tim. Or something.",
-   "dst": "",
+   "dst": "那，你還有沒有別的朋友可以拉進來？就……那個另外一個當兵的，對吧？他叫……Tim。之類的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -198,7 +198,7 @@
   },
   "Supply and Delivery#019": {
    "src": "Look- alright, I get it, I'm a jerk who doesn't remember peoples' names! Could you just ask him to buy the supplies for us?? He's our last hope... probably.",
-   "dst": "",
+   "dst": "聽著——好啦，我懂，我是個記不住別人名字的混蛋！你能不能就去請他幫我們把補給買下來？他是我們最後的希望……大概吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -208,7 +208,7 @@
   },
   "Supply and Delivery#020": {
    "src": "Purchase the supply crate from the Trade Market at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~}, {~}, -{~}] 的貿易市集買下那箱補給。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -218,7 +218,7 @@
   },
   "Supply and Delivery#021": {
    "src": "Hey, good work! Now you'll need to pick up the supply crate.",
-   "dst": "",
+   "dst": "嘿，幹得好！接下來你得去把那箱補給領回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -228,7 +228,7 @@
   },
   "Supply and Delivery#022": {
    "src": "Find Tasim at [{~}, {~}, -{~}] and convince him to buy the supply crate for you.",
-   "dst": "",
+   "dst": "到 [{~}, {~}, -{~}] 找 Tasim，說服他幫你買下那箱補給。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -237,8 +237,8 @@
    "source": "wiki"
   },
   "Supply and Delivery#023": {
-   "src": "Oh, hey ! Are you just here to hang out? Or- that look on your face tells me you're here for something else. ** [{~}] Can you buy something from the Trade Market for me?",
-   "dst": "",
+   "src": "Oh, hey {u}! Are you just here to hang out? Or- that look on your face tells me you're here for something else.",
+   "dst": "哦，嘿，{u}！你只是來晃晃的嗎？還是——你臉上那個表情告訴我，你是為了別的事來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -246,9 +246,19 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
+  "Supply and Delivery#076": {
+   "src": "[{~}] Can you buy something from the Trade Market for me?",
+   "dst": "[{~}] 你能不能幫我從貿易市集買個東西？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Supply and Delivery",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
   "Supply and Delivery#024": {
    "src": "I... guess so? Is there a reason you can't do it yourself?",
-   "dst": "",
+   "dst": "我……應該可以？你自己不能買，是有什麼原因嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -258,7 +268,7 @@
   },
   "Supply and Delivery#025": {
    "src": "...You're banned from the market? How did you even manage that? We haven't even been in {p} for that long!",
-   "dst": "",
+   "dst": "……你被市集禁止進入？你到底是怎麼辦到的？我們來 {p} 根本沒多久啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -268,7 +278,7 @@
   },
   "Supply and Delivery#026": {
    "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy... whatever it is you need.",
-   "dst": "",
+   "dst": "你——什麼？！算了，我其實不想知道。走吧，你帶路。不管你要什麼……我幫你買。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -278,7 +288,7 @@
   },
   "Supply and Delivery#027": {
    "src": "...Oh. Well, that explains that. Though- is there a reason you can't get it yourself?",
-   "dst": "",
+   "dst": "……哦。那就說得通了。不過——你自己不能去拿，是有什麼原因嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -288,7 +298,7 @@
   },
   "Supply and Delivery#028": {
    "src": "...You're banned from the market? How did you even manage that? We haven't even been in {p} for that long!",
-   "dst": "",
+   "dst": "……你被市集禁止進入？你到底是怎麼辦到的？我們來 {p} 根本沒多久啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -298,7 +308,7 @@
   },
   "Supply and Delivery#029": {
    "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy whatever it is Ope needs.",
-   "dst": "",
+   "dst": "你——什麼？！算了，我其實不想知道。走吧，你帶路。Ope 要什麼我都幫他買。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -308,7 +318,7 @@
   },
   "Supply and Delivery#030": {
    "src": "Oh, hello . Are you here for training as well? Or- that look on your face tells me you're here for something else.",
-   "dst": "",
+   "dst": "哦，你好。你也是來受訓的嗎？還是——你臉上那個表情告訴我，你是為了別的事來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -318,7 +328,7 @@
   },
   "Supply and Delivery#031": {
    "src": "I... guess so? Is there a reason you can't do it yourself?",
-   "dst": "",
+   "dst": "我……應該可以？你自己不能買，是有什麼原因嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -328,7 +338,7 @@
   },
   "Supply and Delivery#032": {
    "src": "...You're banned from the market? How did you even manage that? We haven't even been in {p} for that long!",
-   "dst": "",
+   "dst": "……你被市集禁止進入？你到底是怎麼辦到的？我們來 {p} 根本沒多久啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -338,7 +348,7 @@
   },
   "Supply and Delivery#033": {
    "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy... whatever it is you need.",
-   "dst": "",
+   "dst": "你——什麼？！算了，我其實不想知道。走吧，你帶路。不管你要什麼……我幫你買。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -348,7 +358,7 @@
   },
   "Supply and Delivery#034": {
    "src": "...Oh. Well, that explains that. Though- is there a reason you can't get it yourself?",
-   "dst": "",
+   "dst": "……哦。那就說得通了。不過——你自己不能去拿，是有什麼原因嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -358,7 +368,7 @@
   },
   "Supply and Delivery#035": {
    "src": "...You're banned from the market? How did you even manage that? We haven't even been in {p} for that long!",
-   "dst": "",
+   "dst": "……你被市集禁止進入？你到底是怎麼辦到的？我們來 {p} 根本沒多久啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -368,7 +378,7 @@
   },
   "Supply and Delivery#036": {
    "src": "You- what!? Nevermind, I don't actually want to know. Come on, lead the way. I'll buy whatever it is Ope needs.",
-   "dst": "",
+   "dst": "你——什麼？！算了，我其實不想知道。走吧，你帶路。Ope 要什麼我都幫他買。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -378,7 +388,7 @@
   },
   "Supply and Delivery#037": {
    "src": "Bring Tasim to the Trade Market at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "帶 Tasim 到 [{~}, {~}, -{~}] 的貿易市集。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -388,7 +398,7 @@
   },
   "Supply and Delivery#038": {
    "src": "Alright. So I'm just buying a supply crate...",
-   "dst": "",
+   "dst": "好。所以我只是要買一箱補給……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -398,7 +408,7 @@
   },
   "Supply and Delivery#039": {
    "src": "Here it is. I wish you luck with... whatever it is you're up to.",
-   "dst": "",
+   "dst": "拿去。不管你在忙什麼……祝你順利。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -408,7 +418,7 @@
   },
   "Supply and Delivery#040": {
    "src": "Return to Ope with the supply crate at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "帶著補給箱回到 [{~}, {~}, -{~}] 找 Ope。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -418,7 +428,7 @@
   },
   "Supply and Delivery#041": {
    "src": "Perfect! Now, quickly, come back over here, before those two realize you're working with me!",
-   "dst": "",
+   "dst": "太好了！快，趁那兩個人還沒發現你跟我是一夥的，快回這邊來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -428,7 +438,7 @@
   },
   "Supply and Delivery#042": {
    "src": "You got the item? Good. Good, good good.",
-   "dst": "",
+   "dst": "東西拿到了？好。很好、很好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -438,7 +448,7 @@
   },
   "Supply and Delivery#043": {
    "src": "Okay! Now, we're onto step two. So, you see, this package still needs to make it to {p}...",
-   "dst": "",
+   "dst": "好！那我們進入第二步。你看，這箱東西還是得送到 {p} 去……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -448,7 +458,7 @@
   },
   "Supply and Delivery#044": {
    "src": "And. Well. You're the one holding the crate, not me! So... you know!",
-   "dst": "",
+   "dst": "而。嗯。拿著箱子的人是你，不是我！所以……你懂的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -458,7 +468,7 @@
   },
   "Supply and Delivery#045": {
    "src": "Great! You know the way by now, surely! No need for me to, uh, get in your way!",
-   "dst": "",
+   "dst": "太好了！路你現在肯定認得了！用不著我，呃，在旁邊礙事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -468,7 +478,7 @@
   },
   "Supply and Delivery#046": {
    "src": "Just take those supplies to {p}, and. Well. Things will work out.",
-   "dst": "",
+   "dst": "你就把那些補給送到 {p}，然後。嗯。事情就會順利解決的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -478,7 +488,7 @@
   },
   "Supply and Delivery#047": {
    "src": "...probably.",
-   "dst": "",
+   "dst": "……大概啦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -488,7 +498,7 @@
   },
   "Supply and Delivery#048": {
    "src": "Well, you see. I really don't want to do it. And I'm not going to!",
-   "dst": "",
+   "dst": "你看，是這樣的。我真的很不想做這件事。而我也不打算做！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -498,7 +508,7 @@
   },
   "Supply and Delivery#049": {
    "src": "So you either run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
-   "dst": "",
+   "dst": "所以你要嘛把補給跑一趟送到 {p}……要嘛我們兩個一起跑路重新做人，把自己的爛攤子甩在後面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -508,7 +518,7 @@
   },
   "Supply and Delivery#050": {
    "src": "...no? No. Okay. Worth a shot. Well, you know the way by now! No need for me to, uh, get in your way! Heh...",
-   "dst": "",
+   "dst": "……不要？不要。好吧。試試看嘛。路你現在認得了！用不著我，呃，在旁邊礙事！嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -518,7 +528,7 @@
   },
   "Supply and Delivery#051": {
    "src": "He bought you the item? Good. Good, good good. Okay! That was... harder than expected.",
-   "dst": "",
+   "dst": "他幫你把東西買下來了？好。很好、很好。好！這……比我想的還難。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -528,7 +538,7 @@
   },
   "Supply and Delivery#052": {
    "src": "Okay! Now, we're onto step two. So, you see, this package still needs to make it to {p}...",
-   "dst": "",
+   "dst": "好！那我們進入第二步。你看，這箱東西還是得送到 {p} 去……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -538,7 +548,7 @@
   },
   "Supply and Delivery#053": {
    "src": "And. Well. You're the one holding the crate, not me! So... you know!",
-   "dst": "",
+   "dst": "而。嗯。拿著箱子的人是你，不是我！所以……你懂的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -548,7 +558,7 @@
   },
   "Supply and Delivery#054": {
    "src": "Great! You know the way by now, surely! No need for me to, uh, get in your way!",
-   "dst": "",
+   "dst": "太好了！路你現在肯定認得了！用不著我，呃，在旁邊礙事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -558,7 +568,7 @@
   },
   "Supply and Delivery#055": {
    "src": "Just take those supplies to {p}, and. Well. Things will work out.",
-   "dst": "",
+   "dst": "你就把那些補給送到 {p}，然後。嗯。事情就會順利解決的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -568,7 +578,7 @@
   },
   "Supply and Delivery#056": {
    "src": "...probably.",
-   "dst": "",
+   "dst": "……大概啦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -578,7 +588,7 @@
   },
   "Supply and Delivery#057": {
    "src": "Well, you see. I really don't want to do it. And I'm not going to!",
-   "dst": "",
+   "dst": "你看，是這樣的。我真的很不想做這件事。而我也不打算做！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -588,7 +598,7 @@
   },
   "Supply and Delivery#058": {
    "src": "So you either run the supplies to {p}... or we both run away and start new lives, and we avoid the consequences of our actions!",
-   "dst": "",
+   "dst": "所以你要嘛把補給跑一趟送到 {p}……要嘛我們兩個一起跑路重新做人，把自己的爛攤子甩在後面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -598,7 +608,7 @@
   },
   "Supply and Delivery#059": {
    "src": "...no? No. Okay. Worth a shot. Well, you know the way by now! No need for me to, uh, get in your way! Heh...",
-   "dst": "",
+   "dst": "……不要？不要。好吧。試試看嘛。路你現在認得了！用不著我，呃，在旁邊礙事！嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -608,7 +618,7 @@
   },
   "Supply and Delivery#060": {
    "src": "Bring the supply crate to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把補給箱送到 [-{~}, {~}, -{~}] 的 {p}，交給 Alvin 鎮長。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -618,7 +628,7 @@
   },
   "Supply and Delivery#061": {
    "src": "Ah, hello! What can I do for you today?",
-   "dst": "",
+   "dst": "啊，你好！今天有什麼我能為你效勞的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -628,7 +638,7 @@
   },
   "Supply and Delivery#062": {
    "src": "Ah... So you do. I thought I had sent Ope to pick that up...",
-   "dst": "",
+   "dst": "啊……原來如此。我記得我是派 Ope 去領的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -638,7 +648,7 @@
   },
   "Supply and Delivery#063": {
    "src": "More of his shenanigans, I suppose. I am sorry you have had to deal with him twice.",
-   "dst": "",
+   "dst": "我想又是他那些鬼把戲吧。真抱歉讓你跟他打了兩次交道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -648,7 +658,7 @@
   },
   "Supply and Delivery#064": {
    "src": "When he returns to the village, I'm going to need to have a word with him... Ah, but of course, I should pay you for your troubles.",
-   "dst": "",
+   "dst": "等他回村裡，我得跟他好好談一談……啊，不過當然了，我該為你的辛勞付你報酬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -658,7 +668,7 @@
   },
   "Supply and Delivery#065": {
    "src": "I hope these emeralds will suffice. Additionally... we recently fixed up one of our broken carts, which makes the trip to {p} and back.",
-   "dst": "",
+   "dst": "希望這些綠寶石夠。另外……我們最近修好了一輛壞掉的馬車，可以往返 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -668,7 +678,7 @@
   },
   "Supply and Delivery#066": {
    "src": "You may feel free to use it whenever you like! As thanks for all you have done for us.",
-   "dst": "",
+   "dst": "你隨時想用都可以！算是謝謝你為我們做的一切。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -678,7 +688,7 @@
   },
   "Supply and Delivery#067": {
    "src": "He's... difficult. He's the son of my sister, who was unfortunately killed by spiders some time ago.",
-   "dst": "",
+   "dst": "他……很難搞。他是我姐姐的兒子，而我姐姐不久前不幸被蜘蛛害死了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -688,7 +698,7 @@
   },
   "Supply and Delivery#068": {
    "src": "With his father out of the picture, I had to take him in. He's a grown man now, yes, but... I fear the loss has taken a toll on us both.",
-   "dst": "",
+   "dst": "他父親也不在了，我只好把他接來養。他現在是個成年人沒錯，可是……我怕那份失去在我們兩個身上都留下了傷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -698,7 +708,7 @@
   },
   "Supply and Delivery#069": {
    "src": "I truly hope he will cease with these ridiculous ploys sometime soon... but I can't bring myself to do more than give him a stern talking to.",
-   "dst": "",
+   "dst": "我真心希望他能早點停止這些荒唐的把戲……可是我除了板起臉訓他幾句，實在狠不下心做更多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -708,7 +718,7 @@
   },
   "Supply and Delivery#070": {
    "src": "He's a good man, truly. I believe that with my whole heart. It's alright if you don't feel the same way, though. I will not force you to interact with him if you do not wish to.",
-   "dst": "",
+   "dst": "他是個好人，真的。這一點我打從心底相信。不過你要是不這麼想，那也沒關係。你不願意跟他往來，我不會勉強你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -718,7 +728,7 @@
   },
   "Supply and Delivery#071": {
    "src": "Oh, dear... I suppose it must have been fifteen years ago that I took the position, when the old mayor stepped down.",
-   "dst": "",
+   "dst": "哎呀……我接下這個位子，應該是十五年前的事了，那時候老鎮長卸任。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -728,7 +738,7 @@
   },
   "Supply and Delivery#072": {
    "src": "He was a kind man, always looking out for the townsfolk. Though, by the time he retired, it was clear he was growing restless in our little town.",
-   "dst": "",
+   "dst": "他是個好心人，總是照顧著鎮上的人。不過他退休的時候，看得出來他在我們這座小鎮已經待不住了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -738,7 +748,7 @@
   },
   "Supply and Delivery#073": {
    "src": "Well, as soon as he passed down the position to me, he immediately traveled to {p} and enlisted in their army! I hear he's in the business of training soldiers these days.",
-   "dst": "",
+   "dst": "結果呢，他一把位子交給我，立刻就跑去 {p} 從軍了！我聽說他現在在訓練士兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -748,7 +758,7 @@
   },
   "Supply and Delivery#074": {
    "src": "Ah, but I've tried lived up to his legacy. I like to think I've done well in my time as mayor!",
-   "dst": "",
+   "dst": "啊，不過我一直努力想不辜負他留下來的東西。我想我這些年的鎮長當得還不錯！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",
@@ -758,7 +768,7 @@
   },
   "Supply and Delivery#075": {
    "src": "A fine day for passing through! I hope you enjoy your stay.",
-   "dst": "",
+   "dst": "今天真是路過的好日子！希望你在這裡待得愉快。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Supply and Delivery",

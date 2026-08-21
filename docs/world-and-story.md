@@ -74,10 +74,46 @@
 
 ### 第一幕　Wynn：從新兵到能打的人
 
-- **`King's Recruit`**（已翻，124 句）——開場。玩家與 **Aledar**、**Tasim**
-  同一輛馬車從 Fruma 來到 Wynn。三個人的關係是後面所有情感戲的地基。
-- 中段是 Wynn 各地的任務：Decay、腐化的村莊、Nether Portal。
-- **`Temple of the Legends`**——對上 Corrupter of Worlds。前期的收束點。
+同伴線是這一幕的主軸，也是後面所有情感戲的地基。**這一整條已經翻完**，
+按遊戲順序排：
+
+| 任務 | 句數 | 這一段發生什麼 |
+|---|---:|---|
+| `King's Recruit` | 124 | 開場。玩家與 **Aledar**、**Tasim** 同一輛馬車從 Fruma 抵達 Wynn |
+| `Elemental Exercise` | 65 | Ragon 隊長教元素相剋。與 Tasim 的第一場友誼決鬥 |
+| `Infested Plants` | 33 | 遇到 **Ope**——騙了他們一次，還不出錢就推給鎮長 |
+| `Mushroom Man` | 75 | **Yahya 在他們眼前被蜘蛛抓走。**這一幕的第一個轉折 |
+| `Supply and Delivery` | 76 | Ope 再賴一次帳。Alvin 鎮長揭露 Ope 是他外甥，母親死於蜘蛛 |
+| `Taking the Tower` | 44 | 與 Aledar 重逢，一起攻打腐化之塔 |
+| `Recover the Past` | 264 | **整條線的核心**，見下 |
+
+#### `Recover the Past` 揭露了什麼
+
+這個任務把整個世界觀的前提翻了過來，**校稿時請以這一份的譯法為準**：
+
+- Dr. Picard 造出「記憶復原化球」，玩家幫他找來三個 Fruma 出身的受試者。
+- **Caid** 的記憶：他是慣竊，偷衛兵的補給，最後被皇家隊長逮捕。
+- **Reynauld** 的記憶：他不是清白的。他是**收 Caid 賄賂**的軍官，事發後
+  被剝奪軍階、以「不名譽與密謀對抗女王陛下」的罪名逮捕。
+- **Tasim** 的記憶：他救了一個流血的陌生人，那個人就是 **Aledar**。
+  Aledar 醒來的第一句話是「哦。你——你是<b>受詛的</b>」。Tasim 因此被揪出來，
+  兩人一起被捕。
+- 接著是 **Inquisitor** 用 **the Adjustor（調律器）** 抹除記憶的那一段。
+  他念的那套詞是整個任務最冷的地方：
+  > 「Fruma 不需要你們這種人。Fruma 不想要你們這種人。」
+  > 「你會為他們的戰爭作戰。你會為它而活，為它而死。
+  > 你將永遠屬於 Wynn，而 Fruma 會很樂意擺脫你。」
+
+**所以：Fruma 送去 Wynn 的「新兵」，是被抹除記憶、流放出境的罪犯與受詛者。**
+第四幕女王把他們請回去的那場「慶典」，要放在這個前提下讀。
+
+- 最後 Picard 想讀玩家的記憶，球**炸了**。他說：
+  「這幾乎像是我們讀取到了本來不存在的記憶。」——這句先留著，別過度解讀。
+- Tasim 得知真相後動身前往 **Gavel**。這解釋了 `Queen's Recruit` 開場他為什麼
+  說「我才剛回到 Wynn」。他還拜託玩家**不要告訴 Aledar**。
+
+其餘：Wynn 各地的 Decay、腐化村莊、Nether Portal，收束在
+**`Temple of the Legends`**（對上 Corrupter of Worlds）。
 
 ### 第二幕　Gavel：光之領域
 
