@@ -149,7 +149,14 @@ public final class LookAtTranslator {
             Component translated = LineTranslator.translate(target, WynnChaYuan.translations());
             if (translated == null) {
                 noteOnce("nametag.noMatch");
-                return;                        // 沒有譯文就不打擾
+                if (aimed == lastSource && lastShown != null) {
+                    // 還在看同一個東西，只是它的字變了（戰鬥假人的傷害數字每擊都跳）。
+                    // 這種時候把框收掉會讓它一直閃——維持上一次的譯文，
+                    // 直到玩家真的看向別處。
+                    lastSeen = System.currentTimeMillis();
+                    drawBubble(graphics, mc, lastShown, 1.0f);
+                }
+                return;
             }
             noteOnce("nametag.shown");
             lastShown = translated;
