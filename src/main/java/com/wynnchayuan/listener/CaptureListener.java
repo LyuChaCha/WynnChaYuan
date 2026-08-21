@@ -126,7 +126,8 @@ public final class CaptureListener {
         }
         WynnChaYuan.store().record(
                 completed, "desc", "quest",
-                CurrentQuest.tag(lastHadChoices ? "dialogue/choices" : "dialogue"));
+                CurrentQuest.tag(lastHadChoices ? "dialogue/choices" : "dialogue",
+                                 LookAtTranslator.nearestLabel()));
     }
 
     // ---------------------------------------------------------------- 聊天

@@ -74,6 +74,56 @@ public final class LookAtTranslator {
 
     private LookAtTranslator() {}
 
+    /**
+     * 玩家<b>正前方最近</b>的那個名牌寫什麼。
+     *
+     * <h2>用途</h2>
+     * 對話事件本身不帶說話的是誰（Wynntils 的 {@code NpcDialogueEvent} 只有文字），
+     * 但玩家在講話的當下一定面對著那個 NPC。收集對話時記下來，譯者就知道
+     * 這句話是誰說的——一整串沒有出處的台詞很難翻對語氣。
+     *
+     * <p>是<b>猜測</b>不是事實：旁邊剛好站著別的 NPC 就可能記錯。所以它只進
+     * {@code ctx}（給譯者分堆用），永遠不會影響譯文本身。
+     */
+    public static String nearestLabel() {
+        try {
+            Minecraft mc = Minecraft.getInstance();
+            if (mc == null || mc.player == null || LABELS.isEmpty()) {
+                return null;
+            }
+            Vec3 eye = mc.player.getEyePosition();
+            Vec3 look = mc.player.getLookAngle();
+            StyledText best = null;
+            double bestPerp = Double.MAX_VALUE;
+            for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
+                Entity entity = e.getKey();
+                if (entity == null || !entity.isAlive()) {
+                    continue;
+                }
+                Vec3 delta = entity.position().subtract(eye);
+                double along = delta.dot(look);
+                if (along <= 0 || along > SPEAKER_RANGE) {
+                    continue;                  // 在身後、或太遠
+                }
+                double perpendicular = delta.subtract(look.scale(along)).length();
+                if (perpendicular < bestPerp) {
+                    bestPerp = perpendicular;
+                    best = e.getValue();
+                }
+            }
+            return best == null || bestPerp > SPEAKER_RADIUS
+                    ? null : best.getStringWithoutFormatting().strip();
+        } catch (Throwable t) {
+            return null;   // 這只是給譯者的線索，取不到不影響任何事
+        }
+    }
+
+    /** 對話時玩家與 NPC 的距離。超過這個距離的不算在講話。 */
+    private static final double SPEAKER_RANGE = 8.0;
+
+    /** 離視線這麼遠以內才算是「面對著他」。 */
+    private static final double SPEAKER_RADIUS = 2.5;
+
     /** 由名牌事件呼叫，記下這個實體對應的原文。 */
     public static void remember(Entity entity, StyledText label) {
         if (entity != null && label != null) {

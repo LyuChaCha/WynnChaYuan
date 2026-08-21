@@ -25,6 +25,7 @@ public final class TranslationStoreTest {
                   "a1": { "src": "Drastically increase the\nspeed of your Meteor ability.",
                           "dst": "大幅增加 Meteor 技能的\n速度。", "role": "desc" },
                   "a2": { "src": "Shooting Star", "dst": "流星", "role": "name" },
+                  "a4": { "src": "Bash", "dst": "重擊", "role": "name" },
                   "a3": { "src": "Allies within {~} blocks gain {~} of the health you gain from Health Regen and Life Steal.",
                           "dst": "{~} 格內的友軍會獲得你從生命回復與生命竊取所得的 {~} 生命", "role": "desc" }
                  }
@@ -67,6 +68,20 @@ public final class TranslationStoreTest {
             // 這種條目在語料裡是「一行」，maxBlockLines 對它一無所知——
             // 呼叫端要靠它決定把幾行併起來試，回報 1 的話就永遠不會試。
             check("有攤平索引時，掃描行數要放大", store.maxBlockLines() >= 4);
+
+            // 技能說明裡到處都在提別的技能。翻一次，所有敘述跟著換——
+            // 這是翻譯團隊要的「Bash 改一次就好」，但用名稱不用座標代號。
+            TranslationStore.Term term =
+                    store.findTerm("Bash will hit a second time at a farther range.", 0);
+            check("句子裡的技能名稱找得到", term != null && "重擊".equals(term.translation()));
+            check("找到的位置正確", term != null && term.start() == 0 && term.end() == 4);
+
+            check("整段剛好是名稱時也查得到", "重擊".equals(store.lookupTerm("Bash")));
+
+            // 反面：小寫的一般字不能被當成技能名稱換掉
+            check("小寫的同一個字不換", store.findTerm("you bash the ground", 0) == null);
+            // 反面：名稱是別的字的一部分時不算
+            check("夾在字中間的不算", store.findTerm("Bashful grin", 0) == null);
         } finally {
             delete(dir);
         }

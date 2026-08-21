@@ -50,6 +50,26 @@ public final class TranslationStore {
     private final Map<String, String> flat = new ConcurrentHashMap<>();
 
     /**
+     * 技能名稱 → 譯名。
+     *
+     * <h2>為什麼需要</h2>
+     * 技能說明裡到處都在提別的技能：「{@code Bash will hit a second time}」。
+     * 那個 {@code Bash} 是<b>同一個東西</b>，卻散在幾百條敘述裡各翻各的——
+     * 翻譯團隊要一條一條改，而且改完還是會不一致。
+     *
+     * <p>所以只翻一次：{@code ability.json} 裡 {@code Bash} 這一條翻好，
+     * 所有提到它的敘述自動跟著換。
+     *
+     * <p>用<b>名稱本身</b>當參照，不用座標代號。技能樹的位置會隨版本改動，
+     * 而且譯者在語料裡看到 {@code Bash} 一眼就懂，看到 {@code warrior-1-1-5}
+     * 只能去查表。
+     */
+    private final Map<String, String> terms = new ConcurrentHashMap<>();
+
+    /** 一個術語最多幾個字。用來限制比對時往前看多遠。 */
+    private volatile int maxTermWords = 1;
+
+    /**
      * 來自 {@code role: "name"} 條目的鍵。
      *
      * <p>裝備名稱多半是專有名詞，翻了反而對不上社群討論與 wiki，
@@ -73,6 +93,8 @@ public final class TranslationStore {
     public void loadAll(Path dir) {
         entries.clear();
         flat.clear();
+        terms.clear();
+        maxTermWords = 1;
         maxBlockLines = 1;
         nameKeys.clear();
         loadedFiles = 0;
@@ -187,8 +209,14 @@ public final class TranslationStore {
                 entries.put(srcKey, dst.strip());
                 noteBlockSize(srcKey);
                 noteFlat(srcKey, dst.strip());
-                if (itemNames && "name".equals(optString(e, "role"))) {
-                    nameKeys.add(srcKey);
+                if ("name".equals(optString(e, "role"))) {
+                    if (itemNames) {
+                        nameKeys.add(srcKey);
+                    } else {
+                        // 技能名稱與 Major ID 名稱會出現在別的敘述裡；
+                        // 裝備名稱不會，收進來只會亂替換。
+                        noteTerm(srcKey, dst.strip());
+                    }
                 }
             }
         }
@@ -243,6 +271,71 @@ public final class TranslationStore {
 
     /** 短於這個長度的不進正規化索引，見 {@link #noteFlat}。 */
     private static final int MIN_FLAT_LENGTH = 24;
+
+    /**
+     * 記一個可以在別的敘述裡自動替換的名稱。
+     *
+     * <p>太短的不收：{@code Aid}、{@code Ice} 這種在一般句子裡到處都是，
+     * 換錯比沒換更糟。含佔位符或換行的也不收，那不是一個名稱。
+     */
+    private void noteTerm(String name, String translation) {
+        if (name.length() < MIN_TERM_LENGTH || translation.isBlank()
+                || name.indexOf('{') >= 0 || name.indexOf('\n') >= 0) {
+            return;
+        }
+        terms.put(name, translation);
+        maxTermWords = Math.max(maxTermWords, name.split(" ").length);
+    }
+
+    /** 見 {@link #noteTerm}。四個字元大約是最短不會誤中的名稱。 */
+    private static final int MIN_TERM_LENGTH = 4;
+
+    /** 在 {@code text} 裡從 {@code from} 起找第一個技能名稱。 */
+    public Term findTerm(String text, int from) {
+        if (terms.isEmpty()) {
+            return null;
+        }
+        for (int i = from; i < text.length(); i++) {
+            if (!startsWord(text, i) || !Character.isUpperCase(text.charAt(i))) {
+                continue;                      // 名稱一律是大寫開頭的專有名詞
+            }
+            int end = i;
+            for (int words = 0; words < maxTermWords && end <= text.length(); words++) {
+                end = wordEnd(text, end);
+                String candidate = text.substring(i, end);
+                String hit = terms.get(candidate);
+                if (hit != null) {
+                    return new Term(i, end, hit);
+                }
+                if (end >= text.length() || text.charAt(end) != ' ') {
+                    break;                     // 後面不是空格，接不下去了
+                }
+                end++;
+            }
+        }
+        return null;
+    }
+
+    /** 這一整段剛好就是一個技能名稱的話，回傳它的譯名。 */
+    public String lookupTerm(String text) {
+        return text == null ? null : terms.get(text.strip());
+    }
+
+    /** 找到的名稱在原文的哪一段，以及它的譯名。 */
+    public record Term(int start, int end, String translation) {}
+
+    private static boolean startsWord(String text, int at) {
+        return at == 0 || !Character.isLetterOrDigit(text.charAt(at - 1));
+    }
+
+    private static int wordEnd(String text, int from) {
+        int i = from;
+        while (i < text.length() && (Character.isLetterOrDigit(text.charAt(i))
+                || text.charAt(i) == '\'' || text.charAt(i) == '-')) {
+            i++;
+        }
+        return i;
+    }
 
     /** 這個鍵跨了幾行，比目前記錄的多就更新。 */
     private void noteBlockSize(String key) {

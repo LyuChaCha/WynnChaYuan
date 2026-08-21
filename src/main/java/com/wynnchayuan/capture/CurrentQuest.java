@@ -18,8 +18,8 @@ package com.wynnchayuan.capture;
  */
 public final class CurrentQuest {
 
-    /** 任務名稱裡不能出現的字，會把 ctx 的分隔弄亂。 */
-    private static final String SEPARATORS = "/";
+    /** 任務名稱與 NPC 名稱裡不能出現的字，會把 ctx 的分隔弄亂。 */
+    private static final String SEPARATORS = "/#";
 
     private static volatile String name;
 
@@ -42,6 +42,17 @@ public final class CurrentQuest {
     public static String tag(String base) {
         String current = name;
         return current == null ? base : base + "/" + current;
+    }
+
+    /**
+     * 再接上說話的是誰。
+     *
+     * @return 例如 {@code dialogue/Cook Assistant#Aledar}
+     */
+    public static String tag(String base, String speaker) {
+        String tagged = tag(base);
+        return speaker == null || speaker.isBlank()
+                ? tagged : tagged + "#" + sanitise(speaker);
     }
 
     private static String sanitise(String value) {
