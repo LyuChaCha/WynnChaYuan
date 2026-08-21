@@ -3,6 +3,24 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.35.0] - 2026-08-22
+
+### 新增
+
+- **翻完 `Queen's Recruit`，673 句。** 這是 `King's Recruit` 的正統續篇，也是
+  Fruma 篇主線的開場——被流放的新兵被女王請了回去，名義上是慶典，實際上是
+  一場篩選。整個任務從頭到尾一句不漏。
+- **Fruma 篇的專有名詞定了下來**，寫進 `GLOSSARY.md`：`Sovereign` 是「統領」、
+  `Gendarme` 是「憲兵」、`the Cursed` 是「受詛者」（關鍵劇情詞）、
+  `blight` 是「災厄」。人名與家族名照慣例保留原文。
+- **Zhiraok Nasin 滿嘴數學這件事翻出來了。** 這個角色的每一句台詞都塞著一個
+  數學詞——罵人用「無知的被積函數」、稱讚時機用「黃金比例」、把人趕走說
+  「減掉」、算錯了說「誤算」。最後那句 `how much more irrational can we get`
+  同時是「不理性」與「無理數」，中文的「無理」剛好兩層都接得住。
+  這些全部列在 GLOSSARY 的雙關表裡，之後的主線要照著接。
+- 角色語氣表補上 Fruma 篇的九個人（Mel 的鄉下口音、Picard 的亢奮、
+  Reynauld 的疲憊、女王的從容）。
+
 ## [1.34.0] - 2026-08-22
 
 ### 新增

@@ -192,6 +192,26 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 
 ---
 
+## Fruma 篇（主線）
+
+`Queen's Recruit` 之後的主線都會用到這幾個詞，先在這裡定下來。
+
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Sovereign | 統領 | Fruma 女王底下的議會成員，各自掌管一個轄區。不用「主權者」，那讀起來不像官職 |
+| Her Majesty | 女王陛下 | 說話者名稱用全稱，句中稱呼用「陛下」 |
+| Gendarme Soldier | 憲兵 | `gendarme` 本來就是憲兵，不是普通士兵 |
+| Gendarme Commander | 憲兵指揮官 | |
+| Aelumia Guard | Aelumia 衛兵 | Aelumia 是轄區名，照地名慣例保留 |
+| the Cursed | 受詛者 | 指被抹去記憶、流放到 Wynn 的那批人。**這是關鍵劇情詞**，不要譯成「被詛咒的人」 |
+| blight | 災厄 | Fruma 對牆外世界的稱呼，帶著居高臨下的味道 |
+| Representative | 接待人員 | 分配房間的那位，不是「代表」 |
+| Seaskipper Captain | 渡船船長 | |
+| the Morning Star | 晨星 | Majin 的稱號，要翻 |
+| House Thalas / Nasin | Thalas 家 / Nasin 家 | 家族名保留原文 |
+
+---
+
 ## 一律保留原文
 
 翻了會跟其他玩家對不上話，或社群本來就講英文。
@@ -217,8 +237,17 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Nohno | 養雞養到走火入魔的島民 | 話多、自來熟，最後崩潰 |
 | Merloni | 說故事的人 | 沉、有懸念 |
 | Captain Kymer | 軍官 | 乾脆，帶軍中的隨口調侃 |
+| Mel | 鄉下口音、爽朗 | 原文大量吞音（`'fraid`、`y'were`、`'round`）。中文用口語詞與語尾助詞（「啊」「嘛」「欸」）去對應，不要用注音或錯字 |
+| Linton | 藏不住話、少根筋 | 想到什麼講什麼，常常講到一半自己剎車（「呃」「當我沒說」） |
+| Lanu | 冷靜、分析型 | 句子完整、不帶情緒，常補一句觀察 |
+| Jenprest | 老兵、帶土氣 | 原文吞音（`o'`、`n'`、`t'`），中文用「欸」「哎唷」「難辦啊」這種口氣 |
+| Dr. Picard | 亢奮的學者 | 語速快、驚嘆號和破折號多，講到一半自己插自己的話 |
+| Reynauld | 話少、疲憊 | 短句，常以「嗯」開頭，情緒壓在字面底下 |
+| Her Majesty | 從容、居高臨下 | 書面語、長句，從不提高音量。愈平靜愈可怕 |
+| Sovereign Majin | 浮誇、瞧不起人 | 華麗辭藻加尖刻嘲笑，愛用「嗯？」反問把人架住 |
+| Sovereign Zhiraok Nasin | 暴躁、滿嘴數學 | 見下方雙關表——**他的每一句話都要帶一個數學詞**，這是角色本身 |
 
-已翻的任務可以直接當範本：`King's Recruit`（開場，124 句）、`Cook Assistant`、
+已翻的任務可以直接當範本：`King's Recruit`（開場，124 句）、`Queen's Recruit`（Fruma 篇，673 句）、`Cook Assistant`、
 `Clearing the Camps`。
 
 ---
@@ -232,6 +261,14 @@ Wynncraft 的任務名稱與台詞常常一語雙關。**能做出來就做出�
 |---|---|---|
 | A Grave Mistake | 致命的失足 | `grave` 同時是「嚴重的」與「墳墓」。玩家最後真的掉進一座墳墓，「失足」剛好兩層都接住 |
 | Cluck Cluck | 咕咕咯咯 | 雞叫聲。中文的擬聲詞也是疊字，四個字比兩個字更像在學雞叫 |
+| Queen's Recruit | 女王的新兵 | 對照開場的 `King's Recruit`。當年是國王徵召你，這次換成女王——而這次的「徵召」是什麼意思，正是整個任務的問題 |
+| expected value | 期望值 | Zhiraok 講的是「新兵的價值」，用的是統計學的詞 |
+| you ignorant integrand | 你這個無知的被積函數 | 罵人的話直接用微積分名詞。中文照搬，突兀正是效果 |
+| your timing was golden | 你這時機抓得很黃金比例 | `golden` 是黃金比例。譯文得把「比例」補出來，不然梗就沒了 |
+| trying to subtract them | 想把他們減掉 | 講「把人弄走」用減法。不要譯成「除掉」，那是另一個運算 |
+| a miscalculation | 一次誤算 | 不要譯成「失策」 |
+| how much more irrational can we get | 我們還能有多無理 | `irrational` 同時是「不理性」與「無理數」。中文的「無理」剛好兩層都接住 |
+| calculate yourself out of dead last | 先把自己從倒數第一算出來 | Majin 反過來拿數學嗆 Zhiraok |
 
 > 破碎、殘缺的台詞（`.;I. ,told;.`）是**刻意**的，那是氣氛的一部分。
 > 譯文要保留那種殘缺感，不要補成通順的句子。
