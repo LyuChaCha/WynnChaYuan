@@ -1261,7 +1261,20 @@ public final class LineTranslator {
     static String lookup(String template, TranslationStore store, boolean percent) {
         String exact = withPercent(template, store, percent);
         if (exact != null) {
-            return exact;
+            // `store.lookup` 會把鍵 strip 過再查，命中時<b>原文首尾的空白就消失了</b>——
+            // 「Ability Points: 1」於是變成「技能點數:1」，數字黏在冒號上。
+            // 前面剝掉的原樣補回去，後面交給 reattach（全形標點自帶留白）。
+            int head = 0;
+            while (head < template.length()
+                    && Character.isWhitespace(template.charAt(head))) {
+                head++;
+            }
+            int tail = template.length();
+            while (tail > head && Character.isWhitespace(template.charAt(tail - 1))) {
+                tail--;
+            }
+            return template.substring(0, head) + exact
+                    + reattach(exact, template.substring(tail));
         }
         String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
 
@@ -1482,6 +1495,7 @@ public final class LineTranslator {
             users.addAll(part.users());
             accents.addAll(part.accents());
         }
+        accents = withTranslations(accents, store);
 
         List<List<Token>> lines = new ArrayList<>(translated.length);
         long wantGlyphs = 0;
@@ -1631,6 +1645,36 @@ public final class LineTranslator {
             used[which] = true;
             from = at + accent.text().length();
         }
+    }
+
+    /**
+     * 帶樣式的片段，連同<b>它的譯文</b>一起收。
+     *
+     * <h2>為什麼需要</h2>
+     * 樣式是拿原文的字面去譯文裡找的：{@code Meteor} 保留英文，所以找得到，
+     * 底線就跟著在。但 {@code Main Attack} 翻成「普攻」之後，字面對不上，
+     * <b>底線與顏色就整個掉了</b>——畫面上原文有底線、譯文沒有。
+     *
+     * <p>所以每個帶樣式的片段都再登記一份「譯文版」，樣式沿用原本那個。
+     * 兩份都留著：原文版負責沒被翻的情況，譯文版負責翻了的情況。
+     */
+    private static List<LineParts.Piece> withTranslations(List<LineParts.Piece> accents,
+                                                          TranslationStore store) {
+        if (store == null || accents.isEmpty()) {
+            return accents;
+        }
+        List<LineParts.Piece> out = new ArrayList<>(accents);
+        for (LineParts.Piece accent : accents) {
+            String core = accent.text().strip();
+            if (core.isEmpty()) {
+                continue;
+            }
+            String zh = store.lookup(core);
+            if (zh != null && !zh.isBlank() && !zh.equals(core)) {
+                out.add(new LineParts.Piece(zh, accent.style()));
+            }
+        }
+        return out;
     }
 
     /** 保留顏色與粗斜體，但把字型換成預設，中文才畫得出來。 */
