@@ -111,15 +111,31 @@ public final class TranslationStore {
             return;
         }
 
-        try (var files = Files.list(dir)) {
+        try {
             // 依 _index.json 的順序載入。順序有意義：後載入的會覆蓋先前同鍵的譯文，
             // 所以專用檔（npc、quest）排在通用檔之後才能勝出。
+            //
+            // 直接照清單解析路徑，不用 Files.list——後者<b>不會遞迴</b>，
+            // 技能樹依職業拆成 `ability/mage.json` 之後就整片讀不到了。
             List<String> order = FileIndex.forDirectory(dir);
-            files.filter(p -> p.getFileName().toString().endsWith(".json"))
-                 .filter(p -> !p.getFileName().toString().startsWith("_"))
-                 .sorted(java.util.Comparator.comparingInt(
-                         p -> indexOf(order, p.getFileName().toString())))
-                 .forEach(this::load);
+            java.util.LinkedHashSet<Path> wanted = new java.util.LinkedHashSet<>();
+            for (String name : order) {
+                if (name.startsWith("_") || !name.endsWith(".json")) {
+                    continue;
+                }
+                Path file = dir.resolve(name);
+                if (Files.isRegularFile(file)) {
+                    wanted.add(file);
+                }
+            }
+            // 清單沒提到、但使用者自己丟進來的也要讀，排在最後
+            try (var extra = Files.list(dir)) {
+                extra.filter(p -> p.getFileName().toString().endsWith(".json"))
+                     .filter(p -> !p.getFileName().toString().startsWith("_"))
+                     .sorted()
+                     .forEach(wanted::add);
+            }
+            wanted.forEach(this::load);
         } catch (Exception e) {
             lastResult = "讀取失敗：" + e.getMessage();
             System.err.println("[WynnChaYuan] 讀取譯文目錄失敗 " + dir + ": " + e.getMessage());

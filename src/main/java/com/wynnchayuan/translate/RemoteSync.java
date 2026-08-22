@@ -80,6 +80,10 @@ public final class RemoteSync {
                     continue;
                 }
                 Path tmp = cacheDir.resolve(name + ".tmp");
+                // 清單裡的名字可能帶資料夾（`ability/mage.json`）。資料夾不存在的話
+                // 這裡會丟 NoSuchFileException，兩個來源都失敗，那個檔就<b>整個沒下載</b>——
+                // GitHub 上明明有譯文，遊戲裡卻一條都沒有。
+                Files.createDirectories(tmp.getParent());
                 try (InputStream in = response.body()) {
                     Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
                 }
