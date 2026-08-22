@@ -213,3 +213,11 @@ tasks.register('runMajorIdColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runMajorIdColourChecks' }
 
+
+tasks.register('runFlowedBlockChecks', JavaExec) {
+    group = 'verification'
+    description = '被自動斷行的長敘述要查得到（含被切開的地名）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.FlowedBlockTest'
+}
+tasks.named('check') { dependsOn 'runFlowedBlockChecks' }

@@ -2,6 +2,7 @@ package com.wynnchayuan.translate;
 
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.LineParts;
+import com.wynnchayuan.capture.PlaceNames;
 import net.minecraft.client.Minecraft;
 import com.wynntils.core.text.PartStyle;
 import com.wynntils.core.text.StyledText;
@@ -90,11 +91,24 @@ public final class LineTranslator {
         }
         String translated = store.lookup(template);
         List<LineParts.Piece> extra = List.of();
+        List<LineParts.Piece> places = List.of();
         boolean flowed = false;
         if (translated == null || translated.isBlank()) {
             // 原文可能是被 tooltip 寬度自動斷行的，斷點跟語料對不上。
             // 把整段攤平成一行再查一次。
             Flowed hit = lookupFlowedParts(template, store);
+            if (hit == null) {
+                // 地名可能<b>剛好被斷在中間</b>：「the peak of the Tower of ⏎
+                // Ascension,」。地名是逐行認的，於是這一段永遠湊不出 {p}，
+                // 而語料裡存的正是 {p}——裝備的背景敘述整批不生效就是這個原因。
+                Rejoined rejoined = rejoinPlaces(template, dominantStyle(parts));
+                if (rejoined != null) {
+                    hit = lookupFlowedParts(rejoined.template(), store);
+                    if (hit != null) {
+                        places = rejoined.places();
+                    }
+                }
+            }
             translated = hit == null ? null : hit.text();
             flowed = hit != null;
             if (hit != null && hit.label() != null) {
@@ -120,7 +134,7 @@ public final class LineTranslator {
             translated = wrapToBlock(translated, run);
         }
         String[] dst = translated.split("\n", -1);
-        List<Component> built = rebuildAll(dst, parts, extra, store);
+        List<Component> built = rebuildAll(dst, parts, extra, places, store);
         if (built == null) {
             return null;                       // 佔位符對不上，整段放棄
         }
@@ -165,6 +179,51 @@ public final class LineTranslator {
      * @param label 「名稱：說明」的名稱那半；整段查到的情況是 {@code null}
      */
     record Flowed(String text, String label) {}
+
+    /** 跨行認地名的結果：換好 {@code {p}} 的模板，以及被換掉的那些。 */
+    record Rejoined(String template, List<LineParts.Piece> places) {}
+
+    /**
+     * 把<b>被斷行切開</b>的地名重新認出來。
+     *
+     * <h2>為什麼逐行認不到</h2>
+     * 地名是在 {@link LineParts#of} 裡逐行比對的，而 tooltip 會依畫面寬度斷行：
+     *
+     * <pre>
+     *   the peak of the Tower of
+     *   Ascension, is completely hollow.
+     * </pre>
+     *
+     * <p>「Tower of」與「Ascension」落在不同行，兩行各自都不含完整的地名，
+     * 於是模板裡留著原樣的英文；而語料裡存的是 {@code {p}}。兩邊永遠不相等——
+     * 裝備的背景敘述整批不生效就是這個原因，不是漏翻。
+     *
+     * <p>這裡把整段併成一行之後再認一次。回傳的地名是<b>依序</b>掃出來的，
+     * 逐行那份看得到的它都看得到，所以呼叫端直接拿它取代整個地名池。
+     *
+     * @return 沒有任何地名時回傳 {@code null}，呼叫端就不必多查一次
+     */
+    private static Rejoined rejoinPlaces(String template, Style style) {
+        String joined = template.replace('\n', ' ');
+        java.util.regex.Matcher place = PlaceNames.matcher(joined);
+        if (place == null) {
+            return null;
+        }
+        StringBuilder out = new StringBuilder();
+        List<LineParts.Piece> found = new ArrayList<>();
+        int from = 0;
+        while (place.find()) {
+            out.append(joined, from, place.start())
+               .append(GlyphSplitter.PLACE_PLACEHOLDER);
+            found.add(new LineParts.Piece(place.group(), style));
+            from = place.end();
+        }
+        if (found.isEmpty()) {
+            return null;
+        }
+        out.append(joined.substring(from));
+        return new Rejoined(out.toString(), List.copyOf(found));
+    }
 
     static String lookupFlowed(String template, TranslationStore store) {
         Flowed flowed = lookupFlowedParts(template, store);
@@ -1693,6 +1752,17 @@ public final class LineTranslator {
     private static List<Component> rebuildAll(String[] translated, List<LineParts> parts,
                                               List<LineParts.Piece> extraAccents,
                                               TranslationStore store) {
+        return rebuildAll(translated, parts, extraAccents, List.of(), store);
+    }
+
+    /**
+     * @param overridePlaces 不是空的時候<b>取代</b>逐行認出來的地名池。
+     *                       跨行認地名時會用到，見 {@link #rejoinPlaces}。
+     */
+    private static List<Component> rebuildAll(String[] translated, List<LineParts> parts,
+                                              List<LineParts.Piece> extraAccents,
+                                              List<LineParts.Piece> overridePlaces,
+                                              TranslationStore store) {
         List<LineParts.Piece> glyphs = new ArrayList<>();
         List<LineParts.Piece> places = new ArrayList<>();
         List<LineParts.Piece> numbers = new ArrayList<>();
@@ -1711,6 +1781,11 @@ public final class LineTranslator {
             numbers.addAll(part.numbers());
             users.addAll(part.users());
             allRuns.addAll(part.runs());
+        }
+        if (!overridePlaces.isEmpty()) {
+            // 跨行認出來的那一份是<b>整段依序</b>掃出來的，逐行那份看得到的它都看得到，
+            // 還多了被斷行切開的那些。兩份混在一起會重複，直接換掉。
+            places = new ArrayList<>(overridePlaces);
         }
         accents.addAll(LineParts.accentsAgainst(allRuns, blockStyle));
         accents = withTranslations(accents, store);
