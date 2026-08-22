@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 22090,
-  "translated": 1918,
+  "translated": 2029,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -32711,7 +32711,7 @@
   },
   "Arachnids' Ascent#000": {
    "src": "Talk to Admiral Aegis in the {p} Barracks at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~}, {~}, -{~}] 的 {p} 兵營跟 Aegis 上將談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -32721,7 +32721,7 @@
   },
   "Arachnids' Ascent#001": {
    "src": "Let's see... ah, {u}! There you are. I was just about to send someone to fetch you.",
-   "dst": "",
+   "dst": "我看看……啊，{u}！你來了。我正要派人去找你呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32731,7 +32731,7 @@
   },
   "Arachnids' Ascent#002": {
    "src": "Follow me- we have a conversation to have in my office. It's on the top floor of the barracks.",
-   "dst": "",
+   "dst": "跟我來——我們有話要在我辦公室談。就在兵營頂樓。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32741,7 +32741,7 @@
   },
   "Arachnids' Ascent#003": {
    "src": "...ahem. Now that we're here, we can discuss the matter of {p}.",
-   "dst": "",
+   "dst": "……咳咳。人到齊了，我們可以來談 {p} 的事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32751,7 +32751,7 @@
   },
   "Arachnids' Ascent#004": {
    "src": "Our preparations are complete, and it's time for the assault on Nivla's spider den! With you here, we'll just need to wait for-...",
-   "dst": "",
+   "dst": "我們的準備已經完成，是時候突襲 Nivla 的蜘蛛巢了！有你在，我們只要再等——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32761,7 +32761,7 @@
   },
   "Arachnids' Ascent#005": {
    "src": "Admiral- we're here! Sorry we're late, we were sparring in the training room and lost track of time...",
-   "dst": "",
+   "dst": "上將——我們到了！抱歉來遲，我們在訓練室對練，忘了時間……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32770,8 +32770,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#006": {
-   "src": "If is here, I take it that means today is the day we strike at the spiders?",
-   "dst": "",
+   "src": "If {u} is here, I take it that means today is the day we strike at the spiders?",
+   "dst": "如果 {u} 也在，我猜今天就是我們對蜘蛛動手的日子？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32781,7 +32781,7 @@
   },
   "Arachnids' Ascent#007": {
    "src": "Indeed it is. Now, you three are to be the force which will fight through their den and clear out as many of those spiders as you can. For that, you'll need support.",
-   "dst": "",
+   "dst": "正是如此。現在，你們三位就是那支要殺進巢穴、盡可能清掉蜘蛛的部隊。為此，你們需要支援。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32791,7 +32791,7 @@
   },
   "Arachnids' Ascent#008": {
    "src": "We've sent out several soldiers ahead of time to make preparations on site. You'll want to first speak to Private Cob on the {p}, who will have supplies for you.",
-   "dst": "",
+   "dst": "我們已經先派了幾名士兵到現場做準備。你們先去 {p} 找 Cob 二等兵，他手上有給你們的補給。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32801,7 +32801,7 @@
   },
   "Arachnids' Ascent#009": {
    "src": "I expect this mission will hold some danger, but I trust the three of you will be able to deal with anything you come across. Good luck, soldiers!",
-   "dst": "",
+   "dst": "我預期這次任務會有一定的危險，但我相信你們三位應付得了路上遇到的任何狀況。祝好運，士兵們！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32811,7 +32811,7 @@
   },
   "Arachnids' Ascent#010": {
    "src": "Yes, sir. We'll do our best.",
-   "dst": "",
+   "dst": "是，長官。我們會全力以赴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32821,7 +32821,7 @@
   },
   "Arachnids' Ascent#011": {
    "src": "These spiders won't stand a chance! Let's get going.",
-   "dst": "",
+   "dst": "這些蜘蛛沒機會的！我們走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32831,7 +32831,7 @@
   },
   "Arachnids' Ascent#012": {
    "src": "Speak to Private Cob in the Savannah at [{~}, {~}, -{~}] to receive supplies.",
-   "dst": "",
+   "dst": "到 [{~}, {~}, -{~}] 的莽原找 Cob 二等兵領取補給。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -32841,7 +32841,7 @@
   },
   "Arachnids' Ascent#013": {
    "src": "'ey there, chaps! You lot must be the spider killin' force, eh?",
-   "dst": "",
+   "dst": "欸，兩位好啊！你們幾個就是那支殺蜘蛛的部隊吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32851,7 +32851,7 @@
   },
   "Arachnids' Ascent#014": {
    "src": "That's us! The Admiral told us you had supplies to give us?",
-   "dst": "",
+   "dst": "就是我們！上將說你這裡有補給要給我們？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32861,7 +32861,7 @@
   },
   "Arachnids' Ascent#015": {
    "src": "That I do! Now, 'fore I send ya off, there's been sum news from the Cap'n!",
-   "dst": "",
+   "dst": "是有！不過在我送你們走之前，隊長那邊傳來了一些消息！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32871,7 +32871,7 @@
   },
   "Arachnids' Ascent#016": {
    "src": "Buncha terrorised citizens been found right next to the bloomin' den! Trapped in a sticky old web, they were.",
-   "dst": "",
+   "dst": "有一群嚇壞的居民就在那個該死的巢穴旁邊被找到了！被困在一張黏答答的老蛛網裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32881,7 +32881,7 @@
   },
   "Arachnids' Ascent#017": {
    "src": "Priority number one is gettin' them out, before takin' on the den. But nothin' can get through the web!",
-   "dst": "",
+   "dst": "第一優先是把他們弄出來，然後才是打巢穴。可是沒有東西破得了那張網！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32891,7 +32891,7 @@
   },
   "Arachnids' Ascent#018": {
    "src": "No fire, no magic... nothin' has broken through. The cap'n decided- 'ey, why not try some lava? 's hotter than fire, anyway.",
-   "dst": "",
+   "dst": "火不行、魔法不行……什麼都沒能穿過去。隊長就決定——欸，何不試試熔岩？反正它比火還燙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32901,7 +32901,7 @@
   },
   "Arachnids' Ascent#019": {
    "src": "Point is. Along with all your supplies 'n whatnot, ya've gotta bring along some lava for the cap'n. Magically contained, o' course!",
-   "dst": "",
+   "dst": "重點是。除了你們那些補給什麼的，你們還得幫隊長帶一些熔岩過去。當然是用魔法封裝好的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32911,7 +32911,7 @@
   },
   "Arachnids' Ascent#020": {
    "src": "Sure, that sounds easy enough. A bit of extra work, but we were heading in that direction anyway.",
-   "dst": "",
+   "dst": "好，那聽起來不難。是多了點事，不過我們本來就要往那邊走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32921,7 +32921,7 @@
   },
   "Arachnids' Ascent#021": {
    "src": "That's the spirit! If ya want the best route to the den, follow that road with the burn marks. It'll send ya straight to the cap'n!",
-   "dst": "",
+   "dst": "這才對嘛！你們想走去巢穴最快的路，就跟著那條有燒痕的路走。它會直接把你們送到隊長那邊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32931,7 +32931,7 @@
   },
   "Arachnids' Ascent#022": {
    "src": "Bring the supplies to Captain Enduyn at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把補給送到 [-{~}, {~}, -{~}] 給 Enduyn 隊長。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -32941,7 +32941,7 @@
   },
   "Arachnids' Ascent#023": {
    "src": "At ease, soldiers! You're the three Aegis told me to look out for, aren't you? Have you spoken to Cob yet?",
-   "dst": "",
+   "dst": "稍息，士兵！你們就是 Aegis 要我留意的那三位吧？你們跟 Cob 談過了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32951,7 +32951,7 @@
   },
   "Arachnids' Ascent#024": {
    "src": "We have, and we've brought supplies. As well as... lava, I think?",
-   "dst": "",
+   "dst": "談過了，補給也帶來了。還有……熔岩，我想是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32961,7 +32961,7 @@
   },
   "Arachnids' Ascent#025": {
    "src": "Ah, good! You can see the pickle we're in, hmm? We've tried everything to get those poor souls out, but the damned web is like glue!",
-   "dst": "",
+   "dst": "啊，好！你們看得出我們現在的窘境了吧，嗯？我們什麼辦法都試過了，就是弄不出那些可憐人，那張該死的網像膠一樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32971,7 +32971,7 @@
   },
   "Arachnids' Ascent#026": {
    "src": "Now, let's see here... If I cast a spell on it like this, then...",
-   "dst": "",
+   "dst": "好了，我看看……如果我像這樣對它施個法，然後……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32981,7 +32981,7 @@
   },
   "Arachnids' Ascent#027": {
    "src": "Hm... That's not good.",
-   "dst": "",
+   "dst": "嗯……這下不妙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32991,7 +32991,7 @@
   },
   "Arachnids' Ascent#028": {
    "src": "So, what do we do now? You mentioned another option- what was that about? What about it made it difficult?",
-   "dst": "",
+   "dst": "那我們現在怎麼辦？您剛才提過另一個選項——那是什麼？它為什麼難？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33001,7 +33001,7 @@
   },
   "Arachnids' Ascent#029": {
    "src": "Right. You may have noticed on your way here, but the nest is at the base of {p}, a dormant volcano.",
-   "dst": "",
+   "dst": "是這樣。你們來的路上大概注意到了，那個巢穴就在 {p} 的山腳下，那是一座休眠火山。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33011,7 +33011,7 @@
   },
   "Arachnids' Ascent#030": {
    "src": "Legends speak of incredible magic granted by the mountain- that of protection, incinerating any who dare go against it.",
-   "dst": "",
+   "dst": "傳說那座山會賜予某種驚人的魔法——一種護佑，把任何膽敢冒犯它的人燒成灰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33021,7 +33021,7 @@
   },
   "Arachnids' Ascent#031": {
    "src": "These are only stories, of course. It's very unlikely the mountain actually could grant such magic. However... there may be some truth in the legend.",
-   "dst": "",
+   "dst": "當然，那只是故事。那座山真的能賜予這種魔法的機率很低。不過……傳說裡或許有幾分真的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33031,7 +33031,7 @@
   },
   "Arachnids' Ascent#032": {
    "src": "So what's the catch? You would have tried it first if it were that simple.",
-   "dst": "",
+   "dst": "那困難在哪？如果那麼簡單，您早就先試了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33041,7 +33041,7 @@
   },
   "Arachnids' Ascent#033": {
    "src": "The mountain is infested with spiders, even more so than {p}. Our few attempts at scouting it out have shown they're incredibly hostile towards intruders.",
-   "dst": "",
+   "dst": "那座山裡到處都是蜘蛛，比 {p} 還多。我們幾次偵察的結果顯示，牠們對入侵者極度有敵意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33051,7 +33051,7 @@
   },
   "Arachnids' Ascent#034": {
    "src": "As though they're protecting something, I assume?",
-   "dst": "",
+   "dst": "就好像牠們在守護什麼東西，我猜？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33061,7 +33061,7 @@
   },
   "Arachnids' Ascent#035": {
    "src": "Indeed. So, here's the plan... If you enter the mountain, the spiders will quickly try to move inside to stop you. I'll need one of you to stay here with me to fight them off.",
-   "dst": "",
+   "dst": "正是。所以，計畫是這樣……你們一進山，蜘蛛就會立刻往裡面湧去阻止你們。我需要你們其中一個留下來跟我一起擋住牠們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33071,7 +33071,7 @@
   },
   "Arachnids' Ascent#036": {
    "src": "So two of us take on the volcano, and two stay behind. Got it! {u}, you should be part of the Mount Wynn group. But then, Tasim, which of us should go with them?",
-   "dst": "",
+   "dst": "所以我們兩個上火山，兩個留守。懂了！{u}，你應該去 Mount Wynn 那一組。那麼 Tasim，我們兩個誰跟他們去？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33080,8 +33080,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#037": {
-   "src": "Why don't we let decide? Which of us do you want to join you in the volcano?",
-   "dst": "",
+   "src": "Why don't we let {u} decide? Which of us do you want to join you in the volcano?",
+   "dst": "何不讓 {u} 決定？你想要我們哪一個陪你進火山？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33091,7 +33091,7 @@
   },
   "Arachnids' Ascent#038": {
    "src": "Alright! We'll handle the volcano then. Captain, Tasim, don't die out here!",
-   "dst": "",
+   "dst": "好！那火山就交給我們了。隊長、Tasim，別死在外頭啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33101,7 +33101,7 @@
   },
   "Arachnids' Ascent#039": {
    "src": "Alright. We'll fight through the spiders in the mountain, then. Captain, Aledar, good luck!",
-   "dst": "",
+   "dst": "好。那我們去跟山裡的蜘蛛拚了。隊長、Aledar，祝你們順利！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33111,7 +33111,7 @@
   },
   "Arachnids' Ascent#040": {
    "src": "Then take more time. But don't take too long- we don't want the spiders to realize we're planning something.",
-   "dst": "",
+   "dst": "那就再想想。不過別想太久——我們不想讓蜘蛛察覺我們在盤算什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33121,7 +33121,7 @@
   },
   "Arachnids' Ascent#041": {
    "src": "Decide who to bring with you into Mount Wynn at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "決定要帶誰一起進 [-{~}, {~}, -{~}] 的 Mount Wynn。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -33131,7 +33131,7 @@
   },
   "Arachnids' Ascent#042": {
    "src": "So, who do you want to join you to fight through Mount Wynn?",
-   "dst": "",
+   "dst": "那麼，你想要誰陪你殺進 Mount Wynn？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33141,7 +33141,7 @@
   },
   "Arachnids' Ascent#043": {
    "src": "Alright! We'll handle the volcano then. Captain, Tasim, don't die out here!",
-   "dst": "",
+   "dst": "好！那火山就交給我們了。隊長、Tasim，別死在外頭啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33151,7 +33151,7 @@
   },
   "Arachnids' Ascent#044": {
    "src": "Alright. We'll fight through the spiders in the mountain, then. Captain, Aledar, good luck!",
-   "dst": "",
+   "dst": "好。那我們去跟山裡的蜘蛛拚了。隊長、Aledar，祝你們順利！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33161,7 +33161,7 @@
   },
   "Arachnids' Ascent#045": {
    "src": "Then take more time. But don't take too long- we don't want the spiders to realize we're planning something.",
-   "dst": "",
+   "dst": "那就再想想。不過別想太久——我們不想讓蜘蛛察覺我們在盤算什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33171,7 +33171,7 @@
   },
   "Arachnids' Ascent#046": {
    "src": "Enter Mount Wynn and reach the summit through the cave at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "進入 Mount Wynn，穿過 [-{~}, {~}, -{~}] 的洞窟抵達山頂。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -33181,7 +33181,7 @@
   },
   "Arachnids' Ascent#047": {
    "src": "...Wow, it's hot in here! That makes sense, I guess, given what we're here for. Let's reach the top as quickly as we can.",
-   "dst": "",
+   "dst": "……哇，這裡面好熱！想想我們是為什麼來的，這也合理啦。我們盡快爬到頂上去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33191,7 +33191,7 @@
   },
   "Arachnids' Ascent#048": {
    "src": "W-woah! You felt that too, right? What's going-",
-   "dst": "",
+   "dst": "哇——！你也感覺到了吧？這是怎麼回——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33201,7 +33201,7 @@
   },
   "Arachnids' Ascent#049": {
    "src": "We've got to run for it! Come on, jump!",
-   "dst": "",
+   "dst": "我們得跑了！快，跳！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33211,7 +33211,7 @@
   },
   "Arachnids' Ascent#050": {
    "src": "That... that was a close one. Phew! Can't believe we made it out in one piece. I think we're near the top, too.",
-   "dst": "",
+   "dst": "那……那真是好險。呼！真不敢相信我們居然全鬚全尾地出來了。而且我想我們快到頂了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33221,7 +33221,7 @@
   },
   "Arachnids' Ascent#051": {
    "src": "Well, here we are! ...The heat's gotten more intense up here. Come on, let's find out what we're looking for, before I over-",
-   "dst": "",
+   "dst": "好，到了！……上面這裡熱得更誇張。來吧，趁我熱昏之前，我們快找出要找的東——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33231,7 +33231,7 @@
   },
   "Arachnids' Ascent#052": {
    "src": "...intruders....come to take....sacred protection....",
-   "dst": "",
+   "dst": "……入侵者……來奪走……神聖的護佑……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33241,7 +33241,7 @@
   },
   "Arachnids' Ascent#053": {
    "src": ".....must not......allow....will kill.....for queen!....",
-   "dst": "",
+   "dst": "……不可……容許……我要殺……為了女王！……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33251,7 +33251,7 @@
   },
   "Arachnids' Ascent#054": {
    "src": "Ack! We should have known it wouldn't be that easy. Alright, let's take down this spider and get what we came for!",
-   "dst": "",
+   "dst": "啊！我們早該知道沒那麼容易。好，把這隻蜘蛛解決掉，拿走我們來拿的東西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33261,7 +33261,7 @@
   },
   "Arachnids' Ascent#055": {
    "src": "Well, there it is. We have what we need to burn through those webs!... I hope.",
-   "dst": "",
+   "dst": "好，就是這個。我們有能燒穿那些蛛網的東西了！……但願啦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33271,7 +33271,7 @@
   },
   "Arachnids' Ascent#056": {
    "src": "The spider mentioned a queen... I guess that's what we'll be facing in their nest, then.",
-   "dst": "",
+   "dst": "那隻蜘蛛提到了一個女王……我猜那就是我們在巢穴裡要面對的東西了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33281,7 +33281,7 @@
   },
   "Arachnids' Ascent#057": {
    "src": "Alright, let's get back to Tasim and the captain!",
-   "dst": "",
+   "dst": "好，我們回去找 Tasim 和隊長！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33291,7 +33291,7 @@
   },
   "Arachnids' Ascent#058": {
    "src": "...I can hear the spiders already. We'll need to fight through them if we want to reach the top. Let's get going, we don't want to take too long.",
-   "dst": "",
+   "dst": "……我已經聽得到蜘蛛的聲音了。想上到頂端就得殺過去。我們動作快，別拖太久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33301,7 +33301,7 @@
   },
   "Arachnids' Ascent#059": {
    "src": "H-huh? That shaking, it's almost like-",
-   "dst": "",
+   "dst": "啊——？那個震動，感覺像是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33311,7 +33311,7 @@
   },
   "Arachnids' Ascent#060": {
    "src": "What are those spiders doing!? {u}, come on, we need to move!",
-   "dst": "",
+   "dst": "那些蜘蛛在做什麼？！{u}，快，我們得走了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33321,7 +33321,7 @@
   },
   "Arachnids' Ascent#061": {
    "src": "...That was closer than it should have been. The spiders must be real desperate to protect whatever it is they have up here, huh? Let's keep going.",
-   "dst": "",
+   "dst": "……那比它應該有的距離還近。看來蜘蛛是真的很拚命在守上面那個東西啊？我們繼續。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33331,7 +33331,7 @@
   },
   "Arachnids' Ascent#062": {
    "src": "It was a tough climb, but we made it... It's, uh, very hot up here. So- what was it we were looking for-",
-   "dst": "",
+   "dst": "這一段爬得真辛苦，不過我們上來了……這裡，呃，非常熱。所以——我們要找的東西是什——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33341,7 +33341,7 @@
   },
   "Arachnids' Ascent#063": {
    "src": "...intruders....come to take....sacred protection....",
-   "dst": "",
+   "dst": "……入侵者……來奪走……神聖的護佑……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33351,7 +33351,7 @@
   },
   "Arachnids' Ascent#064": {
    "src": ".....must not......allow....will kill.....for queen!....",
-   "dst": "",
+   "dst": "……不可……容許……我要殺……為了女王！……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33360,8 +33360,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#065": {
-   "src": "Of course it wouldn't be that easy... Alright, , let's do what we came here for. Let's claim that magic, and burn through the webs!",
-   "dst": "",
+   "src": "Of course it wouldn't be that easy... Alright, {u}, let's do what we came here for. Let's claim that magic, and burn through the webs!",
+   "dst": "當然不可能那麼容易……好，{u}，我們把來這裡要做的事做完。把那份魔法拿到手，燒穿那些蛛網！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33371,7 +33371,7 @@
   },
   "Arachnids' Ascent#066": {
    "src": "I guess that's that taken care of. We'll be able to burn through that web and save the villagers!",
-   "dst": "",
+   "dst": "我想這件事算是解決了。我們可以燒穿那張網，把村民救出來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33381,7 +33381,7 @@
   },
   "Arachnids' Ascent#067": {
    "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in it's nest to stop the spiders, once and for all.",
-   "dst": "",
+   "dst": "你也聽到那隻蜘蛛提到女王了吧？我們大概得在牠的巢穴裡把牠打倒，才能徹底終結這些蜘蛛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33391,7 +33391,7 @@
   },
   "Arachnids' Ascent#068": {
    "src": "We should probably get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
-   "dst": "",
+   "dst": "我們該下山了。別讓 Aledar 和隊長等太久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33401,7 +33401,7 @@
   },
   "Arachnids' Ascent#069": {
    "src": "Return to Captain Enduyn with the flame at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "帶著火焰回到 [-{~}, {~}, -{~}] 找 Enduyn 隊長。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -33411,7 +33411,7 @@
   },
   "Arachnids' Ascent#070": {
    "src": "You've returned! I trust you found something that can help us pass through these webs?",
-   "dst": "",
+   "dst": "你們回來了！我想你們找到能幫我們穿過這些蛛網的東西了吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33421,7 +33421,7 @@
   },
   "Arachnids' Ascent#071": {
    "src": "We did! We fought off a spider at the summit, and claimed a magical flame.",
-   "dst": "",
+   "dst": "找到了！我們在山頂打倒一隻蜘蛛，奪下了一團有魔力的火焰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33431,7 +33431,7 @@
   },
   "Arachnids' Ascent#072": {
    "src": "Excellent! Now, give it here. Let's see if we can't get these villagers free... watch out, folks! It might get a little warm for a moment...",
-   "dst": "",
+   "dst": "太好了！來，交給我。看看我們能不能把這些村民弄出來……各位小心！可能會有一下子有點燙……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33441,7 +33441,7 @@
   },
   "Arachnids' Ascent#073": {
    "src": "Great work, soldiers. With these villagers out we can turn our focus to the main den.",
-   "dst": "",
+   "dst": "幹得好，士兵們。村民救出來了，我們就能把重心放在主巢穴上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33451,7 +33451,7 @@
   },
   "Arachnids' Ascent#074": {
    "src": "If you're prepared, I don't see any reason to hold back. Good luck in there, soldiers! Let's stop this spider blight once and for all.",
-   "dst": "",
+   "dst": "你們準備好的話，我看沒有理由再等。裡面小心，士兵們！我們一次把這場蜘蛛之災終結掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33460,8 +33460,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#075": {
-   "src": "We'll do our best, Captain. Aledar, , let's head down to the den entrance.",
-   "dst": "",
+   "src": "We'll do our best, Captain. Aledar, {u}, let's head down to the den entrance.",
+   "dst": "我們會盡力的，隊長。Aledar、{u}，我們下去巢穴入口吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33471,7 +33471,7 @@
   },
   "Arachnids' Ascent#076": {
    "src": "You've returned! I trust you found something that can help us pass through these webs?",
-   "dst": "",
+   "dst": "你們回來了！我想你們找到能幫我們穿過這些蛛網的東西了吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33481,7 +33481,7 @@
   },
   "Arachnids' Ascent#077": {
    "src": "We did, yes. There was a powerful spider at the peak, which was making use of this magical flame.",
-   "dst": "",
+   "dst": "找到了。山頂上有一隻很強的蜘蛛，牠正在使用這團有魔力的火焰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33491,7 +33491,7 @@
   },
   "Arachnids' Ascent#078": {
    "src": "Excellent! Now, give it here. Let's see if we can't get these villagers free... watch out, folks! It might get a little warm for a moment...",
-   "dst": "",
+   "dst": "太好了！來，交給我。看看我們能不能把這些村民弄出來……各位小心！可能會有一下子有點燙……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33501,7 +33501,7 @@
   },
   "Arachnids' Ascent#079": {
    "src": "Great work, soldiers. With these villagers out we can turn our focus to the main den.",
-   "dst": "",
+   "dst": "幹得好，士兵們。村民救出來了，我們就能把重心放在主巢穴上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33511,7 +33511,7 @@
   },
   "Arachnids' Ascent#080": {
    "src": "If you're prepared, I don't see any reason to hold back. Good luck in there, soldiers! Let's stop this spider blight once and for all.",
-   "dst": "",
+   "dst": "你們準備好的話，我看沒有理由再等。裡面小心，士兵們！我們一次把這場蜘蛛之災終結掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33520,8 +33520,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#081": {
-   "src": "We'll do our best, Captain. Aledar, , let's head down to the den entrance.",
-   "dst": "",
+   "src": "We'll do our best, Captain. Aledar, {u}, let's head down to the den entrance.",
+   "dst": "我們會盡力的，隊長。Aledar、{u}，我們下去巢穴入口吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33531,7 +33531,7 @@
   },
   "Arachnids' Ascent#082": {
    "src": "H-hah! F-freedom! No m-more c-creepy crawlies... Just me a-and my... mushrooms.",
-   "dst": "",
+   "dst": "哈、哈！自、自由了！沒有爬、爬來爬去的東西了……只剩我跟我的……蘑菇。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33541,7 +33541,7 @@
   },
   "Arachnids' Ascent#083": {
    "src": "We did it! We killed the spider queen! {p} is safe from that threat now!",
-   "dst": "",
+   "dst": "我們做到了！我們把蜘蛛女王殺了！{p} 現在擺脫那個威脅了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33551,7 +33551,7 @@
   },
   "Arachnids' Ascent#084": {
    "src": "We- we did! That was... intense. But we succeeded in the end!",
-   "dst": "",
+   "dst": "我們——我們真的做到了！剛才那場……很激烈。不過我們最後還是成功了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33561,7 +33561,7 @@
   },
   "Arachnids' Ascent#085": {
    "src": "...So, what now? We completed the mission, so we should report back to the Admiral, but... what's after that?",
-   "dst": "",
+   "dst": "……那，接下來呢？任務完成了，我們該回去向上將回報，可是……之後呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33571,7 +33571,7 @@
   },
   "Arachnids' Ascent#086": {
    "src": "I guess we'll have to figure that out. I know I still want to help defend the province, but beyond that... I don't know.",
-   "dst": "",
+   "dst": "我想那得慢慢想了。我知道我還是想幫忙守這個行省，但除此之外……我也不知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33581,7 +33581,7 @@
   },
   "Arachnids' Ascent#087": {
    "src": "...Yeah, alright. Well, hey, let's all meet back at {p} and celebrate! We deserve it after that whole ordeal.",
-   "dst": "",
+   "dst": "……嗯，好吧。欸，這樣吧，我們回 {p} 一起慶祝！經過那一整場折騰，我們值得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33591,7 +33591,7 @@
   },
   "Arachnids' Ascent#088": {
    "src": "That sounds good, yeah. {u}, we'll rest up here a little, but we'll meet you back at the barracks soon.",
-   "dst": "",
+   "dst": "這聽起來不錯。{u}，我們在這裡稍微休息一下，等等在兵營跟你會合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33601,7 +33601,7 @@
   },
   "Arachnids' Ascent#089": {
    "src": "Well, here we are! Back at the barracks, after a successful mission. It feels a little... unreal, you know?",
-   "dst": "",
+   "dst": "好，我們回來了！任務成功之後回到兵營。感覺有點……不真實，你懂嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33611,7 +33611,7 @@
   },
   "Arachnids' Ascent#090": {
    "src": "I know what you mean. But, well, we did good! We managed to make the woods safer for the people living there.",
-   "dst": "",
+   "dst": "我懂你的意思。不過，欸，我們做得很好！我們讓那片林子對住在那裡的人安全了一些。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33621,7 +33621,7 @@
   },
   "Arachnids' Ascent#091": {
    "src": "We did! And now, we celebrate! Here, let's all some {p} Whiskey for the occasion.",
-   "dst": "",
+   "dst": "我們確實做到了！那麼現在，慶祝！來，為了這個場合，我們都來點 {p} 威士忌。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33631,7 +33631,7 @@
   },
   "Arachnids' Ascent#092": {
    "src": "So, what are you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
-   "dst": "",
+   "dst": "所以你們兩個接下來打算做什麼？我想我會去跟上將談談，找個地方派任。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33641,7 +33641,7 @@
   },
   "Arachnids' Ascent#093": {
    "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. Something about their magic sticks out to me.",
-   "dst": "",
+   "dst": "嗯。我最近在想……要不要多研究一點進階的粉末技術。它們的魔法有什麼東西吸引我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33651,7 +33651,7 @@
   },
   "Arachnids' Ascent#094": {
    "src": "Oh, really? I thought you would be more into basic fighting, what with our journey to {p}.",
-   "dst": "",
+   "dst": "哦，真的？我還以為你會比較喜歡單純的打鬥，畢竟我們一路往 {p} 走過來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33661,7 +33661,7 @@
   },
   "Arachnids' Ascent#095": {
    "src": "Yeah... well, I guess I found something a little more interesting along the way. I'll let you know how it all goes.",
-   "dst": "",
+   "dst": "對啊……嗯，我想我在路上找到了更有意思一點的東西。之後怎麼樣我再跟你說。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33670,8 +33670,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#096": {
-   "src": "Keep us updated, Aledar. So, , what are you thinking of doing next?",
-   "dst": "",
+   "src": "Keep us updated, Aledar. So, {u}, what are you thinking of doing next?",
+   "dst": "隨時跟我們說喔，Aledar。那麼 {u}，你接下來想做什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33681,7 +33681,7 @@
   },
   "Arachnids' Ascent#097": {
    "src": "Not a bad idea! I might join you with that later, once I've decided on things more.",
-   "dst": "",
+   "dst": "這主意不錯！等我把事情想清楚一點，說不定會跟你一起。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33691,7 +33691,7 @@
   },
   "Arachnids' Ascent#098": {
    "src": "Helping people is a good goal. There's bound to be lots of people around who need it.",
-   "dst": "",
+   "dst": "幫助別人是個好目標。這附近一定有很多人需要幫忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33701,7 +33701,7 @@
   },
   "Arachnids' Ascent#099": {
    "src": "Exploring, huh? That's a good idea. There's plenty to see around here!",
-   "dst": "",
+   "dst": "探索啊？這主意不錯。這一帶有很多可以看的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33711,7 +33711,7 @@
   },
   "Arachnids' Ascent#100": {
    "src": "...And- well, we all came here for a reason. Might as well see the province while we're here, right?",
-   "dst": "",
+   "dst": "……而且，嗯，我們來這裡都是有原因的。既然都來了，順便看看這個行省也好，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33721,7 +33721,7 @@
   },
   "Arachnids' Ascent#101": {
    "src": "Well, if you're staying in the area, maybe we'll cross paths! I'll likely be defending {p} in the short-term.",
-   "dst": "",
+   "dst": "那如果你會留在這一帶，說不定我們還會遇到！短期內我大概都會在 {p} 防守。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33731,7 +33731,7 @@
   },
   "Arachnids' Ascent#102": {
    "src": "And, well, I'll probably be in the area as well! There's plenty of experts in the area.",
-   "dst": "",
+   "dst": "而我呢，大概也會在這附近！這一帶有很多高手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33741,7 +33741,7 @@
   },
   "Arachnids' Ascent#103": {
    "src": "Well, hey, there's no shame in that. There's lots to do around here. I'm sure you'll figure it out!",
-   "dst": "",
+   "dst": "欸，這也沒什麼好丟臉的。這附近能做的事多得是。我相信你會想清楚的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33751,7 +33751,7 @@
   },
   "Arachnids' Ascent#104": {
    "src": "If you need a goal, the next place you might want to visit is {p} {p}, to the north. Maybe pay it a visit when you reach level {~}.",
-   "dst": "",
+   "dst": "如果你需要一個目標，下一個可以去看看的地方是北邊的 {p} {p}。等你到 {~} 級的時候不妨去一趟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33761,7 +33761,7 @@
   },
   "Arachnids' Ascent#105": {
    "src": "...Well, I'm glad we're all able to be here together. Here's to a long and fulfilling friendship!",
-   "dst": "",
+   "dst": "……嗯，我很高興我們三個都能一起在這裡。敬一段長久而充實的友誼！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33771,7 +33771,7 @@
   },
   "Arachnids' Ascent#106": {
    "src": "I'll drink to that! To all our future adventures.",
-   "dst": "",
+   "dst": "這杯我乾了！敬我們未來所有的冒險。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33781,7 +33781,7 @@
   },
   "Arachnids' Ascent#107": {
    "src": "...Oh, {u}! Good to see you. Anything interesting going on with you?",
-   "dst": "",
+   "dst": "……哦，{u}！見到你真好。你那邊有什麼有意思的事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33791,7 +33791,7 @@
   },
   "Arachnids' Ascent#108": {
    "src": "Me? Well, I've been making little progress... but, nothing too big yet. I'm keeping at it, though!",
-   "dst": "",
+   "dst": "我？嗯，我有一點小進展……不過還沒什麼大的。我還在弄就是了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33800,8 +33800,8 @@
    "source": "wiki"
   },
   "Arachnids' Ascent#109": {
-   "src": "Oh, hello . I'm probably not going to be here for long- I've been assigned to help defend {p} to the south.",
-   "dst": "",
+   "src": "Oh, hello {u}. I'm probably not going to be here for long- I've been assigned to help defend {p} to the south.",
+   "dst": "哦，你好，{u}。我大概不會在這裡待太久——我被派去南邊協防 {p} 了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33811,7 +33811,7 @@
   },
   "Arachnids' Ascent#110": {
    "src": "You should come visit, if you have the chance!",
-   "dst": "",
+   "dst": "你有機會的話該來看看！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",

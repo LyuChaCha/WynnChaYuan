@@ -203,3 +203,11 @@ tasks.register('runProbe', JavaExec) {
 tasks.withType(JavaExec).configureEach {
     jvmArgs('-Dfile.encoding=UTF-8', '-Dstdout.encoding=UTF-8', '-Dstderr.encoding=UTF-8')
 }
+
+tasks.register('runWrapChecks', JavaExec) {
+    group = 'verification'
+    description = '折行不能丟例外——例外被吞掉會讓整個面板不見'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.WrapTest'
+}
+tasks.named('check') { dependsOn 'runWrapChecks' }
