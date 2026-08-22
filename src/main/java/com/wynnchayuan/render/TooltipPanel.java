@@ -148,7 +148,16 @@ public final class TooltipPanel {
             // 從最長試到兩行都沒中，才記一筆。記在這裡而不是 translateBlock 裡面，
             // 是因為那邊每試一個長度就會記一次——一份八行的素材清單灌十九筆進去，
             // 真正想查的那一段就永遠排不進診斷檔。
-            if (longest >= 2) {
+            //
+            // 光是移到這裡還不夠。素材清單的每一行都查不到，而每一行都是一個新的
+            // 起點——同一份清單以「整段往後挪一行」的方式被記了十幾次，
+            // 二十個名額全被它吃光，使用者真正要查的那一段照樣看不到。
+            //
+            // 會被自動斷行的段落一定<b>接在空行後面，或從第一行開始</b>，
+            // 所以起點落在段落中間的那些窗格本來就不是要查的東西，不必記。
+            boolean paragraphStart =
+                    i == 0 || styled.get(i - 1).getString().isBlank();
+            if (longest >= 2 && paragraphStart) {
                 StringBuilder key = new StringBuilder();
                 for (int k = i; k < i + longest; k++) {
                     if (k > i) {
