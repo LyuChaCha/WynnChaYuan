@@ -101,7 +101,7 @@ public final class LineTranslator {
                 // 名稱那半在原文裡有自己的顏色（Major ID 的名稱是粉紅的），
                 // 而譯文是中文、跟原文對不起來，一般的樣式沿用比對不到。
                 // 這裡知道譯出來的名稱長什麼樣，直接當成一個「原樣出現的詞」交上去。
-                extra = labelAccent(hit.label(), parts.get(0));
+                extra = labelAccent(hit.label(), run.get(0));
             }
         }
         if (translated == null || translated.isBlank()) {
@@ -210,7 +210,7 @@ public final class LineTranslator {
      * 行首，而它跟後面的說明顏色不同，正是這樣才會被記成 accent。
      * 找不到就回傳空的，那一段照主樣式畫，不會比現在更糟。
      */
-    private static List<LineParts.Piece> labelAccent(String label, LineParts first) {
+    private static List<LineParts.Piece> labelAccent(String label, StyledText firstLine) {
         // 前面的 ✦ 或 {#} 要拿掉再比對。{#} 在重建時是<b>獨立的一個 token</b>，
         // 連著它一起比對永遠對不上，名稱的顏色就這樣掉了。
         String core = label;
@@ -227,16 +227,20 @@ public final class LineTranslator {
         if (core.isBlank()) {
             return List.of();
         }
-        // 要挑<b>有字母的</b>那一段，不能直接拿第一段。
+        // 直接從<b>原文第一行</b>取第一段有字母的樣式——那一段就是名稱本身。
         //
-        // 遊戲把 `✦` 跟名稱分成兩個色段送過來，而「純符號的段也算重點段」
-        // 是後來為了保住 `✖` 的紅色才加的——兩件事湊在一起，`accents().get(0)`
-        // 就變成那個 `✦`，名稱於是套上了 `✦` 的顏色。畫面上看起來就是
-        // 「Major ID 的標題顏色不見了」。
-        for (LineParts.Piece accent : first.accents()) {
-            if (GlyphSplitter.hasLetter(accent.text())) {
-                return List.of(new LineParts.Piece(core, accent.style()));
+        // 先前是從 accents() 裡挑，而 accents() 收的是「跟整行主要樣式不同」的段。
+        // 名稱如果比同一行露出的說明還長，主要樣式就變成名稱，被判為「不同」的
+        // 反而是說明——於是名稱套上說明的顏色、說明套上名稱的顏色，
+        // 畫面上看起來就是<b>兩邊顏色對調</b>。
+        for (StyledTextPart part : firstLine) {
+            String raw = part.getString(null, StyleType.NONE);
+            if (!GlyphSplitter.hasLetter(raw)) {
+                continue;                      // ✦ 那類純符號的段跳過
             }
+            PartStyle ps = part.getPartStyle();
+            return List.of(new LineParts.Piece(
+                    core, ps == null ? Style.EMPTY : ps.getStyle()));
         }
         return List.of();
     }

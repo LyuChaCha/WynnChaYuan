@@ -1,0 +1,2795 @@
+{
+ "_meta": {
+  "domain": "ability/archer",
+  "itemNames": false,
+  "lang": "zh_tw",
+  "count": 231,
+  "translated": 27,
+  "note": "弓箭手的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。"
+ },
+ "entries": {
+  "93c1d83d0025": {
+   "src": "Arrow Bomb",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/01/000/004",
+   "keep": "en"
+  },
+  "5a9a58836459": {
+   "src": "{#}{#}Range: ±{~} Blocks",
+   "dst": "{#}{#}施放範圍: ±{~} 格",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "archer/Arrow Bomb",
+    "archer/Arrow Storm"
+   ],
+   "_raw": " Range: ±26 Blocks",
+   "tree": "02/archer/01/000/004"
+  },
+  "1751807c867e": {
+   "src": "Click Combo: LEFT-RIGHT-RIGHT",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arrow Bomb"
+   ],
+   "lines": 1,
+   "flat": "Click Combo: LEFT-RIGHT-RIGHT",
+   "_raw": "Click Combo: LEFT-RIGHT-RIGHT",
+   "tree": "02/archer/01/000/004"
+  },
+  "5a25cce1ce2c": {
+   "src": "Shoots a long-ranged arrow that explodes\nand deals high damage over a large area.\n(Self-damage for {~} of your DPS)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arrow Bomb"
+   ],
+   "lines": 3,
+   "flat": "Shoots a long-ranged arrow that explodes and deals high damage over a large area. (Self-damage for {~} of your DPS)",
+   "_raw": "Shoots a long-ranged arrow that explodes\nand deals high damage over a large area.\n(Self-damage for 10% of your DPS)",
+   "tree": "02/archer/01/000/004"
+  },
+  "f9524422f5cc": {
+   "src": "Bow Proficiency",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/01/002/004",
+   "keep": "en"
+  },
+  "6ae3111c93c2": {
+   "src": "Improve your Main Attack's damage\nand range when using a bow.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Bow Proficiency"
+   ],
+   "lines": 2,
+   "flat": "Improve your Main Attack's damage and range when using a bow.",
+   "_raw": "Improve your Main Attack's damage\nand range when using a bow.",
+   "tree": "02/archer/01/002/004"
+  },
+  "307aace7ba94": {
+   "src": "Cheaper Arrow Bomb",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/01/002/006",
+   "keep": "en"
+  },
+  "5c2af2957403": {
+   "src": "Reduce the Mana cost of Arrow Bomb.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Cheaper Arrow Bomb",
+    "archer/Cheaper Arrow Bomb II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Arrow Bomb.",
+   "_raw": "Reduce the Mana cost of Arrow Bomb.",
+   "tree": "02/archer/01/002/006"
+  },
+  "f94f92301c0f": {
+   "src": "Heart Shatter",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/01/004/004",
+   "keep": "en"
+  },
+  "dba1450f3004": {
+   "src": "Hitting a mob directly with Arrow Bomb\nwill shatter its heart and deal additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Heart Shatter"
+   ],
+   "lines": 2,
+   "flat": "Hitting a mob directly with Arrow Bomb will shatter its heart and deal additional damage.",
+   "_raw": "Hitting a mob directly with Arrow Bomb\nwill shatter its heart and deal additional damage.",
+   "tree": "02/archer/01/004/004"
+  },
+  "3eb51aea789d": {
+   "src": "Double Shots",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/02/001/002",
+   "keep": "en"
+  },
+  "26d4d854b4ad": {
+   "src": "{#}{#}Main Attack Damage: -{~} (per arrow)",
+   "dst": "{#}{#}普攻傷害: -{~}(每支箭)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Double Shots"
+   ],
+   "_raw": " Main Attack Damage: -40% (per arrow)",
+   "tree": "02/archer/02/001/002"
+  },
+  "9a7ed7aa5858": {
+   "src": "Doubles Main Attack arrows\nand reduces their damage.\n(Harder to hit distant enemies)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Double Shots"
+   ],
+   "lines": 3,
+   "flat": "Doubles Main Attack arrows and reduces their damage. (Harder to hit distant enemies)",
+   "_raw": "Doubles Main Attack arrows\nand reduces their damage.\n(Harder to hit distant enemies)",
+   "tree": "02/archer/02/001/002"
+  },
+  "b4cfe1f435f0": {
+   "src": "Escape",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/02/001/004",
+   "keep": "en"
+  },
+  "c06a1fd033e2": {
+   "src": "Click Combo: LEFT-LEFT-LEFT",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Escape"
+   ],
+   "lines": 1,
+   "flat": "Click Combo: LEFT-LEFT-LEFT",
+   "_raw": "Click Combo: LEFT-LEFT-LEFT",
+   "tree": "02/archer/02/001/004"
+  },
+  "9b871d36c30e": {
+   "src": "Throw yourself backward to avoid danger.\n(Hold shift while escaping to cancel)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Escape"
+   ],
+   "lines": 2,
+   "flat": "Throw yourself backward to avoid danger. (Hold shift while escaping to cancel)",
+   "_raw": "Throw yourself backward to avoid danger.\n(Hold shift while escaping to cancel)",
+   "tree": "02/archer/02/001/004"
+  },
+  "4b49b9f59eee": {
+   "src": "Power Shots",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/02/001/006",
+   "keep": "en"
+  },
+  "643cd263ef34": {
+   "src": "Your Main Attack arrows have\nincreased speed and knockback.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Power Shots"
+   ],
+   "lines": 2,
+   "flat": "Your Main Attack arrows have increased speed and knockback.",
+   "_raw": "Your Main Attack arrows have\nincreased speed and knockback.",
+   "tree": "02/archer/02/001/006"
+  },
+  "c099114e0e9f": {
+   "src": "Arrow Storm",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/02/003/002",
+   "keep": "en"
+  },
+  "3fde5c5a86a7": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per arrow)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每支箭)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Arrow Storm",
+    "archer/Buckshot",
+    "archer/Parting Gift",
+    "archer/Crepuscular Ray"
+   ],
+   "_raw": " Total Damage: 40% (of your DPS, per arrow)",
+   "tree": "02/archer/02/003/002"
+  },
+  "99971bec6496": {
+   "src": "Click Combo: LEFT-RIGHT-LEFT",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arrow Storm"
+   ],
+   "lines": 1,
+   "flat": "Click Combo: LEFT-RIGHT-LEFT",
+   "_raw": "Click Combo: LEFT-RIGHT-LEFT",
+   "tree": "02/archer/02/003/002"
+  },
+  "43558098d1be": {
+   "src": "Shoots a stream of {~} arrows,\ndealing significant damage to close\nmobs and pushing them away.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arrow Storm"
+   ],
+   "lines": 3,
+   "flat": "Shoots a stream of {~} arrows, dealing significant damage to close mobs and pushing them away.",
+   "_raw": "Shoots a stream of 8 arrows,\ndealing significant damage to close\nmobs and pushing them away.",
+   "tree": "02/archer/02/003/002"
+  },
+  "0794b1dbdca0": {
+   "src": "Cheaper Escape",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/02/003/004",
+   "keep": "en"
+  },
+  "7162baa87288": {
+   "src": "Reduce the Mana cost of Escape.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Cheaper Escape",
+    "archer/Cheaper Escape II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Escape.",
+   "_raw": "Reduce the Mana cost of Escape.",
+   "tree": "02/archer/02/003/004"
+  },
+  "10fce02194ca": {
+   "src": "Arrow Shield",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/02/003/006",
+   "keep": "en"
+  },
+  "ef9b8d4cefe4": {
+   "src": "Click Combo: LEFT-LEFT-RIGHT",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arrow Shield"
+   ],
+   "lines": 1,
+   "flat": "Click Combo: LEFT-LEFT-RIGHT",
+   "_raw": "Click Combo: LEFT-LEFT-RIGHT",
+   "tree": "02/archer/02/003/006"
+  },
+  "507fdfa488eb": {
+   "src": "Forms a shield around you that slightly reduces\nthe damage you take. Being hit will consume one\ncharge of the shield. Enemies that get too close\nwill take damage and be knocked away. ({~} charges)",
+   "dst": "在你周圍形成護盾，稍微減少你\n受到的傷害。被擊中會消耗護盾\n的一層充能。靠得太近的敵人會\n受到傷害並被擊退。({~} 層充能)",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arrow Shield"
+   ],
+   "lines": 4,
+   "flat": "Forms a shield around you that slightly reduces the damage you take. Being hit will consume one charge of the shield. Enemies that get too close will take damage and be knocked away. ({~} charges)",
+   "_raw": "Forms a shield around you that slightly reduces\nthe damage you take. Being hit will consume one\ncharge of the shield. Enemies that get too close\nwill take damage and be knocked away. (3 charges)",
+   "tree": "02/archer/02/003/006"
+  },
+  "609ee970033c": {
+   "src": "Windy Feet",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/02/004/001",
+   "keep": "en"
+  },
+  "a118228a3974": {
+   "src": "{#}{#}Effect: +{~} Speed Bonus (➲) to Allies",
+   "dst": "{#}{#}效果: +{~} 速度加成 (➲) 給友軍",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Windy Feet",
+    "archer/Stormy Feet"
+   ],
+   "_raw": " Effect: +40% Speed Bonus (➲) to Allies",
+   "tree": "02/archer/02/004/001"
+  },
+  "50253a1e2617": {
+   "src": "Casting Escape grants a speed buff\nto you and nearby players.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Windy Feet"
+   ],
+   "lines": 2,
+   "flat": "Casting Escape grants a speed buff to you and nearby players.",
+   "_raw": "Casting Escape grants a speed buff\nto you and nearby players.",
+   "tree": "02/archer/02/004/001"
+  },
+  "7bdc24538284": {
+   "src": "Nimble String",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/03/003/001",
+   "keep": "en"
+  },
+  "912e3a692883": {
+   "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow/ray)",
+   "dst": "{#}{#}總傷害: -{~}(你的每秒傷害，每支箭／每道光線)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Nimble String"
+   ],
+   "_raw": " Total Damage: -10% (of your DPS, per arrow/ray)",
+   "tree": "02/archer/03/003/001"
+  },
+  "b62e756cc534": {
+   "src": "Arrow Storm fires twice as fast and\nshoots +{~} arrows per stream.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Nimble String"
+   ],
+   "lines": 2,
+   "flat": "Arrow Storm fires twice as fast and shoots +{~} arrows per stream.",
+   "_raw": "Arrow Storm fires twice as fast and\nshoots +6 arrows per stream.",
+   "tree": "02/archer/03/003/001"
+  },
+  "72cfd766cf21": {
+   "src": "Phantom Ray hits twice as fast but lasts half as long.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Nimble String"
+   ],
+   "lines": 1,
+   "flat": "Phantom Ray hits twice as fast but lasts half as long.",
+   "_raw": "Phantom Ray hits twice as fast but lasts half as long.",
+   "tree": "02/archer/03/003/001"
+  },
+  "08648560ab8a": {
+   "src": "Buckshot",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/03/004/000",
+   "keep": "en"
+  },
+  "dc02e7739ce4": {
+   "src": "When Arrow Shield loses its last charge, spew\n{~} piercing arrows forth from your bow.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Buckshot"
+   ],
+   "lines": 2,
+   "flat": "When Arrow Shield loses its last charge, spew {~} piercing arrows forth from your bow.",
+   "_raw": "When Arrow Shield loses its last charge, spew\n75 piercing arrows forth from your bow.",
+   "tree": "02/archer/03/004/000"
+  },
+  "043889946cf3": {
+   "src": "Triple Shots",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/03/004/002",
+   "keep": "en"
+  },
+  "1eeeeac5d215": {
+   "src": "{#}{#}Main Attack Damage: -{~}",
+   "dst": "{#}{#}普攻傷害: -{~}",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Triple Shots"
+   ],
+   "_raw": " Main Attack Damage: -10%",
+   "tree": "02/archer/03/004/002"
+  },
+  "5f872a947fed": {
+   "src": "Triples Main Attack arrows but they deal\n-{~} of normal Main Attack arrow damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Triple Shots"
+   ],
+   "lines": 2,
+   "flat": "Triples Main Attack arrows but they deal -{~} of normal Main Attack arrow damage.",
+   "_raw": "Triples Main Attack arrows but they deal\n-10% of normal Main Attack arrow damage.",
+   "tree": "02/archer/03/004/002"
+  },
+  "9bf5615a3d23": {
+   "src": "Bryophyte Roots",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/03/004/004",
+   "keep": "en"
+  },
+  "24ae24caa894": {
+   "src": "Hitting an enemy with Arrow Storm will\ncreate an area of effect that slows them\ndown and deals damage every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Bryophyte Roots"
+   ],
+   "lines": 3,
+   "flat": "Hitting an enemy with Arrow Storm will create an area of effect that slows them down and deals damage every {~}s.",
+   "_raw": "Hitting an enemy with Arrow Storm will\ncreate an area of effect that slows them\ndown and deals damage every 0.4s.",
+   "tree": "02/archer/03/004/004"
+  },
+  "0e2ae3978488": {
+   "src": "Fire Creep",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/03/004/006",
+   "keep": "en"
+  },
+  "dbde3f53668b": {
+   "src": "Arrow Bomb will leave a trail of\nfire for {~}s. Enemies that walk\ninto it take damage every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Fire Creep"
+   ],
+   "lines": 3,
+   "flat": "Arrow Bomb will leave a trail of fire for {~}s. Enemies that walk into it take damage every {~}s.",
+   "_raw": "Arrow Bomb will leave a trail of\nfire for 6s. Enemies that walk\ninto it take damage every 0.4s.",
+   "tree": "02/archer/03/004/006"
+  },
+  "4c518da7733d": {
+   "src": "Phantom Ray",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/03/004/008",
+   "keep": "en"
+  },
+  "98a1dfb247f5": {
+   "src": "Condense Arrow Storm into a single ray\nthat damages enemies {~} times per second.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Phantom Ray"
+   ],
+   "lines": 2,
+   "flat": "Condense Arrow Storm into a single ray that damages enemies {~} times per second.",
+   "_raw": "Condense Arrow Storm into a single ray\nthat damages enemies 10 times per second.",
+   "tree": "02/archer/03/004/008"
+  },
+  "b30c69d9adcf": {
+   "src": "Guardian Angels",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/001/001",
+   "keep": "en"
+  },
+  "c390799d7da3": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per shot)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每發)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Guardian Angels"
+   ],
+   "_raw": " Total Damage: 40% (of your DPS, per shot)",
+   "tree": "02/archer/04/001/001"
+  },
+  "da3058307e47": {
+   "src": "Your Arrow Shield turns into {~} sentient bows\nthat fire at nearby enemies every {~}s, each\nwith {~} ammunition. (Arrow Shield will no longer\npush enemies away or provide resistance)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Guardian Angels"
+   ],
+   "lines": 4,
+   "flat": "Your Arrow Shield turns into {~} sentient bows that fire at nearby enemies every {~}s, each with {~} ammunition. (Arrow Shield will no longer push enemies away or provide resistance)",
+   "_raw": "Your Arrow Shield turns into 2 sentient bows\nthat fire at nearby enemies every 0.45s, each\nwith 10 ammunition. (Arrow Shield will no longer\npush enemies away or provide resistance)",
+   "tree": "02/archer/04/001/001"
+  },
+  "80992fd24cb0": {
+   "src": "Basaltic Trap",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/001/004",
+   "keep": "en"
+  },
+  "9cf6b4d0a76e": {
+   "src": "When you hit the ground with Arrow Bomb, leave\na Trap that damages enemies. (Max {~} Traps)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Basaltic Trap"
+   ],
+   "lines": 2,
+   "flat": "When you hit the ground with Arrow Bomb, leave a Trap that damages enemies. (Max {~} Traps)",
+   "_raw": "When you hit the ground with Arrow Bomb, leave\na Trap that damages enemies. (Max 2 Traps)",
+   "tree": "02/archer/04/001/004"
+  },
+  "fe7f55b8bf68": {
+   "src": "Focus",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/001/008",
+   "keep": "en"
+  },
+  "f4e2aff0212c": {
+   "src": "{#}{#}Damage Bonus: +{~} (per Focus)",
+   "dst": "{#}{#}傷害加成: +{~}(每點 Focus)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Focus"
+   ],
+   "_raw": " Damage Bonus: +15% (per Focus)",
+   "tree": "02/archer/04/001/008"
+  },
+  "c880056699d4": {
+   "src": "When hitting an aggressive enemy {~}+\nblocks away, gain +{~} Focus {#}. (Max {~})\n(Lose {~} Focus if you miss once)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Focus"
+   ],
+   "lines": 3,
+   "flat": "When hitting an aggressive enemy {~}+ blocks away, gain +{~} Focus {#}. (Max {~}) (Lose {~} Focus if you miss once)",
+   "_raw": "When hitting an aggressive enemy 5+\nblocks away, gain +1 Focus . (Max 3)\n(Lose 50% Focus if you miss once)",
+   "tree": "02/archer/04/001/008"
+  },
+  "32afe1b911e9": {
+   "src": "Leap",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/003/001",
+   "keep": "en"
+  },
+  "cd2c8f59138b": {
+   "src": "Leap in the direction of your movement\nwhen you double jump.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Leap"
+   ],
+   "lines": 2,
+   "flat": "Leap in the direction of your movement when you double jump.",
+   "_raw": "Leap in the direction of your movement\nwhen you double jump.",
+   "tree": "02/archer/04/003/001"
+  },
+  "eddb41943a9a": {
+   "src": "The distance scales with your Walk Speed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Leap"
+   ],
+   "lines": 1,
+   "flat": "The distance scales with your Walk Speed.",
+   "_raw": "The distance scales with your Walk Speed.",
+   "tree": "02/archer/04/003/001"
+  },
+  "f76923380ea5": {
+   "src": "Cheaper Arrow Storm",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/003/003",
+   "keep": "en"
+  },
+  "f4f370e49c39": {
+   "src": "Reduce the Mana cost of Arrow Storm.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Cheaper Arrow Storm",
+    "archer/Cheaper Arrow Storm II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Arrow Storm.",
+   "_raw": "Reduce the Mana cost of Arrow Storm.",
+   "tree": "02/archer/04/003/003"
+  },
+  "f871fb53aaa5": {
+   "src": "Implosion",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/003/005",
+   "keep": "en"
+  },
+  "540acc55847d": {
+   "src": "Arrow Bomb pulls enemies\ntowards you. If a Trap is nearby,\nit will pull them towards it instead.\nIncreases Heart Shatter's damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Implosion"
+   ],
+   "lines": 4,
+   "flat": "Arrow Bomb pulls enemies towards you. If a Trap is nearby, it will pull them towards it instead. Increases Heart Shatter's damage.",
+   "_raw": "Arrow Bomb pulls enemies\ntowards you. If a Trap is nearby,\nit will pull them towards it instead.\nIncreases Heart Shatter's damage.",
+   "tree": "02/archer/04/003/005"
+  },
+  "5d748305ea6b": {
+   "src": "Arrow Wall",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/003/007",
+   "keep": "en"
+  },
+  "4da2ccf71e6c": {
+   "src": "Gives Arrow Shield{#}+{~} extra charges.\nGuardian Angels will deal -{~} damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arrow Wall"
+   ],
+   "lines": 2,
+   "flat": "Gives Arrow Shield{#}+{~} extra charges. Guardian Angels will deal -{~} damage.",
+   "_raw": "Gives Arrow Shield +2 extra charges.\nGuardian Angels will deal -40% damage.",
+   "tree": "02/archer/04/003/007"
+  },
+  "d8125ed57f08": {
+   "src": "Arsenal Synergy",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/004/000",
+   "keep": "en"
+  },
+  "c3bcf078c631": {
+   "src": "{#}{#}Total Damage: {~} (Main Attack Damage, per arrow)",
+   "dst": "{#}{#}總傷害: {~}(普攻傷害，每支箭)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Arsenal Synergy"
+   ],
+   "_raw": " Total Damage: 20% (Main Attack Damage, per arrow)",
+   "tree": "02/archer/04/004/000"
+  },
+  "dc91156c4584": {
+   "src": "For every {~} arrows shot by Arrow Storm\nrecently, your Main Attacks will additionally\nfire a flint arrow that damages enemies.\n(Max {~} flints per main attack)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arsenal Synergy"
+   ],
+   "lines": 4,
+   "flat": "For every {~} arrows shot by Arrow Storm recently, your Main Attacks will additionally fire a flint arrow that damages enemies. (Max {~} flints per main attack)",
+   "_raw": "For every 16 arrows shot by Arrow Storm\nrecently, your Main Attacks will additionally\nfire a flint arrow that damages enemies.\n(Max 5 flints per main attack)",
+   "tree": "02/archer/04/004/000"
+  },
+  "7e8ffa925d3e": {
+   "src": "Fierce Stomp",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/004/002",
+   "keep": "en"
+  },
+  "88d1af5a2f1f": {
+   "src": "When using Escape, hold shift to\nquickly drop down to deal damage\nand blind enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Fierce Stomp"
+   ],
+   "lines": 3,
+   "flat": "When using Escape, hold shift to quickly drop down to deal damage and blind enemies.",
+   "_raw": "When using Escape, hold shift to\nquickly drop down to deal damage\nand blind enemies.",
+   "tree": "02/archer/04/004/002"
+  },
+  "03d3e6aacf42": {
+   "src": "Patient Hunter",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/004/004",
+   "keep": "en"
+  },
+  "43c7e84eac2f": {
+   "src": "Increase your maximum Traps by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Patient Hunter",
+    "archer/More Traps",
+    "archer/Mana Trap",
+    "archer/Chilling Snare"
+   ],
+   "lines": 1,
+   "flat": "Increase your maximum Traps by +{~}.",
+   "_raw": "Increase your maximum Traps by +1.",
+   "tree": "02/archer/04/004/004"
+  },
+  "7c8386203190": {
+   "src": "Your Traps will deal +{~} more damage\nfor every second it's active. (Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Patient Hunter"
+   ],
+   "lines": 2,
+   "flat": "Your Traps will deal +{~} more damage for every second it's active. (Max +{~})",
+   "_raw": "Your Traps will deal +20% more damage\nfor every second it's active. (Max +100%)",
+   "tree": "02/archer/04/004/004"
+  },
+  "199021f6e8fb": {
+   "src": "Grappling Hook",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/004/006",
+   "keep": "en"
+  },
+  "be51bd881ada": {
+   "src": "Holding Shift while casting\nwill pull any enemy you hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Grappling Hook"
+   ],
+   "lines": 2,
+   "flat": "Holding Shift while casting will pull any enemy you hit.",
+   "_raw": "Holding Shift while casting\nwill pull any enemy you hit.",
+   "tree": "02/archer/04/004/006"
+  },
+  "1b17fe84b427": {
+   "src": "When casting Escape, throw a hook\nthat pulls you when hitting a block.\n(Escape will not throw you backward anymore)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Grappling Hook"
+   ],
+   "lines": 3,
+   "flat": "When casting Escape, throw a hook that pulls you when hitting a block. (Escape will not throw you backward anymore)",
+   "_raw": "When casting Escape, throw a hook\nthat pulls you when hitting a block.\n(Escape will not throw you backward anymore)",
+   "tree": "02/archer/04/004/006"
+  },
+  "8a48049f8761": {
+   "src": "More Focus",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/004/008",
+   "keep": "en"
+  },
+  "1814035c7fbb": {
+   "src": "Increase your maximum Focus {#}{#}by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/More Focus",
+    "archer/More Focus II"
+   ],
+   "lines": 1,
+   "flat": "Increase your maximum Focus {#}{#}by +{~}.",
+   "_raw": "Increase your maximum Focus  by +2.",
+   "tree": "02/archer/04/004/008"
+  },
+  "06d1c7cf345b": {
+   "src": "Murder Flock",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/005/003",
+   "keep": "en"
+  },
+  "f5a4e2fc308b": {
+   "src": "Basaltic Trap summons a Crow upon detonation that\nwill peck at aggressive enemies every {~}s. (Max {~})\nDamaged enemies will be distracted for {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Murder Flock"
+   ],
+   "lines": 3,
+   "flat": "Basaltic Trap summons a Crow upon detonation that will peck at aggressive enemies every {~}s. (Max {~}) Damaged enemies will be distracted for {~}s.",
+   "_raw": "Basaltic Trap summons a Crow upon detonation that\nwill peck at aggressive enemies every 0.9s. (Max 2)\nDamaged enemies will be distracted for 0.2s.",
+   "tree": "02/archer/04/005/003"
+  },
+  "71575571ca00": {
+   "src": "Refined Gunpowder",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/005/005",
+   "keep": "en"
+  },
+  "234eb3042d61": {
+   "src": "Increase the damage of Arrow Bomb.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Refined Gunpowder"
+   ],
+   "lines": 1,
+   "flat": "Increase the damage of Arrow Bomb.",
+   "_raw": "Increase the damage of Arrow Bomb.",
+   "tree": "02/archer/04/005/005"
+  },
+  "307afffc8616": {
+   "src": "Phantom Force",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/04/005/007",
+   "keep": "en"
+  },
+  "fc062b23ed6b": {
+   "src": "Phantom Ray gains extra forward\nrange and becomes wider.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Phantom Force"
+   ],
+   "lines": 2,
+   "flat": "Phantom Ray gains extra forward range and becomes wider.",
+   "_raw": "Phantom Ray gains extra forward\nrange and becomes wider.",
+   "tree": "02/archer/04/005/007"
+  },
+  "0a2d42783046": {
+   "src": "Windstorm",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/001/001",
+   "keep": "en"
+  },
+  "8b2ceb5ea2cb": {
+   "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow)",
+   "dst": "{#}{#}總傷害: -{~}(你的每秒傷害，每支箭)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Windstorm"
+   ],
+   "_raw": " Total Damage: -10% (of your DPS, per arrow)",
+   "tree": "02/archer/05/001/001"
+  },
+  "b164ec9b25e7": {
+   "src": "Arrow Storm gains recoil while midair.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Windstorm"
+   ],
+   "lines": 1,
+   "flat": "Arrow Storm gains recoil while midair.",
+   "_raw": "Arrow Storm gains recoil while midair.",
+   "tree": "02/archer/05/001/001"
+  },
+  "79509e4ffd7f": {
+   "src": "Arrow Storm will shoot +{~} stream\nof arrows and +{~} extra arrows per stream.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Windstorm"
+   ],
+   "lines": 2,
+   "flat": "Arrow Storm will shoot +{~} stream of arrows and +{~} extra arrows per stream.",
+   "_raw": "Arrow Storm will shoot +1 stream\nof arrows and +2 extra arrows per stream.",
+   "tree": "02/archer/05/001/001"
+  },
+  "fecef4582294": {
+   "src": "Grape Bomb",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/001/004",
+   "keep": "en"
+  },
+  "e8283c8668b6": {
+   "src": "Arrow Bomb will throw {~} additional\nsmaller bombs when exploding.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Grape Bomb"
+   ],
+   "lines": 2,
+   "flat": "Arrow Bomb will throw {~} additional smaller bombs when exploding.",
+   "_raw": "Arrow Bomb will throw 2 additional\nsmaller bombs when exploding.",
+   "tree": "02/archer/05/001/004"
+  },
+  "98008345b5fe": {
+   "src": "Ivyroot Mamba",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/001/006",
+   "keep": "en"
+  },
+  "a0f28d09560e": {
+   "src": "Bryophyte Roots summons a Snake after\ndisappearing that will spit weakening\nvenom at aggressive enemies every {~}s. (Max {~})\nEnemies will be weakened for {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Ivyroot Mamba"
+   ],
+   "lines": 4,
+   "flat": "Bryophyte Roots summons a Snake after disappearing that will spit weakening venom at aggressive enemies every {~}s. (Max {~}) Enemies will be weakened for {~}s.",
+   "_raw": "Bryophyte Roots summons a Snake after\ndisappearing that will spit weakening\nvenom at aggressive enemies every 1s. (Max 1)\nEnemies will be weakened for 1.5s.",
+   "tree": "02/archer/05/001/006"
+  },
+  "acc6ed50445a": {
+   "src": "Twain's Arc",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/001/008",
+   "keep": "en"
+  },
+  "e8f0d21c452c": {
+   "src": "If you have {~}+ Focus {#}, holding shift will\nsummon Twain's Arc. Charge it up to\nshoot a destructive long-range beam.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Twain's Arc"
+   ],
+   "lines": 3,
+   "flat": "If you have {~}+ Focus {#}, holding shift will summon Twain's Arc. Charge it up to shoot a destructive long-range beam.",
+   "_raw": "If you have 2+ Focus , holding shift will\nsummon Twain's Arc. Charge it up to\nshoot a destructive long-range beam.",
+   "tree": "02/archer/05/001/008"
+  },
+  "c095734e905e": {
+   "src": "Frenzy",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/002/000",
+   "keep": "en"
+  },
+  "2c1f3eb1b1f5": {
+   "src": "Hitting an enemy will give you a brief buff\nof +{~} Walk Speed, up to {~} per second. (Max +{~})\n-{~} of the bonus decays every second.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Frenzy"
+   ],
+   "lines": 3,
+   "flat": "Hitting an enemy will give you a brief buff of +{~} Walk Speed, up to {~} per second. (Max +{~}) -{~} of the bonus decays every second.",
+   "_raw": "Hitting an enemy will give you a brief buff\nof +1% Walk Speed, up to 15% per second. (Max +60%)\n-5% of the bonus decays every second.",
+   "tree": "02/archer/05/002/000"
+  },
+  "b7a7a9b2fcd4": {
+   "src": "Shrapnel Bomb",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/002/002",
+   "keep": "en"
+  },
+  "8b75d799d897": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per shrapnel)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每片碎片)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Shrapnel Bomb"
+   ],
+   "_raw": " Total Damage: 100% (of your DPS, per shrapnel)",
+   "tree": "02/archer/05/002/002"
+  },
+  "8f438a6eeb98": {
+   "src": "Arrow Bomb's explosion will fling {~}\nshrapnel, dealing damage in a large area.\n(Each enemy can only be hit by three shrapnel)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Shrapnel Bomb"
+   ],
+   "lines": 3,
+   "flat": "Arrow Bomb's explosion will fling {~} shrapnel, dealing damage in a large area. (Each enemy can only be hit by three shrapnel)",
+   "_raw": "Arrow Bomb's explosion will fling 25\nshrapnel, dealing damage in a large area.\n(Each enemy can only be hit by three shrapnel)",
+   "tree": "02/archer/05/002/002"
+  },
+  "a4d2faea5656": {
+   "src": "Rocket Jump",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/002/005",
+   "keep": "en"
+  },
+  "bcda2cf1d1b0": {
+   "src": "Arrow Bomb's recoil is increased, and\nits self-damage is reduced to {~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Rocket Jump"
+   ],
+   "lines": 2,
+   "flat": "Arrow Bomb's recoil is increased, and its self-damage is reduced to {~}.",
+   "_raw": "Arrow Bomb's recoil is increased, and\nits self-damage is reduced to 1%.",
+   "tree": "02/archer/05/002/005"
+  },
+  "4775a705f620": {
+   "src": "Scorched Earth",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/002/007",
+   "keep": "en"
+  },
+  "c7ce736e8f3c": {
+   "src": "{#}{#}Duration: +{~}s",
+   "dst": "{#}{#}持續時間: +{~}s",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "archer/Scorched Earth",
+    "archer/Stormy Feet"
+   ],
+   "_raw": " Duration: +2s",
+   "tree": "02/archer/05/002/007"
+  },
+  "a593fd94eccc": {
+   "src": "Fire Creep becomes much stronger.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Scorched Earth"
+   ],
+   "lines": 1,
+   "flat": "Fire Creep becomes much stronger.",
+   "_raw": "Fire Creep becomes much stronger.",
+   "tree": "02/archer/05/002/007"
+  },
+  "49d3a8472c23": {
+   "src": "More Traps",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/003/003",
+   "keep": "en"
+  },
+  "e22b137c2065": {
+   "src": "Divine Intervention",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/004/001",
+   "keep": "en"
+  },
+  "ec992ed2fe90": {
+   "src": "Casting Arrow Bomb will cause them to\nshoot explosive shots, dealing +{~} damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Divine Intervention"
+   ],
+   "lines": 2,
+   "flat": "Casting Arrow Bomb will cause them to shoot explosive shots, dealing +{~} damage.",
+   "_raw": "Casting Arrow Bomb will cause them to\nshoot explosive shots, dealing +25% damage.",
+   "tree": "02/archer/05/004/001"
+  },
+  "21f77ed6408c": {
+   "src": "Casting Arrow Storm will cause them to\nshoot {~}x faster while Arrow Storm is active",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Divine Intervention"
+   ],
+   "lines": 2,
+   "flat": "Casting Arrow Storm will cause them to shoot {~}x faster while Arrow Storm is active",
+   "_raw": "Casting Arrow Storm will cause them to\nshoot 1.5x faster while Arrow Storm is active",
+   "tree": "02/archer/05/004/001"
+  },
+  "c1be80bde28b": {
+   "src": "Guardian Angels gain +{~} additional ammunition.\nWhenever you cast a spell, your Guardian Angels\nbecome briefly empowered.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Divine Intervention"
+   ],
+   "lines": 3,
+   "flat": "Guardian Angels gain +{~} additional ammunition. Whenever you cast a spell, your Guardian Angels become briefly empowered.",
+   "_raw": "Guardian Angels gain +8 additional ammunition.\nWhenever you cast a spell, your Guardian Angels\nbecome briefly empowered.",
+   "tree": "02/archer/05/004/001"
+  },
+  "08ff57fccecf": {
+   "src": "Cheaper Arrow Shield",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/004/004",
+   "keep": "en"
+  },
+  "bdbc05b749cc": {
+   "src": "Reduce the Mana cost of Arrow Shield.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Cheaper Arrow Shield",
+    "archer/Cheaper Arrow Shield II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Arrow Shield.",
+   "_raw": "Reduce the Mana cost of Arrow Shield.",
+   "tree": "02/archer/05/004/004"
+  },
+  "dc84e7ab703c": {
+   "src": "Honed Shield",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/004/006",
+   "keep": "en"
+  },
+  "3329ddf5e3c1": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Arrow Shield)",
+   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，箭盾)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Honed Shield"
+   ],
+   "_raw": " Total Damage: +30% (of your DPS, for Arrow Shield)",
+   "tree": "02/archer/05/004/006"
+  },
+  "57b5d893f1a1": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Guardian Angels, per shot)",
+   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，Guardian Angels，每發)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Honed Shield",
+    "archer/Vigilant Sentinels"
+   ],
+   "_raw": " Total Damage: +10% (of your DPS, for Guardian Angels, per shot)",
+   "tree": "02/archer/05/004/006"
+  },
+  "aa7a9cfbdded": {
+   "src": "Arrow Shield's radius, knockback,\nand damage is increased.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Honed Shield"
+   ],
+   "lines": 2,
+   "flat": "Arrow Shield's radius, knockback, and damage is increased.",
+   "_raw": "Arrow Shield's radius, knockback,\nand damage is increased.",
+   "tree": "02/archer/05/004/006"
+  },
+  "8862e66efe41": {
+   "src": "Guardian Angels' damage is increased.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Honed Shield"
+   ],
+   "lines": 1,
+   "flat": "Guardian Angels' damage is increased.",
+   "_raw": "Guardian Angels' damage is increased.",
+   "tree": "02/archer/05/004/006"
+  },
+  "48ce031e18aa": {
+   "src": "Shocking Bomb",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/004/008",
+   "keep": "en"
+  },
+  "17c370e6240a": {
+   "src": "Arrow Bomb will be unaffected by\ngravity and increase its explosion damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Shocking Bomb"
+   ],
+   "lines": 2,
+   "flat": "Arrow Bomb will be unaffected by gravity and increase its explosion damage.",
+   "_raw": "Arrow Bomb will be unaffected by\ngravity and increase its explosion damage.",
+   "tree": "02/archer/05/004/008"
+  },
+  "3f37a8f8306e": {
+   "src": "Stormy Feet",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/005/000",
+   "keep": "en"
+  },
+  "d0c239ec34b8": {
+   "src": "Windy Feet will last longer and grant a stronger\nspeed buff.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Stormy Feet"
+   ],
+   "lines": 2,
+   "flat": "Windy Feet will last longer and grant a stronger speed buff.",
+   "_raw": "Windy Feet will last longer and grant a stronger\nspeed buff.",
+   "tree": "02/archer/05/005/000"
+  },
+  "9cefcb3f60e6": {
+   "src": "Bounding Stride",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/005/002",
+   "keep": "en"
+  },
+  "79b05d2dd40d": {
+   "src": "Leap will launch you further.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Bounding Stride"
+   ],
+   "lines": 1,
+   "flat": "Leap will launch you further.",
+   "_raw": "Leap will launch you further.",
+   "tree": "02/archer/05/005/002"
+  },
+  "0c46fff0ce48": {
+   "src": "Homing Shots",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/05/005/005",
+   "keep": "en"
+  },
+  "c190dd1beb25": {
+   "src": "Your Main Attack arrows will follow nearby\nenemies and will be unaffected by gravity.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Homing Shots"
+   ],
+   "lines": 2,
+   "flat": "Your Main Attack arrows will follow nearby enemies and will be unaffected by gravity.",
+   "_raw": "Your Main Attack arrows will follow nearby\nenemies and will be unaffected by gravity.",
+   "tree": "02/archer/05/005/005"
+  },
+  "170881344897": {
+   "src": "Recycling",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/001/001",
+   "keep": "en"
+  },
+  "861f4b24ffe5": {
+   "src": "When any of your projectiles miss, gain +{~} Mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Recycling"
+   ],
+   "lines": 1,
+   "flat": "When any of your projectiles miss, gain +{~} Mana.",
+   "_raw": "When any of your projectiles miss, gain +0.08 Mana.",
+   "tree": "02/archer/06/001/001"
+  },
+  "07e8e45a2706": {
+   "src": "Mana Trap",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/001/003",
+   "keep": "en"
+  },
+  "e8441fd98f8e": {
+   "src": "Your Traps will give you {~} Mana\nper second and {~} Mana\nwhen they explode.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Mana Trap"
+   ],
+   "lines": 3,
+   "flat": "Your Traps will give you {~} Mana per second and {~} Mana when they explode.",
+   "_raw": "Your Traps will give you 0.5 Mana\nper second and 10 Mana\nwhen they explode.",
+   "tree": "02/archer/06/001/003"
+  },
+  "1bd0b4d8080f": {
+   "src": "Cheaper Escape II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/001/005",
+   "keep": "en"
+  },
+  "261848d1b557": {
+   "src": "Initiator",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/001/007",
+   "keep": "en"
+  },
+  "eff870865ac2": {
+   "src": "If you do not damage an enemy for\n{~}s or more, your next successful hit\nwill deal +{~} damage and add +{~} Focus {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Initiator"
+   ],
+   "lines": 3,
+   "flat": "If you do not damage an enemy for {~}s or more, your next successful hit will deal +{~} damage and add +{~} Focus {#}.",
+   "_raw": "If you do not damage an enemy for\n4s or more, your next successful hit\nwill deal +60% damage and add +1 Focus .",
+   "tree": "02/archer/06/001/007"
+  },
+  "f505fd81a923": {
+   "src": "Courier's Edict",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/002/000",
+   "keep": "en"
+  },
+  "b1474bc74ddc": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per wave)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每波)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Courier's Edict"
+   ],
+   "_raw": " Total Damage: 60% (of your DPS, per wave)",
+   "tree": "02/archer/06/002/000"
+  },
+  "558949df9c19": {
+   "src": "Fierce Stomp sends out {~} waves of\nheavenly light in front of you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Courier's Edict"
+   ],
+   "lines": 2,
+   "flat": "Fierce Stomp sends out {~} waves of heavenly light in front of you.",
+   "_raw": "Fierce Stomp sends out 3 waves of\nheavenly light in front of you.",
+   "tree": "02/archer/06/002/000"
+  },
+  "0db0cc51c4b4": {
+   "src": "Landing after Leap triggers Fierce Stomp.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Courier's Edict"
+   ],
+   "lines": 1,
+   "flat": "Landing after Leap triggers Fierce Stomp.",
+   "_raw": "Landing after Leap triggers Fierce Stomp.",
+   "tree": "02/archer/06/002/000"
+  },
+  "a3d9d57120ff": {
+   "src": "Vigilant Sentinels",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/002/002",
+   "keep": "en"
+  },
+  "7c26a91e674f": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
+   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，Buckshot，每支箭)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Vigilant Sentinels"
+   ],
+   "_raw": " Total Damage: +3% (of your DPS, for Buckshot, per arrow)",
+   "tree": "02/archer/06/002/002"
+  },
+  "88f88ccc54b6": {
+   "src": "Casting Arrow Shield while Guardian Angels are active\nwill also cast Buckshot. Increase Buckshot's damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Vigilant Sentinels"
+   ],
+   "lines": 2,
+   "flat": "Casting Arrow Shield while Guardian Angels are active will also cast Buckshot. Increase Buckshot's damage.",
+   "_raw": "Casting Arrow Shield while Guardian Angels are active\nwill also cast Buckshot. Increase Buckshot's damage.",
+   "tree": "02/archer/06/002/002"
+  },
+  "cf2be622a910": {
+   "src": "Increase Guardian Angels' range and damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Vigilant Sentinels"
+   ],
+   "lines": 1,
+   "flat": "Increase Guardian Angels' range and damage.",
+   "_raw": "Increase Guardian Angels' range and damage.",
+   "tree": "02/archer/06/002/002"
+  },
+  "17b030ce3344": {
+   "src": "Call of the Hound",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/002/004",
+   "keep": "en"
+  },
+  "93f627a9d312": {
+   "src": "Arrow Shield summons a Hound that will\nattack aggressive enemies every {~}s\nand drag them towards your traps.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Call of the Hound"
+   ],
+   "lines": 3,
+   "flat": "Arrow Shield summons a Hound that will attack aggressive enemies every {~}s and drag them towards your traps.",
+   "_raw": "Arrow Shield summons a Hound that will\nattack aggressive enemies every 0.25s\nand drag them towards your traps.",
+   "tree": "02/archer/06/002/004"
+  },
+  "47fe546ec1f9": {
+   "src": "Decimator",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/002/006",
+   "keep": "en"
+  },
+  "091916bf3819": {
+   "src": "Phantom Ray gains extra forward range.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Decimator"
+   ],
+   "lines": 1,
+   "flat": "Phantom Ray gains extra forward range.",
+   "_raw": "Phantom Ray gains extra forward range.",
+   "tree": "02/archer/06/002/006"
+  },
+  "35bc174a9e65": {
+   "src": "Phantom Ray will increase its damage by {~}\nevery time you do not miss with it. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Decimator"
+   ],
+   "lines": 2,
+   "flat": "Phantom Ray will increase its damage by {~} every time you do not miss with it. (Max {~})",
+   "_raw": "Phantom Ray will increase its damage by 15%\nevery time you do not miss with it. (Max 90%)",
+   "tree": "02/archer/06/002/006"
+  },
+  "72de710d4512": {
+   "src": "Phasing Beam",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/002/008",
+   "keep": "en"
+  },
+  "6d6e18cedbdd": {
+   "src": "{#}{#}Total Damage: -{~} (after piercing)",
+   "dst": "{#}{#}總傷害: -{~}(穿透之後)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Phasing Beam"
+   ],
+   "_raw": " Total Damage: -150% (after piercing)",
+   "tree": "02/archer/06/002/008"
+  },
+  "5c1ca623aa7e": {
+   "src": "Twain's Arc charges {~} faster, and\ncan now pierce through up to {~} enemies,\ndealing reduced damage after piercing.\n(Damage is dealt as Main Attack Damage)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Phasing Beam"
+   ],
+   "lines": 4,
+   "flat": "Twain's Arc charges {~} faster, and can now pierce through up to {~} enemies, dealing reduced damage after piercing. (Damage is dealt as Main Attack Damage)",
+   "_raw": "Twain's Arc charges 25% faster, and\ncan now pierce through up to 5 enemies,\ndealing reduced damage after piercing.\n(Damage is dealt as Main Attack Damage)",
+   "tree": "02/archer/06/002/008"
+  },
+  "a7c766d1a018": {
+   "src": "Spectral Hover",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/003/005",
+   "keep": "en"
+  },
+  "06b27ab07018": {
+   "src": "Slow Falling is applied upon using Escape.\nCrouching at any point will cancel this effect.\n(Effect cannot be refreshed mid-air)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Spectral Hover"
+   ],
+   "lines": 3,
+   "flat": "Slow Falling is applied upon using Escape. Crouching at any point will cancel this effect. (Effect cannot be refreshed mid-air)",
+   "_raw": "Slow Falling is applied upon using Escape.\nCrouching at any point will cancel this effect.\n(Effect cannot be refreshed mid-air)",
+   "tree": "02/archer/06/003/005"
+  },
+  "8df2f20a6ab9": {
+   "src": "Parting Gift",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/004/000",
+   "keep": "en"
+  },
+  "d91af3392728": {
+   "src": "When casting Escape, release a\ncluster bomb mid-air that explodes,\nsending a payload of {~} arrows\nto your previous location.\n(Each enemy can only be hit by one arrow)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Parting Gift"
+   ],
+   "lines": 5,
+   "flat": "When casting Escape, release a cluster bomb mid-air that explodes, sending a payload of {~} arrows to your previous location. (Each enemy can only be hit by one arrow)",
+   "_raw": "When casting Escape, release a\ncluster bomb mid-air that explodes,\nsending a payload of 150 arrows\nto your previous location.\n(Each enemy can only be hit by one arrow)",
+   "tree": "02/archer/06/004/000"
+  },
+  "19a90ce7aadc": {
+   "src": "Bouncing Bomb",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/004/002",
+   "keep": "en"
+  },
+  "198e986312ac": {
+   "src": "Arrow Bomb will travel {~} slower and\nbounce once when hitting a block or enemy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Bouncing Bomb"
+   ],
+   "lines": 2,
+   "flat": "Arrow Bomb will travel {~} slower and bounce once when hitting a block or enemy.",
+   "_raw": "Arrow Bomb will travel 20% slower and\nbounce once when hitting a block or enemy.",
+   "tree": "02/archer/06/004/002"
+  },
+  "bc82a51f8cc8": {
+   "src": "Cheaper Arrow Storm II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/004/004",
+   "keep": "en"
+  },
+  "abf0f2563ba9": {
+   "src": "Cheaper Arrow Shield II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/004/007",
+   "keep": "en"
+  },
+  "e78a6e20ebc7": {
+   "src": "Hookshot",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/005/006",
+   "keep": "en"
+  },
+  "f6b14d852ca3": {
+   "src": "Increases your Grappling Hook's\nrange, speed and strength.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Hookshot"
+   ],
+   "lines": 2,
+   "flat": "Increases your Grappling Hook's range, speed and strength.",
+   "_raw": "Increases your Grappling Hook's\nrange, speed and strength.",
+   "tree": "02/archer/06/005/006"
+  },
+  "9e25ab2b6635": {
+   "src": "Ghostly Trigger",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/06/005/008",
+   "keep": "en"
+  },
+  "a9736268c077": {
+   "src": "While airborne after casting Escape, your\nnext {~} Main Attacks can be fired in quick\nsuccession regardless of attack speed,\nand will instantly fire from Twain's Arc.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Ghostly Trigger"
+   ],
+   "lines": 4,
+   "flat": "While airborne after casting Escape, your next {~} Main Attacks can be fired in quick succession regardless of attack speed, and will instantly fire from Twain's Arc.",
+   "_raw": "While airborne after casting Escape, your\nnext 3 Main Attacks can be fired in quick\nsuccession regardless of attack speed,\nand will instantly fire from Twain's Arc.",
+   "tree": "02/archer/06/005/008"
+  },
+  "45d08179e2c8": {
+   "src": "Arrow Hurricane",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/001/001",
+   "keep": "en"
+  },
+  "3e8bebf12447": {
+   "src": "Arrow Storm will shoot +{~} extra streams of arrows.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arrow Hurricane"
+   ],
+   "lines": 1,
+   "flat": "Arrow Storm will shoot +{~} extra streams of arrows.",
+   "_raw": "Arrow Storm will shoot +2 extra streams of arrows.",
+   "tree": "02/archer/07/001/001"
+  },
+  "25bbb7d9c972": {
+   "src": "Arrow Storm's recoil is doubled.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arrow Hurricane"
+   ],
+   "lines": 1,
+   "flat": "Arrow Storm's recoil is doubled.",
+   "_raw": "Arrow Storm's recoil is doubled.",
+   "tree": "02/archer/07/001/001"
+  },
+  "6f4be04ab4e3": {
+   "src": "Beast Lore",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/001/003",
+   "keep": "en"
+  },
+  "fcb1afd9dbbe": {
+   "src": "Increase your maximum Snakes by +{~}.\nIncrease your maximum Crows by +{~}.\nIncrease the damage of your Hound.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Beast Lore"
+   ],
+   "lines": 3,
+   "flat": "Increase your maximum Snakes by +{~}. Increase your maximum Crows by +{~}. Increase the damage of your Hound.",
+   "_raw": "Increase your maximum Snakes by +1.\nIncrease your maximum Crows by +2.\nIncrease the damage of your Hound.",
+   "tree": "02/archer/07/001/003"
+  },
+  "454e824d9366": {
+   "src": "Tangled Traps",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/001/005",
+   "keep": "en"
+  },
+  "2e29f86a3715": {
+   "src": "Grape Bomb gains +{~} grape.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Tangled Traps"
+   ],
+   "lines": 1,
+   "flat": "Grape Bomb gains +{~} grape.",
+   "_raw": "Grape Bomb gains +1 grape.",
+   "tree": "02/archer/07/001/005"
+  },
+  "7b2a0a1691bc": {
+   "src": "Your Traps will be connected by a rope\nthat deals damage to enemies every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Tangled Traps"
+   ],
+   "lines": 2,
+   "flat": "Your Traps will be connected by a rope that deals damage to enemies every {~}s.",
+   "_raw": "Your Traps will be connected by a rope\nthat deals damage to enemies every 0.2s.",
+   "tree": "02/archer/07/001/005"
+  },
+  "db972f896091": {
+   "src": "Coursing Restraints",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/001/007",
+   "keep": "en"
+  },
+  "5795e491153b": {
+   "src": "{#}{#}Effect: -{~} Resistance Bonus ({#}) to Enemies",
+   "dst": "{#}{#}效果: -{~} 抗性加成 ({#}) 給敵人",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Coursing Restraints"
+   ],
+   "_raw": " Effect: -15% Resistance Bonus () to Enemies",
+   "tree": "02/archer/07/001/007"
+  },
+  "0b525daeb718": {
+   "src": "Shocking Bomb will temporarily shock\nenemies, reducing their defences.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Coursing Restraints"
+   ],
+   "lines": 2,
+   "flat": "Shocking Bomb will temporarily shock enemies, reducing their defences.",
+   "_raw": "Shocking Bomb will temporarily shock\nenemies, reducing their defences.",
+   "tree": "02/archer/07/001/007"
+  },
+  "135341edd90b": {
+   "src": "Elusive",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/002/002",
+   "keep": "en"
+  },
+  "a5f1fc23b200": {
+   "src": "Arrow Bomb{#}and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Elusive"
+   ],
+   "lines": 2,
+   "flat": "Arrow Bomb{#}and Arrow Storm will no longer have recoil, and your Arrow Bombs will not deal self-damage.",
+   "_raw": "Arrow Bomb and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
+   "tree": "02/archer/07/002/002"
+  },
+  "b5b52e0b929d": {
+   "src": "Chilling Snare",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/002/004",
+   "keep": "en"
+  },
+  "e99186273105": {
+   "src": "Attach an icy snare to Basaltic Trap,\ndrastically inhibiting and damaging nearby\nenemies every {~}s after it detonates.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Chilling Snare"
+   ],
+   "lines": 3,
+   "flat": "Attach an icy snare to Basaltic Trap, drastically inhibiting and damaging nearby enemies every {~}s after it detonates.",
+   "_raw": "Attach an icy snare to Basaltic Trap,\ndrastically inhibiting and damaging nearby\nenemies every 0.2s after it detonates.",
+   "tree": "02/archer/07/002/004"
+  },
+  "d7350a82cb8f": {
+   "src": "Feedback Loop",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/003/000",
+   "keep": "en"
+  },
+  "2069ec74ba2a": {
+   "src": "Hitting {~} flint arrow will make your next\nArrow Storm shoot +{~} arrow per stream. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Feedback Loop"
+   ],
+   "lines": 2,
+   "flat": "Hitting {~} flint arrow will make your next Arrow Storm shoot +{~} arrow per stream. (Max {~})",
+   "_raw": "Hitting 1 flint arrow will make your next\nArrow Storm shoot +1 arrow per stream. (Max 40)",
+   "tree": "02/archer/07/003/000"
+  },
+  "5a8e619ead99": {
+   "src": "Swift Primer",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/003/003",
+   "keep": "en"
+  },
+  "ad4562164d3f": {
+   "src": "Patient Hunter will increase its damage by +{~}\nper second, and increase its Max Damage by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Swift Primer"
+   ],
+   "lines": 2,
+   "flat": "Patient Hunter will increase its damage by +{~} per second, and increase its Max Damage by +{~}.",
+   "_raw": "Patient Hunter will increase its damage by +10%\nper second, and increase its Max Damage by +100%.",
+   "tree": "02/archer/07/003/003"
+  },
+  "0d5805f7ac40": {
+   "src": "Crepuscular Ray",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/003/007",
+   "keep": "en"
+  },
+  "aa1922e4c8f0": {
+   "src": "If you have {~}+ Focus {#}, casting Arrow Storm\nwhile {~}+ blocks above the ground will cause\nyou to levitate and shoot {~} homing arrows\nper second until you run out of Focus {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Crepuscular Ray"
+   ],
+   "lines": 4,
+   "flat": "If you have {~}+ Focus {#}, casting Arrow Storm while {~}+ blocks above the ground will cause you to levitate and shoot {~} homing arrows per second until you run out of Focus {#}.",
+   "_raw": "If you have 5+ Focus , casting Arrow Storm\nwhile 4+ blocks above the ground will cause\nyou to levitate and shoot 20 homing arrows\nper second until you run out of Focus .",
+   "tree": "02/archer/07/003/007"
+  },
+  "f6881d9840cb": {
+   "src": "While in this state, lose {~} Focus {#}{#}every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Crepuscular Ray"
+   ],
+   "lines": 1,
+   "flat": "While in this state, lose {~} Focus {#}{#}every {~}s.",
+   "_raw": "While in this state, lose 1 Focus  every 0.5s.",
+   "tree": "02/archer/07/003/007"
+  },
+  "220157ed80f8": {
+   "src": "Transience",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/004/001",
+   "keep": "en"
+  },
+  "81124fc2ed01": {
+   "src": "Arrow Storm will pierce enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Transience"
+   ],
+   "lines": 1,
+   "flat": "Arrow Storm will pierce enemies.",
+   "_raw": "Arrow Storm will pierce enemies.",
+   "tree": "02/archer/07/004/001"
+  },
+  "22cdefcafd9c": {
+   "src": "Snow Storm",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/004/004",
+   "keep": "en"
+  },
+  "c3800d158643": {
+   "src": "Enemies near you will be slowed down.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Snow Storm"
+   ],
+   "lines": 1,
+   "flat": "Enemies near you will be slowed down.",
+   "_raw": "Enemies near you will be slowed down.",
+   "tree": "02/archer/07/004/004"
+  },
+  "2926ead547d9": {
+   "src": "Cheaper Arrow Bomb II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/004/006",
+   "keep": "en"
+  },
+  "f60757bb3fa8": {
+   "src": "More Focus II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/07/004/008",
+   "keep": "en"
+  },
+  "64f3cfa09938": {
+   "src": "Wild Light",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/001/000",
+   "keep": "en"
+  },
+  "ce35565ea2cc": {
+   "src": "Increase your Main Attack's damage by +{~}\nfor every +{~} Walk Speed you gain from Frenzy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Wild Light"
+   ],
+   "lines": 2,
+   "flat": "Increase your Main Attack's damage by +{~} for every +{~} Walk Speed you gain from Frenzy.",
+   "_raw": "Increase your Main Attack's damage by +0.8%\nfor every +1% Walk Speed you gain from Frenzy.",
+   "tree": "02/archer/08/001/000"
+  },
+  "cf660ea9d535": {
+   "src": "Fimbulwinter",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/001/005",
+   "keep": "en"
+  },
+  "db0e377189a8": {
+   "src": "Enemies take additional damage after standing\ninside of Chilling Snare for {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Fimbulwinter"
+   ],
+   "lines": 2,
+   "flat": "Enemies take additional damage after standing inside of Chilling Snare for {~}s.",
+   "_raw": "Enemies take additional damage after standing\ninside of Chilling Snare for 2s.",
+   "tree": "02/archer/08/001/005"
+  },
+  "5826caa6f295": {
+   "src": "Warding Wisps",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/001/008",
+   "keep": "en"
+  },
+  "38cb01c13d26": {
+   "src": "When Arrow Shield loses a charge,\nsummon a Wisp that follows and\nprotects you. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Warding Wisps"
+   ],
+   "lines": 3,
+   "flat": "When Arrow Shield loses a charge, summon a Wisp that follows and protects you. (Max {~})",
+   "_raw": "When Arrow Shield loses a charge,\nsummon a Wisp that follows and\nprotects you. (Max 12)",
+   "tree": "02/archer/08/001/008"
+  },
+  "dabd4436cece": {
+   "src": "Your Wisps can possess nearby\nenemies for {~}s, dealing damage\nevery {~}s and slowing them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Warding Wisps"
+   ],
+   "lines": 3,
+   "flat": "Your Wisps can possess nearby enemies for {~}s, dealing damage every {~}s and slowing them.",
+   "_raw": "Your Wisps can possess nearby\nenemies for 3s, dealing damage\nevery 0.75s and slowing them.",
+   "tree": "02/archer/08/001/008"
+  },
+  "f4d4d78ddc87": {
+   "src": "Shrieking Arrows",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/002/002",
+   "keep": "en"
+  },
+  "90561f949f15": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, per arrow)",
+   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，每支箭)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Shrieking Arrows",
+    "archer/Mael's Quiver"
+   ],
+   "_raw": " Total Damage: +8% (of your DPS, per arrow)",
+   "tree": "02/archer/08/002/002"
+  },
+  "166c324d3bef": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, per ray)",
+   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，每道光線)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Shrieking Arrows"
+   ],
+   "_raw": " Total Damage: +6% (of your DPS, per ray)",
+   "tree": "02/archer/08/002/002"
+  },
+  "19c6286743d9": {
+   "src": "Arrow Storm and Phantom Ray will deal additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Shrieking Arrows"
+   ],
+   "lines": 1,
+   "flat": "Arrow Storm and Phantom Ray will deal additional damage.",
+   "_raw": "Arrow Storm and Phantom Ray will deal additional damage.",
+   "tree": "02/archer/08/002/002"
+  },
+  "7c3902042284": {
+   "src": "Overgrowth",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/002/004",
+   "keep": "en"
+  },
+  "12d6e36d2886": {
+   "src": "Bryophyte Roots spreads further\nand deals damage {~} faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Overgrowth"
+   ],
+   "lines": 2,
+   "flat": "Bryophyte Roots spreads further and deals damage {~} faster.",
+   "_raw": "Bryophyte Roots spreads further\nand deals damage 33% faster.",
+   "tree": "02/archer/08/002/004"
+  },
+  "239bae2e4486": {
+   "src": "Quick Draw",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/002/006",
+   "keep": "en"
+  },
+  "5a21db8b3dba": {
+   "src": "Not missing with Phantom Ray{#}{~}{#}times\nin a row will transform your next\nMain Attack{#}into a Twain's Arc beam.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Quick Draw"
+   ],
+   "lines": 3,
+   "flat": "Not missing with Phantom Ray{#}{~}{#}times in a row will transform your next Main Attack{#}into a Twain's Arc beam.",
+   "_raw": "Not missing with Phantom Ray 7 times\nin a row will transform your next\nMain Attack into a Twain's Arc beam.",
+   "tree": "02/archer/08/002/006"
+  },
+  "7e8a90b01229": {
+   "src": "Sniffer Dog",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/003/005",
+   "keep": "en"
+  },
+  "b067393d4c03": {
+   "src": "Your Hound has a {~} chance to\ndig up a Trap when attacking enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Sniffer Dog"
+   ],
+   "lines": 2,
+   "flat": "Your Hound has a {~} chance to dig up a Trap when attacking enemies.",
+   "_raw": "Your Hound has a 15% chance to\ndig up a Trap when attacking enemies.",
+   "tree": "02/archer/08/003/005"
+  },
+  "c3d48707d414": {
+   "src": "Repel",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/003/007",
+   "keep": "en"
+  },
+  "670f3e6b21ca": {
+   "src": "Casting Arrow Shield will push back nearby\nenemies and provide a brief burst of resistance.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Repel"
+   ],
+   "lines": 2,
+   "flat": "Casting Arrow Shield will push back nearby enemies and provide a brief burst of resistance.",
+   "_raw": "Casting Arrow Shield will push back nearby\nenemies and provide a brief burst of resistance.",
+   "tree": "02/archer/08/003/007"
+  },
+  "5a0239ab4ff6": {
+   "src": "Reduce this ability's cooldown by {~}s\nevery time Arrow Shield loses a charge.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Repel"
+   ],
+   "lines": 2,
+   "flat": "Reduce this ability's cooldown by {~}s every time Arrow Shield loses a charge.",
+   "_raw": "Reduce this ability's cooldown by 1s\nevery time Arrow Shield loses a charge.",
+   "tree": "02/archer/08/003/007"
+  },
+  "31aa9ac3778d": {
+   "src": "Pyrotechnics",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/004/001",
+   "keep": "en"
+  },
+  "9fbfa8a0291a": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, for Arrow Bomb)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，Arrow Bomb)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Pyrotechnics"
+   ],
+   "_raw": " Total Damage: 65% (of your DPS, for Arrow Bomb)",
+   "tree": "02/archer/08/004/001"
+  },
+  "d40622dc9519": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, for Grape Bomb)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，Grape Bomb)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Pyrotechnics"
+   ],
+   "_raw": " Total Damage: 25% (of your DPS, for Grape Bomb)",
+   "tree": "02/archer/08/004/001"
+  },
+  "825ef214e357": {
+   "src": "Arrow Bomb and Grape Bomb\nbecome much hotter, increasing\nthe damage of their explosion.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Pyrotechnics"
+   ],
+   "lines": 3,
+   "flat": "Arrow Bomb and Grape Bomb become much hotter, increasing the damage of their explosion.",
+   "_raw": "Arrow Bomb and Grape Bomb\nbecome much hotter, increasing\nthe damage of their explosion.",
+   "tree": "02/archer/08/004/001"
+  },
+  "0c044844ceeb": {
+   "src": "Canine Colleague",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/004/003",
+   "keep": "en"
+  },
+  "0e1dd124dfd0": {
+   "src": "Increase your maximum Hounds by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Canine Colleague"
+   ],
+   "lines": 1,
+   "flat": "Increase your maximum Hounds by +{~}.",
+   "_raw": "Increase your maximum Hounds by +1.",
+   "tree": "02/archer/08/004/003"
+  },
+  "32b4167a93aa": {
+   "src": "Mael's Quiver",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/004/006",
+   "keep": "en"
+  },
+  "af3cdf1546ec": {
+   "src": "Increase the damage of Crepuscular Ray.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Mael's Quiver"
+   ],
+   "lines": 1,
+   "flat": "Increase the damage of Crepuscular Ray.",
+   "_raw": "Increase the damage of Crepuscular Ray.",
+   "tree": "02/archer/08/004/006"
+  },
+  "10b0824e4190": {
+   "src": "Repositioning",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/08/004/008",
+   "keep": "en"
+  },
+  "042574d890ae": {
+   "src": "{#}{#}Effect: +{~} Walk Speed (➲) to Self",
+   "dst": "{#}{#}效果: +{~} 移動速度 (➲) 給自己",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Repositioning"
+   ],
+   "_raw": " Effect: +80% Walk Speed (➲) to Self",
+   "tree": "02/archer/08/004/008"
+  },
+  "01b20f74ab6c": {
+   "src": "Gain a brief speed boost\nafter shooting Twain's Arc.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Repositioning"
+   ],
+   "lines": 2,
+   "flat": "Gain a brief speed boost after shooting Twain's Arc.",
+   "_raw": "Gain a brief speed boost\nafter shooting Twain's Arc.",
+   "tree": "02/archer/08/004/008"
+  },
+  "b4bdac886e2d": {
+   "src": "Angelic Ascension",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/09/002/001",
+   "keep": "en"
+  },
+  "1247b5dd2e9e": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Arrow Bomb's smite)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，Arrow Bomb 的重擊)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Angelic Ascension"
+   ],
+   "_raw": " Total Damage: 550% (of your DPS, Arrow Bomb's smite)",
+   "tree": "02/archer/09/002/001"
+  },
+  "cb62cf59ebab": {
+   "src": "Arrow Bomb will smite enemies it hits\ndirectly with a bolt from the heavens.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Angelic Ascension"
+   ],
+   "lines": 2,
+   "flat": "Arrow Bomb will smite enemies it hits directly with a bolt from the heavens.",
+   "_raw": "Arrow Bomb will smite enemies it hits\ndirectly with a bolt from the heavens.",
+   "tree": "02/archer/09/002/001"
+  },
+  "dff94a47eccb": {
+   "src": "Arrow Storm last {~} times longer\nand releases in a tighter spread",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Angelic Ascension"
+   ],
+   "lines": 2,
+   "flat": "Arrow Storm last {~} times longer and releases in a tighter spread",
+   "_raw": "Arrow Storm last 2.5 times longer\nand releases in a tighter spread",
+   "tree": "02/archer/09/002/001"
+  },
+  "bb5259a14124": {
+   "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap{#}have no cooldown.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Angelic Ascension"
+   ],
+   "lines": 3,
+   "flat": "Call upon the power of the Light to empower your attacks for {~}s and make Leap{#}have no cooldown.",
+   "_raw": "Call upon the power of the Light\nto empower your attacks for 15s\nand make Leap have no cooldown.",
+   "tree": "02/archer/09/002/001"
+  },
+  "cdd4062e2ebd": {
+   "src": "Guardian Angels will have unlimited ammunition\nand trigger Buckshot after firing {~} volleys.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Angelic Ascension"
+   ],
+   "lines": 2,
+   "flat": "Guardian Angels will have unlimited ammunition and trigger Buckshot after firing {~} volleys.",
+   "_raw": "Guardian Angels will have unlimited ammunition\nand trigger Buckshot after firing 14 volleys.",
+   "tree": "02/archer/09/002/001"
+  },
+  "fc84866fa7de": {
+   "src": "Main Attack will instead shoot Light Arrows\nthat deal {~} more damage over {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Angelic Ascension"
+   ],
+   "lines": 2,
+   "flat": "Main Attack will instead shoot Light Arrows that deal {~} more damage over {~}s.",
+   "_raw": "Main Attack will instead shoot Light Arrows\nthat deal 50% more damage over 2s.",
+   "tree": "02/archer/09/002/001"
+  },
+  "66ad73b80573": {
+   "src": "The Twilight Zone",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/09/002/007",
+   "keep": "en"
+  },
+  "ae152c359152": {
+   "src": "{#}{#}Total Damage: +{~} (Main Attack Damage, per Twilight)",
+   "dst": "{#}{#}總傷害: +{~}(普攻傷害，每點 Twilight)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/The Twilight Zone"
+   ],
+   "_raw": " Total Damage: +15% (Main Attack Damage, per Twilight)",
+   "tree": "02/archer/09/002/007"
+  },
+  "de8e6f723e7c": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, per Twilight)",
+   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，每點 Twilight)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/The Twilight Zone"
+   ],
+   "_raw": " Total Damage: +100% (of your DPS, per Twilight)",
+   "tree": "02/archer/09/002/007"
+  },
+  "f68f89528b71": {
+   "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#}{#}stack on a target.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/The Twilight Zone"
+   ],
+   "lines": 4,
+   "flat": "At the end of its duration, or by casting F, fire a Spell and a Main Attack arrow at every marked enemy. Arrows will deal bonus damage for each Twilight {#}{#}stack on a target.",
+   "_raw": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight  stack on a target.",
+   "tree": "02/archer/09/002/007"
+  },
+  "c612af18dc38": {
+   "src": "Enter a focused state for {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/The Twilight Zone"
+   ],
+   "lines": 1,
+   "flat": "Enter a focused state for {~}s.",
+   "_raw": "Enter a focused state for 8s.",
+   "tree": "02/archer/09/002/007"
+  },
+  "dfbac028295d": {
+   "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#}{#}every {~}s. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/The Twilight Zone"
+   ],
+   "lines": 3,
+   "flat": "While in this state, you jump higher, fall slower, and all enemies within your line of sight are marked by Twilight {#}{#}every {~}s. (Max {~})",
+   "_raw": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight  every 0.05s. (Max 100)",
+   "tree": "02/archer/09/002/007"
+  },
+  "00b4e636d3b0": {
+   "src": "Extinction Event",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "archer/技能名稱"
+   ],
+   "tree": "02/archer/09/003/004",
+   "keep": "en"
+  },
+  "31133e315602": {
+   "src": "Bombs will leave behind Basaltic Traps\nand occasionally Chilling Snares.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Extinction Event"
+   ],
+   "lines": 2,
+   "flat": "Bombs will leave behind Basaltic Traps and occasionally Chilling Snares.",
+   "_raw": "Bombs will leave behind Basaltic Traps\nand occasionally Chilling Snares.",
+   "tree": "02/archer/09/003/004"
+  },
+  "5e574000d5f0": {
+   "src": "Calls forth a flock of tactical crows\nwhich will perform a carpet bombing of\na large area in front of you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Extinction Event"
+   ],
+   "lines": 3,
+   "flat": "Calls forth a flock of tactical crows which will perform a carpet bombing of a large area in front of you.",
+   "_raw": "Calls forth a flock of tactical crows\nwhich will perform a carpet bombing of\na large area in front of you.",
+   "tree": "02/archer/09/003/004"
+  }
+ }
+}
