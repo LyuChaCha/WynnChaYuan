@@ -139,6 +139,51 @@ public final class MajorIdColourTest {
                 written.contains("原文第一行的色段"));
         check("診斷檔記下了原文的色段", written.contains("#FF55FF"));
         check("診斷檔記下了每一次呼叫的流水號", written.contains("=== 1 ==="));
+        // 遊戲實際送來的結構（取自使用者回報的 majorid-debug.txt）：
+        //   [0] #E0B3E6 「」                        ← 空字串
+        //   [1] #E0B3E6 「(位移字元)Transcendence: 」 ← 前綴是寬度位移字元，不是 ✦
+        //   [2] #AAAAAA 「25% chance for」
+        // 名稱那一段比同一行的說明長，前面還掛著一個空的片段——
+        // 這兩件事都是我自己捏測試時沒有的，所以先前三種情境全過卻修不好。
+        String offset = new StringBuilder().appendCodePoint(0xD0002).toString();
+        List<StyledText> real = new ArrayList<>();
+        MutableComponent head2 = Component.empty();
+        head2.append(Component.literal("").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6))));
+        head2.append(Component.literal(offset + "Transcendence: ").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6))));
+        head2.append(Component.literal("25% chance for").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA))));
+        real.add(StyledText.fromComponent(head2));
+        for (String row : new String[] {"spells to cost no mana when", "casted."}) {
+            real.add(StyledText.fromComponent(Component.literal(row).withStyle(
+                    Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA)))));
+        }
+        List<Component> got = LineTranslator.translateBlock(
+                real, store, new boolean[real.size()]);
+        check("遊戲實際結構查得到（"
+                        + (got == null || got.isEmpty() ? "null" : got.get(0).getString())
+                        + "）", got != null && !got.isEmpty());
+        if (got != null && !got.isEmpty()) {
+            Integer c = colourOf(got, "超凡境界");
+            check("遊戲實際結構下名稱保住自己的顏色（拿到 "
+                            + (c == null ? "null" : "#" + String.format("%06X", c)) + "）",
+                    c != null && c == 0xE0B3E6);
+            // 「顏色相反」的意思是說明那半拿到了名稱的顏色。分開驗一次。
+            Integer body = colourOf(got, "機率");
+            check("說明那半沒有拿到名稱的顏色（拿到 "
+                            + (body == null ? "null" : "#" + String.format("%06X", body))
+                            + "）", body != null && body == 0xAAAAAA);
+            for (Component one : got) {
+                System.out.println("      輸出：" + one.getString());
+                for (Component leaf : flatten(one)) {
+                    System.out.println("        「" + leaf.getString() + "」 "
+                            + (leaf.getStyle().getColor() == null ? "繼承"
+                               : leaf.getStyle().getColor().toString()));
+                }
+            }
+        }
+
         report();
     }
 
