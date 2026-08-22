@@ -26,8 +26,14 @@ import java.util.Set;
  */
 public final class LayoutDebug {
 
-    /** 最多寫幾份 tooltip。夠看出問題，又不會把玩家的資料夾塞爆。 */
-    private static final int LIMIT = 12;
+    /**
+     * 最多寫幾份 tooltip 的詳細判斷。
+     *
+     * <p>12 太少了：使用者回報坐騎那份沒有詳細判斷，而檔案裡「· 看過 Wyvern Flute」
+     * 出現了八次——額度早就被前面的素材袋、住宅選單那些用光。玩家要滑到想查的東西
+     * 之前，難免先滑過一堆別的。
+     */
+    private static final int LIMIT = 40;
 
     private static Path file;
     private static int written = 0;
