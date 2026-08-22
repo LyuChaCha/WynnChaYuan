@@ -111,7 +111,7 @@ public final class CaptureListener {
         }
         lastHadChoices = event.hasChoices();
         // 顯示用的譯文吃完整原文（含符號），與收集用的模板是兩條路
-        DialogueOverlay.setCurrent(styled, WynnChaYuan.translations());
+        DialogueOverlay.setCurrent(styled, WynnChaYuan.translations(), lastHadChoices);
         record(buffer.offer(GlyphSplitter.toTemplate(styled)));
     }
 
