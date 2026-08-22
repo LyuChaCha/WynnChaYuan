@@ -3,6 +3,30 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.42.0] - 2026-08-22
+
+### 修正
+
+- **Major ID 的名稱顏色不見了。** 遊戲把 `✦` 跟名稱分成<b>兩個色段</b>送過來，
+  而「純符號的段也算重點段」是 v1.33.1 為了保住 `✖` 的紅色才加的——兩件事
+  湊在一起，程式挑樣式時挑到的就變成那個 `✦`，名稱於是套上了 `✦` 的顏色。
+  改成挑<b>有字母的</b>那一段。
+  - 加了 `MajorIdColourTest`，用真正的語料跑：`✦` 併在名稱裡、以及 `✦`
+    自成一段，兩種都要保住名稱自己的顏色。寫測試的過程本身就重現了這個 bug。
+
+### 新增
+
+- **開始翻裝備 lore，91 條。** 先挑<b>帶劇情線索</b>的那一批——提到 Fruma、
+  Dern、衰朽、腐化、下界、村民、矮人、Bovemist、Theorick、Bob、Remikas 的都在裡面。
+  - Bob 的胸甲、Theorick 的冰甲、Remikas 的護腕（裡面封著他的靈魂）、
+    傳說神殿守衛的盾、Tisaun 獨自擋下一場圍城的那件裝備。
+  - `It's pulling towards something.`（它正被什麼東西牽引著。）
+    這句接在句尾，有它的裝備都還有未揭露的內容。
+  - **`Palimpsest` 刻意留空不翻**——那段敘述是 Fruman 文字的<b>密文</b>，
+    社群還在解，翻了就毀掉整個謎題。這件事寫進 `GLOSSARY.md` 了。
+- 對照表新增「裝備 lore」一節：下界、守衛魔像、傳說神殿、村民、獸人／綠皮、
+  Bovemist、Dernel 部族、Avos、WynnExcavation。
+
 ## [1.41.0] - 2026-08-22
 
 ### 修正
