@@ -245,14 +245,11 @@ public final class LineTranslator {
         if (style == null) {
             return List.of();
         }
-        // 少數 Major ID 的名稱是彩虹字——原文裡是一個字一個顏色畫出來的。
-        // 只取第一個顏色的話，譯文會變成單色，那個「特別」就不見了。
-        List<Style> ramp = labelRamp(firstLine);
         // 冒號也算名稱的一部分。原文的「Transcendence:」連冒號都是名稱的顏色，
         // 只把名字上色的話冒號會落到說明那半，看起來就是「顏色接不起來」。
         // 兩種都登記：帶冒號的比較長，比對時會優先中。
-        return List.of(new LineParts.Piece(core + ":", style, ramp),
-                       new LineParts.Piece(core, style, ramp));
+        return List.of(new LineParts.Piece(core + ":", style),
+                       new LineParts.Piece(core, style));
     }
 
     /**
@@ -272,82 +269,6 @@ public final class LineTranslator {
         }
         return null;
     }
-
-    /**
-     * 名稱那一段是不是<b>彩虹字</b>，是的話把整串顏色照順序取回來。
-     *
-     * <h2>彩虹字在原文裡長什麼樣</h2>
-     * 遊戲沒有「漸層」這種東西，所謂彩虹字是<b>一個字切成一段、各給一個顏色</b>
-     * 硬拼出來的。所以判斷條件就是：連續好幾段、每段都很短、顏色一直在變。
-     *
-     * <p>門檻設在 {@link #MIN_RAMP_PARTS} 段：兩三段不同顏色是很常見的普通排版
-     * （「名稱」與「：」分開上色之類），真正的彩虹字一定是一長串。
-     *
-     * @return 由左到右的顏色；不是彩虹字就回傳 {@code null}
-     */
-    static List<Style> labelRamp(StyledText firstLine) {
-        List<Style> ramp = new ArrayList<>();
-        Style previous = null;
-        for (StyledTextPart part : firstLine) {
-            String raw = part.getString(null, StyleType.NONE);
-            if (!GlyphSplitter.hasLetter(raw)) {
-                if (ramp.isEmpty()) {
-                    continue;                  // 名稱前面的 ✦ 或位移字元
-                }
-                break;                         // 名稱結束了
-            }
-            if (raw.strip().length() > MAX_RAMP_PART) {
-                // 一整個詞一段。名稱已經收完的話這就是說明那半，收工；
-                // 一個字都還沒收就碰到，那這行本來就是普通排版。
-                break;
-            }
-            PartStyle ps = part.getPartStyle();
-            Style style = ps == null ? Style.EMPTY : ps.getStyle();
-            if (previous != null
-                    && java.util.Objects.equals(style.getColor(), previous.getColor())) {
-                // 顏色沒在變，只是名稱被切碎了而已，不是彩虹字。
-                // 這裡要比<b>顏色值</b>——比物件的話兩個一樣的顏色也會不相等，
-                // 於是任何被切碎的名稱都會被當成彩虹。
-                return null;
-            }
-            previous = style;
-            ramp.add(style);
-        }
-        return ramp.size() >= MIN_RAMP_PARTS ? List.copyOf(ramp) : null;
-    }
-
-    /**
-     * 把一串顏色<b>攤到</b>另一段文字上。
-     *
-     * <h2>為什麼不能一個字配一個顏色</h2>
-     * 原文 {@code Blinding Lights} 十五個字十五個顏色，譯文「眩目之光」只有四個字。
-     * 一對一配的話只會用到前四個顏色，看起來像被截斷的彩虹。
-     * 照<b>比例</b>取才會是同一道漸層——短了就是同一道彩虹畫得密一點。
-     */
-    private static void paint(MutableComponent out, String text,
-                              List<Style> ramp, Style base) {
-        int[] points = text.codePoints().toArray();
-        for (int i = 0; i < points.length; i++) {
-            int slot = points.length == 1 ? 0
-                    : i * (ramp.size() - 1) / (points.length - 1);
-            Style style = ramp.get(slot);
-            // 顏色照原文的，粗斜體等其餘樣式沿用名稱本身那一份
-            out.append(literal(new String(Character.toChars(points[i])),
-                               forDisplay(base.withColor(style.getColor()))));
-        }
-    }
-
-    /**
-     * 少於這麼多段就不算彩虹字，見 {@link #labelRamp}。
-     *
-     * <p>門檻刻意訂得高。認錯的代價是<b>把一個本來只是被切碎的名稱染成漸層</b>，
-     * 那是使用者一眼就會看出不對的錯誤；認不出來的代價只是少一個裝飾。
-     * 兩邊不對等，所以寧可漏認。
-     */
-    private static final int MIN_RAMP_PARTS = 5;
-
-    /** 彩虹字是<b>一個字</b>一段；再長就是普通的整詞上色。 */
-    private static final int MAX_RAMP_PART = 1;
 
     /** 「名稱：說明」的名稱最長到這裡。再長就不像標題了。 */
     private static final int MAX_LABEL_LENGTH = 40;
@@ -1294,7 +1215,39 @@ public final class LineTranslator {
      * 範圍內。不是的話就當成普通文字原封不動抄過去。
      */
     private static boolean isAdjustableSpace(Style style, String text) {
-        return SpaceOffset.isSpaceFont(style) && SpaceOffset.isOffsetRun(text);
+        return isAdjustableSpace(style, text, widthOf(literal(text, style)));
+    }
+
+    /**
+     * 見上。這一支多收一個「量出來的寬度」，是為了讓判斷本身測得到——
+     * 量寬度需要真的字型，headless 測不了，但<b>判斷</b>才是出錯的那一步。
+     *
+     * <h2>為什麼不能只認 space 字型</h2>
+     * 先前的條件是「字型必須是 {@code minecraft:space}」。但素材與坐騎的 tooltip
+     * 走的是 {@code minecraft:language/wynncraft}，而<b>那個字型也收了偏移碼位</b>——
+     * 同樣是寬度偏移，只因為掛在別的字型底下就被當成一般文字：
+     *
+     * <pre>
+     *   󏿿󐀁󐀂Defence󏿒󐁤+1 to +2
+     *   [1] 「防禦」 &lt;- 「Defence」  寬 41 -&gt; 18   ← 標籤縮了 23px
+     *   [2] 「󏿒󐁤」                  寬 54 -&gt; 54   ← 間隔沒跟著調整
+     * </pre>
+     *
+     * <p>數值就整排往左跑了 23px。坐騎的「右鍵點擊召喚」原本靠前導偏移置中，
+     * 也是同一件事——偏移沒被認出來，譯文變短之後整行就偏左了。
+     *
+     * <h2>放寬之後怎麼確定沒認錯</h2>
+     * 量出來的寬度<b>剛好等於</b>解碼出來的偏移值，就證明它在那個字型底下確實是
+     * 寬度偏移，換成 space 字型重新編碼不會改變版面。材質包若在同一段碼位畫了
+     * 圖示，寬度對不上，這裡就不會誤判。
+     *
+     * @param measured 這一段在它自己的字型底下量出來的寬度
+     */
+    static boolean isAdjustableSpace(Style style, String text, int measured) {
+        if (!SpaceOffset.isOffsetRun(text)) {
+            return false;
+        }
+        return SpaceOffset.isSpaceFont(style) || measured == SpaceOffset.decode(text);
     }
 
     private static int countSpaces(List<Run> runs) {
@@ -1603,13 +1556,21 @@ public final class LineTranslator {
         List<LineParts.Piece> numbers = new ArrayList<>();
         List<LineParts.Piece> users = new ArrayList<>();
         List<LineParts.Piece> accents = new ArrayList<>(extraAccents);
+        // 重點段要拿<b>整段</b>的主樣式重挑一次，不能沿用每一行各自挑好的。
+        // 見 LineParts#accentsAgainst：一段被 tooltip 寬度切成好幾行之後，
+        // 每一行的主樣式各自不同，某一行裡最長的那一段會在自己那行被當成
+        // 「就是主樣式」而丟掉——畫面上就是 Mana Bank 的藍色不見了、
+        // Major ID 的敘述整段套上了標題的顏色。
+        Style blockStyle = dominantStyle(parts);
+        List<LineParts.Piece> allRuns = new ArrayList<>();
         for (LineParts part : parts) {
             glyphs.addAll(part.glyphs());
             places.addAll(part.places());
             numbers.addAll(part.numbers());
             users.addAll(part.users());
-            accents.addAll(part.accents());
+            allRuns.addAll(part.runs());
         }
+        accents.addAll(LineParts.accentsAgainst(allRuns, blockStyle));
         accents = withTranslations(accents, store);
 
         List<List<Token>> lines = new ArrayList<>(translated.length);
@@ -1649,7 +1610,7 @@ public final class LineTranslator {
             return null;              // 譯者刪了或多加了佔位符，整段放棄
         }
 
-        Style textStyle = forDisplay(dominantStyle(parts));
+        Style textStyle = forDisplay(blockStyle);
         boolean[] usedAccent = new boolean[accents.size()];
         int glyph = 0;
         int place = 0;
@@ -1771,12 +1732,8 @@ public final class LineTranslator {
             LineParts.Piece accent = accents.get(which);
             // 帶樣式的那一段如果剛好是個技能名稱，樣式與譯名兩個都要
             String shown = store == null ? null : store.lookupTerm(accent.text());
-            String painted = shown != null ? shown : accent.text();
-            if (accent.ramp() != null) {
-                paint(out, painted, accent.ramp(), accent.style());
-            } else {
-                out.append(literal(painted, forDisplay(accent.style())));
-            }
+            out.append(literal(shown != null ? shown : accent.text(),
+                               forDisplay(accent.style())));
             used[which] = true;
             from = at + accent.text().length();
         }
@@ -1806,8 +1763,7 @@ public final class LineTranslator {
             }
             String zh = store.lookup(core);
             if (zh != null && !zh.isBlank() && !zh.equals(core)) {
-                // 彩虹字的那串顏色要跟著譯文版走，否則翻出來就變單色了
-                out.add(new LineParts.Piece(zh, accent.style(), accent.ramp()));
+                out.add(new LineParts.Piece(zh, accent.style()));
             }
         }
         return out;

@@ -48,22 +48,19 @@ public record LineParts(
          * 這樣連非原版的自訂顏色都對，因為搬的是樣式物件本身而不是某個顏色碼。
          */
         List<Piece> accents,
-        Style textStyle) {
+        Style textStyle,
 
-    /**
-     * 一個要填回去的碎片：文字加上它原本的樣式。
-     *
-     * @param ramp 這一段在原文裡是<b>一個字一個顏色</b>畫出來的（彩虹字），
-     *             這裡就是那串顏色，順序即左到右。譯文的字數跟原文對不上，
-     *             所以不能一個字配一個顏色，得把整串顏色<b>攤到譯文的長度上</b>——
-     *             見 {@code LineTranslator.paint}。平常是 {@code null}。
-     */
-    public record Piece(String text, Style style, List<Style> ramp) {
+        /**
+         * 這一行的<b>每一段</b>文字，含它自己的樣式，還沒篩過。
+         *
+         * <p>{@link #accents} 是篩過的結果，篩的基準是這一行自己的主樣式。
+         * 跨行重建時基準會變（見 {@link #accentsAgainst}），那時候需要原始的清單
+         * 重挑一次——只留篩過的結果就挑不回來了。
+         */
+        List<Piece> runs) {
 
-        public Piece(String text, Style style) {
-            this(text, style, null);
-        }
-    }
+    /** 一個要填回去的碎片：文字加上它原本的樣式。 */
+    public record Piece(String text, Style style) {}
 
     /**
      * 拆解一行。
@@ -201,7 +198,31 @@ public record LineParts(
                 List.copyOf(numbers),
                 List.copyOf(users),
                 accents(runs, textStyle),
-                textStyle);
+                textStyle,
+                List.copyOf(runs));
+    }
+
+    /**
+     * 重新挑一次重點段，這次拿<b>別的</b>主樣式來比。
+     *
+     * <h2>為什麼跨行時要重挑</h2>
+     * {@link #accents} 是拿<b>那一行自己的</b>主樣式篩的。單獨看一行沒問題，
+     * 但一整段被 tooltip 寬度切成好幾行之後，每一行的「主樣式」各自不同：
+     *
+     * <pre>
+     *   Increase your maximum          ← 整行灰色，灰是主樣式
+     *   Mana Bank ◈ by +30.            ← 「Mana Bank」比後面長，藍變成主樣式
+     * </pre>
+     *
+     * <p>於是藍色那一段在自己那行被判定為「跟主樣式相同」而丟掉，
+     * 譯文重建時沒有東西可以把藍色貼回去——畫面上 Mana Bank 變成白的。
+     * 同一件事也發生在 Major ID：名稱比同一行露出的說明長時，說明那半的灰色
+     * 被丟掉，整段敘述就套上了標題的顏色。
+     *
+     * <p>所以跨行重建時改用<b>整段</b>的主樣式重挑一次。
+     */
+    public static List<Piece> accentsAgainst(List<Piece> runs, Style textStyle) {
+        return accents(runs, textStyle);
     }
 
     /**
