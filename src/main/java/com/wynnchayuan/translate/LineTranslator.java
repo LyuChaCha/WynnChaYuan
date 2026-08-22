@@ -91,21 +91,21 @@ public final class LineTranslator {
         }
         String translated = store.lookup(template);
         List<LineParts.Piece> extra = List.of();
-        List<LineParts.Piece> places = List.of();
+        List<LineParts.Piece> places = null;
+        List<LineParts.Piece> glyphs = null;
         boolean flowed = false;
         if (translated == null || translated.isBlank()) {
             // 原文可能是被 tooltip 寬度自動斷行的，斷點跟語料對不上。
             // 把整段攤平成一行再查一次。
             Flowed hit = lookupFlowedParts(template, store);
             if (hit == null) {
-                // 地名可能<b>剛好被斷在中間</b>：「the peak of the Tower of ⏎
-                // Ascension,」。地名是逐行認的，於是這一段永遠湊不出 {p}，
-                // 而語料裡存的正是 {p}——裝備的背景敘述整批不生效就是這個原因。
-                Rejoined rejoined = rejoinPlaces(template, dominantStyle(parts));
+                // 還是查不到的話，多半是<b>斷行本身</b>留下的痕跡。見 rejoin。
+                Rejoined rejoined = rejoin(parts, dominantStyle(parts));
                 if (rejoined != null) {
                     hit = lookupFlowedParts(rejoined.template(), store);
                     if (hit != null) {
                         places = rejoined.places();
+                        glyphs = rejoined.glyphs();
                     }
                 }
             }
@@ -134,7 +134,7 @@ public final class LineTranslator {
             translated = wrapToBlock(translated, run);
         }
         String[] dst = translated.split("\n", -1);
-        List<Component> built = rebuildAll(dst, parts, extra, places, store);
+        List<Component> built = rebuildAll(dst, parts, extra, glyphs, places, store);
         if (built == null) {
             return null;                       // 佔位符對不上，整段放棄
         }
@@ -180,49 +180,90 @@ public final class LineTranslator {
      */
     record Flowed(String text, String label) {}
 
-    /** 跨行認地名的結果：換好 {@code {p}} 的模板，以及被換掉的那些。 */
-    record Rejoined(String template, List<LineParts.Piece> places) {}
+    /**
+     * 重新併回一句的結果。
+     *
+     * @param glyphs 剝掉行首排版偏移之後<b>剩下</b>的符號，順序照舊
+     * @param places 跨行認出來的地名
+     */
+    record Rejoined(String template, List<LineParts.Piece> glyphs,
+                    List<LineParts.Piece> places) {}
 
     /**
-     * 把<b>被斷行切開</b>的地名重新認出來。
+     * 把幾行原文<b>當成一句話</b>重新組一次，去掉斷行本身留下的痕跡。
      *
-     * <h2>為什麼逐行認不到</h2>
-     * 地名是在 {@link LineParts#of} 裡逐行比對的，而 tooltip 會依畫面寬度斷行：
+     * <h2>斷行會留下兩種痕跡</h2>
+     * <ol>
+     *   <li><b>每一行開頭的排版偏移。</b>置中的段落，每一行前面都有一個
+     *       用來推位置的隱形字元，抽成模板就是行首的 {@code {#}}：
+     *       <pre>
+     *         {#}As a flashing star shot through
+     *         {#}the night sky, a sole observer
+     *       </pre>
+     *       攤平之後鍵就成了「{@code {#}As a flashing star… {#}the night sky…}」，
+     *       而語料裡是乾淨的一句話。{@code {#}} 的數量取決於斷成幾行，
+     *       也就是取決於<b>畫面寬度</b>——那是排版，不是內容。</li>
+     *   <li><b>被切成兩半的地名。</b>地名是在 {@link LineParts#of} 裡逐行比對的：
+     *       <pre>
+     *         the peak of the Tower of
+     *         Ascension, is completely hollow.
+     *       </pre>
+     *       兩行各自都不含完整地名，模板裡就留著原樣英文；語料裡存的是
+     *       {@code {p}}。</li>
+     * </ol>
      *
-     * <pre>
-     *   the peak of the Tower of
-     *   Ascension, is completely hollow.
-     * </pre>
+     * <p>兩種痕跡都會讓鍵對不上，而且是<b>各自獨立</b>的——裝備的背景敘述整批
+     * 不生效就是它們疊在一起，缺一個修都沒用。這裡一次處理掉：剝掉行首偏移、
+     * 併成一行、再認一次地名。
      *
-     * <p>「Tower of」與「Ascension」落在不同行，兩行各自都不含完整的地名，
-     * 於是模板裡留著原樣的英文；而語料裡存的是 {@code {p}}。兩邊永遠不相等——
-     * 裝備的背景敘述整批不生效就是這個原因，不是漏翻。
+     * <p>剝掉的偏移<b>不能留在符號池裡</b>，否則譯文裡的 {@code {#}} 數量對不上，
+     * 整段會被判定為佔位符不符而放棄。所以回傳剩下的那些讓呼叫端換掉整個池子。
+     * 置中本身不受影響——那是 {@link #realign} 依 {@code centered} 另外算的。
      *
-     * <p>這裡把整段併成一行之後再認一次。回傳的地名是<b>依序</b>掃出來的，
-     * 逐行那份看得到的它都看得到，所以呼叫端直接拿它取代整個地名池。
-     *
-     * @return 沒有任何地名時回傳 {@code null}，呼叫端就不必多查一次
+     * @return 兩種痕跡都沒有時回傳 {@code null}，呼叫端就不必白查一次
      */
-    private static Rejoined rejoinPlaces(String template, Style style) {
-        String joined = template.replace('\n', ' ');
-        java.util.regex.Matcher place = PlaceNames.matcher(joined);
-        if (place == null) {
-            return null;
+    private static Rejoined rejoin(List<LineParts> parts, Style style) {
+        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
+        StringBuilder joined = new StringBuilder();
+        List<LineParts.Piece> kept = new ArrayList<>();
+        boolean trimmed = false;
+        for (LineParts part : parts) {
+            String line = part.template();
+            int at = 0;
+            int lead = 0;
+            while (line.startsWith(glyph, at)) {
+                at += glyph.length();
+                lead++;
+            }
+            if (lead > 0) {
+                trimmed = true;
+            }
+            if (joined.length() > 0) {
+                joined.append(' ');
+            }
+            joined.append(line, at, line.length());
+            List<LineParts.Piece> own = part.glyphs();
+            kept.addAll(own.subList(Math.min(lead, own.size()), own.size()));
         }
-        StringBuilder out = new StringBuilder();
+
+        String text = joined.toString();
         List<LineParts.Piece> found = new ArrayList<>();
-        int from = 0;
-        while (place.find()) {
-            out.append(joined, from, place.start())
-               .append(GlyphSplitter.PLACE_PLACEHOLDER);
-            found.add(new LineParts.Piece(place.group(), style));
-            from = place.end();
+        java.util.regex.Matcher place = PlaceNames.matcher(text);
+        if (place != null) {
+            StringBuilder out = new StringBuilder();
+            int from = 0;
+            while (place.find()) {
+                out.append(text, from, place.start())
+                   .append(GlyphSplitter.PLACE_PLACEHOLDER);
+                found.add(new LineParts.Piece(place.group(), style));
+                from = place.end();
+            }
+            if (!found.isEmpty()) {
+                text = out.append(text.substring(from)).toString();
+            }
         }
-        if (found.isEmpty()) {
-            return null;
-        }
-        out.append(joined.substring(from));
-        return new Rejoined(out.toString(), List.copyOf(found));
+        return trimmed || !found.isEmpty()
+                ? new Rejoined(text, List.copyOf(kept), List.copyOf(found)) : null;
     }
 
     static String lookupFlowed(String template, TranslationStore store) {
@@ -1752,15 +1793,18 @@ public final class LineTranslator {
     private static List<Component> rebuildAll(String[] translated, List<LineParts> parts,
                                               List<LineParts.Piece> extraAccents,
                                               TranslationStore store) {
-        return rebuildAll(translated, parts, extraAccents, List.of(), store);
+        return rebuildAll(translated, parts, extraAccents, null, null, store);
     }
 
     /**
-     * @param overridePlaces 不是空的時候<b>取代</b>逐行認出來的地名池。
-     *                       跨行認地名時會用到，見 {@link #rejoinPlaces}。
+     * @param overrideGlyphs 不是 {@code null} 就<b>取代</b>逐行收來的符號池
+     * @param overridePlaces 不是 {@code null} 就<b>取代</b>逐行認出來的地名池
+     *                       （見 {@link #rejoin}：整段重組過的話，兩個池子都得跟著換，
+     *                       否則譯文裡的佔位符數量對不上，整段會被放棄）
      */
     private static List<Component> rebuildAll(String[] translated, List<LineParts> parts,
                                               List<LineParts.Piece> extraAccents,
+                                              List<LineParts.Piece> overrideGlyphs,
                                               List<LineParts.Piece> overridePlaces,
                                               TranslationStore store) {
         List<LineParts.Piece> glyphs = new ArrayList<>();
@@ -1782,10 +1826,14 @@ public final class LineTranslator {
             users.addAll(part.users());
             allRuns.addAll(part.runs());
         }
-        if (!overridePlaces.isEmpty()) {
-            // 跨行認出來的那一份是<b>整段依序</b>掃出來的，逐行那份看得到的它都看得到，
+        if (overridePlaces != null) {
+            // 整段重組出來的那一份是<b>依序</b>掃的，逐行那份看得到的它都看得到，
             // 還多了被斷行切開的那些。兩份混在一起會重複，直接換掉。
             places = new ArrayList<>(overridePlaces);
+        }
+        if (overrideGlyphs != null) {
+            // 行首的排版偏移已經在重組時剝掉了，池子也要跟著少那幾個。
+            glyphs = new ArrayList<>(overrideGlyphs);
         }
         accents.addAll(LineParts.accentsAgainst(allRuns, blockStyle));
         accents = withTranslations(accents, store);
@@ -2017,7 +2065,41 @@ public final class LineTranslator {
     }
 
     private static Component literal(String text, Style style) {
-        return Component.literal(text).withStyle(style);
+        return Component.literal(text).withStyle(upright(text, style));
+    }
+
+    /**
+     * 方塊字不跟著原文一起斜。
+     *
+     * <h2>為什麼</h2>
+     * Minecraft 的斜體不是另一套字型，是<b>把字形往右推一個剪切</b>。
+     * 拉丁字母本來就有傾斜的字形設計，剪切之後看起來還算正常；方塊字沒有，
+     * 剪切出來的是糊成一團的斜方塊——筆畫互相穿插，相鄰兩個字還會疊到，
+     * 窄一點的介面根本讀不出來。
+     *
+     * <p>而 GUI 的標題幾乎<b>全部</b>是斜的：Minecraft 只要物品有自訂名稱就自動
+     * 加上斜體，Wynncraft 沒有特地關掉。原文是拉丁字母所以沒人在意，
+     * 一換成中文就整排糊掉。
+     *
+     * <p>所以只丟掉斜體，顏色與粗體照抄——那兩個對方塊字沒有副作用。
+     * 判斷看的是<b>這一段文字</b>而不是整行：同一行裡的英文片段（技能名、
+     * 裝備名）該斜還是斜，跟原文一致。
+     */
+    private static Style upright(String text, Style style) {
+        Style base = style == null ? Style.EMPTY : style;
+        return base.isItalic() && hasHan(text) ? base.withItalic(false) : base;
+    }
+
+    /** 這段文字裡有沒有方塊字。全形標點不算——單獨出現時剪切不礙事。 */
+    private static boolean hasHan(String text) {
+        for (int i = 0; i < text.length(); ) {
+            int cp = text.codePointAt(i);
+            if (Character.UnicodeScript.of(cp) == Character.UnicodeScript.HAN) {
+                return true;
+            }
+            i += Character.charCount(cp);
+        }
+        return false;
     }
 
     // ------------------------------------------------------------ 模板切詞
