@@ -44,6 +44,24 @@ public final class AlignPointTest {
         check("行尾的留白邊距不算 —— 差額灌進那裡的話數值會黏在標籤旁",
                 !LineTranslator.isAlignSpace(labelValue, 3));
 
+        // --- 補償之後的間隔不能把字疊在一起 -----------------------------
+        // 正的間隔：中文變長就往回收，但收到 MIN_GAP 為止
+        check("譯文變短時把正間隔撐開", LineTranslator.narrowed(80, 118) == 118);
+        check("譯文變長時把正間隔收窄", LineTranslator.narrowed(80, 40) == 40);
+        check("正間隔不會收到把字黏在一起", LineTranslator.narrowed(80, -30) == 6);
+
+        // 負的間隔是 Wynncraft 自己的排版設計（數值往回貼進標籤尾巴的留白），
+        // 不能夾在 MIN_GAP 以上——夾了整行會多出二十幾像素。
+        check("負間隔照樣可以撐開（譯文比原文短）",
+                LineTranslator.narrowed(-25, -4) == -4);
+        check("負間隔可以撐到正的", LineTranslator.narrowed(-25, 12) == 12);
+        // 但不能比原文<b>更</b>負。技能樹的 Ice Snake Cost 翻成
+        // 「Ice Snake 消耗百分比」之後，數值被往回拉進標籤裡，
+        // 畫面上是兩層字疊在一起，讀出來是「消耗百分5%」。
+        check("負間隔不會被算得比原文更負 —— 那就是字疊在一起",
+                LineTranslator.narrowed(-25, -60) == -25);
+        check("負間隔維持原值時剛好等於原文", LineTranslator.narrowed(-25, -25) == -25);
+
         // 素材那種兩欄的行：標籤 [A] +60 to [B] +75
         // 只補其中一欄的話另一欄會跑掉，而整行總寬度仍然是對的
         List<Piece> twoColumns = List.of(
