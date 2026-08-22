@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Creeper Infiltration",
   "count": 44,
-  "translated": 0,
+  "translated": 44,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Creeper Infiltration#000": {
    "src": "Talk to Thomas in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 {p} 的 [-{~1}, {~2}, -{~3}] 跟 Thomas 談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -18,7 +18,7 @@
   },
   "Creeper Infiltration#001": {
    "src": "Anyone! Can anyone- oh, hello. You look strong enough to help me.",
-   "dst": "",
+   "dst": "有人嗎！有沒有人可以——哦，你好。你看起來夠強壯，應該幫得上我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -28,7 +28,7 @@
   },
   "Creeper Infiltration#002": {
    "src": "I am Thomas, and I help manage the supplies for a village in the Pigman Ravine. Though, I have a bit of a problem...",
-   "dst": "",
+   "dst": "我叫 Thomas，負責替豬人峽谷裡一座村子管理物資。不過，我遇到了一點麻煩……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -38,7 +38,7 @@
   },
   "Creeper Infiltration#003": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
-   "dst": "",
+   "dst": "我們的峽谷穀快用完了，那是我們主要的糧食。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48,7 +48,7 @@
   },
   "Creeper Infiltration#004": {
    "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "",
+   "dst": "平常我們都自己去採，可是最近一群兇暴的豬人佔據了通往峽谷頂端的隧道，穀子就長在那上面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -58,7 +58,7 @@
   },
   "Creeper Infiltration#005": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
-   "dst": "",
+   "dst": "上次我們進去的時候，我聽到上面傳來爆炸聲。我怕那些豬人正在用 TNT 把我們的糧食炸掉……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -68,7 +68,7 @@
   },
   "Creeper Infiltration#006": {
    "src": "I came here to {p} to see if I could find help here, but I've had no luck. Until now, that is. Would you be willing to help?",
-   "dst": "",
+   "dst": "我來 {p} 是想看看能不能找到幫手，可是一直沒有著落。直到現在。你願意幫忙嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -78,7 +78,7 @@
   },
   "Creeper Infiltration#007": {
    "src": "You would? You're a life saver. I'll meet you at the village, just follow the path out of town and take the northern-most entrance to the ravines.",
-   "dst": "",
+   "dst": "你願意？你真是救星。我們村子見，你順著鎮外那條路走，從最北邊那個入口進峽谷就是了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -88,7 +88,7 @@
   },
   "Creeper Infiltration#008": {
    "src": "Once you get there, keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
-   "dst": "",
+   "dst": "到了之後沿著峽谷右側的岩壁走，爬上樓梯就能抵達入口。還有，隧道裡要小心，那些豬人會拿石頭當武器丟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -98,7 +98,7 @@
   },
   "Creeper Infiltration#009": {
    "src": "Oh, finally, someone has come to this hidden village!",
-   "dst": "",
+   "dst": "哦，終於有人來到這座隱密的村子了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -108,7 +108,7 @@
   },
   "Creeper Infiltration#010": {
    "src": "I am Thomas, and I help manage the supplies for this ravine village. Though, I have a bit of a problem...",
-   "dst": "",
+   "dst": "我叫 Thomas，負責替這座峽谷村子管理物資。不過，我遇到了一點麻煩……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -118,7 +118,7 @@
   },
   "Creeper Infiltration#011": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
-   "dst": "",
+   "dst": "我們的峽谷穀快用完了，那是我們主要的糧食。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -128,7 +128,7 @@
   },
   "Creeper Infiltration#012": {
    "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "",
+   "dst": "平常我們都自己去採，可是最近一群兇暴的豬人佔據了通往峽谷頂端的隧道，穀子就長在那上面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -138,7 +138,7 @@
   },
   "Creeper Infiltration#013": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
-   "dst": "",
+   "dst": "上次我們進去的時候，我聽到上面傳來爆炸聲。我怕那些豬人正在用 TNT 把我們的糧食炸掉……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -148,7 +148,7 @@
   },
   "Creeper Infiltration#014": {
    "src": "You appear to be much stronger than I am, so maybe you could get past the tunnel pigmen and eliminate the explosions at the top.",
-   "dst": "",
+   "dst": "你看起來比我強壯得多，或許你能突破隧道裡的豬人，把上面的爆炸源解決掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -158,7 +158,7 @@
   },
   "Creeper Infiltration#015": {
    "src": "Just keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
-   "dst": "",
+   "dst": "沿著峽谷右側的岩壁走，爬上樓梯就能抵達入口。還有，隧道裡要小心，那些豬人會拿石頭當武器丟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -168,7 +168,7 @@
   },
   "Creeper Infiltration#016": {
    "src": "Enter the tunnel at [-{~}, {~}, -{~}] and reach the top of the ravine",
-   "dst": "",
+   "dst": "從 [-{~1}, {~2}, -{~3}] 進入隧道，抵達峽谷頂端",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -178,7 +178,7 @@
   },
   "Creeper Infiltration#017": {
    "src": "Bring back the [Creeper Skin] to Thomas at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "把 [Creeper Skin] 帶回 [-{~1}, {~2}, -{~3}] 給 Thomas",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -188,7 +188,7 @@
   },
   "Creeper Infiltration#018": {
    "src": "I didn't expect you to fall out of the sky like that. Are you okay, or should I go get the potion merchant to heal you?",
-   "dst": "",
+   "dst": "我沒想到你會這樣從天上掉下來。你還好嗎？還是我去找藥水商人來替你療傷？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -198,7 +198,7 @@
   },
   "Creeper Infiltration#019": {
    "src": "You're fine? Oh, good to hear. Did you manage to get rid of the pigmen and their explosives?",
-   "dst": "",
+   "dst": "你沒事？哦，那太好了。豬人跟他們的炸藥都解決了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -208,7 +208,7 @@
   },
   "Creeper Infiltration#020": {
    "src": "A green creature? A \"creeper\"? No such thing exists in this world, especially with the pigmen all around!",
-   "dst": "",
+   "dst": "綠色的生物？「苦力怕」？這世上根本沒有那種東西，何況這裡到處都是豬人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -218,7 +218,7 @@
   },
   "Creeper Infiltration#021": {
    "src": "Oh, you brought a piece of skin back. How odd, I've seen this skin before...",
-   "dst": "",
+   "dst": "哦，你帶了一塊皮回來。真奇怪，這種皮我以前見過……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -228,7 +228,7 @@
   },
   "Creeper Infiltration#022": {
    "src": "There's a large cave over to the south. I tried to enter it, but I got ambushed by green creatures...",
-   "dst": "",
+   "dst": "南邊有個大洞窟。我試過要進去，結果被一群綠色的生物伏擊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -238,7 +238,7 @@
   },
   "Creeper Infiltration#023": {
    "src": "I thought I was just dreaming, but these \"creepers\" you talk about...they might live in that cave.",
-   "dst": "",
+   "dst": "我本來以為那只是我在作夢，可是你說的這些「苦力怕」……牠們可能就住在那個洞窟裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -248,7 +248,7 @@
   },
   "Creeper Infiltration#024": {
    "src": "I have an idea. I need to know for sure that they live there. A merchant can make you a mask with the skin and another material.",
-   "dst": "",
+   "dst": "我有個主意。我得確定牠們真的住在那裡。有位商人可以用這塊皮加上另一種材料幫你做一副面具。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -258,7 +258,7 @@
   },
   "Creeper Infiltration#025": {
    "src": "There's a Pigman Overlord that sometimes hangs in a cave nearby. If you can kill it, you can get a pigman hide strong enough to make the mask.",
-   "dst": "",
+   "dst": "附近的洞窟裡偶爾會出現一隻豬人霸主。你要是能殺了牠，就能取得夠堅韌的豬人皮來做面具。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -268,7 +268,7 @@
   },
   "Creeper Infiltration#026": {
    "src": "If you continue on the western path past the tunnel entrance, you should find a camp where the Overlord is located.",
-   "dst": "",
+   "dst": "從隧道口沿著西邊那條路一直走，應該就能找到霸主所在的營地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -278,7 +278,7 @@
   },
   "Creeper Infiltration#027": {
    "src": "Go get the pigman hide, and then come back to me so I can tell you what to do next.",
-   "dst": "",
+   "dst": "去把豬人皮弄來，再回來找我，我再告訴你下一步。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -288,7 +288,7 @@
   },
   "Creeper Infiltration#028": {
    "src": "Retrieve [{~} Pigman Hide] from the Pigman Overlord near [-{~}, {~}, -{~}] and return to Thomas",
-   "dst": "",
+   "dst": "從 [-{~1}, {~2}, -{~3}] 附近的豬人霸主身上取得 [{~4} Pigman Hide]，並回去找 Thomas",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -298,7 +298,7 @@
   },
   "Creeper Infiltration#029": {
    "src": "I see you have the hide. This skin will work perfectly for my plan.",
-   "dst": "",
+   "dst": "我看到你把皮拿來了。這塊皮拿來執行我的計畫再適合不過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -308,7 +308,7 @@
   },
   "Creeper Infiltration#030": {
    "src": "There is a Mask Merchant in this village. He can make you a mask with the two materials I have.",
-   "dst": "",
+   "dst": "這座村子裡有位面具商人。他可以用我手上這兩種材料幫你做一副面具。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -318,7 +318,7 @@
   },
   "Creeper Infiltration#031": {
    "src": "With the mask, you can put it on and go undetected into the cave with these \"creepers\". Only then will we know the truth.",
-   "dst": "",
+   "dst": "戴上那副面具，你就能不被察覺地走進那些「苦力怕」的洞窟。到那時我們才會知道真相。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -328,7 +328,7 @@
   },
   "Creeper Infiltration#032": {
    "src": "To get to the creeper cave, follow the western path and turn left at the pigman camps.",
-   "dst": "",
+   "dst": "要去苦力怕的洞窟，沿著西邊那條路走，到豬人營地那裡左轉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -338,7 +338,7 @@
   },
   "Creeper Infiltration#033": {
    "src": "Also, if you somehow lose the mask, the merchant can make you another one if you bring him another piece of skin and hide.",
-   "dst": "",
+   "dst": "還有，萬一你把面具弄丟了，只要再帶一塊皮和一塊獸皮給那位商人，他可以再幫你做一副。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -348,7 +348,7 @@
   },
   "Creeper Infiltration#034": {
    "src": "Here are the materials. Be careful out there. Who knows what those green monsters could do to you...",
-   "dst": "",
+   "dst": "材料在這裡。外面小心點。誰知道那些綠色怪物會對你做什麼……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -358,7 +358,7 @@
   },
   "Creeper Infiltration#035": {
    "src": "Buy the creeper mask from the merchant and enter the creeper hideout at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "跟商人買下苦力怕面具，並進入 [-{~1}, {~2}, -{~3}] 的苦力怕巢穴",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -368,7 +368,7 @@
   },
   "Creeper Infiltration#036": {
    "src": "Bring Thomas [{~} Creeper Powder] to prove him creepers exist in Wynn at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "把 [{~4} Creeper Powder] 帶到 [-{~1}, {~2}, -{~3}] 給 Thomas，證明 Wynn 真的有苦力怕",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -378,7 +378,7 @@
   },
   "Creeper Infiltration#037": {
    "src": "So, what was in the cave? Were there really creepers in there?",
-   "dst": "",
+   "dst": "所以，洞窟裡有什麼？裡面真的有苦力怕嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -388,7 +388,7 @@
   },
   "Creeper Infiltration#038": {
    "src": "What's this? It smells like gunpowder...but more earthy. And this came from the cave?",
-   "dst": "",
+   "dst": "這是什麼？聞起來像火藥……可是土味更重。這是從那個洞窟拿出來的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -398,7 +398,7 @@
   },
   "Creeper Infiltration#039": {
    "src": "This powder is definitely not native to this area. It has to have come from those creepers.",
-   "dst": "",
+   "dst": "這種粉末絕對不是這一帶會有的東西。一定是那些苦力怕身上來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -408,7 +408,7 @@
   },
   "Creeper Infiltration#040": {
    "src": "I guess for now we'll leave them at peace. If they do exist, they don't need to be hunted down to extinction.",
-   "dst": "",
+   "dst": "我想現在就先別去打擾牠們吧。就算牠們真的存在，也不該被獵到滅絕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -418,7 +418,7 @@
   },
   "Creeper Infiltration#041": {
    "src": "Besides, if they are composed of gunpowder, they could easily blow this ravine to pieces.",
-   "dst": "",
+   "dst": "而且，如果牠們是由火藥構成的，牠們大可以把這整條峽谷炸成碎片。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -428,7 +428,7 @@
   },
   "Creeper Infiltration#042": {
    "src": "Thank you for your help. I guess you deserve some sort of reward, considering you helped solve the ravine's big mystery.",
-   "dst": "",
+   "dst": "謝謝你的幫忙。你解開了峽谷的大謎團，我想你值得某種獎賞。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -438,7 +438,7 @@
   },
   "Creeper Infiltration#043": {
    "src": "Feel free to come back to our village any time. By then our food supply should be stable.",
-   "dst": "",
+   "dst": "歡迎隨時再回我們村子來。到那時我們的糧食應該就穩定了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Potion Making",
   "count": 31,
-  "translated": 0,
+  "translated": 31,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Potion Making#000": {
    "src": "Talk to The Assistant in {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 {p} 的 [{~1}, {~2}, -{~3}] 跟 The Assistant 談話",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
@@ -18,7 +18,7 @@
   },
   "Potion Making#001": {
    "src": "Heeh...stranger. I...may need your assistance...",
-   "dst": "",
+   "dst": "嘿嘿……陌生人。我……可能需要你的協助……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -28,7 +28,7 @@
   },
   "Potion Making#002": {
    "src": "My master...wishes to create a very dangerous potion...a transformative elixir of invincibility...",
-   "dst": "",
+   "dst": "我的主人……想調製一種非常危險的藥劑……一種能讓人刀槍不入的變質靈藥……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -38,7 +38,7 @@
   },
   "Potion Making#003": {
    "src": "I was...in support of this... but then, he accrued essence of...the corruption. I had to run away...",
-   "dst": "",
+   "dst": "我原本……是支持他的……可是後來，他弄來了……腐化的精華。我只好逃走……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -48,7 +48,7 @@
   },
   "Potion Making#004": {
    "src": "I fear...that he may be going...too far. I need your help...",
-   "dst": "",
+   "dst": "我怕……他已經走得太遠了。我需要你的幫忙……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -58,7 +58,7 @@
   },
   "Potion Making#005": {
    "src": "I want...to stop him...but I need you to...get me the necessary ingredients... to neutralize the potion...",
-   "dst": "",
+   "dst": "我想……阻止他……但我需要你幫我……弄來必要的材料……好把那藥劑中和掉……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -68,7 +68,7 @@
   },
   "Potion Making#006": {
    "src": "Get me...[{~} Red Mushroom], they can be found outside the east gate behind me.",
-   "dst": "",
+   "dst": "幫我弄來……[{~} Red Mushroom]，我後面東門外就找得到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -78,7 +78,7 @@
   },
   "Potion Making#007": {
    "src": "Slay Mooshrooms near and bring [{~} Red Mushrooms] to The Assistant in {p}",
-   "dst": "",
+   "dst": "在 {p} 附近擊殺哞菇，並把 [{~} Red Mushrooms] 帶給 The Assistant",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
@@ -88,7 +88,7 @@
   },
   "Potion Making#008": {
    "src": "Quickly, get me... [{~} Red Mushroom] as I asked... go through the {p} outside the east gate from here.",
-   "dst": "",
+   "dst": "快，照我說的……幫我弄 [{~} Red Mushroom] 來……從這裡出東門，穿過 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -98,7 +98,7 @@
   },
   "Potion Making#009": {
    "src": "The...the...cows. Steal...from them.",
-   "dst": "",
+   "dst": "那些……那些……牛。從牠們身上……搶。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -108,7 +108,7 @@
   },
   "Potion Making#010": {
    "src": "Good... Hurry..!",
-   "dst": "",
+   "dst": "很好……快……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -118,7 +118,7 @@
   },
   "Potion Making#011": {
    "src": "Good...good. You have the mushrooms.",
-   "dst": "",
+   "dst": "好……很好。你拿到蘑菇了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -128,7 +128,7 @@
   },
   "Potion Making#012": {
    "src": "I'll... return to my master's house...and sneak the mushrooms into...his potion. Wait for me here...",
-   "dst": "",
+   "dst": "我……回主人家一趟……把蘑菇偷偷混進……他的藥劑裡。你在這裡等我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -138,7 +138,7 @@
   },
   "Potion Making#013": {
    "src": "I...have returned... He came back...just as I finished slipping the mushrooms in and...told me...to get out.",
-   "dst": "",
+   "dst": "我……回來了……我剛把蘑菇放進去……他就回來了，然後……叫我……滾出去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -148,7 +148,7 @@
   },
   "Potion Making#014": {
    "src": "You must...ensure that it has worked. You...are much stronger than I, stranger...",
-   "dst": "",
+   "dst": "你必須……確認它有沒有生效。你……比我強太多了，陌生人……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -158,7 +158,7 @@
   },
   "Potion Making#015": {
    "src": "Did you see the orange witch hat roofed hut when you were gathering the mushrooms?",
-   "dst": "",
+   "dst": "你採蘑菇的時候，有沒有看到一間屋頂像橘色女巫帽的小屋？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -168,7 +168,7 @@
   },
   "Potion Making#016": {
    "src": "That is my master's house, you...must go back out the east gate and enter the hut.",
-   "dst": "",
+   "dst": "那就是我主人的家，你……得再出東門一趟，進到那間小屋裡去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -178,7 +178,7 @@
   },
   "Potion Making#017": {
    "src": "You must...make sure...he has not managed...to become invincible... Do what has to be done....",
-   "dst": "",
+   "dst": "你必須……確保……他沒有真的……變成刀槍不入的樣子……該做的事，就去做……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -188,7 +188,7 @@
   },
   "Potion Making#018": {
    "src": "Enter the hut at [{~}, {~}, -{~}] and slay Essren, and take his coat.",
-   "dst": "",
+   "dst": "進入 [{~1}, {~2}, -{~3}] 的小屋，擊殺 Essren 並取得他的外套。",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
@@ -198,7 +198,7 @@
   },
   "Potion Making#019": {
    "src": "You must go back out the east gate and enter the hut, it is my master's house.",
-   "dst": "",
+   "dst": "你得再出東門一趟，進到那間小屋，那是我主人的家。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -208,7 +208,7 @@
   },
   "Potion Making#020": {
    "src": "Don't forget... Do what you must...",
-   "dst": "",
+   "dst": "別忘了……做你該做的事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -218,7 +218,7 @@
   },
   "Potion Making#021": {
    "src": "Ah, you must be the one my assistant told me about.",
-   "dst": "",
+   "dst": "啊，你就是我助手跟我提過的那個人吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -228,7 +228,7 @@
   },
   "Potion Making#022": {
    "src": "If you are trying to stop me, it's too late. I already drank the pot...",
-   "dst": "",
+   "dst": "如果你是來阻止我的，那已經太遲了。我已經把那鍋——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -238,7 +238,7 @@
   },
   "Potion Making#023": {
    "src": "What is this taste? Mushrooms? This can't b",
-   "dst": "",
+   "dst": "這是什麼味道？蘑菇？不可能——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -248,7 +248,7 @@
   },
   "Potion Making#024": {
    "src": "Aaaaargh!!!!!",
-   "dst": "",
+   "dst": "啊啊啊啊啊！！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -258,7 +258,7 @@
   },
   "Potion Making#025": {
    "src": "What have you done to this potion, human?! You will pay for it!",
-   "dst": "",
+   "dst": "你對這藥劑做了什麼，人類？！我要你付出代價！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -268,7 +268,7 @@
   },
   "Potion Making#026": {
    "src": "Bring back Essren's Dusty Coat to The Assistant in {p}",
-   "dst": "",
+   "dst": "把 Essren 的塵封外套帶回 {p} 給 The Assistant",
    "role": "desc",
    "kind": "objective",
    "quest": "Potion Making",
@@ -278,7 +278,7 @@
   },
   "Potion Making#027": {
    "src": "I...must thank you, stranger...",
-   "dst": "",
+   "dst": "我……必須謝謝你，陌生人……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -288,7 +288,7 @@
   },
   "Potion Making#028": {
    "src": "Don't believe...everything people tell you... If master managed to...discover invincibility... No...too...dangerous.",
-   "dst": "",
+   "dst": "別相信……別人跟你說的每一句話……要是主人真的……讓人變得刀槍不入……不……太……危險了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -298,7 +298,7 @@
   },
   "Potion Making#029": {
    "src": "This was...for the better...",
-   "dst": "",
+   "dst": "這樣……是最好的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
@@ -308,7 +308,7 @@
   },
   "Potion Making#030": {
    "src": "Now. I...do not want you saying anything about...these events. Take these, and...never speak of this again.",
-   "dst": "",
+   "dst": "好了。我……不希望你對外提起……這些事。拿著這些，然後……永遠別再提起。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Potion Making",
