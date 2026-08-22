@@ -293,6 +293,20 @@ public final class MajorIdColourTest {
                 "失衡".equals(store.lookup("Unstable")));
         check("語料查得到 Riftspawn 的譯文",
                 "裂隙之裔".equals(store.lookup("Riftspawn")));
+        // 查得到還不夠：要能<b>在別的句子裡自動替換</b>，那走的是 terms 那條路。
+        // 先前扁平檔的載入根本沒呼叫 noteTerm，於是詞典裡有、畫面上還是英文。
+        check("Mana Bank 有登記成可替換的詞",
+                "魔力儲庫".equals(store.lookupTerm("Mana Bank")));
+        // Wynncraft 把資源符號跟詞放在同一個色段：「Mana Bank ✺」。
+        // 拿整段去查會落空，剝掉尾巴查到之後要把尾巴接回去。
+        check("詞後面黏著圖示也認得（拿到 "
+                        + store.lookupTerm("Mana Bank ✺") + "）",
+                "魔力儲庫 ✺".equals(store.lookupTerm("Mana Bank ✺")));
+        check("Crystallized 有登記成可替換的詞",
+                "結晶化".equals(store.lookupTerm("Crystallized")));
+        // gui.json 那種扁平檔收的是整行，不能被當成可替換的詞——
+        // 否則「返回」會在不相干的句子裡到處亂換
+        check("一般的扁平檔不會被當成詞典", store.lookupTerm("Mastery Tomes") == null);
         if (out == null || out.isEmpty()) {
             return;                            // 這一段沒有對應的敘述條目，正常
         }
@@ -562,7 +576,9 @@ public final class MajorIdColourTest {
         if (out == null || out.isEmpty()) {
             return;
         }
-        Integer word = colourOf(out, "Mana Bank");
+        // Mana Bank 現在收在 ability-terms.json，會被換成「魔力儲庫」——
+        // 所以要找的是譯文，不是原文。顏色一樣得跟著搬過去。
+        Integer word = colourOf(out, "魔力儲庫");
         check("行內最長的那個彩色詞沒有掉色（拿到 "
                         + (word == null ? "null" : "#" + String.format("%06X", word))
                         + "）", word != null && word == WORD);

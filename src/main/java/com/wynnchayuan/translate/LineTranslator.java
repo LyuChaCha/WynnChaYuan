@@ -1910,6 +1910,11 @@ public final class LineTranslator {
                 continue;
             }
             String zh = store.lookup(core);
+            if (zh == null || zh.isBlank()) {
+                // 詞典裡的詞也算——而且它認得「詞 + 尾巴的圖示」那種色段，
+                // 見 TranslationStore#lookupTerm
+                zh = store.lookupTerm(core);
+            }
             if (zh != null && !zh.isBlank() && !zh.equals(core)) {
                 out.add(new LineParts.Piece(zh, accent.style()));
             }

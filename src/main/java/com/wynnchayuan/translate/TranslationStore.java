@@ -180,7 +180,12 @@ public final class TranslationStore {
             if (obj.has("entries") && obj.get("entries").isJsonObject()) {
                 readWorkspace(obj.getAsJsonObject("entries"), itemNames(obj));
             } else {
-                readFlat(obj);
+                // 檔名以 -terms.json 結尾的，內容是<b>可以在別的句子裡自動替換的詞</b>
+                // （魔力儲庫、失衡、裂隙之裔…），不是一整行的譯文。
+                //
+                // 不是每個扁平檔都能這樣用：`gui.json` 那種收的是整行，
+                // 把它們全部當成詞會在不相干的句子裡亂換。所以用檔名明說。
+                readFlat(obj, file.getFileName().toString().endsWith("-terms.json"));
             }
             loadedFiles++;
             System.out.println("[WynnChaYuan] 載入譯文 " + file.getFileName()
@@ -247,7 +252,11 @@ public final class TranslationStore {
         }
     }
 
-    private void readFlat(JsonObject obj) {
+    /**
+     * @param asTerms 這個檔收的是<b>可替換的詞</b>而不是整行的譯文。
+     *                見呼叫處：靠檔名 {@code *-terms.json} 判斷。
+     */
+    private void readFlat(JsonObject obj, boolean asTerms) {
         for (String key : obj.keySet()) {
             if (key.startsWith("_")) {
                 continue;                     // _meta 之類的欄位
@@ -257,6 +266,9 @@ public final class TranslationStore {
                 entries.put(key.strip(), v.getAsString().strip());
                 noteBlockSize(key.strip());
                 noteFlat(key.strip(), v.getAsString().strip());
+                if (asTerms) {
+                    noteTerm(key.strip(), v.getAsString().strip());
+                }
             }
         }
     }
@@ -342,8 +354,40 @@ public final class TranslationStore {
     }
 
     /** 這一整段剛好就是一個技能名稱的話，回傳它的譯名。 */
+    /**
+     * 查一個可替換的詞。
+     *
+     * <h2>為什麼要處理尾巴</h2>
+     * Wynncraft 把資源符號跟詞放在<b>同一個色段</b>裡：
+     *
+     * <pre>
+     *   §7adds §f+8§7 Mana to your §bMana Bank ✺
+     * </pre>
+     *
+     * 藍色那一段是「{@code Mana Bank ✺}」，連著符號。拿整段去查當然查不到，
+     * 而使用者看到的就是「詞典裡明明有，畫面上還是英文」。
+     *
+     * <p>剝掉尾巴查到之後<b>把尾巴接回去</b>——符號跟詞是同一個色段，
+     * 一起換掉才會連顏色都對。
+     */
     public String lookupTerm(String text) {
-        return text == null ? null : terms.get(text.strip());
+        if (text == null) {
+            return null;
+        }
+        String key = text.strip();
+        String hit = terms.get(key);
+        if (hit != null) {
+            return hit;
+        }
+        int end = key.length();
+        while (end > 0 && !Character.isLetterOrDigit(key.charAt(end - 1))) {
+            end--;
+        }
+        if (end == key.length() || end == 0) {
+            return null;
+        }
+        String core = terms.get(key.substring(0, end).strip());
+        return core == null ? null : core + key.substring(end);
     }
 
     /** 找到的名稱在原文的哪一段，以及它的譯名。 */
