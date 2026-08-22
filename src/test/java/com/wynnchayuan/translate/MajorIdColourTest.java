@@ -247,8 +247,79 @@ public final class MajorIdColourTest {
 
         keepWordColour(store);
         noStrayUnderline(store);
+        tiedUnderline(store);
         wrappedSevenLines(store);
         report();
+    }
+
+    /**
+     * 底線詞的總長度跟內文<b>剛好一樣</b>時，整段也不能變成底線。
+     *
+     * <h2>實際的數字</h2>
+     * 取自使用者回報的 {@code majorid-debug.txt} 第 18 筆（秘術師流派）：
+     *
+     * <pre>
+     *   Meteor, Pyrokinesis and Powder Specials      ← 三個底線詞共 32 字
+     *   consume Unstable ⚡ to deal +100% damage.     ← 灰字共 32 字
+     * </pre>
+     *
+     * <p>32 比 32，<b>平手</b>。平手時先遇到的勝出，而第一段剛好是 {@code Meteor}
+     * 那個底線詞——整段譯文就全部畫上了底線。
+     *
+     * <p>修法不是去調平手規則（那只是把運氣換一邊），而是<b>累計時不看裝飾</b>：
+     * 「灰＋底線」與「灰」併成同一個，灰以 64 字獨贏，平手根本不會發生。
+     */
+    private static void tiedUnderline(TranslationStore store) {
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR));
+        Style underlined = grey.withUnderlined(true);
+        Style cyan = Style.EMPTY.withColor(TextColor.fromRgb(0x55FFFF));
+        Style white = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
+
+        MutableComponent first = Component.empty();
+        first.append(Component.literal("Meteor").withStyle(underlined));
+        first.append(Component.literal(", ").withStyle(grey));
+        first.append(Component.literal("Pyrokinesis").withStyle(underlined));
+        first.append(Component.literal(" and ").withStyle(grey));
+        first.append(Component.literal("Powder Specials").withStyle(underlined));
+
+        MutableComponent second = Component.empty();
+        // ⚡ 那個材質包圖示要帶自己的字型，否則不會被當成 {#}，
+        // 模板就跟語料裡的 src 對不上（那條的 src 是 `Unstable {#} to deal`）
+        Style icon = Style.EMPTY.withColor(TextColor.fromRgb(0x7A3CFF))
+                .withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                        net.minecraft.resources.Identifier.withDefaultNamespace("common")));
+        second.append(Component.literal("consume ").withStyle(grey));
+        second.append(Component.literal("Unstable ").withStyle(cyan));
+        second.append(Component.literal("").withStyle(icon));
+        second.append(Component.literal(" to deal ").withStyle(grey));
+        second.append(Component.literal("+100%").withStyle(white));
+        second.append(Component.literal(" damage.").withStyle(grey));
+
+        List<StyledText> run = List.of(StyledText.fromComponent(first),
+                                       StyledText.fromComponent(second));
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("秘術師那段查得到", out != null && !out.isEmpty());
+        if (out == null || out.isEmpty()) {
+            return;
+        }
+        // 「有幾段帶底線」是不夠的判斷——舊的算法下也只有一部分帶底線，
+        // 卻剛好是<b>內文</b>那一部分。要直接問那幾個字。
+        check("內文「消耗」沒有底線", underlinedAt(out, "消耗") == Boolean.FALSE);
+        check("內文「傷害」沒有底線", underlinedAt(out, "傷害") == Boolean.FALSE);
+        check("術語 Meteor 仍然有底線", underlinedAt(out, "Meteor") == Boolean.TRUE);
+    }
+
+    /** 含有 needle 的那一段有沒有底線；找不到回傳 null。 */
+    private static Boolean underlinedAt(List<Component> lines, String needle) {
+        for (Component line : lines) {
+            for (Component leaf : flatten(line)) {
+                if (leaf.getString().contains(needle)) {
+                    return leaf.getStyle().isUnderlined();
+                }
+            }
+        }
+        return null;
     }
 
     /**

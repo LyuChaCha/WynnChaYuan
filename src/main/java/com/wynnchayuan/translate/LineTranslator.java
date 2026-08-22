@@ -114,7 +114,7 @@ public final class LineTranslator {
         // 而 Major ID 常常是整段一次命中——於是要查的那一種偏偏沒被記下來，
         // 使用者回報「這個檔案根本沒生成」。
         FlowedDebug.note(run, extra.isEmpty() ? null : extra.get(0).text(),
-                         labelStyleOf(run.get(0)));
+                         labelStyleOf(run.get(0)), dominantStyle(parts));
         if (flowed) {
             // 查到的是完整一句，得自己折回原本那幾行的寬度
             translated = wrapToBlock(translated, run);
@@ -211,11 +211,13 @@ public final class LineTranslator {
             // 壓過第一行的 22 字——整段譯文就全部畫上了底線。
             //
             // 照實際字數累計就沒這問題：灰 22+5+7=34、底線 11，灰勝。
+            //
+            // 累計時<b>不看裝飾</b>，見 #undecorated。
             for (LineParts.Piece run : part.runs()) {
-                weight.merge(run.style(), run.text().length(), Integer::sum);
+                weight.merge(undecorated(run.style()), run.text().length(), Integer::sum);
             }
         }
-        Style best = parts.get(0).textStyle();
+        Style best = undecorated(parts.get(0).textStyle());
         int most = -1;
         for (java.util.Map.Entry<Style, Integer> e : weight.entrySet()) {
             if (e.getValue() > most) {
@@ -224,6 +226,36 @@ public final class LineTranslator {
             }
         }
         return best;
+    }
+
+    /**
+     * 拿掉底線、粗體、斜體那些<b>裝飾</b>，只留顏色與字型。
+     *
+     * <h2>為什麼段落的底色不能帶裝飾</h2>
+     * 底線是標在<b>特定術語</b>上的：Wynncraft 用 {@code §n} 標技能名。
+     * 它依定義就是例外，而例外不該變成整段的底色。
+     *
+     * <p>沒拿掉之前，秘術師那段是這樣算的：
+     *
+     * <pre>
+     *   Meteor, Pyrokinesis and Powder Specials      ← 三個底線詞共 32 字
+     *   consume Unstable ⚡ to deal +100% damage.     ← 灰字共 32 字
+     * </pre>
+     *
+     * 32 比 32，<b>平手</b>——而平手時先遇到的勝出，第一段剛好是 {@code Meteor}
+     * 那個底線詞，於是整段譯文全部畫上了底線。
+     *
+     * <p>把裝飾拿掉之後，「灰＋底線」與「灰」併成同一個，灰以 64 字獨贏，
+     * 平手這件事根本不會發生。而 {@code Meteor} 的底線仍然回得來——
+     * 它跟底色不同，會被收成重點段（見 {@code LineParts#accentsAgainst}）。
+     */
+    private static Style undecorated(Style style) {
+        return (style == null ? Style.EMPTY : style)
+                .withUnderlined(false)
+                .withBold(false)
+                .withItalic(false)
+                .withStrikethrough(false)
+                .withObfuscated(false);
     }
 
     /**

@@ -56,18 +56,21 @@ def is_glyph(ch: str) -> bool:
 
 
 def expected(raw: str) -> str:
-    """把 `_raw` 換成模板：一段連續的符號碼位 -> 一個 `{#}`，其餘原樣。"""
-    out = []
-    i = 0
-    while i < len(raw):
-        if is_glyph(raw[i]):
-            while i < len(raw) and is_glyph(raw[i]):
-                i += 1
-            out.append(PLACEHOLDER)
-        else:
-            out.append(raw[i])
-            i += 1
-    return "".join(out)
+    """把 `_raw` 換成模板：<b>一個符號碼位一個 `{#}`</b>，其餘（含空格）原樣。
+
+    <h2>為什麼是一個碼位一個，不是一段一個</h2>
+    技能敘述裡連著出現的符號是<b>元素圖示</b>，每一個顏色都不同——顏色不同就是
+    不同的樣式段，遊戲端會各給一個 `{#}`：
+
+        _raw  (✤✦✹✽❋ Damage: +45%)
+        遊戲   {#}{#}{#}{#}{#} Damage: {~}     ← 五個圖示、五個佔位符、空格是空格
+
+    <p>（外框那種同色連續符號遊戲端會併成一個，但那只出現在遊戲內收集的資料裡，
+    這裡處理的是 CDN 匯入的技能敘述，不會有。）
+
+    <p>空格<b>永遠不變成 `{#}`</b>——那正是要修的毛病。
+    """
+    return "".join(PLACEHOLDER if is_glyph(ch) else ch for ch in raw)
 
 
 def skeleton(text: str) -> str:
@@ -117,27 +120,30 @@ def repair(entry: dict) -> str | None:
     src = entry.get("src")
     if not raw or not src or PLACEHOLDER not in src:
         return None
-    if multi_glyph_run(raw):
-        return None
 
     # `_raw` 沒有參數化，`src` 有。先把兩邊的數值都換成同一個記號再比骨架，
     # 否則 `+{~}s` 跟 `+6s` 永遠對不起來。正負號<b>不</b>算進去——
+    # 小數點也只有後面接數字時才算，否則 `+2.` 會把句末的句號一起吃掉。
     # 遊戲端的 {~} 不含符號（`+{~}`），連符號一起吃掉兩邊就對不齊了。
     want = expected(raw)
     if skeleton(re.sub(r"\{~\d?\}", "\x01", src)) != skeleton(
-            re.sub(r"\d[\d,.]*%?", "\x01", want)):
+            re.sub(r"\d[\d,]*(?:\.\d+)?%?", "\x01", want)):
         return None                     # 講的不是同一句話，別碰
 
     # 照 want 的符號結構重寫 src：逐段對齊，文字那半沿用 src（它有參數化）。
-    src_parts = re.split(r"(?:\{#\})+", src)
-    want_parts = re.split(r"(?:\{#\})+", want)
+    #
+    # 切的時候<b>連分隔符一起留著</b>：`{#}` 有幾個是有意義的（五個元素圖示就是
+    # 五個），先前一律換成單一個 `{#}`，等於把多符號的那些條目改壞。
+    src_parts = re.split(r"((?:\{#\})+)", src)
+    want_parts = re.split(r"((?:\{#\})+)", want)
     if len(src_parts) != len(want_parts):
         return None                     # 符號段數對不上，交給人看
 
     rebuilt = []
     for index, chunk in enumerate(src_parts):
-        if index:
-            rebuilt.append(PLACEHOLDER)
+        if index % 2:
+            rebuilt.append(want_parts[index])   # 符號那半照 `_raw` 算出來的
+            continue
         # 空格照 `_raw` 的，文字照 src 的——被吃掉的正是空格
         lead = want_parts[index][:len(want_parts[index]) - len(want_parts[index].lstrip())]
         tail = want_parts[index][len(want_parts[index].rstrip()):]

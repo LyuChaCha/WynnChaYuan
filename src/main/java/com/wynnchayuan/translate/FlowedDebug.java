@@ -73,10 +73,14 @@ public final class FlowedDebug {
     /**
      * 記一次跨行翻譯。
      *
-     * @param label  查到的譯名，整段命中時是 null
-     * @param chosen 程式挑中要套在譯名上的樣式
+     * @param label      查到的譯名，整段命中時是 null
+     * @param chosen     要套在<b>譯名</b>上的樣式。整段命中（label 是 null）時
+     *                   這一欄沒有用到——先前沒寫清楚，看的人會拿它去解釋
+     *                   整段的顏色，然後查錯方向。
+     * @param blockStyle 整段內文的底色。<b>這一欄才是</b>決定敘述長什麼樣的那個。
      */
-    public static void note(List<StyledText> run, String label, Style chosen) {
+    public static void note(List<StyledText> run, String label, Style chosen,
+                            Style blockStyle) {
         if (file == null || run == null || run.isEmpty() || seen >= LIMIT) {
             return;
         }
@@ -94,7 +98,10 @@ public final class FlowedDebug {
             sb.append("  譯名：")
               .append(label == null ? "（整段命中，沒有拆出名稱）" : label)
               .append(System.lineSeparator());
-            sb.append("  挑中的樣式：").append(describe(chosen))
+            sb.append("  譯名的樣式：").append(describe(chosen))
+              .append(label == null ? "（整段命中，這一欄沒用到）" : "")
+              .append(System.lineSeparator());
+            sb.append("  整段內文的底色：").append(describe(blockStyle))
               .append(System.lineSeparator());
             sb.append("  原文第一行的色段：").append(System.lineSeparator());
             int i = 0;
