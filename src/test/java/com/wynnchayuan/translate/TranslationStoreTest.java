@@ -26,6 +26,7 @@ public final class TranslationStoreTest {
                           "dst": "大幅增加 Meteor 技能的\n速度。", "role": "desc" },
                   "a2": { "src": "Shooting Star", "dst": "流星", "role": "name" },
                   "a4": { "src": "Bash", "dst": "重擊", "role": "name" },
+                  "a5": { "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ Knockback Immunity to Allies", "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ 給友軍擊退免疫", "role": "desc" },
                   "a3": { "src": "Allies within {~} blocks gain {~} of the health you gain from Health Regen and Life Steal.",
                           "dst": "{~} 格內的友軍會獲得你從生命回復與生命竊取所得的 {~} 生命", "role": "desc" }
                  }
@@ -82,6 +83,22 @@ public final class TranslationStoreTest {
             check("小寫的同一個字不換", store.findTerm("you bash the ground", 0) == null);
             // 反面：名稱是別的字的一部分時不算
             check("夾在字中間的不算", store.findTerm("Bashful grin", 0) == null);
+
+            // 縮排幾格是<b>排版</b>：取決於畫面寬度與同一組細項裡最長的那一行。
+            // 語料（CDN）存的是 40 格，遊戲實際送出來的是 4 格或 42 格，字面上永遠
+            // 不相等——`Knockback Immunity to Allies` 就是這樣一直維持英文的。
+            String wide = String.valueOf('À').repeat(40);
+            check("縮排格數不同也查得到",
+                    store.lookup(wide + " Knockback Immunity to Allies") != null);
+            String narrow = String.valueOf('À').repeat(4);
+            String indented = store.lookup(narrow + " Knockback Immunity to Allies");
+            check("查到的譯文（實際：" + indented + "）",
+                    (narrow + " 給友軍擊退免疫").equals(indented));
+            check("接回去的是呼叫端自己的縮排，不是語料裡的那一串",
+                    indented != null && !indented.startsWith(wide));
+            // 反面：完全沒有縮排的句子不該靠這條路徑中
+            check("沒縮排的不會誤中",
+                    store.lookup("Knockback Immunity to Allies") == null);
         } finally {
             delete(dir);
         }

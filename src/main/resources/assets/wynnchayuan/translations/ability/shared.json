@@ -43,22 +43,6 @@
    "ability": "Wand Proficiency I、Wand Proficiency II、Relik Proficiency I、Spear Proficiency I",
    "code": "WARRIOR-P1-R02-C04"
   },
-  "11361873399f": {
-   "src": "{#}({#}{#}Damage: -{~})",
-   "dst": "{#}({#}{#}傷害: -{~})",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "mage/Divination",
-    "shaman/Flaming Tongue",
-    "warrior/Double Bash",
-    "warrior/Quadruple Bash"
-   ],
-   "_raw": "( Damage: -20%)",
-   "tree": "00/warrior/01/004/004",
-   "ability": "Divination、Flaming Tongue、Double Bash、Quadruple Bash",
-   "code": "WARRIOR-P1-R04-C04"
-  },
   "49955e209ec0": {
    "src": "{#} Range: +{~} Blocks",
    "dst": "{#} 施放範圍: +{~} 格",
@@ -131,7 +115,7 @@
   },
   "fc00419a0948": {
    "src": "Earth Mastery",
-   "dst": "水元素精通",
+   "dst": "地元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -146,7 +130,7 @@
   },
   "59ad46ee370f": {
    "src": "Increase your base damage\nfrom all Earth attacks.",
-   "dst": "增加水屬性傷害。",
+   "dst": "增加你所有地屬性攻擊的\n基礎傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -196,7 +180,7 @@
   },
   "f6253770a60d": {
    "src": "Thunder Mastery",
-   "dst": "地元素精通",
+   "dst": "雷元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -211,7 +195,7 @@
   },
   "2cb6fd5b6bf4": {
    "src": "Increase your base damage\nfrom all Thunder attacks.",
-   "dst": "增加地屬性傷害。",
+   "dst": "增加你所有雷屬性攻擊的\n基礎傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -261,7 +245,7 @@
   },
   "ee3f82edce2d": {
    "src": "Air Mastery",
-   "dst": "火元素精通",
+   "dst": "風元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -276,7 +260,7 @@
   },
   "ee6d41982dba": {
    "src": "Increase your base damage\nfrom all Air attacks.",
-   "dst": "增加火屬性傷害。",
+   "dst": "增加你所有風屬性攻擊的\n基礎傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -326,7 +310,7 @@
   },
   "2dd0fdf43002": {
    "src": "Fire Mastery",
-   "dst": "雷元素精通",
+   "dst": "火元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -341,7 +325,7 @@
   },
   "bb576f8b9612": {
    "src": "Increase your base damage\nfrom all Fire attacks.",
-   "dst": "增加雷屬性傷害。",
+   "dst": "增加你所有火屬性攻擊的\n基礎傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -391,7 +375,7 @@
   },
   "a752761d143d": {
    "src": "Water Mastery",
-   "dst": "風元素精通",
+   "dst": "水元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -406,7 +390,7 @@
   },
   "1a96af2835a2": {
    "src": "Increase your base damage\nfrom all Water attacks.",
-   "dst": "增加風屬性傷害。",
+   "dst": "增加你所有水屬性攻擊的\n基礎傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -454,22 +438,6 @@
    "ability": "Water Mastery",
    "code": "WARRIOR-P3-R02-C04"
   },
-  "a67c2a87438d": {
-   "src": "{#}({#}{#}Thunder: +{~})",
-   "dst": "{#}({#}{#}雷: +{~})",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "mage/Blitz",
-    "shaman/Shocking Aura",
-    "shaman/Lashing Lance",
-    "warrior/Fireworks"
-   ],
-   "_raw": "( Thunder: +25%)",
-   "tree": "00/warrior/03/003/002",
-   "ability": "Blitz、Shocking Aura、Lashing Lance、Fireworks",
-   "code": "WARRIOR-P3-R03-C02"
-  },
   "77d65c92fa36": {
    "src": "{#} Total Damage: -{~} (of your DPS)",
    "dst": "{#} 總傷害: -{~} (你的每秒傷害)",
@@ -485,22 +453,6 @@
    "tree": "00/warrior/03/004/004",
    "ability": "Divination、Half-Moon Swipe、Double Spin、Wall of Smoke",
    "code": "WARRIOR-P3-R04-C04"
-  },
-  "f8d83a277549": {
-   "src": "{#}({#}{#}Air: +{~})",
-   "dst": "{#}({#}{#}風: +{~})",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "mage/Incandescence",
-    "mage/Void Acceleration",
-    "shaman/Storm Dance",
-    "warrior/Iron Lungs"
-   ],
-   "_raw": "( Air: +10%)",
-   "tree": "00/warrior/03/004/007",
-   "ability": "Incandescence、Void Acceleration、Storm Dance、Iron Lungs",
-   "code": "WARRIOR-P3-R04-C07"
   },
   "5e2300669a73": {
    "src": "{#} Range: +{~} Block",
@@ -530,22 +482,6 @@
    "tree": "00/warrior/04/004/005",
    "ability": "Sanguine Strike、Counter、Satsujin",
    "code": "WARRIOR-P4-R04-C05"
-  },
-  "413f78db4e55": {
-   "src": "{#}({#}{#}Earth: +{~})",
-   "dst": "{#}({#}{#}地: +{~})",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "mage/Astral Fragmentation",
-    "shaman/Crystal Knives",
-    "warrior/Comet",
-    "warrior/Spectacle"
-   ],
-   "_raw": "( Earth: +30%)",
-   "tree": "00/warrior/05/003/002",
-   "ability": "Astral Fragmentation、Crystal Knives、Comet、Spectacle",
-   "code": "WARRIOR-P5-R03-C02"
   },
   "4680865ef616": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Allies",
@@ -685,25 +621,9 @@
    "ability": "Heal、Sacrificial Shrine、Regeneration",
    "code": "MAGE-P2-R03-C02"
   },
-  "c0a5d1c1dac8": {
-   "src": "{#}({#}{#}Fire: +{~})",
-   "dst": "{#}({#}{#}火: +{~})",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "mage/Crashing Comet",
-    "mage/Searing Light",
-    "shaman/Flaming Tongue",
-    "shaman/Totemic Hammer"
-   ],
-   "_raw": "( Fire: +20%)",
-   "tree": "01/mage/03/004/006",
-   "ability": "Crashing Comet、Searing Light、Flaming Tongue、Totemic Hammer",
-   "code": "MAGE-P3-R04-C06"
-  },
   "c5277bd98efa": {
    "src": "{#} Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
-   "dst": "{#} 效果: {~1} 緩速 ({#} ) 給敵人，每次命中 (上限 {~2})",
+   "dst": "{#} 效果: {~1} 緩速 ({#}) 給敵人，每次命中 (上限 {~2})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -728,21 +648,6 @@
    "tree": "01/mage/06/001/004",
    "ability": "Dimensional Tear、Arrow Shield",
    "code": "MAGE-P6-R01-C04"
-  },
-  "f402e4969e30": {
-   "src": "{#}({#}{#}Thunder: -{~})",
-   "dst": "{#}({#}{#}雷: -{~})",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "mage/Divination",
-    "shaman/Flaming Tongue",
-    "archer/Windstorm"
-   ],
-   "_raw": "( Thunder: -5%)",
-   "tree": "01/mage/07/002/001",
-   "ability": "Divination、Flaming Tongue、Windstorm",
-   "code": "MAGE-P7-R02-C01"
   },
   "72981e56a191": {
    "src": "{#} Vision: {~} Blocks (Circle-Shaped)",
@@ -812,7 +717,7 @@
   },
   "12f8cc831fc1": {
    "src": "{#} Effect: Blindness ({#}) to Enemies",
-   "dst": "{#} 效果: 致盲 ({#} ) 給敵人",
+   "dst": "{#} 效果: 致盲 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -841,7 +746,7 @@
   },
   "0088ee0ebbe9": {
    "src": "{#} Effects: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "{#} 效果: -{~} 傷害加成 ({#} ) 給敵人",
+   "dst": "{#} 效果: -{~} 傷害加成 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -897,6 +802,126 @@
    "tree": "03/assassin/04/001/007",
    "ability": "Eldritch Call、Lacerate",
    "code": "ASSASSIN-P4-R01-C07"
+  },
+  "4c604ecf92d4": {
+   "src": "ÀÀÀÀ({#} Damage: +{~})",
+   "dst": "ÀÀÀÀ({#} 傷害: +{~})",
+   "domain": "ability"
+  },
+  "04edf8b1715c": {
+   "src": "ÀÀÀÀ({#} Damage: -{~})",
+   "dst": "ÀÀÀÀ({#} 傷害: -{~})",
+   "domain": "ability"
+  },
+  "451f357a9fca": {
+   "src": "ÀÀÀÀ({#} Damage: {~})",
+   "dst": "ÀÀÀÀ({#} 傷害: {~})",
+   "domain": "ability"
+  },
+  "2698e3c70f00": {
+   "src": "ÀÀÀÀ({#} Neutral: +{~})",
+   "dst": "ÀÀÀÀ({#} 無: +{~})",
+   "domain": "ability"
+  },
+  "01eb3688a221": {
+   "src": "ÀÀÀÀ({#} Neutral: -{~})",
+   "dst": "ÀÀÀÀ({#} 無: -{~})",
+   "domain": "ability"
+  },
+  "9959d744319a": {
+   "src": "ÀÀÀÀ({#} Neutral: {~})",
+   "dst": "ÀÀÀÀ({#} 無: {~})",
+   "domain": "ability"
+  },
+  "aa67d0eb1450": {
+   "src": "ÀÀÀÀ({#} Earth: +{~})",
+   "dst": "ÀÀÀÀ({#} 地: +{~})",
+   "domain": "ability"
+  },
+  "90a2ca99870f": {
+   "src": "ÀÀÀÀ({#} Earth: -{~})",
+   "dst": "ÀÀÀÀ({#} 地: -{~})",
+   "domain": "ability"
+  },
+  "a465669aa368": {
+   "src": "ÀÀÀÀ({#} Earth: {~})",
+   "dst": "ÀÀÀÀ({#} 地: {~})",
+   "domain": "ability"
+  },
+  "48da12b894e3": {
+   "src": "ÀÀÀÀ({#} Thunder: +{~})",
+   "dst": "ÀÀÀÀ({#} 雷: +{~})",
+   "domain": "ability"
+  },
+  "df6c55b4ccac": {
+   "src": "ÀÀÀÀ({#} Thunder: -{~})",
+   "dst": "ÀÀÀÀ({#} 雷: -{~})",
+   "domain": "ability"
+  },
+  "c49d07cc8f9a": {
+   "src": "ÀÀÀÀ({#} Thunder: {~})",
+   "dst": "ÀÀÀÀ({#} 雷: {~})",
+   "domain": "ability"
+  },
+  "2b9423912803": {
+   "src": "ÀÀÀÀ({#} Water: +{~})",
+   "dst": "ÀÀÀÀ({#} 水: +{~})",
+   "domain": "ability"
+  },
+  "f349022949c5": {
+   "src": "ÀÀÀÀ({#} Water: -{~})",
+   "dst": "ÀÀÀÀ({#} 水: -{~})",
+   "domain": "ability"
+  },
+  "cf6b6a58e7fb": {
+   "src": "ÀÀÀÀ({#} Water: {~})",
+   "dst": "ÀÀÀÀ({#} 水: {~})",
+   "domain": "ability"
+  },
+  "1299554f8d2b": {
+   "src": "ÀÀÀÀ({#} Fire: +{~})",
+   "dst": "ÀÀÀÀ({#} 火: +{~})",
+   "domain": "ability"
+  },
+  "1d18664543a6": {
+   "src": "ÀÀÀÀ({#} Fire: -{~})",
+   "dst": "ÀÀÀÀ({#} 火: -{~})",
+   "domain": "ability"
+  },
+  "4300cf12907a": {
+   "src": "ÀÀÀÀ({#} Fire: {~})",
+   "dst": "ÀÀÀÀ({#} 火: {~})",
+   "domain": "ability"
+  },
+  "7f17270910fc": {
+   "src": "ÀÀÀÀ({#} Air: +{~})",
+   "dst": "ÀÀÀÀ({#} 風: +{~})",
+   "domain": "ability"
+  },
+  "6a2157a6d922": {
+   "src": "ÀÀÀÀ({#} Air: -{~})",
+   "dst": "ÀÀÀÀ({#} 風: -{~})",
+   "domain": "ability"
+  },
+  "c06c489c4e71": {
+   "src": "ÀÀÀÀ({#} Air: {~})",
+   "dst": "ÀÀÀÀ({#} 風: {~})",
+   "domain": "ability"
+  },
+  "ebdce6369ed2": {
+   "src": "ÀÀÀÀ{#} Heretic: +{~} Slowness ({#}) to Enemies",
+   "dst": "ÀÀÀÀ{#} Heretic: +{~} 緩速 ({#}) 給敵人",
+   "domain": "ability"
+  },
+  "0ed07675be5d": {
+   "src": "ÀÀÀÀ{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
+   "dst": "ÀÀÀÀ{#} Fanatic: -{~} 抗性加成 ({#}) 給敵人",
+   "domain": "ability"
+  },
+  "685f8fa019bd": {
+   "src": "ÀÀÀÀ{#} Lunatic: -{~} Damage Bonus ({#}) to Enemies",
+   "dst": "ÀÀÀÀ{#} Lunatic: -{~} 傷害加成 ({#}) 給敵人",
+   "domain": "ability"
   }
  }
 }
