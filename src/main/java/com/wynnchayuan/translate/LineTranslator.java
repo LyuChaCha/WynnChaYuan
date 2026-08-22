@@ -105,6 +105,9 @@ public final class LineTranslator {
             }
         }
         if (translated == null || translated.isBlank()) {
+            // 查不到也要記。見 FlowedDebug#miss——沒有這一筆的話，
+            // 診斷檔裡沒有 Major ID 到底是「沒查」還是「查了沒中」分不出來。
+            FlowedDebug.miss(template);
             return null;
         }
         // 記在這裡，<b>不管走的是哪一條路</b>。先前只記「拆名稱」那條，
@@ -242,11 +245,14 @@ public final class LineTranslator {
         if (style == null) {
             return List.of();
         }
+        // 少數 Major ID 的名稱是彩虹字——原文裡是一個字一個顏色畫出來的。
+        // 只取第一個顏色的話，譯文會變成單色，那個「特別」就不見了。
+        List<Style> ramp = labelRamp(firstLine);
         // 冒號也算名稱的一部分。原文的「Transcendence:」連冒號都是名稱的顏色，
         // 只把名字上色的話冒號會落到說明那半，看起來就是「顏色接不起來」。
         // 兩種都登記：帶冒號的比較長，比對時會優先中。
-        return List.of(new LineParts.Piece(core + ":", style),
-                       new LineParts.Piece(core, style));
+        return List.of(new LineParts.Piece(core + ":", style, ramp),
+                       new LineParts.Piece(core, style, ramp));
     }
 
     /**
@@ -266,6 +272,76 @@ public final class LineTranslator {
         }
         return null;
     }
+
+    /**
+     * 名稱那一段是不是<b>彩虹字</b>，是的話把整串顏色照順序取回來。
+     *
+     * <h2>彩虹字在原文裡長什麼樣</h2>
+     * 遊戲沒有「漸層」這種東西，所謂彩虹字是<b>一個字切成一段、各給一個顏色</b>
+     * 硬拼出來的。所以判斷條件就是：連續好幾段、每段都很短、顏色一直在變。
+     *
+     * <p>門檻設在 {@link #MIN_RAMP_PARTS} 段：兩三段不同顏色是很常見的普通排版
+     * （「名稱」與「：」分開上色之類），真正的彩虹字一定是一長串。
+     *
+     * @return 由左到右的顏色；不是彩虹字就回傳 {@code null}
+     */
+    private static List<Style> labelRamp(StyledText firstLine) {
+        List<Style> ramp = new ArrayList<>();
+        Style previous = null;
+        for (StyledTextPart part : firstLine) {
+            String raw = part.getString(null, StyleType.NONE);
+            if (!GlyphSplitter.hasLetter(raw)) {
+                if (ramp.isEmpty()) {
+                    continue;                  // 名稱前面的 ✦ 或位移字元
+                }
+                break;                         // 名稱結束了
+            }
+            if (raw.strip().length() > MAX_RAMP_PART) {
+                // 一整個詞一段。名稱已經收完的話這就是說明那半，收工；
+                // 一個字都還沒收就碰到，那這行本來就是普通排版。
+                break;
+            }
+            PartStyle ps = part.getPartStyle();
+            Style style = ps == null ? Style.EMPTY : ps.getStyle();
+            if (previous != null
+                    && java.util.Objects.equals(style.getColor(), previous.getColor())) {
+                // 顏色沒在變，只是名稱被切碎了而已，不是彩虹字。
+                // 這裡要比<b>顏色值</b>——比物件的話兩個一樣的顏色也會不相等，
+                // 於是任何被切碎的名稱都會被當成彩虹。
+                return null;
+            }
+            previous = style;
+            ramp.add(style);
+        }
+        return ramp.size() >= MIN_RAMP_PARTS ? List.copyOf(ramp) : null;
+    }
+
+    /**
+     * 把一串顏色<b>攤到</b>另一段文字上。
+     *
+     * <h2>為什麼不能一個字配一個顏色</h2>
+     * 原文 {@code Blinding Lights} 十五個字十五個顏色，譯文「眩目之光」只有四個字。
+     * 一對一配的話只會用到前四個顏色，看起來像被截斷的彩虹。
+     * 照<b>比例</b>取才會是同一道漸層——短了就是同一道彩虹畫得密一點。
+     */
+    private static void paint(MutableComponent out, String text,
+                              List<Style> ramp, Style base) {
+        int[] points = text.codePoints().toArray();
+        for (int i = 0; i < points.length; i++) {
+            int slot = points.length == 1 ? 0
+                    : i * (ramp.size() - 1) / (points.length - 1);
+            Style style = ramp.get(slot);
+            // 顏色照原文的，粗斜體等其餘樣式沿用名稱本身那一份
+            out.append(literal(new String(Character.toChars(points[i])),
+                               forDisplay(base.withColor(style.getColor()))));
+        }
+    }
+
+    /** 少於這麼多段就不算彩虹字，見 {@link #labelRamp}。 */
+    private static final int MIN_RAMP_PARTS = 4;
+
+    /** 彩虹字是一個字一段；超過這個長度就是普通的整詞上色。 */
+    private static final int MAX_RAMP_PART = 2;
 
     /** 「名稱：說明」的名稱最長到這裡。再長就不像標題了。 */
     private static final int MAX_LABEL_LENGTH = 40;
@@ -1665,8 +1741,12 @@ public final class LineTranslator {
             LineParts.Piece accent = accents.get(which);
             // 帶樣式的那一段如果剛好是個技能名稱，樣式與譯名兩個都要
             String shown = store == null ? null : store.lookupTerm(accent.text());
-            out.append(literal(shown != null ? shown : accent.text(),
-                               forDisplay(accent.style())));
+            String painted = shown != null ? shown : accent.text();
+            if (accent.ramp() != null) {
+                paint(out, painted, accent.ramp(), accent.style());
+            } else {
+                out.append(literal(painted, forDisplay(accent.style())));
+            }
             used[which] = true;
             from = at + accent.text().length();
         }
@@ -1696,7 +1776,8 @@ public final class LineTranslator {
             }
             String zh = store.lookup(core);
             if (zh != null && !zh.isBlank() && !zh.equals(core)) {
-                out.add(new LineParts.Piece(zh, accent.style()));
+                // 彩虹字的那串顏色要跟著譯文版走，否則翻出來就變單色了
+                out.add(new LineParts.Piece(zh, accent.style(), accent.ramp()));
             }
         }
         return out;

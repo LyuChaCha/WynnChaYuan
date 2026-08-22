@@ -184,7 +184,74 @@ public final class MajorIdColourTest {
             }
         }
 
+        // 彩虹字：名稱在原文裡是一個字一個顏色拼出來的。
+        // 只取「第一段有字母的樣式」的話，整個譯名會變成單色——彩虹沒了。
+        int[] rainbow = {0xFF5555, 0xFFAA00, 0xFFFF55, 0x55FF55, 0x55FFFF,
+                         0x5555FF, 0xFF55FF, 0xFF5555, 0xFFAA00, 0xFFFF55,
+                         0x55FF55, 0x55FFFF, 0x5555FF};
+        List<StyledText> shiny = new ArrayList<>();
+        MutableComponent head3 = Component.empty();
+        String label = "Efflorescence";
+        for (int i = 0; i < label.length(); i++) {
+            head3.append(Component.literal(String.valueOf(label.charAt(i))).withStyle(
+                    Style.EMPTY.withColor(
+                            TextColor.fromRgb(rainbow[i % rainbow.length]))));
+        }
+        head3.append(Component.literal(": Serpent's Garden now centers to").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR))));
+        shiny.add(StyledText.fromComponent(head3));
+        for (String row : new String[] {
+                "where you land with Swan Dive. Damage of Swan Dive,",
+                "Serpent's Garden and Jasmine Bloom are distributed",
+                "across all elements."}) {
+            shiny.add(StyledText.fromComponent(Component.literal(row).withStyle(
+                    Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR)))));
+        }
+        List<Component> painted = LineTranslator.translateBlock(
+                shiny, store, new boolean[shiny.size()]);
+        check("彩虹名稱的整段查得到", painted != null && !painted.isEmpty());
+        if (painted != null && !painted.isEmpty()) {
+            java.util.LinkedHashSet<Integer> used = new java.util.LinkedHashSet<>();
+            for (Component line : painted) {
+                for (Component leaf : flatten(line)) {
+                    String text = leaf.getString();
+                    if (!text.isBlank() && "華綻".contains(text)
+                            && leaf.getStyle().getColor() != null) {
+                        used.add(leaf.getStyle().getColor().getValue());
+                    }
+                }
+            }
+            check("譯名不是單色（用到 " + used.size() + " 個顏色）", used.size() >= 2);
+            check("用的是原文那串顏色", rainbowContains(rainbow, used));
+            Integer bodyColour = colourOf(painted, "分散");
+            check("說明那半沒有被染成彩虹（拿到 "
+                            + (bodyColour == null ? "null"
+                               : "#" + String.format("%06X", bodyColour)) + "）",
+                    bodyColour != null && bodyColour == BODY_COLOUR);
+        }
+        // 一整個詞一個顏色是<b>普通排版</b>，不能被當成彩虹字拆開上色
+        List<StyledText> ordinary = block();
+        List<Component> plain = LineTranslator.translateBlock(
+                ordinary, store, new boolean[ordinary.size()]);
+        check("普通的兩段上色不會被誤判成彩虹",
+                plain != null && colourOf(plain, "利他主義") != null
+                        && colourOf(plain, "利他主義") == NAME_COLOUR);
+
         report();
+    }
+
+    /** 譯名用到的每一個顏色，都得是原文那串裡本來就有的。 */
+    private static boolean rainbowContains(int[] ramp, java.util.Set<Integer> used) {
+        for (int colour : used) {
+            boolean found = false;
+            for (int candidate : ramp) {
+                found |= candidate == colour;
+            }
+            if (!found) {
+                return false;
+            }
+        }
+        return !used.isEmpty();
     }
 
     /** 找出含有 needle 的那一段是什麼顏色。 */

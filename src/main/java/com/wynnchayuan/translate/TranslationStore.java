@@ -421,6 +421,28 @@ public final class TranslationStore {
      * @return 整句的譯文，還不能確定就回 null
      */
     public String lookupPrefix(String partial) {
+        String source = matchPrefix(partial);
+        return source == null ? null : prefixIndex.get(source);
+    }
+
+    /** 半句話也認得出說話者。見 {@link #matchPrefix}。 */
+    public String speakerOfPrefix(String partial) {
+        String source = matchPrefix(partial);
+        return source == null ? null : speakers.get(source);
+    }
+
+    /**
+     * 這半句是<b>哪一條</b>原文的開頭。
+     *
+     * <h2>為什麼要把原文也交出去</h2>
+     * NPC 是一個字一個字打出來的，同一句話在打完之前會以幾十種長度進來。
+     * 光拿到譯文的話，呼叫端分不出「這是新的一句」還是「還是剛才那句、只是又長了」，
+     * 於是每一次都重算一遍——算出來的東西時有時無，畫面就閃。
+     * 知道命中的是哪一條原文，就能直接判斷：新進來的還是它的開頭，那就什麼都不用做。
+     *
+     * @return 完整的原文；開頭還不夠獨特、分不出是哪一句時回傳 {@code null}
+     */
+    public String matchPrefix(String partial) {
         if (partial == null) {
             return null;
         }
@@ -436,27 +458,7 @@ public final class TranslationStore {
         if (next != null && next.startsWith(key)) {
             return null;                       // 還分不出是哪一句
         }
-        return first.getValue();
-    }
-
-    /** 半句話也認得出說話者。見 {@link #lookupPrefix}。 */
-    public String speakerOfPrefix(String partial) {
-        if (partial == null) {
-            return null;
-        }
-        String key = partial.strip();
-        if (key.length() < MIN_PREFIX_LENGTH) {
-            return null;
-        }
-        Map.Entry<String, String> first = prefixIndex.ceilingEntry(key);
-        if (first == null || !first.getKey().startsWith(key)) {
-            return null;
-        }
-        String next = prefixIndex.higherKey(first.getKey());
-        if (next != null && next.startsWith(key)) {
-            return null;
-        }
-        return speakers.get(first.getKey());
+        return first.getKey();
     }
 
     /**
