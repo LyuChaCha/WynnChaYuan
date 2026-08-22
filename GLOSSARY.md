@@ -2,11 +2,11 @@
 
 > 這裡講**怎麼翻**。要先弄懂**是什麼**，看 [世界觀與主線](docs/world-and-story.md)。
 
-翻譯時碰到不確定的詞就查這裡，**不要自己另外想一個**。
-同一個詞在不同檔案翻成兩種說法，玩家會以為是兩個不同的東西。
 
+為了譯名的標準話語一致性，專有名詞翻譯時請遵循下列表格翻譯，碰到不確定的詞就查這裡，**不要自己另外想一個**。
 這份表由 `tools/validate.py` 自動檢查：譯文檔裡把表中的詞翻成別的說法，
 送 PR 時 CI 會提出警告。**要改某個詞的譯法，先改這裡**，讓所有人一起跟著改。
+另外，請善用 Ctrl+F 查詢譯名。(我真的不知道該怎麼分類救我)
 
 ## 製作與採集
 
@@ -198,35 +198,9 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 
 | 原文 | 譯文 | 備註 |
 |---|---|---|
-| Decay | 衰朽 | **未確定** |
+| Decay | 黯蝕 | **未確定** |
 | Corruption | 腐敗 | **未確定** |
 |  |  |
-
-
-## 技能樹
-
-技能樹依職業拆成 `translations/ability/{warrior,mage,archer,assassin,shaman}.json`，
-外加 `shared.json`（不只一個職業共用的條目，改它會同時影響好幾個職業）。
-
-| 原文 | 譯文 | 備註 |
-|---|---|---|
-| Range | 施放範圍 | 法術<b>能打到多遠</b> |
-| Area of Effect | 技能範圍 | 效果<b>涵蓋多大一塊</b>。兩個常被弄混，務必分清楚 |
-| Main Attack | 普攻 | |
-| Raw Spell Damage | 法術傷害值 | `Raw` 是實數，對應「值」；百分比才寫「百分比」 |
-| Mana Regen / Mana Steal | 魔力回復／魔力竊取 | |
-| aggressive enemy | 具敵意的敵人 | 會主動攻擊的那種 |
-| sneaking | 蹲下 | 不是「潛行」，遊戲裡就是蹲下鍵 |
-| orbs | 光球 | Ophanim、Lightweaver 的 |
-| sigil | 印記 | Burning Sigil、Freezing Sigil |
-| Ultimate Meter | 終極計量表 | |
-| Powder Specials | 粉末特效 | |
-
-**對照表改了怎麼辦**：跑 `python tools/apply-glossary.py --write "舊譯=新譯"`，
-它會把既有譯文一起改掉。加 `--src 英文詞` 可以限定範圍，避免「範圍」這種
-到處都是的字被誤改。不先預覽一次再 `--write` 會後悔。
-
----
 
 ## Fruma 篇（主線）
 
@@ -259,130 +233,14 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 
 ---
 
-## 裝備 lore
-
-裝備的敘述文（`role: desc`）裡藏著不少劇情線索，**翻之前先讀
-[世界觀與主線](docs/world-and-story.md)**。同一個詞在 lore 裡跟在任務裡指的是同一件事。
-
-| 原文 | 譯文 | 備註 |
-|---|---|---|
-| It's pulling towards something. | 它正被什麼東西牽引著。 | 接在句尾、沒有空格。有這句的裝備都還有未揭露的內容 |
-| the Nether / Nether Gate | 下界／下界之門 | 跟 Minecraft 官方繁中一致 |
-| Guard Golem | 守衛魔像 | Wynn 各城的守衛 |
-| Temple of the Legends | 傳說神殿 | |
-| Villager | 村民 | Gavel 的種族，不是路人甲 |
-| Orcs / Green-skins | 獸人／綠皮 | 「綠皮」是村民對獸人的蔑稱，語氣要留住 |
-| Bovemist | Bovemist | 宗教名，保留原文 |
-| Dernel tribes | Dernel 部族 | Dern 那一側的部族 |
-| Avos | Avos | 鳥人族，保留原文 |
-| WynnExcavation | WynnExcavation | 公司名，保留原文 |
-
-### ⚠️ 絕對不要翻的
-
-- **`Palimpsest` 的敘述**是一段<b>密文</b>（Fruman 文字的替換密碼，
-  社群還在解）。翻了就毀掉整個謎題。那一條的 `dst` 刻意留空。
-- 破碎、殘缺的台詞（`.;I. ,told;.`）同理，見下方說明。
-
----
-
 ## 一律保留原文
 
 翻了會跟其他玩家對不上話，或社群本來就講英文。
 
 - **地名**（Ragni、Detlas、Troms…）——用 `{p}` 佔位符自動處理，共 137 個
 - **裝備與物品名稱**——專有名詞，翻了對不上 wiki 與交易市場
-- **技能名稱**——<b>保留英文</b>（`Meteor`、`Ophanim`、`Ice Snake`、`Lightweaver`）。
-  技能樹的 `role: name` 條目已標記 `keep: en`，不算進翻譯進度。只翻說明。
-- **法術名稱**——同樣保留英文。費用欄寫成 `Meteor 消耗`、`Ice Snake 消耗`、
-  `Totem 消耗`，不要寫「隕石消耗」。二十個法術是：Meteor、Ice Snake、Heal、
-  Teleport、Arrow Storm、Escape、Bomb Arrow、Arrow Shield、Bash、Charge、
-  Uppercut、War Scream、Spin Attack、Vanish、Multihit、Smoke Bomb、Totem、
-  Haul、Aura、Uproot。
-- **資源與狀態名稱**——`Distortion`、`Crystallized`、`Unstable`、`Shining`、
-  `Mana Bank ✺` 保留英文（它們在遊戲裡跟圖示綁在一起）。
-  但普通的狀態效果要翻：緩速、暈眩、虛弱、流血、燃燒、冰凍。
 - **Lootrun**、**Raid**、**Guild** 等社群通用詞
 
----
-
-## 主線角色的語氣
-
-翻對話時<b>語氣比字面重要</b>。同一句話，該角色會怎麼講？
-
-| 角色 | 性格 | 語氣 |
-|---|---|---|
-| Aledar | 衝動、熱血、莽撞 | 短句、驚嘆號多，動不動就先衝出去（「那還等什麼？」） |
-| Tasim | 謹慎、愛擔心、想得多 | 常在後面喊「等等」，句子有停頓與省略號 |
-| King of Ragni | 威嚴、正式 | 書面語（「就此別過」「想必路上頗為驚險」） |
-| Guard / Soldier / Lieutenant | 職務在身 | 乾脆、簡短，不寒暄 |
-| The Cook | 碎念的抱怨鬼 | 一直在訴苦（「我真不敢相信我怎麼這麼倒楣」） |
-| Nohno | 養雞養到走火入魔的島民 | 話多、自來熟，最後崩潰 |
-| Merloni | 說故事的人 | 沉、有懸念 |
-| Captain Kymer | 軍官 | 乾脆，帶軍中的隨口調侃 |
-| Mel | 鄉下口音、爽朗 | 原文大量吞音（`'fraid`、`y'were`、`'round`）。中文用口語詞與語尾助詞（「啊」「嘛」「欸」）去對應，不要用注音或錯字 |
-| Linton | 藏不住話、少根筋 | 想到什麼講什麼，常常講到一半自己剎車（「呃」「當我沒說」） |
-| Lanu | 冷靜、分析型 | 句子完整、不帶情緒，常補一句觀察 |
-| Jenprest | 老兵、帶土氣 | 原文吞音（`o'`、`n'`、`t'`），中文用「欸」「哎唷」「難辦啊」這種口氣 |
-| Dr. Picard | 亢奮的學者 | 語速快、驚嘆號和破折號多，講到一半自己插自己的話 |
-| Reynauld | 話少、疲憊 | 短句，常以「嗯」開頭，情緒壓在字面底下 |
-| Her Majesty | 從容、居高臨下 | 書面語、長句，從不提高音量。愈平靜愈可怕 |
-| Sovereign Majin | 浮誇、瞧不起人 | 華麗辭藻加尖刻嘲笑，愛用「嗯？」反問把人架住 |
-| Sovereign Zhiraok Nasin | 暴躁、滿嘴數學 | 見下方雙關表——**他的每一句話都要帶一個數學詞**，這是角色本身 |
-| Syndra | 沉穩、帶詩意 | 長句、從容，用自然的比喻（風、葉、根）。是領袖，不是說教者 |
-| Zeph | 嚴重口吃 | 原文用連字號重複字首（`th-there`、`w-wondering`）。中文用<b>重複首字加頓號</b>：「你、你在這裡啊」。每句都要有，但別多到讀不下去 |
-| Rex | 沒耐性、防備心重 | 短句、反問、常常話說一半就「算了」。她的刺是怕，不是壞 |
-| Mora | 溫厚的長輩 | 有點文氣，笑聲寫成「呵呵」，稱新人「小葉子」 |
-| Sui | 怯生生 | 句子短、常有「呃」，說完自己又收回去。Mora 的妹妹 |
-| Dr. Picard | 亢奮的學者 | 已列於上。他叫玩家「助手」，那是他一廂情願封的 |
-| Caid | 嘴硬、心虛 | 講話跳、愛辯解，被戳破就轉移話題。他的船是他唯一的驕傲 |
-| Reynauld | 話少、疲憊 | 已列於上。他在 Fruma 是收賄的軍官，這件事解釋了他為什麼那麼冷 |
-| Yahya | 嚴重口吃 | 與 Zeph 同一套處理：重複首字加頓號。他怕蜘蛛怕到說不出完整句子 |
-| Ope | 油腔滑調 | 一直在推銷、一直在賴帳。但他是 Alvin 鎮長的外甥，母親被蜘蛛害死 |
-| Mayor Alvin | 溫和、疲憊的長輩 | 講 Ope 的時候要留住那份護短又無奈 |
-| Captain Ragon | 教官 | 條理分明、講解式的句子。他是在上課 |
-| Admiral Aegis | 上將 | 威嚴但不擺架子，會誇人 |
-| Kaio | 看透了的老人 | 鄉音重、字句吞得多（`ain't`、`'n`、`nabbin'`），偶爾帶髒字。他講 Aledar 那一段是整個任務的重心 |
-**請注意，這裡每一個語氣都未驗證準確性**
-
-
-已翻的任務可以直接當範本：`King's Recruit`（開場，124 句）、`Queen's Recruit`（Fruma 篇，673 句）、`A New Beginning`（289 句）、`Recover the Past`（264 句）、`Cook Assistant`、
-`Clearing the Camps`。
-**註記：不要**
-
----
-
-## 有雙關或典故的
-
-Wynncraft 的任務名稱與台詞常常一語雙關。**能做出來就做出來**，做不出來就在
-這裡註明原文在玩什麼——內容的語氣才接得上。
-
-| 原文 | 譯文 | 原文在玩什麼 |
-|---|---|---|
-| A Grave Mistake | 致命的失足 | `grave` 同時是「嚴重的」與「墳墓」。玩家最後真的掉進一座墳墓，「失足」剛好兩層都接住 |
-| Cluck Cluck | 咕咕咯咯 | 雞叫聲。中文的擬聲詞也是疊字，四個字比兩個字更像在學雞叫 |
-| Queen's Recruit | 女王的新兵 | 對照開場的 `King's Recruit`。當年是國王徵召你，這次換成女王——而這次的「徵召」是什麼意思，正是整個任務的問題 |
-| expected value | 期望值 | Zhiraok 講的是「新兵的價值」，用的是統計學的詞 |
-| you ignorant integrand | 你這個無知的被積函數 | 罵人的話直接用微積分名詞。中文照搬，突兀正是效果 |
-| your timing was golden | 你這時機抓得很黃金比例 | `golden` 是黃金比例。譯文得把「比例」補出來，不然梗就沒了 |
-| trying to subtract them | 想把他們減掉 | 講「把人弄走」用減法。不要譯成「除掉」，那是另一個運算 |
-| a miscalculation | 一次誤算 | 不要譯成「失策」 |
-| how much more irrational can we get | 我們還能有多無理 | `irrational` 同時是「不理性」與「無理數」。中文的「無理」剛好兩層都接住 |
-| calculate yourself out of dead last | 先把自己從倒數第一算出來 | Majin 反過來拿數學嗆 Zhiraok |
-| crunch the numbers | 算那些數字 | Zhiraok 講「處理公務」用的說法 |
-| how could that have factored out | 怎麼會因式分解成這樣 | 講「事情怎麼會變這樣」 |
-| fill the gaps | 把缺項補上 | 不要譯成「補足空白」，那不是數學詞 |
-| one positive in a sea of negatives | 一堆負數裡總算有一個正的 | 正負號的雙關 |
-| a toddler could calculate that | 連學步的小孩都算得出來 | |
-| I'd never bet on your odds | 絕不會押你的賠率 | 機率 |
-| keep it constant | 保持常數 | 他的道別語。不要譯成「保持穩定」 |
-| you interrupt my sequence | 你打斷我的數列 | 「打斷我做事」 |
-
-> 破碎、殘缺的台詞（`.;I. ,told;.`）是**刻意**的，那是氣氛的一部分。
-> 譯文要保留那種殘缺感，不要補成通順的句子。
-
-註記：這邊要多想，不要直接丟上去。
-
----
 
 ## 想改某個詞？
 
