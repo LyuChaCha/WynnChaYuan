@@ -96,6 +96,7 @@ public final class FlowedBlockTest {
         check("每行開頭帶排版偏移也翻得出來（實際：" + shorten(offset) + "）",
                 offset != null && offset.startsWith("這把從"));
 
+        divider(store);
         majorId(store);
 
         System.out.println(failures == 0
@@ -174,6 +175,44 @@ public final class FlowedBlockTest {
             out.addAll(flatten(child));
         }
         return out;
+    }
+
+    /**
+     * lore 上下那條分隔線（◆—◆）不能被吃掉。
+     *
+     * <p>它整行都是符號，抽成模板就是一串 {@code {#}}——跟行首的排版偏移
+     * 長得一模一樣。把它當成偏移剝掉的話，這一行會變成空的，
+     * 於是整段連分隔線一起被當成同一句話併進去，譯文出來就少了那條線。
+     */
+    private static void divider(TranslationStore store) {
+        List<Component> tip = new ArrayList<>();
+        tip.add(plain("Halcyon"));
+        tip.add(rule());
+        for (StyledText line : centred(LORE)) {
+            tip.add(line.getComponent().copy());
+        }
+        tip.add(rule());
+        List<Component> out =
+                com.wynnchayuan.render.TooltipPanel.translateLines(tip, store);
+        String all = out.stream().map(Component::getString)
+                .reduce("", (a, b) -> a + b);
+        check("敘述有翻（實際：" + shorten(all) + "）", all.contains("獻祭之刃"));
+        int rules = 0;
+        for (Component line : out) {
+            if (line.getString().contains(RULE)) {
+                rules++;
+            }
+        }
+        check("上下兩條分隔線都還在（實際 " + rules + " 條）", rules == 2);
+    }
+
+    /** 整行都是符號的分隔線。 */
+    private static final String RULE = "";
+
+    private static Component rule() {
+        return Component.literal(RULE).withStyle(
+                Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                        net.minecraft.resources.Identifier.withDefaultNamespace("common"))));
     }
 
     /** 置中的段落：每一行前面都掛一個推位置用的隱形字元。 */

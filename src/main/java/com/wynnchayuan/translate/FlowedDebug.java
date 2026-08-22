@@ -54,6 +54,7 @@ public final class FlowedDebug {
         file = configDir.resolve(FILE);
         seen = 0;
         missed = 0;
+        prose = 0;
         choicesSeen = 0;
         already.clear();
         try {
@@ -137,10 +138,31 @@ public final class FlowedDebug {
                 + (style.isBold() ? " 粗體" : "");
     }
 
-    /** 查不到的最多記幾筆。 */
-    private static final int MISS_LIMIT = 20;
+    /**
+     * 查不到的最多記幾筆。
+     *
+     * <h2>為什麼要分兩份名額</h2>
+     * 一份 tooltip 裡的<b>詞條清單</b>（{@code Health {#}-{~} [{~}]} 那些）也會走
+     * 跨行查表，而它們本來就不該有跨行條目——一件裝備就灌進十幾筆，
+     * 把名額整個佔滿。連續兩次收到使用者的診斷檔，真正要查的那一段都因此排不進來。
+     *
+     * <p>所以「看起來像句子的」另外給一份名額。判斷看的是有沒有
+     * {@code ". "} 或 {@code ": "}——會被自動斷行的長敘述與「名稱：說明」都有，
+     * 詞條清單兩個都沒有。
+     */
+    private static final int MISS_LIMIT = 24;
+
+    /** 見 {@link #MISS_LIMIT}。 */
+    private static final int PROSE_MISS_LIMIT = 24;
 
     private static int missed = 0;
+    private static int prose = 0;
+
+    /** 這一段看起來是句子，而不是一串詞條。 */
+    private static boolean looksLikeProse(String template) {
+        String flat = TranslationStore.normalise(template);
+        return flat.contains(". ") || flat.contains(": ");
+    }
 
     /**
      * 記一段<b>查不到</b>的跨行原文。
@@ -155,14 +177,21 @@ public final class FlowedDebug {
      * 差一個空格還是差一個標點一眼就看得出來。
      */
     public static void miss(String template) {
-        if (file == null || template == null || missed >= MISS_LIMIT
-                || !already.add("miss" + template)) {
+        if (file == null || template == null) {
             return;
         }
-        missed++;
+        boolean sentence = looksLikeProse(template);
+        if (sentence ? prose >= PROSE_MISS_LIMIT : missed >= MISS_LIMIT) {
+            return;
+        }
+        if (!already.add("miss" + template)) {
+            return;
+        }
+        int nth = sentence ? ++prose : ++missed;
         try {
             StringBuilder sb = new StringBuilder();
-            sb.append("=== 查不到 ").append(missed).append(" ===")
+            sb.append("=== 查不到 ").append(sentence ? "（像句子）" : "（詞條）")
+              .append(nth).append(" ===")
               .append(System.lineSeparator());
             sb.append("  攤平後的鍵：").append(TranslationStore.normalise(template))
               .append(System.lineSeparator());
