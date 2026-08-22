@@ -87,6 +87,16 @@ def skeleton(text: str) -> str:
     return re.sub(r" ?\x00 ?", "\x00", marked).strip()
 
 
+def words(text: str) -> str:
+    """只留下文字本身：拿掉所有 `{#}`，空白壓成一格。
+
+    <p>{@link skeleton} 把 `{#}` 壓成一個記號，那是為了「符號位置有沒有跑掉」；
+    這裡相反——要比的是<b>兩邊講的是不是同一句話</b>，符號有幾個正是待修的部分，
+    不能拿來當比對條件。
+    """
+    return re.sub(r"\s+", " ", text.replace(PLACEHOLDER, " ")).strip()
+
+
 def numbers(text: str) -> int:
     return len(re.findall(r"\{~\d?\}", text))
 
@@ -114,41 +124,70 @@ def multi_glyph_run(raw: str) -> bool:
     return False
 
 
+NUMBER = re.compile(r"\d[\d,]*(?:\.\d+)?%?")
+
+NUMBER_SLOT = "{~}"
+
+# 站在<b>空格位置</b>的 `{#}`：前面剛好是一個佔位符的右大括號，後面直接接文字。
+# 那正是被寫錯的那一個——原文那裡是一個空格。
+SPACE_SLOT = re.compile(r"\}\{#\}(?=[^\s(])")
+
+
+def fix_dst(dst: str, want_count: int) -> str | None:
+    """把譯文裡跟著抄錯的 `{#}` 還原成空格。
+
+    <p>譯者是照 `src` 抄的：`src` 錯，譯文就跟著錯。只改 `src` 不改譯文的話，
+    佔位符數量對不上，重建時整條會被放棄——那條譯文等於白翻。
+
+    @return 修好的譯文；對不齊就回傳 None，交給人看
+    """
+    fixed = dst
+    if fixed.startswith(PLACEHOLDER):
+        # 開頭那串多出來的收成一個，並把原文本來就有的空格補回去——
+        # 少了它畫面上會變成「圖示緊貼著中文」，跟原文的 `{#} Effect:` 對不上。
+        fixed = re.sub(r"^(?:\{#\})+\s*", PLACEHOLDER + " ", fixed)
+    fixed = SPACE_SLOT.sub("} ", fixed)
+    return fixed if fixed.count(PLACEHOLDER) == want_count else None
+
+
 def repair(entry: dict) -> str | None:
-    """這一條該改成什麼；不該動就回傳 None。"""
+    """這一條該改成什麼；不該動就回傳 None。
+
+    <h2>做法：照 `_raw` 整條重算</h2>
+    `_raw` 是收集當下的原始文字，符號位置與空格<b>本來就是對的</b>。
+    所以不去跟壞掉的 `src` 逐段對齊——那會被多出來的 `{#}` 卡住，
+    而多出來的 `{#}` 正是要修的東西：
+
+        _raw  You gain +5 Distortion ✹ for every enemy weakened.
+        重算  You gain +{~} Distortion {#} for every enemy weakened.
+        舊的  You gain +{~}{#}Distortion {#} for every enemy weakened.
+                            ^^^^ 這個其實是一個空格
+
+    <p>先比骨架確認兩邊講的是同一句話，重算之後再比數值佔位符的數量——
+    數量對得上，就表示重算的結果跟語料原本的認知一致。
+    """
     raw = entry.get("_raw")
     src = entry.get("src")
     if not raw or not src or PLACEHOLDER not in src:
         return None
+    if "{p}" in src or "{u}" in src:
+        return None                     # 地名與玩家名不在這支的處理範圍
 
     # `_raw` 沒有參數化，`src` 有。先把兩邊的數值都換成同一個記號再比骨架，
     # 否則 `+{~}s` 跟 `+6s` 永遠對不起來。正負號<b>不</b>算進去——
     # 小數點也只有後面接數字時才算，否則 `+2.` 會把句末的句號一起吃掉。
     # 遊戲端的 {~} 不含符號（`+{~}`），連符號一起吃掉兩邊就對不齊了。
+    #
+    # 比的時候把 `{#}` <b>整個拿掉</b>，不是壓成一個記號。多出來的那個 `{#}`
+    # 正是要修的東西，留著比對只會讓每一條都被判成「講的不是同一句話」。
+    # 內容一樣、數值個數也一樣，就足以確認重算的結果沒有跑掉。
     want = expected(raw)
-    if skeleton(re.sub(r"\{~\d?\}", "\x01", src)) != skeleton(
-            re.sub(r"\d[\d,]*(?:\.\d+)?%?", "\x01", want)):
+    if words(re.sub(r"\{~\d?\}", "\x01", src)) != words(NUMBER.sub("\x01", want)):
         return None                     # 講的不是同一句話，別碰
 
-    # 照 want 的符號結構重寫 src：逐段對齊，文字那半沿用 src（它有參數化）。
-    #
-    # 切的時候<b>連分隔符一起留著</b>：`{#}` 有幾個是有意義的（五個元素圖示就是
-    # 五個），先前一律換成單一個 `{#}`，等於把多符號的那些條目改壞。
-    src_parts = re.split(r"((?:\{#\})+)", src)
-    want_parts = re.split(r"((?:\{#\})+)", want)
-    if len(src_parts) != len(want_parts):
-        return None                     # 符號段數對不上，交給人看
-
-    rebuilt = []
-    for index, chunk in enumerate(src_parts):
-        if index % 2:
-            rebuilt.append(want_parts[index])   # 符號那半照 `_raw` 算出來的
-            continue
-        # 空格照 `_raw` 的，文字照 src 的——被吃掉的正是空格
-        lead = want_parts[index][:len(want_parts[index]) - len(want_parts[index].lstrip())]
-        tail = want_parts[index][len(want_parts[index].rstrip()):]
-        rebuilt.append(lead + chunk.strip() + tail)
-    fixed = "".join(rebuilt)
+    fixed = NUMBER.sub(NUMBER_SLOT, want)
+    if fixed.count(PLACEHOLDER) > src.count(PLACEHOLDER):
+        return None                     # 只拿掉多餘的，絕不無中生有
     if fixed == src or numbers(fixed) != numbers(src):
         return None
     return fixed
@@ -179,8 +218,8 @@ def main(argv: list[str]) -> int:
             # 佔位符數量對不上，整條會在重建時被放棄——比原本更糟。
             dst = entry.get("dst") or ""
             if dst:
-                dst = re.sub(r"(?:\{#\})+", PLACEHOLDER, dst)
-                if dst.count(PLACEHOLDER) != fixed.count(PLACEHOLDER):
+                dst = fix_dst(dst, fixed.count(PLACEHOLDER))
+                if dst is None:
                     skipped += 1
                     continue            # 譯者放的位置跟原文不一樣，交給人看
                 entry["dst"] = dst

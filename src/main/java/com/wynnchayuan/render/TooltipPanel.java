@@ -145,6 +145,19 @@ public final class TooltipPanel {
                 i += used;
                 continue;
             }
+            // 從最長試到兩行都沒中，才記一筆。記在這裡而不是 translateBlock 裡面，
+            // 是因為那邊每試一個長度就會記一次——一份八行的素材清單灌十九筆進去，
+            // 真正想查的那一段就永遠排不進診斷檔。
+            if (longest >= 2) {
+                StringBuilder key = new StringBuilder();
+                for (int k = i; k < i + longest; k++) {
+                    if (k > i) {
+                        key.append(System.lineSeparator());
+                    }
+                    key.append(com.wynnchayuan.capture.LineParts.of(styled.get(k)).template());
+                }
+                LineTranslator.noteBlockMiss(key.toString());
+            }
             Component translated =
                     LineTranslator.translate(styled.get(i), store, centered[i]);
             if (translated != null) {

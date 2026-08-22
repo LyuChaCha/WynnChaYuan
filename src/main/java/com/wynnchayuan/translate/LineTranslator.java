@@ -105,9 +105,9 @@ public final class LineTranslator {
             }
         }
         if (translated == null || translated.isBlank()) {
-            // 查不到也要記。見 FlowedDebug#miss——沒有這一筆的話，
-            // 診斷檔裡沒有 Major ID 到底是「沒查」還是「查了沒中」分不出來。
-            FlowedDebug.miss(template);
+            // 這裡<b>不</b>記診斷。呼叫端會從最長試到兩行，每一個長度都記一次的話，
+            // 一份八行的素材清單就吃掉十九個名額，真正想看的那一段永遠排不進來。
+            // 改由 TooltipPanel 在「所有長度都失敗」之後記一次。
             return null;
         }
         // 記在這裡，<b>不管走的是哪一條路</b>。先前只記「拆名稱」那條，
@@ -134,6 +134,16 @@ public final class LineTranslator {
             out.add(realign(run.get(i), built.get(i), centered[i]));
         }
         return out;
+    }
+
+    /**
+     * 記一段「整輪都查不到」的跨行原文。
+     *
+     * <p>呼叫端會把連續幾行併起來、從最長試到兩行。全部落空之後才記這一筆——
+     * 見 {@code TooltipPanel} 裡的說明。
+     */
+    public static void noteBlockMiss(String template) {
+        FlowedDebug.miss(template);
     }
 
     /**

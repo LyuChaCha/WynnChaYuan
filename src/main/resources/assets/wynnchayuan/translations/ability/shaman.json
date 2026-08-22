@@ -334,7 +334,7 @@
   },
   "4f2ab903a01c": {
    "src": "{#} Range: ~{~} Blocks",
-   "dst": "{#}施放範圍: ~{~} 格",
+   "dst": "{#} 施放範圍: ~{~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -431,7 +431,7 @@
   },
   "1758a60259c4": {
    "src": "{#} Area of Effect: {~} Blocks (Line-Shaped)",
-   "dst": "{#}技能範圍: {~} 格(直線)",
+   "dst": "{#} 技能範圍: {~} 格 (直線)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -528,7 +528,7 @@
   },
   "b44413872a86": {
    "src": "{#} Total Damage: -{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#}總傷害: -{~}(你的每秒傷害，Uproot,每次命中)",
+   "dst": "{#} 總傷害: -{~} (你的每秒傷害，Uproot,每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -611,7 +611,7 @@
    "code": "SHAMAN-P4-R01-C03"
   },
   "ed504db50850": {
-   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Damage Bonus to Self",
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Damage Bonus to Self",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -619,14 +619,14 @@
     "shaman/Mystic Masks"
    ],
    "lines": 1,
-   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Damage Bonus to Self",
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Damage Bonus to Self",
    "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -10% Damage Bonus to Self",
    "tree": "04/shaman/04/001/003",
    "ability": "Mystic Masks",
    "code": "SHAMAN-P4-R01-C03"
   },
   "78136d879be3": {
-   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Resistance Bonus to Self",
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Resistance Bonus to Self",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -634,7 +634,7 @@
     "shaman/Mystic Masks"
    ],
    "lines": 1,
-   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Resistance Bonus to Self",
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Resistance Bonus to Self",
    "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -15% Resistance Bonus to Self",
    "tree": "04/shaman/04/001/003",
    "ability": "Mystic Masks",
@@ -939,7 +939,7 @@
   },
   "d41c168463fa": {
    "src": "{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "{#} Fanatic: -{~} 抗性加成 ({#}) 給敵人",
+   "dst": "{#} Fanatic: -{~} 抗性加成 ({#} ) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -952,7 +952,7 @@
   },
   "3d847bf8187e": {
    "src": "{#} Heretic: +{~} Slowness ({#}) to Enemies",
-   "dst": "{#} Heretic: +{~} 緩速 ({#}) 給敵人",
+   "dst": "{#} Heretic: +{~} 緩速 ({#} ) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -964,8 +964,8 @@
    "code": "SHAMAN-P4-R04-C03"
   },
   "16b074840c10": {
-   "src": "{#}{#} Lunatic: -{~}{#}Damage Bonus ({#}) to Enemies",
-   "dst": "{#}{#} Lunatic: -{~}{#}傷害加成 ({#}) 給敵人",
+   "src": "{#} Lunatic: -{~} Damage Bonus ({#}) to Enemies",
+   "dst": "{#} Lunatic: -{~} 傷害加成 ({#} ) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -978,7 +978,7 @@
   },
   "718d0c014f70": {
    "src": "{#} Effects:",
-   "dst": "{#}效果:",
+   "dst": "{#} 效果:",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1174,7 +1174,7 @@
   },
   "2edac2f60646": {
    "src": "{#} Effect: +{~} Damage Bonus to Summons",
-   "dst": "{#}效果: +{~} 傷害加成給召喚物",
+   "dst": "{#} 效果: +{~} 傷害加成給召喚物",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1285,7 +1285,7 @@
    "code": "SHAMAN-P5-R02-C08"
   },
   "8e01ff8e52b5": {
-   "src": "Flaming Tongue{#}gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding{#}{#} for\n+{~}s{#}per hit. (Max {~}s)",
+   "src": "Flaming Tongue gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding {#} for\n+{~}s per hit. (Max {~}s)",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1293,7 +1293,7 @@
     "shaman/Lashing Lance"
    ],
    "lines": 3,
-   "flat": "Flaming Tongue{#}gains +{~} hits, deals more damage, and now inflicts enemies with Bleeding{#}{#} for +{~}s{#}per hit. (Max {~}s)",
+   "flat": "Flaming Tongue gains +{~} hits, deals more damage, and now inflicts enemies with Bleeding {#} for +{~}s per hit. (Max {~}s)",
    "_raw": "Flaming Tongue gains +2 hits, deals more damage,\nand now inflicts enemies with Bleeding  for\n+1s per hit. (Max 6s)",
    "tree": "04/shaman/05/002/008",
    "ability": "Lashing Lance",
@@ -1316,7 +1316,7 @@
   },
   "5159a03ec503": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#}總傷害: +{~}(你的每秒傷害，Uproot,每次命中)",
+   "dst": "{#} 總傷害: +{~} (你的每秒傷害，Uproot,每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1329,7 +1329,7 @@
   },
   "e65dc10bdc16": {
    "src": "{#} Total Damage: {~} (of your DPS, from Bleeding)",
-   "dst": "{#}總傷害: {~}(你的每秒傷害，流血)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，流血)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1384,7 +1384,7 @@
   },
   "5a223145af2f": {
    "src": "{#} Fanatic: -{~} {#} Totem Cost",
-   "dst": "{#} Fanatic: -{~} {#}Totem 消耗",
+   "dst": "{#} Fanatic: -{~} {#} Totem 消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1397,7 +1397,7 @@
   },
   "4a9f57237bb5": {
    "src": "{#} Heretic: -{~} {#} Haul Cost",
-   "dst": "{#} Heretic: -{~} {#}Haul 消耗",
+   "dst": "{#} Heretic: -{~} {#} Haul 消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1410,7 +1410,7 @@
   },
   "5e513eaf9dfe": {
    "src": "{#} Lunatic: -{~} {#} Aura Cost",
-   "dst": "{#} Lunatic: -{~} {#}Aura 消耗",
+   "dst": "{#} Lunatic: -{~} {#} Aura 消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1606,7 +1606,7 @@
   },
   "c7673b5ce4da": {
    "src": "{#} Total Damage: {~} (of your DPS, per {~} health)",
-   "dst": "{#}總傷害: {~1}(你的每秒傷害，每 {~2} 點生命)",
+   "dst": "{#} 總傷害: {~1} (你的每秒傷害，每 {~2} 點生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1747,7 +1747,7 @@
   },
   "bd6a12cbe948": {
    "src": "{#} Cooldown: {~}s (per Chant)",
-   "dst": "{#}冷卻時間: {~} 秒(每次吟唱)",
+   "dst": "{#} 冷卻時間: {~} 秒 (每次吟唱)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1861,7 +1861,7 @@
   },
   "dd2a876b1fb5": {
    "src": "{#} Effects: {~} Slowness ({#}) to Enemies",
-   "dst": "{#}效果: {~} 緩速 ({#}) 給敵人",
+   "dst": "{#} 效果: {~} 緩速 ({#} ) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2059,7 +2059,7 @@
   },
   "3f07b666370c": {
    "src": "{#} Effect: +{~} Attack Speed to Puppets",
-   "dst": "{#}效果: +{~} 攻擊速度給傀儡",
+   "dst": "{#} 效果: +{~} 攻擊速度給傀儡",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2100,7 +2100,7 @@
   },
   "6f5fa74b0433": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Puppets",
-   "dst": "{#}效果: +{~} 傷害加成 (⚔) 給傀儡",
+   "dst": "{#} 效果: +{~} 傷害加成 (⚔) 給傀儡",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2322,7 +2322,7 @@
   },
   "d8f680e0d001": {
    "src": "{#} Effect: +{~} Walk Speed to Self",
-   "dst": "{#}效果: +{~} 移動速度給自己",
+   "dst": "{#} 效果: +{~} 移動速度給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2404,7 +2404,7 @@
   },
   "1e737fcaf8d9": {
    "src": "{#} Effect: +{~} Attack Speed to Summons",
-   "dst": "{#}效果: +{~} 攻擊速度給召喚物",
+   "dst": "{#} 效果: +{~} 攻擊速度給召喚物",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2457,7 +2457,7 @@
    "code": "SHAMAN-P7-R03-C06"
   },
   "4ea103431061": {
-   "src": "Bleeding{#}{#}{#}enemies take damage every {~}s.\nBleeding{#}{#}{#}damage dealt within Totem's{#}range\nalso adds +{~} points to your Blood Pool{#}{#}.",
+   "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2465,7 +2465,7 @@
     "shaman/Sanguine Strike"
    ],
    "lines": 3,
-   "flat": "Bleeding{#}{#}{#}enemies take damage every {~}s. Bleeding{#}{#}{#}damage dealt within Totem's{#}range also adds +{~} points to your Blood Pool{#}{#}.",
+   "flat": "Bleeding {#} enemies take damage every {~}s. Bleeding {#} damage dealt within Totem's range also adds +{~} points to your Blood Pool {#}.",
    "_raw": "Bleeding  enemies take damage every 0.5s.\nBleeding  damage dealt within Totem's range\nalso adds +0.8 points to your Blood Pool .",
    "tree": "04/shaman/07/003/006",
    "ability": "Sanguine Strike",
@@ -2543,7 +2543,7 @@
    "code": "SHAMAN-P7-R04-C01"
   },
   "8baf118732cc": {
-   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2551,7 +2551,7 @@
     "shaman/Soaring Wingbeats"
    ],
    "lines": 1,
-   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
    "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +2 Jump Height to Self",
    "tree": "04/shaman/07/004/001",
    "ability": "Soaring Wingbeats",
@@ -2559,7 +2559,7 @@
   },
   "fc7b11fd5b9f": {
    "src": "{#} Effects: +{~} Walk Speed to Self",
-   "dst": "{#}效果: +{~} 移動速度給自己",
+   "dst": "{#} 效果: +{~} 移動速度給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2655,7 +2655,7 @@
    "code": "SHAMAN-P7-R04-C07"
   },
   "11770d8b1951": {
-   "src": "You and any allies within the beam will\nreceive +{~}{#}Overhealth ❤ per hit.\nBonus health decays over {~}s.",
+   "src": "You and any allies within the beam will\nreceive +{~} Overhealth ❤ per hit.\nBonus health decays over {~}s.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2663,7 +2663,7 @@
     "shaman/Blood Sorrow"
    ],
    "lines": 3,
-   "flat": "You and any allies within the beam will receive +{~}{#}Overhealth ❤ per hit. Bonus health decays over {~}s.",
+   "flat": "You and any allies within the beam will receive +{~} Overhealth ❤ per hit. Bonus health decays over {~}s.",
    "_raw": "You and any allies within the beam will\nreceive +2% Overhealth ❤ per hit.\nBonus health decays over 20s.",
    "tree": "04/shaman/07/004/007",
    "ability": "Blood Sorrow",
@@ -2711,7 +2711,7 @@
    "code": "SHAMAN-P8-R01-C01"
   },
   "6c1c64738de9": {
-   "src": "Totem summons Puppets{#}{~} faster.",
+   "src": "Totem summons Puppets {~} faster.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2719,7 +2719,7 @@
     "shaman/Puppetry"
    ],
    "lines": 1,
-   "flat": "Totem summons Puppets{#}{~} faster.",
+   "flat": "Totem summons Puppets {~} faster.",
    "_raw": "Totem summons Puppets 25% faster.",
    "tree": "04/shaman/08/001/001",
    "ability": "Puppetry",
@@ -2770,7 +2770,7 @@
   },
   "87186ab9c023": {
    "src": "{#} Effect: +{~} damage to Eldritch Call (Per stack)",
-   "dst": "{#}效果: +{~} 傷害給 Eldritch Call(每層)",
+   "dst": "{#} 效果: +{~} 傷害給 Eldritch Call (每層)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3267,7 +3267,7 @@
   },
   "fc47779861ff": {
    "src": "{#} Area of Effect: {~} Blocks (Circle-Shaped, Explosion)",
-   "dst": "{#}技能範圍: {~} 格(圓形，爆炸)",
+   "dst": "{#} 技能範圍: {~} 格 (圓形，爆炸)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3280,7 +3280,7 @@
   },
   "c1aeba9b8851": {
    "src": "{#} Total Damage: {~} (of your DPS, Attack)",
-   "dst": "{#}總傷害: {~}(你的每秒傷害，攻擊)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，攻擊)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3293,7 +3293,7 @@
   },
   "c911fca82ad6": {
    "src": "{#} Total Damage: {~} (of your DPS, Explosion)",
-   "dst": "{#}總傷害: {~}(你的每秒傷害，爆炸)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，爆炸)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

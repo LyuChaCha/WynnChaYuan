@@ -97,7 +97,7 @@
   },
   "1b6ae5c91579": {
    "src": "{#} Main Attack Range: +{~} Block",
-   "dst": "{#}普攻距離: +{~} 格",
+   "dst": "{#} 普攻距離: +{~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -138,7 +138,7 @@
   },
   "09773c773326": {
    "src": "{#} Total Damage: -{~} (of your DPS, per bash)",
-   "dst": "{#}總傷害: -{~} (你的每秒傷害，每次重擊)",
+   "dst": "{#} 總傷害: -{~} (你的每秒傷害，每次重擊)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -180,7 +180,7 @@
   },
   "1e5c23856578": {
    "src": "{#} Damage Bonus: +{~} (Raw)",
-   "dst": "{#}傷害加成: +{~} (實數)",
+   "dst": "{#} 傷害加成: +{~} (實數)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -292,7 +292,7 @@
   },
   "248234165b3c": {
    "src": "{#} Area of Effect: {~}-{~} Blocks (Cone-Shaped)",
-   "dst": "{#}技能範圍: {~1}-{~2} 格(扇形)",
+   "dst": "{#} 技能範圍: {~1}-{~2} 格 (扇形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -362,7 +362,7 @@
   },
   "2fee773ad337": {
    "src": "{#} Effect: {~} Resistance Bonus (❁) to Allies",
-   "dst": "{#}效果: {~} 抗性加成 (❁) 給友軍",
+   "dst": "{#} 效果: {~} 抗性加成 (❁) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -418,7 +418,7 @@
   },
   "ab64f3d582aa": {
    "src": "{#} Area of Effect: {~} Blocks",
-   "dst": "{#}技能範圍: {~} 格",
+   "dst": "{#} 技能範圍: {~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "a5be743f6d32": {
    "src": "{#} Total Damage: {~} (of your DPS, airborne)",
-   "dst": "{#}總傷害: {~} (你的每秒傷害，空中)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，空中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -447,7 +447,7 @@
   },
   "bbf26468cf15": {
    "src": "{#} Total Damage: {~} (of your DPS, landing)",
-   "dst": "{#}總傷害: {~} (你的每秒傷害，落地)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，落地)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -684,7 +684,7 @@
   },
   "23119af60447": {
    "src": "{#} Total Damage: {~}",
-   "dst": "{#}總傷害: {~}",
+   "dst": "{#} 總傷害: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -752,7 +752,7 @@
    "code": "WARRIOR-P4-R02-C01"
   },
   "6c6df2b9a953": {
-   "src": "Gain +{~} Raw Damage per {~}{#}Corrupted {#}. (Max +{~})",
+   "src": "Gain +{~} Raw Damage per {~} Corrupted {#}. (Max +{~})",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -760,14 +760,14 @@
     "warrior/Bak'al's Grasp"
    ],
    "lines": 1,
-   "flat": "Gain +{~} Raw Damage per {~}{#}Corrupted {#}. (Max +{~})",
+   "flat": "Gain +{~} Raw Damage per {~} Corrupted {#}. (Max +{~})",
    "_raw": "Gain +4 Raw Damage per 2% Corrupted . (Max +120)",
    "tree": "00/warrior/04/002/001",
    "ability": "Bak'al's Grasp",
    "code": "WARRIOR-P4-R02-C01"
   },
   "8abfd3942085": {
-   "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~}{#}Corrupted {#}.",
+   "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~} Corrupted {#}.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -775,7 +775,7 @@
     "warrior/Bak'al's Grasp"
    ],
    "lines": 3,
-   "flat": "While Corrupted {#}, you lose the ability to heal, and every {~} health you lose will grant you +{~}{#}Corrupted {#}.",
+   "flat": "While Corrupted {#}, you lose the ability to heal, and every {~} health you lose will grant you +{~} Corrupted {#}.",
    "_raw": "While Corrupted , you lose the ability\nto heal, and every 1% health you lose will\ngrant you +1% Corrupted .",
    "tree": "00/warrior/04/002/001",
    "ability": "Bak'al's Grasp",
@@ -909,7 +909,7 @@
   },
   "e23965c21566": {
    "src": "{#} Cooldown: {~}s (for hits)",
-   "dst": "{#}冷卻時間: {~} 秒 (命中時)",
+   "dst": "{#} 冷卻時間: {~} 秒 (命中時)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -993,7 +993,7 @@
   },
   "3fabb189151a": {
    "src": "{#} Total Damage: {~} (of your DPS, per broken mantle)",
-   "dst": "{#}總傷害: {~} (你的每秒傷害，每片破碎的護罩)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，每片破碎的護罩)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1105,7 +1105,7 @@
   },
   "8c9284841932": {
    "src": "{#} Total Damage: +{~} (of your DPS, per bash)",
-   "dst": "{#}總傷害: +{~} (你的每秒傷害，每次重擊)",
+   "dst": "{#} 總傷害: +{~} (你的每秒傷害，每次重擊)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1159,7 +1159,7 @@
    "code": "WARRIOR-P5-R02-C01"
   },
   "0e9c9ed346e1": {
-   "src": "Gain +{~} damage per {~}{#}Corrupted {#}. (Max +{~})",
+   "src": "Gain +{~} damage per {~} Corrupted {#}. (Max +{~})",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1167,7 +1167,7 @@
     "warrior/Enraged Blow"
    ],
    "lines": 1,
-   "flat": "Gain +{~} damage per {~}{#}Corrupted {#}. (Max +{~})",
+   "flat": "Gain +{~} damage per {~} Corrupted {#}. (Max +{~})",
    "_raw": "Gain +1.5% damage per 1% Corrupted . (Max +55%)",
    "tree": "00/warrior/05/002/001",
    "ability": "Enraged Blow",
@@ -1483,7 +1483,7 @@
   },
   "cbcd24527bdd": {
    "src": "{#} Effect: +{~} Resistance Bonus (❁) to Allies",
-   "dst": "{#}效果: +{~} 抗性加成 (❁) 給友軍",
+   "dst": "{#} 效果: +{~} 抗性加成 (❁) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1552,7 +1552,7 @@
   },
   "c58821208f67": {
    "src": "{#} Total Damage: {~} (of your DPS, per ripple)",
-   "dst": "{#}總傷害: {~} (你的每秒傷害，每次漣漪)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，每次漣漪)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1593,7 +1593,7 @@
   },
   "d29ff799ee9e": {
    "src": "{#} Area of Effect: Circle-Shaped",
-   "dst": "{#}技能範圍: 圓形",
+   "dst": "{#} 技能範圍: 圓形",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1646,7 +1646,7 @@
    "code": "WARRIOR-P6-R02-C01"
   },
   "5e0c25293335": {
-   "src": "Gaining {~}{#}Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
+   "src": "Gaining {~} Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1654,7 +1654,7 @@
     "warrior/Armour Breaker"
    ],
    "lines": 2,
-   "flat": "Gaining {~}{#}Corrupted {#} will make your next Uppercut give you a damage boost.",
+   "flat": "Gaining {~} Corrupted {#} will make your next Uppercut give you a damage boost.",
    "_raw": "Gaining 40% Corrupted  will make your\nnext Uppercut give you a damage boost.",
    "tree": "00/warrior/06/002/001",
    "ability": "Armour Breaker",
@@ -1803,7 +1803,7 @@
    "code": "WARRIOR-P6-R03-C06"
   },
   "939083f48dd2": {
-   "src": "While you have {~}{#}Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
+   "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1811,7 +1811,7 @@
     "warrior/Luster Purge"
    ],
    "lines": 3,
-   "flat": "While you have {~}{#}Holy Power ✧, your Main Attacks are empowered, and grant you {~} Holy Power.",
+   "flat": "While you have {~} Holy Power ✧, your Main Attacks are empowered, and grant you {~} Holy Power.",
    "_raw": "While you have 10 Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you 5 Holy Power.",
    "tree": "00/warrior/06/003/006",
    "ability": "Luster Purge",
@@ -1819,7 +1819,7 @@
   },
   "891bd0b72c14": {
    "src": "{#} Cooldown: {~}s (for Holy Power)",
-   "dst": "{#}冷卻時間: {~} 秒 (神聖之力)",
+   "dst": "{#} 冷卻時間: {~} 秒 (神聖之力)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1832,7 +1832,7 @@
   },
   "b93a786e0d2d": {
    "src": "{#} Main Attack Damage Bonus: +{~}",
-   "dst": "{#}普攻傷害加成: +{~}",
+   "dst": "{#} 普攻傷害加成: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1845,7 +1845,7 @@
   },
   "3cb58a99fbb5": {
    "src": "{#} Main Attack Range: +{~}",
-   "dst": "{#}普攻距離: +{~}",
+   "dst": "{#} 普攻距離: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2197,7 +2197,7 @@
   },
   "022d69f1fa0f": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Players",
-   "dst": "{#}效果: +{~} 傷害加成 (⚔) 給玩家",
+   "dst": "{#} 效果: +{~} 傷害加成 (⚔) 給玩家",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2281,7 +2281,7 @@
   },
   "6b95ce72375d": {
    "src": "{#} Effect: +{~} ID Effectiveness (❈) to Allies",
-   "dst": "{#}效果: +{~} 詞條效果 (❈) 給友軍",
+   "dst": "{#} 效果: +{~} 詞條效果 (❈) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2503,7 +2503,7 @@
    "code": "WARRIOR-P7-R04-C07"
   },
   "69dd87842338": {
-   "src": "All nearby allies are granted +{~}{#}Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
+   "src": "All nearby allies are granted +{~} Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2511,14 +2511,14 @@
     "warrior/Heavenly Trumpet"
    ],
    "lines": 3,
-   "flat": "All nearby allies are granted +{~}{#}Overhealth ❤ for each point of Holy Power ✧ consumed. Overhealth ❤ decays over {~}s.",
+   "flat": "All nearby allies are granted +{~} Overhealth ❤ for each point of Holy Power ✧ consumed. Overhealth ❤ decays over {~}s.",
    "_raw": "All nearby allies are granted +1% Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over 20s.",
    "tree": "00/warrior/07/004/007",
    "ability": "Heavenly Trumpet",
    "code": "WARRIOR-P7-R04-C07"
   },
   "bab7a70c6ecc": {
-   "src": "Casting War Scream while holding shift\nwith at least {~}{#}Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
+   "src": "Casting War Scream while holding shift\nwith at least {~} Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2526,7 +2526,7 @@
     "warrior/Heavenly Trumpet"
    ],
    "lines": 3,
-   "flat": "Casting War Scream while holding shift with at least {~}{#}Holy Power ✧ will spend all of it to sound off a protective trumpet.",
+   "flat": "Casting War Scream while holding shift with at least {~} Holy Power ✧ will spend all of it to sound off a protective trumpet.",
    "_raw": "Casting War Scream while holding shift\nwith at least 25 Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
    "tree": "00/warrior/07/004/007",
    "ability": "Heavenly Trumpet",
@@ -2590,7 +2590,7 @@
   },
   "ea076a9e9a99": {
    "src": "{#} Cooldown: {~}m",
-   "dst": "{#}冷卻時間: {~}m",
+   "dst": "{#} 冷卻時間: {~}m",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -2603,7 +2603,7 @@
   },
   "300766ebffc5": {
    "src": "{#} Effect: Invincibility (☗) to Allies",
-   "dst": "{#}效果: 無敵 (☗) 給友軍",
+   "dst": "{#} 效果: 無敵 (☗) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2687,7 +2687,7 @@
   },
   "3152be4c6c1f": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Tempest)",
-   "dst": "{#}總傷害: +{~}(你的每秒傷害，對 Tempest)",
+   "dst": "{#} 總傷害: +{~} (你的每秒傷害，對 Tempest)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2784,7 +2784,7 @@
   },
   "da79ec812271": {
    "src": "{#} Total Damage: {~} (of your DPS, per Swipe)",
-   "dst": "{#}總傷害: {~}(你的每秒傷害，每次揮擊)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，每次揮擊)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2880,7 +2880,7 @@
    "code": "WARRIOR-P8-R03-C05"
   },
   "f13fef800816": {
-   "src": "Gain +{~} Damage per {~}{#}Harmony.",
+   "src": "Gain +{~} Damage per {~} Harmony.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2888,7 +2888,7 @@
     "warrior/Harmony"
    ],
    "lines": 1,
-   "flat": "Gain +{~} Damage per {~}{#}Harmony.",
+   "flat": "Gain +{~} Damage per {~} Harmony.",
    "_raw": "Gain +4% Damage per 1 Harmony.",
    "tree": "00/warrior/08/003/005",
    "ability": "Harmony",
@@ -2952,7 +2952,7 @@
   },
   "f6fd5e6d0834": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Comet)",
-   "dst": "{#}總傷害: +{~}(你的每秒傷害，對 Comet)",
+   "dst": "{#} 總傷害: +{~} (你的每秒傷害，對 Comet)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2965,7 +2965,7 @@
   },
   "5044f8ce520b": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Fireworks)",
-   "dst": "{#}總傷害: +{~}(你的每秒傷害，對 Fireworks)",
+   "dst": "{#} 總傷害: +{~} (你的每秒傷害，對 Fireworks)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3076,7 +3076,7 @@
    "code": "WARRIOR-P9-R02-C01"
   },
   "6585adef95bd": {
-   "src": "Casting Main Attack or Uppercut{#}on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
+   "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -3084,7 +3084,7 @@
     "warrior/Beyond Salvation"
    ],
    "lines": 4,
-   "flat": "Casting Main Attack or Uppercut{#}on a spike will detonate it, dealing damage and granting {~} Overhealth ❤ even while Corrupted. Bonus health decays over {~}s.",
+   "flat": "Casting Main Attack or Uppercut on a spike will detonate it, dealing damage and granting {~} Overhealth ❤ even while Corrupted. Bonus health decays over {~}s.",
    "_raw": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n10% Overhealth ❤ even while Corrupted.\nBonus health decays over 20s.",
    "tree": "00/warrior/09/002/001",
    "ability": "Beyond Salvation",
@@ -3107,7 +3107,7 @@
   },
   "b9baf1d367c6": {
    "src": "{#} Range: {~}~{~} Blocks",
-   "dst": "{#}施放範圍: {~1}~{~2} 格",
+   "dst": "{#} 施放範圍: {~1}~{~2} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3120,7 +3120,7 @@
   },
   "93e00934be27": {
    "src": "{#} Total Damage: {~} (of your DPS, detonate)",
-   "dst": "{#}總傷害: {~}(你的每秒傷害，引爆)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，引爆)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3133,7 +3133,7 @@
   },
   "76d4ed2ed1f3": {
    "src": "{#} Total Damage: {~} (of your DPS, summon)",
-   "dst": "{#}總傷害: {~}(你的每秒傷害，召喚)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，召喚)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3189,7 +3189,7 @@
   },
   "365f6e8aa0f9": {
    "src": "{#} Effects: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "{#}效果: +{~} 傷害加成 (⚔) 給友軍",
+   "dst": "{#} 效果: +{~} 傷害加成 (⚔) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3260,7 +3260,7 @@
   },
   "df12d88cacf4": {
    "src": "{#} Total Damage: {~} (of your DPS, spell)",
-   "dst": "{#}總傷害: {~}(你的每秒傷害，法術)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，法術)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

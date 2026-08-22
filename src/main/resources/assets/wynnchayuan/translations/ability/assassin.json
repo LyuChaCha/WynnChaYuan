@@ -308,7 +308,7 @@
   },
   "bcbb8a1b15f4": {
    "src": "{#} Range: {~} Blocks (Cone-Shaped)",
-   "dst": "{#}施放範圍: {~} 格(扇形)",
+   "dst": "{#} 施放範圍: {~} 格 (扇形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -448,7 +448,7 @@
   },
   "87da5f57819d": {
    "src": "{#} Effect: Invisibility to Self",
-   "dst": "{#}效果: 隱形給自己",
+   "dst": "{#} 效果: 隱形給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -588,7 +588,7 @@
   },
   "06a1e7239354": {
    "src": "{#} Effect: {~} Damage Bonus (⚔) to Self",
-   "dst": "{#}效果: {~} 傷害加成 (⚔) 給自己",
+   "dst": "{#} 效果: {~} 傷害加成 (⚔) 給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -913,7 +913,7 @@
   },
   "30cc7615a57b": {
    "src": "{#} Total Damage: +{~} (of your DPS, per hit)",
-   "dst": "{#}總傷害: +{~} (你的每秒傷害，每次命中)",
+   "dst": "{#} 總傷害: +{~} (你的每秒傷害，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1239,7 +1239,7 @@
   },
   "d5187788735c": {
    "src": "{#} Total Damage: {~} (of your DPS, over {~} hits)",
-   "dst": "{#}總傷害: {~1}(你的每秒傷害，共 {~2} 次命中)",
+   "dst": "{#} 總傷害: {~1} (你的每秒傷害，共 {~2} 次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1308,7 +1308,7 @@
   },
   "b26294e34bd1": {
    "src": "{#} Cooldown: +{~}s",
-   "dst": "{#}冷卻時間: +{~}s",
+   "dst": "{#} 冷卻時間: +{~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1465,7 +1465,7 @@
   },
   "1939dfc5b5bd": {
    "src": "{#} Total Damage: {~} (of your DPS, per Trick)",
-   "dst": "{#}總傷害: {~}(你的每秒傷害，每個 Trick)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，每個 Trick)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1521,7 +1521,7 @@
   },
   "cf9a949dcbfc": {
    "src": "{#} Total Damage: {~} (of your DPS, per shuriken)",
-   "dst": "{#}總傷害: {~}(你的每秒傷害，每枚手裏劍)",
+   "dst": "{#} 總傷害: {~} (你的每秒傷害，每枚手裏劍)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1562,7 +1562,7 @@
   },
   "7d703bb03c32": {
    "src": "{#} Multihit Damage: +{~} (of your DPS, per hit)",
-   "dst": "{#}Multihit 傷害: +{~}(你的每秒傷害，每次命中)",
+   "dst": "{#} Multihit 傷害: +{~} (你的每秒傷害，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1729,7 +1729,7 @@
    "code": "ASSASSIN-P6-R01-C04"
   },
   "b3d593678439": {
-   "src": "Detonating {~}+{#}Tricks {#} on enemies will\ntemporarily reduce their damage.",
+   "src": "Detonating {~}+ Tricks {#} on enemies will\ntemporarily reduce their damage.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1737,7 +1737,7 @@
     "assassin/Distraction"
    ],
    "lines": 2,
-   "flat": "Detonating {~}+{#}Tricks {#} on enemies will temporarily reduce their damage.",
+   "flat": "Detonating {~}+ Tricks {#} on enemies will temporarily reduce their damage.",
    "_raw": "Detonating 15+ Tricks  on enemies will\ntemporarily reduce their damage.",
    "tree": "03/assassin/06/001/004",
    "ability": "Distraction",
@@ -1813,7 +1813,7 @@
    "code": "ASSASSIN-P6-R02-C05"
   },
   "8aedb312fb6b": {
-   "src": "Detonating {~}+{#}Tricks {#} on enemies\nwill make them Confused {#}.",
+   "src": "Detonating {~}+ Tricks {#} on enemies\nwill make them Confused {#}.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1821,7 +1821,7 @@
     "assassin/Misdirection"
    ],
    "lines": 2,
-   "flat": "Detonating {~}+{#}Tricks {#} on enemies will make them Confused {#}.",
+   "flat": "Detonating {~}+ Tricks {#} on enemies will make them Confused {#}.",
    "_raw": "Detonating 25+ Tricks  on enemies\nwill make them Confused .",
    "tree": "03/assassin/06/002/005",
    "ability": "Misdirection",
@@ -2083,7 +2083,7 @@
    "code": "ASSASSIN-P6-R04-C03"
   },
   "7bdca4ea982f": {
-   "src": "Detonating {~}+{#}Tricks {#} on enemies\nContaminates {#} them with toxic ooze.",
+   "src": "Detonating {~}+ Tricks {#} on enemies\nContaminates {#} them with toxic ooze.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2091,7 +2091,7 @@
     "assassin/Toxic Sludge"
    ],
    "lines": 2,
-   "flat": "Detonating {~}+{#}Tricks {#} on enemies Contaminates {#} them with toxic ooze.",
+   "flat": "Detonating {~}+ Tricks {#} on enemies Contaminates {#} them with toxic ooze.",
    "_raw": "Detonating 20+ Tricks  on enemies\nContaminates  them with toxic ooze.",
    "tree": "03/assassin/06/004/003",
    "ability": "Toxic Sludge",
@@ -2254,7 +2254,7 @@
   },
   "df6212400955": {
    "src": "{#} Effect: +{~} Resistance Bonus (❁) to Self",
-   "dst": "{#}效果: +{~} 抗性加成 (❁) 給自己",
+   "dst": "{#} 效果: +{~} 抗性加成 (❁) 給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2435,7 +2435,7 @@
   },
   "f063afb306da": {
    "src": "{#} Total Damage: {~} (of your DPS, per {~} Enkindle)",
-   "dst": "{#}總傷害: {~1}(你的每秒傷害，每 {~2} 點 Enkindle)",
+   "dst": "{#} 總傷害: {~1} (你的每秒傷害，每 {~2} 點 Enkindle)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2503,7 +2503,7 @@
    "code": "ASSASSIN-P7-R03-C01"
   },
   "ed6579526c7e": {
-   "src": "If an enemy has {~}+ Marks {#}, your next\nBackstab{#}will deal +{~} damage, or your next\nPowder Special{#}will deal +{~} damage.",
+   "src": "If an enemy has {~}+ Marks {#}, your next\nBackstab will deal +{~} damage, or your next\nPowder Special will deal +{~} damage.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2511,7 +2511,7 @@
     "assassin/Satsujin"
    ],
    "lines": 3,
-   "flat": "If an enemy has {~}+ Marks {#}, your next Backstab{#}will deal +{~} damage, or your next Powder Special{#}will deal +{~} damage.",
+   "flat": "If an enemy has {~}+ Marks {#}, your next Backstab will deal +{~} damage, or your next Powder Special will deal +{~} damage.",
    "_raw": "If an enemy has 4+ Marks , your next\nBackstab will deal +200% damage, or your next\nPowder Special will deal +100% damage.",
    "tree": "03/assassin/07/003/001",
    "ability": "Satsujin",
@@ -2605,7 +2605,7 @@
   },
   "9cb9ccb80131": {
    "src": "{#} Area of Effect: +{~} Blocks (per bloom)",
-   "dst": "{#}技能範圍: +{~} 格(每次綻放)",
+   "dst": "{#} 技能範圍: +{~} 格 (每次綻放)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2630,7 +2630,7 @@
    "code": "ASSASSIN-P7-R04-C03"
   },
   "2b813994b498": {
-   "src": "Detonating {~}+{#}Tricks {#} on enemies will\nmake them {~} Drained {#} and take\n+{~} more {#} Water damage from you.",
+   "src": "Detonating {~}+ Tricks {#} on enemies will\nmake them {~} Drained {#} and take\n+{~} more {#} Water damage from you.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2638,7 +2638,7 @@
     "assassin/Soul Siphon"
    ],
    "lines": 3,
-   "flat": "Detonating {~}+{#}Tricks {#} on enemies will make them {~} Drained {#} and take +{~} more {#} Water damage from you.",
+   "flat": "Detonating {~}+ Tricks {#} on enemies will make them {~} Drained {#} and take +{~} more {#} Water damage from you.",
    "_raw": "Detonating 30+ Tricks  on enemies will\nmake them 200% Drained  and take\n+20% more  Water damage from you.",
    "tree": "03/assassin/07/004/003",
    "ability": "Soul Siphon",
@@ -2928,7 +2928,7 @@
   },
   "acfdbd5b6e9f": {
    "src": "{#} Explosion Damage: +{~}",
-   "dst": "{#}爆炸傷害: +{~}",
+   "dst": "{#} 爆炸傷害: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3096,7 +3096,7 @@
   },
   "6166a6b39a73": {
    "src": "{#} Duration: -{~}s",
-   "dst": "{#}持續時間: -{~}s",
+   "dst": "{#} 持續時間: -{~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3222,7 +3222,7 @@
    "code": "ASSASSIN-P9-R02-C07"
   },
   "e3a02ba0a520": {
-   "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~}{#}maximum stacks.",
+   "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~} maximum stacks.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -3230,7 +3230,7 @@
     "assassin/Serpent's Garden"
    ],
    "lines": 3,
-   "flat": "While above your garden, your Momentum {#} charges twice as fast and gains +{~}{#}maximum stacks.",
+   "flat": "While above your garden, your Momentum {#} charges twice as fast and gains +{~} maximum stacks.",
    "_raw": "While above your garden, your Momentum \ncharges twice as fast and gains\n+5 maximum stacks.",
    "tree": "03/assassin/09/002/007",
    "ability": "Serpent's Garden",
@@ -3281,7 +3281,7 @@
   },
   "52dad460dd6c": {
    "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
-   "dst": "若換位時沒有任何敵人被引爆超過 {~1} 個 Tricks {#},\nclone 會失去 -{~2} 生命。不過，\n每多引爆一個超過門檻的 Trick {#},\n那些 Damage Spells 就多造成 {~3} 傷害。",
+   "dst": "若換位時沒有任何敵人被引爆超過 {~1} 個 Tricks {#} ,\nclone 會失去 -{~2} 生命。不過，\n每多引爆一個超過門檻的 Trick {#} ,\n那些 Damage Spells 就多造成 {~3} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
