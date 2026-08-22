@@ -121,8 +121,6 @@ public final class TooltipPanel {
 
         // 置中與靠左在單獨一行上長得一模一樣，得看整塊才分得出來
         boolean[] centered = BlockLayout.centered(tooltip);
-        // 哪些行的數值真的站在共用的對齊欄上，見 BlockLayout.valueColumns
-        boolean[] columns = BlockLayout.valueColumns(tooltip);
 
         List<StyledText> styled = new ArrayList<>(n);
         for (Component line : tooltip) {
@@ -147,8 +145,8 @@ public final class TooltipPanel {
                 i += used;
                 continue;
             }
-            Component translated = LineTranslator.translate(
-                    styled.get(i), store, centered[i], columns[i]);
+            Component translated =
+                    LineTranslator.translate(styled.get(i), store, centered[i]);
             if (translated != null) {
                 anyTranslated = true;
                 out.add(translated);

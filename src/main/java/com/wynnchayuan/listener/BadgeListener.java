@@ -58,6 +58,12 @@ public final class BadgeListener {
             if (badge == null) {
                 return;
             }
+            // 名牌的附著點可能是 null——玩家還在載入、或實體剛好在這一幀被移除。
+            // 每幀都會跑好幾次，先前這裡直接丟 NullPointerException，
+            // 一場遊戲累積了一萬五千次。
+            if (state.nameTagAttachment == null) {
+                return;
+            }
             // 用 Wynntils 給的同一個 collector 送一次名牌，只把附著點往上抬一行。
             // 面向相機、深度、背景、距離淡出全部沿用原版行為。
             event.getSubmitNodeCollector().submitNameTag(

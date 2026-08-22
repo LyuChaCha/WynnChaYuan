@@ -15,6 +15,7 @@ import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.ToIntFunction;
 
 /**
  * 把一行原文換成譯文，同時保住顏色與符號。
@@ -286,6 +287,15 @@ public final class LineTranslator {
      * 佔位符（{@code {~}}）整組不能拆開，拆了就填不回去。
      */
     private static String wrapToWidth(String text, int maxPx) {
+        return wrapToWidth(text, maxPx, piece -> widthOf(Component.literal(piece)));
+    }
+
+    /**
+     * @param measure 量一小段字有多寬。獨立成參數是為了讓測試跑得起來——
+     *                正式的量法要 Minecraft 的字型，測試環境裡沒有，
+     *                所有寬度都會量成 0，折行的邏輯就永遠不會被觸發。
+     */
+    static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure) {
         if (maxPx <= 0) {
             return text;
         }
@@ -300,16 +310,27 @@ public final class LineTranslator {
                     ? close + 1                          // 佔位符整組
                     : i + Character.charCount(text.codePointAt(i));
             String piece = text.substring(i, end);
-            int pieceWidth = widthOf(Component.literal(piece));
+            int pieceWidth = measure.applyAsInt(piece);
             if (width + pieceWidth > maxPx && i > lineStart) {
                 // 退回上一個空白是為了不把<b>英文單字</b>切成兩半。中文可以在
                 // 任何字之間斷，退回去只會讓整行提早結束——「✦ 利他主義: 16」
                 // 之後就換行、剩下的擠成三行，就是這樣來的。
                 int cut = breaksWord(text, i) && lastSpace > lineStart ? lastSpace : i;
                 out.append(text, lineStart, cut).append(NEWLINE);
-                lineStart = text.charAt(cut) == ' ' ? cut + 1 : cut;
-                width = widthOf(Component.literal(text.substring(lineStart, i)));
+                boolean atSpace = text.charAt(cut) == ' ';
+                lineStart = atSpace ? cut + 1 : cut;
                 lastSpace = -1;
+                if (atSpace && cut == i) {
+                    // 換行的位置<b>剛好就是這個空白</b>：它被行尾吃掉了，
+                    // 不屬於新的一行。先前這裡直接算 substring(lineStart, i)，
+                    // 而 lineStart 已經是 i + 1，於是 substring(24, 23) 當場丟出
+                    // StringIndexOutOfBounds——被 catch 吞掉之後，整個翻譯面板
+                    // 就不見了，看起來像「這件物品沒翻到」。
+                    width = 0;
+                    i = end;
+                    continue;
+                }
+                width = measure.applyAsInt(text.substring(lineStart, i));
             }
             if (" ".equals(piece)) {
                 lastSpace = i;
@@ -346,20 +367,8 @@ public final class LineTranslator {
      */
     public static Component translate(StyledText line, TranslationStore store,
                                       boolean centered) {
-        return translate(line, store, centered, true);
-    }
-
-    /**
-     * @param sharedColumn 這一行的數值站在整份 tooltip <b>共用的</b>對齊欄上。
-     *                     見 {@link BlockLayout#valueColumns}。只有真正的欄位
-     *                     才值得補償寬度差；不是欄位卻補了，中文標籤一短就會
-     *                     生出一大塊空白，看起來跟沒翻譯時一樣寬。
-     */
-    public static Component translate(StyledText line, TranslationStore store,
-                                      boolean centered, boolean sharedColumn) {
         Component whole = translateWholeLine(line, store, centered);
-        return whole != null ? whole
-                : translateSegments(line, store, centered, sharedColumn);
+        return whole != null ? whole : translateSegments(line, store, centered);
     }
 
     /**
@@ -379,7 +388,7 @@ public final class LineTranslator {
      * 對「標籤 + 數值」這種結構沒有影響，也正是物品 tooltip 的主要形態。
      */
     private static Component translateSegments(StyledText line, TranslationStore store,
-                                               boolean centered, boolean sharedColumn) {
+                                               boolean centered) {
         // 先把每個片段翻好，不急著組裝——寬度要等整行都翻完才量得準。
         List<Piece> pieces = new ArrayList<>();
         boolean any = false;
@@ -438,7 +447,7 @@ public final class LineTranslator {
         // 一起，第二欄則被推過頭。要看的是<b>交界那個位置</b>本身。
         int boundary = findAlignPoint(pieces);
         if (boundary >= 0 && !pieces.get(boundary).isSpace()
-                && hasColumnGap(pieces, boundary, sharedColumn)) {
+                && hasColumnGap(pieces, boundary)) {
             pieces.add(boundary, Piece.space(0,
                     SpaceOffset.styleFor(pieces.get(boundary).style())));
         }
@@ -680,10 +689,6 @@ public final class LineTranslator {
      * 那種本來就是欄位，呼叫端直接用。
      */
     static boolean hasColumnGap(List<Piece> pieces, int boundary) {
-        return hasColumnGap(pieces, boundary, true);
-    }
-
-    static boolean hasColumnGap(List<Piece> pieces, int boundary, boolean sharedColumn) {
         int spaces = 0;
         // 交界前那一段的尾端空白
         for (int i = boundary - 1; i >= 0; i--) {
@@ -719,10 +724,30 @@ public final class LineTranslator {
         //
         // 用「數值以正負號開頭」把它跟「Emerald Pouch [Tier 8]」分開：
         // 詞條的數值一定帶正負號，接在名稱後面的標籤則不會。
-        // 只剩一個空格時，得要整份 tooltip 真的有一個欄位落在這個 x 上才算數。
-        // 否則每一條「標籤: +數值」都會被當成欄位去補償，中文標籤短，
-        // 補出來就是一大塊空白。
-        return sharedColumn && spaces >= 1 && startsWithSign(pieces, boundary);
+        // 只剩一個空格時，看標籤<b>有沒有帶冒號</b>。
+        //
+        // 這是兩個介面實際的差別，不是猜的：
+        //   技能樹  `Fire Damage: +15%`   —— 數值緊跟在標籤後面，各行不對齊
+        //   物品欄  `Main Attack Damage -17%` —— 數值排在同一欄，靠留白頂過去
+        //
+        // 帶冒號的當成欄位去補償，中文標籤一短就生出一大塊空白，
+        // 間隔跟沒翻譯時一樣寬。不帶冒號的則相反：那是真正的欄位，
+        // `Main Attack Damage` 是整份 tooltip 最長的標籤，剛好把數值頂到定位，
+        // 中間只剩一個空格——不補償它就會脫離其他行的欄位。
+        return spaces >= 1 && startsWithSign(pieces, boundary)
+                && !labelEndsWithColon(pieces, boundary);
+    }
+
+    /** 交界之前那段文字是不是以冒號收尾。見 {@link #hasColumnGap}。 */
+    private static boolean labelEndsWithColon(List<Piece> pieces, int boundary) {
+        for (int i = boundary - 1; i >= 0; i--) {
+            String text = pieces.get(i).text().strip();
+            if (text.isEmpty()) {
+                continue;
+            }
+            return isTrailingColon(text.charAt(text.length() - 1));
+        }
+        return false;
     }
 
     private static boolean startsWithSign(List<Piece> pieces, int boundary) {

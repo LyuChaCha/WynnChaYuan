@@ -3,6 +3,37 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.41.0] - 2026-08-22
+
+### 修正
+
+- **翻譯面板不出現的真兇找到了。** `error-debug.txt` 直接指出來：
+  折行時如果換行點<b>剛好落在一個空白上</b>，切點 `cut` 就等於當前位置 `i`，
+  而 `lineStart` 被設成 `cut + 1`——比 `i` 還大。接下來的
+  `substring(lineStart, i)` 變成 `substring(24, 23)`，當場丟出
+  `StringIndexOutOfBoundsException`。
+  - 那個例外被繪製層的 `catch (Throwable)` 吞掉，結果是整個面板都不畫。
+    畫面上看起來像「這件物品沒翻到」，實際上語料好好地躺在那裡。
+  - 加了 `WrapTest`：那個確切的形狀、極端寬度、以及四千輪亂數，
+    都不能丟例外，而且折完的內容去掉空白之後必須跟原文一模一樣。
+- **名牌徽章的 NullPointerException。** 名牌的附著點可能是 null（玩家還在載入、
+  或實體剛好在這一幀被移除）。每幀跑好幾次，一場遊戲累積了一萬五千次。
+- **武器 tooltip 的欄位對齊被上一版弄壞了。** 上一版用「整份 tooltip 裡有沒有
+  別的行的數值落在同一個 x」來判斷欄位，但 Wynncraft 的留白是<b>寬度位移
+  字元</b>不是空白，用純文字量根本量不準。
+  - 改用兩個介面實際的差別：**標籤帶不帶冒號**。
+    技能樹是 `Fire Damage: +15%`（數值緊跟標籤，各行不對齊）；
+    物品欄是 `Main Attack Damage -17%`（數值排在同一欄）。
+  - 這樣 `Main Attack Damage` 這種「最長的標籤剛好把數值頂到定位、
+    中間只剩一個空格」的行會照常補償，不會脫離其他行的欄位。
+
+### 新增
+
+- **翻完 `Arachnids' Ascent`，111 句。** Wynn 同伴線的收尾：三人一起攻打
+  Nivla 的蜘蛛巢，玩家要選 Aledar 或 Tasim 一起上火山。最後三個人在兵營
+  舉杯——「敬一段長久而充實的友誼」。讀過 `Queen's Recruit` 就知道那句有多重。
+  `Mushroom Man` 裡被抓走的 Yahya 也在這裡獲救。
+
 ## [1.40.0] - 2026-08-22
 
 ### 新增
