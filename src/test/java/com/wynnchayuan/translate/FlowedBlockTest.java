@@ -89,11 +89,104 @@ public final class FlowedBlockTest {
         check("放進整份 tooltip 也翻得出來（實際：" + shorten(all) + "）",
                 all.contains("獻祭之刃"));
 
+        // 遊戲實際送來的樣子：置中的段落，<b>每一行開頭</b>都有一個推位置用的
+        // 隱形字元。抽成模板就是行首的 {#}，攤平之後整段夾著一堆 {#}，
+        // 而語料裡是乾淨的一句話。診斷檔第 20 筆就是這個樣子。
+        String offset = joined(centred(LORE), store);
+        check("每行開頭帶排版偏移也翻得出來（實際：" + shorten(offset) + "）",
+                offset != null && offset.startsWith("這把從"));
+
+        majorId(store);
+
         System.out.println(failures == 0
                 ? "FlowedBlock: 全部通過" : "FlowedBlock: " + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * Major ID 照遊戲送來的樣子：名稱那半是亮色、帶排版偏移，
+     * 末尾的 {@code elements} 自成一個綠色的段。
+     *
+     * <p>那個綠色要跟著譯文走——使用者要的是「翻出來也保留原始格式」。
+     */
+    private static void majorId(TranslationStore store) {
+        Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
+        Style green = Style.EMPTY.withColor(TextColor.fromRgb(0x55FF55));
+
+        MutableComponent first = Component.empty();
+        first.append(Component.literal(SpaceOffset.encode(2))
+                .withStyle(SpaceOffset.styleFor(pink)));
+        first.append(Component.literal("Efflorescence: ").withStyle(pink));
+        first.append(Component.literal("Serpent's").withStyle(grey));
+
+        MutableComponent last = Component.empty();
+        last.append(Component.literal("all ").withStyle(grey));
+        last.append(Component.literal("elements").withStyle(green));
+        last.append(Component.literal(".").withStyle(grey));
+
+        List<StyledText> run = new ArrayList<>();
+        run.add(StyledText.fromComponent(first));
+        for (String s : new String[] {
+                "Garden now centers to where", "you land with Swan Dive.",
+                "Damage of Swan Dive,", "Serpent's Garden and Jasmine",
+                "Bloom are distributed across" }) {
+            run.add(StyledText.fromComponent(plain(s)));
+        }
+        run.add(StyledText.fromComponent(last));
+
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("Major ID 的敘述翻得出來",
+                out != null && !out.isEmpty());
+        if (out == null) {
+            return;
+        }
+        String all = out.stream().map(Component::getString)
+                .reduce("", String::concat);
+        check("名稱與敘述都翻了（實際：" + shorten(all) + "）",
+                all.contains("華綻") && all.contains("所有元素"));
+        check("名稱保住自己的顏色", colourOf(out, "華綻") == 0xE0B3E6);
+        check("末尾的元素保住原本的綠（實際："
+                        + Integer.toHexString(colourOf(out, "元素")) + "）",
+                colourOf(out, "元素") == 0x55FF55);
+    }
+
+    /** 譯文裡某一段文字實際被塗上的顏色。 */
+    private static int colourOf(List<Component> out, String needle) {
+        for (Component line : out) {
+            for (Component part : flatten(line)) {
+                if (part.getString().contains(needle)
+                        && part.getStyle().getColor() != null) {
+                    return part.getStyle().getColor().getValue();
+                }
+            }
+        }
+        return -1;
+    }
+
+    private static List<Component> flatten(Component c) {
+        List<Component> out = new ArrayList<>();
+        out.add(c);
+        for (Component child : c.getSiblings()) {
+            out.addAll(flatten(child));
+        }
+        return out;
+    }
+
+    /** 置中的段落：每一行前面都掛一個推位置用的隱形字元。 */
+    private static List<StyledText> centred(String[] lines) {
+        List<StyledText> run = new ArrayList<>(lines.length);
+        for (String line : lines) {
+            MutableComponent c = Component.empty();
+            c.append(Component.literal(SpaceOffset.encode(12))
+                    .withStyle(SpaceOffset.styleFor(Style.EMPTY)));
+            c.append(plain(line));
+            run.add(StyledText.fromComponent(c));
+        }
+        return run;
     }
 
     private static String joined(List<StyledText> run, TranslationStore store) {
