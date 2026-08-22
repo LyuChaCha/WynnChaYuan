@@ -31,17 +31,8 @@ public final class LayoutDebug {
 
     private static Path file;
     private static int written = 0;
-    private static final StringBuilder buffer = new StringBuilder();
     private static final Set<String> seen = new HashSet<>();
 
-    /**
-     * 每一份<b>看過</b>的 tooltip，就算沒有詳細記也掛號。
-     *
-     * <p>使用者回報坐騎那份 tooltip 的判斷結果沒出現在這裡，而額度明明還有。
-     * 少了這份名單，「沒被呼叫到」與「呼叫了但被去重擋掉」分不出來——
-     * 那是兩個完全不同的問題，先前已經在別的診斷上吃過一次虧。
-     */
-    private static final java.util.List<String> roster = new java.util.ArrayList<>();
 
     private LayoutDebug() {}
 
@@ -51,19 +42,24 @@ public final class LayoutDebug {
         written = 0;
         failures = 0;
         seen.clear();
-        roster.clear();
-        buffer.setLength(0);
-        buffer.append("# 置中判斷。每一行的縮排、內容寬度，以及置中時該有的縮排。")
-              .append(System.lineSeparator())
-              .append("# 三個數字對得起來卻判成靠左，就是分段切錯了。")
-              .append(System.lineSeparator())
-              .append("# 跨行查表（Major ID、技能敘述）的色段也記在這裡。")
-              .append(System.lineSeparator()).append(System.lineSeparator());
-        // 開場就先寫一次。「檔案沒生成」與「生成了但沒內容」是兩件不同的事，
-        // 分不出來的話每次回報都得先猜是哪一種。
+        // 改成<b>附加寫入</b>，而且每一次 record 都立刻落地。
+        //
+        // 先前是把內容累積在一個 StringBuilder 裡、每次重寫整份檔案。使用者連續
+        // 兩版回報「這個檔只有檔頭」——而那正是要拿來查坐騎置中的唯一依據。
+        // 累積式寫法一旦中途有任何一步沒走到，整份就停在初始狀態，
+        // 而且分不出是「沒被呼叫」還是「算到一半掛掉」。附加寫入沒有這個模式：
+        // 有呼叫就一定留得下一行。majorid-debug.txt 用的就是這套，一直都可靠。
         try {
             Files.createDirectories(path.getParent());
-            Files.writeString(path, buffer.toString(), StandardCharsets.UTF_8);
+            Files.writeString(path,
+                    "# 置中判斷。每一行的縮排、內容寬度，以及置中時該有的縮排。"
+                    + System.lineSeparator()
+                    + "# 三個數字對得起來卻判成靠左，就是分段切錯了。"
+                    + System.lineSeparator()
+                    + "# 「· 看過」是每一份 tooltip 的足跡；完全沒有這種行，"
+                    + "就代表判斷根本沒被呼叫到。"
+                    + System.lineSeparator() + System.lineSeparator(),
+                    StandardCharsets.UTF_8);
         } catch (Throwable t) {
             file = null;                       // 這裡寫不出來就是真的不能寫
         }
@@ -90,55 +86,35 @@ public final class LayoutDebug {
         } catch (Throwable t) {
             return;                            // 連名字都取不到，沒東西可記
         }
-        if (roster.size() < ROSTER_LIMIT) {
-            roster.add(oneLine(key));          // 先掛號，見 #roster
-        }
-        if (written < LIMIT && seen.add(key)) {
+        boolean detail = written < LIMIT && seen.add(key);
+        StringBuilder sb = new StringBuilder();
+        // 每一份都留一行足跡，<b>就算不詳細記</b>。這樣「沒被呼叫到」與
+        // 「呼叫了但被去重擋掉」永遠分得出來。
+        sb.append("· 看過 ").append(oneLine(key)).append(System.lineSeparator());
+        if (detail) {
             written++;
             try {
                 String explained = BlockLayout.explain(lines, centered);
-                buffer.append("=== ").append(written).append(" · ")
-                      .append(oneLine(key)).append(" ===").append(System.lineSeparator())
-                      .append(explained).append(System.lineSeparator());
-                // 同時印到遊戲紀錄。檔案寫得出來與否受權限、路徑、防毒影響，
-                // 而 latest.log 一定在——先前連續三次回報回來都是空的。
+                sb.append("=== ").append(written).append(" · ").append(oneLine(key))
+                  .append(" ===").append(System.lineSeparator())
+                  .append(explained).append(System.lineSeparator());
                 System.out.println("[WynnChaYuan] 版面判斷" + System.lineSeparator()
                         + explained);
             } catch (Throwable t) {
                 failures++;
-                buffer.append("=== ").append(written).append(" · ")
-                      .append(oneLine(key)).append(" ===").append(System.lineSeparator())
-                      .append("  這一份算不出來：").append(t)
-                      .append(System.lineSeparator()).append(System.lineSeparator());
+                sb.append("=== ").append(written).append(" · ").append(oneLine(key))
+                  .append(" ===").append(System.lineSeparator())
+                  .append("  這一份算不出來：").append(t)
+                  .append(System.lineSeparator()).append(System.lineSeparator());
             }
         }
         try {
-            Files.writeString(file, buffer + rosterText(), StandardCharsets.UTF_8);
+            Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
+                    java.nio.file.StandardOpenOption.CREATE,
+                    java.nio.file.StandardOpenOption.APPEND);
         } catch (Throwable t) {
-            // 診斷寫不出來就算了，絕不能反過來弄壞畫面。
-            // 但<b>不要</b>把 file 設成 null——那等於整場遊戲的診斷就此關閉，
-            // 使用者回報「這個檔案根本沒生成」，而真正的問題被藏在後面。
             failures++;
         }
-    }
-
-    /** 名單最多列幾份，避免一場遊戲下來塞成好幾千行。 */
-    private static final int ROSTER_LIMIT = 200;
-
-    /** 看過哪些 tooltip。詳細記錄用完額度之後，這份名單仍然在長。 */
-    private static String rosterText() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("=== 看過的 tooltip（共 ").append(roster.size()).append(" 份");
-        if (failures > 0) {
-            // 「內容很少」有兩種可能：沒被呼叫到，或呼叫了但一直算不出來。
-            // 把失敗次數擺在明面上，一眼就分得出是哪一種。
-            sb.append("，其中 ").append(failures).append(" 份算不出來");
-        }
-        sb.append("）===").append(System.lineSeparator());
-        for (String one : roster) {
-            sb.append("  ").append(one).append(System.lineSeparator());
-        }
-        return sb.toString();
     }
 
     /** 診斷失敗過幾次。寫在檔頭，才知道「內容很少」是不是因為一直寫失敗。 */
@@ -197,9 +173,12 @@ public final class LayoutDebug {
         for (com.wynntils.core.text.StyledText line : run) {
             sb.append("  原文：").append(line.getString()).append(System.lineSeparator());
         }
-        buffer.append(sb);
         System.out.println("[WynnChaYuan] 跨行查表" + System.lineSeparator() + sb);
-        Files.writeString(file, buffer.toString(), StandardCharsets.UTF_8);
+        // 這裡也改成附加。先前是重寫整份檔案，而 record 已經改成附加了——
+        // 兩種寫法混在同一個檔上，後寫的那個會把前面附加的內容整個蓋掉。
+        Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
+                java.nio.file.StandardOpenOption.CREATE,
+                java.nio.file.StandardOpenOption.APPEND);
     }
 
     private static String describe(net.minecraft.network.chat.Style style) {
