@@ -224,10 +224,21 @@ public final class LineTranslator {
                 break;
             }
         }
-        if (core.isBlank() || first.accents().isEmpty()) {
+        if (core.isBlank()) {
             return List.of();
         }
-        return List.of(new LineParts.Piece(core, first.accents().get(0).style()));
+        // 要挑<b>有字母的</b>那一段，不能直接拿第一段。
+        //
+        // 遊戲把 `✦` 跟名稱分成兩個色段送過來，而「純符號的段也算重點段」
+        // 是後來為了保住 `✖` 的紅色才加的——兩件事湊在一起，`accents().get(0)`
+        // 就變成那個 `✦`，名稱於是套上了 `✦` 的顏色。畫面上看起來就是
+        // 「Major ID 的標題顏色不見了」。
+        for (LineParts.Piece accent : first.accents()) {
+            if (GlyphSplitter.hasLetter(accent.text())) {
+                return List.of(new LineParts.Piece(core, accent.style()));
+            }
+        }
+        return List.of();
     }
 
     /** 「名稱：說明」的名稱最長到這裡。再長就不像標題了。 */

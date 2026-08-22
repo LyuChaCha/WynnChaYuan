@@ -234,6 +234,32 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 
 ---
 
+## 裝備 lore
+
+裝備的敘述文（`role: desc`）裡藏著不少劇情線索，**翻之前先讀
+[世界觀與主線](docs/world-and-story.md)**。同一個詞在 lore 裡跟在任務裡指的是同一件事。
+
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| It's pulling towards something. | 它正被什麼東西牽引著。 | 接在句尾、沒有空格。有這句的裝備都還有未揭露的內容 |
+| the Nether / Nether Gate | 下界／下界之門 | 跟 Minecraft 官方繁中一致 |
+| Guard Golem | 守衛魔像 | Wynn 各城的守衛 |
+| Temple of the Legends | 傳說神殿 | |
+| Villager | 村民 | Gavel 的種族，不是路人甲 |
+| Orcs / Green-skins | 獸人／綠皮 | 「綠皮」是村民對獸人的蔑稱，語氣要留住 |
+| Bovemist | Bovemist | 宗教名，保留原文 |
+| Dernel tribes | Dernel 部族 | Dern 那一側的部族 |
+| Avos | Avos | 鳥人族，保留原文 |
+| WynnExcavation | WynnExcavation | 公司名，保留原文 |
+
+### ⚠️ 絕對不要翻的
+
+- **`Palimpsest` 的敘述**是一段<b>密文</b>（Fruman 文字的替換密碼，
+  社群還在解）。翻了就毀掉整個謎題。那一條的 `dst` 刻意留空。
+- 破碎、殘缺的台詞（`.;I. ,told;.`）同理，見下方說明。
+
+---
+
 ## 一律保留原文
 
 翻了會跟其他玩家對不上話，或社群本來就講英文。

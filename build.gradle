@@ -211,3 +211,11 @@ tasks.register('runWrapChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.WrapTest'
 }
 tasks.named('check') { dependsOn 'runWrapChecks' }
+
+tasks.register('runMajorIdColourChecks', JavaExec) {
+    group = 'verification'
+    description = 'Major ID 的名稱要保住自己的顏色'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.MajorIdColourTest'
+}
+tasks.named('check') { dependsOn 'runMajorIdColourChecks' }
