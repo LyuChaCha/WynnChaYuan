@@ -239,7 +239,14 @@ public final class LineTranslator {
         // 反而是說明——於是名稱套上說明的顏色、說明套上名稱的顏色，
         // 畫面上看起來就是<b>兩邊顏色對調</b>。
         Style style = labelStyleOf(firstLine);
-        return style == null ? List.of() : List.of(new LineParts.Piece(core, style));
+        if (style == null) {
+            return List.of();
+        }
+        // 冒號也算名稱的一部分。原文的「Transcendence:」連冒號都是名稱的顏色，
+        // 只把名字上色的話冒號會落到說明那半，看起來就是「顏色接不起來」。
+        // 兩種都登記：帶冒號的比較長，比對時會優先中。
+        return List.of(new LineParts.Piece(core + ":", style),
+                       new LineParts.Piece(core, style));
     }
 
     /**
