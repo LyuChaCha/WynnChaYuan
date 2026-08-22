@@ -122,14 +122,32 @@ public final class LineDebug {
               .append(System.lineSeparator());
         component.visit((style, text) -> {
             if (!text.isEmpty()) {
-                buffer.append(String.format("   font=%-28s px=%-6s text=%s%n",
+                buffer.append(String.format("   font=%-28s px=%-6s %s text=%s%n",
                         style.getFont() == null ? "(null)" : style.getFont().toString(),
                         SpaceOffset.isSpaceFont(style)
                                 ? String.valueOf(SpaceOffset.decode(text)) : "-",
+                        decorations(style),
                         describe(text)));
             }
             return Optional.empty();
         }, Style.EMPTY);
+    }
+
+    /**
+     * 斜體、粗體、底線。
+     *
+     * <p>使用者回報「翻譯出來的標題變成斜體」而原文是正的。診斷先前只印顏色，
+     * 從外面完全看不出斜體是誰加上去的——把它印出來，比對原文與譯文那兩段
+     * 就知道是我們加的還是本來就有。
+     *
+     * <p>（{@code visit} 給的是<b>解析過</b>的樣式，「沒設」與「設成 false」
+     * 在這裡會併成同一個 X。要分辨那兩者得看原始 Component，
+     * 目前還不需要走到那一步。）
+     */
+    private static String decorations(Style style) {
+        return "斜" + (style.isItalic() ? "V" : "X")
+                + " 粗" + (style.isBold() ? "V" : "X")
+                + " 底" + (style.isUnderlined() ? "V" : "X");
     }
 
     /** 把看不見的碼位寫成 U+XXXX，否則檔案裡就是一片空白，什麼都看不出來。 */
