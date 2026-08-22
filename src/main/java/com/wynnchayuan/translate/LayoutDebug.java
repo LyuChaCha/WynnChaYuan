@@ -77,4 +77,60 @@ public final class LayoutDebug {
         String flat = text.replace('\n', ' ').strip();
         return flat.length() > 30 ? flat.substring(0, 30) + "…" : flat;
     }
+
+    /** 記過的跨行條目數。夠看出問題就好，不是要當日誌。 */
+    private static int flowedSeen = 0;
+
+    private static final int FLOWED_LIMIT = 12;
+
+    /**
+     * 記一次<b>跨行查表</b>的結果。
+     *
+     * <h2>為什麼專門記這個</h2>
+     * Major ID 與技能敘述走的都是這條路，而「名稱的顏色不見了／跟說明對調了」
+     * 我已經修錯兩次——每次都是照畫面猜原文的色段長怎樣，然後猜錯。
+     *
+     * <p>所以把現場整個寫下來：原文第一行<b>每一段的文字與顏色</b>、
+     * 查到的譯名、以及程式最後挑中的樣式。三者擺在一起，錯在哪一步一眼就看得到。
+     */
+    public static void flowed(java.util.List<com.wynntils.core.text.StyledText> run,
+                              String label, net.minecraft.network.chat.Style chosen) {
+        if (file == null || run == null || run.isEmpty() || flowedSeen >= FLOWED_LIMIT) {
+            return;
+        }
+        flowedSeen++;
+        StringBuilder sb = new StringBuilder();
+        sb.append("=== 跨行查表 ===").append(System.lineSeparator());
+        sb.append("  譯名：").append(label == null ? "（整段命中，沒有拆名稱）" : label)
+          .append(System.lineSeparator());
+        sb.append("  挑中的樣式：").append(describe(chosen)).append(System.lineSeparator());
+        sb.append("  原文第一行的色段：").append(System.lineSeparator());
+        int i = 0;
+        for (com.wynntils.core.text.StyledTextPart part : run.get(0)) {
+            String raw = part.getString(null, com.wynntils.core.text.type.StyleType.NONE);
+            com.wynntils.core.text.PartStyle ps = part.getPartStyle();
+            sb.append("    [").append(i++).append("] ")
+              .append(describe(ps == null ? null : ps.getStyle()))
+              .append("  「").append(raw).append("」").append(System.lineSeparator());
+        }
+        for (com.wynntils.core.text.StyledText line : run) {
+            sb.append("  原文：").append(line.getString()).append(System.lineSeparator());
+        }
+        try {
+            buffer.append(sb);
+            System.out.println("[WynnChaYuan] 跨行查表" + System.lineSeparator() + sb);
+            Files.writeString(file, buffer.toString(), StandardCharsets.UTF_8);
+        } catch (Throwable t) {
+            file = null;                       // 診斷絕不能反過來弄壞畫面
+        }
+    }
+
+    private static String describe(net.minecraft.network.chat.Style style) {
+        if (style == null) {
+            return "（無）";
+        }
+        net.minecraft.network.chat.TextColor colour = style.getColor();
+        return colour == null ? "繼承"
+                : String.format("#%06X", colour.getValue() & 0xFFFFFF);
+    }
 }

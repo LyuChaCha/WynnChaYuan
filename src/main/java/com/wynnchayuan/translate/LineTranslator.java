@@ -97,6 +97,9 @@ public final class LineTranslator {
             Flowed hit = lookupFlowedParts(template, store);
             translated = hit == null ? null : hit.text();
             flowed = hit != null;
+            if (hit != null) {
+                LayoutDebug.flowed(run, hit.label(), labelStyleOf(run.get(0)));
+            }
             if (hit != null && hit.label() != null) {
                 // 名稱那半在原文裡有自己的顏色（Major ID 的名稱是粉紅的），
                 // 而譯文是中文、跟原文對不起來，一般的樣式沿用比對不到。
@@ -233,16 +236,26 @@ public final class LineTranslator {
         // 名稱如果比同一行露出的說明還長，主要樣式就變成名稱，被判為「不同」的
         // 反而是說明——於是名稱套上說明的顏色、說明套上名稱的顏色，
         // 畫面上看起來就是<b>兩邊顏色對調</b>。
+        Style style = labelStyleOf(firstLine);
+        return style == null ? List.of() : List.of(new LineParts.Piece(core, style));
+    }
+
+    /**
+     * 名稱那一段的樣式：原文第一行<b>第一段有字母的</b>。
+     *
+     * <p>抽成一支是為了讓診斷跟正式路徑用同一份判斷。兩邊各寫一次的話，
+     * 診斷會說「挑到粉紅色」而畫面上是白的，然後就開始懷疑人生。
+     */
+    static Style labelStyleOf(StyledText firstLine) {
         for (StyledTextPart part : firstLine) {
             String raw = part.getString(null, StyleType.NONE);
             if (!GlyphSplitter.hasLetter(raw)) {
                 continue;                      // ✦ 那類純符號的段跳過
             }
             PartStyle ps = part.getPartStyle();
-            return List.of(new LineParts.Piece(
-                    core, ps == null ? Style.EMPTY : ps.getStyle()));
+            return ps == null ? Style.EMPTY : ps.getStyle();
         }
-        return List.of();
+        return null;
     }
 
     /** 「名稱：說明」的名稱最長到這裡。再長就不像標題了。 */

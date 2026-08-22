@@ -53,7 +53,10 @@ public final class StarterFiles {
                 if (in == null) {
                     continue;
                 }
-                Files.copy(in, dir.resolve(name), StandardCopyOption.REPLACE_EXISTING);
+                Path out = dir.resolve(name);
+                // 清單裡的名字可能帶資料夾（`ability/mage.json`），先把它建出來
+                Files.createDirectories(out.getParent());
+                Files.copy(in, out, StandardCopyOption.REPLACE_EXISTING);
                 written++;
             } catch (Exception e) {
                 System.err.println("[WynnChaYuan] 寫出 " + name + " 失敗: " + e.getMessage());
