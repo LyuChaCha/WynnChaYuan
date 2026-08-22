@@ -128,9 +128,15 @@ NUMBER = re.compile(r"\d[\d,]*(?:\.\d+)?%?")
 
 NUMBER_SLOT = "{~}"
 
-# 站在<b>空格位置</b>的 `{#}`：前面剛好是一個佔位符的右大括號，後面直接接文字。
+# 站在<b>空格位置</b>的 `{#}`：<b>前後都直接貼著字</b>，沒有任何空白。
 # 那正是被寫錯的那一個——原文那裡是一個空格。
-SPACE_SLOT = re.compile(r"\}\{#\}(?=[^\s(])")
+#
+# 先前只認「前面是佔位符右大括號」的情況，於是 `Tear{#}會過載`、
+# `Lightweaver{#}命中` 這種（前面是英文字尾）修不到，整條就被跳過——
+# 而那正是使用者回報「翻了卻沒出現」的那幾條。
+#
+# `({#})` 不會被誤判：左括號不在前置字元的範圍裡。
+SPACE_SLOT = re.compile(r"(?<=[\w一-鿿}])\{#\}(?=[\w一-鿿])")
 
 
 def fix_dst(dst: str, want_count: int) -> str | None:
@@ -146,7 +152,7 @@ def fix_dst(dst: str, want_count: int) -> str | None:
         # 開頭那串多出來的收成一個，並把原文本來就有的空格補回去——
         # 少了它畫面上會變成「圖示緊貼著中文」，跟原文的 `{#} Effect:` 對不上。
         fixed = re.sub(r"^(?:\{#\})+\s*", PLACEHOLDER + " ", fixed)
-    fixed = SPACE_SLOT.sub("} ", fixed)
+    fixed = SPACE_SLOT.sub(" ", fixed)
     return fixed if fixed.count(PLACEHOLDER) == want_count else None
 
 
