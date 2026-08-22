@@ -1,33 +1,31 @@
 # 世界觀與主線
 
-給翻譯團隊的共同底稿。**翻任務之前先讀這一份**——同一個詞在不同任務裡指的
-是不是同一件事，決定了譯文能不能對得起來。
+## 前言
+總而言之，Wynncraft 擁有著精采豐富的世界觀。(老大真的有嗎)
 
-這份文件裡的設定都是從我們自己抓下來的任務語料裡對出來的，不是憑印象寫的。
-引號裡的英文都是語料原句。看到與遊戲不符的地方，直接開 issue 或送 PR。
-搭配 [`GLOSSARY.md`](../GLOSSARY.md) 使用：**這裡講「是什麼」，對照表講「怎麼翻」。**
+那麼理所當然的，在翻譯包括但不限於任務、秘密發現、Major ID、裝備敘述等部分都應該鮮簡單的理解世界觀。
 
-另外，對**劇情、雙關、Neta 有問題，請到群組裡問人。**
+筆者認為，Wynncraft 的世界觀的是無法一夕之間了解的。那麼該怎麼辦呢？
 
+首先，[Wynncraft Wiki](https://wynncraft.wiki.gg/) 記載了許多關於 Wynncraft 的世界觀，通常搜尋相關分頁即可找到。
+
+但某些情況下牽扯到的部分又有很多，例如 Fruma 任務線便是一例，此時除了去 Wynncraft Wiki 查閱以外，也可以去**群組裡問其他人**以得到較為精確的回答。
+
+另外，任務中不乏出現冷笑話、雙關語、其餘作品的指涉等等，若不確定譯法也可以去群組裡問人。
 
 ---
+
 ## 一、世界的骨架
 
-### 三個省分
+Wynncraft 被依照地區分為三個不同的省分與中心的海洋，在世界觀下，三個省份面對的威脅與特徵皆不同。
+但坦白說，Wynncraft 的主線內容真的不多，基本上只有一條大主線：
 
-玩家一輩子會待的地方就這三塊，而且**三塊的氣質完全不同**，語氣要跟著換。
+- 玩家由 Fruma 進入 Wynn (King's Recruit)
+- Realm of Light 任務線 (Lari, NotG, NoL Raid)
+- Silent Expense 探索 (AJB, AJF)
+- Fruma 任務線 (五部十三篇章)
 
-| 行省 | 是什麼 | 語感 |
-|---|---|---|
-| **Wynn** | 人類的行省。戰亂、殘破、前線。玩家從這裡開始 | 粗糙、務實、軍旅味。士兵講話短 |
-| **Gavel** | 精靈（Elves）與村民的行省。古老、有秩序、帶信仰 | 典雅、句子長、敬語多 |
-| **Fruma** | 送新兵過來的那個行省。封閉、富庶、真面目不明 | 華麗、客氣、底下冷。愈有禮貌愈不對勁 |
-
-另外還有兩個「不是行省」的地方：
-
-- **the Silent Expanse（寂靜之境）**——Wynn 境內一塊未被發現的區域，在 A Journey Beyond 才被我們發現。
-- **Dern**——更深處的那一端。Dernic 是它的形容詞。另外，請務必注意 Dernal Forest 中的 Dernal 和此 Dern **完全無關**。
-
+對，因為其他大概都是支線任務，我們還是來講一下背景故事吧。
 
 ### 兩股力量
 
@@ -36,44 +34,25 @@
 
 **光（Light）**
 - **Orphion**——光之領域的存在，會挑選 `Orphion's pulse`(譯名待定)。
-- **the Realm of Light（光之領域）**——另一個位面。核心是 `the Nexus of Light`，
+- **Realm of Light（光之領域）**——另一個位面。核心是 `the Nexus of Light`，
   也就是 Orphion 的居所。
 - **Guardian of the Forest（森林守護者）**——Gavel 的守護存在，會給予指引。
 - **Lari**——Orphion 選中的人，活了一千年。她的整條線是「我努力了一千年，結果你幾週就做到了」的不甘心。**翻她的台詞要留住那份酸楚**。(還有不要看到生氣)
 
 **暗（Dern）**
-- **the Decay（衰朽）**——籠罩 Gavel 的災厄。
-
+- **Saphanis**——暗之巨獸
+- **Decay**——籠罩 Gavel 的災厄，吸走光芒並以黑暗籠罩大地。
+- **Realm of Dern（暗之領域）**
 
 **腐化（Corrpution）**
+- **Anathema**——腐化巨獸
+- **Realm of War**——特別提一嘴，不要和 **War of the Realms**(諸界之戰，譯名戰定) 搞混。
 - **Bak'al**——腐化那一側的關鍵名字。
-- **Corrupter of Worlds（世界腐化者）**——另一個關鍵名字。
+- **Corrupter of Worlds（世界腐化者）**——另一個關鍵名字。(或許有人印象中它是一位礦工，但在 Anathema 口中**證偽**！)
 - 光暗相撞而成的現象，和兩勢力相抗。
 - 不要，不要搞混 Dern 和 Corruption。
 
-### 玩家是誰
-
-這是整個模組最需要講清楚的一件事，因為它貫穿所有任務：
-
-**玩家是 Fruma 送到 Wynn 的新兵，而且記憶被抹除過。**
-
-- Fruma 對外的說法是「送人來幫忙打仗」，實際上是把「不要的人」清出去。
-- 記憶抹除是真的。`Memory Paranoia`、`King's Recruit` 裡 Tasim 說
-  「I can't remember anything from Fruma either」。
-- 在 Fruma 內部，有魔法的人被稱為 **the Cursed（受詛者）**。
-
----
-
-## 二、主線的四幕
-
-
-我被 AI 氣笑了，這邊全部刪掉，有問題找個懂劇情的人或是 Wynncraft Wiki，不要問 AI。
-但大體而言可以依照地區去分類
-Wynn -> Gavel -> Silent Expense -> Fruma
-其中 Fruma 有條很長的任務線，請搞清楚任務線在講什麼。
-
-
-## 三、Fruma 篇的勢力
+## 二、Fruma 篇的勢力
 
 ### 王室
 
