@@ -978,15 +978,15 @@
    "code": "MAGE-P4-R03-C04"
   },
   "a3719771d6f4": {
-   "src": "For every +{~}{#}Distortion {#}, the tornado gains\n+{~}{#}{#}{#}Area of Effect{#}and +{~}{#}{#}{#}Damage.",
-   "dst": "每 +{~1}{#}層 Distortion {#},龍捲風的\n{#}{#}{#}技能範圍{#}增加 +{~2},{#}{#}{#}傷害增加 +{~3}.",
+   "src": "For every +{~} Distortion {#}, the tornado gains\n+{~} {#} Area of Effect and +{~} {#} Damage.",
+   "dst": "每 +{~1} 層 Distortion {#}，龍捲風的\n{#} 技能範圍增加 +{~2}，{#} 傷害增加 +{~3}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "mage/Frozen Tornado"
    ],
    "lines": 2,
-   "flat": "For every +{~}{#}Distortion {#}, the tornado gains +{~}{#}{#}{#}Area of Effect{#}and +{~}{#}{#}{#}Damage.",
+   "flat": "For every +{~} Distortion {#}, the tornado gains +{~} {#} Area of Effect and +{~} {#} Damage.",
    "_raw": "For every +1 Distortion , the tornado gains\n+0.015  Area of Effect and +1.1%  Damage.",
    "tree": "01/mage/04/003/004",
    "ability": "Frozen Tornado",
@@ -1229,7 +1229,7 @@
   },
   "9d0df711d6ca": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "{~}秒內治癒量超過你最大生命值的 {~} 後，\n你的下一個治癒會附加傷害加成。",
+   "dst": "在 {~2} 秒內治癒量達到你最大生命值的 {~1} 後，\n你治療過的每一位玩家都會獲得傷害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1585,7 +1585,7 @@
   },
   "d075bb718288": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "使用馭火命中敵對目標時，魔力儲庫 ✺ 每 {~} 秒增加 {~} 點魔力。",
+   "dst": "以 Pyrokinesis 命中具敵意的敵人時，\n每 {~2} 秒為你的 Mana Bank ✺\n增加 +{~1} 點魔力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1667,7 +1667,7 @@
   },
   "8db5c0a23fd4": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "{~}秒內治癒量超過你最大生命值的 {~} 後，\n召喚一個繞著玩家的光球，\n在接觸目標時造成傷害。(最高 {~} 顆)",
+   "dst": "在 {~2} 秒內治癒量達到你最大生命值的 {~1} 後，\n召喚一顆繞著你旋轉的光球，\n接觸敵人時造成傷害。(最多 {~3} 顆)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2452,7 +2452,7 @@
   },
   "be911dcfbe99": {
    "src": "Healing {~} of your max health within {~}s\nwill make your next Heal activate Sunflare.",
-   "dst": "{~}秒內治癒量超過你最大生命值的 {~} 後，\n你的下一個治癒會發動日耀。\n日耀發動期間，你會回復附近友方的生命和魔力，",
+   "dst": "在 {~2} 秒內治癒量達到你最大生命值的 {~1} 後，\n你的下一次 Heal 會發動 Sunflare。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2532,7 +2532,7 @@
   },
   "70082e68c3c9": {
    "src": "If you have more than {~}\nMana, casting a spell will give\nyou +{~} Mana over {~}s.",
-   "dst": "當你有超過 {~} 魔力時，使用技能會使你每 {~} 秒回復 {~} 點魔力。",
+   "dst": "當你的魔力超過 {~1} 時，\n施放法術會在 {~3} 秒內\n為你回復 +{~2} 點魔力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2574,7 +2574,7 @@
   },
   "f2f828e950af": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "蹲下並施放祕法回流會召喚出一顆電球，\n每 {~} 秒對附近敵人造成一次傷害並消耗 {~} 點魔力。\n電球的傷害和魔力消耗隨著每一次命中提高 {~}。",
+   "dst": "當你的 Mana Bank ✺ 達到 {~1} 時，\n蹲下施放 Arcane Transfer 會召喚一顆電球，\n對附近的敵人造成傷害，\n並每 {~3} 秒消耗 {~2} 點魔力，\n直到魔力耗盡。",
    "role": "desc",
    "kind": "block",
    "ctx": [
