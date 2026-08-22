@@ -29,7 +29,7 @@ public final class LabelColonTest {
 
         // --- 帶冒號的鍵 ---
         check("帶冒號的鍵查得到", "傷害:".equals(store.lookup("Damage:")));
-        check("單獨的標籤", "傷害:".equals(look("Damage: ", store, false)));
+        check("單獨的標籤（拿到：[" + look("Damage: ", store, false) + "]）", "傷害: ".equals(look("Damage: ", store, false)));
         check("圖示 + 標籤", (glyph + " 傷害: ").equals(look(glyph + " Damage: ", store, false)));
 
         // --- 百分比變體 ---
