@@ -1,0 +1,203 @@
+"""照 `_raw` 校正被寫壞的 `{#}` 模板。
+
+<h2>壞在哪裡</h2>
+語料裡有一批條目的 `src` 跟遊戲實際送出的模板對不起來：
+
+    _raw : Nearby Bleeding ␣␣ enemies will take
+    src  : Nearby Bleeding {#}{#}enemies will take
+    應為 : Nearby Bleeding {#} enemies will take
+
+一個符號變成<b>兩個</b>佔位符，前後的空格還被吃掉一個。翻譯團隊回報的
+「shaman 的 ability tree 好像有符號漏洞」就是這個。
+
+<p>兩個後果：查表永遠落空（鍵跟遊戲算出來的不一樣），而且譯者看到
+`{#}{#}` 會以為真的有兩個符號，照著抄進譯文——就算哪天 `src` 修好了，
+譯文也跟著錯。
+
+<h2>怎麼判斷哪個是對的</h2>
+遊戲端的規則很單純：<b>一段連續的符號碼位就是一個 `{#}`</b>，其餘字元
+（含空格）原樣保留。`_raw` 是收集當下的原始文字，照它重算就是正解。
+
+<h2>為什麼不整份重算</h2>
+`_raw` 是純文字，沒有字型資訊。而遊戲端判斷「這是不是符號」靠的是字型——
+`{#}{#}{#}{#}{#}Az Rune` 那種前綴是<b>五個不同字型</b>的符號各自成段，
+從純文字看不出來，重算會把它們併成一個。
+
+<p>所以只修「碼位規則算得出來、而且差異僅止於 `{#}` 的重複與相鄰空格」
+的條目。其餘一律不動，只報告。改壞語料比留著壞條目糟得多。
+
+用法：
+    python tools/fix-glyph-templates.py
+    python tools/fix-glyph-templates.py --write
+"""
+
+from __future__ import annotations
+
+import io
+import json
+import pathlib
+import re
+import sys
+
+skipped = 0
+
+BASE = pathlib.Path("src/main/resources/assets/wynnchayuan/translations")
+NL = chr(10)
+
+PLACEHOLDER = "{#}"
+
+# 私用區與 Wynncraft 的排版平面。與 GlyphSplitter.isGlyphCodePoint 同一套範圍。
+GLYPH_RANGES = ((0xE000, 0xF8FF), (0xF0000, 0x10FFFF), (0xCF000, 0xD1000))
+
+
+def is_glyph(ch: str) -> bool:
+    cp = ord(ch)
+    return any(low <= cp <= high for low, high in GLYPH_RANGES)
+
+
+def expected(raw: str) -> str:
+    """把 `_raw` 換成模板：一段連續的符號碼位 -> 一個 `{#}`，其餘原樣。"""
+    out = []
+    i = 0
+    while i < len(raw):
+        if is_glyph(raw[i]):
+            while i < len(raw) and is_glyph(raw[i]):
+                i += 1
+            out.append(PLACEHOLDER)
+        else:
+            out.append(raw[i])
+            i += 1
+    return "".join(out)
+
+
+def skeleton(text: str) -> str:
+    """只留下「非佔位符」的骨架，用來確認兩邊講的是同一句話。
+
+    把每一段連續的 `{#}` 壓成一個記號、空白壓成一格。這樣比對就只在乎
+    「文字內容有沒有變」，不在乎符號被寫成幾個、空格是不是被吃掉——
+    而那兩件事正是要修的。
+    """
+    marked = re.sub(r"(?:\{#\})+", "\x00", text)
+    marked = re.sub(r"\s+", " ", marked)
+    # 記號<b>旁邊</b>的空格也要一起抹掉。被吃掉的正是那些空格，
+    # 留著比對的話每一條都會被判成「講的不是同一句話」而跳過。
+    return re.sub(r" ?\x00 ?", "\x00", marked).strip()
+
+
+def numbers(text: str) -> int:
+    return len(re.findall(r"\{~\d?\}", text))
+
+
+def multi_glyph_run(raw: str) -> bool:
+    """`_raw` 裡有沒有<b>連續兩個以上</b>的符號碼位。
+
+    有的話這一條不能碰。遊戲端是<b>一個字型段一個 `{#}`</b>，
+    `{#}{#}{#}{#}{#}Az Rune` 那種前綴就是五個不同字型的符號各自成段——
+    從純文字看不出字型，重算會把它們併成一個，那是把對的改成錯的。
+
+    <p>要修的那批長相很單純：一個符號、前後是空格。限縮在這個範圍內，
+    誤傷的機會就沒有了。
+    """
+    i = 0
+    while i < len(raw):
+        if is_glyph(raw[i]):
+            start = i
+            while i < len(raw) and is_glyph(raw[i]):
+                i += 1
+            if i - start > 1:
+                return True
+        else:
+            i += 1
+    return False
+
+
+def repair(entry: dict) -> str | None:
+    """這一條該改成什麼；不該動就回傳 None。"""
+    raw = entry.get("_raw")
+    src = entry.get("src")
+    if not raw or not src or PLACEHOLDER not in src:
+        return None
+    if multi_glyph_run(raw):
+        return None
+
+    # `_raw` 沒有參數化，`src` 有。先把兩邊的數值都換成同一個記號再比骨架，
+    # 否則 `+{~}s` 跟 `+6s` 永遠對不起來。正負號<b>不</b>算進去——
+    # 遊戲端的 {~} 不含符號（`+{~}`），連符號一起吃掉兩邊就對不齊了。
+    want = expected(raw)
+    if skeleton(re.sub(r"\{~\d?\}", "\x01", src)) != skeleton(
+            re.sub(r"\d[\d,.]*%?", "\x01", want)):
+        return None                     # 講的不是同一句話，別碰
+
+    # 照 want 的符號結構重寫 src：逐段對齊，文字那半沿用 src（它有參數化）。
+    src_parts = re.split(r"(?:\{#\})+", src)
+    want_parts = re.split(r"(?:\{#\})+", want)
+    if len(src_parts) != len(want_parts):
+        return None                     # 符號段數對不上，交給人看
+
+    rebuilt = []
+    for index, chunk in enumerate(src_parts):
+        if index:
+            rebuilt.append(PLACEHOLDER)
+        # 空格照 `_raw` 的，文字照 src 的——被吃掉的正是空格
+        lead = want_parts[index][:len(want_parts[index]) - len(want_parts[index].lstrip())]
+        tail = want_parts[index][len(want_parts[index].rstrip()):]
+        rebuilt.append(lead + chunk.strip() + tail)
+    fixed = "".join(rebuilt)
+    if fixed == src or numbers(fixed) != numbers(src):
+        return None
+    return fixed
+
+
+def main(argv: list[str]) -> int:
+    write = "--write" in argv
+    global skipped
+    changed = 0
+    skipped = 0
+    for path in sorted(BASE.rglob("*.json")):
+        if path.name.startswith("_"):
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        rows = data.get("entries")
+        if not isinstance(rows, dict):
+            continue
+        touched = []
+        for key, entry in rows.items():
+            if not isinstance(entry, dict):
+                continue
+            fixed = repair(entry)
+            if fixed is None:
+                if entry.get("_raw") and re.search(r"(?:\{#\}){2,}", entry.get("src", "")):
+                    skipped += 1
+                continue
+            # 譯文也照抄了那個多出來的 `{#}`。src 改了而 dst 沒改的話，
+            # 佔位符數量對不上，整條會在重建時被放棄——比原本更糟。
+            dst = entry.get("dst") or ""
+            if dst:
+                dst = re.sub(r"(?:\{#\})+", PLACEHOLDER, dst)
+                if dst.count(PLACEHOLDER) != fixed.count(PLACEHOLDER):
+                    skipped += 1
+                    continue            # 譯者放的位置跟原文不一樣，交給人看
+                entry["dst"] = dst
+            touched.append((key, entry["src"], fixed))
+            entry["src"] = fixed
+            if entry.get("flat"):
+                entry["flat"] = fixed.replace(NL, " ")
+        if not touched:
+            continue
+        print(f"  {path.relative_to(BASE)}  {len(touched)} 條")
+        for key, before, after in touched[:3]:
+            print(f"      {before.splitlines()[0][:64]!r}")
+            print(f"   -> {after.splitlines()[0][:64]!r}")
+        changed += len(touched)
+        if write:
+            path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + NL,
+                            encoding="utf-8", newline=NL)
+
+    print()
+    print(f"校正 {changed} 條，跳過 {skipped} 條（符號結構對不上，要人看）"
+          + ("" if write else "（預覽，加 --write 才寫回）"))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))

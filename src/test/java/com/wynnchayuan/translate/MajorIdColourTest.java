@@ -246,7 +246,101 @@ public final class MajorIdColourTest {
                         && colourOf(plain, "利他主義") == NAME_COLOUR);
 
         keepWordColour(store);
+        noStrayUnderline(store);
+        wrappedSevenLines(store);
         report();
+    }
+
+    /**
+     * 行內最長的那一段是底線，整段譯文<b>不能</b>跟著全部畫上底線。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 技能樹的 {@code Halo}：
+     *
+     * <pre>
+     *   Increase your Max Orbs        ← 整行灰色，22 字
+     *   from Lightweaver by +2.       ← Lightweaver 帶底線、11 字
+     * </pre>
+     *
+     * <p>「哪個樣式代表整段」先前是<b>逐行</b>算的：每一行的主樣式拿走整行的份量。
+     * 第二行裡 Lightweaver（11）比 from（5）與 by +2.（7）都長，於是「底線」成了
+     * 那一行的主樣式，還帶著整行 25 字的份量，壓過第一行的 22 字——
+     * 整段譯文就全部畫上了底線。改成逐<b>段</b>累計：灰 22+5+7=34、底線 11。
+     */
+    private static void noStrayUnderline(TranslationStore store) {
+        Style underlined = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR))
+                                      .withUnderlined(true);
+        Style plainGrey = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR));
+        MutableComponent second = Component.empty();
+        second.append(Component.literal("from ").withStyle(plainGrey));
+        second.append(Component.literal("Lightweaver").withStyle(underlined));
+        second.append(Component.literal(" by +2.").withStyle(plainGrey));
+
+        List<StyledText> run = List.of(
+                StyledText.fromComponent(
+                        Component.literal("Increase your Max Orbs").withStyle(plainGrey)),
+                StyledText.fromComponent(second));
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("Halo 那段查得到", out != null && !out.isEmpty());
+        if (out == null || out.isEmpty()) {
+            return;
+        }
+        int underlinedLeaves = 0;
+        int total = 0;
+        for (Component line : out) {
+            for (Component leaf : flatten(line)) {
+                if (leaf.getString().isBlank()) {
+                    continue;
+                }
+                total++;
+                if (leaf.getStyle().isUnderlined()) {
+                    underlinedLeaves++;
+                }
+            }
+        }
+        check("不是整段都畫上底線（" + underlinedLeaves + "/" + total + " 段有底線）",
+                total > 0 && underlinedLeaves < total);
+        check("該有底線的那個詞仍然有底線",
+                underlinedLeaves >= 1);
+    }
+
+    /**
+     * 遊戲實際把 Major ID 斷成<b>七行</b>時仍然查得到。
+     *
+     * <p>使用者回報「原文正確但是沒有正確翻譯」，而 {@code line-debug.txt} 顯示
+     * 那一段走的是「逐片段」——也就是整段查表<b>沒被叫到或沒中</b>。
+     * 這裡照畫面上真正的斷行方式重現一次，把它釘住。
+     */
+    private static void wrappedSevenLines(TranslationStore store) {
+        String[] rows = {
+            "Garden now centers to where",
+            "you land with Swan Dive.",
+            "Damage of Swan Dive,",
+            "Serpent's Garden and Jasmine",
+            "Bloom are distributed across",
+            "all elements.",
+        };
+        MutableComponent head = Component.empty();
+        head.append(Component.literal("").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6))));
+        head.append(Component.literal(
+                new StringBuilder().appendCodePoint(0xD0002) + "Efflorescence: ").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6))));
+        head.append(Component.literal("Serpent's").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR))));
+        List<StyledText> run = new ArrayList<>();
+        run.add(StyledText.fromComponent(head));
+        for (String row : rows) {
+            run.add(StyledText.fromComponent(Component.literal(row).withStyle(
+                    Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR)))));
+        }
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("斷成七行時整段仍然查得到（"
+                        + (out == null || out.isEmpty() ? "沒中"
+                           : out.get(0).getString()) + "）",
+                out != null && !out.isEmpty());
     }
 
     /**

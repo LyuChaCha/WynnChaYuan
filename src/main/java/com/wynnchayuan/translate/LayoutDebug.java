@@ -34,6 +34,15 @@ public final class LayoutDebug {
     private static final StringBuilder buffer = new StringBuilder();
     private static final Set<String> seen = new HashSet<>();
 
+    /**
+     * 每一份<b>看過</b>的 tooltip，就算沒有詳細記也掛號。
+     *
+     * <p>使用者回報坐騎那份 tooltip 的判斷結果沒出現在這裡，而額度明明還有。
+     * 少了這份名單，「沒被呼叫到」與「呼叫了但被去重擋掉」分不出來——
+     * 那是兩個完全不同的問題，先前已經在別的診斷上吃過一次虧。
+     */
+    private static final java.util.List<String> roster = new java.util.ArrayList<>();
+
     private LayoutDebug() {}
 
     public static void init(Path path) {
@@ -42,6 +51,7 @@ public final class LayoutDebug {
         written = 0;
         failures = 0;
         seen.clear();
+        roster.clear();
         buffer.setLength(0);
         buffer.append("# 置中判斷。每一行的縮排、內容寬度，以及置中時該有的縮排。")
               .append(System.lineSeparator())
@@ -66,6 +76,9 @@ public final class LayoutDebug {
                 return;
             }
             String key = lines.get(0).getString() + "/" + lines.size();
+            if (roster.size() < ROSTER_LIMIT) {
+                roster.add(oneLine(key));      // 先掛號，見 #roster
+            }
             if (!seen.add(key)) {
                 return;
             }
@@ -82,13 +95,27 @@ public final class LayoutDebug {
             // 同時印到遊戲紀錄。檔案寫得出來與否受權限、路徑、防毒影響，
             // 而 latest.log 一定在——先前連續三次回報回來都是空的。
             System.out.println("[WynnChaYuan] 版面判斷" + System.lineSeparator() + block);
-            Files.writeString(file, buffer.toString(), StandardCharsets.UTF_8);
+            Files.writeString(file, buffer + rosterText(), StandardCharsets.UTF_8);
         } catch (Throwable t) {
             // 診斷寫不出來就算了，絕不能反過來弄壞畫面。
             // 但<b>不要</b>把 file 設成 null——那等於整場遊戲的診斷就此關閉，
             // 使用者回報「這個檔案根本沒生成」，而真正的問題被藏在後面。
             failures++;
         }
+    }
+
+    /** 名單最多列幾份，避免一場遊戲下來塞成好幾千行。 */
+    private static final int ROSTER_LIMIT = 200;
+
+    /** 看過哪些 tooltip。詳細記錄用完額度之後，這份名單仍然在長。 */
+    private static String rosterText() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("=== 看過的 tooltip（共 ").append(roster.size()).append(" 份）===")
+          .append(System.lineSeparator());
+        for (String one : roster) {
+            sb.append("  ").append(one).append(System.lineSeparator());
+        }
+        return sb.toString();
     }
 
     /** 診斷失敗過幾次。寫在檔頭，才知道「內容很少」是不是因為一直寫失敗。 */

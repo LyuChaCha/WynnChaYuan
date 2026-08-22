@@ -70,8 +70,8 @@
    "code": "MAGE-P1-R00-C04"
   },
   "579282988a58": {
-   "src": "{#}{#}Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "{#}{#}技能範圍: {~} 格(圓形)",
+   "src": "{#} Area of Effect: {~} Blocks (Circle-Shaped)",
+   "dst": "{#}技能範圍: {~} 格(圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -86,8 +86,8 @@
    "code": "MAGE-P1-R00-C04"
   },
   "58c8b00f6702": {
-   "src": "{#}{#}Mana Cost: {~}",
-   "dst": "{#}{#}魔力消耗: {~}",
+   "src": "{#} Mana Cost: {~}",
+   "dst": "{#}魔力消耗: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -102,8 +102,8 @@
    "code": "MAGE-P1-R00-C04"
   },
   "aa643b1ce5cf": {
-   "src": "{#}{#}Range: {~} Blocks",
-   "dst": "{#}{#}施放範圍: {~} 格",
+   "src": "{#} Range: {~} Blocks",
+   "dst": "{#}施放範圍: {~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -118,8 +118,8 @@
    "code": "MAGE-P1-R00-C04"
   },
   "9f17813d7c38": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS)",
-   "dst": "{#}{#}總傷害: {~} (你的每秒傷害)",
+   "src": "{#} Total Damage: {~} (of your DPS)",
+   "dst": "{#}總傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -192,8 +192,8 @@
    "code": "MAGE-P1-R02-C06"
   },
   "85af516ef26b": {
-   "src": "{#}{#}Mana Cost: -{~}",
-   "dst": "{#}{#}魔力消耗: -{~}",
+   "src": "{#} Mana Cost: -{~}",
+   "dst": "{#}魔力消耗: -{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -291,7 +291,7 @@
   },
   "47b1abde7d83": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "你每從裝備上獲得 {~} 或 {~} 點法術傷害值，\n就獲得 +{~}/{~}s 魔力回復(上限 {~}/{~}s)",
+   "dst": "你每從裝備上獲得 {~1} 或 {~2} 點法術傷害值，\n就獲得 +{~3}/{~4}s 魔力回復(上限 {~5}/{~6}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -333,8 +333,8 @@
    "code": "MAGE-P2-R03-C02"
   },
   "fdf356c62595": {
-   "src": "{#}{#}Duration: {~}s",
-   "dst": "{#}{#}持續時間: {~}s",
+   "src": "{#} Duration: {~}s",
+   "dst": "{#}持續時間: {~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -422,8 +422,8 @@
    "code": "MAGE-P2-R03-C06"
   },
   "6fa77a4af54d": {
-   "src": "{#}{#}Effect: {~} Slowness ({#}) to Enemies",
-   "dst": "{#}{#}效果: {~} 緩速 ({#}) 給敵人",
+   "src": "{#} Effect: {~} Slowness ({#}) to Enemies",
+   "dst": "{#}效果: {~} 緩速 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -525,8 +525,8 @@
    "code": "MAGE-P3-R03-C07"
   },
   "8fda4fb4052a": {
-   "src": "{#}{#}Cooldown: {~}s",
-   "dst": "{#}{#}冷卻時間: {~}s",
+   "src": "{#} Cooldown: {~}s",
+   "dst": "{#}冷卻時間: {~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -629,8 +629,8 @@
    "code": "MAGE-P3-R04-C06"
   },
   "4e47bbe32254": {
-   "src": "{#}{#}Total Damage: +{~} (of your DPS)",
-   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害)",
+   "src": "{#} Total Damage: +{~} (of your DPS)",
+   "dst": "{#}總傷害: +{~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -659,7 +659,7 @@
   },
   "f23d419435dd": {
    "src": "When casting Meteor, instead summon\n{~} orbs of light with {~} Health that will\nattack when you use your Main Attack.",
-   "dst": "施放 Meteor 時改為召喚 {~} 顆\n擁有 {~} 點生命的光球;當你使用普攻時，\n它們會跟著攻擊。",
+   "dst": "施放 Meteor 時改為召喚 {~1} 顆\n擁有 {~2} 點生命的光球;當你使用普攻時，\n它們會跟著攻擊。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -718,7 +718,7 @@
   },
   "1a074efcb926": {
    "src": "Each Distortion {#} gives +{~} Raw Damage\nand decays at a rate of -{~} per second,\nincreasing as you gain Distortion {#}.",
-   "dst": "每一層 Distortion {#} 提供 +{~} 傷害值，\n並以每秒 -{~} 的速度衰減;\nDistortion {#} 疊得愈高，衰減得愈快。",
+   "dst": "每一層 Distortion {#} 提供 +{~1} 傷害值，\n並以每秒 -{~2} 的速度衰減;\nDistortion {#} 疊得愈高，衰減得愈快。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -819,7 +819,7 @@
   },
   "d0a6d45025a1": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\na Mana Bank ✺ for every aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.",
-   "dst": "Meteor、Ice Snake 與 Etheric Slash 每命中一個具敵意的敵人，\n就為 Mana Bank ✺ 增加 +{~} 點魔力。\nFrozen Tornado 與 Meteor Shower 則增加 +{~} 點魔力。",
+   "dst": "Meteor、Ice Snake 與 Etheric Slash 每命中一個具敵意的敵人，\n就為 Mana Bank ✺ 增加 +{~1} 點魔力。\nFrozen Tornado 與 Meteor Shower 則增加 +{~2} 點魔力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -876,8 +876,8 @@
    "code": "MAGE-P4-R02-C05"
   },
   "a5ea979fc963": {
-   "src": "{#}{#}Meteor Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "{#}{#}Meteor 技能範圍: {~} 格(圓形)",
+   "src": "{#} Meteor Area of Effect: {~} Blocks (Circle-Shaped)",
+   "dst": "{#}Meteor 技能範圍: {~} 格(圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -889,8 +889,8 @@
    "code": "MAGE-P4-R02-C05"
   },
   "db2416285194": {
-   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Meteor)",
-   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，隕石)",
+   "src": "{#} Total Damage: +{~} (of your DPS, for Meteor)",
+   "dst": "{#}總傷害: +{~}(你的每秒傷害，隕石)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -902,8 +902,8 @@
    "code": "MAGE-P4-R02-C05"
   },
   "86ccfee4a7da": {
-   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Ophanim)",
-   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，Ophanim)",
+   "src": "{#} Total Damage: +{~} (of your DPS, for Ophanim)",
+   "dst": "{#}總傷害: +{~}(你的每秒傷害，Ophanim)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1001,7 +1001,7 @@
   },
   "a3719771d6f4": {
    "src": "For every +{~}{#}Distortion {#}, the tornado gains\n+{~}{#}{#}{#}Area of Effect{#}and +{~}{#}{#}{#}Damage.",
-   "dst": "每 +{~}{#}層 Distortion {#},龍捲風的\n{#}{#}{#}技能範圍{#}增加 +{~},{#}{#}{#}傷害增加 +{~}.",
+   "dst": "每 +{~1}{#}層 Distortion {#},龍捲風的\n{#}{#}{#}技能範圍{#}增加 +{~2},{#}{#}{#}傷害增加 +{~3}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1015,8 +1015,8 @@
    "code": "MAGE-P4-R03-C04"
   },
   "715172885e2a": {
-   "src": "{#}{#}Slow Duration: {~}s",
-   "dst": "{#}{#}緩速持續時間: {~}s",
+   "src": "{#} Slow Duration: {~}s",
+   "dst": "{#}緩速持續時間: {~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1028,8 +1028,8 @@
    "code": "MAGE-P4-R03-C04"
   },
   "af858c8bb553": {
-   "src": "{#}{#}Tornado Duration: {~}s",
-   "dst": "{#}{#}龍捲風持續時間: {~}s",
+   "src": "{#} Tornado Duration: {~}s",
+   "dst": "{#}龍捲風持續時間: {~}s",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1100,8 +1100,8 @@
    "code": "MAGE-P4-R03-C08"
   },
   "46fe5cd612ba": {
-   "src": "{#}{#}Drift Range: {~} Blocks",
-   "dst": "{#}{#}漂移施放範圍: {~} 格",
+   "src": "{#} Drift Range: {~} Blocks",
+   "dst": "{#}漂移施放範圍: {~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1113,8 +1113,8 @@
    "code": "MAGE-P4-R03-C08"
   },
   "60e7717d66a9": {
-   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Frozen Tornado)",
-   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，冰凍龍捲風)",
+   "src": "{#} Total Damage: +{~} (of your DPS, for Frozen Tornado)",
+   "dst": "{#}總傷害: +{~} (你的每秒傷害，冰凍龍捲風)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1128,8 +1128,8 @@
    "code": "MAGE-P4-R03-C08"
   },
   "fe1c593b6105": {
-   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Ice Snake)",
-   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，冰蛇)",
+   "src": "{#} Total Damage: +{~} (of your DPS, for Ice Snake)",
+   "dst": "{#}總傷害: +{~} (你的每秒傷害，冰蛇)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1271,8 +1271,8 @@
    "code": "MAGE-P5-R01-C02"
   },
   "668cf679e72d": {
-   "src": "{#}{#}Effect: {~} Damage Bonus (⚔) to Allies",
-   "dst": "{#}{#}效果: {~} 傷害加成 (⚔) 給友軍",
+   "src": "{#} Effect: {~} Damage Bonus (⚔) to Allies",
+   "dst": "{#}效果: {~} 傷害加成 (⚔) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1398,7 +1398,7 @@
   },
   "6d2f157a7380": {
    "src": "For every +{~}{#}Distortion {#}, Vacuokinesis\ndeals +{~}{#}{#}{#}Damage.",
-   "dst": "每 +{~}{#}層 Distortion {#},Vacuokinesis\n的{#}{#}{#}傷害增加 +{~}.",
+   "dst": "每 +{~1}{#}層 Distortion {#},Vacuokinesis\n的{#}{#}{#}傷害增加 +{~2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1484,7 +1484,7 @@
   },
   "95c380095ce4": {
    "src": "For every {~}/{~}s Lifesteal you have\nfrom items, gain +{~} Spell Damage. (Max {~})",
-   "dst": "你每從裝備上獲得 {~}/{~}s 生命竊取，\n就獲得 +{~} 法術傷害。(上限 {~})",
+   "dst": "你每從裝備上獲得 {~1}/{~2}s 生命竊取，\n就獲得 +{~3} 法術傷害。(上限 {~4})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1526,8 +1526,8 @@
    "code": "MAGE-P5-R04-C00"
   },
   "780d6162ea2c": {
-   "src": "{#}{#}Delay: {~}s (per pulse)",
-   "dst": "{#}{#}延遲: {~} 秒(每次脈衝)",
+   "src": "{#} Delay: {~}s (per pulse)",
+   "dst": "{#}延遲: {~} 秒(每次脈衝)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1539,8 +1539,8 @@
    "code": "MAGE-P5-R04-C00"
   },
   "0d97c146c150": {
-   "src": "{#}{#}Pulse Self Heal: {~} (of your max health)",
-   "dst": "{#}{#}脈衝自我治療: {~}(你的最大生命)",
+   "src": "{#} Pulse Self Heal: {~} (of your max health)",
+   "dst": "{#}脈衝自我治療: {~}(你的最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1566,7 +1566,7 @@
   },
   "ace147e06111": {
    "src": "Casting Meteor summons an additional\nmeteor near the target location for\nevery {~}{#}Distortion {#} you have.\n(Max {~} Meteors, only one Meteor\nShower can be active at the same time.)",
-   "dst": "施放 Meteor 時，你每擁有 {~}{#}層\nDistortion {#},就在目標位置附近\n額外召喚一顆隕石。\n(最多 {~} 顆隕石，同時只能有一組\nMeteor Shower 生效。)",
+   "dst": "施放 Meteor 時，你每擁有 {~1}{#}層\nDistortion {#},就在目標位置附近\n額外召喚一顆隕石。\n(最多 {~2} 顆隕石，同時只能有一組\nMeteor Shower 生效。)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1580,23 +1580,23 @@
    "code": "MAGE-P5-R04-C04"
   },
   "de08ddcc6e44": {
-   "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~}{#}{#}{#}Damage and\nlosing -{~}{#}{#}{#}Area of Effect.",
-   "dst": "Meteor 與 Astral Fragmentation 會變小，\n{#}{#}{#}傷害減少 -{~},\n{#}{#}{#}技能範圍減少 -{~}.",
+   "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~} {#} Damage and\nlosing -{~} {#} Area of Effect.",
+   "dst": "Meteor 與 Astral Fragmentation 會變小，\n{#}傷害減少 -{~1},\n{#}技能範圍減少 -{~2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "mage/Meteor Shower"
    ],
    "lines": 3,
-   "flat": "Meteor and Astral Fragmentation become smaller, dealing -{~}{#}{#}{#}Damage and losing -{~}{#}{#}{#}Area of Effect.",
+   "flat": "Meteor and Astral Fragmentation become smaller, dealing -{~} {#} Damage and losing -{~} {#} Area of Effect.",
    "_raw": "Meteor and Astral Fragmentation become\nsmaller, dealing -20%  Damage and\nlosing -20%  Area of Effect.",
    "tree": "01/mage/05/004/004",
    "ability": "Meteor Shower",
    "code": "MAGE-P5-R04-C04"
   },
   "06ccf12fd577": {
-   "src": "{#}{#}Target Radius: {~} Blocks (Circle-Shaped)",
-   "dst": "{#}{#}目標半徑: {~} 格(圓形)",
+   "src": "{#} Target Radius: {~} Blocks (Circle-Shaped)",
+   "dst": "{#}目標半徑: {~} 格(圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1650,7 +1650,7 @@
   },
   "e428a0fd7f77": {
    "src": "Increases the health of Ophanim's\norbs by +{~} and reduces the\ndamage they take when attacking by -{~}.",
-   "dst": "將 Ophanim 光球的生命\n提高 +{~},並將它們攻擊時\n受到的傷害降低 -{~}.",
+   "dst": "將 Ophanim 光球的生命\n提高 +{~1},並將它們攻擊時\n受到的傷害降低 -{~2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1721,8 +1721,8 @@
    "code": "MAGE-P6-R01-C00"
   },
   "04d4e0aecde2": {
-   "src": "{#}{#}Area of Effect: {~} Block (Circle-Shaped)",
-   "dst": "{#}{#}技能範圍: {~} 格 (圓形)",
+   "src": "{#} Area of Effect: {~} Block (Circle-Shaped)",
+   "dst": "{#}技能範圍: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1763,7 +1763,7 @@
   },
   "de00c31d5d34": {
    "src": "The rift damages enemies every {~}s, increases\nyour Distortion {#} gain by +{~} and reduces\ndamage taken while standing in it.",
-   "dst": "裂隙每 {~}s 對敵人造成一次傷害，\n讓你的 Distortion {#} 累積速度 +{~},\n並降低站在其中時受到的傷害。",
+   "dst": "裂隙每 {~1}s 對敵人造成一次傷害，\n讓你的 Distortion {#} 累積速度 +{~2},\n並降低站在其中時受到的傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1820,8 +1820,8 @@
    "code": "MAGE-P6-R01-C06"
   },
   "50669b3486cb": {
-   "src": "{#}{#}Effects: +{~} Walk Speed",
-   "dst": "{#}{#}效果: +{~} 移動速度",
+   "src": "{#} Effects: +{~} Walk Speed",
+   "dst": "{#}效果: +{~} 移動速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1902,8 +1902,8 @@
    "code": "MAGE-P6-R02-C03"
   },
   "58fa315db261": {
-   "src": "{#}{#}Cooldown: {~}s (Riftbound)",
-   "dst": "{#}{#}冷卻時間: {~} 秒(Riftbound)",
+   "src": "{#} Cooldown: {~}s (Riftbound)",
+   "dst": "{#}冷卻時間: {~} 秒(Riftbound)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1970,7 +1970,7 @@
   },
   "3e98e915be8e": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer will rapidly unleash\nthe last {~} spells you've cast in order.",
-   "dst": "當你的 Mana Bank ✺ 達到 {~} 時，\n施放 Arcane Transfer 會依序快速\n重新釋放你最後施放的 {~} 個法術。",
+   "dst": "當你的 Mana Bank ✺ 達到 {~1} 時，\n施放 Arcane Transfer 會依序快速\n重新釋放你最後施放的 {~2} 個法術。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2040,8 +2040,8 @@
    "code": "MAGE-P6-R04-C02"
   },
   "01528f322394": {
-   "src": "{#}{#}Effect: +{~} Slowness ({#}) to Enemies",
-   "dst": "{#}{#}效果: +{~} 緩速 ({#}) 給敵人",
+   "src": "{#} Effect: +{~} Slowness ({#}) to Enemies",
+   "dst": "{#}效果: +{~} 緩速 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2081,8 +2081,8 @@
    "code": "MAGE-P6-R04-C04"
   },
   "5fb05e7c8588": {
-   "src": "{#}{#}Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
-   "dst": "{#}{#}效果: +{~} 移動速度給友軍(每 {~} 秒，上限 +{~})",
+   "src": "{#} Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
+   "dst": "{#}效果: +{~1} 移動速度給友軍(每 {~2} 秒，上限 +{~3})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2194,7 +2194,7 @@
   },
   "b15ec84dc5d4": {
    "src": "{#}{#}Main Attack Damage: +{~}{#}(per {~} Walk Speed)",
-   "dst": "{#}{#}普攻傷害: +{~}{#}(每 {~} 移動速度)",
+   "dst": "{#}{#}普攻傷害: +{~1}{#}(每 {~2} 移動速度)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2235,7 +2235,7 @@
   },
   "7432876af378": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.",
-   "dst": "Meteor、Ice Snake 與 Etheric Slash 每命中一個具敵意的敵人，\n就為你的 Mana Bank ✺ 增加 +{~} 點魔力。\nFrozen Tornado 與 Meteor Shower 則增加 +{~} 點魔力。",
+   "dst": "Meteor、Ice Snake 與 Etheric Slash 每命中一個具敵意的敵人，\n就為你的 Mana Bank ✺ 增加 +{~1} 點魔力。\nFrozen Tornado 與 Meteor Shower 則增加 +{~2} 點魔力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2306,7 +2306,7 @@
   },
   "9fd2ad19a558": {
    "src": "You gain +{~}{#}Distortion {#} for every enemy weakened.\n(Up to +{~})",
-   "dst": "每有一個敵人被虛弱，你就獲得 +{~}{#}層 Distortion {#}.\n(最多 +{~})",
+   "dst": "每有一個敵人被虛弱，你就獲得 +{~1}{#}層 Distortion {#}.\n(最多 +{~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2544,8 +2544,8 @@
    "code": "MAGE-P7-R04-C00"
   },
   "9f1d69d68705": {
-   "src": "{#}{#}Health Regen: {~} per second (of your max health)",
-   "dst": "{#}{#}生命回復: 每秒 {~}(你的最大生命)",
+   "src": "{#} Health Regen: {~} per second (of your max health)",
+   "dst": "{#}生命回復: 每秒 {~}(你的最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2557,8 +2557,8 @@
    "code": "MAGE-P7-R04-C00"
   },
   "1fd030046202": {
-   "src": "{#}{#}Mana Regen: {~} per second (of your max mana)",
-   "dst": "{#}{#}魔力回復: 每秒 {~}(你的最大魔力)",
+   "src": "{#} Mana Regen: {~} per second (of your max mana)",
+   "dst": "{#}魔力回復: 每秒 {~}(你的最大魔力)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2640,7 +2640,7 @@
   },
   "f2f828e950af": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "當你的 Mana Bank ✺ 達到 {~} 時，\n蹲下施放 Arcane Transfer\n會召喚一顆球狀閃電，對附近的\n敵人造成傷害，並持續吸取\n{~} 點魔力，每 {~} 秒一次，直到\n魔力耗盡為止。",
+   "dst": "當你的 Mana Bank ✺ 達到 {~1} 時，\n蹲下施放 Arcane Transfer\n會召喚一顆球狀閃電，對附近的\n敵人造成傷害，並持續吸取\n{~2} 點魔力，每 {~3} 秒一次，直到\n魔力耗盡為止。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2782,7 +2782,7 @@
   },
   "f4f53b73e7ab": {
    "src": "Time Vortex deals damage {~} faster, lasts\nlonger and grants +{~} Distortion {#} every\ntime it deals damage to an enemy.",
-   "dst": "Time Vortex 造成傷害的速度加快 {~}、持續時間\n更長，而且每次對敵人造成傷害時\n都提供 +{~} 層 Distortion {#}.",
+   "dst": "Time Vortex 造成傷害的速度加快 {~1}、持續時間\n更長，而且每次對敵人造成傷害時\n都提供 +{~2} 層 Distortion {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2796,8 +2796,8 @@
    "code": "MAGE-P8-R01-C04"
   },
   "d65521a69f27": {
-   "src": "{#}{#}Tornado Duration: +{~}s",
-   "dst": "{#}{#}龍捲風持續時間: +{~}s",
+   "src": "{#} Tornado Duration: +{~}s",
+   "dst": "{#}龍捲風持續時間: +{~}s",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3008,7 +3008,7 @@
   },
   "9fcd548862ce": {
    "src": "The Riftspawn shoots homing distorting\nblasts to nearby enemies every {~}s,\ndealing damage and increasing your\nDistortion {#} by +{~}.",
-   "dst": "Riftspawn 每 {~}s 會朝附近敵人\n射出追蹤的扭曲彈，造成傷害\n並使你的 Distortion {#} 增加 +{~}.",
+   "dst": "Riftspawn 每 {~1}s 會朝附近敵人\n射出追蹤的扭曲彈，造成傷害\n並使你的 Distortion {#} 增加 +{~2}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3036,7 +3036,7 @@
   },
   "14adb3ebb12e": {
    "src": "For every +{~}{#}Distortion {#}, the\nmana is refunded -{~}s faster.",
-   "dst": "每 +{~}{#}層 Distortion {#},\n魔力返還的速度就加快 -{~}s.",
+   "dst": "每 +{~1}{#}層 Distortion {#},\n魔力返還的速度就加快 -{~2}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3093,15 +3093,15 @@
    "code": "MAGE-P8-R04-C08"
   },
   "4af7bcbaddbf": {
-   "src": "Meteor, Pyrokinesis and Powder Specials\nconsume Unstable {#}{#}to deal +{~} damage.",
-   "dst": "Meteor、Pyrokinesis 與粉末特效會\n消耗 Unstable {#}{#}以造成 +{~} 傷害。",
+   "src": "Meteor, Pyrokinesis and Powder Specials\nconsume Unstable {#} to deal +{~} damage.",
+   "dst": "Meteor、Pyrokinesis 與粉末特效會\n消耗 Unstable {#}以造成 +{~} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "mage/Induced Instability"
    ],
    "lines": 2,
-   "flat": "Meteor, Pyrokinesis and Powder Specials consume Unstable {#}{#}to deal +{~} damage.",
+   "flat": "Meteor, Pyrokinesis and Powder Specials consume Unstable {#} to deal +{~} damage.",
    "_raw": "Meteor, Pyrokinesis and Powder Specials\nconsume Unstable  to deal +100% damage.",
    "tree": "01/mage/08/004/008",
    "ability": "Induced Instability",
@@ -3192,15 +3192,15 @@
    "code": "MAGE-P9-R02-C01"
   },
   "486d720effb9": {
-   "src": "Activate abilities or heal to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "發動技能或進行治療，\n將你的終極計量表 {#}{#}充能至 {~}",
+   "src": "Activate abilities or heal to charge\nyour Ultimate Meter {#} to {~}",
+   "dst": "發動技能或進行治療，\n將你的終極計量表 {#}充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "mage/Dawn"
    ],
    "lines": 2,
-   "flat": "Activate abilities or heal to charge your Ultimate Meter {#}{#}to {~}",
+   "flat": "Activate abilities or heal to charge your Ultimate Meter {#} to {~}",
    "_raw": "Activate abilities or heal to charge\nyour Ultimate Meter  to 100%",
    "tree": "01/mage/09/002/001",
    "ability": "Dawn",
@@ -3237,8 +3237,8 @@
    "code": "MAGE-P9-R02-C01"
   },
   "35fe21ddf4a0": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, per Wisp)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每個 Wisp)",
+   "src": "{#} Total Damage: {~} (of your DPS, per Wisp)",
+   "dst": "{#}總傷害: {~}(你的每秒傷害，每個 Wisp)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3250,8 +3250,8 @@
    "code": "MAGE-P9-R02-C01"
   },
   "cf1f4e39b5dc": {
-   "src": "{#}{#}Total Heal: {~} (of max health)",
-   "dst": "{#}{#}總治療量: {~}(最大生命)",
+   "src": "{#} Total Heal: {~} (of max health)",
+   "dst": "{#}總治療量: {~}(最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3321,8 +3321,8 @@
    "code": "MAGE-P9-R02-C07"
   },
   "4b90019282ec": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, Fire)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，火)",
+   "src": "{#} Total Damage: {~} (of your DPS, Fire)",
+   "dst": "{#}總傷害: {~}(你的每秒傷害，火)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3334,8 +3334,8 @@
    "code": "MAGE-P9-R02-C07"
   },
   "68dca3131824": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, Thunder)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，雷)",
+   "src": "{#} Total Damage: {~} (of your DPS, Thunder)",
+   "dst": "{#}總傷害: {~}(你的每秒傷害，雷)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3347,8 +3347,8 @@
    "code": "MAGE-P9-R02-C07"
   },
   "e16e0228026a": {
-   "src": "{#}{#}Vision: {~} Blocks",
-   "dst": "{#}{#}視野: {~} 格",
+   "src": "{#} Vision: {~} Blocks",
+   "dst": "{#}視野: {~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3389,7 +3389,7 @@
   },
   "0862b720d209": {
    "src": "While it is overloaded, it deals +{~} increased\ndamage, turns your Teleport into a deadly ray\nthat fires off {~} times in quick succession,\nprovides flight, and prevents mana drain.",
-   "dst": "過載期間，它造成的傷害提升 +{~},\n並把你的 Teleport 變成一道致命光束、\n短時間內連射 {~} 次，\n同時提供飛行並防止魔力流失。",
+   "dst": "過載期間，它造成的傷害提升 +{~1},\n並把你的 Teleport 變成一道致命光束、\n短時間內連射 {~2} 次，\n同時提供飛行並防止魔力流失。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3418,8 +3418,8 @@
    "code": "MAGE-P9-R03-C04"
   },
   "e3b65f807849": {
-   "src": "{#}{#}Area of Effect: +{~}",
-   "dst": "{#}{#}技能範圍: +{~}",
+   "src": "{#} Area of Effect: +{~}",
+   "dst": "{#}技能範圍: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3431,8 +3431,8 @@
    "code": "MAGE-P9-R03-C04"
   },
   "daba1e47609d": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, Collapse)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，Collapse)",
+   "src": "{#} Total Damage: {~} (of your DPS, Collapse)",
+   "dst": "{#}總傷害: {~}(你的每秒傷害，Collapse)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3444,8 +3444,8 @@
    "code": "MAGE-P9-R03-C04"
   },
   "3b5efe40d8d7": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, Deadly Beam)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，Deadly Beam)",
+   "src": "{#} Total Damage: {~} (of your DPS, Deadly Beam)",
+   "dst": "{#}總傷害: {~}(你的每秒傷害，Deadly Beam)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

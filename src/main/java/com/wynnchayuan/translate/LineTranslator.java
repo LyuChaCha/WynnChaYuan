@@ -198,7 +198,22 @@ public final class LineTranslator {
     private static Style dominantStyle(List<LineParts> parts) {
         java.util.Map<Style, Integer> weight = new java.util.LinkedHashMap<>();
         for (LineParts part : parts) {
-            weight.merge(part.textStyle(), part.template().length(), Integer::sum);
+            // 逐<b>段</b>累計，不是逐行。
+            //
+            // 先前是「每一行的主樣式拿走整行的份量」。那等於讓一行裡最長的那一段
+            // 代表整行——技能樹的
+            //
+            //   Increase your Max Orbs        ← 整行灰色，22 字
+            //   from Lightweaver by +2.       ← Lightweaver 帶底線、11 字，
+            //                                    但比 from(5) 與 by +2.(7) 都長
+            //
+            // 第二行的主樣式於是變成「底線」，還帶著整行 25 字的份量，
+            // 壓過第一行的 22 字——整段譯文就全部畫上了底線。
+            //
+            // 照實際字數累計就沒這問題：灰 22+5+7=34、底線 11，灰勝。
+            for (LineParts.Piece run : part.runs()) {
+                weight.merge(run.style(), run.text().length(), Integer::sum);
+            }
         }
         Style best = parts.get(0).textStyle();
         int most = -1;
