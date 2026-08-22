@@ -69,32 +69,50 @@ public final class LayoutDebug {
         }
     }
 
-    /** 一份 tooltip 的判斷結果。同一份只寫一次。 */
+    /**
+     * 一份 tooltip 的判斷結果。同一份只寫一次。
+     *
+     * <h2>為什麼要拆成三段各自 try</h2>
+     * 先前整支包在<b>一個</b> try 裡：{@code BlockLayout.explain} 一丟例外，
+     * 連掛號與寫檔都跳過了，檔案就永遠停在只有檔頭的樣子。使用者回報
+     * 「layout-debug.txt 是空的」，而那正是要用來查坐騎置中的唯一依據——
+     * 診斷自己失敗卻不留痕跡，比沒有診斷更誤導。
+     *
+     * <p>現在：掛號一定會做、寫檔一定會做，中間算不出來就<b>把例外寫進檔案</b>。
+     */
     public static void record(List<Component> lines, boolean[] centered) {
+        if (file == null || lines == null || lines.isEmpty()) {
+            return;
+        }
+        String key;
         try {
-            if (file == null || written >= LIMIT || lines.isEmpty()) {
-                return;
-            }
-            String key = lines.get(0).getString() + "/" + lines.size();
-            if (roster.size() < ROSTER_LIMIT) {
-                roster.add(oneLine(key));      // 先掛號，見 #roster
-            }
-            if (!seen.add(key)) {
-                return;
-            }
+            key = lines.get(0).getString() + "/" + lines.size();
+        } catch (Throwable t) {
+            return;                            // 連名字都取不到，沒東西可記
+        }
+        if (roster.size() < ROSTER_LIMIT) {
+            roster.add(oneLine(key));          // 先掛號，見 #roster
+        }
+        if (written < LIMIT && seen.add(key)) {
             written++;
-            buffer.append("=== ").append(written).append(" · ")
-                  .append(oneLine(lines.get(0).getString()))
-                  .append(" ===").append(System.lineSeparator())
-                  .append(BlockLayout.explain(lines, centered))
-                  .append(System.lineSeparator());
-            // 上面那段的長度等一下要用來切出「這一份」，先算好
-            String explained = BlockLayout.explain(lines, centered);
-            int from = Math.max(0, buffer.length() - 1 - explained.length());
-            String block = buffer.substring(from);
-            // 同時印到遊戲紀錄。檔案寫得出來與否受權限、路徑、防毒影響，
-            // 而 latest.log 一定在——先前連續三次回報回來都是空的。
-            System.out.println("[WynnChaYuan] 版面判斷" + System.lineSeparator() + block);
+            try {
+                String explained = BlockLayout.explain(lines, centered);
+                buffer.append("=== ").append(written).append(" · ")
+                      .append(oneLine(key)).append(" ===").append(System.lineSeparator())
+                      .append(explained).append(System.lineSeparator());
+                // 同時印到遊戲紀錄。檔案寫得出來與否受權限、路徑、防毒影響，
+                // 而 latest.log 一定在——先前連續三次回報回來都是空的。
+                System.out.println("[WynnChaYuan] 版面判斷" + System.lineSeparator()
+                        + explained);
+            } catch (Throwable t) {
+                failures++;
+                buffer.append("=== ").append(written).append(" · ")
+                      .append(oneLine(key)).append(" ===").append(System.lineSeparator())
+                      .append("  這一份算不出來：").append(t)
+                      .append(System.lineSeparator()).append(System.lineSeparator());
+            }
+        }
+        try {
             Files.writeString(file, buffer + rosterText(), StandardCharsets.UTF_8);
         } catch (Throwable t) {
             // 診斷寫不出來就算了，絕不能反過來弄壞畫面。
@@ -110,8 +128,13 @@ public final class LayoutDebug {
     /** 看過哪些 tooltip。詳細記錄用完額度之後，這份名單仍然在長。 */
     private static String rosterText() {
         StringBuilder sb = new StringBuilder();
-        sb.append("=== 看過的 tooltip（共 ").append(roster.size()).append(" 份）===")
-          .append(System.lineSeparator());
+        sb.append("=== 看過的 tooltip（共 ").append(roster.size()).append(" 份");
+        if (failures > 0) {
+            // 「內容很少」有兩種可能：沒被呼叫到，或呼叫了但一直算不出來。
+            // 把失敗次數擺在明面上，一眼就分得出是哪一種。
+            sb.append("，其中 ").append(failures).append(" 份算不出來");
+        }
+        sb.append("）===").append(System.lineSeparator());
         for (String one : roster) {
             sb.append("  ").append(one).append(System.lineSeparator());
         }
