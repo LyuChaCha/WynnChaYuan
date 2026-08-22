@@ -93,6 +93,7 @@ public final class TranslationStore {
     public void loadAll(Path dir) {
         entries.clear();
         flat.clear();
+        speakers.clear();
         terms.clear();
         maxTermWords = 1;
         maxBlockLines = 1;
@@ -225,6 +226,10 @@ public final class TranslationStore {
                 entries.put(srcKey, dst.strip());
                 noteBlockSize(srcKey);
                 noteFlat(srcKey, dst.strip());
+                String who = optString(e, "speaker");
+                if (who != null && !who.isBlank()) {
+                    speakers.put(srcKey, who.strip());
+                }
                 if ("name".equals(optString(e, "role"))) {
                     if (itemNames) {
                         nameKeys.add(srcKey);
@@ -382,6 +387,22 @@ public final class TranslationStore {
     }
 
     /** @return 譯文；沒有對應條目時回傳 {@code null} */
+    /**
+     * 這句話是誰講的。
+     *
+     * <h2>為什麼要有</h2>
+     * 對話疊層只顯示一段文字，玩家看不出來是誰在說——尤其是同一個場景裡
+     * 好幾個 NPC 輪流講話的時候。語料裡本來就有 `speaker`，只是沒被帶進遊戲。
+     *
+     * @return 說話者的名字，沒有就回 null
+     */
+    public String speakerOf(String template) {
+        return template == null ? null : speakers.get(template.strip());
+    }
+
+    /** 每一句對話的說話者。見 {@link #speakerOf}。 */
+    private final Map<String, String> speakers = new ConcurrentHashMap<>();
+
     public String lookup(String template) {
         if (template == null) {
             return null;

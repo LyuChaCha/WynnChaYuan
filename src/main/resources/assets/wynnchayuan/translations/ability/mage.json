@@ -291,7 +291,7 @@
   },
   "47b1abde7d83": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "你每從裝備上獲得 {~} 或 {~} 點法術傷害值，\n就獲得 +{~}/{~}s 魔力回復（上限 {~}/{~}s）",
+   "dst": "你每從裝備上獲得 {~} 或 {~} 點法術傷害值，\n就獲得 +{~}/{~}s 魔力回復(上限 {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -319,7 +319,7 @@
   },
   "53fbf1a23aeb": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "治療你自己與周圍大範圍內的友軍。\n（治療他人時，單次無法治療\n超過其最大生命的 {~}）",
+   "dst": "治療你自己與周圍大範圍內的友軍。\n(治療他人時，單次無法治療\n超過其最大生命的 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -659,7 +659,7 @@
   },
   "f23d419435dd": {
    "src": "When casting Meteor, instead summon\n{~} orbs of light with {~} Health that will\nattack when you use your Main Attack.",
-   "dst": "施放 Meteor 時改為召喚 {~} 顆\n擁有 {~} 點生命的光球；當你使用普攻時，\n它們會跟著攻擊。",
+   "dst": "施放 Meteor 時改為召喚 {~} 顆\n擁有 {~} 點生命的光球;當你使用普攻時，\n它們會跟著攻擊。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -718,7 +718,7 @@
   },
   "1a074efcb926": {
    "src": "Each Distortion {#} gives +{~} Raw Damage\nand decays at a rate of -{~} per second,\nincreasing as you gain Distortion {#}.",
-   "dst": "每一層 Distortion {#} 提供 +{~} 傷害值，\n並以每秒 -{~} 的速度衰減；\nDistortion {#} 疊得愈高，衰減得愈快。",
+   "dst": "每一層 Distortion {#} 提供 +{~} 傷害值，\n並以每秒 -{~} 的速度衰減;\nDistortion {#} 疊得愈高，衰減得愈快。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -733,7 +733,7 @@
   },
   "4532fcf5cb36": {
    "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "用 Etheric Slash 命中敵人時，每 {~}s\n最多獲得 +{~} 層 Distortion {#}。",
+   "dst": "用 Etheric Slash 命中敵人時，每 {~2} 秒\n最多獲得 +{~1} 層 Distortion {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -761,7 +761,7 @@
   },
   "8cac4c3c5e31": {
    "src": "Casting Teleport while sneaking places an\nethereal image of yourself at your location.",
-   "dst": "蹲下時施放 Teleport，會在你所在的位置\n留下一個自己的虛影。",
+   "dst": "蹲下時施放 Teleport,會在你所在的位置\n留下一個自己的虛影。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1001,7 +1001,7 @@
   },
   "a3719771d6f4": {
    "src": "For every +{~}{#}Distortion {#}, the tornado gains\n+{~}{#}{#}{#}Area of Effect{#}and +{~}{#}{#}{#}Damage.",
-   "dst": "每 +{~}{#}層 Distortion {#}，龍捲風的\n{#}{#}{#}技能範圍{#}增加 +{~}，{#}{#}{#}傷害增加 +{~}。",
+   "dst": "每 +{~}{#}層 Distortion {#},龍捲風的\n{#}{#}{#}技能範圍{#}增加 +{~},{#}{#}{#}傷害增加 +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1186,7 +1186,7 @@
   },
   "9a8e98ccc36b": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "用普攻命中敵人時，每 {~}s\n最多獲得 +{~} 層 Distortion {#}。",
+   "dst": "用普攻命中敵人時，每 {~2} 秒\n最多獲得 +{~1} 層 Distortion {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1214,7 +1214,7 @@
   },
   "84b23f2f9c8d": {
    "src": "Increase your maximum\nMana Bank ✺ by +{~}.",
-   "dst": "將你 Mana Bank ✺ 的\n上限提高 +{~}。",
+   "dst": "將你 Mana Bank ✺ 的\n上限提高 +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1257,7 +1257,7 @@
   },
   "9d0df711d6ca": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "在 {~}s 內治療了你最大生命的 {~}，\n就會為你治療過的每一位玩家\n附加一份傷害加成。",
+   "dst": "在 {~2} 秒內治療了你最大生命的 {~1},\n就會為你治療過的每一位玩家\n附加一份傷害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1398,7 +1398,7 @@
   },
   "6d2f157a7380": {
    "src": "For every +{~}{#}Distortion {#}, Vacuokinesis\ndeals +{~}{#}{#}{#}Damage.",
-   "dst": "每 +{~}{#}層 Distortion {#}，Vacuokinesis\n的{#}{#}{#}傷害增加 +{~}。",
+   "dst": "每 +{~}{#}層 Distortion {#},Vacuokinesis\n的{#}{#}{#}傷害增加 +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1441,7 +1441,7 @@
   },
   "782d13fbf059": {
    "src": "Frozen Tornado will summon {~} tornados.\n(Enemies cannot be damaged by multiple\ntornados or snakes at the same time.)",
-   "dst": "Frozen Tornado 會召喚 {~} 道龍捲風。\n（敵人無法同時被多道龍捲風\n或多條蛇造成傷害。）",
+   "dst": "Frozen Tornado 會召喚 {~} 道龍捲風。\n(敵人無法同時被多道龍捲風\n或多條蛇造成傷害。)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1484,7 +1484,7 @@
   },
   "95c380095ce4": {
    "src": "For every {~}/{~}s Lifesteal you have\nfrom items, gain +{~} Spell Damage. (Max {~})",
-   "dst": "你每從裝備上獲得 {~}/{~}s 生命竊取，\n就獲得 +{~} 法術傷害。（上限 {~}）",
+   "dst": "你每從裝備上獲得 {~}/{~}s 生命竊取，\n就獲得 +{~} 法術傷害。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1566,7 +1566,7 @@
   },
   "ace147e06111": {
    "src": "Casting Meteor summons an additional\nmeteor near the target location for\nevery {~}{#}Distortion {#} you have.\n(Max {~} Meteors, only one Meteor\nShower can be active at the same time.)",
-   "dst": "施放 Meteor 時，你每擁有 {~}{#}層\nDistortion {#}，就在目標位置附近\n額外召喚一顆隕石。\n（最多 {~} 顆隕石，同時只能有一組\nMeteor Shower 生效。）",
+   "dst": "施放 Meteor 時，你每擁有 {~}{#}層\nDistortion {#},就在目標位置附近\n額外召喚一顆隕石。\n(最多 {~} 顆隕石，同時只能有一組\nMeteor Shower 生效。)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1581,7 +1581,7 @@
   },
   "de08ddcc6e44": {
    "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~}{#}{#}{#}Damage and\nlosing -{~}{#}{#}{#}Area of Effect.",
-   "dst": "Meteor 與 Astral Fragmentation 會變小，\n{#}{#}{#}傷害減少 -{~}，\n{#}{#}{#}技能範圍減少 -{~}。",
+   "dst": "Meteor 與 Astral Fragmentation 會變小，\n{#}{#}{#}傷害減少 -{~},\n{#}{#}{#}技能範圍減少 -{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1622,7 +1622,7 @@
   },
   "d075bb718288": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "命中具敵意的敵人時，Pyrokinesis 會每 {~}s\n為你的 Mana Bank ✺ 增加\n+{~} 點魔力。",
+   "dst": "命中具敵意的敵人時，Pyrokinesis 會每 {~2} 秒\n為你的 Mana Bank ✺ 增加\n+{~1} 點魔力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1650,7 +1650,7 @@
   },
   "e428a0fd7f77": {
    "src": "Increases the health of Ophanim's\norbs by +{~} and reduces the\ndamage they take when attacking by -{~}.",
-   "dst": "將 Ophanim 光球的生命\n提高 +{~}，並將它們攻擊時\n受到的傷害降低 -{~}。",
+   "dst": "將 Ophanim 光球的生命\n提高 +{~},並將它們攻擊時\n受到的傷害降低 -{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1707,7 +1707,7 @@
   },
   "8db5c0a23fd4": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "在 {~}s 內治療了你最大生命的 {~}，\n就會召喚一顆環繞的光球，\n接觸到敵人時造成傷害。（最多 {~} 顆）",
+   "dst": "在 {~2} 秒內治療了你最大生命的 {~1},\n就會召喚一顆環繞的光球，\n接觸到敵人時造成傷害。(最多 {~3} 顆)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1763,7 +1763,7 @@
   },
   "de00c31d5d34": {
    "src": "The rift damages enemies every {~}s, increases\nyour Distortion {#} gain by +{~} and reduces\ndamage taken while standing in it.",
-   "dst": "裂隙每 {~}s 對敵人造成一次傷害，\n讓你的 Distortion {#} 累積速度 +{~}，\n並降低站在其中時受到的傷害。",
+   "dst": "裂隙每 {~}s 對敵人造成一次傷害，\n讓你的 Distortion {#} 累積速度 +{~},\n並降低站在其中時受到的傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1778,7 +1778,7 @@
   },
   "700917dd1560": {
    "src": "The rift's benefits and damage linger\nfor {~}s upon leaving its area.",
-   "dst": "離開裂隙範圍後，它的增益與傷害\n仍會殘留 {~}s。",
+   "dst": "離開裂隙範圍後，它的增益與傷害\n仍會殘留 {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1942,7 +1942,7 @@
   },
   "b61bf970d4d1": {
    "src": "Shoots Meteor from you as a slow projectile.",
-   "dst": "改為從你身上射出 Meteor，作為緩慢的投射物。",
+   "dst": "改為從你身上射出 Meteor,作為緩慢的投射物。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1998,7 +1998,7 @@
   },
   "36a682a70244": {
    "src": "Increase your maximum orbs\nfrom Ophanim by +{~}.",
-   "dst": "將 Ophanim 的光球\n上限提高 +{~}。",
+   "dst": "將 Ophanim 的光球\n上限提高 +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2067,7 +2067,7 @@
   },
   "a644a494eaa3": {
    "src": "Creates an area of effect when sprinting\nthat increases the walk speed of all\nallies the longer they run in it.\n(You lose {~} Walk Speed Bonus every second\nonce you stop running)",
-   "dst": "衝刺時產生一個作用區域，\n區域內的所有友軍在其中跑得愈久，\n移動速度加成就愈高。\n（一旦停止跑動，你每秒會失去\n{~} 的移動速度加成）",
+   "dst": "衝刺時產生一個作用區域，\n區域內的所有友軍在其中跑得愈久，\n移動速度加成就愈高。\n(一旦停止跑動，你每秒會失去\n{~} 的移動速度加成)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2108,7 +2108,7 @@
   },
   "8ea497d9f45f": {
    "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "Ice Snake 會將敵人冰凍 {~}s。",
+   "dst": "Ice Snake 會將敵人冰凍 {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2164,7 +2164,7 @@
   },
   "1e2295c5e38b": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "用普攻命中敵人，可讓 Time Dilation\n停止衰減 {~}s。",
+   "dst": "用普攻命中敵人，可讓 Time Dilation\n停止衰減 {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2220,7 +2220,7 @@
   },
   "23b4646e6fbb": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "Arcane Restoration 回復魔力的速度加快 {~}s。",
+   "dst": "Arcane Restoration 回復魔力的速度加快 {~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2263,7 +2263,7 @@
   },
   "8a27c1b7a58a": {
    "src": "Increase the health of your orbs\nfrom Ophanim by +{~}.",
-   "dst": "將你 Ophanim 光球的生命\n提高 +{~}。",
+   "dst": "將你 Ophanim 光球的生命\n提高 +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2306,7 +2306,7 @@
   },
   "9fd2ad19a558": {
    "src": "You gain +{~}{#}Distortion {#} for every enemy weakened.\n(Up to +{~})",
-   "dst": "每有一個敵人被虛弱，你就獲得 +{~}{#}層 Distortion {#}。\n（最多 +{~}）",
+   "dst": "每有一個敵人被虛弱，你就獲得 +{~}{#}層 Distortion {#}.\n(最多 +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2347,7 +2347,7 @@
   },
   "ee12f73d06ec": {
    "src": "Increase the effects gained from Distortion {#} by +{~}.",
-   "dst": "將 Distortion {#} 帶來的效果提升 +{~}。",
+   "dst": "將 Distortion {#} 帶來的效果提升 +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2388,7 +2388,7 @@
   },
   "28da7f9b01eb": {
    "src": "Increases your maximum orbs\nfrom Ophanim by +{~} and\nreduces their damage.",
-   "dst": "將 Ophanim 的光球上限\n提高 +{~}，但降低\n它們的傷害。",
+   "dst": "將 Ophanim 的光球上限\n提高 +{~},但降低\n它們的傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2444,7 +2444,7 @@
   },
   "d22a5d708c87": {
    "src": "Meteor Shower summons meteors +{~} faster.",
-   "dst": "Meteor Shower 召喚隕石的速度加快 +{~}。",
+   "dst": "Meteor Shower 召喚隕石的速度加快 +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2472,7 +2472,7 @@
   },
   "8837d646a774": {
    "src": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
-   "dst": "蹲下時施放 Heal，會把你綁定到你的\nDimensional Tear 上，使你進入 Riftbound 狀態。",
+   "dst": "蹲下時施放 Heal,會把你綁定到你的\nDimensional Tear 上，使你進入 Riftbound 狀態。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2515,7 +2515,7 @@
   },
   "be911dcfbe99": {
    "src": "Healing {~} of your max health within {~}s\nwill make your next Heal activate Sunflare.",
-   "dst": "在 {~}s 內治療了你最大生命的 {~}，\n下一次 Heal 就會啟動 Sunflare。",
+   "dst": "在 {~2} 秒內治療了你最大生命的 {~1},\n下一次 Heal 就會啟動 Sunflare.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2597,7 +2597,7 @@
   },
   "70082e68c3c9": {
    "src": "If you have more than {~}\nMana, casting a spell will give\nyou +{~} Mana over {~}s.",
-   "dst": "若你的魔力超過 {~}，\n施放法術會在 {~}s 內\n為你提供 +{~} 點魔力。",
+   "dst": "若你的魔力超過 {~1},\n施放法術會在 {~3} 秒內\n為你提供 +{~2} 點魔力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2625,7 +2625,7 @@
   },
   "b675ff738ecd": {
    "src": "Mana cost and damage increase by\n{~} every time it deals damage.",
-   "dst": "每造成一次傷害，它的魔力消耗\n與傷害就提升 {~}。",
+   "dst": "每造成一次傷害，它的魔力消耗\n與傷害就提升 {~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2668,7 +2668,7 @@
   },
   "d5979091dd76": {
    "src": "Increase your Max Orbs\nfrom Lightweaver by +{~}.",
-   "dst": "將你 Lightweaver 的\n光球上限提高 +{~}。",
+   "dst": "將你 Lightweaver 的\n光球上限提高 +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2724,7 +2724,7 @@
   },
   "952700d87f95": {
    "src": "Hitting an ally with a Lightweaver orb\nconsumes the orb and applies Shining {#}.",
-   "dst": "用 Lightweaver 的光球命中友軍時，\n會消耗該光球並施加 Shining {#}。",
+   "dst": "用 Lightweaver 的光球命中友軍時，\n會消耗該光球並施加 Shining {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2767,7 +2767,7 @@
   },
   "4dbb8d1f418f": {
    "src": "Casting Frozen Tornado inside your Dimensional\nTear infuses it with otherworldly energies,\nturning it into a Time Vortex.",
-   "dst": "在你的 Dimensional Tear 內施放 Frozen Tornado，\n會為它灌注異界能量，\n使其轉變為 Time Vortex。",
+   "dst": "在你的 Dimensional Tear 內施放 Frozen Tornado,\n會為它灌注異界能量，\n使其轉變為 Time Vortex.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2782,7 +2782,7 @@
   },
   "f4f53b73e7ab": {
    "src": "Time Vortex deals damage {~} faster, lasts\nlonger and grants +{~} Distortion {#} every\ntime it deals damage to an enemy.",
-   "dst": "Time Vortex 造成傷害的速度加快 {~}、持續時間\n更長，而且每次對敵人造成傷害時\n都提供 +{~} 層 Distortion {#}。",
+   "dst": "Time Vortex 造成傷害的速度加快 {~}、持續時間\n更長，而且每次對敵人造成傷害時\n都提供 +{~} 層 Distortion {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2823,7 +2823,7 @@
   },
   "7633bf83363a": {
    "src": "Arcane Transfer will allow you to overflow\nyour mana over its maximum limits. (Max {~})",
-   "dst": "Arcane Transfer 會讓你的魔力\n溢出到上限之上。（最多 {~}）",
+   "dst": "Arcane Transfer 會讓你的魔力\n溢出到上限之上。(最多 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2851,7 +2851,7 @@
   },
   "9b6edf8bf6f4": {
    "src": "Nearby players gain {~}\nof the Mana you gain from\nMana Regen and Mana Steal.",
-   "dst": "周圍的玩家會獲得你從\n魔力回復與魔力竊取\n所得魔力的 {~}。",
+   "dst": "周圍的玩家會獲得你從\n魔力回復與魔力竊取\n所得魔力的 {~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2937,7 +2937,7 @@
   },
   "dfdd452db1af": {
    "src": "Crystallized {#} starts decaying at\na rate of -{~} every second if\nnone is applied for {~}s.",
-   "dst": "若 {~}s 內沒有再施加，\nCrystallized {#} 會開始以每秒 -{~}\n的速度衰減。",
+   "dst": "若 {~2} 秒內沒有再施加，\nCrystallized {#} 會開始以每秒 -{~1}\n的速度衰減。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2952,7 +2952,7 @@
   },
   "8453e1a7e91b": {
    "src": "Lightweaver{#}applies +{~} Crystallized {#}\nto enemies it hits.",
-   "dst": "Lightweaver{#}命中的敵人會被施加\n+{~} 層 Crystallized {#}。",
+   "dst": "Lightweaver{#}命中的敵人會被施加\n+{~} 層 Crystallized {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3008,7 +3008,7 @@
   },
   "9fcd548862ce": {
    "src": "The Riftspawn shoots homing distorting\nblasts to nearby enemies every {~}s,\ndealing damage and increasing your\nDistortion {#} by +{~}.",
-   "dst": "Riftspawn 每 {~}s 會朝附近敵人\n射出追蹤的扭曲彈，造成傷害\n並使你的 Distortion {#} 增加 +{~}。",
+   "dst": "Riftspawn 每 {~}s 會朝附近敵人\n射出追蹤的扭曲彈，造成傷害\n並使你的 Distortion {#} 增加 +{~}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3036,7 +3036,7 @@
   },
   "14adb3ebb12e": {
    "src": "For every +{~}{#}Distortion {#}, the\nmana is refunded -{~}s faster.",
-   "dst": "每 +{~}{#}層 Distortion {#}，\n魔力返還的速度就加快 -{~}s。",
+   "dst": "每 +{~}{#}層 Distortion {#},\n魔力返還的速度就加快 -{~}s.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3051,7 +3051,7 @@
   },
   "cecada4e4a8c": {
    "src": "You send {~} of the damage you take\nto the future, dealing it over {~}s and\nborrow mana from the past, refunding\n{~} of your spent mana over {~}s.",
-   "dst": "你會把所受傷害的 {~} 送往未來，\n在 {~}s 內分次承受；並向過去借取魔力，\n在 {~}s 內返還你已消耗魔力的 {~}。",
+   "dst": "你會把所受傷害的 {~1} 送往未來，\n在 {~2} 秒內分次承受;並向過去借取魔力，\n在 {~4} 秒內返還你已消耗魔力的 {~3}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3079,7 +3079,7 @@
   },
   "77a7f2238792": {
    "src": "Judrajim applies Unstable {#} to enemies.",
-   "dst": "Judrajim 會對敵人施加 Unstable {#}。",
+   "dst": "Judrajim 會對敵人施加 Unstable {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3122,7 +3122,7 @@
   },
   "e5404edcf4fb": {
    "src": "Ophanim also applies +{~} Crystallized {#}.",
-   "dst": "Ophanim 也會施加 +{~} 層 Crystallized {#}。",
+   "dst": "Ophanim 也會施加 +{~} 層 Crystallized {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3165,7 +3165,7 @@
   },
   "ef0f5b16f3a3": {
    "src": "After casting Meteor, generate a lightning\nstrike near the point of impact that\nadds +{~} Mana to your Mana Bank ✺\nfor each aggressive enemy you hit.",
-   "dst": "施放 Meteor 之後，會在落點附近\n產生一道閃電；你每命中一個具敵意的敵人，\n就為你的 Mana Bank ✺ 增加 +{~} 點魔力。",
+   "dst": "施放 Meteor 之後，會在落點附近\n產生一道閃電;你每命中一個具敵意的敵人，\n就為你的 Mana Bank ✺ 增加 +{~} 點魔力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3307,7 +3307,7 @@
   },
   "8318c3c8205e": {
    "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
-   "dst": "雷之蛇每 {~}s 會以弧狀閃電\n擊中最多 {~} 個敵人，\n使他們進入 Unstable {#}。",
+   "dst": "雷之蛇每 {~2} 秒會以弧狀閃電\n擊中最多 {~1} 個敵人，\n使他們進入 Unstable {#}.",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3389,7 +3389,7 @@
   },
   "0862b720d209": {
    "src": "While it is overloaded, it deals +{~} increased\ndamage, turns your Teleport into a deadly ray\nthat fires off {~} times in quick succession,\nprovides flight, and prevents mana drain.",
-   "dst": "過載期間，它造成的傷害提升 +{~}，\n並把你的 Teleport 變成一道致命光束、\n短時間內連射 {~} 次，\n同時提供飛行並防止魔力流失。",
+   "dst": "過載期間，它造成的傷害提升 +{~},\n並把你的 Teleport 變成一道致命光束、\n短時間內連射 {~} 次，\n同時提供飛行並防止魔力流失。",
    "role": "desc",
    "kind": "block",
    "ctx": [
