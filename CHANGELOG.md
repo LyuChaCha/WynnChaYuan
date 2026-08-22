@@ -3,6 +3,26 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.70.0] - 2026-08-23
+
+### 新增
+
+- **早期新手任務的對話 352 條。** 方便從頭開一隻角色驗證翻譯：
+  Tunnel Trouble、Underwater、Green Gloop、Maltic's Well、Stable Story、
+  Potion Making、The Sewers of Ragni、Creeper Infiltration、Lost Soles、
+  Tribal Aggression。
+  - NPC 與地名照舊留原文，座標用帶編號的佔位符——中文的語序跟英文不同，
+    不編號數值就會跑到別的位置。
+  - `Elemental Exercise` 有三條<b>沒有翻</b>：那幾句的原文在擷取階段就壞了
+    （元素圖示掉了，只剩下 `, , , ,`，而且其中一個元素名被誤判成玩家名稱）。
+    照著翻等於把錯誤固化，等重新擷取。
+
+- **rare / unique / normal 的背景敘述 131 條。** 加上先前的 mythic 與 fabled，
+  只剩 legendary 還沒做。
+  - Wynnter 毛衣那一組全是<b>英文雙關</b>（STOCKINGED、FLURRY、YULE…），
+    笑點就在那個英文字本身。另外造一個中文雙關會變成不同的笑話，
+    而原文一直在左邊看得到——所以把梗的那個字留在句子裡，後面補上意思。
+
 ## [1.69.0] - 2026-08-23
 
 ### 修正

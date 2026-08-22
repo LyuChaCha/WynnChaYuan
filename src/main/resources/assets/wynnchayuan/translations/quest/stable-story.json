@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Stable Story",
   "count": 19,
-  "translated": 0,
+  "translated": 19,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Stable Story#000": {
    "src": "Talk to Enkser outside {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 {p} 外面的 [{~1}, {~2}, -{~3}] 跟 Enkser 談話",
    "role": "desc",
    "kind": "objective",
    "quest": "Stable Story",
@@ -18,7 +18,7 @@
   },
   "Stable Story#001": {
    "src": "Looking for able-bodied adventurers! Preferably with no friends or family, but I'm not picky!",
-   "dst": "",
+   "dst": "徵求身強體壯的冒險者！最好是沒有親友的，不過我不挑！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -28,7 +28,7 @@
   },
   "Stable Story#002": {
    "src": "You see, I'm a horse merchant. Make my living selling these beauties to adventurers like you.",
-   "dst": "",
+   "dst": "你看，我是馬販。就靠把這些寶貝賣給你這種冒險者過活。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -38,7 +38,7 @@
   },
   "Stable Story#003": {
    "src": "I work at this barn, selling the horses I raise in {p} out here to rich {p} folk.",
-   "dst": "",
+   "dst": "我在這個馬廄做生意，把我在 {p} 養的馬賣給這邊 {p} 的有錢人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -48,7 +48,7 @@
   },
   "Stable Story#004": {
    "src": "Until these rabble-rousing troublemakers blew a tunnel through my barn and smuggled MY horses out.",
-   "dst": "",
+   "dst": "直到那群惹是生非的傢伙在我的馬廄底下炸出一條隧道，把我的馬全偷走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -58,7 +58,7 @@
   },
   "Stable Story#005": {
    "src": "Usually, I'd be charging a high price for these horses Not to be rude, but one you couldn't afford.",
-   "dst": "",
+   "dst": "照平常，這些馬我可是要開高價的 恕我直言，那價錢你付不起。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -68,7 +68,7 @@
   },
   "Stable Story#006": {
    "src": "So, let's cut a deal They stole my stable key. If you can go to my barn in {p}...",
-   "dst": "",
+   "dst": "所以，我們來談個條件 他們偷走了我的馬廄鑰匙。如果你願意去我在 {p} 的馬廄……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -78,7 +78,7 @@
   },
   "Stable Story#007": {
    "src": "And return the key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
-   "dst": "",
+   "dst": "……把鑰匙拿回來給我，我就大方地送你一匹馬。而且這筆交易比你想的還划算……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -88,7 +88,7 @@
   },
   "Stable Story#008": {
    "src": "Betty'll be there to help! Strong as she is, don't you DARE let them touch her!",
-   "dst": "",
+   "dst": "Betty 會在那裡幫你！她雖然壯，但你敢碰她一根寒毛試試看！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -98,7 +98,7 @@
   },
   "Stable Story#009": {
    "src": "I'll be making my way to {p} myself to ensure Betty's safety.",
-   "dst": "",
+   "dst": "我自己也會去 {p} 一趟，確保 Betty 平安無事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -108,7 +108,7 @@
   },
   "Stable Story#010": {
    "src": "Now, best be on your way. {p} is a fair bit down the {p} from here, off to the east.",
-   "dst": "",
+   "dst": "好了，你快上路吧。{p} 從這裡沿著 {p} 走一段就到了，往東邊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -118,7 +118,7 @@
   },
   "Stable Story#011": {
    "src": "Bring back [{~} Stable Key] to Enkser from the tunnel at",
-   "dst": "",
+   "dst": "從隧道裡把 [{~} Stable Key] 帶回來給 Enkser，地點在",
    "role": "desc",
    "kind": "objective",
    "quest": "Stable Story",
@@ -128,7 +128,7 @@
   },
   "Stable Story#012": {
    "src": "Hey, have you found my [{~} Stable Key] yet? It should be somewhere in {p} to the east.",
-   "dst": "",
+   "dst": "欸，我的 [{~} Stable Key] 找到了沒？應該就在東邊的 {p} 某個地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -138,7 +138,7 @@
   },
   "Stable Story#013": {
    "src": "Looking for able-bodied adventurers, preferably with no friends or",
-   "dst": "",
+   "dst": "徵求身強體壯的冒險者，最好是沒有親人也沒有",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -148,7 +148,7 @@
   },
   "Stable Story#014": {
    "src": "Hey, it's you! Got my barn key yet?",
-   "dst": "",
+   "dst": "欸，是你！我的馬廄鑰匙拿到了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -158,7 +158,7 @@
   },
   "Stable Story#015": {
    "src": "Ah, god bless. And I presume Betty did all the work while you just lounged around.",
-   "dst": "",
+   "dst": "啊，謝天謝地。我猜又是 Betty 做完了所有的事，你在旁邊納涼吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -168,7 +168,7 @@
   },
   "Stable Story#016": {
    "src": "Hm. Cows, huh? Ah who knows!? Life is full of mysterious, huh?",
-   "dst": "",
+   "dst": "唔。牛？啊誰知道呢！人生嘛，充滿了謎團，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -178,7 +178,7 @@
   },
   "Stable Story#017": {
    "src": "Either way. As the great bovine above is my witness if I see the smallest bruise I will",
-   "dst": "",
+   "dst": "不管怎樣。我對著天上的大牛發誓，我要是看到一丁點瘀青我就",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -188,7 +188,7 @@
   },
   "Stable Story#018": {
    "src": "Nevermind all that. A horse I promised, and a horse you shall have. Much thanks to you.",
-   "dst": "",
+   "dst": "算了別提了。說好給你馬，馬就是你的。非常感謝你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
