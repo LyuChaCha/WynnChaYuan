@@ -97,9 +97,6 @@ public final class LineTranslator {
             Flowed hit = lookupFlowedParts(template, store);
             translated = hit == null ? null : hit.text();
             flowed = hit != null;
-            if (hit != null) {
-                LayoutDebug.flowed(run, hit.label(), labelStyleOf(run.get(0)));
-            }
             if (hit != null && hit.label() != null) {
                 // 名稱那半在原文裡有自己的顏色（Major ID 的名稱是粉紅的），
                 // 而譯文是中文、跟原文對不起來，一般的樣式沿用比對不到。
@@ -110,6 +107,11 @@ public final class LineTranslator {
         if (translated == null || translated.isBlank()) {
             return null;
         }
+        // 記在這裡，<b>不管走的是哪一條路</b>。先前只記「拆名稱」那條，
+        // 而 Major ID 常常是整段一次命中——於是要查的那一種偏偏沒被記下來，
+        // 使用者回報「這個檔案根本沒生成」。
+        LayoutDebug.flowed(run, extra.isEmpty() ? null : extra.get(0).text(),
+                           labelStyleOf(run.get(0)));
         if (flowed) {
             // 查到的是完整一句，得自己折回原本那幾行的寬度
             translated = wrapToBlock(translated, run);

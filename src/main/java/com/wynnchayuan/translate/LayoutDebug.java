@@ -38,11 +38,25 @@ public final class LayoutDebug {
 
     public static void init(Path path) {
         file = path;
+        flowedSeen = 0;
+        written = 0;
+        failures = 0;
+        seen.clear();
         buffer.setLength(0);
         buffer.append("# 置中判斷。每一行的縮排、內容寬度，以及置中時該有的縮排。")
               .append(System.lineSeparator())
               .append("# 三個數字對得起來卻判成靠左，就是分段切錯了。")
+              .append(System.lineSeparator())
+              .append("# 跨行查表（Major ID、技能敘述）的色段也記在這裡。")
               .append(System.lineSeparator()).append(System.lineSeparator());
+        // 開場就先寫一次。「檔案沒生成」與「生成了但沒內容」是兩件不同的事，
+        // 分不出來的話每次回報都得先猜是哪一種。
+        try {
+            Files.createDirectories(path.getParent());
+            Files.writeString(path, buffer.toString(), StandardCharsets.UTF_8);
+        } catch (Throwable t) {
+            file = null;                       // 這裡寫不出來就是真的不能寫
+        }
     }
 
     /** 一份 tooltip 的判斷結果。同一份只寫一次。 */
@@ -61,17 +75,24 @@ public final class LayoutDebug {
                   .append(" ===").append(System.lineSeparator())
                   .append(BlockLayout.explain(lines, centered))
                   .append(System.lineSeparator());
-            String block = buffer.substring(buffer.length() - 1
-                    - BlockLayout.explain(lines, centered).length());
+            // 上面那段的長度等一下要用來切出「這一份」，先算好
+            String explained = BlockLayout.explain(lines, centered);
+            int from = Math.max(0, buffer.length() - 1 - explained.length());
+            String block = buffer.substring(from);
             // 同時印到遊戲紀錄。檔案寫得出來與否受權限、路徑、防毒影響，
             // 而 latest.log 一定在——先前連續三次回報回來都是空的。
             System.out.println("[WynnChaYuan] 版面判斷" + System.lineSeparator() + block);
             Files.writeString(file, buffer.toString(), StandardCharsets.UTF_8);
         } catch (Throwable t) {
-            // 診斷寫不出來就算了，絕不能反過來弄壞畫面
-            file = null;
+            // 診斷寫不出來就算了，絕不能反過來弄壞畫面。
+            // 但<b>不要</b>把 file 設成 null——那等於整場遊戲的診斷就此關閉，
+            // 使用者回報「這個檔案根本沒生成」，而真正的問題被藏在後面。
+            failures++;
         }
     }
+
+    /** 診斷失敗過幾次。寫在檔頭，才知道「內容很少」是不是因為一直寫失敗。 */
+    private static int failures = 0;
 
     private static String oneLine(String text) {
         String flat = text.replace('\n', ' ').strip();
@@ -99,6 +120,16 @@ public final class LayoutDebug {
             return;
         }
         flowedSeen++;
+        try {
+            writeFlowed(run, label, chosen);
+        } catch (Throwable t) {
+            failures++;                        // 診斷絕不能反過來弄壞畫面
+        }
+    }
+
+    private static void writeFlowed(java.util.List<com.wynntils.core.text.StyledText> run,
+                                    String label, net.minecraft.network.chat.Style chosen)
+            throws java.io.IOException {
         StringBuilder sb = new StringBuilder();
         sb.append("=== 跨行查表 ===").append(System.lineSeparator());
         sb.append("  譯名：").append(label == null ? "（整段命中，沒有拆名稱）" : label)
@@ -116,13 +147,9 @@ public final class LayoutDebug {
         for (com.wynntils.core.text.StyledText line : run) {
             sb.append("  原文：").append(line.getString()).append(System.lineSeparator());
         }
-        try {
-            buffer.append(sb);
-            System.out.println("[WynnChaYuan] 跨行查表" + System.lineSeparator() + sb);
-            Files.writeString(file, buffer.toString(), StandardCharsets.UTF_8);
-        } catch (Throwable t) {
-            file = null;                       // 診斷絕不能反過來弄壞畫面
-        }
+        buffer.append(sb);
+        System.out.println("[WynnChaYuan] 跨行查表" + System.lineSeparator() + sb);
+        Files.writeString(file, buffer.toString(), StandardCharsets.UTF_8);
     }
 
     private static String describe(net.minecraft.network.chat.Style style) {
