@@ -235,6 +235,13 @@ public final class LineTranslator {
                 at += glyph.length();
                 lead++;
             }
+            if (at >= line.length()) {
+                // 整行都是符號——那是<b>分隔線</b>（lore 上下那條 ◆—◆），是內容，
+                // 不是縮排。剝掉的話這一行會變成空的，於是整段連分隔線一起被
+                // 當成同一句話吃掉，譯文出來就少了那條線。
+                at = 0;
+                lead = 0;
+            }
             if (lead > 0) {
                 trimmed = true;
             }
