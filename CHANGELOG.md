@@ -3,6 +3,24 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.71.0] - 2026-08-23
+
+### 新增
+
+- **裝備的背景敘述<b>全部完成</b>。** 補上最後的 legendary 557 條，
+  五個稀有度合計 **1021 條**：mythic 81、fabled 177、legendary 625、
+  rare 71、unique 65、normal 2。
+
+  - **刻意不翻的四條**：`Restitution`、`Astrolabe`、`Dawn Chaser`、`Stalking Mist`。
+    那是 Wynncraft 自己造的語言（`las ah sifpas il lelis, pactef nikcpadpets tofcef…`），
+    社群到現在還在解，翻成中文等於把謎題毀掉。
+  - Bronze / Gold / Diamond 那三組飾品是同一套文案的三個階級，
+    中文照著「還差得遠 → 已臻完美」的層次走，用字保持一致，
+    玩家一眼就看得出自己升到哪一階了。
+  - 傳奇挑戰那幾面獎勵面具的敘述<b>原文就是一長串刻意的碎念</b>
+    （最長的一條 1000 字元以上，講的是 Legendary 博士被玩家逼到精神崩潰），
+    那個荒謬感是它的重點，所以照長度翻，沒有精簡。
+
 ## [1.70.0] - 2026-08-23
 
 ### 新增
