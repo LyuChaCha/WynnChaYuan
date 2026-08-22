@@ -106,4 +106,38 @@ public final class FlowedDebug {
         return base + (style.isUnderlined() ? " 底線" : "")
                 + (style.isBold() ? " 粗體" : "");
     }
+
+    /** 有選項的對話最多記幾筆。 */
+    private static final int CHOICE_LIMIT = 6;
+
+    private static int choicesSeen = 0;
+
+    /**
+     * 記一段<b>有選項</b>的對話原文。
+     *
+     * <p>遊戲把選項畫在對話框上面另一個框裡，但事件只給我們一整串文字——
+     * 哪幾行是 NPC 說的、哪幾行是玩家可以選的，從事件本身看不出來。
+     * 先把原始結構記下來，照真實資料實作才不會又猜錯。
+     */
+    public static void noteChoices(String text) {
+        if (file == null || text == null || choicesSeen >= CHOICE_LIMIT) {
+            return;
+        }
+        choicesSeen++;
+        try {
+            StringBuilder sb = new StringBuilder();
+            sb.append("=== 有選項的對話 ").append(choicesSeen).append(" ===")
+              .append(System.lineSeparator());
+            int i = 0;
+            for (String line : text.split("\\R", -1)) {
+                sb.append("  [").append(i++).append("] ").append(line)
+                  .append(System.lineSeparator());
+            }
+            sb.append(System.lineSeparator());
+            Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        } catch (Throwable t) {
+            // 診斷絕不能反過來弄壞畫面
+        }
+    }
 }

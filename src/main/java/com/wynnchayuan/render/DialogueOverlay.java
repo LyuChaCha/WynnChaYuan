@@ -47,6 +47,20 @@ public final class DialogueOverlay {
 
     /** 對話內容變了就更新這裡；傳 null 或空的代表對話結束。 */
     public static void setCurrent(StyledText dialogue, TranslationStore store) {
+        setCurrent(dialogue, store, false);
+    }
+
+    /**
+     * @param hasChoices 這一段有多個可選的回答。遊戲把選項畫在對話框<b>上面</b>
+     *                   另一個框裡，我們的譯文如果全部擠在同一塊，玩家分不出
+     *                   哪幾行是 NPC 說的、哪幾行是自己可以選的。
+     */
+    public static void setCurrent(StyledText dialogue, TranslationStore store,
+                                  boolean hasChoices) {
+        if (hasChoices && dialogue != null) {
+            // 選項對話的實際結構還沒定案，先把原文記下來，下一輪照真實資料實作
+            com.wynnchayuan.translate.FlowedDebug.noteChoices(dialogue.getString());
+        }
         if (dialogue == null) {
             current = List.of();
             return;
