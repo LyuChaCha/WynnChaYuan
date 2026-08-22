@@ -284,7 +284,7 @@
   },
   "47b1abde7d83": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "你每從裝備上獲得 {~1} 或 {~2} 點法術傷害值，\n就獲得 +{~3}/{~4}s 魔力回復 (上限 {~5}/{~6}s)",
+   "dst": "從道具中獲得的每 {~} 或 {~} 點技能傷害，\n額外獲得 {~}/{~}s 魔力回復。(最高 {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -441,7 +441,7 @@
   },
   "0023e0266881": {
    "src": "Arcane Transfer will damage nearby\nenemies when transferring {~}+ Mana.",
-   "dst": "當 Arcane Transfer 轉換 {~} 點以上魔力時，\n會對周圍敵人造成傷害。",
+   "dst": "祕法回流提取超過 {~} 魔力時，對附近的敵方造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -456,7 +456,7 @@
   },
   "81031b007c5d": {
    "src": "Heal emits a strong light,\ndamaging nearby enemies.",
-   "dst": "Heal 會散發強光，\n對周圍敵人造成傷害。",
+   "dst": "治癒發出一道強光，對附近的敵方造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -744,7 +744,7 @@
   },
   "8cac4c3c5e31": {
    "src": "Casting Teleport while sneaking places an\nethereal image of yourself at your location.",
-   "dst": "蹲下時施放 Teleport,會在你所在的位置\n留下一個自己的虛影。",
+   "dst": "蹲下使用傳送將會在原地留下一個虛影。\n再度使用此技能時，傳送至虛影的位置。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -828,7 +828,7 @@
   },
   "82a74de0f821": {
    "src": "Meteor scatters into debris upon\nlanding, dealing additional damage.",
-   "dst": "Meteor 落地後會碎裂成碎片，\n造成額外傷害。",
+   "dst": "隕石落地時會有碎片濺出，造成額外傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -964,7 +964,7 @@
   },
   "aa7687677841": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "施放 Ice Snake 時改為召喚一道冰凍龍捲風，\n每 {~}s 造成一次傷害。",
+   "dst": "使用冰凍龍捲風取代你的冰蛇，每 {~} 秒造成一次傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1032,7 +1032,7 @@
   },
   "b23e04e87f9f": {
    "src": "Frozen Tornado drifts towards nearby enemies.",
-   "dst": "Frozen Tornado 會朝附近的敵人漂移。",
+   "dst": "冰凍龍捲風會朝著附近的敵人移動。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1047,7 +1047,7 @@
   },
   "fc2d6647893b": {
    "src": "Ice Snake will follow the direction you're\nfacing, allowing you to control it.",
-   "dst": "Ice Snake 會跟著你面向的方向前進，\n讓你能夠操控它。",
+   "dst": "冰蛇會朝著你面對的方向移動。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1229,7 +1229,7 @@
   },
   "9d0df711d6ca": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "在 {~2} 秒內治療了你最大生命的 {~1},\n就會為你治療過的每一位玩家\n附加一份傷害加成。",
+   "dst": "{~}秒內治癒量超過你最大生命值的 {~} 後，\n你的下一個治癒會附加傷害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1324,7 +1324,7 @@
   },
   "27efb642d873": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "Ice Snake 會在你腳下留下冰之印記，\n每 {~}s 使敵人緩速並造成傷害。\n站在印記上的友軍\n會免疫擊退。",
+   "dst": "冰蛇會在地上創造冰霜印記，\n每 {~} 秒造成一次傷害並緩速目標。\n在冰霜印記上的友軍不會被擊退。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1408,7 +1408,7 @@
   },
   "782d13fbf059": {
    "src": "Frozen Tornado will summon {~} tornados.\n(Enemies cannot be damaged by multiple\ntornados or snakes at the same time.)",
-   "dst": "Frozen Tornado 會召喚 {~} 道龍捲風。\n(敵人無法同時被多道龍捲風\n或多條蛇造成傷害。)",
+   "dst": "冰凍龍捲風會召喚 {~} 個龍捲風。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1423,7 +1423,7 @@
   },
   "a5733c1f92d0": {
    "src": "Ice Snake will summon {~} snakes.",
-   "dst": "Ice Snake 會召喚 {~} 條蛇。",
+   "dst": "冰蛇會召喚 {~} 條冰蛇。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1450,7 +1450,7 @@
   },
   "95c380095ce4": {
    "src": "For every {~}/{~}s Lifesteal you have\nfrom items, gain +{~} Spell Damage. (Max {~})",
-   "dst": "你每從裝備上獲得 {~1}/{~2}s 生命竊取，\n就獲得 +{~3} 法術傷害。 (上限 {~4})",
+   "dst": "從道具中獲得的每 {~}/{~}s 生命偷取，\n額外獲得 {~} 技能傷害。(最高 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1612,7 +1612,7 @@
   },
   "e428a0fd7f77": {
    "src": "Increases the health of Ophanim's\norbs by +{~} and reduces the\ndamage they take when attacking by -{~}.",
-   "dst": "將 Ophanim 光球的生命\n提高 +{~1},並將它們攻擊時\n受到的傷害降低 -{~2}.",
+   "dst": "奧法尼姆的光球生命增加 {~}，\n光球攻擊時消耗的生命減少 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1667,7 +1667,7 @@
   },
   "8db5c0a23fd4": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "在 {~2} 秒內治療了你最大生命的 {~1},\n就會召喚一顆環繞的光球，\n接觸到敵人時造成傷害。 (最多 {~3} 顆)",
+   "dst": "{~}秒內治癒量超過你最大生命值的 {~} 後，\n召喚一個繞著玩家的光球，\n在接觸目標時造成傷害。(最高 {~} 顆)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1828,7 +1828,7 @@
   },
   "a2c2e36a7ec9": {
    "src": "Dimensional Tear erupts violently when\ncreated, damaging enemies inside it.",
-   "dst": "Dimensional Tear 生成時會劇烈爆發，\n對裡面的敵人造成傷害。",
+   "dst": "次元裂隙在生成時會發生爆炸，對敵方造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1843,7 +1843,7 @@
   },
   "d79f279faf0c": {
    "src": "While Riftbound, Etheric Slash implodes your\nbound rift instead, damaging nearby enemies.",
-   "dst": "處於 Riftbound 狀態時，Etheric Slash 改為引爆\n你綁定的裂隙，對周圍敵人造成傷害。",
+   "dst": "當玩家 裂隙繫身狀態時，\n裂界斬改為使你的裂隙坍縮，對敵方造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2110,7 +2110,7 @@
   },
   "1e2295c5e38b": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "用普攻命中敵人，可讓 Time Dilation\n停止衰減 {~}s.",
+   "dst": "時流偏移在提供移動速度的同時增加你的普通攻擊傷害。\n使用普通攻擊命中敵人能使移動速度不因停止衝刺而降低，持續 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2165,7 +2165,7 @@
   },
   "23b4646e6fbb": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "Arcane Restoration 回復魔力的速度加快 {~}s.",
+   "dst": "祕法再生的效果加快 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2234,7 +2234,7 @@
   },
   "f7b19978e5c1": {
    "src": "Heal and Arcane Transfer weaken nearby enemies.",
-   "dst": "Heal 與 Arcane Transfer 會使周圍敵人虛弱。",
+   "dst": "治癒和祕法回流會弱化附近的敵人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2368,7 +2368,7 @@
   },
   "357a93293141": {
    "src": "Double Meteor's speed and increase its damage.",
-   "dst": "使 Meteor 的速度加倍，並提升其傷害。",
+   "dst": "增加隕石的傷害並使其速度翻倍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2383,7 +2383,7 @@
   },
   "d22a5d708c87": {
    "src": "Meteor Shower summons meteors +{~} faster.",
-   "dst": "Meteor Shower 召喚隕石的速度加快 +{~}.",
+   "dst": "流星雨召喚隕石的速度增加 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2410,7 +2410,7 @@
   },
   "8837d646a774": {
    "src": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
-   "dst": "蹲下時施放 Heal,會把你綁定到你的\nDimensional Tear 上，使你進入 Riftbound 狀態。",
+   "dst": "蹲下並施放治癒使你和你的次元裂隙綁定，進入裂隙繫身狀態。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2452,7 +2452,7 @@
   },
   "be911dcfbe99": {
    "src": "Healing {~} of your max health within {~}s\nwill make your next Heal activate Sunflare.",
-   "dst": "在 {~2} 秒內治療了你最大生命的 {~1},\n下一次 Heal 就會啟動 Sunflare.",
+   "dst": "{~}秒內治癒量超過你最大生命值的 {~} 後，\n你的下一個治癒會發動日耀。\n日耀發動期間，你會回復附近友方的生命和魔力，",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2574,7 +2574,7 @@
   },
   "f2f828e950af": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "當你的 Mana Bank ✺ 達到 {~1} 時，\n蹲下施放 Arcane Transfer\n會召喚一顆球狀閃電，對附近的\n敵人造成傷害，並持續吸取\n{~2} 點魔力，每 {~3} 秒一次，直到\n魔力耗盡為止。",
+   "dst": "蹲下並施放祕法回流會召喚出一顆電球，\n每 {~} 秒對附近敵人造成一次傷害並消耗 {~} 點魔力。\n電球的傷害和魔力消耗隨著每一次命中提高 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2806,7 +2806,7 @@
   },
   "41b8d74675cf": {
    "src": "Increase the damage of Frozen Tornado\nby an additional +{~} every time\nthe tornado damages an enemy.",
-   "dst": "龍捲風每對敵人造成一次傷害，\n就額外提升 Frozen Tornado\n+{~} 的傷害。",
+   "dst": "冰凍龍捲風每次命中目標時增加 {~} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2821,7 +2821,7 @@
   },
   "647c3c481d7a": {
    "src": "Increase the damage of Ice Snake\nand double its speed.",
-   "dst": "提升 Ice Snake 的傷害，\n並使其速度加倍。",
+   "dst": "增加冰蛇的傷害並使其速度翻倍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2917,7 +2917,7 @@
   },
   "2556c6c8d3f0": {
    "src": "Dimensional Tear is now inhabited\nby a Riftspawn while active.",
-   "dst": "Dimensional Tear 生效期間，\n現在會有一隻 Riftspawn 棲居其中。",
+   "dst": "次元裂隙中將會有一個 裂隙之裔 躲在其中。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3001,7 +3001,7 @@
   },
   "77a7f2238792": {
    "src": "Judrajim applies Unstable {#} to enemies.",
-   "dst": "Judrajim 會對敵人施加 Unstable {#} .",
+   "dst": "釋放毀滅之雷的魔法會使命中目標 失衡 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3016,7 +3016,7 @@
   },
   "4af7bcbaddbf": {
    "src": "Meteor, Pyrokinesis and Powder Specials\nconsume Unstable {#} to deal +{~} damage.",
-   "dst": "Meteor、Pyrokinesis 與粉末特效會\n消耗 Unstable {#} 以造成 +{~} 傷害。",
+   "dst": "隕石、馭火和粉末技能會消耗 失衡 {#} 並增加 {~} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
