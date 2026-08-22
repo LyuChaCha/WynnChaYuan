@@ -193,13 +193,6 @@ tasks.register('runLabelColonChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLabelColonChecks' }
 
-tasks.register('runProbe', JavaExec) {
-    group = 'verification'
-    description = '臨時：查一個字串在語料裡查不查得到'
-    classpath = sourceSets.test.runtimeClasspath
-    mainClass = 'com.wynnchayuan.translate.Probe'
-}
-
 tasks.withType(JavaExec).configureEach {
     jvmArgs('-Dfile.encoding=UTF-8', '-Dstdout.encoding=UTF-8', '-Dstderr.encoding=UTF-8')
 }
@@ -219,3 +212,4 @@ tasks.register('runMajorIdColourChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.MajorIdColourTest'
 }
 tasks.named('check') { dependsOn 'runMajorIdColourChecks' }
+
