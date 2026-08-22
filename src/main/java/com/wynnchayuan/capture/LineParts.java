@@ -50,8 +50,20 @@ public record LineParts(
         List<Piece> accents,
         Style textStyle) {
 
-    /** 一個要填回去的碎片：文字加上它原本的樣式。 */
-    public record Piece(String text, Style style) {}
+    /**
+     * 一個要填回去的碎片：文字加上它原本的樣式。
+     *
+     * @param ramp 這一段在原文裡是<b>一個字一個顏色</b>畫出來的（彩虹字），
+     *             這裡就是那串顏色，順序即左到右。譯文的字數跟原文對不上，
+     *             所以不能一個字配一個顏色，得把整串顏色<b>攤到譯文的長度上</b>——
+     *             見 {@code LineTranslator.paint}。平常是 {@code null}。
+     */
+    public record Piece(String text, Style style, List<Style> ramp) {
+
+        public Piece(String text, Style style) {
+            this(text, style, null);
+        }
+    }
 
     /**
      * 拆解一行。

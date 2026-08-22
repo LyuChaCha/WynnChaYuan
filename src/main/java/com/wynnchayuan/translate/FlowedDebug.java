@@ -107,6 +107,45 @@ public final class FlowedDebug {
                 + (style.isBold() ? " 粗體" : "");
     }
 
+    /** 查不到的最多記幾筆。 */
+    private static final int MISS_LIMIT = 20;
+
+    private static int missed = 0;
+
+    /**
+     * 記一段<b>查不到</b>的跨行原文。
+     *
+     * <h2>為什麼非記不可</h2>
+     * 先前只記成功的。於是檔案裡看不到 Major ID 時有兩種可能：跨行查表<b>根本沒被
+     * 呼叫到</b>，或者呼叫了但查不到——這兩件事的修法完全不同，而診斷分不出來。
+     * 連查不到也記下來，看一眼就知道是哪一種：檔案裡有這一段就是查了沒中
+     * （語料的問題），完全沒有就是連進都沒進來（程式的問題）。
+     *
+     * <p>順便把攤平後的鍵原樣印出來，直接拿去跟譯文檔的 {@code src} 對，
+     * 差一個空格還是差一個標點一眼就看得出來。
+     */
+    public static void miss(String template) {
+        if (file == null || template == null || missed >= MISS_LIMIT) {
+            return;
+        }
+        missed++;
+        try {
+            StringBuilder sb = new StringBuilder();
+            sb.append("=== 查不到 ").append(missed).append(" ===")
+              .append(System.lineSeparator());
+            sb.append("  攤平後的鍵：").append(TranslationStore.normalise(template))
+              .append(System.lineSeparator());
+            for (String line : template.split("\\R", -1)) {
+                sb.append("    原文：").append(line).append(System.lineSeparator());
+            }
+            sb.append(System.lineSeparator());
+            Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        } catch (Throwable t) {
+            // 診斷絕不能反過來弄壞畫面
+        }
+    }
+
     /** 有選項的對話最多記幾筆。 */
     private static final int CHOICE_LIMIT = 6;
 
