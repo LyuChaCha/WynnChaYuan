@@ -10,14 +10,15 @@
 # 要求他們做，等於把每個翻譯 PR 都變成紅燈——實際發生過。
 #
 # 所以合併這件事由這裡做：合進 main 之後自動重新產生並提交。
-name: 重新產生任務對話合併檔
+name: 重新產生合併檔與進度表
 
 on:
   push:
     branches: [main]
     paths:
-      - 'src/main/resources/assets/wynnchayuan/translations/quest/**'
+      - 'src/main/resources/assets/wynnchayuan/translations/**'
       - 'tools/quest-bundle.py'
+      - 'tools/update-docs.py'
   workflow_dispatch:
 
 permissions:
@@ -33,10 +34,12 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: 合併
+      - name: 合併與更新進度表
         run: |
           python tools/quest-bundle.py
           python tools/quest-index.py
+          # 進度數字寫死在文件裡就會過期，新來的譯者會照著早就翻完的表去翻
+          python tools/update-docs.py
 
       - name: 有變動才提交
         run: |
@@ -47,7 +50,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "重新產生任務對話合併檔與認領清單
+          git commit -m "重新產生合併檔、認領清單與進度表
 
           由 rebuild-quest-bundle 工作流程自動提交。"
           git push
