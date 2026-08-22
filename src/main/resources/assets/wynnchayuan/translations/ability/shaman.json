@@ -1,0 +1,2937 @@
+{
+ "_meta": {
+  "domain": "ability/shaman",
+  "itemNames": false,
+  "lang": "zh_tw",
+  "count": 243,
+  "translated": 38,
+  "note": "薩滿的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。"
+ },
+ "entries": {
+  "41757d1d128b": {
+   "src": "Totem",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/01/000/004",
+   "keep": "en"
+  },
+  "e6ea8b8d6dcb": {
+   "src": "Summon a Totem that damages\nenemies around it every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totem"
+   ],
+   "lines": 2,
+   "flat": "Summon a Totem that damages enemies around it every {~}s.",
+   "_raw": "Summon a Totem that damages\nenemies around it every 0.4s.",
+   "tree": "04/shaman/01/000/004"
+  },
+  "53e941bc9082": {
+   "src": "Relik Proficiency I",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/01/002/004",
+   "keep": "en"
+  },
+  "1cbb10db0c9d": {
+   "src": "{#}(Damage is split between beams)",
+   "dst": "{#}(傷害由各道光束分攤)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Relik Proficiency I"
+   ],
+   "_raw": "(Damage is split between beams)",
+   "tree": "04/shaman/01/002/004"
+  },
+  "88192b89ad7c": {
+   "src": "Double your Main Attack's beam speed and\nincrease your damage when using a relik.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Relik Proficiency I"
+   ],
+   "lines": 2,
+   "flat": "Double your Main Attack's beam speed and increase your damage when using a relik.",
+   "_raw": "Double your Main Attack's beam speed and\nincrease your damage when using a relik.",
+   "tree": "04/shaman/01/002/004"
+  },
+  "db5d1468b7d5": {
+   "src": "Cheaper Totem",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/01/002/006",
+   "keep": "en"
+  },
+  "21bf4e2e2817": {
+   "src": "Reduce the mana cost of Totem.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Cheaper Totem",
+    "shaman/Cheaper Totem II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the mana cost of Totem.",
+   "_raw": "Reduce the mana cost of Totem.",
+   "tree": "04/shaman/01/002/006"
+  },
+  "a87d979590f8": {
+   "src": "Totemic Smash",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/01/004/004",
+   "keep": "en"
+  },
+  "cbd1ce8a7075": {
+   "src": "Your Totem will deal damage where it lands.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Smash"
+   ],
+   "lines": 1,
+   "flat": "Your Totem will deal damage where it lands.",
+   "_raw": "Your Totem will deal damage where it lands.",
+   "tree": "04/shaman/01/004/004"
+  },
+  "3cdb78815291": {
+   "src": "Distant Grasp",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/02/001/002",
+   "keep": "en"
+  },
+  "da1e21ec1f6c": {
+   "src": "Reduce your Main Attack's spread,\nand increase its beam speed by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Distant Grasp"
+   ],
+   "lines": 2,
+   "flat": "Reduce your Main Attack's spread, and increase its beam speed by +{~}.",
+   "_raw": "Reduce your Main Attack's spread,\nand increase its beam speed by +33%.",
+   "tree": "04/shaman/02/001/002"
+  },
+  "2c0fa5e76d00": {
+   "src": "Haul",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/02/001/004",
+   "keep": "en"
+  },
+  "a2de0dbd769b": {
+   "src": "Leap towards your Totem.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Haul"
+   ],
+   "lines": 1,
+   "flat": "Leap towards your Totem.",
+   "_raw": "Leap towards your Totem.",
+   "tree": "04/shaman/02/001/004"
+  },
+  "e0c9e41c04bc": {
+   "src": "Hand of the Shaman",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/02/001/006",
+   "keep": "en"
+  },
+  "a03df4737b36": {
+   "src": "Your Main Attack will emit +{~} extra beams.\n(Increases your overall damage by +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Hand of the Shaman"
+   ],
+   "lines": 2,
+   "flat": "Your Main Attack will emit +{~} extra beams. (Increases your overall damage by +{~})",
+   "_raw": "Your Main Attack will emit +2 extra beams.\n(Increases your overall damage by +70%)",
+   "tree": "04/shaman/02/001/006"
+  },
+  "c6f27009dda8": {
+   "src": "Uproot",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/02/003/002",
+   "keep": "en"
+  },
+  "25449da6b675": {
+   "src": "Emits a rapid projectile that will\nexplode and knock enemies away.\n(Hold shift to pull instead)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Uproot"
+   ],
+   "lines": 3,
+   "flat": "Emits a rapid projectile that will explode and knock enemies away. (Hold shift to pull instead)",
+   "_raw": "Emits a rapid projectile that will\nexplode and knock enemies away.\n(Hold shift to pull instead)",
+   "tree": "04/shaman/02/003/002"
+  },
+  "c396ba65750c": {
+   "src": "Cheaper Haul",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/02/003/004",
+   "keep": "en"
+  },
+  "07cd53f59269": {
+   "src": "Reduce the mana cost of Haul.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Cheaper Haul",
+    "shaman/Cheaper Haul II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the mana cost of Haul.",
+   "_raw": "Reduce the mana cost of Haul.",
+   "tree": "04/shaman/02/003/004"
+  },
+  "af0854de67de": {
+   "src": "Aura",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/02/003/006",
+   "keep": "en"
+  },
+  "84a880196948": {
+   "src": "Radiates an aura from your Totem\nthat damages enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Aura"
+   ],
+   "lines": 2,
+   "flat": "Radiates an aura from your Totem that damages enemies.",
+   "_raw": "Radiates an aura from your Totem\nthat damages enemies.",
+   "tree": "04/shaman/02/003/006"
+  },
+  "c1810e84ba5e": {
+   "src": "Totem Shove",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/02/004/001",
+   "keep": "en"
+  },
+  "4f2ab903a01c": {
+   "src": "{#}{#}Range: ~{~} Blocks",
+   "dst": "{#}{#}施放範圍: ~{~} 格",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "shaman/Totem Shove"
+   ],
+   "_raw": " Range: ~12 Blocks",
+   "tree": "04/shaman/02/004/001"
+  },
+  "43adb50d7f10": {
+   "src": "Casting Totem while looking\nat an existing Totem will instead\nshove it forwards, dealing damage\nto any enemy it crashes into.\n(Sneak to reverse its direction)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totem Shove"
+   ],
+   "lines": 5,
+   "flat": "Casting Totem while looking at an existing Totem will instead shove it forwards, dealing damage to any enemy it crashes into. (Sneak to reverse its direction)",
+   "_raw": "Casting Totem while looking\nat an existing Totem will instead\nshove it forwards, dealing damage\nto any enemy it crashes into.\n(Sneak to reverse its direction)",
+   "tree": "04/shaman/02/004/001"
+  },
+  "bfe1c3964e76": {
+   "src": "Nature's Jolt",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/03/004/000",
+   "keep": "en"
+  },
+  "e975519765c1": {
+   "src": "Hitting the ground after using Haul\nwill deal damage around you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Nature's Jolt"
+   ],
+   "lines": 2,
+   "flat": "Hitting the ground after using Haul will deal damage around you.",
+   "_raw": "Hitting the ground after using Haul\nwill deal damage around you.",
+   "tree": "04/shaman/03/004/000"
+  },
+  "19070bd486f5": {
+   "src": "Overseer",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/03/004/002",
+   "keep": "en"
+  },
+  "13740eaf4ecc": {
+   "src": "Increases Uproot and\nHaunting Memory's range.\nHitting Totem with either\nwill reset its duration.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Overseer"
+   ],
+   "lines": 4,
+   "flat": "Increases Uproot and Haunting Memory's range. Hitting Totem with either will reset its duration.",
+   "_raw": "Increases Uproot and\nHaunting Memory's range.\nHitting Totem with either\nwill reset its duration.",
+   "tree": "04/shaman/03/004/002"
+  },
+  "3af27e54217e": {
+   "src": "Rain Dance",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/03/004/004",
+   "keep": "en"
+  },
+  "1758a60259c4": {
+   "src": "{#}{#}Area of Effect: {~} Blocks (Line-Shaped)",
+   "dst": "{#}{#}技能範圍: {~} 格(直線)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Rain Dance"
+   ],
+   "_raw": " Area of Effect: 3.5 Blocks (Line-Shaped)",
+   "tree": "04/shaman/03/004/004"
+  },
+  "3419ec67e312": {
+   "src": "While mid-air, your Totem will\nleave a streak of rain that damages\nenemies under it every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Rain Dance"
+   ],
+   "lines": 3,
+   "flat": "While mid-air, your Totem will leave a streak of rain that damages enemies under it every {~}s.",
+   "_raw": "While mid-air, your Totem will\nleave a streak of rain that damages\nenemies under it every 0.4s.",
+   "tree": "04/shaman/03/004/004"
+  },
+  "d541bb06081f": {
+   "src": "Shocking Aura",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/03/004/006",
+   "keep": "en"
+  },
+  "6d503789e11a": {
+   "src": "Aura will travel {~}s faster and\ndeal additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Shocking Aura"
+   ],
+   "lines": 2,
+   "flat": "Aura will travel {~}s faster and deal additional damage.",
+   "_raw": "Aura will travel 0.5s faster and\ndeal additional damage.",
+   "tree": "04/shaman/03/004/006"
+  },
+  "d43c7df4598a": {
+   "src": "Flaming Tongue",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/03/004/008",
+   "keep": "en"
+  },
+  "c65971db5c0f": {
+   "src": "{#}({#}{#}Earth: -{~})",
+   "dst": "{#}({#}{#}地: -{~})",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "shaman/Flaming Tongue"
+   ],
+   "_raw": "( Earth: -30%)",
+   "tree": "04/shaman/03/004/008"
+  },
+  "b44413872a86": {
+   "src": "{#}{#}Total Damage: -{~} (of your DPS, for Uproot, per hit)",
+   "dst": "{#}{#}總傷害: -{~}(你的每秒傷害，Uproot，每次命中)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Flaming Tongue"
+   ],
+   "_raw": " Total Damage: -35% (of your DPS, for Uproot, per hit)",
+   "tree": "04/shaman/03/004/008"
+  },
+  "075a1260d6a8": {
+   "src": "Haunting Memory will no longer\nattach Masks to enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Flaming Tongue"
+   ],
+   "lines": 2,
+   "flat": "Haunting Memory will no longer attach Masks to enemies.",
+   "_raw": "Haunting Memory will no longer\nattach Masks to enemies.",
+   "tree": "04/shaman/03/004/008"
+  },
+  "2b647dae6aec": {
+   "src": "Uproot becomes lashing flames, which hit\n{~} times at {~} hits per second, but it will not\nexplode or knockback enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Flaming Tongue"
+   ],
+   "lines": 3,
+   "flat": "Uproot becomes lashing flames, which hit {~} times at {~} hits per second, but it will not explode or knockback enemies.",
+   "_raw": "Uproot becomes lashing flames, which hit\n3 times at 3 hits per second, but it will not\nexplode or knockback enemies.",
+   "tree": "04/shaman/03/004/008"
+  },
+  "1d18828e5d3b": {
+   "src": "Puppet Master",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/001/001",
+   "keep": "en"
+  },
+  "eb4542f5d7bc": {
+   "src": "Your Totem will summon {~} Puppet\nevery {~}s. (Max {~}) They throw knives\nat nearby enemies every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Puppet Master"
+   ],
+   "lines": 3,
+   "flat": "Your Totem will summon {~} Puppet every {~}s. (Max {~}) They throw knives at nearby enemies every {~}s.",
+   "_raw": "Your Totem will summon 1 Puppet\nevery 3s. (Max 3) They throw knives\nat nearby enemies every 0.5s.",
+   "tree": "04/shaman/04/001/001"
+  },
+  "d007f5468bd6": {
+   "src": "Mystic Masks",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/001/003",
+   "keep": "en"
+  },
+  "f36c86906ba1": {
+   "src": "{#} Fanatic: +{~} Resistance Bonus to Self",
+   "dst": "{#} Fanatic: +{~} 抗性加成給自己",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "_raw": " Fanatic: +25% Resistance Bonus to Self",
+   "tree": "04/shaman/04/001/003"
+  },
+  "b918194880fb": {
+   "src": "{#} Heretic: +{~} Walk Speed to Self",
+   "dst": "{#} Heretic: +{~} 移動速度給自己",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "_raw": " Heretic: +50% Walk Speed to Self",
+   "tree": "04/shaman/04/001/003"
+  },
+  "7e96bfc54b37": {
+   "src": "{#} Lunatic: +{~} Damage Bonus to Self",
+   "dst": "{#} Lunatic: +{~} 傷害加成給自己",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "_raw": " Lunatic: +15% Damage Bonus to Self",
+   "tree": "04/shaman/04/001/003"
+  },
+  "cb6d1777d46f": {
+   "src": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to remove it)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "lines": 3,
+   "flat": "When casting Uproot, instead wear one of the Mystic Masks. (Shift + Uproot to remove it)",
+   "_raw": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to remove it)",
+   "tree": "04/shaman/04/001/003"
+  },
+  "5c5a95cd6901": {
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Walk Speed to Self",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Walk Speed to Self",
+   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -25% Walk Speed to Self",
+   "tree": "04/shaman/04/001/003"
+  },
+  "ed504db50850": {
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Damage Bonus to Self",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Damage Bonus to Self",
+   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -10% Damage Bonus to Self",
+   "tree": "04/shaman/04/001/003"
+  },
+  "78136d879be3": {
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Resistance Bonus to Self",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Resistance Bonus to Self",
+   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -15% Resistance Bonus to Self",
+   "tree": "04/shaman/04/001/003"
+  },
+  "6266c67c09d4": {
+   "src": "Hymn of Hate",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/001/006",
+   "keep": "en"
+  },
+  "712a1814af9b": {
+   "src": "When wearing the Mask of the Lunatic {#}, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -{~} of its damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Hymn of Hate"
+   ],
+   "lines": 3,
+   "flat": "When wearing the Mask of the Lunatic {#}, killing an enemy with Aura will cast a new Aura at its location, dealing -{~} of its damage.",
+   "_raw": "When wearing the Mask of the Lunatic , killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -50% of its damage.",
+   "tree": "04/shaman/04/001/006"
+  },
+  "261fd579c41d": {
+   "src": "Sacrificial Shrine",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/001/008",
+   "keep": "en"
+  },
+  "9ea1ab9e98f5": {
+   "src": "Aura will spend {~} points of Blood Pool {#}\nto deal +{~} damage and heal all allies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Sacrificial Shrine"
+   ],
+   "lines": 2,
+   "flat": "Aura will spend {~} points of Blood Pool {#} to deal +{~} damage and heal all allies.",
+   "_raw": "Aura will spend 15 points of Blood Pool \nto deal +35% damage and heal all allies.",
+   "tree": "04/shaman/04/001/008"
+  },
+  "02547e8428f2": {
+   "src": "Your Totem will siphon {~} of your health\nevery {~}s and transfer it into a Blood Pool {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Sacrificial Shrine"
+   ],
+   "lines": 2,
+   "flat": "Your Totem will siphon {~} of your health every {~}s and transfer it into a Blood Pool {#}.",
+   "_raw": "Your Totem will siphon 2% of your health\nevery 0.4s and transfer it into a Blood Pool .",
+   "tree": "04/shaman/04/001/008"
+  },
+  "02223256c187": {
+   "src": "Stagnation",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/003/000",
+   "keep": "en"
+  },
+  "2ad060130c56": {
+   "src": "Enemies hit by Nature's Jolt\nwill be slowed down.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Stagnation"
+   ],
+   "lines": 2,
+   "flat": "Enemies hit by Nature's Jolt will be slowed down.",
+   "_raw": "Enemies hit by Nature's Jolt\nwill be slowed down.",
+   "tree": "04/shaman/04/003/000"
+  },
+  "93e9ee63de0f": {
+   "src": "Cheaper Aura",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/003/002",
+   "keep": "en"
+  },
+  "f16040c98f03": {
+   "src": "Reduce the mana cost of Aura.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Cheaper Aura",
+    "shaman/Cheaper Aura II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the mana cost of Aura.",
+   "_raw": "Reduce the mana cost of Aura.",
+   "tree": "04/shaman/04/003/002"
+  },
+  "ceba67aad782": {
+   "src": "Cheaper Uproot",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/003/004",
+   "keep": "en"
+  },
+  "313c907efdde": {
+   "src": "Reduce the mana cost of Uproot.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Cheaper Uproot",
+    "shaman/Cheaper Uproot II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the mana cost of Uproot.",
+   "_raw": "Reduce the mana cost of Uproot.",
+   "tree": "04/shaman/04/003/004"
+  },
+  "552f001b50bb": {
+   "src": "Rebound",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/003/007",
+   "keep": "en"
+  },
+  "4c431e9d2c9c": {
+   "src": "Once Aura reaches its maximum\nrange, it will bounce back and\ndeal its effects a second time.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Rebound"
+   ],
+   "lines": 3,
+   "flat": "Once Aura reaches its maximum range, it will bounce back and deal its effects a second time.",
+   "_raw": "Once Aura reaches its maximum\nrange, it will bounce back and\ndeal its effects a second time.",
+   "tree": "04/shaman/04/003/007"
+  },
+  "5a35e2f14ca0": {
+   "src": "Sacrificial Shrine will\nheal {~} less health.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Rebound"
+   ],
+   "lines": 2,
+   "flat": "Sacrificial Shrine will heal {~} less health.",
+   "_raw": "Sacrificial Shrine will\nheal 35% less health.",
+   "tree": "04/shaman/04/003/007"
+  },
+  "82c56afeedf7": {
+   "src": "More Puppets",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/004/001",
+   "keep": "en"
+  },
+  "30a433aa3c1b": {
+   "src": "Increase your maximum Puppets by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/More Puppets",
+    "shaman/More Puppets II",
+    "shaman/Puppetry"
+   ],
+   "lines": 1,
+   "flat": "Increase your maximum Puppets by +{~}.",
+   "_raw": "Increase your maximum Puppets by +1.",
+   "tree": "04/shaman/04/004/001"
+  },
+  "5d880e6d8442": {
+   "src": "Haunting Memory",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/004/003",
+   "keep": "en"
+  },
+  "d41c168463fa": {
+   "src": "{#}{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
+   "dst": "{#}{#} Fanatic: -{~} 抗性加成 ({#}) 給敵人",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "_raw": " Fanatic: -15% Resistance Bonus () to Enemies",
+   "tree": "04/shaman/04/004/003"
+  },
+  "3d847bf8187e": {
+   "src": "{#}{#} Heretic: +{~} Slowness ({#}) to Enemies",
+   "dst": "{#}{#} Heretic: +{~} 緩速 ({#}) 給敵人",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "_raw": " Heretic: +30% Slowness () to Enemies",
+   "tree": "04/shaman/04/004/003"
+  },
+  "16b074840c10": {
+   "src": "{#}{#} Lunatic: -{~}{#}Damage Bonus ({#}) to Enemies",
+   "dst": "{#}{#} Lunatic: -{~}{#}傷害加成 ({#}) 給敵人",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "_raw": " Lunatic: -15% Damage Bonus () to Enemies",
+   "tree": "04/shaman/04/004/003"
+  },
+  "718d0c014f70": {
+   "src": "{#}{#}Effects:",
+   "dst": "{#}{#}效果:",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "_raw": " Effects:",
+   "tree": "04/shaman/04/004/003"
+  },
+  "b1254048db56": {
+   "src": "When you switch Masks, throw your previous one\nforwards. If it hits an enemy, it will attach for a\nshort time and debuff them. You will not receive\nthe effects of your Mask until it returns.",
+   "dst": "切換 Masks 時，把上一個往前扔出。\n命中敵人的話會附著一小段時間並\n使其虛弱。在它回來之前，你不會\n獲得該 Mask 的效果。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "lines": 4,
+   "flat": "When you switch Masks, throw your previous one forwards. If it hits an enemy, it will attach for a short time and debuff them. You will not receive the effects of your Mask until it returns.",
+   "_raw": "When you switch Masks, throw your previous one\nforwards. If it hits an enemy, it will attach for a\nshort time and debuff them. You will not receive\nthe effects of your Mask until it returns.",
+   "tree": "04/shaman/04/004/003"
+  },
+  "c8af25577aaf": {
+   "src": "Totemic Reach",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/004/005",
+   "keep": "en"
+  },
+  "fa939f98506c": {
+   "src": "Increase your Totem's area of effect.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Reach"
+   ],
+   "lines": 1,
+   "flat": "Increase your Totem's area of effect.",
+   "_raw": "Increase your Totem's area of effect.",
+   "tree": "04/shaman/04/004/005"
+  },
+  "ec77741e862f": {
+   "src": "Blood Connection",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/04/004/008",
+   "keep": "en"
+  },
+  "12beea1b5149": {
+   "src": "If you are outside of your Totem's\nrange, Haul will teleport you to it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Blood Connection"
+   ],
+   "lines": 2,
+   "flat": "If you are outside of your Totem's range, Haul will teleport you to it.",
+   "_raw": "If you are outside of your Totem's\nrange, Haul will teleport you to it.",
+   "tree": "04/shaman/04/004/008"
+  },
+  "9bdd9d7e6526": {
+   "src": "Exploding Puppets",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/001/001",
+   "keep": "en"
+  },
+  "34d48c44f267": {
+   "src": "When your Puppets have {~}s left,\nthey will charge towards enemies\nat high speed and explode.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Exploding Puppets"
+   ],
+   "lines": 3,
+   "flat": "When your Puppets have {~}s left, they will charge towards enemies at high speed and explode.",
+   "_raw": "When your Puppets have 3s left,\nthey will charge towards enemies\nat high speed and explode.",
+   "tree": "04/shaman/05/001/001"
+  },
+  "4a6721721c7a": {
+   "src": "Frog Dance",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/001/004",
+   "keep": "en"
+  },
+  "2f7345b245ca": {
+   "src": "Frog Dance does not require Totem to be used.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Frog Dance"
+   ],
+   "lines": 1,
+   "flat": "Frog Dance does not require Totem to be used.",
+   "_raw": "Frog Dance does not require Totem to be used.",
+   "tree": "04/shaman/05/001/004"
+  },
+  "3d8cb5966d4f": {
+   "src": "When wearing the Mask of the Heretic {#},\nHaul will instead bounce you off\nthe ground {~} times at an increasing\nspeed and damage nearby enemies.\n(Hold shift to cancel)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Frog Dance"
+   ],
+   "lines": 5,
+   "flat": "When wearing the Mask of the Heretic {#}, Haul will instead bounce you off the ground {~} times at an increasing speed and damage nearby enemies. (Hold shift to cancel)",
+   "_raw": "When wearing the Mask of the Heretic ,\nHaul will instead bounce you off\nthe ground 3 times at an increasing\nspeed and damage nearby enemies.\n(Hold shift to cancel)",
+   "tree": "04/shaman/05/001/004"
+  },
+  "6358dc84a47e": {
+   "src": "Larger Blood Pool",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/001/007",
+   "keep": "en"
+  },
+  "52a185a21e2f": {
+   "src": "Increase your maximum Blood Pool {#}{#}by +{~} points.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Larger Blood Pool"
+   ],
+   "lines": 1,
+   "flat": "Increase your maximum Blood Pool {#}{#}by +{~} points.",
+   "_raw": "Increase your maximum Blood Pool  by +30 points.",
+   "tree": "04/shaman/05/001/007"
+  },
+  "f173e3c55af2": {
+   "src": "Bullwhip",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/002/000",
+   "keep": "en"
+  },
+  "2edac2f60646": {
+   "src": "{#}{#}Effect: +{~} Damage Bonus to Summons",
+   "dst": "{#}{#}效果: +{~} 傷害加成給召喚物",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Bullwhip"
+   ],
+   "_raw": " Effect: +20% Damage Bonus to Summons",
+   "tree": "04/shaman/05/002/000"
+  },
+  "7aa3e7d89df9": {
+   "src": "Hitting enemies with Uproot or\nHaunting Memory will inflict them\nwith Whipped ⇶. Your Summons will\nfocus Whipped ⇶ enemies and deal\nadditional damage to them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Bullwhip"
+   ],
+   "lines": 5,
+   "flat": "Hitting enemies with Uproot or Haunting Memory will inflict them with Whipped ⇶. Your Summons will focus Whipped ⇶ enemies and deal additional damage to them.",
+   "_raw": "Hitting enemies with Uproot or\nHaunting Memory will inflict them\nwith Whipped ⇶. Your Summons will\nfocus Whipped ⇶ enemies and deal\nadditional damage to them.",
+   "tree": "04/shaman/05/002/000"
+  },
+  "c48eeff468b6": {
+   "src": "Totemic Shatter",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/002/003",
+   "keep": "en"
+  },
+  "7889c3be3230": {
+   "src": "Regeneration will only heal\n{~} of its usual amount.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Shatter"
+   ],
+   "lines": 2,
+   "flat": "Regeneration will only heal {~} of its usual amount.",
+   "_raw": "Regeneration will only heal\n50% of its usual amount.",
+   "tree": "04/shaman/05/002/003"
+  },
+  "bd4275d2c441": {
+   "src": "While wearing the Mask of the Fanatic {#},\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s\nworth of its effects.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Shatter"
+   ],
+   "lines": 4,
+   "flat": "While wearing the Mask of the Fanatic {#}, your Totem will shatter upon impacting the ground, rapidly triggering {~}s worth of its effects.",
+   "_raw": "While wearing the Mask of the Fanatic ,\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering 8s\nworth of its effects.",
+   "tree": "04/shaman/05/002/003"
+  },
+  "59ff1b64a1f7": {
+   "src": "Masquerade",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/002/005",
+   "keep": "en"
+  },
+  "81732b2fcc42": {
+   "src": "Switching between Masks {~} times\nwill give you {~} Mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Masquerade"
+   ],
+   "lines": 2,
+   "flat": "Switching between Masks {~} times will give you {~} Mana.",
+   "_raw": "Switching between Masks 2 times\nwill give you 30 Mana.",
+   "tree": "04/shaman/05/002/005"
+  },
+  "8d7d58bb8694": {
+   "src": "Lashing Lance",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/002/008",
+   "keep": "en"
+  },
+  "5159a03ec503": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Uproot, per hit)",
+   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，Uproot，每次命中)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Lashing Lance"
+   ],
+   "_raw": " Total Damage: +15% (of your DPS, for Uproot, per hit)",
+   "tree": "04/shaman/05/002/008"
+  },
+  "e65dc10bdc16": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, from Bleeding)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，流血)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Lashing Lance",
+    "shaman/Sanguine Strike"
+   ],
+   "_raw": " Total Damage: 60% (of your DPS, from Bleeding)",
+   "tree": "04/shaman/05/002/008"
+  },
+  "26b4a2936842": {
+   "src": "Bleeding{#}{#}{#}enemies take damage every {~}s.\nBleeding{#}{#}{#}damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool{#}{#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Lashing Lance"
+   ],
+   "lines": 3,
+   "flat": "Bleeding{#}{#}{#}enemies take damage every {~}s. Bleeding{#}{#}{#}damage dealt within Totem's range also adds +{~} points to your Blood Pool{#}{#}.",
+   "_raw": "Bleeding  enemies take damage every 0.5s.\nBleeding  damage dealt within Totem's range\nalso adds +0.8 points to your Blood Pool .",
+   "tree": "04/shaman/05/002/008"
+  },
+  "8e01ff8e52b5": {
+   "src": "Flaming Tongue{#}gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding{#}{#} for\n+{~}s{#}per hit. (Max {~}s)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Lashing Lance"
+   ],
+   "lines": 3,
+   "flat": "Flaming Tongue{#}gains +{~} hits, deals more damage, and now inflicts enemies with Bleeding{#}{#} for +{~}s{#}per hit. (Max {~}s)",
+   "_raw": "Flaming Tongue gains +2 hits, deals more damage,\nand now inflicts enemies with Bleeding  for\n+1s per hit. (Max 6s)",
+   "tree": "04/shaman/05/002/008"
+  },
+  "1c12e0812362": {
+   "src": "Haunting Memory will instead\ninflict +{~}s of Bleeding {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Lashing Lance"
+   ],
+   "lines": 2,
+   "flat": "Haunting Memory will instead inflict +{~}s of Bleeding {#}.",
+   "_raw": "Haunting Memory will instead\ninflict +6s of Bleeding .",
+   "tree": "04/shaman/05/002/008"
+  },
+  "f722014a572d": {
+   "src": "More Puppets II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/003/001",
+   "keep": "en"
+  },
+  "5e8034e855ba": {
+   "src": "Artist's Immersion",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/003/004",
+   "keep": "en"
+  },
+  "5a223145af2f": {
+   "src": "{#} Fanatic: -{~} {#}{#}Totem Cost",
+   "dst": "{#} Fanatic: -{~} {#}{#}Totem 消耗",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Artist's Immersion"
+   ],
+   "_raw": " Fanatic: -65%  Totem Cost",
+   "tree": "04/shaman/05/003/004"
+  },
+  "4a9f57237bb5": {
+   "src": "{#} Heretic: -{~} {#}{#}Haul Cost",
+   "dst": "{#} Heretic: -{~} {#}{#}Haul 消耗",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Artist's Immersion"
+   ],
+   "_raw": " Heretic: -50%  Haul Cost",
+   "tree": "04/shaman/05/003/004"
+  },
+  "5e513eaf9dfe": {
+   "src": "{#} Lunatic: -{~} {#}{#}Aura Cost",
+   "dst": "{#} Lunatic: -{~} {#}{#}Aura 消耗",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Artist's Immersion"
+   ],
+   "_raw": " Lunatic: -30%  Aura Cost",
+   "tree": "04/shaman/05/003/004"
+  },
+  "1be3087e0dd7": {
+   "src": "Your Masks reduce the cost of different\nabilities based on the active Mask.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Artist's Immersion"
+   ],
+   "lines": 2,
+   "flat": "Your Masks reduce the cost of different abilities based on the active Mask.",
+   "_raw": "Your Masks reduce the cost of different\nabilities based on the active Mask.",
+   "tree": "04/shaman/05/003/004"
+  },
+  "779a794b1de7": {
+   "src": "Vengeful Spirit",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/003/007",
+   "keep": "en"
+  },
+  "41750d3a6d63": {
+   "src": "Your Totem will give all players\nin its range a damage bonus.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Vengeful Spirit"
+   ],
+   "lines": 2,
+   "flat": "Your Totem will give all players in its range a damage bonus.",
+   "_raw": "Your Totem will give all players\nin its range a damage bonus.",
+   "tree": "04/shaman/05/003/007"
+  },
+  "92011794f4a6": {
+   "src": "Double Totem",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/004/000",
+   "keep": "en"
+  },
+  "34d0efd60254": {
+   "src": "Increase your maximum Totems by +{~}.\nTotem and Aura will do {~} less damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Double Totem",
+    "shaman/Triple Totem"
+   ],
+   "lines": 2,
+   "flat": "Increase your maximum Totems by +{~}. Totem and Aura will do {~} less damage.",
+   "_raw": "Increase your maximum Totems by +1.\nTotem and Aura will do 40% less damage.",
+   "tree": "04/shaman/05/004/000"
+  },
+  "6beea86fbdc5": {
+   "src": "Regeneration and Sacrificial Shrine\nwill heal {~} less health.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Double Totem",
+    "shaman/Triple Totem"
+   ],
+   "lines": 2,
+   "flat": "Regeneration and Sacrificial Shrine will heal {~} less health.",
+   "_raw": "Regeneration and Sacrificial Shrine\nwill heal 40% less health.",
+   "tree": "04/shaman/05/004/000"
+  },
+  "742ecba69a05": {
+   "src": "Cheaper Totem II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/004/002",
+   "keep": "en"
+  },
+  "8bd687fc3d30": {
+   "src": "Storm Dance",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/004/005",
+   "keep": "en"
+  },
+  "aa6a9d1b5733": {
+   "src": "Enemies hit by Aura will be\npulled towards your totem.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Storm Dance"
+   ],
+   "lines": 2,
+   "flat": "Enemies hit by Aura will be pulled towards your totem.",
+   "_raw": "Enemies hit by Aura will be\npulled towards your totem.",
+   "tree": "04/shaman/05/004/005"
+  },
+  "574395aebd69": {
+   "src": "Cheaper Haul II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/004/008",
+   "keep": "en"
+  },
+  "506eb98f49ae": {
+   "src": "Regeneration",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/005/003",
+   "keep": "en"
+  },
+  "5dac3abb9e29": {
+   "src": "Every {~}s, your Totem will heal\nevery player within its range.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Regeneration"
+   ],
+   "lines": 2,
+   "flat": "Every {~}s, your Totem will heal every player within its range.",
+   "_raw": "Every 0.4s, your Totem will heal\nevery player within its range.",
+   "tree": "04/shaman/05/005/003"
+  },
+  "c3ecefa5c828": {
+   "src": "Twisted Tether",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/05/005/006",
+   "keep": "en"
+  },
+  "c7673b5ce4da": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} health)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每 {~} 點生命)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Twisted Tether"
+   ],
+   "_raw": " Total Damage: 65% (of your DPS, per 2% health)",
+   "tree": "04/shaman/05/005/006"
+  },
+  "6e02b650c33d": {
+   "src": "Nearby Bleeding {#}{#}enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Twisted Tether"
+   ],
+   "lines": 3,
+   "flat": "Nearby Bleeding {#}{#}enemies will take damage for every {~} Health you lose. (Max {~} activations per second)",
+   "_raw": "Nearby Bleeding  enemies will take\ndamage for every 2% Health you lose.\n(Max 20 activations per second)",
+   "tree": "04/shaman/05/005/006"
+  },
+  "39ab91e5c070": {
+   "src": "Crimson Effigy",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/001/001",
+   "keep": "en"
+  },
+  "ea5b3cf10ef6": {
+   "src": "Each Totem will summon its own Effigy.\nEach additional Effigy summoned will\ndecrease all Effigy damage by {~}x.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Crimson Effigy"
+   ],
+   "lines": 3,
+   "flat": "Each Totem will summon its own Effigy. Each additional Effigy summoned will decrease all Effigy damage by {~}x.",
+   "_raw": "Each Totem will summon its own Effigy.\nEach additional Effigy summoned will\ndecrease all Effigy damage by 0.8x.",
+   "tree": "04/shaman/06/001/001"
+  },
+  "c410c923d36f": {
+   "src": "Totem will summon an Effigy that will\nattack enemies and push them towards\nthe nearest Totem every {~}s.\nThe Effigy will live for as long as its\nTotem does.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Crimson Effigy"
+   ],
+   "lines": 5,
+   "flat": "Totem will summon an Effigy that will attack enemies and push them towards the nearest Totem every {~}s. The Effigy will live for as long as its Totem does.",
+   "_raw": "Totem will summon an Effigy that will\nattack enemies and push them towards\nthe nearest Totem every 0.5s.\nThe Effigy will live for as long as its\nTotem does.",
+   "tree": "04/shaman/06/001/001"
+  },
+  "e3270b9dbe83": {
+   "src": "Tribal Chants",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/001/004",
+   "keep": "en"
+  },
+  "065e3007a996": {
+   "src": "{#} Fanatic: +{~} Resistance Bonus (❁) to Allies",
+   "dst": "{#} Fanatic: +{~} 抗性加成 (❁) 給友軍",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Tribal Chants",
+    "shaman/Chorus of the Ancients"
+   ],
+   "_raw": " Fanatic: +45% Resistance Bonus (❁) to Allies",
+   "tree": "04/shaman/06/001/004"
+  },
+  "566923b70b61": {
+   "src": "{#} Heretic: +{~} Walk Speed to Allies",
+   "dst": "{#} Heretic: +{~} 移動速度給友軍",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Tribal Chants",
+    "shaman/Chorus of the Ancients"
+   ],
+   "_raw": " Heretic: +60% Walk Speed to Allies",
+   "tree": "04/shaman/06/001/004"
+  },
+  "5aca7df2a7ef": {
+   "src": "{#} Lunatic: +{~} Damage Bonus (⚔) to Allies",
+   "dst": "{#} Lunatic: +{~} 傷害加成 (⚔) 給友軍",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Tribal Chants",
+    "shaman/Chorus of the Ancients"
+   ],
+   "_raw": " Lunatic: +15% Damage Bonus (⚔) to Allies",
+   "tree": "04/shaman/06/001/004"
+  },
+  "bd6a12cbe948": {
+   "src": "{#}{#}Cooldown: {~}s (per Chant)",
+   "dst": "{#}{#}冷卻時間: {~} 秒(每次吟唱)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Tribal Chants"
+   ],
+   "_raw": " Cooldown: 8s (per Chant)",
+   "tree": "04/shaman/06/001/004"
+  },
+  "8a3eb7f7f7f4": {
+   "src": "(-{~} of the bonus decays every second)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Tribal Chants"
+   ],
+   "lines": 1,
+   "flat": "(-{~} of the bonus decays every second)",
+   "_raw": "(-10% of the bonus decays every second)",
+   "tree": "04/shaman/06/001/004"
+  },
+  "2f32ec3ef98f": {
+   "src": "Switching Masks buffs nearby allies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Tribal Chants"
+   ],
+   "lines": 1,
+   "flat": "Switching Masks buffs nearby allies.",
+   "_raw": "Switching Masks buffs nearby allies.",
+   "tree": "04/shaman/06/001/004"
+  },
+  "b4a5417409d1": {
+   "src": "Eldritch Call",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/001/007",
+   "keep": "en"
+  },
+  "1853651659a1": {
+   "src": "Blood Connection turns into a teleport\nwhile Eldritch Call is active.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eldritch Call"
+   ],
+   "lines": 2,
+   "flat": "Blood Connection turns into a teleport while Eldritch Call is active.",
+   "_raw": "Blood Connection turns into a teleport\nwhile Eldritch Call is active.",
+   "tree": "04/shaman/06/001/007"
+  },
+  "a7ca84632649": {
+   "src": "Casting Totem while holding shift will spend\n{~} points of Blood Pool {#}{#}(per Totem) to\ncall upon {~} nightmarish tentacles that attack\nnearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eldritch Call"
+   ],
+   "lines": 4,
+   "flat": "Casting Totem while holding shift will spend {~} points of Blood Pool {#}{#}(per Totem) to call upon {~} nightmarish tentacles that attack nearby enemies.",
+   "_raw": "Casting Totem while holding shift will spend\n35 points of Blood Pool  (per Totem) to\ncall upon 4 nightmarish tentacles that attack\nnearby enemies.",
+   "tree": "04/shaman/06/001/007"
+  },
+  "23c890f6c0a3": {
+   "src": "Tentacles will attack Bleeding{#}{#} enemies from an\nadditional +{~} blocks away.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eldritch Call"
+   ],
+   "lines": 2,
+   "flat": "Tentacles will attack Bleeding{#}{#} enemies from an additional +{~} blocks away.",
+   "_raw": "Tentacles will attack Bleeding  enemies from an\nadditional +6 blocks away.",
+   "tree": "04/shaman/06/001/007"
+  },
+  "5254715e37a1": {
+   "src": "Maddening Roots",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/002/000",
+   "keep": "en"
+  },
+  "dd2a876b1fb5": {
+   "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies",
+   "dst": "{#}{#}效果: {~} 緩速 ({#}) 給敵人",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Maddening Roots"
+   ],
+   "_raw": " Effects: 40% Slowness () to Enemies",
+   "tree": "04/shaman/06/002/000"
+  },
+  "07a90611a25f": {
+   "src": "Uproot will slow down enemies. Additionally,\nincrease the damage bonus granted by Bullwhip.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Maddening Roots"
+   ],
+   "lines": 2,
+   "flat": "Uproot will slow down enemies. Additionally, increase the damage bonus granted by Bullwhip.",
+   "_raw": "Uproot will slow down enemies. Additionally,\nincrease the damage bonus granted by Bullwhip.",
+   "tree": "04/shaman/06/002/000"
+  },
+  "cd1a4fa7ab65": {
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Bullwhip Damage Bonus",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Maddening Roots"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Bullwhip Damage Bonus",
+   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +15% Bullwhip Damage Bonus",
+   "tree": "04/shaman/06/002/000"
+  },
+  "a0bf542266dc": {
+   "src": "Seeking Totem",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/002/003",
+   "keep": "en"
+  },
+  "c79204a6bb5f": {
+   "src": "While wearing the Mask of the Heretic {#},\nyour Totem will move towards you,\nunless you are within its range.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Seeking Totem"
+   ],
+   "lines": 3,
+   "flat": "While wearing the Mask of the Heretic {#}, your Totem will move towards you, unless you are within its range.",
+   "_raw": "While wearing the Mask of the Heretic ,\nyour Totem will move towards you,\nunless you are within its range.",
+   "tree": "04/shaman/06/002/003"
+  },
+  "cf6ef1802975": {
+   "src": "Cheaper Aura II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/003/001",
+   "keep": "en"
+  },
+  "e108ef2d2094": {
+   "src": "Imbued Totem",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/003/004",
+   "keep": "en"
+  },
+  "e50f3dbdffab": {
+   "src": "Increase Totem's damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Imbued Totem"
+   ],
+   "lines": 1,
+   "flat": "Increase Totem's damage.",
+   "_raw": "Increase Totem's damage.",
+   "tree": "04/shaman/06/003/004"
+  },
+  "fda77001c6a6": {
+   "src": "Rupture",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/003/006",
+   "keep": "en"
+  },
+  "e96fa8cf229e": {
+   "src": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes\nup to {~}s of Bleeding{#}{#}, granting +{~} Blood Pool {#}{#}for each\nsecond of Bleeding{#}{#}{#}consumed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Rupture"
+   ],
+   "lines": 3,
+   "flat": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes up to {~}s of Bleeding{#}{#}, granting +{~} Blood Pool {#}{#}for each second of Bleeding{#}{#}{#}consumed.",
+   "_raw": "Sacrificial Shrine boosts Aura's damage by +15% and consumes\nup to 2s of Bleeding , granting +2.2 Blood Pool  for each\nsecond of Bleeding  consumed.",
+   "tree": "04/shaman/06/003/006"
+  },
+  "0504fc68c397": {
+   "src": "Bloody",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/003/008",
+   "keep": "en"
+  },
+  "cd58c4a4b11a": {
+   "src": "Increase your maximum Blood Pool {#}{#}by +{~} points.\nIncrease your maximum Bleeding {#}{#}duration by +{~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Bloody",
+    "shaman/Bloodier",
+    "shaman/Bloodiest"
+   ],
+   "lines": 2,
+   "flat": "Increase your maximum Blood Pool {#}{#}by +{~} points. Increase your maximum Bleeding {#}{#}duration by +{~}s.",
+   "_raw": "Increase your maximum Blood Pool  by +30 points.\nIncrease your maximum Bleeding  duration by +1.5s.",
+   "tree": "04/shaman/06/003/008"
+  },
+  "79056c7ae5c3": {
+   "src": "Commander",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/004/000",
+   "keep": "en"
+  },
+  "3f07b666370c": {
+   "src": "{#}{#}Effect: +{~} Attack Speed to Puppets",
+   "dst": "{#}{#}效果: +{~} 攻擊速度給傀儡",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Commander"
+   ],
+   "_raw": " Effect: +25% Attack Speed to Puppets",
+   "tree": "04/shaman/06/004/000"
+  },
+  "c2e0a96b4389": {
+   "src": "Casting Aura while holding shift will\nrally all active Puppets to your\nside, granting them increased\nattack speed and accuracy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Commander"
+   ],
+   "lines": 4,
+   "flat": "Casting Aura while holding shift will rally all active Puppets to your side, granting them increased attack speed and accuracy.",
+   "_raw": "Casting Aura while holding shift will\nrally all active Puppets to your\nside, granting them increased\nattack speed and accuracy.",
+   "tree": "04/shaman/06/004/000"
+  },
+  "f82f32dab606": {
+   "src": "While not rallied, your Summons' attacks\nwill build up the duration of this ability\nby +{~}s per attack. (Max {~}s)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Commander"
+   ],
+   "lines": 3,
+   "flat": "While not rallied, your Summons' attacks will build up the duration of this ability by +{~}s per attack. (Max {~}s)",
+   "_raw": "While not rallied, your Summons' attacks\nwill build up the duration of this ability\nby +0.1s per attack. (Max 30s)",
+   "tree": "04/shaman/06/004/000"
+  },
+  "a101f70053c4": {
+   "src": "Your Main Attack deals {~} more\ndamage for each rallied Puppet.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Commander"
+   ],
+   "lines": 2,
+   "flat": "Your Main Attack deals {~} more damage for each rallied Puppet.",
+   "_raw": "Your Main Attack deals 6% more\ndamage for each rallied Puppet.",
+   "tree": "04/shaman/06/004/000"
+  },
+  "e3e4000e19c8": {
+   "src": "Friendly Fire",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/004/002",
+   "keep": "en"
+  },
+  "6f5fa74b0433": {
+   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Puppets",
+   "dst": "{#}{#}效果: +{~} 傷害加成 (⚔) 給傀儡",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Friendly Fire"
+   ],
+   "_raw": " Effect: +10% Damage Bonus (⚔) to Puppets",
+   "tree": "04/shaman/06/004/002"
+  },
+  "d7df9f2b9989": {
+   "src": "Hitting your Puppets with Main Attack will\ncause them to lose {~}s of their duration\nper beam and give them a damage boost.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Friendly Fire"
+   ],
+   "lines": 3,
+   "flat": "Hitting your Puppets with Main Attack will cause them to lose {~}s of their duration per beam and give them a damage boost.",
+   "_raw": "Hitting your Puppets with Main Attack will\ncause them to lose 2s of their duration\nper beam and give them a damage boost.",
+   "tree": "04/shaman/06/004/002"
+  },
+  "d810d6af2a96": {
+   "src": "Depersonalization",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/004/005",
+   "keep": "en"
+  },
+  "a695b6270478": {
+   "src": "Masquerade will trigger after -{~}\nless Mask switch. Reduces mana\nbonus by -{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Depersonalization"
+   ],
+   "lines": 3,
+   "flat": "Masquerade will trigger after -{~} less Mask switch. Reduces mana bonus by -{~}.",
+   "_raw": "Masquerade will trigger after -1\nless Mask switch. Reduces mana\nbonus by -10.",
+   "tree": "04/shaman/06/004/005"
+  },
+  "3f91afeb7e37": {
+   "src": "Scourge",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/004/007",
+   "keep": "en"
+  },
+  "d8793e2e9fb7": {
+   "src": "Flaming Tongue gains +{~} hit and attacks +{~} faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Scourge"
+   ],
+   "lines": 1,
+   "flat": "Flaming Tongue gains +{~} hit and attacks +{~} faster.",
+   "_raw": "Flaming Tongue gains +1 hit and attacks +40% faster.",
+   "tree": "04/shaman/06/004/007"
+  },
+  "b7abf6c5f85c": {
+   "src": "Meticulous Act",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/005/003",
+   "keep": "en"
+  },
+  "7312504927e6": {
+   "src": "{#} Fanatic: +{~} Resistance Bonus",
+   "dst": "{#} Fanatic: +{~} 抗性加成",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Meticulous Act"
+   ],
+   "_raw": " Fanatic: +20% Resistance Bonus",
+   "tree": "04/shaman/06/005/003"
+  },
+  "06012ad7f59c": {
+   "src": "{#} Heretic: +{~} Walk Speed",
+   "dst": "{#} Heretic: +{~} 移動速度",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Meticulous Act"
+   ],
+   "_raw": " Heretic: +40% Walk Speed",
+   "tree": "04/shaman/06/005/003"
+  },
+  "42f923f03a8c": {
+   "src": "{#} Lunatic: +{~} Damage Bonus",
+   "dst": "{#} Lunatic: +{~} 傷害加成",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Meticulous Act"
+   ],
+   "_raw": " Lunatic: +25% Damage Bonus",
+   "tree": "04/shaman/06/005/003"
+  },
+  "397a37fd1f4d": {
+   "src": "Your Masks will give higher bonuses.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Meticulous Act"
+   ],
+   "lines": 1,
+   "flat": "Your Masks will give higher bonuses.",
+   "_raw": "Your Masks will give higher bonuses.",
+   "tree": "04/shaman/06/005/003"
+  },
+  "2510020e4358": {
+   "src": "Bloodletting",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/06/005/008",
+   "keep": "en"
+  },
+  "4838b4155a8f": {
+   "src": "Increase Twisted Tether's damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Bloodletting"
+   ],
+   "lines": 1,
+   "flat": "Increase Twisted Tether's damage.",
+   "_raw": "Increase Twisted Tether's damage.",
+   "tree": "04/shaman/06/005/008"
+  },
+  "d79df7c8be18": {
+   "src": "Hummingbird's Song",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/001/001",
+   "keep": "en"
+  },
+  "d8f680e0d001": {
+   "src": "{#}{#}Effect: +{~} Walk Speed to Self",
+   "dst": "{#}{#}效果: +{~} 移動速度給自己",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Hummingbird's Song"
+   ],
+   "_raw": " Effect: +40% Walk Speed to Self",
+   "tree": "04/shaman/07/001/001"
+  },
+  "a7d357a932bc": {
+   "src": "Casting Haul while holding shift will\ntemporarily send your Hummingbirds\nto attack nearby enemies, rapidly\npiercing through them every {~}s.\nCasting it again will call them back early.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Hummingbird's Song"
+   ],
+   "lines": 5,
+   "flat": "Casting Haul while holding shift will temporarily send your Hummingbirds to attack nearby enemies, rapidly piercing through them every {~}s. Casting it again will call them back early.",
+   "_raw": "Casting Haul while holding shift will\ntemporarily send your Hummingbirds\nto attack nearby enemies, rapidly\npiercing through them every 0.25s.\nCasting it again will call them back early.",
+   "tree": "04/shaman/07/001/001"
+  },
+  "3fed2726668c": {
+   "src": "Summon {~} Hummingbird Carvings\nwhich fly around you, passively\ngranting a walk speed buff.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Hummingbird's Song"
+   ],
+   "lines": 3,
+   "flat": "Summon {~} Hummingbird Carvings which fly around you, passively granting a walk speed buff.",
+   "_raw": "Summon 2 Hummingbird Carvings\nwhich fly around you, passively\ngranting a walk speed buff.",
+   "tree": "04/shaman/07/001/001"
+  },
+  "6d29e143226e": {
+   "src": "While they are attacking, your Hummingbirds\nwill not apply their passive effects to you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Hummingbird's Song"
+   ],
+   "lines": 2,
+   "flat": "While they are attacking, your Hummingbirds will not apply their passive effects to you.",
+   "_raw": "While they are attacking, your Hummingbirds\nwill not apply their passive effects to you.",
+   "tree": "04/shaman/07/001/001"
+  },
+  "bd5f23badd3a": {
+   "src": "Blood Rite",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/001/007",
+   "keep": "en"
+  },
+  "d20b475ddac7": {
+   "src": "When any player takes damage within\nyour Totem's range, {~} of the damage\ntaken proportional to your maximum\nhealth is added to your Blood Pool {#}.\n(Max {~} Blood Pool per second)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Blood Rite"
+   ],
+   "lines": 5,
+   "flat": "When any player takes damage within your Totem's range, {~} of the damage taken proportional to your maximum health is added to your Blood Pool {#}. (Max {~} Blood Pool per second)",
+   "_raw": "When any player takes damage within\nyour Totem's range, 35% of the damage\ntaken proportional to your maximum\nhealth is added to your Blood Pool .\n(Max 15 Blood Pool per second)",
+   "tree": "04/shaman/07/001/007"
+  },
+  "2515cc8f74f5": {
+   "src": "Triple Totem",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/002/000",
+   "keep": "en"
+  },
+  "f2018f13b66c": {
+   "src": "Invigorating Wave",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/002/002",
+   "keep": "en"
+  },
+  "1e737fcaf8d9": {
+   "src": "{#}{#}Effect: +{~} Attack Speed to Summons",
+   "dst": "{#}{#}效果: +{~} 攻擊速度給召喚物",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Invigorating Wave"
+   ],
+   "_raw": " Effect: +30% Attack Speed to Summons",
+   "tree": "04/shaman/07/002/002"
+  },
+  "f694b957aa17": {
+   "src": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +{~} mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Invigorating Wave"
+   ],
+   "lines": 3,
+   "flat": "Aura will temporarily increase your Summons' attack speed. Players hit will gain +{~} mana.",
+   "_raw": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +3 mana.",
+   "tree": "04/shaman/07/002/002"
+  },
+  "ddf6cb6153bb": {
+   "src": "Chorus of the Ancients",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/002/004",
+   "keep": "en"
+  },
+  "263b80eccc06": {
+   "src": "Increase the power of all Chants.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Chorus of the Ancients"
+   ],
+   "lines": 1,
+   "flat": "Increase the power of all Chants.",
+   "_raw": "Increase the power of all Chants.",
+   "tree": "04/shaman/07/002/004"
+  },
+  "2f4411c5b2ec": {
+   "src": "Sanguine Strike",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/003/006",
+   "keep": "en"
+  },
+  "4ea103431061": {
+   "src": "Bleeding{#}{#}{#}enemies take damage every {~}s.\nBleeding{#}{#}{#}damage dealt within Totem's{#}range\nalso adds +{~} points to your Blood Pool{#}{#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Sanguine Strike"
+   ],
+   "lines": 3,
+   "flat": "Bleeding{#}{#}{#}enemies take damage every {~}s. Bleeding{#}{#}{#}damage dealt within Totem's{#}range also adds +{~} points to your Blood Pool{#}{#}.",
+   "_raw": "Bleeding  enemies take damage every 0.5s.\nBleeding  damage dealt within Totem's range\nalso adds +0.8 points to your Blood Pool .",
+   "tree": "04/shaman/07/003/006"
+  },
+  "4612dfa88a7b": {
+   "src": "Greatly reduce Main Attack spread.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Sanguine Strike"
+   ],
+   "lines": 1,
+   "flat": "Greatly reduce Main Attack spread.",
+   "_raw": "Greatly reduce Main Attack spread.",
+   "tree": "04/shaman/07/003/006"
+  },
+  "06875d1c9d2c": {
+   "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#}{#}for +{~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Sanguine Strike"
+   ],
+   "lines": 2,
+   "flat": "Your Main Attack will now inflict enemies with Bleeding {#}{#}for +{~}s.",
+   "_raw": "Your Main Attack will now inflict enemies\nwith Bleeding  for +2s.",
+   "tree": "04/shaman/07/003/006"
+  },
+  "01631fdf51a3": {
+   "src": "Bloodier",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/003/008",
+   "keep": "en"
+  },
+  "d4af78ca7c87": {
+   "src": "Soaring Wingbeats",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/004/001",
+   "keep": "en"
+  },
+  "fc7b11fd5b9f": {
+   "src": "{#}{#}Effects: +{~} Walk Speed to Self",
+   "dst": "{#}{#}效果: +{~} 移動速度給自己",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Soaring Wingbeats"
+   ],
+   "_raw": " Effects: +20% Walk Speed to Self",
+   "tree": "04/shaman/07/004/001"
+  },
+  "8254f43a85ca": {
+   "src": "Your Hummingbirds' passive\neffects are improved.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Soaring Wingbeats"
+   ],
+   "lines": 2,
+   "flat": "Your Hummingbirds' passive effects are improved.",
+   "_raw": "Your Hummingbirds' passive\neffects are improved.",
+   "tree": "04/shaman/07/004/001"
+  },
+  "8baf118732cc": {
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Soaring Wingbeats"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
+   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +2 Jump Height to Self",
+   "tree": "04/shaman/07/004/001"
+  },
+  "334d6b9c17c1": {
+   "src": "Cheaper Uproot II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/004/003",
+   "keep": "en"
+  },
+  "a9684da70f62": {
+   "src": "Awakened",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/004/005",
+   "keep": "en"
+  },
+  "2013039c87d2": {
+   "src": "After saving {~} mana from your Masks'\nmana reductions, switching Masks will\ncause you to become Awakened ♚,\ngiving you the upsides of all\nMasks at once with no downsides.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Awakened"
+   ],
+   "lines": 5,
+   "flat": "After saving {~} mana from your Masks' mana reductions, switching Masks will cause you to become Awakened ♚, giving you the upsides of all Masks at once with no downsides.",
+   "_raw": "After saving 150 mana from your Masks'\nmana reductions, switching Masks will\ncause you to become Awakened ♚,\ngiving you the upsides of all\nMasks at once with no downsides.",
+   "tree": "04/shaman/07/004/005"
+  },
+  "bc47174848e7": {
+   "src": "Switching to an attached Mask\nwhile Awakened ♚ will immediately\nrecall the Mask back to you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Awakened"
+   ],
+   "lines": 3,
+   "flat": "Switching to an attached Mask while Awakened ♚ will immediately recall the Mask back to you.",
+   "_raw": "Switching to an attached Mask\nwhile Awakened ♚ will immediately\nrecall the Mask back to you.",
+   "tree": "04/shaman/07/004/005"
+  },
+  "a9ac6caf246a": {
+   "src": "Blood Sorrow",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/004/007",
+   "keep": "en"
+  },
+  "29412ca51f54": {
+   "src": "Casting Uproot or Haunting Memory while\nholding shift will spend {~} points\nof Blood Pool {#} to cast a destructive beam\nthat chains between enemies and allies,\nand damages enemies every {~}s.",
+   "dst": "按住 shift 施放 Uproot 或\nHaunting Memory 會消耗 {~} 點\nBlood Pool {#} 施放一道破壞性光束，\n在敵人與友軍之間跳躍，\n並每 {~} 秒對敵人造成傷害。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Blood Sorrow"
+   ],
+   "lines": 5,
+   "flat": "Casting Uproot or Haunting Memory while holding shift will spend {~} points of Blood Pool {#} to cast a destructive beam that chains between enemies and allies, and damages enemies every {~}s.",
+   "_raw": "Casting Uproot or Haunting Memory while\nholding shift will spend 60 points\nof Blood Pool  to cast a destructive beam\nthat chains between enemies and allies,\nand damages enemies every 0.2s.",
+   "tree": "04/shaman/07/004/007"
+  },
+  "11770d8b1951": {
+   "src": "You and any allies within the beam will\nreceive +{~}{#}Overhealth ❤ per hit.\nBonus health decays over {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Blood Sorrow"
+   ],
+   "lines": 3,
+   "flat": "You and any allies within the beam will receive +{~}{#}Overhealth ❤ per hit. Bonus health decays over {~}s.",
+   "_raw": "You and any allies within the beam will\nreceive +2% Overhealth ❤ per hit.\nBonus health decays over 20s.",
+   "tree": "04/shaman/07/004/007"
+  },
+  "8336aad62e93": {
+   "src": "Shepherd",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/07/005/000",
+   "keep": "en"
+  },
+  "b39c62d4418f": {
+   "src": "When you or your Summons kill an enemy,\nor when you kill a Puppet with Friendly Fire,\ngain +{~} Max Puppets ⚘ for {~}s. (Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Shepherd"
+   ],
+   "lines": 3,
+   "flat": "When you or your Summons kill an enemy, or when you kill a Puppet with Friendly Fire, gain +{~} Max Puppets ⚘ for {~}s. (Max +{~})",
+   "_raw": "When you or your Summons kill an enemy,\nor when you kill a Puppet with Friendly Fire,\ngain +1 Max Puppets ⚘ for 15s. (Max +4)",
+   "tree": "04/shaman/07/005/000"
+  },
+  "98f3a6c87dca": {
+   "src": "Puppetry",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/001/001",
+   "keep": "en"
+  },
+  "6c1c64738de9": {
+   "src": "Totem summons Puppets{#}{~} faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Puppetry"
+   ],
+   "lines": 1,
+   "flat": "Totem summons Puppets{#}{~} faster.",
+   "_raw": "Totem summons Puppets 25% faster.",
+   "tree": "04/shaman/08/001/001"
+  },
+  "417be8f98d90": {
+   "src": "Eldritch Transfusion",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/001/007",
+   "keep": "en"
+  },
+  "87186ab9c023": {
+   "src": "{#}{#}Effect: +{~} damage to Eldritch Call (Per stack)",
+   "dst": "{#}{#}效果: +{~} 傷害給 Eldritch Call(每層)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Eldritch Transfusion"
+   ],
+   "_raw": " Effect: +15% damage to Eldritch Call (Per stack)",
+   "tree": "04/shaman/08/001/007"
+  },
+  "f3d6594e22bf": {
+   "src": "For each Transfused {#}{#}Eldritch Call has, its\nattacks deal more damage. All Transfused {#}\nis lost when Eldritch Call expires.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eldritch Transfusion"
+   ],
+   "lines": 3,
+   "flat": "For each Transfused {#}{#}Eldritch Call has, its attacks deal more damage. All Transfused {#} is lost when Eldritch Call expires.",
+   "_raw": "For each Transfused  Eldritch Call has, its\nattacks deal more damage. All Transfused \nis lost when Eldritch Call expires.",
+   "tree": "04/shaman/08/001/007"
+  },
+  "8108b37cedb9": {
+   "src": "Refreshing Eldritch Call while it is already active\nwill imbue its attacks with blood, granting it +{~}\nTransfused {#}. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eldritch Transfusion"
+   ],
+   "lines": 3,
+   "flat": "Refreshing Eldritch Call while it is already active will imbue its attacks with blood, granting it +{~} Transfused {#}. (Max {~})",
+   "_raw": "Refreshing Eldritch Call while it is already active\nwill imbue its attacks with blood, granting it +1\nTransfused . (Max 3)",
+   "tree": "04/shaman/08/001/007"
+  },
+  "a584eff20fb7": {
+   "src": "Crystal Knives",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/002/002",
+   "keep": "en"
+  },
+  "38506b0fdd22": {
+   "src": "Your Puppet's knives become stronger,\nand can pass through walls and enemies.\n(Max {~} enemies)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Crystal Knives"
+   ],
+   "lines": 3,
+   "flat": "Your Puppet's knives become stronger, and can pass through walls and enemies. (Max {~} enemies)",
+   "_raw": "Your Puppet's knives become stronger,\nand can pass through walls and enemies.\n(Max 2 enemies)",
+   "tree": "04/shaman/08/002/002"
+  },
+  "05bbb5cbde81": {
+   "src": "Freestyle",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/002/004",
+   "keep": "en"
+  },
+  "2d0031a25ba1": {
+   "src": "Haul, Blood Connection, and Frog Dance\nlaunch you further.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Freestyle"
+   ],
+   "lines": 2,
+   "flat": "Haul, Blood Connection, and Frog Dance launch you further.",
+   "_raw": "Haul, Blood Connection, and Frog Dance\nlaunch you further.",
+   "tree": "04/shaman/08/002/004"
+  },
+  "3eab0e1a3e97": {
+   "src": "Repulse",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/002/006",
+   "keep": "en"
+  },
+  "4d5124cf3e32": {
+   "src": "Once Aura rebounds, it will radiate back out\nand deal its effects a third time.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Repulse"
+   ],
+   "lines": 2,
+   "flat": "Once Aura rebounds, it will radiate back out and deal its effects a third time.",
+   "_raw": "Once Aura rebounds, it will radiate back out\nand deal its effects a third time.",
+   "tree": "04/shaman/08/002/006"
+  },
+  "02f9d125ebcc": {
+   "src": "Sacrificial Shrine will heal {~} less health.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Repulse"
+   ],
+   "lines": 1,
+   "flat": "Sacrificial Shrine will heal {~} less health.",
+   "_raw": "Sacrificial Shrine will heal 50% less health.",
+   "tree": "04/shaman/08/002/006"
+  },
+  "f70576861ed0": {
+   "src": "Effuse",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/002/008",
+   "keep": "en"
+  },
+  "bd21fdd59aad": {
+   "src": "Flaming Tongue grants +{~} Blood Pool {#} per hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Effuse"
+   ],
+   "lines": 1,
+   "flat": "Flaming Tongue grants +{~} Blood Pool {#} per hit.",
+   "_raw": "Flaming Tongue grants +2.5 Blood Pool  per hit.",
+   "tree": "04/shaman/08/002/008"
+  },
+  "7973466bc6ea": {
+   "src": "Slingshot",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/003/000",
+   "keep": "en"
+  },
+  "d0f6bc1a7a6c": {
+   "src": "Haul slings you upwards\nbefore leaping towards Totem.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Slingshot"
+   ],
+   "lines": 2,
+   "flat": "Haul slings you upwards before leaping towards Totem.",
+   "_raw": "Haul slings you upwards\nbefore leaping towards Totem.",
+   "tree": "04/shaman/08/003/000"
+  },
+  "a6eb78b19cef": {
+   "src": "Egomania",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/003/003",
+   "keep": "en"
+  },
+  "8b07f05f3685": {
+   "src": "Increase Aura's damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Egomania"
+   ],
+   "lines": 1,
+   "flat": "Increase Aura's damage.",
+   "_raw": "Increase Aura's damage.",
+   "tree": "04/shaman/08/003/003"
+  },
+  "e707850dfbe8": {
+   "src": "When wearing the Mask of the Fanatic {#},\nAura will radiate from yourself\ninstead of your Totem.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Egomania"
+   ],
+   "lines": 3,
+   "flat": "When wearing the Mask of the Fanatic {#}, Aura will radiate from yourself instead of your Totem.",
+   "_raw": "When wearing the Mask of the Fanatic ,\nAura will radiate from yourself\ninstead of your Totem.",
+   "tree": "04/shaman/08/003/003"
+  },
+  "da95fb23699e": {
+   "src": "Totemic Hammer",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/003/005",
+   "keep": "en"
+  },
+  "70c4646c73f7": {
+   "src": "Increase Totemic Smash's damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Hammer"
+   ],
+   "lines": 1,
+   "flat": "Increase Totemic Smash's damage.",
+   "_raw": "Increase Totemic Smash's damage.",
+   "tree": "04/shaman/08/003/005"
+  },
+  "33f14bab9c97": {
+   "src": "When wearing the Mask of the Lunatic {#},\nTotem will smash down onto the ground.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Hammer"
+   ],
+   "lines": 2,
+   "flat": "When wearing the Mask of the Lunatic {#}, Totem will smash down onto the ground.",
+   "_raw": "When wearing the Mask of the Lunatic ,\nTotem will smash down onto the ground.",
+   "tree": "04/shaman/08/003/005"
+  },
+  "4f91d10551e6": {
+   "src": "Bloodiest",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/003/007",
+   "keep": "en"
+  },
+  "ca9847239640": {
+   "src": "Fortified Formation",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/004/002",
+   "keep": "en"
+  },
+  "24d2adfdb8dc": {
+   "src": "If your health drops to {~} or less,\nyour Effigies protect you until you\nare above {~} health again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Fortified Formation"
+   ],
+   "lines": 3,
+   "flat": "If your health drops to {~} or less, your Effigies protect you until you are above {~} health again.",
+   "_raw": "If your health drops to 50% or less,\nyour Effigies protect you until you\nare above 70% health again.",
+   "tree": "04/shaman/08/004/002"
+  },
+  "aeb8577780b4": {
+   "src": "While protected, you take reduced\ndamage and your Effigies strike\nback at attackers every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Fortified Formation"
+   ],
+   "lines": 3,
+   "flat": "While protected, you take reduced damage and your Effigies strike back at attackers every {~}s.",
+   "_raw": "While protected, you take reduced\ndamage and your Effigies strike\nback at attackers every 2s.",
+   "tree": "04/shaman/08/004/002"
+  },
+  "770cd74e6dd4": {
+   "src": "Pool of Rejuvenation",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/004/004",
+   "keep": "en"
+  },
+  "b58e905dd53a": {
+   "src": "Gain +{~} Mana every {~}s while\ninside of at least one pool.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Pool of Rejuvenation"
+   ],
+   "lines": 2,
+   "flat": "Gain +{~} Mana every {~}s while inside of at least one pool.",
+   "_raw": "Gain +1 Mana every 0.2s while\ninside of at least one pool.",
+   "tree": "04/shaman/08/004/004"
+  },
+  "2e848b8e8fd2": {
+   "src": "When wearing the Mask of the Heretic {#},\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Pool of Rejuvenation"
+   ],
+   "lines": 3,
+   "flat": "When wearing the Mask of the Heretic {#}, Frog Dance will create a small pool when hitting the ground. (Max {~})",
+   "_raw": "When wearing the Mask of the Heretic ,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max 3)",
+   "tree": "04/shaman/08/004/004"
+  },
+  "619dba1f95df": {
+   "src": "Haemomagnetic",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/004/008",
+   "keep": "en"
+  },
+  "4c4a810dc67c": {
+   "src": "Blood Sorrow will chain {~} further\nand deals increased damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Haemomagnetic"
+   ],
+   "lines": 2,
+   "flat": "Blood Sorrow will chain {~} further and deals increased damage.",
+   "_raw": "Blood Sorrow will chain 50% further\nand deals increased damage.",
+   "tree": "04/shaman/08/004/008"
+  },
+  "bf4e885cc644": {
+   "src": "Corporeal Manifestation",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/08/005/005",
+   "keep": "en"
+  },
+  "5e7137965b1a": {
+   "src": "When wearing the Mask of the Awakened ♚,\nall of your other Masks will spin around\nyou, dealing damage and applying\nHaunting Memory's effects.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Corporeal Manifestation"
+   ],
+   "lines": 4,
+   "flat": "When wearing the Mask of the Awakened ♚, all of your other Masks will spin around you, dealing damage and applying Haunting Memory's effects.",
+   "_raw": "When wearing the Mask of the Awakened ♚,\nall of your other Masks will spin around\nyou, dealing damage and applying\nHaunting Memory's effects.",
+   "tree": "04/shaman/08/005/005"
+  },
+  "d216f2fbf5db": {
+   "src": "Patchwork Abomination",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/09/002/001",
+   "keep": "en"
+  },
+  "fc47779861ff": {
+   "src": "{#}{#}Area of Effect: {~} Blocks (Circle-Shaped, Explosion)",
+   "dst": "{#}{#}技能範圍: {~} 格(圓形，爆炸)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "_raw": " Area of Effect: 12 Blocks (Circle-Shaped, Explosion)",
+   "tree": "04/shaman/09/002/001"
+  },
+  "c1aeba9b8851": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Attack)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，攻擊)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "_raw": " Total Damage: 2400% (of your DPS, Attack)",
+   "tree": "04/shaman/09/002/001"
+  },
+  "c911fca82ad6": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Explosion)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，爆炸)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "_raw": " Total Damage: 5000% (of your DPS, Explosion)",
+   "tree": "04/shaman/09/002/001"
+  },
+  "d87e4676a79c": {
+   "src": "Activate abilities to charge\nyour Ultimate Meter {#}{#}to {~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities to charge your Ultimate Meter {#}{#}to {~}.",
+   "_raw": "Activate abilities to charge\nyour Ultimate Meter  to 100%.",
+   "tree": "04/shaman/09/002/001"
+  },
+  "c1b9e678c33c": {
+   "src": "Exploding Puppets will cause the\nAbomination to explode when it dies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": 2,
+   "flat": "Exploding Puppets will cause the Abomination to explode when it dies.",
+   "_raw": "Exploding Puppets will cause the\nAbomination to explode when it dies.",
+   "tree": "04/shaman/09/002/001"
+  },
+  "5440af6cf1ec": {
+   "src": "Hit the Abomination with Overseer whilst\nsneaking to switch between close and\nlong ranged mode.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": 3,
+   "flat": "Hit the Abomination with Overseer whilst sneaking to switch between close and long ranged mode.",
+   "_raw": "Hit the Abomination with Overseer whilst\nsneaking to switch between close and\nlong ranged mode.",
+   "tree": "04/shaman/09/002/001"
+  },
+  "c870d814b777": {
+   "src": "Summon the Patchwork Abomination,\na highly unstable summon.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": 2,
+   "flat": "Summon the Patchwork Abomination, a highly unstable summon.",
+   "_raw": "Summon the Patchwork Abomination,\na highly unstable summon.",
+   "tree": "04/shaman/09/002/001"
+  },
+  "36f48228e80d": {
+   "src": "The Abomination will attack enemies\nevery {~}s in close-ranged mode,\nand every {~}s in long-ranged mode.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": 3,
+   "flat": "The Abomination will attack enemies every {~}s in close-ranged mode, and every {~}s in long-ranged mode.",
+   "_raw": "The Abomination will attack enemies\nevery 1.25s in close-ranged mode,\nand every 1.75s in long-ranged mode.",
+   "tree": "04/shaman/09/002/001"
+  },
+  "8df897e27a6e": {
+   "src": "Monument to Gloom",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/09/002/007",
+   "keep": "en"
+  },
+  "59c39ae5a547": {
+   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#}{#}to {~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Monument to Gloom"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#}{#}to {~}.",
+   "_raw": "Activate abilities or lose health to charge\nyour Ultimate Meter  to 100%.",
+   "tree": "04/shaman/09/002/007"
+  },
+  "5e39acc55201": {
+   "src": "Others receive +{~} Health {#}{#}every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Monument to Gloom"
+   ],
+   "lines": 1,
+   "flat": "Others receive +{~} Health {#}{#}every {~}s.",
+   "_raw": "Others receive +5% Health  every 0.4s.",
+   "tree": "04/shaman/09/002/007"
+  },
+  "c13f96b01816": {
+   "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#}{#}to nearby\nacolytes every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Monument to Gloom"
+   ],
+   "lines": 3,
+   "flat": "Your Totem becomes possessed by an eldritch demon, granting +{~} Blood Pool {#}{#}to nearby acolytes every {~}s.",
+   "_raw": "Your Totem becomes possessed by an eldritch\ndemon, granting +5% Blood Pool  to nearby\nacolytes every 0.4s.",
+   "tree": "04/shaman/09/002/007"
+  },
+  "c488f48d8e3c": {
+   "src": "Sundered Skies",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "tree": "04/shaman/09/003/004",
+   "keep": "en"
+  },
+  "48b2f8af35dc": {
+   "src": "Damage is split between all enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Sundered Skies"
+   ],
+   "lines": 1,
+   "flat": "Damage is split between all enemies.",
+   "_raw": "Damage is split between all enemies.",
+   "tree": "04/shaman/09/003/004"
+  },
+  "af44eb41bbda": {
+   "src": "When your Totem lands, it summons\na massive Thundercloud that zaps enemies\nevery {~}s, stunning them for {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Sundered Skies"
+   ],
+   "lines": 3,
+   "flat": "When your Totem lands, it summons a massive Thundercloud that zaps enemies every {~}s, stunning them for {~}s.",
+   "_raw": "When your Totem lands, it summons\na massive Thundercloud that zaps enemies\nevery 1s, stunning them for 1.5s.",
+   "tree": "04/shaman/09/003/004"
+  },
+  "85ac0ab95347": {
+   "src": "Your Totem massively grows in size,\ndoubling all of its effects.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Sundered Skies"
+   ],
+   "lines": 2,
+   "flat": "Your Totem massively grows in size, doubling all of its effects.",
+   "_raw": "Your Totem massively grows in size,\ndoubling all of its effects.",
+   "tree": "04/shaman/09/003/004"
+  }
+ }
+}

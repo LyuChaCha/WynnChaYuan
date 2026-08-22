@@ -46,10 +46,12 @@ def load(path: Path) -> list[dict]:
         return []
 
     if "entries" in data:
+        # `keep: en` 是<b>刻意</b>保留原文的條目（技能名稱），不是還沒翻。
+        # 算進分母的話，那幾個檔案永遠停在八成，看不出真正還有多少要做。
         return [
             {"src": v.get("src", ""), "dst": v.get("dst", ""),
              "role": v.get("role", ""), "kind": v.get("kind", "")}
-            for v in data["entries"].values()
+            for v in data["entries"].values() if not v.get("keep")
         ]
     return [
         {"src": k, "dst": v, "role": "", "kind": ""}
@@ -58,9 +60,15 @@ def load(path: Path) -> list[dict]:
 
 
 def files() -> list[Path]:
-    # 底線開頭的是設定檔（_index.json 之類），不是譯文
-    found = [p for p in sorted(TRANSLATIONS.glob("*.json"))
-             if not p.name.startswith("_")]
+    """所有譯文檔，含子資料夾。
+
+    技能樹依職業拆成 `ability/mage.json` 那樣之後，只掃頂層就會<b>整片漏掉</b>——
+    進度表看起來憑空少了一千多條，而漏掉的偏偏是正在動工的那一塊。
+    任務對話（`quest/`）也在子資料夾裡，但它有自己的合併檔，兩邊都算會重複，
+    所以照舊排除。
+    """
+    found = [p for p in sorted(TRANSLATIONS.rglob("*.json"))
+             if not p.name.startswith("_") and p.parent.name != "quest"]
     return sorted(found, key=lambda p: PRIORITY.get(p.stem, 99))
 
 

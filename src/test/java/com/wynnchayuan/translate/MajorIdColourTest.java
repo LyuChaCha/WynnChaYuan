@@ -103,6 +103,30 @@ public final class MajorIdColourTest {
                             + (c == null ? "null" : "#" + String.format("%06X", c)) + "）",
                     c != null && c == NAME_COLOUR);
         }
+        // 名稱比同一行露出的說明<b>還長</b>——這一行的「主要樣式」於是變成名稱，
+        // 被判為「不同」的反而是說明。先前程式就是在這裡挑錯，兩邊顏色對調。
+        List<StyledText> longName = new ArrayList<>();
+        MutableComponent head = Component.empty();
+        head.append(Component.literal("✦ Altruism: ").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(NAME_COLOUR))));
+        head.append(Component.literal("Allies").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR))));
+        longName.add(StyledText.fromComponent(head));
+        for (String row : new String[] {"within 16 blocks gain 100% of the",
+                                        "health you gain from Health",
+                                        "Regen and Life Steal."}) {
+            longName.add(StyledText.fromComponent(Component.literal(row).withStyle(
+                    Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR)))));
+        }
+        List<Component> third = LineTranslator.translateBlock(
+                longName, store, new boolean[longName.size()]);
+        check("名稱比說明長時整段仍查得到", third != null && !third.isEmpty());
+        if (third != null && !third.isEmpty()) {
+            Integer c = colourOf(third, "利他主義");
+            check("名稱比說明長時顏色不會跟說明對調（拿到 "
+                            + (c == null ? "null" : "#" + String.format("%06X", c)) + "）",
+                    c != null && c == NAME_COLOUR);
+        }
         report();
     }
 

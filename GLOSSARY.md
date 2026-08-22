@@ -203,6 +203,31 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 |  |  |
 
 
+## 技能樹
+
+技能樹依職業拆成 `translations/ability/{warrior,mage,archer,assassin,shaman}.json`，
+外加 `shared.json`（不只一個職業共用的條目，改它會同時影響好幾個職業）。
+
+| 原文 | 譯文 | 備註 |
+|---|---|---|
+| Range | 施放範圍 | 法術<b>能打到多遠</b> |
+| Area of Effect | 技能範圍 | 效果<b>涵蓋多大一塊</b>。兩個常被弄混，務必分清楚 |
+| Main Attack | 普攻 | |
+| Raw Spell Damage | 法術傷害值 | `Raw` 是實數，對應「值」；百分比才寫「百分比」 |
+| Mana Regen / Mana Steal | 魔力回復／魔力竊取 | |
+| aggressive enemy | 具敵意的敵人 | 會主動攻擊的那種 |
+| sneaking | 蹲下 | 不是「潛行」，遊戲裡就是蹲下鍵 |
+| orbs | 光球 | Ophanim、Lightweaver 的 |
+| sigil | 印記 | Burning Sigil、Freezing Sigil |
+| Ultimate Meter | 終極計量表 | |
+| Powder Specials | 粉末特效 | |
+
+**對照表改了怎麼辦**：跑 `python tools/apply-glossary.py --write "舊譯=新譯"`，
+它會把既有譯文一起改掉。加 `--src 英文詞` 可以限定範圍，避免「範圍」這種
+到處都是的字被誤改。不先預覽一次再 `--write` 會後悔。
+
+---
+
 ## Fruma 篇（主線）
 
 `Queen's Recruit` 之後的主線都會用到這幾個詞，先在這裡定下來。
@@ -266,7 +291,16 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 
 - **地名**（Ragni、Detlas、Troms…）——用 `{p}` 佔位符自動處理，共 137 個
 - **裝備與物品名稱**——專有名詞，翻了對不上 wiki 與交易市場
-- **技能名稱**——建議保留英文，真的需要就附註：`Meteor（隕石）`
+- **技能名稱**——<b>保留英文</b>（`Meteor`、`Ophanim`、`Ice Snake`、`Lightweaver`）。
+  技能樹的 `role: name` 條目已標記 `keep: en`，不算進翻譯進度。只翻說明。
+- **法術名稱**——同樣保留英文。費用欄寫成 `Meteor 消耗`、`Ice Snake 消耗`、
+  `Totem 消耗`，不要寫「隕石消耗」。二十個法術是：Meteor、Ice Snake、Heal、
+  Teleport、Arrow Storm、Escape、Bomb Arrow、Arrow Shield、Bash、Charge、
+  Uppercut、War Scream、Spin Attack、Vanish、Multihit、Smoke Bomb、Totem、
+  Haul、Aura、Uproot。
+- **資源與狀態名稱**——`Distortion`、`Crystallized`、`Unstable`、`Shining`、
+  `Mana Bank ✺` 保留英文（它們在遊戲裡跟圖示綁在一起）。
+  但普通的狀態效果要翻：緩速、暈眩、虛弱、流血、燃燒、冰凍。
 - **Lootrun**、**Raid**、**Guild** 等社群通用詞
 
 ---

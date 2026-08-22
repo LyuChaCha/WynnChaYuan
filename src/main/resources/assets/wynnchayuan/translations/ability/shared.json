@@ -1,0 +1,794 @@
+{
+ "_meta": {
+  "domain": "ability/shared",
+  "itemNames": false,
+  "lang": "zh_tw",
+  "count": 56,
+  "translated": 39,
+  "note": "不只一個職業共用的條目。改這裡會同時影響好幾個職業，請留意。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。"
+ },
+ "entries": {
+  "56cc40668e58": {
+   "src": "Click Combo: RIGHT-LEFT-RIGHT",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Heal",
+    "shaman/Totem",
+    "warrior/Bash",
+    "assassin/Spin Attack"
+   ],
+   "lines": 1,
+   "flat": "Click Combo: RIGHT-LEFT-RIGHT",
+   "_raw": "Click Combo: RIGHT-LEFT-RIGHT",
+   "tree": "00/warrior/01/000/004"
+  },
+  "20686a82680e": {
+   "src": "{#}{#}Main Attack Damage: +{~}",
+   "dst": "{#}{#}普攻傷害: +{~}",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Wand Proficiency I",
+    "mage/Wand Proficiency II",
+    "shaman/Relik Proficiency I",
+    "warrior/Spear Proficiency I"
+   ],
+   "_raw": " Main Attack Damage: +5%",
+   "tree": "00/warrior/01/002/004"
+  },
+  "11361873399f": {
+   "src": "{#}({#}{#}Damage: -{~})",
+   "dst": "{#}({#}{#}傷害: -{~})",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Divination",
+    "shaman/Flaming Tongue",
+    "warrior/Double Bash",
+    "warrior/Quadruple Bash"
+   ],
+   "_raw": "( Damage: -20%)",
+   "tree": "00/warrior/01/004/004"
+  },
+  "49955e209ec0": {
+   "src": "{#}{#}Range: +{~} Blocks",
+   "dst": "{#}{#}施放範圍: +{~} 格",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Larger Heal",
+    "mage/Psychokinesis",
+    "shaman/Overseer",
+    "warrior/Double Bash"
+   ],
+   "_raw": " Range: +2 Blocks",
+   "tree": "00/warrior/01/004/004"
+  },
+  "49f06f500b08": {
+   "src": "Click Combo: RIGHT-RIGHT-RIGHT",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Teleport",
+    "shaman/Haul",
+    "warrior/Charge",
+    "assassin/Dash"
+   ],
+   "lines": 1,
+   "flat": "Click Combo: RIGHT-RIGHT-RIGHT",
+   "_raw": "Click Combo: RIGHT-RIGHT-RIGHT",
+   "tree": "00/warrior/02/001/004"
+  },
+  "ee61b6271b1d": {
+   "src": "Click Combo: RIGHT-LEFT-LEFT",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Meteor",
+    "shaman/Aura",
+    "warrior/Uppercut",
+    "assassin/Multihit"
+   ],
+   "lines": 1,
+   "flat": "Click Combo: RIGHT-LEFT-LEFT",
+   "_raw": "Click Combo: RIGHT-LEFT-LEFT",
+   "tree": "00/warrior/02/003/002"
+  },
+  "ef3980c16017": {
+   "src": "Click Combo: RIGHT-RIGHT-LEFT",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Ice Snake",
+    "shaman/Uproot",
+    "warrior/War Scream",
+    "assassin/Smoke Bomb"
+   ],
+   "lines": 1,
+   "flat": "Click Combo: RIGHT-RIGHT-LEFT",
+   "_raw": "Click Combo: RIGHT-RIGHT-LEFT",
+   "tree": "00/warrior/02/003/006"
+  },
+  "fc00419a0948": {
+   "src": "Earth Mastery",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱",
+    "shaman/技能名稱",
+    "warrior/技能名稱",
+    "archer/技能名稱"
+   ],
+   "tree": "00/warrior/03/001/000",
+   "keep": "en"
+  },
+  "a0193a86644d": {
+   "src": "{#}{#}Earth Damage: +{~}",
+   "dst": "{#}{#}地屬性傷害: +{~}",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Earth Mastery",
+    "shaman/Earth Mastery",
+    "warrior/Earth Mastery",
+    "archer/Earth Mastery"
+   ],
+   "_raw": " Earth Damage: +20%",
+   "tree": "00/warrior/03/001/000"
+  },
+  "538120c14692": {
+   "src": "{#}{#}Earth Damage: +{~}-{~}",
+   "dst": "{#}{#}地屬性傷害: +{~}-{~}",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Earth Mastery",
+    "shaman/Earth Mastery",
+    "warrior/Earth Mastery",
+    "archer/Earth Mastery"
+   ],
+   "_raw": " Earth Damage: +2-4",
+   "tree": "00/warrior/03/001/000"
+  },
+  "59ad46ee370f": {
+   "src": "Increase your base damage\nfrom all Earth attacks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Earth Mastery",
+    "shaman/Earth Mastery",
+    "warrior/Earth Mastery",
+    "archer/Earth Mastery"
+   ],
+   "lines": 2,
+   "flat": "Increase your base damage from all Earth attacks.",
+   "_raw": "Increase your base damage\nfrom all Earth attacks.",
+   "tree": "00/warrior/03/001/000"
+  },
+  "f6253770a60d": {
+   "src": "Thunder Mastery",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱",
+    "shaman/技能名稱",
+    "warrior/技能名稱",
+    "archer/技能名稱"
+   ],
+   "tree": "00/warrior/03/001/002",
+   "keep": "en"
+  },
+  "6d5795b02cf6": {
+   "src": "{#}{#}Thunder Damage: +{~}",
+   "dst": "{#}{#}雷屬性傷害: +{~}",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Thunder Mastery",
+    "shaman/Thunder Mastery",
+    "warrior/Thunder Mastery",
+    "archer/Thunder Mastery"
+   ],
+   "_raw": " Thunder Damage: +10%",
+   "tree": "00/warrior/03/001/002"
+  },
+  "3553e6fbf146": {
+   "src": "{#}{#}Thunder Damage: +{~}-{~}",
+   "dst": "{#}{#}雷屬性傷害: +{~}-{~}",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Thunder Mastery",
+    "shaman/Thunder Mastery",
+    "warrior/Thunder Mastery",
+    "archer/Thunder Mastery"
+   ],
+   "_raw": " Thunder Damage: +1-8",
+   "tree": "00/warrior/03/001/002"
+  },
+  "2cb6fd5b6bf4": {
+   "src": "Increase your base damage\nfrom all Thunder attacks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Thunder Mastery",
+    "shaman/Thunder Mastery",
+    "warrior/Thunder Mastery",
+    "archer/Thunder Mastery"
+   ],
+   "lines": 2,
+   "flat": "Increase your base damage from all Thunder attacks.",
+   "_raw": "Increase your base damage\nfrom all Thunder attacks.",
+   "tree": "00/warrior/03/001/002"
+  },
+  "ee3f82edce2d": {
+   "src": "Air Mastery",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱",
+    "shaman/技能名稱",
+    "warrior/技能名稱",
+    "archer/技能名稱"
+   ],
+   "tree": "00/warrior/03/001/006",
+   "keep": "en"
+  },
+  "fee09f2e5823": {
+   "src": "{#}{#}Air Damage: +{~}",
+   "dst": "{#}{#}風屬性傷害: +{~}",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Air Mastery",
+    "shaman/Air Mastery",
+    "warrior/Air Mastery",
+    "archer/Air Mastery"
+   ],
+   "_raw": " Air Damage: +15%",
+   "tree": "00/warrior/03/001/006"
+  },
+  "75b4ca9d0843": {
+   "src": "{#}{#}Air Damage: +{~}-{~}",
+   "dst": "{#}{#}風屬性傷害: +{~}-{~}",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Air Mastery",
+    "shaman/Air Mastery",
+    "warrior/Air Mastery",
+    "archer/Air Mastery"
+   ],
+   "_raw": " Air Damage: +3-4",
+   "tree": "00/warrior/03/001/006"
+  },
+  "ee6d41982dba": {
+   "src": "Increase your base damage\nfrom all Air attacks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Air Mastery",
+    "shaman/Air Mastery",
+    "warrior/Air Mastery",
+    "archer/Air Mastery"
+   ],
+   "lines": 2,
+   "flat": "Increase your base damage from all Air attacks.",
+   "_raw": "Increase your base damage\nfrom all Air attacks.",
+   "tree": "00/warrior/03/001/006"
+  },
+  "2dd0fdf43002": {
+   "src": "Fire Mastery",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱",
+    "shaman/技能名稱",
+    "warrior/技能名稱",
+    "archer/技能名稱"
+   ],
+   "tree": "00/warrior/03/001/008",
+   "keep": "en"
+  },
+  "5c4009a9c0cc": {
+   "src": "{#}{#}Fire Damage: +{~}",
+   "dst": "{#}{#}火屬性傷害: +{~}",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Fire Mastery",
+    "shaman/Fire Mastery",
+    "warrior/Fire Mastery",
+    "archer/Fire Mastery"
+   ],
+   "_raw": " Fire Damage: +15%",
+   "tree": "00/warrior/03/001/008"
+  },
+  "42df26d23984": {
+   "src": "{#}{#}Fire Damage: +{~}-{~}",
+   "dst": "{#}{#}火屬性傷害: +{~}-{~}",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Fire Mastery",
+    "shaman/Fire Mastery",
+    "warrior/Fire Mastery",
+    "archer/Fire Mastery"
+   ],
+   "_raw": " Fire Damage: +3-5",
+   "tree": "00/warrior/03/001/008"
+  },
+  "bb576f8b9612": {
+   "src": "Increase your base damage\nfrom all Fire attacks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Fire Mastery",
+    "shaman/Fire Mastery",
+    "warrior/Fire Mastery",
+    "archer/Fire Mastery"
+   ],
+   "lines": 2,
+   "flat": "Increase your base damage from all Fire attacks.",
+   "_raw": "Increase your base damage\nfrom all Fire attacks.",
+   "tree": "00/warrior/03/001/008"
+  },
+  "a752761d143d": {
+   "src": "Water Mastery",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "mage/技能名稱",
+    "shaman/技能名稱",
+    "warrior/技能名稱",
+    "archer/技能名稱"
+   ],
+   "tree": "00/warrior/03/002/004",
+   "keep": "en"
+  },
+  "1a60d536e037": {
+   "src": "{#}{#}Water Damage: +{~}",
+   "dst": "{#}{#}水屬性傷害: +{~}",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Water Mastery",
+    "shaman/Water Mastery",
+    "warrior/Water Mastery",
+    "archer/Water Mastery"
+   ],
+   "_raw": " Water Damage: +15%",
+   "tree": "00/warrior/03/002/004"
+  },
+  "0bf7849b179e": {
+   "src": "{#}{#}Water Damage: +{~}-{~}",
+   "dst": "{#}{#}水屬性傷害: +{~}-{~}",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Water Mastery",
+    "shaman/Water Mastery",
+    "warrior/Water Mastery",
+    "archer/Water Mastery"
+   ],
+   "_raw": " Water Damage: +2-4",
+   "tree": "00/warrior/03/002/004"
+  },
+  "1a96af2835a2": {
+   "src": "Increase your base damage\nfrom all Water attacks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Water Mastery",
+    "shaman/Water Mastery",
+    "warrior/Water Mastery",
+    "archer/Water Mastery"
+   ],
+   "lines": 2,
+   "flat": "Increase your base damage from all Water attacks.",
+   "_raw": "Increase your base damage\nfrom all Water attacks.",
+   "tree": "00/warrior/03/002/004"
+  },
+  "a67c2a87438d": {
+   "src": "{#}({#}{#}Thunder: +{~})",
+   "dst": "{#}({#}{#}雷: +{~})",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Blitz",
+    "shaman/Shocking Aura",
+    "shaman/Lashing Lance",
+    "warrior/Fireworks"
+   ],
+   "_raw": "( Thunder: +25%)",
+   "tree": "00/warrior/03/003/002"
+  },
+  "77d65c92fa36": {
+   "src": "{#}{#}Total Damage: -{~} (of your DPS)",
+   "dst": "{#}{#}總傷害: -{~} (你的每秒傷害)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Divination",
+    "warrior/Half-Moon Swipe",
+    "assassin/Double Spin",
+    "assassin/Wall of Smoke"
+   ],
+   "_raw": " Total Damage: -30% (of your DPS)",
+   "tree": "00/warrior/03/004/004"
+  },
+  "f8d83a277549": {
+   "src": "{#}({#}{#}Air: +{~})",
+   "dst": "{#}({#}{#}風: +{~})",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Incandescence",
+    "mage/Void Acceleration",
+    "shaman/Storm Dance",
+    "warrior/Iron Lungs"
+   ],
+   "_raw": "( Air: +10%)",
+   "tree": "00/warrior/03/004/007"
+  },
+  "5e2300669a73": {
+   "src": "{#}{#}Range: +{~} Block",
+   "dst": "{#}{#}施放範圍: +{~} 格",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "warrior/Spear Proficiency II",
+    "assassin/Poisoned Blade"
+   ],
+   "_raw": " Range: +1 Block",
+   "tree": "00/warrior/04/003/000"
+  },
+  "0aca61e86ca0": {
+   "src": "{#}{#}Cooldown: {~}s (per enemy)",
+   "dst": "{#}{#}冷卻時間: {~} 秒 (每個敵人)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Sanguine Strike",
+    "warrior/Counter",
+    "assassin/Satsujin"
+   ],
+   "_raw": " Cooldown: 2s (per enemy)",
+   "tree": "00/warrior/04/004/005"
+  },
+  "413f78db4e55": {
+   "src": "{#}({#}{#}Earth: +{~})",
+   "dst": "{#}({#}{#}地: +{~})",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Astral Fragmentation",
+    "shaman/Crystal Knives",
+    "warrior/Comet",
+    "warrior/Spectacle"
+   ],
+   "_raw": "( Earth: +30%)",
+   "tree": "00/warrior/05/003/002"
+  },
+  "4680865ef616": {
+   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Allies",
+   "dst": "{#}{#}效果: +{~} 傷害加成 (⚔) 給友軍",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Vengeful Spirit",
+    "warrior/Emboldening Cry"
+   ],
+   "_raw": " Effect: +20% Damage Bonus (⚔) to Allies",
+   "tree": "00/warrior/05/005/008"
+  },
+  "6e6c2b5a971f": {
+   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Self",
+   "dst": "{#}{#}效果: +{~} 傷害加成 (⚔) 給自己",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Armour Breaker",
+    "assassin/Aerial Ace"
+   ],
+   "_raw": " Effect: +30% Damage Bonus (⚔) to Self",
+   "tree": "00/warrior/06/002/001"
+  },
+  "bc6cb1578dee": {
+   "src": "{#}{#}Mana Cost: +{~}",
+   "dst": "{#}{#}魔力消耗: +{~}",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Ophanim",
+    "warrior/Axe Kick",
+    "archer/Mana Trap"
+   ],
+   "_raw": " Mana Cost: +30",
+   "tree": "00/warrior/06/004/003"
+  },
+  "7b427472724e": {
+   "src": "{#}{#}Area of Effect: +{~} Blocks (Circle-Shaped)",
+   "dst": "{#}{#}技能範圍: +{~} 格(圓形)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Riftbound",
+    "shaman/Totemic Reach",
+    "warrior/Thunderclap",
+    "archer/Honed Shield"
+   ],
+   "_raw": " Area of Effect: +50% Blocks (Circle-Shaped)",
+   "tree": "00/warrior/07/002/005"
+  },
+  "7b25e66edae5": {
+   "src": "{#}{#}Range: {~} Blocks (Circle-Shaped)",
+   "dst": "{#}{#}施放範圍: {~} 格(圓形)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Heavenly Trumpet",
+    "archer/Basaltic Trap",
+    "assassin/Nightcloak Knives"
+   ],
+   "_raw": " Range: 16 Blocks (Circle-Shaped)",
+   "tree": "00/warrior/07/004/007"
+  },
+  "a728a601182e": {
+   "src": "Activate abilities or take damage to charge\nyour Ultimate Meter {#}{#}to {~}",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Beyond Salvation",
+    "warrior/Judgement",
+    "warrior/Zenith Stance",
+    "assassin/Another Self"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities or take damage to charge your Ultimate Meter {#}{#}to {~}",
+   "_raw": "Activate abilities or take damage to charge\nyour Ultimate Meter  to 100%",
+   "tree": "00/warrior/09/002/001"
+  },
+  "0877649c8097": {
+   "src": "{#}{#}Total Damage: {~} (Main Attack Damage)",
+   "dst": "{#}{#}總傷害: {~} (普攻傷害)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Pyrokinesis",
+    "mage/Vacuokinesis",
+    "warrior/Zenith Stance",
+    "archer/Twain's Arc"
+   ],
+   "_raw": " Total Damage: 200% (Main Attack Damage)",
+   "tree": "00/warrior/09/003/004"
+  },
+  "0c3d09c9faee": {
+   "src": "{#}{#}Main Attack Range: +{~} Blocks",
+   "dst": "{#}{#}普攻距離: +{~} 格",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Wand Proficiency I",
+    "mage/Wand Proficiency II",
+    "archer/Bow Proficiency"
+   ],
+   "_raw": " Main Attack Range: +2 Blocks",
+   "tree": "01/mage/01/002/004"
+  },
+  "5085eb3cc731": {
+   "src": "{#}{#}Total Heal: {~} (of your max health)",
+   "dst": "{#}{#}總治療量: {~}(你的最大生命)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Heal",
+    "shaman/Sacrificial Shrine",
+    "shaman/Regeneration"
+   ],
+   "_raw": " Total Heal: 15% (of your max health)",
+   "tree": "01/mage/02/003/002"
+  },
+  "c0a5d1c1dac8": {
+   "src": "{#}({#}{#}Fire: +{~})",
+   "dst": "{#}({#}{#}火: +{~})",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Crashing Comet",
+    "mage/Searing Light",
+    "shaman/Flaming Tongue",
+    "shaman/Totemic Hammer"
+   ],
+   "_raw": "( Fire: +20%)",
+   "tree": "01/mage/03/004/006"
+  },
+  "c5277bd98efa": {
+   "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
+   "dst": "{#}{#}效果: {~} 緩速 ({#}) 給敵人，每次命中(上限 {~})",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Freezing Sigil",
+    "archer/Chilling Snare"
+   ],
+   "_raw": " Effects: 15% Slowness () to Enemies, per hit (Max 60%)",
+   "tree": "01/mage/05/002/001"
+  },
+  "0d89fae60f2a": {
+   "src": "{#}{#}Effect: {~} Resistance Bonus (❁)",
+   "dst": "{#}{#}效果: {~} 抗性加成 (❁)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Dimensional Tear",
+    "archer/Arrow Shield"
+   ],
+   "_raw": " Effect: 15% Resistance Bonus (❁)",
+   "tree": "01/mage/06/001/004"
+  },
+  "f402e4969e30": {
+   "src": "{#}({#}{#}Thunder: -{~})",
+   "dst": "{#}({#}{#}雷: -{~})",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Divination",
+    "shaman/Flaming Tongue",
+    "archer/Windstorm"
+   ],
+   "_raw": "( Thunder: -5%)",
+   "tree": "01/mage/07/002/001"
+  },
+  "72981e56a191": {
+   "src": "{#}{#}Vision: {~} Blocks (Circle-Shaped)",
+   "dst": "{#}{#}視野: {~} 格(圓形)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Portal to the Beyond",
+    "shaman/Crimson Effigy",
+    "shaman/Hummingbird's Song",
+    "shaman/Patchwork Abomination"
+   ],
+   "_raw": " Vision: 12 Blocks (Circle-Shaped)",
+   "tree": "01/mage/08/004/003"
+  },
+  "1099cfcd1bd2": {
+   "src": "Click Combo: F",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dawn",
+    "mage/Tangled Origin",
+    "mage/Gravitational Collapse",
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": 1,
+   "flat": "Click Combo: F",
+   "_raw": "Click Combo: F",
+   "tree": "01/mage/09/002/001"
+  },
+  "52f78b2c4c51": {
+   "src": "Activate abilities to charge\nyour Ultimate Meter {#}{#}to {~}",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Tangled Origin",
+    "mage/Gravitational Collapse",
+    "shaman/Sundered Skies",
+    "archer/Angelic Ascension"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities to charge your Ultimate Meter {#}{#}to {~}",
+   "_raw": "Activate abilities to charge\nyour Ultimate Meter  to 100%",
+   "tree": "01/mage/09/002/007"
+  },
+  "2500b5ec2818": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per hit)",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，每次命中)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Phantom Ray",
+    "assassin/Multihit"
+   ],
+   "_raw": " Total Damage: 30% (of your DPS, per hit)",
+   "tree": "02/archer/03/004/008"
+  },
+  "12f8cc831fc1": {
+   "src": "{#}{#}Effect: Blindness ({#}) to Enemies",
+   "dst": "{#}{#}效果: 致盲 ({#}) 給敵人",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Fierce Stomp",
+    "archer/Murder Flock",
+    "assassin/Swan Dive"
+   ],
+   "_raw": " Effect: Blindness () to Enemies",
+   "tree": "02/archer/04/004/002"
+  },
+  "198ba6e435d7": {
+   "src": "{#}{#}Area of Effect: +{~} Blocks",
+   "dst": "{#}{#}技能範圍: +{~} 格",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Phantom Force",
+    "assassin/Petal Storm"
+   ],
+   "_raw": " Area of Effect: +0.2 Blocks",
+   "tree": "02/archer/04/005/007"
+  },
+  "0088ee0ebbe9": {
+   "src": "{#}{#}Effects: -{~}{#}Damage Bonus ({#}) to Enemies",
+   "dst": "{#}{#}效果: -{~}{#}傷害加成 ({#}) 給敵人",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Ivyroot Mamba",
+    "assassin/Distraction"
+   ],
+   "_raw": " Effects: -15% Damage Bonus () to Enemies",
+   "tree": "02/archer/05/001/006"
+  },
+  "9b1fd4b9739f": {
+   "src": "{#}{#}Area of Effect: +{~} Block (Circle-Shaped)",
+   "dst": "{#}{#}技能範圍: +{~} 格 (圓形)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Overgrowth",
+    "assassin/Rolling Fog",
+    "assassin/Fatal Spin",
+    "assassin/Eviscerate"
+   ],
+   "_raw": " Area of Effect: +1 Block (Circle-Shaped)",
+   "tree": "02/archer/08/002/004"
+  },
+  "c4a7f2585ce7": {
+   "src": "{#}{#}Effect: {~} Resistance Bonus (❁) to Self",
+   "dst": "{#}{#}效果: {~} 抗性加成 (❁) 給自己",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Fortified Formation",
+    "archer/Repel",
+    "assassin/Braced Impact"
+   ],
+   "_raw": " Effect: 50% Resistance Bonus (❁) to Self",
+   "tree": "02/archer/08/003/007"
+  },
+  "ac16e16acef3": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per strike)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每次打擊)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Eldritch Call",
+    "assassin/Lacerate"
+   ],
+   "_raw": " Total Damage: 700% (of your DPS, per strike)",
+   "tree": "03/assassin/04/001/007"
+  }
+ }
+}
