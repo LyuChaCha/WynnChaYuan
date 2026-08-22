@@ -249,8 +249,58 @@ public final class MajorIdColourTest {
         noStrayUnderline(store);
         tiedUnderline(store);
         bracketedNote(store);
+        translatedTermKeepsColour(store);
         wrappedSevenLines(store);
         report();
+    }
+
+    /**
+     * 帶顏色的專有名詞<b>翻成中文之後</b>還要保住顏色。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 原文的 {@code Mana Bank ✺} 是青色的，翻成「魔力儲庫」之後變成白的——
+     * 使用者連續回報了魔力儲庫、失衡、裂隙之裔三個。
+     *
+     * <h2>為什麼會掉</h2>
+     * 顏色是拿<b>原文的字面</b>去譯文裡找的。{@code Meteor} 保留英文所以找得到，
+     * 但 {@code Mana Bank} 在譯文裡是「魔力儲庫」，字面對不上。
+     *
+     * <p>程式本來就有對策（{@code withTranslations}：把帶樣式的片段連同<b>它的
+     * 譯文</b>一起登記）——但那要語料裡查得到這個詞才行。而
+     * {@code Mana Bank}、{@code Unstable}、{@code Riftspawn} 這些
+     * <b>根本不在語料裡</b>：它們不是技能名、不是標籤，是句子裡的名詞，
+     * 先前沒有任何一個檔在收。現在收在 {@code ability-terms.json}。
+     */
+    private static void translatedTermKeepsColour(TranslationStore store) {
+        final int TERM = 0x55FFFF;
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR));
+        Style cyan = Style.EMPTY.withColor(TextColor.fromRgb(TERM));
+
+        MutableComponent second = Component.empty();
+        second.append(Component.literal("+8 Mana to your ").withStyle(grey));
+        second.append(Component.literal("Mana Bank").withStyle(cyan));
+
+        List<StyledText> run = List.of(
+                StyledText.fromComponent(Component.literal(
+                        "Pyrokinesis will add").withStyle(grey)),
+                StyledText.fromComponent(second));
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        // 這一段語料裡不一定查得到，重點是<b>詞</b>本身要登記得到
+        check("語料查得到 Mana Bank 的譯文",
+                "魔力儲庫".equals(store.lookup("Mana Bank")));
+        check("語料查得到 Unstable 的譯文",
+                "失衡".equals(store.lookup("Unstable")));
+        check("語料查得到 Riftspawn 的譯文",
+                "裂隙之裔".equals(store.lookup("Riftspawn")));
+        if (out == null || out.isEmpty()) {
+            return;                            // 這一段沒有對應的敘述條目，正常
+        }
+        Integer colour = colourOf(out, "魔力儲庫");
+        if (colour != null) {
+            check("譯出來的「魔力儲庫」保住原文的顏色（拿到 #"
+                    + String.format("%06X", colour) + "）", colour == TERM);
+        }
     }
 
     /**
