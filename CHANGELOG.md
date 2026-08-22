@@ -3,6 +3,27 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.66.0] - 2026-08-23
+
+### 變更
+
+- **Mythic 的名稱改回原文。** 上一版把 82 件 mythic 的名稱翻成了中文，
+  這一版全部撤回，遊戲裡看到的還是 `Alkatraz`、`Eschaton`。
+  背景敘述<b>不受影響</b>，照樣是中文。
+  - 譯名草案沒有丟掉，留在 `docs/mythic-names.md` 等討論定案；
+    要套用時再寫進譯文檔。
+
+### 新增
+
+- **fabled 的背景敘述 177 條。** 加上先前的 mythic，兩個最高稀有度的敘述
+  都齊了（共 258 條）。
+  - 專有名詞（Corkus、Avos、Aelumia、Vulcor Adrenophage…）一律留原文，
+    跟 mythic 那批一致。
+  - `Astrolabe`、`Dawn Chaser`、`Stalking Mist` 的敘述是自造語言，
+    跟 `Restitution` 同一套，社群至今仍在解，<b>刻意留原文</b>。
+  - 有八件的原文尾巴黏著一句 `It's pulling towards something.`（中間沒有空格，
+    是 Wynncraft 自己資料的樣子），一併照翻。
+
 ## [1.65.0] - 2026-08-23
 
 ### 新增
