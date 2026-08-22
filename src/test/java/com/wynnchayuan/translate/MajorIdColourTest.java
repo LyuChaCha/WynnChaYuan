@@ -248,8 +248,66 @@ public final class MajorIdColourTest {
         keepWordColour(store);
         noStrayUnderline(store);
         tiedUnderline(store);
+        bracketedNote(store);
         wrappedSevenLines(store);
         report();
+    }
+
+    /**
+     * 括號註解<b>比正文長</b>時，正文不能被染成註解的顏色。
+     *
+     * <h2>實際的數字</h2>
+     * 技能樹的 {@code Heal}：
+     *
+     * <pre>
+     *   Heals you and nearby allies in
+     *   a large area around you.                ← 正文，亮灰，54 字
+     *   (When healing others, you can't heal
+     *   more than 50% of their max health)      ← 括號註解，暗灰，70 字
+     * </pre>
+     *
+     * <p>照字數算註解贏，整段譯文就被染成暗灰。但註解依定義是附帶說明，
+     * 不是這一段的主要聲音——所以它不參與底色的統計。
+     *
+     * <p>不參與統計之後還得<b>把顏色還回去</b>，否則註解變成正文的亮色，
+     * 那只是把錯誤換一個方向。括號在中英文裡都是註解的記號，
+     * 所以譯文那半也切得出來。
+     */
+    private static void bracketedNote(TranslationStore store) {
+        final int BODY = 0xAAAAAA;
+        final int NOTE = 0x555555;
+        Style body = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
+        Style note = Style.EMPTY.withColor(TextColor.fromRgb(NOTE));
+
+        MutableComponent third = Component.empty();
+        third.append(Component.literal("(When healing others, you can't heal")
+                .withStyle(note));
+
+        List<StyledText> run = List.of(
+                StyledText.fromComponent(
+                        Component.literal("Heals you and nearby allies in").withStyle(body)),
+                StyledText.fromComponent(
+                        Component.literal("a large area around you.").withStyle(body)),
+                StyledText.fromComponent(third),
+                StyledText.fromComponent(
+                        Component.literal("more than 50% of their max health)")
+                                .withStyle(note)));
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("Heal 那段查得到", out != null && !out.isEmpty());
+        if (out == null || out.isEmpty()) {
+            return;
+        }
+        Integer bodyColour = colourOf(out, "治療");
+        check("正文沒有被染成註解的顏色（拿到 "
+                        + (bodyColour == null ? "null"
+                           : "#" + String.format("%06X", bodyColour)) + "）",
+                bodyColour != null && bodyColour == BODY);
+        Integer noteColour = colourOf(out, "無法");
+        check("括號註解保住自己的顏色（拿到 "
+                        + (noteColour == null ? "null"
+                           : "#" + String.format("%06X", noteColour)) + "）",
+                noteColour != null && noteColour == NOTE);
     }
 
     /**
@@ -307,7 +365,9 @@ public final class MajorIdColourTest {
         // 卻剛好是<b>內文</b>那一部分。要直接問那幾個字。
         check("內文「消耗」沒有底線", underlinedAt(out, "消耗") == Boolean.FALSE);
         check("內文「傷害」沒有底線", underlinedAt(out, "傷害") == Boolean.FALSE);
-        check("術語 Meteor 仍然有底線", underlinedAt(out, "Meteor") == Boolean.TRUE);
+        // 技能名稱現在是中文了（Meteor -> 隕石）。底線得跟著搬到譯名上——
+        // 那正是 withTranslations 的用途：帶樣式的片段連同它的譯文一起登記。
+        check("術語「隕石」仍然有底線", underlinedAt(out, "隕石") == Boolean.TRUE);
     }
 
     /** 含有 needle 的那一段有沒有底線；找不到回傳 null。 */

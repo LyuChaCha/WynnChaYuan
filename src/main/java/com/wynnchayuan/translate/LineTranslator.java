@@ -222,8 +222,12 @@ public final class LineTranslator {
             //
             // 照實際字數累計就沒這問題：灰 22+5+7=34、底線 11，灰勝。
             //
-            // 累計時<b>不看裝飾</b>，見 #undecorated。
+            // 累計時<b>不看裝飾</b>，見 #undecorated；
+            // 括號裡的註解也不算，見 #noteStyleOf。
             for (LineParts.Piece run : part.runs()) {
+                if (isNote(run.text())) {
+                    continue;
+                }
                 weight.merge(undecorated(run.style()), run.text().length(), Integer::sum);
             }
         }
@@ -236,6 +240,87 @@ public final class LineTranslator {
             }
         }
         return best;
+    }
+
+    /**
+     * 照括號把文字切成「正文」與「註解」兩種，各自用自己的顏色送去 {@link #appendText}。
+     *
+     * <p>括號在中英文裡都是註解的記號，所以切點在譯文上一樣成立。
+     * {@code depth} 跨行帶著走——註解常常被 tooltip 寬度切成兩行，
+     * 左括號在這一行、右括號在下一行。
+     *
+     * @param note  註解的顏色；{@code null} 表示原文的註解跟正文同色，不必分開
+     * @param depth 單元素陣列，當作可變的「現在在不在括號裡」
+     */
+    private static void appendNoting(MutableComponent out, String text,
+                                     Style base, Style note, boolean[] depth,
+                                     List<LineParts.Piece> accents, boolean[] used,
+                                     TranslationStore store) {
+        if (note == null) {
+            appendText(out, text, base, accents, used, store);
+            return;
+        }
+        int from = 0;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            boolean opens = !depth[0] && (c == '(' || c == '（');
+            boolean closes = depth[0] && (c == ')' || c == '）');
+            if (!opens && !closes) {
+                continue;
+            }
+            // 左括號自己算註解的一部分，右括號也是——切點在括號的外側
+            int cut = opens ? i : i + 1;
+            if (cut > from) {
+                appendText(out, text.substring(from, cut),
+                           depth[0] ? note : base, accents, used, store);
+            }
+            from = cut;
+            depth[0] = opens;
+        }
+        if (from < text.length()) {
+            appendText(out, text.substring(from), depth[0] ? note : base,
+                       accents, used, store);
+        }
+    }
+
+    /**
+     * 這一段是不是<b>括號裡的註解</b>。
+     *
+     * <h2>為什麼註解不能參與底色的統計</h2>
+     * 技能樹的 {@code Heal}：
+     *
+     * <pre>
+     *   Heals you and nearby allies in
+     *   a large area around you.                ← 正文，亮灰，54 字
+     *   (When healing others, you can't heal
+     *   more than 50% of their max health)      ← 括號註解，暗灰，70 字
+     * </pre>
+     *
+     * <p>照字數算，<b>註解比正文長</b>——於是整段譯文被染成註解的暗灰，
+     * 正文那兩行也跟著暗掉。但註解依定義是附帶說明，不是這一段的主要聲音。
+     *
+     * <p>括號在中英文裡都是註解的記號，所以這個判斷跨語言成立——
+     * 譯文那半也認得出哪裡是註解（見 {@link #noteStyleOf} 的用法）。
+     */
+    private static boolean isNote(String text) {
+        String core = text.strip();
+        return core.startsWith("(") || core.startsWith("（");
+    }
+
+    /**
+     * 括號註解自己的顏色；沒有註解、或註解跟正文同色時回傳 {@code null}。
+     *
+     * <p>不參與底色統計之後還得把顏色還回去，否則註解會變成正文的亮色——
+     * 那是把錯誤換一個方向，不是修好。
+     */
+    private static Style noteStyleOf(List<LineParts.Piece> runs, Style base) {
+        for (LineParts.Piece run : runs) {
+            if (isNote(run.text())) {
+                Style style = undecorated(run.style());
+                return style.equals(base) ? null : forDisplay(run.style());
+            }
+        }
+        return null;
     }
 
     /**
@@ -1668,6 +1753,12 @@ public final class LineTranslator {
         }
 
         Style textStyle = forDisplay(blockStyle);
+        // 括號註解在原文裡是另一個顏色。它不參與底色統計（見 #isNote），
+        // 所以要在這裡把顏色還回去，否則註解會變成正文的亮色。
+        Style noteStyle = noteStyleOf(allRuns, blockStyle);
+        // 註解常常被 tooltip 寬度切成兩行——左括號在這一行、右括號在下一行，
+        // 所以這個狀態要跨行帶著走。
+        boolean[] inNote = {false};
         boolean[] usedAccent = new boolean[accents.size()];
         int glyph = 0;
         int place = 0;
@@ -1703,8 +1794,8 @@ public final class LineTranslator {
                         LineParts.Piece piece = users.get(user++);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
                     }
-                    case TEXT -> appendText(line, token.text(), textStyle,
-                                            accents, usedAccent, store);
+                    case TEXT -> appendNoting(line, token.text(), textStyle, noteStyle,
+                                              inNote, accents, usedAccent, store);
                 }
             }
             out.add(line);
