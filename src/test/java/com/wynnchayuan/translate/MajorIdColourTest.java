@@ -68,9 +68,16 @@ public final class MajorIdColourTest {
         return out;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations"));
+
+        // 診斷檔要真的寫得出來。使用者回報「layout-debug.txt 根本沒生成」，
+        // 而那個檔正是查 Major ID 顏色唯一的依據——它不寫出來，就等於沒有診斷。
+        Path debug = java.nio.file.Files.createTempDirectory("wynnchayuan")
+                .resolve("layout-debug.txt");
+        LayoutDebug.init(debug);
+        check("診斷檔一開場就存在", java.nio.file.Files.isRegularFile(debug));
 
         List<StyledText> run = block();
         List<Component> built = LineTranslator.translateBlock(
@@ -127,6 +134,10 @@ public final class MajorIdColourTest {
                             + (c == null ? "null" : "#" + String.format("%06X", c)) + "）",
                     c != null && c == NAME_COLOUR);
         }
+        String written = java.nio.file.Files.readString(debug);
+        check("跨行翻譯之後診斷檔有內容（" + written.length() + " 字）",
+                written.contains("跨行查表"));
+        check("診斷檔記下了原文的色段", written.contains("#FF55FF"));
         report();
     }
 
