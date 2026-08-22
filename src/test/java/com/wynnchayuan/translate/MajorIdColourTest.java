@@ -250,8 +250,58 @@ public final class MajorIdColourTest {
         tiedUnderline(store);
         bracketedNote(store);
         translatedTermKeepsColour(store);
+        splitNameStillTranslates(store);
         wrappedSevenLines(store);
         report();
+    }
+
+    /**
+     * 名稱被 tooltip 寬度<b>拆成兩行</b>時仍然要翻得出來。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 原文的 {@code Dimensional Tear} 斷在行尾，第一行只剩 {@code Dimensional}：
+     *
+     * <pre>
+     *   §7Casting §nFrozen Tornado§r§7 inside your §nDimensional
+     *   §7§nTear§r§7 infuses it with otherworldly energies,
+     * </pre>
+     *
+     * <p>於是 {@code Dimensional} 成了一個「帶樣式的片段」。它跟詞典裡的
+     * {@code Dimensional Tear} <b>從同一個位置開始</b>，而先前同位置時片段無條件勝，
+     * 短的贏——譯文就卡著半個英文名字，旁邊的 Frozen Tornado 與 Time Vortex
+     * 卻都翻好了，看起來莫名其妙。
+     *
+     * <p>改成同位置取比較長的（片段彼此之間本來就是這個規則）。
+     */
+    private static void splitNameStillTranslates(TranslationStore store) {
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR));
+        Style underlined = grey.withUnderlined(true);
+
+        MutableComponent first = Component.empty();
+        first.append(Component.literal("Casting ").withStyle(grey));
+        first.append(Component.literal("Frozen Tornado").withStyle(underlined));
+        first.append(Component.literal(" inside your ").withStyle(grey));
+        first.append(Component.literal("Dimensional").withStyle(underlined));
+
+        MutableComponent second = Component.empty();
+        second.append(Component.literal("Tear").withStyle(underlined));
+        second.append(Component.literal(" infuses it with otherworldly energies,")
+                .withStyle(grey));
+
+        List<StyledText> run = List.of(
+                StyledText.fromComponent(first),
+                StyledText.fromComponent(second),
+                StyledText.fromComponent(Component.literal(
+                        "turning it into a Time Vortex.").withStyle(grey)));
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("時空渦流那段查得到", out != null && !out.isEmpty());
+        if (out == null || out.isEmpty()) {
+            return;
+        }
+        String all = out.stream().map(Component::getString).reduce("", (a, b) -> a + b);
+        check("被拆成兩行的名稱仍然翻得出來（實際：" + all.replace("\n", " ") + "）",
+                all.contains("次元裂隙") && !all.contains("Dimensional"));
     }
 
     /**
