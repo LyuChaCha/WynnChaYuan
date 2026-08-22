@@ -93,6 +93,7 @@ public final class TranslationStore {
     public void loadAll(Path dir) {
         entries.clear();
         flat.clear();
+        unindented.clear();
         speakers.clear();
         prefixIndex.clear();
         terms.clear();
@@ -235,6 +236,7 @@ public final class TranslationStore {
                 }
                 noteBlockSize(srcKey);
                 noteFlat(srcKey, dst.strip());
+                noteIndented(srcKey, dst.strip());
                 String who = optString(e, "speaker");
                 if (who != null && !who.isBlank()) {
                     speakers.put(srcKey, who.strip());
@@ -266,6 +268,7 @@ public final class TranslationStore {
                 entries.put(key.strip(), v.getAsString().strip());
                 noteBlockSize(key.strip());
                 noteFlat(key.strip(), v.getAsString().strip());
+                noteIndented(key.strip(), v.getAsString().strip());
                 if (asTerms) {
                     noteTerm(key.strip(), v.getAsString().strip());
                 }
@@ -521,7 +524,54 @@ public final class TranslationStore {
         if (!translateNames && nameKeys.contains(key)) {
             return null;                       // 使用者選擇不翻物品名稱
         }
-        return entries.get(key);
+        String hit = entries.get(key);
+        return hit != null ? hit : lookupIndented(key);
+    }
+
+    /**
+     * Wynncraft 拿來做<b>縮排</b>的字元。在它的字型裡 {@code À} 是一格固定寬度的空白，
+     * 用來把「效果」那類的細項推到右邊對齊。
+     */
+    private static final char INDENT = 'À';
+
+    /** 去掉開頭縮排之後的索引。見 {@link #lookupIndented}。 */
+    private final Map<String, String> unindented = new ConcurrentHashMap<>();
+
+    private static int indentOf(String text) {
+        int n = 0;
+        while (n < text.length() && text.charAt(n) == INDENT) {
+            n++;
+        }
+        return n;
+    }
+
+    private void noteIndented(String src, String dst) {
+        int n = indentOf(src);
+        if (n > 0) {
+            unindented.putIfAbsent(src.substring(n), dst.substring(indentOf(dst)));
+        }
+    }
+
+    /**
+     * 縮排<b>幾格不算內容</b>，所以查表時不該把它算進去。
+     *
+     * <h2>為什麼需要這一層</h2>
+     * 語料是從 CDN 來的，同一句話在那裡的縮排是 38、39、40 格；遊戲實際送出來的
+     * 卻是 4 格或 42 格。兩邊字面上永遠不相等，於是
+     * {@code Knockback Immunity to Allies} 這種句子一直維持英文——不是漏翻，
+     * 是<b>查不到</b>。
+     *
+     * <p>縮排幾格取決於畫面寬度與同一組細項裡最長的那一行，是<b>排版</b>不是語意。
+     * 所以剝掉開頭的縮排來查，查到之後把<b>呼叫端自己的那一串</b>接回去——
+     * 用遊戲當下的格數，對齊才不會跑掉。
+     */
+    private String lookupIndented(String key) {
+        int indent = indentOf(key);
+        if (indent == 0) {
+            return null;
+        }
+        String body = unindented.get(key.substring(indent));
+        return body == null ? null : key.substring(0, indent) + body;
     }
 
     /**
