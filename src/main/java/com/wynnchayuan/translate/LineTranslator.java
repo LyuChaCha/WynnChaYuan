@@ -285,7 +285,7 @@ public final class LineTranslator {
      *
      * @return 由左到右的顏色；不是彩虹字就回傳 {@code null}
      */
-    private static List<Style> labelRamp(StyledText firstLine) {
+    static List<Style> labelRamp(StyledText firstLine) {
         List<Style> ramp = new ArrayList<>();
         Style previous = null;
         for (StyledTextPart part : firstLine) {
@@ -337,11 +337,17 @@ public final class LineTranslator {
         }
     }
 
-    /** 少於這麼多段就不算彩虹字，見 {@link #labelRamp}。 */
-    private static final int MIN_RAMP_PARTS = 4;
+    /**
+     * 少於這麼多段就不算彩虹字，見 {@link #labelRamp}。
+     *
+     * <p>門檻刻意訂得高。認錯的代價是<b>把一個本來只是被切碎的名稱染成漸層</b>，
+     * 那是使用者一眼就會看出不對的錯誤；認不出來的代價只是少一個裝飾。
+     * 兩邊不對等，所以寧可漏認。
+     */
+    private static final int MIN_RAMP_PARTS = 5;
 
-    /** 彩虹字是一個字一段；超過這個長度就是普通的整詞上色。 */
-    private static final int MAX_RAMP_PART = 2;
+    /** 彩虹字是<b>一個字</b>一段；再長就是普通的整詞上色。 */
+    private static final int MAX_RAMP_PART = 1;
 
     /** 「名稱：說明」的名稱最長到這裡。再長就不像標題了。 */
     private static final int MAX_LABEL_LENGTH = 40;
@@ -766,14 +772,26 @@ public final class LineTranslator {
      * <p>但不能一律夾在 0 以上：Wynncraft <b>自己</b>就在用負間隔，坐騎的屬性列
      * 原文就是「-25px 再 +104px」，夾成 0 之後整行會多出二十幾像素。
      *
-     * <p>所以只夾<b>原本是正的</b>那些。原本就是負的照原樣通過——那是排版設計，
-     * 不是我們算出來的。對不齊也比黏在一起好讀。
+     * <p>所以只夾<b>原本是正的</b>那些。原本就是負的不夾在 MIN_GAP 以上——
+     * 那是排版設計，不是我們算出來的。對不齊也比黏在一起好讀。
+     *
+     * <h2>但負間隔也不能<b>更</b>負</h2>
+     * 先前負間隔是原樣通過的，於是中文標籤比英文長的時候，補償會把它算得
+     * 更負——技能樹的 {@code Ice Snake Cost -6%} 翻成「Ice Snake 消耗百分比」
+     * 之後，數值被往回拉進標籤裡，畫面上是<b>兩層字疊在一起</b>，
+     * 使用者看到的是「消耗百分5%」這種讀不出來的東西。
+     *
+     * <p>負間隔的用意是讓數值往回貼進標籤<b>尾巴的留白</b>，那個留白是照英文
+     * 算的；中文沒有那段留白，再往回就是壓到字上。所以補償只准把間隔放寬，
+     * 不准收得比原文還緊。譯文變短時照常補償（那是往寬的方向），
+     * 變長時最多維持原本的間隔——數值會往右偏，但至少讀得出來。
      *
      * @param original 原文的間隔
      * @param adjusted 補償之後的間隔
      */
-    private static int narrowed(int original, int adjusted) {
-        return original > 0 ? Math.max(MIN_GAP, adjusted) : adjusted;
+    static int narrowed(int original, int adjusted) {
+        return original > 0 ? Math.max(MIN_GAP, adjusted)
+                            : Math.max(original, adjusted);
     }
 
     /**
@@ -1109,14 +1127,26 @@ public final class LineTranslator {
             if (text.isEmpty() || !VALUE.matcher(text).matches()) {
                 continue;
             }
-            return text.endsWith("%");
+            if (text.endsWith("%")) {
+                return true;
+            }
+            // 這裡<b>不能</b>就這樣回傳 false。未鑑定的裝備寫的是範圍
+            // 「-39 to -21%」，百分號掛在<b>後面</b>那個數字上；碰到第一個
+            // 數字就下結論的話，整行會被當成 raw，於是「生命回復百分比」
+            // 退成「生命回復」——標籤跟實際數值對不起來。
         }
         return false;
     }
 
-    /** 純粹的數值：可帶正負號、千分位、小數，可帶結尾百分號。 */
+    /**
+     * 純粹的數值：可帶正負號、千分位、小數，可帶結尾百分號。
+     *
+     * <p>也接受「{@code a to b}」這種範圍——未鑑定的裝備整段是同一個片段，
+     * 不放進來的話它連數值都不算，百分比判斷等於沒看到它。
+     */
     private static final java.util.regex.Pattern VALUE =
-            java.util.regex.Pattern.compile("[+-]?\\d[\\d,.]*%?");
+            java.util.regex.Pattern.compile(
+                    "[+-]?\\d[\\d,.]*%?(?:\\s+to\\s+[+-]?\\d[\\d,.]*%?)?");
 
     /**
      * @param percent 這一行的數值是百分比。會先找「標籤 + {@code %}」的鍵，

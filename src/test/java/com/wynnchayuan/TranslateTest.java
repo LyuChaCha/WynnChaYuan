@@ -51,6 +51,7 @@ public final class TranslateTest {
         glyphLine(dir);
         placeLine(dir);
         mismatch(dir);
+        rangePercent(dir);
 
         System.out.println(failures == 0 ? "\n全部通過" : "\n失敗 " + failures + " 項");
         System.exit(failures == 0 ? 0 : 1);
@@ -381,6 +382,53 @@ public final class TranslateTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
         return store;
+    }
+
+    /**
+     * 未鑑定裝備的<b>範圍</b>數值也要看得出是不是百分比。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 鑑定過的寫「{@code Health Regen -20%}」，未鑑定的寫
+     * 「{@code Health Regen -39 to -21%}」——同一個標籤、同樣是百分比，
+     * 但百分號掛在<b>後面</b>那個數字上。
+     *
+     * <p>先前的判斷碰到第一個數字（{@code -39}）就下結論「這不是百分比」，
+     * 於是整行退回 raw 的譯法：「生命回復百分比」變成「生命回復」，
+     * 標籤講的跟旁邊的數值對不起來。
+     */
+    private static void rangePercent(Path dir) throws Exception {
+        System.out.println("\n  -- 未鑑定的範圍數值 --");
+        write(dir, "range.json",
+                "{\"Health Regen\": \"生命回復\", \"Health Regen%\": \"生命回復百分比\"}");
+        TranslationStore store = load(dir);
+
+        // 鑑定過的：單一數值帶百分號
+        StyledText single = StyledText.fromString("§fHealth Regen §c-20%");
+        Component one = LineTranslator.translate(single, store);
+        check("鑑定過的仍然選百分比的譯法",
+                one != null && one.getString().contains("生命回復百分比"));
+
+        // 未鑑定的：範圍，百分號在後面那個數字上
+        StyledText range = StyledText.fromString("§fHealth Regen §c-39 to -21%");
+        Component two = LineTranslator.translate(range, store);
+        check("範圍數值也選百分比的譯法（實際："
+                        + (two == null ? "null" : two.getString()) + "）",
+                two != null && two.getString().contains("生命回復百分比"));
+
+        // 範圍拆在不同片段裡也一樣——遊戲兩種都送過
+        StyledText split = StyledText.fromString("§fHealth Regen §c-39§7 to §c-21%");
+        Component three = LineTranslator.translate(split, store);
+        check("範圍拆成多段時也選百分比的譯法（實際："
+                        + (three == null ? "null" : three.getString()) + "）",
+                three != null && three.getString().contains("生命回復百分比"));
+
+        // 真的是 raw 的不能被拖下水
+        StyledText raw = StyledText.fromString("§fHealth Regen §a+46 to 200");
+        Component four = LineTranslator.translate(raw, store);
+        check("純數值的範圍仍然是 raw 的譯法（實際："
+                        + (four == null ? "null" : four.getString()) + "）",
+                four != null && four.getString().contains("生命回復")
+                        && !four.getString().contains("百分比"));
     }
 
     private static void check(String name, boolean pass) {
