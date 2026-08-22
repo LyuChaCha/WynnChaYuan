@@ -73,12 +73,6 @@ public final class FlowedDebug {
               .append(System.lineSeparator());
             sb.append("  挑中的樣式：").append(describe(chosen))
               .append(System.lineSeparator());
-            // 走的是單色還是彩虹。顏色不對時這一行決定了要往哪邊查：
-            // 判成彩虹卻不該是，跟挑錯單色，是兩個完全不同的問題。
-            List<Style> ramp = LineTranslator.labelRamp(run.get(0));
-            sb.append("  上色方式：")
-              .append(ramp == null ? "單色" : "彩虹（" + ramp.size() + " 個顏色）")
-              .append(System.lineSeparator());
             sb.append("  原文第一行的色段：").append(System.lineSeparator());
             int i = 0;
             for (StyledTextPart part : run.get(0)) {

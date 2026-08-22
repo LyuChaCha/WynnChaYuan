@@ -62,6 +62,26 @@ public final class AlignPointTest {
                 LineTranslator.narrowed(-25, -60) == -25);
         check("負間隔維持原值時剛好等於原文", LineTranslator.narrowed(-25, -25) == -25);
 
+        // --- 別的字型底下的偏移也要認得出來 -----------------------------
+        // 素材與坐騎的 tooltip 走 language/wynncraft，那個字型也收了偏移碼位。
+        // 只認 space 字型的話，間隔會被當成一般文字、譯文變短時不跟著調整——
+        // 數值整排往左跑，坐騎的「右鍵點擊召喚」也失去置中。
+        String offsets = new StringBuilder()
+                .appendCodePoint(0xCFFD2).appendCodePoint(0xD0064).toString();
+        int px = SpaceOffset.decode(offsets);
+        Style wynn = Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                net.minecraft.resources.Identifier.withDefaultNamespace("language/wynncraft")));
+        Style spaceFont = SpaceOffset.styleFor(Style.EMPTY);
+
+        check("space 字型的偏移照舊認得（不必量寬度）",
+                LineTranslator.isAdjustableSpace(spaceFont, offsets, 0));
+        check("別的字型：量出來的寬度等於偏移值，就是偏移（" + px + " px）",
+                LineTranslator.isAdjustableSpace(wynn, offsets, px));
+        check("別的字型：寬度對不上就不當成偏移 —— 那可能是材質包的圖示",
+                !LineTranslator.isAdjustableSpace(wynn, offsets, px + 7));
+        check("範圍外的碼位一律不算",
+                !LineTranslator.isAdjustableSpace(spaceFont, "Defence", 41));
+
         // 素材那種兩欄的行：標籤 [A] +60 to [B] +75
         // 只補其中一欄的話另一欄會跑掉，而整行總寬度仍然是對的
         List<Piece> twoColumns = List.of(

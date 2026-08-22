@@ -184,8 +184,9 @@ public final class MajorIdColourTest {
             }
         }
 
-        // 彩虹字：名稱在原文裡是一個字一個顏色拼出來的。
-        // 只取「第一段有字母的樣式」的話，整個譯名會變成單色——彩虹沒了。
+        // 名稱在原文裡是一個字一個顏色拼出來的（彩虹字）。
+        // 譯文<b>不</b>重現那道漸層——照專案的原則保留原始樣式，不特地改顏色。
+        // 這裡釘住的是：名稱仍然是名稱那個顏色，說明仍然是說明那個顏色。
         int[] rainbow = {0xFF5555, 0xFFAA00, 0xFFFF55, 0x55FF55, 0x55FFFF,
                          0x5555FF, 0xFF55FF, 0xFF5555, 0xFFAA00, 0xFFFF55,
                          0x55FF55, 0x55FFFF, 0x5555FF};
@@ -211,36 +212,92 @@ public final class MajorIdColourTest {
                 shiny, store, new boolean[shiny.size()]);
         check("彩虹名稱的整段查得到", painted != null && !painted.isEmpty());
         if (painted != null && !painted.isEmpty()) {
+            // 名稱那一段只能有<b>一個</b>顏色。先前這裡會被拆成一個字一段、
+            // 各自套上漸層裡的一個顏色；現在保留原始樣式，整段是同一色。
+            int leaves = 0;
             java.util.LinkedHashSet<Integer> used = new java.util.LinkedHashSet<>();
             for (Component line : painted) {
                 for (Component leaf : flatten(line)) {
-                    String text = leaf.getString();
-                    if (!text.isBlank() && "華綻".contains(text)
-                            && leaf.getStyle().getColor() != null) {
+                    if (!leaf.getString().contains("華綻")) {
+                        continue;
+                    }
+                    leaves++;
+                    if (leaf.getStyle().getColor() != null) {
                         used.add(leaf.getStyle().getColor().getValue());
                     }
                 }
             }
-            check("譯名不是單色（用到 " + used.size() + " 個顏色）", used.size() >= 2);
-            check("用的是原文那串顏色", rainbowContains(rainbow, used));
+            check("譯名沒有被拆成一個字一段（拆成 " + leaves + " 段）", leaves == 1);
+            check("譯名維持單一顏色，沒有被重新上色（用到 " + used.size() + " 個）",
+                    used.size() == 1);
+            check("用的是原文名稱本來的顏色", rainbowContains(rainbow, used));
             Integer bodyColour = colourOf(painted, "分散");
             check("說明那半沒有被染成彩虹（拿到 "
                             + (bodyColour == null ? "null"
                                : "#" + String.format("%06X", bodyColour)) + "）",
                     bodyColour != null && bodyColour == BODY_COLOUR);
         }
-        // 一整個詞一個顏色是<b>普通排版</b>，不能被當成彩虹字拆開上色
+        // 普通的兩段上色照舊
         List<StyledText> ordinary = block();
         List<Component> plain = LineTranslator.translateBlock(
                 ordinary, store, new boolean[ordinary.size()]);
-        check("普通的兩段上色不會被誤判成彩虹",
+        check("普通的兩段上色仍然正確",
                 plain != null && colourOf(plain, "利他主義") != null
                         && colourOf(plain, "利他主義") == NAME_COLOUR);
 
+        keepWordColour(store);
         report();
     }
 
-    /** 譯名用到的每一個顏色，都得是原文那串裡本來就有的。 */
+    /**
+     * 一段被切成好幾行之後，行內那個<b>最長</b>的彩色詞不能掉色。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 技能樹的 {@code Larger Mana Bank II} 寫著：
+     *
+     * <pre>
+     *   Increase your maximum          ← 整行灰色
+     *   Mana Bank ✺ by +30.            ← 「Mana Bank」是藍的
+     * </pre>
+     *
+     * <p>重點段是拿<b>那一行自己的</b>主樣式篩出來的。第二行裡「Mana Bank」比
+     * 「 by +30.」長，於是藍色成了那一行的主樣式，這一段就被當成「不是重點」丟掉——
+     * 譯文重建時沒有東西可以把藍色貼回去，畫面上 Mana Bank 變成白的。
+     *
+     * <p>Major ID 的敘述整段套上標題顏色，也是同一個機制的另一面：名稱比同一行
+     * 露出的說明長時，說明那半的灰色被丟掉。
+     */
+    private static void keepWordColour(TranslationStore store) {
+        final int WORD = 0x55FFFF;
+        MutableComponent second = Component.empty();
+        second.append(Component.literal("Mana Bank ").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(WORD))));
+        second.append(Component.literal("✺").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(0xFF55FF))));
+        second.append(Component.literal(" by +30.").withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR))));
+
+        List<StyledText> run = List.of(
+                StyledText.fromComponent(Component.literal("Increase your maximum")
+                        .withStyle(Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR)))),
+                StyledText.fromComponent(second));
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("技能敘述整段查得到", out != null && !out.isEmpty());
+        if (out == null || out.isEmpty()) {
+            return;
+        }
+        Integer word = colourOf(out, "Mana Bank");
+        check("行內最長的那個彩色詞沒有掉色（拿到 "
+                        + (word == null ? "null" : "#" + String.format("%06X", word))
+                        + "）", word != null && word == WORD);
+        Integer body = colourOf(out, "上限提高");
+        check("其餘敘述仍然是敘述的顏色（拿到 "
+                        + (body == null ? "null" : "#" + String.format("%06X", body))
+                        + "）", body != null && body == BODY_COLOUR);
+    }
+
+    /** 譯名用到的顏色，得是原文名稱那幾段裡本來就有的。 */
     private static boolean rainbowContains(int[] ramp, java.util.Set<Integer> used) {
         for (int colour : used) {
             boolean found = false;
