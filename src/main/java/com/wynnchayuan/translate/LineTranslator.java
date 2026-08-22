@@ -1846,7 +1846,15 @@ public final class LineTranslator {
             }
             // 技能名稱：語料裡只翻一次，所有提到它的敘述自動跟著換
             TranslationStore.Term term = store == null ? null : store.findTerm(text, from);
-            if (term != null && (at < 0 || term.start() < at)) {
+            // 同一個位置時取<b>比較長</b>的那一個——這跟重點段彼此之間本來就用的
+            // 規則一致，先前只有重點段互比時套用，跟詞典比的時候卻是重點段無條件勝。
+            //
+            // 後果：`Dimensional Tear` 在原文被 tooltip 寬度拆成兩行，第一行只剩
+            // `Dimensional`，那一段成了重點段。它跟詞典裡的 `Dimensional Tear`
+            // 從同一個位置開始，於是短的贏——譯文就卡著半個英文名字。
+            boolean longer = term != null && at >= 0 && term.start() == at
+                    && term.end() - term.start() > accents.get(which).text().length();
+            if (term != null && (at < 0 || term.start() < at || longer)) {
                 if (term.start() > from) {
                     out.append(literal(text.substring(from, term.start()), base));
                 }
@@ -1910,6 +1918,11 @@ public final class LineTranslator {
                 continue;
             }
             String zh = store.lookup(core);
+            if (zh == null || zh.isBlank()) {
+                // 詞典裡的詞也算——而且它認得「詞 + 尾巴的圖示」那種色段，
+                // 見 TranslationStore#lookupTerm
+                zh = store.lookupTerm(core);
+            }
             if (zh != null && !zh.isBlank() && !zh.equals(core)) {
                 out.add(new LineParts.Piece(zh, accent.style()));
             }
