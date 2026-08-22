@@ -333,8 +333,8 @@
    "code": "SHAMAN-P2-R04-C01"
   },
   "4f2ab903a01c": {
-   "src": "{#}{#}Range: ~{~} Blocks",
-   "dst": "{#}{#}施放範圍: ~{~} 格",
+   "src": "{#} Range: ~{~} Blocks",
+   "dst": "{#}施放範圍: ~{~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -430,8 +430,8 @@
    "code": "SHAMAN-P3-R04-C04"
   },
   "1758a60259c4": {
-   "src": "{#}{#}Area of Effect: {~} Blocks (Line-Shaped)",
-   "dst": "{#}{#}技能範圍: {~} 格(直線)",
+   "src": "{#} Area of Effect: {~} Blocks (Line-Shaped)",
+   "dst": "{#}技能範圍: {~} 格(直線)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -527,8 +527,8 @@
    "code": "SHAMAN-P3-R04-C08"
   },
   "b44413872a86": {
-   "src": "{#}{#}Total Damage: -{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#}{#}總傷害: -{~}(你的每秒傷害，Uproot,每次命中)",
+   "src": "{#} Total Damage: -{~} (of your DPS, for Uproot, per hit)",
+   "dst": "{#}總傷害: -{~}(你的每秒傷害，Uproot,每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -938,8 +938,8 @@
    "code": "SHAMAN-P4-R04-C03"
   },
   "d41c168463fa": {
-   "src": "{#}{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "{#}{#} Fanatic: -{~} 抗性加成 ({#}) 給敵人",
+   "src": "{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
+   "dst": "{#} Fanatic: -{~} 抗性加成 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -951,8 +951,8 @@
    "code": "SHAMAN-P4-R04-C03"
   },
   "3d847bf8187e": {
-   "src": "{#}{#} Heretic: +{~} Slowness ({#}) to Enemies",
-   "dst": "{#}{#} Heretic: +{~} 緩速 ({#}) 給敵人",
+   "src": "{#} Heretic: +{~} Slowness ({#}) to Enemies",
+   "dst": "{#} Heretic: +{~} 緩速 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -977,8 +977,8 @@
    "code": "SHAMAN-P4-R04-C03"
   },
   "718d0c014f70": {
-   "src": "{#}{#}Effects:",
-   "dst": "{#}{#}效果:",
+   "src": "{#} Effects:",
+   "dst": "{#}效果:",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1130,7 +1130,7 @@
    "code": "SHAMAN-P5-R01-C07"
   },
   "52a185a21e2f": {
-   "src": "Increase your maximum Blood Pool {#}{#}by +{~} points.",
+   "src": "Increase your maximum Blood Pool {#} by +{~} points.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1138,7 +1138,7 @@
     "shaman/Larger Blood Pool"
    ],
    "lines": 1,
-   "flat": "Increase your maximum Blood Pool {#}{#}by +{~} points.",
+   "flat": "Increase your maximum Blood Pool {#} by +{~} points.",
    "_raw": "Increase your maximum Blood Pool  by +30 points.",
    "tree": "04/shaman/05/001/007",
    "ability": "Larger Blood Pool",
@@ -1173,8 +1173,8 @@
    "code": "SHAMAN-P5-R02-C00"
   },
   "2edac2f60646": {
-   "src": "{#}{#}Effect: +{~} Damage Bonus to Summons",
-   "dst": "{#}{#}效果: +{~} 傷害加成給召喚物",
+   "src": "{#} Effect: +{~} Damage Bonus to Summons",
+   "dst": "{#}效果: +{~} 傷害加成給召喚物",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1270,7 +1270,7 @@
    "code": "SHAMAN-P5-R02-C08"
   },
   "26b4a2936842": {
-   "src": "Bleeding{#}{#}{#}enemies take damage every {~}s.\nBleeding{#}{#}{#}damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool{#}{#}.",
+   "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1278,7 +1278,7 @@
     "shaman/Lashing Lance"
    ],
    "lines": 3,
-   "flat": "Bleeding{#}{#}{#}enemies take damage every {~}s. Bleeding{#}{#}{#}damage dealt within Totem's range also adds +{~} points to your Blood Pool{#}{#}.",
+   "flat": "Bleeding {#} enemies take damage every {~}s. Bleeding {#} damage dealt within Totem's range also adds +{~} points to your Blood Pool {#}.",
    "_raw": "Bleeding  enemies take damage every 0.5s.\nBleeding  damage dealt within Totem's range\nalso adds +0.8 points to your Blood Pool .",
    "tree": "04/shaman/05/002/008",
    "ability": "Lashing Lance",
@@ -1315,8 +1315,8 @@
    "code": "SHAMAN-P5-R02-C08"
   },
   "5159a03ec503": {
-   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，Uproot,每次命中)",
+   "src": "{#} Total Damage: +{~} (of your DPS, for Uproot, per hit)",
+   "dst": "{#}總傷害: +{~}(你的每秒傷害，Uproot,每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1328,8 +1328,8 @@
    "code": "SHAMAN-P5-R02-C08"
   },
   "e65dc10bdc16": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, from Bleeding)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，流血)",
+   "src": "{#} Total Damage: {~} (of your DPS, from Bleeding)",
+   "dst": "{#}總傷害: {~}(你的每秒傷害，流血)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1383,8 +1383,8 @@
    "code": "SHAMAN-P5-R03-C04"
   },
   "5a223145af2f": {
-   "src": "{#} Fanatic: -{~} {#}{#}Totem Cost",
-   "dst": "{#} Fanatic: -{~} {#}{#}Totem 消耗",
+   "src": "{#} Fanatic: -{~} {#} Totem Cost",
+   "dst": "{#} Fanatic: -{~} {#}Totem 消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1396,8 +1396,8 @@
    "code": "SHAMAN-P5-R03-C04"
   },
   "4a9f57237bb5": {
-   "src": "{#} Heretic: -{~} {#}{#}Haul Cost",
-   "dst": "{#} Heretic: -{~} {#}{#}Haul 消耗",
+   "src": "{#} Heretic: -{~} {#} Haul Cost",
+   "dst": "{#} Heretic: -{~} {#}Haul 消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1409,8 +1409,8 @@
    "code": "SHAMAN-P5-R03-C04"
   },
   "5e513eaf9dfe": {
-   "src": "{#} Lunatic: -{~} {#}{#}Aura Cost",
-   "dst": "{#} Lunatic: -{~} {#}{#}Aura 消耗",
+   "src": "{#} Lunatic: -{~} {#} Aura Cost",
+   "dst": "{#} Lunatic: -{~} {#}Aura 消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1590,7 +1590,7 @@
    "code": "SHAMAN-P5-R05-C06"
   },
   "6e02b650c33d": {
-   "src": "Nearby Bleeding {#}{#}enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
+   "src": "Nearby Bleeding {#} enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1598,15 +1598,15 @@
     "shaman/Twisted Tether"
    ],
    "lines": 3,
-   "flat": "Nearby Bleeding {#}{#}enemies will take damage for every {~} Health you lose. (Max {~} activations per second)",
+   "flat": "Nearby Bleeding {#} enemies will take damage for every {~} Health you lose. (Max {~} activations per second)",
    "_raw": "Nearby Bleeding  enemies will take\ndamage for every 2% Health you lose.\n(Max 20 activations per second)",
    "tree": "04/shaman/05/005/006",
    "ability": "Twisted Tether",
    "code": "SHAMAN-P5-R05-C06"
   },
   "c7673b5ce4da": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} health)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每 {~} 點生命)",
+   "src": "{#} Total Damage: {~} (of your DPS, per {~} health)",
+   "dst": "{#}總傷害: {~1}(你的每秒傷害，每 {~2} 點生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1746,8 +1746,8 @@
    "code": "SHAMAN-P6-R01-C04"
   },
   "bd6a12cbe948": {
-   "src": "{#}{#}Cooldown: {~}s (per Chant)",
-   "dst": "{#}{#}冷卻時間: {~} 秒(每次吟唱)",
+   "src": "{#} Cooldown: {~}s (per Chant)",
+   "dst": "{#}冷卻時間: {~} 秒(每次吟唱)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1787,7 +1787,7 @@
    "code": "SHAMAN-P6-R01-C07"
   },
   "a7ca84632649": {
-   "src": "Casting Totem while holding shift will spend\n{~} points of Blood Pool {#}{#}(per Totem) to\ncall upon {~} nightmarish tentacles that attack\nnearby enemies.",
+   "src": "Casting Totem while holding shift will spend\n{~} points of Blood Pool {#} (per Totem) to\ncall upon {~} nightmarish tentacles that attack\nnearby enemies.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1795,14 +1795,14 @@
     "shaman/Eldritch Call"
    ],
    "lines": 4,
-   "flat": "Casting Totem while holding shift will spend {~} points of Blood Pool {#}{#}(per Totem) to call upon {~} nightmarish tentacles that attack nearby enemies.",
+   "flat": "Casting Totem while holding shift will spend {~} points of Blood Pool {#} (per Totem) to call upon {~} nightmarish tentacles that attack nearby enemies.",
    "_raw": "Casting Totem while holding shift will spend\n35 points of Blood Pool  (per Totem) to\ncall upon 4 nightmarish tentacles that attack\nnearby enemies.",
    "tree": "04/shaman/06/001/007",
    "ability": "Eldritch Call",
    "code": "SHAMAN-P6-R01-C07"
   },
   "23c890f6c0a3": {
-   "src": "Tentacles will attack Bleeding{#}{#} enemies from an\nadditional +{~} blocks away.",
+   "src": "Tentacles will attack Bleeding {#} enemies from an\nadditional +{~} blocks away.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1810,7 +1810,7 @@
     "shaman/Eldritch Call"
    ],
    "lines": 2,
-   "flat": "Tentacles will attack Bleeding{#}{#} enemies from an additional +{~} blocks away.",
+   "flat": "Tentacles will attack Bleeding {#} enemies from an additional +{~} blocks away.",
    "_raw": "Tentacles will attack Bleeding  enemies from an\nadditional +6 blocks away.",
    "tree": "04/shaman/06/001/007",
    "ability": "Eldritch Call",
@@ -1860,8 +1860,8 @@
    "code": "SHAMAN-P6-R02-C00"
   },
   "dd2a876b1fb5": {
-   "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies",
-   "dst": "{#}{#}效果: {~} 緩速 ({#}) 給敵人",
+   "src": "{#} Effects: {~} Slowness ({#}) to Enemies",
+   "dst": "{#}效果: {~} 緩速 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1955,7 +1955,7 @@
    "code": "SHAMAN-P6-R03-C06"
   },
   "e96fa8cf229e": {
-   "src": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes\nup to {~}s of Bleeding{#}{#}, granting +{~} Blood Pool {#}{#}for each\nsecond of Bleeding{#}{#}{#}consumed.",
+   "src": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes\nup to {~}s of Bleeding {#}, granting +{~} Blood Pool {#} for each\nsecond of Bleeding {#} consumed.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1963,7 +1963,7 @@
     "shaman/Rupture"
    ],
    "lines": 3,
-   "flat": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes up to {~}s of Bleeding{#}{#}, granting +{~} Blood Pool {#}{#}for each second of Bleeding{#}{#}{#}consumed.",
+   "flat": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes up to {~}s of Bleeding {#}, granting +{~} Blood Pool {#} for each second of Bleeding {#} consumed.",
    "_raw": "Sacrificial Shrine boosts Aura's damage by +15% and consumes\nup to 2s of Bleeding , granting +2.2 Blood Pool  for each\nsecond of Bleeding  consumed.",
    "tree": "04/shaman/06/003/006",
    "ability": "Rupture",
@@ -1983,7 +1983,7 @@
    "code": "SHAMAN-P6-R03-C08"
   },
   "cd58c4a4b11a": {
-   "src": "Increase your maximum Blood Pool {#}{#}by +{~} points.\nIncrease your maximum Bleeding {#}{#}duration by +{~}s.",
+   "src": "Increase your maximum Blood Pool {#} by +{~} points.\nIncrease your maximum Bleeding {#} duration by +{~}s.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1993,7 +1993,7 @@
     "shaman/Bloodiest"
    ],
    "lines": 2,
-   "flat": "Increase your maximum Blood Pool {#}{#}by +{~} points. Increase your maximum Bleeding {#}{#}duration by +{~}s.",
+   "flat": "Increase your maximum Blood Pool {#} by +{~} points. Increase your maximum Bleeding {#} duration by +{~}s.",
    "_raw": "Increase your maximum Blood Pool  by +30 points.\nIncrease your maximum Bleeding  duration by +1.5s.",
    "tree": "04/shaman/06/003/008",
    "ability": "Bloody、Bloodier、Bloodiest",
@@ -2058,8 +2058,8 @@
    "code": "SHAMAN-P6-R04-C00"
   },
   "3f07b666370c": {
-   "src": "{#}{#}Effect: +{~} Attack Speed to Puppets",
-   "dst": "{#}{#}效果: +{~} 攻擊速度給傀儡",
+   "src": "{#} Effect: +{~} Attack Speed to Puppets",
+   "dst": "{#}效果: +{~} 攻擊速度給傀儡",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2099,8 +2099,8 @@
    "code": "SHAMAN-P6-R04-C02"
   },
   "6f5fa74b0433": {
-   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Puppets",
-   "dst": "{#}{#}效果: +{~} 傷害加成 (⚔) 給傀儡",
+   "src": "{#} Effect: +{~} Damage Bonus (⚔) to Puppets",
+   "dst": "{#}效果: +{~} 傷害加成 (⚔) 給傀儡",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2321,8 +2321,8 @@
    "code": "SHAMAN-P7-R01-C01"
   },
   "d8f680e0d001": {
-   "src": "{#}{#}Effect: +{~} Walk Speed to Self",
-   "dst": "{#}{#}效果: +{~} 移動速度給自己",
+   "src": "{#} Effect: +{~} Walk Speed to Self",
+   "dst": "{#}效果: +{~} 移動速度給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2403,8 +2403,8 @@
    "code": "SHAMAN-P7-R02-C02"
   },
   "1e737fcaf8d9": {
-   "src": "{#}{#}Effect: +{~} Attack Speed to Summons",
-   "dst": "{#}{#}效果: +{~} 攻擊速度給召喚物",
+   "src": "{#} Effect: +{~} Attack Speed to Summons",
+   "dst": "{#}效果: +{~} 攻擊速度給召喚物",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2487,7 +2487,7 @@
    "code": "SHAMAN-P7-R03-C06"
   },
   "06875d1c9d2c": {
-   "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#}{#}for +{~}s.",
+   "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#} for +{~}s.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2495,7 +2495,7 @@
     "shaman/Sanguine Strike"
    ],
    "lines": 2,
-   "flat": "Your Main Attack will now inflict enemies with Bleeding {#}{#}for +{~}s.",
+   "flat": "Your Main Attack will now inflict enemies with Bleeding {#} for +{~}s.",
    "_raw": "Your Main Attack will now inflict enemies\nwith Bleeding  for +2s.",
    "tree": "04/shaman/07/003/006",
    "ability": "Sanguine Strike",
@@ -2558,8 +2558,8 @@
    "code": "SHAMAN-P7-R04-C01"
   },
   "fc7b11fd5b9f": {
-   "src": "{#}{#}Effects: +{~} Walk Speed to Self",
-   "dst": "{#}{#}效果: +{~} 移動速度給自己",
+   "src": "{#} Effects: +{~} Walk Speed to Self",
+   "dst": "{#}效果: +{~} 移動速度給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2641,7 +2641,7 @@
   },
   "29412ca51f54": {
    "src": "Casting Uproot or Haunting Memory while\nholding shift will spend {~} points\nof Blood Pool {#} to cast a destructive beam\nthat chains between enemies and allies,\nand damages enemies every {~}s.",
-   "dst": "按住 shift 施放 Uproot 或\nHaunting Memory 會消耗 {~} 點\nBlood Pool {#} 施放一道破壞性光束，\n在敵人與友軍之間跳躍，\n並每 {~} 秒對敵人造成傷害。",
+   "dst": "按住 shift 施放 Uproot 或\nHaunting Memory 會消耗 {~1} 點\nBlood Pool {#} 施放一道破壞性光束，\n在敵人與友軍之間跳躍，\n並每 {~2} 秒對敵人造成傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2739,7 +2739,7 @@
    "code": "SHAMAN-P8-R01-C07"
   },
   "f3d6594e22bf": {
-   "src": "For each Transfused {#}{#}Eldritch Call has, its\nattacks deal more damage. All Transfused {#}\nis lost when Eldritch Call expires.",
+   "src": "For each Transfused {#} Eldritch Call has, its\nattacks deal more damage. All Transfused {#}\nis lost when Eldritch Call expires.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2747,7 +2747,7 @@
     "shaman/Eldritch Transfusion"
    ],
    "lines": 3,
-   "flat": "For each Transfused {#}{#}Eldritch Call has, its attacks deal more damage. All Transfused {#} is lost when Eldritch Call expires.",
+   "flat": "For each Transfused {#} Eldritch Call has, its attacks deal more damage. All Transfused {#} is lost when Eldritch Call expires.",
    "_raw": "For each Transfused  Eldritch Call has, its\nattacks deal more damage. All Transfused \nis lost when Eldritch Call expires.",
    "tree": "04/shaman/08/001/007",
    "ability": "Eldritch Transfusion",
@@ -2769,8 +2769,8 @@
    "code": "SHAMAN-P8-R01-C07"
   },
   "87186ab9c023": {
-   "src": "{#}{#}Effect: +{~} damage to Eldritch Call (Per stack)",
-   "dst": "{#}{#}效果: +{~} 傷害給 Eldritch Call(每層)",
+   "src": "{#} Effect: +{~} damage to Eldritch Call (Per stack)",
+   "dst": "{#}效果: +{~} 傷害給 Eldritch Call(每層)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3191,7 +3191,7 @@
    "code": "SHAMAN-P9-R02-C01"
   },
   "d87e4676a79c": {
-   "src": "Activate abilities to charge\nyour Ultimate Meter {#}{#}to {~}.",
+   "src": "Activate abilities to charge\nyour Ultimate Meter {#} to {~}.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -3199,7 +3199,7 @@
     "shaman/Patchwork Abomination"
    ],
    "lines": 2,
-   "flat": "Activate abilities to charge your Ultimate Meter {#}{#}to {~}.",
+   "flat": "Activate abilities to charge your Ultimate Meter {#} to {~}.",
    "_raw": "Activate abilities to charge\nyour Ultimate Meter  to 100%.",
    "tree": "04/shaman/09/002/001",
    "ability": "Patchwork Abomination",
@@ -3266,8 +3266,8 @@
    "code": "SHAMAN-P9-R02-C01"
   },
   "fc47779861ff": {
-   "src": "{#}{#}Area of Effect: {~} Blocks (Circle-Shaped, Explosion)",
-   "dst": "{#}{#}技能範圍: {~} 格(圓形，爆炸)",
+   "src": "{#} Area of Effect: {~} Blocks (Circle-Shaped, Explosion)",
+   "dst": "{#}技能範圍: {~} 格(圓形，爆炸)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3279,8 +3279,8 @@
    "code": "SHAMAN-P9-R02-C01"
   },
   "c1aeba9b8851": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, Attack)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，攻擊)",
+   "src": "{#} Total Damage: {~} (of your DPS, Attack)",
+   "dst": "{#}總傷害: {~}(你的每秒傷害，攻擊)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3292,8 +3292,8 @@
    "code": "SHAMAN-P9-R02-C01"
   },
   "c911fca82ad6": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, Explosion)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，爆炸)",
+   "src": "{#} Total Damage: {~} (of your DPS, Explosion)",
+   "dst": "{#}總傷害: {~}(你的每秒傷害，爆炸)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3318,7 +3318,7 @@
    "code": "SHAMAN-P9-R02-C07"
   },
   "59c39ae5a547": {
-   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#}{#}to {~}.",
+   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#} to {~}.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -3326,14 +3326,14 @@
     "shaman/Monument to Gloom"
    ],
    "lines": 2,
-   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#}{#}to {~}.",
+   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#} to {~}.",
    "_raw": "Activate abilities or lose health to charge\nyour Ultimate Meter  to 100%.",
    "tree": "04/shaman/09/002/007",
    "ability": "Monument to Gloom",
    "code": "SHAMAN-P9-R02-C07"
   },
   "5e39acc55201": {
-   "src": "Others receive +{~} Health {#}{#}every {~}s.",
+   "src": "Others receive +{~} Health {#} every {~}s.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -3341,14 +3341,14 @@
     "shaman/Monument to Gloom"
    ],
    "lines": 1,
-   "flat": "Others receive +{~} Health {#}{#}every {~}s.",
+   "flat": "Others receive +{~} Health {#} every {~}s.",
    "_raw": "Others receive +5% Health  every 0.4s.",
    "tree": "04/shaman/09/002/007",
    "ability": "Monument to Gloom",
    "code": "SHAMAN-P9-R02-C07"
   },
   "c13f96b01816": {
-   "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#}{#}to nearby\nacolytes every {~}s.",
+   "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -3356,7 +3356,7 @@
     "shaman/Monument to Gloom"
    ],
    "lines": 3,
-   "flat": "Your Totem becomes possessed by an eldritch demon, granting +{~} Blood Pool {#}{#}to nearby acolytes every {~}s.",
+   "flat": "Your Totem becomes possessed by an eldritch demon, granting +{~} Blood Pool {#} to nearby acolytes every {~}s.",
    "_raw": "Your Totem becomes possessed by an eldritch\ndemon, granting +5% Blood Pool  to nearby\nacolytes every 0.4s.",
    "tree": "04/shaman/09/002/007",
    "ability": "Monument to Gloom",

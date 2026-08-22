@@ -307,8 +307,8 @@
    "code": "ASSASSIN-P2-R03-C06"
   },
   "bcbb8a1b15f4": {
-   "src": "{#}{#}Range: {~} Blocks (Cone-Shaped)",
-   "dst": "{#}{#}施放範圍: {~} 格(扇形)",
+   "src": "{#} Range: {~} Blocks (Cone-Shaped)",
+   "dst": "{#}施放範圍: {~} 格(扇形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -447,8 +447,8 @@
    "code": "ASSASSIN-P3-R04-C02"
   },
   "87da5f57819d": {
-   "src": "{#}{#}Effect: Invisibility to Self",
-   "dst": "{#}{#}效果: 隱形給自己",
+   "src": "{#} Effect: Invisibility to Self",
+   "dst": "{#}效果: 隱形給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -587,8 +587,8 @@
    "code": "ASSASSIN-P4-R01-C04"
   },
   "06a1e7239354": {
-   "src": "{#}{#}Effect: {~} Damage Bonus (⚔) to Self",
-   "dst": "{#}{#}效果: {~} 傷害加成 (⚔) 給自己",
+   "src": "{#} Effect: {~} Damage Bonus (⚔) to Self",
+   "dst": "{#}效果: {~} 傷害加成 (⚔) 給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -912,8 +912,8 @@
    "code": "ASSASSIN-P4-R04-C08"
   },
   "30cc7615a57b": {
-   "src": "{#}{#}Total Damage: +{~} (of your DPS, per hit)",
-   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，每次命中)",
+   "src": "{#} Total Damage: +{~} (of your DPS, per hit)",
+   "dst": "{#}總傷害: +{~} (你的每秒傷害，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1122,7 +1122,7 @@
    "code": "ASSASSIN-P5-R02-C04"
   },
   "f97d6e2b81d8": {
-   "src": "Reduce the cooldown on all of your\nabilities by {~} every time you get hit\nfor less than {~} of your max health or\nyour Mirage Clone {#}{#}lures an enemy.",
+   "src": "Reduce the cooldown on all of your\nabilities by {~} every time you get hit\nfor less than {~} of your max health or\nyour Mirage Clone {#} lures an enemy.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1130,7 +1130,7 @@
     "assassin/Sandbagging"
    ],
    "lines": 4,
-   "flat": "Reduce the cooldown on all of your abilities by {~} every time you get hit for less than {~} of your max health or your Mirage Clone {#}{#}lures an enemy.",
+   "flat": "Reduce the cooldown on all of your abilities by {~} every time you get hit for less than {~} of your max health or your Mirage Clone {#} lures an enemy.",
    "_raw": "Reduce the cooldown on all of your\nabilities by 30% every time you get hit\nfor less than 10% of your max health or\nyour Mirage Clone  lures an enemy.",
    "tree": "03/assassin/05/002/004",
    "ability": "Sandbagging",
@@ -1238,8 +1238,8 @@
    "code": "ASSASSIN-P5-R02-C08"
   },
   "d5187788735c": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, over {~} hits)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，共 {~} 次命中)",
+   "src": "{#} Total Damage: {~} (of your DPS, over {~} hits)",
+   "dst": "{#}總傷害: {~1}(你的每秒傷害，共 {~2} 次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1307,8 +1307,8 @@
    "code": "ASSASSIN-P5-R03-C03"
   },
   "b26294e34bd1": {
-   "src": "{#}{#}Cooldown: +{~}s",
-   "dst": "{#}{#}冷卻時間: +{~}s",
+   "src": "{#} Cooldown: +{~}s",
+   "dst": "{#}冷卻時間: +{~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1361,7 +1361,7 @@
    "code": "ASSASSIN-P5-R04-C01"
   },
   "2c9832c3ad7e": {
-   "src": "Marked {#}{#}enemies will take +{~} damage\nfrom attacks for each mark they have.",
+   "src": "Marked {#} enemies will take +{~} damage\nfrom attacks for each mark they have.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1369,14 +1369,14 @@
     "assassin/Marked"
    ],
    "lines": 2,
-   "flat": "Marked {#}{#}enemies will take +{~} damage from attacks for each mark they have.",
+   "flat": "Marked {#} enemies will take +{~} damage from attacks for each mark they have.",
    "_raw": "Marked  enemies will take +7% damage\nfrom attacks for each mark they have.",
    "tree": "03/assassin/05/004/001",
    "ability": "Marked",
    "code": "ASSASSIN-P5-R04-C01"
   },
   "380411c14654": {
-   "src": "Marked {#}{#}will decay once every {~}s.",
+   "src": "Marked {#} will decay once every {~}s.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1384,7 +1384,7 @@
     "assassin/Marked"
    ],
    "lines": 1,
-   "flat": "Marked {#}{#}will decay once every {~}s.",
+   "flat": "Marked {#} will decay once every {~}s.",
    "_raw": "Marked  will decay once every 10s.",
    "tree": "03/assassin/05/004/001",
    "ability": "Marked",
@@ -1464,8 +1464,8 @@
    "code": "ASSASSIN-P5-R04-C04"
   },
   "1939dfc5b5bd": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, per Trick)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每個 Trick)",
+   "src": "{#} Total Damage: {~} (of your DPS, per Trick)",
+   "dst": "{#}總傷害: {~}(你的每秒傷害，每個 Trick)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1520,8 +1520,8 @@
    "code": "ASSASSIN-P5-R04-C06"
   },
   "cf9a949dcbfc": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, per shuriken)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每枚手裏劍)",
+   "src": "{#} Total Damage: {~} (of your DPS, per shuriken)",
+   "dst": "{#}總傷害: {~}(你的每秒傷害，每枚手裏劍)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1561,8 +1561,8 @@
    "code": "ASSASSIN-P5-R04-C08"
   },
   "7d703bb03c32": {
-   "src": "{#}{#}Multihit Damage: +{~} (of your DPS, per hit)",
-   "dst": "{#}{#}Multihit 傷害: +{~}(你的每秒傷害，每次命中)",
+   "src": "{#} Multihit Damage: +{~} (of your DPS, per hit)",
+   "dst": "{#}Multihit 傷害: +{~}(你的每秒傷害，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1686,7 +1686,7 @@
    "code": "ASSASSIN-P6-R01-C02"
   },
   "81bb02fe870f": {
-   "src": "When exiting Vanish, pull all\nnearby Marked {#}{#}mobs towards\nwhere you entered Vanish.",
+   "src": "When exiting Vanish, pull all\nnearby Marked {#} mobs towards\nwhere you entered Vanish.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1694,7 +1694,7 @@
     "assassin/Death Magnet"
    ],
    "lines": 3,
-   "flat": "When exiting Vanish, pull all nearby Marked {#}{#}mobs towards where you entered Vanish.",
+   "flat": "When exiting Vanish, pull all nearby Marked {#} mobs towards where you entered Vanish.",
    "_raw": "When exiting Vanish, pull all\nnearby Marked  mobs towards\nwhere you entered Vanish.",
    "tree": "03/assassin/06/001/002",
    "ability": "Death Magnet",
@@ -1798,7 +1798,7 @@
    "code": "ASSASSIN-P6-R02-C05"
   },
   "fbc4bc67a834": {
-   "src": "Confused {#}{#}enemies take +{~} more",
+   "src": "Confused {#} enemies take +{~} more",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1806,7 +1806,7 @@
     "assassin/Misdirection"
    ],
    "lines": 1,
-   "flat": "Confused {#}{#}enemies take +{~} more",
+   "flat": "Confused {#} enemies take +{~} more",
    "_raw": "Confused  enemies take +20% more",
    "tree": "03/assassin/06/002/005",
    "ability": "Misdirection",
@@ -1828,7 +1828,7 @@
    "code": "ASSASSIN-P6-R02-C05"
   },
   "3a48efefee85": {
-   "src": "You may store +{~} more Tricks {#}{#}on enemies.",
+   "src": "You may store +{~} more Tricks {#} on enemies.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1837,7 +1837,7 @@
     "assassin/Soul Siphon"
    ],
    "lines": 1,
-   "flat": "You may store +{~} more Tricks {#}{#}on enemies.",
+   "flat": "You may store +{~} more Tricks {#} on enemies.",
    "_raw": "You may store +15 more Tricks  on enemies.",
    "tree": "03/assassin/06/002/005",
    "ability": "Misdirection、Soul Siphon",
@@ -1900,7 +1900,7 @@
    "code": "ASSASSIN-P6-R03-C00"
   },
   "7c95fac8a22f": {
-   "src": "If cast while in Vanish,\nSpin Attack will consume all\nMarks {#}{#}from nearby enemies.\nFor every {~} Marks {#}{#}consumed,\nsummon a Knife. (Max {~} Knives)",
+   "src": "If cast while in Vanish,\nSpin Attack will consume all\nMarks {#} from nearby enemies.\nFor every {~} Marks {#} consumed,\nsummon a Knife. (Max {~} Knives)",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -1908,7 +1908,7 @@
     "assassin/Nightcloak Knives"
    ],
    "lines": 5,
-   "flat": "If cast while in Vanish, Spin Attack will consume all Marks {#}{#}from nearby enemies. For every {~} Marks {#}{#}consumed, summon a Knife. (Max {~} Knives)",
+   "flat": "If cast while in Vanish, Spin Attack will consume all Marks {#} from nearby enemies. For every {~} Marks {#} consumed, summon a Knife. (Max {~} Knives)",
    "_raw": "If cast while in Vanish,\nSpin Attack will consume all\nMarks  from nearby enemies.\nFor every 2 Marks  consumed,\nsummon a Knife. (Max 5 Knives)",
    "tree": "03/assassin/06/003/000",
    "ability": "Nightcloak Knives",
@@ -2040,7 +2040,7 @@
    "code": "ASSASSIN-P6-R04-C01"
   },
   "07593e59089a": {
-   "src": "Increases Spin Attack and Lacerate's range\nand damage, and adds +{~} Mark {#}{#}to enemies hit.",
+   "src": "Increases Spin Attack and Lacerate's range\nand damage, and adds +{~} Mark {#} to enemies hit.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2048,7 +2048,7 @@
     "assassin/Fatal Spin"
    ],
    "lines": 2,
-   "flat": "Increases Spin Attack and Lacerate's range and damage, and adds +{~} Mark {#}{#}to enemies hit.",
+   "flat": "Increases Spin Attack and Lacerate's range and damage, and adds +{~} Mark {#} to enemies hit.",
    "_raw": "Increases Spin Attack and Lacerate's range\nand damage, and adds +1 Mark  to enemies hit.",
    "tree": "03/assassin/06/004/001",
    "ability": "Fatal Spin",
@@ -2098,7 +2098,7 @@
    "code": "ASSASSIN-P6-R04-C03"
   },
   "a50e468c7e93": {
-   "src": "You may store +{~} more Tricks {#}{#}on\nenemies.",
+   "src": "You may store +{~} more Tricks {#} on\nenemies.",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2106,7 +2106,7 @@
     "assassin/Toxic Sludge"
    ],
    "lines": 2,
-   "flat": "You may store +{~} more Tricks {#}{#}on enemies.",
+   "flat": "You may store +{~} more Tricks {#} on enemies.",
    "_raw": "You may store +15 more Tricks  on\nenemies.",
    "tree": "03/assassin/06/004/003",
    "ability": "Toxic Sludge",
@@ -2253,8 +2253,8 @@
    "code": "ASSASSIN-P6-R05-C02"
   },
   "df6212400955": {
-   "src": "{#}{#}Effect: +{~} Resistance Bonus (❁) to Self",
-   "dst": "{#}{#}效果: +{~} 抗性加成 (❁) 給自己",
+   "src": "{#} Effect: +{~} Resistance Bonus (❁) to Self",
+   "dst": "{#}效果: +{~} 抗性加成 (❁) 給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2391,7 +2391,7 @@
    "code": "ASSASSIN-P7-R02-C05"
   },
   "6220a19be249": {
-   "src": "Enkindled {#}{#}enemies take +{~} more",
+   "src": "Enkindled {#} enemies take +{~} more",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -2399,7 +2399,7 @@
     "assassin/Deflagrate"
    ],
    "lines": 1,
-   "flat": "Enkindled {#}{#}enemies take +{~} more",
+   "flat": "Enkindled {#} enemies take +{~} more",
    "_raw": "Enkindled  enemies take +30% more",
    "tree": "03/assassin/07/002/005",
    "ability": "Deflagrate",
@@ -2434,8 +2434,8 @@
    "code": "ASSASSIN-P7-R02-C05"
   },
   "f063afb306da": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} Enkindle)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每 {~} 點 Enkindle)",
+   "src": "{#} Total Damage: {~} (of your DPS, per {~} Enkindle)",
+   "dst": "{#}總傷害: {~1}(你的每秒傷害，每 {~2} 點 Enkindle)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2604,8 +2604,8 @@
    "code": "ASSASSIN-P7-R03-C07"
   },
   "9cb9ccb80131": {
-   "src": "{#}{#}Area of Effect: +{~} Blocks (per bloom)",
-   "dst": "{#}{#}技能範圍: +{~} 格(每次綻放)",
+   "src": "{#} Area of Effect: +{~} Blocks (per bloom)",
+   "dst": "{#}技能範圍: +{~} 格(每次綻放)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2927,8 +2927,8 @@
    "code": "ASSASSIN-P8-R02-C07"
   },
   "acfdbd5b6e9f": {
-   "src": "{#}{#}Explosion Damage: +{~}",
-   "dst": "{#}{#}爆炸傷害: +{~}",
+   "src": "{#} Explosion Damage: +{~}",
+   "dst": "{#}爆炸傷害: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3095,8 +3095,8 @@
    "code": "ASSASSIN-P8-R03-C08"
   },
   "6166a6b39a73": {
-   "src": "{#}{#}Duration: -{~}s",
-   "dst": "{#}{#}持續時間: -{~}s",
+   "src": "{#} Duration: -{~}s",
+   "dst": "{#}持續時間: -{~}s",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3136,7 +3136,7 @@
    "code": "ASSASSIN-P8-R04-C05"
   },
   "9811a9f66c5a": {
-   "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#}{#}for +{~}s.\n(Max {~}s)",
+   "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#} for +{~}s.\n(Max {~}s)",
    "dst": "",
    "role": "desc",
    "kind": "block",
@@ -3144,7 +3144,7 @@
     "assassin/Choke Bomb"
    ],
    "lines": 3,
-   "flat": "Smoke Bomb releases a cloud of dust every {~}s, applying Hypoxia {#}{#}for +{~}s. (Max {~}s)",
+   "flat": "Smoke Bomb releases a cloud of dust every {~}s, applying Hypoxia {#} for +{~}s. (Max {~}s)",
    "_raw": "Smoke Bomb releases a cloud of dust\nevery 0.5s, applying Hypoxia  for +2s.\n(Max 10s)",
    "tree": "03/assassin/08/004/005",
    "ability": "Choke Bomb",
@@ -3281,7 +3281,7 @@
   },
   "52dad460dd6c": {
    "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
-   "dst": "若換位時沒有任何敵人被引爆超過 {~} 個 Tricks {#},\nclone 會失去 -{~} 生命。不過，\n每多引爆一個超過門檻的 Trick {#},\n那些 Damage Spells 就多造成 {~} 傷害。",
+   "dst": "若換位時沒有任何敵人被引爆超過 {~1} 個 Tricks {#},\nclone 會失去 -{~2} 生命。不過，\n每多引爆一個超過門檻的 Trick {#},\n那些 Damage Spells 就多造成 {~3} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [

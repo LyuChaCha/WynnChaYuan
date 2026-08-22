@@ -39,7 +39,10 @@ public final class MajorIdTest {
         if (flowed != null) {
             check("名稱有翻到", flowed.contains("利他主義"));
             check("說明有翻到", flowed.contains("格內的友軍"));
-            check("佔位符數量守住", count(flowed, "{~}") == count(AS_RENDERED, "{~}"));
+            // 譯文可以用<b>編號版</b> {~1}{~2} 指名要原文的第幾個數值，
+            // 中文語序跟英文不同時就得靠它。兩種寫法都要算進去，
+            // 只數 {~} 的話一條正確的編號譯文會被判成「佔位符不見了」。
+            check("佔位符數量守住", numberSlots(flowed) == numberSlots(AS_RENDERED));
         }
 
         // 反面：冒號兩邊只要有一邊不在語料裡就不該亂猜
@@ -53,6 +56,11 @@ public final class MajorIdTest {
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /** 數值佔位符有幾個，{@code {~}} 與編號版 {@code {~1}} 都算。 */
+    private static int numberSlots(String text) {
+        return text.split("\\{~\\d?\\}", -1).length - 1;
     }
 
     private static int count(String text, String needle) {

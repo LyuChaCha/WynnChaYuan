@@ -35,11 +35,27 @@ public final class FlowedDebug {
     private static Path file;
     private static int seen = 0;
 
+    /**
+     * 已經記過的內容。
+     *
+     * <h2>為什麼要去重</h2>
+     * tooltip 是<b>每一幀</b>重翻一次的。滑鼠停在一件裝備上兩秒，同一段就被記了
+     * 三十次——額度用完，而使用者真正想看的那個 tooltip 一筆都沒進來。
+     * 實測回報回來的檔案裡，30 筆全是同一個 Major ID、20 筆全是同一個綠寶石袋。
+     *
+     * <p>同樣的內容記一次就夠：要看的是「有哪些情況」，不是「發生幾次」。
+     */
+    private static final java.util.Set<String> already =
+            java.util.concurrent.ConcurrentHashMap.newKeySet();
+
     private FlowedDebug() {}
 
     public static void init(Path configDir) {
         file = configDir.resolve(FILE);
         seen = 0;
+        missed = 0;
+        choicesSeen = 0;
+        already.clear();
         try {
             Files.createDirectories(configDir);
             Files.writeString(file,
@@ -63,6 +79,13 @@ public final class FlowedDebug {
     public static void note(List<StyledText> run, String label, Style chosen) {
         if (file == null || run == null || run.isEmpty() || seen >= LIMIT) {
             return;
+        }
+        StringBuilder id = new StringBuilder("note");
+        for (StyledText one : run) {
+            id.append(one.getString());
+        }
+        if (!already.add(id.toString())) {
+            return;                            // 每一幀都會重翻一次，見 #already
         }
         seen++;
         try {
@@ -125,7 +148,8 @@ public final class FlowedDebug {
      * 差一個空格還是差一個標點一眼就看得出來。
      */
     public static void miss(String template) {
-        if (file == null || template == null || missed >= MISS_LIMIT) {
+        if (file == null || template == null || missed >= MISS_LIMIT
+                || !already.add("miss" + template)) {
             return;
         }
         missed++;
@@ -159,7 +183,8 @@ public final class FlowedDebug {
      * 先把原始結構記下來，照真實資料實作才不會又猜錯。
      */
     public static void noteChoices(String text) {
-        if (file == null || text == null || choicesSeen >= CHOICE_LIMIT) {
+        if (file == null || text == null || choicesSeen >= CHOICE_LIMIT
+                || !already.add("choices" + text)) {
             return;
         }
         choicesSeen++;

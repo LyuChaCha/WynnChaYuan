@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 22090,
-  "translated": 2029,
+  "translated": 2058,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -9411,7 +9411,7 @@
   },
   "A New Beginning#000": {
    "src": "Enter the city at [-{~}, {~}, -{~}]",
-   "dst": "進入 [-{~}, {~}, -{~}] 的城鎮。",
+   "dst": "進入 [-{~1}, {~2}, -{~3}] 的城鎮。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -9671,7 +9671,7 @@
   },
   "A New Beginning#026": {
    "src": "Talk to the man at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 跟那名男子談話。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 跟那名男子談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -9751,7 +9751,7 @@
   },
   "A New Beginning#034": {
    "src": "Find your report in the storage at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 的檔案庫找出你的檔案。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 的檔案庫找出你的檔案。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -32711,7 +32711,7 @@
   },
   "Arachnids' Ascent#000": {
    "src": "Talk to Admiral Aegis in the {p} Barracks at [{~}, {~}, -{~}].",
-   "dst": "到 [{~}, {~}, -{~}] 的 {p} 兵營跟 Aegis 上將談話。",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的 {p} 兵營跟 Aegis 上將談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -32831,7 +32831,7 @@
   },
   "Arachnids' Ascent#012": {
    "src": "Speak to Private Cob in the Savannah at [{~}, {~}, -{~}] to receive supplies.",
-   "dst": "到 [{~}, {~}, -{~}] 的莽原找 Cob 二等兵領取補給。",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的莽原找 Cob 二等兵領取補給。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -32931,7 +32931,7 @@
   },
   "Arachnids' Ascent#022": {
    "src": "Bring the supplies to Captain Enduyn at [-{~}, {~}, -{~}].",
-   "dst": "把補給送到 [-{~}, {~}, -{~}] 給 Enduyn 隊長。",
+   "dst": "把補給送到 [-{~1}, {~2}, -{~3}] 給 Enduyn 隊長。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -33121,7 +33121,7 @@
   },
   "Arachnids' Ascent#041": {
    "src": "Decide who to bring with you into Mount Wynn at [-{~}, {~}, -{~}].",
-   "dst": "決定要帶誰一起進 [-{~}, {~}, -{~}] 的 Mount Wynn。",
+   "dst": "決定要帶誰一起進 [-{~1}, {~2}, -{~3}] 的 Mount Wynn。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -33171,7 +33171,7 @@
   },
   "Arachnids' Ascent#046": {
    "src": "Enter Mount Wynn and reach the summit through the cave at [-{~}, {~}, -{~}].",
-   "dst": "進入 Mount Wynn，穿過 [-{~}, {~}, -{~}] 的洞窟抵達山頂。",
+   "dst": "進入 Mount Wynn，穿過 [-{~1}, {~2}, -{~3}] 的洞窟抵達山頂。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -33401,7 +33401,7 @@
   },
   "Arachnids' Ascent#069": {
    "src": "Return to Captain Enduyn with the flame at [-{~}, {~}, -{~}].",
-   "dst": "帶著火焰回到 [-{~}, {~}, -{~}] 找 Enduyn 隊長。",
+   "dst": "帶著火焰回到 [-{~1}, {~2}, -{~3}] 找 Enduyn 隊長。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -44791,7 +44791,7 @@
   },
   "Clearing the Camps#000": {
    "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
-   "dst": "到 {p} 外面找 Captain Kymer，座標 [-{~}, {~}, -{~}]",
+   "dst": "到 {p} 外面找 Captain Kymer，座標 [-{~1}, {~2}, -{~3}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Clearing the Camps",
@@ -44931,7 +44931,7 @@
   },
   "Cluck Cluck#000": {
    "src": "Talk to Nohno on {p} at [-{~}, {~}, -{~}]",
-   "dst": "在 {p} [-{~}, {~}, -{~}] 與 Nohno 説話。 ",
+   "dst": "在 {p} [-{~1}, {~2}, -{~3}] 與 Nohno 説話。 ",
    "role": "desc",
    "kind": "objective",
    "quest": "Cluck Cluck",
@@ -45031,7 +45031,7 @@
   },
   "Cook Assistant#000": {
    "src": "Talk to the Cook in {p} at [-{~}, {~}, -{~}].",
-   "dst": "前往 {p} 找 the Cook，座標 [-{~}, {~}, -{~}]。",
+   "dst": "前往 {p} 找 the Cook，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -45101,7 +45101,7 @@
   },
   "Cook Assistant#007": {
    "src": "The Grook got away! Return to the Cook at [-{~}, {~}, -{~}] to figure out what to do.",
-   "dst": "Grook 跑掉了！回去 [-{~}, {~}, -{~}] 找 the Cook 想想辦法。",
+   "dst": "Grook 跑掉了！回去 [-{~1}, {~2}, -{~3}] 找 the Cook 想想辦法。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -45151,7 +45151,7 @@
   },
   "Cook Assistant#012": {
    "src": "Find out where the Grook flew up to at [-{~}, {~}, -{~}].",
-   "dst": "查清楚那隻 Grook 飛上哪裡去了，座標 [-{~}, {~}, -{~}]。",
+   "dst": "查清楚那隻 Grook 飛上哪裡去了，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -45161,7 +45161,7 @@
   },
   "Cook Assistant#013": {
    "src": "Return to the cook at [-{~}, {~}, -{~}]. Use a Scroll to get there faster.",
-   "dst": "回去 [-{~}, {~}, -{~}] 找廚子。用捲軸會快一點。",
+   "dst": "回去 [-{~1}, {~2}, -{~3}] 找廚子。用捲軸會快一點。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -49581,7 +49581,7 @@
   },
   "Deja Vu#000": {
    "src": "Talk to Asher near {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "與 {p} 附近在 [-{~1}, {~2}, -{~3}] 的 Asher 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -49591,7 +49591,7 @@
   },
   "Deja Vu#001": {
    "src": "Well well well, look who decided to come back with their tail between their legs.",
-   "dst": "",
+   "dst": "哎呀哎呀，看看是誰灰溜溜地回來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -49601,7 +49601,7 @@
   },
   "Deja Vu#002": {
    "src": "Two weeks now and you still haven't found it? Ugh, I can't believe I ever trusted you with such a simple task.",
-   "dst": "",
+   "dst": "都兩週了你還是沒找到？老天，真不敢相信你連這麼簡單的事都做不到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -49611,7 +49611,7 @@
   },
   "Deja Vu#003": {
    "src": "Who am I? WHAT DO YOU MEAN WHO AM I? You offered to help find my shovel, and I've been waiting two weeks!",
-   "dst": "",
+   "dst": "我是誰？你什麼意思？！你問我「我是誰」？！你答應要幫我找到我的鏟子，而我已經為此等了兩週了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -49621,7 +49621,7 @@
   },
   "Deja Vu#004": {
    "src": "Forget about your payment. Unless you either pay me back or get my shovel right now!",
-   "dst": "",
+   "dst": "別想拿你的報酬了！你要嘛現在賠償我，要嘛就把我的鏟子找回來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -49631,7 +49631,7 @@
   },
   "Deja Vu#005": {
    "src": "My shovel? That's why I sent you out in the first place! It's somewhere in {p}. I lost it while following a trail of flowers.",
-   "dst": "",
+   "dst": "我的鏟子？我就是為了它才叫你去的！它在 {p} 的某處。我沿著花朵留下的蹤跡走時把它弄丟了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -49641,7 +49641,7 @@
   },
   "Deja Vu#006": {
    "src": "I think it was south west of the large ruined gate. Now go get it!",
-   "dst": "",
+   "dst": "我想它應該在那個大型廢墟的大門西南方處。滾去把它拿來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -49651,7 +49651,7 @@
   },
   "Deja Vu#007": {
    "src": "Find Asher's Shovel near [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~1}, {~2}, -{~3}] 附近找到 Asher 的鏟子",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -49661,7 +49661,7 @@
   },
   "Deja Vu#008": {
    "src": "Return Asher's Shovel to Asher.",
-   "dst": "",
+   "dst": "將 Asher 的鏟子還給他",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -61661,7 +61661,7 @@
   },
   "Elemental Exercise#000": {
    "src": "Talk to Captain Ragon in the {p} Barracks at [{~}, {~}, -{~}].",
-   "dst": "到 [{~}, {~}, -{~}] 的 {p} 兵營跟 Ragon 隊長談話。",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的 {p} 兵營跟 Ragon 隊長談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -61721,7 +61721,7 @@
   },
   "Elemental Exercise#006": {
    "src": "Follow Captain Ragon to the Training Room at [{~}, {~}, -{~}].",
-   "dst": "跟著 Ragon 隊長前往 [{~}, {~}, -{~}] 的訓練室。",
+   "dst": "跟著 Ragon 隊長前往 [{~1}, {~2}, -{~3}] 的訓練室。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -61801,7 +61801,7 @@
   },
   "Elemental Exercise#014": {
    "src": "Test out the elemental training weapons on the dummies, then speak to Captain Ragon at [{~}, {~}, -{~}].",
-   "dst": "在假人身上試用元素訓練武器，然後到 [{~}, {~}, -{~}] 跟 Ragon 隊長談話。",
+   "dst": "在假人身上試用元素訓練武器，然後到 [{~1}, {~2}, -{~3}] 跟 Ragon 隊長談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -61931,7 +61931,7 @@
   },
   "Elemental Exercise#027": {
    "src": "Return to Tasim at [{~}, {~}, -{~}] for a duel.",
-   "dst": "回到 [{~}, {~}, -{~}] 找 Tasim 決鬥。",
+   "dst": "回到 [{~1}, {~2}, -{~3}] 找 Tasim 決鬥。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -61981,7 +61981,7 @@
   },
   "Elemental Exercise#032": {
    "src": "Speak to Captain Ragon at [{~}, {~}, -{~}].",
-   "dst": "到 [{~}, {~}, -{~}] 跟 Ragon 隊長談話。",
+   "dst": "到 [{~1}, {~2}, -{~3}] 跟 Ragon 隊長談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -62091,7 +62091,7 @@
   },
   "Elemental Exercise#043": {
    "src": "Follow Captain Ragon to {p}' north gate at [{~}, {~}, -{~}] to face the undead forces.",
-   "dst": "跟著 Ragon 隊長前往 [{~}, {~}, -{~}] 的 {p} 北門，迎戰不死部隊。",
+   "dst": "跟著 Ragon 隊長前往 [{~1}, {~2}, -{~3}] 的 {p} 北門，迎戰不死部隊。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -62201,7 +62201,7 @@
   },
   "Elemental Exercise#054": {
    "src": "Return to the {p} Barracks and talk to Captain Ragon at [{~}, {~}, -{~}].",
-   "dst": "回到 {p} 兵營，到 [{~}, {~}, -{~}] 跟 Ragon 隊長談話。",
+   "dst": "回到 {p} 兵營，到 [{~1}, {~2}, -{~3}] 跟 Ragon 隊長談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -70311,7 +70311,7 @@
   },
   "Enzan's Brother#000": {
    "src": "Talk to Enzan close to the exit of {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "與在 {p} 出口附近 [-{~1}, {~2}, -{~3}] 的 Enzan 對話",
    "role": "desc",
    "kind": "objective",
    "quest": "Enzan's Brother",
@@ -70321,7 +70321,7 @@
   },
   "Enzan's Brother#001": {
    "src": "I see you want to venture into the wilderness!",
-   "dst": "",
+   "dst": "看來你想進入荒野探險啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70331,7 +70331,7 @@
   },
   "Enzan's Brother#002": {
    "src": "My name is Enzan, and I am now a retired knight. I've spent most of my life fighting for {p}'s army, just like you.",
-   "dst": "",
+   "dst": "我叫 Enzan ，是一位退休的騎士。和你一樣，我也為 {p} 的軍隊戰鬥了大半輩子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70341,7 +70341,7 @@
   },
   "Enzan's Brother#003": {
    "src": "I know how hard it must be to be a recruit at this time, so I've got something that could help you! Well, I don't have it, but my brother does!",
-   "dst": "",
+   "dst": "我知道現在當新兵有多困難，所以我有個東西或許可以幫你！嗯，其實我沒有，但我兄弟有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70351,7 +70351,7 @@
   },
   "Enzan's Brother#004": {
    "src": "Follow this road, he's just past the item identifier, you can't miss him. Just head to the big set of stairs, past the item identifier.",
-   "dst": "",
+   "dst": "沿著這條路走，他就在物品鑑定師旁邊，你不可能錯過他。走到物品鑑定師旁邊那組大樓梯就行了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70361,7 +70361,7 @@
   },
   "Enzan's Brother#005": {
    "src": "Tell him I sent you! He can be such a jerk to strangers sometimes, especially when he's focused on his stairs...",
-   "dst": "",
+   "dst": "告訴他是我叫你來的！他對陌生人的態度有時候跟混蛋一樣，尤其是他一心只顧著那樓梯的時候...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70371,7 +70371,7 @@
   },
   "Enzan's Brother#006": {
    "src": "Find Enzan's brother near the Item Identifier on the {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 {p} 的物品鑑定師附近 [-{~1}, {~2}, -{~3}] 找到 Enzan 的兄弟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Enzan's Brother",
@@ -70381,7 +70381,7 @@
   },
   "Enzan's Brother#007": {
    "src": "Excuse me? Can't you see I'm busy?",
-   "dst": "",
+   "dst": "銃啥，沒看到我正在忙嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70391,7 +70391,7 @@
   },
   "Enzan's Brother#008": {
    "src": "Oh, my brother? Sorry, I didn't know.",
-   "dst": "",
+   "dst": "哦，我兄弟叫你來的？抱歉，我剛剛不知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70401,7 +70401,7 @@
   },
   "Enzan's Brother#009": {
    "src": "Why yes, I actually have something that could help you...",
-   "dst": "",
+   "dst": "當然，我正好有樣東西或許能幫上你...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70411,7 +70411,7 @@
   },
   "Enzan's Brother#010": {
    "src": "But before I give it to you, why don't you help me with something first?",
-   "dst": "",
+   "dst": "但在我給你以前，不如你先幫我一個忙？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70421,7 +70421,7 @@
   },
   "Enzan's Brother#011": {
    "src": "You see, there's a special kind of mushroom that grows in this cave. I hear it has certain... energizing properties.",
-   "dst": "",
+   "dst": "你看，有種特殊的蘑菇長在這個洞窟裡。我聽說它有某種...激發能量的功效。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70431,7 +70431,7 @@
   },
   "Enzan's Brother#012": {
    "src": "If you can bring me [{~} Energy Mushroom], I'll help you out. Enter the cave down the stairs, and bring me that mushroom!",
-   "dst": "",
+   "dst": "如果你能給我 [{~} Energy Mushroom] ，我就幫你。從樓梯下去進入洞穴，把蘑菇帶給我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70441,7 +70441,7 @@
   },
   "Enzan's Brother#013": {
    "src": "Descend into the cave at [-{~}, {~}, -{~}] and bring [{~} Energy Mushroom] to Therck",
-   "dst": "",
+   "dst": "進入位於 [-{~1}, {~2}, -{~3}] 的洞穴並將 [{~4} Energy Mushroom] 帶給　Therck",
    "role": "desc",
    "kind": "objective",
    "quest": "Enzan's Brother",
@@ -70451,7 +70451,7 @@
   },
   "Enzan's Brother#014": {
    "src": "Ah, you're back! Do you have the mushroom?",
-   "dst": "",
+   "dst": "啊，你回來了！你拿到蘑菇了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70461,7 +70461,7 @@
   },
   "Enzan's Brother#015": {
    "src": "Excellent... Now I might be able to finally climb these stairs!",
-   "dst": "",
+   "dst": "完美...現在我或許可以爬上這些階梯了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70471,7 +70471,7 @@
   },
   "Enzan's Brother#016": {
    "src": "Who knows, maybe there's a treasure up there?",
-   "dst": "",
+   "dst": "誰知道呢，說不定上面有寶藏？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70481,7 +70481,7 @@
   },
   "Enzan's Brother#017": {
    "src": "Take this ring. It's an accessory item! You can identify it at the nearby Item Identifier.",
-   "dst": "",
+   "dst": "拿著這枚戒指吧。這是一件飾品！你可以找附近的物品鑑定師來鑑定它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70491,7 +70491,7 @@
   },
   "Enzan's Brother#018": {
    "src": "It's a very good ring for someone starting out like you. There's just one small issue...",
-   "dst": "",
+   "dst": "對於你這樣的新手來說，這戒指挺不錯的。不過有個小問題...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70501,7 +70501,7 @@
   },
   "Enzan's Brother#019": {
    "src": "To wear it, you must help my friend back in {p}. He's been pestering me for days about needing help.",
-   "dst": "",
+   "dst": "想要戴它，你得去 {p} 幫我的朋友。他已經纏著我好幾天了，說是需要我的幫助。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -74691,7 +74691,7 @@
   },
   "Finding the Light#000": {
    "src": "Find Lari in the {p} at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 的 {p} 找到 Lari。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 的 {p} 找到 Lari。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -74821,7 +74821,7 @@
   },
   "Finding the Light#013": {
    "src": "Find the Church Library in the city of {p} at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 的 {p} 城裡找到教堂圖書館。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 的 {p} 城裡找到教堂圖書館。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -74851,7 +74851,7 @@
   },
   "Finding the Light#016": {
    "src": "Return to Lari at [-{~}, {~}, -{~}]",
-   "dst": "回到 [-{~}, {~}, -{~}] 找 Lari。",
+   "dst": "回到 [-{~1}, {~2}, -{~3}] 找 Lari。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -75221,7 +75221,7 @@
   },
   "Finding the Light#053": {
    "src": "Talk to the Elder at [-{~}, {~}, -{~}]",
-   "dst": "到 [-{~}, {~}, -{~}] 跟長老談話。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 跟長老談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -75351,7 +75351,7 @@
   },
   "Finding the Light#066": {
    "src": "Find the Canned Abis cave at [-{~}, {~}, -{~}]",
-   "dst": "到 [-{~}, {~}, -{~}] 找到 Canned Abis 洞窟。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 找到 Canned Abis 洞窟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -75371,7 +75371,7 @@
   },
   "Finding the Light#068": {
    "src": "Return to the Tree at [-{~}, {~}, -{~}].",
-   "dst": "回到 [-{~}, {~}, -{~}] 的大樹。",
+   "dst": "回到 [-{~1}, {~2}, -{~3}] 的大樹。",
    "role": "desc",
    "kind": "objective",
    "quest": "Finding the Light",
@@ -87891,7 +87891,7 @@
   },
   "Infested Plants#000": {
    "src": "Meet up with Tasim at the entrance to {p} at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 的 {p} 入口與 Tasim 會合。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 的 {p} 入口與 Tasim 會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -87981,7 +87981,7 @@
   },
   "Infested Plants#009": {
    "src": "Follow Ope to the cave at [-{~}, {~}, -{~}].",
-   "dst": "跟著 Ope 前往 [-{~}, {~}, -{~}] 的洞窟。",
+   "dst": "跟著 Ope 前往 [-{~1}, {~2}, -{~3}] 的洞窟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -88031,7 +88031,7 @@
   },
   "Infested Plants#014": {
    "src": "Locate the medicine in the spider cave behind Ope at [-{~}, {~}, -{~}].",
-   "dst": "在 [-{~}, {~}, -{~}] Ope 身後的蜘蛛洞窟裡找出藥草。",
+   "dst": "在 [-{~1}, {~2}, -{~3}] Ope 身後的蜘蛛洞窟裡找出藥草。",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -88041,7 +88041,7 @@
   },
   "Infested Plants#015": {
    "src": "Exit the cave at [-{~}, {~}, -{~}] with the medicinal herb.",
-   "dst": "帶著藥草從 [-{~}, {~}, -{~}] 離開洞窟。",
+   "dst": "帶著藥草從 [-{~1}, {~2}, -{~3}] 離開洞窟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -88151,7 +88151,7 @@
   },
   "Infested Plants#026": {
    "src": "Speak to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 的 {p} 跟 Alvin 鎮長談話。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 的 {p} 跟 Alvin 鎮長談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Infested Plants",
@@ -88571,7 +88571,7 @@
   },
   "King's Recruit#003": {
    "src": "Exit the caravan and talk to the Caravan Driver at [-{~}, {~}, -{~}].",
-   "dst": "離開馬車，跟 Caravan Driver 說話，座標 [-{~}, {~}, -{~}]。",
+   "dst": "離開馬車，跟 Caravan Driver 說話，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -88641,7 +88641,7 @@
   },
   "King's Recruit#010": {
    "src": "Walk down the path towards the gate to the Wynn Province at [-{~}, {~}, -{~}].",
-   "dst": "沿著小路走向 Wynn 行省的城門，座標 [-{~}, {~}, -{~}]。",
+   "dst": "沿著小路走向 Wynn 行省的城門，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -88731,7 +88731,7 @@
   },
   "King's Recruit#019": {
    "src": "Enter the Province of Wynn at [-{~}, {~}, -{~}].",
-   "dst": "進入 Wynn 行省，座標 [-{~}, {~}, -{~}]。",
+   "dst": "進入 Wynn 行省，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -88791,7 +88791,7 @@
   },
   "King's Recruit#025": {
    "src": "Talk to the Soldier at [-{~}, {~}, -{~}].",
-   "dst": "跟 Soldier 說話，座標 [-{~}, {~}, -{~}]。",
+   "dst": "跟 Soldier 說話，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -88871,7 +88871,7 @@
   },
   "King's Recruit#033": {
    "src": "Cross the bridge at [-{~}, {~}, -{~}].",
-   "dst": "過橋，座標 [-{~}, {~}, -{~}]。",
+   "dst": "過橋，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89011,7 +89011,7 @@
   },
   "King's Recruit#047": {
    "src": "Search for another way across the ravine at [-{~}, {~}, -{~}].",
-   "dst": "在 [-{~}, {~}, -{~}] 找出另一條過峽谷的路。",
+   "dst": "在 [-{~1}, {~2}, -{~3}] 找出另一條過峽谷的路。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89041,7 +89041,7 @@
   },
   "King's Recruit#050": {
    "src": "Continue onwards to [-{~}, {~}, -{~}].",
-   "dst": "繼續前往 [-{~}, {~}, -{~}]。",
+   "dst": "繼續前往 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89081,7 +89081,7 @@
   },
   "King's Recruit#054": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
-   "dst": "跟 Guard 說話，座標 [-{~}, {~}, -{~}]。",
+   "dst": "跟 Guard 說話，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89161,7 +89161,7 @@
   },
   "King's Recruit#062": {
    "src": "Enter the cave and find some armour at [-{~}, {~}, -{~}].",
-   "dst": "進入洞窟找到防具，座標 [-{~}, {~}, -{~}]。",
+   "dst": "進入洞窟找到防具，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89181,7 +89181,7 @@
   },
   "King's Recruit#064": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
-   "dst": "跟 Guard 說話，座標 [-{~}, {~}, -{~}]。",
+   "dst": "跟 Guard 說話，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89281,7 +89281,7 @@
   },
   "King's Recruit#074": {
    "src": "Enter the underpass at [-{~}, {~}, -{~}].",
-   "dst": "進入地道，座標 [-{~}, {~}, -{~}]。",
+   "dst": "進入地道，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89291,7 +89291,7 @@
   },
   "King's Recruit#075": {
    "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
-   "dst": "穿過地道前往 [-{~}, {~}, -{~}]。",
+   "dst": "穿過地道前往 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89361,7 +89361,7 @@
   },
   "King's Recruit#082": {
    "src": "Continue through the underpass to [-{~}, {~}, -{~}].",
-   "dst": "穿過地道前往 [-{~}, {~}, -{~}]。",
+   "dst": "穿過地道前往 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89381,7 +89381,7 @@
   },
   "King's Recruit#084": {
    "src": "Talk to the Lieutenant at [-{~}, {~}, -{~}].",
-   "dst": "跟 Lieutenant 說話，座標 [-{~}, {~}, -{~}]。",
+   "dst": "跟 Lieutenant 說話，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89451,7 +89451,7 @@
   },
   "King's Recruit#091": {
    "src": "Chase the Goliath to [-{~}, {~}, -{~}]!",
-   "dst": "追擊 Goliath 到 [-{~}, {~}, -{~}]！",
+   "dst": "追擊 Goliath 到 [-{~1}, {~2}, -{~3}]！",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89531,7 +89531,7 @@
   },
   "King's Recruit#099": {
    "src": "Enter the castle at [-{~}, {~}, -{~}].",
-   "dst": "進入城堡，座標 [-{~}, {~}, -{~}]。",
+   "dst": "進入城堡，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -89601,7 +89601,7 @@
   },
   "King's Recruit#106": {
    "src": "Talk to {p}'s King at [-{~}, {~}, -{~}].",
-   "dst": "跟 {p} 的國王說話，座標 [-{~}, {~}, -{~}]。",
+   "dst": "跟 {p} 的國王說話，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -93071,7 +93071,7 @@
   },
   "Lost Tower#000": {
    "src": "Talk to Laen in {p} at [{~}, {~}, -{~}].",
-   "dst": "前往 {p} 找 Laen，座標 [{~}, {~}, -{~}]。",
+   "dst": "前往 {p} 找 Laen，座標 [{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Tower",
@@ -93131,7 +93131,7 @@
   },
   "Lost Tower#006": {
    "src": "Find the lost tower in {p} at [{~}, {~}, -{~}].",
-   "dst": "在 {p} 找到那座失落之塔，座標 [{~}, {~}, -{~}]。",
+   "dst": "在 {p} 找到那座失落之塔，座標 [{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Tower",
@@ -98561,7 +98561,7 @@
   },
   "Mushroom Man#000": {
    "src": "Talk to Tasim in {p} at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 的 {p} 跟 Tasim 談話。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 的 {p} 跟 Tasim 談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Mushroom Man",
@@ -98621,7 +98621,7 @@
   },
   "Mushroom Man#006": {
    "src": "Speak to the strange man at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 跟那個奇怪的男子談話。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 跟那個奇怪的男子談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Mushroom Man",
@@ -98721,7 +98721,7 @@
   },
   "Mushroom Man#016": {
    "src": "Follow Yahya to his infested mushroom patch at [-{~}, {~}, -{~}].",
-   "dst": "跟著 Yahya 前往 [-{~}, {~}, -{~}] 被侵佔的蘑菇田。",
+   "dst": "跟著 Yahya 前往 [-{~1}, {~2}, -{~3}] 被侵佔的蘑菇田。",
    "role": "desc",
    "kind": "objective",
    "quest": "Mushroom Man",
@@ -98761,7 +98761,7 @@
   },
   "Mushroom Man#020": {
    "src": "Clear out the spiders from Yahya's favorite mushroom patch at [-{~}, {~}, -{~}], then return and talk to Yahya.",
-   "dst": "清掉 [-{~}, {~}, -{~}] Yahya 最愛的蘑菇田裡的蜘蛛，然後回去跟 Yahya 談話。",
+   "dst": "清掉 [-{~1}, {~2}, -{~3}] Yahya 最愛的蘑菇田裡的蜘蛛，然後回去跟 Yahya 談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Mushroom Man",
@@ -98871,7 +98871,7 @@
   },
   "Mushroom Man#031": {
    "src": "Return to Mayor Alvin at [-{~}, {~}, -{~}] with news about the spiders.",
-   "dst": "回到 [-{~}, {~}, -{~}] 向 Alvin 鎮長回報蜘蛛的事。",
+   "dst": "回到 [-{~1}, {~2}, -{~3}] 向 Alvin 鎮長回報蜘蛛的事。",
    "role": "desc",
    "kind": "objective",
    "quest": "Mushroom Man",
@@ -98951,7 +98951,7 @@
   },
   "Mushroom Man#039": {
    "src": "Travel to {p} to request the help of their military at [{~}, {~}, -{~}].",
-   "dst": "前往 {p}，到 [{~}, {~}, -{~}] 請求他們的軍隊支援。",
+   "dst": "前往 {p}，到 [{~1}, {~2}, -{~3}] 請求他們的軍隊支援。",
    "role": "desc",
    "kind": "objective",
    "quest": "Mushroom Man",
@@ -115061,7 +115061,7 @@
   },
   "Pit of the Dead (Quest)#000": {
    "src": "Talk to Merloni in {p} at [{~}, {~}, -{~}]",
-   "dst": "前往 {p} 找 Merloni，座標 [{~}, {~}, -{~}]",
+   "dst": "前往 {p} 找 Merloni，座標 [{~1}, {~2}, -{~3}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -115151,7 +115151,7 @@
   },
   "Pit of the Dead (Quest)#009": {
    "src": "Explore the pit at [{~}, {~}, -{~}] and find the shrine",
-   "dst": "探索 [{~}, {~}, -{~}] 的深坑，找到神龕",
+   "dst": "探索 [{~1}, {~2}, -{~3}] 的深坑，找到神龕",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -116751,7 +116751,7 @@
   },
   "Queen's Recruit#000": {
    "src": "Tasim is looking to catch up in {p} at [{~}, {~}, -{~}].",
-   "dst": "Tasim 想在 {p} 和你敘敘舊，位置 [{~}, {~}, -{~}]。",
+   "dst": "Tasim 想在 {p} 和你敘敘舊，位置 [{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -116951,7 +116951,7 @@
   },
   "Queen's Recruit#020": {
    "src": "Attend the meeting with the King in {p} at [-{~}, {~}, -{~}].",
-   "dst": "到 {p} 出席與國王的會議，位置 [-{~}, {~}, -{~}]。",
+   "dst": "到 {p} 出席與國王的會議，位置 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -118081,7 +118081,7 @@
   },
   "Queen's Recruit#133": {
    "src": "Travel to the Gate of Fruma at [-{~}, {~}, -{~}] or meet up with Tasim in {p}.",
-   "dst": "前往 [-{~}, {~}, -{~}] 的 Fruma 城門，或在 {p} 與 Tasim 會合。",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 的 Fruma 城門，或在 {p} 與 Tasim 會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -118631,7 +118631,7 @@
   },
   "Queen's Recruit#188": {
    "src": "Meet up with the group at the gate at [-{~}, {~}, -{~}].",
-   "dst": "到城門與隊伍會合，位置 [-{~}, {~}, -{~}]。",
+   "dst": "到城門與隊伍會合，位置 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -118791,7 +118791,7 @@
   },
   "Queen's Recruit#204": {
    "src": "Listen to the introduction. Go to [-{~}, {~}, -{~}] to return to the palace.",
-   "dst": "聽完介紹。前往 [-{~}, {~}, -{~}] 返回皇宮。",
+   "dst": "聽完介紹。前往 [-{~1}, {~2}, -{~3}] 返回皇宮。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -119001,7 +119001,7 @@
   },
   "Queen's Recruit#225": {
    "src": "Head to the royal dining hall at [-{~}, {~}, {~}].",
-   "dst": "前往皇家宴會廳，位置 [-{~}, {~}, {~}]。",
+   "dst": "前往皇家宴會廳，位置 [-{~1}, {~2}, {~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -119211,7 +119211,7 @@
   },
   "Queen's Recruit#246": {
    "src": "Get your assigned room from the representative at [-{~}, {~}, {~}].",
-   "dst": "到 [-{~}, {~}, {~}] 向接待人員領取分配到的房間。",
+   "dst": "到 [-{~1}, {~2}, {~3}] 向接待人員領取分配到的房間。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -119831,7 +119831,7 @@
   },
   "Queen's Recruit#308": {
    "src": "Meet up with the others in room W-{~} at [-{~}, {~}, {~}].",
-   "dst": "到 [-{~}, {~}, {~}] 的 W-{~} 號房與其他人會合。",
+   "dst": "到 [-{~1}, {~2}, {~3}] 的 W-{~4} 號房與其他人會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -120441,7 +120441,7 @@
   },
   "Queen's Recruit#369": {
    "src": "Find the location of the tournament in the northern side of the palace at [-{~}, {~}, {~}].",
-   "dst": "到皇宮北側 [-{~}, {~}, {~}] 找到錦標賽的地點。",
+   "dst": "到皇宮北側 [-{~1}, {~2}, {~3}] 找到錦標賽的地點。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -120971,7 +120971,7 @@
   },
   "Queen's Recruit#422": {
    "src": "Leave the arena waiting room and find Picard at [-{~}, {~}, {~}].",
-   "dst": "離開競技場候戰室，到 [-{~}, {~}, {~}] 找 Picard。",
+   "dst": "離開競技場候戰室，到 [-{~1}, {~2}, {~3}] 找 Picard。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -121561,7 +121561,7 @@
   },
   "Queen's Recruit#481": {
    "src": "Return to the courtyard at [-{~}, {~}, {~}] and find other contestants.",
-   "dst": "回到 [-{~}, {~}, {~}] 的中庭找其他參賽者。",
+   "dst": "回到 [-{~1}, {~2}, {~3}] 的中庭找其他參賽者。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -121951,7 +121951,7 @@
   },
   "Queen's Recruit#520": {
    "src": "Attend the royal dinner at [-{~}, {~}, {~}].",
-   "dst": "到 [-{~}, {~}, {~}] 出席皇家晚宴。",
+   "dst": "到 [-{~1}, {~2}, {~3}] 出席皇家晚宴。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -122121,7 +122121,7 @@
   },
   "Queen's Recruit#537": {
    "src": "Talk to Her Majesty in the north-eastern wing of the palace at [-{~}, {~}, {~}].",
-   "dst": "到皇宮東北翼 [-{~}, {~}, {~}] 與女王陛下談話。",
+   "dst": "到皇宮東北翼 [-{~1}, {~2}, {~3}] 與女王陛下談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -122331,7 +122331,7 @@
   },
   "Queen's Recruit#558": {
    "src": "Return to room W-{~} and talk to Tasim at [-{~}, {~}, {~}].",
-   "dst": "回到 W-{~} 號房，在 [-{~}, {~}, {~}] 與 Tasim 談話。",
+   "dst": "回到 W-{~1} 號房，在 [-{~2}, {~3}, {~4}] 與 Tasim 談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -142591,7 +142591,7 @@
   },
   "Supply and Delivery#000": {
    "src": "Talk to Ope in {p} at [{~}, {~}, -{~}].",
-   "dst": "到 [{~}, {~}, -{~}] 的 {p} 跟 Ope 談話。",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的 {p} 跟 Ope 談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -142791,7 +142791,7 @@
   },
   "Supply and Delivery#020": {
    "src": "Purchase the supply crate from the Trade Market at [{~}, {~}, -{~}].",
-   "dst": "到 [{~}, {~}, -{~}] 的貿易市集買下那箱補給。",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的貿易市集買下那箱補給。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -142811,7 +142811,7 @@
   },
   "Supply and Delivery#022": {
    "src": "Find Tasim at [{~}, {~}, -{~}] and convince him to buy the supply crate for you.",
-   "dst": "到 [{~}, {~}, -{~}] 找 Tasim，說服他幫你買下那箱補給。",
+   "dst": "到 [{~1}, {~2}, -{~3}] 找 Tasim，說服他幫你買下那箱補給。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -142971,7 +142971,7 @@
   },
   "Supply and Delivery#037": {
    "src": "Bring Tasim to the Trade Market at [{~}, {~}, -{~}].",
-   "dst": "帶 Tasim 到 [{~}, {~}, -{~}] 的貿易市集。",
+   "dst": "帶 Tasim 到 [{~1}, {~2}, -{~3}] 的貿易市集。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -143001,7 +143001,7 @@
   },
   "Supply and Delivery#040": {
    "src": "Return to Ope with the supply crate at [{~}, {~}, -{~}]",
-   "dst": "帶著補給箱回到 [{~}, {~}, -{~}] 找 Ope。",
+   "dst": "帶著補給箱回到 [{~1}, {~2}, -{~3}] 找 Ope。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -143201,7 +143201,7 @@
   },
   "Supply and Delivery#060": {
    "src": "Bring the supply crate to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
-   "dst": "把補給箱送到 [-{~}, {~}, -{~}] 的 {p}，交給 Alvin 鎮長。",
+   "dst": "把補給箱送到 [-{~1}, {~2}, -{~3}] 的 {p}，交給 Alvin 鎮長。",
    "role": "desc",
    "kind": "objective",
    "quest": "Supply and Delivery",
@@ -143361,7 +143361,7 @@
   },
   "Taking the Tower#000": {
    "src": "Speak to Aledar in the {p} Barracks at [{~}, {~}, -{~}].",
-   "dst": "到 [{~}, {~}, -{~}] 的 {p} 兵營跟 Aledar 談話。",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的 {p} 兵營跟 Aledar 談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143471,7 +143471,7 @@
   },
   "Taking the Tower#011": {
    "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
-   "dst": "跟著 Aledar 前往 [{~}, {~}, -{~}] 的粉末大師。",
+   "dst": "跟著 Aledar 前往 [{~1}, {~2}, -{~3}] 的粉末大師。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143541,7 +143541,7 @@
   },
   "Taking the Tower#018": {
    "src": "Apply a Water Powder to your weapon, then let Aledar know at [{~}, {~}, -{~}].",
-   "dst": "把水元素粉末塗到武器上，然後到 [{~}, {~}, -{~}] 告訴 Aledar。",
+   "dst": "把水元素粉末塗到武器上，然後到 [{~1}, {~2}, -{~3}] 告訴 Aledar。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143581,7 +143581,7 @@
   },
   "Taking the Tower#022": {
    "src": "Meet up with Lieutenant Van's squad near the Raging Tower at [{~}, {~}, -{~}].",
-   "dst": "到 [{~}, {~}, -{~}] 的狂怒之塔附近與 Van 中尉的小隊會合。",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的狂怒之塔附近與 Van 中尉的小隊會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143691,7 +143691,7 @@
   },
   "Taking the Tower#032": {
    "src": "Assault the Raging Tower at [{~}, {~}, -{~}] and defeat the monster at the top.",
-   "dst": "攻打 [{~}, {~}, -{~}] 的狂怒之塔，擊敗塔頂的怪物。",
+   "dst": "攻打 [{~1}, {~2}, -{~3}] 的狂怒之塔，擊敗塔頂的怪物。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143711,7 +143711,7 @@
   },
   "Taking the Tower#034": {
    "src": "Report back to Lieutenant Van about your success at [{~}, {~}, -{~}]",
-   "dst": "到 [{~}, {~}, -{~}] 向 Van 中尉回報戰果。",
+   "dst": "到 [{~1}, {~2}, -{~3}] 向 Van 中尉回報戰果。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -186351,7 +186351,7 @@
   },
   "The Olmic Rune#000": {
    "src": "Explore the abandoned drill at [{~},-{~}]",
-   "dst": "探索 [{~},-{~}] 的廢棄鑽井。",
+   "dst": "探索 [{~1},-{~2}] 的廢棄鑽井。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -186391,7 +186391,7 @@
   },
   "The Olmic Rune#004": {
    "src": "Head back to the machine at [{~},-{~}]",
-   "dst": "回到 [{~},-{~}] 的機器旁。",
+   "dst": "回到 [{~1},-{~2}] 的機器旁。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -195301,7 +195301,7 @@
   },
   "The Realm of Light (Quest)#000": {
    "src": "Meet up with Lari at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 與 Lari 會合。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 與 Lari 會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Realm of Light (Quest)",
@@ -195451,7 +195451,7 @@
   },
   "The Realm of Light (Quest)#015": {
    "src": "Talk to Lari at [-{~}, {~}, -{~}] in the Realm of Light.",
-   "dst": "在光之領域到 [-{~}, {~}, -{~}] 跟 Lari 談話。",
+   "dst": "在光之領域到 [-{~1}, {~2}, -{~3}] 跟 Lari 談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Realm of Light (Quest)",
@@ -195561,7 +195561,7 @@
   },
   "The Realm of Light (Quest)#026": {
    "src": "Follow Lari to Orphion's Nexus of Light at [-{~}, {~}, -{~}]",
-   "dst": "跟著 Lari 前往 [-{~}, {~}, -{~}] 的 Orphion 光之樞紐。",
+   "dst": "跟著 Lari 前往 [-{~1}, {~2}, -{~3}] 的 Orphion 光之樞紐。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Realm of Light (Quest)",
@@ -195731,7 +195731,7 @@
   },
   "The Realm of Light (Quest)#043": {
    "src": "Search for the monolith Lari was talking about at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 尋找 Lari 說的那座巨石碑。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 尋找 Lari 說的那座巨石碑。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Realm of Light (Quest)",
@@ -195841,7 +195841,7 @@
   },
   "The Realm of Light (Quest)#054": {
    "src": "Follow Lari to the next monolith at [-{~}, {~}, -{~}].",
-   "dst": "跟著 Lari 前往 [-{~}, {~}, -{~}] 的下一座巨石碑。",
+   "dst": "跟著 Lari 前往 [-{~1}, {~2}, -{~3}] 的下一座巨石碑。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Realm of Light (Quest)",
@@ -196031,7 +196031,7 @@
   },
   "The Realm of Light (Quest)#073": {
    "src": "Enter the second monolith at [-{~}, {~}, -{~}].",
-   "dst": "到 [-{~}, {~}, -{~}] 進入第二座巨石碑。",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 進入第二座巨石碑。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Realm of Light (Quest)",
@@ -196091,7 +196091,7 @@
   },
   "The Realm of Light (Quest)#079": {
    "src": "Return to the bridge at [-{~}, {~}, -{~}].",
-   "dst": "回到 [-{~}, {~}, -{~}] 的橋上。",
+   "dst": "回到 [-{~1}, {~2}, -{~3}] 的橋上。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Realm of Light (Quest)",
