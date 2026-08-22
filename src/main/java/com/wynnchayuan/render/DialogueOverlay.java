@@ -39,6 +39,10 @@ public final class DialogueOverlay {
      */
     private static volatile long lastUpdate = 0;
 
+    /** 說話者那一行的顏色。刻意跟內文分開，一眼就看得出誰在講。 */
+    private static final net.minecraft.network.chat.TextColor SPEAKER_COLOUR =
+            net.minecraft.network.chat.TextColor.fromRgb(0xFFD966);
+
     private DialogueOverlay() {}
 
     /** 對話內容變了就更新這裡；傳 null 或空的代表對話結束。 */
@@ -49,15 +53,27 @@ public final class DialogueOverlay {
         }
         List<Component> lines = new ArrayList<>();
         boolean any = false;
+        String said = null;
         for (String raw : dialogue.getString().split("\n")) {
             StyledText line = StyledText.fromString(raw);
             Component translated = LineTranslator.translate(line, store);
             if (translated != null) {
                 any = true;
+                if (said == null) {
+                    said = store.speakerOf(
+                            com.wynnchayuan.capture.GlyphSplitter.toTemplate(line));
+                }
                 lines.addAll(Boxes.toLines(translated));
             } else {
                 lines.addAll(Boxes.toLines(LineTranslator.untranslated(line)));
             }
+        }
+        // 誰在說話。同一個場景裡好幾個 NPC 輪流講的時候，光看文字認不出來。
+        // 語料裡本來就有這個欄位，只是先前沒被帶到畫面上。
+        if (said != null && !said.isBlank()) {
+            lines.add(0, Component.literal(said + "：").withStyle(
+                    net.minecraft.network.chat.Style.EMPTY
+                            .withColor(SPEAKER_COLOUR).withBold(true)));
         }
         // 診斷：分得出「沒讀到對話」與「讀到了但沒譯文」——
         // 少了這個，畫面上沒東西時完全不知道卡在哪一步

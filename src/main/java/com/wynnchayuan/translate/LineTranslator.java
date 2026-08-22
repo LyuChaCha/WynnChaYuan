@@ -1628,7 +1628,23 @@ public final class LineTranslator {
                 if (term.start() > from) {
                     out.append(literal(text.substring(from, term.start()), base));
                 }
-                out.append(literal(term.translation(), base));
+                // 這個位置如果<b>同時</b>有一個帶樣式的片段，樣式要留住。
+                // 先前一律用 base 畫，於是 `Heal` 與 `Arcane Transfer` 的底線
+                // 在替換的當下就沒了——原文有底線、譯文沒有。
+                Style style = base;
+                for (int k = 0; k < accents.size(); k++) {
+                    if (used[k]) {
+                        continue;
+                    }
+                    String accentText = accents.get(k).text();
+                    if (text.startsWith(accentText, term.start())
+                            && term.start() + accentText.length() <= term.end()) {
+                        style = forDisplay(accents.get(k).style());
+                        used[k] = true;
+                        break;
+                    }
+                }
+                out.append(literal(term.translation(), style));
                 from = term.end();
                 continue;
             }
