@@ -74,9 +74,9 @@ public final class MajorIdColourTest {
 
         // 診斷檔要真的寫得出來。使用者回報「layout-debug.txt 根本沒生成」，
         // 而那個檔正是查 Major ID 顏色唯一的依據——它不寫出來，就等於沒有診斷。
-        Path debug = java.nio.file.Files.createTempDirectory("wynnchayuan")
-                .resolve("layout-debug.txt");
-        LayoutDebug.init(debug);
+        Path dir = java.nio.file.Files.createTempDirectory("wynnchayuan");
+        FlowedDebug.init(dir);
+        Path debug = dir.resolve("majorid-debug.txt");
         check("診斷檔一開場就存在", java.nio.file.Files.isRegularFile(debug));
 
         List<StyledText> run = block();
@@ -136,8 +136,9 @@ public final class MajorIdColourTest {
         }
         String written = java.nio.file.Files.readString(debug);
         check("跨行翻譯之後診斷檔有內容（" + written.length() + " 字）",
-                written.contains("跨行查表"));
+                written.contains("原文第一行的色段"));
         check("診斷檔記下了原文的色段", written.contains("#FF55FF"));
+        check("診斷檔記下了每一次呼叫的流水號", written.contains("=== 1 ==="));
         report();
     }
 

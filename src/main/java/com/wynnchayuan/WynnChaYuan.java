@@ -76,6 +76,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.render.ThirdPartySections.load(dir);
         com.wynnchayuan.translate.LineDebug.init(dir.resolve("line-debug.txt"));
         com.wynnchayuan.translate.LayoutDebug.init(dir.resolve("layout-debug.txt"));
+        com.wynnchayuan.translate.FlowedDebug.init(dir);
         com.wynnchayuan.translate.ErrorDebug.into(dir);
 
         // 譯文放在 config/wynnchayuan/translations/ 下，格式與 corpus/workspace 相同，

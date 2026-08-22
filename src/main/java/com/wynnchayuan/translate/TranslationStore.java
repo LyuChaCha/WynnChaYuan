@@ -94,6 +94,7 @@ public final class TranslationStore {
         entries.clear();
         flat.clear();
         speakers.clear();
+        prefixIndex.clear();
         terms.clear();
         maxTermWords = 1;
         maxBlockLines = 1;
@@ -224,6 +225,9 @@ public final class TranslationStore {
             if (src != null && dst != null && !dst.isBlank()) {
                 String srcKey = src.strip();
                 entries.put(srcKey, dst.strip());
+                if (srcKey.length() >= MIN_PREFIX_LENGTH) {
+                    prefixIndex.put(srcKey, dst.strip());
+                }
                 noteBlockSize(srcKey);
                 noteFlat(srcKey, dst.strip());
                 String who = optString(e, "speaker");
@@ -402,6 +406,66 @@ public final class TranslationStore {
 
     /** 每一句對話的說話者。見 {@link #speakerOf}。 */
     private final Map<String, String> speakers = new ConcurrentHashMap<>();
+
+    /**
+     * 半句話也查得到：拿<b>開頭</b>去比對。
+     *
+     * <h2>為什麼需要</h2>
+     * NPC 的對話是一個字一個字打出來的，打到一半的句子當然不在語料裡——
+     * 於是譯文要等整句打完才出現，而玩家常常已經按 shift 跳過去了。
+     *
+     * <p>只要開頭夠長、而且<b>只有一條</b>語料以它開頭，就可以確定是哪一句，
+     * 直接把整句譯文先顯示出來。有兩條以上以它開頭就再等等——寧可晚一點出現，
+     * 也不要先顯示錯的那一句再跳掉。
+     *
+     * @return 整句的譯文，還不能確定就回 null
+     */
+    public String lookupPrefix(String partial) {
+        if (partial == null) {
+            return null;
+        }
+        String key = partial.strip();
+        if (key.length() < MIN_PREFIX_LENGTH) {
+            return null;
+        }
+        Map.Entry<String, String> first = prefixIndex.ceilingEntry(key);
+        if (first == null || !first.getKey().startsWith(key)) {
+            return null;
+        }
+        String next = prefixIndex.higherKey(first.getKey());
+        if (next != null && next.startsWith(key)) {
+            return null;                       // 還分不出是哪一句
+        }
+        return first.getValue();
+    }
+
+    /** 半句話也認得出說話者。見 {@link #lookupPrefix}。 */
+    public String speakerOfPrefix(String partial) {
+        if (partial == null) {
+            return null;
+        }
+        String key = partial.strip();
+        if (key.length() < MIN_PREFIX_LENGTH) {
+            return null;
+        }
+        Map.Entry<String, String> first = prefixIndex.ceilingEntry(key);
+        if (first == null || !first.getKey().startsWith(key)) {
+            return null;
+        }
+        String next = prefixIndex.higherKey(first.getKey());
+        if (next != null && next.startsWith(key)) {
+            return null;
+        }
+        return speakers.get(first.getKey());
+    }
+
+    /**
+     * 開頭要多長才敢猜。太短的話「I」「Well,」會撞到幾百句。
+     */
+    private static final int MIN_PREFIX_LENGTH = 12;
+
+    /** 依原文排序，才能用 ceiling/higher 做前綴比對。見 {@link #lookupPrefix}。 */
+    private final java.util.TreeMap<String, String> prefixIndex = new java.util.TreeMap<>();
 
     public String lookup(String template) {
         if (template == null) {

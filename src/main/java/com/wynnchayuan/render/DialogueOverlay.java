@@ -56,12 +56,24 @@ public final class DialogueOverlay {
         String said = null;
         for (String raw : dialogue.getString().split("\n")) {
             StyledText line = StyledText.fromString(raw);
+            String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
             Component translated = LineTranslator.translate(line, store);
+            if (translated == null) {
+                // NPC 是一個字一個字打出來的，打到一半的句子當然查不到。
+                // 只要開頭夠獨特就先把<b>整句</b>譯文顯示出來——先前要等整句
+                // 打完才出現，而玩家常常已經按 shift 跳過去了。
+                String ahead = store.lookupPrefix(template);
+                if (ahead != null) {
+                    translated = Component.literal(ahead);
+                }
+            }
             if (translated != null) {
                 any = true;
                 if (said == null) {
-                    said = store.speakerOf(
-                            com.wynnchayuan.capture.GlyphSplitter.toTemplate(line));
+                    said = store.speakerOf(template);
+                    if (said == null) {
+                        said = store.speakerOfPrefix(template);
+                    }
                 }
                 lines.addAll(Boxes.toLines(translated));
             } else {

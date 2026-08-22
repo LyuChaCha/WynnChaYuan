@@ -7,6 +7,8 @@ import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.render.TrackerOverlay;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.models.activities.event.ActivityTrackerUpdatedEvent;
+import com.wynntils.models.character.event.CharacterUpdateEvent;
+import com.wynntils.models.worlds.event.WorldStateEvent;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 
@@ -48,6 +50,34 @@ public final class TrackerListener {
             }
         }
 
+        // 追蹤欄空掉了（切換任務、換角色、取消追蹤），譯文也要跟著收掉。
+        // 先前只在有內容時更新，於是原文那一欄已經消失、翻譯還孤零零地留在畫面上。
+        boolean gone = (name == null || name.isBlank())
+                && (task == null || GlyphSplitter.isGlyphOnly(task));
+        if (gone) {
+            TrackerOverlay.clear();
+            return;
+        }
         TrackerOverlay.setCurrent(name, task, WynnChaYuan.translations());
+    }
+
+    /**
+     * 換角色或換世界時把疊層收乾淨。
+     *
+     * <h2>為什麼不能只靠追蹤更新事件</h2>
+     * 那個事件只在<b>有東西可追蹤</b>時才來。玩家切角色的瞬間追蹤欄整個消失，
+     * 事件卻不一定會補一則空的——結果原文那一欄沒了，我們的譯文還留在畫面上，
+     * 而且停在上一個角色的任務。
+     */
+    @SubscribeEvent
+    public void onWorldState(WorldStateEvent event) {
+        TrackerOverlay.clear();
+        com.wynnchayuan.render.DialogueOverlay.clear();
+    }
+
+    @SubscribeEvent
+    public void onCharacterUpdate(CharacterUpdateEvent event) {
+        TrackerOverlay.clear();
+        com.wynnchayuan.render.DialogueOverlay.clear();
     }
 }
