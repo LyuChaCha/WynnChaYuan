@@ -1977,13 +1977,16 @@ public final class LineTranslator {
         accents.addAll(LineParts.accentsAgainst(allRuns, blockStyle));
         accents = withTranslations(accents, store);
 
-        List<List<Token>> lines = new ArrayList<>(translated.length);
+        // 斷行不要把一個重點詞切成兩半，否則它的顏色會整個掉。見 keepAccentsWhole。
+        String[] flowed = keepAccentsWhole(translated, accents);
+
+        List<List<Token>> lines = new ArrayList<>(flowed.length);
         long wantGlyphs = 0;
         long wantPlaces = 0;
         long wantNumbers = 0;
         long wantUsers = 0;
         int numbered = 0;
-        for (String line : translated) {
+        for (String line : flowed) {
             List<Token> tokens = tokenize(line);
             lines.add(tokens);
             for (Token token : tokens) {
@@ -2030,17 +2033,21 @@ public final class LineTranslator {
         List<Component> out = new ArrayList<>(lines.size());
         for (List<Token> tokens : lines) {
             MutableComponent line = Component.empty();
-            for (Token token : tokens) {
+            Style justFilled = null;          // 剛填回去的那個佔位符的樣式
+            for (int i = 0; i < tokens.size(); i++) {
+                Token token = tokens.get(i);
                 switch (token.kind()) {
                     case GLYPH -> {
                         // 符號連同原樣式（含自訂字型）整段搬回，這是它顯示得出來的唯一方式
                         LineParts.Piece piece = glyphs.get(glyph++);
                         line.append(Component.literal(piece.text()).withStyle(piece.style()));
+                        justFilled = piece.style();
                     }
                     case PLACE -> {
                         // 地名是專有名詞，原樣填回，永遠不翻譯
                         LineParts.Piece piece = places.get(place++);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
+                        justFilled = piece.style();
                     }
                     case NUMBER -> {
                         // 帶編號的直接指名要第幾個，沒編號的照順序取下一個
@@ -2050,20 +2057,164 @@ public final class LineTranslator {
                         }
                         LineParts.Piece piece = numbers.get(at);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
+                        justFilled = piece.style();
                     }
                     case USER -> {
                         // 玩家名字原樣填回，跟地名一樣是專有名詞
                         LineParts.Piece piece = users.get(user++);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
+                        justFilled = piece.style();
                     }
-                    case TEXT -> appendNoting(line, token.text(), textStyle, noteStyle,
-                                              inNote, accents, usedAccent, store);
+                    case TEXT -> {
+                        Style before = i > 0 ? justFilled : null;
+                        Style after = i + 1 < tokens.size()
+                                ? peekStyle(tokens.get(i + 1), glyphs, places,
+                                            numbers, users, glyph, place, number, user)
+                                : null;
+                        appendHugging(line, token.text(), textStyle, noteStyle, inNote,
+                                      accents, usedAccent, store, before, after);
+                        justFilled = null;
+                    }
                 }
             }
             out.add(line);
         }
         return out;
     }
+
+    /**
+     * 下一個佔位符會填回什麼樣式——還沒填，先看一眼。
+     *
+     * <p>沒編號的佔位符是照順序取的，所以「下一個」就是各自計數器現在指到的那一個。
+     */
+    private static Style peekStyle(Token next,
+                                   List<LineParts.Piece> glyphs, List<LineParts.Piece> places,
+                                   List<LineParts.Piece> numbers, List<LineParts.Piece> users,
+                                   int glyph, int place, int number, int user) {
+        return switch (next.kind()) {
+            case GLYPH -> at(glyphs, glyph);
+            case PLACE -> at(places, place);
+            case NUMBER -> at(numbers, next.index() > 0 ? next.index() - 1 : number);
+            case USER -> at(users, user);
+            case TEXT -> null;
+        };
+    }
+
+    private static Style at(List<LineParts.Piece> pool, int index) {
+        return index >= 0 && index < pool.size() ? pool.get(index).style() : null;
+    }
+
+    /**
+     * 緊貼著佔位符的標點，跟著那個佔位符走。
+     *
+     * <h2>畫面上是什麼樣子</h2>
+     * 專業那一行的原文是 {@code - Ⓔ Lv. 120 Scribing§8 [66.24%]}——中括號與百分比
+     * <b>同屬一個暗灰色片段</b>。譯文裡數值是佔位符，會連同自己的樣式填回去，
+     * 但 {@code [} 與 {@code ]} 是譯文自己的字，畫的是整行的主樣式（比較亮的灰）。
+     * 於是括號比它包住的數字亮一階，跟原文對不起來。技能點數的 {@code 0/50}
+     * 中間那條斜線也是同一回事。
+     *
+     * <p>規則很單純：一段文字<b>開頭</b>緊貼著前一個佔位符的標點，用前一個佔位符
+     * 的樣式；<b>結尾</b>緊貼著下一個佔位符的標點，用下一個的。中間那段照舊。
+     * 「緊貼」是字面意思——中間有空白就不算，那是詞距不是黏著。
+     *
+     * <p>圓括號不算在內：它們是註解的界線（見 {@link #appendNoting}），
+     * 交給註解那一套處理，這裡動它只會把註解的顏色弄亂。
+     */
+    private static void appendHugging(MutableComponent out, String text,
+                                      Style base, Style note, boolean[] depth,
+                                      List<LineParts.Piece> accents, boolean[] used,
+                                      TranslationStore store, Style before, Style after) {
+        int lead = 0;
+        if (before != null) {
+            while (lead < text.length() && hugs(text.charAt(lead))) {
+                lead++;
+            }
+        }
+        int tail = text.length();
+        if (after != null) {
+            while (tail > lead && hugs(text.charAt(tail - 1))) {
+                tail--;
+            }
+        }
+        if (lead > 0) {
+            out.append(literal(text.substring(0, lead), forDisplay(before)));
+        }
+        if (tail > lead) {
+            appendNoting(out, text.substring(lead, tail), base, note,
+                         depth, accents, used, store);
+        }
+        if (tail < text.length()) {
+            out.append(literal(text.substring(tail), forDisplay(after)));
+        }
+    }
+
+    /** 會黏在佔位符身上的標點：不是字、不是數字、不是方塊字，也不是空白或圓括號。 */
+    static boolean hugs(char c) {
+        if (Character.isLetterOrDigit(c) || Character.isWhitespace(c) || isHan(c)) {
+            return false;
+        }
+        return c != '(' && c != ')' && c != '（' && c != '）';
+    }
+
+    /**
+     * 斷行不要把一個重點詞切成兩半。
+     *
+     * <h2>為什麼會切到</h2>
+     * 重點段的樣式是靠<b>字面比對</b>貼回去的（見 {@link #appendText}），而比對是
+     * 逐行做的。譯文被面板寬度斷開之後，「地屬性」可能是「地」留在上一行、
+     * 「屬性」跑到下一行——兩行各自都找不到「地屬性」，那個綠色就整個掉了。
+     * 畫面上是圖示還是綠的（它走符號池那條路，樣式本來就跟著走），
+     * 名稱卻是灰的。
+     *
+     * <p>做法是把被切開的那幾個字<b>往下一行搬</b>。下一行因此寬一點點，
+     * 面板會跟著寬一兩個字——比一個詞半綠半灰好。
+     *
+     * <p>只搬<b>不含佔位符</b>的片段：佔位符是照順序取用的，搬動它會讓池子錯位。
+     */
+    static String[] keepAccentsWhole(String[] lines, List<LineParts.Piece> accents) {
+        if (lines.length < 2 || accents.isEmpty()) {
+            return lines;
+        }
+        String[] out = lines.clone();
+        for (int i = 0; i + 1 < out.length; i++) {
+            int move = splitAcross(out[i], out[i + 1], accents);
+            if (move > 0) {
+                String moved = out[i].substring(out[i].length() - move);
+                out[i] = out[i].substring(0, out[i].length() - move);
+                out[i + 1] = moved + out[i + 1];
+            }
+        }
+        return out;
+    }
+
+    /** 上一行結尾有幾個字是下一行開頭那個重點詞的一部分；沒有就是 0。 */
+    private static int splitAcross(String head, String tail,
+                                   List<LineParts.Piece> accents) {
+        if (head.isEmpty() || tail.isEmpty()) {
+            return 0;
+        }
+        for (LineParts.Piece accent : accents) {
+            String word = accent.text();
+            if (word.length() < 2 || word.length() > MAX_REFLOW) {
+                continue;
+            }
+            for (int cut = 1; cut < word.length(); cut++) {
+                String left = word.substring(0, cut);
+                if (!head.endsWith(left) || !tail.startsWith(word.substring(cut))) {
+                    continue;
+                }
+                if (left.indexOf('{') >= 0 || left.indexOf('}') >= 0) {
+                    break;                    // 佔位符不能搬，搬了池子就錯位
+                }
+                return cut;
+            }
+        }
+        return 0;
+    }
+
+    /** 為了不切斷重點詞，最多把這麼長的詞搬到下一行。再長就不值得重排了。 */
+    private static final int MAX_REFLOW = 12;
 
     /**
      * 接上一段譯文，並把原文裡帶特殊樣式的詞的樣式貼回去。
