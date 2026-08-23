@@ -3,6 +3,16 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.77.1] - 2026-08-23
+
+### 新增
+
+- **可交易股份（Tradable Shares）面板。**
+- **`✮ Silverbull Syndicates:`** —— `✮` 跟名稱同屬一個色段，得整行收才對得上。
+  先前只收了不帶 `✮` 的那一種。
+- **側欄的單字標題** `Wardrobe`、`Pets`、`Page N`。先前只收了帶紅點的
+  `Wardrobe{#}`、`Pets{#}`。
+
 ## [1.77.0] - 2026-08-23
 
 ### 新增
