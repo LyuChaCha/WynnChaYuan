@@ -202,7 +202,12 @@ public final class FlowedBlockTest {
         }
         String all = out.stream().map(Component::getString)
                 .reduce("", String::concat);
-        check("內容是譯文（實際：" + shorten(all) + "）", all.contains("神祕面具"));
+        // 不釘特定譯名——那是翻譯團隊的內容，他們隨時會改（實測就被改過一次）。
+        // 釘的是「有換成中文」這件事。
+        check("內容是譯文（實際：" + shorten(all) + "）",
+                all.codePoints().anyMatch(cp ->
+                        Character.UnicodeScript.of(cp)
+                                == Character.UnicodeScript.HAN));
 
         // 折行本身量的是<b>像素寬度</b>，而測試環境沒有字型（Minecraft.getInstance()
         // 是 null），量出來一律是 0，折不出東西。所以這裡釘的是<b>判斷</b>：
