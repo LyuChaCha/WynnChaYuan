@@ -233,7 +233,13 @@ public final class MajorIdColourTest {
             check("譯名維持單一顏色，沒有被重新上色（用到 " + used.size() + " 個）",
                     used.size() == 1);
             check("用的是原文名稱本來的顏色", rainbowContains(rainbow, used));
-            Integer bodyColour = colourOf(painted, "分散");
+            // 說明裡的那個標記詞也不寫死——同樣會被翻譯團隊改掉（先前釘的是
+            // 「分散」，說明重寫成「平均分攤」之後這條就紅了）。改成從語料拿
+            // 譯文的<b>結尾</b>幾個字：那一定落在說明那半，而且跟著語料走。
+            Integer bodyColour = colourOf(painted, tailWord(store.lookup(
+                    "Serpent's Garden now centers to where you land with Swan Dive. "
+                    + "Damage of Swan Dive, Serpent's Garden and Jasmine Bloom "
+                    + "are distributed across all elements.")));
             check("說明那半沒有被染成彩虹（拿到 "
                             + (bodyColour == null ? "null"
                                : "#" + String.format("%06X", bodyColour)) + "）",
@@ -655,6 +661,17 @@ public final class MajorIdColourTest {
     }
 
     /** 找出含有 needle 的那一段是什麼顏色。 */
+    /**
+     * 譯文結尾的三個方塊字，拿來當「這一段是說明」的標記。
+     *
+     * <p>不寫死某個詞是刻意的：翻譯團隊隨時會改用詞，寫死的話這條測試
+     * 會在譯文變好的時候變紅——而它要盯的其實是顏色，不是用詞。
+     */
+    private static String tailWord(String translated) {
+        String t = translated == null ? "" : translated.replaceAll("[。，、！？\\s]+$", "");
+        return t.length() <= 3 ? t : t.substring(t.length() - 3);
+    }
+
     private static Integer colourOf(List<Component> lines, String needle) {
         for (Component line : lines) {
             for (Component part : flatten(line)) {
