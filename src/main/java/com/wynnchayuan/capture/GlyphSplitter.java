@@ -96,10 +96,40 @@ public final class GlyphSplitter {
         if (style == null || !isCustomFont(style.getFont())) {
             return false;
         }
+        if (isTextFont(style.getFont())) {
+            return false;                     // 文字字型底下的標點就是標點
+        }
         // 自訂字型底下，只有「連數字都沒有」才算圖示。
         // Wynncraft 的數值也用文字字型渲染（例如 +2 帶 wynntils:language），
         // 只看「有沒有字母」會把數值當成圖示，變成 {#} 而不是 {~}。
         return !hasReadable(text);
+    }
+
+    /**
+     * 這個自訂字型是拿來<b>排字</b>的，不是拿來畫圖的。
+     *
+     * <h2>為什麼要分開</h2>
+     * 「自訂字型 + 沒有字母數字 = 圖示」這條規則對符號字型是對的，
+     * 但 {@code language/*} 是<b>一整套文字字型</b>——它渲染的是
+     * 「{@code Use this item to enter Raids}」這種句子。
+     *
+     * <p>於是句尾那個<b>單獨成段的句點</b>（Wynncraft 常把標點切成自己的色段）
+     * 就被判成圖示、抽成了 {@code {#}}：
+     *
+     * <pre>
+     *   語料  ...are distributed across all elements.
+     *   實際  ...are distributed across all elements{#}
+     * </pre>
+     *
+     * <p>兩邊永遠不相等，那一整段 Major ID 於是再也查不到——
+     * 而畫面上看起來只是「這一段沒翻」，完全看不出禍首是一個句點。
+     */
+    private static boolean isTextFont(FontDescription font) {
+        if (!(font instanceof FontDescription.Resource resource)) {
+            return false;
+        }
+        Identifier id = resource.id();
+        return id != null && id.getPath().startsWith("language/");
     }
 
     /** 是否含有可讀內容（字母或數字）。圖示兩者都不會有。 */
