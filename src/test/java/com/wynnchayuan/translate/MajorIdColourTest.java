@@ -214,11 +214,13 @@ public final class MajorIdColourTest {
         if (painted != null && !painted.isEmpty()) {
             // 名稱那一段只能有<b>一個</b>顏色。先前這裡會被拆成一個字一段、
             // 各自套上漸層裡的一個顏色；現在保留原始樣式，整段是同一色。
+            // 不釘特定譯名——翻譯團隊隨時會改（華綻 就被改成了 散華）。
+            String zh = store.lookup("Efflorescence");
             int leaves = 0;
             java.util.LinkedHashSet<Integer> used = new java.util.LinkedHashSet<>();
             for (Component line : painted) {
                 for (Component leaf : flatten(line)) {
-                    if (!leaf.getString().contains("華綻")) {
+                    if (!leaf.getString().contains(zh)) {
                         continue;
                     }
                     leaves++;
