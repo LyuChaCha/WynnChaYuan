@@ -35,6 +35,24 @@ public final class GlyphSplitterTest {
                 !GlyphSplitter.isCustomFont(
                         new FontDescription.Resource(Identifier.withDefaultNamespace("default"))));
 
+        // Wynncraft 常把句尾的標點切成<b>自己的色段</b>，而整段用的是
+        // language/wynncraft 這套文字字型。「自訂字型 + 沒有字母數字 = 圖示」
+        // 這條規則於是把那個句點抽成了 {#}：
+        //
+        //   語料  ...across all elements.
+        //   實際  ...across all elements{#}
+        //
+        // 兩邊永遠不相等，整段 Major ID 就再也查不到——而畫面上只看得出
+        // 「這一段沒翻」，看不出禍首是一個句點。
+        check("語言字型底下的句點不是圖示",
+                !GlyphSplitter.isGlyphPart(part(".", "language/wynncraft")));
+        check("語言字型底下的整句話也不是圖示",
+                !GlyphSplitter.isGlyphPart(
+                        part("all elements", "language/wynncraft")));
+        // 反面：符號字型底下的標點<b>還是</b>圖示——那些字型真的是拿來畫圖的
+        check("符號字型底下的標點仍算圖示",
+                GlyphSplitter.isGlyphPart(part(".", "common")));
+
         check("common 算自訂（Wynncraft 的符號字型）",
                 GlyphSplitter.isCustomFont(
                         new FontDescription.Resource(Identifier.withDefaultNamespace("common"))));
@@ -200,6 +218,18 @@ public final class GlyphSplitterTest {
                         GlyphSplitter.parametrizeNumbers("Great! You got the cake!")));
         check("不會動到圖示佔位符",
                 "{#} Rewards:".equals(GlyphSplitter.parametrizeNumbers("{#} Rewards:")));
+    }
+
+    /** 造一個帶指定字型的片段。 */
+    private static com.wynntils.core.text.StyledTextPart part(String text,
+                                                              String font) {
+        net.minecraft.network.chat.Style style =
+                net.minecraft.network.chat.Style.EMPTY.withFont(
+                        new FontDescription.Resource(
+                                Identifier.withDefaultNamespace(font)));
+        return com.wynntils.core.text.StyledText.fromComponent(
+                net.minecraft.network.chat.Component.literal(text)
+                        .withStyle(style)).iterator().next();
     }
 
     private static void check(String name, boolean ok) {
