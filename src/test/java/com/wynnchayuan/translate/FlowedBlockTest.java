@@ -33,6 +33,8 @@ public final class FlowedBlockTest {
 
     private static int failures = 0;
 
+    private static final String NL = System.lineSeparator();
+
     private static final int BODY = 0xAAAAAA;
 
     /** Oblivion 的背景敘述，照遊戲的寬度斷行。地名剛好斷在第二、三行之間。 */
@@ -96,6 +98,7 @@ public final class FlowedBlockTest {
         check("每行開頭帶排版偏移也翻得出來（實際：" + shorten(offset) + "）",
                 offset != null && offset.startsWith("這把從"));
 
+        shaman(store);
         divider(store);
         majorId(store);
 
@@ -175,6 +178,44 @@ public final class FlowedBlockTest {
             out.addAll(flatten(child));
         }
         return out;
+    }
+
+    /**
+     * 譯文<b>比原文少行</b>時要自己折回去。
+     *
+     * <p>譯者常把三行的英文寫成一句中文——那在語料裡就是沒有換行的一整句。
+     * 先前只有「攤平查表」那條路會折，精準命中的不會，
+     * 於是畫面上就是一條長到衝出面板的行（issue #90 第 4 點）。
+     */
+    private static void shaman(TranslationStore store) {
+        String[] src = {
+                "When casting Uproot, instead",
+                "wear one of the Mystic Masks.",
+                "(Shift + Uproot to remove it)",
+        };
+        List<StyledText> run = block(src);
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("薩滿的三行敘述翻得出來", out != null && !out.isEmpty());
+        if (out == null) {
+            return;
+        }
+        String all = out.stream().map(Component::getString)
+                .reduce("", String::concat);
+        check("內容是譯文（實際：" + shorten(all) + "）", all.contains("神祕面具"));
+
+        // 折行本身量的是<b>像素寬度</b>，而測試環境沒有字型（Minecraft.getInstance()
+        // 是 null），量出來一律是 0，折不出東西。所以這裡釘的是<b>判斷</b>：
+        // 「要不要折」才是這次改的地方，折的機制本來就在，只是沒被叫到。
+        check("譯文比原文少行 -> 要折",
+                LineTranslator.needsWrap("一句話", 3, false));
+        check("攤平查到的一律要折",
+                LineTranslator.needsWrap("一句話", 1, true));
+        check("行數一樣就不折——那是譯者排好的形狀",
+                !LineTranslator.needsWrap("一" + NL + "二" + NL + "三", 3, false));
+        check("比原文多行也不折——折了只會更長",
+                !LineTranslator.needsWrap("一" + NL + "二" + NL + "三" + NL + "四",
+                        3, false));
     }
 
     /**

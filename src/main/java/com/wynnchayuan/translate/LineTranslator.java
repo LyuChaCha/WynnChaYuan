@@ -129,8 +129,7 @@ public final class LineTranslator {
         // 使用者回報「這個檔案根本沒生成」。
         FlowedDebug.note(run, extra.isEmpty() ? null : extra.get(0).text(),
                          labelStyleOf(run.get(0)), dominantStyle(parts));
-        if (flowed) {
-            // 查到的是完整一句，得自己折回原本那幾行的寬度
+        if (needsWrap(translated, run.size(), flowed)) {
             translated = wrapToBlock(translated, run);
         }
         String[] dst = translated.split("\n", -1);
@@ -541,6 +540,24 @@ public final class LineTranslator {
      * <p>行數是<b>看得出來對不對</b>的：原本四行，折出來就不該超過四行。
      * 超過就把目標寬度放寬一成再試——這樣量得再不準也收得回來。
      */
+    /**
+     * 這一段譯文要不要自己折行。
+     *
+     * <h2>兩種都得折</h2>
+     * <ul>
+     *   <li><b>攤平查到的</b>本來就是完整一句，沒有換行可言。</li>
+     *   <li><b>精準命中的</b>也可能比原文少行——譯者常把三行的英文寫成一句中文，
+     *       那在語料裡就是沒有換行的一整句。先前只折前者，
+     *       於是後者在畫面上是一條長到衝出面板的行。</li>
+     * </ul>
+     *
+     * <p>行數<b>一樣</b>的不折：那是譯者自己排好的形狀，動了反而更糟。
+     * 比原文<b>多</b>的也不折——{@code wrapToBlock} 只會讓它更長。
+     */
+    static boolean needsWrap(String translated, int originalLines, boolean flowed) {
+        return flowed || lines(translated) < originalLines;
+    }
+
     private static String wrapToBlock(String text, List<StyledText> run) {
         int width = widestOf(run);
         if (width <= 0) {
