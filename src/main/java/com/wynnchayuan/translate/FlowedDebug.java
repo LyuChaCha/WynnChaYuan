@@ -55,6 +55,7 @@ public final class FlowedDebug {
         seen = 0;
         missed = 0;
         prose = 0;
+        labelled = 0;
         choicesSeen = 0;
         already.clear();
         try {
@@ -155,13 +156,61 @@ public final class FlowedDebug {
     /** 見 {@link #MISS_LIMIT}。 */
     private static final int PROSE_MISS_LIMIT = 24;
 
+    /**
+     * 「名稱：說明」形狀的再另外給一份名額。
+     *
+     * <h2>為什麼要第三個桶子</h2>
+     * Major ID 一份 tooltip 只有一兩段，卻跟幾十段技能敘述搶同一份名額。
+     * 連續三次拿到的診斷檔，要查的那一段都因為名額被吃光而排不進來——
+     * 每一次都得再請使用者重跑一遍遊戲。
+     */
+    private static final int LABELLED_MISS_LIMIT = 12;
+
     private static int missed = 0;
     private static int prose = 0;
+    private static int labelled = 0;
 
     /** 這一段看起來是句子，而不是一串詞條。 */
     private static boolean looksLikeProse(String template) {
         String flat = TranslationStore.normalise(template);
         return flat.contains(". ") || flat.contains(": ");
+    }
+
+    /** 第一行長得像「名稱：說明」。 */
+    private static boolean looksLabelled(String template) {
+        int end = template.indexOf('\n');
+        String first = end < 0 ? template : template.substring(0, end);
+        int colon = first.indexOf(": ");
+        return colon > 0 && colon <= 40;
+    }
+
+    /**
+     * 「名稱：說明」那條路是<b>哪一半</b>失敗的。
+     *
+     * <h2>為什麼要記這個</h2>
+     * 只知道「整段查不到」沒有用：名稱那半查不到、說明那半查不到、
+     * 或兩半都查得到卻拼不起來——三種的修法完全不同，
+     * 而先前的診斷三種長得一模一樣。把中間結果原樣印出來就分得開了。
+     */
+    private static void explain(StringBuilder sb, String template,
+                                TranslationStore store) {
+        String nl = System.lineSeparator();
+        int end = template.indexOf('\n');
+        String first = end < 0 ? template : template.substring(0, end);
+        int colon = first.indexOf(": ");
+        if (colon <= 0) {
+            return;
+        }
+        String head = template.substring(0, colon);
+        String rest = template.substring(colon + 2);
+        sb.append("  -- 拆成「名稱：說明」之後 --").append(nl);
+        sb.append("     名稱＝[").append(head).append(']').append(nl);
+        sb.append("     名稱查表＝")
+          .append(LineTranslator.lookup(head, store, false)).append(nl);
+        sb.append("     說明的鍵＝[").append(TranslationStore.normalise(rest))
+          .append(']').append(nl);
+        sb.append("     說明查表＝").append(store.lookupFlat(rest)).append(nl);
+        sb.append("     整段攤平查表＝").append(store.lookupFlat(template)).append(nl);
     }
 
     /**
@@ -176,27 +225,36 @@ public final class FlowedDebug {
      * <p>順便把攤平後的鍵原樣印出來，直接拿去跟譯文檔的 {@code src} 對，
      * 差一個空格還是差一個標點一眼就看得出來。
      */
-    public static void miss(String template) {
+    public static void miss(String template, TranslationStore store) {
         if (file == null || template == null) {
             return;
         }
-        boolean sentence = looksLikeProse(template);
-        if (sentence ? prose >= PROSE_MISS_LIMIT : missed >= MISS_LIMIT) {
+        // 「名稱：說明」的走自己那份名額，而且多記「哪一半失敗」。
+        boolean label = looksLabelled(template);
+        boolean sentence = !label && looksLikeProse(template);
+        int limit = label ? LABELLED_MISS_LIMIT
+                : sentence ? PROSE_MISS_LIMIT : MISS_LIMIT;
+        int used = label ? labelled : sentence ? prose : missed;
+        if (used >= limit) {
             return;
         }
         if (!already.add("miss" + template)) {
             return;
         }
-        int nth = sentence ? ++prose : ++missed;
+        int nth = label ? ++labelled : sentence ? ++prose : ++missed;
+        String kind = label ? "（名稱：說明）" : sentence ? "（像句子）" : "（詞條）";
         try {
             StringBuilder sb = new StringBuilder();
-            sb.append("=== 查不到 ").append(sentence ? "（像句子）" : "（詞條）")
+            sb.append("=== 查不到 ").append(kind)
               .append(nth).append(" ===")
               .append(System.lineSeparator());
             sb.append("  攤平後的鍵：").append(TranslationStore.normalise(template))
               .append(System.lineSeparator());
             for (String line : template.split("\\R", -1)) {
                 sb.append("    原文：").append(line).append(System.lineSeparator());
+            }
+            if (label && store != null) {
+                explain(sb, template, store);
             }
             sb.append(System.lineSeparator());
             Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,

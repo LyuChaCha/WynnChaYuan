@@ -165,7 +165,7 @@ public final class TooltipPanel {
                     }
                     key.append(com.wynnchayuan.capture.LineParts.of(styled.get(k)).template());
                 }
-                LineTranslator.noteBlockMiss(key.toString());
+                LineTranslator.noteBlockMiss(key.toString(), store);
             }
             Component translated =
                     LineTranslator.translate(styled.get(i), store, centered[i]);
