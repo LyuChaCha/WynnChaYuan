@@ -1,5 +1,7 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.capture.LineParts;
+
 import net.minecraft.SharedConstants;
 import net.minecraft.network.chat.Style;
 import net.minecraft.server.Bootstrap;
@@ -42,6 +44,8 @@ public final class ColumnCentreTest {
         groups();
         spacing();
         glyphPrefixedAccent();
+        wrapKeepsAccentsWhole();
+        huggingPunctuation();
 
         System.out.println(failures == 0
                 ? "ColumnCentreTest 全部通過"
@@ -128,6 +132,48 @@ public final class ColumnCentreTest {
                 LineTranslator.lookupWordCore("Earth", store) == null);
         check("剝完查不到就是查不到",
                 LineTranslator.lookupWordCore(" Nonsense", store) == null);
+    }
+
+    /** 斷行不要把一個重點詞切成兩半。 */
+    private static void wrapKeepsAccentsWhole() {
+        Style green = Style.EMPTY;
+        List<LineParts.Piece> accents = List.of(new LineParts.Piece("地屬性", green));
+
+        // 力量說明的實況：面板寬度把「地屬性」切成「地」＋「屬性」，
+        // 兩行各自都找不到整個詞，那個綠色就整個掉了
+        String[] split = {"並提高你能造成的 {#} 地", "屬性傷害"};
+        String[] fixed = LineTranslator.keepAccentsWhole(split, accents);
+        check("被切開的重點詞會整個搬到下一行",
+                fixed[0].equals("並提高你能造成的 {#} ") && fixed[1].equals("地屬性傷害"));
+
+        // 沒切到的不要動 —— 重排行是有代價的（面板會變寬）
+        String[] whole = {"並提高你能造成的 {#} 地屬性", "傷害"};
+        check("沒被切到就原樣不動",
+                LineTranslator.keepAccentsWhole(whole, accents)[0].endsWith("地屬性"));
+
+        // 佔位符是照順序取用的，搬動它會讓符號池整個錯位
+        String[] withToken = {"造成的 {#}", "地屬性傷害"};
+        List<LineParts.Piece> odd = List.of(new LineParts.Piece("{#} 地", green));
+        check("含佔位符的片段不搬",
+                LineTranslator.keepAccentsWhole(withToken, odd)[0].endsWith("{#}"));
+
+        check("只有一行時什麼都不做",
+                LineTranslator.keepAccentsWhole(new String[] {"地屬性傷害"}, accents).length == 1);
+    }
+
+    /** 緊貼佔位符的標點跟著它走。 */
+    private static void huggingPunctuation() {
+        // 專業那一行：原文 [66.24%] 整段是暗灰的，譯文的中括號卻畫成整行的主樣式
+        check("中括號緊貼數值，算黏著", LineTranslator.hugs('['));
+        check("斜線緊貼數值，算黏著", LineTranslator.hugs('/'));
+        check("減號緊貼數值，算黏著", LineTranslator.hugs('-'));
+        check("空白不算 —— 那是詞距不是黏著", !LineTranslator.hugs(' '));
+        check("方塊字不算", !LineTranslator.hugs('傷'));
+        check("英文字不算", !LineTranslator.hugs('A'));
+        check("數字不算", !LineTranslator.hugs('7'));
+        // 圓括號是註解的界線，交給註解那一套處理
+        check("左圓括號不算 —— 那是註解的界線", !LineTranslator.hugs('('));
+        check("右圓括號不算", !LineTranslator.hugs(')'));
     }
 
     private static void write(Path dir, String name, String body) throws IOException {
