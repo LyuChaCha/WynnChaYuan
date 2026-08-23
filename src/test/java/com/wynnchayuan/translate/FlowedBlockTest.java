@@ -151,9 +151,12 @@ public final class FlowedBlockTest {
         }
         String all = out.stream().map(Component::getString)
                 .reduce("", String::concat);
+        // 不釘特定譯名——翻譯團隊隨時會改（實測 華綻 就被改成了 散華）。
+        // 從語料把當下的譯名查出來，釘的是「有翻」與「顏色跟過去了」。
+        String zh = store.lookup("Efflorescence");
         check("名稱與敘述都翻了（實際：" + shorten(all) + "）",
-                all.contains("華綻") && all.contains("所有元素"));
-        check("名稱保住自己的顏色", colourOf(out, "華綻") == 0xE0B3E6);
+                zh != null && all.contains(zh) && all.contains("所有元素"));
+        check("名稱保住自己的顏色", colourOf(out, zh) == 0xE0B3E6);
         check("末尾的元素保住原本的綠（實際："
                         + Integer.toHexString(colourOf(out, "元素")) + "）",
                 colourOf(out, "元素") == 0x55FF55);
@@ -193,8 +196,8 @@ public final class FlowedBlockTest {
                 {"Empty", "空"},
                 {"SET", "套裝"},
                 {"Average DPS", "平均每秒傷害"},
-                {"Earth", "地"},
-                {"Thunder", "雷"},
+                {"Earth", "地屬性"},
+                {"Thunder", "雷屬性"},
                 {"Neutral", "無屬性"},
                 {"This item has no available Powder Sockets", "這件物品沒有可用的粉末插槽"},
                 {"No tales or legends have been recorded about this item",
