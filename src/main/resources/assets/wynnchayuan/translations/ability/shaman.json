@@ -4,7 +4,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 243,
-  "translated": 241,
+  "translated": 38,
   "note": "薩滿的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -318,7 +318,7 @@
    "code": "SHAMAN-P2-R04-C01"
   },
   "43adb50d7f10": {
-   "src": "Casting Totem while looking\nat an existing Totem will instead\nshove it forwards, dealing damage\nto any enemy it crashes into.\n(Sneak to reverse its direction)",
+   "src": "Casting Totem while looking\nat an existing Totem will shove it forwards \nfor half the mana cost, dealing damage\nto any enemy it crashes into.\n(Sneak to reverse its direction)",
    "dst": "在看著一個圖騰時再次施放圖騰技能會消耗一半的魔法將其往前推擊，對敵人造成傷害。(蹲下以調轉其方向)",
    "role": "desc",
    "kind": "block",
@@ -334,7 +334,7 @@
   },
   "4f2ab903a01c": {
    "src": "{#} Range: ~{~} Blocks",
-   "dst": "{#} 施放範圍：~{~} 格",
+   "dst": "{#} 範圍：~{~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -388,7 +388,7 @@
   },
   "13740eaf4ecc": {
    "src": "Increases Uproot and\nHaunting Memory's range.\nHitting Totem with either\nwill reset its duration.",
-   "dst": "提升Uproot和Haunting Memory的攻擊距離。擊中Totem將重置其持續時間。",
+   "dst": "提升Uproot和夢魘殘憶的攻擊距離。擊中Totem將重置其持續時間。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -514,8 +514,8 @@
    "code": "SHAMAN-P3-R04-C08"
   },
   "c65971db5c0f": {
-   "src": "ÀÀÀÀ({#} Earth: -{~})",
-   "dst": "ÀÀÀÀ({#} 地: -{~})",
+   "src": "{#}({#}{#}Earth: -{~})",
+   "dst": "{#}({#}{#}地：{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -527,8 +527,8 @@
    "code": "SHAMAN-P3-R04-C08"
   },
   "b44413872a86": {
-   "src": "{#} Total Damage: -{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#} 總傷害：{~}(你的每秒傷害，對於Uproot的每次命中)",
+   "src": "{#}{#}Total Damage: -{~} (of your DPS, for Uproot, per hit)",
+   "dst": "{#}{#}總傷害：{~}(你的每秒傷害，對於Uproot的每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -597,7 +597,7 @@
   },
   "5c5a95cd6901": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Walk Speed to Self",
-   "dst": "{~} 移動速度",
+   "dst": "{~} 自身移速降低",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -612,7 +612,7 @@
   },
   "ed504db50850": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Damage Bonus to Self",
-   "dst": "{~} 傷害加成",
+   "dst": "{~} 自身傷害降低",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -627,7 +627,7 @@
   },
   "78136d879be3": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Resistance Bonus to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ {~} 抗性加成",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ {~} 自身抗性降低",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -642,7 +642,7 @@
   },
   "f36c86906ba1": {
    "src": "{#} Fanatic: +{~} Resistance Bonus to Self",
-   "dst": "{#} 金虔：{~} 抗性加成",
+   "dst": "{#} 金虔：{~} 自身抗性增加",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -655,7 +655,7 @@
   },
   "b918194880fb": {
    "src": "{#} Heretic: +{~} Walk Speed to Self",
-   "dst": "{#} 蒼逆：{~} 移動速度",
+   "dst": "{#} 蒼逆：{~} 自身移速增加",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -668,7 +668,7 @@
   },
   "7e96bfc54b37": {
    "src": "{#} Lunatic: +{~} Damage Bonus to Self",
-   "dst": "{#} 赤狂：{~} 傷害加成",
+   "dst": "{#} 赤狂：{~} 自身傷害增加",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -866,7 +866,7 @@
   },
   "5a35e2f14ca0": {
    "src": "Sacrificial Shrine will\nheal {~} less health.",
-   "dst": "Sacrificial Shrine將治療生命值減少 {~}。",
+   "dst": "Sacrificial Shrine將治療量降低 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -939,7 +939,7 @@
   },
   "d41c168463fa": {
    "src": "{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "{#} 金虔：{~} 敵人抗性 ({#})",
+   "dst": "{#} 金虔：{~} 敵人抗性降低 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -952,7 +952,7 @@
   },
   "3d847bf8187e": {
    "src": "{#} Heretic: +{~} Slowness ({#}) to Enemies",
-   "dst": "{#} 蒼逆：{~} 緩速 ({#})",
+   "dst": "{#} 蒼逆：{~} 敵人移速降低 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -965,7 +965,7 @@
   },
   "16b074840c10": {
    "src": "{#} Lunatic: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "{#} 赤狂：{~} 虛弱 ({#})",
+   "dst": "{#} 赤狂：{~} 傷害降低 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1060,7 +1060,7 @@
   },
   "34d48c44f267": {
    "src": "When your Puppets have {~}s left,\nthey will charge towards enemies\nat high speed and explode.",
-   "dst": "當你人偶只剩下 {~} 秒時，他們會高速向敵人處衝刺並爆炸。",
+   "dst": "當你的人偶持續時間只剩下 {~} 秒時，他們會高速向敵人處衝刺並爆炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1131,7 +1131,7 @@
   },
   "52a185a21e2f": {
    "src": "Increase your maximum Blood Pool {#} by +{~} points.",
-   "dst": "Blood Pool {#} 的上限增加 {~} 點。",
+   "dst": "血池 {#} 的上限增加 {~} 點。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1173,8 +1173,8 @@
    "code": "SHAMAN-P5-R02-C00"
   },
   "2edac2f60646": {
-   "src": "{#} Effect: +{~} Damage Bonus to Summons",
-   "dst": "{#} 效果: +{~} 召喚物傷害加成",
+   "src": "{#}{#}Effect: +{~} Damage Bonus to Summons",
+   "dst": "{#}{#}效果: +{~} 召喚物傷害加成",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1200,7 +1200,7 @@
   },
   "7889c3be3230": {
    "src": "Regeneration will only heal\n{~} of its usual amount.",
-   "dst": "Regeneration只能治療一般治療量的 {~}。",
+   "dst": "Regeneration治療量為常態的 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1315,8 +1315,8 @@
    "code": "SHAMAN-P5-R02-C08"
   },
   "5159a03ec503": {
-   "src": "{#} Total Damage: +{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#} 總傷害: +{~}(你的每秒傷害，Uproot,每次命中)",
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Uproot, per hit)",
+   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，Uproot,每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1328,8 +1328,8 @@
    "code": "SHAMAN-P5-R02-C08"
   },
   "e65dc10bdc16": {
-   "src": "{#} Total Damage: {~} (of your DPS, from Bleeding)",
-   "dst": "{#} 總傷害: {~}(你的每秒傷害，流血)",
+   "src": "{#}{#}Total Damage: {~} (of your DPS, from Bleeding)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，流血)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1384,7 +1384,7 @@
   },
   "5a223145af2f": {
    "src": "{#} Fanatic: -{~} {#} Totem Cost",
-   "dst": "{#} 金虔：{~} {#} Totem消耗",
+   "dst": "{#} 金虔：{~} {#} 圖騰消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1397,7 +1397,7 @@
   },
   "4a9f57237bb5": {
    "src": "{#} Heretic: -{~} {#} Haul Cost",
-   "dst": "{#} 蒼逆：{~} {#} Haul消耗",
+   "dst": "{#} 蒼逆：{~} {#} 拖拽消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1410,7 +1410,7 @@
   },
   "5e513eaf9dfe": {
    "src": "{#} Lunatic: -{~} {#} Aura Cost",
-   "dst": "{#} 赤狂：-{~} {#} Aura 消耗",
+   "dst": "{#} 赤狂：{~} {#} 氣場消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1598,15 +1598,15 @@
     "shaman/Twisted Tether"
    ],
    "lines": 3,
-   "flat": "Nearby Bleeding {#} enemies will take damage for every {~} Health you lose. (Max {~} activations per second)",
+   "flat": "Nearby Bleeding {#}{#}enemies will take damage for every {~} Health you lose. (Max {~} activations per second)",
    "_raw": "Nearby Bleeding  enemies will take\ndamage for every 2% Health you lose.\n(Max 20 activations per second)",
    "tree": "04/shaman/05/005/006",
    "ability": "Twisted Tether",
    "code": "SHAMAN-P5-R05-C06"
   },
   "c7673b5ce4da": {
-   "src": "{#} Total Damage: {~} (of your DPS, per {~} health)",
-   "dst": "{#} 總傷害: {~}(你的每秒傷害，每 {~} 生命)",
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} health)",
+   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每 {~} 生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1705,7 +1705,7 @@
   },
   "065e3007a996": {
    "src": "{#} Fanatic: +{~} Resistance Bonus (❁) to Allies",
-   "dst": "{#} 金虔：{~} 友軍抗性加成 ❁",
+   "dst": "{#} 金虔：{~} 友軍抗性增加 ❁",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1719,7 +1719,7 @@
   },
   "566923b70b61": {
    "src": "{#} Heretic: +{~} Walk Speed to Allies",
-   "dst": "{#} 蒼逆：{~} 友軍移動速度",
+   "dst": "{#} 蒼逆：{~} 友軍移速增加",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1733,7 +1733,7 @@
   },
   "5aca7df2a7ef": {
    "src": "{#} Lunatic: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "{#} 赤狂：{~} 友軍傷害加成 ⚔",
+   "dst": "{#} 赤狂：{~} 友軍傷害增加 ⚔",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1760,7 +1760,7 @@
   },
   "b4a5417409d1": {
    "src": "Eldritch Call",
-   "dst": "駭人吶喊",
+   "dst": "異魔呼喚",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1860,8 +1860,8 @@
    "code": "SHAMAN-P6-R02-C00"
   },
   "dd2a876b1fb5": {
-   "src": "{#} Effects: {~} Slowness ({#}) to Enemies",
-   "dst": "{#} 效果: {~} 緩速 ({#}) 給敵人",
+   "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies",
+   "dst": "{#}{#}效果: {~} 緩速 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1984,7 +1984,7 @@
   },
   "cd58c4a4b11a": {
    "src": "Increase your maximum Blood Pool {#} by +{~} points.\nIncrease your maximum Bleeding {#} duration by +{~}s.",
-   "dst": "你的 血池 {#} 容量提升 {~} 點。失血 {#} 可額外附加 {~} 秒。",
+   "dst": "你的 血池 {#} 容量提升 {~} 點。失血 {#} 最長持續時間增大 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2058,8 +2058,8 @@
    "code": "SHAMAN-P6-R04-C00"
   },
   "3f07b666370c": {
-   "src": "{#} Effect: +{~} Attack Speed to Puppets",
-   "dst": "{#} 效果：+{~} 人偶攻擊速度",
+   "src": "{#}{#}Effect: +{~} Attack Speed to Puppets",
+   "dst": "{#}{#}效果：+{~} 人偶攻擊速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2085,7 +2085,7 @@
   },
   "d7df9f2b9989": {
    "src": "Hitting your Puppets with Main Attack will\ncause them to lose {~}s of their duration\nper beam and give them a damage boost.",
-   "dst": "每發普通攻擊的光束命中人偶會使其持續時間減少 {~} 秒，並為其提供傷害加成。",
+   "dst": "每發Main Attack的光束命中人偶會使其持續時間減少 {~} 秒，並為其提供傷害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2099,8 +2099,8 @@
    "code": "SHAMAN-P6-R04-C02"
   },
   "6f5fa74b0433": {
-   "src": "{#} Effect: +{~} Damage Bonus (⚔) to Puppets",
-   "dst": "{#} 效果：{~} 人偶傷害加成 (⚔)",
+   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Puppets",
+   "dst": "{#}{#}效果：{~} 人偶傷害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2197,7 +2197,7 @@
   },
   "7312504927e6": {
    "src": "{#} Fanatic: +{~} Resistance Bonus",
-   "dst": "{#} 金虔：{~} 抗性加成",
+   "dst": "{#} 金虔：{~} 自身抗性增加",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2210,7 +2210,7 @@
   },
   "06012ad7f59c": {
    "src": "{#} Heretic: +{~} Walk Speed",
-   "dst": "{#} 蒼逆：{~} 移動速度",
+   "dst": "{#} 蒼逆：{~} 自身移速增加",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2223,7 +2223,7 @@
   },
   "42f923f03a8c": {
    "src": "{#} Lunatic: +{~} Damage Bonus",
-   "dst": "{#} 赤狂：{~} 傷害加成",
+   "dst": "{#} 赤狂：{~} 自身傷害增加",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2321,8 +2321,8 @@
    "code": "SHAMAN-P7-R01-C01"
   },
   "d8f680e0d001": {
-   "src": "{#} Effect: +{~} Walk Speed to Self",
-   "dst": "{#} 效果：{~} 移動速度",
+   "src": "{#}{#}Effect: +{~} Walk Speed to Self",
+   "dst": "{#}{#}效果：{~} 自身移速",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2348,7 +2348,7 @@
   },
   "d20b475ddac7": {
    "src": "When any player takes damage within\nyour Totem's range, {~} of the damage\ntaken proportional to your maximum\nhealth is added to your Blood Pool {#}.\n(Max {~} Blood Pool per second)",
-   "dst": "若 Totem 範圍內有任何玩家受到傷害，該傷害的 {~} 會依其與你最大生命的比例轉化為血池 {#}。（每秒最多補充 {~} 點血池）",
+   "dst": "若Totem的範圍內有任何玩家受傷，則使傷害的 {~} 依照其與你最大生命的比例轉化為血池 {#}。(每秒最多補充 {~} 點血池)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2403,8 +2403,8 @@
    "code": "SHAMAN-P7-R02-C02"
   },
   "1e737fcaf8d9": {
-   "src": "{#} Effect: +{~} Attack Speed to Summons",
-   "dst": "{#} 效果: +{~} 召喚物攻擊速度",
+   "src": "{#}{#}Effect: +{~} Attack Speed to Summons",
+   "dst": "{#}{#}效果: +{~} 召喚物攻擊速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2430,7 +2430,7 @@
   },
   "263b80eccc06": {
    "src": "Increase the power of all Chants.",
-   "dst": "提升所有靈頌的效果",
+   "dst": "提升所有靈頌的效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2457,7 +2457,7 @@
    "code": "SHAMAN-P7-R03-C06"
   },
   "4ea103431061": {
-   "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
+   "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's{#}range\nalso adds +{~} points to your Blood Pool {#}.",
    "dst": "失血 {#} 的敵人每 {~} 秒受到傷害。若 失血 {#} 的目標在Totem內，則會額外使 血池 {#} 增加 {~} 點。",
    "role": "desc",
    "kind": "block",
@@ -2465,7 +2465,7 @@
     "shaman/Sanguine Strike"
    ],
    "lines": 3,
-   "flat": "Bleeding {#} enemies take damage every {~}s. Bleeding {#} damage dealt within Totem's range also adds +{~} points to your Blood Pool {#}.",
+   "flat": "Bleeding{#}{#}{#}enemies take damage every {~}s. Bleeding{#}{#}{#}damage dealt within Totem's{#}range also adds +{~} points to your Blood Pool {#}.",
    "_raw": "Bleeding  enemies take damage every 0.5s.\nBleeding  damage dealt within Totem's range\nalso adds +0.8 points to your Blood Pool .",
    "tree": "04/shaman/07/003/006",
    "ability": "Sanguine Strike",
@@ -2543,15 +2543,15 @@
    "code": "SHAMAN-P7-R04-C01"
   },
   "8baf118732cc": {
-   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ {~} 自身跳躍高度",
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ {~} {#} 自身跳躍高度",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Soaring Wingbeats"
    ],
    "lines": 1,
-   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Jump Height to Self",
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
    "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +2 Jump Height to Self",
    "tree": "04/shaman/07/004/001",
    "ability": "Soaring Wingbeats",
@@ -2559,7 +2559,7 @@
   },
   "fc7b11fd5b9f": {
    "src": "{#} Effects: +{~} Walk Speed to Self",
-   "dst": "{#} 效果：{~} 自身移動速度",
+   "dst": "{#} 效果：{~} 自身移速增加",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2585,7 +2585,7 @@
   },
   "a9684da70f62": {
    "src": "Awakened",
-   "dst": "覺醒之面",
+   "dst": "覺醒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2613,7 +2613,7 @@
   },
   "bc47174848e7": {
    "src": "Switching to an attached Mask\nwhile Awakened ♚ will immediately\nrecall the Mask back to you.",
-   "dst": "",
+   "dst": "在 覺醒 ♚ 狀態下切換到被附著的假面則會立刻將其喚回。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2663,7 +2663,7 @@
     "shaman/Blood Sorrow"
    ],
    "lines": 3,
-   "flat": "You and any allies within the beam will receive +{~} Overhealth ❤ per hit. Bonus health decays over {~}s.",
+   "flat": "You and any allies within the beam will receive +{~}{#}Overhealth ❤ per hit. Bonus health decays over {~}s.",
    "_raw": "You and any allies within the beam will\nreceive +2% Overhealth ❤ per hit.\nBonus health decays over 20s.",
    "tree": "04/shaman/07/004/007",
    "ability": "Blood Sorrow",
@@ -2684,7 +2684,7 @@
   },
   "b39c62d4418f": {
    "src": "When you or your Summons kill an enemy,\nor when you kill a Puppet with Friendly Fire,\ngain +{~} Max Puppets ⚘ for {~}s. (Max +{~})",
-   "dst": "當你或召喚物殺死敵人或你使用Friendly Fire殺死人偶後，接下來的 {~2} 秒內最大人偶數 ⚘ 增加 {~1}。(最多增加 {~3} 個)",
+   "dst": "當你或召喚物殺死敵人或你使用Friendly Fire殺死人偶後，接下來的 {~2} 秒內 人偶上限 ⚘ 增加 {~1}。(最多增加 {~3} 個)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2712,14 +2712,14 @@
   },
   "6c1c64738de9": {
    "src": "Totem summons Puppets {~} faster.",
-   "dst": "Totem 生成人偶的時間縮短 {~}。",
+   "dst": "Totem生成人偶的時間減少 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Puppetry"
    ],
    "lines": 1,
-   "flat": "Totem summons Puppets {~} faster.",
+   "flat": "Totem summons Puppets{#}{~} faster.",
    "_raw": "Totem summons Puppets 25% faster.",
    "tree": "04/shaman/08/001/001",
    "ability": "Puppetry",
@@ -2727,7 +2727,7 @@
   },
   "417be8f98d90": {
    "src": "Eldritch Transfusion",
-   "dst": "駭人灌輸",
+   "dst": "異魔灌注",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2747,7 +2747,7 @@
     "shaman/Eldritch Transfusion"
    ],
    "lines": 3,
-   "flat": "For each Transfused {#} Eldritch Call has, its attacks deal more damage. All Transfused {#} is lost when Eldritch Call expires.",
+   "flat": "For each Transfused {#}{#}Eldritch Call has, its attacks deal more damage. All Transfused {#} is lost when Eldritch Call expires.",
    "_raw": "For each Transfused  Eldritch Call has, its\nattacks deal more damage. All Transfused \nis lost when Eldritch Call expires.",
    "tree": "04/shaman/08/001/007",
    "ability": "Eldritch Transfusion",
@@ -2769,8 +2769,8 @@
    "code": "SHAMAN-P8-R01-C07"
   },
   "87186ab9c023": {
-   "src": "{#} Effect: +{~} damage to Eldritch Call (Per stack)",
-   "dst": "{#} 效果：{~} Eldritch Call傷害(每層)",
+   "src": "{#}{#}Effect: +{~} damage to Eldritch Call (Per stack)",
+   "dst": "{#}{#}效果：{~} Eldritch Call傷害(每層)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2951,7 +2951,7 @@
   },
   "8b07f05f3685": {
    "src": "Increase Aura's damage.",
-   "dst": "提升Aura的傷害",
+   "dst": "提升Aura的傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2994,7 +2994,7 @@
   },
   "70c4646c73f7": {
    "src": "Increase Totemic Smash's damage.",
-   "dst": "提升Totemic Smash的傷害",
+   "dst": "提升Totemic Smash的傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3009,7 +3009,7 @@
   },
   "33f14bab9c97": {
    "src": "When wearing the Mask of the Lunatic {#},\nTotem will smash down onto the ground.",
-   "dst": "當戴著 赤狂面具 {#} 時，Totem 會朝地面砸下。",
+   "dst": "當穿戴 赤狂假面 {#} 時，Totem會用力的砸向地面",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3164,7 +3164,7 @@
   },
   "5e7137965b1a": {
    "src": "When wearing the Mask of the Awakened ♚,\nall of your other Masks will spin around\nyou, dealing damage and applying\nHaunting Memory's effects.",
-   "dst": "當穿戴著 覺醒假面 ♚ 時，其餘假面會圍繞著你，造成傷害且附加Haunting Memory的效果。",
+   "dst": "當穿戴 覺醒假面 ♚ 時，其餘假面會圍繞著你，造成傷害且附加Haunting Memory的效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3207,7 +3207,7 @@
   },
   "c1b9e678c33c": {
    "src": "Exploding Puppets will cause the\nAbomination to explode when it dies.",
-   "dst": "",
+   "dst": "Exploding Puppets會使Abomination在死亡後爆炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3306,7 +3306,7 @@
   },
   "8df897e27a6e": {
    "src": "Monument to Gloom",
-   "dst": "絕望碑文",
+   "dst": "幽黯魔碑",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3318,7 +3318,7 @@
    "code": "SHAMAN-P9-R02-C07"
   },
   "59c39ae5a547": {
-   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#} to {~}.",
+   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#}{#}to {~}.",
    "dst": "使用技能或損失生命以將你的 大招 {#} 充能至 {~}。",
    "role": "desc",
    "kind": "block",
@@ -3326,7 +3326,7 @@
     "shaman/Monument to Gloom"
    ],
    "lines": 2,
-   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#} to {~}.",
+   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#}{#}to {~}.",
    "_raw": "Activate abilities or lose health to charge\nyour Ultimate Meter  to 100%.",
    "tree": "04/shaman/09/002/007",
    "ability": "Monument to Gloom",
@@ -3334,7 +3334,7 @@
   },
   "5e39acc55201": {
    "src": "Others receive +{~} Health {#} every {~}s.",
-   "dst": "其餘友軍每 {~2} 秒獲得 +{~1} 生命 {#}。",
+   "dst": "其餘友軍則每 {~2} 秒獲得 {~1} 生命 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3349,7 +3349,7 @@
   },
   "c13f96b01816": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "你的Totem將被駭人惡魔接管，每 {~} 秒使周圍的喚血祭司獲得 {~} 點 血池 {#}。",
+   "dst": "你的Totem將被駭人惡魔接管，每 {~} 秒使周圍的喚血侍者獲得 {~} 點 血池 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
