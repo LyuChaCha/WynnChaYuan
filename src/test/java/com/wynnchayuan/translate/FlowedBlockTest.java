@@ -98,6 +98,7 @@ public final class FlowedBlockTest {
         check("每行開頭帶排版偏移也翻得出來（實際：" + shorten(offset) + "）",
                 offset != null && offset.startsWith("這把從"));
 
+        newLabels(store);
         shaman(store);
         divider(store);
         majorId(store);
@@ -150,9 +151,12 @@ public final class FlowedBlockTest {
         }
         String all = out.stream().map(Component::getString)
                 .reduce("", String::concat);
+        // 不釘特定譯名——翻譯團隊隨時會改（實測 華綻 就被改成了 散華）。
+        // 從語料把當下的譯名查出來，釘的是「有翻」與「顏色跟過去了」。
+        String zh = store.lookup("Efflorescence");
         check("名稱與敘述都翻了（實際：" + shorten(all) + "）",
-                all.contains("華綻") && all.contains("所有元素"));
-        check("名稱保住自己的顏色", colourOf(out, "華綻") == 0xE0B3E6);
+                zh != null && all.contains(zh) && all.contains("所有元素"));
+        check("名稱保住自己的顏色", colourOf(out, zh) == 0xE0B3E6);
         check("末尾的元素保住原本的綠（實際："
                         + Integer.toHexString(colourOf(out, "元素")) + "）",
                 colourOf(out, "元素") == 0x55FF55);
@@ -178,6 +182,43 @@ public final class FlowedBlockTest {
             out.addAll(flatten(child));
         }
         return out;
+    }
+
+    /**
+     * 這一批補的 UI 字串真的查得到。
+     *
+     * <p>光是「寫進 json」不代表畫面上會換——鍵要跟遊戲送來的模板一模一樣。
+     * 這裡拿實際出貨的語料跑一次，少一個空格、多一個標點都會在這裡被抓到。
+     */
+    private static void newLabels(TranslationStore store) {
+        String[][] want = {
+                {"POWDER SOCKETS", "粉末插槽"},
+                {"Empty", "空"},
+                {"SET", "套裝"},
+                {"Average DPS", "平均每秒傷害"},
+                {"Earth", "地屬性"},
+                {"Thunder", "雷屬性"},
+                {"Neutral", "無屬性"},
+                {"This item has no available Powder Sockets", "這件物品沒有可用的粉末插槽"},
+                {"No tales or legends have been recorded about this item",
+                 "關於這件物品，沒有留下任何傳說或故事"},
+                {"Equip more pieces of this set to unlock its bonus",
+                 "裝備更多這套的部件即可解鎖套裝加成"},
+        };
+        for (String[] pair : want) {
+            String got = store.lookup(pair[0]);
+            check("查得到「" + pair[0] + "」（拿到：" + got + "）",
+                    pair[1].equals(got));
+        }
+
+        // 專業名稱在畫面上是包在整段裡的（`Lv. 52 Fishing [34.57%]`），
+        // 整段查不到，所以收成可替換的詞。
+        TranslationStore.Term term = store.findTerm("Lv. 52 Fishing [34.57%]", 0);
+        check("整段裡的專業名稱換得掉（拿到："
+                        + (term == null ? "null" : term.translation()) + "）",
+                term != null && "釣魚".equals(term.translation()));
+        // 反面：小寫的一般字不能被當成專業名稱換掉
+        check("小寫的不換", store.findTerm("go fishing with me", 0) == null);
     }
 
     /**
