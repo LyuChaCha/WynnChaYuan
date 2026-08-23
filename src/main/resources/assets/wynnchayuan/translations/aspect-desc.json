@@ -3,8 +3,8 @@
   "domain": "aspect-desc",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 195,
-  "translated": 195,
+  "count": 216,
+  "translated": 216,
   "note": "Aspect 各階的能力說明，取自 Wynntils CDN。句型高度重複，所以是用規則轉的——同一個句型永遠得到同樣的中文。技能名稱原樣留著，交給既有的技能名詞典去換。dst 空白的代表還沒有對應的句型規則，畫面上會顯示灰色原文。"
  },
  "entries": {
@@ -1372,6 +1372,111 @@
    "role": "desc",
    "aspect": "Warrior's Embodiment of Everlasting Perseverance",
    "class": "warrior"
+  },
+  "blk000": {
+   "src": "Ascension lasts {~} longer. Extinction Event spawns {~} bombs. Twilight Zone's mark cap is {~} higher.",
+   "dst": "Ascension 的持續時間延長 {~1}。Extinction Event 多生成 {~2} 顆炸彈。Twilight Zone 的標記上限提高 {~3}。",
+   "role": "desc"
+  },
+  "blk001": {
+   "src": "Multihit gains {~} {#} Range. Backstab gains {~} {#} Range.",
+   "dst": "Multihit 的 {#} 施放範圍增加 {~1}。Backstab 的 {#} 施放範圍增加 {~2}。",
+   "role": "desc"
+  },
+  "blk002": {
+   "src": "Increase the amount of Shurikens you can hold by. {~}",
+   "dst": "可同時持有的 Shuriken 數量增加 {~}。",
+   "role": "desc"
+  },
+  "blk003": {
+   "src": "Increase your maximum Marks {#} by {~}. Decrease your damage per Mark {#} by {~}.",
+   "dst": "{#} 標記上限增加 {~1}。每層 {#} 標記提供的傷害降低 {~2}。",
+   "role": "desc"
+  },
+  "blk004": {
+   "src": "Decrease your maximum Knives by {~}. Increase the damage of each Knife by {~}.",
+   "dst": "Knife 的數量上限減少 {~1}，但每把 Knife 的傷害提高 {~2}。",
+   "role": "desc"
+  },
+  "blk005": {
+   "src": "Pierce the Veil lasts {~}s longer. Another Self has {~} more health. Serpent's Garden lasts {~}s longer.",
+   "dst": "Pierce the Veil 的持續時間延長 {~1} 秒。Another Self 的生命值增加 {~2}。Serpent's Garden 的持續時間延長 {~3} 秒。",
+   "role": "desc"
+  },
+  "blk006": {
+   "src": "Chaos Explosion requires {~} mana to activate. Chaos Explosion casts {~} faster.",
+   "dst": "Chaos Explosion 的發動所需魔力減少 {~1}，施放速度加快 {~2}。",
+   "role": "desc"
+  },
+  "blk007": {
+   "src": "Ophanim gains {~} {#} Range. Ophanim's orbs travel {~} faster.",
+   "dst": "Ophanim 的 {#} 施放範圍增加 {~1}，光球的移動速度加快 {~2}。",
+   "role": "desc"
+  },
+  "blk008": {
+   "src": "Dawn spawns {~} more wisps. Gravitational Collapse lasts {~}s longer. Tangled Origin attacks {~} faster.",
+   "dst": "Dawn 多生成 {~1} 團幽光。Gravitational Collapse 的持續時間延長 {~2} 秒。Tangled Origin 的攻擊速度加快 {~3}。",
+   "role": "desc"
+  },
+  "blk009": {
+   "src": "Puppet Master gains {~} Puppets. {#} Total Damage: {~} (of your DPS) ({#} Earth: {~})",
+   "dst": "Puppet Master 增加 {~1} 具傀儡。{#} 總傷害: {~2}（你的每秒傷害）（{#} 地屬性: {~3}）",
+   "role": "desc"
+  },
+  "blk010": {
+   "src": "Puppet Master gains {~} Puppets. {#} Total Damage: {~} (of your DPS) ({#} Air: {~}) ({#} Earth: {~})",
+   "dst": "Puppet Master 增加 {~1} 具傀儡。{#} 總傷害: {~2}（你的每秒傷害）（{#} 風屬性: {~3}）（{#} 地屬性: {~4}）",
+   "role": "desc"
+  },
+  "blk011": {
+   "src": "Puppet Master gains {~} Puppets. {#} Total Damage: {~} (of your DPS) ({#} Damage: {~}) ({#} Air: {~}) ({#} Earth: {~})",
+   "dst": "Puppet Master 增加 {~1} 具傀儡。{#} 總傷害: {~2}（你的每秒傷害）（{#} 傷害: {~3}）（{#} 風屬性: {~4}）（{#} 地屬性: {~5}）",
+   "role": "desc"
+  },
+  "blk012": {
+   "src": "Awakened requires {~} mana to activate. Awakened gains {~}s {#} Duration.",
+   "dst": "Awakened 的發動所需魔力減少 {~1}，{#} 持續時間延長 {~2} 秒。",
+   "role": "desc"
+  },
+  "blk013": {
+   "src": "Patchwork Abomination lasts {~}s longer. Sundered Skies' delay between lightning strikes is {~}s shorter. Monument to Gloom lasts {~} longer.",
+   "dst": "Patchwork Abomination 的持續時間延長 {~1} 秒。Sundered Skies 兩次落雷之間的間隔縮短 {~2} 秒。Monument to Gloom 的持續時間延長 {~3}。",
+   "role": "desc"
+  },
+  "blk014": {
+   "src": "Triple Totem gains {~} Totem. Totem and Aura will do {~} less damage.",
+   "dst": "Triple Totem 增加 {~1} 座圖騰，但 Totem 與 Aura 的傷害降低 {~2}。",
+   "role": "desc"
+  },
+  "blk015": {
+   "src": "Hummingbird's Song gains {~} Hummingbird. Hummingbirds attack {~} faster.",
+   "dst": "Hummingbird's Song 增加 {~1} 隻蜂鳥，蜂鳥的攻擊速度加快 {~2}。",
+   "role": "desc"
+  },
+  "blk016": {
+   "src": "Uppercut deals {~} neutral and {~} Damage in all Elements. {#} Total Damage: {~} ({#} Damage: {~}) ({#}{#}{#}{#}{#} Damage: {~})",
+   "dst": "Uppercut 造成 {~1} 無屬性傷害，以及 {~2} 全元素傷害。{#} 總傷害: {~3}（{#} 傷害: {~4}）（{#}{#}{#}{#}{#} 傷害: {~5}）",
+   "role": "desc"
+  },
+  "blk017": {
+   "src": "War Scream grants a higher damage boost. {#} Effect: {~} Damage Bonus (⚔) to Players",
+   "dst": "War Scream 提供更高的傷害加成。{#} 效果: 對玩家 {~} 傷害加成（⚔）",
+   "role": "desc"
+  },
+  "blk018": {
+   "src": "Bash gains {~}x as many hits and more damage. {#} Total Damage: {~} ({#} Thunder: {~})",
+   "dst": "Bash 的打擊次數變為 {~1} 倍，傷害也提高。{#} 總傷害: {~2}（{#} 雷屬性: {~3}）",
+   "role": "desc"
+  },
+  "blk019": {
+   "src": "Blood Pact's health cost is reduced by {~}. Blood Pact adds {~} to {~} more damage when using health.",
+   "dst": "Blood Pact 的生命消耗降低 {~1}。以生命施放時，Blood Pact 額外增加 {~2} 至 {~3} 傷害。",
+   "role": "desc"
+  },
+  "blk020": {
+   "src": "Beyond Salvation spawns {~} spikes. Zenith Stance lasts {~}s longer. Judgement lasts {~} longer.",
+   "dst": "Beyond Salvation 多生成 {~1} 根尖刺。Zenith Stance 的持續時間延長 {~2} 秒。Judgement 的持續時間延長 {~3}。",
+   "role": "desc"
   }
  }
 }
