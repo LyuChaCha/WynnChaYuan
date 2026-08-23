@@ -155,8 +155,8 @@ public final class LineTranslator {
      * <p>呼叫端會把連續幾行併起來、從最長試到兩行。全部落空之後才記這一筆——
      * 見 {@code TooltipPanel} 裡的說明。
      */
-    public static void noteBlockMiss(String template) {
-        FlowedDebug.miss(template);
+    public static void noteBlockMiss(String template, TranslationStore store) {
+        FlowedDebug.miss(template, store);
     }
 
     /**
