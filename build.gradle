@@ -229,3 +229,11 @@ tasks.register('runUprightChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.UprightTest'
 }
 tasks.named('check') { dependsOn 'runUprightChecks' }
+
+tasks.register('runColumnCentreChecks', JavaExec) {
+    group = 'verification'
+    description = '置中多欄行的分組、圖示色段查表、譯名前後多餘的空格'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ColumnCentreTest'
+}
+tasks.named('check') { dependsOn 'runColumnCentreChecks' }
