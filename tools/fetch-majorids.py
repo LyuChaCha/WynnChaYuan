@@ -32,11 +32,30 @@ INDEX = ROOT / "src/main/resources/assets/wynnchayuan/translations/_index.json"
 URL = "https://cdn.wynntils.com/static/Reference/gear.json"
 
 TAGS = re.compile(r"<[^>]+>")
+NUMBER = re.compile(r"[+-]?\d+(?:\.\d+)?%?")
+# 私用區與 Wynncraft 的排版平面。與 GlyphSplitter.isGlyphCodePoint 同一套範圍。
+GLYPH_RUN = re.compile(
+    "[%s-%s%s-%s%s-%s]+"
+    % (chr(0xE000), chr(0xF8FF), chr(0xCF000), chr(0xD1000),
+       chr(0xF0000), chr(0x10FFFF))
+)
 
 
 def clean(text: str) -> str:
-    """把 CDN 的 HTML 標記清掉，留下遊戲裡實際顯示的文字。"""
-    return re.sub(r"\s+", " ", html.unescape(TAGS.sub("", text))).strip()
+    """把 CDN 的 HTML 標記清掉，換成遊戲端<b>查表時用的模板</b>。
+
+    <h2>為什麼不能只剝標籤</h2>
+    元素圖示是標籤的<b>內文</b>，不是標籤本身：
+
+        <span class='font-common'>U+E005</span>100%
+
+    剝掉 <span> 之後 U+E005 原封不動留著。但遊戲端送過來的模板是把每一段
+    符號換成 {#}、每個數值換成 {~} 之後才拿去查表的，所以留著原始碼位的鍵
+    <b>永遠對不上</b>——而且完全不會報錯，畫面上只是「這條 Major ID 沒翻」。
+    `Cherry Bombs` 的四個元素傷害就是這樣整條掉掉的。
+    """
+    plain = re.sub(r"\s+", " ", html.unescape(TAGS.sub("", text))).strip()
+    return NUMBER.sub("{~}", GLYPH_RUN.sub("{#}", plain))
 
 
 def fetch() -> dict[str, str]:
