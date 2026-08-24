@@ -11,7 +11,7 @@
  "entries": {
   "56cc40668e58": {
    "src": "Click Combo: RIGHT-LEFT-RIGHT",
-   "dst": "",
+   "dst": "技能組合：右-左-右",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -29,7 +29,7 @@
   },
   "20686a82680e": {
    "src": "{#} Main Attack Damage: +{~}",
-   "dst": "{#} 普攻傷害: +{~}",
+   "dst": "{#} 普攻傷害值增加：{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -45,7 +45,7 @@
   },
   "49955e209ec0": {
    "src": "{#} Range: +{~} Blocks",
-   "dst": "{#} 施放範圍: +{~} 格",
+   "dst": "{#} 範圍增加：{~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -61,7 +61,7 @@
   },
   "49f06f500b08": {
    "src": "Click Combo: RIGHT-RIGHT-RIGHT",
-   "dst": "",
+   "dst": "技能組合：右-右-右",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -79,7 +79,7 @@
   },
   "ee61b6271b1d": {
    "src": "Click Combo: RIGHT-LEFT-LEFT",
-   "dst": "",
+   "dst": "技能組合：右-左-左",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -97,7 +97,7 @@
   },
   "ef3980c16017": {
    "src": "Click Combo: RIGHT-RIGHT-LEFT",
-   "dst": "",
+   "dst": "技能組合：右-右-左",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -148,7 +148,7 @@
   },
   "a0193a86644d": {
    "src": "{#} Earth Damage: +{~}",
-   "dst": "{#} 地屬性傷害: +{~}",
+   "dst": "{#} 地屬性傷害百分比增加：{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -164,7 +164,7 @@
   },
   "538120c14692": {
    "src": "{#} Earth Damage: +{~}-{~}",
-   "dst": "{#} 地屬性傷害: +{~1}-{~2}",
+   "dst": "{#} 地屬性傷害值增加：{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -213,7 +213,7 @@
   },
   "6d5795b02cf6": {
    "src": "{#} Thunder Damage: +{~}",
-   "dst": "{#} 雷屬性傷害: +{~}",
+   "dst": "{#} 雷屬性傷害百分比增加：{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -229,7 +229,7 @@
   },
   "3553e6fbf146": {
    "src": "{#} Thunder Damage: +{~}-{~}",
-   "dst": "{#} 雷屬性傷害: +{~1}-{~2}",
+   "dst": "{#} 雷屬性傷害值增加：{~1}-{~2}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -278,7 +278,7 @@
   },
   "fee09f2e5823": {
    "src": "{#} Air Damage: +{~}",
-   "dst": "{#} 風屬性傷害: +{~}",
+   "dst": "{#} 風屬性傷害百分比增加：{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -294,7 +294,7 @@
   },
   "75b4ca9d0843": {
    "src": "{#} Air Damage: +{~}-{~}",
-   "dst": "{#} 風屬性傷害: +{~1}-{~2}",
+   "dst": "{#} 風屬性傷害值增加：{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -343,7 +343,7 @@
   },
   "5c4009a9c0cc": {
    "src": "{#} Fire Damage: +{~}",
-   "dst": "{#} 火屬性傷害: +{~}",
+   "dst": "{#} 火屬性傷害百分比增加：{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -359,7 +359,7 @@
   },
   "42df26d23984": {
    "src": "{#} Fire Damage: +{~}-{~}",
-   "dst": "{#} 火屬性傷害: +{~1}-{~2}",
+   "dst": "{#} 火屬性傷害值增加：{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -408,7 +408,7 @@
   },
   "1a60d536e037": {
    "src": "{#} Water Damage: +{~}",
-   "dst": "{#} 水屬性傷害: +{~}",
+   "dst": "{#} 水屬性傷害百分比增加：{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -424,7 +424,7 @@
   },
   "0bf7849b179e": {
    "src": "{#} Water Damage: +{~}-{~}",
-   "dst": "{#} 水屬性傷害: +{~1}-{~2}",
+   "dst": "{#} 水屬性傷害值增加：{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -440,7 +440,7 @@
   },
   "77d65c92fa36": {
    "src": "{#} Total Damage: -{~} (of your DPS)",
-   "dst": "{#} 總傷害: -{~} (你的每秒傷害)",
+   "dst": "{#} 總傷害降低：{~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -456,7 +456,7 @@
   },
   "5e2300669a73": {
    "src": "{#} Range: +{~} Block",
-   "dst": "{#} 施放範圍: +{~} 格",
+   "dst": "{#} 範圍增加：{~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -470,7 +470,7 @@
   },
   "0aca61e86ca0": {
    "src": "{#} Cooldown: {~}s (per enemy)",
-   "dst": "{#} 冷卻時間: {~} 秒 (每個敵人)",
+   "dst": "{#} 冷卻時間：{~} 秒 (每個敵人)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -485,7 +485,7 @@
   },
   "4680865ef616": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "{#} 效果: +{~} 傷害加成 (⚔) 給友軍",
+   "dst": "{#} 效果：{~} 友軍傷害增加 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -499,7 +499,7 @@
   },
   "6e6c2b5a971f": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Self",
-   "dst": "{#} 效果: +{~} 傷害加成 (⚔) 給自己",
+   "dst": "{#} 效果：{~} 自身傷害增加 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -513,7 +513,7 @@
   },
   "bc6cb1578dee": {
    "src": "{#} Mana Cost: +{~}",
-   "dst": "{#} 魔力消耗: +{~}",
+   "dst": "{#} 魔力消耗增加：{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -528,7 +528,7 @@
   },
   "7b427472724e": {
    "src": "{#} Area of Effect: +{~} Blocks (Circle-Shaped)",
-   "dst": "{#} 技能範圍: +{~} 格 (圓形)",
+   "dst": "{#} 作用範圍：{~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -544,7 +544,7 @@
   },
   "7b25e66edae5": {
    "src": "{#} Range: {~} Blocks (Circle-Shaped)",
-   "dst": "{#} 施放範圍: {~} 格 (圓形)",
+   "dst": "{#} 範圍：{~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -559,7 +559,7 @@
   },
   "a728a601182e": {
    "src": "Activate abilities or take damage to charge\nyour Ultimate Meter {#} to {~}",
-   "dst": "發動技能或受到傷害，\n將你的終極計量表 {#} 充能至 {~}",
+   "dst": "使用技能或受到傷害以將你的 大招 {#} 充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -577,7 +577,7 @@
   },
   "0877649c8097": {
    "src": "{#} Total Damage: {~} (Main Attack Damage)",
-   "dst": "{#} 總傷害: {~} (普攻傷害)",
+   "dst": "{#} 總傷害：{~} (普攻傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -593,7 +593,7 @@
   },
   "0c3d09c9faee": {
    "src": "{#} Main Attack Range: +{~} Blocks",
-   "dst": "{#} 普攻距離: +{~} 格",
+   "dst": "{#} 普攻距離增加：{~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -608,7 +608,7 @@
   },
   "5085eb3cc731": {
    "src": "{#} Total Heal: {~} (of your max health)",
-   "dst": "{#} 總治療量: {~} (你的最大生命)",
+   "dst": "{#} 總治療量：{~} (你的最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -623,7 +623,7 @@
   },
   "c5277bd98efa": {
    "src": "{#} Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
-   "dst": "{#} 效果: {~1} 緩速 ({#}) 給敵人，每次命中 (上限 {~2})",
+   "dst": "{#} 效果：每次命中 {~1} 敵人速度降低 ({#}) (上限 {~2})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -637,7 +637,7 @@
   },
   "0d89fae60f2a": {
    "src": "{#} Effect: {~} Resistance Bonus (❁)",
-   "dst": "{#} 效果: {~} 抗性加成 (❁)",
+   "dst": "{#} 效果：{~} 抗性增加 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -651,7 +651,7 @@
   },
   "72981e56a191": {
    "src": "{#} Vision: {~} Blocks (Circle-Shaped)",
-   "dst": "{#} 視野: {~} 格 (圓形)",
+   "dst": "{#} 視野：{~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -667,7 +667,7 @@
   },
   "1099cfcd1bd2": {
    "src": "Click Combo: F",
-   "dst": "",
+   "dst": "技能組合：F",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -685,7 +685,7 @@
   },
   "52f78b2c4c51": {
    "src": "Activate abilities to charge\nyour Ultimate Meter {#} to {~}",
-   "dst": "發動技能，\n將你的終極計量表 {#} 充能至 {~}",
+   "dst": "使用技能以將你的 大招 {#} 充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -703,7 +703,7 @@
   },
   "2500b5ec2818": {
    "src": "{#} Total Damage: {~} (of your DPS, per hit)",
-   "dst": "{#} 總傷害: {~} (你的每秒傷害，每次命中)",
+   "dst": "{#} 每次命中傷害：{~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -717,7 +717,7 @@
   },
   "12f8cc831fc1": {
    "src": "{#} Effect: Blindness ({#}) to Enemies",
-   "dst": "{#} 效果: 致盲 ({#}) 給敵人",
+   "dst": "{#} 效果：敵方失明 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -732,7 +732,7 @@
   },
   "198ba6e435d7": {
    "src": "{#} Area of Effect: +{~} Blocks",
-   "dst": "{#} 技能範圍: +{~} 格",
+   "dst": "{#} 作用範圍增加：{~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -746,7 +746,7 @@
   },
   "0088ee0ebbe9": {
    "src": "{#} Effects: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "{#} 效果: -{~} 傷害加成 ({#}) 給敵人",
+   "dst": "{#} 效果：{~} 敵人傷害降低 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -760,7 +760,7 @@
   },
   "9b1fd4b9739f": {
    "src": "{#} Area of Effect: +{~} Block (Circle-Shaped)",
-   "dst": "{#} 技能範圍: +{~} 格 (圓形)",
+   "dst": "{#} 作用範圍增加：{~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -776,7 +776,7 @@
   },
   "c4a7f2585ce7": {
    "src": "{#} Effect: {~} Resistance Bonus (❁) to Self",
-   "dst": "{#} 效果: {~} 抗性加成 (❁) 給自己",
+   "dst": "{#} 效果：{~} 自身抗性增加 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -791,7 +791,7 @@
   },
   "ac16e16acef3": {
    "src": "{#} Total Damage: {~} (of your DPS, per strike)",
-   "dst": "{#} 總傷害: {~} (你的每秒傷害，每次打擊)",
+   "dst": "{#} 每次打擊傷害：{~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -805,122 +805,122 @@
   },
   "4c604ecf92d4": {
    "src": "ÀÀÀÀ({#} Damage: +{~})",
-   "dst": "ÀÀÀÀ({#} 傷害: +{~})",
+   "dst": "ÀÀÀÀ({#} 總傷害增加：{~})",
    "domain": "ability"
   },
   "04edf8b1715c": {
    "src": "ÀÀÀÀ({#} Damage: -{~})",
-   "dst": "ÀÀÀÀ({#} 傷害: -{~})",
+   "dst": "ÀÀÀÀ({#} 總傷害降低：{~})",
    "domain": "ability"
   },
   "451f357a9fca": {
    "src": "ÀÀÀÀ({#} Damage: {~})",
-   "dst": "ÀÀÀÀ({#} 傷害: {~})",
+   "dst": "ÀÀÀÀ({#} 總傷害：{~})",
    "domain": "ability"
   },
   "2698e3c70f00": {
    "src": "ÀÀÀÀ({#} Neutral: +{~})",
-   "dst": "ÀÀÀÀ({#} 無: +{~})",
+   "dst": "ÀÀÀÀ({#} 無屬性傷害增加：{~})",
    "domain": "ability"
   },
   "01eb3688a221": {
    "src": "ÀÀÀÀ({#} Neutral: -{~})",
-   "dst": "ÀÀÀÀ({#} 無: -{~})",
+   "dst": "ÀÀÀÀ({#} 無屬性傷害降低：-{~})",
    "domain": "ability"
   },
   "9959d744319a": {
    "src": "ÀÀÀÀ({#} Neutral: {~})",
-   "dst": "ÀÀÀÀ({#} 無: {~})",
+   "dst": "ÀÀÀÀ({#} 無屬性傷害：{~})",
    "domain": "ability"
   },
   "aa67d0eb1450": {
    "src": "ÀÀÀÀ({#} Earth: +{~})",
-   "dst": "ÀÀÀÀ({#} 地: +{~})",
+   "dst": "ÀÀÀÀ({#} 地屬性傷害增加：{~})",
    "domain": "ability"
   },
   "90a2ca99870f": {
    "src": "ÀÀÀÀ({#} Earth: -{~})",
-   "dst": "ÀÀÀÀ({#} 地: -{~})",
+   "dst": "ÀÀÀÀ({#} 地屬性傷害降低：{~})",
    "domain": "ability"
   },
   "a465669aa368": {
    "src": "ÀÀÀÀ({#} Earth: {~})",
-   "dst": "ÀÀÀÀ({#} 地: {~})",
+   "dst": "ÀÀÀÀ({#} 地屬性傷害：{~})",
    "domain": "ability"
   },
   "48da12b894e3": {
    "src": "ÀÀÀÀ({#} Thunder: +{~})",
-   "dst": "ÀÀÀÀ({#} 雷: +{~})",
+   "dst": "ÀÀÀÀ({#} 雷屬性傷害增加：{~})",
    "domain": "ability"
   },
   "df6c55b4ccac": {
    "src": "ÀÀÀÀ({#} Thunder: -{~})",
-   "dst": "ÀÀÀÀ({#} 雷: -{~})",
+   "dst": "ÀÀÀÀ({#} 雷屬性傷害降低：{~})",
    "domain": "ability"
   },
   "c49d07cc8f9a": {
    "src": "ÀÀÀÀ({#} Thunder: {~})",
-   "dst": "ÀÀÀÀ({#} 雷: {~})",
+   "dst": "ÀÀÀÀ({#} 雷屬性傷害：{~})",
    "domain": "ability"
   },
   "2b9423912803": {
    "src": "ÀÀÀÀ({#} Water: +{~})",
-   "dst": "ÀÀÀÀ({#} 水: +{~})",
+   "dst": "ÀÀÀÀ({#} 水屬性傷害增加：{~})",
    "domain": "ability"
   },
   "f349022949c5": {
    "src": "ÀÀÀÀ({#} Water: -{~})",
-   "dst": "ÀÀÀÀ({#} 水: -{~})",
+   "dst": "ÀÀÀÀ({#} 水屬性傷害降低：{~})",
    "domain": "ability"
   },
   "cf6b6a58e7fb": {
    "src": "ÀÀÀÀ({#} Water: {~})",
-   "dst": "ÀÀÀÀ({#} 水: {~})",
+   "dst": "ÀÀÀÀ({#} 水屬性傷害：{~})",
    "domain": "ability"
   },
   "1299554f8d2b": {
    "src": "ÀÀÀÀ({#} Fire: +{~})",
-   "dst": "ÀÀÀÀ({#} 火: +{~})",
+   "dst": "ÀÀÀÀ({#} 火屬性傷害增加：{~})",
    "domain": "ability"
   },
   "1d18664543a6": {
    "src": "ÀÀÀÀ({#} Fire: -{~})",
-   "dst": "ÀÀÀÀ({#} 火: -{~})",
+   "dst": "ÀÀÀÀ({#} 火屬性傷害降低：{~})",
    "domain": "ability"
   },
   "4300cf12907a": {
    "src": "ÀÀÀÀ({#} Fire: {~})",
-   "dst": "ÀÀÀÀ({#} 火: {~})",
+   "dst": "ÀÀÀÀ({#} 火屬性傷害：{~})",
    "domain": "ability"
   },
   "7f17270910fc": {
    "src": "ÀÀÀÀ({#} Air: +{~})",
-   "dst": "ÀÀÀÀ({#} 風: +{~})",
+   "dst": "ÀÀÀÀ({#} 風屬性傷害增加：{~})",
    "domain": "ability"
   },
   "6a2157a6d922": {
    "src": "ÀÀÀÀ({#} Air: -{~})",
-   "dst": "ÀÀÀÀ({#} 風: -{~})",
+   "dst": "ÀÀÀÀ({#} 風屬性傷害降低：{~})",
    "domain": "ability"
   },
   "c06c489c4e71": {
    "src": "ÀÀÀÀ({#} Air: {~})",
-   "dst": "ÀÀÀÀ({#} 風: {~})",
+   "dst": "ÀÀÀÀ({#} 風屬性傷害：{~})",
    "domain": "ability"
   },
   "ebdce6369ed2": {
    "src": "ÀÀÀÀ{#} Heretic: +{~} Slowness ({#}) to Enemies",
-   "dst": "ÀÀÀÀ{#} Heretic: +{~} 緩速 ({#}) 給敵人",
+   "dst": "ÀÀÀÀ{#} 蒼逆：{~} 敵人速度降低 ({#})",
    "domain": "ability"
   },
   "0ed07675be5d": {
    "src": "ÀÀÀÀ{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "ÀÀÀÀ{#} Fanatic: -{~} 抗性加成 ({#}) 給敵人",
+   "dst": "ÀÀÀÀ{#} 金虔：{~} 敵人抗性降低 ({#})",
    "domain": "ability"
   },
   "685f8fa019bd": {
    "src": "ÀÀÀÀ{#} Lunatic: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "ÀÀÀÀ{#} Lunatic: -{~} 傷害加成 ({#}) 給敵人",
+   "dst": "ÀÀÀÀ{#} 赤狂：{~} 敵人傷害降低 ({#})",
    "domain": "ability"
   }
  }

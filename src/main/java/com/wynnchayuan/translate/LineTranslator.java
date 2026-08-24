@@ -764,6 +764,12 @@ public final class LineTranslator {
         LineDebug.pieces("逐片段 " + line.getStringWithoutFormatting(),
                 describe(pieces, aligned, line));
 
+        // 置中的行如果有<b>兩欄以上</b>，每一欄各自置中，不是右對齊。
+        // 這一步從還沒補償過的 pieces 重算，見 {@link #recenterColumns}。
+        if (centered && textGroups(pieces).size() >= 2) {
+            return assemble(recenterColumns(pieces), -1, 0);
+        }
+
         // 只有前導空白的行是「置中／縮排」而不是「標籤 + 數值」。
         // 這種行沒有兩側都有文字的空白，上面那一輪不會動到它，
         // 所以另外量整行、補一半 —— 補滿會把整行推到右邊去。
@@ -773,6 +779,115 @@ public final class LineTranslator {
             return assemble(aligned, lead, delta / 2);
         }
         return assemble(aligned, -1, 0);
+    }
+
+    /**
+     * 一行裡的「文字群組」：連續的非空白片段算一組，中間的排版空白是欄與欄的間隔。
+     *
+     * @return 每一組的 {@code {起, 迄(不含)}}
+     */
+    static List<int[]> textGroups(List<Piece> pieces) {
+        List<int[]> groups = new ArrayList<>();
+        int start = -1;
+        for (int i = 0; i < pieces.size(); i++) {
+            if (pieces.get(i).isSpace()) {
+                if (start >= 0) {
+                    groups.add(new int[] {start, i});
+                    start = -1;
+                }
+            } else if (start < 0) {
+                start = i;
+            }
+        }
+        if (start >= 0) {
+            groups.add(new int[] {start, pieces.size()});
+        }
+        return groups;
+    }
+
+    /**
+     * 置中的多欄行：讓每一欄<b>各自</b>回到原本的中心，而不是回到原本的左緣或右緣。
+     *
+     * <h2>為什麼右對齊那一套在這裡是錯的</h2>
+     * 技能點數面板的那一列，原文是
+     *
+     * <pre>
+     *   [2px] 83 points [15px][30px][15px] 84 points
+     * </pre>
+     *
+     * 15 + 30 + 15 不是隨便湊的：那是「左欄右邊留 15、中間空 30、右欄左邊留 15」，
+     * 也就是<b>兩欄各自置中</b>。{@link #alignColumns} 會把左欄的縮水補進間隔，
+     * 讓右欄的<b>起點</b>回到原位；接著「最後一欄的右緣也要對回去」那一步又把
+     * 右欄的縮水加到<b>同一個</b>間隔上——同一段間隔被補了兩次，右欄整個往右推。
+     * 畫面上就是「83 點」還在原位、「84 點」卻擠到右邊去。
+     *
+     * <p>那一套是為「標籤靠左、數值靠右」寫的，對這種行不適用。這裡改成量出
+     * 原文每一欄的中心，再反推間隔，讓譯文的每一欄壓在同一個中心上。單欄的
+     * 置中行結果與舊做法相同（就是把差額對半分），所以只有多欄行走這條路。
+     *
+     * <h2>間隔不收到負的</h2>
+     * 譯文比原文寬時，理想的間隔可能是負的——那會讓兩欄疊在一起。寧可讓它
+     * 往右偏也不要疊字，所以夾在 0 以上，與 {@link #narrowed} 同一個取捨。
+     */
+    static List<Piece> recenterColumns(List<Piece> pieces) {
+        List<int[]> groups = textGroups(pieces);
+        int[] wantStart = new int[groups.size()];
+        int[] newWidth = new int[groups.size()];
+
+        int x = 0;
+        int g = 0;
+        for (int i = 0; i < pieces.size(); i++) {
+            Piece p = pieces.get(i);
+            if (p.isSpace()) {
+                x += p.spacePx();
+                continue;
+            }
+            if (g < groups.size() && groups.get(g)[0] == i) {
+                int origWidth = 0;
+                int width = 0;
+                for (int k = groups.get(g)[0]; k < groups.get(g)[1]; k++) {
+                    origWidth += widthOf(pieces.get(k).orig());
+                    width += widthOf(pieces.get(k).rendered());
+                }
+                newWidth[g] = width;
+                // 中心對中心：起點 = 原本的中心 - 譯文寬度的一半
+                wantStart[g] = x + (origWidth - width) / 2;
+                x += origWidth;
+                g++;
+            }
+        }
+
+        List<Piece> out = new ArrayList<>(pieces.size());
+        int cursor = 0;
+        g = 0;
+        for (int i = 0; i < pieces.size(); i++) {
+            Piece p = pieces.get(i);
+            if (!p.isSpace()) {
+                out.add(p);
+                if (g < groups.size() && groups.get(g)[1] == i + 1) {
+                    cursor += newWidth[g];
+                    g++;
+                }
+                continue;
+            }
+            // 一段間隔可能由好幾個偏移字元組成（15 + 30 + 15）。整段的寬度
+            // 一次算在最後一個上面，前面的收成 0——畫面上是同一個位置，
+            // 但只有一個地方需要調整，不會重複補償。
+            boolean lastOfRun = i + 1 >= pieces.size() || !pieces.get(i + 1).isSpace();
+            if (!lastOfRun) {
+                out.add(Piece.space(0, p.style()));
+                continue;
+            }
+            if (g >= groups.size()) {
+                // 行尾的留白：譯文不需要它撐寬度，原樣留著即可
+                out.add(p);
+                continue;
+            }
+            int gap = Math.max(0, wantStart[g] - cursor);
+            out.add(Piece.space(gap, p.style()));
+            cursor += gap;
+        }
+        return out;
     }
 
     /**
@@ -1862,13 +1977,16 @@ public final class LineTranslator {
         accents.addAll(LineParts.accentsAgainst(allRuns, blockStyle));
         accents = withTranslations(accents, store);
 
-        List<List<Token>> lines = new ArrayList<>(translated.length);
+        // 斷行不要把一個重點詞切成兩半，否則它的顏色會整個掉。見 keepAccentsWhole。
+        String[] flowed = keepAccentsWhole(translated, accents);
+
+        List<List<Token>> lines = new ArrayList<>(flowed.length);
         long wantGlyphs = 0;
         long wantPlaces = 0;
         long wantNumbers = 0;
         long wantUsers = 0;
         int numbered = 0;
-        for (String line : translated) {
+        for (String line : flowed) {
             List<Token> tokens = tokenize(line);
             lines.add(tokens);
             for (Token token : tokens) {
@@ -1915,17 +2033,21 @@ public final class LineTranslator {
         List<Component> out = new ArrayList<>(lines.size());
         for (List<Token> tokens : lines) {
             MutableComponent line = Component.empty();
-            for (Token token : tokens) {
+            Style justFilled = null;          // 剛填回去的那個佔位符的樣式
+            for (int i = 0; i < tokens.size(); i++) {
+                Token token = tokens.get(i);
                 switch (token.kind()) {
                     case GLYPH -> {
                         // 符號連同原樣式（含自訂字型）整段搬回，這是它顯示得出來的唯一方式
                         LineParts.Piece piece = glyphs.get(glyph++);
                         line.append(Component.literal(piece.text()).withStyle(piece.style()));
+                        justFilled = piece.style();
                     }
                     case PLACE -> {
                         // 地名是專有名詞，原樣填回，永遠不翻譯
                         LineParts.Piece piece = places.get(place++);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
+                        justFilled = piece.style();
                     }
                     case NUMBER -> {
                         // 帶編號的直接指名要第幾個，沒編號的照順序取下一個
@@ -1935,20 +2057,164 @@ public final class LineTranslator {
                         }
                         LineParts.Piece piece = numbers.get(at);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
+                        justFilled = piece.style();
                     }
                     case USER -> {
                         // 玩家名字原樣填回，跟地名一樣是專有名詞
                         LineParts.Piece piece = users.get(user++);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
+                        justFilled = piece.style();
                     }
-                    case TEXT -> appendNoting(line, token.text(), textStyle, noteStyle,
-                                              inNote, accents, usedAccent, store);
+                    case TEXT -> {
+                        Style before = i > 0 ? justFilled : null;
+                        Style after = i + 1 < tokens.size()
+                                ? peekStyle(tokens.get(i + 1), glyphs, places,
+                                            numbers, users, glyph, place, number, user)
+                                : null;
+                        appendHugging(line, token.text(), textStyle, noteStyle, inNote,
+                                      accents, usedAccent, store, before, after);
+                        justFilled = null;
+                    }
                 }
             }
             out.add(line);
         }
         return out;
     }
+
+    /**
+     * 下一個佔位符會填回什麼樣式——還沒填，先看一眼。
+     *
+     * <p>沒編號的佔位符是照順序取的，所以「下一個」就是各自計數器現在指到的那一個。
+     */
+    private static Style peekStyle(Token next,
+                                   List<LineParts.Piece> glyphs, List<LineParts.Piece> places,
+                                   List<LineParts.Piece> numbers, List<LineParts.Piece> users,
+                                   int glyph, int place, int number, int user) {
+        return switch (next.kind()) {
+            case GLYPH -> at(glyphs, glyph);
+            case PLACE -> at(places, place);
+            case NUMBER -> at(numbers, next.index() > 0 ? next.index() - 1 : number);
+            case USER -> at(users, user);
+            case TEXT -> null;
+        };
+    }
+
+    private static Style at(List<LineParts.Piece> pool, int index) {
+        return index >= 0 && index < pool.size() ? pool.get(index).style() : null;
+    }
+
+    /**
+     * 緊貼著佔位符的標點，跟著那個佔位符走。
+     *
+     * <h2>畫面上是什麼樣子</h2>
+     * 專業那一行的原文是 {@code - Ⓔ Lv. 120 Scribing§8 [66.24%]}——中括號與百分比
+     * <b>同屬一個暗灰色片段</b>。譯文裡數值是佔位符，會連同自己的樣式填回去，
+     * 但 {@code [} 與 {@code ]} 是譯文自己的字，畫的是整行的主樣式（比較亮的灰）。
+     * 於是括號比它包住的數字亮一階，跟原文對不起來。技能點數的 {@code 0/50}
+     * 中間那條斜線也是同一回事。
+     *
+     * <p>規則很單純：一段文字<b>開頭</b>緊貼著前一個佔位符的標點，用前一個佔位符
+     * 的樣式；<b>結尾</b>緊貼著下一個佔位符的標點，用下一個的。中間那段照舊。
+     * 「緊貼」是字面意思——中間有空白就不算，那是詞距不是黏著。
+     *
+     * <p>圓括號不算在內：它們是註解的界線（見 {@link #appendNoting}），
+     * 交給註解那一套處理，這裡動它只會把註解的顏色弄亂。
+     */
+    private static void appendHugging(MutableComponent out, String text,
+                                      Style base, Style note, boolean[] depth,
+                                      List<LineParts.Piece> accents, boolean[] used,
+                                      TranslationStore store, Style before, Style after) {
+        int lead = 0;
+        if (before != null) {
+            while (lead < text.length() && hugs(text.charAt(lead))) {
+                lead++;
+            }
+        }
+        int tail = text.length();
+        if (after != null) {
+            while (tail > lead && hugs(text.charAt(tail - 1))) {
+                tail--;
+            }
+        }
+        if (lead > 0) {
+            out.append(literal(text.substring(0, lead), forDisplay(before)));
+        }
+        if (tail > lead) {
+            appendNoting(out, text.substring(lead, tail), base, note,
+                         depth, accents, used, store);
+        }
+        if (tail < text.length()) {
+            out.append(literal(text.substring(tail), forDisplay(after)));
+        }
+    }
+
+    /** 會黏在佔位符身上的標點：不是字、不是數字、不是方塊字，也不是空白或圓括號。 */
+    static boolean hugs(char c) {
+        if (Character.isLetterOrDigit(c) || Character.isWhitespace(c) || isHan(c)) {
+            return false;
+        }
+        return c != '(' && c != ')' && c != '（' && c != '）';
+    }
+
+    /**
+     * 斷行不要把一個重點詞切成兩半。
+     *
+     * <h2>為什麼會切到</h2>
+     * 重點段的樣式是靠<b>字面比對</b>貼回去的（見 {@link #appendText}），而比對是
+     * 逐行做的。譯文被面板寬度斷開之後，「地屬性」可能是「地」留在上一行、
+     * 「屬性」跑到下一行——兩行各自都找不到「地屬性」，那個綠色就整個掉了。
+     * 畫面上是圖示還是綠的（它走符號池那條路，樣式本來就跟著走），
+     * 名稱卻是灰的。
+     *
+     * <p>做法是把被切開的那幾個字<b>往下一行搬</b>。下一行因此寬一點點，
+     * 面板會跟著寬一兩個字——比一個詞半綠半灰好。
+     *
+     * <p>只搬<b>不含佔位符</b>的片段：佔位符是照順序取用的，搬動它會讓池子錯位。
+     */
+    static String[] keepAccentsWhole(String[] lines, List<LineParts.Piece> accents) {
+        if (lines.length < 2 || accents.isEmpty()) {
+            return lines;
+        }
+        String[] out = lines.clone();
+        for (int i = 0; i + 1 < out.length; i++) {
+            int move = splitAcross(out[i], out[i + 1], accents);
+            if (move > 0) {
+                String moved = out[i].substring(out[i].length() - move);
+                out[i] = out[i].substring(0, out[i].length() - move);
+                out[i + 1] = moved + out[i + 1];
+            }
+        }
+        return out;
+    }
+
+    /** 上一行結尾有幾個字是下一行開頭那個重點詞的一部分；沒有就是 0。 */
+    private static int splitAcross(String head, String tail,
+                                   List<LineParts.Piece> accents) {
+        if (head.isEmpty() || tail.isEmpty()) {
+            return 0;
+        }
+        for (LineParts.Piece accent : accents) {
+            String word = accent.text();
+            if (word.length() < 2 || word.length() > MAX_REFLOW) {
+                continue;
+            }
+            for (int cut = 1; cut < word.length(); cut++) {
+                String left = word.substring(0, cut);
+                if (!head.endsWith(left) || !tail.startsWith(word.substring(cut))) {
+                    continue;
+                }
+                if (left.indexOf('{') >= 0 || left.indexOf('}') >= 0) {
+                    break;                    // 佔位符不能搬，搬了池子就錯位
+                }
+                return cut;
+            }
+        }
+        return 0;
+    }
+
+    /** 為了不切斷重點詞，最多把這麼長的詞搬到下一行。再長就不值得重排了。 */
+    private static final int MAX_REFLOW = 12;
 
     /**
      * 接上一段譯文，並把原文裡帶特殊樣式的詞的樣式貼回去。
@@ -2003,7 +2269,14 @@ public final class LineTranslator {
                     && term.end() - term.start() > accents.get(which).text().length();
             if (term != null && (at < 0 || term.start() < at || longer)) {
                 if (term.start() > from) {
-                    out.append(literal(text.substring(from, term.start()), base));
+                    String before = text.substring(from, term.start());
+                    // 英文詞前面那個半形空格，換成中文之後就多餘了。
+                    // 語料寫的是「Bash 的作用範圍」——空格是給英文用的；
+                    // Bash 換成「重擊」以後留著它，畫面上是「重擊 的作用範圍」。
+                    if (dropsSpaceBefore(before, term.translation())) {
+                        before = before.substring(0, before.length() - 1);
+                    }
+                    out.append(literal(before, base));
                 }
                 // 這個位置如果<b>同時</b>有一個帶樣式的片段，樣式要留住。
                 // 先前一律用 base 畫，於是 `Heal` 與 `Arcane Transfer` 的底線
@@ -2023,6 +2296,9 @@ public final class LineTranslator {
                 }
                 out.append(literal(term.translation(), style));
                 from = term.end();
+                if (dropsSpaceAfter(term.translation(), text, from)) {
+                    from++;
+                }
                 continue;
             }
             if (at < 0) {
@@ -2070,11 +2346,82 @@ public final class LineTranslator {
                 // 見 TranslationStore#lookupTerm
                 zh = store.lookupTerm(core);
             }
+            if (zh == null || zh.isBlank()) {
+                zh = lookupWordCore(core, store);
+            }
             if (zh != null && !zh.isBlank() && !zh.equals(core)) {
                 out.add(new LineParts.Piece(zh, accent.style()));
             }
         }
         return out;
+    }
+
+    /**
+     * 剝掉色段<b>前後</b>的圖示與標點再查一次。
+     *
+     * <h2>為什麼需要這一步</h2>
+     * 屬性名稱在畫面上是「圖示 + 名稱」，而且<b>圖示與名稱同屬一個色段</b>：
+     * 力量說明的最後一段原文是 {@code §2<U+E001> Earth}，深綠色從圖示一路蓋到
+     * {@code Earth}。{@link String#strip()} 只去空白，去不掉那個圖示碼位，
+     * 於是查表的鍵是 {@code "<U+E001> Earth"}——查不到，譯文那邊的「地屬性」
+     * 就完全沒有顏色，只剩圖示是綠的（圖示走的是另一條路：它在譯文裡是
+     * {@code {#}}，由字形池原樣填回，顏色自然還在）。
+     *
+     * <p>{@link TranslationStore#lookupTerm} 只處理<b>尾巴</b>的圖示，因為它是
+     * 為「名稱 + 圖示」那種色段寫的。這裡把兩頭都剝掉，補上前導圖示那一種。
+     *
+     * <p>只回傳<b>核心詞</b>的譯文，不把剝掉的圖示接回去——譯文裡的圖示是獨立
+     * 片段，接回去反而對不上字面。
+     */
+    static String lookupWordCore(String text, TranslationStore store) {
+        int from = 0;
+        int to = text.length();
+        while (from < to && !Character.isLetterOrDigit(text.charAt(from))) {
+            from++;
+        }
+        while (to > from && !Character.isLetterOrDigit(text.charAt(to - 1))) {
+            to--;
+        }
+        if (from == 0 && to == text.length()) {
+            return null;                       // 沒東西可剝，上面已經查過了
+        }
+        String core = text.substring(from, to).strip();
+        if (core.isEmpty()) {
+            return null;
+        }
+        String zh = store.lookup(core);
+        return zh == null || zh.isBlank() ? store.lookupTerm(core) : zh;
+    }
+
+    /**
+     * 換上中文之後，前面那個半形空格該不該一起吃掉。
+     *
+     * <p>條件是三個都成立：前面剛好以一個半形空格結尾、空格前是中日韓文字、
+     * 換上去的譯名以中日韓文字開頭。只要有一邊是英文，那個空格就仍然需要
+     * ——「gains 重擊」拿掉空格會黏成一團。
+     */
+    static boolean dropsSpaceBefore(String before, String translation) {
+        return before.length() >= 2
+                && before.charAt(before.length() - 1) == ' '
+                && isHan(before.charAt(before.length() - 2))
+                && !translation.isEmpty() && isHan(translation.charAt(0));
+    }
+
+    /** 同上，看的是譯名<b>後面</b>那個空格。 */
+    static boolean dropsSpaceAfter(String translation, String text, int at) {
+        return !translation.isEmpty() && isHan(translation.charAt(translation.length() - 1))
+                && at + 1 < text.length()
+                && text.charAt(at) == ' '
+                && isHan(text.charAt(at + 1));
+    }
+
+    private static boolean isHan(char c) {
+        Character.UnicodeScript script = Character.UnicodeScript.of(c);
+        return script == Character.UnicodeScript.HAN
+                || script == Character.UnicodeScript.HIRAGANA
+                || script == Character.UnicodeScript.KATAKANA
+                || (c >= '＀' && c <= '￯')      // 全形標點
+                || (c >= '　' && c <= '〿');
     }
 
     /** 保留顏色與粗斜體，但把字型換成預設，中文才畫得出來。 */
