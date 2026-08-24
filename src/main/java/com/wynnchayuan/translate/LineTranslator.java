@@ -678,6 +678,24 @@ public final class LineTranslator {
     }
 
     /**
+     * 用已經查到的譯文重建目前原文裡的參數。
+     *
+     * <p>Dialogue 逐字輸入時，prefix lookup 會先認出完整句，但地名或玩家名稱
+     * 可能還沒打出來。只有譯文需要的佔位符都已經能從目前內容取得時才回傳結果；
+     * 否則回傳 {@code null}，避免把字面上的 {@code {p}}、{@code {u}} 放進快取。
+     *
+     * @return 重建完成的譯文；佔位符尚未齊全或數量不符時回傳 {@code null}
+     */
+    public static Component translateKnown(StyledText line, String translated,
+                                           TranslationStore store) {
+        if (translated == null || translated.isBlank()) {
+            return null;
+        }
+        Component rebuilt = rebuild(translated, LineParts.of(line), store);
+        return rebuilt == null ? null : realign(line, rebuilt, true);
+    }
+
+    /**
      * 逐片段替換：保留原本的元件結構，只換掉查得到的文字片段。
      *
      * <h2>為什麼這才是保真的做法</h2>

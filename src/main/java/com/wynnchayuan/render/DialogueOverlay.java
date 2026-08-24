@@ -106,17 +106,9 @@ public final class DialogueOverlay {
                 continue;
             }
 
-            Component translated = LineTranslator.translate(line, store);
-            String source = translated == null ? null : template;
-            if (translated == null) {
-                // NPC 是一個字一個字打出來的，打到一半的句子當然查不到。
-                // 只要開頭夠獨特就先把<b>整句</b>譯文顯示出來——先前要等整句
-                // 打完才出現，而玩家常常已經按 shift 跳過去了。
-                source = store.matchPrefix(template);
-                if (source != null) {
-                    translated = Component.literal(store.lookupPrefix(template));
-                }
-            }
+            LineResult result = translateLine(line, template, store);
+            Component translated = result == null ? null : result.translated();
+            String source = result == null ? null : result.source();
             if (translated != null) {
                 any = true;
                 if (said == null) {
@@ -153,6 +145,28 @@ public final class DialogueOverlay {
         }
     }
 
+    /** 翻譯目前打到的這一行；抽成獨立入口，讓逐字輸入的 prefix 行為可以驗證。 */
+    static LineResult translateLine(StyledText line, String template, TranslationStore store) {
+        Component translated = LineTranslator.translate(line, store);
+        String source = translated == null ? null : template;
+        if (translated == null) {
+            // NPC 是一個字一個字打出來的，打到一半的句子當然查不到。
+            // 只要開頭夠獨特就先把<b>整句</b>譯文顯示出來——先前要等整句
+            // 打完才出現，而玩家常常已經按 shift 跳過去了。
+            source = store.matchPrefix(template);
+            if (source != null) {
+                // prefix 認得出完整句，不代表目前已經打出所有參數。交回翻譯器
+                // 還原地名／玩家名；參數尚未齊全就先等，不能把 raw {p}/{u}
+                // 放進 shown，否則 settledSource 會一路沿用到整句完成。
+                translated = LineTranslator.translateKnown(
+                        line, store.lookup(source), store);
+            }
+        }
+        return translated == null ? null : new LineResult(source, translated);
+    }
+
+    record LineResult(String source, Component translated) {}
+
     /**
      * 這一行是不是「剛才那句、只是又長了幾個字」。
      *
@@ -173,7 +187,12 @@ public final class DialogueOverlay {
             return null;
         }
         String source = sources.get(index);
-        return source != null && source.startsWith(template.strip()) ? source : null;
+        return canReuse(source, template) ? source : null;
+    }
+
+    /** 已認出的完整原文是不是仍包含目前打到的這個開頭。 */
+    static boolean canReuse(String source, String template) {
+        return source != null && template != null && source.startsWith(template.strip());
     }
 
     /**
