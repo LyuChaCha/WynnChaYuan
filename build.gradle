@@ -113,6 +113,14 @@ tasks.register('runTranslateChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runTranslateChecks' }
 
+tasks.register('runDialogueChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證 Dialogue 逐字輸入與 prefix 翻譯'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueOverlayTest'
+}
+tasks.named('check') { dependsOn 'runDialogueChecks' }
+
 tasks.register('runBlockChecks', JavaExec) {
     group = 'verification'
     description = '驗證置中／靠左的整塊判斷'
