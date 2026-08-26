@@ -76,7 +76,9 @@ public final class DialogueOverlay {
             // 選項對話的實際結構還沒定案，先把原文記下來，下一輪照真實資料實作
             com.wynnchayuan.translate.FlowedDebug.noteChoices(dialogue.getString());
         }
-        if (dialogue == null) {
+        if (dialogue == null
+                || WynnChaYuan.config().dialogueMode()
+                        == CollectorConfig.DialogueMode.OFF) {
             clear();                           // 快取也要跟著倒掉，否則下一段對話
             return;                            // 會拿上一段的結果去比對開頭
         }
@@ -225,6 +227,16 @@ public final class DialogueOverlay {
         return said != null ? said : store.speakerOfPrefix(template);
     }
 
+    /**
+     * 現在有沒有畫得出來的譯文。
+     *
+     * <p>{@link com.wynnchayuan.listener.ActionBarListener} 用它決定能不能把
+     * 原文藏掉——沒有譯文還藏，玩家就是對著空白按 shift。
+     */
+    public static boolean hasContent() {
+        return !current.isEmpty() || !choices.isEmpty();
+    }
+
     public static void clear() {
         current = List.of();
         choices = List.of();
@@ -262,28 +274,53 @@ public final class DialogueOverlay {
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.DIALOGUE);
         }
 
+        // 就地取代：原文已經被 ActionBarListener 剪掉了，譯文要補在它空出來的
+        // 位置上——所以不畫底框（那是「另一塊」才需要的界線），而且忽略玩家
+        // 替小框設定的位置：那個位置是為了「擺在旁邊不擋原文」而挑的。
+        boolean inPlace = WynnChaYuan.config().dialogueMode()
+                == CollectorConfig.DialogueMode.REPLACE;
+        if (inPlace) {
+            x = (graphics.guiWidth() - boxW) / 2;
+            y = graphics.guiHeight() - IN_PLACE_MARGIN - boxH;
+        }
+
         if (!lines.isEmpty()) {
-            drawBox(graphics, mc, lines, x + boxW / 2, y, alpha);
+            draw(graphics, mc, lines, x + boxW / 2, y, alpha, !inPlace);
         }
         // 選項擺在對話框正上方，跟遊戲原本的上下關係一致
         if (!options.isEmpty()) {
             int optionH = options.size() * lineHeight + PADDING * 2;
-            drawBox(graphics, mc, options, x + boxW / 2,
-                    y - optionH - CHOICE_GAP, alpha);
+            draw(graphics, mc, options, x + boxW / 2,
+                    y - optionH - CHOICE_GAP, alpha, !inPlace);
         }
     }
 
+    /**
+     * 就地取代時譯文距畫面底部的高度。
+     *
+     * <p>比 {@link #BOTTOM_MARGIN} 低——那個值是為了<b>避開</b>原本的對話文字，
+     * 這裡則是要站到它原本的位置上。
+     */
+    private static final int IN_PLACE_MARGIN = 55;
+
     /** @param centerX 框的水平中心；框寬隨內容變，對齊左緣的話短的那一框會偏掉 */
-    private static void drawBox(GuiGraphics graphics, Minecraft mc,
-                                List<Component> lines, int centerX, int y, float alpha) {
+    private static void draw(GuiGraphics graphics, Minecraft mc, List<Component> lines,
+                             int centerX, int y, float alpha, boolean withBox) {
         int lineHeight = mc.font.lineHeight + 1;
         int boxW = widthOf(mc, lines);
         int boxH = lines.size() * lineHeight + PADDING * 2;
         int x = centerX - boxW / 2;
-        Boxes.draw(graphics, x, y, boxW, boxH, alpha);
+        if (withBox) {
+            Boxes.draw(graphics, x, y, boxW, boxH, alpha);
+        }
         int textY = y + PADDING;
         for (Component line : lines) {
-            graphics.drawString(mc.font, line, x + PADDING, textY,
+            // 沒有底框時每一行各自置中——遊戲原本的對話就是置中的，
+            // 靠左對齊會讓譯文看起來像另外貼上去的東西。
+            int lineX = withBox
+                    ? x + PADDING
+                    : centerX - mc.font.width(line) / 2;
+            graphics.drawString(mc.font, line, lineX, textY,
                     Colors.fade(Colors.TEXT, alpha));
             textY += lineHeight;
         }

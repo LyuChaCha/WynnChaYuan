@@ -1,0 +1,69 @@
+package com.wynnchayuan.listener;
+
+import com.wynnchayuan.CollectorConfig;
+import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.render.DialogueOverlay;
+import com.wynntils.handlers.actionbar.ActionBarSegment;
+import com.wynntils.handlers.actionbar.event.ActionBarRenderEvent;
+import com.wynntils.models.dialogue.actionbar.segments.DialogueSegment;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+
+/**
+ * 就地取代模式下，把遊戲自己那段對話文字藏掉。
+ *
+ * <h2>對話其實是 action bar</h2>
+ * Wynncraft 的 NPC 對話不是聊天訊息，也不是什麼獨立的 GUI——它整塊塞在
+ * <b>action bar</b> 裡，用自訂字型與位移符號排成畫面下方那個框。Wynntils 把它
+ * 認成一個 {@link DialogueSegment}，跟血量、魔力、座標那些段落並排。
+ *
+ * <p>所以要「就地取代」，不必去攔繪製、不必寫 mixin：在
+ * {@link ActionBarRenderEvent} 上把那一段停用，Wynntils 的
+ * {@code removeDisabledSegments} 會在送去畫之前把它從字串裡剪掉，
+ * 其他段落原封不動。譯文再由 {@link DialogueOverlay} 畫在它空出來的位置上。
+ *
+ * <h2>沒有譯文就不藏</h2>
+ * 藏原文之前一定要先確定<b>有東西可以擺上去</b>。查不到譯文卻把原文剪掉，
+ * 玩家就是對著一片空白按 shift——比沒翻譯糟得多。
+ *
+ * <h2>順便解決了「對話什麼時候結束」</h2>
+ * 這個事件在 action bar 每次更新時都會發，內容裡有沒有 {@link DialogueSegment}
+ * 就是對話還在不在的直接答案。先前只能靠「多久沒更新就隱藏」的計時器猜，
+ * 因為 Wynntils 的 {@code Ended} 事件每打一個字就發一次，根本不是結束。
+ */
+public final class ActionBarListener {
+
+    /**
+     * 對話消失後再等幾次更新才收掉譯文。
+     *
+     * <p>Wynncraft 在兩句之間會有幾幀沒有對話段落。收得太急，每換一句話
+     * 譯文就會閃一下。
+     */
+    private static final int GRACE = 3;
+
+    private int missing = 0;
+
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public void onActionBarRender(ActionBarRenderEvent event) {
+        boolean present = false;
+        for (ActionBarSegment segment : event.getSegments()) {
+            if (segment instanceof DialogueSegment) {
+                present = true;
+                break;
+            }
+        }
+
+        if (!present) {
+            if (++missing >= GRACE && DialogueOverlay.hasContent()) {
+                DialogueOverlay.clear();
+            }
+            return;
+        }
+        missing = 0;
+
+        if (WynnChaYuan.config().dialogueMode() == CollectorConfig.DialogueMode.REPLACE
+                && DialogueOverlay.hasContent()) {
+            event.setSegmentEnabled(DialogueSegment.class, false);
+        }
+    }
+}

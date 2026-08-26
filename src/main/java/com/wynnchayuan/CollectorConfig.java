@@ -35,6 +35,26 @@ public final class CollectorConfig {
     /** PANEL 另開面板；REPLACE 就地取代；OFF 不翻譯物品。 */
     public enum TooltipMode { PANEL, REPLACE, OFF }
 
+    /**
+     * 任務對話要怎麼呈現。
+     *
+     * <p>{@code PANEL} 是原本的做法：譯文另開一小塊畫在對話上方，原文原封不動。
+     * {@code REPLACE} 則把遊戲自己那段對話<b>藏起來</b>，譯文畫在它原本的位置上
+     * ——畫面上只剩中文，像是遊戲本來就是中文的。{@code OFF} 完全不管對話。
+     *
+     * <p>藏原文靠的是 Wynntils 的 {@code ActionBarRenderEvent}：Wynncraft 的對話
+     * 其實是走 action bar 的一段（{@code DialogueSegment}），把那一段停用掉，
+     * Wynntils 就會在送去繪製前把它從字串裡剪掉。不需要 mixin，也不會動到
+     * 血量、魔力那些同樣在 action bar 上的東西。
+     *
+     * <p>預設仍是 {@code PANEL}。這個模組的前提是不取代原文——多人遊戲裡
+     * 跟別人講「我卡在 Lava Springs」需要看得到英文。就地取代是選項，不是預設。
+     */
+    private DialogueMode dialogueMode = DialogueMode.PANEL;
+
+    /** PANEL 另開小框；REPLACE 藏掉原文、譯文就地畫；OFF 不翻譯對話。 */
+    public enum DialogueMode { PANEL, REPLACE, OFF }
+
     /** 對話框與任務追蹤小框是否顯示。與 tooltip 無關，各自獨立。 */
     private boolean showOverlays = true;
 
@@ -149,6 +169,18 @@ public final class CollectorConfig {
 
     public TooltipMode tooltipMode() {
         return tooltipMode;
+    }
+
+    public DialogueMode dialogueMode() {
+        return dialogueMode;
+    }
+
+    /** 在 小框 → 就地取代 → 關閉 之間輪替。 */
+    public DialogueMode cycleDialogueMode() {
+        DialogueMode[] all = DialogueMode.values();
+        dialogueMode = all[(dialogueMode.ordinal() + 1) % all.length];
+        save();
+        return dialogueMode;
     }
 
     /** 在 面板 → 就地取代 → 關閉 之間輪替。 */
@@ -570,6 +602,10 @@ public final class CollectorConfig {
                 tooltipMode = o.get("showPanel").getAsBoolean()
                         ? TooltipMode.PANEL : TooltipMode.OFF;
             }
+            if (o.has("dialogueMode")) {
+                // 舊設定檔沒有這個欄位，維持 PANEL——升上來的人畫面不會突然變樣
+                dialogueMode = DialogueMode.valueOf(o.get("dialogueMode").getAsString());
+            }
             if (o.has("showOverlays")) {
                 showOverlays = o.get("showOverlays").getAsBoolean();
             } else if (o.has("showPanel")) {
@@ -663,6 +699,7 @@ public final class CollectorConfig {
             o.addProperty("panelGap", panelGap);
             o.addProperty("accentColor", accentColor);
             o.addProperty("dialogueHoldMs", dialogueHoldMs);
+            o.addProperty("dialogueMode", dialogueMode.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());
             com.google.gson.JsonObject positions = new com.google.gson.JsonObject();

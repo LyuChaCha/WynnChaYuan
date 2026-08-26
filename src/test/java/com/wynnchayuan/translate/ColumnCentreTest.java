@@ -176,6 +176,16 @@ public final class ColumnCentreTest {
         // 圓括號是註解的界線，交給註解那一套處理
         check("左圓括號不算 —— 那是註解的界線", !LineTranslator.hugs('('));
         check("右圓括號不算", !LineTranslator.hugs(')'));
+
+        // 兩個數值中間的斜線：原文的 0/50 是「0」＋「/50」兩段，
+        // 斜線跟右邊走。跟左邊走的話畫面上它的顏色會跟原文不同。
+        Style next = Style.EMPTY;
+        check("整段都是標點時跟後面那個佔位符走",
+                LineTranslator.leadTakesNext("/", 1, next));
+        check("後面沒有佔位符就留給前面",
+                !LineTranslator.leadTakesNext("/", 1, null));
+        check("前面還有文字時開頭那截仍歸前一段",
+                !LineTranslator.leadTakesNext(" 抄寫 [", 1, next));
     }
 
     /** 譯文自己帶 {@code §} 格式碼。 */

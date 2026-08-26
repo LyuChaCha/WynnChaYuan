@@ -124,11 +124,18 @@ public final class RenderListener {
 
     /** 對話小框由 HUD 每幀呼叫，見 {@link DialogueOverlay#render}。 */
     public static void renderHud(GuiGraphics graphics) {
-        if (!WynnChaYuan.config().showOverlays()) {
+        // 就地取代不受「小框」總開關管——那個開關是在關小框，而就地取代
+        // 已經不是小框了。原文那時已經被藏掉，這裡再不畫就是一片空白。
+        boolean inPlace = WynnChaYuan.config().dialogueMode()
+                == CollectorConfig.DialogueMode.REPLACE;
+        if (!WynnChaYuan.config().showOverlays() && !inPlace) {
             return;
         }
         try {
             DialogueOverlay.render(graphics);
+            if (!WynnChaYuan.config().showOverlays()) {
+                return;                        // 只放行對話，其餘小框照關
+            }
             TrackerOverlay.render(graphics);
             LookAtTranslator.render(graphics);
         } catch (Throwable t) {
