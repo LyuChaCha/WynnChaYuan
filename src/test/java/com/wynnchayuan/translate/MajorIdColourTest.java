@@ -364,8 +364,14 @@ public final class MajorIdColourTest {
             return;
         }
         String all = out.stream().map(Component::getString).reduce("", (a, b) -> a + b);
-        check("被拆成兩行的名稱仍然翻得出來（實際：" + all.replace("\n", " ") + "）",
-                all.contains("次元裂隙") && !all.contains("Dimensional"));
+        // 不釘特定譯名。這條要盯的是<b>被斷行切開的名稱不會只換掉一半</b>——
+        // 原本的壞法是第一行的 Dimensional 被當成重點段吃掉，畫面上留著半個
+        // 英文名字。名字最後是中文還是英文，是翻譯團隊的決定，不是這條測試的事。
+        // 先前釘死「次元裂隙」，團隊把技能名稱改成保留英文之後這條就紅了，
+        // 而程式其實沒壞。
+        check("整段確實翻成了中文（實際：" + all.replace("\n", " ") + "）", hasHan(all));
+        check("沒有留下半個英文名字",
+                !all.contains("Dimensional") || all.contains("Dimensional Tear"));
     }
 
     /**
@@ -696,10 +702,24 @@ public final class MajorIdColourTest {
         check("行內最長的那個彩色詞沒有掉色（拿到 "
                         + (word == null ? "null" : "#" + String.format("%06X", word))
                         + "）", word != null && word == WORD);
-        Integer body = colourOf(out, "上限提高");
-        check("其餘敘述仍然是敘述的顏色（拿到 "
-                        + (body == null ? "null" : "#" + String.format("%06X", body))
-                        + "）", body != null && body == BODY_COLOUR);
+        // 同樣不釘用詞：要找的是「不是那個彩色詞的中文片段」，而不是某個特定的詞。
+        // 先前釘死「上限提高」，團隊換了說法就紅了。
+        boolean bodyKept = false;
+        for (Component leaf : flatten(out.get(out.size() - 1))) {
+            String text = leaf.getString();
+            if (!hasHan(text) || text.contains("魔力儲庫")) {
+                continue;
+            }
+            bodyKept |= leaf.getStyle().getColor() != null
+                    && leaf.getStyle().getColor().getValue() == BODY_COLOUR;
+        }
+        check("其餘敘述仍然是敘述的顏色", bodyKept);
+    }
+
+    /** 這段文字裡有沒有方塊字。用來確認「確實翻成中文了」而不必釘特定的詞。 */
+    private static boolean hasHan(String text) {
+        return text.codePoints().anyMatch(cp ->
+                Character.UnicodeScript.of(cp) == Character.UnicodeScript.HAN);
     }
 
     /** 譯名用到的顏色，得是原文名稱那幾段裡本來就有的。 */
