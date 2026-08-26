@@ -630,6 +630,7 @@ public final class LineTranslator {
                 // 任何字之間斷，退回去只會讓整行提早結束——「✦ 利他主義: 16」
                 // 之後就換行、剩下的擠成三行，就是這樣來的。
                 int cut = breaksWord(text, i) && lastSpace > lineStart ? lastSpace : i;
+                cut = avoidOrphan(text, cut, lineStart);
                 out.append(text, lineStart, cut).append(NEWLINE);
                 boolean atSpace = text.charAt(cut) == ' ';
                 lineStart = atSpace ? cut + 1 : cut;
@@ -653,6 +654,37 @@ public final class LineTranslator {
             i = end;
         }
         return out.append(text, lineStart, text.length()).toString();
+    }
+
+    /**
+     * 中文排版的<b>避頭尾</b>：某些字不能出現在行首。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 句號、逗號、右括號被擠到下一行的開頭，看起來像上一句沒寫完、
+     * 下一行憑空多了一個標點：
+     *
+     * <pre>
+     *   每次命中使你獲得 +5 層 Crystallize
+     *   ，並改為環繞你運行。          ← 逗號孤零零地開頭
+     * </pre>
+     *
+     * <p>百分比與單位也算：{@code 250} 留在行尾、{@code %} 掉到下一行，
+     * 讀起來是斷開的兩個東西。
+     *
+     * <p>做法是把斷點往前挪一個字，讓那個標點跟著上一行走。挪之後如果整行
+     * 就沒東西了（行首本身就是標點）就放棄——寧可難看也不要無限迴圈。
+     */
+    private static int avoidOrphan(String text, int cut, int lineStart) {
+        int at = cut;
+        while (at > lineStart + 1 && at < text.length() && cannotStartLine(text.charAt(at))) {
+            at--;
+        }
+        return at > lineStart ? at : cut;
+    }
+
+    /** 不能出現在行首的字元。全形標點、收尾符號、百分比與單位。 */
+    private static boolean cannotStartLine(char c) {
+        return "，。、；：！？）」』】〉》%‰°′″…・".indexOf(c) >= 0;
     }
 
     /** 在這裡斷行會不會把一個英文單字切成兩半。 */
