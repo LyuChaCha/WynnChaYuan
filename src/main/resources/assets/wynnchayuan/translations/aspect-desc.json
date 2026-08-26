@@ -3,8 +3,8 @@
   "domain": "aspect-desc",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 216,
-  "translated": 216,
+  "count": 209,
+  "translated": 209,
   "note": "Aspect 各階的能力說明，取自 Wynntils CDN。句型高度重複，所以是用規則轉的——同一個句型永遠得到同樣的中文。技能名稱原樣留著，交給既有的技能名詞典去換。dst 空白的代表還沒有對應的句型規則，畫面上會顯示灰色原文。"
  },
  "entries": {
@@ -50,13 +50,6 @@
    "aspect": "Aspect of Bullet Hell",
    "class": "archer"
   },
-  "e73d6badcb39": {
-   "src": "Increase your maximum Traps by +{~}.",
-   "dst": "你的 Traps 上限增加 +{~}。",
-   "role": "desc",
-   "aspect": "Aspect of Chaotic Demolition",
-   "class": "archer"
-  },
   "13e9ae4cac4c": {
    "src": "Bryophyte Roots gains +{~} {#} Area of Effect.",
    "dst": "Bryophyte Roots 的 {#} 技能範圍增加 +{~}。",
@@ -95,13 +88,6 @@
   "d21a15ee628c": {
    "src": "{#} Total Damage: +{~} (of your DPS) ({#} Damage: +{~})",
    "dst": "{#} 總傷害: +{~1} (你的每秒傷害) ({#} 傷害: +{~2})",
-   "role": "desc",
-   "aspect": "Aspect of Fragmentation Rounds",
-   "class": "archer"
-  },
-  "22848983cd1d": {
-   "src": "Grape Bomb gains +{~} grape.",
-   "dst": "Grape Bomb增加 +{~} 顆葡萄。",
    "role": "desc",
    "aspect": "Aspect of Fragmentation Rounds",
    "class": "archer"
@@ -267,23 +253,9 @@
    "aspect": "Boltslinger's Embodiment of Rended Skies",
    "class": "archer"
   },
-  "f3c65fd669e1": {
-   "src": "{#} Main Attack Damage: -{~}",
-   "dst": "{#} 普攻傷害: -{~}",
-   "role": "desc",
-   "aspect": "Boltslinger's Embodiment of Rended Skies",
-   "class": "archer"
-  },
   "8f958485215c": {
    "src": "Focus' cooldown is reduced by -{~}s.",
    "dst": "Focus 的冷卻時間減少 {~} 秒。",
-   "role": "desc",
-   "aspect": "Sharpshooter's Embodiment of Laser Precision",
-   "class": "archer"
-  },
-  "60bc30f6c697": {
-   "src": "Increase your maximum Focus {#} by +{~}.",
-   "dst": "你的 Focus {#} 上限增加 +{~}。",
    "role": "desc",
    "aspect": "Sharpshooter's Embodiment of Laser Precision",
    "class": "archer"
@@ -449,13 +421,6 @@
    "aspect": "Aspect of the Airborne",
    "class": "assassin"
   },
-  "32632e45603c": {
-   "src": "Increase your maximum Marks {#} by +{~}.",
-   "dst": "你的 Marks {#} 上限增加 +{~}。",
-   "role": "desc",
-   "aspect": "Aspect of the Calling Card",
-   "class": "assassin"
-  },
   "6b7ea09d62a0": {
    "src": "Decrease your damage per Mark {#} by -{~}.",
    "dst": "每層 Mark {#} 提供的傷害降低 {~}。",
@@ -496,13 +461,6 @@
    "dst": "Smoke Bomb 的 {#} 技能範圍增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Fog Machine",
-   "class": "assassin"
-  },
-  "1fa01ae668a2": {
-   "src": "You may store +{~} more Tricks {#} on enemies.",
-   "dst": "你可以在敵人身上多存放 +{~} 層 Tricks {#}。",
-   "role": "desc",
-   "aspect": "Aspect of the Pernicious Prankster",
    "class": "assassin"
   },
   "5929b4588c5c": {
@@ -1299,13 +1257,6 @@
   "b4c1402f50f8": {
    "src": "{#} Total Damage: {~} ({#} Damage: {~}) ({#}{#}{#}{#}{#} Damage: {~}) War Scream grants a higher damage boost.",
    "dst": "{#} 總傷害: {~1} ({#} 傷害: {~2}) ({#}{#}{#}{#}{#} 傷害: {~3}) War Scream 提供的傷害提升更高。",
-   "role": "desc",
-   "aspect": "Battle Monk's Embodiment of Complete Synchrony",
-   "class": "warrior"
-  },
-  "3b765daa12ed": {
-   "src": "{#} Effect: +{~} Damage Bonus (⚔) to Players",
-   "dst": "{#} 效果: +{~} 傷害加成 (⚔) 給玩家",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
