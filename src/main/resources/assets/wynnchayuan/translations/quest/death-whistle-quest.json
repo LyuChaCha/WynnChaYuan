@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Death Whistle (Quest)",
   "count": 31,
-  "translated": 0,
+  "translated": 31,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Death Whistle (Quest)#000": {
    "src": "Talk to Voer at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 與 Voer 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -18,7 +18,7 @@
   },
   "Death Whistle (Quest)#001": {
    "src": "Hello! Hmm, armour, weapon, look of grim despair... You must be from the Wynn province!",
-   "dst": "",
+   "dst": "你好！嗯，盔甲、武器、一臉陰鬱絕望……你八成是從 Wynn 行省來的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -28,7 +28,7 @@
   },
   "Death Whistle (Quest)#002": {
    "src": "My name is Voer, and I'm an exotic plant merchant. I sell all kinds of, uh, perfectly legal goods to the magicians of Gavel.",
-   "dst": "",
+   "dst": "我叫 Voer，是個異國植物商人。我賣各式各樣、呃，完全合法的貨給 Gavel 的法師們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -38,7 +38,7 @@
   },
   "Death Whistle (Quest)#003": {
    "src": "Lately, this Decay has been making business rather tough. The magical plants that used to grow here are dying.",
-   "dst": "",
+   "dst": "最近這場腐朽把生意搞得很難做。以前長在這裡的魔法植物都在枯死。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -48,7 +48,7 @@
   },
   "Death Whistle (Quest)#004": {
    "src": "The need for magic has never been as big as it is now, and without supplies, the magicians of the swamp simply cannot operate!",
-   "dst": "",
+   "dst": "對魔法的需求從來沒有像現在這麼大過，可是沒有原料，沼澤的法師們根本沒辦法做事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -58,7 +58,7 @@
   },
   "Death Whistle (Quest)#005": {
    "src": "I need Death Whistle in particular. It's not as deadly as it sounds, I promise- the name's just archaic, if I recall that from that- er, my book.",
-   "dst": "",
+   "dst": "我特別需要死亡哨。它沒有名字聽起來那麼致命，我保證——那名字只是很古老而已，如果我從那本——呃，我的書上記得沒錯的話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -68,7 +68,7 @@
   },
   "Death Whistle (Quest)#006": {
    "src": "It is a rather rare plant with all sorts of mystical properties, so much so that it can animate objects around it!",
-   "dst": "",
+   "dst": "那是一種相當稀有的植物，帶著各種神祕的特性，甚至能讓周圍的東西活起來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -78,7 +78,7 @@
   },
   "Death Whistle (Quest)#007": {
    "src": "Look for the highest mountain in the swamp south-east from here. The Decay hasn't reached the peaks yet, you see!",
-   "dst": "",
+   "dst": "往這裡東南方的沼澤找最高的那座山。腐朽還沒爬到山頂上，你懂吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -88,7 +88,7 @@
   },
   "Death Whistle (Quest)#008": {
    "src": "Find the mountain at [-{~}, {~}, -{~}] and a way up on it.",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 找到那座山，並想辦法登上去。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -98,7 +98,7 @@
   },
   "Death Whistle (Quest)#009": {
    "src": "Go to the top of the mountain and get {~} Black Whistle Leaf.",
-   "dst": "",
+   "dst": "登上山頂，取得 {~} 片黑哨葉。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -108,7 +108,7 @@
   },
   "Death Whistle (Quest)#010": {
    "src": "Return to Voer at [-{~}, {~}, -{~}] with [{~} Death Whistle Leaf].",
-   "dst": "",
+   "dst": "帶著 [{~} 死亡哨葉] 回到 [-{~1}, {~2}, -{~3}] 找 Voer。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -118,7 +118,7 @@
   },
   "Death Whistle (Quest)#011": {
    "src": "You, Voer! Inconsiderate thief!",
-   "dst": "",
+   "dst": "你，Voer！你這個沒良心的小偷！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -128,7 +128,7 @@
   },
   "Death Whistle (Quest)#012": {
    "src": "You've no idea what you even have done, do you? Your thoughtless actions will cost lives!",
-   "dst": "",
+   "dst": "你根本不知道自己做了什麼，對吧？你這種不經大腦的行為是會出人命的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -138,7 +138,7 @@
   },
   "Death Whistle (Quest)#013": {
    "src": "Uhm... Excuse me? What do you want, elf girl? We're in the middle of a deal here?",
-   "dst": "",
+   "dst": "呃……不好意思？你想幹嘛，精靈小姐？我們正在談生意呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -148,7 +148,7 @@
   },
   "Death Whistle (Quest)#014": {
    "src": "You sold Pink Pelulite! Have you forgotten its enraging properties? Or shall I read from that herbology book you \"found\" in my camp?",
-   "dst": "",
+   "dst": "你賣掉了 Pink Pelulite！你忘了它會讓人狂暴嗎？還是要我把你「撿到」的那本草藥學——從我營地裡撿到的——念給你聽？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -158,7 +158,7 @@
   },
   "Death Whistle (Quest)#015": {
    "src": "Wait, wh-what? A Pink PELULITE!? I sold that woman a Pink PELUTE for her luck charms! How dare- wait... wait, Pink Pelute has rounder petals... Oh no.",
-   "dst": "",
+   "dst": "等等，什、什麼？Pink PELULITE？！我賣給那位女士的是 Pink PELUTE，給她做幸運符用的！你怎麼敢——等等……等等，Pink Pelute 的花瓣比較圓……糟了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -168,7 +168,7 @@
   },
   "Death Whistle (Quest)#016": {
    "src": "You can't even say for certain. This kind of carelessness has no place! If you refuse to exercise the proper thought and caution, then those around you suffer.",
-   "dst": "",
+   "dst": "你自己都說不準。這種粗心是不該存在的！你若不願意好好思考、好好謹慎，受苦的就是你身邊的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -178,7 +178,7 @@
   },
   "Death Whistle (Quest)#017": {
    "src": "I must... make a difficult choice, and leave this job to you. I've other things to tend to, though it pains me to leave a life in another's hands. Remember this, villager!",
-   "dst": "",
+   "dst": "我必須……做個艱難的決定，把這件事交給你。我還有別的事要處理，儘管把一條人命交到別人手上讓我很難受。記住這件事，村民！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -188,7 +188,7 @@
   },
   "Death Whistle (Quest)#018": {
    "src": "Aaah, this is a disaster! Human, please, Pink Pelulite acts quickly and intensely... Follow the pink trail on the ground, the flowers shed their petals. Get it back before something bad happens!",
-   "dst": "",
+   "dst": "啊啊，這下慘了！人類，拜託你，Pink Pelulite 發作得又快又猛……順著地上那道粉紅色的痕跡走，那種花會一路掉花瓣。在出事之前把它拿回來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -198,7 +198,7 @@
   },
   "Death Whistle (Quest)#019": {
    "src": "Follow the path of residue to the buyer’s cave.",
-   "dst": "",
+   "dst": "順著殘留的痕跡找到買家的洞窟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -208,7 +208,7 @@
   },
   "Death Whistle (Quest)#020": {
    "src": "Ah, um, come back later please! Something strange is happening!",
-   "dst": "",
+   "dst": "啊，呃，請你等一下再來！有很奇怪的事正在發生！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -218,7 +218,7 @@
   },
   "Death Whistle (Quest)#021": {
    "src": "My body is a bit, um, not-in-my-control right now! I'd rather not hurt anyone!",
-   "dst": "",
+   "dst": "我的身體現在有點、呃，不太受我控制！我不想傷到任何人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -228,7 +228,7 @@
   },
   "Death Whistle (Quest)#022": {
    "src": "Remove the flower from the woman in the cave.",
-   "dst": "",
+   "dst": "把那朵花從洞窟裡那名女子身上取下。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -238,7 +238,7 @@
   },
   "Death Whistle (Quest)#023": {
    "src": "You're back, I see... and you're shedding petals! You got the Pink Pelulite back?",
-   "dst": "",
+   "dst": "你回來啦……而且你身上還一路掉花瓣！你把 Pink Pelulite 拿回來了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -248,7 +248,7 @@
   },
   "Death Whistle (Quest)#024": {
    "src": "And what of the woman who bought it? Was she...?",
-   "dst": "",
+   "dst": "那買下它的那位女士呢？她有沒有……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -258,7 +258,7 @@
   },
   "Death Whistle (Quest)#025": {
    "src": "Oh, thank goodness! You got in there in time. She's a regular of mine- and a bit of a looker, too. That Lari was right, to some extent, at least...",
-   "dst": "",
+   "dst": "哦，謝天謝地！你趕上了。她是我的老主顧——長得也挺好看的。那個 Lari 說的，至少有一部分是對的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -268,7 +268,7 @@
   },
   "Death Whistle (Quest)#026": {
    "src": "I did take her book, and I should be more careful in the future, regarding this... but I can't just quit selling the herbs.",
-   "dst": "",
+   "dst": "我確實拿走了她的書，這方面我以後應該更小心一點……可是我不能就這樣不賣草藥了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -278,7 +278,7 @@
   },
   "Death Whistle (Quest)#027": {
    "src": "I need an income, and the swamp isn't exactly the most resource-rich region here! Especially not any more.",
-   "dst": "",
+   "dst": "我得有收入，而這片沼澤在這裡實在算不上什麼物產豐饒的地方！尤其現在更不是了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -288,7 +288,7 @@
   },
   "Death Whistle (Quest)#028": {
    "src": "And how dare she just walk away like that! It's a good thing you were around, human, otherwise... well, I would not think about it.",
-   "dst": "",
+   "dst": "還有她怎麼敢就這樣一走了之！幸好有你在，人類，不然……唉，我不敢想。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -298,7 +298,7 @@
   },
   "Death Whistle (Quest)#029": {
    "src": "Regardless, you helped me greatly. Got me my supplies and saved the life of a regular of mine, so I've got a gift for you!",
-   "dst": "",
+   "dst": "總之，你幫了我一個大忙。既弄到了我要的貨，又救了我一位老主顧的命，所以我有份禮物要送你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -308,7 +308,7 @@
   },
   "Death Whistle (Quest)#030": {
    "src": "I'll offer you a sampler of my stock. Everything here is pre-primed to be safe for brewing, so there won't be any mishaps like today!",
-   "dst": "",
+   "dst": "我給你一份我店裡的試用組。這裡的每一樣都已經預先處理過，調製起來很安全，不會再出今天這種事了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",

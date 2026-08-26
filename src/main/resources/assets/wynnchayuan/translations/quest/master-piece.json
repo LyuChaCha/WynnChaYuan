@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Master Piece",
   "count": 38,
-  "translated": 0,
+  "translated": 38,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Master Piece#000": {
    "src": "Talk to Caissop the artist, in his tent at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 的帳篷，與藝術家 Caissop 對話",
    "role": "desc",
    "kind": "objective",
    "quest": "Master Piece",
@@ -18,7 +18,7 @@
   },
   "Master Piece#001": {
    "src": "...hm...mh!",
-   "dst": "",
+   "dst": "……嗯……嗯！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -28,7 +28,7 @@
   },
   "Master Piece#002": {
    "src": "Oh sorry, I didn't notice you. Did you want an autograph?",
-   "dst": "",
+   "dst": "哦，抱歉，我沒注意到你。你是來要簽名的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -38,7 +38,7 @@
   },
   "Master Piece#003": {
    "src": "Wait, no? Don't you know who I am?! It seems like you have no taste in art... I am Caissop, the legendary artist!",
-   "dst": "",
+   "dst": "等等，不是？你不知道我是誰？！看來你對藝術毫無品味……我是 Caissop，傳奇的藝術家！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -48,7 +48,7 @@
   },
   "Master Piece#004": {
    "src": "Though, since you are not a fan... Perhaps you can help me? I am looking for a new assistant.",
-   "dst": "",
+   "dst": "不過，既然你不是我的粉絲……那也許你可以幫我？我正在找新的助手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -58,7 +58,7 @@
   },
   "Master Piece#005": {
    "src": "Excellent... I need your help to find three legendary creatures that are hiding in caves around the swamp.",
-   "dst": "",
+   "dst": "太好了……我需要你幫我找到三隻藏在沼澤各處洞窟裡的傳奇生物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -68,7 +68,7 @@
   },
   "Master Piece#006": {
    "src": "I actually know their location, but unfortunately, I am...blind.",
-   "dst": "",
+   "dst": "牠們在哪我其實知道，可惜的是，我……眼睛看不見。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -78,7 +78,7 @@
   },
   "Master Piece#007": {
    "src": "For me to do my work I need to imagine them! That's where you come in. I need you to find them and describe them to me!",
-   "dst": "",
+   "dst": "要創作，我必須先在腦中想像出牠們！這就是你派上用場的地方了。我要你去找到牠們，然後描述給我聽！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -88,7 +88,7 @@
   },
   "Master Piece#008": {
    "src": "Would you turn your back on a blind man?! I need you to give me an accurate description of them! Once you have found one, come back and describe it to me exactly!",
-   "dst": "",
+   "dst": "你要對一個瞎子見死不救嗎？！我需要你給我準確的描述！找到一隻就回來，一五一十地描述給我聽！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -98,7 +98,7 @@
   },
   "Master Piece#009": {
    "src": "The first cave is up a hill with tall, thin-leafed flowers. They smell pink to me, and of this I am certain.",
-   "dst": "",
+   "dst": "第一個洞窟在一座小丘上，那裡有細葉的高花。對我來說它們聞起來是粉紅色的，這點我很確定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -108,7 +108,7 @@
   },
   "Master Piece#010": {
    "src": "Search for the first mythical creature in the cave at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~1}, {~2}, -{~3}] 的洞窟中尋找第一隻神話生物",
    "role": "desc",
    "kind": "objective",
    "quest": "Master Piece",
@@ -118,7 +118,7 @@
   },
   "Master Piece#011": {
    "src": "Report back with the description of the brown, large-snouted creature to Caissop",
-   "dst": "",
+   "dst": "回去向 Caissop 描述那隻棕色的大鼻子生物",
    "role": "desc",
    "kind": "objective",
    "quest": "Master Piece",
@@ -128,7 +128,7 @@
   },
   "Master Piece#012": {
    "src": "Quick! Describe it to me! Go on!",
-   "dst": "",
+   "dst": "快！描述給我聽！說啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -138,7 +138,7 @@
   },
   "Master Piece#013": {
    "src": "Brown...big-nosed... A Villager Cow, you say!?",
-   "dst": "",
+   "dst": "棕色……大鼻子……你說那是一頭村民牛？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -148,7 +148,7 @@
   },
   "Master Piece#014": {
    "src": "...OH, YES! ......... INSPIRED.",
-   "dst": "",
+   "dst": "……喔，太好了！………靈感來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -158,7 +158,7 @@
   },
   "Master Piece#015": {
    "src": "...MH, NO, A LITTLE MORE RED!..... YES!",
-   "dst": "",
+   "dst": "……嗯，不對，再紅一點！……對了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -168,7 +168,7 @@
   },
   "Master Piece#016": {
    "src": "Haha! This is WONDERFUL! I'm not going to show it to you before it is finished!",
-   "dst": "",
+   "dst": "哈哈！這太精采了！沒完成之前我是不會給你看的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -178,7 +178,7 @@
   },
   "Master Piece#017": {
    "src": "Savor the ideas! So now, I need you to go to the second cave...",
-   "dst": "",
+   "dst": "好好品味這些點子吧！那麼現在，我要你去第二個洞窟……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -188,7 +188,7 @@
   },
   "Master Piece#018": {
    "src": "It is down a road, with short, round-cupped flowers. Those ones smell orange to me!",
-   "dst": "",
+   "dst": "它在一條路的盡頭，那裡有矮矮的、杯狀的圓花。那些對我來說聞起來是橘色的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -198,7 +198,7 @@
   },
   "Master Piece#019": {
    "src": "Hurry! I'll finish this animal while you are gone. OH, YES. MUY MACHO.",
-   "dst": "",
+   "dst": "快去！你走的時候我會把這隻動物畫完。喔，太好了。MUY MACHO。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -208,7 +208,7 @@
   },
   "Master Piece#020": {
    "src": "Search for the second mythical beast in the cave at [-{~},-{~}]",
-   "dst": "",
+   "dst": "在 [-{~1},-{~2}] 的洞窟中尋找第二隻神話野獸",
    "role": "desc",
    "kind": "objective",
    "quest": "Master Piece",
@@ -218,7 +218,7 @@
   },
   "Master Piece#021": {
    "src": "Report back with the description of the white, big-horned creature to Caissop",
-   "dst": "",
+   "dst": "回去向 Caissop 描述那隻白色的大角生物",
    "role": "desc",
    "kind": "objective",
    "quest": "Master Piece",
@@ -228,7 +228,7 @@
   },
   "Master Piece#022": {
    "src": "You're here! Quick! Don't look at me, describe it!",
-   "dst": "",
+   "dst": "你來了！快！別看我，快描述！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -238,7 +238,7 @@
   },
   "Master Piece#023": {
    "src": "Snow white, a large horn... A Unicorn Sheep, you say?!",
-   "dst": "",
+   "dst": "雪白、一根大角……你說那是一頭獨角綿羊？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -248,7 +248,7 @@
   },
   "Master Piece#024": {
    "src": "...OH YES, THE WOOL IS REAL... MORE SWIPING... OH YES, BIEN!",
-   "dst": "",
+   "dst": "……喔太好了，這羊毛是真的……再刷幾筆……喔，BIEN！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -258,7 +258,7 @@
   },
   "Master Piece#025": {
    "src": "... THIS IS UNIQUE, REMARKABLE, YES. SUPERNATURAL!",
-   "dst": "",
+   "dst": "……這太獨特了，太出色了，沒錯。超凡脫俗！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -268,7 +268,7 @@
   },
   "Master Piece#026": {
    "src": "The last creature! Red-smelling flowers, prickly thorns, hurry, mucho inspired!",
-   "dst": "",
+   "dst": "最後一隻！聞起來是紅色的花，帶尖刺的，快去，mucho inspired！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -278,7 +278,7 @@
   },
   "Master Piece#027": {
    "src": "... OH, NO, NO. YES! MORE COLOUR, MORE PAINT! I'M OUT OF RED!",
-   "dst": "",
+   "dst": "……喔，不、不對。對了！再多點顏色，再多點顏料！我的紅色用完了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -288,7 +288,7 @@
   },
   "Master Piece#028": {
    "src": "I'LL JUST USE MY BLOOD! OH! YES! ...INSPIRED! REMARKABLE! Huh? Why are you still here? Go! I need that last description!",
-   "dst": "",
+   "dst": "那我就用我的血！喔！太好了！……靈感來了！太出色了！咦？你怎麼還在這？快去！我要最後那個描述！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -298,7 +298,7 @@
   },
   "Master Piece#029": {
    "src": "Search for the third and last mythical animal in the cave at [-{~},-{~}]",
-   "dst": "",
+   "dst": "在 [-{~1},-{~2}] 的洞窟中尋找第三隻、也是最後一隻神話動物",
    "role": "desc",
    "kind": "objective",
    "quest": "Master Piece",
@@ -308,7 +308,7 @@
   },
   "Master Piece#030": {
    "src": "Report back with the description of the pink, flying creature to Caissop",
-   "dst": "",
+   "dst": "回去向 Caissop 描述那隻粉紅色的飛行生物",
    "role": "desc",
    "kind": "objective",
    "quest": "Master Piece",
@@ -318,7 +318,7 @@
   },
   "Master Piece#031": {
    "src": "You're finally back! I just finished the last one. Go! Describe it!",
-   "dst": "",
+   "dst": "你總算回來了！我剛把最後一隻畫完。說！描述！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -328,7 +328,7 @@
   },
   "Master Piece#032": {
    "src": "...Oh, yes... YES. I LOVE IT.",
-   "dst": "",
+   "dst": "……喔，太好了……太好了。我愛死了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -338,7 +338,7 @@
   },
   "Master Piece#033": {
    "src": "It's...A Pigasus! WHAT A NAME!",
-   "dst": "",
+   "dst": "那是……一頭天馬豬！多棒的名字！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -348,7 +348,7 @@
   },
   "Master Piece#034": {
    "src": "...OH YES, WINGS! EYES FROM HEAVEN! OH, YES.",
-   "dst": "",
+   "dst": "……喔對，翅膀！來自天堂的眼睛！喔，太好了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -358,7 +358,7 @@
   },
   "Master Piece#035": {
    "src": "Och, Perfect. The final touch and, done! You were so inspiring that I made two! One for you, and one for me!",
-   "dst": "",
+   "dst": "噢，完美。最後一筆，然後，完成！你給了我太多靈感，我一口氣畫了兩幅！一幅給你，一幅給我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -368,7 +368,7 @@
   },
   "Master Piece#036": {
    "src": "You might want to hold onto that, big-town upper class Villagers pay through the roof for Caissop's work!",
-   "dst": "",
+   "dst": "這個你最好收好，大城市裡那些上流村民為了 Caissop 的作品可是願意砸大錢的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",
@@ -378,7 +378,7 @@
   },
   "Master Piece#037": {
    "src": "Thank you for your assistance, what a rush! Good luck on your Gavel adventure!",
-   "dst": "",
+   "dst": "謝謝你的幫忙，真是暢快！祝你在 Gavel 的冒險順利！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Master Piece",

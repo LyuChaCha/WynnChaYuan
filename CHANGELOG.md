@@ -3,6 +3,30 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.84.0] - 2026-08-26
+
+### 新增
+
+- **任務對話再十二個任務（410 行）**：Death Whistle、Heart of Llevigar、
+  Jungle Fever、Lost in the Jungle、Lexdale Witch Trials、Reincarnation、
+  Wrath of the Mummy、Enter the Dojo、The Maiden Tower、Desperate Metal、
+  Master Piece、Grand Youth。
+
+  157 個任務裡目前有 **56 個**是完整的。
+
+  幾個刻意的處理，方便校稿時對照：
+
+  * **Death Whistle** 的笑點在 `Pink Pelulite` 與 `Pink Pelute` 兩個名字太像，
+    Voer 賣錯了還嘴硬（「等等……Pink Pelute 的花瓣比較圓……糟了」）。
+    兩個名字都留原文，翻掉就沒有那個誤認。
+  * **Heart of Llevigar** 的工頭把老闆 Zenam 叫成 Zeman、Zebra，是刻意的
+    性格描寫，照樣保留。
+  * **The Maiden Tower** 是 Shrek 的戲仿，Sherk 把 Wynn 唸成 `Win`
+    （「一個叫 Win 的地方」「Win 人」），口音笑點留著。
+  * **Master Piece** 的瞎眼藝術家夾雜西班牙文（MUY MACHO、BIEN）原樣留著。
+  * **Enter the Dojo** 的四個房間 Lufar／Fiata／Cliste／Sitheach 是愛爾蘭語造名，
+    留原文；最後一行是 wiki 花絮而非台詞。
+
 ## [1.83.0] - 2026-08-26
 
 ### 新增
