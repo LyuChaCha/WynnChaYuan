@@ -70,10 +70,43 @@ public final class TemplateParityTest {
             }
         }
 
+        signsStayOutside();
+
         System.out.printf("  比對 %d 筆，%d 筆不一致%n", checked, failures);
         System.out.println(failures == 0
                 ? "\n全部通過"
                 : "\n失敗 " + failures + " 項");
         System.exit(failures == 0 ? 0 : 1);
+    }
+
+    /**
+     * 正負號<b>不算數字的一部分</b>。
+     *
+     * <h2>為什麼值得單獨釘住</h2>
+     * 從 CDN 產語料的那幾支工具很自然會寫成 {@code [+-]?\d+}——把號一起吃掉。
+     * 那樣算出來的鍵是 {@code {~}}，而遊戲送過來的是 {@code +{~}}，
+     * 兩邊永遠對不上，<b>而且完全不會報錯</b>：畫面上只是「這條沒翻」。
+     *
+     * <p>意象的技能說明就是這樣掉的——175 段裡有 156 段從頭到尾沒顯示過，
+     * 直到有人截圖問「aspect 怎麼還是英文」才發現。
+     */
+    private static void signsStayOutside() {
+        expect("Ascension lasts +20% longer.", "Ascension lasts +{~} longer.");
+        expect("Awakened requires -25 mana.", "Awakened requires -{~} mana.");
+        expect("gains 2 arrows", "gains {~} arrows");
+        // 千分位與小數照樣算同一個數字
+        expect("Worth 1,250.5%", "Worth {~}");
+    }
+
+    private static void expect(String input, String want) {
+        String got = LineParts.of(StyledText.fromString(input)).template();
+        checked++;
+        if (!want.equals(got)) {
+            failures++;
+            System.out.println("  [FAIL] 正負號的規則不一致");
+            System.out.println("      原文  " + input);
+            System.out.println("      應為  " + want);
+            System.out.println("      實際  " + got);
+        }
     }
 }

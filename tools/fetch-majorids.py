@@ -32,7 +32,10 @@ INDEX = ROOT / "src/main/resources/assets/wynnchayuan/translations/_index.json"
 URL = "https://cdn.wynntils.com/static/Reference/gear.json"
 
 TAGS = re.compile(r"<[^>]+>")
-NUMBER = re.compile(r"[+-]?\d+(?:\.\d+)?%?")
+# 遊戲端的規則（見 GlyphSplitter.NUMBERS）：正負號<b>不</b>算數字的一部分，
+# 所以 `+2` 送過來是 `+{~}`。把號吃進佔位符的話，鍵就跟遊戲對不上——
+# aspect 的說明整批（175 段裡的 156 段）就是這樣一聲不吭地沒在顯示。
+NUMBER = re.compile(r"\d+(?:[.,]\d+)*%?")
 # 私用區與 Wynncraft 的排版平面。與 GlyphSplitter.isGlyphCodePoint 同一套範圍。
 GLYPH_RUN = re.compile(
     "[%s-%s%s-%s%s-%s]+"
