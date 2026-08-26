@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Dearly Departed",
   "count": 45,
-  "translated": 0,
+  "translated": 44,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Dearly Departed#000": {
    "src": "Talk to Farmer Cevalus at",
-   "dst": "",
+   "dst": "與農夫 Cevalus 交談，位置在",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -18,7 +18,7 @@
   },
   "Dearly Departed#001": {
    "src": "Ah, looks like a fresh recruit! Did you see my posting? Good, good.",
-   "dst": "",
+   "dst": "啊，看起來是個新兵！你看到我貼的告示了？很好，很好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -28,7 +28,7 @@
   },
   "Dearly Departed#002": {
    "src": "You see, my dear father-in-law recently passed, and I had to bury him hastily out back. Couldn't get a priest here in time to bury him all properly...",
-   "dst": "",
+   "dst": "是這樣的，我親愛的岳父最近過世了，我只好匆匆把他葬在後面。來不及請神父過來好好安葬他……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -38,7 +38,7 @@
   },
   "Dearly Departed#003": {
    "src": "Unfortunately, it so happens that my wedding ring might have slipped off as I was putting him to rest...",
-   "dst": "",
+   "dst": "不巧的是，我把他安置好的時候，結婚戒指似乎滑掉了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48,7 +48,7 @@
   },
   "Dearly Departed#004": {
    "src": "I need you to go back there and, well, recover the ring.",
-   "dst": "",
+   "dst": "我需要你回那邊去，嗯，把戒指找回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -58,7 +58,7 @@
   },
   "Dearly Departed#005": {
    "src": "It's nothing I couldn't handle myself, of course, but the wife already suspects something, and with her dear father passing so recently...",
-   "dst": "",
+   "dst": "這種事我自己當然應付得來，只是我太太已經起疑了，而她父親又剛走沒多久……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -68,7 +68,7 @@
   },
   "Dearly Departed#006": {
    "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
-   "dst": "",
+   "dst": "你看得出我的處境吧？幫幫可憐人，去把那邊那把 [Muddy Shovel] 拿來，然後回來找我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -78,7 +78,7 @@
   },
   "Dearly Departed#007": {
    "src": "Pick up the shovel at .",
-   "dst": "",
+   "dst": "在 . 撿起鏟子。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -88,7 +88,7 @@
   },
   "Dearly Departed#008": {
    "src": "The [Muddy Shovel] is just over there. I'd really appreciate the help, recruit.",
-   "dst": "",
+   "dst": "那把 [Muddy Shovel] 就在那邊。真的很感謝你幫忙，新兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -98,7 +98,7 @@
   },
   "Dearly Departed#009": {
    "src": "Return to Farmer Cevalus at",
-   "dst": "",
+   "dst": "回去找農夫 Cevalus，位置在",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -108,7 +108,7 @@
   },
   "Dearly Departed#010": {
    "src": "You've got the shovel? Great! You've got some sturdy armour and a weapon too, I presume?",
-   "dst": "",
+   "dst": "鏟子拿到了？太好了！我猜你也有堅固的護甲和武器吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -118,7 +118,7 @@
   },
   "Dearly Departed#011": {
    "src": "Good, good. Better safe than sorry... As I always say! Always, ha ha...",
-   "dst": "",
+   "dst": "很好，很好。有備無患……我一向這麼說！一向如此，哈哈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -128,7 +128,7 @@
   },
   "Dearly Departed#012": {
    "src": "Oh, no reason really! Just making sure, ha ha... Should be perfectly safe back there, perfectly safe.",
-   "dst": "",
+   "dst": "噢，真的沒什麼原因！只是確認一下，哈哈……那後面應該非常安全，非常安全。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -138,7 +138,7 @@
   },
   "Dearly Departed#013": {
    "src": "You've used your Skill Points too, right? They come in handy, should something happen.",
-   "dst": "",
+   "dst": "你的技能點數也用掉了吧？萬一出什麼事，那些是很派得上用場的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -148,7 +148,7 @@
   },
   "Dearly Departed#014": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
-   "dst": "",
+   "dst": "就是技能點數啊！升級的時候會拿到，然後可以分配到各項上面，在戰鬥中取得加成。聽著，我又不是軍人，但連我都知道那東西你真的該用……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -168,7 +168,7 @@
   },
   "Dearly Departed#016": {
    "src": "You get it, or do you want me to tell you what they are?",
-   "dst": "",
+   "dst": "你懂了嗎，還是要我一項一項說給你聽？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -178,7 +178,7 @@
   },
   "Dearly Departed#017": {
    "src": "is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
-   "dst": "",
+   "dst": "在你打不動敵人的時候很有用。它讓你的攻擊更痛，就這麼簡單。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -188,7 +188,7 @@
   },
   "Dearly Departed#018": {
    "src": "'s a bit of a tricky one. The more of it you've got, the higher the likelihood is that your attacks will deal double damage. Neat, right?",
-   "dst": "",
+   "dst": "這一項有點微妙。點得越多，你的攻擊造成雙倍傷害的機率就越高。不錯吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -198,7 +198,7 @@
   },
   "Dearly Departed#019": {
    "src": "is for the spellcasters, it lowers the cost to cast spells and increases your max amount of mana.",
-   "dst": "",
+   "dst": "這一項是給施法者的，它降低施法的消耗，並提高你的魔力上限。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -208,7 +208,7 @@
   },
   "Dearly Departed#020": {
    "src": "is your best bet if you're struggling with staying alive. Decreases the damage you take, 's about all.",
-   "dst": "",
+   "dst": "如果你老是活不下來，這一項是你最好的選擇。減少你受到的傷害，大致就是這樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -218,7 +218,7 @@
   },
   "Dearly Departed#021": {
    "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "",
+   "dst": "敏捷，這一項是給敢冒險的人。點得越多，你越有機會閃過來襲的攻擊，抵銷掉大部分傷害。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -228,7 +228,7 @@
   },
   "Dearly Departed#022": {
    "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
-   "dst": "",
+   "dst": "最棒的是，不管你是什麼職業、什麼打法，這些都可以隨你怎麼搭配。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -238,7 +238,7 @@
   },
   "Dearly Departed#023": {
    "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
-   "dst": "",
+   "dst": "打開你的羅盤就能分配技能點數。準備好之後，就進去把我的戒指拿回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -248,7 +248,7 @@
   },
   "Dearly Departed#024": {
    "src": "Dig up the grave at .",
-   "dst": "",
+   "dst": "在 . 把那座墳挖開。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -258,7 +258,7 @@
   },
   "Dearly Departed#025": {
    "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
-   "dst": "",
+   "dst": "去吧，士兵！讓我們見識 {p} 軍隊的威風！呃，我是說……幫我把戒指拿回來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -268,7 +268,7 @@
   },
   "Dearly Departed#026": {
    "src": "What's going on in there, soldier? Have you found the ring yet?",
-   "dst": "",
+   "dst": "裡面怎麼樣了，士兵？戒指找到了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -278,7 +278,7 @@
   },
   "Dearly Departed#027": {
    "src": "You really should hurry, before... nevermind! Just find the ring and get out of there!",
-   "dst": "",
+   "dst": "你真的該快一點，趁還沒……沒事！總之找到戒指然後離開那裡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -288,7 +288,7 @@
   },
   "Dearly Departed#028": {
    "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
-   "dst": "",
+   "dst": "我的老天牛啊！他……他……他回來了！快，殺了它！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -298,7 +298,7 @@
   },
   "Dearly Departed#029": {
    "src": "Kill the Corrupted Father-in-Law!",
-   "dst": "",
+   "dst": "擊殺墮落的岳父！",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -308,7 +308,7 @@
   },
   "Dearly Departed#030": {
    "src": "You did it! Come back here now, so I can finally get my ring back.",
-   "dst": "",
+   "dst": "你辦到了！快回來這裡，我終於能把戒指拿回來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -318,7 +318,7 @@
   },
   "Dearly Departed#031": {
    "src": "Return to Farmer Cevalus at",
-   "dst": "",
+   "dst": "回去找農夫 Cevalus，位置在",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -328,7 +328,7 @@
   },
   "Dearly Departed#032": {
    "src": "Goodness, that was a little more exciting than I anticipated, hmph. Still, good work! I'm glad we were able to get rid of that monster...",
-   "dst": "",
+   "dst": "天啊，這比我預料的刺激了一點，哼。不過幹得好！我很慶幸我們把那頭怪物解決掉了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -338,7 +338,7 @@
   },
   "Dearly Departed#033": {
    "src": "I mean... poor father-in-law! I don't know how I'll explain this to the wife...",
-   "dst": "",
+   "dst": "我是說……可憐的岳父！我不知道該怎麼跟我太太解釋這件事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -348,7 +348,7 @@
   },
   "Dearly Departed#034": {
    "src": "I'll take the ring now, it's rather precious to me...",
-   "dst": "",
+   "dst": "戒指我收下了，那對我來說相當珍貴……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -358,7 +358,7 @@
   },
   "Dearly Departed#035": {
    "src": "Anyhow, take this well-deserved reward for the, well, actions you took today. Perhaps, if you keep it up, you could even become a hero like Ragnar one day.",
-   "dst": "",
+   "dst": "總之，這是你今天那些，嗯，行動應得的報酬。也許你繼續這樣下去，有一天也能成為像 Ragnar 那樣的英雄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -368,7 +368,7 @@
   },
   "Dearly Departed#036": {
    "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
-   "dst": "",
+   "dst": "你好啊，陌生人。你有什麼事要跟我說嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -378,7 +378,7 @@
   },
   "Dearly Departed#037": {
    "src": "I should be angry but... I can't pretend to be surprised. He's always been such a forgetful oaf.",
-   "dst": "",
+   "dst": "我應該要生氣的，但……我沒辦法裝作很意外。他一直都是這麼糊塗的大個子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -388,7 +388,7 @@
   },
   "Dearly Departed#038": {
    "src": "But, it explains a lot... He's been acting weird lately, ever since dad passed. That must've been what happened, so thank you for telling me.",
-   "dst": "",
+   "dst": "不過，這就說得通了……他最近怪怪的，從我爸走了以後就這樣。原來是這麼回事，謝謝你告訴我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -398,7 +398,7 @@
   },
   "Dearly Departed#039": {
    "src": "That's right. The one and only, ha ha...",
-   "dst": "",
+   "dst": "沒錯。就是我本人，哈哈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -408,7 +408,7 @@
   },
   "Dearly Departed#040": {
    "src": "We're just simple farmers, trying to get by. We were taking care of my dad until... well... yeah...",
-   "dst": "",
+   "dst": "我們只是普通的農民，過日子而已。我們一直照顧著我爸，直到……嗯……對……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -418,7 +418,7 @@
   },
   "Dearly Departed#041": {
    "src": "Thank you... It all happened so suddenly. On the day I left for {p}, dad was as healthy as ever, but when I came back he was already buried. The sickness must have come so fast...",
-   "dst": "",
+   "dst": "謝謝你……那一切發生得太突然了。我動身去 {p} 的那天，我爸還健康得很，等我回來他已經下葬了。那病一定來得非常快……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -428,7 +428,7 @@
   },
   "Dearly Departed#042": {
    "src": "But at his age, I'm not surprised... It's just regrettable that we couldn't get a priest out here in time, dad was such a pious man.",
-   "dst": "",
+   "dst": "不過以他的年紀，我也不算意外……只可惜我們沒能及時請到神父，我爸是那麼虔誠的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -438,7 +438,7 @@
   },
   "Dearly Departed#043": {
    "src": "Dad... Above all, he was kind and always generous. He left us this entire farm. And very pious too, a true believer. Maybe that's why he lived so long...",
-   "dst": "",
+   "dst": "我爸……最重要的是，他心地好，而且總是很慷慨。他把整座農場留給了我們。他也非常虔誠，是真正的信徒。也許那就是他活得這麼久的原因……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -448,7 +448,7 @@
   },
   "Dearly Departed#044": {
    "src": "Oh, dear... If I don't stop, I'm gonna start crying again.",
-   "dst": "",
+   "dst": "噢，天啊……再說下去，我又要哭出來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
