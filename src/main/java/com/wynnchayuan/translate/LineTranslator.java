@@ -611,9 +611,17 @@ public final class LineTranslator {
         int lastSpace = -1;
         int i = 0;
         while (i < text.length()) {
-            int close = text.charAt(i) == '{' ? text.indexOf('}', i) : -1;
-            int end = close > i
-                    ? close + 1                          // 佔位符整組
+            // 正負號跟後面的佔位符是<b>同一個東西</b>，中間不能斷。
+            // 先前 `+{~}` 會被拆成 `+` 與 `{~}` 兩塊，於是行尾留一個孤零零的
+            // 「+」、數字掉到下一行——畫面上是「增加 +」換行「5 層數」。
+            int at = i;
+            if ((text.charAt(i) == '+' || text.charAt(i) == '-')
+                    && i + 1 < text.length() && text.charAt(i + 1) == '{') {
+                at = i + 1;
+            }
+            int close = text.charAt(at) == '{' ? text.indexOf('}', at) : -1;
+            int end = close > at
+                    ? close + 1                          // （帶號的）佔位符整組
                     : i + Character.charCount(text.codePointAt(i));
             String piece = text.substring(i, end);
             int pieceWidth = measure.applyAsInt(piece);
