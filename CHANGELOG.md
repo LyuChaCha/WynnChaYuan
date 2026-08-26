@@ -3,6 +3,30 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.84.1] - 2026-08-26
+
+### 修正
+
+- **`Marked` 那條技能敘述翻了卻不顯示。** 語料的 `src` 本身就是壞的：
+
+      _raw  Smoke Bomb will add +1 Mark ⬥ to
+      src   Smoke Bomb will add +{~} Mark {#}{#}to     ← 一個符號變成兩個，空格被吃掉
+      應為  Smoke Bomb will add +{~} Mark {#} to
+
+  `tools/fix-glyph-templates.py` 本來就是為了修這種錯寫的，卻一直跳過這一條。
+  兩個原因：
+
+  1. 判斷數字的正規式寫成 `\d[\d,]*`，於是 `(Max 4, 0.1s Cooldown)` 裡的
+     `4,` 連逗號一起被當成數字吃掉——骨架比對時那個逗號憑空消失，兩邊對不
+     起來，整條被判成「講的不是同一句話」。
+  2. 譯文修正的規則只認「`{#}` 後面接文字」，接全形句號的（`Mark {#}{#}。`）
+     認不出來。
+
+  兩個都修好之後，這一條連同另外 12 條一起校正了。
+
+- **兩個薩滿技能共用同一段敘述**（Lashing Lance 與 Sanguine Strike），
+  模板修好之後 `src` 變得一模一樣，只有一份會生效。用詞回到翻譯團隊原本那一份。
+
 ## [1.84.0] - 2026-08-26
 
 ### 新增

@@ -124,7 +124,11 @@ def multi_glyph_run(raw: str) -> bool:
     return False
 
 
-NUMBER = re.compile(r"\d[\d,]*(?:\.\d+)?%?")
+# 千分位與小數的分隔符<b>後面必須還有數字</b>。先前寫成 `[\d,]*`，
+# 於是 `(Max 4, 0.1s Cooldown)` 裡的 `4,` 連逗號一起被當成數字吃掉——
+# 骨架比對時那個逗號憑空消失，兩邊對不起來，整條就被判成「講的不是
+# 同一句話」而跳過。`Marked` 那條技能敘述就是這樣卡住的。
+NUMBER = re.compile(r"\d+(?:[,.]\d+)*%?")
 
 NUMBER_SLOT = "{~}"
 
@@ -137,6 +141,16 @@ NUMBER_SLOT = "{~}"
 #
 # `({#})` 不會被誤判：左括號不在前置字元的範圍裡。
 SPACE_SLOT = re.compile(r"(?<=[\w一-鿿}])\{#\}(?=[\w一-鿿])")
+
+# 同一個錯，但後面接的是<b>全形標點</b>：`Mark {#}{#}。`
+#
+# 中文句子常常在符號之後就直接收句，那個位置原文是一個空格，譯者照著壞掉的
+# `src` 抄成了第二個 `{#}`。上面那條規則的向前查看只認文字，接標點的認不出來，
+# 於是整條被判成「改不動」而跳過——`Marked` 那條技能敘述就是這樣卡了兩輪。
+#
+# 這裡換成<b>整個拿掉</b>而不是換成空格：全形標點自帶左側留白，
+# 補一個半形空格反而會變成「{#} 。」。
+PUNCT_SLOT = re.compile(r"(?<=[\w一-鿿}])\{#\}(?=[，。、；：！？）」』】])")
 
 
 def fix_dst(dst: str, want_count: int) -> str | None:
@@ -153,6 +167,8 @@ def fix_dst(dst: str, want_count: int) -> str | None:
         # 少了它畫面上會變成「圖示緊貼著中文」，跟原文的 `{#} Effect:` 對不上。
         fixed = re.sub(r"^(?:\{#\})+\s*", PLACEHOLDER + " ", fixed)
     fixed = SPACE_SLOT.sub(" ", fixed)
+    if fixed.count(PLACEHOLDER) != want_count:
+        fixed = PUNCT_SLOT.sub("", fixed)
     return fixed if fixed.count(PLACEHOLDER) == want_count else None
 
 
