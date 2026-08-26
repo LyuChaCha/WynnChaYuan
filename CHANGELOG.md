@@ -3,6 +3,26 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.83.0] - 2026-08-26
+
+### 新增
+
+- **任務對話，十二個任務完整翻完（277 行）**：The House of Twain、Pirate's Trove、
+  Dwelling Walls、Star Thief、An Iron Heart Part I、The Passage、
+  The Bigger Picture、Ice Nations、Lost Royalty、Troubled Tribesmen、
+  WynnExcavation Site A／B。
+
+  改的是 `quest/` 底下對應的檔案，再跑 `tools/quest-bundle.py` 重打包
+  ——`quest-dialogue.json` 是產生物，直接改會被蓋掉。
+
+  一個任務整個翻完才收，不做「半個任務」：對話讀到一半跳回英文，
+  比整段英文更難讀。目前 157 個任務裡有 44 個是完整的。
+
+  Troubled Tribesmen 有一行部落語（`Oui ryja y bufanvim...`）原樣留著。
+  那是刻意讓玩家讀不懂的替換式密語，下一句 NPC 才用共通語說「我對你施了法術」
+  ——那個對照就是這段劇情本身。`validate.py` 會對它報一個「譯文和原文相同」的
+  警告，是刻意的。
+
 ## [1.82.0] - 2026-08-26
 
 ### 新增

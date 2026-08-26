@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "An Iron Heart Part I",
   "count": 24,
-  "translated": 0,
+  "translated": 24,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "An Iron Heart Part I#000": {
    "src": "Speak with Duvale at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 與 Duvale 對話",
    "role": "desc",
    "kind": "objective",
    "quest": "An Iron Heart Part I",
@@ -18,7 +18,7 @@
   },
   "An Iron Heart Part I#001": {
    "src": "Oh, you there! I wasn't expecting a human soldier to be here, but you've come at a perfect time. I could use some help, see.",
-   "dst": "",
+   "dst": "喔，那邊那位！我沒想到這裡會有人類士兵，不過你來得正是時候。我這兒正需要幫手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -28,7 +28,7 @@
   },
   "An Iron Heart Part I#002": {
    "src": "I'm certain you know about Guard Golems, yes? They're manufactured here in Gavel, and I bought one recently.",
-   "dst": "",
+   "dst": "你應該知道守衛魔像吧？那是在 Gavel 這裡製造的，我最近買了一台。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -38,7 +38,7 @@
   },
   "An Iron Heart Part I#003": {
    "src": "The goblins keep trying to forage in my farms, you see- I needed something to keep them out, and a Golem would have been perfect.",
-   "dst": "",
+   "dst": "那些哥布林老是想跑到我的農田裡翻找東西——我需要點什麼把牠們擋在外面，而魔像本來是最合適的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -48,7 +48,7 @@
   },
   "An Iron Heart Part I#004": {
    "src": "But, shortly after I activated it, the thing attacked me! I nearly got killed- It was ramming itself against boulders and walls...",
-   "dst": "",
+   "dst": "可是我才剛啟動它沒多久，那東西就攻擊我！我差點沒命——它一直拿自己去撞岩石和牆壁……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -58,7 +58,7 @@
   },
   "An Iron Heart Part I#005": {
    "src": "I obviously was sold a defective model... That golem is a danger to everything around it. Do you think you're up to subduing it?",
-   "dst": "",
+   "dst": "我八成是買到瑕疵品了……那台魔像對周遭的一切都是威脅。你覺得你制伏得了它嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -68,7 +68,7 @@
   },
   "An Iron Heart Part I#006": {
    "src": "It's shed a trail of scrap, as you can see. Please, follow the trail of scrap and keep it from causing anyone more damage!",
-   "dst": "",
+   "dst": "你看得出來，它一路上掉了不少碎片。拜託，順著那些碎片追過去，別讓它再傷到別人了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -78,7 +78,7 @@
   },
   "An Iron Heart Part I#007": {
    "src": "Find the defective Guard Golem in the mountain at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~1}, {~2}, -{~3}] 的山中找到那台瑕疵的守衛魔像",
    "role": "desc",
    "kind": "objective",
    "quest": "An Iron Heart Part I",
@@ -88,7 +88,7 @@
   },
   "An Iron Heart Part I#008": {
    "src": "Find the defective Guard Golem",
-   "dst": "",
+   "dst": "找到那台瑕疵的守衛魔像",
    "role": "desc",
    "kind": "objective",
    "quest": "An Iron Heart Part I",
@@ -98,7 +98,7 @@
   },
   "An Iron Heart Part I#009": {
    "src": "...I am... w̶h̴at^s my...na̷m̸e...? I had one...",
-   "dst": "",
+   "dst": "……我是……w̶h̴at^s my...na̷m̸e...？我以前有名字的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -108,7 +108,7 @@
   },
   "An Iron Heart Part I#010": {
    "src": "Re...remember!! W̵H̸A̶T̸ IS MY N̵A̴M̵E̵? My life?",
-   "dst": "",
+   "dst": "想……想起來！！W̵H̸A̶T̸ IS MY N̵A̴M̵E̵？我的人生呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -118,7 +118,7 @@
   },
   "An Iron Heart Part I#011": {
    "src": "REMEMBER!! No...no orders! No dREMEMBER!! No...no o irectREMEMBER!!",
-   "dst": "",
+   "dst": "想起來！！不……沒有命令！沒有 d想起來！！不……沒有 o 命令想起來！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -128,7 +128,7 @@
   },
   "An Iron Heart Part I#012": {
    "src": "My name!! My life! I wo̴n't hurt them! The pain helps me reme...who's there?! LEAVE! PL̴E̵A̷SE!",
-   "dst": "",
+   "dst": "我的名字！！我的人生！我不會傷害他們的！這痛楚幫我想起……誰在那裡？！走開！拜、拜託！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -138,7 +138,7 @@
   },
   "An Iron Heart Part I#013": {
    "src": "No directives!! Who did this?! I can't...s-stop giving me ORDERS!!",
-   "dst": "",
+   "dst": "沒有指令！！這是誰幹的？！我沒辦法……住、住手，別再對我下命令了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -148,7 +148,7 @@
   },
   "An Iron Heart Part I#014": {
    "src": "N- MORE COLDNESS! NO MORE V̴O̸I̶C̴E̷S THAT AREN'T MINE! MY NAME IS [̶E̷R̶R̷O̸R̷]!! [̶E̷R̶R̷O̸R̷]!! NOOO!!",
-   "dst": "",
+   "dst": "不——別再冷下去了！別再有不屬於我的聲音了！我的名字是 [̶E̷R̶R̷O̸R̷]！！[̶E̷R̶R̷O̸R̷]！！不要啊！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -158,7 +158,7 @@
   },
   "An Iron Heart Part I#015": {
    "src": "Subdue the defective Guard Golem and return to Duvale at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "制伏那台瑕疵的守衛魔像，並回到 [-{~1}, {~2}, -{~3}] 向 Duvale 回報",
    "role": "desc",
    "kind": "objective",
    "quest": "An Iron Heart Part I",
@@ -168,7 +168,7 @@
   },
   "An Iron Heart Part I#016": {
    "src": "Falling...apart...this isn't who I I I was... My... My... My my my my my name is. Was. Is. Was. Is. IS...! [̶E̷R̶R̷O̸R̷]... Ma[̶E̷R̶R̷O̸ine... Ma̷deleine!! I'm Madeleine... I... I-I-IIIIIIIIII-",
-   "dst": "",
+   "dst": "碎……開了……我不是這樣的我我我……我的……我的……我我我我我的名字是。曾是。是。曾是。是。是……！[̶E̷R̶R̷O̸R̷]……Ma[̶E̷R̶R̷O̸ine……Ma̷deleine！！我是 Madeleine……我……我我我我我我我我我我——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -178,7 +178,7 @@
   },
   "An Iron Heart Part I#017": {
    "src": "Were you able to subdue the golem? You certainly look like you're in one piece.",
-   "dst": "",
+   "dst": "你制伏那台魔像了嗎？看樣子你倒是全身而退。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -188,7 +188,7 @@
   },
   "An Iron Heart Part I#018": {
    "src": "Ach...that stings. I shouldn't be surprised you had to destroy it, but that was still a big wasted investment for me.",
-   "dst": "",
+   "dst": "唉……真傷。你非得把它毀掉，我也不該覺得意外，但那筆投資就這樣白花了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -198,7 +198,7 @@
   },
   "An Iron Heart Part I#019": {
    "src": "Still, it makes me wonder...it sounded like it was talking when I first turned it on- Wait, you heard it too?",
-   "dst": "",
+   "dst": "不過話說回來……我第一次啟動它的時候，它好像就在講話了——等等，你也聽見了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -208,7 +208,7 @@
   },
   "An Iron Heart Part I#020": {
    "src": "Hm. There are some unsavory rumors about the factory, come to think of it... Maybe there's some stock to them.",
-   "dst": "",
+   "dst": "嗯。仔細想想，那家工廠是有一些不太好聽的傳聞……說不定不是空穴來風。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -218,7 +218,7 @@
   },
   "An Iron Heart Part I#021": {
    "src": "It said a name? Madeleine? It doesn't exactly ring a bell, but that's...rather concerning. I never mentioned a Madeleine to it.",
-   "dst": "",
+   "dst": "它說了一個名字？Madeleine？我完全沒印象，可是這……實在令人不安。我從來沒對它提過什麼 Madeleine。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -228,7 +228,7 @@
   },
   "An Iron Heart Part I#022": {
    "src": "This is worth sending onto the police, really. I think I might have to write to {p}- the factory is near there.",
-   "dst": "",
+   "dst": "這件事真的該報給警方。我看我得寫封信到 {p} 去——那家工廠就在附近。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",
@@ -238,7 +238,7 @@
   },
   "An Iron Heart Part I#023": {
    "src": "Til then, here. Consider this your reward for helping me out, brave Human. Good luck out there.",
-   "dst": "",
+   "dst": "在那之前，這個拿去。就當是你幫我的謝禮，勇敢的人類。外面路上小心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "An Iron Heart Part I",

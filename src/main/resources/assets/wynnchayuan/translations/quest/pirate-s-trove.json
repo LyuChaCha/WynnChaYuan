@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Pirate's Trove",
   "count": 16,
-  "translated": 0,
+  "translated": 16,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Pirate's Trove#000": {
    "src": "Talk to Damiral, outside {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 {p} 外與 Damiral 對話，座標 [-{~1}, {~2}, -{~3}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -18,7 +18,7 @@
   },
   "Pirate's Trove#001": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
-   "dst": "",
+   "dst": "哦，冒險者！歡迎來到偉大的 Gavel 行省，村民一族的家鄉，也是在下的家。你很快就會進到 {p} 那座宏偉的要塞城了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -28,7 +28,7 @@
   },
   "Pirate's Trove#002": {
    "src": "But enough with the pleasantries. Tell me... have you ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
-   "dst": "",
+   "dst": "客套話就到這。跟你說……你聽過大海盜 Hastor 船長的故事嗎？很久以前縱橫七海的那位。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -38,7 +38,7 @@
   },
   "Pirate's Trove#003": {
    "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune within the walls someplace!",
-   "dst": "",
+   "dst": "傳說當年 {p} 重建的時候，他把自己的財寶藏在城牆裡的某個地方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -48,7 +48,7 @@
   },
   "Pirate's Trove#004": {
    "src": "I'm a retired sailor now, but I could still do with a few extra emeralds from that treasure. Perhaps, if you're up to it... we could come to an agreement?",
-   "dst": "",
+   "dst": "我現在是個退休水手了，不過要是能從那批寶藏裡多分幾顆綠寶石，我也不介意。也許……你有興趣的話，我們可以談個條件？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -58,7 +58,7 @@
   },
   "Pirate's Trove#005": {
    "src": "I have a riddle, the first of a number of clues that are supposed to lead to where Hastor hid his fortune, but I can't for the life of me figure it out.",
-   "dst": "",
+   "dst": "我手上有一則謎語，是通往 Hastor 藏寶處的一連串線索裡的第一則，可是我怎麼想都想不出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -68,7 +68,7 @@
   },
   "Pirate's Trove#006": {
    "src": "Maybe you'll be able to solve it. If you can, I'll make sure to split the treasure with you!",
-   "dst": "",
+   "dst": "也許你解得開。你要是辦得到，寶藏我一定跟你分！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -78,7 +78,7 @@
   },
   "Pirate's Trove#007": {
    "src": "This first riddle goes like so: “Toward the sunset, among the northern flowers shaded by quartz”.",
-   "dst": "",
+   "dst": "第一則謎語是這樣的：「向著日落，在石英遮蔭的北方花叢之間」。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -88,7 +88,7 @@
   },
   "Pirate's Trove#008": {
    "src": "I do wish you good luck, adventurer! Remember, everything you need to solve the clues should be found somewhere inside {p}.",
-   "dst": "",
+   "dst": "祝你好運，冒險者！記住，解開這些線索需要的東西，全都在 {p} 城裡的某個角落。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -98,7 +98,7 @@
   },
   "Pirate's Trove#009": {
    "src": "Clue I: Toward the sunset, among northern flowers shaded by quartz",
-   "dst": "",
+   "dst": "線索一：向著日落，在石英遮蔭的北方花叢之間",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -108,7 +108,7 @@
   },
   "Pirate's Trove#010": {
    "src": "Clue II: In a place of identity, above the leaves and between the glass",
-   "dst": "",
+   "dst": "線索二：在身分之所，樹葉之上、玻璃之間",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -118,7 +118,7 @@
   },
   "Pirate's Trove#011": {
    "src": "Clue III: In an emerald fountain, surrounded by the wealth of the villagers",
-   "dst": "",
+   "dst": "線索三：在綠寶石的泉中，四周環繞著村民的財富",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -128,7 +128,7 @@
   },
   "Pirate's Trove#012": {
    "src": "Clue IV: Beneath the cowl of an eastern titan, keeping watch over our heads",
-   "dst": "",
+   "dst": "線索四：在東方巨人的兜帽之下，日夜守望著我們的頭頂",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -138,7 +138,7 @@
   },
   "Pirate's Trove#013": {
    "src": "Aha! I'd come to ask how it was coming when I saw you jump over here!",
-   "dst": "",
+   "dst": "啊哈！我本來想過去問你進度如何，結果就看到你跳過來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -148,7 +148,7 @@
   },
   "Pirate's Trove#014": {
    "src": "Phenomenal work, my compatriot. Though, do remember our deal?",
-   "dst": "",
+   "dst": "幹得漂亮，我的夥伴。不過，我們的約定你還記得吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -158,7 +158,7 @@
   },
   "Pirate's Trove#015": {
    "src": "You find the treasure, I give you a cut. I'll just take my part and be on my way!",
-   "dst": "",
+   "dst": "你找到寶藏，我分你一份。我拿走我那份就上路啦！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",

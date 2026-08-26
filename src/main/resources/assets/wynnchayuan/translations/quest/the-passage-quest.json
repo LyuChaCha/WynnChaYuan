@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Passage (Quest)",
   "count": 24,
-  "translated": 0,
+  "translated": 24,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Passage (Quest)#000": {
    "src": "Talk to Wirt in {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 {p} 與 Wirt 對話，座標 [-{~1}, {~2}, -{~3}]",
    "role": "desc",
    "kind": "objective",
    "quest": "The Passage (Quest)",
@@ -18,7 +18,7 @@
   },
   "The Passage (Quest)#001": {
    "src": "Not so fast, you!",
-   "dst": "",
+   "dst": "站住，別走那麼快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -28,7 +28,7 @@
   },
   "The Passage (Quest)#002": {
    "src": "My dad said I can't let any strangers through this passage!",
-   "dst": "",
+   "dst": "我爸說了，我不能讓任何陌生人通過這條通道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -38,7 +38,7 @@
   },
   "The Passage (Quest)#003": {
    "src": "If you want access, talk to him, he's the recruiter of the town! His name is Ildan. He's just southwest of here.",
-   "dst": "",
+   "dst": "你要想過去，去找他談。他是鎮上的招募官！他叫 Ildan，就在這裡的西南邊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -48,7 +48,7 @@
   },
   "The Passage (Quest)#004": {
    "src": "Find Ildan in {p} at [-{~}, {~}, -{~}] and ask to be a member of the town",
-   "dst": "",
+   "dst": "在 {p} 的 [-{~1}, {~2}, -{~3}] 找到 Ildan，請求成為鎮上的一員",
    "role": "desc",
    "kind": "objective",
    "quest": "The Passage (Quest)",
@@ -58,7 +58,7 @@
   },
   "The Passage (Quest)#005": {
    "src": "Oh! So you want to become a member of this town?",
-   "dst": "",
+   "dst": "哦！所以你想成為這個鎮的一員？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -68,7 +68,7 @@
   },
   "The Passage (Quest)#006": {
    "src": "You will have to help us first, of course!",
-   "dst": "",
+   "dst": "那當然得先幫我們一個忙！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -78,7 +78,7 @@
   },
   "The Passage (Quest)#007": {
    "src": "I'm sure you've noticed, but there is a tribe camp not too far from here.",
-   "dst": "",
+   "dst": "你應該注意到了，離這裡不遠有個部落營地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -88,7 +88,7 @@
   },
   "The Passage (Quest)#008": {
    "src": "They used to have a powerful chief, but he eventually died in battle.",
-   "dst": "",
+   "dst": "他們以前有位很強的酋長，後來戰死了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -98,7 +98,7 @@
   },
   "The Passage (Quest)#009": {
    "src": "The tribe couldn't bear the fact that he was dead. They performed some unethical necromancy spell on him.",
-   "dst": "",
+   "dst": "部落無法接受他的死，於是對他施了某種不該碰的死靈術。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -108,7 +108,7 @@
   },
   "The Passage (Quest)#010": {
    "src": "They quickly realized that is was a bad idea, so they locked him in a tomb.",
-   "dst": "",
+   "dst": "他們很快就發現這是個爛主意，所以把他鎖進了一座墓穴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -118,7 +118,7 @@
   },
   "The Passage (Quest)#011": {
    "src": "He keeps reviving his minions and it's causing quite some problems to our army.",
-   "dst": "",
+   "dst": "他不斷把手下復活，給我們的軍隊帶來不少麻煩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -128,7 +128,7 @@
   },
   "The Passage (Quest)#012": {
    "src": "You can access the tomb from a sacrificial shrine, I've heard, but I'm not sure how. There are probably hints nearby the shrine.",
-   "dst": "",
+   "dst": "我聽說可以從一座獻祭神壇進入那座墓穴，但我不確定怎麼進。神壇附近應該會有提示。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -138,7 +138,7 @@
   },
   "The Passage (Quest)#013": {
    "src": "Bring me back [{~} Antic Bead] as a proof of its death, and I will let you become a citizen.",
-   "dst": "",
+   "dst": "把 [{~} 古怪珠子] 帶回來給我當作牠已死的憑證，我就讓你成為鎮民。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -148,7 +148,7 @@
   },
   "The Passage (Quest)#014": {
    "src": "I've marked the direction to the shrine in your book. Remember, there should be hints right nearby the shrine. Good luck.",
-   "dst": "",
+   "dst": "我把神壇的方向標在你的書上了。記住，提示就在神壇附近。祝你好運。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -158,7 +158,7 @@
   },
   "The Passage (Quest)#015": {
    "src": "Search for clues near [-{~}, {~}, -{~}] and bring back [{~} Antic Bead] to Ildan.",
-   "dst": "",
+   "dst": "在 [-{~1}, {~2}, -{~3}] 附近尋找線索，並把 [{~} 古怪珠子] 帶回給 Ildan。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Passage (Quest)",
@@ -168,7 +168,7 @@
   },
   "The Passage (Quest)#016": {
    "src": "Impressive! You got the bead!",
-   "dst": "",
+   "dst": "厲害！你把珠子拿到手了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -178,7 +178,7 @@
   },
   "The Passage (Quest)#017": {
    "src": "Well, welcome to this town, adventurer! You are now officially a citizen.",
-   "dst": "",
+   "dst": "那麼，歡迎來到這個鎮，冒險者！你正式成為鎮民了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -188,7 +188,7 @@
   },
   "The Passage (Quest)#018": {
    "src": "Oh, but before you go! I do have a few things to say. First, about the beads here.",
-   "dst": "",
+   "dst": "哦，不過在你走之前！我還有幾件事要說。第一，關於這裡的珠子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -198,7 +198,7 @@
   },
   "The Passage (Quest)#019": {
    "src": "The tribesmen accept these as currency, so if you collect enough, I've heard they can offer you powerful masks.",
-   "dst": "",
+   "dst": "部落的人把這些當貨幣用，所以你要是收集得夠多，聽說他們可以給你強力的面具。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -208,7 +208,7 @@
   },
   "The Passage (Quest)#020": {
    "src": "Second, about the shrine. Now, this is just a rumor, but apparently that tomb is not unique.",
-   "dst": "",
+   "dst": "第二，關於那座神壇。這只是傳聞，但那座墓穴似乎不是唯一的一座。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -218,7 +218,7 @@
   },
   "The Passage (Quest)#021": {
    "src": "There are supposed to be a bunch of these altars scattered around the province, even in Gavel too!",
-   "dst": "",
+   "dst": "據說這種祭壇散布在整個行省，連 Gavel 那邊都有！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -228,7 +228,7 @@
   },
   "The Passage (Quest)#022": {
    "src": "If true, you should look for them. While the fights will be tough, I would imagine great rewards could be gotten from them!",
-   "dst": "",
+   "dst": "如果是真的，你應該去找找看。那些戰鬥會很硬，但我猜報酬也會很可觀！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -238,7 +238,7 @@
   },
   "The Passage (Quest)#023": {
    "src": "Anyway, I've talked enough. I'm proud to have such a powerful fighter join our town! I wish you luck, friend!",
-   "dst": "",
+   "dst": "好了，我話說夠多了。有你這樣的強者加入我們鎮，我很驕傲！祝你好運，朋友！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
