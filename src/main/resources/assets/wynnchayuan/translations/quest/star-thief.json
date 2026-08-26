@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Star Thief",
   "count": 22,
-  "translated": 0,
+  "translated": 22,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Star Thief#000": {
    "src": "Look into the rumors of strange weather near the Imal Inn at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 的 Imal Inn 附近，調查天候異常的傳聞。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -18,7 +18,7 @@
   },
   "Star Thief#001": {
    "src": "Find the meteor's crash site at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~1}, {~2}, -{~3}] 找到隕石的墜落地點。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -28,7 +28,7 @@
   },
   "Star Thief#002": {
    "src": "Hey you! Human. What are you doing here?",
-   "dst": "",
+   "dst": "喂，你！人類。你在這裡做什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -38,7 +38,7 @@
   },
   "Star Thief#003": {
    "src": "Under Villager law any extra terrestrial or extra voidal entities are prohibited and owned by the state.",
-   "dst": "",
+   "dst": "依村民律法，一切來自天外或虛空的物體皆屬禁品，歸國家所有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -48,7 +48,7 @@
   },
   "Star Thief#004": {
    "src": "Seeing as you are new to the land, I can't see you being prosecuted, especially a {p} Guard.",
-   "dst": "",
+   "dst": "不過你初來乍到，我想應該不至於被起訴，何況你還是 {p} 的守衛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -58,7 +58,7 @@
   },
   "Star Thief#005": {
    "src": "This meteor is different to what we've seen before. We suspect that direct contact with the meteor is dangerous.",
-   "dst": "",
+   "dst": "這顆隕石跟我們以往見過的都不一樣。我們懷疑直接接觸它是危險的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -68,7 +68,7 @@
   },
   "Star Thief#006": {
    "src": "The magical radiation doesn't seem to be affecting you at all though. Do you not feel anything? Perhaps you could help me locate it.",
-   "dst": "",
+   "dst": "可是那股魔法輻射對你好像完全沒有影響。你沒有任何感覺嗎？也許你可以幫我找到它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -78,7 +78,7 @@
   },
   "Star Thief#007": {
    "src": "Explore the cave that the meteor crashed into.",
-   "dst": "",
+   "dst": "探索隕石墜落造成的洞窟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -88,7 +88,7 @@
   },
   "Star Thief#008": {
    "src": "It's... mine.",
-   "dst": "",
+   "dst": "它是……我的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -98,7 +98,7 @@
   },
   "Star Thief#009": {
    "src": "Escape the collapsing cave.",
-   "dst": "",
+   "dst": "從崩塌的洞窟中逃出。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -108,7 +108,7 @@
   },
   "Star Thief#010": {
    "src": "Follow the trail leading off to the east from the cave.",
-   "dst": "",
+   "dst": "沿著洞窟往東延伸的痕跡追蹤。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -118,7 +118,7 @@
   },
   "Star Thief#011": {
    "src": "Explore the cave at [-{~}, {~}, -{~}] and defeat the insane thief.",
-   "dst": "",
+   "dst": "探索 [-{~1}, {~2}, -{~3}] 的洞窟，擊敗發狂的竊賊。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -128,7 +128,7 @@
   },
   "Star Thief#012": {
    "src": ".̸.̴.̵.̴ I can't control myself...f̸j̷f̴j̵f̵j̴ This rock...",
-   "dst": "",
+   "dst": ".̸.̴.̵.̴ 我控制不了自己……f̸j̷f̴j̵f̵j̴ 這塊石頭……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -138,7 +138,7 @@
   },
   "Star Thief#013": {
    "src": "What is... this feeling… No I won't listen..",
-   "dst": "",
+   "dst": "這是什麼……感覺……不，我不會聽的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -148,7 +148,7 @@
   },
   "Star Thief#014": {
    "src": "I can't... control... my mind... e̴n̴d̴ ̷m̶e̷.̷",
-   "dst": "",
+   "dst": "我沒辦法……控制……我的意識…… e̴n̴d̴ ̷m̶e̷.̷",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -158,7 +158,7 @@
   },
   "Star Thief#015": {
    "src": "Bring back the piece of meteor to the secret agent at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把那塊隕石碎片帶回 [-{~1}, {~2}, -{~3}] 交給那名密探。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -168,7 +168,7 @@
   },
   "Star Thief#016": {
    "src": "Hello again. Did you find the meteor down there? Why on earth are you holding some?!",
-   "dst": "",
+   "dst": "又見面了。你在底下找到那顆隕石了嗎？你到底為什麼手上會拿著一塊啊？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -178,7 +178,7 @@
   },
   "Star Thief#017": {
    "src": "I see. This material is incredibly rare and magically powerful. Meteors fall all over Gavel and come in a variety of colours and potency.",
-   "dst": "",
+   "dst": "我明白了。這種材質極為稀有，魔力也極強。隕石在 Gavel 各地都會墜落，顏色與威力五花八門。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -188,7 +188,7 @@
   },
   "Star Thief#018": {
    "src": "We don't fully understand them, but we know they are dangerous. Every scientist who has studied them has lost their minds.",
-   "dst": "",
+   "dst": "我們還沒能完全理解它們，但我們知道它們很危險。每一個研究過它們的科學家，最後都瘋了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -198,7 +198,7 @@
   },
   "Star Thief#019": {
    "src": "The meteors hold many secrets and powers, maybe the ones we need to end your war. Thank you, here's a small reward for helping us.",
-   "dst": "",
+   "dst": "隕石藏著許多祕密與力量，也許正是我們結束你們那場戰爭所需要的。謝謝你，這是一點小小的謝禮。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -208,7 +208,7 @@
   },
   "Star Thief#020": {
    "src": "Hello again. Did you find the meteor down there? No? Maybe go back and try to find it?",
-   "dst": "",
+   "dst": "又見面了。你在底下找到那顆隕石了嗎？沒有？那要不要回去再找找看？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -218,7 +218,7 @@
   },
   "Star Thief#021": {
    "src": "Remember... Just follow the white trail leading to the cave!",
-   "dst": "",
+   "dst": "記住……順著那道白色的痕跡走，就會到那個洞窟！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",

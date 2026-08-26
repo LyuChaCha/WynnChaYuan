@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Dwelling Walls",
   "count": 17,
-  "translated": 0,
+  "translated": 17,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Dwelling Walls#000": {
    "src": "Talk to Leucsaa at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [{~1}, {~2}, -{~3}] 與 Leucsaa 對話",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -18,7 +18,7 @@
   },
   "Dwelling Walls#001": {
    "src": "Let's see here... mother's old vase... check!",
-   "dst": "",
+   "dst": "我看看……母親的舊花瓶……有了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -28,7 +28,7 @@
   },
   "Dwelling Walls#002": {
    "src": "Dining room table... got it here, check!",
-   "dst": "",
+   "dst": "餐廳的桌子……在這裡，有了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -38,7 +38,7 @@
   },
   "Dwelling Walls#003": {
    "src": "Finally, the journal. It's out here somewhere, I assume. I'll look around.",
-   "dst": "",
+   "dst": "最後是那本日誌。應該就在這附近吧，我找找看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -48,7 +48,7 @@
   },
   "Dwelling Walls#004": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -58,7 +58,7 @@
   },
   "Dwelling Walls#005": {
    "src": "Hold on, what? The journal! I must have forgotten it inside the mansion!",
-   "dst": "",
+   "dst": "等等，什麼？日誌！我一定是把它忘在宅子裡了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -68,7 +68,7 @@
   },
   "Dwelling Walls#006": {
    "src": "You there! Would you mind doing me a deed?",
-   "dst": "",
+   "dst": "那邊那位！可以請你幫個忙嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -78,7 +78,7 @@
   },
   "Dwelling Walls#007": {
    "src": "I left a very precious journal inside this mansion, a hell within walls. It was my great grandfather's!",
-   "dst": "",
+   "dst": "我把一本非常珍貴的日誌留在這棟宅子裡了，那地方根本是四面牆圍起來的地獄。那是我曾祖父的東西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -88,7 +88,7 @@
   },
   "Dwelling Walls#008": {
    "src": "The mansion was designed by a Corkian architect, and I was scammed into buying it.",
-   "dst": "",
+   "dst": "這棟宅子是 Corkian 建築師設計的，我是被騙了才買下它的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -98,7 +98,7 @@
   },
   "Dwelling Walls#009": {
    "src": "If you step inside the mansion just for a few moments, you'll understand why the sellers had to trick someone into investing in their god forsaken real estate!",
-   "dst": "",
+   "dst": "你只要進去待個幾分鐘，就會明白為什麼賣家非得騙人來接手這種鬼地方不可！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -108,7 +108,7 @@
   },
   "Dwelling Walls#010": {
    "src": "Navigating from room to room is nearly impossible, the rooms move around. I've only been in the mansion for a week and I'm already packing my bags and moving to {p}.",
-   "dst": "",
+   "dst": "在房間之間走動幾乎是不可能的事，那些房間會自己移動。我才住了一個禮拜，現在已經在打包行李準備搬去 {p} 了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -118,7 +118,7 @@
   },
   "Dwelling Walls#011": {
    "src": "Enter the mansion",
-   "dst": "",
+   "dst": "進入宅邸",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -128,7 +128,7 @@
   },
   "Dwelling Walls#012": {
    "src": "Navigate the mansion to the room holding the journal",
-   "dst": "",
+   "dst": "在宅邸中找到放著日誌的房間",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -138,7 +138,7 @@
   },
   "Dwelling Walls#013": {
    "src": "Talk to Leucsaa",
-   "dst": "",
+   "dst": "與 Leucsaa 對話",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -148,7 +148,7 @@
   },
   "Dwelling Walls#014": {
    "src": "The journal! You outsmarted the mansion!",
-   "dst": "",
+   "dst": "日誌！你居然贏過那棟宅子了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -158,7 +158,7 @@
   },
   "Dwelling Walls#015": {
    "src": "I must thank you, that journal was priceless to my family.",
-   "dst": "",
+   "dst": "真的很謝謝你，那本日誌對我們家來說是無價之寶。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -168,7 +168,7 @@
   },
   "Dwelling Walls#016": {
    "src": "Let this be a life lesson to you. Never buy a house from a Corkian architect.",
-   "dst": "",
+   "dst": "這件事你就當個人生教訓吧：千萬別跟 Corkian 建築師買房子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",

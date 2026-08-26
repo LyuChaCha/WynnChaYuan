@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Troubled Tribesmen",
   "count": 26,
-  "translated": 0,
+  "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Troubled Tribesmen#000": {
    "src": "Talk to Ka L'argwit.",
-   "dst": "",
+   "dst": "與 Ka L'argwit 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -18,7 +18,7 @@
   },
   "Troubled Tribesmen#001": {
    "src": "Talk to Krattson.",
-   "dst": "",
+   "dst": "與 Krattson 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -28,7 +28,7 @@
   },
   "Troubled Tribesmen#002": {
    "src": "Hey! Aren't these people fascinating? They sure smell bad, though! What? That Tribesman said my name?! Amazing! I've been trying to communicate with them for weeks.",
-   "dst": "",
+   "dst": "嘿！這些人是不是很迷人？不過他們是真的很臭！什麼？那個部落人叫了我的名字？！太驚人了！我花了好幾個禮拜想跟他們溝通。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -38,7 +38,7 @@
   },
   "Troubled Tribesmen#003": {
    "src": "He sure seems like a distressed little fellow. He keeps pointing to that huge tree right there. A {p} keeper once told me it's possible to speak with them.",
-   "dst": "",
+   "dst": "他看起來像個很苦惱的小傢伙。他一直指著那邊那棵大樹。有個 {p} 的守護者跟我說過，是有辦法跟他們對話的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -48,7 +48,7 @@
   },
   "Troubled Tribesmen#004": {
    "src": "He told me that within the woods there is a Shaman who will grant certain people permission to speak their language. I did some traveling through the jungle and actually found him!",
-   "dst": "",
+   "dst": "他告訴我，林子裡有一位薩滿，會賜予某些人說他們語言的能力。我在叢林裡走了一趟，還真的找到他了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -58,7 +58,7 @@
   },
   "Troubled Tribesmen#005": {
    "src": "But despite my efforts, he just sat in silence with his eyes closed. He must of known I wasn't a threat because he was totally exposed. He had no interest in speaking with me, though.",
-   "dst": "",
+   "dst": "可是不管我怎麼努力，他就只是閉著眼睛坐在那裡。他一定知道我沒有威脅，因為他整個人毫無防備。不過他對跟我說話完全沒興趣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -68,7 +68,7 @@
   },
   "Troubled Tribesmen#006": {
    "src": "Say, who knows, maybe the Shaman will talk to you. It would greatly assist my research if you could help me talk to them. So why don't you give it a shot?",
-   "dst": "",
+   "dst": "欸，誰知道呢，說不定那位薩滿願意跟你說話。你要是能幫我跟他們搭上話，對我的研究會有很大的幫助。要不要試試看？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -78,7 +78,7 @@
   },
   "Troubled Tribesmen#007": {
    "src": "Follow this path to the north. Keep going past the pond and the path will split to the West and to the East. Take the West path, and you will see the Shaman.",
-   "dst": "",
+   "dst": "順著這條路往北走。過了池塘之後路會分成東西兩條，走西邊那條，你就會看到那位薩滿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -88,7 +88,7 @@
   },
   "Troubled Tribesmen#008": {
    "src": "Talk to Shaman Inrekei.",
-   "dst": "",
+   "dst": "與薩滿 Inrekei 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -98,7 +98,7 @@
   },
   "Troubled Tribesmen#009": {
    "src": "Oui ryja y bufanvim vaam ypuid oui, cdnyhkan. So baubma yna eh tyhkan. Bmayca, dyga drec yht ramb bas.",
-   "dst": "",
+   "dst": "Oui ryja y bufanvim vaam ypuid oui, cdnyhkan. So baubma yna eh tyhkan. Bmayca, dyga drec yht ramb bas.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -108,7 +108,7 @@
   },
   "Troubled Tribesmen#010": {
    "src": "I have cast a spell on you. If you can understand me, you are pure of heart.",
-   "dst": "",
+   "dst": "我已對你施法。你若聽得懂我的話，代表你心地純淨。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -118,7 +118,7 @@
   },
   "Troubled Tribesmen#011": {
    "src": "This spell will allow those of true spirit to speak and comprehend our language. I have entrusted you with this because of my connection with our sacred tree, who we call Entamis.",
-   "dst": "",
+   "dst": "這道法術能讓心性真誠的人聽懂並說出我們的語言。我把它託付給你，是因為我與我們的聖樹相連——我們稱她為 Entamis。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -128,7 +128,7 @@
   },
   "Troubled Tribesmen#012": {
    "src": "I am the shaman of my tribe. I sit here every day with my eyes closed and carefully monitor Entamis' wavelengths. She has not been responding to my calls as of late...",
-   "dst": "",
+   "dst": "我是本部落的薩滿。我每天坐在這裡閉著眼，仔細聆聽 Entamis 的波動。可是她最近都沒有回應我的呼喚……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -138,7 +138,7 @@
   },
   "Troubled Tribesmen#013": {
    "src": "Dear human, your presence emits warmth and trust. Please go speak with my apprentice, Ka L'argwit. He is to take my place as shaman when I pass from this life.",
-   "dst": "",
+   "dst": "親愛的人類，你的氣息裡有溫暖與信任。請去找我的學徒 Ka L'argwit 談談。我離世之後，將由他接任薩滿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -148,7 +148,7 @@
   },
   "Troubled Tribesmen#014": {
    "src": "He would know if anything is causing our beautiful tree discomfort. The spell I have cast on you will allow you to speak with him.",
-   "dst": "",
+   "dst": "如果有什麼讓我們美麗的聖樹不適，他會知道。我對你施的法術能讓你和他交談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -158,7 +158,7 @@
   },
   "Troubled Tribesmen#015": {
    "src": "Now, please go seek out Ka L'argwit.",
-   "dst": "",
+   "dst": "好了，請去找 Ka L'argwit 吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -168,7 +168,7 @@
   },
   "Troubled Tribesmen#016": {
    "src": "Return to Ka L'argwit.",
-   "dst": "",
+   "dst": "回到 Ka L'argwit 身邊。",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -178,7 +178,7 @@
   },
   "Troubled Tribesmen#017": {
    "src": "Investigate the roots of Entamis.",
-   "dst": "",
+   "dst": "調查 Entamis 的根部。",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -188,7 +188,7 @@
   },
   "Troubled Tribesmen#018": {
    "src": "Thank you for coming. We haven't but moments. The monster's name is Aenara. He's a fiendish monster of corruption.",
-   "dst": "",
+   "dst": "謝謝你來。我們沒有多少時間了。那頭怪物叫 Aenara，是一頭邪惡的腐化怪物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -198,7 +198,7 @@
   },
   "Troubled Tribesmen#019": {
    "src": "He unleashed egg pods that host a variety of magic draining insects. They are eating me alive and replacing my magic with evil magic. Soon I will die.",
-   "dst": "",
+   "dst": "牠釋放出許多卵囊，裡頭寄居著各式各樣吸食魔力的蟲。牠們正在把我一點一點吃掉，並用邪惡的魔力取代我的魔力。我很快就會死去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -208,7 +208,7 @@
   },
   "Troubled Tribesmen#020": {
    "src": "You mustn't let me be reborn a creature of evil...",
-   "dst": "",
+   "dst": "你絕不能讓我以邪惡之物的姿態重生……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -218,7 +218,7 @@
   },
   "Troubled Tribesmen#021": {
    "src": "Kill Aenara and bring an Insect of Corruption to Shaman Inrekei.",
-   "dst": "",
+   "dst": "擊殺 Aenara，並把一隻腐化之蟲帶給薩滿 Inrekei。",
    "role": "desc",
    "kind": "objective",
    "quest": "Troubled Tribesmen",
@@ -228,7 +228,7 @@
   },
   "Troubled Tribesmen#022": {
    "src": "Hello again. I am grateful you returned. You don't need to say anything, though. I can no longer sense Entamis. I know she has died..",
-   "dst": "",
+   "dst": "又見面了。謝謝你回來。不過你什麼都不必說。我已經感覺不到 Entamis 了。我知道她已經死了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -238,7 +238,7 @@
   },
   "Troubled Tribesmen#023": {
    "src": "You still have managed to prevent her corrupted magic to spread any further. And for that, my people are forever in your debt.",
-   "dst": "",
+   "dst": "但你仍然阻止了她的腐化魔力繼續擴散。為此，我的族人將永遠欠你一份情。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -248,7 +248,7 @@
   },
   "Troubled Tribesmen#024": {
    "src": "This insect appears to be the queen. I'll need to perform a ritual to kill it permanently. But never mind that, I can do that in my own time.",
-   "dst": "",
+   "dst": "這隻蟲看起來是蟲后。我得舉行一場儀式才能徹底殺死牠。不過這事不急，我自己找時間做就行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
@@ -258,7 +258,7 @@
   },
   "Troubled Tribesmen#025": {
    "src": "Please take this. It is but a small gift. Your currency means nothing to us. In times of peril, few step forward and risk their lives to save those they do not know.",
-   "dst": "",
+   "dst": "請收下這個。這只是一份薄禮。你們的通貨對我們毫無意義。危難之際，願意挺身而出、為素不相識的人冒死的人，實在太少了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Troubled Tribesmen",
