@@ -17,7 +17,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations"
+TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw"
 
 # 玩家實際看到的頻率大致如此：介面標籤每開一次背包就看到，
 # 裝備傳說敘述可能一輩子看不到幾次。翻譯順序照這個排效益最高。

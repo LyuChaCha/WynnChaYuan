@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "src/main/resources/assets/wynnchayuan/translations/quest-dialogue.json"
+SRC = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw/quest-dialogue.json"
 OUT = ROOT / "docs/quest-dialogue.md"
 
 # 一個人一次接得完的量。超過這個就建議先講一聲，免得卡著別人。
@@ -67,7 +67,7 @@ def main() -> int:
         f"共 {len(quests)} 個任務，還沒有人動的有 {len(untouched)} 個。**",
         "",
         "**一個任務一個檔案**，放在 [`translations/quest/`]"
-        "(../src/main/resources/assets/wynnchayuan/translations/quest/)。"
+        "(../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。"
         "接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。",
         "",
         "> 改完之後跑一次 `python tools/quest-bundle.py`——模組讀的是合併後的"
@@ -122,7 +122,7 @@ def main() -> int:
         mark = "✅" if pct >= 100 else (f"{pct:.0f}%" if q["done"] else "—")
         out.append(
             f"| {name} | [`{q['file']}.json`]"
-            f"(../src/main/resources/assets/wynnchayuan/translations/quest/"
+            f"(../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/"
             f"{q['file']}.json) | {q['lines']} | {q['dialogue']} | "
             f"{len(q['speakers'])} | {mark} |")
 

@@ -49,10 +49,10 @@ public final class RemoteSync {
             "https://cdn.jsdelivr.net/gh/LyuChaCha/WynnChaYuan@main/" + PATH);
 
     /** 要同步的檔案。清單來自 _index.json，新增譯文檔不必改這裡。 */
-    private static List<String> files() {
+    private static List<String> files(String lang) {
         List<String> names = new java.util.ArrayList<>();
         names.add("_index.json");              // 先更新清單，才知道還有哪些新檔案
-        names.addAll(FileIndex.bundled());
+        names.addAll(FileIndex.bundled(lang));
         return names;
     }
 
@@ -63,10 +63,12 @@ public final class RemoteSync {
     private RemoteSync() {}
 
     /** 依序試每個來源，任一成功就算數。 */
-    private static boolean fetchOne(HttpClient client, Path cacheDir, String name) {
+    private static boolean fetchOne(HttpClient client, Path cacheDir,
+                                    String lang, String name) {
         for (String base : SOURCES) {
             try {
-                HttpRequest request = HttpRequest.newBuilder(URI.create(base + name))
+                HttpRequest request = HttpRequest.newBuilder(
+                        URI.create(base + Languages.path(lang) + name))
                         .timeout(TIMEOUT)
                         .header("User-Agent", "WynnChaYuan")
                         // 中間還可能有公司／ISP 的快取代理，一併請它們別給舊的
@@ -115,6 +117,14 @@ public final class RemoteSync {
      * @return 成功更新的檔案數
      */
     public static int fetchInto(Path cacheDir) {
+        return fetchInto(cacheDir, Languages.DEFAULT);
+    }
+
+    /**
+     * @param lang 只抓這一種語言。其他語言的檔案不會被下載——
+     *             多語言對玩家來說因此是零流量成本。
+     */
+    public static int fetchInto(Path cacheDir, String lang) {
         int ok = 0;
         int failed = 0;
         try {
@@ -129,8 +139,8 @@ public final class RemoteSync {
                 .followRedirects(HttpClient.Redirect.NORMAL)
                 .build()) {
 
-            for (String name : files()) {
-                if (fetchOne(client, cacheDir, name)) {
+            for (String name : files(lang)) {
+                if (fetchOne(client, cacheDir, lang, name)) {
                     ok++;
                 } else {
                     failed++;

@@ -70,7 +70,8 @@ public final class MajorIdColourTest {
 
     public static void main(String[] args) throws Exception {
         TranslationStore store = new TranslationStore();
-        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations"));
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                            Languages.DEFAULT));
 
         // 診斷檔要真的寫得出來。使用者回報「layout-debug.txt 根本沒生成」，
         // 而那個檔正是查 Major ID 顏色唯一的依據——它不寫出來，就等於沒有診斷。

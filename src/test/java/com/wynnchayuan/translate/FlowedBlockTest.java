@@ -53,7 +53,8 @@ public final class FlowedBlockTest {
 
     public static void main(String[] args) {
         TranslationStore store = new TranslationStore();
-        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations"));
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                            Languages.DEFAULT));
 
         check("掃描深度夠深（實際 " + store.maxBlockLines() + "）",
                 store.maxBlockLines() >= LORE.length);

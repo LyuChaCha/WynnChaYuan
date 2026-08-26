@@ -28,22 +28,33 @@ import java.util.List;
  */
 public final class FileIndex {
 
-    private static final String RESOURCE = "/assets/wynnchayuan/translations/_index.json";
+    /** 語言資料夾裡的清單。見 {@link Languages}。 */
+    private static String resource(String lang) {
+        return Languages.resource(lang) + "_index.json";
+    }
 
     /** 清單本身壞掉時的退路。 */
     private static final List<String> FALLBACK = List.of("ui-labels.json", "npc.json", "quest.json");
 
-    private static List<String> cached;
+    private static final java.util.Map<String, List<String>> cached =
+            new java.util.concurrent.ConcurrentHashMap<>();
 
     private FileIndex() {}
 
     /** 打包在 jar 裡的清單。 */
     public static List<String> bundled() {
-        if (cached != null) {
-            return cached;
+        return bundled(Languages.DEFAULT);
+    }
+
+    /** 打包在 jar 裡的清單。各語言的清單是獨立的——收的檔案可以不一樣多。 */
+    public static List<String> bundled(String lang) {
+        List<String> hit = cached.get(lang);
+        if (hit != null) {
+            return hit;
         }
-        cached = read(() -> FileIndex.class.getResourceAsStream(RESOURCE));
-        return cached;
+        List<String> found = read(() -> FileIndex.class.getResourceAsStream(resource(lang)));
+        cached.put(lang, found);
+        return found;
     }
 
     /**

@@ -21,7 +21,7 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ABILITY = ROOT / "src/main/resources/assets/wynnchayuan/translations/ability.json"
+ABILITY = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw/ability.json"
 URL = "https://cdn.wynntils.com/static/Reference/abilities_v2.json"
 
 # 技能樹在遊戲裡的職業順序

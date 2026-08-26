@@ -22,7 +22,7 @@ import json
 import sys
 from pathlib import Path
 
-ABILITIES = Path("src/main/resources/assets/wynnchayuan/translations/ability")
+ABILITIES = Path("src/main/resources/assets/wynnchayuan/translations/zh_tw/ability")
 
 # name 在前、desc 次之、stat 最後——跟遊戲裡一格 tooltip 的排法一致
 ROLE_ORDER = {"name": 0, "desc": 1, "stat": 2}

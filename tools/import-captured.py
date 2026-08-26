@@ -34,7 +34,7 @@ import re
 import sys
 from pathlib import Path
 
-TRANSLATIONS = Path("src/main/resources/assets/wynnchayuan/translations")
+TRANSLATIONS = Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 
 # domain -> 要放進哪個檔
 TARGET = {

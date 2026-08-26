@@ -30,7 +30,8 @@ public final class MajorIdTest {
 
     public static void main(String[] args) {
         TranslationStore store = new TranslationStore();
-        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations"));
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                            Languages.DEFAULT));
 
         check("語料本身讀得到名稱", "利他主義".equals(store.lookup("Altruism")));
 

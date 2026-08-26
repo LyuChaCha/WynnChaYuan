@@ -44,7 +44,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build import parametrize                       # noqa: E402  同一套規則
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "src/main/resources/assets/wynnchayuan/translations/quest-dialogue.json"
+OUT = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw/quest-dialogue.json"
 API = "https://wynncraft.wiki.gg/api.php"
 UA = "WynnChaYuan/1.0 (https://github.com/LyuChaCha/WynnChaYuan)"
 

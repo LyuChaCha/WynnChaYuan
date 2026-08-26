@@ -27,7 +27,7 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-QUEST_FILE = ROOT / "src/main/resources/assets/wynnchayuan/translations/quest.json"
+QUEST_FILE = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw/quest.json"
 
 # wiki 的 Cargo 匯出。欄位取自 Wynntils 自己在用的同一張表。
 API = "https://wynncraft.wiki.gg/index.php"

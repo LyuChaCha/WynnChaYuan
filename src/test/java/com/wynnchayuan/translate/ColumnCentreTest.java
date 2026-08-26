@@ -3,6 +3,7 @@ package com.wynnchayuan.translate;
 import com.wynnchayuan.capture.LineParts;
 
 import net.minecraft.SharedConstants;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.server.Bootstrap;
 
@@ -46,6 +47,7 @@ public final class ColumnCentreTest {
         glyphPrefixedAccent();
         wrapKeepsAccentsWhole();
         huggingPunctuation();
+        sectionCodes();
 
         System.out.println(failures == 0
                 ? "ColumnCentreTest 全部通過"
@@ -174,6 +176,61 @@ public final class ColumnCentreTest {
         // 圓括號是註解的界線，交給註解那一套處理
         check("左圓括號不算 —— 那是註解的界線", !LineTranslator.hugs('('));
         check("右圓括號不算", !LineTranslator.hugs(')'));
+    }
+
+    /** 譯文自己帶 {@code §} 格式碼。 */
+    private static void sectionCodes() {
+        Style base = Style.EMPTY.withColor(net.minecraft.network.chat.TextColor
+                .fromRgb(0xAAAAAA));
+
+        check("沒有 § 時原樣輸出",
+                "純文字".equals(LineTranslator.coloured("純文字", base).getString()));
+
+        // §c 只管到它後面那一截，前面照樣是這一段原本的樣式
+        java.util.List<Component> parts =
+                flatten(LineTranslator.coloured("警告§c危險", base));
+        int grey = 0;
+        int red = 0;
+        for (Component leaf : parts) {
+            Integer colour = leaf.getStyle().getColor() == null
+                    ? null : leaf.getStyle().getColor().getValue();
+            if (colour != null && colour == 0xAAAAAA) {
+                grey++;
+            }
+            if (colour != null && colour == 0xFF5555) {
+                red++;
+            }
+        }
+        check("§ 之前沿用這一段原本的樣式", grey >= 1);
+        check("§c 之後變成紅色", red >= 1);
+        check("格式碼本身不會被印出來",
+                !LineTranslator.coloured("警告§c危險", base)
+                        .getString().contains("§"));
+
+        // §r 回到「這一段原本的樣式」，不是回到全白——否則技能樹那種
+        // 顏色來自原文的地方，一寫 §r 就把原本的顏色洗掉了
+        java.util.List<Component> reset =
+                flatten(LineTranslator.coloured("§c紅§r回來", base));
+        Integer last = reset.get(reset.size() - 1).getStyle().getColor() == null
+                ? null : reset.get(reset.size() - 1).getStyle().getColor().getValue();
+        check("§r 回到這一段原本的樣式（拿到 "
+                        + (last == null ? "null" : String.format("#%06X", last)) + "）",
+                last != null && last == 0xAAAAAA);
+
+        // § 後面不是格式碼就當普通文字，不要吃掉它
+        check("§ 後面不是格式碼時原樣留著",
+                LineTranslator.coloured("100§z", base).getString().contains("§z"));
+    }
+
+    private static java.util.List<Component> flatten(Component c) {
+        java.util.List<Component> out = new java.util.ArrayList<>();
+        c.visit((style, text) -> {
+            if (!text.isEmpty()) {
+                out.add(Component.literal(text).withStyle(style));
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return out;
     }
 
     private static void write(Path dir, String name, String body) throws IOException {

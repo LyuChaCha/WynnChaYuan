@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = ROOT / "src/main/resources/assets/wynnchayuan/translations"
+BASE = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw"
 BUNDLE = BASE / "quest-dialogue.json"
 PARTS = BASE / "quest"
 

@@ -15,7 +15,7 @@ import re
 import sys
 from pathlib import Path
 
-QUESTS = Path("src/main/resources/assets/wynnchayuan/translations/quest")
+QUESTS = Path("src/main/resources/assets/wynnchayuan/translations/zh_tw/quest")
 
 # `{{模板` 之後的東西在畫面上都不存在
 TEMPLATE_TAIL = re.compile(r"\s*\{\{.*$", re.DOTALL)

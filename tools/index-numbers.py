@@ -32,7 +32,7 @@ import pathlib
 import re
 import sys
 
-BASE = pathlib.Path("src/main/resources/assets/wynnchayuan/translations")
+BASE = pathlib.Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 NL = chr(10)
 
 BARE = re.compile(r"\{~\}")

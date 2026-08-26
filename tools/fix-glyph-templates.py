@@ -41,7 +41,7 @@ import sys
 
 skipped = 0
 
-BASE = pathlib.Path("src/main/resources/assets/wynnchayuan/translations")
+BASE = pathlib.Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 NL = chr(10)
 
 PLACEHOLDER = "{#}"

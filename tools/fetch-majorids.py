@@ -27,8 +27,8 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "src/main/resources/assets/wynnchayuan/translations/major-id.json"
-INDEX = ROOT / "src/main/resources/assets/wynnchayuan/translations/_index.json"
+OUT = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw/major-id.json"
+INDEX = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw/_index.json"
 URL = "https://cdn.wynntils.com/static/Reference/gear.json"
 
 TAGS = re.compile(r"<[^>]+>")

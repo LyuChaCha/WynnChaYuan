@@ -26,7 +26,7 @@ import re
 import sys
 from pathlib import Path
 
-QUESTS = Path("src/main/resources/assets/wynnchayuan/translations/quest")
+QUESTS = Path("src/main/resources/assets/wynnchayuan/translations/zh_tw/quest")
 
 RULES = [
     # 逗號前面有空白：名字被吃掉了，補在逗號前
