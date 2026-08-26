@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 22090,
-  "translated": 3258,
+  "translated": 3302,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -48381,7 +48381,7 @@
   },
   "Crop Failure#000": {
    "src": "Talk to Anast in {p}, at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "與在 {p} [-{~}, {~}, -{~}] 的Anast對話",
    "role": "desc",
    "kind": "objective",
    "quest": "Crop Failure",
@@ -48391,7 +48391,7 @@
   },
   "Crop Failure#001": {
    "src": "Grr...that no-good, lying, cheating, thieving...graaah!",
-   "dst": "",
+   "dst": "嘖...那個沒良心的、滿口謊言、卑鄙無恥、偷雞摸狗的...啊啊啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48401,7 +48401,7 @@
   },
   "Crop Failure#002": {
    "src": "You! Help me out over here! You aren't doing anything important right now, and this is urgent!",
-   "dst": "",
+   "dst": "你！過來幫我一下！你沒在做什麼重要的事，而且這事可急了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48411,7 +48411,7 @@
   },
   "Crop Failure#003": {
    "src": "I got a few questions for you, see? Question one: D'you think crops are supposed to look like THIS?",
-   "dst": "",
+   "dst": "我問你幾個問題，聽著啊？第一個：你覺得莊稼本來就該長成這鬼樣子嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48421,7 +48421,7 @@
   },
   "Crop Failure#004": {
    "src": "Look at them. I don't think there's a way for 'em to look any more sorry than this.",
-   "dst": "",
+   "dst": "看看它們。我想它們也不可能再變的更慘了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48431,7 +48431,7 @@
   },
   "Crop Failure#005": {
    "src": "Wha- You think the Oats over there look fine?! Pff. Yeah, right.",
-   "dst": "",
+   "dst": "什——你說那邊的Oats看起來沒問題？！哼。最好是這樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48441,7 +48441,7 @@
   },
   "Crop Failure#006": {
    "src": "If that's the case, go grab a scythe and try harvesting those Oats yourself!!",
-   "dst": "",
+   "dst": "既然你這麼說，那就拿把鐮刀，自己去把那些Oats收了啊！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48451,7 +48451,7 @@
   },
   "Crop Failure#007": {
    "src": "Go on, do it! I dare you! See how good they really are!!",
-   "dst": "",
+   "dst": "去啊，動手啊！我倒要看看！看看它們到底有多好！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48461,7 +48461,7 @@
   },
   "Crop Failure#008": {
    "src": "Gather [{~} Oats] from around Anast.",
-   "dst": "",
+   "dst": "在Anast附近收集 [{~} Oats] ",
    "role": "desc",
    "kind": "objective",
    "quest": "Crop Failure",
@@ -48471,7 +48471,7 @@
   },
   "Crop Failure#009": {
    "src": "See? What'd I tell ya? Rotten to the roots! Nothing here is ANY good!!",
-   "dst": "",
+   "dst": "看吧？我說什麼來著？根都爛了！這裡的東西沒一樣是好的！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48481,7 +48481,7 @@
   },
   "Crop Failure#010": {
    "src": "They were growing pretty slow this year, all my crops, and then some salesman walks into town with some \"MiracleCure\" fertilizer.",
-   "dst": "",
+   "dst": "今年我所有的莊稼都長得特別慢，結果有個推銷員進了鎮，帶來了什麼「奇蹟肥料」。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48491,7 +48491,7 @@
   },
   "Crop Failure#011": {
    "src": "I shoulda known it was too good to be true, but he said everyone else tried it too, so I bought some and tried to salvage this mess.",
-   "dst": "",
+   "dst": "我早該知道這種好事不可能是真的，但他說大家都試過了，所以我就買了一些，試著把這爛攤子救回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48501,7 +48501,7 @@
   },
   "Crop Failure#012": {
    "src": "And here we are- me out half my savings and my fields as smelly and dead as an actual CORPSE!",
-   "dst": "",
+   "dst": "結果你看——我的積蓄少了一半，田地還臭得跟真正的屍體一樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48511,7 +48511,7 @@
   },
   "Crop Failure#013": {
    "src": "Just to prove this ridiculous phony Doubiss is a fraud- Here. I see some roots over here. Watch this, and tell me if this is a \"miracle!\"",
-   "dst": "",
+   "dst": "只為了證明那個叫Doubiss的荒唐騙子就是個騙子——來。這邊有些根，你看好後告訴我這到底算不算「奇蹟」！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48521,7 +48521,7 @@
   },
   "Crop Failure#014": {
    "src": "Here we go, here comes the big phenomenal growth he promised me!",
-   "dst": "",
+   "dst": "來了來了——這就是他向我保證的非凡的生長速度！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48531,7 +48531,7 @@
   },
   "Crop Failure#015": {
    "src": "WOW, INCREDIBLE! AMAZING! It's almost like this is actual poison or something!!",
-   "dst": "",
+   "dst": "哇！不可思議！太驚人了！這簡直就像真正的毒藥一樣！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48541,7 +48541,7 @@
   },
   "Crop Failure#016": {
    "src": "That Doubiss won't budge for my refund. I spent... so many emeralds... on this tripe! So that's where YOU come in.",
-   "dst": "",
+   "dst": "Doubiss死活都不肯退錢。我可是花了...那麼多綠寶石...買這堆垃圾！所以你就派上用場了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48551,7 +48551,7 @@
   },
   "Crop Failure#017": {
    "src": "He's in that blue and gray tent by the bank. I don't care how you do it, but get my money back and we'll split it half-and-half, deal?",
-   "dst": "",
+   "dst": "他就在銀行旁邊那頂藍灰色的帳篷裡。我不管你用什麼方法，總之把我的錢拿回來，我們一人一半，成交？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48561,7 +48561,7 @@
   },
   "Crop Failure#018": {
    "src": "Find Doubiss the salesman in {p} near the bank at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 {p} 銀行附近的 [-{~}, {~}, -{~}] 找到推銷員Doubiss。",
    "role": "desc",
    "kind": "objective",
    "quest": "Crop Failure",
@@ -48571,7 +48571,7 @@
   },
   "Crop Failure#019": {
    "src": "Good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
-   "dst": "",
+   "dst": "日安啊！想從老Doubiss的貨裡買點什麼呀？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48581,7 +48581,7 @@
   },
   "Crop Failure#020": {
    "src": "Oh. Oh, goodie. That idiot farmer's sendin' ya to get his money back, ain't he? Sweet baby bovine, this is ridiculous...",
-   "dst": "",
+   "dst": "哦。哦，原來如此。那個蠢農夫派你來要回他的錢，是吧？天啊，這也太荒唐了...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48591,7 +48591,7 @@
   },
   "Crop Failure#021": {
    "src": "Since he obviously ain't gonna be listenin' to me anytime soon, lemme tell ya what the issue is with my fertilizer...",
-   "dst": "",
+   "dst": "既然他現在也不會想聽我的解釋，那我就跟你說說我的肥料到底有什麼問題吧...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48601,7 +48601,7 @@
   },
   "Crop Failure#022": {
    "src": "Nothing! My fertilizer really does work! He probl'ly exaggerated how good I said it'd work, too! What'd he say, twice, three times the growth? More?",
-   "dst": "",
+   "dst": "沒問題！我的肥料真的有效！搞不好是他把我說的效果誇大了！他說什麼？兩倍、三倍的生長速度？還是更多？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48611,7 +48611,7 @@
   },
   "Crop Failure#023": {
    "src": "All the other farmers are usin' it right now and look at their fields! Heck, the only reason these crops ain't dead is because of my product!",
-   "dst": "",
+   "dst": "其他農夫現在都在用，看看他們的田！哼，要不是有我的產品，這些莊稼早就死光了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48621,7 +48621,7 @@
   },
   "Crop Failure#024": {
    "src": "Y'know why? Next time ya' pass a farm, take a good whiff o' the water, maybe a sip or two if you can manage. It'll be smelly and bitter.",
-   "dst": "",
+   "dst": "你知道為什麼嗎？下次經過農場時，好好聞聞水的味道，能的話喝上一兩口。那水又臭又苦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48631,7 +48631,7 @@
   },
   "Crop Failure#025": {
    "src": "The crops, when I got here, were lookin' as pathetic as ya get. I ain't a gamblin' man, but I'd be willing ta bet something's up with the water here.",
-   "dst": "",
+   "dst": "我剛來這裡的時候，那些莊稼已經慘得不能再慘了。我雖然不是個愛賭的人，但我敢打賭，這裡的水肯定有問題。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48641,7 +48641,7 @@
   },
   "Crop Failure#026": {
    "src": "The smell gets worse the closer ya get to the crypts in town, and while I ain't a native Oluxer, I've heard enough to know the wellspring is in the cave hear there.",
-   "dst": "",
+   "dst": "越靠近鎮上的墓穴，味道就越重。而且我雖然不是Olux本地人，但也聽過一些消息，知道那附近的洞穴裡有個水源。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48651,7 +48651,7 @@
   },
   "Crop Failure#027": {
    "src": "It'll prob'ly be best fer everyone if ya took a looksee. Maybe if ya find some evidence, ya can show that to the crazy farmer, have 'im quit pesterin' me, eh?",
-   "dst": "",
+   "dst": "你最好去看看，這對大家都有好處。說不定你能找到什麼證據，拿給那個瘋農夫看，讓他別再來煩我，怎麼樣？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48661,7 +48661,7 @@
   },
   "Crop Failure#028": {
    "src": "The cave is on a little hill, next to the crypt. Careful ya don't go trippin' over a gravestone, now!",
-   "dst": "",
+   "dst": "那個洞穴就在一座小山丘上的墓穴旁邊。小心點，可別被墓碑絆倒了啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48671,7 +48671,7 @@
   },
   "Crop Failure#029": {
    "src": "Search the aquifer at [-{~}, {~}, -{~}] for the problem with the water.",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 的地下水層尋找水源污染的原因。",
    "role": "desc",
    "kind": "objective",
    "quest": "Crop Failure",
@@ -48681,7 +48681,7 @@
   },
   "Crop Failure#030": {
    "src": "Oi, bucko! Took my advice, eh? I'd figured I'd join ye, 'n see for myself what was goin' on.",
-   "dst": "",
+   "dst": "喂，小夥子！聽我的建議啦？我想說跟你一起來看看，親自瞧瞧到底出了什麼事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48691,7 +48691,7 @@
   },
   "Crop Failure#031": {
    "src": "And boy am I glad I bring me water in bottles. This stuff's rancid, full a' swamp slimes. No idea why they're here, though.",
-   "dst": "",
+   "dst": "哎呀，我真該慶幸自己帶的是瓶裝水。這水可真夠噁心的，裡面全是沼澤史萊姆。我也不知道牠們怎麼會跑到這裡來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48701,7 +48701,7 @@
   },
   "Crop Failure#032": {
    "src": "The buggers stick to mountain caves. They don't come down this far, usually... suppose there's an exception fer everything.",
-   "dst": "",
+   "dst": "這些鬼東西平常都待在山上的洞穴裡，可不會跑到這麼深的地方來...不過嘛，什麼事都有例外。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48711,7 +48711,7 @@
   },
   "Crop Failure#033": {
    "src": "'s no wonder that Anast's crops ain't growin'. This is right under his farm! But we got some clear proof now, ain't we?",
-   "dst": "",
+   "dst": "難怪Anast的莊稼長不出來。這地方就在他的農場正下方！不過現在我們可是有明確的證據了，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48721,7 +48721,7 @@
   },
   "Crop Failure#034": {
    "src": "Howzabout ya take care o' this? I ain't a fighter, but if ya mulch these slimes the water oughta clear up, I figure.",
-   "dst": "",
+   "dst": "這個就交給你處理，怎麼樣？我不會打架，不過我想，只要你把這些史萊姆剁碎，水應該就會變乾淨了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48731,7 +48731,7 @@
   },
   "Crop Failure#035": {
    "src": "Kill the slimes in the aquifer and bring back [Polluted Slime] to Anast.",
-   "dst": "",
+   "dst": "消滅地下水層中的史萊姆，並將［受污染的史萊姆］帶回給Anast。",
    "role": "desc",
    "kind": "objective",
    "quest": "Crop Failure",
@@ -48741,7 +48741,7 @@
   },
   "Crop Failure#036": {
    "src": "Pyyyyeww! Yeesh, kid! You smell worse than a pig's sty! What the heck happened to you, where've you been?!",
-   "dst": "",
+   "dst": "呸——！噁！小子！你聞起來比豬圈還臭！你到底怎麼搞的？跑哪兒去了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48751,7 +48751,7 @@
   },
   "Crop Failure#037": {
    "src": "Ugh, eww! I don't want any of this sludge! I demand an explanation, now!!",
-   "dst": "",
+   "dst": "呃，噁！我才不要這些爛泥！現在就給我一個解釋！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48761,7 +48761,7 @@
   },
   "Crop Failure#038": {
    "src": "...mhm, mhm...you went into the well cave...and found what, slimes?! Why would SLIMES be there?",
-   "dst": "",
+   "dst": "...嗯，嗯...你進了洞穴...然後發現了什麼，史萊姆？！史萊姆為什麼會在那裡？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48771,7 +48771,7 @@
   },
   "Crop Failure#039": {
    "src": "I wouldn't believe you if you weren't... well, uh... covered in the stuff. But that's definitely rancid.",
-   "dst": "",
+   "dst": "要不是你...呃...整個人都沾滿這些東西，我才不會相信你。但這東西確實臭得要命。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48781,7 +48781,7 @@
   },
   "Crop Failure#040": {
    "src": "So... that means I've been... oh dear lord I'm an idiot.",
-   "dst": "",
+   "dst": "所以...這代表我一直都...天啊，我真是個白痴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48791,7 +48791,7 @@
   },
   "Crop Failure#041": {
    "src": "I guess I owe you some thanks anyway for trying to clear the sludge out. Suppose this year's harvest is just a bust.",
-   "dst": "",
+   "dst": "不管怎麼說，你至少也幫忙清掉了那些爛泥，我還是得謝謝你。今年的收成看來是徹底泡在臭湯裡了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48801,7 +48801,7 @@
   },
   "Crop Failure#042": {
    "src": "Can't sell what little I have, so I figure you can take it, and a bit of cash too, since you basically did an exterminator's job.",
-   "dst": "",
+   "dst": "我這點收成也賣不出去，所以你就拿去吧，再給你一點現金。畢竟你基本上替我幹了除蟲公司的活。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48811,7 +48811,7 @@
   },
   "Crop Failure#043": {
    "src": "Just... do me a favor and use that money to buy some good soap and wash up. I'm thankful and all, but you stink to high heaven!",
-   "dst": "",
+   "dst": "只是...幫我個忙，拿那些錢去買點好一點的肥皂，好好洗個澡。雖然我是很感謝你啦，但你真的臭到熏天了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -49281,7 +49281,7 @@
   },
   "Death Whistle (Quest)#001": {
    "src": "Hello! Hmm, armour, weapon, look of grim despair... You must be from the Wynn province!",
-   "dst": "你好！嗯，盔甲、武器、一臉陰鬱絕望……你八成是從 Wynn 行省來的！",
+   "dst": "你好！嗯，盔甲、武器、一臉憂鬱……你八成是從 Wynn 來的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -49291,7 +49291,7 @@
   },
   "Death Whistle (Quest)#002": {
    "src": "My name is Voer, and I'm an exotic plant merchant. I sell all kinds of, uh, perfectly legal goods to the magicians of Gavel.",
-   "dst": "我叫 Voer，是個異國植物商人。我賣各式各樣、呃，完全合法的貨給 Gavel 的法師們。",
+   "dst": "我叫 Voer，是個異國植物商人。我賣各式各樣的，呃，完全合法的貨給 Gavel 的魔法師們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -49301,7 +49301,7 @@
   },
   "Death Whistle (Quest)#003": {
    "src": "Lately, this Decay has been making business rather tough. The magical plants that used to grow here are dying.",
-   "dst": "最近這場腐朽把生意搞得很難做。以前長在這裡的魔法植物都在枯死。",
+   "dst": "最近暗蝕把生意搞得很難做。以前長在這裡的魔法植物都在枯死。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -49321,7 +49321,7 @@
   },
   "Death Whistle (Quest)#005": {
    "src": "I need Death Whistle in particular. It's not as deadly as it sounds, I promise- the name's just archaic, if I recall that from that- er, my book.",
-   "dst": "我特別需要死亡哨。它沒有名字聽起來那麼致命，我保證——那名字只是很古老而已，如果我從那本——呃，我的書上記得沒錯的話。",
+   "dst": "我特別需要 Death Whistle。它沒有名字聽起來那麼致命，我保證——那名字只是很古老而已，如果呃——，我的那本書上沒記錯的話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -49341,7 +49341,7 @@
   },
   "Death Whistle (Quest)#007": {
    "src": "Look for the highest mountain in the swamp south-east from here. The Decay hasn't reached the peaks yet, you see!",
-   "dst": "往這裡東南方的沼澤找最高的那座山。腐朽還沒爬到山頂上，你懂吧！",
+   "dst": "往這裡東南方的沼澤找最高的那座山。暗蝕還沒到山頂上，你懂吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -49361,7 +49361,7 @@
   },
   "Death Whistle (Quest)#009": {
    "src": "Go to the top of the mountain and get {~} Black Whistle Leaf.",
-   "dst": "登上山頂，取得 {~} 片黑哨葉。",
+   "dst": "登上山頂，取得 {~} 片 Black Whistle Leaf。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -49371,7 +49371,7 @@
   },
   "Death Whistle (Quest)#010": {
    "src": "Return to Voer at [-{~}, {~}, -{~}] with [{~} Death Whistle Leaf].",
-   "dst": "帶著 [{~} 死亡哨葉] 回到 [-{~1}, {~2}, -{~3}] 找 Voer。",
+   "dst": "帶著 [{~} Black Whistle Leaf] 回到 [-{~1}, {~2}, -{~3}] 找 Voer。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -49411,7 +49411,7 @@
   },
   "Death Whistle (Quest)#014": {
    "src": "You sold Pink Pelulite! Have you forgotten its enraging properties? Or shall I read from that herbology book you \"found\" in my camp?",
-   "dst": "你賣掉了 Pink Pelulite！你忘了它會讓人狂暴嗎？還是要我把你「撿到」的那本草藥學——從我營地裡撿到的——念給你聽？",
+   "dst": "你賣掉了 Pink Pelulite！你忘了它會讓人狂暴嗎？還是要我把你「撿到」的那本從我營地裡撿到的草藥學—念給你聽？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -49421,7 +49421,7 @@
   },
   "Death Whistle (Quest)#015": {
    "src": "Wait, wh-what? A Pink PELULITE!? I sold that woman a Pink PELUTE for her luck charms! How dare- wait... wait, Pink Pelute has rounder petals... Oh no.",
-   "dst": "等等，什、什麼？Pink PELULITE？！我賣給那位女士的是 Pink PELUTE，給她做幸運符用的！你怎麼敢——等等……等等，Pink Pelute 的花瓣比較圓……糟了。",
+   "dst": "等等，什、什麼？Pink PELULITE！？我賣給那位女士的是 Pink PELUTE，給她做幸運符用的！你怎麼——等等……等等，Pink Pelute 的花瓣比較圓……糟了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -49431,7 +49431,7 @@
   },
   "Death Whistle (Quest)#016": {
    "src": "You can't even say for certain. This kind of carelessness has no place! If you refuse to exercise the proper thought and caution, then those around you suffer.",
-   "dst": "你自己都說不準。這種粗心是不該存在的！你若不願意好好思考、好好謹慎，受苦的就是你身邊的人。",
+   "dst": "你自己都說不準。這種粗心不應該發生！你如果不願意好好的、謹慎的思考，受苦的就是你身邊的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -49491,7 +49491,7 @@
   },
   "Death Whistle (Quest)#022": {
    "src": "Remove the flower from the woman in the cave.",
-   "dst": "把那朵花從洞窟裡那名女子身上取下。",
+   "dst": "把那朵花從洞窟裡的女子身上取下。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -49571,7 +49571,7 @@
   },
   "Death Whistle (Quest)#030": {
    "src": "I'll offer you a sampler of my stock. Everything here is pre-primed to be safe for brewing, so there won't be any mishaps like today!",
-   "dst": "我給你一份我店裡的試用組。這裡的每一樣都已經預先處理過，調製起來很安全，不會再出今天這種事了！",
+   "dst": "我給你一份我店裡的試用品。這裡的每一樣都已經預先處理過，非常的安全，不會再出今天這種事了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
