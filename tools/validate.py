@@ -295,6 +295,10 @@ def main(argv: list[str]) -> int:
                        if not f.name.startswith("_"))
         # 任務對話一個任務一個檔，放在子資料夾裡
         files += sorted(TRANSLATIONS.glob("quest/*.json"))
+        # 技能樹也是一職業一個檔。先前<b>整個沒被檢查</b>——而它正好是改動最頻繁
+        # 的一批。實測撈出兩條 {#} 數量不符的，那種條目在遊戲裡是<b>整條不顯示</b>，
+        # 畫面上跟「還沒翻」長得一模一樣，沒有人會發現。
+        files += sorted(TRANSLATIONS.glob("ability/*.json"))
         files = [f for f in files if not is_generated(f)]
 
     errors = 0
