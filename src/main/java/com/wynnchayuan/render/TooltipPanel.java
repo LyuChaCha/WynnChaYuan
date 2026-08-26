@@ -127,6 +127,9 @@ public final class TooltipPanel {
             styled.add(StyledText.fromComponent(line));
         }
 
+        // 第二欄靠左還是靠右，一行看不出來，得看整份 tooltip
+        boolean leftAligned = LineTranslator.columnsAreLeftAligned(styled);
+
         int i = 0;
         while (i < n) {
             int longest = Math.min(store.maxBlockLines(), n - i);
@@ -168,7 +171,8 @@ public final class TooltipPanel {
                 LineTranslator.noteBlockMiss(key.toString(), store);
             }
             Component translated =
-                    LineTranslator.translate(styled.get(i), store, centered[i]);
+                    LineTranslator.translate(styled.get(i), store, centered[i],
+                                             leftAligned);
             if (translated != null) {
                 anyTranslated = true;
                 out.add(translated);

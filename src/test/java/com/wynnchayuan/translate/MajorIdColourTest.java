@@ -260,7 +260,63 @@ public final class MajorIdColourTest {
         translatedTermKeepsColour(store);
         splitNameStillTranslates(store);
         wrappedSevenLines(store);
+        skillPanelColours(store);
         report();
+    }
+
+    /**
+     * 屬性面板的說明：強調詞與元素名都要保住自己的顏色。
+     *
+     * <h2>為什麼要釘住</h2>
+     * 這一段有<b>兩種</b>重點段，壞法不一樣：
+     *
+     * <ul>
+     *   <li>{@code <圖示> Air} —— 圖示與名稱同一個色段，剝不掉圖示就查不到，
+     *       畫面上「風屬性」整個沒有顏色，只剩圖示是亮的。</li>
+     *   <li>{@code increase} —— 語料裡本來沒有這個詞，查不到中文的說法，
+     *       於是「提高」跟著整段變灰。原文那兩個字是粉紅色的。</li>
+     * </ul>
+     *
+     * <p>兩者在畫面上長得一模一樣（就是「沒有顏色」），所以分開驗。
+     */
+    private static void skillPanelColours(TranslationStore store) {
+        Style body = Style.EMPTY.withColor(TextColor.fromRgb(BODY_COLOUR));
+        Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xFF55FF));
+        Style white = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
+
+        List<StyledText> run = new ArrayList<>();
+        run.add(StyledText.fromComponent(
+                Component.literal("Each point in this skill will").withStyle(body)));
+        MutableComponent second = Component.empty();
+        second.append(Component.literal("increase").withStyle(pink));
+        second.append(Component.literal(" the chance to dodge").withStyle(body));
+        run.add(StyledText.fromComponent(second));
+        run.add(StyledText.fromComponent(Component.literal(
+                "attacks (90% damage reduction), ").withStyle(body)));
+        MutableComponent fourth = Component.empty();
+        fourth.append(Component.literal("and increase the ").withStyle(body));
+        fourth.append(Component.literal(" Air").withStyle(white));
+        fourth.append(Component.literal(" damage").withStyle(body));
+        run.add(StyledText.fromComponent(fourth));
+        run.add(StyledText.fromComponent(
+                Component.literal("you may inflict").withStyle(body)));
+
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("敏捷說明整段查得到", out != null && !out.isEmpty());
+        if (out == null || out.isEmpty()) {
+            return;
+        }
+        Integer element = colourOf(out, "風屬性");
+        check("元素名保住原本的顏色（拿到 "
+                        + (element == null ? "null"
+                           : "#" + String.format("%06X", element)) + "）",
+                element != null && element == 0xFFFFFF);
+        Integer emphasis = colourOf(out, "提高");
+        check("強調詞保住原本的顏色（拿到 "
+                        + (emphasis == null ? "null"
+                           : "#" + String.format("%06X", emphasis)) + "）",
+                emphasis != null && emphasis == 0xFF55FF);
     }
 
     /**

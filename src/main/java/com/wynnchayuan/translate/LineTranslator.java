@@ -673,8 +673,21 @@ public final class LineTranslator {
      */
     public static Component translate(StyledText line, TranslationStore store,
                                       boolean centered) {
+        return translate(line, store, centered, false);
+    }
+
+    /**
+     * @param leftAligned 這份 tooltip 的第二欄是<b>靠左</b>排的（見
+     *                    {@link #columnsAreLeftAligned}）。預設 {@code false}
+     *                    ——物品 tooltip 的數值是靠右的，那是絕大多數。
+     */
+    public static Component translate(StyledText line, TranslationStore store,
+                                      boolean centered, boolean leftAligned) {
+        // translateWholeLine 走的是 realign，它本來就只保欄位的<b>起點</b>，
+        // 沒有「右緣也對回去」那一步，所以不受 leftAligned 影響。
         Component whole = translateWholeLine(line, store, centered);
-        return whole != null ? whole : translateSegments(line, store, centered);
+        return whole != null ? whole
+                             : translateSegments(line, store, centered, leftAligned);
     }
 
     /**
@@ -712,7 +725,7 @@ public final class LineTranslator {
      * 對「標籤 + 數值」這種結構沒有影響，也正是物品 tooltip 的主要形態。
      */
     private static Component translateSegments(StyledText line, TranslationStore store,
-                                               boolean centered) {
+                                               boolean centered, boolean leftAligned) {
         // 先把每個片段翻好，不急著組裝——寬度要等整行都翻完才量得準。
         List<Piece> pieces = new ArrayList<>();
         boolean any = false;
@@ -776,7 +789,7 @@ public final class LineTranslator {
                     SpaceOffset.styleFor(pieces.get(boundary).style())));
         }
 
-        List<Piece> aligned = settle(alignColumns(pieces), line);
+        List<Piece> aligned = settle(alignColumns(pieces, leftAligned), line);
         // 每一行都記（同一句只記一次，見 LineDebug）。先前只記「有排版空白」的行，
         // 結果真正壞掉的那些——間隔不是用空白字元做的——反而完全看不到。
         LineDebug.pieces("逐片段 " + line.getStringWithoutFormatting(),
@@ -797,6 +810,97 @@ public final class LineTranslator {
             return assemble(aligned, lead, delta / 2);
         }
         return assemble(aligned, -1, 0);
+    }
+
+    /**
+     * 這份 tooltip 的第二欄是<b>靠左</b>排的嗎？
+     *
+     * <h2>為什麼一行看不出來</h2>
+     * 兩種排版在單獨一行裡長得一模一樣，都是「文字 + 排版空白 + 文字」：
+     *
+     * <pre>
+     *   Health Regen           +37%             ← 數值靠右，各行的右緣對齊
+     *   +4 Ability Points      /Switch Command  ← 第二欄靠左，各行的起點對齊
+     * </pre>
+     *
+     * 差別只有<b>看好幾行</b>才顯現：前者每一行的右緣落在同一個 x，
+     * 後者每一行第二欄的起點落在同一個 x。
+     *
+     * <p>這件事決定補償的方向。{@link #alignColumns} 預設把譯文縮水的部分補回
+     * 最後一段間隔，讓右緣回到原位——對數值是對的，對階級特權清單那種靠左的
+     * 第二欄卻是災難：譯得越短就被推得越右，八行各歪一個量。
+     *
+     * <p>判斷靠量原文：每一行第二欄的起點與整行的右緣各收一份，起點比右緣
+     * <b>更一致</b>就是靠左排。分不出來時回傳 {@code false}——物品 tooltip 的
+     * 數值是靠右的，那是絕大多數。
+     */
+    public static boolean columnsAreLeftAligned(List<StyledText> lines) {
+        if (lines == null || lines.size() < MIN_COLUMN_ROWS) {
+            return false;
+        }
+        List<Integer> starts = new ArrayList<>();
+        List<Integer> ends = new ArrayList<>();
+        for (StyledText line : lines) {
+            int[] both = secondColumn(line);
+            if (both != null) {
+                starts.add(both[0]);
+                ends.add(both[1]);
+            }
+        }
+        if (starts.size() < MIN_COLUMN_ROWS) {
+            return false;
+        }
+        return spread(starts) < spread(ends);
+    }
+
+    /** 要有這麼多「兩欄的行」才判斷得出來。兩行是巧合，三行才是排版。 */
+    private static final int MIN_COLUMN_ROWS = 3;
+
+    /**
+     * 這一行第二欄的起點與整行的右緣（像素）。
+     *
+     * @return {@code {起點, 右緣}}；不是兩欄的行回傳 {@code null}
+     */
+    private static int[] secondColumn(StyledText line) {
+        int x = 0;
+        int start = -1;
+        boolean sawGap = false;
+        for (StyledTextPart part : line) {
+            String raw = part.getString(null, StyleType.NONE);
+            if (raw.isEmpty()) {
+                continue;
+            }
+            PartStyle ps = part.getPartStyle();
+            Style style = ps == null ? Style.EMPTY : ps.getStyle();
+            if (isAdjustableSpace(style, raw)) {
+                int px = SpaceOffset.decode(raw);
+                // 夠寬的間隔才是欄位交界；一兩像素只是字距
+                if (px >= COLUMN_GAP_PX && start < 0 && x > 0) {
+                    sawGap = true;
+                }
+                x += px;
+                continue;
+            }
+            if (sawGap && start < 0 && !raw.isBlank()) {
+                start = x;
+            }
+            x += widthOf(literal(raw, style));
+        }
+        return start < 0 ? null : new int[] {start, x};
+    }
+
+    /** 一段間隔要這麼寬才算欄位交界，而不只是字距。 */
+    private static final int COLUMN_GAP_PX = 8;
+
+    /** 最大減最小。越小代表這些位置越一致。 */
+    static int spread(List<Integer> values) {
+        int low = Integer.MAX_VALUE;
+        int high = Integer.MIN_VALUE;
+        for (int v : values) {
+            low = Math.min(low, v);
+            high = Math.max(high, v);
+        }
+        return high - low;
     }
 
     /**
@@ -930,7 +1034,7 @@ public final class LineTranslator {
      * <p>只補「兩側都有文字」的空白：行尾的留白邊距、行首的縮排都不是欄位
      * 交界，動它們只會讓整行位移。
      */
-    private static List<Piece> alignColumns(List<Piece> pieces) {
+    private static List<Piece> alignColumns(List<Piece> pieces, boolean leftAligned) {
         List<Piece> out = new ArrayList<>(pieces.size());
         int drift = 0;
         int lastAdjusted = -1;
@@ -961,7 +1065,7 @@ public final class LineTranslator {
         //
         // Wynncraft 是把數值靠右排的，所以把剩下的差額一併加回最後一個對齊空白，
         // 整行的總寬度就會跟原文相同，右緣自然重合。
-        if (lastAdjusted >= 0 && drift != 0) {
+        if (lastAdjusted >= 0 && drift != 0 && !leftAligned) {
             Piece p = out.get(lastAdjusted);
             out.set(lastAdjusted,
                     Piece.space(narrowed(p.spacePx(), p.spacePx() - drift), p.style()));
@@ -2097,6 +2201,14 @@ public final class LineTranslator {
             }
             out.add(line);
         }
+        // 哪幾個重點段真的貼上去了。沒有這一欄，「某個詞沒有顏色」就只能用猜的。
+        List<String> texts = new ArrayList<>(accents.size());
+        List<Style> styles = new ArrayList<>(accents.size());
+        for (LineParts.Piece accent : accents) {
+            texts.add(accent.text());
+            styles.add(accent.style());
+        }
+        FlowedDebug.accents(texts, styles, usedAccent, flowed);
         return out;
     }
 

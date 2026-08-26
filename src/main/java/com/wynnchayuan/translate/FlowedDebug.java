@@ -53,6 +53,7 @@ public final class FlowedDebug {
     public static void init(Path configDir) {
         file = configDir.resolve(FILE);
         seen = 0;
+        accentSeen = 0;
         missed = 0;
         prose = 0;
         labelled = 0;
@@ -127,6 +128,66 @@ public final class FlowedDebug {
             // 那等於一次失敗就永久關閉，而使用者只會看到「檔案沒生成」。
         }
     }
+
+    /**
+     * 重點段有哪些、哪幾個真的貼上去了。
+     *
+     * <h2>為什麼需要這一欄</h2>
+     * 「譯文裡某個詞沒有顏色」有<b>三個</b>可能：那一段根本沒被收成重點段、
+     * 收了但查不到中文的說法、或是查到了卻在譯文裡比對不到（被斷行切開、
+     * 被更長的詞卡住）。三者在畫面上長得一模一樣，只能用猜的——
+     * 「地屬性沒有顏色」就這樣猜了兩輪。
+     *
+     * <p>這裡把三者分開寫：每一段的文字、它的樣式、以及最後有沒有被用掉。
+     * 「在譯文裡卻沒貼上」就是比對那一步的問題，跟查表無關。
+     */
+    public static void accents(List<String> texts, List<Style> styles,
+                               boolean[] used, String[] translated) {
+        if (file == null || texts == null || texts.isEmpty()
+                || accentSeen >= ACCENT_LIMIT) {
+            return;
+        }
+        StringBuilder id = new StringBuilder("accents");
+        for (String line : translated) {
+            id.append(line);
+        }
+        if (!already.add(id.toString())) {
+            return;                            // 每一幀都會重翻一次，見 #already
+        }
+        accentSeen++;
+        try {
+            StringBuilder sb = new StringBuilder();
+            sb.append("=== 重點段 ").append(accentSeen).append(" ===")
+              .append(System.lineSeparator());
+            for (String line : translated) {
+                sb.append("  譯文：").append(line).append(System.lineSeparator());
+            }
+            for (int i = 0; i < texts.size(); i++) {
+                String text = texts.get(i);
+                boolean hit = used != null && i < used.length && used[i];
+                boolean present = false;
+                for (String line : translated) {
+                    present |= line.contains(text);
+                }
+                sb.append("    [").append(i).append("] ")
+                  .append(describe(i < styles.size() ? styles.get(i) : null))
+                  .append("  「").append(text).append("」")
+                  .append(hit ? "  已貼上"
+                              : (present ? "  ★在譯文裡卻沒貼上" : "  譯文裡找不到"))
+                  .append(System.lineSeparator());
+            }
+            sb.append(System.lineSeparator());
+            Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        } catch (Throwable t) {
+            // 診斷絕不能反過來弄壞畫面
+        }
+    }
+
+    /** 重點段那一欄的額度，跟跨行查表分開算。 */
+    private static final int ACCENT_LIMIT = 20;
+
+    private static int accentSeen = 0;
 
     private static String describe(Style style) {
         if (style == null) {
