@@ -527,8 +527,8 @@
    "code": "SHAMAN-P3-R04-C08"
   },
   "b44413872a86": {
-   "src": "{#}{#}Total Damage: -{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#}{#}總傷害：{~}(你的每秒傷害，對於Uproot的每次命中)",
+   "src": "{#} Total Damage: -{~} (of your DPS, for Uproot, per hit)",
+   "dst": "{#} 總傷害：{~}(你的每秒傷害，對於Uproot的每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1173,8 +1173,8 @@
    "code": "SHAMAN-P5-R02-C00"
   },
   "2edac2f60646": {
-   "src": "{#}{#}Effect: +{~} Damage Bonus to Summons",
-   "dst": "{#}{#}效果: +{~} 召喚物傷害加成",
+   "src": "{#} Effect: +{~} Damage Bonus to Summons",
+   "dst": "{#} 效果: +{~} 召喚物傷害加成",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1315,8 +1315,8 @@
    "code": "SHAMAN-P5-R02-C08"
   },
   "5159a03ec503": {
-   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Uproot, per hit)",
-   "dst": "{#}{#}總傷害: +{~}(你的每秒傷害，Uproot,每次命中)",
+   "src": "{#} Total Damage: +{~} (of your DPS, for Uproot, per hit)",
+   "dst": "{#} 總傷害: +{~}(你的每秒傷害，Uproot,每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1328,8 +1328,8 @@
    "code": "SHAMAN-P5-R02-C08"
   },
   "e65dc10bdc16": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, from Bleeding)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，流血)",
+   "src": "{#} Total Damage: {~} (of your DPS, from Bleeding)",
+   "dst": "{#} 總傷害: {~}(你的每秒傷害，流血)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1605,8 +1605,8 @@
    "code": "SHAMAN-P5-R05-C06"
   },
   "c7673b5ce4da": {
-   "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} health)",
-   "dst": "{#}{#}總傷害: {~}(你的每秒傷害，每 {~} 生命)",
+   "src": "{#} Total Damage: {~} (of your DPS, per {~} health)",
+   "dst": "{#} 總傷害: {~}(你的每秒傷害，每 {~} 生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1860,8 +1860,8 @@
    "code": "SHAMAN-P6-R02-C00"
   },
   "dd2a876b1fb5": {
-   "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies",
-   "dst": "{#}{#}效果: {~} 緩速 ({#}) 給敵人",
+   "src": "{#} Effects: {~} Slowness ({#}) to Enemies",
+   "dst": "{#} 效果: {~} 緩速 ({#}) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2058,8 +2058,8 @@
    "code": "SHAMAN-P6-R04-C00"
   },
   "3f07b666370c": {
-   "src": "{#}{#}Effect: +{~} Attack Speed to Puppets",
-   "dst": "{#}{#}效果：+{~} 人偶攻擊速度",
+   "src": "{#} Effect: +{~} Attack Speed to Puppets",
+   "dst": "{#} 效果：+{~} 人偶攻擊速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2099,8 +2099,8 @@
    "code": "SHAMAN-P6-R04-C02"
   },
   "6f5fa74b0433": {
-   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Puppets",
-   "dst": "{#}{#}效果：{~} 人偶傷害加成 (⚔)",
+   "src": "{#} Effect: +{~} Damage Bonus (⚔) to Puppets",
+   "dst": "{#} 效果：{~} 人偶傷害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2321,8 +2321,8 @@
    "code": "SHAMAN-P7-R01-C01"
   },
   "d8f680e0d001": {
-   "src": "{#}{#}Effect: +{~} Walk Speed to Self",
-   "dst": "{#}{#}效果：{~} 自身移速",
+   "src": "{#} Effect: +{~} Walk Speed to Self",
+   "dst": "{#} 效果：{~} 自身移速",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2403,8 +2403,8 @@
    "code": "SHAMAN-P7-R02-C02"
   },
   "1e737fcaf8d9": {
-   "src": "{#}{#}Effect: +{~} Attack Speed to Summons",
-   "dst": "{#}{#}效果: +{~} 召喚物攻擊速度",
+   "src": "{#} Effect: +{~} Attack Speed to Summons",
+   "dst": "{#} 效果: +{~} 召喚物攻擊速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2457,15 +2457,15 @@
    "code": "SHAMAN-P7-R03-C06"
   },
   "4ea103431061": {
-   "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's{#}range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "失血 {#} 的敵人每 {~1} 秒受到傷害。若 失血 {#} 的目標在 Totem{#}範圍內，則會額外使 血池 {#} 增加 {~2} 點。",
+   "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
+   "dst": "失血 {#} 的敵人每 {~} 秒受到一次傷害。失血 {#} 在圖騰的範圍內造成的傷害將使你的 血池 {#} 增加 {~} 點。",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Sanguine Strike"
    ],
    "lines": 3,
-   "flat": "Bleeding{#}{#}{#}enemies take damage every {~}s. Bleeding{#}{#}{#}damage dealt within Totem's{#}range also adds +{~} points to your Blood Pool {#}.",
+   "flat": "Bleeding {#} enemies take damage every {~}s. Bleeding {#} damage dealt within Totem's range also adds +{~} points to your Blood Pool {#}.",
    "_raw": "Bleeding  enemies take damage every 0.5s.\nBleeding  damage dealt within Totem's range\nalso adds +0.8 points to your Blood Pool .",
    "tree": "04/shaman/07/003/006",
    "ability": "Sanguine Strike",
@@ -2769,8 +2769,8 @@
    "code": "SHAMAN-P8-R01-C07"
   },
   "87186ab9c023": {
-   "src": "{#}{#}Effect: +{~} damage to Eldritch Call (Per stack)",
-   "dst": "{#}{#}效果：{~} Eldritch Call傷害(每層)",
+   "src": "{#} Effect: +{~} damage to Eldritch Call (Per stack)",
+   "dst": "{#} 效果：{~} Eldritch Call傷害(每層)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
