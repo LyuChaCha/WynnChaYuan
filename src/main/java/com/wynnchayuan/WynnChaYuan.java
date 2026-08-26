@@ -1,6 +1,7 @@
 package com.wynnchayuan;
 
 import com.wynnchayuan.capture.CaptureStore;
+import com.wynnchayuan.listener.ActionBarListener;
 import com.wynnchayuan.listener.BadgeListener;
 import com.wynnchayuan.listener.CaptureListener;
 import com.wynnchayuan.listener.RenderListener;
@@ -255,6 +256,7 @@ public final class WynnChaYuan implements ClientModInitializer {
             listener = new CaptureListener();
             WynntilsMod.registerEventListener(listener);
             WynntilsMod.registerEventListener(new RenderListener());
+            WynntilsMod.registerEventListener(new ActionBarListener());
             WynntilsMod.registerEventListener(new TrackerListener());
             WynntilsMod.registerEventListener(new BadgeListener());
             System.out.println("[WynnChaYuan] 已掛上 Wynntils 事件，開始收集");

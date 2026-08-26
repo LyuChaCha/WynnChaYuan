@@ -72,7 +72,7 @@ public final class SettingsScreen extends Screen {
     }
 
     private int dataY() {
-        return TOP - 20 + cardH(4) + 20 + 20;   // 翻譯卡底部 + 間距 + 卡片標題
+        return TOP - 20 + cardH(5) + 20 + 20;   // 翻譯卡底部 + 間距 + 卡片標題
     }
 
     @Override
@@ -123,13 +123,18 @@ public final class SettingsScreen extends Screen {
                 b -> this.minecraft.setScreen(new NametagScreen(this)))
                 .bounds(right, TOP + rowH(), COL_W, 20).build());
 
-        dialogueHoldBox = secondsBox(right, TOP + rowH() * 2,
+        row(right, TOP + rowH() * 2, this::dialogueModeLabel, b -> {
+            WynnChaYuan.config().cycleDialogueMode();
+            b.setMessage(dialogueModeLabel());
+        });
+
+        dialogueHoldBox = secondsBox(right, TOP + rowH() * 3,
                 WynnChaYuan.config().dialogueHoldMs());
         addRenderableWidget(Button.builder(Component.literal("套用"),
                 b -> applySeconds(false))
-                .bounds(right + COL_W - 42, TOP + rowH() * 2, 42, 20).build());
+                .bounds(right + COL_W - 42, TOP + rowH() * 3, 42, 20).build());
 
-        row(right, TOP + rowH() * 3, this::overlayLabel, b -> {
+        row(right, TOP + rowH() * 4, this::overlayLabel, b -> {
             WynnChaYuan.config().toggleOverlays();
             b.setMessage(overlayLabel());
         });
@@ -213,6 +218,15 @@ public final class SettingsScreen extends Screen {
             case OFF -> "關閉";
         };
         return Component.literal("物品翻譯：" + name);
+    }
+
+    private Component dialogueModeLabel() {
+        String name = switch (WynnChaYuan.config().dialogueMode()) {
+            case PANEL -> "另開小框";
+            case REPLACE -> "就地取代";
+            case OFF -> "關閉";
+        };
+        return Component.literal("任務對話：" + name);
     }
 
     private Component overlayLabel() {
@@ -311,7 +325,7 @@ public final class SettingsScreen extends Screen {
 
         // 卡片要墊在按鈕底下，所以先於 super.render
         Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(6));
-        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(4));
+        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(5));
         Cards.panel(g, right - 8, dataY - 20, COL_W + 16, cardH(4));
 
         super.render(g, mouseX, mouseY, delta);

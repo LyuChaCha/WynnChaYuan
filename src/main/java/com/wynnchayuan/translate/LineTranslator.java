@@ -2291,6 +2291,21 @@ public final class LineTranslator {
      * <p>圓括號不算在內：它們是註解的界線（見 {@link #appendNoting}），
      * 交給註解那一套處理，這裡動它只會把註解的顏色弄亂。
      */
+    /**
+     * 整段都是標點時，那段標點該跟<b>後面</b>的佔位符走嗎。
+     *
+     * <p>遊戲送 {@code ✦ Available Points: 0/50} 是三段：
+     * {@code 「✦ Available Points: 」「0」「/50」}——斜線跟它<b>右邊</b>的數字
+     * 同屬一段。跟左邊走的話，譯文那條斜線會拿到前一個數字的樣式，
+     * 畫面上就是它跟原文顏色不同。
+     *
+     * <p>只有「整段都是標點」才換邊。{@code 抄寫 [} 這種前面還有文字的，
+     * 開頭那截仍歸前一段——那才是它視覺上依附的地方。
+     */
+    static boolean leadTakesNext(String text, int lead, Style after) {
+        return after != null && lead == text.length();
+    }
+
     private static void appendHugging(MutableComponent out, String text,
                                       Style base, Style note, boolean[] depth,
                                       List<LineParts.Piece> accents, boolean[] used,
@@ -2308,7 +2323,14 @@ public final class LineTranslator {
             }
         }
         if (lead > 0) {
-            out.append(literal(text.substring(0, lead), forDisplay(before)));
+            // 整段都是標點、而且兩邊都有佔位符時，跟<b>後面</b>那個走。
+            //
+            // 遊戲送 `✦ Available Points: 0/50` 是三段：
+            //   「✦ Available Points: 」「0」「/50」
+            // 也就是斜線跟它<b>右邊</b>的數字同屬一段。跟左邊走的話，
+            // 譯文那條斜線會拿到前一個數字的樣式——畫面上就是它跟原文顏色不同。
+            Style owner = leadTakesNext(text, lead, after) ? after : before;
+            out.append(literal(text.substring(0, lead), forDisplay(owner)));
         }
         if (tail > lead) {
             appendNoting(out, text.substring(lead, tail), base, note,
