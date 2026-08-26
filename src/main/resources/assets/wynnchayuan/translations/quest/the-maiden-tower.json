@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Maiden Tower",
   "count": 36,
-  "translated": 0,
+  "translated": 36,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Maiden Tower#000": {
    "src": "Visit Sherk at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 拜訪 Sherk",
    "role": "desc",
    "kind": "objective",
    "quest": "The Maiden Tower",
@@ -18,7 +18,7 @@
   },
   "The Maiden Tower#001": {
    "src": "Ah! What are you doing in my swamp?! Don't you know that Ogres live alone for a reason?",
-   "dst": "",
+   "dst": "啊！你跑來我的沼澤幹嘛？！你不知道食人妖獨居是有原因的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -28,7 +28,7 @@
   },
   "The Maiden Tower#002": {
    "src": "Eh? You're from across the sea, a land called Win? You certainly don't look like a winner to me, ya small fry.",
-   "dst": "",
+   "dst": "欸？你從海的另一頭來，一個叫 Win 的地方？我看你可一點都不像個贏家啊，小不點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -38,7 +38,7 @@
   },
   "The Maiden Tower#003": {
    "src": "Fine then. Consider yourself lucky I'm in a... mood. I'll talk with you instead of crackin' yer bones for my bread.",
-   "dst": "",
+   "dst": "算了。算你走運，我今天……心情還行。我跟你講講話，不把你的骨頭敲碎配麵包吃。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -48,7 +48,7 @@
   },
   "The Maiden Tower#004": {
    "src": "Ogres are tough. We're independent and solitary folks. You don't bother us or interfere with our life, we leave you alone.",
-   "dst": "",
+   "dst": "食人妖很硬。我們獨立、我們獨處。你不來煩我們、不插手我們的日子，我們也不理你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -58,7 +58,7 @@
   },
   "The Maiden Tower#005": {
    "src": "That is, until it's time to find ourselves a partner. Then we'll turn over hell and highwater ta be together.",
-   "dst": "",
+   "dst": "不過呢，等到該找伴的時候就不一樣了。那時候我們會翻天覆地，只為了跟對方在一起。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -68,7 +68,7 @@
   },
   "The Maiden Tower#006": {
    "src": "And... well, when it's two ogres getting together, it's simple. But... I passed by a tall tower, and heard a Maiden's voice from inside.",
-   "dst": "",
+   "dst": "而且……嗯，兩隻食人妖湊一起是很簡單的事。可是……我路過一座高塔，聽見裡面傳來一位淑女的聲音。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -78,7 +78,7 @@
   },
   "The Maiden Tower#007": {
    "src": "Ogres don't live in fairytale towers, or have a voice that could make flowers grow with its lovely lilt!",
-   "dst": "",
+   "dst": "食人妖不住童話裡的高塔，也沒有那種悅耳到能讓花開的嗓子！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -88,7 +88,7 @@
   },
   "The Maiden Tower#008": {
    "src": "I've been tryin' ta figure out how to approach this... I'm gettin' on in years, I need to find someone, and she's the girl.",
-   "dst": "",
+   "dst": "我一直在想這事該怎麼開口……我年紀也不小了，得找個人了，而她就是那個人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -98,7 +98,7 @@
   },
   "The Maiden Tower#009": {
    "src": "If you can help me out, I'll be real grateful. I'm sure I've got something that you'd like in exchange.",
-   "dst": "",
+   "dst": "你要是能幫我一把，我會非常感激。我這兒肯定有你會喜歡的東西可以拿來換。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -108,7 +108,7 @@
   },
   "The Maiden Tower#010": {
    "src": "Follow the rocky-looking path to find the tower. I'll meet with you there- prepare to be a wingman for an ogre.",
-   "dst": "",
+   "dst": "順著那條像石頭鋪的路走就能找到那座塔。我在那邊跟你會合——準備好給食人妖當僚機吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -118,7 +118,7 @@
   },
   "The Maiden Tower#011": {
    "src": "Follow the stones in the path to the tower at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "順著路上的石頭走到 [-{~1}, {~2}, -{~3}] 的高塔",
    "role": "desc",
    "kind": "objective",
    "quest": "The Maiden Tower",
@@ -128,7 +128,7 @@
   },
   "The Maiden Tower#012": {
    "src": "This is the place. She's up at the top... Remember, I won't stop 'til I meet her. Coming here means you're in for the long haul.",
-   "dst": "",
+   "dst": "就是這裡。她在最上面……記住，見不到她我是不會罷休的。你既然來了，就得陪我耗到底。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -138,7 +138,7 @@
   },
   "The Maiden Tower#013": {
    "src": "I hear a voice outside! Oh, who might it be, I wonder~",
-   "dst": "",
+   "dst": "外面有人在說話！哎呀，會是誰呢～",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -148,7 +148,7 @@
   },
   "The Maiden Tower#014": {
    "src": "Here goes... Hello, fair lady of the tower! I am Sherk! I heard your voice on the road- and I must meet you myself! ...that's formal enough, right?",
-   "dst": "",
+   "dst": "上了……哈囉，塔上的美麗女士！我是 Sherk！我在路上聽見了你的聲音——我非見你一面不可！……這樣夠正式了吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -158,7 +158,7 @@
   },
   "The Maiden Tower#015": {
    "src": "Ohoho! An admirer? Such a lovely, rugged accent! However ...if you wish to meet me, I'd like to see your devotion, yes?",
-   "dst": "",
+   "dst": "喔呵呵！有仰慕者？多麼可愛又粗獷的口音！不過……你若想見我，我想先看看你的誠意，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -168,7 +168,7 @@
   },
   "The Maiden Tower#016": {
    "src": "Woman, you have no idea what you're sayin' when you ask for devotion.",
-   "dst": "",
+   "dst": "女人，你說「誠意」的時候，根本不知道自己在說什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -178,7 +178,7 @@
   },
   "The Maiden Tower#017": {
    "src": "There is a lovely urn my father had before. He took it with him to his grave, and I do miss my dear father so.",
-   "dst": "",
+   "dst": "我父親生前有一只很美的骨灰罈。他把它一起帶進了墳墓，而我實在很想念我親愛的父親。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -188,7 +188,7 @@
   },
   "The Maiden Tower#018": {
    "src": "Retrieve the urn for me, so I can have a memento of him. Brave the crypts of {p}, behind the bank... And prove your devotion, dear suitor~",
-   "dst": "",
+   "dst": "把那只罈子取回來給我，讓我留個念想。到 {p} 銀行後面的地窖去闖一闖……證明你的誠意吧，親愛的追求者～",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -198,7 +198,7 @@
   },
   "The Maiden Tower#019": {
    "src": "...I'll return! You'll get your urn, no doubt! ... ...and a lovely fine boot up my backside. I don't fancy a massacre for a piece of pottery, Win person.",
-   "dst": "",
+   "dst": "……我會回來的！那罈子你一定拿得到！……然後我屁股上大概會挨一腳。我可不想為了一件陶器搞出一場屠殺，Win 人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -208,7 +208,7 @@
   },
   "The Maiden Tower#020": {
    "src": "I go into {p}, I'll get attacked. I get attacked, I attack back. They'll come after us... wouldn't want to present her with that. You get that urn for me, alright?",
-   "dst": "",
+   "dst": "我一進 {p}，就會被攻擊。被攻擊，我就會還手。他們就會追著我們跑……我可不想帶著那種東西去見她。那罈子你幫我拿，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -218,7 +218,7 @@
   },
   "The Maiden Tower#021": {
    "src": "Find the urn in the {p} Catacombs, behind the {p} bank at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}]，在 {p} 銀行後方的 {p} 墓窟中找到那只罈子",
    "role": "desc",
    "kind": "objective",
    "quest": "The Maiden Tower",
@@ -228,7 +228,7 @@
   },
   "The Maiden Tower#022": {
    "src": "And this is why I asked your help. As nice as blood spreads on toast, I have to reserve my sensibilities for the miss.",
-   "dst": "",
+   "dst": "這就是我找你幫忙的原因。血抹在吐司上是挺好看的，可我得把那點斯文留給那位小姐。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -238,7 +238,7 @@
   },
   "The Maiden Tower#023": {
    "src": "I've got you some compensation already, so don't worry about getting snubbed for credit. Thank you kindly for the help.",
-   "dst": "",
+   "dst": "你的報酬我已經備好了，不用擔心功勞被我搶走。真的很謝謝你幫忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -248,7 +248,7 @@
   },
   "The Maiden Tower#024": {
    "src": "Just one last thing. I doubt she'll be expecting an ogre of all people to climb up her tower. I don't want her to get frightened away.",
-   "dst": "",
+   "dst": "還有最後一件事。她大概怎麼也想不到，爬上她那座塔的會是隻食人妖。我不想把她嚇跑。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -258,7 +258,7 @@
   },
   "The Maiden Tower#025": {
    "src": "So, Win person. Care to temper her expectations before I arrive? Head up before me.",
-   "dst": "",
+   "dst": "所以呢，Win 人。能不能麻煩你在我上去之前，先幫她打個預防針？你先上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -268,7 +268,7 @@
   },
   "The Maiden Tower#026": {
    "src": "Enter the tower and make Sherk confess his love to the maiden.",
-   "dst": "",
+   "dst": "進入高塔，讓 Sherk 向那位淑女告白。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Maiden Tower",
@@ -278,7 +278,7 @@
   },
   "The Maiden Tower#027": {
    "src": "Ohoho... you're one of those Humans I've read about, aren't you? Did you truly intend to be my suitor, dear?~",
-   "dst": "",
+   "dst": "喔呵呵……你就是我書上讀過的那種人類吧？親愛的，你真的是來當我的追求者的嗎？～",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -288,7 +288,7 @@
   },
   "The Maiden Tower#028": {
    "src": "Not exactly, milady! I'm the one seeking your affections- Coming up the ladder. I know I may not be a fairytale husband, but-",
-   "dst": "",
+   "dst": "不是我，女士！想追求你的人是我——我正爬梯子上來。我知道我大概不是童話裡那種夫婿，不過——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -298,7 +298,7 @@
   },
   "The Maiden Tower#029": {
    "src": "Oh...my...goodness! A big, strong, strapping ogre!! Not a fairytale, my foot! And so polite too... Oh you'll make a perfect husband, heehee~",
-   "dst": "",
+   "dst": "喔……我的……天啊！一隻高大、強壯、體格結實的食人妖！！什麼不是童話，才怪呢！而且還這麼有禮貌……喔，你會是個完美的丈夫，嘻嘻～",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -308,7 +308,7 @@
   },
   "The Maiden Tower#030": {
    "src": "...ehm. I. Ah.",
-   "dst": "",
+   "dst": "……呃。我。啊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -318,7 +318,7 @@
   },
   "The Maiden Tower#031": {
    "src": "Aren't your type supposed to be less... Ehm... Clefted? Grizzled? Pale?",
-   "dst": "",
+   "dst": "你們這種人不是應該比較……呃……沒那麼裂？沒那麼粗？沒那麼白？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -328,7 +328,7 @@
   },
   "The Maiden Tower#032": {
    "src": "Oh, come here, Sherky-pie, give me a big kiss! And no need to worry, there's plenty more in store for my big hubby after that~",
-   "dst": "",
+   "dst": "喔，過來嘛，Sherk 寶貝，親我一個！別擔心，親完之後，我這裡還有多的是等著我的大老公呢～",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -338,7 +338,7 @@
   },
   "The Maiden Tower#033": {
    "src": "Cor, lady! Even for an ogre you're layin' it on a bit thick! Aah, you see, ogres, and people like you, they have layers, right? And your first one is... Eh... ...rotten.",
-   "dst": "",
+   "dst": "我的天，女士！就算對食人妖來說，你也太過火了！啊，你看，食人妖跟你們這種人一樣，都是一層一層的，對吧？而你的第一層是……呃……爛掉的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -348,7 +348,7 @@
   },
   "The Maiden Tower#034": {
    "src": "Now I'm sure you'll find a nice lad somewhere who'll take you for who you are, but until you find someone who has no standards, shove your creepy lips where I can't see 'em!!",
-   "dst": "",
+   "dst": "我相信你總有一天會在哪裡找到一個願意接受真實的你的好小子，不過在你找到那個沒有標準的人之前，把你那噁心的嘴唇拿到我看不見的地方去！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",
@@ -358,7 +358,7 @@
   },
   "The Maiden Tower#035": {
    "src": "...I...I g-guess he was rotten to the core, despite his...l-luscious exterior ...but you'll make me feel better, right, you s-studly human? Right?! RIGHT?!!",
-   "dst": "",
+   "dst": "……我……我想他大概真的是爛到骨子裡了，儘管他……那、那麼有魅力……不過你會讓我好過一點的，對吧，你這個強、強壯的人類？對吧？！對吧？！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Maiden Tower",

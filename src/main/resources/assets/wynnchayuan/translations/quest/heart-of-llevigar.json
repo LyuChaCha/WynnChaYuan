@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Heart of Llevigar",
   "count": 31,
-  "translated": 0,
+  "translated": 31,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Heart of Llevigar#000": {
    "src": "Find Zenam in the {p} power control center at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 {p} 的電力控制中心找 Zenam，座標 [-{~1}, {~2}, -{~3}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -18,7 +18,7 @@
   },
   "Heart of Llevigar#001": {
    "src": "Aaah, no no no! This doesn't make any sense, what in the world is going on?! Nothing's working!",
-   "dst": "",
+   "dst": "啊啊，不不不！這根本說不通，到底是怎麼回事？！什麼都不能用！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -28,7 +28,7 @@
   },
   "Heart of Llevigar#002": {
    "src": "Gweh, a visitor? Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
-   "dst": "",
+   "dst": "欸，有訪客？出去出去！這座廠正在停機維修——等等，你是我們花錢請來的電魔法專家嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -38,7 +38,7 @@
   },
   "Heart of Llevigar#003": {
    "src": "You are, right? Right?! Cause we can't wait any longer! This system was supposed to be unbreakable, a flawless design!",
-   "dst": "",
+   "dst": "你就是吧？對吧？！因為我們真的不能再等了！這套系統本來應該是不會壞的，設計完美無缺！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -48,7 +48,7 @@
   },
   "Heart of Llevigar#004": {
    "src": "We didn't even need to get Corkian consultation on this, we had this system all figured out ourselves, but now nothing's working right!",
-   "dst": "",
+   "dst": "我們甚至不需要找 Corkian 來諮詢，整套系統都是我們自己弄出來的，可是現在什麼都不對勁！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -58,7 +58,7 @@
   },
   "Heart of Llevigar#005": {
    "src": "You're seeing all these sparks and hearing all this crackling? We have no idea what could possibly be going wrong with this! That's why you're needed here!",
-   "dst": "",
+   "dst": "你看到這些火花、聽到這些劈啪聲了吧？我們完全不知道到底哪裡出了問題！所以才需要你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -68,7 +68,7 @@
   },
   "Heart of Llevigar#006": {
    "src": "We don't have much time until full meltdown! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer!",
-   "dst": "",
+   "dst": "離完全熔毀沒剩多少時間了！銀行對面有個進發電廠的入口，去那裡找總工程師！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -78,7 +78,7 @@
   },
   "Heart of Llevigar#007": {
    "src": "Enter the sewers opposite of the bank of {p}.",
-   "dst": "",
+   "dst": "從 {p} 銀行對面進入下水道。",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -88,7 +88,7 @@
   },
   "Heart of Llevigar#008": {
    "src": "Find the head engineer at the {p} power plant",
-   "dst": "",
+   "dst": "在 {p} 發電廠找到總工程師",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -98,7 +98,7 @@
   },
   "Heart of Llevigar#009": {
    "src": "Whew, finally Zeman found a guy for the job. I told him weeks ago this was a two-person task...",
-   "dst": "",
+   "dst": "呼，Zeman 總算找到人來幹這活了。我幾個禮拜前就跟他說過這是兩個人的工作……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -108,7 +108,7 @@
   },
   "Heart of Llevigar#010": {
    "src": "Wait, it's Zenam? Eh, what does it matter? You knew who I was talkin' about. Lemme give you the lowdown real fast.",
-   "dst": "",
+   "dst": "等等，是 Zenam？欸，那有什麼差別？你知道我在說誰就好。我快速跟你講一下狀況。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -118,7 +118,7 @@
   },
   "Heart of Llevigar#011": {
    "src": "About a month ago, there was a big blackout, and the generator here started acting up. Power surges, appliances overloading...heck, some of our lights turned purple!",
-   "dst": "",
+   "dst": "大概一個月前，這裡大停電了一次，然後發電機就開始出毛病。電湧、電器過載……媽的，我們有些燈還變成紫色的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -128,7 +128,7 @@
   },
   "Heart of Llevigar#012": {
    "src": "My grandfather and his engineers jury-rigged the whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
-   "dst": "",
+   "dst": "我爺爺和他那批工程師是把整套系統土法炒鋼拼起來的。重置一次應該就能解決，可是基於保安規定，重置的時候我必須在這裡監控。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -138,7 +138,7 @@
   },
   "Heart of Llevigar#013": {
    "src": "So that's your job- get through the system and find the reset button. These holes'll lead you around the generator rooms. Better get going!",
-   "dst": "",
+   "dst": "所以你的工作就是——穿過整套系統，找到重置鈕。這些洞會帶你繞過各個發電機房。快去吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -148,7 +148,7 @@
   },
   "Heart of Llevigar#014": {
    "src": "Try to find a way into the machine",
-   "dst": "",
+   "dst": "想辦法進入機器內部",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -158,7 +158,7 @@
   },
   "Heart of Llevigar#015": {
    "src": "Find a way to proceed to the inner parts of the machinery",
-   "dst": "",
+   "dst": "想辦法深入機械的內層",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -168,7 +168,7 @@
   },
   "Heart of Llevigar#016": {
    "src": "Reach the center of the restricted area",
-   "dst": "",
+   "dst": "抵達管制區的中心",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -178,7 +178,7 @@
   },
   "Heart of Llevigar#017": {
    "src": "Find the reset button.",
-   "dst": "",
+   "dst": "找到重置鈕。",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -188,7 +188,7 @@
   },
   "Heart of Llevigar#018": {
    "src": "Report back to the Head Engineer",
-   "dst": "",
+   "dst": "回去向總工程師回報",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -198,7 +198,7 @@
   },
   "Heart of Llevigar#019": {
    "src": "Alright, that should do it- Ah, you're back. The system reset just fine, like I said. Everything should be winding down now.",
-   "dst": "",
+   "dst": "好，這樣應該就行了——啊，你回來了。系統重置得很順利，跟我說的一樣。現在一切都在慢慢降下來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -208,7 +208,7 @@
   },
   "Heart of Llevigar#020": {
    "src": "It's purging the excess energy now- might have a few more power surges and crackles for a while, but it'll go back to normal soon enough.",
-   "dst": "",
+   "dst": "它正在把多餘的能量排掉——接下來一陣子可能還會有幾次電湧和劈啪聲，不過很快就會恢復正常。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -218,7 +218,7 @@
   },
   "Heart of Llevigar#021": {
    "src": "Hm? What, there was a bug in the system? ...what, are you asleep or something? Of course there was a bug, we just fixed it!",
-   "dst": "",
+   "dst": "嗯？什麼，系統裡有蟲？……你是不是還沒睡醒啊？當然有蟲，我們剛剛才把它修掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -228,7 +228,7 @@
   },
   "Heart of Llevigar#022": {
    "src": "Well, anyways, Zebra should have our payment all settled. You go on ahead- I still need to stay down here to make sure everything stays smooth.",
-   "dst": "",
+   "dst": "總之，Zebra 那邊應該已經把我們的酬勞算好了。你先走吧——我還得留在下面確保一切順利。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -238,7 +238,7 @@
   },
   "Heart of Llevigar#023": {
    "src": "...oh, it's Zenam? D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system, it hooks up to the sewer exit.",
-   "dst": "",
+   "dst": "……哦，是 Zenam 嗎？你真的那麼在意他的名字唸得對不對？總之，出口在水冷系統那邊，接到下水道的出口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -248,7 +248,7 @@
   },
   "Heart of Llevigar#024": {
    "src": "Ask Zenam for your reward",
-   "dst": "",
+   "dst": "向 Zenam 領取報酬",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -258,7 +258,7 @@
   },
   "Heart of Llevigar#025": {
    "src": "Whew...welcome back. The power is back online- Everything is running at full capacity again. I think the system is just running excess through right now.",
-   "dst": "",
+   "dst": "呼……歡迎回來。電力恢復了——一切又滿載運轉了。我想系統現在只是在把多餘的部分排掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -268,7 +268,7 @@
   },
   "Heart of Llevigar#026": {
    "src": "Glad you got here when you did though- some phony came through saying he was the expert. Clearly he was just here to take your contract money...",
-   "dst": "",
+   "dst": "不過幸好你及時趕到——剛才有個冒牌貨跑來說他才是專家。很明顯他只是想騙走你的酬金……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -278,7 +278,7 @@
   },
   "Heart of Llevigar#027": {
    "src": "Though, I was panicking so much I probably would've believed him... Speaking of which, here's your cut of the pay, and something extra for the trouble.",
-   "dst": "",
+   "dst": "不過話說回來，我當時慌成那樣，大概真的會信他……說到這個，這是你那份酬勞，還多給你一點當作補償。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -288,7 +288,7 @@
   },
   "Heart of Llevigar#028": {
    "src": "Here's to hoping that the system won't run into any more trouble in the future. I don't want to be faced with an impending cataclysm like that again...",
-   "dst": "",
+   "dst": "希望這套系統以後別再出什麼問題了。我可不想再面對一次那種迫在眉睫的大災難……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -298,7 +298,7 @@
   },
   "Heart of Llevigar#029": {
    "src": "Aah, this is bad, where's the keys to my toolbox?! Zenam said it was important, I need to find them!",
-   "dst": "",
+   "dst": "啊啊，糟了，我工具箱的鑰匙跑哪去了？！Zenam 說這件事很重要，我一定得找到！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -308,7 +308,7 @@
   },
   "Heart of Llevigar#030": {
    "src": "I still can't believe it, a human has done my job and taken my emeralds... Just because I lost my keys...",
-   "dst": "",
+   "dst": "我到現在還是不敢相信，一個人類做了我的工作、拿走了我的綠寶石……就因為我把鑰匙弄丟了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",

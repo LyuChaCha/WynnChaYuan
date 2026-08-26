@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Grand Youth",
   "count": 39,
-  "translated": 0,
+  "translated": 39,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Grand Youth#000": {
    "src": "Talk to Monte at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 與 Monte 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -18,7 +18,7 @@
   },
   "Grand Youth#001": {
    "src": "Oh, what am I to do...? How am I to be our next elder if I cannot even help him... Oh? Ehm, hello, stranger.",
-   "dst": "",
+   "dst": "哦，我該怎麼辦才好……？連他都幫不了，我要怎麼當我們的下一任長老……哦？呃，你好，陌生人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -28,7 +28,7 @@
   },
   "Grand Youth#002": {
    "src": "You most likely heard me. Our elder has fallen ill of some vile disease... I am to be our next elder, but I am not yet ready.",
-   "dst": "",
+   "dst": "你八成聽見我剛才說的了。我們的長老染上了某種惡疾……我本該是下一任長老，但我還沒準備好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -38,7 +38,7 @@
   },
   "Grand Youth#003": {
    "src": "We have tried everything we can think of, but our healers and shamans have failed to cure him. We had some hope, however...",
-   "dst": "",
+   "dst": "我們能想到的方法全試過了，可是我們的治療師和薩滿都沒能治好他。不過我們原本有過一線希望……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -48,7 +48,7 @@
   },
   "Grand Youth#004": {
    "src": "A man in your city, {p}, insists that he sells healing water that could cure him, but he is selling it for an exorbitant price that we cannot afford!",
-   "dst": "",
+   "dst": "你們城裡，{p}，有個人一口咬定他賣的療癒之水能治好他，可是他開的價高得離譜，我們根本負擔不起！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -58,7 +58,7 @@
   },
   "Grand Youth#005": {
    "src": "I do not know where else to turn. I must ask you for help. If you can purchase it, I am sure that we could find a way to repay you.",
-   "dst": "",
+   "dst": "我不知道還能求誰了。我必須向你開口。你要是買得到，我相信我們一定能想辦法回報你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -68,7 +68,7 @@
   },
   "Grand Youth#006": {
    "src": "I have written directions for you in your content book...please help our village.",
-   "dst": "",
+   "dst": "我已經把路線寫進你的內容書了……拜託你，救救我們的村子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -78,7 +78,7 @@
   },
   "Grand Youth#007": {
    "src": "Visit the Salesman in {p} near the fountain.",
-   "dst": "",
+   "dst": "前往 {p} 噴泉附近拜訪那名商販。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -88,7 +88,7 @@
   },
   "Grand Youth#008": {
    "src": "Oh, why hello there! Come for my patented healing water, have you? Any problem instantly cured! Sniffles beware!",
-   "dst": "",
+   "dst": "哦，你好啊！是來買我那專利的療癒之水的吧？什麼毛病都能立刻治好！小感冒閃邊去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -98,7 +98,7 @@
   },
   "Grand Youth#009": {
    "src": "You're quite lucky, I only have a couple of bottles left, so it won't go cheap, but this is the good stuff! Only [{~} Liquified Emeralds]!",
-   "dst": "",
+   "dst": "你運氣真不錯，我只剩幾瓶了，所以價錢不會便宜，但這可是好貨！只要 [{~} 液態綠寶石]！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -108,7 +108,7 @@
   },
   "Grand Youth#010": {
    "src": "What? Don't give me that look! This is the real stuff, very valuable and rare! What do ya take me for, some guy who'd sell lake water for a fortune?!",
-   "dst": "",
+   "dst": "什麼？別用那種眼神看我！這是真貨，非常珍貴又稀有！你當我是誰啊，那種把湖水當寶賣的人嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -118,7 +118,7 @@
   },
   "Grand Youth#011": {
    "src": "Agh, agh! Put away the weapon! Put it away! Jeez, buddy! Alright, I admit it, I'm a fraudster! But, I do know where you get the real stuff, I ain't lying about that much.",
-   "dst": "",
+   "dst": "欸、欸！武器收起來！收起來！我的天啊老兄！好啦，我承認，我是個騙子！但我真的知道去哪裡拿得到真貨，這點我沒有騙你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -128,7 +128,7 @@
   },
   "Grand Youth#012": {
    "src": "There's this group of mages out in Dernel who know how to get the stuff. They're a bunch of tightwads and wouldn't get give me any real healing water to sell.",
-   "dst": "",
+   "dst": "Dernel 那邊有一群法師知道怎麼弄到那東西。他們是一群鐵公雞，怎麼樣都不肯給我真的療癒之水去賣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -138,7 +138,7 @@
   },
   "Grand Youth#013": {
    "src": "I doubt you'll have any better luck with it, but go on, try your luck.",
-   "dst": "",
+   "dst": "我猜你也不會比較順利，不過去吧，碰碰運氣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -148,7 +148,7 @@
   },
   "Grand Youth#014": {
    "src": "Those tightwad mages are out in Dernel, on the lake with the big island. I doubt you'll convince them to give you any healing water, though.",
-   "dst": "",
+   "dst": "那群鐵公雞法師在 Dernel，湖上有座大島的那個地方。不過我猜你說服不了他們給你療癒之水。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -158,7 +158,7 @@
   },
   "Grand Youth#015": {
    "src": "Talk to Isfurus in Dernel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 的 Dernel 與 Isfurus 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -168,7 +168,7 @@
   },
   "Grand Youth#016": {
    "src": "Hm, hm...if it really does that, then...oh, is someone there? Erisk?",
-   "dst": "",
+   "dst": "嗯，嗯……如果它真的有那個作用，那麼……哦，有人在嗎？Erisk？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -178,7 +178,7 @@
   },
   "Grand Youth#017": {
    "src": "Oh, a tourist. Heard about the healing water, I presume? Well, if you are here to make a quick buck, you can turn right back around from where you came.",
-   "dst": "",
+   "dst": "哦，一位觀光客。我猜是聽說了療癒之水吧？如果你是來撈一筆快錢的，那就從哪來回哪去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -188,7 +188,7 @@
   },
   "Grand Youth#018": {
    "src": "Hm...ah. Iboju's sister settlement...I see. I will trust this is an honest venture, then. The tribesmen are honourable.",
-   "dst": "",
+   "dst": "嗯……啊。Iboju 的姊妹聚落……我明白了。那我就相信這趟是誠心的。部落的人是講信義的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -198,7 +198,7 @@
   },
   "Grand Youth#019": {
    "src": "I will provide you a specially-prepared bottle to hold the water in. My colleague, Erisk, is within the fountain here. He can fill up the bottle for you.",
-   "dst": "",
+   "dst": "我會給你一只特製的瓶子來裝那些水。我的同事 Erisk 就在這座噴泉裡面。他可以幫你把瓶子裝滿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -208,7 +208,7 @@
   },
   "Grand Youth#020": {
    "src": "There are a few animals in the fountain, however. They're wild and will most likely attack, but you look well-armoured. I doubt you'll have trouble.",
-   "dst": "",
+   "dst": "不過噴泉裡有幾隻動物。牠們是野生的，多半會攻擊你，不過你看起來裝備精良。我想你應該不會有麻煩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -218,7 +218,7 @@
   },
   "Grand Youth#021": {
    "src": "The entrance to the heart of the fountain is right below us. Take a deep breath and dive right in.",
-   "dst": "",
+   "dst": "通往噴泉核心的入口就在我們腳下。深吸一口氣，直接潛下去吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -228,7 +228,7 @@
   },
   "Grand Youth#022": {
    "src": "Your directions are in your content book, friend. Always consult it if you are in a bind.",
-   "dst": "",
+   "dst": "路線都在你的內容書裡，朋友。遇到難處隨時翻一翻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -238,7 +238,7 @@
   },
   "Grand Youth#023": {
    "src": "Get the bottles filled by Erisk in the heart of the fountain to give Isfurus.",
-   "dst": "",
+   "dst": "請噴泉核心的 Erisk 把瓶子裝滿，再交給 Isfurus。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -248,7 +248,7 @@
   },
   "Grand Youth#024": {
    "src": "And who might you be? We certainly don't get many visitors down here.",
-   "dst": "",
+   "dst": "請問你是哪位？我們這下面可不常有訪客。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -258,7 +258,7 @@
   },
   "Grand Youth#025": {
    "src": "Aha, Isfurus referred you. Yes, let me bottle this up for you, then. Once I do, make sure you don't drop them! Both the bottles and the water are valuable and difficult to replace.",
-   "dst": "",
+   "dst": "啊哈，是 Isfurus 介紹你來的。好，那讓我幫你裝瓶。裝好之後，千萬別把它們摔了！瓶子和水都很珍貴，弄壞了很難再弄到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -268,7 +268,7 @@
   },
   "Grand Youth#026": {
    "src": "But what a marvel this place is...water to cure all ailments, even aging! I even hear there is a similar fountain someplace in Gavel, can you believe?",
-   "dst": "",
+   "dst": "不過這個地方真是奇妙啊……能治百病的水，連老化都能治！我甚至聽說 Gavel 某處也有一座類似的泉，你信嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -278,7 +278,7 @@
   },
   "Grand Youth#027": {
    "src": "Oh, I nearly forgot. Just make sure to check back in with Isfurus before you leave! There is just one more step to the process he has to take care of.",
-   "dst": "",
+   "dst": "哦，我差點忘了。離開之前記得再回去找一趟 Isfurus！整個流程還有最後一道手續要由他來完成。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -288,7 +288,7 @@
   },
   "Grand Youth#028": {
    "src": "Just make sure to check back in with Isfurus before you leave!",
-   "dst": "",
+   "dst": "離開之前記得再回去找一趟 Isfurus！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -298,7 +298,7 @@
   },
   "Grand Youth#029": {
    "src": "Talk to Isfurus for Erisk.",
-   "dst": "",
+   "dst": "替 Erisk 去找 Isfurus 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -308,7 +308,7 @@
   },
   "Grand Youth#030": {
    "src": "Aha. You had no trouble, I assume? Hand the bottle here, I'll finish the seal and remove the impurities...",
-   "dst": "",
+   "dst": "啊哈。我想你沒遇上什麼麻煩吧？瓶子交給我，我把封印完成，順便把雜質去掉……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -318,7 +318,7 @@
   },
   "Grand Youth#031": {
    "src": "...done. There is much potential here...ancient tribal markings repeat the word \"youth\" over and again. It could be used, or abused...",
-   "dst": "",
+   "dst": "……好了。這裡頭潛藏著很大的力量……古老的部落刻紋一遍又一遍地重複著「青春」這個字。它可以被善用，也可以被濫用……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -328,7 +328,7 @@
   },
   "Grand Youth#032": {
    "src": "Anyways, you have your water. Not to be rude, but I must ask that you leave me to my research now. You have your delivery to make anyway, correct?",
-   "dst": "",
+   "dst": "總之，水你拿到了。恕我直言，我得請你讓我回去做研究了。反正你也還有東西要送，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -338,7 +338,7 @@
   },
   "Grand Youth#033": {
    "src": "Your directions are in your content book, friend. Always consult it if you are in a bind.",
-   "dst": "",
+   "dst": "路線都在你的內容書裡，朋友。遇到難處隨時翻一翻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -348,7 +348,7 @@
   },
   "Grand Youth#034": {
    "src": "Bring back the bottle of healing water to Monte.",
-   "dst": "",
+   "dst": "把那瓶療癒之水帶回給 Monte。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -358,7 +358,7 @@
   },
   "Grand Youth#035": {
    "src": "You have returned, I see. Have you the healing water?",
-   "dst": "",
+   "dst": "你回來了。療癒之水拿到了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -368,7 +368,7 @@
   },
   "Grand Youth#036": {
    "src": "Aha, perfect! If this not work, then...no, I must have faith.",
-   "dst": "",
+   "dst": "啊哈，太好了！如果這也沒用，那……不，我必須有信心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -378,7 +378,7 @@
   },
   "Grand Youth#037": {
    "src": "From the bottom of my heart, thank you. I know we surely will not be able to compensate you for the price of the water...",
-   "dst": "",
+   "dst": "我打從心底感謝你。我知道我們一定沒辦法補償你這瓶水的價錢……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -388,7 +388,7 @@
   },
   "Grand Youth#038": {
    "src": "...but here. This is the summation of our village's riches. For aiding us, consider it yours.",
-   "dst": "",
+   "dst": "……不過這個拿去。這是我們村子所有的家當。感謝你相助，就當它是你的了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
