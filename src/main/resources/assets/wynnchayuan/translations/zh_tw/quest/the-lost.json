@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Lost",
   "count": 48,
-  "translated": 0,
+  "translated": 48,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Lost#000": {
    "src": "Find Dejol at [{~}, {~}, {~}]",
-   "dst": "",
+   "dst": "在 [{~}, {~}, {~}] 找到 Dejol",
    "role": "desc",
    "kind": "objective",
    "quest": "The Lost",
@@ -18,7 +18,7 @@
   },
   "The Lost#001": {
    "src": "Ho, traveler! I need the help of a true explorer, I can see it in your eyes, you are an adventurer like me!",
-   "dst": "",
+   "dst": "嗬，旅人！我需要一位真正的探險家幫忙，我從你眼裡看得出來，你跟我一樣是冒險者！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -28,7 +28,7 @@
   },
   "The Lost#002": {
    "src": "While you are here, adventurer, I could use your help with something. I have gotten myself into a small predicament in my travels.",
-   "dst": "",
+   "dst": "既然你來了，冒險者，有件事我需要你幫忙。我在旅途中把自己弄進了一點小麻煩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -38,7 +38,7 @@
   },
   "The Lost#003": {
    "src": "You see, me and three others were on a grand expedition to explore the entire canyon! Unfortunately, we ran into a slight problem...",
-   "dst": "",
+   "dst": "是這樣的，我和另外三個人本來要進行一場壯闊的遠征，探索整座峽谷！可惜我們遇到了一個小問題……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -48,7 +48,7 @@
   },
   "The Lost#004": {
    "src": "The {p} is clearly called that for a reason, within hours, we had lost each other!",
-   "dst": "",
+   "dst": "{p} 會叫這個名字顯然是有原因的，不到幾個小時，我們就走散了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -58,7 +58,7 @@
   },
   "The Lost#005": {
    "src": "Luckily, we were prepared for it. We each carried a flag so if we ever got lost, we can raise it to be found.",
-   "dst": "",
+   "dst": "幸好我們有準備。每個人身上都帶了一面旗，萬一走丟了就把它升起來，好讓人找到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -68,7 +68,7 @@
   },
   "The Lost#006": {
    "src": "They were all meant to come to my blue flag, but they must all be trapped in some predicament! The canyon can be a dangerous place.",
-   "dst": "",
+   "dst": "他們本來都該往我的藍旗這邊來，但他們一定全都被困在什麼麻煩裡了！峽谷可是個危險的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -78,7 +78,7 @@
   },
   "The Lost#007": {
    "src": "I can see all three red flags from here, but it would be terrible if I went looking and they came back to this flag to find me gone!",
-   "dst": "",
+   "dst": "從這裡三面紅旗我都看得到，可是萬一我去找人、他們卻回到這面旗這邊發現我不在，那就慘了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -88,7 +88,7 @@
   },
   "The Lost#008": {
    "src": "Do you think you could go and check if they're all alright? I'm sure I can find some reward for you if you help!",
-   "dst": "",
+   "dst": "你能不能去看看他們三個還好嗎？你要是願意幫忙，我一定找得出什麼東西謝你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -98,7 +98,7 @@
   },
   "The Lost#009": {
    "src": "Find the three lost crew members at the red flags around [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [{~}, {~}, -{~}] 一帶的紅旗處找到三名走失的隊員",
    "role": "desc",
    "kind": "objective",
    "quest": "The Lost",
@@ -108,7 +108,7 @@
   },
   "The Lost#010": {
    "src": "...AAAAAAAAAAAAAAAAAAAAHHHHHHHH!!!!!!!!! HEEEEEEEEEEEEELLLLLLLLPPPPPP!!!!!! THERE ARE BIIIIIIIIIIIRDS!!!!!!",
-   "dst": "",
+   "dst": "……啊啊啊啊啊啊啊啊啊啊！！！！！！！救命啊啊啊啊啊！！！！！！有鳥啊啊啊啊啊啊！！！！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -118,7 +118,7 @@
   },
   "The Lost#011": {
    "src": "HUMAN! YOU, DOWN THERE! HELP ME! I was just trying to find my way back to my friends...",
-   "dst": "",
+   "dst": "人類！你，下面那個！救我！我只是想找路回去找我朋友……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -128,7 +128,7 @@
   },
   "The Lost#012": {
    "src": "When this GIANT BIRD KIDNAPPED ME and threw me in her nest! I think she thinks I'm one of her chicks!",
-   "dst": "",
+   "dst": "結果這隻超大的鳥把我抓走，扔進牠的巢！我想牠把我當成牠的雛鳥了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -138,7 +138,7 @@
   },
   "The Lost#013": {
    "src": "The Canyon's movements must've dislodged her eggs from her nest-",
-   "dst": "",
+   "dst": "峽谷的移動一定把牠的蛋從巢裡震出去了——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -148,7 +148,7 @@
   },
   "The Lost#014": {
    "src": "O-OH GROOK, SHE'S PECKING ME! FIND HER EGGS NEARBY AND THROW THEM UP HERE... QUICKLY!!",
-   "dst": "",
+   "dst": "噢——噢天啊，牠在啄我！去附近找牠的蛋然後扔上來……快點！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -158,7 +158,7 @@
   },
   "The Lost#015": {
    "src": "YOU HAVE THE EGGS?? GOOD! THROW THEM UP HERE, PLEASE!!!",
-   "dst": "",
+   "dst": "你拿到蛋了？？太好了！拜託，扔上來這裡！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -168,7 +168,7 @@
   },
   "The Lost#016": {
    "src": "W-WOAH, STAY BACK, BIRD! I have a... uhh... I DON'T HAVE A WEAPON, HUMAN! PLEASE HURRY UP!",
-   "dst": "",
+   "dst": "哇——哇啊，退後，鳥！我有……呃……我沒有武器啊，人類！拜託你快一點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178,7 +178,7 @@
   },
   "The Lost#017": {
    "src": "YES YES YES!!! THANK YOU, HUMAN! Oh, thank grook, this bird's leaving me alone now... It worked!",
-   "dst": "",
+   "dst": "好耶好耶好耶！！！謝謝你，人類！噢，謝天謝地，這隻鳥終於不理我了……成功了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -188,7 +188,7 @@
   },
   "The Lost#018": {
    "src": "I'll head back to Dejol, now... And I'm never going to go near another bird again!",
-   "dst": "",
+   "dst": "我現在要回去找 Dejol 了……而且我這輩子再也不要靠近任何一隻鳥！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -198,7 +198,7 @@
   },
   "The Lost#019": {
    "src": "A-ah, hello. I'm g-guessing Dejol sent you?",
-   "dst": "",
+   "dst": "啊——啊，你好。我、我猜是 Dejol 叫你來的吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -208,7 +208,7 @@
   },
   "The Lost#020": {
    "src": "W-Well, I was just walking through the c-canyon, when... the ground suddenly rose up underneath me and launched me all the way up here!",
-   "dst": "",
+   "dst": "那、那個，我本來只是走在峽谷裡，結果……地面突然從我腳下升起來，把我一路彈到這上面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -218,7 +218,7 @@
   },
   "The Lost#021": {
    "src": "N-Now, I'm... embarrassed to admit it, but I'm REALLY afraid of heights, s-so I don't know what to do... Do you have any ideas?",
-   "dst": "",
+   "dst": "現、現在，我……說出來很丟臉，但我真的非常怕高，所、所以我不知道該怎麼辦……你有什麼辦法嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -228,7 +228,7 @@
   },
   "The Lost#022": {
    "src": "AAAAAAAAHHHHH!!!",
-   "dst": "",
+   "dst": "啊啊啊啊啊啊！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -238,7 +238,7 @@
   },
   "The Lost#023": {
    "src": "Y-YOU JERK!! I COULD HAVE DIED!! WHAT THE HELL IS WRONG WITH YOU???",
-   "dst": "",
+   "dst": "你、你這個混蛋！！我可能會死的！！你到底是哪根筋不對啊？？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -248,7 +248,7 @@
   },
   "The Lost#024": {
    "src": "P-Please NEVER do that again! That was the worst thing I have ever done in my entire life!!",
-   "dst": "",
+   "dst": "拜、拜託你再也不要這樣做！那是我這輩子經歷過最糟糕的事！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -258,7 +258,7 @@
   },
   "The Lost#025": {
    "src": "...Ugh! I-I'm going to head back to Dejol now. I hope I NEVER have to see you again!",
-   "dst": "",
+   "dst": "……唉！我、我現在要回去找 Dejol 了。希望我這輩子再也不要見到你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -268,7 +268,7 @@
   },
   "The Lost#026": {
    "src": "Hey there! I'm in a bit of a pickle right now, you see. This house I took refuge in, well... The original owner must have left for a reason!",
-   "dst": "",
+   "dst": "嘿，你好！我現在有點麻煩，你看。我躲進來的這棟房子，嗯……原本的屋主會離開一定是有原因的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -278,7 +278,7 @@
   },
   "The Lost#027": {
    "src": "It's so sad... So many people are constantly displaced by the canyon's movements destroying their homes every year. I remember hearing a story once, it was about-",
-   "dst": "",
+   "dst": "這很讓人難過……每年都有那麼多人因為峽谷移動摧毀家園而被迫搬遷。我記得聽過一個故事，是關於——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -288,7 +288,7 @@
   },
   "The Lost#028": {
    "src": "Wait... Hey, do you hear that?",
-   "dst": "",
+   "dst": "等等……嘿，你有聽到嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -298,7 +298,7 @@
   },
   "The Lost#029": {
    "src": "Hey! You alright down there?! Oh, lord, how are we going to get out of this? I'm up here, come find me.",
-   "dst": "",
+   "dst": "嘿！你在下面還好嗎？！噢天啊，我們要怎麼出去？我在上面，過來找我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -308,7 +308,7 @@
   },
   "The Lost#030": {
    "src": "Oh... Well, this isn't good! The house just went and collapsed on us!",
-   "dst": "",
+   "dst": "噢……這下不妙！房子就這樣塌在我們頭上了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -318,7 +318,7 @@
   },
   "The Lost#031": {
    "src": "See what I was talking about, human? The canyon isn't really a good place to be. Now we're stuck in this pit!",
-   "dst": "",
+   "dst": "懂我剛才在說什麼了吧，人類？峽谷真的不是什麼好地方。現在我們卡在這個坑裡了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -328,7 +328,7 @@
   },
   "The Lost#032": {
    "src": "Although... there is a crafting table over there... Hey, maybe you could collect some supplies and make something to get us out of here?",
-   "dst": "",
+   "dst": "不過……那邊有一張工作台……嘿，也許你可以蒐集一些材料，做點什麼把我們弄出去？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -338,7 +338,7 @@
   },
   "The Lost#033": {
    "src": "Heh, that's certainly one way to get out here! You made an entire catapult, huh?",
-   "dst": "",
+   "dst": "嘿嘿，這確實是出去的方法之一！你造了一整座投石機，是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -348,7 +348,7 @@
   },
   "The Lost#034": {
    "src": "So we're just going to launch ourselves out of this pit? You got it!",
-   "dst": "",
+   "dst": "所以我們是要把自己從這個坑裡射出去？就這麼辦！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -358,7 +358,7 @@
   },
   "The Lost#035": {
    "src": "Alrighty, I'll be right behind you!",
-   "dst": "",
+   "dst": "好啦，我跟在你後面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -368,7 +368,7 @@
   },
   "The Lost#036": {
    "src": "Me first? Okay, I'll do just that!",
-   "dst": "",
+   "dst": "我先？好，那我就先來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -378,7 +378,7 @@
   },
   "The Lost#037": {
    "src": "Alright, here I... GOOO!!",
-   "dst": "",
+   "dst": "好，我要……上啦！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -388,7 +388,7 @@
   },
   "The Lost#038": {
    "src": "Hey, I made it!! You should come up as well, now.",
-   "dst": "",
+   "dst": "嘿，我成功了！！你現在也上來吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -398,7 +398,7 @@
   },
   "The Lost#039": {
    "src": "Woah... That's certainly a lot of fun! Anyways, come talk to me.",
-   "dst": "",
+   "dst": "哇……這真的滿好玩的！總之，過來跟我說話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -408,7 +408,7 @@
   },
   "The Lost#040": {
    "src": "Thanks for the help, friend! I couldn't have done it without you!",
-   "dst": "",
+   "dst": "謝謝你幫忙，朋友！沒有你我做不到！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -418,7 +418,7 @@
   },
   "The Lost#041": {
    "src": "I'm gonna go find my friend Dejol now- wait, you know who he is??",
-   "dst": "",
+   "dst": "我現在要去找我朋友 Dejol 了——等等，你認識他？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -428,7 +428,7 @@
   },
   "The Lost#042": {
    "src": "Oh... Wow, guess it's a small world, huh? That's funny! I'll see you down there later, then!",
-   "dst": "",
+   "dst": "噢……哇，看來世界真小，是吧？真有意思！那我們等一下下面見！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -438,7 +438,7 @@
   },
   "The Lost#043": {
    "src": "Return to Dejol at [{~}, {~}, -{~}] to tell him of your success",
-   "dst": "",
+   "dst": "回到 [{~}, {~}, -{~}] 找 Dejol，把好消息告訴他",
    "role": "desc",
    "kind": "objective",
    "quest": "The Lost",
@@ -448,7 +448,7 @@
   },
   "The Lost#044": {
    "src": "Ho, adventurer! Looks like you had some adventures helping out my crew!",
-   "dst": "",
+   "dst": "嗬，冒險者！看來你幫我的隊員時經歷了不少冒險！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -458,7 +458,7 @@
   },
   "The Lost#045": {
    "src": "Thank goodness they all found their way back unharmed. Mostly. Yuge's pride seems to have taken a hit.",
-   "dst": "",
+   "dst": "謝天謝地他們都毫髮無傷地回來了。大致上啦。Yuge 的自尊心好像受了點傷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -468,7 +468,7 @@
   },
   "The Lost#046": {
    "src": "Anyway, we ought to get back to our exploration - and we'll stick together closer this time!",
-   "dst": "",
+   "dst": "總之，我們該回去繼續探索了——這次我們會靠得更緊一點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -478,7 +478,7 @@
   },
   "The Lost#047": {
    "src": "You were a huge help, though, so please take this as a reward!",
-   "dst": "",
+   "dst": "不過你幫了大忙，所以請收下這個當作謝禮！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
