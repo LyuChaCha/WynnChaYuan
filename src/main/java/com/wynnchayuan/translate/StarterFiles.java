@@ -24,8 +24,8 @@ import java.util.List;
 public final class StarterFiles {
 
     /** 清單來自 _index.json —— 新增譯文檔不必改這裡。 */
-    private static List<String> bundled() {
-        List<String> names = new java.util.ArrayList<>(FileIndex.bundled());
+    private static List<String> bundled(String lang) {
+        List<String> names = new java.util.ArrayList<>(FileIndex.bundled(lang));
         names.add("_index.json");              // 清單本身也要放出去，使用者才能自己加檔案
         return names;
     }
@@ -36,6 +36,13 @@ public final class StarterFiles {
      * @return 實際寫出的檔案數；資料夾已有內容時回傳 0
      */
     public static int installIfEmpty(Path dir) {
+        return installIfEmpty(dir, Languages.DEFAULT);
+    }
+
+    /**
+     * @param lang 要倒出哪一種語言的工作檔
+     */
+    public static int installIfEmpty(Path dir, String lang) {
         try {
             Files.createDirectories(dir);
             if (hasJson(dir)) {
@@ -47,9 +54,9 @@ public final class StarterFiles {
         }
 
         int written = 0;
-        for (String name : bundled()) {
+        for (String name : bundled(lang)) {
             try (InputStream in = StarterFiles.class.getResourceAsStream(
-                    "/assets/wynnchayuan/translations/" + name)) {
+                    Languages.resource(lang) + name)) {
                 if (in == null) {
                     continue;
                 }

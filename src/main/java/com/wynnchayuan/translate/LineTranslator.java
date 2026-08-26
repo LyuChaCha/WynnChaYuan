@@ -2566,7 +2566,57 @@ public final class LineTranslator {
     }
 
     private static Component literal(String text, Style style) {
-        return Component.literal(text).withStyle(upright(text, style));
+        Style base = upright(text, style);
+        return text.indexOf(SECTION) < 0
+                ? Component.literal(text).withStyle(base)
+                : coloured(text, base);
+    }
+
+    /** Minecraft 的格式碼前綴。 */
+    private static final char SECTION = '§';
+
+    /**
+     * 讓譯文自己帶 {@code §} 格式碼。
+     *
+     * <h2>為什麼要支援</h2>
+     * 大部分時候譯文的顏色是從原文<b>搬</b>過來的（見 {@link #appendText}），
+     * 那對「原文有色、譯文照抄」的情況剛好。但有些地方是中文<b>自己</b>需要
+     * 強調——原文沒有對應的色段，搬不過來。翻譯團隊要嘛放棄排版，
+     * 要嘛得請人改程式。
+     *
+     * <p>支援 {@code §} 之後，那種需求在譯文檔裡就解決得掉：
+     * {@code "§c警告§r：這會消耗你的魂"}。這是 Minecraft 自己的寫法，
+     * 譯者本來就熟。
+     *
+     * <h2>底色仍然是這一段的樣式</h2>
+     * {@code §} 只<b>覆蓋</b>它管到的那一截，沒被覆蓋的部分照樣用原本的樣式
+     * ——所以在技能樹那種「顏色來自原文」的地方，不寫 {@code §} 就完全不受影響，
+     * 寫了才會蓋掉。{@code §r} 回到這一段原本的樣式，而不是回到全白。
+     */
+    static Component coloured(String text, Style base) {
+        MutableComponent out = Component.empty();
+        Style now = base;
+        int from = 0;
+        for (int i = 0; i + 1 < text.length(); i++) {
+            if (text.charAt(i) != SECTION) {
+                continue;
+            }
+            ChatFormatting code = ChatFormatting.getByCode(
+                    Character.toLowerCase(text.charAt(i + 1)));
+            if (code == null) {
+                continue;                      // §後面不是格式碼，當成普通文字
+            }
+            if (i > from) {
+                out.append(Component.literal(text.substring(from, i)).withStyle(now));
+            }
+            now = code == ChatFormatting.RESET ? base : now.applyFormat(code);
+            i++;                               // 跳過格式碼本身
+            from = i + 1;
+        }
+        if (from < text.length()) {
+            out.append(Component.literal(text.substring(from)).withStyle(now));
+        }
+        return out;
     }
 
     /**

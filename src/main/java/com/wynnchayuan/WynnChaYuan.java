@@ -52,6 +52,9 @@ public final class WynnChaYuan implements ClientModInitializer {
     private static KeyMapping openSettingsKey;
     private static Path configDir;
 
+    /** 目前使用的譯文語言。見 {@code Languages}。 */
+    private static String language = com.wynnchayuan.translate.Languages.DEFAULT;
+
     /** 收集結果的存放位置。 */
     public static CaptureStore store() {
         return store;
@@ -82,8 +85,14 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 譯文放在 config/wynnchayuan/translations/ 下，格式與 corpus/workspace 相同，
         // 所以離線語料與遊戲內收集的內容可以直接混放。
         // 第一次啟動時把內建的工作檔倒出來，玩家才有東西可以翻
-        Path trDir = dir.resolve("translations");
-        StarterFiles.installIfEmpty(trDir);
+        // 譯文按語言分層（translations/<lang>/），見 Languages。
+        // 舊版是平的，第一次跑到新版時搬進 zh_tw/——不搬的話使用者自己翻的
+        // 東西會突然全部失效，而且看不出原因。
+        language = com.wynnchayuan.translate.Languages.pick(
+                config.language(), gameLanguage());
+        com.wynnchayuan.translate.Languages.migrateFlat(dir, language);
+        Path trDir = com.wynnchayuan.translate.Languages.dir(dir, language);
+        StarterFiles.installIfEmpty(trDir, language);
         translations = new TranslationStore();
         translations.setTranslateNames(config.translateItemNames());
         translations.loadAll(trDir);
@@ -92,7 +101,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 抓不到就沿用剛剛載入的本機版本。
         if (config.source() == CollectorConfig.Source.GITHUB) {
             Thread sync = new Thread(() -> {
-                if (RemoteSync.fetchInto(trDir) > 0) {
+                if (RemoteSync.fetchInto(trDir, language) > 0) {
                     translations.loadAll(trDir);
                 }
                 System.out.println("[WynnChaYuan] " + RemoteSync.lastResult());
@@ -152,8 +161,8 @@ public final class WynnChaYuan implements ClientModInitializer {
      * 再讀一次——所以另外有 {@link #resyncTranslations}。
      */
     public static void reloadTranslations() {
-        Path dir = configDir.resolve("translations");
-        StarterFiles.installIfEmpty(dir);   // 被清空的話順手補回來
+        Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
+        StarterFiles.installIfEmpty(dir, language);   // 被清空的話順手補回來
         translations.setTranslateNames(config.translateItemNames());
         translations.loadAll(dir);
     }
@@ -169,9 +178,9 @@ public final class WynnChaYuan implements ClientModInitializer {
      * @param done 完成後在主執行緒呼叫，參數是要顯示給使用者的結果
      */
     public static void resyncTranslations(java.util.function.Consumer<String> done) {
-        Path dir = configDir.resolve("translations");
+        Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
         Thread worker = new Thread(() -> {
-            RemoteSync.fetchInto(dir);
+            RemoteSync.fetchInto(dir, language);
             String result = RemoteSync.lastResult();
             net.minecraft.client.Minecraft.getInstance().execute(() -> {
                 reloadTranslations();
@@ -180,6 +189,27 @@ public final class WynnChaYuan implements ClientModInitializer {
         }, MOD_ID + "-resync");
         worker.setDaemon(true);
         worker.start();
+    }
+
+    /**
+     * 遊戲本身的語系代碼（{@code zh_tw}、{@code ja_jp}…）。
+     *
+     * <p>取不到就回傳空字串，交給 {@code Languages#pick} 退回預設——
+     * 這個方法在遊戲還沒初始化完時也可能被呼叫到。
+     */
+    private static String gameLanguage() {
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            return mc == null || mc.getLanguageManager() == null
+                    ? "" : mc.getLanguageManager().getSelected();
+        } catch (Throwable t) {
+            return "";
+        }
+    }
+
+    /** 目前使用的譯文語言。 */
+    public static String language() {
+        return language;
     }
 
     /** F6 開啟設定面板。 */

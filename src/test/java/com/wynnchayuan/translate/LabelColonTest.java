@@ -24,7 +24,8 @@ public final class LabelColonTest {
 
     public static void main(String[] args) {
         TranslationStore store = new TranslationStore();
-        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations"));
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                            Languages.DEFAULT));
         String glyph = com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER;
 
         // --- 帶冒號的鍵 ---

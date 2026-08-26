@@ -30,7 +30,8 @@ public final class UprightTest {
 
     public static void main(String[] args) {
         TranslationStore store = new TranslationStore();
-        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations"));
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                            Languages.DEFAULT));
 
         // GUI 標題：Minecraft 自動加上的斜體 + Wynncraft 自己的粗體
         Style title = Style.EMPTY

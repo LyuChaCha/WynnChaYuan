@@ -93,6 +93,14 @@ public final class CollectorConfig {
      */
     private boolean translateItemNames = false;
 
+    /**
+     * 要用哪一種語言的譯文。
+     *
+     * <p>空字串表示「跟著遊戲語言走」——日文玩家裝好就是日文，不必先來翻設定。
+     * jar 裡沒有對應的語言就退回繁體中文。見 {@code Languages#pick}。
+     */
+    private String language = "";
+
     /** 面板與原 tooltip 之間的間距（像素）。 */
     private int panelGap = 12;
 
@@ -172,6 +180,16 @@ public final class CollectorConfig {
 
     public boolean translateItemNames() {
         return translateItemNames;
+    }
+
+    /** 設定檔裡寫的語言；空字串表示跟著遊戲走。 */
+    public String language() {
+        return language;
+    }
+
+    public void setLanguage(String lang) {
+        language = lang == null ? "" : lang.trim();
+        save();
     }
 
     public boolean toggleItemNames() {

@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations"
+TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw"
 
 
 def ctx_key(entry: dict) -> tuple:

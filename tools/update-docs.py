@@ -21,7 +21,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-TRANSLATIONS = Path("src/main/resources/assets/wynnchayuan/translations")
+TRANSLATIONS = Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 
 START = "<!-- 進度:開始 -->"
 END = "<!-- 進度:結束 -->"
@@ -39,8 +39,21 @@ ORDER = [
     ("material.json", "做職業時"),
     ("tome.json", "書卷"),
     ("aspect.json", "Raid 的 Aspect"),
-    ("gear-*.json", "裝備的傳說敘述"),
+    ("gear-*.json", "裝備的傳說敘述（名稱是專有名詞，不計入）"),
 ]
+
+
+def optional(path: Path, entry: dict) -> bool:
+    """這一條算不算「該翻而還沒翻」。
+
+    裝備與武器的<b>名稱</b>不算。那些是專有名詞，翻了反而對不上 wiki、
+    交易市場與社群討論——模組本身的 `translateItemNames` 預設就是關的，
+    也就是說即使翻了，玩家預設也看不到。
+
+    <p>把 5,389 個沒人打算翻的名稱算進分母，進度數字就會永遠難看，
+    而且看不出真正還缺什麼。裝備的<b>傳說敘述</b>照常算，那是要翻的。
+    """
+    return path.name.startswith("gear-") and entry.get("role") == "name"
 
 
 def count(paths: list[Path]) -> tuple[int, int]:
@@ -54,6 +67,8 @@ def count(paths: list[Path]) -> tuple[int, int]:
         if isinstance(rows, dict):
             for value in rows.values():
                 if not isinstance(value, dict) or value.get("keep"):
+                    continue
+                if optional(path, value):
                     continue
                 total += 1
                 if value.get("dst", "").strip():
@@ -110,8 +125,32 @@ def replace(path: Path, body: str) -> bool:
     return True
 
 
+def write_language_manifest() -> list[str]:
+    """把「jar 裡有哪些語言」寫成一份清單，給 Java 端讀。
+
+    <p>依<b>實際資料夾</b>產生，不必手動維護——新增一種語言只要建一個資料夾，
+    下次跑這支就會被收進去。手維護的清單一定會有人忘了改，
+    而忘了改的後果是那個語言在遊戲裡選不到。
+    """
+    root = TRANSLATIONS.parent
+    langs = sorted(d.name for d in root.iterdir()
+                   if d.is_dir() and not d.name.startswith("_"))
+    (root / "_languages.json").write_text(
+        json.dumps({
+            "_note": "打包了哪些語言。由 tools/update-docs.py 依實際資料夾產生，"
+                     "不要手改。新增一種語言：複製 zh_tw/ 成新的語言代碼資料夾，"
+                     "把所有 dst 清空，再跑一次這支工具。",
+            "languages": langs,
+        }, ensure_ascii=False, indent=1) + chr(10),
+        encoding="utf-8")
+    return langs
+
+
 def main(argv: list[str]) -> int:
     check = "--check" in argv
+    langs = write_language_manifest()
+    if len(langs) > 1:
+        print("語言：" + "、".join(langs))
     body, done, total = table()
     stamp = subprocess.run(["git", "log", "-1", "--format=%ad", "--date=short"],
                            capture_output=True, text=True).stdout.strip()

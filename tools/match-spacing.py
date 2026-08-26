@@ -33,7 +33,7 @@ import pathlib
 import re
 import sys
 
-BASE = pathlib.Path("src/main/resources/assets/wynnchayuan/translations")
+BASE = pathlib.Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 NL = chr(10)
 
 # 譯文裡「前面沒有空白」的半形左括號

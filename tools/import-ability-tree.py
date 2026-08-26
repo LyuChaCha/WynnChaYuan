@@ -48,7 +48,7 @@ import pathlib
 import re
 import sys
 
-BASE = pathlib.Path("src/main/resources/assets/wynnchayuan/translations")
+BASE = pathlib.Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 NL = chr(10)
 
 # 技能樹一列有幾欄。Wynncraft 六個職業都一樣。

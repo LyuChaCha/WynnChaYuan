@@ -31,7 +31,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 GLOSSARY_FILE = ROOT / "GLOSSARY.md"
-TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations"
+TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw"
+# 所有語言的根。譯文按語言分層之後，檢查要<b>每一種語言各跑一輪</b>——
+# 尤其是「同一個原文兩種譯法」那條：zh_tw 與 ja_jp 的同一句話本來就會
+# 長得不一樣，混在一起比會每一條都報錯。
+LANG_ROOT = TRANSLATIONS.parent
 PLACES_FILE = ROOT / "src/main/resources/assets/wynnchayuan/places.json"
 
 PLACEHOLDERS = ("{#}", "{~}", "{p}", "{u}")
@@ -152,6 +156,15 @@ def check_pair(path: str, key: str, src: str, dst: str,
                            f"譯文行數比原文多（{src.count(chr(10)) + 1} → "
                            f"{dst.count(chr(10)) + 1} 行）—— 中文通常更短，"
                            f"確認一下是不是多按了換行"))
+
+    # § 格式碼：譯文可以自己帶（讓翻譯團隊排版用），但後面必須是有效的碼，
+    # 否則遊戲裡會原樣印出一個「§z」——看起來像亂碼，而且沒有人會想到是這裡。
+    for bad in re.findall(r"§(.)", dst):
+        if bad.lower() not in "0123456789abcdefklmnor":
+            out.append(Problem("error", path, key,
+                               f"§ 後面不是有效的格式碼（§{bad}）—— "
+                               f"遊戲裡會原樣印出來。顏色是 §0–§9 §a–§f，"
+                               f"§r 回到原本的樣式"))
 
     # 材質包符號不能直接貼進譯文 —— 那些由程式填回原位，手寫的會是錯的碼位
     glyphs = {ch for ch in dst if is_glyph(ch)}
@@ -280,6 +293,24 @@ def check_duplicates(files: list[Path]) -> list[Problem]:
     return out
 
 
+def languages() -> list[Path]:
+    """有哪些語言資料夾。沒有分層時（舊版）就回傳根目錄本身。"""
+    dirs = sorted(d for d in LANG_ROOT.iterdir()
+                  if d.is_dir() and not d.name.startswith("_"))
+    return dirs or [LANG_ROOT]
+
+
+def collect(base: Path) -> list[Path]:
+    files = sorted(f for f in base.glob("*.json") if not f.name.startswith("_"))
+    # 任務對話一個任務一個檔，放在子資料夾裡
+    files += sorted(base.glob("quest/*.json"))
+    # 技能樹也是一職業一個檔。先前<b>整個沒被檢查</b>——而它正好是改動最頻繁
+    # 的一批。實測撈出兩條 {#} 數量不符的，那種條目在遊戲裡是<b>整條不顯示</b>，
+    # 畫面上跟「還沒翻」長得一模一樣，沒有人會發現。
+    files += sorted(base.glob("ability/*.json"))
+    return [f for f in files if not is_generated(f)]
+
+
 def main(argv: list[str]) -> int:
     places = load_places()
     glossary = load_glossary()
@@ -290,27 +321,27 @@ def main(argv: list[str]) -> int:
         if missing:
             print("找不到：" + ", ".join(m.name for m in missing))
             return 2
+        groups = [(TRANSLATIONS.name, files)]
     else:
-        files = sorted(f for f in TRANSLATIONS.glob("*.json")
-                       if not f.name.startswith("_"))
-        # 任務對話一個任務一個檔，放在子資料夾裡
-        files += sorted(TRANSLATIONS.glob("quest/*.json"))
-        # 技能樹也是一職業一個檔。先前<b>整個沒被檢查</b>——而它正好是改動最頻繁
-        # 的一批。實測撈出兩條 {#} 數量不符的，那種條目在遊戲裡是<b>整條不顯示</b>，
-        # 畫面上跟「還沒翻」長得一模一樣，沒有人會發現。
-        files += sorted(TRANSLATIONS.glob("ability/*.json"))
-        files = [f for f in files if not is_generated(f)]
+        groups = [(base.name, collect(base)) for base in languages()]
 
     errors = 0
     warnings = 0
+    files = []
 
-    dupes = check_duplicates(files)
-    if dupes:
-        print()
-        print("跨檔重複")
-        for p in dupes:
-            print(p)
-            errors += 1
+    for lang, group in groups:
+        files.extend(group)
+        if len(groups) > 1:
+            print()
+            print(f"── {lang} ──")
+        # 「同一個原文兩種譯法」只在<b>同一種語言之內</b>才是問題
+        dupes = check_duplicates(group)
+        if dupes:
+            print()
+            print("跨檔重複")
+            for p in dupes:
+                print(p)
+                errors += 1
 
     for file in files:
         problems = check_file(file, places, glossary)

@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations"
+TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw"
 
 # captured.json 的 domain 對應到哪個工作檔
 DOMAIN_TO_FILE = {
