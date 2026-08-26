@@ -41,6 +41,25 @@ public final class WrapTest {
         check("佔位符不會被拆開",
                 () -> LineTranslator.wrapToWidth("{~} 格內的友軍 {~} 生命", 4, WrapTest::measure));
 
+        // 避頭尾：標點不能自己站在行首。先前會折成
+        //   「…獲得 +5 層 Crystallize」
+        //   「，並改為環繞你運行。」   ← 逗號孤零零地開頭
+        String orphan = LineTranslator.wrapToWidth(
+                "每次命中獲得層數，並改為環繞你運行。", 8, WrapTest::measure);
+        boolean starts = false;
+        for (String line : orphan.split(String.valueOf(NL))) {
+            if (!line.isEmpty() && "，。、；：！？）」".indexOf(line.charAt(0)) >= 0) {
+                starts = true;
+            }
+        }
+        report("標點不會被擠到行首（實際：" + show(orphan) + "）", !starts);
+
+        // 正負號跟它的數值是同一塊，不能拆開——先前會折成「增加 +」「5 層數」
+        String signed = LineTranslator.wrapToWidth("每次命中增加 +{~} 層數", 7,
+                                                   WrapTest::measure);
+        report("號不會跟數值分家（實際：" + show(signed) + "）",
+                !signed.contains("+" + NL));
+
         // 內容守恆：折行只能動空白，不能吃掉或改動任何一個字。
         //
         // 比對時<b>兩邊的空白全部拿掉</b>。折在空白上時那個空白會被行尾吃掉，
@@ -94,6 +113,22 @@ public final class WrapTest {
 
     private interface Body {
         String run();
+    }
+
+    /** 折行用的換行字元。 */
+    private static final char NL = '\n';
+
+    /** 把換行換成看得見的符號，失敗訊息才讀得出來折在哪。 */
+    private static String show(String wrapped) {
+        return wrapped.replace(String.valueOf(NL), " ⏎ ");
+    }
+
+    /** 直接斷言一個條件（{@link #check} 只驗「有沒有丟例外」）。 */
+    private static void report(String what, boolean ok) {
+        System.out.println((ok ? "  [PASS] " : "  [FAIL] ") + what);
+        if (!ok) {
+            failures++;
+        }
     }
 
     private static void check(String what, Body body) {
