@@ -84,9 +84,33 @@ public final class PanelShot {
 
     private PanelShot() {}
 
+    /**
+     * 每一個階段都留一行在 {@code shot-debug.txt}。
+     *
+     * <h2>為什麼要寫檔</h2>
+     * 聊天欄在背包開著時看不見，toast 又可能根本沒發到（如果連按鍵都沒讀到）。
+     * 「什麼都沒發生」有好幾種完全不同的原因，而它們在畫面上長得一模一樣。
+     * 寫進檔案的話，不管卡在哪一步都留得下痕跡。
+     */
+    private static void log(String stage) {
+        try {
+            java.nio.file.Path dir = net.fabricmc.loader.api.FabricLoader.getInstance()
+                    .getConfigDir().resolve(WynnChaYuan.MOD_ID);
+            java.nio.file.Files.writeString(dir.resolve("shot-debug.txt"),
+                    java.time.LocalTime.now().withNano(0) + "  " + stage
+                            + System.lineSeparator(),
+                    java.nio.charset.StandardCharsets.UTF_8,
+                    java.nio.file.StandardOpenOption.CREATE,
+                    java.nio.file.StandardOpenOption.APPEND);
+        } catch (Throwable t) {
+            // 日誌寫不出來也不能擋住拍照
+        }
+    }
+
     /** 由 {@link com.wynnchayuan.WynnChaYuan} 在註冊按鍵時交進來。 */
     public static void bind(KeyMapping mapping) {
         bound = mapping;
+        log("bind：截圖鍵已交給 PanelShot");
     }
 
     public static void request() {
@@ -101,6 +125,7 @@ public final class PanelShot {
         // 但後面某一步失敗。從畫面上分不出來，而分不出來就只能一直猜。
         // 先在收到按鍵的當下說一聲，後面每一步失敗也各自說——
         // 這樣使用者回報「停在哪一句」就等於告訴我卡在哪一步。
+        log("request：收到，準備拍");
         tell(Component.literal("拍照中…").withStyle(ChatFormatting.GRAY));
     }
 
@@ -142,21 +167,43 @@ public final class PanelShot {
             wasDown = false;
             return;
         }
-        var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
-                .getBoundKeyOf(bound);
-        if (key == null || key.getType()
-                != com.mojang.blaze3d.platform.InputConstants.Type.KEYSYM
-                || key.getValue() == org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN) {
+        int code;
+        try {
+            var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+                    .getBoundKeyOf(bound);
+            if (key == null || key.getType()
+                    != com.mojang.blaze3d.platform.InputConstants.Type.KEYSYM) {
+                if (!warnedBinding) {
+                    warnedBinding = true;
+                    log("poll：綁定的不是鍵盤鍵，畫面開著時讀不到");
+                }
+                wasDown = false;
+                return;
+            }
+            code = key.getValue();
+        } catch (Throwable t) {
+            // 讀不到綁定就退回 F8——總比完全按不動好
+            if (!warnedBinding) {
+                warnedBinding = true;
+                log("poll：讀不到綁定（" + t.getClass().getSimpleName() + "），退回 F8");
+            }
+            code = org.lwjgl.glfw.GLFW.GLFW_KEY_F8;
+        }
+        if (code == org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN) {
             wasDown = false;
             return;
         }
         boolean down = com.mojang.blaze3d.platform.InputConstants.isKeyDown(
-                mc.getWindow(), key.getValue());
+                mc.getWindow(), code);
         if (down && !wasDown) {
+            log("poll：讀到按鍵按下（code=" + code + "，畫面="
+                    + mc.screen.getClass().getSimpleName() + "）");
             request();
         }
         wasDown = down;
     }
+
+    private static boolean warnedBinding = false;
 
     public static void tick() {
         Minecraft mc = Minecraft.getInstance();
@@ -168,8 +215,11 @@ public final class PanelShot {
         }
         pending = false;
         if (ready()) {
+            log("tick：面板還在（" + lastW + "x" + lastH + "），開始拍");
             capture();
         } else {
+            log("tick：ready() 是 false（w=" + lastW + " h=" + lastH
+                    + " 距上次繪製=" + (System.currentTimeMillis() - lastFrame) + "ms）");
             tell(Component.literal(
                     "現在沒有翻譯面板可以拍——把滑鼠移到有譯文的物品上再按一次。")
                     .withStyle(ChatFormatting.GRAY));
