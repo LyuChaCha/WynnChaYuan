@@ -80,6 +80,8 @@ public final class ActionBarListener {
             if (swapped != null) {
                 event.setMessage(swapped);
                 DialogueProbe.after(swapped);
+            } else {
+                DialogueProbe.miss(event.getMessage());
             }
         } catch (Throwable t) {
             // action bar 每 tick 都會走這裡，出錯絕不能讓遊戲停下來
