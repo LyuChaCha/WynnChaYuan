@@ -3,6 +3,17 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.22] - 2026-08-27
+
+### 新增
+
+- **再翻完四個任務，共 360 句：**
+  - A Journey Beyond（243）——Silent Expanse 那一整段主線
+  - A Marauder's Dues（58）
+  - Reclaiming the House（59）
+
+  任務語料進度 4771/22089（21%），還剩 79 個檔。
+
 ## [1.99.21] - 2026-08-27
 
 ### 新增
