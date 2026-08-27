@@ -51,6 +51,9 @@ public final class WynnChaYuan implements ClientModInitializer {
     private static CollectorConfig config;
     private static TranslationStore translations;
     private static KeyMapping openSettingsKey;
+
+    /** 把目前的翻譯面板拍成一張圖，給校稿用。 */
+    private static KeyMapping screenshotKey;
     private static Path configDir;
 
     /** 目前使用的譯文語言。見 {@code Languages}。 */
@@ -81,6 +84,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.translate.LineDebug.init(dir.resolve("line-debug.txt"));
         com.wynnchayuan.translate.LayoutDebug.init(dir.resolve("layout-debug.txt"));
         com.wynnchayuan.translate.FlowedDebug.init(dir);
+        com.wynnchayuan.capture.DialogueProbe.init(dir);
         com.wynnchayuan.translate.ErrorDebug.into(dir);
 
         // 譯文放在 config/wynnchayuan/translations/ 下，格式與 corpus/workspace 相同，
@@ -96,6 +100,23 @@ public final class WynnChaYuan implements ClientModInitializer {
         StarterFiles.installIfEmpty(trDir, language);
         translations = new TranslationStore();
         translations.setTranslateNames(config.translateItemNames());
+        // 同語族的語言先鋪一層當底，再把選定的那一種疊上去。
+        //
+        // 新語言是從 zh_tw 複製出來、dst 全部清空的骨架，剛開張時一條譯文
+        // 都沒有。少了這一層，簡體中文的玩家會在 zh_cn/ 建好的那一刻，
+        // 從「看得到繁體」變成「什麼都看不到」——多一種語言反而害了他。
+        //
+        // 只在同語族之內墊，見 Languages#fallbackFor：日文與俄文的玩家
+        // 不該因為那邊還沒翻就突然看到滿畫面中文。
+        //
+        // 疊得起來是因為載入端本來就會跳過空的 dst（見 TranslationStore），
+        // 而後載入的會蓋掉先載入的。於是每一條各自回退。
+        String under = com.wynnchayuan.translate.Languages.fallbackFor(language);
+        if (under != null) {
+            Path fallback = com.wynnchayuan.translate.Languages.dir(dir, under);
+            StarterFiles.installIfEmpty(fallback, under);
+            translations.loadAll(fallback);
+        }
         translations.loadAll(trDir);
 
         // 從 GitHub 同步最新譯文。放背景執行緒，不拖慢進遊戲；
@@ -221,9 +242,21 @@ public final class WynnChaYuan implements ClientModInitializer {
                 org.lwjgl.glfw.GLFW.GLFW_KEY_F6,
                 KeyMapping.Category.MISC));
 
+        screenshotKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
+                "key.wynnchayuan.screenshot",
+                InputConstants.Type.KEYSYM,
+                org.lwjgl.glfw.GLFW.GLFW_KEY_F8,
+                KeyMapping.Category.MISC));
+
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openSettingsKey.consumeClick()) {
                 client.setScreen(new SettingsScreen());
+            }
+            // 截圖的按鍵在 tick 裡只記一個旗標，真正拍是在下一次繪製<b>之後</b>。
+            // tick 的時候這一幀還沒畫完，當場拍會拍到上一幀，
+            // 而上一幀常常正好是滑鼠剛移到物品上、面板還沒出現的那一幀。
+            while (screenshotKey.consumeClick()) {
+                com.wynnchayuan.render.PanelShot.request();
             }
         });
     }

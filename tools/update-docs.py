@@ -23,6 +23,10 @@ from pathlib import Path
 
 TRANSLATIONS = Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 
+# 主語言。它一定會被打包——其他語言沒翻到的地方靠它墊底，
+# 見 Languages#fallbackFor。
+DEFAULT_LANG = "zh_tw"
+
 START = "<!-- 進度:開始 -->"
 END = "<!-- 進度:結束 -->"
 
@@ -125,37 +129,119 @@ def replace(path: Path, body: str) -> bool:
     return True
 
 
+# 語言代碼對母語名字。認不出來的就只顯示代碼——寧可少一欄，
+# 也不要在別人的語言名字上瞎猜。
+LANG_NAMES = {
+    "zh_tw": "繁體中文",
+    "zh_cn": "简体中文",
+    "ja_jp": "日本語",
+    "ru_ru": "Русский",
+    "en_us": "English",
+    "ko_kr": "한국어",
+    "de_de": "Deutsch",
+    "fr_fr": "Français",
+    "es_es": "Español",
+    "pt_br": "Português",
+}
+
+
+def language_totals() -> list[tuple[str, int, int]]:
+    """每一種語言各自翻了幾條，由多到少。
+
+    <p>用<b>跟檔案明細表同一套</b>帳：同樣的檔案清單、同樣的 optional()
+    排除規則。自己另外數一遍的話，任務對話會被算兩次——`quest/*.json`
+    與它們產生出來的 `quest-dialogue.json` 都在——同一個語言就會在
+    兩張表出現兩個不同的百分比。
+    """
+    root = TRANSLATIONS.parent
+    rows = []
+    for base in sorted(d for d in root.iterdir()
+                       if d.is_dir() and not d.name.startswith("_")):
+        done = total = 0
+        for pattern, _ in ORDER:
+            paths = sorted(base.glob(pattern))
+            if paths:
+                d, t = count(paths)
+                done += d
+                total += t
+        if total:
+            rows.append((base.name, done, total))
+    rows.sort(key=lambda r: (-r[1] / r[2], r[0]))
+    return rows
+
+
+def language_table(rows: list[tuple[str, int, int]]) -> str:
+    """各語言的進度表，翻得最多的排最前面。"""
+    lines = ["| 語言 | 進度 | 已翻 / 總數 |", "|---|---|---:|"]
+    for code, done, total in rows:
+        name = LANG_NAMES.get(code)
+        label = f"`{code}` {name}" if name else f"`{code}`"
+        lines.append(f"| {label} | {bar(done, total)} {done / total:.1%} "
+                     f"| {done:,} / {total:,} |")
+    return "\n".join(lines)
+
+
 def write_language_manifest() -> list[str]:
-    """把「jar 裡有哪些語言」寫成一份清單，給 Java 端讀。
+    """把「jar 裡有哪些語言」寫成一份清單，給 Java 端與打包用。
 
     <p>依<b>實際資料夾</b>產生，不必手動維護——新增一種語言只要建一個資料夾，
     下次跑這支就會被收進去。手維護的清單一定會有人忘了改，
     而忘了改的後果是那個語言在遊戲裡選不到。
+
+    <h2>一條譯文都沒有的語言不列進去</h2>
+    新語言剛開的時候是一份空骨架：結構完整、原文齊全、譯文全空。那份骨架
+    是給<b>翻譯的人</b>用的，從 repo 拿就好；打進 jar 對玩家沒有任何用處，
+    卻要他多下載一份完整的原文。
+
+    <p>實測三種空語言讓 jar 從 3.0MB 變成 9.5MB——多出來的 6.5MB
+    一個字都不會顯示。列進去還有反效果：語言是照遊戲設定自動選的，
+    一個空語言被選到，玩家看到的就是什麼都沒翻。
+
+    <p>{@code zh_tw} 一定在列表裡，它是回退的底。
     """
     root = TRANSLATIONS.parent
-    langs = sorted(d.name for d in root.iterdir()
-                   if d.is_dir() and not d.name.startswith("_"))
+    shipped = []
+    for name, done, _total in language_totals():
+        if done or name == DEFAULT_LANG:
+            shipped.append(name)
+    shipped.sort()
     (root / "_languages.json").write_text(
         json.dumps({
-            "_note": "打包了哪些語言。由 tools/update-docs.py 依實際資料夾產生，"
-                     "不要手改。新增一種語言：複製 zh_tw/ 成新的語言代碼資料夾，"
-                     "把所有 dst 清空，再跑一次這支工具。",
-            "languages": langs,
+            "_note": "打包了哪些語言。由 tools/update-docs.py 產生，不要手改。"
+                     "一條譯文都沒有的語言不會列進來，也不會打進 jar——"
+                     "空骨架是給翻譯的人用的，玩家不需要多下載一份原文。"
+                     "新增一種語言請跑 tools/new-language.py。",
+            "languages": shipped,
         }, ensure_ascii=False, indent=1) + chr(10),
         encoding="utf-8")
-    return langs
+    return shipped
 
 
 def main(argv: list[str]) -> int:
     check = "--check" in argv
+    if "--files" in argv:
+        # 檔案明細不再寫進 README，但翻譯的人還是需要「還缺什麼」，
+        # 所以留一個看得到的入口。
+        detail, done, total = table()
+        print(detail)
+        return 0
     langs = write_language_manifest()
     if len(langs) > 1:
         print("語言：" + "、".join(langs))
     body, done, total = table()
     stamp = subprocess.run(["git", "log", "-1", "--format=%ad", "--date=short"],
                            capture_output=True, text=True).stdout.strip()
-    body = (f"**目前進度 {done:,} / {total:,}"
-            f"（{done / total:.1%}）**，更新於 {stamp}。\n\n{body}")
+    rows = language_totals()
+    if len(rows) > 1:
+        # 多語言時只列各語言的總進度。檔案明細那張是給翻譯的人看的，
+        # 一種語言就已經十幾列，四種語言擺上來沒有人會讀完——
+        # 而讀者在這裡真正想知道的只有「我的語言翻到哪了」。
+        #
+        # 明細沒有消失，跑 python tools/update-docs.py --files 就看得到。
+        body = f"更新於 {stamp}。\n\n{language_table(rows)}"
+    else:
+        body = (f"**目前進度 {done:,} / {total:,}"
+                f"（{done / total:.1%}）**，更新於 {stamp}。\n\n{body}")
     stale = []
     for name in ("README.md", "CONTRIBUTING.md", "docs/modrinth-description.md"):
         path = Path(name)

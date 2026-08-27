@@ -24,10 +24,15 @@ on:
   pull_request_target:
     paths:
       - 'src/main/resources/assets/wynnchayuan/translations/**'
+  # 這一條刻意<b>不加路徑過濾</b>，每個 PR 都跑。
+  #
+  # validate 是 main 的必要檢查，而必要檢查配上路徑過濾會變成死結：只動
+  # Java 的 PR 不觸發任何 workflow，檢查就永遠不會回報，PR 也就永遠合不進去
+  # ——管理員也繞不過，那正是我們要的。
+  #
+  # 跑一次十秒。對一個「沒動到語料就不會失敗」的檢查來說完全划得來，
+  # 何況只動 Java 的 PR 也該確認語料沒被順手改壞。
   pull_request:
-    paths:
-      - 'tools/**'
-      - '.github/workflows/validate-translations.yml'
   push:
     branches: [main]
     paths:
