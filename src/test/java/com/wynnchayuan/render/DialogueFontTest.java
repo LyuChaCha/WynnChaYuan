@@ -53,11 +53,11 @@ public final class DialogueFontTest {
         System.out.println("=== 對話字型 ===");
 
         check("授權檔在（SIL OFL 隨模組散布必須附上）",
-                Files.isRegularFile(ROOT.resolve("OFL.txt")));
+                Files.isRegularFile(ROOT.resolve("OFL-fusion.txt")));
 
         for (String lang : LANGS) {
             check(lang + " 的字型檔在",
-                    Files.isRegularFile(ROOT.resolve("cubic_11.ttf")));
+                    Files.isRegularFile(ROOT.resolve("fusion_pixel_10px_zh_hant.ttf")));
             // 覆蓋率表是「缺字就不就地取代」的依據，掉了會讓方框跑到畫面上
             Path cover = ROOT.resolve("dialogue").resolve(lang)
                     .resolve("coverage.txt");
@@ -94,14 +94,14 @@ public final class DialogueFontTest {
             check(name + " 先參照 Wynncraft 自己的字型（ASCII 外觀與高度不能變）",
                     json.contains("\"type\":\"reference\""));
             check(name + " 有中日韓的 ttf",
-                    json.contains("cubic_11.ttf"));
-            // Cubic 11 的 unitsPerEm 是 1200，capHeight 800、
-            // ascender 1000、descender -400——全是 100 的倍數，也就是
-            // 「一個設計像素 = 100 單位、一個 em = 12 像素」。size 不是 12 的
+                    json.contains("fusion_pixel_10px_zh_hant.ttf"));
+            // Fusion Pixel 10px 的 unitsPerEm 是 1000，capHeight 700、
+            // ascender 1100、descender -300——全是 100 的倍數，也就是
+            // 「一個設計像素 = 100 單位、一個 em = 10 像素」。size 不是 10 的
             // 倍數的話，每個設計像素分不到整數個螢幕像素，FreeType 只能用灰階
-            // 抗鋸齒補，字就糊了——size 11 那一版就是踩到這個。
-            check(name + " size 是 12 的倍數（Cubic 11 的設計格）",
-                    json.matches(".*\"size\":(12|24|36),.*"));
+            // 抗鋸齒補，字就糊了——Cubic 11 填 size 11 那一版就是踩到這個。
+            check(name + " size 是 10 的倍數（Fusion Pixel 的設計格）",
+                    json.matches(".*\"size\":(10|20|30),.*"));
             check(name + " oversample 是 1（點陣字再降採樣只會更糊）",
                     json.contains("\"oversample\":1"));
             // reference 必須排在 ttf 前面：MC 是前面的 provider 優先，
