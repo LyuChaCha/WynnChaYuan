@@ -3,6 +3,25 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.98.0] - 2026-08-27
+
+### 修正
+
+- **「to continue」翻不出來。** 那個 SHIFT 按鈕的圖示（`U+E000`）是<b>混在同一段
+  文字裡</b>的，不是獨立片段——整段長得像 `<U+E000> to continue`。拿整段去查表就是
+  `" to continue"`，而語料裡是 `"to continue"`，永遠對不上。
+
+  現在把開頭的圖示剝掉再查。圖示留在<b>原本的字型</b>裡：那個按鈕是它畫出來的，
+  跟著換成預設字型就會變成缺字。寬度也照原字型量，不然尾隨的偏移會算錯。
+
+- **背包開著時的 F8。** `KeyMapping.consumeClick()` 與 `isDown()` 都只在沒有畫面時
+  才會更新——`KeyboardHandler.keyPress` 是先看 `screen == null` 才去餵鍵位佇列的。
+  上一版改用 Fabric 的 `ScreenKeyboardEvents`，實測沒有生效。
+
+  這一版不再繞中間層：畫面開著時直接問 GLFW 那顆鍵現在是不是按著的。
+  代價是那條路<b>認死 F8</b>——拿不到玩家改綁之後的鍵（`KeyMapping.key` 是
+  protected）。沒有畫面時仍走正常的鍵位路徑，改綁在那邊照樣有效。
+
 ## [1.97.0] - 2026-08-27
 
 ### 修正
