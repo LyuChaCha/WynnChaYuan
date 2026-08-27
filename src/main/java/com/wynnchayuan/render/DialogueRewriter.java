@@ -122,17 +122,20 @@ public final class DialogueRewriter {
                 body.add(i);
             }
         }
-        if (body.isEmpty()) {
-            return null;
-        }
+        // body 是空的也要往下走：任務開始那類訊息沒有台詞行，只有底下的
+        // SHIFT 提示。先前在這裡直接 return，於是那種訊息的「to continue」
+        // 永遠翻不出來——而它是玩家最常看到的一句。
 
         StringBuilder whole = new StringBuilder();
         for (int at : body) {
             whole.append(texts.get(at));
         }
         boolean changed = false;
-        String hit = line(whole.toString(), store, body.size());
-        List<String> rows = hit == null ? null : wrap(hit, body.size());
+        String hit = body.isEmpty() ? null
+                : line(whole.toString(), store, body.size(),
+                        styles.get(body.get(0)));
+        List<String> rows = hit == null
+                ? null : wrap(hit, body.size(), styles.get(body.get(0)));
         if (rows != null) {
             changed = true;                    // 攤不進原本的行數就只換提示
         }
@@ -226,6 +229,15 @@ public final class DialogueRewriter {
      * @return 每一行的內容；攤不進去時回傳 {@code null}
      */
     static List<String> wrap(String text, int rows) {
+        return wrap(text, rows, null);
+    }
+
+    /**
+     * @param style 這一行實際會用的樣式。<b>一定要傳</b>——量寬度得用真正會畫出來的
+     *              字型，中日韓走的是我們自己那套（一個字 10 像素），拿預設字型
+     *              （9 像素）去量會少算一成，於是每一行都塞得比框還寬，畫出來就溢出。
+     */
+    static List<String> wrap(String text, int rows, Style style) {
         int limit = BODY_LEFT * 2;
         List<String> out = new ArrayList<>(rows);
         int at = 0;
@@ -237,7 +249,7 @@ public final class DialogueRewriter {
             int end = at;
             int last = at;
             while (end < text.length()
-                    && width(text.substring(at, end + 1)) <= limit) {
+                    && measure(text.substring(at, end + 1), style) <= limit) {
                 end++;
                 if (end < text.length() && text.charAt(end) == ' ') {
                     last = end;                // 記著最後一個可以斷的空白
@@ -268,7 +280,8 @@ public final class DialogueRewriter {
      * 全部留在英文。{@link #wrap} 本來就是為了攤成多行才寫的，
      * 攤不進去它會回 {@code null}，所以這裡不必再擋一次。
      */
-    private static String line(String text, TranslationStore store, int rows) {
+    private static String line(String text, TranslationStore store, int rows,
+            Style style) {
         String hit = store.lookup(text.strip());
         if (hit == null) {
             String full = store.matchPrefix(text.strip());
@@ -283,7 +296,7 @@ public final class DialogueRewriter {
         }
         // 塞不進框裡就不換。中文通常比英文短，真的塞不下時，
         // 讓玩家看見完整的英文，比看見被切掉一半的中文好。
-        return width(hit) <= BODY_LEFT * 2 * rows ? hit : null;
+        return measure(hit, style) <= BODY_LEFT * 2 * rows ? hit : null;
     }
 
     /** 名牌：說話者的名字，語料裡本來就有（npc.json）。 */
@@ -327,6 +340,11 @@ public final class DialogueRewriter {
      * 字寬跟預設的和 Wynncraft 的都不一樣。量錯了尾隨偏移就補錯，
      * 後面整塊會跟著偏。
      */
+    /** 傳得到樣式就照樣式量，傳不到才退回預設字型。 */
+    private static int measure(String text, Style style) {
+        return style == null ? width(text) : width(text, style);
+    }
+
     private static int width(String text, Style original) {
         if (drawable(text)) {
             return width(Component.literal(text).withStyle(original));
