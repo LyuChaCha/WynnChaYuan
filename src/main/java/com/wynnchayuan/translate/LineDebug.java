@@ -78,7 +78,7 @@ public final class LineDebug {
      * 要分辨就得看到<b>每個空白補償前後的像素值</b>。
      */
     public static void pieces(String header, String detail) {
-        if (file == null || written >= LIMIT || !WynnChaYuan.config().collect()) {
+        if (file == null || written >= LIMIT || !WynnChaYuan.config().debugDumps()) {
             return;
         }
         // 已經對齊好的行只留一小部分當對照。它們沒有問題，卻佔掉大半額度——
@@ -104,7 +104,7 @@ public final class LineDebug {
     /** 記一行。原文與譯文的片段並排，才看得出哪一段變了、變多少。 */
     public static void record(StyledText original, Component translated) {
         if (file == null || written >= LIMIT || translated == null
-                || !WynnChaYuan.config().collect()
+                || !WynnChaYuan.config().debugDumps()
                 || !seen.add(original.getStringWithoutFormatting())) {
             return;
         }
