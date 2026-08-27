@@ -2640,37 +2640,10 @@ public final class LineTranslator {
                 || (c >= '　' && c <= '〿');
     }
 
-    /**
-     * 保留顏色與粗斜體，但把字型換掉，中文才畫得出來。
-     *
-     * <p>Wynncraft 那些自訂字型只收 ASCII，中文塞進去是缺字。換成我們自己的
-     * 字型定義（預設是附帶的 Cubic 11，設定裡可以切回 Minecraft 原本的）。
-     */
+    /** 保留顏色與粗斜體，但把字型換成預設，中文才畫得出來。 */
     private static Style forDisplay(Style style) {
-        return (style == null ? Style.EMPTY : style).withFont(displayFont());
+        return (style == null ? Style.EMPTY : style).withFont(FontDescription.DEFAULT);
     }
-
-    /** 譯文要用的字型，跟著設定走。 */
-    public static FontDescription displayFont() {
-        // 測試環境裡沒有設定檔（模組沒有起來），那裡只在乎片段怎麼切，
-        // 不在乎用哪一套字型畫。
-        var config = WynnChaYuan.config();
-        return config != null
-                && config.chineseFont()
-                   == com.wynnchayuan.CollectorConfig.ChineseFont.CUBIC
-                ? CUBIC : FontDescription.DEFAULT;
-    }
-
-    /**
-     * 附帶的中文字型。
-     *
-     * <p>它的第二個 provider 是 {@code minecraft:include/default}，所以英數與
-     * 材質包符號照樣走 Minecraft 原本那一套——只有 Cubic 11 有的字才由它畫。
-     * 不這樣接的話，一整行裡的英文會突然換一種字，看起來比不換還糟。
-     */
-    private static final FontDescription CUBIC = new FontDescription.Resource(
-            net.minecraft.resources.Identifier.fromNamespaceAndPath(
-                    "wynnchayuan", "cubic11"));
 
     private static Style greyed() {
         return Style.EMPTY
