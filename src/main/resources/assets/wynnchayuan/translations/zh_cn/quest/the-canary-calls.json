@@ -1,0 +1,2210 @@
+{
+ "_meta": {
+  "quest": "The Canary Calls",
+  "count": 220,
+  "translated": 0,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "The Canary Calls#000": {
+   "src": "Find out what's happening at the {p} coal mine at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#001": {
+   "src": "Phew... Everyone make it out alright? That was...one hell of a sprint. I'm absolutely knackered.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#002": {
+   "src": "I'm not sure, mate. I left a bunch of my stuff down there. Who knows if I'll get it back.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Micho",
+   "source": "wiki"
+  },
+  "The Canary Calls#003": {
+   "src": "Forget about that, what are we gonna tell the chief? That chopsy old fool is gonna kill us if he sees us not working.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#004": {
+   "src": "Oi, you! Listen, there was some kind of explosion down in the mines. We're not sure what it is or where it came from, but it surely didn't sound good.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#005": {
+   "src": "The four of us were the only blokes down in the mines, so everyone should be out safely. But I reckon we can't go back if the issue isn't resolved.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#006": {
+   "src": "You must go to the chief and tell him about the situation. Head down this mineshaft and turn left, and he should be there.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#007": {
+   "src": "Just, uh... Make sure not to mention us by name. Now, if you'll excuse us, we'll...be on our way.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 1",
+   "speaker": "Daffyd",
+   "source": "wiki"
+  },
+  "The Canary Calls#008": {
+   "src": "Turn left from the mine's entrance and speak to the chief at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#009": {
+   "src": "That's right, keep it moving! The whole of {p} is going to run out of coal at this pace!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#010": {
+   "src": "Eh? What do you want? Only registered miners are allowed beyond this point. Speak up or get off the premises.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#011": {
+   "src": "...An explosion? In the mines? Just now?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#012": {
+   "src": "EMERGENCY BREAK TIME, YOU GERBILS! EVERYONE COME AND MEET ME BY THE ENTRANCE! NOW!!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#013": {
+   "src": "Alright, you lot better listen bloody carefully. An explosion has been reported in the mines. You all know what that means, yes?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#014": {
+   "src": "Early dismissal?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#015": {
+   "src": "Month-long vacation?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#016": {
+   "src": "Paid leave?!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#017": {
+   "src": "...Am I getting fired?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#018": {
+   "src": "No, you bunch of ingrates! One of you needs to take the ol' canary down to the mines and see whatever the hell's going on.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#019": {
+   "src": "Now, which one of you blokes would be willing to-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#020": {
+   "src": "NOT IT!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Coal Miners",
+   "source": "wiki"
+  },
+  "The Canary Calls#021": {
+   "src": "Right then. I guess that leaves you, young lad. What do you say? Want a job?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#022": {
+   "src": "Very good! Come on then, let me introduce you to our little feathered mascot.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#023": {
+   "src": "You sure? I'll pay a lot, and it won't be dangerous. Even if it is, you've got all that armor on you!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#024": {
+   "src": "That's the spirit! Come on then, let me introduce you to our little feathered mascot.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#025": {
+   "src": "You'll get a bloody mountain of emeralds, god damn it! This is a once in a lifetime opportunity! Do you want it or not?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#026": {
+   "src": "Good. Now, hurry up and follow me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#027": {
+   "src": "You know what? This is ridiculous. The whole of {p} is at danger, and you're playing games with ME?! I know you can do it. Follow me. Now.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#028": {
+   "src": "Scared speechless, eh? Don't worry, it'll be an easy job. Come on, follow me to the canary's cage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#029": {
+   "src": "Meet our canary! She's such a beaut.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#030": {
+   "src": "You see, whenever we hear news of an explosion we always bring our canary with us to check it out. They can detect potential gases much earlier than we can.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#031": {
+   "src": "Let me just get the key and-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#032": {
+   "src": "WAIT, WHAT? WHERE'S THE BLOODY KEY? WHICH ONE OF YOUR LOT IS RESPONSIBLE?! I SWEAR I'M GONNA...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#033": {
+   "src": "...Listen up, lad. Take this toothpick I've been chewing on. I need you to pick the cage's lock. It's a little wet, but it should do the trick. Understood? Good, now hurry up!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 2",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#034": {
+   "src": "Unlock the canary's cage at [{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#035": {
+   "src": "Doing just fine, lad. Almost there...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#036": {
+   "src": "Little old birdie is getting quite excited! Keep it up.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#037": {
+   "src": "Right then, lad! It's time to begin the-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#038": {
+   "src": "OW! Bloody hell! Those are some freakishly sharp claws! What are you playing at-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#039": {
+   "src": "Well, I think she likes you, lad. Doesn't like me, apparently.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#040": {
+   "src": "I was going to feed her, but I suppose you can do the honors. Or not, seeing as she's been particularly troublesome...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#041": {
+   "src": "Anyway, do as you please. I'll be waiting by the elevator in the mineshaft. Hurry up, and don't make me wait!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 3",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#042": {
+   "src": "Head to the mine elevator at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#043": {
+   "src": "Right then, lad! I suppose you might want to know more about this job.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#044": {
+   "src": "As I said before, when unknown explosions occur in the mines, that's usually a sign that something bad happened.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#045": {
+   "src": "Most of the time, an awfully putrid gas appears. This is where our canary comes in. Once she verifies that a gas is present, we decide whether or not to temporarily close the mine.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#046": {
+   "src": "I presume you met Daffyd and his group, correct? Thankfully, they were the only ones down in the mines.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#047": {
+   "src": "...Wait, where the hell even are they? Did I not tell them to...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#048": {
+   "src": "Eh, doesn't matter. Lad, point is, I want you to check whether the gas is still there, if at all.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#049": {
+   "src": "We'll use the elevator behind me to get down to the mines. Just let me pull this here lever to activate it...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#050": {
+   "src": "...WHY ISN'T THIS BLOODY CONTRAPTION WORKING??! WORK, WORK, GOD DAMN IT!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#051": {
+   "src": "Must've been Daffyd and his group... No worries, lad. I've got, uh... a last resort, so to speak.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#052": {
+   "src": "You'll need to ride a minecart down into the mines. Thing is, we haven't used them to transport people in...years.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#053": {
+   "src": "Why? Erm, well... See for yourself.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#054": {
+   "src": "Our transporter minecarts are manual. Miners around here prefer automatic.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#055": {
+   "src": "For you, it should be no issue controlling it. There's instructions attached to the gear stick.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#056": {
+   "src": "Now then, go into the mineshaft, following the rails behind me. You'll be able to summon a minecart there.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 4",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#057": {
+   "src": "Use the rails to get to the gas leakage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#058": {
+   "src": "Follow the rail tracks and find a way to escape the mine",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#059": {
+   "src": "Continue further in the mine to find a way out.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#060": {
+   "src": "Hello.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#061": {
+   "src": "Forgive my interference.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#062": {
+   "src": "I am but a figment of your imagination. To you, I am not real.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#063": {
+   "src": "The mysterious force that brought death upon me... It changed me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#064": {
+   "src": "So too will it change you. I will make that happen. Just for you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#065": {
+   "src": "No need to thank me. It is the least I can do.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#066": {
+   "src": "Moments like these are cherished. Savor the moment with me. Would you like to die with me?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#067": {
+   "src": "I see. So you want to make this an unforgettable experience. I appreciate the thoughtfulness.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#068": {
+   "src": "Let's have some fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#069": {
+   "src": "I was hoping we could stay for a little longer. If that is your choice, then so be it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#070": {
+   "src": "See you on the other side.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#071": {
+   "src": "I would be more than glad to. Sit back and relax.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#072": {
+   "src": "How was your day today?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#073": {
+   "src": "Mine could have been better. Cramped up in a cage all day, then suddenly witnessing my death in front of an incompetent human.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#074": {
+   "src": "You couldn't even save me. How pathetic.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#075": {
+   "src": "So, anyway, do you come here often?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#076": {
+   "src": "Oh, wait. This is your first time. As well as your last time. That's very poetic. Do you want to become a poet?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#077": {
+   "src": "I know a good poem. Want to hear it?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#078": {
+   "src": "You don't die often,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#079": {
+   "src": "You have maximum soul points,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#080": {
+   "src": "That's about to change.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#081": {
+   "src": "You mess up sometimes,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#082": {
+   "src": "Mistakes are part of Life,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#083": {
+   "src": "Death is a part too.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#084": {
+   "src": "Your soul points are low,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#085": {
+   "src": "You will lose a lot of things,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#086": {
+   "src": "Better not get killed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#087": {
+   "src": "You're a casual,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#088": {
+   "src": "You likely hate professions,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#089": {
+   "src": "At least you're with me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#090": {
+   "src": "You are well-rounded,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#091": {
+   "src": "You are skilled at everything,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#092": {
+   "src": "The jack of all trades.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#093": {
+   "src": "Your level is maxed,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#094": {
+   "src": "You spend hours getting that,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#095": {
+   "src": "Don't know why you're here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#096": {
+   "src": "You love professions,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#097": {
+   "src": "Love that cannot be defined,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#098": {
+   "src": "Please go take a break.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#099": {
+   "src": "You are average,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#100": {
+   "src": "The most average Joe I've seen,",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#101": {
+   "src": "What more can I say.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#102": {
+   "src": "How was that? It was beautiful, wasn't it?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#103": {
+   "src": "Silence is bliss. You must not have very many friends.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#104": {
+   "src": "That's okay. I am your friend. Am I your friend? Please say yes. I'm very lonely.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#105": {
+   "src": "I had friends too, once. They were all taken by a bunch of selfish coal miners. Then died to their incompetence.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#106": {
+   "src": "But you are different. You are not like the others. I like you. I love you. I love you so much.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#107": {
+   "src": "Love is patient.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#108": {
+   "src": "Love is kind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#109": {
+   "src": "Love does not envy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#110": {
+   "src": "Love does not boast.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#111": {
+   "src": "Love is not arrogant.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#112": {
+   "src": "Love is not rude.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#113": {
+   "src": "Love is not irritable.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#114": {
+   "src": "Love is not resentful.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#115": {
+   "src": "Ḯ̸̫̦͘t bears a̴̝̚ll thin̶̹͒̄ͅgs.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#116": {
+   "src": "I̷͚͈̋̑t̵̏͂ͅ hopes a̸̯̔l̸̛̠͉l thin̶̹͒̄ͅg̶̙̣͂s̷̲͎͐.̵̫̿̆",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#117": {
+   "src": "I̷͚͈̋̑t̵̏͂ͅ endures a̶̗̍l̷̡̢̚l̴̤͉̓ th̸͓͓́̓ì̸̠́n̸̡̖̽gs.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#118": {
+   "src": "I̸͚̎̆t̶̳̼͌ ̷͕̀́í̷̙͂s̷͉̹͂ everlasting.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#119": {
+   "src": "Goodbye.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#120": {
+   "src": "Hello again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#121": {
+   "src": "I will give you another chance to redeem yourself.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#122": {
+   "src": "So kindly, I will tell you again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 7",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#123": {
+   "src": "Fight the Canary.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#124": {
+   "src": "Let's do a little warm-up, shall we?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#125": {
+   "src": "Liked the dance party? Those moves were so utterly terrible, I may as well dub them 'The '.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#126": {
+   "src": "Let's do something I like to call, 'The Canary'.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#127": {
+   "src": "Hands off those, if you would be so kind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#128": {
+   "src": "Amazing... That really hit different.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#129": {
+   "src": "It fẽ̵̻̗̤̠̦͋ͯlt nice the fi̶̘͇͓̮̙̲̯ͮͅrst time, but no̠̪͓̙͚̻ͮ̕w it's...diffẽ̵̻̗̤̠̦͋ͯrent.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#130": {
+   "src": "Serǐ̱̟͓̲͈͇̱ͦͤͭ̀o̡͈̭̙͍̭̎̊ͅusly... Enou̅̏̒̏͏̬̘̞͈̹gh is enȍ̝̺̥̮̝̇ͪ͂͘u͇̱̭̘̣̺ͣ͘gh.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#131": {
+   "src": "Okay, w̵̥̟͎̖̤̺͚̞̿ͩͧͩh̼̟̥̤̺͑ͪ̀o̶͖͇̝̦͉ͯͅ e̲̖̘̹̰͉̦̓̏̚͜v͉͙̤͈̝̏͝en put thḛ͉ͤ̓͝sͨ̋ͨ͏̟̝ͅe there in the fi͛҉̬̬͕͙r̬̖̦̬̞͈̜̠ͤ̇̽͝s̭̞͎ͯ̓́ͅt place?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#132": {
+   "src": "I'm alr̡̺̬̯̺̄̒̋ͦe͊͏͕̫̲̬̘̼̙ady dead, hò̬̯̺̄͡w͉̲̙̮̭̆̿̆͠ ̧͔͍̃̿̾ͯi̮̻͙̝̼ͧ̐̆̀s̡̼̰̱̓̚ ̔̿̏̃͏̗̗̙͇͖̹̗t͎̤̯̣͓̋̋͡ĥ̷̰͉̍̿̋is even pos̢̺̥̝̞̘̥̭ͦ̋ͦş̬̩̣̜̀̑ͪͯible?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#133": {
+   "src": "I'm no͈̬̞̜̗̯̻̥ͨ̎̇ͣ͡t ḛ͉̳̖̝̪̫̫̏̐͞v̵̮͇̘͗̉ͪ̉ë̷̥̹̲̞ñͮ̍ͯ͏̘͙̖̗̺ REAL!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#134": {
+   "src": "Indeed, you are the one who can destroy the Colossus. (In High Gavellian)",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#135": {
+   "src": "I suppose this is it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#136": {
+   "src": "It's been fun, kid.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#137": {
+   "src": "Alas, time runs short.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#138": {
+   "src": "You are about to enter the cruel, real world.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#139": {
+   "src": "Kill me now, so we can spend our final moments together in bliss.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#140": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#141": {
+   "src": "Have fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#142": {
+   "src": "Kill me. Now.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#143": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#144": {
+   "src": "Have fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#145": {
+   "src": "Kill me now or you'll live to regret it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#146": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#147": {
+   "src": "Have fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#148": {
+   "src": "Kill me now or I'll destroy {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#149": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#150": {
+   "src": "Have fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#151": {
+   "src": "Kill me now or I'll destroy Gavel.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#152": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#153": {
+   "src": "Have fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#154": {
+   "src": "Kill me now or I'll ruin every single province.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#155": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#156": {
+   "src": "Have fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#157": {
+   "src": "Kill me now or I'll destroy the world.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#158": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#159": {
+   "src": "Have fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#160": {
+   "src": "Okay so you don't care about the world. In that case, kill me now or I'll kill your friends.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#161": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#162": {
+   "src": "Have fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#163": {
+   "src": "Kill me now or I'll kill everyone in {Your Guild}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#164": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#165": {
+   "src": "Have fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#166": {
+   "src": "Kill me now or I'll do LITERALLY ANYTHING!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#167": {
+   "src": "Fantastic. You are the pinnacle of humankind.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#168": {
+   "src": "Have fun.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#169": {
+   "src": "No no. No no no no no. No. It's too late.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#170": {
+   "src": "I just wanted to play again. Oh well.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#171": {
+   "src": "At least I'll be in your memories. Forever. And ever.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#172": {
+   "src": "Goodbye.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#173": {
+   "src": "...Hey! They're waking up!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "???",
+   "source": "wiki"
+  },
+  "The Canary Calls#174": {
+   "src": "Keep performing CPR, they're almost awake!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#175": {
+   "src": "No way! I actually did it! I saved their life!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#176": {
+   "src": "We better get a raise for this!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#177": {
+   "src": "What the?! Who the hell let you in my house?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#178": {
+   "src": "Boss! I can explain!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#179": {
+   "src": "No, you can't. Get outta here before I start lowering your salary.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#180": {
+   "src": "But, boss! I saved-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#181": {
+   "src": "GO!!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#182": {
+   "src": "Well then, lad! Despite their incompetence, they still managed to save your skin.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#183": {
+   "src": "Come speak to me for a quick debriefing.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 8",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#184": {
+   "src": "Talk to Chief Clight.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "The Canary Calls#185": {
+   "src": "I sent my miners down to save you as soon as we felt that earthquake. It was so strong that I genuinely thought the world was ending.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#186": {
+   "src": "I'm jolly sorry for forcing you to take on this job. This whole situation was completely unexpected.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#187": {
+   "src": "Typically, gases are cleared up almost instantly. This time, however, it seemed to have been a lot more potent... But how?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#188": {
+   "src": "...{p}. It stirs once more. That thing... It has already caused too much hardship for this area to handle.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#189": {
+   "src": "It must be destroyed, once and for all. How will that happen, I do not know. But you...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#190": {
+   "src": "...No, it's nothing. Until that thing is dealt with, deeper parts of this mine must be closed down. The supply of coal will decrease, but it must be done.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#191": {
+   "src": "Tell you what, lad! I'll give you, and only you, permission to access parts of the mine, right where we mine our world-famous {p} coal.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#192": {
+   "src": "Consider yourself a part-time {p} coal miner. You've earned it, lad.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Chief Clight",
+   "source": "wiki"
+  },
+  "The Canary Calls#193": {
+   "src": "Can't hit me with that.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#194": {
+   "src": "That tickles.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#195": {
+   "src": "Is this the height of your skill?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#196": {
+   "src": "Try harder.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#197": {
+   "src": "Are you even playing the game?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#198": {
+   "src": "Go ahead. Run right into it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#199": {
+   "src": "Was that you, or will you blame that on lag?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#200": {
+   "src": "Feels nice, doesn't it?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#201": {
+   "src": "Even a snail could dodge that.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#202": {
+   "src": "You can't escape your doom.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#203": {
+   "src": "Nice going bozo, you fell off.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#204": {
+   "src": "Interesting tactic! Do it again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#205": {
+   "src": "Nice try, but that won't work.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Canary",
+   "source": "wiki"
+  },
+  "The Canary Calls#206": {
+   "src": "Hey up! Aren't you that Wynn soldier we've heard about? You look proper tough, is all.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#207": {
+   "src": "No, this is definitely them! The name's , right?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#208": {
+   "src": "Woah, this kid's a soldier? I wish I had that kind of job... I'd imagine it's much better than this crap.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#209": {
+   "src": "Yeah, I really hate this job, man. That and the chief makes me pull my hair out... In fact, I already went bald because of it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#210": {
+   "src": "Dude, the chief scares the crap out of me. I'm surprised that I still have this job. Looks like we might lose it if the mines ain't restored fast enough.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#211": {
+   "src": "I-I don't want to lose this job, man! I've got a wife and two goldfish!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#212": {
+   "src": "Easy, Ryan. We won't lose it. We're in this together. will take care of it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#213": {
+   "src": "Our very lives are in your hands, soldier. Good luck, and be careful. The mines are quite treacherous even for people like you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Coal Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#214": {
+   "src": "We still can't believe we found you. I'm proper shocked.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#215": {
+   "src": "We had to use that blasted archaic minecart system because the elevator was still busted.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#216": {
+   "src": "Everyone was exhausted from it. But just when all hope was seemingly lost, we found you laying on the ground.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#217": {
+   "src": "You were violently twitching about, as if you were possessed by something. It was scary.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#218": {
+   "src": "Whatever the effects of that gas are, we want absolutely none of it. I'm never stepping foot inside of that bloody mine ever again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  },
+  "The Canary Calls#219": {
+   "src": "For the sake of our jobs and {p}, the Colossus must be stopped.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Canary Calls",
+   "stage": "Stage 9",
+   "speaker": "Thesead Miner",
+   "source": "wiki"
+  }
+ }
+}
