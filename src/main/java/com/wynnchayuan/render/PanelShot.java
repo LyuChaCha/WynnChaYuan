@@ -3,6 +3,7 @@ package com.wynnchayuan.render;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.wynnchayuan.WynnChaYuan;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.Screenshot;
 import net.minecraft.network.chat.ClickEvent;
@@ -64,6 +65,9 @@ public final class PanelShot {
      */
     private static volatile boolean pending = false;
 
+    /** 截圖鍵本身。畫面開著的時候直接問 GLFW「這顆鍵現在按著嗎」。 */
+    private static KeyMapping bound;
+
     /** 已經自動拍過哪些內容。同一件物品看十次不必拍十張。 */
     private static final java.util.Set<String> seen =
             java.util.concurrent.ConcurrentHashMap.newKeySet();
@@ -79,6 +83,11 @@ public final class PanelShot {
     private static int autoTaken = 0;
 
     private PanelShot() {}
+
+    /** 由 {@link com.wynnchayuan.WynnChaYuan} 在註冊按鍵時交進來。 */
+    public static void bind(KeyMapping mapping) {
+        bound = mapping;
+    }
 
     public static void request() {
         if (WynnChaYuan.config().shotMode() == com.wynnchayuan.CollectorConfig
@@ -124,16 +133,25 @@ public final class PanelShot {
      * 生效（原因不明，可能被畫面吃掉了）。所以這裡直接問 GLFW 那顆鍵現在是不是
      * 按著的——不經過任何中間層，畫面開不開都一樣。
      *
-     * <p>代價是<b>認死 F8</b>：拿不到玩家改綁之後的鍵（{@code KeyMapping.key}
-     * 是 protected）。沒有畫面時仍走正常的鍵位路徑，改綁在那邊照樣有效。
+     * <p>{@code KeyMapping.key} 是 protected，但 Fabric 的
+     * {@code KeyBindingHelper.getBoundKeyOf} 讀得到——所以改綁一樣有效，
+     * 不必認死 F8。
      */
     private static void pollWhileScreenOpen(Minecraft mc) {
-        if (mc.screen == null || mc.getWindow() == null) {
+        if (mc.screen == null || mc.getWindow() == null || bound == null) {
+            wasDown = false;
+            return;
+        }
+        var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+                .getBoundKeyOf(bound);
+        if (key == null || key.getType()
+                != com.mojang.blaze3d.platform.InputConstants.Type.KEYSYM
+                || key.getValue() == org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN) {
             wasDown = false;
             return;
         }
         boolean down = com.mojang.blaze3d.platform.InputConstants.isKeyDown(
-                mc.getWindow(), org.lwjgl.glfw.GLFW.GLFW_KEY_F8);
+                mc.getWindow(), key.getValue());
         if (down && !wasDown) {
             request();
         }
@@ -330,7 +348,31 @@ public final class PanelShot {
         }
     }
 
+    /**
+     * 訊息也發一份成 toast。
+     *
+     * <h2>為什麼非發不可</h2>
+     * F8 最需要用的時機是<b>背包開著、滑鼠停在物品上</b>，而那個時候聊天欄
+     * 被畫面蓋住——按了鍵之後不管成功還失敗，玩家看到的都是「什麼都沒發生」，
+     * 連「卡在哪一步」都無從得知。toast 畫在畫面<b>之上</b>，開著背包也看得到。
+     *
+     * <p>{@code addOrUpdate} 而不是 {@code add}：連按幾下不會疊出一排。
+     */
+    private static void toast(Minecraft mc, Component message) {
+        try {
+            net.minecraft.client.gui.components.toasts.SystemToast.addOrUpdate(
+                    mc.getToastManager(),
+                    net.minecraft.client.gui.components.toasts.SystemToast
+                            .SystemToastId.PERIODIC_NOTIFICATION,
+                    Component.literal(WynnChaYuan.MOD_NAME),
+                    message);
+        } catch (Throwable t) {
+            // toast 發不出來也不能擋住存檔那條路
+        }
+    }
+
     private static void say(Minecraft mc, Component message) {
+        toast(mc, message);
         if (mc.player != null) {
             mc.player.displayClientMessage(
                     Component.literal("[").withStyle(ChatFormatting.DARK_GRAY)
