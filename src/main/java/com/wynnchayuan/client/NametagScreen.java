@@ -21,7 +21,17 @@ import net.minecraft.network.chat.Component;
  */
 public final class NametagScreen extends Screen {
 
-    private static final int W = 220;
+    /**
+     * 面板寬度。
+     *
+     * <p>先前寫死 220，說明文字比它長就直接畫出框外。改成量過每一行再決定——
+     * 中文與英文的寬度差很多，其他語言的說明也未必跟中文一樣長，
+     * 寫死任何一個數字都只是把問題往後推。
+     */
+    private int W = 220;
+
+    /** 面板至少這麼寬，免得只有短句時縮成一條。 */
+    private static final int MIN_W = 220;
 
     /**
      * 一個輸入欄位佔多高（說明 + 輸入框 + 間距）。
@@ -58,8 +68,27 @@ public final class NametagScreen extends Screen {
         return 62;
     }
 
+    /** 面板裡會畫到的每一行說明。寬度就是照它們量出來的。 */
+    private String[] insideLines() {
+        return new String[] {
+            modeHint(),
+            "停留秒數（0 = 持續顯示）",
+            "偵測距離：幾格內的名牌才算（2–64 格）",
+            "準心夾角：偏離準心幾度內還算在看（1–45 度）",
+        };
+    }
+
+    private int measure() {
+        int widest = MIN_W;
+        for (String line : insideLines()) {
+            widest = Math.max(widest, this.font.width(line) + 8);
+        }
+        return Math.max(widest, this.font.width(modeLabel()) + 20);
+    }
+
     @Override
     protected void init() {
+        W = measure();
         int x = left();
         int y = top();
 
@@ -184,11 +213,10 @@ public final class NametagScreen extends Screen {
         Cards.hint(g, this.font, x + 2, y + 24, modeHint());
 
         // 其餘每一行都是它「下方」那個輸入框的標題
-        Cards.hint(g, this.font, x + 2, fieldY(0) - LABEL_LIFT, "停留秒數（0 = 持續顯示）");
-        Cards.hint(g, this.font, x + 2, fieldY(1) - LABEL_LIFT,
-                "偵測距離：幾格內的名牌才算（2–64 格）");
-        Cards.hint(g, this.font, x + 2, fieldY(2) - LABEL_LIFT,
-                "準心夾角：偏離準心幾度內還算在看（1–45 度）");
+        String[] labels = insideLines();
+        for (int n = 0; n < 3; n++) {
+            Cards.hint(g, this.font, x + 2, fieldY(n) - LABEL_LIFT, labels[n + 1]);
+        }
 
         g.drawCenteredString(this.font,
                 Component.literal("城裡 NPC 站得密就把角度調小；曠野找人可以調大")
