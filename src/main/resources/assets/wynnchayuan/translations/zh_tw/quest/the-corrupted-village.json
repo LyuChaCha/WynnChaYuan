@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Corrupted Village",
   "count": 56,
-  "translated": 0,
+  "translated": 55,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Corrupted Village#000": {
    "src": "Speak to Orikal outside the {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的 {p} 外面找 Orikal 說話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -18,7 +18,7 @@
   },
   "The Corrupted Village#001": {
    "src": "Go away! I know you're angry but there's nothing to gain her-",
-   "dst": "",
+   "dst": "走開！我知道你很生氣，但這裡沒什麼好拿的——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -28,7 +28,7 @@
   },
   "The Corrupted Village#002": {
    "src": "Oh, you seem calm. What are you doing here? Bit close to the portal for a soldier isn't it?",
-   "dst": "",
+   "dst": "哦，你看起來挺冷靜的。你來這裡做什麼？以一個士兵來說，離傳送門有點太近了吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -38,7 +38,7 @@
   },
   "The Corrupted Village#003": {
    "src": "I see, you were sent to aid the public. Perfect.",
-   "dst": "",
+   "dst": "我懂了，你是被派來協助民眾的。太好了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -48,7 +48,7 @@
   },
   "The Corrupted Village#004": {
    "src": "I am Orikal, I'm trying to stop everyone here from killing each other.",
-   "dst": "",
+   "dst": "我叫 Orikal，我正想辦法阻止這裡的人互相殘殺。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -58,7 +58,7 @@
   },
   "The Corrupted Village#005": {
    "src": "Do you see all these spikes? I believe they are the thing spreading corruption.",
-   "dst": "",
+   "dst": "你看到這些尖刺了嗎？我認為腐化就是靠它們擴散的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -68,7 +68,7 @@
   },
   "The Corrupted Village#006": {
    "src": "Corruption does not affect humans like other beings. It’s much much slower, more like an infection of the mind to us.",
-   "dst": "",
+   "dst": "腐化對人類的作用跟對其他生物不一樣。慢得多，對我們來說更像是心智上的感染。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -78,7 +78,7 @@
   },
   "The Corrupted Village#007": {
    "src": "Could you inspect the peak of the spike in the village for me? It might give me valuable insight. Thanks!",
-   "dst": "",
+   "dst": "你能替我去看看村子裡那根尖刺的頂端嗎？也許能給我一些有價值的線索。謝了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -88,7 +88,7 @@
   },
   "The Corrupted Village#008": {
    "src": "Examine the nearby corrupted spike to the northeast at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到東北方 [{~1}, {~2}, -{~3}] 檢查附近的腐化尖刺。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -98,7 +98,7 @@
   },
   "The Corrupted Village#009": {
    "src": "Climb the spike to see if you can find anything useful about it's existance.",
-   "dst": "",
+   "dst": "爬上尖刺，看看能不能找到任何跟它的來歷有關的東西。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -108,7 +108,7 @@
   },
   "The Corrupted Village#010": {
    "src": "Report back to Orikal about your observations.",
-   "dst": "",
+   "dst": "回去向 Orikal 報告你的觀察。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -118,7 +118,7 @@
   },
   "The Corrupted Village#011": {
    "src": "That was quick... did you find anything?",
-   "dst": "",
+   "dst": "這麼快……有找到什麼嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -128,7 +128,7 @@
   },
   "The Corrupted Village#012": {
    "src": "Really, nothing? You didn't even feel anything?",
-   "dst": "",
+   "dst": "真的什麼都沒有？你連一點感覺都沒有？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -138,7 +138,7 @@
   },
   "The Corrupted Village#013": {
    "src": "How can it be just a spike? It must be spreading corruption somehow.",
-   "dst": "",
+   "dst": "怎麼可能只是一根尖刺？它一定是用某種方式在擴散腐化。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -148,7 +148,7 @@
   },
   "The Corrupted Village#014": {
    "src": "Then perhaps my second theory was correct. I will have to send you underground.",
-   "dst": "",
+   "dst": "那也許我的第二個推論才是對的。我得把你送到地底下去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -158,7 +158,7 @@
   },
   "The Corrupted Village#015": {
    "src": "There are old cave systems around here from the mining days. I sent two men down to excavate the spike, can you go down and help?",
-   "dst": "",
+   "dst": "這一帶還留著採礦時期的舊坑道。我派了兩個人下去挖那根尖刺，你能下去幫忙嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -168,7 +168,7 @@
   },
   "The Corrupted Village#016": {
    "src": "The entrance is a little to the northeast. In fact, you should have passed it on your way to the spike.",
-   "dst": "",
+   "dst": "入口在東北邊一點點。其實你去尖刺的路上應該就經過了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -178,7 +178,7 @@
   },
   "The Corrupted Village#017": {
    "src": "Find the excavators inside the nearby cave to the northeast at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到東北方 [{~1}, {~2}, -{~3}] 的洞窟裡找那兩名挖掘者。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -188,7 +188,7 @@
   },
   "The Corrupted Village#018": {
    "src": "Find the excavators inside the cave.",
-   "dst": "",
+   "dst": "在洞窟裡找到那兩名挖掘者。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -198,7 +198,7 @@
   },
   "The Corrupted Village#019": {
    "src": "This is insane, why are we here?! We're looking for corruption you know that right?",
-   "dst": "",
+   "dst": "這太瘋狂了，我們幹嘛在這裡？！我們可是在找腐化，你知道吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -208,7 +208,7 @@
   },
   "The Corrupted Village#020": {
    "src": "Calm down. All we have to do is keep digging. Besides, he did say he'd pay us a lot, so stop being mad.",
-   "dst": "",
+   "dst": "冷靜點。我們只要繼續挖就好。而且他確實說了會付我們一大筆，別再發脾氣了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -218,7 +218,7 @@
   },
   "The Corrupted Village#021": {
    "src": "Forget it, I don't care anymore, just prime the explosive and get clear of the blast!",
-   "dst": "",
+   "dst": "算了，我不管了，把炸藥裝好，然後離爆炸範圍遠一點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -228,7 +228,7 @@
   },
   "The Corrupted Village#022": {
    "src": "Well, that did the trick. Let's take a look.",
-   "dst": "",
+   "dst": "好，這下管用了。我們去看看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -238,7 +238,7 @@
   },
   "The Corrupted Village#023": {
    "src": "Oh my... What... is this?",
-   "dst": "",
+   "dst": "我的天……這……這是什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -248,7 +248,7 @@
   },
   "The Corrupted Village#024": {
    "src": "It almost looks like a giant spike... Woah. How deep does this thing go?",
-   "dst": "",
+   "dst": "看起來簡直就像一根巨大的尖刺……哇。這東西到底有多深？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -258,7 +258,7 @@
   },
   "The Corrupted Village#025": {
    "src": "Well, you know what? We did our job, so honestly I don't care. Let's get out of he-",
-   "dst": "",
+   "dst": "呃，你知道嗎？我們的活幹完了，說真的我不在乎。我們離開這——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -268,7 +268,7 @@
   },
   "The Corrupted Village#026": {
    "src": "Orikal? We’re done! Pay up! I want out. This place is getting to me.",
-   "dst": "",
+   "dst": "Orikal？我們挖完了！付錢！我要走了。這地方讓我受不了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -278,7 +278,7 @@
   },
   "The Corrupted Village#027": {
    "src": "I came when I heard the explosion. I thought you'd hurt yourselves.",
-   "dst": "",
+   "dst": "我聽到爆炸聲就趕過來了。還以為你們把自己炸傷了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -288,7 +288,7 @@
   },
   "The Corrupted Village#028": {
    "src": "Well, I'll be darned. The spike goes this far down? And it looks like it goes even deeper than this!",
-   "dst": "",
+   "dst": "我的老天。這根尖刺埋得這麼深？而且看起來還比這裡更深！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -298,7 +298,7 @@
   },
   "The Corrupted Village#029": {
    "src": "Well, I don't know about you, but I say we blow it to shreds! That oughta get rid of this spike!",
-   "dst": "",
+   "dst": "我是不知道你們怎麼想，反正我說——把它炸個粉碎！這樣總該能除掉這根尖刺了吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -308,7 +308,7 @@
   },
   "The Corrupted Village#030": {
    "src": "For once, I agree. I'll do it, you guys just get clear.",
-   "dst": "",
+   "dst": "這次我同意。我來動手，你們退開就好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -318,7 +318,7 @@
   },
   "The Corrupted Village#031": {
    "src": "...Wow, that did nothing. We're going to need something MUCH more powerful than TNT...",
-   "dst": "",
+   "dst": "……哇，一點用都沒有。我們需要比 TNT 強得多的東西……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -328,7 +328,7 @@
   },
   "The Corrupted Village#032": {
    "src": "Oh yeah? And just what would you have in mind?",
-   "dst": "",
+   "dst": "是喔？那你倒是說說看你想到什麼了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -338,7 +338,7 @@
   },
   "The Corrupted Village#033": {
    "src": "Well, it's sorta complicated. That's why I've decided to give our new friend here the job of acquiring this explosive.",
-   "dst": "",
+   "dst": "呃，這有點複雜。所以我決定把弄到那種炸藥的任務，交給我們這位新朋友。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -348,7 +348,7 @@
   },
   "The Corrupted Village#034": {
    "src": "Oh yeah, we were so busy with this spike, we forgot to address you! Sorry about that.",
-   "dst": "",
+   "dst": "對耶，我們忙著弄這根尖刺，都忘了跟你打招呼！真不好意思。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -358,7 +358,7 @@
   },
   "The Corrupted Village#035": {
    "src": "Well if you don't need us anymore then we'll just be on our way... WITH our money! So hand it over please.",
-   "dst": "",
+   "dst": "好啦，如果你們不需要我們了，那我們就走了……連我們的錢一起帶走！所以請把錢交出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -368,7 +368,7 @@
   },
   "The Corrupted Village#036": {
    "src": "Alright, fine. Here's your pay. Thank you for your help.",
-   "dst": "",
+   "dst": "好吧，行。這是你們的酬勞。謝謝你們幫忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -378,7 +378,7 @@
   },
   "The Corrupted Village#037": {
    "src": "Gah! That's hardly anything! I'm not even surprised. Let's just go.",
-   "dst": "",
+   "dst": "啊！這根本沒多少！我一點也不意外。走了走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -388,7 +388,7 @@
   },
   "The Corrupted Village#038": {
    "src": "Anyway, come meet me back at my tent, friend. We will discuss what to do then.",
-   "dst": "",
+   "dst": "總之，朋友，回我的帳篷來找我。我們再討論接下來怎麼做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -398,7 +398,7 @@
   },
   "The Corrupted Village#039": {
    "src": "Exit the cave and speak to Orikal in his tent about his plan for destroying the spike.",
-   "dst": "",
+   "dst": "離開洞窟，到帳篷裡找 Orikal 談他摧毀尖刺的計畫。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -408,7 +408,7 @@
   },
   "The Corrupted Village#040": {
    "src": "Okay. I happen to know a recipe for creating an extremely lethal magical explosive.",
-   "dst": "",
+   "dst": "好。我剛好知道一個配方，可以做出威力極強的魔法炸藥。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -418,7 +418,7 @@
   },
   "The Corrupted Village#041": {
    "src": "There are {~} main ingredients you will need to get me: [Stabilized Corrupted Ore], [Incendiary Fluid], and a [Switch Fuse] to activate it.",
-   "dst": "",
+   "dst": "你得替我弄到 {~} 種主要材料：[Stabilized Corrupted Ore]、[Incendiary Fluid]，還有用來引爆的 [Switch Fuse]。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -428,7 +428,7 @@
   },
   "The Corrupted Village#042": {
    "src": "There used to be a small mining camp a little east of this town. It's abandoned now, but you should still be able to find what you need there.",
-   "dst": "",
+   "dst": "這座鎮的東邊以前有個小型礦場營地。現在廢棄了，但你要的東西應該還找得到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -438,7 +438,7 @@
   },
   "The Corrupted Village#043": {
    "src": "It's not the big ol' abandoned mines, mind you. It's a smaller camp, in fact you should be able to see it from this village.",
-   "dst": "",
+   "dst": "提醒一下，不是那個很大的廢棄礦坑喔。是一個比較小的營地，其實從這個村子就看得到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -448,7 +448,7 @@
   },
   "The Corrupted Village#044": {
    "src": "Best of luck! Oh, and also, try not to die please. These ingredients do indeed promote environmental hazards.",
-   "dst": "",
+   "dst": "祝你好運！哦對了，拜託盡量別死。這些材料確實很容易搞出環境災害。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -458,7 +458,7 @@
   },
   "The Corrupted Village#045": {
    "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid], and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的礦場營地找齊做 TNT 用的 [Stabilized Corrupted Ore]、[Incendiary Fluid] 和 [Switch Fuse]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -478,7 +478,7 @@
   },
   "The Corrupted Village#047": {
    "src": "You got 'em all! Excellent, this is exactly what we need.",
-   "dst": "",
+   "dst": "你全都拿到了！太好了，這正是我們需要的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -488,7 +488,7 @@
   },
   "The Corrupted Village#048": {
    "src": "Alright, stand back. I have actually never made this before, so let's hope I don't cause a disaster.",
-   "dst": "",
+   "dst": "好，退後。我其實從來沒做過這個，希望別搞出什麼災難。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -498,7 +498,7 @@
   },
   "The Corrupted Village#049": {
    "src": "Phew, glad nothing tragic happened there. This should be it, now go take it back down to the spike and destroy it once and for all!",
-   "dst": "",
+   "dst": "呼，還好沒出什麼慘事。應該就是這個了，現在把它帶回尖刺那裡，一次把它徹底解決！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -508,7 +508,7 @@
   },
   "The Corrupted Village#050": {
    "src": "Bring the explosive to the spike in the cave and use it to destroy the spike.",
-   "dst": "",
+   "dst": "把炸藥帶到洞窟裡的尖刺處，用它摧毀尖刺。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -518,7 +518,7 @@
   },
   "The Corrupted Village#051": {
    "src": "Report to Orikal about your success.",
-   "dst": "",
+   "dst": "向 Orikal 回報你的成果。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -528,7 +528,7 @@
   },
   "The Corrupted Village#052": {
    "src": "Oh, do you feel that? It's like a buzzing in my ears I never knew about has just vanished.",
-   "dst": "",
+   "dst": "哦，你感覺到了嗎？就像耳邊一直有個我從沒察覺的嗡嗡聲，剛剛消失了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -538,7 +538,7 @@
   },
   "The Corrupted Village#053": {
    "src": "I think that worked you know. It seems the power of the spike comes from the root...",
-   "dst": "",
+   "dst": "我想那真的成功了。看來尖刺的力量是從根部來的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -548,7 +548,7 @@
   },
   "The Corrupted Village#054": {
    "src": "But what is it connected to? That's for another day. The main thing is the village is safe.",
-   "dst": "",
+   "dst": "但它連著的是什麼？那就改天再說了。重點是村子安全了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -558,7 +558,7 @@
   },
   "The Corrupted Village#055": {
    "src": "Here, take this for your help. I found this potato in one of the houses around here, and I sure as heck don't want it!",
-   "dst": "",
+   "dst": "來，這個給你，謝謝你幫忙。我在這附近某間房子裡找到這顆馬鈴薯，我實在不想要！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
