@@ -95,7 +95,13 @@ public final class DialogueRewriter {
                     || lead == null || offsetOf(texts.get(i + 1)) == null) {
                 continue;                      // 認不出這個形狀就別動它
             }
+            // 名牌先不動。使用者回報譯文疊在一起、名牌卻是空的——最可能是
+            // 譯名被畫進內文那一塊。內文的偏移公式有三組實機資料撐著，
+            // 名牌只有兩組，先把沒把握的那一半關掉，留下有把握的。
             boolean name = font.contains(NAMEPLATE);
+            if (name) {
+                continue;
+            }
             String hit = name ? speaker(text, store) : line(text, store);
             if (hit == null || hit.equals(text)) {
                 continue;

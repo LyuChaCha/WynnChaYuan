@@ -4,6 +4,8 @@
 
 # WynnChaYuan
 
+English: **[README.en.md](README.en.md)**
+
 Wynncraft 繁體中文翻譯模組。**不取代原文**——譯文顯示在旁邊的獨立面板，
 原本的畫面完全不動。
 
@@ -48,6 +50,8 @@ Wynncraft 是多人遊戲。畫面上只剩中文的話，跟其他玩家討論�
 | `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 26,819 |
 | `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 26,819 |
 | `zh_cn` 简体中文 | ░░░░░░░░░░ 0.0% | 0 / 26,819 |
+
+每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
 
 非常歡迎幫忙。
