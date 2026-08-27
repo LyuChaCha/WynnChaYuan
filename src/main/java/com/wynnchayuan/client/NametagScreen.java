@@ -42,8 +42,13 @@ public final class NametagScreen extends Screen {
      */
     private static final int FIELD_ROW = 37;
 
-    /** 第一個輸入欄位離面板頂端多遠。上面放模式按鈕與它的但書。 */
-    private static final int FIRST_FIELD = 47;
+    /**
+     * 第一個輸入欄位離面板頂端多遠。上面放模式按鈕與它的但書。
+     *
+     * <p>先前是 47，模式的但書跟第一個欄位的標題正好只差一行高，兩行黏在一起
+     * 看起來像同一段——標題就好像在解釋上面那句話，而不是下面那個框。
+     */
+    private static final int FIRST_FIELD = 60;
 
     /** 說明離它所標示的輸入框多高。 */
     private static final int LABEL_LIFT = 11;
@@ -210,12 +215,12 @@ public final class NametagScreen extends Screen {
         // 模式按鈕的但書，緊接在按鈕下面——說的必須是<b>現在選的</b>那個模式。
         // 先前這裡固定寫「取代原文則……」，於是選著「注視時顯示」的人看到的
         // 是另一個模式的但書，跟按鈕上的字對不起來。
-        Cards.hint(g, this.font, x + 2, y + 24, modeHint());
+        Cards.hint(g, this.font, x, y + 24, modeHint());
 
         // 其餘每一行都是它「下方」那個輸入框的標題
         String[] labels = insideLines();
         for (int n = 0; n < 3; n++) {
-            Cards.hint(g, this.font, x + 2, fieldY(n) - LABEL_LIFT, labels[n + 1]);
+            Cards.hint(g, this.font, x, fieldY(n) - LABEL_LIFT, labels[n + 1]);
         }
 
         g.drawCenteredString(this.font,
