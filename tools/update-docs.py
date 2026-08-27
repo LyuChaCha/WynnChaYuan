@@ -125,21 +125,34 @@ def replace(path: Path, body: str) -> bool:
     return True
 
 
-def language_roster() -> str:
-    """每一種語言各自翻到哪裡。
+# 語言代碼對母語名字。認不出來的就只顯示代碼——寧可少一欄，
+# 也不要在別人的語言名字上瞎猜。
+LANG_NAMES = {
+    "zh_tw": "繁體中文",
+    "zh_cn": "简体中文",
+    "ja_jp": "日本語",
+    "ru_ru": "Русский",
+    "en_us": "English",
+    "ko_kr": "한국어",
+    "de_de": "Deutsch",
+    "fr_fr": "Français",
+    "es_es": "Español",
+    "pt_br": "Português",
+}
 
-    <p>下面那張進度表算的是 zh_tw。只有一種語言時寫「目前進度」沒有問題，
-    多了一種之後就會被讀成「整個專案的進度」——想來幫忙翻簡體的人會以為
-    那邊只剩尾巴，實際上一個字都還沒有。所以把各語言的數字分開列。
+
+def language_totals() -> list[tuple[str, int, int]]:
+    """每一種語言各自翻了幾條，由多到少。
+
+    <p>用<b>跟檔案明細表同一套</b>帳：同樣的檔案清單、同樣的 optional()
+    排除規則。自己另外數一遍的話，任務對話會被算兩次——`quest/*.json`
+    與它們產生出來的 `quest-dialogue.json` 都在——同一個語言就會在
+    兩張表出現兩個不同的百分比。
     """
     root = TRANSLATIONS.parent
     rows = []
     for base in sorted(d for d in root.iterdir()
                        if d.is_dir() and not d.name.startswith("_")):
-        # 用<b>跟下面那張表同一套</b>帳：同樣的檔案清單、同樣的
-        # optional() 排除規則。自己另外數一遍的話，任務對話會被算兩次
-        # ——quest/*.json 與它們產生出來的 quest-dialogue.json 都在——
-        # 於是同一個語言在標題與這一行會出現兩個不同的百分比。
         done = total = 0
         for pattern, _ in ORDER:
             paths = sorted(base.glob(pattern))
@@ -148,8 +161,20 @@ def language_roster() -> str:
                 done += d
                 total += t
         if total:
-            rows.append(f"`{base.name}` {done / total:.1%}")
-    return "　·　".join(rows)
+            rows.append((base.name, done, total))
+    rows.sort(key=lambda r: (-r[1] / r[2], r[0]))
+    return rows
+
+
+def language_table(rows: list[tuple[str, int, int]]) -> str:
+    """各語言的進度表，翻得最多的排最前面。"""
+    lines = ["| 語言 | 進度 | 已翻 / 總數 |", "|---|---|---:|"]
+    for code, done, total in rows:
+        name = LANG_NAMES.get(code)
+        label = f"`{code}` {name}" if name else f"`{code}`"
+        lines.append(f"| {label} | {bar(done, total)} {done / total:.1%} "
+                     f"| {done:,} / {total:,} |")
+    return "\n".join(lines)
 
 
 def write_language_manifest() -> list[str]:
@@ -181,9 +206,17 @@ def main(argv: list[str]) -> int:
     body, done, total = table()
     stamp = subprocess.run(["git", "log", "-1", "--format=%ad", "--date=short"],
                            capture_output=True, text=True).stdout.strip()
-    body = (f"**繁體中文（zh_tw）進度 {done:,} / {total:,}"
-            f"（{done / total:.1%}）**，更新於 {stamp}。\n\n"
-            f"各語言：{language_roster()}\n\n{body}")
+    rows = language_totals()
+    head = f"更新於 {stamp}。"
+    if len(rows) > 1:
+        # 多語言時先看語言，再看檔案。下面那張明細表算的是 zh_tw——
+        # 不講清楚的話會被讀成整個專案的進度。
+        head = (f"{head}\n\n### 各語言\n\n{language_table(rows)}\n\n"
+                f"### 繁體中文的檔案明細\n")
+    else:
+        head = (f"**目前進度 {done:,} / {total:,}"
+                f"（{done / total:.1%}）**，{head}")
+    body = f"{head}\n{body}"
     stale = []
     for name in ("README.md", "CONTRIBUTING.md", "docs/modrinth-description.md"):
         path = Path(name)
