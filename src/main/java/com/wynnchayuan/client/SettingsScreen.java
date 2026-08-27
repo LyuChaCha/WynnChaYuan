@@ -160,8 +160,16 @@ public final class SettingsScreen extends Screen {
             WynnChaYuan.config().toggleCollect();
             b.setMessage(collectLabel());
         });
+        row(right, dataY + rowH() * 3, this::debugLabel, b -> {
+            WynnChaYuan.config().toggleDebugDumps();
+            b.setMessage(debugLabel());
+            status = Component.literal(WynnChaYuan.config().debugDumps()
+                    ? "✔ 診斷檔已開啟——重進遊戲後才會開始寫"
+                    : "✔ 診斷檔已關閉——重進遊戲後生效")
+                    .withStyle(ChatFormatting.GREEN);
+        });
         reloadButton = Button.builder(reloadLabel(), b -> reload())
-                .bounds(right, dataY + rowH() * 3, COL_W, 20).build();
+                .bounds(right, dataY + rowH() * 4, COL_W, 20).build();
         addRenderableWidget(reloadButton);
 
         // ---- 底部 ----
@@ -275,6 +283,17 @@ public final class SettingsScreen extends Screen {
         return Component.literal("收集未翻譯字串：" + onOff(WynnChaYuan.config().collect()));
     }
 
+    /**
+     * 診斷檔開關。
+     *
+     * <p>預設關閉：那些檔案是回報問題用的，一般玩家的 config 資料夾不該被
+     * 十幾個 txt 洗版。跟上面的「收集未翻譯字串」是兩件事——那個是缺哪些句子
+     * 要翻，這個是翻了但畫面上不對。
+     */
+    private Component debugLabel() {
+        return Component.literal("寫出診斷檔：" + onOff(WynnChaYuan.config().debugDumps()));
+    }
+
     private static String onOff(boolean on) {
         return on ? "開" : "關";
     }
@@ -341,7 +360,7 @@ public final class SettingsScreen extends Screen {
         // 卡片要墊在按鈕底下，所以先於 super.render
         Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(6));
         Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(6));
-        Cards.panel(g, right - 8, dataY - 20, COL_W + 16, cardH(4));
+        Cards.panel(g, right - 8, dataY - 20, COL_W + 16, cardH(5));
 
         super.render(g, mouseX, mouseY, delta);
 
@@ -373,6 +392,8 @@ public final class SettingsScreen extends Screen {
         Cards.hint(g, this.font, right + 4, dataY + rowH() + hintDy(), "GitHub 會同步大家的最新翻譯");
         Cards.hint(g, this.font, right + 4, dataY + rowH() * 2 + hintDy(), "把沒翻到的句子記進 captured.json");
         Cards.hint(g, this.font, right + 4, dataY + rowH() * 3 + hintDy(),
+                "回報問題時才需要，重進遊戲後生效");
+        Cards.hint(g, this.font, right + 4, dataY + rowH() * 4 + hintDy(),
                 WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
                         ? "譯者剛改完 GitHub 的話按這個" : "改完 json 按這個就生效");
 

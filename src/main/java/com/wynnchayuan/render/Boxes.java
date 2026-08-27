@@ -128,7 +128,7 @@ public final class Boxes {
     private static void dump(Component source, List<String> texts,
                              List<Style> styles, List<Component> lines) {
         // 只在收集模式下寫，一般玩家的 config 資料夾不需要多這幾個檔
-        if (dumped >= 3 || debugFile == null || !WynnChaYuan.config().collect()) {
+        if (dumped >= 3 || debugFile == null || !WynnChaYuan.config().debugDumps()) {
             return;
         }
         dumped++;
