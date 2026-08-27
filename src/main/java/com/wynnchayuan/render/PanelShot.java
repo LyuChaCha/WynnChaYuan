@@ -160,8 +160,6 @@ public final class PanelShot {
     public static void capture() {
         Minecraft mc = Minecraft.getInstance();
         if (mc == null || !ready()) {
-            tell(Component.literal("現在沒有翻譯面板可以拍。")
-                    .withStyle(ChatFormatting.GRAY));
             return;
         }
         // GUI 座標與實際像素差一個縮放倍率。用整數倍率會在 125% 這種
@@ -171,15 +169,29 @@ public final class PanelShot {
         int py = (int) Math.floor(lastY * scale);
         int pw = (int) Math.ceil(lastW * scale);
         int ph = (int) Math.ceil(lastH * scale);
-        String name = lastName;
+        String name = safe(lastName);
+        boolean auto = WynnChaYuan.config().shotMode()
+                == com.wynnchayuan.CollectorConfig.ShotMode.AUTO;
 
         Screenshot.takeScreenshot(mc.getMainRenderTarget(), full -> {
+            NativeImage cropped;
             try (NativeImage image = full) {
-                save(crop(image, px, py, pw, ph), name);
+                cropped = crop(image, px, py, pw, ph);
             } catch (Exception e) {
                 tell(Component.literal("截圖失敗：" + e.getMessage())
                         .withStyle(ChatFormatting.RED));
+                return;
             }
+            // 自動模式不打斷玩家——他正在逛商城，不是在校稿。直接存檔。
+            // 手動按 F8 才跳面板：那一下就是「我要拿這張圖做事」。
+            mc.execute(() -> {
+                if (auto) {
+                    save(cropped, name);
+                } else {
+                    mc.setScreen(new com.wynnchayuan.client.ShotScreen(
+                            cropped, name, mc.screen));
+                }
+            });
         });
     }
 
