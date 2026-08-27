@@ -8,6 +8,7 @@ import com.wynntils.core.text.StyledText;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import net.minecraft.util.FormattedCharSequence;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,17 @@ public final class DialogueOverlay {
      */
     private static volatile List<Component> choices = List.of();
 
+    /**
+     * 現在是誰在說話。獨立存放，不再直接混進 {@link #current}。
+     *
+     * <p>就地取代要把名字畫在對話框上緣的名牌裡（像遊戲原本那樣），
+     * 混在內文行裡就只是「第一行剛好是名字」，做不出名牌。
+     */
+    private static volatile String speaker = null;
+
+    /** 這一段話要不要按 shift 才會繼續。就地取代時要畫出那個提示。 */
+    private static volatile boolean needsShift = false;
+
     /** 每一行譯文是從哪一條原文來的，見 {@link #settledSource}。 */
     private static volatile List<String> settledFor = List.of();
 
@@ -59,6 +71,17 @@ public final class DialogueOverlay {
             net.minecraft.network.chat.TextColor.fromRgb(0xFFD966);
 
     private DialogueOverlay() {}
+
+    /**
+     * 這一段話要不要按 shift 才繼續。
+     *
+     * <p>由 {@link com.wynnchayuan.listener.CaptureListener} 從對話事件轉手。
+     * 就地取代把原文整段藏掉，連那行提示一起藏了，得自己補回來——
+     * 少了它，玩家不知道這段話還沒講完。
+     */
+    public static void setShiftPrompt(boolean required) {
+        needsShift = required;
+    }
 
     /** 對話內容變了就更新這裡；傳 null 或空的代表對話結束。 */
     public static void setCurrent(StyledText dialogue, TranslationStore store) {
@@ -132,11 +155,7 @@ public final class DialogueOverlay {
         shown = List.copyOf(rendered);
         // 誰在說話。同一個場景裡好幾個 NPC 輪流講的時候，光看文字認不出來。
         // 語料裡本來就有這個欄位，只是先前沒被帶到畫面上。
-        if (said != null && !said.isBlank()) {
-            lines.add(0, Component.literal(said + "：").withStyle(
-                    net.minecraft.network.chat.Style.EMPTY
-                            .withColor(SPEAKER_COLOUR).withBold(true)));
-        }
+        speaker = said != null && !said.isBlank() ? said : null;
         // 診斷：分得出「沒讀到對話」與「讀到了但沒譯文」——
         // 少了這個，畫面上沒東西時完全不知道卡在哪一步
         WynnChaYuan.store().noteEvent(any ? "dialogue.shown" : "dialogue.noMatch");
@@ -240,6 +259,8 @@ public final class DialogueOverlay {
     public static void clear() {
         current = List.of();
         choices = List.of();
+        speaker = null;
+        needsShift = false;
         settledFor = List.of();
         shown = List.of();
         lastUpdate = 0;
@@ -261,6 +282,17 @@ public final class DialogueOverlay {
             return;
         }
         Minecraft mc = Minecraft.getInstance();
+        if (WynnChaYuan.config().dialogueMode() == CollectorConfig.DialogueMode.REPLACE) {
+            drawInPlace(graphics, mc, lines, options, alpha);
+            return;
+        }
+        // 小框模式：說話者仍然當成內文的第一行，跟先前一樣
+        if (speaker != null && !lines.isEmpty()) {
+            List<Component> withName = new ArrayList<>(lines.size() + 1);
+            withName.add(speakerLine(speaker));
+            withName.addAll(lines);
+            lines = withName;
+        }
         int lineHeight = mc.font.lineHeight + 1;
         int boxH = lines.isEmpty() ? 0 : lines.size() * lineHeight + PADDING * 2;
         int boxW = widthOf(mc, lines);
@@ -274,26 +306,105 @@ public final class DialogueOverlay {
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.DIALOGUE);
         }
 
-        // 就地取代：原文已經被 ActionBarListener 剪掉了，譯文要補在它空出來的
-        // 位置上——所以不畫底框（那是「另一塊」才需要的界線），而且忽略玩家
-        // 替小框設定的位置：那個位置是為了「擺在旁邊不擋原文」而挑的。
-        boolean inPlace = WynnChaYuan.config().dialogueMode()
-                == CollectorConfig.DialogueMode.REPLACE;
-        if (inPlace) {
-            x = (graphics.guiWidth() - boxW) / 2;
-            y = graphics.guiHeight() - IN_PLACE_MARGIN - boxH;
-        }
-
         if (!lines.isEmpty()) {
-            draw(graphics, mc, lines, x + boxW / 2, y, alpha, !inPlace);
+            draw(graphics, mc, lines, x + boxW / 2, y, alpha, true);
         }
         // 選項擺在對話框正上方，跟遊戲原本的上下關係一致
         if (!options.isEmpty()) {
             int optionH = options.size() * lineHeight + PADDING * 2;
             draw(graphics, mc, options, x + boxW / 2,
-                    y - optionH - CHOICE_GAP, alpha, !inPlace);
+                    y - optionH - CHOICE_GAP, alpha, true);
         }
     }
+
+    /**
+     * 就地取代：畫一個真正的對話框，不是把字裸著擺在原文空出來的位置。
+     *
+     * <h2>為什麼要自己畫框</h2>
+     * 原文那個框是 Wynncraft 用自訂字型與位移符號拼出來的，字一換掉就散了，
+     * 沒辦法只換內容、保留外框。所以原文整段藏掉之後，框得由我們自己補：
+     * 固定寬度的框、上緣一塊寫著說話者的名牌、下面一行 shift 提示。
+     *
+     * <p>寬度<b>固定</b>而不是隨字數變。NPC 是一個字一個字打出來的，寬度跟著
+     * 內容跑的話，整句話打完的過程中框會一路長大，看起來像在抽搐。
+     */
+    private static void drawInPlace(GuiGraphics graphics, Minecraft mc,
+                                    List<Component> lines, List<Component> options,
+                                    float alpha) {
+        int boxW = Math.max(MIN_BOX_W, Math.min(MAX_BOX_W,
+                graphics.guiWidth() * 5 / 8));
+        int inner = boxW - PADDING * 2 - 2;
+        int lineHeight = mc.font.lineHeight + 1;
+
+        List<FormattedCharSequence> body = wrapAll(mc, lines, inner);
+        List<FormattedCharSequence> picks = wrapAll(mc, options, inner);
+
+        int bodyH = body.isEmpty() ? 0 : body.size() * lineHeight + PADDING * 2;
+        int x = (graphics.guiWidth() - boxW) / 2;
+        int y = graphics.guiHeight() - IN_PLACE_MARGIN - bodyH;
+
+        if (!body.isEmpty()) {
+            Boxes.draw(graphics, x, y, boxW, bodyH, alpha);
+            int textY = y + PADDING;
+            for (FormattedCharSequence line : body) {
+                graphics.drawString(mc.font, line, x + PADDING + 1, textY,
+                        Colors.fade(Colors.TEXT, alpha));
+                textY += lineHeight;
+            }
+            // 名牌貼在框的上緣左側，跟遊戲原本的擺法一致
+            if (speaker != null) {
+                int nameW = mc.font.width(speaker) + PADDING * 2 + 2;
+                int nameH = mc.font.lineHeight + PADDING;
+                Boxes.draw(graphics, x, y - nameH + 1, nameW, nameH, alpha);
+                graphics.drawString(mc.font, speaker, x + PADDING + 1,
+                        y - nameH + PADDING / 2 + 2,
+                        Colors.fade(SPEAKER_COLOUR.getValue() | 0xFF000000, alpha));
+            }
+            // 「SHIFT 以繼續」：原文那行提示也一起被藏掉了，要補回來，
+            // 否則玩家不知道這段話還沒完
+            if (needsShift) {
+                int hintW = mc.font.width(SHIFT_HINT);
+                graphics.drawString(mc.font, SHIFT_HINT,
+                        x + (boxW - hintW) / 2, y + bodyH + 3,
+                        Colors.fade(Colors.TEXT, alpha * 0.75f));
+            }
+        }
+
+        if (!picks.isEmpty()) {
+            int pickH = picks.size() * lineHeight + PADDING * 2;
+            int pickY = y - pickH - CHOICE_GAP - (speaker == null ? 0 : mc.font.lineHeight);
+            Boxes.draw(graphics, x, pickY, boxW, pickH, alpha);
+            int textY = pickY + PADDING;
+            for (FormattedCharSequence line : picks) {
+                graphics.drawString(mc.font, line, x + PADDING + 1, textY,
+                        Colors.fade(Colors.TEXT, alpha));
+                textY += lineHeight;
+            }
+        }
+    }
+
+    /** 把每一行折到框寬以內；樣式由 {@code font.split} 保留。 */
+    private static List<FormattedCharSequence> wrapAll(Minecraft mc,
+                                                       List<Component> lines, int width) {
+        List<FormattedCharSequence> out = new ArrayList<>();
+        for (Component line : lines) {
+            out.addAll(mc.font.split(line, Math.max(16, width)));
+        }
+        return out;
+    }
+
+    private static Component speakerLine(String said) {
+        return Component.literal(said + "：").withStyle(
+                net.minecraft.network.chat.Style.EMPTY
+                        .withColor(SPEAKER_COLOUR).withBold(true));
+    }
+
+    /** 對話框的寬度上下限。太窄一句話折成六行，太寬眼睛得橫掃整個螢幕。 */
+    private static final int MIN_BOX_W = 240;
+
+    private static final int MAX_BOX_W = 420;
+
+    private static final String SHIFT_HINT = "SHIFT 以繼續";
 
     /**
      * 就地取代時譯文距畫面底部的高度。

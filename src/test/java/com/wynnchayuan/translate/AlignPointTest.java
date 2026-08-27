@@ -44,6 +44,21 @@ public final class AlignPointTest {
         check("行尾的留白邊距不算 —— 差額灌進那裡的話數值會黏在標籤旁",
                 !LineTranslator.isAlignSpace(labelValue, 3));
 
+        // --- 負偏移是疊字，不是欄距 -------------------------------------
+        // 原料袋的星級：灰色空星畫完之後用 -23px 退回起點，把彩色實星疊上去。
+        // 那個值是照灰星的寬度挑的，跟前面的名字多長無關；被當成欄距改寫掉的話，
+        // 彩星會被推到行尾，畫面上變成「一行有兩組星星」。
+        Piece grey = Piece.text("★★★", Style.EMPTY);
+        Piece back = Piece.space(-23, Style.EMPTY);
+        Piece lit = Piece.text("★★★", Style.EMPTY);
+        List<Piece> stars = List.of(Piece.text("1 x ", Style.EMPTY),
+                Piece.text("Ripe Aureate Fruit", Style.EMPTY),
+                grey, back, lit);
+        check("負偏移不會被當成可調整的欄距",
+                LineTranslator.alignColumns(stars, false).get(3).spacePx() == -23);
+        check("正的欄距照常可以調整",
+                LineTranslator.isAlignSpace(labelValue, 1));
+
         // --- 補償之後的間隔不能把字疊在一起 -----------------------------
         // 正的間隔：中文變長就往回收，但收到 MIN_GAP 為止
         check("譯文變短時把正間隔撐開", LineTranslator.narrowed(80, 118) == 118);
