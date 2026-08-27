@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Tempo Town Trouble",
   "count": 57,
-  "translated": 0,
+  "translated": 57,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Tempo Town Trouble#000": {
    "src": "Talk to Tyko at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 找 Tyko 說話",
    "role": "desc",
    "kind": "objective",
    "quest": "Tempo Town Trouble",
@@ -18,7 +18,7 @@
   },
   "Tempo Town Trouble#001": {
    "src": "Hey, excuse me! I'm in need of- ...yeah, just walk right by me. Maybe I shoulda gone to {p} for help, these people here have enough problems...",
-   "dst": "",
+   "dst": "喂，不好意思！我需要——……好吧，直接從我旁邊走過去。也許我該去 {p} 求助，這裡的人自己的麻煩就夠多了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -28,7 +28,7 @@
   },
   "Tempo Town Trouble#002": {
    "src": "Don't suppose you'd be willing to help, huh? Bet you're busy- Wait, you've got spare time? Criminy, only took a week of asking! Good to meet ya.",
-   "dst": "",
+   "dst": "你該不會願意幫忙吧？我猜你很忙——等等，你有空？老天，我才問了一個禮拜就問到了！幸會。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -38,7 +38,7 @@
   },
   "Tempo Town Trouble#003": {
    "src": "Alright, My name is Tyko, and I got asked to find a capable soldier for- well, lemme explain. So, I'm from a place called {p}, by {p}. It's a recent establishment.",
-   "dst": "",
+   "dst": "好，我叫 Tyko，有人拜託我找一位有本事的士兵來——呃，讓我解釋。我來自一個叫 {p} 的地方，在 {p} 旁邊。那是最近才建起來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -48,7 +48,7 @@
   },
   "Tempo Town Trouble#004": {
    "src": "I'm buddies with the mayor- he set up {p} as kind of a homeless shelter for people whose homes got ruined by corrupted attacks, since {p} doesn't seem corrupted.",
-   "dst": "",
+   "dst": "我跟鎮長是朋友——他把 {p} 弄成一種收容所，收留那些家園被腐化生物摧毀的人，因為 {p} 看起來沒有被腐化。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -58,7 +58,7 @@
   },
   "Tempo Town Trouble#005": {
    "src": "Some old guy with jaundice or something swings by, some kind of keeper- Says to set up on a ridge overlooking a lake. So, we did! Everything was going well for a bit.",
-   "dst": "",
+   "dst": "有個得了黃疸還什麼的老頭經過，好像是什麼守護者——他說在俯瞰湖泊的山脊上落腳。所以我們就照做了！有一陣子一切都很順利。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -68,7 +68,7 @@
   },
   "Tempo Town Trouble#006": {
    "src": "And then some freaky time monster starts showing up in the middle of the night and tries to bust down our doors! We were told that ridge was safe, but that was clearly a lie.",
-   "dst": "",
+   "dst": "然後就有個詭異的時間怪物開始在半夜出現，想把我們的門撞破！人家跟我們說那條山脊是安全的，結果顯然是騙人的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -78,7 +78,7 @@
   },
   "Tempo Town Trouble#007": {
    "src": "So, that's why I'm here. No one at {p} is tough enough to kill that thing, so I ran over here to ask for some backup. Glad I ran into ya!",
-   "dst": "",
+   "dst": "所以我才來這裡。{p} 沒有人強到能殺掉那東西，我只好跑來這邊找援手。還好遇到你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -88,7 +88,7 @@
   },
   "Tempo Town Trouble#008": {
    "src": "Lemme write down the coordinates for ya in your book. I'm gonna stick around and see if anyone else feels like helping.",
-   "dst": "",
+   "dst": "我把座標寫進你的書裡。我還會待在這邊，看看有沒有別人想幫忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -98,7 +98,7 @@
   },
   "Tempo Town Trouble#009": {
    "src": "The coordinates to where you need to go should be in your book. Help us out, yeah?",
-   "dst": "",
+   "dst": "你要去的地方，座標應該在你的書裡了。幫我們一把，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -108,7 +108,7 @@
   },
   "Tempo Town Trouble#010": {
    "src": "Go to {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 的 {p}",
    "role": "desc",
    "kind": "objective",
    "quest": "Tempo Town Trouble",
@@ -118,7 +118,7 @@
   },
   "Tempo Town Trouble#011": {
    "src": "Hello- Welcome to {p}, friend! Established only two months ago, I'm proud to provide aid to those displaced by corrupted raids.",
-   "dst": "",
+   "dst": "你好——歡迎來到 {p}，朋友！這裡兩個月前才建立，我很自豪能幫助那些被腐化生物襲擊而流離失所的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -128,7 +128,7 @@
   },
   "Tempo Town Trouble#012": {
    "src": "Come to think of it, you look like a {p} representative... Can I bother you to deliver some paperwork to the castle about getting officially established here?",
-   "dst": "",
+   "dst": "這麼一說，你看起來像是 {p} 的代表……能不能麻煩你送一些文件到城堡，辦理我們在這裡正式立案的手續？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -138,7 +138,7 @@
   },
   "Tempo Town Trouble#013": {
    "src": "...Repeat that? ...OH! Oh, no wonder you- Agh, my mind's all over the place from stress, I'm so relieved he found help finally!",
-   "dst": "",
+   "dst": "……你再說一次？……哦！哦，難怪你——唉，壓力大到我腦子一團亂，他終於找到人幫忙，我真是鬆了一口氣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -148,7 +148,7 @@
   },
   "Tempo Town Trouble#014": {
    "src": "Alright, Tyko told you about the monster, right? We were told by that old man Martyn to settle on this ridge because there weren't any dangerous creatures here!",
-   "dst": "",
+   "dst": "好，Tyko 跟你說過那隻怪物了吧？那個叫 Martyn 的老人跟我們說在這條山脊上落腳，因為這裡沒有任何危險生物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -158,7 +158,7 @@
   },
   "Tempo Town Trouble#015": {
    "src": "Oh, not that kind of soldier? That's too bad... But- oh, this is a shot in the dark, but... maybe you'd be the type of soldier to take out a monster for us?",
-   "dst": "",
+   "dst": "哦，你不是那種士兵？真可惜……不過——哦，這大概是碰運氣，但……你搞不好是那種能替我們宰掉怪物的士兵？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -168,7 +168,7 @@
   },
   "Tempo Town Trouble#016": {
    "src": "You- you would!? Oh, thank goodness you arrived when you did! You see- we were told by that old man Martyn to settle on this ridge because there apparently weren't any dangerous creatures here!",
-   "dst": "",
+   "dst": "你——你願意？！哦，你來得真是時候！你聽我說——那個叫 Martyn 的老人跟我們說在這條山脊上落腳，因為這裡據說沒有任何危險生物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -178,7 +178,7 @@
   },
   "Tempo Town Trouble#017": {
    "src": "But every night, the same monster emerges from one of the ruins, and tries to smash the buildings down! Every single night, at the same time!",
-   "dst": "",
+   "dst": "可是每天晚上，同一隻怪物就從其中一處遺跡裡冒出來，想把建築物砸爛！每一個晚上，都在同一個時間！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -188,7 +188,7 @@
   },
   "Tempo Town Trouble#018": {
    "src": "The guards are getting run ragged, and I refuse to be responsible for any deaths when I'm trying to save these folks!",
-   "dst": "",
+   "dst": "守衛都快被操垮了，而我在努力救這些人的時候，絕不接受有任何人因此喪命！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -198,7 +198,7 @@
   },
   "Tempo Town Trouble#019": {
    "src": "We found the ruin it came out of, too- Er, one of the folks here, Doug, did! Here, let me write down the location for you- no, no, I insist, let me do it!",
-   "dst": "",
+   "dst": "我們也找到牠出來的那處遺跡了——呃，是這裡一位叫 Doug 的居民找到的！來，我把位置寫給你——不不，我堅持，讓我來寫！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -208,7 +208,7 @@
   },
   "Tempo Town Trouble#020": {
    "src": "There's the coordinates in case you forget, but it's in the temple just up the hill! Please, please hurry and take care of that horrible monster!",
-   "dst": "",
+   "dst": "座標在這裡，免得你忘記，不過就在山坡上那座神殿裡！拜託，拜託快去解決那隻可怕的怪物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -218,7 +218,7 @@
   },
   "Tempo Town Trouble#021": {
    "src": "The coordinates are in your book, but it's in the temple just up the hill! Please, please hurry and take care of that horrible monster!",
-   "dst": "",
+   "dst": "座標在你的書裡，不過就在山坡上那座神殿裡！拜託，拜託快去解決那隻可怕的怪物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -228,7 +228,7 @@
   },
   "Tempo Town Trouble#022": {
    "src": "Investigate the ruin at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "調查 [-{~1}, {~2}, -{~3}] 的遺跡",
    "role": "desc",
    "kind": "objective",
    "quest": "Tempo Town Trouble",
@@ -238,7 +238,7 @@
   },
   "Tempo Town Trouble#023": {
    "src": "Grr... I KNOW I saw that beast go in here, where the heck is it?!",
-   "dst": "",
+   "dst": "唔……我明明看到那隻野獸進來了，牠到底跑到哪去了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -248,7 +248,7 @@
   },
   "Tempo Town Trouble#024": {
    "src": "Hey soldier, does that disk look like some type of door to you?",
-   "dst": "",
+   "dst": "喂，士兵，你覺得那個圓盤看起來像某種門嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -258,7 +258,7 @@
   },
   "Tempo Town Trouble#025": {
    "src": "I saw some creature that I've been tracking for a few days disappear around here, and I think it's somewhere behind this disk...",
-   "dst": "",
+   "dst": "我追蹤了好幾天的某隻生物，就在這附近消失了，我想牠就在這個圓盤後面的某個地方……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -268,7 +268,7 @@
   },
   "Tempo Town Trouble#026": {
    "src": "There's probably some kind of wacky magic keeping it shut, since I can't get it open at all!",
-   "dst": "",
+   "dst": "大概有某種古怪的魔法把它封住了，因為我怎麼樣都打不開！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -278,7 +278,7 @@
   },
   "Tempo Town Trouble#027": {
    "src": "Hey, you're able to use magic, right? Maybe using one of your fancy spells on the disk will get it open?",
-   "dst": "",
+   "dst": "喂，你會用魔法對吧？也許對著圓盤放一個你那種花俏的法術，就能打開了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -288,7 +288,7 @@
   },
   "Tempo Town Trouble#028": {
    "src": "Stand on the disk and cast any spell. That should probably get it open, then we can finally kill that freak of nature lurking inside of there!",
-   "dst": "",
+   "dst": "站到圓盤上，隨便放一個法術。應該就能打開了，然後我們終於可以宰掉躲在裡面那個怪胎！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -298,7 +298,7 @@
   },
   "Tempo Town Trouble#029": {
    "src": "Let's see... What kind of secrets do these odd temples house?",
-   "dst": "",
+   "dst": "我看看……這些奇怪的神殿裡藏著什麼祕密呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -308,7 +308,7 @@
   },
   "Tempo Town Trouble#030": {
    "src": "Use spells to break open the temple at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "用法術打開 [-{~1}, {~2}, -{~3}] 的神殿",
    "role": "desc",
    "kind": "objective",
    "quest": "Tempo Town Trouble",
@@ -318,7 +318,7 @@
   },
   "Tempo Town Trouble#031": {
    "src": "What was going through your noggin, {u}?",
-   "dst": "",
+   "dst": "{u}，你腦子裡到底在想什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -328,7 +328,7 @@
   },
   "Tempo Town Trouble#032": {
    "src": "Do you have any idea what you were doing? Bashing around that room I just sealed off for good?",
-   "dst": "",
+   "dst": "你知道自己剛才在做什麼嗎？在我才剛永久封印起來的房間裡亂砸？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -338,7 +338,7 @@
   },
   "Tempo Town Trouble#033": {
    "src": "You need to be careful, soldier! This Valley's secrets are NOT to be meddled with.",
-   "dst": "",
+   "dst": "你得小心點，士兵！這座谷地的祕密，是不能亂碰的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -348,7 +348,7 @@
   },
   "Tempo Town Trouble#034": {
    "src": "I assume the mayor of that place called {p} sent you here. You are going to have to tell that lad that his problems just got worse.",
-   "dst": "",
+   "dst": "我猜是那個叫 {p} 的地方的鎮長派你來的。你得去告訴那小子，他的麻煩剛剛變得更大了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -358,7 +358,7 @@
   },
   "Tempo Town Trouble#035": {
    "src": "The monster you killed was known as a Time Trouble. They're odd creatures that were forced into a day-long temporal loop by some fools long ago.",
-   "dst": "",
+   "dst": "你殺掉的那隻怪物叫做「時間之患」。牠們是很奇怪的生物，很久以前被一群蠢貨強行困進了為期一天的時間迴圈裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -368,7 +368,7 @@
   },
   "Tempo Town Trouble#036": {
    "src": "The only way to keep them at bay effectively is to seal them, like I just did here. But now, that stunt you just pulled sent ripples across the entire Valley. Now, every single Time Trouble is responding to this one's termination!",
-   "dst": "",
+   "dst": "要有效壓制牠們，唯一的辦法就是封印，就像我剛才在這裡做的那樣。可是你剛才那一下，讓波紋擴散到整座谷地。現在，每一隻時間之患都在回應這一隻的死亡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -378,7 +378,7 @@
   },
   "Tempo Town Trouble#037": {
    "src": "Now, one Time Trouble I can handle, but this? I can't keep them all at bay... and now, you went and awakened every single one of those critters.",
-   "dst": "",
+   "dst": "一隻時間之患我還應付得來，可是這樣？我壓不住全部……而現在，你把那些傢伙全都吵醒了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -388,7 +388,7 @@
   },
   "Tempo Town Trouble#038": {
    "src": "I can fix this seal, so you'll have one less to deal with, but the rest of the Troubles will have to be taken down daily with brute force.",
-   "dst": "",
+   "dst": "我可以把這個封印修好，這樣你要對付的就少一隻，但其餘的時間之患，只能每天靠蠻力打下來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -398,7 +398,7 @@
   },
   "Tempo Town Trouble#039": {
    "src": "You're going to have to deal with those, soldier. I have far too much to take care of in this valley.",
-   "dst": "",
+   "dst": "那些就得靠你了，士兵。這座谷地裡我要處理的事情太多了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -408,7 +408,7 @@
   },
   "Tempo Town Trouble#040": {
    "src": "They'll have to be exterminated every single day. Now, I'm sure the work won't be thankless, perhaps you'll be rewarded by the townsfolk of {p} for taking care of them.",
-   "dst": "",
+   "dst": "牠們每天都得被清一次。我想這份工作不會白做，{p} 的鎮民說不定會為此給你報酬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -418,7 +418,7 @@
   },
   "Tempo Town Trouble#041": {
    "src": "Now please, be careful in the Valley. I already have to look after one person, nevermind the mess of time that the Olm were so-",
-   "dst": "",
+   "dst": "總之，在谷地裡請小心。我已經得照看一個人了，更別提 Olm 當年搞出來的那一團時間亂——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -428,7 +428,7 @@
   },
   "Tempo Town Trouble#042": {
    "src": "...I digress, I'm just rambling again. Now, let me bring us back outside this temple, and you should head back to that shanty town.",
-   "dst": "",
+   "dst": "……我離題了，又在碎碎念。來，我帶我們回到神殿外面，你該回那個棚屋鎮去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -438,7 +438,7 @@
   },
   "Tempo Town Trouble#043": {
    "src": "Report back to the mayor in {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "回到 [-{~1}, {~2}, -{~3}] 的 {p} 向鎮長回報",
    "role": "desc",
    "kind": "objective",
    "quest": "Tempo Town Trouble",
@@ -448,7 +448,7 @@
   },
   "Tempo Town Trouble#044": {
    "src": "You're back! I heard some kind of weird chime coming from the temple on the hill- is that a good sign?",
-   "dst": "",
+   "dst": "你回來了！我聽到山坡上的神殿傳來某種怪聲——那是好兆頭嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -458,7 +458,7 @@
   },
   "Tempo Town Trouble#045": {
    "src": "You did?! Oh, thank goodness... Honestly, Martyn told us he would deal with it, but then he just disappeared off into nowhere!",
-   "dst": "",
+   "dst": "你辦到了？！哦，謝天謝地……老實說，Martyn 跟我們說他會處理，結果他就這樣消失得無影無蹤！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -468,7 +468,7 @@
   },
   "Tempo Town Trouble#046": {
    "src": "Oh, he actually showed his face after you took care of that thing? What, did you beat him to the punch or something?",
-   "dst": "",
+   "dst": "哦，你解決那東西之後他才出現？怎麼，是你搶先他一步之類的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -478,7 +478,7 @@
   },
   "Tempo Town Trouble#047": {
    "src": "Wait... What? He was... trying to seal the thing away, instead of killing it, and... you destroying it broke the seal?",
-   "dst": "",
+   "dst": "等等……什麼？他本來是……想把那東西封印起來，而不是殺掉，然後……你把牠打死反而破壞了封印？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -488,7 +488,7 @@
   },
   "Tempo Town Trouble#048": {
    "src": "And now there's more of them? Why didn't he just tell us?! Now they'll need to be stopped every day to keep them in check!!",
-   "dst": "",
+   "dst": "現在還變多了？他為什麼不早說？！這下每天都得把牠們壓下去才行！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -498,7 +498,7 @@
   },
   "Tempo Town Trouble#049": {
    "src": "Gah, this is a disaster... It isn't your fault, you didn't know- Wait, what's that boxy thing you have? A [Time Fragment]? ...oh, so the monster dropped it.",
-   "dst": "",
+   "dst": "唉，這下慘了……這不是你的錯，你又不知道——等等，你手上那個方方的東西是什麼？[Time Fragment]？……哦，是那隻怪物掉的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -508,7 +508,7 @@
   },
   "Tempo Town Trouble#050": {
    "src": "Interesting... One of the townsfolk likes to collect those sorts of things! He's that Mysterious Merchant just behind me.",
-   "dst": "",
+   "dst": "有意思……鎮上有個人專門收集這類東西！就是我後面那位神祕商人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -518,7 +518,7 @@
   },
   "Tempo Town Trouble#051": {
    "src": "Go talk with him about those! He might give you something worth your while if you trade them with him.",
-   "dst": "",
+   "dst": "去跟他聊聊那些東西！你拿去跟他換，他說不定會給你值得的東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -528,7 +528,7 @@
   },
   "Tempo Town Trouble#052": {
    "src": "...also, while you were away, that strange magic stone up on the hill started glowing. We're not sure what to do with it, really! Might be worth your attention.",
-   "dst": "",
+   "dst": "……還有，你不在的時候，山坡上那顆奇怪的魔法石開始發光了。我們也不太確定該拿它怎麼辦！也許值得你去看看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -538,7 +538,7 @@
   },
   "Tempo Town Trouble#053": {
    "src": "...though, this is a bit awkward- I don't have a reward ready for you. Making this place took a lot of money... Hopefully gratitude is enough- thank you, sincerely!",
-   "dst": "",
+   "dst": "……不過，這有點尷尬——我沒有準備好給你的獎勵。建這個地方花了太多錢……希望我的感謝夠有份量——真的，謝謝你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -548,7 +548,7 @@
   },
   "Tempo Town Trouble#054": {
    "src": "Heya! Heard from the mayor that you helped out the town! Can't thank you enough for that.",
-   "dst": "",
+   "dst": "嘿！聽鎮長說你幫了鎮上的忙！真是感激不盡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -558,7 +558,7 @@
   },
   "Tempo Town Trouble#055": {
    "src": "Oh hey, it's you! I hope you've been keeping those Time Troubles at bay.",
-   "dst": "",
+   "dst": "哦，是你！希望你有把那些時間之患壓著。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",
@@ -568,7 +568,7 @@
   },
   "Tempo Town Trouble#056": {
    "src": "Oh, hey! I hope that monster wasn't too difficult for you to defeat.",
-   "dst": "",
+   "dst": "哦，嘿！希望那隻怪物沒讓你打得太辛苦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tempo Town Trouble",

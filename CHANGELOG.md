@@ -3,6 +3,23 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.10] - 2026-08-27
+
+### 新增
+
+- **教學區與起始任務的 NPC 對話**（`quest.json`）：104 句。這是開新角色第一段路
+  就會看到的內容——衛兵、中尉、Aledar、Tyko、Enzan 那些。
+
+- **四個任務的完整對話**：The Corrupted Village、Underice、Murder Mystery、
+  Tempo Town Trouble，共 226 句。
+
+  進度 30.9% → 32.6%。
+
+### 修正
+
+- 把 2 處全形方括號 `［］` 改成半形。那個括號是 Wynncraft 標記任務道具的語法，
+  全形會跟遊戲裡的物品名對不上。
+
 ## [1.99.9] - 2026-08-27
 
 ### 變更
