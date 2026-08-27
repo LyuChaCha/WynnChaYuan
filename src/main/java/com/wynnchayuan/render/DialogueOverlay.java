@@ -151,7 +151,13 @@ public final class DialogueOverlay {
                 target.addAll(Boxes.toLines(LineTranslator.untranslated(line)));
             }
         }
-        settledFor = List.copyOf(sources);
+        // List.copyOf 不收 null，而認不出來的那幾行<b>就是</b>放 null。
+        //
+        // 於是只要對話裡有一句翻不出來，這裡就丟 NullPointerException，
+        // 整個 setCurrent 在後面那幾行之前就被打斷——面板不會更新、
+        // 說話者不會換，畫面上看起來像「這句沒翻譯」，實際上是整段沒跑完。
+        // 日誌裡那幾千筆例外也是從這裡來的。
+        settledFor = java.util.Collections.unmodifiableList(new ArrayList<>(sources));
         shown = List.copyOf(rendered);
         // 誰在說話。同一個場景裡好幾個 NPC 輪流講的時候，光看文字認不出來。
         // 語料裡本來就有這個欄位，只是先前沒被帶到畫面上。

@@ -283,9 +283,24 @@ public final class DialogueRewriter {
                 at = text.length();
                 continue;
             }
-            // 英文單字不從中間切；中文可以在任何字之間斷
-            int cut = last > at && isLatin(text.charAt(end)) ? last : end;
-            out.add(text.substring(at, cut));
+            // 英文單字不從中間切；中文可以在任何字之間斷。
+            //
+            // 退到「上一個空白」是不夠的：玩家 ID 前面常常是頓號或驚嘆號，
+            // 整行一個空白都沒有，於是 Green_teaTW 被切成 Green_ 和 teaTW。
+            // 改成退到<b>這個字自己的開頭</b>，前面有沒有空白都一樣。
+            int cut = end;
+            if (isWord(text.charAt(end))) {
+                int back = end;
+                while (back > at && isWord(text.charAt(back - 1))) {
+                    back--;
+                }
+                if (back > at) {
+                    cut = back;
+                } else if (last > at) {
+                    cut = last;                // 整行就是一個長字，只好斷在空白
+                }
+            }
+            out.add(text.substring(at, cut).stripTrailing());
             at = cut < text.length() && text.charAt(cut) == ' ' ? cut + 1 : cut;
         }
         return at >= text.length() ? out : null;
@@ -293,6 +308,11 @@ public final class DialogueRewriter {
 
     private static boolean isLatin(char c) {
         return c < 0x2E80 && Character.isLetterOrDigit(c);
+    }
+
+    /** 不能從中間切開的一整個字。底線算在裡面：玩家 ID 幾乎都有。 */
+    private static boolean isWord(char c) {
+        return isLatin(c) || c == '_';
     }
 
     /**
@@ -370,6 +390,74 @@ public final class DialogueRewriter {
      * 於是中文疊到頭像上（玩家回報的「任務翻譯錯位」）。
      * 右邊界是固定的，所以寬度就是「實際前導的絕對值 + 右邊界」。
      */
+    /**
+     * 拆成幾截各自查表，每一截都查得到才算數。
+     *
+     * <p>任務開始那則訊息就是拼出來的：「New Quest Started:」是一句、
+     * 「King's Recruit」是任務名、「[0/150 (0.0%)]」是進度。語料裡三樣<b>都有</b>，
+     * 就是沒有黏在一起的那一條——而任務有一百多個，一條條收根本收不完。
+     * 打字打到一半時前綴還對得上，任務名一出來就整句掉回英文，
+     * 畫面上看起來就是「翻譯翻到一半變英文」。
+     *
+     * <p>每一截都從<b>最長</b>的開始試，並且要求整句被吃完，湊不滿就整個不換——
+     * 半句中文半句英文比整句英文糟糕得多。
+     *
+     * @return 接起來的譯文，或 {@code null} 表示這樣拆也不成
+     */
+    private static String join(String text, TranslationStore store) {
+        StringBuilder out = new StringBuilder();
+        String rest = text.strip();
+        for (int part = 0; part < PARTS && !rest.isEmpty(); part++) {
+            String head = null;
+            String piece = null;
+            for (int at = rest.length(); at > 0; at--) {
+                if (at < rest.length() && rest.charAt(at) != ' ') {
+                    continue;                  // 只在空白處切
+                }
+                head = rest.substring(0, at).strip();
+                piece = plain(head) ? head : store.lookup(head);
+                if (piece != null && !piece.isBlank()) {
+                    break;
+                }
+                piece = null;
+            }
+            if (piece == null) {
+                return null;
+            }
+            if (out.length() > 0 && gap(out.charAt(out.length() - 1), piece.charAt(0))) {
+                out.append(' ');
+            }
+            out.append(piece);
+            rest = rest.substring(head.length()).strip();
+        }
+        return rest.isEmpty() && out.length() > 0 ? out.toString() : null;
+    }
+
+    /** 最多拆成幾截。再多就不是「拼出來的訊息」，是硬湊了。 */
+    private static final int PARTS = 4;
+
+    /**
+     * 沒有字要翻的一截：數字、括號、佔位符。
+     *
+     * <p>像「[0/150 (0.0%)]」這種進度顯示，語料裡不會有、也不該有，
+     * 但它擋在中間會讓整句拼不起來。原樣留著就好。
+     */
+    private static boolean plain(String text) {
+        String bare = text.replaceAll("\\{[^}]*\\}", "");
+        for (int i = 0; i < bare.length(); i++) {
+            char c = bare.charAt(i);
+            if (Character.isLetter(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /** 兩截之間要不要空白：接的是英文才要，中文之間不要。 */
+    private static boolean gap(char left, char right) {
+        return (isLatin(right) || isLatin(left)) && left != ' ' && right != ' ';
+    }
+
     private static int rowWidth(List<String> texts, List<Integer> body) {
         if (body.isEmpty()) {
             return BODY_LEFT * 2;
@@ -426,6 +514,16 @@ public final class DialogueRewriter {
             // 卡在門檻底下查不到，於是開頭那一小段先閃出英文才跳成中文。
             source = store.matchPrefix(typed, text.strip().length());
             hit = source == null ? null : store.lookup(source);
+        }
+        if (hit == null) {
+            // 「一句話 + 一個名字」：任務開始那則訊息就是這樣拼出來的。
+            //
+            // 語料裡有「New Quest Started:」也有「King's Recruit」，就是沒有
+            // 兩個黏在一起的那一條——而任務名有一百多個，一條條收根本收不完。
+            // 打字打到一半時前綴還對得上，名字一出來就整句掉回英文，
+            // 看起來就是「翻譯翻到一半變英文」。
+            hit = join(typed, store);
+            source = hit == null ? null : typed;
         }
         if (hit == null || hit.isBlank()) {
             return null;
