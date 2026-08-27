@@ -178,15 +178,20 @@ public final class DialogueProbe {
         if (body.isBlank()) {
             return;
         }
-        // 同一則訊息的開頭是固定的，用它認出「還是那一則」
-        String key = body.substring(0, Math.min(8, body.length()));
-        if (!key.equals(missKey)) {
+        // 逐字打字的每一幀都是<b>前一幀再加幾個字</b>，所以「其中一個是另一個的
+        // 開頭」就代表還是同一則訊息。
+        //
+        // 先前是比前八個字，於是「I don」與「I don't s」被當成兩則不同的訊息——
+        // 四個名額又被同一句話的打字過程吃光，真正翻不出來的那則照樣錄不到。
+        boolean same = !missKey.isEmpty()
+                && (body.startsWith(missKey) || missKey.startsWith(body));
+        if (!same) {
             if (misses >= MISS_LIMIT) {
                 return;
             }
-            missKey = key;
             misses++;
         }
+        missKey = body;
 
         StringBuilder sb = new StringBuilder();
         sb.append("=== 改寫失敗（getString） ===").append(System.lineSeparator())
