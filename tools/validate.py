@@ -233,12 +233,20 @@ def is_generated(file: Path) -> bool:
     「兩份譯法不同」。實際發生過：譯者改了 quest/ 底下的任務檔，
     quest-dialogue.json 還是舊的，於是每一個翻譯 PR 都紅燈，
     而譯者在網頁上根本沒辦法重新產生。
+
+    只認 ``"generated": true``（布林）。抽取來的語料在同一個欄位放的是
+    <b>時間戳字串</b>（``"2026-08-19T..."``），意思是「什麼時候從官方資料抽的」，
+    那些是要人翻的正本，不是副本。先前用 ``bool()`` 判斷，字串一律為真，
+    於是 ingredient、material、tome、aspect、gear-* 這一整批
+    <b>整個沒被檢查過</b>——七千多條。裡面確實藏著撞句（``Black Hole`` 在
+    ingredient.json 是「黑孔洞」、在 ability/assassin.json 是「引力黑洞」），
+    而那種錯在遊戲裡看不出來：載入順序決定誰生效。
     """
     try:
         data = json.loads(file.read_text(encoding="utf-8"))
     except Exception:
         return False
-    return bool(data.get("_meta", {}).get("generated"))
+    return data.get("_meta", {}).get("generated") is True
 
 
 def check_file(file: Path, places: set[str],
@@ -310,6 +318,48 @@ def check_duplicates(files: list[Path]) -> list[Problem]:
                                    f"載入順序決定誰生效，改到輸的那一份會沒反應"))
             else:
                 seen.setdefault(src, (file.name, dst))
+    return out
+
+
+def check_misfiled(files: list[Path]) -> list[Problem]:
+    """有歸屬的台詞卻放在 quest.json 裡。
+
+    ``quest.json`` 的 ``_note`` 自己就寫了：「還沒歸到任務的 NPC 台詞。
+    有歸屬的請放 quest/ 底下對應的任務檔」。同一句同時存在於兩邊時，
+    載入順序決定誰生效——就算現在兩邊譯法一樣，只要有人只改其中一邊，
+    另一邊就會無聲地贏回去，而畫面上完全看不出原因。
+
+    ``check_duplicates`` 只在譯法<b>不同</b>時報錯，抓不到這種「暫時一致」的
+    重複，所以另外擋在這裡：只要重複就報，不管譯法一不一樣。
+    """
+    owned: dict[str, str] = {}
+    for file in files:
+        if file.parent.name != "quest":
+            continue
+        try:
+            data = json.loads(file.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for row in (data.get("entries") or {}).values():
+            if row.get("src"):
+                owned.setdefault(row["src"], file.name)
+
+    out: list[Problem] = []
+    for file in files:
+        if file.name != "quest.json":
+            continue
+        try:
+            data = json.loads(file.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        rows = data["entries"] if isinstance(data.get("entries"), dict) else data
+        for key in rows:
+            if key.startswith("_") or key not in owned:
+                continue
+            out.append(Problem("error", file.name, key,
+                               f"這句話已經歸給 quest/{owned[key]} 了。"
+                               f"兩邊都有的話，載入順序決定誰生效，"
+                               f"改到輸的那一份會沒反應——請從 quest.json 移除"))
     return out
 
 
@@ -390,7 +440,7 @@ def main(argv: list[str]) -> int:
             print()
             print(f"── {lang} ──")
         # 「同一個原文兩種譯法」只在<b>同一種語言之內</b>才是問題
-        dupes = check_duplicates(group)
+        dupes = check_duplicates(group) + check_misfiled(group)
         if dupes:
             print()
             print("跨檔重複")

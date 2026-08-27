@@ -3,6 +3,26 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.12] - 2026-08-27
+
+### 修正
+
+- **同一句話不再有兩個家。** `quest.json` 裡有 54 句已經歸給 `quest/king-s-recruit.json`。
+  兩邊都有的時候，載入順序決定誰生效——改到輸的那一份會完全沒反應，而畫面上看不出原因。
+  按照 `quest.json` 自己 `_note` 寫的規則（「有歸屬的請放 quest/ 底下對應的任務檔」）
+  把它們移除；八個語言一起清，避免同一個問題在別的語言重演。
+
+- **一整批語料從來沒被驗證過。** `is_generated()` 用 `bool()` 判斷 `_meta.generated`，
+  但那個欄位有兩種意思：真正的產生物寫 `true`（布林），從官方資料抽出來的正本寫的是
+  <b>時間戳字串</b>。字串一律為真，於是 `ingredient`、`material`、`tome`、`aspect`、
+  `gear-*` 這八個檔、七千多條<b>整個被跳過</b>。改成只認布林 `true`。
+
+  第一次檢查就撈出一個撞句：`Black Hole` 在 `ingredient.json` 是「黑孔洞」、
+  在 `ability/assassin.json` 是「引力黑洞」。統一為「引力黑洞」。
+
+- **新增防呆：** 有歸屬的台詞放回 `quest.json` 會直接報錯。先前的跨檔檢查只在
+  <b>譯法不同</b>時報，抓不到「暫時一致」的重複——而那種重複只要有人改了一邊就會裂開。
+
 ## [1.99.11] - 2026-08-27
 
 ### 新增
