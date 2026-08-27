@@ -3,6 +3,13 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.11] - 2026-08-27
+
+### 新增
+
+- **`quest.json` 翻完了**（117 / 117）。最後 11 句是維基抓來的斷句
+  （`the King of Ragn` 是 `Ragni` 被截掉），照完整版的用詞翻並在同一處斷開。
+
 ## [1.99.10] - 2026-08-27
 
 ### 新增
