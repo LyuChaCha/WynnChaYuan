@@ -41,12 +41,17 @@ public final class TrackerOverlay {
         if (name != null && !name.isBlank()) {
             StyledText styled = StyledText.fromString(name);
             Component translated = LineTranslator.translate(styled, store);
+            // 掛上「進行中的任務」這個抬頭。
+            //
+            // 光一個任務名擺在畫面角落，看起來像隨便一段文字；原文那一欄是靠
+            // Wynntils 自己的框線與位置在說明「這是任務追蹤」，我們的面板沒有
+            // 那些線索，所以把身分直接寫出來。
+            Component shown = translated != null
+                    ? translated : LineTranslator.untranslated(styled);
             if (translated != null) {
                 any = true;
-                lines.addAll(Boxes.toLines(translated));
-            } else {
-                lines.add(LineTranslator.untranslated(styled));
             }
+            lines.add(Component.literal(HEADING).append(shown));
         }
         if (task != null) {
             Component translated = LineTranslator.translate(task, store);
@@ -110,4 +115,7 @@ public final class TrackerOverlay {
 
     /** 任務名比目標大多少。1.5 倍在原生與 2 倍 GUI 縮放下都還是整數像素。 */
     private static final float NAME_SCALE = 1.5f;
+
+    /** 任務名前面的抬頭。 */
+    private static final String HEADING = "進行中的任務 - ";
 }
