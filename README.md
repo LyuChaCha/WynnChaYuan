@@ -214,8 +214,9 @@ python tools/build.py    # 抽取、分類、參數化 → 工作檔
 
 - 物品與技能資料取自 [Wynntils](https://github.com/Wynntils/Wynntils) 使用的公開 CDN
 - 材質包符號與排版由 Wynncraft 提供，本模組僅顯示、不修改
-- 對話框裡的中日韓字形使用 [Cubic 11](https://github.com/ACh-K/Cubic-11)
-  （SIL OFL 1.1，授權全文見 `assets/wynnchayuan/font/OFL.txt`）。
+- 對話框裡的中日韓字形使用 [Fusion Pixel 10px](https://github.com/TakWolf/fusion-pixel-font)
+  比例模式（SIL OFL 1.1，授權全文見 `assets/wynnchayuan/font/OFL-fusion.txt`）。
+  它的大寫高度正好 7 像素，跟 Wynncraft 對話框的英文同高。
   字型<b>按語言分</b>：同一個碼位在不同地區的寫法不一樣，目前只附繁體中文（`zh_tw`），
   其他語言開始翻譯對話時再各自加上。點陣字沒有哪一套是全的，所以譯文只要有一個字
   畫不出來，那一段就維持原文而不是畫出方框
