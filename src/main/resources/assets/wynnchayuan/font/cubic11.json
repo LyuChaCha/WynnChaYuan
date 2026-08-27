@@ -1,0 +1,19 @@
+{
+  "_note": "Cubic 11 —— 給中文用的點陣字型。授權 SIL OFL 1.1，見 cubic11-OFL.txt。 size 11 是這套字型的設計尺寸，改了會糊；shift 是為了讓基線跟 Minecraft 預設字型對齊，否則中文會比旁邊的英文高半格。",
+  "providers": [
+    {
+      "type": "ttf",
+      "file": "wynnchayuan:font/cubic11.ttf",
+      "shift": [
+        0.0,
+        1.0
+      ],
+      "size": 11.0,
+      "oversample": 1.0
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:include/default"
+    }
+  ]
+}

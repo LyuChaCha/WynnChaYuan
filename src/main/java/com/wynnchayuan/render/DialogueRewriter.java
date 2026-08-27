@@ -83,44 +83,46 @@ public final class DialogueRewriter {
             return Optional.empty();
         }, Style.EMPTY);
 
-        // 先就地改，最後才組。名牌是置中的，換掉名字之後<b>前後兩個</b>偏移
-        // 都要重算——邊走邊組的話，前面那個已經送出去了，改不到。
-        boolean[] swapped = new boolean[texts.size()];
-        boolean changed = false;
+        // 先把所有 body_N 的文字段找出來。
+        //
+        // Wynncraft 一行一個字型：body_0、body_1……一句話太長就拆成好幾行。
+        // 先前每一段各自查表，結果是整句中文全塞進 body_0、body_1 還留著英文的
+        // 後半段——版面當然跳掉。要整句一起翻，再<b>攤回同樣的行數</b>，
+        // 文字才會落在原文落的地方。
+        List<Integer> body = new ArrayList<>();
         for (int i = 1; i + 1 < texts.size(); i++) {
             String font = fontOf(styles.get(i));
-            String text = texts.get(i);
-            Integer lead = offsetOf(texts.get(i - 1));
-            if (!font.contains(BODY) || !readable(text)
-                    || lead == null || offsetOf(texts.get(i + 1)) == null) {
-                continue;                      // 認不出這個形狀就別動它
+            if (font.contains(BODY) && !font.contains(NAMEPLATE)
+                    && readable(texts.get(i))
+                    && offsetOf(texts.get(i - 1)) != null
+                    && offsetOf(texts.get(i + 1)) != null) {
+                body.add(i);
             }
-            // 名牌先不動。使用者回報譯文疊在一起、名牌卻是空的——最可能是
-            // 譯名被畫進內文那一塊。內文的偏移公式有三組實機資料撐著，
-            // 名牌只有兩組，先把沒把握的那一半關掉，留下有把握的。
-            boolean name = font.contains(NAMEPLATE);
-            if (name) {
-                continue;
-            }
-            String hit = name ? speaker(text, store) : line(text, store);
-            if (hit == null || hit.equals(text)) {
-                continue;
-            }
-            int width = width(hit);
-            if (name) {
-                // 置中：前後都跟著寬度走
-                texts.set(i - 1, offset(nameLead(width)));
-                texts.set(i + 1, offset(NAME_CENTRE - width / 2));
-            } else {
-                // 靠左：前導不動，尾隨補到「走回原位」
-                texts.set(i + 1, offset(-lead - width));
-            }
-            texts.set(i, hit);
-            swapped[i] = true;
-            changed = true;
         }
-        if (!changed) {
+        if (body.isEmpty()) {
             return null;
+        }
+
+        StringBuilder whole = new StringBuilder();
+        for (int at : body) {
+            whole.append(texts.get(at));
+        }
+        String hit = line(whole.toString(), store);
+        if (hit == null) {
+            return null;
+        }
+        List<String> rows = wrap(hit, body.size());
+        if (rows == null) {
+            return null;                       // 攤不進原本的行數就不換
+        }
+
+        boolean[] swapped = new boolean[texts.size()];
+        for (int n = 0; n < body.size(); n++) {
+            int at = body.get(n);
+            int lead = offsetOf(texts.get(at - 1));
+            texts.set(at, rows.get(n));
+            texts.set(at + 1, offset(-lead - width(rows.get(n))));
+            swapped[at] = true;
         }
 
         MutableComponent out = Component.empty();
@@ -133,6 +135,49 @@ public final class DialogueRewriter {
             out.append(Component.literal(texts.get(i)).withStyle(style));
         }
         return out;
+    }
+
+    /**
+     * 把譯文攤成正好 {@code rows} 行，每一行都塞得進框裡。
+     *
+     * <p>行數<b>必須</b>跟原文一樣：多了畫不下（框的高度是伺服器決定的，
+     * 我們動不了），少了文字會往上擠，看起來像浮在框裡。寧可不換。
+     *
+     * @return 每一行的內容；攤不進去時回傳 {@code null}
+     */
+    static List<String> wrap(String text, int rows) {
+        int limit = BODY_LEFT * 2;
+        List<String> out = new ArrayList<>(rows);
+        int at = 0;
+        for (int row = 0; row < rows; row++) {
+            if (at >= text.length()) {
+                out.add("");                   // 中文比較短，後面幾行留空
+                continue;
+            }
+            int end = at;
+            int last = at;
+            while (end < text.length()
+                    && width(text.substring(at, end + 1)) <= limit) {
+                end++;
+                if (end < text.length() && text.charAt(end) == ' ') {
+                    last = end;                // 記著最後一個可以斷的空白
+                }
+            }
+            if (end >= text.length()) {
+                out.add(text.substring(at));
+                at = text.length();
+                continue;
+            }
+            // 英文單字不從中間切；中文可以在任何字之間斷
+            int cut = last > at && isLatin(text.charAt(end)) ? last : end;
+            out.add(text.substring(at, cut));
+            at = cut < text.length() && text.charAt(cut) == ' ' ? cut + 1 : cut;
+        }
+        return at >= text.length() ? out : null;
+    }
+
+    private static boolean isLatin(char c) {
+        return c < 0x2E80 && Character.isLetterOrDigit(c);
     }
 
     /** 內文：整句查表，查不到就用開頭比對（NPC 是一個字一個字打出來的）。 */
