@@ -214,6 +214,8 @@ python tools/build.py    # 抽取、分類、參數化 → 工作檔
 
 - 物品與技能資料取自 [Wynntils](https://github.com/Wynntils/Wynntils) 使用的公開 CDN
 - 材質包符號與排版由 Wynncraft 提供，本模組僅顯示、不修改
+- 對話框裡的中日韓字形使用 [Cubic 11](https://github.com/ACh-K/Cubic-11)
+  （SIL OFL 1.1，授權全文見 `assets/wynnchayuan/font/OFL.txt`）
 
 ## 授權
 

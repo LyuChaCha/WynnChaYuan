@@ -3,6 +3,30 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.5] - 2026-08-27
+
+### 新增
+
+- **對話就地取代終於對齊了。** 附上 [Cubic 11](https://github.com/ACh-K/Cubic-11)
+  （SIL OFL 1.1），並為對話框的每一行各做一份字型：ASCII 直接 `reference`
+  Wynncraft 自己那份（外觀與高度完全不變），中日韓走 Cubic 11 並用 `shift`
+  補回高度差。
+
+  位移量不是試出來的。Wynncraft 把行號烘進字型的 `ascent`（`body_0` 是 34、
+  `body_1` 22、`body_2` 10、`body_3` -2、`nameplate` 50、`control` -38），
+  而 `minecraft:default` 是 7，所以位移正好是 `-(ascent - 7)`。方向也查過：
+  MC 的 ttf provider 把 shift 交給 FreeType 時取了負號（`deltaY = -shiftY`），
+  FreeType 的 +y 朝上，所以正數往下；又因為它乘上 oversample 之後才送出去，
+  單位就是最終螢幕像素。
+
+  這幾個數字由 `DialogueFontTest` 對死，改錯一個 `gradle build` 就會擋下來——
+  不然畫面上只會看到「字有點偏」，追起來又是好幾輪。
+
+### 修正
+
+- 量文字寬度時改用<b>實際會畫出來的那個字型</b>。中日韓走 Cubic 11，字寬跟預設的
+  和 Wynncraft 的都不一樣，量錯尾隨偏移就補錯，後面整塊會跟著偏。
+
 ## [1.99.4] - 2026-08-27
 
 ### 修正

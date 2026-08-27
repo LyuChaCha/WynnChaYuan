@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.FontDescription;
+import net.minecraft.resources.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -159,7 +160,7 @@ public final class DialogueRewriter {
             keep.put(i, prefix);
             texts.set(i, tip);
             int total = width(Component.literal(prefix).withStyle(styles.get(i)))
-                    + width(tip);
+                    + width(tip, styles.get(i));
             texts.set(i + 1, offset(-lead - total));
             swapped[i] = true;
             changed = true;
@@ -169,7 +170,8 @@ public final class DialogueRewriter {
                 int at = body.get(n);
                 int lead = offsetOf(texts.get(at - 1));
                 texts.set(at, rows.get(n));
-                texts.set(at + 1, offset(-lead - width(rows.get(n))));
+                texts.set(at + 1,
+                        offset(-lead - width(rows.get(n), styles.get(at))));
                 swapped[at] = true;
             }
         }
@@ -192,9 +194,13 @@ public final class DialogueRewriter {
             // 是 22、control 是 -38，預設字型是 7），換成預設就等於丟掉高度。
             // 譯文如果本來就畫得出來——西班牙文、法文、德文那些只用到拉丁字母
             // 的語言——就<b>不要碰字型</b>，位置跟原文一模一樣。
-            Style style = swapped[i] && !drawable(texts.get(i))
-                    ? styles.get(i).withFont(FontDescription.DEFAULT)
-                    : styles.get(i);
+            Style style = styles.get(i);
+            if (swapped[i] && !drawable(texts.get(i))) {
+                FontDescription pair = paired(fontOf(styles.get(i)));
+                // 配不到就退回預設字型：位置會掉，但至少看得到字
+                style = style.withFont(
+                        pair == null ? FontDescription.DEFAULT : pair);
+            }
             out.append(Component.literal(texts.get(i)).withStyle(style));
         }
         return out;
@@ -299,6 +305,23 @@ public final class DialogueRewriter {
         return new String(Character.toChars(OFFSET_BASE + px));
     }
 
+    /**
+     * 這一段文字<b>實際畫出來</b>會有多寬。
+     *
+     * <p>不能一律拿預設字型去量：中日韓走的是我們自己那套 Cubic 11，
+     * 字寬跟預設的和 Wynncraft 的都不一樣。量錯了尾隨偏移就補錯，
+     * 後面整塊會跟著偏。
+     */
+    private static int width(String text, Style original) {
+        if (drawable(text)) {
+            return width(Component.literal(text).withStyle(original));
+        }
+        FontDescription pair = paired(fontOf(original));
+        return width(Component.literal(text).withStyle(
+                pair == null ? original.withFont(FontDescription.DEFAULT)
+                        : original.withFont(pair)));
+    }
+
     private static int width(String text) {
         Minecraft mc = Minecraft.getInstance();
         return mc == null ? text.length() * 6 : mc.font.width(text);
@@ -327,6 +350,53 @@ public final class DialogueRewriter {
     private static boolean readable(String text) {
         return text.codePoints().anyMatch(cp ->
                 cp >= 0x20 && cp < 0x2E80 && !Character.isWhitespace(cp));
+    }
+
+    /**
+     * 同一行、但畫得出中日韓的字型。
+     *
+     * <h2>為什麼非得自己做一套</h2>
+     * Wynncraft 把「畫在第幾行」烘進了字型的 {@code ascent}（`body_0` 是 34、
+     * `body_1` 是 22、`control` 是 -38，而 {@code minecraft:default} 是 7）。
+     * 整條對話是<b>一個</b> action bar 字串，位移字元只能左右移不能上下移——
+     * 換成預設字型就等於把行號丟掉，內文往下掉、SHIFT 提示往上跳進框裡被蓋住。
+     *
+     * <p>所以每一行各做一份字型：ASCII 直接 {@code reference} Wynncraft 自己那份
+     * （外觀與高度完全不變），中日韓走 Cubic 11 並用 {@code shift} 補回高度差。
+     * MC 的 ttf provider 把 shift 交給 FreeType 時取了負號（{@code deltaY = -shiftY}），
+     * 而 FreeType 的 +y 朝上，所以 <b>shift 的 y 是正數往下</b>；
+     * 又因為它乘上 oversample 之後才送出去，單位就是最終螢幕像素。
+     * 位移量因此正好是 {@code -(ascent - 7)}。
+     *
+     * @return 對應的字型；這一段不是對話文字就回傳 {@code null}
+     */
+    private static FontDescription paired(String font) {
+        String name = null;
+        if (font.contains(BODY)) {
+            int at = font.lastIndexOf(BODY);
+            name = "body_" + font.substring(at + BODY.length());
+        } else if (font.contains(CONTROL)) {
+            name = "control";
+        } else if (font.contains(NAMEPLATE)) {
+            name = "nameplate";
+        }
+        if (name == null) {
+            return null;
+        }
+        // 字型 id 後面常常還跟著 class 的 toString 尾巴，只留合法的部分
+        StringBuilder clean = new StringBuilder();
+        for (char c : name.toCharArray()) {
+            if (Character.isLetterOrDigit(c) || c == '_') {
+                clean.append(Character.toLowerCase(c));
+            } else {
+                break;
+            }
+        }
+        if (clean.isEmpty()) {
+            return null;
+        }
+        return new FontDescription.Resource(Identifier.fromNamespaceAndPath(
+                WynnChaYuan.MOD_ID, "dialogue/" + clean));
     }
 
     private static String fontOf(Style style) {
