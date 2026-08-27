@@ -186,7 +186,13 @@ public final class DialogueRewriter {
                 // 圖示照原樣、原字型；只有後面的譯文換成預設字型
                 out.append(Component.literal(prefix).withStyle(styles.get(i)));
             }
-            Style style = swapped[i]
+            // 換過的那一段，只有<b>畫不出來</b>的時候才改字型。
+            //
+            // Wynncraft 的對話字型把行號烘進了 ascent（body_0 是 34、body_1
+            // 是 22、control 是 -38，預設字型是 7），換成預設就等於丟掉高度。
+            // 譯文如果本來就畫得出來——西班牙文、法文、德文那些只用到拉丁字母
+            // 的語言——就<b>不要碰字型</b>，位置跟原文一模一樣。
+            Style style = swapped[i] && !drawable(texts.get(i))
                     ? styles.get(i).withFont(FontDescription.DEFAULT)
                     : styles.get(i);
             out.append(Component.literal(texts.get(i)).withStyle(style));
@@ -302,6 +308,20 @@ public final class DialogueRewriter {
     private static int width(Component text) {
         Minecraft mc = Minecraft.getInstance();
         return mc == null ? 0 : mc.font.width(text);
+    }
+
+    /**
+     * Wynncraft 的對話字型畫不畫得出這一串。
+     *
+     * <p>字元集直接來自它自己的字型定義（{@code font-dump.txt}）：
+     * {@code wynncraft.png} 是可見的 ASCII，{@code wynncraft_latin.png}
+     * 補上帶重音的拉丁字母。兩張表以外的字（中日韓、西里爾、諺文）
+     * 畫出來是空框，那才需要換字型——代價是位置會掉。
+     */
+    static boolean drawable(String text) {
+        return text.codePoints().allMatch(cp ->
+                (cp >= 0x20 && cp < 0x7F) || cp == 0x2014
+                        || "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏàáâãäåæçèéêëìíîï".indexOf(cp) >= 0);
     }
 
     private static boolean readable(String text) {

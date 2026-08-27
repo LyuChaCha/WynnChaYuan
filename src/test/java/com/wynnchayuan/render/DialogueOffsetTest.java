@@ -38,6 +38,17 @@ public final class DialogueOffsetTest {
         check("中文不是位移", DialogueRewriter.offsetOf("廚") == null);
         check("兩個字元不是位移", DialogueRewriter.offsetOf("AB") == null);
 
+        // 字型只有在畫不出來的時候才該換掉——換了就丟掉行號（ascent）
+        check("英文畫得出來", DialogueRewriter.drawable("Let's hope no more grooks"));
+        check("數字符號畫得出來", DialogueRewriter.drawable("+12% (3/5) [80.0%]"));
+        check("西班牙文畫得出來", DialogueRewriter.drawable("Aumenta el dano magico"));
+        check("法文重音畫得出來", DialogueRewriter.drawable("Augmente les degats"));
+        check("中文畫不出來", !DialogueRewriter.drawable("希望別再有"));
+        check("中英混排畫不出來", !DialogueRewriter.drawable("希望別再有 grook"));
+        check("日文畫不出來", !DialogueRewriter.drawable("グルック"));
+        check("諺文畫不出來", !DialogueRewriter.drawable("계속하려면"));
+        check("西里爾畫不出來", !DialogueRewriter.drawable("продолжить"));
+
         System.out.println(failures == 0
                 ? "DialogueOffset: 全部通過"
                 : "DialogueOffset: " + failures + " 項失敗");

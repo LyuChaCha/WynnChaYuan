@@ -154,6 +154,15 @@ public final class NametagScreen extends Screen {
         return Component.literal("名牌翻譯：" + name);
     }
 
+    /** 目前這個模式的但書。 */
+    private String modeHint() {
+        return switch (WynnChaYuan.config().nametagMode()) {
+            case OFF -> "名牌完全不動，畫面上只有原本的英文名";
+            case LOOK_AT -> "原文保留著，看著誰才在旁邊補上譯名";
+            case REPLACE -> "英文名會被換掉，畫面上看不到原文";
+        };
+    }
+
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
         int x = left();
@@ -165,19 +174,21 @@ public final class NametagScreen extends Screen {
 
         g.drawCenteredString(this.font, this.title, this.width / 2, 22, Colors.TEXT);
         g.drawCenteredString(this.font,
-                Component.literal("注視時顯示會保留原文，方便跟其他玩家溝通")
+                Component.literal("名牌要怎麼顯示，還有什麼情況下才算「你在看它」")
                         .withStyle(ChatFormatting.GRAY),
                 this.width / 2, 36, Colors.SUBTLE);
 
-        // 模式按鈕的但書，緊接在按鈕下面
-        Cards.hint(g, this.font, x + 2, y + 24, "取代原文則畫面上看不到英文名");
+        // 模式按鈕的但書，緊接在按鈕下面——說的必須是<b>現在選的</b>那個模式。
+        // 先前這裡固定寫「取代原文則……」，於是選著「注視時顯示」的人看到的
+        // 是另一個模式的但書，跟按鈕上的字對不起來。
+        Cards.hint(g, this.font, x + 2, y + 24, modeHint());
 
         // 其餘每一行都是它「下方」那個輸入框的標題
         Cards.hint(g, this.font, x + 2, fieldY(0) - LABEL_LIFT, "停留秒數（0 = 持續顯示）");
         Cards.hint(g, this.font, x + 2, fieldY(1) - LABEL_LIFT,
-                "偵測距離：幾格內的名牌才算（2–64）");
+                "偵測距離：幾格內的名牌才算（2–64 格）");
         Cards.hint(g, this.font, x + 2, fieldY(2) - LABEL_LIFT,
-                "準心夾角：幾度內才算在看它（1–45）");
+                "準心夾角：偏離準心幾度內還算在看（1–45 度）");
 
         g.drawCenteredString(this.font,
                 Component.literal("城裡 NPC 站得密就把角度調小；曠野找人可以調大")

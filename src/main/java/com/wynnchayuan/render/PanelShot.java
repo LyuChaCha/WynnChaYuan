@@ -110,7 +110,10 @@ public final class PanelShot {
     /** 由 {@link com.wynnchayuan.WynnChaYuan} 在註冊按鍵時交進來。 */
     public static void bind(KeyMapping mapping) {
         bound = mapping;
-        log("bind：截圖鍵已交給 PanelShot");
+        var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+                .getBoundKeyOf(mapping);
+        log("bind：截圖鍵已交給 PanelShot（目前綁定 "
+                + (key == null ? "?" : key.getName()) + "）");
     }
 
     public static void request() {
@@ -162,54 +165,37 @@ public final class PanelShot {
      * {@code KeyBindingHelper.getBoundKeyOf} 讀得到——所以改綁一樣有效，
      * 不必認死 F8。
      */
-    private static void pollWhileScreenOpen(Minecraft mc) {
-        if (mc.screen == null || mc.getWindow() == null || bound == null) {
-            wasDown = false;
-            return;
-        }
-        int code;
-        try {
-            var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
-                    .getBoundKeyOf(bound);
-            if (key == null || key.getType()
-                    != com.mojang.blaze3d.platform.InputConstants.Type.KEYSYM) {
-                if (!warnedBinding) {
-                    warnedBinding = true;
-                    log("poll：綁定的不是鍵盤鍵，畫面開著時讀不到");
-                }
-                wasDown = false;
-                return;
-            }
-            code = key.getValue();
-        } catch (Throwable t) {
-            // 讀不到綁定就退回 F8——總比完全按不動好
-            if (!warnedBinding) {
-                warnedBinding = true;
-                log("poll：讀不到綁定（" + t.getClass().getSimpleName() + "），退回 F8");
-            }
-            code = org.lwjgl.glfw.GLFW.GLFW_KEY_F8;
-        }
-        if (code == org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN) {
-            wasDown = false;
-            return;
-        }
-        boolean down = com.mojang.blaze3d.platform.InputConstants.isKeyDown(
-                mc.getWindow(), code);
-        if (down && !wasDown) {
-            log("poll：讀到按鍵按下（code=" + code + "，畫面="
-                    + mc.screen.getClass().getSimpleName() + "）");
-            request();
-        }
-        wasDown = down;
+    /**
+     * 畫面開著時，把截圖鍵掛到<b>那個畫面自己</b>的鍵盤事件上。
+     *
+     * <h2>前兩次為什麼失敗</h2>
+     * {@code KeyMapping.consumeClick()} 只在沒有畫面時才會更新——
+     * {@code KeyboardHandler.keyPress} 是先看 {@code screen == null}
+     * 才去餵鍵位佇列的。改用 GLFW 直接輪詢也沒有用：{@code shot-debug.txt}
+     * 裡從頭到尾只有 bind 那一行，一次都沒讀到按下。
+     *
+     * <p>{@code ScreenKeyboardEvents} 是<b>每個畫面各自</b>的事件，必須在
+     * {@code ScreenEvents.AFTER_INIT} 裡對那個畫面註冊——之前註冊在全域，
+     * 所以什麼都收不到。這一版按畫面註冊。
+     *
+     * <p>比對用 {@link KeyMapping#matches}，玩家改綁一樣有效。
+     */
+    public static void listen() {
+        net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.AFTER_INIT.register(
+                (client, screen, width, height) ->
+                        net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents
+                                .afterKeyPress(screen).register((s, keyEvent) -> {
+                                    if (bound == null || !bound.matches(keyEvent)) {
+                                        return;
+                                    }
+                                    log("畫面鍵盤事件：收到截圖鍵（"
+                                            + screen.getClass().getSimpleName() + "）");
+                                    request();
+                                }));
+        log("listen：已掛上畫面鍵盤事件");
     }
 
-    private static boolean warnedBinding = false;
-
     public static void tick() {
-        Minecraft mc = Minecraft.getInstance();
-        if (mc != null) {
-            pollWhileScreenOpen(mc);
-        }
         if (!pending) {
             return;
         }
