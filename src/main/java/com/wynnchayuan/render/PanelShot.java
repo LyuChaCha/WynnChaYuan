@@ -234,9 +234,25 @@ public final class PanelShot {
         return clean.length() > 60 ? clean.substring(0, 60) : clean;
     }
 
+    /**
+     * 說一聲。
+     *
+     * <p>一定要丟回<b>主執行緒</b>。抓畫面是非同步的，回呼跑在算繪執行緒上，
+     * 在那裡呼叫 {@code displayClientMessage} 不會顯示——使用者按了鍵、
+     * 檔案也存好了，畫面上卻什麼都沒發生。第一版就是這樣。
+     *
+     * <p>順便發一個快門聲。Wynncraft 的聊天欄常常在刷，一行字很容易被沖掉，
+     * 但聲音不會。
+     */
     private static void tell(Component message) {
         Minecraft mc = Minecraft.getInstance();
-        if (mc != null && mc.player != null) {
+        if (mc != null) {
+            mc.execute(() -> say(mc, message));
+        }
+    }
+
+    private static void say(Minecraft mc, Component message) {
+        if (mc.player != null) {
             mc.player.displayClientMessage(
                     Component.literal("[").withStyle(ChatFormatting.DARK_GRAY)
                             .append(Component.literal(WynnChaYuan.MOD_NAME)
@@ -244,6 +260,8 @@ public final class PanelShot {
                             .append(Component.literal("] ")
                                     .withStyle(ChatFormatting.DARK_GRAY))
                             .append(message), false);
+            mc.player.playSound(
+                    net.minecraft.sounds.SoundEvents.UI_BUTTON_CLICK.value(), 1f, 1f);
         }
     }
 }

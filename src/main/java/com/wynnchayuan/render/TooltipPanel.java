@@ -104,12 +104,24 @@ public final class TooltipPanel {
         // 記下這一塊在哪，截圖才知道要裁哪裡。名字取自譯文第一行——
         // 那通常就是物品名稱，當檔名剛好。
         String title = lines.isEmpty() ? null : lines.get(0).getString();
-        PanelShot.note(x, y, panelW, panelH, title);
+        // 截圖要框住的是<b>整個 tooltip</b>，包含它自己的底色與框線。
+        // Minecraft 的 tooltip 從 (x, y) 開始畫文字，底色往外多 3px，
+        // 所以左上角要退 4px、寬高各多留一點，否則圖的四邊會缺一條。
+        PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
+                panelW + SHOT_MARGIN, panelH + SHOT_MARGIN, title);
         // 自動模式的判別依據是<b>整份內容</b>而不是標題：同名的裝備會因為
         // 詞條不同而有不同的譯文，只看標題會只拍到第一件。
         PanelShot.auto(String.join("\n",
                 lines.stream().map(Component::getString).toList()));
     }
+
+    /**
+     * 截圖往外多框幾個像素。
+     *
+     * <p>Minecraft 的 tooltip 底色比文字區往外多 3px，框線再多 1px。
+     * 只框文字區的話，拍出來的圖四邊都缺一條，看起來像被裁壞了。
+     */
+    private static final int SHOT_MARGIN = 4;
 
     /** 原樣採用呼叫端算好的座標。 */
     private static final ClientTooltipPositioner EXACT =
