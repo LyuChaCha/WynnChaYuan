@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 22089,
-  "translated": 4771,
+  "translated": 4891,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -89771,7 +89771,7 @@
   },
   "Kingdom of Sand#000": {
    "src": "Talk to Junes at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "跟 [{~1}, {~2}, -{~3}] 的 Junes 說話",
    "role": "desc",
    "kind": "objective",
    "quest": "Kingdom of Sand",
@@ -89781,7 +89781,7 @@
   },
   "Kingdom of Sand#001": {
    "src": "A {p} soldier! I imagine you're here to investigate the tomb up the hill?",
-   "dst": "",
+   "dst": "{p} 的士兵！我猜你是來調查山上那座陵墓的吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89791,7 +89791,7 @@
   },
   "Kingdom of Sand#002": {
    "src": "It's believed to house the remains of Prince Hashr, the son of the old Desert Emperor, but it's far too dangerous for me to explore personally.",
-   "dst": "",
+   "dst": "一般認為那裡安放著 Prince Hashr 的遺骸——老 Desert Emperor 的兒子——不過對我來說太危險了，我不敢親自進去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89801,7 +89801,7 @@
   },
   "Kingdom of Sand#003": {
    "src": "Instead I've been looking into a related legend - the Emperor's Sceptre.",
-   "dst": "",
+   "dst": "所以我改去追查一個相關的傳說——Emperor's Sceptre。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89811,7 +89811,7 @@
   },
   "Kingdom of Sand#004": {
    "src": "It was the source of his power, and potentially one of the most important artifacts in history.",
-   "dst": "",
+   "dst": "那是他力量的來源，也可能是歷史上最重要的遺物之一。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89821,7 +89821,7 @@
   },
   "Kingdom of Sand#005": {
    "src": "When the Emperor was slain by his son, Hashr, it is said that the sceptre was lost amongst the raging sandstorm that followed.",
-   "dst": "",
+   "dst": "皇帝被他兒子 Hashr 殺死之後，據說權杖就消失在隨之而來的狂暴沙暴裡了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89831,7 +89831,7 @@
   },
   "Kingdom of Sand#006": {
    "src": "... Until now. I believe I have been able to trace its possession to a nearby group of bandits. They probably have no idea what they're sitting on.",
-   "dst": "",
+   "dst": "……直到現在。我相信我已經追查到它落在附近一群強盜手上。他們大概根本不知道自己坐擁什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89841,7 +89841,7 @@
   },
   "Kingdom of Sand#007": {
    "src": "I'm not prepared to confront them myself, but... this artifact belongs in a museum, in the hands of careful and respectful researchers.",
-   "dst": "",
+   "dst": "我沒有把握親自去跟他們對峙，可是……這件遺物該進博物館，交到謹慎而敬重它的研究者手裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89851,7 +89851,7 @@
   },
   "Kingdom of Sand#008": {
    "src": "I would be in your debt if you could try to retrieve it, for the sake of history.",
-   "dst": "",
+   "dst": "如果你願意試著把它取回來，為了歷史，我會欠你一個人情。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89861,7 +89861,7 @@
   },
   "Kingdom of Sand#009": {
    "src": "Attempt to enter the bandit hideout at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "嘗試進入 [{~1}, {~2}, -{~3}] 的強盜藏身處。",
    "role": "desc",
    "kind": "objective",
    "quest": "Kingdom of Sand",
@@ -89871,7 +89871,7 @@
   },
   "Kingdom of Sand#010": {
    "src": "What, wanna enter the hideout?",
-   "dst": "",
+   "dst": "怎樣，想進藏身處？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89881,7 +89881,7 @@
   },
   "Kingdom of Sand#011": {
    "src": "Even if yer a crooked soldier, we can't jus let yer in.",
-   "dst": "",
+   "dst": "就算你是個歪掉的兵，我們也不能隨便放你進去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89891,7 +89891,7 @@
   },
   "Kingdom of Sand#012": {
    "src": "That is, unless yer got the password?",
-   "dst": "",
+   "dst": "除非——你知道通關密語？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89901,7 +89901,7 @@
   },
   "Kingdom of Sand#013": {
    "src": "Didn’t think so. Now get lost, wasted enough of my t-",
-   "dst": "",
+   "dst": "我就知道。快滾吧，浪費我夠多時——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89911,7 +89911,7 @@
   },
   "Kingdom of Sand#014": {
    "src": "Now would you look at that... Even soldiers think they can waltz in ere.",
-   "dst": "",
+   "dst": "喔喲，你看看這個……連當兵的都覺得自己可以大搖大擺走進來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89921,7 +89921,7 @@
   },
   "Kingdom of Sand#015": {
    "src": "Having fun thinking of a password? Sorry to spoil your lunch, but there isn’t one!",
-   "dst": "",
+   "dst": "想密語想得開心嗎？很抱歉掃你的興，根本沒有密語這種東西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89931,7 +89931,7 @@
   },
   "Kingdom of Sand#016": {
    "src": "We could use a few more officials on the roster.",
-   "dst": "",
+   "dst": "我們名單上倒是可以再多幾個當官的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89941,7 +89941,7 @@
   },
   "Kingdom of Sand#017": {
    "src": "If yer are on the liberal side of the law, talk to us outside.",
-   "dst": "",
+   "dst": "如果你站在律法比較寬鬆的那一邊，出來外面跟我們談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89951,7 +89951,7 @@
   },
   "Kingdom of Sand#018": {
    "src": "Meet with Geo & Tarek at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 跟 Geo 和 Tarek 碰面。",
    "role": "desc",
    "kind": "objective",
    "quest": "Kingdom of Sand",
@@ -89961,7 +89961,7 @@
   },
   "Kingdom of Sand#019": {
    "src": "Looks like yer in. Look, there ain't a password cause we're meant to be the best thieves in the land, right?",
-   "dst": "",
+   "dst": "看來你有意思。聽著，沒有密語是因為我們可是這塊土地上最厲害的賊，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89971,7 +89971,7 @@
   },
   "Kingdom of Sand#020": {
    "src": "So what good are words? Yer gotta give the guard somethin' stolen, aintcha!",
-   "dst": "",
+   "dst": "那講幾句話有什麼用？你得拿「偷來的東西」給守衛看啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89981,7 +89981,7 @@
   },
   "Kingdom of Sand#021": {
    "src": "And we just so happen to have the opportunity of a lifetime for you. {p} has gone soft see, a new Mayor is cleaning things up.",
-   "dst": "",
+   "dst": "而我們手上剛好有個千載難逢的機會給你。{p} 最近軟了，新來的鎮長正在整頓。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -89991,7 +89991,7 @@
   },
   "Kingdom of Sand#022": {
    "src": "Well, we can't have government not under our control. {p} will always be bandit capital.",
-   "dst": "",
+   "dst": "我們可不能讓政府脫離掌控。{p} 永遠都得是強盜之都。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90001,7 +90001,7 @@
   },
   "Kingdom of Sand#023": {
    "src": "So how about we give him a taste of his own medicine, and get hold of that journal he keeps? I'm sure that’ll dig up some dirt on him.",
-   "dst": "",
+   "dst": "所以不如以其人之道還治其人之身，把他寫的那本日誌弄到手？我保證那能挖出不少他的爛帳。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90011,7 +90011,7 @@
   },
   "Kingdom of Sand#024": {
    "src": "And by \"we\", we mean you. You'll have to sneak through the mansion and avoid guards.",
-   "dst": "",
+   "dst": "而所謂的「我們」，指的是你。你得溜進宅邸、避開守衛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90021,7 +90021,7 @@
   },
   "Kingdom of Sand#025": {
    "src": "He keeps his journal in the highest room. Might need to distract some guards too. It's the biggest mansion in {p}, can't miss it.",
-   "dst": "",
+   "dst": "他把日誌放在最高的那個房間。可能還得引開幾個守衛。那是 {p} 最大的宅邸，你不會找不到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90031,7 +90031,7 @@
   },
   "Kingdom of Sand#026": {
    "src": "Sneak into the highest room of the {p} Mansion at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "潛入 [{~1}, {~2}, -{~3}] 的 {p} Mansion 最高層房間。",
    "role": "desc",
    "kind": "objective",
    "quest": "Kingdom of Sand",
@@ -90041,7 +90041,7 @@
   },
   "Kingdom of Sand#027": {
    "src": "Arh, there's the thief I saw a-sneakin' round the Mansion! Get them!",
-   "dst": "",
+   "dst": "啊哈，就是這個賊在宅邸附近鬼鬼祟祟！抓住他！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90051,7 +90051,7 @@
   },
   "Kingdom of Sand#028": {
    "src": "Yer know you could get kicked out of the army fer this.",
-   "dst": "",
+   "dst": "你知道嗎，幹這種事是會被踢出軍隊的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90061,7 +90061,7 @@
   },
   "Kingdom of Sand#029": {
    "src": "Heh, guess yer the real thing. Hop in, lets get out of ‘ere.",
-   "dst": "",
+   "dst": "呵，看來你是玩真的。上車吧，我們離開這裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90071,7 +90071,7 @@
   },
   "Kingdom of Sand#030": {
    "src": "That journal is more valuable than any gem, you'll be able to get in fer sure.",
-   "dst": "",
+   "dst": "那本日誌比任何寶石都值錢，你這下鐵定進得去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90081,7 +90081,7 @@
   },
   "Kingdom of Sand#031": {
    "src": "Bring the journal from the {p} Mansion to the Vault Guard to enter the hideout.",
-   "dst": "",
+   "dst": "把 {p} Mansion 的日誌帶去給 Vault Guard，換取進入藏身處。",
    "role": "desc",
    "kind": "objective",
    "quest": "Kingdom of Sand",
@@ -90091,7 +90091,7 @@
   },
   "Kingdom of Sand#032": {
    "src": "Off we go!",
-   "dst": "",
+   "dst": "出發！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90101,7 +90101,7 @@
   },
   "Kingdom of Sand#033": {
    "src": "Password?",
-   "dst": "",
+   "dst": "密語？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90111,7 +90111,7 @@
   },
   "Kingdom of Sand#034": {
    "src": "Oh, this is quite the password, \"soldier\". I think this will do nicely, on you go.",
-   "dst": "",
+   "dst": "喔，這密語可真夠份量，「士兵」。我看這樣就很好，進去吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90121,7 +90121,7 @@
   },
   "Kingdom of Sand#035": {
    "src": "Look for the sceptre within the bandit hideout at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [{~1}, {~2}, -{~3}] 的強盜藏身處裡尋找權杖。",
    "role": "desc",
    "kind": "objective",
    "quest": "Kingdom of Sand",
@@ -90131,7 +90131,7 @@
   },
   "Kingdom of Sand#036": {
    "src": "Right, then, you lot. Give me your reports.",
-   "dst": "",
+   "dst": "好了，你們幾個。把報告交上來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90141,7 +90141,7 @@
   },
   "Kingdom of Sand#037": {
    "src": "Gold relieved from Mesa travellers last week counted just over {~} bars.",
-   "dst": "",
+   "dst": "上禮拜從 Mesa 旅人身上「取得」的黃金，數出來剛好超過 {~} 條。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90151,7 +90151,7 @@
   },
   "Kingdom of Sand#038": {
    "src": "Good, good. And?",
-   "dst": "",
+   "dst": "很好，很好。還有呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90161,7 +90161,7 @@
   },
   "Kingdom of Sand#039": {
    "src": "We're working on exposing that blasted {p} Mayor with a stolen journal. {p} should be back under Creden Tibus control within the week.",
-   "dst": "",
+   "dst": "我們正在用偷來的日誌把那個該死的 {p} 鎮長搞下台。一週之內 {p} 就會重新回到 Creden Tibus 手上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90171,7 +90171,7 @@
   },
   "Kingdom of Sand#040": {
    "src": "Fine work. Anything else?",
-   "dst": "",
+   "dst": "幹得漂亮。還有別的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90181,7 +90181,7 @@
   },
   "Kingdom of Sand#041": {
    "src": "Well... someone's been hanging around the old tomb. An archaeologist, looks like. I reckon she's lookin' for the sceptre.",
-   "dst": "",
+   "dst": "呃……有人一直在那座老陵墓附近晃。看起來是個考古學家。我猜她在找那支權杖。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90191,7 +90191,7 @@
   },
   "Kingdom of Sand#042": {
    "src": "Ah... that sceptre's too valuable for us to lose. Maybe we pay 'er a visit, persuade her to... stop lookin'.",
-   "dst": "",
+   "dst": "啊……那支權杖太值錢了，不能弄丟。也許我們該去拜訪她一下，說服她……別再找了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90201,7 +90201,7 @@
   },
   "Kingdom of Sand#043": {
    "src": "Right you are, boss. Good thing no one will think to look for it in that broken cart by the river, ey?!",
-   "dst": "",
+   "dst": "沒錯，老大。還好沒人會想到去河邊那台壞掉的推車裡找它，對吧？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90211,7 +90211,7 @@
   },
   "Kingdom of Sand#044": {
    "src": "Shut it, you fool! What did I just say? Anyway, I'll decide what to do with this archaeologist. Dismissed!",
-   "dst": "",
+   "dst": "閉嘴，你這個蠢貨！我剛剛說什麼？算了，這個考古學家怎麼處理我自己決定。解散！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90221,7 +90221,7 @@
   },
   "Kingdom of Sand#045": {
    "src": "Search the broken cart at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "搜查 [{~1}, {~2}, -{~3}] 那台壞掉的推車。",
    "role": "desc",
    "kind": "objective",
    "quest": "Kingdom of Sand",
@@ -90231,7 +90231,7 @@
   },
   "Kingdom of Sand#046": {
    "src": "I knew someone was listening.",
-   "dst": "",
+   "dst": "我就知道有人在偷聽。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90241,7 +90241,7 @@
   },
   "Kingdom of Sand#047": {
    "src": "We might be bandits, but we’re not stupid. That sceptre is left better off alone.",
-   "dst": "",
+   "dst": "我們是強盜沒錯，但我們不笨。那支權杖最好別去碰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90251,7 +90251,7 @@
   },
   "Kingdom of Sand#048": {
    "src": "Get ‘em!",
-   "dst": "",
+   "dst": "上！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90261,7 +90261,7 @@
   },
   "Kingdom of Sand#049": {
    "src": "Search the abandoned house at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "搜查 [{~1}, {~2}, -{~3}] 的廢棄屋。",
    "role": "desc",
    "kind": "objective",
    "quest": "Kingdom of Sand",
@@ -90271,7 +90271,7 @@
   },
   "Kingdom of Sand#050": {
    "src": "Return to the tomb and give Junes the sceptre at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到陵墓，把權杖交給 [{~1}, {~2}, -{~3}] 的 Junes。",
    "role": "desc",
    "kind": "objective",
    "quest": "Kingdom of Sand",
@@ -90281,7 +90281,7 @@
   },
   "Kingdom of Sand#051": {
    "src": "Ah, {u}. I couldn't help myself - I simply had to see the tomb up close.",
-   "dst": "",
+   "dst": "啊，{u}。我實在忍不住——非得靠近看看這座陵墓不可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90291,7 +90291,7 @@
   },
   "Kingdom of Sand#052": {
    "src": "You have no idea how tempted I am to go inside, but I doubt I'd make it out alive.",
-   "dst": "",
+   "dst": "你不知道我有多想進去，可是我懷疑自己出不來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90301,7 +90301,7 @@
   },
   "Kingdom of Sand#053": {
    "src": "You... you found the sceptre? Oh! This is incredible! I can't believe it!",
-   "dst": "",
+   "dst": "你……你找到權杖了？噢！這太不可思議了！我簡直不敢相信！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90311,7 +90311,7 @@
   },
   "Kingdom of Sand#054": {
    "src": "This artifact, it witnessed the rise and fall of the Empire, thousands of years ago. And you've just been... holding it, without gloves...",
-   "dst": "",
+   "dst": "這件遺物，它見證了幾千年前那個帝國的興起與衰亡。而你剛剛就這樣……徒手拿著它，連手套都沒戴……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90321,7 +90321,7 @@
   },
   "Kingdom of Sand#055": {
    "src": "Under the circumstances, I think I can let that slide. But the things I could learn from studying it...",
-   "dst": "",
+   "dst": "在這種情況下，我想我可以睜一隻眼閉一隻眼。可是光是研究它我能學到的東西……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90331,7 +90331,7 @@
   },
   "Kingdom of Sand#056": {
    "src": "I should get to {p} right away. Thank you, {u}. You have my eternal gratitude.",
-   "dst": "",
+   "dst": "我該立刻趕去 {p}。謝謝你，{u}。我永遠感激你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90341,7 +90341,7 @@
   },
   "Kingdom of Sand#057": {
    "src": "Are you thinking of exploring the tomb? I'm sure you can learn so much about the Empire... but you best be careful.",
-   "dst": "",
+   "dst": "你打算去探那座陵墓嗎？我相信你能從裡面學到很多關於帝國的事……不過你最好小心一點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90351,7 +90351,7 @@
   },
   "Kingdom of Sand#058": {
    "src": "There are nasty legends of what it holds. Silverfish, skeletons... even Prince Hashr himself. Make sure to gear up!",
-   "dst": "",
+   "dst": "關於裡面有什麼，傳說可不好聽。蠹蟲、骷髏……甚至 Prince Hashr 本人。裝備一定要備齊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -90361,7 +90361,7 @@
   },
   "Kingdom of Sand#059": {
    "src": "I have little to offer you for your help, but please accept these emeralds, and a fossil bone I found around here.",
-   "dst": "",
+   "dst": "你幫了這麼大的忙，我卻沒什麼能回報，但請收下這些綠寶石，還有我在這附近撿到的一塊化石骨頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Kingdom of Sand",
@@ -108261,7 +108261,7 @@
   },
   "Out of my Mind#000": {
    "src": "Speak with the {p} children in the treehouse.",
-   "dst": "",
+   "dst": "在樹屋跟 {p} 的孩子們說話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -108271,7 +108271,7 @@
   },
   "Out of my Mind#001": {
    "src": "Did ye two hear about some guy wandering around town? I've heard strange rumours about him...",
-   "dst": "",
+   "dst": "你們兩個有沒有聽說有個傢伙在鎮上到處晃？我聽到一些關於他的怪傳聞……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108281,7 +108281,7 @@
   },
   "Out of my Mind#002": {
    "src": "Of course I have, he's the talk of the town! I heard he only brushes his teeth once a day and that he enjoys books about gardening!",
-   "dst": "",
+   "dst": "當然聽過啦，他可是全鎮的話題！我聽說他一天只刷一次牙，而且他喜歡看園藝的書！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108291,7 +108291,7 @@
   },
   "Out of my Mind#003": {
    "src": "I don't know, you guys, all these rumors seem a little far-fetched. What next? Will he suddenly turn out to be a mad scientist?",
-   "dst": "",
+   "dst": "我不知道耶，你們，這些謠言聽起來都有點太扯了。下一步是什麼？他會突然變成一個瘋狂科學家嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108301,7 +108301,7 @@
   },
   "Out of my Mind#004": {
    "src": "Oh shush you, we're not living inside some storybook! Besides, if he *was* a mad scientist, wouldn't he be trying to take over the city like all mad scientists in stories do?",
-   "dst": "",
+   "dst": "噓，安靜點，我們又不是活在故事書裡！何況他要「真的」是瘋狂科學家，不是應該像故事裡那樣想佔領整座城市嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108311,7 +108311,7 @@
   },
   "Out of my Mind#005": {
    "src": "To me that doesn't sound all that strange compared to these other things I've been hearing, anyway... Something about labs and a \"hermit\".",
-   "dst": "",
+   "dst": "跟我聽到的其他事情比起來，那對我來說一點都不奇怪……好像還有什麼實驗室，還有一個「隱士」。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108321,7 +108321,7 @@
   },
   "Out of my Mind#006": {
    "src": "I think that's a type of crab or something. Adults are right old weirdos sometimes.",
-   "dst": "",
+   "dst": "我覺得那是一種螃蟹之類的吧。大人有時候真的怪得可以。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108331,7 +108331,7 @@
   },
   "Out of my Mind#007": {
    "src": "Hey, a stranger! How long have you been listening to us? Didn't your mom teach you any manners?",
-   "dst": "",
+   "dst": "喂，陌生人！你偷聽我們多久了？你媽沒教過你禮貌嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108341,7 +108341,7 @@
   },
   "Out of my Mind#008": {
    "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
-   "dst": "",
+   "dst": "等等 Viola，這是我們的機會！這個陌生人看起來什麼都應付得來，連邪惡的寄居蟹都不怕！我們可以直接請他去看看這些傳聞是不是真的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108351,7 +108351,7 @@
   },
   "Out of my Mind#009": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
-   "dst": "",
+   "dst": "別理那邊那兩個，他們一直都這樣，不過 Prentiss 說得沒錯。這可能是我們唯一能弄清楚那個神祕男人到底是誰的機會！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108361,7 +108361,7 @@
   },
   "Out of my Mind#010": {
    "src": "It might be a good idea to look at that weird house next to those spooky ruins just south-east of the city. We found this key you could try out, but if you lose it there are some spares in our base.",
-   "dst": "",
+   "dst": "也許可以去看看城市東南方那片陰森廢墟旁邊那間怪房子。我們撿到這把鑰匙，你可以試試看，弄丟的話我們基地還有備份。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108371,7 +108371,7 @@
   },
   "Out of my Mind#011": {
    "src": "Find the hidden door next to the gate near the Undergrowth Ruins outside {p}",
-   "dst": "",
+   "dst": "在 {p} 城外 Undergrowth Ruins 附近的門旁找到那道隱藏的門",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -108381,7 +108381,7 @@
   },
   "Out of my Mind#012": {
    "src": "Find a way inside the house at [-{~},-{~}]",
-   "dst": "",
+   "dst": "找出進入 [-{~1},-{~2}] 那間房子的方法",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -108391,7 +108391,7 @@
   },
   "Out of my Mind#013": {
    "src": "Explore the hidden lab in search of information",
-   "dst": "",
+   "dst": "探索隱藏的實驗室，尋找線索",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -108401,7 +108401,7 @@
   },
   "Out of my Mind#014": {
    "src": "Hello stranger! Welcome to my humble wooden abode. Comfy, isn't it? I bet you'd like a cup of this coff-",
-   "dst": "",
+   "dst": "你好啊陌生人！歡迎來到我這間簡陋的木屋。很舒服吧？我猜你一定想來一杯這個咖——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108411,7 +108411,7 @@
   },
   "Out of my Mind#015": {
    "src": "Oh yes, I am the affable Ariodo, friendly neighbourhood neighbour. What do you need me for?",
-   "dst": "",
+   "dst": "喔對了，我就是那個和藹可親的 Ariodo，友善的鄰家鄰居。你找我有什麼事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108421,7 +108421,7 @@
   },
   "Out of my Mind#016": {
    "src": "Kidnappings? Poaching? Not brushing my teeth?! Who is the lowly person you're talking about... they don't seem like a nice fellow such as myself.",
-   "dst": "",
+   "dst": "綁架？盜獵？沒刷牙？！你說的那個下流坯子是誰啊……聽起來可不像我這麼好的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108431,7 +108431,7 @@
   },
   "Out of my Mind#017": {
    "src": "Lets go, I'll take you to the exit so that I don't waste your time any longer!",
-   "dst": "",
+   "dst": "走吧，我帶你去出口，就不再耽誤你的時間了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108441,7 +108441,7 @@
   },
   "Out of my Mind#018": {
    "src": "This is the room you came from. I call it the \"Vivarium\", creative name I came up with, right? It keeps my pets that aren't quite ready.",
-   "dst": "",
+   "dst": "這是你剛剛來的那個房間。我叫它「Vivarium」，這名字我自己想的，很有創意吧？裡面養著那些還沒準備好的寵物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108451,7 +108451,7 @@
   },
   "Out of my Mind#019": {
    "src": "Ready for what? Well that would ruin the surprise, wouldn't it? Can't have anyone finding out before the big event!",
-   "dst": "",
+   "dst": "準備好做什麼？那說出來不就破梗了嗎？可不能讓人在大日子之前就發現。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108461,7 +108461,7 @@
   },
   "Out of my Mind#020": {
    "src": "Let us go now, time is precious.",
-   "dst": "",
+   "dst": "我們走吧，時間很寶貴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108471,7 +108471,7 @@
   },
   "Out of my Mind#021": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
-   "dst": "",
+   "dst": "所以你一定在想，怎麼到現在才認識我這麼棒的一個人？老實說，你一定是運氣太差了，我以前可是環遊過世界的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108481,7 +108481,7 @@
   },
   "Out of my Mind#022": {
    "src": "Oh, the places I've been were wonderful! From the depths of the jungle to the lesser depths of the jungle to even my back garden, I've done my fair share of exploring, if I do say so myself!",
-   "dst": "",
+   "dst": "噢，我去過的地方都好精采！從叢林的最深處，到叢林沒那麼深的地方，甚至我家後院，探險這件事我可沒少做，這話我自己說也不怕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108491,7 +108491,7 @@
   },
   "Out of my Mind#023": {
    "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "",
+   "dst": "你是我最近見到的第一個正常人，{PlayerName}。我前陣子出門，被幾個非常沒禮貌的鎮民講了幾句非常沒禮貌的話！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108501,7 +108501,7 @@
   },
   "Out of my Mind#024": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even to hide from! Strange people.",
-   "dst": "",
+   "dst": "上一次我去鎮上的時候也是空蕩蕩的，但我感覺得到大家都躲在家裡，那天天氣還那麼好呢。根本沒有什麼好躲的啊！奇怪的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108511,7 +108511,7 @@
   },
   "Out of my Mind#025": {
    "src": "I'm just a normal guy, so why can't anyone appreciate me for once? I'm sure you do, right?",
-   "dst": "",
+   "dst": "我就是個普通人而已，為什麼就沒有人肯欣賞我一次呢？你一定會的，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108521,7 +108521,7 @@
   },
   "Out of my Mind#026": {
    "src": "Here we are, the library! I could spend years in here, but who has time for that? I could talk about books hours too! Here's one right now.",
-   "dst": "",
+   "dst": "到了，圖書室！我可以在這裡待上好幾年，不過誰有那個時間呢？我也可以聊書聊上好幾個小時！剛好這裡就有一本。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108531,7 +108531,7 @@
   },
   "Out of my Mind#027": {
    "src": "This is 'The Long-Winded and Painful Death of Sweeney S. Greenville' and I must say it is a hidden gem among books! One day it just suddenly appeared in here so I couldn't resist reading it. So it starts off with Sweeney S. Greenville...",
-   "dst": "",
+   "dst": "這本叫《Sweeney S. Greenville 冗長而痛苦的死亡》，我得說這是書堆裡的滄海遺珠！有一天它就這麼突然出現在這裡，我實在忍不住讀了下去。故事一開始是 Sweeney S. Greenville……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108541,7 +108541,7 @@
   },
   "Out of my Mind#028": {
    "src": "We're here now! Take the exit right in front of you, don't mind the corridor to the right, it's only decoration!",
-   "dst": "",
+   "dst": "我們到了！走你正前方那個出口，右邊那條走廊別管它，那只是裝飾！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108551,7 +108551,7 @@
   },
   "Out of my Mind#029": {
    "src": "Maybe you can come back some day for a tea or coffee and a long talk about books, since I noticed you were very interested in my long-winded review! Have fun out there and don't forget, I'm always here for you!",
-   "dst": "",
+   "dst": "改天再來喝杯茶或咖啡，好好聊聊書吧，我注意到你對我那段冗長的書評很有興趣！在外面玩得開心，別忘了，我永遠都在這裡等你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108561,7 +108561,7 @@
   },
   "Out of my Mind#030": {
    "src": "The ground is shaking... I thought that was supposed to happen later! Come back, friend, I can't do this alone!",
-   "dst": "",
+   "dst": "地在搖……我以為那應該要晚一點才發生的！回來啊朋友，我一個人應付不來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108571,7 +108571,7 @@
   },
   "Out of my Mind#031": {
    "src": "Build a machine to hit your head and get back to normal",
-   "dst": "",
+   "dst": "做一台機器敲自己的頭，讓自己恢復正常",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -108581,7 +108581,7 @@
   },
   "Out of my Mind#032": {
    "src": "Help me keep this door shut, or else my surprise will be ruined!",
-   "dst": "",
+   "dst": "幫我把這扇門頂住，不然我的驚喜就毀了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108591,7 +108591,7 @@
   },
   "Out of my Mind#033": {
    "src": "Just keep to the sides, it's safer that way.",
-   "dst": "",
+   "dst": "靠邊站就好，那樣比較安全。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108601,7 +108601,7 @@
   },
   "Out of my Mind#034": {
    "src": "Just stay here for one more momen...",
-   "dst": "",
+   "dst": "再待在這裡一下下就——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108611,7 +108611,7 @@
   },
   "Out of my Mind#035": {
    "src": "Oh my, a ghost? Wait, is this just you, my trusty friend, playing a prank on me? No? Well that certainly is a problem!",
-   "dst": "",
+   "dst": "我的天，鬼？等等，這該不會是你這位可靠的朋友在整我吧？不是？那這下真的麻煩了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108621,7 +108621,7 @@
   },
   "Out of my Mind#036": {
    "src": "If you remember, we were talking about keeping the door shut when suddenly something heavy fell off a shell hitting you square in the head!",
-   "dst": "",
+   "dst": "如果你還記得的話，我們剛才正說著要把門頂住，結果突然有個很重的東西從架子上掉下來，正中你的頭！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108631,7 +108631,7 @@
   },
   "Out of my Mind#037": {
    "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
-   "dst": "",
+   "dst": "我好像聽過什麼「以毒攻毒」，所以我想我有辦法讓你恢復！你對我來說有點太重了，所以我們得想個變通的辦法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108641,7 +108641,7 @@
   },
   "Out of my Mind#038": {
    "src": "During the shaking, some of my machines broke apart, but we could use these to build something capable of dropping someting heavier on your head for the second time.",
-   "dst": "",
+   "dst": "剛才搖晃的時候，我有幾台機器散掉了，不過我們可以用這些零件組出一台，能在你頭上再砸下更重的東西一次。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108651,7 +108651,7 @@
   },
   "Out of my Mind#039": {
    "src": "Surely by that logic everything has to go well, you know. Now let me explain how we can do this. First, choose what part you want to use to make our machine, then choose where you want it to go and face.",
-   "dst": "",
+   "dst": "照這個邏輯，一切一定會很順利的，你知道吧。現在讓我說明怎麼做。首先，選一個你要用的零件，然後選它要放在哪裡、面向哪邊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108661,7 +108661,7 @@
   },
   "Out of my Mind#040": {
    "src": "The [Cart] can carry the coconut from one end of the platform to another for a few tiles, while the [Fan] can push the coconut even further.",
-   "dst": "",
+   "dst": "[Cart] 可以把椰子從平台的一端載到另一端，走幾格；[Fan] 則可以把椰子吹得更遠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108671,7 +108671,7 @@
   },
   "Out of my Mind#041": {
    "src": "The [Hammer] is able to knock the coconut over a one space gap while the [Cannon] can shoot the coconut one grid up diagonally in the direction it is facing.",
-   "dst": "",
+   "dst": "[Hammer] 能把椰子敲過一格的空隙，而 [Cannon] 可以把椰子朝它面對的方向斜射高一格。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108681,7 +108681,7 @@
   },
   "Out of my Mind#042": {
    "src": "I think I hit my head too, so I'll need your help deciding where to place each part. You want to get the coconut across to the green tile, remember?",
-   "dst": "",
+   "dst": "我好像也撞到頭了，所以每個零件放哪裡得靠你決定。記得，目標是把椰子送到綠色的格子上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108691,7 +108691,7 @@
   },
   "Out of my Mind#043": {
    "src": "You're back! To be quite honest, I didn't think that would work, but I'm glad it did!",
-   "dst": "",
+   "dst": "你回來了！老實說我沒想到那真的會有用，不過成功了我很高興！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108701,7 +108701,7 @@
   },
   "Out of my Mind#044": {
    "src": "Quick, head through the large door and stop the cause of all this shaking!",
-   "dst": "",
+   "dst": "快，穿過那扇大門，去阻止這一切搖晃的源頭！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108711,7 +108711,7 @@
   },
   "Out of my Mind#045": {
    "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "",
+   "dst": "想辦法消滅那隻植物怪物，然後回到 [-{~1},-{~2}] 的 {p} 向大家回報你的發現",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -108721,7 +108721,7 @@
   },
   "Out of my Mind#046": {
    "src": "Oh no no, this is not good! If I had known that my little pet has grown so much I would have rushed you out sooner. Now it is wilted...",
-   "dst": "",
+   "dst": "噢不不不，這樣不行！要是我早知道我的小寵物長這麼大，我就會早點把你送出去了。現在它枯掉了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108731,7 +108731,7 @@
   },
   "Out of my Mind#047": {
    "src": "You did what you had to, though. I am sorry to say this friend, but I think I'll stay inside a little longer. Sorry, my only friend.",
-   "dst": "",
+   "dst": "不過你做了你該做的事。朋友，我很遺憾要這麼說，但我想我會在裡面再多待一陣子。抱歉了，我唯一的朋友。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108741,7 +108741,7 @@
   },
   "Out of my Mind#048": {
    "src": "We'll surely meet again in the future, so don't be sad. I'll still be the one and only friendly neighbourhood neighbour when that moment comes, I promise. Goodbye now!",
-   "dst": "",
+   "dst": "我們將來一定會再見的，所以別難過。到那時候，我依然會是那個獨一無二、友善的鄰家鄰居，我保證。再見啦！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108751,7 +108751,7 @@
   },
   "Out of my Mind#049": {
    "src": "You're back! You were gone for ages too, and what happened to your head? Who did the mystery man turn out to be?",
-   "dst": "",
+   "dst": "你回來了！而且去了好久，你的頭是怎麼了？那個神祕男人到底是誰？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108761,7 +108761,7 @@
   },
   "Out of my Mind#050": {
    "src": "That sounds ridiculous! Who could ever belie-",
-   "dst": "",
+   "dst": "那聽起來太荒謬了！誰會相——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108771,7 +108771,7 @@
   },
   "Out of my Mind#051": {
    "src": "Wow that sounded just like in the stories, but it came from you, so it must be true!",
-   "dst": "",
+   "dst": "哇，那聽起來就跟故事裡一樣，可是是從你口中說出來的，那就一定是真的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108781,7 +108781,7 @@
   },
   "Out of my Mind#052": {
    "src": "I don't know about you, Todd, but I fell like we should make them our honorary club member for finding such amazing things!",
-   "dst": "",
+   "dst": "Todd，我不知道你怎麼想，但我覺得應該讓他當我們的榮譽社員，畢竟他發現了這麼了不起的事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108791,7 +108791,7 @@
   },
   "Out of my Mind#053": {
    "src": "Why do I even try... You two would believe anything.",
-   "dst": "",
+   "dst": "我到底為什麼還要努力……你們兩個什麼都信。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108801,7 +108801,7 @@
   },
   "Out of my Mind#054": {
    "src": "I'm pretty sure they mentioned something about being hit by coconut crabs, and just look at their head. One... two... two huge bumps!",
-   "dst": "",
+   "dst": "我很確定他們提到被椰子蟹砸到什麼的，你看看他們的頭。一個……兩個……兩個大包！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108811,7 +108811,7 @@
   },
   "Out of my Mind#055": {
    "src": "Oh fine... whatever you say, Prentiss. I'm sure they'll bring you on some wacky adventures next time around!",
-   "dst": "",
+   "dst": "好啦好啦……隨便你怎麼說，Prentiss。我相信他們下次一定會帶你去什麼亂七八糟的冒險！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108821,7 +108821,7 @@
   },
   "Out of my Mind#056": {
    "src": "Ignore Viola, she's acting up today, probably because you're got the spotlight this time. However, I agree with Prentiss.",
-   "dst": "",
+   "dst": "別理 Viola，她今天鬧脾氣，大概是因為這次風頭被你搶走了。不過我同意 Prentiss 說的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108831,7 +108831,7 @@
   },
   "Out of my Mind#057": {
    "src": "Thanks to you, we solved the case of the mystery man as well as the mystery house! For this I'd like to...",
-   "dst": "",
+   "dst": "多虧了你，我們把神祕男人的案子還有神祕房子的案子一起破了！為此我想要……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108841,7 +108841,7 @@
   },
   "Out of my Mind#058": {
    "src": "Welcome you to the club, new member! Here is your shiny new badge that you can parade around town to show off how cool you are to the other with style.",
-   "dst": "",
+   "dst": "歡迎加入社團，新社員！這是你亮晶晶的新徽章，你可以戴著在鎮上到處走，很有style地讓大家看看你有多酷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108851,7 +108851,7 @@
   },
   "Out of my Mind#059": {
    "src": "Also since all the adults do it, we'll give you some emeralds that you rightly deserve for such an achievement. We all pitched in!",
-   "dst": "",
+   "dst": "還有，既然大人都這麼做，我們也要給你一些綠寶石，這是你憑本事拿到的獎勵。大家都出了一份！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",

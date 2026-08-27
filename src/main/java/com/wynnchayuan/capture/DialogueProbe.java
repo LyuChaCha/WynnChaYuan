@@ -160,7 +160,7 @@ public final class DialogueProbe {
     public static void record(Component message) {
         justWrote = false;
         if (dir == null || written >= LIMIT || message == null
-                || !WynnChaYuan.config().collect() || !hasBodyText(message)) {
+                || !WynnChaYuan.config().debugDumps() || !hasBodyText(message)) {
             return;
         }
         // 同一句話的每一個字都會送一次。比的是<b>台詞本身</b>的長度，

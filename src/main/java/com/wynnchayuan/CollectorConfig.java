@@ -86,6 +86,19 @@ public final class CollectorConfig {
     private boolean collect = true;
 
     /**
+     * 是否寫出診斷檔。
+     *
+     * <p><b>預設關閉。</b>那些檔案是拿來回報問題用的——對排查很有用，
+     * 但一般玩家的 config 資料夾不該被十幾個 txt 洗版。要回報問題時打開，
+     * 重現一次，把 config 資料夾裡的檔案附上就好。
+     *
+     * <p>跟「收集未翻譯字串」是兩件事：那個是<b>語料</b>（缺哪些句子要翻），
+     * 這個是<b>診斷</b>（已經翻了但畫面上不對）。先前兩者共用同一個開關，
+     * 於是想幫忙收集語料的人會一併收到一整包診斷檔。
+     */
+    private boolean debugDumps = false;
+
+    /**
      * 是否連介面 tooltip 也收集（公會選單、任務書、製作台…）。
      *
      * <p>預設關閉：裝備與技能已有官方資料，一直掃背包只會把真正缺的
@@ -228,6 +241,10 @@ public final class CollectorConfig {
 
     public boolean collect() {
         return collect;
+    }
+
+    public boolean debugDumps() {
+        return debugDumps;
     }
 
     public boolean translateNametags() {
@@ -613,6 +630,12 @@ public final class CollectorConfig {
         return collect;
     }
 
+    public boolean toggleDebugDumps() {
+        debugDumps = !debugDumps;
+        save();
+        return debugDumps;
+    }
+
 
 
     private void load() {
@@ -642,6 +665,9 @@ public final class CollectorConfig {
             }
             if (o.has("collect")) {
                 collect = o.get("collect").getAsBoolean();
+            }
+            if (o.has("debugDumps")) {
+                debugDumps = o.get("debugDumps").getAsBoolean();
             }
             if (o.has("collectGuiText")) {
                 collectGuiText = o.get("collectGuiText").getAsBoolean();
@@ -720,6 +746,7 @@ public final class CollectorConfig {
             o.addProperty("showOverlays", showOverlays);
             o.addProperty("collect", collect);
             o.addProperty("source", source.name());
+            o.addProperty("debugDumps", debugDumps);
             o.addProperty("collectGuiText", collectGuiText);
             o.addProperty("translateNametags", translateNametags);
             o.addProperty("nametagMode", nametagMode.name());

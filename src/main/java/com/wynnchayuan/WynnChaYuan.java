@@ -78,13 +78,23 @@ public final class WynnChaYuan implements ClientModInitializer {
         configDir = dir;
         store = new CaptureStore(dir.resolve("captured.json"));
         config = new CollectorConfig(dir.resolve("config.json"));
-        com.wynnchayuan.render.TooltipDebug.init(dir.resolve("tooltip-debug.json"));
-        com.wynnchayuan.render.Boxes.init(dir.resolve("overlay-debug.txt"));
         com.wynnchayuan.render.ThirdPartySections.load(dir);
-        com.wynnchayuan.translate.LineDebug.init(dir.resolve("line-debug.txt"));
-        com.wynnchayuan.translate.LayoutDebug.init(dir.resolve("layout-debug.txt"));
-        com.wynnchayuan.translate.FlowedDebug.init(dir);
-        com.wynnchayuan.capture.DialogueProbe.init(dir);
+        // 診斷檔預設不寫。
+        //
+        // 每一支寫檔的程式都是「沒 init 過就什麼都不做」，所以只要在這裡
+        // 不呼叫 init，整包診斷檔就一個都不會出現——不必在十幾個地方各加
+        // 一個判斷，也不會漏掉哪一支。要回報問題的人在 F6 裡打開再重進遊戲。
+        //
+        // ErrorDebug 不在此列：它只在真的丟例外時寫，是當機紀錄不是洗版，
+        // 而那正是最需要留下來的東西。
+        if (config.debugDumps()) {
+            com.wynnchayuan.render.TooltipDebug.init(dir.resolve("tooltip-debug.json"));
+            com.wynnchayuan.render.Boxes.init(dir.resolve("overlay-debug.txt"));
+            com.wynnchayuan.translate.LineDebug.init(dir.resolve("line-debug.txt"));
+            com.wynnchayuan.translate.LayoutDebug.init(dir.resolve("layout-debug.txt"));
+            com.wynnchayuan.translate.FlowedDebug.init(dir);
+            com.wynnchayuan.capture.DialogueProbe.init(dir);
+        }
         com.wynnchayuan.translate.ErrorDebug.into(dir);
 
         // 譯文放在 config/wynnchayuan/translations/ 下，格式與 corpus/workspace 相同，
