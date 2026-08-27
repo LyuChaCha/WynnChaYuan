@@ -157,6 +157,65 @@ public final class DialogueProbe {
                 cp >= 0x20 && cp < 0x7F && !Character.isWhitespace(cp));
     }
 
+    /**
+     * 換不掉的那些訊息，另外留位子。
+     *
+     * <h2>為什麼需要跟 {@link #record} 分開</h2>
+     * {@code record} 的八個名額是先到先得，而玩家一進遊戲就會先跟 NPC 講一段話——
+     * 那段話把八個名額全吃光，真正翻不出來的那則訊息（任務開始）連一次都錄不到。
+     * 連續四次回報都是這樣：附了八份 probe，八份全是同一段對話。
+     *
+     * <p>這裡只收<b>改寫失敗</b>的訊息，而且同一則訊息一直覆寫同一個檔案——
+     * 逐字打字的每一幀都會進來，最後留在檔案裡的自然是打完的那一幀，
+     * 也就是最有診斷價值的那一幀。
+     */
+    public static void miss(Component message) {
+        if (dir == null || message == null
+                || !WynnChaYuan.config().debugDumps() || !hasBodyText(message)) {
+            return;
+        }
+        String body = bodyOf(message);
+        if (body.isBlank()) {
+            return;
+        }
+        // 同一則訊息的開頭是固定的，用它認出「還是那一則」
+        String key = body.substring(0, Math.min(8, body.length()));
+        if (!key.equals(missKey)) {
+            if (misses >= MISS_LIMIT) {
+                return;
+            }
+            missKey = key;
+            misses++;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("=== 改寫失敗（getString） ===").append(System.lineSeparator())
+          .append(message.getString()).append(System.lineSeparator())
+          .append(System.lineSeparator())
+          .append("=== 逐片段 ===").append(System.lineSeparator());
+        int[] index = {0};
+        message.visit((style, text) -> {
+            sb.append(String.format("  [%02d] font=%-38s color=%-9s text=%s%n",
+                    index[0]++, fontOf(style),
+                    style.getColor() == null ? "-" : style.getColor().serialize(),
+                    describe(text)));
+            return Optional.empty();
+        }, Style.EMPTY);
+
+        try {
+            Files.writeString(dir.resolve("dialogue-miss-" + misses + ".txt"),
+                    sb.toString(), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            // 寫不出來就算了，不要影響遊戲
+        }
+    }
+
+    /** 改寫失敗的訊息最多留幾則。 */
+    private static final int MISS_LIMIT = 4;
+
+    private static int misses = 0;
+    private static String missKey = "";
+
     public static void record(Component message) {
         justWrote = false;
         if (dir == null || written >= LIMIT || message == null
