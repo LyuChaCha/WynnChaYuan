@@ -81,10 +81,18 @@ public final class PanelShot {
     private PanelShot() {}
 
     public static void request() {
-        if (WynnChaYuan.config().shotMode() != com.wynnchayuan.CollectorConfig
+        if (WynnChaYuan.config().shotMode() == com.wynnchayuan.CollectorConfig
                 .ShotMode.OFF) {
-            pending = true;
+            return;
         }
+        pending = true;
+        // 立刻回一句。
+        //
+        // 「按了沒反應」有兩種完全不同的原因：按鍵根本沒被讀到，或者讀到了
+        // 但後面某一步失敗。從畫面上分不出來，而分不出來就只能一直猜。
+        // 先在收到按鍵的當下說一聲，後面每一步失敗也各自說——
+        // 這樣使用者回報「停在哪一句」就等於告訴我卡在哪一步。
+        tell(Component.literal("拍照中…").withStyle(ChatFormatting.GRAY));
     }
 
     /**
@@ -187,9 +195,20 @@ public final class PanelShot {
             mc.execute(() -> {
                 if (auto) {
                     save(cropped, name);
-                } else {
+                    return;
+                }
+                try {
                     mc.setScreen(new com.wynnchayuan.client.ShotScreen(
                             cropped, name, mc.screen));
+                } catch (Throwable t) {
+                    // 面板開不起來時<b>還是要把圖留下</b>，而且要說原因。
+                    // 先前這裡沒有退路：面板開失敗＝什麼都沒發生。
+                    com.wynnchayuan.translate.ErrorDebug.note(
+                            "shot.screen", name, t);
+                    tell(Component.literal("面板開不起來（" + t.getClass()
+                            .getSimpleName() + "），改成直接存檔")
+                            .withStyle(ChatFormatting.YELLOW));
+                    save(cropped, name);
                 }
             });
         });
