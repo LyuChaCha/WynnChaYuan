@@ -145,10 +145,24 @@ public final class WynnChaYuan implements ClientModInitializer {
         // tooltip 面板要在整個畫面畫完之後才畫，否則會被原始 tooltip 蓋掉。
         // Wynntils 的 ItemTooltipRenderEvent.Post 從來沒被發送過，用不了，
         // 所以改掛 Fabric 的螢幕事件。
-        ScreenEvents.AFTER_INIT.register((client, screen, w, h) ->
-                ScreenEvents.afterRender(screen).register(
-                        (s, graphics, mx, my, delta) ->
-                                RenderListener.renderAfterScreen(graphics, mx, my)));
+        ScreenEvents.AFTER_INIT.register((client, screen, w, h) -> {
+            ScreenEvents.afterRender(screen).register(
+                    (s, graphics, mx, my, delta) ->
+                            RenderListener.renderAfterScreen(graphics, mx, my));
+            // 畫面開著時的按鍵要另外接。
+            //
+            // KeyMapping.consumeClick() 只有在<b>沒有畫面</b>時才會有事件——
+            // Minecraft 的鍵位佇列是在 handleKeybinds() 裡餵的，而那只在
+            // screen == null 時跑。所以「開著背包、滑鼠停在物品上按 F8」
+            // 永遠不會被讀到，而那正好是最需要拍照的時刻。
+            net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents
+                    .afterKeyPress(screen)
+                    .register((s, keyEvent) -> {
+                        if (screenshotKey.matches(keyEvent)) {
+                            com.wynnchayuan.render.PanelShot.request();
+                        }
+                    });
+        });
         HudElementRegistry.addLast(
                 net.minecraft.resources.Identifier.fromNamespaceAndPath(MOD_ID, "dialogue"),
                 (graphics, tickCounter) -> RenderListener.renderHud(graphics));

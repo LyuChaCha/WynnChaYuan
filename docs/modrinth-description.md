@@ -2,11 +2,30 @@
   <img src="https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/docs/icon.png" width="180" alt="WynnChaYuan">
 </p>
 
-# WynnChaYuan · Traditional Chinese for Wynncraft
+# WynnChaYuan · Wynncraft translation mod
 
 **Summary field (English, required by Modrinth):**
 
-> Traditional Chinese (zh-TW) translation for Wynncraft — shown beside the original text, not replacing it. Requires Wynntils.
+> Wynncraft translation mod — shown beside the original text, not replacing it. Traditional Chinese now, seven languages open. Requires Wynntils.
+
+---
+
+## What it does
+
+| | |
+|---|---|
+| **Item tooltips** | A translation panel beside the tooltip — or written into the tooltip itself, your choice |
+| **NPC dialogue** | Translated **inside Wynncraft's own dialogue box**, keeping its frame, nameplate and portrait |
+| **NPC nameplates** | A small box under the crosshair while you look at one |
+| **Quest tracker** | A translated box on the left |
+| **Ability tree** | Every node, description and archetype |
+| **Screenshots** | `F8` captures the translation panel — copy to clipboard or save to a file |
+| **Bundled CJK font** | Ships with Cubic 11, a pixel font that matches Minecraft's look; switchable |
+
+**Seven languages have a folder.** Traditional Chinese is ~30% done; Simplified
+Chinese, Japanese, Russian, Spanish, Korean, German and French are open and
+waiting for translators. A language with nothing in it is not shipped and does
+not appear in the language list.
 
 ---
 
