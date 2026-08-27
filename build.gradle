@@ -66,6 +66,31 @@ processResources {
     filesMatching("fabric.mod.json") {
         expand "version": project.version
     }
+
+    // 一條譯文都沒有的語言不打進 jar。
+    //
+    // 新語言剛開的時候是一份空骨架：結構完整、原文齊全、譯文全空。那是給
+    // 翻譯的人用的，從 repo 拿就好；打進 jar 對玩家沒有任何用處，卻要他
+    // 多下載一份完整的原文——實測三種空語言讓 jar 從 3.0MB 變成 9.5MB。
+    //
+    // 要打哪幾種以 _languages.json 為準，那份由 tools/update-docs.py 產生，
+    // 只列有譯文的語言。這裡不自己再判斷一次：兩邊各判一次，遲早會出現
+    // 「清單說有、jar 裡卻沒有」那種很難查的狀況。
+    def manifest = file(
+        'src/main/resources/assets/wynnchayuan/translations/_languages.json')
+    if (manifest.exists()) {
+        def shipped = new groovy.json.JsonSlurper()
+                .parse(manifest)['languages'] as Set
+        inputs.property 'shippedLanguages', shipped.toSorted().join(',')
+        def root = file('src/main/resources/assets/wynnchayuan/translations')
+        root.listFiles()?.each { dir ->
+            if (dir.directory && !shipped.contains(dir.name)) {
+                exclude "assets/wynnchayuan/translations/${dir.name}/**"
+                logger.lifecycle(
+                    "[WynnChaYuan] ${dir.name} 還沒有譯文，不打進 jar")
+            }
+        }
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {

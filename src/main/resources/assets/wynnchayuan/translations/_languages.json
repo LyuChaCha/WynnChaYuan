@@ -1,9 +1,6 @@
 {
- "_note": "打包了哪些語言。由 tools/update-docs.py 依實際資料夾產生，不要手改。新增一種語言：複製 zh_tw/ 成新的語言代碼資料夾，把所有 dst 清空，再跑一次這支工具。",
+ "_note": "打包了哪些語言。由 tools/update-docs.py 產生，不要手改。一條譯文都沒有的語言不會列進來，也不會打進 jar——空骨架是給翻譯的人用的，玩家不需要多下載一份原文。新增一種語言請跑 tools/new-language.py。",
  "languages": [
-  "ja_jp",
-  "ru_ru",
-  "zh_cn",
   "zh_tw"
  ]
 }
