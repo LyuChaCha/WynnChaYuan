@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 22089,
-  "translated": 4207,
+  "translated": 4411,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -4460,7 +4460,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#010": {
-   "src": "And we both keep telling you why you're wrong. This is , we've worked together before.",
+   "src": "And we both keep telling you why you're wrong. This is {u}, we've worked together before.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -4940,7 +4940,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#058": {
-   "src": ", come with me! Cast a spell to block the cave's entrance so the monster can't leave.",
+   "src": "{u}, come with me! Cast a spell to block the cave's entrance so the monster can't leave.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -5060,7 +5060,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#070": {
-   "src": ", I've written the house's coordinates on your book. Meet us there.",
+   "src": "{u}, I've written the house's coordinates on your book. Meet us there.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -5260,7 +5260,7 @@
    "source": "wiki"
   },
   "A Journey Beyond#090": {
-   "src": "Alright. Aledar, you get the darkness item with , and I'll go get the Light item with Lucio.",
+   "src": "Alright. Aledar, you get the darkness item with {u}, and I'll go get the Light item with Lucio.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -6791,7 +6791,7 @@
   },
   "A Journey Further#000": {
    "src": "Talk to Aledar in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 {p} 跟 Aledar 說話，座標 [{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -6801,7 +6801,7 @@
   },
   "A Journey Further#001": {
    "src": "Alright, let’s go. I’ll tell you more about our journey on the way.",
-   "dst": "",
+   "dst": "好，走吧。路上我再多跟你說說這趟任務的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6811,7 +6811,7 @@
   },
   "A Journey Further#002": {
    "src": "Continue your journey with Aledar.",
-   "dst": "",
+   "dst": "跟著 Aledar 繼續前進。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -6821,7 +6821,7 @@
   },
   "A Journey Further#003": {
    "src": "We should try to follow the path as closely as we can. You lead, I'll follow.",
-   "dst": "",
+   "dst": "我們盡量沿著這條路走。你帶頭，我跟著。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6831,7 +6831,7 @@
   },
   "A Journey Further#004": {
    "src": "Follow the Path.",
-   "dst": "",
+   "dst": "沿著路走。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -6841,7 +6841,7 @@
   },
   "A Journey Further#005": {
    "src": "Stop! Did you hear that?",
-   "dst": "",
+   "dst": "等等！你有聽到嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6851,7 +6851,7 @@
   },
   "A Journey Further#006": {
    "src": "It’s an ambush! Stay sharp, {u}!",
-   "dst": "",
+   "dst": "是埋伏！打起精神，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6861,7 +6861,7 @@
   },
   "A Journey Further#007": {
    "src": "Defeat the Parasitic Slimers.",
-   "dst": "",
+   "dst": "擊敗 Parasitic Slimer。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -6871,7 +6871,7 @@
   },
   "A Journey Further#008": {
    "src": "Good work. Seems that killing the king made the other creatures run off. We’re lucky about that-",
-   "dst": "",
+   "dst": "幹得好。看樣子首領一死，其他東西就跑光了。這算我們走運——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6880,8 +6880,8 @@
    "source": "wiki"
   },
   "A Journey Further#009": {
-   "src": "Wait, , what's going on? Are you alright?",
-   "dst": "",
+   "src": "Wait, {u}, what's going on? Are you alright?",
+   "dst": "等等，{u}，怎麼回事？你還好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6891,7 +6891,7 @@
   },
   "A Journey Further#010": {
    "src": "Oh, no no! I have a potion for this, where is it, where is it, aha! Here, drink!",
-   "dst": "",
+   "dst": "噢，不不不！我有藥水可以治這個，放哪去了、放哪去了，啊哈！來，喝下去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6901,7 +6901,7 @@
   },
   "A Journey Further#011": {
    "src": "One of those things must have infected your wounds... Everything in this area looks completely hazardous and sickening.",
-   "dst": "",
+   "dst": "一定是那些東西感染了你的傷口……這一帶的東西看起來全都又毒又髒。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6911,7 +6911,7 @@
   },
   "A Journey Further#012": {
    "src": "I expected the worst, so I tried to bring anything and everything that might help. Let's keep moving.",
-   "dst": "",
+   "dst": "我早就做了最壞的打算，所以能帶的東西我全帶上了。繼續走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6921,7 +6921,7 @@
   },
   "A Journey Further#013": {
    "src": "Continue on the main path with Aledar.",
-   "dst": "",
+   "dst": "跟著 Aledar 沿主路前進。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -6931,7 +6931,7 @@
   },
   "A Journey Further#014": {
    "src": "LOOK OUT!",
-   "dst": "",
+   "dst": "小心！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6940,8 +6940,8 @@
    "source": "wiki"
   },
   "A Journey Further#015": {
-   "src": ", a-agh...you're okay, right?",
-   "dst": "",
+   "src": "{u}, a-agh...you're okay, right?",
+   "dst": "{u}，啊——啊……你沒事吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6951,7 +6951,7 @@
   },
   "A Journey Further#016": {
    "src": "I'm... I'm going to lead us for now. At least for a little...while... I can't have you g-getting-",
-   "dst": "",
+   "dst": "我……我先帶路吧。至少撐一……一段路……我不能讓你再受——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6961,7 +6961,7 @@
   },
   "A Journey Further#017": {
    "src": "GAH!! AAAGH!",
-   "dst": "",
+   "dst": "咳啊！！啊啊啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6971,7 +6971,7 @@
   },
   "A Journey Further#018": {
    "src": "...urgh... I...sorry. I just... I need a moment.",
-   "dst": "",
+   "dst": "……唔……我……抱歉。我只是……需要緩一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6980,8 +6980,8 @@
    "source": "wiki"
   },
   "A Journey Further#019": {
-   "src": ", you just... you have to realize, I can't have you getting hurt.",
-   "dst": "",
+   "src": "{u}, you just... you have to realize, I can't have you getting hurt.",
+   "dst": "{u}，你要明白，我不能讓你受傷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -6991,7 +6991,7 @@
   },
   "A Journey Further#020": {
    "src": "I want to stress this... We NEED to get to the end of this path, together.",
-   "dst": "",
+   "dst": "我要把話講清楚……我們必須一起走到這條路的盡頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7001,7 +7001,7 @@
   },
   "A Journey Further#021": {
    "src": "Hrk... Ugh, dizzy...",
-   "dst": "",
+   "dst": "唔……啊，好暈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7011,7 +7011,7 @@
   },
   "A Journey Further#022": {
    "src": "Okay. I'm as good as I can get right now. Let's move.",
-   "dst": "",
+   "dst": "好了。我現在能好的就這樣了。走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7021,7 +7021,7 @@
   },
   "A Journey Further#023": {
    "src": "Ah? What... What just... Why do I...",
-   "dst": "",
+   "dst": "啊？什麼……剛剛那是……我怎麼會……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7031,7 +7031,7 @@
   },
   "A Journey Further#024": {
    "src": "I'll be fine, I just...why did I feel so empty all of the sudden... ?",
-   "dst": "",
+   "dst": "我沒事，只是……為什麼突然覺得整個人空了一塊……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7041,7 +7041,7 @@
   },
   "A Journey Further#025": {
    "src": "Oh no, I think something is coming... {u}! Fight it off, I don't think I can defend myself right now!",
-   "dst": "",
+   "dst": "糟了，好像有東西過來了……{u}！你擋一下，我現在連自己都護不住！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7051,7 +7051,7 @@
   },
   "A Journey Further#026": {
    "src": "Defend Aledar from the Radiated Spiders.",
-   "dst": "",
+   "dst": "保護 Aledar，擊退 Radiated Spider。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -7061,7 +7061,7 @@
   },
   "A Journey Further#027": {
    "src": "Huff... Not feeling totally better, but... At least I can still defend myself.",
-   "dst": "",
+   "dst": "呼……還沒完全恢復，不過……至少我還能自保。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7071,7 +7071,7 @@
   },
   "A Journey Further#028": {
    "src": "My stomach is empty, I can't even vomit... Why so I still feel so dizzy? Maybe a potion will help...",
-   "dst": "",
+   "dst": "胃裡空空的，想吐都吐不出來……為什麼還是這麼暈？也許喝點藥水會好一些……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7081,7 +7081,7 @@
   },
   "A Journey Further#029": {
    "src": "Hm. No, not that one...",
-   "dst": "",
+   "dst": "唔。不對，不是這瓶……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7091,7 +7091,7 @@
   },
   "A Journey Further#030": {
    "src": "Urgh, pfft! My vomit tasted better than that coming up...",
-   "dst": "",
+   "dst": "嘔，呸！這味道比我吐出來的還難喝……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7101,7 +7101,7 @@
   },
   "A Journey Further#031": {
    "src": "Hah...that's the ticket. Which potion was this anyways... ... hair loss treatment? Why did THAT work?",
-   "dst": "",
+   "dst": "哈……這瓶對了。話說回來這到底是什麼藥水……生髮水？這東西為什麼會有效？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7111,7 +7111,7 @@
   },
   "A Journey Further#032": {
    "src": "Though, you saw what happened to that beast I attacked? Follow me.",
-   "dst": "",
+   "dst": "對了，你剛剛看到我打飛的那隻怪物怎麼了嗎？跟我來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7121,7 +7121,7 @@
   },
   "A Journey Further#033": {
    "src": "This, from what I recall of the mission statements, is referred to as a \"Void Hole.\" It's a sort of portal.",
-   "dst": "",
+   "dst": "照我記得的任務簡報，這東西叫「Void Hole」，是一種傳送門。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7131,7 +7131,7 @@
   },
   "A Journey Further#034": {
    "src": "They connect to each other in odd ways, but we saw the beast come out of that one when I knocked it in, so...",
-   "dst": "",
+   "dst": "它們彼此之間連接的方式很怪，不過我把那隻怪物打進去之後，牠是從那一頭出來的，所以——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7141,7 +7141,7 @@
   },
   "A Journey Further#035": {
    "src": "Watch. I'll come out the other side.",
-   "dst": "",
+   "dst": "看好。我會從另一頭出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7151,7 +7151,7 @@
   },
   "A Journey Further#036": {
    "src": "Alright, good! It does connect up consistently, at least. You try now.",
-   "dst": "",
+   "dst": "好，很好！至少連接的位置是固定的。換你試試。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7161,7 +7161,7 @@
   },
   "A Journey Further#037": {
    "src": "Jump into the void hole.",
-   "dst": "",
+   "dst": "跳進 Void Hole。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -7171,7 +7171,7 @@
   },
   "A Journey Further#038": {
    "src": "Continue on the trail with Aledar.",
-   "dst": "",
+   "dst": "跟著 Aledar 沿小徑前進。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -7181,7 +7181,7 @@
   },
   "A Journey Further#039": {
    "src": "I bring this up because if we're seeing one, we'll be seeing more soon. You'll need to adjust yourself to the sight of them.",
-   "dst": "",
+   "dst": "我會提這件事，是因為既然看到了一個，接下來一定還會看到更多。你得先習慣它們的樣子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7191,7 +7191,7 @@
   },
   "A Journey Further#040": {
    "src": "You lead again, please.",
-   "dst": "",
+   "dst": "麻煩你再帶一次路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7201,7 +7201,7 @@
   },
   "A Journey Further#041": {
    "src": "We grossly underestimated the difficulties we would have here. And, by that, I mean myself, Elphie, and Lucio did...",
-   "dst": "",
+   "dst": "我們嚴重低估了這裡的難度。而且我說的「我們」，是指我、Elphie 和 Lucio……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7211,7 +7211,7 @@
   },
   "A Journey Further#042": {
    "src": "We were each unprepared and cocky. If it weren't for you, I'd be dead now, for what it's worth.",
-   "dst": "",
+   "dst": "我們每一個都準備不足又自以為是。要不是有你，我現在早就死了，這話我說得出口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7221,7 +7221,7 @@
   },
   "A Journey Further#043": {
    "src": "I wasn't certain at first about you coming along, but you've more than shown you were the right one for the job.",
-   "dst": "",
+   "dst": "一開始我對你同行這件事沒什麼把握，但你已經證明得夠多了——這趟就該是你來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7231,7 +7231,7 @@
   },
   "A Journey Further#044": {
    "src": "...I had to figure this map was outdated. This wall of spikes isn't listed on it, and the path goes through here!",
-   "dst": "",
+   "dst": "……我早該想到這張地圖過時了。上面根本沒標這道尖刺牆，而路就是從這裡穿過去的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7241,7 +7241,7 @@
   },
   "A Journey Further#045": {
    "src": "I'll have to assume they're new...and if they're new, I might be able to bash through them.",
-   "dst": "",
+   "dst": "只能當作是新長出來的……既然是新的，也許我能把它砸開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7250,8 +7250,8 @@
    "source": "wiki"
   },
   "A Journey Further#046": {
-   "src": ", try throwing a spell at the same time! Let's crack through these things!",
-   "dst": "",
+   "src": "{u}, try throwing a spell at the same time! Let's crack through these things!",
+   "dst": "{u}，你同時丟一個法術過來！我們把這些東西轟破！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7261,7 +7261,7 @@
   },
   "A Journey Further#047": {
    "src": "Ok, {~}... {~}... {~}...!",
-   "dst": "",
+   "dst": "好，{~1}……{~2}……{~3}……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7271,7 +7271,7 @@
   },
   "A Journey Further#048": {
    "src": "...aagh... I... H-how are these so resilient...?",
-   "dst": "",
+   "dst": "……啊啊……我……這、這些東西怎麼會這麼硬……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7281,7 +7281,7 @@
   },
   "A Journey Further#049": {
    "src": "I'm an idiot... I nearly killed myself trying that. I nearly ruined the mission...",
-   "dst": "",
+   "dst": "我真是個白痴……剛剛差點把自己弄死。差點毀了整個任務……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7291,7 +7291,7 @@
   },
   "A Journey Further#050": {
    "src": "I'm sorry, but you'll have to go without me. I can't move another step for now.",
-   "dst": "",
+   "dst": "抱歉，接下來你得自己走了。我現在連一步都動不了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7301,7 +7301,7 @@
   },
   "A Journey Further#051": {
    "src": "There's a lot of void holes around here, remember my warning... You can probably get past these spikes with one.",
-   "dst": "",
+   "dst": "這一帶有很多 Void Hole，記得我剛才說的……你大概可以靠它繞到尖刺後面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7311,7 +7311,7 @@
   },
   "A Journey Further#052": {
    "src": "If I'd been thinking I would have suggested it earlier... Once you're past, we'll... uh. We'll do something.",
-   "dst": "",
+   "dst": "我要是早點想到就好了……等你過去之後，我們再……呃。再想辦法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7321,7 +7321,7 @@
   },
   "A Journey Further#053": {
    "src": "Just...be careful where you go. The void holes could lead anywhere. They might lead you someplace very, very dangerous, too dangerous even for you. I pray they won't...",
-   "dst": "",
+   "dst": "只是……小心你要去的地方。Void Hole 可能通往任何地方，也可能把你送到非常、非常危險的地方，危險到連你都應付不來。我只能祈禱不會……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7331,7 +7331,7 @@
   },
   "A Journey Further#054": {
    "src": "There's a void hole right there to try out first. Get going, now. You have to do this.",
-   "dst": "",
+   "dst": "那邊就有一個 Void Hole，先拿它試試。快去吧。這件事非你不可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7341,7 +7341,7 @@
   },
   "A Journey Further#055": {
    "src": "Use Void Holes to try and get behind the spike barrier",
-   "dst": "",
+   "dst": "利用 Void Hole 設法繞到尖刺屏障後方",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -7351,7 +7351,7 @@
   },
   "A Journey Further#056": {
    "src": "Find a way to help Aledar get to the other side of the spike barrier.",
-   "dst": "",
+   "dst": "想辦法幫 Aledar 到尖刺屏障的另一邊。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -7361,7 +7361,7 @@
   },
   "A Journey Further#057": {
    "src": "...wait, {u}? You got to the other side then...? Good...",
-   "dst": "",
+   "dst": "……等等，{u}？你已經到另一邊了……？太好了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7371,7 +7371,7 @@
   },
   "A Journey Further#058": {
    "src": "I don't know what you did, but whatever it was, it's made cracks in the spikes that I can see from this side.",
-   "dst": "",
+   "dst": "我不知道你做了什麼，但不管是什麼，尖刺上出現的裂痕從這一側都看得見。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7381,7 +7381,7 @@
   },
   "A Journey Further#059": {
    "src": "I've got some of my energy back...let's try spellcasting again. If we do it at the same time, we might make some headway.",
-   "dst": "",
+   "dst": "我恢復了一點力氣……再試一次法術吧。如果我們同時施法，也許能打開一個缺口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7391,7 +7391,7 @@
   },
   "A Journey Further#060": {
    "src": "I won't crack my skull open on the spikes again though. Promise.",
-   "dst": "",
+   "dst": "這次我不會再拿頭去撞尖刺了。我保證。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7401,7 +7401,7 @@
   },
   "A Journey Further#061": {
    "src": "You lead. I'll cast my spell as soon as I hear yours.",
-   "dst": "",
+   "dst": "你先動手。我一聽到你的法術就跟上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7411,7 +7411,7 @@
   },
   "A Journey Further#062": {
    "src": "Thank god it worked... That's our destination there, the Eldritch Outlook.",
-   "dst": "",
+   "dst": "謝天謝地，成功了……那裡就是我們的目的地，Eldritch Outlook。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7421,7 +7421,7 @@
   },
   "A Journey Further#063": {
    "src": "Now comes the hardest part... Come along. I'll need you there for it.",
-   "dst": "",
+   "dst": "最難的部分來了……跟我來。這一段我需要你在場。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7431,7 +7431,7 @@
   },
   "A Journey Further#064": {
    "src": "That blade there...it's made for sacrifice. See how that gate is shut?",
-   "dst": "",
+   "dst": "那邊那把劍……是用來獻祭的。看到那道門是關著的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7441,7 +7441,7 @@
   },
   "A Journey Further#065": {
    "src": "In order to open the doors to the Outlook, we need to sacrifice a powerful soul.",
-   "dst": "",
+   "dst": "要打開通往 Outlook 的門，我們得獻祭一個強大的靈魂。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7451,7 +7451,7 @@
   },
   "A Journey Further#066": {
    "src": "We... we should have told you from the start. You and Lucio. Elphie and I, we knew. We knew this would be here.",
-   "dst": "",
+   "dst": "我們……我們一開始就該告訴你的。你和 Lucio 都不知道。Elphie 和我知道。我們早就知道這裡有這個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7461,7 +7461,7 @@
   },
   "A Journey Further#067": {
    "src": "We didn't have... we didn't have a sacrifice in mind. We decided that it would be best decided once we reached that point. And I think we both knew it would have to be one of us.",
-   "dst": "",
+   "dst": "我們沒有……我們心裡沒有預定的人選。我們說好等真的走到這一步再決定。而我想我們兩個都清楚，最後一定是我們其中一個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7471,7 +7471,7 @@
   },
   "A Journey Further#068": {
    "src": "...I think she would have insisted it be her. Even though both of us had something we would be le...",
-   "dst": "",
+   "dst": "……我想她會堅持由她來。即使我們兩個都還有放不下的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7481,7 +7481,7 @@
   },
   "A Journey Further#069": {
    "src": "It doesn't matter now. It's just us left. And I've been mulling it over since we got to the town... you'll sacrifice me. I won't take no for an answer.",
-   "dst": "",
+   "dst": "現在說這些也沒意義了。只剩我們了。從進到那座鎮上開始我就一直在想這件事……由你來獻祭我。這件事我不接受拒絕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7491,7 +7491,7 @@
   },
   "A Journey Further#070": {
    "src": "I mean... look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
-   "dst": "",
+   "dst": "你看看我現在這副樣子，{u}！我已經站在鬼門關前了，而你早就證明自己遠比全盛時期的我還強。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7501,7 +7501,7 @@
   },
   "A Journey Further#071": {
    "src": "Here. You can take everything I had on me. My emeralds, and the key to the dungeon. I certainly won't be able to use them anymore.",
-   "dst": "",
+   "dst": "拿去。我身上的東西你全帶走。我的綠寶石，還有地城的鑰匙。反正我也用不到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7511,7 +7511,7 @@
   },
   "A Journey Further#072": {
    "src": "Upon the top of the tower is... Well, something. We don't know for certain what it is, but it will prevent you from passing through.",
-   "dst": "",
+   "dst": "塔頂上有……嗯，某個東西。我們不確定那究竟是什麼，但它會擋住你的去路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7521,7 +7521,7 @@
   },
   "A Journey Further#073": {
    "src": "You'll have to kill it to break the barrier. But... find other soldiers who can help you. It will be impossible to defeat alone.",
-   "dst": "",
+   "dst": "你得殺了它才能破除屏障。不過……去找其他能幫你的士兵。一個人是打不贏的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7531,7 +7531,7 @@
   },
   "A Journey Further#074": {
    "src": "...no more putting it off, then. I'm bleeding out.",
-   "dst": "",
+   "dst": "……那就別再拖了。我血快流乾了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7541,7 +7541,7 @@
   },
   "A Journey Further#075": {
    "src": "Grab the blade, {u}.",
-   "dst": "",
+   "dst": "拿起那把劍，{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7551,7 +7551,7 @@
   },
   "A Journey Further#076": {
    "src": "Right click to grab the blade in the altar.",
-   "dst": "",
+   "dst": "右鍵拿起祭壇上的劍。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -7561,7 +7561,7 @@
   },
   "A Journey Further#077": {
    "src": "Now...strike me down. My soul will unlock the gate...",
-   "dst": "",
+   "dst": "現在……砍下來吧。我的靈魂會打開那道門……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7571,7 +7571,7 @@
   },
   "A Journey Further#078": {
    "src": "Sacrifice Aledar.",
-   "dst": "",
+   "dst": "獻祭 Aledar。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -7581,7 +7581,7 @@
   },
   "A Journey Further#079": {
    "src": "Agh... Don't worry...a-about me...",
-   "dst": "",
+   "dst": "啊……別……別管我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7591,7 +7591,7 @@
   },
   "A Journey Further#080": {
    "src": "You...can do this. I know y-you can.",
-   "dst": "",
+   "dst": "你……做得到的。我知道你、你可以。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7601,7 +7601,7 @@
   },
   "A Journey Further#081": {
    "src": "Gah... D-Destroy it...",
-   "dst": "",
+   "dst": "咳……去、去毀了它……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7611,7 +7611,7 @@
   },
   "A Journey Further#082": {
    "src": "The monster w-watching us...",
-   "dst": "",
+   "dst": "那隻一直在看著我們的怪物……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7621,7 +7621,7 @@
   },
   "A Journey Further#083": {
    "src": "AAAAGH!!",
-   "dst": "",
+   "dst": "啊啊啊啊！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7631,7 +7631,7 @@
   },
   "A Journey Further#084": {
    "src": "{~}px",
-   "dst": "",
+   "dst": "{~}px",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -7641,7 +7641,7 @@
   },
   "A Journey Home#000": {
    "src": "Investigate the Fruma Gate at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "調查 [-{~1}, {~2}, -{~3}] 的 Fruma Gate。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -7651,7 +7651,7 @@
   },
   "A Journey Home#001": {
    "src": "Explore near where you originally arrived in Wynn.",
-   "dst": "",
+   "dst": "在你當初抵達 Wynn 的地方附近探索。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -7661,7 +7661,7 @@
   },
   "A Journey Home#002": {
    "src": "Leave {p} through the door at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "從 [-{~1}, {~2}, -{~3}] 的門離開 {p}。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -7671,7 +7671,7 @@
   },
   "A Journey Home#003": {
    "src": "Continue back down the path to Fruma.",
-   "dst": "",
+   "dst": "沿著路走回 Fruma。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -7681,7 +7681,7 @@
   },
   "A Journey Home#004": {
    "src": "This job is impossible!! Why am I even here?!",
-   "dst": "",
+   "dst": "這活根本做不完！！我到底為什麼會在這裡？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7691,7 +7691,7 @@
   },
   "A Journey Home#005": {
    "src": "Ah! You're a soldier, right? Look, I It's, it's just a really difficult time right now.",
-   "dst": "",
+   "dst": "啊！你是士兵吧？聽我說，我——現在真的是非常難熬的時候。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7701,7 +7701,7 @@
   },
   "A Journey Home#006": {
    "src": "This, this whole situation is definitely above my paygrade! I don't know how I'm going to deal with this...",
-   "dst": "",
+   "dst": "這、這整件事絕對超出我的職權範圍了！我不知道該怎麼處理……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7711,7 +7711,7 @@
   },
   "A Journey Home#007": {
    "src": "Enough of that, I, ah, I suppose. What is it you need?",
-   "dst": "",
+   "dst": "算了，我、呃，我想也夠了。你需要什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7721,7 +7721,7 @@
   },
   "A Journey Home#008": {
    "src": "Oh. Oh no. Ah, I, you see, that'll be a problem, I think. What do you even need to do at the border anyway?",
-   "dst": "",
+   "dst": "噢。噢不。呃，我，你看，那恐怕會有點問題。話說回來，你去邊境到底要做什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7731,7 +7731,7 @@
   },
   "A Journey Home#009": {
    "src": "I can't really imagine what you could need there, but, whatever it is, it'll need to wait! This Corkian drill won't work, and Paxon's stuck, and",
-   "dst": "",
+   "dst": "我實在想不出你在那裡能有什麼事，但不管是什麼，都得等！這台 Corkian 鑽機不動了，Paxon 又困在裡面，還有——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7741,7 +7741,7 @@
   },
   "A Journey Home#010": {
    "src": "Look, I'm...I'm sorry for snapping at you. I'm trained for military operation, not for cave-in clearance, but no one else was available!",
-   "dst": "",
+   "dst": "抱歉，我……我不該對你發脾氣。我受的是軍事行動訓練，不是清塌方的訓練，可是沒有別人能來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7751,7 +7751,7 @@
   },
   "A Journey Home#011": {
    "src": "Even the demolitions expert I hired is stuck, so it's all just, it's all going wrong and I don't know what to do.",
-   "dst": "",
+   "dst": "連我雇來的爆破專家都困住了，所以事情全亂了，我根本不知道該怎麼辦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7761,7 +7761,7 @@
   },
   "A Journey Home#012": {
    "src": "You see that new entrance over there? The expert, Paxon, has been in there for almost as long as I was trying this dud machine.",
-   "dst": "",
+   "dst": "看到那邊那個新開的洞口了嗎？那位專家，Paxon，進去的時間差不多跟我搞這台廢鐵一樣久了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7771,7 +7771,7 @@
   },
   "A Journey Home#013": {
    "src": "If you think you can do a job better than an expert, go ahead and talk with them, but I'm pretty sure you'll have to cancel whatever plans you had.",
-   "dst": "",
+   "dst": "如果你覺得自己比專家更行，那就去跟他們談吧，不過我很確定你原本的計畫是得取消了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7781,7 +7781,7 @@
   },
   "A Journey Home#014": {
    "src": "Talk to the Demolition Mage at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟 Demolition Mage 說話，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -7791,7 +7791,7 @@
   },
   "A Journey Home#015": {
    "src": "If you really need to get to the border, your best bet is to talk to Paxon in the new cave entrance.",
-   "dst": "",
+   "dst": "如果你真的非去邊境不可，最好的辦法是去新洞口找 Paxon 談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7801,7 +7801,7 @@
   },
   "A Journey Home#016": {
    "src": "But, they're an expert, so I think your business will have to wait. Really, really sorry about all this!",
-   "dst": "",
+   "dst": "但他們是專家，所以我想你的事還是得等。這一切真的、真的很抱歉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7811,7 +7811,7 @@
   },
   "A Journey Home#017": {
    "src": "Oh no, not another one I don't care what rank you are, what you're asking is impossible! Even for me, it",
-   "dst": "",
+   "dst": "噢不，又來一個——我不管你是什麼階級，你要的事情根本辦不到！就算是我也——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7821,7 +7821,7 @@
   },
   "A Journey Home#018": {
    "src": "Wait, you aren't part of the... You're just a regular soldier. You're just trying to get through here, aren't you?",
-   "dst": "",
+   "dst": "等等，你不是那邊的……你只是個普通士兵。你只是想從這裡過去，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7831,7 +7831,7 @@
   },
   "A Journey Home#019": {
    "src": "May as well give up now! Not happening. No way. You're wasting your time, and let me tell you exactly why.",
-   "dst": "",
+   "dst": "現在放棄還來得及！不可能。門都沒有。你在浪費時間，我把原因一條條講給你聽。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7841,7 +7841,7 @@
   },
   "A Journey Home#020": {
    "src": "You see that blue rock over there? It's a break point. If I could set off explosives at it, it'd open a path.",
-   "dst": "",
+   "dst": "看到那邊那塊藍色的岩石了嗎？那是斷點。只要能在那裡引爆炸藥，就能炸出一條路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7851,7 +7851,7 @@
   },
   "A Journey Home#021": {
    "src": "But apparently all these structures set up are so important that any of it being damaged, or MOVED, is unacceptable!",
-   "dst": "",
+   "dst": "但這裡搭的每一個東西顯然都重要到不得了，只要有任何一樣被弄壞、或是被「移動」，就是不行！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7861,7 +7861,7 @@
   },
   "A Journey Home#022": {
    "src": "And to make sure I'm 'supervised' while the lieutenant is working on the drill, the detonator HAS to be here.",
-   "dst": "",
+   "dst": "而且為了在中尉忙著修鑽機的時候還能「監督」我，起爆器非得放在這裡不可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7871,7 +7871,7 @@
   },
   "A Journey Home#023": {
    "src": "So I have to daisy-chain a limited amount of explosives all the way over to the stone, without blasting any structures!",
-   "dst": "",
+   "dst": "所以我得用有限的炸藥一路串接到那塊石頭，中途還不能炸壞任何一個建物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7881,7 +7881,7 @@
   },
   "A Journey Home#024": {
    "src": "I've been trying for hours and gotten absolutely nowhere! I'm one of the best in my field, even! It's ridiculous!!",
-   "dst": "",
+   "dst": "我搞了好幾個小時，一點進展都沒有！我可是這行數一數二的人！這太荒謬了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7891,7 +7891,7 @@
   },
   "A Journey Home#025": {
    "src": "If you feel like wasting your time, here's my stock of explosives. Feel free to try your hand at it, but you really should just go.",
-   "dst": "",
+   "dst": "如果你想浪費時間，這是我的炸藥存貨。你儘管試，不過你真的該走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7901,7 +7901,7 @@
   },
   "A Journey Home#026": {
    "src": "Use the TNT to open up a path through the cave.",
-   "dst": "",
+   "dst": "用 TNT 在洞穴中炸出一條路。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -7911,7 +7911,7 @@
   },
   "A Journey Home#027": {
    "src": "Still at it? What, do you need a reminder? I've got nothing better to do.",
-   "dst": "",
+   "dst": "還在弄？怎麼，要我再講一次嗎？反正我也沒別的事做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7921,7 +7921,7 @@
   },
   "A Journey Home#028": {
    "src": "So the blue rock is soft enough to crack with the explosives. But the detonator's stuck here.",
-   "dst": "",
+   "dst": "藍色的岩石夠脆，炸藥可以炸開。但起爆器卡在這裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7931,7 +7931,7 @@
   },
   "A Journey Home#029": {
    "src": "So we need to use the TNT Placer to daisy-chain blasts from the detonator, without blasting any tents, crates, or walls.",
-   "dst": "",
+   "dst": "所以我們得用 TNT Placer 從起爆器一路串接爆炸，而且不能炸到任何帳篷、木箱或牆。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7941,7 +7941,7 @@
   },
   "A Journey Home#030": {
    "src": "You can look at placed TNT to see its blast radius, as well.",
-   "dst": "",
+   "dst": "放好的 TNT 你可以看一下，能看到它的爆炸範圍。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7951,7 +7951,7 @@
   },
   "A Journey Home#031": {
    "src": "But given how tight the squeeze between some of those structures is, there's just no way it's happening.",
-   "dst": "",
+   "dst": "不過有幾個建物之間的縫隙那麼窄，這根本不可能成功。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7961,7 +7961,7 @@
   },
   "A Journey Home#032": {
    "src": "Like I said, you really should just mosey on back to the castle. If I can't get anywhere, I don't think you'll fare better.",
-   "dst": "",
+   "dst": "我說了，你真的該乖乖回城堡去。連我都弄不出結果，我不覺得你會比較行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -7971,7 +7971,7 @@
   },
   "A Journey Home#033": {
    "src": "Continue through the cave.",
-   "dst": "",
+   "dst": "穿過洞穴。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -7981,7 +7981,7 @@
   },
   "A Journey Home#034": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟 Guard 說話，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -7991,7 +7991,7 @@
   },
   "A Journey Home#035": {
    "src": "Halt! Where did you come from? There was a cave-in past here, wasn't there?",
-   "dst": "",
+   "dst": "站住！你從哪來的？這後面不是塌方了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8001,7 +8001,7 @@
   },
   "A Journey Home#036": {
    "src": "A new path, huh? I didn't think you'd have things to be doing back here, though I won't say I'm ungrateful.",
-   "dst": "",
+   "dst": "新的路，是嗎？我沒想到你在這後頭還有事要辦，不過我也不能說不感激。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8011,7 +8011,7 @@
   },
   "A Journey Home#037": {
    "src": "It even crushed the grook's nest there. I've been working off field rations for a few days. So where are you headed?",
-   "dst": "",
+   "dst": "連那邊 grook 的巢都被壓垮了。我已經吃了好幾天的野戰口糧。所以你要去哪？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8021,7 +8021,7 @@
   },
   "A Journey Home#038": {
    "src": "The border? I suppose if you're headed there, it must be important, official business. Although, it might have to wait.",
-   "dst": "",
+   "dst": "邊境？我想你既然要去那裡，一定是重要的公務。不過，恐怕得等一等。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8031,7 +8031,7 @@
   },
   "A Journey Home#039": {
    "src": "The bridge repair was something of a hackjob. It may not bear up your weight. Now that the cave-in's clear, we might be able to get it fixed proper...",
-   "dst": "",
+   "dst": "那座橋修得相當草率。它未必撐得住你的重量。既然塌方清掉了，也許我們能好好把它修一修……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8041,7 +8041,7 @@
   },
   "A Journey Home#040": {
    "src": "But that'll take time. I'd just as soon turn back whatever business you have isn't worth your life, after all.",
-   "dst": "",
+   "dst": "但那要時間。我倒寧願你掉頭回去——不管你有什麼事，都不值得拿命去換。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8051,7 +8051,7 @@
   },
   "A Journey Home#041": {
    "src": "Cross the repaired bridge at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "走過 [-{~1}, {~2}, -{~3}] 修好的橋。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8061,7 +8061,7 @@
   },
   "A Journey Home#042": {
    "src": "Say, I think I recognize you, actually. That's a rarity for this line of work.",
-   "dst": "",
+   "dst": "說起來，我好像認得你。幹這行的能碰到熟面孔可不容易。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8071,7 +8071,7 @@
   },
   "A Journey Home#043": {
    "src": "Are you sure that what you have to do is worth it? That bridge is awful rickety. Wouldn't want to lose you.",
-   "dst": "",
+   "dst": "你確定你要做的事值得嗎？那座橋搖得厲害。我可不想失去你這樣的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8081,7 +8081,7 @@
   },
   "A Journey Home#044": {
    "src": "Continue back down the path to Fruma.",
-   "dst": "",
+   "dst": "沿著路走回 Fruma。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8091,7 +8091,7 @@
   },
   "A Journey Home#045": {
    "src": "Hey, you there! Come talk to me before you pass through.",
-   "dst": "",
+   "dst": "喂，那邊那位！過去之前先過來跟我說話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8101,7 +8101,7 @@
   },
   "A Journey Home#046": {
    "src": "Hey, you! Come talk to me first, recruit!",
-   "dst": "",
+   "dst": "喂，你！先過來跟我說話，新兵！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8111,7 +8111,7 @@
   },
   "A Journey Home#047": {
    "src": "Coming or going, I'm under strict orders to intercept soldiers and make sure they're equipped before heading on.",
-   "dst": "",
+   "dst": "不管是要進還是要出，我接到的命令很明確：攔下士兵，確認裝備齊全才能放行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8121,7 +8121,7 @@
   },
   "A Journey Home#048": {
    "src": "No exceptions, not for any reason. Especially not since the cave-in across the river!",
-   "dst": "",
+   "dst": "沒有例外，什麼理由都不行。尤其是河對岸塌方之後！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8131,7 +8131,7 @@
   },
   "A Journey Home#049": {
    "src": "Nothing's more important than your life, and moving on without being suited up could cost you it!",
-   "dst": "",
+   "dst": "沒有什麼比你的命更重要，沒穿好裝備就上路，可能會要了你的命！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8141,7 +8141,7 @@
   },
   "A Journey Home#050": {
    "src": "Well, let me take a look and see if this stuff is up to regulation.",
-   "dst": "",
+   "dst": "好，我看看這身行頭合不合規定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8151,7 +8151,7 @@
   },
   "A Journey Home#051": {
    "src": "Hmm... Ah, yep, signs of wear all over... Armor not polished... Weapon looks liable to fall apart any second...",
-   "dst": "",
+   "dst": "唔……啊，對，到處都是磨損的痕跡……護甲沒擦亮……武器看起來隨時會散開……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8161,7 +8161,7 @@
   },
   "A Journey Home#052": {
    "src": "I'm surprised you made it ten feet out here with those rusty trinkets! This is no way to protect yourself!",
-   "dst": "",
+   "dst": "帶著這些生鏽的破爛還能走這麼遠，我真是佩服！這樣根本保護不了自己！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8171,7 +8171,7 @@
   },
   "A Journey Home#053": {
    "src": "Look, there's a loot chest in the cave just there, so you need to head in and get yourself some proper equipment.",
-   "dst": "",
+   "dst": "聽著，就在那邊的洞穴裡有個寶箱，你得進去弄一套像樣的裝備。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8181,7 +8181,7 @@
   },
   "A Journey Home#054": {
    "src": "...that so, huh? Well, I think you should take a second look up ahead.",
-   "dst": "",
+   "dst": "……是這樣嗎？那我想你該再往前面看一眼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8191,7 +8191,7 @@
   },
   "A Journey Home#055": {
    "src": "See? Now no more guff about levels you either gear up properly, or you don't pass! I won't have you risking your life.",
-   "dst": "",
+   "dst": "看到沒？別再拿等級當藉口了——要嘛好好換裝，要嘛別想過去！我不會讓你拿命去賭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8201,7 +8201,7 @@
   },
   "A Journey Home#056": {
    "src": "You can find good stuff in caves, like the one just next to me, so hop to it.",
-   "dst": "",
+   "dst": "洞穴裡常有好東西，就像我旁邊這個，快去吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8211,7 +8211,7 @@
   },
   "A Journey Home#057": {
    "src": "Like I said, coming or going. No matter what, you should gear up by looting the cave here before heading onwards.",
-   "dst": "",
+   "dst": "我說了，進出都一樣。不管怎樣，繼續上路之前你都該先把這邊的洞穴搜一搜、換上裝備。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8221,7 +8221,7 @@
   },
   "A Journey Home#058": {
    "src": "Good stuff. There's a loot chest in that cave there, so you should find everything you need. Get to it!",
-   "dst": "",
+   "dst": "好東西。那個洞穴裡有個寶箱，你要的應該都找得到。快去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8231,7 +8231,7 @@
   },
   "A Journey Home#059": {
    "src": "Explore the cave to find some loot.",
-   "dst": "",
+   "dst": "探索洞穴，找到戰利品。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8241,7 +8241,7 @@
   },
   "A Journey Home#060": {
    "src": "Enter the cave and open the loot chest.",
-   "dst": "",
+   "dst": "進入洞穴並打開寶箱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8251,7 +8251,7 @@
   },
   "A Journey Home#061": {
    "src": "Continue back down the path to Fruma.",
-   "dst": "",
+   "dst": "沿著路走回 Fruma。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8261,7 +8261,7 @@
   },
   "A Journey Home#062": {
    "src": "That looks like the stuff. You can take that armor to an Item Identifier right there, and then you can wear it once identified.",
-   "dst": "",
+   "dst": "看起來就是那種東西。你可以把那件護甲拿去那邊的 Item Identifier 鑑定，鑑定完就能穿了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8271,7 +8271,7 @@
   },
   "A Journey Home#063": {
    "src": "Though... since you seem to be heading back to the border... I have to ask why. It's pretty unusual. Probably best you head back to {p}.",
-   "dst": "",
+   "dst": "不過……既然你看起來是要往邊境回去……我還是得問一句為什麼。這很不尋常。你最好還是回 {p} 去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8281,7 +8281,7 @@
   },
   "A Journey Home#064": {
    "src": "If other recruits see you coming the other way, they might get confused, or discouraged. Wouldn't want to risk that, right?",
-   "dst": "",
+   "dst": "要是其他新兵看到你反方向走，他們可能會困惑，或是灰心。你也不想冒這個險吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8291,7 +8291,7 @@
   },
   "A Journey Home#065": {
    "src": "Are you sure whatever you're doing is worth it? Maybe you should just head back to town.",
-   "dst": "",
+   "dst": "你確定你要做的事值得嗎？也許你該直接回鎮上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8301,7 +8301,7 @@
   },
   "A Journey Home#066": {
    "src": "Avoid the Fruman recruits on the path.",
-   "dst": "",
+   "dst": "避開路上的 Fruman Recruit。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8311,7 +8311,7 @@
   },
   "A Journey Home#067": {
    "src": "...been recruiting Fruman soldiers for the war effort. Apparently things are really bad over there. Makes me nervous...",
-   "dst": "",
+   "dst": "……一直在為戰事招募 Fruma 的士兵。聽說那邊情況真的很糟。搞得我很不安……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8321,7 +8321,7 @@
   },
   "A Journey Home#068": {
    "src": "Walking corpses aren't anything I'm going to underestimate, but it can't be all doom and gloom, right?",
-   "dst": "",
+   "dst": "會走的屍體我可不敢小看，不過總不會全都是壞消息吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8331,7 +8331,7 @@
   },
   "A Journey Home#069": {
    "src": "I suppose we'll see once we pass this gate. It marks the border... Deep breaths, deep breaths...",
-   "dst": "",
+   "dst": "我想過了這道門就知道了。那裡就是邊境……深呼吸，深呼吸……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8341,7 +8341,7 @@
   },
   "A Journey Home#070": {
    "src": "...know anything about Wynn? I didn't get any debriefing.",
-   "dst": "",
+   "dst": "……你知道 Wynn 的事嗎？我完全沒收到任何簡報。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8351,7 +8351,7 @@
   },
   "A Journey Home#071": {
    "src": "I remember rumors... Something about a great hero. Name started with...and R?",
-   "dst": "",
+   "dst": "我記得有些傳聞……好像有個了不起的英雄。名字是 R 開頭的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8361,7 +8361,7 @@
   },
   "A Journey Home#072": {
    "src": "We'll make it a point to ask as soon as we can. Information's key to fighting wars.",
-   "dst": "",
+   "dst": "找到機會就一定要問清楚。打仗最重要的就是情報。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8371,7 +8371,7 @@
   },
   "A Journey Home#073": {
    "src": "...rotten driver. I feel for the man, but he said he always hits that boulder. Sounds like his own fault to me.",
-   "dst": "",
+   "dst": "……那個爛車夫。我是同情他啦，但他自己說每次都會撞到那顆石頭。聽起來就是他自己的問題。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8381,7 +8381,7 @@
   },
   "A Journey Home#074": {
    "src": "I'm thinking about meals more than wheels. I feel like I haven't eaten in days. Hope the walk's short...",
-   "dst": "",
+   "dst": "比起輪子我更想著吃的。我覺得我好幾天沒吃東西了。希望這段路不長……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8391,7 +8391,7 @@
   },
   "A Journey Home#075": {
    "src": "Well, if he was a more competent driver you wouldn't have to walk so far on an empty stomach! Let's hurry so we can get you a feast, huh?",
-   "dst": "",
+   "dst": "要是他開車再像樣一點，你就不用餓著肚子走這麼遠了！我們快點走，好讓你飽餐一頓，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8401,7 +8401,7 @@
   },
   "A Journey Home#076": {
    "src": "Wait, who's that? Why are they coming from the border??",
-   "dst": "",
+   "dst": "等等，那是誰？他們為什麼從邊境那邊過來？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8411,7 +8411,7 @@
   },
   "A Journey Home#077": {
    "src": "Hide from the Caravan Driver.",
-   "dst": "",
+   "dst": "躲開 Caravan Driver。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8421,7 +8421,7 @@
   },
   "A Journey Home#078": {
    "src": "...and that's the last of them for today.",
-   "dst": "",
+   "dst": "……今天就送到這裡為止了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8431,7 +8431,7 @@
   },
   "A Journey Home#079": {
    "src": "Lots of pairs today. Eight more in the wings... But that's for tomorrow.",
-   "dst": "",
+   "dst": "今天成雙成對的還真多。還有八個在候著……不過那是明天的事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8441,7 +8441,7 @@
   },
   "A Journey Home#080": {
    "src": "Same darn boulder... Same darn line, too. Wonder if they'll let me shake it up one day. This is always a pain...",
-   "dst": "",
+   "dst": "又是那顆該死的石頭……又是那句該死的台詞。不知道哪天他們會不會讓我換點花樣。每次都煩死人……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8451,7 +8451,7 @@
   },
   "A Journey Home#081": {
    "src": "And that's that about that. And now, to be off...to the home I choose. And there's no troubles to follow me there.",
-   "dst": "",
+   "dst": "這件事就這樣了。那麼，該走了……回我自己選的家。到了那裡，就沒有麻煩追得上我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8461,7 +8461,7 @@
   },
   "A Journey Home#082": {
    "src": "Explore past the Fruma Gate.",
-   "dst": "",
+   "dst": "探索 Fruma Gate 的另一頭。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8471,7 +8471,7 @@
   },
   "A Journey Home#083": {
    "src": "Just couldn't take the hint, huh?",
-   "dst": "",
+   "dst": "就是聽不懂暗示，是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8481,7 +8481,7 @@
   },
   "A Journey Home#084": {
    "src": "Bet you think you're slick. Didn't even notice me hang back to watch, huh? I wasn't born yesterday.",
-   "dst": "",
+   "dst": "你以為自己很高明吧。連我留下來盯著都沒發現，對吧？我可不是昨天才出生的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8491,7 +8491,7 @@
   },
   "A Journey Home#085": {
    "src": "Listen, this isn't the first time something like this has happened Y'know. Someone gets curious, retraces their steps.",
-   "dst": "",
+   "dst": "聽著，這種事不是第一次發生了。你知道的，總有人好奇，回頭去查自己走過的路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8501,7 +8501,7 @@
   },
   "A Journey Home#086": {
    "src": "If you couldn't tell, this whole thing's meant to be a one way trip. The bridge, the cave-in, everyone trying to discourage you.",
-   "dst": "",
+   "dst": "如果你還看不出來，這整件事本來就是單程的。那座橋、那場塌方、每一個勸你回頭的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8511,7 +8511,7 @@
   },
   "A Journey Home#087": {
    "src": "It's not wise to be here After all, you weren't the one out of your group of three that got permission to stay. Yeah, I heard about the tournament results.",
-   "dst": "",
+   "dst": "待在這裡不明智——畢竟你們三個人裡，拿到留下許可的並不是你。沒錯，比賽的結果我聽說了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8521,7 +8521,7 @@
   },
   "A Journey Home#088": {
    "src": "So...you got two choices, buddy. We can let this slide between us. We can. You can go marching back to {p} and my lips will be sealed.",
-   "dst": "",
+   "dst": "所以……你有兩個選擇，朋友。這件事我們可以當作沒發生過。真的可以。你乖乖走回 {p}，我就閉緊嘴巴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8531,7 +8531,7 @@
   },
   "A Journey Home#089": {
    "src": "Or, you can live life dangerously and follow me on the train to {p}. Better make your choice quick, though it's leaving soon.",
-   "dst": "",
+   "dst": "或者，你也可以活得刺激一點，跟我上開往 {p} 的列車。不過最好快點決定，車快開了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8541,7 +8541,7 @@
   },
   "A Journey Home#090": {
    "src": "If I see you in the passenger cabin, well...that'll be that, and you'll just have to wait and see what comes of it.",
-   "dst": "",
+   "dst": "要是我在客車廂裡看到你，那……那就是那樣了，接下來會發生什麼，你就自己等著看吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8551,7 +8551,7 @@
   },
   "A Journey Home#091": {
    "src": "Join the Caravan Driver in the passenger car at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 的客車廂與 Caravan Driver 會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8561,7 +8561,7 @@
   },
   "A Journey Home#092": {
    "src": "Last chance to back out. This your choice?",
-   "dst": "",
+   "dst": "最後一次退出的機會。這是你的選擇？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8571,7 +8571,7 @@
   },
   "A Journey Home#093": {
    "src": "Well, you better get headed on the long walk back to {p} then.",
-   "dst": "",
+   "dst": "那你最好開始走那段回 {p} 的長路了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8581,7 +8581,7 @@
   },
   "A Journey Home#094": {
    "src": "Arrive in Fruma.",
-   "dst": "",
+   "dst": "抵達 Fruma。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8591,7 +8591,7 @@
   },
   "A Journey Home#095": {
    "src": "Well. We've arrived.",
-   "dst": "",
+   "dst": "好了。我們到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8601,7 +8601,7 @@
   },
   "A Journey Home#096": {
    "src": "....",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8611,7 +8611,7 @@
   },
   "A Journey Home#097": {
    "src": "You know what they say about curiosity, and how it killed the cat. You the type to believe satisfaction'll bring it back?",
-   "dst": "",
+   "dst": "你聽過那句話吧，好奇心殺死貓。你是那種相信滿足了好奇心貓就會活過來的人嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8621,7 +8621,7 @@
   },
   "A Journey Home#098": {
    "src": "Well, 'kittycat,' you didn't find the cream just the hound dogs.",
-   "dst": "",
+   "dst": "那麼，「小貓咪」，你找到的不是鮮奶油——是獵犬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8631,7 +8631,7 @@
   },
   "A Journey Home#099": {
    "src": "Intruder to Fruma, you are under arrest! Now march!",
-   "dst": "",
+   "dst": "闖入 Fruma 者，你被捕了！走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8641,7 +8641,7 @@
   },
   "A Journey Home#100": {
    "src": "You really thought the Driver was on your side, intruder? What a fool you are. We gave you every chance to quit this endeavor, but here you are. Let's go.",
-   "dst": "",
+   "dst": "你真以為那個 Driver 站在你這邊嗎，闖入者？你真是個蠢貨。我們給了你每一次收手的機會，你卻還是來了。走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8651,7 +8651,7 @@
   },
   "A Journey Home#101": {
    "src": "Commander! We must speak immediately!",
-   "dst": "",
+   "dst": "指揮官！我們必須立刻談談！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8661,7 +8661,7 @@
   },
   "A Journey Home#102": {
    "src": "I have urgent news to report from the gate.",
-   "dst": "",
+   "dst": "我有從門那邊來的緊急消息要報告。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8671,7 +8671,7 @@
   },
   "A Journey Home#103": {
    "src": "If it is truly so urgent, let's speak.",
-   "dst": "",
+   "dst": "如果真的這麼緊急，那就說吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8681,7 +8681,7 @@
   },
   "A Journey Home#104": {
    "src": "Soldiers! Keep the intruder still. I've every faith in you.",
-   "dst": "",
+   "dst": "士兵們！看住這個闖入者。我完全信得過你們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8691,7 +8691,7 @@
   },
   "A Journey Home#105": {
    "src": "Defeat the guards and escape.",
-   "dst": "",
+   "dst": "擊敗衛兵並逃脫。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8701,7 +8701,7 @@
   },
   "A Journey Home#106": {
    "src": "Leave {p}.",
-   "dst": "",
+   "dst": "離開 {p}。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -8711,7 +8711,7 @@
   },
   "A Journey Home#107": {
    "src": "Mmn. Hey there, stranger.",
-   "dst": "",
+   "dst": "嗯。你好啊，陌生人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8721,7 +8721,7 @@
   },
   "A Journey Home#108": {
    "src": "Anythin' I can help you with?",
-   "dst": "",
+   "dst": "有什麼我幫得上忙的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8731,7 +8731,7 @@
   },
   "A Journey Home#109": {
    "src": "Hm. Suppose there's no harm. But watch yourself, alright?",
-   "dst": "",
+   "dst": "嗯。我想是沒什麼壞處。不過你自己小心點，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8741,7 +8741,7 @@
   },
   "A Journey Home#110": {
    "src": "This here's our home. I wouldn't take too kindly to you messin' anything up, understand?",
-   "dst": "",
+   "dst": "這裡是我們的家。你要是弄壞了什麼，我可不會給你好臉色，懂嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8751,7 +8751,7 @@
   },
   "A Journey Home#111": {
    "src": "...doin' alright, all things considered. Weather's nice, I suppose. Festival comin' up.",
-   "dst": "",
+   "dst": "……整體來說還過得去。天氣不錯吧，我想。慶典也快到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8761,7 +8761,7 @@
   },
   "A Journey Home#112": {
    "src": "But that ain't none of our business, really. If you didn't need anythin' else, I'll kindly ask you to take your leave.",
-   "dst": "",
+   "dst": "不過那真的不關我們的事。如果你沒別的事，我就請你離開了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8771,7 +8771,7 @@
   },
   "A Journey Home#113": {
    "src": "Hm. Good. Have a nice day, now.",
-   "dst": "",
+   "dst": "嗯。很好。祝你今天愉快。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8781,7 +8781,7 @@
   },
   "A Journey Home#114": {
    "src": "Hmm? And who may you be?",
-   "dst": "",
+   "dst": "嗯？請問你是哪位？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8791,7 +8791,7 @@
   },
   "A Journey Home#115": {
    "src": "Hoh, oh well. Might I help you with something?",
-   "dst": "",
+   "dst": "喔，好吧。有什麼我能幫忙的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8801,7 +8801,7 @@
   },
   "A Journey Home#116": {
    "src": "Ah, completing some assorted metalworking projects. There always seems to be something to replace or maintain around here...",
-   "dst": "",
+   "dst": "啊，就是在做一些零零星星的金工活。這裡總是有東西要換、要保養……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8811,7 +8811,7 @@
   },
   "A Journey Home#117": {
    "src": "Though, I certainly am no expert! But I can handle the tools well enough, and that is all that is needed for the task.",
-   "dst": "",
+   "dst": "不過我當然算不上什麼專家！但工具我還算拿得動，做這些事這樣就夠了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -8821,7 +8821,7 @@
   },
   "A Journey Home#118": {
    "src": "Farewell, stranger! I hope that you will return home safely.",
-   "dst": "",
+   "dst": "再會了，陌生人！希望你能平安回家。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -16130,7 +16130,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#154": {
-   "src": ", deal with this situation... NOW!",
+   "src": "{u}, deal with this situation... NOW!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -19250,7 +19250,7 @@
    "source": "wiki"
   },
   "Aldorei's Secret Part II#466": {
-   "src": ", Olon- the war you are fighting...",
+   "src": "{u}, Olon- the war you are fighting...",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -27800,7 +27800,7 @@
    "source": "wiki"
   },
   "Apotheosis (Quest)#218": {
-   "src": "But you will not live to see it, will you? No... no, you The shell will and and , and you alongside it!",
+   "src": "But you will not live to see it, will you? No... no, you The shell will and and {u}, and you alongside it!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -48970,7 +48970,7 @@
    "source": "wiki"
   },
   "Dearly Departed#015": {
-   "src": "There's five of them. {u}, , , , and Agility, each with different bonuses.",
+   "src": "There's five of them. {u}, {u}, , {u}, and Agility, each with different bonuses.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -51640,7 +51640,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part I#082": {
-   "src": ", over here! Near the skull.",
+   "src": "{u}, over here! Near the skull.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -52240,7 +52240,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part II#020": {
-   "src": ", follow the southern road from {p}, towards the {p} entrance. I'll be waiting there for you near the armoury.",
+   "src": "{u}, follow the southern road from {p}, towards the {p} entrance. I'll be waiting there for you near the armoury.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -61750,7 +61750,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#009": {
-   "src": "I am! The elements are... {u}, , , , and... ?",
+   "src": "I am! The elements are... {u}, {u}, , {u}, and... ?",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -61760,7 +61760,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#010": {
-   "src": "That's right. And generally speaking, they're strong against each other in that order- beats , beats , and so on.",
+   "src": "That's right. And generally speaking, they're strong against each other in that order- beats {u}, beats {u}, and so on.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -61870,7 +61870,7 @@
    "source": "wiki"
   },
   "Elemental Exercise#021": {
-   "src": "...Oh! So my Bash spell will still deal damage even if my weapon only uses , right?",
+   "src": "...Oh! So my Bash spell will still deal damage even if my weapon only uses {u}, right?",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -79390,7 +79390,7 @@
    "source": "wiki"
   },
   "From the Mountains#062": {
-   "src": ", huh? I'll try and remember that. For now, take this armor for the trouble. Safe travels, {u}!",
+   "src": "{u}, huh? I'll try and remember that. For now, take this armor for the trouble. Safe travels, {u}!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -125420,7 +125420,7 @@
    "source": "wiki"
   },
   "Reclaiming the House#056": {
-   "src": ", huh? I'll remember that. You barely even needed my help, heh... Wish I hadn't been such a burden, but at least it worked out.",
+   "src": "{u}, huh? I'll remember that. You barely even needed my help, heh... Wish I hadn't been such a burden, but at least it worked out.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -133680,7 +133680,7 @@
    "source": "wiki"
   },
   "Shattered Minds#009": {
-   "src": "Looks like someone rolled about the air fuzz too much, so indeed hello! A light hello to yourself, , and a greetings to Professor Eih, which is me!",
+   "src": "Looks like someone rolled about the air fuzz too much, so indeed hello! A light hello to yourself, {u}, and a greetings to Professor Eih, which is me!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -138140,7 +138140,7 @@
    "source": "wiki"
   },
   "Solidarity of Steel#105": {
-   "src": "The one to the s- south- , yes.",
+   "src": "The one to the s- south- {u}, yes.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -138850,7 +138850,7 @@
    "source": "wiki"
   },
   "Solidarity of Steel#176": {
-   "src": "Yeah, yeah! Come on, what are you waiting for? Go , and find out what they're talking about.",
+   "src": "Yeah, yeah! Come on, what are you waiting for? Go {u}, and find out what they're talking about.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -138900,7 +138900,7 @@
    "source": "wiki"
   },
   "Solidarity of Steel#181": {
-   "src": "Wh- I- fine... {u}, just get it o- over with. Go , and find out what th- they- wh- what they're talking about.",
+   "src": "Wh- I- fine... {u}, just get it o- over with. Go {u}, and find out what th- they- wh- what they're talking about.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -140520,7 +140520,7 @@
    "source": "wiki"
   },
   "Solidarity of Steel#343": {
-   "src": "Bring something to with, something that ... and maybe some form of , if you've got any.",
+   "src": "Bring something to with, something that ... and maybe some form of {u}, if you've got any.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -143920,7 +143920,7 @@
    "source": "wiki"
   },
   "Taproot#013": {
-   "src": "Look, , I...I don't know what you expect to do against this. The Wyrm was one thing, but...this is beyond your comprehension.",
+   "src": "Look, {u}, I...I don't know what you expect to do against this. The Wyrm was one thing, but...this is beyond your comprehension.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -148100,7 +148100,7 @@
    "source": "wiki"
   },
   "The Breaking Point#109": {
-   "src": "If there is a chance... We have to take it. Ineos, , take the balloon. We'll do whatever we can here. Now, go! There's no time to waste!",
+   "src": "If there is a chance... We have to take it. Ineos, {u}, take the balloon. We'll do whatever we can here. Now, go! There's no time to waste!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -148480,7 +148480,7 @@
    "source": "wiki"
   },
   "The Breaking Point#147": {
-   "src": ", let us go. It sounds as if we have very little time to waste.",
+   "src": "{u}, let us go. It sounds as if we have very little time to waste.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -151890,7 +151890,7 @@
    "source": "wiki"
   },
   "The Canary Calls#207": {
-   "src": "No, this is definitely them! The name's , right?",
+   "src": "No, this is definitely them! The name's {u}, right?",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -161590,7 +161590,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part I#114": {
-   "src": "...Alright. Time to go. I'll wait for , I guess.",
+   "src": "...Alright. Time to go. I'll wait for {u}, I guess.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -162890,7 +162890,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#034": {
-   "src": ", huh? That's... A nice name. Well, good luck!",
+   "src": "{u}, huh? That's... A nice name. Well, good luck!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -163000,7 +163000,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#045": {
-   "src": ", huh? That's... A nice name. Well, good luck!",
+   "src": "{u}, huh? That's... A nice name. Well, good luck!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -163110,7 +163110,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#056": {
-   "src": ", huh? That's... A nice name. Well, good luck!",
+   "src": "{u}, huh? That's... A nice name. Well, good luck!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -163220,7 +163220,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#067": {
-   "src": ", huh? That's... A nice name. Well, good luck!",
+   "src": "{u}, huh? That's... A nice name. Well, good luck!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -173710,7 +173710,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1116": {
-   "src": "Look, I'll give you a mission. Find Ava with , and tell her this...",
+   "src": "Look, I'll give you a mission. Find Ava with {u}, and tell her this...",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -175340,7 +175340,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1279": {
-   "src": ", thanks for the help. You've introduced me to quite the talent!",
+   "src": "{u}, thanks for the help. You've introduced me to quite the talent!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -175400,7 +175400,7 @@
    "source": "wiki"
   },
   "The Feathers Fly Part II#1285": {
-   "src": ", once you come back here, you'll be able to get some of my gadgets.",
+   "src": "{u}, once you come back here, you'll be able to get some of my gadgets.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -175920,7 +175920,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#051": {
-   "src": ", please head to the backstage area to my right for your adventure. Thank you everyone!!",
+   "src": "{u}, please head to the backstage area to my right for your adventure. Thank you everyone!!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -177050,7 +177050,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#164": {
-   "src": ", look! I can see the sky from here! M- maybe there’s a way to get up!",
+   "src": "{u}, look! I can see the sky from here! M- maybe there’s a way to get up!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -177320,7 +177320,7 @@
    "source": "wiki"
   },
   "The Hero of Gavel#191": {
-   "src": ", I'm glad to see you managed to get out alive. That must have been quite a fall into the chasm.",
+   "src": "{u}, I'm glad to see you managed to get out alive. That must have been quite a fall into the chasm.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -180270,7 +180270,7 @@
    "source": "wiki"
   },
   "The Mercenary#116": {
-   "src": ", I guess that leaves the two of us to return to {p} with the news! Let's get going.",
+   "src": "{u}, I guess that leaves the two of us to return to {p} with the news! Let's get going.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -184080,7 +184080,7 @@
    "source": "wiki"
   },
   "The Missing Piece#356": {
-   "src": "Ah- hello. I'm , I'm new here. Nice to meet you.",
+   "src": "Ah- hello. I'm {u}, I'm new here. Nice to meet you.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -185360,7 +185360,7 @@
    "source": "wiki"
   },
   "The Missing Piece#484": {
-   "src": ", you're the one pushing herself through this weather, clearly panicking...",
+   "src": "{u}, you're the one pushing herself through this weather, clearly panicking...",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -185490,7 +185490,7 @@
    "source": "wiki"
   },
   "The Missing Piece#497": {
-   "src": ", , why are they here? Why... why won't you answer me...?",
+   "src": "{u}, {u}, why are they here? Why... why won't you answer me...?",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -187340,7 +187340,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#093": {
-   "src": "But aside from that, onto our practical test. You will all come up to me, starting with , and hone courage. I will be casting balls of fire at you.",
+   "src": "But aside from that, onto our practical test. You will all come up to me, starting with {u}, and hone courage. I will be casting balls of fire at you.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -187370,7 +187370,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#096": {
-   "src": "Well done , fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
+   "src": "Well done {u}, fledgeling Grook! Continue to sharpen your instincts. You'll be a fine hero someday, I am sure of it.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -188290,7 +188290,7 @@
    "source": "wiki"
   },
   "The Order of the Grook#188": {
-   "src": "GAACK! No, , I said RUN! Don't fight that thing, get OUT!",
+   "src": "GAACK! No, {u}, I said RUN! Don't fight that thing, get OUT!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -197020,7 +197020,7 @@
    "source": "wiki"
   },
   "The Scarred Springs#081": {
-   "src": "All the spots I listed are , but if you're having trouble, I'll write you up a new set if you ask!",
+   "src": "All the spots I listed are {u}, but if you're having trouble, I'll write you up a new set if you ask!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -200730,7 +200730,7 @@
    "source": "wiki"
   },
   "The Strong Survive#197": {
-   "src": "Don't worry , this one is the easiest of the three challenges.",
+   "src": "Don't worry {u}, this one is the easiest of the three challenges.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -200750,7 +200750,7 @@
    "source": "wiki"
   },
   "The Strong Survive#199": {
-   "src": "It's your turn , stand on that plate to start the test.",
+   "src": "It's your turn {u}, stand on that plate to start the test.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -200800,7 +200800,7 @@
    "source": "wiki"
   },
   "The Strong Survive#204": {
-   "src": "Hey , I am ashamed to say it, but things didn't go well for me...",
+   "src": "Hey {u}, I am ashamed to say it, but things didn't go well for me...",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -201080,7 +201080,7 @@
    "source": "wiki"
   },
   "The Strong Survive#232": {
-   "src": "You're up , good luck!",
+   "src": "You're up {u}, good luck!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -201170,7 +201170,7 @@
    "source": "wiki"
   },
   "The Strong Survive#241": {
-   "src": "There you are , come sit next to me so we can talk about the second challenge.",
+   "src": "There you are {u}, come sit next to me so we can talk about the second challenge.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -202650,7 +202650,7 @@
    "source": "wiki"
   },
   "The Strong Survive#389": {
-   "src": "Hey, , are you awake? You slept through the alarm bell.",
+   "src": "Hey, {u}, are you awake? You slept through the alarm bell.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -202910,7 +202910,7 @@
    "source": "wiki"
   },
   "The Strong Survive#415": {
-   "src": "You're up , do your best!",
+   "src": "You're up {u}, do your best!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -202970,7 +202970,7 @@
    "source": "wiki"
   },
   "The Strong Survive#421": {
-   "src": "Hey , I think the challenge went well. I managed to complete it at least, although I can't say for certain if I made a good time.",
+   "src": "Hey {u}, I think the challenge went well. I managed to complete it at least, although I can't say for certain if I made a good time.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -203170,7 +203170,7 @@
    "source": "wiki"
   },
   "The Strong Survive#441": {
-   "src": "Thank you for being here to listen to me, , I don't know where I'd be right now without you...",
+   "src": "Thank you for being here to listen to me, {u}, I don't know where I'd be right now without you...",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -203250,7 +203250,7 @@
    "source": "wiki"
   },
   "The Strong Survive#449": {
-   "src": "Alright, , stand on that plate in front of you to start the test.",
+   "src": "Alright, {u}, stand on that plate in front of you to start the test.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -203590,7 +203590,7 @@
    "source": "wiki"
   },
   "The Strong Survive#483": {
-   "src": "Ah, you're here, , come on, let's go ask Adder about how his duel went yesterday...",
+   "src": "Ah, you're here, {u}, come on, let's go ask Adder about how his duel went yesterday...",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -206850,7 +206850,7 @@
    "source": "wiki"
   },
   "The Worm Holes#026": {
-   "src": ", then... Let us head to the site. {u}. I need to fix this... Please, help me get to the root of this problem so I may soothe the land's pain.",
+   "src": "{u}, then... Let us head to the site. {u}. I need to fix this... Please, help me get to the root of this problem so I may soothe the land's pain.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -207150,7 +207150,7 @@
    "source": "wiki"
   },
   "The Worm Holes#056": {
-   "src": ", it won't budge... There's something in its mind rejecting me. Distract it- but don't approach! It will kill you if you get close. Just...be loud!",
+   "src": "{u}, it won't budge... There's something in its mind rejecting me. Distract it- but don't approach! It will kill you if you get close. Just...be loud!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
