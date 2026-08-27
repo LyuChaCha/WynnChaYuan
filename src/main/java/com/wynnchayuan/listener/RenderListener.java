@@ -120,6 +120,13 @@ public final class RenderListener {
             com.wynnchayuan.translate.ErrorDebug.note("tooltip.panel",
                     tooltip.isEmpty() ? null : tooltip.get(0).getString(), t);
         }
+        // 待拍的截圖收在這裡。
+        //
+        // 之前收在 renderHud 尾巴，那是<b>錯的</b>：Minecraft 是先畫 HUD
+        // 再畫畫面上的 GUI（GameRenderer 裡 gui.render() 在 screen.render()
+        // 之前），而翻譯面板掛在 screen 之後。於是截圖拍到的是
+        // 「世界＋HUD、物品欄還沒畫」的那一瞬間——使用者拿到的是一張地板。
+        com.wynnchayuan.render.PanelShot.afterRender();
     }
 
     /** 對話小框由 HUD 每幀呼叫，見 {@link DialogueOverlay#render}。 */
@@ -141,7 +148,10 @@ public final class RenderListener {
         } catch (Throwable t) {
             WynnChaYuan.store().noteEvent("render.dialogueError");
         }
-        // 待拍的截圖收在這裡——整個畫面都畫完了，拍到的才是使用者看到的那一幀
-        com.wynnchayuan.render.PanelShot.afterRender();
+        // 沒有畫面開著時（例如只想拍對話小框），HUD 就是最後一層，收在這裡。
+        // 有畫面開著時交給 renderAfterScreen——見那邊的說明。
+        if (net.minecraft.client.Minecraft.getInstance().screen == null) {
+            com.wynnchayuan.render.PanelShot.afterRender();
+        }
     }
 }
