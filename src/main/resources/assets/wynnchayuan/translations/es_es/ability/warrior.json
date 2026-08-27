@@ -1,0 +1,3275 @@
+{
+ "_meta": {
+  "domain": "ability/warrior",
+  "itemNames": false,
+  "lang": "zh_tw",
+  "count": 233,
+  "translated": 0,
+  "note": "戰士的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
+  "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
+ },
+ "entries": {
+  "f620cacbc465": {
+   "src": "Bash",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/01/000/004",
+   "keep": "en",
+   "ability": "Bash",
+   "code": "WARRIOR-P1-R00-C04"
+  },
+  "26556c765c61": {
+   "src": "Violently bash the ground, dealing\nhigh damage in a large area.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Bash"
+   ],
+   "lines": 2,
+   "flat": "Violently bash the ground, dealing high damage in a large area.",
+   "_raw": "Violently bash the ground, dealing\nhigh damage in a large area.",
+   "tree": "00/warrior/01/000/004",
+   "ability": "Bash",
+   "code": "WARRIOR-P1-R00-C04"
+  },
+  "8751f83c472a": {
+   "src": "Cheaper Bash",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/01/002/002",
+   "keep": "en",
+   "ability": "Cheaper Bash",
+   "code": "WARRIOR-P1-R02-C02"
+  },
+  "bc28aefd02bf": {
+   "src": "Reduce the Mana cost of Bash.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Cheaper Bash",
+    "warrior/Cheaper Bash II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Bash.",
+   "_raw": "Reduce the Mana cost of Bash.",
+   "tree": "00/warrior/01/002/002",
+   "ability": "Cheaper Bash、Cheaper Bash II",
+   "code": "WARRIOR-P1-R02-C02"
+  },
+  "318f8ac3f75e": {
+   "src": "Spear Proficiency I",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/01/002/004",
+   "keep": "en",
+   "ability": "Spear Proficiency I",
+   "code": "WARRIOR-P1-R02-C04"
+  },
+  "5c2156139561": {
+   "src": "Improve your Main Attack's damage\nand range when using a spear.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Spear Proficiency I",
+    "warrior/Spear Proficiency II"
+   ],
+   "lines": 2,
+   "flat": "Improve your Main Attack's damage and range when using a spear.",
+   "_raw": "Improve your Main Attack's damage\nand range when using a spear.",
+   "tree": "00/warrior/01/002/004",
+   "ability": "Spear Proficiency I、Spear Proficiency II",
+   "code": "WARRIOR-P1-R02-C04"
+  },
+  "1b6ae5c91579": {
+   "src": "{#} Main Attack Range: +{~} Block",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Spear Proficiency I"
+   ],
+   "_raw": " Main Attack Range: +1 Block",
+   "tree": "00/warrior/01/002/004",
+   "ability": "Spear Proficiency I",
+   "code": "WARRIOR-P1-R02-C04"
+  },
+  "5dae646c28f0": {
+   "src": "Double Bash",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/01/004/004",
+   "keep": "en",
+   "ability": "Double Bash",
+   "code": "WARRIOR-P1-R04-C04"
+  },
+  "79af857fb9d0": {
+   "src": "Bash will hit a second\ntime at a farther range.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Double Bash"
+   ],
+   "lines": 2,
+   "flat": "Bash will hit a second time at a farther range.",
+   "_raw": "Bash will hit a second\ntime at a farther range.",
+   "tree": "00/warrior/01/004/004",
+   "ability": "Double Bash",
+   "code": "WARRIOR-P1-R04-C04"
+  },
+  "09773c773326": {
+   "src": "{#} Total Damage: -{~} (of your DPS, per bash)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Double Bash",
+    "warrior/Quadruple Bash"
+   ],
+   "_raw": " Total Damage: -30% (of your DPS, per bash)",
+   "tree": "00/warrior/01/004/004",
+   "ability": "Double Bash、Quadruple Bash",
+   "code": "WARRIOR-P1-R04-C04"
+  },
+  "13d063ecebf9": {
+   "src": "Vehement",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/02/001/002",
+   "keep": "en",
+   "ability": "Vehement",
+   "code": "WARRIOR-P2-R01-C02"
+  },
+  "e1abfed9eaf2": {
+   "src": "For every {~} or {~} Raw Main\nAttack Damage you have from items,\ngain +{~} Walk Speed. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Vehement"
+   ],
+   "lines": 3,
+   "flat": "For every {~} or {~} Raw Main Attack Damage you have from items, gain +{~} Walk Speed. (Max {~})",
+   "_raw": "For every 1% or 1 Raw Main\nAttack Damage you have from items,\ngain +2% Walk Speed. (Max 20%)",
+   "tree": "00/warrior/02/001/002",
+   "ability": "Vehement",
+   "code": "WARRIOR-P2-R01-C02"
+  },
+  "1e5c23856578": {
+   "src": "{#} Damage Bonus: +{~} (Raw)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Vehement"
+   ],
+   "_raw": " Damage Bonus: +5 (Raw)",
+   "tree": "00/warrior/02/001/002",
+   "ability": "Vehement",
+   "code": "WARRIOR-P2-R01-C02"
+  },
+  "d4e1aee46cda": {
+   "src": "Charge",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/02/001/004",
+   "keep": "en",
+   "ability": "Charge",
+   "code": "WARRIOR-P2-R01-C04"
+  },
+  "728cd110c047": {
+   "src": "Charge forward at a high speed.\n(Hold shift while charging to cancel)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Charge"
+   ],
+   "lines": 2,
+   "flat": "Charge forward at a high speed. (Hold shift while charging to cancel)",
+   "_raw": "Charge forward at a high speed.\n(Hold shift while charging to cancel)",
+   "tree": "00/warrior/02/001/004",
+   "ability": "Charge",
+   "code": "WARRIOR-P2-R01-C04"
+  },
+  "81d16f5a270b": {
+   "src": "Tougher Skin",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/02/001/006",
+   "keep": "en",
+   "ability": "Tougher Skin",
+   "code": "WARRIOR-P2-R01-C06"
+  },
+  "81b21aedb438": {
+   "src": "For every {~} or {~} Raw Health Regen you have\nfrom items, gain +{~} Health. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Tougher Skin"
+   ],
+   "lines": 2,
+   "flat": "For every {~} or {~} Raw Health Regen you have from items, gain +{~} Health. (Max {~})",
+   "_raw": "For every 1% or 1 Raw Health Regen you have\nfrom items, gain +10 Health. (Max 100)",
+   "tree": "00/warrior/02/001/006",
+   "ability": "Tougher Skin",
+   "code": "WARRIOR-P2-R01-C06"
+  },
+  "02520f2d591f": {
+   "src": "Harden your skin and gain\n+{~} Base Resistance.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Tougher Skin"
+   ],
+   "lines": 2,
+   "flat": "Harden your skin and gain +{~} Base Resistance.",
+   "_raw": "Harden your skin and gain\n+5% Base Resistance.",
+   "tree": "00/warrior/02/001/006",
+   "ability": "Tougher Skin",
+   "code": "WARRIOR-P2-R01-C06"
+  },
+  "8c97f4008f96": {
+   "src": "Uppercut",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/02/003/002",
+   "keep": "en",
+   "ability": "Uppercut",
+   "code": "WARRIOR-P2-R03-C02"
+  },
+  "06f026d77b8d": {
+   "src": "Hurls enemies upwards and\ndeals massive damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Uppercut"
+   ],
+   "lines": 2,
+   "flat": "Hurls enemies upwards and deals massive damage.",
+   "_raw": "Hurls enemies upwards and\ndeals massive damage.",
+   "tree": "00/warrior/02/003/002",
+   "ability": "Uppercut",
+   "code": "WARRIOR-P2-R03-C02"
+  },
+  "248234165b3c": {
+   "src": "{#} Area of Effect: {~}-{~} Blocks (Cone-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Uppercut",
+    "warrior/Bloodied Armory"
+   ],
+   "_raw": " Area of Effect: 1-4 Blocks (Cone-Shaped)",
+   "tree": "00/warrior/02/003/002",
+   "ability": "Uppercut、Bloodied Armory",
+   "code": "WARRIOR-P2-R03-C02"
+  },
+  "f7312d6536c4": {
+   "src": "Cheaper Charge",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/02/003/004",
+   "keep": "en",
+   "ability": "Cheaper Charge",
+   "code": "WARRIOR-P2-R03-C04"
+  },
+  "9b62d4faae91": {
+   "src": "Reduce the Mana cost of Charge.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Cheaper Charge"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Charge.",
+   "_raw": "Reduce the Mana cost of Charge.",
+   "tree": "00/warrior/02/003/004",
+   "ability": "Cheaper Charge",
+   "code": "WARRIOR-P2-R03-C04"
+  },
+  "fa20872f83ce": {
+   "src": "War Scream",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/02/003/006",
+   "keep": "en",
+   "ability": "War Scream",
+   "code": "WARRIOR-P2-R03-C06"
+  },
+  "795f35b94cdc": {
+   "src": "Emits a roar that deals damage, pulls\nnearby enemies and gives you and\nnearby players resistance.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/War Scream"
+   ],
+   "lines": 3,
+   "flat": "Emits a roar that deals damage, pulls nearby enemies and gives you and nearby players resistance.",
+   "_raw": "Emits a roar that deals damage, pulls\nnearby enemies and gives you and\nnearby players resistance.",
+   "tree": "00/warrior/02/003/006",
+   "ability": "War Scream",
+   "code": "WARRIOR-P2-R03-C06"
+  },
+  "2fee773ad337": {
+   "src": "{#} Effect: {~} Resistance Bonus (❁) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/War Scream"
+   ],
+   "_raw": " Effect: 20% Resistance Bonus (❁) to Allies",
+   "tree": "00/warrior/02/003/006",
+   "ability": "War Scream",
+   "code": "WARRIOR-P2-R03-C06"
+  },
+  "74141f255775": {
+   "src": "Flyby Slam",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/02/004/001",
+   "keep": "en",
+   "ability": "Flyby Slam",
+   "code": "WARRIOR-P2-R04-C01"
+  },
+  "ef3f08377dd1": {
+   "src": "After using Charge, violently crash\ndown unto the ground and deal damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Flyby Slam"
+   ],
+   "lines": 2,
+   "flat": "After using Charge, violently crash down unto the ground and deal damage.",
+   "_raw": "After using Charge, violently crash\ndown unto the ground and deal damage.",
+   "tree": "00/warrior/02/004/001",
+   "ability": "Flyby Slam",
+   "code": "WARRIOR-P2-R04-C01"
+  },
+  "551b6fac39b7": {
+   "src": "Charge damages enemies in your way.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Flyby Slam"
+   ],
+   "lines": 1,
+   "flat": "Charge damages enemies in your way.",
+   "_raw": "Charge damages enemies in your way.",
+   "tree": "00/warrior/02/004/001",
+   "ability": "Flyby Slam",
+   "code": "WARRIOR-P2-R04-C01"
+  },
+  "ab64f3d582aa": {
+   "src": "{#} Area of Effect: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Flyby Slam",
+    "warrior/Flying Kick",
+    "warrior/Cleansing Breeze",
+    "warrior/Collide"
+   ],
+   "_raw": " Area of Effect: 2 Blocks",
+   "tree": "00/warrior/02/004/001",
+   "ability": "Flyby Slam、Flying Kick、Cleansing Breeze、Collide",
+   "code": "WARRIOR-P2-R04-C01"
+  },
+  "a5be743f6d32": {
+   "src": "{#} Total Damage: {~} (of your DPS, airborne)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Flyby Slam"
+   ],
+   "_raw": " Total Damage: 120% (of your DPS, airborne)",
+   "tree": "00/warrior/02/004/001",
+   "ability": "Flyby Slam",
+   "code": "WARRIOR-P2-R04-C01"
+  },
+  "bbf26468cf15": {
+   "src": "{#} Total Damage: {~} (of your DPS, landing)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Flyby Slam"
+   ],
+   "_raw": " Total Damage: 120% (of your DPS, landing)",
+   "tree": "00/warrior/02/004/001",
+   "ability": "Flyby Slam",
+   "code": "WARRIOR-P2-R04-C01"
+  },
+  "7f9c5cf0100e": {
+   "src": "Final Crush",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/03/003/000",
+   "keep": "en",
+   "ability": "Final Crush",
+   "code": "WARRIOR-P3-R03-C00"
+  },
+  "7fa42ab19b43": {
+   "src": "Bash's last hit is delayed, but deals\n+{~} damage and has +{~} radius.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Final Crush"
+   ],
+   "lines": 2,
+   "flat": "Bash's last hit is delayed, but deals +{~} damage and has +{~} radius.",
+   "_raw": "Bash's last hit is delayed, but deals\n+100% damage and has +50% radius.",
+   "tree": "00/warrior/03/003/000",
+   "ability": "Final Crush",
+   "code": "WARRIOR-P3-R03-C00"
+  },
+  "4f8ff80cb611": {
+   "src": "Fireworks",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/03/003/002",
+   "keep": "en",
+   "ability": "Fireworks",
+   "code": "WARRIOR-P3-R03-C02"
+  },
+  "af58c979a5bd": {
+   "src": "Mobs hit by Uppercut will explode\nmid-air and receive additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Fireworks"
+   ],
+   "lines": 2,
+   "flat": "Mobs hit by Uppercut will explode mid-air and receive additional damage.",
+   "_raw": "Mobs hit by Uppercut will explode\nmid-air and receive additional damage.",
+   "tree": "00/warrior/03/003/002",
+   "ability": "Fireworks",
+   "code": "WARRIOR-P3-R03-C02"
+  },
+  "88f5ad9d149f": {
+   "src": "Quadruple Bash",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/03/003/006",
+   "keep": "en",
+   "ability": "Quadruple Bash",
+   "code": "WARRIOR-P3-R03-C06"
+  },
+  "8f1c1ce1c334": {
+   "src": "Bash will cast {~} times consecutively\nat double the speed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Quadruple Bash"
+   ],
+   "lines": 2,
+   "flat": "Bash will cast {~} times consecutively at double the speed.",
+   "_raw": "Bash will cast 4 times consecutively\nat double the speed.",
+   "tree": "00/warrior/03/003/006",
+   "ability": "Quadruple Bash",
+   "code": "WARRIOR-P3-R03-C06"
+  },
+  "0d91d926287d": {
+   "src": "Flaming Uppercut",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/03/003/008",
+   "keep": "en",
+   "ability": "Flaming Uppercut",
+   "code": "WARRIOR-P3-R03-C08"
+  },
+  "0821c21c03c3": {
+   "src": "Uppercut will light mobs on fire,\ndealing damage every {~} seconds.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Flaming Uppercut"
+   ],
+   "lines": 2,
+   "flat": "Uppercut will light mobs on fire, dealing damage every {~} seconds.",
+   "_raw": "Uppercut will light mobs on fire,\ndealing damage every 0.6 seconds.",
+   "tree": "00/warrior/03/003/008",
+   "ability": "Flaming Uppercut",
+   "code": "WARRIOR-P3-R03-C08"
+  },
+  "9ae8fef00eda": {
+   "src": "Half-Moon Swipe",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/03/004/004",
+   "keep": "en",
+   "ability": "Half-Moon Swipe",
+   "code": "WARRIOR-P3-R04-C04"
+  },
+  "2a01e5233ed9": {
+   "src": "Uppercut will deal a footsweep\nattack at a longer and wider angle.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Half-Moon Swipe"
+   ],
+   "lines": 2,
+   "flat": "Uppercut will deal a footsweep attack at a longer and wider angle.",
+   "_raw": "Uppercut will deal a footsweep\nattack at a longer and wider angle.",
+   "tree": "00/warrior/03/004/004",
+   "ability": "Half-Moon Swipe",
+   "code": "WARRIOR-P3-R04-C04"
+  },
+  "dfaa84a56a9e": {
+   "src": "Iron Lungs",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/03/004/007",
+   "keep": "en",
+   "ability": "Iron Lungs",
+   "code": "WARRIOR-P3-R04-C07"
+  },
+  "408c2e7aeed6": {
+   "src": "War Scream will deal more damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Iron Lungs"
+   ],
+   "lines": 1,
+   "flat": "War Scream will deal more damage.",
+   "_raw": "War Scream will deal more damage.",
+   "tree": "00/warrior/03/004/007",
+   "ability": "Iron Lungs",
+   "code": "WARRIOR-P3-R04-C07"
+  },
+  "e9832d5cffc5": {
+   "src": "Generalist",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/001/002",
+   "keep": "en",
+   "ability": "Generalist",
+   "code": "WARRIOR-P4-R01-C02"
+  },
+  "8409473dd35d": {
+   "src": "After casting {~} different spells\nin a row, your next spell will cost {~} Mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Generalist"
+   ],
+   "lines": 2,
+   "flat": "After casting {~} different spells in a row, your next spell will cost {~} Mana.",
+   "_raw": "After casting 3 different spells\nin a row, your next spell will cost 1 Mana.",
+   "tree": "00/warrior/04/001/002",
+   "ability": "Generalist",
+   "code": "WARRIOR-P4-R01-C02"
+  },
+  "2405762819c3": {
+   "src": "Air Shout",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/001/004",
+   "keep": "en",
+   "ability": "Air Shout",
+   "code": "WARRIOR-P4-R01-C04"
+  },
+  "14626b7311fd": {
+   "src": "War Scream will fire a projectile that can\ngo through walls and deal damage up to {~} times.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Air Shout"
+   ],
+   "lines": 2,
+   "flat": "War Scream will fire a projectile that can go through walls and deal damage up to {~} times.",
+   "_raw": "War Scream will fire a projectile that can\ngo through walls and deal damage up to 3 times.",
+   "tree": "00/warrior/04/001/004",
+   "ability": "Air Shout",
+   "code": "WARRIOR-P4-R01-C04"
+  },
+  "23119af60447": {
+   "src": "{#} Total Damage: {~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "warrior/Air Shout"
+   ],
+   "_raw": " Total Damage: 75%",
+   "tree": "00/warrior/04/001/004",
+   "ability": "Air Shout",
+   "code": "WARRIOR-P4-R01-C04"
+  },
+  "a5fa0c635eea": {
+   "src": "Mantle of the Bovemists",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/001/007",
+   "keep": "en",
+   "ability": "Mantle of the Bovemists",
+   "code": "WARRIOR-P4-R01-C07"
+  },
+  "f4f7f1d2e8eb": {
+   "src": "When casting War Scream, create a holy\nshield around you that reduces all\nincoming damage by -{~} for {~} hits.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Mantle of the Bovemists"
+   ],
+   "lines": 3,
+   "flat": "When casting War Scream, create a holy shield around you that reduces all incoming damage by -{~} for {~} hits.",
+   "_raw": "When casting War Scream, create a holy\nshield around you that reduces all\nincoming damage by -50% for 3 hits.",
+   "tree": "00/warrior/04/001/007",
+   "ability": "Mantle of the Bovemists",
+   "code": "WARRIOR-P4-R01-C07"
+  },
+  "e93f70be6ade": {
+   "src": "Bak'al's Grasp",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/002/001",
+   "keep": "en",
+   "ability": "Bak'al's Grasp",
+   "code": "WARRIOR-P4-R02-C01"
+  },
+  "0976c2001767": {
+   "src": "Casting War Scream will make you Corrupted {#},\nbut no longer grants resistance.\n(Shift + War Scream to cancel)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Bak'al's Grasp"
+   ],
+   "lines": 3,
+   "flat": "Casting War Scream will make you Corrupted {#}, but no longer grants resistance. (Shift + War Scream to cancel)",
+   "_raw": "Casting War Scream will make you Corrupted ,\nbut no longer grants resistance.\n(Shift + War Scream to cancel)",
+   "tree": "00/warrior/04/002/001",
+   "ability": "Bak'al's Grasp",
+   "code": "WARRIOR-P4-R02-C01"
+  },
+  "6c6df2b9a953": {
+   "src": "Gain +{~} Raw Damage per {~} Corrupted {#}. (Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Bak'al's Grasp"
+   ],
+   "lines": 1,
+   "flat": "Gain +{~} Raw Damage per {~} Corrupted {#}. (Max +{~})",
+   "_raw": "Gain +4 Raw Damage per 2% Corrupted . (Max +120)",
+   "tree": "00/warrior/04/002/001",
+   "ability": "Bak'al's Grasp",
+   "code": "WARRIOR-P4-R02-C01"
+  },
+  "8abfd3942085": {
+   "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~} Corrupted {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Bak'al's Grasp"
+   ],
+   "lines": 3,
+   "flat": "While Corrupted {#}, you lose the ability to heal, and every {~} health you lose will grant you +{~} Corrupted {#}.",
+   "_raw": "While Corrupted , you lose the ability\nto heal, and every 1% health you lose will\ngrant you +1% Corrupted .",
+   "tree": "00/warrior/04/002/001",
+   "ability": "Bak'al's Grasp",
+   "code": "WARRIOR-P4-R02-C01"
+  },
+  "fe0018f640ec": {
+   "src": "Spear Proficiency II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/003/000",
+   "keep": "en",
+   "ability": "Spear Proficiency II",
+   "code": "WARRIOR-P4-R03-C00"
+  },
+  "3c632b251013": {
+   "src": "Cheaper Uppercut",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/003/004",
+   "keep": "en",
+   "ability": "Cheaper Uppercut",
+   "code": "WARRIOR-P4-R03-C04"
+  },
+  "e7f01a24d29b": {
+   "src": "Reduce the Mana cost of Uppercut.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Cheaper Uppercut",
+    "warrior/Cheaper Uppercut II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Uppercut.",
+   "_raw": "Reduce the Mana cost of Uppercut.",
+   "tree": "00/warrior/04/003/004",
+   "ability": "Cheaper Uppercut、Cheaper Uppercut II",
+   "code": "WARRIOR-P4-R03-C04"
+  },
+  "ab4cac20932c": {
+   "src": "Aerodynamics",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/003/006",
+   "keep": "en",
+   "ability": "Aerodynamics",
+   "code": "WARRIOR-P4-R03-C06"
+  },
+  "dd46963961b3": {
+   "src": "During Charge, you can\nsteer and change direction.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Aerodynamics"
+   ],
+   "lines": 2,
+   "flat": "During Charge, you can steer and change direction.",
+   "_raw": "During Charge, you can\nsteer and change direction.",
+   "tree": "00/warrior/04/003/006",
+   "ability": "Aerodynamics",
+   "code": "WARRIOR-P4-R03-C06"
+  },
+  "1a8037a8e827": {
+   "src": "Manachism",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/003/008",
+   "keep": "en",
+   "ability": "Manachism",
+   "code": "WARRIOR-P4-R03-C08"
+  },
+  "9d30756bc64c": {
+   "src": "If you receive a hit that's less than\n{~} of your max health, gain {~} Mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Manachism"
+   ],
+   "lines": 2,
+   "flat": "If you receive a hit that's less than {~} of your max health, gain {~} Mana.",
+   "_raw": "If you receive a hit that's less than\n5% of your max health, gain 10 Mana.",
+   "tree": "00/warrior/04/003/008",
+   "ability": "Manachism",
+   "code": "WARRIOR-P4-R03-C08"
+  },
+  "95e9d40d7282": {
+   "src": "Intoxicating Blood",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/004/001",
+   "keep": "en",
+   "ability": "Intoxicating Blood",
+   "code": "WARRIOR-P4-R04-C01"
+  },
+  "9a3aef995e2c": {
+   "src": "After leaving Corrupted {#}, gain {~} of\nmissing health back for each hit dealt and\nenemy killed while Corrupted {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Intoxicating Blood"
+   ],
+   "lines": 3,
+   "flat": "After leaving Corrupted {#}, gain {~} of missing health back for each hit dealt and enemy killed while Corrupted {#}.",
+   "_raw": "After leaving Corrupted , gain 2.5% of\nmissing health back for each hit dealt and\nenemy killed while Corrupted .",
+   "tree": "00/warrior/04/004/001",
+   "ability": "Intoxicating Blood",
+   "code": "WARRIOR-P4-R04-C01"
+  },
+  "e23965c21566": {
+   "src": "{#} Cooldown: {~}s (for hits)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Intoxicating Blood"
+   ],
+   "_raw": " Cooldown: 0.45s (for hits)",
+   "tree": "00/warrior/04/004/001",
+   "ability": "Intoxicating Blood",
+   "code": "WARRIOR-P4-R04-C01"
+  },
+  "f4018045cfb4": {
+   "src": "Counter",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/004/005",
+   "keep": "en",
+   "ability": "Counter",
+   "code": "WARRIOR-P4-R04-C05"
+  },
+  "f930a9b1a979": {
+   "src": "You take {~} reduced damage and\nattack back when hit by an enemy attack.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Counter"
+   ],
+   "lines": 2,
+   "flat": "You take {~} reduced damage and attack back when hit by an enemy attack.",
+   "_raw": "You take 25% reduced damage and\nattack back when hit by an enemy attack.",
+   "tree": "00/warrior/04/004/005",
+   "ability": "Counter",
+   "code": "WARRIOR-P4-R04-C05"
+  },
+  "09cd3e6bdec4": {
+   "src": "Shield Strike",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/04/004/007",
+   "keep": "en",
+   "ability": "Shield Strike",
+   "code": "WARRIOR-P4-R04-C07"
+  },
+  "9d6032260a35": {
+   "src": "Hitting an enemy with Bash sends all broken\nmantles at them, dealing damage to nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Shield Strike"
+   ],
+   "lines": 2,
+   "flat": "Hitting an enemy with Bash sends all broken mantles at them, dealing damage to nearby enemies.",
+   "_raw": "Hitting an enemy with Bash sends all broken\nmantles at them, dealing damage to nearby enemies.",
+   "tree": "00/warrior/04/004/007",
+   "ability": "Shield Strike",
+   "code": "WARRIOR-P4-R04-C07"
+  },
+  "941cdc6d2562": {
+   "src": "You gain a broken mantle whenever\nMantle of the Bovemists loses a charge.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Shield Strike"
+   ],
+   "lines": 2,
+   "flat": "You gain a broken mantle whenever Mantle of the Bovemists loses a charge.",
+   "_raw": "You gain a broken mantle whenever\nMantle of the Bovemists loses a charge.",
+   "tree": "00/warrior/04/004/007",
+   "ability": "Shield Strike",
+   "code": "WARRIOR-P4-R04-C07"
+  },
+  "3fabb189151a": {
+   "src": "{#} Total Damage: {~} (of your DPS, per broken mantle)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Shield Strike"
+   ],
+   "_raw": " Total Damage: 300% (of your DPS, per broken mantle)",
+   "tree": "00/warrior/04/004/007",
+   "ability": "Shield Strike",
+   "code": "WARRIOR-P4-R04-C07"
+  },
+  "ed151451a47e": {
+   "src": "Blood Pact",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/001/000",
+   "keep": "en",
+   "ability": "Blood Pact",
+   "code": "WARRIOR-P5-R01-C00"
+  },
+  "1e6510328f34": {
+   "src": "A spell cast using health will\ndeal +{~} to +{~} bonus damage, depending\non how much of its cost is paid in blood.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Blood Pact"
+   ],
+   "lines": 3,
+   "flat": "A spell cast using health will deal +{~} to +{~} bonus damage, depending on how much of its cost is paid in blood.",
+   "_raw": "A spell cast using health will\ndeal +15% to +25% bonus damage, depending\non how much of its cost is paid in blood.",
+   "tree": "00/warrior/05/001/000",
+   "ability": "Blood Pact",
+   "code": "WARRIOR-P5-R01-C00"
+  },
+  "573596a4c840": {
+   "src": "If you do not have enough mana to\ncast a spell, spend health instead.\n({~} health per mana)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Blood Pact"
+   ],
+   "lines": 3,
+   "flat": "If you do not have enough mana to cast a spell, spend health instead. ({~} health per mana)",
+   "_raw": "If you do not have enough mana to\ncast a spell, spend health instead.\n(0.35% health per mana)",
+   "tree": "00/warrior/05/001/000",
+   "ability": "Blood Pact",
+   "code": "WARRIOR-P5-R01-C00"
+  },
+  "cfff94b0b649": {
+   "src": "Flying Kick",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/001/004",
+   "keep": "en",
+   "ability": "Flying Kick",
+   "code": "WARRIOR-P5-R01-C04"
+  },
+  "1f6ec35ed750": {
+   "src": "Hitting mobs with Charge will halt your\nmomentum and knock them away.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Flying Kick"
+   ],
+   "lines": 2,
+   "flat": "Hitting mobs with Charge will halt your momentum and knock them away.",
+   "_raw": "Hitting mobs with Charge will halt your\nmomentum and knock them away.",
+   "tree": "00/warrior/05/001/004",
+   "ability": "Flying Kick",
+   "code": "WARRIOR-P5-R01-C04"
+  },
+  "691ae5ea2e0a": {
+   "src": "Crushing Blow",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/001/006",
+   "keep": "en",
+   "ability": "Crushing Blow",
+   "code": "WARRIOR-P5-R01-C06"
+  },
+  "bfe9860c1ad0": {
+   "src": "Increase the damage of Bash.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Crushing Blow"
+   ],
+   "lines": 1,
+   "flat": "Increase the damage of Bash.",
+   "_raw": "Increase the damage of Bash.",
+   "tree": "00/warrior/05/001/006",
+   "ability": "Crushing Blow",
+   "code": "WARRIOR-P5-R01-C06"
+  },
+  "8c9284841932": {
+   "src": "{#} Total Damage: +{~} (of your DPS, per bash)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Crushing Blow",
+    "warrior/Thunderclap"
+   ],
+   "_raw": " Total Damage: +30% (of your DPS, per bash)",
+   "tree": "00/warrior/05/001/006",
+   "ability": "Crushing Blow、Thunderclap",
+   "code": "WARRIOR-P5-R01-C06"
+  },
+  "658db3a40c53": {
+   "src": "Rejuvenating Skin",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/001/008",
+   "keep": "en",
+   "ability": "Rejuvenating Skin",
+   "code": "WARRIOR-P5-R01-C08"
+  },
+  "11c8b9d7845a": {
+   "src": "For any damage you take,\nregenerate {~} of the\ndamage over the next {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Rejuvenating Skin"
+   ],
+   "lines": 3,
+   "flat": "For any damage you take, regenerate {~} of the damage over the next {~}s.",
+   "_raw": "For any damage you take,\nregenerate 30% of the\ndamage over the next 15s.",
+   "tree": "00/warrior/05/001/008",
+   "ability": "Rejuvenating Skin",
+   "code": "WARRIOR-P5-R01-C08"
+  },
+  "57c47f0ec0a8": {
+   "src": "Enraged Blow",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/002/001",
+   "keep": "en",
+   "ability": "Enraged Blow",
+   "code": "WARRIOR-P5-R02-C01"
+  },
+  "0e9c9ed346e1": {
+   "src": "Gain +{~} damage per {~} Corrupted {#}. (Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Enraged Blow"
+   ],
+   "lines": 1,
+   "flat": "Gain +{~} damage per {~} Corrupted {#}. (Max +{~})",
+   "_raw": "Gain +1.5% damage per 1% Corrupted . (Max +55%)",
+   "tree": "00/warrior/05/002/001",
+   "ability": "Enraged Blow",
+   "code": "WARRIOR-P5-R02-C01"
+  },
+  "970f36220d30": {
+   "src": "Sparkling Hope",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/002/007",
+   "keep": "en",
+   "ability": "Sparkling Hope",
+   "code": "WARRIOR-P5-R02-C07"
+  },
+  "270a3d9aaa9c": {
+   "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations at once)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Sparkling Hope"
+   ],
+   "lines": 3,
+   "flat": "Deals damage to all nearby enemies every time you heal {~} of your max health. (Max {~} activations at once)",
+   "_raw": "Deals damage to all nearby enemies every\ntime you heal 5% of your max health.\n(Max 5 activations at once)",
+   "tree": "00/warrior/05/002/007",
+   "ability": "Sparkling Hope",
+   "code": "WARRIOR-P5-R02-C07"
+  },
+  "ec2c94854b84": {
+   "src": "Exhilarate",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/003/000",
+   "keep": "en",
+   "ability": "Exhilarate",
+   "code": "WARRIOR-P5-R03-C00"
+  },
+  "aa8bc87bd812": {
+   "src": "After leaving Corrupted {#}, restore {~}\nof your Corrupted {#} bar as max health.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Exhilarate"
+   ],
+   "lines": 2,
+   "flat": "After leaving Corrupted {#}, restore {~} of your Corrupted {#} bar as max health.",
+   "_raw": "After leaving Corrupted , restore 30%\nof your Corrupted  bar as max health.",
+   "tree": "00/warrior/05/003/000",
+   "ability": "Exhilarate",
+   "code": "WARRIOR-P5-R03-C00"
+  },
+  "524a6de9a5b6": {
+   "src": "Comet",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/003/002",
+   "keep": "en",
+   "ability": "Comet",
+   "code": "WARRIOR-P5-R03-C02"
+  },
+  "10b3feea6d27": {
+   "src": "After being hit by Fireworks, enemies will crash\nunto the ground and receive more damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Comet"
+   ],
+   "lines": 2,
+   "flat": "After being hit by Fireworks, enemies will crash unto the ground and receive more damage.",
+   "_raw": "After being hit by Fireworks, enemies will crash\nunto the ground and receive more damage.",
+   "tree": "00/warrior/05/003/002",
+   "ability": "Comet",
+   "code": "WARRIOR-P5-R03-C02"
+  },
+  "7526d0c92e99": {
+   "src": "Spirit of the Rabbit",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/003/004",
+   "keep": "en",
+   "ability": "Spirit of the Rabbit",
+   "code": "WARRIOR-P5-R03-C04"
+  },
+  "ca13a3112e79": {
+   "src": "Reduce the Mana cost of Charge\nand increase your Walk Speed by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Spirit of the Rabbit"
+   ],
+   "lines": 2,
+   "flat": "Reduce the Mana cost of Charge and increase your Walk Speed by +{~}.",
+   "_raw": "Reduce the Mana cost of Charge\nand increase your Walk Speed by +20%.",
+   "tree": "00/warrior/05/003/004",
+   "ability": "Spirit of the Rabbit",
+   "code": "WARRIOR-P5-R03-C04"
+  },
+  "c32502f2b0a3": {
+   "src": "Cleansing Breeze",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/003/006",
+   "keep": "en",
+   "ability": "Cleansing Breeze",
+   "code": "WARRIOR-P5-R03-C06"
+  },
+  "8b461b8f4aff": {
+   "src": "Charge will cleanse you of all\nnegative effects and fire, as well\nas any allies you pass through.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Cleansing Breeze"
+   ],
+   "lines": 3,
+   "flat": "Charge will cleanse you of all negative effects and fire, as well as any allies you pass through.",
+   "_raw": "Charge will cleanse you of all\nnegative effects and fire, as well\nas any allies you pass through.",
+   "tree": "00/warrior/05/003/006",
+   "ability": "Cleansing Breeze",
+   "code": "WARRIOR-P5-R03-C06"
+  },
+  "3d279d6e8c1f": {
+   "src": "Cheaper Bash II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/003/008",
+   "keep": "en",
+   "ability": "Cheaper Bash II",
+   "code": "WARRIOR-P5-R03-C08"
+  },
+  "75a36f838dd8": {
+   "src": "Boiling Blood",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/004/001",
+   "keep": "en",
+   "ability": "Boiling Blood",
+   "code": "WARRIOR-P5-R04-C01"
+  },
+  "44dcebe0ec87": {
+   "src": "Bash will leave a puddle of boiling blood\nafter its last explosion, slowing down and\ndamaging enemies in it every {~} seconds.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Boiling Blood"
+   ],
+   "lines": 3,
+   "flat": "Bash will leave a puddle of boiling blood after its last explosion, slowing down and damaging enemies in it every {~} seconds.",
+   "_raw": "Bash will leave a puddle of boiling blood\nafter its last explosion, slowing down and\ndamaging enemies in it every 0.4 seconds.",
+   "tree": "00/warrior/05/004/001",
+   "ability": "Boiling Blood",
+   "code": "WARRIOR-P5-R04-C01"
+  },
+  "e04cd7badc2c": {
+   "src": "Collide",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/004/005",
+   "keep": "en",
+   "ability": "Collide",
+   "code": "WARRIOR-P5-R04-C05"
+  },
+  "b039731b0e3e": {
+   "src": "Enemies thrown into walls from Flying Kick\nwill explode and receive additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Collide"
+   ],
+   "lines": 2,
+   "flat": "Enemies thrown into walls from Flying Kick will explode and receive additional damage.",
+   "_raw": "Enemies thrown into walls from Flying Kick\nwill explode and receive additional damage.",
+   "tree": "00/warrior/05/004/005",
+   "ability": "Collide",
+   "code": "WARRIOR-P5-R04-C05"
+  },
+  "4dac993ff24e": {
+   "src": "Sacred Surge",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/004/007",
+   "keep": "en",
+   "ability": "Sacred Surge",
+   "code": "WARRIOR-P5-R04-C07"
+  },
+  "2dd31cef931e": {
+   "src": "Gain the ability to unleash a Sacred Surge ✧.\nWhenever any of your spells or abilities are\ntriggered, increase your Holy Power ✧ by {~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Sacred Surge"
+   ],
+   "lines": 3,
+   "flat": "Gain the ability to unleash a Sacred Surge ✧. Whenever any of your spells or abilities are triggered, increase your Holy Power ✧ by {~}.",
+   "_raw": "Gain the ability to unleash a Sacred Surge ✧.\nWhenever any of your spells or abilities are\ntriggered, increase your Holy Power ✧ by 1.",
+   "tree": "00/warrior/05/004/007",
+   "ability": "Sacred Surge",
+   "code": "WARRIOR-P5-R04-C07"
+  },
+  "9924128d4641": {
+   "src": "Uppercut will spend {~} Holy Power ✧\nto smite hit enemies with holy energy,\ndealing extra damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Sacred Surge"
+   ],
+   "lines": 3,
+   "flat": "Uppercut will spend {~} Holy Power ✧ to smite hit enemies with holy energy, dealing extra damage.",
+   "_raw": "Uppercut will spend 25 Holy Power ✧\nto smite hit enemies with holy energy,\ndealing extra damage.",
+   "tree": "00/warrior/05/004/007",
+   "ability": "Sacred Surge",
+   "code": "WARRIOR-P5-R04-C07"
+  },
+  "68539d3d7eae": {
+   "src": "Massacre",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/005/002",
+   "keep": "en",
+   "ability": "Massacre",
+   "code": "WARRIOR-P5-R05-C02"
+  },
+  "c02a4a3139a0": {
+   "src": "While Corrupted {#}, hitting an\nenemy with your Main Attack\nwill add +{~} Corruption {#},\nper second.\n(Powder Specials always add +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Massacre"
+   ],
+   "lines": 5,
+   "flat": "While Corrupted {#}, hitting an enemy with your Main Attack will add +{~} Corruption {#}, per second. (Powder Specials always add +{~})",
+   "_raw": "While Corrupted , hitting an\nenemy with your Main Attack\nwill add +1.5% Corruption ,\nper second.\n(Powder Specials always add +3%)",
+   "tree": "00/warrior/05/005/002",
+   "ability": "Massacre",
+   "code": "WARRIOR-P5-R05-C02"
+  },
+  "22b248bcb243": {
+   "src": "Emboldening Cry",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/05/005/008",
+   "keep": "en",
+   "ability": "Emboldening Cry",
+   "code": "WARRIOR-P5-R05-C08"
+  },
+  "5d402b68331c": {
+   "src": "War Scream bolsters courage,\ngranting players a damage bonus\nand additional resistance.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Emboldening Cry"
+   ],
+   "lines": 3,
+   "flat": "War Scream bolsters courage, granting players a damage bonus and additional resistance.",
+   "_raw": "War Scream bolsters courage,\ngranting players a damage bonus\nand additional resistance.",
+   "tree": "00/warrior/05/005/008",
+   "ability": "Emboldening Cry",
+   "code": "WARRIOR-P5-R05-C08"
+  },
+  "cbcd24527bdd": {
+   "src": "{#} Effect: +{~} Resistance Bonus (❁) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Emboldening Cry"
+   ],
+   "_raw": " Effect: +5% Resistance Bonus (❁) to Allies",
+   "tree": "00/warrior/05/005/008",
+   "ability": "Emboldening Cry",
+   "code": "WARRIOR-P5-R05-C08"
+  },
+  "c383c0bebbea": {
+   "src": "Uncontainable Corruption",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/001/000",
+   "keep": "en",
+   "ability": "Uncontainable Corruption",
+   "code": "WARRIOR-P6-R01-C00"
+  },
+  "ef5200b8b452": {
+   "src": "Reduces the cooldown of Bak'al's Grasp\nby -{~}s, and increases the raw damage\ngained for every {~} of health lost by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Uncontainable Corruption"
+   ],
+   "lines": 3,
+   "flat": "Reduces the cooldown of Bak'al's Grasp by -{~}s, and increases the raw damage gained for every {~} of health lost by +{~}.",
+   "_raw": "Reduces the cooldown of Bak'al's Grasp\nby -5s, and increases the raw damage\ngained for every 2% of health lost by +1.",
+   "tree": "00/warrior/06/001/000",
+   "ability": "Uncontainable Corruption",
+   "code": "WARRIOR-P6-R01-C00"
+  },
+  "cbb7cd82e7ba": {
+   "src": "Tempest",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/001/002",
+   "keep": "en",
+   "ability": "Tempest",
+   "code": "WARRIOR-P6-R01-C02"
+  },
+  "cdf023ba5e49": {
+   "src": "War Scream will ripple the ground and\ndeal damage to enemies {~} times\nover a large area every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Tempest"
+   ],
+   "lines": 3,
+   "flat": "War Scream will ripple the ground and deal damage to enemies {~} times over a large area every {~}s.",
+   "_raw": "War Scream will ripple the ground and\ndeal damage to enemies 3 times\nover a large area every 0.6s.",
+   "tree": "00/warrior/06/001/002",
+   "ability": "Tempest",
+   "code": "WARRIOR-P6-R01-C02"
+  },
+  "c58821208f67": {
+   "src": "{#} Total Damage: {~} (of your DPS, per ripple)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Tempest"
+   ],
+   "_raw": " Total Damage: 75% (of your DPS, per ripple)",
+   "tree": "00/warrior/06/001/002",
+   "ability": "Tempest",
+   "code": "WARRIOR-P6-R01-C02"
+  },
+  "d19cbb7a481d": {
+   "src": "Whirlwind Strike",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/001/004",
+   "keep": "en",
+   "ability": "Whirlwind Strike",
+   "code": "WARRIOR-P6-R01-C04"
+  },
+  "bf9894c4de5a": {
+   "src": "Uppercut will create a strong gust of air,\nlaunching you upward with enemies.\n(Hold shift to stay grounded)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Whirlwind Strike"
+   ],
+   "lines": 3,
+   "flat": "Uppercut will create a strong gust of air, launching you upward with enemies. (Hold shift to stay grounded)",
+   "_raw": "Uppercut will create a strong gust of air,\nlaunching you upward with enemies.\n(Hold shift to stay grounded)",
+   "tree": "00/warrior/06/001/004",
+   "ability": "Whirlwind Strike",
+   "code": "WARRIOR-P6-R01-C04"
+  },
+  "d29ff799ee9e": {
+   "src": "{#} Area of Effect: Circle-Shaped",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Whirlwind Strike"
+   ],
+   "_raw": " Area of Effect: Circle-Shaped",
+   "tree": "00/warrior/06/001/004",
+   "ability": "Whirlwind Strike",
+   "code": "WARRIOR-P6-R01-C04"
+  },
+  "feeec5d6a214": {
+   "src": "Mythril Skin",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/001/007",
+   "keep": "en",
+   "ability": "Mythril Skin",
+   "code": "WARRIOR-P6-R01-C07"
+  },
+  "c0c595cd8bf2": {
+   "src": "Gain +{~} Base Resistance and\nbecome immune to knockback.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Mythril Skin"
+   ],
+   "lines": 2,
+   "flat": "Gain +{~} Base Resistance and become immune to knockback.",
+   "_raw": "Gain +5% Base Resistance and\nbecome immune to knockback.",
+   "tree": "00/warrior/06/001/007",
+   "ability": "Mythril Skin",
+   "code": "WARRIOR-P6-R01-C07"
+  },
+  "c35659948100": {
+   "src": "Armour Breaker",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/002/001",
+   "keep": "en",
+   "ability": "Armour Breaker",
+   "code": "WARRIOR-P6-R02-C01"
+  },
+  "5e0c25293335": {
+   "src": "Gaining {~} Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Armour Breaker"
+   ],
+   "lines": 2,
+   "flat": "Gaining {~} Corrupted {#} will make your next Uppercut give you a damage boost.",
+   "_raw": "Gaining 40% Corrupted  will make your\nnext Uppercut give you a damage boost.",
+   "tree": "00/warrior/06/002/001",
+   "ability": "Armour Breaker",
+   "code": "WARRIOR-P6-R02-C01"
+  },
+  "7a604cc4008a": {
+   "src": "Radiant Devotee",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/002/003",
+   "keep": "en",
+   "ability": "Radiant Devotee",
+   "code": "WARRIOR-P6-R02-C03"
+  },
+  "8ddf7f032c11": {
+   "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Radiant Devotee"
+   ],
+   "lines": 2,
+   "flat": "For every {~} Reflection you have from items, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
+   "_raw": "For every 4% Reflection you have from\nitems, gain +1/5s Mana Regen. (Max 10/5s)",
+   "tree": "00/warrior/06/002/003",
+   "ability": "Radiant Devotee",
+   "code": "WARRIOR-P6-R02-C03"
+  },
+  "77ed6cc470cf": {
+   "src": "Freestream Flow",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/002/005",
+   "keep": "en",
+   "ability": "Freestream Flow",
+   "code": "WARRIOR-P6-R02-C05"
+  },
+  "1bb3a21a0e33": {
+   "src": "You fall more slowly during Charge.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Freestream Flow"
+   ],
+   "lines": 1,
+   "flat": "You fall more slowly during Charge.",
+   "_raw": "You fall more slowly during Charge.",
+   "tree": "00/warrior/06/002/005",
+   "ability": "Freestream Flow",
+   "code": "WARRIOR-P6-R02-C05"
+  },
+  "b12208363c40": {
+   "src": "Riposte",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/003/002",
+   "keep": "en",
+   "ability": "Riposte",
+   "code": "WARRIOR-P6-R03-C02"
+  },
+  "49dfa79b9fe5": {
+   "src": "Increase the damage of Counter and reduce its\ncooldown by -{~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Riposte"
+   ],
+   "lines": 2,
+   "flat": "Increase the damage of Counter and reduce its cooldown by -{~}s.",
+   "_raw": "Increase the damage of Counter and reduce its\ncooldown by -0.5s.",
+   "tree": "00/warrior/06/003/002",
+   "ability": "Riposte",
+   "code": "WARRIOR-P6-R03-C02"
+  },
+  "82caa561a2a6": {
+   "src": "Increase the damage reduction of Counter by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Riposte"
+   ],
+   "lines": 1,
+   "flat": "Increase the damage reduction of Counter by +{~}.",
+   "_raw": "Increase the damage reduction of Counter by +10%.",
+   "tree": "00/warrior/06/003/002",
+   "ability": "Riposte",
+   "code": "WARRIOR-P6-R03-C02"
+  },
+  "d9cecd922cb8": {
+   "src": "Cheaper War Scream",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/003/004",
+   "keep": "en",
+   "ability": "Cheaper War Scream",
+   "code": "WARRIOR-P6-R03-C04"
+  },
+  "dc9466becc49": {
+   "src": "Reduce the Mana cost of War Scream.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Cheaper War Scream",
+    "warrior/Provoke",
+    "warrior/Cheaper War Scream II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of War Scream.",
+   "_raw": "Reduce the Mana cost of War Scream.",
+   "tree": "00/warrior/06/003/004",
+   "ability": "Cheaper War Scream、Provoke、Cheaper War Scream II",
+   "code": "WARRIOR-P6-R03-C04"
+  },
+  "70f3b11dd21c": {
+   "src": "Luster Purge",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/003/006",
+   "keep": "en",
+   "ability": "Luster Purge",
+   "code": "WARRIOR-P6-R03-C06"
+  },
+  "939083f48dd2": {
+   "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Luster Purge"
+   ],
+   "lines": 3,
+   "flat": "While you have {~} Holy Power ✧, your Main Attacks are empowered, and grant you {~} Holy Power.",
+   "_raw": "While you have 10 Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you 5 Holy Power.",
+   "tree": "00/warrior/06/003/006",
+   "ability": "Luster Purge",
+   "code": "WARRIOR-P6-R03-C06"
+  },
+  "891bd0b72c14": {
+   "src": "{#} Cooldown: {~}s (for Holy Power)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Luster Purge"
+   ],
+   "_raw": " Cooldown: 2s (for Holy Power)",
+   "tree": "00/warrior/06/003/006",
+   "ability": "Luster Purge",
+   "code": "WARRIOR-P6-R03-C06"
+  },
+  "b93a786e0d2d": {
+   "src": "{#} Main Attack Damage Bonus: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Luster Purge"
+   ],
+   "_raw": " Main Attack Damage Bonus: +40%",
+   "tree": "00/warrior/06/003/006",
+   "ability": "Luster Purge",
+   "code": "WARRIOR-P6-R03-C06"
+  },
+  "3cb58a99fbb5": {
+   "src": "{#} Main Attack Range: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Luster Purge"
+   ],
+   "_raw": " Main Attack Range: +25%",
+   "tree": "00/warrior/06/003/006",
+   "ability": "Luster Purge",
+   "code": "WARRIOR-P6-R03-C06"
+  },
+  "a7cecf9d23d4": {
+   "src": "Hallowed Blaze",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/003/008",
+   "keep": "en",
+   "ability": "Hallowed Blaze",
+   "code": "WARRIOR-P6-R03-C08"
+  },
+  "07040bfe241b": {
+   "src": "Flaming Uppercut will deal more damage\nand grant {~} Holy Power ✧ whenever\nit deals damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Hallowed Blaze"
+   ],
+   "lines": 3,
+   "flat": "Flaming Uppercut will deal more damage and grant {~} Holy Power ✧ whenever it deals damage.",
+   "_raw": "Flaming Uppercut will deal more damage\nand grant 1 Holy Power ✧ whenever\nit deals damage.",
+   "tree": "00/warrior/06/003/008",
+   "ability": "Hallowed Blaze",
+   "code": "WARRIOR-P6-R03-C08"
+  },
+  "6bd287e4fbe6": {
+   "src": "Massive Bash",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/004/000",
+   "keep": "en",
+   "ability": "Massive Bash",
+   "code": "WARRIOR-P6-R04-C00"
+  },
+  "89792d807228": {
+   "src": "Increase Bash's area of effect radius\nby +{~} per {~} Corrupted {#}. (Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Massive Bash"
+   ],
+   "lines": 2,
+   "flat": "Increase Bash's area of effect radius by +{~} per {~} Corrupted {#}. (Max +{~})",
+   "_raw": "Increase Bash's area of effect radius\nby +1% per 1% Corrupted . (Max +40%)",
+   "tree": "00/warrior/06/004/000",
+   "ability": "Massive Bash",
+   "code": "WARRIOR-P6-R04-C00"
+  },
+  "bdda62867202": {
+   "src": "Axe Kick",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/004/003",
+   "keep": "en",
+   "ability": "Axe Kick",
+   "code": "WARRIOR-P6-R04-C03"
+  },
+  "2957f34ac501": {
+   "src": "Increases the damage and mana cost\nof Uppercut.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Axe Kick"
+   ],
+   "lines": 2,
+   "flat": "Increases the damage and mana cost of Uppercut.",
+   "_raw": "Increases the damage and mana cost\nof Uppercut.",
+   "tree": "00/warrior/06/004/003",
+   "ability": "Axe Kick",
+   "code": "WARRIOR-P6-R04-C03"
+  },
+  "a79a3dd2196c": {
+   "src": "Blessed Bulwark",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/004/007",
+   "keep": "en",
+   "ability": "Blessed Bulwark",
+   "code": "WARRIOR-P6-R04-C07"
+  },
+  "216aa2b605f8": {
+   "src": "Add +{~} additional charges and\n+{~} damage reduction to\nMantle of the Bovemists.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Blessed Bulwark"
+   ],
+   "lines": 3,
+   "flat": "Add +{~} additional charges and +{~} damage reduction to Mantle of the Bovemists.",
+   "_raw": "Add +2 additional charges and\n+20% damage reduction to\nMantle of the Bovemists.",
+   "tree": "00/warrior/06/004/007",
+   "ability": "Blessed Bulwark",
+   "code": "WARRIOR-P6-R04-C07"
+  },
+  "e66b58add84e": {
+   "src": "Mindless Slaughter",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/005/001",
+   "keep": "en",
+   "ability": "Mindless Slaughter",
+   "code": "WARRIOR-P6-R05-C01"
+  },
+  "a37ba3891ae2": {
+   "src": "Massacre adds twice as much Corruption {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Mindless Slaughter"
+   ],
+   "lines": 1,
+   "flat": "Massacre adds twice as much Corruption {#}.",
+   "_raw": "Massacre adds twice as much Corruption .",
+   "tree": "00/warrior/06/005/001",
+   "ability": "Mindless Slaughter",
+   "code": "WARRIOR-P6-R05-C01"
+  },
+  "ee17b5a14022": {
+   "src": "While Corrupted, your Main Attack and\nPowder Specials now cost {~} health to\nuse, activating Blood Pact.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Mindless Slaughter"
+   ],
+   "lines": 3,
+   "flat": "While Corrupted, your Main Attack and Powder Specials now cost {~} health to use, activating Blood Pact.",
+   "_raw": "While Corrupted, your Main Attack and\nPowder Specials now cost 0.5% health to\nuse, activating Blood Pact.",
+   "tree": "00/warrior/06/005/001",
+   "ability": "Mindless Slaughter",
+   "code": "WARRIOR-P6-R05-C01"
+  },
+  "7dda00f0a1d3": {
+   "src": "Provoke",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/06/005/006",
+   "keep": "en",
+   "ability": "Provoke",
+   "code": "WARRIOR-P6-R05-C06"
+  },
+  "bb39695538d6": {
+   "src": "Enemies damaged by War Scream\nwill become Provoked {#}, targeting\nonly you for at least {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Provoke"
+   ],
+   "lines": 3,
+   "flat": "Enemies damaged by War Scream will become Provoked {#}, targeting only you for at least {~}s.",
+   "_raw": "Enemies damaged by War Scream\nwill become Provoked , targeting\nonly you for at least 5s.",
+   "tree": "00/warrior/06/005/006",
+   "ability": "Provoke",
+   "code": "WARRIOR-P6-R05-C06"
+  },
+  "cdf0b344f765": {
+   "src": "Cheaper War Scream II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/001/000",
+   "keep": "en",
+   "ability": "Cheaper War Scream II",
+   "code": "WARRIOR-P7-R01-C00"
+  },
+  "1dff443a7baa": {
+   "src": "Overwhelming Rage",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/001/002",
+   "keep": "en",
+   "ability": "Overwhelming Rage",
+   "code": "WARRIOR-P7-R01-C02"
+  },
+  "9ad5082fc73c": {
+   "src": "Increase the cap of Enraged Blow by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Overwhelming Rage",
+    "warrior/Ecstasy"
+   ],
+   "lines": 1,
+   "flat": "Increase the cap of Enraged Blow by +{~}.",
+   "_raw": "Increase the cap of Enraged Blow by +30%.",
+   "tree": "00/warrior/07/001/002",
+   "ability": "Overwhelming Rage、Ecstasy",
+   "code": "WARRIOR-P7-R01-C02"
+  },
+  "33ec23db96b1": {
+   "src": "Cyclone",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/001/004",
+   "keep": "en",
+   "ability": "Cyclone",
+   "code": "WARRIOR-P7-R01-C04"
+  },
+  "53bcc3a31a77": {
+   "src": "After casting War Scream, envelop yourself with\na vortex that damages nearby enemies every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Cyclone"
+   ],
+   "lines": 2,
+   "flat": "After casting War Scream, envelop yourself with a vortex that damages nearby enemies every {~}s.",
+   "_raw": "After casting War Scream, envelop yourself with\na vortex that damages nearby enemies every 0.35s.",
+   "tree": "00/warrior/07/001/004",
+   "ability": "Cyclone",
+   "code": "WARRIOR-P7-R01-C04"
+  },
+  "d1222178efa7": {
+   "src": "Pressure",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/002/003",
+   "keep": "en",
+   "ability": "Pressure",
+   "code": "WARRIOR-P7-R02-C03"
+  },
+  "5242688ca505": {
+   "src": "Bash gains {~}x as many hits and is {~}s faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Pressure"
+   ],
+   "lines": 1,
+   "flat": "Bash gains {~}x as many hits and is {~}s faster.",
+   "_raw": "Bash gains 3x as many hits and is 0.1s faster.",
+   "tree": "00/warrior/07/002/003",
+   "ability": "Pressure",
+   "code": "WARRIOR-P7-R02-C03"
+  },
+  "4a1843375c04": {
+   "src": "Uppercut deals additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Pressure"
+   ],
+   "lines": 1,
+   "flat": "Uppercut deals additional damage.",
+   "_raw": "Uppercut deals additional damage.",
+   "tree": "00/warrior/07/002/003",
+   "ability": "Pressure",
+   "code": "WARRIOR-P7-R02-C03"
+  },
+  "00497b144561": {
+   "src": "War Scream grants a damage boost,\nbut effect duration is reduced.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Pressure"
+   ],
+   "lines": 2,
+   "flat": "War Scream grants a damage boost, but effect duration is reduced.",
+   "_raw": "War Scream grants a damage boost,\nbut effect duration is reduced.",
+   "tree": "00/warrior/07/002/003",
+   "ability": "Pressure",
+   "code": "WARRIOR-P7-R02-C03"
+  },
+  "6e09f2957ab6": {
+   "src": "When Generalist acts on a spell, it is enhanced.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Pressure"
+   ],
+   "lines": 1,
+   "flat": "When Generalist acts on a spell, it is enhanced.",
+   "_raw": "When Generalist acts on a spell, it is enhanced.",
+   "tree": "00/warrior/07/002/003",
+   "ability": "Pressure",
+   "code": "WARRIOR-P7-R02-C03"
+  },
+  "c977d7dac701": {
+   "src": "{#}({#}{#}{#}{#}{#}{#}Damage: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Pressure"
+   ],
+   "_raw": "( Damage: +45%)",
+   "tree": "00/warrior/07/002/003",
+   "ability": "Pressure",
+   "code": "WARRIOR-P7-R02-C03"
+  },
+  "022d69f1fa0f": {
+   "src": "{#} Effect: +{~} Damage Bonus (⚔) to Players",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Pressure"
+   ],
+   "_raw": " Effect: +10% Damage Bonus (⚔) to Players",
+   "tree": "00/warrior/07/002/003",
+   "ability": "Pressure",
+   "code": "WARRIOR-P7-R02-C03"
+  },
+  "9ab63902c0ec": {
+   "src": "Thunderclap",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/002/005",
+   "keep": "en",
+   "ability": "Thunderclap",
+   "code": "WARRIOR-P7-R02-C05"
+  },
+  "b169cda5d66b": {
+   "src": "Bash will cast at the player's position at\ndouble the speed and with an increased area of effect.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Thunderclap"
+   ],
+   "lines": 2,
+   "flat": "Bash will cast at the player's position at double the speed and with an increased area of effect.",
+   "_raw": "Bash will cast at the player's position at\ndouble the speed and with an increased area of effect.",
+   "tree": "00/warrior/07/002/005",
+   "ability": "Thunderclap",
+   "code": "WARRIOR-P7-R02-C05"
+  },
+  "b3dd6bf2db1c": {
+   "src": "With Quadruple Bash, gain less damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Thunderclap"
+   ],
+   "lines": 1,
+   "flat": "With Quadruple Bash, gain less damage.",
+   "_raw": "With Quadruple Bash, gain less damage.",
+   "tree": "00/warrior/07/002/005",
+   "ability": "Thunderclap",
+   "code": "WARRIOR-P7-R02-C05"
+  },
+  "3932a8217913": {
+   "src": "Radiance",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/002/007",
+   "keep": "en",
+   "ability": "Radiance",
+   "code": "WARRIOR-P7-R02-C07"
+  },
+  "59df9643efc9": {
+   "src": "Bash will buff positive IDs\nof yourself and allies.\n(Max Mana, XP Bonus, Loot Bonus, Loot Quality,\nGather XP Bonus, and Gather Speed Bonus\nare excluded)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Radiance"
+   ],
+   "lines": 5,
+   "flat": "Bash will buff positive IDs of yourself and allies. (Max Mana, XP Bonus, Loot Bonus, Loot Quality, Gather XP Bonus, and Gather Speed Bonus are excluded)",
+   "_raw": "Bash will buff positive IDs\nof yourself and allies.\n(Max Mana, XP Bonus, Loot Bonus, Loot Quality,\nGather XP Bonus, and Gather Speed Bonus\nare excluded)",
+   "tree": "00/warrior/07/002/007",
+   "ability": "Radiance",
+   "code": "WARRIOR-P7-R02-C07"
+  },
+  "6b95ce72375d": {
+   "src": "{#} Effect: +{~} ID Effectiveness (❈) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Radiance",
+    "warrior/Shine"
+   ],
+   "_raw": " Effect: +15% ID Effectiveness (❈) to Allies",
+   "tree": "00/warrior/07/002/007",
+   "ability": "Radiance、Shine",
+   "code": "WARRIOR-P7-R02-C07"
+  },
+  "3493ed064944": {
+   "src": "Bloodlust",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/003/001",
+   "keep": "en",
+   "ability": "Bloodlust",
+   "code": "WARRIOR-P7-R03-C01"
+  },
+  "7b5e7cf742ee": {
+   "src": "After leaving Corrupted {#}, annihilate all\nenemies around you. For every {~} Corrupted {#}\nyou had, damage increases by {~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Bloodlust"
+   ],
+   "lines": 3,
+   "flat": "After leaving Corrupted {#}, annihilate all enemies around you. For every {~} Corrupted {#} you had, damage increases by {~}.",
+   "_raw": "After leaving Corrupted , annihilate all\nenemies around you. For every 1% Corrupted \nyou had, damage increases by 5%.",
+   "tree": "00/warrior/07/003/001",
+   "ability": "Bloodlust",
+   "code": "WARRIOR-P7-R03-C01"
+  },
+  "4a5b1b213d4f": {
+   "src": "Discombobulate",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/003/004",
+   "keep": "en",
+   "ability": "Discombobulate",
+   "code": "WARRIOR-P7-R03-C04"
+  },
+  "369a10090ace": {
+   "src": "Damaging enemies will inflict them\nwith +{~} Discombobulated ⚙. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Discombobulate"
+   ],
+   "lines": 2,
+   "flat": "Damaging enemies will inflict them with +{~} Discombobulated ⚙. (Max {~})",
+   "_raw": "Damaging enemies will inflict them\nwith +2 Discombobulated ⚙. (Max 150)",
+   "tree": "00/warrior/07/003/004",
+   "ability": "Discombobulate",
+   "code": "WARRIOR-P7-R03-C04"
+  },
+  "f96c2cff03df": {
+   "src": "You will deal +{~} damage to enemies\nfor every Discombobulated ⚙ they have.\n-{~} of the bonus decays every second.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Discombobulate"
+   ],
+   "lines": 3,
+   "flat": "You will deal +{~} damage to enemies for every Discombobulated ⚙ they have. -{~} of the bonus decays every second.",
+   "_raw": "You will deal +3 damage to enemies\nfor every Discombobulated ⚙ they have.\n-4 of the bonus decays every second.",
+   "tree": "00/warrior/07/003/004",
+   "ability": "Discombobulate",
+   "code": "WARRIOR-P7-R03-C04"
+  },
+  "a7f232e522c1": {
+   "src": "Reverberance",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/003/006",
+   "keep": "en",
+   "ability": "Reverberance",
+   "code": "WARRIOR-P7-R03-C06"
+  },
+  "ae5c87eb78ce": {
+   "src": "Air Shout can hit +{~} times,\nand deals more damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Reverberance"
+   ],
+   "lines": 2,
+   "flat": "Air Shout can hit +{~} times, and deals more damage.",
+   "_raw": "Air Shout can hit +2 times,\nand deals more damage.",
+   "tree": "00/warrior/07/003/006",
+   "ability": "Reverberance",
+   "code": "WARRIOR-P7-R03-C06"
+  },
+  "cc772bb49cf5": {
+   "src": "Consecration",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/003/008",
+   "keep": "en",
+   "ability": "Consecration",
+   "code": "WARRIOR-P7-R03-C08"
+  },
+  "317a737164a5": {
+   "src": "Sacred Surge grants +{~} Holy Power ✧\nfor every spell or ability triggered\nand deals increased damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Consecration"
+   ],
+   "lines": 3,
+   "flat": "Sacred Surge grants +{~} Holy Power ✧ for every spell or ability triggered and deals increased damage.",
+   "_raw": "Sacred Surge grants +0.3 Holy Power ✧\nfor every spell or ability triggered\nand deals increased damage.",
+   "tree": "00/warrior/07/003/008",
+   "ability": "Consecration",
+   "code": "WARRIOR-P7-R03-C08"
+  },
+  "9cd79e2667a0": {
+   "src": "Haemorrhage",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/004/000",
+   "keep": "en",
+   "ability": "Haemorrhage",
+   "code": "WARRIOR-P7-R04-C00"
+  },
+  "87ca128b6d74": {
+   "src": "Reduce Blood Pact's health cost.\n({~} health per mana)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Haemorrhage"
+   ],
+   "lines": 2,
+   "flat": "Reduce Blood Pact's health cost. ({~} health per mana)",
+   "_raw": "Reduce Blood Pact's health cost.\n(0.235% health per mana)",
+   "tree": "00/warrior/07/004/000",
+   "ability": "Haemorrhage",
+   "code": "WARRIOR-P7-R04-C00"
+  },
+  "7016e7a8a43d": {
+   "src": "Brink of Madness",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/004/002",
+   "keep": "en",
+   "ability": "Brink of Madness",
+   "code": "WARRIOR-P7-R04-C02"
+  },
+  "457d49439038": {
+   "src": "You gain a +{~} Resistance buff\nif your health is at {~} or less.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Brink of Madness"
+   ],
+   "lines": 2,
+   "flat": "You gain a +{~} Resistance buff if your health is at {~} or less.",
+   "_raw": "You gain a +40% Resistance buff\nif your health is at 25% or less.",
+   "tree": "00/warrior/07/004/002",
+   "ability": "Brink of Madness",
+   "code": "WARRIOR-P7-R04-C02"
+  },
+  "80e8ec559880": {
+   "src": "Cheaper Uppercut II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/004/005",
+   "keep": "en",
+   "ability": "Cheaper Uppercut II",
+   "code": "WARRIOR-P7-R04-C05"
+  },
+  "eef5e3dff805": {
+   "src": "Heavenly Trumpet",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/004/007",
+   "keep": "en",
+   "ability": "Heavenly Trumpet",
+   "code": "WARRIOR-P7-R04-C07"
+  },
+  "69dd87842338": {
+   "src": "All nearby allies are granted +{~} Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Heavenly Trumpet"
+   ],
+   "lines": 3,
+   "flat": "All nearby allies are granted +{~} Overhealth ❤ for each point of Holy Power ✧ consumed. Overhealth ❤ decays over {~}s.",
+   "_raw": "All nearby allies are granted +1% Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over 20s.",
+   "tree": "00/warrior/07/004/007",
+   "ability": "Heavenly Trumpet",
+   "code": "WARRIOR-P7-R04-C07"
+  },
+  "bab7a70c6ecc": {
+   "src": "Casting War Scream while holding shift\nwith at least {~} Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Heavenly Trumpet"
+   ],
+   "lines": 3,
+   "flat": "Casting War Scream while holding shift with at least {~} Holy Power ✧ will spend all of it to sound off a protective trumpet.",
+   "_raw": "Casting War Scream while holding shift\nwith at least 25 Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
+   "tree": "00/warrior/07/004/007",
+   "ability": "Heavenly Trumpet",
+   "code": "WARRIOR-P7-R04-C07"
+  },
+  "cd3b1eb44abb": {
+   "src": "Concussion",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/005/001",
+   "keep": "en",
+   "ability": "Concussion",
+   "code": "WARRIOR-P7-R05-C01"
+  },
+  "41c708318a8a": {
+   "src": "Final Crush will deal additional +{~} damage to\nenemies damaged by the previous Bash hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Concussion"
+   ],
+   "lines": 2,
+   "flat": "Final Crush will deal additional +{~} damage to enemies damaged by the previous Bash hit.",
+   "_raw": "Final Crush will deal additional +60% damage to\nenemies damaged by the previous Bash hit.",
+   "tree": "00/warrior/07/005/001",
+   "ability": "Concussion",
+   "code": "WARRIOR-P7-R05-C01"
+  },
+  "d20c1b07396c": {
+   "src": "Second Chance",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/07/005/008",
+   "keep": "en",
+   "ability": "Second Chance",
+   "code": "WARRIOR-P7-R05-C08"
+  },
+  "7f2e6df8bf73": {
+   "src": "Keeps you alive with {~} of your health\nremaining and makes all nearby allies invincible\nafter receiving a fatal blow.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Second Chance"
+   ],
+   "lines": 3,
+   "flat": "Keeps you alive with {~} of your health remaining and makes all nearby allies invincible after receiving a fatal blow.",
+   "_raw": "Keeps you alive with 30% of your health\nremaining and makes all nearby allies invincible\nafter receiving a fatal blow.",
+   "tree": "00/warrior/07/005/008",
+   "ability": "Second Chance",
+   "code": "WARRIOR-P7-R05-C08"
+  },
+  "ea076a9e9a99": {
+   "src": "{#} Cooldown: {~}m",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "warrior/Second Chance"
+   ],
+   "_raw": " Cooldown: 10m",
+   "tree": "00/warrior/07/005/008",
+   "ability": "Second Chance",
+   "code": "WARRIOR-P7-R05-C08"
+  },
+  "300766ebffc5": {
+   "src": "{#} Effect: Invincibility (☗) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Second Chance"
+   ],
+   "_raw": " Effect: Invincibility (☗) to Allies",
+   "tree": "00/warrior/07/005/008",
+   "ability": "Second Chance",
+   "code": "WARRIOR-P7-R05-C08"
+  },
+  "ba22a70311fc": {
+   "src": "Rumble",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/001/000",
+   "keep": "en",
+   "ability": "Rumble",
+   "code": "WARRIOR-P8-R01-C00"
+  },
+  "0e15533b7418": {
+   "src": "Increase Bash's damage by {~}\nper {~} {#} Area of Effect it has.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Rumble"
+   ],
+   "lines": 2,
+   "flat": "Increase Bash's damage by {~} per {~} {#} Area of Effect it has.",
+   "_raw": "Increase Bash's damage by 5%\nper 1  Area of Effect it has.",
+   "tree": "00/warrior/08/001/000",
+   "ability": "Rumble",
+   "code": "WARRIOR-P8-R01-C00"
+  },
+  "28e5b7932697": {
+   "src": "Tempestuous Winds",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/001/003",
+   "keep": "en",
+   "ability": "Tempestuous Winds",
+   "code": "WARRIOR-P8-R01-C03"
+  },
+  "be8490820ffe": {
+   "src": "Cyclone will deal damage {~}s faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Tempestuous Winds"
+   ],
+   "lines": 1,
+   "flat": "Cyclone will deal damage {~}s faster.",
+   "_raw": "Cyclone will deal damage 0.15s faster.",
+   "tree": "00/warrior/08/001/003",
+   "ability": "Tempestuous Winds",
+   "code": "WARRIOR-P8-R01-C03"
+  },
+  "1748b20cafe6": {
+   "src": "Increase Tempest's damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Tempestuous Winds"
+   ],
+   "lines": 1,
+   "flat": "Increase Tempest's damage.",
+   "_raw": "Increase Tempest's damage.",
+   "tree": "00/warrior/08/001/003",
+   "ability": "Tempestuous Winds",
+   "code": "WARRIOR-P8-R01-C03"
+  },
+  "3152be4c6c1f": {
+   "src": "{#} Total Damage: +{~} (of your DPS, to Tempest)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Tempestuous Winds"
+   ],
+   "_raw": " Total Damage: +25% (of your DPS, to Tempest)",
+   "tree": "00/warrior/08/001/003",
+   "ability": "Tempestuous Winds",
+   "code": "WARRIOR-P8-R01-C03"
+  },
+  "cd75411d14f2": {
+   "src": "Acceleration",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/001/005",
+   "keep": "en",
+   "ability": "Acceleration",
+   "code": "WARRIOR-P8-R01-C05"
+  },
+  "accb0cc3d8ae": {
+   "src": "Increase Flying Kick's damage\nby +{~} per block travelled.\n(Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Acceleration"
+   ],
+   "lines": 3,
+   "flat": "Increase Flying Kick's damage by +{~} per block travelled. (Max +{~})",
+   "_raw": "Increase Flying Kick's damage\nby +10% per block travelled.\n(Max +150%)",
+   "tree": "00/warrior/08/001/005",
+   "ability": "Acceleration",
+   "code": "WARRIOR-P8-R01-C05"
+  },
+  "2b815f27f03e": {
+   "src": "Shine",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/001/007",
+   "keep": "en",
+   "ability": "Shine",
+   "code": "WARRIOR-P8-R01-C07"
+  },
+  "dae0c0a493aa": {
+   "src": "Increase Radiance's effectiveness.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Shine"
+   ],
+   "lines": 1,
+   "flat": "Increase Radiance's effectiveness.",
+   "_raw": "Increase Radiance's effectiveness.",
+   "tree": "00/warrior/08/001/007",
+   "ability": "Shine",
+   "code": "WARRIOR-P8-R01-C07"
+  },
+  "2d5f16e54d4b": {
+   "src": "Bloodied Armory",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/002/001",
+   "keep": "en",
+   "ability": "Bloodied Armory",
+   "code": "WARRIOR-P8-R02-C01"
+  },
+  "d9e5c58a4087": {
+   "src": "Activating Blood Pact adds a blood swipe\nto your next Main Attack. (Max {~})\n(Damage is dealt as Main Attack Damage)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Bloodied Armory"
+   ],
+   "lines": 3,
+   "flat": "Activating Blood Pact adds a blood swipe to your next Main Attack. (Max {~}) (Damage is dealt as Main Attack Damage)",
+   "_raw": "Activating Blood Pact adds a blood swipe\nto your next Main Attack. (Max 5)\n(Damage is dealt as Main Attack Damage)",
+   "tree": "00/warrior/08/002/001",
+   "ability": "Bloodied Armory",
+   "code": "WARRIOR-P8-R02-C01"
+  },
+  "da79ec812271": {
+   "src": "{#} Total Damage: {~} (of your DPS, per Swipe)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Bloodied Armory"
+   ],
+   "_raw": " Total Damage: 65% (of your DPS, per Swipe)",
+   "tree": "00/warrior/08/002/001",
+   "ability": "Bloodied Armory",
+   "code": "WARRIOR-P8-R02-C01"
+  },
+  "5b0dd5cf7bba": {
+   "src": "Ecstasy",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/003/000",
+   "keep": "en",
+   "ability": "Ecstasy",
+   "code": "WARRIOR-P8-R03-C00"
+  },
+  "bf264a408373": {
+   "src": "Increase Bloodlust's bonus damage per\n{~} Corrupted {#} by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Ecstasy"
+   ],
+   "lines": 2,
+   "flat": "Increase Bloodlust's bonus damage per {~} Corrupted {#} by +{~}.",
+   "_raw": "Increase Bloodlust's bonus damage per\n1% Corrupted  by +2%.",
+   "tree": "00/warrior/08/003/000",
+   "ability": "Ecstasy",
+   "code": "WARRIOR-P8-R03-C00"
+  },
+  "f9c5ca356363": {
+   "src": "Baffling Blows",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/003/003",
+   "keep": "en",
+   "ability": "Baffling Blows",
+   "code": "WARRIOR-P8-R03-C03"
+  },
+  "0ce4850ae908": {
+   "src": "Increase your maximum\nDiscombobulated ⚙ by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Baffling Blows"
+   ],
+   "lines": 2,
+   "flat": "Increase your maximum Discombobulated ⚙ by +{~}.",
+   "_raw": "Increase your maximum\nDiscombobulated ⚙ by +50.",
+   "tree": "00/warrior/08/003/003",
+   "ability": "Baffling Blows",
+   "code": "WARRIOR-P8-R03-C03"
+  },
+  "09b6aa6507d0": {
+   "src": "Harmony",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/003/005",
+   "keep": "en",
+   "ability": "Harmony",
+   "code": "WARRIOR-P8-R03-C05"
+  },
+  "455cffe03db9": {
+   "src": "Activating Generalist grants\n+{~} Harmony for {~}s. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Harmony"
+   ],
+   "lines": 2,
+   "flat": "Activating Generalist grants +{~} Harmony for {~}s. (Max {~})",
+   "_raw": "Activating Generalist grants\n+1 Harmony for 10s. (Max 5)",
+   "tree": "00/warrior/08/003/005",
+   "ability": "Harmony",
+   "code": "WARRIOR-P8-R03-C05"
+  },
+  "f13fef800816": {
+   "src": "Gain +{~} Damage per {~} Harmony.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Harmony"
+   ],
+   "lines": 1,
+   "flat": "Gain +{~} Damage per {~} Harmony.",
+   "_raw": "Gain +4% Damage per 1 Harmony.",
+   "tree": "00/warrior/08/003/005",
+   "ability": "Harmony",
+   "code": "WARRIOR-P8-R03-C05"
+  },
+  "37983442c198": {
+   "src": "Buried Light",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/003/007",
+   "keep": "en",
+   "ability": "Buried Light",
+   "code": "WARRIOR-P8-R03-C07"
+  },
+  "07697e671523": {
+   "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Buried Light"
+   ],
+   "lines": 4,
+   "flat": "Casting Bash while sneaking will consume {~} Holy Power ✧ to summon a beam of light which slowly moves forward, damaging enemies every {~}s.",
+   "_raw": "Casting Bash while sneaking will consume\n25 Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every 0.5s.",
+   "tree": "00/warrior/08/003/007",
+   "ability": "Buried Light",
+   "code": "WARRIOR-P8-R03-C07"
+  },
+  "c947a52724f0": {
+   "src": "Spectacle",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/004/002",
+   "keep": "en",
+   "ability": "Spectacle",
+   "code": "WARRIOR-P8-R04-C02"
+  },
+  "1cd88be966f8": {
+   "src": "Increase Fireworks' and Comet's damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Spectacle"
+   ],
+   "lines": 1,
+   "flat": "Increase Fireworks' and Comet's damage.",
+   "_raw": "Increase Fireworks' and Comet's damage.",
+   "tree": "00/warrior/08/004/002",
+   "ability": "Spectacle",
+   "code": "WARRIOR-P8-R04-C02"
+  },
+  "f6fd5e6d0834": {
+   "src": "{#} Total Damage: +{~} (of your DPS, to Comet)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Spectacle"
+   ],
+   "_raw": " Total Damage: +120% (of your DPS, to Comet)",
+   "tree": "00/warrior/08/004/002",
+   "ability": "Spectacle",
+   "code": "WARRIOR-P8-R04-C02"
+  },
+  "5044f8ce520b": {
+   "src": "{#} Total Damage: +{~} (of your DPS, to Fireworks)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Spectacle"
+   ],
+   "_raw": " Total Damage: +60% (of your DPS, to Fireworks)",
+   "tree": "00/warrior/08/004/002",
+   "ability": "Spectacle",
+   "code": "WARRIOR-P8-R04-C02"
+  },
+  "c14db63701d1": {
+   "src": "Devout Union",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/004/006",
+   "keep": "en",
+   "ability": "Devout Union",
+   "code": "WARRIOR-P8-R04-C06"
+  },
+  "af2f332ecdb3": {
+   "src": "Gain +{~} Base Resistance.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Devout Union"
+   ],
+   "lines": 1,
+   "flat": "Gain +{~} Base Resistance.",
+   "_raw": "Gain +5% Base Resistance.",
+   "tree": "00/warrior/08/004/006",
+   "ability": "Devout Union",
+   "code": "WARRIOR-P8-R04-C06"
+  },
+  "43ccb1af4221": {
+   "src": "{~} of damage taken by nearby\nallies is redirected to you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Devout Union"
+   ],
+   "lines": 2,
+   "flat": "{~} of damage taken by nearby allies is redirected to you.",
+   "_raw": "15% of damage taken by nearby\nallies is redirected to you.",
+   "tree": "00/warrior/08/004/006",
+   "ability": "Devout Union",
+   "code": "WARRIOR-P8-R04-C06"
+  },
+  "78112dc2690b": {
+   "src": "Enlightenment",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/08/004/008",
+   "keep": "en",
+   "ability": "Enlightenment",
+   "code": "WARRIOR-P8-R04-C08"
+  },
+  "6722e004b47e": {
+   "src": "Add +{~} additional charge\nto Mantle of the Bovemists.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Enlightenment"
+   ],
+   "lines": 2,
+   "flat": "Add +{~} additional charge to Mantle of the Bovemists.",
+   "_raw": "Add +1 additional charge\nto Mantle of the Bovemists.",
+   "tree": "00/warrior/08/004/008",
+   "ability": "Enlightenment",
+   "code": "WARRIOR-P8-R04-C08"
+  },
+  "dd3652a40013": {
+   "src": "Shield Strike will deal more damage and grant\n{~} charge of Mantle of the Bovemists to nearby\nallies for every {~} broken mantles used. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Enlightenment"
+   ],
+   "lines": 3,
+   "flat": "Shield Strike will deal more damage and grant {~} charge of Mantle of the Bovemists to nearby allies for every {~} broken mantles used. (Max {~})",
+   "_raw": "Shield Strike will deal more damage and grant\n1 charge of Mantle of the Bovemists to nearby\nallies for every 2 broken mantles used. (Max 4)",
+   "tree": "00/warrior/08/004/008",
+   "ability": "Enlightenment",
+   "code": "WARRIOR-P8-R04-C08"
+  },
+  "33fcf9c4bb43": {
+   "src": "Beyond Salvation",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/09/002/001",
+   "keep": "en",
+   "ability": "Beyond Salvation",
+   "code": "WARRIOR-P9-R02-C01"
+  },
+  "6585adef95bd": {
+   "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Beyond Salvation"
+   ],
+   "lines": 4,
+   "flat": "Casting Main Attack or Uppercut on a spike will detonate it, dealing damage and granting {~} Overhealth ❤ even while Corrupted. Bonus health decays over {~}s.",
+   "_raw": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n10% Overhealth ❤ even while Corrupted.\nBonus health decays over 20s.",
+   "tree": "00/warrior/09/002/001",
+   "ability": "Beyond Salvation",
+   "code": "WARRIOR-P9-R02-C01"
+  },
+  "2a2eb56b4078": {
+   "src": "Summons {~} Corrupted Spikes that rise from\nthe earth around you, dealing damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Beyond Salvation"
+   ],
+   "lines": 2,
+   "flat": "Summons {~} Corrupted Spikes that rise from the earth around you, dealing damage.",
+   "_raw": "Summons 6 Corrupted Spikes that rise from\nthe earth around you, dealing damage.",
+   "tree": "00/warrior/09/002/001",
+   "ability": "Beyond Salvation",
+   "code": "WARRIOR-P9-R02-C01"
+  },
+  "b9baf1d367c6": {
+   "src": "{#} Range: {~}~{~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "warrior/Beyond Salvation"
+   ],
+   "_raw": " Range: 5~8 Blocks",
+   "tree": "00/warrior/09/002/001",
+   "ability": "Beyond Salvation",
+   "code": "WARRIOR-P9-R02-C01"
+  },
+  "93e00934be27": {
+   "src": "{#} Total Damage: {~} (of your DPS, detonate)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Beyond Salvation"
+   ],
+   "_raw": " Total Damage: 2000% (of your DPS, detonate)",
+   "tree": "00/warrior/09/002/001",
+   "ability": "Beyond Salvation",
+   "code": "WARRIOR-P9-R02-C01"
+  },
+  "76d4ed2ed1f3": {
+   "src": "{#} Total Damage: {~} (of your DPS, summon)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Beyond Salvation"
+   ],
+   "_raw": " Total Damage: 1500% (of your DPS, summon)",
+   "tree": "00/warrior/09/002/001",
+   "ability": "Beyond Salvation",
+   "code": "WARRIOR-P9-R02-C01"
+  },
+  "38b60e8ff272": {
+   "src": "Judgement",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/09/002/007",
+   "keep": "en",
+   "ability": "Judgement",
+   "code": "WARRIOR-P9-R02-C07"
+  },
+  "1aefbefb6ef5": {
+   "src": "Call upon a blade from the heavens\nthat deals damage upon impact\nand grants buffs to nearby allies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Judgement"
+   ],
+   "lines": 3,
+   "flat": "Call upon a blade from the heavens that deals damage upon impact and grants buffs to nearby allies.",
+   "_raw": "Call upon a blade from the heavens\nthat deals damage upon impact\nand grants buffs to nearby allies.",
+   "tree": "00/warrior/09/002/007",
+   "ability": "Judgement",
+   "code": "WARRIOR-P9-R02-C07"
+  },
+  "68be90147c98": {
+   "src": "À  +{~} Resistance Bonus (❁) to Allies\nÀ  +{~} ID Effectiveness (❈) to Allies",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Judgement"
+   ],
+   "lines": 2,
+   "flat": "À  +{~} Resistance Bonus (❁) to Allies À  +{~} ID Effectiveness (❈) to Allies",
+   "_raw": "À  +20% Resistance Bonus (❁) to Allies\nÀ  +40% ID Effectiveness (❈) to Allies",
+   "tree": "00/warrior/09/002/007",
+   "ability": "Judgement",
+   "code": "WARRIOR-P9-R02-C07"
+  },
+  "365f6e8aa0f9": {
+   "src": "{#} Effects: +{~} Damage Bonus (⚔) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Judgement"
+   ],
+   "_raw": " Effects: +20% Damage Bonus (⚔) to Allies",
+   "tree": "00/warrior/09/002/007",
+   "ability": "Judgement",
+   "code": "WARRIOR-P9-R02-C07"
+  },
+  "09ce7b4e486a": {
+   "src": "Zenith Stance",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "warrior/技能名稱"
+   ],
+   "tree": "00/warrior/09/003/004",
+   "keep": "en",
+   "ability": "Zenith Stance",
+   "code": "WARRIOR-P9-R03-C04"
+  },
+  "fc99ae8eee54": {
+   "src": "Casting F switches them\nbetween Spell and Main Attack form.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Zenith Stance"
+   ],
+   "lines": 2,
+   "flat": "Casting F switches them between Spell and Main Attack form.",
+   "_raw": "Casting F switches them\nbetween Spell and Main Attack form.",
+   "tree": "00/warrior/09/003/004",
+   "ability": "Zenith Stance",
+   "code": "WARRIOR-P9-R03-C04"
+  },
+  "520a701e54c6": {
+   "src": "In Spell form, casting a spell performs\nan attack. In Main Attack form,\nMain Attacks perform an attack instead.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Zenith Stance"
+   ],
+   "lines": 3,
+   "flat": "In Spell form, casting a spell performs an attack. In Main Attack form, Main Attacks perform an attack instead.",
+   "_raw": "In Spell form, casting a spell performs\nan attack. In Main Attack form,\nMain Attacks perform an attack instead.",
+   "tree": "00/warrior/09/003/004",
+   "ability": "Zenith Stance",
+   "code": "WARRIOR-P9-R03-C04"
+  },
+  "e5d82321683a": {
+   "src": "Manifest your combat mastery as two floating\nfists that you freely command.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Zenith Stance"
+   ],
+   "lines": 2,
+   "flat": "Manifest your combat mastery as two floating fists that you freely command.",
+   "_raw": "Manifest your combat mastery as two floating\nfists that you freely command.",
+   "tree": "00/warrior/09/003/004",
+   "ability": "Zenith Stance",
+   "code": "WARRIOR-P9-R03-C04"
+  },
+  "df12d88cacf4": {
+   "src": "{#} Total Damage: {~} (of your DPS, spell)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Zenith Stance"
+   ],
+   "_raw": " Total Damage: 2400% (of your DPS, spell)",
+   "tree": "00/warrior/09/003/004",
+   "ability": "Zenith Stance",
+   "code": "WARRIOR-P9-R03-C04"
+  }
+ }
+}
