@@ -97,14 +97,12 @@ public final class TrackerOverlay {
         Boxes.draw(graphics, x, y, boxW, boxH);
 
         int textY = y + PADDING;
-        // 任務名用強調色——就是 F6 裡設定的那個顏色，跟截圖邊框、面板外框同一個，
-        // 想配合 Wynntils 的話在那裡改一次就整組跟著變。
         graphics.pose().pushMatrix();
         graphics.pose().scale(NAME_SCALE, NAME_SCALE);
         graphics.drawString(mc.font, lines.get(0),
                 Math.round((x + PADDING) / NAME_SCALE),
                 Math.round(textY / NAME_SCALE),
-                WynnChaYuan.config().accentARGB());
+                NAME_COLOR);
         graphics.pose().popMatrix();
         textY += nameHeight;
         for (int i = 1; i < lines.size(); i++) {
@@ -113,8 +111,16 @@ public final class TrackerOverlay {
         }
     }
 
-    /** 任務名比目標大多少。1.5 倍在原生與 2 倍 GUI 縮放下都還是整數像素。 */
-    private static final float NAME_SCALE = 1.5f;
+    /** 任務名比目標大多少。1.25 倍看得出主次，又不會壓過下面的目標。 */
+    private static final float NAME_SCALE = 1.25f;
+
+    /**
+     * 任務名的顏色：青綠。
+     *
+     * <p>配合原文那一欄的色調。先前跟著強調色走，但強調色同時也是截圖邊框與
+     * 面板外框的顏色，改一個就得三個一起變——任務名該有自己的顏色。
+     */
+    private static final int NAME_COLOR = 0xFF40E0C0;
 
     /** 任務名前面的抬頭。 */
     private static final String HEADING = "進行中的任務 - ";
