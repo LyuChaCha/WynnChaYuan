@@ -182,6 +182,22 @@ public final class AlignPointTest {
                 LineTranslator.findAlignPoint(List.of(
                         Piece.text("Weekly Objectives", Style.EMPTY), margin)) == -1);
 
+        // 書卷標題：[圖示][偏移][圖示][偏移][書卷名]。那些偏移兩側都是圖示，
+        // 會被當成欄位交界，而唯一會變短的是<b>後面</b>的書卷名——把差額補進
+        // 它前面的空白，等於把整個標題改成靠右對齊，中文短多少就往右推多少。
+        java.util.List<LineTranslator.Piece> title = java.util.List.of(
+                LineTranslator.Piece.text("", Style.EMPTY),      // 圖示
+                LineTranslator.Piece.space(5, Style.EMPTY),
+                LineTranslator.Piece.text("Dragon's Tome", Style.EMPTY));
+        check("前面只有圖示，不算欄位交界",
+                !LineTranslator.labelled(title, 1));
+        java.util.List<LineTranslator.Piece> stat = java.util.List.of(
+                LineTranslator.Piece.text("Health", Style.EMPTY),
+                LineTranslator.Piece.space(40, Style.EMPTY),
+                LineTranslator.Piece.text("+390", Style.EMPTY));
+        check("前面有標籤，是欄位交界",
+                LineTranslator.labelled(stat, 1));
+
         System.out.println(failures == 0
                 ? "AlignPoint: 全部通過"
                 : "AlignPoint: " + failures + " 項失敗");
