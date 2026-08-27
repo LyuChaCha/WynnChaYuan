@@ -46,7 +46,6 @@ box, keeping its frame, nameplate and portrait — or off.
 | Quest tracker | A translated box on the left |
 | Ability tree | Every node, description and archetype |
 | Screenshots | **F8** captures the translation panel — clipboard or file |
-| Bundled CJK font | Ships Cubic 11, a pixel font matching Minecraft's look; switchable |
 
 ## Install
 
