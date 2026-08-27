@@ -152,9 +152,11 @@ public final class DialogueRewriter {
                 continue;
             }
             Integer lead = offsetOf(texts.get(i - 1));
-            if (lead == null || offsetOf(texts.get(i + 1)) == null) {
+            Integer trail = offsetOf(texts.get(i + 1));
+            if (lead == null || trail == null) {
                 continue;
             }
+            int was = width(texts.get(i), styles.get(i));
             // SHIFT 那個按鈕圖示是<b>混在同一段文字裡</b>的，不是獨立片段：
             // 這一段長得像「<U+E000> to continue」。整段拿去查表就是
             // " to continue"，而語料裡是 "to continue"，永遠對不上。
@@ -177,17 +179,31 @@ public final class DialogueRewriter {
             texts.set(i, tip);
             int total = width(Component.literal(prefix).withStyle(styles.get(i)))
                     + width(tip, styles.get(i));
-            texts.set(i + 1, offset(-lead - total));
+            texts.set(i + 1, offset(trail + was - total));   // 同上：只補長度差
             swapped[i] = true;
             changed = true;
         }
         if (rows != null) {
             for (int n = 0; n < body.size(); n++) {
                 int at = body.get(n);
-                int lead = offsetOf(texts.get(at - 1));
+                // 只把偏移「補上長度差」，不要自己算一個新的。
+                //
+                // 兩行的訊息長這樣：[前導][第一行][前導][第二行][尾隨]。
+                // 也就是說對第一行而言，at + 1 是<b>第二行的前導</b>，不是尾隨偏移。
+                // 先前每一行都照「淨位移歸零」重算 at + 1，等於把第二行的前導蓋掉，
+                // 後面的頭像與外框就整個被推走——一行的時候剛好沒事，字數多到
+                // 換行才歪，正是「跳出一定字數就把框位移」。
+                //
+                // 改成沿用原本的偏移再加上這一行縮短了多少，原文的版面就原樣保住，
+                // 不管 at + 1 是下一行的前導還是整段的尾隨都成立。
+                Integer after = offsetOf(texts.get(at + 1));
+                if (after == null) {
+                    continue;
+                }
+                int shrink = width(texts.get(at), styles.get(at))
+                        - width(rows.get(n), styles.get(at));
                 texts.set(at, rows.get(n));
-                texts.set(at + 1,
-                        offset(-lead - width(rows.get(n), styles.get(at))));
+                texts.set(at + 1, offset(after + shrink));
                 swapped[at] = true;
             }
         }

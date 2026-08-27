@@ -39,6 +39,14 @@ public final class TranslationStoreTest {
                  }
                 }""");
 
+            // 台詞語料是<b>扁平格式</b>（原文當鍵），跟上面的 workspace 格式不同。
+            write(dir, "quest.json", """
+                {
+                 "Hey, {u}! Are you alright in there? It looks like we've hit something.":
+                     "喂，{u}！你在裡面還好嗎？我們好像撞到什麼東西了。",
+                 "Short one": "短句"
+                }""");
+
             TranslationStore store = new TranslationStore();
             store.loadAll(dir);
 
@@ -99,6 +107,21 @@ public final class TranslationStoreTest {
             // 反面：完全沒有縮排的句子不該靠這條路徑中
             check("沒縮排的不會誤中",
                     store.lookup("Knockback Immunity to Allies") == null);
+
+            // 逐字打字：畫面上只打到一半時，靠前綴找出這是哪一句。
+            //
+            // 這條路徑曾經對<b>整個台詞語料</b>無聲失效——扁平格式的檔案沒有寫進
+            // 前綴索引，於是整句打完才查得到，中途一律落空。畫面上看到的是
+            // 「英文一字一字跑完，才忽然整句跳成中文」，而譯文數量完全正常，
+            // 從載入紀錄上一點都看不出來。
+            check("打到一半就找得到是哪一句",
+                    "Hey, {u}! Are you alright in there? It looks like we've hit something."
+                            .equals(store.matchPrefix("Hey, {u}! Are you alright in there? It l")));
+            check("找到之後查得到譯文",
+                    store.lookup(store.matchPrefix(
+                            "Hey, {u}! Are you alright in there? It l")) != null);
+            // 反面：太短的前綴分不出是哪一句，寧可不換也不要換錯
+            check("前綴太短就不猜", store.matchPrefix("Hey, {u}!") == null);
         } finally {
             delete(dir);
         }
