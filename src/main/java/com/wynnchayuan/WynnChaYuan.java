@@ -96,20 +96,21 @@ public final class WynnChaYuan implements ClientModInitializer {
         StarterFiles.installIfEmpty(trDir, language);
         translations = new TranslationStore();
         translations.setTranslateNames(config.translateItemNames());
-        // 先鋪一層繁體中文當底，再把選定的語言疊上去。
+        // 同語族的語言先鋪一層當底，再把選定的那一種疊上去。
         //
         // 新語言是從 zh_tw 複製出來、dst 全部清空的骨架，剛開張時一條譯文
         // 都沒有。少了這一層，簡體中文的玩家會在 zh_cn/ 建好的那一刻，
         // 從「看得到繁體」變成「什麼都看不到」——多一種語言反而害了他。
         //
+        // 只在同語族之內墊，見 Languages#fallbackFor：日文與俄文的玩家
+        // 不該因為那邊還沒翻就突然看到滿畫面中文。
+        //
         // 疊得起來是因為載入端本來就會跳過空的 dst（見 TranslationStore），
-        // 而後載入的會蓋掉先載入的。於是每一條各自回退：翻好的用新語言，
-        // 還沒翻的用繁體，中間沒有空窗。
-        if (!language.equals(com.wynnchayuan.translate.Languages.DEFAULT)) {
-            Path fallback = com.wynnchayuan.translate.Languages.dir(
-                    dir, com.wynnchayuan.translate.Languages.DEFAULT);
-            StarterFiles.installIfEmpty(fallback,
-                    com.wynnchayuan.translate.Languages.DEFAULT);
+        // 而後載入的會蓋掉先載入的。於是每一條各自回退。
+        String under = com.wynnchayuan.translate.Languages.fallbackFor(language);
+        if (under != null) {
+            Path fallback = com.wynnchayuan.translate.Languages.dir(dir, under);
+            StarterFiles.installIfEmpty(fallback, under);
             translations.loadAll(fallback);
         }
         translations.loadAll(trDir);
