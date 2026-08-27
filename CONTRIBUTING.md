@@ -1,5 +1,7 @@
 # 參與翻譯
 
+English: **[CONTRIBUTING.en.md](CONTRIBUTING.en.md)**
+
 > **加入團隊前請先連絡 LyuChaCha**，避免各翻各的：[給翻譯團隊](docs/for-translators.md)
 > —— 技能名稱只翻一次、`{~1}` 指名數值、詞條的三種寫法。
 
@@ -60,6 +62,8 @@
 | `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 26,819 |
 | `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 26,819 |
 | `zh_cn` 简体中文 | ░░░░░░░░░░ 0.0% | 0 / 26,819 |
+
+每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
 
 不確定翻什麼就跑這個：
