@@ -49,11 +49,21 @@ import java.util.Optional;
  */
 public final class DialogueRewriter {
 
-    /** 對話文字段的字型前綴。{@code body_0}、{@code body_1}……一行一個。 */
-    private static final String BODY = "hud/dialogue/text/";
+    /**
+     * 對話內文的字型片段。{@code body_0}、{@code body_1}……一行一個。
+     *
+     * <p>認的是 {@code /body_} 而不是 {@code hud/dialogue/text/}——後者<b>也會</b>
+     * 命中 {@code text/control}（那行 SHIFT 提示）與 {@code text/nameplate}。
+     * 把提示併進整句去查表，鍵就變成「 to continueLet's hope…」，當然查不到，
+     * 於是整段都不換——就地取代整個失效就是這樣來的。
+     */
+    private static final String BODY = "/body_";
 
     /** 說話者名字那一段。 */
     private static final String NAMEPLATE = "hud/dialogue/text/nameplate";
+
+    /** 「 to continue」那一行。它自己就是一句話，跟內文分開查。 */
+    private static final String CONTROL = "hud/dialogue/text/control";
 
     /** 內文的左緣：從游標往左退這麼多。實機量到的固定值。 */
     private static final int BODY_LEFT = 116;
@@ -107,22 +117,46 @@ public final class DialogueRewriter {
         for (int at : body) {
             whole.append(texts.get(at));
         }
+        boolean changed = false;
         String hit = line(whole.toString(), store);
-        if (hit == null) {
-            return null;
-        }
-        List<String> rows = wrap(hit, body.size());
-        if (rows == null) {
-            return null;                       // 攤不進原本的行數就不換
+        List<String> rows = hit == null ? null : wrap(hit, body.size());
+        if (rows != null) {
+            changed = true;                    // 攤不進原本的行數就只換提示
         }
 
         boolean[] swapped = new boolean[texts.size()];
-        for (int n = 0; n < body.size(); n++) {
-            int at = body.get(n);
-            int lead = offsetOf(texts.get(at - 1));
-            texts.set(at, rows.get(n));
-            texts.set(at + 1, offset(-lead - width(rows.get(n))));
-            swapped[at] = true;
+        // SHIFT 提示自己就是一句話，跟內文分開查。它跟內文一樣是
+        // [偏移][文字][偏移]，換完一樣要重算尾隨的偏移。
+        for (int i = 1; i + 1 < texts.size(); i++) {
+            if (!fontOf(styles.get(i)).contains(CONTROL) || !readable(texts.get(i))) {
+                continue;
+            }
+            Integer lead = offsetOf(texts.get(i - 1));
+            if (lead == null || offsetOf(texts.get(i + 1)) == null) {
+                continue;
+            }
+            String tip = store.lookup(texts.get(i).strip());
+            if (tip == null || tip.isBlank()) {
+                continue;
+            }
+            // 原文開頭那個空白是跟 SHIFT 按鈕之間的間隔，翻完要留著
+            String swap = texts.get(i).startsWith(" ") ? " " + tip : tip;
+            texts.set(i, swap);
+            texts.set(i + 1, offset(-lead - width(swap)));
+            swapped[i] = true;
+            changed = true;
+        }
+        if (rows != null) {
+            for (int n = 0; n < body.size(); n++) {
+                int at = body.get(n);
+                int lead = offsetOf(texts.get(at - 1));
+                texts.set(at, rows.get(n));
+                texts.set(at + 1, offset(-lead - width(rows.get(n))));
+                swapped[at] = true;
+            }
+        }
+        if (!changed) {
+            return null;
         }
 
         MutableComponent out = Component.empty();
