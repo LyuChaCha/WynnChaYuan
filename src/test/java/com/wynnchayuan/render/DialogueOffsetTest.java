@@ -62,6 +62,25 @@ public final class DialogueOffsetTest {
                 DialogueRewriter.joinRow("My brother", " keeps")
                         .equals(" keeps"));
 
+        // 譯文跟著原文的進度一個字一個字出來
+        check("打完就是全部",
+                DialogueRewriter.typedSoFar("希望別再有人闖進來", 20, 20)
+                        .equals("希望別再有人闖進來"));
+        // 九個字打到一半 → round(9 × 0.5) = 5
+        check("打一半就取一半",
+                DialogueRewriter.typedSoFar("希望別再有人闖進來", 10, 20)
+                        .equals("希望別再有"));
+        check("一個字都還沒打就空的",
+                DialogueRewriter.typedSoFar("希望別再有人闖進來", 0, 20)
+                        .isEmpty());
+        // 切在佔位符中間會讓那一行的佔位符數量對不上，整行靜靜不顯示
+        check("不切在佔位符中間",
+                DialogueRewriter.typedSoFar("你好 {~1} 位客人", 5, 10)
+                        .equals("你好 "));
+        check("佔位符整個進來了就留著",
+                DialogueRewriter.typedSoFar("你好 {~1} 位", 8, 10)
+                        .equals("你好 {~1}"));
+
         System.out.println(failures == 0
                 ? "DialogueOffset: 全部通過"
                 : "DialogueOffset: " + failures + " 項失敗");
