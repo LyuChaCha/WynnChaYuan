@@ -4,6 +4,7 @@ import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.DialogueProbe;
 import com.wynnchayuan.render.DialogueOverlay;
+import com.wynnchayuan.render.DialogueRewriter;
 import com.wynntils.handlers.actionbar.ActionBarSegment;
 import com.wynntils.handlers.actionbar.event.ActionBarRenderEvent;
 import com.wynntils.mc.event.SystemMessageEvent;
@@ -58,6 +59,33 @@ public final class ActionBarListener {
         DialogueProbe.record(event.getMessage());
     }
 
+    /**
+     * 就地取代：把譯文寫進 Wynncraft <b>自己那個</b>對話框裡。
+     *
+     * <p>優先權最低，所以 Wynntils 已經處理完才輪到我們——它那邊的段落解析
+     * 讀的是原始英文，先被我們換成中文的話會整個認不出來
+     * （自動翻頁那類功能就跟著壞掉）。
+     *
+     * <p>換不動就什麼都不做，原文照樣顯示。這比「藏掉原文卻補不上譯文」好，
+     * 也比自己畫一個框好——框、名牌、頭像都在那條訊息裡，動它們就沒了。
+     */
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public void onGameInfoRewrite(SystemMessageEvent.GameInfoReceivedEvent event) {
+        if (WynnChaYuan.config().dialogueMode() != CollectorConfig.DialogueMode.REPLACE) {
+            return;
+        }
+        try {
+            var swapped = DialogueRewriter.rewrite(
+                    event.getMessage(), WynnChaYuan.translations());
+            if (swapped != null) {
+                event.setMessage(swapped);
+            }
+        } catch (Throwable t) {
+            // action bar 每 tick 都會走這裡，出錯絕不能讓遊戲停下來
+            WynnChaYuan.store().noteEvent("dialogue.rewriteError");
+        }
+    }
+
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onActionBarRender(ActionBarRenderEvent event) {
         boolean present = false;
@@ -76,9 +104,8 @@ public final class ActionBarListener {
         }
         missing = 0;
 
-        if (WynnChaYuan.config().dialogueMode() == CollectorConfig.DialogueMode.REPLACE
-                && DialogueOverlay.hasContent()) {
-            event.setSegmentEnabled(DialogueSegment.class, false);
-        }
+        // 這裡不再藏原文。就地取代改成<b>改寫</b>那條訊息的內容
+        // （見 onGameInfoRewrite）——藏掉的話，框、名牌、頭像會一起不見，
+        // 那正是先前怎麼調都不像的原因。
     }
 }
