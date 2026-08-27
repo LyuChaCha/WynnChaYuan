@@ -44,7 +44,9 @@ public final class TranslationStoreTest {
                 {
                  "Hey, {u}! Are you alright in there? It looks like we've hit something.":
                      "喂，{u}！你在裡面還好嗎？我們好像撞到什麼東西了。",
-                 "Short one": "短句"
+                 "Short one": "短句",
+                 "{u}, why don't you do the honors? Go ahead and open that gate.":
+                     "{u}，不如由你來吧？去把那道門打開。"
                 }""");
 
             TranslationStore store = new TranslationStore();
@@ -127,6 +129,18 @@ public final class TranslationStoreTest {
             check("模板短但實際打了夠多字就查得到",
                     "Hey, {u}! Are you alright in there? It looks like we've hit something."
                             .equals(store.matchPrefix("Hey, {u}!", "Hey, Green_teaTW!".length())));
+
+            // 語料是美式拼法（honors），遊戲裡是英式（honours）。差一個字母，
+            // 語料裡八百多條句子在畫面上一條都對不上。
+            check("英式拼法查得到美式的語料",
+                    "{u}，不如由你來吧？去把那道門打開。".equals(store.lookup(
+                            "{u}, why don't you do the honours? "
+                                    + "Go ahead and open that gate.")));
+            check("打到一半也認得英式拼法",
+                    store.matchPrefix("{u}, why don't you do the honours?") != null);
+            // 反面：拼法換過去還是查不到的，不要硬掰
+            check("換了拼法還是查不到就算了",
+                    store.lookup("What colour is the honour?") == null);
         } finally {
             delete(dir);
         }

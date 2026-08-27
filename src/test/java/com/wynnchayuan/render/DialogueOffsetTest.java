@@ -96,6 +96,13 @@ public final class DialogueOffsetTest {
         check("寬的時候一行就放得完",
                 wide != null && wide.get(0).equals("abcdefgh"));
 
+        // 玩家 ID 不能被切成兩半。前面是頓號、整行一個空白都沒有時，
+        // 「退到上一個空白」沒得退，先前就切在 Green_ 和 teaTW 中間。
+        List<String> id = DialogueRewriter.wrap("走吧！Tasim、Green_teaTW，來比", 2, null, 84);
+        check("玩家 ID 不從中間切（實際：" + id + "）",
+                id != null && id.get(0).equals("走吧！Tasim、")
+                        && id.get(1).startsWith("Green_teaTW"));
+
         System.out.println(failures == 0
                 ? "DialogueOffset: 全部通過"
                 : "DialogueOffset: " + failures + " 項失敗");
