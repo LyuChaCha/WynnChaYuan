@@ -3,6 +3,19 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.21] - 2026-08-27
+
+### 新增
+
+- **A Journey Further、A Journey Home 全部翻完**（204 句）。King's Recruit 之後的主線
+  接得上了。
+
+### 修正
+
+- **維基抓來的原文有六十句把玩家名吃掉了**（`Wait, , what's going on?`）。缺了那個
+  位置，這些句子在遊戲裡永遠對不上——翻了也是白翻。把佔位符補回去了。
+  已經翻過的三句不動，另外列出來給翻譯團隊看。
+
 ## [1.99.20] - 2026-08-27
 
 ### 修正
