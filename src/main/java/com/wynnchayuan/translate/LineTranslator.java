@@ -2652,6 +2652,19 @@ public final class LineTranslator {
 
     private static Component literal(String text, Style style) {
         Style base = upright(text, style);
+        // 我們把字型換掉了，斜體就跟著丟。
+        //
+        // 斜體在 Minecraft 裡是繪製時的<b>剪切</b>，不是另一套字形。Wynncraft
+        // 自己那組點陣字被剪切之後幾乎看不出來，換成預設字型就整個歪出去——
+        // 使用者看到的「同一行字，原文是正的、譯文是斜的」就是這樣來的
+        // （Corkian Augments）。
+        //
+        // 原本就用預設字型的片段不動：那些的斜體是遊戲真的想要的效果，
+        // 我們照抄才對。
+        if (style != null && style.getFont() != null
+                && !FontDescription.DEFAULT.equals(style.getFont())) {
+            base = base.withItalic(false);
+        }
         return text.indexOf(SECTION) < 0
                 ? Component.literal(text).withStyle(base)
                 : coloured(text, base);
