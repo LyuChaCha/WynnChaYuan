@@ -135,8 +135,10 @@ python tools/validate.py # corpus checks
 See [LICENSE](LICENSE). Wynncraft content belongs to the Wynncraft team;
 this mod only ships translations of it.
 
-CJK glyphs inside the dialogue box use [Cubic 11](https://github.com/ACh-K/Cubic-11),
-licensed under SIL OFL 1.1 — full text in `assets/wynnchayuan/font/OFL.txt`.
+CJK glyphs inside the dialogue box use [Fusion Pixel 10px](https://github.com/TakWolf/fusion-pixel-font)
+(proportional), licensed under SIL OFL 1.1 — full text in
+`assets/wynnchayuan/font/OFL-fusion.txt`. Its cap height is exactly 7px, matching
+the Latin caps in Wynncraft's own dialogue font.
 Fonts are shipped **per language**, since the same codepoint is drawn differently
 across regions; only Traditional Chinese (`zh_tw`) is bundled today. No pixel font
 covers every ideograph, so a line whose translation contains a glyph the font
