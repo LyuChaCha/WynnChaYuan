@@ -283,7 +283,13 @@ public final class DialogueOverlay {
         }
         Minecraft mc = Minecraft.getInstance();
         if (WynnChaYuan.config().dialogueMode() == CollectorConfig.DialogueMode.REPLACE) {
-            drawInPlace(graphics, mc, lines, options, alpha);
+            // 就地取代已經把譯文寫進遊戲自己的對話框了（見 DialogueRewriter），
+            // 這裡再畫一塊就是同一句話出現兩次。
+            //
+            // 選項還是要畫：那是另一個框，改寫還沒處理到。
+            if (!options.isEmpty()) {
+                drawInPlace(graphics, mc, List.of(), options, alpha);
+            }
             return;
         }
         // 小框模式：說話者仍然當成內文的第一行，跟先前一樣
