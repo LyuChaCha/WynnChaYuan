@@ -49,6 +49,19 @@ public final class DialogueOffsetTest {
         check("諺文畫不出來", !DialogueRewriter.drawable("계속하려면"));
         check("西里爾畫不出來", !DialogueRewriter.drawable("продолжить"));
 
+        // 折行處被吃掉的空格要補回來，否則跨行的台詞永遠查不到
+        check("接第一行不補空格",
+                DialogueRewriter.joinRow("", "Go on").equals("Go on"));
+        check("接下一行補一個空格",
+                DialogueRewriter.joinRow("My brother", "keeps sending")
+                        .equals(" keeps sending"));
+        check("前面已經有空白就不補",
+                DialogueRewriter.joinRow("My brother ", "keeps")
+                        .equals("keeps"));
+        check("後面自己帶空白也不補",
+                DialogueRewriter.joinRow("My brother", " keeps")
+                        .equals(" keeps"));
+
         System.out.println(failures == 0
                 ? "DialogueOffset: 全部通過"
                 : "DialogueOffset: " + failures + " 項失敗");

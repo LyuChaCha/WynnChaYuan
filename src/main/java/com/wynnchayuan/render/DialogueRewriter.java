@@ -128,7 +128,7 @@ public final class DialogueRewriter {
 
         StringBuilder whole = new StringBuilder();
         for (int at : body) {
-            whole.append(texts.get(at));
+            whole.append(joinRow(whole.toString(), texts.get(at)));
         }
         boolean changed = false;
         String hit = body.isEmpty() ? null
@@ -270,6 +270,23 @@ public final class DialogueRewriter {
 
     private static boolean isLatin(char c) {
         return c < 0x2E80 && Character.isLetterOrDigit(c);
+    }
+
+    /**
+     * 接下一行時要補回被吃掉的空格。
+     *
+     * <p>Wynncraft 是在<b>空白處</b>折行的，而那個空白不留在任何一行裡：
+     * body_0 是「…My brother」、body_1 是「keeps sending…」。直接相接會變成
+     * 「My brotherkeeps」，語料裡永遠查不到——NPC 只要講到需要換行的長度，
+     * 整句就翻不出來。玩家看到的「多講幾句就斷掉」正是這個。
+     *
+     * @return 這一行要接上去的內容（必要時前面補一個空格）
+     */
+    static String joinRow(String sofar, String row) {
+        if (sofar.isEmpty() || sofar.endsWith(" ") || row.startsWith(" ")) {
+            return row;
+        }
+        return " " + row;
     }
 
     /**
