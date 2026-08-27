@@ -3,6 +3,17 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.3] - 2026-08-27
+
+### 修正
+
+- **1.99.2 會讓遊戲開不起來。** 把截圖鍵交給 `PanelShot` 的那兩行誤植在 F6 綁定
+  後面，也就是 `screenshotKey` <b>還沒指派</b>的位置，交出去的是 null，
+  client entrypoint 直接丟 `NullPointerException`，玩家連主畫面都進不去。
+
+  順序修好了，另外兩道保險：`bind()` 讀不到綁定不再往外丟；整個按鍵註冊也包起來——
+  按鍵壞掉頂多少一個截圖鍵，不該把整個遊戲擋在門外。
+
 ## [1.99.2] - 2026-08-27
 
 ### 修正
