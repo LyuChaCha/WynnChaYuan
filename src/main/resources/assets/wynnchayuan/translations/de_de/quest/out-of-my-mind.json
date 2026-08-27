@@ -1,0 +1,610 @@
+{
+ "_meta": {
+  "quest": "Out of my Mind",
+  "count": 60,
+  "translated": 0,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Out of my Mind#000": {
+   "src": "Speak with the {p} children in the treehouse.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Out of my Mind#001": {
+   "src": "Did ye two hear about some guy wandering around town? I've heard strange rumours about him...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#002": {
+   "src": "Of course I have, he's the talk of the town! I heard he only brushes his teeth once a day and that he enjoys books about gardening!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "Todd",
+   "source": "wiki"
+  },
+  "Out of my Mind#003": {
+   "src": "I don't know, you guys, all these rumors seem a little far-fetched. What next? Will he suddenly turn out to be a mad scientist?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "Viola",
+   "source": "wiki"
+  },
+  "Out of my Mind#004": {
+   "src": "Oh shush you, we're not living inside some storybook! Besides, if he *was* a mad scientist, wouldn't he be trying to take over the city like all mad scientists in stories do?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#005": {
+   "src": "To me that doesn't sound all that strange compared to these other things I've been hearing, anyway... Something about labs and a \"hermit\".",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "Todd",
+   "source": "wiki"
+  },
+  "Out of my Mind#006": {
+   "src": "I think that's a type of crab or something. Adults are right old weirdos sometimes.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#007": {
+   "src": "Hey, a stranger! How long have you been listening to us? Didn't your mom teach you any manners?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "Viola",
+   "source": "wiki"
+  },
+  "Out of my Mind#008": {
+   "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#009": {
+   "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "Todd",
+   "source": "wiki"
+  },
+  "Out of my Mind#010": {
+   "src": "It might be a good idea to look at that weird house next to those spooky ruins just south-east of the city. We found this key you could try out, but if you lose it there are some spares in our base.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 1",
+   "speaker": "Todd",
+   "source": "wiki"
+  },
+  "Out of my Mind#011": {
+   "src": "Find the hidden door next to the gate near the Undergrowth Ruins outside {p}",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Out of my Mind#012": {
+   "src": "Find a way inside the house at [-{~},-{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Out of my Mind#013": {
+   "src": "Explore the hidden lab in search of information",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Out of my Mind#014": {
+   "src": "Hello stranger! Welcome to my humble wooden abode. Comfy, isn't it? I bet you'd like a cup of this coff-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#015": {
+   "src": "Oh yes, I am the affable Ariodo, friendly neighbourhood neighbour. What do you need me for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#016": {
+   "src": "Kidnappings? Poaching? Not brushing my teeth?! Who is the lowly person you're talking about... they don't seem like a nice fellow such as myself.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#017": {
+   "src": "Lets go, I'll take you to the exit so that I don't waste your time any longer!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#018": {
+   "src": "This is the room you came from. I call it the \"Vivarium\", creative name I came up with, right? It keeps my pets that aren't quite ready.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#019": {
+   "src": "Ready for what? Well that would ruin the surprise, wouldn't it? Can't have anyone finding out before the big event!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#020": {
+   "src": "Let us go now, time is precious.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#021": {
+   "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#022": {
+   "src": "Oh, the places I've been were wonderful! From the depths of the jungle to the lesser depths of the jungle to even my back garden, I've done my fair share of exploring, if I do say so myself!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#023": {
+   "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#024": {
+   "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even to hide from! Strange people.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#025": {
+   "src": "I'm just a normal guy, so why can't anyone appreciate me for once? I'm sure you do, right?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#026": {
+   "src": "Here we are, the library! I could spend years in here, but who has time for that? I could talk about books hours too! Here's one right now.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#027": {
+   "src": "This is 'The Long-Winded and Painful Death of Sweeney S. Greenville' and I must say it is a hidden gem among books! One day it just suddenly appeared in here so I couldn't resist reading it. So it starts off with Sweeney S. Greenville...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#028": {
+   "src": "We're here now! Take the exit right in front of you, don't mind the corridor to the right, it's only decoration!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#029": {
+   "src": "Maybe you can come back some day for a tea or coffee and a long talk about books, since I noticed you were very interested in my long-winded review! Have fun out there and don't forget, I'm always here for you!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#030": {
+   "src": "The ground is shaking... I thought that was supposed to happen later! Come back, friend, I can't do this alone!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 4",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#031": {
+   "src": "Build a machine to hit your head and get back to normal",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Out of my Mind#032": {
+   "src": "Help me keep this door shut, or else my surprise will be ruined!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#033": {
+   "src": "Just keep to the sides, it's safer that way.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#034": {
+   "src": "Just stay here for one more momen...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#035": {
+   "src": "Oh my, a ghost? Wait, is this just you, my trusty friend, playing a prank on me? No? Well that certainly is a problem!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#036": {
+   "src": "If you remember, we were talking about keeping the door shut when suddenly something heavy fell off a shell hitting you square in the head!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#037": {
+   "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#038": {
+   "src": "During the shaking, some of my machines broke apart, but we could use these to build something capable of dropping someting heavier on your head for the second time.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#039": {
+   "src": "Surely by that logic everything has to go well, you know. Now let me explain how we can do this. First, choose what part you want to use to make our machine, then choose where you want it to go and face.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#040": {
+   "src": "The [Cart] can carry the coconut from one end of the platform to another for a few tiles, while the [Fan] can push the coconut even further.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#041": {
+   "src": "The [Hammer] is able to knock the coconut over a one space gap while the [Cannon] can shoot the coconut one grid up diagonally in the direction it is facing.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#042": {
+   "src": "I think I hit my head too, so I'll need your help deciding where to place each part. You want to get the coconut across to the green tile, remember?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#043": {
+   "src": "You're back! To be quite honest, I didn't think that would work, but I'm glad it did!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#044": {
+   "src": "Quick, head through the large door and stop the cause of all this shaking!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 5",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#045": {
+   "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Out of my Mind#046": {
+   "src": "Oh no no, this is not good! If I had known that my little pet has grown so much I would have rushed you out sooner. Now it is wilted...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#047": {
+   "src": "You did what you had to, though. I am sorry to say this friend, but I think I'll stay inside a little longer. Sorry, my only friend.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#048": {
+   "src": "We'll surely meet again in the future, so don't be sad. I'll still be the one and only friendly neighbourhood neighbour when that moment comes, I promise. Goodbye now!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Ariodo",
+   "source": "wiki"
+  },
+  "Out of my Mind#049": {
+   "src": "You're back! You were gone for ages too, and what happened to your head? Who did the mystery man turn out to be?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Todd",
+   "source": "wiki"
+  },
+  "Out of my Mind#050": {
+   "src": "That sounds ridiculous! Who could ever belie-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Viola",
+   "source": "wiki"
+  },
+  "Out of my Mind#051": {
+   "src": "Wow that sounded just like in the stories, but it came from you, so it must be true!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#052": {
+   "src": "I don't know about you, Todd, but I fell like we should make them our honorary club member for finding such amazing things!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#053": {
+   "src": "Why do I even try... You two would believe anything.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Viola",
+   "source": "wiki"
+  },
+  "Out of my Mind#054": {
+   "src": "I'm pretty sure they mentioned something about being hit by coconut crabs, and just look at their head. One... two... two huge bumps!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Prentiss",
+   "source": "wiki"
+  },
+  "Out of my Mind#055": {
+   "src": "Oh fine... whatever you say, Prentiss. I'm sure they'll bring you on some wacky adventures next time around!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Viola",
+   "source": "wiki"
+  },
+  "Out of my Mind#056": {
+   "src": "Ignore Viola, she's acting up today, probably because you're got the spotlight this time. However, I agree with Prentiss.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Todd",
+   "source": "wiki"
+  },
+  "Out of my Mind#057": {
+   "src": "Thanks to you, we solved the case of the mystery man as well as the mystery house! For this I'd like to...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Todd",
+   "source": "wiki"
+  },
+  "Out of my Mind#058": {
+   "src": "Welcome you to the club, new member! Here is your shiny new badge that you can parade around town to show off how cool you are to the other with style.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Todd",
+   "source": "wiki"
+  },
+  "Out of my Mind#059": {
+   "src": "Also since all the adults do it, we'll give you some emeralds that you rightly deserve for such an achievement. We all pitched in!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Out of my Mind",
+   "stage": "Stage 6",
+   "speaker": "Prentiss",
+   "source": "wiki"
+  }
+ }
+}

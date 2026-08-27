@@ -60,6 +60,39 @@ public final class WrapTest {
         report("號不會跟數值分家（實際：" + show(signed) + "）",
                 !signed.contains("+" + NL));
 
+        // --- 其他語言 -------------------------------------------------
+        // 折行的規則是照中文寫的（中文可以在任何字之間斷）。西、德、法、俄
+        // 不行——把單字從中間切開，讀起來就是壞的。這裡釘住那條界線。
+        //
+        // 判準：每一個單字都塞得下時，折行只能發生在空白上。
+        //
+        // 比對前把連續空白收成一個。斷點<b>剛好落在空白之後</b>時，那個空白會
+        // 留在行尾（看不見，無所謂）；落在別處時則被吃掉。兩種都不算錯，
+        // 錯的是單字被切開——收掉空白之後，那才是唯一會讓比對失敗的情況。
+        String[] latin = {
+            "Erhoeht den Schaden um",          // 德
+            "Aumenta el dano magico",          // 西
+            "Augmente les degats de sort",     // 法
+            "Увеличивает урон заклинаний",     // 俄
+        };
+        for (String text : latin) {
+            String wrapped = LineTranslator.wrapToWidth(text, 12, WrapTest::measure);
+            report("不把單字切成兩半：" + text + "（實際：" + show(wrapped) + "）",
+                    tidy(wrapped.replace(NL, ' ')).equals(tidy(text)));
+        }
+
+        // 諺文跟中日文一樣，可以在音節之間斷（Unicode 的預設行為）。
+        // 這裡只要求內容不變——斷在哪由寬度決定。
+        String hangul = LineTranslator.wrapToWidth("마법 피해 증가량 상승", 4,
+                                                   WrapTest::measure);
+        report("諺文折行不會掉字", bare(hangul).equals(bare("마법 피해 증가량 상승")));
+
+        // 一個單字本身就超過整行寬度時，只能從中間切——切壞總比整行滿出去好
+        String huge = LineTranslator.wrapToWidth(
+                "Bewegungsgeschwindigkeit", 8, WrapTest::measure);
+        report("超長單字會被切開而不是滿出去",
+                huge.indexOf(NL) > 0 && bare(huge).equals("Bewegungsgeschwindigkeit"));
+
         // 內容守恆：折行只能動空白，不能吃掉或改動任何一個字。
         //
         // 比對時<b>兩邊的空白全部拿掉</b>。折在空白上時那個空白會被行尾吃掉，
@@ -102,6 +135,11 @@ public final class WrapTest {
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /** 連續空白收成一個，首尾去掉。比較折行結果時用。 */
+    private static String tidy(String text) {
+        return text.replaceAll("\\s+", " ").strip();
     }
 
     /** 拿掉所有空白，只留下字本身。 */
