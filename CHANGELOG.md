@@ -3,6 +3,21 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.15] - 2026-08-27
+
+### 修正
+
+- **NPC 多講幾句就整句翻不出來。** Wynncraft 是在<b>空白處</b>折行的，而那個空白
+  不留在任何一行裡：`body_0` 是「…My brother」、`body_1` 是「keeps sending…」。
+  接起來查表時直接相接就變成「My brotherkeeps」，語料裡永遠對不上——只要台詞長到
+  需要換行，整句就翻不出來。接行時補回那個空格。
+
+### 新增
+
+- **選角畫面與公會介面共 92 條**，模板逐字抄自 `majorid-debug.txt`：先前那批是照
+  畫面猜的，少了 `{#}` 圖示前綴和 `- ` 減號（實際是 `{#} Click to Toggle`、
+  `- Class: Knight`），所以一條都對不上。
+
 ## [1.99.14] - 2026-08-27
 
 ### 修正
