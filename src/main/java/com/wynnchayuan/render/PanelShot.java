@@ -110,10 +110,19 @@ public final class PanelShot {
     /** 由 {@link com.wynnchayuan.WynnChaYuan} 在註冊按鍵時交進來。 */
     public static void bind(KeyMapping mapping) {
         bound = mapping;
-        var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
-                .getBoundKeyOf(mapping);
-        log("bind：截圖鍵已交給 PanelShot（目前綁定 "
-                + (key == null ? "?" : key.getName()) + "）");
+        // 什麼都不能讓模組在啟動時炸掉——截圖是個附加功能，
+        // 它壞掉頂多少一張圖，不該把整個遊戲擋在門外。
+        String where = "?";
+        try {
+            var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+                    .getBoundKeyOf(mapping);
+            if (key != null) {
+                where = key.getName();
+            }
+        } catch (Throwable t) {
+            where = "讀不到（" + t.getClass().getSimpleName() + "）";
+        }
+        log("bind：截圖鍵已交給 PanelShot（目前綁定 " + where + "）");
     }
 
     public static void request() {

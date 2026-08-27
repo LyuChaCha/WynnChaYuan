@@ -140,7 +140,14 @@ public final class WynnChaYuan implements ClientModInitializer {
         // WynnScribe 也是這樣處理的（見其 WynnscribeFabric）。
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> registerWithWynntils());
 
-        registerKeyBind();
+        // 按鍵綁定壞掉不該把整個遊戲擋在門外。1.99.2 就是在這裡丟了一個
+        // NullPointerException，玩家連主畫面都進不去——而少的只是一個截圖鍵。
+        try {
+            registerKeyBind();
+        } catch (Throwable t) {
+            System.out.println("[" + MOD_NAME + "] 按鍵註冊失敗，其餘功能照常："
+                    + t);
+        }
 
         // tooltip 面板要在整個畫面畫完之後才畫，否則會被原始 tooltip 蓋掉。
         // Wynntils 的 ItemTooltipRenderEvent.Post 從來沒被發送過，用不了，
@@ -250,16 +257,18 @@ public final class WynnChaYuan implements ClientModInitializer {
                 InputConstants.Type.KEYSYM,
                 org.lwjgl.glfw.GLFW.GLFW_KEY_F6,
                 KeyMapping.Category.MISC));
-        // 畫面開著時 KeyMapping 收不到事件，PanelShot 得自己讀鍵盤——
-        // 把 mapping 交給它，改綁才會跟著生效。
-        com.wynnchayuan.render.PanelShot.bind(screenshotKey);
-        com.wynnchayuan.render.PanelShot.listen();
-
         screenshotKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.screenshot",
                 InputConstants.Type.KEYSYM,
                 org.lwjgl.glfw.GLFW.GLFW_KEY_F8,
                 KeyMapping.Category.MISC));
+        // 畫面開著時 KeyMapping 收不到事件，PanelShot 掛在畫面自己的鍵盤事件上——
+        // 把 mapping 交給它，改綁才會跟著生效。
+        //
+        // 這兩行必須在 screenshotKey <b>指派之後</b>：1.99.2 誤植在上面那個
+        // F6 綁定的後面，交出去的是還沒指派的 null，整個模組在啟動時就炸了。
+        com.wynnchayuan.render.PanelShot.bind(screenshotKey);
+        com.wynnchayuan.render.PanelShot.listen();
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openSettingsKey.consumeClick()) {
