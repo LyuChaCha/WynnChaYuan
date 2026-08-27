@@ -499,11 +499,24 @@ public final class TranslationStore {
      * @return 完整的原文；開頭還不夠獨特、分不出是哪一句時回傳 {@code null}
      */
     public String matchPrefix(String partial) {
+        return matchPrefix(partial, partial == null ? 0 : partial.strip().length());
+    }
+
+    /**
+     * 同上，但門檻另外算。
+     *
+     * <p>參數化會把玩家名收成 {@code {u}}，模板因此比畫面上實際打出來的字短一大截。
+     * 拿模板長度當門檻，開頭那一小段就會查不到而先閃出英文。呼叫端知道畫面上
+     * 究竟打了多少字，就用那個數字當「證據夠不夠」的依據。
+     *
+     * @param evidence 畫面上已經打出來的字數
+     */
+    public String matchPrefix(String partial, int evidence) {
         if (partial == null) {
             return null;
         }
         String key = partial.strip();
-        if (key.length() < MIN_PREFIX_LENGTH) {
+        if (key.isEmpty() || evidence < MIN_PREFIX_LENGTH) {
             return null;
         }
         Map.Entry<String, String> first = prefixIndex.ceilingEntry(key);

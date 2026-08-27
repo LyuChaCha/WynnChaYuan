@@ -1,5 +1,7 @@
 package com.wynnchayuan.render;
 
+import java.util.List;
+
 /**
  * 對話框的位移編碼與重算。
  *
@@ -80,6 +82,19 @@ public final class DialogueOffsetTest {
         check("佔位符整個進來了就留著",
                 DialogueRewriter.typedSoFar("你好 {~1} 位", 8, 10)
                         .equals("你好 {~1}"));
+
+        // 斷行要照<b>呼叫端算出來的寬度</b>，不能自己寫死。
+        //
+        // 有頭像的對話文字是從頭像右邊起算的，可用寬度少了 24 像素。先前
+        // wrap() 收下寬度卻沒用，一律照最寬的算，中文就滿出框外。
+        // 測試環境沒有字型，一個字算 6 像素。
+        List<String> narrow = DialogueRewriter.wrap("abcdefgh", 2, null, 24);
+        check("窄的時候一行只放得下四個字",
+                narrow != null && narrow.get(0).equals("abcd")
+                        && narrow.get(1).equals("efgh"));
+        List<String> wide = DialogueRewriter.wrap("abcdefgh", 2, null, 48);
+        check("寬的時候一行就放得完",
+                wide != null && wide.get(0).equals("abcdefgh"));
 
         System.out.println(failures == 0
                 ? "DialogueOffset: 全部通過"
