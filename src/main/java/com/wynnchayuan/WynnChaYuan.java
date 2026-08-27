@@ -155,13 +155,8 @@ public final class WynnChaYuan implements ClientModInitializer {
             // Minecraft 的鍵位佇列是在 handleKeybinds() 裡餵的，而那只在
             // screen == null 時跑。所以「開著背包、滑鼠停在物品上按 F8」
             // 永遠不會被讀到，而那正好是最需要拍照的時刻。
-            net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents
-                    .afterKeyPress(screen)
-                    .register((s, keyEvent) -> {
-                        if (screenshotKey.matches(keyEvent)) {
-                            com.wynnchayuan.render.PanelShot.request();
-                        }
-                    });
+            // 畫面開著時的 F8 由 PanelShot 直接讀鍵盤——見 pollWhileScreenOpen。
+            // 先前試過 ScreenKeyboardEvents，實測沒有生效。
         });
         HudElementRegistry.addLast(
                 net.minecraft.resources.Identifier.fromNamespaceAndPath(MOD_ID, "dialogue"),

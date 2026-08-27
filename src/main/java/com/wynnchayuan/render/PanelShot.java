@@ -108,7 +108,43 @@ public final class PanelShot {
      * <p>tick 跑在兩幀<b>之間</b>，那時 framebuffer 裡是上一幀完整合成後的
      * 結果。vanilla 的 F2 截圖也是在這個時機抓的。
      */
+    /** 上一個 tick 那顆鍵是不是按著的。用來抓「剛按下」那一刻。 */
+    private static boolean wasDown = false;
+
+    /**
+     * 畫面開著時直接讀鍵盤。
+     *
+     * <h2>為什麼要繞過 Minecraft 的鍵位系統</h2>
+     * {@code KeyMapping.consumeClick()} 與 {@code isDown()} 都只在
+     * <b>沒有畫面</b>時才會更新——{@code KeyboardHandler.keyPress} 是先看
+     * {@code screen == null} 才去餵鍵位佇列的。而「開著背包、滑鼠停在物品上」
+     * 正是最需要拍照的時刻。
+     *
+     * <p>Fabric 的 {@code ScreenKeyboardEvents} 理論上補得起這個洞，實測沒有
+     * 生效（原因不明，可能被畫面吃掉了）。所以這裡直接問 GLFW 那顆鍵現在是不是
+     * 按著的——不經過任何中間層，畫面開不開都一樣。
+     *
+     * <p>代價是<b>認死 F8</b>：拿不到玩家改綁之後的鍵（{@code KeyMapping.key}
+     * 是 protected）。沒有畫面時仍走正常的鍵位路徑，改綁在那邊照樣有效。
+     */
+    private static void pollWhileScreenOpen(Minecraft mc) {
+        if (mc.screen == null || mc.getWindow() == null) {
+            wasDown = false;
+            return;
+        }
+        boolean down = com.mojang.blaze3d.platform.InputConstants.isKeyDown(
+                mc.getWindow(), org.lwjgl.glfw.GLFW.GLFW_KEY_F8);
+        if (down && !wasDown) {
+            request();
+        }
+        wasDown = down;
+    }
+
     public static void tick() {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc != null) {
+            pollWhileScreenOpen(mc);
+        }
         if (!pending) {
             return;
         }

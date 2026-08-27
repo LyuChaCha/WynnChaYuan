@@ -10,6 +10,7 @@ import net.minecraft.network.chat.FontDescription;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -125,6 +126,8 @@ public final class DialogueRewriter {
         }
 
         boolean[] swapped = new boolean[texts.size()];
+        // 換掉之後仍要留在原字型的前綴（目前只有 SHIFT 的按鈕圖示）
+        Map<Integer, String> keep = new java.util.HashMap<>();
         // SHIFT 提示自己就是一句話，跟內文分開查。它跟內文一樣是
         // [偏移][文字][偏移]，換完一樣要重算尾隨的偏移。
         for (int i = 1; i + 1 < texts.size(); i++) {
@@ -135,14 +138,29 @@ public final class DialogueRewriter {
             if (lead == null || offsetOf(texts.get(i + 1)) == null) {
                 continue;
             }
-            String tip = store.lookup(texts.get(i).strip());
+            // SHIFT 那個按鈕圖示是<b>混在同一段文字裡</b>的，不是獨立片段：
+            // 這一段長得像「<U+E000> to continue」。整段拿去查表就是
+            // " to continue"，而語料裡是 "to continue"，永遠對不上。
+            //
+            // 所以把開頭的圖示與空白剝掉再查，換完再原樣接回去。
+            String raw = texts.get(i);
+            int at = 0;
+            while (at < raw.length() && !readable(raw.substring(at, at + 1))) {
+                at++;
+            }
+            String prefix = raw.substring(0, at);
+            String tip = store.lookup(raw.substring(at).strip());
             if (tip == null || tip.isBlank()) {
                 continue;
             }
-            // 原文開頭那個空白是跟 SHIFT 按鈕之間的間隔，翻完要留著
-            String swap = texts.get(i).startsWith(" ") ? " " + tip : tip;
-            texts.set(i, swap);
-            texts.set(i + 1, offset(-lead - width(swap)));
+            // 圖示要留在<b>原本的字型</b>裡：那個 SHIFT 按鈕是它畫出來的，
+            // 換成預設字型就變成缺字。所以只有譯文那一截換字型，
+            // 組裝時再把兩截接起來（見下面的 keep）。
+            keep.put(i, prefix);
+            texts.set(i, tip);
+            int total = width(Component.literal(prefix).withStyle(styles.get(i)))
+                    + width(tip);
+            texts.set(i + 1, offset(-lead - total));
             swapped[i] = true;
             changed = true;
         }
@@ -163,6 +181,11 @@ public final class DialogueRewriter {
         for (int i = 0; i < texts.size(); i++) {
             // 換過的那一段用<b>預設字型</b>畫，中文才出得來；沒換的原樣抄，
             // 包含它原本的字型——框、頭像、按鈕都是靠那些字型畫出來的。
+            String prefix = keep.get(i);
+            if (prefix != null && !prefix.isEmpty()) {
+                // 圖示照原樣、原字型；只有後面的譯文換成預設字型
+                out.append(Component.literal(prefix).withStyle(styles.get(i)));
+            }
             Style style = swapped[i]
                     ? styles.get(i).withFont(FontDescription.DEFAULT)
                     : styles.get(i);
@@ -266,6 +289,12 @@ public final class DialogueRewriter {
     private static int width(String text) {
         Minecraft mc = Minecraft.getInstance();
         return mc == null ? text.length() * 6 : mc.font.width(text);
+    }
+
+    /** 帶樣式量寬度——圖示的寬度要照它<b>原本的字型</b>算，不是預設字型。 */
+    private static int width(Component text) {
+        Minecraft mc = Minecraft.getInstance();
+        return mc == null ? 0 : mc.font.width(text);
     }
 
     private static boolean readable(String text) {
