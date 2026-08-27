@@ -3,6 +3,17 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.26] - 2026-08-27
+
+### 新增
+
+- **再翻完三個任務，共 187 句：**
+  - An Iron Heart Part II（61）
+  - From the Mountains（63）
+  - The Canyon Guides（63）
+
+  任務語料進度 5078/22089（23%），還剩 74 個檔。
+
 ## [1.99.25] - 2026-08-27
 
 ### 新增
