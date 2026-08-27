@@ -133,11 +133,17 @@ public final class DialogueRewriter {
             whole.append(joinRow(whole.toString(), texts.get(at)));
         }
         boolean changed = false;
+        // 一行放得下多少：兩邊都要用同一個數字。
+        //
+        // 先前 wrap() 自己寫死 232，而這裡算的是照實際前導偏移得出的寬度——
+        // 有頭像的對話文字是從頭像右邊起算的，可用寬度少了 24 像素，於是
+        // 「整句塞不塞得下」判斷用窄的、真正斷行時用寬的，中文就滿出框外。
+        int room = rowWidth(texts, body);
         String hit = body.isEmpty() ? null
                 : line(whole.toString(), store, body.size(),
-                        styles.get(body.get(0)), rowWidth(texts, body));
+                        styles.get(body.get(0)), room);
         List<String> rows = hit == null
-                ? null : wrap(hit, body.size(), styles.get(body.get(0)));
+                ? null : wrap(hit, body.size(), styles.get(body.get(0)), room);
         if (rows != null) {
             changed = true;                    // 攤不進原本的行數就只換提示
         }
@@ -247,7 +253,7 @@ public final class DialogueRewriter {
      * @return 每一行的內容；攤不進去時回傳 {@code null}
      */
     static List<String> wrap(String text, int rows) {
-        return wrap(text, rows, null);
+        return wrap(text, rows, null, BODY_LEFT * 2);
     }
 
     /**
@@ -255,8 +261,7 @@ public final class DialogueRewriter {
      *              字型，中日韓走的是我們自己那套（一個字 10 像素），拿預設字型
      *              （9 像素）去量會少算一成，於是每一行都塞得比框還寬，畫出來就溢出。
      */
-    static List<String> wrap(String text, int rows, Style style) {
-        int limit = BODY_LEFT * 2;
+    static List<String> wrap(String text, int rows, Style style, int limit) {
         List<String> out = new ArrayList<>(rows);
         int at = 0;
         for (int row = 0; row < rows; row++) {
@@ -414,7 +419,12 @@ public final class DialogueRewriter {
         String source = typed;
         String hit = store.lookup(typed);
         if (hit == null) {
-            source = store.matchPrefix(typed);
+            // 門檻要看<b>畫面上已經打出多少字</b>，不是模板有多長。
+            //
+            // 玩家名被 {u} 收掉之後模板會短一大截：畫面上打出
+            // 「Hey, Green_teaTW」十六個字，模板卻只有「Hey, {u}」八個字，
+            // 卡在門檻底下查不到，於是開頭那一小段先閃出英文才跳成中文。
+            source = store.matchPrefix(typed, text.strip().length());
             hit = source == null ? null : store.lookup(source);
         }
         if (hit == null || hit.isBlank()) {

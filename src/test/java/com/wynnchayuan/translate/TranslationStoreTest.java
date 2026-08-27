@@ -122,6 +122,11 @@ public final class TranslationStoreTest {
                             "Hey, {u}! Are you alright in there? It l")) != null);
             // 反面：太短的前綴分不出是哪一句，寧可不換也不要換錯
             check("前綴太短就不猜", store.matchPrefix("Hey, {u}!") == null);
+            // 但門檻要看畫面上<b>實際打出來</b>幾個字：玩家名被 {u} 收掉之後
+            // 模板短一大截，拿模板長度當門檻，開頭那一小段會先閃出英文。
+            check("模板短但實際打了夠多字就查得到",
+                    "Hey, {u}! Are you alright in there? It looks like we've hit something."
+                            .equals(store.matchPrefix("Hey, {u}!", "Hey, Green_teaTW!".length())));
         } finally {
             delete(dir);
         }
