@@ -109,6 +109,16 @@ public final class ColumnCentreTest {
                 !LineTranslator.dropsSpaceAfter("重擊", "重擊 gains", 2));
         check("行尾沒有東西可以黏，不動",
                 !LineTranslator.dropsSpaceAfter("重擊", "重擊 ", 2));
+
+        // 吃掉空格是<b>中日文</b>的規則：方塊字之間本來就不寫空格。
+        // 西、德、法、俄、韓都靠空格分詞，吃掉就是把兩個字黏成一個。
+        check("德文不吃空格", !LineTranslator.dropsSpaceBefore("mehr ", "Schaden"));
+        check("西班牙文不吃空格", !LineTranslator.dropsSpaceBefore("del ", "hechizo"));
+        check("俄文不吃空格", !LineTranslator.dropsSpaceBefore("урон ", "заклинаний"));
+        check("諺文不吃空格 —— 韓文是靠空格分詞的",
+                !LineTranslator.dropsSpaceBefore("마법 ", "피해"));
+        check("諺文後面的空格也要留著",
+                !LineTranslator.dropsSpaceAfter("피해", "피해 증가", 2));
     }
 
     /** 色段前面掛著圖示時，剝掉再查。 */

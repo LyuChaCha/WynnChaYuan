@@ -1,0 +1,3310 @@
+{
+ "_meta": {
+  "domain": "ability/assassin",
+  "itemNames": false,
+  "lang": "zh_tw",
+  "count": 234,
+  "translated": 0,
+  "note": "刺客的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
+  "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
+ },
+ "entries": {
+  "8b663daf88a6": {
+   "src": "Spin Attack",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/01/000/004",
+   "keep": "en",
+   "ability": "Spin Attack",
+   "code": "ASSASSIN-P1-R00-C04"
+  },
+  "6b6fe66e2338": {
+   "src": "Slashes rapidly around you,\ndamaging enemies over a large area.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Spin Attack"
+   ],
+   "lines": 2,
+   "flat": "Slashes rapidly around you, damaging enemies over a large area.",
+   "_raw": "Slashes rapidly around you,\ndamaging enemies over a large area.",
+   "tree": "03/assassin/01/000/004",
+   "ability": "Spin Attack",
+   "code": "ASSASSIN-P1-R00-C04"
+  },
+  "747aa9ae0388": {
+   "src": "Cheaper Spin Attack",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/01/002/002",
+   "keep": "en",
+   "ability": "Cheaper Spin Attack",
+   "code": "ASSASSIN-P1-R02-C02"
+  },
+  "9a659f3eb712": {
+   "src": "Reduce the Mana cost of Spin Attack.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Cheaper Spin Attack",
+    "assassin/Cheaper Spin Attack II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Spin Attack.",
+   "_raw": "Reduce the Mana cost of Spin Attack.",
+   "tree": "03/assassin/01/002/002",
+   "ability": "Cheaper Spin Attack、Cheaper Spin Attack II",
+   "code": "ASSASSIN-P1-R02-C02"
+  },
+  "fcf9350aa1ce": {
+   "src": "Dagger Proficiency I",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/01/002/004",
+   "keep": "en",
+   "ability": "Dagger Proficiency I",
+   "code": "ASSASSIN-P1-R02-C04"
+  },
+  "61c7d79f42f2": {
+   "src": "Increases your Walk Speed and\nMain Attack's damage by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Dagger Proficiency I"
+   ],
+   "lines": 2,
+   "flat": "Increases your Walk Speed and Main Attack's damage by +{~}.",
+   "_raw": "Increases your Walk Speed and\nMain Attack's damage by +5%.",
+   "tree": "03/assassin/01/002/004",
+   "ability": "Dagger Proficiency I",
+   "code": "ASSASSIN-P1-R02-C04"
+  },
+  "309f35a8dd9e": {
+   "src": "Double Spin",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/01/004/004",
+   "keep": "en",
+   "ability": "Double Spin",
+   "code": "ASSASSIN-P1-R04-C04"
+  },
+  "571d5c85bc1b": {
+   "src": "Spin Attack will activate twice, with a\nlarger area of effect on the second spin.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Double Spin"
+   ],
+   "lines": 2,
+   "flat": "Spin Attack will activate twice, with a larger area of effect on the second spin.",
+   "_raw": "Spin Attack will activate twice, with a\nlarger area of effect on the second spin.",
+   "tree": "03/assassin/01/004/004",
+   "ability": "Double Spin",
+   "code": "ASSASSIN-P1-R04-C04"
+  },
+  "7141e7b3449b": {
+   "src": "Poisoned Blade",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/02/001/002",
+   "keep": "en",
+   "ability": "Poisoned Blade",
+   "code": "ASSASSIN-P2-R01-C02"
+  },
+  "02bcc33aa2c7": {
+   "src": "For every {~} or {~} Raw Main Attack Damage you have\nfrom items, gain +{~}/{~}s Poison Damage. (Max {~}/{~}s)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Poisoned Blade"
+   ],
+   "lines": 2,
+   "flat": "For every {~} or {~} Raw Main Attack Damage you have from items, gain +{~}/{~}s Poison Damage. (Max {~}/{~}s)",
+   "_raw": "For every 2% or 2 Raw Main Attack Damage you have\nfrom items, gain +5/3s Poison Damage. (Max 50/3s)",
+   "tree": "03/assassin/02/001/002",
+   "ability": "Poisoned Blade",
+   "code": "ASSASSIN-P2-R01-C02"
+  },
+  "420de6251462": {
+   "src": "Your Main Attack gains additional range.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Poisoned Blade"
+   ],
+   "lines": 1,
+   "flat": "Your Main Attack gains additional range.",
+   "_raw": "Your Main Attack gains additional range.",
+   "tree": "03/assassin/02/001/002",
+   "ability": "Poisoned Blade",
+   "code": "ASSASSIN-P2-R01-C02"
+  },
+  "24942523bd10": {
+   "src": "Dash",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/02/001/004",
+   "keep": "en",
+   "ability": "Dash",
+   "code": "ASSASSIN-P2-R01-C04"
+  },
+  "0c027107960f": {
+   "src": "Dash in the direction\nyou're facing.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Dash"
+   ],
+   "lines": 2,
+   "flat": "Dash in the direction you're facing.",
+   "_raw": "Dash in the direction\nyou're facing.",
+   "tree": "03/assassin/02/001/004",
+   "ability": "Dash",
+   "code": "ASSASSIN-P2-R01-C04"
+  },
+  "a6083f1b41e7": {
+   "src": "Double Slice",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/02/001/006",
+   "keep": "en",
+   "ability": "Double Slice",
+   "code": "ASSASSIN-P2-R01-C06"
+  },
+  "a85a9a945fee": {
+   "src": "Your Main Attack will hit twice,\nbut deal -{~} damage per hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Double Slice"
+   ],
+   "lines": 2,
+   "flat": "Your Main Attack will hit twice, but deal -{~} damage per hit.",
+   "_raw": "Your Main Attack will hit twice,\nbut deal -40% damage per hit.",
+   "tree": "03/assassin/02/001/006",
+   "ability": "Double Slice",
+   "code": "ASSASSIN-P2-R01-C06"
+  },
+  "a7c1a8a76a84": {
+   "src": "Smoke Bomb",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/02/003/002",
+   "keep": "en",
+   "ability": "Smoke Bomb",
+   "code": "ASSASSIN-P2-R03-C02"
+  },
+  "33887617dd33": {
+   "src": "Throws a bomb that slowly emanates smoke,\ndamaging all enemies in it every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Smoke Bomb"
+   ],
+   "lines": 2,
+   "flat": "Throws a bomb that slowly emanates smoke, damaging all enemies in it every {~}s.",
+   "_raw": "Throws a bomb that slowly emanates smoke,\ndamaging all enemies in it every 0.5s.",
+   "tree": "03/assassin/02/003/002",
+   "ability": "Smoke Bomb",
+   "code": "ASSASSIN-P2-R03-C02"
+  },
+  "0236a0ce3bfe": {
+   "src": "Cheaper Dash",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/02/003/004",
+   "keep": "en",
+   "ability": "Cheaper Dash",
+   "code": "ASSASSIN-P2-R03-C04"
+  },
+  "54f3c26a7967": {
+   "src": "Reduce the Mana cost of Dash.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Cheaper Dash",
+    "assassin/Cheaper Dash II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Dash.",
+   "_raw": "Reduce the Mana cost of Dash.",
+   "tree": "03/assassin/02/003/004",
+   "ability": "Cheaper Dash、Cheaper Dash II",
+   "code": "ASSASSIN-P2-R03-C04"
+  },
+  "480f8dc246dc": {
+   "src": "Multihit",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/02/003/006",
+   "keep": "en",
+   "ability": "Multihit",
+   "code": "ASSASSIN-P2-R03-C06"
+  },
+  "9b6e9ba7fa5f": {
+   "src": "Unleashes a rapid flurry of {~} hits to enemies\nfacing you, dealing heavy damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Multihit"
+   ],
+   "lines": 2,
+   "flat": "Unleashes a rapid flurry of {~} hits to enemies facing you, dealing heavy damage.",
+   "_raw": "Unleashes a rapid flurry of 8 hits to enemies\nfacing you, dealing heavy damage.",
+   "tree": "03/assassin/02/003/006",
+   "ability": "Multihit",
+   "code": "ASSASSIN-P2-R03-C06"
+  },
+  "bcbb8a1b15f4": {
+   "src": "{#} Range: {~} Blocks (Cone-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Multihit"
+   ],
+   "_raw": " Range: 3 Blocks (Cone-Shaped)",
+   "tree": "03/assassin/02/003/006",
+   "ability": "Multihit",
+   "code": "ASSASSIN-P2-R03-C06"
+  },
+  "177560b8a3cc": {
+   "src": "Sticky Bomb",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/02/004/001",
+   "keep": "en",
+   "ability": "Sticky Bomb",
+   "code": "ASSASSIN-P2-R04-C01"
+  },
+  "603a4c8260dc": {
+   "src": "Smoke Bomb will stick to enemies\nand deal additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Sticky Bomb"
+   ],
+   "lines": 2,
+   "flat": "Smoke Bomb will stick to enemies and deal additional damage.",
+   "_raw": "Smoke Bomb will stick to enemies\nand deal additional damage.",
+   "tree": "03/assassin/02/004/001",
+   "ability": "Sticky Bomb",
+   "code": "ASSASSIN-P2-R04-C01"
+  },
+  "7148d0864659": {
+   "src": "Ripple",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/03/002/007",
+   "keep": "en",
+   "ability": "Ripple",
+   "code": "ASSASSIN-P3-R02-C07"
+  },
+  "49d4d202a0f7": {
+   "src": "Falling {~} blocks or more deals\ndamage around you when you land.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Ripple"
+   ],
+   "lines": 2,
+   "flat": "Falling {~} blocks or more deals damage around you when you land.",
+   "_raw": "Falling 5 blocks or more deals\ndamage around you when you land.",
+   "tree": "03/assassin/03/002/007",
+   "ability": "Ripple",
+   "code": "ASSASSIN-P3-R02-C07"
+  },
+  "6855372d55fd": {
+   "src": "This damage is increased by +{~}\nfor every additional block you fall\nafterwards, up to +{~} blocks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Ripple"
+   ],
+   "lines": 3,
+   "flat": "This damage is increased by +{~} for every additional block you fall afterwards, up to +{~} blocks.",
+   "_raw": "This damage is increased by +12%\nfor every additional block you fall\nafterwards, up to +10 blocks.",
+   "tree": "03/assassin/03/002/007",
+   "ability": "Ripple",
+   "code": "ASSASSIN-P3-R02-C07"
+  },
+  "8f6f8fde958c": {
+   "src": "Backstab",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/03/003/001",
+   "keep": "en",
+   "ability": "Backstab",
+   "code": "ASSASSIN-P3-R03-C01"
+  },
+  "087b1e887cf7": {
+   "src": "Makes Multihit a single devastating hit.\nIf you strike an enemy from behind, it\ndeals double the damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Backstab"
+   ],
+   "lines": 3,
+   "flat": "Makes Multihit a single devastating hit. If you strike an enemy from behind, it deals double the damage.",
+   "_raw": "Makes Multihit a single devastating hit.\nIf you strike an enemy from behind, it\ndeals double the damage.",
+   "tree": "03/assassin/03/003/001",
+   "ability": "Backstab",
+   "code": "ASSASSIN-P3-R03-C01"
+  },
+  "4712b5c88b5e": {
+   "src": "Vanish",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/03/004/002",
+   "keep": "en",
+   "ability": "Vanish",
+   "code": "ASSASSIN-P3-R04-C02"
+  },
+  "090551c89456": {
+   "src": "Dash will hide you into the shadows. You\ncannot heal or gain mana while in this state.\n(Attack or get hit to cancel)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Vanish"
+   ],
+   "lines": 3,
+   "flat": "Dash will hide you into the shadows. You cannot heal or gain mana while in this state. (Attack or get hit to cancel)",
+   "_raw": "Dash will hide you into the shadows. You\ncannot heal or gain mana while in this state.\n(Attack or get hit to cancel)",
+   "tree": "03/assassin/03/004/002",
+   "ability": "Vanish",
+   "code": "ASSASSIN-P3-R04-C02"
+  },
+  "87da5f57819d": {
+   "src": "{#} Effect: Invisibility to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Vanish"
+   ],
+   "_raw": " Effect: Invisibility to Self",
+   "tree": "03/assassin/03/004/002",
+   "ability": "Vanish",
+   "code": "ASSASSIN-P3-R04-C02"
+  },
+  "4f8a11b3f87e": {
+   "src": "Bamboozle",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/03/004/004",
+   "keep": "en",
+   "ability": "Bamboozle",
+   "code": "ASSASSIN-P3-R04-C04"
+  },
+  "2db379661ef1": {
+   "src": "Multihit will instead teleport you forward\nand strike with a brutal fiery slash.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Bamboozle"
+   ],
+   "lines": 2,
+   "flat": "Multihit will instead teleport you forward and strike with a brutal fiery slash.",
+   "_raw": "Multihit will instead teleport you forward\nand strike with a brutal fiery slash.",
+   "tree": "03/assassin/03/004/004",
+   "ability": "Bamboozle",
+   "code": "ASSASSIN-P3-R04-C04"
+  },
+  "a8fc113f4007": {
+   "src": "Hop",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/03/004/007",
+   "keep": "en",
+   "ability": "Hop",
+   "code": "ASSASSIN-P3-R04-C07"
+  },
+  "e703af065335": {
+   "src": "Leap in the direction of your\nmovement when you double jump.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Hop"
+   ],
+   "lines": 2,
+   "flat": "Leap in the direction of your movement when you double jump.",
+   "_raw": "Leap in the direction of your\nmovement when you double jump.",
+   "tree": "03/assassin/03/004/007",
+   "ability": "Hop",
+   "code": "ASSASSIN-P3-R04-C07"
+  },
+  "0ef648383f74": {
+   "src": "Surprise Strike",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/001/002",
+   "keep": "en",
+   "ability": "Surprise Strike",
+   "code": "ASSASSIN-P4-R01-C02"
+  },
+  "e5364b4197b0": {
+   "src": "Your first hit after casting Vanish\nwill deal +{~} more damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Surprise Strike"
+   ],
+   "flat": "Your first hit after casting Vanish will deal +{~} more damage.",
+   "_raw": "Your first hit after casting Vanish\nwill deal +80% more damage.",
+   "tree": "03/assassin/04/001/002",
+   "ability": "Surprise Strike",
+   "code": "ASSASSIN-P4-R01-C02"
+  },
+  "c503a8e08f57": {
+   "src": "Mirror Image",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/001/004",
+   "keep": "en",
+   "ability": "Mirror Image",
+   "code": "ASSASSIN-P4-R01-C04"
+  },
+  "3412eb7f5f00": {
+   "src": "Summon {~} Mirror Clones {#} after reappearing\nfrom Vanish that will follow and protect you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Mirror Image"
+   ],
+   "flat": "Summon {~} Mirror Clones {#} after reappearing from Vanish that will follow and protect you.",
+   "_raw": "Summon 3 Mirror Clones  after reappearing\nfrom Vanish that will follow and protect you.",
+   "tree": "03/assassin/04/001/004",
+   "ability": "Mirror Image",
+   "code": "ASSASSIN-P4-R01-C04"
+  },
+  "a85eed24a41e": {
+   "src": "When hit, lose a Mirror Clone {#}, reducing\n-{~} of incoming damage and granting you\na damage bonus for {~}s. ({~}s cooldown)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Mirror Image"
+   ],
+   "lines": 3,
+   "flat": "When hit, lose a Mirror Clone {#}, reducing -{~} of incoming damage and granting you a damage bonus for {~}s. ({~}s cooldown)",
+   "_raw": "When hit, lose a Mirror Clone , reducing\n-25% of incoming damage and granting you\na damage bonus for 3s. (1s cooldown)",
+   "tree": "03/assassin/04/001/004",
+   "ability": "Mirror Image",
+   "code": "ASSASSIN-P4-R01-C04"
+  },
+  "06a1e7239354": {
+   "src": "{#} Effect: {~} Damage Bonus (⚔) to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Mirror Image"
+   ],
+   "_raw": " Effect: 30% Damage Bonus (⚔) to Self",
+   "tree": "03/assassin/04/001/004",
+   "ability": "Mirror Image",
+   "code": "ASSASSIN-P4-R01-C04"
+  },
+  "a1b4ead47fdf": {
+   "src": "Lacerate",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/001/007",
+   "keep": "en",
+   "ability": "Lacerate",
+   "code": "ASSASSIN-P4-R01-C07"
+  },
+  "b671e9ec7cc5": {
+   "src": "Spin Attack will lunge you forward,\ndeal {~} strikes and then lunge you upward.",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Lacerate"
+   ],
+   "dst": "",
+   "flat": "Spin Attack will lunge you forward, deal {~} strikes and then lunge you upward.",
+   "_raw": "Spin Attack will lunge you forward,\ndeal 3 strikes and then lunge you upward.",
+   "tree": "03/assassin/04/001/007",
+   "ability": "Lacerate",
+   "code": "ASSASSIN-P4-R01-C07"
+  },
+  "975de034f12d": {
+   "src": "Using Hop while Lacerate is active launches you further.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Lacerate"
+   ],
+   "lines": 1,
+   "flat": "Using Hop while Lacerate is active launches you further.",
+   "_raw": "Using Hop while Lacerate is active launches you further.",
+   "tree": "03/assassin/04/001/007",
+   "ability": "Lacerate",
+   "code": "ASSASSIN-P4-R01-C07"
+  },
+  "41ccb691dba5": {
+   "src": "Silent Killer",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/002/001",
+   "keep": "en",
+   "ability": "Silent Killer",
+   "code": "ASSASSIN-P4-R02-C01"
+  },
+  "758492824b68": {
+   "src": "Resets Vanish's cooldown\nafter killing an enemy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Silent Killer"
+   ],
+   "lines": 2,
+   "flat": "Resets Vanish's cooldown after killing an enemy.",
+   "_raw": "Resets Vanish's cooldown\nafter killing an enemy.",
+   "tree": "03/assassin/04/002/001",
+   "ability": "Silent Killer",
+   "code": "ASSASSIN-P4-R02-C01"
+  },
+  "3b9bde080a55": {
+   "src": "Foul Play",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/002/005",
+   "keep": "en",
+   "ability": "Foul Play",
+   "code": "ASSASSIN-P4-R02-C05"
+  },
+  "b757533480c9": {
+   "src": "Reduce the Mana cost of Multihit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Foul Play",
+    "assassin/Cheaper Multihit",
+    "assassin/Cheaper Multihit II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Multihit.",
+   "_raw": "Reduce the Mana cost of Multihit.",
+   "tree": "03/assassin/04/002/005",
+   "ability": "Foul Play、Cheaper Multihit、Cheaper Multihit II",
+   "code": "ASSASSIN-P4-R02-C05"
+  },
+  "2dab5c462cc7": {
+   "src": "While Mirror Image is active,\nBamboozle will slay a Mirror Clone {#}\ninstead of having a cooldown.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Foul Play"
+   ],
+   "lines": 3,
+   "flat": "While Mirror Image is active, Bamboozle will slay a Mirror Clone {#} instead of having a cooldown.",
+   "_raw": "While Mirror Image is active,\nBamboozle will slay a Mirror Clone \ninstead of having a cooldown.",
+   "tree": "03/assassin/04/002/005",
+   "ability": "Foul Play",
+   "code": "ASSASSIN-P4-R02-C05"
+  },
+  "9c3b21990ba8": {
+   "src": "Wall of Smoke",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/002/008",
+   "keep": "en",
+   "ability": "Wall of Smoke",
+   "code": "ASSASSIN-P4-R02-C08"
+  },
+  "137cdc69fa9d": {
+   "src": "Smoke Bomb will throw +{~} bombs.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Wall of Smoke"
+   ],
+   "lines": 1,
+   "flat": "Smoke Bomb will throw +{~} bombs.",
+   "_raw": "Smoke Bomb will throw +2 bombs.",
+   "tree": "03/assassin/04/002/008",
+   "ability": "Wall of Smoke",
+   "code": "ASSASSIN-P4-R02-C08"
+  },
+  "130bc204c7aa": {
+   "src": "Last Laugh",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/003/004",
+   "keep": "en",
+   "ability": "Last Laugh",
+   "code": "ASSASSIN-P4-R03-C04"
+  },
+  "72da09e595bb": {
+   "src": "Mirror Clones {#} will cast Multihit\nbefore dying.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Last Laugh"
+   ],
+   "lines": 2,
+   "flat": "Mirror Clones {#} will cast Multihit before dying.",
+   "_raw": "Mirror Clones  will cast Multihit\nbefore dying.",
+   "tree": "03/assassin/04/003/004",
+   "ability": "Last Laugh",
+   "code": "ASSASSIN-P4-R03-C04"
+  },
+  "a212e994a6ae": {
+   "src": "When losing any Clone {#}{#}{#}, it will cast\none of your spells before dying.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Last Laugh"
+   ],
+   "lines": 2,
+   "flat": "When losing any Clone {#}{#}{#}, it will cast one of your spells before dying.",
+   "_raw": "When losing any Clone , it will cast\none of your spells before dying.",
+   "tree": "03/assassin/04/003/004",
+   "ability": "Last Laugh",
+   "code": "ASSASSIN-P4-R03-C04"
+  },
+  "c1a37ae43609": {
+   "src": "Psithurism",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/003/007",
+   "keep": "en",
+   "ability": "Psithurism",
+   "code": "ASSASSIN-P4-R03-C07"
+  },
+  "7cda9f085adf": {
+   "src": "Increase your Walk Speed by +{~}\nand your Jump Height by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Psithurism"
+   ],
+   "lines": 2,
+   "flat": "Increase your Walk Speed by +{~} and your Jump Height by +{~}.",
+   "_raw": "Increase your Walk Speed by +20%\nand your Jump Height by +1.",
+   "tree": "03/assassin/04/003/007",
+   "ability": "Psithurism",
+   "code": "ASSASSIN-P4-R03-C07"
+  },
+  "d4582921ce6d": {
+   "src": "Rolling Fog",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/004/000",
+   "keep": "en",
+   "ability": "Rolling Fog",
+   "code": "ASSASSIN-P4-R04-C00"
+  },
+  "567b69fe959a": {
+   "src": "Increase Smoke Bomb's range\nand area of effect.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Rolling Fog"
+   ],
+   "lines": 2,
+   "flat": "Increase Smoke Bomb's range and area of effect.",
+   "_raw": "Increase Smoke Bomb's range\nand area of effect.",
+   "tree": "03/assassin/04/004/000",
+   "ability": "Rolling Fog",
+   "code": "ASSASSIN-P4-R04-C00"
+  },
+  "d625b174e0bd": {
+   "src": "Shadow Travel",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/004/002",
+   "keep": "en",
+   "ability": "Shadow Travel",
+   "code": "ASSASSIN-P4-R04-C02"
+  },
+  "a31d58ac73a8": {
+   "src": "Gain +{~} Walk Speed (➲)\nwhen in Vanish.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Shadow Travel"
+   ],
+   "lines": 2,
+   "flat": "Gain +{~} Walk Speed (➲) when in Vanish.",
+   "_raw": "Gain +120% Walk Speed (➲)\nwhen in Vanish.",
+   "tree": "03/assassin/04/004/002",
+   "ability": "Shadow Travel",
+   "code": "ASSASSIN-P4-R04-C02"
+  },
+  "497ea44f7876": {
+   "src": "Cheaper Multihit",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/004/005",
+   "keep": "en",
+   "ability": "Cheaper Multihit",
+   "code": "ASSASSIN-P4-R04-C05"
+  },
+  "3d8d59a1835a": {
+   "src": "Finality",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/004/008",
+   "keep": "en",
+   "ability": "Finality",
+   "code": "ASSASSIN-P4-R04-C08"
+  },
+  "078bca9cb247": {
+   "src": "Multihit's damage ramps up every\nhit, dealing additional damage.\nDamage bonus caps at {~} hits.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Finality"
+   ],
+   "lines": 3,
+   "flat": "Multihit's damage ramps up every hit, dealing additional damage. Damage bonus caps at {~} hits.",
+   "_raw": "Multihit's damage ramps up every\nhit, dealing additional damage.\nDamage bonus caps at 8 hits.",
+   "tree": "03/assassin/04/004/008",
+   "ability": "Finality",
+   "code": "ASSASSIN-P4-R04-C08"
+  },
+  "30cc7615a57b": {
+   "src": "{#} Total Damage: +{~} (of your DPS, per hit)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Finality"
+   ],
+   "_raw": " Total Damage: +6% (of your DPS, per hit)",
+   "tree": "03/assassin/04/004/008",
+   "ability": "Finality",
+   "code": "ASSASSIN-P4-R04-C08"
+  },
+  "666b330e6603": {
+   "src": "Shadow Siphon",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/005/001",
+   "keep": "en",
+   "ability": "Shadow Siphon",
+   "code": "ASSASSIN-P4-R05-C01"
+  },
+  "d5f3cf9b2afd": {
+   "src": "Reduces Vanish's cooldown by -{~}s after\nstriking an enemy from behind with Backstab.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Shadow Siphon"
+   ],
+   "lines": 2,
+   "flat": "Reduces Vanish's cooldown by -{~}s after striking an enemy from behind with Backstab.",
+   "_raw": "Reduces Vanish's cooldown by -1.75s after\nstriking an enemy from behind with Backstab.",
+   "tree": "03/assassin/04/005/001",
+   "ability": "Shadow Siphon",
+   "code": "ASSASSIN-P4-R05-C01"
+  },
+  "18535f0cf0aa": {
+   "src": "Mirage",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/04/005/004",
+   "keep": "en",
+   "ability": "Mirage",
+   "code": "ASSASSIN-P4-R05-C04"
+  },
+  "ba1c5ebe1439": {
+   "src": "After using Bamboozle or Shadow Projection\nto teleport, leave behind a Mirage Clone {#}\nwhich draws mobs within {~} blocks towards it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Mirage"
+   ],
+   "lines": 3,
+   "flat": "After using Bamboozle or Shadow Projection to teleport, leave behind a Mirage Clone {#} which draws mobs within {~} blocks towards it.",
+   "_raw": "After using Bamboozle or Shadow Projection\nto teleport, leave behind a Mirage Clone \nwhich draws mobs within 8 blocks towards it.",
+   "tree": "03/assassin/04/005/004",
+   "ability": "Mirage",
+   "code": "ASSASSIN-P4-R05-C04"
+  },
+  "c0e20ad358c2": {
+   "src": "Mirage Clones {#} disappear when an enemy\nis within {~} blocks or when they expire,\nand will cast Smoke Bomb with Last Laugh.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Mirage"
+   ],
+   "lines": 3,
+   "flat": "Mirage Clones {#} disappear when an enemy is within {~} blocks or when they expire, and will cast Smoke Bomb with Last Laugh.",
+   "_raw": "Mirage Clones  disappear when an enemy\nis within 0.75 blocks or when they expire,\nand will cast Smoke Bomb with Last Laugh.",
+   "tree": "03/assassin/04/005/004",
+   "ability": "Mirage",
+   "code": "ASSASSIN-P4-R05-C04"
+  },
+  "6dd64d2c95bf": {
+   "src": "Cheaper Smoke Bomb",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/001/000",
+   "keep": "en",
+   "ability": "Cheaper Smoke Bomb",
+   "code": "ASSASSIN-P5-R01-C00"
+  },
+  "de7b4bd0b61f": {
+   "src": "Reduce the Mana cost of Smoke Bomb.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Cheaper Smoke Bomb",
+    "assassin/Cheaper Smoke Bomb II"
+   ],
+   "lines": 1,
+   "flat": "Reduce the Mana cost of Smoke Bomb.",
+   "_raw": "Reduce the Mana cost of Smoke Bomb.",
+   "tree": "03/assassin/05/001/000",
+   "ability": "Cheaper Smoke Bomb、Cheaper Smoke Bomb II",
+   "code": "ASSASSIN-P5-R01-C00"
+  },
+  "e05270e4d31e": {
+   "src": "Blazing Powder",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/001/003",
+   "keep": "en",
+   "ability": "Blazing Powder",
+   "code": "ASSASSIN-P5-R01-C03"
+  },
+  "3a08b2ece02c": {
+   "src": "Spin Attack and Lacerate will\ndeal additional damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Blazing Powder"
+   ],
+   "lines": 2,
+   "flat": "Spin Attack and Lacerate will deal additional damage.",
+   "_raw": "Spin Attack and Lacerate will\ndeal additional damage.",
+   "tree": "03/assassin/05/001/003",
+   "ability": "Blazing Powder",
+   "code": "ASSASSIN-P5-R01-C03"
+  },
+  "64cf2c385575": {
+   "src": "Weightless",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/001/007",
+   "keep": "en",
+   "ability": "Weightless",
+   "code": "ASSASSIN-P5-R01-C07"
+  },
+  "8325319eb1bd": {
+   "src": "You gain +{~} Mana if you\nhit an enemy while airborne.\n({~}+ blocks off the\nground to be airborne)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Weightless"
+   ],
+   "lines": 4,
+   "flat": "You gain +{~} Mana if you hit an enemy while airborne. ({~}+ blocks off the ground to be airborne)",
+   "_raw": "You gain +1 Mana if you\nhit an enemy while airborne.\n(1.25+ blocks off the\nground to be airborne)",
+   "tree": "03/assassin/05/001/007",
+   "ability": "Weightless",
+   "code": "ASSASSIN-P5-R01-C07"
+  },
+  "b5e13d6534b8": {
+   "src": "Black Hole",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/002/001",
+   "keep": "en",
+   "ability": "Black Hole",
+   "code": "ASSASSIN-P5-R02-C01"
+  },
+  "4eb464482e67": {
+   "src": "Smoke Bomb will pull nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Black Hole"
+   ],
+   "lines": 1,
+   "flat": "Smoke Bomb will pull nearby enemies.",
+   "_raw": "Smoke Bomb will pull nearby enemies.",
+   "tree": "03/assassin/05/002/001",
+   "ability": "Black Hole",
+   "code": "ASSASSIN-P5-R02-C01"
+  },
+  "9dc66165c610": {
+   "src": "Sandbagging",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/002/004",
+   "keep": "en",
+   "ability": "Sandbagging",
+   "code": "ASSASSIN-P5-R02-C04"
+  },
+  "f97d6e2b81d8": {
+   "src": "Reduce the cooldown on all of your\nabilities by {~} every time you get hit\nfor less than {~} of your max health or\nyour Mirage Clone {#} lures an enemy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Sandbagging"
+   ],
+   "lines": 4,
+   "flat": "Reduce the cooldown on all of your abilities by {~} every time you get hit for less than {~} of your max health or your Mirage Clone {#} lures an enemy.",
+   "_raw": "Reduce the cooldown on all of your\nabilities by 30% every time you get hit\nfor less than 10% of your max health or\nyour Mirage Clone  lures an enemy.",
+   "tree": "03/assassin/05/002/004",
+   "ability": "Sandbagging",
+   "code": "ASSASSIN-P5-R02-C04"
+  },
+  "43c90ba13bad": {
+   "src": "Mutilate",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/002/006",
+   "keep": "en",
+   "ability": "Mutilate",
+   "code": "ASSASSIN-P5-R02-C06"
+  },
+  "327090544279": {
+   "src": "Increase Finality's damage cap by +{~} hits.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Mutilate"
+   ],
+   "lines": 1,
+   "flat": "Increase Finality's damage cap by +{~} hits.",
+   "_raw": "Increase Finality's damage cap by +3 hits.",
+   "tree": "03/assassin/05/002/006",
+   "ability": "Mutilate",
+   "code": "ASSASSIN-P5-R02-C06"
+  },
+  "ba52808969df": {
+   "src": "Increase Multihit's amount of hits by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Mutilate"
+   ],
+   "lines": 1,
+   "flat": "Increase Multihit's amount of hits by +{~}.",
+   "_raw": "Increase Multihit's amount of hits by +3.",
+   "tree": "03/assassin/05/002/006",
+   "ability": "Mutilate",
+   "code": "ASSASSIN-P5-R02-C06"
+  },
+  "95654aef619d": {
+   "src": "Swan Dive",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/002/008",
+   "keep": "en",
+   "ability": "Swan Dive",
+   "code": "ASSASSIN-P5-R02-C08"
+  },
+  "65cde14e455b": {
+   "src": "Landing {~} hits against an enemy while\nmidair grants you +{~} Momentum {#}. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Swan Dive"
+   ],
+   "lines": 2,
+   "flat": "Landing {~} hits against an enemy while midair grants you +{~} Momentum {#}. (Max {~})",
+   "_raw": "Landing 15 hits against an enemy while\nmidair grants you +1 Momentum . (Max 10)",
+   "tree": "03/assassin/05/002/008",
+   "ability": "Swan Dive",
+   "code": "ASSASSIN-P5-R02-C08"
+  },
+  "528c44d5f397": {
+   "src": "Ripple consumes your Momentum {#},\nreleasing a powerful explosion that deals\nmassive damage and briefly blinds enemies.\nFor each stack of Momentum {#}, this\nexplosion deals +{~} more damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Swan Dive"
+   ],
+   "lines": 5,
+   "flat": "Ripple consumes your Momentum {#}, releasing a powerful explosion that deals massive damage and briefly blinds enemies. For each stack of Momentum {#}, this explosion deals +{~} more damage.",
+   "_raw": "Ripple consumes your Momentum ,\nreleasing a powerful explosion that deals\nmassive damage and briefly blinds enemies.\nFor each stack of Momentum , this\nexplosion deals +10% more damage.",
+   "tree": "03/assassin/05/002/008",
+   "ability": "Swan Dive",
+   "code": "ASSASSIN-P5-R02-C08"
+  },
+  "90a1de5dfb5f": {
+   "src": "While midair, hold shift to quickly drop down.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Swan Dive"
+   ],
+   "lines": 1,
+   "flat": "While midair, hold shift to quickly drop down.",
+   "_raw": "While midair, hold shift to quickly drop down.",
+   "tree": "03/assassin/05/002/008",
+   "ability": "Swan Dive",
+   "code": "ASSASSIN-P5-R02-C08"
+  },
+  "d5187788735c": {
+   "src": "{#} Total Damage: {~} (of your DPS, over {~} hits)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Swan Dive"
+   ],
+   "_raw": " Total Damage: 480% (of your DPS, over 5 hits)",
+   "tree": "03/assassin/05/002/008",
+   "ability": "Swan Dive",
+   "code": "ASSASSIN-P5-R02-C08"
+  },
+  "8832e3c27e35": {
+   "src": "Violent Vortex",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/003/000",
+   "keep": "en",
+   "ability": "Violent Vortex",
+   "code": "ASSASSIN-P5-R03-C00"
+  },
+  "0067d0198e16": {
+   "src": "Dealing over {~}x of your max health as\ndamage in a single hit will deal {~} of\nthe damage to other nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Violent Vortex"
+   ],
+   "lines": 3,
+   "flat": "Dealing over {~}x of your max health as damage in a single hit will deal {~} of the damage to other nearby enemies.",
+   "_raw": "Dealing over 1.5x of your max health as\ndamage in a single hit will deal 45% of\nthe damage to other nearby enemies.",
+   "tree": "03/assassin/05/003/000",
+   "ability": "Violent Vortex",
+   "code": "ASSASSIN-P5-R03-C00"
+  },
+  "8ad5a07afe3d": {
+   "src": "Duplicity",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/003/003",
+   "keep": "en",
+   "ability": "Duplicity",
+   "code": "ASSASSIN-P5-R03-C03"
+  },
+  "c683f77a7674": {
+   "src": "Summon +{~} additional Mirror Clones {#}\nwith Mirror Image.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Duplicity"
+   ],
+   "lines": 2,
+   "flat": "Summon +{~} additional Mirror Clones {#} with Mirror Image.",
+   "_raw": "Summon +2 additional Mirror Clones \nwith Mirror Image.",
+   "tree": "03/assassin/05/003/003",
+   "ability": "Duplicity",
+   "code": "ASSASSIN-P5-R03-C03"
+  },
+  "b26294e34bd1": {
+   "src": "{#} Cooldown: +{~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "assassin/Duplicity"
+   ],
+   "_raw": " Cooldown: +5s",
+   "tree": "03/assassin/05/003/003",
+   "ability": "Duplicity",
+   "code": "ASSASSIN-P5-R03-C03"
+  },
+  "f5eedc3686b4": {
+   "src": "Righting Reflex",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/003/005",
+   "keep": "en",
+   "ability": "Righting Reflex",
+   "code": "ASSASSIN-P5-R03-C05"
+  },
+  "d1c65bce9cd3": {
+   "src": "When you hold shift while airborne, slowly\nglide and become immune to fall damage. (Max {~}s)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Righting Reflex"
+   ],
+   "lines": 2,
+   "flat": "When you hold shift while airborne, slowly glide and become immune to fall damage. (Max {~}s)",
+   "_raw": "When you hold shift while airborne, slowly\nglide and become immune to fall damage. (Max 10s)",
+   "tree": "03/assassin/05/003/005",
+   "ability": "Righting Reflex",
+   "code": "ASSASSIN-P5-R03-C05"
+  },
+  "99a860635892": {
+   "src": "Marked",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/004/001",
+   "keep": "en",
+   "ability": "Marked",
+   "code": "ASSASSIN-P5-R04-C01"
+  },
+  "2c9832c3ad7e": {
+   "src": "Marked {#} enemies will take +{~} damage\nfrom attacks for each mark they have.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Marked"
+   ],
+   "lines": 2,
+   "flat": "Marked {#} enemies will take +{~} damage from attacks for each mark they have.",
+   "_raw": "Marked  enemies will take +7% damage\nfrom attacks for each mark they have.",
+   "tree": "03/assassin/05/004/001",
+   "ability": "Marked",
+   "code": "ASSASSIN-P5-R04-C01"
+  },
+  "380411c14654": {
+   "src": "Marked {#} will decay once every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Marked"
+   ],
+   "lines": 1,
+   "flat": "Marked {#} will decay once every {~}s.",
+   "_raw": "Marked  will decay once every 10s.",
+   "tree": "03/assassin/05/004/001",
+   "ability": "Marked",
+   "code": "ASSASSIN-P5-R04-C01"
+  },
+  "8ac5e0f119a4": {
+   "src": "Smoke Bomb will add +{~} Mark {#} to\nenemies it hits. (Max {~}, {~}s Cooldown)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Marked"
+   ],
+   "lines": 2,
+   "flat": "Smoke Bomb will add +{~} Mark {#} to enemies it hits. (Max {~}, {~}s Cooldown)",
+   "_raw": "Smoke Bomb will add +1 Mark  to\nenemies it hits. (Max 4, 0.1s Cooldown)",
+   "tree": "03/assassin/05/004/001",
+   "ability": "Marked",
+   "code": "ASSASSIN-P5-R04-C01"
+  },
+  "064d9333ee6c": {
+   "src": "Malicious Mockery",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/004/004",
+   "keep": "en",
+   "ability": "Malicious Mockery",
+   "code": "ASSASSIN-P5-R04-C04"
+  },
+  "3f445383eae7": {
+   "src": "Casting Dash while sneaking will detonate\nall nearby stored Tricks {#}, dealing damage\nbased on how many stacks were consumed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Malicious Mockery"
+   ],
+   "lines": 3,
+   "flat": "Casting Dash while sneaking will detonate all nearby stored Tricks {#}, dealing damage based on how many stacks were consumed.",
+   "_raw": "Casting Dash while sneaking will detonate\nall nearby stored Tricks , dealing damage\nbased on how many stacks were consumed.",
+   "tree": "03/assassin/05/004/004",
+   "ability": "Malicious Mockery",
+   "code": "ASSASSIN-P5-R04-C04"
+  },
+  "842169a8baac": {
+   "src": "Last Laugh stores a number of Tricks {#} on\nenemies based on the type of Clone {#}{#}{#}.\n(Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Malicious Mockery"
+   ],
+   "lines": 3,
+   "flat": "Last Laugh stores a number of Tricks {#} on enemies based on the type of Clone {#}{#}{#}. (Max {~})",
+   "_raw": "Last Laugh stores a number of Tricks  on\nenemies based on the type of Clone .\n(Max 25)",
+   "tree": "03/assassin/05/004/004",
+   "ability": "Malicious Mockery",
+   "code": "ASSASSIN-P5-R04-C04"
+  },
+  "1f5ceabf28b5": {
+   "src": "Mirror Clones {#} apply +{~} Trick {#} per hit.\nMirage Clones {#} apply +{~} Tricks {#} per hit.\nShadow Clones {#} apply +{~} Tricks {#} per hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Malicious Mockery"
+   ],
+   "lines": 3,
+   "flat": "Mirror Clones {#} apply +{~} Trick {#} per hit. Mirage Clones {#} apply +{~} Tricks {#} per hit. Shadow Clones {#} apply +{~} Tricks {#} per hit.",
+   "_raw": "Mirror Clones  apply +1 Trick  per hit.\nMirage Clones  apply +2 Tricks  per hit.\nShadow Clones  apply +8 Tricks  per hit.",
+   "tree": "03/assassin/05/004/004",
+   "ability": "Malicious Mockery",
+   "code": "ASSASSIN-P5-R04-C04"
+  },
+  "1939dfc5b5bd": {
+   "src": "{#} Total Damage: {~} (of your DPS, per Trick)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Malicious Mockery"
+   ],
+   "_raw": " Total Damage: 10% (of your DPS, per Trick)",
+   "tree": "03/assassin/05/004/004",
+   "ability": "Malicious Mockery",
+   "code": "ASSASSIN-P5-R04-C04"
+  },
+  "3d6a769dfb4a": {
+   "src": "Shurikens",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/004/006",
+   "keep": "en",
+   "ability": "Shurikens",
+   "code": "ASSASSIN-P5-R04-C06"
+  },
+  "a41ea41b9c7f": {
+   "src": "After using Dash, you prepare\n+{~} shurikens. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Shurikens"
+   ],
+   "lines": 2,
+   "flat": "After using Dash, you prepare +{~} shurikens. (Max {~})",
+   "_raw": "After using Dash, you prepare\n+3 shurikens. (Max 9)",
+   "tree": "03/assassin/05/004/006",
+   "ability": "Shurikens",
+   "code": "ASSASSIN-P5-R04-C06"
+  },
+  "4a10460cdaa4": {
+   "src": "Your next Main Attack will throw all\nyour prepared shurikens.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Shurikens"
+   ],
+   "lines": 2,
+   "flat": "Your next Main Attack will throw all your prepared shurikens.",
+   "_raw": "Your next Main Attack will throw all\nyour prepared shurikens.",
+   "tree": "03/assassin/05/004/006",
+   "ability": "Shurikens",
+   "code": "ASSASSIN-P5-R04-C06"
+  },
+  "cf9a949dcbfc": {
+   "src": "{#} Total Damage: {~} (of your DPS, per shuriken)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Shurikens"
+   ],
+   "_raw": " Total Damage: 120% (of your DPS, per shuriken)",
+   "tree": "03/assassin/05/004/006",
+   "ability": "Shurikens",
+   "code": "ASSASSIN-P5-R04-C06"
+  },
+  "bcd1de80cc76": {
+   "src": "Blade Fury",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/004/008",
+   "keep": "en",
+   "ability": "Blade Fury",
+   "code": "ASSASSIN-P5-R04-C08"
+  },
+  "f9fe317ebf52": {
+   "src": "Multihit gains extra damage and\ncan be aimed in all directions.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Blade Fury"
+   ],
+   "lines": 2,
+   "flat": "Multihit gains extra damage and can be aimed in all directions.",
+   "_raw": "Multihit gains extra damage and\ncan be aimed in all directions.",
+   "tree": "03/assassin/05/004/008",
+   "ability": "Blade Fury",
+   "code": "ASSASSIN-P5-R04-C08"
+  },
+  "7d703bb03c32": {
+   "src": "{#} Multihit Damage: +{~} (of your DPS, per hit)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Blade Fury"
+   ],
+   "_raw": " Multihit Damage: +10% (of your DPS, per hit)",
+   "tree": "03/assassin/05/004/008",
+   "ability": "Blade Fury",
+   "code": "ASSASSIN-P5-R04-C08"
+  },
+  "47f2abbc0ab4": {
+   "src": "Hoodwink",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/005/003",
+   "keep": "en",
+   "ability": "Hoodwink",
+   "code": "ASSASSIN-P5-R05-C03"
+  },
+  "e44713067129": {
+   "src": "After killing an enemy, salvage {~} of\ntheir Tricks {#}. (Max {~} per mob, {~} total)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Hoodwink"
+   ],
+   "lines": 2,
+   "flat": "After killing an enemy, salvage {~} of their Tricks {#}. (Max {~} per mob, {~} total)",
+   "_raw": "After killing an enemy, salvage 50% of\ntheir Tricks . (Max 10 per mob, 40 total)",
+   "tree": "03/assassin/05/005/003",
+   "ability": "Hoodwink",
+   "code": "ASSASSIN-P5-R05-C03"
+  },
+  "342e627c1206": {
+   "src": "Casting Spin Attack while sneaking will\ntransfer salvaged Tricks {#} onto enemies\nand immediately detonate them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Hoodwink"
+   ],
+   "lines": 3,
+   "flat": "Casting Spin Attack while sneaking will transfer salvaged Tricks {#} onto enemies and immediately detonate them.",
+   "_raw": "Casting Spin Attack while sneaking will\ntransfer salvaged Tricks  onto enemies\nand immediately detonate them.",
+   "tree": "03/assassin/05/005/003",
+   "ability": "Hoodwink",
+   "code": "ASSASSIN-P5-R05-C03"
+  },
+  "1769523e6462": {
+   "src": "Dancing Blade",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/05/005/007",
+   "keep": "en",
+   "ability": "Dancing Blade",
+   "code": "ASSASSIN-P5-R05-C07"
+  },
+  "d430d63f2a42": {
+   "src": "When using Swan Dive with {~}+ Momentum {#}, you\nwill leap back into the air {~}s after landing.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Dancing Blade"
+   ],
+   "lines": 2,
+   "flat": "When using Swan Dive with {~}+ Momentum {#}, you will leap back into the air {~}s after landing.",
+   "_raw": "When using Swan Dive with 3+ Momentum , you\nwill leap back into the air 0.25s after landing.",
+   "tree": "03/assassin/05/005/007",
+   "ability": "Dancing Blade",
+   "code": "ASSASSIN-P5-R05-C07"
+  },
+  "98969b85bef5": {
+   "src": "Ambush",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/001/000",
+   "keep": "en",
+   "ability": "Ambush",
+   "code": "ASSASSIN-P6-R01-C00"
+  },
+  "8302288b05c5": {
+   "src": "Increases Surprise Strike's\ndamage by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Ambush"
+   ],
+   "lines": 2,
+   "flat": "Increases Surprise Strike's damage by +{~}.",
+   "_raw": "Increases Surprise Strike's\ndamage by +40%.",
+   "tree": "03/assassin/06/001/000",
+   "ability": "Ambush",
+   "code": "ASSASSIN-P6-R01-C00"
+  },
+  "4fa6c6311fe1": {
+   "src": "Death Magnet",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/001/002",
+   "keep": "en",
+   "ability": "Death Magnet",
+   "code": "ASSASSIN-P6-R01-C02"
+  },
+  "81bb02fe870f": {
+   "src": "When exiting Vanish, pull all\nnearby Marked {#} mobs towards\nwhere you entered Vanish.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Death Magnet"
+   ],
+   "lines": 3,
+   "flat": "When exiting Vanish, pull all nearby Marked {#} mobs towards where you entered Vanish.",
+   "_raw": "When exiting Vanish, pull all\nnearby Marked  mobs towards\nwhere you entered Vanish.",
+   "tree": "03/assassin/06/001/002",
+   "ability": "Death Magnet",
+   "code": "ASSASSIN-P6-R01-C02"
+  },
+  "d7b855c1058c": {
+   "src": "Distraction",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/001/004",
+   "keep": "en",
+   "ability": "Distraction",
+   "code": "ASSASSIN-P6-R01-C04"
+  },
+  "c6347e1b3858": {
+   "src": "Debuffs applied with Tricks {#} will last\n+{~}s longer for each extra Trick {#}\ndetonated beyond the requirement.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Distraction"
+   ],
+   "lines": 3,
+   "flat": "Debuffs applied with Tricks {#} will last +{~}s longer for each extra Trick {#} detonated beyond the requirement.",
+   "_raw": "Debuffs applied with Tricks  will last\n+0.4s longer for each extra Trick \ndetonated beyond the requirement.",
+   "tree": "03/assassin/06/001/004",
+   "ability": "Distraction",
+   "code": "ASSASSIN-P6-R01-C04"
+  },
+  "b3d593678439": {
+   "src": "Detonating {~}+ Tricks {#} on enemies will\ntemporarily reduce their damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Distraction"
+   ],
+   "lines": 2,
+   "flat": "Detonating {~}+ Tricks {#} on enemies will temporarily reduce their damage.",
+   "_raw": "Detonating 15+ Tricks  on enemies will\ntemporarily reduce their damage.",
+   "tree": "03/assassin/06/001/004",
+   "ability": "Distraction",
+   "code": "ASSASSIN-P6-R01-C04"
+  },
+  "d986328b82d5": {
+   "src": "Wall Jump",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/001/006",
+   "keep": "en",
+   "ability": "Wall Jump",
+   "code": "ASSASSIN-P6-R01-C06"
+  },
+  "84be82ae12a5": {
+   "src": "Reduces Hop's cooldown by\n-{~}s. Using Hop into a wall\nwill bounce you backward.\n(Hold shift to cancel)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Wall Jump"
+   ],
+   "lines": 4,
+   "flat": "Reduces Hop's cooldown by -{~}s. Using Hop into a wall will bounce you backward. (Hold shift to cancel)",
+   "_raw": "Reduces Hop's cooldown by\n-1s. Using Hop into a wall\nwill bounce you backward.\n(Hold shift to cancel)",
+   "tree": "03/assassin/06/001/006",
+   "ability": "Wall Jump",
+   "code": "ASSASSIN-P6-R01-C06"
+  },
+  "b79aa66c3cc4": {
+   "src": "Cheaper Dash II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/001/008",
+   "keep": "en",
+   "ability": "Cheaper Dash II",
+   "code": "ASSASSIN-P6-R01-C08"
+  },
+  "678b55357ed3": {
+   "src": "Misdirection",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/002/005",
+   "keep": "en",
+   "ability": "Misdirection",
+   "code": "ASSASSIN-P6-R02-C05"
+  },
+  "fbc4bc67a834": {
+   "src": "Confused {#} enemies take +{~} more",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Misdirection"
+   ],
+   "lines": 1,
+   "flat": "Confused {#} enemies take +{~} more",
+   "_raw": "Confused  enemies take +20% more",
+   "tree": "03/assassin/06/002/005",
+   "ability": "Misdirection",
+   "code": "ASSASSIN-P6-R02-C05"
+  },
+  "8aedb312fb6b": {
+   "src": "Detonating {~}+ Tricks {#} on enemies\nwill make them Confused {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Misdirection"
+   ],
+   "lines": 2,
+   "flat": "Detonating {~}+ Tricks {#} on enemies will make them Confused {#}.",
+   "_raw": "Detonating 25+ Tricks  on enemies\nwill make them Confused .",
+   "tree": "03/assassin/06/002/005",
+   "ability": "Misdirection",
+   "code": "ASSASSIN-P6-R02-C05"
+  },
+  "3a48efefee85": {
+   "src": "You may store +{~} more Tricks {#} on enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Misdirection",
+    "assassin/Soul Siphon"
+   ],
+   "lines": 1,
+   "flat": "You may store +{~} more Tricks {#} on enemies.",
+   "_raw": "You may store +15 more Tricks  on enemies.",
+   "tree": "03/assassin/06/002/005",
+   "ability": "Misdirection、Soul Siphon",
+   "code": "ASSASSIN-P6-R02-C05"
+  },
+  "4e578a9b8478": {
+   "src": "will take damage whenever they attack.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Misdirection"
+   ],
+   "lines": 1,
+   "flat": "will take damage whenever they attack.",
+   "_raw": "will take damage whenever they attack.",
+   "tree": "03/assassin/06/002/005",
+   "ability": "Misdirection",
+   "code": "ASSASSIN-P6-R02-C05"
+  },
+  "99181f4e4890": {
+   "src": "{#} Thunder damage from you and",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Misdirection"
+   ],
+   "_raw": " Thunder damage from you and",
+   "tree": "03/assassin/06/002/005",
+   "ability": "Misdirection",
+   "code": "ASSASSIN-P6-R02-C05"
+  },
+  "39db7b766d45": {
+   "src": "Nightcloak Knives",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/003/000",
+   "keep": "en",
+   "ability": "Nightcloak Knives",
+   "code": "ASSASSIN-P6-R03-C00"
+  },
+  "c58a712150e7": {
+   "src": "Dealing damage will send your\nKnives to your target, dealing {~}\nof the damage you dealt per Knife.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Nightcloak Knives"
+   ],
+   "lines": 3,
+   "flat": "Dealing damage will send your Knives to your target, dealing {~} of the damage you dealt per Knife.",
+   "_raw": "Dealing damage will send your\nKnives to your target, dealing 13%\nof the damage you dealt per Knife.",
+   "tree": "03/assassin/06/003/000",
+   "ability": "Nightcloak Knives",
+   "code": "ASSASSIN-P6-R03-C00"
+  },
+  "7c95fac8a22f": {
+   "src": "If cast while in Vanish,\nSpin Attack will consume all\nMarks {#} from nearby enemies.\nFor every {~} Marks {#} consumed,\nsummon a Knife. (Max {~} Knives)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Nightcloak Knives"
+   ],
+   "lines": 5,
+   "flat": "If cast while in Vanish, Spin Attack will consume all Marks {#} from nearby enemies. For every {~} Marks {#} consumed, summon a Knife. (Max {~} Knives)",
+   "_raw": "If cast while in Vanish,\nSpin Attack will consume all\nMarks  from nearby enemies.\nFor every 2 Marks  consumed,\nsummon a Knife. (Max 5 Knives)",
+   "tree": "03/assassin/06/003/000",
+   "ability": "Nightcloak Knives",
+   "code": "ASSASSIN-P6-R03-C00"
+  },
+  "1cd267909237": {
+   "src": "Cheaper Multihit II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/003/002",
+   "keep": "en",
+   "ability": "Cheaper Multihit II",
+   "code": "ASSASSIN-P6-R03-C02"
+  },
+  "78873abb3a2c": {
+   "src": "Shadow Projection",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/003/004",
+   "keep": "en",
+   "ability": "Shadow Projection",
+   "code": "ASSASSIN-P6-R03-C04"
+  },
+  "3a274b472de2": {
+   "src": "Double jump again while sneaking to\nteleport to the clone, detonating it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Shadow Projection"
+   ],
+   "lines": 2,
+   "flat": "Double jump again while sneaking to teleport to the clone, detonating it.",
+   "_raw": "Double jump again while sneaking to\nteleport to the clone, detonating it.",
+   "tree": "03/assassin/06/003/004",
+   "ability": "Shadow Projection",
+   "code": "ASSASSIN-P6-R03-C04"
+  },
+  "ef9a514ee1fa": {
+   "src": "Shadow Clones {#} will cast Spin Attack\nwith Last Laugh.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Shadow Projection"
+   ],
+   "lines": 2,
+   "flat": "Shadow Clones {#} will cast Spin Attack with Last Laugh.",
+   "_raw": "Shadow Clones  will cast Spin Attack\nwith Last Laugh.",
+   "tree": "03/assassin/06/003/004",
+   "ability": "Shadow Projection",
+   "code": "ASSASSIN-P6-R03-C04"
+  },
+  "5277ad47c876": {
+   "src": "When you double jump, throw a Shadow Clone {#}\nin the direction you are facing.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Shadow Projection"
+   ],
+   "lines": 2,
+   "flat": "When you double jump, throw a Shadow Clone {#} in the direction you are facing.",
+   "_raw": "When you double jump, throw a Shadow Clone \nin the direction you are facing.",
+   "tree": "03/assassin/06/003/004",
+   "ability": "Shadow Projection",
+   "code": "ASSASSIN-P6-R03-C04"
+  },
+  "f7eb9cf6018a": {
+   "src": "Cheaper Spin Attack II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/003/006",
+   "keep": "en",
+   "ability": "Cheaper Spin Attack II",
+   "code": "ASSASSIN-P6-R03-C06"
+  },
+  "84c4ab61e430": {
+   "src": "Aerial Ace",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/003/008",
+   "keep": "en",
+   "ability": "Aerial Ace",
+   "code": "ASSASSIN-P6-R03-C08"
+  },
+  "494b487888f6": {
+   "src": "Hitting an enemy with Swan Dive\ngives you a damage boost.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Aerial Ace"
+   ],
+   "lines": 2,
+   "flat": "Hitting an enemy with Swan Dive gives you a damage boost.",
+   "_raw": "Hitting an enemy with Swan Dive\ngives you a damage boost.",
+   "tree": "03/assassin/06/003/008",
+   "ability": "Aerial Ace",
+   "code": "ASSASSIN-P6-R03-C08"
+  },
+  "24a9c88c469b": {
+   "src": "Fatal Spin",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/004/001",
+   "keep": "en",
+   "ability": "Fatal Spin",
+   "code": "ASSASSIN-P6-R04-C01"
+  },
+  "07593e59089a": {
+   "src": "Increases Spin Attack and Lacerate's range\nand damage, and adds +{~} Mark {#} to enemies hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Fatal Spin"
+   ],
+   "lines": 2,
+   "flat": "Increases Spin Attack and Lacerate's range and damage, and adds +{~} Mark {#} to enemies hit.",
+   "_raw": "Increases Spin Attack and Lacerate's range\nand damage, and adds +1 Mark  to enemies hit.",
+   "tree": "03/assassin/06/004/001",
+   "ability": "Fatal Spin",
+   "code": "ASSASSIN-P6-R04-C01"
+  },
+  "9dc01af1c27e": {
+   "src": "Toxic Sludge",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/004/003",
+   "keep": "en",
+   "ability": "Toxic Sludge",
+   "code": "ASSASSIN-P6-R04-C03"
+  },
+  "90241533e90f": {
+   "src": "Contaminated {#} enemies take +{~} more",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Toxic Sludge"
+   ],
+   "lines": 1,
+   "flat": "Contaminated {#} enemies take +{~} more",
+   "_raw": "Contaminated  enemies take +20% more",
+   "tree": "03/assassin/06/004/003",
+   "ability": "Toxic Sludge",
+   "code": "ASSASSIN-P6-R04-C03"
+  },
+  "7bdca4ea982f": {
+   "src": "Detonating {~}+ Tricks {#} on enemies\nContaminates {#} them with toxic ooze.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Toxic Sludge"
+   ],
+   "lines": 2,
+   "flat": "Detonating {~}+ Tricks {#} on enemies Contaminates {#} them with toxic ooze.",
+   "_raw": "Detonating 20+ Tricks  on enemies\nContaminates  them with toxic ooze.",
+   "tree": "03/assassin/06/004/003",
+   "ability": "Toxic Sludge",
+   "code": "ASSASSIN-P6-R04-C03"
+  },
+  "a50e468c7e93": {
+   "src": "You may store +{~} more Tricks {#} on\nenemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Toxic Sludge"
+   ],
+   "lines": 2,
+   "flat": "You may store +{~} more Tricks {#} on enemies.",
+   "_raw": "You may store +15 more Tricks  on\nenemies.",
+   "tree": "03/assassin/06/004/003",
+   "ability": "Toxic Sludge",
+   "code": "ASSASSIN-P6-R04-C03"
+  },
+  "75fc4bb2f2b5": {
+   "src": "on death, damaging nearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Toxic Sludge"
+   ],
+   "lines": 1,
+   "flat": "on death, damaging nearby enemies.",
+   "_raw": "on death, damaging nearby enemies.",
+   "tree": "03/assassin/06/004/003",
+   "ability": "Toxic Sludge",
+   "code": "ASSASSIN-P6-R04-C03"
+  },
+  "da16c5ebbd32": {
+   "src": "{#} Earth damage from you and will explode",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Toxic Sludge"
+   ],
+   "_raw": " Earth damage from you and will explode",
+   "tree": "03/assassin/06/004/003",
+   "ability": "Toxic Sludge",
+   "code": "ASSASSIN-P6-R04-C03"
+  },
+  "e738c7d89afb": {
+   "src": "Echo",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/004/005",
+   "keep": "en",
+   "ability": "Echo",
+   "code": "ASSASSIN-P6-R04-C05"
+  },
+  "2c0eb32dc1a7": {
+   "src": "After losing a Mirror Clone {#}, your\nnext Spin Attack or Smoke Bomb will be\ncopied by all active Clones {#}{#}{#}, but deal\n-{~} damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Echo"
+   ],
+   "lines": 4,
+   "flat": "After losing a Mirror Clone {#}, your next Spin Attack or Smoke Bomb will be copied by all active Clones {#}{#}{#}, but deal -{~} damage.",
+   "_raw": "After losing a Mirror Clone , your\nnext Spin Attack or Smoke Bomb will be\ncopied by all active Clones , but deal\n-25% damage.",
+   "tree": "03/assassin/06/004/005",
+   "ability": "Echo",
+   "code": "ASSASSIN-P6-R04-C05"
+  },
+  "34fda6ca14f6": {
+   "src": "Eviscerate",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/004/007",
+   "keep": "en",
+   "ability": "Eviscerate",
+   "code": "ASSASSIN-P6-R04-C07"
+  },
+  "7a4f5e5ccbba": {
+   "src": "Lacerate deals more damage,\nand will slash +{~} more time.\nLacerate has increased range.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Eviscerate"
+   ],
+   "lines": 3,
+   "flat": "Lacerate deals more damage, and will slash +{~} more time. Lacerate has increased range.",
+   "_raw": "Lacerate deals more damage,\nand will slash +1 more time.\nLacerate has increased range.",
+   "tree": "03/assassin/06/004/007",
+   "ability": "Eviscerate",
+   "code": "ASSASSIN-P6-R04-C07"
+  },
+  "aa3972868a1d": {
+   "src": "Bladestorm",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/005/000",
+   "keep": "en",
+   "ability": "Bladestorm",
+   "code": "ASSASSIN-P6-R05-C00"
+  },
+  "d5411dea333a": {
+   "src": "Increases Violent Vortex's damage\nby +{~} and increases the damage\nrequirement to be {~}x your max health.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Bladestorm"
+   ],
+   "lines": 3,
+   "flat": "Increases Violent Vortex's damage by +{~} and increases the damage requirement to be {~}x your max health.",
+   "_raw": "Increases Violent Vortex's damage\nby +55% and increases the damage\nrequirement to be 2.5x your max health.",
+   "tree": "03/assassin/06/005/000",
+   "ability": "Bladestorm",
+   "code": "ASSASSIN-P6-R05-C00"
+  },
+  "3da930f3774f": {
+   "src": "Dissolution",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/06/005/002",
+   "keep": "en",
+   "ability": "Dissolution",
+   "code": "ASSASSIN-P6-R05-C02"
+  },
+  "dcb6d8049874": {
+   "src": "When entering and exiting Vanish, become immune to\nknockback and gain resistance for a brief moment.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Dissolution"
+   ],
+   "lines": 2,
+   "flat": "When entering and exiting Vanish, become immune to knockback and gain resistance for a brief moment.",
+   "_raw": "When entering and exiting Vanish, become immune to\nknockback and gain resistance for a brief moment.",
+   "tree": "03/assassin/06/005/002",
+   "ability": "Dissolution",
+   "code": "ASSASSIN-P6-R05-C02"
+  },
+  "df6212400955": {
+   "src": "{#} Effect: +{~} Resistance Bonus (❁) to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Dissolution"
+   ],
+   "_raw": " Effect: +60% Resistance Bonus (❁) to Self",
+   "tree": "03/assassin/06/005/002",
+   "ability": "Dissolution",
+   "code": "ASSASSIN-P6-R05-C02"
+  },
+  "b5738492875c": {
+   "src": "Harvester",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/001/001",
+   "keep": "en",
+   "ability": "Harvester",
+   "code": "ASSASSIN-P7-R01-C01"
+  },
+  "be9c264fcb1d": {
+   "src": "Gain +{~} Mana for every leftover Mark {#}\nwhen killing an enemy, and for every Mark {#}\nyou consume with your abilities.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Harvester"
+   ],
+   "lines": 3,
+   "flat": "Gain +{~} Mana for every leftover Mark {#} when killing an enemy, and for every Mark {#} you consume with your abilities.",
+   "_raw": "Gain +2 Mana for every leftover Mark \nwhen killing an enemy, and for every Mark \nyou consume with your abilities.",
+   "tree": "03/assassin/07/001/001",
+   "ability": "Harvester",
+   "code": "ASSASSIN-P7-R01-C01"
+  },
+  "3bc62a226a9a": {
+   "src": "Cheaper Smoke Bomb II",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/001/004",
+   "keep": "en",
+   "ability": "Cheaper Smoke Bomb II",
+   "code": "ASSASSIN-P7-R01-C04"
+  },
+  "802306568fe6": {
+   "src": "Far Reach",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/001/007",
+   "keep": "en",
+   "ability": "Far Reach",
+   "code": "ASSASSIN-P7-R01-C07"
+  },
+  "2698d7ca4c52": {
+   "src": "Increase the range of Multihit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Far Reach"
+   ],
+   "lines": 1,
+   "flat": "Increase the range of Multihit.",
+   "_raw": "Increase the range of Multihit.",
+   "tree": "03/assassin/07/001/007",
+   "ability": "Far Reach",
+   "code": "ASSASSIN-P7-R01-C07"
+  },
+  "d2d1521b5422": {
+   "src": "More Marks",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/002/002",
+   "keep": "en",
+   "ability": "More Marks",
+   "code": "ASSASSIN-P7-R02-C02"
+  },
+  "d25fedf1fecc": {
+   "src": "Increase your maximum Marks {#} by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/More Marks"
+   ],
+   "lines": 1,
+   "flat": "Increase your maximum Marks {#} by +{~}.",
+   "_raw": "Increase your maximum Marks  by +2.",
+   "tree": "03/assassin/07/002/002",
+   "ability": "More Marks",
+   "code": "ASSASSIN-P7-R02-C02"
+  },
+  "1fff1636f607": {
+   "src": "Deflagrate",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/002/005",
+   "keep": "en",
+   "ability": "Deflagrate",
+   "code": "ASSASSIN-P7-R02-C05"
+  },
+  "f3882e0babde": {
+   "src": "Bamboozle coats enemies struck with a\nflammable catalyst, making them +{~} Enkindled {#}\nwhenever you strike them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Deflagrate"
+   ],
+   "lines": 3,
+   "flat": "Bamboozle coats enemies struck with a flammable catalyst, making them +{~} Enkindled {#} whenever you strike them.",
+   "_raw": "Bamboozle coats enemies struck with a\nflammable catalyst, making them +1% Enkindled \nwhenever you strike them.",
+   "tree": "03/assassin/07/002/005",
+   "ability": "Deflagrate",
+   "code": "ASSASSIN-P7-R02-C05"
+  },
+  "6220a19be249": {
+   "src": "Enkindled {#} enemies take +{~} more",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Deflagrate"
+   ],
+   "lines": 1,
+   "flat": "Enkindled {#} enemies take +{~} more",
+   "_raw": "Enkindled  enemies take +30% more",
+   "tree": "03/assassin/07/002/005",
+   "ability": "Deflagrate",
+   "code": "ASSASSIN-P7-R02-C05"
+  },
+  "efb5f26ba2df": {
+   "src": "The catalyst flares up when it reaches {~}\nor at the end of its duration, dealing damage\nbased on how Enkindled {#} the target was.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Deflagrate"
+   ],
+   "lines": 3,
+   "flat": "The catalyst flares up when it reaches {~} or at the end of its duration, dealing damage based on how Enkindled {#} the target was.",
+   "_raw": "The catalyst flares up when it reaches 100%\nor at the end of its duration, dealing damage\nbased on how Enkindled  the target was.",
+   "tree": "03/assassin/07/002/005",
+   "ability": "Deflagrate",
+   "code": "ASSASSIN-P7-R02-C05"
+  },
+  "6d15732d6401": {
+   "src": "{#} Fire damage from you.",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Deflagrate"
+   ],
+   "_raw": " Fire damage from you.",
+   "tree": "03/assassin/07/002/005",
+   "ability": "Deflagrate",
+   "code": "ASSASSIN-P7-R02-C05"
+  },
+  "f063afb306da": {
+   "src": "{#} Total Damage: {~} (of your DPS, per {~} Enkindle)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Deflagrate"
+   ],
+   "_raw": " Total Damage: 15% (of your DPS, per 1% Enkindle)",
+   "tree": "03/assassin/07/002/005",
+   "ability": "Deflagrate",
+   "code": "ASSASSIN-P7-R02-C05"
+  },
+  "0c6b01ca06e8": {
+   "src": "Ricochets",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/002/008",
+   "keep": "en",
+   "ability": "Ricochets",
+   "code": "ASSASSIN-P7-R02-C08"
+  },
+  "07aaa58b8b71": {
+   "src": "Your Shurikens will bounce {~} times\nbetween enemies upon impact.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Ricochets"
+   ],
+   "lines": 2,
+   "flat": "Your Shurikens will bounce {~} times between enemies upon impact.",
+   "_raw": "Your Shurikens will bounce 2 times\nbetween enemies upon impact.",
+   "tree": "03/assassin/07/002/008",
+   "ability": "Ricochets",
+   "code": "ASSASSIN-P7-R02-C08"
+  },
+  "f91075411f81": {
+   "src": "Satsujin",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/003/001",
+   "keep": "en",
+   "ability": "Satsujin",
+   "code": "ASSASSIN-P7-R03-C01"
+  },
+  "873ece32e9a3": {
+   "src": "Both consume all Marks {#} on the enemy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Satsujin"
+   ],
+   "lines": 1,
+   "flat": "Both consume all Marks {#} on the enemy.",
+   "_raw": "Both consume all Marks  on the enemy.",
+   "tree": "03/assassin/07/003/001",
+   "ability": "Satsujin",
+   "code": "ASSASSIN-P7-R03-C01"
+  },
+  "ed6579526c7e": {
+   "src": "If an enemy has {~}+ Marks {#}, your next\nBackstab will deal +{~} damage, or your next\nPowder Special will deal +{~} damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Satsujin"
+   ],
+   "lines": 3,
+   "flat": "If an enemy has {~}+ Marks {#}, your next Backstab will deal +{~} damage, or your next Powder Special will deal +{~} damage.",
+   "_raw": "If an enemy has 4+ Marks , your next\nBackstab will deal +200% damage, or your next\nPowder Special will deal +100% damage.",
+   "tree": "03/assassin/07/003/001",
+   "ability": "Satsujin",
+   "code": "ASSASSIN-P7-R03-C01"
+  },
+  "454a19b7f493": {
+   "src": "Noxious Haze",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/003/004",
+   "keep": "en",
+   "ability": "Noxious Haze",
+   "code": "ASSASSIN-P7-R03-C04"
+  },
+  "5a29049fed64": {
+   "src": "Smoke Bomb makes you and any allies\nbecome Noxious {#} while standing in it,\nwhich lingers after leaving the area.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Noxious Haze"
+   ],
+   "lines": 3,
+   "flat": "Smoke Bomb makes you and any allies become Noxious {#} while standing in it, which lingers after leaving the area.",
+   "_raw": "Smoke Bomb makes you and any allies\nbecome Noxious  while standing in it,\nwhich lingers after leaving the area.",
+   "tree": "03/assassin/07/003/004",
+   "ability": "Noxious Haze",
+   "code": "ASSASSIN-P7-R03-C04"
+  },
+  "72bcdc17a13c": {
+   "src": "While Noxious {#}, deal +{~} damage to\nenemies for every debuff they have. (Max {~})\nAllies only receive {~} of the bonus.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Noxious Haze"
+   ],
+   "lines": 3,
+   "flat": "While Noxious {#}, deal +{~} damage to enemies for every debuff they have. (Max {~}) Allies only receive {~} of the bonus.",
+   "_raw": "While Noxious , deal +10% damage to\nenemies for every debuff they have. (Max 5)\nAllies only receive 30% of the bonus.",
+   "tree": "03/assassin/07/003/004",
+   "ability": "Noxious Haze",
+   "code": "ASSASSIN-P7-R03-C04"
+  },
+  "3cac4e9b4165": {
+   "src": "Jasmine Bloom",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/003/007",
+   "keep": "en",
+   "ability": "Jasmine Bloom",
+   "code": "ASSASSIN-P7-R03-C07"
+  },
+  "a1509d75f50b": {
+   "src": "After spending {~} Mana or gaining {~} Momentum {#},\nan area underneath you blooms and damages\nenemies below it every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Jasmine Bloom"
+   ],
+   "lines": 3,
+   "flat": "After spending {~} Mana or gaining {~} Momentum {#}, an area underneath you blooms and damages enemies below it every {~}s.",
+   "_raw": "After spending 40 Mana or gaining 4 Momentum ,\nan area underneath you blooms and damages\nenemies below it every 0.3s.",
+   "tree": "03/assassin/07/003/007",
+   "ability": "Jasmine Bloom",
+   "code": "ASSASSIN-P7-R03-C07"
+  },
+  "08fa6bea5a3b": {
+   "src": "The duration is reset and the radius is\nincreased after every bloom. (Max {~} Blooms)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Jasmine Bloom"
+   ],
+   "lines": 2,
+   "flat": "The duration is reset and the radius is increased after every bloom. (Max {~} Blooms)",
+   "_raw": "The duration is reset and the radius is\nincreased after every bloom. (Max 5 Blooms)",
+   "tree": "03/assassin/07/003/007",
+   "ability": "Jasmine Bloom",
+   "code": "ASSASSIN-P7-R03-C07"
+  },
+  "9cb9ccb80131": {
+   "src": "{#} Area of Effect: +{~} Blocks (per bloom)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Jasmine Bloom"
+   ],
+   "_raw": " Area of Effect: +1.5 Blocks (per bloom)",
+   "tree": "03/assassin/07/003/007",
+   "ability": "Jasmine Bloom",
+   "code": "ASSASSIN-P7-R03-C07"
+  },
+  "6f2af3a48f53": {
+   "src": "Soul Siphon",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/004/003",
+   "keep": "en",
+   "ability": "Soul Siphon",
+   "code": "ASSASSIN-P7-R04-C03"
+  },
+  "2b813994b498": {
+   "src": "Detonating {~}+ Tricks {#} on enemies will\nmake them {~} Drained {#} and take\n+{~} more {#} Water damage from you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Soul Siphon"
+   ],
+   "lines": 3,
+   "flat": "Detonating {~}+ Tricks {#} on enemies will make them {~} Drained {#} and take +{~} more {#} Water damage from you.",
+   "_raw": "Detonating 30+ Tricks  on enemies will\nmake them 200% Drained  and take\n+20% more  Water damage from you.",
+   "tree": "03/assassin/07/004/003",
+   "ability": "Soul Siphon",
+   "code": "ASSASSIN-P7-R04-C03"
+  },
+  "dfbd64b04015": {
+   "src": "Whenever you or an ally attacks a\nDrained {#} enemy, siphon {~} of it,\nconverting it into {~} Overhealth ❤\nthat decays over {~}s. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Soul Siphon"
+   ],
+   "lines": 4,
+   "flat": "Whenever you or an ally attacks a Drained {#} enemy, siphon {~} of it, converting it into {~} Overhealth ❤ that decays over {~}s. (Max {~})",
+   "_raw": "Whenever you or an ally attacks a\nDrained  enemy, siphon 7.5% of it,\nconverting it into 7.5% Overhealth ❤\nthat decays over 20s. (Max 25%)",
+   "tree": "03/assassin/07/004/003",
+   "ability": "Soul Siphon",
+   "code": "ASSASSIN-P7-R04-C03"
+  },
+  "fc5c5ed0e5f1": {
+   "src": "Braced Impact",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/004/006",
+   "keep": "en",
+   "ability": "Braced Impact",
+   "code": "ASSASSIN-P7-R04-C06"
+  },
+  "6027d6fa4a60": {
+   "src": "Landing with Swan Dive briefly\ngrants you resistance.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Braced Impact"
+   ],
+   "lines": 2,
+   "flat": "Landing with Swan Dive briefly grants you resistance.",
+   "_raw": "Landing with Swan Dive briefly\ngrants you resistance.",
+   "tree": "03/assassin/07/004/006",
+   "ability": "Braced Impact",
+   "code": "ASSASSIN-P7-R04-C06"
+  },
+  "351dc5ce6b51": {
+   "src": "Devour",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/005/000",
+   "keep": "en",
+   "ability": "Devour",
+   "code": "ASSASSIN-P7-R05-C00"
+  },
+  "f03add2c2611": {
+   "src": "Harvester will give +{~} Mana.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Devour"
+   ],
+   "lines": 1,
+   "flat": "Harvester will give +{~} Mana.",
+   "_raw": "Harvester will give +2 Mana.",
+   "tree": "03/assassin/07/005/000",
+   "ability": "Devour",
+   "code": "ASSASSIN-P7-R05-C00"
+  },
+  "44456f78eb67": {
+   "src": "Marked for Death",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/07/005/002",
+   "keep": "en",
+   "ability": "Marked for Death",
+   "code": "ASSASSIN-P7-R05-C02"
+  },
+  "24da14401044": {
+   "src": "Increases Marked's damage\nbonus by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Marked for Death"
+   ],
+   "lines": 2,
+   "flat": "Increases Marked's damage bonus by +{~}.",
+   "_raw": "Increases Marked's damage\nbonus by +4%.",
+   "tree": "03/assassin/07/005/002",
+   "ability": "Marked for Death",
+   "code": "ASSASSIN-P7-R05-C02"
+  },
+  "f0b792caf96f": {
+   "src": "Thrill",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/001/001",
+   "keep": "en",
+   "ability": "Thrill",
+   "code": "ASSASSIN-P8-R01-C01"
+  },
+  "aae2a17c33d9": {
+   "src": "Gain +{~} Walk Speed (➲)\nafter hitting a successful Backstab.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Thrill"
+   ],
+   "lines": 2,
+   "flat": "Gain +{~} Walk Speed (➲) after hitting a successful Backstab.",
+   "_raw": "Gain +50% Walk Speed (➲)\nafter hitting a successful Backstab.",
+   "tree": "03/assassin/08/001/001",
+   "ability": "Thrill",
+   "code": "ASSASSIN-P8-R01-C01"
+  },
+  "34200d63213f": {
+   "src": "Doppelganger",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/001/004",
+   "keep": "en",
+   "ability": "Doppelganger",
+   "code": "ASSASSIN-P8-R01-C04"
+  },
+  "2c3ac611e8bc": {
+   "src": "Summon +{~} additional Mirror Clone {#}\nwith Mirror Image.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Doppelganger"
+   ],
+   "lines": 2,
+   "flat": "Summon +{~} additional Mirror Clone {#} with Mirror Image.",
+   "_raw": "Summon +1 additional Mirror Clone \nwith Mirror Image.",
+   "tree": "03/assassin/08/001/004",
+   "ability": "Doppelganger",
+   "code": "ASSASSIN-P8-R01-C04"
+  },
+  "2371af702826": {
+   "src": "Celerity",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/001/008",
+   "keep": "en",
+   "ability": "Celerity",
+   "code": "ASSASSIN-P8-R01-C08"
+  },
+  "74c0c48cd842": {
+   "src": "Dash's horizontal velocity is increased by {~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Celerity"
+   ],
+   "lines": 1,
+   "flat": "Dash's horizontal velocity is increased by {~}.",
+   "_raw": "Dash's horizontal velocity is increased by 10%.",
+   "tree": "03/assassin/08/001/008",
+   "ability": "Celerity",
+   "code": "ASSASSIN-P8-R01-C08"
+  },
+  "0bc0938fa4ea": {
+   "src": "Each {~} Momentum {#} grants +{~}\nmore damage to Swan Dive.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Celerity"
+   ],
+   "lines": 2,
+   "flat": "Each {~} Momentum {#} grants +{~} more damage to Swan Dive.",
+   "_raw": "Each 1 Momentum  grants +2%\nmore damage to Swan Dive.",
+   "tree": "03/assassin/08/001/008",
+   "ability": "Celerity",
+   "code": "ASSASSIN-P8-R01-C08"
+  },
+  "f7e66293dc27": {
+   "src": "Shadow Dance",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/002/003",
+   "keep": "en",
+   "ability": "Shadow Dance",
+   "code": "ASSASSIN-P8-R02-C03"
+  },
+  "5cc9526bbee7": {
+   "src": "Your second hit after casting\nVanish will deal +{~} damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Shadow Dance"
+   ],
+   "lines": 2,
+   "flat": "Your second hit after casting Vanish will deal +{~} damage.",
+   "_raw": "Your second hit after casting\nVanish will deal +50% damage.",
+   "tree": "03/assassin/08/002/003",
+   "ability": "Shadow Dance",
+   "code": "ASSASSIN-P8-R02-C03"
+  },
+  "f4a4b04852bc": {
+   "src": "Paranoia",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/002/005",
+   "keep": "en",
+   "ability": "Paranoia",
+   "code": "ASSASSIN-P8-R02-C05"
+  },
+  "af13c869dca2": {
+   "src": "Gain +{~} Walk Speed (➲)\nafter losing a Mirror Clone {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Paranoia"
+   ],
+   "lines": 2,
+   "flat": "Gain +{~} Walk Speed (➲) after losing a Mirror Clone {#}.",
+   "_raw": "Gain +20% Walk Speed (➲)\nafter losing a Mirror Clone .",
+   "tree": "03/assassin/08/002/005",
+   "ability": "Paranoia",
+   "code": "ASSASSIN-P8-R02-C05"
+  },
+  "63ef84b1afb9": {
+   "src": "Petal Storm",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/002/007",
+   "keep": "en",
+   "ability": "Petal Storm",
+   "code": "ASSASSIN-P8-R02-C07"
+  },
+  "ab43998fa9d3": {
+   "src": "A maximum sized Jasmine Bloom will transform\nSwan Dive into a huge petal storm, consuming\nyour bloom to give it increased damage and range",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Petal Storm"
+   ],
+   "lines": 3,
+   "flat": "A maximum sized Jasmine Bloom will transform Swan Dive into a huge petal storm, consuming your bloom to give it increased damage and range",
+   "_raw": "A maximum sized Jasmine Bloom will transform\nSwan Dive into a huge petal storm, consuming\nyour bloom to give it increased damage and range",
+   "tree": "03/assassin/08/002/007",
+   "ability": "Petal Storm",
+   "code": "ASSASSIN-P8-R02-C07"
+  },
+  "acfdbd5b6e9f": {
+   "src": "{#} Explosion Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Petal Storm"
+   ],
+   "_raw": " Explosion Damage: +200%",
+   "tree": "03/assassin/08/002/007",
+   "ability": "Petal Storm",
+   "code": "ASSASSIN-P8-R02-C07"
+  },
+  "9fad929ed66c": {
+   "src": "Billowing Death",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/003/000",
+   "keep": "en",
+   "ability": "Billowing Death",
+   "code": "ASSASSIN-P8-R03-C00"
+  },
+  "b726e9ad66da": {
+   "src": "When you hit an enemy with {~}+ Marks {#}\nwith a successful Backstab, send out\na cloud of smoke which applies {~}\nof the enemy's Marks {#} to other enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Billowing Death"
+   ],
+   "lines": 4,
+   "flat": "When you hit an enemy with {~}+ Marks {#} with a successful Backstab, send out a cloud of smoke which applies {~} of the enemy's Marks {#} to other enemies.",
+   "_raw": "When you hit an enemy with 2+ Marks \nwith a successful Backstab, send out\na cloud of smoke which applies 50%\nof the enemy's Marks  to other enemies.",
+   "tree": "03/assassin/08/003/000",
+   "ability": "Billowing Death",
+   "code": "ASSASSIN-P8-R03-C00"
+  },
+  "bfdfb843fe69": {
+   "src": "Looming Presence",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/003/002",
+   "keep": "en",
+   "ability": "Looming Presence",
+   "code": "ASSASSIN-P8-R03-C02"
+  },
+  "e6ac871b3d3b": {
+   "src": "Increases the range of Backstab.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Looming Presence"
+   ],
+   "lines": 1,
+   "flat": "Increases the range of Backstab.",
+   "_raw": "Increases the range of Backstab.",
+   "tree": "03/assassin/08/003/002",
+   "ability": "Looming Presence",
+   "code": "ASSASSIN-P8-R03-C02"
+  },
+  "37e9d3aafa5f": {
+   "src": "Disappearing Act",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/003/004",
+   "keep": "en",
+   "ability": "Disappearing Act",
+   "code": "ASSASSIN-P8-R03-C04"
+  },
+  "5da5cc52133a": {
+   "src": "After losing all of your Mirror Clones {#}, create\nan explosion the next time you enter Vanish.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Disappearing Act"
+   ],
+   "lines": 2,
+   "flat": "After losing all of your Mirror Clones {#}, create an explosion the next time you enter Vanish.",
+   "_raw": "After losing all of your Mirror Clones , create\nan explosion the next time you enter Vanish.",
+   "tree": "03/assassin/08/003/004",
+   "ability": "Disappearing Act",
+   "code": "ASSASSIN-P8-R03-C04"
+  },
+  "1dc3259d9e79": {
+   "src": "Dextrous Hands",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/003/006",
+   "keep": "en",
+   "ability": "Dextrous Hands",
+   "code": "ASSASSIN-P8-R03-C06"
+  },
+  "45be51f2d1cc": {
+   "src": "Hop will now prepare {~} shurikens.\nYou can prepare +{~} total shurikens. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Dextrous Hands"
+   ],
+   "lines": 2,
+   "flat": "Hop will now prepare {~} shurikens. You can prepare +{~} total shurikens. (Max {~})",
+   "_raw": "Hop will now prepare 3 shurikens.\nYou can prepare +3 total shurikens. (Max 12)",
+   "tree": "03/assassin/08/003/006",
+   "ability": "Dextrous Hands",
+   "code": "ASSASSIN-P8-R03-C06"
+  },
+  "0cc6dd9d29a1": {
+   "src": "Thermobaric Smoke",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/003/008",
+   "keep": "en",
+   "ability": "Thermobaric Smoke",
+   "code": "ASSASSIN-P8-R03-C08"
+  },
+  "f196df7a9e97": {
+   "src": "Inject volatile chemicals into your\nSmoke Bomb, causing it to combust\ninstantaneously upon landing,\ndealing its damage {~}s faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Thermobaric Smoke"
+   ],
+   "lines": 4,
+   "flat": "Inject volatile chemicals into your Smoke Bomb, causing it to combust instantaneously upon landing, dealing its damage {~}s faster.",
+   "_raw": "Inject volatile chemicals into your\nSmoke Bomb, causing it to combust\ninstantaneously upon landing,\ndealing its damage 0.3s faster.",
+   "tree": "03/assassin/08/003/008",
+   "ability": "Thermobaric Smoke",
+   "code": "ASSASSIN-P8-R03-C08"
+  },
+  "7543de8528a8": {
+   "src": "Reduce Smoke Bomb's duration by {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Thermobaric Smoke"
+   ],
+   "lines": 1,
+   "flat": "Reduce Smoke Bomb's duration by {~}s.",
+   "_raw": "Reduce Smoke Bomb's duration by 1s.",
+   "tree": "03/assassin/08/003/008",
+   "ability": "Thermobaric Smoke",
+   "code": "ASSASSIN-P8-R03-C08"
+  },
+  "6166a6b39a73": {
+   "src": "{#} Duration: -{~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "assassin/Thermobaric Smoke"
+   ],
+   "_raw": " Duration: -1s",
+   "tree": "03/assassin/08/003/008",
+   "ability": "Thermobaric Smoke",
+   "code": "ASSASSIN-P8-R03-C08"
+  },
+  "a09c076558e2": {
+   "src": "Choke Bomb",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/08/004/005",
+   "keep": "en",
+   "ability": "Choke Bomb",
+   "code": "ASSASSIN-P8-R04-C05"
+  },
+  "bdf4acb86794": {
+   "src": "Enemies suffering from Hypoxia {#}\nare slowed by {~} and take +{~}\nmore {#} Air damage from you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Choke Bomb"
+   ],
+   "lines": 3,
+   "flat": "Enemies suffering from Hypoxia {#} are slowed by {~} and take +{~} more {#} Air damage from you.",
+   "_raw": "Enemies suffering from Hypoxia \nare slowed by 20% and take +30%\nmore  Air damage from you.",
+   "tree": "03/assassin/08/004/005",
+   "ability": "Choke Bomb",
+   "code": "ASSASSIN-P8-R04-C05"
+  },
+  "9811a9f66c5a": {
+   "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#} for +{~}s.\n(Max {~}s)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Choke Bomb"
+   ],
+   "lines": 3,
+   "flat": "Smoke Bomb releases a cloud of dust every {~}s, applying Hypoxia {#} for +{~}s. (Max {~}s)",
+   "_raw": "Smoke Bomb releases a cloud of dust\nevery 0.5s, applying Hypoxia  for +2s.\n(Max 10s)",
+   "tree": "03/assassin/08/004/005",
+   "ability": "Choke Bomb",
+   "code": "ASSASSIN-P8-R04-C05"
+  },
+  "ca0b0d39128f": {
+   "src": "Pierce the Veil",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/09/002/001",
+   "keep": "en",
+   "ability": "Pierce the Veil",
+   "code": "ASSASSIN-P9-R02-C01"
+  },
+  "0f0aa21b883b": {
+   "src": "Cloak yourself in shadow, gaining all\nbenefits of Vanish for the duration.\nHealth and mana will still generate, and\nthis state cannot be canceled.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Pierce the Veil"
+   ],
+   "lines": 4,
+   "flat": "Cloak yourself in shadow, gaining all benefits of Vanish for the duration. Health and mana will still generate, and this state cannot be canceled.",
+   "_raw": "Cloak yourself in shadow, gaining all\nbenefits of Vanish for the duration.\nHealth and mana will still generate, and\nthis state cannot be canceled.",
+   "tree": "03/assassin/09/002/001",
+   "ability": "Pierce the Veil",
+   "code": "ASSASSIN-P9-R02-C01"
+  },
+  "229e144aa18c": {
+   "src": "While cloaked, nearby enemies will\ngain +{~} Mark {#} every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Pierce the Veil"
+   ],
+   "lines": 2,
+   "flat": "While cloaked, nearby enemies will gain +{~} Mark {#} every {~}s.",
+   "_raw": "While cloaked, nearby enemies will\ngain +1 Mark  every 0.25s.",
+   "tree": "03/assassin/09/002/001",
+   "ability": "Pierce the Veil",
+   "code": "ASSASSIN-P9-R02-C01"
+  },
+  "22c1255acc6b": {
+   "src": "Serpent's Garden",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/09/002/007",
+   "keep": "en",
+   "ability": "Serpent's Garden",
+   "code": "ASSASSIN-P9-R02-C07"
+  },
+  "f15b3fbecc85": {
+   "src": "Leap into the air before plummeting\nback to earth, spurring a garden of\nflowers to grow at your feet, dealing\ndamage to enemies every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Serpent's Garden"
+   ],
+   "lines": 4,
+   "flat": "Leap into the air before plummeting back to earth, spurring a garden of flowers to grow at your feet, dealing damage to enemies every {~}s.",
+   "_raw": "Leap into the air before plummeting\nback to earth, spurring a garden of\nflowers to grow at your feet, dealing\ndamage to enemies every 0.25s.",
+   "tree": "03/assassin/09/002/007",
+   "ability": "Serpent's Garden",
+   "code": "ASSASSIN-P9-R02-C07"
+  },
+  "e3a02ba0a520": {
+   "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~} maximum stacks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Serpent's Garden"
+   ],
+   "lines": 3,
+   "flat": "While above your garden, your Momentum {#} charges twice as fast and gains +{~} maximum stacks.",
+   "_raw": "While above your garden, your Momentum \ncharges twice as fast and gains\n+5 maximum stacks.",
+   "tree": "03/assassin/09/002/007",
+   "ability": "Serpent's Garden",
+   "code": "ASSASSIN-P9-R02-C07"
+  },
+  "7332ed8767c7": {
+   "src": "Another Self",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "assassin/技能名稱"
+   ],
+   "tree": "03/assassin/09/003/004",
+   "keep": "en",
+   "ability": "Another Self",
+   "code": "ASSASSIN-P9-R03-C04"
+  },
+  "93b40b95f931": {
+   "src": "Casting F again swaps your positions,\ndetonates Tricks {#} on nearby enemies, and makes\nyour clone cast all available Damage Spells.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Another Self"
+   ],
+   "lines": 3,
+   "flat": "Casting F again swaps your positions, detonates Tricks {#} on nearby enemies, and makes your clone cast all available Damage Spells.",
+   "_raw": "Casting F again swaps your positions,\ndetonates Tricks  on nearby enemies, and makes\nyour clone cast all available Damage Spells.",
+   "tree": "03/assassin/09/003/004",
+   "ability": "Another Self",
+   "code": "ASSASSIN-P9-R03-C04"
+  },
+  "3f6bfaff8207": {
+   "src": "Create a perfect clone of yourself to\nwork with as a united duet, it copying\nevery spell you cast.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Another Self"
+   ],
+   "lines": 3,
+   "flat": "Create a perfect clone of yourself to work with as a united duet, it copying every spell you cast.",
+   "_raw": "Create a perfect clone of yourself to\nwork with as a united duet, it copying\nevery spell you cast.",
+   "tree": "03/assassin/09/003/004",
+   "ability": "Another Self",
+   "code": "ASSASSIN-P9-R03-C04"
+  },
+  "52dad460dd6c": {
+   "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Another Self"
+   ],
+   "lines": 4,
+   "flat": "If no enemy had more than {~} Tricks {#} detonated in the swap, the clone loses -{~} health. However, for every Trick {#} detonated over the threshold, those Damage Spells deal {~} more damage.",
+   "_raw": "If no enemy had more than 10 Tricks  detonated\nin the swap, the clone loses -2000 health. However,\nfor every Trick  detonated over the threshold,\nthose Damage Spells deal 3% more damage.",
+   "tree": "03/assassin/09/003/004",
+   "ability": "Another Self",
+   "code": "ASSASSIN-P9-R03-C04"
+  },
+  "f6c608c5576f": {
+   "src": "The clone's health is proportional to your\nown effective health, and while it lives,\nthe effectiveness of your debuffs is doubled.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Another Self"
+   ],
+   "lines": 3,
+   "flat": "The clone's health is proportional to your own effective health, and while it lives, the effectiveness of your debuffs is doubled.",
+   "_raw": "The clone's health is proportional to your\nown effective health, and while it lives,\nthe effectiveness of your debuffs is doubled.",
+   "tree": "03/assassin/09/003/004",
+   "ability": "Another Self",
+   "code": "ASSASSIN-P9-R03-C04"
+  }
+ }
+}

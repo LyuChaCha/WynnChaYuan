@@ -116,8 +116,19 @@ class Problem:
         return f"  [{mark}] {self.path} :: {self.key}\n         {self.message}"
 
 
+# 這些語言的譯文比英文<b>緊湊</b>：一個方塊字抵得上一個英文單字。
+# 其他語言（西、德、法、俄……）反過來，往往比原文長。長度檢查要分開看，
+# 否則德文會被整批警告「比原文長很多」——那是德文，不是錯誤。
+COMPACT = ("zh", "ja", "ko")
+
+
+def compact(lang: str) -> bool:
+    return lang.split("_")[0] in COMPACT
+
+
 def check_pair(path: str, key: str, src: str, dst: str,
-               places: set[str], glossary: dict[str, str]) -> list[Problem]:
+               places: set[str], glossary: dict[str, str],
+               lang: str = "zh_tw") -> list[Problem]:
     """檢查一組原文／譯文。"""
     out: list[Problem] = []
 
@@ -157,7 +168,7 @@ def check_pair(path: str, key: str, src: str, dst: str,
     if dst.count(chr(10)) > src.count(chr(10)):
         out.append(Problem("warn", path, key,
                            f"譯文行數比原文多（{src.count(chr(10)) + 1} → "
-                           f"{dst.count(chr(10)) + 1} 行）—— 中文通常更短，"
+                           f"{dst.count(chr(10)) + 1} 行）—— "
                            f"確認一下是不是多按了換行"))
 
     # § 格式碼：譯文可以自己帶（讓翻譯團隊排版用），但後面必須是有效的碼，
@@ -194,13 +205,19 @@ def check_pair(path: str, key: str, src: str, dst: str,
                            "首尾空白與原文不一致 —— 那些空白是用來對齊欄位的"))
 
     # 太長會把 tooltip 撐爆。中文通常比英文短，長很多多半是把說明也寫進去了
-    if len(dst) > max(20, len(src) * 2):
+    # 中日韓一個字抵一個英文單字，長很多多半是把說明也寫進去了。
+    # 其他語言本來就比英文長（德文尤其），門檻放寬，不然整批都是雜訊。
+    ratio = 2 if compact(lang) else 3
+    if len(dst) > max(20, len(src) * ratio):
         out.append(Problem("warn", path, key,
                            f"譯文比原文長很多（{len(src)} → {len(dst)} 字），可能會撐爆版面"))
 
     # 整條就是對照表裡的詞，卻翻成別的說法 —— 同一個詞兩種譯法，
     # 玩家會以為是兩個不同的東西
-    agreed = glossary.get(src.strip())
+    # GLOSSARY.md 是<b>中文</b>的對照表。拿它去比西班牙文，每一條都會被指控
+    # 「與對照表不一致」——那不是提醒，那是把檢查變成雜訊。
+    # 其他語言要有自己的對照表時再說。
+    agreed = glossary.get(src.strip()) if lang.startswith("zh") else None
     if agreed and agreed != dst.strip():
         out.append(Problem("warn", path, key,
                            f"與對照表不一致：GLOSSARY.md 寫「{agreed}」。"
@@ -225,7 +242,7 @@ def is_generated(file: Path) -> bool:
 
 
 def check_file(file: Path, places: set[str],
-               glossary: dict[str, str]) -> list[Problem]:
+               glossary: dict[str, str], lang: str = "zh_tw") -> list[Problem]:
     name = file.name
     try:
         raw = file.read_text(encoding="utf-8")
@@ -247,7 +264,7 @@ def check_file(file: Path, places: set[str],
                 problems.append(Problem("error", name, key, "應該是物件"))
                 continue
             problems += check_pair(name, key, entry.get("src", ""),
-                                   entry.get("dst", ""), places, glossary)
+                                   entry.get("dst", ""), places, glossary, lang)
     else:
         # 扁平格式：{原文: 譯文}
         for key, value in data.items():
@@ -256,7 +273,7 @@ def check_file(file: Path, places: set[str],
             if not isinstance(value, str):
                 problems.append(Problem("error", name, key, "譯文應該是字串"))
                 continue
-            problems += check_pair(name, key, key, value, places, glossary)
+            problems += check_pair(name, key, key, value, places, glossary, lang)
 
     return problems
 
@@ -366,7 +383,9 @@ def main(argv: list[str]) -> int:
         errors += 1
 
     for lang, group in groups:
-        files.extend(group)
+        # 每一個檔案記著它屬於哪一種語言——長度門檻與對照表都要看語言，
+        # 只留檔名的話下面就分不出「這是德文所以比較長」還是「這條翻壞了」。
+        files.extend((lang, f) for f in group)
         if len(groups) > 1:
             print()
             print(f"── {lang} ──")
@@ -379,8 +398,8 @@ def main(argv: list[str]) -> int:
                 print(p)
                 errors += 1
 
-    for file in files:
-        problems = check_file(file, places, glossary)
+    for lang, file in files:
+        problems = check_file(file, places, glossary, lang)
         if not problems:
             continue
         print(f"\n{file.name}")
