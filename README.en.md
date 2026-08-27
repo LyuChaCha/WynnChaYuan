@@ -36,6 +36,18 @@ alignment stay intact either way.
 **replace in place** — which writes the translation into Wynncraft's own dialogue
 box, keeping its frame, nameplate and portrait — or off.
 
+## What it does
+
+| Content | How |
+|---|---|
+| Item tooltips | A panel beside the tooltip, or written into the tooltip itself |
+| NPC dialogue | Translated **inside Wynncraft's own dialogue box** — frame, nameplate and portrait kept |
+| NPC nameplates | A small box under the crosshair while you look at one |
+| Quest tracker | A translated box on the left |
+| Ability tree | Every node, description and archetype |
+| Screenshots | **F8** captures the translation panel — clipboard or file |
+| Bundled CJK font | Ships Cubic 11, a pixel font matching Minecraft's look; switchable |
+
 ## Install
 
 Requires [Wynntils](https://modrinth.com/mod/wynntils) 4.2+ and Fabric API.

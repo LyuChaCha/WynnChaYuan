@@ -144,6 +144,11 @@ public final class SettingsScreen extends Screen {
             b.setMessage(shotLabel());
         });
 
+        row(left, TOP + rowH() * 6, this::fontLabel, b -> {
+            WynnChaYuan.config().cycleChineseFont();
+            b.setMessage(fontLabel());
+        });
+
         // ---- 資料 ----
         int dataY = dataY();
         row(right, dataY, this::guiCollectLabel, b -> {
@@ -232,6 +237,13 @@ public final class SettingsScreen extends Screen {
             case OFF -> "關閉";
         };
         return Component.literal("任務對話：" + name);
+    }
+
+    private Component fontLabel() {
+        return Component.literal("中文字型："
+                + (WynnChaYuan.config().chineseFont()
+                   == com.wynnchayuan.CollectorConfig.ChineseFont.CUBIC
+                   ? "Cubic 11" : "Minecraft 預設"));
     }
 
     private Component shotLabel() {
@@ -338,7 +350,7 @@ public final class SettingsScreen extends Screen {
         int dataY = dataY();
 
         // 卡片要墊在按鈕底下，所以先於 super.render
-        Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(6));
+        Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(7));
         Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(6));
         Cards.panel(g, right - 8, dataY - 20, COL_W + 16, cardH(4));
 
