@@ -1,7 +1,9 @@
 package com.wynnchayuan.capture;
 
 import com.wynnchayuan.WynnChaYuan;
+import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.network.chat.Style;
 
 import java.nio.charset.StandardCharsets;
@@ -66,6 +68,63 @@ public final class DialogueProbe {
     }
 
     /**
+     * 把對話框用到的字型定義原樣抄出來。
+     *
+     * <h2>為什麼需要這一份</h2>
+     * {@code body_0}、{@code body_1}、{@code control} 不是普通字型——它們把
+     * <b>「畫在第幾行」烘進了字型本身</b>（bitmap provider 的 {@code ascent}）。
+     * 整條對話是一個 action bar 字串，MC 的位移字元只能左右移不能上下移，
+     * 所以 Wynncraft 只能用字型編號來表示行號。
+     *
+     * <p>就地取代把字型換成預設，等於把那個高度丟掉，文字就掉到 action bar
+     * 自己的基線去了。要補回來，得知道每一個 {@code body_N} 的 ascent 是多少——
+     * 那是伺服器資源包裡的數字，猜不出來，但那個包就在玩家的硬碟上。
+     */
+    public static void dumpFonts() {
+        if (dir == null) {
+            return;
+        }
+        Minecraft mc = Minecraft.getInstance();
+        if (mc == null || mc.getResourceManager() == null) {
+            return;
+        }
+        String[] names = {
+            "hud/dialogue/text/wynncraft/body_0",
+            "hud/dialogue/text/wynncraft/body_1",
+            "hud/dialogue/text/wynncraft/body_2",
+            "hud/dialogue/text/wynncraft/body_3",
+            "hud/dialogue/text/nameplate",
+            "hud/dialogue/text/control",
+            "hud/gameplay/default/bottom_middle",
+        };
+        StringBuilder sb = new StringBuilder();
+        for (String name : names) {
+            sb.append("=== ").append(name).append(" ===")
+              .append(System.lineSeparator());
+            Identifier id = Identifier.withDefaultNamespace("font/" + name + ".json");
+            try {
+                var found = mc.getResourceManager().getResource(id);
+                if (found.isEmpty()) {
+                    sb.append("  （沒有這個檔案）").append(System.lineSeparator());
+                } else {
+                    try (var in = found.get().open()) {
+                        sb.append(new String(in.readAllBytes(), StandardCharsets.UTF_8));
+                    }
+                }
+            } catch (Exception e) {
+                sb.append("  讀不到：").append(e).append(System.lineSeparator());
+            }
+            sb.append(System.lineSeparator());
+        }
+        try {
+            Files.writeString(dir.resolve("font-dump.txt"), sb.toString(),
+                    StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            // 寫不出來就算了
+        }
+    }
+
+    /**
      * 這一條 action bar 裡有沒有<b>已經打出字的台詞</b>。
      *
      * <h2>為什麼不能只認「有對話字型」</h2>
@@ -118,6 +177,9 @@ public final class DialogueProbe {
         lastPlain = body;
         lastRows = rows;
         written++;
+        if (written == 1) {
+            dumpFonts();
+        }
 
         List<String> fonts = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
