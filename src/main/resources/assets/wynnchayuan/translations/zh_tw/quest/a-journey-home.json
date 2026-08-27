@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "A Journey Home",
   "count": 119,
-  "translated": 0,
+  "translated": 119,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Home#000": {
    "src": "Investigate the Fruma Gate at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "調查 [-{~1}, {~2}, -{~3}] 的 Fruma Gate。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -18,7 +18,7 @@
   },
   "A Journey Home#001": {
    "src": "Explore near where you originally arrived in Wynn.",
-   "dst": "",
+   "dst": "在你當初抵達 Wynn 的地方附近探索。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -28,7 +28,7 @@
   },
   "A Journey Home#002": {
    "src": "Leave {p} through the door at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "從 [-{~1}, {~2}, -{~3}] 的門離開 {p}。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -38,7 +38,7 @@
   },
   "A Journey Home#003": {
    "src": "Continue back down the path to Fruma.",
-   "dst": "",
+   "dst": "沿著路走回 Fruma。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -48,7 +48,7 @@
   },
   "A Journey Home#004": {
    "src": "This job is impossible!! Why am I even here?!",
-   "dst": "",
+   "dst": "這活根本做不完！！我到底為什麼會在這裡？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -58,7 +58,7 @@
   },
   "A Journey Home#005": {
    "src": "Ah! You're a soldier, right? Look, I It's, it's just a really difficult time right now.",
-   "dst": "",
+   "dst": "啊！你是士兵吧？聽我說，我——現在真的是非常難熬的時候。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -68,7 +68,7 @@
   },
   "A Journey Home#006": {
    "src": "This, this whole situation is definitely above my paygrade! I don't know how I'm going to deal with this...",
-   "dst": "",
+   "dst": "這、這整件事絕對超出我的職權範圍了！我不知道該怎麼處理……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -78,7 +78,7 @@
   },
   "A Journey Home#007": {
    "src": "Enough of that, I, ah, I suppose. What is it you need?",
-   "dst": "",
+   "dst": "算了，我、呃，我想也夠了。你需要什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -88,7 +88,7 @@
   },
   "A Journey Home#008": {
    "src": "Oh. Oh no. Ah, I, you see, that'll be a problem, I think. What do you even need to do at the border anyway?",
-   "dst": "",
+   "dst": "噢。噢不。呃，我，你看，那恐怕會有點問題。話說回來，你去邊境到底要做什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -98,7 +98,7 @@
   },
   "A Journey Home#009": {
    "src": "I can't really imagine what you could need there, but, whatever it is, it'll need to wait! This Corkian drill won't work, and Paxon's stuck, and",
-   "dst": "",
+   "dst": "我實在想不出你在那裡能有什麼事，但不管是什麼，都得等！這台 Corkian 鑽機不動了，Paxon 又困在裡面，還有——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -108,7 +108,7 @@
   },
   "A Journey Home#010": {
    "src": "Look, I'm...I'm sorry for snapping at you. I'm trained for military operation, not for cave-in clearance, but no one else was available!",
-   "dst": "",
+   "dst": "抱歉，我……我不該對你發脾氣。我受的是軍事行動訓練，不是清塌方的訓練，可是沒有別人能來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -118,7 +118,7 @@
   },
   "A Journey Home#011": {
    "src": "Even the demolitions expert I hired is stuck, so it's all just, it's all going wrong and I don't know what to do.",
-   "dst": "",
+   "dst": "連我雇來的爆破專家都困住了，所以事情全亂了，我根本不知道該怎麼辦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -128,7 +128,7 @@
   },
   "A Journey Home#012": {
    "src": "You see that new entrance over there? The expert, Paxon, has been in there for almost as long as I was trying this dud machine.",
-   "dst": "",
+   "dst": "看到那邊那個新開的洞口了嗎？那位專家，Paxon，進去的時間差不多跟我搞這台廢鐵一樣久了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -138,7 +138,7 @@
   },
   "A Journey Home#013": {
    "src": "If you think you can do a job better than an expert, go ahead and talk with them, but I'm pretty sure you'll have to cancel whatever plans you had.",
-   "dst": "",
+   "dst": "如果你覺得自己比專家更行，那就去跟他們談吧，不過我很確定你原本的計畫是得取消了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -148,7 +148,7 @@
   },
   "A Journey Home#014": {
    "src": "Talk to the Demolition Mage at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟 Demolition Mage 說話，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -158,7 +158,7 @@
   },
   "A Journey Home#015": {
    "src": "If you really need to get to the border, your best bet is to talk to Paxon in the new cave entrance.",
-   "dst": "",
+   "dst": "如果你真的非去邊境不可，最好的辦法是去新洞口找 Paxon 談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -168,7 +168,7 @@
   },
   "A Journey Home#016": {
    "src": "But, they're an expert, so I think your business will have to wait. Really, really sorry about all this!",
-   "dst": "",
+   "dst": "但他們是專家，所以我想你的事還是得等。這一切真的、真的很抱歉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -178,7 +178,7 @@
   },
   "A Journey Home#017": {
    "src": "Oh no, not another one I don't care what rank you are, what you're asking is impossible! Even for me, it",
-   "dst": "",
+   "dst": "噢不，又來一個——我不管你是什麼階級，你要的事情根本辦不到！就算是我也——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -188,7 +188,7 @@
   },
   "A Journey Home#018": {
    "src": "Wait, you aren't part of the... You're just a regular soldier. You're just trying to get through here, aren't you?",
-   "dst": "",
+   "dst": "等等，你不是那邊的……你只是個普通士兵。你只是想從這裡過去，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -198,7 +198,7 @@
   },
   "A Journey Home#019": {
    "src": "May as well give up now! Not happening. No way. You're wasting your time, and let me tell you exactly why.",
-   "dst": "",
+   "dst": "現在放棄還來得及！不可能。門都沒有。你在浪費時間，我把原因一條條講給你聽。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -208,7 +208,7 @@
   },
   "A Journey Home#020": {
    "src": "You see that blue rock over there? It's a break point. If I could set off explosives at it, it'd open a path.",
-   "dst": "",
+   "dst": "看到那邊那塊藍色的岩石了嗎？那是斷點。只要能在那裡引爆炸藥，就能炸出一條路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -218,7 +218,7 @@
   },
   "A Journey Home#021": {
    "src": "But apparently all these structures set up are so important that any of it being damaged, or MOVED, is unacceptable!",
-   "dst": "",
+   "dst": "但這裡搭的每一個東西顯然都重要到不得了，只要有任何一樣被弄壞、或是被「移動」，就是不行！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -228,7 +228,7 @@
   },
   "A Journey Home#022": {
    "src": "And to make sure I'm 'supervised' while the lieutenant is working on the drill, the detonator HAS to be here.",
-   "dst": "",
+   "dst": "而且為了在中尉忙著修鑽機的時候還能「監督」我，起爆器非得放在這裡不可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -238,7 +238,7 @@
   },
   "A Journey Home#023": {
    "src": "So I have to daisy-chain a limited amount of explosives all the way over to the stone, without blasting any structures!",
-   "dst": "",
+   "dst": "所以我得用有限的炸藥一路串接到那塊石頭，中途還不能炸壞任何一個建物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -248,7 +248,7 @@
   },
   "A Journey Home#024": {
    "src": "I've been trying for hours and gotten absolutely nowhere! I'm one of the best in my field, even! It's ridiculous!!",
-   "dst": "",
+   "dst": "我搞了好幾個小時，一點進展都沒有！我可是這行數一數二的人！這太荒謬了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -258,7 +258,7 @@
   },
   "A Journey Home#025": {
    "src": "If you feel like wasting your time, here's my stock of explosives. Feel free to try your hand at it, but you really should just go.",
-   "dst": "",
+   "dst": "如果你想浪費時間，這是我的炸藥存貨。你儘管試，不過你真的該走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -268,7 +268,7 @@
   },
   "A Journey Home#026": {
    "src": "Use the TNT to open up a path through the cave.",
-   "dst": "",
+   "dst": "用 TNT 在洞穴中炸出一條路。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -278,7 +278,7 @@
   },
   "A Journey Home#027": {
    "src": "Still at it? What, do you need a reminder? I've got nothing better to do.",
-   "dst": "",
+   "dst": "還在弄？怎麼，要我再講一次嗎？反正我也沒別的事做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -288,7 +288,7 @@
   },
   "A Journey Home#028": {
    "src": "So the blue rock is soft enough to crack with the explosives. But the detonator's stuck here.",
-   "dst": "",
+   "dst": "藍色的岩石夠脆，炸藥可以炸開。但起爆器卡在這裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -298,7 +298,7 @@
   },
   "A Journey Home#029": {
    "src": "So we need to use the TNT Placer to daisy-chain blasts from the detonator, without blasting any tents, crates, or walls.",
-   "dst": "",
+   "dst": "所以我們得用 TNT Placer 從起爆器一路串接爆炸，而且不能炸到任何帳篷、木箱或牆。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -308,7 +308,7 @@
   },
   "A Journey Home#030": {
    "src": "You can look at placed TNT to see its blast radius, as well.",
-   "dst": "",
+   "dst": "放好的 TNT 你可以看一下，能看到它的爆炸範圍。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -318,7 +318,7 @@
   },
   "A Journey Home#031": {
    "src": "But given how tight the squeeze between some of those structures is, there's just no way it's happening.",
-   "dst": "",
+   "dst": "不過有幾個建物之間的縫隙那麼窄，這根本不可能成功。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -328,7 +328,7 @@
   },
   "A Journey Home#032": {
    "src": "Like I said, you really should just mosey on back to the castle. If I can't get anywhere, I don't think you'll fare better.",
-   "dst": "",
+   "dst": "我說了，你真的該乖乖回城堡去。連我都弄不出結果，我不覺得你會比較行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -338,7 +338,7 @@
   },
   "A Journey Home#033": {
    "src": "Continue through the cave.",
-   "dst": "",
+   "dst": "穿過洞穴。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -348,7 +348,7 @@
   },
   "A Journey Home#034": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟 Guard 說話，座標 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -358,7 +358,7 @@
   },
   "A Journey Home#035": {
    "src": "Halt! Where did you come from? There was a cave-in past here, wasn't there?",
-   "dst": "",
+   "dst": "站住！你從哪來的？這後面不是塌方了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -368,7 +368,7 @@
   },
   "A Journey Home#036": {
    "src": "A new path, huh? I didn't think you'd have things to be doing back here, though I won't say I'm ungrateful.",
-   "dst": "",
+   "dst": "新的路，是嗎？我沒想到你在這後頭還有事要辦，不過我也不能說不感激。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -378,7 +378,7 @@
   },
   "A Journey Home#037": {
    "src": "It even crushed the grook's nest there. I've been working off field rations for a few days. So where are you headed?",
-   "dst": "",
+   "dst": "連那邊 grook 的巢都被壓垮了。我已經吃了好幾天的野戰口糧。所以你要去哪？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -388,7 +388,7 @@
   },
   "A Journey Home#038": {
    "src": "The border? I suppose if you're headed there, it must be important, official business. Although, it might have to wait.",
-   "dst": "",
+   "dst": "邊境？我想你既然要去那裡，一定是重要的公務。不過，恐怕得等一等。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -398,7 +398,7 @@
   },
   "A Journey Home#039": {
    "src": "The bridge repair was something of a hackjob. It may not bear up your weight. Now that the cave-in's clear, we might be able to get it fixed proper...",
-   "dst": "",
+   "dst": "那座橋修得相當草率。它未必撐得住你的重量。既然塌方清掉了，也許我們能好好把它修一修……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -408,7 +408,7 @@
   },
   "A Journey Home#040": {
    "src": "But that'll take time. I'd just as soon turn back whatever business you have isn't worth your life, after all.",
-   "dst": "",
+   "dst": "但那要時間。我倒寧願你掉頭回去——不管你有什麼事，都不值得拿命去換。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -418,7 +418,7 @@
   },
   "A Journey Home#041": {
    "src": "Cross the repaired bridge at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "走過 [-{~1}, {~2}, -{~3}] 修好的橋。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -428,7 +428,7 @@
   },
   "A Journey Home#042": {
    "src": "Say, I think I recognize you, actually. That's a rarity for this line of work.",
-   "dst": "",
+   "dst": "說起來，我好像認得你。幹這行的能碰到熟面孔可不容易。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -438,7 +438,7 @@
   },
   "A Journey Home#043": {
    "src": "Are you sure that what you have to do is worth it? That bridge is awful rickety. Wouldn't want to lose you.",
-   "dst": "",
+   "dst": "你確定你要做的事值得嗎？那座橋搖得厲害。我可不想失去你這樣的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -448,7 +448,7 @@
   },
   "A Journey Home#044": {
    "src": "Continue back down the path to Fruma.",
-   "dst": "",
+   "dst": "沿著路走回 Fruma。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -458,7 +458,7 @@
   },
   "A Journey Home#045": {
    "src": "Hey, you there! Come talk to me before you pass through.",
-   "dst": "",
+   "dst": "喂，那邊那位！過去之前先過來跟我說話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -468,7 +468,7 @@
   },
   "A Journey Home#046": {
    "src": "Hey, you! Come talk to me first, recruit!",
-   "dst": "",
+   "dst": "喂，你！先過來跟我說話，新兵！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -478,7 +478,7 @@
   },
   "A Journey Home#047": {
    "src": "Coming or going, I'm under strict orders to intercept soldiers and make sure they're equipped before heading on.",
-   "dst": "",
+   "dst": "不管是要進還是要出，我接到的命令很明確：攔下士兵，確認裝備齊全才能放行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -488,7 +488,7 @@
   },
   "A Journey Home#048": {
    "src": "No exceptions, not for any reason. Especially not since the cave-in across the river!",
-   "dst": "",
+   "dst": "沒有例外，什麼理由都不行。尤其是河對岸塌方之後！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -498,7 +498,7 @@
   },
   "A Journey Home#049": {
    "src": "Nothing's more important than your life, and moving on without being suited up could cost you it!",
-   "dst": "",
+   "dst": "沒有什麼比你的命更重要，沒穿好裝備就上路，可能會要了你的命！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -508,7 +508,7 @@
   },
   "A Journey Home#050": {
    "src": "Well, let me take a look and see if this stuff is up to regulation.",
-   "dst": "",
+   "dst": "好，我看看這身行頭合不合規定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -518,7 +518,7 @@
   },
   "A Journey Home#051": {
    "src": "Hmm... Ah, yep, signs of wear all over... Armor not polished... Weapon looks liable to fall apart any second...",
-   "dst": "",
+   "dst": "唔……啊，對，到處都是磨損的痕跡……護甲沒擦亮……武器看起來隨時會散開……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -528,7 +528,7 @@
   },
   "A Journey Home#052": {
    "src": "I'm surprised you made it ten feet out here with those rusty trinkets! This is no way to protect yourself!",
-   "dst": "",
+   "dst": "帶著這些生鏽的破爛還能走這麼遠，我真是佩服！這樣根本保護不了自己！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -538,7 +538,7 @@
   },
   "A Journey Home#053": {
    "src": "Look, there's a loot chest in the cave just there, so you need to head in and get yourself some proper equipment.",
-   "dst": "",
+   "dst": "聽著，就在那邊的洞穴裡有個寶箱，你得進去弄一套像樣的裝備。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -548,7 +548,7 @@
   },
   "A Journey Home#054": {
    "src": "...that so, huh? Well, I think you should take a second look up ahead.",
-   "dst": "",
+   "dst": "……是這樣嗎？那我想你該再往前面看一眼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -558,7 +558,7 @@
   },
   "A Journey Home#055": {
    "src": "See? Now no more guff about levels you either gear up properly, or you don't pass! I won't have you risking your life.",
-   "dst": "",
+   "dst": "看到沒？別再拿等級當藉口了——要嘛好好換裝，要嘛別想過去！我不會讓你拿命去賭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -568,7 +568,7 @@
   },
   "A Journey Home#056": {
    "src": "You can find good stuff in caves, like the one just next to me, so hop to it.",
-   "dst": "",
+   "dst": "洞穴裡常有好東西，就像我旁邊這個，快去吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -578,7 +578,7 @@
   },
   "A Journey Home#057": {
    "src": "Like I said, coming or going. No matter what, you should gear up by looting the cave here before heading onwards.",
-   "dst": "",
+   "dst": "我說了，進出都一樣。不管怎樣，繼續上路之前你都該先把這邊的洞穴搜一搜、換上裝備。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -588,7 +588,7 @@
   },
   "A Journey Home#058": {
    "src": "Good stuff. There's a loot chest in that cave there, so you should find everything you need. Get to it!",
-   "dst": "",
+   "dst": "好東西。那個洞穴裡有個寶箱，你要的應該都找得到。快去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -598,7 +598,7 @@
   },
   "A Journey Home#059": {
    "src": "Explore the cave to find some loot.",
-   "dst": "",
+   "dst": "探索洞穴，找到戰利品。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -608,7 +608,7 @@
   },
   "A Journey Home#060": {
    "src": "Enter the cave and open the loot chest.",
-   "dst": "",
+   "dst": "進入洞穴並打開寶箱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -618,7 +618,7 @@
   },
   "A Journey Home#061": {
    "src": "Continue back down the path to Fruma.",
-   "dst": "",
+   "dst": "沿著路走回 Fruma。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -628,7 +628,7 @@
   },
   "A Journey Home#062": {
    "src": "That looks like the stuff. You can take that armor to an Item Identifier right there, and then you can wear it once identified.",
-   "dst": "",
+   "dst": "看起來就是那種東西。你可以把那件護甲拿去那邊的 Item Identifier 鑑定，鑑定完就能穿了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -638,7 +638,7 @@
   },
   "A Journey Home#063": {
    "src": "Though... since you seem to be heading back to the border... I have to ask why. It's pretty unusual. Probably best you head back to {p}.",
-   "dst": "",
+   "dst": "不過……既然你看起來是要往邊境回去……我還是得問一句為什麼。這很不尋常。你最好還是回 {p} 去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -648,7 +648,7 @@
   },
   "A Journey Home#064": {
    "src": "If other recruits see you coming the other way, they might get confused, or discouraged. Wouldn't want to risk that, right?",
-   "dst": "",
+   "dst": "要是其他新兵看到你反方向走，他們可能會困惑，或是灰心。你也不想冒這個險吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -658,7 +658,7 @@
   },
   "A Journey Home#065": {
    "src": "Are you sure whatever you're doing is worth it? Maybe you should just head back to town.",
-   "dst": "",
+   "dst": "你確定你要做的事值得嗎？也許你該直接回鎮上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -668,7 +668,7 @@
   },
   "A Journey Home#066": {
    "src": "Avoid the Fruman recruits on the path.",
-   "dst": "",
+   "dst": "避開路上的 Fruman Recruit。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -678,7 +678,7 @@
   },
   "A Journey Home#067": {
    "src": "...been recruiting Fruman soldiers for the war effort. Apparently things are really bad over there. Makes me nervous...",
-   "dst": "",
+   "dst": "……一直在為戰事招募 Fruma 的士兵。聽說那邊情況真的很糟。搞得我很不安……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -688,7 +688,7 @@
   },
   "A Journey Home#068": {
    "src": "Walking corpses aren't anything I'm going to underestimate, but it can't be all doom and gloom, right?",
-   "dst": "",
+   "dst": "會走的屍體我可不敢小看，不過總不會全都是壞消息吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -698,7 +698,7 @@
   },
   "A Journey Home#069": {
    "src": "I suppose we'll see once we pass this gate. It marks the border... Deep breaths, deep breaths...",
-   "dst": "",
+   "dst": "我想過了這道門就知道了。那裡就是邊境……深呼吸，深呼吸……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -708,7 +708,7 @@
   },
   "A Journey Home#070": {
    "src": "...know anything about Wynn? I didn't get any debriefing.",
-   "dst": "",
+   "dst": "……你知道 Wynn 的事嗎？我完全沒收到任何簡報。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -718,7 +718,7 @@
   },
   "A Journey Home#071": {
    "src": "I remember rumors... Something about a great hero. Name started with...and R?",
-   "dst": "",
+   "dst": "我記得有些傳聞……好像有個了不起的英雄。名字是 R 開頭的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -728,7 +728,7 @@
   },
   "A Journey Home#072": {
    "src": "We'll make it a point to ask as soon as we can. Information's key to fighting wars.",
-   "dst": "",
+   "dst": "找到機會就一定要問清楚。打仗最重要的就是情報。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -738,7 +738,7 @@
   },
   "A Journey Home#073": {
    "src": "...rotten driver. I feel for the man, but he said he always hits that boulder. Sounds like his own fault to me.",
-   "dst": "",
+   "dst": "……那個爛車夫。我是同情他啦，但他自己說每次都會撞到那顆石頭。聽起來就是他自己的問題。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -748,7 +748,7 @@
   },
   "A Journey Home#074": {
    "src": "I'm thinking about meals more than wheels. I feel like I haven't eaten in days. Hope the walk's short...",
-   "dst": "",
+   "dst": "比起輪子我更想著吃的。我覺得我好幾天沒吃東西了。希望這段路不長……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -758,7 +758,7 @@
   },
   "A Journey Home#075": {
    "src": "Well, if he was a more competent driver you wouldn't have to walk so far on an empty stomach! Let's hurry so we can get you a feast, huh?",
-   "dst": "",
+   "dst": "要是他開車再像樣一點，你就不用餓著肚子走這麼遠了！我們快點走，好讓你飽餐一頓，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -768,7 +768,7 @@
   },
   "A Journey Home#076": {
    "src": "Wait, who's that? Why are they coming from the border??",
-   "dst": "",
+   "dst": "等等，那是誰？他們為什麼從邊境那邊過來？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -778,7 +778,7 @@
   },
   "A Journey Home#077": {
    "src": "Hide from the Caravan Driver.",
-   "dst": "",
+   "dst": "躲開 Caravan Driver。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -788,7 +788,7 @@
   },
   "A Journey Home#078": {
    "src": "...and that's the last of them for today.",
-   "dst": "",
+   "dst": "……今天就送到這裡為止了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -798,7 +798,7 @@
   },
   "A Journey Home#079": {
    "src": "Lots of pairs today. Eight more in the wings... But that's for tomorrow.",
-   "dst": "",
+   "dst": "今天成雙成對的還真多。還有八個在候著……不過那是明天的事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -808,7 +808,7 @@
   },
   "A Journey Home#080": {
    "src": "Same darn boulder... Same darn line, too. Wonder if they'll let me shake it up one day. This is always a pain...",
-   "dst": "",
+   "dst": "又是那顆該死的石頭……又是那句該死的台詞。不知道哪天他們會不會讓我換點花樣。每次都煩死人……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -818,7 +818,7 @@
   },
   "A Journey Home#081": {
    "src": "And that's that about that. And now, to be off...to the home I choose. And there's no troubles to follow me there.",
-   "dst": "",
+   "dst": "這件事就這樣了。那麼，該走了……回我自己選的家。到了那裡，就沒有麻煩追得上我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -828,7 +828,7 @@
   },
   "A Journey Home#082": {
    "src": "Explore past the Fruma Gate.",
-   "dst": "",
+   "dst": "探索 Fruma Gate 的另一頭。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -838,7 +838,7 @@
   },
   "A Journey Home#083": {
    "src": "Just couldn't take the hint, huh?",
-   "dst": "",
+   "dst": "就是聽不懂暗示，是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -848,7 +848,7 @@
   },
   "A Journey Home#084": {
    "src": "Bet you think you're slick. Didn't even notice me hang back to watch, huh? I wasn't born yesterday.",
-   "dst": "",
+   "dst": "你以為自己很高明吧。連我留下來盯著都沒發現，對吧？我可不是昨天才出生的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -858,7 +858,7 @@
   },
   "A Journey Home#085": {
    "src": "Listen, this isn't the first time something like this has happened Y'know. Someone gets curious, retraces their steps.",
-   "dst": "",
+   "dst": "聽著，這種事不是第一次發生了。你知道的，總有人好奇，回頭去查自己走過的路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -868,7 +868,7 @@
   },
   "A Journey Home#086": {
    "src": "If you couldn't tell, this whole thing's meant to be a one way trip. The bridge, the cave-in, everyone trying to discourage you.",
-   "dst": "",
+   "dst": "如果你還看不出來，這整件事本來就是單程的。那座橋、那場塌方、每一個勸你回頭的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -878,7 +878,7 @@
   },
   "A Journey Home#087": {
    "src": "It's not wise to be here After all, you weren't the one out of your group of three that got permission to stay. Yeah, I heard about the tournament results.",
-   "dst": "",
+   "dst": "待在這裡不明智——畢竟你們三個人裡，拿到留下許可的並不是你。沒錯，比賽的結果我聽說了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -888,7 +888,7 @@
   },
   "A Journey Home#088": {
    "src": "So...you got two choices, buddy. We can let this slide between us. We can. You can go marching back to {p} and my lips will be sealed.",
-   "dst": "",
+   "dst": "所以……你有兩個選擇，朋友。這件事我們可以當作沒發生過。真的可以。你乖乖走回 {p}，我就閉緊嘴巴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -898,7 +898,7 @@
   },
   "A Journey Home#089": {
    "src": "Or, you can live life dangerously and follow me on the train to {p}. Better make your choice quick, though it's leaving soon.",
-   "dst": "",
+   "dst": "或者，你也可以活得刺激一點，跟我上開往 {p} 的列車。不過最好快點決定，車快開了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -908,7 +908,7 @@
   },
   "A Journey Home#090": {
    "src": "If I see you in the passenger cabin, well...that'll be that, and you'll just have to wait and see what comes of it.",
-   "dst": "",
+   "dst": "要是我在客車廂裡看到你，那……那就是那樣了，接下來會發生什麼，你就自己等著看吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -918,7 +918,7 @@
   },
   "A Journey Home#091": {
    "src": "Join the Caravan Driver in the passenger car at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 的客車廂與 Caravan Driver 會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -928,7 +928,7 @@
   },
   "A Journey Home#092": {
    "src": "Last chance to back out. This your choice?",
-   "dst": "",
+   "dst": "最後一次退出的機會。這是你的選擇？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -938,7 +938,7 @@
   },
   "A Journey Home#093": {
    "src": "Well, you better get headed on the long walk back to {p} then.",
-   "dst": "",
+   "dst": "那你最好開始走那段回 {p} 的長路了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -948,7 +948,7 @@
   },
   "A Journey Home#094": {
    "src": "Arrive in Fruma.",
-   "dst": "",
+   "dst": "抵達 Fruma。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -958,7 +958,7 @@
   },
   "A Journey Home#095": {
    "src": "Well. We've arrived.",
-   "dst": "",
+   "dst": "好了。我們到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -968,7 +968,7 @@
   },
   "A Journey Home#096": {
    "src": "....",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -978,7 +978,7 @@
   },
   "A Journey Home#097": {
    "src": "You know what they say about curiosity, and how it killed the cat. You the type to believe satisfaction'll bring it back?",
-   "dst": "",
+   "dst": "你聽過那句話吧，好奇心殺死貓。你是那種相信滿足了好奇心貓就會活過來的人嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -988,7 +988,7 @@
   },
   "A Journey Home#098": {
    "src": "Well, 'kittycat,' you didn't find the cream just the hound dogs.",
-   "dst": "",
+   "dst": "那麼，「小貓咪」，你找到的不是鮮奶油——是獵犬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -998,7 +998,7 @@
   },
   "A Journey Home#099": {
    "src": "Intruder to Fruma, you are under arrest! Now march!",
-   "dst": "",
+   "dst": "闖入 Fruma 者，你被捕了！走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1008,7 +1008,7 @@
   },
   "A Journey Home#100": {
    "src": "You really thought the Driver was on your side, intruder? What a fool you are. We gave you every chance to quit this endeavor, but here you are. Let's go.",
-   "dst": "",
+   "dst": "你真以為那個 Driver 站在你這邊嗎，闖入者？你真是個蠢貨。我們給了你每一次收手的機會，你卻還是來了。走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1018,7 +1018,7 @@
   },
   "A Journey Home#101": {
    "src": "Commander! We must speak immediately!",
-   "dst": "",
+   "dst": "指揮官！我們必須立刻談談！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1028,7 +1028,7 @@
   },
   "A Journey Home#102": {
    "src": "I have urgent news to report from the gate.",
-   "dst": "",
+   "dst": "我有從門那邊來的緊急消息要報告。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1038,7 +1038,7 @@
   },
   "A Journey Home#103": {
    "src": "If it is truly so urgent, let's speak.",
-   "dst": "",
+   "dst": "如果真的這麼緊急，那就說吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1048,7 +1048,7 @@
   },
   "A Journey Home#104": {
    "src": "Soldiers! Keep the intruder still. I've every faith in you.",
-   "dst": "",
+   "dst": "士兵們！看住這個闖入者。我完全信得過你們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1058,7 +1058,7 @@
   },
   "A Journey Home#105": {
    "src": "Defeat the guards and escape.",
-   "dst": "",
+   "dst": "擊敗衛兵並逃脫。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -1068,7 +1068,7 @@
   },
   "A Journey Home#106": {
    "src": "Leave {p}.",
-   "dst": "",
+   "dst": "離開 {p}。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -1078,7 +1078,7 @@
   },
   "A Journey Home#107": {
    "src": "Mmn. Hey there, stranger.",
-   "dst": "",
+   "dst": "嗯。你好啊，陌生人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1088,7 +1088,7 @@
   },
   "A Journey Home#108": {
    "src": "Anythin' I can help you with?",
-   "dst": "",
+   "dst": "有什麼我幫得上忙的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1098,7 +1098,7 @@
   },
   "A Journey Home#109": {
    "src": "Hm. Suppose there's no harm. But watch yourself, alright?",
-   "dst": "",
+   "dst": "嗯。我想是沒什麼壞處。不過你自己小心點，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1108,7 +1108,7 @@
   },
   "A Journey Home#110": {
    "src": "This here's our home. I wouldn't take too kindly to you messin' anything up, understand?",
-   "dst": "",
+   "dst": "這裡是我們的家。你要是弄壞了什麼，我可不會給你好臉色，懂嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1118,7 +1118,7 @@
   },
   "A Journey Home#111": {
    "src": "...doin' alright, all things considered. Weather's nice, I suppose. Festival comin' up.",
-   "dst": "",
+   "dst": "……整體來說還過得去。天氣不錯吧，我想。慶典也快到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1128,7 +1128,7 @@
   },
   "A Journey Home#112": {
    "src": "But that ain't none of our business, really. If you didn't need anythin' else, I'll kindly ask you to take your leave.",
-   "dst": "",
+   "dst": "不過那真的不關我們的事。如果你沒別的事，我就請你離開了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1138,7 +1138,7 @@
   },
   "A Journey Home#113": {
    "src": "Hm. Good. Have a nice day, now.",
-   "dst": "",
+   "dst": "嗯。很好。祝你今天愉快。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1148,7 +1148,7 @@
   },
   "A Journey Home#114": {
    "src": "Hmm? And who may you be?",
-   "dst": "",
+   "dst": "嗯？請問你是哪位？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1158,7 +1158,7 @@
   },
   "A Journey Home#115": {
    "src": "Hoh, oh well. Might I help you with something?",
-   "dst": "",
+   "dst": "喔，好吧。有什麼我能幫忙的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1168,7 +1168,7 @@
   },
   "A Journey Home#116": {
    "src": "Ah, completing some assorted metalworking projects. There always seems to be something to replace or maintain around here...",
-   "dst": "",
+   "dst": "啊，就是在做一些零零星星的金工活。這裡總是有東西要換、要保養……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1178,7 +1178,7 @@
   },
   "A Journey Home#117": {
    "src": "Though, I certainly am no expert! But I can handle the tools well enough, and that is all that is needed for the task.",
-   "dst": "",
+   "dst": "不過我當然算不上什麼專家！但工具我還算拿得動，做這些事這樣就夠了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1188,7 +1188,7 @@
   },
   "A Journey Home#118": {
    "src": "Farewell, stranger! I hope that you will return home safely.",
-   "dst": "",
+   "dst": "再會了，陌生人！希望你能平安回家。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",

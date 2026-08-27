@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "A Journey Further",
   "count": 85,
-  "translated": 0,
+  "translated": 85,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Further#000": {
    "src": "Talk to Aledar in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 {p} 跟 Aledar 說話，座標 [{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -18,7 +18,7 @@
   },
   "A Journey Further#001": {
    "src": "Alright, let’s go. I’ll tell you more about our journey on the way.",
-   "dst": "",
+   "dst": "好，走吧。路上我再多跟你說說這趟任務的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -28,7 +28,7 @@
   },
   "A Journey Further#002": {
    "src": "Continue your journey with Aledar.",
-   "dst": "",
+   "dst": "跟著 Aledar 繼續前進。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -38,7 +38,7 @@
   },
   "A Journey Further#003": {
    "src": "We should try to follow the path as closely as we can. You lead, I'll follow.",
-   "dst": "",
+   "dst": "我們盡量沿著這條路走。你帶頭，我跟著。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -48,7 +48,7 @@
   },
   "A Journey Further#004": {
    "src": "Follow the Path.",
-   "dst": "",
+   "dst": "沿著路走。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -58,7 +58,7 @@
   },
   "A Journey Further#005": {
    "src": "Stop! Did you hear that?",
-   "dst": "",
+   "dst": "等等！你有聽到嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -68,7 +68,7 @@
   },
   "A Journey Further#006": {
    "src": "It’s an ambush! Stay sharp, {u}!",
-   "dst": "",
+   "dst": "是埋伏！打起精神，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -78,7 +78,7 @@
   },
   "A Journey Further#007": {
    "src": "Defeat the Parasitic Slimers.",
-   "dst": "",
+   "dst": "擊敗 Parasitic Slimer。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -88,7 +88,7 @@
   },
   "A Journey Further#008": {
    "src": "Good work. Seems that killing the king made the other creatures run off. We’re lucky about that-",
-   "dst": "",
+   "dst": "幹得好。看樣子首領一死，其他東西就跑光了。這算我們走運——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -97,8 +97,8 @@
    "source": "wiki"
   },
   "A Journey Further#009": {
-   "src": "Wait, , what's going on? Are you alright?",
-   "dst": "",
+   "src": "Wait, {u}, what's going on? Are you alright?",
+   "dst": "等等，{u}，怎麼回事？你還好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -108,7 +108,7 @@
   },
   "A Journey Further#010": {
    "src": "Oh, no no! I have a potion for this, where is it, where is it, aha! Here, drink!",
-   "dst": "",
+   "dst": "噢，不不不！我有藥水可以治這個，放哪去了、放哪去了，啊哈！來，喝下去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -118,7 +118,7 @@
   },
   "A Journey Further#011": {
    "src": "One of those things must have infected your wounds... Everything in this area looks completely hazardous and sickening.",
-   "dst": "",
+   "dst": "一定是那些東西感染了你的傷口……這一帶的東西看起來全都又毒又髒。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -128,7 +128,7 @@
   },
   "A Journey Further#012": {
    "src": "I expected the worst, so I tried to bring anything and everything that might help. Let's keep moving.",
-   "dst": "",
+   "dst": "我早就做了最壞的打算，所以能帶的東西我全帶上了。繼續走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -138,7 +138,7 @@
   },
   "A Journey Further#013": {
    "src": "Continue on the main path with Aledar.",
-   "dst": "",
+   "dst": "跟著 Aledar 沿主路前進。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -148,7 +148,7 @@
   },
   "A Journey Further#014": {
    "src": "LOOK OUT!",
-   "dst": "",
+   "dst": "小心！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -157,8 +157,8 @@
    "source": "wiki"
   },
   "A Journey Further#015": {
-   "src": ", a-agh...you're okay, right?",
-   "dst": "",
+   "src": "{u}, a-agh...you're okay, right?",
+   "dst": "{u}，啊——啊……你沒事吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -168,7 +168,7 @@
   },
   "A Journey Further#016": {
    "src": "I'm... I'm going to lead us for now. At least for a little...while... I can't have you g-getting-",
-   "dst": "",
+   "dst": "我……我先帶路吧。至少撐一……一段路……我不能讓你再受——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -178,7 +178,7 @@
   },
   "A Journey Further#017": {
    "src": "GAH!! AAAGH!",
-   "dst": "",
+   "dst": "咳啊！！啊啊啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -188,7 +188,7 @@
   },
   "A Journey Further#018": {
    "src": "...urgh... I...sorry. I just... I need a moment.",
-   "dst": "",
+   "dst": "……唔……我……抱歉。我只是……需要緩一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -197,8 +197,8 @@
    "source": "wiki"
   },
   "A Journey Further#019": {
-   "src": ", you just... you have to realize, I can't have you getting hurt.",
-   "dst": "",
+   "src": "{u}, you just... you have to realize, I can't have you getting hurt.",
+   "dst": "{u}，你要明白，我不能讓你受傷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -208,7 +208,7 @@
   },
   "A Journey Further#020": {
    "src": "I want to stress this... We NEED to get to the end of this path, together.",
-   "dst": "",
+   "dst": "我要把話講清楚……我們必須一起走到這條路的盡頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -218,7 +218,7 @@
   },
   "A Journey Further#021": {
    "src": "Hrk... Ugh, dizzy...",
-   "dst": "",
+   "dst": "唔……啊，好暈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -228,7 +228,7 @@
   },
   "A Journey Further#022": {
    "src": "Okay. I'm as good as I can get right now. Let's move.",
-   "dst": "",
+   "dst": "好了。我現在能好的就這樣了。走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -238,7 +238,7 @@
   },
   "A Journey Further#023": {
    "src": "Ah? What... What just... Why do I...",
-   "dst": "",
+   "dst": "啊？什麼……剛剛那是……我怎麼會……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -248,7 +248,7 @@
   },
   "A Journey Further#024": {
    "src": "I'll be fine, I just...why did I feel so empty all of the sudden... ?",
-   "dst": "",
+   "dst": "我沒事，只是……為什麼突然覺得整個人空了一塊……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -258,7 +258,7 @@
   },
   "A Journey Further#025": {
    "src": "Oh no, I think something is coming... {u}! Fight it off, I don't think I can defend myself right now!",
-   "dst": "",
+   "dst": "糟了，好像有東西過來了……{u}！你擋一下，我現在連自己都護不住！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -268,7 +268,7 @@
   },
   "A Journey Further#026": {
    "src": "Defend Aledar from the Radiated Spiders.",
-   "dst": "",
+   "dst": "保護 Aledar，擊退 Radiated Spider。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -278,7 +278,7 @@
   },
   "A Journey Further#027": {
    "src": "Huff... Not feeling totally better, but... At least I can still defend myself.",
-   "dst": "",
+   "dst": "呼……還沒完全恢復，不過……至少我還能自保。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -288,7 +288,7 @@
   },
   "A Journey Further#028": {
    "src": "My stomach is empty, I can't even vomit... Why so I still feel so dizzy? Maybe a potion will help...",
-   "dst": "",
+   "dst": "胃裡空空的，想吐都吐不出來……為什麼還是這麼暈？也許喝點藥水會好一些……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -298,7 +298,7 @@
   },
   "A Journey Further#029": {
    "src": "Hm. No, not that one...",
-   "dst": "",
+   "dst": "唔。不對，不是這瓶……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -308,7 +308,7 @@
   },
   "A Journey Further#030": {
    "src": "Urgh, pfft! My vomit tasted better than that coming up...",
-   "dst": "",
+   "dst": "嘔，呸！這味道比我吐出來的還難喝……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -318,7 +318,7 @@
   },
   "A Journey Further#031": {
    "src": "Hah...that's the ticket. Which potion was this anyways... ... hair loss treatment? Why did THAT work?",
-   "dst": "",
+   "dst": "哈……這瓶對了。話說回來這到底是什麼藥水……生髮水？這東西為什麼會有效？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -328,7 +328,7 @@
   },
   "A Journey Further#032": {
    "src": "Though, you saw what happened to that beast I attacked? Follow me.",
-   "dst": "",
+   "dst": "對了，你剛剛看到我打飛的那隻怪物怎麼了嗎？跟我來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -338,7 +338,7 @@
   },
   "A Journey Further#033": {
    "src": "This, from what I recall of the mission statements, is referred to as a \"Void Hole.\" It's a sort of portal.",
-   "dst": "",
+   "dst": "照我記得的任務簡報，這東西叫「Void Hole」，是一種傳送門。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -348,7 +348,7 @@
   },
   "A Journey Further#034": {
    "src": "They connect to each other in odd ways, but we saw the beast come out of that one when I knocked it in, so...",
-   "dst": "",
+   "dst": "它們彼此之間連接的方式很怪，不過我把那隻怪物打進去之後，牠是從那一頭出來的，所以——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -358,7 +358,7 @@
   },
   "A Journey Further#035": {
    "src": "Watch. I'll come out the other side.",
-   "dst": "",
+   "dst": "看好。我會從另一頭出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -368,7 +368,7 @@
   },
   "A Journey Further#036": {
    "src": "Alright, good! It does connect up consistently, at least. You try now.",
-   "dst": "",
+   "dst": "好，很好！至少連接的位置是固定的。換你試試。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -378,7 +378,7 @@
   },
   "A Journey Further#037": {
    "src": "Jump into the void hole.",
-   "dst": "",
+   "dst": "跳進 Void Hole。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -388,7 +388,7 @@
   },
   "A Journey Further#038": {
    "src": "Continue on the trail with Aledar.",
-   "dst": "",
+   "dst": "跟著 Aledar 沿小徑前進。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -398,7 +398,7 @@
   },
   "A Journey Further#039": {
    "src": "I bring this up because if we're seeing one, we'll be seeing more soon. You'll need to adjust yourself to the sight of them.",
-   "dst": "",
+   "dst": "我會提這件事，是因為既然看到了一個，接下來一定還會看到更多。你得先習慣它們的樣子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -408,7 +408,7 @@
   },
   "A Journey Further#040": {
    "src": "You lead again, please.",
-   "dst": "",
+   "dst": "麻煩你再帶一次路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -418,7 +418,7 @@
   },
   "A Journey Further#041": {
    "src": "We grossly underestimated the difficulties we would have here. And, by that, I mean myself, Elphie, and Lucio did...",
-   "dst": "",
+   "dst": "我們嚴重低估了這裡的難度。而且我說的「我們」，是指我、Elphie 和 Lucio……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -428,7 +428,7 @@
   },
   "A Journey Further#042": {
    "src": "We were each unprepared and cocky. If it weren't for you, I'd be dead now, for what it's worth.",
-   "dst": "",
+   "dst": "我們每一個都準備不足又自以為是。要不是有你，我現在早就死了，這話我說得出口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -438,7 +438,7 @@
   },
   "A Journey Further#043": {
    "src": "I wasn't certain at first about you coming along, but you've more than shown you were the right one for the job.",
-   "dst": "",
+   "dst": "一開始我對你同行這件事沒什麼把握，但你已經證明得夠多了——這趟就該是你來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -448,7 +448,7 @@
   },
   "A Journey Further#044": {
    "src": "...I had to figure this map was outdated. This wall of spikes isn't listed on it, and the path goes through here!",
-   "dst": "",
+   "dst": "……我早該想到這張地圖過時了。上面根本沒標這道尖刺牆，而路就是從這裡穿過去的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -458,7 +458,7 @@
   },
   "A Journey Further#045": {
    "src": "I'll have to assume they're new...and if they're new, I might be able to bash through them.",
-   "dst": "",
+   "dst": "只能當作是新長出來的……既然是新的，也許我能把它砸開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -467,8 +467,8 @@
    "source": "wiki"
   },
   "A Journey Further#046": {
-   "src": ", try throwing a spell at the same time! Let's crack through these things!",
-   "dst": "",
+   "src": "{u}, try throwing a spell at the same time! Let's crack through these things!",
+   "dst": "{u}，你同時丟一個法術過來！我們把這些東西轟破！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -478,7 +478,7 @@
   },
   "A Journey Further#047": {
    "src": "Ok, {~}... {~}... {~}...!",
-   "dst": "",
+   "dst": "好，{~1}……{~2}……{~3}……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -488,7 +488,7 @@
   },
   "A Journey Further#048": {
    "src": "...aagh... I... H-how are these so resilient...?",
-   "dst": "",
+   "dst": "……啊啊……我……這、這些東西怎麼會這麼硬……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -498,7 +498,7 @@
   },
   "A Journey Further#049": {
    "src": "I'm an idiot... I nearly killed myself trying that. I nearly ruined the mission...",
-   "dst": "",
+   "dst": "我真是個白痴……剛剛差點把自己弄死。差點毀了整個任務……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -508,7 +508,7 @@
   },
   "A Journey Further#050": {
    "src": "I'm sorry, but you'll have to go without me. I can't move another step for now.",
-   "dst": "",
+   "dst": "抱歉，接下來你得自己走了。我現在連一步都動不了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -518,7 +518,7 @@
   },
   "A Journey Further#051": {
    "src": "There's a lot of void holes around here, remember my warning... You can probably get past these spikes with one.",
-   "dst": "",
+   "dst": "這一帶有很多 Void Hole，記得我剛才說的……你大概可以靠它繞到尖刺後面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -528,7 +528,7 @@
   },
   "A Journey Further#052": {
    "src": "If I'd been thinking I would have suggested it earlier... Once you're past, we'll... uh. We'll do something.",
-   "dst": "",
+   "dst": "我要是早點想到就好了……等你過去之後，我們再……呃。再想辦法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -538,7 +538,7 @@
   },
   "A Journey Further#053": {
    "src": "Just...be careful where you go. The void holes could lead anywhere. They might lead you someplace very, very dangerous, too dangerous even for you. I pray they won't...",
-   "dst": "",
+   "dst": "只是……小心你要去的地方。Void Hole 可能通往任何地方，也可能把你送到非常、非常危險的地方，危險到連你都應付不來。我只能祈禱不會……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -548,7 +548,7 @@
   },
   "A Journey Further#054": {
    "src": "There's a void hole right there to try out first. Get going, now. You have to do this.",
-   "dst": "",
+   "dst": "那邊就有一個 Void Hole，先拿它試試。快去吧。這件事非你不可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -558,7 +558,7 @@
   },
   "A Journey Further#055": {
    "src": "Use Void Holes to try and get behind the spike barrier",
-   "dst": "",
+   "dst": "利用 Void Hole 設法繞到尖刺屏障後方",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -568,7 +568,7 @@
   },
   "A Journey Further#056": {
    "src": "Find a way to help Aledar get to the other side of the spike barrier.",
-   "dst": "",
+   "dst": "想辦法幫 Aledar 到尖刺屏障的另一邊。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -578,7 +578,7 @@
   },
   "A Journey Further#057": {
    "src": "...wait, {u}? You got to the other side then...? Good...",
-   "dst": "",
+   "dst": "……等等，{u}？你已經到另一邊了……？太好了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -588,7 +588,7 @@
   },
   "A Journey Further#058": {
    "src": "I don't know what you did, but whatever it was, it's made cracks in the spikes that I can see from this side.",
-   "dst": "",
+   "dst": "我不知道你做了什麼，但不管是什麼，尖刺上出現的裂痕從這一側都看得見。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -598,7 +598,7 @@
   },
   "A Journey Further#059": {
    "src": "I've got some of my energy back...let's try spellcasting again. If we do it at the same time, we might make some headway.",
-   "dst": "",
+   "dst": "我恢復了一點力氣……再試一次法術吧。如果我們同時施法，也許能打開一個缺口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -608,7 +608,7 @@
   },
   "A Journey Further#060": {
    "src": "I won't crack my skull open on the spikes again though. Promise.",
-   "dst": "",
+   "dst": "這次我不會再拿頭去撞尖刺了。我保證。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -618,7 +618,7 @@
   },
   "A Journey Further#061": {
    "src": "You lead. I'll cast my spell as soon as I hear yours.",
-   "dst": "",
+   "dst": "你先動手。我一聽到你的法術就跟上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -628,7 +628,7 @@
   },
   "A Journey Further#062": {
    "src": "Thank god it worked... That's our destination there, the Eldritch Outlook.",
-   "dst": "",
+   "dst": "謝天謝地，成功了……那裡就是我們的目的地，Eldritch Outlook。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -638,7 +638,7 @@
   },
   "A Journey Further#063": {
    "src": "Now comes the hardest part... Come along. I'll need you there for it.",
-   "dst": "",
+   "dst": "最難的部分來了……跟我來。這一段我需要你在場。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -648,7 +648,7 @@
   },
   "A Journey Further#064": {
    "src": "That blade there...it's made for sacrifice. See how that gate is shut?",
-   "dst": "",
+   "dst": "那邊那把劍……是用來獻祭的。看到那道門是關著的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -658,7 +658,7 @@
   },
   "A Journey Further#065": {
    "src": "In order to open the doors to the Outlook, we need to sacrifice a powerful soul.",
-   "dst": "",
+   "dst": "要打開通往 Outlook 的門，我們得獻祭一個強大的靈魂。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -668,7 +668,7 @@
   },
   "A Journey Further#066": {
    "src": "We... we should have told you from the start. You and Lucio. Elphie and I, we knew. We knew this would be here.",
-   "dst": "",
+   "dst": "我們……我們一開始就該告訴你的。你和 Lucio 都不知道。Elphie 和我知道。我們早就知道這裡有這個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -678,7 +678,7 @@
   },
   "A Journey Further#067": {
    "src": "We didn't have... we didn't have a sacrifice in mind. We decided that it would be best decided once we reached that point. And I think we both knew it would have to be one of us.",
-   "dst": "",
+   "dst": "我們沒有……我們心裡沒有預定的人選。我們說好等真的走到這一步再決定。而我想我們兩個都清楚，最後一定是我們其中一個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -688,7 +688,7 @@
   },
   "A Journey Further#068": {
    "src": "...I think she would have insisted it be her. Even though both of us had something we would be le...",
-   "dst": "",
+   "dst": "……我想她會堅持由她來。即使我們兩個都還有放不下的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -698,7 +698,7 @@
   },
   "A Journey Further#069": {
    "src": "It doesn't matter now. It's just us left. And I've been mulling it over since we got to the town... you'll sacrifice me. I won't take no for an answer.",
-   "dst": "",
+   "dst": "現在說這些也沒意義了。只剩我們了。從進到那座鎮上開始我就一直在想這件事……由你來獻祭我。這件事我不接受拒絕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -708,7 +708,7 @@
   },
   "A Journey Further#070": {
    "src": "I mean... look at the state I'm in, {u}! I'm on death's door already, and you've proven yourself far stronger than I am even at my best.",
-   "dst": "",
+   "dst": "你看看我現在這副樣子，{u}！我已經站在鬼門關前了，而你早就證明自己遠比全盛時期的我還強。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -718,7 +718,7 @@
   },
   "A Journey Further#071": {
    "src": "Here. You can take everything I had on me. My emeralds, and the key to the dungeon. I certainly won't be able to use them anymore.",
-   "dst": "",
+   "dst": "拿去。我身上的東西你全帶走。我的綠寶石，還有地城的鑰匙。反正我也用不到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -728,7 +728,7 @@
   },
   "A Journey Further#072": {
    "src": "Upon the top of the tower is... Well, something. We don't know for certain what it is, but it will prevent you from passing through.",
-   "dst": "",
+   "dst": "塔頂上有……嗯，某個東西。我們不確定那究竟是什麼，但它會擋住你的去路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -738,7 +738,7 @@
   },
   "A Journey Further#073": {
    "src": "You'll have to kill it to break the barrier. But... find other soldiers who can help you. It will be impossible to defeat alone.",
-   "dst": "",
+   "dst": "你得殺了它才能破除屏障。不過……去找其他能幫你的士兵。一個人是打不贏的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -748,7 +748,7 @@
   },
   "A Journey Further#074": {
    "src": "...no more putting it off, then. I'm bleeding out.",
-   "dst": "",
+   "dst": "……那就別再拖了。我血快流乾了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -758,7 +758,7 @@
   },
   "A Journey Further#075": {
    "src": "Grab the blade, {u}.",
-   "dst": "",
+   "dst": "拿起那把劍，{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -768,7 +768,7 @@
   },
   "A Journey Further#076": {
    "src": "Right click to grab the blade in the altar.",
-   "dst": "",
+   "dst": "右鍵拿起祭壇上的劍。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -778,7 +778,7 @@
   },
   "A Journey Further#077": {
    "src": "Now...strike me down. My soul will unlock the gate...",
-   "dst": "",
+   "dst": "現在……砍下來吧。我的靈魂會打開那道門……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -788,7 +788,7 @@
   },
   "A Journey Further#078": {
    "src": "Sacrifice Aledar.",
-   "dst": "",
+   "dst": "獻祭 Aledar。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Further",
@@ -798,7 +798,7 @@
   },
   "A Journey Further#079": {
    "src": "Agh... Don't worry...a-about me...",
-   "dst": "",
+   "dst": "啊……別……別管我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -808,7 +808,7 @@
   },
   "A Journey Further#080": {
    "src": "You...can do this. I know y-you can.",
-   "dst": "",
+   "dst": "你……做得到的。我知道你、你可以。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -818,7 +818,7 @@
   },
   "A Journey Further#081": {
    "src": "Gah... D-Destroy it...",
-   "dst": "",
+   "dst": "咳……去、去毀了它……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -828,7 +828,7 @@
   },
   "A Journey Further#082": {
    "src": "The monster w-watching us...",
-   "dst": "",
+   "dst": "那隻一直在看著我們的怪物……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -838,7 +838,7 @@
   },
   "A Journey Further#083": {
    "src": "AAAAGH!!",
-   "dst": "",
+   "dst": "啊啊啊啊！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
@@ -848,7 +848,7 @@
   },
   "A Journey Further#084": {
    "src": "{~}px",
-   "dst": "",
+   "dst": "{~}px",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Further",
