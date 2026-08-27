@@ -40,9 +40,6 @@ public final class ShotScreen extends Screen {
     private static final DateTimeFormatter STAMP =
             DateTimeFormatter.ofPattern("yyyy-MM-dd_HH.mm.ss", Locale.ROOT);
 
-    /** 預覽最多佔畫面的多少。太大反而看不出細節在哪一行。 */
-    private static final int MAX_PREVIEW = 260;
-
     private final NativeImage shot;
 
     private final String name;
@@ -100,36 +97,34 @@ public final class ShotScreen extends Screen {
     }
 
     /**
-     * 畫成<b>原本在遊戲裡的大小</b>。
+     * 用<b>整數倍</b>縮到放得下為止。
      *
-     * <h2>為什麼先前會糊</h2>
-     * 截圖是照著<b>畫面像素</b>拍的（GUI 縮放 3 倍就是 3 倍大），先前又把它
-     * 等比縮到 260 以內才畫。縮放比例不是整數，每個原始像素被攤到 0.7 個
-     * 螢幕像素上，邊緣就全部糊掉了。
+     * <h2>兩次都踩到的地方</h2>
+     * 截圖是照畫面像素拍的（GUI 縮放 3 倍就是 3 倍大）。第一版等比縮到 260 以內，
+     * 比例不是整數，每個原始像素被攤到 0.7 個螢幕像素上，邊緣全糊。
      *
-     * <p>除以 GUI 縮放倍率就回到 1:1——一個原始像素正好落在一個螢幕像素上，
-     * 跟遊戲裡看到的一模一樣銳利。真的放不下才等比縮，而且只縮整數倍。
+     * <p>第二版改成「先除以 GUI 倍率，再除以一個整數」——結果實際除數變成
+     * {@code 倍率 × 整數}，跳過了中間所有可用的倍數（3 之後直接跳到 6），
+     * 圖就縮得比需要的小很多。
+     *
+     * <p>現在直接在<b>原始圖</b>上找「放得下的最小整數除數」。除數是整數，
+     * 一個螢幕像素正好對應 k 個原始像素，不會糊；又因為是能放下的最小值，
+     * 圖也不會白白縮小。
      */
-    private int scaled(int side) {
-        int gui = guiScale();
-        int fit = side / gui;
-        int longest = Math.max(shot.getWidth(), shot.getHeight()) / gui;
-        int room = Math.min(MAX_PREVIEW, this.height - 60);
-        if (longest <= room) {
-            return fit;
+    private int divisor() {
+        int roomW = Math.max(60, this.width - 210);
+        int roomH = Math.max(60, this.height - 20);
+        int k = 1;
+        while (shot.getWidth() / k > roomW || shot.getHeight() / k > roomH) {
+            k++;
         }
-        // 只縮整數倍，半個像素的縮放就是先前糊掉的原因
-        int step = (longest + room - 1) / room;
-        return fit / step;
+        return k;
     }
 
-    private int guiScale() {
-        Minecraft mc = Minecraft.getInstance();
-        if (mc == null || mc.getWindow() == null) {
-            return 1;
-        }
-        return Math.max(1, (int) mc.getWindow().getGuiScale());
+    private int scaled(int side) {
+        return Math.max(1, side / divisor());
     }
+
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {

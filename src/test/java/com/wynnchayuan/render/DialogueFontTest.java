@@ -68,6 +68,14 @@ public final class DialogueFontTest {
                     json.contains("\"type\":\"reference\""));
             check(name + " 有中日韓的 ttf",
                     json.contains("cubic_11.ttf"));
+            // Cubic 11 的 unitsPerEm 是 1200，capHeight 800、ascender 1000、
+            // descender -400——全是 100 的倍數，也就是「一個設計像素 = 100 單位、
+            // 一個 em = 12 像素」。size 不是 12 的倍數的話，每個設計像素分不到
+            // 整數個螢幕像素，FreeType 只能用灰階抗鋸齒補，字就糊了。
+            check(name + " size 是 12 的倍數（Cubic 11 的設計格）",
+                    json.matches(".*\"size\":(12|24|36),.*"));
+            check(name + " oversample 是 1（點陣字再降採樣只會更糊）",
+                    json.contains("\"oversample\":1"));
             // reference 必須排在 ttf 前面：MC 是前面的 provider 優先，
             // 顛倒過來 ASCII 就會被 Cubic 11 接手，外觀跟原文對不上
             check(name + " reference 排在 ttf 前面",
