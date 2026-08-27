@@ -88,18 +88,30 @@ public final class PanelShot {
     }
 
     /**
-     * 每幀在所有繪製之後呼叫。
+     * 每個 tick 呼叫一次。真正的拍照在這裡發生。
      *
-     * <p>手動請求與自動拍都收在這裡——兩邊都必須等畫完才拍，
-     * 分成兩條路只會有一條記得這件事。
+     * <h2>為什麼是 tick，不是「繪製之後」</h2>
+     * Minecraft 1.21.5 之後 GUI 是<b>延後繪製</b>的：{@code GuiGraphics} 只把
+     * 指令排進 {@code GuiRenderState}，要到一幀的最後 {@code GuiRenderer}
+     * 才一次畫掉。所以在任何「繪製中」的掛鉤讀 framebuffer，讀到的都是
+     * <b>只有世界、沒有 GUI</b> 的半成品——先前拍出來全是地板與木箱，
+     * 就是這個原因，跟座標一點關係也沒有。
+     *
+     * <p>tick 跑在兩幀<b>之間</b>，那時 framebuffer 裡是上一幀完整合成後的
+     * 結果。vanilla 的 F2 截圖也是在這個時機抓的。
      */
-    public static void afterRender() {
-        if (!pending || !ready()) {
-            pending = false;
+    public static void tick() {
+        if (!pending) {
             return;
         }
         pending = false;
-        capture();
+        if (ready()) {
+            capture();
+        } else {
+            tell(Component.literal(
+                    "現在沒有翻譯面板可以拍——把滑鼠移到有譯文的物品上再按一次。")
+                    .withStyle(ChatFormatting.GRAY));
+        }
     }
 
     /**

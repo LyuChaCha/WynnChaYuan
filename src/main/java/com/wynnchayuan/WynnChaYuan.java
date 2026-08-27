@@ -258,6 +258,9 @@ public final class WynnChaYuan implements ClientModInitializer {
             while (screenshotKey.consumeClick()) {
                 com.wynnchayuan.render.PanelShot.request();
             }
+            // 真正的拍照在這裡——tick 跑在兩幀之間，那時畫面裡才是
+            // 上一幀完整合成後的結果。見 PanelShot#tick。
+            com.wynnchayuan.render.PanelShot.tick();
         });
     }
 
