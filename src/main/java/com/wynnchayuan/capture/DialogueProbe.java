@@ -39,7 +39,7 @@ import java.util.Optional;
 public final class DialogueProbe {
 
     /** 錄幾份就停。同一句話會被送幾十次（NPC 逐字打字），不擋會寫爆。 */
-    private static final int LIMIT = 3;
+    private static final int LIMIT = 4;
 
     private static int written = 0;
 
@@ -53,11 +53,26 @@ public final class DialogueProbe {
         dir = configDir;
     }
 
-    /** 這一條 action bar 有沒有對話字型；沒有的話不是對話，不記。 */
-    private static boolean isDialogue(Component message) {
+    /**
+     * 這一條 action bar 裡有沒有<b>已經打出字的台詞</b>。
+     *
+     * <h2>為什麼不能只認「有對話字型」</h2>
+     * 第一版是這樣寫的，結果三份錄下來的全是同一個東西：對話框<b>淡入</b>的
+     * 第 0、1、2 幀。那時候框已經在畫了（{@code effect/fade} 與
+     * {@code style/default/box} 的字碼一幀一幀往上加），但一句台詞都還沒打出來，
+     * {@code body_0} 裡只有兩個位移字元。
+     *
+     * <p>三份資料看起來很豐富，卻剛好漏掉唯一要看的東西。所以改成認
+     * {@code hud/dialogue/text/…/body_N} 裡有沒有<b>看得懂的字</b>——
+     * 有字才是我們要研究的那一幀。
+     *
+     * <p>{@code text/control}（「 to continue」）不算：那行提示從第一幀就在，
+     * 認它等於沒有篩選。
+     */
+    private static boolean hasBodyText(Component message) {
         boolean[] found = {false};
         message.visit((style, text) -> {
-            if (fontOf(style).contains("hud/dialogue")) {
+            if (fontOf(style).contains("/body_") && readable(text)) {
                 found[0] = true;
             }
             return Optional.empty();
@@ -65,18 +80,26 @@ public final class DialogueProbe {
         return found[0];
     }
 
+    /** 有沒有非排版、非圖示的字。 */
+    private static boolean readable(String text) {
+        return text.codePoints().anyMatch(cp ->
+                cp >= 0x20 && cp < 0x7F && !Character.isWhitespace(cp));
+    }
+
     public static void record(Component message) {
         if (dir == null || written >= LIMIT || message == null
-                || !WynnChaYuan.config().collect() || !isDialogue(message)) {
+                || !WynnChaYuan.config().collect() || !hasBodyText(message)) {
             return;
         }
-        // 同一句話的每一個字都會送一次。只錄「內容變得夠多」的那幾份，
-        // 否則三份會全是同一句話的前三個字。
+        // 同一句話的每一個字都會送一次。比的是<b>台詞本身</b>的長度，
+        // 不是整條訊息——整條訊息裡九成是固定不變的框線與位移字元，
+        // 拿它去比，一句話從頭打到尾的長度變化根本不到門檻。
         String plain = message.getString();
-        if (plain.length() < lastPlain.length() + 20 && plain.startsWith(lastPlain)) {
+        String body = bodyOf(message);
+        if (body.length() < lastPlain.length() + 12) {
             return;
         }
-        lastPlain = plain;
+        lastPlain = body;
         written++;
 
         List<String> fonts = new ArrayList<>();
@@ -110,6 +133,18 @@ public final class DialogueProbe {
         } catch (Exception e) {
             // 勘查寫不出來就算了，不要影響遊戲
         }
+    }
+
+    /** 只把台詞那幾段接起來，用來判斷「這句話打到哪了」。 */
+    private static String bodyOf(Component message) {
+        StringBuilder out = new StringBuilder();
+        message.visit((style, text) -> {
+            if (fontOf(style).contains("/body_")) {
+                out.append(text);
+            }
+            return Optional.empty();
+        }, Style.EMPTY);
+        return out.toString();
     }
 
     private static String fontOf(Style style) {
