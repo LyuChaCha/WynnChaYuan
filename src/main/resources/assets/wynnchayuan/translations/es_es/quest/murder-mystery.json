@@ -1,0 +1,580 @@
+{
+ "_meta": {
+  "quest": "Murder Mystery",
+  "count": 57,
+  "translated": 0,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Murder Mystery#000": {
+   "src": "Talk to Detective Lorias at [-{~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#001": {
+   "src": "Stand back, human! This is a crime scene, under my authority. I cannot let you inside.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#002": {
+   "src": "Although we are in need of some... assistance... and you are fairly experienced, are you not?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#003": {
+   "src": "Well, straight to the point... do you think I might be able to hire you as a private investigator?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#004": {
+   "src": "To put it bluntly, the owner of this house, Eminar, was murdered a few days ago, and what few leads we had have all gone cold.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#005": {
+   "src": "This is acting outside protocol, of course... but if you manage to catch the killer, I'm sure I could pull some strings and pay you for your work!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#006": {
+   "src": "I'll make sure no one stops you inside the crime scene. Head inside the house and see if you can find anything helpful.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#007": {
+   "src": "My soldiers and I will keep watch outside the house, and make sure you're not disturbed. Be careful in there!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 1",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#008": {
+   "src": "Investigate the crime scene at [-{~}, {~}, -{~}] for clues.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#009": {
+   "src": "Ah, a human! A refreshing sight these days. You've come to see me, I presume? What brings you here?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#010": {
+   "src": "An investigation!? Eminar? That's... that's absurd. I've done nothing wrong.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#011": {
+   "src": "Still, the poor man. Eminar and I were good friends, you know. If it could help find his killer, I may have some information for you... strictly off-record, of course...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#012": {
+   "src": "Well. You see, there's an underground gambling den hidden in the city's sewers. Only the elite can get in, and Eminar happened to be a frequent visitor.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#013": {
+   "src": "Once, he even brought me along with him.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#014": {
+   "src": "Eminar, though, he often tried to cheat the other gamblers. I suppose it was only a matter of time before they had enough; most do not take cheating lightly.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#015": {
+   "src": "Back to the point, many of them, including poor Eminar, had a symbol built into the sides of their homes, shaped like a snake. A proof of membership, you could say.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#016": {
+   "src": "If you can find it, it will show you the way to get into the sewers. I'm sorry, I would tell you more if I knew more. But good luck with your investigation, sir.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 2",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#017": {
+   "src": "Return to the victim's house at [-{~}, {~}, -{~}] to find a snake symbol.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#018": {
+   "src": "Find the gamblers in the {p} sewers.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#019": {
+   "src": "How did ya find us down 'ere? I don't remember you... you're with the police, aren't ya? Here after Eminar, I suppose?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#020": {
+   "src": "Yeah, we've 'eard about what happened to him. Murders don't happen every day up there, ya know. And as it happened, I saw Eminar down here, not too long ago...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#021": {
+   "src": "Well... as long as I get a guarantee I won't be shut down, I'll help ya. This is a very profitable place, as I'm sure ya might've guessed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#022": {
+   "src": "He was brought down here by his friend one day. Rohem, it was. A fine customer, you understand. Never failed to pay his dues...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#023": {
+   "src": "But the day he brought Eminar 'round, though, it got ugly fast. Kept borrowing Rohem's emeralds and losing, till neither of em had anythin' left.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#024": {
+   "src": "It was a good day for me, for obvious reasons, don'cha see! But Rohem was furious. Dead drunk, too, but what else is new!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#025": {
+   "src": "Neither of 'em has been back since, though in Eminar's case, I can see why! And I hope that's enough for ya, 'cause that's all I got.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#026": {
+   "src": "Now get out of 'ere; there's a back exit in the wall over there. Though, if ya ever fancy a game of 'jack, come back'n we'll be happy to serve ya!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 4",
+   "speaker": "Valimare",
+   "source": "wiki"
+  },
+  "Murder Mystery#027": {
+   "src": "Confront Rohem about the murder at house #{~} in {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#028": {
+   "src": "Ah... you again! You're back. I see that. I must admit, I did not expect you to return... so soon...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#029": {
+   "src": "You really did find your way down there? Oh, that's... excellent... I hope the investigation is going well. Now if you'll just leave me be-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#030": {
+   "src": "Valimare? Bah! Why would you trust anything he says? He's a criminal! A scam artist! I mean, I did direct you to him, but...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#031": {
+   "src": "He- He's the one you should be arresting. Eminar was a danger to society, got what he deserved, the fool-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#032": {
+   "src": "Wait! No! Don't turn me in! Can't you let me finish my drink in peace? Get out, get out, you can't prove anything!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#033": {
+   "src": "Besides, have you ever heard of a little thing called evidence? You don't have any proof!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#034": {
+   "src": "Now, officer, if you don't have a proper warrant, I expect you to vacate my property immediately!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 5",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#035": {
+   "src": "Find the murder weapon around Rohem's house at house #{~} in {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Murder Mystery#036": {
+   "src": "Hi! I'm digging a hole in my garden, just like Mr. Rohem did last night!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Child",
+   "source": "wiki"
+  },
+  "Murder Mystery#037": {
+   "src": "For the last time officer, would you either show me a warrant or get out of my- what are you doing in my garden?!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#038": {
+   "src": "A... a hatchet? I don't know what you mean, I- I've never seen that before in my life!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#039": {
+   "src": "Gah! Curse you, human! I might be headed to jail, but I can send you straight to hell!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#040": {
+   "src": "That's enough, Rohem! Stand down, or the guards will attack.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#041": {
+   "src": "Augh! Fine, you've got me. But mark my words, this won't be the last you hear of me, human!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Rohem",
+   "source": "wiki"
+  },
+  "Murder Mystery#042": {
+   "src": "Whatever you pale-faced walking cowlick. You're headed to {p} Penitentiary with a charge of first-class murder. Guards, take him away.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#043": {
+   "src": "As for you, human, please accept my immense gratitude. We probably wouldn't have caught that rat without you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#044": {
+   "src": "On behalf of the city of {p}, please accept these emeralds as compensation for your services. You were a fine detective today!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Detective Lorias",
+   "source": "wiki"
+  },
+  "Murder Mystery#045": {
+   "src": "Heya there! Fancy a quick game of blackjack?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#046": {
+   "src": "Alrighty, let's play some blackjack!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#047": {
+   "src": "Good stuff! Put ya money in the pot and I'll start the deal.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#048": {
+   "src": "Not feelin' up to playin' right now? No worries, just drop by later!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#049": {
+   "src": "Not right now? No worries - come back another time!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#050": {
+   "src": "Ah, new to the game huh? No worries, lemme tell ya all about it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#051": {
+   "src": "The rules are simple! I deal two cards face up to ya both face down, and two cards to me, one face up and one face down.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#052": {
+   "src": "Ya can hit and get another card as many times as ya want, or stand and end ya turn. The aim is to get the value of your hand as close to {~} as possible!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#053": {
+   "src": "Number cards are worth what they say, all picture cards are worth {~}, and an ace can be worth either {~} or {~}, whichever works best for ya hand.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#054": {
+   "src": "Go over {~} and that's it - you're bust! Stand with your current hand and it's my turn to hit or stand to try and beat your hand.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#055": {
+   "src": "And if ya get a blackjack - that's an ace and a picture card or a ten - ya automatically get double ya money back!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  },
+  "Murder Mystery#056": {
+   "src": "Sound fair enough? Alrighty, just right-click me again to play!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Murder Mystery",
+   "stage": "Stage 6",
+   "speaker": "Blackjack Dealer",
+   "source": "wiki"
+  }
+ }
+}

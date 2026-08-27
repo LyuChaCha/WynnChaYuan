@@ -1,0 +1,900 @@
+{
+ "_meta": {
+  "quest": "Burning Bonds",
+  "count": 89,
+  "translated": 0,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Burning Bonds#000": {
+   "src": "Speak to Abramod at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Burning Bonds#001": {
+   "src": "Halt, stranger! If you value your life, do not take another step forward.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#002": {
+   "src": "I have nothing left to give you! Leave, you and your kindred!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#003": {
+   "src": "You're completely unscathed? You must be powerful indeed, no changeling could defeat you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#004": {
+   "src": "Still though, I have nothing for you. I even lack a medallion to prove my own identity...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#005": {
+   "src": "Ah, you have lost yours too? Kindred spirits we are, dead to our worlds!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#006": {
+   "src": "Lost to my clan, dead to my family, assumed to be a brute beast of the worst sort... I am sure you can understand, being in the same state as myself?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#007": {
+   "src": "It is some small comfort to find one in the same situation as myself. I will not pry into you, I know the value of secrets as well as anyone. But please, will you allow me a measure of catharsis and lend me an empathetic ear so I may tell my tale?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#008": {
+   "src": "You have returned! Now, are you willing to take a moment to listen to my tale?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#009": {
+   "src": "The forest here is safe, I ought to return home.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#010": {
+   "src": "...Brother?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#011": {
+   "src": "Abramod... I want to come home now.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Lishvil",
+   "source": "wiki"
+  },
+  "Burning Bonds#012": {
+   "src": "If you give me your medallion, I can be with you again.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Lishvil",
+   "source": "wiki"
+  },
+  "Burning Bonds#013": {
+   "src": "If you can't show me your medallion, how could I know you are really you?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#014": {
+   "src": "There are creatures that take the shape of any man, and they want to kill us! It would be ignorant to not take it with you!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#015": {
+   "src": "Give me your medallion. I can become one of you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Lishvil",
+   "source": "wiki"
+  },
+  "Burning Bonds#016": {
+   "src": "You are not Lishvil. And judging by that, he disposed of his before you could get to it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#017": {
+   "src": "If it means you won't deceive my clan, I'll burn my medallion, like Lishvil did! You can kill me, but you will never be me!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#018": {
+   "src": "Watch this, vile deceiver!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#019": {
+   "src": "Hyup! There, if you want it so bad, go get it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#020": {
+   "src": "NO!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Lishvil",
+   "source": "wiki"
+  },
+  "Burning Bonds#021": {
+   "src": "That is my story. It is unfortunate it cannot have a happier ending, unless...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#022": {
+   "src": "I do know how to make a new medallion, but it is a difficult task. Collecting the materials required for it would be more dangerous for my frail body than fending for myself out here...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#023": {
+   "src": "With you however, we might be able to gather them. If you prove yourself trustworthy, I could even help you make one as well. How does that sound?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#024": {
+   "src": "Thank you, truly!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#025": {
+   "src": "First, we will need a wooden base for the medallion.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#026": {
+   "src": "There's an old, lightning struck tree to the south that we traditionally go to.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#027": {
+   "src": "I will write the directions to it for you and meet you by it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 1",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#028": {
+   "src": "Meet Abramod near the lightning struck tree at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Burning Bonds#029": {
+   "src": "This tree was struck by lightning many generations ago. And yet it has remained standing, even after death.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#030": {
+   "src": "The bark from it has proven sturdy enough that it works well as a medallion's base.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#031": {
+   "src": "However it might be a bit, ah, difficult to reach. It is in part why I need your help.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#032": {
+   "src": "I will... assist you in climbing the tree. On your way down, you will need to hit {~} of the healthier branches so we have enough bark.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#033": {
+   "src": "I'll need to stay down here so I can collect the bark as it hits the ground.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#034": {
+   "src": "Are you ready?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#035": {
+   "src": "Alright, here you go!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#036": {
+   "src": "If you need time to get your bearings, I understand. Come back when you're ready!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#037": {
+   "src": "Looks like you didn't quite hit enough branches...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#038": {
+   "src": "Try again?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#039": {
+   "src": "Remember, you need to hit {~} healthy branches.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#040": {
+   "src": "Here you go again!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#041": {
+   "src": "I understand. Talk to me again when you've caught your breath.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#042": {
+   "src": "Good! This should be enough for the bases.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#043": {
+   "src": "Next we'll need to collect some resin to lacquer the medallion with.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#044": {
+   "src": "High in a mountain meadow to the east, a fern grows that excretes a resin that works well for the task.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#045": {
+   "src": "I'll write you some instructions on how to get there and see you once you arrive.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 2",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#046": {
+   "src": "Meet Abramod in the mountain grove at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Burning Bonds#047": {
+   "src": "This meadow is home to a rare fern that we collect resin from to make our medallions.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#048": {
+   "src": "Do not go searching for it just yet though! It is also home to a poisonous fern that appears very similar to the one we need.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#049": {
+   "src": "My eyes aren't so good anymore, so I'm going to need your help to tell them apart!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#050": {
+   "src": "I'm going to toss the plants for you. You can pick them up by right-clicking them - even while they're still in the air!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#051": {
+   "src": "Place the greener, healthier looking plants to the side where I am now. And you'll need to burn the poisonous, more sickly looking plants on the other side.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#052": {
+   "src": "We'll need {~} of the good ferns to extract enough resin. But make sure the poisonous ferns don't build up too much or it could be dangerous for you!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#053": {
+   "src": "You'll only be able to pick up one at a time, so good luck!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#054": {
+   "src": "Ready?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#055": {
+   "src": "Here you go!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#056": {
+   "src": "I understand. I'll be here whenever you are.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#057": {
+   "src": "Looks like you didn't get enough!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#058": {
+   "src": "Want to try again?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#059": {
+   "src": "Here we go again!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#060": {
+   "src": "Alright, I understand.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#061": {
+   "src": "That should be enough resin!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#062": {
+   "src": "There's only one final thing we need: knives to cut the bark with.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#063": {
+   "src": "Put that away, we don't need just any knife!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#064": {
+   "src": "Tradition dictates we have to descend to a cave beneath this mountain where much of the fog of the {p} settles. Deep inside are stones we've used for generations in carving our medallions.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#065": {
+   "src": "I'll write down the directions for you again and meet you there.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 3",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#066": {
+   "src": "Meet Abramod outside of the cave at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Burning Bonds",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Burning Bonds#067": {
+   "src": "This cave here is where much of the mist pools. You can't tell from here, but it's very windy in there!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 4",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#068": {
+   "src": "At its end is an outcrop of rock with some of the sharpest stalagmites you've ever seen formed from those harsh winds.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 4",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#069": {
+   "src": "You'll need to head in and reach that outcrop. I'll try and call out to you if I see any bursts of wind heading your way, but you'll have to dodge them on your own!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 4",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#070": {
+   "src": "If you get hit you'll be blown back, but try not to be blown back too far.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 4",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#071": {
+   "src": "You can walk in once you're ready to start.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 4",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#072": {
+   "src": "Excellent work!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 4",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#073": {
+   "src": "I'll meet you back at my campsite.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 4",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#074": {
+   "src": "Thank you so much again for all the help you've granted me!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 4",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#075": {
+   "src": "Return to Abramod's camp at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Burning Bonds",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Burning Bonds#076": {
+   "src": "Hello!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 5",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#077": {
+   "src": "We are going to make the medallion now, are we not?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 5",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#078": {
+   "src": "It looks like I marked out for you the spots on the medallion that have to be cut out.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 5",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#079": {
+   "src": "All you have to do is cut them. Easy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 5",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#080": {
+   "src": "Ready?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 5",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#081": {
+   "src": "Good! I will drag the knife down. And you will push it in to cut!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 5",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#082": {
+   "src": "You're not ready!? Then get ready, quickly! We do not have time to waste.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 5",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#083": {
+   "src": "Craft the medallion.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Burning Bonds",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Burning Bonds#084": {
+   "src": "Good! Good! Look at how beautiful it is!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 6",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#085": {
+   "src": "The intricacy! The style! With this, I will be able to get into any clan I want!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 6",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#086": {
+   "src": "But... there is a loose end isn't there. Even if I can go anywhere I want... you will always know, won't you?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 6",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#087": {
+   "src": "You are a danger that cannot be allowed to persist!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Burning Bonds",
+   "stage": "Stage 6",
+   "speaker": "Abramod",
+   "source": "wiki"
+  },
+  "Burning Bonds#088": {
+   "src": "Defeat Abramod.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Burning Bonds",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  }
+ }
+}
