@@ -134,3 +134,6 @@ python tools/validate.py # corpus checks
 
 See [LICENSE](LICENSE). Wynncraft content belongs to the Wynncraft team;
 this mod only ships translations of it.
+
+CJK glyphs inside the dialogue box use [Cubic 11](https://github.com/ACh-K/Cubic-11),
+licensed under SIL OFL 1.1 — full text in `assets/wynnchayuan/font/OFL.txt`.
