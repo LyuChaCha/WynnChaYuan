@@ -222,7 +222,7 @@
   },
   "9b871d36c30e": {
    "src": "Throw yourself backward to avoid danger.\n(Hold shift while escaping to cancel)",
-   "dst": "向後跳躍以避免危險。\n(在空中按shift以快速下墜)",
+   "dst": "向後跳躍以避開危險。\n(在空中按shift以快速下墜)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -438,7 +438,7 @@
   },
   "7bdc24538284": {
    "src": "Nimble String",
-   "dst": "靈巧箭流",
+   "dst": "靈巧之弦",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -494,7 +494,7 @@
   },
   "08648560ab8a": {
    "src": "Buckshot",
-   "dst": "爆裂霰彈",
+   "dst": "萬箭齊發",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -660,7 +660,7 @@
   },
   "da3058307e47": {
    "src": "Your Arrow Shield turns into {~} sentient bows\nthat fire at nearby enemies every {~}s, each\nwith {~} ammunition. (Arrow Shield will no longer\npush enemies away or provide resistance)",
-   "dst": "你的箭矢護盾將轉化為{~1}把有意志的弓，\n每隔{~}秒向附近敵人射擊，\n每把弓擁有{~2}發彈藥。\n（「箭矢護盾」將不再擊退敵人或提供抗性)",
+   "dst": "你的箭矢護盾將轉化為{~1}把有自主意志的弓，\n每隔{~}秒向附近敵人射擊，\n每把弓擁有{~2}發彈藥。\n（箭矢護盾將不再擊退敵人或提供抗性)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -729,7 +729,7 @@
   },
   "c880056699d4": {
    "src": "When hitting an aggressive enemy {~}+\nblocks away, gain +{~} Focus {#}. (Max {~})\n(Lose {~} Focus if you miss once)",
-   "dst": "擊中{~1}格以外的紅名敵人時，獲得+{~2}點專注{#}。(上限{~3}\n(若有一次未命中，則失去{~4}點專注)",
+   "dst": "擊中{~1}格以外的紅名敵人時，獲得+{~2}層專注{#}。(上限{~3}層)\n(若有一次未命中，則失去{~4}層專注)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -870,7 +870,7 @@
   },
   "4da2ccf71e6c": {
    "src": "Gives Arrow Shield +{~} extra charges.\nGuardian Angels will deal -{~} damage.",
-   "dst": "箭矢護盾數量增加{~1}\n，守護天使的傷害減少{~2}。",
+   "dst": "箭矢護盾或守護天使的數量增加{~1}\n，守護天使的傷害減少{~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1013,7 +1013,7 @@
   },
   "be51bd881ada": {
    "src": "Holding Shift while casting\nwill pull any enemy you hit.",
-   "dst": "",
+   "dst": "施放技能時按住Shift，\n會將擊中的敵人拉向你。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1028,7 +1028,7 @@
   },
   "1b17fe84b427": {
    "src": "When casting Escape, throw a hook\nthat pulls you when hitting a block.\n(Escape will not throw you backward anymore)",
-   "dst": "",
+   "dst": "施放逃脫時，朝你前方丟出一個鉤子，\n鉤子會在撞到方塊時將你拉向它。\n(逃脫不再會讓你向後彈射)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1043,7 +1043,7 @@
   },
   "8a48049f8761": {
    "src": "More Focus",
-   "dst": "",
+   "dst": "沉著冷靜",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1072,7 +1072,7 @@
   },
   "06d1c7cf345b": {
    "src": "Murder Flock",
-   "dst": "",
+   "dst": "憤怒鳥群",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1085,7 +1085,7 @@
   },
   "f5a4e2fc308b": {
    "src": "Basaltic Trap summons a Crow upon detonation that\nwill peck at aggressive enemies every {~}s. (Max {~})\nDamaged enemies will be distracted for {~}s.",
-   "dst": "",
+   "dst": "玄武岩陷阱在引爆時會召喚一隻烏鴉，\n烏鴉每{~1}秒啄擊一次敵對目標。（上限{~2}）\n受攻擊的敵人會被干擾{~3}秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1100,7 +1100,7 @@
   },
   "71575571ca00": {
    "src": "Refined Gunpowder",
-   "dst": "",
+   "dst": "改良火藥",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1113,7 +1113,7 @@
   },
   "234eb3042d61": {
    "src": "Increase the damage of Arrow Bomb.",
-   "dst": "",
+   "dst": "增加箭矢炸彈的傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1128,7 +1128,7 @@
   },
   "307afffc8616": {
    "src": "Phantom Force",
-   "dst": "",
+   "dst": "幻影力量",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1141,7 +1141,7 @@
   },
   "fc062b23ed6b": {
    "src": "Phantom Ray gains extra forward\nrange and becomes wider.",
-   "dst": "",
+   "dst": "增加魅影光束的射程和寬度。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1156,7 +1156,7 @@
   },
   "0a2d42783046": {
    "src": "Windstorm",
-   "dst": "",
+   "dst": "狂風暴雨",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1169,7 +1169,7 @@
   },
   "b164ec9b25e7": {
    "src": "Arrow Storm gains recoil while midair.",
-   "dst": "",
+   "dst": "離地時施放箭矢風暴變得有後座力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1184,7 +1184,7 @@
   },
   "79509e4ffd7f": {
    "src": "Arrow Storm will shoot +{~} stream\nof arrows and +{~} extra arrows per stream.",
-   "dst": "",
+   "dst": "箭矢風暴的箭矢束數量增加{~1}，\n且每個箭矢束的箭矢數量增加{~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1212,7 +1212,7 @@
   },
   "fecef4582294": {
    "src": "Grape Bomb",
-   "dst": "",
+   "dst": "子母炸彈",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1225,7 +1225,7 @@
   },
   "e8283c8668b6": {
    "src": "Arrow Bomb will throw {~} additional\nsmaller bombs when exploding.",
-   "dst": "",
+   "dst": "箭矢炸彈爆炸時，\n額外丟出{~}顆小炸彈。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1240,7 +1240,7 @@
   },
   "98008345b5fe": {
    "src": "Ivyroot Mamba",
-   "dst": "",
+   "dst": "常春藤青蛇",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1253,7 +1253,7 @@
   },
   "a0f28d09560e": {
    "src": "Bryophyte Roots summons a Snake after\ndisappearing that will spit weakening\nvenom at aggressive enemies every {~}s. (Max {~})\nEnemies will be weakened for {~}s.",
-   "dst": "",
+   "dst": "苔蘚纏繞消失後會召喚一條蛇，\n該蛇每{~1}秒向敵對目標噴射虛弱毒液。（上限 {~2})\n受攻擊的敵方目標將被虛弱{~3}秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1268,7 +1268,7 @@
   },
   "acc6ed50445a": {
    "src": "Twain's Arc",
-   "dst": "",
+   "dst": "巴雷特大狙",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1281,7 +1281,7 @@
   },
   "e8f0d21c452c": {
    "src": "If you have {~}+ Focus {#}, holding shift will\nsummon Twain's Arc. Charge it up to\nshoot a destructive long-range beam.",
-   "dst": "",
+   "dst": "若擁有{~}層專注以上{#}，\n按住Shift鍵即可架設一把大狙。\n蓄力後發射一道威力巨大的遠程光束。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1296,7 +1296,7 @@
   },
   "c095734e905e": {
    "src": "Frenzy",
-   "dst": "",
+   "dst": "得寸進尺",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1309,7 +1309,7 @@
   },
   "2c1f3eb1b1f5": {
    "src": "Hitting an enemy will give you a brief buff\nof +{~} Walk Speed, up to {~} per second. (Max +{~})\n-{~} of the bonus decays every second.",
-   "dst": "",
+   "dst": "擊中敵人將獲得{~1}的加速效果，\n每秒最多增加{~2}(上限為{~3})。\n加速效果每秒衰減{~4}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1324,7 +1324,7 @@
   },
   "b7a7a9b2fcd4": {
    "src": "Shrapnel Bomb",
-   "dst": "",
+   "dst": "破片炸彈",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1337,7 +1337,7 @@
   },
   "8f438a6eeb98": {
    "src": "Arrow Bomb's explosion will fling {~}\nshrapnel, dealing damage in a large area.\n(Each enemy can only be hit by three shrapnel)",
-   "dst": "",
+   "dst": "箭矢炸彈的爆炸會射出{~}塊碎片，\n對大範圍內的敵人造成傷害。\n(每個敵人最多只能被三枚碎片擊中)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1365,7 +1365,7 @@
   },
   "a4d2faea5656": {
    "src": "Rocket Jump",
-   "dst": "",
+   "dst": "火箭跳",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1378,7 +1378,7 @@
   },
   "bcda2cf1d1b0": {
    "src": "Arrow Bomb's recoil is increased, and\nits self-damage is reduced to {~}.",
-   "dst": "",
+   "dst": "箭矢炸彈的後座力增加，\n且自己被爆炸波及的傷害降低至{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1393,7 +1393,7 @@
   },
   "4775a705f620": {
    "src": "Scorched Earth",
-   "dst": "",
+   "dst": "燃燒大地",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1406,7 +1406,7 @@
   },
   "a593fd94eccc": {
    "src": "Fire Creep becomes much stronger.",
-   "dst": "",
+   "dst": "火焰蔓延變得更加強大",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1435,7 +1435,7 @@
   },
   "49d3a8472c23": {
    "src": "More Traps",
-   "dst": "",
+   "dst": "更多陷阱",
    "role": "name",
    "kind": "term",
    "ctx": [
