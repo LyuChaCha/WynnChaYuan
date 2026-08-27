@@ -75,6 +75,9 @@ public final class DialogueRewriter {
      */
     private static final java.util.Set<String> SHIPPED = java.util.Set.of("zh_tw");
 
+    /** 每個語言那套字型畫得出來的碼位區間，第一次用到才讀。 */
+    private static final Map<String, int[]> COVERAGE = new java.util.HashMap<>();
+
     /** 內文的左緣：從游標往左退這麼多。實機量到的固定值。 */
     private static final int BODY_LEFT = 116;
 
@@ -159,7 +162,7 @@ public final class DialogueRewriter {
             }
             String prefix = raw.substring(0, at);
             String tip = store.lookup(raw.substring(at).strip());
-            if (tip == null || tip.isBlank()) {
+            if (tip == null || tip.isBlank() || !renderable(tip)) {
                 continue;
             }
             // 圖示要留在<b>原本的字型</b>裡：那個 SHIFT 按鈕是它畫出來的，
@@ -274,6 +277,10 @@ public final class DialogueRewriter {
         if (hit == null || hit.isBlank()) {
             return null;
         }
+        // 有字畫不出來就整段不換——一句話裡插幾個方框，比整句留著英文糟糕得多。
+        if (!renderable(hit)) {
+            return null;
+        }
         // 塞不進框裡就不換。中文通常比英文短，真的塞不下時，
         // 讓玩家看見完整的英文，比看見被切掉一半的中文好。
         return width(hit) <= BODY_LEFT * 2 * rows ? hit : null;
@@ -378,6 +385,74 @@ public final class DialogueRewriter {
      *
      * @return 對應的字型；這一段不是對話文字就回傳 {@code null}
      */
+    /**
+     * 那一套字型畫不畫得出這一串。
+     *
+     * <h2>為什麼要擋</h2>
+     * 點陣字是一個字一個字畫出來的，沒有哪一套是全的——Cubic 11 收了兩萬多個
+     * 漢字裡的九千多個。收不到的字畫出來是<b>方框</b>，而一句話裡插幾個方框
+     * 比整句留著英文糟糕得多。
+     *
+     * <p>所以缺一個字就整段不換。區間表由 {@code tools/font-coverage.py}
+     * 從字型檔本身抽出來，跟著字型一起放進 jar，換字型時一起重產。
+     */
+    /** 這一串在對話框裡畫不畫得出來——Wynncraft 自己那份或我們補的那套，有一個能畫就算。 */
+    static boolean renderable(String text) {
+        return drawable(text) || covered(text, WynnChaYuan.language());
+    }
+
+    static boolean covered(String text, String lang) {
+        int[] ranges = coverage(lang);
+        if (ranges.length == 0) {
+            return true;                       // 讀不到就不擋，維持原本的行為
+        }
+        return text.codePoints().allMatch(cp -> {
+            if (cp < 0x80) {
+                return true;
+            }
+            for (int i = 0; i < ranges.length; i += 2) {
+                if (cp >= ranges[i] && cp <= ranges[i + 1]) {
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+
+    private static int[] coverage(String lang) {
+        int[] known = COVERAGE.get(lang);
+        if (known != null) {
+            return known;
+        }
+        List<Integer> flat = new ArrayList<>();
+        Minecraft mc = Minecraft.getInstance();
+        try {
+            var id = Identifier.fromNamespaceAndPath(WynnChaYuan.MOD_ID,
+                    "font/dialogue/" + lang + "/coverage.txt");
+            var found = mc.getResourceManager().getResource(id);
+            if (found.isPresent()) {
+                try (var in = found.get().openAsReader()) {
+                    for (String line : in.lines().toList()) {
+                        if (line.isBlank() || line.startsWith("#")) {
+                            continue;
+                        }
+                        int dash = line.indexOf('-');
+                        flat.add(Integer.parseInt(line.substring(0, dash), 16));
+                        flat.add(Integer.parseInt(line.substring(dash + 1), 16));
+                    }
+                }
+            }
+        } catch (Exception e) {
+            // 讀不到就當作沒有限制，維持原本的行為
+        }
+        int[] out = new int[flat.size()];
+        for (int i = 0; i < out.length; i++) {
+            out[i] = flat.get(i);
+        }
+        COVERAGE.put(lang, out);
+        return out;
+    }
+
     private static FontDescription paired(String font) {
         String name = null;
         if (font.contains(BODY)) {
