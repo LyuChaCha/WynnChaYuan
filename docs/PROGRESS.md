@@ -7,13 +7,13 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 32.9%（8,868 / 26,937）
+## `zh_tw` 繁體中文 — 33.0%（8,885 / 26,954）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 288 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
 | `npc.json` | ██████░░░░ 57% | 125 / 220 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 99% | 675 / 684 | 選單與介面<br>Menus and interface text |
+| `gui.json` | ██████████ 99% | 692 / 701 | 選單與介面<br>Menus and interface text |
 | `quest.json` | ██████████ 100% | 66 / 66 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | █████████░ 91% | 810 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ██████████ 100% | 322 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
