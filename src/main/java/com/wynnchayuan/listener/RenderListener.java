@@ -141,5 +141,7 @@ public final class RenderListener {
         } catch (Throwable t) {
             WynnChaYuan.store().noteEvent("render.dialogueError");
         }
+        // 待拍的截圖收在這裡——整個畫面都畫完了，拍到的才是使用者看到的那一幀
+        com.wynnchayuan.render.PanelShot.afterRender();
     }
 }

@@ -51,6 +51,9 @@ public final class WynnChaYuan implements ClientModInitializer {
     private static CollectorConfig config;
     private static TranslationStore translations;
     private static KeyMapping openSettingsKey;
+
+    /** 把目前的翻譯面板拍成一張圖，給校稿用。 */
+    private static KeyMapping screenshotKey;
     private static Path configDir;
 
     /** 目前使用的譯文語言。見 {@code Languages}。 */
@@ -81,6 +84,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         com.wynnchayuan.translate.LineDebug.init(dir.resolve("line-debug.txt"));
         com.wynnchayuan.translate.LayoutDebug.init(dir.resolve("layout-debug.txt"));
         com.wynnchayuan.translate.FlowedDebug.init(dir);
+        com.wynnchayuan.capture.DialogueProbe.init(dir);
         com.wynnchayuan.translate.ErrorDebug.into(dir);
 
         // 譯文放在 config/wynnchayuan/translations/ 下，格式與 corpus/workspace 相同，
@@ -238,9 +242,21 @@ public final class WynnChaYuan implements ClientModInitializer {
                 org.lwjgl.glfw.GLFW.GLFW_KEY_F6,
                 KeyMapping.Category.MISC));
 
+        screenshotKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
+                "key.wynnchayuan.screenshot",
+                InputConstants.Type.KEYSYM,
+                org.lwjgl.glfw.GLFW.GLFW_KEY_F8,
+                KeyMapping.Category.MISC));
+
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openSettingsKey.consumeClick()) {
                 client.setScreen(new SettingsScreen());
+            }
+            // 截圖的按鍵在 tick 裡只記一個旗標，真正拍是在下一次繪製<b>之後</b>。
+            // tick 的時候這一幀還沒畫完，當場拍會拍到上一幀，
+            // 而上一幀常常正好是滑鼠剛移到物品上、面板還沒出現的那一幀。
+            while (screenshotKey.consumeClick()) {
+                com.wynnchayuan.render.PanelShot.request();
             }
         });
     }
