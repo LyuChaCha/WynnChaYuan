@@ -1,6 +1,8 @@
 package com.wynnchayuan.render;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.LineParts;
+import com.wynntils.core.text.StyledText;
 import com.wynnchayuan.translate.TranslationStore;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -133,7 +135,7 @@ public final class DialogueRewriter {
         boolean changed = false;
         String hit = body.isEmpty() ? null
                 : line(whole.toString(), store, body.size(),
-                        styles.get(body.get(0)));
+                        styles.get(body.get(0)), rowWidth(texts, body));
         List<String> rows = hit == null
                 ? null : wrap(hit, body.size(), styles.get(body.get(0)));
         if (rows != null) {
@@ -295,6 +297,70 @@ public final class DialogueRewriter {
     }
 
     /**
+     * 把譯文裡的佔位符換回原文的實際值。
+     *
+     * <p>{@code {~1}} 這種帶編號的寫法指名要原文的第幾個數值——中文語序常常
+     * 跟英文相反，沒有編號就沒辦法把數字擺到正確的位置。
+     */
+    static String fill(String translated, LineParts parts) {
+        StringBuilder out = new StringBuilder();
+        int place = 0;
+        int user = 0;
+        int number = 0;
+        for (int i = 0; i < translated.length(); ) {
+            if (translated.startsWith("{p}", i)) {
+                out.append(pick(parts.places(), place++));
+                i += 3;
+            } else if (translated.startsWith("{u}", i)) {
+                out.append(pick(parts.users(), user++));
+                i += 3;
+            } else if (translated.startsWith("{~", i)
+                    && translated.indexOf('}', i) > 0) {
+                int close = translated.indexOf('}', i);
+                String index = translated.substring(i + 2, close);
+                int at = number;
+                if (!index.isEmpty()) {
+                    try {
+                        at = Integer.parseInt(index) - 1;
+                    } catch (NumberFormatException e) {
+                        at = number;               // 不是數字就當作沒編號
+                    }
+                } else {
+                    number++;
+                }
+                out.append(pick(parts.numbers(), at));
+                i = close + 1;
+            } else {
+                out.append(translated.charAt(i++));
+            }
+        }
+        return out.toString();
+    }
+
+    private static String pick(List<LineParts.Piece> pieces, int at) {
+        return at >= 0 && at < pieces.size() ? pieces.get(at).text() : "";
+    }
+
+    /**
+     * 這一行放得下多寬。
+     *
+     * <p>不能寫死：有頭像的對話，文字是<b>從頭像右邊</b>開始的——前導偏移
+     * 從 −116 變成 −92，整整少了 24 像素。拿 −116 去算就會以為還有空間，
+     * 於是中文疊到頭像上（玩家回報的「任務翻譯錯位」）。
+     * 右邊界是固定的，所以寬度就是「實際前導的絕對值 + 右邊界」。
+     */
+    private static int rowWidth(List<String> texts, List<Integer> body) {
+        if (body.isEmpty()) {
+            return BODY_LEFT * 2;
+        }
+        Integer lead = offsetOf(texts.get(body.get(0) - 1));
+        if (lead == null || lead >= 0) {
+            return BODY_LEFT * 2;
+        }
+        return -lead + BODY_LEFT;
+    }
+
+    /**
      * 接下一行時要補回被吃掉的空格。
      *
      * <p>Wynncraft 是在<b>空白處</b>折行的，而那個空白不留在任何一行裡：
@@ -320,8 +386,15 @@ public final class DialogueRewriter {
      * 攤不進去它會回 {@code null}，所以這裡不必再擋一次。
      */
     private static String line(String text, TranslationStore store, int rows,
-            Style style) {
-        String typed = text.strip();
+            Style style, int width) {
+        // 先參數化再查表。
+        //
+        // 語料裡的鍵是「Hey, {u}! Are you alright…」，而畫面上是玩家的真名。
+        // 先前這裡拿<b>原始文字</b>直接查，凡是句子裡有玩家名、地名或數字的
+        // 一律查不到——側邊面板翻得出來、就地取代翻不出來，差別就在這一步。
+        // 用的是跟語料同一支參數化程式，兩邊算出來的模板才會一樣。
+        LineParts parts = LineParts.of(StyledText.fromString(text.strip()));
+        String typed = parts.template().strip();
         String source = typed;
         String hit = store.lookup(typed);
         if (hit == null) {
@@ -335,7 +408,8 @@ public final class DialogueRewriter {
         if (!renderable(hit)) {
             return null;
         }
-        int limit = BODY_LEFT * 2 * rows;
+        hit = fill(hit, parts);            // 佔位符換回真名、地名與數值
+        int limit = width * rows;
         if (source.equals(typed)) {
             // 講完了。塞不進框裡就不換——中文通常比英文短，真的塞不下時，
             // 讓玩家看見完整的英文，比看見被切掉一半的中文好。
