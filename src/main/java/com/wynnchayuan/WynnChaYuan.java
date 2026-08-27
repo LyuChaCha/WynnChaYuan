@@ -250,6 +250,9 @@ public final class WynnChaYuan implements ClientModInitializer {
                 InputConstants.Type.KEYSYM,
                 org.lwjgl.glfw.GLFW.GLFW_KEY_F6,
                 KeyMapping.Category.MISC));
+        // 畫面開著時 KeyMapping 收不到事件，PanelShot 得自己讀鍵盤——
+        // 把 mapping 交給它，改綁才會跟著生效。
+        com.wynnchayuan.render.PanelShot.bind(screenshotKey);
 
         screenshotKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.screenshot",

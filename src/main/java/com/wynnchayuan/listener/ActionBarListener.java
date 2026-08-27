@@ -79,6 +79,7 @@ public final class ActionBarListener {
                     event.getMessage(), WynnChaYuan.translations());
             if (swapped != null) {
                 event.setMessage(swapped);
+                DialogueProbe.after(swapped);
             }
         } catch (Throwable t) {
             // action bar 每 tick 都會走這裡，出錯絕不能讓遊戲停下來

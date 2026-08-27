@@ -119,7 +119,7 @@ public final class DialogueRewriter {
             whole.append(texts.get(at));
         }
         boolean changed = false;
-        String hit = line(whole.toString(), store);
+        String hit = line(whole.toString(), store, body.size());
         List<String> rows = hit == null ? null : wrap(hit, body.size());
         if (rows != null) {
             changed = true;                    // 攤不進原本的行數就只換提示
@@ -237,8 +237,15 @@ public final class DialogueRewriter {
         return c < 0x2E80 && Character.isLetterOrDigit(c);
     }
 
-    /** 內文：整句查表，查不到就用開頭比對（NPC 是一個字一個字打出來的）。 */
-    private static String line(String text, TranslationStore store) {
+    /**
+     * 內文：整句查表，查不到就用開頭比對（NPC 是一個字一個字打出來的）。
+     *
+     * <p>{@code rows} 是原文佔了幾行。長度上限要乘上行數——先前這裡寫死
+     * 一行的寬度，等於<b>只要譯文超過一行就整句不翻</b>，兩行以上的台詞
+     * 全部留在英文。{@link #wrap} 本來就是為了攤成多行才寫的，
+     * 攤不進去它會回 {@code null}，所以這裡不必再擋一次。
+     */
+    private static String line(String text, TranslationStore store, int rows) {
         String hit = store.lookup(text.strip());
         if (hit == null) {
             String full = store.matchPrefix(text.strip());
@@ -249,7 +256,7 @@ public final class DialogueRewriter {
         }
         // 塞不進框裡就不換。中文通常比英文短，真的塞不下時，
         // 讓玩家看見完整的英文，比看見被切掉一半的中文好。
-        return width(hit) <= BODY_LEFT * 2 ? hit : null;
+        return width(hit) <= BODY_LEFT * 2 * rows ? hit : null;
     }
 
     /** 名牌：說話者的名字，語料裡本來就有（npc.json）。 */
