@@ -266,6 +266,15 @@ public final class TranslationStore {
             JsonElement v = obj.get(key);
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
                 entries.put(key.strip(), v.getAsString().strip());
+                // 逐字打字時靠這個索引找「目前打到一半的是哪一句」。
+                //
+                // 先前只有 workspace 格式的檔案會進來，而台詞幾乎都放在扁平格式的
+                // quest.json 裡——於是整句打完才查得到，打字中途一律落空。玩家看到的
+                // 「英文跑完才忽然跳成中文」就是這裡漏掉的一行。
+                // 詞彙表不收：短詞進來只會讓前綴變得分不出是哪一句。
+                if (!asTerms && key.strip().length() >= MIN_PREFIX_LENGTH) {
+                    prefixIndex.put(key.strip(), v.getAsString().strip());
+                }
                 noteBlockSize(key.strip());
                 noteFlat(key.strip(), v.getAsString().strip());
                 noteIndented(key.strip(), v.getAsString().strip());
