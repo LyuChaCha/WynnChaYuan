@@ -521,7 +521,15 @@ public final class TranslationStore {
         }
         Map.Entry<String, String> first = prefixIndex.ceilingEntry(key);
         if (first == null || !first.getKey().startsWith(key)) {
-            return null;
+            String other = respell(key);        // 見 respell：英式拼法對不上語料
+            if (other.equals(key)) {
+                return null;
+            }
+            first = prefixIndex.ceilingEntry(other);
+            if (first == null || !first.getKey().startsWith(other)) {
+                return null;
+            }
+            key = other;
         }
         String next = prefixIndex.higherKey(first.getKey());
         if (next != null && next.startsWith(key)) {
@@ -547,8 +555,58 @@ public final class TranslationStore {
             return null;                       // 使用者選擇不翻物品名稱
         }
         String hit = entries.get(key);
-        return hit != null ? hit : lookupIndented(key);
+        if (hit == null) {
+            hit = lookupIndented(key);
+        }
+        if (hit == null) {
+            String other = respell(key);
+            if (!other.equals(key)) {
+                hit = entries.get(other);
+                if (hit == null) {
+                    hit = lookupIndented(other);
+                }
+            }
+        }
+        return hit;
     }
+
+    /**
+     * 英式拼法換成語料裡用的美式拼法。
+     *
+     * <p>語料是從維基抓來的，寫的是 {@code honors}；遊戲裡顯示的是 {@code honours}。
+     * 差一個字母，整句就查不到——而且是<b>整片</b>查不到：語料裡有八百多條
+     * 帶著這類拼法的句子，畫面上一條都對不上，看起來就是「這幾句沒人翻」。
+     *
+     * <p>只在查不到時才走這條，所以就算某個詞猜錯了也不會蓋掉本來查得到的。
+     */
+    static String respell(String text) {
+        String out = text;
+        for (String[] pair : SPELLING) {
+            out = out.replace(pair[0], pair[1]);
+            out = out.replace(upper(pair[0]), upper(pair[1]));
+        }
+        return out;
+    }
+
+    private static String upper(String word) {
+        return Character.toUpperCase(word.charAt(0)) + word.substring(1);
+    }
+
+    /** 英式 → 美式。只收字幹，加了字尾（-s、-ed、-ing）會自己跟著換。 */
+    private static final String[][] SPELLING = {
+        {"honour", "honor"}, {"colour", "color"}, {"armour", "armor"},
+        {"favour", "favor"}, {"neighbour", "neighbor"}, {"rumour", "rumor"},
+        {"behaviour", "behavior"}, {"harbour", "harbor"}, {"labour", "labor"},
+        {"flavour", "flavor"}, {"humour", "humor"}, {"odour", "odor"},
+        {"valour", "valor"}, {"vapour", "vapor"}, {"saviour", "savior"},
+        {"endeavour", "endeavor"}, {"centre", "center"}, {"theatre", "theater"},
+        {"fibre", "fiber"}, {"defence", "defense"}, {"offence", "offense"},
+        {"travelled", "traveled"}, {"traveller", "traveler"},
+        {"cancelled", "canceled"}, {"marvellous", "marvelous"},
+        {"jewellery", "jewelry"}, {"realise", "realize"},
+        {"apologise", "apologize"}, {"recognise", "recognize"},
+        {"organise", "organize"},
+    };
 
     /**
      * Wynncraft 拿來做<b>縮排</b>的字元。在它的字型裡 {@code À} 是一格固定寬度的空白，
