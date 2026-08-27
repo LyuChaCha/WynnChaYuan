@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "A Journey Beyond",
   "count": 243,
-  "translated": 0,
+  "translated": 243,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Beyond#000": {
    "src": "Join Elphaba on a mission in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的 {p} 加入 Elphaba 的任務。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -18,7 +18,7 @@
   },
   "A Journey Beyond#001": {
    "src": "...Hm? Oh- uh, hello there. Sorry, we have this space reserved for...",
-   "dst": "",
+   "dst": "……嗯？喔——呃，你好。抱歉，這個位子我們留給……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -28,7 +28,7 @@
   },
   "A Journey Beyond#002": {
    "src": "Wait. You might be just what we're looking for. You look like you're capable in combat. How would you like to join a dangerous top secret mission?",
-   "dst": "",
+   "dst": "等等。你說不定正是我們要找的人。你看起來很能打。想不想加入一場危險的最高機密任務？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -38,7 +38,7 @@
   },
   "A Journey Beyond#003": {
    "src": "...I could have phrased that better. Look, the point is- we need a fourth. Let me give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
-   "dst": "",
+   "dst": "……我剛剛可以講得更好一點。聽著，重點是——我們需要第四個人。我把任務簡報講給你聽，如果你不想加入……那我們再找別人。這樣可以嗎？好，來，跟我走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -48,7 +48,7 @@
   },
   "A Journey Beyond#004": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
-   "dst": "",
+   "dst": "這是誰？你真的找到第四個人了？拜託，我說過我們不需要！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -58,7 +58,7 @@
   },
   "A Journey Beyond#005": {
    "src": "And we both keep telling you why you're wrong. This is... sorry. I didn't catch your name. {u}? .",
-   "dst": "",
+   "dst": "而我們兩個一直在跟你說你哪裡錯了。這位是……抱歉，我沒聽到你的名字。{u}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -68,7 +68,7 @@
   },
   "A Journey Beyond#006": {
    "src": "... {u}, is that you? Wow, it's been a while. Sorry, I don't have time to chat right now. We're preparing for a dangerous mission, and...",
-   "dst": "",
+   "dst": "……{u}，是你嗎？哇，好久不見。抱歉，我現在沒空聊天。我們正在準備一場危險的任務，而且……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -78,7 +78,7 @@
   },
   "A Journey Beyond#007": {
    "src": "Well. Actually, we were looking for a fourth person to join us. And... you look like you fit the requirements for that position. If- if you'd like to join, that is.",
-   "dst": "",
+   "dst": "嗯。其實，我們正在找第四個人加入。而且……你看起來符合那個位置的條件。如果——如果你願意加入的話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -88,7 +88,7 @@
   },
   "A Journey Beyond#008": {
    "src": "Tell you what. I'll give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
-   "dst": "",
+   "dst": "這樣吧。我把簡報講給你聽，如果你不想加入……那我們再找別人。這樣可以嗎？好，來，跟我走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -98,7 +98,7 @@
   },
   "A Journey Beyond#009": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
-   "dst": "",
+   "dst": "這是誰？你真的找到第四個人了？拜託，我說過我們不需要！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -108,7 +108,7 @@
   },
   "A Journey Beyond#010": {
    "src": "And we both keep telling you why you're wrong. This is {u}, we've worked together before.",
-   "dst": "",
+   "dst": "而我們兩個一直在跟你說你哪裡錯了。這位是 {u}，我們以前合作過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -118,7 +118,7 @@
   },
   "A Journey Beyond#011": {
    "src": "Anyway, I want to give them the briefing before we head",
-   "dst": "",
+   "dst": "總之，我想在出發之前先把簡報跟他們說清楚——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -128,7 +128,7 @@
   },
   "A Journey Beyond#012": {
    "src": "Elphie, I'm back! I finally managed to catch Aegis, but he's not... happy. He thinks we should",
-   "dst": "",
+   "dst": "Elphie，我回來了！我終於逮到 Aegis 了，可是他不太……高興。他認為我們應該——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -138,7 +138,7 @@
   },
   "A Journey Beyond#013": {
    "src": "Oh. {u}? What are you doing here? Gods, it's been a while, hasn't it?",
-   "dst": "",
+   "dst": "喔。{u}？你怎麼會在這裡？天啊，好久不見了對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -148,7 +148,7 @@
   },
   "A Journey Beyond#014": {
    "src": "They're our fourth. What were you saying about the Admiral?",
-   "dst": "",
+   "dst": "他們就是我們的第四個人。你剛剛說 Admiral 怎麼了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -158,7 +158,7 @@
   },
   "A Journey Beyond#015": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -168,7 +168,7 @@
   },
   "A Journey Beyond#016": {
    "src": "Nothing. If we have our fourth, we should be all set to go, shouldn't we?",
-   "dst": "",
+   "dst": "沒事。第四個人到齊了，我們應該可以出發了吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -178,7 +178,7 @@
   },
   "A Journey Beyond#017": {
    "src": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-   "dst": "",
+   "dst": "嗯……是可以，但我想先把細節講清楚。這是一場危險的任務，所以……我覺得最好讓他們知道全部。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -188,7 +188,7 @@
   },
   "A Journey Beyond#018": {
    "src": "So! You're aware of the {p}, yes? Hundreds of years ago, mining operations took place to extract emeralds from the earth. Until, for some unknown reason, they were halted.",
-   "dst": "",
+   "dst": "那麼！你知道 {p} 吧？幾百年前，那裡曾經有開採作業，從地底挖出綠寶石。直到某個不明的原因，一切被叫停了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -198,7 +198,7 @@
   },
   "A Journey Beyond#019": {
    "src": "We don't know everything, but... evidence suggests they broke through to an undiscovered section of the Wynn province. There, they found... something.",
-   "dst": "",
+   "dst": "我們不知道全部的細節，但……證據顯示他們挖穿了一段從未有人發現的 Wynn 行省地帶。在那裡，他們找到了……某種東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -208,7 +208,7 @@
   },
   "A Journey Beyond#020": {
    "src": "The land itself was said to be cursed. Not corrupted they were very clear on that.",
-   "dst": "",
+   "dst": "據說那片土地本身就受了詛咒。不是腐敗——這一點他們寫得非常清楚。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -218,7 +218,7 @@
   },
   "A Journey Beyond#021": {
    "src": "Some other force makes its home in that place. The few reports we could find refer to it only as the Silent Expanse.",
-   "dst": "",
+   "dst": "有另一種力量在那裡安家。我們能找到的少數幾份報告只用一個名字稱呼它：Silent Expanse。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -228,7 +228,7 @@
   },
   "A Journey Beyond#022": {
    "src": "The mines were sealed to prevent the spread of this new threat, but the cracks are beginning to show.",
-   "dst": "",
+   "dst": "礦坑被封起來，為的是阻止這個新威脅擴散，但裂縫已經開始出現了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -238,7 +238,7 @@
   },
   "A Journey Beyond#023": {
    "src": "Strange and otherworldly creatures have begun to find their way through, threatening our province.",
-   "dst": "",
+   "dst": "有些奇異的、不屬於這個世界的生物開始找到出路，威脅到我們的行省。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -248,7 +248,7 @@
   },
   "A Journey Beyond#024": {
    "src": "The existence of this place has been kept on a strict need-to-know basis.",
-   "dst": "",
+   "dst": "這個地方的存在一直被列為最高機密，只有必要的人才知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -258,7 +258,7 @@
   },
   "A Journey Beyond#025": {
    "src": "That's where we come in! We're to battle our way through the mines, and scout out the potential danger level.",
-   "dst": "",
+   "dst": "那就是我們上場的時候了！我們要一路打進礦坑，探明潛在的危險程度。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -268,7 +268,7 @@
   },
   "A Journey Beyond#026": {
    "src": "And we aren't going to be able to do it if we keep sitting around! The newbie's been briefed, let's get going already!",
-   "dst": "",
+   "dst": "再這樣坐著我們什麼都做不成！新人簡報也聽完了，快走吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -278,7 +278,7 @@
   },
   "A Journey Beyond#027": {
    "src": "H-hey! What're you doing to my fine establishment!",
-   "dst": "",
+   "dst": "喂——喂！你們對我這間好好的店做了什麼！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -288,7 +288,7 @@
   },
   "A Journey Beyond#028": {
    "src": "...Shoot. Forgot he was still here. Sorry, barkeep! I'll fix it!",
-   "dst": "",
+   "dst": "……糟。忘記他還在。抱歉啦老闆！我會修好的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -298,7 +298,7 @@
   },
   "A Journey Beyond#029": {
    "src": "Lucio, you can't keep... ugh, forget it. I'll gather our supplies... Aledar, can you get us to the mines?",
-   "dst": "",
+   "dst": "Lucio，你不能老是這樣……唉，算了。我去把補給集合起來……Aledar，你能帶我們到礦坑嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -308,7 +308,7 @@
   },
   "A Journey Beyond#030": {
    "src": "Yes, ma'am! {u}, when you're ready, let's get going.",
-   "dst": "",
+   "dst": "是，長官！{u}，你準備好我們就出發。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -318,7 +318,7 @@
   },
   "A Journey Beyond#031": {
    "src": "Follow your team towards the Silent Expanse's entrance.",
-   "dst": "",
+   "dst": "跟著隊伍前往 Silent Expanse 的入口。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -328,7 +328,7 @@
   },
   "A Journey Beyond#032": {
    "src": "Everyone ready? I'll lead.",
-   "dst": "",
+   "dst": "大家都準備好了嗎？我帶路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -338,7 +338,7 @@
   },
   "A Journey Beyond#033": {
    "src": "It's a twist of fate that our paths have converged here, {u}. We started our journey together and now...",
-   "dst": "",
+   "dst": "我們的路會在這裡交會，也算是命運的安排，{u}。我們一起踏上旅程，而現在……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -348,7 +348,7 @@
   },
   "A Journey Beyond#034": {
    "src": "Aledar...",
-   "dst": "",
+   "dst": "Aledar……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -358,7 +358,7 @@
   },
   "A Journey Beyond#035": {
    "src": "I hear them too.",
-   "dst": "",
+   "dst": "我也聽到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -368,7 +368,7 @@
   },
   "A Journey Beyond#036": {
    "src": "Ah, no problem. I'll take care of these.",
-   "dst": "",
+   "dst": "啊，沒問題。這些交給我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -378,7 +378,7 @@
   },
   "A Journey Beyond#037": {
    "src": "No more running for us, huh ? Ah, we're here.",
-   "dst": "",
+   "dst": "我們不用再跑了，對吧？啊，到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -388,7 +388,7 @@
   },
   "A Journey Beyond#038": {
    "src": "This is actually our second attempt. The first time, it didn't go too well.",
-   "dst": "",
+   "dst": "其實這是我們第二次來。第一次結果不太好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -398,7 +398,7 @@
   },
   "A Journey Beyond#039": {
    "src": "We have more numbers now, Lucio and yourself should help us overpower it.",
-   "dst": "",
+   "dst": "現在我們人多了，Lucio 和你應該能幫我們壓制住它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -408,7 +408,7 @@
   },
   "A Journey Beyond#040": {
    "src": "Can't be that strong, bet I can take it myself.",
-   "dst": "",
+   "dst": "能有多強啊，我打賭我一個人就搞定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -418,7 +418,7 @@
   },
   "A Journey Beyond#041": {
    "src": "We managed to seal it in but with the {~} of us I'm sure we ca-",
-   "dst": "",
+   "dst": "我們上次好歹把它封在裡面了，現在有我們 {~} 個人，我相信我們可以——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -428,7 +428,7 @@
   },
   "A Journey Beyond#042": {
    "src": "Let's just do it!",
-   "dst": "",
+   "dst": "直接上就對了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -438,7 +438,7 @@
   },
   "A Journey Beyond#043": {
    "src": "Wait... No!",
-   "dst": "",
+   "dst": "等等……不要！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -448,7 +448,7 @@
   },
   "A Journey Beyond#044": {
    "src": "Lucio! You FOOL!",
-   "dst": "",
+   "dst": "Lucio！你這個蠢貨！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -458,7 +458,7 @@
   },
   "A Journey Beyond#045": {
    "src": "What's the big deal? You said yourself we can take it!",
-   "dst": "",
+   "dst": "有什麼大不了的？你自己說我們打得贏！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -468,7 +468,7 @@
   },
   "A Journey Beyond#046": {
    "src": "Ouch...",
-   "dst": "",
+   "dst": "唉唷……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -478,7 +478,7 @@
   },
   "A Journey Beyond#047": {
    "src": "We need a PLAN.",
-   "dst": "",
+   "dst": "我們需要「計畫」。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -488,7 +488,7 @@
   },
   "A Journey Beyond#048": {
    "src": "Defeat the Beast",
-   "dst": "",
+   "dst": "擊敗 Beast",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -498,7 +498,7 @@
   },
   "A Journey Beyond#049": {
    "src": "The plan is attack!",
-   "dst": "",
+   "dst": "計畫就是打它！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -508,7 +508,7 @@
   },
   "A Journey Beyond#050": {
    "src": "Argh!",
-   "dst": "",
+   "dst": "啊啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -518,7 +518,7 @@
   },
   "A Journey Beyond#051": {
    "src": "Lucio!",
-   "dst": "",
+   "dst": "Lucio！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -528,7 +528,7 @@
   },
   "A Journey Beyond#052": {
    "src": "Ahh!",
-   "dst": "",
+   "dst": "啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -538,7 +538,7 @@
   },
   "A Journey Beyond#053": {
    "src": "No! Stop hurting them!",
-   "dst": "",
+   "dst": "不要！別再傷害他們了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -548,7 +548,7 @@
   },
   "A Journey Beyond#054": {
    "src": "Ouch! This isn't working...",
-   "dst": "",
+   "dst": "唉唷！這樣沒用……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -558,7 +558,7 @@
   },
   "A Journey Beyond#055": {
    "src": "Is it just me or are our attacks doing NOTHING?",
-   "dst": "",
+   "dst": "是我的錯覺嗎，還是我們的攻擊根本一點用都沒有？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -568,7 +568,7 @@
   },
   "A Journey Beyond#056": {
    "src": "Lucio's right! Change of plan. Lucio, help me hold it in place.",
-   "dst": "",
+   "dst": "Lucio 說得對！改變計畫。Lucio，幫我把它固定住。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -578,7 +578,7 @@
   },
   "A Journey Beyond#057": {
    "src": "Aledar, you know what to do.",
-   "dst": "",
+   "dst": "Aledar，你知道該怎麼做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -588,7 +588,7 @@
   },
   "A Journey Beyond#058": {
    "src": "{u}, come with me! Cast a spell to block the cave's entrance so the monster can't leave.",
-   "dst": "",
+   "dst": "{u}，跟我來！施一個法術把洞口封住，別讓那隻怪物跑出去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -598,7 +598,7 @@
   },
   "A Journey Beyond#059": {
    "src": "I'll block it from attacking, you block it up with a spell.",
-   "dst": "",
+   "dst": "我來擋住它的攻擊，你用法術把出口堵起來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -608,7 +608,7 @@
   },
   "A Journey Beyond#060": {
    "src": "They won't be able to hold it for long.",
-   "dst": "",
+   "dst": "他們撐不了多久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -618,7 +618,7 @@
   },
   "A Journey Beyond#061": {
    "src": "Ready?! Cast any spell!",
-   "dst": "",
+   "dst": "準備好了嗎？！隨便施一個法術！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -628,7 +628,7 @@
   },
   "A Journey Beyond#062": {
    "src": "Lucio, Elphaba! Run!",
-   "dst": "",
+   "dst": "Lucio、Elphaba！快跑！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -638,7 +638,7 @@
   },
   "A Journey Beyond#063": {
    "src": "Plan a way of killing the beast.",
-   "dst": "",
+   "dst": "想出殺死那隻野獸的辦法。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -648,7 +648,7 @@
   },
   "A Journey Beyond#064": {
    "src": "We all here? Where's Lucio?",
-   "dst": "",
+   "dst": "大家都在嗎？Lucio 呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -658,7 +658,7 @@
   },
   "A Journey Beyond#065": {
    "src": "Guys... Any help? I'm stuck!",
-   "dst": "",
+   "dst": "各位……幫個忙？我卡住了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -668,7 +668,7 @@
   },
   "A Journey Beyond#066": {
    "src": "Phew, here. Let me get you out.",
-   "dst": "",
+   "dst": "呼，來。我把你拉出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -678,7 +678,7 @@
   },
   "A Journey Beyond#067": {
    "src": "I'm sorry, team. I've never seen a monster like that before.",
-   "dst": "",
+   "dst": "對不起，各位。我從來沒見過那種怪物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -688,7 +688,7 @@
   },
   "A Journey Beyond#068": {
    "src": "It looks like our problem isn't fire power. It's something else. It's like our weapons just didn't affect it at all.",
-   "dst": "",
+   "dst": "看樣子我們的問題不是火力，是別的東西。我們的武器好像對它完全沒有作用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -698,7 +698,7 @@
   },
   "A Journey Beyond#069": {
    "src": "I know someone who might be able to help us. A blacksmith on {p}.",
-   "dst": "",
+   "dst": "我知道有個人也許幫得上忙。{p} 上的一位鐵匠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -708,7 +708,7 @@
   },
   "A Journey Beyond#070": {
    "src": "{u}, I've written the house's coordinates on your book. Meet us there.",
-   "dst": "",
+   "dst": "{u}，我把那間屋子的座標寫在你的書上了。我們在那裡會合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -718,7 +718,7 @@
   },
   "A Journey Beyond#071": {
    "src": "Meet the other soldiers at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [{~1}, {~2}, -{~3}] 與其他士兵會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -728,7 +728,7 @@
   },
   "A Journey Beyond#072": {
    "src": "Just in time. We're all here.",
-   "dst": "",
+   "dst": "剛好趕上。大家都到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -738,7 +738,7 @@
   },
   "A Journey Beyond#073": {
    "src": "It looks like the Blacksmith knows what's wrong...",
-   "dst": "",
+   "dst": "看樣子鐵匠知道問題出在哪……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -748,7 +748,7 @@
   },
   "A Journey Beyond#074": {
    "src": "So, Dren. Do you know why we can't damage the beast?",
-   "dst": "",
+   "dst": "那麼，Dren。你知道我們為什麼傷不了那隻野獸嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -758,7 +758,7 @@
   },
   "A Journey Beyond#075": {
    "src": "Certainly! Your issue is elemental. As you know, there are {~} elements...",
-   "dst": "",
+   "dst": "當然！你們的問題出在元素。你們都知道，元素有 {~} 種……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -768,7 +768,7 @@
   },
   "A Journey Beyond#076": {
    "src": "Earth...",
-   "dst": "",
+   "dst": "地……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -778,7 +778,7 @@
   },
   "A Journey Beyond#077": {
    "src": "Fire...",
-   "dst": "",
+   "dst": "火……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -788,7 +788,7 @@
   },
   "A Journey Beyond#078": {
    "src": "Air...",
-   "dst": "",
+   "dst": "風……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -798,7 +798,7 @@
   },
   "A Journey Beyond#079": {
    "src": "Water...",
-   "dst": "",
+   "dst": "水……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -808,7 +808,7 @@
   },
   "A Journey Beyond#080": {
    "src": "And Thunder...",
-   "dst": "",
+   "dst": "還有雷……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -818,7 +818,7 @@
   },
   "A Journey Beyond#081": {
    "src": "But.. There is a hidden element, ❂Darkness..",
-   "dst": "",
+   "dst": "但是……還有一個隱藏的元素，❂黑暗。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -828,7 +828,7 @@
   },
   "A Journey Beyond#082": {
    "src": "In order to damage a creature of Darkness, you must remove that influence from your soul.",
-   "dst": "",
+   "dst": "要傷害一隻黑暗生物，你必須先把那份影響從自己的靈魂裡除掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -838,7 +838,7 @@
   },
   "A Journey Beyond#083": {
    "src": "Some Dark creatures use a sort of synchronous barrier that prevents them being harmed by other creatures influenced with Darkness.",
-   "dst": "",
+   "dst": "有些黑暗生物會張開一種同調屏障，讓同樣受黑暗影響的生物傷不了牠們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -848,7 +848,7 @@
   },
   "A Journey Beyond#084": {
    "src": "In order to purify you, I will need {~} powerful items.",
-   "dst": "",
+   "dst": "為了淨化你們，我需要 {~} 件強大的物品。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -858,7 +858,7 @@
   },
   "A Journey Beyond#085": {
    "src": "Firstly, a shard from a Dernic Beast. There is one living in the depths of the {p}.",
-   "dst": "",
+   "dst": "首先，一片 Dernic Beast 的碎片。{p} 的深處就住著一隻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -868,7 +868,7 @@
   },
   "A Journey Beyond#086": {
    "src": "I will use this to reveal the darkness element in you all.",
-   "dst": "",
+   "dst": "我要用它把你們每個人身上的黑暗元素顯現出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -878,7 +878,7 @@
   },
   "A Journey Beyond#087": {
    "src": "And then, of course, a Light item, to purify all of you...",
-   "dst": "",
+   "dst": "然後，當然還要一件光之物品，用來淨化你們所有人……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -888,7 +888,7 @@
   },
   "A Journey Beyond#088": {
    "src": "Wait... what do you mean a Light item?",
-   "dst": "",
+   "dst": "等等……你說光之物品是什麼意思？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -898,7 +898,7 @@
   },
   "A Journey Beyond#089": {
    "src": "Something from any Light creature would work, you could get some dust from Gavel faries if you wanted...",
-   "dst": "",
+   "dst": "任何光之生物身上的東西都可以，你們想的話，去弄一些 Gavel 精靈的粉塵也行……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -908,7 +908,7 @@
   },
   "A Journey Beyond#090": {
    "src": "Alright. Aledar, you get the darkness item with {u}, and I'll go get the Light item with Lucio.",
-   "dst": "",
+   "dst": "好。Aledar，你跟 {u} 去拿黑暗的物品，我跟 Lucio 去拿光的物品。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -918,7 +918,7 @@
   },
   "A Journey Beyond#091": {
    "src": "Yes ma'am! Let's go !",
-   "dst": "",
+   "dst": "是，長官！走吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -928,7 +928,7 @@
   },
   "A Journey Beyond#092": {
    "src": "Get the Shard with Aledar.",
-   "dst": "",
+   "dst": "跟 Aledar 一起取得碎片。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -938,7 +938,7 @@
   },
   "A Journey Beyond#093": {
    "src": "Here we are, the roots of Corruption. Let's go, {u}!",
-   "dst": "",
+   "dst": "到了，腐敗的根源。走吧，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -948,7 +948,7 @@
   },
   "A Journey Beyond#094": {
    "src": "We found that the caves around the roots are far more complex than we thought...",
-   "dst": "",
+   "dst": "我們發現這些根周圍的洞穴比想像中複雜得多……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -958,7 +958,7 @@
   },
   "A Journey Beyond#095": {
    "src": "There's one with far more powerful creatures... Somewhere... Here!",
-   "dst": "",
+   "dst": "其中有一個裡面的生物強得多……在某個地方……在這裡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -968,7 +968,7 @@
   },
   "A Journey Beyond#096": {
    "src": "What are you waiting for? Let's go!",
-   "dst": "",
+   "dst": "還在等什麼？走啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -978,7 +978,7 @@
   },
   "A Journey Beyond#097": {
    "src": "I don't think we can spell our way across, {u}! We need something like... Wings!",
-   "dst": "",
+   "dst": "我不覺得我們能靠法術過去，{u}！我們需要像是……翅膀那種東西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -988,7 +988,7 @@
   },
   "A Journey Beyond#098": {
    "src": "I've never used wings like this before...",
-   "dst": "",
+   "dst": "我沒用過這種翅膀……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -998,7 +998,7 @@
   },
   "A Journey Beyond#099": {
    "src": "I think if we just hold them and walk normally, it should help us glide across.",
-   "dst": "",
+   "dst": "我想只要拿著它、照平常走，應該就能滑過去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1008,7 +1008,7 @@
   },
   "A Journey Beyond#100": {
    "src": "Don't drop them and don't get hit by the lava geysers, obviously.",
-   "dst": "",
+   "dst": "別鬆手，也別被岩漿噴泉打到，這還用說。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1018,7 +1018,7 @@
   },
   "A Journey Beyond#101": {
    "src": "Don't forget why we are here, we're looking for a creature of darkness. Shout for me if you find one.",
-   "dst": "",
+   "dst": "別忘了我們來做什麼，我們要找的是一隻黑暗生物。找到就喊我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1028,7 +1028,7 @@
   },
   "A Journey Beyond#102": {
    "src": "Go deeper into the cave at [{~}, {~}, -{~}] for the Shard.",
-   "dst": "",
+   "dst": "深入 [{~1}, {~2}, -{~3}] 的洞穴尋找碎片。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1038,7 +1038,7 @@
   },
   "A Journey Beyond#103": {
    "src": "That's our target! Go after it!",
-   "dst": "",
+   "dst": "那就是我們的目標！追上去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1048,7 +1048,7 @@
   },
   "A Journey Beyond#104": {
    "src": "Wait, why isn't it fighting us here? Careful! It might be trapped!",
-   "dst": "",
+   "dst": "等等，牠為什麼不在這裡反擊？小心！牠可能被困住了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1058,7 +1058,7 @@
   },
   "A Journey Beyond#105": {
    "src": "Chase the beast for the Shard.",
-   "dst": "",
+   "dst": "追捕野獸取得碎片。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1068,7 +1068,7 @@
   },
   "A Journey Beyond#106": {
    "src": "Kill the Progenitors to open up the entrance.",
-   "dst": "",
+   "dst": "擊殺 Progenitor 打開入口。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1078,7 +1078,7 @@
   },
   "A Journey Beyond#107": {
    "src": "Kill the Mangled Progeny for the [{~} Corrupted Pearl].",
-   "dst": "",
+   "dst": "擊殺 Mangled Progeny 取得 [{~} Corrupted Pearl]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1088,7 +1088,7 @@
   },
   "A Journey Beyond#108": {
    "src": "Wow, I'm impressed . I honestly thought you would need my help.",
-   "dst": "",
+   "dst": "哇，我服了。我還真以為你會需要我幫忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1098,7 +1098,7 @@
   },
   "A Journey Beyond#109": {
    "src": "Well, we got what we came for. Let's head back to Dren.",
-   "dst": "",
+   "dst": "好啦，該拿的都拿到了。回去找 Dren 吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1108,7 +1108,7 @@
   },
   "A Journey Beyond#110": {
    "src": "Return to the Blacksmith with the Darkness Item.",
-   "dst": "",
+   "dst": "帶著黑暗物品回去找鐵匠。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1118,7 +1118,7 @@
   },
   "A Journey Beyond#111": {
    "src": "Looks like we lucked out on this one. Did you get an item of darkness?",
-   "dst": "",
+   "dst": "看樣子這次我們運氣不錯。黑暗的物品拿到了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1128,7 +1128,7 @@
   },
   "A Journey Beyond#112": {
    "src": "That should do it. Let's see if this will work. Come here !",
-   "dst": "",
+   "dst": "這樣應該就夠了。來看看有沒有用。過來這裡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1138,7 +1138,7 @@
   },
   "A Journey Beyond#113": {
    "src": "It's done! You ought to be free of the dark influence. You ought to be able to break through that barrier that was giving you trouble.",
-   "dst": "",
+   "dst": "好了！你們身上的黑暗影響應該已經去掉了。那個一直擋著你們的屏障，現在應該打得穿了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1148,7 +1148,7 @@
   },
   "A Journey Beyond#114": {
    "src": "Are you sure? I don't feel that different. Well... I guess there's only one way to find out.",
-   "dst": "",
+   "dst": "你確定嗎？我沒覺得有什麼不同。嗯……我想只有一個辦法能知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1158,7 +1158,7 @@
   },
   "A Journey Beyond#115": {
    "src": "Re-open the closed entrance with the other warriors.",
-   "dst": "",
+   "dst": "與其他戰士一起重新打開封住的入口。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1168,7 +1168,7 @@
   },
   "A Journey Beyond#116": {
    "src": "Everyone here? Great! Time to finish what I started!",
-   "dst": "",
+   "dst": "大家都到了嗎？很好！該把我開的頭收尾了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1178,7 +1178,7 @@
   },
   "A Journey Beyond#117": {
    "src": "Lucio! No! When will you learn?",
-   "dst": "",
+   "dst": "Lucio！不要！你什麼時候才學得乖？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1188,7 +1188,7 @@
   },
   "A Journey Beyond#118": {
    "src": "Right, yes. Sorry, what's the plan?",
-   "dst": "",
+   "dst": "好啦好啦。抱歉，計畫是什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1198,7 +1198,7 @@
   },
   "A Journey Beyond#119": {
    "src": "We don't want that thing to escape, it could cause widespread panic.",
-   "dst": "",
+   "dst": "我們不能讓那東西跑出去，會引起大規模恐慌的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1208,7 +1208,7 @@
   },
   "A Journey Beyond#120": {
    "src": "We'll open up a small entrance to get in, and fight it once inside.",
-   "dst": "",
+   "dst": "我們只開一個小入口進去，進去之後再打。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1218,7 +1218,7 @@
   },
   "A Journey Beyond#121": {
    "src": "Fine...",
-   "dst": "",
+   "dst": "好吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1228,7 +1228,7 @@
   },
   "A Journey Beyond#122": {
    "src": "Let's go!",
-   "dst": "",
+   "dst": "走吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1238,7 +1238,7 @@
   },
   "A Journey Beyond#123": {
    "src": "Kill the Black Geist.",
-   "dst": "",
+   "dst": "擊殺 Black Geist。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1248,7 +1248,7 @@
   },
   "A Journey Beyond#124": {
    "src": "We... We actually did it!",
-   "dst": "",
+   "dst": "我們……我們真的做到了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1258,7 +1258,7 @@
   },
   "A Journey Beyond#126": {
    "src": "We have an extremely old map of the mines to help us, but we have no idea what's waiting for us.",
-   "dst": "",
+   "dst": "我們手上有一張非常舊的礦坑地圖可以參考，但完全不知道裡面等著我們的是什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1268,7 +1268,7 @@
   },
   "A Journey Beyond#127": {
    "src": "I want to warn you, this may well be a one way ticket for all of us.",
-   "dst": "",
+   "dst": "我要先提醒你們，這很可能是我們所有人的單程票。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1278,7 +1278,7 @@
   },
   "A Journey Beyond#128": {
    "src": "Yeah right! Check this out!",
-   "dst": "",
+   "dst": "才不會咧！看這個！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1288,7 +1288,7 @@
   },
   "A Journey Beyond#129": {
    "src": "Rocks are one thing, Lucio. The creatures we're about to face require more than brute strength. You need force of mind.",
-   "dst": "",
+   "dst": "石頭是一回事，Lucio。我們接下來要面對的生物，光靠蠻力是不夠的。你需要的是意志力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1298,7 +1298,7 @@
   },
   "A Journey Beyond#130": {
    "src": "Oh my. Maybe this isn't the best idea.",
-   "dst": "",
+   "dst": "我的天。也許這不是什麼好主意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1308,7 +1308,7 @@
   },
   "A Journey Beyond#131": {
    "src": "It's too late now. We've got to finish this mission.",
-   "dst": "",
+   "dst": "現在說這些太遲了。這個任務我們非完成不可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1318,7 +1318,7 @@
   },
   "A Journey Beyond#132": {
    "src": "Explore the Silent Expanse.",
-   "dst": "",
+   "dst": "探索 Silent Expanse。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1328,7 +1328,7 @@
   },
   "A Journey Beyond#133": {
    "src": "Remember the goal Elphie, we must reach the end of the expanse.",
-   "dst": "",
+   "dst": "別忘了目標，Elphie，我們必須抵達這片區域的盡頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1338,7 +1338,7 @@
   },
   "A Journey Beyond#134": {
    "src": "It's still empty here. But it looks like they were here only yesterday.",
-   "dst": "",
+   "dst": "這裡還是空的。可是看起來他們昨天才剛離開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1348,7 +1348,7 @@
   },
   "A Journey Beyond#135": {
    "src": "I thought you said the miners were here hundreds of years ago?",
-   "dst": "",
+   "dst": "你不是說那些礦工是幾百年前的人嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1358,7 +1358,7 @@
   },
   "A Journey Beyond#136": {
    "src": "They were. I don't know why it would be so well presevered. It's as if nothing has touched it.",
-   "dst": "",
+   "dst": "是啊。我不知道為什麼會保存得這麼完好。就好像什麼都沒碰過一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1368,7 +1368,7 @@
   },
   "A Journey Beyond#137": {
    "src": "According to the documents, we need to make our way to the end of the road.",
-   "dst": "",
+   "dst": "根據文件，我們得一路走到這條路的盡頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1378,7 +1378,7 @@
   },
   "A Journey Beyond#138": {
    "src": "Argh! Bugs! Get off!",
-   "dst": "",
+   "dst": "啊！蟲子！走開！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1388,7 +1388,7 @@
   },
   "A Journey Beyond#139": {
    "src": "So much for nothing being here.",
-   "dst": "",
+   "dst": "還說這裡什麼都沒有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1398,7 +1398,7 @@
   },
   "A Journey Beyond#140": {
    "src": "Why are they only going for me?",
-   "dst": "",
+   "dst": "為什麼牠們只找我？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1408,7 +1408,7 @@
   },
   "A Journey Beyond#141": {
    "src": "Aledar, how far is it to the end?",
-   "dst": "",
+   "dst": "Aledar，離盡頭還有多遠？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1418,7 +1418,7 @@
   },
   "A Journey Beyond#142": {
    "src": "I read the same map as you. It didn't even have scale. There should be a bridge ahead, though.",
-   "dst": "",
+   "dst": "我看的地圖跟你一樣。上面連比例尺都沒有。不過前面應該有一座橋。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1428,7 +1428,7 @@
   },
   "A Journey Beyond#143": {
    "src": "Uhh... A destroyed one. And it wasn't cause I blew it up this time!",
-   "dst": "",
+   "dst": "呃……一座毀掉的橋。而且這次不是我炸的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1438,7 +1438,7 @@
   },
   "A Journey Beyond#144": {
    "src": "Hmm, well we will have to go around.",
-   "dst": "",
+   "dst": "唔，那我們只好繞路了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1448,7 +1448,7 @@
   },
   "A Journey Beyond#145": {
    "src": "This doesn't really look like corruption, does it?",
-   "dst": "",
+   "dst": "這看起來不太像腐敗，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1458,7 +1458,7 @@
   },
   "A Journey Beyond#146": {
    "src": "Uhhh... I'm not feeling very wel-... Aahhh!",
-   "dst": "",
+   "dst": "呃……我覺得不太舒——……啊啊啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1468,7 +1468,7 @@
   },
   "A Journey Beyond#147": {
    "src": "Aaahhh! My liver! It took my liver!",
-   "dst": "",
+   "dst": "啊啊啊！我的肝！它拿走了我的肝！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1478,7 +1478,7 @@
   },
   "A Journey Beyond#148": {
    "src": "Elphaba! No! It's an illusion!",
-   "dst": "",
+   "dst": "Elphaba！不要！那是幻覺！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1488,7 +1488,7 @@
   },
   "A Journey Beyond#149": {
    "src": "Where has she gone? ELPHABA?",
-   "dst": "",
+   "dst": "她去哪了？ELPHABA？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1498,7 +1498,7 @@
   },
   "A Journey Beyond#150": {
    "src": "Aledar, maybe we should just double back now?",
-   "dst": "",
+   "dst": "Aledar，也許我們現在就該掉頭？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1508,7 +1508,7 @@
   },
   "A Journey Beyond#151": {
    "src": "Elphaba is an extremely able warrior. We will fight on and find her.",
-   "dst": "",
+   "dst": "Elphaba 是非常有能力的戰士。我們繼續打下去，把她找出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1518,7 +1518,7 @@
   },
   "A Journey Beyond#152": {
    "src": "Do you really think it was just an illusion?",
-   "dst": "",
+   "dst": "你真的覺得那只是幻覺嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1528,7 +1528,7 @@
   },
   "A Journey Beyond#153": {
    "src": "I'm not sure. I hope so.",
-   "dst": "",
+   "dst": "我不確定。我希望是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1538,7 +1538,7 @@
   },
   "A Journey Beyond#154": {
    "src": "What if we're infected too? Shouldn't we just go back?",
-   "dst": "",
+   "dst": "萬一我們也被感染了呢？我們不是該回去嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1548,7 +1548,7 @@
   },
   "A Journey Beyond#155": {
    "src": "We can't, Lucio! We have a mission as you very well know. We continue.",
-   "dst": "",
+   "dst": "不行，Lucio！我們有任務在身，你很清楚。繼續走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1558,7 +1558,7 @@
   },
   "A Journey Beyond#156": {
    "src": "Besides, we might be carrying some of those things too. We can't risk them infesting Wynn.",
-   "dst": "",
+   "dst": "何況我們身上可能也帶著那些東西。不能冒讓它們蔓延到 Wynn 的險。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1568,7 +1568,7 @@
   },
   "A Journey Beyond#157": {
    "src": "Looks like we need to go around to the right, here?",
-   "dst": "",
+   "dst": "看起來我們得從這裡往右繞，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1578,7 +1578,7 @@
   },
   "A Journey Beyond#158": {
    "src": "It feels like something is watching us...",
-   "dst": "",
+   "dst": "感覺有東西在看著我們……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1588,7 +1588,7 @@
   },
   "A Journey Beyond#159": {
    "src": "Aledar, what is this place? You didn't tell me there was a city here.",
-   "dst": "",
+   "dst": "Aledar，這是什麼地方？你沒說過這裡有一座城。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1598,7 +1598,7 @@
   },
   "A Journey Beyond#160": {
    "src": "There is. A big one, too; there's more ahead. But it doesn't look like anyone's home . The map doesn't have a name for it either.",
-   "dst": "",
+   "dst": "有的。而且是很大一座；前面還有更多。不過看起來沒人在家。地圖上也沒給它名字。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1608,7 +1608,7 @@
   },
   "A Journey Beyond#161": {
    "src": "Wait a sec, is that one of the miners? Is she hurt? HEEEEY! YOU OVER THERE!",
-   "dst": "",
+   "dst": "等一下，那是不是其中一個礦工？她受傷了嗎？喂——！那邊那位！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1618,7 +1618,7 @@
   },
   "A Journey Beyond#162": {
    "src": "Lucio, no! It's a trap!",
-   "dst": "",
+   "dst": "Lucio，不要！那是陷阱！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1628,7 +1628,7 @@
   },
   "A Journey Beyond#163": {
    "src": "LUCIO! Don't get closer!",
-   "dst": "",
+   "dst": "LUCIO！別再靠近了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1638,7 +1638,7 @@
   },
   "A Journey Beyond#164": {
    "src": "Wait, what's going on? Why can't I move?",
-   "dst": "",
+   "dst": "等等，怎麼回事？我為什麼動不了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1648,7 +1648,7 @@
   },
   "A Journey Beyond#165": {
    "src": "Please, you have to understand!",
-   "dst": "",
+   "dst": "拜託，你一定要懂！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1658,7 +1658,7 @@
   },
   "A Journey Beyond#166": {
    "src": "It's so dangerous here!",
-   "dst": "",
+   "dst": "這裡好危險！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1668,7 +1668,7 @@
   },
   "A Journey Beyond#167": {
    "src": "We can't live alone like this!",
-   "dst": "",
+   "dst": "我們不能這樣一個人活下去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1678,7 +1678,7 @@
   },
   "A Journey Beyond#168": {
    "src": "It's too painful!",
-   "dst": "",
+   "dst": "太痛苦了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1688,7 +1688,7 @@
   },
   "A Journey Beyond#169": {
    "src": "Listen to me!",
-   "dst": "",
+   "dst": "聽我說！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1698,7 +1698,7 @@
   },
   "A Journey Beyond#170": {
    "src": "You need to come with us!",
-   "dst": "",
+   "dst": "你必須跟我們走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1708,7 +1708,7 @@
   },
   "A Journey Beyond#171": {
    "src": "It's the only way to keep you safe!",
-   "dst": "",
+   "dst": "只有這樣才能保你平安！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1718,7 +1718,7 @@
   },
   "A Journey Beyond#172": {
    "src": "It's the only way to make you happy here!",
-   "dst": "",
+   "dst": "只有這樣你在這裡才會快樂！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1728,7 +1728,7 @@
   },
   "A Journey Beyond#173": {
    "src": "It's the only way to make us feel whole!",
-   "dst": "",
+   "dst": "只有這樣我們才會覺得完整！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1738,7 +1738,7 @@
   },
   "A Journey Beyond#174": {
    "src": "IT'S THE ONLY WAY, DO YOU UNDERSTAND?!",
-   "dst": "",
+   "dst": "只有這一條路，你懂不懂？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1748,7 +1748,7 @@
   },
   "A Journey Beyond#175": {
    "src": "AAAH! S-Stop screaming at me! I can't understand!!",
-   "dst": "",
+   "dst": "啊啊！別、別再對我吼了！我聽不懂！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1758,7 +1758,7 @@
   },
   "A Journey Beyond#176": {
    "src": "WHY CAN'T YOU UNDERSTAND?",
-   "dst": "",
+   "dst": "你為什麼聽不懂？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1768,7 +1768,7 @@
   },
   "A Journey Beyond#177": {
    "src": "AM I NOT SPEAKING CLEARLY?",
-   "dst": "",
+   "dst": "我講得不夠清楚嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1778,7 +1778,7 @@
   },
   "A Journey Beyond#178": {
    "src": "CAN'T YOU HEAR WHAT I'M SAYING?",
-   "dst": "",
+   "dst": "你聽不見我在說什麼嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1788,7 +1788,7 @@
   },
   "A Journey Beyond#179": {
    "src": "YOU STAY OUT OF THIS?",
-   "dst": "",
+   "dst": "你別插手！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1798,7 +1798,7 @@
   },
   "A Journey Beyond#180": {
    "src": "No! How did she disable my spell?!",
-   "dst": "",
+   "dst": "不！她怎麼有辦法解掉我的法術？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1808,7 +1808,7 @@
   },
   "A Journey Beyond#181": {
    "src": "PLEASE, WE NEED THIS!",
-   "dst": "",
+   "dst": "拜託，我們需要這個！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1818,7 +1818,7 @@
   },
   "A Journey Beyond#182": {
    "src": "YOU'LL BE SO MUCH HAPPIER IF YOU COME ALONG!",
-   "dst": "",
+   "dst": "你跟我們走會快樂得多！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1828,7 +1828,7 @@
   },
   "A Journey Beyond#183": {
    "src": "YOU'LL NEVER HAVE TO WORRY AGAIN!",
-   "dst": "",
+   "dst": "你再也不用擔心任何事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1838,7 +1838,7 @@
   },
   "A Journey Beyond#184": {
    "src": "WE'LL KEEP YOU SAFE!",
-   "dst": "",
+   "dst": "我們會保護你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1848,7 +1848,7 @@
   },
   "A Journey Beyond#185": {
    "src": "...aaaah... Stop talking... H-help...",
-   "dst": "",
+   "dst": "……啊啊啊……別再說了……救、救我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1858,7 +1858,7 @@
   },
   "A Journey Beyond#186": {
    "src": "Just please, stand still a little longer!",
-   "dst": "",
+   "dst": "拜託，再站著別動一下下就好！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1868,7 +1868,7 @@
   },
   "A Journey Beyond#187": {
    "src": "We'll bring you someplace warm!",
-   "dst": "",
+   "dst": "我們會帶你去溫暖的地方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1878,7 +1878,7 @@
   },
   "A Journey Beyond#188": {
    "src": "You won't be hunted! We promise! No one hunts us!",
-   "dst": "",
+   "dst": "不會有人追捕你！我們保證！沒有人會追捕我們！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1888,7 +1888,7 @@
   },
   "A Journey Beyond#189": {
    "src": "You agree? YOU AGREE!",
-   "dst": "",
+   "dst": "你答應了？你答應了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1898,7 +1898,7 @@
   },
   "A Journey Beyond#190": {
    "src": "THANK YOU! WE WILL GO TOGETHER!",
-   "dst": "",
+   "dst": "謝謝你！我們一起走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1908,7 +1908,7 @@
   },
   "A Journey Beyond#191": {
    "src": "YOU'LL BE SAFE WITH US!",
-   "dst": "",
+   "dst": "跟我們在一起你會很安全！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1918,7 +1918,7 @@
   },
   "A Journey Beyond#192": {
    "src": "NO MORE FEAR! NO MORE CONCERN!",
-   "dst": "",
+   "dst": "不再有恐懼！不再有煩惱！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1928,7 +1928,7 @@
   },
   "A Journey Beyond#193": {
    "src": "Foreeeever...",
-   "dst": "",
+   "dst": "永——遠……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1938,7 +1938,7 @@
   },
   "A Journey Beyond#194": {
    "src": "No no no!! This is bad, really bad! We have to go ! Quick!",
-   "dst": "",
+   "dst": "不不不！！這下糟了，非常糟！我們得走了！快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1948,7 +1948,7 @@
   },
   "A Journey Beyond#195": {
    "src": "We can't stay here.",
-   "dst": "",
+   "dst": "我們不能待在這裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1958,7 +1958,7 @@
   },
   "A Journey Beyond#196": {
    "src": "Who's that?! Elphaba?! Lucio?!",
-   "dst": "",
+   "dst": "那是誰？！Elphaba？！Lucio？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1968,7 +1968,7 @@
   },
   "A Journey Beyond#197": {
    "src": "Wait, you're just one of the miners. This doesn't feel like an illusion...",
-   "dst": "",
+   "dst": "等等，你只是個礦工。這感覺不像幻覺……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1978,7 +1978,7 @@
   },
   "A Journey Beyond#198": {
    "src": "Look, you need to get out of here. It's not safe- Wait, what's that noise...?",
-   "dst": "",
+   "dst": "聽著，你得離開這裡。這裡不安全——等等，那是什麼聲音……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1988,7 +1988,7 @@
   },
   "A Journey Beyond#199": {
    "src": "OURGURGH!",
-   "dst": "",
+   "dst": "嗚咕嚕嚕！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1998,7 +1998,7 @@
   },
   "A Journey Beyond#200": {
    "src": "AAHHHHHHH!",
-   "dst": "",
+   "dst": "啊啊啊啊啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2008,7 +2008,7 @@
   },
   "A Journey Beyond#201": {
    "src": "Find Aledar, Lucio and Elphaba in the Fallen City.",
-   "dst": "",
+   "dst": "在 Fallen City 找到 Aledar、Lucio 和 Elphaba。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -2018,7 +2018,7 @@
   },
   "A Journey Beyond#202": {
    "src": "{u}! She was completely right. You ought to come with us...",
-   "dst": "",
+   "dst": "{u}！她說得完全沒錯。你也應該跟我們走……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2028,7 +2028,7 @@
   },
   "A Journey Beyond#203": {
    "src": "Find Aledar and Elphaba in the Fallen City.",
-   "dst": "",
+   "dst": "在 Fallen City 找到 Aledar 和 Elphaba。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -2038,7 +2038,7 @@
   },
   "A Journey Beyond#204": {
    "src": "Find Aledar in the Fallen City.",
-   "dst": "",
+   "dst": "在 Fallen City 找到 Aledar。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -2048,7 +2048,7 @@
   },
   "A Journey Beyond#205": {
    "src": "! !",
-   "dst": "",
+   "dst": "！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2058,7 +2058,7 @@
   },
   "A Journey Beyond#206": {
    "src": "I think my leg is broken. I have a potion to fix it, but I dropped it back up there.",
-   "dst": "",
+   "dst": "我的腿好像斷了。我有藥水可以治，但掉在上面了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2068,7 +2068,7 @@
   },
   "A Journey Beyond#207": {
    "src": "I feel a bit better.. But something is still wrong.",
-   "dst": "",
+   "dst": "感覺好一點了……但還是有哪裡不對勁。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2078,7 +2078,7 @@
   },
   "A Journey Beyond#208": {
    "src": "Let's just get out of here, soldier on. There's only one way out.",
-   "dst": "",
+   "dst": "我們先離開這裡，撐著點。出去只有一條路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2088,7 +2088,7 @@
   },
   "A Journey Beyond#209": {
    "src": "Jump with me, come on!",
-   "dst": "",
+   "dst": "跟我一起跳，來吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2098,7 +2098,7 @@
   },
   "A Journey Beyond#210": {
    "src": "Aaaaaaaaaaahhhhhhh!!!",
-   "dst": "",
+   "dst": "啊啊啊啊啊啊啊！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2108,7 +2108,7 @@
   },
   "A Journey Beyond#211": {
    "src": "Urrrgh. {u}, this hasn't gone to plan. According to my map we aren't even half way.",
-   "dst": "",
+   "dst": "唔……{u}，事情完全脫離計畫了。照我的地圖看，我們連一半都還沒走到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2118,7 +2118,7 @@
   },
   "A Journey Beyond#212": {
    "src": "I can't walk. But equally we can't stay here.",
-   "dst": "",
+   "dst": "我走不動了。可是我們也不能待在這裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2128,7 +2128,7 @@
   },
   "A Journey Beyond#213": {
    "src": "The mission must be carried out. The plan has changed but it's imperative we get to the end of the expanse, together.",
-   "dst": "",
+   "dst": "任務一定要完成。計畫變了，但我們非得一起走到這片區域的盡頭不可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2138,7 +2138,7 @@
   },
   "A Journey Beyond#214": {
    "src": "There has to be a way.. Even if you have to push me in this thing!",
-   "dst": "",
+   "dst": "一定有辦法的……就算你得用這台東西把我推過去也一樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2148,7 +2148,7 @@
   },
   "A Journey Beyond#215": {
    "src": "No, I'm not joking. You guard the cart, I'll lead the way.",
-   "dst": "",
+   "dst": "不，我沒在開玩笑。你顧著推車，我來指路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2158,7 +2158,7 @@
   },
   "A Journey Beyond#216": {
    "src": "Escort Aledar through the {p} to {p} at ({~}, -{~}).",
-   "dst": "",
+   "dst": "護送 Aledar 穿過 {p} 前往 ({~1}, -{~2}) 的 {p}。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -2168,7 +2168,7 @@
   },
   "A Journey Beyond#217": {
    "src": "According to the map, the miners started a town a little ahead.",
-   "dst": "",
+   "dst": "照地圖看，礦工在前面不遠處建了一個小鎮。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2178,7 +2178,7 @@
   },
   "A Journey Beyond#218": {
    "src": "Who knows what's left, but it's got to be safer than here.",
-   "dst": "",
+   "dst": "誰知道還剩下什麼，但總比這裡安全。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2188,7 +2188,7 @@
   },
   "A Journey Beyond#219": {
    "src": "I think the Small Monsters will try to Kill me.",
-   "dst": "",
+   "dst": "我猜小型怪物會想殺我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2198,7 +2198,7 @@
   },
   "A Journey Beyond#220": {
    "src": "While the Big Monsters will try to Kill you.",
-   "dst": "",
+   "dst": "大型怪物則會來殺你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2208,7 +2208,7 @@
   },
   "A Journey Beyond#221": {
    "src": "It's going to be on you to make sure we both get through this.",
-   "dst": "",
+   "dst": "能不能讓我們兩個都活著過去，就看你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2218,7 +2218,7 @@
   },
   "A Journey Beyond#222": {
    "src": "The fate of the mission relies on the two of us working together.",
-   "dst": "",
+   "dst": "任務的成敗，就靠我們兩個配合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2228,7 +2228,7 @@
   },
   "A Journey Beyond#223": {
    "src": "Are those... Eyes on the trees?",
-   "dst": "",
+   "dst": "那些是……樹上的眼睛嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2238,7 +2238,7 @@
   },
   "A Journey Beyond#224": {
    "src": "Look out, {u}!",
-   "dst": "",
+   "dst": "小心，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2248,7 +2248,7 @@
   },
   "A Journey Beyond#225": {
    "src": "Watch out, the small monsters are coming for me! I can't fight in this thing!",
-   "dst": "",
+   "dst": "注意，小型怪物往我這邊來了！我坐在這東西上沒辦法打！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2258,7 +2258,7 @@
   },
   "A Journey Beyond#226": {
    "src": "Another one's coming! Pay attention!",
-   "dst": "",
+   "dst": "又來一隻！專心點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2268,7 +2268,7 @@
   },
   "A Journey Beyond#227": {
    "src": "Great job! It looks like they've stopped coming. Let's keep going.",
-   "dst": "",
+   "dst": "幹得好！看起來牠們不來了。繼續走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2278,7 +2278,7 @@
   },
   "A Journey Beyond#228": {
    "src": "They're here again, {u}!",
-   "dst": "",
+   "dst": "牠們又來了，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2288,7 +2288,7 @@
   },
   "A Journey Beyond#229": {
    "src": "Let's keep going! Before they come back.",
-   "dst": "",
+   "dst": "趁牠們回來之前，我們繼續走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2298,7 +2298,7 @@
   },
   "A Journey Beyond#230": {
    "src": "A lot of those small ones are coming for me!",
-   "dst": "",
+   "dst": "好多小的往我這邊衝過來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2308,7 +2308,7 @@
   },
   "A Journey Beyond#231": {
    "src": "This one was close! We're getting close to the town.",
-   "dst": "",
+   "dst": "這隻好險！我們快到鎮上了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2318,7 +2318,7 @@
   },
   "A Journey Beyond#232": {
    "src": "We'll have to stop again! We can't go past so many monsters.",
-   "dst": "",
+   "dst": "我們得再停一次！怪物太多了，過不去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2328,7 +2328,7 @@
   },
   "A Journey Beyond#233": {
    "src": "We're almost there! I can see the town from here!",
-   "dst": "",
+   "dst": "快到了！我從這裡看得到那個鎮！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2338,7 +2338,7 @@
   },
   "A Journey Beyond#234": {
    "src": "Oh no!",
-   "dst": "",
+   "dst": "糟了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2348,7 +2348,7 @@
   },
   "A Journey Beyond#235": {
    "src": "Great job! It looks like they've stopped coming. Let's keep going.",
-   "dst": "",
+   "dst": "幹得好！看起來牠們不來了。繼續走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2358,7 +2358,7 @@
   },
   "A Journey Beyond#236": {
    "src": "Ouch! I got hit! Be careful, {u}!",
-   "dst": "",
+   "dst": "唉唷！我被打到了！小心點，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2368,7 +2368,7 @@
   },
   "A Journey Beyond#237": {
    "src": "Finally, we've arrived... It's not exactly the town on the map.",
-   "dst": "",
+   "dst": "總算到了……跟地圖上的那個鎮不太一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2378,7 +2378,7 @@
   },
   "A Journey Beyond#238": {
    "src": "The lost miners are here... How? they must be hundreds of years old!",
-   "dst": "",
+   "dst": "失蹤的礦工都在這裡……怎麼可能？他們應該是幾百年前的人了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2388,7 +2388,7 @@
   },
   "A Journey Beyond#239": {
    "src": "What is this obelisk? It's.. comforting. I recognise this feeling from my time in Gavel.",
-   "dst": "",
+   "dst": "這個方尖碑是什麼？它……讓人安心。我在 Gavel 的時候感受過這種感覺。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2398,7 +2398,7 @@
   },
   "A Journey Beyond#240": {
    "src": "Maybe.. It's been touched by the light? If so.. It could heal me.",
-   "dst": "",
+   "dst": "說不定……它被光碰觸過？如果是的話……它也許能治好我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2408,7 +2408,7 @@
   },
   "A Journey Beyond#241": {
    "src": "Let's see if it does anything to me...",
-   "dst": "",
+   "dst": "來看看它對我有沒有用……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2418,7 +2418,7 @@
   },
   "A Journey Beyond#242": {
    "src": "It worked... Kind of. I feel at least {~}.. We still have a ways to go.",
-   "dst": "",
+   "dst": "有用……算是吧。我至少覺得 {~}……我們還有一段路要走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2428,7 +2428,7 @@
   },
   "A Journey Beyond#243": {
    "src": "Let's take some time to gather ourselves before we press on. I'll meet you on the other side of town.",
-   "dst": "",
+   "dst": "在繼續之前，我們花點時間整頓一下。我在鎮的另一頭等你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
