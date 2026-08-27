@@ -151,6 +151,38 @@ public final class Languages {
         return bundled().contains(game) ? game : DEFAULT;
     }
 
+    /**
+     * 這一種語言還沒翻到的地方，要不要拿另一種語言頂上；要的話拿哪一種。
+     *
+     * <h2>只在同一個語族之內回退</h2>
+     * 新語言都是從 {@link #DEFAULT} 複製、把譯文清空的骨架，所以剛開張時
+     * 一條都沒有。簡體中文的玩家在這種時候看到繁體是<b>好事</b>——讀得懂，
+     * 而且比看英文原文近得多。
+     *
+     * <p>但日文或俄文的玩家不是。把繁體頂上去，他們會在完全沒有要求的情況下
+     * 突然看到滿畫面中文，那比「維持英文原文」糟得多——原文至少是他們
+     * 本來就在讀的東西。
+     *
+     * <p>所以比的是底線<b>前面</b>那一段：{@code zh_cn} 與 {@code zh_tw}
+     * 同族，會回退；{@code ja_jp}、{@code ru_ru} 不同族，不回退，
+     * 沒翻到的地方就保持原文。
+     *
+     * @return 要墊在底下的語言；不需要墊的話回傳 {@code null}
+     */
+    public static String fallbackFor(String lang) {
+        String clean = normalise(lang);
+        if (clean.equals(DEFAULT)) {
+            return null;                       // 它自己就是底
+        }
+        return base(clean).equals(base(DEFAULT)) ? DEFAULT : null;
+    }
+
+    /** {@code zh_tw} 的語族是 {@code zh}。沒有底線就是整串。 */
+    private static String base(String lang) {
+        int cut = lang.indexOf('_');
+        return cut < 0 ? lang : lang.substring(0, cut);
+    }
+
     /** {@code zh-TW}、{@code ZH_TW} 都當成 {@code zh_tw}。 */
     private static String normalise(String lang) {
         if (lang == null || lang.isBlank()) {
