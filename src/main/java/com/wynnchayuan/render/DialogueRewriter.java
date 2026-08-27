@@ -273,6 +273,28 @@ public final class DialogueRewriter {
     }
 
     /**
+     * 譯文打到哪裡了。
+     *
+     * <p>原文打了幾成，譯文就出幾成。這樣譯文的出現節奏跟原文一致，
+     * 看起來就像 Wynncraft 自己在打字。
+     *
+     * <p>不會切在佔位符中間——{@code {~1}} 被切成 {@code {~} 之後，
+     * 那一行的佔位符數量就跟原文對不上，整行會靜靜失效。
+     */
+    static String typedSoFar(String full, int typed, int total) {
+        if (total <= 0 || typed >= total) {
+            return full;
+        }
+        int take = (int) Math.round(full.length() * (double) typed / total);
+        take = Math.max(0, Math.min(full.length(), take));
+        int brace = full.lastIndexOf('{', Math.max(0, take - 1));
+        if (brace >= 0 && full.indexOf('}', brace) >= take) {
+            take = brace;
+        }
+        return full.substring(0, take);
+    }
+
+    /**
      * 接下一行時要補回被吃掉的空格。
      *
      * <p>Wynncraft 是在<b>空白處</b>折行的，而那個空白不留在任何一行裡：
@@ -299,10 +321,12 @@ public final class DialogueRewriter {
      */
     private static String line(String text, TranslationStore store, int rows,
             Style style) {
-        String hit = store.lookup(text.strip());
+        String typed = text.strip();
+        String source = typed;
+        String hit = store.lookup(typed);
         if (hit == null) {
-            String full = store.matchPrefix(text.strip());
-            hit = full == null ? null : store.lookup(full);
+            source = store.matchPrefix(typed);
+            hit = source == null ? null : store.lookup(source);
         }
         if (hit == null || hit.isBlank()) {
             return null;
@@ -311,9 +335,22 @@ public final class DialogueRewriter {
         if (!renderable(hit)) {
             return null;
         }
-        // 塞不進框裡就不換。中文通常比英文短，真的塞不下時，
-        // 讓玩家看見完整的英文，比看見被切掉一半的中文好。
-        return measure(hit, style) <= BODY_LEFT * 2 * rows ? hit : null;
+        int limit = BODY_LEFT * 2 * rows;
+        if (source.equals(typed)) {
+            // 講完了。塞不進框裡就不換——中文通常比英文短，真的塞不下時，
+            // 讓玩家看見完整的英文，比看見被切掉一半的中文好。
+            return measure(hit, style) <= limit ? hit : null;
+        }
+        // 還在逐字打字。譯文也照同樣的進度一個字一個字出來，看起來就跟原文一樣。
+        //
+        // 先前這裡是拿<b>完整</b>譯文去比對「塞不塞得下目前這幾行」——而打到一半時
+        // 通常只有一行，完整譯文要兩行，於是整句退回英文，要等最後一行出現才
+        // 忽然跳成中文。玩家看到的「講到一半翻譯失效」就是這個。
+        String part = typedSoFar(hit, typed.length(), source.length());
+        while (!part.isEmpty() && measure(part, style) > limit) {
+            part = typedSoFar(part, part.length() - 1, part.length());
+        }
+        return part.isEmpty() ? null : part;
     }
 
     /** 名牌：說話者的名字，語料裡本來就有（npc.json）。 */
