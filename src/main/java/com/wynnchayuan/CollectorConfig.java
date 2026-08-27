@@ -55,6 +55,30 @@ public final class CollectorConfig {
     /** PANEL 另開小框；REPLACE 藏掉原文、譯文就地畫；OFF 不翻譯對話。 */
     public enum DialogueMode { PANEL, REPLACE, OFF }
 
+    /**
+     * 譯文截圖：什麼時候拍。
+     *
+     * <p>{@code OFF} 不拍。{@code KEY} 只在按下快捷鍵時拍一張。
+     * {@code AUTO} 每看到一份<b>沒拍過的</b>譯文就自動拍一張，
+     * 一場遊戲上限 200 張——這是給校稿用的，不是備份整個遊戲。
+     */
+    private ShotMode shotMode = ShotMode.KEY;
+
+    /** OFF 不拍；KEY 按鍵才拍；AUTO 看到沒拍過的譯文就拍。 */
+    public enum ShotMode { OFF, KEY, AUTO }
+
+    public ShotMode shotMode() {
+        return shotMode;
+    }
+
+    /** 在 關閉 → 快捷鍵 → 自動 之間輪替。 */
+    public ShotMode cycleShotMode() {
+        ShotMode[] all = ShotMode.values();
+        shotMode = all[(shotMode.ordinal() + 1) % all.length];
+        save();
+        return shotMode;
+    }
+
     /** 對話框與任務追蹤小框是否顯示。與 tooltip 無關，各自獨立。 */
     private boolean showOverlays = true;
 
@@ -602,6 +626,9 @@ public final class CollectorConfig {
                 tooltipMode = o.get("showPanel").getAsBoolean()
                         ? TooltipMode.PANEL : TooltipMode.OFF;
             }
+            if (o.has("shotMode")) {
+                shotMode = ShotMode.valueOf(o.get("shotMode").getAsString());
+            }
             if (o.has("dialogueMode")) {
                 // 舊設定檔沒有這個欄位，維持 PANEL——升上來的人畫面不會突然變樣
                 dialogueMode = DialogueMode.valueOf(o.get("dialogueMode").getAsString());
@@ -700,6 +727,7 @@ public final class CollectorConfig {
             o.addProperty("accentColor", accentColor);
             o.addProperty("dialogueHoldMs", dialogueHoldMs);
             o.addProperty("dialogueMode", dialogueMode.name());
+            o.addProperty("shotMode", shotMode.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());
             com.google.gson.JsonObject positions = new com.google.gson.JsonObject();

@@ -2,9 +2,11 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.DialogueProbe;
 import com.wynnchayuan.render.DialogueOverlay;
 import com.wynntils.handlers.actionbar.ActionBarSegment;
 import com.wynntils.handlers.actionbar.event.ActionBarRenderEvent;
+import com.wynntils.mc.event.SystemMessageEvent;
 import com.wynntils.models.dialogue.actionbar.segments.DialogueSegment;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -42,6 +44,19 @@ public final class ActionBarListener {
     private static final int GRACE = 3;
 
     private int missing = 0;
+
+    /**
+     * action bar 的原始訊息，還沒被任何人動過。
+     *
+     * <p>{@link ActionBarRenderEvent} 拿到的是已經拆成段落的結果，而
+     * {@link com.wynntils.models.dialogue.event.NpcDialogueEvent} 拿到的是
+     * Wynntils 清理過的純文字——對話框那組自訂字型的資訊在那兩步都沒了。
+     * 要弄清楚「保留原本的框、只換裡面的字」做不做得到，只能看這一手資料。
+     */
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public void onGameInfo(SystemMessageEvent.GameInfoReceivedEvent event) {
+        DialogueProbe.record(event.getMessage());
+    }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onActionBarRender(ActionBarRenderEvent event) {

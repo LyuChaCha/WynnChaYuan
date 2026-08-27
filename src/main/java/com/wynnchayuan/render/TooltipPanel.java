@@ -101,6 +101,14 @@ public final class TooltipPanel {
         // 位置我們自己算好了，所以用一個原樣回傳座標的 positioner，
         // 不讓 Minecraft 的預設定位器把面板挪回滑鼠旁邊。
         graphics.renderTooltip(mc.font, components, x, y, EXACT, null);
+        // 記下這一塊在哪，截圖才知道要裁哪裡。名字取自譯文第一行——
+        // 那通常就是物品名稱，當檔名剛好。
+        String title = lines.isEmpty() ? null : lines.get(0).getString();
+        PanelShot.note(x, y, panelW, panelH, title);
+        // 自動模式的判別依據是<b>整份內容</b>而不是標題：同名的裝備會因為
+        // 詞條不同而有不同的譯文，只看標題會只拍到第一件。
+        PanelShot.auto(String.join("\n",
+                lines.stream().map(Component::getString).toList()));
     }
 
     /** 原樣採用呼叫端算好的座標。 */
