@@ -72,10 +72,13 @@ public final class TrackerOverlay {
         }
         Minecraft mc = Minecraft.getInstance();
         int lineHeight = mc.font.lineHeight + 1;
-        int boxH = lines.size() * lineHeight + PADDING * 2;
-        int boxW = 0;
-        for (Component line : lines) {
-            boxW = Math.max(boxW, mc.font.width(line));
+        // 第一行是任務名，其餘是目標。原文那一欄也是這樣分主次的，
+        // 全部畫成同一個大小的話，一眼看不出「現在在做哪個任務」。
+        int nameHeight = Math.round(lineHeight * NAME_SCALE);
+        int boxH = nameHeight + (lines.size() - 1) * lineHeight + PADDING * 2;
+        int boxW = Math.round(mc.font.width(lines.get(0)) * NAME_SCALE);
+        for (int i = 1; i < lines.size(); i++) {
+            boxW = Math.max(boxW, mc.font.width(lines.get(i)));
         }
         boxW += PADDING * 2;
 
@@ -89,9 +92,22 @@ public final class TrackerOverlay {
         Boxes.draw(graphics, x, y, boxW, boxH);
 
         int textY = y + PADDING;
-        for (Component line : lines) {
-            graphics.drawString(mc.font, line, x + PADDING, textY, Colors.TEXT);
+        // 任務名用強調色——就是 F6 裡設定的那個顏色，跟截圖邊框、面板外框同一個，
+        // 想配合 Wynntils 的話在那裡改一次就整組跟著變。
+        graphics.pose().pushMatrix();
+        graphics.pose().scale(NAME_SCALE, NAME_SCALE);
+        graphics.drawString(mc.font, lines.get(0),
+                Math.round((x + PADDING) / NAME_SCALE),
+                Math.round(textY / NAME_SCALE),
+                WynnChaYuan.config().accentARGB());
+        graphics.pose().popMatrix();
+        textY += nameHeight;
+        for (int i = 1; i < lines.size(); i++) {
+            graphics.drawString(mc.font, lines.get(i), x + PADDING, textY, Colors.TEXT);
             textY += lineHeight;
         }
     }
+
+    /** 任務名比目標大多少。1.5 倍在原生與 2 倍 GUI 縮放下都還是整數像素。 */
+    private static final float NAME_SCALE = 1.5f;
 }

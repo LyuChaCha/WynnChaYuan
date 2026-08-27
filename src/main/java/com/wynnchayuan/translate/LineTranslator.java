@@ -1106,7 +1106,15 @@ public final class LineTranslator {
         //
         // Wynncraft 是把數值靠右排的，所以把剩下的差額一併加回最後一個對齊空白，
         // 整行的總寬度就會跟原文相同，右緣自然重合。
-        if (lastAdjusted >= 0 && drift != 0 && !leftAligned) {
+        // ……但只有在這個空白<b>前面真的有標籤</b>時才成立。
+        //
+        // 書卷的標題長這樣：[圖示][偏移][圖示][偏移][書卷名][ 60.0%]。
+        // 那些偏移兩側都是圖示，會被當成欄位交界，而唯一會變短的是<b>後面</b>
+        // 的書卷名——把差額補進它前面的空白，等於把整個標題改成靠右對齊，
+        // 中文短了多少就往右推多少。沒有 [60.0%] 的書卷剛好沒有這個空白，
+        // 所以只有一部分書卷歪掉，看起來像隨機發生。
+        if (lastAdjusted >= 0 && drift != 0 && !leftAligned
+                && labelled(out, lastAdjusted)) {
             Piece p = out.get(lastAdjusted);
             out.set(lastAdjusted,
                     Piece.space(narrowed(p.spacePx(), p.spacePx() - drift), p.style()));
@@ -1153,7 +1161,8 @@ public final class LineTranslator {
     private static List<Piece> settle(List<Piece> pieces, StyledText original) {
         int last = -1;
         for (int i = 0; i < pieces.size(); i++) {
-            if (isAlignSpace(pieces, i) && !isBacktrack(pieces.get(i))) {
+            if (isAlignSpace(pieces, i) && !isBacktrack(pieces.get(i))
+                    && labelled(pieces, i)) {
                 last = i;      // 負偏移是疊字用的，見 isBacktrack
             }
         }
@@ -1173,6 +1182,33 @@ public final class LineTranslator {
         out.set(last, Piece.space(narrowed(p.spacePx(), p.spacePx() + shortfall),
                                   p.style()));
         return out;
+    }
+
+    /**
+     * 這個空白前面有沒有<b>真正的文字</b>——不是圖示，也不是偏移。
+     *
+     * <p>「把殘差補回最後一個對齊欄」這件事，前提是那個欄位左邊有一個
+     * 不會動的標籤（{@code Health}、{@code Class:}），右邊是靠右排的數值。
+     * 前面只有圖示的話，這一行根本沒有欄位可言——它是標題，補下去只會
+     * 把整行往右推。
+     *
+     * <p>圖示與偏移都落在私人使用區，不是字母也不是數字，所以用
+     * {@link Character#isLetterOrDigit} 就分得出來。
+     */
+    static boolean labelled(List<Piece> pieces, int index) {
+        for (int i = 0; i < index && i < pieces.size(); i++) {
+            Piece p = pieces.get(i);
+            if (p.isSpace()) {
+                continue;
+            }
+            String text = p.orig() == null ? null : p.orig().getString();
+            for (int k = 0; text != null && k < text.length(); k++) {
+                if (Character.isLetterOrDigit(text.charAt(k))) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /** 兩側都有實際文字的空白，才是欄位交界。 */
