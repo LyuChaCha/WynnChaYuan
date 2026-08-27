@@ -72,7 +72,7 @@ public final class SettingsScreen extends Screen {
     }
 
     private int dataY() {
-        return TOP - 20 + cardH(5) + 20 + 20;   // 翻譯卡底部 + 間距 + 卡片標題
+        return TOP - 20 + cardH(6) + 20 + 20;   // 翻譯卡底部 + 間距 + 卡片標題
     }
 
     @Override
@@ -137,6 +137,11 @@ public final class SettingsScreen extends Screen {
         row(right, TOP + rowH() * 4, this::overlayLabel, b -> {
             WynnChaYuan.config().toggleOverlays();
             b.setMessage(overlayLabel());
+        });
+
+        row(right, TOP + rowH() * 5, this::shotLabel, b -> {
+            WynnChaYuan.config().cycleShotMode();
+            b.setMessage(shotLabel());
         });
 
         // ---- 資料 ----
@@ -227,6 +232,15 @@ public final class SettingsScreen extends Screen {
             case OFF -> "關閉";
         };
         return Component.literal("任務對話：" + name);
+    }
+
+    private Component shotLabel() {
+        String name = switch (WynnChaYuan.config().shotMode()) {
+            case OFF -> "關閉";
+            case KEY -> "按 F8 拍";
+            case AUTO -> "自動";
+        };
+        return Component.literal("譯文截圖：" + name);
     }
 
     private Component overlayLabel() {
@@ -325,7 +339,7 @@ public final class SettingsScreen extends Screen {
 
         // 卡片要墊在按鈕底下，所以先於 super.render
         Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(6));
-        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(5));
+        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(6));
         Cards.panel(g, right - 8, dataY - 20, COL_W + 16, cardH(4));
 
         super.render(g, mouseX, mouseY, delta);
