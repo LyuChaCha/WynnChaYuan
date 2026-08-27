@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Dark Descent",
   "count": 49,
-  "translated": 0,
+  "translated": 49,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Dark Descent#000": {
    "src": "Talk to General Graken at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 [{~}, {~}, -{~}] 與 Graken 將軍交談",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -18,7 +18,7 @@
   },
   "The Dark Descent#001": {
    "src": "Ah, hello there chap! I must say, I didn't expect to see a part of the old {p} regiment over 'ere.",
-   "dst": "",
+   "dst": "啊，你好啊，仁兄！我得說，真沒想到會在這兒見到 {p} 老部隊的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -28,7 +28,7 @@
   },
   "The Dark Descent#002": {
    "src": "I am General Graken, leader of the {p} militia. Charmed to meet you!",
-   "dst": "",
+   "dst": "我是 Graken 將軍，{p} 民兵團的頭頭。幸會幸會！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -38,7 +38,7 @@
   },
   "The Dark Descent#003": {
    "src": "You've seen all the bloody zombies faffing about everywhere, yes? They're all seeming to come from this massive skull.",
-   "dst": "",
+   "dst": "那些到處晃來晃去的該死殭屍你都看到了吧？牠們似乎全是從那個巨大的骷髏頭裡冒出來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -48,7 +48,7 @@
   },
   "The Dark Descent#004": {
    "src": "I'm putting together a crack team for an expedition inside, but we haven't got any bleedin' idea what's down there!",
-   "dst": "",
+   "dst": "我正在組一支精銳小隊要進去探一探，可我們對底下有什麼東西一點頭緒都沒有！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -58,7 +58,7 @@
   },
   "The Dark Descent#005": {
    "src": "If you're up for it, chap, we could absolutely do with some recon 'round the old town, look for clues and the like.",
-   "dst": "",
+   "dst": "你要是願意，仁兄，我們非常需要有人在老城區偵察一下，找找線索之類的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -68,7 +68,7 @@
   },
   "The Dark Descent#006": {
    "src": "I took a gander earlier, and one of the ol' houses caught my eye - it had a bloomin' great skull right over the door!",
-   "dst": "",
+   "dst": "我稍早去瞧了一眼，有一棟老房子引起了我的注意——門上頭掛著一顆大得驚人的骷髏頭！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -78,7 +78,7 @@
   },
   "The Dark Descent#007": {
    "src": "I didn't have time to look in proper, but I'd start the investigation there, chap.",
-   "dst": "",
+   "dst": "我沒時間仔細看，不過要查我就從那裡查起，仁兄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -88,7 +88,7 @@
   },
   "The Dark Descent#008": {
    "src": "It's just south of here. The house still had solid wood boarding in it, despite the age, so look lively, chum!",
-   "dst": "",
+   "dst": "就在這裡的南邊。那房子這麼多年了，木板居然還很結實，所以打起精神，老弟！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -98,7 +98,7 @@
   },
   "The Dark Descent#009": {
    "src": "Investigate the house in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "調查 {p} 的那棟房子，座標 [{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -108,7 +108,7 @@
   },
   "The Dark Descent#010": {
    "src": "Oh, sod it, I knew I was forgetting something! Steady there, chum! I'm on my way!",
-   "dst": "",
+   "dst": "噢，糟了，我就知道我忘了什麼！撐住，老弟！我馬上過去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -118,7 +118,7 @@
   },
   "The Dark Descent#011": {
    "src": "Drat! Too late, it seems. Yes, I forgot to mention the floor was in poor condition. Up here! You took quite the tumble, are you alright?",
-   "dst": "",
+   "dst": "該死！看來是晚了一步。是的，我忘了說地板狀況很糟。往上看！你摔得可不輕，還好吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -128,7 +128,7 @@
   },
   "The Dark Descent#012": {
    "src": "Well, there's some good news, I suppose. Still though, seems I sent you a ticket to a bit of a sticky wicket! Do you see a way out anywhere down there?",
-   "dst": "",
+   "dst": "嗯，我想這也算有點好消息。不過話說回來，我好像把你送進了個相當棘手的局面！你在下面看得到出路嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -138,7 +138,7 @@
   },
   "The Dark Descent#013": {
    "src": "There's a tunnel? Aha, spiffing! I suggest you take it immediately. I'll have to return to my post now, post-haste!",
-   "dst": "",
+   "dst": "有條隧道？啊哈，好極了！我建議你立刻走那條路。我現在得趕緊回崗位上了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -148,7 +148,7 @@
   },
   "The Dark Descent#014": {
    "src": "Good luck, chum! Now, back, you cads! Back I say!",
-   "dst": "",
+   "dst": "祝你好運，老弟！好了，退後，你們這些傢伙！我叫你們退後！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158,7 +158,7 @@
   },
   "The Dark Descent#015": {
    "src": "Keheh... Come further, little human... Step into the shadows...",
-   "dst": "",
+   "dst": "嘿嘿……再走近一點，小小的人類……走進陰影裡……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -168,7 +168,7 @@
   },
   "The Dark Descent#016": {
    "src": "Explore the tunnel in the basement of the house.",
-   "dst": "",
+   "dst": "探索房子地下室裡的隧道。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -178,7 +178,7 @@
   },
   "The Dark Descent#017": {
    "src": "Investigate the strange dark realm.",
-   "dst": "",
+   "dst": "調查那個詭異的黑暗領域。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -188,7 +188,7 @@
   },
   "The Dark Descent#018": {
    "src": "Welcome...",
-   "dst": "",
+   "dst": "歡迎……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -198,7 +198,7 @@
   },
   "The Dark Descent#019": {
    "src": "Scout! Report your findings, immediately! How many corrupteds are coming?",
-   "dst": "",
+   "dst": "斥候！立刻回報你的發現！有多少墮落者要來？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -208,7 +208,7 @@
   },
   "The Dark Descent#020": {
    "src": "I...there...too many...th-thousands, at...at least...",
-   "dst": "",
+   "dst": "我……那裡……太多了……幾、幾千個，至少……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -218,7 +218,7 @@
   },
   "The Dark Descent#021": {
    "src": "Thousands...? This is far worse than I expected. Men! Prepare for-",
-   "dst": "",
+   "dst": "幾千……？這比我預想的糟得多。弟兄們！準備——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -228,7 +228,7 @@
   },
   "The Dark Descent#022": {
    "src": "No point...we're...doomed...",
-   "dst": "",
+   "dst": "沒有用的……我們……完了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -238,7 +238,7 @@
   },
   "The Dark Descent#023": {
    "src": "Wait, w-what's going on? What's happening to you?!",
-   "dst": "",
+   "dst": "等等，怎、怎麼回事？你到底怎麼了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -248,7 +248,7 @@
   },
   "The Dark Descent#024": {
    "src": "Please, stop this! Whoever you are, leave me and my family in peace! What did we ever do to deserve this?!",
-   "dst": "",
+   "dst": "拜託，住手！不管你是誰，放過我和我的家人！我們到底做錯了什麼要遭這種罪？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -258,7 +258,7 @@
   },
   "The Dark Descent#025": {
    "src": "Ah, but if you had only said so sooner! They have already left this mortal coil...oh, what a shame.",
-   "dst": "",
+   "dst": "啊，可惜你沒早點說！他們早已離開這副凡人的軀殼了……噢，真是遺憾。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -268,7 +268,7 @@
   },
   "The Dark Descent#026": {
    "src": "Y-you...I thought they...oh, god, no...",
-   "dst": "",
+   "dst": "你、你這個……我以為他們……噢，天啊，不……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -278,7 +278,7 @@
   },
   "The Dark Descent#027": {
    "src": "Hush now. I will ensure that you and your family are reunited. You will even be able to partake in...keheh...family outings, under my watchful eye...",
-   "dst": "",
+   "dst": "別出聲。我會讓你和你的家人團聚。你們甚至還能一起……嘿嘿……在我的注視底下，出門走走……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -288,7 +288,7 @@
   },
   "The Dark Descent#028": {
    "src": "Wha...you mean... N-no, please! I don't want to hurt anyone! I don't want to die!!",
-   "dst": "",
+   "dst": "什……你是說……不、不要，拜託！我不想傷害任何人！我不想死！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -298,7 +298,7 @@
   },
   "The Dark Descent#029": {
    "src": "Aha, naive girl. How cute, you believe you have a choice in the matter. What you want, is not what I need.",
-   "dst": "",
+   "dst": "啊哈，天真的姑娘。真可愛，你以為這件事你有得選。你想要什麼，並不是我需要什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -308,7 +308,7 @@
   },
   "The Dark Descent#030": {
    "src": "Heheh...do you see now?",
-   "dst": "",
+   "dst": "嘿嘿……現在看明白了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -318,7 +318,7 @@
   },
   "The Dark Descent#031": {
    "src": "Do you see how easily this place fell? How quickly I became its master? And how I could simply dispose of you without a second thought?",
-   "dst": "",
+   "dst": "看見這地方倒得多輕易了嗎？我多快就成了它的主人？而我又能多麼隨意地把你處理掉，連想都不必想？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -328,7 +328,7 @@
   },
   "The Dark Descent#032": {
    "src": "Hundreds slaughtered in mere moments... only to rise again as my soldiers in infinite amounts.",
-   "dst": "",
+   "dst": "幾百人在轉眼間被屠盡……只為了再站起來，成為我數之不盡的士兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -338,7 +338,7 @@
   },
   "The Dark Descent#033": {
    "src": "You can barely keep them at bay on the surface, and yet you think you can enter my own domain, to challenge me in the Underworld?",
-   "dst": "",
+   "dst": "你們在地面上勉強擋著都吃力，卻以為自己能踏進我的領地，到冥界來挑戰我？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -348,7 +348,7 @@
   },
   "The Dark Descent#034": {
    "src": "You will fail, and I will be free to string your body up like a puppet and make you dance for me.",
-   "dst": "",
+   "dst": "你會失敗，而我將能把你的身體像傀儡一樣吊起來，讓你為我起舞。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -358,7 +358,7 @@
   },
   "The Dark Descent#035": {
    "src": "So enter the mouth of the skull, soldier, make your way below the ground. I look forward to our next meeting, keheheh...",
-   "dst": "",
+   "dst": "所以走進那顆骷髏的嘴裡吧，士兵，往地底下去。我很期待我們的下一次見面，嘿嘿嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -368,7 +368,7 @@
   },
   "The Dark Descent#036": {
    "src": "Leave the strange dark realm.",
-   "dst": "",
+   "dst": "離開那個詭異的黑暗領域。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -378,7 +378,7 @@
   },
   "The Dark Descent#037": {
    "src": "Return the ruby to Graken at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "把紅寶石帶回 [{~}, {~}, -{~}] 交給 Graken",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -388,7 +388,7 @@
   },
   "The Dark Descent#038": {
    "src": "Return to your world, now. And if you still want to challenge me... I'll be waiting.",
-   "dst": "",
+   "dst": "現在，回你的世界去。如果你還想挑戰我……我會等著。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -398,7 +398,7 @@
   },
   "The Dark Descent#039": {
    "src": "Hey! Come on, come over here! Quit milling about with the zombies, chap!",
-   "dst": "",
+   "dst": "嘿！過來，快過來這邊！別跟殭屍們混在一起晃了，仁兄！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -408,7 +408,7 @@
   },
   "The Dark Descent#040": {
    "src": "Oi! Hallo?! Chum? Why're you wandering round all bog-eyed? Come back to me now!",
-   "dst": "",
+   "dst": "喂！哈囉？！老弟？你眼神呆滯地到處亂走做什麼？快回神啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -418,7 +418,7 @@
   },
   "The Dark Descent#041": {
    "src": "Come on, pip pip! Let's see a bit more colour in your eyes- There we are! Back now, chap?",
-   "dst": "",
+   "dst": "振作點，打起精神！讓我看看你眼裡多點血色——這就對了！回來了嗎，仁兄？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -428,7 +428,7 @@
   },
   "The Dark Descent#042": {
    "src": "Capital! You had me quite worried for a spot, there. Do bubble about just what went on down there, mm?",
-   "dst": "",
+   "dst": "好極了！你剛才可把我嚇得不輕。來，好好說說底下究竟發生了什麼事，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -438,7 +438,7 @@
   },
   "The Dark Descent#043": {
    "src": "But, you were stumbling about like a senile biddy, eyes blank as cream, and you kept muttering something about a Charon.",
-   "dst": "",
+   "dst": "不過呢，你當時像個老糊塗一樣跌跌撞撞，眼睛白得像奶油，嘴裡一直唸著什麼 Charon。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -448,7 +448,7 @@
   },
   "The Dark Descent#044": {
    "src": "I'm supposing he was the one who took you for a spin there? Well, you certainly haven't carked it, so I might call this operation a jolly good success!",
-   "dst": "",
+   "dst": "我猜就是他把你拖去繞了那一圈？嗯，你到底沒送命，所以這次行動我就當它是圓滿成功了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -458,7 +458,7 @@
   },
   "The Dark Descent#045": {
    "src": "Your discoveries fit in jolly-well with what we already know - and I'm convinced. To stop all these bleedin' zombos, we're going to have to go down under.",
-   "dst": "",
+   "dst": "你的發現跟我們既有的情報吻合得很好——我信了。要擋住這些該死的殭屍，我們非下去不可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -468,7 +468,7 @@
   },
   "The Dark Descent#046": {
    "src": "Preliminary expeditions have brought back some real nasty bits, brains and such - but also some fancy-as-you-like jewellery!",
-   "dst": "",
+   "dst": "先遣隊帶回來一些很噁心的東西，腦漿之類的——不過也帶回了些相當漂亮的珠寶！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -478,7 +478,7 @@
   },
   "The Dark Descent#047": {
    "src": "Take some with you, remind you what we're up against. But keep your eyes on the prize!",
-   "dst": "",
+   "dst": "拿幾件走吧，提醒你我們面對的是什麼。不過眼睛要盯著正事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -488,7 +488,7 @@
   },
   "The Dark Descent#048": {
    "src": "When you're ready, I'd be chuffed to have you along again in the expedition down into the depths, old bean!",
-   "dst": "",
+   "dst": "等你準備好了，我很樂意再請你一起加入那趟深入地底的遠征，老兄！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",

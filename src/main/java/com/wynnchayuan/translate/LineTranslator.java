@@ -1074,7 +1074,7 @@ public final class LineTranslator {
      * <p>只補「兩側都有文字」的空白：行尾的留白邊距、行首的縮排都不是欄位
      * 交界，動它們只會讓整行位移。
      */
-    private static List<Piece> alignColumns(List<Piece> pieces, boolean leftAligned) {
+    static List<Piece> alignColumns(List<Piece> pieces, boolean leftAligned) {
         List<Piece> out = new ArrayList<>(pieces.size());
         int drift = 0;
         int lastAdjusted = -1;
@@ -1085,7 +1085,7 @@ public final class LineTranslator {
                 out.add(p);
                 continue;
             }
-            if (isAlignSpace(pieces, i)) {
+            if (isAlignSpace(pieces, i) && !isBacktrack(p)) {
                 // 不夾在 0 以上。Wynncraft 自己就在用負間隔——坐騎的
                 // 屬性列原文就是「-25px 再 +104px」這種寫法，夾成 0 之後
                 // 整行會多出 20 幾像素，八行一起往右跑。
@@ -1114,6 +1114,29 @@ public final class LineTranslator {
     }
 
     /**
+     * 這個偏移是「往回退」而不是欄距嗎。
+     *
+     * <h2>原料袋的星星</h2>
+     * Wynncraft 的星級是<b>疊</b>出來的：先畫三顆灰色的空星，再用一個負偏移
+     * 退回起點，把彩色的實星疊上去。原料袋那一行的原文是
+     *
+     * <pre>
+     *   「1 x 」「Ripe Aureate Fruit」「 」「灰星×3」「-23px」「彩星×3」
+     * </pre>
+     *
+     * <p>那個 -23 的值是照<b>灰星的寬度</b>挑的，跟前面的名字有多長無關。
+     * 譯名從 92px 縮到 36px 之後，補償邏輯為了守住整行寬度把它改成 +33，
+     * 於是彩星不再疊在灰星上，而是被推到行尾——畫面上就是「一行有兩組星星」。
+     *
+     * <p>所以負偏移一律原樣保留，累積的差額留給後面第一個正的欄距去吸收；
+     * 整行都沒有正欄距時就讓它短一點。行短一點沒人看得出來，
+     * 疊字散開是一眼就看到的。
+     */
+    private static boolean isBacktrack(Piece space) {
+        return space.spacePx() < 0;
+    }
+
+    /**
      * 收尾：把<b>量出來</b>的殘差補回最後一個對齊欄。
      *
      * <h2>為什麼算完還要量</h2>
@@ -1129,8 +1152,8 @@ public final class LineTranslator {
     private static List<Piece> settle(List<Piece> pieces, StyledText original) {
         int last = -1;
         for (int i = 0; i < pieces.size(); i++) {
-            if (isAlignSpace(pieces, i)) {
-                last = i;
+            if (isAlignSpace(pieces, i) && !isBacktrack(pieces.get(i))) {
+                last = i;      // 負偏移是疊字用的，見 isBacktrack
             }
         }
         if (last < 0) {
