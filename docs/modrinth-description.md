@@ -20,7 +20,6 @@
 | **Quest tracker** | A translated box on the left |
 | **Ability tree** | Every node, description and archetype |
 | **Screenshots** | `F8` captures the translation panel — copy to clipboard or save to a file |
-| **Bundled CJK font** | Ships with Cubic 11, a pixel font that matches Minecraft's look; switchable |
 
 **Seven languages have a folder.** Traditional Chinese is ~30% done; Simplified
 Chinese, Japanese, Russian, Spanish, Korean, German and French are open and

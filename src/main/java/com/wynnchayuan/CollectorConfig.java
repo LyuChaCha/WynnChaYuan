@@ -67,31 +67,6 @@ public final class CollectorConfig {
     /** OFF 不拍；KEY 按鍵才拍；AUTO 看到沒拍過的譯文就拍。 */
     public enum ShotMode { OFF, KEY, AUTO }
 
-    /**
-     * 譯文用哪一套字型畫。
-     *
-     * <p>{@code CUBIC} 是隨模組附的 Cubic 11——一套為 11px 設計的中文點陣字，
-     * 筆畫跟 Minecraft 原本的像素風格對得上。{@code DEFAULT} 是 Minecraft
-     * 自己的 Unicode 字型：在小尺寸下中文糊成一團，但沒有額外的字型檔。
-     *
-     * <p>預設用 Cubic 11。喜歡原本樣子的人切回去就好，這是外觀不是功能。
-     */
-    private ChineseFont chineseFont = ChineseFont.CUBIC;
-
-    /** CUBIC 用附帶的 Cubic 11；DEFAULT 用 Minecraft 原本的字型。 */
-    public enum ChineseFont { CUBIC, DEFAULT }
-
-    public ChineseFont chineseFont() {
-        return chineseFont;
-    }
-
-    public ChineseFont cycleChineseFont() {
-        chineseFont = chineseFont == ChineseFont.CUBIC
-                ? ChineseFont.DEFAULT : ChineseFont.CUBIC;
-        save();
-        return chineseFont;
-    }
-
     public ShotMode shotMode() {
         return shotMode;
     }
@@ -348,7 +323,9 @@ public final class CollectorConfig {
      * <p>城裡 NPC 站得很密，距離放太遠會一直抓到後排的；曠野找 NPC 又希望
      * 早一點看到。所以做成可調，而不是挑一個折衷值讓兩邊都不好用。
      */
-    private double nametagRange = 24.0;
+    // 預設 6 格。24 格在城裡會把整條街的攤位都掃進來——名牌是「我面前這位是誰」，
+    // 不是「附近有誰」。想掃遠一點的人自己調大就好。
+    private double nametagRange = 6.0;
 
     /**
      * 準心與名牌的夾角上限（度）。
@@ -651,9 +628,6 @@ public final class CollectorConfig {
                 tooltipMode = o.get("showPanel").getAsBoolean()
                         ? TooltipMode.PANEL : TooltipMode.OFF;
             }
-            if (o.has("chineseFont")) {
-                chineseFont = ChineseFont.valueOf(o.get("chineseFont").getAsString());
-            }
             if (o.has("shotMode")) {
                 shotMode = ShotMode.valueOf(o.get("shotMode").getAsString());
             }
@@ -756,7 +730,6 @@ public final class CollectorConfig {
             o.addProperty("dialogueHoldMs", dialogueHoldMs);
             o.addProperty("dialogueMode", dialogueMode.name());
             o.addProperty("shotMode", shotMode.name());
-            o.addProperty("chineseFont", chineseFont.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());
             com.google.gson.JsonObject positions = new com.google.gson.JsonObject();

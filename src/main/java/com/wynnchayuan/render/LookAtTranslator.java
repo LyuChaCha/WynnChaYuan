@@ -12,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -179,7 +180,7 @@ public final class LookAtTranslator {
         // 還在最短顯示時間內，就不重新判斷——這是防閃爍的第一道，
         // 也是唯一一道跟「看向哪裡」完全無關的。
         if (lastShown != null && System.currentTimeMillis() - shownAt < MIN_SHOW_MS) {
-            drawBubble(graphics, mc, lastShown, 1.0f);
+            drawRow(graphics, mc, List.of(lastShown), 1.0f);
             return;
         }
         Entity aimed = findAimedLabel(mc);
@@ -193,7 +194,7 @@ public final class LookAtTranslator {
                     // 這種時候把框收掉會讓它一直閃——維持上一次的譯文，
                     // 直到玩家真的看向別處。
                     lastSeen = System.currentTimeMillis();
-                    drawBubble(graphics, mc, lastShown, 1.0f);
+                    drawRow(graphics, mc, List.of(lastShown), 1.0f);
                 }
                 return;
             }
@@ -206,7 +207,21 @@ public final class LookAtTranslator {
             lastSource = aimed;
             lastTemplate = template;
             lastSeen = System.currentTimeMillis();
-            drawBubble(graphics, mc, translated, 1.0f);
+            // 準心對著的那個排第一，旁邊看得到的一起列出來
+            List<Component> row = new ArrayList<>();
+            row.add(translated);
+            for (Entity other : nearbyLabels(mc, aimed)) {
+                if (other == aimed || row.size() >= MAX_NEARBY) {
+                    continue;
+                }
+                StyledText label = LABELS.get(other);
+                Component near = label == null ? null
+                        : LineTranslator.translate(label, WynnChaYuan.translations());
+                if (near != null) {
+                    row.add(near);
+                }
+            }
+            drawRow(graphics, mc, row, 1.0f);
             return;
         }
         // 視線稍微移開時不要立刻消失 —— 準心對著 NPC 本來就不容易穩住，
@@ -223,7 +238,7 @@ public final class LookAtTranslator {
         if (lastShown != null && hold > 0) {
             float alpha = Fade.alphaFor(lastSeen, hold);
             if (alpha > 0f) {
-                drawBubble(graphics, mc, lastShown, alpha);
+                drawRow(graphics, mc, List.of(lastShown), alpha);
             }
         }
     }
@@ -248,6 +263,89 @@ public final class LookAtTranslator {
      * <p>距離與夾角都可以在設定裡調：城裡 NPC 站得密，錐要收窄；
      * 曠野找人則希望掃過去就跳。沒有一個值兩邊都好用。
      */
+    /**
+     * 這個名牌被牆擋住了嗎。
+     *
+     * <h2>為什麼要問</h2>
+     * 先前只看角度與距離，於是準心對著牆時，牆<b>後面</b>那位商人的名字照樣跳出來。
+     * 玩家看不到他，畫面上卻有他的名字——那讀起來像雜訊，不像資訊。
+     *
+     * <p>射線打的是<b>方塊</b>不是實體：實體那一段已經由 findAimedLabel 處理。
+     * 打到方塊就代表視線被擋住了。
+     *
+     * <p>瞄的是名牌的高度（實體頭頂）而不是腳下——蹲在櫃台後面的商人，
+     * 身體被擋住但名字看得見，那還是該顯示。
+     */
+    private static boolean blocked(Minecraft mc, Vec3 eye, Entity entity) {
+        if (mc.level == null) {
+            return false;
+        }
+        Vec3 head = entity.position().add(0, entity.getBbHeight() + 0.4, 0);
+        net.minecraft.world.level.ClipContext context =
+                new net.minecraft.world.level.ClipContext(
+                        eye, head,
+                        net.minecraft.world.level.ClipContext.Block.VISUAL,
+                        net.minecraft.world.level.ClipContext.Fluid.NONE,
+                        mc.player);
+        return mc.level.clip(context).getType()
+                != net.minecraft.world.phys.HitResult.Type.MISS;
+    }
+
+    /**
+     * 附近所有<b>看得到</b>的名牌，準心對著的排第一，其餘依離視線的遠近。
+     *
+     * <p>上限 {@link #MAX_NEARBY} 個。城裡的攤位一排五六個，全列出來會蓋掉
+     * 半個畫面——而玩家真正在意的永遠是最前面那幾個。
+     */
+    private static List<Entity> nearbyLabels(Minecraft mc, Entity aimed) {
+        double range = WynnChaYuan.config().nametagRange();
+        Vec3 eye = mc.player.getEyePosition();
+        Vec3 look = mc.player.getLookAngle();
+
+        List<Entity> found = new ArrayList<>();
+        Map<Entity, Double> offAxis = new java.util.HashMap<>();
+        for (Map.Entry<Entity, StyledText> e : LABELS.entrySet()) {
+            Entity entity = e.getKey();
+            if (entity == null || !entity.isAlive() || entity == aimed) {
+                continue;
+            }
+            Vec3 delta = entity.position().subtract(eye);
+            double distance = delta.length();
+            if (distance > range || distance < 0.1) {
+                continue;
+            }
+            double along = delta.dot(look);
+            if (along <= 0) {
+                continue;                      // 在身後，玩家看不到
+            }
+            // 視野內：夾角超過這個就不是「畫面上看得到」了
+            if (Math.toDegrees(Math.acos(along / distance)) > VIEW_CONE) {
+                continue;
+            }
+            if (blocked(mc, eye, entity)) {
+                continue;
+            }
+            found.add(entity);
+            offAxis.put(entity, delta.subtract(look.scale(along)).length());
+        }
+        found.sort(java.util.Comparator.comparingDouble(offAxis::get));
+        if (aimed != null) {
+            found.add(0, aimed);
+        }
+        return found.size() > MAX_NEARBY ? found.subList(0, MAX_NEARBY) : found;
+    }
+
+    /** 一次最多列幾個名牌。 */
+    private static final int MAX_NEARBY = 5;
+
+    /**
+     * 算「看得到」的視野角度（半角）。
+     *
+     * <p>比準心那個窄錐大得多——這一層問的是「他在不在畫面上」，
+     * 不是「我是不是在看他」。
+     */
+    private static final double VIEW_CONE = 35.0;
+
     private static Entity findAimedLabel(Minecraft mc) {
         double range = WynnChaYuan.config().nametagRange();
         double minDot = Math.cos(Math.toRadians(WynnChaYuan.config().nametagAngle()));
@@ -269,6 +367,9 @@ public final class LookAtTranslator {
             double distance = entity.position().distanceTo(eye);
             if (distance > range || distance < 0.1) {
                 continue;
+            }
+            if (blocked(mc, eye, entity)) {
+                continue;                      // 牆後面的不算，見 blocked
             }
             AABB box = entity.getBoundingBox().inflate(LABEL_BOX);
             if (box.clip(eye, end).isPresent()) {
@@ -311,33 +412,93 @@ public final class LookAtTranslator {
     }
 
     /** 在準心下方畫一個小框。{@code alpha} 用於停留結束後的淡出。 */
-    private static void drawBubble(GuiGraphics graphics, Minecraft mc,
-                                   Component text, float alpha) {
-        // 名牌本來就是多行的，而且夾著 3D 版面用的對齊偏移 —— 都在這裡處理掉
-        List<Component> lines = Boxes.toLines(text);
-        if (lines.isEmpty()) {
+    /**
+     * 把幾個名牌並排畫在一起。
+     *
+     * <p>準心對著的那個排第一，也畫得亮一點——同時列出五個的時候，
+     * 玩家還是要一眼看出「我現在對著誰」。
+     *
+     * <p>擺不下就少畫幾個，而不是換行：這一排的用途是「掃一眼有誰」，
+     * 擠成兩三行反而比原本更難讀。
+     */
+    private static void drawRow(GuiGraphics graphics, Minecraft mc,
+                                List<Component> boxes, float alpha) {
+        if (boxes.isEmpty()) {
             return;
         }
         int lineHeight = mc.font.lineHeight + 1;
-        int w = 0;
-        for (Component line : lines) {
-            w = Math.max(w, mc.font.width(line));
+        List<List<Component>> rows = new ArrayList<>();
+        List<Integer> widths = new ArrayList<>();
+        int total = 0;
+        int height = 0;
+        for (Component box : boxes) {
+            List<Component> lines = Boxes.toLines(box);
+            if (lines.isEmpty()) {
+                continue;
+            }
+            int w = 0;
+            for (Component line : lines) {
+                w = Math.max(w, mc.font.width(line));
+            }
+            w += 8;
+            if (total > 0 && total + GAP + w > graphics.guiWidth() - 20) {
+                break;                         // 擺不下就到此為止
+            }
+            rows.add(lines);
+            widths.add(w);
+            total += (total > 0 ? GAP : 0) + w;
+            height = Math.max(height, lines.size() * lineHeight + 6);
         }
-        w += 8;
-        int h = lines.size() * lineHeight + 6;
-        int x = (graphics.guiWidth() - w) / 2;
-        int y = graphics.guiHeight() / 2 + 16;   // 準心下方，不擋住準心本身
+        if (rows.isEmpty()) {
+            return;
+        }
+
+        int x = (graphics.guiWidth() - total) / 2;
+        int y = defaultY(graphics);
         if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.NAMETAG)) {
             // 存的是水平中心 —— 名字長短差很多，對齊左緣的話短名會偏左
-            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.NAMETAG) - w / 2;
+            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.NAMETAG) - total / 2;
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.NAMETAG);
         }
 
-        Boxes.draw(graphics, x, y, w, h, alpha);
-        int ty = y + 4;
-        for (Component line : lines) {
-            graphics.drawString(mc.font, line, x + 4, ty, Colors.fade(Colors.TEXT, alpha));
-            ty += lineHeight;
+        for (int i = 0; i < rows.size(); i++) {
+            List<Component> lines = rows.get(i);
+            int w = widths.get(i);
+            // 第一個是準心對著的，其餘淡一點：一排五個時要看得出主從
+            float a = i == 0 ? alpha : alpha * 0.65f;
+            Boxes.draw(graphics, x, y, w, height, a);
+            int ty = y + 4;
+            for (Component line : lines) {
+                graphics.drawString(mc.font, line, x + 4, ty, Colors.fade(Colors.TEXT, a));
+                ty += lineHeight;
+            }
+            x += w + GAP;
         }
     }
+
+    /** 兩個名牌之間的間隔。 */
+    private static final int GAP = 4;
+
+    /**
+     * 沒有自訂位置時擺哪裡：boss bar 底下。
+     *
+     * <p>先前是準心下方，那裡剛好是玩家瞄準時眼睛落點的正下方，
+     * 一排五個會直接擋住視線。boss bar 底下是畫面上本來就用來放
+     * 「跟現在這個場合有關」的資訊的地方。
+     *
+     * <p>高度隨 boss bar 的數量走——Wynncraft 常常同時掛好幾條。
+     * 寫死一個高度的話，沒有 boss bar 時會浮在半空，有三條時又會被蓋住。
+     */
+    private static int defaultY(GuiGraphics graphics) {
+        return TOP_MARGIN;
+    }
+
+    /**
+     * 沒有自訂位置時距畫面頂端的高度。
+     *
+     * <p>抓在一條 boss bar 底下。Wynncraft 幾乎隨時掛著至少一條，而
+     * {@code BossHealthOverlay} 沒有公開的方式問「現在有幾條」——所以這裡
+     * 取一個涵蓋常見情況的固定值，玩家可以在「調整面板位置」裡自己挪。
+     */
+    private static final int TOP_MARGIN = 34;
 }
