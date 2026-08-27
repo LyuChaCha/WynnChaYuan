@@ -39,13 +39,25 @@ import java.util.Optional;
 public final class DialogueProbe {
 
     /** 錄幾份就停。同一句話會被送幾十次（NPC 逐字打字），不擋會寫爆。 */
-    private static final int LIMIT = 4;
+    private static final int LIMIT = 8;
 
     private static int written = 0;
 
     private static Path dir;
 
     private static String lastPlain = "";
+
+    /** 上一次錄到的台詞佔了幾段（也就是框裡有幾行）。 */
+    private static int lastRows = -1;
+
+    /**
+     * 這一輪的 {@link #record} 有沒有真的寫出檔案。
+     *
+     * <p>{@link #after} 靠它決定要不要把取代後的樣子附到同一個檔案裡——
+     * 兩者收到的是<b>同一條</b>訊息（record 掛 HIGHEST、取代掛 LOWEST），
+     * 所以只有 record 寫了的那一輪，after 才有對照的對象。
+     */
+    private static boolean justWrote = false;
 
     private DialogueProbe() {}
 
@@ -87,6 +99,7 @@ public final class DialogueProbe {
     }
 
     public static void record(Component message) {
+        justWrote = false;
         if (dir == null || written >= LIMIT || message == null
                 || !WynnChaYuan.config().collect() || !hasBodyText(message)) {
             return;
@@ -96,10 +109,14 @@ public final class DialogueProbe {
         // 拿它去比，一句話從頭打到尾的長度變化根本不到門檻。
         String plain = message.getString();
         String body = bodyOf(message);
-        if (body.length() < lastPlain.length() + 12) {
+        int rows = rowsOf(message);
+        // 行數變了也要錄。門檻只看長度的話，<b>換行的那一刻</b>剛好錄不到——
+        // 而「超出方格有沒有換行」正是要看的東西。
+        if (body.length() < lastPlain.length() + 12 && rows == lastRows) {
             return;
         }
         lastPlain = body;
+        lastRows = rows;
         written++;
 
         List<String> fonts = new ArrayList<>();
@@ -130,8 +147,49 @@ public final class DialogueProbe {
         try {
             Files.writeString(dir.resolve("dialogue-probe-" + written + ".txt"),
                     sb.toString(), StandardCharsets.UTF_8);
+            justWrote = true;
         } catch (Exception e) {
             // 勘查寫不出來就算了，不要影響遊戲
+        }
+    }
+
+    /**
+     * 就地取代<b>之後</b>的樣子，附在同一個檔案後面。
+     *
+     * <h2>為什麼要錄這一份</h2>
+     * 原始那一份告訴我們 Wynncraft 怎麼排版，卻不會告訴我們<b>我們自己送出去
+     * 的是什麼</b>。譯文沒出現的時候，光看原始那一份完全分不出是查表沒中、
+     * 位移算錯、還是根本沒被呼叫到——三種原因在畫面上長得一模一樣。
+     *
+     * <p>兩份寫在同一個檔案裡，是為了能直接上下對照同一句話。
+     */
+    public static void after(Component message) {
+        if (!justWrote || dir == null || message == null) {
+            return;
+        }
+        justWrote = false;
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(System.lineSeparator())
+          .append("=== 取代後（getString） ===").append(System.lineSeparator())
+          .append(message.getString()).append(System.lineSeparator())
+          .append(System.lineSeparator())
+          .append("=== 取代後逐片段 ===").append(System.lineSeparator());
+        int[] index = {0};
+        message.visit((style, text) -> {
+            sb.append(String.format("  [%02d] font=%-38s color=%-9s text=%s%n",
+                    index[0]++, fontOf(style),
+                    style.getColor() == null ? "-" : style.getColor().serialize(),
+                    describe(text)));
+            return Optional.empty();
+        }, Style.EMPTY);
+
+        try {
+            Files.writeString(dir.resolve("dialogue-probe-" + written + ".txt"),
+                    sb.toString(), StandardCharsets.UTF_8,
+                    java.nio.file.StandardOpenOption.APPEND);
+        } catch (Exception e) {
+            // 同上，寫不出來就算了
         }
     }
 
@@ -145,6 +203,18 @@ public final class DialogueProbe {
             return Optional.empty();
         }, Style.EMPTY);
         return out.toString();
+    }
+
+    /** 台詞被拆成幾段（一段就是框裡的一行）。 */
+    private static int rowsOf(Component message) {
+        int[] rows = {0};
+        message.visit((style, text) -> {
+            if (fontOf(style).contains("/body_") && readable(text)) {
+                rows[0]++;
+            }
+            return Optional.empty();
+        }, Style.EMPTY);
+        return rows[0];
     }
 
     private static String fontOf(Style style) {
