@@ -38,6 +38,9 @@ TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw"
 LANG_ROOT = TRANSLATIONS.parent
 PLACES_FILE = ROOT / "src/main/resources/assets/wynnchayuan/places.json"
 
+# 語言資料夾的名字：zh_tw、ja_jp、en_us……
+LANG_CODE = re.compile(r"[a-z]{2}_[a-z]{2}")
+
 PLACEHOLDERS = ("{#}", "{~}", "{p}", "{u}")
 
 # 看起來想寫佔位符但寫錯的樣子。這種錯在遊戲裡會原樣顯示出來。
@@ -293,10 +296,32 @@ def check_duplicates(files: list[Path]) -> list[Problem]:
     return out
 
 
+def stray_flat_files() -> list[Path]:
+    """語言分層之前的舊路徑上還有沒有檔案。
+
+    譯文按語言分層之後，所有語料都在 ``translations/<語言>/`` 底下。
+    但貢獻者的 fork 常常停在分層之前，於是 PR 改的是
+    ``translations/quest/xxx.json`` 這種舊路徑——GitHub 只會顯示
+    「conflicting」，不會說原因，於是同一個坑一再有人踩進去。
+
+    這裡直接把它變成一條看得懂的錯誤：檔案放錯地方了，搬到 zh_tw/ 底下。
+    """
+    stray = sorted(LANG_ROOT.glob("*.json"))
+    stray += sorted(LANG_ROOT.glob("quest/*.json"))
+    stray += sorted(LANG_ROOT.glob("ability/*.json"))
+    return [f for f in stray if not f.name.startswith("_")]
+
+
 def languages() -> list[Path]:
-    """有哪些語言資料夾。沒有分層時（舊版）就回傳根目錄本身。"""
+    """有哪些語言資料夾。沒有分層時（舊版）就回傳根目錄本身。
+
+    只認 ``xx_yy`` 這種語言代碼。先前是「不是底線開頭的資料夾都算」，
+    於是有人把檔案放回舊的 ``translations/quest/`` 時，那個資料夾會被
+    當成一種語言拿去跑一輪檢查——輸出多一段 ``── quest ──``，
+    看起來像是真的有這個語言。
+    """
     dirs = sorted(d for d in LANG_ROOT.iterdir()
-                  if d.is_dir() and not d.name.startswith("_"))
+                  if d.is_dir() and LANG_CODE.fullmatch(d.name))
     return dirs or [LANG_ROOT]
 
 
@@ -328,6 +353,17 @@ def main(argv: list[str]) -> int:
     errors = 0
     warnings = 0
     files = []
+
+    # 放在舊路徑上的檔案。先報這個——後面每一條檢查都不會提到它，
+    # 而它正是 PR 顯示 conflicting 的真正原因。
+    for f in stray_flat_files():
+        rel = f.relative_to(ROOT).as_posix()
+        print(f"  [錯誤] {rel}")
+        print(f"         這是語言分層之前的舊路徑。譯文現在放在 "
+              f"translations/<語言>/ 底下，")
+        print(f"         請把它搬到 translations/zh_tw/"
+              f"{f.relative_to(LANG_ROOT).as_posix()}。")
+        errors += 1
 
     for lang, group in groups:
         files.extend(group)
