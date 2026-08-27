@@ -67,6 +67,14 @@ public final class DialogueRewriter {
     /** 「 to continue」那一行。它自己就是一句話，跟內文分開查。 */
     private static final String CONTROL = "hud/dialogue/text/control";
 
+    /**
+     * 有附中日韓字型的語言。
+     *
+     * <p>加一個語言就是「放一個 ttf、產六份 JSON、在這裡多一行」。
+     * 沒附字型的語言不會壞掉，只是就地取代那一段會退回預設字型。
+     */
+    private static final java.util.Set<String> SHIPPED = java.util.Set.of("zh_tw");
+
     /** 內文的左緣：從游標往左退這麼多。實機量到的固定值。 */
     private static final int BODY_LEFT = 116;
 
@@ -395,8 +403,20 @@ public final class DialogueRewriter {
         if (clean.isEmpty()) {
             return null;
         }
+        // 字型是<b>按語言</b>分的。同一個碼位在不同地區的寫法不一樣
+        //（「骨」「角」「直」的內部筆畫，中文與日文就不同），所以 Ark Pixel
+        // 才拆成 zh_tw／zh_cn／ja／ko。塞同一份給所有語言，等於讓某些語言
+        // 讀到別的地區的字形。
+        //
+        // 只為<b>真的附了字型</b>的語言配對；其他語言回 null，交給呼叫端退回
+        // 預設字型——位置會掉，但總比整段空白好。之後某個語言開始翻對話時，
+        // 就只是「多一個 ttf + 多六個 JSON」，這裡不用再動。
+        String lang = WynnChaYuan.language();
+        if (!SHIPPED.contains(lang)) {
+            return null;
+        }
         return new FontDescription.Resource(Identifier.fromNamespaceAndPath(
-                WynnChaYuan.MOD_ID, "dialogue/" + clean));
+                WynnChaYuan.MOD_ID, "dialogue/" + lang + "/" + clean));
     }
 
     private static String fontOf(Style style) {
