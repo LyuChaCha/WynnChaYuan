@@ -50,7 +50,7 @@ public final class CollectorConfig {
      * <p>預設仍是 {@code PANEL}。這個模組的前提是不取代原文——多人遊戲裡
      * 跟別人講「我卡在 Lava Springs」需要看得到英文。就地取代是選項，不是預設。
      */
-    private DialogueMode dialogueMode = DialogueMode.PANEL;
+    private DialogueMode dialogueMode = DialogueMode.REPLACE;
 
     /** PANEL 另開小框；REPLACE 藏掉原文、譯文就地畫；OFF 不翻譯對話。 */
     public enum DialogueMode { PANEL, REPLACE, OFF }
@@ -65,7 +65,7 @@ public final class CollectorConfig {
      * <p>預設 {@code OFF}。這個模組的前提是不取代原文，新的取代面一律要
      * 玩家自己打開。{@code BOTH} 是折衷：原文留著，下面補一行譯文。
      */
-    private ChatMode chatMode = ChatMode.OFF;
+    private ChatMode chatMode = ChatMode.BOTH;
 
     /** OFF 不翻；REPLACE 就地取代；BOTH 原文下面再補一行譯文。 */
     public enum ChatMode { OFF, REPLACE, BOTH }
@@ -166,7 +166,7 @@ public final class CollectorConfig {
      * <p>預設 {@code LOOK_AT}：原文名牌不動，注視時另外跳一個小框。
      * 就地取代會讓畫面上再也看不到原文，跟只認得英文名的老玩家就對不上話。
      */
-    private NametagMode nametagMode = NametagMode.LOOK_AT;
+    private NametagMode nametagMode = NametagMode.REPLACE;
 
     /** OFF 不翻；LOOK_AT 注視時顯示小框；REPLACE 直接取代名牌文字。 */
     public enum NametagMode { OFF, LOOK_AT, REPLACE }
