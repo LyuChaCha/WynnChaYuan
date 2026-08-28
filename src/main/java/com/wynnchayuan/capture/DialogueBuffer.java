@@ -45,7 +45,8 @@ public final class DialogueBuffer {
         if (clean.isEmpty()) {
             return null;
         }
-        if (clean.equals(pending)) {
+        clean = stem(clean);
+        if (clean.isEmpty() || clean.equals(pending)) {
             return null;                       // 完全沒變，忽略
         }
         if (pending.isEmpty() || clean.startsWith(pending)) {
@@ -58,6 +59,37 @@ public final class DialogueBuffer {
         pending = clean;
         lastChange = System.currentTimeMillis();
         return done;
+    }
+
+    /**
+     * 拿掉尾端的游標，前綴關係才對得上。
+     *
+     * <h2>為什麼一定要做</h2>
+     * 打字時每一幀尾端都帶一個游標圖示，而呼叫端送進來的是<b>模板</b>——
+     * 圖示已經被換成字面上的 {@code {#}}。於是「…we{#}」跟「…we'{#}」
+     * 不再是前綴關係，每按一個鍵都被當成「換了新的一句」，
+     * 整個打字過程被逐幀記進 {@code captured.json}：一個 121 句的任務
+     * 收出 3183 條，全是前綴碎片。
+     *
+     * <p>類別說明從一開始就寫了要做這件事，只是沒有實作。
+     */
+    private static String stem(String text) {
+        String out = text;
+        while (true) {
+            String was = out;
+            if (out.endsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+                out = out.substring(0,
+                        out.length() - GlyphSplitter.GLYPH_PLACEHOLDER.length());
+            } else if (!out.isEmpty() && GlyphSplitter.isGlyphCodePoint(
+                    out.codePointBefore(out.length()))) {
+                out = out.substring(0,
+                        out.length() - Character.charCount(out.codePointBefore(out.length())));
+            }
+            out = out.stripTrailing();
+            if (out.equals(was)) {
+                return out;
+            }
+        }
     }
 
     /** 對話結束時呼叫，把緩衝區內容送出。 */

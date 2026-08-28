@@ -158,6 +158,24 @@ public final class GlyphSplitterTest {
         }
         check("帶游標的逐字輸入不產生碎片", leaked == 0);
         check("帶游標的逐字輸入最後拿到完整句", line.equals(buf4.flush()));
+
+        // 上面那一段測的是 stripGlyphChars，但<b>正式程式呼叫的是 toTemplate</b>
+        // （見 CaptureListener），游標會變成字面上的 {#} 留在尾端——於是
+        // 「…we{#}」跟「…we'{#}」不再是前綴關係，每按一鍵都被當成新的一句。
+        // 一個 121 句的任務因此在 captured.json 裡收出 3183 條前綴碎片。
+        // 這一段照正式程式的走法再測一次。
+        DialogueBuffer buf5 = new DialogueBuffer();
+        int fragments = 0;
+        for (int i = 1; i <= line.length(); i++) {
+            String cursor = new String(Character.toChars(0xD0000 + (i % 0x74)));
+            String typed = line.substring(0, i) + cursor;
+            if (buf5.offer(GlyphSplitter.toTemplate(
+                    com.wynntils.core.text.StyledText.fromString(typed))) != null) {
+                fragments++;
+            }
+        }
+        check("走 toTemplate 也不產生碎片（實際走法）", fragments == 0);
+        check("走 toTemplate 最後拿到完整句", line.equals(buf5.flush()));
     }
 
     /** 用實際收集到的訊息驗證個資過濾。 */

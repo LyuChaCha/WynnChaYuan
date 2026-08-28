@@ -3,6 +3,28 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.35] - 2026-08-28
+
+### 修正
+
+- **打字過程的每一幀都被當成獨立句子記進 `captured.json`。**
+  {@code DialogueBuffer} 的類別說明從一開始就寫著「比對前必須先移除游標圖示」，
+  但那件事沒有被實作；而呼叫端送進來的是<b>模板</b>，游標已經變成字面上的
+  `{#}`，於是「…we{#}」跟「…we'{#}」不再是前綴關係，每按一個鍵都被當成
+  換了新的一句。一個 121 句的任務因此收出 **3183 條前綴碎片**，
+  擷取檔膨脹到 1 MB。
+
+  原本的測試沒抓到，是因為它呼叫的是 `stripGlyphChars`，而<b>正式程式走的是
+  `toTemplate`</b>——測了一條產品沒在走的路。兩條都補上測試了。
+
+- **King's Recruit 四條原文校正成遊戲內實際的台詞**（維基那份是舊版）：
+  `honors` → `honours`、`It's beautiful....` → `It's beautiful...`、
+  `... That was close. Thanks for the save, recruits!` →
+  `That sure was close... Thanks for the save, {u}!` 等。
+
+  其餘對不上的多半是<b>翻譯團隊已經在 `quest.json` 收過新版</b>，
+  那些留給團隊那一份生效，沒有動。
+
 ## [1.99.34] - 2026-08-28
 
 ### 新增
