@@ -23,7 +23,7 @@ So the **default** is: keep the original, show the translation beside it.
 | Content | How it is shown |
 |---|---|
 | Item tooltips | A separate translation panel next to the tooltip |
-| NPC nameplates | A small box under the crosshair while you look at them |
+| NPC nameplates, floating text | A small box under the crosshair while you look at them |
 | Quest dialogue | A small box at the bottom of the screen |
 | Quest tracker | A small box on the left |
 
@@ -42,9 +42,11 @@ box, keeping its frame, nameplate and portrait — or off.
 |---|---|
 | Item tooltips | A panel beside the tooltip, or written into the tooltip itself |
 | NPC dialogue | Translated **inside Wynncraft's own dialogue box** — frame, nameplate and portrait kept |
-| NPC nameplates | A small box under the crosshair while you look at one |
+| NPC nameplates, floating text | Off / a box while you look at one / replaced in place (switchable). Crafting stations and the "Right-Click with an Empty Hand" prompts count too |
 | Quest tracker | A translated box on the left |
 | Ability tree | Every node, description and archetype |
+| System messages | Quest completions, reward lists, area transitions — the chat ones |
+| Copy chat | Lists recent chat messages; click one to copy (key unbound by default) |
 | Screenshots | **F8** captures the translation panel — clipboard or file |
 
 ## Install
