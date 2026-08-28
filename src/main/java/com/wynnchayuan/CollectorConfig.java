@@ -56,6 +56,21 @@ public final class CollectorConfig {
     public enum DialogueMode { PANEL, REPLACE, OFF }
 
     /**
+     * 聊天視窗裡的<b>伺服器訊息</b>要不要翻。
+     *
+     * <p>任務完成的獎勵清單、進出區域的提示這些都走聊天而不是對話框。
+     * 只碰伺服器發的（見 {@code ChatListener} 的白名單）——別的玩家打的字
+     * 是真人寫的，不翻也不動。
+     *
+     * <p>預設 {@code OFF}。這個模組的前提是不取代原文，新的取代面一律要
+     * 玩家自己打開。{@code BOTH} 是折衷：原文留著，下面補一行譯文。
+     */
+    private ChatMode chatMode = ChatMode.OFF;
+
+    /** OFF 不翻；REPLACE 就地取代；BOTH 原文下面再補一行譯文。 */
+    public enum ChatMode { OFF, REPLACE, BOTH }
+
+    /**
      * 譯文截圖：什麼時候拍。
      *
      * <p>{@code OFF} 不拍。{@code KEY} 只在按下快捷鍵時拍一張。
@@ -210,6 +225,18 @@ public final class CollectorConfig {
 
     public DialogueMode dialogueMode() {
         return dialogueMode;
+    }
+
+    public ChatMode chatMode() {
+        return chatMode;
+    }
+
+    /** 在 關閉 → 就地取代 → 原文加譯文 之間輪替。 */
+    public ChatMode cycleChatMode() {
+        ChatMode[] all = ChatMode.values();
+        chatMode = all[(chatMode.ordinal() + 1) % all.length];
+        save();
+        return chatMode;
     }
 
     /** 在 小框 → 就地取代 → 關閉 之間輪替。 */
@@ -658,6 +685,10 @@ public final class CollectorConfig {
                 // 舊設定檔沒有這個欄位，維持 PANEL——升上來的人畫面不會突然變樣
                 dialogueMode = DialogueMode.valueOf(o.get("dialogueMode").getAsString());
             }
+            if (o.has("chatMode")) {
+                // 舊設定檔沒有這個欄位，維持 OFF——不會有人升級之後聊天突然被換掉
+                chatMode = ChatMode.valueOf(o.get("chatMode").getAsString());
+            }
             if (o.has("showOverlays")) {
                 showOverlays = o.get("showOverlays").getAsBoolean();
             } else if (o.has("showPanel")) {
@@ -756,6 +787,7 @@ public final class CollectorConfig {
             o.addProperty("accentColor", accentColor);
             o.addProperty("dialogueHoldMs", dialogueHoldMs);
             o.addProperty("dialogueMode", dialogueMode.name());
+            o.addProperty("chatMode", chatMode.name());
             o.addProperty("shotMode", shotMode.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());
