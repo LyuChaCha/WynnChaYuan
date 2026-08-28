@@ -125,6 +125,76 @@ public final class PanelShot {
         log("bind：截圖鍵已交給 PanelShot（目前綁定 " + where + "）");
     }
 
+    /**
+     * 目前綁在哪個鍵，給 F6 顯示用。
+     *
+     * <p>先前 F6 寫死「按 F8 拍」。使用者改綁之後那行字還是說 F8，
+     * 而<b>沒改綁</b>的人按 F8 又沒反應（見 {@link #conflict}）——
+     * 兩邊都在騙人。改成讀真正的綁定。
+     */
+    public static String keyName() {
+        if (bound == null) {
+            return "未設定";
+        }
+        try {
+            var key = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+                    .getBoundKeyOf(bound);
+            if (key == null || key.getValue() == com.mojang.blaze3d.platform.InputConstants.UNKNOWN.getValue()) {
+                return "未設定";
+            }
+            return bound.getTranslatedKeyMessage().getString();
+        } catch (Throwable t) {
+            return "未設定";
+        }
+    }
+
+    /**
+     * 有沒有別的按鍵設定也綁在同一個鍵上。
+     *
+     * <h2>為什麼要查</h2>
+     * 實機回報：預設的 F8 按下去<b>完全沒反應</b>，改綁成別的鍵才會動。
+     * 診斷檔（shot-debug.txt）裡從頭到尾只有 bind 那一行——按鍵事件根本沒進來。
+     * 同一個鍵被兩個功能搶著用時就是這樣，而按鍵設定畫面上那個紅色警告
+     * 玩家多半不會特地去翻。
+     *
+     * <p>查得到的只有走原版 {@code KeyMapping} 註冊的那些；自己讀原始輸入的
+     * 模組（Wynntils 就是）查不到。所以這只是「查到就一定有問題」，
+     * 查不到<b>不代表</b>沒問題——因此文案寫的是提醒，不是保證。
+     *
+     * @return 撞在一起的那個功能的名稱；沒撞就回傳 {@code null}
+     */
+    public static String conflict() {
+        if (bound == null) {
+            return null;
+        }
+        try {
+            var mine = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+                    .getBoundKeyOf(bound);
+            if (mine == null
+                    || mine.getValue() == com.mojang.blaze3d.platform.InputConstants.UNKNOWN.getValue()) {
+                return null;
+            }
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            if (mc == null || mc.options == null) {
+                return null;
+            }
+            for (KeyMapping other : mc.options.keyMappings) {
+                if (other == bound) {
+                    continue;
+                }
+                var theirs = net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+                        .getBoundKeyOf(other);
+                if (theirs != null && theirs.getValue() == mine.getValue()) {
+                    return net.minecraft.network.chat.Component
+                            .translatable(other.getName()).getString();
+                }
+            }
+        } catch (Throwable t) {
+            // 查不到就當作沒撞，這只是提醒
+        }
+        return null;
+    }
+
     public static void request() {
         if (WynnChaYuan.config().shotMode() == com.wynnchayuan.CollectorConfig
                 .ShotMode.OFF) {

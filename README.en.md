@@ -47,7 +47,7 @@ box, keeping its frame, nameplate and portrait — or off.
 | Ability tree | Every node, description and archetype |
 | System messages | Quest completions, reward lists, area transitions — the chat ones |
 | Copy chat | Lists recent chat messages; click one to copy (key unbound by default) |
-| Screenshots | **F8** captures the translation panel — clipboard or file |
+| Screenshots | **F9** captures the translation panel — clipboard or file (rebindable) |
 
 ## Install
 

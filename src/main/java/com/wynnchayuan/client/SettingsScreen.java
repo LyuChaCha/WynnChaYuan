@@ -323,7 +323,7 @@ public final class SettingsScreen extends Screen {
     private Component shotLabel() {
         String name = switch (WynnChaYuan.config().shotMode()) {
             case OFF -> "關閉";
-            case KEY -> "按 F8 拍";
+            case KEY -> "按 " + com.wynnchayuan.render.PanelShot.keyName() + " 拍";
             case AUTO -> "自動";
         };
         return Component.literal("譯文截圖：" + name);
@@ -464,8 +464,13 @@ public final class SettingsScreen extends Screen {
                 "對話框停留秒數（0 = 持續顯示）");
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 3 + hintDy(),
                 "NPC 對話與任務追蹤的翻譯小框");
+        // 撞鍵的話這一行就是唯一講得出實話的地方。見 PanelShot#conflict：
+        // 實機回報預設的 F8 按下去沒反應，而原版按鍵畫面上那個紅色警告
+        // 玩家多半不會特地去翻。
+        String clash = com.wynnchayuan.render.PanelShot.conflict();
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 8 + hintDy(),
-                "按鍵到原版設定的 WynnChaYuan 區綁");
+                clash == null ? "按鍵到原版設定的 WynnChaYuan 區綁"
+                              : "截圖鍵和「" + clash + "」撞在一起，請改綁");
 
         Cards.hint(g, this.font, left + 4, dataY + hintDy(), "公會、任務書等 GUI 的文字（預設關）");
         Cards.hint(g, this.font, left + 4, dataY + rowH() + hintDy(), "GitHub 會同步大家的最新翻譯");

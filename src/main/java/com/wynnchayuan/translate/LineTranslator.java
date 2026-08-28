@@ -1766,14 +1766,30 @@ public final class LineTranslator {
         List<Run> orig = runs(original.getComponent());
         List<Run> made = runs(rebuilt);
         // 多行的要一行一行重算——每一行有自己的置中縮排。見 #realignRows。
+        StringBuilder log = null;
         if (rows(orig) > 1 || rows(made) > 1) {
-            Component perRow = realignRows(orig, made, centered);
+            log = new StringBuilder();
+            log.append("  原文行數：").append(rows(orig))
+               .append("  譯文行數：").append(rows(made))
+               .append("  置中：").append(centered)
+               .append(System.lineSeparator());
+            Component perRow = realignRows(orig, made, centered, log);
             if (perRow != null) {
+                FlowedDebug.rows(original.getString(), log.toString());
                 return perRow;
             }
+            log.append("  逐行重算：放棄，改用整段那一路")
+               .append(System.lineSeparator());
         }
         int spaces = countSpaces(made);
         if (spaces == 0 || spaces != countSpaces(orig)) {
+            if (log != null) {
+                log.append("  整段：空白數 原文=").append(countSpaces(orig))
+                   .append(" 譯文=").append(spaces)
+                   .append("，對不上就原樣返回")
+                   .append(System.lineSeparator());
+                FlowedDebug.rows(original.getString(), log.toString());
+            }
             return rebuilt;
         }
         List<Integer> origSeg = segmentWidths(orig);
@@ -1795,7 +1811,19 @@ public final class LineTranslator {
                 drift = 0;
             }
         }
+        if (log != null) {
+            log.append("  整段：").append(describeRow(origSeg, madeSeg, adjust, leading))
+               .append(System.lineSeparator());
+            FlowedDebug.rows(original.getString(), log.toString());
+        }
         return apply(made, adjust);
+    }
+
+    /** 診斷用的一行摘要：兩邊的段寬與算出來的補正。 */
+    private static String describeRow(List<Integer> origSeg, List<Integer> madeSeg,
+                                      int[] adjust, boolean leading) {
+        return "前導=" + leading + " 原文段寬=" + origSeg + " 譯文段寬=" + madeSeg
+                + " 補正=" + java.util.Arrays.toString(adjust);
     }
 
     /** 一段連續的同型內容：不是排版空白，就是文字。 */
@@ -1817,7 +1845,8 @@ public final class LineTranslator {
      *
      * @return 重算後的整段；兩邊行數對不上就回傳 {@code null}，讓呼叫端走舊路
      */
-    private static Component realignRows(List<Run> orig, List<Run> made, boolean centered) {
+    private static Component realignRows(List<Run> orig, List<Run> made,
+                                         boolean centered, StringBuilder log) {
         List<List<Run>> origRows = splitRows(orig);
         List<List<Run>> madeRows = splitRows(made);
         if (origRows.size() != madeRows.size()) {
@@ -1828,15 +1857,25 @@ public final class LineTranslator {
             if (i > 0) {
                 out.append(Component.literal(NL));
             }
-            out.append(realignRow(origRows.get(i), madeRows.get(i), centered));
+            if (log != null) {
+                log.append("  [").append(i).append("] ");
+            }
+            out.append(realignRow(origRows.get(i), madeRows.get(i), centered, log));
         }
         return out;
     }
 
     /** 一行的重算；跟舊 {@code realign} 內層同一套邏輯。 */
-    private static Component realignRow(List<Run> orig, List<Run> made, boolean centered) {
+    private static Component realignRow(List<Run> orig, List<Run> made,
+                                        boolean centered, StringBuilder log) {
         int spaces = countSpaces(made);
         if (spaces == 0 || spaces != countSpaces(orig)) {
+            if (log != null) {
+                log.append("不動：空白數 原文=").append(countSpaces(orig))
+                   .append(" 譯文=").append(spaces)
+                   .append("  譯文=「").append(rowText(made)).append("」")
+                   .append(System.lineSeparator());
+            }
             return apply(made, new int[0]);
         }
         List<Integer> origSeg = segmentWidths(orig);
@@ -1854,7 +1893,23 @@ public final class LineTranslator {
                 drift = 0;
             }
         }
+        if (log != null) {
+            log.append(describeRow(origSeg, madeSeg, adjust, leading))
+               .append("  譯文=「").append(rowText(made)).append("」")
+               .append(System.lineSeparator());
+        }
         return apply(made, adjust);
+    }
+
+    /** 一行裡的實字，診斷用。排版空白不進去，不然滿眼都是看不懂的碼位。 */
+    private static String rowText(List<Run> runs) {
+        StringBuilder sb = new StringBuilder();
+        for (Run r : runs) {
+            if (!r.space()) {
+                sb.append(r.text());
+            }
+        }
+        return sb.toString();
     }
 
     /** 拆成一行一組。換行本身不進任何一組。 */
@@ -2331,7 +2386,7 @@ public final class LineTranslator {
             String[] translated, Style blockStyle,
             List<LineParts.Piece> known) {
         String template = parts.size() == 1 ? parts.get(0).template() : null;
-        List<Style> source = template == null
+        List<RowStyle> source = template == null
                 ? perPartStyles(parts) : uniformStyles(allRuns, template);
         String[] dst = String.join(NL, translated).split(NL, -1);
         if (source.size() != dst.length) {
@@ -2339,18 +2394,63 @@ public final class LineTranslator {
         }
         List<LineParts.Piece> out = new ArrayList<>();
         for (int i = 0; i < dst.length; i++) {
-            Style only = source.get(i);
-            if (only == null || java.util.Objects.equals(only, blockStyle)) {
+            String text = PLACEHOLDER.matcher(dst[i]).replaceAll("").strip();
+            if (!hasContent(text)) {
                 continue;
             }
-            String text = PLACEHOLDER.matcher(dst[i]).replaceAll("").strip();
-            if (!hasContent(text) || covered(known, text, only)) {
+            Style only = source.get(i).only();
+            if (only == null) {
+                only = fallback(source.get(i).dominant(), known, dst[i]);
+            }
+            if (only == null || java.util.Objects.equals(only, blockStyle)
+                    || covered(known, text, only)) {
                 continue;         // 見 #covered：重複登記只會讓貼樣式那一步挑錯
             }
             out.add(new LineParts.Piece(text, only));
         }
         return out;
     }
+
+    /**
+     * 混色的那一行退而求其次：整行套上<b>多數色</b>。
+     *
+     * <h2>為什麼要有這一步</h2>
+     * 「{~} mounts have no food in their feeder」原文是兩種棕色交錯的：
+     *
+     * <pre>
+     *   #8F663D 「mounts have」   #BC8F62 「no food」   #8F663D 「in their feeder」
+     * </pre>
+     *
+     * 三段都是句子中間的片語，翻成中文之後<b>一段都對不上字面</b>
+     * （診斷檔 majorid-debug 裡那三行「譯文裡找不到」）。混色的行不登記，
+     * 於是整行掉回底色——原文一片棕、譯文一片灰，兩行擺在一起就穿幫了。
+     *
+     * <h2>為什麼可以放心貼</h2>
+     * 只在這一行<b>一個重點段都貼不上</b>時才做。貼得上的話那些片語各自有
+     * 自己的顏色，整行套一個色反而會把它們蓋掉——而且重點段是從
+     * 位置 0 起算優先的（見 {@link #appendText}），整行那一條一定先被選中。
+     *
+     * @return 要套的顏色；不該套時回傳 {@code null}
+     */
+    private static Style fallback(Style dominant, List<LineParts.Piece> known, String row) {
+        if (dominant == null) {
+            return null;
+        }
+        for (LineParts.Piece piece : known) {
+            if (!piece.text().isBlank() && row.contains(piece.text())) {
+                return null;               // 這一行有貼得上的重點段，讓它們去貼
+            }
+        }
+        return dominant;
+    }
+
+    /**
+     * 一行原文的顏色狀況。
+     *
+     * @param only     整行只有這一個顏色；混了幾種就是 {@code null}
+     * @param dominant 佔最多字的那個顏色。見 {@link #fallback}
+     */
+    private record RowStyle(Style only, Style dominant) {}
 
     private static final String NL = "\n";
 
@@ -2370,8 +2470,8 @@ public final class LineTranslator {
      * 只是中間多了 {@code {#}} 這類佔位符與換行；把佔位符去掉、只數實字，
      * 兩邊就對得起來。
      */
-    private static List<Style> uniformStyles(List<LineParts.Piece> runs, String template) {
-        List<Style> out = new ArrayList<>();
+    private static List<RowStyle> uniformStyles(List<LineParts.Piece> runs, String template) {
+        List<RowStyle> out = new ArrayList<>();
         int at = 0;                        // 走到第幾個 run
         int eaten = 0;                     // 那個 run 已經用掉幾個實字
         for (String line : template.split(NL, -1)) {
@@ -2379,6 +2479,7 @@ public final class LineTranslator {
             Style only = null;
             boolean mixed = false;
             boolean seen = false;
+            Tally tally = new Tally();
             while (need > 0 && at < runs.size()) {
                 LineParts.Piece run = runs.get(at);
                 int have = solidCount(run.text()) - eaten;
@@ -2394,6 +2495,7 @@ public final class LineTranslator {
                     mixed = true;
                 }
                 int take = Math.min(have, need);
+                tally.add(run.style(), take);
                 need -= take;
                 if (take == have) {
                     at++;
@@ -2402,9 +2504,33 @@ public final class LineTranslator {
                     eaten += take;
                 }
             }
-            out.add(mixed || !seen ? null : only);
+            out.add(new RowStyle(mixed || !seen ? null : only, tally.top()));
         }
         return out;
+    }
+
+    /** 一行裡每個顏色各佔幾個實字。見 {@link #fallback}。 */
+    private static final class Tally {
+        private final java.util.Map<Style, Integer> counts = new java.util.LinkedHashMap<>();
+
+        void add(Style style, int solid) {
+            if (style != null && solid > 0) {
+                counts.merge(style, solid, Integer::sum);
+            }
+        }
+
+        /** 佔最多字的那個；平手時取先出現的（也就是行首那個）。 */
+        Style top() {
+            Style best = null;
+            int most = 0;
+            for (java.util.Map.Entry<Style, Integer> e : counts.entrySet()) {
+                if (e.getValue() > most) {
+                    most = e.getValue();
+                    best = e.getKey();
+                }
+            }
+            return best;
+        }
     }
 
     /** 非空白、非圖示的字元數。 */
@@ -2414,25 +2540,26 @@ public final class LineTranslator {
     }
 
     /** tooltip 那一路：本來就一行一個 {@link LineParts}，直接看每一份自己的片段。 */
-    private static List<Style> perPartStyles(List<LineParts> parts) {
-        List<Style> out = new ArrayList<>();
+    private static List<RowStyle> perPartStyles(List<LineParts> parts) {
+        List<RowStyle> out = new ArrayList<>();
         for (LineParts part : parts) {
             Style only = null;
             boolean mixed = false;
             boolean seen = false;
+            Tally tally = new Tally();
             for (LineParts.Piece run : part.runs()) {
                 if (!hasContent(run.text())) {
                     continue;
                 }
+                tally.add(run.style(), solidCount(run.text()));
                 if (!seen) {
                     only = run.style();
                     seen = true;
                 } else if (!java.util.Objects.equals(only, run.style())) {
                     mixed = true;
-                    break;
                 }
             }
-            out.add(mixed || !seen ? null : only);
+            out.add(new RowStyle(mixed || !seen ? null : only, tally.top()));
         }
         return out;
     }
