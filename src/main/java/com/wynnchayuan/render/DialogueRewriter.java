@@ -433,11 +433,42 @@ public final class DialogueRewriter {
         return rest.isEmpty() && out.length() > 0 ? out.toString() : null;
     }
 
-    /** 上一幀打到哪（參數化之後）。見 {@link #line}。 */
+    /** 上一幀畫面上打到哪（<b>原始</b>文字）。見 {@link #line}。 */
     private static String said = "";
 
     /** 上一幀認出來的是語料裡的哪一條。 */
     private static String spoken;
+
+    /**
+     * 認出來的那一條還罩得住這一幀嗎。
+     *
+     * <p>打字打到人名、地名或數值<b>中間</b>時，模板會暫時對不上：畫面上是
+     * 「…have you seen Green_te」，語料裡是「…have you seen {u}」——要整個名字
+     * 打完才會收成佔位符。單看 {@code startsWith} 的話這中間幾幀全部落空，
+     * 玩家看到的就是「中文 → 英文 → 中文」。
+     *
+     * <p>所以岔開是允許的，但只允許岔在<b>語料那條的裡面</b>。岔開的位置
+     * 剛好是語料的結尾，代表畫面上的字已經比那條長了——那就不是同一句
+     * （任務開始那則後面還接著進度顯示就是這樣），要讓它往下走 {@link #join}。
+     */
+    static boolean within(String source, String typed) {
+        if (source.startsWith(typed)) {
+            return true;
+        }
+        int room = Math.min(source.length(), typed.length());
+        int agreed = 0;
+        while (agreed < room && source.charAt(agreed) == typed.charAt(agreed)) {
+            agreed++;
+        }
+        return agreed >= AGREED && agreed < source.length()
+                && typed.length() <= source.length() + NAME_ROOM;
+    }
+
+    /** 岔開之前至少要對上這麼多，才算「還是同一句」。 */
+    private static final int AGREED = 12;
+
+    /** 一個還沒收成佔位符的名字，最多比佔位符本身長這麼多。 */
+    private static final int NAME_ROOM = 24;
 
     /** 最多拆成幾截。再多就不是「拼出來的訊息」，是硬湊了。 */
     private static final int PARTS = 4;
@@ -508,7 +539,8 @@ public final class DialogueRewriter {
         // 先前這裡拿<b>原始文字</b>直接查，凡是句子裡有玩家名、地名或數字的
         // 一律查不到——側邊面板翻得出來、就地取代翻不出來，差別就在這一步。
         // 用的是跟語料同一支參數化程式，兩邊算出來的模板才會一樣。
-        LineParts parts = LineParts.of(StyledText.fromString(text.strip()));
+        String raw = text.strip();
+        LineParts parts = LineParts.of(StyledText.fromString(raw));
         String typed = parts.template().strip();
         String source = typed;
         String hit = store.lookup(typed);
@@ -520,9 +552,11 @@ public final class DialogueRewriter {
             // 幾個字岔開了又跳回中文——玩家看到的「講到一半忽然變英文又變回來」
             // 就是這個。既然上一幀已經確定是哪一句，中間這幾幀沒理由再問一次。
             //
-            // 只在<b>還是同一句話</b>時沿用：新的文字要接得上上一幀，也要仍然
-            // 是那一條語料的開頭。換句話、或講的內容岔開了，快取就自己失效。
-            if (spoken != null && typed.startsWith(said) && spoken.startsWith(typed)) {
+            // 只在<b>還是同一句話</b>時沿用。「同一句」看的是<b>原始文字</b>
+            // 有沒有繼續長出去——原文是一個字一個字加上去的，這個判斷永遠成立；
+            // 拿參數化後的模板來比反而會在打到人名中間時自己斷掉（見 within）。
+            if (spoken != null && !said.isEmpty() && raw.startsWith(said)
+                    && within(spoken, typed)) {
                 source = spoken;
                 hit = store.lookup(spoken);
             }
@@ -533,13 +567,13 @@ public final class DialogueRewriter {
             // 玩家名被 {u} 收掉之後模板會短一大截：畫面上打出
             // 「Hey, Green_teaTW」十六個字，模板卻只有「Hey, {u}」八個字，
             // 卡在門檻底下查不到，於是開頭那一小段先閃出英文才跳成中文。
-            source = store.matchPrefix(typed, text.strip().length());
+            source = store.matchPrefix(typed, raw.length());
             hit = source == null ? null : store.lookup(source);
         }
         if (hit != null && source != null) {
-            said = typed;              // 記住這一幀打到哪
+            said = raw;                // 記住這一幀畫面上打到哪
             spoken = source;           // 以及它是語料裡的哪一條
-        } else if (!typed.startsWith(said)) {
+        } else if (!raw.startsWith(said)) {
             said = "";                 // 換句話了，別讓舊的那條黏著
             spoken = null;
         }

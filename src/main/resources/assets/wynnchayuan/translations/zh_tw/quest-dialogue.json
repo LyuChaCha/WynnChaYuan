@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 22089,
-  "translated": 5078,
+  "translated": 5547,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -13881,7 +13881,7 @@
   },
   "Aldorei's Secret Part I#000": {
    "src": "Talk to the Elf Guard at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 與精靈守衛對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -13891,7 +13891,7 @@
   },
   "Aldorei's Secret Part I#001": {
    "src": "Halt, traveler! Entry to {p} Town is forbidden at present.",
-   "dst": "",
+   "dst": "站住，旅人！目前禁止進入 {p} 鎮。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -13901,7 +13901,7 @@
   },
   "Aldorei's Secret Part I#002": {
    "src": "There is a dangerous criminal on the loose in this valley.",
-   "dst": "",
+   "dst": "這座山谷裡有個危險的罪犯還在逃。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -13911,7 +13911,7 @@
   },
   "Aldorei's Secret Part I#003": {
    "src": "These doors shall remain closed until the criminal is captured.",
-   "dst": "",
+   "dst": "在罪犯落網之前，這些門都不會開啟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -13921,7 +13921,7 @@
   },
   "Aldorei's Secret Part I#004": {
    "src": "See if anyone in {p} Valley knows what happened",
-   "dst": "",
+   "dst": "在 {p} 谷裡打聽，看有沒有人知道發生了什麼事",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -13931,7 +13931,7 @@
   },
   "Aldorei's Secret Part I#005": {
    "src": "An outsider in our midst? Exciting to see. I have wished to share our magic with new people for a long while.",
-   "dst": "",
+   "dst": "我們之中來了個外人？真令人振奮。我一直希望能把我們的魔法分享給新來的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -13941,7 +13941,7 @@
   },
   "Aldorei's Secret Part I#006": {
    "src": "However, I am...well, rather hungry. And I must tend to my garden here for the time being.",
-   "dst": "",
+   "dst": "不過我……嗯，我有點餓。而且這陣子我得顧著這片園子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -13951,7 +13951,7 @@
   },
   "Aldorei's Secret Part I#007": {
    "src": "Have you heard the saying “You scratch my ears, I scratch yours”? People must help one another.",
-   "dst": "",
+   "dst": "你聽過那句話嗎——「你替我搔耳，我替你搔耳」？人與人本來就該互相幫忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -13961,7 +13961,7 @@
   },
   "Aldorei's Secret Part I#008": {
    "src": "If you would be so kind as to bring me a loaf of fresh bread you may take my enchanted bucket.",
-   "dst": "",
+   "dst": "你若肯行個好，替我拿一條新鮮麵包來，我這只附了魔的桶子就歸你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -13971,7 +13971,7 @@
   },
   "Aldorei's Secret Part I#009": {
    "src": "I saw you toil to bake this yourself. Frankly, that is above and beyond what I expected, so here is your exchange.",
-   "dst": "",
+   "dst": "我看見你親手辛辛苦苦把它烤了出來。老實說，這遠遠超出我的期待，所以，這是給你的回禮。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -13981,7 +13981,7 @@
   },
   "Aldorei's Secret Part I#010": {
    "src": "If you require help in the future with anything, do not be afraid to ask. If you put such effort for me, I shall give you the same.",
-   "dst": "",
+   "dst": "日後你若有任何需要幫忙的地方，儘管開口。你為我付出到這個地步，我自然也會同樣回報你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -13991,7 +13991,7 @@
   },
   "Aldorei's Secret Part I#011": {
    "src": "Find a use for Damys' Bucket",
-   "dst": "",
+   "dst": "想辦法用上 Damys 的桶子",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -14001,7 +14001,7 @@
   },
   "Aldorei's Secret Part I#012": {
    "src": "This is utterly insane. A full lockdown, over a petty theft... Are we not to help one another? To thieve is unnecessary.",
-   "dst": "",
+   "dst": "這實在太荒唐了。為了一樁小偷小摸就全面封鎖……我們不是該互相幫助嗎？根本沒必要去偷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14011,7 +14011,7 @@
   },
   "Aldorei's Secret Part I#013": {
    "src": "The thieving is not the reason, from what I have heard. It is that the grove was jealously hidden due to the potency of the plants there.",
-   "dst": "",
+   "dst": "據我聽說，原因不在偷竊。而是那片林子藏得那麼密，是因為裡頭的植物藥性太強。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14021,7 +14021,7 @@
   },
   "Aldorei's Secret Part I#014": {
    "src": "Tattytale, Iridesca, Subtraxerim... The Light only knows what else. It is impossible to reach without unusual means- And that is cause for grave concern.",
-   "dst": "",
+   "dst": "Tattytale、Iridesca、Subtraxerim……還有什麼，只有光明知道。沒有非常手段根本進不去——這才是最令人憂心的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14031,7 +14031,7 @@
   },
   "Aldorei's Secret Part I#015": {
    "src": "Find a way to grow the plant by the waterfall",
-   "dst": "",
+   "dst": "想辦法讓瀑布旁的植物生長",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -14041,7 +14041,7 @@
   },
   "Aldorei's Secret Part I#016": {
    "src": "Explore the secret garden",
-   "dst": "",
+   "dst": "探索秘密花園",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -14051,7 +14051,7 @@
   },
   "Aldorei's Secret Part I#017": {
    "src": "Halt! This area is strictly off limits, especially for an outsider. Turn back now!",
-   "dst": "",
+   "dst": "站住！這一帶嚴禁進入，外人更是如此。立刻回頭！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14061,7 +14061,7 @@
   },
   "Aldorei's Secret Part I#018": {
    "src": "Investigate the [Iridescent Leaves]",
-   "dst": "",
+   "dst": "調查 [Iridescent Leaves]",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -14071,7 +14071,7 @@
   },
   "Aldorei's Secret Part I#019": {
    "src": "Aha, the outsider returns. Is there something troubling you?",
-   "dst": "",
+   "dst": "啊，外來的朋友回來了。有什麼事困擾著你嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14081,7 +14081,7 @@
   },
   "Aldorei's Secret Part I#020": {
    "src": "...mmm. Unfortunate, that. I cannot help with this.",
-   "dst": "",
+   "dst": "……唔。真是不巧。這件事我幫不上忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14091,7 +14091,7 @@
   },
   "Aldorei's Secret Part I#021": {
    "src": "It is not a matter of secrecy or morals- I simply do not know what that leaf is from or what it may be capable of.",
-   "dst": "",
+   "dst": "這無關保密，也無關良心——我單純不知道那片葉子出自哪種植物，也不知道它有什麼能耐。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14101,7 +14101,7 @@
   },
   "Aldorei's Secret Part I#022": {
    "src": "I am no botanist- Simply a gardener. The mistake is understandable, if regrettable.",
-   "dst": "",
+   "dst": "我不是植物學家——不過是個園丁。你會弄錯是情有可原，只是可惜了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14111,7 +14111,7 @@
   },
   "Aldorei's Secret Part I#023": {
    "src": "However, I was taught under a much more storied botanist who may have the answers you seek.",
-   "dst": "",
+   "dst": "不過，我師從過一位名聲響亮得多的植物學家，她也許有你要的答案。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14121,7 +14121,7 @@
   },
   "Aldorei's Secret Part I#024": {
    "src": "Her name is Fiona- Her home is across the valley from here. Take the bridge across. She often stays inside studying.",
-   "dst": "",
+   "dst": "她叫 Fiona——她家在谷的另一頭。走橋過去就是。她常待在屋裡做研究。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14131,7 +14131,7 @@
   },
   "Aldorei's Secret Part I#025": {
    "src": "She has forgotten more than I will ever hope to know about plants. If she cannot help you, I fear none can.",
-   "dst": "",
+   "dst": "論植物，她忘掉的都比我這輩子能學到的還多。要是連她都幫不了你，恐怕就沒人幫得了了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14141,7 +14141,7 @@
   },
   "Aldorei's Secret Part I#026": {
    "src": "Go to the botanist's house at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往植物學家的住處，位置在 [-{~1}, {~2}, -{~3}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -14151,7 +14151,7 @@
   },
   "Aldorei's Secret Part I#027": {
    "src": "This is outrageous! To think one of our own would stoop to such thievery and destruction!",
-   "dst": "",
+   "dst": "太過分了！想不到我們自己人竟會墮落到這種偷竊與破壞的地步！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14161,7 +14161,7 @@
   },
   "Aldorei's Secret Part I#028": {
    "src": "Outsider, this is not the time to be asking me anything. My home has been ransacked!",
-   "dst": "",
+   "dst": "外來的朋友，現在不是問我事情的時候。我家被翻得亂七八糟！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14171,7 +14171,7 @@
   },
   "Aldorei's Secret Part I#029": {
    "src": "Mm? Damys sent you... You have leaves of Iridesca? Hm... Then perhaps we may be able to help one another.",
-   "dst": "",
+   "dst": "嗯？是 Damys 讓你來的……你有 Iridesca 的葉子？唔……那我們或許可以互相幫個忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14181,7 +14181,7 @@
   },
   "Aldorei's Secret Part I#030": {
    "src": "They tore through my shelves and furniture searching, and scanned the pages as fervently once they found it.",
-   "dst": "",
+   "dst": "他把我的書架和家具翻了個遍，找到之後又急切地把書頁一頁頁掃過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14191,7 +14191,7 @@
   },
   "Aldorei's Secret Part I#031": {
    "src": "Afterwards, they threw the book into the back garden, and forced a carnivorous plant to grow and consume my notes!",
-   "dst": "",
+   "dst": "之後他把書扔進後院，還催生了一株食肉植物，把我的筆記吞了下去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14201,7 +14201,7 @@
   },
   "Aldorei's Secret Part I#032": {
    "src": "I assume when the desired information was found, they went into my garden, threw the book into the carnivorous plant and stormed off towards the lab.",
-   "dst": "",
+   "dst": "我猜他找到想要的資料之後，就走進我的園子，把書丟給那株食肉植物，然後怒沖沖地往實驗室去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14211,7 +14211,7 @@
   },
   "Aldorei's Secret Part I#033": {
    "src": "I have researched the Iridesca bloom, and many other plants, for a long time. All my knowledge is stored in that book!",
-   "dst": "",
+   "dst": "Iridesca 的花，還有許多別的植物，我研究了很久。我所有的學識都在那本書裡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14221,7 +14221,7 @@
   },
   "Aldorei's Secret Part I#034": {
    "src": "Retrieve it for me, and I will share my knowledge with you.",
-   "dst": "",
+   "dst": "替我把它取回來，我就把我所知的告訴你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14231,7 +14231,7 @@
   },
   "Aldorei's Secret Part I#035": {
    "src": "Kill the carnivorous plant and loot the book",
-   "dst": "",
+   "dst": "殺死食肉植物，取回書本",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -14241,7 +14241,7 @@
   },
   "Aldorei's Secret Part I#036": {
    "src": "...disgusting. I will have to hang the pages to dry later, but first, our exchange.",
-   "dst": "",
+   "dst": "……真噁心。書頁待會兒得晾乾，不過先辦我們說好的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14251,7 +14251,7 @@
   },
   "Aldorei's Secret Part I#037": {
    "src": "Hmm... Herbstzeitlose... Death Whistle, no...where is Iridesca, again...?",
-   "dst": "",
+   "dst": "唔……Herbstzeitlose……Death Whistle，不是這個……Iridesca 到底在哪一頁……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14261,7 +14261,7 @@
   },
   "Aldorei's Secret Part I#038": {
    "src": "Aha, there it is. The pages were sticking together. Iridesca leaves are potent in various ways and are very versatile in their use.",
-   "dst": "",
+   "dst": "啊，在這裡。書頁黏在一起了。Iridesca 的葉子在許多方面都藥性強烈，用途也極為廣泛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14271,7 +14271,7 @@
   },
   "Aldorei's Secret Part I#039": {
    "src": "They have an incredibly broad range of usage, from soothing joint pain or curing sickness to emetic effect and lethal poison, depending on what it is brewed with.",
-   "dst": "",
+   "dst": "它的用途廣得驚人：從舒緩關節疼痛、治病，到催吐甚至致命的毒藥，全看跟什麼一起熬煮。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14281,7 +14281,7 @@
   },
   "Aldorei's Secret Part I#040": {
    "src": "Mm? The book thief also possesses Iridesca...? This... This is very troubling. There are few notes aside from mine on how to heal Iridesca poisoning.",
-   "dst": "",
+   "dst": "嗯？偷書的人手上也有 Iridesca……？這……這非常令人不安。除了我的筆記之外，關於怎麼解 Iridesca 之毒的記載寥寥無幾。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14291,7 +14291,7 @@
   },
   "Aldorei's Secret Part I#041": {
    "src": "They were headed in the direction of the potionmaker's guild. If they intend something wicked...",
-   "dst": "",
+   "dst": "他往藥劑師公會的方向去了。萬一他心懷歹意……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14301,7 +14301,7 @@
   },
   "Aldorei's Secret Part I#042": {
    "src": "Investigate the alchemist's shop at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "調查煉金術士的店鋪，位置在 [-{~1}, {~2}, -{~3}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -14311,7 +14311,7 @@
   },
   "Aldorei's Secret Part I#043": {
    "src": "..you! You have been seeking me! I have seen you tracing my footsteps...",
-   "dst": "",
+   "dst": "……是你！你一直在找我！我看見你循著我的足跡而來……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14321,7 +14321,7 @@
   },
   "Aldorei's Secret Part I#044": {
    "src": "I apologize for this... But what I do is a necessity!",
-   "dst": "",
+   "dst": "我為此向你道歉……但我所做的事，是非做不可的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14331,7 +14331,7 @@
   },
   "Aldorei's Secret Part I#045": {
    "src": "I beg you, do not pursue me any further!",
-   "dst": "",
+   "dst": "我求你，別再追下去了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14341,7 +14341,7 @@
   },
   "Aldorei's Secret Part I#046": {
    "src": "Chase the criminal.",
-   "dst": "",
+   "dst": "追捕罪犯。",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -14351,7 +14351,7 @@
   },
   "Aldorei's Secret Part I#047": {
    "src": "Outsider, I realize the circumstances appear damning, but you must stop!",
-   "dst": "",
+   "dst": "外來的朋友，我明白眼前的情形看來罪證確鑿，但你必須停下！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14361,7 +14361,7 @@
   },
   "Aldorei's Secret Part I#048": {
    "src": "What I have done is needed, and if there were another path I would have taken it over this.",
-   "dst": "",
+   "dst": "我做的事有其必要，若還有別條路可走，我一定會選那一條。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14371,7 +14371,7 @@
   },
   "Aldorei's Secret Part I#049": {
    "src": "I must take my concoction to where it is needed!",
-   "dst": "",
+   "dst": "我必須把我調的這帖藥送到它該去的地方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14381,7 +14381,7 @@
   },
   "Aldorei's Secret Part I#050": {
    "src": "See me as I truly am- My name is Korben, and I musn’t be delayed further!",
-   "dst": "",
+   "dst": "看清真正的我吧——我叫 Korben，我不能再被耽擱了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14391,7 +14391,7 @@
   },
   "Aldorei's Secret Part I#051": {
    "src": "G R O W! (In High Gavellian)",
-   "dst": "",
+   "dst": "生 長 吧！（以 High Gavellian 語）",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14401,7 +14401,7 @@
   },
   "Aldorei's Secret Part I#052": {
    "src": "A damnable pace you have... I cannot let you stop me for a moment longer!",
-   "dst": "",
+   "dst": "你這速度真該死……我不能再讓你攔我一刻！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14411,7 +14411,7 @@
   },
   "Aldorei's Secret Part I#053": {
    "src": "It will be done soon, but I must reach my destination first!",
-   "dst": "",
+   "dst": "就快成了，但我得先趕到目的地！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14421,7 +14421,7 @@
   },
   "Aldorei's Secret Part I#054": {
    "src": "Finally... I apologize for the delay. I needed to take strong measures to get this to you.",
-   "dst": "",
+   "dst": "總算……抱歉來遲了。為了把這個送到你手上，我不得不用上激烈的手段。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14431,7 +14431,7 @@
   },
   "Aldorei's Secret Part I#055": {
    "src": "Here, here... Drink, father. It will clear your throat.",
-   "dst": "",
+   "dst": "來，來……喝下去吧，父親。這能清一清你的喉嚨。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14441,7 +14441,7 @@
   },
   "Aldorei's Secret Part I#056": {
    "src": "...there. It is done. Now... Outsider... Hear me, please.",
-   "dst": "",
+   "dst": "……好了。事情辦成了。那麼……外來的朋友……請聽我說。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14451,7 +14451,7 @@
   },
   "Aldorei's Secret Part I#057": {
    "src": "I am aware of exactly what I have done. Shredded Fiona’s research, disturbed the forbidden gardens, unsettled the hearts of many...",
-   "dst": "",
+   "dst": "我完全清楚自己做了些什麼。撕毀了 Fiona 的研究、闖進了禁地花園、擾亂了許多人的心……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14461,7 +14461,7 @@
   },
   "Aldorei's Secret Part I#058": {
    "src": "My father fell ill. A trek to {p}’s borders left him stricken with Kerasot poisoning. He was near death...",
-   "dst": "",
+   "dst": "我父親病倒了。一趟往 {p} 邊境的跋涉，讓他中了 Kerasot 之毒。他已經命在旦夕……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14471,7 +14471,7 @@
   },
   "Aldorei's Secret Part I#059": {
    "src": "{p}’s village is one of outcasts- to visit is, stupidly, forbidden. He would have been exiled, and that would have ensured his death with his affliction.",
-   "dst": "",
+   "dst": "{p} 的村子是被放逐者的村子——探訪那裡，荒謬地，是被禁止的。他會被流放，而以他的病況，那等於是死路一條。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14481,7 +14481,7 @@
   },
   "Aldorei's Secret Part I#060": {
    "src": "Desperation causes one to do strange things. I thought only of his safety- I cared little about anything else.",
-   "dst": "",
+   "dst": "走投無路會讓人做出反常的事。我心裡只有他的安危——其餘的我都不在乎了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14491,7 +14491,7 @@
   },
   "Aldorei's Secret Part I#061": {
    "src": "Even now I am simply relieved for his safety. If you must turn me in, I understand- I have already done what I set out to do.",
-   "dst": "",
+   "dst": "直到現在，我也只是慶幸他平安。你若非把我交出去不可，我能理解——我要做的事，已經做完了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14501,7 +14501,7 @@
   },
   "Aldorei's Secret Part I#062": {
    "src": "Though I wish to remain free, whether you choose to report my activities or not does not matter to me now.",
-   "dst": "",
+   "dst": "我固然希望能保住自由，但你要不要去舉發我，如今對我已經無所謂了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14511,7 +14511,7 @@
   },
   "Aldorei's Secret Part I#063": {
    "src": "Choose",
-   "dst": "",
+   "dst": "做出選擇",
    "role": "desc",
    "kind": "objective",
    "quest": "Aldorei's Secret Part I",
@@ -14521,7 +14521,7 @@
   },
   "Aldorei's Secret Part I#064": {
    "src": "Traveler, I must remind you- The doors shall remain shut until the criminal has been found.",
-   "dst": "",
+   "dst": "旅人，我得提醒你——在罪犯落網之前，這些門都不會開啟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14531,7 +14531,7 @@
   },
   "Aldorei's Secret Part I#065": {
    "src": "...ah. You have found him, then. The name is Korben... Understood. We shall interrogate him for his actions.",
-   "dst": "",
+   "dst": "……啊。這麼說你找到他了。名字是 Korben……明白了。我們會就他的所作所為進行審問。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14541,7 +14541,7 @@
   },
   "Aldorei's Secret Part I#066": {
    "src": "This being the case... You may come and go as you wish to {p} Town. We shall re-open the doors.",
-   "dst": "",
+   "dst": "既然如此……{p} 鎮你可以隨意進出了。我們這就重新開門。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14551,7 +14551,7 @@
   },
   "Aldorei's Secret Part I#067": {
    "src": "...you... You are... You would lie to the guards and say I perished in the chase? You will keep my identity secret?",
-   "dst": "",
+   "dst": "……你……你竟然……你要對守衛說謊，說我在追逐中死了？你要替我保守身分？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14561,7 +14561,7 @@
   },
   "Aldorei's Secret Part I#068": {
    "src": "Outsider... You show generosity akin to my father. He passed his Sol Medallion onto me to continue his legacy...",
-   "dst": "",
+   "dst": "外來的朋友……你的寬厚，與我父親如出一轍。他把他的 Sol Medallion 傳給了我，要我延續他的遺志……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14571,7 +14571,7 @@
   },
   "Aldorei's Secret Part I#069": {
    "src": "...after what I have done, I do not deserve it. You take it, instead. It is in sufficiently worthy hands, I believe.",
-   "dst": "",
+   "dst": "……做了那些事之後，我已經不配擁有它了。你收下吧。我相信，交到你手上是夠格的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -14581,7 +14581,7 @@
   },
   "Aldorei's Secret Part I#070": {
    "src": "I shall beg the Light to shine upon you for the rest of your days. A thousand thanks to you.",
-   "dst": "",
+   "dst": "我會祈求光明照耀你此後的每一天。萬分感謝你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Aldorei's Secret Part I",
@@ -52041,7 +52041,7 @@
   },
   "Dwarves and Doguns Part II#000": {
    "src": "Return to the Dogun village with a Dogun Badge of Trust and talk to the leader of the town",
-   "dst": "",
+   "dst": "帶著 Dogun Badge of Trust 回到 Dogun 村，與村中的領袖對話",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52051,7 +52051,7 @@
   },
   "Dwarves and Doguns Part II#001": {
    "src": "You are so young.. to be fighting.. a war so old. Still... it is appreciated.",
-   "dst": "",
+   "dst": "你如此年輕……卻要投身……一場如此古老的戰爭。即便如此……我們心懷感激。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52061,7 +52061,7 @@
   },
   "Dwarves and Doguns Part II#002": {
    "src": "The war... to you, it would be... ages ago. But... when one has lived for... {~} years...",
-   "dst": "",
+   "dst": "那場戰爭……對你而言……已是久遠之前。但是……當一個人活了……{~} 年之後……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52071,7 +52071,7 @@
   },
   "Dwarves and Doguns Part II#003": {
    "src": "We have... few options. We need to discuss... the few we have... available.",
-   "dst": "",
+   "dst": "我們……沒有多少選擇。我們得談談……剩下的那幾條……路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52081,7 +52081,7 @@
   },
   "Dwarves and Doguns Part II#004": {
    "src": "Enter the meeting.",
-   "dst": "",
+   "dst": "進入會議。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52091,7 +52091,7 @@
   },
   "Dwarves and Doguns Part II#005": {
    "src": "I am sorry... to welcome you all... in such troubled times.",
-   "dst": "",
+   "dst": "很抱歉……要在這樣的亂世裡……迎接各位。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52101,7 +52101,7 @@
   },
   "Dwarves and Doguns Part II#006": {
    "src": "We thought... we could hide in safety... But there is... no place left to hide.",
-   "dst": "",
+   "dst": "我們以為……躲起來就能平安……但如今……已經無處可躲。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52111,7 +52111,7 @@
   },
   "Dwarves and Doguns Part II#007": {
    "src": "Aval... would have us... leave the Heights... But we... would not survive.",
-   "dst": "",
+   "dst": "Aval……要我們……離開 the Heights……但我們……活不下去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52121,7 +52121,7 @@
   },
   "Dwarves and Doguns Part II#008": {
    "src": "We must... evacuate the settlement... immediately. They... are coming... again.",
-   "dst": "",
+   "dst": "我們必須……立刻……撤離聚落。他們……又要來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52131,7 +52131,7 @@
   },
   "Dwarves and Doguns Part II#009": {
    "src": "Ouch, I'm sorry... Excuse us.",
-   "dst": "",
+   "dst": "哎唷，抱歉……借過一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52141,7 +52141,7 @@
   },
   "Dwarves and Doguns Part II#010": {
    "src": "We heard what happened .",
-   "dst": "",
+   "dst": "我們聽說出事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52151,7 +52151,7 @@
   },
   "Dwarves and Doguns Part II#011": {
    "src": "Please! You all know me, I'm not with the side of the government. Hear me out, we can fix this!",
-   "dst": "",
+   "dst": "拜託！你們都認識我，我不站在政府那邊。聽我把話說完，這件事還有救！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52161,7 +52161,7 @@
   },
   "Dwarves and Doguns Part II#012": {
    "src": "Guards...",
-   "dst": "",
+   "dst": "衛兵……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52171,7 +52171,7 @@
   },
   "Dwarves and Doguns Part II#013": {
    "src": "Stop! I have been hiding from the Dwarves just as much as anyone here, they've been after me too!",
-   "dst": "",
+   "dst": "住手！我跟這裡任何人一樣，一直躲著 Dwarves，他們也在追捕我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52181,7 +52181,7 @@
   },
   "Dwarves and Doguns Part II#014": {
    "src": "Why... would we... trust you... of all Dwarves?",
-   "dst": "",
+   "dst": "為什麼……偏偏是你這個 Dwarf……我們要相信你？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52191,7 +52191,7 @@
   },
   "Dwarves and Doguns Part II#015": {
    "src": "How...could you even help? They...won't listen to you.",
-   "dst": "",
+   "dst": "你……又能幫上什麼忙？他們……不會聽你的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52201,7 +52201,7 @@
   },
   "Dwarves and Doguns Part II#016": {
    "src": "I know all the war strategies and weapon cache locations.",
-   "dst": "",
+   "dst": "所有的作戰計畫、還有武器庫的位置，我都知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52211,7 +52211,7 @@
   },
   "Dwarves and Doguns Part II#017": {
    "src": "Treason... against your own kind...? How will you... manage this?",
-   "dst": "",
+   "dst": "背叛……你自己的同族……？你要怎麼……做到？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52221,7 +52221,7 @@
   },
   "Dwarves and Doguns Part II#018": {
    "src": "The human and I will sneak into the armoury and sabotage their equipment, Korzim will help you Doguns evacuate someplace safer.",
-   "dst": "",
+   "dst": "我和這個人類潛進兵工廠，破壞他們的裝備；Korzim 會帶你們 Doguns 撤到安全的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52231,7 +52231,7 @@
   },
   "Dwarves and Doguns Part II#019": {
    "src": "I am... yet wary of you... but we will... follow your plan... Dwarf. Korzim... lead us... to safety.",
-   "dst": "",
+   "dst": "我……仍然提防著你……但我們……會照你的計畫走……Dwarf。Korzim……帶我們……到安全的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52241,7 +52241,7 @@
   },
   "Dwarves and Doguns Part II#020": {
    "src": "{u}, follow the southern road from {p}, towards the {p} entrance. I'll be waiting there for you near the armoury.",
-   "dst": "",
+   "dst": "{u}，從 {p} 沿著南邊的路走，往 {p} 的入口去。我會在兵工廠附近等你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52251,7 +52251,7 @@
   },
   "Dwarves and Doguns Part II#021": {
    "src": "Meet up with Axelus at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 與 Axelus 會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52261,7 +52261,7 @@
   },
   "Dwarves and Doguns Part II#022": {
    "src": "Shh! Get behind here, and look towards the armoury doors.",
-   "dst": "",
+   "dst": "噓！躲到這後面來，盯著兵工廠的大門。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52271,7 +52271,7 @@
   },
   "Dwarves and Doguns Part II#023": {
    "src": "We need to sneak in when they aren't looking, got it? But we need to be fast.",
-   "dst": "",
+   "dst": "我們得趁他們沒注意的時候溜進去，懂嗎？而且動作要快。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52281,7 +52281,7 @@
   },
   "Dwarves and Doguns Part II#024": {
    "src": "If they close that door, we'll only have one option left, and it's a huge risk. Those Dwarven gates are almost unbreakable.",
-   "dst": "",
+   "dst": "那道門要是關上，我們就只剩一條路，而且風險極高。Dwarves 的閘門幾乎打不破。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52291,7 +52291,7 @@
   },
   "Dwarves and Doguns Part II#025": {
    "src": "Alright boys, let's close this up and head to base B.",
-   "dst": "",
+   "dst": "好了各位，把這裡關上，回 B 基地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52301,7 +52301,7 @@
   },
   "Dwarves and Doguns Part II#026": {
    "src": "Aaah! Charge them! HEY, STOP RIGHT THERE, SOLDIERS!",
-   "dst": "",
+   "dst": "啊啊！衝過去！喂，士兵，站住別動！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52311,7 +52311,7 @@
   },
   "Dwarves and Doguns Part II#027": {
    "src": "Defeat the {p} Guards outside the armory.",
-   "dst": "",
+   "dst": "擊敗兵工廠外的 {p} 守衛。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52321,7 +52321,7 @@
   },
   "Dwarves and Doguns Part II#028": {
    "src": "It's the traitor! Capture them, now! There's only one reason they would be near the armoury!",
-   "dst": "",
+   "dst": "是那個叛徒！立刻抓住他們！他們會出現在兵工廠附近，理由只有一個！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52331,7 +52331,7 @@
   },
   "Dwarves and Doguns Part II#029": {
    "src": "Is that all of them? We're out of danger, at least, but they still shut the door, damn it!",
-   "dst": "",
+   "dst": "都解決了嗎？至少我們暫時安全了，可是那道門還是被關上了，可惡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52341,7 +52341,7 @@
   },
   "Dwarves and Doguns Part II#030": {
    "src": "Gah, all that for nothing! You're not too banged up, are you?",
-   "dst": "",
+   "dst": "唉，白忙一場！你沒被打得太慘吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52351,7 +52351,7 @@
   },
   "Dwarves and Doguns Part II#031": {
    "src": "Well, I said there's another way, but it's not a guarantee. Hurry, follow me.",
-   "dst": "",
+   "dst": "我說過還有另一條路，但不保證走得通。快，跟我來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52361,7 +52361,7 @@
   },
   "Dwarves and Doguns Part II#032": {
    "src": "Urgh, damn it. They almost never bother to close this door, and now of all times...",
-   "dst": "",
+   "dst": "嘖，可惡。這道門他們幾乎從來不關，偏偏就是這個時候……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52371,7 +52371,7 @@
   },
   "Dwarves and Doguns Part II#033": {
    "src": "There's nothing for it. They'll be sending reinforcements soon, we need a way through here.",
-   "dst": "",
+   "dst": "沒別的辦法了。援軍很快就會到，我們得從這裡打通一條路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52381,7 +52381,7 @@
   },
   "Dwarves and Doguns Part II#034": {
    "src": "Those black bricks look breakable...but that won't solve the door, will it?",
-   "dst": "",
+   "dst": "那些黑磚看起來砸得破……可是門還是過不去，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52391,7 +52391,7 @@
   },
   "Dwarves and Doguns Part II#035": {
    "src": "Find a way to break through the black bricks outside the wooden door.",
-   "dst": "",
+   "dst": "想辦法打破木門外的黑磚。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52401,7 +52401,7 @@
   },
   "Dwarves and Doguns Part II#036": {
    "src": "Sabotage the Dwarven Armoury.",
-   "dst": "",
+   "dst": "破壞 Dwarves 的兵工廠。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52411,7 +52411,7 @@
   },
   "Dwarves and Doguns Part II#037": {
    "src": "Alright, let's destroy these machines! You see the two cannons?",
-   "dst": "",
+   "dst": "好，來把這些機器毀掉！看到那兩門砲了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52421,7 +52421,7 @@
   },
   "Dwarves and Doguns Part II#038": {
    "src": "If you use rocks as ammo, you'll destroy the machine it's aiming at, but if you use tnt, it'll selfdestruct. Good luck",
-   "dst": "",
+   "dst": "用石頭當砲彈，可以毀掉它瞄準的那台機器；用 TNT 的話，它會自爆。祝你好運",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52431,7 +52431,7 @@
   },
   "Dwarves and Doguns Part II#039": {
    "src": "Follow Axelus deeper into {p} and destroy the power source of the city, the {p} Power Core.",
-   "dst": "",
+   "dst": "跟著 Axelus 深入 {p}，摧毀這座城市的動力來源 —— {p} Power Core。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52441,7 +52441,7 @@
   },
   "Dwarves and Doguns Part II#040": {
    "src": "Nice work! That will slow them down. We're not done yet, we need to pay the king a visit. Let's head further into {p}.",
-   "dst": "",
+   "dst": "幹得好！這會拖慢他們。事情還沒完，我們得去見國王一面。再往 {p} 裡面走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52451,7 +52451,7 @@
   },
   "Dwarves and Doguns Part II#041": {
    "src": "Hurry! Through here, to the power core!",
-   "dst": "",
+   "dst": "快！從這裡過去，到動力核心！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52461,7 +52461,7 @@
   },
   "Dwarves and Doguns Part II#042": {
    "src": "This is a geothermal power core. If we can disrupt it, it should slow them down.",
-   "dst": "",
+   "dst": "這是地熱動力核心。只要把它弄停，應該能拖慢他們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52471,7 +52471,7 @@
   },
   "Dwarves and Doguns Part II#043": {
    "src": "The hypocrites used Dogun magic to make this... It's lucky, honestly. I know how to work it.",
-   "dst": "",
+   "dst": "那群偽君子是用 Dogun 的魔法造出這東西的……老實說算我們走運，我知道怎麼操作。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52481,7 +52481,7 @@
   },
   "Dwarves and Doguns Part II#044": {
    "src": "...hell, they already rallied?! That's the army!",
-   "dst": "",
+   "dst": "……見鬼，他們這麼快就集結了？！那是軍隊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52491,7 +52491,7 @@
   },
   "Dwarves and Doguns Part II#045": {
    "src": "That sounds like an entire battalion!! How did they know I was going after this?",
-   "dst": "",
+   "dst": "聽起來是一整個營！！他們怎麼會知道我要來動這東西？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52501,7 +52501,7 @@
   },
   "Dwarves and Doguns Part II#046": {
    "src": "Dogun magic is slow! Keep me defended, this'll take awhile!",
-   "dst": "",
+   "dst": "Dogun 的魔法很慢！掩護我，這得花點時間！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52511,7 +52511,7 @@
   },
   "Dwarves and Doguns Part II#047": {
    "src": "Grr, this is harder than I thought!",
-   "dst": "",
+   "dst": "唔，這比我想的難多了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52521,7 +52521,7 @@
   },
   "Dwarves and Doguns Part II#048": {
    "src": "Ah! Don't let them get too close!",
-   "dst": "",
+   "dst": "啊！別讓他們靠太近！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52531,7 +52531,7 @@
   },
   "Dwarves and Doguns Part II#049": {
    "src": "Look, look! It's working!",
-   "dst": "",
+   "dst": "看，你看！有效了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52541,7 +52541,7 @@
   },
   "Dwarves and Doguns Part II#050": {
    "src": "I hate that you're having to fight my people, but I wouldn't be asking for help if it weren't needed.",
-   "dst": "",
+   "dst": "要你跟我的同胞動手，我很不好受，但不是走投無路我不會開口求助。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52551,7 +52551,7 @@
   },
   "Dwarves and Doguns Part II#051": {
    "src": "Hm...the slums should be behind this wall here. We'll lose them there.",
-   "dst": "",
+   "dst": "嗯……貧民窟應該就在這面牆後面。到那裡就能甩掉他們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52561,7 +52561,7 @@
   },
   "Dwarves and Doguns Part II#052": {
    "src": "The power's down, but...that cannon should do to get us through. You know how to operate it, right?",
-   "dst": "",
+   "dst": "電力已經斷了，不過……用那門砲應該能打穿過去。你知道怎麼操作吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52571,7 +52571,7 @@
   },
   "Dwarves and Doguns Part II#053": {
    "src": "Explore the Slum of {p}.",
-   "dst": "",
+   "dst": "探索 {p} 的貧民窟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52581,7 +52581,7 @@
   },
   "Dwarves and Doguns Part II#054": {
    "src": "Dwarvern society isn't as great as they make it out to be. The poorest are hidden away.",
-   "dst": "",
+   "dst": "Dwarves 的社會沒有他們說的那麼美好。最窮的那些人都被藏了起來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52591,7 +52591,7 @@
   },
   "Dwarves and Doguns Part II#055": {
    "src": "The coalition has helped these people through some hard times, we can trust them.",
-   "dst": "",
+   "dst": "聯盟幫這些人熬過不少苦日子，他們信得過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52601,7 +52601,7 @@
   },
   "Dwarves and Doguns Part II#056": {
    "src": "There's a reason I brought us here. The sewer system is connected to the royal palace. All the way to the kings bathroom.",
-   "dst": "",
+   "dst": "我帶我們來這裡是有原因的。下水道跟王宮是通的，一路能通到國王的浴室。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52611,7 +52611,7 @@
   },
   "Dwarves and Doguns Part II#057": {
    "src": "We need to find a way to ignite this explosive. Can you take a look around?",
-   "dst": "",
+   "dst": "我們得想辦法引爆這個炸藥。你去附近找找看？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52621,7 +52621,7 @@
   },
   "Dwarves and Doguns Part II#058": {
    "src": "Find a way to enter the sewer system.",
-   "dst": "",
+   "dst": "想辦法進入下水道。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52631,7 +52631,7 @@
   },
   "Dwarves and Doguns Part II#059": {
    "src": "If we can convince the king that it’s not worth the fight, he may back down.",
-   "dst": "",
+   "dst": "只要能說服國王這仗不值得打，他也許就會收手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52641,7 +52641,7 @@
   },
   "Dwarves and Doguns Part II#060": {
    "src": "I'm a little ashamed to admit I know my way round the sewers by now.",
-   "dst": "",
+   "dst": "說來有點難為情，我對這下水道已經熟門熟路了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52651,7 +52651,7 @@
   },
   "Dwarves and Doguns Part II#061": {
    "src": "You have to understand.. The people truly think the Doguns are evil incarnate. But the king knows better.",
-   "dst": "",
+   "dst": "你要明白……人民是真心相信 Doguns 是邪惡的化身。但國王心裡清楚得很。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52661,7 +52661,7 @@
   },
   "Dwarves and Doguns Part II#062": {
    "src": "Enter the Royal Palace through the sewer pipe and find the king.",
-   "dst": "",
+   "dst": "從下水道管路進入王宮，找到國王。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52671,7 +52671,7 @@
   },
   "Dwarves and Doguns Part II#063": {
    "src": "Don't let the guards catch you. Stay out of sight, got it?",
-   "dst": "",
+   "dst": "別讓衛兵抓到。躲好，別露臉，懂嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52681,7 +52681,7 @@
   },
   "Dwarves and Doguns Part II#064": {
    "src": "Sneak past the guards and talk to the Dwarven King.",
-   "dst": "",
+   "dst": "避開衛兵，與 Dwarves 的國王對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52691,7 +52691,7 @@
   },
   "Dwarves and Doguns Part II#065": {
    "src": "I can't say I'm surprised, Axelus. Guards, let them be.",
-   "dst": "",
+   "dst": "我不能說我意外，Axelus。衛兵，讓他們過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52701,7 +52701,7 @@
   },
   "Dwarves and Doguns Part II#066": {
    "src": "You know why I'm here, father. We haven't got any more chances to stop this.",
-   "dst": "",
+   "dst": "你知道我為什麼來，父親。要阻止這件事，我們沒有下一次機會了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52711,7 +52711,7 @@
   },
   "Dwarves and Doguns Part II#067": {
    "src": "Axelus, you know why we have to maintain the lie. Think about the people, how they would react.",
-   "dst": "",
+   "dst": "Axelus，你知道我們為什麼非得把這個謊圓下去。想想人民，想想他們會有什麼反應。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52721,7 +52721,7 @@
   },
   "Dwarves and Doguns Part II#068": {
    "src": "We can not be responsible for the lies of our ancestors! This is ridiculous and you know it!",
-   "dst": "",
+   "dst": "祖先撒的謊，不該由我們來扛！這太荒唐了，你心裡明白！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52731,7 +52731,7 @@
   },
   "Dwarves and Doguns Part II#069": {
    "src": "Axelus, if the people found out, everything would descend to chaos. There would be riots, revolutions!",
-   "dst": "",
+   "dst": "Axelus，人民要是知道了，一切都會陷入混亂。會有暴動，會有革命！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52741,7 +52741,7 @@
   },
   "Dwarves and Doguns Part II#070": {
    "src": "If you hadn't turned traitor and gone gallivanting off with the Doguns, you would be in a better position to convince me.",
-   "dst": "",
+   "dst": "你要是沒當叛徒、沒跟著 Doguns 到處跑，今天要說服我，還有幾分立場。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52751,7 +52751,7 @@
   },
   "Dwarves and Doguns Part II#071": {
    "src": "As it is now, you are too little and too late. The war has already begun.",
-   "dst": "",
+   "dst": "就現在這樣，你人微言輕，來得也太遲了。戰爭已經開打了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52761,7 +52761,7 @@
   },
   "Dwarves and Doguns Part II#072": {
    "src": "The armoury that a certain someone decided to sabotage won't make any difference.",
-   "dst": "",
+   "dst": "某個人決定去破壞的那座兵工廠，改變不了什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52771,7 +52771,7 @@
   },
   "Dwarves and Doguns Part II#073": {
    "src": "You will commit genocide so you don't have to face the consequences of your lies?",
-   "dst": "",
+   "dst": "你要為了不必面對自己謊言的後果，去做滅族的事？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52781,7 +52781,7 @@
   },
   "Dwarves and Doguns Part II#074": {
    "src": "I will be the hero of our nation, and my name will forever be remembered as the King who brought peace.",
-   "dst": "",
+   "dst": "我將成為這個國家的英雄，而我的名字會永遠被記為「帶來和平的國王」。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52791,7 +52791,7 @@
   },
   "Dwarves and Doguns Part II#075": {
    "src": "I have nothing left to say to you. See yourselves out behind the throne. I'll let you use the trading tunnel to {p} in the southern caves, if you just step back and let me handle things.",
-   "dst": "",
+   "dst": "我跟你沒什麼好說的了。從王座後面自己出去。只要你退開、讓我來處理，我可以讓你們走南邊洞窟裡那條通往 {p} 的貿易隧道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52801,7 +52801,7 @@
   },
   "Dwarves and Doguns Part II#076": {
    "src": "Exit the palace",
-   "dst": "",
+   "dst": "離開王宮",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part II",
@@ -52811,7 +52811,7 @@
   },
   "Dwarves and Doguns Part II#077": {
    "src": "I'm not giving up on this. I'm going back in, I know he can be reasoned with!",
-   "dst": "",
+   "dst": "我不會就這樣放棄。我要再進去一次，我知道他講得通！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52821,7 +52821,7 @@
   },
   "Dwarves and Doguns Part II#078": {
    "src": "Give this letter to Korzim in the Dogun village when you reach level {~}.",
-   "dst": "",
+   "dst": "等你到 {~} 級，把這封信交給 Dogun 村的 Korzim。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52831,7 +52831,7 @@
   },
   "Dwarves and Doguns Part II#079": {
    "src": "I'm going to have one last talk with my father.",
-   "dst": "",
+   "dst": "我要跟我父親做最後一次談話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
@@ -52841,7 +52841,7 @@
   },
   "Dwarves and Doguns Part III#000": {
    "src": "Return to the Dogun Village with the letter and speak to Korzim.",
-   "dst": "",
+   "dst": "帶著信回到 Dogun 村，與 Korzim 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -52851,7 +52851,7 @@
   },
   "Dwarves and Doguns Part III#001": {
    "src": "We...have an issue. A dire one... Where is...Axelus at a time...like this?",
-   "dst": "",
+   "dst": "我們……出事了。很嚴重的事……這種時候……Axelus 人在哪裡？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52861,7 +52861,7 @@
   },
   "Dwarves and Doguns Part III#002": {
    "src": "...human... This is a brick.",
-   "dst": "",
+   "dst": "……人類啊……這是一塊磚頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52871,7 +52871,7 @@
   },
   "Dwarves and Doguns Part III#003": {
    "src": "Oh... From Axelus, then...? He could not find...a stone? That...does not bode well.",
-   "dst": "",
+   "dst": "喔……所以是 Axelus 給的……？他連……一塊石頭都找不到？這……不是好兆頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52881,7 +52881,7 @@
   },
   "Dwarves and Doguns Part III#004": {
    "src": "He is trying to...reason with the Dwarven King? There is...no one else...then. You... You will have to...help.",
-   "dst": "",
+   "dst": "他打算……去跟 Dwarves 的國王講道理？那就……沒有別人了。你……你得……幫忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52891,7 +52891,7 @@
   },
   "Dwarves and Doguns Part III#005": {
    "src": "The chieftain is...desperate. He has enacted a...terrible plan. They are planning on summoning Garaheth.",
-   "dst": "",
+   "dst": "族長已經……走投無路。他啟動了一個……可怕的計畫。他們打算召喚 Garaheth。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52901,7 +52901,7 @@
   },
   "Dwarves and Doguns Part III#006": {
    "src": "If they succeed...we all die. Dwarves... Doguns... Possibly even Villagers...and then... Humans as well.",
-   "dst": "",
+   "dst": "一旦成功……我們全都會死。Dwarves……Doguns……說不定連 Villagers 也是……接著……人類也一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52911,7 +52911,7 @@
   },
   "Dwarves and Doguns Part III#007": {
    "src": "Garaheth is a...horrible demon. We used to worship him...thousands of years ago.",
-   "dst": "",
+   "dst": "Garaheth 是個……可怖的惡魔。數千年前……我們曾經供奉他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52921,7 +52921,7 @@
   },
   "Dwarves and Doguns Part III#008": {
    "src": "I only overheard parts... But enough to be certain. They are preparing...to the south. At a disused...ritual site.",
-   "dst": "",
+   "dst": "我只聽見片段……但已經足夠確定。他們正在……南邊準備。在一處廢棄的……儀式場。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52931,7 +52931,7 @@
   },
   "Dwarves and Doguns Part III#009": {
    "src": "Meet me there... Do not just attack. We may be able to...resolve it peacefully. I will wait...by the staircase.",
-   "dst": "",
+   "dst": "到那裡跟我會合……別一上去就動手。我們或許還能……和平解決。我會在……階梯旁等你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52941,7 +52941,7 @@
   },
   "Dwarves and Doguns Part III#010": {
    "src": "Investigate the structure to the south.",
-   "dst": "",
+   "dst": "調查南邊的建築。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -52951,7 +52951,7 @@
   },
   "Dwarves and Doguns Part III#011": {
    "src": "We shall take the east tower... Hide there...and watch.",
-   "dst": "",
+   "dst": "我們走東邊那座塔……躲在那裡……看著。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52961,7 +52961,7 @@
   },
   "Dwarves and Doguns Part III#012": {
    "src": "Interrupting...at this point will have...disastrous consequences. We must let them continue...and pray they fail.",
-   "dst": "",
+   "dst": "這種時候插手……會招來……災難般的後果。我們只能讓他們繼續……並祈禱他們失敗。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52971,7 +52971,7 @@
   },
   "Dwarves and Doguns Part III#013": {
    "src": "Reach into the darkness...and grasp the hand of Garaheth to purge the intruders...",
-   "dst": "",
+   "dst": "探入黑暗之中……握住 Garaheth 之手，以清除入侵者……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52981,7 +52981,7 @@
   },
   "Dwarves and Doguns Part III#014": {
    "src": "This is a worst-case scenario... Meet me in {p}. We will talk more there...",
-   "dst": "",
+   "dst": "這是最壞的情況了……到 {p} 跟我會合。我們到那裡再談……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -52991,7 +52991,7 @@
   },
   "Dwarves and Doguns Part III#015": {
    "src": "Travel to {p} and meet Korzim at the entrance. [{~},-{~}]",
-   "dst": "",
+   "dst": "前往 {p}，在入口與 Korzim 會合。[{~1},-{~2}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -53001,7 +53001,7 @@
   },
   "Dwarves and Doguns Part III#016": {
    "src": "Hoho...! Over here...fine traveler! Join me at the gates!",
-   "dst": "",
+   "dst": "呵呵……！這邊……好旅人！到城門這裡來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53011,7 +53011,7 @@
   },
   "Dwarves and Doguns Part III#017": {
    "src": "This dwarf voice is...horrible on my throat...but it is an effective disguise...is it not?",
-   "dst": "",
+   "dst": "學 Dwarf 講話……我的喉嚨快受不了了……不過這偽裝挺有效的……不是嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53021,7 +53021,7 @@
   },
   "Dwarves and Doguns Part III#018": {
    "src": "We are headed to...a blacksmith in town. Follow me...",
-   "dst": "",
+   "dst": "我們要去……鎮上的一位鐵匠那裡。跟我來……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53031,7 +53031,7 @@
   },
   "Dwarves and Doguns Part III#019": {
    "src": "Talk to the blacksmith in {p} at {~} {~} -{~}",
-   "dst": "",
+   "dst": "與 {p} 的鐵匠對話，位置在 {~1} {~2} -{~3}",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -53041,7 +53041,7 @@
   },
   "Dwarves and Doguns Part III#020": {
    "src": "...Korzim...what in the name of all that is holy is that disguise?",
-   "dst": "",
+   "dst": "……Korzim……你這身偽裝到底是什麼鬼東西？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53051,7 +53051,7 @@
   },
   "Dwarves and Doguns Part III#021": {
    "src": "I'm flabbergasted you fooled anyone with that thing! How did you stop the beard from burning?",
-   "dst": "",
+   "dst": "你居然靠那玩意兒騙過了人，我真是傻眼！你是怎麼讓那把鬍子不燒起來的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53061,7 +53061,7 @@
   },
   "Dwarves and Doguns Part III#022": {
    "src": "But, erm...more importantly, who's the buck in the fancy armour there?",
-   "dst": "",
+   "dst": "不過，呃……更要緊的是，那個穿著花俏盔甲的傢伙是誰？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53071,7 +53071,7 @@
   },
   "Dwarves and Doguns Part III#023": {
    "src": "An ally...of the coalition. No time...Edula. Doguns... summoning... Garaheth.",
-   "dst": "",
+   "dst": "聯盟的……盟友。沒時間了……Edula。Doguns……正在召喚……Garaheth。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53081,7 +53081,7 @@
   },
   "Dwarves and Doguns Part III#024": {
    "src": "So...so it's really down to that low, then. Burning your own house down to kill the rats.",
-   "dst": "",
+   "dst": "所以……真的淪落到那個地步了。為了燒死老鼠，把自己的房子一起燒了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53091,7 +53091,7 @@
   },
   "Dwarves and Doguns Part III#025": {
    "src": "Good thing we've got this prepared. One fallout will prevent the next. Soldier, I've got a list of materials we need!",
-   "dst": "",
+   "dst": "幸好我們早有準備。這一次的災殃，能擋下下一次。士兵，我這裡有一張材料清單！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53101,7 +53101,7 @@
   },
   "Dwarves and Doguns Part III#026": {
    "src": "You will need [{~} Fire Webs]. The Heatscar Spiders under the town make them, there's a cave right by the entrance arch.",
-   "dst": "",
+   "dst": "你需要 [{~} Fire Webs]。鎮子底下的 Heatscar Spiders 會結這種網，入口拱門旁邊就有一個洞穴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53111,7 +53111,7 @@
   },
   "Dwarves and Doguns Part III#027": {
    "src": "Then, [{~} Magmatic Crystals] from the {p} mines. I'd get them myself, but...I'm banned from there since the rubber mallet incident.",
-   "dst": "",
+   "dst": "再來是 {p} 礦坑裡的 [{~} Magmatic Crystals]。我本來想自己去拿，但是……自從橡膠槌那件事之後，我就被禁止進去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53121,7 +53121,7 @@
   },
   "Dwarves and Doguns Part III#028": {
    "src": "Lastly, [{~} Crystallized Lava]. The closest source is in the lava lake just outside {p}. There's a protruding crater in the lake.",
-   "dst": "",
+   "dst": "最後是 [{~} Crystallized Lava]。最近的來源在 {p} 外頭那座熔岩湖裡，湖中有一個突起的火山口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53131,7 +53131,7 @@
   },
   "Dwarves and Doguns Part III#029": {
    "src": "Bring back [{~} Fire Webs], [{~} Magmatic Crystals], and [{~} Crystallized lava].",
-   "dst": "",
+   "dst": "帶回 [{~1} Fire Webs]、[{~2} Magmatic Crystals] 和 [{~3} Crystallized lava]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -53141,7 +53141,7 @@
   },
   "Dwarves and Doguns Part III#030": {
    "src": "The crystal formation... It is definitely here.",
-   "dst": "",
+   "dst": "那片晶簇……肯定就在這裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53151,7 +53151,7 @@
   },
   "Dwarves and Doguns Part III#031": {
    "src": "I will clear the lava... On my signal, move. And do not stop.",
-   "dst": "",
+   "dst": "我來清開熔岩……我一給信號就跑。不要停。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53161,7 +53161,7 @@
   },
   "Dwarves and Doguns Part III#032": {
    "src": "Move! Move! MOVE!",
-   "dst": "",
+   "dst": "快跑！快跑！快跑啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53171,7 +53171,7 @@
   },
   "Dwarves and Doguns Part III#033": {
    "src": "Mhm, looks like everything's in order. Now, for a short explanation.",
-   "dst": "",
+   "dst": "嗯，看來東西都齊了。那麼，我簡單說明一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53181,7 +53181,7 @@
   },
   "Dwarves and Doguns Part III#034": {
    "src": "These materials go into crafting a special charm. It will allow you to resist demon fire.",
-   "dst": "",
+   "dst": "這些材料是用來製作一枚特殊的護符。它能讓你抵抗惡魔之火。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53191,7 +53191,7 @@
   },
   "Dwarves and Doguns Part III#035": {
    "src": "We need to account for if they finish the summoning, so this'll help keep you safe if you end up having to square off with Garaheth.",
-   "dst": "",
+   "dst": "我們得把「他們真的召喚成功」也算進去，萬一你得跟 Garaheth 正面交手，這東西能保你一命。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53201,7 +53201,7 @@
   },
   "Dwarves and Doguns Part III#036": {
    "src": "You will need to craft it yourself, so its magic will bond to you. I've got a station just for it.",
-   "dst": "",
+   "dst": "得由你自己動手做，它的魔力才會與你相連。我這裡有專門的檯子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53211,7 +53211,7 @@
   },
   "Dwarves and Doguns Part III#037": {
    "src": "Right-click the crafting table in the back and put it together.",
-   "dst": "",
+   "dst": "對後面那張工作台按右鍵，把它組起來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53221,7 +53221,7 @@
   },
   "Dwarves and Doguns Part III#038": {
    "src": "Craft the amulet in the crafting table.",
-   "dst": "",
+   "dst": "在工作台上製作護符。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -53231,7 +53231,7 @@
   },
   "Dwarves and Doguns Part III#039": {
    "src": "We must... visit... Sanba... the enchanter.",
-   "dst": "",
+   "dst": "我們得……去找……附魔師……Sanba。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53241,7 +53241,7 @@
   },
   "Dwarves and Doguns Part III#040": {
    "src": "Go to the enchanter and enchant the amulet.",
-   "dst": "",
+   "dst": "前往附魔師處，為護符附魔。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -53251,7 +53251,7 @@
   },
   "Dwarves and Doguns Part III#041": {
    "src": "Erm...Korzim, what on earth are you doing here? It's not safe for you!",
-   "dst": "",
+   "dst": "呃……Korzim，你到底跑來這裡做什麼？這裡對你不安全！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53261,7 +53261,7 @@
   },
   "Dwarves and Doguns Part III#042": {
    "src": "Wait, that amulet...oh no, really? Okay, I know what^s going on.",
-   "dst": "",
+   "dst": "等等，那枚護符……不會吧，真的假的？好，我知道是怎麼回事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53271,7 +53271,7 @@
   },
   "Dwarves and Doguns Part III#043": {
    "src": "We're going to need to give this a little extra kick if you're going to use this for what I think you are.",
-   "dst": "",
+   "dst": "如果你真要拿它去做我想的那件事，那得再給它加點勁才行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53281,7 +53281,7 @@
   },
   "Dwarves and Doguns Part III#044": {
    "src": "A pinch of fire scarab tail, splash of sulphur, exactly three ounces of old brimstone...!",
-   "dst": "",
+   "dst": "一撮火聖甲蟲的尾巴、一點硫磺、正正三盎司的陳年硫火石……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53291,7 +53291,7 @@
   },
   "Dwarves and Doguns Part III#045": {
    "src": "Infunde hoc monile, alta intra monte. Magia!",
-   "dst": "",
+   "dst": "Infunde hoc monile, alta intra monte. Magia!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53301,7 +53301,7 @@
   },
   "Dwarves and Doguns Part III#046": {
    "src": "Meet me in the back, we can't talk out here. You never know who's listening...",
-   "dst": "",
+   "dst": "到後面來找我，這裡不方便談。誰在聽都說不準……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53311,7 +53311,7 @@
   },
   "Dwarves and Doguns Part III#047": {
    "src": "Enter the storage room in the enchanter's house.",
-   "dst": "",
+   "dst": "進入附魔師家中的儲藏室。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -53321,7 +53321,7 @@
   },
   "Dwarves and Doguns Part III#048": {
    "src": "Supposing you're here to help, Soldier. Garaheth's being summoned if you're getting this...",
-   "dst": "",
+   "dst": "我就當你是來幫忙的，士兵。你既然拿到了這個，就表示 Garaheth 正在被召喚……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53331,7 +53331,7 @@
   },
   "Dwarves and Doguns Part III#049": {
    "src": "Axelus prepped a contingency plan for this, but having to put it in action is surreal. Let me fill you in.",
-   "dst": "",
+   "dst": "Axelus 早就為此備下了應變方案，只是真要動用起來，感覺很不真實。我把來龍去脈說給你聽。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53341,7 +53341,7 @@
   },
   "Dwarves and Doguns Part III#050": {
    "src": "That dragon skeleton lying in the Heights belonged to an Ice Drake. Centuries ago, it was used in the Dogun wars.",
-   "dst": "",
+   "dst": "躺在 the Heights 上的那具龍骨，屬於一頭 Ice Drake。幾百年前，牠被用在對 Dogun 的戰爭裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53351,7 +53351,7 @@
   },
   "Dwarves and Doguns Part III#051": {
    "src": "It had incredibly potent magic, particularly in its icy breath. The area it hit is still frozen to this day, and shows no signs of thaw.",
-   "dst": "",
+   "dst": "牠的魔力強得驚人，尤其是那道冰息。被牠噴中的地方至今仍然凍結，沒有半點消融的跡象。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53361,7 +53361,7 @@
   },
   "Dwarves and Doguns Part III#052": {
    "src": "According to Axelus' stories, its breath travelled through the tunnels and coalesced someplace deep within...",
-   "dst": "",
+   "dst": "照 Axelus 說的，那道氣息穿過坑道，在深處某個地方凝聚了起來……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53371,7 +53371,7 @@
   },
   "Dwarves and Doguns Part III#053": {
    "src": "...becoming True Ice, a potent mixture of sheer cold and magic energy. That's what we will need to combat Garaheth.'",
-   "dst": "",
+   "dst": "……化為 True Ice，是極寒與魔法能量交織而成的強大之物。那正是我們對付 Garaheth 所需要的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53381,7 +53381,7 @@
   },
   "Dwarves and Doguns Part III#054": {
    "src": "If you bring me [{~} True Ice] I can make a staff capable of harnessing it...and we can freeze Garaheth in its tracks.",
-   "dst": "",
+   "dst": "只要你帶 [{~} True Ice] 回來，我就能做出一根能駕馭它的法杖……我們就能把 Garaheth 原地凍住。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53391,7 +53391,7 @@
   },
   "Dwarves and Doguns Part III#055": {
    "src": "Head north to the Freezing Heights and make your way to the top, now! We've got no time at all!",
-   "dst": "",
+   "dst": "立刻往北去 Freezing Heights，一路爬到頂上！我們一點時間都沒有了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53401,7 +53401,7 @@
   },
   "Dwarves and Doguns Part III#056": {
    "src": "Travel to the frozen heights and find {~} True Ice.",
-   "dst": "",
+   "dst": "前往冰封的高地，找到 {~} 份 True Ice。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -53411,7 +53411,7 @@
   },
   "Dwarves and Doguns Part III#057": {
    "src": "... This... This used to be...a Dogun town. The Dwarves rendered it barren.",
-   "dst": "",
+   "dst": "……這裡……這裡曾經是……一座 Dogun 的城鎮。是 Dwarves 讓它變成不毛之地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53421,7 +53421,7 @@
   },
   "Dwarves and Doguns Part III#058": {
    "src": "They used the Drake... They chained it up and...forced it to attack. We had to kill it...",
-   "dst": "",
+   "dst": "他們利用了那頭 Drake……把牠鎖起來……逼牠攻擊。我們不得不殺了牠……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53431,7 +53431,7 @@
   },
   "Dwarves and Doguns Part III#059": {
    "src": "It... froze my town... as it died. I was there... {~} years ago.",
-   "dst": "",
+   "dst": "牠……在斷氣時……凍住了我的家鄉。我當時就在那裡……{~} 年前。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53441,7 +53441,7 @@
   },
   "Dwarves and Doguns Part III#060": {
    "src": "I know the way... into the caves.",
-   "dst": "",
+   "dst": "進洞穴的路……我認得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53451,7 +53451,7 @@
   },
   "Dwarves and Doguns Part III#061": {
    "src": "The True Ice...is deep inside. I will struggle to...stay warm here.",
-   "dst": "",
+   "dst": "True Ice……在很裡面。在這裡……我很難維持體溫。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53461,7 +53461,7 @@
   },
   "Dwarves and Doguns Part III#062": {
    "src": "I will try to run through...as quickly as possible. The ice is...painful.",
-   "dst": "",
+   "dst": "我會盡量……用最快的速度衝過去。這些冰……很痛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53471,7 +53471,7 @@
   },
   "Dwarves and Doguns Part III#063": {
    "src": "We must... move fast... or... we will both.... freeze.",
-   "dst": "",
+   "dst": "我們必須……快一點……不然……我們兩個都會……凍住。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53481,7 +53481,7 @@
   },
   "Dwarves and Doguns Part III#064": {
    "src": "Maybe... I am... hotter than... I thought... do you.. Hear that?",
-   "dst": "",
+   "dst": "也許……我比自己想的……還要燙……你有沒有……聽見那個聲音？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53491,7 +53491,7 @@
   },
   "Dwarves and Doguns Part III#065": {
    "src": "Oh no... I think... It's... COLLAPSING.",
-   "dst": "",
+   "dst": "糟了……我想……它要……塌了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53501,7 +53501,7 @@
   },
   "Dwarves and Doguns Part III#066": {
    "src": "My... feet are... solid... Keep... running.",
-   "dst": "",
+   "dst": "我的……腳……凍硬了……繼續……跑。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53511,7 +53511,7 @@
   },
   "Dwarves and Doguns Part III#067": {
    "src": "This is it... The thing that... Killed my families... [{~} True Ice].",
-   "dst": "",
+   "dst": "就是它了……那個……殺死我族人的東西……[{~} True Ice]。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53521,7 +53521,7 @@
   },
   "Dwarves and Doguns Part III#068": {
    "src": "Return to the enchanter with the True Ice.",
-   "dst": "",
+   "dst": "帶著 True Ice 回到附魔師那裡。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part III",
@@ -53531,7 +53531,7 @@
   },
   "Dwarves and Doguns Part III#069": {
    "src": "Impressive, you two. Must've been tough to get that...doubly so for Korzim.",
-   "dst": "",
+   "dst": "你們兩個真行。那東西肯定不好拿……對 Korzim 來說更是加倍難熬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53541,7 +53541,7 @@
   },
   "Dwarves and Doguns Part III#070": {
    "src": "Here is the staff, {u}. Keep it safe, and don't you go dying on us.",
-   "dst": "",
+   "dst": "法杖給你，{u}。收好了，可別死在外頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53551,7 +53551,7 @@
   },
   "Dwarves and Doguns Part III#071": {
    "src": "My husband and I will round up the coalition and get them to act now. We need to get going before-",
-   "dst": "",
+   "dst": "我和我丈夫會把聯盟的人集合起來，立刻行動。我們得趕在——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53561,7 +53561,7 @@
   },
   "Dwarves and Doguns Part III#072": {
    "src": "...that's the barracks door. That's the barracks door!!",
-   "dst": "",
+   "dst": "……那是軍營的門。那是軍營的門！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53571,7 +53571,7 @@
   },
   "Dwarves and Doguns Part III#073": {
    "src": "Men! We have to meet for briefing on the surface, the war is due any hour now! Move faster!",
-   "dst": "",
+   "dst": "弟兄們！到地面上集合聽簡報，戰爭隨時可能開打！動作快一點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53581,7 +53581,7 @@
   },
   "Dwarves and Doguns Part III#074": {
    "src": "They're already going?! We're out of time! Korzim is waiting for you just upstairs when you reach level {~}. Go train! NOW!",
-   "dst": "",
+   "dst": "他們已經出發了？！我們沒時間了！等你到 {~} 級，Korzim 就在樓上等你。快去練等！現在就去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part III",
@@ -53591,7 +53591,7 @@
   },
   "Dwarves and Doguns Part IV#000": {
    "src": "Return to Korzim on the second floor of the enchanter in {p} with the Amulet of Fire Resistance and the Staff of True Ice.",
-   "dst": "",
+   "dst": "帶著 Amulet of Fire Resistance 與 Staff of True Ice，回到 {p} 附魔師的二樓找 Korzim。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part IV",
@@ -53601,7 +53601,7 @@
   },
   "Dwarves and Doguns Part IV#001": {
    "src": "...Do you have...the staff? And the amulet...?",
-   "dst": "",
+   "dst": "……法杖……你拿到了嗎？護符呢……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53611,7 +53611,7 @@
   },
   "Dwarves and Doguns Part IV#002": {
    "src": "The war is starting... and Axelus... He has not returned.",
-   "dst": "",
+   "dst": "戰爭要開打了……而 Axelus……他還沒有回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53621,7 +53621,7 @@
   },
   "Dwarves and Doguns Part IV#003": {
    "src": "We can not go... Not without him. Find him... And bring him to the... Dogun village.",
-   "dst": "",
+   "dst": "我們不能走……不能丟下他。去找到他……然後把他帶到……Dogun 村。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53631,7 +53631,7 @@
   },
   "Dwarves and Doguns Part IV#004": {
    "src": "I can not leave. The guard...it is on high alert. He was last at {p}...yes?",
-   "dst": "",
+   "dst": "我走不開。守衛……全都在戒備。他最後是在 {p}……對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53641,7 +53641,7 @@
   },
   "Dwarves and Doguns Part IV#005": {
    "src": "Head to {p} and look for Axelus.",
-   "dst": "",
+   "dst": "前往 {p}，尋找 Axelus。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part IV",
@@ -53651,7 +53651,7 @@
   },
   "Dwarves and Doguns Part IV#006": {
    "src": "The first group has already started their climb, let's hurry.",
-   "dst": "",
+   "dst": "第一隊已經開始往上爬了，我們快點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53661,7 +53661,7 @@
   },
   "Dwarves and Doguns Part IV#007": {
    "src": "Hey! Everyone, the king has someone in the cage! It's been years since we used it!",
-   "dst": "",
+   "dst": "喂！大家快看，國王把人關進籠子裡了！那東西好幾年沒用過了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53671,7 +53671,7 @@
   },
   "Dwarves and Doguns Part IV#008": {
    "src": "Wait, that's Axelus up there!! The king locked up his son?! What in the world?",
-   "dst": "",
+   "dst": "等等，上面那個是 Axelus！！國王把自己的兒子關起來？！這是怎麼回事？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53681,7 +53681,7 @@
   },
   "Dwarves and Doguns Part IV#009": {
    "src": "I heard he was consorting with demons, but that can't possibly be true, can it?",
-   "dst": "",
+   "dst": "我聽說他跟惡魔勾結，但那不可能是真的吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53691,7 +53691,7 @@
   },
   "Dwarves and Doguns Part IV#010": {
    "src": "For the last time, they are not demons!! Gods, I've been telling you this whole time! Not even my father will listen to reason!",
-   "dst": "",
+   "dst": "我最後說一次，他們不是惡魔！！天啊，我從頭到尾都在跟你們講！連我父親都不肯聽人講道理！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53701,7 +53701,7 @@
   },
   "Dwarves and Doguns Part IV#011": {
    "src": "If I don't get freed we're doomed, you hear me?! We won't survive another war! As your prince I demand to be freed!",
-   "dst": "",
+   "dst": "我要是出不去，我們就完了，聽見沒有？！再來一場戰爭我們撐不住的！以你們王子的身分，我命令你們放我出來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53711,7 +53711,7 @@
   },
   "Dwarves and Doguns Part IV#012": {
    "src": "Listen, the statues are climbable and there's a control panel for the lava siphons near them! Now help me so we all don't die!",
-   "dst": "",
+   "dst": "聽好，那些雕像爬得上去，旁邊就有熔岩導管的控制盤！快幫我，不然我們都得死！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53721,7 +53721,7 @@
   },
   "Dwarves and Doguns Part IV#013": {
    "src": "Free Axelus and escape the city.",
-   "dst": "",
+   "dst": "救出 Axelus 並逃離城市。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part IV",
@@ -53731,7 +53731,7 @@
   },
   "Dwarves and Doguns Part IV#014": {
    "src": "Wait, that human just defaced the hero's monument!! Are they working with the demons too?",
-   "dst": "",
+   "dst": "等等，那個人類剛剛毀了英雄紀念碑！！他也跟惡魔是一夥的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53741,7 +53741,7 @@
   },
   "Dwarves and Doguns Part IV#015": {
    "src": "{u}! I didn't think you'd be back, but we need to leave, now! Meet me outside!",
-   "dst": "",
+   "dst": "{u}！我沒想到你會回來，但我們得馬上走！外面見！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53751,7 +53751,7 @@
   },
   "Dwarves and Doguns Part IV#016": {
    "src": "{u}! Over here, to the right! By the cannon! I'm commandeering this thing.",
-   "dst": "",
+   "dst": "{u}！這邊，右邊！砲台旁邊！這東西我徵用了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53761,7 +53761,7 @@
   },
   "Dwarves and Doguns Part IV#017": {
    "src": "We need to get up to the Doguns before the Dwarves begin their assault, or before the Doguns take their last resort.",
-   "dst": "",
+   "dst": "我們得趕在 Dwarves 發動進攻之前上去找 Doguns，也要趕在 Doguns 走上最後那條路之前。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53771,7 +53771,7 @@
   },
   "Dwarves and Doguns Part IV#018": {
    "src": "Get in the cannon, now! You've got your armour, you might end up charred and covered in soot but you'll be fine!",
-   "dst": "",
+   "dst": "快進砲膛裡！你有護甲，頂多被燒得焦黑、滿身煤灰，但死不了的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53781,7 +53781,7 @@
   },
   "Dwarves and Doguns Part IV#019": {
    "src": "Don't tell anyone we shot ourselves out of a cannon, I'll never live it down. Now come on, to the Dogun village, hurry!",
-   "dst": "",
+   "dst": "別跟任何人說我們是被砲彈射出去的，我這輩子就抬不起頭了。快，往 Dogun 村，快點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53791,7 +53791,7 @@
   },
   "Dwarves and Doguns Part IV#020": {
    "src": "If the Doguns are taking their last resort and summoning Garaheth, then we've got two sides to stop at once...basically, the odds are astronomically against us.",
-   "dst": "",
+   "dst": "如果 Doguns 真的走上最後那條路、召喚了 Garaheth，那我們就得同時攔下兩邊……說白了，勝算低到不像話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53801,7 +53801,7 @@
   },
   "Dwarves and Doguns Part IV#021": {
    "src": "That means you do what you need to do, no matter what. Understood? If we can stop this madness then the casualties won't have died for nothing! Now move!",
-   "dst": "",
+   "dst": "所以該做什麼你就做什麼，不惜任何代價。聽懂了嗎？只要能阻止這場瘋狂，那些死去的人就不算白死！走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53811,7 +53811,7 @@
   },
   "Dwarves and Doguns Part IV#022": {
    "src": "Reach the portal and stop Garaheth.",
-   "dst": "",
+   "dst": "抵達傳送門，阻止 Garaheth。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part IV",
@@ -53821,7 +53821,7 @@
   },
   "Dwarves and Doguns Part IV#023": {
    "src": "WAIT, STOP THE-",
-   "dst": "",
+   "dst": "等等，住手——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53831,7 +53831,7 @@
   },
   "Dwarves and Doguns Part IV#024": {
    "src": "Quiet. Dwarven whelp...we will not go quietly. AWAKEN.",
-   "dst": "",
+   "dst": "閉嘴。Dwarves 的乳臭小子……我們不會默默地走。醒來吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53841,7 +53841,7 @@
   },
   "Dwarves and Doguns Part IV#025": {
    "src": "I can't believe this... That bone was part of the ritual?! Agh, how could we have been so STUPID! You're all lucky we prepared for this!!",
-   "dst": "",
+   "dst": "真是難以置信……那根骨頭也是儀式的一部分？！啊，我們怎麼會蠢成這樣！算你們走運，我們早有準備！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53851,7 +53851,7 @@
   },
   "Dwarves and Doguns Part IV#026": {
    "src": "You need to get inside him. He's still chained! The amulet will protect you from the heat! Freeze him from the inside out!!",
-   "dst": "",
+   "dst": "你得進到他體內。他還被鎖著！護符能擋住那股熱！從裡面把他凍起來！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53861,7 +53861,7 @@
   },
   "Dwarves and Doguns Part IV#027": {
    "src": "Enter the body of Garaheth.",
-   "dst": "",
+   "dst": "進入 Garaheth 的體內。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part IV",
@@ -53871,7 +53871,7 @@
   },
   "Dwarves and Doguns Part IV#028": {
    "src": "Find all {~} organs and destroy them.",
-   "dst": "",
+   "dst": "找出全部 {~} 個器官並摧毀它們。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part IV",
@@ -53881,7 +53881,7 @@
   },
   "Dwarves and Doguns Part IV#029": {
    "src": "Leave Garaheth and exit his realm.",
-   "dst": "",
+   "dst": "離開 Garaheth，退出他的領域。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part IV",
@@ -53891,7 +53891,7 @@
   },
   "Dwarves and Doguns Part IV#030": {
    "src": "EVERYONE, STOP THIS! RIGHT NOW!! IT'S OVER!!",
-   "dst": "",
+   "dst": "所有人，住手！立刻住手！！結束了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53901,7 +53901,7 @@
   },
   "Dwarves and Doguns Part IV#031": {
    "src": "Open your eyes for once in your lives!! You see that?! Behind me! THAT was going to be the end result!",
-   "dst": "",
+   "dst": "你們這輩子就睜開眼睛看一次吧！！看見了嗎？！我後面！那才是最後的下場！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53911,7 +53911,7 @@
   },
   "Dwarves and Doguns Part IV#032": {
    "src": "Garaheth would have killed every one of us, damn it! Are you that short-sighted that you can't see this?!",
-   "dst": "",
+   "dst": "Garaheth 會把我們一個不留地殺光，可惡！你們短視到連這個都看不出來嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53921,7 +53921,7 @@
   },
   "Dwarves and Doguns Part IV#033": {
    "src": "Everyone here is to blame, except the human who helped stop this! The Doguns were already exiled, they wouldn't have hurt anyone!",
-   "dst": "",
+   "dst": "在場每一個人都有責任，只有那個出手阻止這一切的人類例外！Doguns 早就被流放了，他們根本不會傷害任何人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53931,7 +53931,7 @@
   },
   "Dwarves and Doguns Part IV#034": {
    "src": "But we couldn't just let ANYTHING be! You always need more glory, more, more, MORE! Don't you, Draani? I'm ashamed to be your lineage!",
-   "dst": "",
+   "dst": "可是我們就是沒辦法放過任何東西！你永遠要更多榮耀，更多，更多，再更多！是不是啊，Draani？身為你的血脈，我感到羞恥！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53941,7 +53941,7 @@
   },
   "Dwarves and Doguns Part IV#035": {
    "src": "And you, Doguns! I...I pitied you. You were wronged, but you resort to this? You'd doom the world over to spite the Dwarves? Is that it?!",
-   "dst": "",
+   "dst": "還有你們，Doguns！我……我曾經同情你們。你們是受了冤屈，可是你們竟然走到這一步？為了報復 Dwarves，就要拉全世界陪葬？是這樣嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53951,7 +53951,7 @@
   },
   "Dwarves and Doguns Part IV#036": {
    "src": "Whelp. You do not understand. To be persecuted...and see your people tortured...hunted.",
-   "dst": "",
+   "dst": "乳臭小子。你不會懂的。被迫害……眼睜睜看著族人受盡折磨……被追殺。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53961,7 +53961,7 @@
   },
   "Dwarves and Doguns Part IV#037": {
    "src": "You all deserve it! You attacked out [sic] ancestors for sport! Eye for an eye, have you heard of it? It's only fair!",
-   "dst": "",
+   "dst": "你們活該！你們拿我們的祖先取樂！以牙還牙，聽過沒有？這才叫公道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53971,7 +53971,7 @@
   },
   "Dwarves and Doguns Part IV#038": {
    "src": "Imbeciles...your stories are not true. We... We lived through the war. You took everything...and suffered none.",
-   "dst": "",
+   "dst": "蠢貨……你們那套說法根本不是真的。我們……我們是從那場戰爭裡活下來的。你們奪走了一切……卻什麼苦都沒受過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53981,7 +53981,7 @@
   },
   "Dwarves and Doguns Part IV#039": {
    "src": "I've been trying to tell BOTH of you that the monarchy has been spreading lies for centuries! One bad king doesn't mean the whole species is a loss!",
-   "dst": "",
+   "dst": "我一直在跟你們兩邊講，王室散播謊言已經好幾個世紀了！一個壞國王，不代表整個種族都該被否定！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -53991,7 +53991,7 @@
   },
   "Dwarves and Doguns Part IV#040": {
    "src": "Shut your mouth. Even now...you trample on the bones of our god... You have taken everything from us...",
-   "dst": "",
+   "dst": "閉上你的嘴。到了這一刻……你們還踩在我們神明的骨骸上……你們奪走了我們的一切……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54001,7 +54001,7 @@
   },
   "Dwarves and Doguns Part IV#041": {
    "src": "This earth is stained by you. We...we shall burn you...and scatter your ash to the wind.",
-   "dst": "",
+   "dst": "這片土地已被你們玷污。我們……我們要把你們燒成灰……再撒進風裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54011,7 +54011,7 @@
   },
   "Dwarves and Doguns Part IV#042": {
    "src": "DON'T YOU DARE! STOP, RIGHT NOW!",
-   "dst": "",
+   "dst": "你敢！住手，立刻住手！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54021,7 +54021,7 @@
   },
   "Dwarves and Doguns Part IV#043": {
    "src": "Axelus!",
-   "dst": "",
+   "dst": "Axelus！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54031,7 +54031,7 @@
   },
   "Dwarves and Doguns Part IV#044": {
    "src": "...he..",
-   "dst": "",
+   "dst": "……他……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54041,7 +54041,7 @@
   },
   "Dwarves and Doguns Part IV#045": {
    "src": "You would... You would kill a savior...?",
-   "dst": "",
+   "dst": "你們竟然……竟然殺了一個救命恩人……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54051,7 +54051,7 @@
   },
   "Dwarves and Doguns Part IV#046": {
    "src": "No, no! No no no, this can't be happening! H-Hang on, we'll save you, I...I'll do something, I...",
-   "dst": "",
+   "dst": "不、不！不不不，這不可能！撐、撐住，我們會救你，我……我會想辦法，我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54061,7 +54061,7 @@
   },
   "Dwarves and Doguns Part IV#047": {
    "src": "Y-You DEMONS! MONSTERS! I'll avenge you, Axelus, j-just give me time-",
-   "dst": "",
+   "dst": "你、你們這些惡魔！怪物！我會為你報仇的，Axelus，只、只要給我一點時間——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54071,7 +54071,7 @@
   },
   "Dwarves and Doguns Part IV#048": {
    "src": "AGH, SHUT UP! SHUT...ack... Q-Quiet. Listen to one damn word from my mouth, Draani... For once in your miserable life",
-   "dst": "",
+   "dst": "啊，閉嘴！閉……咳……安、安靜。就聽我說一句話，Draani……你這悲哀的一生，就聽這麼一次",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54081,7 +54081,7 @@
   },
   "Dwarves and Doguns Part IV#049": {
    "src": "Tell. The. TRUTH!! G-gaagh...you know that's th...the only way to stop this. Swallow your pride, you...old fool...",
-   "dst": "",
+   "dst": "說。出。真相！！嘎、嘎啊……你知道那是……阻止這一切的唯一辦法。放下你的自尊吧，你這……老糊塗……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54091,7 +54091,7 @@
   },
   "Dwarves and Doguns Part IV#050": {
    "src": "I...I... Axelus... He...he called me Draani...why did...?",
-   "dst": "",
+   "dst": "我……我……Axelus……他……他叫我 Draani……為什麼……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54101,7 +54101,7 @@
   },
   "Dwarves and Doguns Part IV#051": {
    "src": "Men, stand down. This... This war is over! I will not have one more life lost! Touch the Doguns and I'll personally behead you!",
-   "dst": "",
+   "dst": "全體，放下武器。這……這場戰爭結束了！我不允許再多死一個人！誰敢動 Doguns 一根寒毛，我親手砍了他！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54111,7 +54111,7 @@
   },
   "Dwarves and Doguns Part IV#052": {
    "src": "Chief, I...I ask of you but an hour of your time. If you are willing to negotiate...",
-   "dst": "",
+   "dst": "族長，我……我只求你一個鐘頭。如果你願意坐下來談……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54121,7 +54121,7 @@
   },
   "Dwarves and Doguns Part IV#053": {
    "src": "Speak with the King of {p} and the Dogun Chieftain.",
-   "dst": "",
+   "dst": "與 {p} 的國王和 Dogun 族長對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwarves and Doguns Part IV",
@@ -54131,7 +54131,7 @@
   },
   "Dwarves and Doguns Part IV#054": {
    "src": "Ah, you've arrived. I...actually remember you from earlier. So you and...",
-   "dst": "",
+   "dst": "啊，你來了。我……其實記得先前見過你。所以你和……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54141,7 +54141,7 @@
   },
   "Dwarves and Doguns Part IV#055": {
    "src": "A-and...",
-   "dst": "",
+   "dst": "還、還有……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54151,7 +54151,7 @@
   },
   "Dwarves and Doguns Part IV#056": {
    "src": "...you knew my son. Were helping him try to put an end to this, before everything was too far gone. Heh...apologies, for that.",
-   "dst": "",
+   "dst": "……你認識我兒子。在一切還沒無可挽回之前，你一直在幫他阻止這件事。呵……為了這一切，我向你道歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54161,7 +54161,7 @@
   },
   "Dwarves and Doguns Part IV#057": {
    "src": "Paku and I have had a long discussion about the wisdom of youth over the old. You all were right. I needed to swallow my pride.",
-   "dst": "",
+   "dst": "我和 Paku 談了很久，談年輕人的見識勝過老人這件事。你們都是對的。我該放下自尊的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54171,7 +54171,7 @@
   },
   "Dwarves and Doguns Part IV#058": {
    "src": "We agreed upon a peace treaty... A new city... The Dwarves will aid us in building it.",
-   "dst": "",
+   "dst": "我們議定了一紙和約……一座新的城市……Dwarves 會協助我們興建。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54181,7 +54181,7 @@
   },
   "Dwarves and Doguns Part IV#059": {
    "src": "All hostilities...will end. My people will...be free to roam the caverns. It has been...too long.",
-   "dst": "",
+   "dst": "一切敵對……都將終止。我的族人……可以自由地在洞窟裡來去。這一天……等得太久了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54191,7 +54191,7 @@
   },
   "Dwarves and Doguns Part IV#060": {
    "src": "And the entombed Doguns at Courag will be reconstituted, as well, supposing that is a possibility.",
-   "dst": "",
+   "dst": "至於葬在 Courag 的那些 Doguns，只要辦得到，我們也會設法讓他們重生。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54201,7 +54201,7 @@
   },
   "Dwarves and Doguns Part IV#061": {
    "src": "Every king, since my so-far-great grandfather, Draani Thunderwill, has battled with their morality over the lies told to my people.",
-   "dst": "",
+   "dst": "從我那位不知隔了多少代的先祖 Draani Thunderwill 起，歷任國王都為了對人民說的那些謊，與自己的良心交戰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54211,7 +54211,7 @@
   },
   "Dwarves and Doguns Part IV#062": {
    "src": "It ends here, with the name Draani VIII. It will take time, but the bloodshed has proven things must begin to change now.",
-   "dst": "",
+   "dst": "這一切就終結在我 Draani 八世這個名字上。這需要時間，但那些流過的血已經證明，改變必須從現在開始。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54221,7 +54221,7 @@
   },
   "Dwarves and Doguns Part IV#063": {
    "src": "You and the coalition have saved the Heights, and Gavel. In {p}, you will find a stall to trade valuable minerals. You will be granted special Dwarven privileges to purchase it now.",
-   "dst": "",
+   "dst": "你和聯盟救了 the Heights，也救了 Gavel。在 {p}，你會找到一個交易珍稀礦物的攤位。從現在起，你將獲得 Dwarves 的特殊權限，可以在那裡採購。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -54231,7 +54231,7 @@
   },
   "Dwarves and Doguns Part IV#064": {
    "src": "Though that is...almost certainly not enough a reward for everything you have done...sincerely. Thank you, Wynn soldier.",
-   "dst": "",
+   "dst": "儘管這……幾乎肯定配不上你所做的一切……但我是真心的。謝謝你，Wynn 的士兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part IV",
@@ -158671,7 +158671,7 @@
   },
   "The Envoy Part I#000": {
    "src": "Speak to Olivin.",
-   "dst": "",
+   "dst": "與 Olivin 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -158681,7 +158681,7 @@
   },
   "The Envoy Part I#001": {
    "src": "Mo'in! My name is Olivin.",
-   "dst": "",
+   "dst": "Mo'in！我叫 Olivin。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158691,7 +158691,7 @@
   },
   "The Envoy Part I#002": {
    "src": "Does my appearance intrigue you?",
-   "dst": "",
+   "dst": "我這身打扮讓你覺得新奇嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158701,7 +158701,7 @@
   },
   "The Envoy Part I#003": {
    "src": "I'm not from around here. In fact I am from Corkus.",
-   "dst": "",
+   "dst": "我不是這一帶的人。老實說，我來自 Corkus。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158711,7 +158711,7 @@
   },
   "The Envoy Part I#004": {
    "src": "It's an independent island to the west. In fact.. If you want to go...",
-   "dst": "",
+   "dst": "那是西邊一座獨立的島。說起來……如果你想去的話……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158721,7 +158721,7 @@
   },
   "The Envoy Part I#005": {
    "src": "We're looking for Wynn representatives. Head to the C.S.S Wavebreaker down at the dock if you want to experience Corkus. Enjoy Corkus if you go!",
-   "dst": "",
+   "dst": "我們正在找 Wynn 的代表。想見識 Corkus 的話，就到碼頭去找 C.S.S Wavebreaker。真去了的話，好好享受 Corkus！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158731,7 +158731,7 @@
   },
   "The Envoy Part I#006": {
    "src": "Speak to C.S.S Wavebreaker Captain at the {p} docks.",
-   "dst": "",
+   "dst": "到 {p} 碼頭與 C.S.S Wavebreaker 的船長對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -158741,7 +158741,7 @@
   },
   "The Envoy Part I#007": {
    "src": "Welcome welcome to C.S.S Wavebreaker!",
-   "dst": "",
+   "dst": "歡迎，歡迎登上 C.S.S Wavebreaker！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158751,7 +158751,7 @@
   },
   "The Envoy Part I#008": {
    "src": "The only boat that'll take ye directly to {p}.",
-   "dst": "",
+   "dst": "全世界唯一一艘直達 {p} 的船。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158761,7 +158761,7 @@
   },
   "The Envoy Part I#009": {
    "src": "Just hop aboard and make yerself comfy.",
-   "dst": "",
+   "dst": "上船來，自個兒找地方坐舒服。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158771,7 +158771,7 @@
   },
   "The Envoy Part I#010": {
    "src": "Get onto the C.S.S. Wavebreaker.",
-   "dst": "",
+   "dst": "登上 C.S.S. Wavebreaker。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -158781,7 +158781,7 @@
   },
   "The Envoy Part I#011": {
    "src": "Welcam aboard me ship, I'll bring ye directly to Corkus.",
-   "dst": "",
+   "dst": "歡迎上俺的船，俺直接把你送到 Corkus。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158791,7 +158791,7 @@
   },
   "The Envoy Part I#012": {
    "src": "Trust me, it is fa' more amazin than Gavel and Wynn. We even 'ave machines!",
-   "dst": "",
+   "dst": "信俺的，那地方比 Gavel 跟 Wynn 精彩太多啦。俺們連機器都有咧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158801,7 +158801,7 @@
   },
   "The Envoy Part I#013": {
    "src": "And don't get me started on our architectur'!",
-   "dst": "",
+   "dst": "更別提俺們那些建築了，講起來沒完！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158811,7 +158811,7 @@
   },
   "The Envoy Part I#014": {
    "src": "Trust me, you will enjoy yer stay.",
-   "dst": "",
+   "dst": "信俺的，你會待得很開心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158821,7 +158821,7 @@
   },
   "The Envoy Part I#015": {
    "src": "Seems like we're 'ere!",
-   "dst": "",
+   "dst": "看樣子到啦！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158831,7 +158831,7 @@
   },
   "The Envoy Part I#016": {
    "src": "Speak to Corkus Delegate",
-   "dst": "",
+   "dst": "與 Corkus 的代表對話",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -158841,7 +158841,7 @@
   },
   "The Envoy Part I#017": {
    "src": "It's such an honour to have a Wynn soldier visit our island.",
-   "dst": "",
+   "dst": "能有 Wynn 的士兵造訪本島，實在是莫大的榮幸。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158851,7 +158851,7 @@
   },
   "The Envoy Part I#018": {
    "src": "We were hoping for a true envoy, but you will do.",
-   "dst": "",
+   "dst": "我們原本期待的是正式的使者，不過你也行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158861,7 +158861,7 @@
   },
   "The Envoy Part I#019": {
    "src": "If you follow me, I'll give you a tour of the city.",
-   "dst": "",
+   "dst": "跟我來，我帶你在城裡走一圈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158871,7 +158871,7 @@
   },
   "The Envoy Part I#020": {
    "src": "We first arrived on Corkus {~} years ago.",
-   "dst": "",
+   "dst": "我們是在 {~} 年前首次登上 Corkus 的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158881,7 +158881,7 @@
   },
   "The Envoy Part I#021": {
    "src": "The Corkians, like you, are from Fruma originally...",
-   "dst": "",
+   "dst": "Corkians 跟你一樣，祖先都來自 Fruma……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158891,7 +158891,7 @@
   },
   "The Envoy Part I#022": {
    "src": "...But let's not talk about that.",
-   "dst": "",
+   "dst": "……不過這件事還是別提了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158901,7 +158901,7 @@
   },
   "The Envoy Part I#023": {
    "src": "Coming from Fruma, we of course knew no magic at all.",
-   "dst": "",
+   "dst": "從 Fruma 來的人，自然是完全不懂魔法的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158911,7 +158911,7 @@
   },
   "The Envoy Part I#024": {
    "src": "We soon developed our own. The rare power of Electromagic.",
-   "dst": "",
+   "dst": "我們很快發展出自己的一套：罕見的 Electromagic 之力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158921,7 +158921,7 @@
   },
   "The Envoy Part I#025": {
    "src": "It's a difficult modern branch of magic that allows us to create machines.",
-   "dst": "",
+   "dst": "那是一門艱深的現代魔法分支，讓我們得以造出機器。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158931,7 +158931,7 @@
   },
   "The Envoy Part I#026": {
    "src": "Ah, here already. Welcome to {p}, Capital of our island.",
-   "dst": "",
+   "dst": "啊，這麼快就到了。歡迎來到 {p}，本島的首都。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158941,7 +158941,7 @@
   },
   "The Envoy Part I#027": {
    "src": "We've come a long way in a short time.",
-   "dst": "",
+   "dst": "短短時間裡，我們走了很長一段路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158951,7 +158951,7 @@
   },
   "The Envoy Part I#028": {
    "src": "Let me point out where the shops are.",
-   "dst": "",
+   "dst": "我來告訴你商店都在哪裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158961,7 +158961,7 @@
   },
   "The Envoy Part I#029": {
    "src": "North, you can buy weapons and potions. If you will continue through the gate you will find the native Avos.",
-   "dst": "",
+   "dst": "北邊可以買武器和藥水。再往城門外走，會遇到本地的 Avos。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158971,7 +158971,7 @@
   },
   "The Envoy Part I#030": {
    "src": "West, you can buy armor, and another entrance to the potion shop.",
-   "dst": "",
+   "dst": "西邊可以買護甲，那裡還有一個通往藥水店的入口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158981,7 +158981,7 @@
   },
   "The Envoy Part I#031": {
    "src": "To the south is our bank, powder shop, scrolls, and our exclusive powder exchange!",
-   "dst": "",
+   "dst": "南邊是銀行、粉末店、捲軸店，還有我們獨有的粉末兌換所！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -158991,7 +158991,7 @@
   },
   "The Envoy Part I#032": {
    "src": "Oh! And speaking of the powder exchange, I'll start you off with some of these.",
-   "dst": "",
+   "dst": "喔！說到粉末兌換所，先給你一些這個當見面禮。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159001,7 +159001,7 @@
   },
   "The Envoy Part I#033": {
    "src": "Moving on... The south gate leads to {p}. On your way there, you might pass by the-",
-   "dst": "",
+   "dst": "繼續說……南門通往 {p}。往那邊走的路上，你可能會經過——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159011,7 +159011,7 @@
   },
   "The Envoy Part I#034": {
    "src": "Uhm, nevermind. In fact, we have a gift for you.",
-   "dst": "",
+   "dst": "呃，當我沒說。對了，我們替你準備了一份禮物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159021,7 +159021,7 @@
   },
   "The Envoy Part I#035": {
    "src": "The Five Gears Diner is hosting any guests of the island.",
-   "dst": "",
+   "dst": "The Five Gears Diner 正在招待所有來訪本島的客人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159031,7 +159031,7 @@
   },
   "The Envoy Part I#036": {
    "src": "Go through the western gate and head to the diner for your free feast. Enjoy!",
-   "dst": "",
+   "dst": "從西門出去，到那間餐館享用你的免費大餐。祝你用餐愉快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159041,7 +159041,7 @@
   },
   "The Envoy Part I#037": {
    "src": "Walk towards The Five Gears Diner.",
-   "dst": "",
+   "dst": "前往 The Five Gears Diner。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -159051,7 +159051,7 @@
   },
   "The Envoy Part I#038": {
    "src": "RUN!",
-   "dst": "",
+   "dst": "快跑！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159061,7 +159061,7 @@
   },
   "The Envoy Part I#039": {
    "src": "Mechs at the Diner! Run!",
-   "dst": "",
+   "dst": "餐館裡有 mech！快跑！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159071,7 +159071,7 @@
   },
   "The Envoy Part I#040": {
    "src": "Psst.. Over here.",
-   "dst": "",
+   "dst": "噓……這邊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159081,7 +159081,7 @@
   },
   "The Envoy Part I#041": {
    "src": "Mo'in, Wynnian. Thank goodness I stopped you.",
-   "dst": "",
+   "dst": "Mo'in，Wynn 來的朋友。還好我把你攔下來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159091,7 +159091,7 @@
   },
   "The Envoy Part I#042": {
    "src": "The diner is being raided by mechs..",
-   "dst": "",
+   "dst": "那間餐館正被 mech 洗劫……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159101,7 +159101,7 @@
   },
   "The Envoy Part I#043": {
    "src": "Before we do anything, I have to explain what's happening here...",
-   "dst": "",
+   "dst": "動手之前，我得先跟你說明這裡的狀況……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159111,7 +159111,7 @@
   },
   "The Envoy Part I#044": {
    "src": "My name is Maxie by the way. Nice to meet you.",
-   "dst": "",
+   "dst": "對了，我叫 Maxie。很高興認識你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159121,7 +159121,7 @@
   },
   "The Envoy Part I#045": {
    "src": "This town is usually full of life.",
-   "dst": "",
+   "dst": "這座城平常是很熱鬧的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159131,7 +159131,7 @@
   },
   "The Envoy Part I#046": {
    "src": "But Corkus has a secret...",
-   "dst": "",
+   "dst": "但 Corkus 有個秘密……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159141,7 +159141,7 @@
   },
   "The Envoy Part I#047": {
    "src": "Our creations have rebelled against us.",
-   "dst": "",
+   "dst": "我們造出來的東西，反過來背叛了我們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159151,7 +159151,7 @@
   },
   "The Envoy Part I#048": {
    "src": "They now raid towns for parts.",
-   "dst": "",
+   "dst": "現在它們洗劫城鎮，就為了搜刮零件。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159161,7 +159161,7 @@
   },
   "The Envoy Part I#049": {
    "src": "Mechs are getting increasingly more desperate.",
-   "dst": "",
+   "dst": "那些 mech 越來越不擇手段。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159171,7 +159171,7 @@
   },
   "The Envoy Part I#050": {
    "src": "Even in rust, they are still powerful.",
-   "dst": "",
+   "dst": "就算鏽成那樣，它們依然強悍。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159181,7 +159181,7 @@
   },
   "The Envoy Part I#051": {
    "src": "We have tried to remove them but the factory always makes more.",
-   "dst": "",
+   "dst": "我們試過清除它們，可是工廠總會再造出新的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159191,7 +159191,7 @@
   },
   "The Envoy Part I#052": {
    "src": "It is Corkus' greatest failure. It must be stopped.",
-   "dst": "",
+   "dst": "那是 Corkus 最大的失敗。非阻止不可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159201,7 +159201,7 @@
   },
   "The Envoy Part I#053": {
    "src": "We need to act now.",
-   "dst": "",
+   "dst": "我們得馬上行動。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159211,7 +159211,7 @@
   },
   "The Envoy Part I#054": {
    "src": "I can try to open the vent to sneak in.",
-   "dst": "",
+   "dst": "我可以試著打開通風口，從那裡溜進去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159221,7 +159221,7 @@
   },
   "The Envoy Part I#055": {
    "src": "I know you are a stranger, but talk to me if you want to help.",
-   "dst": "",
+   "dst": "我知道你只是個外人，不過你願意幫忙的話，就來跟我說一聲。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159231,7 +159231,7 @@
   },
   "The Envoy Part I#056": {
    "src": "Talk to Maxie.",
-   "dst": "",
+   "dst": "與 Maxie 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -159241,7 +159241,7 @@
   },
   "The Envoy Part I#057": {
    "src": "Follow me, {u}.",
-   "dst": "",
+   "dst": "跟我來，{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159251,7 +159251,7 @@
   },
   "The Envoy Part I#058": {
    "src": "Alright, I'll open the door with electromagic.",
-   "dst": "",
+   "dst": "好，我用 electromagic 把門打開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159261,7 +159261,7 @@
   },
   "The Envoy Part I#059": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159271,7 +159271,7 @@
   },
   "The Envoy Part I#060": {
    "src": "Gah! I can't even do the most basic spell!",
-   "dst": "",
+   "dst": "唉！我連最基本的法術都施不出來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159281,7 +159281,7 @@
   },
   "The Envoy Part I#061": {
    "src": "No... Let me try again...",
-   "dst": "",
+   "dst": "不……讓我再試一次……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159291,7 +159291,7 @@
   },
   "The Envoy Part I#062": {
    "src": "Yes! It worked!",
-   "dst": "",
+   "dst": "太好了！成功了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159301,7 +159301,7 @@
   },
   "The Envoy Part I#063": {
    "src": "I'm sorry for being useless in front of you...",
-   "dst": "",
+   "dst": "在你面前這麼沒用，真是抱歉……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159311,7 +159311,7 @@
   },
   "The Envoy Part I#064": {
    "src": "Electromagic is different from your magic.. I'm not very good at it...",
-   "dst": "",
+   "dst": "Electromagic 跟你們的魔法不一樣……我不太拿手……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159321,7 +159321,7 @@
   },
   "The Envoy Part I#065": {
    "src": "I'm not sure which way it is, let's split up. I'll go to the right.",
-   "dst": "",
+   "dst": "我不確定該走哪邊，我們分頭吧。我走右邊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159331,7 +159331,7 @@
   },
   "The Envoy Part I#066": {
    "src": "Activate the fans.",
-   "dst": "",
+   "dst": "啟動風扇。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -159341,7 +159341,7 @@
   },
   "The Envoy Part I#067": {
    "src": "Open the door and exit the ducts.",
-   "dst": "",
+   "dst": "打開門，離開管道。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -159351,7 +159351,7 @@
   },
   "The Envoy Part I#068": {
    "src": "Follow the path.",
-   "dst": "",
+   "dst": "沿著通道前進。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -159361,7 +159361,7 @@
   },
   "The Envoy Part I#069": {
    "src": "RETRIEVE SCRAP...",
-   "dst": "",
+   "dst": "回收廢料……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159371,7 +159371,7 @@
   },
   "The Envoy Part I#070": {
    "src": "RETURN WITH HAUL FOR CONSTRUCTION.",
-   "dst": "",
+   "dst": "攜回收獲，用於建造。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159381,7 +159381,7 @@
   },
   "The Envoy Part I#071": {
    "src": "Ouch.",
-   "dst": "",
+   "dst": "好痛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159391,7 +159391,7 @@
   },
   "The Envoy Part I#072": {
    "src": "Mo'in. Sorry had a problem with the-",
-   "dst": "",
+   "dst": "Mo'in。抱歉，我這邊出了點問題——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159401,7 +159401,7 @@
   },
   "The Envoy Part I#073": {
    "src": "What in the world is that mech on top of the pile of scrap over there?",
-   "dst": "",
+   "dst": "那邊廢料堆上面那台 mech 到底是什麼東西？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159411,7 +159411,7 @@
   },
   "The Envoy Part I#074": {
    "src": "That is definitely not a regular despermech... It looks brand new!",
-   "dst": "",
+   "dst": "那絕對不是普通的 despermech……它看起來是全新的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159421,7 +159421,7 @@
   },
   "The Envoy Part I#075": {
    "src": "One of those hasn't been seen since the factory was running...",
-   "dst": "",
+   "dst": "那種東西自從工廠停工之後就再也沒出現過……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159431,7 +159431,7 @@
   },
   "The Envoy Part I#076": {
    "src": "We need to do something! I'll clear the path for you. That's the only thing I can do, I... hurt my... leg.",
-   "dst": "",
+   "dst": "我們得做點什麼！我幫你清出一條路。我也就只能做這個了，我……腳……受傷了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159441,7 +159441,7 @@
   },
   "The Envoy Part I#077": {
    "src": "Come on...",
-   "dst": "",
+   "dst": "快……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159451,7 +159451,7 @@
   },
   "The Envoy Part I#078": {
    "src": "Go, defeat it!",
-   "dst": "",
+   "dst": "上，把它解決掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159461,7 +159461,7 @@
   },
   "The Envoy Part I#079": {
    "src": "PARTS ACQUIRED... RETURN TO FACTORY.",
-   "dst": "",
+   "dst": "零件已取得……返回工廠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159471,7 +159471,7 @@
   },
   "The Envoy Part I#080": {
    "src": "Are you okay? Good. Meet me at the entrance where we met. We need to report to {p}!",
-   "dst": "",
+   "dst": "你還好吧？很好。到我們初次見面的那個入口找我。我們得回 {p} 通報！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159481,7 +159481,7 @@
   },
   "The Envoy Part I#081": {
    "src": "Talk to Maxie at the entrance to The Five Gears Diner.",
-   "dst": "",
+   "dst": "在 The Five Gears Diner 的入口與 Maxie 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -159491,7 +159491,7 @@
   },
   "The Envoy Part I#082": {
    "src": "Don't worry about the guards, they are disabled for now. Follow me.",
-   "dst": "",
+   "dst": "別擔心那些守衛，它們暫時停擺了。跟我來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159501,7 +159501,7 @@
   },
   "The Envoy Part I#083": {
    "src": "I know a shortcut, we'll be in {p} in no time.",
-   "dst": "",
+   "dst": "我知道一條捷徑，很快就能到 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159511,7 +159511,7 @@
   },
   "The Envoy Part I#084": {
    "src": "Talk to Maxie and Corkus Delegate in {p}.",
-   "dst": "",
+   "dst": "在 {p} 與 Maxie 和 Corkus 的代表對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part I",
@@ -159521,7 +159521,7 @@
   },
   "The Envoy Part I#085": {
    "src": "Mo'in! Welcome back to {p}.",
-   "dst": "",
+   "dst": "Mo'in！歡迎回到 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159531,7 +159531,7 @@
   },
   "The Envoy Part I#086": {
    "src": "Beltrude, we have a problem! The factory is running!",
-   "dst": "",
+   "dst": "Beltrude，出大事了！工廠又開始運轉了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159541,7 +159541,7 @@
   },
   "The Envoy Part I#087": {
    "src": "We saw a mech... A new mech! It looked different like it was made in-",
-   "dst": "",
+   "dst": "我們看到一台 mech……一台新的 mech！它長得不一樣，像是在——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159551,7 +159551,7 @@
   },
   "The Envoy Part I#088": {
    "src": "What a load of scrap! You shouldn't talk about that in front of our guest!",
-   "dst": "",
+   "dst": "一派胡言！這種事怎麼能在客人面前講！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159561,7 +159561,7 @@
   },
   "The Envoy Part I#089": {
    "src": "Our guest... just killed several despermechs by himself.",
-   "dst": "",
+   "dst": "我們的客人……一個人就解決了好幾台 despermech。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159571,7 +159571,7 @@
   },
   "The Envoy Part I#090": {
    "src": "And why would we take the word of someone who can't do basic electromagic?",
-   "dst": "",
+   "dst": "那我們憑什麼相信一個連基本 electromagic 都不會的人？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159581,7 +159581,7 @@
   },
   "The Envoy Part I#091": {
    "src": "Don't listen to Maxie. Enjoy your stay.",
-   "dst": "",
+   "dst": "別聽 Maxie 的。祝你在這裡過得愉快。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159591,7 +159591,7 @@
   },
   "The Envoy Part I#092": {
    "src": "They won't admit anything with you around. They want to become allies with Wynn.",
-   "dst": "",
+   "dst": "有你在場，他們什麼都不會承認的。他們想跟 Wynn 結盟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159601,7 +159601,7 @@
   },
   "The Envoy Part I#093": {
    "src": "Come to my house when you reach level {~}, here's a key so you can get in. We must prepare to break into the factory.",
-   "dst": "",
+   "dst": "等你到 {~} 級就來我家，這是鑰匙，你進得來。我們得準備闖進工廠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part I",
@@ -159611,7 +159611,7 @@
   },
   "The Envoy Part II#000": {
    "src": "Use Maxie's house key to enter Maxie's house",
-   "dst": "",
+   "dst": "用 Maxie 的家門鑰匙進入 Maxie 的家",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -159621,7 +159621,7 @@
   },
   "The Envoy Part II#001": {
    "src": "No access without a key.",
-   "dst": "",
+   "dst": "沒有鑰匙，不得進入。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159631,7 +159631,7 @@
   },
   "The Envoy Part II#002": {
    "src": "Key valid. Welcome.",
-   "dst": "",
+   "dst": "鑰匙有效。歡迎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159641,7 +159641,7 @@
   },
   "The Envoy Part II#003": {
    "src": "Talk to Maxie on the first floor.",
-   "dst": "",
+   "dst": "在一樓與 Maxie 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -159651,7 +159651,7 @@
   },
   "The Envoy Part II#004": {
    "src": "Mo'in. I've been researching everything I can about the factory.",
-   "dst": "",
+   "dst": "Mo'in。關於那座工廠，我能查的都查了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159661,7 +159661,7 @@
   },
   "The Envoy Part II#005": {
    "src": "To get in we need two keys. One from the Avos and one from Corkians.",
-   "dst": "",
+   "dst": "要進去得有兩把鑰匙。一把在 Avos 手上，一把在 Corkians 手上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159671,7 +159671,7 @@
   },
   "The Envoy Part II#006": {
    "src": "The idea was that both species had equal roles in the factories operantions.",
-   "dst": "",
+   "dst": "當初的用意，是讓兩個種族在工廠的運作上地位平等。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159681,7 +159681,7 @@
   },
   "The Envoy Part II#007": {
    "src": "We need those keys in get in and shut down the factory once more.",
-   "dst": "",
+   "dst": "我們得拿到那兩把鑰匙才進得去，才能再一次把工廠關掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159691,7 +159691,7 @@
   },
   "The Envoy Part II#008": {
    "src": "The corkians won't give up their key very easily, so we should start with the Avos.",
-   "dst": "",
+   "dst": "Corkians 不會輕易交出他們那把，所以我們先從 Avos 下手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159701,7 +159701,7 @@
   },
   "The Envoy Part II#009": {
    "src": "Our best bet is to ask the chief. However, because of tensions the border is closed.",
-   "dst": "",
+   "dst": "最好的辦法是去問族長。可是因為關係緊張，邊界已經封閉了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159711,7 +159711,7 @@
   },
   "The Envoy Part II#010": {
    "src": "Fortunately there is something that can help us in a village north-west of here. Let's meet there.",
-   "dst": "",
+   "dst": "幸好西北邊有座村子，那裡有樣東西幫得上忙。我們在那裡碰面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159721,7 +159721,7 @@
   },
   "The Envoy Part II#011": {
    "src": "Find the catapult.",
-   "dst": "",
+   "dst": "找到投石機。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -159731,7 +159731,7 @@
   },
   "The Envoy Part II#012": {
    "src": "I knew it! There was something here we could use.",
-   "dst": "",
+   "dst": "我就知道！這裡果然有能用的東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159741,7 +159741,7 @@
   },
   "The Envoy Part II#013": {
    "src": "I'll have to use electromagic to make it launch, so you will have to go alone.",
-   "dst": "",
+   "dst": "我得用 electromagic 才能把它發射出去，所以你得一個人去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159751,7 +159751,7 @@
   },
   "The Envoy Part II#014": {
    "src": "Find the Avos chief. Ask for the factory key.",
-   "dst": "",
+   "dst": "找到 Avos 的族長，向他要工廠的鑰匙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159761,7 +159761,7 @@
   },
   "The Envoy Part II#015": {
    "src": "Alright, hop on.",
-   "dst": "",
+   "dst": "好了，上去吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159771,7 +159771,7 @@
   },
   "The Envoy Part II#016": {
    "src": "Press the button when you're ready.",
-   "dst": "",
+   "dst": "準備好就按下按鈕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159781,7 +159781,7 @@
   },
   "The Envoy Part II#017": {
    "src": "Off you go!",
-   "dst": "",
+   "dst": "出發囉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159791,7 +159791,7 @@
   },
   "The Envoy Part II#018": {
    "src": "Grook feathers! Not again..",
-   "dst": "",
+   "dst": "Grook 的羽毛啊！又來了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159801,7 +159801,7 @@
   },
   "The Envoy Part II#019": {
    "src": "Locate the Avos Chief by asking the Avos citizens. Avos Chief is at -{~}, -{~}",
-   "dst": "",
+   "dst": "向 Avos 的居民打聽，找出 Avos 族長的位置。族長在 -{~1}, -{~2}",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -159811,7 +159811,7 @@
   },
   "The Envoy Part II#020": {
    "src": "Hmm no gears or goggles.. You are no Corkian Human.",
-   "dst": "",
+   "dst": "唔，沒有齒輪，也沒有護目鏡……你不是 Corkus 的人類。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159821,7 +159821,7 @@
   },
   "The Envoy Part II#021": {
    "src": "The chief said your people are welcome here.",
-   "dst": "",
+   "dst": "族長說過，你的同族在這裡是受歡迎的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159831,7 +159831,7 @@
   },
   "The Envoy Part II#022": {
    "src": "You must be here to see him.",
-   "dst": "",
+   "dst": "你想必是來見他的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159841,7 +159841,7 @@
   },
   "The Envoy Part II#023": {
    "src": "He's right up these stairs.",
-   "dst": "",
+   "dst": "順著這道階梯上去就是了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159851,7 +159851,7 @@
   },
   "The Envoy Part II#024": {
    "src": "Mo'in, soldier. I have been expecting you.",
-   "dst": "",
+   "dst": "Mo'in，士兵。我等你很久了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159861,7 +159861,7 @@
   },
   "The Envoy Part II#025": {
    "src": "You can't catapult yourself into a village full of bird people and not get noticed.",
-   "dst": "",
+   "dst": "你把自己用投石機扔進一座滿是鳥人的村子，怎麼可能沒人注意到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159871,7 +159871,7 @@
   },
   "The Envoy Part II#026": {
    "src": "We know what you are here for, however. The Avos factory key.",
-   "dst": "",
+   "dst": "不過我們知道你來的目的：Avos 那把工廠鑰匙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159881,7 +159881,7 @@
   },
   "The Envoy Part II#027": {
    "src": "We saw your battle with “Mech X” at the docks from above. I believe we can trust you.",
-   "dst": "",
+   "dst": "你在碼頭跟「Mech X」那一戰，我們在空中看得清清楚楚。我相信你是可信的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159891,7 +159891,7 @@
   },
   "The Envoy Part II#028": {
    "src": "The key you seek is hidden deep within our most protected temple.",
-   "dst": "",
+   "dst": "你要找的鑰匙，藏在我們守衛最森嚴的神殿深處。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159901,7 +159901,7 @@
   },
   "The Envoy Part II#029": {
    "src": "Follow the road north of here to reach the temple. Speak to the grandmaster and she will allow you entry.",
-   "dst": "",
+   "dst": "沿著北邊那條路走就會到神殿。去跟大宗師說一聲，她會放你進去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159911,7 +159911,7 @@
   },
   "The Envoy Part II#030": {
    "src": "Talk to the chief's friend at",
-   "dst": "",
+   "dst": "與族長的朋友對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -159921,7 +159921,7 @@
   },
   "The Envoy Part II#031": {
    "src": "Eh, It's the warrior. I have my orders, but still say this is a bad idea.",
-   "dst": "",
+   "dst": "哼，是那個戰士啊。我是奉命行事，但我還是要說，這主意很糟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159931,7 +159931,7 @@
   },
   "The Envoy Part II#032": {
    "src": "We hid this key for the purpose that it would never be used again.",
-   "dst": "",
+   "dst": "我們把這把鑰匙藏起來，就是為了讓它永遠不再被使用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159941,7 +159941,7 @@
   },
   "The Envoy Part II#033": {
    "src": "The creatures we summoned down there are hostile to all. Even Avos.",
-   "dst": "",
+   "dst": "我們召到下面去的那些東西對誰都懷有敵意。連 Avos 也不例外。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159951,7 +159951,7 @@
   },
   "The Envoy Part II#034": {
    "src": "I can't say I have high hopes for you.",
-   "dst": "",
+   "dst": "我對你可沒抱多大期望。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159961,7 +159961,7 @@
   },
   "The Envoy Part II#035": {
    "src": "Meet me round the back of my house and I shall show you the way.",
-   "dst": "",
+   "dst": "到我屋子後面來找我，我會帶你走那條路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159971,7 +159971,7 @@
   },
   "The Envoy Part II#036": {
    "src": "Meet the grandmaster behind her house and get over the gap and enter the temple.",
-   "dst": "",
+   "dst": "到大宗師屋後與她會合，越過斷崖進入神殿。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -159981,7 +159981,7 @@
   },
   "The Envoy Part II#037": {
    "src": "I'll make the bridge for you.",
-   "dst": "",
+   "dst": "我來替你架橋。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -159991,7 +159991,7 @@
   },
   "The Envoy Part II#038": {
    "src": "I don't see why we’re helping humans...",
-   "dst": "",
+   "dst": "我實在不懂我們為什麼要幫人類……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160001,7 +160001,7 @@
   },
   "The Envoy Part II#039": {
    "src": "You all act the same to me. Anyway, there you go.",
-   "dst": "",
+   "dst": "在我看來你們全都一個樣。算了，過去吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160011,7 +160011,7 @@
   },
   "The Envoy Part II#040": {
    "src": "Find the key inside the temple.",
-   "dst": "",
+   "dst": "在神殿內找到鑰匙。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -160021,7 +160021,7 @@
   },
   "The Envoy Part II#041": {
    "src": "You cannot have the key. Prepare for destruction.",
-   "dst": "",
+   "dst": "鑰匙不會給你。準備受死吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160031,7 +160031,7 @@
   },
   "The Envoy Part II#042": {
    "src": "Return to Maxie in his house with the first key.",
-   "dst": "",
+   "dst": "帶著第一把鑰匙回到 Maxie 家找他。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -160041,7 +160041,7 @@
   },
   "The Envoy Part II#043": {
    "src": "You're back, and you have the key!",
-   "dst": "",
+   "dst": "你回來了，而且拿到鑰匙了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160051,7 +160051,7 @@
   },
   "The Envoy Part II#044": {
    "src": "Excellent. I will hold onto that for now. Let's focus on getting the Corkian's Key.",
-   "dst": "",
+   "dst": "太好了。這把先由我保管。接下來專心去拿 Corkians 那把。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160061,7 +160061,7 @@
   },
   "The Envoy Part II#045": {
    "src": "They keep it in a vault inside the castle. I honestly don't know how to get in there.",
-   "dst": "",
+   "dst": "他們把它鎖在城堡裡的金庫。老實說，我不知道要怎麼進去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160071,7 +160071,7 @@
   },
   "The Envoy Part II#046": {
    "src": "I think first we should just go and scout out the vault itself and work it out.",
-   "dst": "",
+   "dst": "我想我們先去金庫那邊探探，再想辦法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160081,7 +160081,7 @@
   },
   "The Envoy Part II#047": {
    "src": "I'll meet you there. It's in the castle and to the right. There's {~} guards there at all times, you can't miss it.",
-   "dst": "",
+   "dst": "我在那裡等你。金庫在城堡裡靠右邊，隨時都有 {~} 名守衛，不會找錯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160091,7 +160091,7 @@
   },
   "The Envoy Part II#048": {
    "src": "Find the vault in {p} at",
-   "dst": "",
+   "dst": "找到 {p} 裡的金庫。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -160101,7 +160101,7 @@
   },
   "The Envoy Part II#049": {
    "src": "Mo'in...",
-   "dst": "",
+   "dst": "Mo'in……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160111,7 +160111,7 @@
   },
   "The Envoy Part II#050": {
    "src": "Uh- No need to worry! We accidentally...",
-   "dst": "",
+   "dst": "呃——不用擔心！我們只是不小心……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160121,7 +160121,7 @@
   },
   "The Envoy Part II#051": {
    "src": "Blew a hole in the wall! Yep!",
-   "dst": "",
+   "dst": "在牆上炸了個洞！對，就是這樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160131,7 +160131,7 @@
   },
   "The Envoy Part II#052": {
    "src": "Stop. Maxie, was right. I'm sorry. Mech X pierced the vault like it was nothing and took the key.",
-   "dst": "",
+   "dst": "別說了。Maxie 是對的。我很抱歉。Mech X 像戳紙一樣穿透金庫，把鑰匙拿走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160141,7 +160141,7 @@
   },
   "The Envoy Part II#053": {
    "src": "The mechs were covered in farm produce for some reason and left a convenient trail. If you are serious about fighting the factory, follow it.",
-   "dst": "",
+   "dst": "那些 mech 不知為何沾滿了農作物，剛好留下一道好認的痕跡。你要是真心想跟工廠對抗，就順著它走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160151,7 +160151,7 @@
   },
   "The Envoy Part II#054": {
    "src": "Look for the hidden mech base.",
-   "dst": "",
+   "dst": "尋找隱藏的 mech 基地。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -160161,7 +160161,7 @@
   },
   "The Envoy Part II#055": {
    "src": "Psst! Over here, in the field!",
-   "dst": "",
+   "dst": "噓！這邊，在田裡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160171,7 +160171,7 @@
   },
   "The Envoy Part II#056": {
    "src": "Mo'in. See that guy up there? He hasn't moved an inch since I got here.",
-   "dst": "",
+   "dst": "Mo'in。看到上面那傢伙沒？我來到現在，他一寸都沒動過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160181,7 +160181,7 @@
   },
   "The Envoy Part II#057": {
    "src": "I don't think he's actually a farmer. Follow me.",
-   "dst": "",
+   "dst": "我看他根本不是農夫。跟我來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160191,7 +160191,7 @@
   },
   "The Envoy Part II#058": {
    "src": "HELLO... I AM A... HUMAN... FARMER.",
-   "dst": "",
+   "dst": "你好……我是……人類……農夫。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160201,7 +160201,7 @@
   },
   "The Envoy Part II#059": {
    "src": "DO YOU... HAVE... ANY BUSINESS... WITH ME?",
-   "dst": "",
+   "dst": "你……找我……有什麼……事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160211,7 +160211,7 @@
   },
   "The Envoy Part II#060": {
    "src": "Nice try, mech! Not convincing enough for me!",
-   "dst": "",
+   "dst": "演得不錯嘛，mech！可惜騙不了我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160221,7 +160221,7 @@
   },
   "The Envoy Part II#061": {
    "src": "REPORT... COVER HAS BEEN COMPROMISED... TWO UNAUTHORIZED INTRUDERS... OUTSIDE OF BASE.",
-   "dst": "",
+   "dst": "回報……偽裝已暴露……兩名未授權入侵者……位於基地外。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160231,7 +160231,7 @@
   },
   "The Envoy Part II#062": {
    "src": "NEW OBJECTIVE... EXTERMINATE-",
-   "dst": "",
+   "dst": "新目標……殲滅——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160241,7 +160241,7 @@
   },
   "The Envoy Part II#063": {
    "src": "Oh no you DON'T!",
-   "dst": "",
+   "dst": "想都別想！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160251,7 +160251,7 @@
   },
   "The Envoy Part II#064": {
    "src": "That model was a S-{~}, meaning it has warned the others. Follow me.",
-   "dst": "",
+   "dst": "那台是 S-{~} 型，也就是說它已經通報其他同伴了。跟我來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160261,7 +160261,7 @@
   },
   "The Envoy Part II#065": {
    "src": "See. We're locked out now.",
-   "dst": "",
+   "dst": "你看，我們被鎖在外面了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160271,7 +160271,7 @@
   },
   "The Envoy Part II#066": {
    "src": "Stand back, I'll open the door.",
-   "dst": "",
+   "dst": "退後，我來開門。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160281,7 +160281,7 @@
   },
   "The Envoy Part II#067": {
    "src": "I think we can safely assume this is the right place.",
-   "dst": "",
+   "dst": "我想我們可以放心斷定，就是這裡沒錯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160291,7 +160291,7 @@
   },
   "The Envoy Part II#068": {
    "src": "You storm in and find what we need. I'll cover you from out here.",
-   "dst": "",
+   "dst": "你衝進去把我們要的東西找出來。我在外面掩護你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160301,7 +160301,7 @@
   },
   "The Envoy Part II#069": {
    "src": "You need to find and destroy that new factory mech.",
-   "dst": "",
+   "dst": "你得找到那台工廠新造的 mech，把它毀掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160311,7 +160311,7 @@
   },
   "The Envoy Part II#070": {
    "src": "Retrieve the key from the base.",
-   "dst": "",
+   "dst": "從基地取回鑰匙。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -160321,7 +160321,7 @@
   },
   "The Envoy Part II#071": {
    "src": "INTRUDER DETECTED. DESTROY.",
-   "dst": "",
+   "dst": "偵測到入侵者。予以摧毀。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160331,7 +160331,7 @@
   },
   "The Envoy Part II#072": {
    "src": "Corkus has to suffer... They shut down the Factory, locked us up in there. Once we have both keys we can open it and you are NOT getting this one.",
-   "dst": "",
+   "dst": "Corkus 必須付出代價……他們關閉了工廠，把我們鎖在裡面。等兩把鑰匙都到手，我們就能打開它——而這一把，你休想拿走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160341,7 +160341,7 @@
   },
   "The Envoy Part II#073": {
    "src": "Find Maxie and give him the key.",
-   "dst": "",
+   "dst": "找到 Maxie，把鑰匙交給他。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -160351,7 +160351,7 @@
   },
   "The Envoy Part II#074": {
    "src": "Mo'in. Did you get the key?",
-   "dst": "",
+   "dst": "Mo'in。鑰匙拿到了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160361,7 +160361,7 @@
   },
   "The Envoy Part II#075": {
    "src": "Amazing. Now we need to meet at the factory. Now the real hard part begins.",
-   "dst": "",
+   "dst": "太厲害了。接下來我們在工廠會合。真正難的部分現在才開始。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160371,7 +160371,7 @@
   },
   "The Envoy Part II#076": {
    "src": "Follow the northwestern road and enter the factory from the west side. I will meet you there.",
-   "dst": "",
+   "dst": "沿著西北那條路走，從西側進入工廠。我在那裡等你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160381,7 +160381,7 @@
   },
   "The Envoy Part II#077": {
    "src": "Find Maxie outside the factory at",
-   "dst": "",
+   "dst": "到工廠外找到 Maxie。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Envoy Part II",
@@ -160391,7 +160391,7 @@
   },
   "The Envoy Part II#078": {
    "src": "Mo'in. Are you sure you are ready?",
-   "dst": "",
+   "dst": "Mo'in。你確定準備好了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160401,7 +160401,7 @@
   },
   "The Envoy Part II#079": {
    "src": "This won't be your average fight. The factory is cutting edge. Run by a being of pure electromagic.",
-   "dst": "",
+   "dst": "這不會是一般的戰鬥。那座工廠是最尖端的技術，由一個純粹以 electromagic 構成的存在在運轉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160411,7 +160411,7 @@
   },
   "The Envoy Part II#080": {
    "src": "The smartest man on Corkus, Cerid spent years making a being smarter even than he is...",
-   "dst": "",
+   "dst": "Corkus 最聰明的人 Cerid，花了好幾年造出一個比他自己更聰明的存在……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160421,7 +160421,7 @@
   },
   "The Envoy Part II#081": {
    "src": "Now it runs the factory with a twisted sense of morality. It's easy to see why it was shut down.",
-   "dst": "",
+   "dst": "如今它以一套扭曲的道德觀經營著那座工廠。工廠為什麼會被關閉，一看便知。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160431,7 +160431,7 @@
   },
   "The Envoy Part II#082": {
    "src": "Also.. I- I made you these boots using my magic. It turns out I am pretty good at making stuff.",
-   "dst": "",
+   "dst": "還有……我、我用我的魔法幫你做了這雙靴子。看來我在造東西這方面還挺行的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
@@ -160441,7 +160441,7 @@
   },
   "The Envoy Part II#083": {
    "src": "I just wanted to say thanks, too. I really feel like I made a difference fighting with you. When you are ready, just walk up to the factory doors.",
-   "dst": "",
+   "dst": "我也想跟你說聲謝謝。跟你並肩作戰，我真的覺得自己起了作用。準備好之後，直接走向工廠大門就行了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Envoy Part II",
