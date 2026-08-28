@@ -465,6 +465,39 @@ public final class DialogueRewriter {
         return rest.isEmpty() && out.length() > 0 ? out.toString() : null;
     }
 
+    /**
+     * 畫面上的字停下來了嗎。
+     *
+     * <h2>為什麼要問</h2>
+     * 「還在打字」與「打完了」對同一段文字要有不同的態度：還在打的時候，
+     * 現在看到的這半句隨時會變長，貿然定案等一下就得改口（見 {@link #line}）；
+     * 打完了就沒有這個顧慮，該貼就貼。
+     *
+     * <p>沒有現成的「打完了」訊號，但字停住幾幀就等於停住了。打字大約
+     * 每秒二三十個字，字與字之間頂多隔兩三幀；連續幾幀一模一樣就不是
+     * 打字的空檔，是真的停了。
+     */
+    static boolean settled(String raw) {
+        if (raw.equals(lastRaw)) {
+            still++;
+        } else {
+            lastRaw = raw;
+            still = 0;
+        }
+        return still >= SETTLE_FRAMES;
+    }
+
+    private static String lastRaw = "";
+    private static int still = 0;
+
+    /**
+     * 停幾幀才算停下來。
+     *
+     * <p>六幀在 60fps 下是十分之一秒——比字與字之間的空檔長，
+     * 又短到玩家感覺不出來。真的猜錯了頂多退回舊行為，不會更糟。
+     */
+    private static final int SETTLE_FRAMES = 6;
+
     /** 上一幀畫面上打到哪（<b>原始</b>文字）。見 {@link #line}。 */
     private static String said = "";
 
@@ -604,6 +637,19 @@ public final class DialogueRewriter {
         String typed = parts.template().strip();
         String source = typed;
         String hit = store.lookup(typed);
+        if (hit != null && !settled(raw) && store.hasLonger(typed)) {
+            // 打到一半的那半句，本身剛好也是語料裡的另一條。
+            //
+            // 逐字模擬全部 5749 句台詞，這樣的情形有 105 句：打到「Block」先貼上
+            // 技能表的「格擋」、打到「Bring」先貼上任務目標的「攜帶」、
+            // 打到「...」先貼上「……」，一兩幀之後整句打完又被換掉。
+            // 玩家看到的就是中文閃一下變成別的字。
+            //
+            // 後面還有更長的候選、而畫面上的字還在長，就先不要定案——
+            // 讓它往下走前綴比對，那條路本來就是為「還沒打完」寫的。
+            // 沒有更長的候選時不受影響：「Agh!」那種短句照樣立刻換。
+            hit = null;
+        }
         if (hit == null) {
             // 這一句上一幀就認出來了，繼續用同一條。
             //
