@@ -3,6 +3,35 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.30] - 2026-08-28
+
+### 修正
+
+- **粉末說明有兩行沒翻。**「+{~} Health」在 `misc.json` 裡是空的；
+  「refunded when removed.」則是遊戲把原文的 partially 拿掉了，語料還停在舊版，
+  於是那一行永遠對不上。兩者都補齊。
+- **「無屬性轉換成」中間補一個空格**，變成「無屬性 轉換成」。
+- **素材說明的 Housing 改譯「住宅」**，跟 `gui.json` 的住宅島／住宅特權一致。
+- **自製物品的「Crafted by」一直是英文。** 後面接的是<b>別的玩家</b>的名字，
+  擷取那一關本來就會擋掉夾帶玩家名的行，所以這種句子從來沒進過語料。
+  改成只收前綴「Crafted by」，名字原樣接回去。同時補上「Right-Click to Consume」。
+- **`ui-labels.json` 的 60 條法術消耗改用技能樹的譯名**：Teleport 消耗 → 傳送消耗、
+  Ice Snake → 冰蛇、Bash → 重擊……順帶修掉「Haul Cost」誤植成「Hau 消耗」。
+
+### 修正（語料來源）
+
+- **四條原文被維基剝除程式吃掉。**`{{element|f|Fire|}}` 這種模板連同<b>名字</b>
+  一起被丟掉，於是變成「The elements are... , , , and... ?」——元素名消失，
+  那幾行永遠對不上遊戲裡的文字。原文已照 wynncraft.wiki.gg 的 wikitext 還原，
+  `tools/fetch-quest-dialogue.py` 也改成只丟圖示、保留名字。
+- 一條原文夾著維基編者加的 `[sic]`，遊戲裡沒有，移除。
+
+### 新增
+
+- **任務翻譯 273 句，七個任務完成**：沙城疑雲、噬骨寒霜、墮落者的宿命、
+  Qira 蜂巢、音容宛在、破碎的心智、元素演練。整體進度 33.2% → 34.1%。
+- 五個任務名稱。
+
 ## [1.99.29] - 2026-08-28
 
 ### 修正

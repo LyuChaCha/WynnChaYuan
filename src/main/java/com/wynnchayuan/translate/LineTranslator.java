@@ -2076,8 +2076,54 @@ public final class LineTranslator {
             }
         }
         String hit = store.lookup(key);
-        return hit != null ? hit : withQuality(key, store, percent);
+        if (hit != null) {
+            return hit;
+        }
+        hit = withQuality(key, store, percent);
+        return hit != null ? hit : withMaker(key, store);
     }
+
+    /**
+     * 「Crafted by {@code <玩家名>}」這種「固定開頭 + 一個名字」的行。
+     *
+     * <h2>為什麼名字不能收進語料</h2>
+     * 那是<b>別的玩家</b>的名字。收進去等於把某個人的 ID 寫死在譯文檔裡，
+     * 而且一個名字一條，永遠收不完。擷取那一關本來就會擋掉夾帶玩家名的行
+     * （見 {@code PlayerDataFilter}），所以這種句子從來沒進過語料——
+     * 玩家看到的「自製物品的『Crafted by』一直是英文」就是這個。
+     *
+     * <p>只收開頭，名字原樣接回去。開頭查不到就整行不翻，免得中英夾雜。
+     */
+    private static String withMaker(String key, TranslationStore store) {
+        String core = key.strip();
+        for (String prefix : NAME_PREFIXES) {
+            if (!core.startsWith(prefix)) {
+                continue;
+            }
+            String name = core.substring(prefix.length()).strip();
+            if (!isName(name)) {
+                continue;
+            }
+            String word = store.lookup(prefix.strip());
+            if (word != null && !word.isBlank()) {
+                return word + " " + name;
+            }
+        }
+        return null;
+    }
+
+    /** Minecraft 的 ID：英數與底線，最長 16 個字。 */
+    static boolean isName(String text) {
+        if (text.isEmpty() || text.length() > 16) {
+            return false;
+        }
+        return text.chars().allMatch(c ->
+                (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+                        || (c >= '0' && c <= '9') || c == '_');
+    }
+
+    /** 見 {@link #withMaker}。譯文放在 {@code misc.json}，翻譯團隊可以改。 */
+    private static final String[] NAME_PREFIXES = {"Crafted by "};
 
     /**
      * 詞條全部滾到最高或最低時，遊戲會在名稱前面加一個品質詞。

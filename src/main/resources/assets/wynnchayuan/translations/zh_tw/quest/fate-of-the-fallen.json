@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Fate of the Fallen",
   "count": 70,
-  "translated": 0,
+  "translated": 70,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Fate of the Fallen#000": {
    "src": "Talk to Telvu the mage at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 與法師 Telvu 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -18,7 +18,7 @@
   },
   "Fate of the Fallen#001": {
    "src": "Ah, a member of the {p} army. We're trying to gain entry to this frozen barrow. We could use your aid.",
-   "dst": "",
+   "dst": "啊，{p} 軍隊的人。我們正想辦法進入這座冰封的古墳。你的幫忙來得正好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -28,7 +28,7 @@
   },
   "Fate of the Fallen#002": {
    "src": "Are you familiar with the story of Theorick and {p}?",
-   "dst": "",
+   "dst": "你熟悉 Theorick 與 {p} 的故事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -38,7 +38,7 @@
   },
   "Fate of the Fallen#003": {
    "src": "Probably not. Well, you see, {p} was not always frozen.",
-   "dst": "",
+   "dst": "大概不熟。是這樣的，{p} 並非一直都是冰封的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -48,7 +48,7 @@
   },
   "Fate of the Fallen#004": {
    "src": "During Theorick's time, this place was like the Wynn plains, warm and arable.",
-   "dst": "",
+   "dst": "在 Theorick 的年代，這裡就像 Wynn 的平原，溫暖而適於耕作。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -58,7 +58,7 @@
   },
   "Fate of the Fallen#005": {
    "src": "For some reason, Theorick Twain used his immense power to freeze the land before exiling himself here.",
-   "dst": "",
+   "dst": "不知為何，Theorick Twain 動用了他龐大的力量把這片土地凍結，然後把自己流放在此。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -68,7 +68,7 @@
   },
   "Fate of the Fallen#006": {
    "src": "We need to find out why so we can reverse this spell. Presumably, the source of that spell's magic would lie within the barrow... but we don't want to go in empty-handed.",
-   "dst": "",
+   "dst": "我們得查出原因，才能解開這道法術。照理說，法術的魔力源頭應該就在古墳裡……但我們不想空著手進去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -78,7 +78,7 @@
   },
   "Fate of the Fallen#007": {
    "src": "As such...have you heard of a place called {p}? We could use it to go back in time, to try to learn more about Theorick's actions.",
-   "dst": "",
+   "dst": "因此……你聽過一個叫 {p} 的地方嗎？我們可以藉它回到過去，多了解一些 Theorick 的作為。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -88,7 +88,7 @@
   },
   "Fate of the Fallen#008": {
    "src": "Well...in a way, at least. There are laws to this sort of magic. For one, you need an item from the specific time we want to see. Second, you can witness the past, not change it.",
-   "dst": "",
+   "dst": "呃……至少某種程度上是。這類魔法有它的規矩。其一，你需要一件來自我們想看的那個年代的物品。其二，你只能目睹過去，不能改變它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -98,7 +98,7 @@
   },
   "Fate of the Fallen#009": {
    "src": "One of Theorick's staves is on display in the {p} bank. Presumably, it should work for what we need. Could you retrieve it somehow?",
-   "dst": "",
+   "dst": "Theorick 的其中一根法杖就陳列在 {p} 的銀行裡。照理說應該合用。你有辦法把它弄來嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -108,7 +108,7 @@
   },
   "Fate of the Fallen#010": {
    "src": "Find Theorick's stave at {p} bank.",
-   "dst": "",
+   "dst": "在 {p} 的銀行找到 Theorick 的法杖。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -118,7 +118,7 @@
   },
   "Fate of the Fallen#011": {
    "src": "Aha, quick job. I see you've got the wand. Must've needed a sharp tongue to get the bankers to give it up.",
-   "dst": "",
+   "dst": "啊哈，動作真快。看來你把法杖拿到手了。要讓那些銀行的人鬆手，想必得有一副好口才。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -128,7 +128,7 @@
   },
   "Fate of the Fallen#012": {
    "src": "Now, it is a long walk to {p}. Needn't take that walk, though, as I can teleport you there. Hopefully.",
-   "dst": "",
+   "dst": "走去 {p} 可是一段長路。不過不必用走的，我可以把你傳送過去。但願如此。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -138,7 +138,7 @@
   },
   "Fate of the Fallen#013": {
    "src": "Once you're there, enter the Temple of Time. You should know what to do once you are there. Careful dealing with time travel, friend... No idea what you might find.",
-   "dst": "",
+   "dst": "到了之後，進入 Temple of Time。到了那裡你就會知道該怎麼做。時光旅行要小心，朋友……誰也不知道你會碰上什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -148,7 +148,7 @@
   },
   "Fate of the Fallen#014": {
    "src": "Just step into the portal.",
-   "dst": "",
+   "dst": "直接走進傳送門就是了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -158,7 +158,7 @@
   },
   "Fate of the Fallen#015": {
    "src": "Should anything go wrong, I'll stay here to teleport you back to the temple.",
-   "dst": "",
+   "dst": "萬一出了什麼差錯，我會留在這裡把你傳送回神殿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -168,7 +168,7 @@
   },
   "Fate of the Fallen#016": {
    "src": "Enter the portal the mage made.",
-   "dst": "",
+   "dst": "進入法師開啟的傳送門。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -178,7 +178,7 @@
   },
   "Fate of the Fallen#017": {
    "src": "Enter the Gate of Time at [-{~}, {~}, -{~}] and travel back in time.",
-   "dst": "",
+   "dst": "進入 [-{~1}, {~2}, -{~3}] 的 Gate of Time，回到過去。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -188,7 +188,7 @@
   },
   "Fate of the Fallen#018": {
    "src": "Explore Past {p}.",
-   "dst": "",
+   "dst": "探索過去的 {p}。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -198,7 +198,7 @@
   },
   "Fate of the Fallen#019": {
    "src": "What the...",
-   "dst": "",
+   "dst": "搞什麼……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -208,7 +208,7 @@
   },
   "Fate of the Fallen#020": {
    "src": "Woah, your weaponry and armour is so advanced!",
-   "dst": "",
+   "dst": "哇，你的武器跟護甲好先進！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -218,7 +218,7 @@
   },
   "Fate of the Fallen#021": {
    "src": "Are you another Twain? Only the Twains know magic like that.",
-   "dst": "",
+   "dst": "你也是 Twain 嗎？只有 Twains 懂那種魔法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -228,7 +228,7 @@
   },
   "Fate of the Fallen#022": {
    "src": "Oh, you're looking for Theorick.",
-   "dst": "",
+   "dst": "喔，你是來找 Theorick 的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -238,7 +238,7 @@
   },
   "Fate of the Fallen#023": {
    "src": "He's busy fighting in the war, shouldn't you be doing the same?",
-   "dst": "",
+   "dst": "他忙著在前線打仗，你不也該去嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -248,7 +248,7 @@
   },
   "Fate of the Fallen#024": {
    "src": "He went west. There was some kind of emergency.",
-   "dst": "",
+   "dst": "他往西邊去了。好像出了什麼緊急狀況。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -258,7 +258,7 @@
   },
   "Fate of the Fallen#025": {
    "src": "We've been fighting the corruption for years, it seems like it might finally engulf {p}.",
-   "dst": "",
+   "dst": "我們跟腐化打了好幾年，看樣子它終究要把 {p} 吞掉了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -268,7 +268,7 @@
   },
   "Fate of the Fallen#026": {
    "src": "Find Theorick in the forest west of {p} [{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "在 {p} 西邊的森林裡找到 Theorick [{~1}, {~2}, {~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -278,7 +278,7 @@
   },
   "Fate of the Fallen#027": {
    "src": "I could've sworn she had gone this way... Oh, what now, more imbeciles? This forest isn't safe to travel!",
-   "dst": "",
+   "dst": "我敢發誓她是往這邊走的……喔，又怎麼了，又來一個蠢貨？這片森林不能亂走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -288,7 +288,7 @@
   },
   "Fate of the Fallen#028": {
    "src": "If you need help, lodge a complaint with the guards. I'm busy and I can't exactly break away from saving this god-blessed province to chill your milk!!",
-   "dst": "",
+   "dst": "要幫忙就去跟衛兵申訴。我很忙，總不能丟下拯救這個天殺的行省，跑去幫你冰牛奶吧！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -298,7 +298,7 @@
   },
   "Fate of the Fallen#029": {
    "src": "Are your ears full of wax?! I said-",
-   "dst": "",
+   "dst": "你耳朵塞了耳屎嗎？！我說了——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -308,7 +308,7 @@
   },
   "Fate of the Fallen#030": {
    "src": "Urgh, the things followed you! See what happens?! STAND ASIDE.",
-   "dst": "",
+   "dst": "唔，那些東西跟著你來了！看吧，會出什麼事？！退到一邊去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -318,7 +318,7 @@
   },
   "Fate of the Fallen#031": {
    "src": "As though I needed TWO people to save! Now get out of here, I have to find that woman who went missing!",
-   "dst": "",
+   "dst": "好像我還嫌只救一個人不夠似的！快滾，我還得去找那個失蹤的女人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -328,7 +328,7 @@
   },
   "Fate of the Fallen#032": {
    "src": "HEEEELP! I can't outrun them!!! Guards! Someone!!",
-   "dst": "",
+   "dst": "救命啊——！我跑不過牠們！！！衛兵！誰來啊！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -338,7 +338,7 @@
   },
   "Fate of the Fallen#033": {
    "src": "Whuh! That's her voice! Where is she?! I just cleared this area!",
-   "dst": "",
+   "dst": "咦！那是她的聲音！她人在哪？！我剛才才清過這一帶！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -348,7 +348,7 @@
   },
   "Fate of the Fallen#034": {
    "src": "Th-Theorick!! There's corrupteds!!",
-   "dst": "",
+   "dst": "Theo、Theorick！！有腐化物！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -358,7 +358,7 @@
   },
   "Fate of the Fallen#035": {
    "src": "Ugh, is she dragging them over from the west?! You there, If you don't want to end up frozen, GET BEHIND ME, NOW!!",
-   "dst": "",
+   "dst": "唔，她是從西邊一路把牠們引過來的嗎？！你，不想被凍成冰塊的話，立刻躲到我身後！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -368,7 +368,7 @@
   },
   "Fate of the Fallen#036": {
    "src": "Phew... You're out of danger now. If you hadn't left town, though, you wouldn't have been IN any danger at all!",
-   "dst": "",
+   "dst": "呼……你安全了。不過你要是沒離開城裡，根本就不會有什麼危險！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -378,7 +378,7 @@
   },
   "Fate of the Fallen#037": {
    "src": "Don't bother apologizing to me, just get back to town. Now.",
-   "dst": "",
+   "dst": "不必跟我道歉，回城裡去就是了。立刻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -388,7 +388,7 @@
   },
   "Fate of the Fallen#038": {
    "src": "Next time you feel like picking flowers in the forest or whatever you were doing, remember you have a life to live, hm?!",
-   "dst": "",
+   "dst": "下次想到森林裡採花還是幹嘛的時候，記得你的命只有一條，聽見沒？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -398,7 +398,7 @@
   },
   "Fate of the Fallen#039": {
    "src": "Every day, more corrupteds, more deaths... There is only one thing for it. I have to tackle it myself. Cut the roots...and kill this hellish weed.",
-   "dst": "",
+   "dst": "每一天，腐化物更多，死的人也更多……只剩一條路了。我得親自去處理。斬斷根源……除掉這株地獄來的雜草。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -408,7 +408,7 @@
   },
   "Fate of the Fallen#040": {
    "src": "Still here? Well, listen up. Myself and a few others are planning something risky. Damned be it if our minds are lost, I need to go through that portal.",
-   "dst": "",
+   "dst": "還在啊？那就聽好。我和另外幾個人在籌畫一件冒險的事。就算心智因此喪失也罷，我必須穿過那道傳送門。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -418,7 +418,7 @@
   },
   "Fate of the Fallen#041": {
    "src": "You look heavily geared, so I'm conscripting you. Meet us at our base, immediately. Follow the river south and you'll see a house on the right side.",
-   "dst": "",
+   "dst": "你裝備看起來很齊，我徵召你了。立刻到我們的據點會合。沿著河往南走，右手邊會看到一棟房子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -428,7 +428,7 @@
   },
   "Fate of the Fallen#042": {
    "src": "Head to the base of the operation south of {p} [{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "前往 {p} 南邊的行動據點 [{~1}, {~2}, {~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -438,7 +438,7 @@
   },
   "Fate of the Fallen#043": {
    "src": "Well, I'll give you this. You're prompt to listen to orders, at least. We're headed to the {p}.",
-   "dst": "",
+   "dst": "好吧，這點我承認。你至少聽令很快。我們要前往 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -448,7 +448,7 @@
   },
   "Fate of the Fallen#044": {
    "src": "The last man that entered the portal and returned became Bak’al... But if there is even a fraction of a chance this could work, we must take it at this point.",
-   "dst": "",
+   "dst": "上一個進了那道門又回來的人，變成了 Bak’al……但只要還有一絲成功的可能，事到如今我們就得賭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -458,7 +458,7 @@
   },
   "Fate of the Fallen#045": {
    "src": "Let's get moving. We'll be taking no breaks on the trip, so I hope you were prepared.",
-   "dst": "",
+   "dst": "出發吧。這一路不休息，希望你早有準備。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -468,7 +468,7 @@
   },
   "Fate of the Fallen#046": {
    "src": "Now. The sheer cold I command can stave off corruption itself. Somehow I doubt any of you can say the same. I'll go in alone.",
-   "dst": "",
+   "dst": "好。我所駕馭的極寒能夠擋住腐化本身。我可不覺得你們哪個也做得到。我一個人進去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -478,7 +478,7 @@
   },
   "Fate of the Fallen#047": {
    "src": "When I enter... If I had to make an assumption, corrupteds will swarm the portal after me. Your job? Slay them. I can't have distractions in there.",
-   "dst": "",
+   "dst": "我進去之後……照我推測，腐化物會跟著湧向那道門。你們的任務？把牠們殺光。我不能在裡面分心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -488,7 +488,7 @@
   },
   "Fate of the Fallen#048": {
    "src": "You will not be leaving your post here until I exit that portal. Understood?",
-   "dst": "",
+   "dst": "在我從那道門出來之前，你不准離開崗位。聽懂了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -498,7 +498,7 @@
   },
   "Fate of the Fallen#049": {
    "src": "Protect the portal.",
-   "dst": "",
+   "dst": "守住傳送門。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -508,7 +508,7 @@
   },
   "Fate of the Fallen#050": {
    "src": "...no...",
-   "dst": "",
+   "dst": "……不……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -518,7 +518,7 @@
   },
   "Fate of the Fallen#051": {
    "src": "...no, no, no no no NO!! DAMN IT ALL!!",
-   "dst": "",
+   "dst": "……不、不，不不不，不要啊！！全都該死！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -528,7 +528,7 @@
   },
   "Fate of the Fallen#052": {
    "src": "You know what happened?! I lost!! I will destroy the province if I turn completely! GET AWAY, NOW! DO YOU HEAR ME?! RUN!!",
-   "dst": "",
+   "dst": "你知道發生什麼事了嗎？！我輸了！！我要是徹底轉化，會毀了整個行省！走開，快！聽見沒有？！快跑！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -538,7 +538,7 @@
   },
   "Fate of the Fallen#053": {
    "src": "I... C-calm yourself, Theorick...don't...don't lose yourself to it...there's...yet a solution...one way...",
-   "dst": "",
+   "dst": "我……冷、冷靜下來，Theorick……別……別讓它吞掉你……還有……還有辦法……有一條路……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -548,7 +548,7 @@
   },
   "Fate of the Fallen#054": {
    "src": "Oh...you again...the others...dead? Run off? Cowards...urgh...",
-   "dst": "",
+   "dst": "喔……又是你……其他人呢……死了？跑了？一群懦夫……唔……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -558,7 +558,7 @@
   },
   "Fate of the Fallen#055": {
    "src": "You live...so...eyes up. Listen to me. If I turn...w-when...when I turn...n-no, can't...gaaah, I'll destr- Nggh...",
-   "dst": "",
+   "dst": "你還活著……那……抬起頭來。聽我說。如果我轉化……不，是當、當我轉化的時候……不、不行……啊啊啊，我會毀——唔……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -568,7 +568,7 @@
   },
   "Fate of the Fallen#056": {
    "src": "I won't last, you can tell... Right now...killing me is an impossibility, you idiotic weakl- Agh, GET OUT OF MY MIND!!",
-   "dst": "",
+   "dst": "我撐不了多久，你看得出來……此刻……要殺我是不可能的，你這蠢弱的——啊，滾出我的腦袋！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -578,7 +578,7 @@
   },
   "Fate of the Fallen#057": {
    "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too fargone. It needs time to heal...and my powers m-must be dampened...frozen...",
-   "dst": "",
+   "dst": "啊啊啊……告訴……所有人。我要把這裡凍結。我……我已經、太遲了。這片土地需要時間癒合……而我的力量，必、必須被壓下……被凍住……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -588,7 +588,7 @@
   },
   "Fate of the Fallen#058": {
    "src": "All worthless... Urgh, no...they yet deserve life...and this spell...it will surely claim some. Please, let them know why...",
-   "dst": "",
+   "dst": "全都不值一提……唔，不……他們仍配得上活著……而這道法術……必定會奪走一些人的命。拜託，讓他們知道原因……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -598,7 +598,7 @@
   },
   "Fate of the Fallen#059": {
    "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits to linger. I would...prefer against giving him a harder time.",
-   "dst": "",
+   "dst": "如果說我從那個討人厭的傢——……從 Mael 那裡學到了什麼，那就是死得不明不白會讓亡魂徘徊不去。我……不想再給他添麻煩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -608,7 +608,7 @@
   },
   "Fate of the Fallen#060": {
    "src": "K-keep advancing. Your things, if everyone was as strong as you...we may stand a chance. This could end me, in time, once I am weaker.",
-   "dst": "",
+   "dst": "繼、繼續前進吧。你這身裝備，要是人人都像你這麼強……我們也許還有機會。等我更虛弱了，這終有一天能了結我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -618,7 +618,7 @@
   },
   "Fate of the Fallen#061": {
    "src": "Let it be known...Theorick Twain is not dead. He cannot be killed...all will burn...until future days. Here, in this accursed place. Find me...and end it all.",
-   "dst": "",
+   "dst": "讓世人知道……Theorick Twain 並沒有死。他是殺不死的……一切都將焚毀……直到將來的某一天。就在這裡，在這片受詛咒的土地上。找到我……然後為這一切畫下句點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -628,7 +628,7 @@
   },
   "Fate of the Fallen#062": {
    "src": "Tell Telvu the mage what happened.",
-   "dst": "",
+   "dst": "把經過告訴法師 Telvu。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -638,7 +638,7 @@
   },
   "Fate of the Fallen#063": {
    "src": "You must have succeeded, or you would be yet in the memory of the past. I can feel some potent magic on you.",
-   "dst": "",
+   "dst": "你想必是成功了，否則你此刻還困在過去的記憶裡。我感覺得到你身上帶著強大的魔力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -648,7 +648,7 @@
   },
   "Fate of the Fallen#064": {
    "src": "So, you met Theorick? He was always said to have fallen from heroism after the great freezing.",
-   "dst": "",
+   "dst": "這麼說，你見到 Theorick 了？一直以來的說法都是，大冰封之後他就從英雄的位置上墮落了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -658,7 +658,7 @@
   },
   "Fate of the Fallen#065": {
    "src": "Were you able to figure out why it was he froze this place, at least?",
-   "dst": "",
+   "dst": "至少，你查出他為什麼要把這裡凍結了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -668,7 +668,7 @@
   },
   "Fate of the Fallen#066": {
    "src": "What... so many revelations... ice magic staves off corruption...? It is true this palce has seen less corrupted threats than other places in the province...",
-   "dst": "",
+   "dst": "什麼……這麼多真相……冰魔法能擋住腐化……？的確，這個地方遇到的腐化威脅，比行省裡其他地方都要少……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -678,7 +678,7 @@
   },
   "Fate of the Fallen#067": {
    "src": "Dear gods... We've had it all wrong this whole time... This was to protect everyone...but surely he would have told someone his intentions if he was of that sound a mind!",
-   "dst": "",
+   "dst": "天上諸神啊……我們一直以來全都弄錯了……這是為了保護所有人……可他要是神智還那麼清楚，總該跟誰交代一聲吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -688,7 +688,7 @@
   },
   "Fate of the Fallen#068": {
    "src": "All this time, spent buried alive, wrestling with the corruption. The thought horrifies you, as well, judging by your face. Killing him would be a mercy.",
-   "dst": "",
+   "dst": "這麼多年，就這樣被活埋著，與腐化搏鬥。看你的臉色，這念頭也讓你毛骨悚然吧。殺了他，反而是慈悲。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -698,7 +698,7 @@
   },
   "Fate of the Fallen#069": {
    "src": "Here. Use this. It may help protect you within the Ice Barrows... Please, soldier. Be Theorick's guardian angel. Free him from this torment.",
-   "dst": "",
+   "dst": "來。用這個。在 Ice Barrows 裡面它或許能保護你……拜託了，士兵。當 Theorick 的守護天使吧。把他從這場折磨裡解脫出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",

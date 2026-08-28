@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "A Sandy Scandal",
   "count": 66,
-  "translated": 0,
+  "translated": 66,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Sandy Scandal#000": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 與 {p} 的銀行守衛對話",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -18,7 +18,7 @@
   },
   "A Sandy Scandal#001": {
    "src": "You look like a hardy one! {p} army is it? Would you be willing to help {p} a bit?",
-   "dst": "",
+   "dst": "你看起來挺結實的！{p} 的軍隊，是吧？願不願意幫 {p} 一點忙？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -28,7 +28,7 @@
   },
   "A Sandy Scandal#002": {
    "src": "{p} bank tends to be a prime target for bandits, and there's been a string of incidents that have made us suspicious.",
-   "dst": "",
+   "dst": "{p} 的銀行一向是強盜眼中的頭號目標，最近接連出了幾樁事，讓我們起了疑心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -38,7 +38,7 @@
   },
   "A Sandy Scandal#003": {
    "src": "We're looking into some witness reports to try and gain information on the bandits' plan.",
-   "dst": "",
+   "dst": "我們正在查幾份目擊報告，想從裡面摸清這些強盜的計畫。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -48,7 +48,7 @@
   },
   "A Sandy Scandal#004": {
    "src": "If I give you some of the reports, will you help check them out for clues?",
-   "dst": "",
+   "dst": "我把幾份報告給你，你願意去現場找找線索嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -58,7 +58,7 @@
   },
   "A Sandy Scandal#005": {
    "src": "Great! The store from the first witness report is straight down the stairs, just past this building right behind me.",
-   "dst": "",
+   "dst": "太好了！第一份目擊報告的那間店，下了樓梯直走，過了我身後這棟建築就是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -68,7 +68,7 @@
   },
   "A Sandy Scandal#006": {
    "src": "It's called \"Gibbs' Mining Supply Store\", and the owner reported a robbery a few days ago.",
-   "dst": "",
+   "dst": "店名叫「Gibbs' Mining Supply Store」，老闆幾天前報了一起搶案。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -78,7 +78,7 @@
   },
   "A Sandy Scandal#007": {
    "src": "Good luck! Report back to me if you find any information.",
-   "dst": "",
+   "dst": "祝你順利！查到什麼就回來跟我說。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -88,7 +88,7 @@
   },
   "A Sandy Scandal#008": {
    "src": "Go to the witness report location at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往目擊報告的地點 [{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -98,7 +98,7 @@
   },
   "A Sandy Scandal#009": {
    "src": "Hello gentlemen! What can I interest you in today? Some industrial torches? Pickaxes?",
-   "dst": "",
+   "dst": "兩位先生好！今天想看點什麼？工業火把？還是鎬子？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -108,7 +108,7 @@
   },
   "A Sandy Scandal#010": {
    "src": "Shut yer’ trap, old man. We came for a different kind of business.",
-   "dst": "",
+   "dst": "閉上你的嘴，老頭。我們來談的是另一門生意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -118,7 +118,7 @@
   },
   "A Sandy Scandal#011": {
    "src": "Wha-? Look, fellows. Just step out of my store, and nobody gets hurt. I don't want any trouble.",
-   "dst": "",
+   "dst": "什、什麼——？聽著，各位。走出我的店，誰也不會受傷。我不想惹麻煩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -128,7 +128,7 @@
   },
   "A Sandy Scandal#012": {
    "src": "Listen up old man, tell us the code to the TNT vault in the basement, or I decorate my necklace with your fingers!",
-   "dst": "",
+   "dst": "給我聽好，老頭，把地下室 TNT 金庫的密碼交出來，不然我就拿你的手指來串項鍊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -138,7 +138,7 @@
   },
   "A Sandy Scandal#013": {
    "src": "Certainly not! That TNT is for licensed mining companies only, not your average amateur miner.",
-   "dst": "",
+   "dst": "想都別想！那些 TNT 只賣給有執照的礦業公司，不是給你們這種業餘礦工的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -148,7 +148,7 @@
   },
   "A Sandy Scandal#014": {
    "src": "Well then! I guess you'll still be able to grasp a pick with four fingers, eh?",
-   "dst": "",
+   "dst": "那好啊！我猜四根手指也還握得住鎬子吧，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -158,7 +158,7 @@
   },
   "A Sandy Scandal#015": {
    "src": "Gaaah! Alright, alright! No more violence, please!",
-   "dst": "",
+   "dst": "啊啊啊！好、好！別再動手了，拜託！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -168,7 +168,7 @@
   },
   "A Sandy Scandal#016": {
    "src": "The code is {~}-{~}-{~}-{~}... please don't hurt me!",
-   "dst": "",
+   "dst": "密碼是 {~1}-{~2}-{~3}-{~4}……求你別傷害我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -178,7 +178,7 @@
   },
   "A Sandy Scandal#017": {
    "src": "{~}-{~}-{~}-{~}... thanks! We won't be needing you anymore... now go to sleep!",
-   "dst": "",
+   "dst": "{~1}-{~2}-{~3}-{~4}……多謝！你已經沒用了……去睡吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -188,7 +188,7 @@
   },
   "A Sandy Scandal#018": {
    "src": "Open the vault in the basement [Code: {~}].",
-   "dst": "",
+   "dst": "打開地下室的金庫 [密碼: {~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -198,7 +198,7 @@
   },
   "A Sandy Scandal#019": {
    "src": "Inspect the vault.",
-   "dst": "",
+   "dst": "檢查金庫。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -208,7 +208,7 @@
   },
   "A Sandy Scandal#020": {
    "src": "Exit the vault.",
-   "dst": "",
+   "dst": "離開金庫。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -218,7 +218,7 @@
   },
   "A Sandy Scandal#021": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 與 {p} 的銀行守衛對話",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -228,7 +228,7 @@
   },
   "A Sandy Scandal#022": {
    "src": "Ah, you're back! Did you find anything interesting in the report?",
-   "dst": "",
+   "dst": "啊，你回來了！報告那邊查到什麼有意思的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -238,7 +238,7 @@
   },
   "A Sandy Scandal#023": {
    "src": "Missing TNT in the shop's vault? Looks like the shopkeeper was telling the truth.",
-   "dst": "",
+   "dst": "店裡金庫的 TNT 不見了？看來那個店主說的是實話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -248,7 +248,7 @@
   },
   "A Sandy Scandal#024": {
    "src": "We need to catch these criminals quickly if they have access to that amount of TNT - they could blow a hole right into the bank's vault!",
-   "dst": "",
+   "dst": "他們手上有那麼多 TNT，我們得盡快抓到人——那足以直接在銀行金庫上炸出一個洞！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -258,7 +258,7 @@
   },
   "A Sandy Scandal#025": {
    "src": "You should check out another witness report, from after the attack on the shopkeeper.",
-   "dst": "",
+   "dst": "你該去查另一份目擊報告，時間在店主遇襲之後。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -268,7 +268,7 @@
   },
   "A Sandy Scandal#026": {
    "src": "It was taken from the rooftop garden of the Scroll Merchant's residence, you should take a look.",
-   "dst": "",
+   "dst": "那份是在捲軸商人住處的屋頂花園記錄的，你去看看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -278,7 +278,7 @@
   },
   "A Sandy Scandal#027": {
    "src": "Be quick! We don't have much time if we want to stop these bandits.",
-   "dst": "",
+   "dst": "動作要快！想攔下這些強盜，我們沒多少時間了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -288,7 +288,7 @@
   },
   "A Sandy Scandal#028": {
    "src": "Go to the witness report location at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往目擊報告的地點 [{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -298,7 +298,7 @@
   },
   "A Sandy Scandal#029": {
    "src": "Read the witness report.",
-   "dst": "",
+   "dst": "閱讀目擊報告。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -308,7 +308,7 @@
   },
   "A Sandy Scandal#030": {
    "src": "Ey', what do you two blighters think you're doing with those dangerous explosives in the city?",
-   "dst": "",
+   "dst": "喂，你們兩個混帳，帶著那種危險的炸藥在城裡是想幹嘛？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -318,7 +318,7 @@
   },
   "A Sandy Scandal#031": {
    "src": "Guards! Guards! Robber! Come quick! Urgently!",
-   "dst": "",
+   "dst": "衛兵！衛兵！有強盜！快來！十萬火急！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -328,7 +328,7 @@
   },
   "A Sandy Scandal#032": {
    "src": "Gaaah!",
-   "dst": "",
+   "dst": "啊啊啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -338,7 +338,7 @@
   },
   "A Sandy Scandal#033": {
    "src": "Find the source of the detonation at [{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "在 [{~1}, {~2}, {~3}] 找出爆炸的源頭。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -348,7 +348,7 @@
   },
   "A Sandy Scandal#034": {
    "src": "Inspect the safe.",
-   "dst": "",
+   "dst": "檢查保險箱。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -358,7 +358,7 @@
   },
   "A Sandy Scandal#035": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 與 {p} 的銀行守衛對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -368,7 +368,7 @@
   },
   "A Sandy Scandal#036": {
    "src": "Were you able to uncover any new information regarding the status of the criminals?",
-   "dst": "",
+   "dst": "關於這些罪犯的動向，你有查到什麼新消息嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -378,7 +378,7 @@
   },
   "A Sandy Scandal#037": {
    "src": "Ah... that's troubling. The criminals plundered two very powerful weapons.",
-   "dst": "",
+   "dst": "啊……這下麻煩了。那些罪犯搶走了兩件威力極強的武器。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -388,7 +388,7 @@
   },
   "A Sandy Scandal#038": {
    "src": "It won't be easy facing those criminals if they decide to raid the bank with those weapons.",
-   "dst": "",
+   "dst": "他們要是帶著那些武器來搶銀行，可就不好對付了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -398,7 +398,7 @@
   },
   "A Sandy Scandal#039": {
    "src": "I'm not certain how to proceed from here, we didn't receive any more witness reports, and-",
-   "dst": "",
+   "dst": "接下來該怎麼辦我也沒個準，再沒有別的目擊報告進來了，而且——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -408,7 +408,7 @@
   },
   "A Sandy Scandal#040": {
    "src": "Boss, I just received urgent reports of a robbery underway in the left residential area of {p}!",
-   "dst": "",
+   "dst": "長官，剛收到急報，{p} 左側住宅區正在發生搶案！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -418,7 +418,7 @@
   },
   "A Sandy Scandal#041": {
    "src": "Oh my… you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
-   "dst": "",
+   "dst": "天啊……你！士兵！快！搶案就在橋的另一頭，你今天去的第一間屋子旁邊！很可能就是我們要找的那批強盜。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -428,7 +428,7 @@
   },
   "A Sandy Scandal#042": {
    "src": "There will be somebody waiting for you outside of the house once you get to the residential area!",
-   "dst": "",
+   "dst": "你到住宅區之後，會有人在屋子外面等你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -438,7 +438,7 @@
   },
   "A Sandy Scandal#043": {
    "src": "If you still can't find it, I've written the coordinates in your content book. Now quickly, get to the house!",
-   "dst": "",
+   "dst": "要是還找不到，我把座標寫進你的內容書了。快，趕去那間屋子！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -448,7 +448,7 @@
   },
   "A Sandy Scandal#044": {
    "src": "Quickly! Go to the house at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "快！前往 [{~1}, {~2}, -{~3}] 的屋子。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -458,7 +458,7 @@
   },
   "A Sandy Scandal#045": {
    "src": "Hello? Are you with the guards? Good! Hurry! Some bandits just ransacked my house, and left with lots of emeralds!",
-   "dst": "",
+   "dst": "哈囉？你是衛兵那邊的人嗎？太好了！快！有幾個強盜剛把我家洗劫一空，帶走了一大堆綠寶石！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -468,7 +468,7 @@
   },
   "A Sandy Scandal#046": {
    "src": "Follow me to my house, hopefully you can find the bandits! They stole lots of my precious gems!",
-   "dst": "",
+   "dst": "跟我到我家去，希望你能找到那些強盜！他們偷走了我好多珍貴的寶石！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -478,7 +478,7 @@
   },
   "A Sandy Scandal#047": {
    "src": "Look for signs of the bandits' whereabouts.",
-   "dst": "",
+   "dst": "尋找強盜行蹤的線索。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -488,7 +488,7 @@
   },
   "A Sandy Scandal#048": {
    "src": "Listen to the bandits.",
-   "dst": "",
+   "dst": "聽強盜們說話。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -498,7 +498,7 @@
   },
   "A Sandy Scandal#049": {
    "src": "Ready, boys? We've got the TNT, weapons, and the fastest horses those emeralds could buy. Now we just-",
-   "dst": "",
+   "dst": "都準備好了嗎，弟兄們？TNT、武器，還有那些綠寶石買得到最快的馬，全都到手了。現在我們只要——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -508,7 +508,7 @@
   },
   "A Sandy Scandal#050": {
    "src": "Ahah. I had a feeling we had a guard on our tail.",
-   "dst": "",
+   "dst": "哈。我就覺得後面跟了個衛兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -518,7 +518,7 @@
   },
   "A Sandy Scandal#051": {
    "src": "No point wasting these brand-new weapons on you... since we're blowing up this hideout anyway!",
-   "dst": "",
+   "dst": "拿這些全新的武器對付你太浪費了……反正這個藏身處我們也要炸掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -528,7 +528,7 @@
   },
   "A Sandy Scandal#052": {
    "src": "This whole thing'll go up in a few seconds, and any evidence will be buried in the sand. Good luck getting out of here!",
-   "dst": "",
+   "dst": "這整個地方再過幾秒就會炸開，所有證據都會被埋進沙裡。祝你逃得出去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -538,7 +538,7 @@
   },
   "A Sandy Scandal#053": {
    "src": "Escape the hideout!",
-   "dst": "",
+   "dst": "逃出藏身處！",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -548,7 +548,7 @@
   },
   "A Sandy Scandal#054": {
    "src": "Find where the bandits blasted a hole to get into the bank at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [{~1}, {~2}, -{~3}] 找出強盜炸開、通往銀行的那個洞。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -558,7 +558,7 @@
   },
   "A Sandy Scandal#055": {
    "src": "It’s too late to stop us now! We’re already about to bust out of here with the grand prize - the contents of the emerald vault!",
-   "dst": "",
+   "dst": "現在想攔我們已經太遲了！我們馬上就要帶著最大的戰利品——綠寶石金庫裡的東西——衝出去了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -568,7 +568,7 @@
   },
   "A Sandy Scandal#056": {
    "src": "Follow the criminals into the other room.",
-   "dst": "",
+   "dst": "跟著罪犯進入另一個房間。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -578,7 +578,7 @@
   },
   "A Sandy Scandal#057": {
    "src": "Look here, the soldier decided they wanted to follow us. Dumb move.",
-   "dst": "",
+   "dst": "你看看，這位士兵決定跟上來了。蠢招。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -588,7 +588,7 @@
   },
   "A Sandy Scandal#058": {
    "src": "I guess we can kill two birds with one stone: escaping the bank, and killing this pest.",
-   "dst": "",
+   "dst": "那就一石二鳥吧：逃出銀行，順便宰了這隻蒼蠅。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -598,7 +598,7 @@
   },
   "A Sandy Scandal#059": {
    "src": "Block the entrance, bandits!",
-   "dst": "",
+   "dst": "弟兄們，把入口堵住！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -608,7 +608,7 @@
   },
   "A Sandy Scandal#060": {
    "src": "Don't let the bandits escape!",
-   "dst": "",
+   "dst": "別讓強盜逃掉！",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -618,7 +618,7 @@
   },
   "A Sandy Scandal#061": {
    "src": "Report back to the {p} Bank Guard at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到 [{~1}, {~2}, -{~3}] 向 {p} 的銀行守衛回報。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -628,7 +628,7 @@
   },
   "A Sandy Scandal#062": {
    "src": "Soldier! Where did you disappear to? Did you hear those explosions, below the bank?",
-   "dst": "",
+   "dst": "士兵！你跑到哪裡去了？你聽見銀行底下那些爆炸聲了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -638,7 +638,7 @@
   },
   "A Sandy Scandal#063": {
    "src": "We think those bandits might have made their first move in the heist, we're mobilising a troop to-",
-   "dst": "",
+   "dst": "我們認為那些強盜已經動手了，正在調一支隊伍去——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -648,7 +648,7 @@
   },
   "A Sandy Scandal#064": {
    "src": "You've already stopped them? And reclaimed the stolen weapons and explosives..?",
-   "dst": "",
+   "dst": "你已經把他們攔下來了？連被搶走的武器跟炸藥也都拿回來了……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -658,7 +658,7 @@
   },
   "A Sandy Scandal#065": {
    "src": "Wow. Excellent work, soldier. {p} is in your debt. Please accept these from our vault, as a token of our thanks.",
-   "dst": "",
+   "dst": "哇。幹得漂亮，士兵。{p} 欠你一份人情。這些是從我們金庫裡拿出來的，請收下，聊表謝意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
