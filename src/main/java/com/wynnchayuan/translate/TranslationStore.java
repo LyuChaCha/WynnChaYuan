@@ -734,10 +734,23 @@ public final class TranslationStore {
     /**
      * 用字重疊到幾成才算同一句。
      *
-     * <p>六成是實測抓出來的：官方改詞的那兩條是七成一，而同樣以
-     * 「Hey, {u}」開頭的另一句台詞只有兩成。中間空得很開，不必再細調。
+     * <h2>六成五怎麼來的</h2>
+     * 兩邊都是實測量出來的，取中間：
+     *
+     * <ul>
+     *   <li><b>七成一</b>——官方改詞的那兩條
+     *       （{@code Are you alright} 對 {@code You alright}），必須算同一句</li>
+     *   <li><b>六成</b>——{@code Enter the castle at [...]} 對
+     *       {@code Enter the vault at [...]}，是兩個不同任務的不同目標，
+     *       不能算同一句。門檻原本就是六成，剛好把它收進來，
+     *       畫面上「進入 [-」會閃一下變成「進入 [1234」</li>
+     *   <li><b>兩成</b>——同樣以「Hey, {u}」開頭的另一句台詞</li>
+     * </ul>
+     *
+     * <p>逐字模擬全部語料（{@code tools/typing-audit.py}）：六成有一句會改口，
+     * 六成三以上都是零。取六成五，兩邊各留一點餘裕。
      */
-    private static final int SAME_LINE_PERCENT = 60;
+    private static final int SAME_LINE_PERCENT = 65;
 
     /** 最多往後看幾條。同一個開頭的候選本來就沒幾條，掃太多只是白花時間。 */
     private static final int RIVAL_SCAN = 16;

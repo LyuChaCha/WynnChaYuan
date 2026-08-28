@@ -237,6 +237,12 @@ public final class TranslationStoreTest {
                             "Sound off, {u}! Are you hurt? The cart hit a boulder.",
                             "Sound off, {u}! Are you ready? The ship leaves at dawn."));
             check("空句子不算", !TranslationStore.sameLine("", "anything at all"));
+            // 六成剛好會把這兩個<b>不同任務的不同目標</b>收進來——門檻訂在六成時
+            // 畫面上「進入 [-」會閃一下變成「進入 [1234」。見 SAME_LINE_PERCENT。
+            check("兩個不同任務的目標句不算同一句",
+                    !TranslationStore.sameLine(
+                            "Enter the castle at [-{~}, {~}, -{~}]",
+                            "Enter the vault at [{~}, {~}, -{~}]"));
 
             // 打到一半的那半句本身剛好也是語料裡的另一條時，不能馬上定案——
             // 後面還有更長的候選，就代表現在貼上去等一下要改口。
