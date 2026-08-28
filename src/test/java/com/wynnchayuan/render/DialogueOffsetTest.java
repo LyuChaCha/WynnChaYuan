@@ -35,6 +35,18 @@ public final class DialogueOffsetTest {
         check("The Cook 的前導是 -60", DialogueRewriter.nameLead(40) == -60);
         check("Enzan 的前導是 -52", DialogueRewriter.nameLead(25) == -52);
 
+        // 小框要拿掉位移字、但圖示要留著。
+        // 實機：dialogue-probe-1 的「Agh!」尾巴接一個 U+D0063，
+        // 小框用預設字型畫就變成豆腐方塊（overlay-debug-2）。
+        check("尾隨的位移字要拿掉",
+                Boxes.dropOffsets("Agh!" + new String(Character.toChars(0xD0063))).equals("Agh!"));
+        check("前導的也一樣",
+                Boxes.dropOffsets(new String(Character.toChars(0xCFF8C)) + "Agh!").equals("Agh!"));
+        check("私用區的圖示不能拿掉",
+                Boxes.dropOffsets(" 空手右鍵").equals(" 空手右鍵"));
+        check("沒有位移字就原字串回去",
+                Boxes.dropOffsets("啊！").equals("啊！"));
+
         // 普通文字不能被當成位移字元
         check("英文不是位移", DialogueRewriter.offsetOf("A") == null);
         check("中文不是位移", DialogueRewriter.offsetOf("廚") == null);
