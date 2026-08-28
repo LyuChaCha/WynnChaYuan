@@ -80,6 +80,17 @@ public final class CollectorConfig {
     private boolean translateTitles = true;
 
     /**
+     * 要不要記下最近的聊天訊息，供「複製聊天」使用。
+     *
+     * <p>跟聊天<b>翻譯</b>是兩回事：翻譯關掉的人一樣可能想複製原文，
+     * 而別人講的話我們從來不翻、卻常常是最想複製的那幾行。
+     *
+     * <p>預設開著。這份紀錄只留在記憶體、不寫檔、不進語料，
+     * 關掉就只是不再記（見 {@code ChatLog}）。
+     */
+    private boolean chatCopy = true;
+
+    /**
      * 譯文截圖：什麼時候拍。
      *
      * <p>{@code OFF} 不拍。{@code KEY} 只在按下快捷鍵時拍一張。
@@ -248,6 +259,19 @@ public final class CollectorConfig {
         translateTitles = !translateTitles;
         save();
         return translateTitles;
+    }
+
+    public boolean chatCopy() {
+        return chatCopy;
+    }
+
+    public boolean toggleChatCopy() {
+        chatCopy = !chatCopy;
+        if (!chatCopy) {
+            com.wynnchayuan.capture.ChatLog.clear();   // 關掉就別留著
+        }
+        save();
+        return chatCopy;
     }
 
     /** 在 關閉 → 就地取代 → 原文加譯文 之間輪替。 */
@@ -704,6 +728,9 @@ public final class CollectorConfig {
                 // 舊設定檔沒有這個欄位，維持 PANEL——升上來的人畫面不會突然變樣
                 dialogueMode = DialogueMode.valueOf(o.get("dialogueMode").getAsString());
             }
+            if (o.has("chatCopy")) {
+                chatCopy = o.get("chatCopy").getAsBoolean();
+            }
             if (o.has("translateTitles")) {
                 translateTitles = o.get("translateTitles").getAsBoolean();
             }
@@ -811,6 +838,7 @@ public final class CollectorConfig {
             o.addProperty("dialogueMode", dialogueMode.name());
             o.addProperty("chatMode", chatMode.name());
             o.addProperty("translateTitles", translateTitles);
+            o.addProperty("chatCopy", chatCopy);
             o.addProperty("shotMode", shotMode.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());
