@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 22089,
-  "translated": 5547,
+  "translated": 5820,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -12301,7 +12301,7 @@
   },
   "A Sandy Scandal#000": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 與 {p} 的銀行守衛對話",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12311,7 +12311,7 @@
   },
   "A Sandy Scandal#001": {
    "src": "You look like a hardy one! {p} army is it? Would you be willing to help {p} a bit?",
-   "dst": "",
+   "dst": "你看起來挺結實的！{p} 的軍隊，是吧？願不願意幫 {p} 一點忙？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12321,7 +12321,7 @@
   },
   "A Sandy Scandal#002": {
    "src": "{p} bank tends to be a prime target for bandits, and there's been a string of incidents that have made us suspicious.",
-   "dst": "",
+   "dst": "{p} 的銀行一向是強盜眼中的頭號目標，最近接連出了幾樁事，讓我們起了疑心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12331,7 +12331,7 @@
   },
   "A Sandy Scandal#003": {
    "src": "We're looking into some witness reports to try and gain information on the bandits' plan.",
-   "dst": "",
+   "dst": "我們正在查幾份目擊報告，想從裡面摸清這些強盜的計畫。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12341,7 +12341,7 @@
   },
   "A Sandy Scandal#004": {
    "src": "If I give you some of the reports, will you help check them out for clues?",
-   "dst": "",
+   "dst": "我把幾份報告給你，你願意去現場找找線索嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12351,7 +12351,7 @@
   },
   "A Sandy Scandal#005": {
    "src": "Great! The store from the first witness report is straight down the stairs, just past this building right behind me.",
-   "dst": "",
+   "dst": "太好了！第一份目擊報告的那間店，下了樓梯直走，過了我身後這棟建築就是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12361,7 +12361,7 @@
   },
   "A Sandy Scandal#006": {
    "src": "It's called \"Gibbs' Mining Supply Store\", and the owner reported a robbery a few days ago.",
-   "dst": "",
+   "dst": "店名叫「Gibbs' Mining Supply Store」，老闆幾天前報了一起搶案。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12371,7 +12371,7 @@
   },
   "A Sandy Scandal#007": {
    "src": "Good luck! Report back to me if you find any information.",
-   "dst": "",
+   "dst": "祝你順利！查到什麼就回來跟我說。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12381,7 +12381,7 @@
   },
   "A Sandy Scandal#008": {
    "src": "Go to the witness report location at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往目擊報告的地點 [{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12391,7 +12391,7 @@
   },
   "A Sandy Scandal#009": {
    "src": "Hello gentlemen! What can I interest you in today? Some industrial torches? Pickaxes?",
-   "dst": "",
+   "dst": "兩位先生好！今天想看點什麼？工業火把？還是鎬子？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12401,7 +12401,7 @@
   },
   "A Sandy Scandal#010": {
    "src": "Shut yer’ trap, old man. We came for a different kind of business.",
-   "dst": "",
+   "dst": "閉上你的嘴，老頭。我們來談的是另一門生意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12411,7 +12411,7 @@
   },
   "A Sandy Scandal#011": {
    "src": "Wha-? Look, fellows. Just step out of my store, and nobody gets hurt. I don't want any trouble.",
-   "dst": "",
+   "dst": "什、什麼——？聽著，各位。走出我的店，誰也不會受傷。我不想惹麻煩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12421,7 +12421,7 @@
   },
   "A Sandy Scandal#012": {
    "src": "Listen up old man, tell us the code to the TNT vault in the basement, or I decorate my necklace with your fingers!",
-   "dst": "",
+   "dst": "給我聽好，老頭，把地下室 TNT 金庫的密碼交出來，不然我就拿你的手指來串項鍊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12431,7 +12431,7 @@
   },
   "A Sandy Scandal#013": {
    "src": "Certainly not! That TNT is for licensed mining companies only, not your average amateur miner.",
-   "dst": "",
+   "dst": "想都別想！那些 TNT 只賣給有執照的礦業公司，不是給你們這種業餘礦工的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12441,7 +12441,7 @@
   },
   "A Sandy Scandal#014": {
    "src": "Well then! I guess you'll still be able to grasp a pick with four fingers, eh?",
-   "dst": "",
+   "dst": "那好啊！我猜四根手指也還握得住鎬子吧，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12451,7 +12451,7 @@
   },
   "A Sandy Scandal#015": {
    "src": "Gaaah! Alright, alright! No more violence, please!",
-   "dst": "",
+   "dst": "啊啊啊！好、好！別再動手了，拜託！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12461,7 +12461,7 @@
   },
   "A Sandy Scandal#016": {
    "src": "The code is {~}-{~}-{~}-{~}... please don't hurt me!",
-   "dst": "",
+   "dst": "密碼是 {~1}-{~2}-{~3}-{~4}……求你別傷害我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12471,7 +12471,7 @@
   },
   "A Sandy Scandal#017": {
    "src": "{~}-{~}-{~}-{~}... thanks! We won't be needing you anymore... now go to sleep!",
-   "dst": "",
+   "dst": "{~1}-{~2}-{~3}-{~4}……多謝！你已經沒用了……去睡吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12481,7 +12481,7 @@
   },
   "A Sandy Scandal#018": {
    "src": "Open the vault in the basement [Code: {~}].",
-   "dst": "",
+   "dst": "打開地下室的金庫 [密碼: {~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12491,7 +12491,7 @@
   },
   "A Sandy Scandal#019": {
    "src": "Inspect the vault.",
-   "dst": "",
+   "dst": "檢查金庫。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12501,7 +12501,7 @@
   },
   "A Sandy Scandal#020": {
    "src": "Exit the vault.",
-   "dst": "",
+   "dst": "離開金庫。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12511,7 +12511,7 @@
   },
   "A Sandy Scandal#021": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 與 {p} 的銀行守衛對話",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12521,7 +12521,7 @@
   },
   "A Sandy Scandal#022": {
    "src": "Ah, you're back! Did you find anything interesting in the report?",
-   "dst": "",
+   "dst": "啊，你回來了！報告那邊查到什麼有意思的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12531,7 +12531,7 @@
   },
   "A Sandy Scandal#023": {
    "src": "Missing TNT in the shop's vault? Looks like the shopkeeper was telling the truth.",
-   "dst": "",
+   "dst": "店裡金庫的 TNT 不見了？看來那個店主說的是實話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12541,7 +12541,7 @@
   },
   "A Sandy Scandal#024": {
    "src": "We need to catch these criminals quickly if they have access to that amount of TNT - they could blow a hole right into the bank's vault!",
-   "dst": "",
+   "dst": "他們手上有那麼多 TNT，我們得盡快抓到人——那足以直接在銀行金庫上炸出一個洞！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12551,7 +12551,7 @@
   },
   "A Sandy Scandal#025": {
    "src": "You should check out another witness report, from after the attack on the shopkeeper.",
-   "dst": "",
+   "dst": "你該去查另一份目擊報告，時間在店主遇襲之後。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12561,7 +12561,7 @@
   },
   "A Sandy Scandal#026": {
    "src": "It was taken from the rooftop garden of the Scroll Merchant's residence, you should take a look.",
-   "dst": "",
+   "dst": "那份是在捲軸商人住處的屋頂花園記錄的，你去看看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12571,7 +12571,7 @@
   },
   "A Sandy Scandal#027": {
    "src": "Be quick! We don't have much time if we want to stop these bandits.",
-   "dst": "",
+   "dst": "動作要快！想攔下這些強盜，我們沒多少時間了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12581,7 +12581,7 @@
   },
   "A Sandy Scandal#028": {
    "src": "Go to the witness report location at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往目擊報告的地點 [{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12591,7 +12591,7 @@
   },
   "A Sandy Scandal#029": {
    "src": "Read the witness report.",
-   "dst": "",
+   "dst": "閱讀目擊報告。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12601,7 +12601,7 @@
   },
   "A Sandy Scandal#030": {
    "src": "Ey', what do you two blighters think you're doing with those dangerous explosives in the city?",
-   "dst": "",
+   "dst": "喂，你們兩個混帳，帶著那種危險的炸藥在城裡是想幹嘛？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12611,7 +12611,7 @@
   },
   "A Sandy Scandal#031": {
    "src": "Guards! Guards! Robber! Come quick! Urgently!",
-   "dst": "",
+   "dst": "衛兵！衛兵！有強盜！快來！十萬火急！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12621,7 +12621,7 @@
   },
   "A Sandy Scandal#032": {
    "src": "Gaaah!",
-   "dst": "",
+   "dst": "啊啊啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12631,7 +12631,7 @@
   },
   "A Sandy Scandal#033": {
    "src": "Find the source of the detonation at [{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "在 [{~1}, {~2}, {~3}] 找出爆炸的源頭。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12641,7 +12641,7 @@
   },
   "A Sandy Scandal#034": {
    "src": "Inspect the safe.",
-   "dst": "",
+   "dst": "檢查保險箱。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12651,7 +12651,7 @@
   },
   "A Sandy Scandal#035": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 與 {p} 的銀行守衛對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12661,7 +12661,7 @@
   },
   "A Sandy Scandal#036": {
    "src": "Were you able to uncover any new information regarding the status of the criminals?",
-   "dst": "",
+   "dst": "關於這些罪犯的動向，你有查到什麼新消息嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12671,7 +12671,7 @@
   },
   "A Sandy Scandal#037": {
    "src": "Ah... that's troubling. The criminals plundered two very powerful weapons.",
-   "dst": "",
+   "dst": "啊……這下麻煩了。那些罪犯搶走了兩件威力極強的武器。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12681,7 +12681,7 @@
   },
   "A Sandy Scandal#038": {
    "src": "It won't be easy facing those criminals if they decide to raid the bank with those weapons.",
-   "dst": "",
+   "dst": "他們要是帶著那些武器來搶銀行，可就不好對付了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12691,7 +12691,7 @@
   },
   "A Sandy Scandal#039": {
    "src": "I'm not certain how to proceed from here, we didn't receive any more witness reports, and-",
-   "dst": "",
+   "dst": "接下來該怎麼辦我也沒個準，再沒有別的目擊報告進來了，而且——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12701,7 +12701,7 @@
   },
   "A Sandy Scandal#040": {
    "src": "Boss, I just received urgent reports of a robbery underway in the left residential area of {p}!",
-   "dst": "",
+   "dst": "長官，剛收到急報，{p} 左側住宅區正在發生搶案！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12711,7 +12711,7 @@
   },
   "A Sandy Scandal#041": {
    "src": "Oh my… you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
-   "dst": "",
+   "dst": "天啊……你！士兵！快！搶案就在橋的另一頭，你今天去的第一間屋子旁邊！很可能就是我們要找的那批強盜。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12721,7 +12721,7 @@
   },
   "A Sandy Scandal#042": {
    "src": "There will be somebody waiting for you outside of the house once you get to the residential area!",
-   "dst": "",
+   "dst": "你到住宅區之後，會有人在屋子外面等你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12731,7 +12731,7 @@
   },
   "A Sandy Scandal#043": {
    "src": "If you still can't find it, I've written the coordinates in your content book. Now quickly, get to the house!",
-   "dst": "",
+   "dst": "要是還找不到，我把座標寫進你的內容書了。快，趕去那間屋子！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12741,7 +12741,7 @@
   },
   "A Sandy Scandal#044": {
    "src": "Quickly! Go to the house at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "快！前往 [{~1}, {~2}, -{~3}] 的屋子。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12751,7 +12751,7 @@
   },
   "A Sandy Scandal#045": {
    "src": "Hello? Are you with the guards? Good! Hurry! Some bandits just ransacked my house, and left with lots of emeralds!",
-   "dst": "",
+   "dst": "哈囉？你是衛兵那邊的人嗎？太好了！快！有幾個強盜剛把我家洗劫一空，帶走了一大堆綠寶石！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12761,7 +12761,7 @@
   },
   "A Sandy Scandal#046": {
    "src": "Follow me to my house, hopefully you can find the bandits! They stole lots of my precious gems!",
-   "dst": "",
+   "dst": "跟我到我家去，希望你能找到那些強盜！他們偷走了我好多珍貴的寶石！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12771,7 +12771,7 @@
   },
   "A Sandy Scandal#047": {
    "src": "Look for signs of the bandits' whereabouts.",
-   "dst": "",
+   "dst": "尋找強盜行蹤的線索。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12781,7 +12781,7 @@
   },
   "A Sandy Scandal#048": {
    "src": "Listen to the bandits.",
-   "dst": "",
+   "dst": "聽強盜們說話。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12791,7 +12791,7 @@
   },
   "A Sandy Scandal#049": {
    "src": "Ready, boys? We've got the TNT, weapons, and the fastest horses those emeralds could buy. Now we just-",
-   "dst": "",
+   "dst": "都準備好了嗎，弟兄們？TNT、武器，還有那些綠寶石買得到最快的馬，全都到手了。現在我們只要——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12801,7 +12801,7 @@
   },
   "A Sandy Scandal#050": {
    "src": "Ahah. I had a feeling we had a guard on our tail.",
-   "dst": "",
+   "dst": "哈。我就覺得後面跟了個衛兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12811,7 +12811,7 @@
   },
   "A Sandy Scandal#051": {
    "src": "No point wasting these brand-new weapons on you... since we're blowing up this hideout anyway!",
-   "dst": "",
+   "dst": "拿這些全新的武器對付你太浪費了……反正這個藏身處我們也要炸掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12821,7 +12821,7 @@
   },
   "A Sandy Scandal#052": {
    "src": "This whole thing'll go up in a few seconds, and any evidence will be buried in the sand. Good luck getting out of here!",
-   "dst": "",
+   "dst": "這整個地方再過幾秒就會炸開，所有證據都會被埋進沙裡。祝你逃得出去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12831,7 +12831,7 @@
   },
   "A Sandy Scandal#053": {
    "src": "Escape the hideout!",
-   "dst": "",
+   "dst": "逃出藏身處！",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12841,7 +12841,7 @@
   },
   "A Sandy Scandal#054": {
    "src": "Find where the bandits blasted a hole to get into the bank at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [{~1}, {~2}, -{~3}] 找出強盜炸開、通往銀行的那個洞。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12851,7 +12851,7 @@
   },
   "A Sandy Scandal#055": {
    "src": "It’s too late to stop us now! We’re already about to bust out of here with the grand prize - the contents of the emerald vault!",
-   "dst": "",
+   "dst": "現在想攔我們已經太遲了！我們馬上就要帶著最大的戰利品——綠寶石金庫裡的東西——衝出去了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12861,7 +12861,7 @@
   },
   "A Sandy Scandal#056": {
    "src": "Follow the criminals into the other room.",
-   "dst": "",
+   "dst": "跟著罪犯進入另一個房間。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12871,7 +12871,7 @@
   },
   "A Sandy Scandal#057": {
    "src": "Look here, the soldier decided they wanted to follow us. Dumb move.",
-   "dst": "",
+   "dst": "你看看，這位士兵決定跟上來了。蠢招。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12881,7 +12881,7 @@
   },
   "A Sandy Scandal#058": {
    "src": "I guess we can kill two birds with one stone: escaping the bank, and killing this pest.",
-   "dst": "",
+   "dst": "那就一石二鳥吧：逃出銀行，順便宰了這隻蒼蠅。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12891,7 +12891,7 @@
   },
   "A Sandy Scandal#059": {
    "src": "Block the entrance, bandits!",
-   "dst": "",
+   "dst": "弟兄們，把入口堵住！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12901,7 +12901,7 @@
   },
   "A Sandy Scandal#060": {
    "src": "Don't let the bandits escape!",
-   "dst": "",
+   "dst": "別讓強盜逃掉！",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12911,7 +12911,7 @@
   },
   "A Sandy Scandal#061": {
    "src": "Report back to the {p} Bank Guard at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到 [{~1}, {~2}, -{~3}] 向 {p} 的銀行守衛回報。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -12921,7 +12921,7 @@
   },
   "A Sandy Scandal#062": {
    "src": "Soldier! Where did you disappear to? Did you hear those explosions, below the bank?",
-   "dst": "",
+   "dst": "士兵！你跑到哪裡去了？你聽見銀行底下那些爆炸聲了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12931,7 +12931,7 @@
   },
   "A Sandy Scandal#063": {
    "src": "We think those bandits might have made their first move in the heist, we're mobilising a troop to-",
-   "dst": "",
+   "dst": "我們認為那些強盜已經動手了，正在調一支隊伍去——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12941,7 +12941,7 @@
   },
   "A Sandy Scandal#064": {
    "src": "You've already stopped them? And reclaimed the stolen weapons and explosives..?",
-   "dst": "",
+   "dst": "你已經把他們攔下來了？連被搶走的武器跟炸藥也都拿回來了……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -12951,7 +12951,7 @@
   },
   "A Sandy Scandal#065": {
    "src": "Wow. Excellent work, soldier. {p} is in your debt. Please accept these from our vault, as a token of our thanks.",
-   "dst": "",
+   "dst": "哇。幹得漂亮，士兵。{p} 欠你一份人情。這些是從我們金庫裡拿出來的，請收下，聊表謝意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -48970,8 +48970,8 @@
    "source": "wiki"
   },
   "Dearly Departed#015": {
-   "src": "There's five of them. {u}, {u}, , {u}, and Agility, each with different bonuses.",
-   "dst": "",
+   "src": "There's five of them. Strength, Dexterity, Intelligence, Defence, and Agility, each with different bonuses.",
+   "dst": "總共有五項。力量、靈巧、智慧、防禦和敏捷，各自提供不同的加成。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -53960,7 +53960,7 @@
    "source": "wiki"
   },
   "Dwarves and Doguns Part IV#037": {
-   "src": "You all deserve it! You attacked out [sic] ancestors for sport! Eye for an eye, have you heard of it? It's only fair!",
+   "src": "You all deserve it! You attacked out ancestors for sport! Eye for an eye, have you heard of it? It's only fair!",
    "dst": "你們活該！你們拿我們的祖先取樂！以牙還牙，聽過沒有？這才叫公道！",
    "role": "desc",
    "kind": "dialogue",
@@ -61750,8 +61750,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#009": {
-   "src": "I am! The elements are... {u}, {u}, , {u}, and... ?",
-   "dst": "",
+   "src": "I am! The elements are... Fire, Air, Earth, Thunder, and... Water?",
+   "dst": "知道！元素有……火、風、地、雷，還有……水？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -61760,8 +61760,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#010": {
-   "src": "That's right. And generally speaking, they're strong against each other in that order- beats {u}, beats {u}, and so on.",
-   "dst": "",
+   "src": "That's right. And generally speaking, they're strong against each other in that order- Fire beats Air, Air beats Earth, and so on.",
+   "dst": "沒錯。而且一般來說，它們就照那個順序互相剋制——火剋風、風剋地，以此類推。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -61870,8 +61870,8 @@
    "source": "wiki"
   },
   "Elemental Exercise#021": {
-   "src": "...Oh! So my Bash spell will still deal damage even if my weapon only uses {u}, right?",
-   "dst": "",
+   "src": "...Oh! So my Bash spell will still deal Earth damage even if my weapon only uses Water, right?",
+   "dst": "……喔！所以就算我的武器只有水屬性，我的重擊法術還是會造成地屬性傷害，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -73981,7 +73981,7 @@
   },
   "Fate of the Fallen#000": {
    "src": "Talk to Telvu the mage at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 與法師 Telvu 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -73991,7 +73991,7 @@
   },
   "Fate of the Fallen#001": {
    "src": "Ah, a member of the {p} army. We're trying to gain entry to this frozen barrow. We could use your aid.",
-   "dst": "",
+   "dst": "啊，{p} 軍隊的人。我們正想辦法進入這座冰封的古墳。你的幫忙來得正好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74001,7 +74001,7 @@
   },
   "Fate of the Fallen#002": {
    "src": "Are you familiar with the story of Theorick and {p}?",
-   "dst": "",
+   "dst": "你熟悉 Theorick 與 {p} 的故事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74011,7 +74011,7 @@
   },
   "Fate of the Fallen#003": {
    "src": "Probably not. Well, you see, {p} was not always frozen.",
-   "dst": "",
+   "dst": "大概不熟。是這樣的，{p} 並非一直都是冰封的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74021,7 +74021,7 @@
   },
   "Fate of the Fallen#004": {
    "src": "During Theorick's time, this place was like the Wynn plains, warm and arable.",
-   "dst": "",
+   "dst": "在 Theorick 的年代，這裡就像 Wynn 的平原，溫暖而適於耕作。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74031,7 +74031,7 @@
   },
   "Fate of the Fallen#005": {
    "src": "For some reason, Theorick Twain used his immense power to freeze the land before exiling himself here.",
-   "dst": "",
+   "dst": "不知為何，Theorick Twain 動用了他龐大的力量把這片土地凍結，然後把自己流放在此。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74041,7 +74041,7 @@
   },
   "Fate of the Fallen#006": {
    "src": "We need to find out why so we can reverse this spell. Presumably, the source of that spell's magic would lie within the barrow... but we don't want to go in empty-handed.",
-   "dst": "",
+   "dst": "我們得查出原因，才能解開這道法術。照理說，法術的魔力源頭應該就在古墳裡……但我們不想空著手進去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74051,7 +74051,7 @@
   },
   "Fate of the Fallen#007": {
    "src": "As such...have you heard of a place called {p}? We could use it to go back in time, to try to learn more about Theorick's actions.",
-   "dst": "",
+   "dst": "因此……你聽過一個叫 {p} 的地方嗎？我們可以藉它回到過去，多了解一些 Theorick 的作為。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74061,7 +74061,7 @@
   },
   "Fate of the Fallen#008": {
    "src": "Well...in a way, at least. There are laws to this sort of magic. For one, you need an item from the specific time we want to see. Second, you can witness the past, not change it.",
-   "dst": "",
+   "dst": "呃……至少某種程度上是。這類魔法有它的規矩。其一，你需要一件來自我們想看的那個年代的物品。其二，你只能目睹過去，不能改變它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74071,7 +74071,7 @@
   },
   "Fate of the Fallen#009": {
    "src": "One of Theorick's staves is on display in the {p} bank. Presumably, it should work for what we need. Could you retrieve it somehow?",
-   "dst": "",
+   "dst": "Theorick 的其中一根法杖就陳列在 {p} 的銀行裡。照理說應該合用。你有辦法把它弄來嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74081,7 +74081,7 @@
   },
   "Fate of the Fallen#010": {
    "src": "Find Theorick's stave at {p} bank.",
-   "dst": "",
+   "dst": "在 {p} 的銀行找到 Theorick 的法杖。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -74091,7 +74091,7 @@
   },
   "Fate of the Fallen#011": {
    "src": "Aha, quick job. I see you've got the wand. Must've needed a sharp tongue to get the bankers to give it up.",
-   "dst": "",
+   "dst": "啊哈，動作真快。看來你把法杖拿到手了。要讓那些銀行的人鬆手，想必得有一副好口才。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74101,7 +74101,7 @@
   },
   "Fate of the Fallen#012": {
    "src": "Now, it is a long walk to {p}. Needn't take that walk, though, as I can teleport you there. Hopefully.",
-   "dst": "",
+   "dst": "走去 {p} 可是一段長路。不過不必用走的，我可以把你傳送過去。但願如此。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74111,7 +74111,7 @@
   },
   "Fate of the Fallen#013": {
    "src": "Once you're there, enter the Temple of Time. You should know what to do once you are there. Careful dealing with time travel, friend... No idea what you might find.",
-   "dst": "",
+   "dst": "到了之後，進入 Temple of Time。到了那裡你就會知道該怎麼做。時光旅行要小心，朋友……誰也不知道你會碰上什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74121,7 +74121,7 @@
   },
   "Fate of the Fallen#014": {
    "src": "Just step into the portal.",
-   "dst": "",
+   "dst": "直接走進傳送門就是了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74131,7 +74131,7 @@
   },
   "Fate of the Fallen#015": {
    "src": "Should anything go wrong, I'll stay here to teleport you back to the temple.",
-   "dst": "",
+   "dst": "萬一出了什麼差錯，我會留在這裡把你傳送回神殿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74141,7 +74141,7 @@
   },
   "Fate of the Fallen#016": {
    "src": "Enter the portal the mage made.",
-   "dst": "",
+   "dst": "進入法師開啟的傳送門。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -74151,7 +74151,7 @@
   },
   "Fate of the Fallen#017": {
    "src": "Enter the Gate of Time at [-{~}, {~}, -{~}] and travel back in time.",
-   "dst": "",
+   "dst": "進入 [-{~1}, {~2}, -{~3}] 的 Gate of Time，回到過去。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -74161,7 +74161,7 @@
   },
   "Fate of the Fallen#018": {
    "src": "Explore Past {p}.",
-   "dst": "",
+   "dst": "探索過去的 {p}。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -74171,7 +74171,7 @@
   },
   "Fate of the Fallen#019": {
    "src": "What the...",
-   "dst": "",
+   "dst": "搞什麼……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74181,7 +74181,7 @@
   },
   "Fate of the Fallen#020": {
    "src": "Woah, your weaponry and armour is so advanced!",
-   "dst": "",
+   "dst": "哇，你的武器跟護甲好先進！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74191,7 +74191,7 @@
   },
   "Fate of the Fallen#021": {
    "src": "Are you another Twain? Only the Twains know magic like that.",
-   "dst": "",
+   "dst": "你也是 Twain 嗎？只有 Twains 懂那種魔法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74201,7 +74201,7 @@
   },
   "Fate of the Fallen#022": {
    "src": "Oh, you're looking for Theorick.",
-   "dst": "",
+   "dst": "喔，你是來找 Theorick 的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74211,7 +74211,7 @@
   },
   "Fate of the Fallen#023": {
    "src": "He's busy fighting in the war, shouldn't you be doing the same?",
-   "dst": "",
+   "dst": "他忙著在前線打仗，你不也該去嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74221,7 +74221,7 @@
   },
   "Fate of the Fallen#024": {
    "src": "He went west. There was some kind of emergency.",
-   "dst": "",
+   "dst": "他往西邊去了。好像出了什麼緊急狀況。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74231,7 +74231,7 @@
   },
   "Fate of the Fallen#025": {
    "src": "We've been fighting the corruption for years, it seems like it might finally engulf {p}.",
-   "dst": "",
+   "dst": "我們跟腐化打了好幾年，看樣子它終究要把 {p} 吞掉了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74241,7 +74241,7 @@
   },
   "Fate of the Fallen#026": {
    "src": "Find Theorick in the forest west of {p} [{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "在 {p} 西邊的森林裡找到 Theorick [{~1}, {~2}, {~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -74251,7 +74251,7 @@
   },
   "Fate of the Fallen#027": {
    "src": "I could've sworn she had gone this way... Oh, what now, more imbeciles? This forest isn't safe to travel!",
-   "dst": "",
+   "dst": "我敢發誓她是往這邊走的……喔，又怎麼了，又來一個蠢貨？這片森林不能亂走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74261,7 +74261,7 @@
   },
   "Fate of the Fallen#028": {
    "src": "If you need help, lodge a complaint with the guards. I'm busy and I can't exactly break away from saving this god-blessed province to chill your milk!!",
-   "dst": "",
+   "dst": "要幫忙就去跟衛兵申訴。我很忙，總不能丟下拯救這個天殺的行省，跑去幫你冰牛奶吧！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74271,7 +74271,7 @@
   },
   "Fate of the Fallen#029": {
    "src": "Are your ears full of wax?! I said-",
-   "dst": "",
+   "dst": "你耳朵塞了耳屎嗎？！我說了——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74281,7 +74281,7 @@
   },
   "Fate of the Fallen#030": {
    "src": "Urgh, the things followed you! See what happens?! STAND ASIDE.",
-   "dst": "",
+   "dst": "唔，那些東西跟著你來了！看吧，會出什麼事？！退到一邊去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74291,7 +74291,7 @@
   },
   "Fate of the Fallen#031": {
    "src": "As though I needed TWO people to save! Now get out of here, I have to find that woman who went missing!",
-   "dst": "",
+   "dst": "好像我還嫌只救一個人不夠似的！快滾，我還得去找那個失蹤的女人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74301,7 +74301,7 @@
   },
   "Fate of the Fallen#032": {
    "src": "HEEEELP! I can't outrun them!!! Guards! Someone!!",
-   "dst": "",
+   "dst": "救命啊——！我跑不過牠們！！！衛兵！誰來啊！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74311,7 +74311,7 @@
   },
   "Fate of the Fallen#033": {
    "src": "Whuh! That's her voice! Where is she?! I just cleared this area!",
-   "dst": "",
+   "dst": "咦！那是她的聲音！她人在哪？！我剛才才清過這一帶！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74321,7 +74321,7 @@
   },
   "Fate of the Fallen#034": {
    "src": "Th-Theorick!! There's corrupteds!!",
-   "dst": "",
+   "dst": "Theo、Theorick！！有腐化物！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74331,7 +74331,7 @@
   },
   "Fate of the Fallen#035": {
    "src": "Ugh, is she dragging them over from the west?! You there, If you don't want to end up frozen, GET BEHIND ME, NOW!!",
-   "dst": "",
+   "dst": "唔，她是從西邊一路把牠們引過來的嗎？！你，不想被凍成冰塊的話，立刻躲到我身後！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74341,7 +74341,7 @@
   },
   "Fate of the Fallen#036": {
    "src": "Phew... You're out of danger now. If you hadn't left town, though, you wouldn't have been IN any danger at all!",
-   "dst": "",
+   "dst": "呼……你安全了。不過你要是沒離開城裡，根本就不會有什麼危險！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74351,7 +74351,7 @@
   },
   "Fate of the Fallen#037": {
    "src": "Don't bother apologizing to me, just get back to town. Now.",
-   "dst": "",
+   "dst": "不必跟我道歉，回城裡去就是了。立刻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74361,7 +74361,7 @@
   },
   "Fate of the Fallen#038": {
    "src": "Next time you feel like picking flowers in the forest or whatever you were doing, remember you have a life to live, hm?!",
-   "dst": "",
+   "dst": "下次想到森林裡採花還是幹嘛的時候，記得你的命只有一條，聽見沒？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74371,7 +74371,7 @@
   },
   "Fate of the Fallen#039": {
    "src": "Every day, more corrupteds, more deaths... There is only one thing for it. I have to tackle it myself. Cut the roots...and kill this hellish weed.",
-   "dst": "",
+   "dst": "每一天，腐化物更多，死的人也更多……只剩一條路了。我得親自去處理。斬斷根源……除掉這株地獄來的雜草。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74381,7 +74381,7 @@
   },
   "Fate of the Fallen#040": {
    "src": "Still here? Well, listen up. Myself and a few others are planning something risky. Damned be it if our minds are lost, I need to go through that portal.",
-   "dst": "",
+   "dst": "還在啊？那就聽好。我和另外幾個人在籌畫一件冒險的事。就算心智因此喪失也罷，我必須穿過那道傳送門。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74391,7 +74391,7 @@
   },
   "Fate of the Fallen#041": {
    "src": "You look heavily geared, so I'm conscripting you. Meet us at our base, immediately. Follow the river south and you'll see a house on the right side.",
-   "dst": "",
+   "dst": "你裝備看起來很齊，我徵召你了。立刻到我們的據點會合。沿著河往南走，右手邊會看到一棟房子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74401,7 +74401,7 @@
   },
   "Fate of the Fallen#042": {
    "src": "Head to the base of the operation south of {p} [{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "前往 {p} 南邊的行動據點 [{~1}, {~2}, {~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -74411,7 +74411,7 @@
   },
   "Fate of the Fallen#043": {
    "src": "Well, I'll give you this. You're prompt to listen to orders, at least. We're headed to the {p}.",
-   "dst": "",
+   "dst": "好吧，這點我承認。你至少聽令很快。我們要前往 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74421,7 +74421,7 @@
   },
   "Fate of the Fallen#044": {
    "src": "The last man that entered the portal and returned became Bak’al... But if there is even a fraction of a chance this could work, we must take it at this point.",
-   "dst": "",
+   "dst": "上一個進了那道門又回來的人，變成了 Bak’al……但只要還有一絲成功的可能，事到如今我們就得賭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74431,7 +74431,7 @@
   },
   "Fate of the Fallen#045": {
    "src": "Let's get moving. We'll be taking no breaks on the trip, so I hope you were prepared.",
-   "dst": "",
+   "dst": "出發吧。這一路不休息，希望你早有準備。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74441,7 +74441,7 @@
   },
   "Fate of the Fallen#046": {
    "src": "Now. The sheer cold I command can stave off corruption itself. Somehow I doubt any of you can say the same. I'll go in alone.",
-   "dst": "",
+   "dst": "好。我所駕馭的極寒能夠擋住腐化本身。我可不覺得你們哪個也做得到。我一個人進去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74451,7 +74451,7 @@
   },
   "Fate of the Fallen#047": {
    "src": "When I enter... If I had to make an assumption, corrupteds will swarm the portal after me. Your job? Slay them. I can't have distractions in there.",
-   "dst": "",
+   "dst": "我進去之後……照我推測，腐化物會跟著湧向那道門。你們的任務？把牠們殺光。我不能在裡面分心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74461,7 +74461,7 @@
   },
   "Fate of the Fallen#048": {
    "src": "You will not be leaving your post here until I exit that portal. Understood?",
-   "dst": "",
+   "dst": "在我從那道門出來之前，你不准離開崗位。聽懂了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74471,7 +74471,7 @@
   },
   "Fate of the Fallen#049": {
    "src": "Protect the portal.",
-   "dst": "",
+   "dst": "守住傳送門。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -74481,7 +74481,7 @@
   },
   "Fate of the Fallen#050": {
    "src": "...no...",
-   "dst": "",
+   "dst": "……不……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74491,7 +74491,7 @@
   },
   "Fate of the Fallen#051": {
    "src": "...no, no, no no no NO!! DAMN IT ALL!!",
-   "dst": "",
+   "dst": "……不、不，不不不，不要啊！！全都該死！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74501,7 +74501,7 @@
   },
   "Fate of the Fallen#052": {
    "src": "You know what happened?! I lost!! I will destroy the province if I turn completely! GET AWAY, NOW! DO YOU HEAR ME?! RUN!!",
-   "dst": "",
+   "dst": "你知道發生什麼事了嗎？！我輸了！！我要是徹底轉化，會毀了整個行省！走開，快！聽見沒有？！快跑！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74511,7 +74511,7 @@
   },
   "Fate of the Fallen#053": {
    "src": "I... C-calm yourself, Theorick...don't...don't lose yourself to it...there's...yet a solution...one way...",
-   "dst": "",
+   "dst": "我……冷、冷靜下來，Theorick……別……別讓它吞掉你……還有……還有辦法……有一條路……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74521,7 +74521,7 @@
   },
   "Fate of the Fallen#054": {
    "src": "Oh...you again...the others...dead? Run off? Cowards...urgh...",
-   "dst": "",
+   "dst": "喔……又是你……其他人呢……死了？跑了？一群懦夫……唔……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74531,7 +74531,7 @@
   },
   "Fate of the Fallen#055": {
    "src": "You live...so...eyes up. Listen to me. If I turn...w-when...when I turn...n-no, can't...gaaah, I'll destr- Nggh...",
-   "dst": "",
+   "dst": "你還活著……那……抬起頭來。聽我說。如果我轉化……不，是當、當我轉化的時候……不、不行……啊啊啊，我會毀——唔……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74541,7 +74541,7 @@
   },
   "Fate of the Fallen#056": {
    "src": "I won't last, you can tell... Right now...killing me is an impossibility, you idiotic weakl- Agh, GET OUT OF MY MIND!!",
-   "dst": "",
+   "dst": "我撐不了多久，你看得出來……此刻……要殺我是不可能的，你這蠢弱的——啊，滾出我的腦袋！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74551,7 +74551,7 @@
   },
   "Fate of the Fallen#057": {
    "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too fargone. It needs time to heal...and my powers m-must be dampened...frozen...",
-   "dst": "",
+   "dst": "啊啊啊……告訴……所有人。我要把這裡凍結。我……我已經、太遲了。這片土地需要時間癒合……而我的力量，必、必須被壓下……被凍住……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74561,7 +74561,7 @@
   },
   "Fate of the Fallen#058": {
    "src": "All worthless... Urgh, no...they yet deserve life...and this spell...it will surely claim some. Please, let them know why...",
-   "dst": "",
+   "dst": "全都不值一提……唔，不……他們仍配得上活著……而這道法術……必定會奪走一些人的命。拜託，讓他們知道原因……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74571,7 +74571,7 @@
   },
   "Fate of the Fallen#059": {
    "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits to linger. I would...prefer against giving him a harder time.",
-   "dst": "",
+   "dst": "如果說我從那個討人厭的傢——……從 Mael 那裡學到了什麼，那就是死得不明不白會讓亡魂徘徊不去。我……不想再給他添麻煩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74581,7 +74581,7 @@
   },
   "Fate of the Fallen#060": {
    "src": "K-keep advancing. Your things, if everyone was as strong as you...we may stand a chance. This could end me, in time, once I am weaker.",
-   "dst": "",
+   "dst": "繼、繼續前進吧。你這身裝備，要是人人都像你這麼強……我們也許還有機會。等我更虛弱了，這終有一天能了結我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74591,7 +74591,7 @@
   },
   "Fate of the Fallen#061": {
    "src": "Let it be known...Theorick Twain is not dead. He cannot be killed...all will burn...until future days. Here, in this accursed place. Find me...and end it all.",
-   "dst": "",
+   "dst": "讓世人知道……Theorick Twain 並沒有死。他是殺不死的……一切都將焚毀……直到將來的某一天。就在這裡，在這片受詛咒的土地上。找到我……然後為這一切畫下句點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74601,7 +74601,7 @@
   },
   "Fate of the Fallen#062": {
    "src": "Tell Telvu the mage what happened.",
-   "dst": "",
+   "dst": "把經過告訴法師 Telvu。",
    "role": "desc",
    "kind": "objective",
    "quest": "Fate of the Fallen",
@@ -74611,7 +74611,7 @@
   },
   "Fate of the Fallen#063": {
    "src": "You must have succeeded, or you would be yet in the memory of the past. I can feel some potent magic on you.",
-   "dst": "",
+   "dst": "你想必是成功了，否則你此刻還困在過去的記憶裡。我感覺得到你身上帶著強大的魔力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74621,7 +74621,7 @@
   },
   "Fate of the Fallen#064": {
    "src": "So, you met Theorick? He was always said to have fallen from heroism after the great freezing.",
-   "dst": "",
+   "dst": "這麼說，你見到 Theorick 了？一直以來的說法都是，大冰封之後他就從英雄的位置上墮落了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74631,7 +74631,7 @@
   },
   "Fate of the Fallen#065": {
    "src": "Were you able to figure out why it was he froze this place, at least?",
-   "dst": "",
+   "dst": "至少，你查出他為什麼要把這裡凍結了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74641,7 +74641,7 @@
   },
   "Fate of the Fallen#066": {
    "src": "What... so many revelations... ice magic staves off corruption...? It is true this palce has seen less corrupted threats than other places in the province...",
-   "dst": "",
+   "dst": "什麼……這麼多真相……冰魔法能擋住腐化……？的確，這個地方遇到的腐化威脅，比行省裡其他地方都要少……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74651,7 +74651,7 @@
   },
   "Fate of the Fallen#067": {
    "src": "Dear gods... We've had it all wrong this whole time... This was to protect everyone...but surely he would have told someone his intentions if he was of that sound a mind!",
-   "dst": "",
+   "dst": "天上諸神啊……我們一直以來全都弄錯了……這是為了保護所有人……可他要是神智還那麼清楚，總該跟誰交代一聲吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74661,7 +74661,7 @@
   },
   "Fate of the Fallen#068": {
    "src": "All this time, spent buried alive, wrestling with the corruption. The thought horrifies you, as well, judging by your face. Killing him would be a mercy.",
-   "dst": "",
+   "dst": "這麼多年，就這樣被活埋著，與腐化搏鬥。看你的臉色，這念頭也讓你毛骨悚然吧。殺了他，反而是慈悲。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -74671,7 +74671,7 @@
   },
   "Fate of the Fallen#069": {
    "src": "Here. Use this. It may help protect you within the Ice Barrows... Please, soldier. Be Theorick's guardian angel. Free him from this torment.",
-   "dst": "",
+   "dst": "來。用這個。在 Ice Barrows 裡面它或許能保護你……拜託了，士兵。當 Theorick 的守護天使吧。把他從這場折磨裡解脫出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Fate of the Fallen",
@@ -79401,7 +79401,7 @@
   },
   "Frost Bite#000": {
    "src": "Find Eppo at [-{~}, {~}, -{~}]. The entrance to his cave can be found at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~1}, {~2}, -{~3}] 找到 Eppo。他的洞穴入口在 [-{~4}, {~5}, -{~6}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Frost Bite",
@@ -79411,7 +79411,7 @@
   },
   "Frost Bite#001": {
    "src": "Let's give it another try!",
-   "dst": "",
+   "dst": "再試一次吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79421,7 +79421,7 @@
   },
   "Frost Bite#002": {
    "src": "Ready the drill, men!",
-   "dst": "",
+   "dst": "弟兄們，鑽頭準備！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79431,7 +79431,7 @@
   },
   "Frost Bite#003": {
    "src": "Darn. The drill just won't start.",
-   "dst": "",
+   "dst": "可惡。這鑽頭就是發不動。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79441,7 +79441,7 @@
   },
   "Frost Bite#004": {
    "src": "Hey, Guard! Do you know anything about Electromagic? Come up here to the drill, maybe you can take a look?",
-   "dst": "",
+   "dst": "喂，衛兵！你懂 Electromagic 嗎？上來鑽頭這邊，說不定你看得出問題？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79451,7 +79451,7 @@
   },
   "Frost Bite#005": {
    "src": "Oh! Never mind, it lit up, back up!",
-   "dst": "",
+   "dst": "喔！沒事了，它亮了，退後！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79461,7 +79461,7 @@
   },
   "Frost Bite#006": {
    "src": "For the love of Bob... Why won't you just break?",
-   "dst": "",
+   "dst": "看在 Bob 的份上……你怎麼就是不碎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79471,7 +79471,7 @@
   },
   "Frost Bite#007": {
    "src": "This ice was created by Theorick, a Twain who defended this area many many years ago.",
-   "dst": "",
+   "dst": "這些冰是 Theorick 造的，他是很久很久以前守護這一帶的一位 Twain。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79481,7 +79481,7 @@
   },
   "Frost Bite#008": {
    "src": "When the corruption got too much... He froze everything, including the people. Do you see them in there?",
-   "dst": "",
+   "dst": "當腐化蔓延到無法收拾……他把一切都凍住了，連人也不例外。你看見裡面那些人了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79491,7 +79491,7 @@
   },
   "Frost Bite#009": {
    "src": "We've tried desperately to get them out, but we've tried all the equipment we had, including this Corkian drill.",
-   "dst": "",
+   "dst": "我們拚命想把他們弄出來，手上所有的設備都試過了，包括這台 Corkus 產的鑽頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79501,7 +79501,7 @@
   },
   "Frost Bite#010": {
    "src": "Maybe we should get more destructive... The demolition expert, Rhudya, is further down the cave.",
-   "dst": "",
+   "dst": "也許該用更暴力的方式……爆破專家 Rhudya 就在洞穴更裡面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79511,7 +79511,7 @@
   },
   "Frost Bite#011": {
    "src": "It's a long shot, but worth a try. Would you be able to get it while I clear this space?",
-   "dst": "",
+   "dst": "機會不大，但值得一試。我來清這塊地方，你能去把東西拿來嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79521,7 +79521,7 @@
   },
   "Frost Bite#012": {
    "src": "Go deeper into the cave and speak to Rhudya.",
-   "dst": "",
+   "dst": "深入洞穴，與 Rhudya 對話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Frost Bite",
@@ -79531,7 +79531,7 @@
   },
   "Frost Bite#013": {
    "src": "Whup! You're on private property, y'know! Oh, Eppo sent ya? That's fair enough.",
-   "dst": "",
+   "dst": "哇！你可是踩在私人地界上啊！喔，Eppo 叫你來的？那就沒問題了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79541,7 +79541,7 @@
   },
   "Frost Bite#014": {
    "src": "You'll be needing this TNT then, make sure not to drop it though, whup!",
-   "dst": "",
+   "dst": "那你會需要這些 TNT，可別給我摔了啊，哇！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79551,7 +79551,7 @@
   },
   "Frost Bite#015": {
    "src": "Just travel through this cave and you'll be returned to Eppo easy-peasy!",
-   "dst": "",
+   "dst": "穿過這個洞穴，輕輕鬆鬆就回到 Eppo 那邊了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79561,7 +79561,7 @@
   },
   "Frost Bite#016": {
    "src": "Return to Eppo with the tnt.",
-   "dst": "",
+   "dst": "帶著 TNT 回到 Eppo 那裡。",
    "role": "desc",
    "kind": "objective",
    "quest": "Frost Bite",
@@ -79571,7 +79571,7 @@
   },
   "Frost Bite#017": {
    "src": "Very nice, this might do the trick.",
-   "dst": "",
+   "dst": "很好，這說不定行得通。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79581,7 +79581,7 @@
   },
   "Frost Bite#018": {
    "src": "Back up, I'll ignite the explosive.",
-   "dst": "",
+   "dst": "退後，我來點燃炸藥。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79591,7 +79591,7 @@
   },
   "Frost Bite#019": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79601,7 +79601,7 @@
   },
   "Frost Bite#020": {
    "src": "NOTHING? Not even a scratch. I don't understand Theoricks ice.. It's not real.",
-   "dst": "",
+   "dst": "什麼都沒有？連一道刮痕都沒有。我搞不懂 Theorick 這冰……這根本不像真的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79611,7 +79611,7 @@
   },
   "Frost Bite#021": {
    "src": "I'm not sure what else we can do then...",
-   "dst": "",
+   "dst": "那我也不知道還能怎麼辦了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79621,7 +79621,7 @@
   },
   "Frost Bite#022": {
    "src": "HEY. Eppo, over here! Near the cave!",
-   "dst": "",
+   "dst": "喂。Eppo，這邊！洞穴附近！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79631,7 +79631,7 @@
   },
   "Frost Bite#023": {
    "src": "Did the explosive not work? I found this old mineshaft on the way back from the cave, it leads to an old lava cavern.",
-   "dst": "",
+   "dst": "炸藥沒效嗎？我從洞穴回來的路上發現了一條舊礦坑道，通往一個古老的熔岩洞。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79641,7 +79641,7 @@
   },
   "Frost Bite#024": {
    "src": "Might be a long shot, but this lava looks different. Why not give it a try?",
-   "dst": "",
+   "dst": "機會或許不大，但那裡的熔岩看起來不太一樣。何不試試？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79651,7 +79651,7 @@
   },
   "Frost Bite#025": {
    "src": "Travel to the lava springs through the mineshaft.",
-   "dst": "",
+   "dst": "穿過礦坑道，前往熔岩泉。",
    "role": "desc",
    "kind": "objective",
    "quest": "Frost Bite",
@@ -79661,7 +79661,7 @@
   },
   "Frost Bite#026": {
    "src": "Complete the puzzle and bring the lava back to Eppo.",
-   "dst": "",
+   "dst": "解開謎題，把熔岩帶回給 Eppo。",
    "role": "desc",
    "kind": "objective",
    "quest": "Frost Bite",
@@ -79671,7 +79671,7 @@
   },
   "Frost Bite#027": {
    "src": "I don't understand how you can hold lava in a bucket.. But here we are.",
-   "dst": "",
+   "dst": "我不懂熔岩怎麼能裝在桶子裡……但事實就擺在眼前。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79681,7 +79681,7 @@
   },
   "Frost Bite#028": {
    "src": "Truth is.. We're not retrieving these bodies for no reason.",
-   "dst": "",
+   "dst": "老實說……我們挖這些屍體不是沒有理由的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79691,7 +79691,7 @@
   },
   "Frost Bite#029": {
    "src": "We believe one of these people worked for Theorick, and has a key to his mansion",
-   "dst": "",
+   "dst": "我們認為這些人裡有一個曾替 Theorick 做事，身上有他宅邸的鑰匙",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79701,7 +79701,7 @@
   },
   "Frost Bite#030": {
    "src": "We in {p} think Theorick has a lot to answer for. We want to redistribute his wealth among those he hurt.",
-   "dst": "",
+   "dst": "我們 {p} 的人認為 Theorick 欠了太多交代。我們要把他的財富重新分給被他傷害過的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79711,7 +79711,7 @@
   },
   "Frost Bite#031": {
    "src": "Right, I've dipped this stick in the magical lava. Just hold the rod and walk into the ice to melt it.",
-   "dst": "",
+   "dst": "好，我把這根棒子浸過那魔法熔岩了。你只要握著它走進冰裡，冰就會融。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79721,7 +79721,7 @@
   },
   "Frost Bite#032": {
    "src": "Look for the corpse with a key, it might be above you. Good luck!",
-   "dst": "",
+   "dst": "去找身上帶鑰匙的那具屍體，可能在你上方。祝你好運！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79731,7 +79731,7 @@
   },
   "Frost Bite#033": {
    "src": "Melt the ice and find the Servant's corpse.",
-   "dst": "",
+   "dst": "融開冰層，找到那名僕人的屍體。",
    "role": "desc",
    "kind": "objective",
    "quest": "Frost Bite",
@@ -79741,7 +79741,7 @@
   },
   "Frost Bite#034": {
    "src": "Is that the right one? You got it? Brilliant! Now come back down.",
-   "dst": "",
+   "dst": "是那一具嗎？拿到了？太好了！快下來吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79751,7 +79751,7 @@
   },
   "Frost Bite#035": {
    "src": "Lets travel to the mansion together. Here, lets take my horse.",
-   "dst": "",
+   "dst": "我們一起去那座宅邸。來，騎我的馬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79761,7 +79761,7 @@
   },
   "Frost Bite#036": {
    "src": "While we ride, let me explain a little more about what we're doing. Let's go.",
-   "dst": "",
+   "dst": "路上我再多說一點我們在做的事。走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79771,7 +79771,7 @@
   },
   "Frost Bite#037": {
    "src": "As I mentioned before, there is a reason this land is frozen, and it's not natural.",
-   "dst": "",
+   "dst": "我剛才說過，這片土地被凍住是有原因的，而且不是自然造成的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79781,7 +79781,7 @@
   },
   "Frost Bite#038": {
    "src": "Many years before Bob was around, Wynn was in ruins due to the corruption war.",
-   "dst": "",
+   "dst": "早在 Bob 出現的許多年前，Wynn 就因為腐化之戰而滿目瘡痍。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79791,7 +79791,7 @@
   },
   "Frost Bite#039": {
    "src": "In those times there used to be a group of naturally gifted individuals called the Twains. They defended us all with elemental magic.",
-   "dst": "",
+   "dst": "那個年代有一群天賦異稟的人，稱作 Twains。他們以元素魔法守護著我們所有人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79801,7 +79801,7 @@
   },
   "Frost Bite#040": {
    "src": "Theorick was one of those Twains. He harnessed unnaturally powerful ice based magic. He used it to protect the land surrounding the mansion.",
-   "dst": "",
+   "dst": "Theorick 就是其中一位 Twain。他駕馭著強得不自然的冰系魔法，用它守護宅邸周圍這片土地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79811,7 +79811,7 @@
   },
   "Frost Bite#041": {
    "src": "Theorick.. Wasn't like the other Twains. He wanted the people he protected to pay and feed him as way of thanks.",
-   "dst": "",
+   "dst": "Theorick……跟其他 Twains 不一樣。他要他所保護的人以錢財與糧食來答謝他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79821,7 +79821,7 @@
   },
   "Frost Bite#042": {
    "src": "After years, Theorick was rich while the people he protected lived in poverty and fear - not only of the monsters, but in fear of Theorick himself.",
-   "dst": "",
+   "dst": "多年下來，Theorick 富可敵國，而被他保護的人卻活在貧困與恐懼之中——他們怕的不只是怪物，還有 Theorick 本人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79831,7 +79831,7 @@
   },
   "Frost Bite#043": {
    "src": "He punished those who disobeyed his curfews and would get angry if anyone tried to move away. The people felt trapped.",
-   "dst": "",
+   "dst": "誰不遵守他的宵禁就會被懲罰，誰想搬走他就發怒。人們覺得自己被困住了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79841,7 +79841,7 @@
   },
   "Frost Bite#044": {
    "src": "Eventually, just like the other Twains - Theorick fell to the corruption. Not before he had the last word.",
-   "dst": "",
+   "dst": "最後，跟其他 Twains 一樣——Theorick 也墮入了腐化。但在那之前，他還是把最後一句話說完了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79851,7 +79851,7 @@
   },
   "Frost Bite#045": {
    "src": "He froze the land entirely, killing almost everything and everyone left outside in it. Hundreds of lives were lost.",
-   "dst": "",
+   "dst": "他把整片土地徹底冰封，幾乎凍死了留在外頭的一切生靈。數百條性命就此消逝。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79861,7 +79861,7 @@
   },
   "Frost Bite#046": {
    "src": "It turns out the ice slowed the spread of corruption across the land to almost a standstill. It's been this way ever since.",
-   "dst": "",
+   "dst": "結果那些冰竟把腐化在這片土地上的蔓延拖到幾乎停滯。從那時起就一直是這樣了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79871,7 +79871,7 @@
   },
   "Frost Bite#047": {
    "src": "Now that we can get in his mansion we hope to uncover the secrets of his ice magic so we may undo it, and share the wealth he hoarded from the people. Ah, we're here.",
-   "dst": "",
+   "dst": "現在我們進得了他的宅邸，希望能揭開他冰魔法的秘密好把它解開，也把他從人民身上搜刮來的財富分還出去。啊，到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79881,7 +79881,7 @@
   },
   "Frost Bite#048": {
    "src": "Enter Theorick's Mansion.",
-   "dst": "",
+   "dst": "進入 Theorick 的宅邸。",
    "role": "desc",
    "kind": "objective",
    "quest": "Frost Bite",
@@ -79891,7 +79891,7 @@
   },
   "Frost Bite#049": {
    "src": "This place looks frozen in time.. The grandure.. Well he did just take and take from everyone around him.",
-   "dst": "",
+   "dst": "這地方彷彿被時間凍住了……這般氣派……唉，他確實是不斷從身邊每個人身上榨取。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79901,7 +79901,7 @@
   },
   "Frost Bite#050": {
    "src": "So, I'm not sure where to start, but I'm guessing he has some protection in place.",
-   "dst": "",
+   "dst": "我不確定該從哪裡下手，不過我猜他一定設了什麼防護。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79911,7 +79911,7 @@
   },
   "Frost Bite#051": {
    "src": "This is unbelievable.. He was such a greedy- AAAAH.",
-   "dst": "",
+   "dst": "真是難以置信……他根本是個貪得無厭的——啊啊啊啊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79921,7 +79921,7 @@
   },
   "Frost Bite#052": {
    "src": "... I don't think we should insult him..",
-   "dst": "",
+   "dst": "……我看我們還是別罵他好了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79931,7 +79931,7 @@
   },
   "Frost Bite#053": {
    "src": "Find the riches in Theorick's mansion.",
-   "dst": "",
+   "dst": "在 Theorick 的宅邸裡找出財寶。",
    "role": "desc",
    "kind": "objective",
    "quest": "Frost Bite",
@@ -79941,7 +79941,7 @@
   },
   "Frost Bite#054": {
    "src": "Oof! Wasn't expecting that. That just proves everything I said about him. Punishing people who insult him.",
-   "dst": "",
+   "dst": "唔！沒料到會這樣。這正好印證了我說的那些。誰罵他他就懲罰誰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79951,7 +79951,7 @@
   },
   "Frost Bite#055": {
    "src": "Anyway, we should look around for some kind of secret entrance.",
-   "dst": "",
+   "dst": "總之，我們該四處找找有沒有什麼暗門。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79961,7 +79961,7 @@
   },
   "Frost Bite#056": {
    "src": "Trust Theorick to booby trap his own house the paranoid frozen gro-",
-   "dst": "",
+   "dst": "也只有 Theorick 會在自己家裡裝陷阱，這個疑神疑鬼的冰凍老怪——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79971,7 +79971,7 @@
   },
   "Frost Bite#057": {
    "src": "That really isn't fun at all. I can't see a thing. Where are we now, a dead end?",
-   "dst": "",
+   "dst": "這一點都不好玩。我什麼都看不見。我們現在在哪，死路嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79981,7 +79981,7 @@
   },
   "Frost Bite#058": {
    "src": "Well we know that insults result in punishment. Maybe a compliment will make him happy?",
-   "dst": "",
+   "dst": "既然知道罵他會被罰，那讚美他會不會讓他高興？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -79991,7 +79991,7 @@
   },
   "Frost Bite#059": {
    "src": "Oh Theorick, strongest of all the Twains, you really are a hero.",
-   "dst": "",
+   "dst": "噢，Theorick，Twains 之中最強的一位，你真是個英雄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -80001,7 +80001,7 @@
   },
   "Frost Bite#060": {
    "src": "Maybe n-",
-   "dst": "",
+   "dst": "也許不——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -80011,7 +80011,7 @@
   },
   "Frost Bite#061": {
    "src": "Looks like we finally found his private quarters, look at that vault door.",
-   "dst": "",
+   "dst": "看來我們總算找到他的私人居所了，你看那道金庫門。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -80021,7 +80021,7 @@
   },
   "Frost Bite#062": {
    "src": "There must be a way to open it. Look around and see what you can find.",
-   "dst": "",
+   "dst": "一定有辦法打開。四處看看，找找有什麼線索。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -80031,7 +80031,7 @@
   },
   "Frost Bite#063": {
    "src": "Find your way into the vault.",
-   "dst": "",
+   "dst": "想辦法進入金庫。",
    "role": "desc",
    "kind": "objective",
    "quest": "Frost Bite",
@@ -80041,7 +80041,7 @@
   },
   "Frost Bite#064": {
    "src": "You did it! We have access to the vault.",
-   "dst": "",
+   "dst": "你做到了！我們可以進金庫了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -80051,7 +80051,7 @@
   },
   "Frost Bite#065": {
    "src": "Wow, even by today's standards, this is a huge amount of money. Just think how much this was hundreds of years ago.",
-   "dst": "",
+   "dst": "哇，就算用現在的標準看，這也是一大筆錢。想想幾百年前這值多少。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -80061,7 +80061,7 @@
   },
   "Frost Bite#066": {
    "src": "Grab a little for yourself, too, we wouldn't have been able to get here without you.",
-   "dst": "",
+   "dst": "你自己也拿一點吧，沒有你我們根本走不到這一步。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -80071,7 +80071,7 @@
   },
   "Frost Bite#067": {
    "src": "Wait, look at this. It seems to be a piece of Theoricks armour.",
-   "dst": "",
+   "dst": "等等，看看這個。這好像是 Theorick 的一件護甲。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -80081,7 +80081,7 @@
   },
   "Frost Bite#068": {
    "src": "Surprised it even managed to fit over his fat head.",
-   "dst": "",
+   "dst": "真想不到這居然套得下他那顆肥腦袋。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Frost Bite",
@@ -133681,7 +133681,7 @@
   },
   "Shattered Minds#009": {
    "src": "Looks like someone rolled about the air fuzz too much, so indeed hello! A light hello to yourself, {u}, and a greetings to Professor Eih, which is me!",
-   "dst": "",
+   "dst": "看來有人在空中的絨毛裡滾得太久啦，所以，你好哇！輕輕地向你問聲好，{u}，也向 Eih 教授，也就是我，致上問候！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -194661,7 +194661,7 @@
   },
   "The Qira Hive (Quest)#000": {
    "src": "I see another lost soul has found their way to The {p}!",
-   "dst": "",
+   "dst": "看來又有一個迷途的靈魂，找上了 {p}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194671,7 +194671,7 @@
   },
   "The Qira Hive (Quest)#001": {
    "src": "I can't say I am overwhelmed by your appearance. Here, the birth of many powerful and magical monsters take place.",
-   "dst": "",
+   "dst": "你的樣子並沒有讓我多驚豔。在這裡，誕生的是無數強大而充滿魔力的怪物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194681,7 +194681,7 @@
   },
   "The Qira Hive (Quest)#002": {
    "src": "Gavel's governments can not stop Mistress Qira. I doubt you can either.",
-   "dst": "",
+   "dst": "Gavel 的各國政府擋不住 Qira 大人。我看你也一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194691,7 +194691,7 @@
   },
   "The Qira Hive (Quest)#003": {
    "src": "If you want to meet her, you will have to defeat each division of her army.",
-   "dst": "",
+   "dst": "你想見她，就得把她軍隊的每一支部隊都打敗。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194701,7 +194701,7 @@
   },
   "The Qira Hive (Quest)#004": {
    "src": "Although powerful, she is not without honour. After every floor you complete, you will receive a token for a reward from the shop. Good luck, adventurer-",
-   "dst": "",
+   "dst": "她雖強大，卻不失氣度。每通過一層，你都會拿到一枚代幣，可以到店裡換取獎勵。祝你好運，冒險——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194711,7 +194711,7 @@
   },
   "The Qira Hive (Quest)#005": {
    "src": "Wh- Oh, Mistress, am I? My apologies...",
-   "dst": "",
+   "dst": "什——喔，大人，是嗎？我失禮了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194721,7 +194721,7 @@
   },
   "The Qira Hive (Quest)#006": {
    "src": "Begin, the Thunder Division! Strike quickly and move on, for those within will warp your very mind should you stray for too long!",
-   "dst": "",
+   "dst": "開始吧，雷之部隊！速戰速決，別逗留——待得太久，裡面的東西會扭曲你的心智！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194731,7 +194731,7 @@
   },
   "The Qira Hive (Quest)#007": {
    "src": "Heeheehahaaah! I see you! You humans have such easily influenced minds, but I'll settle for beating you within an inch of your life! Come through, come through!!!",
-   "dst": "",
+   "dst": "嘻嘻哈哈哈！我看見你啦！你們人類的腦袋真是好擺弄，不過我就先把你打個半死吧！過來，快過來！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194741,7 +194741,7 @@
   },
   "The Qira Hive (Quest)#008": {
    "src": "Feh, you're no fun, you little cheater! I was supposed to beat you, not the other way around!",
-   "dst": "",
+   "dst": "切，你真沒意思，小騙子！該被打趴的是你，不是我啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194751,7 +194751,7 @@
   },
   "The Qira Hive (Quest)#009": {
    "src": "I hate you so much. Just get out and talk to that idiot servant already!!",
-   "dst": "",
+   "dst": "我恨死你了。快滾出去跟那個蠢僕人講話啦！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194761,7 +194761,7 @@
   },
   "The Qira Hive (Quest)#010": {
    "src": "You have completed the Thunder floor? How surprising. They were some of Mistress Qira's earliest successes.",
-   "dst": "",
+   "dst": "你通過雷之層了？真令人意外。那些可是 Qira 大人最早的成功之作。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194771,7 +194771,7 @@
   },
   "The Qira Hive (Quest)#011": {
    "src": "I agree, Mistress. As promised, here is a Thunder Voucher.",
-   "dst": "",
+   "dst": "遵命，大人。如約定，這是 Thunder Voucher。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194781,7 +194781,7 @@
   },
   "The Qira Hive (Quest)#012": {
    "src": "Take it to the shop to claim your prize. It is located at the base of the Hive. The servant there will have important information for you regarding your prizes.",
-   "dst": "",
+   "dst": "拿去店裡兌換你的獎品。店就在 Hive 的底層。那裡的僕人會告訴你關於獎品的重要事項。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194791,7 +194791,7 @@
   },
   "The Qira Hive (Quest)#013": {
    "src": "I doubt you are still worth Mistress's time, however. She has much to tend to here, as you might guess.",
-   "dst": "",
+   "dst": "不過我可不覺得你還值得大人費神。你也想得到，她這裡有太多事要照料。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194801,7 +194801,7 @@
   },
   "The Qira Hive (Quest)#014": {
    "src": "She made a deal with Gavel's people long ago, after they foolishly attempted to lay siege to our Hive.",
-   "dst": "",
+   "dst": "很久以前，Gavel 的人愚蠢地想圍攻我們的 Hive，之後她便與他們立了約。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194811,7 +194811,7 @@
   },
   "The Qira Hive (Quest)#015": {
    "src": "She could continue her unethical and possibly evil work...and in return, she would allow the people of Gavel to remain undisturbed by her.",
-   "dst": "",
+   "dst": "她可以繼續她那些違背倫理、甚至可說是邪惡的工作……而作為交換，她不會去打擾 Gavel 的人民。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194821,7 +194821,7 @@
   },
   "The Qira Hive (Quest)#016": {
    "src": "Next you must tackle the Air division, featuring some of her tougher creations.",
-   "dst": "",
+   "dst": "接下來你得面對風之部隊，那裡有她更難纏的一些造物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194831,7 +194831,7 @@
   },
   "The Qira Hive (Quest)#017": {
    "src": "Begin, the Air Division! Fight freely with the wind, for the coming storm shall claim you for my own if you cannot spread your wings here!",
-   "dst": "",
+   "dst": "開始吧，風之部隊！隨風而戰，自由揮灑——在這裡展不開翅膀，將至的風暴就會把你收歸我有！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194841,7 +194841,7 @@
   },
   "The Qira Hive (Quest)#018": {
    "src": "Well, nice work getting this far! Don't tell anyone, but I'm gonna pull my punches here, okay? I'm rooting for you, so let's have fun with this! Come on through!",
-   "dst": "",
+   "dst": "哇，能走到這裡真不錯！別跟別人說喔，我等下會手下留情，好嗎？我可是站你這邊的，我們玩得開心點！過來吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194851,7 +194851,7 @@
   },
   "The Qira Hive (Quest)#019": {
    "src": "Heehee, maybe I didn't need to hold back after all? You did really well, really well!",
-   "dst": "",
+   "dst": "嘻嘻，說不定我根本不必留手呢？你表現得真的很好，非常好！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194861,7 +194861,7 @@
   },
   "The Qira Hive (Quest)#020": {
    "src": "A lot of people say I'm the roughest we have to offer, so you've got this! I'm sorry you have to go talk to Yansur of all people now, though.",
-   "dst": "",
+   "dst": "很多人說我是我們這裡最難纏的，所以你沒問題的！不過接下來要去跟 Yansur 那種人講話，真是辛苦你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194871,7 +194871,7 @@
   },
   "The Qira Hive (Quest)#021": {
    "src": "Hrm, perhaps we have underestimated you. The creations of Air have defeated thousands, particularly-",
-   "dst": "",
+   "dst": "唔，或許我們是低估你了。風之造物擊敗過成千上萬的人，尤其是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194881,7 +194881,7 @@
   },
   "The Qira Hive (Quest)#022": {
    "src": "...yes. Here is the promised Air Voucher.",
-   "dst": "",
+   "dst": "……是。這是說好的 Air Voucher。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194891,7 +194891,7 @@
   },
   "The Qira Hive (Quest)#023": {
    "src": "The shop has your reward prepared. If you have not talked to the servant at the shop, do so next you go there.",
-   "dst": "",
+   "dst": "店裡已經備好你的獎勵。你要是還沒跟店裡的僕人談過，下次去的時候記得談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194901,7 +194901,7 @@
   },
   "The Qira Hive (Quest)#024": {
    "src": "You still have a long way to go. It is not easy to gain an audience with Mistress Qira.",
-   "dst": "",
+   "dst": "你還有很長的路要走。想見 Qira 大人一面可不容易。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194911,7 +194911,7 @@
   },
   "The Qira Hive (Quest)#025": {
    "src": "Your next objective is to clear the Earth division. Some of the most powerful, raw creatures ever hatched.",
-   "dst": "",
+   "dst": "你的下一個目標是清空地之部隊。那裡是有史以來最強悍、最原始的孵化物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194921,7 +194921,7 @@
   },
   "The Qira Hive (Quest)#026": {
    "src": "Begin, the Earth Division! You must withstand both sheer force and deadly toxins! Be quick on your feet, or you will return to the dust of the earth!",
-   "dst": "",
+   "dst": "開始吧，地之部隊！你得同時扛住蠻力與劇毒！腳步放快些，否則你就要歸於塵土！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194931,7 +194931,7 @@
   },
   "The Qira Hive (Quest)#027": {
    "src": "Creatures of the earth were not enough for you... Mistress's most rawly powerful... Destroyed.",
-   "dst": "",
+   "dst": "地之造物竟也擋不住你……大人最原始強悍的那些……全被摧毀了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194941,7 +194941,7 @@
   },
   "The Qira Hive (Quest)#028": {
    "src": "Well, here is your Earth Voucher.",
-   "dst": "",
+   "dst": "好吧，這是你的 Earth Voucher。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194951,7 +194951,7 @@
   },
   "The Qira Hive (Quest)#029": {
    "src": "The shop has your reward prepared. If you have not talked to the servant at the shop, do so next you go there.",
-   "dst": "",
+   "dst": "店裡已經備好你的獎勵。你要是還沒跟店裡的僕人談過，下次去的時候記得談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194961,7 +194961,7 @@
   },
   "The Qira Hive (Quest)#030": {
    "src": "It is impressive to see how far you have come. Many have failed at this point.",
-   "dst": "",
+   "dst": "你能走到這一步，確實令人刮目相看。許多人都倒在這裡了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194971,7 +194971,7 @@
   },
   "The Qira Hive (Quest)#031": {
    "src": "It is of no consequence, however, for the Water division is your next challenge. I am sure you will not succeed.",
-   "dst": "",
+   "dst": "不過那也無妨，你下一關是水之部隊。我確信你不會成功。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194981,7 +194981,7 @@
   },
   "The Qira Hive (Quest)#032": {
    "src": "Begin, the Water Division! If you will not withstand the crashing waves, the creatures that lurk within shall ensure you never emerge from the abyss!",
-   "dst": "",
+   "dst": "開始吧，水之部隊！你若擋不住拍擊的浪濤，潛伏其中的生物會確保你永遠浮不出深淵！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -194991,7 +194991,7 @@
   },
   "The Qira Hive (Quest)#033": {
    "src": "You have been judged worthy enough to face me in combat. However, I know your strength, and I do not believe it enough to defeat me. Come forth now. Make your attempt to prove me wrong.",
-   "dst": "",
+   "dst": "經判定，你有資格與我一戰。然而我清楚你的實力，我不認為那足以擊敗我。上前來吧。試著證明我看走了眼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195001,7 +195001,7 @@
   },
   "The Qira Hive (Quest)#034": {
    "src": "Seems my judgment was incorrect. In this case, however, it is refreshing to see.",
-   "dst": "",
+   "dst": "看來我的判斷有誤。不過在此事上，錯得令人愉快。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195011,7 +195011,7 @@
   },
   "The Qira Hive (Quest)#035": {
    "src": "Continue forwards, honourable human. Perhaps your intellect and respect will rub off on that insufferable Yansur.",
-   "dst": "",
+   "dst": "繼續前行吧，可敬的人類。或許你的才智與敬意，能感染那個令人難以忍受的 Yansur。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195021,7 +195021,7 @@
   },
   "The Qira Hive (Quest)#036": {
    "src": "Impossible. Not even the most tactically advanced monsters could defeat you.",
-   "dst": "",
+   "dst": "不可能。連戰術最精妙的怪物都拿不下你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195031,7 +195031,7 @@
   },
   "The Qira Hive (Quest)#037": {
    "src": "...Here's the Water Voucher you're expecting.",
-   "dst": "",
+   "dst": "……這是你在等的 Water Voucher。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195041,7 +195041,7 @@
   },
   "The Qira Hive (Quest)#038": {
    "src": "The shop has your reward prepared. If you have not talked to the servant at the shop, do so next you go there.",
-   "dst": "",
+   "dst": "店裡已經備好你的獎勵。你要是還沒跟店裡的僕人談過，下次去的時候記得談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195051,7 +195051,7 @@
   },
   "The Qira Hive (Quest)#039": {
    "src": "We are intrigued by your determination... But we are not worried. We do not expect you to make it past the next floor.",
-   "dst": "",
+   "dst": "你的決心引起了我們的興趣……但我們並不擔心。我們不認為你過得了下一層。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195061,7 +195061,7 @@
   },
   "The Qira Hive (Quest)#040": {
    "src": "Now you must face some of the toughest creatures of Mistress Qira's imagination!",
-   "dst": "",
+   "dst": "接下來你要面對的，是 Qira 大人想像力所及最難纏的一些生物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195071,7 +195071,7 @@
   },
   "The Qira Hive (Quest)#041": {
    "src": "You must now face the division of Fire, and it will be sure to burn you.",
-   "dst": "",
+   "dst": "現在你得面對火之部隊，它必定會把你燒個透。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195081,7 +195081,7 @@
   },
   "The Qira Hive (Quest)#042": {
    "src": "Begin, the Fire Division! Summon your courage, and brave the heat of the volcanoes and blow away in the breeze!",
-   "dst": "",
+   "dst": "開始吧，火之部隊！鼓起你的勇氣，闖過火山的熾熱——否則就隨風化為飛灰！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195091,7 +195091,7 @@
   },
   "The Qira Hive (Quest)#043": {
    "src": "Impressive, making it this far. I am your final test. Let us fight fairly, then. An honourable end to your challenge is only fitting, whether that be triumph or defeat. Come forward and face me.",
-   "dst": "",
+   "dst": "能走到這裡，令人佩服。我是你最後的試煉。那麼，我們就堂堂正正地打一場。無論是勝是敗，你的挑戰都該有個體面的收尾。上前來面對我吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195101,7 +195101,7 @@
   },
   "The Qira Hive (Quest)#044": {
    "src": "Defeat feels strange, after so long. You fought valiantly, and with great zeal, however. It would be a lie to say I am disappointed. Impart these traits onto Mistress's servant, if you would, and claim your final prize.",
-   "dst": "",
+   "dst": "隔了這麼久，敗北的滋味有些陌生。不過你打得英勇，也充滿熱忱。要說我失望，那是騙人的。若你願意，把這些品格也帶給大人的僕人，然後去領你最後的獎品吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195111,7 +195111,7 @@
   },
   "The Qira Hive (Quest)#045": {
    "src": "All that is left is to talk to Mistress's servant, and claim your final prize. Surely he will not be as great an obstacle as I was.",
-   "dst": "",
+   "dst": "剩下的只有去跟大人的僕人談話、領取你最後的獎品。他想必不會像我這樣難以逾越。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195121,7 +195121,7 @@
   },
   "The Qira Hive (Quest)#046": {
    "src": "This is unprecedented. You have defeated some of the most recent and powerful creations.",
-   "dst": "",
+   "dst": "這是前所未有的事。你擊敗了最新、也最強大的一批造物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195131,7 +195131,7 @@
   },
   "The Qira Hive (Quest)#047": {
    "src": "Here you are then, the Fire Voucher!",
-   "dst": "",
+   "dst": "那麼，這給你，Fire Voucher！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195141,7 +195141,7 @@
   },
   "The Qira Hive (Quest)#048": {
    "src": "The shop has your reward prepared. If you have not talked to the servant at the shop, do so next you go there.",
-   "dst": "",
+   "dst": "店裡已經備好你的獎勵。你要是還沒跟店裡的僕人談過，下次去的時候記得談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195151,7 +195151,7 @@
   },
   "The Qira Hive (Quest)#049": {
    "src": "This is unorthodox, as no one has made it this far. But I suppose this means that you have earned an audience with-",
-   "dst": "",
+   "dst": "這不合常規，畢竟從沒有人走到這一步。但我想，這也代表你已經有資格晉見——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195161,7 +195161,7 @@
   },
   "The Qira Hive (Quest)#050": {
    "src": "Hah! Incredible! Mistress wishes to battle you herself! You astound me.",
-   "dst": "",
+   "dst": "哈！難以置信！大人要親自與你一戰！你真讓我吃驚。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195171,7 +195171,7 @@
   },
   "The Qira Hive (Quest)#051": {
    "src": "Be warned, however. This will be your toughest battle yet. Mistress Qira is the most feared being in Gavel.",
-   "dst": "",
+   "dst": "不過先警告你。這將是你至今最艱難的一戰。Qira 大人是 Gavel 最令人畏懼的存在。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195181,7 +195181,7 @@
   },
   "The Qira Hive (Quest)#052": {
    "src": "You will die...but consider it the greatest honour to die by her hand.",
-   "dst": "",
+   "dst": "你會死的……但死在她手上，就當是至高的榮耀吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195191,7 +195191,7 @@
   },
   "The Qira Hive (Quest)#053": {
    "src": "How cowardly! After defeating so many in the Hive, and receiving such praise, you've the gall to upstand Mistress's request?",
-   "dst": "",
+   "dst": "好個懦夫！在 Hive 裡擊敗了那麼多對手、受了那樣的讚譽，你竟有臉放大人的鴿子？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195201,7 +195201,7 @@
   },
   "The Qira Hive (Quest)#054": {
    "src": "I had begun to think highly of you, but after such a disgusting display-",
-   "dst": "",
+   "dst": "我本來已經開始高看你，可是在這種令人作嘔的表現之後——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195211,7 +195211,7 @@
   },
   "The Qira Hive (Quest)#055": {
    "src": "Wha...that- No, that can't possibly be correct, you are-",
-   "dst": "",
+   "dst": "什……那——不，那不可能是真的，你——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195221,7 +195221,7 @@
   },
   "The Qira Hive (Quest)#056": {
    "src": "...Masterful...Have we been cooped up in this Hive so long that our army is outdated?",
-   "dst": "",
+   "dst": "……真是高明……我們窩在這座 Hive 裡太久，久到軍隊都過時了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195231,7 +195231,7 @@
   },
   "The Qira Hive (Quest)#057": {
    "src": "To be defeated by a human of Wynn... I am not sure whether to be disappointed or amazed. Our ultimate challenge has been bested.",
-   "dst": "",
+   "dst": "竟敗在一個 Wynn 的人類手上……我不知道該失望還是該驚嘆。我們最終的試煉被攻破了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195241,7 +195241,7 @@
   },
   "The Qira Hive (Quest)#058": {
    "src": "Here is your voucher, then. The back room in the shop will have your rewards. If you still have not talked to the servant at the shop...well. You should know by now.",
-   "dst": "",
+   "dst": "那麼，這是你的兌換券。店裡的後間備有你的獎勵。你要是到現在還沒跟店裡的僕人談過……好吧，這時候你也該知道了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195251,7 +195251,7 @@
   },
   "The Qira Hive (Quest)#059": {
    "src": "Mistress...if I may tell the tale? She was once called upon to help stop the decay of the forest.",
-   "dst": "",
+   "dst": "大人……容我說個故事？她曾經被請去協助阻止森林的衰敗。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195261,7 +195261,7 @@
   },
   "The Qira Hive (Quest)#060": {
    "src": "With her boundless knowledge and magic, she surely could have cured it. But she declined.",
-   "dst": "",
+   "dst": "以她無邊的學識與魔法，她一定治得好。但她拒絕了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195271,7 +195271,7 @@
   },
   "The Qira Hive (Quest)#061": {
    "src": "She instead chose to create, obsessed with preparing for some sort of war.",
-   "dst": "",
+   "dst": "她選擇了創造，執著於為某一場戰爭做準備。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
@@ -195281,7 +195281,7 @@
   },
   "The Qira Hive (Quest)#062": {
    "src": "Mistress never elaborated, but it seems like she knows something we don't.",
-   "dst": "",
+   "dst": "大人從未細說，但看來她知道某些我們不知道的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Qira Hive (Quest)",
