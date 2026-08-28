@@ -1765,6 +1765,13 @@ public final class LineTranslator {
                                      boolean centered) {
         List<Run> orig = runs(original.getComponent());
         List<Run> made = runs(rebuilt);
+        // 多行的要一行一行重算——每一行有自己的置中縮排。見 #realignRows。
+        if (rows(orig) > 1 || rows(made) > 1) {
+            Component perRow = realignRows(orig, made, centered);
+            if (perRow != null) {
+                return perRow;
+            }
+        }
         int spaces = countSpaces(made);
         if (spaces == 0 || spaces != countSpaces(orig)) {
             return rebuilt;
@@ -1792,6 +1799,92 @@ public final class LineTranslator {
     }
 
     /** 一段連續的同型內容：不是排版空白，就是文字。 */
+    /**
+     * 逐行重算置中縮排。
+     *
+     * <h2>為什麼不能整段一起算</h2>
+     * 聊天的系統訊息是<b>多行的</b>，而每一行前面都有一個
+     * 自己的置中縮排——實機錄到的歡迎訊息（診斷檔
+     * 「填回去的符號 2」）就是三個：
+     *
+     * <pre>U+D0059  U+D003B  U+D003C   font=minecraft:space</pre>
+     *
+     * <p>那些數字是照<b>英文寬度</b>算出來的。原樣填回去之後，
+     * 中文那一块每行寬度都不一樣，整块就歪了。
+     *
+     * <p>舊的 {@code realign} 把整段當一行，只修得到第一個縮排，
+     * 剩下的會走到「欄位交界」那個分支——而那是為 tooltip 寫的。
+     *
+     * @return 重算後的整段；兩邊行數對不上就回傳 {@code null}，讓呼叫端走舊路
+     */
+    private static Component realignRows(List<Run> orig, List<Run> made, boolean centered) {
+        List<List<Run>> origRows = splitRows(orig);
+        List<List<Run>> madeRows = splitRows(made);
+        if (origRows.size() != madeRows.size()) {
+            return null;
+        }
+        MutableComponent out = Component.empty();
+        for (int i = 0; i < madeRows.size(); i++) {
+            if (i > 0) {
+                out.append(Component.literal(NL));
+            }
+            out.append(realignRow(origRows.get(i), madeRows.get(i), centered));
+        }
+        return out;
+    }
+
+    /** 一行的重算；跟舊 {@code realign} 內層同一套邏輯。 */
+    private static Component realignRow(List<Run> orig, List<Run> made, boolean centered) {
+        int spaces = countSpaces(made);
+        if (spaces == 0 || spaces != countSpaces(orig)) {
+            return apply(made, new int[0]);
+        }
+        List<Integer> origSeg = segmentWidths(orig);
+        List<Integer> madeSeg = segmentWidths(made);
+        int[] adjust = new int[spaces];
+        boolean leading = centered && origSeg.get(0) == 0 && madeSeg.get(0) == 0;
+        if (leading) {
+            adjust[0] = (sum(origSeg) - sum(madeSeg)) / 2;
+        }
+        int drift = 0;
+        for (int k = leading ? 1 : 0; k < spaces; k++) {
+            drift += madeSeg.get(k) - origSeg.get(k);
+            if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0) {
+                adjust[k] = -drift;
+                drift = 0;
+            }
+        }
+        return apply(made, adjust);
+    }
+
+    /** 拆成一行一組。換行本身不進任何一組。 */
+    private static List<List<Run>> splitRows(List<Run> runs) {
+        List<List<Run>> out = new ArrayList<>();
+        List<Run> row = new ArrayList<>();
+        for (Run r : runs) {
+            if (r.space() || r.text().indexOf('\n') < 0) {
+                row.add(r);
+                continue;
+            }
+            String[] parts = r.text().split(NL, -1);
+            for (int i = 0; i < parts.length; i++) {
+                if (i > 0) {
+                    out.add(row);
+                    row = new ArrayList<>();
+                }
+                if (!parts[i].isEmpty()) {
+                    row.add(new Run(false, 0, r.style(), parts[i]));
+                }
+            }
+        }
+        out.add(row);
+        return out;
+    }
+
+    private static int rows(List<Run> runs) {
+        return splitRows(runs).size();
+    }
+
     private record Run(boolean space, int px, Style style, String text) {}
 
     private static List<Run> runs(Component component) {
