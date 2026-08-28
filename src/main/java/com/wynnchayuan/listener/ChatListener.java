@@ -2,10 +2,12 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.ChatLog;
 import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
+import com.wynntils.core.text.type.StyleType;
 import com.wynntils.handlers.chat.event.ChatMessageEvent;
 import com.wynntils.handlers.chat.type.RecipientType;
 import net.minecraft.network.chat.Component;
@@ -46,22 +48,30 @@ public final class ChatListener {
      */
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onChat(ChatMessageEvent.Edit event) {
-        CollectorConfig.ChatMode mode = WynnChaYuan.config().chatMode();
-        if (mode == CollectorConfig.ChatMode.OFF) {
-            return;
-        }
-        if (!SERVER_MESSAGES.contains(event.getRecipientType())) {
-            return;                      // 玩家發言，不碰
-        }
         StyledText message = event.getMessage();
         if (message == null || GlyphSplitter.isGlyphOnly(message)) {
             return;
         }
-        if (PlayerDataFilter.carriesPlayerData(GlyphSplitter.toTemplate(message))) {
-            return;                      // 夾帶玩家名的伺服器訊息，原樣放過
+        CollectorConfig.ChatMode mode = WynnChaYuan.config().chatMode();
+        boolean serverSide = SERVER_MESSAGES.contains(event.getRecipientType());
+        // 查譯文。玩家發言、夾帶玩家名的伺服器訊息不查——
+        // 那是真人寫的內容，翻它既沒意義也不禮貌。
+        Component hit = serverSide
+                && !PlayerDataFilter.carriesPlayerData(GlyphSplitter.toTemplate(message))
+                ? LineTranslator.translate(message, WynnChaYuan.translations())
+                : null;
+
+        // 先記進複製用的緩衝區，再考慮要不要改畫面。
+        //
+        // 兩件事是分開的：就算使用者把聊天翻譯關掉，「複製聊天」也要能用；
+        // 而且他可能想複製別人講的話，那些我們從來不翻。
+        // 緩衝區只留在本機，不進語料。見 {@link ChatLog}。
+        if (WynnChaYuan.config().chatCopy()) {
+            ChatLog.add(message.getString(StyleType.NONE),
+                        hit == null ? null : hit.getString());
         }
-        Component hit = LineTranslator.translate(message, WynnChaYuan.translations());
-        if (hit == null) {
+
+        if (mode == CollectorConfig.ChatMode.OFF || !serverSide || hit == null) {
             return;                      // 查不到就別動，原文比半吊子好
         }
         event.setMessage(mode == CollectorConfig.ChatMode.BOTH

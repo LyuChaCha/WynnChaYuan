@@ -178,6 +178,14 @@ tasks.register('runCombatChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runCombatChecks' }
 
+tasks.register('runChatLogChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證「複製聊天」的緩衝區與顯示模式'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.ChatLogTest'
+}
+tasks.named('check') { dependsOn 'runChatLogChecks' }
+
 tasks.register('runChatColourChecks', JavaExec) {
     group = 'verification'
     description = '驗證聊天訊息的譯文保不保得住顏色'
