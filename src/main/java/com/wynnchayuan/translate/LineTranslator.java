@@ -2112,15 +2112,26 @@ public final class LineTranslator {
         return null;
     }
 
-    /** Minecraft 的 ID：英數與底線，最長 16 個字。 */
+    /**
+     * Minecraft 的 ID：英數與底線。
+     *
+     * <p>要先把佔位符拿掉再看。名字裡的<b>數字</b>在參數化那一關已經被收成
+     * {@code {~}}——「3N0K1」進到這裡是「{~}N{~}K{~}」。只認英數的話，
+     * 帶數字的 ID 一律被擋下，畫面上就是「有的人翻得出來、有的翻不出來」。
+     * 佔位符原樣留著，後面 {@code fill} 會把真正的數字填回去。
+     */
     static boolean isName(String text) {
-        if (text.isEmpty() || text.length() > 16) {
+        if (text.isEmpty() || text.length() > NAME_ROOM) {
             return false;
         }
-        return text.chars().allMatch(c ->
+        String bare = text.replaceAll("\\{[^}]*\\}", "");
+        return bare.chars().allMatch(c ->
                 (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
                         || (c >= '0' && c <= '9') || c == '_');
     }
+
+    /** ID 最長 16 個字；收成佔位符之後會變長，所以放寬到這個數。 */
+    private static final int NAME_ROOM = 40;
 
     /** 見 {@link #withMaker}。譯文放在 {@code misc.json}，翻譯團隊可以改。 */
     private static final String[] NAME_PREFIXES = {"Crafted by "};

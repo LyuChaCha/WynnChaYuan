@@ -114,23 +114,44 @@ public final class DialogueRewriter {
         // 先前每一段各自查表，結果是整句中文全塞進 body_0、body_1 還留著英文的
         // 後半段——版面當然跳掉。要整句一起翻，再<b>攤回同樣的行數</b>，
         // 文字才會落在原文落的地方。
-        List<Integer> body = new ArrayList<>();
+        //
+        // 一行不一定只有一段。句子裡有顏色強調時，Wynncraft 會把它切開送過來：
+        // 「Go ahead and 」「open that gate」「.」——中間那幾段的鄰居是<b>文字</b>，
+        // 不是位移字元。先前的判斷要求左右兩側都是位移，於是這種行三段全不合格，
+        // 整行對改寫器來說等於不存在，永遠留在英文（玩家回報的「只翻了第一行」）。
+        //
+        // 改成收「兩個位移之間、連續的文字段」當作一行，頭尾各記一份。
+        // 代價是整行只剩一個顏色（取第一段的）——句中的強調色會沒了，
+        // 但看得懂的中文比有顏色的英文重要。
+        List<Integer> body = new ArrayList<>();     // 每一行的第一段
+        List<Integer> ends = new ArrayList<>();     // 每一行的最後一段
         for (int i = 1; i + 1 < texts.size(); i++) {
-            String font = fontOf(styles.get(i));
-            if (font.contains(BODY) && !font.contains(NAMEPLATE)
-                    && readable(texts.get(i))
-                    && offsetOf(texts.get(i - 1)) != null
-                    && offsetOf(texts.get(i + 1)) != null) {
-                body.add(i);
+            if (offsetOf(texts.get(i - 1)) == null) {
+                continue;                           // 這裡不是一行的開頭
             }
+            int stop = i;
+            while (stop < texts.size() && offsetOf(texts.get(stop)) == null) {
+                stop++;                             // 一路吃到下一個位移字元
+            }
+            if (stop == i || stop >= texts.size()) {
+                continue;                           // 沒有文字，或收不到結尾的位移
+            }
+            int last = stop - 1;
+            if (!bodyRow(texts, styles, i, last)) {
+                continue;
+            }
+            body.add(i);
+            ends.add(last);
+            i = last;                               // 這一行收完了，跳過去
         }
         // body 是空的也要往下走：任務開始那類訊息沒有台詞行，只有底下的
         // SHIFT 提示。先前在這裡直接 return，於是那種訊息的「to continue」
         // 永遠翻不出來——而它是玩家最常看到的一句。
 
         StringBuilder whole = new StringBuilder();
-        for (int at : body) {
-            whole.append(joinRow(whole.toString(), texts.get(at)));
+        for (int n = 0; n < body.size(); n++) {
+            whole.append(joinRow(whole.toString(),
+                    rowText(texts, body.get(n), ends.get(n))));
         }
         boolean changed = false;
         // 一行放得下多少：兩邊都要用同一個數字。
@@ -202,14 +223,25 @@ public final class DialogueRewriter {
                 //
                 // 改成沿用原本的偏移再加上這一行縮短了多少，原文的版面就原樣保住，
                 // 不管 at + 1 是下一行的前導還是整段的尾隨都成立。
-                Integer after = offsetOf(texts.get(at + 1));
+                //
+                // 一行可能有好幾段（顏色強調），所以要看的是<b>最後一段</b>的
+                // 後面那個偏移，寬度也要把整行加起來算。
+                int end = ends.get(n);
+                Integer after = offsetOf(texts.get(end + 1));
                 if (after == null) {
                     continue;
                 }
-                int shrink = width(texts.get(at), styles.get(at))
-                        - width(rows.get(n), styles.get(at));
+                int was = 0;
+                for (int i = at; i <= end; i++) {
+                    was += width(texts.get(i), styles.get(i));
+                }
+                int shrink = was - width(rows.get(n), styles.get(at));
                 texts.set(at, rows.get(n));
-                texts.set(at + 1, offset(after + shrink));
+                for (int i = at + 1; i <= end; i++) {
+                    texts.set(i, "");              // 整行併到第一段，其餘清空
+                    swapped[i] = true;
+                }
+                texts.set(end + 1, offset(after + shrink));
                 swapped[at] = true;
             }
         }
@@ -493,6 +525,34 @@ public final class DialogueRewriter {
     /** 兩截之間要不要空白：接的是英文才要，中文之間不要。 */
     private static boolean gap(char left, char right) {
         return (isLatin(right) || isLatin(left)) && left != ' ' && right != ' ';
+    }
+
+    /**
+     * 這幾段是不是同一行的內文。
+     *
+     * <p>整段都要是 body 字型（名牌另外處理），而且至少有一段是看得懂的文字——
+     * 純粹由排版字元組成的那幾段不算一行。
+     */
+    private static boolean bodyRow(List<String> texts, List<Style> styles,
+            int from, int to) {
+        boolean any = false;
+        for (int i = from; i <= to; i++) {
+            String font = fontOf(styles.get(i));
+            if (!font.contains(BODY) || font.contains(NAMEPLATE)) {
+                return false;
+            }
+            any |= readable(texts.get(i));
+        }
+        return any;
+    }
+
+    /** 一行的完整文字——顏色強調會把它切成好幾段。見 {@link #bodyRow}。 */
+    private static String rowText(List<String> texts, int from, int to) {
+        StringBuilder out = new StringBuilder();
+        for (int i = from; i <= to; i++) {
+            out.append(texts.get(i));
+        }
+        return out.toString();
     }
 
     private static int rowWidth(List<String> texts, List<Integer> body) {
