@@ -96,9 +96,10 @@ public final class Boxes {
                     current = Component.empty();
                     hasContent = false;
                 }
-                if (!chunks[c].isEmpty()) {
-                    current.append(Component.literal(chunks[c]).withStyle(style));
-                    if (hasReadable(chunks[c])) {
+                String chunk = dropOffsets(chunks[c]);
+                if (!chunk.isEmpty()) {
+                    current.append(Component.literal(chunk).withStyle(style));
+                    if (hasReadable(chunk)) {
                         hasContent = true;
                     }
                 }
@@ -109,6 +110,29 @@ public final class Boxes {
         }
         dump(source, texts, styles, lines);
         return lines;
+    }
+
+    /**
+     * 拿掉只是拿來排版的位移字元。
+     *
+     * <p>對話框裡這些字是用 body 字型畫的（不是 space 字型），
+     * {@link SpaceOffset#isSpaceFont} 篩不掉；到了小框這邊改用預設字型畫，
+     * 它們就變成一個個豆腐方塊。
+     *
+     * <p><b>不能整批拿掉圖示</b>——滑鼠、屬性符號那些是真的要畫出來的。
+     * 兩者的區別在 Unicode 屬性：圖示在私用區，位移字在未分配的第 13 平面。
+     */
+    static String dropOffsets(String text) {
+        if (text.codePoints().noneMatch(Boxes::isOffset)) {
+            return text;                       // 絕大多數行沒有，不要白白重建字串
+        }
+        StringBuilder kept = new StringBuilder(text.length());
+        text.codePoints().filter(cp -> !isOffset(cp)).forEach(kept::appendCodePoint);
+        return kept.toString();
+    }
+
+    private static boolean isOffset(int cp) {
+        return GlyphSplitter.isGlyphCodePoint(cp) && !GlyphSplitter.isPrivateUse(cp);
     }
 
     /** 有沒有非圖示、非空白的字。整行都是圖示的話這裡會是 false。 */
