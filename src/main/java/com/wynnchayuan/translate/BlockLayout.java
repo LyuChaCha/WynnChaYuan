@@ -130,10 +130,26 @@ public final class BlockLayout {
             while (end < n && !blank[end]) {
                 end++;
             }
-            markCentred(result, lead, content, start, end);
+            markCentred(result, lead, content, start, end, widest(lead, content, blank));
             start = end;
         }
         return result;
+    }
+
+    /**
+     * 整塊最寬的一行有多寬。
+     *
+     * <p>單獨一行的區段要靠它才判斷得出置中——那一行自己看不出左右留白，
+     * 得拿整塊的寬度來比。見 {@link #markCentred}。
+     */
+    private static int widest(int[] lead, int[] content, boolean[] blank) {
+        int max = 0;
+        for (int i = 0; i < lead.length; i++) {
+            if (!blank[i]) {
+                max = Math.max(max, lead[i] + content[i]);
+            }
+        }
+        return max;
     }
 
     /**
@@ -159,7 +175,17 @@ public final class BlockLayout {
      * 縮排全是 0 的清單則本來就不是置中。
      */
     private static void markCentred(boolean[] result, int[] lead, int[] content,
-                                    int start, int end) {
+                                    int start, int end, int blockWidth) {
+        // 自成一段的<b>單獨一行</b>：拿整塊的寬度來比。
+        //
+        // 「只有一行時置中與靠左畫出來沒有差別」只在那一行是整塊<b>最寬</b>的
+        // 時候才成立。像「{@literal 🖱} Right-Click to Consume」自己就是一段，
+        // 卻是相對整個 tooltip 置中的——先前一律當靠左，於是中文變短之後
+        // 縮排沒重算，整行往左偏。
+        if (end - start == 1 && isCentredAlone(lead, content, start, blockWidth)) {
+            result[start] = true;
+            return;
+        }
         if (isCentredBlock(lead, content, start, end)) {
             java.util.Arrays.fill(result, start, end, true);
             return;
@@ -178,6 +204,28 @@ public final class BlockLayout {
         if (bestFrom >= 0) {
             java.util.Arrays.fill(result, bestFrom, bestFrom + bestLen, true);
         }
+    }
+
+    /**
+     * 單獨一行的區段是不是置中的。
+     *
+     * <p>判準是「左邊的留白剛好等於右邊剩下的一半」。要求縮排明顯大於零——
+     * 縮排是 0 的行本來就是靠左，動它只會把版面弄壞。也要求這一行比整塊窄，
+     * 不然它自己就是最寬的那行，置中與靠左畫出來一樣，不動最安全。
+     */
+    private static boolean isCentredAlone(int[] lead, int[] content,
+                                          int at, int blockWidth) {
+        if (lead[at] <= TOLERANCE || content[at] <= 0) {
+            return false;
+        }
+        // 一定要有<b>別的行比它寬</b>才判斷得出來。整份 tooltip 只有這一行時，
+        // 「置中」與「縮排 N 像素的靠左」畫出來一模一樣，沒得比就不要動。
+        if (blockWidth - (lead[at] + content[at]) <= TOLERANCE) {
+            return false;
+        }
+        int room = blockWidth - content[at];
+        int allowed = Math.max(TOLERANCE * 2, blockWidth * SPAN_TOLERANCE_PERCENT / 100);
+        return Math.abs(lead[at] - room / 2) <= allowed;
     }
 
     /**
