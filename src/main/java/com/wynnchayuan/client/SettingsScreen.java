@@ -440,6 +440,8 @@ public final class SettingsScreen extends Screen {
                 "對話框停留秒數（0 = 持續顯示）");
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 3 + hintDy(),
                 "NPC 對話與任務追蹤的翻譯小框");
+        Cards.hint(g, this.font, right + 4, TOP + rowH() * 8 + hintDy(),
+                "按鍵到原版設定的 WynnChaYuan 區綁");
 
         Cards.hint(g, this.font, left + 4, dataY + hintDy(), "公會、任務書等 GUI 的文字（預設關）");
         Cards.hint(g, this.font, left + 4, dataY + rowH() + hintDy(), "GitHub 會同步大家的最新翻譯");
@@ -457,13 +459,6 @@ public final class SettingsScreen extends Screen {
                 : status;
         g.drawCenteredString(this.font, now, this.width / 2, this.height - 44, Colors.TEXT);
 
-        // 兩個快捷鍵本來就是正規的 KeyMapping，原版按鍵設定裡改得到——
-        // 先前掛在原版的「雜項」底下沒人找得到，現在自己一個分類。
-        g.drawCenteredString(this.font,
-                Component.literal("按鍵都在「選項 → 按鍵控制 → WynnChaYuan」；"
-                                + "「複製聊天」預設沒綁，要自己挑一個")
-                        .withStyle(ChatFormatting.DARK_GRAY),
-                this.width / 2, this.height - 56, Colors.FAINT);
     }
 
     @Override
