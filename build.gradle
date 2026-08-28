@@ -194,6 +194,14 @@ tasks.register('runChatColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChatColourChecks' }
 
+tasks.register('runChatBlockChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證一次跳好幾行的訊息，譯文等它跳完才一起出來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.ChatBlockTest'
+}
+tasks.named('check') { dependsOn 'runChatBlockChecks' }
+
 tasks.register('runAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證欄位對齊點的選擇'
