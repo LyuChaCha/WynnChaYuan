@@ -2830,7 +2830,11 @@ public final class LineTranslator {
      */
     private static Style upright(String text, Style style) {
         Style base = style == null ? Style.EMPTY : style;
-        return base.isItalic() && hasHan(text) ? base.withItalic(false) : base;
+        // 斜體一定要<b>寫死</b>，不能留成「沒設定」——沒設定的會繼承父層，
+        // 而 GUI 的物品標題本身是斜的。先前只在有方塊字時才關掉，
+        // 純英文的段落於是把父層的斜體繼承下來，畫面上就是
+        // 「原文不斜、我們重建出來的那份是斜的」（例如 Corkian Augments）。
+        return base.withItalic(base.isItalic() && !hasHan(text));
     }
 
     /** 這段文字裡有沒有方塊字。全形標點不算——單獨出現時剪切不礙事。 */
