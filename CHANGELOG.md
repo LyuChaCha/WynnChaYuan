@@ -3,6 +3,22 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.55] - 2026-08-28
+
+### 調整
+
+- **預設值換掉。** 名牌漂浮字與任務對話預設改成<b>就地取代</b>，
+  聊天訊息預設改成<b>原文＋譯文</b>。三個都還是在 F6 隨時切得回來。
+
+### 新增
+
+- **五個職業的「持武器左鍵使用／普通攻擊」漂浮字。** 先前只有匕首那一種，
+  法器、弓、魔杖、矛都留在英文。武器名照 GLOSSARY.md。
+- **五個職業的第一個法術提示**（`Cast your Totem Spell by clicking…`）。
+  先前只收了刺客那一條，而且鍵少了開頭的滑鼠圖示，實機永遠對不上。
+- 補上「Ha ha, very funny… Oh, {u}, there seems to be an Item Identifier
+  here…」這一句，以及 Grook 巢穴獎勵、皇家守衛、不死族礦工等幾個漂浮字。
+
 ## [1.99.54] - 2026-08-28
 
 ### 新增
