@@ -71,8 +71,22 @@ public final class SettingsScreen extends Screen {
         return rowH() * (rows - 1) + hintDy() + 37;
     }
 
+    /** 左欄「顯示」用掉幾列。 */
+    private static final int SHOW_ROWS = 6;
+
+    /** 右欄「翻譯」用掉幾列。 */
+    private static final int TRANSLATE_ROWS = 8;
+
+    /**
+     * 「資料」卡接在<b>左欄</b>底下，不是右欄。
+     *
+     * <p>兩欄不一樣高：右欄一路加到八列，左欄只有六列。先前資料卡接在右欄
+     * 底下、起點又照右欄的高度算，右欄每多一列就把它往下推一列——
+     * 加完「聊天訊息」與「畫面中央大字」之後就整張掉出畫面。
+     * 接在矮的那一欄底下，右欄以後再長也不會撞到它。
+     */
     private int dataY() {
-        return TOP - 20 + cardH(8) + 20 + 20;   // 翻譯卡底部 + 間距 + 卡片標題
+        return TOP - 20 + cardH(SHOW_ROWS) + 20 + 20;   // 顯示卡底部 + 間距 + 卡片標題
     }
 
     @Override
@@ -157,20 +171,20 @@ public final class SettingsScreen extends Screen {
 
         // ---- 資料 ----
         int dataY = dataY();
-        row(right, dataY, this::guiCollectLabel, b -> {
+        row(left, dataY, this::guiCollectLabel, b -> {
             WynnChaYuan.config().toggleCollectGuiText();
             b.setMessage(guiCollectLabel());
         });
-        row(right, dataY + rowH(), this::sourceLabel, b -> {
+        row(left, dataY + rowH(), this::sourceLabel, b -> {
             WynnChaYuan.config().toggleSource();
             b.setMessage(sourceLabel());
             reloadButton.setMessage(reloadLabel());   // 按鈕的意思跟著來源變
         });
-        row(right, dataY + rowH() * 2, this::collectLabel, b -> {
+        row(left, dataY + rowH() * 2, this::collectLabel, b -> {
             WynnChaYuan.config().toggleCollect();
             b.setMessage(collectLabel());
         });
-        row(right, dataY + rowH() * 3, this::debugLabel, b -> {
+        row(left, dataY + rowH() * 3, this::debugLabel, b -> {
             WynnChaYuan.config().toggleDebugDumps();
             b.setMessage(debugLabel());
             status = Component.literal(WynnChaYuan.config().debugDumps()
@@ -179,7 +193,7 @@ public final class SettingsScreen extends Screen {
                     .withStyle(ChatFormatting.GREEN);
         });
         reloadButton = Button.builder(reloadLabel(), b -> reload())
-                .bounds(right, dataY + rowH() * 4, COL_W, 20).build();
+                .bounds(left, dataY + rowH() * 4, COL_W, 20).build();
         addRenderableWidget(reloadButton);
 
         // ---- 底部 ----
@@ -384,9 +398,9 @@ public final class SettingsScreen extends Screen {
         int dataY = dataY();
 
         // 卡片要墊在按鈕底下，所以先於 super.render
-        Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(8));
-        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(8));
-        Cards.panel(g, right - 8, dataY - 20, COL_W + 16, cardH(5));
+        Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(SHOW_ROWS));
+        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(TRANSLATE_ROWS));
+        Cards.panel(g, left - 8, dataY - 20, COL_W + 16, cardH(5));
 
         super.render(g, mouseX, mouseY, delta);
 
@@ -395,7 +409,7 @@ public final class SettingsScreen extends Screen {
 
         Cards.title(g, this.font, left, TOP - 16, "顯示");
         Cards.title(g, this.font, right, TOP - 16, "翻譯");
-        Cards.title(g, this.font, right, dataY - 16, "資料");
+        Cards.title(g, this.font, left, dataY - 16, "資料");
 
         Cards.hint(g, this.font, left + 4, TOP + hintDy(), "面板保留原文；取代則畫面較乾淨");
         Cards.hint(g, this.font, left + 4, TOP + rowH() + hintDy(), "固定位置時面板不跟著滑鼠跑");
@@ -414,12 +428,12 @@ public final class SettingsScreen extends Screen {
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 3 + hintDy(),
                 "NPC 對話與任務追蹤的翻譯小框");
 
-        Cards.hint(g, this.font, right + 4, dataY + hintDy(), "公會、任務書等 GUI 的文字（預設關）");
-        Cards.hint(g, this.font, right + 4, dataY + rowH() + hintDy(), "GitHub 會同步大家的最新翻譯");
-        Cards.hint(g, this.font, right + 4, dataY + rowH() * 2 + hintDy(), "把沒翻到的句子記進 captured.json");
-        Cards.hint(g, this.font, right + 4, dataY + rowH() * 3 + hintDy(),
+        Cards.hint(g, this.font, left + 4, dataY + hintDy(), "公會、任務書等 GUI 的文字（預設關）");
+        Cards.hint(g, this.font, left + 4, dataY + rowH() + hintDy(), "GitHub 會同步大家的最新翻譯");
+        Cards.hint(g, this.font, left + 4, dataY + rowH() * 2 + hintDy(), "把沒翻到的句子記進 captured.json");
+        Cards.hint(g, this.font, left + 4, dataY + rowH() * 3 + hintDy(),
                 "回報問題時才需要，重進遊戲後生效");
-        Cards.hint(g, this.font, right + 4, dataY + rowH() * 4 + hintDy(),
+        Cards.hint(g, this.font, left + 4, dataY + rowH() * 4 + hintDy(),
                 WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
                         ? "譯者剛改完 GitHub 的話按這個" : "改完 json 按這個就生效");
 
