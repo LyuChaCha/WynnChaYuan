@@ -133,9 +133,20 @@ public final class SettingsScreen extends Screen {
             WynnChaYuan.translations().setTranslateNames(on);
             b.setMessage(itemNameLabel());
         });
-        addRenderableWidget(Button.builder(Component.literal("NPC 名牌設定…"),
+        // 名牌與漂浮字的三段模式直接摆在這裡。
+        //
+        // 它本來只在子畫面裡，而子畫面又叫「NPC 名牌設定」——
+        // 想把畫面中央那些大字換成中文的人，根本不會點進去。
+        // 剩下的參數（停留秒數、偵測距離與夾角）才留在子畫面。
+        addRenderableWidget(Button.builder(nametagLabel(),
+                b -> {
+                    WynnChaYuan.config().cycleNametagMode();
+                    b.setMessage(nametagLabel());
+                })
+                .bounds(right, TOP + rowH(), COL_W - 46, 20).build());
+        addRenderableWidget(Button.builder(Component.literal("進階…"),
                 b -> this.minecraft.setScreen(new NametagScreen(this)))
-                .bounds(right, TOP + rowH(), COL_W, 20).build());
+                .bounds(right + COL_W - 42, TOP + rowH(), 42, 20).build());
 
         row(right, TOP + rowH() * 2, this::dialogueModeLabel, b -> {
             WynnChaYuan.config().cycleDialogueMode();
@@ -291,6 +302,19 @@ public final class SettingsScreen extends Screen {
     /**
      * 複製聊天。這是<b>記錄</b>的開關，不是翻譯的——關掉就不再留最近的訊息。
      */
+    /**
+     * 名牌與漂浮字。跟 {@code NametagScreen} 那一個是同一個設定，
+     * 只是這裡要短一點——按鈕實際實在窄了 46px。
+     */
+    private Component nametagLabel() {
+        String name = switch (WynnChaYuan.config().nametagMode()) {
+            case OFF -> "關閉";
+            case LOOK_AT -> "注視時小框";
+            case REPLACE -> "就地取代";
+        };
+        return Component.literal("名牌漂浮字: " + name);
+    }
+
     private Component chatCopyLabel() {
         return Component.literal("複製聊天："
                 + (WynnChaYuan.config().chatCopy() ? "開啟" : "關閉"));
@@ -435,7 +459,7 @@ public final class SettingsScreen extends Screen {
 
         Cards.hint(g, this.font, right + 4, TOP + hintDy(), "裝備名稱多是專有名詞，通常保留原文");
         Cards.hint(g, this.font, right + 4, TOP + rowH() + hintDy(),
-                "名牌與漂浮字：關閉／小框／就地取代");
+                "工作站、「空手右鍵」那些字也算；進階調秒數與距離");
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 2 + hintDy(),
                 "對話框停留秒數（0 = 持續顯示）");
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 3 + hintDy(),
