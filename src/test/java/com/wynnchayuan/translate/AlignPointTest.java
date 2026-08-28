@@ -198,6 +198,16 @@ public final class AlignPointTest {
         check("前面有標籤，是欄位交界",
                 LineTranslator.labelled(stat, 1));
 
+        // 自製物品的「Crafted by <玩家名>」。名字裡的<b>數字</b>在參數化那一關
+        // 已經被收成 {~}，所以判斷要先把佔位符拿掉——只認英數的話，帶數字的 ID
+        // 一律被擋下，畫面上就是「有的人翻得出來、有的翻不出來」。
+        check("純字母的 ID", LineTranslator.isName("Xikys"));
+        check("帶底線的 ID", LineTranslator.isName("Green_teaTW"));
+        check("數字被收成佔位符的 ID", LineTranslator.isName("{~}N{~}K{~}"));
+        check("整串都是數字的 ID", LineTranslator.isName("{~}"));
+        check("一句話不是 ID", !LineTranslator.isName("the legendary ice mage"));
+        check("空的不是 ID", !LineTranslator.isName(""));
+
         System.out.println(failures == 0
                 ? "AlignPoint: 全部通過"
                 : "AlignPoint: " + failures + " 項失敗");
