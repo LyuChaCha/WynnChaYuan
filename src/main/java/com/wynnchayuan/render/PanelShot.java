@@ -414,17 +414,73 @@ public final class PanelShot {
             Path file = dir.resolve(safe(name) + "_"
                     + LocalDateTime.now().format(STAMP) + ".png");
             shot.writeToFile(file);
-            tell(Component.literal("已存下譯文截圖：")
-                    .withStyle(ChatFormatting.GREEN)
-                    .append(Component.literal(file.getFileName().toString())
-                            .withStyle(Style.EMPTY
-                                    .withUnderlined(true)
-                                    .withClickEvent(new ClickEvent.OpenFile(
-                                            file.toAbsolutePath().toString())))));
+            tell(saved(file));
         } catch (Exception e) {
             tell(Component.literal("截圖存檔失敗：" + e.getMessage())
                     .withStyle(ChatFormatting.RED));
         }
+    }
+
+    /**
+     * 「存好了」那一句：路徑寫出來，而且點得開。
+     *
+     * <h2>為什麼不只寫檔名</h2>
+     * 使用者的回報是「存到哪裡去了？」。只寫檔名的話，要自己去翻
+     * {@code .minecraft/screenshots/wynnchayuan/}——那個資料夾平常沒人會開。
+     * 寫出相對路徑就知道在哪一層，點一下直接用系統的看圖程式開起來；
+     * 旁邊再給一個開資料夾的，要一次拿好幾張時比較方便。
+     *
+     * <p>滑鼠停上去顯示<b>絕對</b>路徑——要貼給別人時那個才有用。
+     *
+     * @param file 剛寫好的檔案
+     */
+    public static Component saved(Path file) {
+        Path abs = file.toAbsolutePath();
+        Path dir = abs.getParent();
+        return Component.literal("已存下譯文截圖：")
+                .withStyle(ChatFormatting.GREEN)
+                .append(Component.literal(shown(abs))
+                        .withStyle(Style.EMPTY
+                                .withColor(ChatFormatting.WHITE)
+                                .withUnderlined(true)
+                                .withClickEvent(new ClickEvent.OpenFile(abs.toString()))
+                                .withHoverEvent(new net.minecraft.network.chat.HoverEvent
+                                        .ShowText(Component.literal(
+                                                "點擊開啟" + System.lineSeparator()
+                                                + abs)))))
+                .append(Component.literal("  [開啟資料夾]")
+                        .withStyle(Style.EMPTY
+                                .withColor(ChatFormatting.GOLD)
+                                .withClickEvent(new ClickEvent.OpenFile(
+                                        dir == null ? abs.toString() : dir.toString()))
+                                .withHoverEvent(new net.minecraft.network.chat.HoverEvent
+                                        .ShowText(Component.literal(
+                                                dir == null ? abs.toString()
+                                                            : dir.toString())))));
+    }
+
+    /**
+     * 顯示用的路徑：能算出相對於遊戲資料夾的就用相對的。
+     *
+     * <p>絕對路徑在聊天欄裡會長到換好幾行，而
+     * {@code screenshots/wynnchayuan/…} 一眼就知道在哪。
+     */
+    private static String shown(Path abs) {
+        try {
+            Minecraft mc = Minecraft.getInstance();
+            if (mc != null && mc.gameDirectory != null) {
+                return mc.gameDirectory.toPath().toAbsolutePath()
+                        .relativize(abs).toString().replace('\\', '/');
+            }
+        } catch (Throwable t) {
+            // 不同磁碟機時 relativize 會丟例外，退回絕對路徑就好
+        }
+        return abs.toString();
+    }
+
+    /** 讓別的畫面也能用同一套通知（聊天欄一行 + toast + 快門聲）。 */
+    public static void announce(Component message) {
+        tell(message);
     }
 
     /** 檔名裡不能有的字元一律換掉——物品名稱裡什麼都有可能。 */
