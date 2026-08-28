@@ -49,6 +49,36 @@ public final class TranslationStoreTest {
                      "{u}，不如由你來吧？去把那道門打開。"
                 }""");
 
+            // 子目錄要寫進 _index.json 才讀得到——Files.list 不遞迴。
+            write(dir, "_index.json", """
+                {"files": ["quest/king-s-recruit.json", "quest/queen-s-recruit.json"]}""");
+
+            // 任務檔：每一條都標了它屬於哪個任務。
+            // 兩個任務都有一句 "Hey, {u}!" 開頭，全庫看就是撞句；
+            // 分開看則各自唯一。這正是實機上卡住翻譯的形狀。
+            write(dir, "quest/king-s-recruit.json", """
+                {
+                 "_meta": {"quest": "King's Recruit"},
+                 "entries": {
+                  "King's Recruit#002": {
+                   "src": "Sound off, {u}! Are you hurt? The cart hit a boulder.",
+                   "dst": "喂，{u}！你受傷了嗎？馬車撞到石頭了。",
+                   "quest": "King's Recruit"
+                  }
+                 }
+                }""");
+            write(dir, "quest/queen-s-recruit.json", """
+                {
+                 "_meta": {"quest": "Queen's Recruit"},
+                 "entries": {
+                  "Queen's Recruit#002": {
+                   "src": "Sound off, {u}! Are you ready? The ship leaves at dawn.",
+                   "dst": "喂，{u}！準備好了嗎？船天一亮就開。",
+                   "quest": "Queen's Recruit"
+                  }
+                 }
+                }""");
+
             TranslationStore store = new TranslationStore();
             store.loadAll(dir);
 
@@ -141,6 +171,36 @@ public final class TranslationStoreTest {
             // 反面：拼法換過去還是查不到的，不要硬掰
             check("換了拼法還是查不到就算了",
                     store.lookup("What colour is the honour?") == null);
+
+            // 卡住翻譯的不是長度門檻，是<b>撞句</b>。
+            //
+            // 實機（dialogue-probe）：「Hey, Green_teaTW」打到 16 個字還是英文，
+            // 一直到「Hey, Green_teaTW! Are you al」28 個字才徽然跳成中文。
+            // 長度門檻早就過了，是因為好幾句都以它開頭、分不出是哪一句。
+            String half = "Sound off, {u}! Are you";
+            check("兩個任務都有這個開頭，全庫查分不出來",
+                    store.matchPrefix(half, 40) == null);
+            check("知道是哪個任務就分得出來",
+                    "Sound off, {u}! Are you hurt? The cart hit a boulder."
+                            .equals(store.matchPrefix(half, 40, "King's Recruit")));
+            check("換一個任務就是另一句",
+                    "Sound off, {u}! Are you ready? The ship leaves at dawn."
+                            .equals(store.matchPrefix(half, 40, "Queen's Recruit")));
+            // 範圍窄到一個任務之後，連長度門檻都不必等——
+            // 這就是「一開始就出來」的意思。
+            check("任務內連幾個字就夠",
+                    "Sound off, {u}! Are you hurt? The cart hit a boulder."
+                            .equals(store.matchPrefix("Sound off, {u}! Are you h", 5,
+                                                      "King's Recruit")));
+            // 但任務內也不能亂猜：這個開頭那個任務根本沒有
+            check("任務內沒有的開頭不會硬提一句",
+                    store.matchPrefix("Completely unrelated opening line", 40,
+                                      "King's Recruit") == null);
+            // 不知道任務時行為跟以前一模一樣
+            check("不知道任務時還是走舊的那一條",
+                    store.matchPrefix(half, 40, null) == null);
+            check("任務名字對不上就當作不知道",
+                    store.matchPrefix(half, 40, "No Such Quest") == null);
         } finally {
             delete(dir);
         }
@@ -153,13 +213,21 @@ public final class TranslationStoreTest {
     }
 
     private static void write(Path dir, String name, String body) throws IOException {
-        Files.writeString(dir.resolve(name), body, StandardCharsets.UTF_8);
+        Path file = dir.resolve(name);
+        Files.createDirectories(file.getParent());   // quest/ 這種子目錄
+        Files.writeString(file, body, StandardCharsets.UTF_8);
     }
 
     private static void delete(Path dir) throws IOException {
+        // 得遞迴——quest/ 子目錄裡還有檔，先前直接 deleteIfExists
+        // 會丟 DirectoryNotEmptyException。
         try (var files = Files.list(dir)) {
             for (Path p : files.toList()) {
-                Files.deleteIfExists(p);
+                if (Files.isDirectory(p)) {
+                    delete(p);
+                } else {
+                    Files.deleteIfExists(p);
+                }
             }
         }
         Files.deleteIfExists(dir);

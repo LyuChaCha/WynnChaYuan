@@ -627,7 +627,8 @@ public final class DialogueRewriter {
             // 玩家名被 {u} 收掉之後模板會短一大截：畫面上打出
             // 「Hey, Green_teaTW」十六個字，模板卻只有「Hey, {u}」八個字，
             // 卡在門檻底下查不到，於是開頭那一小段先閃出英文才跳成中文。
-            source = store.matchPrefix(typed, raw.length());
+            source = store.matchPrefix(typed, raw.length(),
+                                       com.wynnchayuan.capture.CurrentQuest.get());
             hit = source == null ? null : store.lookup(source);
         }
         if (hit != null && source != null) {
