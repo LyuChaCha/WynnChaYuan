@@ -1,6 +1,7 @@
 package com.wynnchayuan.translate;
 
 import com.wynntils.core.text.PartStyle;
+import com.wynnchayuan.capture.LineParts;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.core.text.StyledTextPart;
 import com.wynntils.core.text.type.StyleType;
@@ -183,6 +184,75 @@ public final class FlowedDebug {
             // 診斷絕不能反過來弄壞畫面
         }
     }
+
+    /**
+     * 填回去的符號到底是什麼。
+     *
+     * <h2>為什麼需要這一欄</h2>
+     * 聊天訊息的譯文偶爾會在 {@code {#}} 的位置炸出一個大空隙——
+     * 「- +1 個　　　　　　未鑑定頭盔」那種。{@code {#}} 是連同<b>原本的字型與
+     * 寬度</b>整段搬回去的，如果其中一個其實是排版位移字元，它在英文那邊剛好，
+     * 換成中文之後前後的字寬不同，那個位移就把後面的東西推歪了。
+     *
+     * <p>先前的診斷只記得到重點段與查表結果，<b>看不到符號本身</b>，
+     * 所以這個假設一直驗不了。這裡把每一個填回去的符號連同碼位與字型寫出來：
+     * 私用區的是真圖示，未分配的第 13 平面就是位移。
+     */
+    public static void glyphs(List<LineParts.Piece> pool, String[] translated) {
+        if (file == null || pool == null || pool.isEmpty()
+                || glyphSeen >= GLYPH_LIMIT) {
+            return;
+        }
+        StringBuilder id = new StringBuilder("glyphs");
+        for (String line : translated) {
+            id.append(line);
+        }
+        if (!already.add(id.toString())) {
+            return;
+        }
+        boolean interesting = false;
+        for (LineParts.Piece piece : pool) {
+            interesting |= piece.text().codePoints().anyMatch(FlowedDebug::isOffset);
+        }
+        if (!interesting) {
+            return;                            // 全是真圖示，沒什麼好看的
+        }
+        glyphSeen++;
+        try {
+            StringBuilder sb = new StringBuilder();
+            sb.append("=== 填回去的符號 ").append(glyphSeen).append(" ===")
+              .append(System.lineSeparator());
+            for (String line : translated) {
+                sb.append("  譯文：").append(line).append(System.lineSeparator());
+            }
+            for (int i = 0; i < pool.size(); i++) {
+                LineParts.Piece piece = pool.get(i);
+                sb.append("    [").append(i).append("] ");
+                piece.text().codePoints().forEach(cp -> sb
+                        .append(String.format("U+%04X", cp))
+                        .append(isOffset(cp) ? "(位移)" : "(圖示)")
+                        .append(' '));
+                sb.append(" font=")
+                  .append(piece.style() == null ? "-" : piece.style().getFont())
+                  .append(System.lineSeparator());
+            }
+            sb.append(System.lineSeparator());
+            Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        } catch (Throwable t) {
+            // 診斷絕不能反過來弄壞畫面
+        }
+    }
+
+    /** 未分配的第 13 平面＝排版位移；私用區＝真圖示。見 GlyphSplitter。 */
+    private static boolean isOffset(int cp) {
+        return com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)
+                && !com.wynnchayuan.capture.GlyphSplitter.isPrivateUse(cp);
+    }
+
+    private static final int GLYPH_LIMIT = 12;
+
+    private static int glyphSeen = 0;
 
     /** 重點段那一欄的額度，跟跨行查表分開算。 */
     private static final int ACCENT_LIMIT = 20;
