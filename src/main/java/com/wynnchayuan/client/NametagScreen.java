@@ -33,6 +33,9 @@ public final class NametagScreen extends Screen {
     /** 面板至少這麼寬，免得只有短句時縮成一條。 */
     private static final int MIN_W = 220;
 
+    /** 面板上緣要離第一個按鈕多遠。副標題畫在面板外，這個值得留得下它。 */
+    private static final int PANEL_PAD = 14;
+
     /**
      * 一個輸入欄位佔多高（說明 + 輸入框 + 間距）。
      *
@@ -219,8 +222,12 @@ public final class NametagScreen extends Screen {
         int x = left();
         int y = top();
 
+        // 面板上下都要讓出空間給畫在外面的那兩行（副標題、底部提示）。
+        // 先前上緣只留 22，而副標題畫在 36——文字底部剛好壓在框線上；
+        // 底部提示也只隔 8，同樣貼著框。兩邊都加寬。
+        int panelTop = y - PANEL_PAD;
         int panelBottom = fieldY(2) + 20 + 8;
-        Cards.panel(g, x - 10, y - 22, W + 20, panelBottom - (y - 22));
+        Cards.panel(g, x - 10, panelTop, W + 20, panelBottom - panelTop);
         super.render(g, mouseX, mouseY, delta);
 
         g.drawCenteredString(this.font, this.title, this.width / 2, 22, Colors.TEXT);
@@ -243,7 +250,7 @@ public final class NametagScreen extends Screen {
         g.drawCenteredString(this.font,
                 Component.literal(aroundLines()[1])
                         .withStyle(ChatFormatting.DARK_GRAY),
-                this.width / 2, panelBottom + 8, Colors.FAINT);
+                this.width / 2, panelBottom + 16, Colors.FAINT);
 
         if (!status.getString().isEmpty()) {
             g.drawCenteredString(this.font, status, this.width / 2, this.height - 46, Colors.TEXT);
