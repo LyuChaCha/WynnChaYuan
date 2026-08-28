@@ -1778,8 +1778,25 @@ public final class LineTranslator {
                 FlowedDebug.rows(original.getString(), log.toString());
                 return perRow;
             }
-            log.append("  逐行重算：放棄，改用整段那一路")
+            // 逐行對不上就<b>什麼都不要動</b>。
+            //
+            // 下面那一段是為 tooltip 的「欄位交界」寫的：整段只有一個空白時，
+            // 它會把<b>整段</b>的寬度差全部加到那一個空白上。一行的 tooltip 這樣
+            // 是對的，多行的聊天訊息這樣是災難——實機錄到的 [Cave Completed]
+            // 就是這樣壞的（診斷檔「逐行對齊 9」）：
+            //
+            // <pre>
+            //   原文行數：8  譯文行數：6  逐行重算：放棄
+            //   原文段寬=[750, 101]  譯文段寬=[528, 45]  補正=[222]
+            // </pre>
+            //
+            // 那個 +222px 加在最後一行的定位空白上，「未鑑定頭盔」就被推到
+            // 螢幕最右邊去了。中文比英文短是<b>整段</b>加起來的差，不該由
+            // 某一行的某一個空白獨自吸收。
+            log.append("  逐行重算：放棄；多行的不套整段那一路，原樣返回")
                .append(System.lineSeparator());
+            FlowedDebug.rows(original.getString(), log.toString());
+            return rebuilt;
         }
         int spaces = countSpaces(made);
         if (spaces == 0 || spaces != countSpaces(orig)) {
@@ -1849,7 +1866,21 @@ public final class LineTranslator {
                                          boolean centered, StringBuilder log) {
         List<List<Run>> origRows = splitRows(orig);
         List<List<Run>> madeRows = splitRows(made);
-        if (origRows.size() != madeRows.size()) {
+        // 首尾的空行不算數。
+        //
+        // 語料的鍵是<b>去掉首尾空白</b>之後的樣子（見 TranslationStore#lookup），
+        // 而遊戲送來的訊息前後常常多幾個空行。實機錄到的 [Cave Completed]
+        // 原文八行、譯文六行，差的就是那兩行——中間那六行是一一對得上的。
+        // 硬要求行數完全相同，這種訊息一輩子對不齊。
+        int[] keepOrig = solidRows(origRows);
+        int[] keepMade = solidRows(madeRows);
+        if (keepOrig[1] - keepOrig[0] != keepMade[1] - keepMade[0]) {
+            if (log != null) {
+                log.append("  去掉首尾空行之後：原文 ")
+                   .append(keepOrig[1] - keepOrig[0]).append(" 行、譯文 ")
+                   .append(keepMade[1] - keepMade[0]).append(" 行，還是對不上")
+                   .append(System.lineSeparator());
+            }
             return null;
         }
         MutableComponent out = Component.empty();
@@ -1857,12 +1888,30 @@ public final class LineTranslator {
             if (i > 0) {
                 out.append(Component.literal(NL));
             }
+            if (i < keepMade[0] || i >= keepMade[1]) {
+                out.append(apply(madeRows.get(i), new int[0]));   // 空行，原樣
+                continue;
+            }
             if (log != null) {
                 log.append("  [").append(i).append("] ");
             }
-            out.append(realignRow(origRows.get(i), madeRows.get(i), centered, log));
+            out.append(realignRow(origRows.get(keepOrig[0] + i - keepMade[0]),
+                                  madeRows.get(i), centered, log));
         }
         return out;
+    }
+
+    /** 首尾的空行不算；回傳 {@code [起, 迄)}。見 {@link #realignRows}。 */
+    private static int[] solidRows(List<List<Run>> rows) {
+        int from = 0;
+        int to = rows.size();
+        while (from < to && rows.get(from).isEmpty()) {
+            from++;
+        }
+        while (to > from && rows.get(to - 1).isEmpty()) {
+            to--;
+        }
+        return new int[] {from, to};
     }
 
     /** 一行的重算；跟舊 {@code realign} 內層同一套邏輯。 */

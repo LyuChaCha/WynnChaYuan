@@ -94,6 +94,23 @@ public final class ChatColourTest {
         return StyledText.fromComponent(all);
     }
 
+    /**
+     * 同一則訊息，但前後各多一個空行。
+     *
+     * <p>語料的鍵是<b>去掉首尾空白</b>之後的樣子，而遊戲送來的訊息前後常常
+     * 多幾個空行——實機錄到的 [Cave Completed] 原文八行、語料六行。
+     * 逐行對齊如果硬要求行數相同，這種訊息一輩子對不齊，
+     * 然後會退回為 tooltip 寫的「欄位交界」那條路，把整段的寬度差
+     * 全部加到某一行的某一個空白上（診斷檔「逐行對齊 9」的 +222px）。
+     */
+    private static StyledText padded() {
+        MutableComponent all = Component.empty();
+        all.append(lit("\n", GREY, false));
+        all.append(welcome().getComponent().copy());
+        all.append(lit("\n", GREY, false));
+        return StyledText.fromComponent(all);
+    }
+
     private static MutableComponent lit(String text, int colour, boolean bold) {
         return Component.literal(text).withStyle(
                 Style.EMPTY.withColor(TextColor.fromRgb(colour)).withBold(bold));
@@ -175,6 +192,21 @@ public final class ChatColourTest {
             check("標題還是金色", stillGold != null && stillGold == GOLD);
             Integer stillGrey = colourOf(one, "wynncraft.com");
             check("網址還是灰色", stillGrey != null && stillGrey == GREY);
+        }
+
+        // 前後多幾個空行時，逐行對齊仍要對得起來（不能退回整段那一路）
+        Component pad = LineTranslator.translate(padded(), store);
+        check("前後多空行時仍翻得出來", pad != null);
+        if (pad != null) {
+            Integer padTitle = colourOf(List.of(pad), "歡迎來到");
+            check("前後多空行時標題還是金色（拿到 "
+                            + (padTitle == null ? "null" : "#" + String.format("%06X", padTitle))
+                            + "）", padTitle != null && padTitle == GOLD);
+            // 行數跟著<b>譯文</b>走，不是跟著原文——中文比英文緊湊，
+            // 譯者本來就可以少斷一行（見 rebuildAll 的說明）。這裡要釘的是
+            // 「首尾多出來的空行不會害逐行對齊整個放棄」，不是行數要一樣。
+            long padRows = pad.getString().chars().filter(c -> c == 10).count() + 1;
+            check("譯文維持自己的行數（實際 " + padRows + " 行）", padRows == 4);
         }
 
         report();
