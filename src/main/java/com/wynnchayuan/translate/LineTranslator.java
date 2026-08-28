@@ -2527,6 +2527,8 @@ public final class LineTranslator {
             styles.add(accent.style());
         }
         FlowedDebug.accents(texts, styles, usedAccent, flowed);
+        // 填回去的符號是什麼——見 FlowedDebug#glyphs（聲明了為什麼要這一欄）
+        FlowedDebug.glyphs(glyphs, flowed);
         return out;
     }
 
