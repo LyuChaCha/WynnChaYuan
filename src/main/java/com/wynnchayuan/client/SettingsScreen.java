@@ -72,7 +72,7 @@ public final class SettingsScreen extends Screen {
     }
 
     private int dataY() {
-        return TOP - 20 + cardH(6) + 20 + 20;   // 翻譯卡底部 + 間距 + 卡片標題
+        return TOP - 20 + cardH(7) + 20 + 20;   // 翻譯卡底部 + 間距 + 卡片標題
     }
 
     @Override
@@ -142,6 +142,11 @@ public final class SettingsScreen extends Screen {
         row(right, TOP + rowH() * 5, this::shotLabel, b -> {
             WynnChaYuan.config().cycleShotMode();
             b.setMessage(shotLabel());
+        });
+
+        row(right, TOP + rowH() * 6, this::chatModeLabel, b -> {
+            WynnChaYuan.config().cycleChatMode();
+            b.setMessage(chatModeLabel());
         });
 
 
@@ -241,6 +246,16 @@ public final class SettingsScreen extends Screen {
             case OFF -> "關閉";
         };
         return Component.literal("任務對話：" + name);
+    }
+
+    /** 聊天視窗裡的伺服器訊息。玩家發言不在範圍內，見 {@code ChatListener}。 */
+    private Component chatModeLabel() {
+        String name = switch (WynnChaYuan.config().chatMode()) {
+            case OFF -> "關閉";
+            case REPLACE -> "就地取代";
+            case BOTH -> "原文加譯文";
+        };
+        return Component.literal("聊天訊息：" + name);
     }
 
     private Component shotLabel() {
@@ -358,8 +373,8 @@ public final class SettingsScreen extends Screen {
         int dataY = dataY();
 
         // 卡片要墊在按鈕底下，所以先於 super.render
-        Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(6));
-        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(6));
+        Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(7));
+        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(7));
         Cards.panel(g, right - 8, dataY - 20, COL_W + 16, cardH(5));
 
         super.render(g, mouseX, mouseY, delta);
