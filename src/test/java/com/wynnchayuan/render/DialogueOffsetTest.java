@@ -103,6 +103,30 @@ public final class DialogueOffsetTest {
                 id != null && id.get(0).equals("走吧！Tasim、")
                         && id.get(1).startsWith("Green_teaTW"));
 
+        // 認出來的那一條，要撐得過「名字還在一個字一個字打」的那幾幀。
+        //
+        // 玩家回報的「中文 → 英文 → 中文」就是這裡：名字要整個打完才會收成
+        // {u}，中間幾幀模板對不上，整句掉回英文，名字一打完又跳回中文。
+        String says = "I don't suppose you've seen {u} around here?";
+        check("整句還沒打完，是同一句",
+                DialogueRewriter.within(says, "I don't suppose you've"));
+        check("名字打到一半，還是同一句",
+                DialogueRewriter.within(says, "I don't suppose you've seen Green_te"));
+        check("名字打完收成佔位符，還是同一句",
+                DialogueRewriter.within(says, "I don't suppose you've seen {u} around"));
+        check("開頭就不一樣的，不是同一句",
+                !DialogueRewriter.within(says, "Well met, traveller!"));
+        // 岔在語料那條的<b>結尾之後</b> → 畫面上的字比它長，不是它。
+        // 任務開始那則後面還接著進度顯示，要讓它往下走 join()。
+        check("後面還接了別的東西，就不是同一句",
+                !DialogueRewriter.within("New Quest Started: King's Recruit",
+                        "New Quest Started: King's Recruit [{~}/{~} ({~}%)]"));
+        check("岔開之後長到離譜的，不算",
+                !DialogueRewriter.within(says,
+                        "I don't suppose you've seen "
+                                + "abcdefghijklmnopqrstuvwxyz0123456789"
+                                + "abcdefghijklmnopqrstuvwxyz"));
+
         System.out.println(failures == 0
                 ? "DialogueOffset: 全部通過"
                 : "DialogueOffset: " + failures + " 項失敗");
