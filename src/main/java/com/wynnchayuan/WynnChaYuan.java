@@ -56,6 +56,14 @@ public final class WynnChaYuan implements ClientModInitializer {
 
     /** 把目前的翻譯面板拍成一張圖，給校稿用。 */
     private static KeyMapping screenshotKey;
+
+    /**
+     * 開啟「複製聊天」。
+     *
+     * <p>預設<b>不綁</b>：F6／F8 是我們自己挑的，再多搶一個鍵對誰都不好。
+     * 想用的人到按鍵設定的 WynnChaYuan 那一區綁一個順手的。
+     */
+    private static KeyMapping copyChatKey;
     private static Path configDir;
 
     /** 目前使用的譯文語言。見 {@code Languages}。 */
@@ -290,6 +298,11 @@ public final class WynnChaYuan implements ClientModInitializer {
                 InputConstants.Type.KEYSYM,
                 org.lwjgl.glfw.GLFW.GLFW_KEY_F8,
                 KEY_CATEGORY));
+        copyChatKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
+                "key.wynnchayuan.copyChat",
+                InputConstants.Type.KEYSYM,
+                org.lwjgl.glfw.GLFW.GLFW_KEY_UNKNOWN,   // 預設不綁，見欄位說明
+                KEY_CATEGORY));
         // 畫面開著時 KeyMapping 收不到事件，PanelShot 掛在畫面自己的鍵盤事件上——
         // 把 mapping 交給它，改綁才會跟著生效。
         //
@@ -301,6 +314,9 @@ public final class WynnChaYuan implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openSettingsKey.consumeClick()) {
                 client.setScreen(new SettingsScreen());
+            }
+            while (copyChatKey.consumeClick()) {
+                client.setScreen(new com.wynnchayuan.client.ChatCopyScreen());
             }
             // 截圖的按鍵在 tick 裡只記一個旗標，真正拍是在下一次繪製<b>之後</b>。
             // tick 的時候這一幀還沒畫完，當場拍會拍到上一幀，

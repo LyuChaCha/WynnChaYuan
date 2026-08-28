@@ -75,7 +75,7 @@ public final class SettingsScreen extends Screen {
     private static final int SHOW_ROWS = 6;
 
     /** 右欄「翻譯」用掉幾列。 */
-    private static final int TRANSLATE_ROWS = 8;
+    private static final int TRANSLATE_ROWS = 9;
 
     /**
      * 「資料」卡接在<b>左欄</b>底下，不是右欄。
@@ -166,6 +166,11 @@ public final class SettingsScreen extends Screen {
         row(right, TOP + rowH() * 7, this::titleLabel, b -> {
             WynnChaYuan.config().toggleTitles();
             b.setMessage(titleLabel());
+        });
+
+        row(right, TOP + rowH() * 8, this::chatCopyLabel, b -> {
+            WynnChaYuan.config().toggleChatCopy();
+            b.setMessage(chatCopyLabel());
         });
 
 
@@ -281,6 +286,14 @@ public final class SettingsScreen extends Screen {
     private Component titleLabel() {
         return Component.literal("畫面中央大字："
                 + (WynnChaYuan.config().translateTitles() ? "就地取代" : "關閉"));
+    }
+
+    /**
+     * 複製聊天。這是<b>記錄</b>的開關，不是翻譯的——關掉就不再留最近的訊息。
+     */
+    private Component chatCopyLabel() {
+        return Component.literal("複製聊天："
+                + (WynnChaYuan.config().chatCopy() ? "開啟" : "關閉"));
     }
 
     private Component shotLabel() {
@@ -447,7 +460,8 @@ public final class SettingsScreen extends Screen {
         // 兩個快捷鍵本來就是正規的 KeyMapping，原版按鍵設定裡改得到——
         // 先前掛在原版的「雜項」底下沒人找得到，現在自己一個分類。
         g.drawCenteredString(this.font,
-                Component.literal("F6 與 F8 可在「選項 → 按鍵控制 → WynnChaYuan」自由改綁")
+                Component.literal("按鍵都在「選項 → 按鍵控制 → WynnChaYuan」；"
+                                + "「複製聊天」預設沒綁，要自己挑一個")
                         .withStyle(ChatFormatting.DARK_GRAY),
                 this.width / 2, this.height - 56, Colors.FAINT);
     }
