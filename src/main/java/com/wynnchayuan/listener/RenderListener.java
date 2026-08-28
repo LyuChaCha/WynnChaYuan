@@ -124,6 +124,12 @@ public final class RenderListener {
 
     /** 對話小框由 HUD 每幀呼叫，見 {@link DialogueOverlay#render}。 */
     public static void renderHud(GuiGraphics graphics) {
+        // 聊天那邊攢著的譯文，安靜夠久就送出去。
+        //
+        // 掛在算繪路徑上是因為它<b>每一幀都跑、而且在主執行緒</b>——
+        // 送聊天訊息只能在主執行緒做，而模組原本那個每秒一次的排程
+        // 又太慢（玩家會看到譯文晚一秒才出現）。見 {@link ChatBlock}。
+        com.wynnchayuan.listener.ChatBlock.tick();
         // 就地取代不受「小框」總開關管——那個開關是在關小框，而就地取代
         // 已經不是小框了。原文那時已經被藏掉，這裡再不畫就是一片空白。
         boolean inPlace = WynnChaYuan.config().dialogueMode()

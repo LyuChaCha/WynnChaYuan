@@ -179,11 +179,13 @@ public final class ShotScreen extends Screen {
             Path file = dir.resolve(name + "_"
                     + LocalDateTime.now().format(STAMP) + ".png");
             shot.writeToFile(file);
-            note = Component.literal("已存成 " + file.getFileName())
-                    .withStyle(Style.EMPTY.withColor(ChatFormatting.GREEN)
-                            .withUnderlined(true)
-                            .withClickEvent(new ClickEvent.OpenFile(
-                                    file.toAbsolutePath().toString())));
+            // 面板上這一行，跟聊天欄那一行，是<b>同一句</b>。
+            //
+            // 使用者的回報是「存到哪裡去了？」——先前面板上只寫檔名，
+            // 而且面板一關就什麼都沒了。現在兩邊都給完整位置，
+            // 聊天欄那份還會發成 toast（背包開著也看得到）並響一聲快門。
+            note = com.wynnchayuan.render.PanelShot.saved(file);
+            com.wynnchayuan.render.PanelShot.announce(note);
         } catch (Exception e) {
             note = Component.literal("存檔失敗：" + e.getMessage())
                     .withStyle(ChatFormatting.RED);

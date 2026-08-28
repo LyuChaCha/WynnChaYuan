@@ -69,12 +69,24 @@ public final class ChatListener {
             ChatLog.add(message.getComponent(), hit);
         }
 
-        if (mode == CollectorConfig.ChatMode.OFF || !serverSide || hit == null) {
+        if (mode == CollectorConfig.ChatMode.OFF || !serverSide) {
+            return;                      // 關掉了，或不是伺服器發的
+        }
+        if (mode == CollectorConfig.ChatMode.BOTH) {
+            // 譯文不當場接上去，先攢著。
+            //
+            // 任務完成的獎勵清單是<b>一行一則</b>訊息送過來的，當場接的話
+            // 畫面上會變成中英交錯，而原文那一塊是照英文寬度排好版的，
+            // 中間插進中文就整塊散了。見 {@link ChatBlock}。
+            //
+            // 查不到譯文的那幾行也要攢——它們是這一塊的一部分，
+            // 少了它們整塊就接不回去、也就查不到整塊的那一條。
+            ChatBlock.queue(message, hit);
+            return;
+        }
+        if (hit == null) {
             return;                      // 查不到就別動，原文比半吊子好
         }
-        event.setMessage(mode == CollectorConfig.ChatMode.BOTH
-                ? StyledText.fromComponent(
-                        Component.empty().append(message.getComponent()).append("\n").append(hit))
-                : StyledText.fromComponent(hit));
+        event.setMessage(StyledText.fromComponent(hit));
     }
 }
