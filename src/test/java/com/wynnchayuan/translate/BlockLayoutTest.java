@@ -121,6 +121,29 @@ public final class BlockLayoutTest {
         check("空清單不會爆", BlockLayout.centered(List.of(), WIDTH).length == 0);
         check("單行沒有比較對象，當成靠左",
                 !BlockLayout.centered(List.of(line(20, "Solo")), WIDTH)[0]);
+        // 自成一段的<b>單獨一行</b>也可能是置中的。
+        //
+        // 「{@literal 🖱} Right-Click to Consume」在 tooltip 裡自己就是一段
+        // （上下都是分隔線），卻是相對整份 tooltip 置中的。先前「只有一行就當
+        // 靠左」把它漏掉了，於是中文變短之後縮排沒重算，整行往左偏。
+        // 判準是「左邊留白 ≈ 右邊剩下的一半」，而且要有<b>別的行比它寬</b>。
+        Component gap = Component.literal(new String(Character.toChars(0xD0010)))
+                .withStyle(SPACE);
+        // 整塊寬 120（20 個字）；這一行內容 60，置中的縮排就是 (120-60)/2 = 30
+        List<Component> alone = List.of(
+                line(0, "AAAAAAAAAAAAAAAAAAAA"),
+                gap,
+                line(30, "BBBBBBBBBB"));
+        boolean[] lone = BlockLayout.centered(alone, WIDTH);
+        check("自成一段的置中行也認得出來", !lone[0] && lone[2]);
+
+        // 同樣自成一段，但靠左（縮排 0）——不能動它
+        List<Component> flush = List.of(
+                line(0, "AAAAAAAAAAAAAAAAAAAA"),
+                gap,
+                line(0, "BBBBBBBBBB"));
+        check("自成一段但靠左的不動", !BlockLayout.centered(flush, WIDTH)[2]);
+
         check("每行等寬時置中與靠左沒差別，當成靠左",
                 !BlockLayout.centered(List.of(
                         line(0, "AAAA"), line(0, "BBBB")), WIDTH)[0]);
