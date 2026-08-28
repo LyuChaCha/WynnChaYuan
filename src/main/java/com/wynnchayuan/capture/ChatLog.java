@@ -1,5 +1,7 @@
 package com.wynnchayuan.capture;
 
+import net.minecraft.network.chat.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,20 +38,31 @@ public final class ChatLog {
     /**
      * 一則訊息的原文與譯文。
      *
+     * <p>存的是 {@link Component} 而不是純文字——面板要把它畫成
+     * <b>畫面上原本的樣子</b>（顏色、粗體、圖示都在），
+     * 而不是一行沒有格式的字。複製時再拿 {@code getString()}。
+     *
      * @param original   遊戲原本要顯示的內容
      * @param translated 我們的譯文；查不到就是 {@code null}
      */
-    public record Entry(String original, String translated) {
+    public record Entry(Component original, Component translated) {
 
         /** 依聊天訊息的顯示模式決定複製哪一份。 */
         public String forMode(boolean replace, boolean both) {
-            if (translated == null || translated.isBlank()) {
-                return original;
+            String from = original == null ? "" : original.getString();
+            if (!hasText()) {
+                return from;
             }
+            String zh = translated.getString();
             if (both) {
-                return original + "\n" + translated;
+                return from + "\n" + zh;
             }
-            return replace ? translated : original;
+            return replace ? zh : from;
+        }
+
+        /** 有沒有可用的譯文。空白的不算。 */
+        public boolean hasText() {
+            return translated != null && !translated.getString().isBlank();
         }
     }
 
@@ -60,8 +73,8 @@ public final class ChatLog {
     /**
      * 記一則。原文空白的直接丟掉——分隔線、純排版符號那種複製了也沒用。
      */
-    public static synchronized void add(String original, String translated) {
-        if (original == null || original.isBlank()) {
+    public static synchronized void add(Component original, Component translated) {
+        if (original == null || original.getString().isBlank()) {
             return;
         }
         entries.add(new Entry(original, translated));

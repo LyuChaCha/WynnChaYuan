@@ -7,7 +7,6 @@ import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynnchayuan.translate.LineTranslator;
 import com.wynntils.core.text.StyledText;
-import com.wynntils.core.text.type.StyleType;
 import com.wynntils.handlers.chat.event.ChatMessageEvent;
 import com.wynntils.handlers.chat.type.RecipientType;
 import net.minecraft.network.chat.Component;
@@ -67,8 +66,7 @@ public final class ChatListener {
         // 而且他可能想複製別人講的話，那些我們從來不翻。
         // 緩衝區只留在本機，不進語料。見 {@link ChatLog}。
         if (WynnChaYuan.config().chatCopy()) {
-            ChatLog.add(message.getString(StyleType.NONE),
-                        hit == null ? null : hit.getString());
+            ChatLog.add(message.getComponent(), hit);
         }
 
         if (mode == CollectorConfig.ChatMode.OFF || !serverSide || hit == null) {
