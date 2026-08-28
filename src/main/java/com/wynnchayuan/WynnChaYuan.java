@@ -263,17 +263,33 @@ public final class WynnChaYuan implements ClientModInitializer {
     }
 
     /** F6 開啟設定面板。 */
+    /**
+     * 按鍵設定裡的分類。
+     *
+     * <p>原本掛在原版的 {@link KeyMapping.Category#MISC}下。這兩個鍵
+     * 確實有註冊成功（shot-debug 記得到 key.keyboard.f8），但「雜項」
+     * 裡面已經堆了一堆東西，玩家捲到底也找不到。
+     *
+     * <p>自己開一個分類，列表裡就會出現一塊寫著
+     * 「WynnChaYuan」的標題。名稱走 {@code key.category.wynnchayuan.main}——
+     * 這是 {@code Category.label()} 拿 {@code Identifier.toLanguageKey("key.category")}
+     * 拼出來的，兩個語言檔都要有這把鑰匙。
+     */
+    private static final KeyMapping.Category KEY_CATEGORY =
+            KeyMapping.Category.register(
+                    net.minecraft.resources.Identifier.fromNamespaceAndPath(MOD_ID, "main"));
+
     private static void registerKeyBind() {
         openSettingsKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.openSettings",
                 InputConstants.Type.KEYSYM,
                 org.lwjgl.glfw.GLFW.GLFW_KEY_F6,
-                KeyMapping.Category.MISC));
+                KEY_CATEGORY));
         screenshotKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.screenshot",
                 InputConstants.Type.KEYSYM,
                 org.lwjgl.glfw.GLFW.GLFW_KEY_F8,
-                KeyMapping.Category.MISC));
+                KEY_CATEGORY));
         // 畫面開著時 KeyMapping 收不到事件，PanelShot 掛在畫面自己的鍵盤事件上——
         // 把 mapping 交給它，改綁才會跟著生效。
         //

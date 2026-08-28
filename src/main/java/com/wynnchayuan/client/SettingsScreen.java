@@ -445,9 +445,9 @@ public final class SettingsScreen extends Screen {
         g.drawCenteredString(this.font, now, this.width / 2, this.height - 44, Colors.TEXT);
 
         // 兩個快捷鍵本來就是正規的 KeyMapping，原版按鍵設定裡改得到——
-        // 但放在「雜項」底下沒人找得到，所以直接寫出來。
+        // 先前掛在原版的「雜項」底下沒人找得到，現在自己一個分類。
         g.drawCenteredString(this.font,
-                Component.literal("F6 與 F8 可在「選項 → 按鍵控制 → 雜項」自由改綁")
+                Component.literal("F6 與 F8 可在「選項 → 按鍵控制 → WynnChaYuan」自由改綁")
                         .withStyle(ChatFormatting.DARK_GRAY),
                 this.width / 2, this.height - 56, Colors.FAINT);
     }
