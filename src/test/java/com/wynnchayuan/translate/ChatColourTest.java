@@ -108,6 +108,16 @@ public final class ChatColourTest {
                         + (slash == null ? "null" : "#" + String.format("%06X", slash))
                         + "）", slash == null || slash == WHITE);
 
+        // 整行同色的行不能把已經登記過的重點段再登一次。
+        //
+        // 兩條一模一樣的重點段，只有第一條會被用到，第二條在診斷檔裡
+        // 成了「★在譯文裡卻沒貼上」（使用者回報的 majorid-debug 裡那一排星號）；
+        // 多余的長串還會跟真正該貼的重點段互投位置。
+        long titles = flatten(hit).stream()
+                .filter(c -> c.getString().contains("歡迎來到"))
+                .count();
+        check("標題只被貼一次（實際 " + titles + " 段）", titles == 1);
+
         report();
     }
 

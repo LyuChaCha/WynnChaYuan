@@ -2235,7 +2235,8 @@ public final class LineTranslator {
      */
     private static List<LineParts.Piece> wholeLineAccents(
             List<LineParts> parts, List<LineParts.Piece> allRuns,
-            String[] translated, Style blockStyle) {
+            String[] translated, Style blockStyle,
+            List<LineParts.Piece> known) {
         String template = parts.size() == 1 ? parts.get(0).template() : null;
         List<Style> source = template == null
                 ? perPartStyles(parts) : uniformStyles(allRuns, template);
@@ -2250,9 +2251,10 @@ public final class LineTranslator {
                 continue;
             }
             String text = PLACEHOLDER.matcher(dst[i]).replaceAll("").strip();
-            if (hasContent(text)) {
-                out.add(new LineParts.Piece(text, only));
+            if (!hasContent(text) || covered(known, text, only)) {
+                continue;         // 見 #covered：重複登記只會讓貼樣式那一步挑錯
             }
+            out.add(new LineParts.Piece(text, only));
         }
         return out;
     }
@@ -2342,6 +2344,29 @@ public final class LineTranslator {
         return out;
     }
 
+    /**
+     * 這一行已經有人登記過了嗎。
+     *
+     * <h2>為什麼要擋</h2>
+     * {@link #withTranslations} 已經把查得到譯文的詞都登記了一份。
+     * 整行只有一個詞的時候（「建立角色」「素材袋」這種標題），
+     * 這邊會再登記一次<b>一模一樣的東西</b>。
+     *
+     * <p>貼樣式那一步是「在譯文裡找重點段的字面」，每個重點段只能用一次；
+     * 兩條一模一樣的只有第一條會被用到，第二條就成了
+     * {@code ★在譯文裡卻沒貼上}——診斷檔裡那一排星號就是這樣來的。
+     * 更麻煩的是多余的長串會跟真正該貼的重點段互投位置。
+     */
+    private static boolean covered(List<LineParts.Piece> known, String text, Style style) {
+        for (LineParts.Piece piece : known) {
+            if (piece.text().equals(text)
+                    && java.util.Objects.equals(piece.style(), style)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     /** 這一段有沒有真正的字（非空白、非圖示）。 */
     private static boolean hasContent(String text) {
         return text.codePoints().anyMatch(cp -> !Character.isWhitespace(cp)
@@ -2390,7 +2415,7 @@ public final class LineTranslator {
         accents.addAll(LineParts.accentsAgainst(allRuns, blockStyle));
         accents = withTranslations(accents, store);
         // 整行同色的那幾行，直接拿譯文那一行當重點段。見 #wholeLineAccents。
-        accents.addAll(wholeLineAccents(parts, allRuns, translated, blockStyle));
+        accents.addAll(wholeLineAccents(parts, allRuns, translated, blockStyle, accents));
 
         // 斷行不要把一個重點詞切成兩半，否則它的顏色會整個掉。見 keepAccentsWhole。
         String[] flowed = keepAccentsWhole(translated, accents);
