@@ -35,6 +35,8 @@ public final class ChatColourTest {
     private static final int GREY = 0xAAAAAA;     // 網址與說明
     private static final int RED  = 0xFF5555;     // TIP:
     private static final int WHITE = 0xFFFFFF;    // /char
+    private static final int BROWN = 0x8F663D;    // 坐騎那一行的主色
+    private static final int LIGHT = 0xBC8F62;    // 同一行裡被挑亮的「no food」
 
     /** 行首那個符號。語料裡它是 {@code {#}}，實際送來的是私用區碼位。 */
     private static final String ICON = "\ue001";
@@ -61,6 +63,34 @@ public final class ChatColourTest {
         all.append(lit("Type ", GREY, false));
         all.append(lit("/char", WHITE, false));
         all.append(lit(" to switch character", GREY, false));
+        return StyledText.fromComponent(all);
+    }
+
+    /**
+     * 同一則歡迎訊息的另一個變體，最後一行是<b>混色</b>的。
+     *
+     * <p>取自使用者回報的 majorid-debug 重點段 1：三個片語兩種棕色交錯，
+     * 而它們都是句子中間的片語，翻成中文之後一段都對不上字面
+     * （診斷檔裡那三行「譯文裡找不到」）。混色的行先前不登記，
+     * 於是整行掉回底色——原文一片棕、譯文一片灰。
+     */
+    private static StyledText mounts() {
+        MutableComponent all = Component.empty();
+        all.append(lit(ICON, GOLD, true));
+        all.append(lit("Welcome to Wynncraft!", GOLD, true));
+        all.append(lit("\n", GREY, false));
+        all.append(lit(ICON, GREY, false));
+        all.append(lit("play.wynncraft.com ", GREY, false));
+        all.append(lit("-/-", GREY, false));
+        all.append(lit(" wynncraft.com", GREY, false));
+        all.append(lit("\n\n", GREY, false));
+        all.append(lit(ICON, BROWN, false));
+        all.append(lit("2 ", BROWN, false));
+        all.append(lit("mounts have", BROWN, false));
+        all.append(lit(" ", LIGHT, false));
+        all.append(lit("no food", LIGHT, false));
+        all.append(lit(" ", BROWN, false));
+        all.append(lit("in their feeder", BROWN, false));
         return StyledText.fromComponent(all);
     }
 
@@ -126,6 +156,26 @@ public final class ChatColourTest {
         // 也不能把換行吃掉。具體的像素值跟字型渲染有關，這裡不釘。
         long rows = hit.getString().chars().filter(c -> c == 10).count() + 1;
         check("多行訊息的行數保住不變（實際 " + rows + " 行）", rows == 4);
+
+        // 混色的那一行：三個片語一段都對不上字面，先前整行掉回底色的灰。
+        // 退而求其次套上<b>多數色</b>，比一片灰接近原文得多。見 LineTranslator#fallback。
+        Component mount = LineTranslator.translate(mounts(), store);
+        check("坐騎那則查得到譯文", mount != null);
+        if (mount != null) {
+            System.out.println("      輸出：" + mount.getString().replace("\n", " ⏎ "));
+            List<Component> one = List.of(mount);
+            check("坐騎那一行有翻出來", mount.getString().contains("坐騎"));
+            Integer feeder = colourOf(one, "坐騎");
+            check("混色的行不再掉成內文的灰（拿到 "
+                            + (feeder == null ? "null" : "#" + String.format("%06X", feeder))
+                            + "）", feeder != null && feeder != GREY);
+            check("混色的行套的是原文的多數色", feeder != null && feeder == BROWN);
+            // 同一則訊息裡其餘各行不能被波及
+            Integer stillGold = colourOf(one, "歡迎來到");
+            check("標題還是金色", stillGold != null && stillGold == GOLD);
+            Integer stillGrey = colourOf(one, "wynncraft.com");
+            check("網址還是灰色", stillGrey != null && stillGrey == GREY);
+        }
 
         report();
     }

@@ -55,6 +55,7 @@ public final class FlowedDebug {
         file = configDir.resolve(FILE);
         seen = 0;
         accentSeen = 0;
+        rowSeen = 0;
         missed = 0;
         prose = 0;
         labelled = 0;
@@ -243,6 +244,42 @@ public final class FlowedDebug {
             // 診斷絕不能反過來弄壞畫面
         }
     }
+
+    /**
+     * 多行區塊重新對齊的現場。
+     *
+     * <h2>為什麼需要</h2>
+     * 聊天的系統訊息是好幾行擠在<b>一則</b>訊息裡，每一行前面各有一個
+     * 照英文寬度算好的置中縮排。{@code realignRows} 就是為了逐行重算而寫的，
+     * 但它在兩邊行數對不上時會<b>安靜地</b>退回舊路——而舊路只修得到第一個縮排。
+     *
+     * <p>回報回來的畫面正是「只有第一行歪掉、其餘各行原封不動」，
+     * 跟退回舊路的症狀一模一樣；但到底是行數對不上、還是空白數對不上、
+     * 又或者根本沒進到這裡，現有的診斷一個都答不出來。這裡把那三件事寫清楚。
+     *
+     * @param body 呼叫端排好的內容，見 {@code LineTranslator#realign}
+     */
+    public static void rows(String id, String body) {
+        if (file == null || body == null || rowSeen >= ROW_LIMIT
+                || !already.add("rows" + id)) {
+            return;
+        }
+        rowSeen++;
+        try {
+            Files.writeString(file,
+                    "=== 逐行對齊 " + rowSeen + " ===" + System.lineSeparator()
+                    + body + System.lineSeparator(),
+                    StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        } catch (Throwable t) {
+            // 診斷絕不能反過來弄壞畫面
+        }
+    }
+
+    private static int rowSeen = 0;
+
+    /** 多行的訊息本來就不多，記十二筆綽綽有餘。 */
+    private static final int ROW_LIMIT = 12;
 
     /** 未分配的第 13 平面＝排版位移；私用區＝真圖示。見 GlyphSplitter。 */
     private static boolean isOffset(int cp) {

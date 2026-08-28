@@ -100,6 +100,8 @@ public final class TranslationStore {
         maxTermWords = 1;
         maxBlockLines = 1;
         nameKeys.clear();
+        byQuest.clear();
+        fromWiki.clear();
         loadedFiles = 0;
 
         if (!Files.isDirectory(dir)) {
@@ -243,6 +245,9 @@ public final class TranslationStore {
                 if (quest != null && !quest.isBlank()) {
                     byQuest.computeIfAbsent(quest.strip(),
                             q -> new java.util.TreeMap<>()).put(srcKey, dst.strip());
+                }
+                if ("wiki".equals(optString(e, "source"))) {
+                    fromWiki.add(srcKey);      // 見 #curatedRival
                 }
                 String who = optString(e, "speaker");
                 if (who != null && !who.isBlank()) {
@@ -555,7 +560,8 @@ public final class TranslationStore {
             if (scoped != null) {
                 String hit = unique(scoped, key);
                 if (hit != null) {
-                    return hit;
+                    String better = curatedRival(hit, key);
+                    return better != null ? better : hit;
                 }
             }
         }
@@ -585,9 +591,43 @@ public final class TranslationStore {
         }
         String next = index.higherKey(first.getKey());
         if (next != null && next.startsWith(key)) {
-            return null;                       // 還分不出是哪一句
+            return settle(index, key, first.getKey());
         }
         return first.getKey();
+    }
+
+    /**
+     * 候選不只一條，但它們可能只是<b>同一句話的新舊版本</b>。
+     *
+     * <h2>為什麼要分這個</h2>
+     * 官方改過詞、wiki 還沒跟上時，同一句台詞在庫裡有兩條。逐字打字打到
+     * 「Hey, {u}!」，前綴比對看到兩條就回 {@code null}——玩家眼前的英文於是
+     * 一路跑到岔開的那個字才忽然跳成中文。但這裡根本不必猶豫：兩條講的是
+     * 同一句話，人工校訂過的那條就是答案。
+     *
+     * <p>只在<b>全部</b>候選都是同一句話、而且校訂版<b>只有一條</b>時才敢答。
+     * 少一個條件都可能貼上完全無關的台詞。
+     *
+     * @return 校訂版的原文；真的分不出來時回傳 {@code null}
+     */
+    private String settle(java.util.TreeMap<String, String> index, String key, String first) {
+        String curated = null;
+        int scanned = 0;
+        for (Map.Entry<String, String> e : index.tailMap(key).entrySet()) {
+            if (!e.getKey().startsWith(key)) {
+                break;
+            }
+            if (++scanned > RIVAL_SCAN || !sameLine(first, e.getKey())) {
+                return null;                   // 真的是不同的句子，分不出來
+            }
+            if (!fromWiki.contains(e.getKey())) {
+                if (curated != null) {
+                    return null;               // 兩條都是校訂版，也分不出來
+                }
+                curated = e.getKey();
+            }
+        }
+        return curated;
     }
 
     /**
@@ -607,6 +647,107 @@ public final class TranslationStore {
      * 限定任務後平均第 4 個字就分得出來（全庫要 16 個字）。
      */
     private static final int MIN_QUEST_PREFIX = 4;
+
+    /**
+     * 同一句話的<b>校訂版</b>；沒有就回傳 {@code null}。
+     *
+     * <h2>為什麼需要</h2>
+     * wiki 抄來的台詞會跟遊戲裡實際跑的字<b>不一樣</b>——官方改過詞、wiki 還沒跟上。
+     * King's Recruit 第一句實測就是這樣：
+     *
+     * <pre>
+     *   wiki   Hey, {u}! You alright in there? Looks like we hit something.
+     *   實機   Hey, {u}! Are you alright in there? It looks like we've hit something.
+     * </pre>
+     *
+     * <p>兩條都在庫裡（校訂版放在 quest.json，是人工對著遊戲補的）。
+     * NPC 逐字打字時，打到「Hey, {u}」限定任務的索引<b>只看得到 wiki 那條</b>
+     * ——校訂版沒有 quest 欄位——於是先貼上「嘿，」；再多打幾個字岔開了，
+     * 全庫索引接手換成校訂版的「喂，」。玩家看到的就是講到一半中文自己換了一個字。
+     *
+     * <p>所以限定任務命中 wiki 條目時，先問一句：全庫裡有沒有一條<b>同一句話</b>
+     * 但不是 wiki 來的。有的話用那條——從第一幀就是校訂版，中途不會再換。
+     *
+     * <h2>怎麼算「同一句話」</h2>
+     * 共同前綴不管用：上面兩條在 {@code Hey, {u}! } 之後立刻岔開。
+     * 改看<b>用字的重疊比例</b>（Jaccard）：改詞頂多動幾個字，重疊會很高；
+     * 剛好同開頭的另一句台詞則低得多。
+     */
+    private String curatedRival(String wikiHit, String key) {
+        if (!fromWiki.contains(wikiHit)) {
+            return null;                       // 命中的本來就是校訂版，不必再找
+        }
+        int scanned = 0;
+        for (Map.Entry<String, String> e : prefixIndex.tailMap(key).entrySet()) {
+            if (!e.getKey().startsWith(key) || ++scanned > RIVAL_SCAN) {
+                break;
+            }
+            if (fromWiki.contains(e.getKey()) || e.getKey().equals(wikiHit)) {
+                continue;
+            }
+            if (sameLine(wikiHit, e.getKey())) {
+                return e.getKey();
+            }
+        }
+        return null;
+    }
+
+    /** 兩條原文是不是同一句話的兩個版本。見 {@link #curatedRival}。 */
+    static boolean sameLine(String a, String b) {
+        java.util.Set<String> left = words(a);
+        java.util.Set<String> right = words(b);
+        if (left.isEmpty() || right.isEmpty()) {
+            return false;
+        }
+        int both = 0;
+        for (String w : left) {
+            if (right.contains(w)) {
+                both++;
+            }
+        }
+        int union = left.size() + right.size() - both;
+        return both * 100 >= union * SAME_LINE_PERCENT;
+    }
+
+    /** 只留字母與數字，大小寫不分。撇號、逗號那些正是改詞時會動的東西。 */
+    private static java.util.Set<String> words(String text) {
+        java.util.Set<String> out = new java.util.HashSet<>();
+        StringBuilder word = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            char c = Character.toLowerCase(text.charAt(i));
+            if (Character.isLetterOrDigit(c)) {
+                word.append(c);
+            } else if (word.length() > 0) {
+                out.add(word.toString());
+                word.setLength(0);
+            }
+        }
+        if (word.length() > 0) {
+            out.add(word.toString());
+        }
+        return out;
+    }
+
+    /**
+     * 用字重疊到幾成才算同一句。
+     *
+     * <p>六成是實測抓出來的：官方改詞的那兩條是七成一，而同樣以
+     * 「Hey, {u}」開頭的另一句台詞只有兩成。中間空得很開，不必再細調。
+     */
+    private static final int SAME_LINE_PERCENT = 60;
+
+    /** 最多往後看幾條。同一個開頭的候選本來就沒幾條，掃太多只是白花時間。 */
+    private static final int RIVAL_SCAN = 16;
+
+    /**
+     * 從 wiki 抄下來的條目。
+     *
+     * <p>不是「品質比較差」的意思——絕大多數 wiki 條目都是對的。
+     * 只有在<b>同一句話有兩個版本</b>時才拿它來分高下：人工校訂過的那條
+     * 是對著遊戲畫面打的，一定比較新。見 {@link #curatedRival}。
+     */
+    private final java.util.Set<String> fromWiki =
+            java.util.concurrent.ConcurrentHashMap.newKeySet();
 
     /** 依原文排序，才能用 ceiling/higher 做前綴比對。見 {@link #lookupPrefix}。 */
     private final java.util.TreeMap<String, String> prefixIndex = new java.util.TreeMap<>();
