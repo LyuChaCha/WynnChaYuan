@@ -36,7 +36,7 @@ ROOT = os.path.join(
 
 MIN_PREFIX = 12       # TranslationStore.MIN_PREFIX_LENGTH
 MIN_QUEST_PREFIX = 4  # TranslationStore.MIN_QUEST_PREFIX
-SAME_LINE = 60        # TranslationStore.SAME_LINE_PERCENT
+SAME_LINE = 65        # TranslationStore.SAME_LINE_PERCENT
 RIVAL_SCAN = 16       # TranslationStore.RIVAL_SCAN
 AGREED = 12           # DialogueRewriter.AGREED
 NAME_ROOM = 24        # DialogueRewriter.NAME_ROOM
