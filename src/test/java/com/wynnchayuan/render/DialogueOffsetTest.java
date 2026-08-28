@@ -44,6 +44,18 @@ public final class DialogueOffsetTest {
                 Boxes.dropOffsets(new String(Character.toChars(0xCFF8C)) + "Agh!").equals("Agh!"));
         check("私用區的圖示不能拿掉",
                 Boxes.dropOffsets(" 空手右鍵").equals(" 空手右鍵"));
+        // 等級徽章是「圖示 + 位移」交錯拼出來的，那些位移是用來定位圖示的。
+        // 實機：majorid-debug 的「填回去的符號 7」——馬的名牌。
+        // 1.99.40 一律拿掉位移，徽章就散成「馬 ⬛⬛ LV 1」。
+        String badge = new String(Character.toChars(0xE060))
+                + new String(Character.toChars(0xCFFFF))
+                + new String(Character.toChars(0xE03B));
+        check("徽章（圖示夾位移）整段不動",
+                Boxes.dropOffsets(badge).equals(badge));
+        check("位移加文字還是要拿掉",
+                Boxes.dropOffsets("Agh!" + new String(Character.toChars(0xD0063)))
+                        .equals("Agh!"));
+
         check("沒有位移字就原字串回去",
                 Boxes.dropOffsets("啊！").equals("啊！"));
 

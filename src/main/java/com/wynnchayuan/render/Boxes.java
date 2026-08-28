@@ -121,10 +121,26 @@ public final class Boxes {
      *
      * <p><b>不能整批拿掉圖示</b>——滑鼠、屬性符號那些是真的要畫出來的。
      * 兩者的區別在 Unicode 屬性：圖示在私用區，位移字在未分配的第 13 平面。
+     *
+     * <h2>但也不能見到位移就拿</h2>
+     * 等級徽章這種東西是<b>圖示與位移交錯</b>拼出來的。
+     * 實機錄到的「馬」名牌（診斷檔「填回去的符號 7」）：
+     *
+     * <pre>U+E060(圖示) U+CFFFF(位移) U+E03B(圖示) U+CFFFF(位移) …  font=banner/pill</pre>
+     *
+     * <p>那些位移是<b>用來定位圖示的</b>，拿掉徽章就散了——
+     * 使用者回報的「馬 ⬛⬛ LV 1」就是這樣來的，而且是 1.99.40
+     * 為了修豆腐方塊改出來的。
+     *
+     * <p>所以規則是：<b>一段裡面有私用區圖示，就整段別動</b>。
+     * 純位移（或位移加文字）那種才是排版用的，拿掉才對。
      */
     static String dropOffsets(String text) {
         if (text.codePoints().noneMatch(Boxes::isOffset)) {
             return text;                       // 絕大多數行沒有，不要白白重建字串
+        }
+        if (text.codePoints().anyMatch(GlyphSplitter::isPrivateUse)) {
+            return text;                       // 見下面的說明：這些位移是用來定位圖示的
         }
         StringBuilder kept = new StringBuilder(text.length());
         text.codePoints().filter(cp -> !isOffset(cp)).forEach(kept::appendCodePoint);
