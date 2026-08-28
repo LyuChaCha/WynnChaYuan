@@ -100,6 +100,7 @@ public final class TranslationStore {
         maxTermWords = 1;
         maxBlockLines = 1;
         nameKeys.clear();
+        ordered.clear();
         byQuest.clear();
         fromWiki.clear();
         loadedFiles = 0;
@@ -233,6 +234,7 @@ public final class TranslationStore {
             if (src != null && dst != null && !dst.isBlank()) {
                 String srcKey = src.strip();
                 entries.put(srcKey, dst.strip());
+                ordered.add(srcKey);
                 if (srcKey.length() >= MIN_PREFIX_LENGTH) {
                     prefixIndex.put(srcKey, dst.strip());
                 }
@@ -278,6 +280,7 @@ public final class TranslationStore {
             JsonElement v = obj.get(key);
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
                 entries.put(key.strip(), v.getAsString().strip());
+                ordered.add(key.strip());
                 // 逐字打字時靠這個索引找「目前打到一半的是哪一句」。
                 //
                 // 先前只有 workspace 格式的檔案會進來，而台詞幾乎都放在扁平格式的
@@ -748,6 +751,42 @@ public final class TranslationStore {
      */
     private final java.util.Set<String> fromWiki =
             java.util.concurrent.ConcurrentHashMap.newKeySet();
+
+    /**
+     * 語料裡還有<b>更長</b>的原文以這一段開頭嗎。
+     *
+     * <h2>為什麼呼叫端需要問這個</h2>
+     * NPC 是一個字一個字打出來的，而打到一半的那半句<b>本身</b>常常剛好就是
+     * 語料裡的另一條。逐字模擬全部 5749 句台詞抓出來的例子：
+     *
+     * <pre>
+     *   打到「Block」      → ability-labels 的「格擋」
+     *   打到「Bring」      → quest-ui 的「攜帶」
+     *   打到「...」        → 「……」
+     * </pre>
+     *
+     * 一兩幀之後整句打完，畫面上那幾個字就被換掉——玩家看到的是中文閃一下
+     * 變成別的字。而這種情形是<b>問得出來</b>的：後面還有更長的候選，就代表
+     * 現在定案有機會等一下要改口。
+     *
+     * <p>反過來說，沒有更長的候選時就沒有這個風險，可以立刻定案——
+     * 「Agh!」那種短短一句的台詞不會因此被拖慢。
+     */
+    public boolean hasLonger(String key) {
+        if (key == null) {
+            return false;
+        }
+        String bare = key.strip();
+        if (bare.isEmpty()) {
+            return false;
+        }
+        String next = ordered.higher(bare);
+        return next != null && next.startsWith(bare);
+    }
+
+    /** 每一條原文，排序後放著，只為了 {@link #hasLonger}。 */
+    private final java.util.concurrent.ConcurrentSkipListSet<String> ordered =
+            new java.util.concurrent.ConcurrentSkipListSet<>();
 
     /** 依原文排序，才能用 ceiling/higher 做前綴比對。見 {@link #lookupPrefix}。 */
     private final java.util.TreeMap<String, String> prefixIndex = new java.util.TreeMap<>();

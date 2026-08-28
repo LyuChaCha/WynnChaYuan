@@ -237,6 +237,15 @@ public final class TranslationStoreTest {
                             "Sound off, {u}! Are you hurt? The cart hit a boulder.",
                             "Sound off, {u}! Are you ready? The ship leaves at dawn."));
             check("空句子不算", !TranslationStore.sameLine("", "anything at all"));
+
+            // 打到一半的那半句本身剛好也是語料裡的另一條時，不能馬上定案——
+            // 後面還有更長的候選，就代表現在貼上去等一下要改口。
+            check("後面還有更長的就要說有", store.hasLonger("Hey, {u}"));
+            check("整段一模一樣但沒有更長的就說沒有",
+                    !store.hasLonger("Hey, {u}! Are you alright in there? "
+                            + "It looks like we've hit something."));
+            check("完全不相干的開頭也是沒有", store.hasLonger("Zzzz nothing here") == false);
+            check("短句沒有更長的候選時不受影響", !store.hasLonger("Short one"));
             realCorpus();
         } finally {
             delete(dir);
@@ -296,6 +305,13 @@ public final class TranslationStoreTest {
         String later = real.matchPrefix("Hey, {u}! Are you al", 28, "King's Recruit");
         check("實際語料：多打幾個字還是同一條（拿到 " + later + "）",
                 live.equals(later));
+
+        // 實際語料裡這幾條是逐字模擬抓出來的：打到一半剛好命中別的檔案裡的短詞。
+        check("實際語料：打到「Block」時後面還有更長的候選",
+                real.hasLonger("Block"));
+        check("實際語料：打到「Bring」時後面還有更長的候選",
+                real.hasLonger("Bring"));
+        check("實際語料：打到「...」時後面還有更長的候選", real.hasLonger("..."));
     }
 
     private static void check(String name, boolean ok) {

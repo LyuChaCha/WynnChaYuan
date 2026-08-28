@@ -151,6 +151,23 @@ public final class DialogueOffsetTest {
                                 + "abcdefghijklmnopqrstuvwxyz0123456789"
                                 + "abcdefghijklmnopqrstuvwxyz"));
 
+        // 「還在打字」與「打完了」要有不同的態度。沒有現成的訊號，
+        // 字停住幾幀就等於停住了。見 DialogueRewriter#settled。
+        check("字還在長就不算停下來",
+                !DialogueRewriter.settled("Bloc") && !DialogueRewriter.settled("Block"));
+        boolean early = false;
+        for (int i = 0; i < 5; i++) {
+            early |= DialogueRewriter.settled("Block");
+        }
+        check("字與字之間的空檔不會被誤判成停下來", !early);
+        boolean late = false;
+        for (int i = 0; i < 4; i++) {
+            late |= DialogueRewriter.settled("Block");
+        }
+        check("停夠久就算停下來了", late);
+        check("字又長出來就重新計算", !DialogueRewriter.settled("Block t"));
+
+
         System.out.println(failures == 0
                 ? "DialogueOffset: 全部通過"
                 : "DialogueOffset: " + failures + " 項失敗");
