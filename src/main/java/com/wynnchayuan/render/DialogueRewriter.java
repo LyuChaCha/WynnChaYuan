@@ -433,6 +433,12 @@ public final class DialogueRewriter {
         return rest.isEmpty() && out.length() > 0 ? out.toString() : null;
     }
 
+    /** 上一幀打到哪（參數化之後）。見 {@link #line}。 */
+    private static String said = "";
+
+    /** 上一幀認出來的是語料裡的哪一條。 */
+    private static String spoken;
+
     /** 最多拆成幾截。再多就不是「拼出來的訊息」，是硬湊了。 */
     private static final int PARTS = 4;
 
@@ -507,6 +513,21 @@ public final class DialogueRewriter {
         String source = typed;
         String hit = store.lookup(typed);
         if (hit == null) {
+            // 這一句上一幀就認出來了，繼續用同一條。
+            //
+            // 逐字打字時 matchPrefix 要求「只有一條語料以這個開頭」。打到一半
+            // 剛好有第二條也是同樣開頭時，它會回 null，畫面就掉回英文；再多打
+            // 幾個字岔開了又跳回中文——玩家看到的「講到一半忽然變英文又變回來」
+            // 就是這個。既然上一幀已經確定是哪一句，中間這幾幀沒理由再問一次。
+            //
+            // 只在<b>還是同一句話</b>時沿用：新的文字要接得上上一幀，也要仍然
+            // 是那一條語料的開頭。換句話、或講的內容岔開了，快取就自己失效。
+            if (spoken != null && typed.startsWith(said) && spoken.startsWith(typed)) {
+                source = spoken;
+                hit = store.lookup(spoken);
+            }
+        }
+        if (hit == null) {
             // 門檻要看<b>畫面上已經打出多少字</b>，不是模板有多長。
             //
             // 玩家名被 {u} 收掉之後模板會短一大截：畫面上打出
@@ -514,6 +535,13 @@ public final class DialogueRewriter {
             // 卡在門檻底下查不到，於是開頭那一小段先閃出英文才跳成中文。
             source = store.matchPrefix(typed, text.strip().length());
             hit = source == null ? null : store.lookup(source);
+        }
+        if (hit != null && source != null) {
+            said = typed;              // 記住這一幀打到哪
+            spoken = source;           // 以及它是語料裡的哪一條
+        } else if (!typed.startsWith(said)) {
+            said = "";                 // 換句話了，別讓舊的那條黏著
+            spoken = null;
         }
         if (hit == null) {
             // 「一句話 + 一個名字」：任務開始那則訊息就是這樣拼出來的。

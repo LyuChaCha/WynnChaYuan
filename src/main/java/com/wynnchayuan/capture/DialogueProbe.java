@@ -175,7 +175,10 @@ public final class DialogueProbe {
             return;
         }
         String body = bodyOf(message);
-        if (body.isBlank()) {
+        // 開頭那幾幀翻不出來是<b>設計上就會這樣</b>：字數還不夠認出是哪一句。
+        // 把它們也收進來的話，名額會被同一句話的「I do / I don / I don' / I don't」
+        // 全部吃光——真正要查的「講到一半忽然掉回英文」與任務開始那則就進不來。
+        if (body.strip().length() < ENOUGH) {
             return;
         }
         // 逐字打字的每一幀都是<b>前一幀再加幾個字</b>，所以「其中一個是另一個的
@@ -216,7 +219,15 @@ public final class DialogueProbe {
     }
 
     /** 改寫失敗的訊息最多留幾則。 */
-    private static final int MISS_LIMIT = 4;
+    private static final int MISS_LIMIT = 6;
+
+    /**
+     * 短於這麼多字的失敗不記。
+     *
+     * <p>跟 {@code TranslationStore.MIN_PREFIX_LENGTH} 同一個道理：字數不夠就
+     * 認不出是哪一句，那不是問題，是還沒到能查的時候。
+     */
+    private static final int ENOUGH = 12;
 
     private static int misses = 0;
     private static String missKey = "";
