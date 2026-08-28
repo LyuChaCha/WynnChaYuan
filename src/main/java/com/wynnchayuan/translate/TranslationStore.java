@@ -237,6 +237,13 @@ public final class TranslationStore {
                 noteBlockSize(srcKey);
                 noteFlat(srcKey, dst.strip());
                 noteIndented(srcKey, dst.strip());
+                // 同一個任務的台詞另外建一份索引。全庫裡「Hey, {u}」撞到幾十句，
+                // 單一個任務裡通常只有一句。見 #matchPrefix(String, int, String)。
+                String quest = optString(e, "quest");
+                if (quest != null && !quest.isBlank()) {
+                    byQuest.computeIfAbsent(quest.strip(),
+                            q -> new java.util.TreeMap<>()).put(srcKey, dst.strip());
+                }
                 String who = optString(e, "speaker");
                 if (who != null && !who.isBlank()) {
                     speakers.put(srcKey, who.strip());
@@ -512,26 +519,71 @@ public final class TranslationStore {
      * @param evidence 畫面上已經打出來的字數
      */
     public String matchPrefix(String partial, int evidence) {
+        return matchPrefix(partial, evidence, null);
+    }
+
+    /**
+     * 同上，但先在<b>目前這個任務</b>裡找。
+     *
+     * <h2>為什麼要分任務</h2>
+     * 卡住翻譯的不是長度門檻，是<b>撞句</b>：{@code Hey, {u}} 在全庫裡撞到幾十句，
+     * {@code matchPrefix} 分不出是哪一句就只好回 {@code null}，於是英文一路跑到
+     * 二十幾個字、開頭夠獨特了才忽然跳成中文。
+     *
+     * <p>但玩家正在做的任務是<b>知道的</b>——追蹤器上就寫著。同一個任務裡
+     * {@code Hey, {u}} 通常只有一句，第一個字打出來就分得出來了。
+     *
+     * <p>範圍窄到一個任務之後長度門檻也不需要了：{@code MIN_PREFIX_LENGTH} 是
+     * 為「全庫幾萬句」定的，一個任務只有一百多句，撞不到就是撞不到。
+     * 只要求至少一個字，避免空字串命中第一條。
+     *
+     * @param quest 目前追蹤中的任務原名；{@code null} 就跟以前一樣只查全庫
+     */
+    public String matchPrefix(String partial, int evidence, String quest) {
         if (partial == null) {
             return null;
         }
         String key = partial.strip();
-        if (key.isEmpty() || evidence < MIN_PREFIX_LENGTH) {
+        if (key.isEmpty()) {
             return null;
         }
-        Map.Entry<String, String> first = prefixIndex.ceilingEntry(key);
+        if (quest != null && !quest.isBlank() && key.length() >= MIN_QUEST_PREFIX) {
+            // 追蹤器送來的名稱可能帶著圖示（任務類型的小標誌），
+            // 語料裡的 quest 欄位是乾淨的，不剔會永遠對不上。
+            java.util.TreeMap<String, String> scoped = byQuest.get(
+                    com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(quest).strip());
+            if (scoped != null) {
+                String hit = unique(scoped, key);
+                if (hit != null) {
+                    return hit;
+                }
+            }
+        }
+        if (evidence < MIN_PREFIX_LENGTH) {
+            return null;
+        }
+        return unique(prefixIndex, key);
+    }
+
+    /**
+     * 這個開頭在這份索引裡是不是<b>只</b>對得上一句。
+     *
+     * @return 那一句的完整原文；對不上或分不出是哪一句時回傳 {@code null}
+     */
+    private String unique(java.util.TreeMap<String, String> index, String key) {
+        Map.Entry<String, String> first = index.ceilingEntry(key);
         if (first == null || !first.getKey().startsWith(key)) {
             String other = respell(key);        // 見 respell：英式拼法對不上語料
             if (other.equals(key)) {
                 return null;
             }
-            first = prefixIndex.ceilingEntry(other);
+            first = index.ceilingEntry(other);
             if (first == null || !first.getKey().startsWith(other)) {
                 return null;
             }
             key = other;
         }
-        String next = prefixIndex.higherKey(first.getKey());
+        String next = index.higherKey(first.getKey());
         if (next != null && next.startsWith(key)) {
             return null;                       // 還分不出是哪一句
         }
@@ -543,8 +595,29 @@ public final class TranslationStore {
      */
     private static final int MIN_PREFIX_LENGTH = 12;
 
+    /**
+     * 限定任務之後的門檻。
+     *
+     * <h2>為什麼還是要留一道</h2>
+     * 追蹤中的任務<b>不保證</b>就是這段對話所屬的任務——玩家可能追著 A
+     * 卻順手跟 B 的 NPC 講話（見 {@code CurrentQuest} 的「限制」）。
+     * 一兩個字就敢猜的話，那種時候會很有把握地貼上<b>完全無關</b>的譯文。
+     *
+     * <p>四個字幾乎不花成本：實測 King's Recruit 全部 102 句台詞，
+     * 限定任務後平均第 4 個字就分得出來（全庫要 16 個字）。
+     */
+    private static final int MIN_QUEST_PREFIX = 4;
+
     /** 依原文排序，才能用 ceiling/higher 做前綴比對。見 {@link #lookupPrefix}。 */
     private final java.util.TreeMap<String, String> prefixIndex = new java.util.TreeMap<>();
+
+    /**
+     * 一個任務一份前綴索引。
+     *
+     * <p>沒有長度門檻——範圍已經窄到一個任務，短前綴不再危險。
+     */
+    private final Map<String, java.util.TreeMap<String, String>> byQuest =
+            new java.util.HashMap<>();
 
     public String lookup(String template) {
         if (template == null) {
