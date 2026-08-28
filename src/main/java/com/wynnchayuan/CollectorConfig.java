@@ -71,6 +71,15 @@ public final class CollectorConfig {
     public enum ChatMode { OFF, REPLACE, BOTH }
 
     /**
+     * 螢幕正中央那行大字要不要翻（見 {@code TitleListener}）。
+     *
+     * <p>只有開與關——那是畫面中央的大字，兩三秒就消失，旁邊沒有空間再開小框，
+     * 所以要翻就只能就地取代。預設開著：這種提示（「你正在掛機」「移動以繼續」）
+     * 純粹是系統訊息，留著英文對誰都沒有好處。
+     */
+    private boolean translateTitles = true;
+
+    /**
      * 譯文截圖：什麼時候拍。
      *
      * <p>{@code OFF} 不拍。{@code KEY} 只在按下快捷鍵時拍一張。
@@ -229,6 +238,16 @@ public final class CollectorConfig {
 
     public ChatMode chatMode() {
         return chatMode;
+    }
+
+    public boolean translateTitles() {
+        return translateTitles;
+    }
+
+    public boolean toggleTitles() {
+        translateTitles = !translateTitles;
+        save();
+        return translateTitles;
     }
 
     /** 在 關閉 → 就地取代 → 原文加譯文 之間輪替。 */
@@ -685,6 +704,9 @@ public final class CollectorConfig {
                 // 舊設定檔沒有這個欄位，維持 PANEL——升上來的人畫面不會突然變樣
                 dialogueMode = DialogueMode.valueOf(o.get("dialogueMode").getAsString());
             }
+            if (o.has("translateTitles")) {
+                translateTitles = o.get("translateTitles").getAsBoolean();
+            }
             if (o.has("chatMode")) {
                 // 舊設定檔沒有這個欄位，維持 OFF——不會有人升級之後聊天突然被換掉
                 chatMode = ChatMode.valueOf(o.get("chatMode").getAsString());
@@ -788,6 +810,7 @@ public final class CollectorConfig {
             o.addProperty("dialogueHoldMs", dialogueHoldMs);
             o.addProperty("dialogueMode", dialogueMode.name());
             o.addProperty("chatMode", chatMode.name());
+            o.addProperty("translateTitles", translateTitles);
             o.addProperty("shotMode", shotMode.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());
