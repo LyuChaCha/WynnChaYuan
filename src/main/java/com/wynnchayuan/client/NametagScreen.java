@@ -83,10 +83,27 @@ public final class NametagScreen extends Screen {
         };
     }
 
+    /**
+     * 畫在面板<b>外面</b>、但橫跨面板的幾行：副標題與底部那句提示。
+     *
+     * <p>它們是照畫面中心置中的，面板也是——所以只要它們比面板寬就會兩頭露出來，
+     * 看起來像「字跑出格子」。量寬度時得把它們算進去。
+     */
+    private String[] aroundLines() {
+        return new String[] {
+            "名牌要怎麼顯示，還有什麼情況下才算「你在看它」",
+            "城裡 NPC 站得密就把角度調小；曠野找人可以調大",
+        };
+    }
+
     private int measure() {
         int widest = MIN_W;
         for (String line : insideLines()) {
             widest = Math.max(widest, this.font.width(line) + 8);
+        }
+        for (String line : aroundLines()) {
+            // 面板本身比 W 多 20（左右各 10），所以外圍的行只要不超過那個就好
+            widest = Math.max(widest, this.font.width(line) + 8 - 20);
         }
         return Math.max(widest, this.font.width(modeLabel()) + 20);
     }
@@ -185,7 +202,7 @@ public final class NametagScreen extends Screen {
             case LOOK_AT -> "注視時顯示";
             case REPLACE -> "直接取代原文";
         };
-        return Component.literal("名牌翻譯：" + name);
+        return Component.literal("名牌翻譯: " + name);   // 標籤用半形，跟語料一致
     }
 
     /** 目前這個模式的但書。 */
@@ -208,7 +225,7 @@ public final class NametagScreen extends Screen {
 
         g.drawCenteredString(this.font, this.title, this.width / 2, 22, Colors.TEXT);
         g.drawCenteredString(this.font,
-                Component.literal("名牌要怎麼顯示，還有什麼情況下才算「你在看它」")
+                Component.literal(aroundLines()[0])
                         .withStyle(ChatFormatting.GRAY),
                 this.width / 2, 36, Colors.SUBTLE);
 
@@ -224,7 +241,7 @@ public final class NametagScreen extends Screen {
         }
 
         g.drawCenteredString(this.font,
-                Component.literal("城裡 NPC 站得密就把角度調小；曠野找人可以調大")
+                Component.literal(aroundLines()[1])
                         .withStyle(ChatFormatting.DARK_GRAY),
                 this.width / 2, panelBottom + 8, Colors.FAINT);
 
