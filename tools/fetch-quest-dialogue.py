@@ -93,6 +93,10 @@ def clean(text: str) -> str:
     text = re.sub(r"\[\[([^|\]]*)\|([^\]]*)\]\]", r"\2", text)   # [[頁面|顯示]]
     text = re.sub(r"\[\[([^\]]*)\]\]", r"\1", text)              # [[頁面]]
     text = re.sub(r"\{\{c\|[^|}]*\|([^}]*)\}\}", r"\1", text)    # {{c|顏色|字}}
+    # {{element|f|Fire|}}、{{e|e|Strength|}}：模板畫的是圖示，但<b>名字是台詞的一部分</b>。
+    # 先前被下面那條「其餘模板」連名字一起丟掉，於是變成
+    # 「The elements are... , , , and... ?」——那幾行永遠對不上遊戲裡的文字。
+    text = re.sub(r"\{\{(?:element|e)\|[^|}]*\|([^|}]*)\|?\}\}", r"\1", text)
     text = re.sub(r"\{\{[^}]*\}\}", "", text)                    # 其餘模板
     text = re.sub(r"'''?([^']*)'''?", r"\1", text)               # 粗體斜體
     text = re.sub(r"<[^>]+>", "", text)                          # html
