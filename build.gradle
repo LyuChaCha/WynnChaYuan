@@ -178,6 +178,14 @@ tasks.register('runCombatChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runCombatChecks' }
 
+tasks.register('runChatColourChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證聊天訊息的譯文保不保得住顏色'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ChatColourTest'
+}
+tasks.named('check') { dependsOn 'runChatColourChecks' }
+
 tasks.register('runAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證欄位對齊點的選擇'
