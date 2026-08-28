@@ -205,15 +205,15 @@ public final class NametagScreen extends Screen {
             case LOOK_AT -> "注視時顯示";
             case REPLACE -> "直接取代原文";
         };
-        return Component.literal("名牌翻譯: " + name);   // 標籤用半形，跟語料一致
+        return Component.literal("名牌與漂浮字: " + name);   // 標籤用半形，跟語料一致
     }
 
     /** 目前這個模式的但書。 */
     private String modeHint() {
         return switch (WynnChaYuan.config().nametagMode()) {
-            case OFF -> "名牌完全不動，畫面上只有原本的英文名";
-            case LOOK_AT -> "原文保留著，看著誰才在旁邊補上譯名";
-            case REPLACE -> "英文名會被換掉，畫面上看不到原文";
+            case OFF -> "NPC 名牌、工作站、「空手右鍵」那些字都不動";
+            case LOOK_AT -> "原文保留著，看著它才在準心旁補一個小框";
+            case REPLACE -> "就地換成中文，連畫面中央那些大字也換；看不到原文";
         };
     }
 

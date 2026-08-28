@@ -435,7 +435,7 @@ public final class SettingsScreen extends Screen {
 
         Cards.hint(g, this.font, right + 4, TOP + hintDy(), "裝備名稱多是專有名詞，通常保留原文");
         Cards.hint(g, this.font, right + 4, TOP + rowH() + hintDy(),
-                "模式、停留秒數、偵測距離與夾角");
+                "名牌與漂浮字：關閉／小框／就地取代");
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 2 + hintDy(),
                 "對話框停留秒數（0 = 持續顯示）");
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 3 + hintDy(),
