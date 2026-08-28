@@ -63,7 +63,14 @@ public final class TranslationStoreTest {
                   "King's Recruit#002": {
                    "src": "Sound off, {u}! Are you hurt? The cart hit a boulder.",
                    "dst": "喂，{u}！你受傷了嗎？馬車撞到石頭了。",
-                   "quest": "King's Recruit"
+                   "quest": "King's Recruit",
+                   "source": "wiki"
+                  },
+                  "King's Recruit#003": {
+                   "src": "Hey, {u}! You alright in there? Looks like we hit something.",
+                   "dst": "嘿，{u}！你在裡面還好嗎？我們好像撞到什麼東西了。",
+                   "quest": "King's Recruit",
+                   "source": "wiki"
                   }
                  }
                 }""");
@@ -201,6 +208,36 @@ public final class TranslationStoreTest {
                     store.matchPrefix(half, 40, null) == null);
             check("任務名字對不上就當作不知道",
                     store.matchPrefix(half, 40, "No Such Quest") == null);
+
+            // wiki 抄來的台詞會跟遊戲裡實際跑的字不一樣（官方改過詞、wiki 還沒跟上）。
+            // 兩個版本都在庫裡時，逐字打字會先貼 wiki 版、多打幾個字再換成校訂版——
+            // 實機錄到的就是「嘿，」講到一半自己變成「喂，」。見 #curatedRival。
+            check("同一句有校訂版時，一開始就用校訂版",
+                    "Hey, {u}! Are you alright in there? It looks like we've hit something."
+                            .equals(store.matchPrefix("Hey, {u}", 8, "King's Recruit")));
+            check("多打幾個字之後還是同一條，不會換",
+                    "Hey, {u}! Are you alright in there? It looks like we've hit something."
+                            .equals(store.matchPrefix("Hey, {u}! Are you al", 20,
+                                                      "King's Recruit")));
+            // 反面：沒有校訂版時，wiki 那條照樣要用——這條路不能把任務索引整個廢掉
+            check("沒有校訂版時 wiki 那條照用",
+                    "Sound off, {u}! Are you hurt? The cart hit a boulder."
+                            .equals(store.matchPrefix("Sound off, {u}! Are you h", 5,
+                                                      "King's Recruit")));
+
+            // 「同一句話」是看用字重疊，不是看共同前綴——上面那兩條在
+            // 「Hey, {u}! 」之後就立刻岔開了。
+            check("改過幾個詞算同一句",
+                    TranslationStore.sameLine(
+                            "Hey, {u}! You alright in there? Looks like we hit something.",
+                            "Hey, {u}! Are you alright in there? "
+                                    + "It looks like we've hit something."));
+            check("只是開頭一樣不算同一句",
+                    !TranslationStore.sameLine(
+                            "Sound off, {u}! Are you hurt? The cart hit a boulder.",
+                            "Sound off, {u}! Are you ready? The ship leaves at dawn."));
+            check("空句子不算", !TranslationStore.sameLine("", "anything at all"));
+            realCorpus();
         } finally {
             delete(dir);
         }
@@ -231,6 +268,34 @@ public final class TranslationStoreTest {
             }
         }
         Files.deleteIfExists(dir);
+    }
+
+    /**
+     * 拿<b>真正出貨的語料</b>再驗一次同一件事。
+     *
+     * <h2>為什麼要多這一段</h2>
+     * 上面那些用的是臨時造的小語料，證明的是程式邏輯。但這個 bug 的成因有一半
+     * 在<b>資料</b>裡：wiki 抄來的舊版與人工校訂的新版同時存在，而校訂版沒有
+     * quest 欄位、看不見於任務索引。臨時語料再怎麼造也不會發現真語料哪天
+     * 又多出第三個版本——那時候 {@code settle} 會退回 {@code null}，
+     * 畫面上又變回「講到一半才跳成中文」，而所有單元測試依然全綠。
+     */
+    private static void realCorpus() {
+        Path corpus = Path.of("src/main/resources/assets/wynnchayuan/translations",
+                              Languages.DEFAULT);
+        if (!Files.isDirectory(corpus)) {
+            return;                            // 不在原始碼樹裡跑就跳過
+        }
+        TranslationStore real = new TranslationStore();
+        real.loadAll(corpus);
+        String live = "Hey, {u}! Are you alright in there? "
+                + "It looks like we've hit something.";
+        String first = real.matchPrefix("Hey, {u}", 16, "King's Recruit");
+        check("實際語料：打到「Hey, {u}」就認得出是哪一句（拿到 " + first + "）",
+                live.equals(first));
+        String later = real.matchPrefix("Hey, {u}! Are you al", 28, "King's Recruit");
+        check("實際語料：多打幾個字還是同一條（拿到 " + later + "）",
+                live.equals(later));
     }
 
     private static void check(String name, boolean ok) {

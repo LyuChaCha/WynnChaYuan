@@ -296,7 +296,9 @@ public final class WynnChaYuan implements ClientModInitializer {
         screenshotKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.screenshot",
                 InputConstants.Type.KEYSYM,
-                org.lwjgl.glfw.GLFW.GLFW_KEY_F8,
+                // 預設從 F8 換成 F9：實機回報 F8 按下去沒反應（有東西也綁在
+                // 那個鍵上，見 PanelShot#conflict），改綁 F9 才會動。
+                org.lwjgl.glfw.GLFW.GLFW_KEY_F9,
                 KEY_CATEGORY));
         copyChatKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
                 "key.wynnchayuan.copyChat",
