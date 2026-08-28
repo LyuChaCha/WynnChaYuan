@@ -2215,6 +2215,140 @@ public final class LineTranslator {
     }
 
     /**
+     * 「整行同色」的行，連同它的<b>譯文</b>一起收成重點段。
+     *
+     * <h2>為什麼需要</h2>
+     * 上色是拿原文的<b>字面</b>到譯文裡找。一個詞查得到譯文
+     * （見 {@link #withTranslations}）還好，但整句就不行了：
+     * {@code Welcome to Wynncraft!} 不是語料的鍵（鍵是整段四行），
+     * lookup、lookupTerm、lookupWordCore 三條路全落空。於是原文是金色粗體、
+     * 譯文掉成一片灰色——一亮一暗擺在一起，一看就知道下面那行是外掛貼的。
+     *
+     * <p>但這種情況根本不需要查表——<b>位置就是答案</b>：
+     * 原文第 i 行從頭到尾只有一個顏色，譯文第 i 行就是那個顏色。
+     * 把「譯文那一行」當成一個重點段交給既有的貼樣式機制，不必另外開一條路。
+     *
+     * <h2>何時不做</h2>
+     * 行數對不上就不做——中文比英文緊湊，兩行的句子常常一行就講完，
+     * 此時「第 i 行」兩邊指的不是同一件事，比對下去只會上錯色。
+     * 一行裡混了幾種顏色的也不做，那是 {@code accents} 本來就在管的事。
+     */
+    private static List<LineParts.Piece> wholeLineAccents(
+            List<LineParts> parts, List<LineParts.Piece> allRuns,
+            String[] translated, Style blockStyle) {
+        String template = parts.size() == 1 ? parts.get(0).template() : null;
+        List<Style> source = template == null
+                ? perPartStyles(parts) : uniformStyles(allRuns, template);
+        String[] dst = String.join(NL, translated).split(NL, -1);
+        if (source.size() != dst.length) {
+            return List.of();
+        }
+        List<LineParts.Piece> out = new ArrayList<>();
+        for (int i = 0; i < dst.length; i++) {
+            Style only = source.get(i);
+            if (only == null || java.util.Objects.equals(only, blockStyle)) {
+                continue;
+            }
+            String text = PLACEHOLDER.matcher(dst[i]).replaceAll("").strip();
+            if (hasContent(text)) {
+                out.add(new LineParts.Piece(text, only));
+            }
+        }
+        return out;
+    }
+
+    private static final String NL = "\n";
+
+    /** 譯文裡的 {@code {#}}、{@code {~}}、{@code {p}}、{@code {u}} 之類。 */
+    private static final java.util.regex.Pattern PLACEHOLDER =
+            java.util.regex.Pattern.compile("\\{[^}]*\\}");
+
+    /**
+     * 每一行原文的唯一樣式；那一行混了幾種就是 {@code null}。
+     *
+     * <h2>為什麼要靠模板數行</h2>
+     * {@code LineParts.of} 只收「不是空白」的片段，所以純換行的那一段
+     * <b>整個被丟掉了</b>——光看 {@code runs} 根本不知道行在哪裡斷。
+     * 模板留著換行，就拿它當尺：一行一行量過去，同時把 {@code runs} 依序消耗掉。
+     *
+     * <p>量的是<b>非空白字元數</b>。模板裡的文字就是各片段的文字接起來的，
+     * 只是中間多了 {@code {#}} 這類佔位符與換行；把佔位符去掉、只數實字，
+     * 兩邊就對得起來。
+     */
+    private static List<Style> uniformStyles(List<LineParts.Piece> runs, String template) {
+        List<Style> out = new ArrayList<>();
+        int at = 0;                        // 走到第幾個 run
+        int eaten = 0;                     // 那個 run 已經用掉幾個實字
+        for (String line : template.split(NL, -1)) {
+            int need = solidCount(PLACEHOLDER.matcher(line).replaceAll(""));
+            Style only = null;
+            boolean mixed = false;
+            boolean seen = false;
+            while (need > 0 && at < runs.size()) {
+                LineParts.Piece run = runs.get(at);
+                int have = solidCount(run.text()) - eaten;
+                if (have <= 0) {           // 這個 run 沒有實字，跳過
+                    at++;
+                    eaten = 0;
+                    continue;
+                }
+                if (!seen) {
+                    only = run.style();
+                    seen = true;
+                } else if (!java.util.Objects.equals(only, run.style())) {
+                    mixed = true;
+                }
+                int take = Math.min(have, need);
+                need -= take;
+                if (take == have) {
+                    at++;
+                    eaten = 0;
+                } else {
+                    eaten += take;
+                }
+            }
+            out.add(mixed || !seen ? null : only);
+        }
+        return out;
+    }
+
+    /** 非空白、非圖示的字元數。 */
+    private static int solidCount(String text) {
+        return (int) text.codePoints().filter(cp -> !Character.isWhitespace(cp)
+                && !com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)).count();
+    }
+
+    /** tooltip 那一路：本來就一行一個 {@link LineParts}，直接看每一份自己的片段。 */
+    private static List<Style> perPartStyles(List<LineParts> parts) {
+        List<Style> out = new ArrayList<>();
+        for (LineParts part : parts) {
+            Style only = null;
+            boolean mixed = false;
+            boolean seen = false;
+            for (LineParts.Piece run : part.runs()) {
+                if (!hasContent(run.text())) {
+                    continue;
+                }
+                if (!seen) {
+                    only = run.style();
+                    seen = true;
+                } else if (!java.util.Objects.equals(only, run.style())) {
+                    mixed = true;
+                    break;
+                }
+            }
+            out.add(mixed || !seen ? null : only);
+        }
+        return out;
+    }
+
+    /** 這一段有沒有真正的字（非空白、非圖示）。 */
+    private static boolean hasContent(String text) {
+        return text.codePoints().anyMatch(cp -> !Character.isWhitespace(cp)
+                && !com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp));
+    }
+
+    /**
      * @param overrideGlyphs 不是 {@code null} 就<b>取代</b>逐行收來的符號池
      * @param overridePlaces 不是 {@code null} 就<b>取代</b>逐行認出來的地名池
      *                       （見 {@link #rejoin}：整段重組過的話，兩個池子都得跟著換，
@@ -2255,6 +2389,8 @@ public final class LineTranslator {
         }
         accents.addAll(LineParts.accentsAgainst(allRuns, blockStyle));
         accents = withTranslations(accents, store);
+        // 整行同色的那幾行，直接拿譯文那一行當重點段。見 #wholeLineAccents。
+        accents.addAll(wholeLineAccents(parts, allRuns, translated, blockStyle));
 
         // 斷行不要把一個重點詞切成兩半，否則它的顏色會整個掉。見 keepAccentsWhole。
         String[] flowed = keepAccentsWhole(translated, accents);
