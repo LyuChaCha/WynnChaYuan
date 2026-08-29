@@ -49,7 +49,29 @@
     （「永囚於它出生之處。穿過諸界之間的薄弱之點，它。將。再度。崛起！」），
     保留原文一字一頓的斷法。
 
+- **《One Thousand Meters Under》、《Hunger of the Gerts Part I》、《Meaningful Holiday》
+  整篇翻完**（105 + 112 + 108 句）。任務進度來到 7796/22067（35.3%）。
+  - 《One Thousand Meters Under》：虛空村民把母音拖得很長
+    （`Whoooooooo`、`soooo`、`youuuu`），中文以「——」承接
+    （「你——是——誰——！？」）。`the void` 依裝備 lore 既有譯法作「虛空」。
+  - 《Hunger of the Gerts Part I》：Gert 沒有詞可以指稱東西，只能描述外觀，
+    這些迂迴說法是整篇的笑點，全部照留：`orange gourd`→「橘色葫蘆」、
+    `day mask`→「日面具」、`new folk`→「新來的人」、
+    `red tree fruit`→「紅色樹果」、`clear green rocks`→「透明綠石頭」。
+    這一篇的 Gert 語法其實是通順的（只有 Part II 的族長講話破碎），
+    所以中文也維持通順但生硬，沒有跟著 Part II 一起打破語法。
+  - 《Meaningful Holiday》：Nick 那段對富人的演說是全篇的重心，
+    語氣壓住不煽情。結尾的雙關 `Sanda Claus`（Santa + sand，他管的是沙漠）
+    處理成「沙誕老人」。
+
 ### 修正
+
+- **`validate.py` 新增「譯文混進別種文字」檢查。** 這種錯誤發生過兩次
+  （`我們всі都想…`、`就有條路можно下去`）：JSON 沒壞、佔位符也對得上、
+  既有規則一條都不會攔，它只會在遊戲裡靜靜顯示成一串亂碼，兩次都是靠人眼看到的。
+  現在按語言判斷：西里爾字母出現在 `zh_tw` 是錯誤，出現在 `ru_ru` 不是；
+  假名出現在 `ja_jp` 正常，出現在 `zh_tw` 就會被擋。
+  拉丁字母永遠不查——專有名詞本來就維持原文。
 
 - **維基抓取時被丟掉的座標補回 61 條目標行。** 維基把座標寫成模板
   （`{{MapLink|x=477|y=70|z=-1623}}`、`{{RenderLocation| x = ..| y = ..| z = ..}}`），
