@@ -3,31 +3,106 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
-## [1.99.70] - 2026-08-29
+## [未發布]
 
-### 修正
+> 純翻譯的更新不逐批發版。譯文合併進 `main` 之後玩家下次進遊戲就會自動同步到
+> （見 v1.99.68），不需要重新下載模組。這一段持續累積，等下次有程式碼改動
+> 需要發 jar 時再一起併入該版本。
 
-- **任務完成之後，追蹤任務的譯文小框不會消失。** 原文那一欄已經被 Wynncraft 收掉，
-  我們的譯文還留在畫面上，而且停在一個<b>已經完成</b>的任務，看起來像沒做完。
+### 新增
 
-  這塊疊層原本純粹由 `ActivityTrackerUpdatedEvent` 推動，靠「事件補送一則空的」
-  來收掉。問題是任務完成的那一刻那則空事件不一定會來——Wynncraft 直接把追蹤欄
-  收掉，Wynntils 就不再發事件了。
+- **Lootrun 賜福說明文字 22 段。** 這些在遊戲裡是被換行切開的片段
+  （`Curses are now half as`、`Boon Potency (+{~}), your`），逐行翻會是破碎的中文。
+  tooltip 的翻譯是「<b>先試整段、再退回逐行</b>」（`TooltipPanel#translateLines`），
+  所以補的是<b>整段</b>的條目——用收集順序把賜福卡還原回來，整段翻、整段收。
 
-  改成在繪製之前直接問 Wynntils 的權威狀態（`Models.Activity.getTrackedName()`）：
-  它沒在追蹤，我們就不畫。這比「多久沒更新就清掉」的計時器可靠——追蹤內容本來就
-  可能好幾分鐘不變，計時器會把正常顯示中的譯文誤清掉。拿不到狀態時維持顯示，
-  寧可多留一下也不要讓正常的譯文憑空消失。
+  涵蓋 Heavensent、Looter、Patient Champion、Persistent Champion、Gourmand、
+  Mob Slaughter、Midas Touch、Persnickety、Chronokinesis、Ostinato、Materialism、
+  Hoarder、Knife Edge、Gambling Beast、Dying Light、Monochromokopia、Hubris、
+  Chronotrigger、Radiant Hunter，以及起跑面板與每日獎勵。
 
-  對話框那一塊本來就是照這個方式做的（跟著動作列的 `DialogueSegment` 走），
-  只有追蹤器漏掉了。
+  <p><b>行數刻意不硬湊</b>：`validate.py` 本來就寫明「換行數不必一致，中文比英文
+  緊湊，硬湊會斷在莫名其妙的地方」，模組會把佔位符依序填回，行數不同也對得上。
+  所有 22 段的譯文行數都<b>不超過</b>原文，佔位符數量逐條比對過完全相同。
+
+### 尚未處理
+
+- 還有約 10 張賜福卡的收集資料是<b>殘缺或交錯</b>的（兩份 tooltip 被收在一起、
+  或只收到一半），例如 Bad Omen、Picky Looter、Madman、Lightbringer、
+  Interest Scheme、Treasury Bill。硬拼會做出永遠比對不到的條目，
+  所以先不動——下次跑 Lootrun 時把滑鼠停在那幾張卡上，收到完整的再補。
+
+
+
+- **《Undersupply》整篇翻完**（125 句）。任務進度來到 8152/22067（36.9%）。
+  五個村民各有各的說法方式，語氣分開處理：Romu 的老派口語、Aris 拮据卻仍
+  講究禮數的措辭、Risch 的焦慮客套、Oshman 浮誇的貴族腔、Hurlay 的沉吟。
+  管家 Hayn 全程面無表情，最後那句引自箴言的諺語
+  （`The beginning of strife is as when one lets out water.`）
+  處理成「紛爭的開端，正如同放開水口」，保留它的格言體。
+  `Sovereign` 沿用《A New Beginning》既有的「統領」。
+
+- **《Dwarves and Doguns Part I》整篇翻完**（122 句）。任務進度來到 8274/22067（37.5%）。
+  劇中劇那一段的台詞原文<b>刻意寫得很爛</b>（`These nice minerals are very nice`、
+  `afternoon demon luncheon`、`Dragons are no match for us?? CHARGE!`）——
+  那是宣傳劇拙劣的表現，也是整篇的伏筆，中文照留這份拙劣，沒有潤飾成通順的戲劇對白。
+  Korzim 的斷續語氣（`We use.. earth and.. fire.. elements.`）照原文的停頓處理。
 
 ### 調整
 
-- **`tools/typing-audit.py` 的報告會列出「一閃而過」那一批的內容。**
-  先前只印數量（「另有 4 句只是開頭一兩個字閃一下」），沒人知道是哪 4 句，
-  玩家回報「中文突然變成別的字」時想拿這份清單去對，卻對不到東西。
-  數字不能拿來查證，內容才可以。
+- **統一三條 `Yes, yes, ` 開頭的譯法**（經翻譯團隊同意後修改）：
+  - `Yes, yes, we'll be faster next time.`（`quest.json`，「好啦好啦」）
+    改為「是是是」，與《King's Recruit》裡<b>同一個角色、同一句話的長版本</b>一致。
+    這一組是真正會出問題的：兩條原文是嚴格前綴關係，開頭卻不同，
+    正是「講到一半中文自己改口」的形狀。
+  - Captain Ragon 在《Elemental Exercise》裡兩句都以 `Yes, yes,` 開頭，
+    卻一句「好了好了」一句「很好、很好」，統一為「好了好了」。
+  - Dr. Picard 在《Queen's Recruit》裡同樣兩種講法，統一為「是是是」。
+
+  跨角色的差異<b>維持不變</b>——Sovereign Majin 的「對對對」、Captain Kymer 的
+  「好啦好啦」、Mayor Alvin 的「是是」各自屬於不同角色的語氣，不該壓成同一個詞。
+
+## [1.99.72] - 2026-08-29
+
+### 修正
+
+- **公會名稱會跟著名牌進入共享語料。** 一次 Lootrun 就收進 83 塊別人的領地
+  （`Kandon Ridge / Controlled by Paladins United [Lv. 32]`）。
+
+  聊天與 GUI 兩條路都有 `PlayerDataFilter` 擋著（那一次分別擋掉 229 與 4199 筆），
+  名牌那條路<b>也有</b>——漏掉的原因是濾網只認「長得像帳號名」的東西
+  （英數加底線），而公會名沒有底線，整條穿了過去。
+
+  `PlayerDataFilter` 與 `tools/import-captured.py` 兩道關卡都補上
+  `Controlled by`。這兩道是<b>刻意重複</b>的：一道在收集時、一道在進倉庫前，
+  語料是要推上公開倉庫的，別人的名字一旦進去就洗不掉了。
+
+### 新增
+
+- **Lootrun 的介面與賜福翻譯，共 326 條。**
+  - **信標選單 278 條**。聊天視窗的信標選單是兩欄式的，收集端把每一種兩兩組合
+    都收了一份——那是排列組合，不是 278 句不同的話。所以先翻出 77 個
+    <b>原子詞</b>，再機械地展開成所有排列，這樣任何一個組合都不會漏、
+    用詞也一定一致。
+  - **獨立的介面行 28 條**（起跑面板、每日獎勵、挑戰計數）。
+  - **賜福與使命名稱 20 條**：天賜、拾荒者、沉著的鬥士、Orphion 的恩典、
+    老饕、屠戮、點金之手、囤積者、利滾利、嗜賭之獸、將盡之光、單色萬花筒、
+    凶兆、內心澄明、瘋子、引光者、光輝獵手、狂妄、時之扳機……
+
+  用詞：`Lootrun` 依對照表<b>不翻</b>；`Beacon`→「信標」沿用
+  `ingredient.json` 既有的「藍移信標」；`Boon`→「賜福」、`Curse`→「詛咒」、
+  `Mission`→「使命」（避開已被 Quest 用掉的「任務」）、
+  `Vibrant`→「璀璨」、`Obscured`→「晦暗」、`Potency`→「效力」、
+  `Reward Pull`→「獎勵抽數」。
+
+- 匯入該次收集的 1131 條新字串（扣掉被個資濾網擋下的）。
+
+### 尚未處理
+
+- **賜福的說明文字**還沒翻。那些在遊戲裡是<b>被換行切開的片段</b>
+  （`Curses are now half as`、`Boon Potency (+{~}), your`），逐行翻會變成
+  破碎的中文。tooltip 是「先試整段、再退回逐行」，所以正確做法是補
+  <b>整段</b>的條目——我已經用收集順序把 40 張賜福卡還原出來了，下一批處理。
 
 ## [1.99.71] - 2026-08-29
 
@@ -73,83 +148,31 @@
   技能名稱本來就需要能被替換。要根治得讓查表知道「現在看的是裝備還是技能」，
   那是設計層的改動，先回報不動手。
 
-## [1.99.72] - 2026-08-29
+## [1.99.70] - 2026-08-29
 
 ### 修正
 
-- **公會名稱會跟著名牌進入共享語料。** 一次 Lootrun 就收進 83 塊別人的領地
-  （`Kandon Ridge / Controlled by Paladins United [Lv. 32]`）。
+- **任務完成之後，追蹤任務的譯文小框不會消失。** 原文那一欄已經被 Wynncraft 收掉，
+  我們的譯文還留在畫面上，而且停在一個<b>已經完成</b>的任務，看起來像沒做完。
 
-  聊天與 GUI 兩條路都有 `PlayerDataFilter` 擋著（那一次分別擋掉 229 與 4199 筆），
-  名牌那條路<b>也有</b>——漏掉的原因是濾網只認「長得像帳號名」的東西
-  （英數加底線），而公會名沒有底線，整條穿了過去。
+  這塊疊層原本純粹由 `ActivityTrackerUpdatedEvent` 推動，靠「事件補送一則空的」
+  來收掉。問題是任務完成的那一刻那則空事件不一定會來——Wynncraft 直接把追蹤欄
+  收掉，Wynntils 就不再發事件了。
 
-  `PlayerDataFilter` 與 `tools/import-captured.py` 兩道關卡都補上
-  `Controlled by`。這兩道是<b>刻意重複</b>的：一道在收集時、一道在進倉庫前，
-  語料是要推上公開倉庫的，別人的名字一旦進去就洗不掉了。
+  改成在繪製之前直接問 Wynntils 的權威狀態（`Models.Activity.getTrackedName()`）：
+  它沒在追蹤，我們就不畫。這比「多久沒更新就清掉」的計時器可靠——追蹤內容本來就
+  可能好幾分鐘不變，計時器會把正常顯示中的譯文誤清掉。拿不到狀態時維持顯示，
+  寧可多留一下也不要讓正常的譯文憑空消失。
 
-### 新增
-
-- **Lootrun 的介面與賜福翻譯，共 326 條。**
-  - **信標選單 278 條**。聊天視窗的信標選單是兩欄式的，收集端把每一種兩兩組合
-    都收了一份——那是排列組合，不是 278 句不同的話。所以先翻出 77 個
-    <b>原子詞</b>，再機械地展開成所有排列，這樣任何一個組合都不會漏、
-    用詞也一定一致。
-  - **獨立的介面行 28 條**（起跑面板、每日獎勵、挑戰計數）。
-  - **賜福與使命名稱 20 條**：天賜、拾荒者、沉著的鬥士、Orphion 的恩典、
-    老饕、屠戮、點金之手、囤積者、利滾利、嗜賭之獸、將盡之光、單色萬花筒、
-    凶兆、內心澄明、瘋子、引光者、光輝獵手、狂妄、時之扳機……
-
-  用詞：`Lootrun` 依對照表<b>不翻</b>；`Beacon`→「信標」沿用
-  `ingredient.json` 既有的「藍移信標」；`Boon`→「賜福」、`Curse`→「詛咒」、
-  `Mission`→「使命」（避開已被 Quest 用掉的「任務」）、
-  `Vibrant`→「璀璨」、`Obscured`→「晦暗」、`Potency`→「效力」、
-  `Reward Pull`→「獎勵抽數」。
-
-- 匯入該次收集的 1131 條新字串（扣掉被個資濾網擋下的）。
-
-### 尚未處理
-
-- **賜福的說明文字**還沒翻。那些在遊戲裡是<b>被換行切開的片段</b>
-  （`Curses are now half as`、`Boon Potency (+{~}), your`），逐行翻會變成
-  破碎的中文。tooltip 是「先試整段、再退回逐行」，所以正確做法是補
-  <b>整段</b>的條目——我已經用收集順序把 40 張賜福卡還原出來了，下一批處理。
-
-## [未發布]
-
-> 純翻譯的更新不逐批發版。譯文合併進 `main` 之後玩家下次進遊戲就會自動同步到
-> （見 v1.99.68），不需要重新下載模組。這一段持續累積，等下次有程式碼改動
-> 需要發 jar 時再一起併入該版本。
-
-### 新增
-
-- **《Undersupply》整篇翻完**（125 句）。任務進度來到 8152/22067（36.9%）。
-  五個村民各有各的說法方式，語氣分開處理：Romu 的老派口語、Aris 拮据卻仍
-  講究禮數的措辭、Risch 的焦慮客套、Oshman 浮誇的貴族腔、Hurlay 的沉吟。
-  管家 Hayn 全程面無表情，最後那句引自箴言的諺語
-  （`The beginning of strife is as when one lets out water.`）
-  處理成「紛爭的開端，正如同放開水口」，保留它的格言體。
-  `Sovereign` 沿用《A New Beginning》既有的「統領」。
-
-- **《Dwarves and Doguns Part I》整篇翻完**（122 句）。任務進度來到 8274/22067（37.5%）。
-  劇中劇那一段的台詞原文<b>刻意寫得很爛</b>（`These nice minerals are very nice`、
-  `afternoon demon luncheon`、`Dragons are no match for us?? CHARGE!`）——
-  那是宣傳劇拙劣的表現，也是整篇的伏筆，中文照留這份拙劣，沒有潤飾成通順的戲劇對白。
-  Korzim 的斷續語氣（`We use.. earth and.. fire.. elements.`）照原文的停頓處理。
+  對話框那一塊本來就是照這個方式做的（跟著動作列的 `DialogueSegment` 走），
+  只有追蹤器漏掉了。
 
 ### 調整
 
-- **統一三條 `Yes, yes, ` 開頭的譯法**（經翻譯團隊同意後修改）：
-  - `Yes, yes, we'll be faster next time.`（`quest.json`，「好啦好啦」）
-    改為「是是是」，與《King's Recruit》裡<b>同一個角色、同一句話的長版本</b>一致。
-    這一組是真正會出問題的：兩條原文是嚴格前綴關係，開頭卻不同，
-    正是「講到一半中文自己改口」的形狀。
-  - Captain Ragon 在《Elemental Exercise》裡兩句都以 `Yes, yes,` 開頭，
-    卻一句「好了好了」一句「很好、很好」，統一為「好了好了」。
-  - Dr. Picard 在《Queen's Recruit》裡同樣兩種講法，統一為「是是是」。
-
-  跨角色的差異<b>維持不變</b>——Sovereign Majin 的「對對對」、Captain Kymer 的
-  「好啦好啦」、Mayor Alvin 的「是是」各自屬於不同角色的語氣，不該壓成同一個詞。
+- **`tools/typing-audit.py` 的報告會列出「一閃而過」那一批的內容。**
+  先前只印數量（「另有 4 句只是開頭一兩個字閃一下」），沒人知道是哪 4 句，
+  玩家回報「中文突然變成別的字」時想拿這份清單去對，卻對不到東西。
+  數字不能拿來查證，內容才可以。
 
 ## [1.99.69] - 2026-08-29
 
