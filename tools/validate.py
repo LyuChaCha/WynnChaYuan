@@ -49,6 +49,35 @@ BAD_PLACEHOLDER = re.compile(r"[｛{]\s*[#~pu]\s*[｝}]")
 # 帶編號的數值佔位符：{~1} 到 {~9}。指名要原文的第幾個數值。
 NUMBERED = re.compile(r"\{~[1-9]\}")
 
+# 顏色佔位符。只出現在<b>譯文</b>——原文的鍵是遊戲送來的字，不會有這種東西。
+#
+#   {c1}–{c9}      用原文的第 N 個顏色（依第一次出現的順序編號）
+#   {c:#FF55FF}    自己指定色碼
+#   {c:gold}       自己指定原版顏色名稱
+#   {/}            到此為止，回到這一段原本的樣式
+#
+# 哪一個編號是哪一個顏色，看 majorid-debug.txt 的「可用的顏色」那一段。
+COLOUR = re.compile(r"\{c(?:[1-9]|:[^}]+)\}")
+
+# 看起來想寫顏色佔位符但寫錯的樣子：{c}、{c0}、{ c1 }、{c12}、{C1}……
+# 這種錯不會讓譯文消失，會<b>原樣印在畫面上</b>，玩家直接看到 {c1}。
+BAD_COLOUR = re.compile(r"[｛{]\s*[cC][^}｝]*[｝}]")
+
+# Minecraft 的十六個原版顏色名稱，{c:名稱} 只認這些。
+# Wynncraft 大部分的顏色不在裡面（元素色、稀有度色都是自訂色碼），
+# 那些請用 {cN} 直接搬原文的，不要自己挑一個相近的原版色。
+VANILLA_COLOURS = {
+    "black", "dark_blue", "dark_green", "dark_aqua", "dark_red", "dark_purple",
+    "gold", "gray", "dark_gray", "blue", "green", "aqua", "red",
+    "light_purple", "yellow", "white",
+}
+
+# {/}：顏色到此為止，回到這一段原本的樣式。
+COLOUR_END = "{/}"
+
+# 色碼：井字號加六位十六進位。
+HEX_COLOUR = re.compile(r"#[0-9A-Fa-f]{6}$")
+
 
 def load_glossary() -> dict[str, str]:
     """讀 GLOSSARY.md 裡的對照表。
@@ -159,6 +188,33 @@ def check_pair(path: str, key: str, src: str, dst: str,
     if wrong:
         out.append(Problem("error", path, key,
                            f"佔位符寫錯：{wrong}（要正好是 {{#}} {{~}} {{p}} {{u}}，不能有空格或全形括號）"))
+
+    # 顏色佔位符。寫錯不會讓譯文消失，會原樣印在畫面上——玩家直接看到 {c1}，
+    # 而且沒有人會想到那是譯文檔裡的錯字。
+    bad_colours = [b for b in BAD_COLOUR.findall(dst) if not COLOUR.fullmatch(b)]
+    if bad_colours:
+        out.append(Problem("error", path, key,
+                           f"顏色佔位符寫錯：{bad_colours}（要正好是 {{c1}}–{{c9}}、"
+                           f"{{c:#FF55FF}} 或 {{c:gold}}，不能有空格、全形括號或兩位數）"))
+    for spec in COLOUR.findall(dst):
+        if not spec.startswith("{c:"):
+            continue
+        name = spec[3:-1]
+        if HEX_COLOUR.match(name) or name in VANILLA_COLOURS:
+            continue
+        out.append(Problem("error", path, key,
+                           f"{spec} 不是認得出來的顏色 —— 色碼要寫成 #RRGGBB，"
+                           f"名稱只認 Minecraft 原版那十六個"
+                           f"（{', '.join(sorted(VANILLA_COLOURS))}）。"
+                           f"Wynncraft 自己的顏色請用 {{c1}}–{{c9}} 直接搬原文的"))
+    if COLOUR.search(src) or COLOUR_END in src:
+        out.append(Problem("error", path, key,
+                           "原文的鍵裡不該有顏色佔位符 —— 那是給譯文用的，"
+                           "寫進鍵裡會永遠查不到"))
+    if dst.count(COLOUR_END) > len(COLOUR.findall(dst)):
+        out.append(Problem("warn", path, key,
+                           f"{COLOUR_END} 比顏色佔位符還多 —— 多出來的沒有作用，"
+                           f"確認是不是刪掉 {{cN}} 時忘了一起刪"))
 
     # 換行數不必一致。中文比英文緊湊，原文分兩行的句子往往一行就講完，
     # 硬湊行數會斷在莫名其妙的地方（issue #44）。模組會把整段的佔位符依序填回，

@@ -276,6 +276,56 @@ public final class FlowedDebug {
         }
     }
 
+    /**
+     * 這一條原文用得到的顏色，連同編號。
+     *
+     * <h2>為什麼一定要有</h2>
+     * 譯文可以用 {@code {c1}}、{@code {c2}} 指定顏色（見
+     * {@code LineTranslator#colourToken}）。但「第 1 個顏色是哪一個」是程式
+     * 依原文片段的先後算出來的，譯者<b>看不到</b>——沒有這一欄，那個功能就只能
+     * 靠試誤，等於沒有。
+     *
+     * <p>所以每翻一條就把調色盤寫出來：編號、色碼、粗體底線之類的裝飾，
+     * 再附上譯文本身好對照是哪一條。
+     */
+    public static void palette(List<Style> colours, String[] translated) {
+        if (file == null || colours == null || colours.size() < 2
+                || paletteSeen >= PALETTE_LIMIT) {
+            return;                            // 只有一個顏色的沒什麼好挑
+        }
+        StringBuilder id = new StringBuilder("palette");
+        for (String line : translated) {
+            id.append(line);
+        }
+        if (!already.add(id.toString())) {
+            return;
+        }
+        paletteSeen++;
+        try {
+            StringBuilder sb = new StringBuilder();
+            sb.append("=== 可用的顏色 ").append(paletteSeen).append(" ===")
+              .append(System.lineSeparator());
+            for (String line : translated) {
+                sb.append("  譯文：").append(line).append(System.lineSeparator());
+            }
+            for (int i = 0; i < colours.size(); i++) {
+                sb.append("    {c").append(i + 1).append("}  ")
+                  .append(describe(colours.get(i)))
+                  .append(System.lineSeparator());
+            }
+            sb.append(System.lineSeparator());
+            Files.writeString(file, sb.toString(), StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        } catch (Throwable t) {
+            // 診斷絕不能反過來弄壞畫面
+        }
+    }
+
+    private static int paletteSeen = 0;
+
+    /** 調色盤那一欄的額度，跟其他欄分開算。 */
+    private static final int PALETTE_LIMIT = 20;
+
     private static int rowSeen = 0;
 
     /** 多行的訊息本來就不多，記十二筆綽綽有餘。 */
