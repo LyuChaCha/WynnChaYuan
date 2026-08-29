@@ -503,6 +503,57 @@ def check_substitutable_names(files: list[Path]) -> list[Problem]:
     return out
 
 
+def check_gear_name_switch(files: list[Path]) -> list[Problem]:
+    """有名稱條目的檔案要表態：受不受 F6「翻譯物品名稱」開關管。
+
+    <h2>那個開關是為誰設的</h2>
+    只為<b>裝備</b>——裝備名稱保持英文才對得上 wiki、交易市場與社群討論。
+    素材、材料、典籍、面向、護符跟交易市場無關，被它關掉沒有道理。
+
+    <h2>為什麼要擋</h2>
+    開關<b>預設是關的</b>，所以標錯的後果是「譯文靜靜地不見」：
+    玩家打開素材袋，標題與說明都是中文，九個素材名稱全是英文，
+    看起來就像翻譯憑空消失，沒有任何錯誤訊息可循。v1.99.73 就是這樣。
+
+    <p>所以規則寫死成兩邊都要明說：`gear-*.json` 不可以標 false，
+    其餘有名稱的道具檔<b>必須</b>標 false。新增一個道具檔忘了標，
+    會在這裡得到一則講清楚的錯誤，而不是在遊戲裡少一半譯文。
+    """
+    out: list[Problem] = []
+    for path in files:
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:                                     # noqa: BLE001
+            continue
+        if not isinstance(data, dict):
+            continue
+        meta = data.get("_meta")
+        meta = meta if isinstance(meta, dict) else {}
+        if meta.get("itemNames") is False:
+            continue                       # 走 terms 那條路，這個開關管不到
+        entries = data.get("entries")
+        if not isinstance(entries, dict):
+            continue
+        names = sum(1 for v in entries.values()
+                    if isinstance(v, dict) and v.get("role") == "name"
+                    and (v.get("dst") or "").strip())
+        if names == 0:
+            continue                       # 沒有名稱條目，這個旗標不影響任何事
+
+        gear = path.name.startswith("gear-")
+        flag = meta.get("gearNames")
+        if gear and flag is False:
+            out.append(Problem("error", path.name, "_meta.gearNames",
+                               "裝備檔不可以標成 false —— 那會讓「翻譯物品名稱」"
+                               "開關對它失效，裝備名稱是刻意保留英文的"))
+        elif not gear and flag is not False:
+            out.append(Problem("error", path.name, "_meta.gearNames",
+                               f"這個檔有 {names} 個名稱，但沒有標 gearNames: false，"
+                               f"於是它們會跟裝備一起被「翻譯物品名稱」開關關掉——"
+                               f"而那個開關預設就是關的。不是裝備的話請補上 false"))
+    return out
+
+
 def check_duplicates(files: list[Path]) -> list[Problem]:
     """同一個原文出現在兩個檔案裡，而且譯法不同。
 
@@ -658,7 +709,8 @@ def main(argv: list[str]) -> int:
             print(f"── {lang} ──")
         # 「同一個原文兩種譯法」只在<b>同一種語言之內</b>才是問題
         dupes = (check_duplicates(group) + check_misfiled(group)
-                 + check_substitutable_names(group))
+                 + check_substitutable_names(group)
+                 + check_gear_name_switch(group))
         if dupes:
             print()
             print("跨檔重複")

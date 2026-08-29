@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Recipe For Disaster",
   "count": 139,
-  "translated": 0,
+  "translated": 139,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Recipe For Disaster#000": {
    "src": "Meet up with Chef Hamsey in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 {p} 的 [{~1}, {~2}, -{~3}] 與 Hamsey 主廚會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -18,7 +18,7 @@
   },
   "Recipe For Disaster#001": {
    "src": "Ah, bonjour! Welcome to my restaurant, allow me to lead you to your seat-",
-   "dst": "",
+   "dst": "Ah, bonjour！歡迎光臨本店，請容我帶您入座——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -28,7 +28,7 @@
   },
   "Recipe For Disaster#002": {
    "src": "Oh do my eyes deceive me? Serais-ce possible?!",
-   "dst": "",
+   "dst": "噢，是我眼花了嗎？Serais-ce possible？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -38,7 +38,7 @@
   },
   "Recipe For Disaster#003": {
    "src": "It is you... the novice soldier turned hero of legends! Who would have thought?!",
-   "dst": "",
+   "dst": "是你……那個從菜鳥士兵一路成為傳說英雄的人！誰想得到啊？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -48,7 +48,7 @@
   },
   "Recipe For Disaster#004": {
    "src": "I have heard tales of your exploits across the lands, mon ami! Je suis honore! Someone like you sitting in my restaurant!",
-   "dst": "",
+   "dst": "你的事蹟我在各地都聽說過了，mon ami！Je suis honore！像你這樣的人物，竟然坐在我的餐廳裡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -58,7 +58,7 @@
   },
   "Recipe For Disaster#005": {
    "src": "Je suis, bien sur... Le Chef Hamsey! Famed across the lands for my flavors, as you are for your weapon!",
-   "dst": "",
+   "dst": "而我，bien sur……Le Chef Hamsey！你以你的武器聞名各地，我則以我的味道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -68,7 +68,7 @@
   },
   "Recipe For Disaster#006": {
    "src": "I boast, I boast. Je peu t'offrir un plat... but perhaps I have a different proposition for us both.",
-   "dst": "",
+   "dst": "我自誇了，我自誇了。Je peu t'offrir un plat……不過，我心裡另有一個提議，關於我們兩個的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -78,7 +78,7 @@
   },
   "Recipe For Disaster#007": {
    "src": "You may have mastered the art of battle, my friend, but what of... L'Art de la Cuisine?!",
-   "dst": "",
+   "dst": "你或許已經精通了戰鬥的藝術，我的朋友，但是……L'Art de la Cuisine 呢？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -88,7 +88,7 @@
   },
   "Recipe For Disaster#008": {
    "src": "Follow me into the kitchen behind me, and I will tell you more.",
-   "dst": "",
+   "dst": "跟我進後面那間廚房，我再細說。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -98,7 +98,7 @@
   },
   "Recipe For Disaster#009": {
    "src": "Find Chef Hamsey in his kitchen.",
-   "dst": "",
+   "dst": "在廚房裡找到 Hamsey 主廚。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -108,7 +108,7 @@
   },
   "Recipe For Disaster#010": {
    "src": "Welcome to my kitchen! C'est beau, non?",
-   "dst": "",
+   "dst": "歡迎來到我的廚房！C'est beau, non？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -118,7 +118,7 @@
   },
   "Recipe For Disaster#011": {
    "src": "It may be on fire, but... que serais la Cuisine sans une touche de danger, eh?!",
-   "dst": "",
+   "dst": "是有點著火沒錯，可是……que serais la Cuisine sans une touche de danger，嗯？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -128,7 +128,7 @@
   },
   "Recipe For Disaster#012": {
    "src": "So, back to the challenge. What do you say to a bit of friendly competition, hehe?",
-   "dst": "",
+   "dst": "好，回到挑戰。來一場友好的比試如何，嘿嘿？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -138,7 +138,7 @@
   },
   "Recipe For Disaster#013": {
    "src": "You can work with one of my three best chefs on a dish and present it to me once you're done!",
-   "dst": "",
+   "dst": "你可以從我三位最好的廚師裡挑一位合作做一道菜，做好了再端上來給我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -148,7 +148,7 @@
   },
   "Recipe For Disaster#014": {
    "src": "I, of course, will judge your dish based on the twenty-nine Principes de Cuisine - texture, presentation, originality...",
-   "dst": "",
+   "dst": "我當然會依照二十九條 Principes de Cuisine 來評判——口感、擺盤、原創性……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -158,7 +158,7 @@
   },
   "Recipe For Disaster#015": {
    "src": "... aroma, magical ability... oh, and flavour!",
-   "dst": "",
+   "dst": "……香氣、魔法性……噢，還有味道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -168,7 +168,7 @@
   },
   "Recipe For Disaster#016": {
    "src": "S'il te plait! Go introduce yourself to each of my chefs and return once you have decided who to work with!",
-   "dst": "",
+   "dst": "S'il te plait！去跟我每一位廚師打個招呼，決定好要跟誰合作再回來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -178,7 +178,7 @@
   },
   "Recipe For Disaster#017": {
    "src": "Speak to all three chefs in Hamsey's kitchen.",
-   "dst": "",
+   "dst": "跟 Hamsey 廚房裡的三位廚師都談過話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -188,7 +188,7 @@
   },
   "Recipe For Disaster#018": {
    "src": "Heya! You must be the adventurer that Hamsey told me about. You know, he was almost ecstatic, but don't tell him I said that!",
-   "dst": "",
+   "dst": "嘿！你一定就是 Hamsey 跟我提過的那位冒險者吧。跟你說喔，他當時整個人都要飛起來了——別跟他說是我講的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -198,7 +198,7 @@
   },
   "Recipe For Disaster#019": {
    "src": "Oh, a cook-off? How exciting! I'll gladly help you out. Maybe this way I can prove myself a bit more to the others...?",
-   "dst": "",
+   "dst": "噢，廚藝對決？聽起來好刺激！我很樂意幫你。說不定這樣一來，我也能在其他人面前多證明自己一點……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -208,7 +208,7 @@
   },
   "Recipe For Disaster#020": {
    "src": "If we work together, we can make a Seasoned Voidroot Stew, how does that sound?",
-   "dst": "",
+   "dst": "我們一起的話，可以做一鍋 Seasoned Voidroot Stew，你覺得怎麼樣？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -218,7 +218,7 @@
   },
   "Recipe For Disaster#021": {
    "src": "You need to talk to the other chefs before deciding what to make, though!",
-   "dst": "",
+   "dst": "不過在決定要做什麼之前，你得先去跟其他廚師談談！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -228,7 +228,7 @@
   },
   "Recipe For Disaster#022": {
    "src": "Good friend of Hamsey's, are you? I'll believe it when - no, if - you somehow win this competition.",
-   "dst": "",
+   "dst": "Hamsey 的好朋友，是嗎？等你贏了這場比賽我再信——不對，是「如果」你贏得了的話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -238,7 +238,7 @@
   },
   "Recipe For Disaster#023": {
    "src": "I don't need any amateurs like yourself getting in my way when I'm cooking up a storm!",
-   "dst": "",
+   "dst": "我大展身手的時候，不需要你這種外行人來擋路！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -248,7 +248,7 @@
   },
   "Recipe For Disaster#024": {
    "src": "Are you still here? Just... go chitchat to someone else, please.",
-   "dst": "",
+   "dst": "你還在？拜託……去找別人閒聊好嗎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -258,7 +258,7 @@
   },
   "Recipe For Disaster#025": {
    "src": "Yo, dawg. Name's Frank. Hamsey said you guys go waaay back. Any friend of Hamsey's is good with me, man.",
-   "dst": "",
+   "dst": "唷，老兄。我叫 Frank。Hamsey 說你們是超——級老的交情了。Hamsey 的朋友就是我的朋友，沒問題的啦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -268,7 +268,7 @@
   },
   "Recipe For Disaster#026": {
    "src": "Nothin' too sure on what we're gonna cook yet, figure I'll dream somethin' up before the time comes.",
-   "dst": "",
+   "dst": "還沒想好我們要煮什麼啦，反正到時候總會想出點什麼的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -278,7 +278,7 @@
   },
   "Recipe For Disaster#027": {
    "src": "Thinkin' a pie, maybe? Not too much effort there, can't go far wrong, right?",
-   "dst": "",
+   "dst": "派怎麼樣？做起來不太費工，也不太可能出大錯，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -288,7 +288,7 @@
   },
   "Recipe For Disaster#028": {
    "src": "Talk to Hamsey and choose a chef to work with.",
-   "dst": "",
+   "dst": "跟 Hamsey 談話，選一位要合作的廚師。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -298,7 +298,7 @@
   },
   "Recipe For Disaster#029": {
    "src": "Ah, you have introduced yourself to tous mes cuisiners? Who do you want to work with?!",
-   "dst": "",
+   "dst": "Ah，你已經跟 tous mes cuisiners 都打過招呼了？你想跟誰合作呢？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -308,7 +308,7 @@
   },
   "Recipe For Disaster#030": {
    "src": "Ah, Brie! An excellent chef... and an even better cheese! I jest, I jest. You will work well together, I am certain.",
-   "dst": "",
+   "dst": "Ah，Brie！一位出色的廚師……也是一種更出色的起司！開玩笑的，開玩笑的。你們一定會合作愉快，我很確定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -318,7 +318,7 @@
   },
   "Recipe For Disaster#031": {
    "src": "Ah, Kale. One of my most talented chefs, though he can be stubborn at times!",
-   "dst": "",
+   "dst": "Ah，Kale。我最有天分的廚師之一，雖然他有時候固執了點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -328,7 +328,7 @@
   },
   "Recipe For Disaster#032": {
    "src": "Frank! Whilst he may seem rather... relaxed, at times, I assure you he is a most capable chef!",
-   "dst": "",
+   "dst": "Frank！他有時候看起來是……輕鬆了些，但我向你保證，他是位非常能幹的廚師！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -338,7 +338,7 @@
   },
   "Recipe For Disaster#033": {
    "src": "Maitenant, mon ami, head over to your chef and start cooking!",
-   "dst": "",
+   "dst": "Maitenant, mon ami，去找你的廚師，開始下廚吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -348,7 +348,7 @@
   },
   "Recipe For Disaster#034": {
    "src": "Talk to your chosen chef about the dish.",
-   "dst": "",
+   "dst": "跟你選的廚師談談這道菜。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -358,7 +358,7 @@
   },
   "Recipe For Disaster#035": {
    "src": "Heya again! So you decided to make the Seasoned Voidroot Stew with me? Hurray!",
-   "dst": "",
+   "dst": "又見面啦！所以你決定跟我一起做 Seasoned Voidroot Stew 囉？太好了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -368,7 +368,7 @@
   },
   "Recipe For Disaster#036": {
    "src": "It's not quite as easy as it might seem, but I think together we'll be able to handle it.",
-   "dst": "",
+   "dst": "它沒有看起來那麼簡單，不過我想我們兩個一起應該搞得定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -378,7 +378,7 @@
   },
   "Recipe For Disaster#037": {
    "src": "Like I said before, about proving myself... I'm the newest chef here at the kitchen and some of the other chefs disapprove of my ideas. This could be my chance!",
-   "dst": "",
+   "dst": "像我剛剛說的，關於證明自己……我是這間廚房裡最新來的，有些廚師不太認同我的想法。這說不定就是我的機會！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -388,7 +388,7 @@
   },
   "Recipe For Disaster#038": {
    "src": "I've been perfecting the recipe for Voidroot Stew for months now and I finally have a chance to show everyone what I'm worth!",
-   "dst": "",
+   "dst": "Voidroot Stew 的食譜我已經琢磨好幾個月了，終於有機會讓大家看看我的實力！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -398,7 +398,7 @@
   },
   "Recipe For Disaster#039": {
    "src": "The first one is some [Snail Slime] available on Snail Island! We only need one for this dish.",
-   "dst": "",
+   "dst": "第一樣是 [Snail Slime]，Snail Island 上就有！這道菜只需要一份。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -408,7 +408,7 @@
   },
   "Recipe For Disaster#040": {
    "src": "Next up, we need some [Voidroot], a super rare root found deep in the Void. I've heard someone in the {p} can take you down there.",
-   "dst": "",
+   "dst": "再來我們需要 [Voidroot]，一種長在虛空深處的超稀有根莖。我聽說 {p} 裡有人可以帶你下去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -418,7 +418,7 @@
   },
   "Recipe For Disaster#041": {
    "src": "Lastly, we need some [Moonsalt], which is famously hard to obtain. Luckily, self-proclaimed 'Space Wizard' Astralaus should have some, so you can just pop over to his tower and ask for some!",
-   "dst": "",
+   "dst": "最後我們需要 [Moonsalt]，那是出了名的難拿。幸好那位自稱「太空巫師」的 Astralaus 手上應該有，你只要跑一趟他的塔跟他要就行了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -428,7 +428,7 @@
   },
   "Recipe For Disaster#042": {
    "src": "And that should do it! I'll give you a Recipe Book, just right-click to open it up and track your ingredients. Good luck!",
-   "dst": "",
+   "dst": "這樣就齊了！我給你一本食譜書，右鍵就能打開，可以追蹤你的食材。祝你好運！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -438,7 +438,7 @@
   },
   "Recipe For Disaster#043": {
    "src": "Ugh. Stay out of my way, and we'll get along just fine.",
-   "dst": "",
+   "dst": "唉。別擋我的路，我們就能好好相處。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -448,7 +448,7 @@
   },
   "Recipe For Disaster#044": {
    "src": "Make yourself useful and get me everything we need. I'm not in the mood for chit-chat.",
-   "dst": "",
+   "dst": "做點有用的事，把我們需要的東西全弄來。我沒心情閒聊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -458,7 +458,7 @@
   },
   "Recipe For Disaster#045": {
    "src": "I don't want my reputation tarnished by the likes of you...",
-   "dst": "",
+   "dst": "我可不想讓我的名聲毀在你這種人手上……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -468,7 +468,7 @@
   },
   "Recipe For Disaster#046": {
    "src": "Listen up, I'm *not* going to say this again. Take notes.",
-   "dst": "",
+   "dst": "聽好，我「不會」再說第二次。記下來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -478,7 +478,7 @@
   },
   "Recipe For Disaster#047": {
    "src": "The key ingredient in my amazing omelette is obviously the [Blue-Ring Grook Egg], which of course you didn't know.",
-   "dst": "",
+   "dst": "我那道絕妙歐姆蛋的關鍵食材，當然是 [Blue-Ring Grook Egg]——你當然不會知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -488,7 +488,7 @@
   },
   "Recipe For Disaster#048": {
    "src": "Secondly what we need is some [Snail Slime], which is at Snail Island, obviously. Any seasoned chef could tell you that.",
-   "dst": "",
+   "dst": "第二樣我們要 [Snail Slime]，很明顯就在 Snail Island。隨便一個有經驗的廚師都能告訴你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -498,7 +498,7 @@
   },
   "Recipe For Disaster#049": {
    "src": "Lastly you need a [Talking Mushroom] which is found on the swamp Sky Island, provided you have a functioning sense of sight.",
-   "dst": "",
+   "dst": "最後你要一朵 [Talking Mushroom]，在沼澤天空島上——前提是你的視力還能用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -508,7 +508,7 @@
   },
   "Recipe For Disaster#050": {
    "src": "YOU FORGOT ALREADY?? I TOLD YOU TO TAKE NOTES!",
-   "dst": "",
+   "dst": "你已經忘了？？我叫你記下來的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -518,7 +518,7 @@
   },
   "Recipe For Disaster#051": {
    "src": "Lucky for you, at least one of us here is competent. I wrote everything down in this recipe book. Right-click to open it. Now get me my ingredients and scram!",
-   "dst": "",
+   "dst": "算你走運，我們之中至少有一個人是稱職的。我全都寫在這本食譜書裡了。右鍵打開。現在去把我的食材弄來，然後滾遠一點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -528,7 +528,7 @@
   },
   "Recipe For Disaster#052": {
    "src": "Thrilled to be workin' with you, dude! We'll blow Hamsey's mind.",
-   "dst": "",
+   "dst": "跟你合作超讚的啦，老兄！我們會把 Hamsey 嚇傻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -538,7 +538,7 @@
   },
   "Recipe For Disaster#053": {
    "src": "Hmmm, now what kinda pie should we be bakin', here?",
-   "dst": "",
+   "dst": "唔——那我們該烤哪種派好呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -548,7 +548,7 @@
   },
   "Recipe For Disaster#054": {
    "src": "Well, I might be a lil' lazy, but when it comes to cookin', I've got the eye. And to me, dude? You look like a real Skyhigh Pie kind of guy! Heheh.",
-   "dst": "",
+   "dst": "我是有點懶啦，可是講到做菜，我的眼光是有的。而在我看來，老兄？你就是那種標準的 Skyhigh Pie 型的人！嘿嘿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -558,7 +558,7 @@
   },
   "Recipe For Disaster#055": {
    "src": "Welp, guess you know how to cook up a simple Skyhigh Pie, right? Off you go, I'll be waiting here when you have the ingredients.",
-   "dst": "",
+   "dst": "好啦，簡單的 Skyhigh Pie 你應該知道怎麼做吧？去吧去吧，食材弄到了我就在這等你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -568,7 +568,7 @@
   },
   "Recipe For Disaster#056": {
    "src": "Hehe, just messin' with you, man! Shoulda seen your face.",
-   "dst": "",
+   "dst": "嘿嘿，逗你的啦，老兄！你剛剛那表情真該看看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -578,7 +578,7 @@
   },
   "Recipe For Disaster#057": {
    "src": "First, we're gonna need some kinda flour. A lil' [Sunrise Flour] aughtta do.",
-   "dst": "",
+   "dst": "首先，我們得要點麵粉。一點 [Sunrise Flour] 應該就夠了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -588,7 +588,7 @@
   },
   "Recipe For Disaster#058": {
    "src": "A good-sized [Blue-Ring Grook Egg] should give us a lil' kick. Not as much as those grooks'll give you a kick if they see you pilfering their eggs, though!",
-   "dst": "",
+   "dst": "一顆夠大的 [Blue-Ring Grook Egg] 能給它來點勁道。不過要是被那些 grook 看到你偷蛋，牠們給你的那一腳更有勁道就是了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -598,7 +598,7 @@
   },
   "Recipe For Disaster#059": {
    "src": "Finally, the secret ingredient - A [Skyhigh Raspberry]. Real good stuff, but it's a fair way out. Guess a lil' walking never hurt anyone, huh? Not that I've ever bothered.",
-   "dst": "",
+   "dst": "最後是祕密食材——一顆 [Skyhigh Raspberry]。真的是好東西，就是有點遠。走幾步路又不會怎樣，對吧？雖然我自己是從來沒去過啦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -608,7 +608,7 @@
   },
   "Recipe For Disaster#060": {
    "src": "Huh, you've got a bad memory? Yeah, me too, man. Here's a Recipe Book, just right-click to open it up and check where to grab the ingredients!",
-   "dst": "",
+   "dst": "哈，你記性不好？我也是啊，老兄。這本食譜書給你，右鍵打開就能看食材要去哪裡拿！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -618,7 +618,7 @@
   },
   "Recipe For Disaster#061": {
    "src": "Return here once you've got them all. Peace out, dude!",
-   "dst": "",
+   "dst": "全部拿到就回來這裡。掰啦，老兄！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -628,7 +628,7 @@
   },
   "Recipe For Disaster#062": {
    "src": "Collect [{~} {Ingredient}] at [X, Y, Z] or check your recipe book.",
-   "dst": "",
+   "dst": "在 [X, Y, Z] 收集 [{~} {Ingredient}]，或查看你的食譜書。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -638,7 +638,7 @@
   },
   "Recipe For Disaster#063": {
    "src": "Welcome to Astralus' Astral House! Can you get to the top by flipping gravity?",
-   "dst": "",
+   "dst": "歡迎來到 Astralus 的星辰之屋！你有辦法靠翻轉重力爬到頂端嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -648,7 +648,7 @@
   },
   "Recipe For Disaster#064": {
    "src": "Astronomical progress! But this is just the beginning!",
-   "dst": "",
+   "dst": "天文級的進展！不過這才剛開始而已！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -658,7 +658,7 @@
   },
   "Recipe For Disaster#065": {
    "src": "...And why did you come to my tower?",
-   "dst": "",
+   "dst": "……所以你到底為什麼來我的塔？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -668,7 +668,7 @@
   },
   "Recipe For Disaster#066": {
    "src": "My Moonsalt? How absurd! I collected mine myself, you collect yours! It's only fair.",
-   "dst": "",
+   "dst": "我的 Moonsalt？荒謬！我的是我自己採的，你的自己去採！這才公平。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -678,7 +678,7 @@
   },
   "Recipe For Disaster#067": {
    "src": "Darn humans, you never listen! I said... Get. It. Yourself.",
-   "dst": "",
+   "dst": "該死的人類，你們從來不聽！我說了……自。己。去。拿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -688,7 +688,7 @@
   },
   "Recipe For Disaster#068": {
    "src": "What takes you here, strangeling? What namings do you have? Hu-man? We claim Humyn! Bad choose, pick elsewhere strangeling!",
-   "dst": "",
+   "dst": "什麼帶你到此，陌生仔？你有什麼稱名？人、類？我們宣稱人累！壞選擇，去挑別的，陌生仔！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -698,7 +698,7 @@
   },
   "Recipe For Disaster#069": {
    "src": "Investigating for helping? How many conveniences! Humyns requires assistancing! You observers, humyns failflies into large crater-rock!",
-   "dst": "",
+   "dst": "來調查為了幫忙？多少方便！人累需要協助化！你觀察者，人累飛失敗撞進大坑洞岩！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -708,7 +708,7 @@
   },
   "Recipe For Disaster#070": {
    "src": "Burnmilk run out and one direction to retrieve it is moonsalt! We strike lucknugget and discover moonsalt on crater-rock!",
-   "dst": "",
+   "dst": "燒奶用光光，取回它的唯一方向是 moonsalt！我們敲中幸運塊，在坑洞岩上發現 moonsalt！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -718,7 +718,7 @@
   },
   "Recipe For Disaster#071": {
    "src": "Refined moonsalt gives burnmilk for spacezoom! Inconveniencing, spacezoom destroyed. Humyns create miniscule Spacezoom!",
-   "dst": "",
+   "dst": "精煉過的 moonsalt 給出燒奶給太空咻！不方便化，太空咻毀壞。人累創造微小太空咻！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -728,7 +728,7 @@
   },
   "Recipe For Disaster#072": {
    "src": "Only singular humyn can fit in current spacezoom. If strangeling helps humyns will let strangeling in spacezoom. Humyns can create new spacezoom in given time!",
-   "dst": "",
+   "dst": "只有單數人累塞得進現有太空咻。若陌生仔幫忙，人累會讓陌生仔進太空咻。人累能在給定時間內創造新太空咻！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -738,7 +738,7 @@
   },
   "Recipe For Disaster#073": {
    "src": "Humyns currently residing on crater-rock, meaning waiting is not result of death!",
-   "dst": "",
+   "dst": "人累目前居住在坑洞岩，意思是等待不會導致死亡結果！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -748,7 +748,7 @@
   },
   "Recipe For Disaster#074": {
    "src": "Moonsalt discovered in saltcave in north, strangeling follow path!",
-   "dst": "",
+   "dst": "Moonsalt 發現於北方鹽洞，陌生仔跟隨路徑！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -758,7 +758,7 @@
   },
   "Recipe For Disaster#075": {
    "src": "Just [{~} Unrefined Moonsalt] need for burnmilk, strangeling can grab any left over!",
-   "dst": "",
+   "dst": "燒奶只需要 [{~} Unrefined Moonsalt]，剩下的陌生仔可以自行抓取！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -768,7 +768,7 @@
   },
   "Recipe For Disaster#076": {
    "src": "When strangeling has moonsalt, refine at device beside humyn and go zoom in spacezoom!",
-   "dst": "",
+   "dst": "陌生仔有 moonsalt 時，在人累旁邊的裝置精煉，然後坐太空咻去咻！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -778,7 +778,7 @@
   },
   "Recipe For Disaster#077": {
    "src": "Hello aaand welcome to the Racetrack of the Century!",
-   "dst": "",
+   "dst": "哈囉——歡迎來到世紀大賽道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -788,7 +788,7 @@
   },
   "Recipe For Disaster#078": {
    "src": "One winner, one loser. And Usnail Bolt eats losers for breakfast.",
-   "dst": "",
+   "dst": "一個贏家，一個輸家。而 Usnail Bolt 是把輸家當早餐吃的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -798,7 +798,7 @@
   },
   "Recipe For Disaster#079": {
    "src": "Breakfast? Wait, did I have breakfast? A little breckkie could be good fo-",
-   "dst": "",
+   "dst": "早餐？等等，我今天吃早餐了嗎？來點小早餐好像也不——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -808,7 +808,7 @@
   },
   "Recipe For Disaster#080": {
    "src": "Well, no matter. What do you say, adventurer? Enter the race against Usnail Bolt. The grand prize is some Snail Slime!",
-   "dst": "",
+   "dst": "算了，不重要。怎麼樣啊，冒險者？來跟 Usnail Bolt 比一場。首獎是 Snail Slime！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -818,7 +818,7 @@
   },
   "Recipe For Disaster#081": {
    "src": "Aaaaaand they're off!",
-   "dst": "",
+   "dst": "起——跑！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -828,7 +828,7 @@
   },
   "Recipe For Disaster#082": {
    "src": "Shame, could've been a great race. See you around, adventurer!",
-   "dst": "",
+   "dst": "可惜，本來會是場精彩的比賽的。有緣再見，冒險者！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -838,7 +838,7 @@
   },
   "Recipe For Disaster#083": {
    "src": "Well well well... looks like Usnail Bolt has won this one. Again.",
-   "dst": "",
+   "dst": "唉呀呀呀……看來這一場又是 Usnail Bolt 贏了。又一次。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -848,7 +848,7 @@
   },
   "Recipe For Disaster#084": {
    "src": "Not your lucky day, human. Oh well, you know the price for losing. Guards!",
-   "dst": "",
+   "dst": "今天不是你的幸運日，人類。好吧，輸的代價你是知道的。衛兵！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -858,7 +858,7 @@
   },
   "Recipe For Disaster#085": {
    "src": "Wowee! In what turned out to be an amazing race, the human has managed to steal the lead right out from Usnail Bolt's nose!",
-   "dst": "",
+   "dst": "哇喔！這場比賽精彩到不行，這位人類竟然在 Usnail Bolt 的鼻子底下把領先給搶走了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -868,7 +868,7 @@
   },
   "Recipe For Disaster#086": {
    "src": "Here, human. Take this slime as your prize.",
-   "dst": "",
+   "dst": "來，人類。這份黏液是你的獎品。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -878,7 +878,7 @@
   },
   "Recipe For Disaster#087": {
    "src": "ISN'T THIS JUST ABSOLUTELY FANTASTIC. A HUMAN?! WHO WOULD HAVE GUESSED.",
-   "dst": "",
+   "dst": "噢，這可真是太精彩了。一個人類？！誰想得到呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -888,7 +888,7 @@
   },
   "Recipe For Disaster#088": {
    "src": "YOU'RE THE SEVENTH ONE PASSING ME TODAY AND YOU'RE NO DIFFERENT FROM THE OTHERS.",
-   "dst": "",
+   "dst": "你是今天第七個經過我的，而且跟其他人沒兩樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -898,7 +898,7 @@
   },
   "Recipe For Disaster#089": {
    "src": "EVERY SINGLE ONE WITH THAT DOPEY SHEEPISH LOOK ON THEIR FACE, AS IF A TALKING MUSHROOM IS OUT OF THE BLUE.",
-   "dst": "",
+   "dst": "每一個都掛著那種呆頭呆腦的傻樣，好像會說話的蘑菇有多稀奇似的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -908,7 +908,7 @@
   },
   "Recipe For Disaster#090": {
    "src": "GIVE ME A BREAK, I'VE HAD ENOUGH OF JERKS PICKING ME UP AND DISRESPECTING ME LIKE THAT. PRIVATE SPACE, EVER HEARD OF IT?",
-   "dst": "",
+   "dst": "饒了我吧，我受夠那些混蛋把我拔起來、這樣不尊重我了。私人空間，聽過沒有？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -918,7 +918,7 @@
   },
   "Recipe For Disaster#091": {
    "src": "WHY DO I EVEN TRY. JUST LOOK AT YOU! THE EPITOME OF CLUELESS. WHAT NOW, GONNA TAKE ME ON SOME LOONEY ADVENTURE ACROSS THE SKY ISLANDS?",
-   "dst": "",
+   "dst": "我幹嘛還費這個力。你看看你！狀況外的典範。現在怎樣，要帶我去天空島之間來一場瘋狂大冒險嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -928,7 +928,7 @@
   },
   "Recipe For Disaster#092": {
    "src": "I HOPE NOT, IF YOU WERE THINKING THAT. I'VE ALREADY LOST A STEM TODAY BECAUSE SOME DIMWIT TRIED TAKING A BITE OUT OF ME... LIVE!",
-   "dst": "",
+   "dst": "最好不是，如果你真這麼想的話。我今天已經被扯掉一根莖了，因為某個蠢蛋想咬我一口……活的咬！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -938,7 +938,7 @@
   },
   "Recipe For Disaster#093": {
    "src": "DON'T TELL ME, ARE YOU TAKING ME ON SOME LOONEY ADVENTURE ACROSS THE SKY ISLANDS? HOW LOVELY.",
-   "dst": "",
+   "dst": "別跟我說，你真的要帶我去天空島之間來場瘋狂大冒險？真是太美妙了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -948,7 +948,7 @@
   },
   "Recipe For Disaster#094": {
    "src": "A KITCHEN YOU SAY, WELL, IF IT'LL PUT ME OUT OF MY MISERY AS SOON AS POSSIBLE, THEN WHY NOT.",
-   "dst": "",
+   "dst": "廚房，你說？好吧，如果那能讓我早點解脫，那有何不可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -958,7 +958,7 @@
   },
   "Recipe For Disaster#095": {
    "src": "WAIT, WHY ARE YOU STUFFING ME INTO YOUR BAG? HOW DO YOU EXPECT ME TO BREATHE IN HERE?!",
-   "dst": "",
+   "dst": "等等，你為什麼要把我塞進包包裡？你要我在這裡面怎麼呼吸？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -968,7 +968,7 @@
   },
   "Recipe For Disaster#096": {
    "src": "Hello there! I can see you knead you some sunrise flour, don't you?",
-   "dst": "",
+   "dst": "你好啊！一見「麵」我就看出來了，你需要一些 Sunrise Flour 對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -978,7 +978,7 @@
   },
   "Recipe For Disaster#097": {
    "src": "It's needed rye away? Well no worries, friend!",
-   "dst": "",
+   "dst": "馬上就要？別擔心，朋友，這事「包」在我身上！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -988,7 +988,7 @@
   },
   "Recipe For Disaster#098": {
    "src": "Well butter me up and call me toast, it seems I ran out of the stuff, there's none left.",
-   "dst": "",
+   "dst": "唉唷，這下真是「烤」倒我了——看來我的麵粉用完了，一點都不剩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -998,7 +998,7 @@
   },
   "Recipe For Disaster#099": {
    "src": "I'm sorry if I see to just be loafing around, but at yeast I know how to make some more.",
-   "dst": "",
+   "dst": "抱歉，我看起來大概像在「發」呆——不過至少我知道怎麼再「發」一批出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1008,7 +1008,7 @@
   },
   "Recipe For Disaster#100": {
    "src": "Can you see that wheat field over there, next to the bakery? You can farm up some wheat and pop it on the mill.",
-   "dst": "",
+   "dst": "看到麵包坊旁邊那片麥田了嗎？你可以去收一些小麥，然後丟進磨坊裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1018,7 +1018,7 @@
   },
   "Recipe For Disaster#101": {
    "src": "Grab a scythe from the tool merchant next dough and get to work!",
-   "dst": "",
+   "dst": "去隔「麵」——啊不是，隔壁——的工具商那兒拿把鐮刀，然後開工吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1028,7 +1028,7 @@
   },
   "Recipe For Disaster#102": {
    "src": "Make as much as you want, I've made all the bread I need for today already.",
-   "dst": "",
+   "dst": "你想磨多少就磨多少，今天要用的麵包我早就烤完了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1038,7 +1038,7 @@
   },
   "Recipe For Disaster#103": {
    "src": "Howdy, pal! Looking for some Skyhigh Raspberries? They work great in a pie!",
-   "dst": "",
+   "dst": "嘿呀，朋友！在找 Skyhigh Raspberries 嗎？拿來做派超棒的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1048,7 +1048,7 @@
   },
   "Recipe For Disaster#104": {
    "src": "If you're interested, it's just a small fee of {~} Emeralds to get access to the island.",
-   "dst": "",
+   "dst": "有興趣的話，只要 {~} 顆綠寶石的小小費用，就能上那座島。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1058,7 +1058,7 @@
   },
   "Recipe For Disaster#105": {
    "src": "A man's gotta make a living somehow, so I've set up a system of cannons to take you right up to the island they grow on!",
-   "dst": "",
+   "dst": "人總得討生活嘛，所以我架了一套大砲系統，能直接把你送上它們生長的那座島！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1068,7 +1068,7 @@
   },
   "Recipe For Disaster#106": {
    "src": "So, whaddya say? Small price for a little adventure, and as many raspberries as you can eat!",
-   "dst": "",
+   "dst": "怎麼樣？一點小錢換一場小冒險，還有吃到飽的覆盆子！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1078,7 +1078,7 @@
   },
   "Recipe For Disaster#107": {
    "src": "Alrighty! Just head on over to that island beside me and jump in the cannon - it's perfectly safe, I promise!",
-   "dst": "",
+   "dst": "好嘞！走到我旁邊那座島上，跳進大砲裡就行了——絕對安全，我保證！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1088,7 +1088,7 @@
   },
   "Recipe For Disaster#108": {
    "src": "Find your way up the island and grab as many raspberries as you want! When you're done just jump in the big cannon and come back to shore!",
-   "dst": "",
+   "dst": "想辦法爬上島，想採多少覆盆子就採多少！採完了跳進那尊大砲，就能回到岸上！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1098,7 +1098,7 @@
   },
   "Recipe For Disaster#109": {
    "src": "Alrighty, no worries. Feel free to come back if you're ever in the mood for some!",
-   "dst": "",
+   "dst": "好嘞，沒關係。什麼時候想吃了，隨時歡迎回來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1108,7 +1108,7 @@
   },
   "Recipe For Disaster#110": {
    "src": "Present the ingredients to your chosen chef.",
-   "dst": "",
+   "dst": "把食材交給你選的廚師。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -1118,7 +1118,7 @@
   },
   "Recipe For Disaster#111": {
    "src": "Have you got all the ingredients? Amazing!",
-   "dst": "",
+   "dst": "食材都拿到了嗎？太棒了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1128,7 +1128,7 @@
   },
   "Recipe For Disaster#112": {
    "src": "Okay you set back and let me work on the cooking, just pass over the ingredients!",
-   "dst": "",
+   "dst": "好，你退後讓我來煮，把食材交給我就好！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1138,7 +1138,7 @@
   },
   "Recipe For Disaster#113": {
    "src": "Aha! That should do it! Hopefully I've done everything correctly... but wow, would you look at the color of that soup!",
-   "dst": "",
+   "dst": "啊哈！應該可以了！希望每一步我都做對了……不過哇，你看看這湯的顏色！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1148,7 +1148,7 @@
   },
   "Recipe For Disaster#114": {
    "src": "You should bring it over to Hamsey to see what he thinks!",
-   "dst": "",
+   "dst": "你該把它端去給 Hamsey，看看他怎麼說！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1158,7 +1158,7 @@
   },
   "Recipe For Disaster#115": {
    "src": "You got everything? Took you long enough.",
-   "dst": "",
+   "dst": "東西都拿到了？你還真是慢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1168,7 +1168,7 @@
   },
   "Recipe For Disaster#116": {
    "src": "Let's get started. Everyone else already finished. Stay back while I work my magic.",
-   "dst": "",
+   "dst": "開始吧。其他人早就完成了。我施展魔法的時候你退後點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1178,7 +1178,7 @@
   },
   "Recipe For Disaster#117": {
    "src": "Mwah! My masterdish is finished. Present this to the chef, I'm sure he'll love it!",
-   "dst": "",
+   "dst": "啵！我的曠世名菜完成了。把這個端給主廚，他一定會愛死的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1188,7 +1188,7 @@
   },
   "Recipe For Disaster#118": {
    "src": "And be CAREFUL taking it over. That food could be worth HUNDREDS once I'm famous!",
-   "dst": "",
+   "dst": "端過去的時候「小心點」。等我出名了，這道菜可是能值「好幾百」的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1198,7 +1198,7 @@
   },
   "Recipe For Disaster#119": {
    "src": "You got everything? Awesome stuff, dude.",
-   "dst": "",
+   "dst": "東西都拿到啦？帥喔，老兄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1208,7 +1208,7 @@
   },
   "Recipe For Disaster#120": {
    "src": "I'll just take a smallll bit of this raspberry - chef's commission, eh? And let's get started!",
-   "dst": "",
+   "dst": "我就拿這覆盆子一小～小口就好——廚師的抽成嘛，對吧？來，我們開始！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1218,7 +1218,7 @@
   },
   "Recipe For Disaster#121": {
    "src": "And we're all done. Hamsey's gonna love this.",
-   "dst": "",
+   "dst": "搞定收工。Hamsey 一定會愛死這個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1228,7 +1228,7 @@
   },
   "Recipe For Disaster#122": {
    "src": "Here you go, dawg. Pleasure working with you - show this to Hamsey and we'll see what he thinks. Make sure you don't \"lose\" any of it on the way over - you know what they say about your own supply!",
-   "dst": "",
+   "dst": "拿去吧，老兄。跟你合作很愉快——把這個拿去給 Hamsey，看看他怎麼說。路上可別「弄丟」了任何一塊喔——你知道人家怎麼說「自己的貨」的吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1238,7 +1238,7 @@
   },
   "Recipe For Disaster#123": {
    "src": "Talk to Hamsey with your finished dish.",
-   "dst": "",
+   "dst": "帶著完成的料理去找 Hamsey 談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -1248,7 +1248,7 @@
   },
   "Recipe For Disaster#124": {
    "src": "Ah, you have finished your dish? Well, then, il est temps de goûter!",
-   "dst": "",
+   "dst": "Ah，你的菜完成了？那麼，il est temps de goûter！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1258,7 +1258,7 @@
   },
   "Recipe For Disaster#125": {
    "src": "Let us retreat to my private dining room... this way!",
-   "dst": "",
+   "dst": "我們移駕到我的私人餐室吧……這邊請！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1268,7 +1268,7 @@
   },
   "Recipe For Disaster#126": {
    "src": "Meet Hamsey in the dining room at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~1}, {~2}, -{~3}] 的餐室與 Hamsey 會合。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recipe For Disaster",
@@ -1278,7 +1278,7 @@
   },
   "Recipe For Disaster#127": {
    "src": "Welcome back, mon ami! I see you've return with a dish in hand!",
-   "dst": "",
+   "dst": "歡迎回來，mon ami！我看到你手上端著一道菜回來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1288,7 +1288,7 @@
   },
   "Recipe For Disaster#128": {
    "src": "A stew? Seems simple, but even the simplest things in life can be le meilleur!",
-   "dst": "",
+   "dst": "一道燉菜？看起來簡單，但人生中最簡單的東西也可以是 le meilleur！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1298,7 +1298,7 @@
   },
   "Recipe For Disaster#129": {
    "src": "Adventurer, are you sure you made this dish? It is so good I might as well close the restaurant!",
-   "dst": "",
+   "dst": "冒險者，你確定這道菜是你做的？好吃到我乾脆把餐廳關了算了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1308,7 +1308,7 @@
   },
   "Recipe For Disaster#130": {
    "src": "You never fail to surprise me, friend. Here, take this apron, an essential of any true chef.",
-   "dst": "",
+   "dst": "你總是能讓我驚訝，朋友。來，收下這條圍裙，真正的廚師都少不了它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1318,7 +1318,7 @@
   },
   "Recipe For Disaster#131": {
    "src": "I cannot help but notice that your dish is ready!",
-   "dst": "",
+   "dst": "我不能不注意到——你的菜好了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1328,7 +1328,7 @@
   },
   "Recipe For Disaster#132": {
    "src": "Let me taste your dish and I will present you mine! Mon dieu, une omelette?",
-   "dst": "",
+   "dst": "讓我嚐嚐你的菜，我也讓你嚐嚐我的！Mon dieu，une omelette？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1338,7 +1338,7 @@
   },
   "Recipe For Disaster#133": {
    "src": "Je suis déçu, ami. I would prefer biting into a mule derrière! This thing... a Gert wouldn't touch it!",
-   "dst": "",
+   "dst": "Je suis déçu, ami。我寧可去咬一口騾子的 derrière！這種東西……連 Gert 都不會碰！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1348,7 +1348,7 @@
   },
   "Recipe For Disaster#134": {
    "src": "I see you haven't improved in the art of cuisine. Leave me be, and come back when you have learned what good food is!",
-   "dst": "",
+   "dst": "看來你在烹飪這門藝術上毫無長進。別煩我了，等你學會什麼叫好料理再回來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1358,7 +1358,7 @@
   },
   "Recipe For Disaster#135": {
    "src": "I see you've returned, and not empty handed. Please, show me what you've created!",
-   "dst": "",
+   "dst": "我看到你回來了，而且不是空手。來，讓我看看你創造出了什麼！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1368,7 +1368,7 @@
   },
   "Recipe For Disaster#136": {
    "src": "A pie? Why, you must have been helped by Frank. He always has a thing for making pie!",
-   "dst": "",
+   "dst": "一個派？哎呀，你一定是找了 Frank 幫忙。他就是特別喜歡做派！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1378,7 +1378,7 @@
   },
   "Recipe For Disaster#137": {
    "src": "I can see that your compétences culinaires are very well developed!",
-   "dst": "",
+   "dst": "我看得出來，你的 compétences culinaires 已經相當成熟了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
@@ -1388,7 +1388,7 @@
   },
   "Recipe For Disaster#138": {
    "src": "Though I will not truly call you a chef quite yet, you are très bien! Have this reward as congratulations!",
-   "dst": "",
+   "dst": "雖然我還不能真的稱你為廚師，但你 très bien！收下這份獎勵當作恭賀吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recipe For Disaster",
