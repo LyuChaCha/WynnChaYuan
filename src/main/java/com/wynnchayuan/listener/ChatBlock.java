@@ -164,15 +164,24 @@ public final class ChatBlock {
      * 一行一行傳下去重譯一次；重譯不到的才用收進來時那份。
      */
     private static Component stacked(List<Row> rows) {
-        List<StyledText> originals = new ArrayList<>(rows.size());
-        for (Row row : rows) {
-            originals.add(row.original());
-        }
-        boolean[] centred;
-        try {
-            centred = LineTranslator.chatCentred(originals);
-        } catch (Throwable t) {
-            centred = new boolean[rows.size()];
+        // 只有一則的時候<b>不能</b>先算對齊。
+        //
+        // 「洞穴完成」那一塊是六行擠在一則訊息裡，這裡拿到的是<b>一個</b>
+        // 含換行的 StyledText。把它交給 chatCentred 等於問「這六行合起來
+        // 算不算置中」，然後拿那一個答案去套六行。
+        //
+        // 交給 translateChat 自己拆行判斷才對——它看得到裡面有幾行。
+        boolean[] centred = null;
+        if (rows.size() > 1) {
+            List<StyledText> originals = new ArrayList<>(rows.size());
+            for (Row row : rows) {
+                originals.add(row.original());
+            }
+            try {
+                centred = LineTranslator.chatCentred(originals);
+            } catch (Throwable t) {
+                centred = null;
+            }
         }
         net.minecraft.network.chat.MutableComponent out = Component.empty();
         boolean any = false;
@@ -181,7 +190,7 @@ public final class ChatBlock {
             try {
                 line = LineTranslator.translateChat(rows.get(i).original(),
                                                     WynnChaYuan.translations(),
-                                                    centred[i]);
+                                                    centred == null ? null : centred[i]);
             } catch (Throwable t) {
                 line = null;
             }
