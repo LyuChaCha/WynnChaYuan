@@ -191,6 +191,18 @@ NATIVE_SCRIPTS = {
 }
 
 
+# 一個<b>小寫</b>英文單字直接黏在漢字上。
+#
+# 專有名詞不會被抓到：它們有大寫開頭（`Slykaar的住所`、`與Lanu對話`），
+# 前後也不會出現「小寫開頭又緊貼漢字」的形狀。真正會命中的是打字時
+# 手滑留下的英文詞（`給我control住`）與中英夾雜的口語（`很有style地`）。
+#
+# 這條是<b>警告</b>不是錯誤：夾雜有時是刻意的口語風格，該由譯者自己判斷。
+GLUED_ENGLISH = re.compile(
+    r"(?<![A-Za-z])[a-z]{2,}(?=[一-鿿])"
+    r"|(?<=[一-鿿])[a-z]{2,}(?![A-Za-z])")
+
+
 def foreign_script(dst: str, lang: str) -> tuple[str, str] | None:
     """譯文裡有沒有明顯不屬於這個語言的文字。
 
@@ -225,6 +237,14 @@ def check_pair(path: str, key: str, src: str, dst: str,
         out.append(Problem("error", path, key,
                            f"譯文裡混進了{name}：「{around}」"
                            f" —— {lang} 用不到這種文字，遊戲裡會顯示成亂碼"))
+
+    if compact(lang):
+        glued = GLUED_ENGLISH.search(dst)
+        if glued:
+            around = dst[max(0, glued.start() - 10):glued.end() + 10]
+            out.append(Problem("warn", path, key,
+                               f"小寫英文單字黏在漢字上：「{around}」"
+                               f" —— 如果是刻意的中英夾雜可以忽略"))
 
     # 佔位符：數量必須一模一樣。少一個 -> 遊戲裡那個數字／符號會憑空消失；
     # 多一個 -> 會有多餘的符號被塞進去或直接顯示成 {~}
