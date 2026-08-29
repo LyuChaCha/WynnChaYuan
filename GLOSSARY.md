@@ -32,11 +32,11 @@
 
 | 原文 | 譯文 |
 |---|---|
-| Mage/Dark Wizard | 法師/黑巫師 |
+| Mage/Dark Wizard | 法師/闇導士 |
 | Archer/Hunter | 弓手/獵人 |
 | Warrior/Knight | 戰士/騎士 |
 | Assassin/Ninja | 刺客/忍者 |
-| Shaman/Skyseer | 薩滿/天視者 |
+| Shaman/Skyseer | 薩滿/觀星者 |
 | Spears | 矛 |
 | Daggers | 匕首 |
 | Bows | 弓 |
@@ -46,10 +46,10 @@
 職業基礎技能翻譯如下：(待補)
 | 順序 | 法師 | 弓手 | 戰士 | 刺客 | 薩滿 |
 |---|---|---|---|---|---|
-| 1st | Heal | Arrow Storm | Bash | Spin Attack | Totem |
-| 2nd | Teleport | Escape | Charge | Dash | Haul |
-| 3rd | Meteor | Arrow Bomb | Uppercut | Multihit | Aura |
-| 4th | Ice Snake | Arrow Shield | War Scream | Smoke Bomb | Uproot |
+| 1st | 治療 | 箭矢風暴 | 重擊 | 迴刃斬 | 圖騰 |
+| 2nd | 傳送 | 逃脫 | 衝鋒 | 騰躍行 | Haul |
+| 3rd | 隕石 | 箭矢炸彈 | 上劈 | 連環斬 | Aura |
+| 4th | 冰蛇 | 箭矢護盾 | 戰吼 | 煙霧氮 | Uproot |
 
 ## 攻擊速度
 
@@ -77,7 +77,7 @@
 | Mastery Tome | 精通書卷 | Tome 為書卷 |
 | Liquid Emeralds | 液態綠寶石 | |
 | Item Identifier | 物品鑑定師 | NPC 職業，不是「鑑定道具」 |
-| Lootrun | Lootrun | **不翻** |
+| Lootrun | Lootrun | |
 | Dungeon | 地城 |  |
 | Raid | 討伐戰 | 此指後期需要 4 人加入的副本。**一般語意的 raid／assault 仍用「突襲」**——任務對話裡的「突襲一座腐化據點」、「獸人突襲」不是這個 |
 | Scale | 適性 | 此指裝備詞條經加權計算後得出評估該物品是否良好的值 |
