@@ -3,6 +3,22 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [未發布]
+
+> 純翻譯的更新不逐批發版。譯文合併進 `main` 之後玩家下次進遊戲就會自動同步到
+> （見 v1.99.68），不需要重新下載模組。這一段持續累積，等下次有程式碼改動
+> 需要發 jar 時再一起併入該版本。
+
+### 新增
+
+- **《Undersupply》整篇翻完**（125 句）。任務進度來到 8152/22067（36.9%）。
+  五個村民各有各的說法方式，語氣分開處理：Romu 的老派口語、Aris 拮据卻仍
+  講究禮數的措辭、Risch 的焦慮客套、Oshman 浮誇的貴族腔、Hurlay 的沉吟。
+  管家 Hayn 全程面無表情，最後那句引自箴言的諺語
+  （`The beginning of strife is as when one lets out water.`）
+  處理成「紛爭的開端，正如同放開水口」，保留它的格言體。
+  `Sovereign` 沿用《A New Beginning》既有的「統領」。
+
 ## [1.99.69] - 2026-08-29
 
 > 這一版把先前累積的五批翻譯一起帶出來——那些譯文早就同步給玩家了
