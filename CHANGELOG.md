@@ -3,6 +3,41 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.66] - 2026-08-29
+
+### 新增
+
+- **《Purple and Blue》與《The Worm Holes》整篇翻完**（84 + 85 句）。
+  任務進度來到 6441/22067（29.2%）。
+  - 《Purple and Blue》：Korun 與 Nikoler 這對「死對頭其實在乎彼此」的關係是全篇重點，
+    三種結局（Nikoler 生還／死亡／空手而回）的語氣各自處理，Korun 得知死訊後
+    那段結巴與否認也照原文的破碎感保留。
+  - 《The Worm Holes》：Malo 的鄉音用對應的粗獷口吻呈現；Lari 從一開始
+    文謅謅的精靈語氣，一路崩到結尾滿是結巴與自責，這條下墜曲線是整篇的核心。
+
+### 移除
+
+- **清掉 21 條維基抓取殘留**，這些是條目表格的排版符號被一起收進語料，
+  遊戲裡永遠不會出現、也永遠比對不到：
+  - 《All Roads to Peace》16 條獎勵列（`** +{~} Emeralds` 等）。
+    其中 `+{~} Emeralds` 的正確版本本來就在 `gui.json` 裡了。
+  - 《The Strong Survive》5 條挑戰修飾說明（`** The Shield room has five turrets...`），
+    這是維基寫給讀者看的攻略註解，不是遊戲台詞。
+
+### 修正
+
+- **26 條被維基符號蓋住的真實台詞，改成去掉前綴而不是刪除**——這些是遊戲內真的
+  會出現的字，之前因為多了 `**` / `***` 而永遠比對不到：
+  - 《The Price of Ingenuity》25 條 Tolstoy 的日記內文。
+  - 《Celebrations in Smoke》的對話選項「Change subject」。
+- `[Gavellian Spell]` 統一沿用《The Realm of Light》既有的「[Gavel 語咒文]」。
+
+### 已知不一致（未修改，回報給翻譯團隊）
+
+- `Decay` 目前在三個檔案裡有三種譯法：《Death Whistle》作「暗蝕」、
+  《Finding the Light》作「衰朽」、《Lexdale Witch Trials》作「腐朽」。
+  本次《The Worm Holes》因同樣是 Lari 的劇情，先跟《Finding the Light》一致用「衰朽」。
+
 ## [1.99.65] - 2026-08-29
 
 ### 新增
