@@ -1906,17 +1906,42 @@ public final class LineTranslator {
         return out;
     }
 
-    /** 首尾的空行不算；回傳 {@code [起, 迄)}。見 {@link #realignRows}。 */
+    /**
+     * 首尾的空行不算；回傳 {@code [起, 迄)}。見 {@link #realignRows}。
+     *
+     * <h2>「空」的定義要跟語料的鍵一致</h2>
+     * 先前只認<b>完全沒有片段</b>的行。但語料的鍵是 {@code strip()} 過的
+     * （{@link LineParts#of} 一次、{@code TranslationStore} 再一次），
+     * 而 {@code strip()} 會把<b>只有空白</b>的首尾行也一起去掉。
+     *
+     * <p>兩邊的定義不一致，「洞穴完成」那一塊就永遠對不齊——實機診斷寫得很清楚：
+     *
+     * <pre>
+     *   === 聊天對齊 11 ===（沒翻到：行數對不上，原樣返回不動排版）
+     *     去掉首尾空行之後：原文 7 行、譯文 6 行
+     * </pre>
+     *
+     * 多出來的那一行是訊息開頭的 {@code "  "}——兩個空白，不是空的，
+     * 所以沒被去掉；而它在語料的鍵裡早就被 {@code strip()} 掉了，
+     * 譯文根本不可能有那一行。
+     *
+     * <p>所以這裡也改看「有沒有實字」：空白、排版偏移都算空。
+     */
     private static int[] solidRows(List<List<Run>> rows) {
         int from = 0;
         int to = rows.size();
-        while (from < to && rows.get(from).isEmpty()) {
+        while (from < to && blankRow(rows.get(from))) {
             from++;
         }
-        while (to > from && rows.get(to - 1).isEmpty()) {
+        while (to > from && blankRow(rows.get(to - 1))) {
             to--;
         }
         return new int[] {from, to};
+    }
+
+    /** 這一行有沒有實字。排版空白與偏移都不算。 */
+    private static boolean blankRow(List<Run> row) {
+        return rowText(row).isBlank();
     }
 
     /** 一行的重算；跟舊 {@code realign} 內層同一套邏輯。 */

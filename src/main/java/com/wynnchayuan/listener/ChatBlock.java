@@ -103,6 +103,44 @@ public final class ChatBlock {
     /** 換伺服器、關掉功能時清掉，免得下一塊沾到上一塊的尾巴。 */
     public static synchronized void clear() {
         pending.clear();
+        mine.clear();
+    }
+
+    /**
+     * 我們自己剛送出去的那幾則。
+     *
+     * <h2>為什麼要記</h2>
+     * {@code displayClientMessage} 會<b>再觸發一次聊天事件</b>，於是我們送出去的
+     * 譯文又被當成新訊息收回來、再翻一次。診斷檔裡因此出現整段中文被拿去查表：
+     *
+     * <pre>
+     *   === 聊天對齊 5 ===（沒翻到：語料裡查不到這一塊）
+     *     原文：󐁙§6§l歡迎來到 Wynncraft！…
+     * </pre>
+     *
+     * <p>白費力氣還算小事，真正的問題是它會跟後面真正的新訊息<b>攢成同一塊</b>
+     * ——診斷檔的「聊天對齊 4」就是三則不相干的訊息被接在一起。
+     */
+    private static final java.util.Set<String> mine =
+            java.util.Collections.newSetFromMap(
+                    new java.util.LinkedHashMap<>() {
+                        @Override
+                        protected boolean removeEldestEntry(
+                                java.util.Map.Entry<String, Boolean> eldest) {
+                            return size() > MINE_MEMORY;
+                        }
+                    });
+
+    /** 記得自己送過的最後幾則就夠了——事件是同一個 tick 回來的。 */
+    private static final int MINE_MEMORY = 32;
+
+    /** 這一則是不是我們自己剛送出去的譯文。 */
+    public static synchronized boolean isOurs(String message) {
+        return message != null && mine.contains(message);
+    }
+
+    private static synchronized void remember(Component sent) {
+        mine.add(sent.getString());
     }
 
     private static void flush() {
@@ -117,6 +155,9 @@ public final class ChatBlock {
             whole = stacked(rows);
         }
         if (whole != null) {
+            // 先記下來再送：displayClientMessage 會同步再觸發一次聊天事件，
+            // 記晚了就來不及擋。見 #mine。
+            remember(whole);
             mc.player.displayClientMessage(whole, false);
         }
     }
