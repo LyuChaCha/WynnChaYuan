@@ -289,9 +289,27 @@ def check_pair(path: str, key: str, src: str, dst: str,
         out.append(Problem("error", path, key,
                            "原文的鍵裡不該有顏色佔位符 —— 那是給譯文用的，"
                            "寫進鍵裡會永遠查不到"))
-    if dst.count(COLOUR_END) > len(COLOUR.findall(dst)):
+    # 沒有色段在開著的時候寫 {/}，那個 {/} 什麼都不會做。
+    #
+    # 這裡看<b>位置</b>而不是只數個數。數個數漏得掉「數量剛好相等、但 {/}
+    # 寫在 {cN} 前面」的情形（`{/}文字{c1}…`），而那正是誤解語意的樣子。
+    #
+    # 反過來「色段開著沒關」<b>不報</b>：一路染到這一段結尾是正當寫法
+    # （`提升 Uppercut 的傷害\n{c1}與魔力消耗。`），而且色段的作用範圍
+    # 本來就止於這一條，不會外溢到別的條目。
+    stray_end = 0
+    open_span = False
+    for piece in re.split(r"(\{c(?:[1-9]|:[^}]+)\}|\{/\})", dst):
+        if piece == COLOUR_END:
+            if not open_span:
+                stray_end += 1
+            open_span = False
+        elif COLOUR.fullmatch(piece or ""):
+            open_span = True
+    if stray_end:
         out.append(Problem("warn", path, key,
-                           f"{COLOUR_END} 比顏色佔位符還多 —— 多出來的沒有作用，"
+                           f"有 {stray_end} 個 {COLOUR_END} 前面沒有開著的色段 —— "
+                           f"那個 {COLOUR_END} 不會有任何作用，"
                            f"確認是不是刪掉 {{cN}} 時忘了一起刪"))
 
     # 換行數不必一致。中文比英文緊湊，原文分兩行的句子往往一行就講完，

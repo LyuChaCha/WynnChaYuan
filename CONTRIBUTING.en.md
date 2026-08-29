@@ -110,8 +110,10 @@ Three things to watch:
 
 - These go **in `dst` only**. A colour placeholder in `src` makes that key
   unmatchable forever, because the game never sends those characters.
-- A span runs until `{/}`, the next `{cN}`, or **the end of that line**. Forgetting
-  `{/}` affects that line only; it never bleeds into the rest of the block.
+- A span runs until `{/}` or the next `{cN}`, and **may cross line breaks** — when a
+  sentence is wrapped onto two lines, opening a span on the first line carries it onto
+  the second. Omitting `{/}` colours through to the end of that entry, which is a
+  legitimate way to say "to the end"; it never reaches another entry.
 - An out-of-range index is treated as **not written** — the span falls back to
   guessing. A wrong colour is survivable; a line that refuses to render is not.
 

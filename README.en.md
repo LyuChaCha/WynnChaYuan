@@ -117,9 +117,10 @@ putting one in `src` makes the line unmatchable forever.
 "dst": "{c1}[Cave Completed]{/}\n{c2}Grook's Nest{/}"
 ```
 
-A span runs until `{/}`, the next `{cN}`, or **the end of that line** — a missing
-`{/}` never bleeds into the rest of the block. An out-of-range index is treated as
-not written, so the line falls back to matching rather than breaking.
+A span runs until `{/}` or the next `{cN}`, and **may cross line breaks** — a wrapped
+sentence keeps its colour onto the next line. Omitting `{/}` colours through to the end
+of that entry and never reaches another one. An out-of-range index is treated as not
+written, so the line falls back to matching rather than breaking.
 
 ### Place names stay in English
 
