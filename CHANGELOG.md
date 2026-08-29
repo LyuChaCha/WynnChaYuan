@@ -3,6 +3,30 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.65] - 2026-08-29
+
+### 新增
+
+- **《The Ultimate Weapon》、《Lazarus Pit》、《Hunger of the Gerts Part II》三篇整篇翻完**
+  （76 + 76 + 76 句）。任務進度來到 6272/22088（28.4%）。
+
+  - 《The Ultimate Weapon》：哈比人一路踢皮球的橋段是整篇的笑點所在，
+    Gogedar、Togedar、Alegdar、Balegar、Reyoretrsed 一路推託的節奏照原文保留。
+    Reyoretrsed 那句名字發音的抬槓（Ray-ore-tree-sed）處理成「瑞－歐－崔－塞德」，
+    保住「這不是很明顯嗎」的傲慢。Alegdar 那段忽然認真的人生感慨也沒有喜劇化處理。
+  - 《Lazarus Pit》：墓中四位死者各有各的性格——Plaatic 的貴族傲慢、
+    Pigglesworth 的老派客氣、Uggword 的暴躁、Poclo 從熱心到崩潰的轉折。
+    古書殘頁刻意保留破碎處與省略號的位置，讀起來仍是「殘卷」而不是通順的句子。
+  - 《Hunger of the Gerts Part II》：Gert 族長的破碎語法照原文用同樣破碎的中文呈現
+    （「打仗準備，我們！」「但先！我們吃食物。」），不修飾成通順句子；
+    Bory 那句斷字式的挑釁「但你。沒。被。邀。請！」也照斷。
+
+### 備註
+
+- 專有名詞維持英文：人名、Gylia Watch、The Shiar、Mrs. Fluffles、
+  Ghastly Ghoul 等敵人名稱，以及 `[...]` 內的道具名。
+- 「Lazarus 之坑」沿用對照表既有譯名。
+
 ## [1.99.64] - 2026-08-29
 
 ### 新增
