@@ -9,6 +9,48 @@
 > （見 v1.99.68），不需要重新下載模組。這一段持續累積，等下次有程式碼改動
 > 需要發 jar 時再一起併入該版本。
 
+### 調整
+
+- **`Raid` 改譯為「討伐戰」**（依翻譯團隊指示）。先前是「團隊副本」，
+  遊戲裡還有一處寫成「突襲」——隊伍搜尋的說明就是那一條。
+
+  <p><b>只動指遊戲模式的那個 `Raid`</b>，共 11 條：介面的 `Raiding Grandmaster`、
+  `Raid Daily Bonus Refresh`、`Win Raids:`、Wynntils 的模式名，以及隊伍搜尋
+  NPC 的單行與整塊兩種形態（先前一條寫「參加」一條寫「進入」，一併統一）。
+  `misc.json` 裡 `Use this item to enter Raids` 原本是空的，順手補上。
+
+  <p>下面這些<b>維持不變</b>——GLOSSARY 自己就標出了這個區別（「非指突襲」）：
+  任務對話裡的 `a raid on a corrupt stronghold`、`the orc raid`、
+  `assault on the spiders` 是一般語意的突襲／進攻；`Zombie Raider`、
+  `Skyraider` 是怪物名；裝備 lore 的 `tomb raiding` 是盜墓。
+  翻成「討伐戰」在這些地方都會很怪。
+
+  <p>GLOSSARY 一併更新，並解掉它自己的一處矛盾：對照表寫著 `Raid | 團隊副本`，
+  「一律保留原文」那份清單卻又列著 **Raid**。既然定案要翻，就把它從保留清單移除。
+
+### 新增
+
+- **《The Mercenary》整篇翻完**（141 句）。任務進度來到 8962/22067（40.6%）。
+  五個人的語氣分開處理：Mel 的鄉土吞字、Linton 對炸藥的一往情深、
+  Lanu 的講究、Aledar 的認真，以及 Amerigo 上將那種自視甚高又沒耐性的官腔。
+
+  <p>Takan 的台詞原文大量使用<b>全大寫</b>（`those DAMNED admirals`、
+  `WE'RE the ones out fighting`、`these IDIOTS`）——中文沒有大小寫可用，
+  改由「」把重音標出來。他那段「憑什麼是他們」的怒吼是全篇的重心，
+  照原文的失控程度處理，沒有修飾成通順的控訴。
+
+  <p>結尾 Amerigo 那句「我得去領我那枚『剷除前指揮官 Takan』的榮譽徽章了」
+  是全篇的諷刺落點，緊接著就是 Aledar 的「我開始有點明白 Takan 為什麼那麼恨他了」，
+  兩句的落差照原文保留。
+
+  <p>譯名照語料既有慣例——人名保留原文、職銜翻成中文接在名字後
+  （比照既有的「Enduyn 隊長」「Alvin 鎮長」），所以是 Amerigo 上將、Takan 指揮官；
+  `Province of Wynn` 沿用既有的「Wynn 行省」；`Shadow Spears` 是組織專名，維持原文。
+
+  <p>招募詞在檔案裡重複三次（只有最後一句不同），三份的譯文<b>逐字相同</b>——
+  重複原文若有兩種譯法，遊戲裡會因為載入順序不同而變，所以寫入前有一道檢查擋著。
+
+
 ## [1.99.74] - 2026-08-29
 
 ### 新增
