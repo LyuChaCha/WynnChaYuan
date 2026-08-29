@@ -433,6 +433,58 @@ def check_file(file: Path, places: set[str],
     return problems
 
 
+def check_substitutable_names(files: list[Path]) -> list[Problem]:
+    """`_meta.itemNames: false` 只能用在「名稱會出現在別的敘述裡」的檔案。
+
+    <h2>這個旗標實際上在決定什麼</h2>
+    `false` 會讓該檔 `role: name` 的條目進入<b>可替換的詞</b>表
+    （見 TranslationStore#noteTerm）——也就是那些名稱會被塞進任何剛好含有
+    同樣字串的文字裡。技能與 Major ID 需要這個行為（「提升 Meteor 的傷害」），
+    道具名稱<b>不需要</b>，而且會出事。
+
+    <p>實際發生過：`ingredient.json` 誤標成 `false` 之後，素材 `Dark Matter`
+    （暗物質）的譯名被貼到<b>同名的盔甲</b>上，`Charred Bone`（焦黑的骨）
+    貼到<b>同名的武器</b>上——裝備名稱是刻意保留英文的。順帶一提，這也讓
+    F6 的「翻譯物品名稱」開關對那些檔案<b>無聲失效</b>，因為 terms 那條路
+    不受開關管。
+
+    <h2>為什麼用白名單而不是自動判斷</h2>
+    「這個名稱會不會出現在別的敘述裡」機器判斷不了——它是語意問題。
+    白名單短、而且加新檔案時會得到一則說得很清楚的錯誤，
+    比讓它靜靜地開始覆蓋別人好。
+    """
+    # 只有這些檔案的名稱該被當成可替換的詞。
+    allowed = {"major-id.json"}
+    allowed_dirs = {"ability"}
+
+    out: list[Problem] = []
+    for path in files:
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:                                     # noqa: BLE001
+            continue
+        if not isinstance(data, dict):
+            continue
+        meta = data.get("_meta")
+        if not isinstance(meta, dict) or meta.get("itemNames") is not False:
+            continue
+        entries = data.get("entries")
+        names = 0
+        if isinstance(entries, dict):
+            names = sum(1 for v in entries.values()
+                        if isinstance(v, dict) and v.get("role") == "name"
+                        and (v.get("dst") or "").strip())
+        if names == 0:
+            continue                       # 沒有名稱條目，這個旗標不影響任何事
+        if path.name in allowed or path.parent.name in allowed_dirs:
+            continue
+        out.append(Problem("error", path.name, "_meta.itemNames",
+                           f"標成 false 會讓這個檔的 {names} 個名稱變成"
+                           f"「可替換的詞」，塞進任何含有同樣字串的文字裡。"
+                           f"這是給技能與 Major ID 用的；道具檔請改成 true"))
+    return out
+
+
 def check_duplicates(files: list[Path]) -> list[Problem]:
     """同一個原文出現在兩個檔案裡，而且譯法不同。
 
@@ -587,7 +639,8 @@ def main(argv: list[str]) -> int:
             print()
             print(f"── {lang} ──")
         # 「同一個原文兩種譯法」只在<b>同一種語言之內</b>才是問題
-        dupes = check_duplicates(group) + check_misfiled(group)
+        dupes = (check_duplicates(group) + check_misfiled(group)
+                 + check_substitutable_names(group))
         if dupes:
             print()
             print("跨檔重複")
