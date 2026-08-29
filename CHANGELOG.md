@@ -3,6 +3,31 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [未發布]
+
+> 純翻譯的更新不再逐批發版。譯文在合併進 `main` 之後，玩家下次進遊戲就會
+> 自動同步到（見 v1.99.68），不需要重新下載模組。這一段會持續累積，
+> 等到有程式碼改動需要發 jar 時再一起併入該版本。
+
+### 新增
+
+- **《The Shadow of the Beast》、《Burning Bonds》、《From the Bottom》整篇翻完**
+  （87 + 89 + 90 句）。任務進度來到 6878/22067（31.2%）。
+  - 《The Shadow of the Beast》：Tolem 從客氣到全大寫暴走的落差是整篇的笑點。
+    中文沒有大寫可用，改以句式與標點承接；他氣到口誤的
+    `bellevue...bellevue? Believe!` 處理成「我沒辦法接手……接手？接受！」，
+    保留「氣到講錯字又自己更正」的節奏。
+  - 《Burning Bonds》：Abramod 全篇維持文雅而克制的語氣，最後一句翻臉才有落差。
+    `medallion` 統一作「徽牌」——它同時是身分證明與氏族信物，用「勳章」會失焦。
+  - 《From the Bottom》：八個商人八種腔調。Mastro 的男子漢推銷術裡
+    `a real MAN's spirit` → `A SALES MAN!` 的雙關，用「男子漢」接「業務漢」承接；
+    Dohstaj 全程省略號、暗戀 Mastro 的那條暗線也照原文留白處理。
+
+### 備註
+
+- 專有名詞維持英文：人名、`Kanderstone`／`Wynnic Copper`／`Voidstone` 等礦名、
+  `Ockar the Unseen Blade`、`Golemlus`、`Draani Thunderwill`，以及 `[...]` 內的道具名。
+
 ## [1.99.68] - 2026-08-29
 
 ### 修正
