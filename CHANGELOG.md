@@ -23,10 +23,42 @@
     `a real MAN's spirit` → `A SALES MAN!` 的雙關，用「男子漢」接「業務漢」承接；
     Dohstaj 全程省略號、暗戀 Mastro 的那條暗線也照原文留白處理。
 
+- **《Acquiring Credentials》、《Brothers Return》、《WynnExcavation Site D》整篇翻完**
+  （92 + 93 + 97 句）。任務進度來到 7160/22067（32.4%）。
+  - 《Acquiring Credentials》：酒保的暗號問答是整條線的骨架，
+    `One {p} Whiskey, shipwrecked against the rocks` 譯作「觸礁加冰」，
+    把 on the rocks 的雙關留下來。結尾 Doan 發現護照一直在自己口袋裡的
+    反轉照原文的節奏處理。
+  - 《Brothers Return》：Drucksh 全程醉話與結巴；他把主教的敬稱講錯
+    （`your excellency` → `your priestliness`）處理成「閣下」對「神父大人」，
+    保留他搞不清楚規矩的那份粗魯。Laen 在原文用 they／their 指稱，
+    中文一律以名字承接、不指定性別。
+  - 《WynnExcavation Site D》：Amadel 三階段（Corrupted／Shadow／本體）
+    的語氣逐段崩解，照原文的層次處理。
+
+### 已知未處理（回報給翻譯團隊）
+
+- **Shadow Amadel 的亂碼字（zalgo）沒有照搬。** 原文
+  `will not aļ͢͠͠͡l̶̀͜͏͏ów me to lớ̀͠͝se..!!!` 疊了大量組合附加符號。
+  這些符號疊在漢字上，Minecraft 的字型渲染不會正確合成，畫面上會變成
+  一串方塊，看起來像「壞掉」而不是「刻意的扭曲」。譯文改以斷字與停頓
+  呈現崩壞感（「我—我—我感覺……絕、絕不會讓我輸……」）。
+  若團隊想試組合符號版本，需要先在遊戲裡確認渲染結果。
+- **65 句目標行的座標在維基抓取時被剝掉**，變成 `Talk to Sayleros at .`
+  這種形狀（分布在 14 個檔，以 `recover-the-past` 13 句、
+  `revelations-in-fall` 11 句、`the-cursed-one` 10 句最多）。
+  遊戲內這些句子帶著座標，所以這些 key <b>永遠比對不到</b>。
+  這是抓取端的問題，要修得改 `tools/fetch-quest-dialogue.py` 並重抓。
+
+### 統一
+
+- `Solve the puzzle` 沿用《WynnExcavation Site B》既有的「解開機關」。
+
 ### 備註
 
 - 專有名詞維持英文：人名、`Kanderstone`／`Wynnic Copper`／`Voidstone` 等礦名、
-  `Ockar the Unseen Blade`、`Golemlus`、`Draani Thunderwill`，以及 `[...]` 內的道具名。
+  `Ockar the Unseen Blade`、`Golemlus`、`Draani Thunderwill`、`WynnExcavation`、
+  `Blackbird Inn`、`Letvus`、`Dragonling`，以及 `[...]` 內的道具名。
 
 ## [1.99.68] - 2026-08-29
 
