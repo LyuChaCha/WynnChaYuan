@@ -155,6 +155,56 @@ def compact(lang: str) -> bool:
     return lang.split("_")[0] in COMPACT
 
 
+# 每種語言的譯文<b>不該</b>出現哪些文字系統。
+#
+# 為什麼要查這個：譯文常常是一大批一次寫進去的，中間混進一兩個別種文字的詞
+# （`我們всі都想…`、`就有條路можно下去`）不會讓 JSON 壞掉、不會讓佔位符對不上、
+# 也不會被任何既有規則攔下來——它只會在遊戲裡靜靜地顯示成一串亂碼。
+# 實際發生過兩次，兩次都是靠人眼看到的。
+#
+# 只列<b>確定不屬於</b>該語言的系統：拉丁字母到處都要用（專有名詞維持原文），
+# 所以永遠不查；假名對 ja_jp 是正常的，對 zh_tw 就不是。
+FOREIGN_SCRIPTS = {
+    "西里爾字母": (0x0400, 0x04FF),
+    "希臘字母": (0x0370, 0x03FF),
+    "諺文": (0xAC00, 0xD7AF),
+    "假名": (0x3040, 0x30FF),
+    "阿拉伯字母": (0x0600, 0x06FF),
+    "希伯來字母": (0x0590, 0x05FF),
+    "泰文": (0x0E00, 0x0E7F),
+    "天城文": (0x0900, 0x097F),
+}
+
+# 語言 -> 這個語言合理會用到的系統（拉丁與 CJK 之外）
+NATIVE_SCRIPTS = {
+    "ru": {"西里爾字母"},
+    "uk": {"西里爾字母"},
+    "bg": {"西里爾字母"},
+    "sr": {"西里爾字母"},
+    "el": {"希臘字母"},
+    "ko": {"諺文"},
+    "ja": {"假名"},
+    "ar": {"阿拉伯字母"},
+    "he": {"希伯來字母"},
+    "th": {"泰文"},
+    "hi": {"天城文"},
+}
+
+
+def foreign_script(dst: str, lang: str) -> tuple[str, str] | None:
+    """譯文裡有沒有明顯不屬於這個語言的文字。
+
+    回傳 (系統名, 命中的那一小段) ，沒有就回 None。
+    """
+    allowed = NATIVE_SCRIPTS.get(lang.split("_")[0], set())
+    for i, ch in enumerate(dst):
+        code = ord(ch)
+        for name, (low, high) in FOREIGN_SCRIPTS.items():
+            if low <= code <= high and name not in allowed:
+                return name, dst[max(0, i - 6):i + 7]
+    return None
+
+
 def check_pair(path: str, key: str, src: str, dst: str,
                places: set[str], glossary: dict[str, str],
                lang: str = "zh_tw") -> list[Problem]:
@@ -167,6 +217,14 @@ def check_pair(path: str, key: str, src: str, dst: str,
     if dst.strip() == src.strip():
         out.append(Problem("warn", path, key,
                            "譯文和原文完全相同 —— 如果是刻意保留原文可以忽略"))
+
+    # 混進別種文字的字。只看譯文——原文是遊戲送來的，它想長什麼樣是它的事。
+    stray = foreign_script(dst, lang)
+    if stray:
+        name, around = stray
+        out.append(Problem("error", path, key,
+                           f"譯文裡混進了{name}：「{around}」"
+                           f" —— {lang} 用不到這種文字，遊戲裡會顯示成亂碼"))
 
     # 佔位符：數量必須一模一樣。少一個 -> 遊戲裡那個數字／符號會憑空消失；
     # 多一個 -> 會有多餘的符號被塞進去或直接顯示成 {~}
