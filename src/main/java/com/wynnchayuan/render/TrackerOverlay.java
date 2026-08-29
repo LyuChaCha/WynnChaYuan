@@ -70,9 +70,40 @@ public final class TrackerOverlay {
         current = List.of();
     }
 
+    /**
+     * Wynntils 現在還在追蹤東西嗎。
+     *
+     * <h2>為什麼要在繪製當下問，而不是等事件</h2>
+     * 這塊疊層原本純粹由 {@code ActivityTrackerUpdatedEvent} 推動，追蹤欄空掉時
+     * 靠「事件補送一則空的」來收掉。問題是<b>任務完成的那一刻，那則空事件不一定會來</b>
+     * ——Wynncraft 直接把追蹤欄收掉，Wynntils 就不再發事件了。
+     *
+     * <p>結果是原文那一欄已經消失，我們的譯文還孤零零地留在畫面上，而且停在一個
+     * <b>已經完成</b>的任務上，看起來像沒做完。使用者回報的正是這個畫面。
+     *
+     * <p>所以改成在畫之前直接問 Wynntils 的權威狀態：它沒在追蹤，我們就不畫。
+     * 這比任何「多久沒更新就清掉」的計時器都可靠——追蹤內容本來就可能好幾分鐘不變，
+     * 計時器會把正常顯示中的譯文誤清掉。
+     *
+     * <p>拿不到狀態（Wynntils 還沒初始化、之後 API 有變動）時回傳 {@code true}，
+     * 維持原本的行為：寧可多顯示一下，也不要讓正常的譯文憑空消失。
+     */
+    private static boolean stillTracking() {
+        try {
+            String name = com.wynntils.core.components.Models.Activity.getTrackedName();
+            return name != null && !name.isBlank();
+        } catch (Throwable t) {
+            return true;
+        }
+    }
+
     public static void render(GuiGraphics graphics) {
         List<Component> lines = current;
         if (lines.isEmpty()) {
+            return;
+        }
+        if (!stillTracking()) {
+            current = List.of();      // 原文那一欄沒了，譯文也跟著收
             return;
         }
         Minecraft mc = Minecraft.getInstance();
