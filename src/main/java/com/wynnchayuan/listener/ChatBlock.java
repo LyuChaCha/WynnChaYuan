@@ -186,13 +186,17 @@ public final class ChatBlock {
         net.minecraft.network.chat.MutableComponent out = Component.empty();
         boolean any = false;
         for (int i = 0; i < rows.size(); i++) {
-            Component line;
-            try {
-                line = LineTranslator.translateChat(rows.get(i).original(),
-                                                    WynnChaYuan.translations(),
-                                                    centred == null ? null : centred[i]);
-            } catch (Throwable t) {
-                line = null;
+            // 只有一則時收進來那份就是對的（ChatListener 走的是同一支），
+            // 不必再翻一次——翻兩次連診斷檔都會記兩份。
+            Component line = centred == null ? rows.get(i).translated() : null;
+            if (line == null) {
+                try {
+                    line = LineTranslator.translateChat(rows.get(i).original(),
+                                                        WynnChaYuan.translations(),
+                                                        centred == null ? null : centred[i]);
+                } catch (Throwable t) {
+                    line = null;
+                }
             }
             if (line == null) {
                 line = rows.get(i).translated();
