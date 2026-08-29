@@ -210,6 +210,14 @@ tasks.register('runChatAlignChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChatAlignChecks' }
 
+tasks.register('runLabelReplaceChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證漂浮名牌就地替換不會動到遊戲自己的版面'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LabelReplaceTest'
+}
+tasks.named('check') { dependsOn 'runLabelReplaceChecks' }
+
 tasks.register('runCaptureStoreChecks', JavaExec) {
     group = 'verification'
     description = '驗證 captured.json 只列還沒有譯文的字串'

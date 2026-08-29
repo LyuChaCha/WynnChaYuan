@@ -1995,12 +1995,64 @@ public final class LineTranslator {
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;
         }
+        // 「沒翻到」跟「翻了但沒對齊」是兩種病。先前查不到就安靜回傳 null，
+        // 於是診斷檔裡那一塊完全不存在，看起來像沒被呼叫到——分不出是哪一種。
+        String translated = lookup(parts.template(), store);
+        if (translated == null || translated.isBlank()) {
+            FlowedDebug.chatRows(message.getString(), "  鍵：" + parts.template(),
+                                 "語料裡查不到這一塊");
+            return null;
+        }
+        Component rebuilt = rebuild(translated, parts, store);
+        if (rebuilt == null) {
+            FlowedDebug.chatRows(message.getString(), "  譯文：" + translated,
+                                 "佔位符數量對不上，整塊放棄");
+            return null;
+        }
+        return unslant(realignChat(message, rebuilt, centred));
+    }
+
+    /**
+     * 漂浮名牌的譯文。只認<b>整塊</b>的鍵，而且完全不碰排版。
+     *
+     * <h2>為什麼名牌不能走一般那條路</h2>
+     * 一般的 {@link #translate} 查不到整行時會退到 {@link #translateSegments}——
+     * 逐片段替換，然後跑 {@link #alignColumns}、{@link #recenterColumns}、
+     * 前導置中補償。那一整套是為 <b>tooltip</b> 寫的：tooltip 是「標籤 + 數值」
+     * 兩欄的表格，欄要對齊。
+     *
+     * <p>漂浮名牌不是表格。它浮在 3D 世界裡，位置由遊戲整塊算好，
+     * 裡面的偏移是 Wynncraft 自己排的圖示與間隔。把欄位對齊那一套套上去，
+     * 等於<b>拿尺去量一張沒有欄的紙</b>——空白被重新編碼、前導被補上半個寬度差，
+     * 整塊就歪了。而且只要有<b>任何一個</b>片段查得到（哪怕是句子裡的一個詞），
+     * 這條路就會回傳非 null，於是連「幾乎沒翻到」的名牌也被重排一次。
+     *
+     * <p>使用者回報的「翻譯讓原始 Wynncraft UI 錯位」正是這個：職業選擇的
+     * 三個全英文標籤互相疊在一起、蓋住圖示——那些字我們根本沒翻，
+     * 卻被排版邏輯動過。
+     *
+     * <h2>所以這裡怎麼做</h2>
+     * <ul>
+     *   <li>只查<b>整塊</b>的鍵。查不到就回傳 {@code null}，原文原封不動。</li>
+     *   <li><b>不重新對齊。</b>符號與偏移由 {@link #rebuild} 原樣填回，
+     *       Wynncraft 怎麼排就怎麼排。</li>
+     * </ul>
+     *
+     * <p>代價是有些名牌會從「翻到一半」變成「完全沒翻」。這符合這個專案
+     * 一開始就寫下的規則：寧可不翻，也不要畫出錯位的東西——何況錯位的是
+     * <b>遊戲原本的畫面</b>，那比我們自己的面板嚴重得多。
+     */
+    public static Component translateLabel(StyledText label, TranslationStore store) {
+        LineParts parts = LineParts.of(label);
+        if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
+            return null;
+        }
         String translated = lookup(parts.template(), store);
         if (translated == null || translated.isBlank()) {
             return null;
         }
         Component rebuilt = rebuild(translated, parts, store);
-        return rebuilt == null ? null : unslant(realignChat(message, rebuilt, centred));
+        return rebuilt == null ? null : unslant(rebuilt);
     }
 
     /**
@@ -2021,6 +2073,10 @@ public final class LineTranslator {
         int[] keepOrig = solidRows(origRows);
         int[] keepMade = solidRows(madeRows);
         if (keepOrig[1] - keepOrig[0] != keepMade[1] - keepMade[0]) {
+            FlowedDebug.chatRows(original.getString(),
+                    "  去掉首尾空行之後：原文 " + (keepOrig[1] - keepOrig[0])
+                    + " 行、譯文 " + (keepMade[1] - keepMade[0]) + " 行",
+                    "行數對不上，原樣返回不動排版");
             return rebuilt;                    // 行數對不上就什麼都別動
         }
         boolean[] centre = centred == null ? centredRows(origRows) : null;
@@ -2039,7 +2095,7 @@ public final class LineTranslator {
             out.append(chatRow(origRows.get(at), made,
                                centred == null ? centre[at] : centred, log));
         }
-        FlowedDebug.rows(original.getString(), log.toString());
+        FlowedDebug.chatRows(original.getString(), log.toString(), null);
         return out;
     }
 

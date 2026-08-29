@@ -252,8 +252,12 @@ public final class CaptureListener {
                 LookAtTranslator.remember(event.getTextDisplay(), original);
                 return;
             }
+            // 名牌走專用那一支：只認整塊的鍵，而且不碰排版。
+            // 一般那條路查不到整行時會退到逐片段替換再跑 tooltip 的欄位對齊，
+            // 那會把遊戲自己排好的漂浮標籤弄歪——連我們根本沒翻的也一樣。
+            // 見 LineTranslator#translateLabel。
             Component translated =
-                    LineTranslator.translate(original, WynnChaYuan.translations());
+                    LineTranslator.translateLabel(original, WynnChaYuan.translations());
             if (translated != null) {
                 event.setText(StyledText.fromComponent(translated));
             }

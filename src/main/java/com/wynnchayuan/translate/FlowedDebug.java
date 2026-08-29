@@ -358,6 +358,46 @@ public final class FlowedDebug {
      */
     private static final int PALETTE_LIMIT = 60;
 
+    /**
+     * 聊天訊息的逐行對齊，<b>額度跟名牌分開算</b>。
+     *
+     * <h2>為什麼要分</h2>
+     * 兩者共用一份額度時，名牌永遠贏——漂浮名牌<b>每一個都是兩行</b>，
+     * 走過一片草原就是幾十筆。實機回報的檔案裡 40 筆有 35 筆是名牌，
+     * 而且每一筆都是「不動：空白數 原文=0 譯文=0」這種沒有資訊量的紀錄；
+     * 真正想查的「洞穴完成」那一塊排在後面，一次都沒被寫進去。
+     *
+     * <p>額度先前從 12 加到 40 也沒用，因為名牌的數量本來就沒有上限。
+     * 分開算才治本。
+     *
+     * @param miss 查不到譯文的原因；有值時代表<b>根本沒翻到</b>，
+     *             那跟「翻了但沒對齊」是兩種病，混在一起就查不出來
+     */
+    public static void chatRows(String id, String body, String miss) {
+        if (file == null || chatSeen >= CHAT_ROW_LIMIT
+                || !already.add("chatRows" + id)) {
+            return;
+        }
+        chatSeen++;
+        try {
+            Files.writeString(file,
+                    "=== 聊天對齊 " + chatSeen + " ==="
+                    + (miss == null ? "" : "（沒翻到：" + miss + "）")
+                    + System.lineSeparator()
+                    + "  原文：" + id.replace("\n", " ⏎ ") + System.lineSeparator()
+                    + (body == null ? "" : body) + System.lineSeparator(),
+                    StandardCharsets.UTF_8,
+                    StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+        } catch (Throwable t) {
+            // 診斷絕不能反過來弄壞畫面
+        }
+    }
+
+    private static int chatSeen = 0;
+
+    /** 聊天訊息本來就不多，二十筆足夠涵蓋一輪任務。 */
+    private static final int CHAT_ROW_LIMIT = 20;
+
     private static int rowSeen = 0;
 
     /**
