@@ -102,6 +102,28 @@ public final class ChatAlignTest {
         }
         check("量到三行的縮排（實際 " + made.length + " 行）", made.length == 3);
 
+        // 原文開頭多一行「只有空白」時，行數仍然要對得起來。
+        //
+        // 語料的鍵是 strip() 過的，只有空白的首行早就被去掉了，譯文不可能有那一行。
+        // 先前 solidRows 只認「完全沒有片段」的行，於是實機的「洞穴完成」永遠是
+        // 「原文 7 行、譯文 6 行」對不上，整塊排版原樣返回——診斷檔的
+        // 「聊天對齊 11」寫得清清楚楚。
+        MutableComponent padded = Component.empty();
+        padded.append(lit("  ", GREY));            // 只有空白的第一行
+        padded.append(lit("\n", GREY));
+        padded.append(quest().getComponent().copy());
+        padded.append(lit("\n", GREY));           // 結尾的空行
+        Component trimmed = LineTranslator.translateChat(
+                StyledText.fromComponent(padded), store);
+        check("原文首行只有空白時仍然翻得出來", trimmed != null);
+        if (trimmed != null) {
+            int[] kept = leads(trimmed);
+            check("三行的縮排仍然跟原文一樣（實際 "
+                          + java.util.Arrays.toString(kept) + "）",
+                  kept.length >= 3 && kept[0] == LEADS[0]
+                          && kept[1] == LEADS[1] && kept[2] == LEADS[2]);
+        }
+
         // 明說「這一行是置中的」時才重新置中。行數與內容不能因此走樣。
         Component centred = LineTranslator.translateChat(quest(), store, Boolean.TRUE);
         check("指定置中時仍翻得出來", centred != null);
