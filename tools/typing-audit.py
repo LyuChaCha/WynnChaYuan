@@ -310,6 +310,26 @@ def audit(lang, out):
                       + ("  [wiki]" if new_src in store.wiki else "  [校訂]")
                       + "  " + new_src[:110] + chr(10))
         out.write(chr(10))
+
+    # 「一閃而過」那一批也要印內容。
+    #
+    # 先前只印數量，報告說「另有 4 句只是開頭一兩個字閃一下」——但沒人知道是哪 4 句，
+    # 也就無從判斷那到底能不能忍。玩家回報「中文突然變成別的字」時，第一件事就是
+    # 想拿這份清單去對，結果對不到東西。數字不能拿來查證，內容才可以。
+    if minor:
+        out.write("-" * 74 + chr(10))
+        out.write("以下只是開頭一兩個字閃一下（舊的那條短到不到前綴門檻），"
+                  "通常可以忍，列出來供判斷：" + chr(10))
+        out.write("-" * 74 + chr(10) + chr(10))
+        for line, quest, jumps in minor:
+            out.write("○ " + line[:160] + chr(10))
+            out.write("   任務：" + str(quest) + chr(10))
+            for kind, k, old_src, old_shown, new_src, new_shown in jumps:
+                out.write("   第 " + str(k) + " 字：「" + old_shown[:40]
+                          + "」 -> 「" + new_shown[:40] + "」" + chr(10))
+                out.write("        來源 A  " + old_src[:90] + chr(10))
+                out.write("        來源 B  " + new_src[:90] + chr(10))
+            out.write(chr(10))
     return len(lines), len(bad), len(minor)
 
 
