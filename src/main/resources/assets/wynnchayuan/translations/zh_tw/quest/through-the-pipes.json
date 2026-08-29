@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Through the Pipes",
   "count": 191,
-  "translated": 0,
+  "translated": 191,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Through the Pipes#000": {
    "src": "Talk with the citizen in despair at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 與那位一臉絕望的市民談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -18,7 +18,7 @@
   },
   "Through the Pipes#001": {
    "src": "H-Hey, you! Have you seen a raccoon anywhere?",
-   "dst": "",
+   "dst": "喂、喂，你！你有在哪裡看到一隻浣熊嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -28,7 +28,7 @@
   },
   "Through the Pipes#002": {
    "src": "I spent all my free time making a gift for Soosu, and that devil snatched it from me! It would be a shame if I never got the chance to give it to her...",
-   "dst": "",
+   "dst": "我把所有空閒時間都拿來做一份要送 Soosu 的禮物，結果那隻惡魔從我手上搶走了！要是我永遠沒機會把它交給她，那也太遺憾了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -38,7 +38,7 @@
   },
   "Through the Pipes#003": {
    "src": "This might be a big ask, but- do you think you could help me?",
-   "dst": "",
+   "dst": "這個請求可能有點過分，不過——你能幫幫我嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -48,7 +48,7 @@
   },
   "Through the Pipes#004": {
    "src": "Y-You will? I knew there was still some good left in this world!",
-   "dst": "",
+   "dst": "你、你願意？我就知道這世上還是有善意的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -58,7 +58,7 @@
   },
   "Through the Pipes#005": {
    "src": "Right! Last time I saw that raccoon, it was running into an alleyway south of the town center. It can't have gone too far!",
-   "dst": "",
+   "dst": "太好了！我最後一次看到那隻浣熊，是牠跑進鎮中心南邊的一條巷子。牠不可能跑太遠！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -68,7 +68,7 @@
   },
   "Through the Pipes#006": {
    "src": "I will resume searching for that fool as well. Best of luck to you!",
-   "dst": "",
+   "dst": "我也會繼續找那個蠢東西。祝你好運！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -78,7 +78,7 @@
   },
   "Through the Pipes#007": {
    "src": "...I get it. If you change your mind, come and talk with me again.",
-   "dst": "",
+   "dst": "……我懂。你要是改變主意，再來找我談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -88,7 +88,7 @@
   },
   "Through the Pipes#008": {
    "src": "Yes! A raccoon! You've seen them before- surely? They're rampant around here!",
-   "dst": "",
+   "dst": "對！浣熊！你以前一定看過吧？這一帶到處都是！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -98,7 +98,7 @@
   },
   "Through the Pipes#009": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -108,7 +108,7 @@
   },
   "Through the Pipes#010": {
    "src": "You know, those furry gray creatures with the weird striped tails?",
-   "dst": "",
+   "dst": "就是那種灰灰毛毛、尾巴上有奇怪條紋的生物啊？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -118,7 +118,7 @@
   },
   "Through the Pipes#011": {
    "src": "...I hope you know what a raccoon is.",
-   "dst": "",
+   "dst": "……我希望你知道浣熊是什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -128,7 +128,7 @@
   },
   "Through the Pipes#012": {
    "src": "Will you help me?",
-   "dst": "",
+   "dst": "你願意幫我嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -138,7 +138,7 @@
   },
   "Through the Pipes#013": {
    "src": "Oh- you're back! Are you able to help me now?",
-   "dst": "",
+   "dst": "噢——你回來了！現在可以幫我了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -148,7 +148,7 @@
   },
   "Through the Pipes#014": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -158,7 +158,7 @@
   },
   "Through the Pipes#015": {
    "src": "I really think it would be better if we split up to search, don't you agree?",
-   "dst": "",
+   "dst": "我真的覺得我們分頭找會比較好，你不覺得嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -168,7 +168,7 @@
   },
   "Through the Pipes#016": {
    "src": "If you forgot, you should try searching south of the town center. But you do you, I suppose...",
-   "dst": "",
+   "dst": "如果你忘了的話，可以往鎮中心南邊找找。不過你想怎麼做就怎麼做吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -178,7 +178,7 @@
   },
   "Through the Pipes#017": {
    "src": "Confront the raccoon at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 與那隻浣熊當面對峙。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -188,7 +188,7 @@
   },
   "Through the Pipes#018": {
    "src": "Enter the drainage hole at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "進入 [-{~1}, {~2}, -{~3}] 的排水孔。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -198,7 +198,7 @@
   },
   "Through the Pipes#019": {
    "src": "Enter the drainage hole at to continue the search.",
-   "dst": "",
+   "dst": "進入排水孔，繼續搜尋。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -208,7 +208,7 @@
   },
   "Through the Pipes#020": {
    "src": "Dive deeper into the sewer network.",
-   "dst": "",
+   "dst": "往下水道網路的更深處前進。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -218,7 +218,7 @@
   },
   "Through the Pipes#021": {
    "src": "Explore past the flood gate.",
-   "dst": "",
+   "dst": "越過水閘繼續探索。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -228,7 +228,7 @@
   },
   "Through the Pipes#022": {
    "src": "Find a way to get across the flooded section of the sewer.",
-   "dst": "",
+   "dst": "想辦法通過下水道裡被水淹沒的那一段。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -238,7 +238,7 @@
   },
   "Through the Pipes#023": {
    "src": "Huh, is there someone down there?",
-   "dst": "",
+   "dst": "咦，下面有人嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -248,7 +248,7 @@
   },
   "Through the Pipes#024": {
    "src": "Wait- what's that? HEY!",
-   "dst": "",
+   "dst": "等等——那是什麼？喂！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -258,7 +258,7 @@
   },
   "Through the Pipes#025": {
    "src": "Continue chasing the raccoon through the sewers.",
-   "dst": "",
+   "dst": "繼續在下水道裡追那隻浣熊。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -268,7 +268,7 @@
   },
   "Through the Pipes#026": {
    "src": "You aren't getting away from me now!",
-   "dst": "",
+   "dst": "你這次跑不掉了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -278,7 +278,7 @@
   },
   "Through the Pipes#027": {
    "src": "Encounter a familiar face in the sewers.",
-   "dst": "",
+   "dst": "在下水道裡遇見一張熟面孔。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -288,7 +288,7 @@
   },
   "Through the Pipes#028": {
    "src": "Ah ha! I've got you now, thief!",
-   "dst": "",
+   "dst": "啊哈！這下抓到你了，小偷！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -298,7 +298,7 @@
   },
   "Through the Pipes#029": {
    "src": "Wait- No! Get ba-",
-   "dst": "",
+   "dst": "等等——不對！給我回——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -308,7 +308,7 @@
   },
   "Through the Pipes#030": {
    "src": "OW! My leg!",
-   "dst": "",
+   "dst": "痛！我的腿！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -318,7 +318,7 @@
   },
   "Through the Pipes#031": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -328,7 +328,7 @@
   },
   "Through the Pipes#032": {
    "src": "{u}! You're here! I was wondering where you went!",
-   "dst": "",
+   "dst": "{u}！你來啦！我還在想你跑到哪去了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -338,7 +338,7 @@
   },
   "Through the Pipes#033": {
    "src": "I've been chasing that raccoon the whole time! What in the world have you been up to?",
-   "dst": "",
+   "dst": "我從頭到尾都在追那隻浣熊！你到底跑去做什麼了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -348,7 +348,7 @@
   },
   "Through the Pipes#034": {
    "src": "Whatever. I'm struggling to keep up the chase at this rate. But fortunately, I have just the thing that'll help you!",
-   "dst": "",
+   "dst": "算了。照這個速度我快追不動了。不過幸好，我這裡剛好有個能幫上你的東西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -358,7 +358,7 @@
   },
   "Through the Pipes#035": {
    "src": "MY GRAPPLING HOOK!",
-   "dst": "",
+   "dst": "我的 Grappling Hook！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -368,7 +368,7 @@
   },
   "Through the Pipes#036": {
    "src": "It's broken! How will I ever catch up with that crook at this rate?",
-   "dst": "",
+   "dst": "它壞了！照這樣下去我要怎麼追上那個小賊？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -378,7 +378,7 @@
   },
   "Through the Pipes#037": {
    "src": "...Maybe this is all a lost cause. You can try fixing it, I guess, but it's not worth it.",
-   "dst": "",
+   "dst": "……也許這整件事根本沒救了。你要修修看也可以啦，不過大概不值得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -388,7 +388,7 @@
   },
   "Through the Pipes#038": {
    "src": "I'm going that direction to see if I can catch that pest. You go the other way, we'll meet again soon.",
-   "dst": "",
+   "dst": "我往那個方向去看看能不能抓到那隻害蟲。你走另一邊，我們很快就會再碰面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -398,7 +398,7 @@
   },
   "Through the Pipes#039": {
    "src": "Encounter the stranger in the sewers.",
-   "dst": "",
+   "dst": "在下水道裡遇見一位陌生人。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -408,7 +408,7 @@
   },
   "Through the Pipes#040": {
    "src": "Ah ha! I've got you now, thief!",
-   "dst": "",
+   "dst": "啊哈！這下抓到你了，小偷！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -418,7 +418,7 @@
   },
   "Through the Pipes#041": {
    "src": "Wait- No! Get ba-",
-   "dst": "",
+   "dst": "等等——不對！給我回——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -428,7 +428,7 @@
   },
   "Through the Pipes#042": {
    "src": "OW! My leg!",
-   "dst": "",
+   "dst": "痛！我的腿！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -438,7 +438,7 @@
   },
   "Through the Pipes#043": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -448,7 +448,7 @@
   },
   "Through the Pipes#044": {
    "src": "Huh?",
-   "dst": "",
+   "dst": "啊？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -458,7 +458,7 @@
   },
   "Through the Pipes#045": {
    "src": "Who are you? What are you doing here?",
-   "dst": "",
+   "dst": "你是誰？你在這裡做什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -468,7 +468,7 @@
   },
   "Through the Pipes#046": {
    "src": "Ah, exploring the sewers? That's fun! I've basically been to every corner of {p}'s sewers.",
-   "dst": "",
+   "dst": "啊，在探索下水道？那挺有趣的！{p} 的下水道我基本上每個角落都去過了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -478,7 +478,7 @@
   },
   "Through the Pipes#047": {
    "src": "Say, is there any chance you stumbled upon that raccoon earlier? That pest snatched something of value from me!",
-   "dst": "",
+   "dst": "話說，你剛剛有沒有碰巧撞見一隻浣熊？那隻害蟲從我這裡搶走了很貴重的東西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -488,7 +488,7 @@
   },
   "Through the Pipes#048": {
    "src": "I was making a gift for Sovereign Soosu, but then that fiend just ran off with it! Horrible, isn't it?",
-   "dst": "",
+   "dst": "我本來在做一份要送給 Soosu 統領的禮物，結果那個惡棍就這樣叼著跑了！很過分吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -498,7 +498,7 @@
   },
   "Through the Pipes#049": {
    "src": "Especially with how soon the festival is... I wouldn't want to miss my only opportunity this year!",
-   "dst": "",
+   "dst": "尤其慶典就快到了……我可不想錯過今年唯一的機會！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -508,7 +508,7 @@
   },
   "Through the Pipes#050": {
    "src": "I could really use your help, and hey I have just the tool you'll want for exploring the sewers!",
-   "dst": "",
+   "dst": "我真的很需要你的幫忙，而且欸，我這裡剛好有你探索下水道會想要的工具！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -518,7 +518,7 @@
   },
   "Through the Pipes#051": {
    "src": "MY GRAPPLING HOOK!",
-   "dst": "",
+   "dst": "我的 Grappling Hook！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -528,7 +528,7 @@
   },
   "Through the Pipes#052": {
    "src": "It's broken! How will I ever catch up with that crook at this rate?",
-   "dst": "",
+   "dst": "它壞了！照這樣下去我要怎麼追上那個小賊？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -538,7 +538,7 @@
   },
   "Through the Pipes#053": {
    "src": "...Maybe this is all a lost cause. You can try fixing it, I guess, but it's not worth it.",
-   "dst": "",
+   "dst": "……也許這整件事根本沒救了。你要修修看也可以啦，不過大概不值得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -548,7 +548,7 @@
   },
   "Through the Pipes#054": {
    "src": "I'm going that direction to see if I can catch that pest. What's your name... {u}? You go the other way, we'll meet again soon.",
-   "dst": "",
+   "dst": "我往那個方向去看看能不能抓到那隻害蟲。你叫什麼名字……{u}？你走另一邊，我們很快就會再碰面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -558,7 +558,7 @@
   },
   "Through the Pipes#055": {
    "src": "Find a safe way past the flooded rail tunnels.",
-   "dst": "",
+   "dst": "找出安全通過淹水鐵道隧道的方法。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -568,7 +568,7 @@
   },
   "Through the Pipes#056": {
    "src": "Whew! I didn't mean to let go-",
-   "dst": "",
+   "dst": "呼！我不是故意鬆手的——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -578,7 +578,7 @@
   },
   "Through the Pipes#057": {
    "src": "Oh! {u}, you're here!",
-   "dst": "",
+   "dst": "噢！{u}，你來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -588,7 +588,7 @@
   },
   "Through the Pipes#058": {
    "src": "Perfect, I know where we are, and there isn't much further that foolish raccoon can run. We could corner it!",
-   "dst": "",
+   "dst": "太好了，我知道我們在哪裡，而且那隻笨浣熊也跑不了多遠了。我們可以把牠逼到角落！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -598,7 +598,7 @@
   },
   "Through the Pipes#059": {
    "src": "Now, the problem is, I have no idea how to traverse this next area. It's heavily flooded if I can recall.",
-   "dst": "",
+   "dst": "不過問題是，我完全不知道要怎麼通過下一區。我記得那裡淹得很嚴重。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -608,7 +608,7 @@
   },
   "Through the Pipes#060": {
    "src": "{u}! OH NO! I didn't mean to drop that on you",
-   "dst": "",
+   "dst": "{u}！糟糕！我不是故意把那東西砸到你身上的",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -618,7 +618,7 @@
   },
   "Through the Pipes#061": {
    "src": "W-why were you standing there? Out of all places?",
-   "dst": "",
+   "dst": "你、你幹嘛站在那裡？偏偏是那個地方？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -628,7 +628,7 @@
   },
   "Through the Pipes#062": {
    "src": "...Okay. You seem to be alright. Sorry, I didn't realize you were standing right there!",
-   "dst": "",
+   "dst": "……好吧。你看起來沒事。抱歉，我沒發現你就站在那邊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -638,7 +638,7 @@
   },
   "Through the Pipes#063": {
    "src": "Alright, at least we're regrouped now. Try not to stand under any more heavy objects, alright?",
-   "dst": "",
+   "dst": "好了，至少我們會合了。以後盡量別站在重物底下，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -648,7 +648,7 @@
   },
   "Through the Pipes#064": {
    "src": "Moving forward, the problem is, I have no idea how to traverse this next area. It's heavily flooded if I can recall.",
-   "dst": "",
+   "dst": "接下來的問題是，我完全不知道要怎麼通過下一區。我記得那裡淹得很嚴重。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -658,7 +658,7 @@
   },
   "Through the Pipes#065": {
    "src": "You'll need to find some way for us to cross. Too many people have gotten the worst of diseases by wading through that water- eugh.",
-   "dst": "",
+   "dst": "你得想辦法讓我們過去。太多人涉過那種水之後染上了最可怕的病——噁。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -668,7 +668,7 @@
   },
   "Through the Pipes#066": {
    "src": "Right! Let me know when you figure something out. I'll scout around, never had an excuse to explore this area before!",
-   "dst": "",
+   "dst": "好！你想到辦法就跟我說。我到附近偵察一下，我還從來沒有藉口探索這一區呢！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -678,7 +678,7 @@
   },
   "Through the Pipes#067": {
    "src": "Huh? What's all this stuff? Did someone forget their construction equipment?",
-   "dst": "",
+   "dst": "咦？這些東西是什麼？有人把施工器材忘在這裡了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -688,7 +688,7 @@
   },
   "Through the Pipes#068": {
    "src": "I guess the maintenance crews never bother to pack up their equipment. Maybe you can use this stuff for something.",
-   "dst": "",
+   "dst": "看來維修班從來不收拾自己的器材。也許你可以拿這些東西做點什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -698,7 +698,7 @@
   },
   "Through the Pipes#069": {
    "src": "Check back in with me when you're done!",
-   "dst": "",
+   "dst": "弄好之後再回來找我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -708,7 +708,7 @@
   },
   "Through the Pipes#070": {
    "src": "Navigate through the end of the sewer network with Fichu.",
-   "dst": "",
+   "dst": "和 Fichu 一起穿越下水道網路的盡頭。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -718,7 +718,7 @@
   },
   "Through the Pipes#071": {
    "src": "Heya! Figured something out?",
-   "dst": "",
+   "dst": "嘿！想到辦法了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -728,7 +728,7 @@
   },
   "Through the Pipes#072": {
    "src": "Ready when you are!",
-   "dst": "",
+   "dst": "你隨時可以出發！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -738,7 +738,7 @@
   },
   "Through the Pipes#073": {
    "src": "I'd appreciate it if you added a seat for me.",
-   "dst": "",
+   "dst": "如果你能幫我也加個座位，我會很感謝。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -748,7 +748,7 @@
   },
   "Through the Pipes#074": {
    "src": "Here we go!",
-   "dst": "",
+   "dst": "我們走囉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -758,7 +758,7 @@
   },
   "Through the Pipes#075": {
    "src": "Woo! It floats!",
-   "dst": "",
+   "dst": "哇！它真的浮起來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -768,7 +768,7 @@
   },
   "Through the Pipes#076": {
    "src": "I wonder where this goes...",
-   "dst": "",
+   "dst": "不知道這條路通到哪裡……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -778,7 +778,7 @@
   },
   "Through the Pipes#077": {
    "src": "Bet no one's been here for a while.",
-   "dst": "",
+   "dst": "我敢說這裡很久沒有人來過了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -788,7 +788,7 @@
   },
   "Through the Pipes#078": {
    "src": "Wonder where that raccoon is now...",
-   "dst": "",
+   "dst": "不知道那隻浣熊現在在哪……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -798,7 +798,7 @@
   },
   "Through the Pipes#079": {
    "src": "Soosu needs to see that state of this place...",
-   "dst": "",
+   "dst": "Soosu 該來看看這地方變成什麼樣子了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -808,7 +808,7 @@
   },
   "Through the Pipes#080": {
    "src": "I think we're making progress.",
-   "dst": "",
+   "dst": "我覺得我們有在前進。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -818,7 +818,7 @@
   },
   "Through the Pipes#081": {
    "src": "What else do you think we'll find?",
-   "dst": "",
+   "dst": "你覺得我們還會發現什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -828,7 +828,7 @@
   },
   "Through the Pipes#082": {
    "src": "I've heard a few stories about this place. Mostly bad ones...",
-   "dst": "",
+   "dst": "我聽過幾個關於這地方的故事。大多不是什麼好故事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -838,7 +838,7 @@
   },
   "Through the Pipes#083": {
    "src": "I hope that raccoon hasn't gone too far...",
-   "dst": "",
+   "dst": "希望那隻浣熊還沒跑太遠……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -848,7 +848,7 @@
   },
   "Through the Pipes#084": {
    "src": "Huh, how interesting.",
-   "dst": "",
+   "dst": "咦，真有意思。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -858,7 +858,7 @@
   },
   "Through the Pipes#085": {
    "src": "Watch out!",
-   "dst": "",
+   "dst": "小心！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -868,7 +868,7 @@
   },
   "Through the Pipes#086": {
    "src": "This raft looks fragile, be careful!",
-   "dst": "",
+   "dst": "這木筏看起來很脆弱，小心點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -878,7 +878,7 @@
   },
   "Through the Pipes#087": {
    "src": "Ah!",
-   "dst": "",
+   "dst": "啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -888,7 +888,7 @@
   },
   "Through the Pipes#088": {
    "src": "I think you hit something.",
-   "dst": "",
+   "dst": "我覺得你撞到東西了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -898,7 +898,7 @@
   },
   "Through the Pipes#089": {
    "src": "Try not to do that!",
-   "dst": "",
+   "dst": "盡量別那樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -908,7 +908,7 @@
   },
   "Through the Pipes#090": {
    "src": "Oops!",
-   "dst": "",
+   "dst": "哎呀！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -918,7 +918,7 @@
   },
   "Through the Pipes#091": {
    "src": "You know what you're doing, right?",
-   "dst": "",
+   "dst": "你知道自己在做什麼吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -928,7 +928,7 @@
   },
   "Through the Pipes#092": {
    "src": "Hey! Watch it.",
-   "dst": "",
+   "dst": "喂！看著點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -938,7 +938,7 @@
   },
   "Through the Pipes#093": {
    "src": "Ah! I almost fell out of my seat.",
-   "dst": "",
+   "dst": "啊！我差點從位子上摔下去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -948,7 +948,7 @@
   },
   "Through the Pipes#094": {
    "src": "Watch where you're going!",
-   "dst": "",
+   "dst": "看路啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -958,7 +958,7 @@
   },
   "Through the Pipes#095": {
    "src": "Are you even capable of not hitting something?",
-   "dst": "",
+   "dst": "你有辦法不撞到東西嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -968,7 +968,7 @@
   },
   "Through the Pipes#096": {
    "src": "One more hit and I'm taking over!",
-   "dst": "",
+   "dst": "再撞一次我就接手了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -978,7 +978,7 @@
   },
   "Through the Pipes#097": {
    "src": "I don't trust you sailing this thing!",
-   "dst": "",
+   "dst": "我不放心讓你開這東西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -988,7 +988,7 @@
   },
   "Through the Pipes#098": {
    "src": "Stop it!",
-   "dst": "",
+   "dst": "別撞了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -998,7 +998,7 @@
   },
   "Through the Pipes#099": {
    "src": "It can't possibly be that hard!",
-   "dst": "",
+   "dst": "這不可能有那麼難吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1008,7 +1008,7 @@
   },
   "Through the Pipes#100": {
    "src": "Make sure to be careful, okay?",
-   "dst": "",
+   "dst": "小心一點，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1018,7 +1018,7 @@
   },
   "Through the Pipes#101": {
    "src": "No wonder everyone avoids this place...",
-   "dst": "",
+   "dst": "難怪大家都躲著這地方……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1028,7 +1028,7 @@
   },
   "Through the Pipes#102": {
    "src": "Keep it steady!",
-   "dst": "",
+   "dst": "穩住啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1038,7 +1038,7 @@
   },
   "Through the Pipes#103": {
    "src": "You know where you're going, right?",
-   "dst": "",
+   "dst": "你知道自己要往哪去吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1048,7 +1048,7 @@
   },
   "Through the Pipes#104": {
    "src": "When I get that raccoon, oh man...",
-   "dst": "",
+   "dst": "等我抓到那隻浣熊，天啊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1058,7 +1058,7 @@
   },
   "Through the Pipes#105": {
    "src": "How long have I even spent chasing that fool...",
-   "dst": "",
+   "dst": "我到底追那個蠢東西追了多久了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1068,7 +1068,7 @@
   },
   "Through the Pipes#106": {
    "src": "This water is disgusting...",
-   "dst": "",
+   "dst": "這水噁心死了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1078,7 +1078,7 @@
   },
   "Through the Pipes#107": {
    "src": "Keep an eye out for dangers!",
-   "dst": "",
+   "dst": "注意有沒有危險！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1088,7 +1088,7 @@
   },
   "Through the Pipes#108": {
    "src": "Make sure we're staying on track.",
-   "dst": "",
+   "dst": "確認一下我們有沒有走偏。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1098,7 +1098,7 @@
   },
   "Through the Pipes#109": {
    "src": "Maybe rats are better than raccoons after all.",
-   "dst": "",
+   "dst": "說不定老鼠終究還是比浣熊好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1108,7 +1108,7 @@
   },
   "Through the Pipes#110": {
    "src": "I regret getting on this raft.",
-   "dst": "",
+   "dst": "我後悔上這艘木筏了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1118,7 +1118,7 @@
   },
   "Through the Pipes#111": {
    "src": "Please don't do anything dumb...",
-   "dst": "",
+   "dst": "拜託別做什麼蠢事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1128,7 +1128,7 @@
   },
   "Through the Pipes#112": {
    "src": "This thing is getting shaky.",
-   "dst": "",
+   "dst": "這東西開始晃了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1138,7 +1138,7 @@
   },
   "Through the Pipes#113": {
    "src": "You're paying attention, right?",
-   "dst": "",
+   "dst": "你有在專心吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1148,7 +1148,7 @@
   },
   "Through the Pipes#114": {
    "src": "I cannot wait to get off...",
-   "dst": "",
+   "dst": "我等不及要下去了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1158,7 +1158,7 @@
   },
   "Through the Pipes#115": {
    "src": "Ugh...",
-   "dst": "",
+   "dst": "唉……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1168,7 +1168,7 @@
   },
   "Through the Pipes#116": {
    "src": "I really don't want to insult you, but-",
-   "dst": "",
+   "dst": "我真的不想冒犯你，可是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1178,7 +1178,7 @@
   },
   "Through the Pipes#117": {
    "src": "Eugh- this water.",
-   "dst": "",
+   "dst": "噁——這水。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1188,7 +1188,7 @@
   },
   "Through the Pipes#118": {
    "src": "I'm scared.",
-   "dst": "",
+   "dst": "我好怕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1198,7 +1198,7 @@
   },
   "Through the Pipes#119": {
    "src": "Worst decision ever...",
-   "dst": "",
+   "dst": "史上最糟的決定……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1208,7 +1208,7 @@
   },
   "Through the Pipes#120": {
    "src": "I hate this place.",
-   "dst": "",
+   "dst": "我討厭這地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1218,7 +1218,7 @@
   },
   "Through the Pipes#121": {
    "src": "This isn't good!",
-   "dst": "",
+   "dst": "這下不妙！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1228,7 +1228,7 @@
   },
   "Through the Pipes#122": {
    "src": "Ah! What will we do now?!",
-   "dst": "",
+   "dst": "啊！我們現在該怎麼辦？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1238,7 +1238,7 @@
   },
   "Through the Pipes#123": {
    "src": "Oh no! Help!",
-   "dst": "",
+   "dst": "糟了！救命！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1248,7 +1248,7 @@
   },
   "Through the Pipes#124": {
    "src": "Hmm, is the raft broken? We haven't moved for a while.",
-   "dst": "",
+   "dst": "唔，木筏壞了嗎？我們好一陣子沒動了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1258,7 +1258,7 @@
   },
   "Through the Pipes#125": {
    "src": "Are you... going to have us move?",
-   "dst": "",
+   "dst": "你……打算讓我們動起來嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1268,7 +1268,7 @@
   },
   "Through the Pipes#126": {
    "src": "I'm starting to yawn...",
-   "dst": "",
+   "dst": "我開始想打哈欠了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1278,7 +1278,7 @@
   },
   "Through the Pipes#127": {
    "src": "Can we please get going?",
-   "dst": "",
+   "dst": "拜託我們可以走了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1288,7 +1288,7 @@
   },
   "Through the Pipes#128": {
    "src": "I'm not sure why you think this place is interesting enough to stop at.",
-   "dst": "",
+   "dst": "我不太懂你覺得這地方有趣到值得停下來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1298,7 +1298,7 @@
   },
   "Through the Pipes#129": {
    "src": "When are we getting there?",
-   "dst": "",
+   "dst": "我們什麼時候才會到？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1308,7 +1308,7 @@
   },
   "Through the Pipes#130": {
    "src": "You're awake, right?",
-   "dst": "",
+   "dst": "你醒著吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1318,7 +1318,7 @@
   },
   "Through the Pipes#131": {
    "src": "...Finally.",
-   "dst": "",
+   "dst": "……總算。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1328,7 +1328,7 @@
   },
   "Through the Pipes#132": {
    "src": "The raccoon is probably long gone at this point, thanks to your delay.",
-   "dst": "",
+   "dst": "拖了這麼久，那隻浣熊大概早就跑得沒影了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1338,7 +1338,7 @@
   },
   "Through the Pipes#133": {
    "src": "Great, we're moving again.",
-   "dst": "",
+   "dst": "太好了，我們又動起來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1348,7 +1348,7 @@
   },
   "Through the Pipes#134": {
    "src": "At long last...",
-   "dst": "",
+   "dst": "總算啊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1358,7 +1358,7 @@
   },
   "Through the Pipes#135": {
    "src": "How long were we waiting for?",
-   "dst": "",
+   "dst": "我們剛剛到底等了多久？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1368,7 +1368,7 @@
   },
   "Through the Pipes#136": {
    "src": "Huh? What are you doing with that?!",
-   "dst": "",
+   "dst": "咦？你拿那個要做什麼？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1378,7 +1378,7 @@
   },
   "Through the Pipes#137": {
    "src": "You're going to sink us with that!",
-   "dst": "",
+   "dst": "你會用那個把我們弄沉的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1388,7 +1388,7 @@
   },
   "Through the Pipes#138": {
    "src": "PUT THAT OUT NOW!",
-   "dst": "",
+   "dst": "快把那個弄熄！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1398,7 +1398,7 @@
   },
   "Through the Pipes#139": {
    "src": "IS THAT AN EXPLOSIVE?! ARE YOU MAD!",
-   "dst": "",
+   "dst": "那是炸藥嗎？！你瘋了嗎！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1408,7 +1408,7 @@
   },
   "Through the Pipes#140": {
    "src": "HELP US! WE'RE GOING TO DROWN!",
-   "dst": "",
+   "dst": "救命啊！我們要淹死了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1418,7 +1418,7 @@
   },
   "Through the Pipes#141": {
    "src": "OH NO! GET ME OFF OF HERE!",
-   "dst": "",
+   "dst": "糟了！讓我下去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1428,7 +1428,7 @@
   },
   "Through the Pipes#142": {
    "src": "This was a terrible idea!",
-   "dst": "",
+   "dst": "這真是個糟透了的主意！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1438,7 +1438,7 @@
   },
   "Through the Pipes#143": {
    "src": "WE'RE SINKING! WE'RE SINKING!",
-   "dst": "",
+   "dst": "我們在沉！我們在沉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1448,7 +1448,7 @@
   },
   "Through the Pipes#144": {
    "src": "Why did you think this was a good idea?!",
-   "dst": "",
+   "dst": "你到底為什麼覺得這是個好主意？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1458,7 +1458,7 @@
   },
   "Through the Pipes#145": {
    "src": "I gotta get off this thing!",
-   "dst": "",
+   "dst": "我得離開這東西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1468,7 +1468,7 @@
   },
   "Through the Pipes#146": {
    "src": "Hey- maybe we should've been a bit further away from that train?",
-   "dst": "",
+   "dst": "欸——我們是不是該離那列火車遠一點？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1478,7 +1478,7 @@
   },
   "Through the Pipes#147": {
    "src": "Too close for comfort...",
-   "dst": "",
+   "dst": "近得讓人不太舒服……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1488,7 +1488,7 @@
   },
   "Through the Pipes#148": {
    "src": "Woah there! Way too close!",
-   "dst": "",
+   "dst": "哇喔！太近了吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1498,7 +1498,7 @@
   },
   "Through the Pipes#149": {
    "src": "Agh! Sorry, just got scared by that.",
-   "dst": "",
+   "dst": "啊！抱歉，剛剛被那個嚇到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1508,7 +1508,7 @@
   },
   "Through the Pipes#150": {
    "src": "AHHHHH! THIS WAS A HORRIBLE IDEA!",
-   "dst": "",
+   "dst": "啊啊啊啊！這是個糟糕透頂的主意！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1518,7 +1518,7 @@
   },
   "Through the Pipes#151": {
    "src": "OUT OF ALL ROUTES YOU TOOK, ONE OF THEM INCLUDED A TRAIN!",
-   "dst": "",
+   "dst": "你選的那麼多條路裡面，居然有一條有火車！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1528,7 +1528,7 @@
   },
   "Through the Pipes#152": {
    "src": "WATCH OUT! TRAIN!",
-   "dst": "",
+   "dst": "小心！火車！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1538,7 +1538,7 @@
   },
   "Through the Pipes#153": {
    "src": "Huh? AH! THERE'S A TRAIN! GET OUT OF HERE!",
-   "dst": "",
+   "dst": "咦？啊！有火車！快離開這裡！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1548,7 +1548,7 @@
   },
   "Through the Pipes#154": {
    "src": "AH! LOOK! WE'RE DOOMED!",
-   "dst": "",
+   "dst": "啊！你看！我們死定了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1558,7 +1558,7 @@
   },
   "Through the Pipes#155": {
    "src": "NEVER DO THAT AGAIN!",
-   "dst": "",
+   "dst": "絕對不要再那樣了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1568,7 +1568,7 @@
   },
   "Through the Pipes#156": {
    "src": "YOU REALLY THINK THIS FLIMSY RAFT IS GOING TO SURVIVE A TRAIN?!",
-   "dst": "",
+   "dst": "你真以為這艘破木筏擋得住一列火車？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1578,7 +1578,7 @@
   },
   "Through the Pipes#157": {
    "src": "YOU FOOL! We barely missed being hit!",
-   "dst": "",
+   "dst": "你這個笨蛋！我們差一點就被撞到了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1588,7 +1588,7 @@
   },
   "Through the Pipes#158": {
    "src": "Oh my- we survived! YOU ARE AN IDIOT! DON'T DO THAT AGAIN!",
-   "dst": "",
+   "dst": "我的天——我們活下來了！你是白痴嗎！不要再那樣了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1598,7 +1598,7 @@
   },
   "Through the Pipes#159": {
    "src": "This looks like the halfway point!",
-   "dst": "",
+   "dst": "這裡看起來是中間點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1608,7 +1608,7 @@
   },
   "Through the Pipes#160": {
    "src": "You'll need to find a way to open that gate, since I don't see any other way past.",
-   "dst": "",
+   "dst": "你得想辦法打開那道閘門，我看不出還有別的路可以過去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1618,7 +1618,7 @@
   },
   "Through the Pipes#161": {
    "src": "If I'm remembering correctly, just past this gate should be our destination!",
-   "dst": "",
+   "dst": "如果我沒記錯，過了這道閘門就是我們的目的地了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1628,7 +1628,7 @@
   },
   "Through the Pipes#162": {
    "src": "Phew, we survived. That was a bit rough, but at least we made it.",
-   "dst": "",
+   "dst": "呼，我們活下來了。過程是有點驚險，但至少到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1638,7 +1638,7 @@
   },
   "Through the Pipes#163": {
    "src": "However, I think I'll definitely be avoiding boats for now...",
-   "dst": "",
+   "dst": "不過，我想我短期內絕對會避開船這種東西……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1648,7 +1648,7 @@
   },
   "Through the Pipes#164": {
    "src": "We made it! You did a pretty good job navigating, I knew I could trust you!",
-   "dst": "",
+   "dst": "我們到了！你操舵操得相當不錯，我就知道可以相信你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1658,7 +1658,7 @@
   },
   "Through the Pipes#165": {
    "src": "Alright, let's chase down that raccoon once and for all!",
-   "dst": "",
+   "dst": "好，我們去把那隻浣熊一次解決掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1668,7 +1668,7 @@
   },
   "Through the Pipes#166": {
    "src": "I hope my prediction is right, and there really is no further it can run from here.",
-   "dst": "",
+   "dst": "希望我猜得沒錯，從這裡開始牠真的無處可逃了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1678,7 +1678,7 @@
   },
   "Through the Pipes#167": {
    "src": "We'll just have to see...",
-   "dst": "",
+   "dst": "就等著看囉……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1688,7 +1688,7 @@
   },
   "Through the Pipes#168": {
    "src": "Huh?! LOOK! It's the raccoon, that's it!",
-   "dst": "",
+   "dst": "咦？！你看！是那隻浣熊，就是牠！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1698,7 +1698,7 @@
   },
   "Through the Pipes#169": {
    "src": "Quick! Run after it!",
-   "dst": "",
+   "dst": "快！追上去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1708,7 +1708,7 @@
   },
   "Through the Pipes#170": {
    "src": "Confront the raccoon.",
-   "dst": "",
+   "dst": "與那隻浣熊當面對峙。",
    "role": "desc",
    "kind": "objective",
    "quest": "Through the Pipes",
@@ -1718,7 +1718,7 @@
   },
   "Through the Pipes#171": {
    "src": "Ah ha! Now you're cornered, you little imp!",
-   "dst": "",
+   "dst": "啊哈！你被逼到角落了，你這隻小惡魔！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1728,7 +1728,7 @@
   },
   "Through the Pipes#172": {
    "src": "Before you do anything, we need a way to take the gift back!",
-   "dst": "",
+   "dst": "在你動手之前，我們得先想個辦法把禮物拿回來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1738,7 +1738,7 @@
   },
   "Through the Pipes#173": {
    "src": "Do you have any ideas?",
-   "dst": "",
+   "dst": "你有什麼點子嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1748,7 +1748,7 @@
   },
   "Through the Pipes#174": {
    "src": "And look! We finally got the gift back! I knew we could do it.",
-   "dst": "",
+   "dst": "你看！我們終於把禮物拿回來了！我就知道我們辦得到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1758,7 +1758,7 @@
   },
   "Through the Pipes#175": {
    "src": "Hopefully this is still intact after all of that...",
-   "dst": "",
+   "dst": "希望經過這一切之後它還是完好的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1768,7 +1768,7 @@
   },
   "Through the Pipes#176": {
    "src": "It survived! Thank the queen! I don't know what I would do otherwise...",
-   "dst": "",
+   "dst": "它撐過來了！感謝女王！不然我真不知道該怎麼辦……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1778,7 +1778,7 @@
   },
   "Through the Pipes#177": {
    "src": "{u}, from the very start, you were a massive help. I cannot thank you enough for your efforts!",
-   "dst": "",
+   "dst": "{u}，從一開始你就幫了大忙。你的付出，我怎麼謝都不夠！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1788,7 +1788,7 @@
   },
   "Through the Pipes#178": {
    "src": "Without your help, I don't even know if I could have caught that raccoon on my own!",
-   "dst": "",
+   "dst": "要是沒有你幫忙，我根本不知道自己有沒有辦法抓到那隻浣熊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1798,7 +1798,7 @@
   },
   "Through the Pipes#179": {
    "src": "As a reward, I have an extra gift just for you! Thank you again for your incredible help!",
-   "dst": "",
+   "dst": "作為回報，我另外準備了一份禮物給你！再次感謝你這麼了不起的幫忙！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1808,7 +1808,7 @@
   },
   "Through the Pipes#180": {
    "src": "And look! We finally got the gift back! I knew we could do it.",
-   "dst": "",
+   "dst": "你看！我們終於把禮物拿回來了！我就知道我們辦得到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1818,7 +1818,7 @@
   },
   "Through the Pipes#181": {
    "src": "Hopefully this is still intact after all of that...",
-   "dst": "",
+   "dst": "希望經過這一切之後它還是完好的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1828,7 +1828,7 @@
   },
   "Through the Pipes#182": {
    "src": "It survived! Thank the queen! I don't know what I would do otherwise...",
-   "dst": "",
+   "dst": "它撐過來了！感謝女王！不然我真不知道該怎麼辦……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1838,7 +1838,7 @@
   },
   "Through the Pipes#183": {
    "src": "{u}, from the very start, you were a massive help. I cannot thank you enough for your efforts!",
-   "dst": "",
+   "dst": "{u}，從一開始你就幫了大忙。你的付出，我怎麼謝都不夠！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1848,7 +1848,7 @@
   },
   "Through the Pipes#184": {
    "src": "Not only did you safely get us through a flooded tunnel with that creation of yours, but you came more prepared than I could have expected!",
-   "dst": "",
+   "dst": "你不只用你做的那玩意兒安全帶我們穿過了淹水的隧道，準備得還比我想像中周全太多了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1858,7 +1858,7 @@
   },
   "Through the Pipes#185": {
    "src": "A cage... a ring to use as a distraction... and even a firecracker. Where did you even find all this stuff?",
-   "dst": "",
+   "dst": "一個籠子……一枚拿來引開注意的戒指……甚至還有一支爆竹。你到底是從哪裡找到這些東西的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1868,7 +1868,7 @@
   },
   "Through the Pipes#186": {
    "src": "And on top of all of that, you found my art supplies bag! That bag itself is more important to me than the gift we were chasing after!",
-   "dst": "",
+   "dst": "而且除此之外，你還找到了我的美術用具袋！那個袋子本身對我來說，比我們一路追著跑的那份禮物還重要！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1878,7 +1878,7 @@
   },
   "Through the Pipes#187": {
    "src": "Speaking of that, I would like to give you Soosu's gift as a token of appreciation. I believe you're more deserving of it.",
-   "dst": "",
+   "dst": "說到這個，我想把 Soosu 的禮物送給你，當作我的謝意。我覺得你更配得上它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1888,7 +1888,7 @@
   },
   "Through the Pipes#188": {
    "src": "Don't worry, I've already brainstormed a better design. I think Soosu will like this next one even more!",
-   "dst": "",
+   "dst": "別擔心，我已經想好一個更好的設計了。我想 Soosu 會更喜歡下一個！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1898,7 +1898,7 @@
   },
   "Through the Pipes#189": {
    "src": "Don't go so close! You might scare it off again!",
-   "dst": "",
+   "dst": "別靠那麼近！你可能會又把牠嚇跑！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
@@ -1908,7 +1908,7 @@
   },
   "Through the Pipes#190": {
    "src": "Thank you again for the help! I couldn't have done it without you.",
-   "dst": "",
+   "dst": "再次謝謝你的幫忙！沒有你我做不到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Through the Pipes",
