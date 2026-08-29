@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Temple of the Legends (Quest)",
   "count": 137,
-  "translated": 0,
+  "translated": 137,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Temple of the Legends (Quest)#000": {
    "src": "Talk to Kelight at the entrance of the Temple of the Legends, close to {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到{p}附近 [-{~}, {~}, -{~}] 的傳說神殿入口與 Kelight 交談",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -18,7 +18,7 @@
   },
   "Temple of the Legends (Quest)#001": {
    "src": "I see you want to enter this mighty temple! Do not deny it, I see it in your eyes.",
-   "dst": "",
+   "dst": "我看得出來你想進入這座宏偉的神殿！別否認，我從你眼裡就看得出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -28,7 +28,7 @@
   },
   "Temple of the Legends (Quest)#002": {
    "src": "It is only natural, after all, to want to join the esteemed ranks of the Legends, such as myself!",
-   "dst": "",
+   "dst": "這也是人之常情，畢竟誰不想加入諸位傳說的行列呢，比如我這樣的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -38,7 +38,7 @@
   },
   "Temple of the Legends (Quest)#003": {
    "src": "You will need to prove yourself by fighting a powerful beast, hidden deep in this cave beside me.",
-   "dst": "",
+   "dst": "你必須擊敗一頭強大的野獸來證明自己，牠就藏在我旁邊這座洞穴的深處。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -48,7 +48,7 @@
   },
   "Temple of the Legends (Quest)#004": {
    "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! Let me see if you are even worth my time.",
-   "dst": "",
+   "dst": "不過呢，身為一個傳說，我非常忙碌，簽名之類的事情多得是，更別說我還要守門！讓我看看你到底值不值得我花時間。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -58,7 +58,7 @@
   },
   "Temple of the Legends (Quest)#005": {
    "src": "Hm... At a glance, you don't look anything special! Why, you may as well be a common soldier, for all I can imagine!",
-   "dst": "",
+   "dst": "嗯……乍看之下，你一點特別的地方都沒有！我看你根本就跟普通士兵沒兩樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -68,7 +68,7 @@
   },
   "Temple of the Legends (Quest)#006": {
    "src": "Tell me, why should I bother giving you this chance? Because thus far, I'm not impressed.",
-   "dst": "",
+   "dst": "那麼告訴我，我憑什麼要給你這個機會？因為到目前為止，我一點都不覺得驚豔。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -78,7 +78,7 @@
   },
   "Temple of the Legends (Quest)#007": {
    "src": "You're stubborn? Hah! Don't make me laugh. Do you think you are the first to attempt entry without anything great to show for it?",
-   "dst": "",
+   "dst": "你很固執？哈！別讓我笑了。你以為你是第一個拿不出什麼像樣東西就想進去的人嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -88,7 +88,7 @@
   },
   "Temple of the Legends (Quest)#008": {
    "src": "Of course you aren't. Run along, now. Return when you have something truly impressive to show for yourself.",
-   "dst": "",
+   "dst": "你當然不是。快走吧。等你真的有什麼令人印象深刻的東西再回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -98,7 +98,7 @@
   },
   "Temple of the Legends (Quest)#009": {
    "src": "...And? Surely you do not hope to bribe me, do you? What use would I have for whatever meager wealth you have?",
-   "dst": "",
+   "dst": "……然後呢？你該不會是想賄賂我吧？你那點微薄的家當，對我能有什麼用？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -108,7 +108,7 @@
   },
   "Temple of the Legends (Quest)#010": {
    "src": "I'm a Legend! I have everything I could possibly need for the rest of my life! Now, run along. Return when you have something concrete to show me.",
-   "dst": "",
+   "dst": "我可是個傳說！我這輩子需要的東西全都有了！好了，快走吧。等你有具體的東西再來給我看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -118,7 +118,7 @@
   },
   "Temple of the Legends (Quest)#011": {
    "src": "Ha! You? A Legend?! What a joke. You aren't the first to have tried that, by the way. I know each and every member of our ranks, and you are not one of them.",
-   "dst": "",
+   "dst": "哈！你？一個傳說？！真是笑話。順帶一提，你不是第一個這樣試的。我們這一階的每一個成員我都認識，而你不是其中之一。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -128,7 +128,7 @@
   },
   "Temple of the Legends (Quest)#012": {
    "src": "Ah, truly, being a gatekeeper of the Temple is an entertaining position. Run along, now. Return when you have something real to show me.",
-   "dst": "",
+   "dst": "啊，當傳說神殿的守門人真是個有趣的差事。快走吧。等你有真材實料再來給我看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -138,7 +138,7 @@
   },
   "Temple of the Legends (Quest)#013": {
    "src": "Hmph. Ridiculous. I don't need you to convince me of anything! Clearly, you are nothing but a pretender.",
-   "dst": "",
+   "dst": "哼。荒謬。我不需要你來說服我任何事！很明顯，你不過是個冒牌貨。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -148,7 +148,7 @@
   },
   "Temple of the Legends (Quest)#014": {
    "src": "Run along, now. If you don't have anything to show for yourself, don't waste my time!",
-   "dst": "",
+   "dst": "快走吧。要是拿不出什麼像樣的東西，就別浪費我的時間！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -158,7 +158,7 @@
   },
   "Temple of the Legends (Quest)#015": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -168,7 +168,7 @@
   },
   "Temple of the Legends (Quest)#016": {
    "src": "......",
-   "dst": "",
+   "dst": "…………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -178,7 +178,7 @@
   },
   "Temple of the Legends (Quest)#017": {
    "src": "...But- ah. Since you are still here. Perhaps- no, no, don't be ridiculous, Kelight.",
-   "dst": "",
+   "dst": "……不過——啊。既然你還站在這裡。也許——不不，別鬧了，Kelight。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -188,7 +188,7 @@
   },
   "Temple of the Legends (Quest)#018": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -198,7 +198,7 @@
   },
   "Temple of the Legends (Quest)#019": {
    "src": "Come on, Kelight, don't do this, you can't just let them get you with the silent treatment...",
-   "dst": "",
+   "dst": "振作點，Kelight，別這樣，你不能就這樣被他們用沉默戰術拿下……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -208,7 +208,7 @@
   },
   "Temple of the Legends (Quest)#020": {
    "src": "......",
-   "dst": "",
+   "dst": "…………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -218,7 +218,7 @@
   },
   "Temple of the Legends (Quest)#021": {
    "src": "Oh, fine. You've got me interested. What is special about you? You look like a common soldier, and yet...",
-   "dst": "",
+   "dst": "喔，好吧。你引起我的興趣了。你到底有什麼特別的？你看起來就是個普通士兵，可是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -228,7 +228,7 @@
   },
   "Temple of the Legends (Quest)#022": {
    "src": "Very well. I will allow you to attempt the trial. Perhaps, then, you will be able to prove yourself.",
-   "dst": "",
+   "dst": "很好。我允許你嘗試這場試煉。或許到那時，你就能證明自己了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -238,7 +238,7 @@
   },
   "Temple of the Legends (Quest)#023": {
    "src": "Hidden deep within a nearby cave is a beast beyond compare. Corrupted, yes, but nothing like the foes you may have faced before.",
-   "dst": "",
+   "dst": "附近一座洞穴的深處藏著一頭無可比擬的野獸。是腐化過的沒錯，但跟你以前遇過的任何敵人都不一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -248,7 +248,7 @@
   },
   "Temple of the Legends (Quest)#024": {
    "src": "Rumor has it this creature was one of the miners which first ventured into the Nether Portal... Of course, as a Legend, I would usually disregard such things.",
-   "dst": "",
+   "dst": "傳聞說這生物本來是最早深入地獄傳送門的礦工之一……當然，身為一個傳說，我通常不會理會這種說法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -258,7 +258,7 @@
   },
   "Temple of the Legends (Quest)#025": {
    "src": "In any case, its power cannot be underestimated. Simply entering its cave will greatly weaken you, even with the best equipment!",
-   "dst": "",
+   "dst": "總之，牠的力量不容小覷。光是進入牠的洞穴就會讓你大幅衰弱，就算穿著最好的裝備也一樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -268,7 +268,7 @@
   },
   "Temple of the Legends (Quest)#026": {
    "src": "Getting close to it would quickly corrupt you, which is why you will need protection. Only a light which is from the same realm from which the beast arrived will do the trick.",
-   "dst": "",
+   "dst": "靠近牠會迅速讓你腐化，所以你需要防護。只有來自那頭野獸所來之界域的光，才能奏效。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -278,7 +278,7 @@
   },
   "Temple of the Legends (Quest)#027": {
    "src": "As such, your very first step on your journey to become a Legend will be... to visit a friend of mine who studies the Nether.",
-   "dst": "",
+   "dst": "因此，你邁向傳說之路的第一步，就是……去拜訪我一位研究地獄的朋友。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -288,7 +288,7 @@
   },
   "Temple of the Legends (Quest)#028": {
    "src": "His name is Jorkin, and he knows more about that realm than anyone else I know. Find him near the {p}, in {p}, and request his aid. Tell him I sent you.",
-   "dst": "",
+   "dst": "他叫 Jorkin，關於那個界域，他懂得比我認識的任何人都多。到{p}的{p}附近找他，請他幫忙。就說是我叫你去的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -298,7 +298,7 @@
   },
   "Temple of the Legends (Quest)#029": {
    "src": "Find a way to get Kelight to allow you entry into the Temple of the Legends at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "想辦法讓 Kelight 放你進入 [-{~}, {~}, -{~}] 的傳說神殿。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -308,7 +308,7 @@
   },
   "Temple of the Legends (Quest)#030": {
    "src": "So you return! Very interesting. That certainly puts you a level beyond any others who have tried... But it is not enough.",
-   "dst": "",
+   "dst": "所以你回來了！很有意思。這確實讓你比其他嘗試過的人高了一個層次……但還不夠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -318,7 +318,7 @@
   },
   "Temple of the Legends (Quest)#031": {
    "src": "So? Tell me, why should I bother giving you this chance? Because thus far, I'm not impressed.",
-   "dst": "",
+   "dst": "那麼告訴我，我憑什麼要給你這個機會？因為到目前為止，我一點都不覺得驚豔。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -328,7 +328,7 @@
   },
   "Temple of the Legends (Quest)#032": {
    "src": "You're stubborn? Hah! Don't make me laugh. Do you think you are the first to attempt entry without anything great to show for it?",
-   "dst": "",
+   "dst": "你很固執？哈！別讓我笑了。你以為你是第一個拿不出什麼像樣東西就想進去的人嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -338,7 +338,7 @@
   },
   "Temple of the Legends (Quest)#033": {
    "src": "Of course you aren't. Run along, now. Return when you have something truly impressive to show for yourself.",
-   "dst": "",
+   "dst": "你當然不是。快走吧。等你真的有什麼令人印象深刻的東西再回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -348,7 +348,7 @@
   },
   "Temple of the Legends (Quest)#034": {
    "src": "So you are! And so am I. You will not get past me that easily, I'm afraid.",
-   "dst": "",
+   "dst": "你是嗎！我也是。恐怕你沒那麼容易從我這裡過去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -358,7 +358,7 @@
   },
   "Temple of the Legends (Quest)#035": {
    "src": "Off you go, then. Don't come back unless you have something to show!",
-   "dst": "",
+   "dst": "那你可以走了。沒有東西給我看就別回來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -368,7 +368,7 @@
   },
   "Temple of the Legends (Quest)#036": {
    "src": "Yes, I'm starting to get that impression. You are such a headache, you know that?",
-   "dst": "",
+   "dst": "是啊，我開始有這種感覺了。你這人真是讓人頭痛，你知道嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -378,7 +378,7 @@
   },
   "Temple of the Legends (Quest)#037": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -388,7 +388,7 @@
   },
   "Temple of the Legends (Quest)#038": {
    "src": "Fine! Fine. I'll give you a chance. I'm certain you won't succeed, but anything to get you to stop bothering me.",
-   "dst": "",
+   "dst": "好啦！好啦。我給你一個機會。我很確定你不會成功，但只要能讓你別再煩我，做什麼都行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -398,7 +398,7 @@
   },
   "Temple of the Legends (Quest)#039": {
    "src": "Ahem. Hidden deep within a nearby cave is a beast beyond compare. Corrupted, yes, but nothing like the foes you may have faced before.",
-   "dst": "",
+   "dst": "附近一座洞穴的深處藏著一頭無可比擬的野獸。是腐化過的沒錯，但跟你以前遇過的任何敵人都不一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -408,7 +408,7 @@
   },
   "Temple of the Legends (Quest)#040": {
    "src": "Rumor has it this creature was one of the miners which first ventured into the Nether Portal... Of course, as a Legend, I would usually disregard such things.",
-   "dst": "",
+   "dst": "傳聞說這生物本來是最早深入地獄傳送門的礦工之一……當然，身為一個傳說，我通常不會理會這種說法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -418,7 +418,7 @@
   },
   "Temple of the Legends (Quest)#041": {
    "src": "In any case, its power cannot be underestimated. Simply entering its cave will greatly weaken you, even with the best equipment!",
-   "dst": "",
+   "dst": "總之，牠的力量不容小覷。光是進入牠的洞穴就會讓你大幅衰弱，就算穿著最好的裝備也一樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -428,7 +428,7 @@
   },
   "Temple of the Legends (Quest)#042": {
    "src": "Getting close to it would quickly corrupt you, which is why you will need protection. Only a light which is from the same realm from which the beast arrived will do the trick.",
-   "dst": "",
+   "dst": "靠近牠會迅速讓你腐化，所以你需要防護。只有來自那頭野獸所來之界域的光，才能奏效。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -438,7 +438,7 @@
   },
   "Temple of the Legends (Quest)#043": {
    "src": "As such, your very first step on your journey to become a Legend will be... to visit a friend of mine who studies the Nether.",
-   "dst": "",
+   "dst": "因此，你邁向傳說之路的第一步，就是……去拜訪我一位研究地獄的朋友。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -448,7 +448,7 @@
   },
   "Temple of the Legends (Quest)#044": {
    "src": "His name is Jorkin, and he knows more about that realm than anyone else I know. Find him near the {p}, in {p}, and request his aid. Tell him I sent you.",
-   "dst": "",
+   "dst": "他叫 Jorkin，關於那個界域，他懂得比我認識的任何人都多。到{p}的{p}附近找他，請他幫忙。就說是我叫你去的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -458,7 +458,7 @@
   },
   "Temple of the Legends (Quest)#045": {
    "src": "...And? Surely you do not hope to bribe me, do you? What use would I have for whatever meager wealth you have?",
-   "dst": "",
+   "dst": "……然後呢？你該不會是想賄賂我吧？你那點微薄的家當，對我能有什麼用？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -468,7 +468,7 @@
   },
   "Temple of the Legends (Quest)#046": {
    "src": "I'm a Legend! I have everything I could possibly need for the rest of my life! Now, run along. Return when you have something concrete to show me.",
-   "dst": "",
+   "dst": "我可是個傳說！我這輩子需要的東西全都有了！好了，快走吧。等你有具體的東西再來給我看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -478,7 +478,7 @@
   },
   "Temple of the Legends (Quest)#047": {
    "src": "Ha! You? A Legend?! What a joke. You aren't the first to have tried that, by the way. I know each and every member of our ranks, and you are not one of them.",
-   "dst": "",
+   "dst": "哈！你？一個傳說？！真是笑話。順帶一提，你不是第一個這樣試的。我們這一階的每一個成員我都認識，而你不是其中之一。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -488,7 +488,7 @@
   },
   "Temple of the Legends (Quest)#048": {
    "src": "Ah, truly, being a gatekeeper of the Temple is an entertaining position. Run along, now. Return when you have something real to show me.",
-   "dst": "",
+   "dst": "啊，當傳說神殿的守門人真是個有趣的差事。快走吧。等你有真材實料再來給我看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -498,7 +498,7 @@
   },
   "Temple of the Legends (Quest)#049": {
    "src": "Hmph. Ridiculous. I don't need you to convince me of anything! Clearly, you are nothing but a pretender.",
-   "dst": "",
+   "dst": "哼。荒謬。我不需要你來說服我任何事！很明顯，你不過是個冒牌貨。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -508,7 +508,7 @@
   },
   "Temple of the Legends (Quest)#050": {
    "src": "Run along, now. If you don't have anything to show for yourself, don't waste my time!",
-   "dst": "",
+   "dst": "快走吧。要是拿不出什麼像樣的東西，就別浪費我的時間！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -518,7 +518,7 @@
   },
   "Temple of the Legends (Quest)#051": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -528,7 +528,7 @@
   },
   "Temple of the Legends (Quest)#052": {
    "src": "......",
-   "dst": "",
+   "dst": "…………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -538,7 +538,7 @@
   },
   "Temple of the Legends (Quest)#053": {
    "src": "...But- ah. Since you are still here. Perhaps- no, no, don't be ridiculous, Kelight.",
-   "dst": "",
+   "dst": "……不過——啊。既然你還站在這裡。也許——不不，別鬧了，Kelight。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -548,7 +548,7 @@
   },
   "Temple of the Legends (Quest)#054": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -558,7 +558,7 @@
   },
   "Temple of the Legends (Quest)#055": {
    "src": "Come on, Kelight, don't do this, you can't just let them get you with the silent treatment...",
-   "dst": "",
+   "dst": "振作點，Kelight，別這樣，你不能就這樣被他們用沉默戰術拿下……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -568,7 +568,7 @@
   },
   "Temple of the Legends (Quest)#056": {
    "src": "......",
-   "dst": "",
+   "dst": "…………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -578,7 +578,7 @@
   },
   "Temple of the Legends (Quest)#057": {
    "src": "Oh, fine. You've got me interested. What is special about you? You look like a common soldier, and yet...",
-   "dst": "",
+   "dst": "喔，好吧。你引起我的興趣了。你到底有什麼特別的？你看起來就是個普通士兵，可是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -588,7 +588,7 @@
   },
   "Temple of the Legends (Quest)#058": {
    "src": "Very well. I will allow you to attempt the trial. Perhaps, then, you will be able to prove yourself.",
-   "dst": "",
+   "dst": "很好。我允許你嘗試這場試煉。或許到那時，你就能證明自己了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -598,7 +598,7 @@
   },
   "Temple of the Legends (Quest)#059": {
    "src": "Hidden deep within a nearby cave is a beast beyond compare. Corrupted, yes, but nothing like the foes you may have faced before.",
-   "dst": "",
+   "dst": "附近一座洞穴的深處藏著一頭無可比擬的野獸。是腐化過的沒錯，但跟你以前遇過的任何敵人都不一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -608,7 +608,7 @@
   },
   "Temple of the Legends (Quest)#060": {
    "src": "Rumor has it this creature was one of the miners which first ventured into the Nether Portal... Of course, as a Legend, I would usually disregard such things.",
-   "dst": "",
+   "dst": "傳聞說這生物本來是最早深入地獄傳送門的礦工之一……當然，身為一個傳說，我通常不會理會這種說法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -618,7 +618,7 @@
   },
   "Temple of the Legends (Quest)#061": {
    "src": "In any case, its power cannot be underestimated. Simply entering its cave will greatly weaken you, even with the best equipment!",
-   "dst": "",
+   "dst": "總之，牠的力量不容小覷。光是進入牠的洞穴就會讓你大幅衰弱，就算穿著最好的裝備也一樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -628,7 +628,7 @@
   },
   "Temple of the Legends (Quest)#062": {
    "src": "Getting close to it would quickly corrupt you, which is why you will need protection. Only a light which is from the same realm from which the beast arrived will do the trick.",
-   "dst": "",
+   "dst": "靠近牠會迅速讓你腐化，所以你需要防護。只有來自那頭野獸所來之界域的光，才能奏效。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -638,7 +638,7 @@
   },
   "Temple of the Legends (Quest)#063": {
    "src": "As such, your very first step on your journey to become a Legend will be... to visit a friend of mine who studies the Nether.",
-   "dst": "",
+   "dst": "因此，你邁向傳說之路的第一步，就是……去拜訪我一位研究地獄的朋友。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -648,7 +648,7 @@
   },
   "Temple of the Legends (Quest)#064": {
    "src": "His name is Jorkin, and he knows more about that realm than anyone else I know. Find him near the {p}, in {p}, and request his aid. Tell him I sent you.",
-   "dst": "",
+   "dst": "他叫 Jorkin，關於那個界域，他懂得比我認識的任何人都多。到{p}的{p}附近找他，請他幫忙。就說是我叫你去的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -658,7 +658,7 @@
   },
   "Temple of the Legends (Quest)#065": {
    "src": "Talk to Jorkin in {p} at [-{~}, {~}, -{~}] about Light Dust.",
-   "dst": "",
+   "dst": "到{p} [-{~}, {~}, -{~}] 與 Jorkin 談 Light Dust 的事。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -668,7 +668,7 @@
   },
   "Temple of the Legends (Quest)#066": {
    "src": "Ah, hello soldier. What brings you to my humble abode today?",
-   "dst": "",
+   "dst": "啊，你好啊大兵。今天什麼風把你吹到我這寒舍來的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -678,7 +678,7 @@
   },
   "Temple of the Legends (Quest)#067": {
    "src": "Oh my. You...you want to attack HIM? Th-that horrid beast! Are you mad?!",
-   "dst": "",
+   "dst": "我的天。你……你想去攻擊「他」？那、那頭可怕的野獸！你瘋了嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -688,7 +688,7 @@
   },
   "Temple of the Legends (Quest)#068": {
    "src": "Urgh, Kelight keeps sending adventurers like you to their deaths with his asinine tasks!",
-   "dst": "",
+   "dst": "唉，Kelight 一直用他那些愚蠢的任務把你這樣的冒險者送去送死！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -698,7 +698,7 @@
   },
   "Temple of the Legends (Quest)#069": {
    "src": "Fine. If you're really so determined to walk to your death, I can tell you where to go.",
-   "dst": "",
+   "dst": "好吧。你要是真的這麼堅持要走向死亡，我可以告訴你該去哪裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -708,7 +708,7 @@
   },
   "Temple of the Legends (Quest)#070": {
    "src": "Down in the Roots, there is a cave full of the Light Dust you'll need.",
-   "dst": "",
+   "dst": "往下到 the Roots，那裡有座洞穴，裡面滿是你需要的 Light Dust。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -718,7 +718,7 @@
   },
   "Temple of the Legends (Quest)#071": {
    "src": "Powerful corrupteds live in that cave, so be very careful retrieving it, and bring it back to me once you find it.",
-   "dst": "",
+   "dst": "那座洞穴裡住著強大的腐化生物，取的時候務必小心，拿到之後帶回來給我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -728,7 +728,7 @@
   },
   "Temple of the Legends (Quest)#072": {
    "src": "Find the lightdust cavern located near the Portal at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "找到傳送門附近 [{~}, {~}, -{~}] 的光塵洞窟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -738,7 +738,7 @@
   },
   "Temple of the Legends (Quest)#073": {
    "src": "Retrieve [{~} Light Dust] from the cave at [{~}, {~}, -{~}] and bring it back to Jorkin at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "從 [{~}, {~}, -{~}] 的洞穴取得 [{~} Light Dust]，並帶回 [-{~}, {~}, -{~}] 給 Jorkin。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -748,7 +748,7 @@
   },
   "Temple of the Legends (Quest)#074": {
    "src": "You have the Light Dust, then? Hand it here, I want to see something.",
-   "dst": "",
+   "dst": "那麼，Light Dust 你拿到了？交過來，我想看點東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -758,7 +758,7 @@
   },
   "Temple of the Legends (Quest)#075": {
    "src": "Ah, just as I thought. Even this light has been tainted by Corruption. Sorry, looks like you can't fight him, go home.",
-   "dst": "",
+   "dst": "啊，跟我想的一樣。連這道光都已經被腐化沾染了。抱歉，看來你沒辦法跟他打，回家吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -768,7 +768,7 @@
   },
   "Temple of the Legends (Quest)#076": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -778,7 +778,7 @@
   },
   "Temple of the Legends (Quest)#077": {
    "src": "...urgh, there's no fooling you, is there? You really are committed to trying to fight him.",
-   "dst": "",
+   "dst": "……唉，什麼都瞞不過你，是吧？你是真的鐵了心要去跟他打。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -788,7 +788,7 @@
   },
   "Temple of the Legends (Quest)#078": {
    "src": "Well, I wasn't lying when I said the Light Dust was corrupted, but there is a way to purify it.",
-   "dst": "",
+   "dst": "好吧，我說 Light Dust 被腐化了那不是騙你，不過有辦法把它淨化。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -798,7 +798,7 @@
   },
   "Temple of the Legends (Quest)#079": {
    "src": "An old acquaintance of mine, Rayshyroth, has a method. He lives on {p}.",
-   "dst": "",
+   "dst": "我有位老相識叫 Rayshyroth，他有辦法。他住在{p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -808,7 +808,7 @@
   },
   "Temple of the Legends (Quest)#080": {
    "src": "He knows even more about that...thing, than I do in my years of studying the Nether. Maybe he'll be able to talk you out of this.",
-   "dst": "",
+   "dst": "關於那個……東西，他知道的比我研究地獄這麼多年還多。說不定他能把你勸退。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -818,7 +818,7 @@
   },
   "Temple of the Legends (Quest)#081": {
    "src": "Visit Rayshyroth on {p} at [{~}, {~}, -{~}] to purify the dust",
-   "dst": "",
+   "dst": "到{p} [{~}, {~}, -{~}] 找 Rayshyroth 淨化光塵",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -828,7 +828,7 @@
   },
   "Temple of the Legends (Quest)#082": {
    "src": "Oh? Well, greetings. What brings you to our quiet lonely island, let alone all the way up here?",
-   "dst": "",
+   "dst": "喔？你好啊。什麼風把你吹到我們這座安靜的孤島，而且還一路爬到這麼上面來的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -838,7 +838,7 @@
   },
   "Temple of the Legends (Quest)#083": {
    "src": "...I see. Yes, the corruption of the blasted Nether Portal is rather potent. I'm not surprised this would need purification.",
-   "dst": "",
+   "dst": "……我明白了。是啊，那該死的地獄傳送門的腐化相當強烈。需要淨化我一點也不意外。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -848,7 +848,7 @@
   },
   "Temple of the Legends (Quest)#084": {
    "src": "Well, I can certainly do it, but I'll need the materials to do so. Shouldn't be anything you can't handle by now, right?",
-   "dst": "",
+   "dst": "這個我當然做得到，但我需要材料。以你現在的本事，那些應該都難不倒你吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -858,7 +858,7 @@
   },
   "Temple of the Legends (Quest)#085": {
    "src": "You see, below my house here, there is a wellspring from which a powerful magic flux generates.",
-   "dst": "",
+   "dst": "你看，我這棟屋子底下有一處泉眼，會湧出一股強大的魔法流。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -868,7 +868,7 @@
   },
   "Temple of the Legends (Quest)#086": {
    "src": "It creates a unique magic vapor if disrupted, which I can use to purify the dust for you.",
-   "dst": "",
+   "dst": "只要加以擾動，它就會產生一種特殊的魔法蒸氣，我可以用那個替你淨化光塵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -878,7 +878,7 @@
   },
   "Temple of the Legends (Quest)#087": {
    "src": "I would say, given how badly corrupted this is, I will need at least [{~} Sky Vapor] for the task.",
-   "dst": "",
+   "dst": "我看這東西腐化得這麼嚴重，這件事我至少需要 [{~} Sky Vapor]。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -888,7 +888,7 @@
   },
   "Temple of the Legends (Quest)#088": {
    "src": "Find the cave on {p} where the Sky Flux gathers at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "找到{p}上 [{~}, {~}, -{~}] 那座 Sky Flux 匯聚的洞穴。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -898,7 +898,7 @@
   },
   "Temple of the Legends (Quest)#089": {
    "src": "Give [{~} Sky Vapor] to Rayshyroth at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把 [{~} Sky Vapor] 交給 [{~}, {~}, -{~}] 的 Rayshyroth。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -908,7 +908,7 @@
   },
   "Temple of the Legends (Quest)#090": {
    "src": "Aha, you're back with the Sky Vapor! Sorry about the climb, even I find it rather inconvenient at times.",
-   "dst": "",
+   "dst": "啊哈，你帶著 Sky Vapor 回來了！那段路真是抱歉，連我自己有時候都覺得不方便。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -918,7 +918,7 @@
   },
   "Temple of the Legends (Quest)#091": {
    "src": "While I perform the ritual to purify this, I'd like to ask you something. Do you know, exactly, what it is you'll be fighting?",
-   "dst": "",
+   "dst": "在我進行淨化儀式的同時，我想問你一件事。你到底知不知道你要面對的是什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -928,7 +928,7 @@
   },
   "Temple of the Legends (Quest)#092": {
    "src": "Don't look so surprised, I know exactly what you need Light Dust for. The corruption warding helmet...to allow you to fight the Corrupter of Worlds.",
-   "dst": "",
+   "dst": "別這麼驚訝，我很清楚你要 Light Dust 是為了什麼。那頂抵禦腐化的頭盔……好讓你能與 Corrupter of Worlds 一戰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -938,7 +938,7 @@
   },
   "Temple of the Legends (Quest)#093": {
    "src": "Yes, yes. I imagine that Kelight didn't bother telling you that was his title. I also surmise that you were given few details of how he came to be...",
-   "dst": "",
+   "dst": "是啊，是啊。我想 Kelight 大概懶得告訴你那是牠的稱號。我也猜得到，你對牠是怎麼變成那樣的，大概沒聽到什麼細節……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -948,7 +948,7 @@
   },
   "Temple of the Legends (Quest)#094": {
    "src": "The beast now known as the Corrupter of Worlds used to be a simple mining captain, during the expeditions that uncovered the Nether Portal. He was the first to enter that wicked realm.",
-   "dst": "",
+   "dst": "那頭如今被稱為 Corrupter of Worlds 的野獸，曾經只是一名普通的採礦隊長，就在那場發現地獄傳送門的探勘期間。他是第一個踏進那個邪惡界域的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -958,7 +958,7 @@
   },
   "Temple of the Legends (Quest)#095": {
    "src": "The poor man was never heard from again...well, that is until the corrupted hordes began to pour from the Nether, with him leading the pack. A bit ironic, isn't it? Led the miners in life, the corrupteds in death.",
-   "dst": "",
+   "dst": "那可憐人從此音訊全無……嗯，直到腐化的群體開始從地獄湧出，而帶頭的正是他。有點諷刺，不是嗎？生前率領礦工，死後率領腐化者。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -968,7 +968,7 @@
   },
   "Temple of the Legends (Quest)#096": {
    "src": "His mining crew there lasted hardly minutes. He personally slaughtered every single one of his original crew, and thousands more. The energies of the Nether have made him monstrously powerful.",
-   "dst": "",
+   "dst": "他在那裡的採礦隊撐不到幾分鐘。他親手屠殺了原班人馬的每一個人，還有數以千計的其他人。地獄的能量把他變得強大得駭人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -978,7 +978,7 @@
   },
   "Temple of the Legends (Quest)#097": {
    "src": "...although, the stories differ. Some say that Bak'al was the first to enter the portal, and the Corrupter of Worlds was simply a beast from the Nether. But the unclear truth doesn't change his strength.",
-   "dst": "",
+   "dst": "……不過呢，說法不一。有人說第一個進入傳送門的是 Bak'al，而 Corrupter of Worlds 只是地獄來的一頭野獸。但真相不明，並不會改變他的強大。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -988,7 +988,7 @@
   },
   "Temple of the Legends (Quest)#098": {
    "src": "Just remember that no one, aside from that snooty Kelight, will think less of you should you choose not to fight him.",
-   "dst": "",
+   "dst": "你只要記得，除了那個自命不凡的 Kelight 之外，就算你選擇不去跟他打，也沒有人會因此看輕你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -998,7 +998,7 @@
   },
   "Temple of the Legends (Quest)#099": {
    "src": "Show the [Purified Light Dust] to Kelight at the entrance of the Temple of the Legends at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把 [Purified Light Dust] 拿去給 [-{~}, {~}, -{~}] 傳說神殿入口的 Kelight 看。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -1008,7 +1008,7 @@
   },
   "Temple of the Legends (Quest)#100": {
    "src": "Hah. Took you long enough. This is the light dust, I presume?",
-   "dst": "",
+   "dst": "哈。你可花了不少時間。這就是光塵，我猜？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1018,7 +1018,7 @@
   },
   "Temple of the Legends (Quest)#101": {
    "src": "I'll hold onto this for now. While it is a vital ingredient for your protection, it is not enough on its own.",
-   "dst": "",
+   "dst": "這個我先收著。它雖然是你防護的關鍵材料，但光靠它還不夠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1028,7 +1028,7 @@
   },
   "Temple of the Legends (Quest)#102": {
    "src": "You'll need an item to focus the magic around yourself, preferably something you'd wear. Hm... How about a helmet? Certainly, it'd do wonders for your poor sense of style.",
-   "dst": "",
+   "dst": "你還需要一件能把魔力聚集在你身上的東西，最好是能穿戴的。嗯……頭盔如何？那對你那可憐的品味肯定大有幫助。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1038,7 +1038,7 @@
   },
   "Temple of the Legends (Quest)#103": {
    "src": "Ahem. As for creating it... I know only one man capable of crafting a piece of armor good enough to ensure your safety.",
-   "dst": "",
+   "dst": "咳。至於製作的部分……我只認識一個人有能力打出足以確保你安全的護甲。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1048,7 +1048,7 @@
   },
   "Temple of the Legends (Quest)#104": {
    "src": "Unfortunately, he will be hard to reach. His name was Garull, and he was the finest craftsman I'd ever met! A bit on the eccentric side, though.",
-   "dst": "",
+   "dst": "可惜的是，他很難找。他叫 Garull，是我見過最出色的工匠！不過性格有點古怪。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1058,7 +1058,7 @@
   },
   "Temple of the Legends (Quest)#105": {
    "src": "He was always ranting and raving about Creepers... he really thought they were real, can you imagine? What complete and utter nonsense.",
-   "dst": "",
+   "dst": "他老是喋喋不休地講苦力怕……他還真的以為那種東西存在，你能想像嗎？根本是徹頭徹尾的胡說八道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1068,7 +1068,7 @@
   },
   "Temple of the Legends (Quest)#106": {
    "src": "When I suggested the notion to be absurd, he seemed upset by my comments, and stopped visiting. Truly, I did not know what I did wrong. What a ridiculous man.",
-   "dst": "",
+   "dst": "當我表示那個想法很荒謬時，他似乎被我的話惹惱了，從此就不再來訪。說真的，我不知道自己做錯了什麼。真是個莫名其妙的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1078,7 +1078,7 @@
   },
   "Temple of the Legends (Quest)#107": {
    "src": "As it stands, I have no idea where you could find him. He spoke of wanting to research the Pigman Ravines several times, though none of our rank had ever seen him there.",
-   "dst": "",
+   "dst": "以現況來說，我完全不知道你能在哪裡找到他。他提過好幾次想研究 Pigman Ravines，不過我們這一階的人從來沒在那裡見過他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1088,7 +1088,7 @@
   },
   "Temple of the Legends (Quest)#108": {
    "src": "In any case, it is somewhere to begin your search! Should you manage to find him, and convince him to craft you the helmet, return here and we can proceed.",
-   "dst": "",
+   "dst": "總之，那至少是個可以開始找的地方！你要是真能找到他，還說服他替你打出那頂頭盔，就回來這裡，我們再繼續。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1098,7 +1098,7 @@
   },
   "Temple of the Legends (Quest)#109": {
    "src": "Find Garull, the Creeper obsessed craftsman, somewhere in the {p} located around [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 一帶的{p}裡，找到痴迷苦力怕的工匠 Garull。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -1108,7 +1108,7 @@
   },
   "Temple of the Legends (Quest)#110": {
    "src": "GWUH! Oh god, don't scare me like that! Who... Who even are you?!",
-   "dst": "",
+   "dst": "哇啊！我的天，別這樣嚇我！你……你到底是誰？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1118,7 +1118,7 @@
   },
   "Temple of the Legends (Quest)#111": {
    "src": "Ah, you were sent from Kelight for a protection helmet? I can do that, sure, but there's a few complications.",
-   "dst": "",
+   "dst": "啊，你是 Kelight 派來要一頂防護頭盔的？那我當然做得到，不過有幾個麻煩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1128,7 +1128,7 @@
   },
   "Temple of the Legends (Quest)#112": {
    "src": "See, I usually use something called Touroto Hide to make my armor. It's extremely resilient, magic resistant and tough to break.",
-   "dst": "",
+   "dst": "你看，我做護甲通常用的是一種叫 Touroto Hide 的東西。它極為堅韌、抗魔，而且很難弄破。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1138,7 +1138,7 @@
   },
   "Temple of the Legends (Quest)#113": {
    "src": "But, this also makes the Touroto themselves almost impossible to kill. Getting Touroto Hide is extremely difficult. I do know of a black market for it in {p}, but...",
-   "dst": "",
+   "dst": "但這也讓 Touroto 本身幾乎殺不死。要弄到 Touroto Hide 難如登天。我是知道{p}有個黑市在賣，可是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1148,7 +1148,7 @@
   },
   "Temple of the Legends (Quest)#114": {
    "src": "They only sell useless Old Touroto Hide, gotten from ones that died of old age. It's almost no better than just plain leather.",
-   "dst": "",
+   "dst": "他們只賣沒用的 [Old Touroto Hide]，是從老死的個體身上取下的。那幾乎跟普通皮革沒兩樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1158,7 +1158,7 @@
   },
   "Temple of the Legends (Quest)#115": {
    "src": "So, for me to craft you this helmet, I'll need you to bring me not just the [Old Touroto Hide], but also the means to restore it to its previous power. Do listen up, there's a lot to tell you!",
-   "dst": "",
+   "dst": "所以，要我替你打這頂頭盔，你不只要帶 [Old Touroto Hide] 來，還得帶上能讓它恢復原有強度的東西。仔細聽好，要說的可不少！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1168,7 +1168,7 @@
   },
   "Temple of the Legends (Quest)#116": {
    "src": "There's the [Aseado Leaf], grown someplace in the {p}... it has powerful medicinal qualities, supposedly able to reverse aging.",
-   "dst": "",
+   "dst": "首先是 [Aseado Leaf]，長在{p}的某個地方……它有強大的藥性，據說能夠逆轉老化。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1178,7 +1178,7 @@
   },
   "Temple of the Legends (Quest)#117": {
    "src": "Then, a [Maro's Eye Jewel], which is an amazing magical focus from...well, where else, the {p}. Using its dust, I'll be able to return its magical resilience manually.",
-   "dst": "",
+   "dst": "再來是 [Maro's Eye Jewel]，那是一種驚人的魔法聚焦物，來自……不然還能是哪，就是{p}。用它的粉末，我可以手工把魔法韌性還給那張皮。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1188,7 +1188,7 @@
   },
   "Temple of the Legends (Quest)#118": {
    "src": "Finally, I'll need a [Coral of Nelfors], which can be found in the {p}. This is what I need to use to enchant the hide to be magically resistant.",
-   "dst": "",
+   "dst": "最後我需要一塊 [Coral of Nelfors]，可以在{p}找到。我要用它替那張皮附上抗魔的效果。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1198,7 +1198,7 @@
   },
   "Temple of the Legends (Quest)#119": {
    "src": "I wrote all that down in your content book. If you can get it all, come back to see me, but don't be so sneaky about coming up to me please!",
-   "dst": "",
+   "dst": "這些我都寫進你的綜合手冊裡了。要是你全都弄到了就回來找我，不過拜託別再那麼鬼鬼祟祟地靠近我了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1208,7 +1208,7 @@
   },
   "Temple of the Legends (Quest)#120": {
    "src": "Bring the [Old Touroto Hide], [Aseado Leaf], [Maro's Eye Jewel], and [Coral of Nelfors] to Garull in the cave at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把 [Old Touroto Hide]、[Aseado Leaf]、[Maro's Eye Jewel] 和 [Coral of Nelfors] 帶到 [-{~}, {~}, -{~}] 的洞穴給 Garull。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -1218,7 +1218,7 @@
   },
   "Temple of the Legends (Quest)#121": {
    "src": "Thank you for listening to me about not being so quiet coming over here. I'm guessing you've got everything?",
-   "dst": "",
+   "dst": "謝謝你聽我的話，過來的時候沒那麼安靜。我猜你東西都齊了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1228,7 +1228,7 @@
   },
   "Temple of the Legends (Quest)#122": {
    "src": "Alright, this should go quickly. For however pompous Kelight is, he's right in sending you to me to craft this.",
-   "dst": "",
+   "dst": "好，這應該很快。Kelight 那個人再怎麼自大，把你送來找我打這個倒是沒錯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1238,7 +1238,7 @@
   },
   "Temple of the Legends (Quest)#123": {
    "src": "Now, I want to warn you about something. I've heard stories about the enemy you need this helmet to face, none of them good.",
-   "dst": "",
+   "dst": "現在，我想提醒你一件事。關於你需要這頂頭盔去面對的那個敵人，我聽過一些傳聞，沒有一個是好的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1248,7 +1248,7 @@
   },
   "Temple of the Legends (Quest)#124": {
    "src": "While I have seen people return from killing the \"beast\" he talks about, it isn't often. Be very careful, should you choose to fight it.",
-   "dst": "",
+   "dst": "我確實見過有人殺了他口中那頭「野獸」之後回來，但那不常見。你要是決定去打，務必萬分小心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1258,7 +1258,7 @@
   },
   "Temple of the Legends (Quest)#125": {
    "src": "Bring the [Helmet of the Legends] to Kelight at the entrance of the Temple of the Legends at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把 [Helmet of the Legends] 帶去 [-{~}, {~}, -{~}] 傳說神殿入口給 Kelight。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -1268,7 +1268,7 @@
   },
   "Temple of the Legends (Quest)#126": {
    "src": "...Hm? Oh, it's you again. Did you actually manage to find the blighter? Good to know he isn't dead, at least.",
-   "dst": "",
+   "dst": "……嗯？喔，又是你。你真的找到那個怪人了？至少知道他還沒死也好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1278,7 +1278,7 @@
   },
   "Temple of the Legends (Quest)#127": {
    "src": "You have the helmet, I presume? Hand it over, here. I'll quickly apply the light dust. Then, you'll be able to enter the cave.",
-   "dst": "",
+   "dst": "頭盔你拿到了吧？交過來。我很快把光塵加上去。之後你就可以進入那座洞穴了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1288,7 +1288,7 @@
   },
   "Temple of the Legends (Quest)#128": {
    "src": "Hopefully you'll do better than that last group that tried to fight him. Six fighters strong... never came back.",
-   "dst": "",
+   "dst": "但願你能比上一批去跟他打的人好一點。整整六個戰士……再也沒回來過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1298,7 +1298,7 @@
   },
   "Temple of the Legends (Quest)#129": {
    "src": "...Well, good luck! I'm certain you'll either succeed, or you'll fail spectacularly. Either or, really.",
-   "dst": "",
+   "dst": "……那，祝你好運！我很確定你不是成功，就是敗得驚天動地。反正兩者之一。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1308,7 +1308,7 @@
   },
   "Temple of the Legends (Quest)#130": {
    "src": "Bring me concrete proof of your triumph over the beast, and I will grant you passage into the Temple of the Legends! Do be quick, would you?",
-   "dst": "",
+   "dst": "帶回你戰勝那頭野獸的具體證明，我就准你進入傳說神殿！動作快一點，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1318,7 +1318,7 @@
   },
   "Temple of the Legends (Quest)#131": {
    "src": "Kill the Corrupter of Worlds in the cave at [-{~}, {~}, -{~}] and bring proof of its death to Kelight at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "擊殺 [-{~}, {~}, -{~}] 洞穴裡的 Corrupter of Worlds，並把牠的死亡證明帶到 [-{~}, {~}, -{~}] 給 Kelight。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -1328,7 +1328,7 @@
   },
   "Temple of the Legends (Quest)#132": {
    "src": "... You... You did it? H-how?!",
-   "dst": "",
+   "dst": "……你……你辦到了？怎、怎麼可能？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1338,7 +1338,7 @@
   },
   "Temple of the Legends (Quest)#133": {
    "src": "Even one so brave and powerful as myself could not possibly survive against-",
-   "dst": "",
+   "dst": "連我這樣勇敢又強大的人都不可能在牠面前活下來——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1348,7 +1348,7 @@
   },
   "Temple of the Legends (Quest)#134": {
    "src": "Er... I mean, of course you were able to defeat the beast! I believed in you from the very start!",
-   "dst": "",
+   "dst": "呃……我是說，你當然打得贏那頭野獸！我從一開始就相信你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1358,7 +1358,7 @@
   },
   "Temple of the Legends (Quest)#135": {
    "src": "...Ehm. I suppose you are welcome in the Temple of the Legends, now! You have... certainly proven yourself. My apologies for misjudging you. Feel proud of your accomplishment!",
-   "dst": "",
+   "dst": "……咳。我想，你現在可以進入傳說神殿了！你……確實證明了自己。之前看走眼，我向你道歉。為你的成就感到驕傲吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1368,7 +1368,7 @@
   },
   "Temple of the Legends (Quest)#136": {
    "src": "Hm? What are these oddities you have with you? Curious, yet useless. Allow me to dispose of them for you.",
-   "dst": "",
+   "dst": "嗯？你身上帶的這些奇怪玩意兒是什麼？稀奇，但沒什麼用。就讓我來替你處理掉吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",

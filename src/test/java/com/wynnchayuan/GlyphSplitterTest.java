@@ -121,7 +121,8 @@ public final class GlyphSplitterTest {
 
         int emitted = 0;
         for (int i = 1; i <= full.length(); i++) {
-            if (buf.offer(full.substring(0, i)) != null) {
+            String frame = full.substring(0, i);
+            if (buf.offer(frame, frame) != null) {
                 emitted++;
             }
         }
@@ -131,17 +132,18 @@ public final class GlyphSplitterTest {
 
         // 換到下一句時，上一句要被送出
         DialogueBuffer buf2 = new DialogueBuffer();
-        buf2.offer("H-hey");
-        buf2.offer("H-hey, human!");
-        String done = buf2.offer("I need somethin' to patch myself up...");
+        buf2.offer("H-hey", "H-hey");
+        buf2.offer("H-hey, human!", "H-hey, human!");
+        String done = buf2.offer("I need somethin' to patch myself up...",
+                                 "I need somethin' to patch myself up...");
         check("換句時送出前一句", "H-hey, human!".equals(done));
         check("新的一句留在緩衝區",
                 "I need somethin' to patch myself up...".equals(buf2.flush()));
 
         // 重複內容不該重複送出
         DialogueBuffer buf3 = new DialogueBuffer();
-        buf3.offer("Same text");
-        check("內容沒變不送出", buf3.offer("Same text") == null);
+        buf3.offer("Same text", "Same text");
+        check("內容沒變不送出", buf3.offer("Same text", "Same text") == null);
 
         // 真實情境：每個按鍵後面都跟著一個「不同的」第 13 平面游標字元。
         // 這正是上一版失敗的原因——沒清掉游標，前綴比對就對不上，
@@ -152,7 +154,8 @@ public final class GlyphSplitterTest {
         for (int i = 1; i <= line.length(); i++) {
             String cursor = new String(Character.toChars(0xD0000 + (i % 0x74)));
             String withCursor = line.substring(0, i) + cursor;
-            if (buf4.offer(GlyphSplitter.stripGlyphChars(withCursor)) != null) {
+            if (buf4.offer(withCursor,
+                    GlyphSplitter.stripGlyphChars(withCursor)) != null) {
                 leaked++;
             }
         }
@@ -169,7 +172,7 @@ public final class GlyphSplitterTest {
         for (int i = 1; i <= line.length(); i++) {
             String cursor = new String(Character.toChars(0xD0000 + (i % 0x74)));
             String typed = line.substring(0, i) + cursor;
-            if (buf5.offer(GlyphSplitter.toTemplate(
+            if (buf5.offer(typed, GlyphSplitter.toTemplate(
                     com.wynntils.core.text.StyledText.fromString(typed))) != null) {
                 fragments++;
             }
