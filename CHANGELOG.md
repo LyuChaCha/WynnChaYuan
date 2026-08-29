@@ -11,6 +11,24 @@
 
 ### 調整
 
+- **`Decay` 統一為「黯蝕」**（依翻譯團隊指示）。GLOSSARY 原本就寫著「黯蝕」但標記
+  **未確定**，實際語料則散成三種寫法：裝備 lore 用「衰朽」、任務對話用「腐朽」、
+  《The Qira Hive》用「衰敗」。現在定案，共改 **22 條、12 個檔案**，GLOSSARY 的
+  未確定標記一併移除。
+
+  <p>語料裡 decay 有<b>三種完全不同的用法</b>，只動第一種：
+
+  | 用法 | 例 | 處理 |
+  |---|---|---|
+  | 專有名詞 `the Decay`（Gavel 的災厄） | `This accursed Decay`、`the decay in the forest` | → **黯蝕** |
+  | 一般語意的腐朽／枯萎／荒廢 | `the seasons decay under age`、`fallen into decay`、`Decaying Heart` | 不動 |
+  | 機制上的層數衰減 | `Distortion decays at -{~} per second` | 不動 |
+
+  <p>判準看原文：`Decay` 大寫單獨成詞、或小寫但明確指那場災厄的算第一種；
+  當形容詞或動詞用的 `decayed`／`decaying`／`decays` 算第二、三種。
+  素材與材料名稱裡 `Bottled Decay`、`Decay Grains`、`Decay String` 的 `Decay`
+  是單獨的名詞，跟著改；`Decaying Heart`（腐朽的心）是形容詞，維持不變。
+
 - **`Raid` 改譯為「討伐戰」**（依翻譯團隊指示）。先前是「團隊副本」，
   遊戲裡還有一處寫成「突襲」——隊伍搜尋的說明就是那一條。
 
