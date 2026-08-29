@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Bob's Lost Soul",
   "count": 75,
-  "translated": 0,
+  "translated": 73,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Bob's Lost Soul#000": {
    "src": "Talk to Tarod in {p}'s Forest at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 的 {p} 森林找 Tarod 說話",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -18,7 +18,7 @@
   },
   "Bob's Lost Soul#001": {
    "src": "You're one of those soldier types, right? My name is Tarod, and I could really use your assistance here.",
-   "dst": "",
+   "dst": "你是那種當兵的吧？我叫 Tarod，我這裡真的很需要你幫個忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -28,7 +28,7 @@
   },
   "Bob's Lost Soul#002": {
    "src": "Years ago, I met a very powerful and legendary warrior by the name of Bob. Yes, that Bob.",
-   "dst": "",
+   "dst": "很多年前，我認識了一位非常強大的傳奇戰士，名字叫 Bob。對，就是那個 Bob。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -38,7 +38,7 @@
   },
   "Bob's Lost Soul#003": {
    "src": "It's safe to say he was a very, well, admirable man. Him and I slowly became close friends over the years.",
-   "dst": "",
+   "dst": "可以這麼說吧，他是個非常……嗯，令人敬佩的人。這些年下來，我和他慢慢成了摯友。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -48,7 +48,7 @@
   },
   "Bob's Lost Soul#004": {
    "src": "That is, until one night, he vanished without a trace. The accepted story is that he was murdered by a pack of ravenous wolves...",
-   "dst": "",
+   "dst": "直到某一個晚上，他毫無預兆地消失了。大家都說他是被一群餓狼咬死的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -58,7 +58,7 @@
   },
   "Bob's Lost Soul#005": {
    "src": "Now, I don't buy that story, but... look, the point here is that he's gone now, and I want to find out where the hell he ended up. That depressing zombie lumbering around {p} clearly isn't him.",
-   "dst": "",
+   "dst": "我可不信那套說法，但……重點是，他人已經不在了，而我想弄清楚他到底去了哪裡。在 {p} 附近晃來晃去的那隻憂鬱殭屍，顯然不是他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -68,7 +68,7 @@
   },
   "Bob's Lost Soul#006": {
    "src": "I believe he died in this area, and I have been looking for his body for quite a while now, with... less than success.",
-   "dst": "",
+   "dst": "我相信他就死在這一帶，而我找他的遺體已經找了好一陣子了，結果……不太理想。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -78,7 +78,7 @@
   },
   "Bob's Lost Soul#007": {
    "src": "Rumors have spread that a tomb lies somewhere east of {p}, but I've never been able to find it. This is where I need you to help me out, yeah?",
-   "dst": "",
+   "dst": "外面傳說 {p} 東邊某處有一座墓，可是我怎麼找都找不到。所以我需要你幫我這個忙，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -88,7 +88,7 @@
   },
   "Bob's Lost Soul#008": {
    "src": "Do you think you could help me out here? Search around that area, and report back to me if you see anything noteworthy.",
-   "dst": "",
+   "dst": "你願意幫我一把嗎？在那一帶找找，看到任何值得注意的東西就回來跟我說。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -98,7 +98,7 @@
   },
   "Bob's Lost Soul#009": {
    "src": "I'd be eternally grateful if you could help me uncover my old friend's true story.",
-   "dst": "",
+   "dst": "如果你能幫我揭開老朋友真正的故事，我會感激你一輩子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -108,7 +108,7 @@
   },
   "Bob's Lost Soul#010": {
    "src": "Find Bob's Tomb",
-   "dst": "",
+   "dst": "找到 Bob 的墓",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -118,7 +118,7 @@
   },
   "Bob's Lost Soul#011": {
    "src": "Report what you've found to Tarod at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 向 Tarod 回報你的發現",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -128,7 +128,7 @@
   },
   "Bob's Lost Soul#012": {
    "src": "Welcome back. Did you find anything worthwhile?",
-   "dst": "",
+   "dst": "你回來了。有找到什麼有價值的東西嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -138,7 +138,7 @@
   },
   "Bob's Lost Soul#013": {
    "src": "Oh? Yeah, that definitely sounds like the tomb! Were you able to see what's inside?",
-   "dst": "",
+   "dst": "哦？對，那聽起來絕對就是那座墓！你有看到裡面有什麼嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -148,7 +148,7 @@
   },
   "Bob's Lost Soul#014": {
    "src": "No? There's... a magical barrier? Great... just GREAT...",
-   "dst": "",
+   "dst": "沒有？有……一道魔法屏障？太好了……真是「太好了」……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -158,7 +158,7 @@
   },
   "Bob's Lost Soul#015": {
    "src": "I have a feeling whoever made that tomb didn't want anyone attempting to get to him, but... Forget it, we have no other options. This is the only way we can place Bob's soul to rest for good.",
-   "dst": "",
+   "dst": "我有種感覺，蓋那座墓的人不希望任何人靠近他，但是……算了，我們沒有別的選擇。這是唯一能讓 Bob 的靈魂真正安息的辦法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -168,7 +168,7 @@
   },
   "Bob's Lost Soul#016": {
    "src": "Listen, I have a guy who can help us out. His name is Wedyf, a sorcerer type. If anyone could get rid of that barrier, it would be him.",
-   "dst": "",
+   "dst": "聽著，我認識一個人可以幫我們。他叫 Wedyf，是個術士之類的。如果有誰能弄掉那道屏障，那一定是他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -178,7 +178,7 @@
   },
   "Bob's Lost Soul#017": {
    "src": "He lives in {p}, a small town close to {p}. Go meet him, I'll wait for your return.",
-   "dst": "",
+   "dst": "他住在 {p}，一個靠近 {p} 的小鎮。去見他吧，我在這裡等你回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -188,7 +188,7 @@
   },
   "Bob's Lost Soul#018": {
    "src": "Talk to the sorcerer Wedyf in {p}.",
-   "dst": "",
+   "dst": "到 {p} 找術士 Wedyf 說話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -198,7 +198,7 @@
   },
   "Bob's Lost Soul#019": {
    "src": "Welcome traveler. Are you looking for something?",
-   "dst": "",
+   "dst": "歡迎，旅人。你在找什麼嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -208,7 +208,7 @@
   },
   "Bob's Lost Soul#020": {
    "src": "Ooh, it has been a long time since I've released an undead...",
-   "dst": "",
+   "dst": "噢，我已經好久沒有釋放過亡者了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -218,7 +218,7 @@
   },
   "Bob's Lost Soul#021": {
    "src": "The spirit of your dead friend must still be somewhere in this world. This is why we are unable to get close to his body. Soul magic works in mysterious ways.",
-   "dst": "",
+   "dst": "你那位過世朋友的靈魂一定還留在這個世界的某處。這就是我們無法靠近他遺體的原因。靈魂魔法的運作方式很難捉摸。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -228,7 +228,7 @@
   },
   "Bob's Lost Soul#022": {
    "src": "Don't worry, I can do it. I've heard a little bit of Bob's story before. What a tragedy. His own infallible protection used against him...",
-   "dst": "",
+   "dst": "別擔心，我做得到。我以前聽過一點 Bob 的故事。真是場悲劇。他那身萬無一失的護甲，最後反倒被拿來對付他自己……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -238,7 +238,7 @@
   },
   "Bob's Lost Soul#023": {
    "src": "...Anyways, there's no need to lament on the past. Now, we need two items. The first is something from Bob himself. The other is the last thing that made his blood drop.",
-   "dst": "",
+   "dst": "……總之，沒必要沉溺在過去。現在，我們需要兩樣東西。第一樣是 Bob 本人身上的東西。另一樣，是最後讓他流過血的那個東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -248,7 +248,7 @@
   },
   "Bob's Lost Soul#024": {
    "src": "Out past the other side of {p} there are two farm houses with an old cave inbetween then. An old florist used to live there, she has a rose that Bob had once cut himself on.",
-   "dst": "",
+   "dst": "穿過 {p} 的另一側，那裡有兩間農舍，中間夾著一個老洞穴。從前有位花匠住在那兒，她有一朵玫瑰，Bob 曾經被那朵玫瑰割傷過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -258,7 +258,7 @@
   },
   "Bob's Lost Soul#025": {
    "src": "I will warn you, though; she was corrupted some time ago. It may not be that easy to take the rose, so do be prepared.",
-   "dst": "",
+   "dst": "不過我得先提醒你：她在不久前被腐化了。要拿到那朵玫瑰恐怕沒那麼容易，做好心理準備。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -268,7 +268,7 @@
   },
   "Bob's Lost Soul#026": {
    "src": "Secondly... something of Bob's. I've heard rumors of a visage of him wandering around {p}, perhaps you can find something of use from it? Killing enemies in the {p} region may be worth your time, as well.",
-   "dst": "",
+   "dst": "再來是……Bob 的東西。我聽說有個他的幻影在 {p} 一帶遊蕩，也許你能從它身上找到有用的東西？在 {p} 一帶擊殺敵人說不定也值得一試。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -278,7 +278,7 @@
   },
   "Bob's Lost Soul#027": {
    "src": "Bring me [{~} Rose] and [{~} Bob's Tear].",
-   "dst": "",
+   "dst": "把 [{~} Rose] 和 [{~} Bob's Tear] 帶來給我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -288,7 +288,7 @@
   },
   "Bob's Lost Soul#028": {
    "src": "Bring [{~} Bob's Tear] from {p} and [{~} Rose] from the house in the {p} forest around [{~}, {~}, -{~}] to Wedyf",
-   "dst": "",
+   "dst": "把 {p} 的 [{~} Bob's Tear] 和 {p} 森林裡 [{~}, {~}, -{~}] 附近那間屋子的 [{~} Rose] 帶去給 Wedyf",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -298,7 +298,7 @@
   },
   "Bob's Lost Soul#029": {
    "src": "Great, you got everything.",
-   "dst": "",
+   "dst": "很好，你全都拿到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -308,7 +308,7 @@
   },
   "Bob's Lost Soul#030": {
    "src": "Although... I might have forgot to tell you about something else too...",
-   "dst": "",
+   "dst": "不過……我可能忘了跟你說另一件事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -318,7 +318,7 @@
   },
   "Bob's Lost Soul#031": {
    "src": "We also need a part of the soul of your dead friend.",
-   "dst": "",
+   "dst": "我們還需要你那位過世朋友的一部分靈魂。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -328,7 +328,7 @@
   },
   "Bob's Lost Soul#032": {
    "src": "This is something I unfortunately cannot do myself. There is a blacksmith close to {p} who does this kind of stuff.",
-   "dst": "",
+   "dst": "很遺憾，這件事我自己做不到。{p} 附近有位鐵匠專門處理這種東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -338,7 +338,7 @@
   },
   "Bob's Lost Soul#033": {
    "src": "He can extract the soul from someone's weapon. Very useful in those situations. Go talk to him.",
-   "dst": "",
+   "dst": "他能從別人的武器裡把靈魂抽出來。碰上這種狀況非常好用。去找他談談吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -348,7 +348,7 @@
   },
   "Bob's Lost Soul#034": {
    "src": "Bring me the soul, and I'll be able to remove the spell preventing you from entering the tomb.",
-   "dst": "",
+   "dst": "把靈魂帶來給我，我就能解除那道擋著你進墓的法術。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -358,7 +358,7 @@
   },
   "Bob's Lost Soul#035": {
    "src": "Talk to the blacksmith in the small settlement southwest of {p} at [{~}, {~}, -{~}] about Bob's lost soul",
-   "dst": "",
+   "dst": "到 {p} 西南方 [{~}, {~}, -{~}] 的小聚落，找鐵匠談 Bob 遺失的靈魂",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -368,7 +368,7 @@
   },
   "Bob's Lost Soul#036": {
    "src": "What can I do for ya?",
-   "dst": "",
+   "dst": "有什麼需要我效勞的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -378,7 +378,7 @@
   },
   "Bob's Lost Soul#037": {
    "src": "Oh yes! I can extract the soul from weapons!",
-   "dst": "",
+   "dst": "哦對！我可以從武器裡把靈魂抽出來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -388,7 +388,7 @@
   },
   "Bob's Lost Soul#038": {
    "src": "Bring me the weapons of your friend, and I'll see if I can do something with it!",
-   "dst": "",
+   "dst": "把你朋友的武器拿來，我看看能不能弄出點什麼！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -398,7 +398,7 @@
   },
   "Bob's Lost Soul#039": {
    "src": "Oh it's... those weapons. Well, if you know what you're doing...",
-   "dst": "",
+   "dst": "哦，是……那幾把武器啊。好吧，如果你知道自己在做什麼的話……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -408,7 +408,7 @@
   },
   "Bob's Lost Soul#040": {
    "src": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shears] will do the trick.",
-   "dst": "",
+   "dst": "[{~} Depressing Stick]、[{~} Depressing Spear]、[{~} Depressing Bow] 和 [{~} Depressing Shears] 就能辦到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -418,7 +418,7 @@
   },
   "Bob's Lost Soul#041": {
    "src": "Be careful with the weapons, you will only get [ONE] of each. If you lose one, you will have to ask around if anyone has a spare.",
-   "dst": "",
+   "dst": "小心那幾把武器，每一種你都只會拿到 [ONE] 把。弄丟了就得四處問問看有沒有人有多的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -428,7 +428,7 @@
   },
   "Bob's Lost Soul#042": {
    "src": "Maybe someone will be selling one on the Trade Market in {p}, who knows.",
-   "dst": "",
+   "dst": "說不定 {p} 的交易市場上會有人在賣，誰知道呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -438,7 +438,7 @@
   },
   "Bob's Lost Soul#043": {
    "src": "My apprentice over there has traveled around a lot, they might know where the items are, but I warn you, they are a little bit quirky.",
-   "dst": "",
+   "dst": "我那邊那位學徒到處跑過不少地方，他們也許知道那些東西在哪，但我先警告你，他們講話有點怪。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -448,7 +448,7 @@
   },
   "Bob's Lost Soul#044": {
    "src": "Weapons of the depressed kind? Oh, of course, of course, I know of the set! Around {p}, I hear they are kept.",
-   "dst": "",
+   "dst": "憂鬱系的武器？噢，當然，當然，那一套我知道！據我所聞，就藏在 {p} 一帶。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -458,7 +458,7 @@
   },
   "Bob's Lost Soul#045": {
    "src": "An army of Linx you must clear, in a cave you shall find this spear!",
-   "dst": "",
+   "dst": "須清盡一支 Linx 大軍，方能於洞中尋得那把矛！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -468,7 +468,7 @@
   },
   "Bob's Lost Soul#046": {
    "src": "To a skilled archer you must go, best her in a lumberyard and you will have her bow!",
-   "dst": "",
+   "dst": "去尋一位神射的女子，在伐木場勝過她，弓便入你手！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -478,7 +478,7 @@
   },
   "Bob's Lost Soul#047": {
    "src": "On an altar, effervescence leers, complete the sacrifice and you will gain your shears...",
-   "dst": "",
+   "dst": "祭壇之上，泡影閃爍，完成獻祭，剪刀便為你所得……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -488,7 +488,7 @@
   },
   "Bob's Lost Soul#048": {
    "src": "In the forest, a house frozen in spikes thick, outsmart the contraption and be gifted a stick!",
-   "dst": "",
+   "dst": "森林之中，有屋為厚冰所封，勝過那機關，木棍便贈予你手中！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -498,7 +498,7 @@
   },
   "Bob's Lost Soul#049": {
    "src": "But beware, beware! Danger lies ahead, and will try to halt you in your stead!",
-   "dst": "",
+   "dst": "但當心，當心哪！前方危機四伏，處處要攔你的去路！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -508,7 +508,7 @@
   },
   "Bob's Lost Soul#050": {
    "src": "Bring [{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shear] to the Blacksmith.",
-   "dst": "",
+   "dst": "把 [{~} Depressing Stick]、[{~} Depressing Spear]、[{~} Depressing Bow] 和 [{~} Depressing Shear] 帶去給鐵匠。",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -517,18 +517,18 @@
    "source": "wiki"
   },
   "Bob's Lost Soul#051": {
-   "src": "**Markque The Wizard: Yo, what's up, bud?",
-   "dst": "",
+   "src": "Yo, what's up, bud?",
+   "dst": "唷，最近好嗎，兄弟？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
    "stage": "Stage 7",
-   "speaker": "Dialogue",
+   "speaker": "Markque The Wizard",
    "source": "wiki"
   },
   "Bob's Lost Soul#052": {
    "src": "I've just been hangin' down here working on my teleportation device. The teleporters got partially frozen over, but I'm pretty damn sure they still work.",
-   "dst": "",
+   "dst": "我一直在下面這裡弄我的傳送裝置。傳送台有一部分被凍住了，不過我很確定它們還能動。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -538,7 +538,7 @@
   },
   "Bob's Lost Soul#053": {
    "src": "Hey, if you want to test it out, be my guest! You can use the teleporter core next to me to start it.",
-   "dst": "",
+   "dst": "嘿，你想試試看的話，請便！你可以用我旁邊那顆傳送核心來啟動它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -548,7 +548,7 @@
   },
   "Bob's Lost Soul#054": {
    "src": "Right click with it while on the center of the iced over teleporter chamber, and it will teleport you in a direction over to the next chamber.",
-   "dst": "",
+   "dst": "站在結冰的傳送室正中央對它按右鍵，它就會把你朝某個方向傳到下一個傳送室。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -558,7 +558,7 @@
   },
   "Bob's Lost Soul#055": {
    "src": "It will then teleport you again in a direction {~} degrees clockwise, and it will keep doin' that forever.",
-   "dst": "",
+   "dst": "接著它會再把你往順時針 {~} 度的方向傳一次，然後就一直這樣下去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -568,7 +568,7 @@
   },
   "Bob's Lost Soul#056": {
    "src": "Some of the ice walls have holes in them, and I believe if you use the teleporter core correctly you will be able to make it to the other side where the gold platform is.",
-   "dst": "",
+   "dst": "有些冰牆上有洞，我相信只要傳送核心用得對，你就能一路到對面那個金色平台。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -578,7 +578,7 @@
   },
   "Bob's Lost Soul#057": {
    "src": "The core is unstable, though, and it will break if you run too far away. Keep that in mind, yeah?",
-   "dst": "",
+   "dst": "不過那顆核心不太穩定，你跑太遠它就會碎掉。記住這點，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -588,7 +588,7 @@
   },
   "Bob's Lost Soul#058": {
    "src": "Oh, and I left an old wand of mine down at the gold platform. The thing was very depressing, though, so it ain't too much of an issue. But hey, if you can get to it, it's all yours, bud, free of cost!",
-   "dst": "",
+   "dst": "喔對，我在金色平台那邊留了一把我的舊魔杖。那東西非常憂鬱就是了，所以也沒什麼大不了。不過欸，你要是拿得到，就都是你的了，兄弟，不用錢！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -598,7 +598,7 @@
   },
   "Bob's Lost Soul#059": {
    "src": "... Hi again. I see you got the weapons.",
-   "dst": "",
+   "dst": "……又見面了。看來你把武器拿到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -608,7 +608,7 @@
   },
   "Bob's Lost Soul#060": {
    "src": "These weapons emanate so much sadness... I'm sure you heard about Bob's story...",
-   "dst": "",
+   "dst": "這些武器散發出好深的悲傷……你應該也聽過 Bob 的故事吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -618,7 +618,7 @@
   },
   "Bob's Lost Soul#061": {
    "src": "Here is the soul. It's a little bit crushed, but it can do the trick.",
-   "dst": "",
+   "dst": "靈魂在這裡。它有點碎了，不過還是能用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -628,7 +628,7 @@
   },
   "Bob's Lost Soul#062": {
    "src": "Good luck on your quest. Bob was a great hero, anything to help him is good in my book.",
-   "dst": "",
+   "dst": "祝你任務順利。Bob 是位偉大的英雄，任何能幫到他的事，在我看來都是好事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -638,7 +638,7 @@
   },
   "Bob's Lost Soul#063": {
    "src": "Bring back [{~} Bob's Crushed Soul] to Wedyf.",
-   "dst": "",
+   "dst": "把 [{~} Bob's Crushed Soul] 帶回去給 Wedyf。",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -648,7 +648,7 @@
   },
   "Bob's Lost Soul#064": {
    "src": "I'm glad to see you again.",
-   "dst": "",
+   "dst": "很高興再見到你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -658,7 +658,7 @@
   },
   "Bob's Lost Soul#065": {
    "src": "I only need a part of the soul, you can keep the rest.",
-   "dst": "",
+   "dst": "我只需要一部分靈魂，剩下的你留著吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -668,7 +668,7 @@
   },
   "Bob's Lost Soul#066": {
    "src": "Give me a minute, I need to concentrate...",
-   "dst": "",
+   "dst": "給我一點時間，我需要專心……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -698,7 +698,7 @@
   },
   "Bob's Lost Soul#069": {
    "src": "It is done. You should be able to enter the tomb now. Be careful.",
-   "dst": "",
+   "dst": "完成了。你現在應該可以進入那座墓了。小心點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -708,7 +708,7 @@
   },
   "Bob's Lost Soul#070": {
    "src": "Find Bob's corpse in his tomb.",
-   "dst": "",
+   "dst": "在墓中找到 Bob 的遺體。",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -718,7 +718,7 @@
   },
   "Bob's Lost Soul#071": {
    "src": "Report back what you've seen to Tarod",
-   "dst": "",
+   "dst": "回去向 Tarod 回報你所看到的",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -728,7 +728,7 @@
   },
   "Bob's Lost Soul#072": {
    "src": "You're back... Has he... has he finally been put to rest?",
-   "dst": "",
+   "dst": "你回來了……他……他終於安息了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -738,7 +738,7 @@
   },
   "Bob's Lost Soul#073": {
    "src": "It's... hard to hear, knowing that my old friend is really gone, this time, but... I'm happy he won't have to suffer on this war-torn world for another second.",
-   "dst": "",
+   "dst": "聽到這個……很不好受，知道我的老朋友這次是真的走了，但是……我很高興他不必再在這個被戰爭撕裂的世界上多受一秒的苦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -748,7 +748,7 @@
   },
   "Bob's Lost Soul#074": {
    "src": "...I want you to have something. This is his old battle chesplate; he gave it to me a few days before he vanished. I think if he were still here, he'd want you to have this. Please, take good care of it for me...",
-   "dst": "",
+   "dst": "……我想給你一樣東西。這是他的舊胸甲；他消失前幾天把它交給了我。我想如果他還在，他會希望這東西給你。拜託，替我好好保管它……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",

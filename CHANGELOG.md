@@ -3,6 +3,22 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.63] - 2026-08-29
+
+### 新增
+
+- **《Bob's Lost Soul》整篇翻完**（73 句）。人名（Bob、Tarod、Wedyf、
+  Markque The Wizard）與裝備名稱維持英文，學徒那四句押韻的謎語照原本的
+  韻文語氣處理。剩下兩句是 Wedyf 唸咒的省略號，本來就沒有字可翻。
+
+### 修正
+
+- **兩條 wiki 抓取殘留。**《The Corrupted Village》裡有一條 `src` 是
+  「Dialogue:」的條目——那是 wiki 的段落標題，不是遊戲台詞，整條刪掉，
+  這個任務因此補滿 55/55。《Bob's Lost Soul》裡有一條 `src` 黏著
+  「`**Markque The Wizard: `」前綴，那樣的鍵實機永遠對不上；把前綴移到
+  `speaker` 欄位，鍵才會生效。
+
 ## [1.99.62] - 2026-08-29
 
 ### 新增
