@@ -45,6 +45,26 @@
   處理成「紛爭的開端，正如同放開水口」，保留它的格言體。
   `Sovereign` 沿用《A New Beginning》既有的「統領」。
 
+- **《Dwarves and Doguns Part I》整篇翻完**（122 句）。任務進度來到 8274/22067（37.5%）。
+  劇中劇那一段的台詞原文<b>刻意寫得很爛</b>（`These nice minerals are very nice`、
+  `afternoon demon luncheon`、`Dragons are no match for us?? CHARGE!`）——
+  那是宣傳劇拙劣的表現，也是整篇的伏筆，中文照留這份拙劣，沒有潤飾成通順的戲劇對白。
+  Korzim 的斷續語氣（`We use.. earth and.. fire.. elements.`）照原文的停頓處理。
+
+### 調整
+
+- **統一三條 `Yes, yes, ` 開頭的譯法**（經翻譯團隊同意後修改）：
+  - `Yes, yes, we'll be faster next time.`（`quest.json`，「好啦好啦」）
+    改為「是是是」，與《King's Recruit》裡<b>同一個角色、同一句話的長版本</b>一致。
+    這一組是真正會出問題的：兩條原文是嚴格前綴關係，開頭卻不同，
+    正是「講到一半中文自己改口」的形狀。
+  - Captain Ragon 在《Elemental Exercise》裡兩句都以 `Yes, yes,` 開頭，
+    卻一句「好了好了」一句「很好、很好」，統一為「好了好了」。
+  - Dr. Picard 在《Queen's Recruit》裡同樣兩種講法，統一為「是是是」。
+
+  跨角色的差異<b>維持不變</b>——Sovereign Majin 的「對對對」、Captain Kymer 的
+  「好啦好啦」、Mayor Alvin 的「是是」各自屬於不同角色的語氣，不該壓成同一個詞。
+
 ## [1.99.69] - 2026-08-29
 
 > 這一版把先前累積的五批翻譯一起帶出來——那些譯文早就同步給玩家了
