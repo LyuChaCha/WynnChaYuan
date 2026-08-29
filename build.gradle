@@ -210,6 +210,14 @@ tasks.register('runChatAlignChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChatAlignChecks' }
 
+tasks.register('runCaptureStoreChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證 captured.json 只列還沒有譯文的字串'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.CaptureStoreTest'
+}
+tasks.named('check') { dependsOn 'runCaptureStoreChecks' }
+
 tasks.register('runChatBlockChecks', JavaExec) {
     group = 'verification'
     description = '驗證一次跳好幾行的訊息，譯文等它跳完才一起出來'

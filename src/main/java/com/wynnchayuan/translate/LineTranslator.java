@@ -2917,7 +2917,7 @@ public final class LineTranslator {
 
         // 譯者自己指定的顏色可以挑哪些。見 #colourToken。
         List<Style> palette = palette(allRuns);
-        FlowedDebug.palette(palette, flowed);
+        FlowedDebug.palette(palette, allRuns, flowed);
 
         List<Component> out = new ArrayList<>(lines.size());
         for (List<Token> tokens : lines) {
