@@ -116,13 +116,23 @@ def table() -> tuple[str, int, int]:
 
 
 def replace(path: Path, body: str) -> bool:
+    """把檔案裡<b>每一組</b>標記之間的內容換成最新的進度。
+
+    會有多組是因為 modrinth-description.md 是雙語的，英文與中文各有一段。
+    只換第一組的話，另一段會留在原地繼續變舊——而「一半新一半舊」
+    比整份都舊更難發現，因為沒有人會想到同一個檔案裡的兩個數字會不一樣。
+    """
     text = path.read_text(encoding="utf-8")
     if START not in text or END not in text:
         print(f"  ! {path.name} 少了 {START} / {END} 標記，跳過")
         return False
-    head, rest = text.split(START, 1)
-    _, tail = rest.split(END, 1)
-    fresh = f"{head}{START}\n{body}\n{END}{tail}"
+    out = []
+    rest = text
+    while START in rest and END in rest:
+        head, rest = rest.split(START, 1)
+        _, rest = rest.split(END, 1)
+        out.append(f"{head}{START}\n{body}\n{END}")
+    fresh = "".join(out) + rest
     if fresh == text:
         return False
     path.write_text(fresh, encoding="utf-8", newline="\n")
