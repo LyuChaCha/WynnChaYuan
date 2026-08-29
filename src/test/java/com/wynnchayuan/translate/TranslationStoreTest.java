@@ -318,6 +318,40 @@ public final class TranslationStoreTest {
         check("實際語料：打到「Bring」時後面還有更長的候選",
                 real.hasLonger("Bring"));
         check("實際語料：打到「...」時後面還有更長的候選", real.hasLonger("..."));
+
+        itemNamesAreNotSubstitutableTerms(real);
+    }
+
+    /**
+     * 道具名稱<b>不可以</b>進「可替換的詞」表。
+     *
+     * <h2>先前壞在哪</h2>
+     * {@code _meta.itemNames: false} 那條分支是為<b>技能名稱與 Major ID</b> 設計的——
+     * 那些名稱確實會出現在別的敘述裡（「提升 Meteor 的傷害」），所以要能被替換。
+     *
+     * <p>但 {@code ingredient.json}、{@code material.json}、{@code tome.json}、
+     * {@code aspect.json}、{@code charm.json} 也被標成 {@code false}，
+     * 於是 <b>1370 個道具名變成可替換的詞</b>，會蓋到任何剛好含有同樣字串的文字上。
+     *
+     * <p>使用者回報的症狀就是這個：素材 {@code Dark Matter}（暗物質）與一件<b>盔甲</b>
+     * 同名，素材的譯名被貼到了盔甲上；{@code Charred Bone}（焦黑的骨）與一把<b>武器</b>
+     * 同名，情況一樣。裝備名稱是刻意保留英文的（要對得上 wiki 與交易市場），
+     * 卻被素材檔的譯名劫走。
+     *
+     * <p>順帶一提，這也讓 F6 的「翻譯物品名稱」開關對素材<b>無效</b>——
+     * 走 terms 那條路不受那個開關管。
+     */
+    private static void itemNamesAreNotSubstitutableTerms(TranslationStore real) {
+        // 這兩個名稱在語料裡同時是素材、也是裝備。裝備那份刻意沒有譯文。
+        for (String name : new String[] {"Dark Matter", "Charred Bone"}) {
+            String sentence = "You found a " + name + " today.";
+            TranslationStore.Term hit = real.findTerm(sentence, 0);
+            String matched = hit == null ? null
+                    : sentence.substring(hit.start(), hit.end());
+            boolean clean = !name.equals(matched);
+            check("實際語料：「" + name + "」不會被當成可替換的詞塞進別的句子"
+                    + (clean ? "" : "（被換成了「" + hit.translation() + "」）"), clean);
+        }
     }
 
     private static void check(String name, boolean ok) {
