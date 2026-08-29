@@ -46,7 +46,7 @@ Some files are flat instead — the English **is** the key:
 "Combat Level": "Kampfstufe",
 ```
 
-## Three placeholders — keep them, move them freely
+## Placeholders — keep them, move them freely
 
 | Placeholder | Means | Rule |
 |---|---|---|
@@ -68,6 +68,52 @@ dst: "- {~1} Reihen (insgesamt {~2} Stapel)"
 up on that line and shows the English. On screen that is indistinguishable from
 "not translated yet", so the mistake can sit there for months. The automated
 check exists for exactly this.
+
+## When the colour comes out wrong: `{c1}` `{c2}` `{/}`
+
+Colour is normally **guessed**: the mod takes each coloured run of the original and
+looks for the same literal text in your translation. That works for terms you keep
+in the original — ability names, place names — and fails for everything you actually
+translate, so the run falls back to the base colour. A line with a single colour can
+still be recovered by position; **a line mixing two or three colours cannot**.
+
+When the guess can't work, you are the only one who knows the answer, so write it:
+
+| Syntax | Means |
+|---|---|
+| `{c1}`–`{c9}` | The Nth style of the original, ordered by first appearance |
+| `{c:#FF55FF}` | An explicit hex colour |
+| `{c:gold}` | An explicit vanilla colour name (the 16 Minecraft ones) |
+| `{/}` | End the span; back to whatever that part was |
+
+```json
+"src": "[Cave Completed]\nGrook's Nest\n- Rewards:",
+"dst": "{c1}[Cave Completed]{/}\n{c2}Grook's Nest{/}\n{c3}- {c4}Rewards:{/}"
+```
+
+`{cN}` moves the whole **style**, not just the hue — bold, underline and Wynncraft's
+non-vanilla colour codes come along, so the line follows the game if its palette
+ever changes.
+
+**To see which number is which colour**, read the "available colours" section of
+`config/wynnchayuan/majorid-debug.txt` (written while diagnostics are on, F6):
+
+```
+=== available colours 1 ===
+  dst: [Cave Completed]
+    {c1}  #55FF55               src: "[Cave Completed]"
+    {c2}  #FFFFFF bold          src: "Grook's Nest"
+    {c3}  #FF55FF               src: "-"
+```
+
+Three things to watch:
+
+- These go **in `dst` only**. A colour placeholder in `src` makes that key
+  unmatchable forever, because the game never sends those characters.
+- A span runs until `{/}`, the next `{cN}`, or **the end of that line**. Forgetting
+  `{/}` affects that line only; it never bleeds into the rest of the block.
+- An out-of-range index is treated as **not written** — the span falls back to
+  guessing. A wrong colour is survivable; a line that refuses to render is not.
 
 ## Place names stay in the original
 
