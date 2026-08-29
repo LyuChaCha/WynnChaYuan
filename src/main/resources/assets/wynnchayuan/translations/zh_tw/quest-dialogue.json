@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 22067,
-  "translated": 8962,
+  "translated": 9140,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -171,7 +171,7 @@
   },
   "A Headless History#000": {
    "src": "Talk to Hans in the {p} outskirts at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 的 {p} 郊外與 Hans 談話",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -181,7 +181,7 @@
   },
   "A Headless History#001": {
    "src": "Oi, you there! With the small nose and whatnot! I got somethin' to ask you. Got a minute?",
-   "dst": "",
+   "dst": "欸，那邊那位！鼻子小小的那個！我有事想問你。有空嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -191,7 +191,7 @@
   },
   "A Headless History#002": {
    "src": "Good, you're good people. It's about our neighbor, Referick. He's a bit of a conspiracy nut. You know the type, villager illuminati, Wybels are evil, all that?",
-   "dst": "",
+   "dst": "好，你是好人。是我們鄰居 Referick 的事。他有點陰謀論成癮。你知道那一型吧，村民光明會啦、Wybel 是邪惡的啦，那一套？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -201,7 +201,7 @@
   },
   "A Headless History#003": {
    "src": "He's acting proper strange though, the past few days. Thinkin' a lord of time's draggin' creatures from other dimensions doesn't make ya stop eatin' or drinkin'.",
-   "dst": "",
+   "dst": "不過這幾天他真的怪得離譜。就算你相信有個時之領主在把別的次元的東西拖過來，也不至於連吃喝都停了吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -211,7 +211,7 @@
   },
   "A Headless History#004": {
    "src": "He'll talk your ear off about it if you give him half a chance, but he ain't sayin' a word to me, even when I tried askin' about his theories.",
-   "dst": "",
+   "dst": "這種事只要給他半點機會他就能講到你耳朵長繭，可他現在對我一個字都不吭，連我主動問他那些理論都一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -221,7 +221,7 @@
   },
   "A Headless History#005": {
    "src": "Somethin's definitely wrong about him, that much's for sure. Could ya take a look for me, see whatcha can figure out and all?",
-   "dst": "",
+   "dst": "他絕對有哪裡不對勁，這點我敢肯定。你能幫我去看看嗎，看你能弄清楚些什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -231,7 +231,7 @@
   },
   "A Headless History#006": {
    "src": "He lives in the house next to the pile of rocks. He's got screws loose but I don't want 'im dyin' on me, yeah?",
-   "dst": "",
+   "dst": "他住在那堆石頭旁邊的房子。他腦袋是有幾根螺絲鬆了沒錯，可我也不想他就這樣死在我面前，你懂吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -241,7 +241,7 @@
   },
   "A Headless History#007": {
    "src": "Talk to Referick in his house and head upstairs at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 在 Referick 家中與他談話，然後上樓",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -251,7 +251,7 @@
   },
   "A Headless History#008": {
    "src": ". . .",
-   "dst": "",
+   "dst": "… … …",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -261,7 +261,7 @@
   },
   "A Headless History#009": {
    "src": "Oi! Any luck with ol' Rick there?",
-   "dst": "",
+   "dst": "欸！老 Rick 那邊有進展嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -271,7 +271,7 @@
   },
   "A Headless History#010": {
    "src": "...hm. Dang it...y'know, maybe there's somethin' here that'll tell us what in heck happened.",
-   "dst": "",
+   "dst": "……唔。可惡……你知道嗎，說不定這屋裡有什麼東西能告訴我們到底發生了什麼鬼事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -281,7 +281,7 @@
   },
   "A Headless History#011": {
    "src": "Let's look around the house for anythin' he mighta been workin' on. Maybe he finally fiddled with somethin' he shouldn'ta fiddled with?",
-   "dst": "",
+   "dst": "我們在屋裡找找他最近可能在弄的東西。說不定他這次終於去碰了不該碰的玩意兒？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -291,7 +291,7 @@
   },
   "A Headless History#012": {
    "src": "Investigate his house for clues as to what could have happened.",
-   "dst": "",
+   "dst": "搜查他的屋子，找出可能發生了什麼事的線索。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -301,7 +301,7 @@
   },
   "A Headless History#013": {
    "src": "Whassat you're lookin' at there? The castle? Don't see why he'd be pointin' this ol' telescope that way.",
-   "dst": "",
+   "dst": "你在看什麼啊？那座城堡？真不曉得他幹嘛把這台老望遠鏡對著那個方向。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -311,7 +311,7 @@
   },
   "A Headless History#014": {
    "src": "You're human, so you wouldn't know, but somethin' like two hundred years ago, an elf of all people lived in that castle. Called 'imself Dullahan, wore a helmet a lot, I think.",
-   "dst": "",
+   "dst": "你是人類，所以你大概不會知道，不過大約兩百年前，那座城堡裡住的偏偏是個精靈。他自稱 Dullahan，好像很常戴著頭盔。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -321,7 +321,7 @@
   },
   "A Headless History#015": {
    "src": "People thought he was the reason for the Decay- can't imagine why, personally, and obviously they weren't right.",
-   "dst": "",
+   "dst": "當時大家認為腐朽是他造成的——我個人是想不通為什麼，而且他們顯然搞錯了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -331,7 +331,7 @@
   },
   "A Headless History#016": {
    "src": "...hm. Y'know, there's some ghost stories about Dullahan still livin' in that castle... Come to think of it, I think Referick mentioned a theory about it.",
-   "dst": "",
+   "dst": "……唔。你知道嗎，外頭是有些鬼故事說 Dullahan 還住在那座城堡裡……這麼一想，我記得 Referick 好像提過一個跟這有關的理論。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -341,7 +341,7 @@
   },
   "A Headless History#017": {
    "src": "Barely remember what it was about cause of how many crackpots he's stuck his head into, but it's somethin' about a ghost. 's the only lead I can think of, anyways...",
-   "dst": "",
+   "dst": "他鑽研過的荒唐學說太多了，我幾乎記不得那是在講什麼，只記得跟某個鬼魂有關。反正這是我唯一想得到的線索了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -351,7 +351,7 @@
   },
   "A Headless History#018": {
    "src": "The castle door's locked, but you can access the basement. Think you could try lookin' over there? That's all I got.",
-   "dst": "",
+   "dst": "城堡的門鎖著，不過地下室進得去。你要不要去那邊看看？我能給的就這些了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -361,7 +361,7 @@
   },
   "A Headless History#019": {
    "src": "Travel to the castle in the north at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 北方的城堡",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -371,7 +371,7 @@
   },
   "A Headless History#020": {
    "src": "Enter the underground prison.",
-   "dst": "",
+   "dst": "進入地下監獄。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -381,7 +381,7 @@
   },
   "A Headless History#021": {
    "src": "...an unfamiliar soul? Strange. I have not brought you here. I do not know of you.",
-   "dst": "",
+   "dst": "……一個陌生的靈魂？奇怪。我並未將你帶來此地。我也不認得你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -391,7 +391,7 @@
   },
   "A Headless History#022": {
    "src": "What an odd feeling... I haven't felt confusion in a long time. How refreshing...still, I shall ask you to leave.",
-   "dst": "",
+   "dst": "多麼奇異的感覺……我已經很久沒有感到困惑了。真是新鮮……不過，我仍要請你離開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -401,7 +401,7 @@
   },
   "A Headless History#023": {
    "src": "Excuse you. I asked you to leave, strange person. You would ignore my request?",
-   "dst": "",
+   "dst": "放肆。我請你離開了，陌生的人。你竟要無視我的請求？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -411,7 +411,7 @@
   },
   "A Headless History#024": {
    "src": "Such an action is rather insolent, not to mention...interesting. Still, interfering with my business is inexcusable.",
-   "dst": "",
+   "dst": "這種舉動相當無禮，而且……相當有趣。但無論如何，干擾我的事務是不可原諒的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -421,7 +421,7 @@
   },
   "A Headless History#025": {
    "src": "Demons of the Prison Guard, I compel you to execute this interloper. Trap their soul for my perusal later.",
-   "dst": "",
+   "dst": "獄卒之魔們，我命你們處決這名闖入者。將其靈魂封住，留待我日後細看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -431,7 +431,7 @@
   },
   "A Headless History#026": {
    "src": "Return to Referick with his soul at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "帶著 Referick 的靈魂回到 [-{~1}, {~2}, -{~3}] 找他",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -441,7 +441,7 @@
   },
   "A Headless History#027": {
    "src": "OI! Referick!! Wait for me! Ain'tcha need some food and drink first?!",
-   "dst": "",
+   "dst": "欸！Referick！！等等我！你不是該先吃點喝點東西嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -451,7 +451,7 @@
   },
   "A Headless History#028": {
    "src": "The heck did you do?! Referick just bolted out the door like he forgot his wallet or somethin'!",
-   "dst": "",
+   "dst": "你到底做了什麼？！Referick 剛剛衝出門去，像是忘了帶錢包還怎樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -461,7 +461,7 @@
   },
   "A Headless History#029": {
    "src": ". . .",
-   "dst": "",
+   "dst": "… … …",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -471,7 +471,7 @@
   },
   "A Headless History#030": {
    "src": "C'mon mate, you got up and moved for the first time in days and now you're clammin' up again? Speak to me!",
-   "dst": "",
+   "dst": "拜託啊老兄，你好幾天來第一次站起來走動，現在又閉嘴不說話了？跟我講句話啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -481,7 +481,7 @@
   },
   "A Headless History#031": {
    "src": "WROOOOOAAAAAARRR!!! I'M ALIIIIIVE!!",
-   "dst": "",
+   "dst": "吼哦哦哦啊啊啊啊！！！我還活著啊啊啊啊！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -491,7 +491,7 @@
   },
   "A Headless History#032": {
    "src": "YIPE! Never heard 'im scream like that before! Never heard anyone scream like that before! I'd like to never hear anyone scream like that again!",
-   "dst": "",
+   "dst": "唔哇！我從沒聽他這樣叫過！我從沒聽任何人這樣叫過！我這輩子也不想再聽任何人這樣叫了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -501,7 +501,7 @@
   },
   "A Headless History#033": {
    "src": "Oh, shut UP Hans! I nearly had my soul devoured, don't DARE give me any chaff when I was RIGHT all along!!",
-   "dst": "",
+   "dst": "噢，你給我「閉嘴」，Hans！我的靈魂差點被吞掉，而我從頭到尾都是「對的」，你敢挑我毛病試試！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -511,7 +511,7 @@
   },
   "A Headless History#034": {
    "src": "Agh, alright, alright! Quiet, my ears are ringin'! I'll listen, I'll listen, just quiet!",
-   "dst": "",
+   "dst": "啊，好啦好啦！小聲點，我耳朵都在響了！我聽、我聽，你小聲點就是了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -521,7 +521,7 @@
   },
   "A Headless History#035": {
    "src": "I knew the disappearances in {p} weren't just because of the risen bodies. People were being left catatonic!! That doesn't happen randomly!",
-   "dst": "",
+   "dst": "我就知道 {p} 的失蹤案不只是因為那些爬起來的屍體。有人變成了木僵狀態！！那種事不會隨機發生！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -531,7 +531,7 @@
   },
   "A Headless History#036": {
    "src": "It's Dullahan, I swear on my life! I figured him out and he came after me! He's devouring peoples' souls and siphoning their energy for himself!",
-   "dst": "",
+   "dst": "是 Dullahan，我用性命發誓！我識破了他，他就找上我了！他在吞食人們的靈魂，把他們的能量抽到自己身上！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -541,7 +541,7 @@
   },
   "A Headless History#037": {
    "src": "He's acting from within the castle somehow- Ghostly hands and servants, I'll bet! And that means there's a chance to stop him, if he has to act indirectly!",
-   "dst": "",
+   "dst": "他不知怎麼地是從城堡裡動手的——我敢說是靠鬼影般的手和僕從！這也代表還有機會阻止他，既然他只能間接出手！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -551,7 +551,7 @@
   },
   "A Headless History#038": {
    "src": "We need to round up the townsfolk, the guards, the military, EVERYONE! We have to storm the castle and stop him before he's able to escape!",
-   "dst": "",
+   "dst": "我們得召集鎮民、衛兵、軍隊，「所有人」！我們必須強攻城堡，在他逃走之前阻止他！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -561,7 +561,7 @@
   },
   "A Headless History#039": {
    "src": "...criminy, you really bit the big one, didn'tcha...look, if he's tryin' to eat people's souls, wouldn't it be smarter to NOT have a huge mob?",
-   "dst": "",
+   "dst": "……天啊，你這回是真的栽了對吧……你聽我說，如果他是想吃人的靈魂，那把一大群人聚過去不是反而蠢嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -571,7 +571,7 @@
   },
   "A Headless History#040": {
    "src": "Wait, wh-what do you mean?! Shouldn't everyone be on high alert? Won't we have a better chance of swarming him all at once?",
-   "dst": "",
+   "dst": "等等，你、你什麼意思？！大家不是該提高警覺嗎？一次全部湧上去，勝算不是比較大？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -581,7 +581,7 @@
   },
   "A Headless History#041": {
    "src": "He'd have a whole mob of people ready to take from in that case. Sending in one, heavily-armed person, or a small group'd be better.",
-   "dst": "",
+   "dst": "那樣的話，他面前就有一整群人可以拿了。派一個全副武裝的人進去，或者一小隊，才是比較好的做法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -591,7 +591,7 @@
   },
   "A Headless History#042": {
    "src": "And, well...a heavily-armed human just rescued ya, Ricky. I think we leave this to 'em. How about it, human? Head up to the castle and look into this for us?",
-   "dst": "",
+   "dst": "而且呢……剛剛救你的就是一個全副武裝的人類，Ricky。我看這件事交給他們就好。怎麼樣啊，人類？上城堡去替我們查一查？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -601,7 +601,7 @@
   },
   "A Headless History#043": {
    "src": "Enter Dullahan's castle.",
-   "dst": "",
+   "dst": "進入 Dullahan 的城堡。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -611,7 +611,7 @@
   },
   "A Headless History#044": {
    "src": "The interesting soul arrives once more. Why is it you valued the life of that villager? You risked yourself for his soul.",
-   "dst": "",
+   "dst": "那個有趣的靈魂又來了。你為何看重那名村民的性命？你為了他的靈魂讓自己涉險。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -621,7 +621,7 @@
   },
   "A Headless History#045": {
    "src": "It will not make a difference one way or the other, and so I am doubly confused. The feeling has already grown tiresome.",
-   "dst": "",
+   "dst": "無論你救或不救都不會改變什麼，因此我加倍困惑。而這種感覺已經令我厭煩了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -631,7 +631,7 @@
   },
   "A Headless History#046": {
    "src": "What purpose have you in this place? Turn over your soul so I may examine it and find out. I am genuinely curious to know...",
-   "dst": "",
+   "dst": "你來此地有何目的？交出你的靈魂，讓我檢視、讓我明白。我是真的很想知道……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -641,7 +641,7 @@
   },
   "A Headless History#047": {
    "src": "Investigate the painting at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "調查 [-{~1}, {~2}, -{~3}] 的那幅畫",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -651,7 +651,7 @@
   },
   "A Headless History#048": {
    "src": "Be done! I bind you with Orphion's light!",
-   "dst": "",
+   "dst": "結束吧！我以 Orphion 之光束縛你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -661,7 +661,7 @@
   },
   "A Headless History#049": {
    "src": "Wait...it...it's n-not holding?!",
-   "dst": "",
+   "dst": "等等……它……它綁不住？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -671,7 +671,7 @@
   },
   "A Headless History#050": {
    "src": "LARIII! Where are you?! I can help!!",
-   "dst": "",
+   "dst": "Lari——！你在哪裡？！我可以幫忙！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -681,7 +681,7 @@
   },
   "A Headless History#051": {
    "src": "Ugh, I saw her with that...THING, but...",
-   "dst": "",
+   "dst": "唔，我看見她跟那個……「東西」在一起，但是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -691,7 +691,7 @@
   },
   "A Headless History#052": {
    "src": "My visions didn't show an exact enough spot... LARIII?",
-   "dst": "",
+   "dst": "我的預視沒有顯示出夠精確的位置……Lari——？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -701,7 +701,7 @@
   },
   "A Headless History#053": {
    "src": "I...what is... What left the land scarred like this?!",
-   "dst": "",
+   "dst": "我……這是什麼……是什麼把這片土地弄得如此傷痕累累？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -711,7 +711,7 @@
   },
   "A Headless History#054": {
    "src": "Was...was this their clash...? L-LARI! LARIIII! WHERE ARE YOU?!",
-   "dst": "",
+   "dst": "這……這是他們交手留下的痕跡……？Lari！Lari——！你到底在哪裡？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -721,7 +721,7 @@
   },
   "A Headless History#055": {
    "src": "...hh...D-Du...lla...?",
-   "dst": "",
+   "dst": "……呃……Du……lla……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -731,7 +731,7 @@
   },
   "A Headless History#056": {
    "src": "You are NOT dying on me! I won't allow it! You will LIVE, you hear me?!",
-   "dst": "",
+   "dst": "你「不准」死在我面前！我不允許！你「一定」要活下來，聽見沒有？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -741,7 +741,7 @@
   },
   "A Headless History#057": {
    "src": "Sit as still as you can, I have healing spells prepared.",
-   "dst": "",
+   "dst": "盡量別動，我準備了治療咒法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -751,7 +751,7 @@
   },
   "A Headless History#058": {
    "src": "I ask the land for its life to save another. Grant me this!",
-   "dst": "",
+   "dst": "我向這片土地索求它的生命，以救另一條生命。應允我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -761,7 +761,7 @@
   },
   "A Headless History#059": {
    "src": "Dullahan!",
-   "dst": "",
+   "dst": "Dullahan！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -771,7 +771,7 @@
   },
   "A Headless History#060": {
    "src": "Oh, what am I going to do with you...",
-   "dst": "",
+   "dst": "唉，我真拿你沒辦法……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -781,7 +781,7 @@
   },
   "A Headless History#061": {
    "src": "Continue exploring the castle.",
-   "dst": "",
+   "dst": "繼續探索城堡。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -791,7 +791,7 @@
   },
   "A Headless History#062": {
    "src": "Once again you ignore my demands...? And not only that, you invade the memories I have locked away?",
-   "dst": "",
+   "dst": "你又一次無視我的要求……？而且不只如此，你還侵入了我封存起來的記憶？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -801,7 +801,7 @@
   },
   "A Headless History#063": {
    "src": "I must ask again, what is your goal? Why have you come here, and why do you seek my most private thoughts, that not even I wish to think?",
-   "dst": "",
+   "dst": "我必須再問一次，你的目的是什麼？你為何來到這裡，又為何要探尋我最私密的思緒——那些連我自己都不願再想起的東西？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -811,7 +811,7 @@
   },
   "A Headless History#064": {
    "src": "Look, Dulla, I really do appreciate your help, but you know I can't do what you're asking of me! There's another way, I just need to find it!",
-   "dst": "",
+   "dst": "聽我說，Dulla，我真的很感謝你的幫忙，可是你知道我做不到你要我做的事！一定還有別的辦法，我只是還沒找到！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -821,7 +821,7 @@
   },
   "A Headless History#065": {
    "src": "Lari, you remember that I have my visions, right? I've seen what will happen if you don't step up- and I can help stop it!",
-   "dst": "",
+   "dst": "Lari，你還記得我有預視吧？我已經看見你不站出來會發生什麼事——而我可以幫忙阻止它！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -831,7 +831,7 @@
   },
   "A Headless History#066": {
    "src": "You've been trying to find \"anotherway\" for two centuries. Don't you think it's high-time we took my route, before things get worse?",
-   "dst": "",
+   "dst": "你找那個『別的辦法』已經找了兩百年。你不覺得早就該照我的路走了嗎，趁事情還沒更糟？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -841,7 +841,7 @@
   },
   "A Headless History#067": {
    "src": "NO! I am not going to kill it! YOU are not going to kill it! I'll find a way! I will, I have these powers for a reason!",
-   "dst": "",
+   "dst": "不行！我不會殺了它！「你」也不准殺了它！我會找到辦法的！我一定會，我擁有這些力量是有原因的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -851,7 +851,7 @@
   },
   "A Headless History#068": {
    "src": "You talk a big game, and you show one too, but the creature wasn't fazed. I'm not fazed. Drop the intimidating act, please.",
-   "dst": "",
+   "dst": "你話說得很大，架式也擺得很足，但那生物一點都沒被嚇到。我也沒有。請你把那套嚇唬人的姿態收起來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -861,7 +861,7 @@
   },
   "A Headless History#069": {
    "src": "I...there...there has to be a way. I...I-I'm terrified that I've...already ruined everything, just by following my heart, like I was told...",
-   "dst": "",
+   "dst": "我……一定……一定有辦法的。我……我、我好害怕，怕我已經……已經把一切都毀了，而我做的只是照著別人告訴我的，順從我的心……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -871,7 +871,7 @@
   },
   "A Headless History#070": {
    "src": "I know you're frustrated, but I am too. I left a lot behind to try and help you. I hate to say these things, I wish it could be your way.",
-   "dst": "",
+   "dst": "我知道你很難受，但我也是。為了幫你，我拋下了很多東西。我也不想說這些話，我多希望能照你的方式走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -881,7 +881,7 @@
   },
   "A Headless History#071": {
    "src": "I'm terrified too, that if we don't take more drastic action, things will get worse. Can't you see that, too?",
-   "dst": "",
+   "dst": "我也害怕——怕我們再不採取更激烈的行動，事情只會更糟。你難道看不見嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -891,7 +891,7 @@
   },
   "A Headless History#072": {
    "src": "I...I just... I don't know what to do!",
-   "dst": "",
+   "dst": "我……我只是……我不知道該怎麼辦！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -901,7 +901,7 @@
   },
   "A Headless History#073": {
    "src": "He showed me all these things and gave me all these choices and asked how my heart beat!",
-   "dst": "",
+   "dst": "他讓我看了那麼多東西，給了我那麼多選擇，還問我的心是怎麼跳的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -911,7 +911,7 @@
   },
   "A Headless History#074": {
    "src": "He gave me these powers but they don't work or I don't know HOW they work!",
-   "dst": "",
+   "dst": "他給了我這些力量，可它們不管用，或者是我不知道它們到底「該怎麼」用！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -921,7 +921,7 @@
   },
   "A Headless History#075": {
    "src": "I want to do the right thing but I don't know what it is and I don't know how to ask what it is and...a-and...",
-   "dst": "",
+   "dst": "我想做對的事，可我不知道什麼才是對的，我也不知道該去問誰、該怎麼問……然、然後……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -931,7 +931,7 @@
   },
   "A Headless History#076": {
    "src": "You have become infuriating instead of interesting. Why do you violate my memories? Why do you force me to relive them?",
-   "dst": "",
+   "dst": "你已經從有趣變成令人惱怒了。你為何要褻瀆我的記憶？為何要逼我重新經歷它們？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -941,7 +941,7 @@
   },
   "A Headless History#077": {
    "src": "Spirit of the Keeper of Keys, rid me of this thing that befouls my place. It incites a rage akin to HER.",
-   "dst": "",
+   "dst": "掌鑰者之靈，替我除去這個玷污我居所的東西。它激起的怒火，與「她」引起的不相上下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -951,7 +951,7 @@
   },
   "A Headless History#078": {
    "src": "You...are a fool. More than I was. You knowingly walk to your death.",
-   "dst": "",
+   "dst": "你……是個蠢貨。比我當年更蠢。你明知那是死路還往前走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -961,7 +961,7 @@
   },
   "A Headless History#079": {
    "src": "It is convenient for me, certainly, but I admit that it is equal parts enraging and bewildering.",
-   "dst": "",
+   "dst": "這對我當然方便，但我承認，這既令我憤怒，也同樣令我費解。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -971,7 +971,7 @@
   },
   "A Headless History#080": {
    "src": "Leave the room and continue exploring the castle.",
-   "dst": "",
+   "dst": "離開這個房間，繼續探索城堡。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -981,7 +981,7 @@
   },
   "A Headless History#081": {
    "src": "I told you, Lari! I saw it in my visions, this is our last chance! Hurry!",
-   "dst": "",
+   "dst": "我跟你說過了，Lari！我在預視裡看見了，這是我們最後的機會！快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -991,7 +991,7 @@
   },
   "A Headless History#082": {
    "src": "Look at this spot, Lari. It has to be here. The land is being scarred, just like after your fight. The light is being drained!",
-   "dst": "",
+   "dst": "看這個地方，Lari。一定就是這裡。土地正在留下傷痕，跟你那場戰鬥之後一模一樣。光正在被抽乾！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1001,7 +1001,7 @@
   },
   "A Headless History#083": {
    "src": "This must be where the parasite burrowed down... You're... You're right. We have to...to do something.",
-   "dst": "",
+   "dst": "這裡一定就是那寄生物鑽下去的地方……你……你說得對。我們必須……必須做點什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1011,7 +1011,7 @@
   },
   "A Headless History#084": {
    "src": "I... I'm not sure if I'm ready, but you're right. We need to do this...",
-   "dst": "",
+   "dst": "我……我不確定自己準備好了沒，但你說得對。我們得動手……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1021,7 +1021,7 @@
   },
   "A Headless History#085": {
    "src": "...Remember what I said. You HAVE to take action. There's only two outcomes here.",
-   "dst": "",
+   "dst": "……記住我說過的話。你「必須」出手。這裡只有兩種結局。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1031,7 +1031,7 @@
   },
   "A Headless History#086": {
    "src": "Right...",
-   "dst": "",
+   "dst": "嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1041,7 +1041,7 @@
   },
   "A Headless History#087": {
    "src": "We'll need to dig... Do you think you could help with that, Dulla?",
-   "dst": "",
+   "dst": "我們得往下挖……你能幫忙嗎，Dulla？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1051,7 +1051,7 @@
   },
   "A Headless History#088": {
    "src": "Of course, Lari. We'll need everything we can get if we're going to kill that horrendous thing.",
-   "dst": "",
+   "dst": "當然，Lari。如果我們要殺掉那個可怕的東西，能用的一切都得用上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1061,7 +1061,7 @@
   },
   "A Headless History#089": {
    "src": "...let's get this over with.",
-   "dst": "",
+   "dst": "……我們把它了結吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1071,7 +1071,7 @@
   },
   "A Headless History#090": {
    "src": "I see it! Lari, it's time!",
-   "dst": "",
+   "dst": "我看見它了！Lari，時候到了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1081,7 +1081,7 @@
   },
   "A Headless History#091": {
    "src": "...I will show you an exit, interloper. It would be...wise of you to take it.",
-   "dst": "",
+   "dst": "……我會為你指出一條出路，闖入者。你若是……明智，就該走上它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1091,7 +1091,7 @@
   },
   "A Headless History#092": {
    "src": "You are a damned fool, interloper. Dredging my memories as you have... I have never felt such rage, not in a long time.",
-   "dst": "",
+   "dst": "你是個該死的蠢貨，闖入者。像你這樣把我的記憶一件件翻出來……我已經很久沒有感受過這樣的怒火了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1101,7 +1101,7 @@
   },
   "A Headless History#093": {
    "src": "As such, it shall end now. The exit I spoke of will not free you from the castle, as you can see.",
-   "dst": "",
+   "dst": "因此，一切到此為止。你也看得出來，我所說的那條出路，並不會讓你離開這座城堡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1111,7 +1111,7 @@
   },
   "A Headless History#094": {
    "src": "Warden of Wisdom! I compel you- Rid me of this miscreant! Erase every trace of it from this existence...",
-   "dst": "",
+   "dst": "智慧的看守者！我命你——替我除去這個惡徒！將它存在過的一切痕跡都抹去……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1121,7 +1121,7 @@
   },
   "A Headless History#095": {
    "src": "...save for a corpse, for me to toss at Lari's feet.",
-   "dst": "",
+   "dst": "……只留下一具屍首，好讓我丟到 Lari 腳邊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1131,7 +1131,7 @@
   },
   "A Headless History#096": {
    "src": "GAH! It was never able to do this before...! W-What happened to it?!",
-   "dst": "",
+   "dst": "啊！它以前根本做不到這種事……！它、它到底怎麼了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1141,7 +1141,7 @@
   },
   "A Headless History#097": {
    "src": "AWAY! You keep away from us!!",
-   "dst": "",
+   "dst": "滾開！你給我離我們遠一點！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1151,7 +1151,7 @@
   },
   "A Headless History#098": {
    "src": "Lari, you need to get up, now! We can't waste this chance!",
-   "dst": "",
+   "dst": "Lari，你得站起來，快！我們不能浪費這個機會！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1161,7 +1161,7 @@
   },
   "A Headless History#099": {
    "src": "It...it threw me aside like nothing! How is it overpowering Orphion's light...?",
-   "dst": "",
+   "dst": "它……它像丟開什麼似的把我甩到一邊！它怎麼可能壓過 Orphion 之光……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1171,7 +1171,7 @@
   },
   "A Headless History#100": {
    "src": "It's overpowering you because you're not attacking! Remember what I said? You have to-",
-   "dst": "",
+   "dst": "它壓過你是因為你根本沒有攻擊！記得我說過的嗎？你必須——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1181,7 +1181,7 @@
   },
   "A Headless History#101": {
    "src": "...wait, where did it...did we lose it already?!",
-   "dst": "",
+   "dst": "……等等，它跑到哪去……我們已經跟丟了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1191,7 +1191,7 @@
   },
   "A Headless History#102": {
    "src": "It's under you! MOVE!!",
-   "dst": "",
+   "dst": "它在你下面！快閃開！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1201,7 +1201,7 @@
   },
   "A Headless History#103": {
    "src": "It's shrugging my attacks off, Lari! Come on, do SOMETHING!",
-   "dst": "",
+   "dst": "它把我的攻擊全都彈開了，Lari！拜託，你「做點什麼」啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1211,7 +1211,7 @@
   },
   "A Headless History#104": {
    "src": "[Gavellian Spell]!!",
-   "dst": "",
+   "dst": "[Gavellian Spell]！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1221,7 +1221,7 @@
   },
   "A Headless History#105": {
    "src": "I...No! It's happening just like I saw! She's...",
-   "dst": "",
+   "dst": "我……不！事情正照著我看見的發展！她……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1231,7 +1231,7 @@
   },
   "A Headless History#106": {
    "src": "I need to get to her, push her to the killing blow...",
-   "dst": "",
+   "dst": "我得趕到她身邊，推她補上那致命的一擊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1241,7 +1241,7 @@
   },
   "A Headless History#107": {
    "src": "Be still, creature! I compel you with Orphion's light!",
-   "dst": "",
+   "dst": "不許動，造物！我以 Orphion 之光命令你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1251,7 +1251,7 @@
   },
   "A Headless History#108": {
    "src": "LARIIII! THIS IS THE LAST CHANCE YOU HAVE! DON'T TRAP IT, KILL IT!",
-   "dst": "",
+   "dst": "Lari——！這是你「最後」的機會了！不要困住它，殺了它！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1261,7 +1261,7 @@
   },
   "A Headless History#109": {
    "src": "I-I'm...Dulla, I'm- I can't! I know I can keep it held this time!!",
-   "dst": "",
+   "dst": "我、我……Dulla，我——我做不到！我知道這次我壓得住它！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1271,7 +1271,7 @@
   },
   "A Headless History#110": {
    "src": "I...wha...N-no!",
-   "dst": "",
+   "dst": "我……什、什麼……不、不要！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1281,7 +1281,7 @@
   },
   "A Headless History#111": {
    "src": "I...I-I...th-the light is...I c-can't hold onto it...i-is it...it's t-taking...g-guh...",
-   "dst": "",
+   "dst": "我……我、我……光、光在……我抓、抓不住它了……是不是……它在、在奪走……呃、呃啊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1291,7 +1291,7 @@
   },
   "A Headless History#112": {
    "src": "Lari! You can't reason with it! You can't hold it! You have to put Gavel first! US first!!",
-   "dst": "",
+   "dst": "Lari！你沒辦法跟它講道理！你壓不住它的！你必須把 Gavel 放在第一位！把「我們」放在第一位！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1301,7 +1301,7 @@
   },
   "A Headless History#113": {
    "src": "I won't let what you predicted happen! I know I can change fate!!",
-   "dst": "",
+   "dst": "我不會讓你預言的事情發生！我知道我能改變命運！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1311,7 +1311,7 @@
   },
   "A Headless History#114": {
    "src": "Please work, please work! D-Don't break, I can't-",
-   "dst": "",
+   "dst": "拜託成功、拜託成功！不、不要碎掉，我不能——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1321,7 +1321,7 @@
   },
   "A Headless History#115": {
    "src": "Lari, no! If it bites you we're doomed! GET UP!",
-   "dst": "",
+   "dst": "Lari，不要！它要是咬到你我們就完了！站起來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1331,7 +1331,7 @@
   },
   "A Headless History#116": {
    "src": "AAAH, GET AWAY FROM HER!",
-   "dst": "",
+   "dst": "啊啊啊，離她遠一點！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1341,7 +1341,7 @@
   },
   "A Headless History#117": {
    "src": "D-Dulla!",
-   "dst": "",
+   "dst": "Du、Dulla！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1351,7 +1351,7 @@
   },
   "A Headless History#118": {
    "src": "L-Lari...we...e-everything happened like I s-said...you...you didn't...l-listen...",
-   "dst": "",
+   "dst": "Lari……我們……一切都、都照我說的發生了……你……你就是不……不聽……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1361,7 +1361,7 @@
   },
   "A Headless History#119": {
    "src": "No! No it didn't happen like you said! I-I can fix this! Y-You'll be alright! You'll be alright, you hear me?! I'll make sure of it!",
-   "dst": "",
+   "dst": "不！沒有，事情沒有照你說的發生！我、我可以補救的！你、你不會有事的！你不會有事的，聽見沒有？！我一定會做到！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1371,7 +1371,7 @@
   },
   "A Headless History#120": {
    "src": "...so I am cursed to bear witness to my most painful memories due to your idiocy. It is almost a fitting penance... Almost, but not quite.",
-   "dst": "",
+   "dst": "……所以因為你的愚蠢，我被迫再次見證我最痛苦的記憶。這幾乎稱得上是一種恰如其分的贖罪……幾乎，但還不到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1381,7 +1381,7 @@
   },
   "A Headless History#121": {
    "src": "Continue exploring the castle.",
-   "dst": "",
+   "dst": "繼續探索城堡。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -1391,7 +1391,7 @@
   },
   "A Headless History#122": {
    "src": "My rage... My memories... Your presence stirs them in kind. You must disappear, I no longer care to see your soul.",
-   "dst": "",
+   "dst": "我的怒火……我的記憶……你的存在把它們一併攪動了起來。你必須消失，我已經不在乎看不看你的靈魂了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1401,7 +1401,7 @@
   },
   "A Headless History#123": {
    "src": "Sit still and allow yourself to be engulfed. It will save me further pain.",
-   "dst": "",
+   "dst": "乖乖坐著，任由自己被吞沒。這樣能替我省下更多痛苦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1411,7 +1411,7 @@
   },
   "A Headless History#124": {
    "src": "Lari...? Where are you? I...I need you... Why are you gone? Why do you ignore me?",
-   "dst": "",
+   "dst": "Lari……？你在哪裡？我……我需要你……你為什麼不在了？為什麼要無視我？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1421,7 +1421,7 @@
   },
   "A Headless History#125": {
    "src": "My magic is fading, I can't see my visions... They're clearer around you... Please, come back...",
-   "dst": "",
+   "dst": "我的魔力正在消退，我看不見我的預視了……在你身邊時它們比較清晰……拜託，回來吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1431,7 +1431,7 @@
   },
   "A Headless History#126": {
    "src": "That elf girl's off in the forest. Don't know what she's doing but this is our shot!",
-   "dst": "",
+   "dst": "那個精靈女孩跑到森林裡去了。不知道她在幹嘛，但這是我們的機會！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1441,7 +1441,7 @@
   },
   "A Headless History#127": {
    "src": "We can finally execute the person causing the decay in the forest! {p} will be saved!",
-   "dst": "",
+   "dst": "我們終於可以處決那個造成森林腐朽的人了！{p} 有救了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1451,7 +1451,7 @@
   },
   "A Headless History#128": {
    "src": "You prepared the sleeping spell, right? Who knows if we'll get a chance like this again.",
-   "dst": "",
+   "dst": "安眠咒你準備好了吧？誰曉得還會不會有這種機會。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1461,7 +1461,7 @@
   },
   "A Headless History#129": {
    "src": "Shhh... Quiet. He's in there.",
-   "dst": "",
+   "dst": "噓……安靜。他在裡面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1471,7 +1471,7 @@
   },
   "A Headless History#130": {
    "src": "Okay, go! Knock him out.",
-   "dst": "",
+   "dst": "好，上！把他弄昏。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1481,7 +1481,7 @@
   },
   "A Headless History#131": {
    "src": "L-Lari? Is...is that you? Did you finally come back...?",
-   "dst": "",
+   "dst": "La、Lari？是……是你嗎？你終於回來了……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1491,7 +1491,7 @@
   },
   "A Headless History#132": {
    "src": "Nah, not quite. Say, why don't you go to sleep 'til she comes back? Dream sweet dreams...",
-   "dst": "",
+   "dst": "不是喔，差得遠了。欸，不如你就睡到她回來吧？做個好夢……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1501,7 +1501,7 @@
   },
   "A Headless History#133": {
    "src": "...they'll be the last ones you ever have, grimy demon. To the guillotine with you... Everyone! I got him!",
-   "dst": "",
+   "dst": "……那會是你這輩子最後一個夢了，骯髒的惡魔。上斷頭台吧你……各位！我抓到他了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1511,7 +1511,7 @@
   },
   "A Headless History#134": {
    "src": "Everyone, welcome! Today will be the day we save our fair land. Today's the day of light!",
-   "dst": "",
+   "dst": "各位，歡迎！今天將是我們拯救這片美好土地的日子。今天是光明之日！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1521,7 +1521,7 @@
   },
   "A Headless History#135": {
    "src": "Dullahan has been captured! We have the cursed progenitor of the decay in our grip- to be executed, once and for all!",
-   "dst": "",
+   "dst": "Dullahan 已經落網！那個帶來腐朽的受詛始作俑者就在我們手上——今天就要一勞永逸地處決他！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1531,7 +1531,7 @@
   },
   "A Headless History#136": {
    "src": "Haha, yeah! Shoulda thought twice before cursing OUR homes! Three cheers for our wizards!!",
-   "dst": "",
+   "dst": "哈哈，沒錯！詛咒「我們」家園之前就該多想想！為我們的法師們歡呼三聲！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1541,7 +1541,7 @@
   },
   "A Headless History#137": {
    "src": "The decay will clear up- We'll spill his blood, chop off his head, and the curse will be lifted!!",
-   "dst": "",
+   "dst": "腐朽會消退的——我們讓他血流盡、砍下他的頭，詛咒就會解除！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1551,7 +1551,7 @@
   },
   "A Headless History#138": {
    "src": "Ladies and gentlemen, folks of all shapes and sizes, it's time to take our lives back!",
-   "dst": "",
+   "dst": "各位女士、各位先生，各種形貌大小的鄉親們，是時候把我們的生活奪回來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1561,7 +1561,7 @@
   },
   "A Headless History#139": {
    "src": "{~}!",
-   "dst": "",
+   "dst": "{~}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1571,7 +1571,7 @@
   },
   "A Headless History#140": {
    "src": "{~}!",
-   "dst": "",
+   "dst": "{~}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1581,7 +1581,7 @@
   },
   "A Headless History#141": {
    "src": "{~}!",
-   "dst": "",
+   "dst": "{~}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1591,7 +1591,7 @@
   },
   "A Headless History#142": {
    "src": "Dullahan? I'm...I'm back. I didn't leave you for long, I just was trying to find the cu-",
-   "dst": "",
+   "dst": "Dullahan？我……我回來了。我沒有離開很久，我只是想找到解——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1601,7 +1601,7 @@
   },
   "A Headless History#143": {
    "src": "...uh? Dullahan? He's...he's been right here to greet me almost every day for the past twenty years...",
-   "dst": "",
+   "dst": "……嗯？Dullahan？他……這二十年來他幾乎每天都在這裡等著迎接我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1611,7 +1611,7 @@
   },
   "A Headless History#144": {
    "src": "Footprints...? Dullaaaa? Where'd you go? Is everything alright, did something happen?",
-   "dst": "",
+   "dst": "腳印……？Dulla——？你去哪了？沒事吧，是不是出了什麼事？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1621,7 +1621,7 @@
   },
   "A Headless History#145": {
    "src": "D-Dulla...ha...I... Wh...",
-   "dst": "",
+   "dst": "Du、Dulla……ha……我……怎……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1631,7 +1631,7 @@
   },
   "A Headless History#146": {
    "src": "I... H-how could they...d-do this...?",
-   "dst": "",
+   "dst": "我……他們、他們怎麼……做、做得出這種事……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1641,7 +1641,7 @@
   },
   "A Headless History#147": {
    "src": "I...I l-left for...an hour, a-and...and they... Why?",
-   "dst": "",
+   "dst": "我……我只、只離開了……一個小時，然、然後……然後他們就……為什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1651,7 +1651,7 @@
   },
   "A Headless History#148": {
    "src": "Why did they do this to you...? I...h-how can I possibly fix this?!",
-   "dst": "",
+   "dst": "他們為什麼要這樣對你……？我……我、我到底要怎麼把這件事補救回來？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1661,7 +1661,7 @@
   },
   "A Headless History#149": {
    "src": "I cannot understand why you continue to defile me with these horrid memories. What do you hope to find?",
-   "dst": "",
+   "dst": "我無法理解，你為何要繼續用這些可怕的記憶玷污我。你究竟希望找到什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1671,7 +1671,7 @@
   },
   "A Headless History#150": {
    "src": "I am once more curious. If only to know what I could possibly do or say to cease this horrid quest you've given yourself.",
-   "dst": "",
+   "dst": "我又一次感到好奇。哪怕只是想知道，我到底能做什麼、說什麼，才能讓你放下這場你自己攬下的可怕追尋。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1681,7 +1681,7 @@
   },
   "A Headless History#151": {
    "src": "Th-this has to work. It WILL work! I know it will! I...I d-don't know if it will... I have to fix this, I have to...",
-   "dst": "",
+   "dst": "這、這一定要成功。它「會」成功的！我知道它會！我……我不、不知道它會不會……我必須補救回來，我必須……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1691,7 +1691,7 @@
   },
   "A Headless History#152": {
    "src": "The waters from the Lazarus Pit are fabled for bringing back the dead... If this doesn't work, I...",
-   "dst": "",
+   "dst": "Lazarus 之坑的水，傳說能讓死者復生……如果這也不成，我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1701,7 +1701,7 @@
   },
   "A Headless History#153": {
    "src": "I can't think about that. This...this WILL work. I promise. I found a way to fix it... It has to.",
-   "dst": "",
+   "dst": "我不能去想那個。這……這「一定」會成功。我保證。我找到補救的方法了……一定會成的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1711,7 +1711,7 @@
   },
   "A Headless History#154": {
    "src": "P-Please...w-whatever gods are out there, whoever is listening, hear me...bring Dullahan back to me, I'm begging you...",
-   "dst": "",
+   "dst": "拜、拜託……不管外頭有什麼神明、不管是誰在聽，請聽見我……把 Dullahan 還給我，我求求你們……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1721,7 +1721,7 @@
   },
   "A Headless History#155": {
    "src": "It's... I-Is it reacting? It... It looks like it is, but...h-he's not mending...",
-   "dst": "",
+   "dst": "它……它、它有反應嗎？看……看起來是有，可是……他、他沒有癒合……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1731,7 +1731,7 @@
   },
   "A Headless History#156": {
    "src": "N-No, this...i-it isn't...NO! It... It HAS to work! I...I can m-make this work!",
-   "dst": "",
+   "dst": "不、不，這……它、它沒有……不要！它……它「一定」要成功！我……我可以讓、讓它成功的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1741,7 +1741,7 @@
   },
   "A Headless History#157": {
    "src": "[Gavellian Spell]!!",
-   "dst": "",
+   "dst": "[Gavellian Spell]！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1751,7 +1751,7 @@
   },
   "A Headless History#158": {
    "src": "D-Dullahan! It...it worked! You're back!",
-   "dst": "",
+   "dst": "Du、Dullahan！成……成功了！你回來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1761,7 +1761,7 @@
   },
   "A Headless History#159": {
    "src": "I...I t-told you... I knew I could change fate... I'm so glad you're here...",
-   "dst": "",
+   "dst": "我……我就、就說吧……我知道我能改變命運……你在這裡真是太好了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1771,7 +1771,7 @@
   },
   "A Headless History#160": {
    "src": "It's odd. If it were not for her, I would not be here. I would not have my power. Yet even thinking her name enrages me.",
-   "dst": "",
+   "dst": "真奇怪。若不是因為她，我不會在這裡。我也不會擁有我的力量。然而光是想起她的名字，就令我怒不可遏。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1781,7 +1781,7 @@
   },
   "A Headless History#161": {
    "src": "Enter the last door in the dining hall.",
-   "dst": "",
+   "dst": "進入宴會廳最裡面的那扇門。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
@@ -1791,7 +1791,7 @@
   },
   "A Headless History#162": {
    "src": "Dullahan? I...",
-   "dst": "",
+   "dst": "Dullahan？我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1801,7 +1801,7 @@
   },
   "A Headless History#163": {
    "src": "H...h-hrk...g-gah, what is...wh-what... You...you didn't really...?",
-   "dst": "",
+   "dst": "呃……呃、嗚……啊、啊，這是什麼……什、什麼……你……你不會真的……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1811,7 +1811,7 @@
   },
   "A Headless History#164": {
    "src": "Th-there's so much death... The...the air smells like b-blood...",
-   "dst": "",
+   "dst": "這、這裡到處都是死亡……空、空氣裡都是血、血的味道……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1821,7 +1821,7 @@
   },
   "A Headless History#165": {
    "src": "This isn't... There has to be s-some other reason, I... I can't have b-brought back a...a...",
-   "dst": "",
+   "dst": "這不是……一定有、有別的原因，我……我不可能把、把一個……一個……帶了回來……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1831,7 +1831,7 @@
   },
   "A Headless History#166": {
    "src": "P-Please, we can't afford to lose more people! There's hardly any farmers in the fields anymore, I-I'm needed elsewhere!",
-   "dst": "",
+   "dst": "求、求求你，我們再也承受不起失去更多人了！田裡幾乎沒有農夫了，我、我還有別的地方需要我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1841,7 +1841,7 @@
   },
   "A Headless History#167": {
    "src": "The last few said similar things. Someone else I knew said similar things. Frankly, I do not care. Present your soul to me, now.",
-   "dst": "",
+   "dst": "前幾個也說過類似的話。我認識的另一個人也說過類似的話。老實說，我不在乎。把你的靈魂呈上來，現在。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1851,7 +1851,7 @@
   },
   "A Headless History#168": {
    "src": "DULLAHAN! What...w-what are you doing?! I... I can't believe my eyes...",
-   "dst": "",
+   "dst": "Dullahan！你……你在、在做什麼？！我……我不敢相信我看到的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1861,7 +1861,7 @@
   },
   "A Headless History#169": {
    "src": "I... I tried to help you! I t-tried so hard at everything we did together... How could you do this to them?! To...to me?",
-   "dst": "",
+   "dst": "我……我一直想幫你！我們一起做的每一件事，我都、都拚了命去做……你怎麼能這樣對他們？！對……對我？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1871,7 +1871,7 @@
   },
   "A Headless History#170": {
    "src": "Odd. I recall you explicitly denying the only option that would have prevented this. I warned you quite thoroughly.",
-   "dst": "",
+   "dst": "奇怪。我記得那個唯一能避免這一切的選項，是你明確拒絕的。我當時已經警告得夠徹底了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1881,7 +1881,7 @@
   },
   "A Headless History#171": {
    "src": "You have had many chances to end this, Lari. Do you expect me to feel sympathy, when your own actions have made me feel nothing?",
-   "dst": "",
+   "dst": "你有過許多次機會可以結束這一切，Lari。你自己的所作所為讓我什麼都感覺不到了，難道還指望我對你有同情？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1891,7 +1891,7 @@
   },
   "A Headless History#172": {
    "src": "This...this isn't like you... You would never have done this before! You dedicated your life to trying to help...so w-why are you...m...m-m... I-I'm leaving!!",
-   "dst": "",
+   "dst": "這……這不像你……你以前絕不會做這種事！你把一生都奉獻在幫助別人上……所以你、你為什麼會……我……我、我……我要走了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1901,7 +1901,7 @@
   },
   "A Headless History#173": {
    "src": "What have I done...? This...he's... He's not th-the same anymore... What changed? Is this my fault...? I c-can't understand it...",
-   "dst": "",
+   "dst": "我到底做了什麼……？這……他……他已經不、不是原來的他了……是什麼變了？這是我的錯嗎……？我、我想不明白……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1911,7 +1911,7 @@
   },
   "A Headless History#174": {
    "src": "...but...I'll... I'll protect them. I'll protect him... I...there has to be a way. But...until I find it...",
-   "dst": "",
+   "dst": "……可是……我會……我會保護他們。我也會保護他……我……一定有辦法的。但是……在我找到之前……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1921,7 +1921,7 @@
   },
   "A Headless History#175": {
    "src": "...goodbye. Goodbye until the day comes when I can fill you with light once more. Goodbye until you learn... Goodbye, until I can fix you...",
-   "dst": "",
+   "dst": "……再見了。再見，直到我能再一次讓光充滿你的那一天。再見，直到你明白過來……再見，直到我能把你修補回來……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1931,7 +1931,7 @@
   },
   "A Headless History#176": {
    "src": "Goodbye, Dullahan... I'll miss you.",
-   "dst": "",
+   "dst": "再見了，Dullahan……我會想念你的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Headless History",
@@ -1941,7 +1941,7 @@
   },
   "A Headless History#177": {
    "src": "Investigate the dark door at the end of the castle.",
-   "dst": "",
+   "dst": "調查城堡盡頭那扇黑暗之門。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Headless History",
