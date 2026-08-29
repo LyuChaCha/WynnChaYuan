@@ -89,6 +89,33 @@ public final class CaptureStore {
     }
 
     /**
+     * 已經有譯文的字串就不必收。見 {@link #record}。
+     *
+     * <p>用述詞而不是直接拿 {@code TranslationStore}，是為了讓這一條測得到，
+     * 也讓收集端不必認識翻譯端。
+     */
+    private volatile java.util.function.Predicate<String> translated = t -> false;
+
+    /**
+     * 告訴收集端「哪些字串已經有譯文了」。
+     *
+     * <h2>為什麼一定要接上</h2>
+     * {@code captured.json} 的用途是<b>還沒翻的清單</b>——檔頭自己就寫著
+     * 「dst 留空代表尚未翻譯」。但先前它照單全收：看到什麼記什麼，
+     * 語料裡明明已經有譯文的也照記，{@code dst} 一樣留空。
+     *
+     * <p>實機那一份 308 條裡有 <b>249 條</b>語料早就翻好了——
+     * 「露營車駕駛」「建立角色」「{@code - 職業: 薩滿}」全在裡面。
+     * 也就是說那個檔案有八成是雜訊，真正的缺口反而淹在裡面找不到。
+     * 使用者回報「gap list 不可信」講的就是這件事。
+     *
+     * <p>接上之後，{@code captured.json} 就真的只剩<b>沒翻的</b>那些。
+     */
+    public void knowsTranslations(java.util.function.Predicate<String> lookup) {
+        translated = lookup == null ? t -> false : lookup;
+    }
+
+    /**
      * 記錄一段文字。已存在則只累加計數。
      *
      * @return 是否為新字串
@@ -96,6 +123,12 @@ public final class CaptureStore {
     public boolean record(String template, String role, String domain, String ctx) {
         if (template == null || template.isBlank() || !GlyphSplitter.hasLetter(template)) {
             return false;   // 沒有字母 = 純符號或純數字，不值得記錄
+        }
+        if (translated.test(template)) {
+            // 已經翻好了，這不是缺口。記個數就好——數字留著，
+            // 「明明有譯文卻還是英文」那種問題才看得出來。
+            noteEvent("skipped.translated");
+            return false;
         }
         String key = hash(template);
         Captured existing = entries.get(key);
@@ -124,15 +157,42 @@ public final class CaptureStore {
         return entries.size();
     }
 
+    /**
+     * 丟掉「已經有譯文、而且沒有人動過」的舊條目。
+     *
+     * <p>{@link #record} 從現在起不收已翻好的，但<b>上一版收進來的</b>還躺在
+     * 檔案裡。它們才是雜訊的大宗（實機那份 308 條裡佔了 249 條）。
+     *
+     * <p>{@code dst} 有東西的一律不動——那是有人打的字，不管語料裡有沒有。
+     *
+     * @return 有沒有真的丟掉東西
+     */
+    private boolean prune() {
+        int before = entries.size();
+        entries.values().removeIf(c -> c.dst != null && c.dst.isBlank()
+                && c.src != null && translated.test(c.src));
+        int gone = before - entries.size();
+        if (gone > 0) {
+            eventCounts.computeIfAbsent("skipped.translated",
+                    k -> new java.util.concurrent.atomic.AtomicInteger()).addAndGet(gone);
+        }
+        return gone > 0;
+    }
+
     /** 把目前累積的內容寫到磁碟。沒有變動時直接跳過。 */
     public synchronized void flush() {
+        if (prune()) {
+            dirty.set(true);
+        }
         if (!dirty.getAndSet(false)) {
             return;
         }
         JsonObject root = new JsonObject();
         JsonObject meta = new JsonObject();
         meta.addProperty("count", entries.size());
-        meta.addProperty("note", "dst 留空代表尚未翻譯。{#} 是材質包符號、{~} 是數值、"
+        meta.addProperty("note", "這裡只列<還沒有譯文>的字串——語料裡已經翻好的"
+                + "不會出現在這裡（被略過幾次看 events 的 skipped.translated）。"
+                + "dst 留空代表等人翻。{#} 是材質包符號、{~} 是數值、"
                 + "{p} 是地名、{u} 是玩家名字，譯文都必須原樣保留。"
                 + "seq 是收集順序，任務對話照它排就是原本的先後。");
         JsonObject events = new JsonObject();

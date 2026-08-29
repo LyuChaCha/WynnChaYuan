@@ -120,6 +120,10 @@ public final class WynnChaYuan implements ClientModInitializer {
         StarterFiles.installIfEmpty(trDir, language);
         translations = new TranslationStore();
         translations.setTranslateNames(config.translateItemNames());
+        // captured.json 只該列「還沒翻的」。接上這一條之前它是照單全收——
+        // 實機那份 308 條裡有 249 條語料早就翻好了，真正的缺口全被淹掉。
+        // 用述詞接而不是把 store 交過去，收集端就不必認識翻譯端。
+        store.knowsTranslations(translations::hasTranslation);
         // 同語族的語言先鋪一層當底，再把選定的那一種疊上去。
         //
         // 新語言是從 zh_tw 複製出來、dst 全部清空的骨架，剛開張時一條譯文

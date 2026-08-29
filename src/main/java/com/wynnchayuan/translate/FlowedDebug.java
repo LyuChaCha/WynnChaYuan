@@ -288,7 +288,8 @@ public final class FlowedDebug {
      * <p>所以每翻一條就把調色盤寫出來：編號、色碼、粗體底線之類的裝飾，
      * 再附上譯文本身好對照是哪一條。
      */
-    public static void palette(List<Style> colours, String[] translated) {
+    public static void palette(List<Style> colours, List<LineParts.Piece> runs,
+                               String[] translated) {
         if (file == null || colours == null || colours.size() < 2
                 || paletteSeen >= PALETTE_LIMIT) {
             return;                            // 只有一個顏色的沒什麼好挑
@@ -310,7 +311,8 @@ public final class FlowedDebug {
             }
             for (int i = 0; i < colours.size(); i++) {
                 sb.append("    {c").append(i + 1).append("}  ")
-                  .append(describe(colours.get(i)))
+                  .append(String.format("%-22s", describe(colours.get(i))))
+                  .append("原文：").append(sample(colours.get(i), runs))
                   .append(System.lineSeparator());
             }
             sb.append(System.lineSeparator());
@@ -320,6 +322,32 @@ public final class FlowedDebug {
             // 診斷絕不能反過來弄壞畫面
         }
     }
+
+    /**
+     * 這個顏色在原文裡第一次出現時，那一段字長什麼樣。
+     *
+     * <h2>為什麼一定要附上</h2>
+     * 只印色碼的話，譯者手上是「{c2} 是 #FFFFFF」——那還是得回頭猜哪一句是白的。
+     * 附上原文之後就成了「{c2} 是 Grook{@code '}s Nest 那個白」，直接對得起來。
+     */
+    private static String sample(Style colour, List<LineParts.Piece> runs) {
+        if (runs == null) {
+            return "（不明）";
+        }
+        for (LineParts.Piece run : runs) {
+            Style style = run.style() == null ? Style.EMPTY : run.style();
+            if (!style.equals(colour)) {
+                continue;
+            }
+            String text = run.text().strip();
+            return text.length() > SAMPLE_LENGTH
+                    ? "「" + text.substring(0, SAMPLE_LENGTH) + "…」" : "「" + text + "」";
+        }
+        return "（找不到）";
+    }
+
+    /** 原文樣本印這麼長就夠認得出是哪一句了。 */
+    private static final int SAMPLE_LENGTH = 28;
 
     private static int paletteSeen = 0;
 
