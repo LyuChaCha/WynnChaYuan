@@ -194,6 +194,22 @@ tasks.register('runChatColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChatColourChecks' }
 
+tasks.register('runColourPlaceholderChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證譯文自己指定顏色的佔位符 {c1} {c:#RRGGBB} {/}'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ColourPlaceholderTest'
+}
+tasks.named('check') { dependsOn 'runColourPlaceholderChecks' }
+
+tasks.register('runChatAlignChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證聊天訊息的譯文跟原文那一塊形狀一樣'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ChatAlignTest'
+}
+tasks.named('check') { dependsOn 'runChatAlignChecks' }
+
 tasks.register('runChatBlockChecks', JavaExec) {
     group = 'verification'
     description = '驗證一次跳好幾行的訊息，譯文等它跳完才一起出來'

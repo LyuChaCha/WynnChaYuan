@@ -14,6 +14,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FontDescription;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -1950,6 +1951,181 @@ public final class LineTranslator {
         return apply(made, adjust);
     }
 
+    /**
+     * 聊天訊息的譯文。
+     *
+     * <h2>為什麼聊天要自己一條路</h2>
+     * 聊天訊息的縮排跟 tooltip 是<b>兩件事</b>。tooltip 是一個寬度自己算出來的框，
+     * 置中就是「相對於這一份 tooltip 最寬那行置中」；聊天訊息是 Wynncraft 依
+     * <b>聊天視窗</b>的固定寬度排好的，同一塊裡有置中的標題，也有靠左的清單。
+     *
+     * <p>先前整條聊天路徑寫死 {@code centered = true}——每一行都被當成置中的，
+     * 於是靠左的獎勵清單全部被往右推了半個寬度差。實機那張「任務完成」的圖裡，
+     * 譯文的「獎勵:」比原文的「Rewards:」右邊一截，就是這樣來的。
+     *
+     * <p>這裡改成<b>先問過整塊</b>（見 {@link BlockLayout}）：整塊都吻合置中的算式
+     * 才逐行重新置中，否則一律沿用原文那一行的左緣。沿用左緣的結果是譯文那塊
+     * 跟原文那塊<b>形狀一樣</b>，那正是回報要的。
+     *
+     * <h2>順便修好只用空白縮排的那種</h2>
+     * 「[Cave Completed]」那塊的縮排是<b>真的空白字元</b>，不是排版偏移，
+     * 所以 {@code realignRows} 的「空白數對不上就不動」把它整個放掉了。
+     * 更糟的是語料的鍵會被 {@code strip()} 掉頭尾空白（見
+     * {@link LineParts#of} 與 {@code TranslationStore}），第一行的縮排連
+     * 寫都寫不進譯文——畫面上就是「[洞穴完成]」孤零零貼在最左邊。
+     *
+     * <p>{@link #leadWidth} 把真空白也算成縮排，缺多少就在行首補一個偏移，
+     * 語料裡寫不寫得下都不影響。
+     *
+     * @param centred 已經知道這一行是不是置中的就傳進來（整塊逐行查表那條路
+     *                會先算好）；{@code null} 表示由這裡自己判斷
+     * @return 譯好的訊息；查不到或佔位符對不上時回傳 {@code null}
+     */
+    public static Component translateChat(StyledText message, TranslationStore store) {
+        return translateChat(message, store, null);
+    }
+
+    public static Component translateChat(StyledText message, TranslationStore store,
+                                          Boolean centred) {
+        LineParts parts = LineParts.of(message);
+        if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
+            return null;
+        }
+        String translated = lookup(parts.template(), store);
+        if (translated == null || translated.isBlank()) {
+            return null;
+        }
+        Component rebuilt = rebuild(translated, parts, store);
+        return rebuilt == null ? null : realignChat(message, rebuilt, centred);
+    }
+
+    /**
+     * 一塊聊天訊息裡哪幾行是置中的。整塊逐行查表時，呼叫端先算好再一行一行傳進來。
+     */
+    public static boolean[] chatCentred(List<StyledText> rows) {
+        List<Component> lines = new ArrayList<>(rows.size());
+        for (StyledText row : rows) {
+            lines.add(row.getComponent());
+        }
+        return BlockLayout.centered(lines);
+    }
+
+    private static Component realignChat(StyledText original, Component rebuilt,
+                                         Boolean centred) {
+        List<List<Run>> origRows = splitRows(runs(original.getComponent()));
+        List<List<Run>> madeRows = splitRows(runs(rebuilt));
+        int[] keepOrig = solidRows(origRows);
+        int[] keepMade = solidRows(madeRows);
+        if (keepOrig[1] - keepOrig[0] != keepMade[1] - keepMade[0]) {
+            return rebuilt;                    // 行數對不上就什麼都別動
+        }
+        boolean[] centre = centred == null ? centredRows(origRows) : null;
+        StringBuilder log = new StringBuilder();
+        MutableComponent out = Component.empty();
+        for (int i = 0; i < madeRows.size(); i++) {
+            if (i > 0) {
+                out.append(Component.literal(NL));
+            }
+            List<Run> made = madeRows.get(i);
+            if (i < keepMade[0] || i >= keepMade[1]) {
+                out.append(apply(made, new int[countSpaces(made)]));
+                continue;                      // 首尾的空行，原樣
+            }
+            int at = keepOrig[0] + i - keepMade[0];
+            out.append(chatRow(origRows.get(at), made,
+                               centred == null ? centre[at] : centred, log));
+        }
+        FlowedDebug.rows(original.getString(), log.toString());
+        return out;
+    }
+
+    /** 拆好的原文各行，交給 {@link BlockLayout} 判斷置中。 */
+    private static boolean[] centredRows(List<List<Run>> rows) {
+        List<Component> lines = new ArrayList<>(rows.size());
+        for (List<Run> row : rows) {
+            lines.add(apply(row, new int[countSpaces(row)]));
+        }
+        return BlockLayout.centered(lines);
+    }
+
+    /**
+     * 把一行譯文挪到原文那一行該在的位置。
+     *
+     * <ul>
+     *   <li><b>置中</b>：中文比較短，縮排補上寬度差的一半，中線就對回去了</li>
+     *   <li><b>靠左</b>：縮排直接對齊原文那一行的左緣</li>
+     * </ul>
+     *
+     * <p>補的是行首多加一個偏移字元，不去改譯者自己寫的空白——差多少補多少，
+     * 負的也補得出來（見 {@link SpaceOffset#encode}）。
+     */
+    private static Component chatRow(List<Run> orig, List<Run> made,
+                                     boolean centred, StringBuilder log) {
+        int leadOrig = leadWidth(orig);
+        int leadMade = leadWidth(made);
+        int bodyOrig = rowWidth(orig) - leadOrig;
+        int bodyMade = rowWidth(made) - leadMade;
+        // 從第 0 欄開始的那一行不可能是置中的，不管判斷怎麼說。
+        //
+        // 沒有這一道，單獨一則沒有縮排的訊息（「[You are now entering Ragni]」）
+        // 會被補上半個寬度差，整行往右跑——那是<b>新加</b>的歪法，
+        // 舊路在沒有前導空白時本來就什麼都不做。
+        boolean centre = centred && leadOrig > 0;
+        int target = centre ? leadOrig + (bodyOrig - bodyMade) / 2 : leadOrig;
+        int pad = target - leadMade;
+        log.append("  ").append(centre ? "置中" : "靠左")
+           .append(" 原文縮排=").append(leadOrig).append(" 內容=").append(bodyOrig)
+           .append("  譯文縮排=").append(leadMade).append(" 內容=").append(bodyMade)
+           .append("  補=").append(pad)
+           .append("  譯文=").append(rowText(made))
+           .append(System.lineSeparator());
+        MutableComponent row = Component.empty();
+        String encoded = SpaceOffset.encode(pad);
+        if (!encoded.isEmpty()) {
+            row.append(literal(encoded, SpaceOffset.styleFor(Style.EMPTY)));
+        }
+        row.append(apply(made, new int[countSpaces(made)]));
+        return row;
+    }
+
+    /**
+     * 這一行開頭的縮排有多寬。
+     *
+     * <p>排版偏移與<b>真的空白字元</b>都算。只認偏移的話，「[Cave Completed]」
+     * 那種整塊用空白排版的訊息會被當成完全沒有縮排。
+     *
+     * <p>空白可能跟文字黏在同一段裡（{@code "        Grook's Nest"}），
+     * 所以要看到段<b>裡面</b>去，碰到第一個實字就停。
+     */
+    static int leadWidth(List<Run> row) {
+        int px = 0;
+        for (Run run : row) {
+            if (run.space()) {
+                px += run.px();
+                continue;
+            }
+            String text = run.text();
+            int n = 0;
+            while (n < text.length() && Character.isWhitespace(text.charAt(n))) {
+                n++;
+            }
+            px += widthOf(literal(text.substring(0, n), run.style()));
+            if (n < text.length()) {
+                return px;                     // 碰到實字就停
+            }
+        }
+        return px;
+    }
+
+    /** 這一行連縮排在內總共多寬。 */
+    private static int rowWidth(List<Run> row) {
+        int px = 0;
+        for (Run run : row) {
+            px += run.space() ? run.px() : widthOf(literal(run.text(), run.style()));
+        }
+        return px;
+    }
+
     /** 一行裡的實字，診斷用。排版空白不進去，不然滿眼都是看不懂的碼位。 */
     private static String rowText(List<Run> runs) {
         StringBuilder sb = new StringBuilder();
@@ -2739,13 +2915,23 @@ public final class LineTranslator {
         int number = 0;
         int user = 0;
 
+        // 譯者自己指定的顏色可以挑哪些。見 #colourToken。
+        List<Style> palette = palette(allRuns);
+        FlowedDebug.palette(palette, flowed);
+
         List<Component> out = new ArrayList<>(lines.size());
         for (List<Token> tokens : lines) {
             MutableComponent line = Component.empty();
             Style justFilled = null;          // 剛填回去的那個佔位符的樣式
+            // 譯者指定的顏色只管到 {/}、下一個 {cN}、或這一行結束。
+            //
+            // 行尾一律收掉，是為了讓「忘了寫 {/}」的後果侷限在那一行——
+            // 一整塊獎勵清單只錯一行，比整塊都被染成同一個顏色好收拾。
+            Style forced = null;
             for (int i = 0; i < tokens.size(); i++) {
                 Token token = tokens.get(i);
                 switch (token.kind()) {
+                    case COLOR -> forced = colourOf(token, palette, textStyle);
                     case GLYPH -> {
                         // 符號連同原樣式（含自訂字型）整段搬回，這是它顯示得出來的唯一方式
                         LineParts.Piece piece = glyphs.get(glyph++);
@@ -2775,13 +2961,19 @@ public final class LineTranslator {
                         justFilled = piece.style();
                     }
                     case TEXT -> {
-                        Style before = i > 0 ? justFilled : null;
-                        Style after = i + 1 < tokens.size()
-                                ? peekStyle(tokens.get(i + 1), glyphs, places,
-                                            numbers, users, glyph, place, number, user)
-                                : null;
-                        appendHugging(line, token.text(), textStyle, noteStyle, inNote,
-                                      accents, usedAccent, store, before, after);
+                        if (forced != null) {
+                            // 譯者已經講明這一段要什麼顏色，就不要再猜了——
+                            // 重點段比對、括號註解、底色統計全部讓開。
+                            line.append(literal(token.text(), forced));
+                        } else {
+                            Style before = i > 0 ? justFilled : null;
+                            Style after = i + 1 < tokens.size()
+                                    ? peekStyle(tokens.get(i + 1), glyphs, places,
+                                                numbers, users, glyph, place, number, user)
+                                    : null;
+                            appendHugging(line, token.text(), textStyle, noteStyle, inNote,
+                                          accents, usedAccent, store, before, after);
+                        }
                         justFilled = null;
                     }
                 }
@@ -2815,7 +3007,7 @@ public final class LineTranslator {
             case PLACE -> at(places, place);
             case NUMBER -> at(numbers, next.index() > 0 ? next.index() - 1 : number);
             case USER -> at(users, user);
-            case TEXT -> null;
+            case TEXT, COLOR -> null;      // 顏色佔位符不填東西，沒有樣式可看
         };
     }
 
@@ -3283,15 +3475,123 @@ public final class LineTranslator {
 
     // ------------------------------------------------------------ 模板切詞
 
-    private enum Kind { TEXT, GLYPH, PLACE, NUMBER, USER }
+    private enum Kind { TEXT, GLYPH, PLACE, NUMBER, USER, COLOR }
 
     /**
-     * @param index 指定要原文的第幾個數值（從 1 起）；{@code 0} 表示照順序取下一個
+     * @param index 數值：指定要原文的第幾個（從 1 起），{@code 0} 表示照順序取下一個。
+     *              顏色：原文調色盤的第幾個（從 1 起），{@code 0} 是 {@code {/}}
+     *              收尾，{@code -1} 是 {@code {c:…}} 自己指定的顏色
      */
     private record Token(Kind kind, String text, int index) {
         Token(Kind kind, String text) {
             this(kind, text, 0);
         }
+    }
+
+    /** {@code {/}}：顏色到此為止，回到這一段原本的樣式。 */
+    static final String COLOR_END = "{/}";
+
+    /**
+     * 譯文裡的顏色佔位符。
+     *
+     * <h2>為什麼需要</h2>
+     * 顏色本來是<b>猜</b>出來的：拿原文裡帶特殊樣式的片段，到譯文裡找同樣的字面
+     * （見 {@link #appendText}）。英文原樣留著的詞（技能名、地名）找得到，
+     * 翻成中文的就找不到——那一段只好掉回底色。整行同色的還能靠位置補救
+     * （見 {@link #wholeLineAccents}），一行裡混了兩三種顏色的就沒辦法：
+     * 「{@code [Cave Completed] … - Rewards: … +1 Unidentified Helmet}」
+     * 每一行的顏色都不一樣，譯文出來卻是一片灰。
+     *
+     * <p>猜不到的時候，唯一知道答案的是<b>譯者</b>。所以讓他直接寫出來：
+     *
+     * <pre>
+     *   "{c1}[洞穴完成]{/}"                 ← 用原文的第 1 個顏色
+     *   "{c2}獎勵{/}：{c3}未鑑定頭盔{/}"    ← 一行裡兩個顏色，就兩個佔位符
+     *   "{c:#FF55FF}警告{/}"                ← 原文沒有對應色段時自己指定
+     * </pre>
+     *
+     * <h2>編號怎麼來的</h2>
+     * {@code {cN}} 指的是<b>這一條原文</b>用到的第 N 個顏色，依第一次出現的順序
+     * 編號（見 {@link #palette}）。編號而不是寫死色碼，好處是搬的是樣式<b>物件</b>
+     * 本身——粗體、底線、Wynncraft 自己那些非原版的色碼都一起帶過去，
+     * 而且遊戲改調色盤時譯文自動跟著改。
+     *
+     * <p>哪一個編號是哪一個顏色，看診斷檔 {@code majorid-debug.txt} 的
+     * 「可用的顏色」那一段。
+     *
+     * <h2>寫錯了會怎樣</h2>
+     * 編號超出範圍就<b>當作沒寫</b>，那一段照舊走猜的那條路。整條譯文不會因此
+     * 消失——顏色不對比整句變回英文好。
+     *
+     * @return 這個位置的顏色佔位符；不是的話回傳 {@code null}
+     */
+    private static Token colourToken(String template, int at) {
+        if (template.startsWith(COLOR_END, at)) {
+            return new Token(Kind.COLOR, COLOR_END, 0);
+        }
+        if (at + 3 > template.length()
+                || template.charAt(at) != '{' || template.charAt(at + 1) != 'c') {
+            return null;
+        }
+        int end = template.indexOf('}', at + 2);
+        if (end < 0) {
+            return null;
+        }
+        String body = template.substring(at + 2, end);
+        String whole = template.substring(at, end + 1);
+        if (body.length() == 1 && body.charAt(0) >= '1' && body.charAt(0) <= '9') {
+            return new Token(Kind.COLOR, whole, body.charAt(0) - '0');
+        }
+        if (body.length() > 1 && body.charAt(0) == ':') {
+            return new Token(Kind.COLOR, whole, -1);
+        }
+        return null;
+    }
+
+    /**
+     * 原文用到的顏色，依<b>第一次出現</b>的順序編號。{@code {c1}} 就是這裡的第一個。
+     *
+     * <p>只看有實字的片段：純空白、純排版符號沒有「顏色」可言，收進來只會讓
+     * 編號跟譯者在畫面上看到的對不起來。
+     */
+    static List<Style> palette(List<LineParts.Piece> runs) {
+        List<Style> out = new ArrayList<>();
+        for (LineParts.Piece run : runs) {
+            if (!hasContent(run.text())) {
+                continue;
+            }
+            Style style = run.style() == null ? Style.EMPTY : run.style();
+            if (!out.contains(style)) {
+                out.add(style);
+            }
+        }
+        return out;
+    }
+
+    /**
+     * 一個顏色佔位符要套的樣式；套不出來就回傳 {@code null}（照舊走猜的那條路）。
+     *
+     * @param base 這一段原本的樣式，{@code {c:…}} 只換顏色、其餘沿用
+     */
+    private static Style colourOf(Token token, List<Style> palette, Style base) {
+        if (token.index() == 0) {
+            return null;                       // {/}：回到底色
+        }
+        if (token.index() > 0) {
+            return token.index() <= palette.size()
+                    ? forDisplay(palette.get(token.index() - 1)) : null;
+        }
+        String spec = token.text().substring(3, token.text().length() - 1).strip();
+        if (spec.startsWith("#")) {
+            try {
+                return base.withColor(TextColor.fromRgb(
+                        Integer.parseInt(spec.substring(1), 16)));
+            } catch (NumberFormatException e) {
+                return null;
+            }
+        }
+        ChatFormatting named = ChatFormatting.getByName(spec);
+        return named == null ? null : base.applyFormat(named);
     }
 
     /** {@code {~N}} 的長度：左括號、波浪、一位數字、右括號。 */
@@ -3345,6 +3645,12 @@ public final class LineTranslator {
                 flush(text, out);
                 out.add(new Token(Kind.USER, user));
                 i += user.length();
+            } else if (colourToken(template, i) != null) {
+                // {c1} {c:#FF55FF} {/}：譯者自己指定顏色。見 #colourToken。
+                Token colour = colourToken(template, i);
+                flush(text, out);
+                out.add(colour);
+                i += colour.text().length();
             } else {
                 text.append(template.charAt(i++));
             }
