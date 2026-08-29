@@ -48,8 +48,16 @@ public final class UprightTest {
             check("粗體照舊——只丟斜體", boldOf(out, "你的島嶼"));
         }
 
-        // 同一行裡的英文片段該斜還是斜，跟原文一致。判斷是<b>逐片段</b>的，
-        // 不是整行一起關掉。
+        // 一行裡只要出現中文，<b>整行</b>都不斜——英文那半也一起拉正。
+        //
+        // 先前是逐片段判斷：這一段有方塊字就拉正，沒有就照原文斜著。單獨看
+        // 每一段都對，合起來就壞了——技能樹的標題只有中間那個名字被翻譯：
+        //
+        //   原文  Unlock Cheaper Totem ability      ← 整行同一個樣式
+        //   譯文  Unlock 節約．圖騰 ability          ← 英文那兩截還斜著
+        //
+        // 一行裡半斜半正比整行斜還醒目，使用者回報「技能樹還是有斜體問題」
+        // 就是這個。純英文的行不受影響，那些的斜體照抄。見 LineTranslator#unslant。
         MutableComponent mixed = Component.empty();
         mixed.append(Component.literal("Ragni Citizen").withStyle(title));
         Component both = LineTranslator.translate(
@@ -58,7 +66,7 @@ public final class UprightTest {
                 both != null && both.getString().contains("市民"));
         if (both != null) {
             check("中文那半不斜", !italicOf(both, "市民"));
-            check("英文那半仍然照原文斜", italicOf(both, "Ragni"));
+            check("英文那半跟著一起拉正（同一行不能半斜半正）", !italicOf(both, "Ragni"));
         }
 
         System.out.println(failures == 0
