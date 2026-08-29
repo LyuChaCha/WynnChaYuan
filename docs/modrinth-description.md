@@ -104,7 +104,7 @@ jar. Losing your connection means "not the newest", never "no translations".
 ### Progress, and helping out
 
 <!-- 進度:開始 -->
-更新於 2026-08-29。
+更新於 2026-08-30。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
@@ -250,7 +250,7 @@ only to others running this mod.
 ### 目前進度與參與翻譯
 
 <!-- 進度:開始 -->
-更新於 2026-08-29。
+更新於 2026-08-30。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
