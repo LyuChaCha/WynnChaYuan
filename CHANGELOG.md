@@ -86,6 +86,33 @@
 
 ### 新增
 
+- **《The Breaking Point》整篇翻完**（281 句）。任務進度來到 10895/22067（49.4%）。
+  Canyon Colossus 快要失控，峽谷會像千年前的 {p} 一樣碎裂。玩家串起 Corkus 的
+  工程師、矮人國王與 dogun 長老，最後去求一頭龍的火。
+
+  <p><b>dogun 的說話方式是這一篇最要緊的事。</b>Ineos、Korzim、Paku 與三位長老
+  講話全都帶著沉重的停頓（`It has been... three days... give or take.`）——
+  那是<b>整個種族的聲音特徵</b>，不是某個人的口頭禪。中文把「……」放在原文停頓的
+  同一個位置，不整併、不刪減，即使讀起來會比較慢——那個慢正是重點。
+
+  <p>對照組是 King Draani：矮人國王話多、愛離題（講到一半聊起自己床單的顏色），
+  中文讓他的句子長而流暢，跟 dogun 的斷句形成反差。兩種節奏擺在一起，
+  才看得出這是兩個種族在對話。
+
+  <p>用語：`the Protector`／`Great Protector`→守護者（沿用裝備 lore 既有譯法）、
+  `True Ice`→真冰、`Everflame`→永焰、`Eternal Flame`→永恆之焰、`drake`→亞龍、
+  `the Fracturing`→碎裂；`Colossus`／`dogun`／`Ozoth`／`Garaheth`／`Taloka`／
+  `Grappling Hook` 保留原文。
+
+### 調整
+
+- **新增 `raid.json` 分類。** 比照 `lootrun.json`，<b>依系統分類</b>而不是依它出現在
+  哪個介面——認領的單位是系統，接手討伐戰的人要的是一整包，而不是「所有 GUI 字串」
+  裡的一小塊。目前先把介面那 8 條從 `gui.json` 與 `misc.json` 移進來。
+
+  <p>逐條指名搬移，<b>沒有用關鍵字掃</b>：`Raid` 在別的語境也會出現
+  （`Zombie Raider`、任務對話裡的突襲），掃到就會把不相干的東西搬進去。
+
 - **《A Hunter's Calling》整篇翻完**（241 句）。任務進度來到 10614/22067（48.1%）。
   玩家在 Silent Expanse 深處遇到一個存在，被它推進一連串「別人的結局」裡——
   每一段都讓玩家扮演加害者：暗殺鎮長、殺死 Theorick、把人騙進鐵魔像工廠、
