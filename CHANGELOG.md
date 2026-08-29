@@ -3,6 +3,32 @@
 格式依循 [Keep a Changelog](https://keepachangelog.com/zh-TW/1.1.0/)，
 版本號依循 [語意化版本](https://semver.org/lang/zh-TW/)。
 
+## [1.99.67] - 2026-08-29
+
+### 新增
+
+- **《Royal Trials》與《Rise of the Quartron》整篇翻完**（85 + 86 句）。
+  任務進度來到 6612/22067，**首度跨過 30.0%**。
+  - 《Royal Trials》：Skyraider 全員的海盜腔是整篇的骨架，
+    `landwalker`／`landlubber` 分別作「旱地佬」與「旱鴨子」以保留兩種蔑稱的差別；
+    試煉主持人對「姑娘們」的吆喝語氣一路維持到加冕。
+  - 《Rise of the Quartron》：Dado 那段「人類憑什麼指控我」的反諷、
+    Harnort 越講越亢奮的「是的是的！」口頭禪、Nasea 從調侃到爆炸的落差，
+    三個人的節奏各自分開處理。Nasea 把 Lari 叫成「Larry」的橋段照原文保留。
+
+### 調整
+
+- **`Decay` 在任務檔統一為「腐朽」**（依翻譯團隊指示）。
+  《Death Whistle》的「暗蝕」2 條、《Finding the Light》與《The Worm Holes》
+  的「衰朽」各 1 條，共 4 條改齊。
+
+### 備註
+
+- 裝備 lore 檔（`gear-accessory.json`、`gear-weapon.json`）另有 4 條 `Decay`
+  仍作「衰朽」，屬翻譯團隊的檔案，本次未動，待團隊決定是否一併統一。
+- `quest/the-qira-hive-quest.json` 有一條小寫的 `the decay of the forest`
+  譯作「森林的衰敗」，語意上比較像一般名詞而非 Gavel 的專有名詞，未改。
+
 ## [1.99.66] - 2026-08-29
 
 ### 新增
