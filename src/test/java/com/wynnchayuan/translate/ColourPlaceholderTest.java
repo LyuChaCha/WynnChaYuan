@@ -129,7 +129,54 @@ public final class ColourPlaceholderTest {
               odd == null || (!odd.getString().contains("{c9}")
                               && !odd.getString().contains("{/}")));
 
+        crossesLines(src);
         report();
+    }
+
+    /**
+     * 色段可以跨行，直到 {@code {/}} 或下一個 {@code {cN}} 為止。
+     *
+     * <h2>先前壞在哪</h2>
+     * 色段原本<b>每一行都會收掉</b>，理由是「忘了寫 {@code {/}} 只影響那一行」。
+     * 但翻譯團隊第一次用就踩到：一句話被 tooltip 切成兩行，在第一行開色段、
+     * 想一路染到第二行，結果第二行整個掉回底色，而寫在第二行的 {@code {/}}
+     * 也變成空操作——warrior.json 有三條譯文都是這樣壞的。
+     *
+     * <p>跨行才是譯者預期的行為，也跟註解（{@code inNote}）的處理一致：
+     * 註解同樣會被 tooltip 切成兩行，那個狀態本來就是跨行帶著走的。
+     *
+     * <h2>這裡釘住什麼</h2>
+     * <ol>
+     *   <li>第一行開的色段，會延伸到第二行</li>
+     *   <li>寫在第二行的 {@code {/}} 真的會把它收掉，不是空操作</li>
+     * </ol>
+     */
+    private static void crossesLines(String src) throws Exception {
+        Path dir = Files.createTempDirectory("wynnchayuan-colour-cross");
+        // 第 1 行開 {c1}（原文的綠色），一路染到第 2 行中間才用 {/} 收掉。
+        write(dir.resolve("cave.json"), src,
+              "{c1}[洞穴完成]\n延續的字{/}沒染色\n- 獎勵：\n- 封印的頭盔");
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+        Component hit = LineTranslator.translate(cave(), store);
+        check("跨行的色段：整句仍然翻得出來", hit != null);
+        if (hit == null) {
+            return;
+        }
+        check("跨行的色段：佔位符不會漏到畫面上",
+              !hit.getString().contains("{c") && !hit.getString().contains("{/}"));
+
+        Integer first = colourOf(hit, "洞穴完成");
+        check("第 1 行拿到 {c1} 的綠色（拿到 " + hex(first) + "）",
+              first != null && first == GREEN);
+
+        Integer carried = colourOf(hit, "延續的字");
+        check("色段延伸到第 2 行（拿到 " + hex(carried) + "，應為綠色）",
+              carried != null && carried == GREEN);
+
+        Integer closed = colourOf(hit, "沒染色");
+        check("第 2 行的 {/} 真的收掉色段（拿到 " + hex(closed) + "，不該是綠色）",
+              closed == null || closed != GREEN);
     }
 
     private static void write(Path file, String src, String dst) throws Exception {
