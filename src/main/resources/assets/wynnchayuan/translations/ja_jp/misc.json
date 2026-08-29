@@ -1,5 +1,8 @@
 {
- "_note": "遊戲內才有的雜項：粉末、Corkian 增幅器、兌換券、交易市場介面、對話提示。官方 CDN 只給裝備、素材與配方，這些都不在裡面，所以只能手工補或靠遊戲內收集。",
+ "_meta": {
+  "domain": "misc",
+  "note": "尚未分類的介面字串——製作與職業介面、道具 tooltip 的碎片、商店與市場 UI 等。這是暫存區不是目的地：邊界清楚的一整塊請拆成自己的檔案（見 lootrun.json），並記得加進 _index.json。"
+ },
  "Effect on Weapons:": "",
  "Effect on Armour:": "",
  "Ingredient Effectiveness:": "",
@@ -157,7 +160,6 @@
  "Mana Steal {#}-{~} to -{~}/{~}s": "",
  "Using Main Attack causes all": "",
  "Water Damage {#}-{~} [{~}]": "",
- "Lootrun Scale{#}[{~}]": "",
  "Crystallized {#} starts decaying at": "",
  "longer and grants +{~} Distortion {#} every": "",
  "{#} Tornado Duration: +{~}s": "",
@@ -338,7 +340,6 @@
  "Rage": "",
  "Chain Lightning": "",
  "Kill Streak": "",
- "Curse": "",
  "Concentration": "",
  "Courage": "",
  "Endurance": "",
@@ -428,8 +429,6 @@
  "Create an earthquake within {~} blocks, dealing {~} Main Attack Damage": "",
  "Damage up to {~} enemies within {~} blocks for {~} Main Attack Damage.": "",
  "Damage up to {~} enemies within {~} blocks for {~} Main Attack Damage": "",
- "Curse enemies within {~} blocks, increasing all damage they take by {~} for {~} seconds.": "",
- "Curse all enemies within {~} blocks, increasing all damage they take by {~} for {~} seconds.": "",
  "Slow down enemies within {~} blocks by {~} and increase the damage they take by {~} for {~} seconds.": "",
  "Slow enemies within {~} blocks by {~} and increase the damage they take by {~} for {~} seconds.": "",
  "Powder Special": "",
