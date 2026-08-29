@@ -48,12 +48,26 @@ public final class RemoteSync {
             "https://raw.githubusercontent.com/LyuChaCha/WynnChaYuan/main/" + PATH,
             "https://cdn.jsdelivr.net/gh/LyuChaCha/WynnChaYuan@main/" + PATH);
 
-    /** 要同步的檔案。清單來自 _index.json，新增譯文檔不必改這裡。 */
-    private static List<String> files(String lang) {
-        List<String> names = new java.util.ArrayList<>();
-        names.add("_index.json");              // 先更新清單，才知道還有哪些新檔案
-        names.addAll(FileIndex.bundled(lang));
-        return names;
+    /** 清單本身的檔名。它不會出現在清單裡（清單濾掉 {@code _} 開頭），得單獨抓。 */
+    private static final String INDEX = "_index.json";
+
+    /**
+     * 要同步的檔案。
+     *
+     * <h2>為什麼要看兩份清單</h2>
+     * {@link FileIndex#bundled} 讀的是<b>打包在 jar 裡</b>的清單。只看它的話，
+     * repo 上新增一個譯文檔之後永遠不會被下載——玩家得等下一次發版才拿得到，
+     * 而「翻譯改完不必發版」正是這支同步存在的意義。
+     *
+     * <p>所以每次同步都先把 {@code _index.json} 本身抓下來，再合併兩份清單：
+     * 內建那份保證基本盤還在（遠端清單壞掉時不會突然少檔），
+     * 剛抓下來的那份負責帶進新增的檔案。
+     */
+    private static List<String> files(Path cacheDir, String lang) {
+        java.util.LinkedHashSet<String> names =
+                new java.util.LinkedHashSet<>(FileIndex.bundled(lang));
+        names.addAll(FileIndex.inDirectory(cacheDir));
+        return List.copyOf(names);
     }
 
     private static final Duration TIMEOUT = Duration.ofSeconds(15);
@@ -139,7 +153,11 @@ public final class RemoteSync {
                 .followRedirects(HttpClient.Redirect.NORMAL)
                 .build()) {
 
-            for (String name : files(lang)) {
+            // 先抓清單本身，後面才知道 repo 上有沒有新增譯文檔。
+            // 這一步失敗不算錯——那就只是沿用內建清單而已。
+            fetchOne(client, cacheDir, lang, INDEX);
+
+            for (String name : files(cacheDir, lang)) {
                 if (fetchOne(client, cacheDir, lang, name)) {
                     ok++;
                 } else {
