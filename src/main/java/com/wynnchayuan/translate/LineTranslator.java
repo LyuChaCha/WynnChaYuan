@@ -142,11 +142,15 @@ public final class LineTranslator {
         if (dst.length != run.size()) {
             // 中文比英文緊湊，兩行的句子常常一行就講完。譯文面板是我們自己畫的，
             // 行數不一樣沒關係——只是少了「原本那一行」可以拿來對齊，直接照原樣出。
-            return built;
+            List<Component> plain = new ArrayList<>(built.size());
+            for (Component one : built) {
+                plain.add(unslant(one));
+            }
+            return plain;
         }
         List<Component> out = new ArrayList<>(run.size());
         for (int i = 0; i < run.size(); i++) {
-            out.add(realign(run.get(i), built.get(i), centered[i]));
+            out.add(unslant(realign(run.get(i), built.get(i), centered[i])));
         }
         return out;
     }
@@ -728,8 +732,8 @@ public final class LineTranslator {
         // translateWholeLine 走的是 realign，它本來就只保欄位的<b>起點</b>，
         // 沒有「右緣也對回去」那一步，所以不受 leftAligned 影響。
         Component whole = translateWholeLine(line, store, centered);
-        return whole != null ? whole
-                             : translateSegments(line, store, centered, leftAligned);
+        return unslant(whole != null ? whole
+                                     : translateSegments(line, store, centered, leftAligned));
     }
 
     /**
@@ -747,7 +751,7 @@ public final class LineTranslator {
             return null;
         }
         Component rebuilt = rebuild(translated, LineParts.of(line), store);
-        return rebuilt == null ? null : realign(line, rebuilt, true);
+        return rebuilt == null ? null : unslant(realign(line, rebuilt, true));
     }
 
     /**
@@ -1996,7 +2000,7 @@ public final class LineTranslator {
             return null;
         }
         Component rebuilt = rebuild(translated, parts, store);
-        return rebuilt == null ? null : realignChat(message, rebuilt, centred);
+        return rebuilt == null ? null : unslant(realignChat(message, rebuilt, centred));
     }
 
     /**
@@ -3459,6 +3463,41 @@ public final class LineTranslator {
         // 純英文的段落於是把父層的斜體繼承下來，畫面上就是
         // 「原文不斜、我們重建出來的那份是斜的」（例如 Corkian Augments）。
         return base.withItalic(base.isItalic() && !hasHan(text));
+    }
+
+    /**
+     * 有中文的那一行，<b>整行</b>都不斜。
+     *
+     * <h2>為什麼要整行一起看</h2>
+     * {@link #upright} 是逐段判斷的：這一段有方塊字就拿掉斜體，沒有就留著。
+     * 單獨看每一段都對，合起來就壞了——技能樹的標題只有中間那個名字被翻譯：
+     *
+     * <pre>
+     *   原文  Unlock Cheaper Totem ability      ← 整行同一個樣式
+     *   譯文  Unlock 節約．圖騰 ability          ← 英文那兩截還斜著，中文是正的
+     * </pre>
+     *
+     * 一行裡半斜半正，比整行斜還醒目。使用者回報的「技能樹還是有斜體問題」
+     * 就是這個樣子。
+     *
+     * <p>所以在最後<b>整行</b>再看一次：只要這一行出現方塊字，斜體一律拿掉。
+     * 純英文的行不動——那些的斜體是遊戲真的想要的效果，我們照抄才對。
+     *
+     * <p>順便把樣式攤平成明確的值。{@code visit} 會把繼承來的樣式解出來，
+     * 於是「沒設定」不再繼承到別人的父層——那正是斜體最容易漏進來的縫。
+     */
+    static Component unslant(Component line) {
+        if (line == null || !hasHan(line.getString())) {
+            return line;
+        }
+        MutableComponent out = Component.empty();
+        line.visit((style, text) -> {
+            if (!text.isEmpty()) {
+                out.append(Component.literal(text).withStyle(style.withItalic(false)));
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return out;
     }
 
     /** 這段文字裡有沒有方塊字。全形標點不算——單獨出現時剪切不礙事。 */

@@ -55,9 +55,19 @@ public final class ChatListener {
         boolean serverSide = SERVER_MESSAGES.contains(event.getRecipientType());
         // 查譯文。玩家發言、夾帶玩家名的伺服器訊息不查——
         // 那是真人寫的內容，翻它既沒意義也不禮貌。
+        //
+        // 原文＋譯文那個模式走的是聊天專用的那一支：它只認整條訊息的鍵，
+        // 不會退到逐片段替換。退到逐片段的結果幾乎一定是「翻到一點點」，
+        // 而那份半吊子會把整塊佔住（見 ChatBlock#asBlock）。
+        //
+        // 順便省掉一次重複翻譯：先前這裡翻一次，ChatBlock 送出前又翻一次，
+        // 兩份都會寫進診斷檔，於是逐行對齊的額度被灌爆——回報回來的檔案裡
+        // 常常連想看的那一塊都排不進去。
         Component hit = serverSide
                 && !PlayerDataFilter.carriesPlayerData(GlyphSplitter.toTemplate(message))
-                ? LineTranslator.translate(message, WynnChaYuan.translations())
+                ? (mode == CollectorConfig.ChatMode.BOTH
+                        ? LineTranslator.translateChat(message, WynnChaYuan.translations())
+                        : LineTranslator.translate(message, WynnChaYuan.translations()))
                 : null;
 
         // 先記進複製用的緩衝區，再考慮要不要改畫面。

@@ -351,13 +351,23 @@ public final class FlowedDebug {
 
     private static int paletteSeen = 0;
 
-    /** 調色盤那一欄的額度，跟其他欄分開算。 */
-    private static final int PALETTE_LIMIT = 20;
+    /**
+     * 調色盤那一欄的額度，跟其他欄分開算。
+     *
+     * <p>先前是 20，全被角色選單那一頁吃光——真正想看的聊天區塊排不進來。
+     */
+    private static final int PALETTE_LIMIT = 60;
 
     private static int rowSeen = 0;
 
-    /** 多行的訊息本來就不多，記十二筆綽綽有餘。 */
-    private static final int ROW_LIMIT = 12;
+    /**
+     * 逐行對齊記幾筆。
+     *
+     * <p>先前是 12，而漂浮字的名牌<b>每一個都是兩行</b>——走過一片草原就把
+     * 額度吃光了。使用者回報「洞穴完成還是沒對齊」，可是診斷檔裡連那一塊
+     * 都沒出現，因為前面十二筆全是「Grook」「Tasim」的名牌。
+     */
+    private static final int ROW_LIMIT = 40;
 
     /** 未分配的第 13 平面＝排版位移；私用區＝真圖示。見 GlyphSplitter。 */
     private static boolean isOffset(int cp) {
