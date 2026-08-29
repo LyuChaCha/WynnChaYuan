@@ -39,6 +39,15 @@ public final class TranslationStoreTest {
                  }
                 }""");
 
+            // 素材：是道具、但<b>不是裝備</b>。名稱該照翻，也不該被拿去替換別的句子。
+            write(dir, "ingredient.json", """
+                {
+                 "_meta": { "domain": "ingredient", "itemNames": true, "gearNames": false },
+                 "entries": {
+                  "i1": { "src": "Dark Matter", "dst": "暗物質", "role": "name" }
+                 }
+                }""");
+
             // 台詞語料是<b>扁平格式</b>（原文當鍵），跟上面的 workspace 格式不同。
             write(dir, "quest.json", """
                 {
@@ -96,14 +105,22 @@ public final class TranslationStoreTest {
                     "大幅增加 Meteor 技能的\n速度。".equals(store.lookup(
                             "Drastically increase the\nspeed of your Meteor ability.")));
 
-            // 「翻譯物品名稱」只該管裝備，不該連技能名稱一起關掉——
-            // 技能名稱跟 wiki、交易市場毫無關係。
+            // 「翻譯物品名稱」只該管裝備，不該連技能名稱或素材一起關掉——
+            // 技能名稱跟 wiki、交易市場毫無關係，素材也是。
             store.setTranslateNames(false);
             check("關掉物品名稱後，裝備名稱不翻", store.lookup("Idol") == null);
             check("關掉物品名稱後，技能名稱照翻", "流星".equals(store.lookup("Shooting Star")));
+            check("關掉物品名稱後，素材名稱照翻",
+                    "暗物質".equals(store.lookup("Dark Matter")));
 
             store.setTranslateNames(true);
             check("開啟後裝備名稱恢復", "偶像".equals(store.lookup("Idol")));
+
+            // 素材名稱同時要滿足<b>兩件事</b>，這正是把旗標拆成兩個的理由：
+            // 不受開關管（上面那條），而且不會被拿去替換別的句子（這條）。
+            // 共用一個旗標時，怎麼填都只顧得到一半。
+            check("素材名稱不會被當成可替換的詞塞進別的句子",
+                    store.findTerm("You found a Dark Matter today.", 0) == null);
 
             // 長敘述在遊戲裡是依畫面寬度自動斷行的，斷點取決於玩家的設定；
             // 語料存的是完整一句。差別只在空白，所以正規化之後就對得上。
@@ -320,6 +337,47 @@ public final class TranslationStoreTest {
         check("實際語料：打到「...」時後面還有更長的候選", real.hasLonger("..."));
 
         itemNamesAreNotSubstitutableTerms(real);
+        ingredientNamesIgnoreTheGearSwitch(real);
+    }
+
+    /**
+     * 素材名稱<b>不受</b> F6「翻譯物品名稱」開關影響。
+     *
+     * <h2>先前壞在哪</h2>
+     * {@code _meta.itemNames} 一個旗標同時被拿來答兩個問題：「要不要進可替換的詞表」
+     * 與「受不受裝備開關管」。六個道具檔標成 {@code false}，原意是後者，
+     * 但那個值同時觸發了前者，於是道具名變成可替換的詞（v1.99.71 的災情）。
+     *
+     * <p>v1.99.71 把它們改成 {@code true} 修好了替換，卻讓素材名稱一起落進
+     * 裝備開關底下——而那個開關<b>預設是關的</b>。玩家打開素材袋，
+     * 標題與說明都是中文，<b>九個素材名稱全是英文</b>，看起來就像翻譯憑空消失。
+     *
+     * <p>{@code ingredient.json} 的 {@code _meta.note} 從一開始就寫著
+     * 「名稱不受『翻譯物品名稱』開關影響」——需求一直都在，只是沒有地方能表達它。
+     * 現在由 {@code _meta.gearNames} 單獨回答第二個問題。
+     *
+     * <p>下面用的是玩家回報那張截圖裡的素材，逐個拿出貨語料驗。
+     */
+    private static void ingredientNamesIgnoreTheGearSwitch(TranslationStore real) {
+        real.setTranslateNames(false);         // 開關預設就是關的
+        String[][] pouch = {
+            {"Ripe Aureate Fruit", "熟成金果"},
+            {"Doom Stone", "厄運之石"},
+            {"Infected Mass", "感染的團塊"},
+            {"Dragon Aura", "龍之靈氣"},
+            {"Tenebrous Plasma", "幽暗電漿"},
+            {"Demonic Blood", "惡魔之血"},
+            {"Thick Vines", "厚實藤蔓"},
+        };
+        for (String[] row : pouch) {
+            String got = real.lookup(row[0]);
+            check("實際語料：關著開關時素材「" + row[0] + "」照翻（拿到 " + got + "）",
+                    row[1].equals(got));
+        }
+        // 對照組：裝備名稱必須<b>還是</b>被開關關掉，否則等於把 v1.99.71 之前的
+        // 問題換個方向再犯一次。
+        check("實際語料：關著開關時裝備名稱仍然不翻",
+                real.lookup("Idol") == null);
     }
 
     /**

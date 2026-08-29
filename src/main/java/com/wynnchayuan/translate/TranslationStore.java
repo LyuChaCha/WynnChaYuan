@@ -182,7 +182,7 @@ public final class TranslationStore {
             int before = entries.size();
 
             if (obj.has("entries") && obj.get("entries").isJsonObject()) {
-                readWorkspace(obj.getAsJsonObject("entries"), itemNames(obj));
+                readWorkspace(obj.getAsJsonObject("entries"), itemNames(obj), gearNames(obj));
             } else {
                 // 檔名以 -terms.json 結尾的，內容是<b>可以在別的句子裡自動替換的詞</b>
                 // （魔力儲庫、失衡、裂隙之裔…），不是一整行的譯文。
@@ -200,29 +200,48 @@ public final class TranslationStore {
     }
 
     /**
-     * 這個檔案裡的 {@code role: "name"} 算不算「物品名稱」。
+     * 名稱要怎麼收，是<b>兩個各自獨立的問題</b>，用兩個旗標分開問。
      *
-     * <h2>為什麼要問這個</h2>
-     * F6 的「翻譯物品名稱」是為了讓裝備名稱保持英文——對得上 wiki、
-     * 交易市場與社群討論。但先前的判斷是<b>只要 role 是 name 就算</b>，
-     * 於是 {@code ability.json} 裡的技能名稱也被一起關掉了；
-     * 技能名稱跟交易市場毫無關係，不該受這個開關影響。
+     * <h2>一、會不會出現在別的句子裡（{@code _meta.itemNames}）</h2>
+     * 技能名稱與 Major ID 名稱會被別的敘述引用（「Bash 會增加範圍」），
+     * 所以要收進<b>可替換的詞</b>表。裝備與素材名稱不會，收進來只會亂替換——
+     * v1.99.71 就是這樣讓素材 Dark Matter 的譯名蓋到同名盔甲上的。
      *
-     * <p>判斷寫在資料裡（{@code _meta.itemNames}）而不是在這裡列一份 domain 清單，
-     * 是為了維持「新增一個譯文檔只要加進 _index.json，不必改 Java」。
-     * 沒寫的話當成物品——漏標一個裝備檔會讓開關<b>無聲失效</b>，
-     * 漏標一個技能檔頂多是名稱跟著關掉，後者看得出來。
+     * <h2>二、受不受 F6「翻譯物品名稱」管（{@code _meta.gearNames}）</h2>
+     * 那個開關是為了讓<b>裝備</b>名稱保持英文——對得上 wiki、交易市場與社群討論。
+     * 素材、材料、典籍、面向、護符跟交易市場無關，不該被它關掉；
+     * {@code ingredient.json} 的 {@code _meta.note} 從一開始就這樣寫著。
+     *
+     * <h2>為什麼要拆開</h2>
+     * 這兩件事本來共用 {@code itemNames} 一個旗標。六個道具檔標成 false，
+     * 原意是第二個問題（「不受開關管」），但那個值同時觸發了第一個問題，
+     * 於是道具名全變成可替換的詞。v1.99.71 把它們改成 true 修好了替換，
+     * 卻讓素材名稱一起落進裝備開關底下——玩家看到的就是「素材翻譯全部消失」。
+     * 一個旗標答兩個問題，怎麼填都會錯一半，所以拆成兩個。
+     *
+     * <p>兩個都預設「當成裝備」：漏標一個裝備檔會讓開關<b>無聲失效</b>，
+     * 漏標一個非裝備檔頂多是名稱跟著開關關掉——後者看得出來，前者看不出來。
      */
     private static boolean itemNames(JsonObject root) {
+        return metaFlag(root, "itemNames");
+    }
+
+    /** 這個檔的名稱受不受 F6「翻譯物品名稱」管。見 {@link #itemNames}。 */
+    private static boolean gearNames(JsonObject root) {
+        return metaFlag(root, "gearNames");
+    }
+
+    /** 沒寫、寫壞、或不是布林值都算 true——見 {@link #itemNames} 談預設值。 */
+    private static boolean metaFlag(JsonObject root, String name) {
         JsonElement meta = root.get("_meta");
         if (meta == null || !meta.isJsonObject()) {
             return true;
         }
-        JsonElement flag = meta.getAsJsonObject().get("itemNames");
+        JsonElement flag = meta.getAsJsonObject().get(name);
         return flag == null || !flag.isJsonPrimitive() || flag.getAsBoolean();
     }
 
-    private void readWorkspace(JsonObject entriesObj, boolean itemNames) {
+    private void readWorkspace(JsonObject entriesObj, boolean itemNames, boolean gearNames) {
         for (String key : entriesObj.keySet()) {
             JsonElement el = entriesObj.get(key);
             if (!el.isJsonObject()) {
@@ -256,13 +275,15 @@ public final class TranslationStore {
                     speakers.put(srcKey, who.strip());
                 }
                 if ("name".equals(optString(e, "role"))) {
-                    if (itemNames) {
-                        nameKeys.add(srcKey);
-                    } else {
+                    if (!itemNames) {
                         // 技能名稱與 Major ID 名稱會出現在別的敘述裡；
-                        // 裝備名稱不會，收進來只會亂替換。
+                        // 裝備與素材名稱不會，收進來只會亂替換。
                         noteTerm(srcKey, dst.strip());
+                    } else if (gearNames) {
+                        nameKeys.add(srcKey);       // 受 F6 開關管
                     }
+                    // 兩個都不是（素材、材料、典籍…）：照一般條目翻，
+                    // 既不會被拿去替換別的句子，也不受裝備開關影響。
                 }
             }
         }
