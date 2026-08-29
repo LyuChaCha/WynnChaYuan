@@ -11,6 +11,26 @@
 
 ### 新增
 
+- **《Misadventure on the Sea》與《Temple of the Legends》整篇翻完**
+  （132 + 137 句）。任務進度來到 8543/22067（38.7%）。
+  - 《Misadventure on the Sea》：Honip 從熱情邀約到翻臉囚禁的轉折是全篇的骨架，
+    前半刻意譯得親切，後半才顯出那份得意。結局有三條分支（做得好／做得差／
+    被雞救了），三種語氣分開處理。
+  - 《Temple of the Legends》：Kelight 自命不凡的守門人語氣貫穿全篇，
+    最後被打臉時的結巴才有落差。他那段「自己跟自己說話」的內心戲
+    （`Come on, Kelight, don't do this...`）照原文的自言自語處理。
+    這一篇有三條入口分支，同樣的段落重複出現三次，譯文以共用字典寫入，
+    確保三處完全一致。
+
+### 調整
+
+- **`Nether` 統一為「地獄」**（依翻譯團隊指示）。原本語料裡翻 `Nether` 的
+  4 條用的是「下界」，已一併改齊。
+
+  <p>回報時我先誤判過一次：語料裡有 20 條「地獄」，我以為那是 `Nether` 的
+  既有譯法，實際查證後那 20 條翻的是 `hell`／`hellfire`（裝備 lore 的比喻），
+  跟 `Nether` 無關。真正翻 `Nether` 的只有那 4 條。
+
 - **Lootrun 賜福說明文字 22 段。** 這些在遊戲裡是被換行切開的片段
   （`Curses are now half as`、`Boon Potency (+{~}), your`），逐行翻會是破碎的中文。
   tooltip 的翻譯是「<b>先試整段、再退回逐行</b>」（`TooltipPanel#translateLines`），
