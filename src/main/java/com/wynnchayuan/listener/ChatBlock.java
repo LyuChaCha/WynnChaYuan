@@ -113,14 +113,11 @@ public final class ChatBlock {
             return;
         }
         Component whole = rows.size() > 1 ? asBlock(rows) : null;
+        if (whole == null) {
+            whole = stacked(rows);
+        }
         if (whole != null) {
             mc.player.displayClientMessage(whole, false);
-            return;
-        }
-        for (Row row : rows) {
-            if (row.translated() != null) {
-                mc.player.displayClientMessage(row.translated(), false);
-            }
         }
     }
 
@@ -130,6 +127,13 @@ public final class ChatBlock {
      * <p>語料裡那一條本來就是整塊的（「{@code [Cave Completed]\n…\n- Rewards:\n…}」），
      * 逐行查當然查不到。接起來查得到的話，顏色、縮排、置中都是照整塊算的，
      * 比六句各自為政準得多。
+     *
+     * <h2>只認整塊那一條</h2>
+     * 走的是 {@link LineTranslator#translateChat}，它<b>只</b>查整塊的鍵。
+     * 先前用的是通用的 {@code translate}，查不到整塊時它會退到逐片段替換——
+     * 那條路幾乎一定回傳「有翻到一點點」的結果，於是整塊就被那份半吊子佔住，
+     * 逐行查到的好譯文反而全部被丟掉。實機那張「任務完成」的圖裡，
+     * 四行獎勵有三行是英文、一行是中文，就是這樣來的。
      *
      * @return 整塊的譯文；查不到就回傳 {@code null}，讓呼叫端退回逐行那幾句
      */
@@ -142,10 +146,57 @@ public final class ChatBlock {
                 }
                 joined.append(rows.get(i).original().getComponent());
             }
-            return LineTranslator.translate(StyledText.fromComponent(joined),
-                                            WynnChaYuan.translations());
+            return LineTranslator.translateChat(StyledText.fromComponent(joined),
+                                                WynnChaYuan.translations());
         } catch (Throwable t) {
             return null;              // 整塊查表出事也不能讓逐行那幾句跟著不見
         }
+    }
+
+    /**
+     * 整塊查不到時：逐行的譯文疊成<b>一則</b>訊息。
+     *
+     * <p>疊成一則而不是各發各的，是為了讓它們在聊天視窗裡連在一起——
+     * 中間插不進別的訊息，看起來就還是一塊。
+     *
+     * <p>對齊要<b>整塊一起算</b>：一行一行單獨看，分不出置中與靠左
+     * （見 {@link LineTranslator#chatCentred}）。所以先問過整塊，再把答案
+     * 一行一行傳下去重譯一次；重譯不到的才用收進來時那份。
+     */
+    private static Component stacked(List<Row> rows) {
+        List<StyledText> originals = new ArrayList<>(rows.size());
+        for (Row row : rows) {
+            originals.add(row.original());
+        }
+        boolean[] centred;
+        try {
+            centred = LineTranslator.chatCentred(originals);
+        } catch (Throwable t) {
+            centred = new boolean[rows.size()];
+        }
+        net.minecraft.network.chat.MutableComponent out = Component.empty();
+        boolean any = false;
+        for (int i = 0; i < rows.size(); i++) {
+            Component line;
+            try {
+                line = LineTranslator.translateChat(rows.get(i).original(),
+                                                    WynnChaYuan.translations(),
+                                                    centred[i]);
+            } catch (Throwable t) {
+                line = null;
+            }
+            if (line == null) {
+                line = rows.get(i).translated();
+            }
+            if (line == null) {
+                continue;                 // 這一行沒有譯文，跳過
+            }
+            if (any) {
+                out.append(Component.literal("\n"));
+            }
+            out.append(line);
+            any = true;
+        }
+        return any ? out : null;
     }
 }
