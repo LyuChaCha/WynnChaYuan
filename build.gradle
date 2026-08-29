@@ -341,3 +341,11 @@ tasks.register('runColumnCentreChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.ColumnCentreTest'
 }
 tasks.named('check') { dependsOn 'runColumnCentreChecks' }
+
+tasks.register('runFileIndexChecks', JavaExec) {
+    group = 'verification'
+    description = 'repo 上新增的譯文檔要真的被同步下來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.FileIndexTest'
+}
+tasks.named('check') { dependsOn 'runFileIndexChecks' }
