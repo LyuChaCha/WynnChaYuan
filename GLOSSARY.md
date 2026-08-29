@@ -198,7 +198,7 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 
 | 原文 | 譯文 | 備註 |
 |---|---|---|
-| Decay | 黯蝕 | **未確定** |
+| Decay | 黯蝕 | 指 Gavel 那場災厄。一般語意的腐朽／枯萎（`Decaying Heart`、`fallen into decay`）與機制上的層數衰減（`Distortion decays`）不適用 |
 | Corruption | 腐敗 | **未確定** |
 |  |  |
 
