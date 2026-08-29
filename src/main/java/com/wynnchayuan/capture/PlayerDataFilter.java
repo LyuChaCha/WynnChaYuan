@@ -52,7 +52,15 @@ public final class PlayerDataFilter {
             " has just logged in",      // 上線通知，夾帶玩家名
             " has just logged out",
             " is now online",
-            " is now offline"
+            " is now offline",
+            // 領地名牌：「Kandon Ridge / Controlled by Paladins United [Lv. 32]」。
+            // 公會名稱跟玩家名稱一樣是別人的資料，不該進共享語料；而且那一行
+            // 每塊領地、每次易主都不一樣，收進來也永遠不會有人翻。
+            //
+            // 先前會漏掉，是因為這條走<b>名牌</b>那條路，而名牌只擋得住
+            // 「長得像帳號名」的東西——公會名沒有底線，整條穿了過去。
+            // 一次 Lootrun 就收進 83 塊別人的領地。
+            "Controlled by "
     );
 
     /** 座標，例如 {@code [-781, 89, -5563]}。 */

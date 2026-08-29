@@ -158,6 +158,10 @@ def already_piecewise(src: str, have: set[str]) -> bool:
 # 別人的名字。Minecraft 帳號名是英數加底線，長度 3-16。
 NAMED = re.compile(
     r"\bCrafted by\b|\bParty\b.*\binvit|'s (?:party|guild|island|house)"
+    # 領地名牌：「Controlled by Paladins United [Lv. 32]」。公會名稱跟玩家名稱
+    # 一樣是別人的資料。它沒有底線，所以下面那條「帳號名的形狀」抓不到——
+    # 一次 Lootrun 就有 83 條這樣穿了過去。
+    r"|\bControlled by\b"
     r"|\b[A-Za-z0-9]*_[A-Za-z0-9_]{2,}\b")
 
 
