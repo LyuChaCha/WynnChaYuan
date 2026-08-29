@@ -81,7 +81,7 @@
   },
   "5c2156139561": {
    "src": "Improve your Main Attack's damage\nand range when using a spear.",
-   "dst": "使用矛時，提升你普攻的\n傷害與攻擊距離。",
+   "dst": "使用矛時，提升你{c2}普攻{/}的\n傷害與攻擊距離。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -978,7 +978,7 @@
   },
   "941cdc6d2562": {
    "src": "You gain a broken mantle whenever\nMantle of the Bovemists loses a charge.",
-   "dst": "每當 Mantle of the Bovemists 失去一層護罩時，\n獲得一個破碎的護罩。",
+   "dst": "每當 Mantle of the Bovemists 失去一層護罩時，\n{c1}獲得一個{c2}破碎的護罩{/}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1440,7 +1440,7 @@
   },
   "c02a4a3139a0": {
    "src": "While Corrupted {#}, hitting an\nenemy with your Main Attack\nwill add +{~} Corruption {#},\nper second.\n(Powder Specials always add +{~})",
-   "dst": "處於 Corrupted {#} 狀態時，\n普攻命中敵人會依攻擊速度以每秒 +{~} \n的比例提升 Corrupted {#}。\n(Powder Specials 總是提升 +{~} )",
+   "dst": "處於 Corrupted {#} 狀態時，\nMain Attack 命中敵人會依攻擊速度以每秒 +{~} \n的比例提升 Corrupted {#}。\n(Powder Specials 總是提升 +{~} )",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1804,7 +1804,7 @@
   },
   "939083f48dd2": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "當擁有 {~1} Holy Power ✧ 時，\n你的普攻將獲得強化，\n且每次命中獲得 {~2} Holy Power。",
+   "dst": "當擁有 {~1} Holy Power ✧ 時，\n你的 {c5}普通攻擊{/} 將獲得強化，\n且每次命中獲得 {~2} Holy Power。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1927,7 +1927,7 @@
   },
   "2957f34ac501": {
    "src": "Increases the damage and mana cost\nof Uppercut.",
-   "dst": "提升 Uppercut 的傷害\n與魔力消耗。",
+   "dst": "提升 Uppercut 的傷害\n{c1}與魔力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1998,7 +1998,7 @@
   },
   "ee17b5a14022": {
    "src": "While Corrupted, your Main Attack and\nPowder Specials now cost {~} health to\nuse, activating Blood Pact.",
-   "dst": "處於 Corrupted 狀態時，\n普攻與 Powder Specials 將消耗 {~} 生命，\n並觸發 Blood Pact。",
+   "dst": "處於 Corrupted 狀態時，\nMain Attack 與 Powder Specials 將消耗 {~} 生命，\n並觸發 Blood Pact。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2266,7 +2266,7 @@
   },
   "59df9643efc9": {
    "src": "Bash will buff positive IDs\nof yourself and allies.\n(Max Mana, XP Bonus, Loot Bonus, Loot Quality,\nGather XP Bonus, and Gather Speed Bonus\nare excluded)",
-   "dst": "Bash 將會強化自身與友軍的正面詞條。\n(不包含：最大魔力、經驗加成、寶物加成、\n寶物品質、採集職業經驗、採集職業速度)",
+   "dst": "Bash {c2}將會強化自身\n與友軍的正面詞條。\n{c3}(不包含：最大魔力、經驗加成、\n寶物加成、寶物品質、\n採集經驗、採集速度)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2351,7 +2351,7 @@
   },
   "f96c2cff03df": {
    "src": "You will deal +{~} damage to enemies\nfor every Discombobulated ⚙ they have.\n-{~} of the bonus decays every second.",
-   "dst": "敵人每擁有一個 Discombobulated ⚙，\n對其造成的傷害 +{~1}。\n此層數會以每秒 -{~2} 的速度衰減。",
+   "dst": "敵人每擁有一層 Discombobulated ⚙，\n對其造成的傷害 +{~1}。\n此層數會以每秒 -{~2} 的速度衰減。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2407,7 +2407,7 @@
   },
   "317a737164a5": {
    "src": "Sacred Surge grants +{~} Holy Power ✧\nfor every spell or ability triggered\nand deals increased damage.",
-   "dst": "每當施放任何法術或觸發任何技能時，\n使 Sacred Surge 獲得的 Holy Power ✧ +{~}，\n並造成更多傷害。",
+   "dst": "{c2}每當施放任何法術或觸發任何技能時，\n{/}使 Sacred Surge 獲得的 Holy Power ✧ +{~}，\n並造成更多傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2769,7 +2769,7 @@
   },
   "d9e5c58a4087": {
    "src": "Activating Blood Pact adds a blood swipe\nto your next Main Attack. (Max {~})\n(Damage is dealt as Main Attack Damage)",
-   "dst": "每當 Blood Pact 觸發時，\n下一次普攻將附加鮮血橫掃。(最高 {~})\n(此傷害視為普攻傷害)",
+   "dst": "每當 Blood Pact 觸發時，\n下一次 Main Attack 將附加鮮血橫掃。{c1}(最高 {~})\n{/}(此傷害視為普攻傷害)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3077,7 +3077,7 @@
   },
   "6585adef95bd": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "對尖刺施放普攻或 Uppercut 時會將其引爆，\n造成傷害並獲得 +{~} Overhealth ❤(在 Corrupted 狀態下也能生效)。\n此效果會在 {~} 秒內慢慢降低。",
+   "dst": "對尖刺施放 Main Attack 或 Uppercut 時會將其引爆，\n造成傷害並獲得 +{~} Overhealth ❤(在 Corrupted 狀態下也能生效)。\n此效果會在 {~} 秒內慢慢降低。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3215,7 +3215,7 @@
   },
   "fc99ae8eee54": {
    "src": "Casting F switches them\nbetween Spell and Main Attack form.",
-   "dst": "按下 F 鍵即可在法術與普攻型態之間切換。",
+   "dst": "按下{c2} F {/}鍵即可在法術與普攻型態之間切換。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3230,7 +3230,7 @@
   },
   "520a701e54c6": {
    "src": "In Spell form, casting a spell performs\nan attack. In Main Attack form,\nMain Attacks perform an attack instead.",
-   "dst": "處於法術型態下，施放法術將發動追加攻擊。\n處於普攻型態下，則改為由普攻來發動追加攻擊。",
+   "dst": "處於法術型態下，施放法術將發動追加攻擊。\n處於{c2}普攻{/}型態下，\n則改為使用普攻來發動追加攻擊。",
    "role": "desc",
    "kind": "block",
    "ctx": [
