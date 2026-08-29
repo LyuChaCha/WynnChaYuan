@@ -2,6 +2,7 @@ package com.wynnchayuan.listener;
 
 import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.capture.DialogueBuffer;
+import com.wynnchayuan.capture.DialogueSpeaker;
 import com.wynnchayuan.capture.CombatText;
 import com.wynnchayuan.capture.CurrentQuest;
 import com.wynnchayuan.capture.GlyphSplitter;
@@ -54,6 +55,15 @@ public final class CaptureListener {
 
     private final DialogueBuffer buffer = new DialogueBuffer();
     private volatile boolean lastHadChoices = false;
+
+    /**
+     * 目前這段對話框上的名牌。
+     *
+     * <p>{@link DialogueBuffer} 是延後送出的：判定「打完了」的那一刻，
+     * 畫面上往往已經換成下一句了。所以說話者要在<b>餵進去的時候</b>記下來，
+     * 不能等到記錄的時候才去讀畫面。
+     */
+    private volatile String lastSpeaker = null;
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onDialogueStarted(NpcDialogueEvent.Started event) {
@@ -113,7 +123,13 @@ public final class CaptureListener {
         DialogueOverlay.setShiftPrompt(event.requiresShift());
         // 顯示用的譯文吃完整原文（含符號），與收集用的模板是兩條路
         DialogueOverlay.setCurrent(styled, WynnChaYuan.translations(), lastHadChoices);
-        record(buffer.offer(GlyphSplitter.toTemplate(styled)));
+        // 說話者要在句子送出之前記下來：等 buffer 判定「打完了」時，
+        // 畫面上通常已經換成下一句、換成下一個人了。
+        String speaker = DialogueSpeaker.of(styled);
+        if (speaker != null) {
+            lastSpeaker = speaker;
+        }
+        record(buffer.offer(styled.getString(), GlyphSplitter.toTemplate(styled)));
     }
 
     /** 供定時器呼叫：內容穩定夠久就送出，避免最後一句卡在緩衝區。 */
@@ -125,10 +141,13 @@ public final class CaptureListener {
         if (completed == null || !WynnChaYuan.config().collect()) {
             return;
         }
+        // 說話者優先用對話框自己的名牌——那是遊戲畫給玩家看的名字，不會錯。
+        // 沒有名牌（旁白框）才退回「玩家正在看的實體」那個間接的猜測。
+        String speaker = lastSpeaker != null ? lastSpeaker : LookAtTranslator.nearestLabel();
         WynnChaYuan.store().record(
                 completed, "desc", "quest",
                 CurrentQuest.tag(lastHadChoices ? "dialogue/choices" : "dialogue",
-                                 LookAtTranslator.nearestLabel()));
+                                 speaker));
     }
 
     // ---------------------------------------------------------------- 聊天
