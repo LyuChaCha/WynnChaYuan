@@ -86,7 +86,7 @@ Edit the `dst` fields; leave `src` alone.
 }
 ```
 
-### Three placeholders
+### Placeholders
 
 | Placeholder | Means | Rule |
 |---|---|---|
@@ -97,6 +97,29 @@ Edit the `dst` fields; leave `src` alone.
 **Getting the count wrong makes the whole line silently fall back to English.**
 It looks identical to "not translated yet", so nobody notices. `tools/validate.py`
 catches this and runs on every pull request.
+
+### Colour placeholders
+
+Colour is normally recovered by matching the translated text against the coloured
+run in the original. That works while a term stays in English and breaks the moment
+it doesn't — the run falls back to the base colour. These go **in `dst` only**;
+putting one in `src` makes the line unmatchable forever.
+
+| Syntax | Means |
+|---|---|
+| `{c1}`–`{c9}` | The Nth style of the original, ordered by first appearance |
+| `{c:#FF55FF}` | An explicit hex colour |
+| `{c:gold}` | An explicit vanilla colour name (the 16 Minecraft ones) |
+| `{/}` | End the span; back to whatever that part was |
+
+```json
+"src": "[Cave Completed]\nGrook's Nest",
+"dst": "{c1}[Cave Completed]{/}\n{c2}Grook's Nest{/}"
+```
+
+A span runs until `{/}`, the next `{cN}`, or **the end of that line** — a missing
+`{/}` never bleeds into the rest of the block. An out-of-range index is treated as
+not written, so the line falls back to matching rather than breaking.
 
 ### Place names stay in English
 
