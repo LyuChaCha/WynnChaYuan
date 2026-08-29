@@ -3004,15 +3004,21 @@ public final class LineTranslator {
         List<Style> palette = palette(allRuns);
         FlowedDebug.palette(palette, allRuns, flowed);
 
+        // 譯者指定的顏色管到 {/} 或下一個 {cN} 為止，<b>可以跨行</b>。
+        //
+        // 這裡原本每一行都會收掉，理由是「忘了寫 {/} 只會影響那一行」。
+        // 但翻譯團隊第一次用就踩到這個限制：一句話被 tooltip 切成兩行，
+        // 在第一行開色段、想一路染到第二行，結果第二行整個掉回底色，
+        // 而寫在第二行的 {/} 也變成空操作。跨行才是譯者預期的行為，
+        // 也跟上面 inNote 的處理一致——註解同樣會被切成兩行。
+        //
+        // 「忘了寫 {/}」改由 validate.py 擋下：色段開到整段結尾還沒關就報錯。
+        // 從「默默染錯」變成「合併前擋下來」，比靠行尾自動收掉可靠。
+        Style forced = null;
         List<Component> out = new ArrayList<>(lines.size());
         for (List<Token> tokens : lines) {
             MutableComponent line = Component.empty();
             Style justFilled = null;          // 剛填回去的那個佔位符的樣式
-            // 譯者指定的顏色只管到 {/}、下一個 {cN}、或這一行結束。
-            //
-            // 行尾一律收掉，是為了讓「忘了寫 {/}」的後果侷限在那一行——
-            // 一整塊獎勵清單只錯一行，比整塊都被染成同一個顏色好收拾。
-            Style forced = null;
             for (int i = 0; i < tokens.size(); i++) {
                 Token token = tokens.get(i);
                 switch (token.kind()) {
