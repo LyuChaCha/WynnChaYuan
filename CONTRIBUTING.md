@@ -172,9 +172,9 @@ python tools/progress.py --next 30
 ```
 === 可用的顏色 1 ===
   譯文：[洞穴完成]
-    {c1}  #55FF55
-    {c2}  #FFFFFF 粗體
-    {c3}  #FF55FF
+    {c1}  #55FF55               原文：「[Cave Completed]」
+    {c2}  #FFFFFF 粗體          原文：「Grook's Nest」
+    {c3}  #FF55FF               原文：「-」
 ```
 
 **幾件要注意的事**

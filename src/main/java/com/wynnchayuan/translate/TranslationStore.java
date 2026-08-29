@@ -837,6 +837,30 @@ public final class TranslationStore {
     }
 
     /**
+     * 語料裡到底有沒有這一條的譯文——<b>不管</b>使用者有沒有把
+     * 「翻譯物品名稱」關掉。
+     *
+     * <h2>為什麼不能直接用 lookup</h2>
+     * 收集端拿這個判斷「這是不是還沒翻的缺口」（見
+     * {@code CaptureStore#knowsTranslations}）。{@link #lookup} 在使用者關掉
+     * 物品名稱時對名稱回傳 {@code null}——那是「不要顯示」，不是「沒有譯文」。
+     * 拿它來判斷缺口的話，每一件裝備的名稱都會被當成沒翻，
+     * {@code captured.json} 又會塞滿雜訊。
+     */
+    public boolean hasTranslation(String template) {
+        if (template == null) {
+            return false;
+        }
+        String key = template.strip();
+        if (entries.containsKey(key) || lookupIndented(key) != null) {
+            return true;
+        }
+        String other = respell(key);
+        return !other.equals(key)
+                && (entries.containsKey(other) || lookupIndented(other) != null);
+    }
+
+    /**
      * 英式拼法換成語料裡用的美式拼法。
      *
      * <p>語料是從維基抓來的，寫的是 {@code honors}；遊戲裡顯示的是 {@code honours}。
