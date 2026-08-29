@@ -36,6 +36,19 @@
   - 《WynnExcavation Site D》：Amadel 三階段（Corrupted／Shadow／本體）
     的語氣逐段崩解，照原文的層次處理。
 
+- **《Flight in Distress》、《Taproot》、《Memory Paranoia》整篇翻完**
+  （103 + 103 + 105 句）。任務進度來到 7471/22067（33.9%）。
+  - 《Flight in Distress》：Engineer Eric 的省音方言（`'uman`、`'ngines`、`ye`）
+    用「俺」與粗口語承接，跟《The Worm Holes》的 Malo（「咱」）刻意分開，
+    兩個粗獷角色不會聽起來像同一個人。
+  - 《Taproot》：Orphion 對玩家的稱呼 `My pulse` 譯作「我的脈搏」，
+    整段維持儀式性的句法；Lari 幾十年徒勞之後的崩潰是全篇的重心，
+    語氣接續《The Worm Holes》與《Finding the Light》。
+    `Taproot`、`Orphion` 依既有譯文維持英文。
+  - 《Memory Paranoia》：被附身時的全大寫咒文改以文言化的短句承接
+    （「永囚於它出生之處。穿過諸界之間的薄弱之點，它。將。再度。崛起！」），
+    保留原文一字一頓的斷法。
+
 ### 修正
 
 - **維基抓取時被丟掉的座標補回 61 條目標行。** 維基把座標寫成模板
