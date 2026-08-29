@@ -73,6 +73,21 @@ public final class FileIndex {
         return bundled();
     }
 
+    /**
+     * 只讀這個資料夾裡的清單，讀不到就回空清單。
+     *
+     * <p>與 {@link #forDirectory} 的差別在於<b>不套用任何退路</b>。
+     * {@link RemoteSync} 需要的是「遠端清單比內建清單多出哪些檔案」，
+     * 退回內建集合會讓它永遠看不到新增的譯文檔。
+     */
+    public static List<String> inDirectory(Path dir) {
+        Path local = dir.resolve("_index.json");
+        if (!Files.isRegularFile(local)) {
+            return List.of();
+        }
+        return read(() -> Files.newInputStream(local));
+    }
+
     private static List<String> read(StreamSource source) {
         List<String> names = new ArrayList<>();
         try (InputStream in = source.open()) {
