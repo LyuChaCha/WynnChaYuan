@@ -75,7 +75,7 @@ public final class SettingsScreen extends Screen {
     private static final int SHOW_ROWS = 6;
 
     /** 右欄「翻譯」用掉幾列。 */
-    private static final int TRANSLATE_ROWS = 9;
+    private static final int TRANSLATE_ROWS = 10;
 
     /**
      * 「資料」卡接在<b>左欄</b>底下，不是右欄。
@@ -153,33 +153,39 @@ public final class SettingsScreen extends Screen {
             b.setMessage(dialogueModeLabel());
         });
 
-        dialogueHoldBox = secondsBox(right, TOP + rowH() * 3,
+        // 選項是<b>另一條訊息、另一個框</b>，所以自己一列。見 CollectorConfig#choiceMode
+        row(right, TOP + rowH() * 3, this::choiceModeLabel, b -> {
+            WynnChaYuan.config().cycleChoiceMode();
+            b.setMessage(choiceModeLabel());
+        });
+
+        dialogueHoldBox = secondsBox(right, TOP + rowH() * 4,
                 WynnChaYuan.config().dialogueHoldMs());
         addRenderableWidget(Button.builder(Component.literal("套用"),
                 b -> applySeconds(false))
-                .bounds(right + COL_W - 42, TOP + rowH() * 3, 42, 20).build());
+                .bounds(right + COL_W - 42, TOP + rowH() * 4, 42, 20).build());
 
-        row(right, TOP + rowH() * 4, this::overlayLabel, b -> {
+        row(right, TOP + rowH() * 5, this::overlayLabel, b -> {
             WynnChaYuan.config().toggleOverlays();
             b.setMessage(overlayLabel());
         });
 
-        row(right, TOP + rowH() * 5, this::shotLabel, b -> {
+        row(right, TOP + rowH() * 6, this::shotLabel, b -> {
             WynnChaYuan.config().cycleShotMode();
             b.setMessage(shotLabel());
         });
 
-        row(right, TOP + rowH() * 6, this::chatModeLabel, b -> {
+        row(right, TOP + rowH() * 7, this::chatModeLabel, b -> {
             WynnChaYuan.config().cycleChatMode();
             b.setMessage(chatModeLabel());
         });
 
-        row(right, TOP + rowH() * 7, this::titleLabel, b -> {
+        row(right, TOP + rowH() * 8, this::titleLabel, b -> {
             WynnChaYuan.config().toggleTitles();
             b.setMessage(titleLabel());
         });
 
-        row(right, TOP + rowH() * 8, this::chatCopyLabel, b -> {
+        row(right, TOP + rowH() * 9, this::chatCopyLabel, b -> {
             WynnChaYuan.config().toggleChatCopy();
             b.setMessage(chatCopyLabel());
         });
@@ -281,6 +287,16 @@ public final class SettingsScreen extends Screen {
             case OFF -> "關閉";
         };
         return Component.literal("任務對話：" + name);
+    }
+
+    /** 對話<b>選項</b>那幾列，跟上面的內文分開管。 */
+    private Component choiceModeLabel() {
+        String name = switch (WynnChaYuan.config().choiceMode()) {
+            case PANEL -> "另開小框";
+            case REPLACE -> "就地取代";
+            case OFF -> "關閉";
+        };
+        return Component.literal("對話選項：" + name);
     }
 
     /** 聊天視窗裡的伺服器訊息。玩家發言不在範圍內，見 {@code ChatListener}。 */
@@ -463,12 +479,14 @@ public final class SettingsScreen extends Screen {
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 2 + hintDy(),
                 "對話框停留秒數（0 = 持續顯示）");
         Cards.hint(g, this.font, right + 4, TOP + rowH() * 3 + hintDy(),
+                "選項是另一個框，可以跟上面分開設");
+        Cards.hint(g, this.font, right + 4, TOP + rowH() * 4 + hintDy(),
                 "NPC 對話與任務追蹤的翻譯小框");
         // 撞鍵的話這一行就是唯一講得出實話的地方。見 PanelShot#conflict：
         // 實機回報預設的 F8 按下去沒反應，而原版按鍵畫面上那個紅色警告
         // 玩家多半不會特地去翻。
         String clash = com.wynnchayuan.render.PanelShot.conflict();
-        Cards.hint(g, this.font, right + 4, TOP + rowH() * 8 + hintDy(),
+        Cards.hint(g, this.font, right + 4, TOP + rowH() * 9 + hintDy(),
                 clash == null ? "按鍵到原版設定的 WynnChaYuan 區綁"
                               : "截圖鍵和「" + clash + "」撞在一起，請改綁");
 
