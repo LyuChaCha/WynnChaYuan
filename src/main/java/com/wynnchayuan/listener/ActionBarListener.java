@@ -64,7 +64,8 @@ public final class ActionBarListener {
         // 見 DialogueChoices 的說明（含實機錄到的字型分區）。
         java.util.List<String> picks =
                 com.wynnchayuan.capture.DialogueChoices.of(event.getMessage());
-        DialogueOverlay.noteChoices(picks);
+        DialogueOverlay.noteChoices(picks,
+                com.wynnchayuan.capture.DialogueChoices.selected(event.getMessage()));
         collect(picks);
     }
 
