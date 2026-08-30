@@ -388,7 +388,61 @@ def check_pair(path: str, key: str, src: str, dst: str,
                            "譯文裡有全形括號（）—— 一律用半形 ()，"
                            "全形的會多吃掉一個中文字的寬度，版面會對不齊"))
 
+    # 座標的佔位符編號要照<b>原文</b>的位置，不是照譯文的位置。
+    #
+    # {~1}…{~9} 指的是原文的第幾個值。中文語序會把座標搬到句子前面，
+    # 很容易就照譯文自己的順序編號——結果每個值都錯位：
+    #
+    #     Bring back [{~} Gudgeon Meat] found in the cave at [-{~}, {~}, -{~}]
+    #     到 [-{~1}, {~2}, -{~3}] 的洞窟釣到 [{~4} Gudgeon Meat]
+    #     ↓ 畫面上
+    #     到 [-10, 383, -31] 的洞窟釣到 [2100 Gudgeon Meat]
+    #
+    # 數量被座標吃掉，Z 座標變成了數量。
+    #
+    # 座標組的形狀夠特別（三個連續佔位符、逗號隔開、包在方括號裡），
+    # 所以「它在原文裡是第幾個」算得出來，可以精確比對，不必猜。
+    # 2026-08-30 一次找出 16 條。
+    want = _coord_slots(src)
+    if want is not None:
+        got_at, got_ids = _coord_slots(dst, with_ids=True)
+        if got_at is not None:
+            if all(got_ids):
+                used = tuple(int(i) for i in got_ids)
+                if used != want:
+                    out.append(Problem("error", path, key,
+                                       f"座標的佔位符編號接錯：原文的座標是第 "
+                                       f"{want[0]}、{want[1]}、{want[2]} 個值，"
+                                       f"譯文卻寫成 {{~{used[0]}}}、{{~{used[1]}}}、"
+                                       f"{{~{used[2]}}}。編號指的是<原文>的第幾個值"))
+            elif got_at != want:
+                out.append(Problem("error", path, key,
+                                   f"座標在譯文裡被搬到第 {got_at[0]} 個佔位符，"
+                                   f"但原文的座標是第 {want[0]} 個。"
+                                   f"沒有編號的佔位符是照出現順序取值的——"
+                                   f"換了位置就要寫成 {{~{want[0]}}}、"
+                                   f"{{~{want[1]}}}、{{~{want[2]}}}"))
+
     return out
+
+# 座標組：三個連續的佔位符、逗號隔開、包在方括號裡。負號可有可無。
+_COORD_GROUP = re.compile(
+        r"\[\s*-?\{~(\d?)\}\s*,\s*-?\{~(\d?)\}\s*,\s*-?\{~(\d?)\}\s*\]")
+_ANY_NUM = re.compile(r"\{~\d?\}")
+
+
+def _coord_slots(text: str, with_ids: bool = False):
+    """座標組佔的是第幾個數值佔位符（1 起算）。
+
+    <p>回傳 `(第幾, 第幾, 第幾)`；`with_ids` 為真時另外回傳它實際寫的編號
+    （沒編號就是空字串）。找不到座標組時回傳 `None`。
+    """
+    found = _COORD_GROUP.search(text)
+    if not found:
+        return (None, None) if with_ids else None
+    before = len(_ANY_NUM.findall(text[:found.start()]))
+    at = (before + 1, before + 2, before + 3)
+    return (at, found.groups()) if with_ids else at
 
 
 def is_generated(file: Path) -> bool:
