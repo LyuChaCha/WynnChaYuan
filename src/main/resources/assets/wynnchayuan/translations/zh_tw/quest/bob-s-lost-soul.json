@@ -3,7 +3,11 @@
   "quest": "Bob's Lost Soul",
   "count": 75,
   "translated": 75,
-  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
  },
  "entries": {
   "Bob's Lost Soul#000": {
@@ -288,7 +292,7 @@
   },
   "Bob's Lost Soul#028": {
    "src": "Bring [{~} Bob's Tear] from {p} and [{~} Rose] from the house in the {p} forest around [{~}, {~}, -{~}] to Wedyf",
-   "dst": "把 {p} 的 [{~} Bob's Tear] 和 {p} 森林裡 [{~}, {~}, -{~}] 附近那間屋子的 [{~} Rose] 帶去給 Wedyf",
+   "dst": "把 {p} 的 [{~1} Bob's Tear] 和 {p} 森林裡 [{~3}, {~4}, -{~5}] 附近那間屋子的 [{~2} Rose] 帶去給 Wedyf",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",

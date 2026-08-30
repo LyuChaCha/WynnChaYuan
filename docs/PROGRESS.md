@@ -7,29 +7,29 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 64.4%（17,668 / 27,445）
+## `zh_tw` 繁體中文 — 85.6%（23,789 / 27,777）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 288 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `npc.json` | ████░░░░░░ 38% | 214 / 556 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 99% | 863 / 872 | 選單與介面<br>Menus and interface text |
-| `quest.json` | ██████████ 96% | 69 / 72 | 任務名稱與任務介面<br>Quest names and the quest interface |
+| `npc.json` | █████░░░░░ 51% | 444 / 871 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `gui.json` | ██████████ 99% | 865 / 874 | 選單與介面<br>Menus and interface text |
+| `quest.json` | ████████░░ 79% | 69 / 87 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ██████████ 97% | 863 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ██████████ 100% | 322 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
-| `quest-dialogue.json` | ██████░░░░ 57% | 12,674 / 22,067 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | ████████░░ 84% | 18,563 / 22,067 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ██████████ 100% | 986 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `de_de` Deutsch — 0.0%（0 / 26,765）
+## `de_de` Deutsch — 0.0%（0 / 26,762）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ░░░░░░░░░░ 0% | 0 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `npc.json` | ░░░░░░░░░░ 0% | 0 / 220 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -41,12 +41,12 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 0.0%（0 / 26,765）
+## `es_es` Español — 0.0%（0 / 26,762）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ░░░░░░░░░░ 0% | 0 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `npc.json` | ░░░░░░░░░░ 0% | 0 / 220 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -58,12 +58,12 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `fr_fr` Français — 0.0%（0 / 26,765）
+## `fr_fr` Français — 0.0%（0 / 26,762）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ░░░░░░░░░░ 0% | 0 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `npc.json` | ░░░░░░░░░░ 0% | 0 / 220 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -75,12 +75,12 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 0.0%（0 / 26,765）
+## `ja_jp` 日本語 — 0.0%（0 / 26,762）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ░░░░░░░░░░ 0% | 0 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `npc.json` | ░░░░░░░░░░ 0% | 0 / 220 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -92,12 +92,12 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 0.0%（0 / 26,765）
+## `ko_kr` 한국어 — 0.0%（0 / 26,762）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ░░░░░░░░░░ 0% | 0 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `npc.json` | ░░░░░░░░░░ 0% | 0 / 220 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -109,12 +109,12 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 0.0%（0 / 26,765）
+## `ru_ru` Русский — 0.0%（0 / 26,762）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ░░░░░░░░░░ 0% | 0 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `npc.json` | ░░░░░░░░░░ 0% | 0 / 220 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -126,12 +126,12 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 0.0%（0 / 26,765）
+## `zh_cn` 简体中文 — 0.0%（0 / 26,762）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ░░░░░░░░░░ 0% | 0 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `npc.json` | ░░░░░░░░░░ 0% | 0 / 220 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |

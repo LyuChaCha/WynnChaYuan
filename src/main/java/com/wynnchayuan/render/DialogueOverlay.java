@@ -41,6 +41,20 @@ public final class DialogueOverlay {
     private static volatile List<Component> choices = List.of();
 
     /**
+     * 這一段對話的選項<b>原文</b>，由 {@link #noteChoices} 從原始 action bar 餵進來。
+     *
+     * <h2>為什麼要另外存一份</h2>
+     * 選項的文字<b>不在</b> Wynntils 的對話事件裡（那邊只有 NPC 那一句），
+     * 只在未經處理的 action bar 上。而 {@link #setCurrent} 是由對話事件驅動的，
+     * 兩邊是不同的事件、不同的時機——所以原始那一手先存下來，
+     * 等 setCurrent 跑的時候再一起翻。
+     *
+     * <p>實測選項<b>從第一幀就是完整的</b>（NPC 那句還在逐字打的時候就全在了），
+     * 所以這裡不會收到打到一半的選項。
+     */
+    private static volatile List<String> rawChoices = List.of();
+
+    /**
      * 現在是誰在說話。獨立存放，不再直接混進 {@link #current}。
      *
      * <p>就地取代要把名字畫在對話框上緣的名牌裡（像遊戲原本那樣），
@@ -83,6 +97,20 @@ public final class DialogueOverlay {
         needsShift = required;
     }
 
+    /**
+     * 記下這一段對話的選項原文。
+     *
+     * <p>由 {@link com.wynnchayuan.listener.ActionBarListener} 從<b>未經處理的</b>
+     * action bar 餵進來——選項只有在那一手資料裡才看得到，見
+     * {@link com.wynnchayuan.capture.DialogueChoices}。
+     *
+     * <p>空的清單也要收：對話從「有選項」換到「沒有選項」時，
+     * 得把上一段的選項清掉，否則會黏在畫面上。
+     */
+    public static void noteChoices(List<String> raw) {
+        rawChoices = raw == null ? List.of() : List.copyOf(raw);
+    }
+
     /** 對話內容變了就更新這裡；傳 null 或空的代表對話結束。 */
     public static void setCurrent(StyledText dialogue, TranslationStore store) {
         setCurrent(dialogue, store, false);
@@ -106,7 +134,18 @@ public final class DialogueOverlay {
             return;                            // 會拿上一段的結果去比對開頭
         }
         List<Component> lines = new ArrayList<>();
-        List<Component> options = new ArrayList<>();
+        // 選項不從這段文字裡分——它們根本不在這裡。
+        //
+        // 先前是靠 looksLikeChoice 找「1.」「[1]」那種號碼開頭的行，前提是選項
+        // 混在同一段文字裡、而且帶號碼。實機資料把兩個前提都推翻了：
+        // Wynntils 給的文字<b>只有 NPC 那一句</b>，而真正的選項
+        //（「Are you headed someplace?」）<b>一個號碼都沒有</b>。
+        // 所以那個判斷從來沒有成立過——這正是選項一直沒被翻譯的原因。
+        //
+        // 改成用 noteChoices 從原始 action bar 抽出來的那一份。
+        List<Component> options = translateChoices(store);
+        // any 只管<b>本文</b>有沒有翻出來。查不到的那幾行也會被擺進 lines，
+        // 全靠這個旗標攔著不顯示——把選項也算進來，英文原文就會漏上面板。
         boolean any = false;
         String said = null;
         String[] raws = dialogue.getString().split("\n");
@@ -115,7 +154,7 @@ public final class DialogueOverlay {
         for (int i = 0; i < raws.length; i++) {
             StyledText line = StyledText.fromString(raws[i]);
             String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
-            List<Component> target = hasChoices && looksLikeChoice(raws[i]) ? options : lines;
+            List<Component> target = lines;
 
             // 還在打字：這一行是我們已經認出的那句話的開頭，那就別再算一次。
             // 見 #settledSource 說明——重算才是閃爍的來源。
@@ -166,8 +205,10 @@ public final class DialogueOverlay {
         // 少了這個，畫面上沒東西時完全不知道卡在哪一步
         WynnChaYuan.store().noteEvent(any ? "dialogue.shown" : "dialogue.noMatch");
         current = any ? List.copyOf(lines) : List.of();
-        choices = any ? List.copyOf(options) : List.of();
-        if (any) {
+        // 選項獨立於本文：NPC 那句查不到的時候，選項照樣要能顯示——
+        // 玩家等一下就得從裡面挑一個。
+        choices = List.copyOf(options);
+        if (any || !options.isEmpty()) {
             lastUpdate = System.currentTimeMillis();
         }
     }
@@ -226,28 +267,28 @@ public final class DialogueOverlay {
     }
 
     /**
-     * 這一行是玩家可以選的回答嗎。
+     * 把 {@link #noteChoices} 收到的選項翻成中文。
      *
-     * <p>事件只給我們一整串文字，哪幾行是 NPC 說的、哪幾行是選項，從事件本身
-     * 看不出來——但遊戲要玩家按號碼，所以選項一定帶著號碼。認號碼就夠了。
+     * <p>每一個選項<b>各自查表</b>，不像 NPC 的台詞那樣整段併起來——它們是彼此
+     * 獨立的句子，併起來查一定查不到。
      *
-     * <p>認不出來的時候<b>不</b>硬分：整段照舊擺進對話框，跟先前一樣。
-     * 分錯堆比不分還糟，玩家會以為 NPC 在講他自己的台詞。
+     * <p>查不到的照原文擺著。選項是玩家等一下要按的東西，<b>少一個都不行</b>：
+     * 只翻出兩個、第三個整個消失，比三個都是英文糟得多。
      */
-    private static boolean looksLikeChoice(String raw) {
-        String text = StyledText.fromString(raw).getString().strip();
-        int i = 0;
-        while (i < text.length() && !Character.isLetterOrDigit(text.charAt(i))) {
-            i++;                               // 跳過前面的符號與位移字元
+    static List<Component> translateChoices(TranslationStore store) {
+        List<String> raw = rawChoices;
+        if (raw.isEmpty()) {
+            return List.of();
         }
-        if (i >= text.length() || !Character.isDigit(text.charAt(i))) {
-            return false;
+        List<Component> out = new ArrayList<>(raw.size());
+        for (String each : raw) {
+            StyledText line = StyledText.fromString(each);
+            Component hit = LineTranslator.translate(line, store);
+            // 查不到就擺原文——選項不能少，見上面的說明
+            out.addAll(Boxes.toLines(
+                    hit != null ? hit : LineTranslator.untranslated(line)));
         }
-        while (i < text.length() && Character.isDigit(text.charAt(i))) {
-            i++;
-        }
-        // 號碼後面得有個分隔（「1.」「[1]」「1)」），純數字開頭的句子不算
-        return i < text.length() && ".)]:-」".indexOf(text.charAt(i)) >= 0;
+        return List.copyOf(out);
     }
 
     private static String speakerFor(TranslationStore store, String template) {
@@ -268,6 +309,7 @@ public final class DialogueOverlay {
     public static void clear() {
         current = List.of();
         choices = List.of();
+        rawChoices = List.of();
         speaker = null;
         needsShift = false;
         settledFor = List.of();
@@ -282,6 +324,7 @@ public final class DialogueOverlay {
         if (lines.isEmpty() && options.isEmpty()) {
             return;
         }
+        // 兩種模式的選項都走 drawChoices，位置才會一致。
         // 停留時間到了之後淡出，而不是啪一聲不見。NPC 講下一句時
         // lastUpdate 會被推後，透明度自然回到全滿——換內容不會有淡出。
         float alpha = Fade.alphaFor(lastUpdate, WynnChaYuan.config().dialogueHoldMs());
@@ -297,7 +340,7 @@ public final class DialogueOverlay {
             //
             // 選項還是要畫：那是另一個框，改寫還沒處理到。
             if (!options.isEmpty()) {
-                drawInPlace(graphics, mc, List.of(), options, alpha);
+                drawChoices(graphics, mc, options, alpha);
             }
             return;
         }
@@ -397,6 +440,61 @@ public final class DialogueOverlay {
             }
         }
     }
+
+    /**
+     * 選項單獨畫一塊，貼在畫面<b>右側</b>。
+     *
+     * <h2>為什麼不跟本文擺在一起</h2>
+     * 先前選項是置中畫在對話框<b>正上方</b>的。就地取代模式底下 NPC 那句已經寫進
+     * 遊戲自己的框了，本文是空的，於是 {@code bodyH} 為 0——選項框正好落在對話框
+     * 的位置上，把它整個蓋掉（回報的畫面就是這樣）。
+     *
+     * <p>遊戲自己的選項清單在<b>右上角</b>。譯文貼到右邊，才是真的「出現在原文旁邊」，
+     * 兩邊可以對著看。
+     *
+     * <p>位置也接進了 {@code PositionScreen}：使用者拖過就用他拖的，
+     * 沒拖過就用右側這個預設錨點。
+     */
+    private static void drawChoices(GuiGraphics graphics, Minecraft mc,
+                                    List<Component> options, float alpha) {
+        int boxW = Math.max(MIN_CHOICE_W, Math.min(MAX_CHOICE_W,
+                graphics.guiWidth() / 4));
+        int inner = boxW - PADDING * 2 - 2;
+        int lineHeight = mc.font.lineHeight + 1;
+        List<FormattedCharSequence> picks = wrapAll(mc, options, inner);
+        if (picks.isEmpty()) {
+            return;
+        }
+        int boxH = picks.size() * lineHeight + PADDING * 2;
+
+        int x = graphics.guiWidth() - boxW - CHOICE_EDGE;
+        int y = graphics.guiHeight() / 5;
+        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.CHOICES)) {
+            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.CHOICES)
+                    - boxW / 2;
+            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.CHOICES)
+                    - boxH / 2;
+        }
+        // 拖到畫面外就拉回來，不然框會整個看不見
+        x = Math.max(2, Math.min(graphics.guiWidth() - boxW - 2, x));
+        y = Math.max(2, Math.min(graphics.guiHeight() - boxH - 2, y));
+
+        Boxes.draw(graphics, x, y, boxW, boxH, alpha);
+        int textY = y + PADDING;
+        for (FormattedCharSequence line : picks) {
+            graphics.drawString(mc.font, line, x + PADDING + 1, textY,
+                    Colors.fade(Colors.TEXT, alpha));
+            textY += lineHeight;
+        }
+    }
+
+    /** 選項框的寬度上下限。選項通常是短句，比對話框窄。 */
+    private static final int MIN_CHOICE_W = 120;
+
+    private static final int MAX_CHOICE_W = 260;
+
+    /** 選項框距畫面右緣的間距。 */
+    private static final int CHOICE_EDGE = 8;
 
     /** 把每一行折到框寬以內；樣式由 {@code font.split} 保留。 */
     private static List<FormattedCharSequence> wrapAll(Minecraft mc,

@@ -232,7 +232,7 @@ public final class CollectorConfig {
     private final java.util.EnumMap<Overlay, int[]> overlayPos = new java.util.EnumMap<>(Overlay.class);
 
     /** 可以自由擺位的四個框。 */
-    public enum Overlay { TOOLTIP, DIALOGUE, TRACKER, NAMETAG }
+    public enum Overlay { TOOLTIP, DIALOGUE, TRACKER, NAMETAG, CHOICES }
 
     public CollectorConfig(Path file) {
         this.file = file;

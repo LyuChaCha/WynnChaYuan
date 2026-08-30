@@ -3,7 +3,11 @@
   "quest": "The Scarred Springs",
   "count": 137,
   "translated": 137,
-  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
  },
  "entries": {
   "The Scarred Springs#000": {
@@ -538,7 +542,7 @@
   },
   "The Scarred Springs#053": {
    "src": "Collect {~} mushrooms and {~} leaf batches from the tea farm at [-{~}, {~}, -{~}].",
-   "dst": "從 [-{~}, {~}, -{~}] 的茶園採集 {~} 朵香菇與 {~} 批茶葉。",
+   "dst": "從 [-{~3}, {~4}, -{~5}] 的茶園採集 {~1} 朵香菇與 {~2} 批茶葉。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
