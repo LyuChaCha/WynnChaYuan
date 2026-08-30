@@ -293,7 +293,7 @@
   },
   "43558098d1be": {
    "src": "Shoots a stream of {~} arrows,\ndealing significant damage to close\nmobs and pushing them away.",
-   "dst": "",
+   "dst": "連續射出一串 {~} 跟箭矢的箭矢束，\n對近距離怪物造成大量傷害，\n同時擊退它們。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -381,7 +381,7 @@
   },
   "507fdfa488eb": {
    "src": "Forms a shield around you that slightly reduces\nthe damage you take. Being hit will consume one\ncharge of the shield. Enemies that get too close\nwill take damage and be knocked away. ({~} charges)",
-   "dst": "在你周圍形成護盾，稍微減少你\n受到的傷害。被擊中會消耗護盾\n的一層充能。靠得太近的敵人會\n受到傷害並被擊退。 ({~} 層充能)",
+   "dst": "用箭矢在你周圍形成護盾，稍微減少你\n受到的傷害。被擊中會消耗護盾\n的其中一根箭矢。同時離你太近的敵人會\n受到傷害並被擊退。 ({~} 根箭矢)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1476,7 +1476,7 @@
   },
   "21f77ed6408c": {
    "src": "Casting Arrow Storm will cause them to\nshoot {~}x faster while Arrow Storm is active",
-   "dst": "施放箭矢風暴會讓它們\n在箭矢風暴持續期間的\n射擊速度提高{~}倍。",
+   "dst": "施放 Arrow Storm 會讓它們在 Arrow Storm \n持續期間內射擊速度提高{~}倍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1745,7 +1745,7 @@
   },
   "07e8e45a2706": {
    "src": "Mana Trap",
-   "dst": "魔力地雷",
+   "dst": "魔力陷阱",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1799,7 +1799,7 @@
   },
   "eff870865ac2": {
    "src": "If you do not damage an enemy for\n{~}s or more, your next successful hit\nwill deal +{~} damage and add +{~} Focus {#}.",
-   "dst": "如果你在{~1}秒或更長時間內\n未對敵人造成傷害，\n你的下一個成功攻擊將造成額外{~2}傷害並增加{~3}層專注{#}。",
+   "dst": "如果你在 {~1} 秒或更長時間內\n未對敵人造成傷害，你的下一次攻擊\n將造成額外 {~2} 傷害並獲得額外 {~3} 層專注{#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2387,7 +2387,7 @@
   },
   "b5b52e0b929d": {
    "src": "Chilling Snare",
-   "dst": "冰冷陷阱",
+   "dst": "冰霜引線",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2400,7 +2400,7 @@
   },
   "e99186273105": {
    "src": "Attach an icy snare to Basaltic Trap,\ndrastically inhibiting and damaging nearby\nenemies every {~}s after it detonates.",
-   "dst": "為你的一顆地雷附加冰霜引線，\n使其在引爆後每{~}秒\n大幅緩速並傷害附近的敵人。",
+   "dst": "為你的一個陷阱附加冰霜引線，\n使其在引爆後每{~}秒\n大幅緩速並傷害附近的敵人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2484,7 +2484,7 @@
   },
   "aa1922e4c8f0": {
    "src": "If you have {~}+ Focus {#}, casting Arrow Storm\nwhile {~}+ blocks above the ground will cause\nyou to levitate and shoot {~} homing arrows\nper second until you run out of Focus {#}.",
-   "dst": "當你有{~1}層以上專注{#}，\n在離地{~2}格的高度施放箭矢風暴，\n你將進入浮空狀態，並每秒射出{~3}支追蹤箭\n，直至專注層數{#}耗盡。",
+   "dst": "若你有 {~1} 層以上專注 {#} ，\n在離地 {~2} 格的高度使用Arrow Storm，\n將讓你進入浮空狀態，並每秒射出 {~3} 支追蹤箭\n，直至專注 {#} 耗盡。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2499,7 +2499,7 @@
   },
   "f6881d9840cb": {
    "src": "While in this state, lose {~} Focus {#} every {~}s.",
-   "dst": "在此狀態下，你每{~1}秒失去{~2}層專注{#}。",
+   "dst": "在此狀態下，你每 {~2} 秒失去 {~1} 層專注 {#} 。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2596,7 +2596,7 @@
   },
   "64f3cfa09938": {
    "src": "Wild Light",
-   "dst": "",
+   "dst": "狂獵",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2609,7 +2609,7 @@
   },
   "ce35565ea2cc": {
    "src": "Increase your Main Attack's damage by +{~}\nfor every +{~} Walk Speed you gain from Frenzy.",
-   "dst": "",
+   "dst": "你每透過 Frenzy 獲得 {~2} 移動速度，\n就增加 {~1} Main Attack 傷害",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2624,7 +2624,7 @@
   },
   "cf660ea9d535": {
    "src": "Fimbulwinter",
-   "dst": "",
+   "dst": "刺骨寒風",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2637,7 +2637,7 @@
   },
   "db0e377189a8": {
    "src": "Enemies take additional damage after standing\ninside of Chilling Snare for {~}s.",
-   "dst": "",
+   "dst": "敵人在 Chilling Snare 範圍內停留 {~} 秒後，\n將受到額外傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2652,7 +2652,7 @@
   },
   "5826caa6f295": {
    "src": "Warding Wisps",
-   "dst": "",
+   "dst": "精靈的庇佑",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2665,7 +2665,7 @@
   },
   "38cb01c13d26": {
    "src": "When Arrow Shield loses a charge,\nsummon a Wisp that follows and\nprotects you. (Max {~})",
-   "dst": "",
+   "dst": "每當 Arrow Shield 數量減少，\n召喚一個跟隨並保護你的小精靈。(上限 {~} )",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2680,7 +2680,7 @@
   },
   "dabd4436cece": {
    "src": "Your Wisps can possess nearby\nenemies for {~}s, dealing damage\nevery {~}s and slowing them.",
-   "dst": "",
+   "dst": "精靈會附身附近的敵人 {~} 秒，\n每 {~} 秒造成傷害並使其減速。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2695,7 +2695,7 @@
   },
   "f4d4d78ddc87": {
    "src": "Shrieking Arrows",
-   "dst": "",
+   "dst": "磨利箭頭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2708,7 +2708,7 @@
   },
   "19c6286743d9": {
    "src": "Arrow Storm and Phantom Ray will deal additional damage.",
-   "dst": "",
+   "dst": "Arrow Storm 和 Phantom Ray 造成傷害增加。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2750,7 +2750,7 @@
   },
   "7c3902042284": {
    "src": "Overgrowth",
-   "dst": "",
+   "dst": "生長蔓延",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2763,7 +2763,7 @@
   },
   "12d6e36d2886": {
    "src": "Bryophyte Roots spreads further\nand deals damage {~} faster.",
-   "dst": "",
+   "dst": "Bryophyte Roots 範圍增加，\n且造成傷害的頻率增加 {~} 。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2778,7 +2778,7 @@
   },
   "239bae2e4486": {
    "src": "Quick Draw",
-   "dst": "",
+   "dst": "神槍手",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2791,7 +2791,7 @@
   },
   "5a21db8b3dba": {
    "src": "Not missing with Phantom Ray {~} times\nin a row will transform your next\nMain Attack into a Twain's Arc beam.",
-   "dst": "",
+   "dst": "連續命中 Phantom Ray {~} 次，\n會讓你的下一發 Main Attack 轉變成 Twain's Arc 的光束。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2806,7 +2806,7 @@
   },
   "7e8a90b01229": {
    "src": "Sniffer Dog",
-   "dst": "",
+   "dst": "嗅探狗狗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2819,7 +2819,7 @@
   },
   "b067393d4c03": {
    "src": "Your Hound has a {~} chance to\ndig up a Trap when attacking enemies.",
-   "dst": "",
+   "dst": "你的獵犬攻擊敵人時，\n有 {~} 機率挖到一個陷阱。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2834,7 +2834,7 @@
   },
   "c3d48707d414": {
    "src": "Repel",
-   "dst": "",
+   "dst": "保持距離",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2847,7 +2847,7 @@
   },
   "670f3e6b21ca": {
    "src": "Casting Arrow Shield will push back nearby\nenemies and provide a brief burst of resistance.",
-   "dst": "",
+   "dst": "使用 Arrow Shield 將擊退附近的敵人，\n並獲得短暫的抗性效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2862,7 +2862,7 @@
   },
   "5a0239ab4ff6": {
    "src": "Reduce this ability's cooldown by {~}s\nevery time Arrow Shield loses a charge.",
-   "dst": "",
+   "dst": "每次 Arrow Shield 的數量減少，\n都會降低該技能冷卻時間。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2877,7 +2877,7 @@
   },
   "31aa9ac3778d": {
    "src": "Pyrotechnics",
-   "dst": "",
+   "dst": "花火職人",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2890,7 +2890,7 @@
   },
   "825ef214e357": {
    "src": "Arrow Bomb and Grape Bomb\nbecome much hotter, increasing\nthe damage of their explosion.",
-   "dst": "",
+   "dst": "Arrow Bomb 和  Grape Bomb 變得更火熱，\n增加它們的爆炸傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2931,7 +2931,7 @@
   },
   "0c044844ceeb": {
    "src": "Canine Colleague",
-   "dst": "",
+   "dst": "狗狗同事",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2944,7 +2944,7 @@
   },
   "0e1dd124dfd0": {
    "src": "Increase your maximum Hounds by +{~}.",
-   "dst": "",
+   "dst": "你的獵犬數量上限增加 {~} 。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2959,7 +2959,7 @@
   },
   "32b4167a93aa": {
    "src": "Mael's Quiver",
-   "dst": "",
+   "dst": "Mael的箭袋",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2972,7 +2972,7 @@
   },
   "af3cdf1546ec": {
    "src": "Increase the damage of Crepuscular Ray.",
-   "dst": "",
+   "dst": "Crepuscular Ray 造成的傷害增加。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2987,7 +2987,7 @@
   },
   "10b0824e4190": {
    "src": "Repositioning",
-   "dst": "",
+   "dst": "打帶跑",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3000,7 +3000,7 @@
   },
   "01b20f74ab6c": {
    "src": "Gain a brief speed boost\nafter shooting Twain's Arc.",
-   "dst": "",
+   "dst": "發射 Twain's Arc 後，獲得短暫的速度提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3028,7 +3028,7 @@
   },
   "b4bdac886e2d": {
    "src": "Angelic Ascension",
-   "dst": "",
+   "dst": "戰爭天使",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3041,7 +3041,7 @@
   },
   "cb62cf59ebab": {
    "src": "Arrow Bomb will smite enemies it hits\ndirectly with a bolt from the heavens.",
-   "dst": "",
+   "dst": "Arrow Bomb 會召喚天降雷霆，\n重擊其直接命中的敵人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3056,7 +3056,7 @@
   },
   "dff94a47eccb": {
    "src": "Arrow Storm last {~} times longer\nand releases in a tighter spread",
-   "dst": "",
+   "dst": "Arrow Storm 持續時間增加 {~} 被，\n而且發射的箭矢變得更加集中。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3071,7 +3071,7 @@
   },
   "bb5259a14124": {
    "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap have no cooldown.",
-   "dst": "",
+   "dst": "召喚聖光之力，\n在 {~} 秒內強化你的攻擊，\n並移除 Leap 的冷卻時間。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3086,7 +3086,7 @@
   },
   "cdd4062e2ebd": {
    "src": "Guardian Angels will have unlimited ammunition\nand trigger Buckshot after firing {~} volleys.",
-   "dst": "",
+   "dst": " Guardian Angel 獲得無限彈藥，\n並在進行 {~} 輪射擊後觸發 Buckshot 。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3101,7 +3101,7 @@
   },
   "fc84866fa7de": {
    "src": "Main Attack will instead shoot Light Arrows\nthat deal {~} more damage over {~}s.",
-   "dst": "",
+   "dst": "Main Attack 改為發射光之箭，在 {~} 秒內造成 {~} 額外傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3129,7 +3129,7 @@
   },
   "66ad73b80573": {
    "src": "The Twilight Zone",
-   "dst": "",
+   "dst": "暮光森林",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3142,7 +3142,7 @@
   },
   "f68f89528b71": {
    "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#} stack on a target.",
-   "dst": "",
+   "dst": "屏氣凝神狀態結束時(或再次按下 F 提前結束)。\n向每個被標記的敵人發射法術傷害箭矢與普攻傷害箭矢。 \n根據目標身上的暮光 {#} 層數造成額外傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3157,7 +3157,7 @@
   },
   "c612af18dc38": {
    "src": "Enter a focused state for {~}s.",
-   "dst": "",
+   "dst": "進入屏氣凝神狀態 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3172,7 +3172,7 @@
   },
   "dfbac028295d": {
    "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#} every {~}s. (Max {~})",
-   "dst": "",
+   "dst": "在此狀態下，你的跳躍高度增加，受到的重力降低。\n且視野內的所有敵人每隔 {~} 秒\n會被標記上一層暮光 {#} 效果。（上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3213,7 +3213,7 @@
   },
   "00b4e636d3b0": {
    "src": "Extinction Event",
-   "dst": "",
+   "dst": "地毯式轟炸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3226,7 +3226,7 @@
   },
   "31133e315602": {
    "src": "Bombs will leave behind Basaltic Traps\nand occasionally Chilling Snares.",
-   "dst": "",
+   "dst": "丟下的炸彈會埋下 Basaltic Traps ，\n偶爾也會帶有 Chilling Snares 。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3241,7 +3241,7 @@
   },
   "5e574000d5f0": {
    "src": "Calls forth a flock of tactical crows\nwhich will perform a carpet bombing of\na large area in front of you.",
-   "dst": "",
+   "dst": "召喚一群戰鬥烏鴉，\n對你面前的大片區域進行地毯式轟炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
