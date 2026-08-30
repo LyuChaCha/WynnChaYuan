@@ -103,7 +103,22 @@ jar. Losing your connection means "not the newest", never "no translations".
 
 ### Progress, and helping out
 
-**479 / 10,226 (4.7%) — help is very welcome.**
+<!-- 進度:開始 -->
+更新於 2026-08-30。
+
+| 語言 | 進度 | 已翻 / 總數 |
+|---|---|---:|
+| `zh_tw` 繁體中文 | ██████░░░░ 58.9% | 16,172 / 27,445 |
+| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `zh_cn` 简体中文 | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+
+每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
+<!-- 進度:結束 -->
 
 Everything you see minute to minute is already done:
 
@@ -234,7 +249,22 @@ only to others running this mod.
 
 ### 目前進度與參與翻譯
 
-**479 / 10,226（4.7%）——非常歡迎幫忙。**
+<!-- 進度:開始 -->
+更新於 2026-08-30。
+
+| 語言 | 進度 | 已翻 / 總數 |
+|---|---|---:|
+| `zh_tw` 繁體中文 | ██████░░░░ 58.9% | 16,172 / 27,445 |
+| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+| `zh_cn` 简体中文 | ░░░░░░░░░░ 0.0% | 0 / 26,765 |
+
+每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
+<!-- 進度:結束 -->
 
 日常最常看到的部分已經翻完：
 
