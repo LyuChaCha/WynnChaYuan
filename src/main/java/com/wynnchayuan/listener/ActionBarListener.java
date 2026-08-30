@@ -60,6 +60,10 @@ public final class ActionBarListener {
         // 有選項的對話另外留格子錄——不然八格會被沒有選項的用光，
         // 而最需要看的偏偏是有選項的那一種。見 DialogueProbe#recordChoices。
         DialogueProbe.recordChoices(event.getMessage());
+        // 選項的文字只在這一手資料裡看得到——Wynntils 的對話事件只帶 NPC 那一句。
+        // 見 DialogueChoices 的說明（含實機錄到的字型分區）。
+        DialogueOverlay.noteChoices(
+                com.wynnchayuan.capture.DialogueChoices.of(event.getMessage()));
     }
 
     /**

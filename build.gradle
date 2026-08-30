@@ -217,6 +217,19 @@ tasks.register('runNameplateChecks', JavaExec) {
     classpath = sourceSets.test.runtimeClasspath
     mainClass = 'com.wynnchayuan.translate.NameplateLineTest'
 }
+// 先前只註冊沒接上 check——於是它從來沒在 build 裡跑過。
+tasks.named('check') { dependsOn 'runNameplateChecks' }
+
+// 對話選項：從原始 action bar 照字型抽出來，並照編號排。
+// 釘的是實機 probe 錄到的結構（送來的順序是 1、3、2，而且選項沒有號碼）。
+tasks.register('runChoiceChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證對話選項抽得出來、順序正確'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.DialogueChoicesTest'
+}
+tasks.named('check') { dependsOn 'runChoiceChecks' }
 
 tasks.register('runLabelReplaceChecks', JavaExec) {
     group = 'verification'
