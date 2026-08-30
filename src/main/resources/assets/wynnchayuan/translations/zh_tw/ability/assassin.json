@@ -18,7 +18,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/01/000/004",
-   "keep": "en",
    "ability": "Spin Attack",
    "code": "ASSASSIN-P1-R00-C04"
   },
@@ -46,7 +45,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/01/002/002",
-   "keep": "en",
    "ability": "Cheaper Spin Attack",
    "code": "ASSASSIN-P1-R02-C02"
   },
@@ -75,7 +73,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/01/002/004",
-   "keep": "en",
    "ability": "Dagger Proficiency I",
    "code": "ASSASSIN-P1-R02-C04"
   },
@@ -103,7 +100,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/01/004/004",
-   "keep": "en",
    "ability": "Double Spin",
    "code": "ASSASSIN-P1-R04-C04"
   },
@@ -131,7 +127,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/001/002",
-   "keep": "en",
    "ability": "Poisoned Blade",
    "code": "ASSASSIN-P2-R01-C02"
   },
@@ -174,7 +169,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/001/004",
-   "keep": "en",
    "ability": "Dash",
    "code": "ASSASSIN-P2-R01-C04"
   },
@@ -202,7 +196,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/001/006",
-   "keep": "en",
    "ability": "Double Slice",
    "code": "ASSASSIN-P2-R01-C06"
   },
@@ -230,7 +223,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/003/002",
-   "keep": "en",
    "ability": "Smoke Bomb",
    "code": "ASSASSIN-P2-R03-C02"
   },
@@ -258,7 +250,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/003/004",
-   "keep": "en",
    "ability": "Cheaper Dash",
    "code": "ASSASSIN-P2-R03-C04"
   },
@@ -287,7 +278,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/003/006",
-   "keep": "en",
    "ability": "Multihit",
    "code": "ASSASSIN-P2-R03-C06"
   },
@@ -328,7 +318,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/004/001",
-   "keep": "en",
    "ability": "Sticky Bomb",
    "code": "ASSASSIN-P2-R04-C01"
   },
@@ -356,7 +345,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/03/002/007",
-   "keep": "en",
    "ability": "Ripple",
    "code": "ASSASSIN-P3-R02-C07"
   },
@@ -399,7 +387,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/03/003/001",
-   "keep": "en",
    "ability": "Backstab",
    "code": "ASSASSIN-P3-R03-C01"
   },
@@ -427,7 +414,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/03/004/002",
-   "keep": "en",
    "ability": "Vanish",
    "code": "ASSASSIN-P3-R04-C02"
   },
@@ -468,7 +454,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/03/004/004",
-   "keep": "en",
    "ability": "Bamboozle",
    "code": "ASSASSIN-P3-R04-C04"
   },
@@ -496,7 +481,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/03/004/007",
-   "keep": "en",
    "ability": "Hop",
    "code": "ASSASSIN-P3-R04-C07"
   },
@@ -524,7 +508,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/001/002",
-   "keep": "en",
    "ability": "Surprise Strike",
    "code": "ASSASSIN-P4-R01-C02"
   },
@@ -536,6 +519,7 @@
    "ctx": [
     "assassin/Surprise Strike"
    ],
+   "lines": 2,
    "flat": "Your first hit after casting Vanish will deal +{~} more damage.",
    "_raw": "Your first hit after casting Vanish\nwill deal +80% more damage.",
    "tree": "03/assassin/04/001/002",
@@ -551,7 +535,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/001/004",
-   "keep": "en",
    "ability": "Mirror Image",
    "code": "ASSASSIN-P4-R01-C04"
   },
@@ -563,6 +546,7 @@
    "ctx": [
     "assassin/Mirror Image"
    ],
+   "lines": 2,
    "flat": "Summon {~} Mirror Clones {#} after reappearing from Vanish that will follow and protect you.",
    "_raw": "Summon 3 Mirror Clones  after reappearing\nfrom Vanish that will follow and protect you.",
    "tree": "03/assassin/04/001/004",
@@ -606,18 +590,18 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/001/007",
-   "keep": "en",
    "ability": "Lacerate",
    "code": "ASSASSIN-P4-R01-C07"
   },
   "b671e9ec7cc5": {
    "src": "Spin Attack will lunge you forward,\ndeal {~} strikes and then lunge you upward.",
+   "dst": "Spin Attack 會使你向前突進，攻擊 {~} 次後再向上突進。",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "assassin/Lacerate"
    ],
-   "dst": "Spin Attack 會使你向前突進，攻擊 {~} 次後再向上突進。",
+   "lines": 2,
    "flat": "Spin Attack will lunge you forward, deal {~} strikes and then lunge you upward.",
    "_raw": "Spin Attack will lunge you forward,\ndeal 3 strikes and then lunge you upward.",
    "tree": "03/assassin/04/001/007",
@@ -648,7 +632,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/002/001",
-   "keep": "en",
    "ability": "Silent Killer",
    "code": "ASSASSIN-P4-R02-C01"
   },
@@ -676,7 +659,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/002/005",
-   "keep": "en",
    "ability": "Foul Play",
    "code": "ASSASSIN-P4-R02-C05"
   },
@@ -721,7 +703,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/002/008",
-   "keep": "en",
    "ability": "Wall of Smoke",
    "code": "ASSASSIN-P4-R02-C08"
   },
@@ -749,7 +730,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/003/004",
-   "keep": "en",
    "ability": "Last Laugh",
    "code": "ASSASSIN-P4-R03-C04"
   },
@@ -792,7 +772,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/003/007",
-   "keep": "en",
    "ability": "Psithurism",
    "code": "ASSASSIN-P4-R03-C07"
   },
@@ -820,7 +799,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/004/000",
-   "keep": "en",
    "ability": "Rolling Fog",
    "code": "ASSASSIN-P4-R04-C00"
   },
@@ -848,7 +826,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/004/002",
-   "keep": "en",
    "ability": "Shadow Travel",
    "code": "ASSASSIN-P4-R04-C02"
   },
@@ -876,7 +853,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/004/005",
-   "keep": "en",
    "ability": "Cheaper Multihit",
    "code": "ASSASSIN-P4-R04-C05"
   },
@@ -889,7 +865,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/004/008",
-   "keep": "en",
    "ability": "Finality",
    "code": "ASSASSIN-P4-R04-C08"
   },
@@ -930,7 +905,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/005/001",
-   "keep": "en",
    "ability": "Shadow Siphon",
    "code": "ASSASSIN-P4-R05-C01"
   },
@@ -958,7 +932,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/005/004",
-   "keep": "en",
    "ability": "Mirage",
    "code": "ASSASSIN-P4-R05-C04"
   },
@@ -1001,7 +974,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/001/000",
-   "keep": "en",
    "ability": "Cheaper Smoke Bomb",
    "code": "ASSASSIN-P5-R01-C00"
   },
@@ -1030,7 +1002,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/001/003",
-   "keep": "en",
    "ability": "Blazing Powder",
    "code": "ASSASSIN-P5-R01-C03"
   },
@@ -1058,7 +1029,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/001/007",
-   "keep": "en",
    "ability": "Weightless",
    "code": "ASSASSIN-P5-R01-C07"
   },
@@ -1086,7 +1056,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/002/001",
-   "keep": "en",
    "ability": "Black Hole",
    "code": "ASSASSIN-P5-R02-C01"
   },
@@ -1114,7 +1083,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/002/004",
-   "keep": "en",
    "ability": "Sandbagging",
    "code": "ASSASSIN-P5-R02-C04"
   },
@@ -1142,7 +1110,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/002/006",
-   "keep": "en",
    "ability": "Mutilate",
    "code": "ASSASSIN-P5-R02-C06"
   },
@@ -1185,7 +1152,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/002/008",
-   "keep": "en",
    "ability": "Swan Dive",
    "code": "ASSASSIN-P5-R02-C08"
   },
@@ -1256,7 +1222,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/003/000",
-   "keep": "en",
    "ability": "Violent Vortex",
    "code": "ASSASSIN-P5-R03-C00"
   },
@@ -1284,7 +1249,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/003/003",
-   "keep": "en",
    "ability": "Duplicity",
    "code": "ASSASSIN-P5-R03-C03"
   },
@@ -1325,7 +1289,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/003/005",
-   "keep": "en",
    "ability": "Righting Reflex",
    "code": "ASSASSIN-P5-R03-C05"
   },
@@ -1353,7 +1316,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/004/001",
-   "keep": "en",
    "ability": "Marked",
    "code": "ASSASSIN-P5-R04-C01"
   },
@@ -1411,7 +1373,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/004/004",
-   "keep": "en",
    "ability": "Malicious Mockery",
    "code": "ASSASSIN-P5-R04-C04"
   },
@@ -1482,7 +1443,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/004/006",
-   "keep": "en",
    "ability": "Shurikens",
    "code": "ASSASSIN-P5-R04-C06"
   },
@@ -1538,7 +1498,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/004/008",
-   "keep": "en",
    "ability": "Blade Fury",
    "code": "ASSASSIN-P5-R04-C08"
   },
@@ -1579,7 +1538,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/005/003",
-   "keep": "en",
    "ability": "Hoodwink",
    "code": "ASSASSIN-P5-R05-C03"
   },
@@ -1622,7 +1580,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/005/007",
-   "keep": "en",
    "ability": "Dancing Blade",
    "code": "ASSASSIN-P5-R05-C07"
   },
@@ -1650,7 +1607,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/001/000",
-   "keep": "en",
    "ability": "Ambush",
    "code": "ASSASSIN-P6-R01-C00"
   },
@@ -1678,7 +1634,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/001/002",
-   "keep": "en",
    "ability": "Death Magnet",
    "code": "ASSASSIN-P6-R01-C02"
   },
@@ -1706,7 +1661,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/001/004",
-   "keep": "en",
    "ability": "Distraction",
    "code": "ASSASSIN-P6-R01-C04"
   },
@@ -1749,7 +1703,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/001/006",
-   "keep": "en",
    "ability": "Wall Jump",
    "code": "ASSASSIN-P6-R01-C06"
   },
@@ -1777,7 +1730,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/001/008",
-   "keep": "en",
    "ability": "Cheaper Dash II",
    "code": "ASSASSIN-P6-R01-C08"
   },
@@ -1790,7 +1742,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/002/005",
-   "keep": "en",
    "ability": "Misdirection",
    "code": "ASSASSIN-P6-R02-C05"
   },
@@ -1877,7 +1828,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/003/000",
-   "keep": "en",
    "ability": "Nightcloak Knives",
    "code": "ASSASSIN-P6-R03-C00"
   },
@@ -1920,7 +1870,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/003/002",
-   "keep": "en",
    "ability": "Cheaper Multihit II",
    "code": "ASSASSIN-P6-R03-C02"
   },
@@ -1933,7 +1882,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/003/004",
-   "keep": "en",
    "ability": "Shadow Projection",
    "code": "ASSASSIN-P6-R03-C04"
   },
@@ -1991,7 +1939,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/003/006",
-   "keep": "en",
    "ability": "Cheaper Spin Attack II",
    "code": "ASSASSIN-P6-R03-C06"
   },
@@ -2004,7 +1951,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/003/008",
-   "keep": "en",
    "ability": "Aerial Ace",
    "code": "ASSASSIN-P6-R03-C08"
   },
@@ -2032,7 +1978,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/004/001",
-   "keep": "en",
    "ability": "Fatal Spin",
    "code": "ASSASSIN-P6-R04-C01"
   },
@@ -2060,7 +2005,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/004/003",
-   "keep": "en",
    "ability": "Toxic Sludge",
    "code": "ASSASSIN-P6-R04-C03"
   },
@@ -2146,7 +2090,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/004/005",
-   "keep": "en",
    "ability": "Echo",
    "code": "ASSASSIN-P6-R04-C05"
   },
@@ -2174,7 +2117,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/004/007",
-   "keep": "en",
    "ability": "Eviscerate",
    "code": "ASSASSIN-P6-R04-C07"
   },
@@ -2202,7 +2144,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/005/000",
-   "keep": "en",
    "ability": "Bladestorm",
    "code": "ASSASSIN-P6-R05-C00"
   },
@@ -2230,7 +2171,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/005/002",
-   "keep": "en",
    "ability": "Dissolution",
    "code": "ASSASSIN-P6-R05-C02"
   },
@@ -2271,7 +2211,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/001/001",
-   "keep": "en",
    "ability": "Harvester",
    "code": "ASSASSIN-P7-R01-C01"
   },
@@ -2299,7 +2238,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/001/004",
-   "keep": "en",
    "ability": "Cheaper Smoke Bomb II",
    "code": "ASSASSIN-P7-R01-C04"
   },
@@ -2312,7 +2250,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/001/007",
-   "keep": "en",
    "ability": "Far Reach",
    "code": "ASSASSIN-P7-R01-C07"
   },
@@ -2340,7 +2277,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/002/002",
-   "keep": "en",
    "ability": "More Marks",
    "code": "ASSASSIN-P7-R02-C02"
   },
@@ -2368,7 +2304,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/002/005",
-   "keep": "en",
    "ability": "Deflagrate",
    "code": "ASSASSIN-P7-R02-C05"
   },
@@ -2452,7 +2387,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/002/008",
-   "keep": "en",
    "ability": "Ricochets",
    "code": "ASSASSIN-P7-R02-C08"
   },
@@ -2480,7 +2414,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/003/001",
-   "keep": "en",
    "ability": "Satsujin",
    "code": "ASSASSIN-P7-R03-C01"
   },
@@ -2523,7 +2456,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/003/004",
-   "keep": "en",
    "ability": "Noxious Haze",
    "code": "ASSASSIN-P7-R03-C04"
   },
@@ -2566,7 +2498,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/003/007",
-   "keep": "en",
    "ability": "Jasmine Bloom",
    "code": "ASSASSIN-P7-R03-C07"
   },
@@ -2622,7 +2553,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/004/003",
-   "keep": "en",
    "ability": "Soul Siphon",
    "code": "ASSASSIN-P7-R04-C03"
   },
@@ -2665,7 +2595,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/004/006",
-   "keep": "en",
    "ability": "Braced Impact",
    "code": "ASSASSIN-P7-R04-C06"
   },
@@ -2693,7 +2622,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/005/000",
-   "keep": "en",
    "ability": "Devour",
    "code": "ASSASSIN-P7-R05-C00"
   },
@@ -2721,7 +2649,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/005/002",
-   "keep": "en",
    "ability": "Marked for Death",
    "code": "ASSASSIN-P7-R05-C02"
   },
@@ -2749,7 +2676,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/001/001",
-   "keep": "en",
    "ability": "Thrill",
    "code": "ASSASSIN-P8-R01-C01"
   },
@@ -2777,7 +2703,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/001/004",
-   "keep": "en",
    "ability": "Doppelganger",
    "code": "ASSASSIN-P8-R01-C04"
   },
@@ -2805,7 +2730,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/001/008",
-   "keep": "en",
    "ability": "Celerity",
    "code": "ASSASSIN-P8-R01-C08"
   },
@@ -2848,7 +2772,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/002/003",
-   "keep": "en",
    "ability": "Shadow Dance",
    "code": "ASSASSIN-P8-R02-C03"
   },
@@ -2876,7 +2799,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/002/005",
-   "keep": "en",
    "ability": "Paranoia",
    "code": "ASSASSIN-P8-R02-C05"
   },
@@ -2904,7 +2826,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/002/007",
-   "keep": "en",
    "ability": "Petal Storm",
    "code": "ASSASSIN-P8-R02-C07"
   },
@@ -2945,7 +2866,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/003/000",
-   "keep": "en",
    "ability": "Billowing Death",
    "code": "ASSASSIN-P8-R03-C00"
   },
@@ -2973,7 +2893,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/003/002",
-   "keep": "en",
    "ability": "Looming Presence",
    "code": "ASSASSIN-P8-R03-C02"
   },
@@ -3001,7 +2920,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/003/004",
-   "keep": "en",
    "ability": "Disappearing Act",
    "code": "ASSASSIN-P8-R03-C04"
   },
@@ -3029,7 +2947,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/003/006",
-   "keep": "en",
    "ability": "Dextrous Hands",
    "code": "ASSASSIN-P8-R03-C06"
   },
@@ -3057,7 +2974,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/003/008",
-   "keep": "en",
    "ability": "Thermobaric Smoke",
    "code": "ASSASSIN-P8-R03-C08"
   },
@@ -3113,7 +3029,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/004/005",
-   "keep": "en",
    "ability": "Choke Bomb",
    "code": "ASSASSIN-P8-R04-C05"
   },
@@ -3156,7 +3071,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/09/002/001",
-   "keep": "en",
    "ability": "Pierce the Veil",
    "code": "ASSASSIN-P9-R02-C01"
   },
@@ -3199,7 +3113,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/09/002/007",
-   "keep": "en",
    "ability": "Serpent's Garden",
    "code": "ASSASSIN-P9-R02-C07"
   },
@@ -3242,7 +3155,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/09/003/004",
-   "keep": "en",
    "ability": "Another Self",
    "code": "ASSASSIN-P9-R03-C04"
   },
