@@ -63,6 +63,28 @@ public final class LabelColonTest {
                 java.util.Objects.equals(store.lookup("Perfect Recall"),
                         look("Perfect Recall", store, false)));
 
+        // --- 「名稱：說明」拆解時冒號不能先切掉 ---
+        //
+        // 語料裡這些標籤<b>只</b>收了帶冒號的形式（"Range:"、"Total Damage:"），
+        // 而先前拆解是切在冒號前面再查，於是只有同時也收了無冒號版的
+        // "Duration" 查得到，其餘一律落空——技能面板整行掉回英文。
+        //
+        // 這一條刻意用真正的語料：bug 的關鍵就是「語料裡收了哪一種形式」，
+        // 自己造一份假語料就把要驗的東西驗掉了。
+        for (String[] pair : new String[][] {
+                {"Range:", "施放範圍"}, {"Total Damage:", "總傷害"},
+                {"Duration:", "持續時間"}}) {
+            String got = LineTranslator.labelHead(glyph + " " + pair[0], store);
+            check("只收帶冒號版本的標籤也查得到：" + pair[0] + "（拿到：[" + got + "]）",
+                    got != null && got.contains(pair[1]));
+        }
+        // 反面：不認得的標籤不能硬翻
+        check("不認得的標籤還是 null",
+                LineTranslator.labelHead(glyph + " Nonexistent Label:", store) == null);
+        // 名稱自帶冒號時，接起來不能變成兩個冒號
+        String head = LineTranslator.labelHead(glyph + " Range:", store);
+        check("名稱自帶冒號（" + head + "）", head != null && head.endsWith(":"));
+
         System.out.println(failures == 0
                 ? "LabelColon: 全部通過" : "LabelColon: " + failures + " 項失敗");
         if (failures > 0) {
