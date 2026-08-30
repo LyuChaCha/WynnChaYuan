@@ -1,0 +1,38 @@
+{
+ "_meta": {
+  "note": "玩家在對話裡可以選的回答。這些不屬於任何一個任務——同一句「只是打個招呼。」到處都會出現，所以獨立成一個檔。",
+  "source": "由模組從原始 action bar 抽出來收集（見 DialogueChoices）。Wynntils 的對話事件裡沒有選項的文字。"
+ },
+ "entries": {
+  "choice#c000": {
+   "src": "Are you headed someplace?",
+   "dst": "你要去哪裡嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c001": {
+   "src": "What's life like here?",
+   "dst": "這裡的生活如何？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "choice#c002": {
+   "src": "Just saying hello.",
+   "dst": "只是打個招呼。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "choice",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  }
+ }
+}
