@@ -732,8 +732,13 @@ public final class LineTranslator {
         // translateWholeLine 走的是 realign，它本來就只保欄位的<b>起點</b>，
         // 沒有「右緣也對回去」那一步，所以不受 leftAligned 影響。
         Component whole = translateWholeLine(line, store, centered);
-        return unslant(whole != null ? whole
-                                     : translateSegments(line, store, centered, leftAligned));
+        if (whole != null) {
+            return unslant(whole);
+        }
+        // 多行標籤（怪物名牌）整塊查不到時，逐行查——見 translatePerLine。
+        Component perLine = translatePerLine(line, store, centered);
+        return unslant(perLine != null ? perLine
+                                       : translateSegments(line, store, centered, leftAligned));
     }
 
     /**
@@ -1733,6 +1738,64 @@ public final class LineTranslator {
         Component rebuilt = rebuild(translated, parts, store);
         if (rebuilt == null) {
             return null;
+        }
+        Component result = realign(line, rebuilt, centered);
+        LineDebug.record(line, result);
+        return result;
+    }
+
+    /**
+     * 多行標籤：整塊查不到時，逐行查。
+     *
+     * <h2>為什麼需要</h2>
+     * 怪物名牌是<b>單一個含換行的 StyledText</b>——名字、等級、血條全在同一個鍵裡
+     * （{@code "Sylphid Gatekeeper {#}{#}\n{#} {#} {#}"}）。於是同一隻怪只要多出
+     * 一行（血條、任務提示、{@code "to dock"}），就變成另一個鍵，得再翻一次。
+     * 玩家看到的是「這個角度有翻、那個角度沒翻」。
+     *
+     * <p>tooltip 沒有這個問題，因為它走 {@link #translateBlock}，那是吃<b>已經
+     * 分好行的 list</b>；名牌只有一個 StyledText，走不到那條路。
+     *
+     * <h2>為什麼接得回去</h2>
+     * 靠 {@link #rebuildAll} 既有的設計：<b>佔位符不是逐行對，而是整段照順序
+     * 取用</b>。查不到的那幾行原樣留著，佔位符的順序就沒有被打亂，接起來的
+     * 字串仍然對得上原文的碎片。
+     *
+     * <p>只在<b>有換行、而且至少一行查得到</b>時才回傳結果。單行進來立刻
+     * {@code null}，走原本的路——所以 tooltip 完全不受影響。
+     *
+     * @return 逐行填好的一行；沒有換行、或一行都查不到時回傳 {@code null}
+     */
+    private static Component translatePerLine(StyledText line, TranslationStore store,
+                                              boolean centered) {
+        LineParts parts = LineParts.of(line);
+        String template = parts.template();
+        if (template.indexOf(NEWLINE) < 0) {
+            return null;                       // 單行沒有「逐行」可言
+        }
+        String[] rows = template.split("\n", -1);
+        StringBuilder joined = new StringBuilder(template.length());
+        boolean any = false;
+        for (int i = 0; i < rows.length; i++) {
+            if (i > 0) {
+                joined.append(NEWLINE);
+            }
+            String row = rows[i];
+            // 純佔位符的行（血條就是 {#} {#} {#}）沒東西可查，直接留著。
+            String hit = GlyphSplitter.hasLetter(row) ? lookup(row, store) : null;
+            if (hit != null && !hit.isBlank()) {
+                joined.append(hit);
+                any = true;
+            } else {
+                joined.append(row);            // 查不到就留原文那一行
+            }
+        }
+        if (!any) {
+            return null;                       // 一行都沒命中，讓後面的路去試
+        }
+        Component rebuilt = rebuild(joined.toString(), parts, store);
+        if (rebuilt == null) {
+            return null;                       // 佔位符對不上就放棄，不硬塞
         }
         Component result = realign(line, rebuilt, centered);
         LineDebug.record(line, result);

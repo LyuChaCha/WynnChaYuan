@@ -210,6 +210,14 @@ tasks.register('runChatAlignChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChatAlignChecks' }
 
+// 多行名牌逐行回退：一個名字翻一次就該覆蓋所有變體，不必為每個變體各建一個鍵。
+tasks.register('runNameplateChecks', JavaExec) {
+    group = 'verification'
+    dependsOn 'testClasses'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NameplateLineTest'
+}
+
 tasks.register('runLabelReplaceChecks', JavaExec) {
     group = 'verification'
     description = '驗證漂浮名牌就地替換不會動到遊戲自己的版面'
