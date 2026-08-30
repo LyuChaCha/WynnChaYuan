@@ -205,6 +205,19 @@ NAMED = re.compile(
     # 死亡訊息：`PoorChaCha is six feet under`。句型是遊戲寫死的，
     # 名字一定在最前面，認句尾那一段最穩。
     r"|\sis six feet under"
+    # 公會／玩家名牌後面接等級：`YuChaYuan [Lv. 106]`。
+    r"|^(?:\{#\})*[A-Za-z][a-z0-9]*[a-z][A-Z][A-Za-z0-9]*\s\[Lv\."
+    # 名牌後面只接圖示：`ImagineKami {#}{#}`。
+    r"|^(?:\{#\})*[A-Za-z][a-z0-9]*[a-z][A-Z][A-Za-z0-9]*\s(?:\{#\})+$"
+    # 帳號名的數字會先被抽成佔位符，`FengLingYu_1234` 變成 `FengLingYu_{~}`，
+    # 剛好躲過下面那條「底線後面至少兩個字元」的規則。
+    r"|[A-Za-z]{2,}_\{~\}"
+    # 交易邀請一句夾兩個名字。
+    r"|would like to trade"
+    r"|/trade\s"
+    # 島嶼進出的廣播與分隔線。
+    r"|\sleft this island"
+    r"|'s Side"
     # 玩家名牌：`{#}PeeYan Hunter`——帳號名後面接職業。
     # 上面那條「整條就是一個帳號名」要求整條到底，接了職業就漏掉。
     r"|^(?:\{#\})*[A-Za-z][a-z0-9]*[a-z][A-Z][A-Za-z0-9]*\s"
