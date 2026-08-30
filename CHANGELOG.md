@@ -9,6 +9,34 @@
 > （見 v1.99.68），不需要重新下載模組。這一段持續累積，等下次有程式碼改動
 > 需要發 jar 時再一起併入該版本。
 
+### 修正
+
+- **Modrinth 自動發佈從來沒成功過，而且那個欄位裡填的是權杖不是專案 ID。**
+
+  <p>發 v1.99.75 之後去看工作流程，發現它失敗了——而且往回查，v1.99.74
+  也是同一個錯：
+
+  ```
+  ./gradlew: No such file or directory
+  ```
+
+  <p>這個倉庫<b>沒有 gradle wrapper</b>（沒有 `gradlew`、沒有 `gradle/wrapper/`），
+  一直都是直接用 `gradle`。所以那一步從一開始就不可能成功。改成先跑
+  `gradle/actions/setup-gradle` 再呼叫 `gradle`。
+
+  <p><b>更要緊的是另一件事。</b>`modrinth-id` 欄位填的值是 `mrp_` 開頭——
+  那是 Modrinth <b>個人存取權杖</b>的前綴，不是專案 ID（專案 ID 不帶前綴）。
+  而這個倉庫是公開的。
+
+  <p>已從檔案裡移除並換成待填的佔位符，但<b>git 紀錄裡還留著</b>——
+  移除檔案內容不等於撤銷。那個權杖必須到
+  <https://modrinth.com/settings/pats> 撤銷並重新產生，新的放進
+  `MODRINTH_TOKEN` secret；而 `modrinth-id` 要填的是專案 Settings 頁面上的
+  專案 ID。
+
+  <p>順帶一提，GitHub Release 本身沒有問題——jar 有正常附上去，
+  玩家從 GitHub 下載得到。壞掉的只有 Modrinth 那一段。
+
 ---
 
 ## [1.99.75] - 2026-08-30

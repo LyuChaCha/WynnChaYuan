@@ -41,13 +41,24 @@ jobs:
       - name: 取得 Wynntils
         run: bash tools/fetch-wynntils.sh
 
+      # 這個倉庫沒有 gradle wrapper（沒有 gradlew、沒有 gradle/wrapper/），
+      # 所以 ./gradlew 永遠是 "No such file or directory"，離開碼 127。
+      # 這一步從來沒成功過——v1.99.74 與 v1.99.75 都卡在這裡。
+      # 改用 setup-gradle 提供的 gradle。
+      - name: 準備 Gradle
+        uses: gradle/actions/setup-gradle@v4
+
       - name: 建置
-        run: ./gradlew build --no-daemon
+        run: gradle build --no-daemon
 
       - name: 上傳到 Modrinth
         uses: Kir-Antipov/mc-publish@v3.3
         with:
-          modrinth-id: mrp_iQuoPkDzVxwDbK1oLjNAPEuFPMCQQJzH7sCFU8LNYLD3UXUE1PmYXI2uVRU8
+          # ⚠ 這裡原本填的是 mrp_ 開頭的值——那是 Modrinth 個人存取權杖的前綴，
+          # 不是專案 ID（專案 ID 不帶前綴）。倉庫是公開的，所以那個權杖
+          # 已經外流，必須到 https://modrinth.com/settings/pats 撤銷重發。
+          # 專案 ID 在 Modrinth 專案的 Settings 頁面，填在這裡：
+          modrinth-id: TODO-專案ID
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           files: build/libs/!(*-sources).jar
           name: ${{ github.event.release.name }}
