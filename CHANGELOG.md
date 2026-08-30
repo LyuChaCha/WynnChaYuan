@@ -139,6 +139,36 @@
 
 ### 新增
 
+- **《Apotheosis》整篇翻完**（709 句）。任務進度來到 14899/22067（67.5%），
+  整體突破 **72.5%**。Fruma 線的終章：女王要淹掉整座紅杉林，Majin 死、
+  Zhiraok 叛出、Soosu 倒戈、Rex 斷臂、天空裂開。
+
+  <p><b>Sovereign Two 的語域是占卜，不是命令。</b>`the cards fall`、
+  `the shards collapse`、`this variable yet eludes me`、`equally favourable and not`
+  ——她不下命令，她<b>讀</b>。中文用「牌落下」「碎片崩解」「這個變數仍逃過我」
+  這種抽離的講法，句子留長、不急。她也是全篇唯一叫女王真名 `Anathema` 的人。
+
+  <p><b>Zhiraok 的數學語彙延續前一篇</b>：捨入誤差、除掉、失控的整數、
+  向量不再收斂、減去我對你的誓約。但他叛出的那一句
+  <b>反而沒有數學</b>——「如果榮譽該是這種感覺，那我不要了。」
+  那是他第一次用普通人的話講話，中文也照樣素著，不加修飾。
+
+  <p><b>Sui 的憤怒在這一篇轉向內。</b>她不再結巴在害怕上，而是結巴在自責上：
+  「又一次——又一次！！！——有人受傷是因為我不在那裡！！」原文大寫的字
+  全部落在她怪自己的地方，中文把重音放在同樣的位置。
+
+  <p>用語沿用 GLOSSARY 與前幾篇；新定 `rift`→裂隙、`the Weave`→織網、
+  `manaweaver`→織法者、`Resonance Weaver`→共鳴織機、`strand`→絲線、
+  `Scion`→後裔、`Bleeding Rose`／`Dusk Garden`→泣血薔薇／暮色花園
+  （比照 `Toxic Thistle`→劇毒薊 的筆名譯法），已一併補進 GLOSSARY。
+  `Anathema`／`Hyloch`／`Xao` 與那句拉丁文 `Purificatus non consumptus` 保留原文。
+
+  <p><b>回報：這個檔有十來條原文缺字。</b>例如
+  `So it would I cannot rely on my Sovereigns for anything!`（少了 seem）、
+  `Are you ? Oh, you must be.`、`Don't call me`、`But did it`。缺的位置
+  <b>看起來都是原本被單獨上色的詞</b>——這跟先前回報過的「顏色與收集」問題
+  是同一類。譯文照缺字的樣子譯成對應的中文殘句，等收集端補上之後才好對照。
+
 - **《Echoes of Change》整篇翻完**（725 句）。任務進度來到 14190/22067（64.3%）。
   這是 True Colours 的前傳：風中之葉與鋼羽合力刺殺女王的那一天。玩家跟著每一組
   跑完準備工作，然後看著它整個垮掉——Syndra 當眾被處決。
