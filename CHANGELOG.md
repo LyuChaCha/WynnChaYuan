@@ -11,6 +11,30 @@
 
 ### 修正
 
+- **`rebuild-quest-bundle` 的第二層阻礙：Actions 沒有開 PR 的權限。**
+
+  <p>上一則修好的是<b>推送</b>（`main` 是受保護分支，直接 `git push` 會 GH006）。
+  改成推分支之後推送確實成功了，但下一步立刻撞上另一道牆：
+
+  ```
+  pull request create failed: GraphQL: GitHub Actions is not permitted
+  to create or approve pull requests (createPullRequest)
+  ```
+
+  <p>這是<b>倉庫設定</b>擋的，不是程式問題。而分支其實<b>已經推上去了</b>，
+  產生物並沒有掉——只差有人開一個 PR。讓整個工作流程因此變紅燈，
+  等於重蹈上一次的覆轍：紅燈在別的地方，沒有人會把它跟「進度表很舊」連在一起。
+
+  <p>改成開不成 PR 時<b>不變紅燈</b>，而是把該怎麼處理寫進 GitHub 的
+  <b>執行摘要</b>——要勾的設定在哪（Settings → Actions → General →
+  Workflow permissions → Allow GitHub Actions to create and approve pull
+  requests），以及手動開 PR 的網址。摘要就印在那次執行的頁面上，
+  比一個沒有上下文的紅色叉叉有用。
+
+  <p>順手修掉一個會咬人的地方：摘要那幾行 `echo` 原本想用反引號把分支名
+  框成程式碼，但反引號在 bash 的雙引號裡是<b>命令替換</b>——
+  ``` `$BRANCH` ``` 會拿分支名去當指令執行。改用粗體。
+
 - **進度表全部重新產生，並修好「它為什麼一直沒更新」。**
 
   <p>README 上的進度停在 **33.0%（8,885）**，實際是 **57.8%（15,850）**；
