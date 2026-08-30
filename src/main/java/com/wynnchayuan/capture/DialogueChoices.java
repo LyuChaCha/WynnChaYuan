@@ -84,6 +84,50 @@ public final class DialogueChoices {
         return List.copyOf(out);
     }
 
+    /** 畫選項外框的字型。注意<b>沒有</b>底線——選項文字那個才有。 */
+    private static final String CHOICE_STYLE = "style/default/choice";
+
+    /** 一個樣式區塊的起始標記。實機資料裡每一列都是 [D0023][內容][CFF48]。 */
+    private static final String BLOCK_START = "\uD0023";
+
+    /** 選取游標。含這個字元的樣式區塊就是玩家目前選到的那一列。 */
+    private static final char CURSOR = '\uE080';
+
+    /**
+     * 玩家目前選到第幾個選項（1 起算）；認不出來時回傳 0。
+     *
+     * <h2>怎麼認出來的（實機資料，兩份 probe 交叉比對）</h2>
+     * {@code style/default/choice} 這個字型有三個區塊，一列一塊：
+     * <pre>
+     *   區塊1  &lt;U+CFFF5&gt;&lt;U+E080&gt; &lt;U+D0002&gt;&lt;U+E031&gt;&lt;U+D0002&gt;   ← 含 E080
+     *   區塊2  &lt;U+D0002&gt;&lt;U+E020&gt;&lt;U+D0002&gt;
+     *   區塊3  &lt;U+D0002&gt;&lt;U+E010&gt;&lt;U+D0002&gt;
+     * </pre>
+     * 另一份 probe 裡 {@code E080} 在<b>第三</b>塊，{@code E031} 也跟著跑到第三塊
+     * ——兩者一路綁在一起，而畫面上的 ▶ 就在含 {@code E080} 的那一列。
+     *
+     * <p><b>認不出來就回傳 0，呼叫端不標。</b>寧可沒有反白，
+     * 也不要標錯一列害玩家按錯。
+     */
+    public static int selected(Component message) {
+        if (message == null) {
+            return 0;
+        }
+        int[] state = {0, 0};                   // [目前第幾塊, 找到的那一塊]
+        message.visit((style, text) -> {
+            if (!fontOf(style).contains(CHOICE_STYLE) || text == null) {
+                return Optional.empty();
+            }
+            if (text.equals(BLOCK_START)) {
+                state[0]++;
+            } else if (text.indexOf(CURSOR) >= 0 && state[1] == 0) {
+                state[1] = state[0];
+            }
+            return Optional.empty();
+        }, Style.EMPTY);
+        return state[1];
+    }
+
     /** 從 {@code at} 開始讀一串數字；讀不到回傳 {@code null}。 */
     private static Integer numberAfter(String font, int at) {
         int stop = at;
