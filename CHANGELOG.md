@@ -139,6 +139,37 @@
 
 ### 新增
 
+- **《Ensemble of Hope》整篇翻完**（765 句）。任務進度來到 15664/22067（71.0%），
+  整體 **75.3%**。Apotheosis 之前的那一篇：四支隊伍、四個目標，
+  玩家自願被捕去拖住女王。
+
+  <p><b>Zhiraok 的數學髒話在這一篇玩了雙關。</b>
+  `And has anyone else got an excuse for being so obtuse?`——`obtuse` 同時是
+  「鈍角」與「遲鈍」。中文的「鈍」<b>剛好一樣兩用</b>，所以譯成
+  「還有誰有藉口這麼鈍的？」把雙關原樣保住。`You mindless monomial`
+  （沒腦子的單項式）、`Third time's the estimated solution`
+  （把 third time's the charm 改成「第三次就是估計解」）也照這個路子走。
+
+  <p><b>Bleeding Rose 那一大段是一口氣講完的。</b>她自己在中間說
+  「你打斷我我就講不下去了拜託在我講完之前閉嘴」——那段話<b>不換氣</b>
+  本身就是內容。中文保留那種一路衝到底的句式，不為了通順而斷句。
+
+  <p>Sovereign Two 的鏡界段落裡，`the Shade, the Neverending Night` 與
+  `the Dawn, the Piercing Radiance` 是一組對仗，中文也對仗：
+  幽影、永夜／曙光、刺目之輝。`Their balance` 的大寫 T 指那兩股力量，
+  中文寫「祂們」。Kaio 的鄉音（`y'all`、`ain't`、`s'done it time n' time again`）
+  用口語與老派語氣處理，不寫成標準書面語。
+
+  <p><b>回報：原文對同一個組織用了兩個名字。</b>
+  Apotheosis 裡是 `Blossoming Blades`，這一篇是 `Blossom of Blades`
+  （還簡稱 `the Blossom`）。那顯然是同一群人——中文<b>統一成「綻放之刃」</b>，
+  讀者不該為了原文的不一致而看到兩個組織名。已在 GLOSSARY 標記待確認。
+
+  <p>其餘新定：`Operation Godslayer`→弒神行動、`Fledgeling`→雛鳥、
+  `mirror realm`→鏡界、`the Dark's Claim`→黑暗的領地，
+  以及綻放之刃那幾個筆名（暴烈石楠、緋紅匕首、荊棘之刃、凋萎山茶），
+  照 `Toxic Thistle`→劇毒薊 的路子譯，一併補進 GLOSSARY。
+
 - **《Apotheosis》整篇翻完**（709 句）。任務進度來到 14899/22067（67.5%），
   整體突破 **72.5%**。Fruma 線的終章：女王要淹掉整座紅杉林，Majin 死、
   Zhiraok 叛出、Soosu 倒戈、Rex 斷臂、天空裂開。
