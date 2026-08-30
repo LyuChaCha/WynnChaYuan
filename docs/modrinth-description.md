@@ -6,7 +6,7 @@
 
 **Summary field (English, required by Modrinth):**
 
-> Wynncraft translation mod — shown beside the original text, not replacing it. Traditional Chinese now, seven languages open. Requires Wynntils.
+> Wynncraft translation mod — shown beside the original text, not replacing it. Traditional Chinese 98% done, seven more languages open. Requires Wynntils.
 
 ---
 
@@ -16,12 +16,14 @@
 |---|---|
 | **Item tooltips** | A translation panel beside the tooltip — or written into the tooltip itself, your choice |
 | **NPC dialogue** | Translated **inside Wynncraft's own dialogue box**, keeping its frame, nameplate and portrait |
+| **Dialogue choices** | Same three modes as the dialogue, set separately |
 | **NPC nameplates** | A small box under the crosshair while you look at one |
 | **Quest tracker** | A translated box on the left |
 | **Ability tree** | Every node, description and archetype |
+| **System chat and title text** | Quest completions, reward lists, and the big text in the middle of the screen |
 | **Screenshots** | `F9` captures the translation panel — copy to clipboard or save to a file |
 
-**Seven languages have a folder.** Traditional Chinese is ~30% done; Simplified
+**Seven languages have a folder.** Traditional Chinese is 98% done; Simplified
 Chinese, Japanese, Russian, Spanish, Korean, German and French are open and
 waiting for translators. A language with nothing in it is not shipped and does
 not appear in the language list.
@@ -101,6 +103,25 @@ immediately.
 Offline, it falls back to the last cached copy, then to the version bundled in the
 jar. Losing your connection means "not the newest", never "no translations".
 
+### Installing the mod helps finish it
+
+Quest dialogue and NPC names **have no official data source**. There is no file to
+scrape — somebody has to walk up to that NPC in game.
+
+So the mod can collect the lines it could not translate. Turn on **"收集未翻譯字串"
+/ Collect untranslated strings** in F6, play normally, and it writes them to
+`config/wynnchayuan/captured.json`. Attach that file to a
+[GitHub issue](https://github.com/LyuChaCha/WynnChaYuan/issues) and those lines
+become translatable for everyone.
+
+> **Please glance at the file before attaching it.** The mod filters out player
+> names, friend lists and coordinates, but Wynncraft has a lot of notification
+> formats and something may slip through. Delete any line with somebody's name in
+> it — and tell us, so the filter can be fixed.
+
+You do not have to translate anything to help. Just playing with collection on
+tells the project what players actually run into.
+
 ### Progress, and helping out
 
 <!-- 進度:開始 -->
@@ -124,14 +145,20 @@ Everything you see minute to minute is already done:
 
 | File | Progress |
 |---|---|
-| Item and UI labels | 205 / 205 ✅ |
-| Menus | 99 / 99 ✅ |
-| Wynntils UI | 31 / 31 ✅ |
-| NPC names | 62 / 221 |
-| Quests | 59 / 351 |
-| Ability descriptions | 6 / 1,240 |
-| Ingredients | 0 / 969 |
-| Gear lore | 0 / 6,379 |
+| Quest dialogue | 22,067 / 22,067 ✅ |
+| Item and UI labels | 288 / 288 ✅ |
+| Ability panel labels | 303 / 303 ✅ |
+| Major IDs | 325 / 325 ✅ |
+| Ingredients, materials, tomes, charms, aspects | all ✅ |
+| Ability trees (5 classes) | 1,250 / 1,251 |
+| Gear lore | 986 / 990 |
+| Menus | 866 / 875 |
+| Quest names | 221 / 336 |
+| NPC names | 512 / 1,039 |
+| Misc UI strings | 628 / 1,625 |
+
+**Gear names are deliberately left in English** (5,389 of them) — they are proper
+nouns, and the trade market, the wiki and other players all use them.
 
 **No programming needed.** The translation files are plain JSON — click the pencil
 icon on GitHub and type.
@@ -247,6 +274,25 @@ only to others running this mod.
 
 ---
 
+## 裝了模組就是在幫忙
+
+任務對話與 NPC 名稱**沒有官方資料可以抓**。沒有檔案可以爬，只能靠玩家在遊戲裡
+真的走到那個 NPC 面前。
+
+所以模組可以幫忙收集它翻不出來的句子。在 F6 打開**「收集未翻譯字串」**，照常玩，
+它會把那些句子記進 `config/wynnchayuan/captured.json`。玩一段時間後把這個檔
+[開 Issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 附上來，就變成大家
+共用的待翻條目。
+
+> **附上前請先看一眼。** 模組會過濾玩家名稱、好友名單與座標，但 Wynncraft 的
+> 通知格式很多，可能有漏網。看到別人的名字就刪掉那一條，順便回報一下，
+> 我們補過濾規則。
+
+**你不用翻任何東西也能幫上忙。** 光是開著收集玩，就等於告訴這個專案
+「玩家實際會遇到什麼」。
+
+---
+
 ### 目前進度與參與翻譯
 
 <!-- 進度:開始 -->
@@ -270,14 +316,20 @@ only to others running this mod.
 
 | 檔案 | 進度 |
 |---|---|
-| 物品介面標籤 | 205 / 205 ✅ |
-| 介面文字 | 99 / 99 ✅ |
-| Wynntils 介面 | 31 / 31 ✅ |
-| NPC 名稱 | 62 / 221 |
-| 任務 | 59 / 351 |
-| 技能說明 | 6 / 1,240 |
-| 素材 | 0 / 969 |
-| 裝備敘述 | 0 / 6,379 |
+| 任務對話 | 22,067 / 22,067 ✅ |
+| 物品與介面標籤 | 288 / 288 ✅ |
+| 技能面板標籤 | 303 / 303 ✅ |
+| Major ID | 325 / 325 ✅ |
+| 素材、材料、典籍、護符、意象 | 全部 ✅ |
+| 技能樹（五職業） | 1,250 / 1,251 |
+| 裝備背景敘述 | 986 / 990 |
+| 選單 | 866 / 875 |
+| 任務名稱 | 221 / 336 |
+| NPC 名稱 | 512 / 1,039 |
+| 雜項介面字串 | 628 / 1,625 |
+
+**裝備名稱刻意保留原文**（共 5,389 條）——那些是專有名詞，交易市場、wiki 與
+其他玩家用的都是英文。
 
 **不需要會寫程式。** 翻譯檔是純 JSON，在 GitHub 網頁上點鉛筆就能改。
 
