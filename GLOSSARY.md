@@ -198,6 +198,9 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 
 | 原文 | 譯文 | 備註 |
 |---|---|---|
+| War（公會戰系統） | 公會戰 | 公會之間爭奪領地的系統。一般語意的 war 仍譯「戰爭」；`War Scream` 是戰士技能「戰吼」，與此無關 |
+| Wars Won | 公會戰勝場數 | 個人資料上的統計行 |
+| Territory | 領地 | 公會戰爭奪的單位。既有語料已用此譯法 |
 | Decay | 黯蝕 | 指 Gavel 那場災厄。一般語意的腐朽／枯萎（`Decaying Heart`、`fallen into decay`）與機制上的層數衰減（`Distortion decays`）不適用 |
 | Corruption | 腐敗 | **未確定** |
 |  |  |
@@ -243,6 +246,44 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Wings division | 羽翼部隊 | 權限最高的那一支，憲兵屬於它 **(待討論)** |
 | Constable division | 警備部隊 | 權限高於地區部隊、低於羽翼部隊 **(待討論)** |
 | estoc | 刺劍 | Tericen 的木製訓練武器 |
+| the Subway | 地鐵 | Fruma 的地下運輸系統 |
+| Queen's Line | 女王線 | 地鐵的路線名 |
+| Industrial Sector Loop | 工業區環線 | 通勤用的那條，與女王線分開 |
+| carriage（列車） | 車廂 | 馬拉的 `carriage` 仍是「馬車」，兩者不同 |
+| attendant | 車勤員 | 列車上的服務人員 |
+| Ticket Collector | 驗票員 | |
+| Marshal | 元帥 | Majin 的軍職，在將軍之上 |
+| General | 將軍 | 每支部隊各有一位 |
+| Highlander | 高地人 | Highlands 的居民 |
+| Aelumia University | Aelumia 大學 | 分為秩序、水晶、繁花、星辰四個學院 |
+| Blossom House | 繁花學院 | 大學裡的學院，`House` 在此不是家族 |
+| Blossoming Blades | 綻放之刃 | 反抗組織，Cemor 所屬 **(待討論)** |
+| Toxic Thistle | 劇毒薊 | Cemor 的代號 **(待討論)** |
+| Penitence District | （保留原文） | 不在 places.json 裡，所以不會變成 {p}。其他區都在表上，這像是漏了 **(待確認)** |
+| Spymaster | 諜報總管 | 與陛下一起主持「那個計畫」的人 **(待討論)** |
+| charm | 符咒 | Nasin 家那枚讓 Zhiraok 復活的。與 `talisman`（護符）分開 **(待討論)** |
+| blaster | 爆能槍 | Yulie 的武器 |
+| Syndra the Lioness | 母獅 Syndra | 女王對她的稱呼 **(待討論)** |
+| rift | 裂隙 | 天空裂開的那道 |
+| the Weave | 織網 | 現實的織體本身 **(待討論)** |
+| manaweaver | 織法者 | Sui 是天生的 **(待討論)** |
+| Resonance Weaver | 共鳴織機 | Yusanu 造的裝置 **(待討論)** |
+| strand | 絲線 | 構成現實的線。Sui 說的「拉住絲線」 |
+| Scion | 後裔 | Sovereign Two 對 Tasim 的稱呼 **(待討論)** |
+| Bleeding Rose | 泣血薔薇 | 報社筆名，比照 `Toxic Thistle` **(待討論)** |
+| Dusk Garden | 暮色花園 | 同上 **(待討論)** |
+| grapple arrow | 抓鉤箭 | Rex 的 |
+| Blossom of Blades | 綻放之刃 | 原文另有 `Blossoming Blades` 的寫法，是同一個組織，中文統一 **(待確認)** |
+| Operation Godslayer | 弒神行動 | **(待討論)** |
+| Fledgeling | 雛鳥 | 樹冠對新成員的稱呼 |
+| mirror realm | 鏡界 | Sovereign Two 的鏡子裡 **(待討論)** |
+| the Shade | 幽影 | 與 `the Dawn` 對仗 **(待討論)** |
+| the Dawn | 曙光 | 與 `the Shade` 對仗 **(待討論)** |
+| the Dark's Claim | 黑暗的領地 | **(待討論)** |
+| Violent Heather | 暴烈石楠 | 綻放之刃的筆名 |
+| Crimson Dagger | 緋紅匕首 | 同上 |
+| Thorn Blade | 荊棘之刃 | 同上 |
+| Wilted Camellia | 凋萎山茶 | 同上 |
 **請注意，這裡每一個單字都待討論**
 
 ---

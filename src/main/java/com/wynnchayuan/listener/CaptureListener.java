@@ -120,6 +120,9 @@ public final class CaptureListener {
             return;      // 純符號的過場，沒有東西可翻
         }
         lastHadChoices = event.hasChoices();
+        // 選項的文字不在 Wynntils 的事件裡，只能從原始 action bar 找；
+        // 那條訊息在 ActionBarListener，所以用旗標串過去。
+        com.wynnchayuan.capture.DialogueProbe.noteHasChoices(lastHadChoices);
         DialogueOverlay.setShiftPrompt(event.requiresShift());
         // 顯示用的譯文吃完整原文（含符號），與收集用的模板是兩條路
         DialogueOverlay.setCurrent(styled, WynnChaYuan.translations(), lastHadChoices);

@@ -41,6 +41,9 @@ jobs:
           python tools/quest-index.py
           # 進度數字寫死在文件裡就會過期，新來的譯者會照著早就翻完的表去翻
           python tools/update-docs.py
+          # 校稿清單：哪些是 AI 翻的、還沒有人看過。標記改了要重產，
+          # 不然校完的還會留在待辦上，人會重複校同一個檔。
+          python tools/proofread.py
 
       # main 是受保護分支（要走 PR、要過 validate），直接 push 會被拒絕：
       #   remote: error: GH006: Protected branch update failed
