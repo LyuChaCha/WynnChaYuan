@@ -116,13 +116,25 @@ public final class DialogueChoicesTest {
         Style style = font("hud/dialogue/style/default/choice");
         MutableComponent out = Component.empty();
         for (int i = 1; i <= 3; i++) {
-            out.append(Component.literal("퀂3").withStyle(style));
+            out.append(Component.literal(cp(0xD0023)).withStyle(style));
             out.append(Component.literal(i == cursorAt
-                    ? "쿿5 퀀2퀀2"
-                    : "퀀2퀀2").withStyle(style));
-            out.append(Component.literal("쿴8").withStyle(style));
+                    ? cp(0xCFFF5) + " " + cp(0xD0002) + "" + cp(0xD0002)
+                    : cp(0xD0002) + "" + cp(0xD0002)).withStyle(style));
+            out.append(Component.literal(cp(0xCFF48)).withStyle(style));
         }
         return out;
+    }
+
+    /**
+     * 一個碼位的字串。
+     *
+     * <p><b>不用五位的 unicode 逃脫。</b>Java 只吃四位十六進位，
+     * 多一位就會被讀成「四位的逃脫」＋「一個字元」。實作端就是這樣壞掉的
+     * （見 {@code DialogueChoices.BLOCK_START}），而這份假資料也照抄了同一個錯，
+     * 於是測試綠燈但功能從來沒作用過。這裡一律從碼位產生。
+     */
+    private static String cp(int codePoint) {
+        return new String(Character.toChars(codePoint));
     }
 
     private static void show(String what, List<String> got) {

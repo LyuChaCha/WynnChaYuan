@@ -87,8 +87,20 @@ public final class DialogueChoices {
     /** 畫選項外框的字型。注意<b>沒有</b>底線——選項文字那個才有。 */
     private static final String CHOICE_STYLE = "style/default/choice";
 
-    /** 一個樣式區塊的起始標記。實機資料裡每一列都是 [D0023][內容][CFF48]。 */
-    private static final String BLOCK_START = "\uD0023";
+    /**
+     * 一個樣式區塊的起始標記。實機資料裡每一列都是 [D0023][內容][CFF48]。
+     *
+     * <p><b>不要用 unicode 逃脫寫這個常數。</b>Java 的逃脫<b>只吃四位</b>十六進位，
+     * 寫成五位會被讀成「前四位的逃脫」加上「最後那個字元」——
+     * 也就是 U+D002 後面接一個 3，跟遊戲送來的單一補充平面字元
+     * U+D0023 永遠不相等。選項反白因此從來沒亮過，而且<b>連測試都沒抓到</b>：
+     * 假資料照抄了同一個寫法，兩邊一起錯就比對得起來。
+     *
+     * <p>連<b>註解</b>都不能寫那個序列——Java 在詞法分析之前就會處理整份原始碼的
+     * 逃脫，註解裡的半個代理對一樣會編譯失敗。
+     */
+    private static final String BLOCK_START =
+            new String(Character.toChars(0xD0023));
 
     /** 選取游標。含這個字元的樣式區塊就是玩家目前選到的那一列。 */
     private static final char CURSOR = '\uE080';
