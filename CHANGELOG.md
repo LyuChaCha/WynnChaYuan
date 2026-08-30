@@ -9,7 +9,41 @@
 > （見 v1.99.68），不需要重新下載模組。這一段持續累積，等下次有程式碼改動
 > 需要發 jar 時再一起併入該版本。
 
+---
+
+## [1.99.76] - 2026-08-30
+
 ### 新增
+
+- **《The Feathers Fly Part I》整篇翻完**（210 句）。Corkus 線。Ava 想把 Avos
+  的自然魔法接上 Corkus 的電魔法，一路利用玩家：騙酋長講故事、替她進那間不賣
+  Avo 東西的店、幫她淹掉控制台，最後在部族面前示範失敗。
+
+  <p>Ava 整篇都在用縮讀（`Whatcha`、`'bout`、`li'l`、`y'know`），親暱得像朋友
+  ——可是<b>每一段結尾都在再拜託你做一件更過分的事</b>，還一直說
+  「我信任你。又一次。抱歉。」中文用「欸」「啦」「嘛」撐那份熟稔，
+  但沒有把她譯得可愛：她<b>知道</b>自己在利用人，那份自覺得留著。
+
+  <p>用語照既有語料：`Avos`、`Corkian` 保留原文（裝備 lore 已經這樣處理）、
+  `electromagic`→電魔法、`Enhanced Potential Microchip`→強化潛能微晶片、
+  `totem`→圖騰、`Growth Accelerator`→生長加速器。
+
+- **《The Price of Ingenuity》整篇翻完**（584 句）。Fruma 線。Rex 起疑跟蹤
+  Yusanu，揭開他與 Soosu 統領的私下協議，最後把共鳴織機偷了出來。
+
+  <p><b>中段那本童年日記是這一篇的重心。</b>從 `125 NA` 一路寫到 `45 IA`：
+  前半是小孩的口吻，成串驚嘆號、大寫亂用、自創詞
+  （`super ultra cow milker o-matic`）；`0 IA` 母親過世之後只剩一句
+  「I feel... strange.」，語氣<b>整個空掉</b>，之後全是空洞的短句。
+
+  <p>中文照這條線走：前段用疊字和「！！！」撐，後段句子變短、標點變乾。
+  <b>那個落差本身就是敘事</b>——把前段譯得太工整、或把後段譯得太有情緒，
+  這一篇就沒了。年份 `NA`／`IA` 保留原文。
+
+  <p>Zhiraok 的數學雙關再添兩個：`what the helix`（`helix` 當髒話用）
+  →「搞什麼螺旋」，`that's a tangent` 沿用《The Cursed One》的切線／離題。
+  Soosu 的魔像名（`Flowers`、`Sparkles`、`Glitter`）保留原文，
+  與《Apotheosis》一致。
 
 - **《The Cursed One》整篇翻完**（497 句）。任務進度來到 17068/22067（77.3%），
   整體 **80.6%**。Fruma 線的起點：玩家把「魔法人人可為」教給風中之葉，
