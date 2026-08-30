@@ -324,6 +324,7 @@ public final class DialogueOverlay {
         if (lines.isEmpty() && options.isEmpty()) {
             return;
         }
+        // 兩種模式的選項都走 drawChoices，位置才會一致。
         // 停留時間到了之後淡出，而不是啪一聲不見。NPC 講下一句時
         // lastUpdate 會被推後，透明度自然回到全滿——換內容不會有淡出。
         float alpha = Fade.alphaFor(lastUpdate, WynnChaYuan.config().dialogueHoldMs());
@@ -339,7 +340,7 @@ public final class DialogueOverlay {
             //
             // 選項還是要畫：那是另一個框，改寫還沒處理到。
             if (!options.isEmpty()) {
-                drawInPlace(graphics, mc, List.of(), options, alpha);
+                drawChoices(graphics, mc, options, alpha);
             }
             return;
         }
@@ -439,6 +440,61 @@ public final class DialogueOverlay {
             }
         }
     }
+
+    /**
+     * 選項單獨畫一塊，貼在畫面<b>右側</b>。
+     *
+     * <h2>為什麼不跟本文擺在一起</h2>
+     * 先前選項是置中畫在對話框<b>正上方</b>的。就地取代模式底下 NPC 那句已經寫進
+     * 遊戲自己的框了，本文是空的，於是 {@code bodyH} 為 0——選項框正好落在對話框
+     * 的位置上，把它整個蓋掉（回報的畫面就是這樣）。
+     *
+     * <p>遊戲自己的選項清單在<b>右上角</b>。譯文貼到右邊，才是真的「出現在原文旁邊」，
+     * 兩邊可以對著看。
+     *
+     * <p>位置也接進了 {@code PositionScreen}：使用者拖過就用他拖的，
+     * 沒拖過就用右側這個預設錨點。
+     */
+    private static void drawChoices(GuiGraphics graphics, Minecraft mc,
+                                    List<Component> options, float alpha) {
+        int boxW = Math.max(MIN_CHOICE_W, Math.min(MAX_CHOICE_W,
+                graphics.guiWidth() / 4));
+        int inner = boxW - PADDING * 2 - 2;
+        int lineHeight = mc.font.lineHeight + 1;
+        List<FormattedCharSequence> picks = wrapAll(mc, options, inner);
+        if (picks.isEmpty()) {
+            return;
+        }
+        int boxH = picks.size() * lineHeight + PADDING * 2;
+
+        int x = graphics.guiWidth() - boxW - CHOICE_EDGE;
+        int y = graphics.guiHeight() / 5;
+        if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.CHOICES)) {
+            x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.CHOICES)
+                    - boxW / 2;
+            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.CHOICES)
+                    - boxH / 2;
+        }
+        // 拖到畫面外就拉回來，不然框會整個看不見
+        x = Math.max(2, Math.min(graphics.guiWidth() - boxW - 2, x));
+        y = Math.max(2, Math.min(graphics.guiHeight() - boxH - 2, y));
+
+        Boxes.draw(graphics, x, y, boxW, boxH, alpha);
+        int textY = y + PADDING;
+        for (FormattedCharSequence line : picks) {
+            graphics.drawString(mc.font, line, x + PADDING + 1, textY,
+                    Colors.fade(Colors.TEXT, alpha));
+            textY += lineHeight;
+        }
+    }
+
+    /** 選項框的寬度上下限。選項通常是短句，比對話框窄。 */
+    private static final int MIN_CHOICE_W = 120;
+
+    private static final int MAX_CHOICE_W = 260;
+
+    /** 選項框距畫面右緣的間距。 */
+    private static final int CHOICE_EDGE = 8;
 
     /** 把每一行折到框寬以內；樣式由 {@code font.split} 保留。 */
     private static List<FormattedCharSequence> wrapAll(Minecraft mc,

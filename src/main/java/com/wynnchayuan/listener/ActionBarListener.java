@@ -62,8 +62,42 @@ public final class ActionBarListener {
         DialogueProbe.recordChoices(event.getMessage());
         // 選項的文字只在這一手資料裡看得到——Wynntils 的對話事件只帶 NPC 那一句。
         // 見 DialogueChoices 的說明（含實機錄到的字型分區）。
-        DialogueOverlay.noteChoices(
-                com.wynnchayuan.capture.DialogueChoices.of(event.getMessage()));
+        java.util.List<String> picks =
+                com.wynnchayuan.capture.DialogueChoices.of(event.getMessage());
+        DialogueOverlay.noteChoices(picks);
+        collect(picks);
+    }
+
+    /** 上一次收過的選項。action bar 每幀都發，不擋就會一直重複記。 */
+    private java.util.List<String> lastPicks = java.util.List.of();
+
+    /**
+     * 把選項收進語料。
+     *
+     * <h2>為什麼要另外收</h2>
+     * {@code CaptureListener#record} 記的是 Wynntils 給的對話文字，而那裡面
+     * <b>只有 NPC 那一句</b>。選項是我們自己從原始 action bar 抽出來的，
+     * 從來沒有進過收集流程——所以它們不會出現在 `captured.json`，
+     * 也就永遠不會有人翻。畫面上看得到、語料裡卻沒有，等於只做了一半。
+     */
+    private void collect(java.util.List<String> picks) {
+        if (picks.isEmpty() || picks.equals(lastPicks)
+                || !WynnChaYuan.config().collect()) {
+            return;
+        }
+        lastPicks = picks;
+        for (String pick : picks) {
+            if (com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(pick)) {
+                WynnChaYuan.store().noteEvent("dialogue.blocked.playerData");
+                continue;
+            }
+            com.wynntils.core.text.StyledText line =
+                    com.wynntils.core.text.StyledText.fromString(pick);
+            WynnChaYuan.store().record(
+                    com.wynnchayuan.capture.GlyphSplitter.toTemplate(line),
+                    "desc", "quest",
+                    com.wynnchayuan.capture.CurrentQuest.tag("dialogue/choice", null));
+        }
     }
 
     /**
