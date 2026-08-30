@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 89.2%（24,893 / 27,911）
+## `zh_tw` 繁體中文 — 91.3%（25,475 / 27,911）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -17,7 +17,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest.json` | ████████░░ 79% | 69 / 87 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ██████████ 97% | 863 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ██████████ 100% | 322 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
-| `quest-dialogue.json` | █████████░ 89% | 19,599 / 22,067 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | █████████░ 91% | 20,181 / 22,067 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |

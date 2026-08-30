@@ -2,13 +2,17 @@
  "_meta": {
   "quest": "The Missing Piece",
   "count": 582,
-  "translated": 0,
-  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+  "translated": 582,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
  },
  "entries": {
   "The Missing Piece#000": {
    "src": "Pick up your post in the Post Office at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 的郵局領取你的郵件。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -18,7 +22,7 @@
   },
   "The Missing Piece#001": {
    "src": "You've come to collect something?",
-   "dst": "",
+   "dst": "你是來領東西的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -28,7 +32,7 @@
   },
   "The Missing Piece#002": {
    "src": "Don't you see I'm busy!? Take a ticket and wait in line as you're supposed to! i don't care if no one else is here, follow protocol!",
-   "dst": "",
+   "dst": "沒看到我在忙嗎！？抽號碼牌然後乖乖排隊，跟大家一樣！我不管現在有沒有別人在，照規矩來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -38,7 +42,7 @@
   },
   "The Missing Piece#003": {
    "src": "Take a ticket from the Ticket Machine at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 的抽號機抽一張號碼牌。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -48,7 +52,7 @@
   },
   "The Missing Piece#004": {
    "src": "You have to take a ticket, just like everyone else!",
-   "dst": "",
+   "dst": "你得跟大家一樣抽號碼牌！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -58,7 +62,7 @@
   },
   "The Missing Piece#005": {
    "src": "Return to the Post Office at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, -{~}] 的郵局。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -68,7 +72,7 @@
   },
   "The Missing Piece#006": {
    "src": "Wait in line at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 排隊等候",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -78,7 +82,7 @@
   },
   "The Missing Piece#007": {
    "src": "Don't skip in line!",
-   "dst": "",
+   "dst": "不准插隊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -88,7 +92,7 @@
   },
   "The Missing Piece#008": {
    "src": "I'll be with you in one second! Gosh, so impatient these days...",
-   "dst": "",
+   "dst": "我馬上就來！唉，現在的人怎麼都這麼沒耐性……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -98,7 +102,7 @@
   },
   "The Missing Piece#009": {
    "src": "Tired of waiting already? Well, someone decided to leave this place a mess for when I returned!",
-   "dst": "",
+   "dst": "這就等不下去了？還不是因為有人趁我不在，把這裡搞得一團亂等我回來收拾！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -108,7 +112,7 @@
   },
   "The Missing Piece#010": {
    "src": "I come back to the office yesterday from a well-deserved, brief, eighteen week, vacation. And this is how I'm thanked?!",
-   "dst": "",
+   "dst": "我昨天才剛從我應得的、短短十八週的假期回到局裡。結果我得到的是什麼？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -118,7 +122,7 @@
   },
   "The Missing Piece#011": {
    "src": "Do you see the mess my substitute left this place in? And now I have to clean it up, or the Royal Inspector will have my head!",
-   "dst": "",
+   "dst": "你看看我那個代班的把這裡弄成什麼樣子？現在還得我來收拾，不然皇家督察會要我的腦袋！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -128,7 +132,7 @@
   },
   "The Missing Piece#012": {
    "src": "I'll have you know I graduated with honours from the Royal University of Aelumia.",
-   "dst": "",
+   "dst": "我可要告訴你，我是 Aelumia 皇家大學以優異成績畢業的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -138,7 +142,7 @@
   },
   "The Missing Piece#013": {
    "src": "Frankly, it's demeaning they stuck me out here with the... ugh... peasants! Oh, and don't even get me started on the smell!",
-   "dst": "",
+   "dst": "老實說，把我丟到這種地方，跟……唉……這些鄉巴佬混在一起，實在太貶低我了！還有那個味道，別逼我開口！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -148,7 +152,7 @@
   },
   "The Missing Piece#014": {
    "src": "But anyway, that is all besides the point. What did you want again?",
-   "dst": "",
+   "dst": "算了，這都不是重點。你剛剛到底要幹嘛？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -158,7 +162,7 @@
   },
   "The Missing Piece#015": {
    "src": "It's you! You're the one I left in charge over my vacation, you scoundrel!",
-   "dst": "",
+   "dst": "是你！我放假時就是把這裡交給你的，你這個混帳！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -168,7 +172,7 @@
   },
   "The Missing Piece#016": {
    "src": "I knew it! A university graduate like me couldn't possibly be wrong!",
-   "dst": "",
+   "dst": "我就知道！像我這種大學畢業生怎麼可能會弄錯！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -178,7 +182,7 @@
   },
   "The Missing Piece#017": {
    "src": "Don't try to weasel your way out of it! A university graduate like me couldn't possibly be wrong!",
-   "dst": "",
+   "dst": "別想給我打混過去！像我這種大學畢業生怎麼可能會弄錯！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -188,7 +192,7 @@
   },
   "The Missing Piece#018": {
    "src": "But thinking about it...",
-   "dst": "",
+   "dst": "不過話說回來……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -198,7 +202,7 @@
   },
   "The Missing Piece#019": {
    "src": "I have a proposal.",
-   "dst": "",
+   "dst": "我有個提議。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -208,7 +212,7 @@
   },
   "The Missing Piece#020": {
    "src": "It's not just me who's going to be in trouble when the inspection comes, surely you realize that?",
-   "dst": "",
+   "dst": "督察來查的時候有麻煩的可不只我一個，這你總該明白吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -218,7 +222,7 @@
   },
   "The Missing Piece#021": {
    "src": "But...",
-   "dst": "",
+   "dst": "但是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -228,7 +232,7 @@
   },
   "The Missing Piece#022": {
    "src": "If you fix this mess you made... Then no one ever has to hear a word of what happened.",
-   "dst": "",
+   "dst": "如果你把你捅出來的簍子收拾乾淨……那這件事就沒人會知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -238,7 +242,7 @@
   },
   "The Missing Piece#023": {
    "src": "You don't get in trouble, the Royal Inspector is happy, I'm happy. Everyone is happy!",
-   "dst": "",
+   "dst": "你不用惹麻煩，皇家督察開心，我也開心。大家都開心！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -248,7 +252,7 @@
   },
   "The Missing Piece#024": {
    "src": "How's that sound?",
-   "dst": "",
+   "dst": "你覺得怎麼樣？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -258,7 +262,7 @@
   },
   "The Missing Piece#025": {
    "src": "Great!",
-   "dst": "",
+   "dst": "太好了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -268,7 +272,7 @@
   },
   "The Missing Piece#026": {
    "src": "Then I'll have you sorting post like your life depends on it, scoundrel!",
-   "dst": "",
+   "dst": "那就給我去分信，分得像你這條命靠它一樣，混帳！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -278,7 +282,7 @@
   },
   "The Missing Piece#027": {
    "src": "Because it does.",
-   "dst": "",
+   "dst": "因為你這條命真的靠它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -288,7 +292,7 @@
   },
   "The Missing Piece#028": {
    "src": "Follow me!",
-   "dst": "",
+   "dst": "跟我來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -298,7 +302,7 @@
   },
   "The Missing Piece#029": {
    "src": "Follow the Postmaster to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟著郵政局長到 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -308,7 +312,7 @@
   },
   "The Missing Piece#030": {
    "src": "Sorting is so easy even someone like you should be able to do it.",
-   "dst": "",
+   "dst": "分信簡單得很，連你這種人應該都會。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -318,7 +322,7 @@
   },
   "The Missing Piece#031": {
    "src": "All you do is take the packages from the conveyor over there.",
-   "dst": "",
+   "dst": "你只要把包裹從那邊的輸送帶上拿下來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -328,7 +332,7 @@
   },
   "The Missing Piece#032": {
    "src": "And put them where they're supposed to go over there.",
-   "dst": "",
+   "dst": "然後放到那邊它們該去的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -338,7 +342,7 @@
   },
   "The Missing Piece#033": {
    "src": "{p} packages to the {p}, Auburn packages to the {p}, and so on.",
-   "dst": "",
+   "dst": "{p}的包裹放{p}，Auburn 的包裹放{p}，依此類推。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -348,7 +352,7 @@
   },
   "The Missing Piece#034": {
    "src": "Got it?",
-   "dst": "",
+   "dst": "懂了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -358,7 +362,7 @@
   },
   "The Missing Piece#035": {
    "src": "Fantastic! Just don't make a mess of it, okay?",
-   "dst": "",
+   "dst": "好極了！別給我搞砸就行，聽到沒？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -368,7 +372,7 @@
   },
   "The Missing Piece#036": {
    "src": "I'm turning on the conveyor!",
-   "dst": "",
+   "dst": "我要開輸送帶了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -378,7 +382,7 @@
   },
   "The Missing Piece#037": {
    "src": "Sort the post!",
-   "dst": "",
+   "dst": "把郵件分好！",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -388,7 +392,7 @@
   },
   "The Missing Piece#038": {
    "src": "Oh, you actually did it...",
-   "dst": "",
+   "dst": "喔，你居然真的做到了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -398,7 +402,7 @@
   },
   "The Missing Piece#039": {
    "src": "Well, that was just the warmup! There's more to come, so don't go slacking off now!",
-   "dst": "",
+   "dst": "不過那只是暖身而已！後面還多著呢，別給我摸魚！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -408,7 +412,7 @@
   },
   "The Missing Piece#040": {
    "src": "Hmm... You did fine this time, but watch out, because these last packages come fast!",
-   "dst": "",
+   "dst": "嗯……這次你做得還行，不過小心點，最後這批包裹來得很快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -418,7 +422,7 @@
   },
   "The Missing Piece#041": {
    "src": "Don't think you're somebody just because you can sort some packages!",
-   "dst": "",
+   "dst": "別以為會分幾個包裹就了不起了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -428,7 +432,7 @@
   },
   "The Missing Piece#042": {
    "src": "What are you doing over there!?",
-   "dst": "",
+   "dst": "你在那邊幹什麼！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -438,7 +442,7 @@
   },
   "The Missing Piece#043": {
    "src": "Agh! Try again, but you better do it right this time!",
-   "dst": "",
+   "dst": "唉！重來一次，這次給我做對！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -448,7 +452,7 @@
   },
   "The Missing Piece#044": {
    "src": "Agh! Try again, but you better do it right this time!",
-   "dst": "",
+   "dst": "唉！重來一次，這次給我做對！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -458,7 +462,7 @@
   },
   "The Missing Piece#045": {
    "src": "Don't bother me while I'm working! I didn't go to university just to slack off with people like you!",
-   "dst": "",
+   "dst": "我在工作的時候別來煩我！我上大學可不是為了跟你這種人鬼混！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -468,7 +472,7 @@
   },
   "The Missing Piece#046": {
    "src": "Listen to the Postmaster's instructions.",
-   "dst": "",
+   "dst": "聽郵政局長交代。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -478,7 +482,7 @@
   },
   "The Missing Piece#047": {
    "src": "Ah, perfect! You sorted the packages!",
-   "dst": "",
+   "dst": "啊，太好了！你把包裹都分好了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -488,7 +492,7 @@
   },
   "The Missing Piece#048": {
    "src": "But wait, what's this then? Why are there so many packages to the {p}?",
-   "dst": "",
+   "dst": "等等，這是什麼？為什麼有這麼多包裹要寄到{p}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -498,7 +502,7 @@
   },
   "The Missing Piece#049": {
    "src": "Did you mess up the sorting, you fool!?",
-   "dst": "",
+   "dst": "你是不是分錯了，你這個蠢貨！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -508,7 +512,7 @@
   },
   "The Missing Piece#050": {
    "src": "What's up with these packages! They're filled with letters?",
-   "dst": "",
+   "dst": "這些包裹是怎麼回事！裡面裝的全是信？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -518,7 +522,7 @@
   },
   "The Missing Piece#051": {
    "src": "Hmph... all of them to the woman on the hill... Whatever that means!",
-   "dst": "",
+   "dst": "哼……全都寄給山丘上那個女人……天曉得那是什麼意思！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -528,7 +532,7 @@
   },
   "The Missing Piece#052": {
    "src": "Hey you, scoundrel. This is part of your duty too, you know!",
-   "dst": "",
+   "dst": "喂，混帳。這也是你的職責，你知道吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -538,7 +542,7 @@
   },
   "The Missing Piece#053": {
    "src": "Go deliver these letters! Or... or I'll tell the Royal Inspector about what you did! That's right, don't mess with me!",
-   "dst": "",
+   "dst": "去把這些信送掉！不然……不然我就跟皇家督察講你幹的好事！沒錯，別跟我作對！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -548,7 +552,7 @@
   },
   "The Missing Piece#054": {
    "src": "How should I know! That's your job to figure out. See, it says here 'to the woman on the hill', that should be enough shouldn't it?",
-   "dst": "",
+   "dst": "我哪知道！那是你的工作，自己想辦法。你看，上面寫著「給山丘上的女人」，這樣還不夠嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -558,7 +562,7 @@
   },
   "The Missing Piece#055": {
    "src": "Oh, but you are! I have very many friends, in very high places! Met them in university, makes sure to remember that!",
-   "dst": "",
+   "dst": "喔，你當然惹得起！我朋友多得很，而且個個位高權重！大學認識的，你給我記牢了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -568,7 +572,7 @@
   },
   "The Missing Piece#056": {
    "src": "Great! Now with that settled I can finally go back to my very important work.",
-   "dst": "",
+   "dst": "太好了！這件事解決了，我終於可以回去做我非常重要的工作了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -578,7 +582,7 @@
   },
   "The Missing Piece#057": {
    "src": "Oh, yes. Very important. University graduate, did I mention that?",
-   "dst": "",
+   "dst": "喔，對，非常重要。大學畢業生，我有提過嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -588,7 +592,7 @@
   },
   "The Missing Piece#058": {
    "src": "Now now, off you go. And don't come back crying if you can't find this mysterious woman!",
-   "dst": "",
+   "dst": "好了好了，快去。要是找不到那個神祕女人，別哭著回來找我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -598,7 +602,7 @@
   },
   "The Missing Piece#059": {
    "src": "But if you lose the letter I can always give you another, they seem to be practically infinite anyhow!",
-   "dst": "",
+   "dst": "不過信要是弄丟了我還能再給你一封，那東西好像多到用不完！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -608,7 +612,7 @@
   },
   "The Missing Piece#060": {
    "src": "Find out about the woman on the hill around [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 附近打聽山丘上的女人。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -618,7 +622,7 @@
   },
   "The Missing Piece#061": {
    "src": "Are you trying to slack off? You still have the letter on you, go deliver it!",
-   "dst": "",
+   "dst": "你是想摸魚嗎？信還在你身上，快去送！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -628,7 +632,7 @@
   },
   "The Missing Piece#062": {
    "src": "Can't you see I'm busy!?",
-   "dst": "",
+   "dst": "沒看到我在忙嗎！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -638,7 +642,7 @@
   },
   "The Missing Piece#063": {
    "src": "Hmm, you lost the letter? Already!?",
-   "dst": "",
+   "dst": "嗯？信弄丟了？這麼快！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -648,7 +652,7 @@
   },
   "The Missing Piece#064": {
    "src": "Don't think you're getting out of this! I have spares!",
-   "dst": "",
+   "dst": "別以為這樣就能脫身！我還有備份！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -658,7 +662,7 @@
   },
   "The Missing Piece#065": {
    "src": "Now go on and sort this out for me, won't you? I have enough to worry about as is without you bungling about!",
-   "dst": "",
+   "dst": "快去給我把這件事處理好，好嗎？我要煩的事情夠多了，不需要你在這邊亂搞！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -668,7 +672,7 @@
   },
   "The Missing Piece#066": {
    "src": "Keep it short, I'm busy.",
-   "dst": "",
+   "dst": "長話短說，我很忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -678,7 +682,7 @@
   },
   "The Missing Piece#067": {
    "src": "Looking for someone, huh? 'round these parts it's usually the tin cans who do that.",
-   "dst": "",
+   "dst": "找人啊？這一帶會做這種事的，通常是那些鐵罐頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -688,7 +692,7 @@
   },
   "The Missing Piece#068": {
    "src": "A visit from one of those and you get an all-expenses-paid vacation on the Crown, if you catch my drift.",
-   "dst": "",
+   "dst": "被那種東西找上門，你就能享受一趟王室全額招待的假期，懂我意思吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -698,7 +702,7 @@
   },
   "The Missing Piece#069": {
    "src": "Safe to say, if it were Lars you were looking for I'd be happy to rat him out, but you haven't told me who it is yet.",
-   "dst": "",
+   "dst": "老實說，你要找的要是 Lars，我很樂意把他供出來，可惜你還沒說你要找誰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -708,7 +712,7 @@
   },
   "The Missing Piece#070": {
    "src": "PLenty of hills 'round these parts, women too. But they're in the factories, slaving away, not on any hills 'sfar as I'm aware.",
-   "dst": "",
+   "dst": "這一帶山丘多得是，女人也是。不過據我所知她們都在工廠裡做牛做馬，不在什麼山丘上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -718,7 +722,7 @@
   },
   "The Missing Piece#071": {
    "src": "Sorry bud, don't think I can help you with this one. Try asking Lars, he's usually hogging the fire in the alley here behind me. Hate that guy...",
-   "dst": "",
+   "dst": "抱歉啦老兄，這個我幫不上忙。去問 Lars 吧，他通常都窩在我後面那條巷子裡霸著火堆。真討厭那傢伙……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -728,7 +732,7 @@
   },
   "The Missing Piece#072": {
    "src": "Fine with me.",
-   "dst": "",
+   "dst": "隨便你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -738,7 +742,7 @@
   },
   "The Missing Piece#073": {
    "src": "Already told you everythin', didn't I? Go harass Lars instead, I have nothing more to say.",
-   "dst": "",
+   "dst": "我不是全都跟你講過了嗎？去煩 Lars 吧，我沒別的好說了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -748,7 +752,7 @@
   },
   "The Missing Piece#074": {
    "src": "Whatcha want?",
-   "dst": "",
+   "dst": "你想幹嘛？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -758,7 +762,7 @@
   },
   "The Missing Piece#075": {
    "src": "I'm looking for someone called 'the woman on the hill'. I have a letter I need to deliver to her.",
-   "dst": "",
+   "dst": "我在找一個叫「山丘上的女人」的人。我有一封信要送給她。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -768,7 +772,7 @@
   },
   "The Missing Piece#076": {
    "src": "A letter? Don't know nuthin' about no woman on the hill, but maybe Bush over there would know.",
-   "dst": "",
+   "dst": "一封信？山丘上的女人我是不曉得啦，不過那邊那個 Bush 說不定知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -778,7 +782,7 @@
   },
   "The Missing Piece#077": {
    "src": "He usually knows things... He's a knower.",
-   "dst": "",
+   "dst": "他通常什麼都知道……他是個知道的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -788,7 +792,7 @@
   },
   "The Missing Piece#078": {
    "src": "Don't talk to him for too long though, or he'll start putting strange ideas in your head...",
-   "dst": "",
+   "dst": "不過別跟他講太久，不然他會開始往你腦袋裡塞奇怪的東西……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -798,7 +802,7 @@
   },
   "The Missing Piece#079": {
    "src": "Right...",
-   "dst": "",
+   "dst": "嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -808,7 +812,7 @@
   },
   "The Missing Piece#080": {
    "src": "Ask Bush. I told you I don't know nuthin'.",
-   "dst": "",
+   "dst": "去問 Bush。我說了我什麼都不知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -818,7 +822,7 @@
   },
   "The Missing Piece#081": {
    "src": "I'm Bush, nice to meet you. Is there something you wish to know?",
-   "dst": "",
+   "dst": "我是 Bush，幸會。你有什麼想知道的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -828,7 +832,7 @@
   },
   "The Missing Piece#082": {
    "src": "Oh, yes, her... This bush knows her all too well!",
-   "dst": "",
+   "dst": "喔，對，她啊……Bush 我可太清楚她了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -838,7 +842,7 @@
   },
   "The Missing Piece#083": {
    "src": "Without her this bush would wilt! Yes, a bush requires water to grow. I know, I know!",
-   "dst": "",
+   "dst": "沒有她，Bush 早就枯了！沒錯，灌木要有水才長得大。我知道，我知道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -848,7 +852,7 @@
   },
   "The Missing Piece#084": {
    "src": "But first, I must know why you must know! Do you know?",
-   "dst": "",
+   "dst": "不過首先，我必須知道你為什麼必須知道！你知道嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -858,7 +862,7 @@
   },
   "The Missing Piece#085": {
    "src": "A letter! If only this Bush could know its contents... Alas, it would be rude to know...",
-   "dst": "",
+   "dst": "一封信！要是 Bush 能知道裡面寫什麼就好了……唉，可惜知道了就太失禮了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -868,7 +872,7 @@
   },
   "The Missing Piece#086": {
    "src": "The mail-deliverer, truly a noble profession. I will share with you her location, but in exchange you must tell her: her friend is back in town.",
-   "dst": "",
+   "dst": "送信這一行，真是高尚的職業。我可以告訴你她在哪裡，但作為交換，你必須轉告她：她的朋友回到鎮上了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -878,7 +882,7 @@
   },
   "The Missing Piece#087": {
    "src": "Here, let me write it down for you!",
-   "dst": "",
+   "dst": "來，我寫下來給你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -888,7 +892,7 @@
   },
   "The Missing Piece#088": {
    "src": "Now you know! Now you know!",
-   "dst": "",
+   "dst": "現在你知道了！現在你知道了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -898,7 +902,7 @@
   },
   "The Missing Piece#089": {
    "src": "To know why I must know? Not even I know... All I know is that I must know!",
-   "dst": "",
+   "dst": "我為什麼必須知道？連我自己都不知道……我只知道我必須知道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -908,7 +912,7 @@
   },
   "The Missing Piece#090": {
    "src": "Again, tell me why you must know.",
-   "dst": "",
+   "dst": "再說一次，告訴我你為什麼必須知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -918,7 +922,7 @@
   },
   "The Missing Piece#091": {
    "src": "Nothing? That such people existed, I did not know! Now I know, now I know!",
-   "dst": "",
+   "dst": "沒有理由？世上竟然有這種人，我以前不知道！現在我知道了，現在我知道了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -928,7 +932,7 @@
   },
   "The Missing Piece#092": {
    "src": "Knock on the door at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "敲 [-{~}, {~}, -{~}] 的門。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -938,7 +942,7 @@
   },
   "The Missing Piece#093": {
    "src": "Now you know! Now you know!",
-   "dst": "",
+   "dst": "現在你知道了！現在你知道了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -948,7 +952,7 @@
   },
   "The Missing Piece#094": {
    "src": "Who's there?",
-   "dst": "",
+   "dst": "是誰？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -958,7 +962,7 @@
   },
   "The Missing Piece#095": {
    "src": "Post? You must be at the wrong house, dear.",
-   "dst": "",
+   "dst": "郵件？親愛的，你八成走錯家了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -968,7 +972,7 @@
   },
   "The Missing Piece#096": {
    "src": "No one is sending me any of that...",
-   "dst": "",
+   "dst": "沒有人會寄那種東西給我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -978,7 +982,7 @@
   },
   "The Missing Piece#097": {
    "src": "Well, if it says so on the letter...",
-   "dst": "",
+   "dst": "唉，既然信上是這麼寫的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -988,7 +992,7 @@
   },
   "The Missing Piece#098": {
    "src": "Come in and we'll talk about it.",
-   "dst": "",
+   "dst": "進來吧，我們談談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -998,7 +1002,7 @@
   },
   "The Missing Piece#099": {
    "src": "Go inside the woman's home.",
-   "dst": "",
+   "dst": "進到那位女士的家裡。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1008,7 +1012,7 @@
   },
   "The Missing Piece#100": {
    "src": "I don't usually get a lot of visitors up on the hill.",
-   "dst": "",
+   "dst": "山丘上這裡不太有客人來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1018,7 +1022,7 @@
   },
   "The Missing Piece#101": {
    "src": "Here, follow me.",
-   "dst": "",
+   "dst": "來，跟我來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1028,7 +1032,7 @@
   },
   "The Missing Piece#102": {
    "src": "Return to the house at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, -{~}] 的房子。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1038,7 +1042,7 @@
   },
   "The Missing Piece#103": {
    "src": "Follow the woman inside to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟著那位女士進到 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1048,7 +1052,7 @@
   },
   "The Missing Piece#104": {
    "src": "So about those letters?",
-   "dst": "",
+   "dst": "那些信是怎麼回事呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1058,7 +1062,7 @@
   },
   "The Missing Piece#105": {
    "src": "Place the letters on the table at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把信放在 [-{~}, {~}, -{~}] 的桌上。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1068,7 +1072,7 @@
   },
   "The Missing Piece#106": {
    "src": "Continue the conversation with Elise",
-   "dst": "",
+   "dst": "繼續和 Elise 對話",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1078,7 +1082,7 @@
   },
   "The Missing Piece#107": {
    "src": "Oh, my...",
-   "dst": "",
+   "dst": "我的天……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1088,7 +1092,7 @@
   },
   "The Missing Piece#108": {
    "src": "I think I'll need a closer look at this.",
-   "dst": "",
+   "dst": "我想我得仔細看看這些東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1098,7 +1102,7 @@
   },
   "The Missing Piece#109": {
    "src": "Please, have a seat. I'll make you something to drink.",
-   "dst": "",
+   "dst": "請坐吧。我去弄點喝的給你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1108,7 +1112,7 @@
   },
   "The Missing Piece#110": {
    "src": "Take a seat at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 坐下。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1118,7 +1122,7 @@
   },
   "The Missing Piece#111": {
    "src": "You don't look like you're from around these parts, do you?",
-   "dst": "",
+   "dst": "你看起來不像這一帶的人，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1128,7 +1132,7 @@
   },
   "The Missing Piece#112": {
    "src": "Hmm? Well, I shouldn't pry into my guest's secrets. Better to let the unexplained rest, ha. Wouldn't you agree?",
-   "dst": "",
+   "dst": "嗯？也罷，我不該打探客人的秘密。解釋不了的事，就讓它擱著吧，哈。你不覺得嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1138,7 +1142,7 @@
   },
   "The Missing Piece#113": {
    "src": "Here in the Roughworks, we don't have any secrets. At least that's what Her Majesty wants to believe, ha.",
-   "dst": "",
+   "dst": "在 Roughworks 這裡，我們沒有秘密。至少女王陛下希望大家這麼相信，哈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1148,7 +1152,7 @@
   },
   "The Missing Piece#114": {
    "src": "That's why I chose to live here. In the neighborhoods, the walls are thinner than paper. Nothing goes unheard.",
-   "dst": "",
+   "dst": "所以我才選擇住在這裡。下面那些住宅區，牆壁比紙還薄。什麼聲音都藏不住。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1158,7 +1162,7 @@
   },
   "The Missing Piece#115": {
    "src": "Up here on the hill, it's much more peaceful. As long as the Water Authority doesn't come knocking, ha.",
-   "dst": "",
+   "dst": "山丘上這裡就安靜多了。只要水務局不來敲門就好，哈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1168,7 +1172,7 @@
   },
   "The Missing Piece#116": {
    "src": "Well, if you're already here, why don't we have a little chat? Not a lot of people to talk to up here!",
-   "dst": "",
+   "dst": "既然你都來了，不如聊幾句吧？山丘上可沒什麼人能說話！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1178,7 +1182,7 @@
   },
   "The Missing Piece#117": {
    "src": "Pick up the Watering Can outside at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到外面 [-{~}, {~}, -{~}] 拿澆水壺。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1188,7 +1192,7 @@
   },
   "The Missing Piece#118": {
    "src": "The watering can is just outside in the garden. There are three plants inside and three plants outside.",
-   "dst": "",
+   "dst": "澆水壺就在外面的花園裡。屋裡有三盆，屋外也有三盆。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1198,7 +1202,7 @@
   },
   "The Missing Piece#119": {
    "src": "Water Elise's plants while she reads the letters.",
-   "dst": "",
+   "dst": "趁 Elise 讀信的時候幫她的植物澆水。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1208,7 +1212,7 @@
   },
   "The Missing Piece#120": {
    "src": "Speak with Elise at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 和 Elise 說話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1218,7 +1222,7 @@
   },
   "The Missing Piece#121": {
    "src": "Oh, what a mess... trying to make sense of this is making my head hurt.",
-   "dst": "",
+   "dst": "唉，真是一團亂……想理清這些東西我頭都痛了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1228,7 +1232,7 @@
   },
   "The Missing Piece#122": {
    "src": "So many letters, over so many years... who would possibly be so insistent on reaching me?",
-   "dst": "",
+   "dst": "這麼多信，跨了這麼多年……到底是誰會這麼執著地想聯絡我？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1238,7 +1242,7 @@
   },
   "The Missing Piece#123": {
    "src": "Hm? Oh, you finished watering the plants already? That was quick!",
-   "dst": "",
+   "dst": "嗯？喔，你已經澆完水了？真快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1248,7 +1252,7 @@
   },
   "The Missing Piece#124": {
    "src": "Well, I certainly won't make any progress like this, and it seems we both are in need of a break.",
-   "dst": "",
+   "dst": "這樣下去我是不會有什麼進展了，看來我們倆都需要休息一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1258,7 +1262,7 @@
   },
   "The Missing Piece#125": {
    "src": "Oh, it's such a lovely day today... Why don't we go outside and enjoy the garden for a bit?",
-   "dst": "",
+   "dst": "喔，今天天氣真好……不如我們到外面的花園坐一會兒吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1268,7 +1272,7 @@
   },
   "The Missing Piece#126": {
    "src": "Follow Elise outside and take a seat at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟著 Elise 到外面，在 [-{~}, {~}, -{~}] 坐下。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1278,7 +1282,7 @@
   },
   "The Missing Piece#127": {
    "src": "Please, have a seat.",
-   "dst": "",
+   "dst": "請坐吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1288,7 +1292,7 @@
   },
   "The Missing Piece#128": {
    "src": "It really is beautiful today, isn't it?",
-   "dst": "",
+   "dst": "今天真的很美，不是嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1298,7 +1302,7 @@
   },
   "The Missing Piece#129": {
    "src": "Ah... freshly watered flowers. Nothing beats that smell.",
-   "dst": "",
+   "dst": "啊……剛澆過水的花。沒有什麼味道比得上這個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1308,7 +1312,7 @@
   },
   "The Missing Piece#130": {
    "src": "Hm. Do you see that tree over there?",
-   "dst": "",
+   "dst": "嗯。你看到那邊那棵樹了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1318,7 +1322,7 @@
   },
   "The Missing Piece#131": {
    "src": "It's the only one of its kind in the whole of the Roughworks. Isn't it beautiful?",
-   "dst": "",
+   "dst": "整個 Roughworks 就只有這麼一棵。很美吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1328,7 +1332,7 @@
   },
   "The Missing Piece#132": {
    "src": "It was a gift, but from who... It's another thing I've forgotten.",
-   "dst": "",
+   "dst": "那是別人送的，可是是誰送的……又是一件我忘掉的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1338,7 +1342,7 @@
   },
   "The Missing Piece#133": {
    "src": "It's frustrating, so frustrating... All these precious memories...",
-   "dst": "",
+   "dst": "好不甘心，真的好不甘心……那些珍貴的回憶……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1348,7 +1352,7 @@
   },
   "The Missing Piece#134": {
    "src": "Where did they all go...",
-   "dst": "",
+   "dst": "到底都跑到哪裡去了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1358,7 +1362,7 @@
   },
   "The Missing Piece#135": {
    "src": "It isn't much now, that is for certain.",
-   "dst": "",
+   "dst": "現在確實還不怎麼樣，這點沒錯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1368,7 +1372,7 @@
   },
   "The Missing Piece#136": {
    "src": "Well. It's beautiful already, don't you think?",
-   "dst": "",
+   "dst": "嗯。這樣就已經很美了，你不覺得嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1378,7 +1382,7 @@
   },
   "The Missing Piece#137": {
    "src": "It will grow.",
-   "dst": "",
+   "dst": "它會長大的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1388,7 +1392,7 @@
   },
   "The Missing Piece#138": {
    "src": "Ha! Of course it will, it's a tree!",
-   "dst": "",
+   "dst": "哈！它當然會長大，它是樹啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1398,7 +1402,7 @@
   },
   "The Missing Piece#139": {
    "src": "Oh, you know I didn't mean it like that.",
-   "dst": "",
+   "dst": "喔，你知道我不是那個意思。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1408,7 +1412,7 @@
   },
   "The Missing Piece#140": {
    "src": "For each year that passes... this tree will grow taller, and ever more beautiful.",
-   "dst": "",
+   "dst": "每過一年……這棵樹就會長得更高，也更美。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1418,7 +1422,7 @@
   },
   "The Missing Piece#141": {
    "src": "It'll have to weather many storms, and on some days it might even have to go without water. And still, it will continue growing.",
-   "dst": "",
+   "dst": "它得撐過很多場暴風雨，有些日子甚至沒有水喝。即使如此，它還是會繼續長。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1428,7 +1432,7 @@
   },
   "The Missing Piece#142": {
    "src": "So philosophical...",
-   "dst": "",
+   "dst": "好有哲理喔……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1438,7 +1442,7 @@
   },
   "The Missing Piece#143": {
    "src": "And then in ten, fifteen, maybe even twenty-five years... we'll finally be able to rest in its shade.",
-   "dst": "",
+   "dst": "然後再過十年、十五年，也許二十五年……我們終於可以在它的樹蔭下歇息了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1448,7 +1452,7 @@
   },
   "The Missing Piece#144": {
    "src": "Twenty-five years!? We'll be old by then!",
-   "dst": "",
+   "dst": "二十五年！？到那時候我們都老了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1458,7 +1462,7 @@
   },
   "The Missing Piece#145": {
    "src": "Oh, I know! We could have a picnic underneath its canopy Doesn't that sound nice, {u}?",
-   "dst": "",
+   "dst": "喔，我知道了！我們可以在樹蔭底下野餐。聽起來不錯吧，{u}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1468,7 +1472,7 @@
   },
   "The Missing Piece#146": {
    "src": "... It does. It does sound nice, Elise. Perhaps we could.",
-   "dst": "",
+   "dst": "……不錯。聽起來真的不錯，Elise。也許可以。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1478,7 +1482,7 @@
   },
   "The Missing Piece#147": {
    "src": "Go on, give it some more water. Or it'll never grow an inch!",
-   "dst": "",
+   "dst": "去吧，再多澆點水。不然它一吋都長不了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1488,7 +1492,7 @@
   },
   "The Missing Piece#148": {
    "src": "Fine, fine!",
-   "dst": "",
+   "dst": "好啦，好啦！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1498,7 +1502,7 @@
   },
   "The Missing Piece#149": {
    "src": "Elise...",
-   "dst": "",
+   "dst": "Elise……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1508,7 +1512,7 @@
   },
   "The Missing Piece#150": {
    "src": "What is it, {u}?",
-   "dst": "",
+   "dst": "怎麼了，{u}？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1518,7 +1522,7 @@
   },
   "The Missing Piece#151": {
    "src": "Nevermind. It's nothing...",
-   "dst": "",
+   "dst": "沒事。沒什麼……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1528,7 +1532,7 @@
   },
   "The Missing Piece#152": {
    "src": "I was just thinking... If I were to die some day, I'd like to be buried here, under the tree.",
-   "dst": "",
+   "dst": "我只是在想……如果哪天我死了，我想葬在這裡，這棵樹下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1538,7 +1542,7 @@
   },
   "The Missing Piece#153": {
    "src": "Huh? What could possibly make you think about such silly things? We still have a long life left ahead of us, don't we?",
-   "dst": "",
+   "dst": "咦？你怎麼會想這種傻事？我們的日子還長得很，不是嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1548,7 +1552,7 @@
   },
   "The Missing Piece#154": {
    "src": "Of course, you're right. I'm sorry, I'm just not used to this...",
-   "dst": "",
+   "dst": "當然，你說得對。抱歉，我只是還不習慣……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1558,7 +1562,7 @@
   },
   "The Missing Piece#155": {
    "src": "To what?",
-   "dst": "",
+   "dst": "不習慣什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1568,7 +1572,7 @@
   },
   "The Missing Piece#156": {
    "src": "Being happy.",
-   "dst": "",
+   "dst": "幸福。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1578,7 +1582,7 @@
   },
   "The Missing Piece#157": {
    "src": "Let's just enjoy the sun, for a bit. There's still work tomorrow.",
-   "dst": "",
+   "dst": "我們就這樣曬一會兒太陽吧。明天還要上工呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1588,7 +1592,7 @@
   },
   "The Missing Piece#158": {
    "src": "Ah... Hah, what just happened...?",
-   "dst": "",
+   "dst": "啊……哈，剛剛是怎麼回事……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1598,7 +1602,7 @@
   },
   "The Missing Piece#159": {
    "src": "Who... Who was she...?",
-   "dst": "",
+   "dst": "她……她是誰……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1608,7 +1612,7 @@
   },
   "The Missing Piece#160": {
    "src": "Hm. I shall leave the worrying for another day, I think. Today is a good day... not a day for worrying.",
-   "dst": "",
+   "dst": "嗯。我想這些煩惱還是留到別天再說吧。今天是個好日子……不是拿來煩惱的日子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1618,7 +1622,7 @@
   },
   "The Missing Piece#161": {
    "src": "In fact, today is too nice a day to waste it... by not going anywhere, that is. Wouldn't you agree?",
-   "dst": "",
+   "dst": "而且今天天氣這麼好，不出門走走就太浪費了，你不覺得嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1628,7 +1632,7 @@
   },
   "The Missing Piece#162": {
    "src": "Here, follow me.",
-   "dst": "",
+   "dst": "來，跟我來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1638,7 +1642,7 @@
   },
   "The Missing Piece#163": {
    "src": "Follow Elise to the roof at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟著 Elise 到 [-{~}, {~}, -{~}] 的屋頂。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1648,7 +1652,7 @@
   },
   "The Missing Piece#164": {
    "src": "Ah... Do you see that factory off that way? I used to work there, back when I was younger...",
-   "dst": "",
+   "dst": "啊……你看到那邊那間工廠了嗎？我年輕的時候在那裡做過……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1658,7 +1662,7 @@
   },
   "The Missing Piece#165": {
    "src": "We mass-produced bread for the higher regions... Tedious work, and thankless too.",
-   "dst": "",
+   "dst": "我們大量生產麵包送到上面那些區域……乏味的工作，而且沒人感激。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1668,7 +1672,7 @@
   },
   "The Missing Piece#166": {
    "src": "I'm sure you have noticed, but things around here aren't too easy. Some people even go as far as stealing when times are tough...",
-   "dst": "",
+   "dst": "你應該也注意到了，這一帶的日子不好過。日子難過的時候，有些人甚至會去偷……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1678,7 +1682,7 @@
   },
   "The Missing Piece#167": {
    "src": "Fortunately... I never had to. They would let us take some home, every once in a while.",
-   "dst": "",
+   "dst": "幸好……我從來不必那麼做。他們偶爾會讓我們帶一點回家。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1688,7 +1692,7 @@
   },
   "The Missing Piece#168": {
    "src": "Those were good days. On those occasions, we'd go and have ourselves a picnic, me and- hm. Just me, I suppose.",
-   "dst": "",
+   "dst": "那是好日子。遇到那種時候，我們就會去野餐，我跟——嗯。我想，就只有我吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1698,7 +1702,7 @@
   },
   "The Missing Piece#169": {
    "src": "A shame it's so hard to come by... the thefts became a real problem, you know. The Crown ended up building a vault down under the factory to keep it all secure!",
-   "dst": "",
+   "dst": "可惜現在很難弄到了……偷竊真的變成一個大問題，你知道嗎。王室最後在工廠底下蓋了一座金庫，把東西全鎖起來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1708,7 +1712,7 @@
   },
   "The Missing Piece#170": {
    "src": "How long, since I last had some? Years, surely... not like any of that bread ever makes it to us poor folk, ha!",
-   "dst": "",
+   "dst": "我上次吃到是多久以前了？肯定好幾年了……反正那些麵包也輪不到我們這些窮人，哈！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1718,7 +1722,7 @@
   },
   "The Missing Piece#171": {
    "src": "But it'd be nice to have some again, I suppose... reminisce on old times.",
-   "dst": "",
+   "dst": "不過要是能再吃到一次也不錯……回味一下從前。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1728,7 +1732,7 @@
   },
   "The Missing Piece#172": {
    "src": "Well, if you're running errands for me already... mind seeing if you can get your hands on a loaf or two?",
-   "dst": "",
+   "dst": "既然你都在幫我跑腿了……能不能順便看看弄不弄得到一兩條？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1738,7 +1742,7 @@
   },
   "The Missing Piece#173": {
    "src": "It's expensive, but for the right price... I'm sure you could get ahold of some. You don't seem the sort to struggle with that kind of thing, do you, letter carrier?",
-   "dst": "",
+   "dst": "那很貴，不過只要價錢對……我相信你弄得到。你看起來不像會為這種事傷腦筋的人，送信的，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1748,7 +1752,7 @@
   },
   "The Missing Piece#174": {
    "src": "Ha! Well, do your best, either way. Once you come back, I have a plan for what we can do today. How's that sound?",
-   "dst": "",
+   "dst": "哈！總之盡力吧。等你回來，我想好今天可以做什麼了。你覺得如何？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1758,7 +1762,7 @@
   },
   "The Missing Piece#175": {
    "src": "Try to enter the Bread Factory at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "試著進入 [-{~}, {~}, -{~}] 的麵包工廠。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1768,7 +1772,7 @@
   },
   "The Missing Piece#176": {
    "src": "Oh, no... You know! You know! Speak to that constable first, and perhaps, I'll tell you more.",
-   "dst": "",
+   "dst": "喔，不……你知道！你知道！先去跟那個警備說話，也許我會告訴你更多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1778,7 +1782,7 @@
   },
   "The Missing Piece#177": {
    "src": "If you've come to beg, you might as well leave.",
-   "dst": "",
+   "dst": "你要是來討飯的，那就趁早走人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1788,7 +1792,7 @@
   },
   "The Missing Piece#178": {
    "src": "Huh? Alright, bud. We all do.",
-   "dst": "",
+   "dst": "咦？好吧，老兄。我們都一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1798,7 +1802,7 @@
   },
   "The Missing Piece#179": {
    "src": "Was there something else?",
-   "dst": "",
+   "dst": "還有別的事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1808,7 +1812,7 @@
   },
   "The Missing Piece#180": {
    "src": "Do I look like a vending machine to you? Go find somewhere else. We just make bread here, we don't sell it.",
-   "dst": "",
+   "dst": "我看起來像販賣機嗎？去別的地方找。我們這裡只做麵包，不賣麵包。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1818,7 +1822,7 @@
   },
   "The Missing Piece#181": {
    "src": "Get out of here pal, you shouldn't be loitering around under a Constable's watch.",
-   "dst": "",
+   "dst": "走開吧老兄，警備看著呢，你不該在這裡閒晃。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1828,7 +1832,7 @@
   },
   "The Missing Piece#182": {
    "src": "But, but, but! No buts. Don't make me have to do something! The paperwork is always such a hassle...",
-   "dst": "",
+   "dst": "可是、可是、可是！沒有可是。別逼我出手！那些文書工作麻煩死了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1838,7 +1842,7 @@
   },
   "The Missing Piece#183": {
    "src": "Last chance, bud.",
-   "dst": "",
+   "dst": "最後一次機會，老兄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1848,7 +1852,7 @@
   },
   "The Missing Piece#184": {
    "src": "Obviously not... We have enough problems as it is, what with that stolen barrel last week... And the production quotas...",
-   "dst": "",
+   "dst": "當然不行……我們的麻煩已經夠多了，上禮拜還被偷了一桶……還有產量指標……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1858,7 +1862,7 @@
   },
   "The Missing Piece#185": {
    "src": "Don't you have something better to do anyway?",
-   "dst": "",
+   "dst": "你就沒有別的事情好做嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1868,7 +1872,7 @@
   },
   "The Missing Piece#186": {
    "src": "Psst!",
-   "dst": "",
+   "dst": "噓！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1878,7 +1882,7 @@
   },
   "The Missing Piece#187": {
    "src": "Over here, friend of a friend!",
-   "dst": "",
+   "dst": "這邊，朋友的朋友！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1888,7 +1892,7 @@
   },
   "The Missing Piece#188": {
    "src": "Speak with Bush at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 和 Bush 說話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1898,7 +1902,7 @@
   },
   "The Missing Piece#189": {
    "src": "Did you know? Did you know? There is more than one way to enter any building.",
-   "dst": "",
+   "dst": "你知道嗎？你知道嗎？進一棟建築的方法從來不只一種。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1908,7 +1912,7 @@
   },
   "The Missing Piece#190": {
    "src": "I'll tell you! But, stealing is unethical, you must know!",
-   "dst": "",
+   "dst": "我會告訴你！不過偷竊是不道德的，這你必須知道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1918,7 +1922,7 @@
   },
   "The Missing Piece#191": {
    "src": "As long as she doesn't know! She won't know! Do you understand?",
-   "dst": "",
+   "dst": "只要她不知道！她就不會知道！你明白嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1928,7 +1932,7 @@
   },
   "The Missing Piece#192": {
    "src": "It's just around the corner, you see. A pipe! Now you know! Now you know!",
-   "dst": "",
+   "dst": "就在轉角那裡，你看。一根管子！現在你知道了！現在你知道了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1938,7 +1942,7 @@
   },
   "The Missing Piece#193": {
    "src": "Enter the Bread Factory through the pipe at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "從 [-{~}, {~}, -{~}] 的管子進入麵包工廠。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1948,7 +1952,7 @@
   },
   "The Missing Piece#194": {
    "src": "It's just around the corner, you see. A pipe! Now you know! Now you know!",
-   "dst": "",
+   "dst": "就在轉角那裡，你看。一根管子！現在你知道了！現在你知道了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1958,7 +1962,7 @@
   },
   "The Missing Piece#195": {
    "src": "Reenter the Bread Factory at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "重新進入 [-{~}, {~}, -{~}] 的麵包工廠。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1968,7 +1972,7 @@
   },
   "The Missing Piece#196": {
    "src": "Find a way to enter the Bread Vault through the elevator at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "想辦法從 [-{~}, {~}, -{~}] 的電梯進入麵包金庫。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -1978,7 +1982,7 @@
   },
   "The Missing Piece#197": {
    "src": "Wait! Who are you!?",
-   "dst": "",
+   "dst": "等等！你是誰！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1988,7 +1992,7 @@
   },
   "The Missing Piece#198": {
    "src": "Who's there?",
-   "dst": "",
+   "dst": "是誰？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -1998,7 +2002,7 @@
   },
   "The Missing Piece#199": {
    "src": "Uhh? That's not an answer! Now, tell me who you are or I'll have a look for myself! And I never forget faces, keep that in mind!",
-   "dst": "",
+   "dst": "呃？這算什麼回答！快說你是誰，不然我自己過去看！我可是過目不忘的，你給我記住！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2008,7 +2012,7 @@
   },
   "The Missing Piece#200": {
    "src": "What's a worker doing in my office!? Now, tell me who you are or I'll have a look for myself! And I never forget faces, keep that in mind!",
-   "dst": "",
+   "dst": "一個工人跑到我辦公室裡幹什麼！？快說你是誰，不然我自己過去看！我可是過目不忘的，你給我記住！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2018,7 +2022,7 @@
   },
   "The Missing Piece#201": {
    "src": "A slacker you say?",
-   "dst": "",
+   "dst": "你說有人在偷懶？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2028,7 +2032,7 @@
   },
   "The Missing Piece#202": {
    "src": "Well, thank you for bringing this to my attention! I will investigate the matter immediately!",
-   "dst": "",
+   "dst": "好，謝謝你告訴我！我立刻去查！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2038,7 +2042,7 @@
   },
   "The Missing Piece#203": {
    "src": "Aaaaaaghh!!",
-   "dst": "",
+   "dst": "啊啊啊啊啊！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2048,7 +2052,7 @@
   },
   "The Missing Piece#204": {
    "src": "Make your way through the Bread Vault to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "穿過麵包金庫前往 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2058,7 +2062,7 @@
   },
   "The Missing Piece#205": {
    "src": "Find a way up to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "想辦法上到 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2068,7 +2072,7 @@
   },
   "The Missing Piece#206": {
    "src": "Hit the bottles at [-{~}, {~}, -{~}] with a Bottle.",
-   "dst": "",
+   "dst": "用瓶子打中 [-{~}, {~}, -{~}] 的那些瓶子。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2078,7 +2082,7 @@
   },
   "The Missing Piece#207": {
    "src": "Continue through the Bread Vault to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "繼續穿過麵包金庫前往 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2088,7 +2092,7 @@
   },
   "The Missing Piece#208": {
    "src": "Use the beams to make it across to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "利用橫梁前往 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2098,7 +2102,7 @@
   },
   "The Missing Piece#209": {
    "src": "Overhear the meeting at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 偷聽那場會面。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2108,7 +2112,7 @@
   },
   "The Missing Piece#210": {
    "src": "...and in accordance with our protocols, we will require a detailed record of this former employee. Years of employment, known associates, work performance... all of it.",
-   "dst": "",
+   "dst": "……依照我們的規程，我們需要這名前員工的詳細紀錄。任職年限、已知的往來對象、工作表現……全部都要。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2118,7 +2122,7 @@
   },
   "The Missing Piece#211": {
    "src": "Naturally, I will comply to the best of my ability, blessed be Her Grace. But to think that the mere theft of one crate would reach this high a level...",
-   "dst": "",
+   "dst": "我自然會全力配合，願陛下蒙福。只是沒想到區區一箱失竊的貨，竟會驚動到這種層級……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2128,7 +2132,7 @@
   },
   "The Missing Piece#212": {
    "src": "The crate is not relevant. It is the employee who is of interest. Further measures may be necessary, but the records will do well to begin with.",
-   "dst": "",
+   "dst": "那箱貨不重要。我們感興趣的是那名員工。後續可能還會有進一步的措施，不過先從紀錄開始就好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2138,7 +2142,7 @@
   },
   "The Missing Piece#213": {
    "src": "...only the employee? Pardon my questions, but I do not understand why she is of interest to you.",
-   "dst": "",
+   "dst": "……只要那名員工？恕我多問，我不明白她為什麼會引起你們的興趣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2148,7 +2152,7 @@
   },
   "The Missing Piece#214": {
    "src": "That is for us to know, and for you to comply. But it pertains to a potential security breach which we are investigating.",
-   "dst": "",
+   "dst": "那是我們該知道、你只需配合的事。不過這牽涉到我們正在調查的一起可能的保安漏洞。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2158,7 +2162,7 @@
   },
   "The Missing Piece#215": {
    "src": "At my factory? What are you implying!?",
-   "dst": "",
+   "dst": "在我的工廠？你這是什麼意思！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2168,7 +2172,7 @@
   },
   "The Missing Piece#216": {
    "src": "I imply nothing. Must you be reminded of your position? It is by Her Majesty's will that I am here today. Do you truly wish to stand against it?",
-   "dst": "",
+   "dst": "我沒有任何暗示。需要我提醒你自己的身分嗎？我今天站在這裡是奉女王陛下之意。你真的想與之對抗嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2178,7 +2182,7 @@
   },
   "The Missing Piece#217": {
    "src": "I... I humbly apologize... I didn't mean-",
-   "dst": "",
+   "dst": "我……我謙卑地致歉……我不是那個意思——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2188,7 +2192,7 @@
   },
   "The Missing Piece#218": {
    "src": "The records?",
-   "dst": "",
+   "dst": "紀錄呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2198,7 +2202,7 @@
   },
   "The Missing Piece#219": {
    "src": "Y-yes, of course. But, still, I had thought that matter was settled years ago! What connection could it possibly have to-",
-   "dst": "",
+   "dst": "是、是，當然。可是，那件事我原以為多年前就了結了！那跟——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2208,7 +2212,7 @@
   },
   "The Missing Piece#220": {
    "src": "Enough aimless rambling. My time is limited. Pull up those records on this Elise, immediately.",
-   "dst": "",
+   "dst": "無謂的贅述到此為止。我的時間有限。立刻把這個叫 Elise 的紀錄調出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2218,7 +2222,7 @@
   },
   "The Missing Piece#221": {
    "src": "U-understood, ma'am... I'll get them right away.",
-   "dst": "",
+   "dst": "明、明白了，長官……我馬上去拿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2228,7 +2232,7 @@
   },
   "The Missing Piece#222": {
    "src": "Use the beams to make it across to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "利用橫梁前往 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2238,7 +2242,7 @@
   },
   "The Missing Piece#223": {
    "src": "Acquire the bread from the barrel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "從 [-{~}, {~}, -{~}] 的木桶取得麵包。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2248,7 +2252,7 @@
   },
   "The Missing Piece#224": {
    "src": "Continue through the Bread Vault to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "繼續穿過麵包金庫前往 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2258,7 +2262,7 @@
   },
   "The Missing Piece#225": {
    "src": "Find the way out of the Bread Vault at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "找到 [-{~}, {~}, -{~}] 離開麵包金庫的路。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2268,7 +2272,7 @@
   },
   "The Missing Piece#226": {
    "src": "Well, well, well... it would seem the rats aren't the only plague to infest this place.",
-   "dst": "",
+   "dst": "哎呀呀……看來這地方鬧的不只是老鼠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2278,7 +2282,7 @@
   },
   "The Missing Piece#227": {
    "src": "And here I had thought this particular lead was dead end! Only years-old records which tell us nothing we did not already know... always a risk, but worth checking regardless.",
-   "dst": "",
+   "dst": "我原本還以為這條線索斷了呢！只有一堆陳年紀錄，說的全是我們早就知道的事……本來就有風險，不過還是值得查一查。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2288,7 +2292,7 @@
   },
   "The Missing Piece#228": {
    "src": "But here you are. One of the province's most wanted criminals. What a strange coincidence, finding you here.",
-   "dst": "",
+   "dst": "沒想到你在這裡。全境通緝的要犯之一。在這裡遇到你，真是奇妙的巧合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2298,7 +2302,7 @@
   },
   "The Missing Piece#229": {
    "src": "I must wonder... for what reason are you here?",
-   "dst": "",
+   "dst": "我倒是很好奇……你來這裡是為了什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2308,7 +2312,7 @@
   },
   "The Missing Piece#230": {
    "src": "I know better than to expect an answer. But it does not matter, in the end. We will get it out of you eventually.",
-   "dst": "",
+   "dst": "我沒指望你會回答。不過那不重要，到頭來我們遲早會從你嘴裡撬出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2318,7 +2322,7 @@
   },
   "The Missing Piece#231": {
    "src": "Constables! Capture them!",
-   "dst": "",
+   "dst": "警備們！把他們拿下！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2328,7 +2332,7 @@
   },
   "The Missing Piece#232": {
    "src": "Run!",
-   "dst": "",
+   "dst": "快跑！",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2338,7 +2342,7 @@
   },
   "The Missing Piece#233": {
    "src": "Not so fast!",
-   "dst": "",
+   "dst": "別想跑！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2348,7 +2352,7 @@
   },
   "The Missing Piece#234": {
    "src": "Return to the Roughworks through the pipe at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "從 [-{~}, {~}, -{~}] 的管子回到 Roughworks。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2358,7 +2362,7 @@
   },
   "The Missing Piece#235": {
    "src": "Return to the house at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, -{~}] 的房子。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2368,7 +2372,7 @@
   },
   "The Missing Piece#236": {
    "src": "Confront the inspection or talk to Elise at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 面對稽查隊，或是和 Elise 說話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2378,7 +2382,7 @@
   },
   "The Missing Piece#237": {
    "src": "Oh, it's the Water Authority! I don't know why they're here... but it can't be for any good reason.",
-   "dst": "",
+   "dst": "喔，是水務局！我不知道他們來做什麼……但肯定不是好事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2388,7 +2392,7 @@
   },
   "The Missing Piece#238": {
    "src": "Open up already! We know you're in there!",
-   "dst": "",
+   "dst": "快開門！我們知道你在裡面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2398,7 +2402,7 @@
   },
   "The Missing Piece#239": {
    "src": "Really, you should hide. It's okay, I've dealt with their type before. I'll send them away.",
-   "dst": "",
+   "dst": "說真的，你該躲起來。沒事的，這種人我以前應付過。我會把他們打發走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2408,7 +2412,7 @@
   },
   "The Missing Piece#240": {
    "src": "What will you do?",
-   "dst": "",
+   "dst": "你打算怎麼做？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2418,7 +2422,7 @@
   },
   "The Missing Piece#241": {
    "src": "Good. Quick, find somewhere to hide!",
-   "dst": "",
+   "dst": "很好。快，找個地方躲起來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2428,7 +2432,7 @@
   },
   "The Missing Piece#242": {
    "src": "Wait one second! I'll hide behind the plant!",
-   "dst": "",
+   "dst": "等一下！我躲到植物後面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2438,7 +2442,7 @@
   },
   "The Missing Piece#243": {
    "src": "Deal with the inspection.",
-   "dst": "",
+   "dst": "應付稽查隊。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2448,7 +2452,7 @@
   },
   "The Missing Piece#244": {
    "src": "Halt!",
-   "dst": "",
+   "dst": "站住！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2458,7 +2462,7 @@
   },
   "The Missing Piece#245": {
    "src": "Who are you!?",
-   "dst": "",
+   "dst": "你是誰！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2468,7 +2472,7 @@
   },
   "The Missing Piece#246": {
    "src": "A friend, you say? Then you should be able to tell me why she's not answering the door!",
-   "dst": "",
+   "dst": "你說是朋友？那你應該說得出她為什麼不來開門！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2478,7 +2482,7 @@
   },
   "The Missing Piece#247": {
    "src": "Why would that be, 'friend'?",
-   "dst": "",
+   "dst": "到底為什麼呢，「朋友」？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2488,7 +2492,7 @@
   },
   "The Missing Piece#248": {
    "src": "Someone like me!? What's that supposed to mean?",
-   "dst": "",
+   "dst": "像我這種人！？你這話是什麼意思？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2498,7 +2502,7 @@
   },
   "The Missing Piece#249": {
    "src": "Oh, you'll pay for this insult! We have authority to enforce our orders with force, you know! We can do anything we want!",
-   "dst": "",
+   "dst": "喔，你會為這句侮辱付出代價！我們有權以武力執行命令，你知道吧！我們想做什麼都可以！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2508,7 +2512,7 @@
   },
   "The Missing Piece#250": {
    "src": "Not at home, you say? How convenient. Just as the inspection comes around they're not at home to greet us!",
-   "dst": "",
+   "dst": "你說不在家？真是巧啊。剛好稽查來的時候人就不在家迎接我們！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2518,7 +2522,7 @@
   },
   "The Missing Piece#251": {
    "src": "It's almost like someone tipped them off, don't you think?",
-   "dst": "",
+   "dst": "簡直像是有人通風報信，你不覺得嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2528,7 +2532,7 @@
   },
   "The Missing Piece#252": {
    "src": "Say friend, did you tip off the subject that we were coming?",
-   "dst": "",
+   "dst": "說吧朋友，是不是你去通知對方我們要來的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2538,7 +2542,7 @@
   },
   "The Missing Piece#253": {
    "src": "Very well, then. But we will still need to get in to conduct the search.",
-   "dst": "",
+   "dst": "那好吧。不過我們還是得進去執行搜查。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2548,7 +2552,7 @@
   },
   "The Missing Piece#254": {
    "src": "If you won't be of any use, then you better get out of our way!",
-   "dst": "",
+   "dst": "你要是幫不上忙，那就給我讓開！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2558,7 +2562,7 @@
   },
   "The Missing Piece#255": {
    "src": "At the bread factory? That's none of our concern, we're the Water Authority, not the Bread Authority!",
-   "dst": "",
+   "dst": "在麵包工廠？那不關我們的事，我們是水務局，不是麵包局！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2568,7 +2572,7 @@
   },
   "The Missing Piece#256": {
    "src": "A massive water spillage, you say!?",
-   "dst": "",
+   "dst": "你說大量漏水！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2578,7 +2582,7 @@
   },
   "The Missing Piece#257": {
    "src": "And you're not making this up? We don't take easily to liars, you should know.",
-   "dst": "",
+   "dst": "你不是在編故事吧？我們可不喜歡騙子，你最好知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2588,7 +2592,7 @@
   },
   "The Missing Piece#258": {
    "src": "Inspector, there seems to be some commotion coming from the Bread Factory.",
-   "dst": "",
+   "dst": "督察，麵包工廠那邊好像有騷動。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2598,7 +2602,7 @@
   },
   "The Missing Piece#259": {
    "src": "Hmm... Well, in that case, we'll have to check it out. Thank you for the information, citizen.",
-   "dst": "",
+   "dst": "嗯……那樣的話，我們得去看看。謝謝你提供消息，市民。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2608,7 +2612,7 @@
   },
   "The Missing Piece#260": {
    "src": "Passing by! As if! Did you really think I would believe that story?",
-   "dst": "",
+   "dst": "路過！才怪！你真以為我會信這種說詞？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2618,7 +2622,7 @@
   },
   "The Missing Piece#261": {
    "src": "Oh, you'll pay for this insult! We have authority to enforce our orders with force, you know! We can do anything we want!",
-   "dst": "",
+   "dst": "喔，你會為這句侮辱付出代價！我們有權以武力執行命令，你知道吧！我們想做什麼都可以！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2628,7 +2632,7 @@
   },
   "The Missing Piece#262": {
    "src": "We are here to execute a search. Your water usage levels have exceeded your authorized allotment.",
-   "dst": "",
+   "dst": "我們是來執行搜查的。你的用水量已經超過核准的配額。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2638,7 +2642,7 @@
   },
   "The Missing Piece#263": {
    "src": "Step aside, subject. Now.",
-   "dst": "",
+   "dst": "讓開，臣民。立刻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2648,7 +2652,7 @@
   },
   "The Missing Piece#264": {
    "src": "You are alone. Correct?",
-   "dst": "",
+   "dst": "你是一個人。對嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2658,7 +2662,7 @@
   },
   "The Missing Piece#265": {
    "src": "Very well. We will now conduct an inspection of your property. Step out of the way, subject.",
-   "dst": "",
+   "dst": "很好。我們現在要對你的住所進行稽查。讓開，臣民。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2668,7 +2672,7 @@
   },
   "The Missing Piece#266": {
    "src": "What's this? No wonder you're exceeding your water limit when you've been keeping illicit plants!",
-   "dst": "",
+   "dst": "這是什麼？難怪你的用水量會超標，原來私藏了違禁植物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2678,7 +2682,7 @@
   },
   "The Missing Piece#267": {
    "src": "Wait a second... There's someone hiding behind there! You said you were alone!",
-   "dst": "",
+   "dst": "等一下……那後面有人躲著！你說你是一個人的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2688,7 +2692,7 @@
   },
   "The Missing Piece#268": {
    "src": "Oh, you'll pay for this insult! We have authority to enforce our orders with force, you know! We can do anything we want!",
-   "dst": "",
+   "dst": "喔，你會為這句侮辱付出代價！我們有權以武力執行命令，你知道吧！我們想做什麼都可以！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2698,7 +2702,7 @@
   },
   "The Missing Piece#269": {
    "src": "Fight the inspection!",
-   "dst": "",
+   "dst": "擊退稽查隊！",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2708,7 +2712,7 @@
   },
   "The Missing Piece#270": {
    "src": "You're under arrest!",
-   "dst": "",
+   "dst": "你被捕了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2718,7 +2722,7 @@
   },
   "The Missing Piece#271": {
    "src": "Return to the house at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, -{~}] 的房子。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2728,7 +2732,7 @@
   },
   "The Missing Piece#272": {
    "src": "Noooooooo, Alphonse! How... How could you do this!?",
-   "dst": "",
+   "dst": "不不不不不，Alphonse！你……你怎麼可以這樣！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2738,7 +2742,7 @@
   },
   "The Missing Piece#273": {
    "src": "You'll pay for this, you rat! In the name of Her Majesty!",
-   "dst": "",
+   "dst": "你會為此付出代價的，你這隻老鼠！以女王陛下之名！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2748,7 +2752,7 @@
   },
   "The Missing Piece#274": {
    "src": "Are you alright!? I heard a commotion, and",
-   "dst": "",
+   "dst": "你還好嗎！？我聽到一陣騷動，然後",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2758,7 +2762,7 @@
   },
   "The Missing Piece#275": {
    "src": "...oh, dear. What a scene...",
-   "dst": "",
+   "dst": "……我的天。這是什麼場面……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2768,7 +2772,7 @@
   },
   "The Missing Piece#276": {
    "src": "You may as well come inside, dearie.",
-   "dst": "",
+   "dst": "親愛的，你還是進來吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2778,7 +2782,7 @@
   },
   "The Missing Piece#277": {
    "src": "Are you alright!?",
-   "dst": "",
+   "dst": "你還好嗎！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2788,7 +2792,7 @@
   },
   "The Missing Piece#278": {
    "src": "But how strange... The authorities have never bothered me before... Oh, let's just get inside for now.",
-   "dst": "",
+   "dst": "不過真奇怪……當局從來沒有找過我的麻煩……唉，總之先進屋再說。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2798,7 +2802,7 @@
   },
   "The Missing Piece#279": {
    "src": "Find somewhere to hide in Elise's house!",
-   "dst": "",
+   "dst": "在 Elise 家裡找個地方躲起來！",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2808,7 +2812,7 @@
   },
   "The Missing Piece#280": {
    "src": "Hide!",
-   "dst": "",
+   "dst": "躲起來！",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -2818,7 +2822,7 @@
   },
   "The Missing Piece#281": {
    "src": "Open up!",
-   "dst": "",
+   "dst": "開門！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2828,7 +2832,7 @@
   },
   "The Missing Piece#282": {
    "src": "There you go. Now, what business could Her Majesty's authorities possibly have with little old me?",
-   "dst": "",
+   "dst": "好了。那麼，女王陛下的當局找我這個老太婆能有什麼事呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2838,7 +2842,7 @@
   },
   "The Missing Piece#283": {
    "src": "We are here to execute a search. You water usage levels have exceeded you authorized allotment.",
-   "dst": "",
+   "dst": "我們是來執行搜查的。你的用水量已經超過核准的配額。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2848,7 +2852,7 @@
   },
   "The Missing Piece#284": {
    "src": "Well, I don't see-",
-   "dst": "",
+   "dst": "這個嘛，我不覺得——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2858,7 +2862,7 @@
   },
   "The Missing Piece#285": {
    "src": "Step aside, subject. Now.",
-   "dst": "",
+   "dst": "讓開，臣民。立刻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2868,7 +2872,7 @@
   },
   "The Missing Piece#286": {
    "src": "You are alone, correct?",
-   "dst": "",
+   "dst": "你是一個人，對嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2878,7 +2882,7 @@
   },
   "The Missing Piece#287": {
    "src": "That's correct. Is that all?",
-   "dst": "",
+   "dst": "沒錯。就這樣嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2888,7 +2892,7 @@
   },
   "The Missing Piece#288": {
    "src": "We'll be done here after we've finished our inspection.",
-   "dst": "",
+   "dst": "稽查完我們就會離開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2898,7 +2902,7 @@
   },
   "The Missing Piece#289": {
    "src": "Say, would you prefer us searching the lower or upper floor first?",
-   "dst": "",
+   "dst": "我問你，你希望我們先搜下面還是上面？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2908,7 +2912,7 @@
   },
   "The Missing Piece#290": {
    "src": "How kind of you to ask... but as there is nothing of interest anywhere, I would suggest you start by finding a reason to get out of my home.",
-   "dst": "",
+   "dst": "你真客氣……不過反正哪裡都沒有什麼值得看的，我建議你們先找個理由離開我家。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2918,7 +2922,7 @@
   },
   "The Missing Piece#291": {
    "src": "I wouldn't want to waste your time, is all.",
-   "dst": "",
+   "dst": "我只是不想浪費你們的時間。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2928,7 +2932,7 @@
   },
   "The Missing Piece#292": {
    "src": "The lower floor then. Thank you for your cooperation.",
-   "dst": "",
+   "dst": "那就先下面。謝謝你的配合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2938,7 +2942,7 @@
   },
   "The Missing Piece#293": {
    "src": "Out of my way, subject.",
-   "dst": "",
+   "dst": "讓開，臣民。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2948,7 +2952,7 @@
   },
   "The Missing Piece#294": {
    "src": "Fine.",
-   "dst": "",
+   "dst": "好吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2958,7 +2962,7 @@
   },
   "The Missing Piece#295": {
    "src": "What's this? No wonder you're exceeding your water limit when you've been keeping illicit plants!",
-   "dst": "",
+   "dst": "這是什麼？難怪你的用水量會超標，原來私藏了違禁植物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2968,7 +2972,7 @@
   },
   "The Missing Piece#296": {
    "src": "Oh what's the matter with you!?",
-   "dst": "",
+   "dst": "你們到底有什麼毛病！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2978,7 +2982,7 @@
   },
   "The Missing Piece#297": {
    "src": "I've worked my whole life in the factories! Can't I have some flowers to keep me company in my old age?",
-   "dst": "",
+   "dst": "我在工廠做了一輩子！老了養幾盆花陪我不行嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2988,7 +2992,7 @@
   },
   "The Missing Piece#298": {
    "src": "Inspector. A message from the Authority.",
-   "dst": "",
+   "dst": "督察。當局傳來的訊息。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -2998,7 +3002,7 @@
   },
   "The Missing Piece#299": {
    "src": "What's this now?",
-   "dst": "",
+   "dst": "這又是什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3008,7 +3012,7 @@
   },
   "The Missing Piece#300": {
    "src": "Hide!",
-   "dst": "",
+   "dst": "躲起來！",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -3018,7 +3022,7 @@
   },
   "The Missing Piece#301": {
    "src": "Open up!",
-   "dst": "",
+   "dst": "開門！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3028,7 +3032,7 @@
   },
   "The Missing Piece#302": {
    "src": "There you go. Now, what business could Her Majesty's authorities possibly have with little old me?",
-   "dst": "",
+   "dst": "好了。那麼，女王陛下的當局找我這個老太婆能有什麼事呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3038,7 +3042,7 @@
   },
   "The Missing Piece#303": {
    "src": "We are here to execute a search. You water usage levels have exceeded you authorized allotment.",
-   "dst": "",
+   "dst": "我們是來執行搜查的。你的用水量已經超過核准的配額。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3048,7 +3052,7 @@
   },
   "The Missing Piece#304": {
    "src": "Well, I don't see-",
-   "dst": "",
+   "dst": "這個嘛，我不覺得——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3058,7 +3062,7 @@
   },
   "The Missing Piece#305": {
    "src": "Step aside, subject. Now.",
-   "dst": "",
+   "dst": "讓開，臣民。立刻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3068,7 +3072,7 @@
   },
   "The Missing Piece#306": {
    "src": "You are alone, correct?",
-   "dst": "",
+   "dst": "你是一個人，對嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3078,7 +3082,7 @@
   },
   "The Missing Piece#307": {
    "src": "That's correct. Is that all?",
-   "dst": "",
+   "dst": "沒錯。就這樣嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3088,7 +3092,7 @@
   },
   "The Missing Piece#308": {
    "src": "We'll be done here after we've finished our inspection.",
-   "dst": "",
+   "dst": "稽查完我們就會離開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3098,7 +3102,7 @@
   },
   "The Missing Piece#309": {
    "src": "Say, would you prefer us searching the lower or upper floor first?",
-   "dst": "",
+   "dst": "我問你，你希望我們先搜下面還是上面？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3108,7 +3112,7 @@
   },
   "The Missing Piece#310": {
    "src": "How kind of you to ask... but as the upper floor is my bedroom, I would prefer it if you didn't inspect my bedsheets.",
-   "dst": "",
+   "dst": "你真客氣……不過樓上是我的臥室，我希望你們不要去翻我的床單。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3118,7 +3122,7 @@
   },
   "The Missing Piece#311": {
    "src": "The upper floor then. Thank you for your cooperation.",
-   "dst": "",
+   "dst": "那就先上面。謝謝你的配合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3128,7 +3132,7 @@
   },
   "The Missing Piece#312": {
    "src": "Out of my way, subject.",
-   "dst": "",
+   "dst": "讓開，臣民。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3138,7 +3142,7 @@
   },
   "The Missing Piece#313": {
    "src": "Fine.",
-   "dst": "",
+   "dst": "好吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3148,7 +3152,7 @@
   },
   "The Missing Piece#314": {
    "src": "What's this? No wonder you're exceeding your water limit when you've been keeping illicit plants!",
-   "dst": "",
+   "dst": "這是什麼？難怪你的用水量會超標，原來私藏了違禁植物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3158,7 +3162,7 @@
   },
   "The Missing Piece#315": {
    "src": "Oh what's the matter with you!?",
-   "dst": "",
+   "dst": "你們到底有什麼毛病！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3168,7 +3172,7 @@
   },
   "The Missing Piece#316": {
    "src": "I've worked my whole life in the factories! Can't I have some flowers to keep me company in my old age?",
-   "dst": "",
+   "dst": "我在工廠做了一輩子！老了養幾盆花陪我不行嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3178,7 +3182,7 @@
   },
   "The Missing Piece#317": {
    "src": "How quaint. Doesn't it get lonely, living up here all by your lonesome?",
-   "dst": "",
+   "dst": "真是別緻。一個人住在這種地方，不會寂寞嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3188,7 +3192,7 @@
   },
   "The Missing Piece#318": {
    "src": "I get by.",
-   "dst": "",
+   "dst": "我過得去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3198,7 +3202,7 @@
   },
   "The Missing Piece#319": {
    "src": "Anyhow, I am required to inform you that you are in breach of the ordinance on water usage and will have to-",
-   "dst": "",
+   "dst": "總之，我必須通知你，你已違反用水條例，將必須——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3208,7 +3212,7 @@
   },
   "The Missing Piece#320": {
    "src": "Inspector. A message from the Authority.",
-   "dst": "",
+   "dst": "督察。當局傳來的訊息。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3218,7 +3222,7 @@
   },
   "The Missing Piece#321": {
    "src": "What's this now?",
-   "dst": "",
+   "dst": "這又是什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3228,7 +3232,7 @@
   },
   "The Missing Piece#322": {
    "src": "Hide!",
-   "dst": "",
+   "dst": "躲起來！",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -3238,7 +3242,7 @@
   },
   "The Missing Piece#323": {
    "src": "Open up!",
-   "dst": "",
+   "dst": "開門！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3248,7 +3252,7 @@
   },
   "The Missing Piece#324": {
    "src": "There you go. Now, what business could Her Majesty's authorities possibly have with little old me?",
-   "dst": "",
+   "dst": "好了。那麼，女王陛下的當局找我這個老太婆能有什麼事呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3258,7 +3262,7 @@
   },
   "The Missing Piece#325": {
    "src": "We are here to execute a search. You water usage levels have exceeded you authorized allotment.",
-   "dst": "",
+   "dst": "我們是來執行搜查的。你的用水量已經超過核准的配額。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3268,7 +3272,7 @@
   },
   "The Missing Piece#326": {
    "src": "Well, I don't see-",
-   "dst": "",
+   "dst": "這個嘛，我不覺得——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3278,7 +3282,7 @@
   },
   "The Missing Piece#327": {
    "src": "Step aside, subject. Now.",
-   "dst": "",
+   "dst": "讓開，臣民。立刻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3288,7 +3292,7 @@
   },
   "The Missing Piece#328": {
    "src": "You are alone, correct?",
-   "dst": "",
+   "dst": "你是一個人，對嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3298,7 +3302,7 @@
   },
   "The Missing Piece#329": {
    "src": "That's correct. Is that all?",
-   "dst": "",
+   "dst": "沒錯。就這樣嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3308,7 +3312,7 @@
   },
   "The Missing Piece#330": {
    "src": "We'll be done here after we've finished our inspection.",
-   "dst": "",
+   "dst": "稽查完我們就會離開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3318,7 +3322,7 @@
   },
   "The Missing Piece#331": {
    "src": "Say, would you prefer us searching the lower or upper floor first?",
-   "dst": "",
+   "dst": "我問你，你希望我們先搜下面還是上面？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3328,7 +3332,7 @@
   },
   "The Missing Piece#332": {
    "src": "What are you mumbling about?",
-   "dst": "",
+   "dst": "你在嘀咕什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3338,7 +3342,7 @@
   },
   "The Missing Piece#333": {
    "src": "Well, seems you're in luck this time, subject.",
-   "dst": "",
+   "dst": "看來你這次走運了，臣民。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3348,7 +3352,7 @@
   },
   "The Missing Piece#334": {
    "src": "Some higher authority has overruled our command... we're being recalled.",
-   "dst": "",
+   "dst": "上頭有更高的權力推翻了我們的命令……我們被召回了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3358,7 +3362,7 @@
   },
   "The Missing Piece#335": {
    "src": "But don't be mistaken. We'll be back!",
-   "dst": "",
+   "dst": "不過別搞錯了。我們還會再來的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3368,7 +3372,7 @@
   },
   "The Missing Piece#336": {
    "src": "Well, you won't be welcome next time!",
-   "dst": "",
+   "dst": "下次可不歡迎你們！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3378,7 +3382,7 @@
   },
   "The Missing Piece#337": {
    "src": "Nuisances, all of them... Well, it worked out in the end, didn't it?",
-   "dst": "",
+   "dst": "一群討厭鬼……唉，總算是解決了，不是嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3388,7 +3392,7 @@
   },
   "The Missing Piece#338": {
    "src": "They're gone, you can come out now.",
-   "dst": "",
+   "dst": "他們走了，你可以出來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3398,7 +3402,7 @@
   },
   "The Missing Piece#339": {
    "src": "Come, let's sit down and have a talk.",
-   "dst": "",
+   "dst": "來，我們坐下來聊聊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3408,7 +3412,7 @@
   },
   "The Missing Piece#340": {
    "src": "Take a seat at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 坐下。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -3418,7 +3422,7 @@
   },
   "The Missing Piece#341": {
    "src": "Please, have a seat.",
-   "dst": "",
+   "dst": "請坐吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3428,7 +3432,7 @@
   },
   "The Missing Piece#342": {
    "src": "Right! The bread! So forgetful these days...",
-   "dst": "",
+   "dst": "對了！麵包！我最近真是健忘……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3438,7 +3442,7 @@
   },
   "The Missing Piece#343": {
    "src": "Well? How did it go? Did you get any? I hope it wasn't too much trouble...",
-   "dst": "",
+   "dst": "怎麼樣？順利嗎？弄到了嗎？希望沒給你添太多麻煩……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3448,7 +3452,7 @@
   },
   "The Missing Piece#344": {
    "src": "Oh, wonderful. Thank you. That should be everything we need...",
-   "dst": "",
+   "dst": "喔，太好了。謝謝你。這樣該有的都有了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3458,7 +3462,7 @@
   },
   "The Missing Piece#345": {
    "src": "Well, if there was no other way... If the Authority is going to stomp in here looking for plants, taking a loaf of bread in return seems like a fair deal!",
-   "dst": "",
+   "dst": "唉，既然沒有別的辦法……當局都能踏進這裡來找植物了，拿一條麵包當回禮好像也算公平！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3468,7 +3472,7 @@
   },
   "The Missing Piece#346": {
    "src": "Here, I'll take it.",
-   "dst": "",
+   "dst": "來，給我吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3478,7 +3482,7 @@
   },
   "The Missing Piece#347": {
    "src": "Ah... How nostalgic. It really does bring me back to those good old days.",
-   "dst": "",
+   "dst": "啊……真懷念。真的讓我回到了從前那些好日子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3488,7 +3492,7 @@
   },
   "The Missing Piece#348": {
    "src": "There was one time though... We... No, I bought it... Argh, why can't I remember!",
-   "dst": "",
+   "dst": "不過有一次……我們……不對，是我自己買的……啊，我為什麼想不起來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3498,7 +3502,7 @@
   },
   "The Missing Piece#349": {
    "src": "How strange... Again, this feeling... As if- as if there's something I should be remembering... but can't.",
-   "dst": "",
+   "dst": "好奇怪……又來了，這種感覺……好像——好像有什麼我應該記得的事……卻想不起來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3508,7 +3512,7 @@
   },
   "The Missing Piece#350": {
    "src": "If only I could remember...",
-   "dst": "",
+   "dst": "要是我能想起來就好了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3518,7 +3522,7 @@
   },
   "The Missing Piece#351": {
    "src": "Do you remember how we first me? All those years ago?",
-   "dst": "",
+   "dst": "你還記得我們第一次見面嗎？那麼多年前的事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3528,7 +3532,7 @@
   },
   "The Missing Piece#352": {
    "src": "Of course I do! But... thinking about it now, maybe I was a bit... cold.",
-   "dst": "",
+   "dst": "我當然記得！不過……現在想想，我那時候可能有點……冷淡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3538,7 +3542,7 @@
   },
   "The Missing Piece#353": {
    "src": "You were fine! You were the only one who...",
-   "dst": "",
+   "dst": "你哪有！你是唯一一個……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3548,7 +3552,7 @@
   },
   "The Missing Piece#354": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3558,7 +3562,7 @@
   },
   "The Missing Piece#355": {
    "src": "You were the only one who even noticed I was there.",
-   "dst": "",
+   "dst": "你是唯一一個注意到我在那裡的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3568,7 +3572,7 @@
   },
   "The Missing Piece#356": {
    "src": "Ah- hello. I'm {u}, I'm new here. Nice to meet you.",
-   "dst": "",
+   "dst": "啊——你好。我是 {u}，我是新來的。幸會。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3578,7 +3582,7 @@
   },
   "The Missing Piece#357": {
    "src": "The name's Elise, do a good job and I'm sure we'll get along.",
-   "dst": "",
+   "dst": "我叫 Elise，好好做事，我們一定處得來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3588,7 +3592,7 @@
   },
   "The Missing Piece#358": {
    "src": "Right, yes. Of course... I'll try my best!",
-   "dst": "",
+   "dst": "好、好的。當然……我會盡力！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3598,7 +3602,7 @@
   },
   "The Missing Piece#359": {
    "src": "... You know what, have this. It'll help you get through the day.",
-   "dst": "",
+   "dst": "……這樣吧，這個給你。撐過今天會輕鬆一點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3608,7 +3612,7 @@
   },
   "The Missing Piece#360": {
    "src": "Oh... okay, thank you!",
-   "dst": "",
+   "dst": "喔……好，謝謝你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3618,7 +3622,7 @@
   },
   "The Missing Piece#361": {
    "src": "Get back to work!",
-   "dst": "",
+   "dst": "回去工作！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3628,7 +3632,7 @@
   },
   "The Missing Piece#362": {
    "src": "Ha... those were good days...",
-   "dst": "",
+   "dst": "哈……那真是段好日子……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3638,7 +3642,7 @@
   },
   "The Missing Piece#363": {
    "src": "Really? I was only working there for a month!",
-   "dst": "",
+   "dst": "真的嗎？我在那裡才做了一個月！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3648,7 +3652,7 @@
   },
   "The Missing Piece#364": {
    "src": "Oh, sure... but it was a good month, wasn't it?",
-   "dst": "",
+   "dst": "喔，是啊……但那是很好的一個月，不是嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3658,7 +3662,7 @@
   },
   "The Missing Piece#365": {
    "src": "And even after you were transferred away... I had something to look forward to at the end of my shifts.",
-   "dst": "",
+   "dst": "而且就算你後來被調走了……我下班以後也總算有個盼頭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3668,7 +3672,7 @@
   },
   "The Missing Piece#366": {
    "src": "Ah... well... now you have something to look forward to when you come home, as well.",
-   "dst": "",
+   "dst": "啊……這個嘛……現在你回到家也有個盼頭了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3678,7 +3682,7 @@
   },
   "The Missing Piece#367": {
    "src": "Ha! I guess I do, don't I...",
-   "dst": "",
+   "dst": "哈！我想是吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3688,7 +3692,7 @@
   },
   "The Missing Piece#368": {
    "src": "But it all seems so small from up here... doesn't it? Just look at the view!",
-   "dst": "",
+   "dst": "不過從這上面看下去，一切都好小……對吧？你看這片景色！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3698,7 +3702,7 @@
   },
   "The Missing Piece#369": {
    "src": "It really is beautiful... up here, it's like nothing else matters except for us.",
-   "dst": "",
+   "dst": "真的很美……在這上面，好像除了我們以外什麼都不重要了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3708,7 +3712,7 @@
   },
   "The Missing Piece#370": {
    "src": "...I wish we could stay like this forever...",
-   "dst": "",
+   "dst": "……真希望我們可以永遠這樣下去……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3718,7 +3722,7 @@
   },
   "The Missing Piece#371": {
    "src": "...oh. So do I, Elise... so do I...",
-   "dst": "",
+   "dst": "……喔。我也是，Elise……我也是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3728,7 +3732,7 @@
   },
   "The Missing Piece#372": {
    "src": "Ha, but why do you sound so sad?",
-   "dst": "",
+   "dst": "哈，可是你的聲音怎麼這麼難過？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3738,7 +3742,7 @@
   },
   "The Missing Piece#373": {
    "src": "Elise, I...",
-   "dst": "",
+   "dst": "Elise，我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3748,7 +3752,7 @@
   },
   "The Missing Piece#374": {
    "src": "It's nothing... we'll stay like this... forever. I promise.",
-   "dst": "",
+   "dst": "沒事……我們會一直這樣下去的……永遠。我保證。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3758,7 +3762,7 @@
   },
   "The Missing Piece#375": {
    "src": "Her, again... Who is she? Why am I remembering these things?",
-   "dst": "",
+   "dst": "又是她……她是誰？我為什麼會想起這些事？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3768,7 +3772,7 @@
   },
   "The Missing Piece#376": {
    "src": "Ha...",
-   "dst": "",
+   "dst": "哈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3778,7 +3782,7 @@
   },
   "The Missing Piece#377": {
    "src": "Well, there's nothing that can be done about it now, is there? Say, why don't we head out?",
-   "dst": "",
+   "dst": "唉，事到如今也無可奈何了，不是嗎？我說，我們出門走走吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3788,7 +3792,7 @@
   },
   "The Missing Piece#378": {
    "src": "Oh, dear. Did I forget to tell you? The bread is for a picnic!",
-   "dst": "",
+   "dst": "喔，親愛的。我是不是忘了跟你說？麵包是要拿去野餐的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3798,7 +3802,7 @@
   },
   "The Missing Piece#379": {
    "src": "I know the perfect place... in fact, you reminded me of it. It has a view over the entire Roughworks, can you believe that?",
-   "dst": "",
+   "dst": "我知道一個絕佳的地方……其實是你讓我想起來的。那裡可以俯瞰整個 Roughworks，你信嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3808,7 +3812,7 @@
   },
   "The Missing Piece#380": {
    "src": "Although... thinking about it, it's abit far... I don't know if my old legs will carry me all the way there, ha!",
-   "dst": "",
+   "dst": "不過……想想看，那裡有點遠……我這雙老腿不知道走不走得到，哈！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3818,7 +3822,7 @@
   },
   "The Missing Piece#381": {
    "src": "Really? Oh, well thank you!",
-   "dst": "",
+   "dst": "真的嗎？喔，那太謝謝你了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3828,7 +3832,7 @@
   },
   "The Missing Piece#382": {
    "src": "Well, what do you say, then? Just talk to me when you want to head out.",
-   "dst": "",
+   "dst": "那麼你覺得如何？想出發的時候再跟我說一聲就好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3838,7 +3842,7 @@
   },
   "The Missing Piece#383": {
    "src": "Speak with Elise at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 和 Elise 說話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -3848,7 +3852,7 @@
   },
   "The Missing Piece#384": {
    "src": "Well, what do you say? Shall we head out?",
-   "dst": "",
+   "dst": "那麼你覺得如何？我們出發吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3858,7 +3862,7 @@
   },
   "The Missing Piece#385": {
    "src": "Let's go, then!",
-   "dst": "",
+   "dst": "那就走吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3868,7 +3872,7 @@
   },
   "The Missing Piece#386": {
    "src": "Carry Elise to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把 Elise 帶到 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -3878,7 +3882,7 @@
   },
   "The Missing Piece#387": {
    "src": "Oh, you can really see a lot from up here... Let's go!",
-   "dst": "",
+   "dst": "喔，從這上面看得到好多東西……走吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3888,7 +3892,7 @@
   },
   "The Missing Piece#388": {
    "src": "Where to? I know just the place for this! Let's see, it's...",
-   "dst": "",
+   "dst": "往哪走呢？我知道一個正好合適的地方！我想想，是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3898,7 +3902,7 @@
   },
   "The Missing Piece#389": {
    "src": "Hm... I think... Forward! Yes, I think it was straight forward from here. Although, my memory might be a little hazy...",
-   "dst": "",
+   "dst": "嗯……我想……往前！對，我想是從這裡一直往前。不過我的記性可能有點模糊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3908,7 +3912,7 @@
   },
   "The Missing Piece#390": {
    "src": "Carry Elise to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把 Elise 帶到 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -3918,7 +3922,7 @@
   },
   "The Missing Piece#391": {
    "src": "Ah, hm... I think we turn left here...",
-   "dst": "",
+   "dst": "啊，嗯……我想這裡要左轉……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3928,7 +3932,7 @@
   },
   "The Missing Piece#392": {
    "src": "No, wait... It's right, we definitely have to turn right!",
-   "dst": "",
+   "dst": "不對，等等……是右邊，一定要右轉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3938,7 +3942,7 @@
   },
   "The Missing Piece#393": {
    "src": "Carry Elise to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把 Elise 帶到 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -3948,7 +3952,7 @@
   },
   "The Missing Piece#394": {
    "src": "That house feels familiar... I think... yes, turn right here!",
-   "dst": "",
+   "dst": "那間房子感覺很眼熟……我想……對，這裡右轉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3958,7 +3962,7 @@
   },
   "The Missing Piece#395": {
    "src": "Carry Elise to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把 Elise 帶到 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -3968,7 +3972,7 @@
   },
   "The Missing Piece#396": {
    "src": "Stop! Hmm... I don't think it's across this bridge, at least. Then that must mean...",
-   "dst": "",
+   "dst": "停！嗯……至少我覺得不是過這座橋。那就表示……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3978,7 +3982,7 @@
   },
   "The Missing Piece#397": {
    "src": "Oh, what's the matter! We'll find it eventually, right? I'm pretty sure it's to the left!",
-   "dst": "",
+   "dst": "唉，怎麼了嘛！我們總會找到的，對吧？我很確定是往左！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -3988,7 +3992,7 @@
   },
   "The Missing Piece#398": {
    "src": "Carry Elise to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把 Elise 帶到 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -3998,7 +4002,7 @@
   },
   "The Missing Piece#399": {
    "src": "Yes, this is it! It's just around this corner, I'm sure of it!",
-   "dst": "",
+   "dst": "對，就是這裡！就在這個轉角過去，我很確定！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4008,7 +4012,7 @@
   },
   "The Missing Piece#400": {
    "src": "Carry Elise to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把 Elise 帶到 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4018,7 +4022,7 @@
   },
   "The Missing Piece#401": {
    "src": "Here! I remember now... it's in here!",
-   "dst": "",
+   "dst": "這裡！我想起來了……就在這裡面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4028,7 +4032,7 @@
   },
   "The Missing Piece#402": {
    "src": "I don't remember it being so overgrown, though...",
-   "dst": "",
+   "dst": "不過我不記得它以前這麼多雜草……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4038,7 +4042,7 @@
   },
   "The Missing Piece#403": {
    "src": "How long has it been? I can't recall the last time I was here...",
-   "dst": "",
+   "dst": "多久了呢？我不記得上次來是什麼時候了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4048,7 +4052,7 @@
   },
   "The Missing Piece#404": {
    "src": "Go into the overgrowth to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "走進 [-{~}, {~}, -{~}] 的雜草叢。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4058,7 +4062,7 @@
   },
   "The Missing Piece#405": {
    "src": "Ah, it's blocked... Well. I didn't want to bring it up, but it seems we're out of options.",
-   "dst": "",
+   "dst": "啊，被擋住了……唉。我本來不想提的，不過看來我們沒別的辦法了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4068,7 +4072,7 @@
   },
   "The Missing Piece#406": {
    "src": "Oh, there's no need to pretend anymore. I know what you are. You're one of them, aren't you?",
-   "dst": "",
+   "dst": "喔，不用再裝了。我知道你是什麼。你是他們的一員，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4078,7 +4082,7 @@
   },
   "The Missing Piece#407": {
    "src": "The cursed, as the Crown calls them. Not that I care!",
-   "dst": "",
+   "dst": "受詛者，王室是這麼叫的。不過我才不在乎！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4088,7 +4092,7 @@
   },
   "The Missing Piece#408": {
    "src": "Why should I? I'm old! I have enough to worry about as is...",
-   "dst": "",
+   "dst": "我為什麼要在乎？我都這把年紀了！要煩的事情夠多了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4098,7 +4102,7 @@
   },
   "The Missing Piece#409": {
    "src": "Besides, it's certainly useful in situations like this, isn't it? Be a dearie and do one of your little tricks, won't you?",
-   "dst": "",
+   "dst": "而且，這種時候不是很有用嗎？親愛的，行行好，露一手你們的小把戲吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4108,7 +4112,7 @@
   },
   "The Missing Piece#410": {
    "src": "Cast a spell.",
-   "dst": "",
+   "dst": "施放一個法術。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4118,7 +4122,7 @@
   },
   "The Missing Piece#411": {
    "src": "That's it... Let me down now, I can walk the rest of the way myself.",
-   "dst": "",
+   "dst": "就是這樣……放我下來吧，剩下的路我自己走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4128,7 +4132,7 @@
   },
   "The Missing Piece#412": {
    "src": "Enter the cave at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "進入 [-{~}, {~}, -{~}] 的洞穴。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4138,7 +4142,7 @@
   },
   "The Missing Piece#413": {
    "src": "It's a little more... well, deserted, than I remember. But that's fine.",
-   "dst": "",
+   "dst": "這裡比我記得的……嗯，荒涼了一點。不過沒關係。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4148,7 +4152,7 @@
   },
   "The Missing Piece#414": {
    "src": "We can take this elevator to the top. You'll have to find a way into the control room though... It shouldn't be too hard to reach!",
-   "dst": "",
+   "dst": "我們可以搭這台電梯上去。不過你得想辦法進到控制室……應該不難才對！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4158,7 +4162,7 @@
   },
   "The Missing Piece#415": {
    "src": "It's that thing over there. The tunnel on the right will get you to it.",
-   "dst": "",
+   "dst": "就是那邊那個東西。右邊那條通道可以通到那裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4168,7 +4172,7 @@
   },
   "The Missing Piece#416": {
    "src": "Reach the control panel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "抵達 [-{~}, {~}, -{~}] 的控制台。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4178,7 +4182,7 @@
   },
   "The Missing Piece#417": {
    "src": "Can you hear me? I'm down here!",
-   "dst": "",
+   "dst": "聽得到我說話嗎？我在下面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4188,7 +4192,7 @@
   },
   "The Missing Piece#418": {
    "src": "Use the controls to get me up! You know how it works, right?",
-   "dst": "",
+   "dst": "用那些控制裝置把我送上來！你知道怎麼操作吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4198,7 +4202,7 @@
   },
   "The Missing Piece#419": {
    "src": "Use the controls at [-{~}, {~}, -{~}] to bring Elise up.",
-   "dst": "",
+   "dst": "使用 [-{~}, {~}, -{~}] 的控制裝置把 Elise 送上來。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4208,7 +4212,7 @@
   },
   "The Missing Piece#420": {
    "src": "Agh!! What was that!?",
-   "dst": "",
+   "dst": "啊！！剛剛是什麼聲音！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4218,7 +4222,7 @@
   },
   "The Missing Piece#421": {
    "src": "It must have gotten stuck...",
-   "dst": "",
+   "dst": "一定是卡住了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4228,7 +4232,7 @@
   },
   "The Missing Piece#422": {
    "src": "Maybe if... oh, I know. Put something on the up button, then you can clear the blockage... and we'll go up.",
-   "dst": "",
+   "dst": "或許可以……喔，我知道了。在上升鈕上壓個東西，然後你就可以去把卡住的東西清掉……我們就上得去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4238,7 +4242,7 @@
   },
   "The Missing Piece#423": {
    "src": "Perfect! Now it will move, if only we can get it unstuck...",
-   "dst": "",
+   "dst": "太好了！這樣它就會動了，只要能把卡住的地方弄開……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4248,7 +4252,7 @@
   },
   "The Missing Piece#424": {
    "src": "If you could get up there, somehow...",
-   "dst": "",
+   "dst": "你要是有辦法上去那邊的話……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4258,7 +4262,7 @@
   },
   "The Missing Piece#425": {
    "src": "Agh!",
-   "dst": "",
+   "dst": "啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4268,7 +4272,7 @@
   },
   "The Missing Piece#426": {
    "src": "Oh well, this place seems abandoned anyhow! Who cares about a little destruction?",
-   "dst": "",
+   "dst": "唉，反正這地方看起來也廢棄了！稍微破壞一下有什麼關係？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4278,7 +4282,7 @@
   },
   "The Missing Piece#427": {
    "src": "Go up there and see if you can find a way to get this thing going again.",
-   "dst": "",
+   "dst": "上去那邊看看，能不能想辦法讓這東西重新動起來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4288,7 +4292,7 @@
   },
   "The Missing Piece#428": {
    "src": "Make it to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "抵達 [-{~}, {~}, -{~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4298,7 +4302,7 @@
   },
   "The Missing Piece#429": {
    "src": "Throw a brick at the blockage at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "朝 [-{~}, {~}, -{~}] 卡住的地方丟磚塊。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4308,7 +4312,7 @@
   },
   "The Missing Piece#430": {
    "src": "How's it going? Can you see anything?",
-   "dst": "",
+   "dst": "情況怎麼樣？看得到什麼嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4318,7 +4322,7 @@
   },
   "The Missing Piece#431": {
    "src": "Quickly, hop on!",
-   "dst": "",
+   "dst": "快，跳上來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4328,7 +4332,7 @@
   },
   "The Missing Piece#432": {
    "src": "Jump on the elevator!",
-   "dst": "",
+   "dst": "跳上電梯！",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4338,7 +4342,7 @@
   },
   "The Missing Piece#433": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4348,7 +4352,7 @@
   },
   "The Missing Piece#434": {
    "src": "Did it work?",
-   "dst": "",
+   "dst": "成功了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4358,7 +4362,7 @@
   },
   "The Missing Piece#435": {
    "src": "Speak with Elise at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 和 Elise 說話。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4368,7 +4372,7 @@
   },
   "The Missing Piece#436": {
    "src": "We're here.",
-   "dst": "",
+   "dst": "我們到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4378,7 +4382,7 @@
   },
   "The Missing Piece#437": {
    "src": "Follow Elise to the cliff at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟著 Elise 到 [-{~}, {~}, -{~}] 的崖邊。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4388,7 +4392,7 @@
   },
   "The Missing Piece#438": {
    "src": "Ah, isn't this place nice. The breeze, the view, everything.",
-   "dst": "",
+   "dst": "啊，這地方真好。微風、景色，什麼都好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4398,7 +4402,7 @@
   },
   "The Missing Piece#439": {
    "src": "You can even see the trees of the {p} swaying from up here...",
-   "dst": "",
+   "dst": "從這上面甚至看得到{p}的樹在搖曳……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4408,7 +4412,7 @@
   },
   "The Missing Piece#440": {
    "src": "And finally! A place to sit! I'm sorely in need of some relaxation after this eventful day.",
-   "dst": "",
+   "dst": "而且終於！有地方可以坐了！忙了這麼精彩的一天，我實在需要放鬆一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4418,7 +4422,7 @@
   },
   "The Missing Piece#441": {
    "src": "Please, let's sit down and enjoy the view for a bit.",
-   "dst": "",
+   "dst": "來，我們坐下來欣賞一會兒風景吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4428,7 +4432,7 @@
   },
   "The Missing Piece#442": {
    "src": "Sit down at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 坐下。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -4438,7 +4442,7 @@
   },
   "The Missing Piece#443": {
    "src": "Hm. It's strange. All day, I've been... reminiscing, I suppose. And now, seeing this view... it fills me with that same nostalgic feeling.",
-   "dst": "",
+   "dst": "嗯。好奇怪。這一整天，我一直在……回想，我想是吧。現在看著這片景色……又是同樣那股懷念的感覺。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4448,7 +4452,7 @@
   },
   "The Missing Piece#444": {
    "src": "All day, I've been having these visions of the past. Of these things I can't recall ever happening.",
-   "dst": "",
+   "dst": "這一整天，我一直看見過去的畫面。那些我不記得發生過的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4458,7 +4462,7 @@
   },
   "The Missing Piece#445": {
    "src": "And I... well, truthfully, I'm not sure how to feel about it...",
-   "dst": "",
+   "dst": "而我……老實說，我不知道該怎麼看待這件事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4468,7 +4472,7 @@
   },
   "The Missing Piece#446": {
    "src": "But I know- I know in my heart, that there's something missing... a piece that would make it all fit.",
-   "dst": "",
+   "dst": "但我知道——我心裡知道，有什麼東西不見了……少了那一塊，一切就拼不起來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4478,7 +4482,7 @@
   },
   "The Missing Piece#447": {
    "src": "Who is she?",
-   "dst": "",
+   "dst": "她是誰？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4488,7 +4492,7 @@
   },
   "The Missing Piece#448": {
    "src": "In every dream she's there beside me... but I don't even remember her name. I can't even recall her face...",
-   "dst": "",
+   "dst": "每一個夢裡她都在我身邊……可是我連她的名字都不記得。我連她的臉都想不起來……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4498,7 +4502,7 @@
   },
   "The Missing Piece#449": {
    "src": "If she was this important to me... then how could I forget?",
-   "dst": "",
+   "dst": "如果她對我這麼重要……那我怎麼可能忘記？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4508,7 +4512,7 @@
   },
   "The Missing Piece#450": {
    "src": "How could I forget...",
-   "dst": "",
+   "dst": "我怎麼可能忘記……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4518,7 +4522,7 @@
   },
   "The Missing Piece#451": {
    "src": "Wait!",
-   "dst": "",
+   "dst": "等等！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4528,7 +4532,7 @@
   },
   "The Missing Piece#452": {
    "src": "Hurgh... hurgh... One second, I need to catch my breath.",
-   "dst": "",
+   "dst": "呼……呼……等一下，我得喘口氣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4538,7 +4542,7 @@
   },
   "The Missing Piece#453": {
    "src": "Hm... Do you know this person? They're not an inspector... are they?",
-   "dst": "",
+   "dst": "嗯……你認識這個人嗎？他該不會是督察吧……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4548,7 +4552,7 @@
   },
   "The Missing Piece#454": {
    "src": "So, as I was going to say-",
-   "dst": "",
+   "dst": "那麼，我剛剛要說的是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4558,7 +4562,7 @@
   },
   "The Missing Piece#455": {
    "src": "Okay, fine! I'll get straight to the point.",
-   "dst": "",
+   "dst": "好啦好啦！我直接講重點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4568,7 +4572,7 @@
   },
   "The Missing Piece#456": {
    "src": "I found more letters to deliver, and I was on my way to deliver them when I saw you two running out! Can you imagine how shocked I was?",
-   "dst": "",
+   "dst": "我又找到一些要送的信，正要拿去送的時候看到你們兩個跑出來！你能想像我有多震驚嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4578,7 +4582,7 @@
   },
   "The Missing Piece#457": {
    "src": "That being that, I naturally decided to follow you, the good postmaster that I am. You sure didn't make it easy though! I barely managed to make it up here... It's a nice spot, by the way.",
-   "dst": "",
+   "dst": "既然如此，身為一個稱職的郵政局長，我當然決定跟上來。你們可真不好跟！我差點爬不上來……順帶一提，這地方不錯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4588,7 +4592,7 @@
   },
   "The Missing Piece#458": {
    "src": "But... how could you have possibly made it up here...?",
-   "dst": "",
+   "dst": "可是……你到底是怎麼上來的……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4598,7 +4602,7 @@
   },
   "The Missing Piece#459": {
    "src": "Getting up here is nothing to a university graduate like me!",
-   "dst": "",
+   "dst": "對我這種大學畢業生來說，爬上來根本不算什麼！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4608,7 +4612,7 @@
   },
   "The Missing Piece#460": {
    "src": "Here, your letter.",
-   "dst": "",
+   "dst": "來，你的信。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4618,7 +4622,7 @@
   },
   "The Missing Piece#461": {
    "src": "Thank you...?",
-   "dst": "",
+   "dst": "謝謝你……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4628,7 +4632,7 @@
   },
   "The Missing Piece#462": {
    "src": "Well, that was all that I came for I suppose. So...",
-   "dst": "",
+   "dst": "好了，我要做的大概就這些。那麼……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4638,7 +4642,7 @@
   },
   "The Missing Piece#463": {
    "src": "You came all this way just for that!? At least have a piece of bread, or something...!",
-   "dst": "",
+   "dst": "你大老遠跑這一趟就為了這個！？至少吃塊麵包再走吧……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4648,7 +4652,7 @@
   },
   "The Missing Piece#464": {
    "src": "No, no. I couldn't possibly! Duty calls, the post isn't going to sort itself, and all that... Oh, by Her Majesty, the backlog...",
-   "dst": "",
+   "dst": "不不，我怎麼好意思！職責在身，郵件不會自己分好，之類的……喔，天啊，那堆積壓的信……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4658,7 +4662,7 @@
   },
   "The Missing Piece#465": {
    "src": "Right! You! I hate to admit it, but it seems you've done your job well enough.",
-   "dst": "",
+   "dst": "對了！你！我不想承認，不過看來你這份工作做得還行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4668,7 +4672,7 @@
   },
   "The Missing Piece#466": {
    "src": "I happened to double check the records and it seems like my substitute, well, may have been someone else entirely!",
-   "dst": "",
+   "dst": "我剛好又去核對了一下紀錄，看來我那個代班的，嗯，可能根本是另外一個人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4678,7 +4682,7 @@
   },
   "The Missing Piece#467": {
    "src": "No harm, no foul, right? The work's already done! No takesies-backsies! Okay?",
-   "dst": "",
+   "dst": "沒造成傷害就不算犯規，對吧？反正工作都做完了！不能反悔喔！好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4688,7 +4692,7 @@
   },
   "The Missing Piece#468": {
    "src": "So... What do you say?",
-   "dst": "",
+   "dst": "所以……你覺得呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4698,7 +4702,7 @@
   },
   "The Missing Piece#469": {
    "src": "Huh, what was that? I couldn't hear you! Okay, bye!",
-   "dst": "",
+   "dst": "咦，你說什麼？我聽不到！好，掰！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4708,7 +4712,7 @@
   },
   "The Missing Piece#470": {
    "src": "What a strange person...",
-   "dst": "",
+   "dst": "真是個奇怪的人……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4718,7 +4722,7 @@
   },
   "The Missing Piece#471": {
    "src": "But it was certainly nice of them to deliver this letter. Let me take a look.",
-   "dst": "",
+   "dst": "不過他特地把這封信送來，人是真的不錯。我來看看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4728,7 +4732,7 @@
   },
   "The Missing Piece#472": {
    "src": "Hmm...",
-   "dst": "",
+   "dst": "唔……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4738,7 +4742,7 @@
   },
   "The Missing Piece#473": {
    "src": "Oh, I don't understand... What would she have to apologize for?",
-   "dst": "",
+   "dst": "喔，我不懂……她有什麼好道歉的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4748,7 +4752,7 @@
   },
   "The Missing Piece#474": {
    "src": "Please... {u}, take a breath. You're shaking.",
-   "dst": "",
+   "dst": "拜託……{u}，深呼吸。你在發抖。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4758,7 +4762,7 @@
   },
   "The Missing Piece#475": {
    "src": "Elise...",
-   "dst": "",
+   "dst": "Elise……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4768,7 +4772,7 @@
   },
   "The Missing Piece#476": {
    "src": "Getting caught in a storm like that... really, I could have waited a few hours! You didn't need to push yourself to get here.",
-   "dst": "",
+   "dst": "淋著那樣的暴雨跑來……真是的，我等個幾小時也沒關係！你不用硬撐著趕過來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4778,7 +4782,7 @@
   },
   "The Missing Piece#477": {
    "src": "You... don't understand...",
-   "dst": "",
+   "dst": "你……不明白……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4788,7 +4792,7 @@
   },
   "The Missing Piece#478": {
    "src": "Yes, I know the weather's bad now... but eventually, it'll get better again. The clouds will clear and the sun will shine again. Right?",
-   "dst": "",
+   "dst": "對，我知道現在天氣很糟……但總會好起來的。雲會散，太陽會再出來。對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4798,7 +4802,7 @@
   },
   "The Missing Piece#479": {
    "src": "I...",
-   "dst": "",
+   "dst": "我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4808,7 +4812,7 @@
   },
   "The Missing Piece#480": {
    "src": "You know, it's not so bad with rain once in a while. Means we don't have to water the flowers, at least! And nothing beats the smell of wet grass after rain, don't you agree?",
-   "dst": "",
+   "dst": "你知道嗎，偶爾下下雨也不壞。至少我們不用去澆花了！而且雨後濕草的味道最棒了，你不覺得嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4818,7 +4822,7 @@
   },
   "The Missing Piece#481": {
    "src": "We could do something after it clears up. It's been a while since you visited, so why not go to our spot? I should still have some leftover bread lying around...",
-   "dst": "",
+   "dst": "等天氣放晴我們可以做點什麼。你好久沒來了，不如去我們那個老地方？我應該還有剩一些麵包……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4828,7 +4832,7 @@
   },
   "The Missing Piece#482": {
    "src": "Elise. You're- please, forgive me- you're in danger. I-",
-   "dst": "",
+   "dst": "Elise。你——拜託，原諒我——你有危險。我——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4838,7 +4842,7 @@
   },
   "The Missing Piece#483": {
    "src": "I'm in danger? I'm just an ordinary worker, what reason would anyone have to harm me? I'll be fine.",
-   "dst": "",
+   "dst": "我有危險？我只是個普通的工人，誰會有理由要害我？我不會有事的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4848,7 +4852,7 @@
   },
   "The Missing Piece#484": {
    "src": "{u}, you're the one pushing herself through this weather, clearly panicking...",
-   "dst": "",
+   "dst": "{u}，冒著這種天氣硬撐的人是你，而且明顯在慌張……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4858,7 +4862,7 @@
   },
   "The Missing Piece#485": {
    "src": "I barely get to see you anymore. And now, out of nowhere, you're here in this state... What's going on? Please, just talk to me.",
-   "dst": "",
+   "dst": "我現在很難得才見得到你。而你突然出現，還是這副樣子……到底怎麼了？拜託，跟我說。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4868,7 +4872,7 @@
   },
   "The Missing Piece#486": {
    "src": "...ha. I- I haven't been truthful with you, Elise, and- I can explain later. We need to get out of here, before they-",
-   "dst": "",
+   "dst": "……哈。我——我一直沒對你說實話，Elise，而且——我之後再解釋。我們得離開這裡，趁他們還沒——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4878,7 +4882,7 @@
   },
   "The Missing Piece#487": {
    "src": "...no. No... no, no, no...",
-   "dst": "",
+   "dst": "……不。不……不、不、不……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4888,7 +4892,7 @@
   },
   "The Missing Piece#488": {
    "src": "... what's happening?",
-   "dst": "",
+   "dst": "……發生什麼事了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4898,7 +4902,7 @@
   },
   "The Missing Piece#489": {
    "src": "Why would they... no, this doesn't make any sense...",
-   "dst": "",
+   "dst": "他們為什麼會……不，這說不通……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4908,7 +4912,7 @@
   },
   "The Missing Piece#490": {
    "src": "Hm. Well, then maybe it's nothing. I'll go see who it is.",
-   "dst": "",
+   "dst": "嗯。那也許沒什麼。我去看看是誰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4918,7 +4922,7 @@
   },
   "The Missing Piece#491": {
    "src": "As if one wasn't enough... who could possibly be foolish enough to brave a storm just to come visit this little place? Whatever it is, it can wait.",
-   "dst": "",
+   "dst": "一個還不夠嗎……到底是誰會傻到冒著暴風雨跑來這種小地方？不管是什麼事，都可以等。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4928,7 +4932,7 @@
   },
   "The Missing Piece#492": {
    "src": "Yes, yes. I'm coming!",
-   "dst": "",
+   "dst": "好了好了。我來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4938,7 +4942,7 @@
   },
   "The Missing Piece#493": {
    "src": "...what? No...",
-   "dst": "",
+   "dst": "……什麼？不……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4948,7 +4952,7 @@
   },
   "The Missing Piece#494": {
    "src": "No... No... What are you... Why are you-",
-   "dst": "",
+   "dst": "不……不……你們是要……你們為什麼要——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4958,7 +4962,7 @@
   },
   "The Missing Piece#495": {
    "src": "Apologies for the disturbance, madam. But I'm afraid we have business to attend to.",
-   "dst": "",
+   "dst": "抱歉打擾了，夫人。恐怕我們有公務在身。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4968,7 +4972,7 @@
   },
   "The Missing Piece#496": {
    "src": "What... ... what's going on?",
-   "dst": "",
+   "dst": "什麼……這……這是怎麼回事？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4978,7 +4982,7 @@
   },
   "The Missing Piece#497": {
    "src": "{u}, {u}, why are they here? Why... why won't you answer me...?",
-   "dst": "",
+   "dst": "{u}，{u}，他們為什麼會在這裡？為什麼……你為什麼不回答我……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4988,7 +4992,7 @@
   },
   "The Missing Piece#498": {
    "src": "What have you done? I... Please, just explain... I- I...",
-   "dst": "",
+   "dst": "你做了什麼？我……拜託，解釋一下……我——我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -4998,7 +5002,7 @@
   },
   "The Missing Piece#499": {
    "src": "I... how did I overlook this...?",
-   "dst": "",
+   "dst": "我……我怎麼會漏掉這一點……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5008,7 +5012,7 @@
   },
   "The Missing Piece#500": {
    "src": "Seems you're not quite the strategic mastermind you though yourself, Lioness.",
-   "dst": "",
+   "dst": "看來你也沒有自己以為的那麼足智多謀嘛，母獅。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5018,7 +5022,7 @@
   },
   "The Missing Piece#501": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5028,7 +5032,7 @@
   },
   "The Missing Piece#502": {
    "src": "Elise... if you... if you just cooperate...",
-   "dst": "",
+   "dst": "Elise……如果你……如果你願意配合……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5038,7 +5042,7 @@
   },
   "The Missing Piece#503": {
    "src": "Then... everything will be fine. It... it will.",
-   "dst": "",
+   "dst": "那麼……一切都會沒事的。一定……一定會的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5048,7 +5052,7 @@
   },
   "The Missing Piece#504": {
    "src": "I promise...",
-   "dst": "",
+   "dst": "我保證……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5058,7 +5062,7 @@
   },
   "The Missing Piece#505": {
    "src": "I...",
-   "dst": "",
+   "dst": "我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5068,7 +5072,7 @@
   },
   "The Missing Piece#506": {
    "src": "She... What did she do? Why did she wrap me up in it?",
-   "dst": "",
+   "dst": "她……她做了什麼？她為什麼要把我也牽扯進去？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5078,7 +5082,7 @@
   },
   "The Missing Piece#507": {
    "src": "Everything I remember... it just leaves me with more questions than answers. Why can't I remember her...? Why!?",
-   "dst": "",
+   "dst": "我想起來的每一件事……都只讓我有更多疑問，沒有答案。我為什麼想不起她……？為什麼！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5088,7 +5092,7 @@
   },
   "The Missing Piece#508": {
    "src": "I- I'm just an ordinary factory worker! I woke up early, worked late, slept late... then did it all over again the next day.",
-   "dst": "",
+   "dst": "我——我只是個普通的工廠女工！我早起、晚歸、很晚才睡……然後隔天再重來一遍。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5098,7 +5102,7 @@
   },
   "The Missing Piece#509": {
    "src": "I've never said a word about the Crown! Why would they possibly care about... me...?",
-   "dst": "",
+   "dst": "我從來沒說過王室半句不是！他們到底為什麼會在意……我……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5108,7 +5112,7 @@
   },
   "The Missing Piece#510": {
    "src": "They... they took everything from me. My youth, my body, my time, and... and I never demanded anything in return.",
-   "dst": "",
+   "dst": "他們……他們奪走了我的一切。我的青春、我的身體、我的時間，而……而我從來沒有要求過任何回報。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5118,7 +5122,7 @@
   },
   "The Missing Piece#511": {
    "src": "So, why... why can't I just have this? This one little thing? Why can't I remember her...?",
-   "dst": "",
+   "dst": "所以，為什麼……為什麼我連這個都不能有？就這麼一件小事？我為什麼不能記得她……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5128,7 +5132,7 @@
   },
   "The Missing Piece#512": {
    "src": "...oh, it might sound sad... but, looking back at it all like this...",
-   "dst": "",
+   "dst": "……唉，這樣講可能有點感傷……不過這樣回頭看下來……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5138,7 +5142,7 @@
   },
   "The Missing Piece#513": {
    "src": "My life doesn't seem all that great, does it? Ha. Toiling away in a factory for someone else's bread...",
-   "dst": "",
+   "dst": "我這一生好像也沒多精彩，對吧？在工廠裡為別人的麵包耗盡一生……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5148,7 +5152,7 @@
   },
   "The Missing Piece#514": {
    "src": "But I can feel her. Even if... even if I can't remember her face, or her name, or her touch... I still feel her. Lingering in my heart. Shining.",
-   "dst": "",
+   "dst": "可是我感覺得到她。就算……就算我想不起她的臉、她的名字、她的觸碰……我還是感覺得到她。留在我心裡。發著光。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5158,7 +5162,7 @@
   },
   "The Missing Piece#515": {
    "src": "...it's all some sort of sick joke, isn't it?",
-   "dst": "",
+   "dst": "……這一切根本是個惡劣的玩笑，不是嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5168,7 +5172,7 @@
   },
   "The Missing Piece#516": {
    "src": "They weren't content with all I sacrificed... they had to take even my memories? Is that it...?",
-   "dst": "",
+   "dst": "我犧牲的那些他們還不滿足……連我的記憶都要拿走？是這樣嗎……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5178,7 +5182,7 @@
   },
   "The Missing Piece#517": {
    "src": "Ha...",
-   "dst": "",
+   "dst": "哈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5188,7 +5192,7 @@
   },
   "The Missing Piece#518": {
    "src": "Wherever you are now... whatever you did... whatever secrets you kept... I hope it was worth it.",
-   "dst": "",
+   "dst": "不管你現在在哪裡……不管你做了什麼……不管你守著什麼秘密……我希望那一切都值得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5198,7 +5202,7 @@
   },
   "The Missing Piece#519": {
    "src": "I hope you burn this entire place to the ground.",
-   "dst": "",
+   "dst": "我希望你把這個地方燒個精光。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5208,7 +5212,7 @@
   },
   "The Missing Piece#520": {
    "src": "I...",
-   "dst": "",
+   "dst": "我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5218,7 +5222,7 @@
   },
   "The Missing Piece#521": {
    "src": "I just wish... we could have spent more time together.",
-   "dst": "",
+   "dst": "我只希望……我們能多相處一些時間。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5228,7 +5232,7 @@
   },
   "The Missing Piece#522": {
    "src": "For a long time, I went along the path that had been laid before me. I did what was right.",
-   "dst": "",
+   "dst": "很長一段時間裡，我都走在別人為我鋪好的路上。我做著所謂正確的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5238,7 +5242,7 @@
   },
   "The Missing Piece#523": {
    "src": "But then... I met you, Elise.",
-   "dst": "",
+   "dst": "但後來……我遇見了你，Elise。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5248,7 +5252,7 @@
   },
   "The Missing Piece#524": {
    "src": "I... I don't know what to say, {u}...",
-   "dst": "",
+   "dst": "我……我不知道該說什麼，{u}……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5258,7 +5262,7 @@
   },
   "The Missing Piece#525": {
    "src": "Close your eyes.",
-   "dst": "",
+   "dst": "閉上眼睛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5268,7 +5272,7 @@
   },
   "The Missing Piece#526": {
    "src": "What do you see?",
-   "dst": "",
+   "dst": "你看到什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5278,7 +5282,7 @@
   },
   "The Missing Piece#527": {
    "src": "I see... A bird. A pigeon, it's old and gray. Its wings no longer work like they used to...",
-   "dst": "",
+   "dst": "我看到……一隻鳥。一隻鴿子，又老又灰。牠的翅膀已經不像從前那樣了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5288,7 +5292,7 @@
   },
   "The Missing Piece#528": {
    "src": "It wants to fly, but it can't... It's struggling...",
-   "dst": "",
+   "dst": "牠想飛，卻飛不起來……牠很吃力……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5298,7 +5302,7 @@
   },
   "The Missing Piece#529": {
    "src": "What is it doing, Elise?",
-   "dst": "",
+   "dst": "牠在做什麼，Elise？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5308,7 +5312,7 @@
   },
   "The Missing Piece#530": {
    "src": "No, I can't! It's too sad...",
-   "dst": "",
+   "dst": "不，我做不到！太難過了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5318,7 +5322,7 @@
   },
   "The Missing Piece#531": {
    "src": "Try.",
-   "dst": "",
+   "dst": "試試看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5328,7 +5332,7 @@
   },
   "The Missing Piece#532": {
    "src": "It's sitting beneath the shade of a canopy, singing. Like a cry, almost, mourning.",
-   "dst": "",
+   "dst": "牠坐在樹蔭底下唱著歌。幾乎像在哭，像在哀悼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5338,7 +5342,7 @@
   },
   "The Missing Piece#533": {
    "src": "The clouds, dark clouds are gathering. A storm is coming. The bird is looking around, frantically searching. It's scared.",
-   "dst": "",
+   "dst": "烏雲，濃厚的烏雲正在聚集。暴風雨要來了。那隻鳥四處張望，慌張地找著什麼。牠很害怕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5348,7 +5352,7 @@
   },
   "The Missing Piece#534": {
    "src": "It... It calls out, for something... or someone...",
-   "dst": "",
+   "dst": "牠……牠在呼喚著什麼……或是某個人……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5358,7 +5362,7 @@
   },
   "The Missing Piece#535": {
    "src": "Who is it calling for, Elise?",
-   "dst": "",
+   "dst": "牠在呼喚誰，Elise？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5368,7 +5372,7 @@
   },
   "The Missing Piece#536": {
    "src": "I... I don't know!",
-   "dst": "",
+   "dst": "我……我不知道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5378,7 +5382,7 @@
   },
   "The Missing Piece#537": {
    "src": "Who is it looking for?",
-   "dst": "",
+   "dst": "牠在找誰？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5388,7 +5392,7 @@
   },
   "The Missing Piece#538": {
    "src": "I... I-I can't remember!",
-   "dst": "",
+   "dst": "我……我想不起來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5398,7 +5402,7 @@
   },
   "The Missing Piece#539": {
    "src": "Who did you forget?",
-   "dst": "",
+   "dst": "你忘了誰？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5408,7 +5412,7 @@
   },
   "The Missing Piece#540": {
    "src": "I won't forget! I won't forget! I won't! I promised! I promised I'd never forget you!",
-   "dst": "",
+   "dst": "我不會忘記！我不會忘記！我不會！我答應過！我答應過我永遠不會忘記你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5418,7 +5422,7 @@
   },
   "The Missing Piece#541": {
    "src": "Open your eyes.",
-   "dst": "",
+   "dst": "睜開眼睛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5428,7 +5432,7 @@
   },
   "The Missing Piece#542": {
    "src": "No... No... Wh-Where is this?",
-   "dst": "",
+   "dst": "不……不……這、這是哪裡？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5438,7 +5442,7 @@
   },
   "The Missing Piece#543": {
    "src": "You are an ordinary worker from the Roughworks. You work an ordinary job, and lead an ordinary but solitary life.",
-   "dst": "",
+   "dst": "你是 Roughworks 一名普通的工人。你做著普通的工作，過著普通而孤獨的生活。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5448,7 +5452,7 @@
   },
   "The Missing Piece#544": {
    "src": "I'm... No, I'm me!",
-   "dst": "",
+   "dst": "我是……不，我是我自己！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5458,7 +5462,7 @@
   },
   "The Missing Piece#545": {
    "src": "She is nothing to you. You have never met her. You will never meet her.",
-   "dst": "",
+   "dst": "她對你來說什麼都不是。你從未見過她。你也永遠不會見到她。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5468,7 +5472,7 @@
   },
   "The Missing Piece#546": {
    "src": "I won't forget!",
-   "dst": "",
+   "dst": "我不會忘記！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5478,7 +5482,7 @@
   },
   "The Missing Piece#547": {
    "src": "Silence!",
-   "dst": "",
+   "dst": "住口！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5488,7 +5492,7 @@
   },
   "The Missing Piece#548": {
    "src": "You are nothing to her! She is nothing to you! Soon you'll forget she ever existed.",
-   "dst": "",
+   "dst": "你對她來說什麼都不是！她對你來說什麼都不是！你很快就會忘記她曾經存在過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5498,7 +5502,7 @@
   },
   "The Missing Piece#549": {
    "src": "No, I will never forget! She was everything to me! She is everything to me! I will never forget her!",
-   "dst": "",
+   "dst": "不，我永遠不會忘記！她曾是我的一切！她現在也是我的一切！我永遠不會忘記她！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5508,7 +5512,7 @@
   },
   "The Missing Piece#550": {
    "src": "She is nothing to you. You have never met her. You will never meet her.",
-   "dst": "",
+   "dst": "她對你來說什麼都不是。你從未見過她。你也永遠不會見到她。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5518,7 +5522,7 @@
   },
   "The Missing Piece#551": {
    "src": "You do not know her face, nor her voice, nor her touch.",
-   "dst": "",
+   "dst": "你不認得她的臉，不認得她的聲音，也不認得她的觸碰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5528,7 +5532,7 @@
   },
   "The Missing Piece#552": {
    "src": "No... I... won't...",
-   "dst": "",
+   "dst": "不……我……不要……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5538,7 +5542,7 @@
   },
   "The Missing Piece#553": {
    "src": "She is nothing to you. You have never met her. You will never meet her. You have always been ordinary, you will always be ordinary.",
-   "dst": "",
+   "dst": "她對你來說什麼都不是。你從未見過她。你也永遠不會見到她。你一直都是個普通人，你也將永遠是個普通人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5548,7 +5552,7 @@
   },
   "The Missing Piece#554": {
    "src": "Understood?",
-   "dst": "",
+   "dst": "明白了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5558,7 +5562,7 @@
   },
   "The Missing Piece#555": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5568,7 +5572,7 @@
   },
   "The Missing Piece#556": {
    "src": "I will ask once more. Is your directive understood?",
-   "dst": "",
+   "dst": "我再問一次。你的指令，明白了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5578,7 +5582,7 @@
   },
   "The Missing Piece#557": {
    "src": "I'll never forget her!",
-   "dst": "",
+   "dst": "我永遠不會忘記她！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5588,7 +5592,7 @@
   },
   "The Missing Piece#558": {
    "src": "S-Syndra!",
-   "dst": "",
+   "dst": "S——Syndra！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5598,7 +5602,7 @@
   },
   "The Missing Piece#559": {
    "src": "Syndra! Syndra!?",
-   "dst": "",
+   "dst": "Syndra！Syndra！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5608,7 +5612,7 @@
   },
   "The Missing Piece#560": {
    "src": "Where... Where are you... I...",
-   "dst": "",
+   "dst": "你在……你在哪裡……我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5618,7 +5622,7 @@
   },
   "The Missing Piece#561": {
    "src": "Syndra...",
-   "dst": "",
+   "dst": "Syndra……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5628,7 +5632,7 @@
   },
   "The Missing Piece#562": {
    "src": "Hm? What is it, Elise?",
-   "dst": "",
+   "dst": "嗯？怎麼了，Elise？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5638,7 +5642,7 @@
   },
   "The Missing Piece#563": {
    "src": "No... Nothing... I just...",
-   "dst": "",
+   "dst": "不……沒事……我只是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5648,7 +5652,7 @@
   },
   "The Missing Piece#564": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5658,7 +5662,7 @@
   },
   "The Missing Piece#565": {
    "src": "It's just...",
-   "dst": "",
+   "dst": "只是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5668,7 +5672,7 @@
   },
   "The Missing Piece#566": {
    "src": "I remembered I love you.",
-   "dst": "",
+   "dst": "我想起我愛你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5678,7 +5682,7 @@
   },
   "The Missing Piece#567": {
    "src": "And I'll never forget it, Elise.",
-   "dst": "",
+   "dst": "而我永遠不會忘記，Elise。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5688,7 +5692,7 @@
   },
   "The Missing Piece#568": {
    "src": "Syndra...",
-   "dst": "",
+   "dst": "Syndra……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5698,7 +5702,7 @@
   },
   "The Missing Piece#569": {
    "src": "Ha...",
-   "dst": "",
+   "dst": "哈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5708,7 +5712,7 @@
   },
   "The Missing Piece#570": {
    "src": "My legs... feel funny... I think... I think I'm in need of some rest. A long, long rest... I deserve that... don't I?",
-   "dst": "",
+   "dst": "我的腿……感覺怪怪的……我想……我想我需要休息一下。長長的、長長的休息……這是我應得的……對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5718,7 +5722,7 @@
   },
   "The Missing Piece#571": {
    "src": "You'll take me home... won't you? I want to see it, at least once more... The tree.",
-   "dst": "",
+   "dst": "你會帶我回家……對吧？我想再看它一次，至少一次……那棵樹。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5728,7 +5732,7 @@
   },
   "The Missing Piece#572": {
    "src": "Pick up Elise at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 抱起 Elise。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -5738,7 +5742,7 @@
   },
   "The Missing Piece#573": {
    "src": "Bring Elise home to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "帶 Elise 回到 [-{~}, {~}, -{~}] 的家。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -5748,7 +5752,7 @@
   },
   "The Missing Piece#574": {
    "src": "Ah... there it is.",
-   "dst": "",
+   "dst": "啊……它在那裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5758,7 +5762,7 @@
   },
   "The Missing Piece#575": {
    "src": "It's grown so tall... and so beautiful. Hasn't it, Syndra...?",
-   "dst": "",
+   "dst": "它長得好高……好美。是不是啊，Syndra……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5768,7 +5772,7 @@
   },
   "The Missing Piece#576": {
    "src": "If... If only... you could have seen it... like this...",
-   "dst": "",
+   "dst": "要是……要是你能……看到它現在的樣子……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5778,7 +5782,7 @@
   },
   "The Missing Piece#577": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5788,7 +5792,7 @@
   },
   "The Missing Piece#578": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5798,7 +5802,7 @@
   },
   "The Missing Piece#579": {
    "src": "Pick some of Elise's flowers around her house at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] Elise 家周圍摘一些她的花。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
@@ -5808,7 +5812,7 @@
   },
   "The Missing Piece#580": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Missing Piece",
@@ -5818,7 +5822,7 @@
   },
   "The Missing Piece#581": {
    "src": "Bury Elise at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 安葬 Elise。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Missing Piece",
