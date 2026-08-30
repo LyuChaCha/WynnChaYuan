@@ -166,6 +166,29 @@
 
 ### 新增
 
+- **《Revelations in Fall》整篇翻完**（304 句）。任務進度來到 15968/22067（72.4%）。Fruma 線最早的一篇：
+  風中之葉決定離開 Auburn 前往 Roughworks，而 Syndra 的秘密聯絡人正是
+  Zhiraok 統領——這一篇把後面幾篇的伏筆全都埋了下去。
+
+  <p><b>Zhiraok 的兩個雙關，中文剛好都接得住。</b>
+  `you're really asking me to square the circle here`——<b>化圓為方</b>，
+  中文本來就有這個成語，而且同樣是數學的：一件辦不到的事。
+  `Quit being obtuse`——<b>鈍</b>，同《Ensemble of Hope》那次，
+  中文的「鈍」一樣兼有「鈍角」與「遲鈍」兩義。這種運氣不常有。
+
+  <p>還有一個容易譯錯的地方：`Translating yourself into the Roughworks` 的
+  `translating` 是幾何上的<b>平移</b>，不是「翻譯」。中文寫「把自己平移到
+  Roughworks」——那份怪異感是原文就有的，不該抹平成「跑到」。
+  其餘數學語彙沿用前幾篇同一套。
+
+  <p>Rex 的那一段是<b>先兇後軟</b>：她劈頭說玩家「是個問題」，句子短促、
+  連珠砲（`but but but but but!`），講到哥哥之後整個垮下來。中文照這條線走——
+  前段用短句與疊字撐，後段句子放長、火氣收掉。
+
+  <p>兩條原文缺字（`starting from .`、`at in {p}`），起點與座標在收語料時就掉了，
+  譯文照缺字的樣子留著位置，不自行補。`Right...` 一條與 a-headless-history
+  撞譯法，採用先前已存在的譯文。
+
 - **新增校稿流程：`tools/proofread.py` 與 `docs/PROOFREADING.md`**（依翻譯團隊要求）。
   AI 翻得快，但快不等於對——語氣、雙關、角色口癖這些東西機器容易翻得
   <b>通順但不對</b>，而通順反而更難被發現。這份清單讓翻譯團隊知道<b>要看哪些</b>。

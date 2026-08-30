@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**15,664 / 22,067 句已翻（71.0%），共 157 個任務，還沒有人動的有 12 個。**
+**15,968 / 22,067 句已翻（72.4%），共 157 個任務，還沒有人動的有 11 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -131,7 +131,7 @@
 | Recover the Past | [`recover-the-past.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/recover-the-past.json) | 264 | 248 | 11 | ✅ |
 | Redbeard's Booty | [`redbeard-s-booty.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/redbeard-s-booty.json) | 42 | 36 | 4 | ✅ |
 | Reincarnation | [`reincarnation.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/reincarnation.json) | 33 | 29 | 2 | ✅ |
-| Revelations in Fall | [`revelations-in-fall.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/revelations-in-fall.json) | 304 | 291 | 10 | — |
+| Revelations in Fall | [`revelations-in-fall.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/revelations-in-fall.json) | 304 | 291 | 10 | ✅ |
 | Rise of the Quartron | [`rise-of-the-quartron.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/rise-of-the-quartron.json) | 86 | 76 | 7 | ✅ |
 | Royal Trials | [`royal-trials.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/royal-trials.json) | 85 | 66 | 7 | ✅ |
 | Shattered Minds | [`shattered-minds.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/shattered-minds.json) | 51 | 45 | 7 | ✅ |

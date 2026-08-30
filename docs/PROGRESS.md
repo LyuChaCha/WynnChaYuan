@@ -7,17 +7,17 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 75.3%（20,658 / 27,445）
+## `zh_tw` 繁體中文 — 76.4%（20,964 / 27,447）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 288 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
 | `npc.json` | ████░░░░░░ 38% | 214 / 556 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 99% | 863 / 872 | 選單與介面<br>Menus and interface text |
+| `gui.json` | ██████████ 99% | 865 / 874 | 選單與介面<br>Menus and interface text |
 | `quest.json` | ██████████ 96% | 69 / 72 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ██████████ 97% | 863 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ██████████ 100% | 322 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
-| `quest-dialogue.json` | ███████░░░ 71% | 15,664 / 22,067 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | ███████░░░ 72% | 15,968 / 22,067 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
