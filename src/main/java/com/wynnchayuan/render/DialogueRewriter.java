@@ -70,6 +70,12 @@ public final class DialogueRewriter {
     private static final String CONTROL = "hud/dialogue/text/control";
 
     /**
+     * 選項那幾列的字型。認的是 {@code /choice_}（有底線）——
+     * {@code style/default/choice} 是畫外框的，沒有底線，不能混進來。
+     */
+    private static final String CHOICE = "/choice_";
+
+    /**
      * 有附中日韓字型的語言。
      *
      * <p>加一個語言就是「放一個 ttf、產六份 JSON、在這裡多一行」。
@@ -207,6 +213,32 @@ public final class DialogueRewriter {
             int total = width(Component.literal(prefix).withStyle(styles.get(i)))
                     + width(tip, styles.get(i));
             texts.set(i + 1, offset(trail + was - total));   // 同上：只補長度差
+            swapped[i] = true;
+            changed = true;
+        }
+        // 選項那幾列。形狀跟上面的 SHIFT 提示一樣是 [偏移][文字][偏移]，
+        // 差別是<b>沒有前置圖示</b>——整段就是選項本身，直接查表就好。
+        //
+        // 每一列有自己的字型（choice_1／2／3），行號烘在 ascent 裡（97／84／71），
+        // 所以換完要配對應的中文字型，不然三列會疊在一起。見 paired()。
+        for (int i = 1; i + 1 < texts.size(); i++) {
+            if (!fontOf(styles.get(i)).contains(CHOICE) || !readable(texts.get(i))) {
+                continue;
+            }
+            Integer lead = offsetOf(texts.get(i - 1));
+            Integer trail = offsetOf(texts.get(i + 1));
+            if (lead == null || trail == null) {
+                continue;
+            }
+            String pick = store.lookup(texts.get(i).strip());
+            if (pick == null || pick.isBlank() || !renderable(pick)) {
+                continue;                       // 查不到就留英文，不要換一半
+            }
+            int was = width(texts.get(i), styles.get(i));
+            texts.set(i, pick);
+            // 跟內文一樣只補長度差：這一列縮短多少就還回去多少，
+            // 後面幾列與外框的位置才不會被推走。
+            texts.set(i + 1, offset(trail + was - width(pick, styles.get(i))));
             swapped[i] = true;
             changed = true;
         }
@@ -897,6 +929,9 @@ public final class DialogueRewriter {
         if (font.contains(BODY)) {
             int at = font.lastIndexOf(BODY);
             name = "body_" + font.substring(at + BODY.length());
+        } else if (font.contains(CHOICE)) {
+            int at = font.lastIndexOf(CHOICE);
+            name = "choice_" + font.substring(at + CHOICE.length());
         } else if (font.contains(CONTROL)) {
             name = "control";
         } else if (font.contains(NAMEPLATE)) {
