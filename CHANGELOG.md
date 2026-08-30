@@ -64,6 +64,30 @@
   多半晚一拍，所以第一格可能錄到旗標還沒設起來的那一幀——留三格就夠涵蓋到
   設起來之後的樣子。
 
+### 調整
+
+- **移除 Modrinth 自動發佈工作流程**（依專案負責人指示）。
+
+  <p>它<b>從來沒成功過</b>——每一次發版都失敗在同一行：
+
+  ```
+  ./gradlew: No such file or directory
+  ```
+
+  <p>這個倉庫沒有 gradle wrapper（沒有 `gradlew`、沒有 `gradle/wrapper/`），
+  一直都是直接用 `gradle`，所以那一步從一開始就不可能跑。
+
+  <p>而且那個檔案的 `modrinth-id` 欄位填的是 <b>`mrp_` 開頭</b>的值——
+  那是 Modrinth <b>個人存取權杖</b>的前綴，不是專案 ID（專案 ID 不帶前綴）。
+  移除整個檔案也把它從 HEAD 拿掉了。
+
+  <p><b>但 git 紀錄裡還留著——移除檔案不等於撤銷。</b>那個權杖仍需到
+  <https://modrinth.com/settings/pats> 撤銷並重新產生。倉庫是公開的。
+
+  <p>發版流程不受影響：建立 GitHub Release 時 jar 照樣附上去，玩家從 GitHub
+  下載得到。日後要重新接 Modrinth 的話，記得用 `gradle/actions/setup-gradle`
+  而不是 `./gradlew`，並且把權杖只放進 `MODRINTH_TOKEN` secret。
+
 ---
 
 ## [1.99.75] - 2026-08-30
