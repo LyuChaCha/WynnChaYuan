@@ -175,8 +175,30 @@ NAMED = re.compile(
     # 代價是那幾行<b>介面字串</b>也跟著收不進來。刻意的：語料是公開的，
     # 別人的公會名一旦進去就洗不掉，少翻一行領地清單便宜得多。
     r"|\[[A-Z]{3,4}\]"
-    # 公會欄位：。公會名本身抓不到，但欄位標籤抓得到。
-    r"|Guild:\s"
+    # 公會欄位：`- Guild: 某公會`。公會名本身抓不到，但欄位標籤抓得到。
+    #
+    # 註：這裡不能寫 \b——在雙引號字串裡 \b 是<b>退格字元</b>，
+    # 先前就是這樣寫成了 `|\x08Guild:` 而永遠不會命中。
+    r"|Guild:\s"
+    # 裸帳號名：整條就是一個詞，而且<b>小寫後面接大寫</b>
+    #（`PoorChaCha`、`YuanYoIn`、`ChangJenChief`）。
+    #
+    # 這是帳號名最穩定的形狀。全大寫的縮寫（`DPS`、`INGREDIENT`）不符合，
+    # 因為要求前面是小寫。裝備名（`StoneWall`、`HellRaiser`）會被誤擋，
+    # 但那些是從官方 CDN 進語料的、不走這個工具，所以沒有損失。
+    r"|^(?:\{#\})*[A-Za-z][a-z0-9]*[a-z][A-Z][A-Za-z0-9]*$"
+    # 組隊系統會把玩家名字嵌進句子裡，那些句子的<b>結構</b>是固定的：
+    #   `{#} Party Finder: Hey 某人, over here! ...`
+    #   `- [{~}] 某人`（隊伍成員清單）
+    #
+    # 不能改用「句中任一個駝峰詞」去抓——實測會誤傷 `WynnExcavation`（15 條
+    # 裝備 lore）、`HellRaiser`、`PvP`，以及喊叫的台詞 `HehehaHAAAAA`、
+    # `GwaaAAAAAH`。認句型比認名字準得多。
+    r"|Party Finder: Hey\s"
+    r"|^-\s\[\{~\}\]\s\S+$"
+    # 同一類：隊長欄位與收禮通知，名字都黏在固定句型上。
+    r"|^Leader:\s"
+    r"|\shas given you\s"
     # 公會階級名牌：`YuChaYuan\n< Season 24 - Platinum >`、`YuChaYuan\n< Traders >`。
     # 名字在第一行、階級用角括號包在第二行——認角括號那一段就夠。
     r"|\n\s*<[^>]*>"
