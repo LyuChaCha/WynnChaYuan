@@ -9,6 +9,28 @@
 > （見 v1.99.68），不需要重新下載模組。這一段持續累積，等下次有程式碼改動
 > 需要發 jar 時再一起併入該版本。
 
+### 新增
+
+- **《The Cursed One》整篇翻完**（497 句）。任務進度來到 17068/22067（77.3%），
+  整體 **80.6%**。Fruma 線的起點：玩家把「魔法人人可為」教給風中之葉，
+  Zeph 成為第一個試的人；後半是 Auburn 慶典與 Spymaster 深夜的來訪。
+
+  <p><b>Zhiraok 的數學在這一篇就已經滿載</b>——`out of their vector`、
+  `factor out`、`exponentiate`、`sum up to`、`I've got their number`、
+  `go triple-time`，全部照《Echoes of Change》以降同一套處理。其中兩個特別接住：
+  罵 Majin 的 `That floundering fractal`→「那個原地打轉的碎形」；
+  以及 `I'll get off that tangent`——`tangent` 同時是<b>切線</b>與<b>離題</b>，
+  中文寫「我不扯那條切線了」，雙關留著。
+
+  <p><b>Zeph 的口吃在這裡是最重的。</b>這是他最早出場的一篇，句子被卡得很碎
+  （`I- I- I don't know`、`th- the- there's nothing`）。後面幾篇他會慢慢穩下來——
+  那條曲線要從這裡起算，所以中文在這一篇卡得比後面幾篇更密。
+
+  <p>Auburn 的在地物產分兩類處理：自創名保留原文（`Liff Leaves`→Liff 葉、
+  `Liffberries`→Liff 莓、`Mudkin`、`Roly-bug`→Roly 蟲），真實存在的照翻
+  （`Reishi Mushroom`→靈芝、`Tea Tree Mushroom`→茶樹菇、`Heather Beer`→石楠啤酒）。
+  `No.` 一條與 hollow-serenity 撞譯法，採用先前已存在的譯文。
+
 ---
 
 ## [1.99.75] - 2026-08-30
