@@ -56,6 +56,20 @@ public final class CollectorConfig {
     public enum DialogueMode { PANEL, REPLACE, OFF }
 
     /**
+     * 對話<b>選項</b>要怎麼顯示，跟上面的內文分開管。
+     *
+     * <h2>為什麼要另外一個開關</h2>
+     * 選項不在 NPC 那句話裡——它是另一條訊息、另一個框、另一組字型
+     * （見 {@link com.wynnchayuan.render.DialogueRewriter}）。兩邊分開之後
+     * 才有「內文就地取代、選項留面板」這種組合；先前選項是跟著內文走的，
+     * 於是就地取代模式下同一組選項會<b>出現兩次</b>：遊戲框裡一次、
+     * 我們的面板裡再一次。
+     *
+     * <p>預設 {@code REPLACE}，跟內文一致。
+     */
+    private DialogueMode choiceMode = DialogueMode.REPLACE;
+
+    /**
      * 聊天視窗裡的<b>伺服器訊息</b>要不要翻。
      *
      * <p>任務完成的獎勵清單、進出區域的提示這些都走聊天而不是對話框。
@@ -247,6 +261,11 @@ public final class CollectorConfig {
         return dialogueMode;
     }
 
+    /** 見 {@link #choiceMode}。 */
+    public DialogueMode choiceMode() {
+        return choiceMode;
+    }
+
     public ChatMode chatMode() {
         return chatMode;
     }
@@ -288,6 +307,14 @@ public final class CollectorConfig {
         dialogueMode = all[(dialogueMode.ordinal() + 1) % all.length];
         save();
         return dialogueMode;
+    }
+
+    /** 在 面板 → 就地取代 → 關閉 之間輪替。見 {@link #choiceMode}。 */
+    public DialogueMode cycleChoiceMode() {
+        DialogueMode[] all = DialogueMode.values();
+        choiceMode = all[(choiceMode.ordinal() + 1) % all.length];
+        save();
+        return choiceMode;
     }
 
     /** 在 面板 → 就地取代 → 關閉 之間輪替。 */
@@ -728,6 +755,13 @@ public final class CollectorConfig {
                 // 舊設定檔沒有這個欄位，維持 PANEL——升上來的人畫面不會突然變樣
                 dialogueMode = DialogueMode.valueOf(o.get("dialogueMode").getAsString());
             }
+            if (o.has("choiceMode")) {
+                choiceMode = DialogueMode.valueOf(o.get("choiceMode").getAsString());
+            } else if (o.has("dialogueMode")) {
+                // 舊設定檔只有一個開關，選項是跟著內文走的。照那個值帶過來，
+                // 升上來的人畫面不會突然變樣。
+                choiceMode = dialogueMode;
+            }
             if (o.has("chatCopy")) {
                 chatCopy = o.get("chatCopy").getAsBoolean();
             }
@@ -836,6 +870,7 @@ public final class CollectorConfig {
             o.addProperty("accentColor", accentColor);
             o.addProperty("dialogueHoldMs", dialogueHoldMs);
             o.addProperty("dialogueMode", dialogueMode.name());
+            o.addProperty("choiceMode", choiceMode.name());
             o.addProperty("chatMode", chatMode.name());
             o.addProperty("translateTitles", translateTitles);
             o.addProperty("chatCopy", chatCopy);
