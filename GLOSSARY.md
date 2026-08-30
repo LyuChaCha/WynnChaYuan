@@ -243,6 +243,20 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Wings division | 羽翼部隊 | 權限最高的那一支，憲兵屬於它 **(待討論)** |
 | Constable division | 警備部隊 | 權限高於地區部隊、低於羽翼部隊 **(待討論)** |
 | estoc | 刺劍 | Tericen 的木製訓練武器 |
+| the Subway | 地鐵 | Fruma 的地下運輸系統 |
+| Queen's Line | 女王線 | 地鐵的路線名 |
+| Industrial Sector Loop | 工業區環線 | 通勤用的那條，與女王線分開 |
+| carriage（列車） | 車廂 | 馬拉的 `carriage` 仍是「馬車」，兩者不同 |
+| attendant | 車勤員 | 列車上的服務人員 |
+| Ticket Collector | 驗票員 | |
+| Marshal | 元帥 | Majin 的軍職，在將軍之上 |
+| General | 將軍 | 每支部隊各有一位 |
+| Highlander | 高地人 | Highlands 的居民 |
+| Aelumia University | Aelumia 大學 | 分為秩序、水晶、繁花、星辰四個學院 |
+| Blossom House | 繁花學院 | 大學裡的學院，`House` 在此不是家族 |
+| Blossoming Blades | 綻放之刃 | 反抗組織，Cemor 所屬 **(待討論)** |
+| Toxic Thistle | 劇毒薊 | Cemor 的代號 **(待討論)** |
+| Penitence District | （保留原文） | 不在 places.json 裡，所以不會變成 {p}。其他區都在表上，這像是漏了 **(待確認)** |
 **請注意，這裡每一個單字都待討論**
 
 ---
