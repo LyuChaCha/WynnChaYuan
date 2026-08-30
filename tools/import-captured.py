@@ -199,6 +199,9 @@ NAMED = re.compile(
     # 同一類：隊長欄位與收禮通知，名字都黏在固定句型上。
     r"|^Leader:\s"
     r"|\shas given you\s"
+    # 討伐戰的公告同樣把名字黏在固定句型上。
+    r"|\shas opted in"
+    r"|\shas chosen the"
     # 公會階級名牌：`YuChaYuan\n< Season 24 - Platinum >`、`YuChaYuan\n< Traders >`。
     # 名字在第一行、階級用角括號包在第二行——認角括號那一段就夠。
     r"|\n\s*<[^>]*>"
