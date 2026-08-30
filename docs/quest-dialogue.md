@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**20,781 / 22,067 句已翻（94.2%），共 157 個任務，還沒有人動的有 1 個。**
+**22,067 / 22,067 句已翻（100.0%），共 157 個任務，還沒有人動的有 0 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -154,7 +154,7 @@
 | The Envoy Part I | [`the-envoy-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-envoy-part-i.json) | 94 | 83 | 7 | ✅ |
 | The Envoy Part II | [`the-envoy-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-envoy-part-ii.json) | 84 | 71 | 12 | ✅ |
 | The Feathers Fly Part I | [`the-feathers-fly-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-i.json) | 210 | 198 | 6 | ✅ |
-| The Feathers Fly Part II | [`the-feathers-fly-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-ii.json) | 1286 | 1272 | 19 | — |
+| The Feathers Fly Part II | [`the-feathers-fly-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-feathers-fly-part-ii.json) | 1286 | 1272 | 19 | ✅ |
 | The Hero of Gavel | [`the-hero-of-gavel.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-hero-of-gavel.json) | 196 | 177 | 11 | ✅ |
 | The Hidden City | [`the-hidden-city.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-hidden-city.json) | 75 | 59 | 13 | ✅ |
 | The House of Twain (Quest) | [`the-house-of-twain-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-house-of-twain-quest.json) | 15 | 13 | 2 | ✅ |
