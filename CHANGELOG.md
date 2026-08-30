@@ -11,6 +11,30 @@
 
 ### 修正
 
+- **`rebuild-quest-bundle` 的第二層阻礙：Actions 沒有開 PR 的權限。**
+
+  <p>上一則修好的是<b>推送</b>（`main` 是受保護分支，直接 `git push` 會 GH006）。
+  改成推分支之後推送確實成功了，但下一步立刻撞上另一道牆：
+
+  ```
+  pull request create failed: GraphQL: GitHub Actions is not permitted
+  to create or approve pull requests (createPullRequest)
+  ```
+
+  <p>這是<b>倉庫設定</b>擋的，不是程式問題。而分支其實<b>已經推上去了</b>，
+  產生物並沒有掉——只差有人開一個 PR。讓整個工作流程因此變紅燈，
+  等於重蹈上一次的覆轍：紅燈在別的地方，沒有人會把它跟「進度表很舊」連在一起。
+
+  <p>改成開不成 PR 時<b>不變紅燈</b>，而是把該怎麼處理寫進 GitHub 的
+  <b>執行摘要</b>——要勾的設定在哪（Settings → Actions → General →
+  Workflow permissions → Allow GitHub Actions to create and approve pull
+  requests），以及手動開 PR 的網址。摘要就印在那次執行的頁面上，
+  比一個沒有上下文的紅色叉叉有用。
+
+  <p>順手修掉一個會咬人的地方：摘要那幾行 `echo` 原本想用反引號把分支名
+  框成程式碼，但反引號在 bash 的雙引號裡是<b>命令替換</b>——
+  ``` `$BRANCH` ``` 會拿分支名去當指令執行。改用粗體。
+
 - **進度表全部重新產生，並修好「它為什麼一直沒更新」。**
 
   <p>README 上的進度停在 **33.0%（8,885）**，實際是 **57.8%（15,850）**；
@@ -115,6 +139,55 @@
 
 ### 新增
 
+- **《The Strong Survive》整篇翻完**（660 句）。任務進度來到 12674/22067（57.4%）。
+  玩家頂替 Perin 進入 Tericen——Fruma 最大的軍事訓練營——兩天之內看清那裡在訓練什麼：
+  不是士兵，是淘汰。標題「強者生存」是 Ferreo 指揮官的信條，不是祝福。
+
+  <p><b>Adder 與 Ferreo 的語氣要冷，不要兇。</b>這一篇的惡意幾乎都是用<b>平靜的句子</b>
+  講出來的：Adder 把打殘同袍說成「我做的是盡我所能為 Fruma 效力」；Ferreo 把那起
+  重傷事件稱為「一個機會」。中文不加感嘆號、不加狠話，讓那份理所當然自己站著——
+  譯得兇反而弱化了。
+
+  <p>Arnol 的句子則一路從客套變直白：開場是「Fruma 為我們付出了那麼多」的場面話，
+  中段承認自己是走後門進來的，最後是「我從小被教導受詛者是邪惡的，可你除了幫我
+  什麼都沒做過」。譯文照著這個方向逐段收緊。
+
+  <p>用語沿用 GLOSSARY 與既有語料：`Sovereign`→統領、`the Cursed One`→受詛者、
+  `Gendarme`→憲兵、`House X`→X 家、`barracks`→兵營、`division`→部隊。新定
+  `recruit`→新兵、`Recruiter`→招募官、`Commander`→指揮官（與 GLOSSARY 的
+  「憲兵指揮官」一致）、`Captain`→隊長、`Wings division`→羽翼部隊、
+  `Constable division`→警備部隊、`estoc`→刺劍、`turret`→弩塔、`jump pad`→彈跳板。
+  `Tericen`／`Aelumia`／`Auburn`／`Xima`／`Roughworks` 等地名與家名保留原文。
+
+  <p><b>有四條原文缺了玩家的名字</b>（`Good job !`、`is the victor.`、`Hey .`、
+  `and I were wondering`）——名字在收語料時就已經不在字串裡，而且不是 `{u}` 佔位符，
+  是真的空掉。這種條目在遊戲裡多半比對不到，是<b>收集端的缺口</b>，不是譯文能修的。
+  譯文照語意寫成通順的中文，把那個空格收掉。
+
+  <p>`No.`／`Hmmm...`／`Ugh...` 三條與既有語料撞譯法，一律採用先前已存在的譯文。
+- **《True Colours》整篇翻完**（541 句）。任務進度來到 12014/22067（54.4%）。
+  Fruma 線最沉重的一篇：Sui 失去了哥哥，Yusanu 選擇留在樹冠，兩人在這裡分道揚鑣。
+
+  <p><b>Sui 的結巴是一條曲線，不是口癖。</b>她從頭結巴到尾，但結巴的<b>性質</b>會變：
+  前段是害怕，中段是強撐，而最後崩成憤怒時<b>反而不結巴了</b>
+  （「我受夠了哭。我受夠了擔心。」）。那個「突然不結巴」就是她轉變的訊號，
+  中文照著這條線走，最後那幾句刻意寫得乾淨俐落——把它一路譯成同一種結巴，
+  等於把整篇的轉折抹平。
+
+  <p>其他幾種聲音也各自照原文的節奏處理：Cileon 只給三四個字
+  （`Give space.`→「給點空間」）；Rurie 保留戲劇腔與鳥的比喻
+  （小鴿子、沉默的梟）；Gikyo 以殘忍為樂、字詞成串重複，中文照樣疊
+  （`joy joy joy joy`→「愉快愉快愉快愉快」）。
+
+  <p>Tasim 的長段自白在檔案裡有<b>兩套分支</b>，其中大段原文逐字相同。
+  這種地方用原文當鍵自動補滿，確保兩條路線讀到的是同一份譯文——
+  玩家走另一條分支時若讀到措辭不同的同一句話，會以為自己記錯了。
+
+  <p>用語沿用既有語料：`changeling`→換形者、`Leaves in the Wind`→風中之葉、
+  `talisman`→護符、`Sovereign`→統領、`cursed`→受詛。新定
+  `The Canopy`→樹冠（與「風中之葉」同一種組織命名法）、`Steel Feather`→鋼羽、
+  `Gravity's Monolith`→重力方尖碑、`Warden`→典獄長。
+  `Fruma`／`Deraj`／`Roughworks`／`House Thalas` 等專名保留原文。
 - **討伐戰翻譯 97 條**，全部進 `raid.json`（依系統分類，見前一則）。
   涵蓋 **gambit 的 tooltip**（重負和平者、受詛鍊金術士、淌血戰士、血友者）、
   **準備與配對介面**（準備完成、正在尋找玩家、找到隊伍、每日獎勵）、
