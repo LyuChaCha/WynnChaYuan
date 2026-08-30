@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 22067,
-  "translated": 14190,
+  "translated": 14899,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -25461,7 +25461,7 @@
   },
   "Apotheosis (Quest)#000": {
    "src": "Head to {p} and find your friends at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 {p}，到 [-{~1}, {~2}, -{~3}] 找到你的夥伴。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -25471,7 +25471,7 @@
   },
   "Apotheosis (Quest)#001": {
    "src": "Fight through {p} and find your friends.",
-   "dst": "",
+   "dst": "殺出 {p}，找到你的夥伴。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -25481,7 +25481,7 @@
   },
   "Apotheosis (Quest)#002": {
    "src": "Ha. Your bow control is sloppy, \"captain.\"",
-   "dst": "",
+   "dst": "哈。你的持弓姿勢很鬆散，「隊長」。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25491,7 +25491,7 @@
   },
   "Apotheosis (Quest)#003": {
    "src": "Don't you dare speak, scum.",
-   "dst": "",
+   "dst": "你也配開口，敗類。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25501,7 +25501,7 @@
   },
   "Apotheosis (Quest)#004": {
    "src": "Great, backup's finally here!",
-   "dst": "",
+   "dst": "太好了，支援總算來了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25511,7 +25511,7 @@
   },
   "Apotheosis (Quest)#005": {
    "src": "{u}, let's take him out together!",
-   "dst": "",
+   "dst": "{u}，我們一起把他解決掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25521,7 +25521,7 @@
   },
   "Apotheosis (Quest)#006": {
    "src": "Thanks for the support, {u}! Not sure how much longer I could've held out on my own.",
-   "dst": "",
+   "dst": "謝謝你的支援，{u}！我一個人不知道還撐得了多久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25531,7 +25531,7 @@
   },
   "Apotheosis (Quest)#007": {
    "src": "We were about to regroup with the Canopy, but Cileon spotted soldiers approaching through the hotel windows.",
-   "dst": "",
+   "dst": "我們本來要跟樹冠會合，但 Cileon 從旅館窗戶看到士兵正在逼近。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25541,7 +25541,7 @@
   },
   "Apotheosis (Quest)#008": {
    "src": "They've stormed the plaza, and probably the rest of the city by now... I think they've rounded up all the citizens at the festival grounds.",
-   "dst": "",
+   "dst": "他們攻進了廣場，這時候大概整座城都拿下了……我想他們把市民全都趕到慶典場地去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25551,7 +25551,7 @@
   },
   "Apotheosis (Quest)#009": {
    "src": "We all got split up in the commotion - the others are probably fighting their own battles! Come on, we need to get moving!!",
-   "dst": "",
+   "dst": "混亂中我們全被沖散了——其他人大概也各自在打自己的仗！走，我們得動起來！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25561,7 +25561,7 @@
   },
   "Apotheosis (Quest)#010": {
    "src": "This way!!",
-   "dst": "",
+   "dst": "這邊！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25571,7 +25571,7 @@
   },
   "Apotheosis (Quest)#011": {
    "src": "Find the rest of your friends in {p}.",
-   "dst": "",
+   "dst": "在 {p} 找到其餘的夥伴。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -25581,7 +25581,7 @@
   },
   "Apotheosis (Quest)#012": {
    "src": "{u}! Rex!! Per- perfect timing!",
-   "dst": "",
+   "dst": "{u}！Rex！！來、來得正好！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25591,7 +25591,7 @@
   },
   "Apotheosis (Quest)#013": {
    "src": "Phew... th...that was close. {u}, it's g- good to see you.",
-   "dst": "",
+   "dst": "呼……剛、剛才真險。{u}，看、看到你真好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25601,7 +25601,7 @@
   },
   "Apotheosis (Quest)#014": {
    "src": "Where are the others? Have you seen them?",
-   "dst": "",
+   "dst": "其他人呢？你有看到他們嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25611,7 +25611,7 @@
   },
   "Apotheosis (Quest)#015": {
    "src": "I saw Cileon u- up ahead! But I l- lo- lost sight of Sui a while ago...",
-   "dst": "",
+   "dst": "我看到 Cileon 在前、前面！可是 Sui 我已經跟丟一、一陣子了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25621,7 +25621,7 @@
   },
   "Apotheosis (Quest)#016": {
    "src": "Then what are we waiting for?! Let's get moving!",
-   "dst": "",
+   "dst": "那還等什麼？！我們走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25631,7 +25631,7 @@
   },
   "Apotheosis (Quest)#017": {
    "src": "O- o- okay!!",
-   "dst": "",
+   "dst": "好、好、好的！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25641,7 +25641,7 @@
   },
   "Apotheosis (Quest)#018": {
    "src": "...{u}, if y...you're here, then... the Queen...?",
-   "dst": "",
+   "dst": "……{u}，如、如果你在這裡，那……女王呢……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25651,7 +25651,7 @@
   },
   "Apotheosis (Quest)#019": {
    "src": "Worry about our friends first, Queen second! Come one, move move move!",
-   "dst": "",
+   "dst": "先擔心我們的人，女王排第二！快，走走走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25661,7 +25661,7 @@
   },
   "Apotheosis (Quest)#020": {
    "src": "Find Cileon and Sui in {p}.",
-   "dst": "",
+   "dst": "在 {p} 找到 Cileon 和 Sui。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -25671,7 +25671,7 @@
   },
   "Apotheosis (Quest)#021": {
    "src": "Hmm. Alive. Good.",
-   "dst": "",
+   "dst": "嗯。活著。很好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25681,7 +25681,7 @@
   },
   "Apotheosis (Quest)#022": {
    "src": "Constable. Help kill.",
-   "dst": "",
+   "dst": "警備隊。幫忙殺。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25691,7 +25691,7 @@
   },
   "Apotheosis (Quest)#023": {
    "src": "Dead. Good.",
-   "dst": "",
+   "dst": "死了。很好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25701,7 +25701,7 @@
   },
   "Apotheosis (Quest)#024": {
    "src": "Th...that was awesome, Cileon!! Could you t- te- teach me some of your techni-",
-   "dst": "",
+   "dst": "那、那太帥了，Cileon！！你可不可以教、教我幾招你的技——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25711,7 +25711,7 @@
   },
   "Apotheosis (Quest)#025": {
    "src": "ZEPH! There's no TIME!! Cileon, have you seen Sui?!",
-   "dst": "",
+   "dst": "Zeph！沒時間了！！Cileon，你有看到 Sui 嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25721,7 +25721,7 @@
   },
   "Apotheosis (Quest)#026": {
    "src": "Mmn. Sui...",
-   "dst": "",
+   "dst": "嗯。Sui……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25731,7 +25731,7 @@
   },
   "Apotheosis (Quest)#027": {
    "src": "This way. Festival.",
-   "dst": "",
+   "dst": "這邊。慶典。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25741,7 +25741,7 @@
   },
   "Apotheosis (Quest)#028": {
    "src": "Let's go!",
-   "dst": "",
+   "dst": "走吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25751,7 +25751,7 @@
   },
   "Apotheosis (Quest)#029": {
    "src": "Find Sui in {p}.",
-   "dst": "",
+   "dst": "在 {p} 找到 Sui。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -25761,7 +25761,7 @@
   },
   "Apotheosis (Quest)#030": {
    "src": "SUI!!!",
-   "dst": "",
+   "dst": "Sui！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25771,7 +25771,7 @@
   },
   "Apotheosis (Quest)#031": {
    "src": "Oh! You're all safe!",
-   "dst": "",
+   "dst": "喔！你們都平安！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25781,7 +25781,7 @@
   },
   "Apotheosis (Quest)#032": {
    "src": "And {u}, you're here too...",
-   "dst": "",
+   "dst": "還有 {u}，你也在……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25791,7 +25791,7 @@
   },
   "Apotheosis (Quest)#033": {
    "src": "Sui, that was i- in- incredible!! But, using that much m...magic... be careful not to use up all of your st- strength...",
-   "dst": "",
+   "dst": "Sui，剛才那太不、不可思議了！！可是，用那麼多魔、魔法……小心別把你的力、力氣全用光了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25801,7 +25801,7 @@
   },
   "Apotheosis (Quest)#034": {
    "src": "...it's fine, Zeph. It doesn't drain me to use, anymore. I can just... pull on the strands.",
-   "dst": "",
+   "dst": "……沒關係的，Zeph。現在用它已經不會消耗我了。我只要……拉住那些絲線就好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25811,7 +25811,7 @@
   },
   "Apotheosis (Quest)#035": {
    "src": "Hmph. Ahead.",
-   "dst": "",
+   "dst": "哼。前面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25821,7 +25821,7 @@
   },
   "Apotheosis (Quest)#036": {
    "src": "R- ri- right... the festival speech. Should we try to l...listen in on it?",
-   "dst": "",
+   "dst": "對、對……慶典的演說。我們要不要試著去聽、聽看看？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25831,7 +25831,7 @@
   },
   "Apotheosis (Quest)#037": {
    "src": "What?! No! We're all safe, so let's get out of here and regroup with the rest of the Canopy! Doing anything else is way too risky-",
-   "dst": "",
+   "dst": "什麼？！不行！我們都平安了，那就趕快離開這裡跟樹冠其他人會合！做別的事風險太大——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25841,7 +25841,7 @@
   },
   "Apotheosis (Quest)#038": {
    "src": "No. I'm... I'm done running away. We're going in.",
-   "dst": "",
+   "dst": "不。我……我不要再逃了。我們進去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25851,7 +25851,7 @@
   },
   "Apotheosis (Quest)#039": {
    "src": "...are you insane?!",
-   "dst": "",
+   "dst": "……你瘋了嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25861,7 +25861,7 @@
   },
   "Apotheosis (Quest)#040": {
    "src": "She's responsible for everything that has happened to us. I'm not going to just... let her get away when she's RIGHT THERE!!!",
-   "dst": "",
+   "dst": "我們身上發生的每一件事都是她造成的。我不會就這樣……在她「就在那裡」的時候讓她走掉！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25871,7 +25871,7 @@
   },
   "Apotheosis (Quest)#041": {
    "src": "She's going to pay for all of it.",
-   "dst": "",
+   "dst": "她會為這一切付出代價。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25881,7 +25881,7 @@
   },
   "Apotheosis (Quest)#042": {
    "src": "S- Sui... you don't h- have to do it alone.",
-   "dst": "",
+   "dst": "S、Sui……你不必一個人去做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25891,7 +25891,7 @@
   },
   "Apotheosis (Quest)#043": {
    "src": "...fine. Fine! Let's do it, then! Let's go... face the Queen.",
-   "dst": "",
+   "dst": "……好吧。好吧！那就上吧！我們去……面對女王。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25901,7 +25901,7 @@
   },
   "Apotheosis (Quest)#044": {
    "src": "Make your way to the festival grounds at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, {~3}] 的慶典場地。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -25911,7 +25911,7 @@
   },
   "Apotheosis (Quest)#045": {
    "src": "HALT!",
-   "dst": "",
+   "dst": "站住！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25921,7 +25921,7 @@
   },
   "Apotheosis (Quest)#046": {
    "src": "Get out of our way!!!!!",
-   "dst": "",
+   "dst": "給我讓開！！！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25931,7 +25931,7 @@
   },
   "Apotheosis (Quest)#047": {
    "src": "Sui... careful.",
-   "dst": "",
+   "dst": "Sui……小心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25941,7 +25941,7 @@
   },
   "Apotheosis (Quest)#048": {
    "src": "...th- this was a bad idea. We n...need to get out of-",
-   "dst": "",
+   "dst": "……這、這是個壞主意。我們得、得離開這——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25951,7 +25951,7 @@
   },
   "Apotheosis (Quest)#049": {
    "src": "People of the {p}! I deeply apologize for the disruption to your routines. You must be confused, afraid.",
-   "dst": "",
+   "dst": "{p} 的人民！我為打亂各位的日常深致歉意。你們想必困惑、恐懼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25961,7 +25961,7 @@
   },
   "Apotheosis (Quest)#050": {
    "src": "This festival is a time for joy, for celebration! But there are those within your midst who reject this notion. They aim to bring destruction, chaos!",
-   "dst": "",
+   "dst": "這場慶典本是歡欣與慶祝的時刻！但你們之中有人拒斥這個理念。他們意在帶來毀滅與混亂！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25971,7 +25971,7 @@
   },
   "Apotheosis (Quest)#051": {
    "src": "Indeed... a plot to twist our province's ideals, to destroy our very way of life! The perpetrators lurking in your city, feigning innocence... what a disgrace.",
-   "dst": "",
+   "dst": "確實……一場要扭曲本行省理想、要摧毀我們生活方式本身的陰謀！那些行凶者潛伏在你們的城裡，佯裝無辜……何等可恥。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25981,7 +25981,7 @@
   },
   "Apotheosis (Quest)#052": {
    "src": "It was your very own Sovereign, Majin Thalas, whose quick thinking brought down the terrorists' plot! The Wings, the Constables, the Local Guard, all have mobilized to capture the perpetrators.",
-   "dst": "",
+   "dst": "正是你們自己的統領，Majin Thalas，以他的機敏挫敗了恐怖分子的陰謀！羽翼部隊、警備部隊、地方衛隊已全數動員，逮捕行凶者。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -25991,7 +25991,7 @@
   },
   "Apotheosis (Quest)#053": {
    "src": "Soon, we shall have them chained before you. Soon, you shall see the faces of this blight, this infection in the veins of our province.",
-   "dst": "",
+   "dst": "很快，我們就會把他們鎖在你們面前。很快，你們就會看見這片災厄的面孔——這行省血脈裡的這場感染。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26001,7 +26001,7 @@
   },
   "Apotheosis (Quest)#054": {
    "src": "And soon, we shall cut. It. Out.",
-   "dst": "",
+   "dst": "而很快，我們就會把它。切。除。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26011,7 +26011,7 @@
   },
   "Apotheosis (Quest)#055": {
    "src": "Listen to Her Majesty and her Sovereigns.",
-   "dst": "",
+   "dst": "聆聽女王陛下與她的統領們。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -26021,7 +26021,7 @@
   },
   "Apotheosis (Quest)#056": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26031,7 +26031,7 @@
   },
   "Apotheosis (Quest)#057": {
    "src": "YOU.",
-   "dst": "",
+   "dst": "是你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26041,7 +26041,7 @@
   },
   "Apotheosis (Quest)#058": {
    "src": "And so it would seem my Sovereigns have once again failed to perform what should be a very simple task.",
-   "dst": "",
+   "dst": "看來我的統領們又一次未能完成一件本該極其簡單的任務。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26051,7 +26051,7 @@
   },
   "Apotheosis (Quest)#059": {
    "src": "Sovereign Thalas, what, precisely, is it you have been teaching these soldiers of yours?! Because there should be no reason for them to have FAILED to capture these CHILDREN!",
-   "dst": "",
+   "dst": "Thalas 統領，你到底是怎麼教你那些士兵的？！他們沒有任何理由「抓不到」這幾個「孩子」！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26061,7 +26061,7 @@
   },
   "Apotheosis (Quest)#060": {
    "src": "I told you we should've taken the direct solution! More dead soldiers, more of our people subtracted out, for nothing!",
-   "dst": "",
+   "dst": "我就跟你說過我們該用直接解！死更多士兵、把我們更多的人除掉，全都白費！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26071,7 +26071,7 @@
   },
   "Apotheosis (Quest)#061": {
    "src": "Hm! Now, let us be clear, the soldiers are-",
-   "dst": "",
+   "dst": "哼！好了，我們把話說清楚，那些士兵是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26081,7 +26081,7 @@
   },
   "Apotheosis (Quest)#062": {
    "src": "Oh, I do not care. Save your excuses.",
-   "dst": "",
+   "dst": "噢，我不在乎。省下你的藉口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26091,7 +26091,7 @@
   },
   "Apotheosis (Quest)#063": {
    "src": "I have given you more than enough chances to realise the weight of what it is we do!",
-   "dst": "",
+   "dst": "我已經給了你們夠多機會去認清我們所做之事的份量！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26101,7 +26101,7 @@
   },
   "Apotheosis (Quest)#064": {
    "src": "You...you have proven very hard to pin down, it would seem. No matter the circumstances, you have a knack for slipping through the cracks...",
-   "dst": "",
+   "dst": "你……看來你確實極難拿捏。無論在什麼情況下，你總有一手從縫隙裡溜走的本事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26111,7 +26111,7 @@
   },
   "Apotheosis (Quest)#065": {
    "src": "It would be oh so simple to blame you for all you have enacted... but the truth is, you were merely the catalyst. The seeds of this rebellion were planted long, long before you.",
-   "dst": "",
+   "dst": "把你所做的一切全都歸咎於你，會是何等簡單……但事實是，你不過是催化劑。這場叛亂的種子，在你之前很久很久就已經種下了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26121,7 +26121,7 @@
   },
   "Apotheosis (Quest)#066": {
    "src": "Oh, the {p}... over these centuries, its beauty has never faded. The vibrant colors, the warm breeze of the changing seasons...",
-   "dst": "",
+   "dst": "噢，{p}……這數百年來，它的美從未褪去。那些鮮豔的顏色、季節更迭時溫暖的風……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26131,7 +26131,7 @@
   },
   "Apotheosis (Quest)#067": {
    "src": "What a shame, then, that beneath the cover of the leaves, there lurk countless cowering pests. And no matter how hard I try, I cannot seem to wash them out.",
-   "dst": "",
+   "dst": "那麼可惜的是，在樹葉的遮蔽之下，潛伏著數不清瑟縮的害蟲。而無論我多麼努力，我似乎就是沖不掉它們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26141,7 +26141,7 @@
   },
   "Apotheosis (Quest)#068": {
    "src": "Fell the perceived source of their strength, cut the branches and burn the leaves, the fruit that emboldens their acts - and still, they persist!",
-   "dst": "",
+   "dst": "砍倒他們自以為的力量之源，剪去枝、燒掉葉，燒掉那些壯他們膽的果實——他們仍然存續！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26151,7 +26151,7 @@
   },
   "Apotheosis (Quest)#069": {
    "src": "Bury their monuments, erase their gods - and still, and STILL, they cling to ideals of love, of family! And still, and still, and still, they persist.",
-   "dst": "",
+   "dst": "埋掉他們的紀念碑、抹去他們的神明——他們卻仍然、仍然緊抓著愛與家庭的理想！他們仍然、仍然、仍然存續。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26161,7 +26161,7 @@
   },
   "Apotheosis (Quest)#070": {
    "src": "Washing it all away had shown results... for a time. But even growing forth from a blank slate, even with no ties to what came before - still, still, STILL THEY PERSIST!!!",
-   "dst": "",
+   "dst": "把一切沖刷乾淨曾經有效……有那麼一段時間。但即使從一塊白板上重新生長，即使與此前的一切毫無牽繫——他們仍然、仍然、仍然存續！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26171,7 +26171,7 @@
   },
   "Apotheosis (Quest)#071": {
    "src": "There is a rot in the heart of that forest. I see that now. Perhaps, I had allowed my fondness for the region to blind me... but no more.",
-   "dst": "",
+   "dst": "那座森林的中心有一處腐爛。我現在看清了。也許是我對那個地區的偏愛蒙蔽了我……但不會再有了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26181,7 +26181,7 @@
   },
   "Apotheosis (Quest)#072": {
    "src": "And so, as once we saw out the New Age, so again shall we wash away these pests. That accursed forest will drown, and the rot buried deep will be excised once more.",
-   "dst": "",
+   "dst": "所以，一如我們當年送走舊時代、迎來新紀元，這一次我們也將把這些害蟲沖刷乾淨。那座該死的森林將被淹沒，深埋其中的腐爛將再一次被剜除。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26191,7 +26191,7 @@
   },
   "Apotheosis (Quest)#073": {
    "src": "YOUR MAJESTY!!",
-   "dst": "",
+   "dst": "陛下！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26201,7 +26201,7 @@
   },
   "Apotheosis (Quest)#074": {
    "src": "W-With respect, that is not a viable angle! The Resistance is such a small percentage of the overall population, they're practically a rounding error!",
-   "dst": "",
+   "dst": "恕、恕我直言，那不是可行的解法！反抗軍在總人口裡只佔極小的比例，他們根本就是個捨入誤差！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26211,7 +26211,7 @@
   },
   "Apotheosis (Quest)#075": {
    "src": "You can't divide out a quarter of our province's people, a-and just as much infrastructure, just to solve for a subset of rogue integers!!",
-   "dst": "",
+   "dst": "您不能為了解一小撮失控的整數，就把我們行省四分之一的人口、還有同等份量的基礎建設，全部除掉！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26221,7 +26221,7 @@
   },
   "Apotheosis (Quest)#076": {
    "src": "Learn when to keep your mouth shut, would you, Nasin?! We are standing before the public! This is not the time to raise such grievances-",
-   "dst": "",
+   "dst": "學著什麼時候該閉嘴，好嗎，Nasin？！我們正站在公眾面前！現在不是提這種怨言的時候——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26231,7 +26231,7 @@
   },
   "Apotheosis (Quest)#077": {
    "src": "That didn't stop you interrupting my sequence and openly denigrating the recruits at the tournament to fulfill your petty factoring grudge!! You have no excuses!",
-   "dst": "",
+   "dst": "那可沒有阻止你打斷我的數列、在比武大會上公開貶低那些新兵，只為了滿足你那點該分解的私怨！！你沒有任何藉口！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26241,7 +26241,7 @@
   },
   "Apotheosis (Quest)#078": {
    "src": "We- We have been wasting our numbers at every point. When did our vector shift to something so shortsighted? When did we lose sight of our nontrivial solution?!",
-   "dst": "",
+   "dst": "我們——我們一直在浪費我們的數字。我們的向量是從什麼時候偏向這麼短視的？我們是從什麼時候失去了那個非平凡解的？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26251,7 +26251,7 @@
   },
   "Apotheosis (Quest)#079": {
    "src": "You're both plugged into a destructive sequence! I can't enable these irrationalities!! I refuse to be a variable in this cyclical, downwards spiral!!",
-   "dst": "",
+   "dst": "你們兩個都接進了一條毀滅性的數列！我沒辦法縱容這些不理性！！我拒絕當這場循環向下的螺旋裡的一個變數！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26261,7 +26261,7 @@
   },
   "Apotheosis (Quest)#080": {
    "src": "Take care with what you do next, Zhiraok Nasin. If you turn away now, you will forsake your position and forfeit your life.",
-   "dst": "",
+   "dst": "留意你接下來要做的事，Zhiraok Nasin。你此刻若轉身離去，就是拋棄你的職位、放棄你的性命。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26271,7 +26271,7 @@
   },
   "Apotheosis (Quest)#081": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26281,7 +26281,7 @@
   },
   "Apotheosis (Quest)#082": {
    "src": "I- You-",
-   "dst": "",
+   "dst": "我——你——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26291,7 +26291,7 @@
   },
   "Apotheosis (Quest)#083": {
    "src": "If this is what honor is supposed to feel like, I don't want it anymore.",
-   "dst": "",
+   "dst": "如果榮譽該是這種感覺，那我不要了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26301,7 +26301,7 @@
   },
   "Apotheosis (Quest)#084": {
    "src": "My loyalty is to the people. If yours isn't, then our vectors no longer converge. I'm subtracting my pact to you myself.",
-   "dst": "",
+   "dst": "我效忠的是人民。如果你不是，那我們的向量就不再收斂。我親手減去我對你的誓約。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26311,7 +26311,7 @@
   },
   "Apotheosis (Quest)#085": {
    "src": "Gotta evacuate, contact Xao, the commanders, get everyone to higher ground, find where the helix S-",
-   "dst": "",
+   "dst": "得去疏散、聯絡 Xao、聯絡各指揮官、把所有人帶到高處，找出那道螺旋 S——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26321,7 +26321,7 @@
   },
   "Apotheosis (Quest)#086": {
    "src": "Hmph! You Majesty, if you would allow it, I would gladly put his head on a stick for you.",
-   "dst": "",
+   "dst": "哼！陛下，若您准許，我很樂意替您把他的頭插在竿子上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26331,7 +26331,7 @@
   },
   "Apotheosis (Quest)#087": {
    "src": "Firstly, Sovereign Thalas, I would have you clean up your mess. Execute the terrorists.",
-   "dst": "",
+   "dst": "首先，Thalas 統領，我要你把你的爛攤子收拾乾淨。處決那些恐怖分子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26341,7 +26341,7 @@
   },
   "Apotheosis (Quest)#088": {
    "src": "...and once you are done, you have my approval to hunt down ex-Sovereign Zhiraok Nasin.",
-   "dst": "",
+   "dst": "……而等你辦完，我准你去追捕前統領 Zhiraok Nasin。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26351,7 +26351,7 @@
   },
   "Apotheosis (Quest)#089": {
    "src": "While you are at it, eliminate that entire House. They have disappointed me far too many times, and I have granted them far too many chances.",
-   "dst": "",
+   "dst": "既然要動手，就把那整個家族一併剷除。他們令我失望太多次，而我給了他們太多機會。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26361,7 +26361,7 @@
   },
   "Apotheosis (Quest)#090": {
    "src": "Aha! Gladly. As you wish, Your Majesty. It will be done.",
-   "dst": "",
+   "dst": "啊哈！樂意之至。如您所願，陛下。必定辦到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26371,7 +26371,7 @@
   },
   "Apotheosis (Quest)#091": {
    "src": "Sovereign Tasim. You will be coming with me to the dam.",
-   "dst": "",
+   "dst": "Tasim 統領。你隨我到水壩去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26381,7 +26381,7 @@
   },
   "Apotheosis (Quest)#092": {
    "src": "...of course, Your Majesty.",
-   "dst": "",
+   "dst": "……遵命，陛下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26391,7 +26391,7 @@
   },
   "Apotheosis (Quest)#093": {
    "src": "...of course.",
-   "dst": "",
+   "dst": "……遵命。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26401,7 +26401,7 @@
   },
   "Apotheosis (Quest)#094": {
    "src": "Ahhh... Finally! I'd been awaiting the day I'd get the chance to wipe you rats off the face of the planet.",
-   "dst": "",
+   "dst": "啊……總算！我一直在等這一天，等著把你們這些老鼠從這顆星球的表面抹掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26411,7 +26411,7 @@
   },
   "Apotheosis (Quest)#095": {
    "src": "But before we begin, I'm an honourable man, so I'll grant you this opportunity! Any last words for the crowd?",
-   "dst": "",
+   "dst": "不過在開始之前，我是個講究榮譽的人，所以我給你這個機會！對觀眾有什麼遺言嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26421,7 +26421,7 @@
   },
   "Apotheosis (Quest)#096": {
    "src": "Ahahahaha! Did you, now? That the great Sovereign Majin would fall to a simple group of insurgents... What a laughably fanciful tale!",
-   "dst": "",
+   "dst": "啊哈哈哈哈！你是這麼說的？偉大的 Majin 統領會敗在一群區區的叛亂分子手上……多麼可笑的異想天開！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26431,7 +26431,7 @@
   },
   "Apotheosis (Quest)#097": {
    "src": "My goodness, what a statement! You truly believe so? That you of all people stand a chance against my might?",
-   "dst": "",
+   "dst": "我的天，多麼豪語！你真的這麼相信？你這種人竟然覺得自己在我的威能面前有勝算？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26441,7 +26441,7 @@
   },
   "Apotheosis (Quest)#098": {
    "src": "Oh, how dreadfully dull. If you are going to be so dramatic, use a better line, would you?",
-   "dst": "",
+   "dst": "噢，何等乏味。你要這麼戲劇化，好歹換句好一點的台詞行嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26451,7 +26451,7 @@
   },
   "Apotheosis (Quest)#099": {
    "src": "Ha! As if. Half those tabloids are filled with naught but meaningless gossip! Though, I do have an appreciation for the Majin Monthly. It's quite the interesting read, you know!",
-   "dst": "",
+   "dst": "哈！才怪。那些小報有一半只裝著毫無意義的八卦！不過《Majin 月刊》我倒是頗為欣賞。那可是相當有意思的讀物，你知道嗎！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26461,7 +26461,7 @@
   },
   "Apotheosis (Quest)#100": {
    "src": "Hm... But I'm afraid only one of you is worthy of facing me in combat. As for the rest of you pitiful worms...",
-   "dst": "",
+   "dst": "唔……但恐怕你們之中只有一個配得上與我交手。至於你們其餘這些可憐的蟲子……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26471,7 +26471,7 @@
   },
   "Apotheosis (Quest)#101": {
    "src": "Wings, to arms! Initiate formation!",
-   "dst": "",
+   "dst": "羽翼部隊，備戰！展開陣型！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26481,7 +26481,7 @@
   },
   "Apotheosis (Quest)#102": {
    "src": "Ah ah ah! Keep your eyes on what's important, mmn?",
-   "dst": "",
+   "dst": "啊啊啊！眼睛盯著重要的東西，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26491,7 +26491,7 @@
   },
   "Apotheosis (Quest)#103": {
    "src": "You should feel honoured! Very few are given the privilege of dying to my blade. I'd tell you to write about it in your memoirs, but...",
-   "dst": "",
+   "dst": "你該感到榮幸！很少有人能得到死在我劍下的殊榮。我本想叫你寫進回憶錄裡，不過……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26501,7 +26501,7 @@
   },
   "Apotheosis (Quest)#104": {
    "src": "Well, I don't imagine you'll have the chance. NOW -",
-   "dst": "",
+   "dst": "嗯，我想你不會有那個機會了。現在——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26511,7 +26511,7 @@
   },
   "Apotheosis (Quest)#105": {
    "src": "Defeat Majin. To return to the fight, go to [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "擊敗 Majin。要回到戰場，請前往 [-{~1}, {~2}, -{~3}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -26521,7 +26521,7 @@
   },
   "Apotheosis (Quest)#106": {
    "src": "Welcome to my domain of the starry night, dear guest! Quite the stunning view, is it not?",
-   "dst": "",
+   "dst": "歡迎來到我的星夜領域，親愛的客人！景色相當懾人，不是嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26531,7 +26531,7 @@
   },
   "Apotheosis (Quest)#107": {
    "src": "By all means - take your time, take it all in, every little detail! Allow that feeling to sink in - your sheer insignificance in the face of the vastness of the cosmos!",
-   "dst": "",
+   "dst": "儘管慢慢來——好好把它看盡，每一個細節！讓那份感受沉進去——在浩瀚宇宙面前，你何等微不足道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26541,7 +26541,7 @@
   },
   "Apotheosis (Quest)#108": {
    "src": "Ah... Her Majesty and the Spymaster, they held interest in you once. Looking upon you now, I simply cannot fathom why.",
-   "dst": "",
+   "dst": "啊……陛下和諜報總管曾經對你有興趣。如今看著你，我實在想不出為什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26551,7 +26551,7 @@
   },
   "Apotheosis (Quest)#109": {
    "src": "But I suppose it matters not! You have certainly cut that strand of interest with all your assorted antics, haven't you?",
-   "dst": "",
+   "dst": "不過那大概也無所謂了！你那一連串的胡鬧，早就把那條興趣的線給剪斷了，不是嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26561,7 +26561,7 @@
   },
   "Apotheosis (Quest)#110": {
    "src": "Well! If you must die, be glad it was to my blade! LET THE SHOW BEGIN!!",
-   "dst": "",
+   "dst": "好了！你既然非死不可，就慶幸是死在我的劍下吧！開演！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26571,7 +26571,7 @@
   },
   "Apotheosis (Quest)#111": {
    "src": "Flooding the whole forest... There's- That can't be, th-there's no way...",
-   "dst": "",
+   "dst": "淹掉整座森林……那——那不可能，不、不可能……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26581,7 +26581,7 @@
   },
   "Apotheosis (Quest)#112": {
    "src": "I certainly hope you've learned your lesson, Rose! This is what happens! Loose nails get hammered down!",
-   "dst": "",
+   "dst": "我真心希望你學到教訓了，Rose！這就是下場！出頭的釘子就是會被敲下去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26591,7 +26591,7 @@
   },
   "Apotheosis (Quest)#113": {
    "src": "What...?",
-   "dst": "",
+   "dst": "你說什麼……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26601,7 +26601,7 @@
   },
   "Apotheosis (Quest)#114": {
    "src": "This is all happening because a certain SOMEONE incited violence against the crown! In the papers no less, where we do our work!",
-   "dst": "",
+   "dst": "這一切之所以發生，就是因為「某個人」煽動了對王室的暴力！還登在報上，就在我們工作的地方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26611,7 +26611,7 @@
   },
   "Apotheosis (Quest)#115": {
    "src": "Risky, dangerous, all of it- and now look where we are! Public executions! We might not even be allowed to publish after this!",
-   "dst": "",
+   "dst": "有風險、危險，全都是——結果你看我們現在落到什麼地步！公開處決！這之後我們搞不好連刊都出不了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26621,7 +26621,7 @@
   },
   "Apotheosis (Quest)#116": {
    "src": "...there are...HOW many people in danger right now, a-and all you can think to do is-",
-   "dst": "",
+   "dst": "……現在有「多少」人身處險境，你、你唯一想得到要做的卻是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26631,7 +26631,7 @@
   },
   "Apotheosis (Quest)#117": {
    "src": "It's. What. You. GET.",
-   "dst": "",
+   "dst": "這。就。是。下。場。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26641,7 +26641,7 @@
   },
   "Apotheosis (Quest)#118": {
    "src": "How can you be so monumentally stupid?! At least they TRIED! At least they SHOWED UP! They followed through!!",
-   "dst": "",
+   "dst": "你怎麼能蠢到這種驚人的地步？！他們至少「試過」了！他們至少「站出來」了！他們貫徹到底了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26651,7 +26651,7 @@
   },
   "Apotheosis (Quest)#119": {
    "src": "The first hope I've seen in years, and you throw petty insults at them?!",
-   "dst": "",
+   "dst": "那是我這些年來看見的第一線希望，而你卻在對他們扔那些小家子氣的嘲諷？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26661,7 +26661,7 @@
   },
   "Apotheosis (Quest)#120": {
    "src": "Ergh...where did you learn to hit?! Can you really only rely on that to make your point?",
-   "dst": "",
+   "dst": "唔……你這拳是跟誰學的？！你就只能靠這個來表達你的論點嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26671,7 +26671,7 @@
   },
   "Apotheosis (Quest)#121": {
    "src": "Oh, grow UP already!! Think of something useful to do, instead of looking at the people who are doing anything more than sitting on their asses and going \"how uncivilized!\"",
-   "dst": "",
+   "dst": "拜託你「成熟」一點！！去想點有用的事來做，而不是看著那些做了不只是坐著發呆的人，然後說「真沒教養！」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26681,7 +26681,7 @@
   },
   "Apotheosis (Quest)#122": {
    "src": "Hey, language! And besides, it's not as if that insurgent has any chance against-",
-   "dst": "",
+   "dst": "喂，注意用詞！何況，那個叛亂分子哪有可能贏得了——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26691,7 +26691,7 @@
   },
   "Apotheosis (Quest)#123": {
    "src": "...the...Sovereign...",
-   "dst": "",
+   "dst": "……那位……統領……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26701,7 +26701,7 @@
   },
   "Apotheosis (Quest)#124": {
    "src": "...is...d-d-dead?!",
-   "dst": "",
+   "dst": "……死、死、死了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26711,7 +26711,7 @@
   },
   "Apotheosis (Quest)#125": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26721,7 +26721,7 @@
   },
   "Apotheosis (Quest)#126": {
    "src": "...The Sovereign...is dead!! The Resistance is triumphant!! Can't you see?! They were right!!",
-   "dst": "",
+   "dst": "……統領……死了！！反抗軍勝了！！你看不出來嗎？！他們是對的！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26731,7 +26731,7 @@
   },
   "Apotheosis (Quest)#127": {
    "src": "We need to help them! This might be our only chance, we can't let it slip away from us!!",
-   "dst": "",
+   "dst": "我們得去幫他們！這可能是我們唯一的機會，不能讓它從我們手上溜走！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26741,7 +26741,7 @@
   },
   "Apotheosis (Quest)#128": {
    "src": "heated murmurs",
-   "dst": "",
+   "dst": "群眾激動的低語",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26751,7 +26751,7 @@
   },
   "Apotheosis (Quest)#129": {
    "src": "...you know what?",
-   "dst": "",
+   "dst": "……你知道嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26761,7 +26761,7 @@
   },
   "Apotheosis (Quest)#130": {
    "src": "LET'S HELP THEM!",
-   "dst": "",
+   "dst": "我們去幫他們！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26771,7 +26771,7 @@
   },
   "Apotheosis (Quest)#131": {
    "src": "LIFE'S CHANGING!!",
-   "dst": "",
+   "dst": "世道要變了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26781,7 +26781,7 @@
   },
   "Apotheosis (Quest)#132": {
    "src": "THE EMPIRE'S FALLING!!!",
-   "dst": "",
+   "dst": "帝國要垮了！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26791,7 +26791,7 @@
   },
   "Apotheosis (Quest)#133": {
    "src": "MAJIN'S DEAD, WHAT CAN THEY DO NOW?!",
-   "dst": "",
+   "dst": "Majin 死了，他們現在還能怎樣？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26801,7 +26801,7 @@
   },
   "Apotheosis (Quest)#134": {
    "src": "You! You really did it!! People are...they're doing something!! It worked, I can't believe it worked!!",
-   "dst": "",
+   "dst": "你！你真的做到了！！人們……他們動起來了！！成功了，我不敢相信真的成功了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26811,7 +26811,7 @@
   },
   "Apotheosis (Quest)#135": {
    "src": "I'm going with them! We have to keep up the momentum, m-maybe I can direct them! You do whatever you have to- I trust you! We'll make it!",
-   "dst": "",
+   "dst": "我要跟他們一起去！我們得維持這股勢頭，說、說不定我能引導他們！你做你該做的——我相信你！我們會成功的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26821,7 +26821,7 @@
   },
   "Apotheosis (Quest)#136": {
    "src": "Talk to your friends.",
-   "dst": "",
+   "dst": "與你的夥伴談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -26831,7 +26831,7 @@
   },
   "Apotheosis (Quest)#137": {
    "src": "{u}!! Y...you're alive!! Then that means...?",
-   "dst": "",
+   "dst": "{u}！！你、你還活著！！那就是說……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26841,7 +26841,7 @@
   },
   "Apotheosis (Quest)#138": {
    "src": "Mmn. Impressive.",
-   "dst": "",
+   "dst": "嗯。厲害。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26851,7 +26851,7 @@
   },
   "Apotheosis (Quest)#139": {
    "src": "Good. That's one less Sovereign to worry about...",
-   "dst": "",
+   "dst": "很好。要擔心的統領少一個了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26861,7 +26861,7 @@
   },
   "Apotheosis (Quest)#140": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26871,7 +26871,7 @@
   },
   "Apotheosis (Quest)#141": {
    "src": "She... she really threatened to flood the {p}... didn't she...?",
-   "dst": "",
+   "dst": "她……她真的威脅要淹掉 {p}……對吧……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26881,7 +26881,7 @@
   },
   "Apotheosis (Quest)#142": {
    "src": "I- I- I can't believe it... all be- because we won't b...back down?",
-   "dst": "",
+   "dst": "我、我、我不敢相信……全都是因、因為我們不肯退讓？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26891,7 +26891,7 @@
   },
   "Apotheosis (Quest)#143": {
    "src": "Well, I can. Just like the New Age... ugh, was THAT her too?! We're unprepared, outmatched... how are we meant to-",
-   "dst": "",
+   "dst": "我倒是敢。就跟新紀元那次一樣……唉，「那個」也是她幹的？！我們毫無準備、實力懸殊……我們要怎麼——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26901,7 +26901,7 @@
   },
   "Apotheosis (Quest)#144": {
    "src": "It doesn't matter! We- we have to stop her! We can't just... let her kill all those people!",
-   "dst": "",
+   "dst": "那不重要！我們——我們必須阻止她！我們不能就這樣……讓她殺光那些人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26911,7 +26911,7 @@
   },
   "Apotheosis (Quest)#145": {
    "src": "...I hate it, but you're right. Come on, let's-",
-   "dst": "",
+   "dst": "……我很不想承認，但你說得對。走，我們——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26921,7 +26921,7 @@
   },
   "Apotheosis (Quest)#146": {
    "src": "Phew- you're all still standing strong!! Good, good... I- phew- I was getting worried!",
-   "dst": "",
+   "dst": "呼——你們都還好端端站著！！太好、太好了……我——呼——我剛才可擔心了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26931,7 +26931,7 @@
   },
   "Apotheosis (Quest)#147": {
    "src": "R...Rurie? What are you doing h- here?",
-   "dst": "",
+   "dst": "R、Rurie？你怎麼會在這、這裡？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26941,7 +26941,7 @@
   },
   "Apotheosis (Quest)#148": {
    "src": "Ah! One moment, just, ha, allow me to catch my breath- let me tell you, those speed talismans are handy but they really leave you winded-",
-   "dst": "",
+   "dst": "啊！等一下，就，哈，讓我喘口氣——我跟你們說，那些速度護符很好用，但真的會讓人上氣不接下氣——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26951,7 +26951,7 @@
   },
   "Apotheosis (Quest)#149": {
    "src": "...ohohohoho, do my eyes decieve me?! I'd heard the townsfolk talking but I could hardly believe it- is it really true? Has the Sovereign Thalas truly been felled?!",
-   "dst": "",
+   "dst": "……噢呵呵呵，我的眼睛騙我嗎？！我聽到鎮上的人在講，可我簡直不敢相信——是真的嗎？Thalas 統領真的被擊倒了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26961,7 +26961,7 @@
   },
   "Apotheosis (Quest)#150": {
    "src": "...yeah. {u} beat him.",
-   "dst": "",
+   "dst": "……嗯。{u} 打敗了他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26971,7 +26971,7 @@
   },
   "Apotheosis (Quest)#151": {
    "src": "Ha. Ha! Hahahahahaha! Ahahahahahahahahaha!",
-   "dst": "",
+   "dst": "哈。哈！哈哈哈哈哈哈！啊哈哈哈哈哈哈哈哈哈！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26981,7 +26981,7 @@
   },
   "Apotheosis (Quest)#152": {
    "src": "Good! Great, even! Got what he deserved, in the end!",
-   "dst": "",
+   "dst": "好！豈止是好！他終究得到了他應得的下場！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -26991,7 +26991,7 @@
   },
   "Apotheosis (Quest)#153": {
    "src": "Hm? No, it's perfectly normal. If you had the vendetta I had, then, well! You would react likewise, I'm certain.",
-   "dst": "",
+   "dst": "嗯？不，這完全正常。要是你背著我這樣的血海深仇，那，嗯！你的反應一定也一樣，我很確定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27001,7 +27001,7 @@
   },
   "Apotheosis (Quest)#154": {
    "src": "Hm? No, it's perfectly normal. If you had the vendetta I had, then, well! You would react likewise, I'm certain.",
-   "dst": "",
+   "dst": "嗯？不，這完全正常。要是你背著我這樣的血海深仇，那，嗯！你的反應一定也一樣，我很確定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27011,7 +27011,7 @@
   },
   "Apotheosis (Quest)#155": {
    "src": "Dead! Dead! He's dead, and I'm not, and I win! Hahahahaha!",
-   "dst": "",
+   "dst": "死了！死了！他死了，而我沒死，是我贏了！哈哈哈哈哈！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27021,7 +27021,7 @@
   },
   "Apotheosis (Quest)#156": {
    "src": "Rurie. Problems.",
-   "dst": "",
+   "dst": "Rurie。麻煩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27031,7 +27031,7 @@
   },
   "Apotheosis (Quest)#157": {
    "src": "Problems! Right! Right right right right right!! That's why I'm here, after all- haha, apologies, got distracted a moment...",
-   "dst": "",
+   "dst": "麻煩！對！對對對對對！！我來這裡就是為了這個——哈哈，抱歉，剛剛分心了一下……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27041,7 +27041,7 @@
   },
   "Apotheosis (Quest)#158": {
    "src": "It seems the crown's finally recovered from the shock, and attacks on the safe zone have increased in strength and frequency!",
-   "dst": "",
+   "dst": "看來王室終於從震驚中回過神來了，對安全區的攻擊在強度和頻率上都升高了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27051,7 +27051,7 @@
   },
   "Apotheosis (Quest)#159": {
    "src": "She sent me to... well, to check and see if you're alive, firstly - but also to bring whoever I can back to support the defense effort!",
-   "dst": "",
+   "dst": "她派我來……嗯，首先是來確認你們還活著——不過也是來把我找得到的人帶回去支援防禦！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27061,7 +27061,7 @@
   },
   "Apotheosis (Quest)#160": {
    "src": "We have issues here too, Rurie. The Queen has just publicly announced she's going to FLOOD the {p}!!",
-   "dst": "",
+   "dst": "我們這邊也有問題，Rurie。女王剛剛公開宣布她要「淹掉」{p}！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27071,7 +27071,7 @@
   },
   "Apotheosis (Quest)#161": {
    "src": "Oh! Oh, dear! That isn't good at all! We've truly driven her far enough to warrant such an act?",
-   "dst": "",
+   "dst": "噢！我的天！那可一點都不好！我們真的把她逼到了要出這種手段的地步？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27081,7 +27081,7 @@
   },
   "Apotheosis (Quest)#162": {
    "src": "Rurie, I'll g- go with you. I... I need to m...make sure Yuman's safe.",
-   "dst": "",
+   "dst": "Rurie，我跟、跟你走。我……我得確、確認 Yuman 平安。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27091,7 +27091,7 @@
   },
   "Apotheosis (Quest)#163": {
    "src": "Will go too.",
-   "dst": "",
+   "dst": "也去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27101,7 +27101,7 @@
   },
   "Apotheosis (Quest)#164": {
    "src": "Rex, Sui, {u}... I- I want to h...help you, but-",
-   "dst": "",
+   "dst": "Rex、Sui、{u}……我、我想幫、幫你們，可是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27111,7 +27111,7 @@
   },
   "Apotheosis (Quest)#165": {
    "src": "Hey, Zeph, it's alright. Make sure there's a resistance still standing for us to rejoin when it's all over, alright?",
-   "dst": "",
+   "dst": "嘿，Zeph，沒關係的。你去確保這一切結束之後，還有一支反抗軍讓我們回得去，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27121,7 +27121,7 @@
   },
   "Apotheosis (Quest)#166": {
    "src": "...stay safe, Zeph.",
-   "dst": "",
+   "dst": "……保重，Zeph。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27131,7 +27131,7 @@
   },
   "Apotheosis (Quest)#167": {
    "src": "Y- you guys too! Let's reunite wh...when this is all over, alright?",
-   "dst": "",
+   "dst": "你、你們也是！等這一切結、結束，我們再重聚，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27141,7 +27141,7 @@
   },
   "Apotheosis (Quest)#168": {
    "src": "Then it's settled! Good luck, you three! Go show the Queen what you've got!",
-   "dst": "",
+   "dst": "那就這麼定了！祝你們三個好運！去讓女王看看你們的本事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27151,7 +27151,7 @@
   },
   "Apotheosis (Quest)#169": {
    "src": "Head to the dam and stop the Queen at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 的水壩，阻止女王。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -27161,7 +27161,7 @@
   },
   "Apotheosis (Quest)#170": {
    "src": "...is this really necessary?",
-   "dst": "",
+   "dst": "……這真的有必要嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27171,7 +27171,7 @@
   },
   "Apotheosis (Quest)#171": {
    "src": "Necessary? Very little ever is. But it will prove a point.",
-   "dst": "",
+   "dst": "必要？世上鮮少有什麼是必要的。但這能立下一個明證。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27181,7 +27181,7 @@
   },
   "Apotheosis (Quest)#172": {
    "src": "Really. Thousands of lives... to prove a point.",
-   "dst": "",
+   "dst": "是嗎。數以千計的性命……就為了立一個明證。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27191,7 +27191,7 @@
   },
   "Apotheosis (Quest)#173": {
    "src": "You understand the stakes of the greater task, yes? If that end is not averted, they die regardless. Them, and everyone else.",
-   "dst": "",
+   "dst": "你明白那件更大的任務攸關什麼吧？如果那個結局沒被避開，他們橫豎都會死。他們，以及所有其他人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27201,7 +27201,7 @@
   },
   "Apotheosis (Quest)#174": {
    "src": "And without order here, we will lack the focus to see it through. So, see it as a necessary evil. Nothing more, nothing less.",
-   "dst": "",
+   "dst": "而這裡若沒有秩序，我們就沒有餘力去把它做完。所以，把它看成必要之惡。不多，也不少。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27211,7 +27211,7 @@
   },
   "Apotheosis (Quest)#175": {
    "src": "...and what about Two?",
-   "dst": "",
+   "dst": "……那 Two 呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27221,7 +27221,7 @@
   },
   "Apotheosis (Quest)#176": {
    "src": "She will come around. She always does, in the end.",
-   "dst": "",
+   "dst": "她會想通的。她最後總是會。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27231,7 +27231,7 @@
   },
   "Apotheosis (Quest)#177": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27241,7 +27241,7 @@
   },
   "Apotheosis (Quest)#178": {
    "src": "I don't like this. There are better opt-",
-   "dst": "",
+   "dst": "我不喜歡這樣。還有更好的選——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27251,7 +27251,7 @@
   },
   "Apotheosis (Quest)#179": {
    "src": "You do not have to like it, Sovereign. But if you wish to make change for the world, you will have to see it through.",
-   "dst": "",
+   "dst": "你不必喜歡它，統領。但你若想為這個世界帶來改變，你就得把它走完。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27261,7 +27261,7 @@
   },
   "Apotheosis (Quest)#180": {
    "src": "Now. Let us begin.",
-   "dst": "",
+   "dst": "好了。開始吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27271,7 +27271,7 @@
   },
   "Apotheosis (Quest)#181": {
    "src": "STOP!!!",
-   "dst": "",
+   "dst": "住手！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27281,7 +27281,7 @@
   },
   "Apotheosis (Quest)#182": {
    "src": "We won't let you go through with this!",
-   "dst": "",
+   "dst": "我們不會讓你把這件事做下去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27291,7 +27291,7 @@
   },
   "Apotheosis (Quest)#183": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27301,7 +27301,7 @@
   },
   "Apotheosis (Quest)#184": {
    "src": "Good grief, are my Sovereigns truly good for NOTHING?! Zhiraok, Soosu, Gikyo, Majin - each and every one a FAILURE!",
-   "dst": "",
+   "dst": "老天，我的統領們真的一個能用的都沒有嗎？！Zhiraok、Soosu、Gikyo、Majin——每一個都是「廢物」！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27311,7 +27311,7 @@
   },
   "Apotheosis (Quest)#185": {
    "src": "Oh, what does it matter?! All of this - everything you have done, everything you have caused, all will be swept away and once I am finished with you!",
-   "dst": "",
+   "dst": "噢，那又如何？！這一切——你做過的每一件事、你引起的每一件事，等我處理完你之後，全都會被一併沖走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27321,7 +27321,7 @@
   },
   "Apotheosis (Quest)#186": {
    "src": "Sovereign Tasim. Kill them.",
-   "dst": "",
+   "dst": "Tasim 統領。殺了他們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27331,7 +27331,7 @@
   },
   "Apotheosis (Quest)#187": {
    "src": "Why are you doing this?! Why are you LETTING her kill all those people?!",
-   "dst": "",
+   "dst": "你為什麼要這麼做？！你為什麼要「任由」她殺光那些人？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27341,7 +27341,7 @@
   },
   "Apotheosis (Quest)#188": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27351,7 +27351,7 @@
   },
   "Apotheosis (Quest)#189": {
    "src": "I don't have a choice.",
-   "dst": "",
+   "dst": "我沒有選擇。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27361,7 +27361,7 @@
   },
   "Apotheosis (Quest)#190": {
    "src": "What?! You ALWAYS have a choice, du-",
-   "dst": "",
+   "dst": "什麼？！你「永遠」都有選擇，你這蠢——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27371,7 +27371,7 @@
   },
   "Apotheosis (Quest)#191": {
    "src": "Stop trying to talk to him. We have to-...!",
-   "dst": "",
+   "dst": "別再跟他說話了。我們必須——……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27381,7 +27381,7 @@
   },
   "Apotheosis (Quest)#192": {
    "src": "Defeat Tasim.",
-   "dst": "",
+   "dst": "擊敗 Tasim。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -27391,7 +27391,7 @@
   },
   "Apotheosis (Quest)#193": {
    "src": "The Queen...!",
-   "dst": "",
+   "dst": "女王……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27401,7 +27401,7 @@
   },
   "Apotheosis (Quest)#194": {
    "src": "We have to stop her before she tears this whole thing down!!",
-   "dst": "",
+   "dst": "我們得在她把整座水壩扯垮之前阻止她！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27411,7 +27411,7 @@
   },
   "Apotheosis (Quest)#195": {
    "src": "I can't let you do that.",
-   "dst": "",
+   "dst": "我不能讓你們那麼做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27421,7 +27421,7 @@
   },
   "Apotheosis (Quest)#196": {
    "src": "Ugh... we're getting nowhere! We NEED to find a way to stop the Queen!",
-   "dst": "",
+   "dst": "唉……我們毫無進展！我們「必須」找到辦法阻止女王！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27431,7 +27431,7 @@
   },
   "Apotheosis (Quest)#197": {
    "src": "...really? The same trick again?",
-   "dst": "",
+   "dst": "……真的嗎？又用同一招？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27441,7 +27441,7 @@
   },
   "Apotheosis (Quest)#198": {
    "src": "Ha! Didn't expect that one, did you?!",
-   "dst": "",
+   "dst": "哈！這一招你沒料到吧？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27451,7 +27451,7 @@
   },
   "Apotheosis (Quest)#199": {
    "src": "Come on! Think, Rex... think!!!",
-   "dst": "",
+   "dst": "快！動腦，Rex……動腦！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27461,7 +27461,7 @@
   },
   "Apotheosis (Quest)#200": {
    "src": "COME ON!!!!",
-   "dst": "",
+   "dst": "快啊！！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27471,7 +27471,7 @@
   },
   "Apotheosis (Quest)#201": {
    "src": "{u}! Her spell's down, but- she'll get it back up if we don't keep her busy!",
-   "dst": "",
+   "dst": "{u}！她的法術斷了，可是——我們不纏住她，她會重新起手！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27481,7 +27481,7 @@
   },
   "Apotheosis (Quest)#202": {
    "src": "I'll handle Tasim! Go!! You're the only one of us who stands a chance against her!!",
-   "dst": "",
+   "dst": "Tasim 交給我！去！！我們之中只有你有勝算對付她！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27491,7 +27491,7 @@
   },
   "Apotheosis (Quest)#203": {
    "src": "Good! NOW GO!!!",
-   "dst": "",
+   "dst": "很好！現在快去！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27501,7 +27501,7 @@
   },
   "Apotheosis (Quest)#204": {
    "src": "Defeat Her Majesty of Fruma.",
-   "dst": "",
+   "dst": "擊敗 Fruma 的女王陛下。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -27511,7 +27511,7 @@
   },
   "Apotheosis (Quest)#205": {
    "src": "Oh, how",
-   "dst": "",
+   "dst": "噢，何等",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27521,7 +27521,7 @@
   },
   "Apotheosis (Quest)#206": {
    "src": "So it would I cannot rely on my Sovereigns for anything!",
-   "dst": "",
+   "dst": "看來我的統領們果然什麼都靠不住！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27531,7 +27531,7 @@
   },
   "Apotheosis (Quest)#207": {
    "src": "Perhaps I have not paid you quite enough attention. With each and every additional slight, you cement yourself as more and more of a",
-   "dst": "",
+   "dst": "也許我對你的關注還不夠。你每多一次冒犯，就愈把自己坐實成一個",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27541,7 +27541,7 @@
   },
   "Apotheosis (Quest)#208": {
    "src": "Very well. Then I will do what I should have from the start, and deal with you",
-   "dst": "",
+   "dst": "很好。那麼我就做我一開始就該做的事，親自處理你",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27551,7 +27551,7 @@
   },
   "Apotheosis (Quest)#209": {
    "src": "Deal with the aftermath.",
-   "dst": "",
+   "dst": "處理善後。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -27561,7 +27561,7 @@
   },
   "Apotheosis (Quest)#210": {
    "src": "Urgh... I see... ahahahaha, I see now...! I had underestimated you, after all!",
-   "dst": "",
+   "dst": "唔……我明白了……啊哈哈哈，我現在明白了……！我終究還是低估了你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27571,7 +27571,7 @@
   },
   "Apotheosis (Quest)#211": {
    "src": "But I am not done just yet.",
-   "dst": "",
+   "dst": "但我還沒完。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27581,7 +27581,7 @@
   },
   "Apotheosis (Quest)#212": {
    "src": "You... you... you have ruined everything. This shell is on the verge of collapsing under the strain... and this- this!- is not so easily repaired. And now... and now. Only one path remains.",
-   "dst": "",
+   "dst": "你……你……你毀了一切。這具軀殼在重壓下已經瀕臨崩解……而這——這！——可不是那麼容易修補的。而現在……而現在。只剩下一條路了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27591,7 +27591,7 @@
   },
   "Apotheosis (Quest)#213": {
    "src": "That damned girl... if she had only done as she had been tasked... repair might - might - have been an option. As once before, the strands wrapped tightly against this burning, spark!!",
-   "dst": "",
+   "dst": "那個該死的女孩……她要是照交代的做了……修補或許——或許——還會是個選項。就像從前那樣，把絲線緊緊纏繞在這團燃燒的火花上！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27601,7 +27601,7 @@
   },
   "Apotheosis (Quest)#214": {
    "src": "But, no. No. Once again, the Weave is beyond my reach... And that was your doing as well, wasn't it?!",
-   "dst": "",
+   "dst": "但，沒有。沒有。織網再一次超出了我的觸及範圍……而那也是你幹的好事，對吧？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27611,7 +27611,7 @@
   },
   "Apotheosis (Quest)#215": {
    "src": "Ha... haha... Centuries of carefully constructing this visage, this freedom, of building a perfect kingdom, a perfect world, all gone to waste!!! Because. Of.",
-   "dst": "",
+   "dst": "哈……哈哈……數百年來小心翼翼構築的這副面貌、這份自由，建造一個完美的王國、一個完美的世界，全都白費了！！！就因為。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27621,7 +27621,7 @@
   },
   "Apotheosis (Quest)#216": {
    "src": "Are you ? Oh, you must be. You believe this petty act of rebellion will solve every single one of your perceived problems?",
-   "dst": "",
+   "dst": "你是嗎？噢，你一定是。你相信這場小家子氣的叛亂能解決你自以為的每一個問題？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27631,7 +27631,7 @@
   },
   "Apotheosis (Quest)#217": {
    "src": "No. No, it will do no such thing. It has only made it",
-   "dst": "",
+   "dst": "不。不，它不會有任何那樣的作用。它只讓事情變得更",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27641,7 +27641,7 @@
   },
   "Apotheosis (Quest)#218": {
    "src": "But you will not live to see it, will you? No... no, you The shell will and and {u}, and you alongside it!",
-   "dst": "",
+   "dst": "但你活不到看見那一天，對吧？不……不，你這具軀殼將會 而且 而且 {u}，你也會跟著它一起！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27651,7 +27651,7 @@
   },
   "Apotheosis (Quest)#219": {
    "src": "One final satisfaction! Before all comes crashing down. I will enjoy it, {u}!",
-   "dst": "",
+   "dst": "最後一份滿足！在一切崩塌之前。我會好好享受的，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27661,7 +27661,7 @@
   },
   "Apotheosis (Quest)#220": {
    "src": "{u}!!!",
-   "dst": "",
+   "dst": "{u}！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27671,7 +27671,7 @@
   },
   "Apotheosis (Quest)#221": {
    "src": "Come on Rex! FOCUS!!!",
-   "dst": "",
+   "dst": "撐住 Rex！專心！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27681,7 +27681,7 @@
   },
   "Apotheosis (Quest)#222": {
    "src": "This grapple arrow had better work...",
-   "dst": "",
+   "dst": "這支抓鉤箭最好管用……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27691,7 +27691,7 @@
   },
   "Apotheosis (Quest)#223": {
    "src": "HOW. DARE. YOU!? Insolent CHILD, you are nothing, compared to urgh...",
-   "dst": "",
+   "dst": "你。好。大。的。膽子！？無禮的「小鬼」，跟……唔……相比，你什麼都不是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27701,7 +27701,7 @@
   },
   "Apotheosis (Quest)#224": {
    "src": "Oh, what does it matter?! Death will claim you all the same, once worlds and hellfire rains down from above...",
-   "dst": "",
+   "dst": "噢，那又如何？！死亡終究會找上你們所有人，一旦諸界與地獄之火從天而降……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27711,7 +27711,7 @@
   },
   "Apotheosis (Quest)#225": {
    "src": "This... this will be difficult to bury. But not impossible.",
-   "dst": "",
+   "dst": "這……這會很難掩埋。但並非不可能。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27721,7 +27721,7 @@
   },
   "Apotheosis (Quest)#226": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27731,7 +27731,7 @@
   },
   "Apotheosis (Quest)#227": {
    "src": "And all of it just... breaks, in the end, anyway... doesn't it.",
-   "dst": "",
+   "dst": "然後這一切終究就……碎了，是嗎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27741,7 +27741,7 @@
   },
   "Apotheosis (Quest)#228": {
    "src": "Sigh... what was the point of it all?",
-   "dst": "",
+   "dst": "唉……這一切到底有什麼意義？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27751,7 +27751,7 @@
   },
   "Apotheosis (Quest)#229": {
    "src": "I didn't... I didn't want for this to happen. I just...",
-   "dst": "",
+   "dst": "我不……我不希望這件事發生。我只是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27761,7 +27761,7 @@
   },
   "Apotheosis (Quest)#230": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27771,7 +27771,7 @@
   },
   "Apotheosis (Quest)#231": {
    "src": "It's over, then. You've won.",
-   "dst": "",
+   "dst": "那就結束了。你贏了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27781,7 +27781,7 @@
   },
   "Apotheosis (Quest)#232": {
    "src": "Let's... get it over with.",
-   "dst": "",
+   "dst": "我們……把它了結吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27791,7 +27791,7 @@
   },
   "Apotheosis (Quest)#233": {
    "src": "We've reached the end, and I chose the wrong side. Stuck by a cause I was too stubborn to drop...",
-   "dst": "",
+   "dst": "我們走到了終點，而我選錯了邊。抱著一個我太固執而放不下的理由……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27801,7 +27801,7 @@
   },
   "Apotheosis (Quest)#234": {
    "src": "And you've proven very efficient at killing those in the wrong, haven't you?",
-   "dst": "",
+   "dst": "而你證明了自己非常擅長殺死站錯邊的人，不是嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27811,7 +27811,7 @@
   },
   "Apotheosis (Quest)#235": {
    "src": "I've gone too far. I know. I know I have. Call it whatever you want, I just- I...",
-   "dst": "",
+   "dst": "我走得太遠了。我知道。我知道我走太遠了。你想怎麼說都行，我只是——我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27821,7 +27821,7 @@
   },
   "Apotheosis (Quest)#236": {
    "src": "It doesn't matter. We're here now. You have to do it.",
-   "dst": "",
+   "dst": "那不重要。我們現在就在這裡。你必須動手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27831,7 +27831,7 @@
   },
   "Apotheosis (Quest)#237": {
    "src": "I made my choices. I knew where they were leading me, and... and I didn't turn away. Now, we've reached the end. You have to kill me.",
-   "dst": "",
+   "dst": "是我自己做的選擇。我知道它們會把我帶到哪裡，而……而我沒有轉身。現在，我們走到了終點。你必須殺了我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27841,7 +27841,7 @@
   },
   "Apotheosis (Quest)#238": {
    "src": "What even is there left for me? Where would I go? Is there anyone, any place left? I don't have anything.",
-   "dst": "",
+   "dst": "我還剩下什麼？我能去哪裡？還有任何人、任何地方嗎？我什麼都沒有了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27851,7 +27851,7 @@
   },
   "Apotheosis (Quest)#239": {
    "src": "Just... let me be with him. Give me that one thing. That's all.",
-   "dst": "",
+   "dst": "就……讓我去陪他。就給我這一件事。就這樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27861,7 +27861,7 @@
   },
   "Apotheosis (Quest)#240": {
    "src": "...don't look at me like that.",
-   "dst": "",
+   "dst": "……別用那種眼神看我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27871,7 +27871,7 @@
   },
   "Apotheosis (Quest)#241": {
    "src": "...what?",
-   "dst": "",
+   "dst": "……什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27881,7 +27881,7 @@
   },
   "Apotheosis (Quest)#242": {
    "src": "...what?",
-   "dst": "",
+   "dst": "……什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27891,7 +27891,7 @@
   },
   "Apotheosis (Quest)#243": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27901,7 +27901,7 @@
   },
   "Apotheosis (Quest)#244": {
    "src": "...like Aledar. When you said it was a sacrifice, you... he... he really...?",
-   "dst": "",
+   "dst": "……像 Aledar 那樣。你當時說那是一次犧牲，你……他……他真的……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27911,7 +27911,7 @@
   },
   "Apotheosis (Quest)#245": {
    "src": "...oh. Oh. And I... just...",
-   "dst": "",
+   "dst": "……噢。噢。而我……就這樣……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27921,7 +27921,7 @@
   },
   "Apotheosis (Quest)#246": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27931,7 +27931,7 @@
   },
   "Apotheosis (Quest)#247": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27941,7 +27941,7 @@
   },
   "Apotheosis (Quest)#248": {
    "src": "Ha... even after all this? You still...",
-   "dst": "",
+   "dst": "哈……都到了這一步，你還是……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27951,7 +27951,7 @@
   },
   "Apotheosis (Quest)#249": {
    "src": "... Okay. Okay. If- if you're sure. What am I- what was I thinking...?",
-   "dst": "",
+   "dst": "……好。好。如果——如果你確定的話。我到底在——我剛才在想什麼……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27961,7 +27961,7 @@
   },
   "Apotheosis (Quest)#250": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27971,7 +27971,7 @@
   },
   "Apotheosis (Quest)#251": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27981,7 +27981,7 @@
   },
   "Apotheosis (Quest)#252": {
    "src": "...ha. Can I? Can I really? After- after ?",
-   "dst": "",
+   "dst": "……哈。我可以嗎？我真的可以嗎？在——在那之後？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -27991,7 +27991,7 @@
   },
   "Apotheosis (Quest)#253": {
    "src": "Look around you! Look at- at all of this! It's... it's my fault. For... for not stopping it.",
-   "dst": "",
+   "dst": "看看你四周！看看——看看這一切！這……這是我的錯。因為……因為我沒有阻止它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28001,7 +28001,7 @@
   },
   "Apotheosis (Quest)#254": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28011,7 +28011,7 @@
   },
   "Apotheosis (Quest)#255": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28021,7 +28021,7 @@
   },
   "Apotheosis (Quest)#256": {
    "src": "Ha... haha... of course. Of... course.",
-   "dst": "",
+   "dst": "哈……哈哈……當然。當……然。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28031,7 +28031,7 @@
   },
   "Apotheosis (Quest)#257": {
    "src": "You're right. Of course you are. Dying would be the easy way out of the mess I've made, wouldn't it?",
-   "dst": "",
+   "dst": "你說得對。你當然是對的。死掉會是逃出我自己造成的這團混亂的簡單出路，不是嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28041,7 +28041,7 @@
   },
   "Apotheosis (Quest)#258": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28051,7 +28051,7 @@
   },
   "Apotheosis (Quest)#259": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28061,7 +28061,7 @@
   },
   "Apotheosis (Quest)#260": {
    "src": "It's not... like that. It's",
-   "dst": "",
+   "dst": "不是……那樣的。是",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28071,7 +28071,7 @@
   },
   "Apotheosis (Quest)#261": {
    "src": "What could I even do...? Nothing. It'd be... better if I were gone.",
-   "dst": "",
+   "dst": "我又能做什麼……？什麼都做不了。我不在了……會比較好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28081,7 +28081,7 @@
   },
   "Apotheosis (Quest)#262": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28091,7 +28091,7 @@
   },
   "Apotheosis (Quest)#263": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28101,7 +28101,7 @@
   },
   "Apotheosis (Quest)#264": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28111,7 +28111,7 @@
   },
   "Apotheosis (Quest)#265": {
    "src": "........",
-   "dst": "",
+   "dst": "………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28121,7 +28121,7 @@
   },
   "Apotheosis (Quest)#266": {
    "src": "..................",
-   "dst": "",
+   "dst": "……………………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28131,7 +28131,7 @@
   },
   "Apotheosis (Quest)#267": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28141,7 +28141,7 @@
   },
   "Apotheosis (Quest)#268": {
    "src": "And all of it just... breaks, in the end, anyway... doesn't it.",
-   "dst": "",
+   "dst": "然後這一切終究就……碎了，是嗎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28151,7 +28151,7 @@
   },
   "Apotheosis (Quest)#269": {
    "src": "Sigh... what was the point of it all?",
-   "dst": "",
+   "dst": "唉……這一切到底有什麼意義？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28161,7 +28161,7 @@
   },
   "Apotheosis (Quest)#270": {
    "src": "...she was supposed to move. Why didn't she...",
-   "dst": "",
+   "dst": "……她本來應該閃開的。她為什麼不……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28171,7 +28171,7 @@
   },
   "Apotheosis (Quest)#271": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28181,7 +28181,7 @@
   },
   "Apotheosis (Quest)#272": {
    "src": "It's over, then. You've won.",
-   "dst": "",
+   "dst": "那就結束了。你贏了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28191,7 +28191,7 @@
   },
   "Apotheosis (Quest)#273": {
    "src": "Let's just get it over with.",
-   "dst": "",
+   "dst": "我們就把它了結吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28201,7 +28201,7 @@
   },
   "Apotheosis (Quest)#274": {
    "src": "...we knew where this was heading. I chose the wrong side. Even as it all fell apart, I... couldn't step away.",
-   "dst": "",
+   "dst": "……我們早就知道這會走到哪裡。我選錯了邊。即使一切都在崩塌，我……還是沒能抽身。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28211,7 +28211,7 @@
   },
   "Apotheosis (Quest)#275": {
    "src": "And in the end... what do I have to show for it? A shattered sky, and... and...",
-   "dst": "",
+   "dst": "而到頭來……我換到了什麼？一片碎裂的天空，還有……還有……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28221,7 +28221,7 @@
   },
   "Apotheosis (Quest)#276": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28231,7 +28231,7 @@
   },
   "Apotheosis (Quest)#277": {
    "src": "You've killed multiple Sovereigns already. And, now... I'm the last one left. You have to see it through.",
-   "dst": "",
+   "dst": "你已經殺了好幾位統領。而現在……我是最後一個了。你必須把它做完。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28241,7 +28241,7 @@
   },
   "Apotheosis (Quest)#278": {
    "src": "I made my choices. I knew where they were leading me, and... and I didn't turn away. I told you we'd be enemies, and... here we are. You have to kill me.",
-   "dst": "",
+   "dst": "是我自己做的選擇。我知道它們會把我帶到哪裡，而……而我沒有轉身。我跟你說過我們會成為敵人，而……我們就走到這裡了。你必須殺了我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28251,7 +28251,7 @@
   },
   "Apotheosis (Quest)#279": {
    "src": "There's... nothing left for me here. Not in Wynn, not in Gavel, not in Fruma. I don't have anything.",
-   "dst": "",
+   "dst": "這裡……已經沒有任何屬於我的東西了。Wynn 沒有，Gavel 沒有，Fruma 也沒有。我什麼都沒有了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28261,7 +28261,7 @@
   },
   "Apotheosis (Quest)#280": {
    "src": "Just... let me be with him. Give me that one thing. That's all.",
-   "dst": "",
+   "dst": "就……讓我去陪他。就給我這一件事。就這樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28271,7 +28271,7 @@
   },
   "Apotheosis (Quest)#281": {
    "src": "...don't look at me like that.",
-   "dst": "",
+   "dst": "……別用那種眼神看我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28281,7 +28281,7 @@
   },
   "Apotheosis (Quest)#282": {
    "src": "...what?",
-   "dst": "",
+   "dst": "……什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28291,7 +28291,7 @@
   },
   "Apotheosis (Quest)#283": {
    "src": "...what?",
-   "dst": "",
+   "dst": "……什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28301,7 +28301,7 @@
   },
   "Apotheosis (Quest)#284": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28311,7 +28311,7 @@
   },
   "Apotheosis (Quest)#285": {
    "src": "...ha. Like... Aledar. Of course. Of course.",
-   "dst": "",
+   "dst": "……哈。像……Aledar 那樣。當然。當然。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28321,7 +28321,7 @@
   },
   "Apotheosis (Quest)#286": {
    "src": "...and I would ask the same of you... again. Ha...",
-   "dst": "",
+   "dst": "……而我也會對你提出同樣的請求……再一次。哈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28331,7 +28331,7 @@
   },
   "Apotheosis (Quest)#287": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28341,7 +28341,7 @@
   },
   "Apotheosis (Quest)#288": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28351,7 +28351,7 @@
   },
   "Apotheosis (Quest)#289": {
    "src": "Even... after all of this? You'd still...",
-   "dst": "",
+   "dst": "都……都到了這一步？你還是願意……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28361,7 +28361,7 @@
   },
   "Apotheosis (Quest)#290": {
    "src": "... Okay. Okay. If... if you're sure. Why would I... what was I thinking...?",
-   "dst": "",
+   "dst": "……好。好。如果……如果你確定的話。我為什麼要……我剛才在想什麼……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28371,7 +28371,7 @@
   },
   "Apotheosis (Quest)#291": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28381,7 +28381,7 @@
   },
   "Apotheosis (Quest)#292": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28391,7 +28391,7 @@
   },
   "Apotheosis (Quest)#293": {
    "src": "...ha. Can I? Can I really? After everything I've...",
-   "dst": "",
+   "dst": "……哈。我可以嗎？我真的可以嗎？在我做了那麼多……之後？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28401,7 +28401,7 @@
   },
   "Apotheosis (Quest)#294": {
    "src": "Look around you, {u}... it's my fault we're here. It's my fault, for not... stopping it.",
-   "dst": "",
+   "dst": "看看四周吧，{u}……我們會走到這裡是我的錯。是我的錯，因為我沒有……阻止它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28411,7 +28411,7 @@
   },
   "Apotheosis (Quest)#295": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28421,7 +28421,7 @@
   },
   "Apotheosis (Quest)#296": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28431,7 +28431,7 @@
   },
   "Apotheosis (Quest)#297": {
    "src": "Ha... haha... of course. Of course.",
-   "dst": "",
+   "dst": "哈……哈哈……當然。當然。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28441,7 +28441,7 @@
   },
   "Apotheosis (Quest)#298": {
    "src": "You're right. Of course you are. I can't just... leave all this now, can I...?",
-   "dst": "",
+   "dst": "你說得對。你當然是對的。我不能就這樣……把這一切丟下不管，對吧……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28451,7 +28451,7 @@
   },
   "Apotheosis (Quest)#299": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28461,7 +28461,7 @@
   },
   "Apotheosis (Quest)#300": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28471,7 +28471,7 @@
   },
   "Apotheosis (Quest)#301": {
    "src": "That's not",
-   "dst": "",
+   "dst": "那不是",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28481,7 +28481,7 @@
   },
   "Apotheosis (Quest)#302": {
    "src": "...no, I... I'm not trying to...",
-   "dst": "",
+   "dst": "……不，我……我不是想要……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28491,7 +28491,7 @@
   },
   "Apotheosis (Quest)#303": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28501,7 +28501,7 @@
   },
   "Apotheosis (Quest)#304": {
    "src": "No... no, no, no, no, NO!!! Stop... FLOWING!!!!!",
-   "dst": "",
+   "dst": "不……不、不、不、不，不要！！！給我……停下來！！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28511,7 +28511,7 @@
   },
   "Apotheosis (Quest)#305": {
    "src": "Urgh... I... I can't... I can't hold it... back... there's too much...!",
-   "dst": "",
+   "dst": "唔……我……我撐不住……我擋不住了……太多了……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28521,7 +28521,7 @@
   },
   "Apotheosis (Quest)#306": {
    "src": "YOU CAN!! HERE!! Take this!!",
-   "dst": "",
+   "dst": "你撐得住！！接著！！拿去！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28531,7 +28531,7 @@
   },
   "Apotheosis (Quest)#307": {
    "src": "Yes, you can! Just hold a little longer!!",
-   "dst": "",
+   "dst": "你可以的！再撐一下就好！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28541,7 +28541,7 @@
   },
   "Apotheosis (Quest)#308": {
    "src": "...the dam won't fall today.",
-   "dst": "",
+   "dst": "……這座水壩今天不會垮。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28551,7 +28551,7 @@
   },
   "Apotheosis (Quest)#309": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28561,7 +28561,7 @@
   },
   "Apotheosis (Quest)#310": {
    "src": "Wh... what...? My... my strength, it's...",
-   "dst": "",
+   "dst": "怎……怎麼回事……？我的……我的力量，它……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28571,7 +28571,7 @@
   },
   "Apotheosis (Quest)#311": {
    "src": "The... the ocean!!! I can feel it, ALL of it!! Storming, raging, crashing - strands upon strands upon strands, I see them- I- I can just... grab... HOLD!!!",
-   "dst": "",
+   "dst": "那片……那片海洋！！！我感覺到了，「全部」！！翻騰、狂暴、拍擊——一層又一層又一層的絲線，我看見它們了——我——我可以就這樣……抓住……握住！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28581,7 +28581,7 @@
   },
   "Apotheosis (Quest)#312": {
    "src": "AAAAAAAHHHHHHHHHH!!!!!!!!!!!!",
-   "dst": "",
+   "dst": "啊啊啊啊啊啊啊啊啊！！！！！！！！！！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28591,7 +28591,7 @@
   },
   "Apotheosis (Quest)#313": {
    "src": "That... that was...",
-   "dst": "",
+   "dst": "剛……剛才那是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28601,7 +28601,7 @@
   },
   "Apotheosis (Quest)#314": {
    "src": "What?! N-no, that- that wasn't enough?! It's still-",
-   "dst": "",
+   "dst": "什麼？！不——不，那、那還不夠？！它還在——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28611,7 +28611,7 @@
   },
   "Apotheosis (Quest)#315": {
    "src": "Hhgh... I need to... keep... holding it...!",
-   "dst": "",
+   "dst": "唔……我得……繼續……撐住它……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28621,7 +28621,7 @@
   },
   "Apotheosis (Quest)#316": {
    "src": "Huff...huff... Remember, Soosu. If the dam breaks... huff... You have to-",
-   "dst": "",
+   "dst": "呼……呼……記住，Soosu。如果水壩垮了……呼……你必須——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28631,7 +28631,7 @@
   },
   "Apotheosis (Quest)#317": {
    "src": "Z, USE YOUR EYES! It's already broken open!",
-   "dst": "",
+   "dst": "Z，用你的眼睛看！它已經破開了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28641,7 +28641,7 @@
   },
   "Apotheosis (Quest)#318": {
    "src": "What the- How could that- Did I miscalculate? Was I not fast enough?! Huff, huff... Wait, that's...where's the water?",
-   "dst": "",
+   "dst": "什麼——怎麼可能——是我算錯了嗎？是我不夠快？！呼、呼……等等，那是……水呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28651,7 +28651,7 @@
   },
   "Apotheosis (Quest)#319": {
    "src": "That's- one of the Cursed! She froze the dam to keep it from- Huff... Why?",
-   "dst": "",
+   "dst": "那是——是一名受詛者！她把水壩凍住，不讓它——呼……為什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28661,7 +28661,7 @@
   },
   "Apotheosis (Quest)#320": {
    "src": "What, can't handle a couple unexpected variables? This is good, isn't it?",
-   "dst": "",
+   "dst": "怎麼，幾個出乎意料的變數就應付不來了？這是好事吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28671,7 +28671,7 @@
   },
   "Apotheosis (Quest)#321": {
    "src": "HEEEYYYY!!! RESISTANCE GIRL!!! Hold it for just a little longer, I'll get a patch-job going!",
-   "dst": "",
+   "dst": "喂——！！！反抗軍的女孩！！！再撐一下下，我來做個補丁！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28681,7 +28681,7 @@
   },
   "Apotheosis (Quest)#322": {
    "src": "...rrrghgh... what do you... THINK... I'm... doing?!",
-   "dst": "",
+   "dst": "……唔啊……你「以為」……我在……做什麼？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28691,7 +28691,7 @@
   },
   "Apotheosis (Quest)#323": {
    "src": "Ohh that ice is cracking. Oookay, okay okay, not gonna hold much longer, let's see what I can do...",
-   "dst": "",
+   "dst": "喔那冰在裂了。好、好好，撐不了多久了，看看我能做什麼……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28701,7 +28701,7 @@
   },
   "Apotheosis (Quest)#324": {
    "src": "...a Cursed... Huff... Completely flipping the equation... Purificatus non consumptus? Did she factor it out?",
-   "dst": "",
+   "dst": "……一名受詛者……呼……徹底把這個方程式翻轉過來……Purificatus non consumptus？是她把它因式分解掉了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28711,7 +28711,7 @@
   },
   "Apotheosis (Quest)#325": {
    "src": "Erm. Might want to step back a 'lil. Z.",
-   "dst": "",
+   "dst": "呃。你可能得往後退一點。Z。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28721,7 +28721,7 @@
   },
   "Apotheosis (Quest)#326": {
    "src": "It's... done, it's done, it's done... I... I did it! I- I- I can't believe it, I DID IT!!! {u}, Rex, we-",
-   "dst": "",
+   "dst": "成……成功了，成功了，成功了……我……我做到了！我、我、我不敢相信，我「做到了」！！！{u}、Rex，我們——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28731,7 +28731,7 @@
   },
   "Apotheosis (Quest)#327": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28741,7 +28741,7 @@
   },
   "Apotheosis (Quest)#328": {
    "src": "No. No, no no no no NO NO NO!!!!!!",
-   "dst": "",
+   "dst": "不。不、不不不不，不要不要不要！！！！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28751,7 +28751,7 @@
   },
   "Apotheosis (Quest)#329": {
    "src": "Not again, not again, come on come on COME ON!!! Rex, Rex please, Rex I can't lose you too, I- I-",
-   "dst": "",
+   "dst": "不要再一次，不要再一次，撐住撐住「撐住」！！！Rex，Rex 拜託，Rex 我不能連你也失去，我——我——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28761,7 +28761,7 @@
   },
   "Apotheosis (Quest)#330": {
    "src": "You have to get better, Rex, you- you HAVE TO!! You will get better, you will, you will you will YOU WILL!!!!!!",
-   "dst": "",
+   "dst": "你一定要好起來，Rex，你——你「一定要」！！你會好起來的，你會，你會你會「你會」！！！！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28771,7 +28771,7 @@
   },
   "Apotheosis (Quest)#331": {
    "src": "Please... please, don't...",
-   "dst": "",
+   "dst": "拜託……拜託，不要……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28781,7 +28781,7 @@
   },
   "Apotheosis (Quest)#332": {
    "src": "...fine.",
-   "dst": "",
+   "dst": "……好吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28791,7 +28791,7 @@
   },
   "Apotheosis (Quest)#333": {
    "src": "I'm not going to forget what you did, but there's... Huff... A greater problem to solve. So I'll put that aside. For now.",
-   "dst": "",
+   "dst": "我不會忘記你做過的事，但……呼……還有更大的問題要解。所以我先把那件事放到一邊。暫時。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28801,7 +28801,7 @@
   },
   "Apotheosis (Quest)#334": {
    "src": "Right. We'll need... huff... All hands working to...solve the problem. And that means...dealing with this.",
-   "dst": "",
+   "dst": "好。我們需要……呼……所有人手投入……解決那個問題。也就是說……得先處理這個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28811,7 +28811,7 @@
   },
   "Apotheosis (Quest)#335": {
    "src": "Rex- That's her, then. Who your other Cursed is trying to...Nngh...",
-   "dst": "",
+   "dst": "Rex——所以就是她了。你們另一位受詛者拚了命想……唔……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28821,7 +28821,7 @@
   },
   "Apotheosis (Quest)#336": {
    "src": "I've... huff...huff... Been busy evacuating people. There's more important to be doing than worrying about me. What about her?",
-   "dst": "",
+   "dst": "我一直……呼……呼……在忙著疏散民眾。比起擔心我，還有更重要的事要做。她怎麼樣？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28831,7 +28831,7 @@
   },
   "Apotheosis (Quest)#337": {
    "src": "...it's my fault. I take full responsibility.",
-   "dst": "",
+   "dst": "……是我的錯。我承擔全部責任。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28841,7 +28841,7 @@
   },
   "Apotheosis (Quest)#338": {
    "src": "Is there...anything to be done?",
-   "dst": "",
+   "dst": "還有……還有什麼辦法嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28851,7 +28851,7 @@
   },
   "Apotheosis (Quest)#339": {
    "src": "...at this point... There's too much blood loss. Not enough time to... Huff... Get her medical attention",
-   "dst": "",
+   "dst": "……到了這個地步……失血太多了。時間不夠……呼……送她去接受醫療",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28861,7 +28861,7 @@
   },
   "Apotheosis (Quest)#340": {
    "src": "No, I there has to be something. There has to... Please.",
-   "dst": "",
+   "dst": "不，我 一定還有辦法。一定還有……拜託。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28871,7 +28871,7 @@
   },
   "Apotheosis (Quest)#341": {
    "src": "I wasn't finished. There's only one solution.",
-   "dst": "",
+   "dst": "我還沒說完。只剩下一個解。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28881,7 +28881,7 @@
   },
   "Apotheosis (Quest)#342": {
    "src": "The murderer's seen me use this. It'll revive her. I... Nngh... I can't be sure it'll fix her arm, but she'll live.",
-   "dst": "",
+   "dst": "那個兇手看過我用這個。它能讓她復活。我……唔……我不敢保證它能修好她的手臂，但她會活下來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28891,7 +28891,7 @@
   },
   "Apotheosis (Quest)#343": {
    "src": "...not one second too soon. Any later, and she really would've been... Huff... Divided out...",
-   "dst": "",
+   "dst": "……一秒都不能再晚了。再晚一點，她就真的會被……呼……除掉了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28901,7 +28901,7 @@
   },
   "Apotheosis (Quest)#344": {
    "src": "Okay... okay. Th-that's... good. Thank you... I- don't-",
-   "dst": "",
+   "dst": "好……好。那、那就……太好了。謝謝你……我——不——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28911,7 +28911,7 @@
   },
   "Apotheosis (Quest)#345": {
    "src": "Okay... okay. That's... good, that's... thank you, Zhiraok. I...",
-   "dst": "",
+   "dst": "好……好。那……太好了，那……謝謝你，Zhiraok。我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28921,7 +28921,7 @@
   },
   "Apotheosis (Quest)#346": {
    "src": "...huh? Zhiraok, what's",
-   "dst": "",
+   "dst": "……咦？Zhiraok，怎麼",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28931,7 +28931,7 @@
   },
   "Apotheosis (Quest)#347": {
    "src": "...d-don't...worry. I'm...approaching my limit, but...I haven't... wheeze ...hit it...yet...",
-   "dst": "",
+   "dst": "……別、別擔心。我……快到極限了，但……我還沒……呼呼……碰到……它……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28941,7 +28941,7 @@
   },
   "Apotheosis (Quest)#348": {
    "src": "Besides. Th-The province has a...g-greater value...than...I...do...",
-   "dst": "",
+   "dst": "何況。這、這個行省的……價、價值……比我……高……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28951,7 +28951,7 @@
   },
   "Apotheosis (Quest)#349": {
    "src": "Just...have to... Keep... ...moving",
-   "dst": "",
+   "dst": "只要……繼續……往前……走",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28961,7 +28961,7 @@
   },
   "Apotheosis (Quest)#350": {
    "src": "NNGKH",
-   "dst": "",
+   "dst": "唔啊啊",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28971,7 +28971,7 @@
   },
   "Apotheosis (Quest)#351": {
    "src": "Z?! HEY",
-   "dst": "",
+   "dst": "Z？！喂",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28981,7 +28981,7 @@
   },
   "Apotheosis (Quest)#352": {
    "src": "What's going on?!",
-   "dst": "",
+   "dst": "怎麼回事？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -28991,7 +28991,7 @@
   },
   "Apotheosis (Quest)#353": {
    "src": "UGH! The idiot's burned himself out, running here and there and- EVERYWHERE! I TOLD him to take a break, but nooo, he just had to do everything himself-",
-   "dst": "",
+   "dst": "唉！這個白痴把自己燒乾了，跑東跑西跑——到處跑！我「叫」他休息，他偏不要，什麼事都非得自己來——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29001,7 +29001,7 @@
   },
   "Apotheosis (Quest)#354": {
    "src": "Soosu.",
-   "dst": "",
+   "dst": "Soosu。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29011,7 +29011,7 @@
   },
   "Apotheosis (Quest)#355": {
    "src": "...overexertion. I think it finally got too much for him.",
-   "dst": "",
+   "dst": "……過度消耗。我想他終於承受不住了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29021,7 +29021,7 @@
   },
   "Apotheosis (Quest)#356": {
    "src": "He's...",
-   "dst": "",
+   "dst": "他是不是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29031,7 +29031,7 @@
   },
   "Apotheosis (Quest)#357": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29041,7 +29041,7 @@
   },
   "Apotheosis (Quest)#358": {
    "src": "How do we fix this?",
-   "dst": "",
+   "dst": "我們要怎麼救他？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29051,7 +29051,7 @@
   },
   "Apotheosis (Quest)#359": {
    "src": "...m'not sure we can.",
-   "dst": "",
+   "dst": "……我不確定我們救得了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29061,7 +29061,7 @@
   },
   "Apotheosis (Quest)#360": {
    "src": "No. No, I refuse to accept that.",
-   "dst": "",
+   "dst": "不。不，我拒絕接受。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29071,7 +29071,7 @@
   },
   "Apotheosis (Quest)#361": {
    "src": "He's not the one who stood by and- and let this happen. He's not the one who was too- too cowardly to turn away when she- when she-",
-   "dst": "",
+   "dst": "袖手旁觀、任由這一切發生的人不是他。太——太懦弱而在她——在她——的時候不敢轉身的人也不是他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29081,7 +29081,7 @@
   },
   "Apotheosis (Quest)#362": {
    "src": "...so why is he the one who has to die, and not...",
-   "dst": "",
+   "dst": "……那為什麼非死不可的是他，而不是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29091,7 +29091,7 @@
   },
   "Apotheosis (Quest)#363": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29101,7 +29101,7 @@
   },
   "Apotheosis (Quest)#364": {
    "src": "\"I couldn't just stand by when there was something I could do to help.\" How could I have forgotten...? Again, again, it's like he's lying there, on the cold wooden floor, and...",
-   "dst": "",
+   "dst": "「明明有我能幫上忙的事，我沒辦法就這樣站著不動。」我怎麼會忘了……？又一次，又一次，就像他躺在那裡，躺在冰冷的木頭地板上，然後……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29111,7 +29111,7 @@
   },
   "Apotheosis (Quest)#365": {
    "src": "It won't work, Tasim. The charm's used up its charge already.",
-   "dst": "",
+   "dst": "沒用的，Tasim。那枚符咒的電荷已經用光了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29121,7 +29121,7 @@
   },
   "Apotheosis (Quest)#366": {
    "src": "...then I'll just have to recharge it myself. I have the power, I just need to...",
-   "dst": "",
+   "dst": "……那我就自己替它充電。我有那個力量，我只需要……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29131,7 +29131,7 @@
   },
   "Apotheosis (Quest)#367": {
    "src": "Use it. Everything I have- my own magic - my curse, what I still have of her blessing, all of it... I just... need to...",
-   "dst": "",
+   "dst": "用掉它。我所有的一切——我自己的魔法——我的詛咒、我還留著的那部分她的祝福，全部……我只需要……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29141,7 +29141,7 @@
   },
   "Apotheosis (Quest)#368": {
    "src": "...urgh. No, no, that can't be all I have- have I really used so much...?",
-   "dst": "",
+   "dst": "……唔。不，不，我剩下的不可能只有這些——我真的用掉那麼多了嗎……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29151,7 +29151,7 @@
   },
   "Apotheosis (Quest)#369": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29161,7 +29161,7 @@
   },
   "Apotheosis (Quest)#370": {
    "src": "Let me.",
-   "dst": "",
+   "dst": "讓我來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29171,7 +29171,7 @@
   },
   "Apotheosis (Quest)#371": {
    "src": "Huh?",
-   "dst": "",
+   "dst": "啊？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29181,7 +29181,7 @@
   },
   "Apotheosis (Quest)#372": {
    "src": "I SAID, I'll do it!!! If you think it'll work, then- then I'll help!!",
-   "dst": "",
+   "dst": "我說，我來做！！！你如果覺得這行得通，那——那我幫忙！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29191,7 +29191,7 @@
   },
   "Apotheosis (Quest)#373": {
    "src": "Stupid, stupid Z... only person who ever cared...",
-   "dst": "",
+   "dst": "笨蛋，笨蛋 Z……唯一在乎過我的人……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29201,7 +29201,7 @@
   },
   "Apotheosis (Quest)#374": {
    "src": "...that's all I've got. Stupid anti-magic cells... why'd I even make those in the first place?! Stupid, stupid...",
-   "dst": "",
+   "dst": "……我就只有這些了。該死的反魔法電池……我當初到底為什麼要做那種東西？！笨蛋，笨蛋……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29211,7 +29211,7 @@
   },
   "Apotheosis (Quest)#375": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29221,7 +29221,7 @@
   },
   "Apotheosis (Quest)#376": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29231,7 +29231,7 @@
   },
   "Apotheosis (Quest)#377": {
    "src": "He... saved Rex. Even though he didn't have to. Even if it'd... kill him...",
-   "dst": "",
+   "dst": "他……救了 Rex。明明他沒有必要。明明那可能會……害死他……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29241,7 +29241,7 @@
   },
   "Apotheosis (Quest)#378": {
    "src": "So. S-so I can help... um, however I'm able to. Just- just this once.",
-   "dst": "",
+   "dst": "所以。所、所以我可以幫忙……嗯，能幫多少幫多少。就——就這一次。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29251,7 +29251,7 @@
   },
   "Apotheosis (Quest)#379": {
    "src": "...urgh. The... the ocean here, it's... drained. I... used too much of it. It needs to... um, flow back and... fill back in...",
-   "dst": "",
+   "dst": "……唔。這裡的……這裡的海洋，被……抽乾了。我……用掉太多了。它需要……嗯，流回來，然後……重新填滿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29261,7 +29261,7 @@
   },
   "Apotheosis (Quest)#380": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29271,7 +29271,7 @@
   },
   "Apotheosis (Quest)#381": {
    "src": "{u}.",
-   "dst": "",
+   "dst": "{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29281,7 +29281,7 @@
   },
   "Apotheosis (Quest)#382": {
    "src": "I... have no right to ask this of you. Not- not now, not after everything I've...",
-   "dst": "",
+   "dst": "我……沒有資格向你開這個口。不——現在不行，在我做了那麼多之後不行……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29291,7 +29291,7 @@
   },
   "Apotheosis (Quest)#383": {
    "src": "I... have no right to ask this of you. Not now... not after everything I've...",
-   "dst": "",
+   "dst": "我……沒有資格向你開這個口。現在不行……在我做了那麼多之後不行……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29301,7 +29301,7 @@
   },
   "Apotheosis (Quest)#384": {
    "src": "But... please. Just a little more. I can't... I can't let anyone else die for my mistakes.",
-   "dst": "",
+   "dst": "但是……拜託。再一點點就好。我不能……我不能再讓任何人為我的錯誤而死。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29311,7 +29311,7 @@
   },
   "Apotheosis (Quest)#385": {
    "src": "...there you are, after all. I finally found who I came here looking for.",
-   "dst": "",
+   "dst": "……你終究還是在這裡。我總算找到我來這裡要找的人了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29321,7 +29321,7 @@
   },
   "Apotheosis (Quest)#386": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29331,7 +29331,7 @@
   },
   "Apotheosis (Quest)#387": {
    "src": "...thank you.",
-   "dst": "",
+   "dst": "……謝謝你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29341,7 +29341,7 @@
   },
   "Apotheosis (Quest)#388": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29351,7 +29351,7 @@
   },
   "Apotheosis (Quest)#389": {
    "src": "Ah. Overloaded... used too many times, and charged with too unstable magic... and- kaboom.",
-   "dst": "",
+   "dst": "啊。過載了。用太多次，又灌進太不穩定的魔法……然後——碰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29361,7 +29361,7 @@
   },
   "Apotheosis (Quest)#390": {
    "src": "But did it",
-   "dst": "",
+   "dst": "但它有沒有",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29371,7 +29371,7 @@
   },
   "Apotheosis (Quest)#391": {
    "src": "Yeah, I think so. His breathing looks more... normal.",
-   "dst": "",
+   "dst": "嗯，我想有。他的呼吸看起來比較……正常了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29381,7 +29381,7 @@
   },
   "Apotheosis (Quest)#392": {
    "src": "...good. Then... then it's done. It's all...",
-   "dst": "",
+   "dst": "……很好。那麼……那就完成了。一切都……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29391,7 +29391,7 @@
   },
   "Apotheosis (Quest)#393": {
    "src": "...oh.",
-   "dst": "",
+   "dst": "……噢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29401,7 +29401,7 @@
   },
   "Apotheosis (Quest)#394": {
    "src": "Hm hm hm. Yeah, that's something. Any plans for dealing with that?",
-   "dst": "",
+   "dst": "嗯嗯嗯。是啊，那可真是一景。對那個東西有什麼打算嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29411,7 +29411,7 @@
   },
   "Apotheosis (Quest)#395": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29421,7 +29421,7 @@
   },
   "Apotheosis (Quest)#396": {
    "src": "The Queen's still there, isn't she? We'll go in and kill her.",
-   "dst": "",
+   "dst": "女王還在那裡，對吧？我們進去把她殺了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29431,7 +29431,7 @@
   },
   "Apotheosis (Quest)#397": {
    "src": "Hmph! Might work to stop new ones from opening up, sure. But wow, you wanna kill her? Good luck with that.",
-   "dst": "",
+   "dst": "哼！要阻止新的裂隙冒出來，那大概行得通。不過哇，你想殺她？那祝你好運囉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29441,7 +29441,7 @@
   },
   "Apotheosis (Quest)#398": {
    "src": "...s'your funeral! I've got a dam to fix... how long since I made the improvements...? Fifty years? Sixty? Eh, whatever, I'll just wing it.",
-   "dst": "",
+   "dst": "……那是你自己的葬禮！我還有座水壩要修……我上次改良它是多久以前了？五十年？六十年？欸，隨便啦，我隨機應變。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29451,7 +29451,7 @@
   },
   "Apotheosis (Quest)#399": {
    "src": "Hm. Hm hm. If you're going up into that whole ... you probably won't make it out. But if you do! We'll talk then.",
-   "dst": "",
+   "dst": "唔。嗯嗯。你們要是進到那整個 裡面……大概是出不來了。不過如果你們出得來！那我們再談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29461,7 +29461,7 @@
   },
   "Apotheosis (Quest)#400": {
    "src": "Yeah...",
-   "dst": "",
+   "dst": "嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29471,7 +29471,7 @@
   },
   "Apotheosis (Quest)#401": {
    "src": "...I, um, should... stay with Rex. Un-until the S-Sovereign is... up. {u}, go ahead to the safe zone. Make sure everyone's... everyone's okay, over there.",
-   "dst": "",
+   "dst": "我，嗯，應該……留下來陪 Rex。直、直到那位統、統領醒過來。{u}，你先去安全區。確認那邊……那邊每個人都沒事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29481,7 +29481,7 @@
   },
   "Apotheosis (Quest)#402": {
    "src": "I'll... meet you later.",
-   "dst": "",
+   "dst": "我……晚點跟你會合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29491,7 +29491,7 @@
   },
   "Apotheosis (Quest)#403": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29501,7 +29501,7 @@
   },
   "Apotheosis (Quest)#404": {
    "src": "Sigh. And it all... just... breaks...",
-   "dst": "",
+   "dst": "唉。然後這一切就……這樣……碎了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29511,7 +29511,7 @@
   },
   "Apotheosis (Quest)#405": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29521,7 +29521,7 @@
   },
   "Apotheosis (Quest)#406": {
    "src": "...okay. I... I will. I'll see what I can do, if... if I can get any of the soldiers to stand down...",
-   "dst": "",
+   "dst": "……好。我……我會的。我去看看能做什麼，看能不能……讓任何一支部隊放下武器……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29531,7 +29531,7 @@
   },
   "Apotheosis (Quest)#407": {
    "src": "I'll meet you by the palace. We'll fix this together.",
-   "dst": "",
+   "dst": "我在王宮那邊跟你會合。我們一起把這件事收拾好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29541,7 +29541,7 @@
   },
   "Apotheosis (Quest)#408": {
    "src": "Sigh. And it's all just... broken.",
-   "dst": "",
+   "dst": "唉。然後這一切就這麼……碎了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29551,7 +29551,7 @@
   },
   "Apotheosis (Quest)#409": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29561,7 +29561,7 @@
   },
   "Apotheosis (Quest)#410": {
    "src": "...I will. I'll see what I can do, if... if I can get any of the soldiers to stand down...",
-   "dst": "",
+   "dst": "……我會的。我去看看能做什麼，看能不能……讓任何一支部隊放下武器……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29571,7 +29571,7 @@
   },
   "Apotheosis (Quest)#411": {
    "src": "I'll meet you by the palace. We'll fix this together.",
-   "dst": "",
+   "dst": "我在王宮那邊跟你會合。我們一起把這件事收拾好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29581,7 +29581,7 @@
   },
   "Apotheosis (Quest)#412": {
    "src": "Sigh. And it all... just... breaks... of course.",
-   "dst": "",
+   "dst": "唉。然後這一切終究就……這樣……碎了。當然。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29591,7 +29591,7 @@
   },
   "Apotheosis (Quest)#413": {
    "src": "What will I... what can I do? It's all so... overwhelming.",
-   "dst": "",
+   "dst": "我還能……我還能做什麼？這一切都太……令人不知所措了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29601,7 +29601,7 @@
   },
   "Apotheosis (Quest)#414": {
    "src": "But... I have to try, don't I? I can't just... escape from the consequences.",
-   "dst": "",
+   "dst": "但是……我總得試，不是嗎？我不能就這樣……逃開後果。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29611,7 +29611,7 @@
   },
   "Apotheosis (Quest)#415": {
    "src": "I'll... meet you by the palace. I need to think first. Before we... go in.",
-   "dst": "",
+   "dst": "我……在王宮那邊跟你會合。我需要先想一想。在我們……進去之前。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29621,7 +29621,7 @@
   },
   "Apotheosis (Quest)#416": {
    "src": "...what. What do you want? Everything's broken. And it's my fault, right?",
-   "dst": "",
+   "dst": "……幹嘛。你想要什麼？一切都碎了。而那是我的錯，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29631,7 +29631,7 @@
   },
   "Apotheosis (Quest)#417": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29641,7 +29641,7 @@
   },
   "Apotheosis (Quest)#418": {
    "src": "Right. Sure. If that's what you want from me.",
-   "dst": "",
+   "dst": "好。當然。如果你要我這麼做的話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29651,7 +29651,7 @@
   },
   "Apotheosis (Quest)#419": {
    "src": "I'll be there when you go in after her.",
-   "dst": "",
+   "dst": "你們進去追她的時候，我會在場。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29661,7 +29661,7 @@
   },
   "Apotheosis (Quest)#420": {
    "src": "Is that it... then? I guess we're... done.",
-   "dst": "",
+   "dst": "就……這樣了嗎？我想我們……到此為止了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29671,7 +29671,7 @@
   },
   "Apotheosis (Quest)#421": {
    "src": "The rift in the sky... it's all broken, havoc left in her wake, and... and it's my fault.",
-   "dst": "",
+   "dst": "天空上那道裂隙……一切都碎了，她走過的地方只留下浩劫，而……而那是我的錯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29681,7 +29681,7 @@
   },
   "Apotheosis (Quest)#422": {
    "src": "But you won't kill me. So I guess I have to keep going... don't I?",
-   "dst": "",
+   "dst": "但你不會殺我。所以我想我只能繼續走下去……對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29691,7 +29691,7 @@
   },
   "Apotheosis (Quest)#423": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29701,7 +29701,7 @@
   },
   "Apotheosis (Quest)#424": {
    "src": "Good luck, {u}. You'll need it.",
-   "dst": "",
+   "dst": "祝你好運，{u}。你會需要的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29711,7 +29711,7 @@
   },
   "Apotheosis (Quest)#425": {
    "src": "Head to the gates of Aelumia at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 的 Aelumia 城門。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -29721,7 +29721,7 @@
   },
   "Apotheosis (Quest)#426": {
    "src": "Fight through the citadel.",
-   "dst": "",
+   "dst": "殺出城堡。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -29731,7 +29731,7 @@
   },
   "Apotheosis (Quest)#427": {
    "src": "Make sure everyone is okay in the safe zone at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 的安全區確認所有人平安。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -29741,7 +29741,7 @@
   },
   "Apotheosis (Quest)#428": {
    "src": "...and now all chaos has broken loose in the citadel, so some numbers truly would go a long way towards-",
-   "dst": "",
+   "dst": "……而現在城堡裡已經徹底亂成一團，所以多一些人手真的會大有幫——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29751,7 +29751,7 @@
   },
   "Apotheosis (Quest)#429": {
    "src": "Yes, Rurie, I know. Hold for just one minute, would you?!",
-   "dst": "",
+   "dst": "是的，Rurie，我知道。可以請你等一分鐘就好嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29761,7 +29761,7 @@
   },
   "Apotheosis (Quest)#430": {
    "src": "Fine, fine. Yes, please, take your time! It's not as though the world is ending or anything!!!",
-   "dst": "",
+   "dst": "好，好。是的，請慢慢來！又不是世界要毀滅了什麼的！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29771,7 +29771,7 @@
   },
   "Apotheosis (Quest)#431": {
    "src": "Ahem. {u}.",
-   "dst": "",
+   "dst": "咳。{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29781,7 +29781,7 @@
   },
   "Apotheosis (Quest)#432": {
    "src": "Hm? {u}!! You're alive, that's a relief - if you wouldn't mind answering, what the - and excuse the language - HELL is going on?!",
-   "dst": "",
+   "dst": "嗯？{u}！！你還活著，真是鬆一口氣——如果你不介意回答的話，外面到底——恕我用詞不雅——「見鬼的」發生了什麼事？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29791,7 +29791,7 @@
   },
   "Apotheosis (Quest)#433": {
    "src": "The SKY ITSELF has cracked open, there's RED LIGHTNING up there - and I have seen storms before, that is not normal - everything is a MESS! Explain.",
-   "dst": "",
+   "dst": "「天空本身」裂開了，上面有「紅色的閃電」——我看過暴風雨，那不正常——一切都「一團糟」！解釋一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29801,7 +29801,7 @@
   },
   "Apotheosis (Quest)#434": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29811,7 +29811,7 @@
   },
   "Apotheosis (Quest)#435": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29821,7 +29821,7 @@
   },
   "Apotheosis (Quest)#436": {
    "src": "And just when I thought we had reached the limit on fanciful tales... goodness. And you singlehandedly defeated her in combat?!",
-   "dst": "",
+   "dst": "我還以為異想天開的故事已經到頂了……我的天。而且你單槍匹馬在戰鬥中打敗了她？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29831,7 +29831,7 @@
   },
   "Apotheosis (Quest)#437": {
    "src": "Mmn. Majin.",
-   "dst": "",
+   "dst": "嗯。Majin。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29841,7 +29841,7 @@
   },
   "Apotheosis (Quest)#438": {
    "src": "Yes, Cileon, I suppose I shouldn't be surprised after that display... and yet.",
-   "dst": "",
+   "dst": "是啊，Cileon，看過那一場之後我大概不該驚訝了……然而還是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29851,7 +29851,7 @@
   },
   "Apotheosis (Quest)#439": {
    "src": "But back to the topic at hand - she is responsible for all of this?! This is... beyond my means to process.",
-   "dst": "",
+   "dst": "不過回到正題——這一切都是她造成的？！這……超出我能處理的範圍了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29861,7 +29861,7 @@
   },
   "Apotheosis (Quest)#440": {
    "src": "A corrupt and oppressive governmental structure - that, I can plan around. For that, I at least have some inkling as to how to fight against it.",
-   "dst": "",
+   "dst": "一個腐敗而壓迫的政府結構——那個我還能想辦法。對付那個，我至少多少知道該怎麼打。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29871,7 +29871,7 @@
   },
   "Apotheosis (Quest)#441": {
    "src": "But this? For this, I have nothing. What is one even supposed to do about-",
-   "dst": "",
+   "dst": "但這個？對這個，我什麼都沒有。一個人到底該拿它怎麼——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29881,7 +29881,7 @@
   },
   "Apotheosis (Quest)#442": {
    "src": "Ah! There we are! Twelve injured allies, five casualties, one bout of madness... talisman stockpiles mostly burned through - only two remaining, we'll have to produce more...",
-   "dst": "",
+   "dst": "啊！好了！十二名傷員、五名陣亡、一例精神失常……護符庫存幾乎燒光了——只剩兩枚，我們得再做一批……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29891,7 +29891,7 @@
   },
   "Apotheosis (Quest)#443": {
    "src": "Food rations will hold for another three and a half days, so we'll need to send a supply run tomorrow... at least armor and weapon supplies are still in surp-",
-   "dst": "",
+   "dst": "口糧還能撐三天半，所以明天得派一趟補給隊……至少護甲和武器補給還有剩——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29901,7 +29901,7 @@
   },
   "Apotheosis (Quest)#444": {
    "src": "Oh. {u}, you're here. Good to see you're still standing. What are we talking about?",
-   "dst": "",
+   "dst": "喔。{u}，你來了。看到你還站著真好。我們在談什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29911,7 +29911,7 @@
   },
   "Apotheosis (Quest)#445": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29921,7 +29921,7 @@
   },
   "Apotheosis (Quest)#446": {
    "src": "Queen. Rift.",
-   "dst": "",
+   "dst": "女王。裂隙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29931,7 +29931,7 @@
   },
   "Apotheosis (Quest)#447": {
    "src": "Ah! So you defeated her, and she fled into the rifts. Very good work, deerling.",
-   "dst": "",
+   "dst": "啊！所以你打敗了她，而她逃進了那些裂隙裡。做得非常好，小鹿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29941,7 +29941,7 @@
   },
   "Apotheosis (Quest)#448": {
    "src": "...by most metrics, we've achieved our goal. Her Majesty has been dethroned, her Sovereigns either killed or turned - we have something to work with.",
-   "dst": "",
+   "dst": "……以大多數指標來看，我們達成目標了。女王陛下已被推翻，她的統領非死即倒戈——我們有東西可以著手了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29951,7 +29951,7 @@
   },
   "Apotheosis (Quest)#449": {
    "src": "But this rift... there's very little we can do while it's there. The people are panicked, the soldiers scattered, defensive, lost - and that isn't to mention whatever adverse effects it may or may not have!!",
-   "dst": "",
+   "dst": "但這道裂隙……只要它還在，我們能做的就非常有限。人民驚慌、士兵潰散、只顧自保、無所適從——更別提它可能造成的種種不良影響！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29961,7 +29961,7 @@
   },
   "Apotheosis (Quest)#450": {
    "src": "Perhaps if it can be cut off at its source...",
-   "dst": "",
+   "dst": "或許可以從源頭把它切斷……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29971,7 +29971,7 @@
   },
   "Apotheosis (Quest)#451": {
    "src": "What, you mean passing through it into whatever it is on the other side? All in the hopes of chasing down the Queen? Who would be insane enough to even consider-",
-   "dst": "",
+   "dst": "什麼，你是說穿過它、到另一邊那個不知道是什麼的地方去？全都只為了追捕女王？誰會瘋狂到願意去考——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29981,7 +29981,7 @@
   },
   "Apotheosis (Quest)#452": {
    "src": "Right! Of course, how could I forget! We have you. Well, I suppose that's all sorted then - not a problem I need concern myself with. What a relief.",
-   "dst": "",
+   "dst": "對喔！當然，我怎麼會忘了！我們有你啊。嗯，那我想這件事就解決了——不是我需要操心的問題。真是鬆一口氣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -29991,7 +29991,7 @@
   },
   "Apotheosis (Quest)#453": {
    "src": "Hm. Leaves us more time to finalize the stabilizing plan for the province, to deal with the chaos that comes after this chaos concludes. Joy.",
-   "dst": "",
+   "dst": "嗯。那我們就有更多時間去把行省的穩定方案定稿，處理這場混亂結束之後接著來的那場混亂。真開心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30001,7 +30001,7 @@
   },
   "Apotheosis (Quest)#454": {
    "src": "Yes, yes... we can get to that. {u}, before you set off on yet another dangerous mission, you'd best go speak to everyone here. Alleviate some concerns, yes?",
-   "dst": "",
+   "dst": "是啊，是啊……那些我們待會兒再說。{u}，在你又踏上另一趟危險任務之前，你最好去跟這裡每個人說說話。安撫一下他們的顧慮，好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30011,7 +30011,7 @@
   },
   "Apotheosis (Quest)#455": {
    "src": "...and you're alright? No injuries- nothing?",
-   "dst": "",
+   "dst": "……你真的沒事？沒受傷——什麼都沒有？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30021,7 +30021,7 @@
   },
   "Apotheosis (Quest)#456": {
    "src": "Ughhhhh... yeah, bro, I'm fine! Quit hovering!",
-   "dst": "",
+   "dst": "唉唷……沒事啦，老哥，我很好！別在我旁邊繞來繞去了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30031,7 +30031,7 @@
   },
   "Apotheosis (Quest)#457": {
    "src": "Well, sorry for being worried under these circumstances! The SKY is broken, Yuman, so let me hover at least a little, okay?!",
-   "dst": "",
+   "dst": "喔，那真抱歉我在這種情況下擔心你！「天空」都裂了，Yuman，所以至少讓我繞一下下，好嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30041,7 +30041,7 @@
   },
   "Apotheosis (Quest)#458": {
    "src": "Well, a...at least the soldiers have b- ba- backed off a little... so, that's s- something.",
-   "dst": "",
+   "dst": "嗯，至、至少士兵退開一點了……所以，那算是好、好事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30051,7 +30051,7 @@
   },
   "Apotheosis (Quest)#459": {
    "src": "Sigh... yeah, that is something. I'm almost out of electrical charges...",
-   "dst": "",
+   "dst": "唉……嗯，那算是好事。我的電能彈快用完了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30061,7 +30061,7 @@
   },
   "Apotheosis (Quest)#460": {
    "src": "...{u}! Y- you're back!!",
-   "dst": "",
+   "dst": "……{u}！你、你回來了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30071,7 +30071,7 @@
   },
   "Apotheosis (Quest)#461": {
    "src": "Ey, you made it!!!",
-   "dst": "",
+   "dst": "欸，你成功了！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30081,7 +30081,7 @@
   },
   "Apotheosis (Quest)#462": {
    "src": "S...so does that mean you... y- you stopped her?",
-   "dst": "",
+   "dst": "所、所以那代表你……你、你阻止她了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30091,7 +30091,7 @@
   },
   "Apotheosis (Quest)#463": {
    "src": "Is she dead?!",
-   "dst": "",
+   "dst": "她死了嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30101,7 +30101,7 @@
   },
   "Apotheosis (Quest)#464": {
    "src": "Hell yeah!!",
-   "dst": "",
+   "dst": "太好了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30111,7 +30111,7 @@
   },
   "Apotheosis (Quest)#465": {
    "src": "...I hear a \"but\" added on to the end. Where are Rex and Sui?",
-   "dst": "",
+   "dst": "……我聽到後面接著一個「但是」。Rex 和 Sui 呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30121,7 +30121,7 @@
   },
   "Apotheosis (Quest)#466": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30131,7 +30131,7 @@
   },
   "Apotheosis (Quest)#467": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30141,7 +30141,7 @@
   },
   "Apotheosis (Quest)#468": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30151,7 +30151,7 @@
   },
   "Apotheosis (Quest)#469": {
    "src": "B...but she's... sh- she's okay, now...?",
-   "dst": "",
+   "dst": "但、但是她……她現在沒事了吧……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30161,7 +30161,7 @@
   },
   "Apotheosis (Quest)#470": {
    "src": "...man. Man. That... that really sucks, huh?",
-   "dst": "",
+   "dst": "……唉。唉。那……那真的很慘，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30171,7 +30171,7 @@
   },
   "Apotheosis (Quest)#471": {
    "src": "Her... h- her bow... she's n- ne- never gonna be able to... use it ag- again...",
-   "dst": "",
+   "dst": "她的……她的弓……她再、再也沒辦法……用它了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30181,7 +30181,7 @@
   },
   "Apotheosis (Quest)#472": {
    "src": "I didn't even consider that... man. So, then... Sui's with her still?",
-   "dst": "",
+   "dst": "我根本沒想到那一層……唉。那，所以……Sui 還在陪著她？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30191,7 +30191,7 @@
   },
   "Apotheosis (Quest)#473": {
    "src": "She's... in good hands, at least. Multiple Sovereigns, turning to our side... it's a little hard to believe.",
-   "dst": "",
+   "dst": "至少她……至少有人好好照顧她。好幾位統領倒戈到我們這邊……有點難以置信。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30201,7 +30201,7 @@
   },
   "Apotheosis (Quest)#474": {
    "src": "But this is good. If they've turned against the Queen... it'll make things easier for us once this is all over.",
-   "dst": "",
+   "dst": "但這是好事。如果他們跟女王反目了……等這一切結束，我們的事情會好辦得多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30211,7 +30211,7 @@
   },
   "Apotheosis (Quest)#475": {
    "src": "Guess so... WAIT! So Zhiraok broke Soosu out of prison?! Was that-",
-   "dst": "",
+   "dst": "大概吧……等等！所以是 Zhiraok 把 Soosu 從牢裡救出來的？！那是不是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30221,7 +30221,7 @@
   },
   "Apotheosis (Quest)#476": {
    "src": "-wh- what we saw? It was a- a flash of s- so- something, going into and out of the p...palace! Just before the sk...sky broke.",
-   "dst": "",
+   "dst": "——我、我們看到的那個？那是一道什、什麼東西的閃光，衝進王、王宮又衝出來！就在天、天空裂開之前。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30231,7 +30231,7 @@
   },
   "Apotheosis (Quest)#477": {
    "src": "It must've been! That explains some things! Hey, no wonder the soldiers were so confused!!",
-   "dst": "",
+   "dst": "一定就是！那就解釋得通了！難怪那些士兵那麼混亂！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30241,7 +30241,7 @@
   },
   "Apotheosis (Quest)#478": {
    "src": "Ha... y- yeah...",
-   "dst": "",
+   "dst": "哈……對、對啊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30251,7 +30251,7 @@
   },
   "Apotheosis (Quest)#479": {
    "src": "...{u}. The Queen isn't d...dead, is she?",
-   "dst": "",
+   "dst": "……{u}。女王沒有死，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30261,7 +30261,7 @@
   },
   "Apotheosis (Quest)#480": {
    "src": "Then... y...you're going after her. Right?",
-   "dst": "",
+   "dst": "那……你、你要去追她。對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30271,7 +30271,7 @@
   },
   "Apotheosis (Quest)#481": {
    "src": "Zeph... you're not thinking of going in there too, are you?",
-   "dst": "",
+   "dst": "Zeph……你不會是也想跟著進去吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30281,7 +30281,7 @@
   },
   "Apotheosis (Quest)#482": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30291,7 +30291,7 @@
   },
   "Apotheosis (Quest)#483": {
    "src": "You are.",
-   "dst": "",
+   "dst": "你就是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30301,7 +30301,7 @@
   },
   "Apotheosis (Quest)#484": {
    "src": "I- I have to... Rex won't be in any sh- shape to fight, a- and- and it's my turn to do my p...part anyway!",
-   "dst": "",
+   "dst": "我、我必須去……Rex 不可能還有體、體力打，而、而且——而且輪到我盡我那一份了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30311,7 +30311,7 @@
   },
   "Apotheosis (Quest)#485": {
    "src": "... Fine. But you have to come back, princess! We've got plans, remember? I still have to show you where I grew up, and-",
-   "dst": "",
+   "dst": "……好吧。但你一定要回來，公主！我們有約好的，記得吧？我還要帶你去看我長大的地方，還有——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30321,7 +30321,7 @@
   },
   "Apotheosis (Quest)#486": {
    "src": "-and sh...show me your favourite food stand from when you were gr...growing up, I- I know. I'll be b- back.",
-   "dst": "",
+   "dst": "——還要帶、帶我去看你小時候最愛的那個小、小吃攤，我、我知道。我會回、回來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30331,7 +30331,7 @@
   },
   "Apotheosis (Quest)#487": {
    "src": "Okay, lovebirds, that's my signal to get out of here. There's schedules I have to organize...",
-   "dst": "",
+   "dst": "好啦，小情侶，我該閃了。我還有一堆排程要整理……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30341,7 +30341,7 @@
   },
   "Apotheosis (Quest)#488": {
    "src": "...but yeah. Zeph, {u}, I expect to see you two again. Understood?",
-   "dst": "",
+   "dst": "……不過真的，Zeph、{u}，我期待再見到你們兩個。聽懂了嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30351,7 +30351,7 @@
   },
   "Apotheosis (Quest)#489": {
    "src": "Good. Just making sure.",
-   "dst": "",
+   "dst": "很好。我只是確認一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30361,7 +30361,7 @@
   },
   "Apotheosis (Quest)#490": {
    "src": "{u}, I'm glad to see you're back.",
-   "dst": "",
+   "dst": "{u}，很高興看到你回來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30371,7 +30371,7 @@
   },
   "Apotheosis (Quest)#491": {
    "src": "I heard from Zeph that you and the girls decided to challenge Her Majesty.",
-   "dst": "",
+   "dst": "我從 Zeph 那裡聽說你和那兩個女孩決定去挑戰女王陛下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30381,7 +30381,7 @@
   },
   "Apotheosis (Quest)#492": {
    "src": "How... how did it go? I can't help notice the lack of companions by your side.",
-   "dst": "",
+   "dst": "結果……結果如何？我不禁注意到你身邊少了同伴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30391,7 +30391,7 @@
   },
   "Apotheosis (Quest)#493": {
    "src": "Sui has grown into quite the powerful cursed one, huh?",
-   "dst": "",
+   "dst": "Sui 已經長成一位相當強大的受詛者了，是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30401,7 +30401,7 @@
   },
   "Apotheosis (Quest)#494": {
    "src": "Did I hear that right... Soosu?",
-   "dst": "",
+   "dst": "我沒聽錯吧……Soosu？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30411,7 +30411,7 @@
   },
   "Apotheosis (Quest)#495": {
    "src": "That... is an unexpected turn of events. However, you may accept their change of heart but for the rest of us...",
-   "dst": "",
+   "dst": "那……是個出乎意料的轉折。不過，你可以接受他們的轉念，但對我們其餘的人來說……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30421,7 +30421,7 @@
   },
   "Apotheosis (Quest)#496": {
    "src": "They are an extension of her Majesty. All the pain and suffering they have caused is because of them.",
-   "dst": "",
+   "dst": "他們是女王陛下的延伸。他們造成的一切痛苦與磨難，都是他們自己的責任。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30431,7 +30431,7 @@
   },
   "Apotheosis (Quest)#497": {
    "src": "Actually...",
-   "dst": "",
+   "dst": "其實……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30441,7 +30441,7 @@
   },
   "Apotheosis (Quest)#498": {
    "src": "We have been thinking about how to handle the aftermath; in case we were successful. The larger populous knows of us as only terrorists. They would never accept us to rebuild Fruma.",
-   "dst": "",
+   "dst": "我們一直在思考該如何處理善後，萬一我們真的成功了。廣大的民眾只把我們當成恐怖分子。他們絕不會接受我們去重建 Fruma。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30451,7 +30451,7 @@
   },
   "Apotheosis (Quest)#499": {
    "src": "But. With the Sovereigns on our side, the people might, they just might, hear them out.",
-   "dst": "",
+   "dst": "但是。有那些統領站在我們這邊，人民也許、也許就願意聽他們說話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30461,7 +30461,7 @@
   },
   "Apotheosis (Quest)#500": {
    "src": "Ugh. You're right. This is the best option we got.",
-   "dst": "",
+   "dst": "唉。你說得對。這是我們手上最好的選項了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30471,7 +30471,7 @@
   },
   "Apotheosis (Quest)#501": {
    "src": "We will need to arrange a meeting with them to discuss moving forwards. I expect it to be tense, even hostile. But, but we can do this.",
-   "dst": "",
+   "dst": "我們得安排跟他們會面，討論接下來的走向。我預料氣氛會很緊繃，甚至充滿敵意。但，但我們做得到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30481,7 +30481,7 @@
   },
   "Apotheosis (Quest)#502": {
    "src": "I'll get Fuhue to draft up our plan, then.",
-   "dst": "",
+   "dst": "那我去叫 Fuhue 把我們的方案草擬出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30491,7 +30491,7 @@
   },
   "Apotheosis (Quest)#503": {
    "src": "Need anything from me?",
-   "dst": "",
+   "dst": "需要我做什麼嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30501,7 +30501,7 @@
   },
   "Apotheosis (Quest)#504": {
    "src": "Went without a scratch, of course.",
-   "dst": "",
+   "dst": "當然是毫髮無傷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30511,7 +30511,7 @@
   },
   "Apotheosis (Quest)#505": {
    "src": "Well, we did have a lot of issues... I wasn't worried but I'm glad Zeph and Cileon returned with us.",
-   "dst": "",
+   "dst": "嗯，我們確實遇到不少問題……我是不擔心啦，不過我很慶幸 Zeph 和 Cileon 跟我們一起回來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30521,7 +30521,7 @@
   },
   "Apotheosis (Quest)#506": {
    "src": "Fuhue's talismans were doing a lot of the heavy listing in their absence.",
-   "dst": "",
+   "dst": "他們不在的時候，重活幾乎都是 Fuhue 的護符在扛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30531,7 +30531,7 @@
   },
   "Apotheosis (Quest)#507": {
    "src": "The Canopy will be helping with the aftermath. I don't care for becoming a public figure after this is over. though.",
-   "dst": "",
+   "dst": "樹冠會協助善後。不過這一切結束之後，我可沒興趣當個公眾人物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30541,7 +30541,7 @@
   },
   "Apotheosis (Quest)#508": {
    "src": "The trees are calling my name and the {p} is definitely not the place for me.",
-   "dst": "",
+   "dst": "樹林在呼喚我的名字，而 {p} 絕對不是適合我的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30551,7 +30551,7 @@
   },
   "Apotheosis (Quest)#509": {
    "src": "Besides, could you ever see such a hunk like me become a politician... Pshh, at least I can't.",
-   "dst": "",
+   "dst": "何況，你能想像我這麼一塊料去當政治家嗎……嘖，反正我是想像不到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30561,7 +30561,7 @@
   },
   "Apotheosis (Quest)#510": {
    "src": "Good luck out there.",
-   "dst": "",
+   "dst": "外面保重。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30571,7 +30571,7 @@
   },
   "Apotheosis (Quest)#511": {
    "src": "...hm?",
-   "dst": "",
+   "dst": "……嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30581,7 +30581,7 @@
   },
   "Apotheosis (Quest)#512": {
    "src": "Foxes and I cleared them out.",
-   "dst": "",
+   "dst": "狐群和我把他們清掉了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30591,7 +30591,7 @@
   },
   "Apotheosis (Quest)#513": {
    "src": "I want to return to the forest.",
-   "dst": "",
+   "dst": "我想回森林。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30601,7 +30601,7 @@
   },
   "Apotheosis (Quest)#514": {
    "src": "Need to hunt, run and stay away from... cities.",
-   "dst": "",
+   "dst": "需要狩獵、奔跑，遠離……城市。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30611,7 +30611,7 @@
   },
   "Apotheosis (Quest)#515": {
    "src": "Best of luck.",
-   "dst": "",
+   "dst": "祝你好運。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30621,7 +30621,7 @@
   },
   "Apotheosis (Quest)#516": {
    "src": "...yes? What do you need?",
-   "dst": "",
+   "dst": "……什麼事？你需要什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30631,7 +30631,7 @@
   },
   "Apotheosis (Quest)#517": {
    "src": "My talismans did the trick. Managed to keep up a temporary barrier for some time.",
-   "dst": "",
+   "dst": "我的護符奏效了。撐起了一道臨時屏障，維持了一段時間。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30641,7 +30641,7 @@
   },
   "Apotheosis (Quest)#518": {
    "src": "Unfortunately, they only last for some time and my schedule has not allowed me to create more. It was a miscalculation on my side.",
-   "dst": "",
+   "dst": "可惜它們只能維持一陣子，而我的行程沒讓我來得及多做一些。那是我這邊的失算。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30651,7 +30651,7 @@
   },
   "Apotheosis (Quest)#519": {
    "src": "I have completely, utterly failed as the Deer's captain. I totally underestimated how many barrier talismans we needed!",
-   "dst": "",
+   "dst": "身為鹿的隊長，我徹底、完全地失職了。我嚴重低估了我們需要多少屏障護符！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30661,7 +30661,7 @@
   },
   "Apotheosis (Quest)#520": {
    "src": "The Canopy will remain. Master has asked me to document everything that has transpired in the past coupl of weeks. It will take me at least one week and three days to compile it all.",
-   "dst": "",
+   "dst": "樹冠會留下。師父要我把過去這幾週發生的一切都記錄下來。全部整理完至少要一週又三天。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30671,7 +30671,7 @@
   },
   "Apotheosis (Quest)#521": {
    "src": "Besides, without the Queen a new government will have to be established. I am planning to be of assistance, there as well.",
-   "dst": "",
+   "dst": "何況，沒有了女王，就必須建立新的政府。我打算在那方面也提供協助。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30681,7 +30681,7 @@
   },
   "Apotheosis (Quest)#522": {
    "src": "Okay.",
-   "dst": "",
+   "dst": "好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30691,7 +30691,7 @@
   },
   "Apotheosis (Quest)#523": {
    "src": "W-what's up?",
-   "dst": "",
+   "dst": "怎、怎麼了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30701,7 +30701,7 @@
   },
   "Apotheosis (Quest)#524": {
    "src": "When we got- got back we had almost been c-completely overtaken.",
-   "dst": "",
+   "dst": "我們回、回來的時候，我們差點就被完全攻陷了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30711,7 +30711,7 @@
   },
   "Apotheosis (Quest)#525": {
    "src": "I'd like t-to -to believe I helped but... to be honest Rurie did most of the w-work.",
-   "dst": "",
+   "dst": "我很想相、相信我幫上了忙，但……老實說大部分的活是 Rurie 做的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30721,7 +30721,7 @@
   },
   "Apotheosis (Quest)#526": {
    "src": "I felt guilty that I- I left you guys.",
-   "dst": "",
+   "dst": "我很內疚我、我丟下了你們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30731,7 +30731,7 @@
   },
   "Apotheosis (Quest)#527": {
    "src": "But I will n-not back down for this final showdown!",
-   "dst": "",
+   "dst": "但這場最後的決戰，我不、不會退縮！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30741,7 +30741,7 @@
   },
   "Apotheosis (Quest)#528": {
    "src": "For o-once I'm... hopeful?",
-   "dst": "",
+   "dst": "這一、一次我居然……有希望的感覺？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30751,7 +30751,7 @@
   },
   "Apotheosis (Quest)#529": {
    "src": "It's, it's weird. After everything we've g-gone through, after everyone we- we- we lost. I have hope for the future.",
-   "dst": "",
+   "dst": "很，很奇怪。在我們經、經歷了那麼多之後，在我們失、失、失去了那麼多人之後。我對未來抱著希望。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30761,7 +30761,7 @@
   },
   "Apotheosis (Quest)#530": {
    "src": "I promised myself when... when I was captured that if I- I made it out, I would not let my life fly by. I will l-live for Syndra and Mora. I will k-keep Syndra's legacy going.",
-   "dst": "",
+   "dst": "我在……在被抓的時候對自己發過誓，如果我、我活著出來，我不會讓我的人生就這樣飛走。我要為 Syndra 和 Mora 活下去。我要把 Syndra 的遺志延、延續下去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30771,7 +30771,7 @@
   },
   "Apotheosis (Quest)#531": {
    "src": "And I made a p-promise to Yuman. I w-want to explore the world with- with him.",
-   "dst": "",
+   "dst": "而且我對 Yuman 許過一個承、承諾。我想跟他一起去探、探索這個世界。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30781,7 +30781,7 @@
   },
   "Apotheosis (Quest)#532": {
    "src": "I don't think I- I will n-never be ready but, I want to do all that I c-can.",
-   "dst": "",
+   "dst": "我覺得我永、永遠都不會真的準備好，但我想做我所、所能做的一切。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30791,7 +30791,7 @@
   },
   "Apotheosis (Quest)#533": {
    "src": "I won't be a hinderance to you. I k-know you and Sui are strong but... I'm not h-helpless.",
-   "dst": "",
+   "dst": "我不會成為你的累贅。我知、知道你和 Sui 很強，但……我也不是沒、沒有用的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30801,7 +30801,7 @@
   },
   "Apotheosis (Quest)#534": {
    "src": "I'll follow you whenever you're r-ready, friend.",
-   "dst": "",
+   "dst": "你什麼時候準、準備好，我就跟你走，朋友。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30811,7 +30811,7 @@
   },
   "Apotheosis (Quest)#535": {
    "src": "What's up?",
-   "dst": "",
+   "dst": "怎麼了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30821,7 +30821,7 @@
   },
   "Apotheosis (Quest)#536": {
    "src": "Things were looking veeery hairy for a bit. Luckily, Rurie brought back up just in time.",
-   "dst": "",
+   "dst": "有一陣子情況看起來「非常」不妙。幸好 Rurie 及時帶了支援回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30831,7 +30831,7 @@
   },
   "Apotheosis (Quest)#537": {
    "src": "Those Canopy people can be quite scary, I must say.",
-   "dst": "",
+   "dst": "我得說，樹冠那些人可真是有點嚇人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30841,7 +30841,7 @@
   },
   "Apotheosis (Quest)#538": {
    "src": "I know that chaos is sure to ensue with Her Majesty gone but, I don't think I'm the best at... cleaning up a province.",
-   "dst": "",
+   "dst": "我知道女王陛下不在了之後必然會天下大亂，可是我不覺得我擅長……收拾一個行省。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30851,7 +30851,7 @@
   },
   "Apotheosis (Quest)#539": {
    "src": "I would honestly love to see the world. Traveling the world with someone you like sounds... nice.",
-   "dst": "",
+   "dst": "老實說我很想去看看這個世界。跟喜歡的人一起環遊世界，聽起來……很不錯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30861,7 +30861,7 @@
   },
   "Apotheosis (Quest)#540": {
    "src": "I also miss the Steel Feather. I don't know what will happen to that place, or what has happened for that matter, but that place will always be my home.",
-   "dst": "",
+   "dst": "我也想念鋼羽。我不知道那個地方會變成怎樣，或者說已經變成怎樣了，但那裡永遠是我的家。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30871,7 +30871,7 @@
   },
   "Apotheosis (Quest)#541": {
    "src": "You guys better be careful!",
-   "dst": "",
+   "dst": "你們幾個要小心點啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30881,7 +30881,7 @@
   },
   "Apotheosis (Quest)#542": {
    "src": "What's on your mind?",
-   "dst": "",
+   "dst": "你在想什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30891,7 +30891,7 @@
   },
   "Apotheosis (Quest)#543": {
    "src": "I'm just glad we managed to sort the situation.",
-   "dst": "",
+   "dst": "我只是慶幸我們把局面撐下來了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30901,7 +30901,7 @@
   },
   "Apotheosis (Quest)#544": {
    "src": "My electric charges almost ran out and I would have been useless without them.",
-   "dst": "",
+   "dst": "我的電能彈差點就用完了，沒有它們我就派不上用場了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30911,7 +30911,7 @@
   },
   "Apotheosis (Quest)#545": {
    "src": "Honestly, I'm ready to deal with the fall out of this revolution.",
-   "dst": "",
+   "dst": "老實說，我已經準備好面對這場革命的後續了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30921,7 +30921,7 @@
   },
   "Apotheosis (Quest)#546": {
    "src": "I want to make a difference. I want to make sure the new Fruma is a good place. It will for sure take some time. But, I'm ready to spend the rest of my life bettering the province.",
-   "dst": "",
+   "dst": "我想做出改變。我想確保新的 Fruma 是個好地方。那肯定要花上一些時間。但我準備好用餘生去讓這個行省變得更好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30931,7 +30931,7 @@
   },
   "Apotheosis (Quest)#547": {
    "src": "I better be seeing you later.",
-   "dst": "",
+   "dst": "我等著再見到你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30941,7 +30941,7 @@
   },
   "Apotheosis (Quest)#548": {
    "src": "Anything on your mind?",
-   "dst": "",
+   "dst": "有什麼心事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30951,7 +30951,7 @@
   },
   "Apotheosis (Quest)#549": {
    "src": "I intend to make up for my past mistakes. I don't think I told you this before but, the wall that separates the {p} from the Roughworks was designed by me during my university stay.",
-   "dst": "",
+   "dst": "我打算彌補我過去的錯誤。我想我以前沒告訴過你，把 {p} 和 Roughworks 隔開的那道牆，是我大學時期設計的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30961,7 +30961,7 @@
   },
   "Apotheosis (Quest)#550": {
    "src": "I thought- I thought I was protecting the people of the Roughworks from the dangers of the {p}. But in reality, all I did was separate the people.",
-   "dst": "",
+   "dst": "我以為——我以為我是在保護 Roughworks 的人不受 {p} 的危險傷害。但實際上，我做的只是把人隔開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30971,7 +30971,7 @@
   },
   "Apotheosis (Quest)#551": {
    "src": "Fruma needs all the help it can get once this is all over. Everyone will need to cooperate to save the province from destroying itself without a ruler.",
-   "dst": "",
+   "dst": "這一切結束之後，Fruma 需要一切能得到的幫助。沒有了統治者，要救這個行省不自我毀滅，所有人都得合作。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30981,7 +30981,7 @@
   },
   "Apotheosis (Quest)#552": {
    "src": "I'll see you around, {u}.",
-   "dst": "",
+   "dst": "回頭見了，{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -30991,7 +30991,7 @@
   },
   "Apotheosis (Quest)#553": {
    "src": "Anything on your mind?",
-   "dst": "",
+   "dst": "有什麼心事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31001,7 +31001,7 @@
   },
   "Apotheosis (Quest)#554": {
    "src": "I might hand the responsibilities for liberating Fruma to the young ones.",
-   "dst": "",
+   "dst": "我或許會把解放 Fruma 的責任交給年輕人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31011,7 +31011,7 @@
   },
   "Apotheosis (Quest)#555": {
    "src": "I've lived long enough and honestly, retirement sounds rather nice.",
-   "dst": "",
+   "dst": "我活得夠久了，而且老實說，退休聽起來還挺不錯的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31021,7 +31021,7 @@
   },
   "Apotheosis (Quest)#556": {
    "src": "Good bye, {u}.",
-   "dst": "",
+   "dst": "再見了，{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31031,7 +31031,7 @@
   },
   "Apotheosis (Quest)#557": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31041,7 +31041,7 @@
   },
   "Apotheosis (Quest)#558": {
    "src": "Talk to Sui at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~1}, {~2}, -{~3}] 與 Sui 談話。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -31051,7 +31051,7 @@
   },
   "Apotheosis (Quest)#559": {
    "src": "...{u}. Hey.",
-   "dst": "",
+   "dst": "……{u}。嘿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31061,7 +31061,7 @@
   },
   "Apotheosis (Quest)#560": {
    "src": "I'm... ready to go.",
-   "dst": "",
+   "dst": "我……準備好出發了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31071,7 +31071,7 @@
   },
   "Apotheosis (Quest)#561": {
    "src": "She, um... she is. S-Sovereign Zhiraok, he, um, took her to a medic. And... went to try to get control of the army.",
-   "dst": "",
+   "dst": "她，嗯……她沒事。Z-Zhiraok 統領，他，嗯，把她送去給醫護了。然後……去試著掌控軍隊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31081,7 +31081,7 @@
   },
   "Apotheosis (Quest)#562": {
    "src": "...I don't want to think about him. Or- or Soosu. I don't... like that everything's just- j-just okay now. Because of a common enemy.",
-   "dst": "",
+   "dst": "……我不想去想他。或、或是 Soosu。我不……喜歡現在一切就這樣——就這樣沒事了。就因為有共同的敵人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31091,7 +31091,7 @@
   },
   "Apotheosis (Quest)#563": {
    "src": "So... later. I'll think about it later. After we're d-",
-   "dst": "",
+   "dst": "所以……晚點吧。我晚點再想。等我們做、做完——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31101,7 +31101,7 @@
   },
   "Apotheosis (Quest)#564": {
    "src": "Sui!!! I- I- I heard about what you g...guys did!! You st- st- stopped the Queen!!!",
-   "dst": "",
+   "dst": "Sui！！！我、我、我聽說你們做的事了！！你們阻、阻止了女王！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31111,7 +31111,7 @@
   },
   "Apotheosis (Quest)#565": {
    "src": "...yeah. Rex and {u} did. I... didn't.",
-   "dst": "",
+   "dst": "……嗯。是 Rex 和 {u} 做到的。我……沒有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31121,7 +31121,7 @@
   },
   "Apotheosis (Quest)#566": {
    "src": "What? Sui, you he- held back the lake's water from fl- fl- flooding the {p}!! If it wasn't for y...you, then-",
-   "dst": "",
+   "dst": "什麼？Sui，你擋住了湖水、沒讓它淹、淹掉 {p}！！要不是有、有你，那——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31131,7 +31131,7 @@
   },
   "Apotheosis (Quest)#567": {
    "src": "It doesn't MATTER! While I was stuck h-holding back the flood, I- I couldn't help fight!! Again - AGAIN!!! - someone got hurt because I COULDN'T BE THERE!!!",
-   "dst": "",
+   "dst": "那「不重要」！我卡在那裡擋、擋著洪水的時候，我、我沒辦法幫忙戰鬥！！又一次——「又一次」！！！有人受傷是因為我「不在那裡」！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31141,7 +31141,7 @@
   },
   "Apotheosis (Quest)#568": {
    "src": "Rex. She... she died, Zeph, I felt it. For a minute, I was holding her- her cold, LIFELESS BODY in my hands, and- a-and it was like I was there again. With... M-Mora.",
-   "dst": "",
+   "dst": "Rex。她……她死了，Zeph，我感覺到了。有那麼一分鐘，我手裡抱著她——她冰冷、「沒有生命」的身體，然後——然、然後就像我又回到了那裡。跟……M-Mora 那時候一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31151,7 +31151,7 @@
   },
   "Apotheosis (Quest)#569": {
    "src": "...I failed again. I told myself, if I was STRONGER, if I was BETTER, it WOULDN'T HAPPEN AGAIN!! And it DID!!! Even if she got better, even if she's not dead, it's still MY FAULT!!!",
-   "dst": "",
+   "dst": "……我又失敗了。我告訴過自己，只要我「更強」、只要我「更好」，「就不會再發生了」！！結果它「發生了」！！！就算她好起來、就算她沒死，那還是「我的錯」！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31161,7 +31161,7 @@
   },
   "Apotheosis (Quest)#570": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31171,7 +31171,7 @@
   },
   "Apotheosis (Quest)#571": {
    "src": "A- and if you were able to s...save Rex, but the dam broke... and all th- those people died instead... would that have been b- be- better?",
-   "dst": "",
+   "dst": "那、那如果你能救、救得了 Rex，但水壩垮了……那些人全都死了……那樣會比、比較好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31181,7 +31181,7 @@
   },
   "Apotheosis (Quest)#572": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31191,7 +31191,7 @@
   },
   "Apotheosis (Quest)#573": {
    "src": "I've b...been thinking about it, ever since {u} t- told me... if- if I had been th- there, a- and not here, could I have st...stopped it...? A- an extra pair of eyes...",
-   "dst": "",
+   "dst": "自從 {u} 告、告訴我之後，我就一直在想……如、如果當時我在那、那裡，而不是在這裡，我能不能阻、阻止它……？多、多一雙眼睛……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31201,7 +31201,7 @@
   },
   "Apotheosis (Quest)#574": {
    "src": "B- but I was here, instead, a- a- and because of that, I was able to m...make sure Yuman survived! If it were the other way around... I'd feel the same!!",
-   "dst": "",
+   "dst": "但、但我在這裡，而、而、而正因為這樣，我才能確、確保 Yuman 活下來！如果反過來……我也會有同樣的感覺！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31211,7 +31211,7 @@
   },
   "Apotheosis (Quest)#575": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31221,7 +31221,7 @@
   },
   "Apotheosis (Quest)#576": {
    "src": "She's still out there. Through that rift. We're going to kill her, Zeph.",
-   "dst": "",
+   "dst": "她還在那裡。在那道裂隙的另一邊。我們要去殺了她，Zeph。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31231,7 +31231,7 @@
   },
   "Apotheosis (Quest)#577": {
    "src": "...right now? Sui, are you s...sure? Controlling that much water, it mu- must have drained your mana... can you st...still fight?",
-   "dst": "",
+   "dst": "……現在？Sui，你確、確定嗎？操控那麼多水，一定耗、耗光了你的魔力……你還打、打得動嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31241,7 +31241,7 @@
   },
   "Apotheosis (Quest)#578": {
    "src": "...yes. I... it doesn't feel like I've used any magic at all. I, um, don't feel tired at all.",
-   "dst": "",
+   "dst": "……可以。我……感覺上我根本沒用過任何魔法。我，嗯，一點都不累。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31251,7 +31251,7 @@
   },
   "Apotheosis (Quest)#579": {
    "src": "Ever since the {p}, the ocean's... grown. Or... no, that's wrong - it was always this big, I just... couldn't see it before.",
-   "dst": "",
+   "dst": "自從 {p} 之後，那片海洋就……變大了。或者……不對，那樣說不對——它一直都這麼大，只是我……以前看不見。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31261,7 +31261,7 @@
   },
   "Apotheosis (Quest)#580": {
    "src": "It's... mana, but it's not mine. It's... all the strands, the threads, tied up in everything. And I can, um, use as much as I want.",
-   "dst": "",
+   "dst": "那是……魔力，但不是我的。那是……所有的絲線、所有的線，纏繞在萬物之中。而我可以，嗯，想用多少就用多少。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31271,7 +31271,7 @@
   },
   "Apotheosis (Quest)#581": {
    "src": "...okay. So y- you- you're going now...?",
-   "dst": "",
+   "dst": "……好。所以你、你要現在就走……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31281,7 +31281,7 @@
   },
   "Apotheosis (Quest)#582": {
    "src": "Yes.",
-   "dst": "",
+   "dst": "對。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31291,7 +31291,7 @@
   },
   "Apotheosis (Quest)#583": {
    "src": "Th- then let me join you! Things are c...calmer here, now, so- so they should be fine w- with- without me!",
-   "dst": "",
+   "dst": "那、那讓我跟你們一起去！這邊情況比、比較穩了，所、所以沒有我他們應該也沒、沒問題！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31301,7 +31301,7 @@
   },
   "Apotheosis (Quest)#584": {
    "src": "...okay, Zeph. We could use the help.",
-   "dst": "",
+   "dst": "……好，Zeph。多個人手也好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31311,7 +31311,7 @@
   },
   "Apotheosis (Quest)#585": {
    "src": "Sui, {u}, Zeph!",
-   "dst": "",
+   "dst": "Sui、{u}、Zeph！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31321,7 +31321,7 @@
   },
   "Apotheosis (Quest)#586": {
    "src": "I- I did it! I finally, finally, FINALLY did it!!!",
-   "dst": "",
+   "dst": "我、我做到了！我終於、終於、「終於」做到了！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31331,7 +31331,7 @@
   },
   "Apotheosis (Quest)#587": {
    "src": "Um... did what?",
-   "dst": "",
+   "dst": "嗯……做到什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31341,7 +31341,7 @@
   },
   "Apotheosis (Quest)#588": {
    "src": "The Resonance Weaver - I had theories before, workable theories, but I wasn't sure. But I am now!!",
-   "dst": "",
+   "dst": "共鳴織機——我之前有理論，可行的理論，但我不確定。可是我現在確定了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31351,7 +31351,7 @@
   },
   "Apotheosis (Quest)#589": {
    "src": "It was in the glyphs! They don't just call upon the five elements, they ARE the five elements! Like Soosu's writings about matter - building blocks of reality!",
-   "dst": "",
+   "dst": "關鍵在符文！它們不只是召喚五種元素，它們「就是」五種元素！就像 Soosu 寫的那些關於物質的東西——現實的建構單元！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31361,7 +31361,7 @@
   },
   "Apotheosis (Quest)#590": {
    "src": "The Weaver pulls on these strands - the physical makeup of our reality - and uses them to... well... do mostly anything.",
-   "dst": "",
+   "dst": "織機拉動這些絲線——我們現實的物理構成——然後用它們來……嗯……做幾乎任何事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31371,7 +31371,7 @@
   },
   "Apotheosis (Quest)#591": {
    "src": "I used it before to make that... corruption visible. But with enough experimenting, you could do more than just visualizing it.",
-   "dst": "",
+   "dst": "我之前用它讓那個……腐敗現形。但只要實驗夠多，你能做的就不只是讓它現形。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31381,7 +31381,7 @@
   },
   "Apotheosis (Quest)#592": {
    "src": "Thread it into something else, or change the course of its flow, or... or even bind it to something physical!",
-   "dst": "",
+   "dst": "把它織進別的東西裡，或是改變它流動的方向，或者……甚至把它綁在某個實體上！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31391,7 +31391,7 @@
   },
   "Apotheosis (Quest)#593": {
    "src": "...I didn't see her transform. What did it look like?",
-   "dst": "",
+   "dst": "……我沒有看到她變形。那看起來是什麼樣子？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31401,7 +31401,7 @@
   },
   "Apotheosis (Quest)#594": {
    "src": "S...so, what, that's how she b- became... human?",
-   "dst": "",
+   "dst": "所、所以，什麼，她就是這樣變、變成人的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31411,7 +31411,7 @@
   },
   "Apotheosis (Quest)#595": {
    "src": "...I don't really care. Yusanu, can it help with our... um, our rift problem?",
-   "dst": "",
+   "dst": "……我不太在乎。Yusanu，它能幫上我們的……嗯，我們的裂隙問題嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31421,7 +31421,7 @@
   },
   "Apotheosis (Quest)#596": {
    "src": "Uh... maybe. To- to be clear, the Weaver is still... hard to use. If we had people more familiar with the glyphs... it could be very powerful. But we don't.",
-   "dst": "",
+   "dst": "呃……也許。先、先說清楚，織機還是……很難用。如果我們有更熟悉符文的人……它可以非常強大。但我們沒有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31431,7 +31431,7 @@
   },
   "Apotheosis (Quest)#597": {
    "src": "In theory... it should be able to close the rifts. Would just- ha, need to weave reality shut again. But... I don't know how.",
-   "dst": "",
+   "dst": "理論上……它應該能夠關閉那些裂隙。只要——哈，只要把現實重新織起來就好。可是……我不知道要怎麼做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31441,7 +31441,7 @@
   },
   "Apotheosis (Quest)#598": {
    "src": "Um... S-Soveriegn Soosu might know. She and- a-and Zhiraok are... no longer against us. F-for now, at least.",
-   "dst": "",
+   "dst": "嗯……S-Soosu 統領也許知道。她和、和 Zhiraok 現在……不再與我們為敵了。至、至少暫時是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31451,7 +31451,7 @@
   },
   "Apotheosis (Quest)#599": {
    "src": "...got it. I'll see what I can do..",
-   "dst": "",
+   "dst": "……了解。我看看我能做什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31461,7 +31461,7 @@
   },
   "Apotheosis (Quest)#600": {
    "src": "You're... heading in to deal with the source, aren't you?",
-   "dst": "",
+   "dst": "你們……是要進去處理源頭，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31471,7 +31471,7 @@
   },
   "Apotheosis (Quest)#601": {
    "src": "We are.",
-   "dst": "",
+   "dst": "是的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31481,7 +31481,7 @@
   },
   "Apotheosis (Quest)#602": {
    "src": "Then... good luck. Don't die. Be careful. We'll hold the fort while you're gone, until everything stabilizes, at least.",
-   "dst": "",
+   "dst": "那……祝你們好運。別死。小心點。你們不在的時候我們會守住陣地，至少撐到一切穩定下來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31491,7 +31491,7 @@
   },
   "Apotheosis (Quest)#603": {
    "src": "...yeah. We should get going. See you when it's all over.",
-   "dst": "",
+   "dst": "……嗯。我們該出發了。等一切結束再見。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31501,7 +31501,7 @@
   },
   "Apotheosis (Quest)#604": {
    "src": "Head to the Royal Palace at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 [-{~1}, {~2}, -{~3}] 的王宮。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -31511,7 +31511,7 @@
   },
   "Apotheosis (Quest)#605": {
    "src": "Hm?",
-   "dst": "",
+   "dst": "嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31521,7 +31521,7 @@
   },
   "Apotheosis (Quest)#606": {
    "src": "It's fine. My mana has never been stronger. You don't have to worry about me.",
-   "dst": "",
+   "dst": "我沒事。我的魔力從來沒這麼強過。你不必擔心我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31531,7 +31531,7 @@
   },
   "Apotheosis (Quest)#607": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31541,7 +31541,7 @@
   },
   "Apotheosis (Quest)#608": {
    "src": "Awful, empty, sad, enraged... Does that paint you a clear picture? But I can't afford that. Not, now.",
-   "dst": "",
+   "dst": "糟透了、空空的、難過、憤怒……這樣你有清楚的畫面了嗎？但我沒有餘裕去顧那些。現在沒有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31551,7 +31551,7 @@
   },
   "Apotheosis (Quest)#609": {
    "src": "I... I still haven't given it much thought.",
-   "dst": "",
+   "dst": "我……還沒怎麼想過那個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31561,7 +31561,7 @@
   },
   "Apotheosis (Quest)#610": {
    "src": "I'll think about it if- when we kill her for good.",
-   "dst": "",
+   "dst": "等我們把她徹底殺掉之後，我再想。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31571,7 +31571,7 @@
   },
   "Apotheosis (Quest)#611": {
    "src": "I'll be right behind you.",
-   "dst": "",
+   "dst": "我就跟在你後面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31581,7 +31581,7 @@
   },
   "Apotheosis (Quest)#612": {
    "src": "Yes, any questions?",
-   "dst": "",
+   "dst": "是的，有什麼問題嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31591,7 +31591,7 @@
   },
   "Apotheosis (Quest)#613": {
    "src": "To be honest. If it weren't for your information about worlds beyond ours, I would never have figured it out. Besides, Sui taught me a lot about magic which helped...",
-   "dst": "",
+   "dst": "老實說。要不是你告訴我關於我們世界之外還有其他世界的事，我永遠都想不通。何況，Sui 也教了我很多魔法的知識，那也幫了大忙……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31601,7 +31601,7 @@
   },
   "Apotheosis (Quest)#614": {
    "src": "At the end of the day, Soosu has taught me to... think outside of the box and I have gotten quite used to how she builds her inventions.",
-   "dst": "",
+   "dst": "說到底，是 Soosu 教會我……跳出框架思考，而且我已經很習慣她組裝發明的方式了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31611,7 +31611,7 @@
   },
   "Apotheosis (Quest)#615": {
    "src": "I haven't been able to test my theory on the use but I'm {~} certain it will work.",
-   "dst": "",
+   "dst": "我還沒能測試我對用法的理論，但我有 {~} 的把握它會成功。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31621,7 +31621,7 @@
   },
   "Apotheosis (Quest)#616": {
    "src": "I have a lot I want to do. I feel like a world of opportunity has opened for me. I want to travel the world, explore the other provinces and share research.",
-   "dst": "",
+   "dst": "我有很多想做的事。我覺得有一個充滿機會的世界為我打開了。我想環遊世界、探索其他行省、分享研究。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31631,7 +31631,7 @@
   },
   "Apotheosis (Quest)#617": {
    "src": "But more importantly, I heard from Quill that Soosu is alive. I think- I think she should join me on my travels. Once the aftermath has calmed down a bit.",
-   "dst": "",
+   "dst": "但更重要的是，我從 Quill 那裡聽說 Soosu 還活著。我想——我想她應該跟我一起去旅行。等善後平息一點之後。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31641,7 +31641,7 @@
   },
   "Apotheosis (Quest)#618": {
    "src": "Stay safe out there.",
-   "dst": "",
+   "dst": "外面保重。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31651,7 +31651,7 @@
   },
   "Apotheosis (Quest)#619": {
    "src": "{u}.",
-   "dst": "",
+   "dst": "{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31661,7 +31661,7 @@
   },
   "Apotheosis (Quest)#620": {
    "src": "I've.. done what I can. Reached as many people as I could, with the time I had. The rest...",
-   "dst": "",
+   "dst": "我……盡我所能做了。在我有的時間裡，聯絡到了盡可能多的人。剩下的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31671,7 +31671,7 @@
   },
   "Apotheosis (Quest)#621": {
    "src": "The gendarme won't listen to me... their commander's disappeared somewhere, and they won't tell me anything about it.",
-   "dst": "",
+   "dst": "憲兵不聽我的……他們的指揮官不知道跑到哪裡去了，而他們什麼都不肯告訴我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31681,7 +31681,7 @@
   },
   "Apotheosis (Quest)#622": {
    "src": "...I thought she understood me. I still think she did, but... it doesn't make up for this. Any of this.",
-   "dst": "",
+   "dst": "……我以為她懂我。我現在還是覺得她懂，但……那彌補不了這一切。任何一件。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31691,7 +31691,7 @@
   },
   "Apotheosis (Quest)#623": {
    "src": "The cracks are finally showing... I always knew they were there, I just. Told myself they weren't the end of the world. Ha.",
-   "dst": "",
+   "dst": "那些裂痕終於顯現了……我一直都知道它們在，我只是。告訴自己那還不到世界末日的地步。哈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31701,7 +31701,7 @@
   },
   "Apotheosis (Quest)#624": {
    "src": "...it's strange. For all that I thought she understood me... maybe she never really did. How much of what she said was real? How much of it wasn't?",
-   "dst": "",
+   "dst": "……很奇怪。我一直以為她懂我……也許她從來就不懂。她說過的話有多少是真的？有多少不是？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31711,7 +31711,7 @@
   },
   "Apotheosis (Quest)#625": {
    "src": "The cracks had been showing for a while, I just... chose to push them aside. I didn't think I would make it out of this, so... why push back on it?",
-   "dst": "",
+   "dst": "那些裂痕早就顯現一陣子了，我只是……選擇把它們推到一邊。我本來以為我不會活著走出這件事，所以……何必去對抗它？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31721,7 +31721,7 @@
   },
   "Apotheosis (Quest)#626": {
    "src": "...I still think her plan would have worked to stop the end of the world. She had the method and the means...",
-   "dst": "",
+   "dst": "……我還是認為她的計畫本來能阻止世界末日。她有方法，也有手段……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31731,7 +31731,7 @@
   },
   "Apotheosis (Quest)#627": {
    "src": "But it was never her priority. She was always focused on... this. Keeping Fruma perfect, and under her control.",
-   "dst": "",
+   "dst": "但那從來就不是她的優先。她一直專注在……這個上面。讓 Fruma 保持完美，並且在她的掌控之下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31741,7 +31741,7 @@
   },
   "Apotheosis (Quest)#628": {
    "src": "...does any of this matter? I guess not. We've found ourselves here, either way. Nothing to do but... keep moving forward.",
-   "dst": "",
+   "dst": "……這些還有什麼意義嗎？我想沒有。反正我們橫豎都走到了這裡。除了……繼續往前走，沒別的事好做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31751,7 +31751,7 @@
   },
   "Apotheosis (Quest)#629": {
    "src": "YOU!!! {u}, what is HE doing here?! After he- he- he KILLED Rex, so why is he HERE?!",
-   "dst": "",
+   "dst": "「你」！！！{u}，「他」在這裡做什麼？！他——他——他「殺了」Rex，那他為什麼「在這裡」？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31761,7 +31761,7 @@
   },
   "Apotheosis (Quest)#630": {
    "src": "I should... I should kill you. You- you'd DESERVE it, for everything!!!",
-   "dst": "",
+   "dst": "我應該……我應該殺了你。為了那一切，你——你「活該」！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31771,7 +31771,7 @@
   },
   "Apotheosis (Quest)#631": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31781,7 +31781,7 @@
   },
   "Apotheosis (Quest)#632": {
    "src": "...maybe. Maybe I do. But I can't just leave my mistakes for other people to deal with.",
-   "dst": "",
+   "dst": "……也許吧。也許我活該。但我不能把我自己的錯誤丟給別人去收拾。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31791,7 +31791,7 @@
   },
   "Apotheosis (Quest)#633": {
    "src": "I'm here to help with the Queen. I have to see it through, or... or I've made these mistakes for nothing.",
-   "dst": "",
+   "dst": "我是來幫忙對付女王的。我必須把它做完，否則……否則我犯的這些錯就全白費了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31801,7 +31801,7 @@
   },
   "Apotheosis (Quest)#634": {
    "src": "...right. Of course you want to help, what else would you do? Sigh. Everyone who hurts me, always... out of reach.",
-   "dst": "",
+   "dst": "……是喔。你當然想幫忙，不然你還能做什麼？唉。每一個傷害過我的人，永遠都……碰不到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31811,7 +31811,7 @@
   },
   "Apotheosis (Quest)#635": {
    "src": "Fine. Fine. Until this is done... I'll... ignore it.",
-   "dst": "",
+   "dst": "好吧。好吧。在這件事結束之前……我……先不管它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31821,7 +31821,7 @@
   },
   "Apotheosis (Quest)#636": {
    "src": "I can't wait for this nightmare to be over...",
-   "dst": "",
+   "dst": "我等不及要讓這場惡夢結束了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31831,7 +31831,7 @@
   },
   "Apotheosis (Quest)#637": {
    "src": "...for what it's worth, I",
-   "dst": "",
+   "dst": "……不管這話有沒有份量，我",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31841,7 +31841,7 @@
   },
   "Apotheosis (Quest)#638": {
    "src": "I don't want to hear it. I don't care what you have to say for yourself.",
-   "dst": "",
+   "dst": "我不想聽。我不在乎你要替自己說什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31851,7 +31851,7 @@
   },
   "Apotheosis (Quest)#639": {
    "src": "Come on. Let's go.",
-   "dst": "",
+   "dst": "走吧。我們出發。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31861,7 +31861,7 @@
   },
   "Apotheosis (Quest)#640": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31871,7 +31871,7 @@
   },
   "Apotheosis (Quest)#641": {
    "src": "{u}. I'm here, aren't I? Sigh... Look at it all. What a mess. The sky itself is cracked and broken!!",
-   "dst": "",
+   "dst": "{u}。我人在這裡，不是嗎？唉……看看這一切。多麼一團糟。天空本身都裂開了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31881,7 +31881,7 @@
   },
   "Apotheosis (Quest)#642": {
    "src": "Everything she said... it was true. She had a plan to stop the end of the world. She had the method and the means...",
-   "dst": "",
+   "dst": "她說過的每一句話……都是真的。她有阻止世界末日的計畫。她有方法，也有手段……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31891,7 +31891,7 @@
   },
   "Apotheosis (Quest)#643": {
    "src": "But she was always focused on this, wasn't she? Fruma was her priority. Keeping it perfect and under her control...",
-   "dst": "",
+   "dst": "但她一直專注在這個上面，不是嗎？Fruma 才是她的優先。讓它保持完美、保持在她的掌控之下……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31901,7 +31901,7 @@
   },
   "Apotheosis (Quest)#644": {
    "src": "Maybe I should have seen it. Maybe I did. But it doesn't matter, does it? We've found ourselves here and now either way.",
-   "dst": "",
+   "dst": "也許我早該看出來。也許我看出來了。但那不重要了，對吧？反正我們橫豎都走到了此時此地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31911,7 +31911,7 @@
   },
   "Apotheosis (Quest)#645": {
    "src": "YOU!!! {u}, what is HE doing here?! After he- he- he KILLED Rex, so why is he HERE?!",
-   "dst": "",
+   "dst": "「你」！！！{u}，「他」在這裡做什麼？！他——他——他「殺了」Rex，那他為什麼「在這裡」？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31921,7 +31921,7 @@
   },
   "Apotheosis (Quest)#646": {
    "src": "I should... I should kill you. You- you'd DESERVE it, for everything!!!",
-   "dst": "",
+   "dst": "我應該……我應該殺了你。為了那一切，你——你「活該」！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31931,7 +31931,7 @@
   },
   "Apotheosis (Quest)#647": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31941,7 +31941,7 @@
   },
   "Apotheosis (Quest)#648": {
    "src": "...I would, wouldn't I? But there are bigger things to worry about right now.",
-   "dst": "",
+   "dst": "……我是活該，對吧？但現在有更大的事要擔心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31951,7 +31951,7 @@
   },
   "Apotheosis (Quest)#649": {
    "src": "You're going after the Queen, right? I want to help.",
-   "dst": "",
+   "dst": "你們要去追女王，對吧？我想幫忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31961,7 +31961,7 @@
   },
   "Apotheosis (Quest)#650": {
    "src": "Help. You want to... fine. Fine!! Of course you get to just... turn around and be good now. Of course...",
-   "dst": "",
+   "dst": "幫忙。你想要……好啊。好啊！！你當然可以就這樣……轉個身變成好人。當然……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31971,7 +31971,7 @@
   },
   "Apotheosis (Quest)#651": {
    "src": "It's fine. It's fine! Until this is done... I'll... ignore it.",
-   "dst": "",
+   "dst": "算了。算了！在這件事結束之前……我……先不管它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31981,7 +31981,7 @@
   },
   "Apotheosis (Quest)#652": {
    "src": "I can't wait for this nightmare to be over...",
-   "dst": "",
+   "dst": "我等不及要讓這場惡夢結束了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -31991,7 +31991,7 @@
   },
   "Apotheosis (Quest)#653": {
    "src": "...I just want to make things right.",
-   "dst": "",
+   "dst": "……我只是想把事情彌補回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32001,7 +32001,7 @@
   },
   "Apotheosis (Quest)#654": {
    "src": "Well... you CAN'T!! Her arm is gone, FOREVER, and it's YOUR fault. She would have been DEAD, if it weren't for- f-for Zhiraok!",
-   "dst": "",
+   "dst": "那你「辦不到」！！她的手臂沒了，「永遠」沒了，而那是「你」的錯。要不是——要不是有 Zhiraok，她早就「死了」！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32011,7 +32011,7 @@
   },
   "Apotheosis (Quest)#655": {
    "src": "So... so I don't care. If you're going to help with the Queen... fine. But I don't want to see you ever again after we're done.",
-   "dst": "",
+   "dst": "所以……所以我不在乎。你要幫忙對付女王……好啊。但這件事結束之後，我再也不想見到你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32021,7 +32021,7 @@
   },
   "Apotheosis (Quest)#656": {
    "src": "{u}, Zeph, come on. Let's go.",
-   "dst": "",
+   "dst": "{u}、Zeph，走吧。我們出發。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32031,7 +32031,7 @@
   },
   "Apotheosis (Quest)#657": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32041,7 +32041,7 @@
   },
   "Apotheosis (Quest)#658": {
    "src": "I've been thinking. About all of it. After everything that's happened, everything she's done - everything I've done - it wouldn't be right to turn away.",
-   "dst": "",
+   "dst": "我一直在想。想這一切。在發生了這麼多事、她做了這麼多事——我做了這麼多事——之後，轉身離開是不對的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32051,7 +32051,7 @@
   },
   "Apotheosis (Quest)#659": {
    "src": "It's all broken, breaking... and maybe it always was. And this is just the truth finally being visible.",
-   "dst": "",
+   "dst": "一切都碎了、還在碎……而也許它一直都是碎的。只是真相現在終於露了出來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32061,7 +32061,7 @@
   },
   "Apotheosis (Quest)#660": {
    "src": "...I just wanted to do something about it all. About the realms... but also about Fruma. But... I was never going to make any real change, was I?",
-   "dst": "",
+   "dst": "……我只是想為這一切做點什麼。為了諸界……但也為了 Fruma。可是……我從來就不可能帶來任何真正的改變，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32071,7 +32071,7 @@
   },
   "Apotheosis (Quest)#661": {
    "src": "I'll help you take her down. It's only right. After that... I don't know.",
-   "dst": "",
+   "dst": "我會幫你們把她拉下來。那是應該的。之後……我不知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32081,7 +32081,7 @@
   },
   "Apotheosis (Quest)#662": {
    "src": "YOU!!! {u}, what is HE doing here?! After he- he- he KILLED Rex, so why is he HERE?!",
-   "dst": "",
+   "dst": "「你」！！！{u}，「他」在這裡做什麼？！他——他——他「殺了」Rex，那他為什麼「在這裡」？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32091,7 +32091,7 @@
   },
   "Apotheosis (Quest)#663": {
    "src": "I should... I should kill you. You- you'd DESERVE it, for everything!!!",
-   "dst": "",
+   "dst": "我應該……我應該殺了你。為了那一切，你——你「活該」！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32101,7 +32101,7 @@
   },
   "Apotheosis (Quest)#664": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32111,7 +32111,7 @@
   },
   "Apotheosis (Quest)#665": {
    "src": "W-well? What do you have to say for yourself?!",
-   "dst": "",
+   "dst": "怎、怎樣？你要替自己說什麼？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32121,7 +32121,7 @@
   },
   "Apotheosis (Quest)#666": {
    "src": "...you're right.",
-   "dst": "",
+   "dst": "……你說得對。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32131,7 +32131,7 @@
   },
   "Apotheosis (Quest)#667": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32141,7 +32141,7 @@
   },
   "Apotheosis (Quest)#668": {
    "src": "Then- th-then... I'll...",
-   "dst": "",
+   "dst": "那——那、那我就……我要……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32151,7 +32151,7 @@
   },
   "Apotheosis (Quest)#669": {
    "src": "........",
-   "dst": "",
+   "dst": "………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32161,7 +32161,7 @@
   },
   "Apotheosis (Quest)#670": {
    "src": "...I can't. I... I can't do it.",
-   "dst": "",
+   "dst": "……我做不到。我……我下不了手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32171,7 +32171,7 @@
   },
   "Apotheosis (Quest)#671": {
    "src": "After everything... after EVERYTHING, I get a CHANCE to- to- to get back at s-someone who's hurt me, and- and- a-and I CAN'T DO IT?!",
-   "dst": "",
+   "dst": "在發生了那麼多之後……在「那麼多」之後，我終於有「一次機會」去——去——去報復一個傷害過我的人，而——而——而我「居然下不了手」？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32181,7 +32181,7 @@
   },
   "Apotheosis (Quest)#672": {
    "src": "...whatever. WAHTEVER!! Let's just go deal with the STUPID Queen!!",
-   "dst": "",
+   "dst": "……算了。「算了」！！我們就去解決那個「該死的」女王吧！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32191,7 +32191,7 @@
   },
   "Apotheosis (Quest)#673": {
    "src": "I can't wait for this nightmare to be over...",
-   "dst": "",
+   "dst": "我等不及要讓這場惡夢結束了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32201,7 +32201,7 @@
   },
   "Apotheosis (Quest)#674": {
    "src": "...I'm sorry.",
-   "dst": "",
+   "dst": "……對不起。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32211,7 +32211,7 @@
   },
   "Apotheosis (Quest)#675": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32221,7 +32221,7 @@
   },
   "Apotheosis (Quest)#676": {
    "src": "I don't care.",
-   "dst": "",
+   "dst": "我不在乎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32231,7 +32231,7 @@
   },
   "Apotheosis (Quest)#677": {
    "src": "{u}, Zeph, let's just... go.",
-   "dst": "",
+   "dst": "{u}、Zeph，我們就……走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32241,7 +32241,7 @@
   },
   "Apotheosis (Quest)#678": {
    "src": "Enter the Royal Palace at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "進入 [-{~1}, {~2}, -{~3}] 的王宮。",
    "role": "desc",
    "kind": "objective",
    "quest": "Apotheosis (Quest)",
@@ -32251,7 +32251,7 @@
   },
   "Apotheosis (Quest)#679": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32261,7 +32261,7 @@
   },
   "Apotheosis (Quest)#680": {
    "src": "...no more excuses.",
-   "dst": "",
+   "dst": "……不再找藉口了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32271,7 +32271,7 @@
   },
   "Apotheosis (Quest)#681": {
    "src": "How is- is this going to go?",
-   "dst": "",
+   "dst": "這會、會怎麼發展？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32281,7 +32281,7 @@
   },
   "Apotheosis (Quest)#682": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32291,7 +32291,7 @@
   },
   "Apotheosis (Quest)#683": {
    "src": "And so, the cards fall. The shards collapse as decisions are made and paths are chosen. What a destructive end it has turned out to be.",
-   "dst": "",
+   "dst": "於是，牌落下了。隨著決定被做出、道路被選擇，碎片崩解。結果竟是如此毀滅性的一個終局。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32301,7 +32301,7 @@
   },
   "Apotheosis (Quest)#684": {
    "src": "In retrospect, it seems an inevitability... each decision branching out from the last. What was the weight that sent it over the edge? The tournament? The selection?",
-   "dst": "",
+   "dst": "回頭看，它似乎是必然的……每一個決定都從上一個分岔出來。是什麼樣的重量把它推過了臨界？那場比武？那次遴選？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32311,7 +32311,7 @@
   },
   "Apotheosis (Quest)#685": {
    "src": "Would you have been the better choice? No. Having seen now what I have, I am only more certain. But perhaps it could have saved us all this mess.",
-   "dst": "",
+   "dst": "你會是更好的選擇嗎？不會。看過我如今所看見的一切之後，我只是更加確定。但或許那能省下我們這一整場混亂。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32321,7 +32321,7 @@
   },
   "Apotheosis (Quest)#686": {
    "src": "Oh, Anathema... what a mess you've left in your wake...",
-   "dst": "",
+   "dst": "噢，Anathema……你身後留下了何等的一片狼藉……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32331,7 +32331,7 @@
   },
   "Apotheosis (Quest)#687": {
    "src": "You will face no resistance from me. I do not have a death wish.",
-   "dst": "",
+   "dst": "你們不會遭到我的抵抗。我沒有求死的意願。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32341,7 +32341,7 @@
   },
   "Apotheosis (Quest)#688": {
    "src": "So go on, fellow Scion. Put an end to this.",
-   "dst": "",
+   "dst": "所以去吧，同為後裔的你。把這件事了結。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32351,7 +32351,7 @@
   },
   "Apotheosis (Quest)#689": {
    "src": "Don't call me",
-   "dst": "",
+   "dst": "別那樣叫我",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32361,7 +32361,7 @@
   },
   "Apotheosis (Quest)#690": {
    "src": "Sovereign, then? Deny it all you like, but you chose to take on that role.",
-   "dst": "",
+   "dst": "那麼，統領？你要否認多少都行，但你確實選擇了接下那個角色。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32371,7 +32371,7 @@
   },
   "Apotheosis (Quest)#691": {
    "src": "As with each of us, that mark remains. It cannot be so easily discarded. It cannot be forgotten.",
-   "dst": "",
+   "dst": "如同我們每一個人，那道印記仍在。它不是那麼容易丟棄的。它不會被遺忘。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32381,7 +32381,7 @@
   },
   "Apotheosis (Quest)#692": {
    "src": "Her power gifted, drawn through the mark... and she has given much away in pursuit of this freedom, hasn't she...",
-   "dst": "",
+   "dst": "她的力量是賜予的，透過那道印記流過來……而她為了追求這份自由，已經給出去太多了，不是嗎……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32391,7 +32391,7 @@
   },
   "Apotheosis (Quest)#693": {
    "src": "How much of it remains now, I wonder? Enough to guarantee her victory? Or, perhaps... little enough to grant you a chance of success...?",
-   "dst": "",
+   "dst": "如今還剩下多少呢，我很好奇？足以保證她勝利嗎？又或者……少到足以給你們一線成功的機會？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32401,7 +32401,7 @@
   },
   "Apotheosis (Quest)#694": {
    "src": "Hm! I cannot say for certain. Of all things, this variable yet eludes me. The shards are inconclusive - equally favourable and not.",
-   "dst": "",
+   "dst": "唔！我無法斷言。萬事之中，唯獨這個變數仍逃過我。碎片的指示並不明確——吉與不吉各佔一半。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32411,7 +32411,7 @@
   },
   "Apotheosis (Quest)#695": {
    "src": "But you... an unexpected variable, though not unwelcome. A naturally-born manaweaver! I thought I'd never see the day.",
-   "dst": "",
+   "dst": "但你……一個出乎意料的變數，不過並非不受歡迎。一位天生的織法者！我以為我這輩子都見不到這一天了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32421,7 +32421,7 @@
   },
   "Apotheosis (Quest)#696": {
    "src": "Wh... what?",
-   "dst": "",
+   "dst": "什……什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32431,7 +32431,7 @@
   },
   "Apotheosis (Quest)#697": {
    "src": "...naturally, you do not know the gift you possess. That knowledge was lost with the old world, after all. Will you grow into that power? Or will you allow it to consume you?",
-   "dst": "",
+   "dst": "……你自然不知道自己擁有的天賦。那份知識畢竟隨著舊世界一同失落了。你會長成那份力量嗎？還是會任由它吞噬你？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32441,7 +32441,7 @@
   },
   "Apotheosis (Quest)#698": {
    "src": "Only time will tell.",
-   "dst": "",
+   "dst": "唯有時間能給出答案。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32451,7 +32451,7 @@
   },
   "Apotheosis (Quest)#699": {
    "src": "And you. Do you remember what I asked you? If not Her, then who?",
-   "dst": "",
+   "dst": "還有你。你記得我問過你什麼嗎？如果不是她，那會是誰？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32461,7 +32461,7 @@
   },
   "Apotheosis (Quest)#700": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32471,7 +32471,7 @@
   },
   "Apotheosis (Quest)#701": {
    "src": "From here, there are no easy paths - your decisions have buried all of those. For Fruma, for the world... each step towards a better future will be a bitter, hard-fought victory.",
-   "dst": "",
+   "dst": "從這裡開始，沒有容易的路了——你們的決定把那些路全都埋掉了。為了 Fruma、為了這個世界……通往更好未來的每一步，都會是苦澀而艱難掙來的勝利。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32481,7 +32481,7 @@
   },
   "Apotheosis (Quest)#702": {
    "src": "But perhaps it will prove worthwhile, after all! You've surprised me once already - who's to say you won't do it again? An uncertain future... what an exciting prospect.",
-   "dst": "",
+   "dst": "但也許那終究是值得的！你已經讓我意外過一次了——誰能說你不會再來一次？一個不確定的未來……多麼令人興奮的展望。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32491,7 +32491,7 @@
   },
   "Apotheosis (Quest)#703": {
    "src": "I hope to see you all once more, somewhere down this winding road of ours.",
-   "dst": "",
+   "dst": "我期待在我們這條蜿蜒的路上某處，再見到你們所有人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32501,7 +32501,7 @@
   },
   "Apotheosis (Quest)#704": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32511,7 +32511,7 @@
   },
   "Apotheosis (Quest)#705": {
    "src": "...oh. Hello.",
-   "dst": "",
+   "dst": "……喔。你好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32521,7 +32521,7 @@
   },
   "Apotheosis (Quest)#706": {
    "src": "I'm... I don't know. Saying goodbye, I guess.",
-   "dst": "",
+   "dst": "我……我不知道。大概是在道別吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32531,7 +32531,7 @@
   },
   "Apotheosis (Quest)#707": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
@@ -32541,7 +32541,7 @@
   },
   "Apotheosis (Quest)#708": {
    "src": "I should... get going. I'll, uh... see you around.",
-   "dst": "",
+   "dst": "我該……走了。我，呃……回頭見。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Apotheosis (Quest)",
