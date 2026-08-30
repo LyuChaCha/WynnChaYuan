@@ -274,16 +274,34 @@ public record LineParts(
         return List.copyOf(out);
     }
 
-    /** 整段都是符號（沒有字母也沒有數字），例如 {@code ✖}、{@code ✦}、{@code ⚔}。 */
+    /**
+     * 整段都是符號（沒有字母也沒有數字），例如 {@code ✖}、{@code ✦}、{@code ⚔}。
+     *
+     * <p><b>成對的括號不算。</b>括號自己不帶意義，它的顏色只有連同被包住的
+     * 內容一起才成立；而被包住的那半是要翻譯的，翻完就比對不到、貼不回去。
+     * 於是一整組只剩兩個有顏色的括號——使用者回報的
+     * 「{@code [+3 獎勵抽數]} 裡只有 {@code [} 是綠色的」就是這樣來的。
+     * 整組都沒有顏色，比只剩括號有顏色好。
+     *
+     * <p>{@code ✖}、{@code ✔}、{@code ⚔} 這些不受影響——那些單獨出現就是
+     * 一個完整的狀態，本來就是這條規則要救的對象。
+     */
     private static boolean isSymbolRun(String text) {
+        boolean meaningful = false;
         for (int i = 0; i < text.length(); i++) {
             char c = text.charAt(i);
             if (Character.isLetterOrDigit(c) || Character.isWhitespace(c)) {
                 return false;
             }
+            if (BRACKETS.indexOf(c) < 0) {
+                meaningful = true;
+            }
         }
-        return true;
+        return meaningful;
     }
+
+    /** 見 {@link #isSymbolRun}：這些自己不成一個意思，不單獨收成重點段。 */
+    private static final String BRACKETS = "[]()<>{}【】（）「」";
 
     /** 見 {@link #accents}。三個字元大約是最短的有意義單字。 */
     private static final int MIN_ACCENT_LENGTH = 3;
