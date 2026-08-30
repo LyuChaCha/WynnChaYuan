@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**18,161 / 22,067 句已翻（82.3%），共 157 個任務，還沒有人動的有 6 個。**
+**18,563 / 22,067 句已翻（84.1%），共 157 個任務，還沒有人動的有 5 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -45,7 +45,7 @@
 | Acquiring Credentials | [`acquiring-credentials.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/acquiring-credentials.json) | 92 | 81 | 10 | ✅ |
 | Aldorei's Secret Part I | [`aldorei-s-secret-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/aldorei-s-secret-part-i.json) | 71 | 60 | 8 | ✅ |
 | Aldorei's Secret Part II | [`aldorei-s-secret-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/aldorei-s-secret-part-ii.json) | 600 | 569 | 17 | — |
-| All Roads to Peace | [`all-roads-to-peace.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/all-roads-to-peace.json) | 402 | 389 | 38 | — |
+| All Roads to Peace | [`all-roads-to-peace.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/all-roads-to-peace.json) | 402 | 389 | 38 | ✅ |
 | An Iron Heart Part I | [`an-iron-heart-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/an-iron-heart-part-i.json) | 24 | 20 | 3 | ✅ |
 | An Iron Heart Part II | [`an-iron-heart-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/an-iron-heart-part-ii.json) | 61 | 53 | 7 | ✅ |
 | Apotheosis (Quest) | [`apotheosis-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/apotheosis-quest.json) | 709 | 690 | 26 | ✅ |
