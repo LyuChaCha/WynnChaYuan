@@ -131,6 +131,7 @@ public final class WrapTest {
         }
         check("亂數四千輪都沒丟例外", () -> "");
 
+        glyphNotAtLineEnd();
         oneLine();
         labelBreak();
         balanced();
@@ -254,6 +255,45 @@ public final class WrapTest {
                 three.length == 3 && three[0].equals("猛撲:"));
         report("剩下那半也排得平均",
                 three.length == 3 && Math.abs(three[1].length() - three[2].length()) <= 2);
+    }
+
+    /**
+     * 圖示不能落在行尾。
+     *
+     * <p>「{@code 使用 {#} 物品鑑定師}」的 {@code {#}} 是物品鑑定師的圖示，
+     * 是它的前綴。使用者回報的畫面是斷在兩者中間——
+     *
+     * <pre>
+     *   此物品的力量已被封印，使用 ◉
+     *   物品鑑定師 即可解放其潛能。
+     * </pre>
+     *
+     * <p>這裡不挑特定寬度，而是<b>掃過所有會折行的寬度</b>：只要有一個寬度
+     * 讓圖示落在行尾就算失敗。挑一個寬度測的話，換個字數就漏掉了。
+     */
+    private static void glyphNotAtLineEnd() {
+        System.out.println("\n  -- 圖示不能落在行尾 --");
+
+        String text = "此物品的力量已被封印，使用 {#} 物品鑑定師 即可解放其潛能。";
+        int bad = 0;
+        String worst = null;
+        for (int px = 4; px <= 40; px++) {
+            String wrapped = LineTranslator.wrapToWidth(text, px, WrapTest::measure);
+            for (String row : wrapped.split(String.valueOf(NL), -1)) {
+                if (row.endsWith("{#}")) {
+                    bad++;
+                    if (worst == null) {
+                        worst = "寬度 " + px + "：" + show(wrapped);
+                    }
+                }
+            }
+        }
+        report("沒有任何寬度讓圖示落在行尾"
+                + (worst == null ? "" : "（例如 " + worst + "）"), bad == 0);
+
+        // 內容守恆：避尾只是挪斷點，不能吃字
+        String once = LineTranslator.wrapToWidth(text, 12, WrapTest::measure);
+        report("字沒有變少", bare(once).equals(bare(text)));
     }
 
     /** 折行結果拆成幾行。 */
