@@ -31,6 +31,39 @@
   （`Reishi Mushroom`→靈芝、`Tea Tree Mushroom`→茶樹菇、`Heather Beer`→石楠啤酒）。
   `No.` 一條與 hollow-serenity 撞譯法，採用先前已存在的譯文。
 
+### 修正
+
+- **對話選項沒翻：先讓探針錄得到它，不猜。**（回報：NPC 台詞有翻，右上角的
+  多個回答選項沒翻。）
+
+  <p><b>查到的事實：</b>
+
+  <p>Wynntils 的 `NpcDialogueEvent` 與 `DialogueSegment` <b>都只有三個方法</b>
+  ——`getDialogueText()`、`requiresShift()`、`hasChoices()`（用 `javap` 讀 jar
+  確認過）。<b>選項的文字不在裡面</b>，事件只告訴我們「有選項」這件事。
+
+  <p>模組自己的 `noteChoices` 診斷確實錄到過一次有選項的對話，
+  但內容<b>只有 NPC 那一句</b>（`Well, this is a sight, for sure! What can we do
+  for you, fella?`），三個選項一個都沒有。而八份 `dialogue-probe`
+  <b>全部來自沒有選項的對話</b>——所以完全沒有樣本能顯示選項究竟走哪一條路。
+
+  <p><b>`DialogueOverlay` 其實已經有處理選項的程式</b>（`choices`、
+  `looksLikeChoice`、分開畫的那個框），只是它等的資料從來沒到。原始碼裡留著
+  一句「選項對話的實際結構還沒定案，先把原文記下來，下一輪照真實資料實作
+  <b>才不會又猜錯</b>」——那正是現在的處境，所以這一版<b>不實作</b>，
+  先把資料收齊。
+
+  <p><b>改的是探針。</b>`record` 的八格會被<b>先遇到的</b>對話用光，
+  而有選項的對話少見得多，於是永遠輪不到它。改成另外保留三格只給有選項的，
+  寫進 `dialogue-choice-probe-N.txt`，錄的是<b>未經 Wynntils 清理的原始
+  action bar</b>——那才看得出選項是不是在 `top_right` 之類的分區裡
+  （原始訊息本來就是分區的：`top_right`、`bottom_middle`、對話字型各一段）。
+
+  <p>原始訊息在 `ActionBarListener`、`hasChoices` 旗標在 `CaptureListener`，
+  兩邊用一個靜態旗標串起來。Wynntils 的事件是從 action bar <b>推導</b>出來的、
+  多半晚一拍，所以第一格可能錄到旗標還沒設起來的那一幀——留三格就夠涵蓋到
+  設起來之後的樣子。
+
 ---
 
 ## [1.99.75] - 2026-08-30
