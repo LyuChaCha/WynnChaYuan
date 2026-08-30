@@ -131,10 +131,67 @@ public final class WrapTest {
         }
         check("亂數四千輪都沒丟例外", () -> "");
 
+        balanced();
+
         System.out.println(failures == 0 ? "Wrap: 全部通過" : "Wrap: " + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 同樣的行數要排得平均，最後一行不該只剩零頭。
+     *
+     * <p>使用者回報的畫面：`Pounce: Escape becomes a forward lunge.` 原文兩行，
+     * 譯文也是兩行，但折成 11 字 ＋ 2 字——
+     *
+     * <pre>
+     *   ◆ 猛撲: 逃脫變成向前突
+     *   進。
+     * </pre>
+     *
+     * <p>貪心折行把第一行塞滿，剩下的全掉到最後一行。中文每個字都能斷，
+     * 沒有空白可以退，所以特別明顯。
+     */
+    private static void balanced() {
+        System.out.println("\n  -- 同樣行數要排得平均 --");
+
+        // measure 數的是「幾個字」。這句 13 個字，寬 11 正好逼出貪心的 11+2。
+        // 平均之後兩行的字數應該差不多。
+        String text = "猛撲: 逃脫變成向前突進。";
+        String wrapped = LineTranslator.wrapBalanced(text, 11, WrapTest::measure);
+        String[] rows = wrapped.split(String.valueOf(NL));
+        report("折成兩行（實際：" + show(wrapped) + "）", rows.length == 2);
+        if (rows.length == 2) {
+            int shortest = Math.min(rows[0].length(), rows[1].length());
+            int longest = Math.max(rows[0].length(), rows[1].length());
+            // 貪心是 11 ＋ 2（差 9）；平均之後不該差這麼多。
+            report("兩行的長度接近（" + rows[0].length() + " / " + rows[1].length() + "）",
+                    longest - shortest <= 3);
+            report("最後一行不是零頭", shortest >= 3);
+        }
+
+        // 反面：不能為了平均而把英文單字切開。
+        String withWord = "每次命中使你獲得 Crystallize 層數。";
+        String tight = LineTranslator.wrapBalanced(withWord, 14, WrapTest::measure);
+        boolean split = false;
+        for (int at = tight.indexOf(NL); at > 0 && at + 1 < tight.length();
+                at = tight.indexOf(NL, at + 1)) {
+            // 只看拉丁字母。中文字在 Java 裡也是 isLetter，拿它判斷會把
+            // 「…得 ⏎ Crystallize」誤判成切開了單字——中文本來就可以在那裡斷。
+            if (latin(tight.charAt(at - 1)) && latin(tight.charAt(at + 1))) {
+                split = true;
+            }
+        }
+        report("平均分配沒有把英文單字切開（實際：" + show(tight) + "）", !split);
+
+        // 內容守恆：平均只重排，不能吃字。
+        report("字沒有變少", bare(tight).equals(bare(withWord)));
+    }
+
+    /** 是不是拉丁字母。中文不算——它本來就可以在任何字之間斷。 */
+    private static boolean latin(char c) {
+        return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
     }
 
     /** 連續空白收成一個，首尾去掉。比較折行結果時用。 */

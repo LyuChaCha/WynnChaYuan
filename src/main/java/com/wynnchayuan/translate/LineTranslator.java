@@ -574,8 +574,94 @@ public final class LineTranslator {
             width = width * 11 / 10;
             wrapped = wrapToWidth(text, width);
         }
-        return wrapped;
+        return balance(text, wrapped, width,
+                piece -> widthOf(Component.literal(piece)));
     }
+
+    /**
+     * 折行＋平均分配，量法可以換掉。<b>測試用</b>——正式的量法要 Minecraft 的
+     * 字型，測試環境裡沒有，所有寬度都會量成 0，平均分配就永遠不會被觸發。
+     */
+    static String wrapBalanced(String text, int maxPx, ToIntFunction<String> measure) {
+        return balance(text, wrapToWidth(text, maxPx, measure), maxPx, measure);
+    }
+
+    /**
+     * 同樣的行數，把字排得平均一點。
+     *
+     * <h2>為什麼要做</h2>
+     * 貪心折行會把第一行塞到再也塞不下為止，剩下的全掉到最後一行：
+     *
+     * <pre>
+     *   ◆ 猛撲: 逃脫變成向前突
+     *   進。                     ← 最後一行只剩兩個字
+     * </pre>
+     *
+     * <p>英文的單字之間有空白可以退，看起來還好；中文每個字都能斷，
+     * 於是第一行被塞滿、最後一行只剩零頭，還常常把一個詞切成兩半。
+     *
+     * <h2>做法</h2>
+     * 行數<b>固定</b>的前提下，可用寬度越窄，每一行就被迫越接近那個寬度，
+     * 最後一行的零頭自然被前面幾行讓出來的字補滿。所以把寬度一路往下收，
+     * 收到再收就會多一行為止，取最後一個還是同樣行數的結果。
+     *
+     * <p><b>行數一個字都不動。</b>那是原文決定的、面板高度也照它算，
+     * 這裡只重排同樣的字，不會讓任何東西溢出或縮排跑掉。
+     *
+     * @param wrapped 已經折好的結果；收不窄就原樣回傳
+     */
+    private static String balance(String text, String wrapped, int width,
+                                  ToIntFunction<String> measure) {
+        int rows = lines(wrapped);
+        if (rows < 2) {
+            return wrapped;                     // 一行沒得平均
+        }
+        String best = wrapped;
+        int at = width;
+        for (int step = 0; step < BALANCE_STEPS; step++) {
+            int narrower = at * 19 / 20;        // 每次收 5%
+            if (narrower <= 0 || narrower == at) {
+                break;
+            }
+            String tighter = wrapToWidth(text, narrower, measure);
+            if (lines(tighter) != rows) {
+                break;                          // 再收就會多一行，停在上一個
+            }
+            if (splitsWord(tighter) && !splitsWord(wrapped)) {
+                break;                          // 見 splitsWord：寧可不平均
+            }
+            best = tighter;
+            at = narrower;
+        }
+        return best;
+    }
+
+    /**
+     * 這個折行結果有沒有把英文單字切成兩半。
+     *
+     * <p>收窄行寬會讓某些行短到<b>放不下一整個英文單字</b>——{@code breaksWord}
+     * 想退回上一個空白，但那一行根本沒有空白可退，於是 {@code Crystallize}
+     * 被切成 {@code Crystalliz} 加 {@code e}。原本的貪心折行不會這樣，
+     * 因為行寬夠。
+     *
+     * <p>所以平均分配每收窄一次都要檢查一遍：只要比原本多切開一個單字就停手。
+     * 最後一行短一點還讀得懂，單字被劈成兩半就不行了。
+     */
+    private static boolean splitsWord(String wrapped) {
+        for (int at = wrapped.indexOf(NEWLINE); at > 0 && at + 1 < wrapped.length();
+                at = wrapped.indexOf(NEWLINE, at + 1)) {
+            if (isWordChar(wrapped.charAt(at - 1)) && isWordChar(wrapped.charAt(at + 1))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 平均分配最多收幾次。每次 5%，二十次約收到原本的三成六——
+     * 早在那之前就會多出一行而停下來，這個上限只是保證不會跑太久。
+     */
+    private static final int BALANCE_STEPS = 20;
 
     /** 放寬幾次就放棄。每次一成，五次約多五成，量錯到這個程度另有問題。 */
     private static final int WRAP_RETRIES = 5;
