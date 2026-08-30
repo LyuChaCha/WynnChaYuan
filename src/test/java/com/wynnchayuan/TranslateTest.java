@@ -52,6 +52,7 @@ public final class TranslateTest {
         placeLine(dir);
         mismatch(dir);
         rangePercent(dir);
+        bracketAccent(dir);
 
         System.out.println(failures == 0 ? "\n全部通過" : "\n失敗 " + failures + " 項");
         System.exit(failures == 0 ? 0 : 1);
@@ -429,6 +430,59 @@ public final class TranslateTest {
                         + (four == null ? "null" : four.getString()) + "）",
                 four != null && four.getString().contains("生命回復")
                         && !four.getString().contains("百分比"));
+    }
+
+    /**
+     * 括號不會自己扛著顏色留下來。
+     *
+     * <p>使用者回報的畫面是 {@code [+3 獎勵抽數]} 裡<b>只有 {@code [} 是綠色的</b>。
+     * 原文那三段都是綠的，但中間那半翻成中文之後就比對不到、貼不回去，
+     * 於是整組只剩兩個綠括號——比整組都沒顏色更像壞掉。
+     *
+     * <p>所以括號類的標點不收成重點段。{@code ✖} 這種單獨就是一個狀態的符號
+     * 照收不誤，那是這條規則本來要救的對象。
+     */
+    private static void bracketAccent(Path dir) throws Exception {
+        System.out.println("\n  -- 括號不當重點段 --");
+
+        // 主樣式是灰的（涵蓋字數最多）；括號是綠的、被包住的詞是白的，各自一段。
+        // 括號與詞要<b>不同色</b>才會是兩段——同色會被合併成一段，
+        // 那種情況本來就不會只剩括號有顏色。
+        StyledText line = StyledText.fromString(
+                "§7You gain the following: §a[§f+3 Reward Pulls§a]§7 right now");
+        LineParts parts = LineParts.of(line);
+        boolean bracket = false;
+        boolean word = false;
+        for (LineParts.Piece accent : parts.accents()) {
+            if (accent.text().equals("[") || accent.text().equals("]")) {
+                bracket = true;
+            }
+            if (accent.text().contains("Reward Pulls")) {
+                word = true;
+            }
+        }
+        check("括號沒有被收成重點段", !bracket);
+        check("被括號包住的詞照樣收（顏色要靠它貼回去）", word);
+
+        // 反面：單獨一個 ✖ 仍然要收，否則整行唯一的紅色就沒了。
+        LineParts cross = LineParts.of(StyledText.fromString("§c✖§7 Not unlocked"));
+        boolean kept = false;
+        for (LineParts.Piece accent : cross.accents()) {
+            if (accent.text().equals("✖")) {
+                kept = true;
+            }
+        }
+        check("單獨的 ✖ 仍然是重點段", kept);
+
+        // 括號裡有真正的符號時，整段還是要收——`[✫✫✫✫]` 的星星才是重點。
+        LineParts stars = LineParts.of(StyledText.fromString("§7Chest §e[✫✫✫✫]"));
+        boolean starred = false;
+        for (LineParts.Piece accent : stars.accents()) {
+            if (accent.text().contains("✫")) {
+                starred = true;
+            }
+        }
+        check("[✫✫✫✫] 這種括號裡有符號的整段照收", starred);
     }
 
     private static void check(String name, boolean pass) {
