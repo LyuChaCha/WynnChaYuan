@@ -492,7 +492,7 @@ public final class DialogueOverlay {
                 + (rows.size() - 1) * (ROW_GAP * 2 + 1);
 
         int x = graphics.guiWidth() - boxW - CHOICE_EDGE;
-        int y = graphics.guiHeight() * 3 / 8;
+        int y = graphics.guiHeight() * 5 / 8;
         if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.CHOICES)) {
             x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.CHOICES)
                     - boxW / 2;
