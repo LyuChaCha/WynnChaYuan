@@ -62,10 +62,30 @@ jobs:
 
           由 rebuild-quest-bundle 工作流程自動提交。"
           git push -u origin "$BRANCH"
-          gh pr create --base main --head "$BRANCH" \
-            --title "重新產生合併檔、認領清單與進度表" \
-            --body "由 rebuild-quest-bundle 自動產生。內容全部是產生物：
+          # 開 PR 需要倉庫允許 Actions 這麼做。沒開的話這裡會是
+          #   GitHub Actions is not permitted to create or approve pull requests
+          # 分支已經推上去了，所以不讓它變成紅燈——改成把該怎麼處理寫進執行摘要。
+          # 紅燈沒有人會連到「進度表很舊」，摘要上的一句話才有人看得懂。
+          if gh pr create --base main --head "$BRANCH" \
+               --title "重新產生合併檔、認領清單與進度表" \
+               --body "由 rebuild-quest-bundle 自動產生。內容全部是產生物：
           quest-dialogue.json、docs/quest-dialogue.md、以及各文件裡的進度數字。"
-          # 倉庫沒開自動合併時這行會失敗，那就讓 PR 開著等人合併，
-          # 不要因此把整個工作流程變成紅燈。
-          gh pr merge "$BRANCH" --squash --auto --delete-branch || true
+          then
+            # 倉庫沒開自動合併時這行會失敗，那就讓 PR 開著等人合併。
+            gh pr merge "$BRANCH" --squash --auto --delete-branch || true
+          else
+            {
+              echo "### 進度表已重新產生，但 PR 沒開成"
+              echo
+              echo "產生物已經推到分支 **$BRANCH**，只差一個 PR。"
+              echo
+              echo "倉庫目前不允許 Actions 開 PR。要讓這件事完全自動化，到"
+              echo "**Settings → Actions → General → Workflow permissions**，勾選"
+              echo "**Allow GitHub Actions to create and approve pull requests**。"
+              echo
+              echo "在那之前，手動開一個："
+              echo
+              echo "<https://github.com/$GITHUB_REPOSITORY/pull/new/$BRANCH>"
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "PR 沒開成（倉庫設定），詳見執行摘要。分支已推上去：$BRANCH"
+          fi
