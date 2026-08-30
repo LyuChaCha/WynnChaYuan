@@ -75,6 +75,19 @@ def load_corpus() -> tuple[dict[str, tuple[Path, str, str]], set[str]]:
     return index, set(index)
 
 
+def mismatched(src: str, dst: str) -> str:
+    """新的原文裡有哪一種佔位符是譯文放不回去的。
+
+    <p>`--write` 的前提是「譯文早就對了，只是 src 沒對上」。新的 src 一旦帶了
+    譯文沒有的佔位符，那個前提就不成立——寫下去只會讓 validate 紅掉，
+    而且畫面上會變成圖示消失或錯位。這種要人看過再處理，不是工具的事。
+    """
+    for tag in ("{#}", "{~}", "{p}", "{u}"):
+        if src.count(tag) != dst.count(tag):
+            return tag
+    return ""
+
+
 def truncated(caught: str, corpus: str) -> bool:
     """收集到的那份是不是語料的半截。
 
@@ -138,6 +151,12 @@ def main(argv: list[str]) -> int:
             print()
             continue
         if dst:
+            off = mismatched(src, dst)
+            if off:
+                print(f"  ↑ 新的原文有 {off} 個譯文放不回去，不會寫入。")
+                print("    先把圖示補進譯文（例如把名稱包成 {#}名稱{#}）再跑一次。")
+                print()
+                continue
             edits.setdefault(path, []).append((key, best, src))
 
     print(f"接近但對不上的：{hits} 條，其中 {sum(len(v) for v in edits.values())} 條已經有譯文")
