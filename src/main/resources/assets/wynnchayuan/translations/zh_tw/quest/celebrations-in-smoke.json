@@ -2,13 +2,17 @@
  "_meta": {
   "quest": "Celebrations in Smoke",
   "count": 528,
-  "translated": 0,
-  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+  "translated": 528,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
+  "review": {
+   "translator": "claude",
+   "proofread": false
+  }
  },
  "entries": {
   "Celebrations in Smoke#000": {
    "src": "Read the noticeboard at [-{~}, {~}, -{~}] near {p}.",
-   "dst": "",
+   "dst": "閱讀 {p} 附近 [-{~1}, {~2}, -{~3}] 的公告欄。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -18,7 +22,7 @@
   },
   "Celebrations in Smoke#001": {
    "src": "The board is plastered full of old notices, but a newer one catches your eye:",
-   "dst": "",
+   "dst": "欄上貼滿了舊公告，但有一張比較新的吸引了你的目光：",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -28,7 +32,7 @@
   },
   "Celebrations in Smoke#002": {
    "src": "THE FESTIVAL OF THE WICKER HAS RETURNED AGAIN! JOIN THE ENTIRE MISTWOODS IN ALDWELL FOR THE FESTIVITIES",
-   "dst": "",
+   "dst": "柳枝人祭典再度回歸！全 MISTWOODS 齊聚 ALDWELL 共襄盛舉",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -38,7 +42,7 @@
   },
   "Celebrations in Smoke#003": {
    "src": "It looks like the festival starts tomorrow afternoon. Would you like to attend?",
-   "dst": "",
+   "dst": "看來祭典明天下午開始。你想參加嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -48,7 +52,7 @@
   },
   "Celebrations in Smoke#004": {
    "src": "Maybe another time then.",
-   "dst": "",
+   "dst": "那就下次吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -58,7 +62,7 @@
   },
   "Celebrations in Smoke#005": {
    "src": "Enter the Festival of the Wicker at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "進入 [-{~1}, {~2}, -{~3}] 的柳枝人祭典。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -68,7 +72,7 @@
   },
   "Celebrations in Smoke#006": {
    "src": "Welcome to the Festival of the Wicker!",
-   "dst": "",
+   "dst": "歡迎來到柳枝人祭典！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -78,7 +82,7 @@
   },
   "Celebrations in Smoke#007": {
    "src": "May I see your medallion?",
-   "dst": "",
+   "dst": "可以讓我看看你的徽牌嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -88,7 +92,7 @@
   },
   "Celebrations in Smoke#008": {
    "src": "Then you cannot be trusted. Leave.",
-   "dst": "",
+   "dst": "那你就不可信。離開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -98,7 +102,7 @@
   },
   "Celebrations in Smoke#009": {
    "src": "Thank you, enjoy the festival! You can grab a mask inside.",
-   "dst": "",
+   "dst": "謝謝，祭典愉快！你可以在裡面拿一副面具。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -108,7 +112,7 @@
   },
   "Celebrations in Smoke#010": {
    "src": "The board doesn't have anything else on it that catches your eye.",
-   "dst": "",
+   "dst": "欄上沒有其他吸引你目光的東西了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -118,7 +122,7 @@
   },
   "Celebrations in Smoke#011": {
    "src": "We can't let you in without seeing your medallion!",
-   "dst": "",
+   "dst": "沒看到徽牌我們不能放你進去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -128,7 +132,7 @@
   },
   "Celebrations in Smoke#012": {
    "src": "Take a spare mask.",
-   "dst": "",
+   "dst": "拿一副備用面具。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -138,7 +142,7 @@
   },
   "Celebrations in Smoke#013": {
    "src": "Once you get inside, make sure to put your mask on.",
-   "dst": "",
+   "dst": "進去之後記得把面具戴上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -148,7 +152,7 @@
   },
   "Celebrations in Smoke#014": {
    "src": "Talk to festival attendees.",
-   "dst": "",
+   "dst": "與祭典的參加者交談。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -158,7 +162,7 @@
   },
   "Celebrations in Smoke#015": {
    "src": "I hope you're enjoying the festival!",
-   "dst": "",
+   "dst": "希望你玩得開心！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -168,7 +172,7 @@
   },
   "Celebrations in Smoke#016": {
    "src": "Welcome to Festival of the Wicker's premier food stall!",
-   "dst": "",
+   "dst": "歡迎來到柳枝人祭典的頭號美食攤！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -178,7 +182,7 @@
   },
   "Celebrations in Smoke#017": {
    "src": "What can I get you?",
-   "dst": "",
+   "dst": "要來點什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -188,7 +192,7 @@
   },
   "Celebrations in Smoke#018": {
    "src": "Enjoy your rabbit roast!",
-   "dst": "",
+   "dst": "烤兔肉，請慢用！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -198,7 +202,7 @@
   },
   "Celebrations in Smoke#019": {
    "src": "Enjoy your green tea!",
-   "dst": "",
+   "dst": "綠茶，請慢用！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -208,7 +212,7 @@
   },
   "Celebrations in Smoke#020": {
    "src": "Enjoy your fortune cookie!",
-   "dst": "",
+   "dst": "幸運餅乾，請慢用！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -218,7 +222,7 @@
   },
   "Celebrations in Smoke#021": {
    "src": "Have a nice day.",
-   "dst": "",
+   "dst": "祝你今天愉快。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -228,7 +232,7 @@
   },
   "Celebrations in Smoke#022": {
    "src": "'A clan member you hate will soon change your life.'",
-   "dst": "",
+   "dst": "「一位你討厭的氏族成員，很快會改變你的一生。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -238,7 +242,7 @@
   },
   "Celebrations in Smoke#023": {
    "src": "'Foxes in threes bare good tidings.'",
-   "dst": "",
+   "dst": "「三隻狐狸同行，是好兆頭。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -248,7 +252,7 @@
   },
   "Celebrations in Smoke#024": {
    "src": "'A new love will soon enter your life!'",
-   "dst": "",
+   "dst": "「一段新的戀情很快就會進入你的生命！」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -258,7 +262,7 @@
   },
   "Celebrations in Smoke#025": {
    "src": "'Do not forget the danger of outsiders or someday you will have great trouble.'",
-   "dst": "",
+   "dst": "「別忘了外人的危險，否則有一天你會惹上大麻煩。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -268,7 +272,7 @@
   },
   "Celebrations in Smoke#026": {
    "src": "'Avoid the forest floor, a great calamity awaits you.'",
-   "dst": "",
+   "dst": "「避開林地地面，有大禍在等著你。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -278,7 +282,7 @@
   },
   "Celebrations in Smoke#027": {
    "src": "'Love with the same passion that you hate or both will consume you.'",
-   "dst": "",
+   "dst": "「以同樣的熱情去愛與去恨，否則兩者都會把你吞噬。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -288,7 +292,7 @@
   },
   "Celebrations in Smoke#028": {
    "src": "'Your suspicion which no one else believes will someday be right.'",
-   "dst": "",
+   "dst": "「你那個沒有人相信的懷疑，總有一天會是對的。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -298,7 +302,7 @@
   },
   "Celebrations in Smoke#029": {
    "src": "'Be careful around squirrels.'",
-   "dst": "",
+   "dst": "「小心松鼠。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -308,7 +312,7 @@
   },
   "Celebrations in Smoke#030": {
    "src": "'Beware some of those closest to you! They may not be what they seem.'",
-   "dst": "",
+   "dst": "「小心你身邊最親近的某些人！他們可能不是他們看起來的樣子。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -318,7 +322,7 @@
   },
   "Celebrations in Smoke#031": {
    "src": "'Mist is pretty from a distance, but do not lose yourself in it.'",
-   "dst": "",
+   "dst": "「霧從遠處看很美，但別在裡面迷失了自己。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -328,7 +332,7 @@
   },
   "Celebrations in Smoke#032": {
    "src": "'Restrain your curiosity, especially around odd beatles.'",
-   "dst": "",
+   "dst": "「克制你的好奇心，尤其是在奇怪的甲蟲附近。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -338,7 +342,7 @@
   },
   "Celebrations in Smoke#033": {
    "src": "'You will live an uneventful life, unremarkable in every way.'",
-   "dst": "",
+   "dst": "「你會過完平淡的一生，各方面都不值一提。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -348,7 +352,7 @@
   },
   "Celebrations in Smoke#034": {
    "src": "'A river will both give and take what you love most.'",
-   "dst": "",
+   "dst": "「一條河會給予你、也會奪走你最愛的東西。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -358,7 +362,7 @@
   },
   "Celebrations in Smoke#035": {
    "src": "'Make the most of your life, it will come to a nasty end.'",
-   "dst": "",
+   "dst": "「好好把握你的人生，它會有個難看的收場。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -368,7 +372,7 @@
   },
   "Celebrations in Smoke#036": {
    "src": "'Beware an uncomfortable encounter with an eagle.'",
-   "dst": "",
+   "dst": "「當心一場與老鷹的尷尬相遇。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -378,7 +382,7 @@
   },
   "Celebrations in Smoke#037": {
    "src": "'Your suspicion which no one else believes will someday be right.'",
-   "dst": "",
+   "dst": "「你那個沒有人相信的懷疑，總有一天會是對的。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -388,7 +392,7 @@
   },
   "Celebrations in Smoke#038": {
    "src": "I'm sorry, I'm still setting up, maybe I'll have something at a later date.",
-   "dst": "",
+   "dst": "抱歉，我還在準備，也許改天會有東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -398,7 +402,7 @@
   },
   "Celebrations in Smoke#039": {
    "src": "Come to redeem your tokens?",
-   "dst": "",
+   "dst": "來兌換你的代幣嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -408,7 +412,7 @@
   },
   "Celebrations in Smoke#040": {
    "src": "What would you like to buy?",
-   "dst": "",
+   "dst": "你想買什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -418,7 +422,7 @@
   },
   "Celebrations in Smoke#041": {
    "src": "How many would you like to buy?",
-   "dst": "",
+   "dst": "你想買幾個？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -428,7 +432,7 @@
   },
   "Celebrations in Smoke#042": {
    "src": "There is your token, enjoy the festival!",
-   "dst": "",
+   "dst": "你的代幣在這裡，祭典愉快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -438,7 +442,7 @@
   },
   "Celebrations in Smoke#043": {
    "src": "There are your tokens, enjoy the festival!",
-   "dst": "",
+   "dst": "你的代幣在這裡，祭典愉快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -448,7 +452,7 @@
   },
   "Celebrations in Smoke#044": {
    "src": "There are your tokens, enjoy the festival!",
-   "dst": "",
+   "dst": "你的代幣在這裡，祭典愉快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -458,7 +462,7 @@
   },
   "Celebrations in Smoke#045": {
    "src": "You can come get some at any time during the festival.",
-   "dst": "",
+   "dst": "祭典期間你隨時都可以來拿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -468,7 +472,7 @@
   },
   "Celebrations in Smoke#046": {
    "src": "Make sure you do before the festival ends!",
-   "dst": "",
+   "dst": "記得在祭典結束前來拿！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -478,7 +482,7 @@
   },
   "Celebrations in Smoke#047": {
    "src": "I'm afraid you can't afford that.",
-   "dst": "",
+   "dst": "恐怕你買不起那個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -488,7 +492,7 @@
   },
   "Celebrations in Smoke#048": {
    "src": "H-hi. I, um, hope you're having as good a time as I am.",
-   "dst": "",
+   "dst": "你、你好。我，呃，希望你玩得跟我一樣開心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -498,7 +502,7 @@
   },
   "Celebrations in Smoke#049": {
    "src": "Hello.",
-   "dst": "",
+   "dst": "你好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -508,7 +512,7 @@
   },
   "Celebrations in Smoke#050": {
    "src": "It really is fun to finally get a chance to relax.",
-   "dst": "",
+   "dst": "終於有機會放鬆一下，真的很開心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -518,7 +522,7 @@
   },
   "Celebrations in Smoke#051": {
    "src": "I love being a part of the Kalkalrah clan, but at times like this it's nice to have the chance to be alone.",
-   "dst": "",
+   "dst": "我很喜歡當 Kalkalrah 氏族的一員，但像這種時候，能有機會獨處也不錯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -528,7 +532,7 @@
   },
   "Celebrations in Smoke#052": {
    "src": "Staring across the pond, enjoying the festival, surrounded by people I love.",
-   "dst": "",
+   "dst": "望著池塘對岸，享受祭典，身邊圍繞著我愛的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -538,7 +542,7 @@
   },
   "Celebrations in Smoke#053": {
    "src": "It's a sort of quiet, safe calm. One unlike the rest of the year.",
-   "dst": "",
+   "dst": "那是一種安靜而安全的平靜。跟一年裡其他時候都不一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -548,7 +552,7 @@
   },
   "Celebrations in Smoke#054": {
    "src": "It's the festival again! And you know what that means...",
-   "dst": "",
+   "dst": "又到祭典了！而你知道那代表什麼……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -558,7 +562,7 @@
   },
   "Celebrations in Smoke#055": {
    "src": "Green tea!!! I never know how to get this stuff outside the festival.",
-   "dst": "",
+   "dst": "綠茶！！！我從來不知道祭典以外要去哪裡弄到這玩意兒。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -568,7 +572,7 @@
   },
   "Celebrations in Smoke#056": {
    "src": "I'm going to spend all night standing right here, drinking as much of it as I can!",
-   "dst": "",
+   "dst": "我今晚要一整晚就站在這裡，能喝多少就喝多少！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -578,7 +582,7 @@
   },
   "Celebrations in Smoke#057": {
    "src": "Do you want to watch the next round of fox races?",
-   "dst": "",
+   "dst": "你想看下一輪的狐狸賽跑嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -588,7 +592,7 @@
   },
   "Celebrations in Smoke#058": {
    "src": "Get ready then, because they're ready to go!",
-   "dst": "",
+   "dst": "那就準備好，因為牠們隨時可以出發了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -598,7 +602,7 @@
   },
   "Celebrations in Smoke#059": {
    "src": "The rules are simple: you pick the fox you think will win a race around the wickerman and back.",
-   "dst": "",
+   "dst": "規則很簡單：你選一隻你覺得會贏的狐狸，繞柳枝人一圈再跑回來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -608,7 +612,7 @@
   },
   "Celebrations in Smoke#060": {
    "src": "Costs {~} tokens to enter, you get your tokens back if your pick is {~}nd, double it if it gets first.",
-   "dst": "",
+   "dst": "入場要 {~1} 枚代幣，你選的跑第 {~2} 名可以拿回代幣，跑第一名就加倍。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -618,7 +622,7 @@
   },
   "Celebrations in Smoke#061": {
    "src": "I'll give you a banner you can use to cheer your fox on. It should be helpful, although sometimes they can get a bit overwhelmed.",
-   "dst": "",
+   "dst": "我會給你一面旗子替你的狐狸加油。應該會有幫助，不過有時候牠們會被嚇到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -628,7 +632,7 @@
   },
   "Celebrations in Smoke#062": {
    "src": "Best of luck if you do choose to play!",
-   "dst": "",
+   "dst": "如果你決定要玩，祝你好運！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -638,7 +642,7 @@
   },
   "Celebrations in Smoke#063": {
    "src": "We'll be holding more races all night if you change your mind!",
-   "dst": "",
+   "dst": "如果你改變主意，我們整晚都還會辦更多場比賽！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -648,7 +652,7 @@
   },
   "Celebrations in Smoke#064": {
    "src": "I'm afraid you don't have enough tokens to watch a fox race.",
-   "dst": "",
+   "dst": "恐怕你的代幣不夠看一場狐狸賽跑。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -658,7 +662,7 @@
   },
   "Celebrations in Smoke#065": {
    "src": "If you need more, you can buy some at the Reward Merchant to the east.",
-   "dst": "",
+   "dst": "如果你需要更多，可以到東邊的獎勵商人那裡買。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -668,7 +672,7 @@
   },
   "Celebrations in Smoke#066": {
    "src": "May the best fox win!",
-   "dst": "",
+   "dst": "願最好的狐狸獲勝！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -678,7 +682,7 @@
   },
   "Celebrations in Smoke#067": {
    "src": "Wow! Your support for your fox was really impressive.",
-   "dst": "",
+   "dst": "哇！你對你那隻狐狸的支持真的很了不起。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -688,7 +692,7 @@
   },
   "Celebrations in Smoke#068": {
    "src": "You've easily earned these tokens. Enjoy!",
-   "dst": "",
+   "dst": "這些代幣你贏得輕輕鬆鬆。請享用！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -698,7 +702,7 @@
   },
   "Celebrations in Smoke#069": {
    "src": "Looks like you helped your fox want to win!",
-   "dst": "",
+   "dst": "看來你讓你的狐狸想贏了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -708,7 +712,7 @@
   },
   "Celebrations in Smoke#070": {
    "src": "It just wasn't strong enough to come in first.",
-   "dst": "",
+   "dst": "只是牠的實力還不足以拿第一。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -718,7 +722,7 @@
   },
   "Celebrations in Smoke#071": {
    "src": "Second's not bad though! You've earned these tokens back.",
-   "dst": "",
+   "dst": "不過第二名也不差！這些代幣還你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -728,7 +732,7 @@
   },
   "Celebrations in Smoke#072": {
    "src": "Aww, it looks like your fox didn't manage to pull off a win.",
-   "dst": "",
+   "dst": "唉呀，看來你的狐狸沒能拿下勝利。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -738,7 +742,7 @@
   },
   "Celebrations in Smoke#073": {
    "src": "Maybe one of you needs to put in a bit more effort next time?",
-   "dst": "",
+   "dst": "也許你們其中一個下次得再多出點力？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -748,7 +752,7 @@
   },
   "Celebrations in Smoke#074": {
    "src": "Hmm, in the last race, blue looked like it was going to...",
-   "dst": "",
+   "dst": "唔，上一場藍色的看起來本來要……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -758,7 +762,7 @@
   },
   "Celebrations in Smoke#075": {
    "src": "Oh, hi. Don't worry about me, I'm just analyzing the performances of the last few races.",
-   "dst": "",
+   "dst": "喔，你好。別管我，我只是在分析前面幾場的表現。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -768,7 +772,7 @@
   },
   "Celebrations in Smoke#076": {
    "src": "It's nothing you'd be able to understand anyway, so don't worry about it.",
-   "dst": "",
+   "dst": "反正這也不是你能理解的東西，別在意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -778,7 +782,7 @@
   },
   "Celebrations in Smoke#077": {
    "src": "Isn't it nice to see kids having fun?",
-   "dst": "",
+   "dst": "看到孩子們玩得開心，不是很好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -788,7 +792,7 @@
   },
   "Celebrations in Smoke#078": {
    "src": "I try to lighten his life when I can, but it's so hard to some days.",
-   "dst": "",
+   "dst": "我盡量在能力範圍內讓他的生活輕鬆一點，但有些日子真的很難。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -798,7 +802,7 @@
   },
   "Celebrations in Smoke#079": {
    "src": "That's why I love the festival. Makes my job easier!",
-   "dst": "",
+   "dst": "所以我才喜歡祭典。讓我的工作輕鬆多了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -808,7 +812,7 @@
   },
   "Celebrations in Smoke#080": {
    "src": "He can entertain himself, I can watch for danger.",
-   "dst": "",
+   "dst": "他可以自己找樂子，我可以留意危險。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -818,7 +822,7 @@
   },
   "Celebrations in Smoke#081": {
    "src": "I love when the festival finally comes around again!",
-   "dst": "",
+   "dst": "我最喜歡祭典終於又來的時候了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -828,7 +832,7 @@
   },
   "Celebrations in Smoke#082": {
    "src": "The festival is a great time to hang out with friends, away from anyone who might want to intrude on us.",
-   "dst": "",
+   "dst": "祭典是跟朋友出來玩的好時機，遠離任何可能想打擾我們的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -838,7 +842,7 @@
   },
   "Celebrations in Smoke#083": {
    "src": "Oh, it's so kind of you to come and see me.",
-   "dst": "",
+   "dst": "喔，你能來看我真是太好了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -848,7 +852,7 @@
   },
   "Celebrations in Smoke#084": {
    "src": "I'm much too weak to ride the ziplines around town anymore so I appreciate any company I can get.",
-   "dst": "",
+   "dst": "我太虛弱了，已經沒辦法再搭滑索在鎮上跑來跑去，所以有人陪我我都很感激。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -858,7 +862,7 @@
   },
   "Celebrations in Smoke#085": {
    "src": "Even so, I love getting to sit on my porch and look down at all the happy people around this time of year.",
-   "dst": "",
+   "dst": "即使如此，一年中的這個時候，我還是很喜歡坐在自家門廊上，往下看著那些快樂的人們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -868,7 +872,7 @@
   },
   "Celebrations in Smoke#086": {
    "src": "Welcome to the festival!",
-   "dst": "",
+   "dst": "歡迎來到祭典！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -878,7 +882,7 @@
   },
   "Celebrations in Smoke#087": {
    "src": "It's a lot of work to put on, but it's always worth it to see everyone together.",
-   "dst": "",
+   "dst": "要辦起來很費工，但看到大家聚在一起，總是值得的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -888,7 +892,7 @@
   },
   "Celebrations in Smoke#088": {
    "src": "This is the only time of year a lot of us get to relax, we have to take what we can get.",
-   "dst": "",
+   "dst": "這是我們許多人一年中唯一能放鬆的時候，有多少就得把握多少。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -898,7 +902,7 @@
   },
   "Celebrations in Smoke#089": {
    "src": "Hm... do you hear that? That crackling... and that smell... is that...?",
-   "dst": "",
+   "dst": "唔……你有聽到嗎？那個劈啪聲……還有那個味道……那是……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -908,7 +912,7 @@
   },
   "Celebrations in Smoke#090": {
    "src": "Smoke? Flames?!",
-   "dst": "",
+   "dst": "煙？火焰？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -918,7 +922,7 @@
   },
   "Celebrations in Smoke#091": {
    "src": "Quick! Somebody run to the pond to get some water and put out the fire!",
-   "dst": "",
+   "dst": "快！誰去池塘取點水來把火滅了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -928,7 +932,7 @@
   },
   "Celebrations in Smoke#092": {
    "src": "Put out the fire.",
-   "dst": "",
+   "dst": "撲滅火勢。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -938,7 +942,7 @@
   },
   "Celebrations in Smoke#093": {
    "src": "Quick, put out the fire!",
-   "dst": "",
+   "dst": "快，把火滅了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -948,7 +952,7 @@
   },
   "Celebrations in Smoke#094": {
    "src": "Thank you so much for your quick action. I hope you don't mind, but I'll need some more help.",
-   "dst": "",
+   "dst": "非常感謝你反應這麼快。希望你別介意，我還需要更多幫忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -958,7 +962,7 @@
   },
   "Celebrations in Smoke#095": {
    "src": "You three!",
-   "dst": "",
+   "dst": "你們三個！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -968,7 +972,7 @@
   },
   "Celebrations in Smoke#096": {
    "src": "Can any of you show me a medallion?",
-   "dst": "",
+   "dst": "你們有誰能拿出徽牌嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -978,7 +982,7 @@
   },
   "Celebrations in Smoke#097": {
    "src": "Just as I thought. All of you will be held until we can figure out the truth.",
-   "dst": "",
+   "dst": "果然如我所料。在我們查明真相之前，你們三個都會被扣留。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -988,7 +992,7 @@
   },
   "Celebrations in Smoke#098": {
    "src": "Into that house, all three of you.",
-   "dst": "",
+   "dst": "進那間屋子，你們三個都是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -998,7 +1002,7 @@
   },
   "Celebrations in Smoke#099": {
    "src": "There will have to be an investigation into this incident and you're one person I'm positive didn't start the fire.",
-   "dst": "",
+   "dst": "這起事件必須進行調查，而你是我唯一能確定沒有縱火的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1008,7 +1012,7 @@
   },
   "Celebrations in Smoke#100": {
    "src": "Please, follow me.",
-   "dst": "",
+   "dst": "請跟我來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1018,7 +1022,7 @@
   },
   "Celebrations in Smoke#101": {
    "src": "Follow the Festival Organizer into the house at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟著祭典主辦人進入 [-{~1}, {~2}, -{~3}] 的屋子。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -1028,7 +1032,7 @@
   },
   "Celebrations in Smoke#102": {
    "src": "Thank you so much for your help again, without your assistance the festival would have been ruined.",
-   "dst": "",
+   "dst": "再次非常感謝你的幫忙，沒有你出手，這場祭典就毀了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1038,7 +1042,7 @@
   },
   "Celebrations in Smoke#103": {
    "src": "I cannot express my gratitude more effusely, but I'm afraid I must ask more of you.",
-   "dst": "",
+   "dst": "我無法更充分地表達我的感激，但恐怕我還得請你多做一些。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1048,7 +1052,7 @@
   },
   "Celebrations in Smoke#104": {
    "src": "You see, I do not believe that fire was set by an accident. There's a vandal in our midst and I fear the worst.",
-   "dst": "",
+   "dst": "你看，我不相信那場火是意外引起的。我們之中有破壞份子，而我擔心最壞的情況。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1058,7 +1062,7 @@
   },
   "Celebrations in Smoke#105": {
    "src": "Just as generations ago, when our ancestors first exposed and immolated the changeling threat that we are supposed to be celebrating today, we must remain vigilant!",
-   "dst": "",
+   "dst": "就像好幾代以前，我們的祖先第一次揭發並焚燒了換形者的威脅——那正是我們今天要慶祝的事——我們必須保持警惕！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1068,7 +1072,7 @@
   },
   "Celebrations in Smoke#106": {
    "src": "Unfortunately... the festival has always been a time when that vigilance has lapsed a bit. We have an unwelcome attendee.",
-   "dst": "",
+   "dst": "可惜……祭典向來是那份警惕會鬆懈一點的時候。我們有一位不受歡迎的訪客。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1078,7 +1082,7 @@
   },
   "Celebrations in Smoke#107": {
    "src": "I suspect that flame was set by a changeling, hoping to use the fire as a distraction to infiltrate the festival. To catch someone off guard and take their form.",
-   "dst": "",
+   "dst": "我懷疑那把火是換形者放的，想利用火勢當作掩護滲透進祭典。趁人不備，取走他們的形貌。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1088,7 +1092,7 @@
   },
   "Celebrations in Smoke#108": {
    "src": "Due to your efforts, they were unable to do so. But they could not have gone far.",
-   "dst": "",
+   "dst": "多虧了你的努力，他們沒能得逞。但他們跑不遠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1098,7 +1102,7 @@
   },
   "Celebrations in Smoke#109": {
    "src": "I rounded up the three people nearest to where the fire ignited and found all of them had snuck in without a medallion!",
-   "dst": "",
+   "dst": "我把離起火點最近的三個人圍了起來，發現他們全都沒有徽牌就溜了進來！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1108,7 +1112,7 @@
   },
   "Celebrations in Smoke#110": {
    "src": "While I keep them held here... I'd ask of you to interrogate them and, if needed, search around the festival to find information on who they really are.",
-   "dst": "",
+   "dst": "我把他們扣在這裡的期間……我想請你去審問他們，必要的話在祭典裡四處查訪，找出他們的真實身分。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1118,7 +1122,7 @@
   },
   "Celebrations in Smoke#111": {
    "src": "Once you have unmasked each of them for who they really are, return to me and tell me which one is a changeling in disguise. I can handle matters from there.",
-   "dst": "",
+   "dst": "等你揭開他們每一個人的真面目之後，回來告訴我哪一個是喬裝的換形者。剩下的我可以處理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1128,7 +1132,7 @@
   },
   "Celebrations in Smoke#112": {
    "src": "Take this book. You can write any notes you take while investigating down to check later.",
-   "dst": "",
+   "dst": "拿著這本簿子。你調查時記的任何筆記都可以寫下來，之後查閱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1138,7 +1142,7 @@
   },
   "Celebrations in Smoke#113": {
    "src": "Once you've investigated all of them, you can return to me.",
-   "dst": "",
+   "dst": "等你把他們全部調查完，就可以回來找我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1148,7 +1152,7 @@
   },
   "Celebrations in Smoke#114": {
    "src": "Find evidence against the three suspects.",
-   "dst": "",
+   "dst": "找出對三名嫌疑人不利的證據。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -1158,7 +1162,7 @@
   },
   "Celebrations in Smoke#115": {
    "src": "Come back to me once you've found what they're all hiding.",
-   "dst": "",
+   "dst": "等你找出他們都在隱瞞什麼，再回來找我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1168,7 +1172,7 @@
   },
   "Celebrations in Smoke#116": {
    "src": "I hope you're enjoying the festival!",
-   "dst": "",
+   "dst": "希望你玩得開心！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1178,7 +1182,7 @@
   },
   "Celebrations in Smoke#117": {
    "src": "Really? Where?",
-   "dst": "",
+   "dst": "真的嗎？在哪裡？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1188,7 +1192,7 @@
   },
   "Celebrations in Smoke#118": {
    "src": "Oh! Thank you so much.",
-   "dst": "",
+   "dst": "喔！太感謝你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1198,7 +1202,7 @@
   },
   "Celebrations in Smoke#119": {
    "src": "I don't know how, but this alley must have slipped through our planning.",
-   "dst": "",
+   "dst": "我不知道怎麼會這樣，但這條巷子一定是從我們的規劃裡漏掉了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1208,7 +1212,7 @@
   },
   "Celebrations in Smoke#120": {
    "src": "I'll stand here for now to make sure no one can get in.",
-   "dst": "",
+   "dst": "我先站在這裡，確保沒有人能進來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1218,7 +1222,7 @@
   },
   "Celebrations in Smoke#121": {
    "src": "I'm so grateful you warned us before anyone bad might have noticed it.",
-   "dst": "",
+   "dst": "很慶幸你在任何壞人可能注意到之前就警告了我們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1228,7 +1232,7 @@
   },
   "Celebrations in Smoke#122": {
    "src": "Thank you so much for exposing that gap in our security!",
-   "dst": "",
+   "dst": "非常感謝你指出我們防衛上的那個缺口！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1238,7 +1242,7 @@
   },
   "Celebrations in Smoke#123": {
    "src": "I'm um Arris. I don't know what's happening, I got shoved into here by the festival organizer with these other two.",
-   "dst": "",
+   "dst": "我，呃，我是 Arris。我不知道發生了什麼事，我被祭典主辦人跟另外這兩個人一起推進來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1248,7 +1252,7 @@
   },
   "Celebrations in Smoke#124": {
    "src": "I'm simply an ordinary member of the Kalkalrah clan, I don't know what's happening.",
-   "dst": "",
+   "dst": "我只是 Kalkalrah 氏族一個普通的成員，我不知道發生了什麼事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1258,7 +1262,7 @@
   },
   "Celebrations in Smoke#125": {
    "src": "Please don't accuse me of doing whatever you think I did, please.",
-   "dst": "",
+   "dst": "拜託不要指控我做了你以為我做的事，拜託。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1268,7 +1272,7 @@
   },
   "Celebrations in Smoke#126": {
    "src": "Nothing, I don't think. Or, well, that's not what I meant.",
-   "dst": "",
+   "dst": "沒有，我想沒有。或者，嗯，那不是我的意思。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1278,7 +1282,7 @@
   },
   "Celebrations in Smoke#127": {
    "src": "I only, um, do general upkeep. Fixing stuff and cleaning stuff, I mean.",
-   "dst": "",
+   "dst": "我只是，呃，做一般的維護。我是說，修東西和打掃之類的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1288,7 +1292,7 @@
   },
   "Celebrations in Smoke#128": {
    "src": "There's not much more to say than that, you know?",
-   "dst": "",
+   "dst": "除此之外沒什麼好說的了，你知道吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1298,7 +1302,7 @@
   },
   "Celebrations in Smoke#129": {
    "src": "I'm nothing more than a helpful member of my clan who assists in the, uh- in the \"making everyone live together with ease\" part of clan life!",
-   "dst": "",
+   "dst": "我不過是我氏族裡一個樂於助人的成員，協助處理氏族生活中那個，呃——那個「讓大家能輕鬆地一起生活」的部分！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1308,7 +1312,7 @@
   },
   "Celebrations in Smoke#130": {
    "src": "That's what I mean by nothing, you see, that's what I meant when I said that.",
-   "dst": "",
+   "dst": "我說「沒什麼」就是這個意思，你看，我剛才說的就是這個意思。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1318,7 +1322,7 @@
   },
   "Celebrations in Smoke#131": {
    "src": "I don't literally do nothing, obviously, that would be dumb. I have an important role and am, uh, valued by my clan.",
-   "dst": "",
+   "dst": "我當然不是字面上什麼都不做，那樣很蠢。我有一個重要的角色，而且，呃，受到我氏族的重視。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1328,7 +1332,7 @@
   },
   "Celebrations in Smoke#132": {
    "src": "But it isn't super important or cool or anything, that's what I meant by nothing.",
-   "dst": "",
+   "dst": "但那也不是超級重要或很酷之類的，我說「沒什麼」是這個意思。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1338,7 +1342,7 @@
   },
   "Celebrations in Smoke#133": {
    "src": "Oh, that's what you meant. You, um, wanted a specific answer.",
-   "dst": "",
+   "dst": "喔，你是那個意思。你，呃，是想要一個具體的答案。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1348,7 +1352,7 @@
   },
   "Celebrations in Smoke#134": {
    "src": "Okay. I can give you that.",
-   "dst": "",
+   "dst": "好。那我可以給你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1358,7 +1362,7 @@
   },
   "Celebrations in Smoke#135": {
    "src": "Like sometimes I will guard things. I will, um, um, stand watch for changelings or thieves or animals!",
-   "dst": "",
+   "dst": "像是有時候我會看守東西。我會，呃、呃，警戒有沒有換形者、小偷或是動物！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1368,7 +1372,7 @@
   },
   "Celebrations in Smoke#136": {
    "src": "Or anything trying to steal. We try to stop people from stealing from us.",
-   "dst": "",
+   "dst": "或是任何想偷東西的。我們會試著阻止別人偷我們的東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1378,7 +1382,7 @@
   },
   "Celebrations in Smoke#137": {
    "src": "O-of course.",
-   "dst": "",
+   "dst": "當、當然。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1388,7 +1392,7 @@
   },
   "Celebrations in Smoke#138": {
    "src": "Oh, sorry, I'm not trying to be.",
-   "dst": "",
+   "dst": "喔，抱歉，我不是故意要這樣的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1398,7 +1402,7 @@
   },
   "Celebrations in Smoke#139": {
    "src": "I'm not, um, sure what's happening. And that makes me a little nervous, can you understand?",
-   "dst": "",
+   "dst": "我，呃，不確定發生了什麼事。那讓我有點緊張，你能理解嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1408,7 +1412,7 @@
   },
   "Celebrations in Smoke#140": {
    "src": "All this investigation stuff makes me feel like I did something wrong. And I didn't do anything wrong!",
-   "dst": "",
+   "dst": "這一整套調查讓我覺得我做錯了什麼。而我什麼都沒做錯！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1418,7 +1422,7 @@
   },
   "Celebrations in Smoke#141": {
    "src": "But it's hard to prove that and so I get nervous and stumble over the things I'm saying and misstate what I really mean which only makes it harder!",
-   "dst": "",
+   "dst": "但那很難證明，所以我就緊張、講話結結巴巴、把想說的意思講錯，結果只讓事情更難！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1428,7 +1432,7 @@
   },
   "Celebrations in Smoke#142": {
    "src": "Sorry. I don't think I'm helping my case.",
-   "dst": "",
+   "dst": "抱歉。我覺得我沒有替自己說到什麼好話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1438,7 +1442,7 @@
   },
   "Celebrations in Smoke#143": {
    "src": "Um, I'm not sure. Sorry.",
-   "dst": "",
+   "dst": "呃，我不確定。抱歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1448,7 +1452,7 @@
   },
   "Celebrations in Smoke#144": {
    "src": "I think a little bit? But obviously not as much as this! Like when I'm under interrogation for something I didn't do even though you really seem to think I did.",
-   "dst": "",
+   "dst": "我想有一點點？但顯然沒有這次這麼嚴重！像是被審問一件我沒做過的事，而你看起來又真的覺得是我做的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1458,7 +1462,7 @@
   },
   "Celebrations in Smoke#145": {
    "src": "Well, um, of course you do. You're going to think I committed arson or something and then report me and everything will be horrible.",
-   "dst": "",
+   "dst": "嗯，呃，你當然會這樣想。你會覺得我犯了縱火之類的罪，然後把我通報上去，一切就會變得很糟糕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1468,7 +1472,7 @@
   },
   "Celebrations in Smoke#146": {
    "src": "There's no way you don't think I didn't. Look at how much time you're spending interrogating me compared to everyone else.",
-   "dst": "",
+   "dst": "你不可能不這樣想。你看你花在審問我的時間比其他人多多少。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1478,7 +1482,7 @@
   },
   "Celebrations in Smoke#147": {
    "src": "Please. Please don't. I didn't do it I promise I didn't do it, please don't think that I did it.",
-   "dst": "",
+   "dst": "拜託。拜託不要。我沒有做，我保證我沒有做，拜託不要認為是我做的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1488,7 +1492,7 @@
   },
   "Celebrations in Smoke#148": {
    "src": "I'm innocent I promise please, I didn't do anything I didn't I swear.",
-   "dst": "",
+   "dst": "我是無辜的我保證拜託，我什麼都沒做我發誓我沒有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1498,7 +1502,7 @@
   },
   "Celebrations in Smoke#149": {
    "src": "Um, here, let me try.",
-   "dst": "",
+   "dst": "呃，來，讓我試試看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1508,7 +1512,7 @@
   },
   "Celebrations in Smoke#150": {
    "src": "Hi.",
-   "dst": "",
+   "dst": "嗨。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1518,7 +1522,7 @@
   },
   "Celebrations in Smoke#151": {
    "src": "I am.",
-   "dst": "",
+   "dst": "我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1528,7 +1532,7 @@
   },
   "Celebrations in Smoke#152": {
    "src": "Not.",
-   "dst": "",
+   "dst": "不是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1538,7 +1542,7 @@
   },
   "Celebrations in Smoke#153": {
    "src": "Very good.",
-   "dst": "",
+   "dst": "很擅長。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1548,7 +1552,7 @@
   },
   "Celebrations in Smoke#154": {
    "src": "At this.",
-   "dst": "",
+   "dst": "這個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1558,7 +1562,7 @@
   },
   "Celebrations in Smoke#155": {
    "src": "Sorry I don't think I'm, uh, cut out for that, sorry.",
-   "dst": "",
+   "dst": "抱歉，我想我，呃，不是幹這個的料，抱歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1568,7 +1572,7 @@
   },
   "Celebrations in Smoke#156": {
    "src": "Alright...",
-   "dst": "",
+   "dst": "好吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1578,7 +1582,7 @@
   },
   "Celebrations in Smoke#157": {
    "src": "No, I don't think- I didn't see.",
-   "dst": "",
+   "dst": "沒有，我不覺得——我沒看到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1588,7 +1592,7 @@
   },
   "Celebrations in Smoke#158": {
    "src": "Maybe I saw some movement out of the corner of my eye? But that could have been nothing.",
-   "dst": "",
+   "dst": "也許我眼角餘光瞄到一點動靜？但那也可能什麼都不是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1598,7 +1602,7 @@
   },
   "Celebrations in Smoke#159": {
    "src": "It's hard to know, I wasn't really paying attention at the time and now you're asking me these questions like I have some sort of, um, picture perfect memory!",
-   "dst": "",
+   "dst": "很難確定，我當時根本沒在注意，而現在你問我這些問題，好像我有某種，呃，完美無缺的記憶力一樣！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1608,7 +1612,7 @@
   },
   "Celebrations in Smoke#160": {
    "src": "Even though I definitely don't! And wasn't even trying to remember what was happening in the first place!",
-   "dst": "",
+   "dst": "但我絕對沒有！而且我一開始根本就沒想要記住當時發生了什麼事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1618,7 +1622,7 @@
   },
   "Celebrations in Smoke#161": {
    "src": "Sorry, I was shouting, wasn't I. I didn't mean to. I'm only stressed. Sorry.",
-   "dst": "",
+   "dst": "抱歉，我剛才在吼，對吧。我不是故意的。我只是壓力很大。抱歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1628,7 +1632,7 @@
   },
   "Celebrations in Smoke#162": {
    "src": "I didn't! I promise I didn't.",
-   "dst": "",
+   "dst": "我沒有！我保證我沒有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1638,7 +1642,7 @@
   },
   "Celebrations in Smoke#163": {
    "src": "Please don't think I tried to, I promise I have no idea what you're talking about.",
-   "dst": "",
+   "dst": "拜託別以為我想那麼做，我保證我完全不知道你在說什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1648,7 +1652,7 @@
   },
   "Celebrations in Smoke#164": {
    "src": "All that I was doing was sitting there quietly and then all of a sudden behind me there were really big flames and then before I could even act you threw water on them and saved the wickerman and then I was being brought in here even though I",
-   "dst": "",
+   "dst": "我當時只是安安靜靜地坐在那裡，然後突然我後面就竄出好大的火焰，然後我都還來不及反應你就潑了水上去救了柳枝人，然後我就被帶到這裡來了，儘管我",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1658,7 +1662,7 @@
   },
   "Celebrations in Smoke#165": {
    "src": "didn't do anything and am just an ordinary clan member and have nothing to hide.",
-   "dst": "",
+   "dst": "什麼都沒做而且只是一個普通的氏族成員也沒有什麼要隱瞞的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1668,7 +1672,7 @@
   },
   "Celebrations in Smoke#166": {
    "src": "I promise I didn't try to burn down the wickerman.",
-   "dst": "",
+   "dst": "我保證我沒有想燒掉柳枝人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1678,7 +1682,7 @@
   },
   "Celebrations in Smoke#167": {
    "src": "Find someone who might know something about Arris's clan.",
-   "dst": "",
+   "dst": "找到可能知道 Arris 氏族內情的人。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -1688,7 +1692,7 @@
   },
   "Celebrations in Smoke#168": {
    "src": "I love being a part of the Kalkalrah clan, but at times like this it's nice to have the chance to be alone.",
-   "dst": "",
+   "dst": "我很喜歡當 Kalkalrah 氏族的一員，但像這種時候，能有機會獨處也不錯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1698,7 +1702,7 @@
   },
   "Celebrations in Smoke#169": {
    "src": "Staring across the pond, enjoying the festival, surrounded by people I love.",
-   "dst": "",
+   "dst": "望著池塘對岸，享受祭典，身邊圍繞著我愛的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1708,7 +1712,7 @@
   },
   "Celebrations in Smoke#170": {
    "src": "It's a sort of quiet, safe calm. One unlike the rest of the year.",
-   "dst": "",
+   "dst": "那是一種安靜而安全的平靜。跟一年裡其他時候都不一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1718,7 +1722,7 @@
   },
   "Celebrations in Smoke#171": {
    "src": "Hmm? Ah. Yes, unfortunately I do.",
-   "dst": "",
+   "dst": "唔？啊。是的，很不幸我認識。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1728,7 +1732,7 @@
   },
   "Celebrations in Smoke#172": {
    "src": "They were a member of our clan until a week ago, when they were expelled and exiled.",
-   "dst": "",
+   "dst": "他們一週前還是我們氏族的一員，後來被除名放逐了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1738,7 +1742,7 @@
   },
   "Celebrations in Smoke#173": {
    "src": "Their old medallion was handed to me to burn. In fact, just on my way into the festival I threw its ashes up the tallest tree in {p}.",
-   "dst": "",
+   "dst": "他們的舊徽牌交到我手上銷毀。事實上，我進祭典的路上才剛把灰燼撒上 {p} 最高的那棵樹。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1748,7 +1752,7 @@
   },
   "Celebrations in Smoke#174": {
    "src": "Interrogated them? Oh, I hope they haven't done anything bad.",
-   "dst": "",
+   "dst": "審問他們？喔，希望他們沒做什麼壞事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1758,7 +1762,7 @@
   },
   "Celebrations in Smoke#175": {
    "src": "You know, they were always a bit troubled. But I don't think they're bad. They just weren't suited for clan life.",
-   "dst": "",
+   "dst": "你知道嗎，他們一直有點問題。但我不覺得他們是壞人。他們只是不適合氏族的生活。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1768,7 +1772,7 @@
   },
   "Celebrations in Smoke#176": {
    "src": "Not... communal enough.",
-   "dst": "",
+   "dst": "不夠……合群。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1778,7 +1782,7 @@
   },
   "Celebrations in Smoke#177": {
    "src": "The fate they were given will be a hard one though. Most exiles don't survive a year.",
-   "dst": "",
+   "dst": "不過他們被判的命運會很難熬。大部分被放逐的人活不過一年。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1788,7 +1792,7 @@
   },
   "Celebrations in Smoke#178": {
    "src": "Not as much as I wish you could. Please treat them with kindness though, they only lie out of fear.",
-   "dst": "",
+   "dst": "沒有我希望能給你的那麼多。不過請善待他們，他們說謊只是出於害怕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1798,7 +1802,7 @@
   },
   "Celebrations in Smoke#179": {
    "src": "I do not mean to be rude, but you cut an imposing figure. There's a lot to be afraid of.",
-   "dst": "",
+   "dst": "我無意失禮，但你的樣子讓人望而生畏。可怕的事情太多了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1808,7 +1812,7 @@
   },
   "Celebrations in Smoke#180": {
    "src": "I hope they stays well, even if they are troubled.",
-   "dst": "",
+   "dst": "我希望他們平安，即使他們是有些問題。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1818,7 +1822,7 @@
   },
   "Celebrations in Smoke#181": {
    "src": "No no no, that isn't true at all.",
-   "dst": "",
+   "dst": "不不不，那完全不是真的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1828,7 +1832,7 @@
   },
   "Celebrations in Smoke#182": {
    "src": "I have no idea who or what you were talking to but I can assure you I, uh, was not exiled from my clan very recently.",
-   "dst": "",
+   "dst": "我不知道你剛才在跟誰或什麼東西講話，但我可以向你保證我，呃，並沒有在最近被氏族放逐。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1838,7 +1842,7 @@
   },
   "Celebrations in Smoke#183": {
    "src": "You don't have any proof of it, right? Right? So it's my word against theirs, there is no reason to believe anything that they have to say over me.",
-   "dst": "",
+   "dst": "你沒有任何證據，對吧？對吧？所以那只是我的說法對上他們的說法，沒有理由相信他們說的任何話勝過相信我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1848,7 +1852,7 @@
   },
   "Celebrations in Smoke#184": {
    "src": "I'm an, um, ordinary clan member who got caught up in something that I do not understand.",
-   "dst": "",
+   "dst": "我是一個，呃，捲進了我不理解的事情裡的普通氏族成員。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1858,7 +1862,7 @@
   },
   "Celebrations in Smoke#185": {
    "src": "Search the tallest tree in {p} for Arris's burnt medallion.",
-   "dst": "",
+   "dst": "搜索 {p} 最高的那棵樹，尋找 Arris 燒毀的徽牌。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -1868,7 +1872,7 @@
   },
   "Celebrations in Smoke#186": {
    "src": "Confront Arris",
-   "dst": "",
+   "dst": "與 Arris 對質",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -1878,7 +1882,7 @@
   },
   "Celebrations in Smoke#187": {
    "src": "I- I- I-",
-   "dst": "",
+   "dst": "我——我——我——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1888,7 +1892,7 @@
   },
   "Celebrations in Smoke#188": {
    "src": "Yes I was exiled from my clan and yes I did lie to you but I promise I didn't do anything else bad.",
-   "dst": "",
+   "dst": "是的我被氏族放逐了，是的我對你說了謊，但我保證我沒有做別的壞事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1898,7 +1902,7 @@
   },
   "Celebrations in Smoke#189": {
    "src": "I don't know who burned down the wickerman but it wasn't me, you have to believe me.",
-   "dst": "",
+   "dst": "我不知道是誰燒了柳枝人，但那不是我，你一定要相信我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1908,7 +1912,7 @@
   },
   "Celebrations in Smoke#190": {
    "src": "I only lied because I panicked and I'm sorry for panicking but please please please you cannot tell them that I'm a changeling or whatever.",
-   "dst": "",
+   "dst": "我說謊只是因為我慌了，我為慌張道歉，但拜託拜託拜託你不能跟他們說我是換形者之類的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1918,7 +1922,7 @@
   },
   "Celebrations in Smoke#191": {
    "src": "Please.",
-   "dst": "",
+   "dst": "拜託。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1928,7 +1932,7 @@
   },
   "Celebrations in Smoke#192": {
    "src": "Because they all thought I stole something! Even though I promise, I promise I didn't.",
-   "dst": "",
+   "dst": "因為他們都以為我偷了東西！儘管我保證，我保證我沒有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1938,7 +1942,7 @@
   },
   "Celebrations in Smoke#193": {
    "src": "I was supposed to be keeping watch over our clan's stores. And I don't know how, but a box of our special green tea went missing.",
-   "dst": "",
+   "dst": "我本來應該看守我們氏族的倉庫。而我不知道怎麼會這樣，但我們一箱特製綠茶不見了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1948,7 +1952,7 @@
   },
   "Celebrations in Smoke#194": {
    "src": "I promise I didn't steal it, I really do. But none of them believed me, it somehow disappeared.",
-   "dst": "",
+   "dst": "我保證我沒有偷，我真的沒有。但他們沒有一個相信我，它就那樣憑空消失了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1958,7 +1962,7 @@
   },
   "Celebrations in Smoke#195": {
    "src": "They said I had lost years of trust with them, over something I swear I didn't do, and kicked me out.",
-   "dst": "",
+   "dst": "他們說我為了一件我發誓沒做過的事，失去了他們多年的信任，然後把我趕了出去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1968,7 +1972,7 @@
   },
   "Celebrations in Smoke#196": {
    "src": "Since then, I've been having to find my own way to survive. I've, uh, not been very good at that.",
-   "dst": "",
+   "dst": "從那之後，我就得自己想辦法活下去。我，呃，一直做得不太好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1978,7 +1982,7 @@
   },
   "Celebrations in Smoke#197": {
    "src": "Maybe a week? I- I- I'm not exactly sure. It has been difficult keeping track of time.",
-   "dst": "",
+   "dst": "大概一週？我、我、我不太確定。要記住時間一直很困難。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1988,7 +1992,7 @@
   },
   "Celebrations in Smoke#198": {
    "src": "Yes! I've never lost anything like that before and I definitely haven't stolen anything ever at all.",
-   "dst": "",
+   "dst": "對！我以前從來沒有弄丟過那樣的東西，而且我絕對從來沒有偷過任何東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -1998,7 +2002,7 @@
   },
   "Celebrations in Smoke#199": {
    "src": "... Although, I was caught sleeping while on watch a few times. And my clan got really upset with me for that, even though I promise nothing bad happened.",
-   "dst": "",
+   "dst": "……不過，我確實有幾次在值班的時候被抓到睡著。我的氏族為那件事很生氣，儘管我保證沒有發生什麼壞事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2008,7 +2012,7 @@
   },
   "Celebrations in Smoke#200": {
    "src": "I wasn't trying to sleep, but it's so hard to stay up all night while nothing is happening.",
-   "dst": "",
+   "dst": "我不是故意要睡的，但什麼事都沒發生的時候，整晚不睡真的很難。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2018,7 +2022,7 @@
   },
   "Celebrations in Smoke#201": {
    "src": "O- okay.",
-   "dst": "",
+   "dst": "好、好吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2028,7 +2032,7 @@
   },
   "Celebrations in Smoke#202": {
    "src": "Oh, uh, well you know. I was, um.",
-   "dst": "",
+   "dst": "喔，呃，嗯你知道的。我，呃。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2038,7 +2042,7 @@
   },
   "Celebrations in Smoke#203": {
    "src": "Running out of food.",
-   "dst": "",
+   "dst": "快沒有食物了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2048,7 +2052,7 @@
   },
   "Celebrations in Smoke#204": {
    "src": "And this was the only place I could think of that would have any and I really missed not having to run across the {p} trying to forage and I really really hate being exiled and I need somewhere to go.",
-   "dst": "",
+   "dst": "而這是我唯一想得到會有食物的地方，而且我真的很懷念不用跑遍 {p} 到處覓食的日子，而且我真的真的很討厭被放逐，我需要一個能去的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2058,7 +2062,7 @@
   },
   "Celebrations in Smoke#205": {
    "src": "Sorry, I didn't mean to dump all my troubles on you.",
-   "dst": "",
+   "dst": "抱歉，我不是故意把我所有的麻煩倒給你的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2068,7 +2072,7 @@
   },
   "Celebrations in Smoke#206": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2078,7 +2082,7 @@
   },
   "Celebrations in Smoke#207": {
    "src": "Um. If it wouldn't be too much to ask.",
-   "dst": "",
+   "dst": "呃。如果這樣要求不會太過分的話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2088,7 +2092,7 @@
   },
   "Celebrations in Smoke#208": {
    "src": "Would you mind getting me a Fortune Cookie?",
-   "dst": "",
+   "dst": "你介意幫我拿一塊幸運餅乾嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2098,7 +2102,7 @@
   },
   "Celebrations in Smoke#209": {
    "src": "I don't want to burden you or anything and I know I just lied to you and you're trying to investigate me for a horrible crime, but I'm really hungry and didn't get a chance to eat before you all shoved me in here.",
-   "dst": "",
+   "dst": "我不想給你添麻煩，而且我知道我剛才對你說了謊，你又正在為一樁可怕的罪行調查我，但我真的很餓，被你們推進來之前根本沒機會吃東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2108,7 +2112,7 @@
   },
   "Celebrations in Smoke#210": {
    "src": "Thank you so so so so much.",
-   "dst": "",
+   "dst": "太謝謝謝謝謝謝你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2118,7 +2122,7 @@
   },
   "Celebrations in Smoke#211": {
    "src": "Thank you! I don't think I've had one of these since I was a kid.",
-   "dst": "",
+   "dst": "謝謝你！我想我從小到大都沒再吃過這種東西了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2128,7 +2132,7 @@
   },
   "Celebrations in Smoke#212": {
    "src": "Here, let me read my fortune to you.",
-   "dst": "",
+   "dst": "來，讓我把我的籤讀給你聽。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2138,7 +2142,7 @@
   },
   "Celebrations in Smoke#213": {
    "src": "\"Beware some of those closest to you! They may not be what they seem.\"",
-   "dst": "",
+   "dst": "「小心你身邊最親近的某些人！他們可能不是他們看起來的樣子。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2148,7 +2152,7 @@
   },
   "Celebrations in Smoke#214": {
    "src": "That, uh, would have been more useful a couple weeks ago.",
-   "dst": "",
+   "dst": "那個，呃，要是幾週前拿到會更有用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2158,7 +2162,7 @@
   },
   "Celebrations in Smoke#215": {
    "src": "Sorry for asking.",
-   "dst": "",
+   "dst": "抱歉我開口問了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2168,7 +2172,7 @@
   },
   "Celebrations in Smoke#216": {
    "src": "Sorry. Please don't think I did whatever I can tell you think I did.",
-   "dst": "",
+   "dst": "抱歉。拜託別以為我做了那件我看得出你覺得我做了的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2178,7 +2182,7 @@
   },
   "Celebrations in Smoke#217": {
    "src": "Thank you! I don't think I've had one of these since I was a kid.",
-   "dst": "",
+   "dst": "謝謝你！我想我從小到大都沒再吃過這種東西了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2188,7 +2192,7 @@
   },
   "Celebrations in Smoke#218": {
    "src": "Here, let me read my fortune to you.",
-   "dst": "",
+   "dst": "來，讓我把我的籤讀給你聽。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2198,7 +2202,7 @@
   },
   "Celebrations in Smoke#219": {
    "src": "\"Beware some of those closest to you! They may not be what they seem.\"",
-   "dst": "",
+   "dst": "「小心你身邊最親近的某些人！他們可能不是他們看起來的樣子。」",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2208,7 +2212,7 @@
   },
   "Celebrations in Smoke#220": {
    "src": "That, uh, would have been more useful a couple weeks ago.",
-   "dst": "",
+   "dst": "那個，呃，要是幾週前拿到會更有用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2218,7 +2222,7 @@
   },
   "Celebrations in Smoke#221": {
    "src": "Burick. I'm simply a humble green tea trader.",
-   "dst": "",
+   "dst": "Burick。我只是個卑微的綠茶商人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2228,7 +2232,7 @@
   },
   "Celebrations in Smoke#222": {
    "src": "I don't know what happened, I wasn't involved, and that's all I have to say.",
-   "dst": "",
+   "dst": "我不知道發生了什麼事，我沒有涉入，我要說的就這些。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2238,7 +2242,7 @@
   },
   "Celebrations in Smoke#223": {
    "src": "Self-explanatory, I assumed.",
-   "dst": "",
+   "dst": "我以為不言自明。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2248,7 +2252,7 @@
   },
   "Celebrations in Smoke#224": {
    "src": "One clan wants to get rid of stuff, while another clan wants to get their hands on it.",
-   "dst": "",
+   "dst": "一個氏族想脫手，另一個氏族想弄到手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2258,7 +2262,7 @@
   },
   "Celebrations in Smoke#225": {
    "src": "The {p} is a big and dangerous place. They need a trader to make it happen.",
-   "dst": "",
+   "dst": "{p} 又大又危險。他們需要一個商人來促成。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2268,7 +2272,7 @@
   },
   "Celebrations in Smoke#226": {
    "src": "Yes. Someone has to do it though.",
-   "dst": "",
+   "dst": "是。但總得有人做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2278,7 +2282,7 @@
   },
   "Celebrations in Smoke#227": {
    "src": "Nope. And neither has anyone else I've spoken to.",
-   "dst": "",
+   "dst": "沒有。跟我談過的其他人也都沒有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2288,7 +2292,7 @@
   },
   "Celebrations in Smoke#228": {
    "src": "I'm not even certain they're real.",
-   "dst": "",
+   "dst": "我甚至不確定他們是真的存在。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2298,7 +2302,7 @@
   },
   "Celebrations in Smoke#229": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2308,7 +2312,7 @@
   },
   "Celebrations in Smoke#230": {
    "src": "Don't mention to anyone else that I said that.",
-   "dst": "",
+   "dst": "別跟任何人提我說過那句話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2318,7 +2322,7 @@
   },
   "Celebrations in Smoke#231": {
    "src": "Some people get really upset when you imply that.",
-   "dst": "",
+   "dst": "有些人聽到你暗示這個會非常不高興。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2328,7 +2332,7 @@
   },
   "Celebrations in Smoke#232": {
    "src": "The Kalkalrah clan sells it to me. So wherever they get it, I suppose.",
-   "dst": "",
+   "dst": "Kalkalrah 氏族賣給我。所以他們從哪弄來的，我想就是從哪來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2338,7 +2342,7 @@
   },
   "Celebrations in Smoke#233": {
    "src": "Yes. That's what a merchant is.",
-   "dst": "",
+   "dst": "是。商人就是這樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2348,7 +2352,7 @@
   },
   "Celebrations in Smoke#234": {
    "src": "I'm not a member of any clan. I travel around selling my products.",
-   "dst": "",
+   "dst": "我不屬於任何氏族。我到處旅行賣我的東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2358,7 +2362,7 @@
   },
   "Celebrations in Smoke#235": {
    "src": "Clan life would be too stifling. I like getting to see more than the trunk of a single tree.",
-   "dst": "",
+   "dst": "氏族生活太悶。我喜歡看到的不只一棵樹的樹幹。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2368,7 +2372,7 @@
   },
   "Celebrations in Smoke#236": {
    "src": "Sure.",
-   "dst": "",
+   "dst": "當然。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2378,7 +2382,7 @@
   },
   "Celebrations in Smoke#237": {
    "src": "Alright.",
-   "dst": "",
+   "dst": "好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2388,7 +2392,7 @@
   },
   "Celebrations in Smoke#238": {
    "src": "I'm a merchant, not a member of a clan.",
-   "dst": "",
+   "dst": "我是商人，不是氏族成員。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2398,7 +2402,7 @@
   },
   "Celebrations in Smoke#239": {
    "src": "I don't have a way to get one and it hasn't been a problem.",
-   "dst": "",
+   "dst": "我沒有辦法弄到一個，而且一直也沒出過問題。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2408,7 +2412,7 @@
   },
   "Celebrations in Smoke#240": {
    "src": "I walked closely behind a group that did.",
-   "dst": "",
+   "dst": "我緊跟在一群有徽牌的人後面走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2418,7 +2422,7 @@
   },
   "Celebrations in Smoke#241": {
    "src": "I was bored and lonely.",
-   "dst": "",
+   "dst": "我無聊，也孤單。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2428,7 +2432,7 @@
   },
   "Celebrations in Smoke#242": {
    "src": "Gives me a good chance to investigate the green tea market too.",
-   "dst": "",
+   "dst": "順便也是個調查綠茶市場的好機會。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2438,7 +2442,7 @@
   },
   "Celebrations in Smoke#243": {
    "src": "They didn't really trust me.",
-   "dst": "",
+   "dst": "他們不太信任我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2448,7 +2452,7 @@
   },
   "Celebrations in Smoke#244": {
    "src": "Trades were handled quickly, while the other parties were heavily armed, and in small enough quantities that if I was a changeling no major loss would be incurred.",
-   "dst": "",
+   "dst": "交易都很快就結束，對方全副武裝，而且量小到就算我是換形者也不會造成重大損失。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2458,7 +2462,7 @@
   },
   "Celebrations in Smoke#245": {
    "src": "Okay.",
-   "dst": "",
+   "dst": "好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2468,7 +2472,7 @@
   },
   "Celebrations in Smoke#246": {
    "src": "I did not and I would not hazard a guess as to who did.",
-   "dst": "",
+   "dst": "我沒有，而且我也不會去猜是誰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2478,7 +2482,7 @@
   },
   "Celebrations in Smoke#247": {
    "src": "I am answering your questions to the best of my knowledge and ability.",
-   "dst": "",
+   "dst": "我正在盡我所知所能回答你的問題。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2488,7 +2492,7 @@
   },
   "Celebrations in Smoke#248": {
    "src": "Isn't it your job to figure that stuff out?",
-   "dst": "",
+   "dst": "把那些事查出來不正是你的工作嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2498,7 +2502,7 @@
   },
   "Celebrations in Smoke#249": {
    "src": "I see no reason to do your own work and give you more rope to hang me with.",
-   "dst": "",
+   "dst": "我看不出有什麼理由替你做你的工作，還多給你一條吊死我的繩子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2508,7 +2512,7 @@
   },
   "Celebrations in Smoke#250": {
    "src": "It's only an expression.",
-   "dst": "",
+   "dst": "那只是個說法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2518,7 +2522,7 @@
   },
   "Celebrations in Smoke#251": {
    "src": "I'm cooperating. But I don't see why I should trust someone I don't know or trust with more details than they need.",
-   "dst": "",
+   "dst": "我在配合。但我看不出為什麼要對一個我不認識也不信任的人透露超出必要的細節。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2528,7 +2532,7 @@
   },
   "Celebrations in Smoke#252": {
    "src": "It would be helpful for my business if you just let me go.",
-   "dst": "",
+   "dst": "你直接放我走，對我的生意會很有幫助。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2538,7 +2542,7 @@
   },
   "Celebrations in Smoke#253": {
    "src": "But I'm not demanding that. You can give me the same etiquette.",
-   "dst": "",
+   "dst": "但我沒有在要求。你也可以用同樣的禮數對我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2548,7 +2552,7 @@
   },
   "Celebrations in Smoke#254": {
    "src": "Thank you.",
-   "dst": "",
+   "dst": "謝謝。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2558,7 +2562,7 @@
   },
   "Celebrations in Smoke#255": {
    "src": "Sure, but I have no use for your emeralds.",
-   "dst": "",
+   "dst": "當然，但我用不上你的綠寶石。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2568,7 +2572,7 @@
   },
   "Celebrations in Smoke#256": {
    "src": "It's been a while since I've had some rabbit roast. Get some of that for me and I'll see what I can do.",
-   "dst": "",
+   "dst": "我很久沒吃到烤兔肉了。弄一份給我，我看看能幫上什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2578,7 +2582,7 @@
   },
   "Celebrations in Smoke#257": {
    "src": "Huh. I didn't think you actually would, thanks.",
-   "dst": "",
+   "dst": "咦。我沒想到你真的會去，謝了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2588,7 +2592,7 @@
   },
   "Celebrations in Smoke#258": {
    "src": "Anyway, I'm terse because I'm used to being. It doesn't really have anything to do with you.",
-   "dst": "",
+   "dst": "總之，我講話簡短是因為習慣了。跟你其實沒什麼關係。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2598,7 +2602,7 @@
   },
   "Celebrations in Smoke#259": {
    "src": "I spend so much time alone by myself in the woods that I'm not used to making conversation, even when it's needed.",
-   "dst": "",
+   "dst": "我一個人在林子裡待太久，不習慣跟人交談，就算需要的時候也一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2608,7 +2612,7 @@
   },
   "Celebrations in Smoke#260": {
    "src": "Sorry, you seem nice, I wish I could be of more use to your investigation.",
-   "dst": "",
+   "dst": "抱歉，你人看起來不錯，我希望自己能對你的調查更有用一點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2618,7 +2622,7 @@
   },
   "Celebrations in Smoke#261": {
    "src": "I have enough of them as is.",
-   "dst": "",
+   "dst": "我現有的已經夠了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2628,7 +2632,7 @@
   },
   "Celebrations in Smoke#262": {
    "src": "Most of the time I trade in kind anyway.",
-   "dst": "",
+   "dst": "反正我大部分時候都是以物易物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2638,7 +2642,7 @@
   },
   "Celebrations in Smoke#263": {
    "src": "I didn't.",
-   "dst": "",
+   "dst": "我沒有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2648,7 +2652,7 @@
   },
   "Celebrations in Smoke#264": {
    "src": "Yes.",
-   "dst": "",
+   "dst": "對。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2658,7 +2662,7 @@
   },
   "Celebrations in Smoke#265": {
    "src": "Yes.",
-   "dst": "",
+   "dst": "對。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2668,7 +2672,7 @@
   },
   "Celebrations in Smoke#266": {
    "src": "I don't know and you're not getting a guess out of me.",
-   "dst": "",
+   "dst": "我不知道，而且你也別想從我這裡問出猜測。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2678,7 +2682,7 @@
   },
   "Celebrations in Smoke#267": {
    "src": "I could have missed something, but I didn't see any of us do it.",
-   "dst": "",
+   "dst": "我可能漏看了什麼，但我沒看到我們之中任何人做那件事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2688,7 +2692,7 @@
   },
   "Celebrations in Smoke#268": {
    "src": "Find someone who might be familiar with a green tea merchant.",
-   "dst": "",
+   "dst": "找到可能認識綠茶商人的人。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -2698,7 +2702,7 @@
   },
   "Celebrations in Smoke#269": {
    "src": "It's the festival again! And you know what that means...",
-   "dst": "",
+   "dst": "又到祭典了！而你知道那代表什麼……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2708,7 +2712,7 @@
   },
   "Celebrations in Smoke#270": {
    "src": "Green tea!!! I never know how to get this stuff outside the festival.",
-   "dst": "",
+   "dst": "綠茶！！！我從來不知道祭典以外要去哪裡弄到這玩意兒。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2718,7 +2722,7 @@
   },
   "Celebrations in Smoke#271": {
    "src": "I'm going to spend all night standing right here, drinking as much of it as I can!",
-   "dst": "",
+   "dst": "我今晚要一整晚就站在這裡，能喝多少就喝多少！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2728,7 +2732,7 @@
   },
   "Celebrations in Smoke#272": {
    "src": "No, do you know one?!",
-   "dst": "",
+   "dst": "沒有，你認識一個嗎？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2738,7 +2742,7 @@
   },
   "Celebrations in Smoke#273": {
    "src": "Please, tell me, I would love to know. I've been searching for one for years.",
-   "dst": "",
+   "dst": "拜託，告訴我，我非常想知道。我找了好幾年了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2748,7 +2752,7 @@
   },
   "Celebrations in Smoke#274": {
    "src": "The closest I got was some odd tent in the woods east of {p} with a box of the stuff, but that just a scavenger's tent.",
-   "dst": "",
+   "dst": "我最接近的一次是 {p} 東邊林子裡一個奇怪的帳篷，裡面有一箱那玩意兒，但那只是個拾荒者的帳篷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2758,7 +2762,7 @@
   },
   "Celebrations in Smoke#275": {
    "src": "I wish the Kalkalrah clan wouldn't keep the secret so well hidden.",
-   "dst": "",
+   "dst": "真希望 Kalkalrah 氏族別把這個秘密藏得那麼好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2768,7 +2772,7 @@
   },
   "Celebrations in Smoke#276": {
    "src": "No, of course not. They keep it a secret, hoarding it up all year, so they can charge us extra during the festival.",
-   "dst": "",
+   "dst": "不，當然沒有。他們把它當秘密保著，整年囤積起來，好在祭典的時候跟我們多收錢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2778,7 +2782,7 @@
   },
   "Celebrations in Smoke#277": {
    "src": "They do all this under the guise of it being \"mystical\" and \"only suited for ceremonial occasions like this,\" but everyone sees through their sales techniques.",
-   "dst": "",
+   "dst": "他們把這一切包裝成「神秘」以及「只適合像這樣的儀式場合」，但每個人都看穿了他們的銷售手法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2788,7 +2792,7 @@
   },
   "Celebrations in Smoke#278": {
    "src": "... not that it stops me from buying every bottle I can get my hands on. It feels amazing.",
-   "dst": "",
+   "dst": "……不過那也沒能阻止我把每一瓶弄得到的都買下來。那感覺太棒了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2798,7 +2802,7 @@
   },
   "Celebrations in Smoke#279": {
    "src": "Okay, you have to be holding out on me.",
-   "dst": "",
+   "dst": "好吧，你一定是在瞞我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2808,7 +2812,7 @@
   },
   "Celebrations in Smoke#280": {
    "src": "Come on, give me the name. What do you want, emeralds? Information? I'll give it to you, just tell me where I can find a year round green tea merchant.",
-   "dst": "",
+   "dst": "拜託，把名字給我。你想要什麼，綠寶石？情報？我都給你，只要告訴我哪裡找得到一年到頭都在的綠茶商人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2818,7 +2822,7 @@
   },
   "Celebrations in Smoke#281": {
    "src": "What are you wasting my time for then?",
-   "dst": "",
+   "dst": "那你在浪費我的時間幹嘛？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2828,7 +2832,7 @@
   },
   "Celebrations in Smoke#282": {
    "src": "If you get any leads on that tea trader, make sure to let me know right away.",
-   "dst": "",
+   "dst": "如果你查到那個茶商的任何線索，一定要立刻告訴我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2838,7 +2842,7 @@
   },
   "Celebrations in Smoke#283": {
    "src": "You must not have spoken to the people I sold to then.",
-   "dst": "",
+   "dst": "那你一定沒跟我賣過東西的人談過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2848,7 +2852,7 @@
   },
   "Celebrations in Smoke#284": {
    "src": "Not sure how much of an enthusiast they could be if they don't know me.",
-   "dst": "",
+   "dst": "如果他們不認識我，那也稱不上多熱衷吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2858,7 +2862,7 @@
   },
   "Celebrations in Smoke#285": {
    "src": "Even so, that's only the words of one person. I won't pretend to know everyone in the {p}. Even the ones I do meet I don't make a major impression on.",
-   "dst": "",
+   "dst": "即使如此，那也只是一個人的說法。我不會假裝我認識 {p} 的每一個人。就算真的見過的，我也留不下什麼印象。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2868,7 +2872,7 @@
   },
   "Celebrations in Smoke#286": {
    "src": "You're welcome.",
-   "dst": "",
+   "dst": "不客氣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2878,7 +2882,7 @@
   },
   "Celebrations in Smoke#287": {
    "src": "Search for a camp east of {p} [-{~}, {~}, -{~}] that Burick might have been spotted at.",
-   "dst": "",
+   "dst": "搜索 {p} 東邊 [-{~1}, {~2}, -{~3}] 的營地，Burick 可能曾在那裡被人看到。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -2888,7 +2892,7 @@
   },
   "Celebrations in Smoke#288": {
    "src": "Confront Burick",
-   "dst": "",
+   "dst": "與 Burick 對質",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -2898,7 +2902,7 @@
   },
   "Celebrations in Smoke#289": {
    "src": "What else would I need? I'm sure while you were violating my privacy you snooped through my stuff. I have nothing to hide.",
-   "dst": "",
+   "dst": "我還需要什麼？我確定你侵犯我隱私的時候已經把我的東西翻過一遍了。我沒有什麼好隱瞞的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2908,7 +2912,7 @@
   },
   "Celebrations in Smoke#290": {
    "src": "There simply isn't much excess gear that I need as a merchant.",
-   "dst": "",
+   "dst": "身為商人，我不需要多餘的裝備。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2918,7 +2922,7 @@
   },
   "Celebrations in Smoke#291": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2928,7 +2932,7 @@
   },
   "Celebrations in Smoke#292": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2938,7 +2942,7 @@
   },
   "Celebrations in Smoke#293": {
    "src": "You're not believing that, are you.",
-   "dst": "",
+   "dst": "你不相信那套說法，對吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2948,7 +2952,7 @@
   },
   "Celebrations in Smoke#294": {
    "src": "Fine. I'm not really a merchant.",
-   "dst": "",
+   "dst": "好吧。我不是真的商人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2958,7 +2962,7 @@
   },
   "Celebrations in Smoke#295": {
    "src": "I'm a scavenger. I was born without a clan and have lived my entire life without one.",
-   "dst": "",
+   "dst": "我是拾荒者。我生下來就沒有氏族，一輩子都沒有過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2968,7 +2972,7 @@
   },
   "Celebrations in Smoke#296": {
    "src": "When pressed, I pose as a merchant. I've spent enough time wandering the {p} that I have enough knowledge to be one.",
-   "dst": "",
+   "dst": "被逼問的時候，我就假裝是商人。我在 {p} 遊蕩夠久了，懂的東西足夠當一個。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2978,7 +2982,7 @@
   },
   "Celebrations in Smoke#297": {
    "src": "Still though, that's all. I won't pretend I didn't lie to you, but beside that I'm telling the truth.",
-   "dst": "",
+   "dst": "不過還是那句，就這樣。我不會假裝我沒對你說謊，但除此之外我說的都是實話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2988,7 +2992,7 @@
   },
   "Celebrations in Smoke#298": {
    "src": "I don't know who tried to burn down the wickerman or why. It certainly wasn't me.",
-   "dst": "",
+   "dst": "我不知道是誰想燒掉柳枝人，也不知道為什麼。那絕對不是我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -2998,7 +3002,7 @@
   },
   "Celebrations in Smoke#299": {
    "src": "There's not much to do out in the wilderness. Only so many times I can forage the same bush for food or admire the same river.",
-   "dst": "",
+   "dst": "荒野裡沒什麼事可做。同一叢灌木能翻找幾次，同一條河能欣賞幾次，都是有限的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3008,7 +3012,7 @@
   },
   "Celebrations in Smoke#300": {
    "src": "I get lonely. I still am lonely.",
-   "dst": "",
+   "dst": "我會寂寞。我現在也還是寂寞。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3018,7 +3022,7 @@
   },
   "Celebrations in Smoke#301": {
    "src": "The festival is the only time of year I really get to be with others, I've been attending for years now.",
-   "dst": "",
+   "dst": "祭典是一年裡我唯一真正能跟別人待在一起的時候，我已經來了好幾年了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3028,7 +3032,7 @@
   },
   "Celebrations in Smoke#302": {
    "src": "Not that I can speak to anyone much. They might realize I'm not supposed to be here.",
-   "dst": "",
+   "dst": "雖然我也不太能跟誰講話。他們可能會發現我不該在這裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3038,7 +3042,7 @@
   },
   "Celebrations in Smoke#303": {
    "src": "How did you actually get in?",
-   "dst": "",
+   "dst": "你到底是怎麼進來的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3048,7 +3052,7 @@
   },
   "Celebrations in Smoke#304": {
    "src": "I've managed to find a spot in the {p} wall where you can leap over and the guards can't see. I'm amazed they haven't fixed it yet.",
-   "dst": "",
+   "dst": "我找到 {p} 城牆上一個可以翻過去、守衛又看不到的位置。我很驚訝他們到現在還沒修。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3058,7 +3062,7 @@
   },
   "Celebrations in Smoke#305": {
    "src": "Come to think of it, if someone else was coming here uninvited, that's probably how they got in too.",
-   "dst": "",
+   "dst": "說起來，如果還有別人是不請自來的，他們大概也是從那裡進來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3068,7 +3072,7 @@
   },
   "Celebrations in Smoke#306": {
    "src": "I found it lying on the ground a few weeks ago, cracked open and half empty.",
-   "dst": "",
+   "dst": "我幾週前在地上撿到的，破了口，只剩一半。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3078,7 +3082,7 @@
   },
   "Celebrations in Smoke#307": {
    "src": "Someone must have lost it or something, maybe a patrol of soldiers? That would be odd though, they're usually quite tidy.",
-   "dst": "",
+   "dst": "一定是有人弄丟的，也許是巡邏的士兵？不過那也奇怪，他們通常挺整齊的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3088,7 +3092,7 @@
   },
   "Celebrations in Smoke#308": {
    "src": "It could have been one of the clans too. At least one of them knows how to produce the stuff.",
-   "dst": "",
+   "dst": "也可能是某個氏族的。他們之中至少有一個知道怎麼生產那東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3098,7 +3102,7 @@
   },
   "Celebrations in Smoke#309": {
    "src": "I don't know, but I'm glad I found it! It's been too long since I've managed to drink any.",
-   "dst": "",
+   "dst": "我不知道，但我很慶幸我撿到了！我已經太久沒喝到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3108,7 +3112,7 @@
   },
   "Celebrations in Smoke#310": {
    "src": "I hope you didn't confiscate it while you were snooping through my home.",
-   "dst": "",
+   "dst": "希望你翻我家的時候沒把它沒收。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3118,7 +3122,7 @@
   },
   "Celebrations in Smoke#311": {
    "src": "My parents were exiled, I think?",
-   "dst": "",
+   "dst": "我父母被放逐了，我想是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3128,7 +3132,7 @@
   },
   "Celebrations in Smoke#312": {
    "src": "I've never really gotten the entirety of that story, so I'm unsure.",
-   "dst": "",
+   "dst": "那個故事我從來沒完整聽過，所以我不確定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3138,7 +3142,7 @@
   },
   "Celebrations in Smoke#313": {
    "src": "I don't really feel like going deeper into it than that.",
-   "dst": "",
+   "dst": "我不太想再往下講了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3148,7 +3152,7 @@
   },
   "Celebrations in Smoke#314": {
    "src": "It's nice to meet you too. I'm Cerisa, a petty thief.",
-   "dst": "",
+   "dst": "很高興認識你。我是 Cerisa，一個小偷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3158,7 +3162,7 @@
   },
   "Celebrations in Smoke#315": {
    "src": "I snuck into the festival to snag shiny trinkets and whatever else I could get my hands on.",
-   "dst": "",
+   "dst": "我溜進祭典是為了摸走閃亮的小玩意兒，還有任何我拿得到的東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3168,7 +3172,7 @@
   },
   "Celebrations in Smoke#316": {
    "src": "I was also completely uninvolved in who or what tried to burn down the wickerman, so you can let me go whenever you're ready to.",
-   "dst": "",
+   "dst": "我同樣完全沒有涉入是誰或什麼東西想燒掉柳枝人，所以你隨時準備好都可以放我走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3178,7 +3182,7 @@
   },
   "Celebrations in Smoke#317": {
    "src": "Did you have anything else you wanted to know?",
-   "dst": "",
+   "dst": "你還有別的想知道的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3188,7 +3192,7 @@
   },
   "Celebrations in Smoke#318": {
    "src": "Because you'd figure it out one way or another, I don't have a more respectable occupation to cover it up with that you wouldn't quickly disprove.",
-   "dst": "",
+   "dst": "因為你遲早會查出來，我也沒有一個更體面的職業可以掩飾、而你又不會很快戳破的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3198,7 +3202,7 @@
   },
   "Celebrations in Smoke#319": {
    "src": "It'd be irrational to hide my criminal nature when that is precisely what you're searching for.",
-   "dst": "",
+   "dst": "在你正好就是在找那個東西的時候還隱瞞我的犯罪本性，並不理性。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3208,7 +3212,7 @@
   },
   "Celebrations in Smoke#320": {
    "src": "If I deceived you and you found out, you would surely take it as evidence that I had even more to hide.",
-   "dst": "",
+   "dst": "如果我騙了你而你發現了，你必然會把那當成我隱瞞了更多的證據。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3218,7 +3222,7 @@
   },
   "Celebrations in Smoke#321": {
    "src": "My solitary purpose right now is to convince you that I did not try to burn the effigy. I can deal with the consequences of being exposed as a thief later.",
-   "dst": "",
+   "dst": "我此刻唯一的目的，是說服你我沒有試圖燒掉那尊像。被揭穿是小偷的後果，我之後再處理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3228,7 +3232,7 @@
   },
   "Celebrations in Smoke#322": {
    "src": "Of course not, that would be contrary to my overall purpose.",
-   "dst": "",
+   "dst": "當然沒有，那會違背我的整體目的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3238,7 +3242,7 @@
   },
   "Celebrations in Smoke#323": {
    "src": "Mind you, I don't expect you to believe me when I say that. You should definitely act as though I am lying to you.",
-   "dst": "",
+   "dst": "不過請注意，我不指望你相信我這句話。你理當把我當成正在對你說謊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3248,7 +3252,7 @@
   },
   "Celebrations in Smoke#324": {
    "src": "But I won't. You trusting me is my best ticket out of this mess.",
-   "dst": "",
+   "dst": "但我不會。你信任我，是我脫離這場麻煩最好的門票。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3258,7 +3262,7 @@
   },
   "Celebrations in Smoke#325": {
    "src": "I do. I have no idea what they'd do to me and I don't want to find out.",
-   "dst": "",
+   "dst": "我怕。我完全不知道他們會對我做什麼，我也不想知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3268,7 +3272,7 @@
   },
   "Celebrations in Smoke#326": {
    "src": "From what I was able to overhear between you and the organizer, it sounds like you're looking for a changeling.",
-   "dst": "",
+   "dst": "從我偷聽到的你跟主辦人的對話判斷，聽起來你在找一個換形者。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3278,7 +3282,7 @@
   },
   "Celebrations in Smoke#327": {
    "src": "And based on what they do to just an effigy of a changeling, I have absolutely no desire to find out what would happen to me if they actually thought I was one.",
-   "dst": "",
+   "dst": "而根據他們對一尊換形者的像所做的事，我完全不想知道如果他們真的認為我是換形者會發生什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3288,7 +3292,7 @@
   },
   "Celebrations in Smoke#328": {
    "src": "I'll take whatever punishment my thievery gets me and move on.",
-   "dst": "",
+   "dst": "偷竊該受什麼懲罰我就受什麼，然後往前走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3298,7 +3302,7 @@
   },
   "Celebrations in Smoke#329": {
    "src": "Of course, I'll talk about whatever you want.",
-   "dst": "",
+   "dst": "當然，你想談什麼我都談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3308,7 +3312,7 @@
   },
   "Celebrations in Smoke#330": {
    "src": "Change subject",
-   "dst": "",
+   "dst": "換個話題",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3318,7 +3322,7 @@
   },
   "Celebrations in Smoke#331": {
    "src": "Of course. I'll talk about whatever you want.",
-   "dst": "",
+   "dst": "當然。你想談什麼我都談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3328,7 +3332,7 @@
   },
   "Celebrations in Smoke#332": {
    "src": "Yes. Being outside of a clan, there's no one particularly trustworthy in the {p}.",
-   "dst": "",
+   "dst": "是的。在氏族之外，{p} 裡沒有誰特別值得信任。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3338,7 +3342,7 @@
   },
   "Celebrations in Smoke#333": {
    "src": "With the changelings, even if I were to find a partner, I don't know how to make medallions and so could never be sure they weren't killed and replaced.",
-   "dst": "",
+   "dst": "有換形者在，就算我找到一個搭檔，我也不會做徽牌，所以永遠無法確定他們沒有被殺掉頂替。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3348,7 +3352,7 @@
   },
   "Celebrations in Smoke#334": {
    "src": "It's much easier this way, I assure you.",
-   "dst": "",
+   "dst": "我向你保證，這樣簡單得多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3358,7 +3362,7 @@
   },
   "Celebrations in Smoke#335": {
    "src": "Whoever I can. For the most part it's the clans, they can be shockingly lazy if you know where you're looking.",
-   "dst": "",
+   "dst": "誰的都偷。大部分是氏族的，如果你知道往哪裡看，他們可以懶散得驚人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3368,7 +3372,7 @@
   },
   "Celebrations in Smoke#336": {
    "src": "I have stolen a bit from the military when their watch lapses, although that's obviously much harder to pull off.",
-   "dst": "",
+   "dst": "軍方守衛鬆懈的時候我也偷過一點，不過那顯然難得多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3378,7 +3382,7 @@
   },
   "Celebrations in Smoke#337": {
    "src": "Not personally, no. I've heard some rumors though.",
-   "dst": "",
+   "dst": "我沒有親身遇過。不過我聽過一些傳聞。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3388,7 +3392,7 @@
   },
   "Celebrations in Smoke#338": {
    "src": "Hard to tell fact from fiction, but they certainly seem to be a nasty bunch.",
-   "dst": "",
+   "dst": "很難分辨真假，但他們聽起來確實是一群討厭的東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3398,7 +3402,7 @@
   },
   "Celebrations in Smoke#339": {
    "src": "I wouldn't be surprised to hear one tried to break into the festival.",
-   "dst": "",
+   "dst": "如果聽說有一個想闖進祭典，我不會意外。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3408,7 +3412,7 @@
   },
   "Celebrations in Smoke#340": {
    "src": "Of course, I'll talk about whatever you want.",
-   "dst": "",
+   "dst": "當然，你想談什麼我都談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3418,7 +3422,7 @@
   },
   "Celebrations in Smoke#341": {
    "src": "Not directly, no. But of the three of us, I was the farthest from where the flame was kindled.",
-   "dst": "",
+   "dst": "不是直接看到，沒有。但我們三個之中，我離起火點最遠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3428,7 +3432,7 @@
   },
   "Celebrations in Smoke#342": {
    "src": "I may have seen one of the other two suspects move, but I can't be positive about that.",
-   "dst": "",
+   "dst": "我可能看到另外兩名嫌疑人之一動了一下，但我不能肯定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3438,7 +3442,7 @@
   },
   "Celebrations in Smoke#343": {
    "src": "If I had more information I would of course provide it.",
-   "dst": "",
+   "dst": "如果我有更多資訊，我當然會提供。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3448,7 +3452,7 @@
   },
   "Celebrations in Smoke#344": {
    "src": "Ah, have you decided to try and play confrontational?",
-   "dst": "",
+   "dst": "啊，你決定要試著採取對抗的姿態了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3458,7 +3462,7 @@
   },
   "Celebrations in Smoke#345": {
    "src": "That's fine, I will reiterate that I didn't do it. Whether you believe me or not, that is the truth.",
-   "dst": "",
+   "dst": "沒關係，我會重申一次我沒有做。不管你信不信，那就是事實。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3468,7 +3472,7 @@
   },
   "Celebrations in Smoke#346": {
    "src": "My fate lies entirely in your hands, so to speak. You don't have to engage in theatrics to intimidate me, you are exactly as scary as you were before.",
-   "dst": "",
+   "dst": "我的命運可以說完全在你手上。你不需要靠演戲來威嚇我，你跟剛才一樣可怕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3478,7 +3482,7 @@
   },
   "Celebrations in Smoke#347": {
    "src": "Find someone who might have been observant enough to see Cerisa sneak in.",
-   "dst": "",
+   "dst": "找到可能觀察夠仔細、看到 Cerisa 溜進來的人。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -3488,7 +3492,7 @@
   },
   "Celebrations in Smoke#348": {
    "src": "Isn't it nice to see kids having fun?",
-   "dst": "",
+   "dst": "看到孩子們玩得開心，不是很好嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3498,7 +3502,7 @@
   },
   "Celebrations in Smoke#349": {
    "src": "I try to lighten his life when I can, but it's so hard to some days.",
-   "dst": "",
+   "dst": "我盡量在能力範圍內讓他的生活輕鬆一點，但有些日子真的很難。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3508,7 +3512,7 @@
   },
   "Celebrations in Smoke#350": {
    "src": "That's why I love the festival. Makes my job easier!",
-   "dst": "",
+   "dst": "所以我才喜歡祭典。讓我的工作輕鬆多了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3518,7 +3522,7 @@
   },
   "Celebrations in Smoke#351": {
    "src": "He can entertain himself, I can watch for danger.",
-   "dst": "",
+   "dst": "他可以自己找樂子，我可以留意危險。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3528,7 +3532,7 @@
   },
   "Celebrations in Smoke#352": {
    "src": "Nothing obviously dangerous, but I always keep in mind.",
-   "dst": "",
+   "dst": "沒有明顯危險的東西，但我總是放在心上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3538,7 +3542,7 @@
   },
   "Celebrations in Smoke#353": {
    "src": "I did see something very odd a few hours ago though. By the entrance to {p}, it looked like someone hopped over the fence.",
-   "dst": "",
+   "dst": "不過幾小時前我確實看到很奇怪的一幕。在 {p} 的入口旁邊，看起來像有人翻過了柵欄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3548,7 +3552,7 @@
   },
   "Celebrations in Smoke#354": {
    "src": "It might have been a trick of the light, but I think I saw them change clothes and shove something under the bridge.",
-   "dst": "",
+   "dst": "也可能是光線造成的錯覺，但我想我看到他們換了衣服，還把什麼東西塞到橋下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3558,7 +3562,7 @@
   },
   "Celebrations in Smoke#355": {
    "src": "Those might just be the ramblings of a worried old parent though!",
-   "dst": "",
+   "dst": "不過那也可能只是一個憂心的老家長的胡言亂語！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3568,7 +3572,7 @@
   },
   "Celebrations in Smoke#356": {
    "src": "Oh really? That's a shame, I thought I was stealthier than that.",
-   "dst": "",
+   "dst": "喔真的嗎？那真可惜，我以為我比那個更隱密。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3578,7 +3582,7 @@
   },
   "Celebrations in Smoke#357": {
    "src": "I'm not sure that's a real revelation though, I've been open to you that that's what I did.",
-   "dst": "",
+   "dst": "不過我不確定那算什麼揭露，我一開始就對你坦白過我做了那件事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3588,7 +3592,7 @@
   },
   "Celebrations in Smoke#358": {
    "src": "Is there anything else you wanted to call me to account for?",
-   "dst": "",
+   "dst": "還有別的你想找我算帳的嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3598,7 +3602,7 @@
   },
   "Celebrations in Smoke#359": {
    "src": "Yes, I had a change in clothes. The clothes I wear on a daily basis are no fit for a cheerful atmosphere like the festival.",
-   "dst": "",
+   "dst": "是的，我帶了一套換洗衣物。我平常穿的衣服不適合祭典這種歡樂的場合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3608,7 +3612,7 @@
   },
   "Celebrations in Smoke#360": {
    "src": "In that case, I appreciate you keeping me up to date on the progress of your investigation. Your commitment to transparency in the judicial process is admirable.",
-   "dst": "",
+   "dst": "既然如此，我很感謝你隨時讓我掌握你調查的進展。你對司法程序透明度的堅持令人欽佩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3618,7 +3622,7 @@
   },
   "Celebrations in Smoke#361": {
    "src": "Search under the bridge around [-{~}, {~}, -{~}] for something Cerisa may have left behind.",
-   "dst": "",
+   "dst": "搜索 [-{~1}, {~2}, -{~3}] 附近的橋下，尋找 Cerisa 可能留下的東西。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -3628,7 +3632,7 @@
   },
   "Celebrations in Smoke#362": {
    "src": "Confront Cerisa",
-   "dst": "",
+   "dst": "與 Cerisa 對質",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -3638,7 +3642,7 @@
   },
   "Celebrations in Smoke#363": {
    "src": "That would be because it's mine.",
-   "dst": "",
+   "dst": "那是因為那是我的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3648,7 +3652,7 @@
   },
   "Celebrations in Smoke#364": {
    "src": "Your investigation is quite impressive, I'll admit. I was not expecting anyone to find those, I must not have disposed of them properly.",
-   "dst": "",
+   "dst": "我必須承認，你的調查相當出色。我沒料到會有人找到那些，我一定是沒有處理妥當。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3658,7 +3662,7 @@
   },
   "Celebrations in Smoke#365": {
    "src": "Although you did get a bit lucky, didn't you. If no one had spotted me sneak in, you never would have found them.",
-   "dst": "",
+   "dst": "不過你也確實有點運氣，對吧。如果沒有人看到我溜進來，你永遠不會找到它們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3668,7 +3672,7 @@
   },
   "Celebrations in Smoke#366": {
    "src": "I am a deserter from the military, as of a couple days ago. My stop here is a temporary respite to steal whatever I can before disappearing into the {p} as far as I can.",
-   "dst": "",
+   "dst": "我是幾天前從軍中逃走的逃兵。我在這裡停留只是暫時的喘息，想偷到什麼就偷什麼，然後盡可能往 {p} 深處消失。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3678,7 +3682,7 @@
   },
   "Celebrations in Smoke#367": {
    "src": "No I didn't. I am a thief who came to the festival in part to steal petty trinkets. Nothing I told you was a lie.",
-   "dst": "",
+   "dst": "不，我沒有。我是一個為了偷小玩意兒而來祭典的小偷。我告訴你的沒有一句是謊話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3688,7 +3692,7 @@
   },
   "Celebrations in Smoke#368": {
    "src": "I'll grant that I did not tell you things you might have been interested in knowing, but that is only because you never asked about them.",
-   "dst": "",
+   "dst": "我承認我沒有主動告訴你一些你可能會有興趣知道的事，但那只是因為你從來沒問過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3698,7 +3702,7 @@
   },
   "Celebrations in Smoke#369": {
    "src": "Had you asked me if I was a former soldier, I would have provided you with all the information you are being given right now.",
-   "dst": "",
+   "dst": "如果你問過我是不是前士兵，我會把你現在得到的所有資訊都提供給你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3708,7 +3712,7 @@
   },
   "Celebrations in Smoke#370": {
    "src": "Yes, it is to a degree. But you have to understand, you trusting me isn't my only strategy to get out of this.",
-   "dst": "",
+   "dst": "是的，某種程度上是。但你必須理解，讓你信任我並不是我脫身的唯一策略。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3718,7 +3722,7 @@
   },
   "Celebrations in Smoke#371": {
    "src": "It was a gamble to avoid mentioning my desertion. I had to weigh the odds of you finding evidence of my desertion with the danger I might be in by admitting to it.",
-   "dst": "",
+   "dst": "不提逃兵這件事是一場賭博。我得權衡你找到我逃兵證據的機率，以及承認之後我可能陷入的危險。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3728,7 +3732,7 @@
   },
   "Celebrations in Smoke#372": {
    "src": "With hindsight, I bet wrongly, but I don't think my bet was irrational.",
-   "dst": "",
+   "dst": "事後看來，我賭錯了，但我不認為我的賭是不理性的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3738,7 +3742,7 @@
   },
   "Celebrations in Smoke#373": {
    "src": "Had you been a worse investigator or gotten a bit less lucky, it would have paid off immensely.",
-   "dst": "",
+   "dst": "如果你是個差一點的調查者、或運氣差一點，那會有極大的回報。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3748,7 +3752,7 @@
   },
   "Celebrations in Smoke#374": {
    "src": "And I trust that even now, you are a fair enough judicator you will look at the facts and only the facts.",
-   "dst": "",
+   "dst": "而且我相信即使到了現在，你也是個夠公正的裁判者，只會看事實、也只看事實。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3758,7 +3762,7 @@
   },
   "Celebrations in Smoke#375": {
    "src": "The facts that show I had nothing to do with what you're investigating.",
-   "dst": "",
+   "dst": "那些事實顯示，我跟你在調查的事毫無關係。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3768,7 +3772,7 @@
   },
   "Celebrations in Smoke#376": {
    "src": "You could. And if you did you would be personally and entirely responsible for my death.",
-   "dst": "",
+   "dst": "你可以。而如果你那麼做了，你將個人地、完全地為我的死負責。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3778,7 +3782,7 @@
   },
   "Celebrations in Smoke#377": {
    "src": "Should you choose to, I hope my face haunts your nightmares for the rest of your life.",
-   "dst": "",
+   "dst": "如果你選擇那麼做，我希望我的臉在你餘生的每一場噩夢裡糾纏你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3788,7 +3792,7 @@
   },
   "Celebrations in Smoke#378": {
    "src": "But I don't think you will.",
-   "dst": "",
+   "dst": "但我不認為你會。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3798,7 +3802,7 @@
   },
   "Celebrations in Smoke#379": {
    "src": "I'll admit I struggle to express this in words, but you don't seem the type.",
-   "dst": "",
+   "dst": "我承認我很難用言語表達這一點，但你看起來不是那種人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3808,7 +3812,7 @@
   },
   "Celebrations in Smoke#380": {
    "src": "You couldn't really go through with something like that.",
-   "dst": "",
+   "dst": "你真的做不出那種事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3818,7 +3822,7 @@
   },
   "Celebrations in Smoke#381": {
    "src": "Of course, I'll talk about whatever you want.",
-   "dst": "",
+   "dst": "當然，你想談什麼我都談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3828,7 +3832,7 @@
   },
   "Celebrations in Smoke#382": {
    "src": "Military life was too stifling for me. So many direct orders that I can do nothing but obey.",
-   "dst": "",
+   "dst": "軍中的生活對我來說太悶了。那麼多直接命令，我除了服從什麼都不能做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3838,7 +3842,7 @@
   },
   "Celebrations in Smoke#383": {
    "src": "And it was so boring. Most of my time was spent standing still, watching for threats that never came.",
-   "dst": "",
+   "dst": "而且非常無聊。我大部分時間都花在站著不動，警戒從來沒出現過的威脅。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3848,7 +3852,7 @@
   },
   "Celebrations in Smoke#384": {
    "src": "So I left. I wish them all the best and apologize to Her Majesty for my inability to serve her as I wanted to, but my time soured me on the whole affair.",
-   "dst": "",
+   "dst": "所以我離開了。我祝他們一切順利，也為自己無法如願為她效力向女王陛下致歉，但那段時間讓我對整件事徹底倒了胃口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3858,7 +3862,7 @@
   },
   "Celebrations in Smoke#385": {
    "src": "Oh, I see you're getting better at this.",
-   "dst": "",
+   "dst": "喔，我看你越來越上手了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3868,7 +3872,7 @@
   },
   "Celebrations in Smoke#386": {
    "src": "Yes, the other reason I left was the brutality of it. I do not handle blood well and was unprepared for the amount of blood I would see.",
-   "dst": "",
+   "dst": "是的，我離開的另一個理由是它的殘酷。我受不了血，也沒有準備好面對我會看到的血量。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3878,7 +3882,7 @@
   },
   "Celebrations in Smoke#387": {
    "src": "Most of the time, being a soldier is dull. Mind numbingly so. But the few times it was not made me wish more than anything in the world that I could be bored.",
-   "dst": "",
+   "dst": "大多數時候，當兵是枯燥的。枯燥到麻木。但那少數幾次不枯燥的時候，讓我比世上任何事都更希望自己能覺得無聊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3888,7 +3892,7 @@
   },
   "Celebrations in Smoke#388": {
    "src": "I'm not even sure the violence was wrong, I just cannot participate in it.",
-   "dst": "",
+   "dst": "我甚至不確定那些暴力是錯的，我只是沒辦法參與其中。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3898,7 +3902,7 @@
   },
   "Celebrations in Smoke#389": {
    "src": "Unpleasant life at home. There was nothing for me to stay behind for. The military seemed like my best way out.",
-   "dst": "",
+   "dst": "家裡的日子不好過。沒有什麼值得我留下。軍隊看起來是我最好的出路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3908,7 +3912,7 @@
   },
   "Celebrations in Smoke#390": {
    "src": "I think I would make the same choice again, even knowing how it would end. There's no way I could stay there for much longer.",
-   "dst": "",
+   "dst": "我想就算知道結局，我還是會做出同樣的選擇。我不可能在那裡再待更久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3918,7 +3922,7 @@
   },
   "Celebrations in Smoke#391": {
    "src": "Of course, I'll talk about whatever you want.",
-   "dst": "",
+   "dst": "當然，你想談什麼我都談。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3928,7 +3932,7 @@
   },
   "Celebrations in Smoke#392": {
    "src": "Let me look at that more closely.",
-   "dst": "",
+   "dst": "讓我看得仔細一點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3938,7 +3942,7 @@
   },
   "Celebrations in Smoke#393": {
    "src": "No, I don't. The residue smells far more pungent than any drink I recognize.",
-   "dst": "",
+   "dst": "不，我不認得。那殘留物的味道比我認得的任何飲料都刺鼻得多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3948,7 +3952,7 @@
   },
   "Celebrations in Smoke#394": {
    "src": "If you found it here, you could try asking around the festival to see if anyone else recognizes it.",
-   "dst": "",
+   "dst": "如果你是在這裡找到的，可以在祭典裡問問看有沒有別人認得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3958,7 +3962,7 @@
   },
   "Celebrations in Smoke#395": {
    "src": "Anything else?",
-   "dst": "",
+   "dst": "還有別的事嗎？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3968,7 +3972,7 @@
   },
   "Celebrations in Smoke#396": {
    "src": "Well, I can tell you it's not definitely not green tea. Not sure beyond that.",
-   "dst": "",
+   "dst": "嗯，我可以告訴你這絕對不是綠茶。除此之外我不確定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3978,7 +3982,7 @@
   },
   "Celebrations in Smoke#397": {
    "src": "Hmm... neither of us have seen anyone carrying something that smells like that in.",
-   "dst": "",
+   "dst": "唔……我們兩個都沒看到有人帶著聞起來像那樣的東西進來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3988,7 +3992,7 @@
   },
   "Celebrations in Smoke#398": {
    "src": "It would have had to have already been in {p} or they would have had to have arrived even before us.",
-   "dst": "",
+   "dst": "那它一定本來就在 {p} 裡，不然就是他們比我們還早到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -3998,7 +4002,7 @@
   },
   "Celebrations in Smoke#399": {
    "src": "A broken bottle? It looks kind of like the ones we use for our Bottles of Mist, but the smell is totally different.",
-   "dst": "",
+   "dst": "破掉的瓶子？看起來有點像我們裝霧之瓶用的那種，但味道完全不一樣。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4008,7 +4012,7 @@
   },
   "Celebrations in Smoke#400": {
    "src": "Whoa, that's super cool! I bet those pointy edges could hurt a changeling pretty bad...",
-   "dst": "",
+   "dst": "哇，那超酷的！我打賭那些尖角可以把換形者傷得很慘……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4018,7 +4022,7 @@
   },
   "Celebrations in Smoke#401": {
    "src": "Recognize it? No, but I wish I did!",
-   "dst": "",
+   "dst": "認得嗎？不認得，但我真希望我認得！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4028,7 +4032,7 @@
   },
   "Celebrations in Smoke#402": {
    "src": "That smell... I don't recognize it, I'm afraid. It certainly doesn't smell safe!",
-   "dst": "",
+   "dst": "那個味道……恐怕我不認得。那聞起來絕對不安全！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4038,7 +4042,7 @@
   },
   "Celebrations in Smoke#403": {
    "src": "I don't recognize it. Would you mind putting it away though? The smell appears to be bothering a couple of the foxes.",
-   "dst": "",
+   "dst": "我不認得。不過你介意把它收起來嗎？那味道好像讓幾隻狐狸不太舒服。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4048,7 +4052,7 @@
   },
   "Celebrations in Smoke#404": {
    "src": "Hmm. I don't recall.",
-   "dst": "",
+   "dst": "唔。我想不起來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4058,7 +4062,7 @@
   },
   "Celebrations in Smoke#405": {
    "src": "It's vaguely familiar to me, but I'm sorry to say I can't place where from.",
-   "dst": "",
+   "dst": "隱約有點眼熟，但很抱歉我說不出是在哪裡見過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4068,7 +4072,7 @@
   },
   "Celebrations in Smoke#406": {
    "src": "Whatever it is though, I certainly didn't bring it here.",
-   "dst": "",
+   "dst": "不管那是什麼，那絕對不是我帶來的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4078,7 +4082,7 @@
   },
   "Celebrations in Smoke#407": {
    "src": "aUm, no, I don't think so.",
-   "dst": "",
+   "dst": "呃，不，我想沒有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4088,7 +4092,7 @@
   },
   "Celebrations in Smoke#408": {
    "src": "Sorry if you were hoping I had.",
-   "dst": "",
+   "dst": "抱歉如果你本來希望我看過的話。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4098,7 +4102,7 @@
   },
   "Celebrations in Smoke#409": {
    "src": "No.",
-   "dst": "",
+   "dst": "不。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4108,7 +4112,7 @@
   },
   "Celebrations in Smoke#410": {
    "src": "I can't say I have.",
-   "dst": "",
+   "dst": "我不能說我看過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4118,7 +4122,7 @@
   },
   "Celebrations in Smoke#411": {
    "src": "There's not much distinctive about it though, except for that odor.",
-   "dst": "",
+   "dst": "不過它除了那個氣味之外沒什麼特別的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4128,7 +4132,7 @@
   },
   "Celebrations in Smoke#412": {
    "src": "No. And we're in the middle of a conversation, please don't interrupt us.",
-   "dst": "",
+   "dst": "沒有。而且我們正在講話，請不要打斷我們。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4138,7 +4142,7 @@
   },
   "Celebrations in Smoke#413": {
    "src": "That bottle? Absolutely not, that smell is much more than what this old body could take.",
-   "dst": "",
+   "dst": "那個瓶子？絕對沒有，那味道遠遠超過我這副老骨頭承受得了的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4148,7 +4152,7 @@
   },
   "Celebrations in Smoke#414": {
    "src": "Hmm... maybe.",
-   "dst": "",
+   "dst": "唔……也許吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4158,7 +4162,7 @@
   },
   "Celebrations in Smoke#415": {
    "src": "But they paid me pretty good not to say!",
-   "dst": "",
+   "dst": "但他們付了我一筆不錯的錢要我別說！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4168,7 +4172,7 @@
   },
   "Celebrations in Smoke#416": {
    "src": "The only way I would is if I were to really be impressed by someone.",
-   "dst": "",
+   "dst": "我唯一會說的情況，是有人真的讓我印象深刻。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4178,7 +4182,7 @@
   },
   "Celebrations in Smoke#417": {
    "src": "You're on.",
-   "dst": "",
+   "dst": "就這麼說定了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4188,7 +4192,7 @@
   },
   "Celebrations in Smoke#418": {
    "src": "Ha! I knew you couldn't do it.",
-   "dst": "",
+   "dst": "哈！我就知道你辦不到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4198,7 +4202,7 @@
   },
   "Celebrations in Smoke#419": {
    "src": "No hard feelings, nobody can expect to beat me at fox racing though.",
-   "dst": "",
+   "dst": "別往心裡去，不過本來就沒人指望能在狐狸賽跑上贏過我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4208,7 +4212,7 @@
   },
   "Celebrations in Smoke#420": {
    "src": "Of course, if you want to try again, you're free to. Just don't be surprised when you get the same result.",
-   "dst": "",
+   "dst": "當然，你想再試一次也可以。只是別對得到同樣的結果感到意外。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4218,7 +4222,7 @@
   },
   "Celebrations in Smoke#421": {
    "src": "Alright, let's go again then!",
-   "dst": "",
+   "dst": "好，那我們再來一場！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4228,7 +4232,7 @@
   },
   "Celebrations in Smoke#422": {
    "src": "You won!? I-I-I've never been beaten!",
-   "dst": "",
+   "dst": "你贏了！？我、我、我從來沒有被打敗過！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4238,7 +4242,7 @@
   },
   "Celebrations in Smoke#423": {
    "src": "I don't even know how that's possible, you looked like you were just picking randomly!",
-   "dst": "",
+   "dst": "我根本不知道那怎麼可能，你看起來只是在亂選！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4248,7 +4252,7 @@
   },
   "Celebrations in Smoke#424": {
    "src": "Well, fair is fair. You gave me a good show, I'll tell you what I know.",
-   "dst": "",
+   "dst": "嗯，願賭服輸。你讓我看了一場好戲，我就把我知道的告訴你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4258,7 +4262,7 @@
   },
   "Celebrations in Smoke#425": {
    "src": "It's really not that big of a deal, I'm not sure why they paid me to stay quiet about it.",
-   "dst": "",
+   "dst": "其實也不是什麼大事，我不太懂他們為什麼要付錢叫我閉嘴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4268,7 +4272,7 @@
   },
   "Celebrations in Smoke#426": {
    "src": "While studying the foxes before the races started, I caught some members of the Kalkalrah clan bringing in bottles like those.",
-   "dst": "",
+   "dst": "比賽開始前我在研究那些狐狸的時候，撞見幾個 Kalkalrah 氏族的人搬那樣的瓶子進來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4278,7 +4282,7 @@
   },
   "Celebrations in Smoke#427": {
    "src": "I thought they were just green tea, but clearly they're not!",
-   "dst": "",
+   "dst": "我以為那只是綠茶，但顯然不是！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4288,7 +4292,7 @@
   },
   "Celebrations in Smoke#428": {
    "src": "I'm not positive where they are now, but I think I saw them head up the zipline to the second floor of {p}?",
-   "dst": "",
+   "dst": "我不確定他們現在在哪裡，但我想我看到他們搭滑索上了 {p} 的二樓？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4298,7 +4302,7 @@
   },
   "Celebrations in Smoke#429": {
    "src": "And if you'd teach me your racing technique at some point, I'd really appreciate it!",
-   "dst": "",
+   "dst": "還有如果你哪天願意教我你的賽跑技巧，我會非常感激！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4308,7 +4312,7 @@
   },
   "Celebrations in Smoke#430": {
    "src": "Be careful with the accusations you throw around.",
-   "dst": "",
+   "dst": "小心你到處丟出去的指控。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4318,7 +4322,7 @@
   },
   "Celebrations in Smoke#431": {
    "src": "Not everyone has their guard down around this festival for those who stick their noses where they don't belong.",
-   "dst": "",
+   "dst": "不是每個人在這場祭典上，對那些把鼻子伸進不該伸的地方的人，都會鬆懈戒心的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4328,7 +4332,7 @@
   },
   "Celebrations in Smoke#432": {
    "src": "Give me that, let me look at what you were showing them more closely.",
-   "dst": "",
+   "dst": "把那個給我，讓我把你剛才拿給他們看的東西看仔細一點。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4338,7 +4342,7 @@
   },
   "Celebrations in Smoke#433": {
    "src": "Ahhh, yes, you know something about that group, don't you?",
-   "dst": "",
+   "dst": "啊——是的，你知道一些關於那群人的事，對吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4348,7 +4352,7 @@
   },
   "Celebrations in Smoke#434": {
    "src": "You don't need to tell me, I know as much as you do and more.",
-   "dst": "",
+   "dst": "你不必告訴我，我知道的跟你一樣多，還更多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4358,7 +4362,7 @@
   },
   "Celebrations in Smoke#435": {
    "src": "It's been many years since I was able to freely move about the city, my old age imprisoning me in my home.",
-   "dst": "",
+   "dst": "我已經很多年不能在城裡自由行動了，年老把我囚禁在自己家裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4368,7 +4372,7 @@
   },
   "Celebrations in Smoke#436": {
    "src": "But I can still sit and watch the scurrying people below. I can see what they all do when they think nobody is watching.",
-   "dst": "",
+   "dst": "但我還是可以坐著看下面那些奔忙的人。我能看到他們以為沒人在看的時候都在做什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4378,7 +4382,7 @@
   },
   "Celebrations in Smoke#437": {
    "src": "It's a sort of power. A way to keep myself grounded, hanging here in the canopy.",
-   "dst": "",
+   "dst": "那是一種力量。一種讓我在這片樹冠上懸著、卻仍能踏實的方式。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4388,7 +4392,7 @@
   },
   "Celebrations in Smoke#438": {
    "src": "I watched you scramble to extinguish the fire and I watched what that group did after the flame was lit.",
-   "dst": "",
+   "dst": "我看著你手忙腳亂地滅火，也看著那群人在火點燃之後做了什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4398,7 +4402,7 @@
   },
   "Celebrations in Smoke#439": {
    "src": "I watched as those three outsiders were corralled into custody.",
-   "dst": "",
+   "dst": "我看著那三個外人被圍起來拘留。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4408,7 +4412,7 @@
   },
   "Celebrations in Smoke#440": {
    "src": "However, I cannot hear the details. I do not know the specifics.",
-   "dst": "",
+   "dst": "然而，我聽不到細節。我不知道具體的內容。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4418,7 +4422,7 @@
   },
   "Celebrations in Smoke#441": {
    "src": "Tell me what your suspects have done and what you have found. Then, I will give you what you seek.",
-   "dst": "",
+   "dst": "把你的嫌疑人做過什麼、你查到了什麼告訴我。然後，我會給你你要的東西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4428,7 +4432,7 @@
   },
   "Celebrations in Smoke#442": {
    "src": "A bunch of lying outsiders then. To be expected, it's a pity you can't say they all did it.",
-   "dst": "",
+   "dst": "一群說謊的外人。意料之中，可惜你不能說是他們全部做的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4438,7 +4442,7 @@
   },
   "Celebrations in Smoke#443": {
    "src": "As for that clique, I suspect they're secretly security for the festival.",
-   "dst": "",
+   "dst": "至於那一夥人，我懷疑他們是祭典的秘密警衛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4448,7 +4452,7 @@
   },
   "Celebrations in Smoke#444": {
    "src": "I didn't see who lit the flame, but moments after it was lit, one of them threw a bottle just like the one you're holding at it.",
-   "dst": "",
+   "dst": "我沒看到是誰點的火，但火點著之後沒多久，他們其中一個往火上扔了一個跟你手上一模一樣的瓶子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4458,7 +4462,7 @@
   },
   "Celebrations in Smoke#445": {
    "src": "It must have been filled with fuel, because after it hit the flame grew much larger.",
-   "dst": "",
+   "dst": "那裡面一定裝了燃料，因為砸中之後火勢大了很多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4468,7 +4472,7 @@
   },
   "Celebrations in Smoke#446": {
    "src": "Probably for the best, you never know what vermin you can roast if you're not afraid to burn the bush.",
-   "dst": "",
+   "dst": "大概也是好事，如果你不怕把整叢灌木燒了，永遠不知道能烤出什麼害蟲來。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4478,7 +4482,7 @@
   },
   "Celebrations in Smoke#447": {
    "src": "If you will entertain an old woman, then I have no use for you. Quit blocking my view.",
-   "dst": "",
+   "dst": "如果你只是要陪一個老太婆消遣，那我對你就沒有用處了。別擋著我的視線。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4488,7 +4492,7 @@
   },
   "Celebrations in Smoke#448": {
    "src": "My investigator has returned. Now, tell me what you know.",
-   "dst": "",
+   "dst": "我的調查員回來了。現在，把你知道的告訴我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4498,7 +4502,7 @@
   },
   "Celebrations in Smoke#449": {
    "src": "You look like you have something on your mind, what is it?",
-   "dst": "",
+   "dst": "你看起來心裡有事，是什麼？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4508,7 +4512,7 @@
   },
   "Celebrations in Smoke#450": {
    "src": "Ah, I see your investigations have borne fruit.",
-   "dst": "",
+   "dst": "啊，我看出你的調查有了成果。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4518,7 +4522,7 @@
   },
   "Celebrations in Smoke#451": {
    "src": "Yes. As you have seen, people tend to let their guard down at the festival in a way they normally wouldn't.",
-   "dst": "",
+   "dst": "是的。就像你看到的，人們在祭典上往往會以平常不會有的方式鬆懈戒心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4528,7 +4532,7 @@
   },
   "Celebrations in Smoke#452": {
    "src": "They are a necessity to ensure any unexpected guests are swiftly taken care of.",
-   "dst": "",
+   "dst": "他們是確保任何不速之客被迅速處理掉的必要存在。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4538,7 +4542,7 @@
   },
   "Celebrations in Smoke#453": {
    "src": "I suspect you're probably right. And yet, that is irrelevant.",
-   "dst": "",
+   "dst": "我想你大概說得對。然而，那並不相干。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4548,7 +4552,7 @@
   },
   "Celebrations in Smoke#454": {
    "src": "You will tell me they are reckless and a danger to others. I don't disagree, but I encourage you to look at the wider picture.",
-   "dst": "",
+   "dst": "你會告訴我他們魯莽、對別人有危險。我不反對，但我鼓勵你看更大的局面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4558,7 +4562,7 @@
   },
   "Celebrations in Smoke#455": {
    "src": "If we let up our vigilance for even a moment, we have already lost our war. Our clans and families will be infiltrated within the day.",
-   "dst": "",
+   "dst": "如果我們哪怕鬆懈一刻，這場戰爭就已經輸了。我們的氏族與家庭當天就會被滲透。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4568,7 +4572,7 @@
   },
   "Celebrations in Smoke#456": {
    "src": "Their recklessness prevents this. In a case where the smallest failure would be a catastrophe, recklessness becomes necessity.",
-   "dst": "",
+   "dst": "他們的魯莽阻止了這件事。在最微小的失誤都會是災難的情況下，魯莽就成了必要。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4578,7 +4582,7 @@
   },
   "Celebrations in Smoke#457": {
    "src": "Imagine they had not acted rashly in throwing the bottle of fuel onto the already lit flame.",
-   "dst": "",
+   "dst": "想像一下，如果他們沒有魯莽地把那瓶燃料扔到已經點著的火上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4588,7 +4592,7 @@
   },
   "Celebrations in Smoke#458": {
    "src": "They did not create the flame, someone else must have been hoping to gain from it.",
-   "dst": "",
+   "dst": "火不是他們放的，一定有別人希望從中得利。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4598,7 +4602,7 @@
   },
   "Celebrations in Smoke#459": {
    "src": "Their actions, while dangerous, prevented any fiends from exploiting the opportunity. We took it out of their control.",
-   "dst": "",
+   "dst": "他們的行為雖然危險，卻阻止了任何惡徒利用那個機會。我們把它從他們手中奪走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4608,7 +4612,7 @@
   },
   "Celebrations in Smoke#460": {
    "src": "Whatever risk their actions created was worth the price.",
-   "dst": "",
+   "dst": "他們的行為製造出的任何風險，都值得那個代價。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4618,7 +4622,7 @@
   },
   "Celebrations in Smoke#461": {
    "src": "Apologies for rambling, I assure you though that safety is our top concern. Whatever the price.",
-   "dst": "",
+   "dst": "抱歉我扯遠了，但我向你保證，安全是我們最優先的考量。不論代價為何。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4628,7 +4632,7 @@
   },
   "Celebrations in Smoke#462": {
    "src": "Return to the festival organizer at [-{~}, {~}, -{~}] or look into the suspects a bit more.",
-   "dst": "",
+   "dst": "回到 [-{~1}, {~2}, -{~3}] 找祭典主辦人，或再多調查一下那些嫌疑人。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -4638,7 +4642,7 @@
   },
   "Celebrations in Smoke#463": {
    "src": "You think you know who the changeling is?",
-   "dst": "",
+   "dst": "你覺得你知道誰是換形者了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4648,7 +4652,7 @@
   },
   "Celebrations in Smoke#464": {
    "src": "You've dug into them all and have found something? Excellent.",
-   "dst": "",
+   "dst": "你把他們全部都挖過一遍，而且有所發現？太好了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4658,7 +4662,7 @@
   },
   "Celebrations in Smoke#465": {
    "src": "So, who do you think tried to burn down the wickerman?",
-   "dst": "",
+   "dst": "那麼，你認為是誰想燒掉柳枝人？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4668,7 +4672,7 @@
   },
   "Celebrations in Smoke#466": {
    "src": "Suspect {~}? Very well. I will take care of things from here.",
-   "dst": "",
+   "dst": "{~} 號嫌疑人？很好。剩下的我會處理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4678,7 +4682,7 @@
   },
   "Celebrations in Smoke#467": {
    "src": "Again, thank you so much for your help. I cannot emphasize enough how much you assisting in this matter for us allowed the festival to be a success.",
-   "dst": "",
+   "dst": "再次非常感謝你的幫忙。你在這件事上協助我們，讓這場祭典得以成功，這一點我再怎麼強調都不為過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4688,7 +4692,7 @@
   },
   "Celebrations in Smoke#468": {
    "src": "Enjoy the rest of the festival, and make sure to watch the wickerman burn! I'll save a special seat for you near the front as a sign of our appreciation.",
-   "dst": "",
+   "dst": "好好享受剩下的祭典，記得看柳枝人焚燒！為表謝意，我會在前排替你留一個特別的位子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4698,7 +4702,7 @@
   },
   "Celebrations in Smoke#469": {
    "src": "Suspect {~}? Very well. I will take care of things from here.",
-   "dst": "",
+   "dst": "{~} 號嫌疑人？很好。剩下的我會處理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4708,7 +4712,7 @@
   },
   "Celebrations in Smoke#470": {
    "src": "Again, thank you so much for your help. I cannot emphasize enough how much you assisting in this matter for us allowed the festival to be a success.",
-   "dst": "",
+   "dst": "再次非常感謝你的幫忙。你在這件事上協助我們，讓這場祭典得以成功，這一點我再怎麼強調都不為過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4718,7 +4722,7 @@
   },
   "Celebrations in Smoke#471": {
    "src": "Enjoy the rest of the festival, and make sure to watch the wickerman burn! I'll save a special seat for you near the front as a sign of our appreciation.",
-   "dst": "",
+   "dst": "好好享受剩下的祭典，記得看柳枝人焚燒！為表謝意，我會在前排替你留一個特別的位子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4728,7 +4732,7 @@
   },
   "Celebrations in Smoke#472": {
    "src": "Suspect {~}? Very well. I will take care of things from here.",
-   "dst": "",
+   "dst": "{~} 號嫌疑人？很好。剩下的我會處理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4738,7 +4742,7 @@
   },
   "Celebrations in Smoke#473": {
    "src": "Again, thank you so much for your help. I cannot emphasize enough how much you assisting in this matter for us allowed the festival to be a success.",
-   "dst": "",
+   "dst": "再次非常感謝你的幫忙。你在這件事上協助我們，讓這場祭典得以成功，這一點我再怎麼強調都不為過。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4748,7 +4752,7 @@
   },
   "Celebrations in Smoke#474": {
    "src": "Enjoy the rest of the festival, and make sure to watch the wickerman burn! I'll save a special seat for you near the front as a sign of our appreciation.",
-   "dst": "",
+   "dst": "好好享受剩下的祭典，記得看柳枝人焚燒！為表謝意，我會在前排替你留一個特別的位子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4758,7 +4762,7 @@
   },
   "Celebrations in Smoke#475": {
    "src": "I understand your reticense to pick one. We don't have anything close to the information required to make a proper judgement.",
-   "dst": "",
+   "dst": "我理解你不願意指認其中一個。我們手上的資訊遠遠不足以做出恰當的判斷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4768,7 +4772,7 @@
   },
   "Celebrations in Smoke#476": {
    "src": "But you cannot allow that to stop you. We do not have the luxury to close our eyes and pretend it didn't happen.",
-   "dst": "",
+   "dst": "但你不能讓那阻止你。我們沒有閉上眼睛假裝它沒發生過的餘裕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4778,7 +4782,7 @@
   },
   "Celebrations in Smoke#477": {
    "src": "Please, from the inevitably incomplete investigation you conducted, tell me who you think lit that flame.",
-   "dst": "",
+   "dst": "拜託，就從你那必然不完整的調查裡，告訴我你認為是誰點的那把火。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4788,7 +4792,7 @@
   },
   "Celebrations in Smoke#478": {
    "src": "Very well then. I am disappointed, but understand.",
-   "dst": "",
+   "dst": "那好吧。我很失望，但我理解。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4798,7 +4802,7 @@
   },
   "Celebrations in Smoke#479": {
    "src": "I will take care of things from this point forward.",
-   "dst": "",
+   "dst": "從這裡開始的事，我會處理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4808,7 +4812,7 @@
   },
   "Celebrations in Smoke#480": {
    "src": "In thanks for saving the wickerman, there will be a seat saved for you when you are ready to watch it burn.",
-   "dst": "",
+   "dst": "為了感謝你救下柳枝人，等你準備好去看它焚燒的時候，會有一個位子替你留著。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4818,7 +4822,7 @@
   },
   "Celebrations in Smoke#481": {
    "src": "Enjoy the rest of the festival.",
-   "dst": "",
+   "dst": "好好享受剩下的祭典。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4828,7 +4832,7 @@
   },
   "Celebrations in Smoke#482": {
    "src": "Keep looking then. Return here once you've made a decision.",
-   "dst": "",
+   "dst": "那就繼續查吧。做出決定之後再回到這裡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4838,7 +4842,7 @@
   },
   "Celebrations in Smoke#483": {
    "src": "Watch the wickerman burn at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~1}, {~2}, -{~3}] 觀看柳枝人焚燒。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -4848,7 +4852,7 @@
   },
   "Celebrations in Smoke#484": {
    "src": "Watch the wickerman burn.",
-   "dst": "",
+   "dst": "觀看柳枝人焚燒。",
    "role": "desc",
    "kind": "objective",
    "quest": "Celebrations in Smoke",
@@ -4858,7 +4862,7 @@
   },
   "Celebrations in Smoke#485": {
    "src": "You children of the {p} gather round",
-   "dst": "",
+   "dst": "{p} 的孩子們啊，都聚攏過來",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4868,7 +4872,7 @@
   },
   "Celebrations in Smoke#486": {
    "src": "To gaze upon this relic from years past,",
-   "dst": "",
+   "dst": "來凝視這件從往昔留下的遺物，",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4878,7 +4882,7 @@
   },
   "Celebrations in Smoke#487": {
    "src": "This effigy, of ancient foes we fought—",
-   "dst": "",
+   "dst": "這尊像，是我們曾迎戰的古老仇敵——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4888,7 +4892,7 @@
   },
   "Celebrations in Smoke#488": {
    "src": "In memory, we will again ignite!",
-   "dst": "",
+   "dst": "為了記憶，我們將再一次點燃！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4898,7 +4902,7 @@
   },
   "Celebrations in Smoke#489": {
    "src": "An ancient beast, rebuilt with plant and straw,",
-   "dst": "",
+   "dst": "一頭遠古的野獸，以草木重新築起，",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4908,7 +4912,7 @@
   },
   "Celebrations in Smoke#490": {
    "src": "What once was flesh, reconstitute as wood;",
-   "dst": "",
+   "dst": "曾經是血肉的，如今以木頭重組；",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4918,7 +4922,7 @@
   },
   "Celebrations in Smoke#491": {
    "src": "All monsters, old and new, must meet their end—",
-   "dst": "",
+   "dst": "一切怪物，無論新舊，都必須迎來終結——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4928,7 +4932,7 @@
   },
   "Celebrations in Smoke#492": {
    "src": "All fiends must burn! Must broil and char and melt!",
-   "dst": "",
+   "dst": "所有惡徒都得燒！得炙、得焦、得熔！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4938,7 +4942,7 @@
   },
   "Celebrations in Smoke#493": {
    "src": "Substance beside, all that remains persists...",
-   "dst": "",
+   "dst": "形體之外，一切留存下來的都將續存……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4948,7 +4952,7 @@
   },
   "Celebrations in Smoke#494": {
    "src": "...as blackened corpse, no threat there can exist!",
-   "dst": "",
+   "dst": "……化作焦黑的屍首，那裡便再無威脅！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4958,7 +4962,7 @@
   },
   "Celebrations in Smoke#495": {
    "src": "Oh, hi, I never got the chance to thank you.",
-   "dst": "",
+   "dst": "喔，你好，我一直沒機會謝謝你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4968,7 +4972,7 @@
   },
   "Celebrations in Smoke#496": {
    "src": "I'm not sure what happened after you left.",
-   "dst": "",
+   "dst": "我不太確定你走了之後發生了什麼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4978,7 +4982,7 @@
   },
   "Celebrations in Smoke#497": {
    "src": "The festival organizer came back and took Burick/Cerisa away with him.",
-   "dst": "",
+   "dst": "祭典主辦人回來把 Burick/Cerisa 帶走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4988,7 +4992,7 @@
   },
   "Celebrations in Smoke#498": {
    "src": "I'm not sure what happened but, um, I don't think it was good.",
-   "dst": "",
+   "dst": "我不確定發生了什麼，但，呃，我想不是什麼好事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -4998,7 +5002,7 @@
   },
   "Celebrations in Smoke#499": {
    "src": "So, thank you again. I wasn't really in the right mind enough to show it then.",
-   "dst": "",
+   "dst": "所以，再次謝謝你。我當時腦子不夠清醒，沒能好好表達。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5008,7 +5012,7 @@
   },
   "Celebrations in Smoke#500": {
    "src": "I... don't know.",
-   "dst": "",
+   "dst": "我……不知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5018,7 +5022,7 @@
   },
   "Celebrations in Smoke#501": {
    "src": "I'll see how long I can hang around here, but the locals are beginning to glare at me a bit.",
-   "dst": "",
+   "dst": "我看看能在這裡待多久，不過附近的人已經開始有點瞪我了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5028,7 +5032,7 @@
   },
   "Celebrations in Smoke#502": {
    "src": "I might try to head deeper into the woods, see if there's anything I can find.",
-   "dst": "",
+   "dst": "我可能會試著往林子更深處走，看看有沒有什麼找得到的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5038,7 +5042,7 @@
   },
   "Celebrations in Smoke#503": {
    "src": "Or join the military? I don't think I'd be very good at it and I don't even think they'd accept me, but it might be worth a shot.",
-   "dst": "",
+   "dst": "還是去從軍？我不覺得我會很擅長，我甚至不覺得他們會收我，但也許值得一試。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5048,7 +5052,7 @@
   },
   "Celebrations in Smoke#504": {
    "src": "Otherwise, all I can do is try to live off of what I can find. I, uh, don't like my chances with that.",
-   "dst": "",
+   "dst": "不然的話，我能做的就只有靠找得到的東西活下去。我，呃，不太看好自己的機會。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5058,7 +5062,7 @@
   },
   "Celebrations in Smoke#505": {
    "src": "I am! I'm always a, uh, little nervous. But a lot less than I was.",
-   "dst": "",
+   "dst": "我是啊！我一直都，呃，有點緊張。但比先前少多了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5068,7 +5072,7 @@
   },
   "Celebrations in Smoke#506": {
    "src": "It felt like the axe that had been pressed against my neck was lifted, thanks to you.",
-   "dst": "",
+   "dst": "感覺像是那把一直抵在我脖子上的斧頭被拿開了，多虧了你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5078,7 +5082,7 @@
   },
   "Celebrations in Smoke#507": {
    "src": "There's still a lot of uncertainty, but I no longer feel like I'm scrambling like a rabbit in a cage.",
-   "dst": "",
+   "dst": "還是有很多不確定，但我不再覺得自己像籠子裡亂竄的兔子了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5088,7 +5092,7 @@
   },
   "Celebrations in Smoke#508": {
    "src": "I was still in a bit of a daze, so not really, sorry.",
-   "dst": "",
+   "dst": "我當時還有點恍惚，所以沒有，抱歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5098,7 +5102,7 @@
   },
   "Celebrations in Smoke#509": {
    "src": "She left pretty quick though, she must have been in a hurry to get somewhere",
-   "dst": "",
+   "dst": "不過她很快就走了，她一定是急著要去哪裡",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5108,7 +5112,7 @@
   },
   "Celebrations in Smoke#510": {
    "src": "Goodbye!",
-   "dst": "",
+   "dst": "再見！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5118,7 +5122,7 @@
   },
   "Celebrations in Smoke#511": {
    "src": "Hello. Please try not to come too close.",
-   "dst": "",
+   "dst": "你好。請盡量別靠太近。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5128,7 +5132,7 @@
   },
   "Celebrations in Smoke#512": {
    "src": "We can talk from a distance.",
-   "dst": "",
+   "dst": "我們可以隔著距離講。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5138,7 +5142,7 @@
   },
   "Celebrations in Smoke#513": {
    "src": "Apologies for the coolness, your help was appreciated.",
-   "dst": "",
+   "dst": "為冷淡致歉，你的幫忙我很感激。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5148,7 +5152,7 @@
   },
   "Celebrations in Smoke#514": {
    "src": "But I cannot be sure you are who you say you are.",
-   "dst": "",
+   "dst": "但我沒辦法確定你就是你說的那個人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5158,7 +5162,7 @@
   },
   "Celebrations in Smoke#515": {
    "src": "Acceptable.",
-   "dst": "",
+   "dst": "可以接受。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5168,7 +5172,7 @@
   },
   "Celebrations in Smoke#516": {
    "src": "Since our run in at the festival, I have been laying lower than usual.",
-   "dst": "",
+   "dst": "自從祭典上那次遭遇之後，我一直比平常更低調。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5178,7 +5182,7 @@
   },
   "Celebrations in Smoke#517": {
    "src": "My life has not been much different than it usually is.",
-   "dst": "",
+   "dst": "我的生活跟平常沒有太大不同。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5188,7 +5192,7 @@
   },
   "Celebrations in Smoke#518": {
    "src": "It was a horrific mistake to even attend the festival.",
-   "dst": "",
+   "dst": "去參加那場祭典本身就是個可怕的錯誤。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5198,7 +5202,7 @@
   },
   "Celebrations in Smoke#519": {
    "src": "I allowed myself to be controlled by my own humanity; that is a mistake the {p} rarely lets off easily.",
-   "dst": "",
+   "dst": "我讓自己被自己的人性支配了；那是 {p} 很少輕易放過的錯誤。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5208,7 +5212,7 @@
   },
   "Celebrations in Smoke#520": {
    "src": "I will not make the same mistake again. Loneliness will hurt, but trust will kill.",
-   "dst": "",
+   "dst": "我不會再犯同樣的錯。寂寞會痛，但信任會要命。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5218,7 +5222,7 @@
   },
   "Celebrations in Smoke#521": {
    "src": "Last I saw, they were still in {p}.",
-   "dst": "",
+   "dst": "我最後看到的時候，他們還在 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5228,7 +5232,7 @@
   },
   "Celebrations in Smoke#522": {
    "src": "They don't seem cut out for the life of a scavenger, if they can't find any other way to live outside a clan they'll be dead within the week.",
-   "dst": "",
+   "dst": "他們看起來不是當拾荒者的料，如果找不到別的辦法在氏族之外活下去，一週內就會死。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5238,7 +5242,7 @@
   },
   "Celebrations in Smoke#523": {
    "src": "It's unfortunate, but that's reality.",
-   "dst": "",
+   "dst": "很遺憾，但那就是現實。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5248,7 +5252,7 @@
   },
   "Celebrations in Smoke#524": {
    "src": "Yes, while everyone else was watching the wickerman burn she rustled through as many abandoned stalls, bags, and houses as she could.",
-   "dst": "",
+   "dst": "是的，大家都在看柳枝人焚燒的時候，她翻遍了她能翻的每一個廢棄攤位、袋子和屋子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5258,7 +5262,7 @@
   },
   "Celebrations in Smoke#525": {
    "src": "I left before she was finished, but this morning I saw a figure walking south out of {p}, carrying several large bags.",
-   "dst": "",
+   "dst": "我在她結束前就走了，但今天早上我看到一個身影帶著幾個大袋子往南走出 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5268,7 +5272,7 @@
   },
   "Celebrations in Smoke#526": {
    "src": "Wherever she's headed, she's prepared for a long trek.",
-   "dst": "",
+   "dst": "不管她要去哪，她都準備好走一段長路了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
@@ -5278,7 +5282,7 @@
   },
   "Celebrations in Smoke#527": {
    "src": "Goodbye.",
-   "dst": "",
+   "dst": "再見。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Celebrations in Smoke",
