@@ -81,6 +81,7 @@ public final class PositionScreen extends Screen {
         boxes.add(new Box(Overlay.TOOLTIP, "翻譯面板", 150, 90));
         boxes.add(new Box(Overlay.TRACKER, "任務追蹤", 112, 62));
         boxes.add(new Box(Overlay.DIALOGUE, "NPC 對話", 200, 42));
+        boxes.add(new Box(Overlay.CHOICES, "對話選項", 150, 34));
         boxes.add(new Box(Overlay.NAMETAG, "NPC 名牌", 96, 22));
 
         CollectorConfig cfg = WynnChaYuan.config();
@@ -153,7 +154,8 @@ public final class PositionScreen extends Screen {
      * 短句卻會偏左。翻譯面板與任務追蹤是左對齊的清單，存左緣才對。
      */
     private static boolean centred(Overlay which) {
-        return which == Overlay.DIALOGUE || which == Overlay.NAMETAG;
+        return which == Overlay.DIALOGUE || which == Overlay.NAMETAG
+                || which == Overlay.CHOICES;
     }
 
     private void save() {
@@ -262,6 +264,12 @@ public final class PositionScreen extends Screen {
                     Component.literal("希望別再有 grook 闖進來了。"));
             case NAMETAG -> List.of(
                     Component.literal("廚師").withStyle(ChatFormatting.GREEN));
+            // 選項的示意用真的三句，長度才貼近實際——遊戲自己的選項在右上角，
+            // 這一塊預設就是貼過去跟它並排的。
+            case CHOICES -> List.of(
+                    Component.literal("你要去哪裡嗎？"),
+                    Component.literal("這裡的生活如何？"),
+                    Component.literal("只是打個招呼。"));
         };
     }
 
