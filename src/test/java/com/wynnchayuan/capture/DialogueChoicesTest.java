@@ -91,7 +91,38 @@ public final class DialogueChoicesTest {
         check("同一個選項的幾段會接回去",
               joined.equals(List.of("Are you headed someplace?")));
 
+        // 5. 選到哪一列 —— 照抄兩份實機 probe 的樣式分區
+        //
+        //    含  的那一塊，序號就是選到的列。兩份 probe 裡 E080 的位置
+        //    不同（第一塊 vs 第三塊），而 E031 一路跟著它走。
+        check("E080 在第一塊 → 選到第 1 列", DialogueChoices.selected(styleBlocks(1)) == 1);
+        check("E080 在第三塊 → 選到第 3 列", DialogueChoices.selected(styleBlocks(3)) == 3);
+        check("沒有 E080 就回 0（不標，寧可沒有反白也不要標錯）",
+              DialogueChoices.selected(styleBlocks(0)) == 0);
+        check("null 不會炸", DialogueChoices.selected(null) == 0);
+        check("選項文字那個字型不會被誤認成樣式塊",
+              DialogueChoices.selected(real) == 0);
+
         report();
+    }
+
+    /**
+     * 三個樣式區塊，游標放在第 {@code cursorAt} 塊（0 表示都不放）。
+     *
+     * <p>形狀照抄自 {@code dialogue-choice-probe}：每一塊是
+     * {@code [D0023][內容][CFF48]}，選到的那一塊的內容裡多一個 {@code E080}。
+     */
+    private static MutableComponent styleBlocks(int cursorAt) {
+        Style style = font("hud/dialogue/style/default/choice");
+        MutableComponent out = Component.empty();
+        for (int i = 1; i <= 3; i++) {
+            out.append(Component.literal("퀂3").withStyle(style));
+            out.append(Component.literal(i == cursorAt
+                    ? "쿿5 퀀2퀀2"
+                    : "퀀2퀀2").withStyle(style));
+            out.append(Component.literal("쿴8").withStyle(style));
+        }
+        return out;
     }
 
     private static void show(String what, List<String> got) {

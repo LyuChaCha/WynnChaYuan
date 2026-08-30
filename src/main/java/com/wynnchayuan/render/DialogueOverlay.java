@@ -38,7 +38,15 @@ public final class DialogueOverlay {
      * 玩家得自己分辨哪幾行是別人說的、哪幾行是自己等一下要按的號碼——
      * 那正是原本畫面已經替他分好的事。
      */
-    private static volatile List<Component> choices = List.of();
+    private static volatile List<List<Component>> choices = List.of();
+
+    /**
+     * 玩家目前選到第幾個選項（1 起算）；0 代表認不出來。
+     *
+     * <p>認不出來就<b>不標</b>——寧可沒有反白，也不要標錯一列害玩家按錯。
+     * 來源見 {@link com.wynnchayuan.capture.DialogueChoices#selected}。
+     */
+    private static volatile int picked = 0;
 
     /**
      * 這一段對話的選項<b>原文</b>，由 {@link #noteChoices} 從原始 action bar 餵進來。
@@ -107,8 +115,9 @@ public final class DialogueOverlay {
      * <p>空的清單也要收：對話從「有選項」換到「沒有選項」時，
      * 得把上一段的選項清掉，否則會黏在畫面上。
      */
-    public static void noteChoices(List<String> raw) {
+    public static void noteChoices(List<String> raw, int selected) {
         rawChoices = raw == null ? List.of() : List.copyOf(raw);
+        picked = selected;
     }
 
     /** 對話內容變了就更新這裡；傳 null 或空的代表對話結束。 */
@@ -143,7 +152,7 @@ public final class DialogueOverlay {
         // 所以那個判斷從來沒有成立過——這正是選項一直沒被翻譯的原因。
         //
         // 改成用 noteChoices 從原始 action bar 抽出來的那一份。
-        List<Component> options = translateChoices(store);
+        List<List<Component>> options = translateChoices(store);
         // any 只管<b>本文</b>有沒有翻出來。查不到的那幾行也會被擺進 lines，
         // 全靠這個旗標攔著不顯示——把選項也算進來，英文原文就會漏上面板。
         boolean any = false;
@@ -207,7 +216,7 @@ public final class DialogueOverlay {
         current = any ? List.copyOf(lines) : List.of();
         // 選項獨立於本文：NPC 那句查不到的時候，選項照樣要能顯示——
         // 玩家等一下就得從裡面挑一個。
-        choices = List.copyOf(options);
+        choices = options;
         if (any || !options.isEmpty()) {
             lastUpdate = System.currentTimeMillis();
         }
@@ -275,18 +284,22 @@ public final class DialogueOverlay {
      * <p>查不到的照原文擺著。選項是玩家等一下要按的東西，<b>少一個都不行</b>：
      * 只翻出兩個、第三個整個消失，比三個都是英文糟得多。
      */
-    static List<Component> translateChoices(TranslationStore store) {
+    static List<List<Component>> translateChoices(TranslationStore store) {
         List<String> raw = rawChoices;
         if (raw.isEmpty()) {
             return List.of();
         }
-        List<Component> out = new ArrayList<>(raw.size());
+        // <b>一個選項一組</b>，不要攤平。
+        //
+        // 先前是攤成一串 Component，一個選項折成兩行之後就分不出哪兩行屬於
+        // 同一個選項——那樣既畫不出分隔線，也標不出選到哪一個。
+        List<List<Component>> out = new ArrayList<>(raw.size());
         for (String each : raw) {
             StyledText line = StyledText.fromString(each);
             Component hit = LineTranslator.translate(line, store);
             // 查不到就擺原文——選項不能少，見上面的說明
-            out.addAll(Boxes.toLines(
-                    hit != null ? hit : LineTranslator.untranslated(line)));
+            out.add(List.copyOf(Boxes.toLines(
+                    hit != null ? hit : LineTranslator.untranslated(line))));
         }
         return List.copyOf(out);
     }
@@ -310,6 +323,7 @@ public final class DialogueOverlay {
         current = List.of();
         choices = List.of();
         rawChoices = List.of();
+        picked = 0;
         speaker = null;
         needsShift = false;
         settledFor = List.of();
@@ -320,7 +334,7 @@ public final class DialogueOverlay {
     /** 每幀呼叫。沒有內容時什麼都不畫。 */
     public static void render(GuiGraphics graphics) {
         List<Component> lines = current;
-        List<Component> options = choices;
+        List<List<Component>> options = choices;
         if (lines.isEmpty() && options.isEmpty()) {
             return;
         }
@@ -367,11 +381,9 @@ public final class DialogueOverlay {
         if (!lines.isEmpty()) {
             draw(graphics, mc, lines, x + boxW / 2, y, alpha, true);
         }
-        // 選項擺在對話框正上方，跟遊戲原本的上下關係一致
+        // 選項也走 drawChoices，兩種模式的位置與樣式才會一致
         if (!options.isEmpty()) {
-            int optionH = options.size() * lineHeight + PADDING * 2;
-            draw(graphics, mc, options, x + boxW / 2,
-                    y - optionH - CHOICE_GAP, alpha, true);
+            drawChoices(graphics, mc, options, alpha);
         }
     }
 
@@ -456,19 +468,31 @@ public final class DialogueOverlay {
      * 沒拖過就用右側這個預設錨點。
      */
     private static void drawChoices(GuiGraphics graphics, Minecraft mc,
-                                    List<Component> options, float alpha) {
+                                    List<List<Component>> options, float alpha) {
         int boxW = Math.max(MIN_CHOICE_W, Math.min(MAX_CHOICE_W,
                 graphics.guiWidth() / 4));
-        int inner = boxW - PADDING * 2 - 2;
+        int inner = boxW - PADDING * 2 - MARKER_W - 2;
         int lineHeight = mc.font.lineHeight + 1;
-        List<FormattedCharSequence> picks = wrapAll(mc, options, inner);
-        if (picks.isEmpty()) {
+
+        // 先把每個選項各自折好，才知道整塊多高，也才畫得出分隔線
+        List<List<FormattedCharSequence>> rows = new ArrayList<>(options.size());
+        int textLines = 0;
+        for (List<Component> option : options) {
+            List<FormattedCharSequence> wrapped = wrapAll(mc, option, inner);
+            if (wrapped.isEmpty()) {
+                continue;
+            }
+            rows.add(wrapped);
+            textLines += wrapped.size();
+        }
+        if (rows.isEmpty()) {
             return;
         }
-        int boxH = picks.size() * lineHeight + PADDING * 2;
+        int boxH = textLines * lineHeight + PADDING * 2
+                + (rows.size() - 1) * (ROW_GAP * 2 + 1);
 
         int x = graphics.guiWidth() - boxW - CHOICE_EDGE;
-        int y = graphics.guiHeight() / 5;
+        int y = graphics.guiHeight() * 3 / 8;
         if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.CHOICES)) {
             x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.CHOICES)
                     - boxW / 2;
@@ -480,13 +504,61 @@ public final class DialogueOverlay {
         y = Math.max(2, Math.min(graphics.guiHeight() - boxH - 2, y));
 
         Boxes.draw(graphics, x, y, boxW, boxH, alpha);
+
         int textY = y + PADDING;
-        for (FormattedCharSequence line : picks) {
-            graphics.drawString(mc.font, line, x + PADDING + 1, textY,
-                    Colors.fade(Colors.TEXT, alpha));
-            textY += lineHeight;
+        for (int i = 0; i < rows.size(); i++) {
+            List<FormattedCharSequence> option = rows.get(i);
+            int rowH = option.size() * lineHeight;
+            boolean here = picked == i + 1;      // picked 是 1 起算，0 代表認不出來
+
+            if (here) {
+                // 底色加亮：讓「選到哪一個」一眼看得出來，不必去數第幾行
+                graphics.fill(x + 1, textY - ROW_GAP + 1, x + boxW - 1,
+                              textY + rowH + ROW_GAP - 1,
+                              Colors.fade(SELECTED_BG, alpha));
+                graphics.drawString(mc.font, MARKER, x + PADDING,
+                        textY + (rowH - mc.font.lineHeight) / 2,
+                        Colors.fade(Colors.HIGHLIGHT, alpha));
+            }
+            int colour = here ? Colors.HIGHLIGHT : Colors.TEXT;
+            int lineY = textY;
+            for (FormattedCharSequence line : option) {
+                graphics.drawString(mc.font, line, x + PADDING + MARKER_W, lineY,
+                        Colors.fade(colour, alpha));
+                lineY += lineHeight;
+            }
+            textY += rowH;
+
+            // 選項之間畫一條虛線。實線太重，會跟外框搶；虛線只是分隔，不搶眼。
+            if (i < rows.size() - 1) {
+                int sepY = textY + ROW_GAP;
+                for (int dx = x + PADDING; dx < x + boxW - PADDING;
+                        dx += DASH + DASH_GAP) {
+                    int end = Math.min(dx + DASH, x + boxW - PADDING);
+                    graphics.fill(dx, sepY, end, sepY + 1,
+                                  Colors.fade(Colors.FAINT, alpha));
+                }
+                textY += ROW_GAP * 2 + 1;
+            }
         }
     }
+
+    /** 選到的那一列的底色。比框底再亮一點，但不能亮到蓋掉文字。 */
+    private static final int SELECTED_BG = 0x40FFD24A;
+
+    /** 選到的那一列左邊的箭頭，跟遊戲自己的選單一致。 */
+    private static final String MARKER = "\u25B6";
+
+    /** 留給箭頭的寬度。每一列都留，選到與否文字才不會左右跳。 */
+    private static final int MARKER_W = 8;
+
+    /** 選項與分隔線之間的上下留白。 */
+    private static final int ROW_GAP = 2;
+
+    /** 虛線的實心段與空隙長度。 */
+    private static final int DASH = 3;
+
+    private static final int DASH_GAP = 2;
 
     /** 選項框的寬度上下限。選項通常是短句，比對話框窄。 */
     private static final int MIN_CHOICE_W = 120;
