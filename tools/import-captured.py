@@ -200,8 +200,15 @@ NAMED = re.compile(
     r"|^Leader:\s"
     r"|\shas given you\s"
     # 討伐戰的公告同樣把名字黏在固定句型上。
-    r"|\shas opted in"
-    r"|\shas chosen the"
+    r"|\shas opted in"
+    r"|\shas chosen the"
+    # 死亡訊息：`PoorChaCha is six feet under`。句型是遊戲寫死的，
+    # 名字一定在最前面，認句尾那一段最穩。
+    r"|\sis six feet under"
+    # 玩家名牌：`{#}PeeYan Hunter`——帳號名後面接職業。
+    # 上面那條「整條就是一個帳號名」要求整條到底，接了職業就漏掉。
+    r"|^(?:\{#\})*[A-Za-z][a-z0-9]*[a-z][A-Z][A-Za-z0-9]*\s"
+    r"(?:Warrior|Mage|Archer|Assassin|Shaman|Knight|Ninja|Hunter|Skyseer|Dark Wizard)$"
     # 公會階級名牌：`YuChaYuan\n< Season 24 - Platinum >`、`YuChaYuan\n< Traders >`。
     # 名字在第一行、階級用角括號包在第二行——認角括號那一段就夠。
     r"|\n\s*<[^>]*>"
