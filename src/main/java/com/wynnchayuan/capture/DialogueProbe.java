@@ -43,7 +43,39 @@ public final class DialogueProbe {
     /** 錄幾份就停。同一句話會被送幾十次（NPC 逐字打字），不擋會寫爆。 */
     private static final int LIMIT = 8;
 
+    /**
+     * <b>另外</b>保留給「有選項」的對話的格數。
+     *
+     * <h2>為什麼要分開算</h2>
+     * {@link #LIMIT} 那八格會被<b>先遇到的</b>對話用光，而有選項的對話少見得多——
+     * 實測八份 probe 全是沒有選項的。於是最需要看的那一種永遠錄不到。
+     *
+     * <p>選項的文字<b>不在</b> Wynntils 的事件裡（{@code NpcDialogueEvent} 與
+     * {@code DialogueSegment} 都只有 {@code getDialogueText}／
+     * {@code requiresShift}／{@code hasChoices}），所以只能從<b>未經清理的
+     * 原始 action bar</b> 去找——原始訊息本來就是分區的（{@code top_right}、
+     * {@code bottom_middle}、對話字型各一段），選項多半在其中某一區。
+     */
+    private static final int CHOICE_LIMIT = 3;
+
     private static int written = 0;
+
+    private static int choicesWritten = 0;
+
+    /**
+     * 目前這段對話有沒有選項。
+     *
+     * <p>由 {@code CaptureListener} 從 Wynntils 的事件設進來——原始訊息在另一個
+     * listener，兩邊只能用旗標串。Wynntils 的事件是<b>從 action bar 推導</b>的，
+     * 多半晚一拍，所以第一格可能錄到旗標還沒設起來的那一幀；
+     * 留三格就夠涵蓋到設起來之後的樣子。
+     */
+    private static volatile boolean hasChoices = false;
+
+    /** 由 {@code CaptureListener} 呼叫。見 {@link #hasChoices}。 */
+    public static void noteHasChoices(boolean value) {
+        hasChoices = value;
+    }
 
     private static Path dir;
 
@@ -231,6 +263,44 @@ public final class DialogueProbe {
 
     private static int misses = 0;
     private static String missKey = "";
+
+    /**
+     * 有選項的對話：把<b>原始</b> action bar 整條記下來。
+     *
+     * <p>與 {@link #record} 分開計數，因為那邊的格子會被沒有選項的對話用光。
+     * 這裡也不做「長度變化」的過濾——有選項的對話本來就少，寧可多錄幾份。
+     *
+     * @param message 未經 Wynntils 清理的原始 action bar 訊息
+     */
+    public static void recordChoices(Component message) {
+        if (dir == null || !hasChoices || choicesWritten >= CHOICE_LIMIT
+                || message == null || !WynnChaYuan.config().debugDumps()) {
+            return;
+        }
+        choicesWritten++;
+        StringBuilder sb = new StringBuilder();
+        sb.append("=== 有選項的對話：原始 action bar ===")
+          .append(System.lineSeparator());
+        sb.append(message.getString()).append(System.lineSeparator())
+          .append(System.lineSeparator());
+        sb.append("=== 逐片段（看選項在哪一個分區）===")
+          .append(System.lineSeparator());
+        int[] index = {0};
+        message.visit((style, text) -> {
+            sb.append("  [").append(String.format("%02d", index[0]++)).append("] ")
+              .append("font=").append(fontOf(style))
+              .append("  text=").append(describe(text))
+              .append(System.lineSeparator());
+            return Optional.empty();
+        }, Style.EMPTY);
+        try {
+            Files.writeString(dir.resolve("dialogue-choice-probe-"
+                                                  + choicesWritten + ".txt"),
+                              sb.toString(), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            // 診斷寫不出來就算了，不能反過來弄壞畫面
+        }
+    }
 
     public static void record(Component message) {
         justWrote = false;

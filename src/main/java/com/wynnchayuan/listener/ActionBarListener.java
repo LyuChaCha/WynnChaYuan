@@ -57,6 +57,9 @@ public final class ActionBarListener {
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onGameInfo(SystemMessageEvent.GameInfoReceivedEvent event) {
         DialogueProbe.record(event.getMessage());
+        // 有選項的對話另外留格子錄——不然八格會被沒有選項的用光，
+        // 而最需要看的偏偏是有選項的那一種。見 DialogueProbe#recordChoices。
+        DialogueProbe.recordChoices(event.getMessage());
     }
 
     /**
