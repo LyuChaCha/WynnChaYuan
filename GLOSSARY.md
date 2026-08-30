@@ -261,6 +261,15 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | charm | 符咒 | Nasin 家那枚讓 Zhiraok 復活的。與 `talisman`（護符）分開 **(待討論)** |
 | blaster | 爆能槍 | Yulie 的武器 |
 | Syndra the Lioness | 母獅 Syndra | 女王對她的稱呼 **(待討論)** |
+| rift | 裂隙 | 天空裂開的那道 |
+| the Weave | 織網 | 現實的織體本身 **(待討論)** |
+| manaweaver | 織法者 | Sui 是天生的 **(待討論)** |
+| Resonance Weaver | 共鳴織機 | Yusanu 造的裝置 **(待討論)** |
+| strand | 絲線 | 構成現實的線。Sui 說的「拉住絲線」 |
+| Scion | 後裔 | Sovereign Two 對 Tasim 的稱呼 **(待討論)** |
+| Bleeding Rose | 泣血薔薇 | 報社筆名，比照 `Toxic Thistle` **(待討論)** |
+| Dusk Garden | 暮色花園 | 同上 **(待討論)** |
+| grapple arrow | 抓鉤箭 | Rex 的 |
 **請注意，這裡每一個單字都待討論**
 
 ---
