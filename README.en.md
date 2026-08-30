@@ -42,10 +42,12 @@ box, keeping its frame, nameplate and portrait — or off.
 |---|---|
 | Item tooltips | A panel beside the tooltip, or written into the tooltip itself |
 | NPC dialogue | Translated **inside Wynncraft's own dialogue box** — frame, nameplate and portrait kept |
+| Dialogue choices | The same three modes as the dialogue, set separately |
 | NPC nameplates, floating text | Off / a box while you look at one / replaced in place (switchable). Crafting stations and the "Right-Click with an Empty Hand" prompts count too |
 | Quest tracker | A translated box on the left |
 | Ability tree | Every node, description and archetype |
 | System messages | Quest completions, reward lists, area transitions — the chat ones |
+| Title text | The big text in the middle of the screen |
 | Copy chat | Lists recent chat messages; click one to copy (key unbound by default) |
 | Screenshots | **F9** captures the translation panel — clipboard or file (rebindable) |
 
@@ -70,6 +72,24 @@ line.
 See the [README](README.md) for the current progress table, and
 [docs/PROGRESS.md](docs/PROGRESS.md) for **which files each language still
 needs**.
+
+## Installing the mod helps finish it
+
+Quest dialogue and NPC names **have no official data source**. There is no file to
+scrape — somebody has to walk up to that NPC in game.
+
+So the mod can collect the lines it could not translate. Turn on **Collect
+untranslated strings** in F6, play normally, and it writes them to
+`config/wynnchayuan/captured.json`. Attach that file to a
+[GitHub issue](https://github.com/LyuChaCha/WynnChaYuan/issues) and those lines
+become translatable for everyone.
+
+> **Please glance at the file before attaching it.** The mod filters out player
+> names, friend lists and coordinates, but Wynncraft has a lot of notification
+> formats and something may slip through. Delete any line with somebody's name in
+> it — and tell us, so the filter can be fixed.
+
+You do not have to translate anything to help.
 
 ## Helping translate
 

@@ -321,7 +321,8 @@ def main(argv: list[str]) -> int:
         body = (f"**目前進度 {done:,} / {total:,}"
                 f"（{done / total:.1%}）**，更新於 {stamp}。\n\n{body}")
     stale = []
-    for name in ("README.md", "CONTRIBUTING.md", "docs/modrinth-description.md"):
+    for name in ("README.md", "CONTRIBUTING.md",
+                 "docs/modrinth-description.md", "docs/curseforge-description.md"):
         path = Path(name)
         if path.is_file() and replace(path, body):
             stale.append(name)
