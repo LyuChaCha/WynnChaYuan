@@ -270,6 +270,17 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Bleeding Rose | 泣血薔薇 | 報社筆名，比照 `Toxic Thistle` **(待討論)** |
 | Dusk Garden | 暮色花園 | 同上 **(待討論)** |
 | grapple arrow | 抓鉤箭 | Rex 的 |
+| Blossom of Blades | 綻放之刃 | 原文另有 `Blossoming Blades` 的寫法，是同一個組織，中文統一 **(待確認)** |
+| Operation Godslayer | 弒神行動 | **(待討論)** |
+| Fledgeling | 雛鳥 | 樹冠對新成員的稱呼 |
+| mirror realm | 鏡界 | Sovereign Two 的鏡子裡 **(待討論)** |
+| the Shade | 幽影 | 與 `the Dawn` 對仗 **(待討論)** |
+| the Dawn | 曙光 | 與 `the Shade` 對仗 **(待討論)** |
+| the Dark's Claim | 黑暗的領地 | **(待討論)** |
+| Violent Heather | 暴烈石楠 | 綻放之刃的筆名 |
+| Crimson Dagger | 緋紅匕首 | 同上 |
+| Thorn Blade | 荊棘之刃 | 同上 |
+| Wilted Camellia | 凋萎山茶 | 同上 |
 **請注意，這裡每一個單字都待討論**
 
 ---
