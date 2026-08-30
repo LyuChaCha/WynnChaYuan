@@ -229,6 +229,20 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | identification papers | 身分文件 |  |
 | passport | 通行證 | Syndra 弄來的那份，跟 `papers` 分開 |
 | the Driver | （未定，暫留原文） | 檔案裡「由 the Driver 帶往本地」。像職稱又像代號，**待討論** |
+| the Canopy | 樹冠 | Fruma 的另一支反抗組織，住在巨樹上，內部以梟／鴿互稱。與 `Leaves in the Wind` 同一種命名法。 **(待討論)** |
+| Steel Feather | 鋼羽 | Quill 那一支。 **(待討論)** |
+| changeling | 換形者 | 語料裡本來就這樣譯，補進表裡 |
+| talisman | 護符 | 語料裡本來就這樣譯，補進表裡 |
+| Gravity's Monolith | 重力方尖碑 | Deraj 監獄的別稱，敘述裡當普通名詞用，不是地名 **(待討論)** |
+| Warden | 典獄長 | Deraj 監獄的 Oru。與 boss 稱號 `Warden of Wisdom`（智慧的看守者）分開 **(待討論)** |
+| recruit（Fruma 軍方） | 新兵 | Tericen 訓練營。公會階級的 `Recruit` 是「新成員」，兩者不同 **(待討論)** |
+| Recruiter（Fruma 軍方） | 招募官 | 公會階級的 `Recruiter` 是「招募者」（見 `gui.json`），兩者不同 |
+| Instructor | 教官 |  |
+| Commander | 指揮官 | 與既有的「憲兵指揮官」一致 |
+| Captain | 隊長 | 與既有的「皇家隊長」一致 |
+| Wings division | 羽翼部隊 | 權限最高的那一支，憲兵屬於它 **(待討論)** |
+| Constable division | 警備部隊 | 權限高於地區部隊、低於羽翼部隊 **(待討論)** |
+| estoc | 刺劍 | Tericen 的木製訓練武器 |
 **請注意，這裡每一個單字都待討論**
 
 ---
