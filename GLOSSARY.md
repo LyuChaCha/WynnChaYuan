@@ -257,6 +257,10 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 | Blossoming Blades | 綻放之刃 | 反抗組織，Cemor 所屬 **(待討論)** |
 | Toxic Thistle | 劇毒薊 | Cemor 的代號 **(待討論)** |
 | Penitence District | （保留原文） | 不在 places.json 裡，所以不會變成 {p}。其他區都在表上，這像是漏了 **(待確認)** |
+| Spymaster | 諜報總管 | 與陛下一起主持「那個計畫」的人 **(待討論)** |
+| charm | 符咒 | Nasin 家那枚讓 Zhiraok 復活的。與 `talisman`（護符）分開 **(待討論)** |
+| blaster | 爆能槍 | Yulie 的武器 |
+| Syndra the Lioness | 母獅 Syndra | 女王對她的稱呼 **(待討論)** |
 **請注意，這裡每一個單字都待討論**
 
 ---

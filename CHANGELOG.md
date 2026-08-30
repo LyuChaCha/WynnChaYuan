@@ -139,6 +139,32 @@
 
 ### 新增
 
+- **《Echoes of Change》整篇翻完**（725 句）。任務進度來到 14190/22067（64.3%）。
+  這是 True Colours 的前傳：風中之葉與鋼羽合力刺殺女王的那一天。玩家跟著每一組
+  跑完準備工作，然後看著它整個垮掉——Syndra 當眾被處決。
+
+  <p><b>Zhiraok 統領整個人是用數學講話的。</b>`crunching the numbers`、
+  `our sequence`、`sum to nothing`、`unexpected variables`、`magnitudes of order`、
+  `you zeroes`、`Your number's up`、`You're subtractin-`——這不是偶爾的比喻，
+  是<b>他的語言本身</b>。中文整套接住：數列、變數、累加、總和、指數級、算錯、
+  經過計算的風險。
+
+  <p>他連髒話都是數學的：`NOT ONE MORE FACTORING WORD`——`factoring` 是
+  `fucking` 的替身。中文用「一個該分解的字都不准再說」（因式分解），一樣是
+  把髒話換成數學詞的怪腔調。譯成普通的「該死的」會讓這個角色少掉一半。
+
+  <p><b>兩種結巴不能混為一談。</b>Zeph 是真的口吃，卡在字首子音
+  （`c- c- can`、`th- think`），中文也卡在字首（「我、我、我不能」）；
+  Sui 不是口吃，是遲疑，用 `um`、`ah` 這些填充詞，中文用「嗯」「呃」。
+  這兩個角色在同一篇裡對話，處理成同一種就會分不出誰是誰。
+
+  <p>用語沿用 GLOSSARY；新定 `Spymaster`→諜報總管、`charm`→符咒
+  （與 `talisman` 的「護符」分開）、`blaster`→爆能槍、
+  `Syndra the Lioness`→母獅 Syndra，已一併補進 GLOSSARY。
+  炸彈拼圖那幾條的方塊名用 Minecraft 正體中文的官方譯名。
+
+  <p>`Let's go!` 與 `Ugh...` 兩條撞到既有語料，一律採用先前已存在的譯文。
+
 - **《Off the Rails》整篇翻完**（791 句，本專案單篇最大）。任務進度來到 13465/22067（61.0%）。
   一列開往 Auburn 的地鐵上，警備部隊的 Levi 將軍被殺。兩名擺爛的衛兵隨手把玩家
   指為兇手，再「大發慈悲」讓你在到站前自己找出真兇。
