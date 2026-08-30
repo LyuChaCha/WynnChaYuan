@@ -937,6 +937,37 @@ public final class LineTranslator {
         while (at > lineStart + 1 && at < text.length() && cannotStartLine(text.charAt(at))) {
             at--;
         }
+        at = keepGlyphWithWord(text, at, lineStart);
+        return at > lineStart ? at : cut;
+    }
+
+    /**
+     * 圖示不能落在<b>行尾</b>。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 「{@code 使用 {#} 物品鑑定師}」——那個 {@code {#}} 是物品鑑定師的圖示，
+     * 是它的前綴。斷在兩者中間就成了：
+     *
+     * <pre>
+     *   此物品的力量已被封印，使用 ◉
+     *   物品鑑定師 即可解放其潛能。   ← 圖示孤零零留在上一行行尾
+     * </pre>
+     *
+     * <p>這是 {@link #cannotStartLine} 的鏡像：那個管「不能在行首」的標點，
+     * 這個管「不能在行尾」的圖示。做法一樣是把斷點往前挪，讓圖示跟著下一行走。
+     * 圖示前面那個空白也一起挪——它是用來隔開圖示與前一個詞的，
+     * 留在行尾只是多一格看不見的寬度。
+     */
+    private static int keepGlyphWithWord(String text, int cut, int lineStart) {
+        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
+        int at = cut;
+        while (at - glyph.length() >= lineStart
+                && text.startsWith(glyph, at - glyph.length())) {
+            at -= glyph.length();
+            while (at > lineStart && text.charAt(at - 1) == ' ') {
+                at--;
+            }
+        }
         return at > lineStart ? at : cut;
     }
 
