@@ -157,11 +157,29 @@ def already_piecewise(src: str, have: set[str]) -> bool:
 
 # 別人的名字。Minecraft 帳號名是英數加底線，長度 3-16。
 NAMED = re.compile(
-    r"\bCrafted by\b|\bParty\b.*\binvit|'s (?:party|guild|island|house)"
+    r"\bCrafted by\b|\bParty\b.*\binvit"
+    # 「某某的狀態」也是別人的資料：`YuChaYuan's Status`。
+    # 注意<b>不能</b>把所有 `'s` 都擋掉——`Monte's Village` 是遊戲裡的領地名。
+    r"|'s (?i:party|guild|island|house|status)\b"
     # 領地名牌：「Controlled by Paladins United [Lv. 32]」。公會名稱跟玩家名稱
     # 一樣是別人的資料。它沒有底線，所以下面那條「帳號名的形狀」抓不到——
     # 一次 Lootrun 就有 83 條這樣穿了過去。
     r"|\bControlled by\b"
+    # 公會標籤 `[YCY]`、`[SEQ]`、`[CTRN]`——三到四個大寫字母的方括號。
+    #
+    # 這是公會資料最穩定的形狀，公會名本身反而抓不到（`JFZN JAPAN`、
+    # `Cloud Tavern` 跟一般英文字沒兩樣）。認標籤就連帶擋掉了整行：
+    # `- Cloud Tavern [CTRN]`、`✔ Herb Cave ({~}) [SEQ]`、
+    # `… taken control of Apprentice Huts from [SEQ]!`。
+    #
+    # 代價是那幾行<b>介面字串</b>也跟著收不進來。刻意的：語料是公開的，
+    # 別人的公會名一旦進去就洗不掉，少翻一行領地清單便宜得多。
+    r"|\[[A-Z]{3,4}\]"
+    # 公會欄位：。公會名本身抓不到，但欄位標籤抓得到。
+    r"|Guild:\s"
+    # 公會階級名牌：`YuChaYuan\n< Season 24 - Platinum >`、`YuChaYuan\n< Traders >`。
+    # 名字在第一行、階級用角括號包在第二行——認角括號那一段就夠。
+    r"|\n\s*<[^>]*>"
     r"|\b[A-Za-z0-9]*_[A-Za-z0-9_]{2,}\b")
 
 
