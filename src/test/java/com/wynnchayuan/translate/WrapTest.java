@@ -131,6 +131,8 @@ public final class WrapTest {
         }
         check("亂數四千輪都沒丟例外", () -> "");
 
+        oneLine();
+        labelBreak();
         balanced();
 
         System.out.println(failures == 0 ? "Wrap: 全部通過" : "Wrap: " + failures + " 項失敗");
@@ -156,20 +158,17 @@ public final class WrapTest {
     private static void balanced() {
         System.out.println("\n  -- 同樣行數要排得平均 --");
 
-        // measure 數的是「幾個字」。這句 13 個字，寬 11 正好逼出貪心的 11+2。
-        // 平均之後兩行的字數應該差不多。
-        String text = "猛撲: 逃脫變成向前突進。";
-        String wrapped = LineTranslator.wrapBalanced(text, 11, WrapTest::measure);
-        String[] rows = wrapped.split(String.valueOf(NL));
-        report("折成兩行（實際：" + show(wrapped) + "）", rows.length == 2);
-        if (rows.length == 2) {
-            int shortest = Math.min(rows[0].length(), rows[1].length());
-            int longest = Math.max(rows[0].length(), rows[1].length());
-            // 貪心是 11 ＋ 2（差 9）；平均之後不該差這麼多。
-            report("兩行的長度接近（" + rows[0].length() + " / " + rows[1].length() + "）",
-                    longest - shortest <= 3);
-            report("最後一行不是零頭", shortest >= 3);
-        }
+        // 三行才輪得到平均分配：兩行的零頭已經被「放得下就一行」接走了
+        //（見 oneLine），因為<b>會出現零頭就表示只差一點點放得下</b>。
+        //
+        // 這裡不寫死字數——寫的是那條性質：同樣的行數，最短的那一行要變長。
+        String text = "每次命中使你獲得層數並改為環繞你運行造成傷害";
+        String greedy = LineTranslator.wrapToWidth(text, 10, WrapTest::measure);
+        String even = LineTranslator.wrapBalanced(text, 10, WrapTest::measure);
+        report("這句夠長，真的折成三行以上（" + show(greedy) + "）", rowsOf(greedy).length >= 3);
+        report("行數沒變（" + show(even) + "）", rowsOf(even).length == rowsOf(greedy).length);
+        report("最後一行不再是零頭（" + shortest(greedy) + " → " + shortest(even) + "）",
+                shortest(even) > shortest(greedy));
 
         // 反面：不能為了平均而把英文單字切開。
         String withWord = "每次命中使你獲得 Crystallize 層數。";
@@ -187,6 +186,88 @@ public final class WrapTest {
 
         // 內容守恆：平均只重排，不能吃字。
         report("字沒有變少", bare(tight).equals(bare(withWord)));
+    }
+
+    /**
+     * 只差一點就放得下的，讓它留在同一行。
+     *
+     * <p>Major ID 大多是「名稱: 一句話」，中文比英文緊湊，原文兩行的往往一句
+     * 就講完。硬折回兩行只是把一句完整的話剪成兩截——而譯文面板是我們自己畫的，
+     * 寬度本來就跟著內容長，不必為了對齊原文的形狀犧牲可讀性。
+     *
+     * <p>只放寬到 {@code SNUG}（125%）。再寬下去，一句話就能把整份 tooltip
+     * 撐得莫名其妙，所以也釘住反面：差太多的還是要折。
+     */
+    private static void oneLine() {
+        System.out.println("\n  -- 放得下就留在同一行 --");
+
+        // measure 數的是「幾個字」。這句 13 個字，寬 11——11 × 125% = 13，剛好放得下。
+        String text = "猛撲: 逃脫變成向前突進。";
+        String fits = LineTranslator.wrapBalanced(text, 11, WrapTest::measure);
+        report("沒有斷行（實際：" + show(fits) + "）", fits.indexOf(NL) < 0);
+        report("字沒有變少", bare(fits).equals(bare(text)));
+
+        // 反面：寬 8 的話 8 × 125% = 10，13 個字差太多，該折就得折。
+        String tight = LineTranslator.wrapBalanced(text, 8, WrapTest::measure);
+        report("差太多的還是要折（實際：" + show(tight) + "）", tight.indexOf(NL) > 0);
+    }
+
+    /**
+     * 放不下的時候，斷在名稱後面。
+     *
+     * <p>「{@code 猛撲:}」換行「{@code 逃脫變成向前突進在此}」——斷在冒號這個
+     * <b>語意</b>的接縫上，比斷在句子中間好讀。
+     *
+     * <p>但只在<b>不會多出一行</b>的時候：說明長到要三四行的，名稱獨佔一行
+     * 就是白白浪費一行，那還不如平均分配。反面也釘住。
+     */
+    private static void labelBreak() {
+        System.out.println("\n  -- 斷在名稱後面 --");
+
+        // 14 個字、寬 11：11 × 125% = 13 放不下，但名稱後面斷剛好兩行。
+        String text = "猛撲: 逃脫變成向前突進在此";
+        String out = LineTranslator.wrapBalanced(text, 11, WrapTest::measure);
+        String[] rows = rowsOf(out);
+        report("折成兩行（實際：" + show(out) + "）", rows.length == 2);
+        if (rows.length == 2) {
+            report("第一行就是名稱那半", rows[0].equals("猛撲:"));
+            report("說明整句在第二行", rows[1].equals("逃脫變成向前突進在此"));
+        }
+        report("字沒有變少", bare(out).equals(bare(text)));
+
+        // 說明本來就要兩行的話，名稱再獨佔一行就變三行——比貪心多一行，
+        // 那是白白浪費一行，不該這樣折。
+        //
+        // 注意<b>不是</b>「說明長就不斷」：貪心也要三行的時候，斷在名稱後面
+        // 同樣是三行，沒有多花，那就照斷（下面第二段）。判準是行數，不是長度。
+        String longer = "猛撲: 逃脫變成向前突進並造成傷害";
+        String[] wide = rowsOf(LineTranslator.wrapBalanced(longer, 11, WrapTest::measure));
+        report("貪心兩行就夠時，不為了斷在名稱後而多花一行（實際："
+                + show(String.join(String.valueOf(NL), wide)) + "）",
+                wide.length == 2 && !wide[0].equals("猛撲:"));
+
+        // 貪心本來就要三行的，斷在名稱後面也是三行——沒有多花，那就照斷。
+        String longest = "猛撲: 逃脫變成向前突進並且造成大量範圍傷害。";
+        String[] three = rowsOf(LineTranslator.wrapBalanced(longest, 11, WrapTest::measure));
+        report("行數一樣就照斷（實際："
+                + show(String.join(String.valueOf(NL), three)) + "）",
+                three.length == 3 && three[0].equals("猛撲:"));
+        report("剩下那半也排得平均",
+                three.length == 3 && Math.abs(three[1].length() - three[2].length()) <= 2);
+    }
+
+    /** 折行結果拆成幾行。 */
+    private static String[] rowsOf(String wrapped) {
+        return wrapped.split(String.valueOf(NL), -1);
+    }
+
+    /** 最短的那一行有幾個字。零頭就是它很小。 */
+    private static int shortest(String wrapped) {
+        int least = Integer.MAX_VALUE;
+        for (String row : rowsOf(wrapped)) {
+            least = Math.min(least, row.length());
+        }
+        return least;
     }
 
     /** 是不是拉丁字母。中文不算——它本來就可以在任何字之間斷。 */

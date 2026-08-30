@@ -136,9 +136,13 @@ public final class DialogueOverlay {
             // 選項對話的實際結構還沒定案，先把原文記下來，下一輪照真實資料實作
             com.wynnchayuan.translate.FlowedDebug.noteChoices(dialogue.getString());
         }
-        if (dialogue == null
-                || WynnChaYuan.config().dialogueMode()
-                        == CollectorConfig.DialogueMode.OFF) {
+        // 內文關掉<b>不代表</b>選項也關掉——那是兩個開關。先前是同一個，
+        // 於是「內文關、選項留面板」這個組合根本畫不出東西。
+        boolean bodyOff = WynnChaYuan.config().dialogueMode()
+                == CollectorConfig.DialogueMode.OFF;
+        boolean choiceOff = WynnChaYuan.config().choiceMode()
+                == CollectorConfig.DialogueMode.OFF;
+        if (dialogue == null || (bodyOff && choiceOff)) {
             clear();                           // 快取也要跟著倒掉，否則下一段對話
             return;                            // 會拿上一段的結果去比對開頭
         }
@@ -152,7 +156,7 @@ public final class DialogueOverlay {
         // 所以那個判斷從來沒有成立過——這正是選項一直沒被翻譯的原因。
         //
         // 改成用 noteChoices 從原始 action bar 抽出來的那一份。
-        List<List<Component>> options = translateChoices(store);
+        List<List<Component>> options = choiceOff ? List.of() : translateChoices(store);
         // any 只管<b>本文</b>有沒有翻出來。查不到的那幾行也會被擺進 lines，
         // 全靠這個旗標攔著不顯示——把選項也算進來，英文原文就會漏上面板。
         boolean any = false;
@@ -213,11 +217,11 @@ public final class DialogueOverlay {
         // 診斷：分得出「沒讀到對話」與「讀到了但沒譯文」——
         // 少了這個，畫面上沒東西時完全不知道卡在哪一步
         WynnChaYuan.store().noteEvent(any ? "dialogue.shown" : "dialogue.noMatch");
-        current = any ? List.copyOf(lines) : List.of();
+        current = any && !bodyOff ? List.copyOf(lines) : List.of();
         // 選項獨立於本文：NPC 那句查不到的時候，選項照樣要能顯示——
         // 玩家等一下就得從裡面挑一個。
         choices = options;
-        if (any || !options.isEmpty()) {
+        if ((any && !bodyOff) || !options.isEmpty()) {
             lastUpdate = System.currentTimeMillis();
         }
     }
@@ -352,8 +356,10 @@ public final class DialogueOverlay {
             // 就地取代已經把譯文寫進遊戲自己的對話框了（見 DialogueRewriter），
             // 這裡再畫一塊就是同一句話出現兩次。
             //
-            // 選項還是要畫：那是另一個框，改寫還沒處理到。
-            if (!options.isEmpty()) {
+            // 選項只在它自己的開關是「面板」時才畫。就地取代模式下遊戲自己的
+            // 選項框已經是中文了（見 DialogueRewriter），這裡再畫一次就是
+            // 同一組選項出現兩次。
+            if (!options.isEmpty() && choicesInPanel()) {
                 drawChoices(graphics, mc, options, alpha);
             }
             return;
@@ -382,9 +388,14 @@ public final class DialogueOverlay {
             draw(graphics, mc, lines, x + boxW / 2, y, alpha, true);
         }
         // 選項也走 drawChoices，兩種模式的位置與樣式才會一致
-        if (!options.isEmpty()) {
+        if (!options.isEmpty() && choicesInPanel()) {
             drawChoices(graphics, mc, options, alpha);
         }
+    }
+
+    /** 選項要不要畫在我們的面板上。見 {@link CollectorConfig#choiceMode()}。 */
+    private static boolean choicesInPanel() {
+        return WynnChaYuan.config().choiceMode() == CollectorConfig.DialogueMode.PANEL;
     }
 
     /**

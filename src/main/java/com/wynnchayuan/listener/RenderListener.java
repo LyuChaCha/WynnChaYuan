@@ -132,8 +132,11 @@ public final class RenderListener {
         com.wynnchayuan.listener.ChatBlock.tick();
         // 就地取代不受「小框」總開關管——那個開關是在關小框，而就地取代
         // 已經不是小框了。原文那時已經被藏掉，這裡再不畫就是一片空白。
+        // 選項留在面板時也一樣：遊戲那邊的選項框沒有被換掉，這裡不畫就沒有中文。
         boolean inPlace = WynnChaYuan.config().dialogueMode()
-                == CollectorConfig.DialogueMode.REPLACE;
+                        == CollectorConfig.DialogueMode.REPLACE
+                || WynnChaYuan.config().choiceMode()
+                        == CollectorConfig.DialogueMode.PANEL;
         if (!WynnChaYuan.config().showOverlays() && !inPlace) {
             return;
         }
