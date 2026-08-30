@@ -536,6 +536,7 @@
    "ctx": [
     "assassin/Surprise Strike"
    ],
+   "lines": 2,
    "flat": "Your first hit after casting Vanish will deal +{~} more damage.",
    "_raw": "Your first hit after casting Vanish\nwill deal +80% more damage.",
    "tree": "03/assassin/04/001/002",
@@ -563,6 +564,7 @@
    "ctx": [
     "assassin/Mirror Image"
    ],
+   "lines": 2,
    "flat": "Summon {~} Mirror Clones {#} after reappearing from Vanish that will follow and protect you.",
    "_raw": "Summon 3 Mirror Clones  after reappearing\nfrom Vanish that will follow and protect you.",
    "tree": "03/assassin/04/001/004",
@@ -612,12 +614,13 @@
   },
   "b671e9ec7cc5": {
    "src": "Spin Attack will lunge you forward,\ndeal {~} strikes and then lunge you upward.",
+   "dst": "",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "assassin/Lacerate"
    ],
-   "dst": "",
+   "lines": 2,
    "flat": "Spin Attack will lunge you forward, deal {~} strikes and then lunge you upward.",
    "_raw": "Spin Attack will lunge you forward,\ndeal 3 strikes and then lunge you upward.",
    "tree": "03/assassin/04/001/007",
