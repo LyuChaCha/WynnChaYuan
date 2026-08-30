@@ -125,6 +125,14 @@ public final class DialogueProbe {
             "hud/dialogue/text/wynncraft/body_1",
             "hud/dialogue/text/wynncraft/body_2",
             "hud/dialogue/text/wynncraft/body_3",
+            // 選項那幾行。跟 body_N 一樣把 ascent 烘進了字型，所以要就地把
+            // 選項換成中文，就得先知道每一列的 ascent 才能算出對應的 shift
+            // (shift = 7 - ascent，六個既有字型都符合)。
+            "hud/dialogue/text/wynncraft/choice_1",
+            "hud/dialogue/text/wynncraft/choice_2",
+            "hud/dialogue/text/wynncraft/choice_3",
+            "hud/dialogue/text/wynncraft/choice_4",
+            "hud/dialogue/text/wynncraft/choice_5",
             "hud/dialogue/text/nameplate",
             "hud/dialogue/text/control",
             "hud/gameplay/default/bottom_middle",
