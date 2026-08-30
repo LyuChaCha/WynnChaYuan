@@ -113,7 +113,10 @@ public final class ActionBarListener {
      */
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onGameInfoRewrite(SystemMessageEvent.GameInfoReceivedEvent event) {
-        if (WynnChaYuan.config().dialogueMode() != CollectorConfig.DialogueMode.REPLACE) {
+        // 內文與選項是兩個開關，任一邊要就地取代就得進來——
+        // 到底換哪幾段由 DialogueRewriter 自己再判斷一次。
+        if (WynnChaYuan.config().dialogueMode() != CollectorConfig.DialogueMode.REPLACE
+                && WynnChaYuan.config().choiceMode() != CollectorConfig.DialogueMode.REPLACE) {
             return;
         }
         try {

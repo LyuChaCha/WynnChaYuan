@@ -292,8 +292,8 @@ public final class LineTranslator {
         if (colon <= 0 || colon > MAX_LABEL_LENGTH) {
             return null;
         }
-        String head = lookup(template.substring(0, colon), store);
-        if (head == null || head.isBlank()) {
+        String head = labelHead(template.substring(0, colon + 1), store);
+        if (head == null) {
             return null;
         }
         String rest = template.substring(colon + 2);
@@ -302,7 +302,49 @@ public final class LineTranslator {
             tail = store.lookup(rest);
         }
         return tail == null || tail.isBlank()
-                ? null : new Flowed(head + ": " + tail, head);
+                ? null : new Flowed(joinLabel(head, tail), head);
+    }
+
+    /**
+     * 名稱那半的譯文。<b>連冒號一起查</b>。
+     *
+     * <h2>為什麼冒號不能先切掉</h2>
+     * 這些標籤在語料裡的正規形式是<b>帶冒號</b>的（{@code "Range:"}、
+     * {@code "Total Damage:"}），冒號跟著譯文走——見 {@link #lookup} 裡
+     * 「把冒號留著」那段：同一個面板才不會半形全形混用。
+     *
+     * <p>先前是切在冒號<b>前面</b>再查，於是只有同時也收了無冒號版的標籤
+     * （{@code "Duration"}）查得到，其餘一律落空——技能面板的「施放範圍」、
+     * 「總傷害」整行掉回英文就是這樣來的。
+     *
+     * <p>{@link #lookup} 查不到帶冒號的版本時本來就會再剝掉冒號重查，
+     * 所以多帶一個冒號進去只會多命中、不會少。無冒號的那次是保險：
+     * 標籤本身以別的標點結尾時（罕見）才輪得到。
+     *
+     * @param label 名稱那半，<b>含</b>結尾的冒號
+     */
+    static String labelHead(String label, TranslationStore store) {
+        String hit = lookup(label, store);
+        if (hit == null || hit.isBlank()) {
+            hit = lookup(label.substring(0, label.length() - 1), store);
+        }
+        return hit == null || hit.isBlank() ? null : hit;
+    }
+
+    /**
+     * 名稱與說明接起來，不要接出<b>兩個</b>冒號。
+     *
+     * <p>名稱現在可能自帶冒號了（{@code "施放範圍:"}），那是語料刻意的形式，
+     * 見 {@link #labelHead}。
+     */
+    private static String joinLabel(String head, String tail) {
+        String core = head.stripTrailing();
+        return endsWithColon(core) ? core + " " + tail : head + ": " + tail;
+    }
+
+    /** 這段文字是不是以冒號收尾（半形或全形都算）。 */
+    private static boolean endsWithColon(String text) {
+        return !text.isEmpty() && isTrailingColon(text.charAt(text.length() - 1));
     }
 
     /**
@@ -502,7 +544,10 @@ public final class LineTranslator {
         // 冒號也算名稱的一部分。原文的「Transcendence:」連冒號都是名稱的顏色，
         // 只把名字上色的話冒號會落到說明那半，看起來就是「顏色接不起來」。
         // 兩種都登記：帶冒號的比較長，比對時會優先中。
-        return List.of(new LineParts.Piece(core + ":", style),
+        // 名稱可能已經自帶冒號（見 #labelHead），再加一個就變成「範圍::」，
+        // 那一條永遠比對不到。先剝再加，兩種形式都還是各登記一次。
+        String bare = endsWithColon(core) ? core.substring(0, core.length() - 1) : core;
+        return List.of(new LineParts.Piece(bare + ":", style),
                        new LineParts.Piece(core, style));
     }
 
@@ -569,22 +614,89 @@ public final class LineTranslator {
         if (width <= 0) {
             return text;
         }
-        String wrapped = wrapToWidth(text, width);
-        for (int attempt = 0; attempt < WRAP_RETRIES && lines(wrapped) > run.size(); attempt++) {
-            width = width * 11 / 10;
-            wrapped = wrapToWidth(text, width);
-        }
-        return balance(text, wrapped, width,
+        return wrapBalanced(text, width, run.size(),
                 piece -> widthOf(Component.literal(piece)));
     }
 
     /**
-     * 折行＋平均分配，量法可以換掉。<b>測試用</b>——正式的量法要 Minecraft 的
-     * 字型，測試環境裡沒有，所有寬度都會量成 0，平均分配就永遠不會被觸發。
+     * 折行，量法可以換掉。<b>測試用</b>——正式的量法要 Minecraft 的字型，
+     * 測試環境裡沒有，所有寬度都會量成 0，後面幾條規則就永遠不會被觸發。
      */
     static String wrapBalanced(String text, int maxPx, ToIntFunction<String> measure) {
-        return balance(text, wrapToWidth(text, maxPx, measure), maxPx, measure);
+        return wrapBalanced(text, maxPx, Integer.MAX_VALUE, measure);
     }
+
+    /**
+     * 把一句譯文折成好看的形狀。
+     *
+     * <h2>三條規則，由好到將就</h2>
+     * <ol>
+     *   <li><b>放得下就一行。</b>Major ID 大多是「名稱: 一句話」，中文比英文緊湊，
+     *       原文兩行的往往一句就講完。硬折回兩行只是把一句完整的話剪成兩截。
+     *       見 {@link #SNUG}。</li>
+     *   <li><b>不然就在名稱後面斷。</b>「{@code ◆ 猛撲: }」換行「{@code 逃脫變成向前突進。}」——
+     *       斷在冒號這個<b>語意</b>的接縫上，比斷在句子中間好讀。只在不會多出
+     *       一行的時候才這樣做：說明長到要三四行的，名稱獨佔一行就太浪費了。</li>
+     *   <li><b>都不行才貪心折行＋平均分配。</b>見 {@link #balance}。</li>
+     * </ol>
+     *
+     * @param rows 原文有幾行；折出來不該比它多，超過就把寬度放寬再試
+     */
+    static String wrapBalanced(String text, int maxPx, int rows,
+                               ToIntFunction<String> measure) {
+        int width = maxPx;
+        String wrapped = wrapToWidth(text, width, measure);
+        for (int attempt = 0; attempt < WRAP_RETRIES && lines(wrapped) > rows; attempt++) {
+            width = width * 11 / 10;
+            wrapped = wrapToWidth(text, width, measure);
+        }
+        // ① 只差一點就放得下的，讓它留在同一行。
+        //
+        // 只在<b>剛好兩行</b>的時候放寬：三行以上的說明本來就長，為了它把整個
+        // 面板撐寬四分之一不划算，而且也不會因此變成一行。
+        if (lines(wrapped) == 2 && measure.applyAsInt(text) <= width * SNUG / 100) {
+            return text;
+        }
+        // ② 斷在名稱後面。
+        String head = labelBreak(text, width, rows, measure);
+        if (head != null && lines(head) <= lines(wrapped)) {
+            return head;
+        }
+        return balance(text, wrapped, width, measure);
+    }
+
+    /**
+     * 試著把「名稱: 」單獨留在第一行。
+     *
+     * <p>會多出一行就不值得——{@code lines()} 由呼叫端比。折不出冒號、
+     * 或名稱長到不像名稱的，回傳 {@code null} 表示這條路不通。
+     */
+    private static String labelBreak(String text, int width, int rows,
+                                     ToIntFunction<String> measure) {
+        int colon = text.indexOf(": ");
+        if (colon <= 0 || colon > MAX_LABEL_LENGTH || text.indexOf(NEWLINE) >= 0) {
+            return null;
+        }
+        String label = text.substring(0, colon + 1);
+        if (measure.applyAsInt(label) > width) {
+            return null;                        // 名稱自己就放不下，白做
+        }
+        // 剩下那半自己也要排得平均。名稱獨佔一行已經很短了，說明再折成
+        // 「滿的一行 ＋ 零頭」，三行就會長短長，比不斷在名稱後面還醜。
+        String body = text.substring(colon + 2);
+        String rest = wrapToWidth(body, width, measure);
+        rest = balance(body, rest, width, measure);
+        return 1 + lines(rest) > rows ? null : label + NEWLINE + rest;
+    }
+
+    /**
+     * 一行最多可以比原文的最寬那一行寬多少（百分比）。
+     *
+     * <p>譯文面板是我們自己畫的，寬度本來就跟著內容長——所以「差一點放不下」
+     * 不必真的折成兩行。這個數字是<b>撐寬面板</b>與<b>把一句話剪成兩截</b>
+     * 之間的取捨：太小就沒效果，太大則整份 tooltip 會被一句話撐得莫名其妙。
+     */
+    private static final int SNUG = 125;
 
     /**
      * 同樣的行數，把字排得平均一點。

@@ -160,13 +160,18 @@ public final class DialogueRewriter {
                     rowText(texts, body.get(n), ends.get(n))));
         }
         boolean changed = false;
+        // 內文與選項是<b>兩個</b>開關。呼叫端只要有一邊是就地取代就會進來，
+        // 所以這裡得各自再確認一次，不然關掉的那一邊也會被換掉。
+        var mode = com.wynnchayuan.CollectorConfig.DialogueMode.REPLACE;
+        boolean doBody = com.wynnchayuan.WynnChaYuan.config().dialogueMode() == mode;
+        boolean doChoice = com.wynnchayuan.WynnChaYuan.config().choiceMode() == mode;
         // 一行放得下多少：兩邊都要用同一個數字。
         //
         // 先前 wrap() 自己寫死 232，而這裡算的是照實際前導偏移得出的寬度——
         // 有頭像的對話文字是從頭像右邊起算的，可用寬度少了 24 像素，於是
         // 「整句塞不塞得下」判斷用窄的、真正斷行時用寬的，中文就滿出框外。
         int room = rowWidth(texts, body);
-        String hit = body.isEmpty() ? null
+        String hit = body.isEmpty() || !doBody ? null
                 : line(whole.toString(), store, body.size(),
                         styles.get(body.get(0)), room);
         List<String> rows = hit == null
@@ -180,7 +185,7 @@ public final class DialogueRewriter {
         Map<Integer, String> keep = new java.util.HashMap<>();
         // SHIFT 提示自己就是一句話，跟內文分開查。它跟內文一樣是
         // [偏移][文字][偏移]，換完一樣要重算尾隨的偏移。
-        for (int i = 1; i + 1 < texts.size(); i++) {
+        for (int i = 1; doBody && i + 1 < texts.size(); i++) {
             if (!fontOf(styles.get(i)).contains(CONTROL) || !readable(texts.get(i))) {
                 continue;
             }
@@ -221,7 +226,7 @@ public final class DialogueRewriter {
         //
         // 每一列有自己的字型（choice_1／2／3），行號烘在 ascent 裡（97／84／71），
         // 所以換完要配對應的中文字型，不然三列會疊在一起。見 paired()。
-        for (int i = 1; i + 1 < texts.size(); i++) {
+        for (int i = 1; doChoice && i + 1 < texts.size(); i++) {
             if (!fontOf(styles.get(i)).contains(CHOICE) || !readable(texts.get(i))) {
                 continue;
             }
