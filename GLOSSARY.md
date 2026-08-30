@@ -198,6 +198,9 @@ Wynncraft 中的攻擊詞條事實上是種組合式的詞條。
 
 | 原文 | 譯文 | 備註 |
 |---|---|---|
+| War（公會戰系統） | 公會戰 | 公會之間爭奪領地的系統。一般語意的 war 仍譯「戰爭」；`War Scream` 是戰士技能「戰吼」，與此無關 |
+| Wars Won | 公會戰勝場數 | 個人資料上的統計行 |
+| Territory | 領地 | 公會戰爭奪的單位。既有語料已用此譯法 |
 | Decay | 黯蝕 | 指 Gavel 那場災厄。一般語意的腐朽／枯萎（`Decaying Heart`、`fallen into decay`）與機制上的層數衰減（`Distortion decays`）不適用 |
 | Corruption | 腐敗 | **未確定** |
 |  |  |

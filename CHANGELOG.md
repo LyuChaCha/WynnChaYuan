@@ -166,6 +166,25 @@
 
 ### 新增
 
+- **`War` 當公會戰系統時譯「公會戰」，與一般的戰爭分開**（依翻譯團隊指示）。
+  規則寫進 GLOSSARY，並補上公會戰的兩條統計行。
+
+  <p><b>先查過：現有譯文沒有一條把公會戰誤譯成戰爭。</b>語料裡的 `War`
+  目前有三種用法，各自都是對的——`War Scream`（戰士技能）是「戰吼」、
+  gear lore 裡的一般 war 是「戰爭」、`War Pick`／`War Spear`／`Bane of War`
+  是裝備名保留原文。<b>公會戰系統的字串本來就只有兩條，而且都還沒翻</b>，
+  所以這次是「補上並定規則」，不是「修正錯譯」。
+
+  <p>GLOSSARY 那一列寫成 `War（公會戰系統）` 而不是裸的 `War`——
+  `load_glossary()` 把第一欄當<b>字面原文</b>拿去比對，加了括號就只當文件、
+  不參與比對。這正是這裡需要的：`War` 有三種意思，讓對照表去比對裸字
+  會反過來指控「戰吼」和 gear lore 沒照表翻。（同 `Recruiter（Fruma 軍方）`
+  那次的處理。）
+
+  <p>兩條統計行放 `gui.json`，跟其他公會字串（`Guild XP`、`Guild Islands`、
+  `Current Guild Goal:`）在一起。同一個個人資料介面的 `Dungeons Won` 先前歸到
+  `dungeon.json`——兩者都是<b>依系統分類</b>，不是依它出現在哪個畫面。
+
 - **Silverbull 股份的道具提示與交易市場字串**（13 條）。截圖上還沒翻的那幾行
   （`✔ Tradable`、`✮ Silverbull Share`、`Shares can be used on in-game store perks.`）
   以及交易市場那一整段，加上載入畫面的提示。
