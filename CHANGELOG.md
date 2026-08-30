@@ -139,6 +139,32 @@
 
 ### 新增
 
+- **《The Strong Survive》整篇翻完**（660 句）。任務進度來到 12674/22067（57.4%）。
+  玩家頂替 Perin 進入 Tericen——Fruma 最大的軍事訓練營——兩天之內看清那裡在訓練什麼：
+  不是士兵，是淘汰。標題「強者生存」是 Ferreo 指揮官的信條，不是祝福。
+
+  <p><b>Adder 與 Ferreo 的語氣要冷，不要兇。</b>這一篇的惡意幾乎都是用<b>平靜的句子</b>
+  講出來的：Adder 把打殘同袍說成「我做的是盡我所能為 Fruma 效力」；Ferreo 把那起
+  重傷事件稱為「一個機會」。中文不加感嘆號、不加狠話，讓那份理所當然自己站著——
+  譯得兇反而弱化了。
+
+  <p>Arnol 的句子則一路從客套變直白：開場是「Fruma 為我們付出了那麼多」的場面話，
+  中段承認自己是走後門進來的，最後是「我從小被教導受詛者是邪惡的，可你除了幫我
+  什麼都沒做過」。譯文照著這個方向逐段收緊。
+
+  <p>用語沿用 GLOSSARY 與既有語料：`Sovereign`→統領、`the Cursed One`→受詛者、
+  `Gendarme`→憲兵、`House X`→X 家、`barracks`→兵營、`division`→部隊。新定
+  `recruit`→新兵、`Recruiter`→招募官、`Commander`→指揮官（與 GLOSSARY 的
+  「憲兵指揮官」一致）、`Captain`→隊長、`Wings division`→羽翼部隊、
+  `Constable division`→警備部隊、`estoc`→刺劍、`turret`→弩塔、`jump pad`→彈跳板。
+  `Tericen`／`Aelumia`／`Auburn`／`Xima`／`Roughworks` 等地名與家名保留原文。
+
+  <p><b>有四條原文缺了玩家的名字</b>（`Good job !`、`is the victor.`、`Hey .`、
+  `and I were wondering`）——名字在收語料時就已經不在字串裡，而且不是 `{u}` 佔位符，
+  是真的空掉。這種條目在遊戲裡多半比對不到，是<b>收集端的缺口</b>，不是譯文能修的。
+  譯文照語意寫成通順的中文，把那個空格收掉。
+
+  <p>`No.`／`Hmmm...`／`Ugh...` 三條與既有語料撞譯法，一律採用先前已存在的譯文。
 - **《True Colours》整篇翻完**（541 句）。任務進度來到 12014/22067（54.4%）。
   Fruma 線最沉重的一篇：Sui 失去了哥哥，Yusanu 選擇留在樹冠，兩人在這裡分道揚鑣。
 
