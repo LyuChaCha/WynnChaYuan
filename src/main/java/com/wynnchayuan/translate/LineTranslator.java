@@ -292,8 +292,8 @@ public final class LineTranslator {
         if (colon <= 0 || colon > MAX_LABEL_LENGTH) {
             return null;
         }
-        String head = lookup(template.substring(0, colon), store);
-        if (head == null || head.isBlank()) {
+        String head = labelHead(template.substring(0, colon + 1), store);
+        if (head == null) {
             return null;
         }
         String rest = template.substring(colon + 2);
@@ -302,7 +302,49 @@ public final class LineTranslator {
             tail = store.lookup(rest);
         }
         return tail == null || tail.isBlank()
-                ? null : new Flowed(head + ": " + tail, head);
+                ? null : new Flowed(joinLabel(head, tail), head);
+    }
+
+    /**
+     * 名稱那半的譯文。<b>連冒號一起查</b>。
+     *
+     * <h2>為什麼冒號不能先切掉</h2>
+     * 這些標籤在語料裡的正規形式是<b>帶冒號</b>的（{@code "Range:"}、
+     * {@code "Total Damage:"}），冒號跟著譯文走——見 {@link #lookup} 裡
+     * 「把冒號留著」那段：同一個面板才不會半形全形混用。
+     *
+     * <p>先前是切在冒號<b>前面</b>再查，於是只有同時也收了無冒號版的標籤
+     * （{@code "Duration"}）查得到，其餘一律落空——技能面板的「施放範圍」、
+     * 「總傷害」整行掉回英文就是這樣來的。
+     *
+     * <p>{@link #lookup} 查不到帶冒號的版本時本來就會再剝掉冒號重查，
+     * 所以多帶一個冒號進去只會多命中、不會少。無冒號的那次是保險：
+     * 標籤本身以別的標點結尾時（罕見）才輪得到。
+     *
+     * @param label 名稱那半，<b>含</b>結尾的冒號
+     */
+    static String labelHead(String label, TranslationStore store) {
+        String hit = lookup(label, store);
+        if (hit == null || hit.isBlank()) {
+            hit = lookup(label.substring(0, label.length() - 1), store);
+        }
+        return hit == null || hit.isBlank() ? null : hit;
+    }
+
+    /**
+     * 名稱與說明接起來，不要接出<b>兩個</b>冒號。
+     *
+     * <p>名稱現在可能自帶冒號了（{@code "施放範圍:"}），那是語料刻意的形式，
+     * 見 {@link #labelHead}。
+     */
+    private static String joinLabel(String head, String tail) {
+        String core = head.stripTrailing();
+        return endsWithColon(core) ? core + " " + tail : head + ": " + tail;
+    }
+
+    /** 這段文字是不是以冒號收尾（半形或全形都算）。 */
+    private static boolean endsWithColon(String text) {
+        return !text.isEmpty() && isTrailingColon(text.charAt(text.length() - 1));
     }
 
     /**
@@ -502,7 +544,10 @@ public final class LineTranslator {
         // 冒號也算名稱的一部分。原文的「Transcendence:」連冒號都是名稱的顏色，
         // 只把名字上色的話冒號會落到說明那半，看起來就是「顏色接不起來」。
         // 兩種都登記：帶冒號的比較長，比對時會優先中。
-        return List.of(new LineParts.Piece(core + ":", style),
+        // 名稱可能已經自帶冒號（見 #labelHead），再加一個就變成「範圍::」，
+        // 那一條永遠比對不到。先剝再加，兩種形式都還是各登記一次。
+        String bare = endsWithColon(core) ? core.substring(0, core.length() - 1) : core;
+        return List.of(new LineParts.Piece(bare + ":", style),
                        new LineParts.Piece(core, style));
     }
 
