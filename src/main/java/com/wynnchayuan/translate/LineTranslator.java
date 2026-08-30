@@ -508,6 +508,60 @@ public final class LineTranslator {
     }
 
     /**
+     * 複數與所有格：原文寫 {@code Marks}，譯文寫 {@code Mark}。
+     *
+     * <h2>為什麼會對不上</h2>
+     * 顏色是拿原文的<b>字面</b>到譯文裡找的。譯者保留英文專有名詞時，
+     * 中文沒有複數，自然寫單數——{@code 擁有 2+ 層 Mark}。於是重點段
+     * {@code Marks} 在譯文裡一個字都對不上，那一段就掉回底色。
+     * 所有格也一樣：{@code Multihit's} 對 {@code Multihit}。
+     *
+     * <h2>為什麼要這麼小心</h2>
+     * 貼樣式那一步用的是 {@code indexOf}，<b>沒有詞界</b>。詞幹 {@code Mark}
+     * 會中在 {@code Marked} 裡面，把技能名的前四個字母染成別的顏色。
+     *
+     * <p>所以不憑空登記，兩個條件都要成立：完整形式在譯文裡<b>找不到</b>
+     * （找得到就用它，輪不到詞幹），而詞幹在譯文裡<b>自成一個詞</b>。
+     */
+    private static void addStem(List<LineParts.Piece> out, String core,
+                                Style style, String translated) {
+        String stem = stemOf(core);
+        if (stem == null || translated == null || translated.contains(core)
+                || !standsAlone(translated, stem)) {
+            return;
+        }
+        out.add(new LineParts.Piece(stem, style));
+    }
+
+    /** 去掉結尾的所有格或複數；不像有詞尾就回傳 {@code null}。 */
+    static String stemOf(String text) {
+        for (String tail : new String[] {"’s", "'s"}) {
+            if (text.endsWith(tail) && text.length() > tail.length() + 1) {
+                return text.substring(0, text.length() - tail.length());
+            }
+        }
+        // ss 結尾的多半不是複數（Progress、Address），去掉會變成別的字
+        return text.length() > MIN_STEM && text.endsWith("s") && !text.endsWith("ss")
+                ? text.substring(0, text.length() - 1) : null;
+    }
+
+    /** {@code word} 在 {@code text} 裡有沒有<b>自成一個詞</b>地出現過。 */
+    static boolean standsAlone(String text, String word) {
+        for (int at = text.indexOf(word); at >= 0; at = text.indexOf(word, at + 1)) {
+            int after = at + word.length();
+            boolean left = at == 0 || !isWordChar(text.charAt(at - 1));
+            boolean right = after >= text.length() || !isWordChar(text.charAt(after));
+            if (left && right) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** 見 {@link #stemOf}：三個字母以下的詞尾去掉之後不成詞。 */
+    private static final int MIN_STEM = 4;
+
+    /**
      * 把譯出來的名稱包成一個「原樣出現的詞」，帶著原文名稱的樣式。
      *
      * <p>拿的是<b>第一個</b>與整行主樣式不同的片段——「名稱：說明」的名稱就在
@@ -3204,7 +3258,9 @@ public final class LineTranslator {
             glyphs = new ArrayList<>(overrideGlyphs);
         }
         accents.addAll(LineParts.accentsAgainst(allRuns, blockStyle));
-        accents = withTranslations(accents, store);
+        // 譯文接成一整串再傳：詞幹要不要登記得看它在譯文裡有沒有自成一個詞，
+        // 而換行不是詞的一部分（見 #addStem）。
+        accents = withTranslations(accents, String.join(String.valueOf(NEWLINE), translated), store);
         // 整行同色的那幾行，直接拿譯文那一行當重點段。見 #wholeLineAccents。
         accents.addAll(wholeLineAccents(parts, allRuns, translated, blockStyle, accents));
 
@@ -3615,6 +3671,7 @@ public final class LineTranslator {
      * 兩份都留著：原文版負責沒被翻的情況，譯文版負責翻了的情況。
      */
     private static List<LineParts.Piece> withTranslations(List<LineParts.Piece> accents,
+                                                          String translated,
                                                           TranslationStore store) {
         if (store == null || accents.isEmpty()) {
             return accents;
@@ -3625,6 +3682,7 @@ public final class LineTranslator {
             if (core.isEmpty()) {
                 continue;
             }
+            addStem(out, core, accent.style(), translated);
             String zh = store.lookup(core);
             if (zh == null || zh.isBlank()) {
                 // 詞典裡的詞也算——而且它認得「詞 + 尾巴的圖示」那種色段，

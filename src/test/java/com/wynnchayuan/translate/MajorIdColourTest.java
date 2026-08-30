@@ -774,6 +774,39 @@ public final class MajorIdColourTest {
         return out;
     }
 
+    /**
+     * 複數與所有格的詞幹。見 {@code LineTranslator#addStem}。
+     *
+     * <p>原文寫 {@code Marks}、譯文寫 {@code Mark}——中文沒有複數，譯者保留英文
+     * 專有名詞時自然寫單數。顏色是拿原文的字面到譯文裡找的，於是那一段掉回底色。
+     *
+     * <p><b>反面才是重點</b>：貼樣式那一步用 {@code indexOf}，沒有詞界。
+     * 詞幹 {@code Mark} 會中在技能名 {@code Marked} 裡面，把前四個字母染成
+     * 別的顏色。所以詞幹只在譯文裡「自成一個詞」時才算數。
+     */
+    private static void stems() {
+        System.out.println("\n  -- 複數與所有格的詞幹 --");
+
+        check("複數：Marks -> Mark", "Mark".equals(LineTranslator.stemOf("Marks")));
+        check("複數：Mirror Clones -> Mirror Clone",
+                "Mirror Clone".equals(LineTranslator.stemOf("Mirror Clones")));
+        check("所有格：Multihit's -> Multihit",
+                "Multihit".equals(LineTranslator.stemOf("Multihit's")));
+        check("全形撇號也認得",
+                "Dash".equals(LineTranslator.stemOf("Dash’s")));
+        check("ss 結尾不當成複數（Progress）", LineTranslator.stemOf("Progress") == null);
+        check("太短的不剝（Was）", LineTranslator.stemOf("Was") == null);
+        check("沒有詞尾的回 null", LineTranslator.stemOf("Trick") == null);
+
+        check("譯文裡自成一個詞才算",
+                LineTranslator.standsAlone("擁有 2+ 層 Mark 的敵人", "Mark"));
+        check("★ 卡在 Marked 裡面的不算",
+                !LineTranslator.standsAlone("前置技能: Marked", "Mark"));
+        check("句尾也算", LineTranslator.standsAlone("消耗所有 Mark", "Mark"));
+        check("被中文夾著也算", LineTranslator.standsAlone("引爆 Trick，造成傷害", "Trick"));
+        check("完全沒出現就不算", !LineTranslator.standsAlone("沒有這個詞", "Mark"));
+    }
+
     private static void check(String what, boolean ok) {
         System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what);
         if (!ok) {
@@ -782,6 +815,7 @@ public final class MajorIdColourTest {
     }
 
     private static void report() {
+        stems();
         System.out.println(failures == 0
                 ? "MajorIdColour: 全部通過" : "MajorIdColour: " + failures + " 項失敗");
         if (failures > 0) {
