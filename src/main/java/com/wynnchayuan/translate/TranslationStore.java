@@ -856,6 +856,25 @@ public final class TranslationStore {
     private final Map<String, java.util.TreeMap<String, String>> byQuest =
             new java.util.HashMap<>();
 
+    /**
+     * 這個字是<b>還沒翻的裝備名</b>嗎。
+     *
+     * <h2>為什麼不在 lookup 裡直接擋</h2>
+     * 第一版是在 {@link #lookup} 裡擋的，結果把介面標籤一起擋死了：有一把裝備
+     * 叫 {@code Reflection}，於是屬性列的「遠程反傷」也翻不出來——同一份 tooltip
+     * 裡其他標籤都是中文，只有那一行是英文。
+     *
+     * <p>{@code Guardian} 與 {@code Reflection} 在<b>鍵</b>上分不出來：兩個都是
+     * 「沒有自己譯文的裝備名，而別的檔案剛好有同名條目」。分得出來的是<b>位置</b>
+     * ——一個出現在物品名稱那一行，另一個出現在敘述裡的屬性標籤。
+     *
+     * <p>所以判斷交給呼叫端：只有畫物品名稱的地方才問這個問題。
+     * 見 {@code TooltipPanel#translateLines}。
+     */
+    public boolean isBareGearName(String key) {
+        return key != null && gearNameKeys.contains(key.strip());
+    }
+
     public String lookup(String template) {
         if (template == null) {
             return null;
@@ -864,13 +883,7 @@ public final class TranslationStore {
         if (!translateNames && nameKeys.contains(key)) {
             return null;                       // 使用者選擇不翻物品名稱
         }
-        // 裝備名是專有名詞。它自己沒有譯文的時候，不能讓別的領域裡剛好同名的
-        // 條目頂上去——武器「Guardian」拿到 Major ID 的「守護者」就是這樣來的。
-        //
-        // 有自己的譯文就照常走：那是翻譯團隊刻意翻的，受 F6 開關管。
-        if (gearNameKeys.contains(key)) {
-            return null;
-        }
+
         String hit = entries.get(key);
         if (hit == null) {
             hit = lookupIndented(key);

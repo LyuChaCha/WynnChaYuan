@@ -45,14 +45,34 @@ public final class GearNameTest {
         TranslationStore store = new TranslationStore();
         store.loadAll(dir);
 
-        check("★ 沒翻的裝備名不會被別的領域頂替（實際 "
-                      + store.lookup("Guardian") + "）",
-              store.lookup("Guardian") == null);
+        check("★ 認得出「還沒翻的裝備名」", store.isBareGearName("Guardian"));
+
+        // ★ 但查表本身<b>不能</b>擋掉——同一個字在別的位置可能完全正當。
+        //
+        // 第一版是在 lookup 裡擋的，結果把介面標籤一起擋死了：有一把裝備叫
+        // Reflection，屬性列的「遠程反傷」也就翻不出來，同一份 tooltip 裡
+        // 其他標籤都是中文、只有那一行是英文。實機回報的就是這個。
+        check("查表不受影響（實際 " + store.lookup("Guardian") + "）",
+              "守護者".equals(store.lookup("Guardian")));
 
         // 反方向：裝備自己翻好的照常用，而且用的是<b>裝備的</b>譯名。
         String idol = store.lookup("Idol");
         check("翻好的裝備名照常翻（實際 " + idol + "）",
               "神像".equals(idol));
+
+        // ★ 介面標籤跟裝備撞名時，標籤照常翻——這是回報的 Reflection 那一案。
+        Files.writeString(dir.resolve("ui-labels.json"),
+                "{\"Reflection\": \"遠程反傷\"}", StandardCharsets.UTF_8);
+        Files.writeString(dir.resolve("gear-armour.json"), """
+                {"_meta": {"gearNames": true},
+                 "entries": {"b1": {"src": "Reflection", "dst": "", "role": "name"}}}
+                """, StandardCharsets.UTF_8);
+        store = new TranslationStore();
+        store.loadAll(dir);
+        check("撞名的介面標籤照常翻（實際 " + store.lookup("Reflection") + "）",
+              "遠程反傷".equals(store.lookup("Reflection")));
+        check("但它仍然被認得出是還沒翻的裝備名",
+              store.isBareGearName("Reflection"));
 
         // 沒撞名的一般詞不受影響。
         Files.writeString(dir.resolve("misc.json"),
