@@ -140,8 +140,146 @@ public final class PlayerDataFilter {
             return true;
         }
         String self = localPlayerName();
-        return self != null && !self.isBlank() && text.contains(self);
+        if (self != null && !self.isBlank() && text.contains(self)) {
+            return true;
+        }
+        return mentionsOnlinePlayer(text);
     }
+
+    /** 短到會誤中一般英文字的名字就不比對了，例如三個字母的 ID。 */
+    private static final int MIN_ONLINE_NAME = 4;
+
+    /**
+     * 這段文字裡出現了<b>目前線上任何一個玩家</b>的名字嗎。
+     *
+     * <h2>為什麼需要這一條</h2>
+     * 先前只擋得住<b>自己</b>的名字（{@code {u}} 佔位符也只認自己），別人的
+     * 一律穿過去。實測一份貢獻者回傳的語料裡混進了這些名牌：
+     *
+     * <pre>
+     *   Critar's Totem        Netzuko's Puppet       Netzuko's Effigy
+     *   nunot's Totem         Noxy_OwO's Rubber Duck
+     * </pre>
+     *
+     * 那些是隊友技能生成的實體，名字前綴是<b>施放者的帳號名</b>。
+     *
+     * <p>用「長得像不像帳號名」去猜是不管用的：{@code Netzuko}、{@code Critar}
+     * 跟 {@code Orphion}、{@code Grook} 這些設定裡的名字在結構上分不出來。
+     * 但遊戲自己知道誰在線上——照著那份名單比對，就精準得多：會出現在你附近
+     * 名牌上的名字，本來就是同一個世界裡的人。
+     *
+     * <p>設定裡的名字剛好跟某個線上玩家同名時會誤擋。那是可以接受的——
+     * 照這個類別的原則，漏掉一句可翻譯的字，代價遠小於把別人的 ID 寫進共享檔案。
+     */
+    private static boolean mentionsOnlinePlayer(String text) {
+        try {
+            Minecraft mc = Minecraft.getInstance();
+            if (mc == null || mc.getConnection() == null) {
+                return false;
+            }
+            for (net.minecraft.client.multiplayer.PlayerInfo info
+                    : mc.getConnection().getOnlinePlayers()) {
+                String name = info.getProfile().name();
+                if (name != null && name.length() >= MIN_ONLINE_NAME
+                        && text.contains(name)) {
+                    return true;
+                }
+            }
+        } catch (Throwable t) {
+            // 還沒連上線、或 API 換了：這只是額外一層，拿不到不影響上面的比對
+        }
+        return false;
+    }
+
+    /**
+     * 這個<b>名牌</b>的名字看起來是玩家自己取的嗎。
+     *
+     * <h2>為什麼名牌要另外一條</h2>
+     * {@link #mentionsOnlinePlayer} 擋得住「名字前綴是施放者」的召喚物，但擋不住
+     * 玩家<b>自己命名</b>的寵物、坐騎與飾品——那些名字跟帳號名無關。同一份語料裡
+     * 混進來的有：
+     *
+     * <pre>
+     *   epoch    Morrowind    Stardew    Poro    HellRevenger
+     *   NexusRolly Love       Catgirl ring        oily femboy choker
+     * </pre>
+     *
+     * <p>Wynncraft 自己的名字一律是<b>標題大小寫</b>（{@code Grootslang Wyrmling}、
+     * {@code Voracious Octiped}）。所以判準是「不符合標題大小寫」：開頭小寫、
+     * 含數字或底線、或是字中間冒出大寫（{@code NexusRolly}、{@code HellRevenger}）。
+     *
+     * <p>只看第一行——後面幾行是血條與狀態，本來就不是名字。
+     *
+     * <p>這是<b>啟發式</b>的，會漏掉剛好符合標題大小寫的自訂名（{@code Morrowind}
+     * 就是）。它補的是 {@link #mentionsOnlinePlayer} 之外那一截，不是取代它。
+     */
+    public static boolean looksPlayerNamed(String template) {
+        if (template == null || template.isBlank()) {
+            return false;
+        }
+        // 佔位符換成<b>空白</b>而不是直接刪掉。直接刪的話血條那種
+        // 「{~}k{#}{~}k{#}{~}k」會黏成 kkk，看起來就像一個開頭小寫的名字。
+        String name = template.split("\\n", 2)[0]
+                .replaceAll("\\{[#~pu]\\d?}", " ")
+                .trim();
+        if (name.length() < MIN_PLATE_NAME) {
+            return false;
+        }
+        for (String word : name.split("\\s+")) {
+            if (word.isEmpty()) {
+                continue;
+            }
+            if (word.indexOf('_') >= 0) {
+                return true;                       // 帳號名才有底線
+            }
+            for (int i = 0; i < word.length(); i++) {
+                char c = word.charAt(i);
+                if (Character.isDigit(c)) {
+                    return true;
+                }
+                // 小寫後面緊跟著大寫：NexusRolly、HellRevenger、OwO
+                if (i > 0 && Character.isUpperCase(c)
+                        && Character.isLowerCase(word.charAt(i - 1))) {
+                    return true;
+                }
+            }
+        }
+
+        // 開頭小寫：epoch、oily femboy choker、nunot's Totem。
+        //
+        // 這一條只適用於<b>名字</b>，所以還要再兩道：
+        //
+        // <ul>
+        //   <li>整段都是單字母的不算——那是血條的單位（k、m），不是名字</li>
+        //   <li>太長或帶句讀的不算——那是多行提示被折出來的續行，
+        //       像「on the Trade Market!」「untradable, and quest items」</li>
+        // </ul>
+        //
+        // 等級標籤不算在字數裡：玩家名牌長「heal kitty [Lv 106]」這樣，
+        // 把 [Lv 106] 算進去就會超過字數上限而漏掉。
+        if (!Character.isLowerCase(name.charAt(0))) {
+            return false;
+        }
+        char tail = name.charAt(name.length() - 1);
+        if (tail == '.' || tail == '!' || tail == '?' || tail == ',' || tail == ':') {
+            return false;                          // 像句子，不像名字
+        }
+        String[] words = name.replaceAll("\\[[^\\]]*\\]?", " ").trim().split("\\s+");
+        boolean real = false;
+        for (String word : words) {
+            if (word.length() >= 2) {
+                real = true;                       // 有一個真的字，不只是單位字母
+                break;
+            }
+        }
+        return real && words.length <= MAX_PLATE_WORDS;
+    }
+
+    /** 剝掉佔位符之後短於這個長度的，不是名字。 */
+    private static final int MIN_PLATE_NAME = 3;
+
+    /** 開頭小寫又超過這麼多個字的，比較像被折出來的句子而不是名字。 */
+    private static final int MAX_PLATE_WORDS = 3;
 
     /**
      * 本機玩家名稱。取不到就回傳 null——這只是額外的一層防護，
