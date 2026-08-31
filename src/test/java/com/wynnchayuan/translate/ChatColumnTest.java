@@ -111,6 +111,7 @@ public final class ChatColumnTest {
         check("單欄的行照常翻", single != null && single.getString().contains("獎勵抽數"));
 
         colours();
+        multiline();
         report();
     }
 
@@ -166,6 +167,54 @@ public final class ChatColumnTest {
               LineTranslator.distinctColours("{c1}A{/}{c1}B{/}{c2}C{/}") == 2);
         check("沒有顏色佔位符就是 0",
               LineTranslator.distinctColours("沒有顏色") == 0);
+    }
+
+    /**
+     * ★ 一欄一欄查<b>不能</b>跨行。
+     *
+     * <h2>先前壞在哪</h2>
+     * {@link com.wynnchayuan.listener.ChatBlock} 會先把整塊接成一個含換行的字串
+     * 再查一次。切段時第一段長這樣：{@code {#}Choose a Beacon!⏎}——而 lookup 會
+     * {@code strip()} 掉尾端的換行，於是查得到、<b>換行卻不見了</b>。
+     *
+     * <p>實機畫面上「選擇一個信標！」與「走向其中一個即可開始挑戰」擠進同一行，
+     * 底下每一行跟著錯位，整塊版面比沒翻之前還糟。
+     *
+     * <p>欄位是<b>一行之內</b>的概念。整塊有整塊自己的鍵，不該由這條路處理。
+     */
+    private static void multiline() throws Exception {
+        Path dir = Files.createTempDirectory("wynnchayuan-columns-multi");
+        FlowedDebug.init(dir);
+        com.google.gson.JsonObject root = new com.google.gson.JsonObject();
+        root.addProperty("{#}Choose a Beacon!", "{#}選擇一個信標！");
+        root.addProperty("{#}Walk towards one", "{#}走向其中一個");
+        Files.writeString(dir.resolve("lootrun.json"), root.toString(),
+                          StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+
+        // 兩行接成一塊——正是 ChatBlock 會做的事。
+        MutableComponent block = Component.empty();
+        block.append(offset(102));
+        block.append(lit("Choose a Beacon!"));
+        block.append(lit("\n"));
+        block.append(offset(58));
+        block.append(lit("Walk towards one"));
+
+        Component out = LineTranslator.translateChat(
+                StyledText.fromComponent(block), store);
+        if (out == null) {
+            check("整塊沒有自己的鍵時不硬翻", true);
+            return;
+        }
+        String t = out.getString();
+        System.out.println("      輸出：" + t.replace("\n", " ⏎ "));
+        check("★ 兩行不能被黏成一行（實際 " + (rows(t)) + " 行）", rows(t) == 2);
+    }
+
+    /** 這段文字有幾行。 */
+    private static int rows(String text) {
+        return (int) text.chars().filter(c -> c == '\n').count() + 1;
     }
 
     private static void check(String what, boolean ok) {
