@@ -2628,6 +2628,8 @@ public final class LineTranslator {
             return rebuilt;                    // 行數對不上就什麼都別動
         }
         boolean[] centre = centred == null ? centredRows(origRows) : null;
+        // 這一塊是不是「兩欄併排的面板」。見 #columnPanel。
+        boolean panel = columnPanel(origRows);
         StringBuilder log = new StringBuilder();
         MutableComponent out = Component.empty();
         for (int i = 0; i < madeRows.size(); i++) {
@@ -2641,7 +2643,7 @@ public final class LineTranslator {
             }
             int at = keepOrig[0] + i - keepMade[0];
             out.append(chatRow(origRows.get(at), made,
-                               centred == null ? centre[at] : centred, log));
+                               centred == null ? centre[at] : centred, panel, log));
         }
         FlowedDebug.chatRows(original.getString(), log.toString(), null);
         return out;
@@ -2667,8 +2669,34 @@ public final class LineTranslator {
      * <p>補的是行首多加一個偏移字元，不去改譯者自己寫的空白——差多少補多少，
      * 負的也補得出來（見 {@link SpaceOffset#encode}）。
      */
+    /**
+     * 這一塊是<b>兩欄併排的面板</b>嗎——只要有一行是兩欄就算。
+     *
+     * <h2>為什麼要問這個</h2>
+     * 獵殺信標的面板裡混著兩種行：兩欄的（「白色信標｜黃色信標」）與單欄的
+     * （「本次 Lootrun」「點擊此處重抽」）。兩欄的走逐欄置中，看起來是對的；
+     * 單欄的照抄原文的左緣，而原文其實是<b>置中</b>的——中文短了，就往左偏。
+     *
+     * <p>本來該由 {@link BlockLayout#centered} 判斷置中，但它是拿<b>整塊</b>最寬
+     * 的一行當基準的，而聊天塊常常混進不相干的訊息：實機診斷檔裡，信標面板的行
+     * 都是 200～290px，卻跟一則 1439px 的歡迎訊息攢在同一塊，基準整個被拉走，
+     * 單欄的行於是全被判成靠左。
+     *
+     * <p>但「這一塊裡有兩欄的行」本身就是很強的訊號：那是一個排版過的面板，
+     * 裡面的單欄行也是照面板置中的。不必知道整塊多寬也判斷得出來。
+     */
+    private static boolean columnPanel(List<List<Run>> rows) {
+        for (List<Run> row : rows) {
+            if (columns(segmentWidths(row)) >= 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private static Component chatRow(List<Run> orig, List<Run> made,
-                                     boolean centred, StringBuilder log) {
+                                     boolean centred, boolean panel,
+                                     StringBuilder log) {
         int leadOrig = leadWidth(orig);
         int leadMade = leadWidth(made);
         int bodyOrig = rowWidth(orig) - leadOrig;
@@ -2680,7 +2708,10 @@ public final class LineTranslator {
         // 舊路在沒有前導空白時本來就什麼都不做。
         // 多欄的行不整行置中——那是 columnDrift 在做的，而且是<b>每欄各自</b>
         // 置中。兩邊都做的話整行會位移兩次。
-        boolean centre = centred && leadOrig > 0 && columns(segmentWidths(orig)) < 2;
+        // 面板裡的單欄行也照原文的中心擺——原文是置中的，照抄左緣會往左偏。
+        // 見 #columnPanel。
+        boolean single = columns(segmentWidths(orig)) < 2;
+        boolean centre = single && leadOrig > 0 && (centred || panel);
         int target = centre ? leadOrig + (bodyOrig - bodyMade) / 2 : leadOrig;
         int pad = target - leadMade;
         log.append("  ").append(centre ? "置中" : "靠左")
