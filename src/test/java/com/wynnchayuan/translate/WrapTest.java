@@ -131,6 +131,7 @@ public final class WrapTest {
         }
         check("亂數四千輪都沒丟例外", () -> "");
 
+        placeholderNotSplit();
         glyphNotAtLineEnd();
         oneLine();
         labelBreak();
@@ -299,6 +300,56 @@ public final class WrapTest {
 
         // 內容守恆：避尾只是挪斷點，不能吃字
         String once = LineTranslator.wrapToWidth(text, 12, WrapTest::measure);
+        report("字沒有變少", bare(once).equals(bare(text)));
+    }
+
+    /**
+     * 佔位符不能被斷成兩半。
+     *
+     * <p>使用者回報的 Major ID：
+     *
+     * <pre>
+     *   為你恢復 15%、為友軍恢復 {~2
+     *   }，但衝鋒不再造成傷害。
+     * </pre>
+     *
+     * <p>折行本身是照「片段」走的，{@code {~2}} 會被當成一整塊；但避頭
+     * （標點不能在行首）是<b>逐字元</b>往回退的——斷點原本落在
+     * {@code ，}，退一格就退進了佔位符裡面。
+     *
+     * <p>而少了右括號就不再是佔位符，填值那一步認不得它，於是畫面上
+     * 直接露出 {@code {~2}} 這串字。<b>一個原因，兩個症狀。</b>
+     */
+    private static void placeholderNotSplit() {
+        System.out.println("\n  -- 佔位符不能被斷成兩半 --");
+
+        // 使用者回報的那一句。逗號緊接在佔位符後面，正是會誘發避頭往回退的形狀。
+        String text = "為你恢復 {~1}、為友軍恢復 {~2}，但衝鋒不再造成傷害。";
+        int bad = 0;
+        String worst = null;
+        for (int px = 4; px <= 40; px++) {
+            String wrapped = LineTranslator.wrapToWidth(text, px, WrapTest::measure);
+            for (String row : rowsOf(wrapped)) {
+                int open = 0;
+                for (int i = 0; i < row.length(); i++) {
+                    if (row.charAt(i) == '{') {
+                        open++;
+                    } else if (row.charAt(i) == '}') {
+                        open--;
+                    }
+                }
+                if (open != 0) {
+                    bad++;
+                    if (worst == null) {
+                        worst = "寬度 " + px + "：" + show(wrapped);
+                    }
+                }
+            }
+        }
+        report("沒有任何寬度把佔位符斷成兩半"
+                + (worst == null ? "" : "（例如 " + worst + "）"), bad == 0);
+
+        String once = LineTranslator.wrapToWidth(text, 14, WrapTest::measure);
         report("字沒有變少", bare(once).equals(bare(text)));
     }
 

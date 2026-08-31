@@ -938,7 +938,48 @@ public final class LineTranslator {
             at--;
         }
         at = keepGlyphWithWord(text, at, lineStart);
+        int outside = outsidePlaceholder(text, at, lineStart);
+        if (outside != at) {
+            // 退進佔位符裡面了。退得到它前面就退；退不了（佔位符就從行首開始）
+            // 就<b>放棄這次避頭</b>，斷回原來的位置。標點落在行首只是難看，
+            // 佔位符被切成兩半是真的壞掉——填值那一步認不得它，會整串印出來。
+            at = outside > lineStart ? outside : cut;
+        }
         return at > lineStart ? at : cut;
+    }
+
+    /**
+     * 斷點不能落在佔位符<b>裡面</b>。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 使用者回報的 Major ID：
+     *
+     * <pre>
+     *   為你恢復 15%、為友軍恢復 {~2
+     *   }，但衝鋒不再造成傷害。
+     * </pre>
+     *
+     * <p>兩個症狀是<b>同一個原因</b>。折行本身是照「片段」走的，{@code {~2}}
+     * 會被當成一整塊；但 {@link #cannotStartLine} 的避頭是<b>逐字元</b>往回退的
+     * ——斷點原本落在 {@code ，}（不能在行首），退一格就退進了佔位符裡面。
+     *
+     * <p>而 {@code {~2} 少了右括號就不再是佔位符（見 {@link #numberedAt}），
+     * 填值那一步認不得它，只好當一般文字印出來。所以畫面上既斷錯行、
+     * 又露出了 {@code {~2}} 這串字。
+     *
+     * <p>做法：退完之後如果人在 {@code &#123;} 與 {@code &#125;} 之間，
+     * 就退到那個 {@code &#123;} 上，讓整個佔位符跟著下一行走。
+     */
+    private static int outsidePlaceholder(String text, int cut, int lineStart) {
+        int open = text.lastIndexOf('{', cut - 1);
+        if (open < lineStart) {
+            return cut;
+        }
+        int close = text.indexOf('}', open);
+        // close < cut 表示那個 { 早就收掉了，cut 不在它裡面。
+        // 這裡只回報「在不在裡面、裡面的起點在哪」，要不要退由呼叫端決定——
+        // 起點剛好是行首時退過去會生出一個空行，那時候該做的是放棄避頭。
+        return close >= cut ? open : cut;
     }
 
     /**
