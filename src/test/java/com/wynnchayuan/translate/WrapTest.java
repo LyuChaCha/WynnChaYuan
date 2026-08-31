@@ -280,7 +280,13 @@ public final class WrapTest {
         for (int px = 4; px <= 40; px++) {
             String wrapped = LineTranslator.wrapToWidth(text, px, WrapTest::measure);
             for (String row : wrapped.split(String.valueOf(NL), -1)) {
-                if (row.endsWith("{#}")) {
+                // strip 過再比。行尾如果是「{#} 」（圖示加一個空白），
+                // 直接 endsWith 抓不到——先前的測試就是這樣漏掉真正的形狀的。
+                //
+                // 整行<b>只有</b>圖示不算失敗：那是寬度窄到放不下「圖示＋一個字」，
+                // 沒有東西可以跟它走，往前挪只會挪出一個空行。
+                String core = row.stripTrailing();
+                if (core.endsWith("{#}") && !core.strip().equals("{#}")) {
                     bad++;
                     if (worst == null) {
                         worst = "寬度 " + px + "：" + show(wrapped);
