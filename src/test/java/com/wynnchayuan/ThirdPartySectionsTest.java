@@ -22,12 +22,19 @@ public final class ThirdPartySectionsTest {
 
     private static int failures = 0;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         SharedConstants.tryDetectVersion();
         Bootstrap.bootStrap();
 
-        // 用不存在的目錄，強迫讀 jar 內建那份，順便驗證那個 json 解析得動
-        ThirdPartySections.load(Path.of("no-such-dir-" + System.nanoTime()));
+        // 自己寫一份清單再載入，<b>不要靠出貨的預設值</b>。
+        //
+        // 預設值是政策、會變：當初預設濾掉 NORI 與 WYNNPOOL，2026-08-30 因為
+        // 實機證據改成預設不濾。這份測試驗的是「濾的機制對不對」，跟預設濾誰
+        // 無關——綁在一起的話，改政策就會弄紅一堆跟政策無關的斷言。
+        java.nio.file.Path dir = java.nio.file.Files.createTempDirectory("wynnchayuan");
+        java.nio.file.Files.writeString(dir.resolve("third-party-sections.json"),
+                "{\"sections\": [\"NORI\", \"WYNNPOOL\"]}");
+        ThirdPartySections.load(dir);
 
         // --- 正常情形 -------------------------------------------------------
         check("移除兩個相鄰區塊連同前後分隔線",

@@ -1,7 +1,4 @@
 {
-  "_comment": "別的模組加進 tooltip 的區塊標籤。這些行只存在於事件清單裡，Wynntils 實際畫出來的 tooltip 不含它們，照抄會讓翻譯面板比原文多出幾行。把同名檔案放到 config/wynnchayuan/ 可以覆寫這份清單；想看這些區塊的譯文就把 sections 清空。",
-  "sections": [
-    "NORI",
-    "WYNNPOOL"
-  ]
+  "_comment": "別的模組加進 tooltip 的區塊標籤。列在這裡的區塊會從翻譯面板濾掉。預設是空的——當初列了 NORI 與 WYNNPOOL，理由是「Wynntils 實際畫出來的 tooltip 不含它們，照抄會讓面板比原文多出幾行」；但 2026-08-30 使用者的截圖顯示原文<b>有</b>那兩個區塊，於是濾掉反而變成面板比原文少幾行。那個前提會隨 Wynntils 與那些模組的版本而變，所以不預設濾任何東西——真的遇到「面板多出幾行」時，把區塊標籤填進 sections 即可。把同名檔案放到 config/wynnchayuan/ 可以覆寫這份清單。",
+  "sections": []
 }
