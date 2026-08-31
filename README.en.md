@@ -10,6 +10,15 @@ left untouched.
 
 繁體中文說明請見 [README.md](README.md)。
 
+> [!IMPORTANT]
+> **This is a beta.** Features and translations are still being worked on. If you
+> run into anything, find **LyuChaCha** on Discord — all reports are welcome.
+>
+> **The translations are mostly AI-generated; only some have been proofread by a
+> human.** Expect mistranslations, unnatural phrasing, and inconsistent proper
+> nouns. If that bothers you, please hold off on using it for now.
+
+
 ## Why not just swap the text
 
 Wynncraft is a multiplayer game. If your screen shows only your own language, you

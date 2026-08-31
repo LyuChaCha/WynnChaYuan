@@ -8,6 +8,14 @@
 > instead of replacing it. Traditional Chinese is 98% done; seven more languages
 > are open. Client-side. Requires Wynntils.
 
+> [!IMPORTANT]
+> **This is a beta.** Features and translations are still being worked on. If you
+> run into anything, find **LyuChaCha** on Discord — all reports are welcome.
+>
+> **The translations are mostly AI-generated; only some have been proofread by a
+> human.** Expect mistranslations, unnatural phrasing, and inconsistent proper
+> nouns. If that bothers you, please hold off on using it for now.
+
 ---
 
 ## English
@@ -160,6 +168,13 @@ Wynncraft's; this mod only displays them.
 ---
 
 ## 繁體中文
+
+> [!IMPORTANT]
+> **目前是 Beta 階段。** 功能與譯文都還在調整，遇到問題請到 Discord 找
+> **LyuChaCha**，任何回報都歡迎。
+>
+> **譯文目前主要由 AI 產出，只有一部分經過人工校稿。** 會有錯譯、語氣不自然、
+> 或是專有名詞前後不一致的地方。介意這件事的話，建議先不要使用。
 
 ### 翻譯範圍
 

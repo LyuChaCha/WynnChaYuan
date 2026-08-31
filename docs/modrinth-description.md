@@ -8,6 +8,14 @@
 
 > Wynncraft translation mod — shown beside the original text, not replacing it. Traditional Chinese 98% done, seven more languages open. Requires Wynntils.
 
+> [!IMPORTANT]
+> **This is a beta.** Features and translations are still being worked on. If you
+> run into anything, find **LyuChaCha** on Discord — all reports are welcome.
+>
+> **The translations are mostly AI-generated; only some have been proofread by a
+> human.** Expect mistranslations, unnatural phrasing, and inconsistent proper
+> nouns. If that bothers you, please hold off on using it for now.
+
 ---
 
 ## What it does
