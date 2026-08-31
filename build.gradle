@@ -271,6 +271,14 @@ tasks.register('runSectionChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runSectionChecks' }
 
+tasks.register('runLiteralChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證別的模組會讀的字串沒有被翻掉'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.ThirdPartyLiteralsTest'
+}
+tasks.named('check') { dependsOn 'runLiteralChecks' }
+
 tasks.register('runParityChecks', JavaExec) {
     group = 'verification'
     description = '驗證 Python 語料工具與 mod 端算出相同的模板'

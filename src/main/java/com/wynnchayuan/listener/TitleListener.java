@@ -70,6 +70,14 @@ public final class TitleListener {
         if (line.isEmpty() || GlyphSplitter.isGlyphOnly(line)) {
             return null;
         }
+        // 別的模組靠這一行的英文判斷遊戲狀態，翻掉會害它算錯。見 ThirdPartyLiterals。
+        //
+        // 這一項特別要緊，因為我們是<b>取消原事件再自己送一次</b>：翻掉之後
+        // 對方連原本那一行都不一定看得到。
+        if (com.wynnchayuan.render.ThirdPartyLiterals.reserved(
+                line.getStringWithoutFormatting())) {
+            return null;
+        }
         String template = GlyphSplitter.toTemplate(line);
         if (PlayerDataFilter.carriesPlayerData(template)) {
             return null;             // 夾帶玩家名的（擊殺提示），原樣放過
