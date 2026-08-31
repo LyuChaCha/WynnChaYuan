@@ -91,6 +91,12 @@ def lore(text: str) -> str | None:
     if not m:
         return None
     s = m.group(1).strip()
+    # wiki 模板。{{--}} 是破折號，其餘的一律丟掉。
+    #
+    # 這一步非做不可：大括號跟我們的佔位符語法（{#} {~} {p} {cN}）撞在一起，
+    # 帶進語料會被當成佔位符解析——輕則譯文對不上，重則整串印到畫面上。
+    s = s.replace("{{--}}", "—")
+    s = re.sub(r"\{\{[^}]*\}\}", "", s)
     s = re.sub(r"\[\[([^\]|]+)\|([^\]]+)\]\]", r"\2", s)   # [[目標|顯示]] -> 顯示
     s = re.sub(r"\[\[([^\]]+)\]\]", r"\1", s)              # [[名稱]] -> 名稱
     s = re.sub(r"<ref>.*?</ref>", "", s, flags=re.S)
@@ -126,6 +132,17 @@ def main() -> int:
         time.sleep(DELAY)
 
     print(f"\n有敘述 {len(found)} 條，沒有 {len(missing)} 條")
+
+    # ★ 大括號絕對不能留下。它跟佔位符語法（{#} {~} {p} {cN}）撞在一起，帶進語料
+    #   會被當成佔位符解析——譯文對不上，甚至整串印到畫面上。剝不乾淨就寧可不收。
+    braces = {k: v for k, v in found.items() if "{" in v or "}" in v}
+    if braces:
+        print(f"  ★ {len(braces)} 條仍含大括號，已剔除（wiki 模板沒剝乾淨）：")
+        for k in list(braces)[:8]:
+            print(f"      {k}")
+        for k in braces:
+            del found[k]
+            missing.append(k)
     if missing:
         print("  沒有 lore 欄：" + "、".join(missing[:12])
               + ("…" if len(missing) > 12 else ""))

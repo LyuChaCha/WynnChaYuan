@@ -132,6 +132,7 @@ public final class WrapTest {
         check("亂數四千輪都沒丟例外", () -> "");
 
         placeholderNotSplit();
+        colourTokensNeverShown();
         glyphNotAtLineEnd();
         oneLine();
         labelBreak();
@@ -351,6 +352,61 @@ public final class WrapTest {
 
         String once = LineTranslator.wrapToWidth(text, 14, WrapTest::measure);
         report("字沒有變少", bare(once).equals(bare(text)));
+
+        // ★ 顏色佔位符也一樣。實機回報的畫面是「進入討伐戰{/」換行「}，或製作」
+        //   ——{/} 被切成兩半，填色那一步認不得它，就整串印到畫面上。
+        //
+        //   先前只測了 {~N}。{/} 只有兩個字元，比數值佔位符更容易整個落在斷點上。
+        String colour = "使用這件物品進入{c2}討伐戰{/}，或製作{c2}腐化地城鑰匙{/}";
+        int split = 0;
+        String first = null;
+        for (int px = 4; px <= 60; px++) {
+            String wrapped = LineTranslator.wrapToWidth(colour, px, WrapTest::measure);
+            for (String row : rowsOf(wrapped)) {
+                int open = 0;
+                for (int i = 0; i < row.length(); i++) {
+                    if (row.charAt(i) == '{') {
+                        open++;
+                    } else if (row.charAt(i) == '}') {
+                        open--;
+                    }
+                }
+                if (open != 0) {
+                    split++;
+                    if (first == null) {
+                        first = "寬度 " + px + "：" + show(wrapped);
+                    }
+                }
+            }
+        }
+        report("顏色佔位符不會被斷成兩半"
+                + (first == null ? "" : "（例如 " + first + "）"), split == 0);
+    }
+
+    /**
+     * 顏色佔位符絕對不能出現在畫面上。
+     *
+     * <p>實機回報的畫面是「使用這件物品進入討伐戰{/」換行「}，或製作腐化地城鑰匙」
+     * ——{@code {/}} 被原樣印出來，還被換行切成兩半。
+     *
+     * <p>那些標記是我們自己的，正常情況下重建時會被吃掉；但語料裡的譯文會經過
+     * 好幾條路徑，只要有一條沒處理就會一路帶到畫面上。所以在文字變成 Component
+     * 的共同出口再擋一次。
+     */
+    private static void colourTokensNeverShown() {
+        System.out.println("\n  -- 顏色佔位符不能印到畫面上 --");
+        report("清掉編號形式",
+               "使用這件物品進入討伐戰，或製作腐化地城鑰匙".equals(
+                       LineTranslator.stripColourTokens(
+                               "使用這件物品進入{c2}討伐戰{/}，或製作{c2}腐化地城鑰匙{/}")));
+        report("清掉自訂色形式",
+               "警告".equals(LineTranslator.stripColourTokens("{c:#FF55FF}警告{/}")));
+        report("沒有大括號的原樣返回",
+               "一般文字".equals(LineTranslator.stripColourTokens("一般文字")));
+        report("不會誤清別的佔位符",
+               "{#}{~} 場挑戰".equals(
+                       LineTranslator.stripColourTokens("{#}{c1}{~} 場挑戰{/}")));
+        report("null 不會炸", LineTranslator.stripColourTokens(null) == null);
     }
 
     /** 折行結果拆成幾行。 */

@@ -4112,7 +4112,46 @@ public final class LineTranslator {
                 .withFont(FontDescription.DEFAULT);
     }
 
+    /**
+     * 最後一道防線：顏色佔位符絕對不能出現在畫面上。
+     *
+     * <h2>為什麼需要</h2>
+     * 實機回報的畫面是「使用這件物品進入討伐戰{/」換行「}，或製作腐化地城鑰匙」
+     * ——{@code {/}} 被原樣印出來，還被換行切成兩半。
+     *
+     * <p>{@code {cN}} 與 {@code {/}} 是<b>我們自己</b>的標記，正常情況下
+     * {@link #tokenize} 會在重建時把它們吃掉。但語料裡的譯文會經過好幾條路徑
+     * （逐片段替換、前綴組合、名牌⋯⋯），只要有一條沒走到 tokenize，那些標記
+     * 就會一路帶到畫面上。
+     *
+     * <p>{@link #literal} 是所有文字變成 {@code Component} 的共同出口，擋在這裡
+     * 涵蓋得最完整。走過 tokenize 的文字本來就沒有這些標記，這一步是空操作。
+     *
+     * <p>這是<b>防線</b>不是修正：真正該做的是讓每條路徑都處理顏色。但那些標記
+     * 印在畫面上是玩家一眼就看到的壞掉，而少一層顏色只是不夠漂亮——先擋住。
+     */
+    static String stripColourTokens(String text) {
+        if (text == null || text.indexOf('{') < 0) {
+            return text;                       // 絕大多數的字根本沒有大括號
+        }
+        String out = text;
+        if (out.contains(COLOR_END)) {
+            out = out.replace(COLOR_END, "");
+        }
+        return COLOUR_ANY.matcher(out).replaceAll("");
+    }
+
+    /**
+     * 任何形式的顏色佔位符：{@code {c1}}、{@code {c:#FF55FF}}。
+     *
+     * <p>跟 {@link #COLOUR_TOKEN} 分開是因為那個要抓編號來重編，只認數字那種；
+     * 這個只負責清掉，寧可抓得寬。
+     */
+    private static final java.util.regex.Pattern COLOUR_ANY =
+            java.util.regex.Pattern.compile("\\{c[^}]*}");
+
     private static Component literal(String text, Style style) {
+        text = stripColourTokens(text);
         Style base = upright(text, style);
         // 我們把字型換掉了，斜體就跟著丟。
         //
