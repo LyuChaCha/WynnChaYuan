@@ -961,14 +961,20 @@ public final class LineTranslator {
     private static int keepGlyphWithWord(String text, int cut, int lineStart) {
         String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
         int at = cut;
-        while (at - glyph.length() >= lineStart
-                && text.startsWith(glyph, at - glyph.length())) {
-            at -= glyph.length();
-            while (at > lineStart && text.charAt(at - 1) == ' ') {
-                at--;
+        while (true) {
+            // <b>先</b>退過空白再看圖示。斷點落在圖示<b>後面那個空白之後</b>
+            // （「使用 {#} 物品鑑定師」斷在「物」），緊鄰 cut 的是空白不是圖示——
+            // 先前少了這一步，這個最常見的形狀反而沒被接住。
+            int back = at;
+            while (back > lineStart && text.charAt(back - 1) == ' ') {
+                back--;
             }
+            if (back - glyph.length() < lineStart
+                    || !text.startsWith(glyph, back - glyph.length())) {
+                return at > lineStart ? at : cut;
+            }
+            at = back - glyph.length();
         }
-        return at > lineStart ? at : cut;
     }
 
     /** 不能出現在行首的字元。全形標點、收尾符號、百分比與單位。 */
