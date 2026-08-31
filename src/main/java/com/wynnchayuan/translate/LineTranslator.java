@@ -2462,6 +2462,15 @@ public final class LineTranslator {
      * @return 接好的譯文；不是多欄、或一欄都沒查到時回傳 {@code null}
      */
     private static String byColumn(String template, TranslationStore store) {
+        // ★ 只處理<b>單獨一行</b>。欄位是一行之內的概念，跨行切會把行黏在一起。
+        //
+        // ChatBlock 會先把整塊接成一個含換行的字串再查一次。那時候切出來的段
+        // 長這樣：「{#}Choose a Beacon!⏎」——而 lookup 會 strip() 掉尾端的換行，
+        // 於是查得到、換行卻不見了，兩行就併成一行。實機畫面上「選擇一個信標！」
+        // 與「走向其中一個即可開始挑戰」擠在同一行，整塊版面跟著垮掉。
+        if (template.indexOf(NEWLINE) >= 0) {
+            return null;
+        }
         List<String> parts = splitColumns(template);
         if (parts.size() < 2) {
             return null;                       // 不是多欄的行
