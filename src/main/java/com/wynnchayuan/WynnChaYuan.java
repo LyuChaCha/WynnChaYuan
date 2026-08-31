@@ -89,6 +89,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         store = new CaptureStore(dir.resolve("captured.json"));
         config = new CollectorConfig(dir.resolve("config.json"));
         com.wynnchayuan.render.ThirdPartySections.load(dir);
+        com.wynnchayuan.render.ThirdPartyLiterals.load(dir);
         // 診斷檔預設不寫。
         //
         // 每一支寫檔的程式都是「沒 init 過就什麼都不做」，所以只要在這裡

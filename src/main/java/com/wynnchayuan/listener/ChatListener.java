@@ -70,6 +70,9 @@ public final class ChatListener {
         // 常常連想看的那一塊都排不進去。
         Component hit = serverSide
                 && !PlayerDataFilter.carriesPlayerData(GlyphSplitter.toTemplate(message))
+                // 別的模組從聊天解遊戲狀態，那幾條留英文。見 ThirdPartyLiterals。
+                && !com.wynnchayuan.render.ThirdPartyLiterals.reserved(
+                        message.getStringWithoutFormatting())
                 ? (mode == CollectorConfig.ChatMode.BOTH
                         ? LineTranslator.translateChat(message, WynnChaYuan.translations())
                         : LineTranslator.translate(message, WynnChaYuan.translations()))
