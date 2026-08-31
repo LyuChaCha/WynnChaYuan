@@ -295,6 +295,14 @@ tasks.register('runGearNameChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runGearNameChecks' }
 
+tasks.register('runChatColumnChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證多欄聊天訊息會一欄一欄查表'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ChatColumnTest'
+}
+tasks.named('check') { dependsOn 'runChatColumnChecks' }
+
 tasks.register('runParityChecks', JavaExec) {
     group = 'verification'
     description = '驗證 Python 語料工具與 mod 端算出相同的模板'
