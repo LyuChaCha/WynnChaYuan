@@ -2548,7 +2548,9 @@ public final class LineTranslator {
         // 沒有這一道，單獨一則沒有縮排的訊息（「[You are now entering Ragni]」）
         // 會被補上半個寬度差，整行往右跑——那是<b>新加</b>的歪法，
         // 舊路在沒有前導空白時本來就什麼都不做。
-        boolean centre = centred && leadOrig > 0;
+        // 多欄的行不整行置中——那是 columnDrift 在做的，而且是<b>每欄各自</b>
+        // 置中。兩邊都做的話整行會位移兩次。
+        boolean centre = centred && leadOrig > 0 && columns(segmentWidths(orig)) < 2;
         int target = centre ? leadOrig + (bodyOrig - bodyMade) / 2 : leadOrig;
         int pad = target - leadMade;
         log.append("  ").append(centre ? "置中" : "靠左")
@@ -2631,6 +2633,9 @@ public final class LineTranslator {
      */
     static int[] columnDrift(List<Integer> from, List<Integer> to, int[] spacePx) {
         int[] adjust = new int[spacePx.length];
+        if (columns(from) >= 2) {
+            return centreColumns(from, to, spacePx);
+        }
         int drift = 0;
         for (int i = 1; i < spacePx.length; i++) {
             drift += to.get(i) - from.get(i);
@@ -2638,6 +2643,60 @@ public final class LineTranslator {
                 adjust[i] = -drift;
                 drift = 0;
             }
+        }
+        return adjust;
+    }
+
+    /** 這一行有幾個真的有內容的欄。 */
+    private static int columns(List<Integer> widths) {
+        int n = 0;
+        for (int w : widths) {
+            if (w > 0) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    /**
+     * 多欄的行：每一欄各自<b>置中</b>在原文那一欄的位置上。
+     *
+     * <h2>畫面上是什麼樣子</h2>
+     * 獵殺信標的選單是兩欄併排，而且每一欄自己是置中的：
+     *
+     * <pre>
+     *     Purple Beacon              Blue Beacon
+     *    +2 Curse, +2 End         Choose a Boon at
+     *      Reward Pulls              100% Potency
+     * </pre>
+     *
+     * 伺服器是靠<b>每行不同的縮排</b>做到的（實測是 34、34、45 px）。我們照抄
+     * 那個縮排、字卻變窄了，於是每一欄都往左偏，而且偏的量各行不同——畫面上
+     * 就是三行參差不齊。
+     *
+     * <h2>規則</h2>
+     * 令 {@code d[j]} 是第 j 欄縮水了多少（原文寬 - 譯文寬）。要讓每一欄的
+     * <b>中心</b>都留在原處，第 k 個間隔要補的量是
+     *
+     * <pre>
+     *   adjust[k] = (d[k] + d[k+1]) / 2
+     * </pre>
+     *
+     * 也就是<b>各吸收左右兩欄縮水的一半</b>。推導：第 j 欄的起點要往右移
+     * {@code d[j]/2}，把前面所有間隔的變化累加起來相減就得到上式。
+     *
+     * <p>只有兩欄以上才這樣做。單欄的行沒有「欄」可言，照舊靠左——那種行
+     * 整行置中與否是 {@link #chatRow} 在管的。
+     */
+    private static int[] centreColumns(List<Integer> from, List<Integer> to, int[] spacePx) {
+        int[] adjust = new int[spacePx.length];
+        for (int k = 0; k < spacePx.length; k++) {
+            if (spacePx[k] < 0) {
+                continue;                  // 疊字用的負偏移不動，見 isBacktrack
+            }
+            int before = from.get(k) - to.get(k);
+            int after = k + 1 < from.size() ? from.get(k + 1) - to.get(k + 1) : 0;
+            adjust[k] = (before + after) / 2;
         }
         return adjust;
     }
