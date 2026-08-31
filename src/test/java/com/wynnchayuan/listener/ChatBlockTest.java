@@ -56,6 +56,15 @@ public final class ChatBlockTest {
         ChatBlock.clear();
         check("清掉之後是空的", ChatBlock.size() == 0);
 
+        // ★ 一行都沒翻到的那一塊，一個字都不能送。
+        //
+        // 查不到譯文的行改成「原樣帶上」之後，這一塊就永遠有東西可送了。
+        // 照送的話等於把伺服器的訊息原封不動再貼一遍——而原文並沒有被取消，
+        // 畫面上就是每則訊息出現兩遍（實機回報：聊天欄一直洗頻）。
+        check("有翻到就送", ChatBlock.worthSending(true, true));
+        check("一行都沒翻到就不送", !ChatBlock.worthSending(true, false));
+        check("沒東西可送當然不送", !ChatBlock.worthSending(false, false));
+
         System.out.println(failures == 0
                 ? "ChatBlock: 全部通過" : "ChatBlock: " + failures + " 項失敗");
         if (failures > 0) {
