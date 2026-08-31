@@ -287,6 +287,14 @@ tasks.register('runPlayerNameChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runPlayerNameChecks' }
 
+tasks.register('runGearNameChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證裝備名不會被別的領域的同名條目頂替'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.GearNameTest'
+}
+tasks.named('check') { dependsOn 'runGearNameChecks' }
+
 tasks.register('runParityChecks', JavaExec) {
     group = 'verification'
     description = '驗證 Python 語料工具與 mod 端算出相同的模板'

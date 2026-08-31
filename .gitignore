@@ -9,6 +9,9 @@ libs/*.jar
 
 # 從官方 CDN 下載的原始資料，可用 tools/fetch.py 重新取得
 tools/raw/
+# fetch.py 與 fetch-discoveries.py 的暫存區。抓來的原始資料不進版控——
+# 隨時可以重抓，而且 wiki 的內容有它自己的授權。
+raw/
 
 # 個人遊玩記錄，可能夾帶玩家名稱，不要進版控
 captured.json
