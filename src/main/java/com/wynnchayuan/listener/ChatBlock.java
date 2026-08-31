@@ -226,6 +226,15 @@ public final class ChatBlock {
         }
         net.minecraft.network.chat.MutableComponent out = Component.empty();
         boolean any = false;
+        // 「有沒有東西可送」與「有沒有真的翻到」是兩件事。
+        //
+        // 查不到譯文的行改成原樣帶上之後，any 就永遠是 true——於是<b>每一塊</b>
+        // 聊天訊息都會被原封不動再送一次。原文那一份並沒有被取消，畫面上就是
+        // 每則訊息都出現兩遍（實機回報：聊天欄一直洗頻）。
+        //
+        // 所以要另外記「有沒有任何一行真的查到譯文」。一行都沒有的話這一塊
+        // 根本不必送，原文自己會顯示。
+        boolean translated = false;
         for (int i = 0; i < rows.size(); i++) {
             // 只有一則時收進來那份就是對的（ChatListener 走的是同一支），
             // 不必再翻一次——翻兩次連診斷檔都會記兩份。
@@ -253,6 +262,8 @@ public final class ChatBlock {
                 // 少一句沒翻的英文，比憑空吃掉伺服器送來的內容好得多——
                 // 而且「沒翻到」看得出來，「被吃掉」看不出來。
                 line = rows.get(i).original().getComponent();
+            } else {
+                translated = true;         // 這一塊裡真的有翻到東西
             }
             if (any) {
                 out.append(Component.literal("\n"));
@@ -260,6 +271,27 @@ public final class ChatBlock {
             out.append(line);
             any = true;
         }
-        return any ? out : null;
+        return worthSending(any, translated) ? out : null;
+    }
+
+    /**
+     * 這一塊該不該送出去。
+     *
+     * <h2>為什麼是兩個條件</h2>
+     * 「有沒有東西可送」與「有沒有真的翻到」是兩件事，而混為一談會出大事。
+     *
+     * <p>查不到譯文的行原本是直接跳過的（信標因此消失）。改成原樣帶上之後，
+     * {@code any} 就永遠是 true——於是<b>每一塊</b>聊天訊息都被原封不動再送
+     * 一次。原文那一份並沒有被取消，畫面上就是每則訊息出現兩遍。實機回報是
+     * 「聊天欄一直洗頻」。
+     *
+     * <p>抽成獨立的方法是為了測得到：{@link #stacked} 會碰到 Minecraft 的
+     * 實例，headless 跑不起來，而真正出錯的就是這個判斷。
+     *
+     * @param any        有沒有任何一行可以送（含原樣帶上的原文）
+     * @param translated 有沒有任何一行<b>真的</b>查到譯文
+     */
+    static boolean worthSending(boolean any, boolean translated) {
+        return any && translated;
     }
 }
