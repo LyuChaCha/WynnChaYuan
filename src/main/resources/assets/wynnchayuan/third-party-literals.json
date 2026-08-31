@@ -9,7 +9,22 @@
     "Orphion's Nexus of Light",
     "The Canyon Colossus",
     "The Nameless Anomaly",
-    "The Wartorn Palace"
+    "The Wartorn Palace",
+    "Time Elapsed:",
+    "Hover for more",
+    [
+      "Raid Experience",
+      "%)"
+    ],
+    [
+      "Reward Pulls",
+      "%)"
+    ],
+    [
+      "Aspect Pulls",
+      "%)"
+    ]
   ],
-  "_wynnmod_names": "RaidState.onTitle 還會用 getRaidFromName(標題) 認出這是哪一場副本,而且會先把非 ASCII 全部剝掉。副本名稱翻成中文的話它連 startRaid 都不會觸發,整場都不會被記錄。名稱取自 WynnMod 自己的 WynnRaid 列舉。"
+  "_wynnmod_names": "RaidState.onTitle 還會用 getRaidFromName(標題) 認出這是哪一場副本,而且會先把非 ASCII 全部剝掉。副本名稱翻成中文的話它連 startRaid 都不會觸發,整場都不會被記錄。名稱取自 WynnMod 自己的 WynnRaid 列舉。",
+  "_wynnmod_stats": "RaidState.raidEndData 還會從結算的聊天解統計數字,用的正則需要這幾個英文:Time Elapsed: (mins):(secs)、Hover for more ... Combat Experience、以及 ... Reward Pulls / Aspect Pulls / Raid Experience。後三個的關鍵詞在獵殺信標的面板也會出現,所以要配上結算那一行才有的百分比 \"%)\" 一起判斷,見 ThirdPartyLiterals#reserved。這幾條只影響 WynnMod 的統計顯示,不影響連勝。"
 }

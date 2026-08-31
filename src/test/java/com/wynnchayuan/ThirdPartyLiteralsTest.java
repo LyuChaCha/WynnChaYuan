@@ -77,7 +77,55 @@ public final class ThirdPartyLiteralsTest {
             check("副本名稱在清單上：" + raid, wynnmod.contains(raid));
         }
 
+        stats();
         report();
+    }
+
+    /**
+     * 討伐戰結算的統計數字，WynnMod 也在解——但關鍵詞跟獵殺信標撞名。
+     *
+     * <p>{@code Reward Pulls} 同時出現在結算與信標面板，兩邊都走聊天。只用
+     * 「包含」去擋會把信標的譯文一起擋掉（那是 v1.99.89 才修好的）。分別它們
+     * 的是結算那一行的百分比 {@code (30.16%)}。
+     *
+     * <p>這裡兩個方向都要測：該擋的擋得下來，<b>不該擋的不能誤傷</b>。
+     * 只測前者的話，把整個信標面板擋掉也會全過。
+     */
+    private static void stats() {
+        ThirdPartyLiterals.load(java.nio.file.Path.of("does-not-exist"));
+        java.util.List<java.util.List<String>> shipped = ThirdPartyLiterals.activeLiterals();
+        check("沒裝 WynnMod 時統計那幾條也不生效（實際 " + shipped.size() + " 組）",
+              shipped.isEmpty());
+
+        // 直接餵出貨清單裡那幾組，測比對本身。
+        ThirdPartyLiterals.forTestGroups(java.util.List.of(
+                java.util.List.of("Time Elapsed:"),
+                java.util.List.of("Hover for more"),
+                java.util.List.of("Raid Experience", "%)"),
+                java.util.List.of("Reward Pulls", "%)"),
+                java.util.List.of("Aspect Pulls", "%)")));
+
+        check("擋得下結算的時間", ThirdPartyLiterals.reserved("Time Elapsed: 04:33"));
+        check("擋得下結算的戰鬥經驗",
+              ThirdPartyLiterals.reserved("Hover for more  100k Combat Experience"));
+        check("擋得下結算的獎勵抽數",
+              ThirdPartyLiterals.reserved("DMG 2.9M/9.7M (30.16%)  39 Reward Pulls"));
+        check("擋得下結算的意象抽數",
+              ThirdPartyLiterals.reserved("DEF 25.4K/81K (31.33%)  12 Aspect Pulls"));
+        check("擋得下結算的討伐戰經驗",
+              ThirdPartyLiterals.reserved("HEAL 144K/1M (13.13%)  210 Raid Experience"));
+
+        // ★ 反方向：獵殺信標的面板不能被誤傷。
+        check("信標面板不受影響（次數）",
+              !ThirdPartyLiterals.reserved("Reward Pulls  next Beacon Effects"));
+        check("信標面板不受影響（效力）",
+              !ThirdPartyLiterals.reserved("100% Potency  Reward Pulls"));
+        check("信標面板不受影響（挑戰場數）",
+              !ThirdPartyLiterals.reserved("Reward Pulls  for 10 Challenges"));
+
+        // 討伐戰大廳的每日獎勵面板也不該被擋——那不是 WynnMod 在解的行。
+        check("大廳的每日獎勵不受影響",
+              !ThirdPartyLiterals.reserved("- Aspect Pulls: 3"));
     }
 
     private static void check(String what, boolean ok) {

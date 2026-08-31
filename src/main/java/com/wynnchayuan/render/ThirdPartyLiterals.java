@@ -51,15 +51,20 @@ public final class ThirdPartyLiterals {
 
     private static final String RESOURCE = "/assets/wynnchayuan/third-party-literals.json";
 
-    /** 已載入的那些模組要保留的字串。沒裝的模組不會進這份清單。 */
-    private static List<String> active = List.of();
+    /**
+     * 已載入的那些模組要保留的字串。沒裝的模組不會進這份清單。
+     *
+     * <p>外層是「或」、內層是「且」：任何一組的每一個詞都出現在這一行，就保留英文。
+     * 內層之所以需要「且」，見 {@link #reserved}。
+     */
+    private static List<List<String>> active = List.of();
 
     private ThirdPartyLiterals() {
     }
 
     public static void load(Path configDir) {
         JsonObject root = read(configDir);
-        List<String> out = new ArrayList<>();
+        List<List<String>> out = new ArrayList<>();
         if (root != null) {
             for (Map.Entry<String, JsonElement> mod : root.entrySet()) {
                 if (mod.getKey().startsWith("_") || !mod.getValue().isJsonArray()) {
@@ -69,9 +74,22 @@ public final class ThirdPartyLiterals {
                     continue;             // 沒裝就不必讓步
                 }
                 for (JsonElement literal : mod.getValue().getAsJsonArray()) {
-                    String text = literal.getAsString();
-                    if (!text.isBlank()) {
-                        out.add(text);
+                    List<String> group = new ArrayList<>();
+                    if (literal.isJsonArray()) {
+                        for (JsonElement part : literal.getAsJsonArray()) {
+                            String text = part.getAsString();
+                            if (!text.isBlank()) {
+                                group.add(text);
+                            }
+                        }
+                    } else {
+                        String text = literal.getAsString();
+                        if (!text.isBlank()) {
+                            group.add(text);
+                        }
+                    }
+                    if (!group.isEmpty()) {
+                        out.add(List.copyOf(group));
                     }
                 }
             }
@@ -81,13 +99,35 @@ public final class ThirdPartyLiterals {
 
     /**
      * 這一行是別的模組在讀的嗎——是的話別動它。
+     *
+     * <h2>為什麼一組可以有好幾個詞</h2>
+     * 單一個關鍵詞常常不夠準。{@code Reward Pulls} 同時出現在兩個地方：
+     *
+     * <pre>
+     *   討伐戰結算   DMG 2.9M/9.7M (30.16%)   39 Reward Pulls   ← WynnMod 在解
+     *   獵殺信標     Reward Pulls   next Beacon Effects         ← 跟它無關
+     * </pre>
+     *
+     * 只寫 {@code Reward Pulls} 會把信標面板也一起擋掉。分別它們的是結算那一行
+     * 的百分比：{@code (30.16%)}——所以寫成 {@code ["Reward Pulls", "%)"]}，
+     * 兩個都出現才算。
+     *
+     * <p>用這種方式而不是把整條模板列出來，是因為那些數字有 K／M／B 好幾種寫法，
+     * 列模板等於又要一種一條——名牌與信標都已經在這上面吃過虧。
      */
     public static boolean reserved(String text) {
         if (active.isEmpty() || text == null || text.isEmpty()) {
             return false;
         }
-        for (String literal : active) {
-            if (text.contains(literal)) {
+        for (List<String> group : active) {
+            boolean all = true;
+            for (String part : group) {
+                if (!text.contains(part)) {
+                    all = false;
+                    break;
+                }
+            }
+            if (all) {
                 return true;
             }
         }
@@ -124,11 +164,20 @@ public final class ThirdPartyLiterals {
      * {@link #load} 就會把整組跳過。不給測試一個入口的話，比對邏輯一行都測不到。
      */
     public static void forTest(List<String> literals) {
-        active = List.copyOf(literals);
+        List<List<String>> out = new ArrayList<>();
+        for (String literal : literals) {
+            out.add(List.of(literal));
+        }
+        active = List.copyOf(out);
+    }
+
+    /** 測試用：直接指定「且」的組，不看模組裝了沒。見 {@link #forTest}。 */
+    public static void forTestGroups(List<List<String>> groups) {
+        active = List.copyOf(groups);
     }
 
     /** 目前生效的清單，診斷與測試用。 */
-    public static List<String> activeLiterals() {
+    public static List<List<String>> activeLiterals() {
         return active;
     }
 }
