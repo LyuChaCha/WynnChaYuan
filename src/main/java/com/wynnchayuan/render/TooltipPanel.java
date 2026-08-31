@@ -151,6 +151,21 @@ public final class TooltipPanel {
         boolean leftAligned = LineTranslator.columnsAreLeftAligned(styled);
 
         int i = 0;
+        // 物品名稱那一行：還沒翻的裝備名一律保持原文。
+        //
+        // 裝備名是專有名詞，而語料裡有 50 組裝備名跟別的領域撞名（技能詞、
+        // Major ID、介面詞）。沒有這一道，神話矛「Guardian」會拿到同名 Major ID
+        // 的「守護者」。
+        //
+        // 擋在<b>這裡</b>而不是查表層，是因為同一個字在別的位置可能完全正當：
+        // 有一把裝備叫 Reflection，在查表層擋掉會連屬性列的「遠程反傷」一起擋死。
+        if (n > 0 && store.isBareGearName(
+                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()
+                        .replace(com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER, "")
+                        .strip())) {
+            out.add(LineTranslator.untranslated(styled.get(0)));
+            i = 1;
+        }
         while (i < n) {
             int longest = Math.min(store.maxBlockLines(), n - i);
             List<Component> block = null;
