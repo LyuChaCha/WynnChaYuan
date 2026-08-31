@@ -1,0 +1,8 @@
+{
+  "_comment": "別的模組拿來判斷遊戲狀態的字串。這一行裡出現了清單上的字，我們就不翻它，原樣留英文。按模組 ID 分組:那個模組沒裝就不生效,沒裝的人照常看到中文。想自己增減就把這個檔案複製到 config/wynnchayuan/third-party-literals.json 再改。",
+  "_wynnmod": "RaidState.onTitle 用 title.contains(\"Raid Completed\") / (\"Raid Failed\") 判斷這一場的結果。翻掉的話兩個條件都對不上,這一場算不出結果,上報之後連勝會重置——而且我們只翻了 Completed 沒翻 Failed,所以連勝只會往下掉。",
+  "wynnmod": [
+    "Raid Completed",
+    "Raid Failed"
+  ]
+}
