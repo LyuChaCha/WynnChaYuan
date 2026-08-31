@@ -129,7 +129,41 @@ public final class ChatAlignTest {
         check("指定置中時仍翻得出來", centred != null);
         check("指定置中時行數不變", centred == null || rows(centred) == 3);
 
+        columns();
         report();
+    }
+
+    /**
+     * 欄距要跟著譯文的寬度走。見 {@link LineTranslator#columnDrift}。
+     *
+     * <p>數字取自實機診斷檔的「聊天對齊 7」：信標選單一行是
+     * {@code [縮排 33px]Orange Beacon[間隔 69px]Yellow Beacon}，兩段英文
+     * 分別是 90px 與 82px，譯成「橘色信標」「黃色信標」之後各剩 40px。
+     */
+    private static void columns() {
+        // 第 0 個間隔是行首縮排，chatRow 的 pad 在管，這裡不能動。
+        int[] two = LineTranslator.columnDrift(
+                List.of(0, 90, 82), List.of(0, 40, 40), new int[] {33, 69});
+        check("行首的縮排不動（實際 " + two[0] + "）", two[0] == 0);
+        check("欄距吸收左欄縮水的 50px（實際 " + two[1] + "）", two[1] == 50);
+
+        // 譯文比原文寬的時候要反過來收窄，否則右欄會被推出去。
+        int[] wide = LineTranslator.columnDrift(
+                List.of(0, 40), List.of(0, 64), new int[] {10, 30});
+        check("譯文變寬時欄距收窄（實際 " + wide[1] + "）", wide[1] == -24);
+
+        // 負的間隔是疊字用的，一律原樣；差額留給後面第一個正的間隔。
+        int[] stacked = LineTranslator.columnDrift(
+                List.of(0, 90, 20, 20), List.of(0, 40, 20, 20),
+                new int[] {33, -23, 40});
+        check("負間隔不動（實際 " + stacked[1] + "）", stacked[1] == 0);
+        check("差額留到後面的正間隔（實際 " + stacked[2] + "）", stacked[2] == 50);
+
+        // 只有縮排、沒有第二欄的行完全不受影響。
+        int[] one = LineTranslator.columnDrift(
+                List.of(0, 107), List.of(0, 38), new int[] {101});
+        check("單欄的行不動（實際 " + java.util.Arrays.toString(one) + "）",
+              one.length == 1 && one[0] == 0);
     }
 
     private static int rows(Component line) {

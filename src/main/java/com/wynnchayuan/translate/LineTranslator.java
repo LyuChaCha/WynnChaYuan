@@ -2562,8 +2562,84 @@ public final class LineTranslator {
         if (!encoded.isEmpty()) {
             row.append(literal(encoded, SpaceOffset.styleFor(Style.EMPTY)));
         }
-        row.append(apply(made, new int[countSpaces(made)]));
+        int[] columns = columnPad(orig, made);
+        for (int px : columns) {
+            if (px != 0) {
+                log.append("        欄距補正=")
+                   .append(java.util.Arrays.toString(columns))
+                   .append(System.lineSeparator());
+                break;
+            }
+        }
+        row.append(apply(made, columns));
         return row;
+    }
+
+    /**
+     * 欄與欄之間的間隔，要跟著譯文的寬度走。
+     *
+     * <h2>畫面上是什麼樣子</h2>
+     * 獵殺信標的選單是兩欄併排的，原文一行長這樣：
+     *
+     * <pre>
+     *   [縮排 33px]Orange Beacon[間隔 69px]Yellow Beacon
+     * </pre>
+     *
+     * 那個 69px 是伺服器照<b>英文</b>的寬度算好的，讓右欄落在該落的位置。
+     * 譯文把 {@code Orange Beacon}（90px）換成「橘色信標」（40px）之後，間隔卻
+     * 原樣搬過來——右欄的起點往左跑了 50px，整欄疊到左欄的說明文字上面。
+     *
+     * <p>{@link #chatRow} 本來只調行首的縮排，管的是<b>整行</b>的左緣；行<b>內</b>
+     * 的欄距沒有人管。這裡補上：每個間隔各自吸收它左邊那一段縮水了多少，
+     * 欄的起點就回到原文的位置。和 {@link #alignColumns} 是同一套邏輯，只是那邊
+     * 走的是 tooltip 的逐片段路徑，聊天訊息走不到。
+     *
+     * <p>第一個間隔不動。它是行首的縮排，{@link #chatRow} 的 {@code pad} 已經在
+     * 管了——兩邊都補的話整行會位移兩次。
+     *
+     * <p>負的間隔也不動：那是疊字用的，理由見 {@link #isBacktrack}。它左邊累積的
+     * 差額留給後面第一個正的間隔去吸收。
+     *
+     * <p>間隔數量對不上就整行放棄。對不上代表譯文的排版結構跟原文不同，
+     * 這時候「第幾個間隔」配不起來，硬補只會補到別的地方去。
+     */
+    private static int[] columnPad(List<Run> orig, List<Run> made) {
+        int spaces = countSpaces(made);
+        if (countSpaces(orig) != spaces) {
+            return new int[spaces];
+        }
+        int[] px = new int[spaces];
+        int index = 0;
+        for (Run r : made) {
+            if (r.space()) {
+                px[index++] = r.px();
+            }
+        }
+        return columnDrift(segmentWidths(orig), segmentWidths(made), px);
+    }
+
+    /**
+     * {@link #columnPad} 的算術部分。
+     *
+     * <p>分出來是為了測得到。寬度要有字型才量得出來，headless 的
+     * {@link #widthOf} 一律回 0，所以吃 {@code Run} 的那一層在測試裡永遠算出
+     * 全零——真正會出錯的加減法反而一行都沒被蓋到。這一層吃的是量好的數字。
+     *
+     * @param from     原文每一欄的文字寬度，長度是「間隔數 + 1」
+     * @param to       譯文每一欄的文字寬度，長度同上
+     * @param spacePx  譯文每一個間隔現在的寬度
+     */
+    static int[] columnDrift(List<Integer> from, List<Integer> to, int[] spacePx) {
+        int[] adjust = new int[spacePx.length];
+        int drift = 0;
+        for (int i = 1; i < spacePx.length; i++) {
+            drift += to.get(i) - from.get(i);
+            if (spacePx[i] >= 0) {
+                adjust[i] = -drift;
+                drift = 0;
+            }
+        }
+        return adjust;
     }
 
     /**
