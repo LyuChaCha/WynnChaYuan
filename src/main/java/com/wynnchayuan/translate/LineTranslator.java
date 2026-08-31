@@ -2417,6 +2417,10 @@ public final class LineTranslator {
         // 於是診斷檔裡那一塊完全不存在，看起來像沒被呼叫到——分不出是哪一種。
         String translated = lookup(parts.template(), store);
         if (translated == null || translated.isBlank()) {
+            // 整行查不到時，多欄的行改成<b>一欄一欄查</b>。見 #byColumn。
+            translated = byColumn(parts.template(), store);
+        }
+        if (translated == null || translated.isBlank()) {
             FlowedDebug.chatRows(message.getString(), "  鍵：" + parts.template(),
                                  "語料裡查不到這一塊");
             return null;
@@ -2428,6 +2432,123 @@ public final class LineTranslator {
             return null;
         }
         return unslant(realignChat(message, rebuilt, centred));
+    }
+
+    /**
+     * 多欄的行：整行查不到就<b>一欄一欄</b>查，再接回去。
+     *
+     * <h2>為什麼需要</h2>
+     * 獵殺信標的選單是兩欄併排，而兩欄的內容是<b>各自獨立</b>抽出來的：
+     *
+     * <pre>
+     *   {#}Purple Beacon{#}Blue Beacon
+     *   {#}Empower next Beacon{#}+{~} Beacon Choice
+     * </pre>
+     *
+     * 聊天走的是「只認整行的鍵」那條路，所以每一種左右配對都要在語料裡各列一條。
+     * 12 種信標顏色配上十幾種效果，組合是上百種——語料裡已經硬列了 <b>728 條</b>
+     * 成對條目，玩家還是三天兩頭遇到沒翻到的。
+     *
+     * <p>但那些欄位<b>單獨</b>的譯文其實都有（{@code {#}Empower next Beacon}、
+     * {@code {#}Reward Pulls}）。一欄一欄查就能組出任何配對，組合爆炸就消失了。
+     *
+     * <h2>安全性</h2>
+     * 只用語料裡<b>已經有的</b>單欄譯文，不自己拆句子、不自己編。查不到的那一欄
+     * 原樣留著英文。所以最壞的情況是「一半中文一半英文」——而那本來就是現在
+     * 查不到整行時的樣子（整行都是英文），不會更糟。
+     *
+     * <p>至少要有一欄查到才回傳，否則交還給呼叫端當作「查不到」。
+     *
+     * @return 接好的譯文；不是多欄、或一欄都沒查到時回傳 {@code null}
+     */
+    private static String byColumn(String template, TranslationStore store) {
+        List<String> parts = splitColumns(template);
+        if (parts.size() < 2) {
+            return null;                       // 不是多欄的行
+        }
+        StringBuilder out = new StringBuilder();
+        int hits = 0;
+        int colours = 0;                       // 前面幾欄一共用掉幾個顏色
+        for (String part : parts) {
+            String hit = GlyphSplitter.hasLetter(part) ? lookup(part, store) : null;
+            if (hit != null && !hit.isBlank()) {
+                String shifted = shiftColours(hit, colours);
+                colours += distinctColours(hit);
+                out.append(shifted);
+                hits++;
+            } else {
+                out.append(part);              // 這一欄沒有譯文，原樣留著
+            }
+        }
+        return hits > 0 ? out.toString() : null;
+    }
+
+    /**
+     * 把一欄的顏色佔位符往後推 {@code offset} 個。
+     *
+     * <h2>為什麼要推</h2>
+     * {@code {cN}} 指的是「這一行<b>第 N 個</b>出現的顏色」，所以編號跟欄位在
+     * 哪一欄有關：同一個「紫色信標」在左欄是 {@code {c1}}、在右欄是 {@code {c2}}。
+     * 語料裡因此同一欄存了兩種寫法——那正是先前只能一對一對硬列的原因之一。
+     *
+     * <p>單欄的條目沒辦法知道自己會被放到第幾欄，所以一律寫 {@code {c1}}，
+     * 接的時候再按前面幾欄用掉的顏色數往後推。
+     *
+     * <h2>為什麼是逐欄推，不是接好之後整串重編</h2>
+     * 整串重編分不出「同一欄裡重複用 {@code {c1}}」（該保持同色）與「兩欄各自
+     * 寫 {@code {c1}}」（該是不同色）——兩者在接好的字串裡長得一模一樣。
+     * 逐欄推就沒有這個歧義：欄內的相對關係原封不動，欄與欄之間才錯開。
+     */
+    static String shiftColours(String text, int offset) {
+        if (offset == 0) {
+            return text;
+        }
+        java.util.regex.Matcher m = COLOUR_TOKEN.matcher(text);
+        StringBuilder out = new StringBuilder();
+        int at = 0;
+        while (m.find()) {
+            out.append(text, at, m.start())
+               .append("{c").append(Integer.parseInt(m.group(1)) + offset).append('}');
+            at = m.end();
+        }
+        return at == 0 ? text : out.append(text.substring(at)).toString();
+    }
+
+    /** 這一段用到幾種不同的顏色。見 {@link #shiftColours}。 */
+    static int distinctColours(String text) {
+        java.util.Set<String> seen = new java.util.HashSet<>();
+        java.util.regex.Matcher m = COLOUR_TOKEN.matcher(text);
+        while (m.find()) {
+            seen.add(m.group(1));
+        }
+        return seen.size();
+    }
+
+    private static final java.util.regex.Pattern COLOUR_TOKEN =
+            java.util.regex.Pattern.compile("\\{c(\\d+)}");
+
+    /**
+     * 以排版符號為界把一行切成幾欄。
+     *
+     * <p>每一欄都<b>帶著自己前面那個 {@code {#}}</b>——語料裡的單欄條目就是那個
+     * 形狀（{@code {#}Reward Pulls}），不帶的話查不到。
+     *
+     * <p>只切 {@code {#}}。{@code {~}} 數值、{@code {p}} 地名是欄位<b>內部</b>的
+     * 東西，切開就湊不回去了。
+     */
+    private static List<String> splitColumns(String template) {
+        String mark = GlyphSplitter.GLYPH_PLACEHOLDER;
+        List<String> out = new ArrayList<>();
+        int at = template.indexOf(mark);
+        if (at > 0) {
+            out.add(template.substring(0, at));   // 第一個符號之前也算一欄
+        }
+        while (at >= 0) {
+            int next = template.indexOf(mark, at + mark.length());
+            out.add(next < 0 ? template.substring(at) : template.substring(at, next));
+            at = next;
+        }
+        return out;
     }
 
     /**
