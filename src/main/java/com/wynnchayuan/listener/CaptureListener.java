@@ -211,10 +211,14 @@ public final class CaptureListener {
              .map(NpcLabelInfo.class::cast)
              .ifPresent(info -> {
                  String name = info.getName();
+                 // 這條路先前完全沒過濾——玩家自己命名的寵物與坐騎就是從
+                 // 這裡漏進共享語料的。見 PlayerDataFilter#looksPlayerNamed。
                  if (name != null && !name.isBlank()) {
-                     WynnChaYuan.store().record(
-                             GlyphSplitter.toTemplate(StyledText.fromString(name)),
-                             "name", "npc", "npc/name");
+                     String tmpl = GlyphSplitter.toTemplate(StyledText.fromString(name));
+                     if (!PlayerDataFilter.carriesPlayerData(tmpl)
+                             && !PlayerDataFilter.looksPlayerNamed(tmpl)) {
+                         WynnChaYuan.store().record(tmpl, "name", "npc", "npc/name");
+                     }
                  }
              });
 
@@ -227,7 +231,10 @@ public final class CaptureListener {
             // 名稱是 ID，下面是他自己打的招牌字。先前只有聊天走這道濾網，
             // 於是收到的 captured.json 裡混了一堆別人的攤位。
             if (!template.isBlank() && GlyphSplitter.hasLetter(template)
-                    && !PlayerDataFilter.carriesPlayerData(template)) {
+                    && !PlayerDataFilter.carriesPlayerData(template)
+                    // 玩家自己取的寵物、坐騎、飾品名。帳號名比對擋不住這些，
+                    // 因為那些名字跟 ID 無關。見 PlayerDataFilter#looksPlayerNamed。
+                    && !PlayerDataFilter.looksPlayerNamed(template)) {
                 // 浮在世界裡的字不只有 NPC 名牌：突襲裡選增益的那幾塊、
                 // 地上的指示與提示，用的都是同一種實作。混在 npc.json 裡的話
                 // 譯者要在幾百個 NPC 名字之間翻找，等於找不到，

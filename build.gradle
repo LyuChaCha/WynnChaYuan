@@ -279,6 +279,14 @@ tasks.register('runLiteralChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLiteralChecks' }
 
+tasks.register('runPlayerNameChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證玩家自己取的名字不會進共享語料'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.PlayerNameplateTest'
+}
+tasks.named('check') { dependsOn 'runPlayerNameChecks' }
+
 tasks.register('runParityChecks', JavaExec) {
     group = 'verification'
     description = '驗證 Python 語料工具與 mod 端算出相同的模板'
