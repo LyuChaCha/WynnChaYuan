@@ -243,7 +243,16 @@ public final class ChatBlock {
                 line = rows.get(i).translated();
             }
             if (line == null) {
-                continue;                 // 這一行沒有譯文，跳過
+                // 查不到譯文就<b>原樣送出</b>，絕對不能跳過。
+                //
+                // 先前是 continue，那一行就這樣從畫面上消失了。玩家回報的
+                // 「獵殺重抽之後信標不見了」就是這個：重抽會換出語料裡沒有的
+                // 組合（單獨一個「{#}Blue Beacon」、「{#}Empower next Beacon…」），
+                // 於是那幾行整個被刪掉，畫面上少了一整個信標。
+                //
+                // 少一句沒翻的英文，比憑空吃掉伺服器送來的內容好得多——
+                // 而且「沒翻到」看得出來，「被吃掉」看不出來。
+                line = rows.get(i).original().getComponent();
             }
             if (any) {
                 out.append(Component.literal("\n"));

@@ -141,12 +141,6 @@ public final class ChatAlignTest {
      * 分別是 90px 與 82px，譯成「橘色信標」「黃色信標」之後各剩 40px。
      */
     private static void columns() {
-        // 第 0 個間隔是行首縮排，chatRow 的 pad 在管，這裡不能動。
-        int[] two = LineTranslator.columnDrift(
-                List.of(0, 90, 82), List.of(0, 40, 40), new int[] {33, 69});
-        check("行首的縮排不動（實際 " + two[0] + "）", two[0] == 0);
-        check("欄距吸收左欄縮水的 50px（實際 " + two[1] + "）", two[1] == 50);
-
         // 譯文比原文寬的時候要反過來收窄，否則右欄會被推出去。
         int[] wide = LineTranslator.columnDrift(
                 List.of(0, 40), List.of(0, 64), new int[] {10, 30});
@@ -157,7 +151,38 @@ public final class ChatAlignTest {
                 List.of(0, 90, 20, 20), List.of(0, 40, 20, 20),
                 new int[] {33, -23, 40});
         check("負間隔不動（實際 " + stacked[1] + "）", stacked[1] == 0);
-        check("差額留到後面的正間隔（實際 " + stacked[2] + "）", stacked[2] == 50);
+        // 「把差額往後遞延」是<b>單欄</b>那條路的行為，目的是守住整行寬度。
+        // 多欄改成各自置中之後要守的是每一欄的中心，不是整行寬度，所以
+        // 後面的間隔只吸收它自己左右兩欄的縮水——這裡兩欄都沒縮，就是 0。
+        check("多欄不遞延差額（實際 " + stacked[2] + "）", stacked[2] == 0);
+
+        // ★ 兩欄以上：每一欄各自置中，不是把第二欄靠左貼回原位。
+        //
+        // 數字取自實機的信標選單：兩欄的英文各 90px 與 82px，譯成「紫色信標」
+        // 「藍色信標」之後各剩 40px。原文的縮排 34px 是伺服器照英文算好、
+        // 讓那一欄置中的，照抄過來字就會往左偏。
+        int[] two = LineTranslator.columnDrift(
+                List.of(0, 90, 82), List.of(0, 40, 40), new int[] {34, 69});
+        check("第一欄吸收自己縮水的一半（實際 " + two[0] + "）", two[0] == 25);
+        check("間隔吸收左右各一半（實際 " + two[1] + "）", two[1] == 46);
+
+        // 兩欄置中之後，每一欄的中心都要留在原處——這才是「對齊」的定義。
+        int[] widths = {90, 82};
+        int[] made = {40, 40};
+        int[] gaps = {34, 69};
+        int origPos = 0;
+        int madePos = 0;
+        for (int i = 0; i < 2; i++) {
+            origPos += gaps[i];
+            madePos += gaps[i] + two[i];
+            int origCentre = origPos + widths[i] / 2;
+            int madeCentre = madePos + made[i] / 2;
+            check("第 " + (i + 1) + " 欄的中心不動（原文 " + origCentre
+                          + "、譯文 " + madeCentre + "）",
+                  Math.abs(origCentre - madeCentre) <= 1);
+            origPos += widths[i];
+            madePos += made[i];
+        }
 
         // 只有縮排、沒有第二欄的行完全不受影響。
         int[] one = LineTranslator.columnDrift(
