@@ -75,6 +75,20 @@ public final class TranslationStore {
      * <p>裝備名稱多半是專有名詞，翻了反而對不上社群討論與 wiki，
      * 所以要能單獨關掉。工作檔已經標好 role，這裡照著記就好。
      */
+    /**
+     * 所有裝備名，<b>不論翻了沒</b>。
+     *
+     * <p>只收<b>自己還沒翻</b>的那些。翻好的走 {@link #nameKeys}（那管的是 F6
+     * 開關），本來就會拿到裝備自己的譯名。
+     *
+     * <p>還沒翻的那些同樣需要保護：語料裡有 50 組裝備名跟別的領域撞名（技能詞、
+     * Major ID、介面詞），沒有這份清單的話，別的檔案的譯文會替裝備名頂上去。
+     *
+     * <p>不能用「entries 裡有沒有這個鍵」來判斷——撞名的那一方<b>就是</b>把鍵
+     * 放進 entries 的人，那樣問等於永遠問不出來。第一版就是這樣寫的，測試抓到了。
+     */
+    private final java.util.Set<String> gearNameKeys = new java.util.HashSet<>();
+
     private final java.util.Set<String> nameKeys =
             java.util.concurrent.ConcurrentHashMap.newKeySet();
     private volatile int loadedFiles = 0;
@@ -100,6 +114,7 @@ public final class TranslationStore {
         maxTermWords = 1;
         maxBlockLines = 1;
         nameKeys.clear();
+        gearNameKeys.clear();
         ordered.clear();
         byQuest.clear();
         fromWiki.clear();
@@ -250,6 +265,14 @@ public final class TranslationStore {
             JsonObject e = el.getAsJsonObject();
             String src = optString(e, "src");
             String dst = optString(e, "dst");
+            // 還沒翻的裝備名也要記下來。它是專有名詞，不能讓別的檔案裡剛好同名
+            // 的條目替它翻譯——實機踩到的是武器「Guardian」被 Major ID 的
+            // 「守護者」蓋掉。全庫掃過去這種撞名有 50 組。見 #gearNameKeys。
+            if (gearNames && src != null && !src.isBlank()
+                    && (dst == null || dst.isBlank())
+                    && "name".equals(optString(e, "role"))) {
+                gearNameKeys.add(src.strip());
+            }
             if (src != null && dst != null && !dst.isBlank()) {
                 String srcKey = src.strip();
                 entries.put(srcKey, dst.strip());
@@ -840,6 +863,13 @@ public final class TranslationStore {
         String key = template.strip();
         if (!translateNames && nameKeys.contains(key)) {
             return null;                       // 使用者選擇不翻物品名稱
+        }
+        // 裝備名是專有名詞。它自己沒有譯文的時候，不能讓別的領域裡剛好同名的
+        // 條目頂上去——武器「Guardian」拿到 Major ID 的「守護者」就是這樣來的。
+        //
+        // 有自己的譯文就照常走：那是翻譯團隊刻意翻的，受 F6 開關管。
+        if (gearNameKeys.contains(key)) {
+            return null;
         }
         String hit = entries.get(key);
         if (hit == null) {
