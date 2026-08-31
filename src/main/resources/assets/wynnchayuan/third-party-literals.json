@@ -3,6 +3,13 @@
   "_wynnmod": "RaidState.onTitle 用 title.contains(\"Raid Completed\") / (\"Raid Failed\") 判斷這一場的結果。翻掉的話兩個條件都對不上,這一場算不出結果,上報之後連勝會重置——而且我們只翻了 Completed 沒翻 Failed,所以連勝只會往下掉。",
   "wynnmod": [
     "Raid Completed",
-    "Raid Failed"
-  ]
+    "Raid Failed",
+    "Nest of The Grootslangs",
+    "Nest of the Grootslangs",
+    "Orphion's Nexus of Light",
+    "The Canyon Colossus",
+    "The Nameless Anomaly",
+    "The Wartorn Palace"
+  ],
+  "_wynnmod_names": "RaidState.onTitle 還會用 getRaidFromName(標題) 認出這是哪一場副本,而且會先把非 ASCII 全部剝掉。副本名稱翻成中文的話它連 startRaid 都不會觸發,整場都不會被記錄。名稱取自 WynnMod 自己的 WynnRaid 列舉。"
 }

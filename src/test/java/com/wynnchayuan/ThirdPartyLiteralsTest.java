@@ -69,6 +69,14 @@ public final class ThirdPartyLiteralsTest {
         check("判斷失敗的那句也在（少一邊連勝就只會往下掉）",
               wynnmod.contains("Raid Failed"));
 
+        // 副本名稱也要在。getRaidFromName(標題) 是用來認「這是哪一場」的，
+        // 翻掉的話連 startRaid 都不會觸發——整場都不會被記錄。
+        for (String raid : new String[] {
+                "Nest of The Grootslangs", "Orphion's Nexus of Light",
+                "The Canyon Colossus", "The Nameless Anomaly", "The Wartorn Palace"}) {
+            check("副本名稱在清單上：" + raid, wynnmod.contains(raid));
+        }
+
         report();
     }
 
