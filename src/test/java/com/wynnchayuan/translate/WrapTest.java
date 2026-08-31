@@ -27,6 +27,34 @@ public final class WrapTest {
         return piece.codePointCount(0, piece.length());
     }
 
+    /**
+     * 貼近真實字型的量法。
+     *
+     * <h2>為什麼需要第二種量法</h2>
+     * {@link #measure} 是數 code point 的——{@code {#}} 算 3、一個中文字算 1。
+     * 真實的字型剛好相反：中文 9px、圖示大約也是 8px、拉丁字母 5px、空白 4px。
+     *
+     * <p>差別不只是比例。用數 code point 的量法，圖示比中文字<b>寬三倍</b>，
+     * 斷點永遠不會落在圖示後面那個位置；實機卻天天落在那裡。實機回報的
+     * 「圖示卡在行尾、詞掉到下一行」用舊量法怎麼掃都掃不出來，就是這個原因。
+     */
+    private static int realistic(String piece) {
+        int px = 0;
+        for (int i = 0; i < piece.length(); ) {
+            int cp = piece.codePointAt(i);
+            i += Character.charCount(cp);
+            if (cp == ' ') {
+                px += 4;
+            } else if (cp >= 0x3000) {
+                px += 9;                       // 中日韓
+            } else {
+                px += 5;
+            }
+        }
+        // 佔位符整組算一個圖示的寬度，不是三個字母
+        return piece.startsWith("{") && piece.endsWith("}") ? 8 : px;
+    }
+
     public static void main(String[] args) {
         // 使用者實際踩到的形狀：換行點正好落在空白上
         check("換行點落在空白上不會丟例外",
@@ -302,6 +330,64 @@ public final class WrapTest {
         // 內容守恆：避尾只是挪斷點，不能吃字
         String once = LineTranslator.wrapToWidth(text, 12, WrapTest::measure);
         report("字沒有變少", bare(once).equals(bare(text)));
+
+        // ★ 實機回報的另一句。掃到更寬的地方——先前只掃到 40，而真正的 tooltip
+        //   比那寬得多，圖示落在行尾的寬度全都在掃描範圍外。
+        String upgrade = "一件強大的神器，可透過 {#} 物品升級師 將物品提升至全新的境界。";
+        int wide = 0;
+        String first = null;
+        for (int px = 4; px <= 120; px++) {
+            String wrapped = LineTranslator.wrapToWidth(upgrade, px, WrapTest::measure);
+            for (String row : wrapped.split(String.valueOf(NL), -1)) {
+                String core = row.stripTrailing();
+                if (core.endsWith("{#}") && !core.strip().equals("{#}")) {
+                    wide++;
+                    if (first == null) {
+                        first = "寬度 " + px + "：" + show(wrapped);
+                    }
+                }
+            }
+        }
+        report("寬一點的版面也不會讓圖示落在行尾"
+                + (first == null ? "" : "（例如 " + first + "）"), wide == 0);
+
+        // ★ tooltip 走的其實是 wrapBalanced，不是 wrapToWidth。
+        //   原文三行，所以 rows=3；平均分配那一步會用更窄的寬度重折，
+        //   而重折出來的斷點沒有再過一次避尾——先前只測 wrapToWidth，測不到。
+        int bal = 0;
+        String balWorst = null;
+        for (int px = 8; px <= 320; px++) {
+            for (int rows = 2; rows <= 4; rows++) {
+                String wrapped = LineTranslator.wrapBalanced(
+                        upgrade, px, rows, WrapTest::realistic);
+                for (String row : wrapped.split(String.valueOf(NL), -1)) {
+                    String core = row.stripTrailing();
+                    if (core.endsWith("{#}") && !core.strip().equals("{#}")) {
+                        bal++;
+                        if (balWorst == null) {
+                            balWorst = "寬度 " + px + "、" + rows + " 行："
+                                    + show(wrapped);
+                        }
+                    }
+                }
+            }
+        }
+        report("平均分配之後圖示也不能落在行尾"
+                + (balWorst == null ? "" : "（例如 " + balWorst + "）"), bal == 0);
+
+        // ★★ 真正的兇手：折完之後 keepAccentsWhole 又把重點詞整個搬到下一行，
+        //    圖示就這樣被留在行尾。折行本身沒問題——所以只測折行永遠測不到。
+        java.util.List<com.wynnchayuan.capture.LineParts.Piece> accents =
+                java.util.List.of(new com.wynnchayuan.capture.LineParts.Piece(
+                        "物品升級師", net.minecraft.network.chat.Style.EMPTY));
+        String[] split = {"一件強大的神器，可透過 {#} 物品升級", "師 將物品提升至全新的境界。"};
+        String[] kept = LineTranslator.keepAccentsWhole(split, accents);
+        System.out.println("      搬完：" + String.join(" ⏎ ", kept));
+        report("重點詞搬下去之後，圖示不會被留在行尾",
+               !kept[0].stripTrailing().endsWith("{#}"));
+        report("重點詞真的整個到了下一行", kept[1].contains("物品升級師"));
+        report("字沒有變少",
+               bare(String.join("", kept)).equals(bare(String.join("", split))));
     }
 
     /**

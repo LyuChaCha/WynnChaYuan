@@ -3864,12 +3864,42 @@ public final class LineTranslator {
         for (int i = 0; i + 1 < out.length; i++) {
             int move = splitAcross(out[i], out[i + 1], accents);
             if (move > 0) {
+                // 詞搬下去之後，行尾若只剩一個圖示，圖示也要跟著走。
+                //
+                // 實機回報：「一件強大的神器，可透過 {#}」換行「物品升級師 將…」
+                // ——{#} 是「物品升級師」前面那個圖示，兩者本來是一體的。
+                // 折行本身有 keepGlyphWithWord 顧著，但這裡是<b>折完之後</b>
+                // 又把詞搬走，圖示就這樣被留在行尾。
+                //
+                // 認得出來的形狀是「行尾是圖示，後面只有空白」。
+                move += trailingGlyph(out[i], out[i].length() - move);
                 String moved = out[i].substring(out[i].length() - move);
                 out[i] = out[i].substring(0, out[i].length() - move);
                 out[i + 1] = moved + out[i + 1];
             }
         }
         return out;
+    }
+
+    /**
+     * 搬走 {@code from} 之後，行尾還剩下的圖示有多長（含它後面的空白）。
+     *
+     * <p>「{@code …可透過 {#} }」搬走「物品升級師」之後只剩「{@code …可透過 {#} }」
+     * ——圖示孤零零掛在行尾，而它本來是下一個詞的一部分。回傳要<b>多搬</b>幾個字。
+     *
+     * <p>圖示前面若還有東西（正常情況），只搬圖示與它後面的空白；整行搬完會空掉
+     * 的話就不搬——寧可圖示在行尾，也不要多出一個空行。
+     */
+    private static int trailingGlyph(String head, int from) {
+        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
+        int at = from;
+        while (at > 0 && head.charAt(at - 1) == ' ') {
+            at--;
+        }
+        if (at - glyph.length() <= 0 || !head.startsWith(glyph, at - glyph.length())) {
+            return 0;                          // 行尾不是圖示，或整行只有圖示
+        }
+        return from - (at - glyph.length());
     }
 
     /** 上一行結尾有幾個字是下一行開頭那個重點詞的一部分；沒有就是 0。 */

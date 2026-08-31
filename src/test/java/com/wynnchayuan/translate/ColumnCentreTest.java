@@ -155,8 +155,17 @@ public final class ColumnCentreTest {
         // 兩行各自都找不到整個詞，那個綠色就整個掉了
         String[] split = {"並提高你能造成的 {#} 地", "屬性傷害"};
         String[] fixed = LineTranslator.keepAccentsWhole(split, accents);
-        check("被切開的重點詞會整個搬到下一行",
-                fixed[0].equals("並提高你能造成的 {#} ") && fixed[1].equals("地屬性傷害"));
+        // 圖示要跟著詞一起搬。
+        //
+        // 這裡原本釘的是「{#} 留在上一行」。實機回報證明那是錯的：
+        // 「一件強大的神器，可透過 {#}」換行「物品升級師 將…」——圖示是後面
+        // 那個詞的圖示，兩者本來是一體的，拆開之後圖示孤零零掛在行尾。
+        //
+        // 折行本身有 keepGlyphWithWord 顧著，但這裡是<b>折完之後</b>又把詞搬走，
+        // 所以要在搬的時候一併把圖示帶下去。
+        check("被切開的重點詞會整個搬到下一行，圖示跟著走（實際 "
+                        + fixed[0] + " ⏎ " + fixed[1] + "）",
+                fixed[0].equals("並提高你能造成的 ") && fixed[1].equals("{#} 地屬性傷害"));
 
         // 沒切到的不要動 —— 重排行是有代價的（面板會變寬）
         String[] whole = {"並提高你能造成的 {#} 地屬性", "傷害"};
