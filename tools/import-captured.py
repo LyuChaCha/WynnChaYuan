@@ -258,7 +258,104 @@ def existing() -> set[str]:
     return seen
 
 
+def merge_dialogue(quest: str, existing: dict, fresh: list[dict],
+                   session: list[str]) -> dict:
+    """把新台詞插進<b>劇情順序</b>裡，然後整份重新編號。
+
+    <h2>先前是怎麼放的</h2>
+    新條目一律<b>接在檔尾</b>，編號是 {@code 任務名#c012} 這種另起一套的流水號。
+    於是同一段對話被拆成兩截：前面是照劇情排好的，後面是這次補進來的一坨，
+    順序完全對不上。翻譯的人得先自己拼回先後才知道在講什麼。
+
+    <h2>怎麼知道該插在哪</h2>
+    靠<b>錨點</b>。這次在遊戲裡跑到的台詞裡，有一部分語料早就有了——那些被跳過，
+    但它們的順序告訴我們新台詞的位置：一句新台詞如果出現在已知的第 12 句之後、
+    第 13 句之前，它就該插在檔案裡那兩句中間。
+
+    <p>跑到的順序裡完全沒有錨點的（整段對話都是新的），就照原順序放在最前面——
+    那代表它們發生在目前檔案裡所有台詞之前，或者這是個全新的任務檔。
+
+    <h2>為什麼要整份重新編號</h2>
+    插進中間就得有個號碼。與其用 {@code #012a} 這種補丁編號，不如整份重排成
+    {@code #000..#NNN}——翻譯的人一眼就看得出這是第幾句，而編號只是識別，
+    查表走的是 src。
+    """
+    old = list(existing.items())
+    at = {}
+    for i, (_, entry) in enumerate(old):
+        at.setdefault(entry.get("src", ""), i)
+    pending = {e["src"]: e for e in fresh}
+
+    after: dict[int, list[dict]] = collections.defaultdict(list)
+    head: list[dict] = []
+    anchor = None
+    for src in session:
+        if src in at:
+            anchor = at[src]
+        elif src in pending:
+            (after[anchor] if anchor is not None else head).append(pending.pop(src))
+
+    merged = list(head)
+    for i, (_, entry) in enumerate(old):
+        merged.append(entry)
+        merged.extend(after.get(i, []))
+    # 這次的順序裡沒出現過的（理論上不會有）放最後，總之不能弄丟
+    merged.extend(pending.values())
+
+    return {f"{quest}#{i:03d}": entry for i, entry in enumerate(merged)}
+
+
+def selftest() -> int:
+    """merge_dialogue 的自我檢查：`python tools/import-captured.py --selftest`
+
+    插入位置這種邏輯錯了不會報錯，只會讓對話順序悄悄變得莫名其妙，
+    所以放一份能隨時重跑的案例在這裡。
+    """
+    q = "Cook Assistant"
+    e = lambda src, dst="": {"src": src, "dst": dst}
+    base = {f"{q}#000": e("A", "甲"), f"{q}#001": e("B", "乙"),
+            f"{q}#002": e("C", "丙")}
+    order = lambda r: [v["src"] for v in r.values()]
+    cases = [
+        ("插在兩句已知台詞中間",
+         (dict(base), [e("B2")], ["A", "B", "B2", "C"]), ["A", "B", "B2", "C"]),
+        ("兩句新的各自插在不同位置",
+         (dict(base), [e("A2"), e("C2")], ["A", "A2", "B", "C", "C2"]),
+         ["A", "A2", "B", "C", "C2"]),
+        ("發生在所有已知台詞之前的放最前面",
+         (dict(base), [e("Z")], ["Z", "A", "B", "C"]), ["Z", "A", "B", "C"]),
+        ("全新任務照收集順序",
+         ({}, [e("P"), e("Q"), e("R")], ["P", "Q", "R"]), ["P", "Q", "R"]),
+        ("沒有錨點時一條都不能弄丟",
+         (dict(base), [e("X")], []), None),
+    ]
+    bad = 0
+    for what, (old, fresh, session), want in cases:
+        got = order(merge_dialogue(q, old, fresh, session))
+        ok = sorted(got) == sorted(["A", "B", "C", "X"]) if want is None             else got == want
+        print(("  [PASS] " if ok else "  [FAIL] ") + what
+              + ("" if ok else f"（實際 {got}）"))
+        bad += 0 if ok else 1
+    # 既有譯文不能被動到
+    kept = [v.get("dst") for v in
+            merge_dialogue(q, dict(base), [e("B2")], ["A", "B", "B2", "C"]).values()]
+    ok = kept == ["甲", "乙", "", "丙"]
+    print(("  [PASS] " if ok else "  [FAIL] ") + "既有譯文原封不動"
+          + ("" if ok else f"（實際 {kept}）"))
+    bad += 0 if ok else 1
+    # 編號要連號，翻譯的人是靠它看順序的
+    keys = list(merge_dialogue(q, dict(base), [e("B2")], ["A", "B", "B2", "C"]))
+    ok = keys == [f"{q}#{i:03d}" for i in range(4)]
+    print(("  [PASS] " if ok else "  [FAIL] ") + "整份重新編號且連號"
+          + ("" if ok else f"（實際 {keys}）"))
+    bad += 0 if ok else 1
+    print("對話插入：" + ("全部通過" if bad == 0 else f"{bad} 項失敗"))
+    return 1 if bad else 0
+
+
 def main(argv: list[str]) -> int:
+    if "--selftest" in argv:
+        return selftest()
     write = "--write" in argv
     files = [a for a in argv if not a.startswith("--")]
     if not files:
@@ -267,12 +364,23 @@ def main(argv: list[str]) -> int:
 
     have = existing()
     by_file: dict[str, list[tuple[str, dict]]] = collections.defaultdict(list)
+    # 這一次實際跑到的劇情順序，一個任務一份。<b>包含已經翻好的那些</b>——
+    # 它們是錨點：新台詞要插在哪裡，只能靠「它前面那句已知的台詞在檔案裡的位置」
+    # 推出來。見 merge_dialogue。
+    session: dict[str, list[str]] = collections.defaultdict(list)
     skipped = 0
     for name in files:
         data = json.loads(Path(name).read_text(encoding="utf-8"))
-        for key, entry in data.get("entries", {}).items():
+        rows_in = sorted(data.get("entries", {}).items(),
+                         key=lambda kv: kv[1].get("seq", 0))
+        for key, entry in rows_in:
             src = entry.get("src", "")
-            if (not src or src in have or bare(src) in have
+            known = bool(src) and (src in have or bare(src) in have)
+            found = quest_of(entry)
+            if found and src and (known or worth_keeping(src)):
+                # 已知的也要記進順序，它是錨點
+                session[found[0]].append(src)
+            if (not src or known
                     or not worth_keeping(src)
                     or already_piecewise(src, have)
                     or names_a_player(src)):
@@ -280,7 +388,6 @@ def main(argv: list[str]) -> int:
                 continue
             have.add(src)                      # 同一批裡的重複只收一次
             have.add(bare(src))
-            found = quest_of(entry)
             if found:
                 quest, speaker = found
                 entry["_quest"], entry["_speaker"] = quest, speaker
@@ -319,18 +426,20 @@ def main(argv: list[str]) -> int:
             # 照收集順序排：同一段劇情的台詞本來就是照 seq 進來的
             rows.sort(key=lambda row: row[1].get("seq", 0))
             quest = data["_meta"].get("quest") or rows[0][1]["_quest"]
-            used = len(data["entries"])
-            for offset, (_, entry) in enumerate(rows):
-                data["entries"][f"{quest}#c{used + offset:03d}"] = {
-                    "src": entry["src"], "dst": "",
-                    "role": entry.get("role", "desc"),
-                    "kind": "dialogue",
-                    "quest": quest,
-                    "stage": "",
-                    "speaker": entry.get("_speaker", ""),
-                    "source": "captured",
-                }
+            fresh = [{
+                "src": entry["src"], "dst": "",
+                "role": entry.get("role", "desc"),
+                "kind": "dialogue",
+                "quest": quest,
+                "stage": "",
+                "speaker": entry.get("_speaker", ""),
+                "source": "captured",
+            } for _, entry in rows]
+            data["entries"] = merge_dialogue(
+                quest, data["entries"], fresh, session.get(quest, []))
             data["_meta"]["count"] = len(data["entries"])
+            data["_meta"]["translated"] = sum(
+                1 for e in data["entries"].values() if str(e.get("dst", "")).strip())
         elif flat:
             for _, entry in rows:
                 data[entry["src"]] = ""
