@@ -123,6 +123,28 @@ public final class PlayerDataFilter {
             Pattern.compile("['’]s Party(\\n|$)|^Leader: ", Pattern.MULTILINE);
 
     /**
+     * 公會清單的一列，例如 {@code - RabbitHouse [Maya]}、{@code - Death Star [LIVE]}。
+     *
+     * <h2>為什麼靠形狀擋得住，靠名字擋不住</h2>
+     * 公會名是玩家自己取的，什麼樣子都有——{@code Blank}、{@code Death Star}、
+     * {@code ChinaNumberOne}。{@link #looksAccountNamed} 那套「底線或駝峰」的判準
+     * 對它們幾乎全部失效：實機開一次公會選單就漏了七個。
+     *
+     * <p>但<b>那一列的形狀</b>是固定的：可能有的破折號開頭，結尾是方括號包起來
+     * 的二到四碼公會標籤。Wynncraft 的標籤長度就是這個範圍，而遊戲本身的介面
+     * 文字不會長成「某某 [ABCD]」——所以擋形狀既準又不會誤傷。
+     *
+     * <p>不限定大寫：實機收到的標籤有 {@code [Maya]}、{@code [tmxt]}。
+     *
+     * <p>量過整份語料：53,274 條有譯文的條目裡只有兩條會被擋到
+     * （{@code - Lootrunning Grandmaster [MAX]} 與 {@code - Raiding Grandmaster [MAX]}）。
+     * 那兩條<b>早就翻好了</b>，而這道濾網只管收集不管翻譯，所以擋到也沒有損失。
+     */
+    private static final Pattern GUILD_TAG = Pattern.compile(
+            "^\\s*-?\\s*[^\\[\\]\\n]*\\S[^\\[\\]\\n]*\\[[A-Za-z0-9]{2,4}]\\s*$",
+            Pattern.MULTILINE);
+
+    /**
      * 中日韓文字。
      *
      * <h2>為什麼「出現中文」就該擋</h2>
@@ -177,6 +199,7 @@ public final class PlayerDataFilter {
         }
         if (COORDS.matcher(text).find() || PLAYER_SHOP.matcher(text).find()
                 || PARTY_OWNER.matcher(text).find()
+                || GUILD_TAG.matcher(text).find()
                 || RAID_DEATH.matcher(text).find()
                 || CRAFTED_BY.matcher(text).find()
                 || XP_SHARE_TARGET.matcher(text).find()

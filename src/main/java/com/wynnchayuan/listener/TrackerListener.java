@@ -32,9 +32,26 @@ public final class TrackerListener {
         // 記下來給對話收集用：同一個任務的台詞才排得在一起
         CurrentQuest.set(name);
         if (name != null && !name.isBlank()) {
-            WynnChaYuan.store().record(
-                    GlyphSplitter.stripGlyphChars(name).strip(),
-                    "name", "quest", "tracker/name");
+            // 數值一定要參數化，理由有兩個，而且都會無聲地出事。
+            //
+            // 一、活動名稱<b>會帶倒數</b>：「Swashbuckling Brawl (1m 53s left)」
+            // 每秒換一次。照原樣記等於一秒收一條，實機跑一趟就是 111 條同一個
+            // 活動——把真正缺的字串整片淹掉。
+            //
+            // 二、更要命的是<b>查表那一端本來就是參數化的</b>：畫面上是
+            // TrackerOverlay 走 LineTranslator.translate()，它問的是
+            // 「Swashbuckling Brawl ({~}m {~}s left)」。所以照原樣記下來的那一條
+            // 就算有人翻了也永遠對不上——譯者會看到「明明翻了卻沒反應」。
+            //
+            // 目標敘述那一路（下面）一直都有做，只有名稱這一路漏了。
+            String template = GlyphSplitter.parametrizeNumbers(
+                    GlyphSplitter.stripGlyphChars(name).strip());
+            // 名稱也可能帶玩家內容（公會戰、隊伍活動），跟目標敘述一樣要濾。
+            if (PlayerDataFilter.carriesPlayerData(template)) {
+                WynnChaYuan.store().noteEvent("tracker.blocked.playerData");
+            } else {
+                WynnChaYuan.store().record(template, "name", "quest", "tracker/name");
+            }
         }
 
         StyledText task = event.getTask();
