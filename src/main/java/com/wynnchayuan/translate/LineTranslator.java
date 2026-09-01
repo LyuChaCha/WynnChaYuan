@@ -3899,6 +3899,9 @@ public final class LineTranslator {
         for (List<Token> tokens : lines) {
             MutableComponent line = Component.empty();
             Style justFilled = null;          // 剛填回去的那個佔位符的樣式
+            // 剛填回去的是不是<b>數值</b>。單位後綴（s、m、stx）要跟著數值
+            // 走顏色，見 #appendHugging 的說明。
+            boolean afterNumber = false;
             for (int i = 0; i < tokens.size(); i++) {
                 Token token = tokens.get(i);
                 switch (token.kind()) {
@@ -3908,12 +3911,14 @@ public final class LineTranslator {
                         LineParts.Piece piece = glyphs.get(glyph++);
                         line.append(Component.literal(piece.text()).withStyle(piece.style()));
                         justFilled = piece.style();
+                        afterNumber = false;
                     }
                     case PLACE -> {
                         // 地名是專有名詞，原樣填回，永遠不翻譯
                         LineParts.Piece piece = places.get(place++);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
                         justFilled = piece.style();
+                        afterNumber = false;
                     }
                     case NUMBER -> {
                         // 帶編號的直接指名要第幾個，沒編號的照順序取下一個
@@ -3924,12 +3929,14 @@ public final class LineTranslator {
                         LineParts.Piece piece = numbers.get(at);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
                         justFilled = piece.style();
+                        afterNumber = true;
                     }
                     case USER -> {
                         // 玩家名字原樣填回，跟地名一樣是專有名詞
                         LineParts.Piece piece = users.get(user++);
                         line.append(literal(piece.text(), forDisplay(piece.style())));
                         justFilled = piece.style();
+                        afterNumber = false;
                     }
                     case TEXT -> {
                         if (forced != null) {
@@ -3943,10 +3950,11 @@ public final class LineTranslator {
                                                 numbers, users, glyph, place, number, user)
                                     : null;
                             appendHugging(line, token.text(), textStyle, symbolStyle,
-                                          noteStyle, inNote,
-                                          accents, usedAccent, store, before, after);
+                                          noteStyle, inNote, accents, usedAccent,
+                                          store, before, after, afterNumber);
                         }
                         justFilled = null;
+                        afterNumber = false;
                     }
                 }
             }
@@ -4022,7 +4030,8 @@ public final class LineTranslator {
     private static void appendHugging(MutableComponent out, String text,
                                       Style base, Style symbol, Style note, boolean[] depth,
                                       List<LineParts.Piece> accents, boolean[] used,
-                                      TranslationStore store, Style before, Style after) {
+                                      TranslationStore store, Style before, Style after,
+                                      boolean afterNumber) {
         int lead = 0;
         if (before != null) {
             while (lead < text.length() && hugs(text.charAt(lead))) {
@@ -4045,6 +4054,23 @@ public final class LineTranslator {
             Style owner = leadTakesNext(text, lead, after) ? after : before;
             out.append(literal(text.substring(0, lead), forDisplay(owner)));
         }
+        // 單位後綴跟著前面那個數值走顏色。
+        //
+        // 畫面上是什麼樣子：生命竊取那一列原文寫 `+445/3s`，整串都是綠的——
+        // 遊戲把數字與單位放在同一段。譯文的 `s` 是<b>文字</b>，拿到的是整行的
+        // 正文顏色（標籤那個色），於是 `+445/3` 綠、`s` 白，一眼就看得出來。
+        //
+        // 上面那一段只黏標點（見 #hugs 明確排除字母），所以碰不到 `s`。
+        //
+        // 判準收得很緊：必須<b>緊接在數值後面</b>（lead == 0，中間連標點都沒有）、
+        // 必須是三個以內的 ASCII 小寫字母（s、m、h、stx）、而且後面不能再接字母
+        // ——再接字母那是一個單字，不是單位。中文不是 ASCII，所以「{~} 秒」
+        // 這種寫法完全不受影響。
+        int unit = before == null ? 0 : unitLength(text, afterNumber, lead, tail);
+        if (unit > 0) {
+            out.append(literal(text.substring(0, unit), forDisplay(before)));
+            lead = unit;
+        }
         // 遊戲自己的符號（❤ ✦ ⬤⋯）用原本的字型畫，見 #rebuild 那邊的說明。
         // 只剝<b>開頭</b>那一串：符號在原文裡幾乎都掛在標籤前面，
         // 而剝得越少，誤把該換字型的東西留在舊字型的機會也越少。
@@ -4063,6 +4089,44 @@ public final class LineTranslator {
         if (tail < text.length()) {
             out.append(literal(text.substring(tail), forDisplay(after)));
         }
+    }
+
+    /**
+     * 單位後綴最多幾個字母。
+     *
+     * <p>{@code s}、{@code m}、{@code h} 是一個，{@code stx}（綠寶石堆疊單位）是三個。
+     * 再長就不像單位了，寧可少黏。
+     */
+    private static final int MAX_UNIT = 3;
+
+    /** 單位用的字母：只認 ASCII 小寫。大寫與中文都不是單位。 */
+    private static boolean isUnitLetter(char c) {
+        return c >= 'a' && c <= 'z';
+    }
+
+    /**
+     * 開頭有幾個字元是「緊貼在數值後面的單位」。
+     *
+     * <p>抽出來是為了測得到：黏不黏的<b>判斷</b>不需要字型，而那正是會出錯的一步。
+     *
+     * @param afterNumber 前一個佔位符是不是數值
+     * @param lead        標點已經吃掉幾個字元；不是 0 就表示中間隔著東西，不算緊貼
+     * @param tail        這一段可以動的範圍右界
+     * @return 單位的長度；不是單位時回傳 0
+     */
+    static int unitLength(String text, boolean afterNumber, int lead, int tail) {
+        if (!afterNumber || lead != 0 || text.isEmpty()) {
+            return 0;
+        }
+        int unit = 0;
+        while (unit < tail && unit < MAX_UNIT && isUnitLetter(text.charAt(unit))) {
+            unit++;
+        }
+        if (unit == 0) {
+            return 0;
+        }
+        // 後面還接著字母的話，那是一個單字不是單位
+        return unit >= text.length() || !Character.isLetter(text.charAt(unit)) ? unit : 0;
     }
 
     /** 會黏在佔位符身上的標點：不是字、不是數字、不是方塊字，也不是空白或圓括號。 */
