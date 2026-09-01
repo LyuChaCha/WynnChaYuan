@@ -146,6 +146,29 @@ public final class PlayerNameplateTest {
                   com.wynnchayuan.capture.PlayerDataFilter.looksAccountNamed(who));
         }
 
+        // 公會清單的一列。公會名是玩家取的，什麼樣子都有——靠名字的形狀
+        // （底線、駝峰）幾乎全部擋不住，實機開一次公會選單就漏了七個。
+        // 認得出來的是<b>那一列的形狀</b>：結尾是方括號包起來的二到四碼標籤。
+        for (String guild : new String[] {
+                "- RabbitHouse [Maya]", "- Blank [BLK]", "- TimeCity [tmxt]",
+                "- Uchouten Tea House [THTS]", "- Death Star [LIVE]",
+                "- Chemdah [CHEM]", "NexusRolly Love [ikun]"}) {
+            check("擋得下公會清單：" + guild,
+                  com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(guild));
+        }
+
+        // ★ 反方向：長得有點像、但不是公會清單的那些。
+        //
+        // 這條規則只認「整行就是一個名字加標籤」。方括號裡有空白、斜線或
+        // 百分比的都不算，遊戲自己的介面字才不會被掃到。
+        for (String ui : new String[] {
+                "[+2800 ❤] Potions of Healing [9/30]",
+                "Willow [67.5%]", "Emerald Pouch [Tier 8]",
+                "- Slay Mobs: 12/50", "Rewards [Weekly Objective]"}) {
+            check("不誤擋介面文字（公會那條）：" + ui,
+                  !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(ui));
+        }
+
         // ★ 反方向：介面文字不能被這條規則掃到。判準比名牌那支嚴，
         //   因為介面滿是被折出來的小寫續行，寬判準量過去會誤擋 62 條。
         for (String ui : new String[] {

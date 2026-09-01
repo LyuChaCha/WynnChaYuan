@@ -44,7 +44,7 @@ public final class RenderListener {
     public void onTooltip(ItemTooltipRenderEvent.Pre event) {
         try {
             // 介面 tooltip 的收集（預設關閉，見 GuiTextCapture 的說明）
-            GuiTextCapture.record(event.getTooltips());
+            GuiTextCapture.record(event.getTooltips(), event.getItemStack());
         } catch (Throwable t) {
             WynnChaYuan.store().noteEvent("capture.guiError");
         }

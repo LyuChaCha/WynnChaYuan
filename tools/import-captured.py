@@ -61,11 +61,18 @@ def story_file(quest: str) -> str:
 
     沒有既有檔案的新故事一律當成任務：祕密發現遠比任務少，搬一次就永久記住。
     """
-    name = slug(quest) + ".json"
-    for folder in STORY_DIRS:
-        if (TRANSLATIONS / folder / name).is_file():
-            return f"{folder}/{name}"
-    return f"quest/{name}"
+    base = slug(quest)
+    # 語料的檔名可能多一截 `-quest`。
+    #
+    # wiki 用「(Quest)」跟<b>同名的發現</b>區分（Tower of Ascension 既是任務也是
+    # 發現），檔名就跟著變成 tower-of-ascension-quest.json。而追蹤器給的是
+    # 遊戲裡的名字，沒有那個後綴——照字面開檔會生出第二個檔，同一個任務的台詞
+    # 被拆到兩邊，兩邊都不完整，而且沒有任何錯誤訊息。
+    for name in (base + ".json", base + "-quest.json"):
+        for folder in STORY_DIRS:
+            if (TRANSLATIONS / folder / name).is_file():
+                return f"{folder}/{name}"
+    return f"quest/{base}.json"
 
 # ctx 長成 dialogue/Cook Assistant#Aledar 或 dialogue/choices/Cook Assistant
 CTX = re.compile(r"^dialogue(?:/choices)?/([^#]+)(?:#(.*))?$")
@@ -194,6 +201,14 @@ NAMED = re.compile(
     # 代價是那幾行<b>介面字串</b>也跟著收不進來。刻意的：語料是公開的，
     # 別人的公會名一旦進去就洗不掉，少翻一行領地清單便宜得多。
     r"|\[[A-Z]{3,4}\]"
+    # 標籤<b>不一定是大寫</b>：實機收到的公會清單有 `[Maya]`、`[tmxt]`、
+    # `[ikun]`。上面那條只認大寫，於是七個公會名整批穿了過去。
+    #
+    # 小寫標籤太容易誤中（`[of]`、`[the]`），所以這一條要求<b>整行</b>就是
+    # 「一個名字加一個標籤」——公會清單那一列的形狀。跟模組端的
+    # PlayerDataFilter#GUILD_TAG 是同一條規則，兩邊都要有：
+    # 模組端擋收集，這裡擋進倉庫。
+    r"|(?m:^\s*-?\s*[^\[\]\n]*\S[^\[\]\n]*\[[A-Za-z0-9]{2,4}\]\s*$)"
     # 公會欄位：`- Guild: 某公會`。公會名本身抓不到，但欄位標籤抓得到。
     #
     # 註：這裡不能寫 \b——在雙引號字串裡 \b 是<b>退格字元</b>，
