@@ -86,6 +86,9 @@ public final class DialogueRewriter {
     /** 每個語言那套字型畫得出來的碼位區間，第一次用到才讀。 */
     private static final Map<String, int[]> COVERAGE = new java.util.HashMap<>();
 
+    /** 哪幾份對話字型真的打包進來了；見 {@link #fontMissing}。 */
+    private static final Map<String, Boolean> FONTS = new java.util.HashMap<>();
+
     /** 內文的左緣：從游標往左退這麼多。實機量到的固定值。 */
     private static final int BODY_LEFT = 116;
 
@@ -176,6 +179,13 @@ public final class DialogueRewriter {
                         styles.get(body.get(0)), room);
         List<String> rows = hit == null
                 ? null : wrap(hit, body.size(), styles.get(body.get(0)), room);
+        // 有一行配不到中文字型就整段不換。少一份字型的下場不是「位置歪掉」
+        // 而是<b>那一整行變成方框</b>（見 fontMissing），跟缺字一樣糟。
+        for (int n = 0; rows != null && n < body.size(); n++) {
+            if (fontMissing(fontOf(styles.get(body.get(n))))) {
+                rows = null;
+            }
+        }
         if (rows != null) {
             changed = true;                    // 攤不進原本的行數就只換提示
         }
@@ -210,6 +220,9 @@ public final class DialogueRewriter {
             if (tip == null || tip.isBlank() || !renderable(tip)) {
                 continue;
             }
+            if (!drawable(tip) && fontMissing(fontOf(styles.get(i)))) {
+                continue;                       // 沒有這一份中文字型，換了是一排方框
+            }
             // 圖示要留在<b>原本的字型</b>裡：那個 SHIFT 按鈕是它畫出來的，
             // 換成預設字型就變成缺字。所以只有譯文那一截換字型，
             // 組裝時再把兩截接起來（見下面的 keep）。
@@ -238,6 +251,9 @@ public final class DialogueRewriter {
             String pick = store.lookup(texts.get(i).strip());
             if (pick == null || pick.isBlank() || !renderable(pick)) {
                 continue;                       // 查不到就留英文，不要換一半
+            }
+            if (!drawable(pick) && fontMissing(fontOf(styles.get(i)))) {
+                continue;                       // 沒有這一列的中文字型，換了是一排方框
             }
             int was = width(texts.get(i), styles.get(i));
             texts.set(i, pick);
@@ -929,7 +945,49 @@ public final class DialogueRewriter {
         return out;
     }
 
-    private static FontDescription paired(String font) {
+    /**
+     * 這一段該配的中文字型<b>本來就該有，卻沒打包進來</b>。
+     *
+     * <h2>為什麼要跟 paired() 分開問</h2>
+     * {@link #paired} 回 {@code null} 有兩種意思，後果差很多：
+     * <ul>
+     *   <li>這個語言<b>沒附字型</b>（日文、韓文、俄文……）——退回預設字型，
+     *       位置會掉，但字看得見。</li>
+     *   <li>這個語言附了字型，<b>就是少了這一份</b>——那退回去的會是一個
+     *       Minecraft 根本沒有的字型 id，而 {@code FontManager} 對查不到的 id
+     *       是拿 {@code AllMissingGlyphProvider} 頂上，也就是
+     *       <b>每一個字都畫成方框</b>。</li>
+     * </ul>
+     *
+     * <p>後者正是對話框有五行（{@code body_0}…{@code body_4}）、選項從
+     * {@code choice_0} 起算，而我們只做到 {@code body_3} 與 {@code choice_1}
+     * 時發生的事：話一長到第五行、選項一滿四個，那一列就整排方框。
+     * 缺字型跟缺字一樣，寧可整段留著英文。
+     */
+    static boolean fontMissing(String font) {
+        String lang = WynnChaYuan.language();
+        if (!SHIPPED.contains(lang)) {
+            return false;                  // 本來就沒附，走既有的「退回預設字型」
+        }
+        String name = pairedName(font);
+        return name != null && !fontShipped(lang, name);
+    }
+
+    /** 這一份字型檔真的在 jar 裡嗎。問一次就記起來，每一幀都查太貴。 */
+    private static boolean fontShipped(String lang, String name) {
+        return FONTS.computeIfAbsent(lang + "/" + name, key -> {
+            Minecraft mc = Minecraft.getInstance();
+            if (mc == null) {
+                return true;               // 測試環境沒有資源管理員，不擋
+            }
+            var id = Identifier.fromNamespaceAndPath(WynnChaYuan.MOD_ID,
+                    "font/dialogue/" + key + ".json");
+            return mc.getResourceManager().getResource(id).isPresent();
+        });
+    }
+
+    /** 這一段原本的字型對應到我們哪一份中文字型；只有檔名，沒有命名空間。 */
+    static String pairedName(String font) {
         String name = null;
         if (font.contains(BODY)) {
             int at = font.lastIndexOf(BODY);
@@ -954,7 +1012,12 @@ public final class DialogueRewriter {
                 break;
             }
         }
-        if (clean.isEmpty()) {
+        return clean.isEmpty() ? null : clean.toString();
+    }
+
+    private static FontDescription paired(String font) {
+        String clean = pairedName(font);
+        if (clean == null) {
             return null;
         }
         // 字型是<b>按語言</b>分的。同一個碼位在不同地區的寫法不一樣

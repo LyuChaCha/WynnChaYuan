@@ -30,11 +30,25 @@ public final class DialogueFontTest {
     /** 每一份字型對應的 Wynncraft ascent，抄自 font-dump.txt。 */
     private static final Map<String, Integer> ASCENT = new LinkedHashMap<>();
 
+    // 這一份要<b>收齊</b>，不是收「目前剛好做了的那幾份」。
+    //
+    // 對話框是五行（body_0…body_4），選項是<b>從 0 起算</b>的四列
+    // （choice_0…choice_3）。先前這裡只列到 body_3、choice 一列都沒列，
+    // 於是 body_4 與 choice_0 兩份根本沒做，也一直沒人發現。
+    //
+    // 少一份的下場不是「字有點偏」，是那一整列<b>變成方框</b>：Minecraft 對
+    // 查不到的字型 id 是拿 AllMissingGlyphProvider 頂上，每一個字都畫成框。
+    // 所以話一長到第五行、選項一滿四個，玩家就看到一排方框。
     static {
         ASCENT.put("body_0", 34);
         ASCENT.put("body_1", 22);
         ASCENT.put("body_2", 10);
         ASCENT.put("body_3", -2);
+        ASCENT.put("body_4", -14);
+        ASCENT.put("choice_0", 110);
+        ASCENT.put("choice_1", 97);
+        ASCENT.put("choice_2", 84);
+        ASCENT.put("choice_3", 71);
         ASCENT.put("nameplate", 50);
         ASCENT.put("control", -38);
     }
