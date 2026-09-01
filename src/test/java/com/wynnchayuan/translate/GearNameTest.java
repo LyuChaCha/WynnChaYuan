@@ -82,7 +82,37 @@ public final class GearNameTest {
         check("不是裝備名的照常翻（實際 " + store.lookup("Fissure") + "）",
               "地裂".equals(store.lookup("Fissure")));
 
+        decorations();
         report();
+    }
+
+    /**
+     * Wynntils 掛在名稱後面的註記要先剝掉才比對得到。
+     *
+     * <p>實機回報：就地取代模式下靴子 {@code Willow} 被翻成「柳木」
+     * （{@code npc.json} 裡的柳木是那棵樹）。守門明明裝了，卻沒擋住——
+     * 因為畫面上那一行是 {@code Willow [67.5%]}，模板成了
+     * {@code Willow [{~}%]}，跟裝備名清單裡的 {@code Willow} 對不上。
+     *
+     * <p>反方向一樣要測：名字本身不能被剝掉。
+     */
+    private static void decorations() {
+        check("剝掉鑑定百分比",
+              "Willow".equals(com.wynnchayuan.render.TooltipPanel
+                      .bareName("Willow [{~}%]")));
+        check("剝掉多個註記",
+              "Willow".equals(com.wynnchayuan.render.TooltipPanel
+                      .bareName("Willow [{~}%] [✔]")));
+        check("沒有註記時原樣回傳",
+              "Idol".equals(com.wynnchayuan.render.TooltipPanel.bareName("Idol")));
+        check("符號佔位符一併剝掉",
+              "Idol".equals(com.wynnchayuan.render.TooltipPanel
+                      .bareName("{#}{#}Idol{#}")));
+        // ★ 整行都是括號的話那不是名字，不能剝成空字串——剝成空的會讓
+        //   isBareGearName("") 去比對，而空字串誰都不是。
+        check("整行都是括號時不剝",
+              "[{~}%]".equals(com.wynnchayuan.render.TooltipPanel
+                      .bareName("[{~}%]")));
     }
 
     private static void check(String what, boolean ok) {
