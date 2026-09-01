@@ -60,8 +60,41 @@ public final class PlayerDataFilter {
             // 先前會漏掉，是因為這條走<b>名牌</b>那條路，而名牌只擋得住
             // 「長得像帳號名」的東西——公會名沒有底線，整條穿了過去。
             // 一次 Lootrun 就收進 83 塊別人的領地。
-            "Controlled by "
+            "Controlled by ",
+            // 討伐戰的增益選擇：「Watari has chosen the Elder III buff!」——
+            // 前面那個是隊友的 ID。一場討伐戰就收進 80 條。
+            " has chosen the ",
+            // 討伐戰裡的治療與補益：「King gave you [+240 ❤]」、
+            //「IHateRaid has given you 2 resistance and 2 strength.」
+            // 句型是遊戲的模板，但主詞永遠是隊友的 ID。
+            " gave you [+",
+            " has given you ",
+            // 「Party Finder: Hey MorphCascade, over here!」——後面接的是收訊者本人。
+            "Party Finder: Hey "
     );
+
+    /**
+     * 討伐戰的死亡訊息，例如 {@code Watari was purified by Orphion.}、
+     * {@code KFA was crushed between the Wyrmling's jaws.}
+     *
+     * <p>每座討伐戰各有一套講究的死法文案，句子本身是遊戲寫死的，
+     * 但<b>主詞永遠是隊友的 ID</b>。一場團隊跑下來就收進三十幾條，
+     * 主詞每場都不一樣，收進來也永遠不會有人翻。
+     *
+     * <p>用「行首 + 一個詞 + 特定句型」而不是單純的片語比對，是因為
+     * {@code passed away} 這種說法在任務對話裡完全可能出現——
+     * 那是該收的內容，不能一起擋掉。
+     */
+    private static final Pattern RAID_DEATH = Pattern.compile(
+            "(^|\\{#} )\\S+ (passed away"
+                    + "|was purified by"
+                    + "|was drained of"
+                    + "|lost their color to"
+                    + "|was crushed b"          // beneath the Wyrmling / between the jaws
+                    + "|had their existence effaced"
+                    + "|has reconnected!)"
+                    + "|['’]s existence was redacted",
+            Pattern.MULTILINE);
 
     /** 座標，例如 {@code [-781, 89, -5563]}。 */
     private static final Pattern COORDS =
@@ -79,6 +112,15 @@ public final class PlayerDataFilter {
      */
     private static final Pattern PLAYER_SHOP =
             Pattern.compile("['’]s Shop(\\n|$)");
+
+    /**
+     * 隊伍搜尋裡的隊伍名與隊長，例如 {@code Oscar123's Party}、{@code Leader: LphMe}。
+     *
+     * <p>兩者都直接帶著玩家 ID。隊伍簡介本身也是玩家自己打的字，不該進共享語料——
+     * 一次隊伍搜尋就收進 50 幾條。
+     */
+    private static final Pattern PARTY_OWNER =
+            Pattern.compile("['’]s Party(\\n|$)|^Leader: ", Pattern.MULTILINE);
 
     /**
      * 中日韓文字。
@@ -134,6 +176,8 @@ public final class PlayerDataFilter {
             }
         }
         if (COORDS.matcher(text).find() || PLAYER_SHOP.matcher(text).find()
+                || PARTY_OWNER.matcher(text).find()
+                || RAID_DEATH.matcher(text).find()
                 || CRAFTED_BY.matcher(text).find()
                 || XP_SHARE_TARGET.matcher(text).find()
                 || CJK.matcher(text).find()) {

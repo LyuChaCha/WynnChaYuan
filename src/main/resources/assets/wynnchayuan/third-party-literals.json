@@ -23,8 +23,15 @@
     [
       "Aspect Pulls",
       "%)"
+    ],
+    "would like to start",
+    [
+      "has chosen the",
+      "buff!"
     ]
   ],
   "_wynnmod_names": "RaidState.onTitle 還會用 getRaidFromName(標題) 認出這是哪一場副本,而且會先把非 ASCII 全部剝掉。副本名稱翻成中文的話它連 startRaid 都不會觸發,整場都不會被記錄。名稱取自 WynnMod 自己的 WynnRaid 列舉。",
+  "_wynnmod_chat": "RaidState 另外解析兩句聊天:「X would like to start <副本名>!」用來認出開場邀請,「X has chosen the Y buff!」用來記錄隊伍拿了哪些增益。前者翻掉就認不出開場;後者我們本來就不會翻(帶著隊友 ID,收集階段就被 PlayerDataFilter 擋掉了),列在這裡是防止哪天有人手動補進語料。",
+  "_wynnmod_scoreboard": "★ 還有一組沒列在這裡:WynnMod 是靠計分板側欄那行字判斷你在哪個房間的(見 WynnRaid.Room.scoreboardLine,認不出來會記 Cannot get scoreboard line for unknow room),用的是「Hold the platform」「Collect 10 Slimy Goo」「Slay the Restless」這類前綴,五座副本共 50 幾條。目前不用保留,因為這個模組根本沒有計分板那條路——但將來要是有人加上去,這些就會全部中招。同理還有結算寶箱的物品名 \"Close Chest\"(走 tooltip,reserved() 管不到)。",
   "_wynnmod_stats": "RaidState.raidEndData 還會從結算的聊天解統計數字,用的正則需要這幾個英文:Time Elapsed: (mins):(secs)、Hover for more ... Combat Experience、以及 ... Reward Pulls / Aspect Pulls / Raid Experience。後三個的關鍵詞在獵殺信標的面板也會出現,所以要配上結算那一行才有的百分比 \"%)\" 一起判斷,見 ThirdPartyLiterals#reserved。這幾條只影響 WynnMod 的統計顯示,不影響連勝。"
 }
