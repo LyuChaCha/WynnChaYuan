@@ -277,4 +277,41 @@ public final class GlyphSplitter {
     public static boolean hasLetter(String s) {
         return s.codePoints().anyMatch(cp -> Character.isLetter(cp) && !isGlyphCodePoint(cp));
     }
+
+    /**
+     * 這一段有沒有<b>成字</b>的字母——連續兩個以上的拉丁字母，或任何一個漢字。
+     *
+     * <h2>為什麼「有字母」不夠</h2>
+     * 名牌的狀態列長這樣：<pre>{#} {#} {~} ❁ {#}s ⬣ {~}s</pre>
+     * 那些 {@code s} 是秒數的單位，不是字；但 {@link #hasLetter} 看到就算數，
+     * 於是整條狀態列被當成「有東西要翻」。
+     *
+     * <p>單獨一個字母幾乎一定是單位（s 秒、k 千、m 分），成不了詞。要求連續
+     * 兩個就把單位跟真正的字分開了：{@code NPC}、{@code to dock} 算字，
+     * {@code {#}s ⬣ {~}s} 不算。
+     */
+    public static boolean hasWord(String s) {
+        if (s == null) {
+            return false;
+        }
+        int run = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (isHan(c)) {
+                return true;                   // 漢字一個就成詞
+            }
+            if (Character.isLetter(c) && !isGlyphCodePoint(c)) {
+                if (++run >= 2) {
+                    return true;
+                }
+            } else {
+                run = 0;
+            }
+        }
+        return false;
+    }
+
+    private static boolean isHan(char c) {
+        return c >= 0x3400 && c <= 0x9FFF;
+    }
 }

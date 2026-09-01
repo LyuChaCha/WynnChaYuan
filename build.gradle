@@ -418,3 +418,11 @@ tasks.register('runDialogueBufferChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.capture.DialogueBufferTest'
 }
 tasks.named('check') { dependsOn 'runDialogueBufferChecks' }
+
+tasks.register('runNametagTrimChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證名牌尾巴的狀態列不會被當成語料一條一條收進來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.NametagTrimTest'
+}
+tasks.named('check') { dependsOn 'runNametagTrimChecks' }
