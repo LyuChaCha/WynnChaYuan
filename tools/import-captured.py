@@ -46,7 +46,26 @@ TARGET = {
     "item": "misc.json",
 }
 
-PARTS = TRANSLATIONS / "quest"
+# 劇情來源資料夾。祕密發現不是任務，但走同一條對話路徑，所以形狀一樣。
+# 順序就是查找順序：先看 secret/，再看 quest/。
+STORY_DIRS = ("secret", "quest")
+STORY_DIRS_PREFIX = tuple(d + "/" for d in STORY_DIRS)
+
+
+def story_file(quest: str) -> str:
+    """這個故事的來源檔該放哪個資料夾。
+
+    跟著<b>磁碟上已經有的那一份</b>走。祕密發現一旦被挪到 ``secret/``，
+    之後匯入就自動跟過去——不必在這裡另外維護一份「哪些是祕密」的名單，
+    那種名單一定會過期，而過期的症狀是新台詞默默回流到 quest/。
+
+    沒有既有檔案的新故事一律當成任務：祕密發現遠比任務少，搬一次就永久記住。
+    """
+    name = slug(quest) + ".json"
+    for folder in STORY_DIRS:
+        if (TRANSLATIONS / folder / name).is_file():
+            return f"{folder}/{name}"
+    return f"quest/{name}"
 
 # ctx 長成 dialogue/Cook Assistant#Aledar 或 dialogue/choices/Cook Assistant
 CTX = re.compile(r"^dialogue(?:/choices)?/([^#]+)(?:#(.*))?$")
@@ -391,7 +410,7 @@ def main(argv: list[str]) -> int:
             if found:
                 quest, speaker = found
                 entry["_quest"], entry["_speaker"] = quest, speaker
-                by_file["quest/" + slug(quest) + ".json"].append((key, entry))
+                by_file[story_file(quest)].append((key, entry))
             else:
                 by_file[TARGET.get(entry.get("domain"), "misc.json")].append((key, entry))
 
@@ -399,7 +418,7 @@ def main(argv: list[str]) -> int:
     for target, rows in sorted(by_file.items()):
         path = TRANSLATIONS / target
         if not path.is_file():
-            if not target.startswith("quest/"):
+            if not target.startswith(STORY_DIRS_PREFIX):
                 print(f"  ! 沒有 {target}，跳過 {len(rows)} 條")
                 continue
             # 新任務：直接開一個檔。quest/ 是來源、quest-dialogue.json 是產生物，
@@ -422,7 +441,7 @@ def main(argv: list[str]) -> int:
             print(f"      {entry['src'][:64]!r}")
         if len(rows) > 5:
             print(f"      …另外 {len(rows) - 5} 條")
-        if target.startswith("quest/"):
+        if target.startswith(STORY_DIRS_PREFIX):
             # 照收集順序排：同一段劇情的台詞本來就是照 seq 進來的
             rows.sort(key=lambda row: row[1].get("seq", 0))
             quest = data["_meta"].get("quest") or rows[0][1]["_quest"]
