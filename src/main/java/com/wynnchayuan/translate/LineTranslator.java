@@ -2729,6 +2729,32 @@ public final class LineTranslator {
      * <p>而且要求<b>每一個有字的行都查得到</b>，有一行查不到就整塊放棄。
      * 半中半英的名牌比全英文的更難看，也更難查是哪裡出的問題。
      */
+    /**
+     * 這一行有沒有<b>字</b>——連續兩個以上的字母。
+     *
+     * <h2>為什麼不能用「有沒有字母」</h2>
+     * 名牌的狀態列長這樣：{@code ⬤ 12s}、{@code {#} 3 ❄ 5 ⬤ 1s}——那個 {@code s}
+     * 是秒的單位，不是字。用「有沒有字母」判斷會把整列當成需要翻譯的文字，
+     * 查不到就整塊放棄，於是<b>NPC 一中緩速、名字就跳回英文</b>。實機回報的正是這個。
+     *
+     * <p>要求連續兩個字母，單位字母（s、m、k）就落在外面，而真正的字
+     * （{@code Dwarven Trader}）一定進得來。
+     */
+    private static boolean hasWord(String text) {
+        int run = 0;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (Character.isLetter(c) && !isHan(c)) {
+                if (++run >= 2) {
+                    return true;
+                }
+            } else {
+                run = 0;
+            }
+        }
+        return false;
+    }
+
     private static String labelByLine(String template, TranslationStore store) {
         if (template.indexOf(NEWLINE) < 0) {
             return null;                       // 單行的話整塊就是那一行，沒有退路可言
@@ -2741,8 +2767,8 @@ public final class LineTranslator {
                 out.append(NEWLINE);
             }
             String row = rows[i];
-            if (!GlyphSplitter.hasLetter(row)) {
-                out.append(row);               // 純符號或空白：一個位元都不動
+            if (!hasWord(row)) {
+                out.append(row);               // 沒有字的行：一個位元都不動
                 continue;
             }
             String hit = lookup(row, store);

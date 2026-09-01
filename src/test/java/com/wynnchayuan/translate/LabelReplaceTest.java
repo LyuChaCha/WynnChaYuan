@@ -128,6 +128,21 @@ public final class LabelReplaceTest {
         check("有一行有字卻查不到就整塊不動",
               LineTranslator.translateLabel(half, store) == null);
 
+        // ★ 狀態列裡的單位字母不算「字」。
+        //
+        // 名牌的狀態列長 「⬤ 12s」「✦ 3 ❄ 5 ⬤ 1s」這樣——那個 s 是秒的單位。
+        // 用「有沒有字母」判斷會把整列當成要翻的文字，查不到就整塊放棄，
+        // 於是 NPC 一中緩速、名字就跳回英文。實機回報的正是這個。
+        for (String status : new String[] {
+                "⬤ 12s", "✦ 3 ❄ 5 ⬤ 1s", "❄ 5 ✦ 12", "⬤ 1s"}) {
+            StyledText plate = label("Frosted Guard", status);
+            Component out = LineTranslator.translateLabel(plate, store);
+            check("狀態列「" + status + "」不影響名字（實際："
+                          + (out == null ? "null"
+                             : out.getString().replace("\n", " ⏎ ")) + "）",
+                  out != null && out.getString().contains("霜衛"));
+        }
+
         report();
     }
 
