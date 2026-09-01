@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**22,067 / 22,067 句已翻（100.0%），共 157 個任務，還沒有人動的有 0 個。**
+**22,135 / 22,135 句已翻（100.0%），共 158 個任務，還沒有人動的有 0 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -158,6 +158,7 @@
 | The Hero of Gavel | [`the-hero-of-gavel.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-hero-of-gavel.json) | 196 | 177 | 11 | ✅ |
 | The Hidden City | [`the-hidden-city.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-hidden-city.json) | 75 | 59 | 13 | ✅ |
 | The House of Twain (Quest) | [`the-house-of-twain-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-house-of-twain-quest.json) | 15 | 13 | 2 | ✅ |
+| The Legend of Bob | [`the-legend-of-bob.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-legend-of-bob.json) | 68 | 68 | 0 | ✅ |
 | The Lost | [`the-lost.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-lost.json) | 48 | 45 | 4 | ✅ |
 | The Maiden Tower | [`the-maiden-tower.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-maiden-tower.json) | 36 | 32 | 2 | ✅ |
 | The Mercenary | [`the-mercenary.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/the-mercenary.json) | 141 | 131 | 8 | ✅ |
