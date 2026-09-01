@@ -4,12 +4,12 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 234,
-  "translated": 143,
+  "translated": 234,
   "note": "刺客的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
-  "8b663daf88a6": {
+  "ability-assassin#0000": {
    "src": "Spin Attack",
    "dst": "迴刃斬",
    "role": "name",
@@ -21,7 +21,7 @@
    "ability": "Spin Attack",
    "code": "ASSASSIN-P1-R00-C04"
   },
-  "6b6fe66e2338": {
+  "ability-assassin#0001": {
    "src": "Slashes rapidly around you,\ndamaging enemies over a large area.",
    "dst": "在你周圍快速揮砍，對大範圍內的敵人造成傷害。",
    "role": "desc",
@@ -36,7 +36,7 @@
    "ability": "Spin Attack",
    "code": "ASSASSIN-P1-R00-C04"
   },
-  "747aa9ae0388": {
+  "ability-assassin#0002": {
    "src": "Cheaper Spin Attack",
    "dst": "節約·迴刃斬",
    "role": "name",
@@ -48,7 +48,7 @@
    "ability": "Cheaper Spin Attack",
    "code": "ASSASSIN-P1-R02-C02"
   },
-  "9a659f3eb712": {
+  "ability-assassin#0003": {
    "src": "Reduce the Mana cost of Spin Attack.",
    "dst": "降低 Spin Attack 的魔力消耗。",
    "role": "desc",
@@ -64,7 +64,7 @@
    "ability": "Cheaper Spin Attack、Cheaper Spin Attack II",
    "code": "ASSASSIN-P1-R02-C02"
   },
-  "fcf9350aa1ce": {
+  "ability-assassin#0004": {
    "src": "Dagger Proficiency I",
    "dst": "匕首精熟 I",
    "role": "name",
@@ -76,7 +76,7 @@
    "ability": "Dagger Proficiency I",
    "code": "ASSASSIN-P1-R02-C04"
   },
-  "61c7d79f42f2": {
+  "ability-assassin#0005": {
    "src": "Increases your Walk Speed and\nMain Attack's damage by +{~}.",
    "dst": "提升你的移動速度與普通攻擊傷害 {~}。",
    "role": "desc",
@@ -91,7 +91,7 @@
    "ability": "Dagger Proficiency I",
    "code": "ASSASSIN-P1-R02-C04"
   },
-  "309f35a8dd9e": {
+  "ability-assassin#0006": {
    "src": "Double Spin",
    "dst": "雙重旋風",
    "role": "name",
@@ -103,7 +103,7 @@
    "ability": "Double Spin",
    "code": "ASSASSIN-P1-R04-C04"
   },
-  "571d5c85bc1b": {
+  "ability-assassin#0007": {
    "src": "Spin Attack will activate twice, with a\nlarger area of effect on the second spin.",
    "dst": "Spin Attack 會啟動兩次，第二次旋轉的作用範圍更大。",
    "role": "desc",
@@ -118,7 +118,7 @@
    "ability": "Double Spin",
    "code": "ASSASSIN-P1-R04-C04"
   },
-  "7141e7b3449b": {
+  "ability-assassin#0008": {
    "src": "Poisoned Blade",
    "dst": "粹毒之刃",
    "role": "name",
@@ -130,7 +130,7 @@
    "ability": "Poisoned Blade",
    "code": "ASSASSIN-P2-R01-C02"
   },
-  "02bcc33aa2c7": {
+  "ability-assassin#0009": {
    "src": "For every {~} or {~} Raw Main Attack Damage you have\nfrom items, gain +{~}/{~}s Poison Damage. (Max {~}/{~}s)",
    "dst": "每擁有來自道具的 {~} 或 {~} 點原始普通攻擊傷害，就獲得 +{~}/{~} 秒的毒素傷害。(上限 {~}/{~} 秒)",
    "role": "desc",
@@ -145,7 +145,7 @@
    "ability": "Poisoned Blade",
    "code": "ASSASSIN-P2-R01-C02"
   },
-  "420de6251462": {
+  "ability-assassin#0010": {
    "src": "Your Main Attack gains additional range.",
    "dst": "你的普通攻擊獲得額外攻擊距離。",
    "role": "desc",
@@ -160,7 +160,7 @@
    "ability": "Poisoned Blade",
    "code": "ASSASSIN-P2-R01-C02"
   },
-  "24942523bd10": {
+  "ability-assassin#0011": {
    "src": "Dash",
    "dst": "騰躍行",
    "role": "name",
@@ -172,7 +172,7 @@
    "ability": "Dash",
    "code": "ASSASSIN-P2-R01-C04"
   },
-  "0c027107960f": {
+  "ability-assassin#0012": {
    "src": "Dash in the direction\nyou're facing.",
    "dst": "朝你面對的方向衝刺。",
    "role": "desc",
@@ -187,7 +187,7 @@
    "ability": "Dash",
    "code": "ASSASSIN-P2-R01-C04"
   },
-  "a6083f1b41e7": {
+  "ability-assassin#0013": {
    "src": "Double Slice",
    "dst": "二重切",
    "role": "name",
@@ -199,7 +199,7 @@
    "ability": "Double Slice",
    "code": "ASSASSIN-P2-R01-C06"
   },
-  "a85a9a945fee": {
+  "ability-assassin#0014": {
    "src": "Your Main Attack will hit twice,\nbut deal -{~} damage per hit.",
    "dst": "你的普通攻擊會命中兩次，但每次命中的傷害降低 -{~}。",
    "role": "desc",
@@ -214,7 +214,7 @@
    "ability": "Double Slice",
    "code": "ASSASSIN-P2-R01-C06"
   },
-  "a7c1a8a76a84": {
+  "ability-assassin#0015": {
    "src": "Smoke Bomb",
    "dst": "煙霧彈",
    "role": "name",
@@ -226,7 +226,7 @@
    "ability": "Smoke Bomb",
    "code": "ASSASSIN-P2-R03-C02"
   },
-  "33887617dd33": {
+  "ability-assassin#0016": {
    "src": "Throws a bomb that slowly emanates smoke,\ndamaging all enemies in it every {~}s.",
    "dst": "投擲一枚會逐漸散發煙霧的炸彈，每 {~} 秒對其中的所有敵人造成傷害。",
    "role": "desc",
@@ -241,7 +241,7 @@
    "ability": "Smoke Bomb",
    "code": "ASSASSIN-P2-R03-C02"
   },
-  "0236a0ce3bfe": {
+  "ability-assassin#0017": {
    "src": "Cheaper Dash",
    "dst": "節約·騰躍行",
    "role": "name",
@@ -253,7 +253,7 @@
    "ability": "Cheaper Dash",
    "code": "ASSASSIN-P2-R03-C04"
   },
-  "54f3c26a7967": {
+  "ability-assassin#0018": {
    "src": "Reduce the Mana cost of Dash.",
    "dst": "降低 Dash 的魔力消耗。",
    "role": "desc",
@@ -269,7 +269,7 @@
    "ability": "Cheaper Dash、Cheaper Dash II",
    "code": "ASSASSIN-P2-R03-C04"
   },
-  "480f8dc246dc": {
+  "ability-assassin#0019": {
    "src": "Multihit",
    "dst": "連環斬",
    "role": "name",
@@ -281,7 +281,7 @@
    "ability": "Multihit",
    "code": "ASSASSIN-P2-R03-C06"
   },
-  "9b6e9ba7fa5f": {
+  "ability-assassin#0020": {
    "src": "Unleashes a rapid flurry of {~} hits to enemies\nfacing you, dealing heavy damage.",
    "dst": "朝面對你的敵人快速連續攻擊 {~} 次，造成高額傷害。",
    "role": "desc",
@@ -296,7 +296,7 @@
    "ability": "Multihit",
    "code": "ASSASSIN-P2-R03-C06"
   },
-  "bcbb8a1b15f4": {
+  "ability-assassin#0021": {
    "src": "{#} Range: {~} Blocks (Cone-Shaped)",
    "dst": "{#} 施放範圍: {~} 格 (扇形)",
    "role": "stat",
@@ -309,7 +309,7 @@
    "ability": "Multihit",
    "code": "ASSASSIN-P2-R03-C06"
   },
-  "177560b8a3cc": {
+  "ability-assassin#0022": {
    "src": "Sticky Bomb",
    "dst": "黏性炸彈",
    "role": "name",
@@ -321,7 +321,7 @@
    "ability": "Sticky Bomb",
    "code": "ASSASSIN-P2-R04-C01"
   },
-  "603a4c8260dc": {
+  "ability-assassin#0023": {
    "src": "Smoke Bomb will stick to enemies\nand deal additional damage.",
    "dst": "Smoke Bomb 會黏在敵人身上並造成額外傷害。",
    "role": "desc",
@@ -336,7 +336,7 @@
    "ability": "Sticky Bomb",
    "code": "ASSASSIN-P2-R04-C01"
   },
-  "7148d0864659": {
+  "ability-assassin#0024": {
    "src": "Ripple",
    "dst": "踏漣",
    "role": "name",
@@ -348,7 +348,7 @@
    "ability": "Ripple",
    "code": "ASSASSIN-P3-R02-C07"
   },
-  "49d4d202a0f7": {
+  "ability-assassin#0025": {
    "src": "Falling {~} blocks or more deals\ndamage around you when you land.",
    "dst": "從至少 {~} 格高處落下時，落地會對你周圍造成傷害。",
    "role": "desc",
@@ -363,7 +363,7 @@
    "ability": "Ripple",
    "code": "ASSASSIN-P3-R02-C07"
   },
-  "6855372d55fd": {
+  "ability-assassin#0026": {
    "src": "This damage is increased by +{~}\nfor every additional block you fall\nafterwards, up to +{~} blocks.",
    "dst": "此傷害會隨你之後每多下落一格而增加 +{~}，最多增加至 +{~} 格。",
    "role": "desc",
@@ -378,7 +378,7 @@
    "ability": "Ripple",
    "code": "ASSASSIN-P3-R02-C07"
   },
-  "8f6f8fde958c": {
+  "ability-assassin#0027": {
    "src": "Backstab",
    "dst": "背刺",
    "role": "name",
@@ -390,7 +390,7 @@
    "ability": "Backstab",
    "code": "ASSASSIN-P3-R03-C01"
   },
-  "087b1e887cf7": {
+  "ability-assassin#0028": {
    "src": "Makes Multihit a single devastating hit.\nIf you strike an enemy from behind, it\ndeals double the damage.",
    "dst": "使 Multihit 變成一次毀滅性的攻擊。從敵人背後攻擊時，傷害加倍。",
    "role": "desc",
@@ -405,7 +405,7 @@
    "ability": "Backstab",
    "code": "ASSASSIN-P3-R03-C01"
   },
-  "4712b5c88b5e": {
+  "ability-assassin#0029": {
    "src": "Vanish",
    "dst": "隱身術",
    "role": "name",
@@ -417,7 +417,7 @@
    "ability": "Vanish",
    "code": "ASSASSIN-P3-R04-C02"
   },
-  "090551c89456": {
+  "ability-assassin#0030": {
    "src": "Dash will hide you into the shadows. You\ncannot heal or gain mana while in this state.\n(Attack or get hit to cancel)",
    "dst": "Dash 會讓你藏入暗影。處於此狀態時無法治療或獲得魔力。(攻擊或受到攻擊即可解除)",
    "role": "desc",
@@ -432,7 +432,7 @@
    "ability": "Vanish",
    "code": "ASSASSIN-P3-R04-C02"
   },
-  "87da5f57819d": {
+  "ability-assassin#0031": {
    "src": "{#} Effect: Invisibility to Self",
    "dst": "{#} 效果: 隱形給自己",
    "role": "stat",
@@ -445,7 +445,7 @@
    "ability": "Vanish",
    "code": "ASSASSIN-P3-R04-C02"
   },
-  "4f8a11b3f87e": {
+  "ability-assassin#0032": {
    "src": "Bamboozle",
    "dst": "戲弄",
    "role": "name",
@@ -457,7 +457,7 @@
    "ability": "Bamboozle",
    "code": "ASSASSIN-P3-R04-C04"
   },
-  "2db379661ef1": {
+  "ability-assassin#0033": {
    "src": "Multihit will instead teleport you forward\nand strike with a brutal fiery slash.",
    "dst": "Multihit 會改為將你向前傳送，並以猛烈的火焰斬擊攻擊。",
    "role": "desc",
@@ -472,7 +472,7 @@
    "ability": "Bamboozle",
    "code": "ASSASSIN-P3-R04-C04"
   },
-  "a8fc113f4007": {
+  "ability-assassin#0034": {
    "src": "Hop",
    "dst": "躍空",
    "role": "name",
@@ -484,7 +484,7 @@
    "ability": "Hop",
    "code": "ASSASSIN-P3-R04-C07"
   },
-  "e703af065335": {
+  "ability-assassin#0035": {
    "src": "Leap in the direction of your\nmovement when you double jump.",
    "dst": "二段跳時朝移動方向躍進。",
    "role": "desc",
@@ -499,7 +499,7 @@
    "ability": "Hop",
    "code": "ASSASSIN-P3-R04-C07"
   },
-  "0ef648383f74": {
+  "ability-assassin#0036": {
    "src": "Surprise Strike",
    "dst": "破影奇襲",
    "role": "name",
@@ -511,7 +511,7 @@
    "ability": "Surprise Strike",
    "code": "ASSASSIN-P4-R01-C02"
   },
-  "e5364b4197b0": {
+  "ability-assassin#0037": {
    "src": "Your first hit after casting Vanish\nwill deal +{~} more damage.",
    "dst": "施放 Vanish 後的第一次命中會額外造成 +{~} 傷害。",
    "role": "desc",
@@ -526,7 +526,7 @@
    "ability": "Surprise Strike",
    "code": "ASSASSIN-P4-R01-C02"
   },
-  "c503a8e08f57": {
+  "ability-assassin#0038": {
    "src": "Mirror Image",
    "dst": "鏡中戲法",
    "role": "name",
@@ -538,7 +538,7 @@
    "ability": "Mirror Image",
    "code": "ASSASSIN-P4-R01-C04"
   },
-  "3412eb7f5f00": {
+  "ability-assassin#0039": {
    "src": "Summon {~} Mirror Clones {#} after reappearing\nfrom Vanish that will follow and protect you.",
    "dst": "從 Vanish 重新現身後，召喚 {~} 個 Mirror Clone {#} 跟隨並保護你。",
    "role": "desc",
@@ -553,7 +553,7 @@
    "ability": "Mirror Image",
    "code": "ASSASSIN-P4-R01-C04"
   },
-  "a85eed24a41e": {
+  "ability-assassin#0040": {
    "src": "When hit, lose a Mirror Clone {#}, reducing\n-{~} of incoming damage and granting you\na damage bonus for {~}s. ({~}s cooldown)",
    "dst": "受到攻擊時失去一個 Mirror Clone {#}，使受到的傷害降低 -{~}，並在 {~} 秒內獲得傷害加成。({~} 秒冷卻)",
    "role": "desc",
@@ -568,7 +568,7 @@
    "ability": "Mirror Image",
    "code": "ASSASSIN-P4-R01-C04"
   },
-  "06a1e7239354": {
+  "ability-assassin#0041": {
    "src": "{#} Effect: {~} Damage Bonus (⚔) to Self",
    "dst": "{#} 效果: {~} 傷害加成 (⚔) 給自己",
    "role": "stat",
@@ -581,7 +581,7 @@
    "ability": "Mirror Image",
    "code": "ASSASSIN-P4-R01-C04"
   },
-  "a1b4ead47fdf": {
+  "ability-assassin#0042": {
    "src": "Lacerate",
    "dst": "刃嵐",
    "role": "name",
@@ -593,7 +593,7 @@
    "ability": "Lacerate",
    "code": "ASSASSIN-P4-R01-C07"
   },
-  "b671e9ec7cc5": {
+  "ability-assassin#0043": {
    "src": "Spin Attack will lunge you forward,\ndeal {~} strikes and then lunge you upward.",
    "dst": "Spin Attack 會使你向前突進，攻擊 {~} 次後再向上突進。",
    "role": "desc",
@@ -608,7 +608,7 @@
    "ability": "Lacerate",
    "code": "ASSASSIN-P4-R01-C07"
   },
-  "975de034f12d": {
+  "ability-assassin#0044": {
    "src": "Using Hop while Lacerate is active launches you further.",
    "dst": "Lacerate 生效期間使用 Hop 會讓你跳得更遠。",
    "role": "desc",
@@ -623,7 +623,7 @@
    "ability": "Lacerate",
    "code": "ASSASSIN-P4-R01-C07"
   },
-  "41ccb691dba5": {
+  "ability-assassin#0045": {
    "src": "Silent Killer",
    "dst": "靜默殺手",
    "role": "name",
@@ -635,7 +635,7 @@
    "ability": "Silent Killer",
    "code": "ASSASSIN-P4-R02-C01"
   },
-  "758492824b68": {
+  "ability-assassin#0046": {
    "src": "Resets Vanish's cooldown\nafter killing an enemy.",
    "dst": "擊殺敵人後重置 Vanish 的冷卻時間。",
    "role": "desc",
@@ -650,7 +650,7 @@
    "ability": "Silent Killer",
    "code": "ASSASSIN-P4-R02-C01"
   },
-  "3b9bde080a55": {
+  "ability-assassin#0047": {
    "src": "Foul Play",
    "dst": "使詐",
    "role": "name",
@@ -662,7 +662,7 @@
    "ability": "Foul Play",
    "code": "ASSASSIN-P4-R02-C05"
   },
-  "b757533480c9": {
+  "ability-assassin#0048": {
    "src": "Reduce the Mana cost of Multihit.",
    "dst": "降低 Multihit 的魔力消耗。",
    "role": "desc",
@@ -679,7 +679,7 @@
    "ability": "Foul Play、Cheaper Multihit、Cheaper Multihit II",
    "code": "ASSASSIN-P4-R02-C05"
   },
-  "2dab5c462cc7": {
+  "ability-assassin#0049": {
    "src": "While Mirror Image is active,\nBamboozle will slay a Mirror Clone {#}\ninstead of having a cooldown.",
    "dst": "Mirror Image 生效期間，Bamboozle 會消耗一個 Mirror Clone {#}，而不是進入冷卻。",
    "role": "desc",
@@ -694,7 +694,7 @@
    "ability": "Foul Play",
    "code": "ASSASSIN-P4-R02-C05"
   },
-  "9c3b21990ba8": {
+  "ability-assassin#0050": {
    "src": "Wall of Smoke",
    "dst": "煙幕",
    "role": "name",
@@ -706,7 +706,7 @@
    "ability": "Wall of Smoke",
    "code": "ASSASSIN-P4-R02-C08"
   },
-  "137cdc69fa9d": {
+  "ability-assassin#0051": {
    "src": "Smoke Bomb will throw +{~} bombs.",
    "dst": "Smoke Bomb 會額外投擲 +{~} 枚炸彈。",
    "role": "desc",
@@ -721,7 +721,7 @@
    "ability": "Wall of Smoke",
    "code": "ASSASSIN-P4-R02-C08"
   },
-  "130bc204c7aa": {
+  "ability-assassin#0052": {
    "src": "Last Laugh",
    "dst": "餘戲",
    "role": "name",
@@ -733,7 +733,7 @@
    "ability": "Last Laugh",
    "code": "ASSASSIN-P4-R03-C04"
   },
-  "72da09e595bb": {
+  "ability-assassin#0053": {
    "src": "Mirror Clones {#} will cast Multihit\nbefore dying.",
    "dst": "Mirror Clone {#} 在消失前會施放 Multihit。",
    "role": "desc",
@@ -748,7 +748,7 @@
    "ability": "Last Laugh",
    "code": "ASSASSIN-P4-R03-C04"
   },
-  "a212e994a6ae": {
+  "ability-assassin#0054": {
    "src": "When losing any Clone {#}{#}{#}, it will cast\none of your spells before dying.",
    "dst": "失去任何 Clone {#}{#}{#} 時，它會在消失前施放你的其中一個法術。",
    "role": "desc",
@@ -763,7 +763,7 @@
    "ability": "Last Laugh",
    "code": "ASSASSIN-P4-R03-C04"
   },
-  "c1a37ae43609": {
+  "ability-assassin#0055": {
    "src": "Psithurism",
    "dst": "葉鳴",
    "role": "name",
@@ -775,7 +775,7 @@
    "ability": "Psithurism",
    "code": "ASSASSIN-P4-R03-C07"
   },
-  "7cda9f085adf": {
+  "ability-assassin#0056": {
    "src": "Increase your Walk Speed by +{~}\nand your Jump Height by +{~}.",
    "dst": "提升你的移動速度 +{~}，並提升跳躍高度 +{~}。",
    "role": "desc",
@@ -790,7 +790,7 @@
    "ability": "Psithurism",
    "code": "ASSASSIN-P4-R03-C07"
   },
-  "d4582921ce6d": {
+  "ability-assassin#0057": {
    "src": "Rolling Fog",
    "dst": "煙霧繚繞",
    "role": "name",
@@ -802,7 +802,7 @@
    "ability": "Rolling Fog",
    "code": "ASSASSIN-P4-R04-C00"
   },
-  "567b69fe959a": {
+  "ability-assassin#0058": {
    "src": "Increase Smoke Bomb's range\nand area of effect.",
    "dst": "增加 Smoke Bomb 的攻擊距離與作用範圍。",
    "role": "desc",
@@ -817,7 +817,7 @@
    "ability": "Rolling Fog",
    "code": "ASSASSIN-P4-R04-C00"
   },
-  "d625b174e0bd": {
+  "ability-assassin#0059": {
    "src": "Shadow Travel",
    "dst": "暗影疾行",
    "role": "name",
@@ -829,7 +829,7 @@
    "ability": "Shadow Travel",
    "code": "ASSASSIN-P4-R04-C02"
   },
-  "a31d58ac73a8": {
+  "ability-assassin#0060": {
    "src": "Gain +{~} Walk Speed (➲)\nwhen in Vanish.",
    "dst": "處於 Vanish 狀態時獲得 +{~} 移動速度 (➲)。",
    "role": "desc",
@@ -844,7 +844,7 @@
    "ability": "Shadow Travel",
    "code": "ASSASSIN-P4-R04-C02"
   },
-  "497ea44f7876": {
+  "ability-assassin#0061": {
    "src": "Cheaper Multihit",
    "dst": "節約·連環斬",
    "role": "name",
@@ -856,7 +856,7 @@
    "ability": "Cheaper Multihit",
    "code": "ASSASSIN-P4-R04-C05"
   },
-  "3d8d59a1835a": {
+  "ability-assassin#0062": {
    "src": "Finality",
    "dst": "連斬",
    "role": "name",
@@ -868,7 +868,7 @@
    "ability": "Finality",
    "code": "ASSASSIN-P4-R04-C08"
   },
-  "078bca9cb247": {
+  "ability-assassin#0063": {
    "src": "Multihit's damage ramps up every\nhit, dealing additional damage.\nDamage bonus caps at {~} hits.",
    "dst": "Multihit 的傷害會隨每次命中而提升，造成額外傷害。傷害加成最多累積至 {~} 次命中。",
    "role": "desc",
@@ -883,7 +883,7 @@
    "ability": "Finality",
    "code": "ASSASSIN-P4-R04-C08"
   },
-  "30cc7615a57b": {
+  "ability-assassin#0064": {
    "src": "{#} Total Damage: +{~} (of your DPS, per hit)",
    "dst": "{#} 總傷害: +{~} (你的每秒傷害，每次命中)",
    "role": "stat",
@@ -896,7 +896,7 @@
    "ability": "Finality",
    "code": "ASSASSIN-P4-R04-C08"
   },
-  "666b330e6603": {
+  "ability-assassin#0065": {
    "src": "Shadow Siphon",
    "dst": "黑影汲取",
    "role": "name",
@@ -908,7 +908,7 @@
    "ability": "Shadow Siphon",
    "code": "ASSASSIN-P4-R05-C01"
   },
-  "d5f3cf9b2afd": {
+  "ability-assassin#0066": {
    "src": "Reduces Vanish's cooldown by -{~}s after\nstriking an enemy from behind with Backstab.",
    "dst": "使用 Backstab 從敵人背後命中後，Vanish 的冷卻時間降低 -{~} 秒。",
    "role": "desc",
@@ -923,7 +923,7 @@
    "ability": "Shadow Siphon",
    "code": "ASSASSIN-P4-R05-C01"
   },
-  "18535f0cf0aa": {
+  "ability-assassin#0067": {
    "src": "Mirage",
    "dst": "蜃景",
    "role": "name",
@@ -935,7 +935,7 @@
    "ability": "Mirage",
    "code": "ASSASSIN-P4-R05-C04"
   },
-  "ba1c5ebe1439": {
+  "ability-assassin#0068": {
    "src": "After using Bamboozle or Shadow Projection\nto teleport, leave behind a Mirage Clone {#}\nwhich draws mobs within {~} blocks towards it.",
    "dst": "使用 Bamboozle 或 Shadow Projection 傳送後，會留下一個 Mirage Clone {#}，將 {~} 格內的生物吸引過來。",
    "role": "desc",
@@ -950,7 +950,7 @@
    "ability": "Mirage",
    "code": "ASSASSIN-P4-R05-C04"
   },
-  "c0e20ad358c2": {
+  "ability-assassin#0069": {
    "src": "Mirage Clones {#} disappear when an enemy\nis within {~} blocks or when they expire,\nand will cast Smoke Bomb with Last Laugh.",
    "dst": "Mirage Clone {#} 會在敵人進入 {~} 格內或自身消失時消散，並透過 Last Laugh 施放 Smoke Bomb。",
    "role": "desc",
@@ -965,7 +965,7 @@
    "ability": "Mirage",
    "code": "ASSASSIN-P4-R05-C04"
   },
-  "6dd64d2c95bf": {
+  "ability-assassin#0070": {
    "src": "Cheaper Smoke Bomb",
    "dst": "節約·煙霧彈",
    "role": "name",
@@ -977,7 +977,7 @@
    "ability": "Cheaper Smoke Bomb",
    "code": "ASSASSIN-P5-R01-C00"
   },
-  "de7b4bd0b61f": {
+  "ability-assassin#0071": {
    "src": "Reduce the Mana cost of Smoke Bomb.",
    "dst": "降低 Smoke Bomb 的魔力消耗。",
    "role": "desc",
@@ -993,7 +993,7 @@
    "ability": "Cheaper Smoke Bomb、Cheaper Smoke Bomb II",
    "code": "ASSASSIN-P5-R01-C00"
   },
-  "e05270e4d31e": {
+  "ability-assassin#0072": {
    "src": "Blazing Powder",
    "dst": "焰粉",
    "role": "name",
@@ -1005,7 +1005,7 @@
    "ability": "Blazing Powder",
    "code": "ASSASSIN-P5-R01-C03"
   },
-  "3a08b2ece02c": {
+  "ability-assassin#0073": {
    "src": "Spin Attack and Lacerate will\ndeal additional damage.",
    "dst": "Spin Attack 與 Lacerate 會造成額外傷害。",
    "role": "desc",
@@ -1020,7 +1020,7 @@
    "ability": "Blazing Powder",
    "code": "ASSASSIN-P5-R01-C03"
   },
-  "64cf2c385575": {
+  "ability-assassin#0074": {
    "src": "Weightless",
    "dst": "輕身",
    "role": "name",
@@ -1032,7 +1032,7 @@
    "ability": "Weightless",
    "code": "ASSASSIN-P5-R01-C07"
   },
-  "8325319eb1bd": {
+  "ability-assassin#0075": {
    "src": "You gain +{~} Mana if you\nhit an enemy while airborne.\n({~}+ blocks off the\nground to be airborne)",
    "dst": "在空中命中敵人時獲得 +{~} 魔力。(離地 {~}+ 格才算在空中)",
    "role": "desc",
@@ -1047,7 +1047,7 @@
    "ability": "Weightless",
    "code": "ASSASSIN-P5-R01-C07"
   },
-  "b5e13d6534b8": {
+  "ability-assassin#0076": {
    "src": "Black Hole",
    "dst": "引力黑洞",
    "role": "name",
@@ -1059,7 +1059,7 @@
    "ability": "Black Hole",
    "code": "ASSASSIN-P5-R02-C01"
   },
-  "4eb464482e67": {
+  "ability-assassin#0077": {
    "src": "Smoke Bomb will pull nearby enemies.",
    "dst": "Smoke Bomb 會拉近附近的敵人。",
    "role": "desc",
@@ -1074,7 +1074,7 @@
    "ability": "Black Hole",
    "code": "ASSASSIN-P5-R02-C01"
   },
-  "9dc66165c610": {
+  "ability-assassin#0078": {
    "src": "Sandbagging",
    "dst": "佯拙",
    "role": "name",
@@ -1086,7 +1086,7 @@
    "ability": "Sandbagging",
    "code": "ASSASSIN-P5-R02-C04"
   },
-  "f97d6e2b81d8": {
+  "ability-assassin#0079": {
    "src": "Reduce the cooldown on all of your\nabilities by {~} every time you get hit\nfor less than {~} of your max health or\nyour Mirage Clone {#} lures an enemy.",
    "dst": "每當你受到低於最大生命 {~} 的傷害，或你的 Mirage Clone {#} 吸引敵人時，使所有技能的冷卻時間降低 {~}。",
    "role": "desc",
@@ -1101,7 +1101,7 @@
    "ability": "Sandbagging",
    "code": "ASSASSIN-P5-R02-C04"
   },
-  "43c90ba13bad": {
+  "ability-assassin#0080": {
    "src": "Mutilate",
    "dst": "百裂",
    "role": "name",
@@ -1113,7 +1113,7 @@
    "ability": "Mutilate",
    "code": "ASSASSIN-P5-R02-C06"
   },
-  "327090544279": {
+  "ability-assassin#0081": {
    "src": "Increase Finality's damage cap by +{~} hits.",
    "dst": "將 Finality 的傷害上限提高 +{~} 次命中。",
    "role": "desc",
@@ -1128,7 +1128,7 @@
    "ability": "Mutilate",
    "code": "ASSASSIN-P5-R02-C06"
   },
-  "ba52808969df": {
+  "ability-assassin#0082": {
    "src": "Increase Multihit's amount of hits by +{~}.",
    "dst": "將 Multihit 的命中次數提高 +{~}。",
    "role": "desc",
@@ -1143,7 +1143,7 @@
    "ability": "Mutilate",
    "code": "ASSASSIN-P5-R02-C06"
   },
-  "95654aef619d": {
+  "ability-assassin#0083": {
    "src": "Swan Dive",
    "dst": "飛燕落",
    "role": "name",
@@ -1155,7 +1155,7 @@
    "ability": "Swan Dive",
    "code": "ASSASSIN-P5-R02-C08"
   },
-  "65cde14e455b": {
+  "ability-assassin#0084": {
    "src": "Landing {~} hits against an enemy while\nmidair grants you +{~} Momentum {#}. (Max {~})",
    "dst": "在空中對敵人命中 {~} 次後，獲得 +{~} 層 Momentum {#}。(上限 {~} 層)",
    "role": "desc",
@@ -1170,7 +1170,7 @@
    "ability": "Swan Dive",
    "code": "ASSASSIN-P5-R02-C08"
   },
-  "528c44d5f397": {
+  "ability-assassin#0085": {
    "src": "Ripple consumes your Momentum {#},\nreleasing a powerful explosion that deals\nmassive damage and briefly blinds enemies.\nFor each stack of Momentum {#}, this\nexplosion deals +{~} more damage.",
    "dst": "Ripple 會消耗你的 Momentum {#},\n釋放一次威力強大的爆炸，造成\n大量傷害並短暫致盲敵人。\n每有一層 Momentum {#},這次\n爆炸就多造成 +{~} 傷害。",
    "role": "desc",
@@ -1185,7 +1185,7 @@
    "ability": "Swan Dive",
    "code": "ASSASSIN-P5-R02-C08"
   },
-  "90a1de5dfb5f": {
+  "ability-assassin#0086": {
    "src": "While midair, hold shift to quickly drop down.",
    "dst": "在空中時按住 Shift 可快速下落。",
    "role": "desc",
@@ -1200,7 +1200,7 @@
    "ability": "Swan Dive",
    "code": "ASSASSIN-P5-R02-C08"
   },
-  "d5187788735c": {
+  "ability-assassin#0087": {
    "src": "{#} Total Damage: {~} (of your DPS, over {~} hits)",
    "dst": "{#} 總傷害: {~1} (你的每秒傷害，共 {~2} 次命中)",
    "role": "stat",
@@ -1213,7 +1213,7 @@
    "ability": "Swan Dive",
    "code": "ASSASSIN-P5-R02-C08"
   },
-  "8832e3c27e35": {
+  "ability-assassin#0088": {
    "src": "Violent Vortex",
    "dst": "狂暴渦流",
    "role": "name",
@@ -1225,7 +1225,7 @@
    "ability": "Violent Vortex",
    "code": "ASSASSIN-P5-R03-C00"
   },
-  "0067d0198e16": {
+  "ability-assassin#0089": {
    "src": "Dealing over {~}x of your max health as\ndamage in a single hit will deal {~} of\nthe damage to other nearby enemies.",
    "dst": "單次命中造成超過最大生命 {~} 倍的傷害時，會將該傷害的 {~} 傳給附近其他敵人。",
    "role": "desc",
@@ -1240,7 +1240,7 @@
    "ability": "Violent Vortex",
    "code": "ASSASSIN-P5-R03-C00"
   },
-  "8ad5a07afe3d": {
+  "ability-assassin#0090": {
    "src": "Duplicity",
    "dst": "疊映",
    "role": "name",
@@ -1252,7 +1252,7 @@
    "ability": "Duplicity",
    "code": "ASSASSIN-P5-R03-C03"
   },
-  "c683f77a7674": {
+  "ability-assassin#0091": {
    "src": "Summon +{~} additional Mirror Clones {#}\nwith Mirror Image.",
    "dst": "透過 Mirror Image 召喚 +{~} 個額外的 Mirror Clone {#}。",
    "role": "desc",
@@ -1267,7 +1267,7 @@
    "ability": "Duplicity",
    "code": "ASSASSIN-P5-R03-C03"
   },
-  "b26294e34bd1": {
+  "ability-assassin#0092": {
    "src": "{#} Cooldown: +{~}s",
    "dst": "{#} 冷卻時間: +{~} 秒",
    "role": "stat",
@@ -1280,7 +1280,7 @@
    "ability": "Duplicity",
    "code": "ASSASSIN-P5-R03-C03"
   },
-  "f5eedc3686b4": {
+  "ability-assassin#0093": {
    "src": "Righting Reflex",
    "dst": "帛渡",
    "role": "name",
@@ -1292,7 +1292,7 @@
    "ability": "Righting Reflex",
    "code": "ASSASSIN-P5-R03-C05"
   },
-  "d1c65bce9cd3": {
+  "ability-assassin#0094": {
    "src": "When you hold shift while airborne, slowly\nglide and become immune to fall damage. (Max {~}s)",
    "dst": "在空中按住 Shift 時會緩慢滑翔並免疫摔落傷害。(最多 {~} 秒)",
    "role": "desc",
@@ -1307,7 +1307,7 @@
    "ability": "Righting Reflex",
    "code": "ASSASSIN-P5-R03-C05"
   },
-  "99a860635892": {
+  "ability-assassin#0095": {
    "src": "Marked",
    "dst": "標記",
    "role": "name",
@@ -1319,7 +1319,7 @@
    "ability": "Marked",
    "code": "ASSASSIN-P5-R04-C01"
   },
-  "2c9832c3ad7e": {
+  "ability-assassin#0096": {
    "src": "Marked {#} enemies will take +{~} damage\nfrom attacks for each mark they have.",
    "dst": "被 Marked {#} 的敵人每擁有一層，就會承受來自攻擊的 +{~} 傷害。",
    "role": "desc",
@@ -1334,7 +1334,7 @@
    "ability": "Marked",
    "code": "ASSASSIN-P5-R04-C01"
   },
-  "380411c14654": {
+  "ability-assassin#0097": {
    "src": "Marked {#} will decay once every {~}s.",
    "dst": "Marked {#} 每 {~} 秒衰減一層。",
    "role": "desc",
@@ -1349,7 +1349,7 @@
    "ability": "Marked",
    "code": "ASSASSIN-P5-R04-C01"
   },
-  "8ac5e0f119a4": {
+  "ability-assassin#0098": {
    "src": "Smoke Bomb will add +{~} Mark {#} to\nenemies it hits. (Max {~}, {~}s Cooldown)",
    "dst": "Smoke Bomb 會對命中的敵人額外施加 +{~} 層 Mark {#}。(最多 {~} 層，{~} 秒冷卻)",
    "role": "desc",
@@ -1364,7 +1364,7 @@
    "ability": "Marked",
    "code": "ASSASSIN-P5-R04-C01"
   },
-  "064d9333ee6c": {
+  "ability-assassin#0099": {
    "src": "Malicious Mockery",
    "dst": "譏世弄人",
    "role": "name",
@@ -1376,7 +1376,7 @@
    "ability": "Malicious Mockery",
    "code": "ASSASSIN-P5-R04-C04"
   },
-  "3f445383eae7": {
+  "ability-assassin#0100": {
    "src": "Casting Dash while sneaking will detonate\nall nearby stored Tricks {#}, dealing damage\nbased on how many stacks were consumed.",
    "dst": "潛行時施放 Dash 會引爆附近所有儲存的 Trick {#}，並根據消耗的層數造成傷害。",
    "role": "desc",
@@ -1391,7 +1391,7 @@
    "ability": "Malicious Mockery",
    "code": "ASSASSIN-P5-R04-C04"
   },
-  "842169a8baac": {
+  "ability-assassin#0101": {
    "src": "Last Laugh stores a number of Tricks {#} on\nenemies based on the type of Clone {#}{#}{#}.\n(Max {~})",
    "dst": "Last Laugh 會根據 Clone {#}{#}{#} 的類型，在敵人身上儲存一定數量的 Trick {#}。(上限 {~})",
    "role": "desc",
@@ -1406,7 +1406,7 @@
    "ability": "Malicious Mockery",
    "code": "ASSASSIN-P5-R04-C04"
   },
-  "1f5ceabf28b5": {
+  "ability-assassin#0102": {
    "src": "Mirror Clones {#} apply +{~} Trick {#} per hit.\nMirage Clones {#} apply +{~} Tricks {#} per hit.\nShadow Clones {#} apply +{~} Tricks {#} per hit.",
    "dst": "Mirror Clone {#} 每次命中施加 +{~} 層 Trick {#}。Mirage Clone {#} 每次命中施加 +{~} 層 Trick {#}。Shadow Clone {#} 每次命中施加 +{~} 層 Trick {#}。",
    "role": "desc",
@@ -1421,7 +1421,7 @@
    "ability": "Malicious Mockery",
    "code": "ASSASSIN-P5-R04-C04"
   },
-  "1939dfc5b5bd": {
+  "ability-assassin#0103": {
    "src": "{#} Total Damage: {~} (of your DPS, per Trick)",
    "dst": "{#} 總傷害: {~} (你的每秒傷害，每個 Trick)",
    "role": "stat",
@@ -1434,7 +1434,7 @@
    "ability": "Malicious Mockery",
    "code": "ASSASSIN-P5-R04-C04"
   },
-  "3d6a769dfb4a": {
+  "ability-assassin#0104": {
    "src": "Shurikens",
    "dst": "手裏劍",
    "role": "name",
@@ -1446,7 +1446,7 @@
    "ability": "Shurikens",
    "code": "ASSASSIN-P5-R04-C06"
   },
-  "a41ea41b9c7f": {
+  "ability-assassin#0105": {
    "src": "After using Dash, you prepare\n+{~} shurikens. (Max {~})",
    "dst": "使用 Dash 後準備 +{~} 枚手裏劍。(最多 {~} 枚)",
    "role": "desc",
@@ -1461,7 +1461,7 @@
    "ability": "Shurikens",
    "code": "ASSASSIN-P5-R04-C06"
   },
-  "4a10460cdaa4": {
+  "ability-assassin#0106": {
    "src": "Your next Main Attack will throw all\nyour prepared shurikens.",
    "dst": "你的下一次普通攻擊會投擲所有準備好的手裏劍。",
    "role": "desc",
@@ -1476,7 +1476,7 @@
    "ability": "Shurikens",
    "code": "ASSASSIN-P5-R04-C06"
   },
-  "cf9a949dcbfc": {
+  "ability-assassin#0107": {
    "src": "{#} Total Damage: {~} (of your DPS, per shuriken)",
    "dst": "{#} 總傷害: {~} (你的每秒傷害，每枚手裏劍)",
    "role": "stat",
@@ -1489,7 +1489,7 @@
    "ability": "Shurikens",
    "code": "ASSASSIN-P5-R04-C06"
   },
-  "bcd1de80cc76": {
+  "ability-assassin#0108": {
    "src": "Blade Fury",
    "dst": "刃勢",
    "role": "name",
@@ -1501,7 +1501,7 @@
    "ability": "Blade Fury",
    "code": "ASSASSIN-P5-R04-C08"
   },
-  "f9fe317ebf52": {
+  "ability-assassin#0109": {
    "src": "Multihit gains extra damage and\ncan be aimed in all directions.",
    "dst": "Multihit 獲得額外傷害，且可朝所有方向瞄準。",
    "role": "desc",
@@ -1516,7 +1516,7 @@
    "ability": "Blade Fury",
    "code": "ASSASSIN-P5-R04-C08"
   },
-  "7d703bb03c32": {
+  "ability-assassin#0110": {
    "src": "{#} Multihit Damage: +{~} (of your DPS, per hit)",
    "dst": "{#} Multihit 傷害: +{~} (你的每秒傷害，每次命中)",
    "role": "stat",
@@ -1529,7 +1529,7 @@
    "ability": "Blade Fury",
    "code": "ASSASSIN-P5-R04-C08"
   },
-  "47f2abbc0ab4": {
+  "ability-assassin#0111": {
    "src": "Hoodwink",
    "dst": "匿詭",
    "role": "name",
@@ -1541,7 +1541,7 @@
    "ability": "Hoodwink",
    "code": "ASSASSIN-P5-R05-C03"
   },
-  "e44713067129": {
+  "ability-assassin#0112": {
    "src": "After killing an enemy, salvage {~} of\ntheir Tricks {#}. (Max {~} per mob, {~} total)",
    "dst": "擊殺敵人後，回收其 Trick {#} 的 {~}。(每隻生物最多 {~} 層，總計 {~} 層)",
    "role": "desc",
@@ -1556,7 +1556,7 @@
    "ability": "Hoodwink",
    "code": "ASSASSIN-P5-R05-C03"
   },
-  "342e627c1206": {
+  "ability-assassin#0113": {
    "src": "Casting Spin Attack while sneaking will\ntransfer salvaged Tricks {#} onto enemies\nand immediately detonate them.",
    "dst": "潛行時施放 Spin Attack 會將回收的 Trick {#} 轉移到敵人身上，並立即引爆。",
    "role": "desc",
@@ -1571,7 +1571,7 @@
    "ability": "Hoodwink",
    "code": "ASSASSIN-P5-R05-C03"
   },
-  "1769523e6462": {
+  "ability-assassin#0114": {
    "src": "Dancing Blade",
    "dst": "刃舞",
    "role": "name",
@@ -1583,7 +1583,7 @@
    "ability": "Dancing Blade",
    "code": "ASSASSIN-P5-R05-C07"
   },
-  "d430d63f2a42": {
+  "ability-assassin#0115": {
    "src": "When using Swan Dive with {~}+ Momentum {#}, you\nwill leap back into the air {~}s after landing.",
    "dst": "使用擁有 {~}+ Momentum {#} 的 Swan Dive 時，你會在落地 {~} 秒後再次躍入空中。",
    "role": "desc",
@@ -1598,7 +1598,7 @@
    "ability": "Dancing Blade",
    "code": "ASSASSIN-P5-R05-C07"
   },
-  "98969b85bef5": {
+  "ability-assassin#0116": {
    "src": "Ambush",
    "dst": "暗兵埋伏",
    "role": "name",
@@ -1610,7 +1610,7 @@
    "ability": "Ambush",
    "code": "ASSASSIN-P6-R01-C00"
   },
-  "8302288b05c5": {
+  "ability-assassin#0117": {
    "src": "Increases Surprise Strike's\ndamage by +{~}.",
    "dst": "提升 Surprise Strike 的傷害 +{~}。",
    "role": "desc",
@@ -1625,7 +1625,7 @@
    "ability": "Ambush",
    "code": "ASSASSIN-P6-R01-C00"
   },
-  "4fa6c6311fe1": {
+  "ability-assassin#0118": {
    "src": "Death Magnet",
    "dst": "死亡磁石",
    "role": "name",
@@ -1637,7 +1637,7 @@
    "ability": "Death Magnet",
    "code": "ASSASSIN-P6-R01-C02"
   },
-  "81bb02fe870f": {
+  "ability-assassin#0119": {
    "src": "When exiting Vanish, pull all\nnearby Marked {#} mobs towards\nwhere you entered Vanish.",
    "dst": "離開隱身狀態時，將附近所有被 Marked {#} 的生物拉向你原本使用 Vanish 的位置。",
    "role": "desc",
@@ -1652,7 +1652,7 @@
    "ability": "Death Magnet",
    "code": "ASSASSIN-P6-R01-C02"
   },
-  "d7b855c1058c": {
+  "ability-assassin#0120": {
    "src": "Distraction",
    "dst": "惑目",
    "role": "name",
@@ -1664,7 +1664,7 @@
    "ability": "Distraction",
    "code": "ASSASSIN-P6-R01-C04"
   },
-  "c6347e1b3858": {
+  "ability-assassin#0121": {
    "src": "Debuffs applied with Tricks {#} will last\n+{~}s longer for each extra Trick {#}\ndetonated beyond the requirement.",
    "dst": "由 Trick {#} 施加的減益效果，每超過需求引爆一層額外 Trick {#}，持續時間就延長 +{~} 秒。",
    "role": "desc",
@@ -1679,7 +1679,7 @@
    "ability": "Distraction",
    "code": "ASSASSIN-P6-R01-C04"
   },
-  "b3d593678439": {
+  "ability-assassin#0122": {
    "src": "Detonating {~}+ Tricks {#} on enemies will\ntemporarily reduce their damage.",
    "dst": "在敵人身上引爆 {~}+ 層 Trick {#} 會暫時降低其傷害。",
    "role": "desc",
@@ -1694,7 +1694,7 @@
    "ability": "Distraction",
    "code": "ASSASSIN-P6-R01-C04"
   },
-  "d986328b82d5": {
+  "ability-assassin#0123": {
    "src": "Wall Jump",
    "dst": "走壁",
    "role": "name",
@@ -1706,7 +1706,7 @@
    "ability": "Wall Jump",
    "code": "ASSASSIN-P6-R01-C06"
   },
-  "84be82ae12a5": {
+  "ability-assassin#0124": {
    "src": "Reduces Hop's cooldown by\n-{~}s. Using Hop into a wall\nwill bounce you backward.\n(Hold shift to cancel)",
    "dst": "使 Hop 的冷卻時間降低 -{~} 秒。使用 Hop 撞向牆壁時會向後彈回。(按住 Shift 取消)",
    "role": "desc",
@@ -1721,7 +1721,7 @@
    "ability": "Wall Jump",
    "code": "ASSASSIN-P6-R01-C06"
   },
-  "b79aa66c3cc4": {
+  "ability-assassin#0125": {
    "src": "Cheaper Dash II",
    "dst": "節約·騰躍行 II",
    "role": "name",
@@ -1733,7 +1733,7 @@
    "ability": "Cheaper Dash II",
    "code": "ASSASSIN-P6-R01-C08"
   },
-  "678b55357ed3": {
+  "ability-assassin#0126": {
    "src": "Misdirection",
    "dst": "誤導",
    "role": "name",
@@ -1745,7 +1745,7 @@
    "ability": "Misdirection",
    "code": "ASSASSIN-P6-R02-C05"
   },
-  "fbc4bc67a834": {
+  "ability-assassin#0127": {
    "src": "Confused {#} enemies take +{~} more",
    "dst": "Confused {#} 的敵人受到的傷害提高 +{~}。",
    "role": "desc",
@@ -1760,7 +1760,7 @@
    "ability": "Misdirection",
    "code": "ASSASSIN-P6-R02-C05"
   },
-  "8aedb312fb6b": {
+  "ability-assassin#0128": {
    "src": "Detonating {~}+ Tricks {#} on enemies\nwill make them Confused {#}.",
    "dst": "在敵人身上引爆 {~}+ 層 Trick {#} 會使其陷入 Confused {#}。",
    "role": "desc",
@@ -1775,7 +1775,7 @@
    "ability": "Misdirection",
    "code": "ASSASSIN-P6-R02-C05"
   },
-  "3a48efefee85": {
+  "ability-assassin#0129": {
    "src": "You may store +{~} more Tricks {#} on enemies.",
    "dst": "你可以在敵人身上額外儲存 +{~} 層 Trick {#}。",
    "role": "desc",
@@ -1791,7 +1791,7 @@
    "ability": "Misdirection、Soul Siphon",
    "code": "ASSASSIN-P6-R02-C05"
   },
-  "4e578a9b8478": {
+  "ability-assassin#0130": {
    "src": "will take damage whenever they attack.",
    "dst": "每當他們攻擊時都會受到傷害。",
    "role": "desc",
@@ -1806,7 +1806,7 @@
    "ability": "Misdirection",
    "code": "ASSASSIN-P6-R02-C05"
   },
-  "99181f4e4890": {
+  "ability-assassin#0131": {
    "src": "{#} Thunder damage from you and",
    "dst": "{#} 來自你的雷屬性傷害，並且",
    "role": "stat",
@@ -1819,7 +1819,7 @@
    "ability": "Misdirection",
    "code": "ASSASSIN-P6-R02-C05"
   },
-  "39db7b766d45": {
+  "ability-assassin#0132": {
    "src": "Nightcloak Knives",
    "dst": "夜幕飛刃",
    "role": "name",
@@ -1831,7 +1831,7 @@
    "ability": "Nightcloak Knives",
    "code": "ASSASSIN-P6-R03-C00"
   },
-  "c58a712150e7": {
+  "ability-assassin#0133": {
    "src": "Dealing damage will send your\nKnives to your target, dealing {~}\nof the damage you dealt per Knife.",
    "dst": "造成傷害時，會將你的飛刃送向目標，每把飛刃造成你所造成傷害的 {~}。",
    "role": "desc",
@@ -1846,7 +1846,7 @@
    "ability": "Nightcloak Knives",
    "code": "ASSASSIN-P6-R03-C00"
   },
-  "7c95fac8a22f": {
+  "ability-assassin#0134": {
    "src": "If cast while in Vanish,\nSpin Attack will consume all\nMarks {#} from nearby enemies.\nFor every {~} Marks {#} consumed,\nsummon a Knife. (Max {~} Knives)",
    "dst": "若在 Vanish 狀態下施放，Spin Attack 會消耗附近敵人的所有 Mark {#}。每消耗 {~} 層 Mark {#}，就召喚一枚飛刃。(最多 {~} 把飛刃)",
    "role": "desc",
@@ -1861,7 +1861,7 @@
    "ability": "Nightcloak Knives",
    "code": "ASSASSIN-P6-R03-C00"
   },
-  "1cd267909237": {
+  "ability-assassin#0135": {
    "src": "Cheaper Multihit II",
    "dst": "節約·連環斬 II",
    "role": "name",
@@ -1873,7 +1873,7 @@
    "ability": "Cheaper Multihit II",
    "code": "ASSASSIN-P6-R03-C02"
   },
-  "78873abb3a2c": {
+  "ability-assassin#0136": {
    "src": "Shadow Projection",
    "dst": "移行換影",
    "role": "name",
@@ -1885,7 +1885,7 @@
    "ability": "Shadow Projection",
    "code": "ASSASSIN-P6-R03-C04"
   },
-  "3a274b472de2": {
+  "ability-assassin#0137": {
    "src": "Double jump again while sneaking to\nteleport to the clone, detonating it.",
    "dst": "潛行時再次二段跳可傳送至 Clone 的位置並引爆它。",
    "role": "desc",
@@ -1900,7 +1900,7 @@
    "ability": "Shadow Projection",
    "code": "ASSASSIN-P6-R03-C04"
   },
-  "ef9a514ee1fa": {
+  "ability-assassin#0138": {
    "src": "Shadow Clones {#} will cast Spin Attack\nwith Last Laugh.",
    "dst": "Shadow Clone {#} 會透過 Last Laugh 施放 Spin Attack。",
    "role": "desc",
@@ -1915,7 +1915,7 @@
    "ability": "Shadow Projection",
    "code": "ASSASSIN-P6-R03-C04"
   },
-  "5277ad47c876": {
+  "ability-assassin#0139": {
    "src": "When you double jump, throw a Shadow Clone {#}\nin the direction you are facing.",
    "dst": "二段跳時，朝你面對的方向投擲一個 Shadow Clone {#}。",
    "role": "desc",
@@ -1930,7 +1930,7 @@
    "ability": "Shadow Projection",
    "code": "ASSASSIN-P6-R03-C04"
   },
-  "f7eb9cf6018a": {
+  "ability-assassin#0140": {
    "src": "Cheaper Spin Attack II",
    "dst": "節約·迴刃斬 II",
    "role": "name",
@@ -1942,7 +1942,7 @@
    "ability": "Cheaper Spin Attack II",
    "code": "ASSASSIN-P6-R03-C06"
   },
-  "84c4ab61e430": {
+  "ability-assassin#0141": {
    "src": "Aerial Ace",
    "dst": "燕返",
    "role": "name",
@@ -1954,7 +1954,7 @@
    "ability": "Aerial Ace",
    "code": "ASSASSIN-P6-R03-C08"
   },
-  "494b487888f6": {
+  "ability-assassin#0142": {
    "src": "Hitting an enemy with Swan Dive\ngives you a damage boost.",
    "dst": "使用 Swan Dive 命中敵人時，獲得傷害提升。",
    "role": "desc",
@@ -1969,7 +1969,7 @@
    "ability": "Aerial Ace",
    "code": "ASSASSIN-P6-R03-C08"
   },
-  "24a9c88c469b": {
+  "ability-assassin#0143": {
    "src": "Fatal Spin",
    "dst": "致死轉斬",
    "role": "name",
@@ -1981,7 +1981,7 @@
    "ability": "Fatal Spin",
    "code": "ASSASSIN-P6-R04-C01"
   },
-  "07593e59089a": {
+  "ability-assassin#0144": {
    "src": "Increases Spin Attack and Lacerate's range\nand damage, and adds +{~} Mark {#} to enemies hit.",
    "dst": "提升 Spin Attack 與 Lacerate 的攻擊距離和傷害，並對命中的敵人額外施加 +{~} 層 Mark {#}。",
    "role": "desc",
@@ -1996,7 +1996,7 @@
    "ability": "Fatal Spin",
    "code": "ASSASSIN-P6-R04-C01"
   },
-  "9dc01af1c27e": {
+  "ability-assassin#0145": {
    "src": "Toxic Sludge",
    "dst": "毒計",
    "role": "name",
@@ -2008,7 +2008,7 @@
    "ability": "Toxic Sludge",
    "code": "ASSASSIN-P6-R04-C03"
   },
-  "90241533e90f": {
+  "ability-assassin#0146": {
    "src": "Contaminated {#} enemies take +{~} more",
    "dst": "Contaminated {#} 的敵人受到的傷害提高 +{~}。",
    "role": "desc",
@@ -2023,7 +2023,7 @@
    "ability": "Toxic Sludge",
    "code": "ASSASSIN-P6-R04-C03"
   },
-  "7bdca4ea982f": {
+  "ability-assassin#0147": {
    "src": "Detonating {~}+ Tricks {#} on enemies\nContaminates {#} them with toxic ooze.",
    "dst": "在敵人身上引爆 {~}+ 層 Trick {#} 會使其受到 Contaminates {#} 的毒液污染。",
    "role": "desc",
@@ -2038,7 +2038,7 @@
    "ability": "Toxic Sludge",
    "code": "ASSASSIN-P6-R04-C03"
   },
-  "a50e468c7e93": {
+  "ability-assassin#0148": {
    "src": "You may store +{~} more Tricks {#} on\nenemies.",
    "dst": "你可以在敵人身上額外儲存 +{~} 層 Trick {#}。",
    "role": "desc",
@@ -2053,7 +2053,7 @@
    "ability": "Toxic Sludge",
    "code": "ASSASSIN-P6-R04-C03"
   },
-  "75fc4bb2f2b5": {
+  "ability-assassin#0149": {
    "src": "on death, damaging nearby enemies.",
    "dst": "死亡時對附近敵人造成傷害。",
    "role": "desc",
@@ -2068,7 +2068,7 @@
    "ability": "Toxic Sludge",
    "code": "ASSASSIN-P6-R04-C03"
   },
-  "da16c5ebbd32": {
+  "ability-assassin#0150": {
    "src": "{#} Earth damage from you and will explode",
    "dst": "{#} 來自你的地屬性傷害，並且會爆炸",
    "role": "stat",
@@ -2081,7 +2081,7 @@
    "ability": "Toxic Sludge",
    "code": "ASSASSIN-P6-R04-C03"
   },
-  "e738c7d89afb": {
+  "ability-assassin#0151": {
    "src": "Echo",
    "dst": "複演",
    "role": "name",
@@ -2093,7 +2093,7 @@
    "ability": "Echo",
    "code": "ASSASSIN-P6-R04-C05"
   },
-  "2c0eb32dc1a7": {
+  "ability-assassin#0152": {
    "src": "After losing a Mirror Clone {#}, your\nnext Spin Attack or Smoke Bomb will be\ncopied by all active Clones {#}{#}{#}, but deal\n-{~} damage.",
    "dst": "失去一個 Mirror Clone {#} 後，你的下一次 Spin Attack 或 Smoke Bomb 會被所有啟用中的 Clone {#}{#}{#} 複製，但造成的傷害降低 -{~}。",
    "role": "desc",
@@ -2108,7 +2108,7 @@
    "ability": "Echo",
    "code": "ASSASSIN-P6-R04-C05"
   },
-  "34fda6ca14f6": {
+  "ability-assassin#0153": {
    "src": "Eviscerate",
    "dst": "剔骨",
    "role": "name",
@@ -2120,7 +2120,7 @@
    "ability": "Eviscerate",
    "code": "ASSASSIN-P6-R04-C07"
   },
-  "7a4f5e5ccbba": {
+  "ability-assassin#0154": {
    "src": "Lacerate deals more damage,\nand will slash +{~} more time.\nLacerate has increased range.",
    "dst": "Lacerate 造成更多傷害，並額外斬擊 +{~} 次。Lacerate 的攻擊距離增加。",
    "role": "desc",
@@ -2135,7 +2135,7 @@
    "ability": "Eviscerate",
    "code": "ASSASSIN-P6-R04-C07"
   },
-  "aa3972868a1d": {
+  "ability-assassin#0155": {
    "src": "Bladestorm",
    "dst": "刀雨風暴",
    "role": "name",
@@ -2147,7 +2147,7 @@
    "ability": "Bladestorm",
    "code": "ASSASSIN-P6-R05-C00"
   },
-  "d5411dea333a": {
+  "ability-assassin#0156": {
    "src": "Increases Violent Vortex's damage\nby +{~} and increases the damage\nrequirement to be {~}x your max health.",
    "dst": "提升 Violent Vortex 的傷害 +{~}，並將傷害需求提高至最大生命的 {~} 倍。",
    "role": "desc",
@@ -2162,7 +2162,7 @@
    "ability": "Bladestorm",
    "code": "ASSASSIN-P6-R05-C00"
   },
-  "3da930f3774f": {
+  "ability-assassin#0157": {
    "src": "Dissolution",
    "dst": "溶解",
    "role": "name",
@@ -2174,7 +2174,7 @@
    "ability": "Dissolution",
    "code": "ASSASSIN-P6-R05-C02"
   },
-  "dcb6d8049874": {
+  "ability-assassin#0158": {
    "src": "When entering and exiting Vanish, become immune to\nknockback and gain resistance for a brief moment.",
    "dst": "進入和離開 Vanish 時，短暫免疫擊退並獲得抗性。",
    "role": "desc",
@@ -2189,7 +2189,7 @@
    "ability": "Dissolution",
    "code": "ASSASSIN-P6-R05-C02"
   },
-  "df6212400955": {
+  "ability-assassin#0159": {
    "src": "{#} Effect: +{~} Resistance Bonus (❁) to Self",
    "dst": "{#} 效果: +{~} 抗性加成 (❁) 給自己",
    "role": "stat",
@@ -2202,7 +2202,7 @@
    "ability": "Dissolution",
    "code": "ASSASSIN-P6-R05-C02"
   },
-  "b5738492875c": {
+  "ability-assassin#0160": {
    "src": "Harvester",
    "dst": "收魂者",
    "role": "name",
@@ -2214,7 +2214,7 @@
    "ability": "Harvester",
    "code": "ASSASSIN-P7-R01-C01"
   },
-  "be9c264fcb1d": {
+  "ability-assassin#0161": {
    "src": "Gain +{~} Mana for every leftover Mark {#}\nwhen killing an enemy, and for every Mark {#}\nyou consume with your abilities.",
    "dst": "擊殺敵人時，每剩餘一層 Mark {#}，以及你使用技能消耗一層 Mark {#}，都會獲得 +{~} 魔力。",
    "role": "desc",
@@ -2229,7 +2229,7 @@
    "ability": "Harvester",
    "code": "ASSASSIN-P7-R01-C01"
   },
-  "3bc62a226a9a": {
+  "ability-assassin#0162": {
    "src": "Cheaper Smoke Bomb II",
    "dst": "節約·煙霧彈 II",
    "role": "name",
@@ -2241,7 +2241,7 @@
    "ability": "Cheaper Smoke Bomb II",
    "code": "ASSASSIN-P7-R01-C04"
   },
-  "802306568fe6": {
+  "ability-assassin#0163": {
    "src": "Far Reach",
    "dst": "延刃",
    "role": "name",
@@ -2253,7 +2253,7 @@
    "ability": "Far Reach",
    "code": "ASSASSIN-P7-R01-C07"
   },
-  "2698d7ca4c52": {
+  "ability-assassin#0164": {
    "src": "Increase the range of Multihit.",
    "dst": "增加 Multihit 的攻擊距離。",
    "role": "desc",
@@ -2268,7 +2268,7 @@
    "ability": "Far Reach",
    "code": "ASSASSIN-P7-R01-C07"
   },
-  "d2d1521b5422": {
+  "ability-assassin#0165": {
    "src": "More Marks",
    "dst": "標記上限提升",
    "role": "name",
@@ -2280,7 +2280,7 @@
    "ability": "More Marks",
    "code": "ASSASSIN-P7-R02-C02"
   },
-  "d25fedf1fecc": {
+  "ability-assassin#0166": {
    "src": "Increase your maximum Marks {#} by +{~}.",
    "dst": "將你的 Mark {#} 最大層數提高 +{~}。",
    "role": "desc",
@@ -2295,7 +2295,7 @@
    "ability": "More Marks",
    "code": "ASSASSIN-P7-R02-C02"
   },
-  "1fff1636f607": {
+  "ability-assassin#0167": {
    "src": "Deflagrate",
    "dst": "伏火",
    "role": "name",
@@ -2307,7 +2307,7 @@
    "ability": "Deflagrate",
    "code": "ASSASSIN-P7-R02-C05"
   },
-  "f3882e0babde": {
+  "ability-assassin#0168": {
    "src": "Bamboozle coats enemies struck with a\nflammable catalyst, making them +{~} Enkindled {#}\nwhenever you strike them.",
    "dst": "Bamboozle 會在命中的敵人身上塗上易燃催化劑，使你每次攻擊他們時都額外施加 +{~} 層 Enkindled {#}。",
    "role": "desc",
@@ -2322,7 +2322,7 @@
    "ability": "Deflagrate",
    "code": "ASSASSIN-P7-R02-C05"
   },
-  "6220a19be249": {
+  "ability-assassin#0169": {
    "src": "Enkindled {#} enemies take +{~} more",
    "dst": "Enkindled {#} 的敵人受到的傷害提高 +{~}。",
    "role": "desc",
@@ -2337,7 +2337,7 @@
    "ability": "Deflagrate",
    "code": "ASSASSIN-P7-R02-C05"
   },
-  "efb5f26ba2df": {
+  "ability-assassin#0170": {
    "src": "The catalyst flares up when it reaches {~}\nor at the end of its duration, dealing damage\nbased on how Enkindled {#} the target was.",
    "dst": "催化劑達到 {~} 或持續時間結束時會爆發，根據目標的 Enkindled {#} 層數造成傷害。",
    "role": "desc",
@@ -2352,7 +2352,7 @@
    "ability": "Deflagrate",
    "code": "ASSASSIN-P7-R02-C05"
   },
-  "6d15732d6401": {
+  "ability-assassin#0171": {
    "src": "{#} Fire damage from you.",
    "dst": "{#} 來自你的火屬性傷害。",
    "role": "stat",
@@ -2365,7 +2365,7 @@
    "ability": "Deflagrate",
    "code": "ASSASSIN-P7-R02-C05"
   },
-  "f063afb306da": {
+  "ability-assassin#0172": {
    "src": "{#} Total Damage: {~} (of your DPS, per {~} Enkindle)",
    "dst": "{#} 總傷害: {~1} (你的每秒傷害，每 {~2} 點 Enkindle)",
    "role": "stat",
@@ -2378,7 +2378,7 @@
    "ability": "Deflagrate",
    "code": "ASSASSIN-P7-R02-C05"
   },
-  "0c6b01ca06e8": {
+  "ability-assassin#0173": {
    "src": "Ricochets",
    "dst": "廻影",
    "role": "name",
@@ -2390,7 +2390,7 @@
    "ability": "Ricochets",
    "code": "ASSASSIN-P7-R02-C08"
   },
-  "07aaa58b8b71": {
+  "ability-assassin#0174": {
    "src": "Your Shurikens will bounce {~} times\nbetween enemies upon impact.",
    "dst": "你的手裏劍命中後會在敵人之間彈跳 {~} 次。",
    "role": "desc",
@@ -2405,7 +2405,7 @@
    "ability": "Ricochets",
    "code": "ASSASSIN-P7-R02-C08"
   },
-  "f91075411f81": {
+  "ability-assassin#0175": {
    "src": "Satsujin",
    "dst": "抹殺",
    "role": "name",
@@ -2417,7 +2417,7 @@
    "ability": "Satsujin",
    "code": "ASSASSIN-P7-R03-C01"
   },
-  "873ece32e9a3": {
+  "ability-assassin#0176": {
    "src": "Both consume all Marks {#} on the enemy.",
    "dst": "兩者都會消耗敵人身上的所有 Mark {#}。",
    "role": "desc",
@@ -2432,7 +2432,7 @@
    "ability": "Satsujin",
    "code": "ASSASSIN-P7-R03-C01"
   },
-  "ed6579526c7e": {
+  "ability-assassin#0177": {
    "src": "If an enemy has {~}+ Marks {#}, your next\nBackstab will deal +{~} damage, or your next\nPowder Special will deal +{~} damage.",
    "dst": "若敵人擁有 {~}+ 層 Mark {#}，你的下一次 Backstab 會額外造成 +{~} 傷害，或下一次粉末技能會額外造成 +{~} 傷害。",
    "role": "desc",
@@ -2447,7 +2447,7 @@
    "ability": "Satsujin",
    "code": "ASSASSIN-P7-R03-C01"
   },
-  "454a19b7f493": {
+  "ability-assassin#0178": {
    "src": "Noxious Haze",
    "dst": "煙幕幻局",
    "role": "name",
@@ -2459,7 +2459,7 @@
    "ability": "Noxious Haze",
    "code": "ASSASSIN-P7-R03-C04"
   },
-  "5a29049fed64": {
+  "ability-assassin#0179": {
    "src": "Smoke Bomb makes you and any allies\nbecome Noxious {#} while standing in it,\nwhich lingers after leaving the area.",
    "dst": "你和任何站在 Smoke Bomb 中的友軍都會變成 Noxious {#}，離開範圍後效果仍會持續。",
    "role": "desc",
@@ -2474,7 +2474,7 @@
    "ability": "Noxious Haze",
    "code": "ASSASSIN-P7-R03-C04"
   },
-  "72bcdc17a13c": {
+  "ability-assassin#0180": {
    "src": "While Noxious {#}, deal +{~} damage to\nenemies for every debuff they have. (Max {~})\nAllies only receive {~} of the bonus.",
    "dst": "處於 Noxious {#} 狀態時，敵人每擁有一個減益效果，你對其造成的傷害就提高 +{~}。(最多 {~})友軍只能獲得該加成的 {~}。",
    "role": "desc",
@@ -2489,7 +2489,7 @@
    "ability": "Noxious Haze",
    "code": "ASSASSIN-P7-R03-C04"
   },
-  "3cac4e9b4165": {
+  "ability-assassin#0181": {
    "src": "Jasmine Bloom",
    "dst": "茉影重華",
    "role": "name",
@@ -2501,7 +2501,7 @@
    "ability": "Jasmine Bloom",
    "code": "ASSASSIN-P7-R03-C07"
   },
-  "a1509d75f50b": {
+  "ability-assassin#0182": {
    "src": "After spending {~} Mana or gaining {~} Momentum {#},\nan area underneath you blooms and damages\nenemies below it every {~}s.",
    "dst": "消耗 {~} 魔力或獲得 {~} 層 Momentum {#} 後，你腳下會綻放一片區域，每 {~} 秒對下方敵人造成傷害。",
    "role": "desc",
@@ -2516,7 +2516,7 @@
    "ability": "Jasmine Bloom",
    "code": "ASSASSIN-P7-R03-C07"
   },
-  "08fa6bea5a3b": {
+  "ability-assassin#0183": {
    "src": "The duration is reset and the radius is\nincreased after every bloom. (Max {~} Blooms)",
    "dst": "每次綻放後都會重置持續時間並增加半徑。(最多 {~} 次綻放)",
    "role": "desc",
@@ -2531,7 +2531,7 @@
    "ability": "Jasmine Bloom",
    "code": "ASSASSIN-P7-R03-C07"
   },
-  "9cb9ccb80131": {
+  "ability-assassin#0184": {
    "src": "{#} Area of Effect: +{~} Blocks (per bloom)",
    "dst": "{#} 技能範圍: +{~} 格 (每次綻放)",
    "role": "stat",
@@ -2544,7 +2544,7 @@
    "ability": "Jasmine Bloom",
    "code": "ASSASSIN-P7-R03-C07"
   },
-  "6f2af3a48f53": {
+  "ability-assassin#0185": {
    "src": "Soul Siphon",
    "dst": "借命",
    "role": "name",
@@ -2556,7 +2556,7 @@
    "ability": "Soul Siphon",
    "code": "ASSASSIN-P7-R04-C03"
   },
-  "2b813994b498": {
+  "ability-assassin#0186": {
    "src": "Detonating {~}+ Tricks {#} on enemies will\nmake them {~} Drained {#} and take\n+{~} more {#} Water damage from you.",
    "dst": "在敵人身上引爆 {~}+ 層 Trick {#} 會使其陷入 {~} 層 Drained {#}，並從你受到額外 +{~} 的 {#} 水屬性傷害。",
    "role": "desc",
@@ -2571,7 +2571,7 @@
    "ability": "Soul Siphon",
    "code": "ASSASSIN-P7-R04-C03"
   },
-  "dfbd64b04015": {
+  "ability-assassin#0187": {
    "src": "Whenever you or an ally attacks a\nDrained {#} enemy, siphon {~} of it,\nconverting it into {~} Overhealth ❤\nthat decays over {~}s. (Max {~})",
    "dst": "每當你或友軍攻擊 Drained {#} 的敵人，就吸取其 {~}，將其轉化為 {~} Overhealth ❤，並在 {~} 秒內衰減。(上限 {~})",
    "role": "desc",
@@ -2586,7 +2586,7 @@
    "ability": "Soul Siphon",
    "code": "ASSASSIN-P7-R04-C03"
   },
-  "fc5c5ed0e5f1": {
+  "ability-assassin#0188": {
    "src": "Braced Impact",
    "dst": "受身",
    "role": "name",
@@ -2598,7 +2598,7 @@
    "ability": "Braced Impact",
    "code": "ASSASSIN-P7-R04-C06"
   },
-  "6027d6fa4a60": {
+  "ability-assassin#0189": {
    "src": "Landing with Swan Dive briefly\ngrants you resistance.",
    "dst": "使用 Swan Dive 落地時會短暫獲得抗性。",
    "role": "desc",
@@ -2613,7 +2613,7 @@
    "ability": "Braced Impact",
    "code": "ASSASSIN-P7-R04-C06"
   },
-  "351dc5ce6b51": {
+  "ability-assassin#0190": {
    "src": "Devour",
    "dst": "吞噬",
    "role": "name",
@@ -2625,7 +2625,7 @@
    "ability": "Devour",
    "code": "ASSASSIN-P7-R05-C00"
   },
-  "f03add2c2611": {
+  "ability-assassin#0191": {
    "src": "Harvester will give +{~} Mana.",
    "dst": "Harvester 會額外提供 +{~} 魔力。",
    "role": "desc",
@@ -2640,7 +2640,7 @@
    "ability": "Devour",
    "code": "ASSASSIN-P7-R05-C00"
   },
-  "44456f78eb67": {
+  "ability-assassin#0192": {
    "src": "Marked for Death",
    "dst": "喋血之印",
    "role": "name",
@@ -2652,7 +2652,7 @@
    "ability": "Marked for Death",
    "code": "ASSASSIN-P7-R05-C02"
   },
-  "24da14401044": {
+  "ability-assassin#0193": {
    "src": "Increases Marked's damage\nbonus by +{~}.",
    "dst": "提升 Marked 的傷害加成 +{~}。",
    "role": "desc",
@@ -2667,7 +2667,7 @@
    "ability": "Marked for Death",
    "code": "ASSASSIN-P7-R05-C02"
   },
-  "f0b792caf96f": {
+  "ability-assassin#0194": {
    "src": "Thrill",
    "dst": "獵殺悸動",
    "role": "name",
@@ -2679,7 +2679,7 @@
    "ability": "Thrill",
    "code": "ASSASSIN-P8-R01-C01"
   },
-  "aae2a17c33d9": {
+  "ability-assassin#0195": {
    "src": "Gain +{~} Walk Speed (➲)\nafter hitting a successful Backstab.",
    "dst": "成功使用 Backstab 命中後，獲得 +{~} 移動速度 (➲)。",
    "role": "desc",
@@ -2694,7 +2694,7 @@
    "ability": "Thrill",
    "code": "ASSASSIN-P8-R01-C01"
   },
-  "34200d63213f": {
+  "ability-assassin#0196": {
    "src": "Doppelganger",
    "dst": "鏡身",
    "role": "name",
@@ -2706,7 +2706,7 @@
    "ability": "Doppelganger",
    "code": "ASSASSIN-P8-R01-C04"
   },
-  "2c3ac611e8bc": {
+  "ability-assassin#0197": {
    "src": "Summon +{~} additional Mirror Clone {#}\nwith Mirror Image.",
    "dst": "透過 Mirror Image 額外召喚 +{~} 個 Mirror Clone {#}。",
    "role": "desc",
@@ -2721,7 +2721,7 @@
    "ability": "Doppelganger",
    "code": "ASSASSIN-P8-R01-C04"
   },
-  "2371af702826": {
+  "ability-assassin#0198": {
    "src": "Celerity",
    "dst": "迅身",
    "role": "name",
@@ -2733,7 +2733,7 @@
    "ability": "Celerity",
    "code": "ASSASSIN-P8-R01-C08"
   },
-  "74c0c48cd842": {
+  "ability-assassin#0199": {
    "src": "Dash's horizontal velocity is increased by {~}.",
    "dst": "Dash 的水平速度提高 {~}。",
    "role": "desc",
@@ -2748,7 +2748,7 @@
    "ability": "Celerity",
    "code": "ASSASSIN-P8-R01-C08"
   },
-  "0bc0938fa4ea": {
+  "ability-assassin#0200": {
    "src": "Each {~} Momentum {#} grants +{~}\nmore damage to Swan Dive.",
    "dst": "每 {~} 層 Momentum {#} 使 Swan Dive 額外造成 +{~} 傷害。",
    "role": "desc",
@@ -2763,7 +2763,7 @@
    "ability": "Celerity",
    "code": "ASSASSIN-P8-R01-C08"
   },
-  "f7e66293dc27": {
+  "ability-assassin#0201": {
    "src": "Shadow Dance",
    "dst": "影舞",
    "role": "name",
@@ -2775,7 +2775,7 @@
    "ability": "Shadow Dance",
    "code": "ASSASSIN-P8-R02-C03"
   },
-  "5cc9526bbee7": {
+  "ability-assassin#0202": {
    "src": "Your second hit after casting\nVanish will deal +{~} damage.",
    "dst": "施放 Vanish 後的第二次命中會額外造成 +{~} 傷害。",
    "role": "desc",
@@ -2790,7 +2790,7 @@
    "ability": "Shadow Dance",
    "code": "ASSASSIN-P8-R02-C03"
   },
-  "f4a4b04852bc": {
+  "ability-assassin#0203": {
    "src": "Paranoia",
    "dst": "疑蹤",
    "role": "name",
@@ -2802,7 +2802,7 @@
    "ability": "Paranoia",
    "code": "ASSASSIN-P8-R02-C05"
   },
-  "af13c869dca2": {
+  "ability-assassin#0204": {
    "src": "Gain +{~} Walk Speed (➲)\nafter losing a Mirror Clone {#}.",
    "dst": "失去一個 Mirror Clone {#} 後，獲得 +{~} 移動速度 (➲)。",
    "role": "desc",
@@ -2817,7 +2817,7 @@
    "ability": "Paranoia",
    "code": "ASSASSIN-P8-R02-C05"
   },
-  "63ef84b1afb9": {
+  "ability-assassin#0205": {
    "src": "Petal Storm",
    "dst": "華嵐",
    "role": "name",
@@ -2829,7 +2829,7 @@
    "ability": "Petal Storm",
    "code": "ASSASSIN-P8-R02-C07"
   },
-  "ab43998fa9d3": {
+  "ability-assassin#0206": {
    "src": "A maximum sized Jasmine Bloom will transform\nSwan Dive into a huge petal storm, consuming\nyour bloom to give it increased damage and range",
    "dst": "達到最大規模的 Jasmine Bloom 會將 Swan Dive 變成巨大的花瓣風暴，消耗你的花朵以提高其傷害與攻擊距離。",
    "role": "desc",
@@ -2844,7 +2844,7 @@
    "ability": "Petal Storm",
    "code": "ASSASSIN-P8-R02-C07"
   },
-  "acfdbd5b6e9f": {
+  "ability-assassin#0207": {
    "src": "{#} Explosion Damage: +{~}",
    "dst": "{#} 爆炸傷害: +{~}",
    "role": "stat",
@@ -2857,7 +2857,7 @@
    "ability": "Petal Storm",
    "code": "ASSASSIN-P8-R02-C07"
   },
-  "9fad929ed66c": {
+  "ability-assassin#0208": {
    "src": "Billowing Death",
    "dst": "死霧翻湧",
    "role": "name",
@@ -2869,7 +2869,7 @@
    "ability": "Billowing Death",
    "code": "ASSASSIN-P8-R03-C00"
   },
-  "b726e9ad66da": {
+  "ability-assassin#0209": {
    "src": "When you hit an enemy with {~}+ Marks {#}\nwith a successful Backstab, send out\na cloud of smoke which applies {~}\nof the enemy's Marks {#} to other enemies.",
    "dst": "使用 Backstab 成功命中擁有 {~}+ 層 Mark {#} 的敵人時，會散出一團煙霧，將該敵人 Mark {#} 的 {~} 施加給其他敵人。",
    "role": "desc",
@@ -2884,7 +2884,7 @@
    "ability": "Billowing Death",
    "code": "ASSASSIN-P8-R03-C00"
   },
-  "bfdfb843fe69": {
+  "ability-assassin#0210": {
    "src": "Looming Presence",
    "dst": "殺意逼臨",
    "role": "name",
@@ -2896,7 +2896,7 @@
    "ability": "Looming Presence",
    "code": "ASSASSIN-P8-R03-C02"
   },
-  "e6ac871b3d3b": {
+  "ability-assassin#0211": {
    "src": "Increases the range of Backstab.",
    "dst": "增加 Backstab 的攻擊距離。",
    "role": "desc",
@@ -2911,7 +2911,7 @@
    "ability": "Looming Presence",
    "code": "ASSASSIN-P8-R03-C02"
   },
-  "37e9d3aafa5f": {
+  "ability-assassin#0212": {
    "src": "Disappearing Act",
    "dst": "消失戲法",
    "role": "name",
@@ -2923,7 +2923,7 @@
    "ability": "Disappearing Act",
    "code": "ASSASSIN-P8-R03-C04"
   },
-  "5da5cc52133a": {
+  "ability-assassin#0213": {
    "src": "After losing all of your Mirror Clones {#}, create\nan explosion the next time you enter Vanish.",
    "dst": "失去所有 Mirror Clone {#} 後，你下次進入 Vanish 時會產生爆炸。",
    "role": "desc",
@@ -2938,7 +2938,7 @@
    "ability": "Disappearing Act",
    "code": "ASSASSIN-P8-R03-C04"
   },
-  "1dc3259d9e79": {
+  "ability-assassin#0214": {
    "src": "Dextrous Hands",
    "dst": "妙手",
    "role": "name",
@@ -2950,7 +2950,7 @@
    "ability": "Dextrous Hands",
    "code": "ASSASSIN-P8-R03-C06"
   },
-  "45be51f2d1cc": {
+  "ability-assassin#0215": {
    "src": "Hop will now prepare {~} shurikens.\nYou can prepare +{~} total shurikens. (Max {~})",
    "dst": "Hop 現在會準備 {~} 枚手裏劍。你總共可以準備 +{~} 枚手裏劍。(最多 {~} 枚)",
    "role": "desc",
@@ -2965,7 +2965,7 @@
    "ability": "Dextrous Hands",
    "code": "ASSASSIN-P8-R03-C06"
   },
-  "0cc6dd9d29a1": {
+  "ability-assassin#0216": {
    "src": "Thermobaric Smoke",
    "dst": "焚霞",
    "role": "name",
@@ -2977,7 +2977,7 @@
    "ability": "Thermobaric Smoke",
    "code": "ASSASSIN-P8-R03-C08"
   },
-  "f196df7a9e97": {
+  "ability-assassin#0217": {
    "src": "Inject volatile chemicals into your\nSmoke Bomb, causing it to combust\ninstantaneously upon landing,\ndealing its damage {~}s faster.",
    "dst": "將揮發性化學物質注入 Smoke Bomb，使其落地時立即燃燒，並提前 {~} 秒造成傷害。",
    "role": "desc",
@@ -2992,7 +2992,7 @@
    "ability": "Thermobaric Smoke",
    "code": "ASSASSIN-P8-R03-C08"
   },
-  "7543de8528a8": {
+  "ability-assassin#0218": {
    "src": "Reduce Smoke Bomb's duration by {~}s.",
    "dst": "使 Smoke Bomb 的持續時間降低 {~} 秒。",
    "role": "desc",
@@ -3007,7 +3007,7 @@
    "ability": "Thermobaric Smoke",
    "code": "ASSASSIN-P8-R03-C08"
   },
-  "6166a6b39a73": {
+  "ability-assassin#0219": {
    "src": "{#} Duration: -{~}s",
    "dst": "{#} 持續時間: -{~} 秒",
    "role": "stat",
@@ -3020,7 +3020,7 @@
    "ability": "Thermobaric Smoke",
    "code": "ASSASSIN-P8-R03-C08"
   },
-  "a09c076558e2": {
+  "ability-assassin#0220": {
    "src": "Choke Bomb",
    "dst": "奪息",
    "role": "name",
@@ -3032,7 +3032,7 @@
    "ability": "Choke Bomb",
    "code": "ASSASSIN-P8-R04-C05"
   },
-  "bdf4acb86794": {
+  "ability-assassin#0221": {
    "src": "Enemies suffering from Hypoxia {#}\nare slowed by {~} and take +{~}\nmore {#} Air damage from you.",
    "dst": "受到 Hypoxia {#} 影響的敵人會減速 {~}，並從你受到額外 +{~} 的 {#} 風屬性傷害。",
    "role": "desc",
@@ -3047,7 +3047,7 @@
    "ability": "Choke Bomb",
    "code": "ASSASSIN-P8-R04-C05"
   },
-  "9811a9f66c5a": {
+  "ability-assassin#0222": {
    "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#} for +{~}s.\n(Max {~}s)",
    "dst": "Smoke Bomb 每 {~} 秒釋放一團塵霧，施加持續 +{~} 秒的 Hypoxia {#}。(最多 {~} 秒)",
    "role": "desc",
@@ -3062,7 +3062,7 @@
    "ability": "Choke Bomb",
    "code": "ASSASSIN-P8-R04-C05"
   },
-  "ca0b0d39128f": {
+  "ability-assassin#0223": {
    "src": "Pierce the Veil",
    "dst": "幽影破界",
    "role": "name",
@@ -3074,7 +3074,7 @@
    "ability": "Pierce the Veil",
    "code": "ASSASSIN-P9-R02-C01"
   },
-  "0f0aa21b883b": {
+  "ability-assassin#0224": {
    "src": "Cloak yourself in shadow, gaining all\nbenefits of Vanish for the duration.\nHealth and mana will still generate, and\nthis state cannot be canceled.",
    "dst": "以暗影包覆自身，在持續期間獲得 Vanish 的所有效果。生命與魔力仍會恢復，且此狀態無法取消。",
    "role": "desc",
@@ -3089,7 +3089,7 @@
    "ability": "Pierce the Veil",
    "code": "ASSASSIN-P9-R02-C01"
   },
-  "229e144aa18c": {
+  "ability-assassin#0225": {
    "src": "While cloaked, nearby enemies will\ngain +{~} Mark {#} every {~}s.",
    "dst": "包覆暗影期間，附近敵人每 {~} 秒會獲得 +{~} 層 Mark {#}。",
    "role": "desc",
@@ -3104,7 +3104,7 @@
    "ability": "Pierce the Veil",
    "code": "ASSASSIN-P9-R02-C01"
   },
-  "22c1255acc6b": {
+  "ability-assassin#0226": {
    "src": "Serpent's Garden",
    "dst": "秘技·蛇華苑",
    "role": "name",
@@ -3116,7 +3116,7 @@
    "ability": "Serpent's Garden",
    "code": "ASSASSIN-P9-R02-C07"
   },
-  "f15b3fbecc85": {
+  "ability-assassin#0227": {
    "src": "Leap into the air before plummeting\nback to earth, spurring a garden of\nflowers to grow at your feet, dealing\ndamage to enemies every {~}s.",
    "dst": "躍入空中後墜回地面，在腳下催生一座花園，每 {~} 秒對敵人造成傷害。",
    "role": "desc",
@@ -3131,7 +3131,7 @@
    "ability": "Serpent's Garden",
    "code": "ASSASSIN-P9-R02-C07"
   },
-  "e3a02ba0a520": {
+  "ability-assassin#0228": {
    "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~} maximum stacks.",
    "dst": "位於花園上方時，你的 Momentum {#} 累積速度加倍，最大層數提高 +{~}。",
    "role": "desc",
@@ -3146,7 +3146,7 @@
    "ability": "Serpent's Garden",
    "code": "ASSASSIN-P9-R02-C07"
   },
-  "7332ed8767c7": {
+  "ability-assassin#0229": {
    "src": "Another Self",
    "dst": "一體雙生",
    "role": "name",
@@ -3158,7 +3158,7 @@
    "ability": "Another Self",
    "code": "ASSASSIN-P9-R03-C04"
   },
-  "93b40b95f931": {
+  "ability-assassin#0230": {
    "src": "Casting F again swaps your positions,\ndetonates Tricks {#} on nearby enemies, and makes\nyour clone cast all available Damage Spells.",
    "dst": "再次施放 F 會交換你們的位置，引爆附近敵人身上的 Trick {#}，並使你的 Clone 施放所有可用的傷害法術。",
    "role": "desc",
@@ -3173,7 +3173,7 @@
    "ability": "Another Self",
    "code": "ASSASSIN-P9-R03-C04"
   },
-  "3f6bfaff8207": {
+  "ability-assassin#0231": {
    "src": "Create a perfect clone of yourself to\nwork with as a united duet, it copying\nevery spell you cast.",
    "dst": "創造一個完美的自身 Clone，與你協同作戰，複製你施放的每個法術。",
    "role": "desc",
@@ -3188,7 +3188,7 @@
    "ability": "Another Self",
    "code": "ASSASSIN-P9-R03-C04"
   },
-  "52dad460dd6c": {
+  "ability-assassin#0232": {
    "src": "If no enemy had more than {~} Tricks {#} detonated\nin the swap, the clone loses -{~} health. However,\nfor every Trick {#} detonated over the threshold,\nthose Damage Spells deal {~} more damage.",
    "dst": "若換位時沒有任何敵人被引爆超過 {~1} 個 Tricks {#} ,\nclone 會失去 -{~2} 生命。不過，\n每多引爆一個超過門檻的 Trick {#} ,\n那些 Damage Spells 就多造成 {~3} 傷害。",
    "role": "desc",
@@ -3203,7 +3203,7 @@
    "ability": "Another Self",
    "code": "ASSASSIN-P9-R03-C04"
   },
-  "f6c608c5576f": {
+  "ability-assassin#0233": {
    "src": "The clone's health is proportional to your\nown effective health, and while it lives,\nthe effectiveness of your debuffs is doubled.",
    "dst": "Clone 的生命值與你的有效生命值成正比；在它存活期間，你的減益效果強度加倍。",
    "role": "desc",

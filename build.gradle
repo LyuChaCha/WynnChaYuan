@@ -255,6 +255,14 @@ tasks.register('runChatBlockChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChatBlockChecks' }
 
+tasks.register('runDialogueChoiceChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證對話選項的跑馬燈不會被逐格收進語料'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.DialogueChoiceTest'
+}
+tasks.named('check') { dependsOn 'runDialogueChoiceChecks' }
+
 tasks.register('runAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證欄位對齊點的選擇'
@@ -410,3 +418,11 @@ tasks.register('runDialogueBufferChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.capture.DialogueBufferTest'
 }
 tasks.named('check') { dependsOn 'runDialogueBufferChecks' }
+
+tasks.register('runNametagTrimChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證名牌尾巴的狀態列不會被當成語料一條一條收進來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.NametagTrimTest'
+}
+tasks.named('check') { dependsOn 'runNametagTrimChecks' }

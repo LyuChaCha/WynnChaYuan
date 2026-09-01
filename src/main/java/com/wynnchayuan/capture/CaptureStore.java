@@ -201,7 +201,30 @@ public final class CaptureStore {
                 .forEach(e -> events.addProperty(e.getKey(), e.getValue().get()));
         meta.add("events", events);
         root.add("_meta", meta);
-        root.add("entries", GSON.toJsonTree(entries));
+        // ★ 照收集順序寫，不是照雜湊順序。
+        //
+        // entries 是雜湊表，直接丟給 Gson 出來的順序是<b>亂的</b>——同一段 NPC
+        // 對話被拆散在整個檔案裡，接手的人得先自己拼回先後才看得懂在講什麼。
+        // 而缺的語料補進語料檔時，順序錯了就會突兀地插在中間。
+        //
+        // seq 本來就記了，只是沒有拿來排。
+        JsonObject rows = new JsonObject();
+        java.util.List<Captured> ordered = entries.values().stream()
+                .sorted(java.util.Comparator.comparingInt(c -> c.seq))
+                .toList();
+        // 同一個任務／NPC 的台詞各自從 1 開始數，翻譯的人一眼就看得出這是第幾句。
+        Map<String, Integer> nth = new java.util.HashMap<>();
+        java.util.Set<String> used = new java.util.HashSet<>();
+        for (Captured c : ordered) {
+            String key = readableKey(c, nth);
+            // 理論上不會撞，但鍵撞了會<b>無聲吃掉</b>一條，所以還是保個底。
+            String unique = key;
+            for (int n = 2; !used.add(unique); n++) {
+                unique = key + "~" + n;
+            }
+            rows.add(unique, GSON.toJsonTree(c));
+        }
+        root.add("entries", rows);
 
         try {
             Files.createDirectories(file.getParent());
@@ -228,13 +251,55 @@ public final class CaptureStore {
             }
             for (String key : saved.keySet()) {
                 Captured c = GSON.fromJson(saved.get(key), Captured.class);
-                entries.put(key, c);
+                // 鍵用 src 重算，不信檔案裡寫的那個。
+                //
+                // 檔案裡的鍵是<b>給人看的</b>（見 flush 的 readableKey），
+                // 而去重是照 hash(src) 查的。直接沿用檔案裡的鍵，重開遊戲之後
+                // 同一句話會被當成新的再收一次。
+                entries.put(hash(c.src == null ? "" : c.src), c);
                 // 接續上次的流水號，重開遊戲之後收到的才會排在後面
                 nextSeq.updateAndGet(n -> Math.max(n, c.seq + 1));
             }
         } catch (Exception e) {
             System.err.println("[WynnChaYuan] 讀取失敗，將重新開始 " + file + ": " + e.getMessage());
         }
+    }
+
+    /**
+     * 給人看的鍵。
+     *
+     * <h2>為什麼不用雜湊</h2>
+     * 先前的鍵是 {@code fea1ab0ad4dd} 這種 SHA-1 前綴——對程式來說夠用，對翻譯的人
+     * 卻是一串亂碼：打開檔案看不出哪句在前、哪句在後，也看不出這句屬於誰。
+     *
+     * <p>對話用「任務名 #第幾句」：同一個任務的台詞各自從 1 開始數，
+     * 照劇情順序排下來。其餘的用收集流水號。
+     *
+     * <p>鍵只是給人看的識別；去重與查表都是照 {@code src} 走的（見 {@link #load}）。
+     */
+    private static String readableKey(Captured c, Map<String, Integer> nth) {
+        String quest = questOf(c.ctx);
+        if (quest != null) {
+            int n = nth.merge(quest, 1, Integer::sum);
+            return String.format("%s #%03d", quest, n);
+        }
+        return String.format("%04d", c.seq);
+    }
+
+    /**
+     * 對話 ctx 裡的任務名。
+     *
+     * <p>格式是 {@code dialogue/Cook Assistant#Aledar}——收集的當下就把追蹤器上的
+     * 任務名與面前 NPC 的名字記進去了。沒有任務名的對話（路邊閒聊）回傳 null。
+     */
+    private static String questOf(String ctx) {
+        if (ctx == null || !ctx.startsWith("dialogue/")) {
+            return null;
+        }
+        String rest = ctx.substring("dialogue/".length());
+        int at = rest.indexOf('#');
+        String quest = (at < 0 ? rest : rest.substring(0, at)).strip();
+        return quest.isEmpty() ? null : quest;
     }
 
     private static String hash(String s) {

@@ -125,14 +125,22 @@ public final class DialogueProbe {
             "hud/dialogue/text/wynncraft/body_1",
             "hud/dialogue/text/wynncraft/body_2",
             "hud/dialogue/text/wynncraft/body_3",
-            // 選項那幾行。跟 body_N 一樣把 ascent 烘進了字型，所以要就地把
+            // 內文是<b>五行</b>。先前這裡只探到 body_3，body_4 因此一直沒被
+            // 發現：話一長到第五行，那一列就整排方框——Minecraft 對查不到的
+            // 字型 id 是拿 AllMissingGlyphProvider 頂上，每個字都畫成框。
+            "hud/dialogue/text/wynncraft/body_4",
+            "hud/dialogue/text/wynncraft/body_5",
+            // 選項那幾列。跟 body_N 一樣把 ascent 烘進了字型，所以要就地把
             // 選項換成中文，就得先知道每一列的 ascent 才能算出對應的 shift
-            // (shift = 7 - ascent，六個既有字型都符合)。
+            // (shift = 7 - ascent，既有字型都符合)。
+            //
+            // 是<b>從 0 起算</b>的：choice_0…choice_3 共四列。先前從 1 探起，
+            // 探到不存在的 choice_4／choice_5 就以為收齊了，choice_0 於是漏掉。
+            "hud/dialogue/text/wynncraft/choice_0",
             "hud/dialogue/text/wynncraft/choice_1",
             "hud/dialogue/text/wynncraft/choice_2",
             "hud/dialogue/text/wynncraft/choice_3",
             "hud/dialogue/text/wynncraft/choice_4",
-            "hud/dialogue/text/wynncraft/choice_5",
             "hud/dialogue/text/nameplate",
             "hud/dialogue/text/control",
             "hud/gameplay/default/bottom_middle",

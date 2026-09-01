@@ -217,7 +217,13 @@ public final class TooltipPanel {
             i++;
         }
         // 一行都沒翻到就別畫了，不然只是把原文再灰色複製一遍
-        return anyTranslated ? out : List.of();
+        if (!anyTranslated) {
+            return List.of();
+        }
+        // 整塊拉正。中文不能跟著斜（會糊），但只拉正中文那幾行會讓同一份說明
+        // 裡「翻好的正、沒翻的斜」參差不齊——見 LineTranslator#unslantAll。
+        out.replaceAll(LineTranslator::unslantAll);
+        return out;
     }
 
     /**

@@ -1059,9 +1059,7 @@ public final class LineTranslator {
      */
     public static Component translate(StyledText line, TranslationStore store,
                                       boolean centered, boolean leftAligned) {
-        // translateWholeLine 走的是 realign，它本來就只保欄位的<b>起點</b>，
-        // 沒有「右緣也對回去」那一步，所以不受 leftAligned 影響。
-        Component whole = translateWholeLine(line, store, centered);
+        Component whole = translateWholeLine(line, store, centered, leftAligned);
         if (whole != null) {
             return unslant(whole);
         }
@@ -2056,7 +2054,7 @@ public final class LineTranslator {
 
     /** 整行查表。散文與對話用這條路，因為它們需要跨片段重排語序。 */
     private static Component translateWholeLine(StyledText line, TranslationStore store,
-                                                boolean centered) {
+                                                boolean centered, boolean leftAligned) {
         LineParts parts = LineParts.of(line);
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;                       // 純符號或純數值的行，沒東西可翻
@@ -2069,7 +2067,7 @@ public final class LineTranslator {
         if (rebuilt == null) {
             return null;
         }
-        Component result = realign(line, rebuilt, centered);
+        Component result = realign(line, rebuilt, centered, leftAligned);
         LineDebug.record(line, result);
         return result;
     }
@@ -2159,8 +2157,17 @@ public final class LineTranslator {
      *
      * <p>數量對不上就原樣返回。寧可維持現狀，也不要憑猜測動版面。
      */
+    /**
+     * 沒有「欄」可言的呼叫端用這個：對話、逐行名牌、聊天。右緣補償不適用，
+     * 傳 {@code leftAligned=true} 等於維持原本「只保欄位起點」的行為。
+     */
     private static Component realign(StyledText original, Component rebuilt,
                                      boolean centered) {
+        return realign(original, rebuilt, centered, true);
+    }
+
+    private static Component realign(StyledText original, Component rebuilt,
+                                     boolean centered, boolean leftAligned) {
         List<Run> orig = splitGaps(runs(original.getComponent()));
         List<Run> made = splitGaps(runs(rebuilt));
         // 多行的要一行一行重算——每一行有自己的置中縮排。見 #realignRows。
@@ -2218,19 +2225,47 @@ public final class LineTranslator {
             adjust[0] = delta / 2;             // 置中：補滿會把整行推到右邊
         }
         int drift = 0;
+        int lastAdjusted = -1;
         for (int k = leading ? 1 : 0; k < spaces; k++) {
             drift += madeSeg.get(k) - origSeg.get(k);
             // 兩側都有文字才是欄位交界；行尾的留白邊距不能動
             if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0) {
                 adjust[k] = -drift;
                 drift = 0;
+                lastAdjusted = k;
             }
         }
-        if (log != null) {
-            log.append("  整段：").append(describeRow(origSeg, madeSeg, adjust, leading))
-               .append(System.lineSeparator());
-            FlowedDebug.rows(original.getString(), log.toString());
+
+        // 最後一欄的<b>右緣</b>也要對回去。
+        //
+        // 上面那一輪只補「間隔之前」的寬度變化，所以數值的<b>起點</b>會落回原位
+        // ——但數值本身如果也翻譯了（{@code Mage/Dark Wizard} → 「法師/闇導士」），
+        // 它的<b>結尾</b>就短了一截，而 Wynncraft 是把數值靠右排的，右緣就對不齊。
+        //
+        // 這一步 {@link #alignColumns}（逐片段那條路）早就有了，整行查表這條路
+        // 一直沒有——同一份 tooltip 裡兩條路各走各的，於是同一個症狀反覆出現：
+        // 補償沒跑時數值往左，只補了標籤時數值又像被推到右邊。
+        //
+        // 條件跟 alignColumns 那邊一樣：只有第二欄靠右（{@code !leftAligned}）、
+        // 而且那個間隔<b>前面真的有標籤</b>時才做。前面沒有標籤的間隔是圖示之間的
+        // 排版，把差額補進去等於把整行改成靠右對齊。
+        int tail = madeSeg.get(spaces) - origSeg.get(spaces);
+        if (!leftAligned && lastAdjusted >= 0 && tail != 0
+                && labelledRun(made, lastAdjusted)) {
+            adjust[lastAdjusted] -= tail;
         }
+
+        // 單行的也要記。先前只有多行的會寫診斷，而<b>欄位錯位一直是單行的問題</b>
+        // ——實機回報了三次「職業類型那一行跑掉」，每一次都沒有數字可看，
+        // 只能靠讀 line-debug 的片段反推。
+        if (log == null) {
+            log = new StringBuilder();
+        }
+        log.append("  整段：").append(describeRow(origSeg, madeSeg, adjust, leading))
+           .append("  右緣補正=").append(-tail)
+           .append(leftAligned ? "（靠左，不套用）" : "")
+           .append(System.lineSeparator());
+        FlowedDebug.rows(original.getString(), log.toString());
         return apply(made, adjust);
     }
 
@@ -2694,6 +2729,32 @@ public final class LineTranslator {
      * <p>而且要求<b>每一個有字的行都查得到</b>，有一行查不到就整塊放棄。
      * 半中半英的名牌比全英文的更難看，也更難查是哪裡出的問題。
      */
+    /**
+     * 這一行有沒有<b>字</b>——連續兩個以上的字母。
+     *
+     * <h2>為什麼不能用「有沒有字母」</h2>
+     * 名牌的狀態列長這樣：{@code ⬤ 12s}、{@code {#} 3 ❄ 5 ⬤ 1s}——那個 {@code s}
+     * 是秒的單位，不是字。用「有沒有字母」判斷會把整列當成需要翻譯的文字，
+     * 查不到就整塊放棄，於是<b>NPC 一中緩速、名字就跳回英文</b>。實機回報的正是這個。
+     *
+     * <p>要求連續兩個字母，單位字母（s、m、k）就落在外面，而真正的字
+     * （{@code Dwarven Trader}）一定進得來。
+     */
+    private static boolean hasWord(String text) {
+        int run = 0;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (Character.isLetter(c) && !isHan(c)) {
+                if (++run >= 2) {
+                    return true;
+                }
+            } else {
+                run = 0;
+            }
+        }
+        return false;
+    }
+
     private static String labelByLine(String template, TranslationStore store) {
         if (template.indexOf(NEWLINE) < 0) {
             return null;                       // 單行的話整塊就是那一行，沒有退路可言
@@ -2706,8 +2767,8 @@ public final class LineTranslator {
                 out.append(NEWLINE);
             }
             String row = rows[i];
-            if (!GlyphSplitter.hasLetter(row)) {
-                out.append(row);               // 純符號或空白：一個位元都不動
+            if (!hasWord(row)) {
+                out.append(row);               // 沒有字的行：一個位元都不動
                 continue;
             }
             String hit = lookup(row, store);
@@ -3115,6 +3176,46 @@ public final class LineTranslator {
             return false;
         }
         return SpaceOffset.isSpaceFont(style) || measured == SpaceOffset.decode(text);
+    }
+
+    /**
+     * 這個間隔前面有沒有<b>真正的標籤</b>——含字母或數字的文字。
+     *
+     * <h2>為什麼要問這個</h2>
+     * 右緣補償只在「標籤 + 靠右的數值」這種行才成立。角色資訊的詞條列長這樣：
+     *
+     * <pre>
+     *   – ✤ Strength: -70
+     *       ↑ 這個間隔前面只有破折號跟屬性圖示，沒有標籤
+     * </pre>
+     *
+     * 那不是欄位交界，是圖示與內文之間的排版。把數值縮水的差額補進去，等於
+     * <b>把標籤往右推</b>——而且每一行推的量不同（每個屬性名縮水的幅度不一樣），
+     * 於是整排參差不齊。實機回報的「角色資訊跑版」就是這個。
+     *
+     * <p>{@link #alignColumns}（逐片段那條路）早就有這一道（{@link #labelled}）；
+     * 我在 {@link #realign} 這邊誤用了<b>寬度</b>判斷——圖示的寬度也大於零，
+     * 所以條件永遠成立。
+     *
+     * <p>方塊字算字母，所以已經翻成中文的標籤照樣認得出來。
+     */
+    static boolean labelledRun(List<Run> runs, int gap) {
+        int seen = 0;
+        for (Run r : runs) {
+            if (r.space()) {
+                if (seen++ == gap) {
+                    return false;              // 走到這個間隔了，前面沒有標籤
+                }
+                continue;
+            }
+            String text = r.text();
+            for (int i = 0; text != null && i < text.length(); i++) {
+                if (Character.isLetterOrDigit(text.charAt(i))) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /**
@@ -3866,8 +3967,14 @@ public final class LineTranslator {
         // 同一份面板裡同一個符號兩種樣子，一眼就看得出來。
         //
         // 空白字型（純粹用來推像素的那種）不能留——拿它畫字會是一堆亂碼。
-        Style symbolStyle =
-                SpaceOffset.isSpaceFont(blockStyle) ? textStyle : blockStyle;
+        //
+        // 用<b>原文裡那個符號自己的樣式</b>，不是整段的主樣式。戰鬥資訊面板的
+        // 「❤ Health: 12,958/14,175」裡，愛心是紅的、數字是白的，而主樣式取的是
+        // 佔多數的那個——拿主樣式去畫愛心，畫出來就是白的。實機回報的正是這個。
+        Style symbolStyle = leadingSymbolStyle(allRuns);
+        if (symbolStyle == null) {
+            symbolStyle = SpaceOffset.isSpaceFont(blockStyle) ? textStyle : blockStyle;
+        }
         // 括號註解在原文裡是另一個顏色。它不參與底色統計（見 #isNote），
         // 所以要在這裡把顏色還回去，否則註解會變成正文的亮色。
         Style noteStyle = noteStyleOf(allRuns, blockStyle);
@@ -4098,6 +4205,27 @@ public final class LineTranslator {
      * 再長就不像單位了，寧可少黏。
      */
     private static final int MAX_UNIT = 3;
+
+    /**
+     * 原文開頭那個符號自己的樣式。
+     *
+     * <p>符號在原文裡通常自成一段（顏色與字型都跟正文不同），而整段的「主樣式」
+     * 取的是佔多數的那一種。拿主樣式去畫符號，顏色就跟原文對不上——戰鬥資訊面板的
+     * 愛心變成白色就是這樣來的。
+     *
+     * <p>只認<b>開頭</b>：符號幾乎都掛在標籤前面，而認得越少，把不該套的樣式
+     * 套上去的機會也越少。開頭不是符號就回傳 null，由呼叫端退回主樣式。
+     */
+    private static Style leadingSymbolStyle(List<LineParts.Piece> runs) {
+        for (LineParts.Piece run : runs) {
+            String text = run.text();
+            if (text == null || text.isEmpty()) {
+                continue;
+            }
+            return isPictograph(text.charAt(0)) ? run.style() : null;
+        }
+        return null;
+    }
 
     /** 單位用的字母：只認 ASCII 小寫。大寫與中文都不是單位。 */
     private static boolean isUnitLetter(char c) {
@@ -4612,6 +4740,32 @@ public final class LineTranslator {
      * <p>順便把樣式攤平成明確的值。{@code visit} 會把繼承來的樣式解出來，
      * 於是「沒設定」不再繼承到別人的父層——那正是斜體最容易漏進來的縫。
      */
+    /**
+     * 整塊拉正：不管這一行有沒有方塊字，斜體一律拿掉。
+     *
+     * <h2>為什麼要整塊做</h2>
+     * {@link #unslant} 只拉正<b>含方塊字的那一行</b>，理由見 UprightTest：
+     * 中文被 Minecraft 的斜體剪切會糊成一團。但這樣一來，同一份 tooltip 裡
+     * 翻好的行是正的、還沒翻的英文行還是斜的——實機看到的就是整份參差不齊。
+     *
+     * <p>MC 只要物品有自訂名稱就自動加斜體，Wynncraft 沒有關掉，所以幾乎每一份
+     * 物品說明都會遇到。翻譯團隊選的是整塊拉正：中文不糊，整份也一致；
+     * 代價是還沒翻的英文行跟原版遊戲不同（原版是斜的）。
+     */
+    public static Component unslantAll(Component line) {
+        if (line == null) {
+            return null;
+        }
+        MutableComponent out = Component.empty();
+        line.visit((style, text) -> {
+            if (!text.isEmpty()) {
+                out.append(Component.literal(text).withStyle(style.withItalic(false)));
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return out;
+    }
+
     static Component unslant(Component line) {
         if (line == null || !hasHan(line.getString())) {
             return line;

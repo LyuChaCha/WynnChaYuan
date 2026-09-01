@@ -5,6 +5,8 @@ import com.wynnchayuan.capture.GlyphSplitter;
 import com.wynnchayuan.capture.PlayerDataFilter;
 import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 import java.util.List;
 
@@ -30,6 +32,14 @@ public final class GuiTextCapture {
     private GuiTextCapture() {}
 
     public static void record(List<Component> tooltip) {
+        record(tooltip, ItemStack.EMPTY);
+    }
+
+    /**
+     * @param stack 這份 tooltip 屬於哪一格。玩家頭顱的第一行<b>一定</b>是帳號名，
+     *              見下面的說明。
+     */
+    public static void record(List<Component> tooltip, ItemStack stack) {
         if (tooltip == null || tooltip.isEmpty()
                 || !WynnChaYuan.config().collect()
                 || !WynnChaYuan.config().collectGuiText()) {
@@ -39,6 +49,20 @@ public final class GuiTextCapture {
             return;                            // 同一份的下一幀，沒有新東西
         }
         lastSeen = List.copyOf(tooltip);
+
+        // 玩家頭顱的標題就是帳號名，一個都不要收。
+        //
+        // <h2>為什麼要看格子而不是看字串</h2>
+        // 帳號名<b>沒有形狀</b>可以認：Cynrik、Kicev、Neonrat、Idrisu 跟隨便一個
+        // 奇幻 NPC 名長得一模一樣，只有底線與駝峰那種才擋得下來。實機開一次公會
+        // 成員清單就漏了二十幾個真人 ID 進共享語料——那是不能出事的一類。
+        //
+        // 但「這一格是玩家頭顱」是<b>確定</b>的事實，不是猜的。公會成員、隊伍、
+        // 好友、排行榜全部用頭顱擺人，所以擋這個就等於擋掉整類。
+        //
+        // 只跳過標題那一行：底下的「Left-Click to set rank」那些是正常的介面字，
+        // 照收。
+        boolean skipTitle = stack != null && stack.is(Items.PLAYER_HEAD);
 
         boolean first = true;
         for (Component line : tooltip) {
@@ -53,6 +77,11 @@ public final class GuiTextCapture {
             // 公會選單常帶成員名稱；隊伍與好友介面則是<b>整格就是一個帳號名</b>
             // （玩家頭顱的標題），那種片語比對抓不到——實機收到的 captured.json
             // 裡就混進了六個玩家與公會名。見 PlayerDataFilter#looksAccountNamed。
+            if (first && skipTitle) {
+                WynnChaYuan.store().noteEvent("gui.blocked.playerData");
+                first = false;                 // 標題用掉了，下一行是內文不是標題
+                continue;
+            }
             if (PlayerDataFilter.carriesPlayerData(template)
                     || PlayerDataFilter.looksAccountNamed(template)) {
                 WynnChaYuan.store().noteEvent("gui.blocked.playerData");

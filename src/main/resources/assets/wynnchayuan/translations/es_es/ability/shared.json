@@ -3,13 +3,13 @@
   "domain": "ability/shared",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 56,
+  "count": 74,
   "translated": 0,
   "note": "不只一個職業共用的條目。改這裡會同時影響好幾個職業，請留意。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
-  "56cc40668e58": {
+  "ability-shared#0000": {
    "src": "Click Combo: RIGHT-LEFT-RIGHT",
    "dst": "",
    "role": "desc",
@@ -27,7 +27,7 @@
    "ability": "Heal、Totem、Bash、Spin Attack",
    "code": "WARRIOR-P1-R00-C04"
   },
-  "20686a82680e": {
+  "ability-shared#0001": {
    "src": "{#} Main Attack Damage: +{~}",
    "dst": "",
    "role": "stat",
@@ -43,7 +43,7 @@
    "ability": "Wand Proficiency I、Wand Proficiency II、Relik Proficiency I、Spear Proficiency I",
    "code": "WARRIOR-P1-R02-C04"
   },
-  "49955e209ec0": {
+  "ability-shared#0002": {
    "src": "{#} Range: +{~} Blocks",
    "dst": "",
    "role": "stat",
@@ -59,7 +59,7 @@
    "ability": "Larger Heal、Psychokinesis、Overseer、Double Bash",
    "code": "WARRIOR-P1-R04-C04"
   },
-  "49f06f500b08": {
+  "ability-shared#0003": {
    "src": "Click Combo: RIGHT-RIGHT-RIGHT",
    "dst": "",
    "role": "desc",
@@ -77,7 +77,7 @@
    "ability": "Teleport、Haul、Charge、Dash",
    "code": "WARRIOR-P2-R01-C04"
   },
-  "ee61b6271b1d": {
+  "ability-shared#0004": {
    "src": "Click Combo: RIGHT-LEFT-LEFT",
    "dst": "",
    "role": "desc",
@@ -95,7 +95,7 @@
    "ability": "Meteor、Aura、Uppercut、Multihit",
    "code": "WARRIOR-P2-R03-C02"
   },
-  "ef3980c16017": {
+  "ability-shared#0005": {
    "src": "Click Combo: RIGHT-RIGHT-LEFT",
    "dst": "",
    "role": "desc",
@@ -113,7 +113,7 @@
    "ability": "Ice Snake、Uproot、War Scream、Smoke Bomb",
    "code": "WARRIOR-P2-R03-C06"
   },
-  "fc00419a0948": {
+  "ability-shared#0006": {
    "src": "Earth Mastery",
    "dst": "",
    "role": "name",
@@ -128,7 +128,7 @@
    "ability": "Earth Mastery",
    "code": "WARRIOR-P3-R01-C00"
   },
-  "59ad46ee370f": {
+  "ability-shared#0007": {
    "src": "Increase your base damage\nfrom all Earth attacks.",
    "dst": "",
    "role": "desc",
@@ -146,7 +146,7 @@
    "ability": "Earth Mastery",
    "code": "WARRIOR-P3-R01-C00"
   },
-  "a0193a86644d": {
+  "ability-shared#0008": {
    "src": "{#} Earth Damage: +{~}",
    "dst": "",
    "role": "stat",
@@ -162,7 +162,7 @@
    "ability": "Earth Mastery",
    "code": "WARRIOR-P3-R01-C00"
   },
-  "538120c14692": {
+  "ability-shared#0009": {
    "src": "{#} Earth Damage: +{~}-{~}",
    "dst": "",
    "role": "stat",
@@ -178,7 +178,7 @@
    "ability": "Earth Mastery",
    "code": "WARRIOR-P3-R01-C00"
   },
-  "f6253770a60d": {
+  "ability-shared#0010": {
    "src": "Thunder Mastery",
    "dst": "",
    "role": "name",
@@ -193,7 +193,7 @@
    "ability": "Thunder Mastery",
    "code": "WARRIOR-P3-R01-C02"
   },
-  "2cb6fd5b6bf4": {
+  "ability-shared#0011": {
    "src": "Increase your base damage\nfrom all Thunder attacks.",
    "dst": "",
    "role": "desc",
@@ -211,7 +211,7 @@
    "ability": "Thunder Mastery",
    "code": "WARRIOR-P3-R01-C02"
   },
-  "6d5795b02cf6": {
+  "ability-shared#0012": {
    "src": "{#} Thunder Damage: +{~}",
    "dst": "",
    "role": "stat",
@@ -227,7 +227,7 @@
    "ability": "Thunder Mastery",
    "code": "WARRIOR-P3-R01-C02"
   },
-  "3553e6fbf146": {
+  "ability-shared#0013": {
    "src": "{#} Thunder Damage: +{~}-{~}",
    "dst": "",
    "role": "stat",
@@ -243,7 +243,7 @@
    "ability": "Thunder Mastery",
    "code": "WARRIOR-P3-R01-C02"
   },
-  "ee3f82edce2d": {
+  "ability-shared#0014": {
    "src": "Air Mastery",
    "dst": "",
    "role": "name",
@@ -258,7 +258,7 @@
    "ability": "Air Mastery",
    "code": "WARRIOR-P3-R01-C06"
   },
-  "ee6d41982dba": {
+  "ability-shared#0015": {
    "src": "Increase your base damage\nfrom all Air attacks.",
    "dst": "",
    "role": "desc",
@@ -276,7 +276,7 @@
    "ability": "Air Mastery",
    "code": "WARRIOR-P3-R01-C06"
   },
-  "fee09f2e5823": {
+  "ability-shared#0016": {
    "src": "{#} Air Damage: +{~}",
    "dst": "",
    "role": "stat",
@@ -292,7 +292,7 @@
    "ability": "Air Mastery",
    "code": "WARRIOR-P3-R01-C06"
   },
-  "75b4ca9d0843": {
+  "ability-shared#0017": {
    "src": "{#} Air Damage: +{~}-{~}",
    "dst": "",
    "role": "stat",
@@ -308,7 +308,7 @@
    "ability": "Air Mastery",
    "code": "WARRIOR-P3-R01-C06"
   },
-  "2dd0fdf43002": {
+  "ability-shared#0018": {
    "src": "Fire Mastery",
    "dst": "",
    "role": "name",
@@ -323,7 +323,7 @@
    "ability": "Fire Mastery",
    "code": "WARRIOR-P3-R01-C08"
   },
-  "bb576f8b9612": {
+  "ability-shared#0019": {
    "src": "Increase your base damage\nfrom all Fire attacks.",
    "dst": "",
    "role": "desc",
@@ -341,7 +341,7 @@
    "ability": "Fire Mastery",
    "code": "WARRIOR-P3-R01-C08"
   },
-  "5c4009a9c0cc": {
+  "ability-shared#0020": {
    "src": "{#} Fire Damage: +{~}",
    "dst": "",
    "role": "stat",
@@ -357,7 +357,7 @@
    "ability": "Fire Mastery",
    "code": "WARRIOR-P3-R01-C08"
   },
-  "42df26d23984": {
+  "ability-shared#0021": {
    "src": "{#} Fire Damage: +{~}-{~}",
    "dst": "",
    "role": "stat",
@@ -373,7 +373,7 @@
    "ability": "Fire Mastery",
    "code": "WARRIOR-P3-R01-C08"
   },
-  "a752761d143d": {
+  "ability-shared#0022": {
    "src": "Water Mastery",
    "dst": "",
    "role": "name",
@@ -388,7 +388,7 @@
    "ability": "Water Mastery",
    "code": "WARRIOR-P3-R02-C04"
   },
-  "1a96af2835a2": {
+  "ability-shared#0023": {
    "src": "Increase your base damage\nfrom all Water attacks.",
    "dst": "",
    "role": "desc",
@@ -406,7 +406,7 @@
    "ability": "Water Mastery",
    "code": "WARRIOR-P3-R02-C04"
   },
-  "1a60d536e037": {
+  "ability-shared#0024": {
    "src": "{#} Water Damage: +{~}",
    "dst": "",
    "role": "stat",
@@ -422,7 +422,7 @@
    "ability": "Water Mastery",
    "code": "WARRIOR-P3-R02-C04"
   },
-  "0bf7849b179e": {
+  "ability-shared#0025": {
    "src": "{#} Water Damage: +{~}-{~}",
    "dst": "",
    "role": "stat",
@@ -438,7 +438,7 @@
    "ability": "Water Mastery",
    "code": "WARRIOR-P3-R02-C04"
   },
-  "77d65c92fa36": {
+  "ability-shared#0026": {
    "src": "{#} Total Damage: -{~} (of your DPS)",
    "dst": "",
    "role": "stat",
@@ -454,7 +454,7 @@
    "ability": "Divination、Half-Moon Swipe、Double Spin、Wall of Smoke",
    "code": "WARRIOR-P3-R04-C04"
   },
-  "5e2300669a73": {
+  "ability-shared#0027": {
    "src": "{#} Range: +{~} Block",
    "dst": "",
    "role": "stat",
@@ -468,7 +468,7 @@
    "ability": "Spear Proficiency II、Poisoned Blade",
    "code": "WARRIOR-P4-R03-C00"
   },
-  "0aca61e86ca0": {
+  "ability-shared#0028": {
    "src": "{#} Cooldown: {~}s (per enemy)",
    "dst": "",
    "role": "stat",
@@ -483,7 +483,7 @@
    "ability": "Sanguine Strike、Counter、Satsujin",
    "code": "WARRIOR-P4-R04-C05"
   },
-  "4680865ef616": {
+  "ability-shared#0029": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Allies",
    "dst": "",
    "role": "stat",
@@ -497,7 +497,7 @@
    "ability": "Vengeful Spirit、Emboldening Cry",
    "code": "WARRIOR-P5-R05-C08"
   },
-  "6e6c2b5a971f": {
+  "ability-shared#0030": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Self",
    "dst": "",
    "role": "stat",
@@ -511,7 +511,7 @@
    "ability": "Armour Breaker、Aerial Ace",
    "code": "WARRIOR-P6-R02-C01"
   },
-  "bc6cb1578dee": {
+  "ability-shared#0031": {
    "src": "{#} Mana Cost: +{~}",
    "dst": "",
    "role": "stat",
@@ -526,7 +526,7 @@
    "ability": "Ophanim、Axe Kick、Mana Trap",
    "code": "WARRIOR-P6-R04-C03"
   },
-  "7b427472724e": {
+  "ability-shared#0032": {
    "src": "{#} Area of Effect: +{~} Blocks (Circle-Shaped)",
    "dst": "",
    "role": "stat",
@@ -542,7 +542,7 @@
    "ability": "Riftbound、Totemic Reach、Thunderclap、Honed Shield",
    "code": "WARRIOR-P7-R02-C05"
   },
-  "7b25e66edae5": {
+  "ability-shared#0033": {
    "src": "{#} Range: {~} Blocks (Circle-Shaped)",
    "dst": "",
    "role": "stat",
@@ -557,7 +557,7 @@
    "ability": "Heavenly Trumpet、Basaltic Trap、Nightcloak Knives",
    "code": "WARRIOR-P7-R04-C07"
   },
-  "a728a601182e": {
+  "ability-shared#0034": {
    "src": "Activate abilities or take damage to charge\nyour Ultimate Meter {#} to {~}",
    "dst": "",
    "role": "desc",
@@ -575,7 +575,7 @@
    "ability": "Beyond Salvation、Judgement、Zenith Stance、Another Self",
    "code": "WARRIOR-P9-R02-C01"
   },
-  "0877649c8097": {
+  "ability-shared#0035": {
    "src": "{#} Total Damage: {~} (Main Attack Damage)",
    "dst": "",
    "role": "stat",
@@ -591,7 +591,7 @@
    "ability": "Pyrokinesis、Vacuokinesis、Zenith Stance、Twain's Arc",
    "code": "WARRIOR-P9-R03-C04"
   },
-  "0c3d09c9faee": {
+  "ability-shared#0036": {
    "src": "{#} Main Attack Range: +{~} Blocks",
    "dst": "",
    "role": "stat",
@@ -606,7 +606,7 @@
    "ability": "Wand Proficiency I、Wand Proficiency II、Bow Proficiency",
    "code": "MAGE-P1-R02-C04"
   },
-  "5085eb3cc731": {
+  "ability-shared#0037": {
    "src": "{#} Total Heal: {~} (of your max health)",
    "dst": "",
    "role": "stat",
@@ -621,7 +621,7 @@
    "ability": "Heal、Sacrificial Shrine、Regeneration",
    "code": "MAGE-P2-R03-C02"
   },
-  "c5277bd98efa": {
+  "ability-shared#0038": {
    "src": "{#} Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
    "dst": "",
    "role": "stat",
@@ -635,7 +635,7 @@
    "ability": "Freezing Sigil、Chilling Snare",
    "code": "MAGE-P5-R02-C01"
   },
-  "0d89fae60f2a": {
+  "ability-shared#0039": {
    "src": "{#} Effect: {~} Resistance Bonus (❁)",
    "dst": "",
    "role": "stat",
@@ -649,7 +649,7 @@
    "ability": "Dimensional Tear、Arrow Shield",
    "code": "MAGE-P6-R01-C04"
   },
-  "72981e56a191": {
+  "ability-shared#0040": {
    "src": "{#} Vision: {~} Blocks (Circle-Shaped)",
    "dst": "",
    "role": "stat",
@@ -665,7 +665,7 @@
    "ability": "Portal to the Beyond、Crimson Effigy、Hummingbird's Song、Patchwork Abomination",
    "code": "MAGE-P8-R04-C03"
   },
-  "1099cfcd1bd2": {
+  "ability-shared#0041": {
    "src": "Click Combo: F",
    "dst": "",
    "role": "desc",
@@ -683,7 +683,7 @@
    "ability": "Dawn、Tangled Origin、Gravitational Collapse、Patchwork Abomination",
    "code": "MAGE-P9-R02-C01"
   },
-  "52f78b2c4c51": {
+  "ability-shared#0042": {
    "src": "Activate abilities to charge\nyour Ultimate Meter {#} to {~}",
    "dst": "",
    "role": "desc",
@@ -701,7 +701,7 @@
    "ability": "Tangled Origin、Gravitational Collapse、Sundered Skies、Angelic Ascension",
    "code": "MAGE-P9-R02-C07"
   },
-  "2500b5ec2818": {
+  "ability-shared#0043": {
    "src": "{#} Total Damage: {~} (of your DPS, per hit)",
    "dst": "",
    "role": "stat",
@@ -715,7 +715,7 @@
    "ability": "Phantom Ray、Multihit",
    "code": "ARCHER-P3-R04-C08"
   },
-  "12f8cc831fc1": {
+  "ability-shared#0044": {
    "src": "{#} Effect: Blindness ({#}) to Enemies",
    "dst": "",
    "role": "stat",
@@ -730,7 +730,7 @@
    "ability": "Fierce Stomp、Murder Flock、Swan Dive",
    "code": "ARCHER-P4-R04-C02"
   },
-  "198ba6e435d7": {
+  "ability-shared#0045": {
    "src": "{#} Area of Effect: +{~} Blocks",
    "dst": "",
    "role": "stat",
@@ -744,7 +744,7 @@
    "ability": "Phantom Force、Petal Storm",
    "code": "ARCHER-P4-R05-C07"
   },
-  "0088ee0ebbe9": {
+  "ability-shared#0046": {
    "src": "{#} Effects: -{~} Damage Bonus ({#}) to Enemies",
    "dst": "",
    "role": "stat",
@@ -758,7 +758,7 @@
    "ability": "Ivyroot Mamba、Distraction",
    "code": "ARCHER-P5-R01-C06"
   },
-  "9b1fd4b9739f": {
+  "ability-shared#0047": {
    "src": "{#} Area of Effect: +{~} Block (Circle-Shaped)",
    "dst": "",
    "role": "stat",
@@ -774,7 +774,7 @@
    "ability": "Overgrowth、Rolling Fog、Fatal Spin、Eviscerate",
    "code": "ARCHER-P8-R02-C04"
   },
-  "c4a7f2585ce7": {
+  "ability-shared#0048": {
    "src": "{#} Effect: {~} Resistance Bonus (❁) to Self",
    "dst": "",
    "role": "stat",
@@ -789,7 +789,7 @@
    "ability": "Fortified Formation、Repel、Braced Impact",
    "code": "ARCHER-P8-R03-C07"
   },
-  "ac16e16acef3": {
+  "ability-shared#0049": {
    "src": "{#} Total Damage: {~} (of your DPS, per strike)",
    "dst": "",
    "role": "stat",
@@ -803,122 +803,122 @@
    "ability": "Eldritch Call、Lacerate",
    "code": "ASSASSIN-P4-R01-C07"
   },
-  "4c604ecf92d4": {
+  "ability-shared#0050": {
    "src": "ÀÀÀÀ({#} Damage: +{~})",
    "dst": "",
    "domain": "ability"
   },
-  "04edf8b1715c": {
+  "ability-shared#0051": {
    "src": "ÀÀÀÀ({#} Damage: -{~})",
    "dst": "",
    "domain": "ability"
   },
-  "451f357a9fca": {
+  "ability-shared#0052": {
    "src": "ÀÀÀÀ({#} Damage: {~})",
    "dst": "",
    "domain": "ability"
   },
-  "2698e3c70f00": {
+  "ability-shared#0053": {
    "src": "ÀÀÀÀ({#} Neutral: +{~})",
    "dst": "",
    "domain": "ability"
   },
-  "01eb3688a221": {
+  "ability-shared#0054": {
    "src": "ÀÀÀÀ({#} Neutral: -{~})",
    "dst": "",
    "domain": "ability"
   },
-  "9959d744319a": {
+  "ability-shared#0055": {
    "src": "ÀÀÀÀ({#} Neutral: {~})",
    "dst": "",
    "domain": "ability"
   },
-  "aa67d0eb1450": {
+  "ability-shared#0056": {
    "src": "ÀÀÀÀ({#} Earth: +{~})",
    "dst": "",
    "domain": "ability"
   },
-  "90a2ca99870f": {
+  "ability-shared#0057": {
    "src": "ÀÀÀÀ({#} Earth: -{~})",
    "dst": "",
    "domain": "ability"
   },
-  "a465669aa368": {
+  "ability-shared#0058": {
    "src": "ÀÀÀÀ({#} Earth: {~})",
    "dst": "",
    "domain": "ability"
   },
-  "48da12b894e3": {
+  "ability-shared#0059": {
    "src": "ÀÀÀÀ({#} Thunder: +{~})",
    "dst": "",
    "domain": "ability"
   },
-  "df6c55b4ccac": {
+  "ability-shared#0060": {
    "src": "ÀÀÀÀ({#} Thunder: -{~})",
    "dst": "",
    "domain": "ability"
   },
-  "c49d07cc8f9a": {
+  "ability-shared#0061": {
    "src": "ÀÀÀÀ({#} Thunder: {~})",
    "dst": "",
    "domain": "ability"
   },
-  "2b9423912803": {
+  "ability-shared#0062": {
    "src": "ÀÀÀÀ({#} Water: +{~})",
    "dst": "",
    "domain": "ability"
   },
-  "f349022949c5": {
+  "ability-shared#0063": {
    "src": "ÀÀÀÀ({#} Water: -{~})",
    "dst": "",
    "domain": "ability"
   },
-  "cf6b6a58e7fb": {
+  "ability-shared#0064": {
    "src": "ÀÀÀÀ({#} Water: {~})",
    "dst": "",
    "domain": "ability"
   },
-  "1299554f8d2b": {
+  "ability-shared#0065": {
    "src": "ÀÀÀÀ({#} Fire: +{~})",
    "dst": "",
    "domain": "ability"
   },
-  "1d18664543a6": {
+  "ability-shared#0066": {
    "src": "ÀÀÀÀ({#} Fire: -{~})",
    "dst": "",
    "domain": "ability"
   },
-  "4300cf12907a": {
+  "ability-shared#0067": {
    "src": "ÀÀÀÀ({#} Fire: {~})",
    "dst": "",
    "domain": "ability"
   },
-  "7f17270910fc": {
+  "ability-shared#0068": {
    "src": "ÀÀÀÀ({#} Air: +{~})",
    "dst": "",
    "domain": "ability"
   },
-  "6a2157a6d922": {
+  "ability-shared#0069": {
    "src": "ÀÀÀÀ({#} Air: -{~})",
    "dst": "",
    "domain": "ability"
   },
-  "c06c489c4e71": {
+  "ability-shared#0070": {
    "src": "ÀÀÀÀ({#} Air: {~})",
    "dst": "",
    "domain": "ability"
   },
-  "ebdce6369ed2": {
+  "ability-shared#0071": {
    "src": "ÀÀÀÀ{#} Heretic: +{~} Slowness ({#}) to Enemies",
    "dst": "",
    "domain": "ability"
   },
-  "0ed07675be5d": {
+  "ability-shared#0072": {
    "src": "ÀÀÀÀ{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
    "dst": "",
    "domain": "ability"
   },
-  "685f8fa019bd": {
+  "ability-shared#0073": {
    "src": "ÀÀÀÀ{#} Lunatic: -{~} Damage Bonus ({#}) to Enemies",
    "dst": "",
    "domain": "ability"
