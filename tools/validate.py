@@ -23,6 +23,7 @@
 
 from __future__ import annotations
 
+import bisect
 import json
 import re
 import sys
@@ -685,6 +686,79 @@ def check_misfiled(files: list[Path]) -> list[Problem]:
     return out
 
 
+
+def font_ranges(lang: str) -> list[tuple[int, int]]:
+    """對話字型畫得出哪些碼位。讀不到就回空的，呼叫端會跳過檢查。"""
+    path = (ROOT / "src/main/resources/assets/wynnchayuan/font/dialogue"
+            / lang / "coverage.txt")
+    if not path.is_file():
+        return []
+    out = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        lo, _, hi = line.partition("-")
+        try:
+            out.append((int(lo, 16), int(hi, 16)))
+        except ValueError:
+            continue
+    out.sort()
+    return out
+
+
+# 對話框的譯文才受字型限制。tooltip 走的是 minecraft:default，
+# 有 Unifont 撐著，什麼字都畫得出來。
+DIALOGUE_FILES = ("quest/", "secret/", "quest-dialogue.json",
+                  "secret-dialogue.json", "dialogue-choice.json")
+
+
+def check_font_coverage(files: list[Path], lang: str) -> list[Problem]:
+    """對話的譯文裡有<b>對話字型畫不出來的字</b>。
+
+    <p>模組的規則是「一句話裡插幾個方框，比整句留著英文糟糕得多」，所以
+    只要有一個字畫不出來，<b>那一整句就不換</b>。後果是：譯文翻好了、
+    檢查全過、遊戲裡卻永遠是英文，而且沒有任何訊息說明原因。
+
+    <p>實測有八句對話卡在這裡——多半是特效用的組合變音符號
+    （``w̶h̴at^s my na̷m̸e`` 那種故障感），還有一個罕用漢字。
+    只要換掉那幾個字，整句就會出來。
+    """
+    ranges = font_ranges(lang)
+    if not ranges:
+        return []
+    lows = [lo for lo, _ in ranges]
+
+    def drawable(cp: int) -> bool:
+        if cp < 0x80:
+            return True
+        i = bisect.bisect_right(lows, cp) - 1
+        return i >= 0 and cp <= ranges[i][1]
+
+    out: list[Problem] = []
+    for file in files:
+        rel = file.as_posix()
+        if not any(t in rel for t in DIALOGUE_FILES):
+            continue
+        try:
+            data = json.loads(file.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        rows = data["entries"] if isinstance(data.get("entries"), dict) else data
+        for key, value in rows.items():
+            if key.startswith("_"):
+                continue
+            dst = value.get("dst") if isinstance(value, dict) else value
+            if not isinstance(dst, str) or not dst:
+                continue
+            bad = sorted({c for c in dst if not drawable(ord(c))})
+            if bad:
+                out.append(Problem("warning", file.name, key,
+                                   "對話字型畫不出「" + "".join(bad)
+                                   + "」——整句會留著英文，換掉那幾個字才會顯示"))
+    return out
+
+
 def check_index(base: Path) -> list[Problem]:
     """磁碟上有、_index.json 卻沒列的譯文檔。
 
@@ -849,6 +923,14 @@ def main(argv: list[str]) -> int:
             for p in dupes:
                 print(p)
                 errors += 1
+
+        unrenderable = check_font_coverage(group, lang)
+        if unrenderable:
+            print()
+            print("對話字型畫不出來")
+            for p in unrenderable:
+                print(p)
+                warnings += 1
 
         stale = check_meta_counts(group)
         if stale:
