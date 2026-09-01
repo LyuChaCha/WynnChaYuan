@@ -77,10 +77,11 @@ public final class CombatText {
     }
 
     /**
-     * 只有數字與伴隨的符號，沒有任何字母。
+     * 只有數字與伴隨的符號，沒有任何<b>成字</b>的字母。
      *
      * <p>例如 {@code -1,234}、{@code +560/3s}、{@code 98%}。有字母就代表
-     * 是有意義的文字，不能當成傷害數字丟掉。
+     * 是有意義的文字，不能當成傷害數字丟掉——但黏在數字後面的<b>單位</b>
+     * 不算，見 {@link #isUnitSuffix}。
      */
     private static boolean isNumericOnly(String core) {
         boolean hasDigit = false;
@@ -88,10 +89,30 @@ public final class CombatText {
             char c = core.charAt(i);
             if (Character.isDigit(c)) {
                 hasDigit = true;
-            } else if (Character.isLetter(c)) {
+            } else if (Character.isLetter(c) && !isUnitSuffix(core, i)) {
                 return false;
             }
         }
         return hasDigit;
+    }
+
+    /**
+     * 這個字母是<b>黏在數字後面的單位</b>，不是字。
+     *
+     * <h2>為什麼要開這個例外</h2>
+     * 傷害大到一定程度，Wynncraft 會縮寫成 {@code 12.3k}。「有字母就是
+     * 有意義的文字」這條規則遇到那個 {@code k} 就失手，於是每一發大傷害
+     * 都被當成名牌收進語料——實機跑一趟就混進十幾條
+     * {@code {~}k{#}{~}k} 這種永遠不會有人翻的東西。
+     *
+     * <p>單位的形狀很固定：<b>前面緊貼著數字，後面不再接字母</b>。
+     * 所以 {@code 12.3k} 的 k 是單位，而「3x Bandit」的 x 是單位、B 不是
+     * ——那一條仍然收得到。
+     */
+    private static boolean isUnitSuffix(String core, int at) {
+        if (at == 0 || !Character.isDigit(core.charAt(at - 1))) {
+            return false;
+        }
+        return at + 1 >= core.length() || !Character.isLetter(core.charAt(at + 1));
     }
 }
