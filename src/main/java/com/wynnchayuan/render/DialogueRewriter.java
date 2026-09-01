@@ -226,11 +226,15 @@ public final class DialogueRewriter {
             // 圖示要留在<b>原本的字型</b>裡：那個 SHIFT 按鈕是它畫出來的，
             // 換成預設字型就變成缺字。所以只有譯文那一截換字型，
             // 組裝時再把兩截接起來（見下面的 keep）。
-            keep.put(i, prefix);
-            texts.set(i, tip);
             int total = width(Component.literal(prefix).withStyle(styles.get(i)))
                     + width(tip, styles.get(i));
-            texts.set(i + 1, offset(trail + was - total));   // 同上：只補長度差
+            String back = offset(trail + was - total);        // 同上：只補長度差
+            if (back == null) {
+                continue;                       // 補不回去就別動這一段，見 offset
+            }
+            keep.put(i, prefix);
+            texts.set(i, tip);
+            texts.set(i + 1, back);
             swapped[i] = true;
             changed = true;
         }
@@ -256,10 +260,14 @@ public final class DialogueRewriter {
                 continue;                       // 沒有這一列的中文字型，換了是一排方框
             }
             int was = width(texts.get(i), styles.get(i));
-            texts.set(i, pick);
             // 跟內文一樣只補長度差：這一列縮短多少就還回去多少，
             // 後面幾列與外框的位置才不會被推走。
-            texts.set(i + 1, offset(trail + was - width(pick, styles.get(i))));
+            String back = offset(trail + was - width(pick, styles.get(i)));
+            if (back == null) {
+                continue;                       // 補不回去就別動這一列，見 offset
+            }
+            texts.set(i, pick);
+            texts.set(i + 1, back);
             swapped[i] = true;
             changed = true;
         }
@@ -289,12 +297,16 @@ public final class DialogueRewriter {
                     was += width(texts.get(i), styles.get(i));
                 }
                 int shrink = was - width(rows.get(n), styles.get(at));
+                String back = offset(after + shrink);
+                if (back == null) {
+                    continue;                      // 補不回去就別動這一行，見 offset
+                }
                 texts.set(at, rows.get(n));
                 for (int i = at + 1; i <= end; i++) {
                     texts.set(i, "");              // 整行併到第一段，其餘清空
                     swapped[i] = true;
                 }
-                texts.set(end + 1, offset(after + shrink));
+                texts.set(end + 1, back);
                 swapped[at] = true;
             }
         }
@@ -802,9 +814,27 @@ public final class DialogueRewriter {
         return cp - OFFSET_BASE;
     }
 
-    /** 把像素數編回位移字元。 */
+    /**
+     * 把像素數編回位移字元；編不出來時回傳 {@code null}。
+     *
+     * <h2>為什麼一定要擋範圍</h2>
+     * 位移字元只有 {@code U+CF000}–{@code U+D1000} 這一段有定義（見
+     * {@link #offsetOf} 解碼時的檢查），也就是 ±4096 像素。超出去的碼位
+     * <b>資源包裡根本沒有那個字</b>，Minecraft 只好畫成缺字的方框——
+     * 而位移字元常常是<b>一整串</b>的，於是畫面上就出現一長排方框。
+     *
+     * <p>先前這裡沒有檢查，只有解碼那一端有。補正值是「原本的偏移 + 這一段
+     * 縮短了多少」算出來的，長句子、或量錯寬度的時候就可能衝出去。
+     *
+     * <p>回傳 {@code null} 的時候呼叫端一律<b>放棄那一段的替換</b>：
+     * 留著英文原文至少版面是對的，比推歪加一排方框好得多。
+     */
     static String offset(int px) {
-        return new String(Character.toChars(OFFSET_BASE + px));
+        int cp = OFFSET_BASE + px;
+        if (cp < 0xCF000 || cp > 0xD1000) {
+            return null;
+        }
+        return new String(Character.toChars(cp));
     }
 
     /**
