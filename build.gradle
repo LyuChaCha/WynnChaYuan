@@ -426,3 +426,11 @@ tasks.register('runNametagTrimChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.listener.NametagTrimTest'
 }
 tasks.named('check') { dependsOn 'runNametagTrimChecks' }
+
+tasks.register('runEvenParagraphChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證同一段話不會一半中文一半英文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.EvenParagraphTest'
+}
+tasks.named('check') { dependsOn 'runEvenParagraphChecks' }
