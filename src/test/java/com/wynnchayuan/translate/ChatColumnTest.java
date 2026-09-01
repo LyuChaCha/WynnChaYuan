@@ -112,7 +112,42 @@ public final class ChatColumnTest {
 
         colours();
         multiline();
+        numbers();
         report();
+    }
+
+    /**
+     * 數值佔位符要按接好之後的<b>整行</b>重編。
+     *
+     * <p>實機回報：Lootrun 結算是兩欄一行，
+     * 「{@code 45 Reward Pulls｜Time Elapsed: 12:39}」。右欄單獨的譯文是
+     * 「經過時間：{@code {~1}:{~2}}」，接起來之後 {@code {~1}} 指到整行的第一個
+     * 數值——左欄的 45，畫面上成了「經過時間：45:12」。
+     *
+     * <p>兩個方向都要測：偏移過的要正確，<b>沒偏移的第一欄不能被動到</b>。
+     */
+    private static void numbers() {
+        check("第一欄不動（偏移 0）",
+              "經過時間：{~1}:{~2}".equals(
+                      LineTranslator.renumber("經過時間：{~1}:{~2}", 0)));
+        check("指名的往後推",
+              "經過時間：{~2}:{~3}".equals(
+                      LineTranslator.renumber("經過時間：{~1}:{~2}", 1)));
+        // 沒編號的用的是另一個計數器（指名的不會讓它前進），混在不同欄裡
+        // 接起來一樣會亂，所以偏移不為零時一併改寫成指名的形式。
+        check("沒編號的也改寫成指名",
+              "共 {~3} 場".equals(LineTranslator.renumber("共 {~} 場", 2)));
+        // 混用時兩個計數器各走各的：單欄時「{~1} / {~2} 共 {~}」的那個 {~}
+        // 本來就是取第一個數值（指名的不會讓它前進），改寫必須忠實保留，
+        // 不能順手「修正」成第三個——那會改掉現有譯文的意思。
+        check("混用時忠實保留原本的語意",
+              "{~3} / {~4} 共 {~3}".equals(
+                      LineTranslator.renumber("{~1} / {~2} 共 {~}", 2)));
+        check("沒有數值的譯文原樣回傳",
+              "獎勵抽數".equals(LineTranslator.renumber("獎勵抽數", 3)));
+        // {~10} 填不回去（編號只認一位數），這種情況整條讓開比印錯數字好。
+        check("超過一位數就回傳 null",
+              LineTranslator.renumber("{~2}", 8) == null);
     }
 
     /**

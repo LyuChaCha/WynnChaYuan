@@ -257,6 +257,63 @@ public final class PlayerDataFilter {
      * <p>這是<b>啟發式</b>的，會漏掉剛好符合標題大小寫的自訂名（{@code Morrowind}
      * 就是）。它補的是 {@link #mentionsOnlinePlayer} 之外那一截，不是取代它。
      */
+    /**
+     * 這一行是不是<b>單純一個帳號名</b>，例如 {@code PoorChaCha}、
+     * {@code YuChaYuan [YCY]}、{@code - [106] YuanYoIn}。
+     *
+     * <h2>跟 {@link #looksPlayerNamed} 的分工</h2>
+     * 那一支是給<b>名牌</b>用的，收得比較寬——連「開頭小寫」都算數，因為玩家的
+     * 寵物、坐騎常取那種名字。介面文字不能用那麼寬的判準：介面裡滿是被折行折出來的
+     * 小寫續行（「to confirm」「offering better chances」），整份語料量過去會誤擋
+     * 62 條。
+     *
+     * <p>所以這裡只留<b>強訊號</b>：底線、或「小寫緊接大寫」的駝峰。再加一道
+     * 「整行看起來像個名字」（三個詞以內、結尾不是句讀），把任務對話那種長句排除掉。
+     * 量過整份語料：52,921 條有譯文的條目裡只有 1 條會被擋到。
+     *
+     * <h2>大寫必須是 ASCII</h2>
+     * 地城鑰匙長 {@code UnderworldÀÀÀCrypt Key} 這樣——中間那幾個 {@code À} 是
+     * 對齊字元。不限定 ASCII 的話「d 接 À」會被當成駝峰，把鑰匙全部擋掉。
+     * Minecraft 的帳號名本來就只有 {@code [A-Za-z0-9_]}。
+     *
+     * <h2>擋掉的代價很小</h2>
+     * 這道濾網只管<b>收集</b>，不管翻譯——擋掉的東西是「不會再進 captured.json」，
+     * 已經翻好的照常顯示。所以偶爾誤擋一個 Wynntils 的統計名（{@code HprRaw Scale}）
+     * 沒有損失。
+     */
+    public static boolean looksAccountNamed(String template) {
+        if (template == null || template.isBlank()) {
+            return false;
+        }
+        String name = template.split("\\n", 2)[0]
+                .replaceAll("\\{[#~pu]\\d?}", " ")
+                .trim();
+        if (name.length() < MIN_PLATE_NAME) {
+            return false;
+        }
+        char tail = name.charAt(name.length() - 1);
+        if (tail == '.' || tail == '!' || tail == '?' || tail == ',' || tail == ':') {
+            return false;                          // 像句子，不像名字
+        }
+        String[] words = name.replaceAll("\\[[^\\]]*\\]?", " ").trim().split("\\s+");
+        if (words.length > MAX_PLATE_WORDS) {
+            return false;
+        }
+        for (String word : words) {
+            if (word.indexOf('_') >= 0) {
+                return true;
+            }
+            for (int i = 1; i < word.length(); i++) {
+                char c = word.charAt(i);
+                char prev = word.charAt(i - 1);
+                if (c >= 'A' && c <= 'Z' && prev >= 'a' && prev <= 'z') {
+                    return true;                   // PoorChaCha、YuChaYuan
+                }
+            }
+        }
+        return false;
+    }
+
     public static boolean looksPlayerNamed(String template) {
         if (template == null || template.isBlank()) {
             return false;

@@ -2478,18 +2478,81 @@ public final class LineTranslator {
         StringBuilder out = new StringBuilder();
         int hits = 0;
         int colours = 0;                       // 前面幾欄一共用掉幾個顏色
+        int values = 0;                        // 前面幾欄一共有幾個數值
         for (String part : parts) {
             String hit = GlyphSplitter.hasLetter(part) ? lookup(part, store) : null;
             if (hit != null && !hit.isBlank()) {
-                String shifted = shiftColours(hit, colours);
+                String shifted = renumber(shiftColours(hit, colours), values);
+                if (shifted == null) {
+                    return null;               // 編號會超過一位數，整條讓開
+                }
                 colours += distinctColours(hit);
                 out.append(shifted);
                 hits++;
             } else {
                 out.append(part);              // 這一欄沒有譯文，原樣留著
             }
+            // ★ 不管這一欄有沒有譯文都要累加——填值走的是<b>原文</b>那一行的
+            //   數值表，沒翻到的欄一樣佔著位置。
+            values += countNumbers(part);
         }
         return hits > 0 ? out.toString() : null;
+    }
+
+    /** 這一段裡有幾個 {@code {~}}。 */
+    private static int countNumbers(String template) {
+        String mark = GlyphSplitter.NUMBER_PLACEHOLDER;
+        int n = 0;
+        for (int at = template.indexOf(mark); at >= 0;
+                at = template.indexOf(mark, at + mark.length())) {
+            n++;
+        }
+        return n;
+    }
+
+    private static final java.util.regex.Pattern NUMBER_ANY =
+            java.util.regex.Pattern.compile("\\{~([1-9])?}");
+
+    /**
+     * 把一欄的譯文從「這一欄的第幾個數值」改寫成「整行的第幾個」。
+     *
+     * <h2>為什麼要這一步</h2>
+     * {@code {~N}} 指的是<b>原文的第 N 個數值</b>，而填值時走的是整行的數值表
+     * （見填值迴圈的 {@code NUMBER} 那一支）。一欄一欄查到的譯文是照<b>那一欄</b>
+     * 編號的，直接接起來就會錯位。
+     *
+     * <p>實機回報的就是這個：Lootrun 結算是兩欄一行，
+     * 「{@code 45 Reward Pulls｜Time Elapsed: 12:39}」。右欄單獨查到的譯文是
+     * 「經過時間：{@code {~1}:{~2}}」，接起來之後 {@code {~1}} 指到整行的第一個
+     * 數值——左欄的 45。畫面上就成了「經過時間：45:12」。
+     *
+     * <h2>連沒編號的也一起改寫</h2>
+     * 沒編號的 {@code {~}} 是照出現順序取，用的是<b>另一個</b>計數器
+     * （帶編號的不會讓它前進）。兩種寫法混在不同欄裡接起來一樣會亂，
+     * 所以偏移不為零時一律改寫成指名的形式，讓結果不依賴那個計數器。
+     *
+     * @return 改寫後的譯文；編號會超過一位數（{@code {~10}} 填不回去）時回傳
+     *         {@code null}，呼叫端應該整條讓開
+     */
+    static String renumber(String text, int offset) {
+        if (offset == 0 || text == null || text.indexOf('{') < 0) {
+            return text;
+        }
+        java.util.regex.Matcher m = NUMBER_ANY.matcher(text);
+        StringBuilder out = new StringBuilder();
+        int at = 0;
+        int plain = 0;
+        while (m.find()) {
+            int want = m.group(1) != null
+                    ? offset + Integer.parseInt(m.group(1))
+                    : offset + ++plain;
+            if (want > 9) {
+                return null;
+            }
+            out.append(text, at, m.start()).append("{~").append(want).append('}');
+            at = m.end();
+        }
+        return at == 0 ? text : out.append(text.substring(at)).toString();
     }
 
     /**
@@ -2597,10 +2660,64 @@ public final class LineTranslator {
         }
         String translated = lookup(parts.template(), store);
         if (translated == null || translated.isBlank()) {
+            translated = labelByLine(parts.template(), store);
+        }
+        if (translated == null || translated.isBlank()) {
             return null;
         }
         Component rebuilt = rebuild(translated, parts, store);
         return rebuilt == null ? null : unslant(rebuilt);
+    }
+
+    /**
+     * 整塊查不到時的退路：<b>逐行</b>查，純符號的那幾行原樣留著。
+     *
+     * <h2>為什麼需要</h2>
+     * 怪物名牌是「名字 + 血條」一行、「狀態圖示」一行：
+     * <pre>
+     *   Frosted Guard {#}{#}
+     *   {#} {#} {#}
+     * </pre>
+     * 第二行那排圖示會隨著身上的狀態增減——給牠一個緩速就多一個圖示，
+     * 整塊的鍵跟著變，於是<b>名字瞬間跳回英文</b>。實機回報的就是這個。
+     *
+     * <p>要為每種狀態組合各建一個鍵是不可能的：那是排列組合。能建的只有
+     * 「名字那一行」一個鍵，其餘的行原樣放行。
+     *
+     * <h2>為什麼這樣不會弄壞版面</h2>
+     * {@link #translateLabel} 之所以只認整塊，是怕退到逐片段替換之後跑
+     * tooltip 那套欄位對齊，把遊戲自己排好的漂浮標籤弄歪。
+     *
+     * <p>這裡不走那條路：純符號的行是<b>逐字元原樣</b>抄回去的，
+     * 有字的行則是整行查表——兩種都不會經過重新對齊。
+     *
+     * <p>而且要求<b>每一個有字的行都查得到</b>，有一行查不到就整塊放棄。
+     * 半中半英的名牌比全英文的更難看，也更難查是哪裡出的問題。
+     */
+    private static String labelByLine(String template, TranslationStore store) {
+        if (template.indexOf(NEWLINE) < 0) {
+            return null;                       // 單行的話整塊就是那一行，沒有退路可言
+        }
+        String[] rows = template.split("\n", -1);
+        StringBuilder out = new StringBuilder();
+        boolean any = false;
+        for (int i = 0; i < rows.length; i++) {
+            if (i > 0) {
+                out.append(NEWLINE);
+            }
+            String row = rows[i];
+            if (!GlyphSplitter.hasLetter(row)) {
+                out.append(row);               // 純符號或空白：一個位元都不動
+                continue;
+            }
+            String hit = lookup(row, store);
+            if (hit == null || hit.isBlank()) {
+                return null;                   // 有字卻查不到，整塊放棄
+            }
+            out.append(hit);
+            any = true;
+        }
+        return any ? out.toString() : null;
     }
 
     /**
@@ -3679,6 +3796,19 @@ public final class LineTranslator {
         }
 
         Style textStyle = forDisplay(blockStyle);
+        // 遊戲自己的符號留在<b>原本的字型</b>裡。
+        //
+        // 上面那一行把字型換成預設，中文才畫得出來。代價是 Wynncraft 自己那組
+        // 字型裡的特製字形一起沒了——{@code ❤} 在它們的字型裡是紅色實心的心，
+        // 換成預設字型就退回 Unicode 的通用字形，畫面上是白色空心的。
+        //
+        // 實機回報：戰鬥資訊面板「生命」那行的愛心是白的，而下面「有效生命」
+        // 那行是紅的。差別在後者走的是逐片段替換，符號那一段根本沒被動過。
+        // 同一份面板裡同一個符號兩種樣子，一眼就看得出來。
+        //
+        // 空白字型（純粹用來推像素的那種）不能留——拿它畫字會是一堆亂碼。
+        Style symbolStyle =
+                SpaceOffset.isSpaceFont(blockStyle) ? textStyle : blockStyle;
         // 括號註解在原文裡是另一個顏色。它不參與底色統計（見 #isNote），
         // 所以要在這裡把顏色還回去，否則註解會變成正文的亮色。
         Style noteStyle = noteStyleOf(allRuns, blockStyle);
@@ -3753,7 +3883,8 @@ public final class LineTranslator {
                                     ? peekStyle(tokens.get(i + 1), glyphs, places,
                                                 numbers, users, glyph, place, number, user)
                                     : null;
-                            appendHugging(line, token.text(), textStyle, noteStyle, inNote,
+                            appendHugging(line, token.text(), textStyle, symbolStyle,
+                                          noteStyle, inNote,
                                           accents, usedAccent, store, before, after);
                         }
                         justFilled = null;
@@ -3830,7 +3961,7 @@ public final class LineTranslator {
     }
 
     private static void appendHugging(MutableComponent out, String text,
-                                      Style base, Style note, boolean[] depth,
+                                      Style base, Style symbol, Style note, boolean[] depth,
                                       List<LineParts.Piece> accents, boolean[] used,
                                       TranslationStore store, Style before, Style after) {
         int lead = 0;
@@ -3854,6 +3985,17 @@ public final class LineTranslator {
             // 譯文那條斜線會拿到前一個數字的樣式——畫面上就是它跟原文顏色不同。
             Style owner = leadTakesNext(text, lead, after) ? after : before;
             out.append(literal(text.substring(0, lead), forDisplay(owner)));
+        }
+        // 遊戲自己的符號（❤ ✦ ⬤⋯）用原本的字型畫，見 #rebuild 那邊的說明。
+        // 只剝<b>開頭</b>那一串：符號在原文裡幾乎都掛在標籤前面，
+        // 而剝得越少，誤把該換字型的東西留在舊字型的機會也越少。
+        int mid = lead;
+        while (mid < tail && isPictograph(text.charAt(mid))) {
+            mid++;
+        }
+        if (mid > lead) {
+            out.append(literal(text.substring(lead, mid), symbol));
+            lead = mid;
         }
         if (tail > lead) {
             appendNoting(out, text.substring(lead, tail), base, note,
@@ -4160,6 +4302,18 @@ public final class LineTranslator {
                 && at + 1 < text.length()
                 && text.charAt(at) == ' '
                 && isHan(text.charAt(at + 1));
+    }
+
+    /**
+     * 遊戲自己的符號，例如 {@code ❤ ✦ ⬤ ❁ ✺}。
+     *
+     * <p>判準是「非 ASCII、不是漢字、也不是字母或數字」。這些字元在 Wynncraft
+     * 那組字型裡是特製字形，換成預設字型會退回 Unicode 的通用字形——顏色與形狀
+     * 都不一樣。字母數字排除掉，是因為那些本來就該跟著正文走。
+     */
+    private static boolean isPictograph(char c) {
+        return c > 0x7F && !isHan(c) && !Character.isLetterOrDigit(c)
+                && !Character.isWhitespace(c);
     }
 
     private static boolean isHan(char c) {

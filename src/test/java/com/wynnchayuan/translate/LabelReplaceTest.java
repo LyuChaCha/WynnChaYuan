@@ -102,6 +102,32 @@ public final class LabelReplaceTest {
                   made.length > 1 && made[1] == 16);
         }
 
+        // 3. 狀態圖示那一行變了，名字不能跟著跳回英文。
+        //
+        // 怪物名牌是「名字 + 血條」一行、「狀態圖示」一行，而第二行會隨身上的
+        // 狀態增減。實機回報：給 NPC 一個緩速，牠的名字就變回原文——因為整塊
+        // 的鍵變了。為每種狀態組合各建一個鍵是排列組合，不可能。
+        com.google.gson.JsonObject plates = new com.google.gson.JsonObject();
+        plates.addProperty("Frosted Guard", "霜衛");
+        Files.writeString(dir.resolve("npc.json"), plates.toString(),
+                          StandardCharsets.UTF_8);
+        store = new TranslationStore();
+        store.loadAll(dir);
+
+        for (String icons : new String[] {"✦", "✦ ✦", "✦ ✦ ✦"}) {
+            StyledText plate = label("Frosted Guard", icons);
+            Component out = LineTranslator.translateLabel(plate, store);
+            check("狀態圖示「" + icons + "」時名字照樣翻得出來（實際："
+                          + (out == null ? "null"
+                             : out.getString().replace("\n", " ⏎ ")) + "）",
+                  out != null && out.getString().contains("霜衛"));
+        }
+
+        // ★ 反方向：有字的那一行查不到時仍然整塊放棄，不能半中半英。
+        StyledText half = label("Frosted Guard", "Unknown Status");
+        check("有一行有字卻查不到就整塊不動",
+              LineTranslator.translateLabel(half, store) == null);
+
         report();
     }
 

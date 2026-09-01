@@ -83,6 +83,9 @@ public final class RenderListener {
             if (!out.isEmpty()) {
                 event.setTooltips(out);
                 WynnChaYuan.store().noteEvent("tooltip.replaced");
+                // 截圖鍵要有框才裁得出東西。這裡先放著，等遊戲把 tooltip 畫完
+                // 再由 renderAfterScreen 記下位置——見 TooltipPanel#noteShot。
+                PendingTooltip.set(out, event.getMouseX(), event.getMouseY());
             }
         } catch (Throwable t) {
             WynnChaYuan.store().noteEvent("render.replaceError");
@@ -102,7 +105,19 @@ public final class RenderListener {
      * <p>由 {@code ScreenEvents.afterRender} 每幀呼叫。
      */
     public static void renderAfterScreen(GuiGraphics graphics, int mouseX, int mouseY) {
-        if (WynnChaYuan.config().tooltipMode() != CollectorConfig.TooltipMode.PANEL) {
+        CollectorConfig.TooltipMode mode = WynnChaYuan.config().tooltipMode();
+        if (mode == CollectorConfig.TooltipMode.REPLACE) {
+            // 就地取代模式不畫東西，只記下截圖要裁的框——遊戲此時已經把
+            // 譯文畫上去了。先前這裡跟 OFF 走同一條路直接清掉，於是
+            // 就地取代模式按 F9 永遠沒反應。
+            List<Component> replaced = PendingTooltip.take();
+            if (!replaced.isEmpty()) {
+                TooltipPanel.noteShot(graphics, replaced,
+                        PendingTooltip.mouseX(), PendingTooltip.mouseY());
+            }
+            return;
+        }
+        if (mode != CollectorConfig.TooltipMode.PANEL) {
             PendingTooltip.take();          // 關掉時也要清，否則會留一格殘影
             return;
         }
