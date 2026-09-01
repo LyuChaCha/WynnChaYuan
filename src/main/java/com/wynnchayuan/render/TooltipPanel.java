@@ -153,16 +153,16 @@ public final class TooltipPanel {
         int i = 0;
         // 物品名稱那一行：還沒翻的裝備名一律保持原文。
         //
+        // 名稱後面可能掛著 Wynntils 加的註記，所以要先剝掉——見 #bareName。
+        //
         // 裝備名是專有名詞，而語料裡有 50 組裝備名跟別的領域撞名（技能詞、
         // Major ID、介面詞）。沒有這一道，神話矛「Guardian」會拿到同名 Major ID
         // 的「守護者」。
         //
         // 擋在<b>這裡</b>而不是查表層，是因為同一個字在別的位置可能完全正當：
         // 有一把裝備叫 Reflection，在查表層擋掉會連屬性列的「遠程反傷」一起擋死。
-        if (n > 0 && store.isBareGearName(
-                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()
-                        .replace(com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER, "")
-                        .strip())) {
+        if (n > 0 && store.isBareGearName(bareName(
+                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()))) {
             out.add(LineTranslator.untranslated(styled.get(0)));
             i = 1;
         }
@@ -218,6 +218,64 @@ public final class TooltipPanel {
         }
         // 一行都沒翻到就別畫了，不然只是把原文再灰色複製一遍
         return anyTranslated ? out : List.of();
+    }
+
+    /**
+     * 就地取代模式的截圖框。
+     *
+     * <p>截圖鍵要有東西可以裁，得先有人告訴它「這一幀的框在哪」。面板模式是
+     * {@link #render} 畫完順手記的；就地取代模式<b>根本不會走到那裡</b>——
+     * 譯文是寫回事件、由遊戲自己畫的。於是實機上按 F9 沒有反應，
+     * 只有切成面板模式才拍得到。
+     *
+     * <p>這裡只記框、不畫東西。要在遊戲把 tooltip 畫完<b>之後</b>呼叫，
+     * 記下的那一幀才是完整的。
+     *
+     * <p>框的算法跟遊戲畫 tooltip 的一樣：滑鼠右下 12/-12，寬度取最長那行，
+     * 然後夾在畫面內。高度是估的（遊戲每行 10px 再加內距），所以寧可多框幾
+     * 像素——多框到的是背景，少框到的是字。
+     */
+    public static void noteShot(GuiGraphics graphics, List<Component> tooltip,
+                                int mouseX, int mouseY) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc == null || mc.font == null || tooltip == null || tooltip.isEmpty()) {
+            return;
+        }
+        int w = width(mc, tooltip) + 8;
+        int h = tooltip.size() * 10 + 8;
+        int x = Math.max(0, Math.min(mouseX + 12, Math.max(0, graphics.guiWidth() - w)));
+        int y = Math.max(0, Math.min(mouseY - 12, Math.max(0, graphics.guiHeight() - h)));
+        PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
+                       w + SHOT_MARGIN * 2, h + SHOT_MARGIN * 2,
+                       tooltip.get(0).getString());
+        PanelShot.auto(String.join("\n",
+                tooltip.stream().map(Component::getString).toList()));
+    }
+
+    /**
+     * 物品名稱那一行去掉裝飾之後的名字。
+     *
+     * <p>Wynntils 會在名稱後面掛自己的註記，最常見的是鑑定百分比：畫面上是
+     * {@code Willow [67.5%]}，模板就成了 {@code Willow [{~}%]}。拿這個去比對
+     * 裝備名清單當然對不上，於是<b>就地取代模式下裝備名還是被翻掉了</b>——
+     * 實機回報的「Willow 變成柳木」就是這個（{@code npc.json} 裡的柳木是那棵樹，
+     * 跟這件靴子撞名）。
+     *
+     * <p>剝的是<b>結尾</b>連續的方括號，因為註記一律掛在後面；名字本身帶方括號
+     * 的裝備並不存在，而就算有，剝過頭也只是少擋一次，不會誤擋別的東西。
+     */
+    public static String bareName(String template) {
+        String s = template
+                .replace(com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER, "")
+                .strip();
+        while (s.endsWith("]")) {
+            int open = s.lastIndexOf('[');
+            if (open <= 0) {
+                break;                         // 整行都是括號，那就不是名字
+            }
+            s = s.substring(0, open).strip();
+        }
+        return s;
     }
 
     /**

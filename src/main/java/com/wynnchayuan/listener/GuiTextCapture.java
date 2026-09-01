@@ -50,9 +50,13 @@ public final class GuiTextCapture {
             if (template.isBlank() || !GlyphSplitter.hasLetter(template)) {
                 continue;
             }
-            if (PlayerDataFilter.carriesPlayerData(template)) {
+            // 公會選單常帶成員名稱；隊伍與好友介面則是<b>整格就是一個帳號名</b>
+            // （玩家頭顱的標題），那種片語比對抓不到——實機收到的 captured.json
+            // 裡就混進了六個玩家與公會名。見 PlayerDataFilter#looksAccountNamed。
+            if (PlayerDataFilter.carriesPlayerData(template)
+                    || PlayerDataFilter.looksAccountNamed(template)) {
                 WynnChaYuan.store().noteEvent("gui.blocked.playerData");
-                continue;                      // 公會選單常帶成員名稱
+                continue;
             }
             WynnChaYuan.store().record(
                     template,
