@@ -268,6 +268,47 @@ public final class ColumnCentreTest {
                 !LineTranslator.leadTakesNext("/", 1, null));
         check("前面還有文字時開頭那截仍歸前一段",
                 !LineTranslator.leadTakesNext(" 抄寫 [", 1, next));
+
+        unitSuffix();
+    }
+
+    /**
+     * 緊貼在數值後面的單位要跟著<b>數值</b>走顏色。
+     *
+     * <h2>先前壞在哪</h2>
+     * 生命竊取那一列原文寫 {@code +445/3s}，整串都是綠的——遊戲把數字與單位放在
+     * 同一段。譯文的 {@code s} 是<b>文字</b>，拿到的是整行的正文顏色（標籤那個色），
+     * 於是 {@code +445/3} 綠、{@code s} 白，一眼就看得出來。
+     *
+     * <p>上面那一套只黏標點（{@link LineTranslator#hugs} 明確排除字母），碰不到它。
+     *
+     * <h2>判準要收緊</h2>
+     * 收太寬會把譯文開頭的英文整個染成數值的顏色。所以三道：緊貼（中間連標點都
+     * 沒有）、三個以內的 ASCII 小寫字母、後面不能再接字母。
+     */
+    private static void unitSuffix() {
+        int n = 8;
+        check("s 緊貼數值時算單位",
+              LineTranslator.unitLength("s [37.8%]", true, 0, n) == 1);
+        check("stx 也算（綠寶石的堆疊單位）",
+              LineTranslator.unitLength("stx", true, 0, 3) == 3);
+        check("整段就是單位時也認得",
+              LineTranslator.unitLength("s", true, 0, 1) == 1);
+
+        // ★ 反方向。
+        check("前一個不是數值就不算",
+              LineTranslator.unitLength("s [37.8%]", false, 0, n) == 0);
+        check("中間隔著標點就不算緊貼",
+              LineTranslator.unitLength("s [37.8%]", true, 1, n) == 0);
+        check("後面還接著字母的是單字不是單位",
+              LineTranslator.unitLength("seconds", true, 0, 7) == 0);
+        check("超過三個字母不算",
+              LineTranslator.unitLength("abcd ", true, 0, 5) == 0);
+        check("大寫不算", LineTranslator.unitLength("S [1]", true, 0, n) == 0);
+        check("中文不算——「{~} 秒」這種寫法不受影響",
+              LineTranslator.unitLength(" 秒", true, 0, 2) == 0);
+        check("空白開頭不算",
+              LineTranslator.unitLength(" x Doom Stone", true, 0, 13) == 0);
     }
 
     /** 譯文自己帶 {@code §} 格式碼。 */
