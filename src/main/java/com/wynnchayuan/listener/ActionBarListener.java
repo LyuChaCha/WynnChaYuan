@@ -71,6 +71,17 @@ public final class ActionBarListener {
 
     /** 上一次收過的選項。action bar 每幀都發，不擋就會一直重複記。 */
     private java.util.List<String> lastPicks = java.util.List.of();
+    /** 還在動、等它停下來的那一組選項。見 {@link #collect}。 */
+    private java.util.List<String> settling = java.util.List.of();
+    private long settlingSince;
+
+    /**
+     * 選項要<b>連續穩定這麼久</b>才收。
+     *
+     * <p>放太短擋不住跑馬燈，放太長會漏掉一閃而過的對話。對話框至少會停留幾秒，
+     * 而跑馬燈是每幾個 tick 就換一格，中間隔著好幾個數量級。
+     */
+    private static final long SETTLE_MS = 700;
 
     /**
      * 把選項收進語料。
@@ -82,14 +93,38 @@ public final class ActionBarListener {
      * 也就永遠不會有人翻。畫面上看得到、語料裡卻沒有，等於只做了一半。
      */
     private void collect(java.util.List<String> picks) {
-        if (picks.isEmpty() || picks.equals(lastPicks)
-                || !WynnChaYuan.config().collect()) {
+        if (picks.isEmpty() || !WynnChaYuan.config().collect()) {
+            settling = java.util.List.of();
+            return;
+        }
+        // ★ 等選項<b>停下來</b>再收。
+        //
+        // 太長的選項 Wynncraft 會做成跑馬燈，一格一格往左捲。先前這裡只擋
+        // 「跟上一次完全相同」，於是每一格都是新字串、每一格都收一條——
+        // 實機回報：四個選項的對話收出了 56 條，而且每一條都是切一半的視窗
+        //（「mber anything from before yo」「ber anything from before you」）。
+        //
+        // 跑馬燈永遠不會停，所以永遠不會被收——這是對的：那句話從來沒有
+        // 完整出現在畫面上，收進來的每一格都是殘句，翻了也對不上。
+        if (!picks.equals(settling)) {
+            settling = picks;
+            settlingSince = System.currentTimeMillis();
+            return;
+        }
+        if (System.currentTimeMillis() - settlingSince < SETTLE_MS
+                || picks.equals(lastPicks)) {
             return;
         }
         lastPicks = picks;
         for (String pick : picks) {
             if (com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(pick)) {
                 WynnChaYuan.store().noteEvent("dialogue.blocked.playerData");
+                continue;
+            }
+            // 第二道：漏網的殘句幾乎都是從字中間切開的。真正的選項是完整的
+            // 句子，一律大寫或符號開頭。
+            if (looksClipped(pick)) {
+                WynnChaYuan.store().noteEvent("dialogue.blocked.clipped");
                 continue;
             }
             com.wynntils.core.text.StyledText line =
@@ -99,6 +134,24 @@ public final class ActionBarListener {
                     "desc", "quest",
                     com.wynnchayuan.capture.CurrentQuest.tag("dialogue/choice", null));
         }
+    }
+
+    /**
+     * 這一句是不是被跑馬燈從<b>字中間</b>切開的殘句。
+     *
+     * <p>Wynncraft 的選項都是寫成句子的，一律大寫字母或符號開頭
+     *（{@code Just saying hello}、{@code Who are you?}）。捲動出來的視窗
+     * 則是從單字中間切開的（{@code mber anything from before yo}）。
+     *
+     * <p>這是<b>第二道</b>：主要靠 {@link #collect} 的穩定判斷擋住。這一道只
+     * 負責漏網的，所以寧可判準簡單也不要複雜到自己出錯。
+     */
+    static boolean looksClipped(String pick) {
+        if (pick == null || pick.isEmpty()) {
+            return false;
+        }
+        char first = pick.charAt(0);
+        return first >= 'a' && first <= 'z';
     }
 
     /**
