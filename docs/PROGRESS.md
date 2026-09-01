@@ -7,24 +7,25 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 98.0%（27,749 / 28,308）
+## `zh_tw` 繁體中文 — 98.0%（28,067 / 28,626）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 288 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `npc.json` | █████░░░░░ 49% | 512 / 1,039 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 99% | 866 / 875 | 選單與介面<br>Menus and interface text |
-| `quest.json` | ████████░░ 79% | 69 / 87 | 任務名稱與任務介面<br>Quest names and the quest interface |
+| `npc.json` | ██████░░░░ 55% | 655 / 1,182 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `gui.json` | ██████████ 99% | 967 / 976 | 選單與介面<br>Menus and interface text |
+| `quest.json` | ████████░░ 81% | 75 / 93 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ██████████ 100% | 1,250 / 1,251 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ██████████ 100% | 322 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `quest-dialogue.json` | ██████████ 100% | 22,067 / 22,067 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ██████████ 100% | 986 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `de_de` Deutsch — 0.0%（0 / 26,762）
+## `de_de` Deutsch — 0.0%（0 / 26,830）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -35,13 +36,14 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `quest-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 22,089 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `secret-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ░░░░░░░░░░ 0% | 0 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ░░░░░░░░░░ 0% | 0 / 156 | 書卷<br>Tomes |
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 0.0%（0 / 26,762）
+## `es_es` Español — 0.0%（0 / 26,830）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -52,13 +54,14 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `quest-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 22,089 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `secret-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ░░░░░░░░░░ 0% | 0 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ░░░░░░░░░░ 0% | 0 / 156 | 書卷<br>Tomes |
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `fr_fr` Français — 0.0%（0 / 26,762）
+## `fr_fr` Français — 0.0%（0 / 26,830）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -69,13 +72,14 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `quest-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 22,089 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `secret-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ░░░░░░░░░░ 0% | 0 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ░░░░░░░░░░ 0% | 0 / 156 | 書卷<br>Tomes |
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 0.0%（0 / 26,762）
+## `ja_jp` 日本語 — 0.0%（0 / 26,830）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -86,13 +90,14 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `quest-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 22,089 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `secret-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ░░░░░░░░░░ 0% | 0 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ░░░░░░░░░░ 0% | 0 / 156 | 書卷<br>Tomes |
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 0.0%（0 / 26,762）
+## `ko_kr` 한국어 — 0.0%（0 / 26,830）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -103,13 +108,14 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `quest-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 22,089 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `secret-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ░░░░░░░░░░ 0% | 0 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ░░░░░░░░░░ 0% | 0 / 156 | 書卷<br>Tomes |
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 0.0%（0 / 26,762）
+## `ru_ru` Русский — 0.0%（0 / 26,830）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -120,13 +126,14 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `quest-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 22,089 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `secret-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ░░░░░░░░░░ 0% | 0 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ░░░░░░░░░░ 0% | 0 / 156 | 書卷<br>Tomes |
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 0.0%（0 / 26,762）
+## `zh_cn` 简体中文 — 0.0%（0 / 26,830）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -137,6 +144,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `quest-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 22,089 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `secret-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ░░░░░░░░░░ 0% | 0 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ░░░░░░░░░░ 0% | 0 / 156 | 書卷<br>Tomes |
