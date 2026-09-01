@@ -77,7 +77,13 @@ public final class ThirdPartyLiteralsTest {
             check("副本名稱在清單上：" + raid, wynnmod.contains(raid));
         }
 
+        // RaidState 還解析兩句聊天。開場那句翻掉就認不出「這一場開始了」；
+        // 增益那句我們本來就不翻（帶隊友 ID，收集階段就被擋掉），列著是防手滑。
+        check("開場邀請那句在清單上", wynnmod.contains("would like to start"));
+        check("增益選擇那句在清單上", wynnmod.contains("has chosen the"));
+
         stats();
+        chat();
         report();
     }
 
@@ -126,6 +132,33 @@ public final class ThirdPartyLiteralsTest {
         // 討伐戰大廳的每日獎勵面板也不該被擋——那不是 WynnMod 在解的行。
         check("大廳的每日獎勵不受影響",
               !ThirdPartyLiterals.reserved("- Aspect Pulls: 3"));
+    }
+
+    /**
+     * {@code RaidState} 解析的兩句聊天。
+     *
+     * <p>「would like to start」是開場邀請，翻掉就認不出這一場開始了；
+     * 「has chosen the … buff!」是隊伍拿了哪些增益。
+     *
+     * <p>反方向一樣要測：這兩組都是短前綴，很容易誤傷別的句子。
+     */
+    private static void chat() {
+        ThirdPartyLiterals.forTestGroups(java.util.List.of(
+                java.util.List.of("would like to start"),
+                java.util.List.of("has chosen the", "buff!")));
+
+        check("擋得下開場邀請", ThirdPartyLiterals.reserved(
+                "Watari would like to start Nest of the Grootslangs!"));
+        check("擋得下增益選擇", ThirdPartyLiterals.reserved(
+                "Watari has chosen the Elder III buff!"));
+
+        // ★ 反方向。「has chosen」單獨出現在任務對話裡完全可能，所以那一組
+        //   一定要配上句尾的 buff! 才算數。
+        check("任務對話不受影響（沒有 buff!）",
+              !ThirdPartyLiterals.reserved(
+                      "The Council has chosen the path of silence."));
+        check("增益面板本身不受影響",
+              !ThirdPartyLiterals.reserved("Choose a buff or go to the exit"));
     }
 
     private static void check(String what, boolean ok) {

@@ -130,6 +130,7 @@ public final class ChatAlignTest {
         check("指定置中時行數不變", centred == null || rows(centred) == 3);
 
         columns();
+        panelSingles();
         report();
     }
 
@@ -189,6 +190,35 @@ public final class ChatAlignTest {
                 List.of(0, 107), List.of(0, 38), new int[] {101});
         check("單欄的行不動（實際 " + java.util.Arrays.toString(one) + "）",
               one.length == 1 && one[0] == 0);
+    }
+
+    /**
+     * 面板裡的單欄行也要照原文的中心擺。
+     *
+     * <h2>先前壞在哪</h2>
+     * 獵殺信標的面板裡混著兩欄的行（「白色信標｜黃色信標」）與單欄的行
+     * （「本次 Lootrun」「點擊此處重抽」）。兩欄的走逐欄置中、看起來是對的；
+     * 單欄的照抄原文左緣，而原文其實是<b>置中</b>的，中文短了就往左偏。
+     *
+     * <p>照理說 BlockLayout 會判斷置中，但它拿<b>整塊</b>最寬的一行當基準，而
+     * 聊天塊常常混進不相干的訊息——實機診斷檔裡，信標面板的行都是 200～290px，
+     * 卻跟一則 1439px 的歡迎訊息攢在同一塊，基準被拉走，單欄行全判成靠左。
+     *
+     * <p>這裡驗的是<b>算式</b>：原文的中心在哪，譯文的中心就該在哪。
+     */
+    private static void panelSingles() {
+        // 原文：縮排 105、內容 98 → 中心 154。譯文內容 54 → 縮排該是 154-27=127。
+        int origLead = 105;
+        int origBody = 98;
+        int madeBody = 54;
+        int want = origLead + (origBody - madeBody) / 2;
+        check("單欄行的中心要跟原文一樣（該縮排 " + want + "）", want == 127);
+
+        // 兩欄的行不走這條：它們逐欄置中，見 columnDrift。
+        int[] two = LineTranslator.columnDrift(
+                List.of(0, 90, 82), List.of(0, 40, 40), new int[] {34, 69});
+        check("兩欄的行仍然逐欄置中（實際 " + two[0] + "/" + two[1] + "）",
+              two[0] == 25 && two[1] == 46);
     }
 
     private static int rows(Component line) {
