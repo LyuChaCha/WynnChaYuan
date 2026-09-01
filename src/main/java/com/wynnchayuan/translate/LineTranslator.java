@@ -2251,7 +2251,7 @@ public final class LineTranslator {
         // 排版，把差額補進去等於把整行改成靠右對齊。
         int tail = madeSeg.get(spaces) - origSeg.get(spaces);
         if (!leftAligned && lastAdjusted >= 0 && tail != 0
-                && madeSeg.get(lastAdjusted) > 0) {
+                && labelledRun(made, lastAdjusted)) {
             adjust[lastAdjusted] -= tail;
         }
 
@@ -3176,6 +3176,46 @@ public final class LineTranslator {
             return false;
         }
         return SpaceOffset.isSpaceFont(style) || measured == SpaceOffset.decode(text);
+    }
+
+    /**
+     * 這個間隔前面有沒有<b>真正的標籤</b>——含字母或數字的文字。
+     *
+     * <h2>為什麼要問這個</h2>
+     * 右緣補償只在「標籤 + 靠右的數值」這種行才成立。角色資訊的詞條列長這樣：
+     *
+     * <pre>
+     *   – ✤ Strength: -70
+     *       ↑ 這個間隔前面只有破折號跟屬性圖示，沒有標籤
+     * </pre>
+     *
+     * 那不是欄位交界，是圖示與內文之間的排版。把數值縮水的差額補進去，等於
+     * <b>把標籤往右推</b>——而且每一行推的量不同（每個屬性名縮水的幅度不一樣），
+     * 於是整排參差不齊。實機回報的「角色資訊跑版」就是這個。
+     *
+     * <p>{@link #alignColumns}（逐片段那條路）早就有這一道（{@link #labelled}）；
+     * 我在 {@link #realign} 這邊誤用了<b>寬度</b>判斷——圖示的寬度也大於零，
+     * 所以條件永遠成立。
+     *
+     * <p>方塊字算字母，所以已經翻成中文的標籤照樣認得出來。
+     */
+    static boolean labelledRun(List<Run> runs, int gap) {
+        int seen = 0;
+        for (Run r : runs) {
+            if (r.space()) {
+                if (seen++ == gap) {
+                    return false;              // 走到這個間隔了，前面沒有標籤
+                }
+                continue;
+            }
+            String text = r.text();
+            for (int i = 0; text != null && i < text.length(); i++) {
+                if (Character.isLetterOrDigit(text.charAt(i))) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /**
