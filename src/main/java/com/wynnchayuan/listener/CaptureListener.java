@@ -222,11 +222,10 @@ public final class CaptureListener {
                  }
              });
 
-        // 同時記下「完整名牌」的模板。翻譯名牌時查的是整段文字，
-        // 不是拆出來的 name——只記 name 的話字典永遠對不上實際查詢的鍵。
+        // 同時記下「完整名牌」的模板，但<b>砍掉尾巴的狀態列</b>——見 trimStatusLines。
         StyledText full = event.getText();
         if (full != null && !GlyphSplitter.isGlyphOnly(full)) {
-            String template = GlyphSplitter.toTemplate(full);
+            String template = trimStatusLines(GlyphSplitter.toTemplate(full));
             // 名牌也要過濾玩家資料。玩家攤位的名牌整塊都是玩家內容——
             // 名稱是 ID，下面是他自己打的招牌字。先前只有聊天走這道濾網，
             // 於是收到的 captured.json 裡混了一堆別人的攤位。
@@ -249,6 +248,49 @@ public final class CaptureListener {
         }
 
         translateNametag(event);
+    }
+
+    /**
+     * 砍掉名牌尾巴那幾行「沒有一個字」的狀態列。
+     *
+     * <h2>為什麼非砍不可</h2>
+     * 怪物名牌的下半是血條與狀態圖示，長這樣：
+     * <pre>
+     * Jagaubis {#}{#}
+     * {#}
+     * {#} {#} {~} ❁ {#}s ⬣ {~}s
+     * </pre>
+     * 那一行會隨著身上掛了哪些增益／減益、各自剩幾秒而<b>每一種組合都不一樣</b>。
+     * 整塊當成一個鍵記下來，同一隻怪就會被拆成幾十條：實機打一輪突襲，
+     * {@code Grootslang Whelp} 一隻就收了 <b>95 條</b>，1,018 條多行名牌其實只有
+     * 173 個不同的名字。譯者打開檔案看到的是一片幾乎一樣的東西，
+     * 而真正缺的字串被埋在裡面。
+     *
+     * <h2>為什麼可以砍</h2>
+     * 名牌的翻譯早就有<b>逐行</b>的退路（見 {@code LineTranslator#labelByLine}）：
+     * 只翻得到第一行也照樣貼得回去。所以留著整塊當鍵已經沒有必要——那是
+     * 逐行退路還不存在時的寫法。
+     *
+     * <h2>怎麼分辨「狀態列」與「真的第二行」</h2>
+     * 看那一行有沒有<b>成字</b>的字母（{@link GlyphSplitter#hasWord}）。
+     * 狀態列只有圖示、數值，加上當單位的單個字母（{@code s} 是秒）；
+     * 而 {@code Teleporter / to dock}、{@code Binding Seal / {#} to activate}
+     * 這種真的有第二行的告示看板，第二行是有詞的。
+     *
+     * <p>只從<b>尾巴</b>往回砍：{@code {#}{#} / The Nameless Anomaly} 這種
+     * 第一行是圖示的，前面那行要留著。
+     */
+    static String trimStatusLines(String template) {
+        if (template == null || template.indexOf('\n') < 0) {
+            return template;
+        }
+        String[] lines = template.split("\n", -1);
+        int keep = lines.length;
+        while (keep > 1 && !GlyphSplitter.hasWord(lines[keep - 1])) {
+            keep--;
+        }
+        return keep == lines.length ? template
+                : String.join("\n", java.util.Arrays.copyOf(lines, keep));
     }
 
     /**
