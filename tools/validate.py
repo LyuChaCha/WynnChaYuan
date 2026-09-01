@@ -656,7 +656,7 @@ def check_misfiled(files: list[Path]) -> list[Problem]:
     """
     owned: dict[str, str] = {}
     for file in files:
-        if file.parent.name != "quest":
+        if file.parent.name not in ("quest", "secret"):
             continue
         try:
             data = json.loads(file.read_text(encoding="utf-8"))
@@ -693,8 +693,8 @@ def check_index(base: Path) -> list[Problem]:
     validate.py 也說沒問題，遊戲裡就是沒有那些譯文。加新檔案的人幾乎不會
     想到要去改索引，而症狀（「我翻的東西沒出現」）指不到原因。
 
-    quest/ 底下的不算：那是<b>來源</b>，由 tools/quest-bundle.py 併成
-    quest-dialogue.json，本來就不該列進索引。
+    quest/ 與 secret/ 底下的不算：那是<b>來源</b>，由 tools/quest-bundle.py
+    併成 quest-dialogue.json 與 secret-dialogue.json，本來就不該列進索引。
 
     反過來——索引列了、磁碟上卻沒有——也要報：那會讓啟動時多一次抓不到的
     連線，而且通常表示有人刪檔案時忘了改索引。
@@ -710,7 +710,7 @@ def check_index(base: Path) -> list[Problem]:
     on_disk = set()
     for f in sorted(base.rglob("*.json")):
         rel = f.relative_to(base).as_posix()
-        if f.name.startswith("_") or rel.startswith("quest/"):
+        if f.name.startswith("_") or rel.startswith(("quest/", "secret/")):
             continue
         on_disk.add(rel)
     for rel in sorted(on_disk - set(listed)):
@@ -768,6 +768,7 @@ def stray_flat_files() -> list[Path]:
     """
     stray = sorted(LANG_ROOT.glob("*.json"))
     stray += sorted(LANG_ROOT.glob("quest/*.json"))
+    stray += sorted(LANG_ROOT.glob("secret/*.json"))
     stray += sorted(LANG_ROOT.glob("ability/*.json"))
     return [f for f in stray if not f.name.startswith("_")]
 
@@ -789,6 +790,8 @@ def collect(base: Path) -> list[Path]:
     files = sorted(f for f in base.glob("*.json") if not f.name.startswith("_"))
     # 任務對話一個任務一個檔，放在子資料夾裡
     files += sorted(base.glob("quest/*.json"))
+    # 祕密發現的故事。不是任務，但走同一條對話路徑，所以同樣一個故事一個檔。
+    files += sorted(base.glob("secret/*.json"))
     # 技能樹也是一職業一個檔。先前<b>整個沒被檢查</b>——而它正好是改動最頻繁
     # 的一批。實測撈出兩條 {#} 數量不符的，那種條目在遊戲裡是<b>整條不顯示</b>，
     # 畫面上跟「還沒翻」長得一模一樣，沒有人會發現。

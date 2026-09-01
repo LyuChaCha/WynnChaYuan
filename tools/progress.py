@@ -64,11 +64,12 @@ def files() -> list[Path]:
 
     技能樹依職業拆成 `ability/mage.json` 那樣之後，只掃頂層就會<b>整片漏掉</b>——
     進度表看起來憑空少了一千多條，而漏掉的偏偏是正在動工的那一塊。
-    任務對話（`quest/`）也在子資料夾裡，但它有自己的合併檔，兩邊都算會重複，
-    所以照舊排除。
+    任務對話（`quest/`）與祕密發現（`secret/`）也在子資料夾裡，但它們各自有
+    合併檔，兩邊都算會重複，所以照舊排除。
     """
     found = [p for p in sorted(TRANSLATIONS.rglob("*.json"))
-             if not p.name.startswith("_") and p.parent.name != "quest"]
+             if not p.name.startswith("_")
+             and p.parent.name not in ("quest", "secret")]
     return sorted(found, key=lambda p: PRIORITY.get(p.stem, 99))
 
 

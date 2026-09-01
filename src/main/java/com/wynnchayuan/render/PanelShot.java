@@ -274,6 +274,20 @@ public final class PanelShot {
         log("listen：已掛上畫面鍵盤事件");
     }
 
+    /**
+     * <h2>沒有框可以裁的時候，改拍整個畫面</h2>
+     * 先前這裡是<b>什麼都不做</b>，只回一句「現在沒有翻譯面板可以拍」。
+     * 而「有框」這件事只有<b>物品 tooltip</b> 成立——面板模式是自己畫的，
+     * 就地取代模式靠 {@code TooltipPanel#noteShot} 回推。
+     *
+     * <p>對話框、名牌、行動列這些走就地取代的東西<b>根本沒有框</b>：
+     * 譯文是寫回原本的元件、由遊戲自己畫的，模組沒有任何座標可以記。
+     * 於是玩家想拍一張對話跑版的畫面回報，按 F9 只會得到一句拒絕——
+     * 而那正是最需要截圖的時候。
+     *
+     * <p>拍整個畫面雖然不如裁好的漂亮，但<b>一定拍得到</b>。
+     * 要精確裁切的場合（物品 tooltip）本來就會走上面那條路。
+     */
     public static void tick() {
         if (!pending) {
             return;
@@ -282,13 +296,12 @@ public final class PanelShot {
         if (ready()) {
             log("tick：面板還在（" + lastW + "x" + lastH + "），開始拍");
             capture();
-        } else {
-            log("tick：ready() 是 false（w=" + lastW + " h=" + lastH
-                    + " 距上次繪製=" + (System.currentTimeMillis() - lastFrame) + "ms）");
-            tell(Component.literal(
-                    "現在沒有翻譯面板可以拍——把滑鼠移到有譯文的物品上再按一次。")
-                    .withStyle(ChatFormatting.GRAY));
+            return;
         }
+        log("tick：沒有可裁的框（w=" + lastW + " h=" + lastH
+                + " 距上次繪製=" + (System.currentTimeMillis() - lastFrame)
+                + "ms），改拍整個畫面");
+        captureScreen();
     }
 
     /**
@@ -342,11 +355,33 @@ public final class PanelShot {
         // GUI 座標與實際像素差一個縮放倍率。用整數倍率會在 125% 這種
         // 設定下差幾個像素，邊框就被切掉一條。
         double scale = mc.getWindow().getGuiScale();
-        int px = (int) Math.floor(lastX * scale);
-        int py = (int) Math.floor(lastY * scale);
-        int pw = (int) Math.ceil(lastW * scale);
-        int ph = (int) Math.ceil(lastH * scale);
-        String name = safe(lastName);
+        shoot(mc, (int) Math.floor(lastX * scale), (int) Math.floor(lastY * scale),
+              (int) Math.ceil(lastW * scale), (int) Math.ceil(lastH * scale),
+              safe(lastName));
+    }
+
+    /**
+     * 整個畫面。沒有框可以裁時的退路，見 {@link #tick}。
+     *
+     * <p>對話框與名牌走的是就地取代——譯文寫回原本的元件、由遊戲自己畫，
+     * 模組拿不到任何座標。那些畫面只能整張拍。
+     */
+    public static void captureScreen() {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc == null || mc.getWindow() == null) {
+            return;
+        }
+        shoot(mc, 0, 0, mc.getWindow().getWidth(), mc.getWindow().getHeight(),
+              "screen");
+    }
+
+    /**
+     * 抓畫面、裁下指定的像素範圍，然後照模式決定要存檔還是先給玩家看。
+     *
+     * <p>座標是<b>實際像素</b>，不是 GUI 座標——呼叫端自己乘好縮放倍率。
+     */
+    private static void shoot(Minecraft mc, int px, int py, int pw, int ph,
+                              String name) {
         boolean auto = WynnChaYuan.config().shotMode()
                 == com.wynnchayuan.CollectorConfig.ShotMode.AUTO;
 
