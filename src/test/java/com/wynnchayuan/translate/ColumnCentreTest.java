@@ -49,6 +49,7 @@ public final class ColumnCentreTest {
         huggingPunctuation();
         sectionCodes();
         gluedGaps();
+        rightEdgeGuard();
 
         System.out.println(failures == 0
                 ? "ColumnCentreTest 全部通過"
@@ -370,6 +371,61 @@ public final class ColumnCentreTest {
         Files.write(dir.resolve(name), body.getBytes(StandardCharsets.UTF_8));
     }
 
+    /**
+     * 右緣補償只能加在<b>標籤後面</b>的那個間隔上。
+     *
+     * <h2>先前壞在哪</h2>
+     * 角色資訊的詞條列長這樣：
+     *
+     * <pre>
+     *   – ✤ Strength: -70
+     *       ↑ 這個間隔前面只有破折號跟屬性圖示
+     * </pre>
+     *
+     * <p>那不是欄位交界，是圖示與內文之間的排版。realign 原本用<b>寬度</b>當條件
+     * （圖示的寬度也大於零，所以永遠成立），把數值縮水的差額補了進去——等於把
+     * 標籤往右推，而且每一行推的量不同（屬性名縮水的幅度不一樣），整排就參差不齊。
+     *
+     * <p>逐片段那條路早就有這一道（{@code labelled}），realign 這邊漏抄了。
+     */
+    private static void rightEdgeGuard() {
+        Style s = Style.EMPTY;
+        LineTranslator.Run space =
+                new LineTranslator.Run(true, 20, s, SpaceOffset.encode(20));
+
+        // 詞條列：間隔前面只有破折號與圖示，沒有標籤
+        List<LineTranslator.Run> stat = List.of(
+                new LineTranslator.Run(false, 0, s, "–"),
+                space,
+                new LineTranslator.Run(false, 0, s, "✤"),
+                space,
+                new LineTranslator.Run(false, 0, s, "力量: -70"));
+        check("圖示後面那個間隔不算標籤欄（不補右緣）",
+              !LineTranslator.labelledRun(stat, 1));
+        check("破折號後面那個也不算", !LineTranslator.labelledRun(stat, 0));
+
+        // 需求列：間隔前面是真正的標籤
+        List<LineTranslator.Run> req = List.of(
+                new LineTranslator.Run(false, 0, s, "✔"),
+                new LineTranslator.Run(false, 0, s, " 職業類型"),
+                space,
+                new LineTranslator.Run(false, 0, s, "法師/闇導士"));
+        check("標籤後面那個間隔要補右緣", LineTranslator.labelledRun(req, 0));
+
+        // 方塊字算字母——已經翻成中文的標籤照樣認得出來
+        List<LineTranslator.Run> zh = List.of(
+                new LineTranslator.Run(false, 0, s, "生命回復"),
+                space,
+                new LineTranslator.Run(false, 0, s, "+13%"));
+        check("中文標籤也認得出來", LineTranslator.labelledRun(zh, 0));
+
+        // 數字也算標籤
+        List<LineTranslator.Run> num = List.of(
+                new LineTranslator.Run(false, 0, s, "125"),
+                space,
+                new LineTranslator.Run(false, 0, s, "126"));
+        check("數字也算", LineTranslator.labelledRun(num, 0));
+    }
     private static void check(String what, boolean ok) {
         System.out.println((ok ? "  OK  " : "  失敗 ") + what);
         if (!ok) {
