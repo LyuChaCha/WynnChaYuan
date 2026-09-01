@@ -347,10 +347,21 @@ def merge_and_write(domain: str, collector: Collector, lang: str) -> tuple[int, 
         except (json.JSONDecodeError, OSError) as exc:
             print(f"  ! 既有檔案讀取失敗，將重建: {exc}", file=sys.stderr)
 
+    # 譯文照 <b>src</b> 認回來，不照鍵。
+    #
+    # 先前是照鍵（existing.get(k)）。鍵是內容的雜湊，看起來很穩，但那表示
+    # <b>鍵的規則一旦改動，所有譯文就全部認不回來</b>——七千多條瞬間變成
+    # 「沒翻過」，而且舊條目會以 stale 的身分留下來，變成一份重複。
+    # 換句話說，鍵的長相被鎖死了，連「把亂碼換成看得懂的編號」都做不到。
+    #
+    # 照 src 認就沒有這個限制：src 才是這一條到底是哪一句話的依據，
+    # 也正是查表時真正用的東西。
+    by_src = {e.get("src"): e for e in existing.values() if e.get("dst")}
+
     merged: dict[str, dict] = {}
     kept = added = 0
     for k, entry in collector.entries.items():
-        prev = existing.get(k)
+        prev = by_src.pop(entry.get("src"), None)
         if prev and prev.get("dst"):
             entry["dst"] = prev["dst"]
             kept += 1
@@ -360,19 +371,27 @@ def merge_and_write(domain: str, collector: Collector, lang: str) -> tuple[int, 
 
     # 原始資料已移除、但譯者翻過的字串：保留並標記，不要直接丟掉
     stale = 0
-    for k, prev in existing.items():
-        if k not in merged and prev.get("dst"):
-            prev["stale"] = True
-            merged[k] = prev
-            stale += 1
+    for prev in by_src.values():
+        prev["stale"] = True
+        merged[key_of(prev.get("src", ""))] = prev
+        stale += 1
 
     # 長句排前面，方便譯者依「長句優先」的順序作業；
     # 這個順序也正是 matcher 該有的 priority 順序（長字串先替換才不會被短詞切碎）
     order = {"block": 0, "sentence": 1, "term": 2}
-    ordered = dict(sorted(
+    rows = [e for _, e in sorted(
         merged.items(),
         key=lambda kv: (order.get(kv[1].get("kind"), 3), -len(kv[1]["src"]), kv[1]["src"])
-    ))
+    )]
+    # 鍵用「領域 + 第幾條」，不用雜湊。
+    #
+    # 雜湊對程式夠用，對翻譯的人是一串亂碼：打開檔案看不出這是第幾條、
+    # 也看不出屬於哪一批。編號本來就是給人看的識別，查表走的是 src。
+    #
+    # 排序完才編號，所以號碼跟檔案裡的先後一致。反過來說，將來排序規則改了，
+    # 號碼會整批重排——那沒關係，譯文是照 src 認回來的（見上面）。
+    stem = domain.replace("/", "-")
+    ordered = {f"{stem}#{i:04d}": e for i, e in enumerate(rows)}
 
     payload = {
         "_meta": {
