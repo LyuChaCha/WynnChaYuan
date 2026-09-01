@@ -201,7 +201,19 @@ public final class CaptureStore {
                 .forEach(e -> events.addProperty(e.getKey(), e.getValue().get()));
         meta.add("events", events);
         root.add("_meta", meta);
-        root.add("entries", GSON.toJsonTree(entries));
+        // ★ 照收集順序寫，不是照雜湊順序。
+        //
+        // entries 是雜湊表，直接丟給 Gson 出來的順序是<b>亂的</b>——同一段 NPC
+        // 對話被拆散在整個檔案裡，接手的人得先自己拼回先後才看得懂在講什麼。
+        // 而缺的語料補進語料檔時，順序錯了就會突兀地插在中間。
+        //
+        // seq 本來就記了，只是沒有拿來排。
+        JsonObject rows = new JsonObject();
+        entries.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(
+                        java.util.Comparator.comparingInt(c -> c.seq)))
+                .forEach(e -> rows.add(e.getKey(), GSON.toJsonTree(e.getValue())));
+        root.add("entries", rows);
 
         try {
             Files.createDirectories(file.getParent());
