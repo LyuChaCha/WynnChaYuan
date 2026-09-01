@@ -26,9 +26,20 @@ public final class CombatTextTest {
         check("純傷害數字 -1,234", CombatText.isIndicator("-1,234"));
         check("治療 +560", CombatText.isIndicator("+560"));
         check("百分比 98%", CombatText.isIndicator("98%"));
+        // 大傷害會被縮寫成 12.3k。那個 k 先前讓「有字母就是文字」這條規則
+        // 失手，於是每一發大傷害都被當成名牌收進語料。
+        check("縮寫傷害 12.3k", CombatText.isIndicator("12.3k"));
+        check("一次跳好幾發 12.3k 4.5k", CombatText.isIndicator("12.3k 4.5k"));
+        check("秒數 3s", CombatText.isIndicator("3s"));
+        check("縮寫治療 +1.2m", CombatText.isIndicator("+1.2m"));
 
         // --- 不能誤殺 ---------------------------------------------------
         check("NPC 名稱不受影響", !CombatText.isIndicator("Blacksmith"));
+        // 單位只認「緊貼數字、而且後面不再接字母」的那一個，所以帶數量的
+        // 名字仍然收得到——3x 的 x 是單位，Bandit 的 B 不是。
+        check("帶數量的名字不受影響", !CombatText.isIndicator("3x Bandit"));
+        check("數字接單字不受影響", !CombatText.isIndicator("2 Guards"));
+        check("縮寫後面還接字母的不受影響", !CombatText.isIndicator("12kg"));
         check("含有戰鬥字眼的名稱不受影響（不用包含比對）",
                 !CombatText.isIndicator("Blocked Passage"));
         check("帶等級的名牌不受影響", !CombatText.isIndicator("Ragni Guard LV 10"));
