@@ -685,6 +685,77 @@ def check_misfiled(files: list[Path]) -> list[Problem]:
     return out
 
 
+def check_index(base: Path) -> list[Problem]:
+    """磁碟上有、_index.json 卻沒列的譯文檔。
+
+    模組是<b>照 _index.json 一個一個抓</b>譯文檔的（見 TranslationStore#loadAll）。
+    沒列進去的檔案不會被載入——而且<b>一聲不吭</b>：檔案在、內容對、
+    validate.py 也說沒問題，遊戲裡就是沒有那些譯文。加新檔案的人幾乎不會
+    想到要去改索引，而症狀（「我翻的東西沒出現」）指不到原因。
+
+    quest/ 底下的不算：那是<b>來源</b>，由 tools/quest-bundle.py 併成
+    quest-dialogue.json，本來就不該列進索引。
+
+    反過來——索引列了、磁碟上卻沒有——也要報：那會讓啟動時多一次抓不到的
+    連線，而且通常表示有人刪檔案時忘了改索引。
+    """
+    index = base / "_index.json"
+    if not index.is_file():
+        return []
+    try:
+        listed = json.loads(index.read_text(encoding="utf-8")).get("files", [])
+    except Exception:
+        return []                      # 格式問題由 check_file 負責
+    out: list[Problem] = []
+    on_disk = set()
+    for f in sorted(base.rglob("*.json")):
+        rel = f.relative_to(base).as_posix()
+        if f.name.startswith("_") or rel.startswith("quest/"):
+            continue
+        on_disk.add(rel)
+    for rel in sorted(on_disk - set(listed)):
+        out.append(Problem("error", "_index.json", rel,
+                           "這個檔在磁碟上，但索引沒列——模組不會載入它，"
+                           "而且不會有任何訊息。把檔名加進 files 就好"))
+    for rel in sorted(set(listed) - on_disk):
+        out.append(Problem("error", "_index.json", rel,
+                           "索引列了這個檔，但磁碟上沒有——啟動時會多一次"
+                           "抓不到的連線。刪檔案時要一起改索引"))
+    return out
+
+
+def check_meta_counts(files: list[Path]) -> list[Problem]:
+    """_meta 的 count / translated 跟實際內容對不上。
+
+    沒有程式在讀這兩個數字（進度表是 update-docs.py 自己數的），但打開檔案的人
+    會讀。實測 ability/warrior.json 寫「已翻 32」、實際 232——接手的人照著挑
+    檔案就會挑錯，把已經翻完的檔案又翻一次。
+
+    這是<b>警告</b>不是錯誤：數字不準不會讓遊戲出錯。
+    """
+    out: list[Problem] = []
+    for file in files:
+        try:
+            data = json.loads(file.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        meta = data.get("_meta")
+        if not isinstance(meta, dict) or "count" not in meta:
+            continue
+        rows = data.get("entries", data)
+        keys = [k for k in rows if not k.startswith("_")]
+        done = sum(1 for k in keys
+                   if str((rows[k].get("dst") if isinstance(rows[k], dict)
+                           else rows[k]) or "").strip())
+        if meta.get("count") != len(keys):
+            out.append(Problem("warn", file.name, "_meta.count",
+                               f"寫 {meta.get('count')}，實際 {len(keys)} 條"))
+        if "translated" in meta and meta["translated"] != done:
+            out.append(Problem("warn", file.name, "_meta.translated",
+                               f"寫 {meta['translated']}，實際 {done} 條"))
+    return out
+
+
 def stray_flat_files() -> list[Path]:
     """語言分層之前的舊路徑上還有沒有檔案。
 
@@ -735,9 +806,9 @@ def main(argv: list[str]) -> int:
         if missing:
             print("找不到：" + ", ".join(m.name for m in missing))
             return 2
-        groups = [(TRANSLATIONS.name, files)]
+        groups = [(TRANSLATIONS.name, files, None)]
     else:
-        groups = [(base.name, collect(base)) for base in languages()]
+        groups = [(base.name, collect(base), base) for base in languages()]
 
     errors = 0
     warnings = 0
@@ -754,7 +825,7 @@ def main(argv: list[str]) -> int:
               f"{f.relative_to(LANG_ROOT).as_posix()}。")
         errors += 1
 
-    for lang, group in groups:
+    for lang, group, base in groups:
         # 每一個檔案記著它屬於哪一種語言——長度門檻與對照表都要看語言，
         # 只留檔名的話下面就分不出「這是德文所以比較長」還是「這條翻壞了」。
         files.extend((lang, f) for f in group)
@@ -764,13 +835,25 @@ def main(argv: list[str]) -> int:
         # 「同一個原文兩種譯法」只在<b>同一種語言之內</b>才是問題
         dupes = (check_duplicates(group) + check_misfiled(group)
                  + check_substitutable_names(group)
-                 + check_gear_name_switch(group))
+                 + check_gear_name_switch(group)
+                 # 索引漏列的檔案根本不會被載入，而且不會有任何訊息——
+                 # 症狀是「我翻的東西沒出現」，指不到原因。指定單一檔案時
+                 # 不查：那是局部跑，整份索引本來就不在範圍內。
+                 + (check_index(base) if base is not None else []))
         if dupes:
             print()
             print("跨檔重複")
             for p in dupes:
                 print(p)
                 errors += 1
+
+        stale = check_meta_counts(group)
+        if stale:
+            print()
+            print("_meta 的數字過期")
+            for p in stale:
+                print(p)
+                warnings += 1
 
     for lang, file in files:
         problems = check_file(file, places, glossary, lang)
