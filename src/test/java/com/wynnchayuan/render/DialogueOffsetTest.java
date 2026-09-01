@@ -25,6 +25,15 @@ public final class DialogueOffsetTest {
                 DialogueRewriter.offsetOf(DialogueRewriter.offset(81)) == 81);
         check("0 也是合法的位移",
                 DialogueRewriter.offsetOf(DialogueRewriter.offset(0)) == 0);
+        // 位移字元只有 U+CF000-U+D1000 有定義，也就是 ±4096 像素。超出去的碼位
+        // 資源包裡沒有那個字，Minecraft 會畫成缺字的方框——而位移常常是一整串，
+        // 畫面上就是一長排方框。編碼這一端先前完全沒擋，只有解碼那端有。
+        check("超出上限就編不出來", DialogueRewriter.offset(4097) == null);
+        check("超出下限也編不出來", DialogueRewriter.offset(-4097) == null);
+        check("剛好在邊界上還是可以", DialogueRewriter.offset(4096) != null);
+        check("負的邊界也可以", DialogueRewriter.offset(-4096) != null);
+        check("編得出來的一定解得回去",
+                DialogueRewriter.offsetOf(DialogueRewriter.offset(4096)) == 4096);
 
         // 實機資料：前導 -116，尾隨 = -(-116) - 寬度
         check("35px 的文字 → 尾隨 +81", -(-116) - 35 == 81);
