@@ -2161,8 +2161,8 @@ public final class LineTranslator {
      */
     private static Component realign(StyledText original, Component rebuilt,
                                      boolean centered) {
-        List<Run> orig = runs(original.getComponent());
-        List<Run> made = runs(rebuilt);
+        List<Run> orig = splitGaps(runs(original.getComponent()));
+        List<Run> made = splitGaps(runs(rebuilt));
         // 多行的要一行一行重算——每一行有自己的置中縮排。見 #realignRows。
         StringBuilder log = null;
         if (rows(orig) > 1 || rows(made) > 1) {
@@ -3056,7 +3056,7 @@ public final class LineTranslator {
         return splitRows(runs).size();
     }
 
-    private record Run(boolean space, int px, Style style, String text) {}
+    record Run(boolean space, int px, Style style, String text) {}
 
     private static List<Run> runs(Component component) {
         List<Run> out = new ArrayList<>();
@@ -3115,6 +3115,65 @@ public final class LineTranslator {
             return false;
         }
         return SpaceOffset.isSpaceFont(style) || measured == SpaceOffset.decode(text);
+    }
+
+    /**
+     * 把「文字尾端黏著欄位間隔」的片段拆成兩段。
+     *
+     * <h2>畫面上是什麼樣子</h2>
+     * 物品的需求列在遊戲裡是一整段：
+     *
+     * <pre>
+     *   font=language/wynncraft  text=␠Class␠Type<U+CFFC4><U+D004C>
+     *   font=language/wynncraft  text=Mage/Dark␠Wizard
+     * </pre>
+     *
+     * 尾端那兩個字元是把右欄推到右緣用的<b>欄位間隔</b>，只是沒有獨立成一個片段。
+     *
+     * <p>{@link #realign} 的第一道關卡是「原文與譯文的間隔數量要一樣」，
+     * 而 {@link #isAdjustableSpace} 是對<b>整個片段</b>判斷的——
+     * {@code ␠Class␠Type󏿄󐁌} 整段不是純偏移，所以原文算出 0 個間隔；
+     * 重建之後偏移被拆成自己一段，譯文算出 1 個。數量對不上，整行原樣返回，
+     * <b>補償完全沒有跑</b>。
+     *
+     * <p>於是「職業類型」比 {@code Class Type} 窄了十幾像素，右欄就跟著往左跑；
+     * 而同一份 tooltip 裡走逐片段那條路的行有補償、走整行查表的沒有——
+     * 一份物品說明裡兩種對齊方式並存，實機回報的就是這個。
+     *
+     * <h2>為什麼拆了就安全</h2>
+     * 原文與譯文<b>用同一支函式</b>拆，數量自然還是對得上；拆出來的兩段文字與
+     * 樣式都沒變，{@link #apply} 重新組回去跟原本是同一件東西。
+     *
+     * <p>只認尾端，而且要求那一段<b>單獨拿去量的寬度剛好等於解碼出來的偏移值</b>
+     * （{@link #isAdjustableSpace}）。材質包若在同一段碼位畫了圖示，寬度對不上，
+     * 這裡就不會誤拆。整段都是偏移的不用拆——那本來就已經是一個間隔了。
+     */
+    private static List<Run> splitGaps(List<Run> runs) {
+        return splitGaps(runs, LineTranslator::isAdjustableSpace);
+    }
+
+    /**
+     * 見上。這一支多收一個「這段算不算間隔」的判斷，是為了讓拆法本身測得到——
+     * 判斷要量寬度，而量寬度需要真的字型，headless 測不了；但<b>拆或不拆</b>
+     * 才是出錯的那一步。
+     */
+    static List<Run> splitGaps(List<Run> runs,
+                               java.util.function.BiPredicate<Style, String> isGap) {
+        List<Run> out = new ArrayList<>(runs.size() + 2);
+        boolean split = false;
+        for (Run r : runs) {
+            String tail = r.space() ? "" : SpaceOffset.trailingOffsets(r.text());
+            if (tail.isEmpty() || tail.length() == r.text().length()
+                    || !isGap.test(r.style(), tail)) {
+                out.add(r);
+                continue;
+            }
+            String head = r.text().substring(0, r.text().length() - tail.length());
+            out.add(new Run(false, 0, r.style(), head));
+            out.add(new Run(true, SpaceOffset.decode(tail), r.style(), tail));
+            split = true;
+        }
+        return split ? out : runs;
     }
 
     private static int countSpaces(List<Run> runs) {

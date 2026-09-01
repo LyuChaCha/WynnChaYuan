@@ -48,6 +48,7 @@ public final class ColumnCentreTest {
         wrapKeepsAccentsWhole();
         huggingPunctuation();
         sectionCodes();
+        gluedGaps();
 
         System.out.println(failures == 0
                 ? "ColumnCentreTest 全部通過"
@@ -55,6 +56,68 @@ public final class ColumnCentreTest {
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 欄位間隔黏在標籤後面同一個片段裡時，要拆得出來。
+     *
+     * <h2>先前壞在哪</h2>
+     * 物品的需求列遊戲送過來是這樣的（{@code Class Type} 與間隔同一段）：
+     *
+     * <pre>
+     *   ␠Class␠Type<U+CFFC4><U+D004C>    ← 標籤 + 把右欄推到右緣的間隔
+     *   Mage/Dark␠Wizard                  ← 右欄
+     * </pre>
+     *
+     * {@code realign} 的第一道關卡是「原文與譯文的間隔數量要一樣」。整段不是純
+     * 偏移，所以原文算出 <b>0</b> 個間隔；重建之後偏移被拆成自己一段，譯文算出
+     * <b>1</b> 個。數量對不上，整行原樣返回，補償根本沒有跑——
+     * 「職業類型」比 {@code Class Type} 窄，右欄就往左跑了。
+     *
+     * <p>而同一份 tooltip 裡走逐片段那條路的行<b>有</b>補償，走整行查表的沒有，
+     * 於是一份物品說明裡兩種對齊方式並存。
+     *
+     * <h2>這裡釘住什麼</h2>
+     * 拆或不拆的<b>判斷</b>。寬度需要真的字型、headless 量不到，所以把「這段算不算
+     * 間隔」注入進去——出錯的那一步是拆法，不是量法。
+     */
+    private static void gluedGaps() {
+        Style s = Style.EMPTY;
+        // 測試用的判準：只看是不是整段都是偏移碼位，不量寬度。
+        java.util.function.BiPredicate<Style, String> isGap =
+                (style, text) -> SpaceOffset.isOffsetRun(text);
+        String gap = SpaceOffset.encode(60);
+
+        List<LineTranslator.Run> glued = List.of(
+                new LineTranslator.Run(false, 0, s, " Class Type" + gap),
+                new LineTranslator.Run(false, 0, s, "Mage/Dark Wizard"));
+        List<LineTranslator.Run> split = LineTranslator.splitGaps(glued, isGap);
+        check("黏在一起的間隔拆得出來（實際 " + split.size() + " 段）",
+              split.size() == 3);
+        check("拆出來的中間那段是間隔", split.size() == 3 && split.get(1).space());
+        check("標籤本身沒有被動到",
+              split.size() == 3 && " Class Type".equals(split.get(0).text()));
+        check("間隔的寬度解得對（實際 "
+                      + (split.size() == 3 ? split.get(1).px() : -1) + "）",
+              split.size() == 3 && split.get(1).px() == 60);
+
+        // ★ 反方向一：已經是獨立一段的間隔不用再拆。
+        List<LineTranslator.Run> already = List.of(
+                new LineTranslator.Run(false, 0, s, "Class Type"),
+                new LineTranslator.Run(true, 60, s, gap));
+        check("已經獨立的間隔不重複拆",
+              LineTranslator.splitGaps(already, isGap).size() == 2);
+
+        // ★ 反方向二：判準說不是間隔就不能拆。材質包會在同一段碼位畫圖示，
+        //   那種東西拆出來重新編碼會變成完全不同的字。
+        check("判準否決時不拆",
+              LineTranslator.splitGaps(glued, (style, text) -> false).size() == 2);
+
+        // ★ 反方向三：整段都是偏移的本來就是一個間隔，不該拆成「空字串 + 間隔」。
+        List<LineTranslator.Run> pure = List.of(
+                new LineTranslator.Run(false, 0, s, gap));
+        check("整段都是偏移時不拆",
+              LineTranslator.splitGaps(pure, isGap).size() == 1);
     }
 
     /** 一行拆成幾個「欄」。 */
