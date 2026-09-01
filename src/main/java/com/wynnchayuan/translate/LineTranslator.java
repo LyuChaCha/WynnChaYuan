@@ -1059,9 +1059,7 @@ public final class LineTranslator {
      */
     public static Component translate(StyledText line, TranslationStore store,
                                       boolean centered, boolean leftAligned) {
-        // translateWholeLine 走的是 realign，它本來就只保欄位的<b>起點</b>，
-        // 沒有「右緣也對回去」那一步，所以不受 leftAligned 影響。
-        Component whole = translateWholeLine(line, store, centered);
+        Component whole = translateWholeLine(line, store, centered, leftAligned);
         if (whole != null) {
             return unslant(whole);
         }
@@ -2056,7 +2054,7 @@ public final class LineTranslator {
 
     /** 整行查表。散文與對話用這條路，因為它們需要跨片段重排語序。 */
     private static Component translateWholeLine(StyledText line, TranslationStore store,
-                                                boolean centered) {
+                                                boolean centered, boolean leftAligned) {
         LineParts parts = LineParts.of(line);
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;                       // 純符號或純數值的行，沒東西可翻
@@ -2069,7 +2067,7 @@ public final class LineTranslator {
         if (rebuilt == null) {
             return null;
         }
-        Component result = realign(line, rebuilt, centered);
+        Component result = realign(line, rebuilt, centered, leftAligned);
         LineDebug.record(line, result);
         return result;
     }
@@ -2159,8 +2157,17 @@ public final class LineTranslator {
      *
      * <p>數量對不上就原樣返回。寧可維持現狀，也不要憑猜測動版面。
      */
+    /**
+     * 沒有「欄」可言的呼叫端用這個：對話、逐行名牌、聊天。右緣補償不適用，
+     * 傳 {@code leftAligned=true} 等於維持原本「只保欄位起點」的行為。
+     */
     private static Component realign(StyledText original, Component rebuilt,
                                      boolean centered) {
+        return realign(original, rebuilt, centered, true);
+    }
+
+    private static Component realign(StyledText original, Component rebuilt,
+                                     boolean centered, boolean leftAligned) {
         List<Run> orig = splitGaps(runs(original.getComponent()));
         List<Run> made = splitGaps(runs(rebuilt));
         // 多行的要一行一行重算——每一行有自己的置中縮排。見 #realignRows。
@@ -2218,19 +2225,47 @@ public final class LineTranslator {
             adjust[0] = delta / 2;             // 置中：補滿會把整行推到右邊
         }
         int drift = 0;
+        int lastAdjusted = -1;
         for (int k = leading ? 1 : 0; k < spaces; k++) {
             drift += madeSeg.get(k) - origSeg.get(k);
             // 兩側都有文字才是欄位交界；行尾的留白邊距不能動
             if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0) {
                 adjust[k] = -drift;
                 drift = 0;
+                lastAdjusted = k;
             }
         }
-        if (log != null) {
-            log.append("  整段：").append(describeRow(origSeg, madeSeg, adjust, leading))
-               .append(System.lineSeparator());
-            FlowedDebug.rows(original.getString(), log.toString());
+
+        // 最後一欄的<b>右緣</b>也要對回去。
+        //
+        // 上面那一輪只補「間隔之前」的寬度變化，所以數值的<b>起點</b>會落回原位
+        // ——但數值本身如果也翻譯了（{@code Mage/Dark Wizard} → 「法師/闇導士」），
+        // 它的<b>結尾</b>就短了一截，而 Wynncraft 是把數值靠右排的，右緣就對不齊。
+        //
+        // 這一步 {@link #alignColumns}（逐片段那條路）早就有了，整行查表這條路
+        // 一直沒有——同一份 tooltip 裡兩條路各走各的，於是同一個症狀反覆出現：
+        // 補償沒跑時數值往左，只補了標籤時數值又像被推到右邊。
+        //
+        // 條件跟 alignColumns 那邊一樣：只有第二欄靠右（{@code !leftAligned}）、
+        // 而且那個間隔<b>前面真的有標籤</b>時才做。前面沒有標籤的間隔是圖示之間的
+        // 排版，把差額補進去等於把整行改成靠右對齊。
+        int tail = madeSeg.get(spaces) - origSeg.get(spaces);
+        if (!leftAligned && lastAdjusted >= 0 && tail != 0
+                && madeSeg.get(lastAdjusted) > 0) {
+            adjust[lastAdjusted] -= tail;
         }
+
+        // 單行的也要記。先前只有多行的會寫診斷，而<b>欄位錯位一直是單行的問題</b>
+        // ——實機回報了三次「職業類型那一行跑掉」，每一次都沒有數字可看，
+        // 只能靠讀 line-debug 的片段反推。
+        if (log == null) {
+            log = new StringBuilder();
+        }
+        log.append("  整段：").append(describeRow(origSeg, madeSeg, adjust, leading))
+           .append("  右緣補正=").append(-tail)
+           .append(leftAligned ? "（靠左，不套用）" : "")
+           .append(System.lineSeparator());
+        FlowedDebug.rows(original.getString(), log.toString());
         return apply(made, adjust);
     }
 
@@ -3866,8 +3901,14 @@ public final class LineTranslator {
         // 同一份面板裡同一個符號兩種樣子，一眼就看得出來。
         //
         // 空白字型（純粹用來推像素的那種）不能留——拿它畫字會是一堆亂碼。
-        Style symbolStyle =
-                SpaceOffset.isSpaceFont(blockStyle) ? textStyle : blockStyle;
+        //
+        // 用<b>原文裡那個符號自己的樣式</b>，不是整段的主樣式。戰鬥資訊面板的
+        // 「❤ Health: 12,958/14,175」裡，愛心是紅的、數字是白的，而主樣式取的是
+        // 佔多數的那個——拿主樣式去畫愛心，畫出來就是白的。實機回報的正是這個。
+        Style symbolStyle = leadingSymbolStyle(allRuns);
+        if (symbolStyle == null) {
+            symbolStyle = SpaceOffset.isSpaceFont(blockStyle) ? textStyle : blockStyle;
+        }
         // 括號註解在原文裡是另一個顏色。它不參與底色統計（見 #isNote），
         // 所以要在這裡把顏色還回去，否則註解會變成正文的亮色。
         Style noteStyle = noteStyleOf(allRuns, blockStyle);
@@ -4098,6 +4139,27 @@ public final class LineTranslator {
      * 再長就不像單位了，寧可少黏。
      */
     private static final int MAX_UNIT = 3;
+
+    /**
+     * 原文開頭那個符號自己的樣式。
+     *
+     * <p>符號在原文裡通常自成一段（顏色與字型都跟正文不同），而整段的「主樣式」
+     * 取的是佔多數的那一種。拿主樣式去畫符號，顏色就跟原文對不上——戰鬥資訊面板的
+     * 愛心變成白色就是這樣來的。
+     *
+     * <p>只認<b>開頭</b>：符號幾乎都掛在標籤前面，而認得越少，把不該套的樣式
+     * 套上去的機會也越少。開頭不是符號就回傳 null，由呼叫端退回主樣式。
+     */
+    private static Style leadingSymbolStyle(List<LineParts.Piece> runs) {
+        for (LineParts.Piece run : runs) {
+            String text = run.text();
+            if (text == null || text.isEmpty()) {
+                continue;
+            }
+            return isPictograph(text.charAt(0)) ? run.style() : null;
+        }
+        return null;
+    }
 
     /** 單位用的字母：只認 ASCII 小寫。大寫與中文都不是單位。 */
     private static boolean isUnitLetter(char c) {
