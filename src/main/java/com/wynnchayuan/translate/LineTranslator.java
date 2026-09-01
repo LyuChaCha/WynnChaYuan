@@ -4674,6 +4674,32 @@ public final class LineTranslator {
      * <p>順便把樣式攤平成明確的值。{@code visit} 會把繼承來的樣式解出來，
      * 於是「沒設定」不再繼承到別人的父層——那正是斜體最容易漏進來的縫。
      */
+    /**
+     * 整塊拉正：不管這一行有沒有方塊字，斜體一律拿掉。
+     *
+     * <h2>為什麼要整塊做</h2>
+     * {@link #unslant} 只拉正<b>含方塊字的那一行</b>，理由見 UprightTest：
+     * 中文被 Minecraft 的斜體剪切會糊成一團。但這樣一來，同一份 tooltip 裡
+     * 翻好的行是正的、還沒翻的英文行還是斜的——實機看到的就是整份參差不齊。
+     *
+     * <p>MC 只要物品有自訂名稱就自動加斜體，Wynncraft 沒有關掉，所以幾乎每一份
+     * 物品說明都會遇到。翻譯團隊選的是整塊拉正：中文不糊，整份也一致；
+     * 代價是還沒翻的英文行跟原版遊戲不同（原版是斜的）。
+     */
+    public static Component unslantAll(Component line) {
+        if (line == null) {
+            return null;
+        }
+        MutableComponent out = Component.empty();
+        line.visit((style, text) -> {
+            if (!text.isEmpty()) {
+                out.append(Component.literal(text).withStyle(style.withItalic(false)));
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return out;
+    }
+
     static Component unslant(Component line) {
         if (line == null || !hasHan(line.getString())) {
             return line;

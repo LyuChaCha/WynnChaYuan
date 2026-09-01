@@ -69,6 +69,22 @@ public final class UprightTest {
             check("英文那半跟著一起拉正（同一行不能半斜半正）", !italicOf(both, "Ragni"));
         }
 
+        // ★ 整塊拉正：同一份 tooltip 裡還沒翻的<b>純英文行</b>也要一起拉正。
+        //
+        // 上面那幾條管的是「一行之內」；但實機看到的是<b>整份</b>參差不齊——
+        // 翻好的行正、還沒翻的行斜。MC 只要物品有自訂名稱就自動加斜體，
+        // 所以幾乎每一份物品說明都會遇到。翻譯團隊選的是整塊拉正。
+        Component english = Component.literal("Untradable").withStyle(title);
+        check("純英文行本身仍然是斜的（確認測試有意義）",
+              italicOf(english, "Untradable"));
+        Component flat = LineTranslator.unslantAll(english);
+        check("整塊拉正時純英文行也拉正", !italicOf(flat, "Untradable"));
+
+        Component han = Component.literal("無法交易").withStyle(title);
+        check("中文照樣拉正", !italicOf(LineTranslator.unslantAll(han), "無法交易"));
+        check("粗體不受影響——只丟斜體",
+              boldOf(LineTranslator.unslantAll(han), "無法交易"));
+
         System.out.println(failures == 0
                 ? "Upright: 全部通過" : "Upright: " + failures + " 項失敗");
         if (failures > 0) {
