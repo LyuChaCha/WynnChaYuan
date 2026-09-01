@@ -105,6 +105,49 @@ public final class PlayerNameplateTest {
         //
         // 清單寫死在這裡是刻意的：將來有人放寬規則、造成<b>新的</b>誤擋，
         // 這條就會紅，而那正是需要有人看一眼的時候。
+        // ★ 翻譯團隊跑一場討伐戰回傳的語料裡漏掉的那幾類。
+        //
+        // 「Watari has chosen the Elder III buff!」一場就收進 80 條——前面那個是
+        // 隊友的 ID。隊伍搜尋則是每一支隊伍兩條（名稱與隊長）。
+        check("擋得下增益選擇（帶隊友 ID）",
+              com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(
+                      "{#} Watari has chosen the Elder III buff!"));
+        check("擋得下隊伍名",
+              com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(
+                      "gobert_rl's Party"));
+        check("擋得下隊長",
+              com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(
+                      "Leader: TheTankZone__"));
+
+        // 討伐戰的死亡與治療訊息。句子是遊戲的模板，主詞永遠是隊友的 ID。
+        for (String death : new String[] {
+                "{#} Watari was purified by Orphion.",
+                "{#} King lost their color to The Parasite.",
+                "{#} Watari was drained of their life by The Parasite.",
+                "{#} KFA was crushed between the Wyrmling's jaws.",
+                "{#} Meow Meow's existence was redacted by The Nameless.",
+                "Watari had their existence effaced by The Nameless.",
+                "Watari passed away",
+                "King gave you [+{~} ❤]",
+                "IHateRaid has given you {~} resistance and {~} strength.",
+                "{#} HiSlIgHt_ has reconnected!",
+                "{#} Party Finder: Hey MorphCascade, over here! Join the queue"}) {
+            check("擋得下討伐戰死亡／治療訊息：" + death.replace("\n", "⏎"),
+                  com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(death));
+        }
+
+        // ★ 反方向：同樣帶所有格的<b>物品名</b>一個都不能誤擋。
+        //
+        // 只測「擋得下來」的話，把所有 X's Y 擋死也會全過——而語料裡那種形狀的
+        // 物品名多得是。
+        for (String item : new String[] {
+                "Famished's Gambit", "Harvester's Tome of Mysticism III",
+                "Major's Badge", "Heroine's Blessing: Devout",
+                "Orphion's Nexus of Light", "Bob's Tear"}) {
+            check("不誤擋物品名：" + item,
+                  !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(item));
+        }
+
         List<String> accepted = List.of("manage your island", "repair items");
         blocked.removeAll(accepted);
         check("人工翻過的語料沒有新的誤擋（實際 " + blocked + "）", blocked.isEmpty());
