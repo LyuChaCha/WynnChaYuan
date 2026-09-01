@@ -136,6 +136,28 @@ public final class PlayerNameplateTest {
                   com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(death));
         }
 
+        // 介面裡整格就是一個帳號名的情況（隊伍、好友、公會清單的玩家頭顱）。
+        // 片語比對抓不到這些，實機的 captured.json 就混進了六個。
+        for (String who : new String[] {
+                "{#}{#}PoorChaCha", "{#}RichaCha", "{#}ChangJenChief",
+                "{#}PeeYan Hunter", "YuChaYuan [YCY]", "- [{~}] YuanYoIn",
+                "heal_kitty"}) {
+            check("擋得下介面裡的帳號名：" + who,
+                  com.wynnchayuan.capture.PlayerDataFilter.looksAccountNamed(who));
+        }
+
+        // ★ 反方向：介面文字不能被這條規則掃到。判準比名牌那支嚴，
+        //   因為介面滿是被折出來的小寫續行，寬判準量過去會誤擋 62 條。
+        for (String ui : new String[] {
+                "to confirm", "offering better chances", "Reward Sacrifices",
+                "Active Boosts", "Unlock Rewards", "Emerald Block",
+                "You will be in permanent hunted mode (PvP on)",
+                // 地城鑰匙中間那幾個 À 是對齊字元，不是駝峰。
+                "UnderworldÀÀÀCrypt Key", "Broken DecrepitÀÀÀSewers Key"}) {
+            check("不誤擋介面文字：" + ui,
+                  !com.wynnchayuan.capture.PlayerDataFilter.looksAccountNamed(ui));
+        }
+
         // ★ 反方向：同樣帶所有格的<b>物品名</b>一個都不能誤擋。
         //
         // 只測「擋得下來」的話，把所有 X's Y 擋死也會全過——而語料裡那種形狀的
