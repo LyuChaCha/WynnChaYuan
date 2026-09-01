@@ -759,6 +759,52 @@ def check_font_coverage(files: list[Path], lang: str) -> list[Problem]:
     return out
 
 
+
+NUMBER_SLOT = re.compile(r"\{~(\d?)\}")
+
+
+def check_number_mixing(files: list[Path]) -> list[Problem]:
+    """同一條譯文裡混用 {~} 與 {~N}。
+
+    <p>兩者用的是<b>各自的計數器</b>（見 LineTranslator：帶編號的直接指名，
+    沒編號的走 {@code number++}），所以混在一起時沒編號的那個<b>不會</b>
+    跳過已經被指名的，而是從第一個重新算起。
+
+    <p>實際踩到的：
+
+    <pre>
+    原文  Return to Voer at [-{~}, {~}, -{~}] with [{~} Death Whistle Leaf].
+    譯文  帶著 [{~} …] 回到 [-{~1}, {~2}, -{~3}] 找 Voer。
+    </pre>
+
+    那個沒編號的 {~} 拿到的是<b>第一個</b>數值，也就是 X 座標——畫面上
+    「帶著 [-1234 片葉子]」，而真正的數量從頭到尾沒被用到。
+
+    <p>要嘛全部不編號、照原文順序寫，要嘛全部編號。報成警告是因為
+    只有一個 {~} 的時候混用不會出事。
+    """
+    out: list[Problem] = []
+    for file in files:
+        try:
+            data = json.loads(file.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        rows = data["entries"] if isinstance(data.get("entries"), dict) else data
+        for key, value in rows.items():
+            if key.startswith("_"):
+                continue
+            dst = value.get("dst") if isinstance(value, dict) else value
+            if not isinstance(dst, str) or "{~" not in dst:
+                continue
+            slots = NUMBER_SLOT.findall(dst)
+            if any(x for x in slots) and any(not x for x in slots):
+                out.append(Problem("warning", file.name, key,
+                                   "同一條裡混用了 {~} 與 {~N}——兩者各自算號，"
+                                   "沒編號的會從第一個數值重新算起。"
+                                   "要嘛全部編號，要嘛全部不編號"))
+    return out
+
+
 def check_index(base: Path) -> list[Problem]:
     """磁碟上有、_index.json 卻沒列的譯文檔。
 
@@ -923,6 +969,14 @@ def main(argv: list[str]) -> int:
             for p in dupes:
                 print(p)
                 errors += 1
+
+        mixing = check_number_mixing(group)
+        if mixing:
+            print()
+            print("數值佔位符混用編號")
+            for p in mixing:
+                print(p)
+                warnings += 1
 
         unrenderable = check_font_coverage(group, lang)
         if unrenderable:
