@@ -150,6 +150,9 @@ public final class TooltipPanel {
         // 第二欄靠左還是靠右，一行看不出來，得看整份 tooltip
         boolean leftAligned = LineTranslator.columnsAreLeftAligned(styled);
 
+        // 每一行有沒有換成中文。用來把「同一段翻一半」抓回來，見 evenOut。
+        boolean[] hit = new boolean[n];
+
         int i = 0;
         // 物品名稱那一行：還沒翻的裝備名一律保持原文。
         //
@@ -180,6 +183,9 @@ public final class TooltipPanel {
             if (block != null) {
                 out.addAll(block);
                 anyTranslated = true;
+                for (int k = i; k < i + used; k++) {
+                    hit[k] = true;
+                }
                 i += used;
                 continue;
             }
@@ -210,11 +216,28 @@ public final class TooltipPanel {
                                              leftAligned);
             if (translated != null) {
                 anyTranslated = true;
+                hit[i] = true;
                 out.add(translated);
             } else {
                 out.add(LineTranslator.untranslated(styled.get(i)));
             }
             i++;
+        }
+        // 同一段不能一半中文一半英文，見 evenOut。
+        List<String> plain = new ArrayList<>(n);
+        for (StyledText line : styled) {
+            plain.add(com.wynnchayuan.capture.GlyphSplitter
+                    .stripGlyphChars(line.getString()).strip());
+        }
+        if (evenOut(plain, hit)) {
+            anyTranslated = false;
+            for (int k = 0; k < n; k++) {
+                if (hit[k]) {
+                    anyTranslated = true;
+                } else {
+                    out.set(k, LineTranslator.untranslated(styled.get(k)));
+                }
+            }
         }
         // 一行都沒翻到就別畫了，不然只是把原文再灰色複製一遍
         if (!anyTranslated) {
@@ -224,6 +247,73 @@ public final class TooltipPanel {
         // 裡「翻好的正、沒翻的斜」參差不齊——見 LineTranslator#unslantAll。
         out.replaceAll(LineTranslator::unslantAll);
         return out;
+    }
+
+    /**
+     * 同一段話不能一半中文一半英文。
+     *
+     * <h2>為什麼會發生</h2>
+     * 說明文字是被 tooltip 的<b>寬度</b>折成好幾行的，而語料裡很多段落是
+     * 一行一條記下來的——那等於把譯文釘死在<b>翻譯者當時的斷行</b>上。
+     * 玩家的介面縮放不一樣、或句子裡的數字多一位數，斷點就跟著跑：
+     * 有幾行對得上、有幾行對不上，畫面上就成了中英夾雜的一段。
+     *
+     * <p>實測倉庫裡有 83 條這種「只有半句、而且沒有整段條目罩著」的譯文，
+     * 散在九個檔案裡。把它們併成整段是對的長期做法，但併錯了會產生
+     * <b>錯誤的譯文</b>——試過自動併，大約每五段就有一段分組是錯的，
+     * 那比中英夾雜更糟。所以先在算繪這一端擋住症狀：整段要嘛全中文，
+     * 要嘛全英文。
+     *
+     * <p>這跟模組既有的規則是同一條：「一句話裡插幾個方框，比整句留著英文
+     * 糟糕得多」。中英夾雜也是一樣的道理。
+     *
+     * <h2>怎麼認段落</h2>
+     * 看<b>畫面上的原文</b>，不是看語料——原文就是實際的斷行結果，最準：
+     * 上一行沒有收尾（結尾不是句讀），而這一行是小寫開頭，那兩行就是同一句。
+     * 欄位列（{@code Health +120}）、標題、圖示列都不會符合這個形狀。
+     *
+     * @param plain 每一行剝掉圖示之後的純文字
+     * @param hit   每一行有沒有換成中文；<b>會被就地改掉</b>
+     * @return 有沒有動到東西
+     */
+    static boolean evenOut(List<String> plain, boolean[] hit) {
+        boolean changed = false;
+        int i = 0;
+        while (i < hit.length) {
+            int end = i + 1;
+            while (end < hit.length && continues(plain.get(end - 1), plain.get(end))) {
+                end++;
+            }
+            if (end - i > 1) {
+                boolean some = false;
+                boolean all = true;
+                for (int k = i; k < end; k++) {
+                    some |= hit[k];
+                    all &= hit[k];
+                }
+                if (some && !all) {
+                    for (int k = i; k < end; k++) {
+                        hit[k] = false;
+                    }
+                    changed = true;
+                }
+            }
+            i = end;
+        }
+        return changed;
+    }
+
+    /** 下一行是不是<b>接續</b>上一行的同一句話。 */
+    private static boolean continues(String prev, String line) {
+        if (prev.isEmpty() || line.isEmpty()) {
+            return false;
+        }
+        char end = prev.charAt(prev.length() - 1);
+        if (end == '.' || end == '!' || end == '?' || end == ':' || end == ';') {
+            return false;
+        }
+        char start = line.charAt(0);
+        return start >= 'a' && start <= 'z';
     }
 
     /**
