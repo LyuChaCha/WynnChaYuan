@@ -2226,10 +2226,13 @@ public final class LineTranslator {
         }
         int drift = 0;
         int lastAdjusted = -1;
+        int[] gapPx = gapPixels(made);
         for (int k = leading ? 1 : 0; k < spaces; k++) {
             drift += madeSeg.get(k) - origSeg.get(k);
-            // 兩側都有文字才是欄位交界；行尾的留白邊距不能動
-            if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0) {
+            // 兩側都有文字才是欄位交界；行尾的留白邊距不能動。
+            // 圖示疊字用的負偏移也不能動，見 #overlayGap。
+            if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0
+                    && !overlayGap(made, k, gapPx[k])) {
                 adjust[k] = -drift;
                 drift = 0;
                 lastAdjusted = k;
@@ -2393,9 +2396,11 @@ public final class LineTranslator {
             adjust[0] = (sum(origSeg) - sum(madeSeg)) / 2;
         }
         int drift = 0;
+        int[] gapPx = gapPixels(made);
         for (int k = leading ? 1 : 0; k < spaces; k++) {
             drift += madeSeg.get(k) - origSeg.get(k);
-            if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0) {
+            if (madeSeg.get(k) > 0 && madeSeg.get(k + 1) > 0
+                    && !overlayGap(made, k, gapPx[k])) {
                 adjust[k] = -drift;
                 drift = 0;
             }
@@ -3199,6 +3204,74 @@ public final class LineTranslator {
      *
      * <p>方塊字算字母，所以已經翻成中文的標籤照樣認得出來。
      */
+    /**
+     * 這個間隔是不是<b>圖示疊字</b>，而不是欄位交界。
+     *
+     * <h2>畫面上是什麼樣子</h2>
+     * 玩家名牌右邊的等級膠囊是<b>疊出來</b>的：先畫一整顆膠囊底圖，再用一個
+     * 負偏移把游標拉回膠囊左端，然後把「LV 95」的圖示字畫在底圖上面。
+     *
+     * <pre>
+     *   font=banner/pill  text=<U+E060>…<U+E062><U+CFFE2>   ← 膠囊底圖 + 往回 30px
+     *   font=banner/pill  text=<U+E00B><U+E015> <U+E029><U+E025><U+D0002>   ← 疊在上面的「LV 95」
+     * </pre>
+     *
+     * <p>{@link #realign} 看到的卻是「兩段都有寬度的間隔」，也就是它認定的欄位
+     * 交界。「Kandon-Beda Recruit」翻成「Kandon-Beda 新兵」窄了 18px，補償就把
+     * 這個 -30 改成 -12——等級的字整個從膠囊上滑出去，畫面上變成膠囊跟數字
+     * 分開的兩塊。實機截圖回報的就是這個。
+     *
+     * <h2>怎麼分辨</h2>
+     * 兩個條件同時成立才算疊字：間隔<b>是負的</b>（把游標往回拉，才有東西可以
+     * 疊上去），而且它<b>後面那一段沒有實字</b>，只有造字區的圖示碼位。
+     *
+     * <p>欄位交界不會兩者兼具——真正的欄位間隔是把右欄往<b>後</b>推，而右欄
+     * 是要讀的文字（{@code Mage/Dark Wizard}、{@code +1 to +2}）。所以這個判斷
+     * 不會把該補的欄位擋掉。
+     */
+    static boolean overlayGap(List<Run> runs, int gap, int px) {
+        return px < 0 && !textAfterGap(runs, gap);
+    }
+
+    /** 第 {@code gap} 個間隔<b>後面</b>那一段有沒有實字。造字區的圖示不算。 */
+    static boolean textAfterGap(List<Run> runs, int gap) {
+        int seen = 0;
+        boolean after = false;
+        for (Run r : runs) {
+            if (r.space()) {
+                if (after) {
+                    return false;          // 走到下一個間隔了，這一段沒有實字
+                }
+                if (seen++ == gap) {
+                    after = true;
+                }
+                continue;
+            }
+            if (!after) {
+                continue;
+            }
+            String text = r.text();
+            for (int i = 0; text != null && i < text.length(); i++) {
+                if (Character.isLetterOrDigit(text.charAt(i))) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /** 每個間隔的偏移量，順序跟 {@link #countSpaces} 數出來的一樣。 */
+    private static int[] gapPixels(List<Run> runs) {
+        int[] out = new int[countSpaces(runs)];
+        int n = 0;
+        for (Run r : runs) {
+            if (r.space()) {
+                out[n++] = r.px();
+            }
+        }
+        return out;
+    }
+
     static boolean labelledRun(List<Run> runs, int gap) {
         int seen = 0;
         for (Run r : runs) {
