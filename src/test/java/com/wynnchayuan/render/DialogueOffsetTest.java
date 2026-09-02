@@ -68,6 +68,12 @@ public final class DialogueOffsetTest {
         check("沒有位移字就原字串回去",
                 Boxes.dropOffsets("啊！").equals("啊！"));
 
+        // 拆開之後的名牌：定位用的位移<b>自己成一段</b>，那一段裡就沒有圖示了。
+        // 守衛是對「一段」問的，於是 -30px 被當成排版偏移拿掉，徽章底圖跟數字
+        // 並排成兩塊——實機回報的「Kandon-Beda 市民 LV 95 LV 95」。
+        // 現在以<b>整行</b>為單位判斷，拆法就影響不到它。
+        badgeLine();
+
         // 普通文字不能被當成位移字元
         check("英文不是位移", DialogueRewriter.offsetOf("A") == null);
         check("中文不是位移", DialogueRewriter.offsetOf("廚") == null);
@@ -183,6 +189,66 @@ public final class DialogueOffsetTest {
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /** 見呼叫處。徽章的定位位移被拆成獨立片段之後也要留著。 */
+    private static void badgeLine() {
+        net.minecraft.network.chat.Style pill =
+                net.minecraft.network.chat.Style.EMPTY.withFont(
+                        new net.minecraft.network.chat.FontDescription.Resource(
+                                net.minecraft.resources.Identifier
+                                        .withDefaultNamespace("banner/pill")));
+        String bg = cp(0xE060) + cp(0xCFFFF) + cp(0xE062);
+        String pull = cp(0xCFFE2);
+        String lv = cp(0xE00B) + cp(0xE015) + cp(0xE029);
+
+        net.minecraft.network.chat.Component plate =
+                net.minecraft.network.chat.Component.empty()
+                        .append(net.minecraft.network.chat.Component.literal(
+                                "Kandon-Beda 市民 "))
+                        .append(net.minecraft.network.chat.Component.literal(bg)
+                                .setStyle(pill))
+                        .append(net.minecraft.network.chat.Component.literal(pull)
+                                .setStyle(pill))
+                        .append(net.minecraft.network.chat.Component.literal(lv)
+                                .setStyle(pill));
+        List<net.minecraft.network.chat.Component> plateLines = Boxes.toLines(plate);
+        check("名牌只有一行", plateLines.size() == 1);
+        check("拆成獨立片段的定位位移要留著",
+                plateLines.get(0).getString().contains(pull));
+        check("徽章底圖與數字都還在",
+                plateLines.get(0).getString().contains(bg)
+                        && plateLines.get(0).getString().contains(lv));
+
+        // 反例：對話那種「純文字加排版偏移」的行沒有圖示，位移照樣要拿掉，
+        // 不然小框用預設字型畫會變成豆腐方塊。
+        net.minecraft.network.chat.Component talk =
+                net.minecraft.network.chat.Component.literal("Agh!" + cp(0xD0063));
+        check("沒有圖示的行，位移還是照拿",
+                !Boxes.toLines(talk).get(0).getString().contains(cp(0xD0063)));
+
+        // 兩行各判各的：第一行有徽章要留，第二行沒有要拿。
+        // 第一行要有可讀的字——純圖示的行本來就不成一行（見 toLines 的 hasContent）。
+        net.minecraft.network.chat.Component both =
+                net.minecraft.network.chat.Component.empty()
+                        .append(net.minecraft.network.chat.Component.literal("市民 "))
+                        .append(net.minecraft.network.chat.Component.literal(bg)
+                                .setStyle(pill))
+                        .append(net.minecraft.network.chat.Component.literal(pull)
+                                .setStyle(pill))
+                        .append(net.minecraft.network.chat.Component.literal(lv)
+                                .setStyle(pill))
+                        .append(net.minecraft.network.chat.Component.literal(
+                                "\n" + "Agh!" + cp(0xD0063)));
+        List<net.minecraft.network.chat.Component> two = Boxes.toLines(both);
+        check("兩行分開判斷：徽章那行留著",
+                two.size() == 2 && two.get(0).getString().contains(pull));
+        check("兩行分開判斷：文字那行拿掉",
+                two.size() == 2 && !two.get(1).getString().contains(cp(0xD0063)));
+    }
+
+    private static String cp(int value) {
+        return new String(Character.toChars(value));
     }
 
     private static void check(String what, boolean ok) {

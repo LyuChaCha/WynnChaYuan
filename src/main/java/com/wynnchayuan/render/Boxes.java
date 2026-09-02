@@ -80,6 +80,9 @@ public final class Boxes {
         List<Component> lines = new ArrayList<>();
         MutableComponent current = Component.empty();
         boolean hasContent = false;   // 這一行有沒有「可讀」的字，純圖示不算
+        // 位移是不是拿來定位圖示的，要看<b>整行</b>。見 #glyphLines。
+        boolean[] glyphLine = glyphLines(texts, styles);
+        int line = 0;
 
         for (int i = 0; i < texts.size(); i++) {
             Style style = styles.get(i);
@@ -95,8 +98,9 @@ public final class Boxes {
                     }
                     current = Component.empty();
                     hasContent = false;
+                    line++;
                 }
-                String chunk = dropOffsets(chunks[c]);
+                String chunk = glyphLine[line] ? chunks[c] : dropOffsets(chunks[c]);
                 if (!chunk.isEmpty()) {
                     current.append(Component.literal(chunk).withStyle(style));
                     if (hasReadable(chunk)) {
@@ -135,6 +139,58 @@ public final class Boxes {
      * <p>所以規則是：<b>一段裡面有私用區圖示，就整段別動</b>。
      * 純位移（或位移加文字）那種才是排版用的，拿掉才對。
      */
+    /**
+     * 每一行裡有沒有私用區圖示。切行的方式跟 {@link #toLines} 完全一樣。
+     *
+     * <h2>為什麼要以行為單位問這件事</h2>
+     * {@link #dropOffsets} 的規則是「這一段裡有圖示就整段別動」——那是因為
+     * 等級徽章之類的東西是<b>圖示與位移交錯</b>拼出來的，位移是用來把數字疊回
+     * 底圖上的，拿掉徽章就散了。
+     *
+     * <p>但那個守衛是對<b>單一片段</b>問的，而 {@code LineTranslator#splitGaps}
+     * 為了算欄位補償，會把定位用的位移<b>拆成自己一個片段</b>：
+     *
+     * <pre>
+     *   拆之前  banner/pill  E060 … E062 CFFE2   ← 一段裡有圖示，守衛擋得住
+     *   拆之後  banner/pill  E060 … E062
+     *           banner/pill  CFFE2               ← 這一段只剩位移，守衛失效
+     * </pre>
+     *
+     * <p>那個 -30px 被當成排版偏移拿掉，徽章底圖與數字就並排成兩塊——實機
+     * 回報的「Kandon-Beda 市民 LV 95 LV 95」。1.99.40 修過同一個症狀
+     * （「馬 ⬛⬛ LV 1」），那次是條件太寬，這次是條件的<b>作用範圍</b>太窄。
+     *
+     * <p>以行為單位就不再受拆法影響：不管位移被拆到哪一段去，只要<b>這一行</b>
+     * 有圖示，整行的位移都保留。對話框那種「純文字加排版偏移」的行沒有圖示，
+     * 判斷跟以前一樣，照拿不誤。
+     */
+    private static boolean[] glyphLines(List<String> texts, List<Style> styles) {
+        List<Boolean> seen = new ArrayList<>();
+        boolean glyph = false;
+        for (int i = 0; i < texts.size(); i++) {
+            String text = texts.get(i);
+            if (text.isEmpty() || SpaceOffset.isSpaceFont(styles.get(i))) {
+                continue;
+            }
+            String[] chunks = text.split("\n", -1);
+            for (int c = 0; c < chunks.length; c++) {
+                if (c > 0) {
+                    seen.add(glyph);
+                    glyph = false;
+                }
+                if (chunks[c].codePoints().anyMatch(GlyphSplitter::isPrivateUse)) {
+                    glyph = true;
+                }
+            }
+        }
+        seen.add(glyph);
+        boolean[] out = new boolean[seen.size()];
+        for (int i = 0; i < out.length; i++) {
+            out[i] = seen.get(i);
+        }
+        return out;
+    }
+
     static String dropOffsets(String text) {
         if (text.codePoints().noneMatch(Boxes::isOffset)) {
             return text;                       // 絕大多數行沒有，不要白白重建字串
