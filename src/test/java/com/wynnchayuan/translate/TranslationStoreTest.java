@@ -148,6 +148,20 @@ public final class TranslationStoreTest {
             // 反面：名稱是別的字的一部分時不算
             check("夾在字中間的不算", store.findTerm("Bashful grin", 0) == null);
 
+            // 中文不用空格分詞，緊貼著寫是正常的中文。Java 認為漢字是字母，
+            // 於是「降低Bash的魔力消耗」裡的 Bash 兩邊都被當成同一個詞的一部分，
+            // 詞表整個不觸發——語料裡有 77 條長這樣，差別只在有沒有留空格。
+            TranslationStore.Term glued =
+                    store.findTerm("降低Bash的魔力消耗。", 0);
+            check("前面緊貼著漢字也找得到",
+                    glued != null && "重擊".equals(glued.translation()));
+            check("找到的範圍剛好是名稱",
+                    glued != null && glued.start() == 2 && glued.end() == 6);
+            TranslationStore.Term tail =
+                    store.findTerm("使用 Bash時", 0);
+            check("後面緊貼著漢字也找得到",
+                    tail != null && "重擊".equals(tail.translation()));
+
             // 縮排幾格是<b>排版</b>：取決於畫面寬度與同一組細項裡最長的那一行。
             // 語料（CDN）存的是 40 格，遊戲實際送出來的是 4 格或 42 格，字面上永遠
             // 不相等——`Knockback Immunity to Allies` 就是這樣一直維持英文的。
