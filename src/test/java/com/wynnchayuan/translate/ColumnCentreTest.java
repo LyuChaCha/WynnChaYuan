@@ -50,6 +50,7 @@ public final class ColumnCentreTest {
         sectionCodes();
         gluedGaps();
         rightEdgeGuard();
+        overlayPill();
 
         System.out.println(failures == 0
                 ? "ColumnCentreTest 全部通過"
@@ -426,6 +427,54 @@ public final class ColumnCentreTest {
                 new LineTranslator.Run(false, 0, s, "126"));
         check("數字也算", LineTranslator.labelledRun(num, 0));
     }
+    /**
+     * 等級膠囊是疊出來的，補償不能動它中間那個負偏移。
+     *
+     * <h2>畫面上是什麼樣子</h2>
+     * 玩家名牌右邊那顆「LV 95」不是一段文字，是兩層圖示疊起來的：先畫膠囊底圖，
+     * 再用一個負偏移把游標拉回底圖左端，然後把數字的圖示字畫上去。
+     *
+     * <p>realign 看到的是「兩段都有寬度的間隔」，於是把「Kandon-Beda Recruit」
+     * 翻成「Kandon-Beda 新兵」少掉的 18px 補了進去，-30 變成 -12——數字整個
+     * 從膠囊上滑出來，畫面上變成分開的兩塊。實機截圖回報的就是這個。
+     */
+    private static void overlayPill() {
+        Style s = Style.EMPTY;
+        String pill = String.valueOf(new char[] {0xE060, 0xE03B, 0xE062});
+        String level = String.valueOf(new char[] {0xE00B, 0xE015, 0xE029});
+
+        List<LineTranslator.Run> plate = List.of(
+                new LineTranslator.Run(false, 0, s, "Kandon-Beda 新兵 "),
+                new LineTranslator.Run(false, 0, s, pill),
+                new LineTranslator.Run(true, -30, s, SpaceOffset.encode(-30)),
+                new LineTranslator.Run(false, 0, s, level),
+                new LineTranslator.Run(true, 2, s, SpaceOffset.encode(2)));
+        check("膠囊後面只有圖示，不算實字",
+              !LineTranslator.textAfterGap(plate, 0));
+        check("往回拉去疊圖示的負偏移不能當欄位交界",
+              LineTranslator.overlayGap(plate, 0, -30));
+
+        // 真正的欄位交界：間隔把右欄往後推，右欄是要讀的文字
+        List<LineTranslator.Run> column = List.of(
+                new LineTranslator.Run(false, 0, s, " 職業類型"),
+                new LineTranslator.Run(true, 76, s, SpaceOffset.encode(76)),
+                new LineTranslator.Run(false, 0, s, "法師/闇導士"));
+        check("欄位交界後面有實字", LineTranslator.textAfterGap(column, 0));
+        check("欄位交界不會被當成疊字",
+              !LineTranslator.overlayGap(column, 0, 76));
+
+        // 負的間隔後面若是實字，那是排版不是疊字——素材 tooltip 就長這樣
+        List<LineTranslator.Run> pulled = List.of(
+                new LineTranslator.Run(false, 0, s, "防禦"),
+                new LineTranslator.Run(true, -12, s, SpaceOffset.encode(-12)),
+                new LineTranslator.Run(false, 0, s, "+1 to +2"));
+        check("負偏移後面有實字就不是疊字",
+              !LineTranslator.overlayGap(pulled, 0, -12));
+
+        // 中間那一段的判斷不能看到更後面去
+        check("只看緊接在後面那一段", !LineTranslator.textAfterGap(plate, 1));
+    }
+
     private static void check(String what, boolean ok) {
         System.out.println((ok ? "  OK  " : "  失敗 ") + what);
         if (!ok) {
