@@ -465,16 +465,37 @@ public final class TranslationStore {
     public record Term(int start, int end, String translation) {}
 
     private static boolean startsWord(String text, int at) {
-        return at == 0 || !Character.isLetterOrDigit(text.charAt(at - 1));
+        return at == 0 || !wordChar(text.charAt(at - 1));
     }
 
     private static int wordEnd(String text, int from) {
         int i = from;
-        while (i < text.length() && (Character.isLetterOrDigit(text.charAt(i))
+        while (i < text.length() && (wordChar(text.charAt(i))
                 || text.charAt(i) == '\'' || text.charAt(i) == '-')) {
             i++;
         }
         return i;
+    }
+
+    /**
+     * 這個字元算不算「同一個詞的一部分」。
+     *
+     * <h2>中日韓文字不算</h2>
+     * Java 認為漢字是字母，所以「{@code 降低Meteor的魔力消耗}」裡的
+     * {@code Meteor} 兩邊都被當成同一個詞的一部分：開頭那個 M 前面是「低」，
+     * {@link #startsWord} 判定它不是詞首；就算過得了那一關，{@link #wordEnd}
+     * 也會一路吃到「{@code Meteor的魔力消耗}」，跟詞表裡的 {@code Meteor}
+     * 對不上。
+     *
+     * <p>結果是<b>詞表整個不觸發</b>——技能名在 {@code ability/*.json} 明明
+     * 翻好了，敘述裡照樣顯示英文。實測語料裡有 77 條長這樣（薩滿 40、法師 26、
+     * 弓手 11），差別只在譯者有沒有在名字前面留一個空格。
+     *
+     * <p>中文本來就不用空格分詞，緊貼著寫是<b>正常的中文</b>，不該被當成同一個
+     * 詞。界線用 {@code 0x2E80}，跟 {@code LineTranslator#isLatin} 同一條。
+     */
+    private static boolean wordChar(char c) {
+        return c < 0x2E80 && Character.isLetterOrDigit(c);
     }
 
     /** 這個鍵跨了幾行，比目前記錄的多就更新。 */
