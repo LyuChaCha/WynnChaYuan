@@ -355,8 +355,11 @@ public final class FlowedDebug {
      * 調色盤那一欄的額度，跟其他欄分開算。
      *
      * <p>先前是 20，全被角色選單那一頁吃光——真正想看的聊天區塊排不進來。
+     * 放寬到 60 之後又踩到同一件事：登入時的公告、每日獎勵、坐騎提醒一口氣
+     * 把額度用完，等玩家進到討伐戰、想查一條招牌訊息的顏色，這一欄早就滿了。
+     * 調色盤一條只佔幾行，值不了那個省。
      */
-    private static final int PALETTE_LIMIT = 60;
+    private static final int PALETTE_LIMIT = 250;
 
     /**
      * 聊天訊息的逐行對齊，<b>額度跟名牌分開算</b>。
