@@ -717,7 +717,7 @@
   },
   "ability-shaman#0052": {
    "src": "Your Totem will siphon {~} of your health\nevery {~}s and transfer it into a Blood Pool {#}.",
-   "dst": "你的Totem會每 {~} 秒吸收你的 {~} 生命，並將其轉化為 血池 {#}。",
+   "dst": "你的Totem會每 {~2} 秒吸收你的 {~1} 生命，並將其轉化為 血池 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3231,15 +3231,15 @@
    "code": "SHAMAN-P9-R02-C07"
   },
   "ability-shaman#0236": {
-   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#}{#}to {~}.",
-   "dst": "使用技能或損失生命，將你的 大招 {#}{#} 充能至 {~}。",
+   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#} to {~}.",
+   "dst": "使用技能或損失生命，將你的 大招 {#} 充能至 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Monument to Gloom"
    ],
    "lines": 2,
-   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#}{#}to {~}.",
+   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#} to {~}.",
    "_raw": "Activate abilities or lose health to charge\nyour Ultimate Meter  to 100%.",
    "tree": "04/shaman/09/002/007",
    "ability": "Monument to Gloom",
@@ -3262,7 +3262,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "你的Totem將被駭人惡魔接管，每 {~} 秒使周圍的喚血侍者獲得 {~} 點 血池 {#}。",
+   "dst": "你的Totem將被駭人惡魔接管，每 {~2} 秒使周圍的喚血侍者獲得 {~1} 點 血池 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
