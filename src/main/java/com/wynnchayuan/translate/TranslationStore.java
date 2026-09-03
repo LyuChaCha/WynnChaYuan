@@ -283,6 +283,7 @@ public final class TranslationStore {
                 noteBlockSize(srcKey);
                 noteFlat(srcKey, dst.strip());
                 noteIndented(srcKey, dst.strip());
+                noteMarked(srcKey, dst.strip());
                 // 同一個任務的台詞另外建一份索引。全庫裡「Hey, {u}」撞到幾十句，
                 // 單一個任務裡通常只有一句。見 #matchPrefix(String, int, String)。
                 String quest = optString(e, "quest");
@@ -337,6 +338,7 @@ public final class TranslationStore {
                 noteBlockSize(key.strip());
                 noteFlat(key.strip(), v.getAsString().strip());
                 noteIndented(key.strip(), v.getAsString().strip());
+                noteMarked(key.strip(), v.getAsString().strip());
                 if (asTerms) {
                     noteTerm(key.strip(), v.getAsString().strip());
                 }
@@ -939,7 +941,98 @@ public final class TranslationStore {
                 }
             }
         }
+        if (hit == null) {
+            hit = lookupMarked(key);
+        }
         return hit;
+    }
+
+    /** 符合／不符合的那兩個記號。見 {@link #lookupMarked}。 */
+    private static final char MARK_YES = '✔';
+
+    private static final char MARK_NO = '✖';
+
+    /** 記號全部換成同一個之後的索引。見 {@link #lookupMarked}。 */
+    private final Map<String, String> marked = new ConcurrentHashMap<>();
+
+    private static boolean hasMark(String text) {
+        return text.indexOf(MARK_YES) >= 0 || text.indexOf(MARK_NO) >= 0;
+    }
+
+    private static String sameMarks(String text) {
+        return text.replace(MARK_YES, MARK_NO);
+    }
+
+    private void noteMarked(String src, String dst) {
+        if (hasMark(src) && countMarks(src) == countMarks(dst)) {
+            marked.putIfAbsent(sameMarks(src), dst);
+        }
+    }
+
+    private static int countMarks(String text) {
+        int n = 0;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c == MARK_YES || c == MARK_NO) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    /**
+     * {@code ✔} 與 {@code ✖} 只差<b>符合或不符合</b>，句子是同一句。
+     *
+     * <h2>為什麼要有這一層</h2>
+     * 採集點的名牌與裝備的需求列，每一行前面都掛一個記號：
+     *
+     * <pre>
+     *   Blossom              Blossom
+     *   ✖ Ⓒ Woodcutting…     ✔ Ⓒ Woodcutting…
+     *   ✖ Equipped Tool…     ✖ Equipped Tool…
+     * </pre>
+     *
+     * 兩者在語料裡是<b>兩筆</b>，而記號取決於玩家<b>當下的等級與手上的工具</b>——
+     * 那是狀態，不是內容。於是同一句話要翻兩次到四次，而實機上永遠有一半沒翻：
+     * 等級夠了的那些採集點、職業對得上的那些裝備需求，整行掉回英文
+     * （{@code ✖ Ability Points:} 與 {@code ✔ Class Req:} 每開一次背包就中一次）。
+     *
+     * <p>所以查表時把記號<b>全部換成同一個</b>再查，查到之後再依序把呼叫端
+     * 自己那幾個記號填回譯文——畫面上顯示的還是遊戲當下的狀態。
+     *
+     * <p>只在記號數量兩邊相同時才收（見 {@link #noteMarked}），不然無從對應。
+     * 實測全庫 144 條帶記號的鍵收斂成 74 組，<b>沒有任何一組</b>的譯文在
+     * 換掉記號之後不一致——也就是說這一層只會多命中，不會改變任何既有結果。
+     */
+    private String lookupMarked(String key) {
+        if (!hasMark(key)) {
+            return null;
+        }
+        String hit = marked.get(sameMarks(key));
+        if (hit == null || countMarks(hit) != countMarks(key)) {
+            return null;
+        }
+        StringBuilder out = new StringBuilder(hit);
+        int at = 0;
+        for (int i = 0; i < out.length(); i++) {
+            char c = out.charAt(i);
+            if (c == MARK_YES || c == MARK_NO) {
+                out.setCharAt(i, markAt(key, at++));
+            }
+        }
+        return out.toString();
+    }
+
+    /** 原文裡第 {@code n} 個記號。 */
+    private static char markAt(String text, int n) {
+        int seen = 0;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if ((c == MARK_YES || c == MARK_NO) && seen++ == n) {
+                return c;
+            }
+        }
+        return MARK_NO;
     }
 
     /**
@@ -960,6 +1053,9 @@ public final class TranslationStore {
         String key = template.strip();
         if (entries.containsKey(key) || lookupIndented(key) != null) {
             return true;
+        }
+        if (lookupMarked(key) != null) {
+            return true;                       // 換個記號就查得到，不是缺口
         }
         String other = respell(key);
         return !other.equals(key)

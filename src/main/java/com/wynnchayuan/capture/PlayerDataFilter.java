@@ -94,6 +94,9 @@ public final class PlayerDataFilter {
                     + "|was crushed b"          // beneath the Wyrmling / between the jaws
                     + "|had their existence effaced"
                     + "|has been overtaken"   // NOL：隊友被寄生體吞沒
+                    + "|has been crystallized"  // NOL：隊友被結晶封住
+                    + "|was minced to bits by"  // 地底之巢：被幼龍絞碎
+                    + "|began to glow and then faded"
                     + "|has reconnected!)"
                     + "|['’]s existence was redacted",
             Pattern.MULTILINE);
@@ -145,6 +148,27 @@ public final class PlayerDataFilter {
     private static final Pattern GUILD_TAG = Pattern.compile(
             "^\\s*-?\\s*[^\\[\\]\\n]*\\S[^\\[\\]\\n]*\\[[A-Za-z0-9]{2,4}]\\s*$",
             Pattern.MULTILINE);
+
+    /**
+     * 公會的領地全像投影與成員名牌上那一行 {@code < ... >}。
+     *
+     * <pre>
+     *   YuChaYuan            ← 公會名，別人的資料
+     *   &lt; Season {~} - Platinum &gt;
+     * </pre>
+     *
+     * <p>公會名本身沒有形狀可以認（沒有底線、沒有駝峰，跟一般英文詞一樣），
+     * {@code looksAccountNamed} 那條路擋不住；而 {@code GUILD_TAG} 要的是
+     * 方括號裡的縮寫，這種寫法也沒有。於是整塊穿了過去——實測一份
+     * captured.json 裡有三種（{@code < Radiant >}、{@code < Traders >}、
+     * {@code < Season {~} - Platinum >}），全部掛在同一個公會名下面。
+     *
+     * <p>擋掉的是<b>整塊名牌</b>，連那一行本來可翻的「賽季」一起。這是刻意的：
+     * 那一行永遠跟著公會名出現，收得到的話公會名也一定跟著進來。
+     * 量過整份語料，有譯文的三萬條裡<b>一條都不會</b>被擋到。
+     */
+    private static final Pattern GUILD_HOLOGRAM =
+            Pattern.compile("(?m)^\\s*<[^<>\\n]{1,40}>\\s*$");
 
     /**
      * 中日韓文字。
@@ -209,6 +233,7 @@ public final class PlayerDataFilter {
                 || RAID_DEATH.matcher(text).find()
                 || CRAFTED_BY.matcher(text).find()
                 || XP_SHARE_TARGET.matcher(text).find()
+                || GUILD_HOLOGRAM.matcher(text).find()
                 || CJK.matcher(text).find()) {
             return true;
         }
