@@ -103,6 +103,7 @@ public final class FlowedBlockTest {
         shaman(store);
         divider(store);
         majorId(store);
+        superconductor(store);
 
         System.out.println(failures == 0
                 ? "FlowedBlock: 全部通過" : "FlowedBlock: " + failures + " 項失敗");
@@ -161,6 +162,54 @@ public final class FlowedBlockTest {
         check("末尾的元素保住原本的綠（實際："
                         + Integer.toHexString(colourOf(out, "元素")) + "）",
                 colourOf(out, "元素") == 0x55FF55);
+    }
+
+    /**
+     * 第二個 Major ID，拿實機收到的斷行來測。
+     *
+     * <p>{@code captured.json} 是<b>累積</b>的，裡面至今列著三十七個
+     * Major ID 沒譯文，Superconductor 是其中一個。上面的
+     * Efflorescence 又是過的，所以分不出來那些到底是真的失效，
+     * 還是舊版本留下的紀錄。這條測試就是來釘這件事的。
+     *
+     * <p>斷行位置照抄 captured.json 的 0121–0128，一字不改。
+     */
+    private static void superconductor(TranslationStore store) {
+        Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
+
+        MutableComponent first = Component.empty();
+        first.append(Component.literal(SpaceOffset.encode(2))
+                .withStyle(SpaceOffset.styleFor(pink)));
+        first.append(Component.literal("Superconductor: ").withStyle(pink));
+        first.append(Component.literal("Chain").withStyle(grey));
+
+        List<StyledText> run = new ArrayList<>();
+        run.add(StyledText.fromComponent(first));
+        for (String line : new String[] {
+                "Lightning channels three",
+                "massive lightning bolts",
+                "through you, arcing to",
+                "enemies within 20 blocks for",
+                "500% and stunning them for",
+                "3s. You take 30% more damage",
+                "for 5s." }) {
+            run.add(StyledText.fromComponent(plain(line)));
+        }
+
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("Superconductor 的敘述翻得出來",
+                out != null && !out.isEmpty());
+        if (out == null) {
+            return;
+        }
+        String all = out.stream().map(Component::getString)
+                .reduce("", String::concat);
+        String zh = store.lookup("Superconductor");
+        check("名稱跟著翻（實際：" + shorten(all) + "）",
+                zh != null && all.contains(zh));
+        check("敘述也翻了", all.contains("閃電"));
     }
 
     /** 譯文裡某一段文字實際被塗上的顏色。 */
