@@ -805,6 +805,104 @@ def check_number_mixing(files: list[Path]) -> list[Problem]:
     return out
 
 
+# 兩邊都認得出來的單位。譯文常見的量詞跟原文的名詞配成一對；
+# 「個」「點」這種在中文裡到處都是，配了只會誤報，所以不收。
+UNIT_PAIRS = [
+    ("格", r"\s*blocks?\b", r"\s*格"),
+    ("秒", r"\s*(?:seconds?|s)\b", r"\s*秒"),
+    ("次", r"\s*times\b", r"\s*次"),
+    ("場", r"\s*[Cc]hallenges?\b", r"\s*場"),
+    ("隻", r"\s*[Mm]obs?\b", r"\s*隻"),
+    ("件", r"\s*items?\b", r"\s*件"),
+    ("朵", r"\s*clouds?\b", r"\s*朵"),
+    ("顆", r"\s*[Hh]earts?\b", r"\s*顆"),
+]
+
+
+def _unit_slots(text: str, side: int) -> dict[str, set[int]] | None:
+    """每個單位落在<b>第幾個來源槽</b>。混用編號的回 None，那有另一支在管。"""
+    out: dict[str, set[int]] = {}
+    plain = 0
+    numbered = False
+    for m in NUMBER_SLOT.finditer(text):
+        if m.group(1):
+            slot = int(m.group(1)) - 1
+            numbered = True
+        else:
+            slot = plain
+            plain += 1
+        after = text[m.end():m.end() + 24]
+        for name, *pats in UNIT_PAIRS:
+            if re.match(pats[side], after):
+                out.setdefault(name, set()).add(slot)
+                break
+    if numbered and plain:
+        return None
+    return out
+
+
+def check_number_slots(files: list[Path]) -> list[Problem]:
+    """數值接到<b>錯的來源槽</b>。
+
+    <p>{~} 是照原文出現順序填的。中文幾乎一定要重排句子，一重排就會對調，
+    而 {@code check_number_mixing} 看不到這種錯——佔位符的數量是對的，
+    只有意思錯了。畫面上是一個不合理的數字，沒有人會聯想到是語料的問題。
+
+    <p>可以機器判斷的線索是<b>單位</b>：多數數值在兩邊都帶單位，
+
+    <pre>
+    within {~} blocks   ↔   {~} 格
+    for {~} seconds     ↔   {~} 秒
+    {~} Challenges      ↔   {~} 場
+    </pre>
+
+    所以只要比對「同一個量詞落在第幾個槽」，兩邊對不上就是接錯了。
+
+    <p>實際踩到的：
+
+    <pre>
+    原文  …deal {#}{~2} Main Attack damage in a radius of {~3} blocks
+    譯文  …有額外機率在 {~} 格 半徑內造成 {#}{~} 的普攻傷害。
+    </pre>
+
+    「格」在原文是第 3 個數值、在譯文卻吃到第 2 個——畫面上的半徑顯示的是
+    傷害百分比。
+
+    <p>只比<b>兩邊都出現過</b>的單位：譯文把單位省略掉很常見，那不算錯。
+    報成警告是因為單位詞偶爾會出現在別的位置。
+    """
+    out: list[Problem] = []
+    for file in files:
+        try:
+            data = json.loads(file.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        rows = data["entries"] if isinstance(data.get("entries"), dict) else data
+        for key, value in rows.items():
+            if key.startswith("_"):
+                continue
+            src = value.get("src", key) if isinstance(value, dict) else key
+            dst = value.get("dst") if isinstance(value, dict) else value
+            if not isinstance(src, str) or not isinstance(dst, str) or not dst:
+                continue
+            if len(NUMBER_SLOT.findall(src)) < 2:
+                continue
+            want = _unit_slots(src, 0)
+            got = _unit_slots(dst, 1)
+            if want is None or got is None:
+                continue
+            for unit, slots in got.items():
+                if unit in want and want[unit] != slots:
+                    out.append(Problem(
+                        "warning", file.name, key,
+                        "「%s」在原文是第 %s 個數值，譯文卻接到第 %s 個"
+                        "——中文重排句子時要用 {~N} 明寫" % (
+                            unit,
+                            "、".join(str(x + 1) for x in sorted(want[unit])),
+                            "、".join(str(x + 1) for x in sorted(slots)))))
+    return out
+
+
 def check_index(base: Path) -> list[Problem]:
     """磁碟上有、_index.json 卻沒列的譯文檔。
 
@@ -975,6 +1073,14 @@ def main(argv: list[str]) -> int:
             print()
             print("數值佔位符混用編號")
             for p in mixing:
+                print(p)
+                warnings += 1
+
+        crossed = check_number_slots(group)
+        if crossed:
+            print()
+            print("數值接到錯的來源槽")
+            for p in crossed:
                 print(p)
                 warnings += 1
 
