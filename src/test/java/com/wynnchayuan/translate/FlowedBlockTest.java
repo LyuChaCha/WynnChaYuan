@@ -104,6 +104,7 @@ public final class FlowedBlockTest {
         divider(store);
         majorId(store);
         superconductor(store);
+        raidPicker(store);
 
         System.out.println(failures == 0
                 ? "FlowedBlock: 全部通過" : "FlowedBlock: " + failures + " 項失敗");
@@ -210,6 +211,61 @@ public final class FlowedBlockTest {
         check("名稱跟著翻（實際：" + shorten(all) + "）",
                 zh != null && all.contains(zh));
         check("敘述也翻了", all.contains("閃電"));
+    }
+
+    /**
+     * 討伐戰選單的整份 tooltip。
+     *
+     * <p>{@code captured.json} 把裡面兩段的<b>每一行</b>都當成沒譯文收了
+     * 起來，而兩段在語料裡都在、斷行也一字不差。這條測試分開問兩件事：
+     * 單拿敘述那一段查得到嗎，以及放進整份 tooltip 之後還查得到嗎。
+     */
+    private static void raidPicker(TranslationStore store) {
+        String[] lore = {
+                "Void Holes are strange... Are",
+                "they natural? Or are they",
+                "artificial? What makes them?",
+                "What happens to the matter",
+                "which they replace? A",
+                "particularly large Void Hole",
+                "rests within the centre of",
+                "the Silent Expanse, perhaps",
+                "it holds the answer to these",
+                "questions..." };
+        String[] req = {
+                "In order to join this",
+                "Raid you need to",
+                "complete the following",
+                "requirements" };
+
+        String alone = joined(block(lore), store);
+        check("敘述單獨查得到（實際：" + shorten(alone) + "）",
+                alone != null && alone.contains("虛空洞"));
+
+        // 選單裡的字是置中的，每一行都帶著推位置的隆形字元——
+        // 連<b>空行</b>也帶。空行不空的話，translateBlock 就不會在那裡收手。
+        List<Component> tip = new ArrayList<>();
+        tip.add(offset("The Nameless Anomaly"));
+        tip.add(offset(""));
+        for (String line : lore) {
+            tip.add(offset(line));
+        }
+        tip.add(offset(""));
+        for (String line : req) {
+            tip.add(offset(line));
+        }
+        tip.add(offset(""));
+        tip.add(offset("\u2714 Combat Lv. Min: 103"));
+
+        List<Component> out =
+                com.wynnchayuan.render.TooltipPanel.translateLines(tip, store);
+        String all = out.stream().map(Component::getString)
+                .reduce("", (a, b) -> a + " " + b);
+        check("整份 tooltip 裡的敘述也翻得出來（實際："
+                        + shorten(all) + "）",
+                all.contains("虛空洞"));
+        check("入場條件那段也翻了",
+                all.contains("要加入這場討伐戰"));
     }
 
     /** 譯文裡某一段文字實際被塗上的顏色。 */
@@ -378,6 +434,15 @@ public final class FlowedBlockTest {
             run.add(StyledText.fromComponent(plain(line)));
         }
         return run;
+    }
+
+    /** 置中的一行：開頭一個推位置的隆形字元，連空行也一樣。 */
+    private static MutableComponent offset(String text) {
+        MutableComponent c = Component.empty();
+        c.append(Component.literal(SpaceOffset.encode(12))
+                .withStyle(SpaceOffset.styleFor(Style.EMPTY)));
+        c.append(plain(text));
+        return c;
     }
 
     private static MutableComponent plain(String text) {
