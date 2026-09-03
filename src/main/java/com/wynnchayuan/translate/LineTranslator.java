@@ -189,7 +189,8 @@ public final class LineTranslator {
      * 重新併回一句的結果。
      *
      * @param glyphs 剝掉行首排版偏移之後<b>剩下</b>的符號，順序照舊
-     * @param places 跨行認出來的地名
+     * @param places 整段的地名，<b>逐行認出來的與跨行認出來的併在一起</b>，
+     *               照出現順序排。見 {@link #rejoin} 的「地名池不能只裝跨行那些」
      */
     record Rejoined(String template, List<LineParts.Piece> glyphs,
                     List<LineParts.Piece> places) {}
@@ -231,6 +232,7 @@ public final class LineTranslator {
         String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
         StringBuilder joined = new StringBuilder();
         List<LineParts.Piece> kept = new ArrayList<>();
+        List<LineParts.Piece> named = new ArrayList<>();
         boolean trimmed = false;
         for (LineParts part : parts) {
             String line = part.template();
@@ -256,26 +258,69 @@ public final class LineTranslator {
             joined.append(line, at, line.length());
             List<LineParts.Piece> own = part.glyphs();
             kept.addAll(own.subList(Math.min(lead, own.size()), own.size()));
+            named.addAll(part.places());
         }
 
         String text = joined.toString();
-        List<LineParts.Piece> found = new ArrayList<>();
+        // 池子要裝<b>整段所有</b>的地名，不能只裝這裡新認出來的。
+        //
+        // 逐行那一輪（LineParts#of）已經把認得出來的換成了 {p}，所以下面這個
+        // 掃描看到的是 {p}，不是地名本身——它<b>看不到</b>逐行認掉的那些。
+        // 先前直接拿新認到的那幾個當整段的池子，於是逐行認掉的地名憑空消失：
+        // 譯文裡的 {p} 沒有東西可以填，rebuildAll 判定佔位符不符、整段放棄。
+        // 畫面上就是第一行中文、其餘英文，而且「置中又含地名」的整段敘述
+        // 全部中招（Grootslang 之巢、光之領域那幾段）。
+        //
+        // 兩份都是照出現順序排的，交錯併起來就是整段的順序。
+        List<LineParts.Piece> merged = new ArrayList<>();
+        boolean crossed = false;                 // 有被斷行切開、這裡才認出來的
         java.util.regex.Matcher place = PlaceNames.matcher(text);
         if (place != null) {
             StringBuilder out = new StringBuilder();
             int from = 0;
+            int taken = 0;
             while (place.find()) {
+                taken = carry(text, from, place.start(), named, taken, merged);
                 out.append(text, from, place.start())
                    .append(GlyphSplitter.PLACE_PLACEHOLDER);
-                found.add(new LineParts.Piece(place.group(), style));
+                merged.add(new LineParts.Piece(place.group(), style));
+                crossed = true;
                 from = place.end();
             }
-            if (!found.isEmpty()) {
+            if (crossed) {
+                carry(text, from, text.length(), named, taken, merged);
                 text = out.append(text.substring(from)).toString();
             }
         }
-        return trimmed || !found.isEmpty()
-                ? new Rejoined(text, List.copyOf(kept), List.copyOf(found)) : null;
+        if (!crossed) {
+            merged = named;                      // 沒有跨行的，池子就是逐行那份
+        }
+        return trimmed || crossed
+                ? new Rejoined(text, List.copyOf(kept), List.copyOf(merged)) : null;
+    }
+
+    /**
+     * 把某一段模板裡<b>已經是</b> {@code {p}} 的那幾個地名依序搬進新的池子。
+     *
+     * <p>見 {@link #rejoin}：跨行認出來的地名要插在正確的位置，而它的前後
+     * 都可能有逐行就認掉的地名。這裡按 {@code {p}} 的出現次數從舊池子取用，
+     * 兩邊的順序就對得起來。
+     *
+     * @param taken 舊池子已經用掉幾個
+     * @return 用掉的總數
+     */
+    private static int carry(String text, int from, int to,
+                             List<LineParts.Piece> named, int taken,
+                             List<LineParts.Piece> merged) {
+        String mark = GlyphSplitter.PLACE_PLACEHOLDER;
+        int at = text.indexOf(mark, from);
+        while (at >= 0 && at < to) {
+            if (taken < named.size()) {
+                merged.add(named.get(taken++));
+            }
+            at = text.indexOf(mark, at + mark.length());
+        }
+        return taken;
     }
 
     static String lookupFlowed(String template, TranslationStore store) {
