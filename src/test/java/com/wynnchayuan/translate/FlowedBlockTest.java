@@ -105,6 +105,7 @@ public final class FlowedBlockTest {
         majorId(store);
         superconductor(store);
         raidPicker(store);
+        grootslang(store);
 
         System.out.println(failures == 0
                 ? "FlowedBlock: 全部通過" : "FlowedBlock: " + failures + " 項失敗");
@@ -266,6 +267,57 @@ public final class FlowedBlockTest {
                 all.contains("虛空洞"));
         check("入場條件那段也翻了",
                 all.contains("要加入這場討伐戰"));
+    }
+
+    /**
+     * 置中的段落，而且語料的鍵含地名。
+     *
+     * <h2>兩件事疊在一起才壞</h2>
+     * 行首的排版偏移由 {@code rejoin} 剝掉，地名由
+     * {@code LineParts.of} <b>逐行</b>認。各自都對，一起來就不對：
+     * 重組出來的地名池只裝「跨行才認得出來」的那幾個，
+     * 而逐行已經認掉的那些反而不見了——譯文裡的 {p}
+     * 沒有東西可以填，整段被判定佔位符不符而放棄。
+     *
+     * <p>畫面上就是第一行中文、其餘英文——而且只要是
+     * 「置中且含地名」的整段敍述全部中招。
+     */
+    private static void grootslang(TranslationStore store) {
+        String[] lore = {
+                "Homes ravaged by Decay, the",
+                "subterranean Grootslangs",
+                "search frantically for a",
+                "better habitat. Though they",
+                "harbor no ill intent, they",
+                "pose a significant risk for",
+                "the people of Gelibord, and",
+                "perhaps for all of Gavel." };
+
+        String alone = joined(block(lore), store);
+        check("整段單獨查得到（實際：" + shorten(alone) + "）",
+                alone != null && alone.contains("地底"));
+
+        String offset = joined(centred(lore), store);
+        check("整段帶偏移也查得到（實際：" + shorten(offset) + "）",
+                offset != null && offset.contains("地底"));
+        check("帶偏移時地名也填回去了",
+                offset != null && offset.contains("Gelibord"));
+
+        List<Component> tip = new ArrayList<>();
+        tip.add(offset("Nest of the Grootslangs"));
+        tip.add(offset(""));
+        for (String line : lore) {
+            tip.add(offset(line));
+        }
+        List<Component> out =
+                com.wynnchayuan.render.TooltipPanel.translateLines(tip, store);
+        String all = out.stream().map(Component::getString)
+                .reduce("", (a, b) -> a + " " + b);
+        check("整份 tooltip 裡也翻得出來（實際："
+                        + shorten(all) + "）",
+                all.contains("地底"));
+        check("tooltip 裡不留英文段落",
+                !all.contains("subterranean"));
     }
 
     /** 譯文裡某一段文字實際被塗上的顏色。 */

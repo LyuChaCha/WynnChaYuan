@@ -142,6 +142,36 @@ public final class CaptureStore {
         return true;
     }
 
+    /**
+     * 這一條是<b>現在的濾網</b>會擋掉的個資嗎。
+     *
+     * <h2>為什麼要回頭清</h2>
+     * 濾網一直在補（公會領地、開箱廣播、製作者署名、討伐戰死亡訊息…），
+     * 但補上之後<b>只影響以後收的</b>——舊版本漏進來的那些還躺在檔案裡，
+     * 而且 {@code seen} 停在當初的數字，看起來像是還在發生。
+     * 實測一份跑過很多任務的 captured.json 裡，公會名與隊友 ID 就有六種樣子，
+     * 全部是舊版本留下的。
+     *
+     * <p>比對用的規則跟<b>收集端一模一樣</b>：名牌那條路多擋「玩家自己取的名字」，
+     * 標題那條路多擋「長得像帳號名」的整格，其餘只看夾帶特徵。
+     * 兩邊分開寫的話，濾網一補就又會不一致。
+     *
+     * <p>{@code dst} 有東西的不動——那是有人打過的字，見 {@link #prune}。
+     */
+    private static boolean nowFiltered(Captured c) {
+        if (PlayerDataFilter.carriesPlayerData(c.src)) {
+            return true;
+        }
+        String ctx = c.ctx == null ? "" : c.ctx;
+        if (ctx.startsWith("npc/nametag") || ctx.startsWith("label/floating")) {
+            return PlayerDataFilter.looksPlayerNamed(c.src);
+        }
+        if (ctx.startsWith("gui/title")) {
+            return PlayerDataFilter.looksAccountNamed(c.src);
+        }
+        return false;
+    }
+
     /** 記下某個事件發生過一次（不論最後有沒有記錄內容）。 */
     public void noteEvent(String name) {
         eventCounts.computeIfAbsent(name,
@@ -170,7 +200,7 @@ public final class CaptureStore {
     private boolean prune() {
         int before = entries.size();
         entries.values().removeIf(c -> c.dst != null && c.dst.isBlank()
-                && c.src != null && translated.test(c.src));
+                && c.src != null && (translated.test(c.src) || nowFiltered(c)));
         int gone = before - entries.size();
         if (gone > 0) {
             eventCounts.computeIfAbsent("skipped.translated",

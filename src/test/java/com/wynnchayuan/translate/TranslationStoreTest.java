@@ -99,8 +99,32 @@ public final class TranslationStoreTest {
                  }
                 }""");
 
+            // 採集點的名牌與裝備需求列，每一行前面掛一個「符合／不符合」的記號。
+            // 記號取決於玩家當下的等級與工具，是狀態不是內容——語料只存一種，
+            // 另一種靠 lookupMarked 換記號查回來。
+            write(dir, "gather.json", """
+                {
+                 "Blossom\n✖ Ⓒ Woodcutting Lv Min: {~}\n✖ Equipped Tool: Axe":
+                     "花木\n✖ Ⓒ 伐木等級下限: {~}\n✖ 裝備工具: 斧頭",
+                 "✖ Ability Points: {~}": "✖ 能力點數: {~}"
+                }""");
+
             TranslationStore store = new TranslationStore();
             store.loadAll(dir);
+
+            // 記號換一下就該查得到，而且回來的譯文要帶<b>呼叫端自己</b>那幾個記號。
+            check("等級夠了的採集點也翻得出來（拿到：" + store.lookup(
+                            "Blossom\n✔ Ⓒ Woodcutting Lv Min: {~}\n✖ Equipped Tool: Axe") + "）",
+                    ("花木\n✔ Ⓒ 伐木等級下限: {~}\n✖ 裝備工具: 斧頭").equals(store.lookup(
+                            "Blossom\n✔ Ⓒ Woodcutting Lv Min: {~}\n✖ Equipped Tool: Axe")));
+            check("裝備需求列的記號也換得回來",
+                    "✔ 能力點數: {~}".equals(store.lookup("✔ Ability Points: {~}")));
+            check("原本那一種照舊",
+                    "✖ 能力點數: {~}".equals(store.lookup("✖ Ability Points: {~}")));
+            // 收集端也要知道這不是缺口，否則 captured.json 會一直把它列成沒翻。
+            check("換記號查得到的不算缺口",
+                    store.hasTranslation("✔ Ability Points: {~}"));
+            check("沒有記號的句子不受影響", "短句".equals(store.lookup("Short one")));
 
             // 跨行條目：技能說明的原文本來就是一整段，逐行查表永遠對不上。
             // 呼叫端要靠 maxBlockLines 才知道該把幾行併起來試。

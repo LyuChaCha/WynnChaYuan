@@ -136,6 +136,13 @@ public final class PlayerNameplateTest {
                 "{#}Crafted by Bunnub",
                 "{#}Crafted by creeper{~}",
                 "{#} HiSlIgHt_ has reconnected!",
+                "Weeeeeeeeeezard was minced to bits by the Grootslang.",
+                "{#}{#}Weeeeeeeeeezard began to glow and then faded into nothing.",
+                "Linger{~}_ has been crystallized!",
+                // 公會的領地全像投影與成員名牌：公會名沒有形狀可以認，
+                // 靠底下那一行 < ... > 把整塊擋掉。
+                "YuChaYuan\n< Season {~} - Platinum >",
+                "YuChaYuan\n< Radiant >",
                 "{#} Party Finder: Hey MorphCascade, over here! Join the queue"}) {
             check("擋得下討伐戰死亡／治療訊息：" + death.replace("\n", "⏎"),
                   com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(death));
