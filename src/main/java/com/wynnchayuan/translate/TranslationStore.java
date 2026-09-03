@@ -398,7 +398,23 @@ public final class TranslationStore {
     /** 見 {@link #noteTerm}。四個字元大約是最短不會誤中的名稱。 */
     private static final int MIN_TERM_LENGTH = 4;
 
-    /** 在 {@code text} 裡從 {@code from} 起找第一個技能名稱。 */
+    /**
+     * 在 {@code text} 裡從 {@code from} 起找第一個技能名稱。
+     *
+     * <h2>同一個起點取最長的</h2>
+     * 詞表裡有不少名稱是另一個名稱的開頭：{@code Guardian}（守護者）跟
+     * {@code Guardian Angels}（守護天使）、{@code Meteor}（隕石）跟
+     * {@code Meteor Shower}（流星雨）、{@code Mask}（假面）跟
+     * {@code Mask of the Lunatic}（赤狂假面）。
+     *
+     * <p>先前是比中哪個就回哪個，而字數是從少往多試的——於是<b>短的永遠贏</b>，
+     * 畫面上是「守護者Angels」「隕石 Shower」「假面 of the Lunatic」。
+     * 語料裡兩邊都翻好了，玩家看到的卻是半個英文名字，實測有 37 個名稱長這樣。
+     *
+     * <p>改成把這個起點能接的字都試完，留最長的那一個。這跟
+     * {@code LineTranslator#appendText} 拿詞表跟重點段比的時候已經在用的
+     * 「同一個位置取比較長的」是同一條規則。
+     */
     public Term findTerm(String text, int from) {
         if (terms.isEmpty()) {
             return null;
@@ -408,17 +424,22 @@ public final class TranslationStore {
                 continue;                      // 名稱一律是大寫開頭的專有名詞
             }
             int end = i;
+            int bestEnd = -1;
+            String best = null;
             for (int words = 0; words < maxTermWords && end <= text.length(); words++) {
                 end = wordEnd(text, end);
-                String candidate = text.substring(i, end);
-                String hit = terms.get(candidate);
+                String hit = terms.get(text.substring(i, end));
                 if (hit != null) {
-                    return new Term(i, end, hit);
+                    best = hit;                // 不能就此回去，後面可能還有更長的
+                    bestEnd = end;
                 }
                 if (end >= text.length() || text.charAt(end) != ' ') {
                     break;                     // 後面不是空格，接不下去了
                 }
                 end++;
+            }
+            if (best != null) {
+                return new Term(i, bestEnd, best);
             }
         }
         return null;
