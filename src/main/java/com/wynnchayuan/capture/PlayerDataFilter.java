@@ -47,6 +47,7 @@ public final class PlayerDataFilter {
             " has joined your party",
             " has invited you",
             " sent you a friend request",
+            " from their crate!",       // 開箱廣播，夾帶開箱者的玩家名
             " has thrown a ",           // 「某某人丟了經驗炸彈」，夾帶玩家名
             " of your XP to ",          // 「將 X% 經驗貢獻給某公會」，夾帶公會名
             " has just logged in",      // 上線通知，夾帶玩家名
@@ -92,6 +93,7 @@ public final class PlayerDataFilter {
                     + "|lost their color to"
                     + "|was crushed b"          // beneath the Wyrmling / between the jaws
                     + "|had their existence effaced"
+                    + "|has been overtaken"   // NOL：隊友被寄生體吞沒
                     + "|has reconnected!)"
                     + "|['’]s existence was redacted",
             Pattern.MULTILINE);

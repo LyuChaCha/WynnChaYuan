@@ -130,6 +130,9 @@ public final class PlayerNameplateTest {
                 "Watari passed away",
                 "King gave you [+{~} ❤]",
                 "IHateRaid has given you {~} resistance and {~} strength.",
+                "{#} Yorikatsu{~} has been overtaken! Keep attacking The"
+                        + " {#} Parasite to save them!",
+                "{#} userUwU has gotten a Steampunk Spear from their crate!",
                 "{#} HiSlIgHt_ has reconnected!",
                 "{#} Party Finder: Hey MorphCascade, over here! Join the queue"}) {
             check("擋得下討伐戰死亡／治療訊息：" + death.replace("\n", "⏎"),
