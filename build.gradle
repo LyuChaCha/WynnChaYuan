@@ -387,6 +387,14 @@ tasks.register('runFlowedBlockChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runFlowedBlockChecks' }
 
+tasks.register('runMajorIdTermChecks', JavaExec) {
+    group = 'verification'
+    description = 'Major ID 敘述裡的技能名稱，畫面上要換得成中文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.MajorIdTermsTest'
+}
+tasks.named('check') { dependsOn 'runMajorIdTermChecks' }
+
 tasks.register('runUprightChecks', JavaExec) {
     group = 'verification'
     description = '方塊字不跟著原文一起斜'

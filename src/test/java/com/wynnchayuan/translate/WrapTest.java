@@ -159,6 +159,7 @@ public final class WrapTest {
         }
         check("亂數四千輪都沒丟例外", () -> "");
 
+        clauseBreaks();
         placeholderNotSplit();
         colourTokensNeverShown();
         glyphNotAtLineEnd();
@@ -170,6 +171,38 @@ public final class WrapTest {
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 中文優先斷在標點上，不要把詞切成兩半。
+     *
+     * <p>使用者回報的 Major ID「眩目之光」：字都在，但「奧法尼姆／光球」與
+     * 「所／有光球」被切開，要回頭讀一次才知道在講什麼。
+     */
+    private static void clauseBreaks() {
+        String text = "所有 奧法尼姆 光球造成 250% 傷害，每次命中使你獲得 +5 層 結晶化，"
+                + "並改為環繞你運行。使用普攻時，所有光球的移動速度都會加快。";
+        String wrapped = LineTranslator.wrapToWidth(text, 150, WrapTest::realistic);
+        String[] rows = wrapped.split(String.valueOf(NL));
+        System.out.println("  折出來的樣子：");
+        for (String row : rows) {
+            System.out.println("    |" + row + "|");
+        }
+        boolean clean = true;
+        for (int i = 0; i < rows.length - 1; i++) {
+            char last = rows[i].charAt(rows[i].length() - 1);
+            if ("，。、；：！？".indexOf(last) < 0) {
+                clean = false;
+            }
+        }
+        report("每一行都收在標點上（實際 " + rows.length + " 行）", clean);
+        report("內容沒有變", bare(wrapped).equals(bare(text)));
+
+        // 反面：一行才填一點點的時候不該為了標點提早收尾，否則整段會變成
+        // 細細長長一條，行數暴增之後外層又會把寬度放寬重折。
+        String early = LineTranslator.wrapToWidth("好，這是一句很長很長很長很長的話", 150,
+                                                  WrapTest::realistic);
+        report("太早的標點不斷（實際：" + show(early) + "）", !early.startsWith("好，" + NL));
     }
 
     /**
