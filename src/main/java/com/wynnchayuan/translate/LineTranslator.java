@@ -912,6 +912,7 @@ public final class LineTranslator {
         int lineStart = 0;
         int width = 0;
         int lastSpace = -1;
+        int lastClause = -1;               // 這一行裡最後一個標點的<b>後面</b>
         int i = 0;
         while (i < text.length()) {
             // 正負號跟後面的佔位符是<b>同一個東西</b>，中間不能斷。
@@ -933,11 +934,16 @@ public final class LineTranslator {
                 // 任何字之間斷，退回去只會讓整行提早結束——「✦ 利他主義: 16」
                 // 之後就換行、剩下的擠成三行，就是這樣來的。
                 int cut = breaksWord(text, i) && lastSpace > lineStart ? lastSpace : i;
+                int clause = clauseBreak(text, lineStart, i, lastClause, maxPx, measure);
+                if (clause > lineStart) {
+                    cut = clause;
+                }
                 cut = avoidOrphan(text, cut, lineStart);
                 out.append(text, lineStart, cut).append(NEWLINE);
-                boolean atSpace = text.charAt(cut) == ' ';
+                boolean atSpace = cut < text.length() && text.charAt(cut) == ' ';
                 lineStart = atSpace ? cut + 1 : cut;
                 lastSpace = -1;
+                lastClause = -1;
                 if (atSpace && cut == i) {
                     // 換行的位置<b>剛好就是這個空白</b>：它被行尾吃掉了，
                     // 不屬於新的一行。先前這裡直接算 substring(lineStart, i)，
@@ -948,16 +954,125 @@ public final class LineTranslator {
                     i = end;
                     continue;
                 }
+                if (lineStart > i) {
+                    // 斷點被<b>往前</b>挪到目前這一塊的後面（見 clauseAhead）。
+                    // 那幾個字已經寫進上一行了，新的一行從斷點重新開始數，
+                    // 不能再回頭量 substring(lineStart, i)——那是一段負長度。
+                    width = 0;
+                    i = lineStart;
+                    continue;
+                }
                 width = measure.applyAsInt(text.substring(lineStart, i));
             }
             if (" ".equals(piece)) {
                 lastSpace = i;
+            }
+            if (piece.length() == 1 && CLAUSE_END.indexOf(piece.charAt(0)) >= 0) {
+                lastClause = end;              // 標點跟著上一行走，接縫在它後面
             }
             width += pieceWidth;
             i = end;
         }
         return out.append(text, lineStart, text.length()).toString();
     }
+
+    /**
+     * 中文在<b>標點</b>處斷，比在剛好塞滿的地方斷好讀。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 折行本來是量到哪斷到哪，而中文任何兩個字之間都可以斷，於是斷點常常
+     * 落在詞的中間——使用者回報的 Major ID：
+     *
+     * <pre>
+     *   眩目之光: 所有 奧法尼姆
+     *   光球造成 250% 傷害，每次命中使
+     *   你獲得 +5 層 結晶化，
+     *   並改為環繞你運行。使用普攻時，所
+     *   有光球的移動速度都會加快。
+     * </pre>
+     *
+     * 「奧法尼姆／光球」被切開、「所／有光球」被切開。字都在，但要回頭讀一次
+     * 才知道在講什麼。
+     *
+     * <p>改成優先斷在逗號、句號這些<b>語意的接縫</b>上：
+     *
+     * <pre>
+     *   眩目之光: 所有 奧法尼姆 光球造成 250% 傷害，
+     *   每次命中使你獲得 +5 層 結晶化，
+     *   並改為環繞你運行。
+     *   使用普攻時，所有光球的移動速度都會加快。
+     * </pre>
+     *
+     * <h2>為什麼要有「至少多滿」這個條件</h2>
+     * 不設條件的話，一行只填了三分之一也會在標點處斷，整段變成細細長長的
+     * 一條——行數暴增，而行數超過原文時外層會把寬度放寬重折
+     * （見 {@link #wrapBalanced}），等於白折一輪。
+     *
+     * <p>{@link #CLAUSE_FILL} 是那條界線：夠滿才值得為了好讀提早收尾。
+     *
+     * <h2>為什麼只認全形標點</h2>
+     * 半形的 {@code ,} 與 {@code .} 在西班牙文、德文、俄文的譯文裡到處都是，
+     * 認了它們就等於在那些語言裡改用「逗號折行」——而拉丁字母本來就靠空白
+     * 斷，不需要這條。全形標點只有中日韓會用到。
+     *
+     * @param lastClause 這一行裡最後一個標點的後一個位置；沒有就是 -1
+     * @return 該斷的位置；這一行不適合在標點處斷時回傳 {@code lineStart}
+     */
+    private static int clauseBreak(String text, int lineStart, int at, int lastClause,
+                                   int maxPx, ToIntFunction<String> measure) {
+        int ahead = clauseAhead(text, lineStart, at, maxPx, measure);
+        if (ahead > lineStart) {
+            return ahead;
+        }
+        if (lastClause <= lineStart || lastClause >= at) {
+            return lineStart;
+        }
+        int filled = measure.applyAsInt(text.substring(lineStart, lastClause));
+        return filled * 100 >= maxPx * CLAUSE_FILL ? lastClause : lineStart;
+    }
+
+    /**
+     * 標點<b>就在前面一點點</b>時，讓這一行多撐一下把它收進來。
+     *
+     * <h2>為什麼往前找也要找</h2>
+     * 往回找標點只有在「這一行裡本來就有標點」時才有東西可斷。實機那條
+     * 「眩目之光」的第一行整句都沒有標點，逗號剛好落在寬度限制的<b>後面</b>
+     * 兩個字——往回找一無所獲，於是還是斷在「傷／害」中間。
+     *
+     * <p>目標寬度本來就是量原文量出來的估計值（見 {@link #wrapToBlock}），
+     * 而寬一點只是面板寬一點，高度不會變；反過來，斷在詞中間是每一行都要
+     * 回頭讀一次。所以寧可多撐 {@link #CLAUSE_REACH}%。
+     *
+     * <p>只找<b>一小段</b>：找太遠就變成整段不折了。
+     */
+    private static int clauseAhead(String text, int lineStart, int at,
+                                   int maxPx, ToIntFunction<String> measure) {
+        int limit = Math.min(text.length(), at + CLAUSE_LOOKAHEAD);
+        for (int i = at; i < limit; i++) {
+            if (CLAUSE_END.indexOf(text.charAt(i)) < 0) {
+                continue;
+            }
+            int end = i + 1;
+            if (end >= text.length()) {
+                return lineStart;              // 收在句尾等於沒斷，只會多一個空行
+            }
+            int wide = measure.applyAsInt(text.substring(lineStart, end));
+            return wide * 100 <= maxPx * (100 + CLAUSE_REACH) ? end : lineStart;
+        }
+        return lineStart;
+    }
+
+    /** 見 {@link #clauseBreak}：這些標點後面是一個乾淨的接縫。 */
+    private static final String CLAUSE_END = "，。、；：！？》」』）】…";
+
+    /** 見 {@link #clauseBreak}：在標點處收尾之前，這一行至少要有這麼滿（百分比）。 */
+    private static final int CLAUSE_FILL = 60;
+
+    /** 見 {@link #clauseAhead}：為了把標點收進來，這一行最多可以超出幾 %。 */
+    private static final int CLAUSE_REACH = 20;
+
+    /** 見 {@link #clauseAhead}：往前找標點最多找幾個字元。 */
+    private static final int CLAUSE_LOOKAHEAD = 6;
 
     /**
      * 中文排版的<b>避頭尾</b>：某些字不能出現在行首。
