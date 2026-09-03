@@ -166,9 +166,13 @@ public final class PlayerDataFilter {
      *
      * <p>玩家做出來的裝備會在 lore 最後掛上做的人是誰。那一行永遠是別人的 ID，
      * 翻不了也不該進共享語料——實際收到的 {@code npc.json} 裡就混進了兩筆。
+     *
+     * <p>另一種寫法是<b>整句</b>掛在同一行、前面還帶著材質包符號：
+     * {@code {#}Crafted by Bunnub}。先前只擋得住單獨一行的 {@code by X}，
+     * 這種就漏了進來——實測一份 captured.json 裡有三筆不同的玩家 ID。
      */
     private static final Pattern CRAFTED_BY =
-            Pattern.compile("(?m)^\\s*by \\S+\\s*$");
+            Pattern.compile("(?m)^(?:\\{#\\})*\\s*(?:Crafted )?by \\S+\\s*$");
 
     /**
      * 經驗共享通知後面掛的那個人是誰，例如：
