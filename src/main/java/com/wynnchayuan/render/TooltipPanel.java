@@ -164,10 +164,31 @@ public final class TooltipPanel {
         //
         // 擋在<b>這裡</b>而不是查表層，是因為同一個字在別的位置可能完全正當：
         // 有一把裝備叫 Reflection，在查表層擋掉會連屬性列的「遠程反傷」一起擋死。
-        if (n > 0 && store.isBareGearName(bareName(
-                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template()))) {
+        String gearName = n == 0 ? null : bareName(
+                com.wynnchayuan.capture.LineParts.of(styled.get(0)).template());
+        if (gearName != null && store.isBareGearName(gearName)) {
             out.add(LineTranslator.untranslated(styled.get(0)));
             i = 1;
+            // 名稱其實是<b>兩行</b>：第 0 行寬度是 0，玩家看不到；
+            // 看得到的名字在第 1 行。實機 layout-debug 記得很清楚：
+            //
+            // <pre>
+            //   [0] 內容   0 px  󏀀Immolation󏀀
+            //   [1] 內容 125 px  󏿰󏿏󐀅Immolation [66.3%]
+            // </pre>
+            //
+            // 只擋第 0 行等於擋了看不見的那一行，第 1 行照樣落到逐段那條路，
+            // 被詞彙表換掉——神話矛「Guardian」拿到同名 Major ID 的「守護者」
+            // 就是這樣來的，而 Guardian 其實早就在 gearNameKeys 裡了。
+            //
+            // 條件收得很緊：第 1 行剝掉裝飾之後必須<b>就是同一個名字</b>。
+            // 素材不在 gearNameKeys（ingredient.json 標了 gearNames:false），
+            // 技能樹的節點標題也不是裝備名，兩者都碰不到這一段。
+            if (n > 1 && gearName.equals(bareName(
+                    com.wynnchayuan.capture.LineParts.of(styled.get(1)).template()))) {
+                out.add(LineTranslator.untranslated(styled.get(1)));
+                i = 2;
+            }
         }
         while (i < n) {
             int longest = Math.min(store.maxBlockLines(), n - i);
