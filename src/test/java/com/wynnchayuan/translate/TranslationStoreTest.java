@@ -26,6 +26,10 @@ public final class TranslationStoreTest {
                           "dst": "大幅增加 Meteor 技能的\n速度。", "role": "desc" },
                   "a2": { "src": "Shooting Star", "dst": "流星", "role": "name" },
                   "a4": { "src": "Bash", "dst": "重擊", "role": "name" },
+                  "a6": { "src": "Guardian", "dst": "守護者", "role": "name" },
+                  "a7": { "src": "Guardian Angels", "dst": "守護天使", "role": "name" },
+                  "a8": { "src": "Mask", "dst": "假面", "role": "name" },
+                  "a9": { "src": "Mask of the Lunatic", "dst": "赤狂假面", "role": "name" },
                   "a5": { "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ Knockback Immunity to Allies", "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ 給友軍擊退免疫", "role": "desc" },
                   "a3": { "src": "Allies within {~} blocks gain {~} of the health you gain from Health Regen and Life Steal.",
                           "dst": "{~} 格內的友軍會獲得你從生命回復與生命竊取所得的 {~} 生命", "role": "desc" }
@@ -142,6 +146,28 @@ public final class TranslationStoreTest {
             check("找到的位置正確", term != null && term.start() == 0 && term.end() == 4);
 
             check("整段剛好是名稱時也查得到", "重擊".equals(store.lookupTerm("Bash")));
+
+            // 詞表裡有不少名稱是另一個名稱的開頭。先前比中就回，而字數是從少
+            // 往多試的——短的永遠贏，畫面上是「守護者Angels」「假面 of the
+            // Lunatic」。語料裡兩邊都翻好了，玩家看到的卻是半個英文名字。
+            TranslationStore.Term longer =
+                    store.findTerm("Guardian Angels 增加 +2 發彈藥。", 0);
+            check("同一個起點取最長的名稱",
+                    longer != null && "守護天使".equals(longer.translation()));
+            check("最長的那個範圍也要對",
+                    longer != null && longer.start() == 0 && longer.end() == 15);
+
+            // 三個字以上的也一樣，而且中間夾著小寫的 of / the
+            TranslationStore.Term mask =
+                    store.findTerm("穿戴 Mask of the Lunatic 時", 0);
+            check("跨多個字的名稱不被開頭那個蓋掉",
+                    mask != null && "赤狂假面".equals(mask.translation()));
+
+            // 反面：長的接不上去時，短的還是要照常換
+            TranslationStore.Term shortOne =
+                    store.findTerm("Guardian 的護盾", 0);
+            check("接不到長的就用短的",
+                    shortOne != null && "守護者".equals(shortOne.translation()));
 
             // 反面：小寫的一般字不能被當成技能名稱換掉
             check("小寫的同一個字不換", store.findTerm("you bash the ground", 0) == null);
