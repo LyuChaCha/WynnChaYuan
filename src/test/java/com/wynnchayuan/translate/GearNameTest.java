@@ -83,6 +83,7 @@ public final class GearNameTest {
               "地裂".equals(store.lookup("Fissure")));
 
         decorations();
+        twoLineName();
         report();
     }
 
@@ -113,6 +114,36 @@ public final class GearNameTest {
         check("整行都是括號時不剝",
               "[{~}%]".equals(com.wynnchayuan.render.TooltipPanel
                       .bareName("[{~}%]")));
+    }
+
+    /**
+     * 名稱其實是兩行：寬度 0 的標記行，加上玩家看得到的那一行。
+     *
+     * <p>實機 layout-debug：
+     *
+     * <pre>
+     *   [0] 內容   0 px  󏀀Immolation󏀀
+     *   [1] 內容 125 px  󏿰󏿏󐀅Immolation [66.3%]
+     * </pre>
+     *
+     * <p>守門只擋第 0 行等於擋了看不見的那一行，第 1 行照樣被詞彙表換掉——
+     * 神話矛 Guardian 拿到同名 Major ID 的「守護者」就是這樣。修法靠的是
+     * 「兩行剝出同一個名字」，這裡把那個前提釘住。
+     */
+    private static void twoLineName() {
+        check("標記行與顯示行剝出同一個名字",
+              com.wynnchayuan.render.TooltipPanel.bareName("{#}Guardian{#}")
+                      .equals(com.wynnchayuan.render.TooltipPanel
+                              .bareName("{#}{#}{#}{#}{#}Guardian [{~}]")));
+        check("沒有鑑定百分比的也一樣（素材）",
+              com.wynnchayuan.render.TooltipPanel.bareName("{#}Radioactive Soil{#}")
+                      .equals(com.wynnchayuan.render.TooltipPanel
+                              .bareName("{#}{#}{#}{#}{#}Radioactive Soil")));
+        // 反例：只有一行的物品，下一行是別的東西，不能被誤擋
+        check("下一行不是同一個名字就不擋",
+              !com.wynnchayuan.render.TooltipPanel.bareName("{#} Earth Powder V")
+                      .equals(com.wynnchayuan.render.TooltipPanel
+                              .bareName("Tier {~} [■■■■■■■]")));
     }
 
     private static void check(String what, boolean ok) {
