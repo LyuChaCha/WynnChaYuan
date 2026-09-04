@@ -65,8 +65,9 @@ public final class TooltipPanel {
         int screenH = graphics.guiHeight();
         int gap = WynnChaYuan.config().panelGap();
 
-        int panelW = width(mc, lines) + 8;      // 8 = tooltip 左右內距
-        int panelH = lines.size() * 10 + 8;
+        int[] panelBox = box(mc, lines);
+        int panelW = panelBox[0] + 8;           // 8 = tooltip 左右內距
+        int panelH = panelBox[1] + 8;
 
         int x;
         int y;
@@ -75,7 +76,7 @@ public final class TooltipPanel {
             y = WynnChaYuan.config().fixedY();
         } else {
             // 原 tooltip 的位置：Minecraft 預設畫在滑鼠右下方 12/-12 處
-            int originalW = width(mc, tooltip) + 8;
+            int originalW = box(mc, tooltip)[0] + 8;
             int originalLeft = mouseX + 12;
             int rightSide = originalLeft + originalW + gap;
             int leftSide = originalLeft - gap - panelW;
@@ -108,7 +109,7 @@ public final class TooltipPanel {
         // Minecraft 的 tooltip 從 (x, y) 開始畫文字，底色往外多 3px，
         // 所以左上角要退 4px、寬高各多留一點，否則圖的四邊會缺一條。
         PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
-                panelW + SHOT_MARGIN, panelH + SHOT_MARGIN, title);
+                panelBox[0] + SHOT_MARGIN * 2, panelBox[1] + SHOT_MARGIN * 2, title);
         // 自動模式的判別依據是<b>整份內容</b>而不是標題：同名的裝備會因為
         // 詞條不同而有不同的譯文，只看標題會只拍到第一件。
         PanelShot.auto(String.join("\n",
@@ -358,10 +359,32 @@ public final class TooltipPanel {
         if (mc == null || mc.font == null || tooltip == null || tooltip.isEmpty()) {
             return;
         }
-        int w = width(mc, tooltip) + 8;
-        int h = tooltip.size() * 10 + 8;
-        int x = Math.max(0, Math.min(mouseX + 12, Math.max(0, graphics.guiWidth() - w)));
-        int y = Math.max(0, Math.min(mouseY - 12, Math.max(0, graphics.guiHeight() - h)));
+        // 量<b>元件</b>而不是量文字。
+        //
+        // 先前是「最長那行的字寬」配上「行數 × 10」。兩個都不準：
+        // tooltip 裡不是只有文字——物品圖示、屬性長條、空白列各有各的高度，
+        // 而中文那幾行的寬度也不是 mc.font.width(Component) 算得出來的
+        // （那條路不認得元件）。於是拍出來的框比內容大一截，四周夾著
+        // 一片背包背景，使用者回報「圖片格式超出」。
+        //
+        // ClientTooltipComponent 是遊戲自己拿去畫的那個型別，問它就準。
+        int[] shotBox = box(mc, tooltip);
+        int w = shotBox[0];
+        int h = shotBox[1];
+
+        // 位置<b>問遊戲</b>，不要自己算。
+        //
+        // 先前是「滑鼠右下 12/-12，再夾在畫面內」。前半對，後半不對：
+        // 畫面右緣放不下時遊戲是把 tooltip 翻到滑鼠<b>左邊</b>，不是把它
+        // 推回畫面內。框於是整個偏掉，拍出來夾著一片背包背景。
+        //
+        // DefaultTooltipPositioner 就是遊戲畫 tooltip 時用的那一個，直接
+        // 拿來算——之後版本改了規則，這裡跟著改，不會再各算各的。
+        org.joml.Vector2ic at = net.minecraft.client.gui.screens.inventory.tooltip
+                .DefaultTooltipPositioner.INSTANCE.positionTooltip(
+                        graphics.guiWidth(), graphics.guiHeight(), mouseX, mouseY, w, h);
+        int x = at.x();
+        int y = at.y();
         PanelShot.note(x - SHOT_MARGIN, y - SHOT_MARGIN,
                        w + SHOT_MARGIN * 2, h + SHOT_MARGIN * 2,
                        tooltip.get(0).getString());
@@ -413,15 +436,28 @@ public final class TooltipPanel {
     // 模組畫的<b>進度條</b>拆掉——那些條是一整串排版符號，中間斷開就散了。
     // 譯文過寬要處理，但不能用「照寬度硬折」這種對內容一無所知的做法。
 
-    private static int width(Minecraft mc, List<Component> lines) {
-        int max = 0;
-        for (Component line : lines) {
-            max = Math.max(max, mc.font.width(line));
+    /**
+     * 量出這一疊行畫出來有多大（回傳 {@code {寬, 高}}）。
+     *
+     * <p>問 {@link ClientTooltipComponent}——那是遊戲自己拿去畫的型別，
+     * 問它就跟畫出來的一致。先前是「最長那行的字寬」配上「行數 × 10」，
+     * 兩個都不準：tooltip 裡不是只有文字，物品圖示、屬性長條、
+     * 空白列各有各的高度。拍出來的框因此跟內容對不上。
+     */
+    static int[] box(Minecraft mc, List<Component> lines) {
+        List<ClientTooltipComponent> parts = lines.stream()
+                .map(Component::getVisualOrderText)
+                .map(ClientTooltipComponent::create)
+                .toList();
+        int w = 0;
+        for (ClientTooltipComponent part : parts) {
+            w = Math.max(w, part.getWidth(mc.font));
         }
-        return max;
+        // 只有一個元件時遊戲會收掉那 2px 的行距，跟著收才不會多框一條。
+        return new int[] {w, (parts.size() == 1 ? -2 : 0) + height(parts)};
     }
 
-    /** 保留給之後需要精確量測多行元件高度時使用。 */
+    /** 多行元件的總高度，見 {@link #box}。 */
     static int height(List<ClientTooltipComponent> components) {
         int h = 0;
         for (ClientTooltipComponent c : components) {
