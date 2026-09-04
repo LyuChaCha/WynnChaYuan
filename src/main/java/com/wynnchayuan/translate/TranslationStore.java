@@ -1057,6 +1057,19 @@ public final class TranslationStore {
         if (lookupMarked(key) != null) {
             return true;                       // 換個記號就查得到，不是缺口
         }
+        // 屬性列不是整行收的，是「標籤 + 數值」拆開查的（見 LineTranslator#statRow）。
+        //
+        // 這裡漏掉那條路的話，畫面上明明是中文的「移動速度 +5%」還是會被記成缺口，
+        // 而翻譯團隊照著 captured.json 補，補出來的就是<b>整行</b>條目——那正是
+        // 先前 misc.json 裡那兩百多條、把標籤那條路整個蓋掉的東西。這一份
+        // capture 的 186 條裡就有五十幾條是這種假缺口。
+        //
+        // 百分比與實數兩種都問：同一個標籤兩種譯名（法術傷害百分比／法術傷害值），
+        // 只問一種會把另一種記成缺口。
+        if (LineTranslator.lookup(key, this, false) != null
+                || LineTranslator.lookup(key, this, true) != null) {
+            return true;
+        }
         String other = respell(key);
         return !other.equals(key)
                 && (entries.containsKey(other) || lookupIndented(other) != null);
