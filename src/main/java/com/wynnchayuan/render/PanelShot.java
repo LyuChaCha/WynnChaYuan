@@ -261,18 +261,63 @@ public final class PanelShot {
      */
     public static void listen() {
         net.fabricmc.fabric.api.client.screen.v1.ScreenEvents.AFTER_INIT.register(
-                (client, screen, width, height) ->
-                        net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents
-                                .afterKeyPress(screen).register((s, keyEvent) -> {
-                                    if (bound == null || !bound.matches(keyEvent)) {
-                                        return;
-                                    }
-                                    log("畫面鍵盤事件：收到截圖鍵（"
+                (client, screen, width, height) -> {
+                    // <b>前置</b>與<b>後置</b>都掛。
+                    //
+                    // afterKeyPress 只在畫面自己沒有吃掉那顆鍵時才會跑，而
+                    // 背包畫面與 Wynntils 都會吃掉一部分按鍵。實機回報
+                    // 「按了完全沒反應」，而 shot-debug.txt 從頭到尾只有
+                    // bind 與 listen 兩行——按鍵事件一次都沒進來，正是這個樣子。
+                    //
+                    // 兩邊都設同一個旗標，同一顆鍵被收到兩次也沒有副作用：
+                    // pending 是布林，tick 只會拍一張。
+                    net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents
+                            .beforeKeyPress(screen).register((s, keyEvent) -> {
+                                if (bound != null && bound.matches(keyEvent)) {
+                                    log("畫面鍵盤事件（前置）：收到截圖鍵（"
                                             + screen.getClass().getSimpleName() + "）");
                                     request();
-                                }));
-        log("listen：已掛上畫面鍵盤事件");
+                                } else {
+                                    noteOtherKey(screen, keyEvent);
+                                }
+                            });
+                    net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents
+                            .afterKeyPress(screen).register((s, keyEvent) -> {
+                                if (bound != null && bound.matches(keyEvent)) {
+                                    log("畫面鍵盤事件（後置）：收到截圖鍵（"
+                                            + screen.getClass().getSimpleName() + "）");
+                                    request();
+                                }
+                            });
+                });
+        log("listen：已掛上畫面鍵盤事件（前置與後置）");
     }
+
+    /**
+     * 收到的不是截圖鍵——記前幾筆就好。
+     *
+     * <h2>為什麼要記別的鍵</h2>
+     * 「一筆都沒有」跟「有收到、但比對不中」是兩件<b>完全不同</b>的事：
+     * 前者是事件根本沒掛上（或被別的模組攔走），後者是綁定比對出了問題。
+     * 而它們在畫面上、在診斷檔裡先前都長得一模一樣——只有 bind 與 listen 兩行。
+     *
+     * <p>有上限是因為這個功能是拿來查一次問題的，不是拿來記錄整場遊戲的
+     * 每一次按鍵。{@link #KEY_LOG_LIMIT} 筆足夠分辨是哪一種。
+     */
+    private static void noteOtherKey(net.minecraft.client.gui.screens.Screen screen,
+                                     Object keyEvent) {
+        if (keyLogged >= KEY_LOG_LIMIT) {
+            return;
+        }
+        keyLogged++;
+        log("畫面鍵盤事件：收到別的鍵（" + keyEvent + "）於 "
+                + screen.getClass().getSimpleName() + "，截圖鍵是 " + keyName());
+    }
+
+    /** 見 {@link #noteOtherKey}：最多記幾筆別的鍵。 */
+    private static final int KEY_LOG_LIMIT = 20;
+
+    private static int keyLogged = 0;
 
     /**
      * <h2>沒有框可以裁的時候，改拍整個畫面</h2>
