@@ -53,16 +53,22 @@ NUMBERED = re.compile(r"\{~[1-9]\}")
 # 顏色佔位符。只出現在<b>譯文</b>——原文的鍵是遊戲送來的字，不會有這種東西。
 #
 #   {c1}–{c9}      用原文的第 N 個顏色（依第一次出現的順序編號）
+#   {w1}–{w9}      同上，但<b>只數有字母的片段</b>
 #   {c:#FF55FF}    自己指定色碼
 #   {c:gold}       自己指定原版顏色名稱
 #   {/}            到此為止，回到這一段原本的樣式
 #
 # 哪一個編號是哪一個顏色，看 majorid-debug.txt 的「可用的顏色」那一段。
-COLOUR = re.compile(r"\{c(?:[1-9]|:[^}]+)\}")
+#
+# {wN} 是給「行裡夾著純符號片段」的那種行用的。意象的層級進度就是：
+# 「Tier I >>>>> >>>>> Tier II [2/4]」——綠箭頭的數量隨進度變動，
+# 於是「下一層」在 {cN} 的編號裡一下是第 4 個、一下是第 3 個，寫死會落空。
+# {wN} 不數箭頭也不數 [2/4]，所以 {w2} 永遠是下一層。
+COLOUR = re.compile(r"\{(?:[cw][1-9]|c:[^}]+)\}")
 
 # 看起來想寫顏色佔位符但寫錯的樣子：{c}、{c0}、{ c1 }、{c12}、{C1}……
 # 這種錯不會讓譯文消失，會<b>原樣印在畫面上</b>，玩家直接看到 {c1}。
-BAD_COLOUR = re.compile(r"[｛{]\s*[cC][^}｝]*[｝}]")
+BAD_COLOUR = re.compile(r"[｛{]\s*[cCwW][^}｝]*[｝}]")
 
 # Minecraft 的十六個原版顏色名稱，{c:名稱} 只認這些。
 # Wynncraft 大部分的顏色不在裡面（元素色、稀有度色都是自訂色碼），
@@ -273,7 +279,7 @@ def check_pair(path: str, key: str, src: str, dst: str,
     bad_colours = [b for b in BAD_COLOUR.findall(dst) if not COLOUR.fullmatch(b)]
     if bad_colours:
         out.append(Problem("error", path, key,
-                           f"顏色佔位符寫錯：{bad_colours}（要正好是 {{c1}}–{{c9}}、"
+                           f"顏色佔位符寫錯：{bad_colours}（要正好是 {{c1}}–{{c9}}、{{w1}}–{{w9}}、"
                            f"{{c:#FF55FF}} 或 {{c:gold}}，不能有空格、全形括號或兩位數）"))
     for spec in COLOUR.findall(dst):
         if not spec.startswith("{c:"):
@@ -300,7 +306,7 @@ def check_pair(path: str, key: str, src: str, dst: str,
     # 本來就止於這一條，不會外溢到別的條目。
     stray_end = 0
     open_span = False
-    for piece in re.split(r"(\{c(?:[1-9]|:[^}]+)\}|\{/\})", dst):
+    for piece in re.split(r"(\{(?:[cw][1-9]|c:[^}]+)\}|\{/\})", dst):
         if piece == COLOUR_END:
             if not open_span:
                 stray_end += 1
