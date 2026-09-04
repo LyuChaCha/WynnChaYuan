@@ -1,6 +1,14 @@
 package com.wynnchayuan.translate;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 裝備面板的「標籤 + 數值」整行，只查標籤、數值原樣接回去。
@@ -30,7 +38,32 @@ public final class StatRowTest {
 
     private static int failures = 0;
 
-    public static void main(String[] args) {
+    /** 見 {@link #labels()}：長得像屬性標籤的才掃。 */
+    private static final java.util.regex.Pattern STAT_LABEL =
+            java.util.regex.Pattern.compile("[A-Z][A-Za-z]*(?: [A-Za-z]+)*%?");
+
+    /** {@code ui-labels.json} 的每一條鍵。 */
+    private static List<String> labels() throws IOException {
+        Path path = Path.of("src/main/resources/assets/wynnchayuan/translations",
+                            Languages.DEFAULT, "ui-labels.json");
+        JsonObject root = JsonParser.parseString(
+                Files.readString(path, StandardCharsets.UTF_8)).getAsJsonObject();
+        List<String> out = new ArrayList<>();
+        for (String key : root.keySet()) {
+            // ui-labels.json 裡不只有屬性標籤，也躺著幾句句子片段
+            // （「its potential.」「to sell (」）。那些後面接數值本來就不該翻，
+            // 掃進來只會製造假警報。只認長得像屬性標籤的：大寫開頭、
+            // 整條都是英文字與空白，可以帶 % 或 Raw 結尾。
+            if (key.startsWith("_") || !STAT_LABEL.matcher(key).matches()
+                    || root.get(key).getAsString().isBlank()) {
+                continue;
+            }
+            out.add(key);
+        }
+        return out;
+    }
+
+    public static void main(String[] args) throws IOException {
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                             Languages.DEFAULT));
@@ -47,12 +80,19 @@ public final class StatRowTest {
         starts(store, "Health Regen {#}-{~} [{~}]", "生命回復");
         starts(store, "Teleport Cost {#}-{~} [{~}]", "傳送消耗");
 
+        // 實機截圖：同一件裝備上下兩行，一行是百分比、一行是實數。
+        // 兩行都標成「法術傷害」的話，玩家分不出哪個是哪個——而那正是他要看的。
+        starts(store, true, "Spell Damage {#}+{~} [{~}]", "法術傷害百分比");
+        starts(store, false, "Spell Damage {#}+{~} [{~}]", "法術傷害值");
+
+        everyLabel(store);
+
         // 數值原樣留著——數字被吃掉的話畫面上就少了一個屬性
         keeps(store, "Fire Spell Damage {#}+{~} [{~}]", "{#}+{~} [{~}]");
         keeps(store, "Elemental Spell Damage {#}+{~} ★{~} ⇧{~} ⇩{~}", "★{~} ⇧{~} ⇩{~}");
 
         // 數值中間的小字也要換掉，不然中文裡夾著一個英文
-        contains(store, "Water Spell Damage{#}-{~} to -{~}", "至");
+        contains(store, "Water Spell Damage{#}-{~} to -{~}", "到");
         contains(store, "Attack Speed {#}+{~} tier", "階");
 
         // 反面：句子不是屬性列。
@@ -70,6 +110,41 @@ public final class StatRowTest {
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 每一條標籤都接得回來。
+     *
+     * <h2>為什麼要全部掃一遍</h2>
+     * 先前 {@code misc.json} 裡躺著<b>兩百多條</b>整行屬性列，是一次一次補出來的。
+     * 這條路上線之後那些全部刪掉了——刪錯一條，畫面上就是一行英文，而且
+     * validate 不會叫（語料本來就沒有那個鍵才是正常的）。
+     *
+     * <p>所以拿 {@code ui-labels.json} 的每一條標籤配上最常見的兩種數值形狀
+     * 各跑一次。這比逐條盯那兩百多條更嚴——標籤是來源，行是它的排列。
+     */
+    private static void everyLabel(TranslationStore store) throws IOException {
+        java.util.List<String> missed = new java.util.ArrayList<>();
+        int checked = 0;
+        for (String label : labels()) {
+            for (String shape : new String[] {" {#}+{~} [{~}]", "{#}-{~} to -{~}"}) {
+                checked++;
+                if (LineTranslator.lookup(label + shape, store, false) == null) {
+                    missed.add(label + shape);
+                }
+            }
+        }
+        report("每一條標籤配上數值都接得回來（掃了 " + checked + " 種，漏掉 "
+                + (missed.size() > 6 ? missed.subList(0, 6) + "…" : missed) + "）",
+                missed.isEmpty());
+    }
+
+    private static void starts(TranslationStore store, boolean percent,
+                               String row, String head) {
+        String hit = LineTranslator.lookup(row, store, percent);
+        report("「" + row + "」" + (percent ? "（百分比）" : "（實數）")
+                + "換成「" + head + "」（實際：" + hit + "）",
+                hit != null && hit.startsWith(head));
     }
 
     private static void starts(TranslationStore store, String row, String head) {
