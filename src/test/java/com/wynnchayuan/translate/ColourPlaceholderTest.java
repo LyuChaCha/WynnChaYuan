@@ -133,6 +133,7 @@ public final class ColourPlaceholderTest {
 
         crossesLines(src);
         wordPalette();
+        progressBar();
         report();
     }
 
@@ -269,6 +270,65 @@ public final class ColourPlaceholderTest {
         // 對照：舊的 palette 會因為箭頭段數不同而挪位，這正是要避開的
         check("舊編號確實會挪位",
                 LineTranslator.palette(half).size() != LineTranslator.palette(none).size());
+    }
+
+    /**
+     * 進度條連同<b>每一格的顏色</b>搬回來。
+     *
+     * <h2>為什麼 {@code {wN}} 不夠</h2>
+     * {@code {wN}} 解決的是「下一層級那一段是第幾個顏色」，那是一段一個顏色。
+     * 但箭頭本身是<b>一格一個顏色</b>——九綠五灰就是進度 9/14。譯文裡那條箭頭
+     * 是一整段文字，怎麼標顏色都只會是同一個色，進度就沒了。使用者回報畫面上
+     * 那條該是灰的卻整條變亮。
+     *
+     * <p>所以改成照抄：譯文那條跟原文同一個符號、同樣長，就一格一格把顏色搬回來。
+     */
+    private static void progressBar() {
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA));
+        Style green = Style.EMPTY.withColor(TextColor.fromRgb(0x55FF55));
+        Style dark = Style.EMPTY.withColor(TextColor.fromRgb(0x555555));
+        Style rare = Style.EMPTY.withColor(TextColor.fromRgb(0xFF55FF));
+        Style white = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
+
+        List<LineParts.Piece> half = List.of(
+                new LineParts.Piece("Tier I ", grey),
+                new LineParts.Piece(">>>>>", green),
+                new LineParts.Piece(">>>>>", dark),
+                new LineParts.Piece(" Tier II ", rare),
+                new LineParts.Piece("[2/4]", white));
+
+        List<LineTranslator.Bar> bars = LineTranslator.bars(half);
+        check("整行只認出一條進度條（實際 " + bars.size() + " 條）", bars.size() == 1);
+        if (bars.size() == 1) {
+            LineTranslator.Bar bar = bars.get(0);
+            check("符號是箭頭", bar.sign() == '>');
+            check("十格（實際 " + bar.styles().size() + "）", bar.styles().size() == 10);
+            check("前五格是綠的",
+                    bar.styles().subList(0, 5).stream().allMatch(green::equals));
+            check("後五格是暗灰的",
+                    bar.styles().subList(5, 10).stream().allMatch(dark::equals));
+        }
+
+        // 進度 0：整條都是暗灰，格數不變——譯文那條照樣對得上
+        List<LineParts.Piece> none = List.of(
+                new LineParts.Piece("Tier I ", grey),
+                new LineParts.Piece(">>>>>>>>>>", dark),
+                new LineParts.Piece(" Tier II ", rare),
+                new LineParts.Piece("[0/4]", white));
+        List<LineTranslator.Bar> flat = LineTranslator.bars(none);
+        check("進度 0 也是一條十格",
+                flat.size() == 1 && flat.get(0).styles().size() == 10);
+
+        // 譯文那一段裡找得到那條，兩頭的空白不算進去
+        int[] span = LineTranslator.barSpan(" >>>>>>>>>> ");
+        check("找得到譯文裡的那條（實際 " + java.util.Arrays.toString(span) + "）",
+                span != null && span[0] == 1 && span[1] == 11);
+
+        // 反面：這些都不是進度條
+        check("中文不是進度條", LineTranslator.barSpan("第 I 層") == null);
+        check("兩格的重複符號不算", LineTranslator.barSpan("看!! 這樣") == null);
+        check("[2/4] 不算", LineTranslator.barSpan("[2/4]") == null);
+        check("空白不算", LineTranslator.barSpan("第 I 層     第 II 層") == null);
     }
 
     private static void check(String what, boolean ok) {

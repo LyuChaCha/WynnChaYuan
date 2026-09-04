@@ -4422,6 +4422,9 @@ public final class LineTranslator {
         // 譯者自己指定的顏色可以挑哪些。見 #colourToken。
         List<Style> palette = palette(allRuns);
         List<Style> words = wordPalette(allRuns);
+        // 進度條的顏色是<b>資料</b>，見 #bars。
+        List<Bar> bars = bars(allRuns);
+        boolean[] usedBar = new boolean[bars.size()];
         FlowedDebug.palette(palette, allRuns, flowed);
 
         // 譯者指定的顏色管到 {/} 或下一個 {cN} 為止，<b>可以跨行</b>。
@@ -4489,9 +4492,30 @@ public final class LineTranslator {
                                     ? peekStyle(tokens.get(i + 1), glyphs, places,
                                                 numbers, users, glyph, place, number, user)
                                     : null;
-                            appendHugging(line, token.text(), textStyle, symbolStyle,
-                                          noteStyle, inNote, accents, usedAccent,
-                                          store, before, after, afterNumber);
+                            // 進度條先攔下來，剩下的兩頭照舊走猜的那條路。
+                            int[] span = barSpan(token.text());
+                            Bar bar = span == null ? null
+                                    : takeBar(bars, usedBar, token.text().charAt(span[0]),
+                                              span[1] - span[0]);
+                            if (bar == null) {
+                                appendHugging(line, token.text(), textStyle, symbolStyle,
+                                              noteStyle, inNote, accents, usedAccent,
+                                              store, before, after, afterNumber);
+                            } else {
+                                String head = token.text().substring(0, span[0]);
+                                String tail = token.text().substring(span[1]);
+                                if (!head.isEmpty()) {
+                                    appendHugging(line, head, textStyle, symbolStyle,
+                                                  noteStyle, inNote, accents, usedAccent,
+                                                  store, before, null, afterNumber);
+                                }
+                                appendBar(line, bar);
+                                if (!tail.isEmpty()) {
+                                    appendHugging(line, tail, textStyle, symbolStyle,
+                                                  noteStyle, inNote, accents, usedAccent,
+                                                  store, null, after, false);
+                                }
+                            }
                         }
                         justFilled = null;
                         afterNumber = false;
@@ -5304,6 +5328,131 @@ public final class LineTranslator {
             return new Token(Kind.COLOR, whole, -1);
         }
         return null;
+    }
+
+    /**
+     * 原文裡一整條同一個符號重複的進度條，連同它<b>每一格的顏色</b>。
+     *
+     * @param sign   組成這條的那個符號
+     * @param styles 每一格各自的樣式，長度就是這條有幾格
+     */
+    record Bar(char sign, List<Style> styles) { }
+
+    /** 幾格以上才算一條進度條。兩格的重複符號多半只是標點。 */
+    private static final int MIN_BAR = 3;
+
+    /**
+     * 把原文裡的進度條連同顏色收起來。
+     *
+     * <h2>為什麼需要這個</h2>
+     * 意象的層級那一行，原文長這樣：
+     *
+     * <pre>
+     *   Tier I  &gt;&gt;&gt;&gt;&gt;&gt;  &gt;&gt;&gt;&gt;  Tier II  [9/14]
+     *   灰      綠          暗灰      洋紅     白
+     * </pre>
+     *
+     * 綠的有幾格<b>就是進度本身</b>——9/14 就是九綠五灰。那條箭頭不是裝飾，
+     * 是玩家真正在看的東西。
+     *
+     * <p>而譯文裡它是一整段文字（{@code 「 >>>>>>>>>> 」}），走的是猜顏色那條路，
+     * 猜出來整條同一個色，進度就沒了。{@code {cN}} / {@code {wN}} 也救不了：
+     * 那是一段一個顏色，而這裡要的是一格一個顏色。
+     *
+     * <p>做法跟 {@code {#}} 一樣——原樣搬回來。只要譯文裡那條跟原文<b>同一個符號、
+     * 同樣長</b>，就把原文每一格的顏色照抄；長度對不上就不猜，照舊。
+     */
+    static List<Bar> bars(List<LineParts.Piece> runs) {
+        List<Bar> out = new ArrayList<>();
+        char sign = 0;
+        List<Style> styles = new ArrayList<>();
+        for (LineParts.Piece run : runs) {
+            Style style = run.style() == null ? Style.EMPTY : run.style();
+            for (int i = 0; i < run.text().length(); i++) {
+                char c = run.text().charAt(i);
+                if (c == sign) {
+                    styles.add(style);
+                    continue;
+                }
+                if (styles.size() >= MIN_BAR) {
+                    out.add(new Bar(sign, List.copyOf(styles)));
+                }
+                styles.clear();
+                sign = isBarSign(c) ? c : 0;
+                if (sign != 0) {
+                    styles.add(style);
+                }
+            }
+        }
+        if (styles.size() >= MIN_BAR) {
+            out.add(new Bar(sign, List.copyOf(styles)));
+        }
+        return out;
+    }
+
+    /**
+     * 這個字元能不能組成進度條。
+     *
+     * <p>字母與數字不算——那是字不是條。空白也不算，不然一整片縮排會被當成一條。
+     * 代理對（{@code {#}} 那些私用區符號）同樣排除：它們走 GLYPH 那條路填回去，
+     * 本來就帶著自己的樣式。
+     */
+    private static boolean isBarSign(char c) {
+        return !Character.isLetterOrDigit(c) && !Character.isWhitespace(c)
+                && !Character.isSurrogate(c);
+    }
+
+    /** 這段文字裡第一條進度條的起訖（{@code {起, 訖}}），沒有就回 {@code null}。 */
+    static int[] barSpan(String text) {
+        int i = 0;
+        while (i < text.length()) {
+            char c = text.charAt(i);
+            if (!isBarSign(c)) {
+                i++;
+                continue;
+            }
+            int j = i;
+            while (j < text.length() && text.charAt(j) == c) {
+                j++;
+            }
+            if (j - i >= MIN_BAR) {
+                return new int[] {i, j};
+            }
+            i = j;
+        }
+        return null;
+    }
+
+    /**
+     * 領一條還沒用過、對得上的原文進度條。
+     *
+     * <p>同一行有兩條的時候照出現順序配，用過的不再配第二次——不然第二條會
+     * 拿到第一條的顏色。
+     */
+    private static Bar takeBar(List<Bar> bars, boolean[] used, char sign, int length) {
+        for (int i = 0; i < bars.size(); i++) {
+            Bar bar = bars.get(i);
+            if (!used[i] && bar.sign() == sign && bar.styles().size() == length) {
+                used[i] = true;
+                return bar;
+            }
+        }
+        return null;
+    }
+
+    /** 把一條進度條畫回去，顏色相同的相鄰格併成一段。 */
+    private static void appendBar(MutableComponent line, Bar bar) {
+        int at = 0;
+        while (at < bar.styles().size()) {
+            Style style = bar.styles().get(at);
+            int end = at;
+            while (end < bar.styles().size() && bar.styles().get(end).equals(style)) {
+                end++;
+            }
+            line.append(literal(String.valueOf(bar.sign()).repeat(end - at),
+                                forDisplay(style)));
+            at = end;
+        }
     }
 
     /**

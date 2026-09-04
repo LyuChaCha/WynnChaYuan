@@ -87,6 +87,7 @@ public final class StatRowTest {
 
         everyLabel(store);
         ownerLabels(store);
+        notAGap(store);
 
         // 數值原樣留著——數字被吃掉的話畫面上就少了一個屬性
         keeps(store, "Fire Spell Damage {#}+{~} [{~}]", "{#}+{~} [{~}]");
@@ -167,6 +168,32 @@ public final class StatRowTest {
         report("每一條標籤配上數值都接得回來（掃了 " + checked + " 種，漏掉 "
                 + (missed.size() > 6 ? missed.subList(0, 6) + "…" : missed) + "）",
                 missed.isEmpty());
+    }
+
+    /**
+     * 屬性列不會被記成「還沒翻」。
+     *
+     * <h2>為什麼這條很重要</h2>
+     * {@code captured.json} 是翻譯團隊的工作清單。判斷「這條翻了沒」走的是
+     * {@link TranslationStore#hasTranslation}，而那裡本來只查整行——屬性列是
+     * 拆成標籤加數值查的，於是畫面上明明是中文，清單裡照樣列成缺口。
+     *
+     * <p>後果不是多幾條雜訊而已：團隊照著清單補，補出來的是<b>整行</b>條目，
+     * 而整行條目會把標籤那條路整個蓋掉。先前 misc.json 裡那兩百多條就是這樣
+     * 長出來的，蓋掉之後百分比與實數又分不出來了。這條測試把那個循環擋在門口。
+     */
+    private static void notAGap(TranslationStore store) {
+        for (String row : new String[] {
+                "Walk Speed {#}+{~} [{~}]",
+                "Spell Damage {#}+{~} [{~}]",
+                "Health Regen {#}-{~} [{~}]",
+                "Water Spell Damage{#}-{~} to -{~}",
+                "Attack Speed {#}+{~} tier"}) {
+            report("「" + row + "」不會被記成缺口", store.hasTranslation(row));
+        }
+        // 反面：真的沒翻的還是要留在清單上，不然團隊就看不到了
+        report("真的沒翻的還是缺口",
+                !store.hasTranslation("Grants extra courage to everyone nearby by +{~}."));
     }
 
     private static void starts(TranslationStore store, boolean percent,
