@@ -3635,11 +3635,21 @@ public final class LineTranslator {
         if (!GlyphSplitter.hasLetter(label)) {
             return null;
         }
-        // 數值帶百分號的話，標籤要選「%」那一個版本（生命回復 vs 生命回復百分比）。
-        // 呼叫端算的 percent 是看整行的原文，而模板裡的百分號有時候已經被吃進
-        // {~} 裡了——所以兩邊都看，只要有一邊說是百分比就算。
+        // 同一個屬性有三種標籤，畫面上是<b>三個不同的東西</b>：
+        //
+        //   Spell Damage +12%   -> 法術傷害百分比   （Spell Damage%）
+        //   Spell Damage +230   -> 法術傷害值       （Spell Damage Raw）
+        //   Spell Damage        -> 法術傷害         （沒有特地區分時）
+        //
+        // 實機截圖裡這兩行上下相鄰，都標成「法術傷害」的話玩家分不出哪個是
+        // 百分比、哪個是實數——而那正是他要看的差別。
+        //
+        // 百分比與否只有呼叫端算得出來：模板裡的百分號常常已經被吃進 {~} 了。
         String tail = template.substring(from);
-        String zh = lookupTrimmed(label, store, percent || tail.indexOf('%') >= 0);
+        String zh = lookupTrimmed(label + (percent ? "%" : " Raw"), store, false);
+        if (zh == null || zh.isBlank()) {
+            zh = lookupTrimmed(label, store, percent);
+        }
         if (zh == null || zh.isBlank()) {
             return null;
         }
@@ -3717,11 +3727,11 @@ public final class LineTranslator {
     /**
      * 數值段裡唯一允許出現的英文字。
      *
-     * <p>{@code to} 是區間（{@code +100 to +200}）、{@code tier} 是攻速階級
+     * <p>{@code to} 是區間（{@code +100 to +200}），跟語料裡既有的兩百多條屬性列一樣用「到」、{@code tier} 是攻速階級
      * （{@code +1 tier}）。兩個都只出現在數值中間，不會讓句子被誤判成屬性列。
      */
     private static final java.util.Map<String, String> TAIL_WORDS = java.util.Map.of(
-            "to", "至", "tier", "階", "tiers", "階");
+            "to", "到", "tier", "階", "tiers", "階");
 
     /** 見 {@link #lookup}：先剝首尾再查，這是原本那條路。 */
     private static String lookupTrimmed(String template, TranslationStore store,
