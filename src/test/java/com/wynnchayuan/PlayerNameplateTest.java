@@ -39,6 +39,9 @@ public final class PlayerNameplateTest {
         "NexusRolly Love",
         "heal kitty {#}[Lv {~}]",
         "coca cola {#}[{~}/{~}]",
+        // 石碑廣播：誰放的就寫誰的名字，後面還跟著座標
+        "{#} PoorChaCha has placed a mob totem in {p} at {~}, {~},",
+        "{#} You are inside of PoorChaCha's mob totem. Get your own",
     };
 
     /** 正當的遊戲內容，一個都不能擋。 */

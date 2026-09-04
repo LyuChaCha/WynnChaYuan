@@ -49,6 +49,14 @@ public final class PlayerDataFilter {
             " sent you a friend request",
             " from their crate!",       // 開箱廣播，夾帶開箱者的玩家名
             " has thrown a ",           // 「某某人丟了經驗炸彈」，夾帶玩家名
+            // 「PoorChaCha has placed a mob totem in {p} at …」與
+            // 「You are inside of PoorChaCha's mob totem.」——石碑是誰放的
+            // 就寫誰的名字，而且句子裡還有座標。實機的 captured.json 裡
+            // 這兩句都漏進來過。
+            " has placed a mob totem",
+            " has placed a gathering totem",
+            " mob totem. Get your own",
+            " gathering totem. Get your own",
             " of your XP to ",          // 「將 X% 經驗貢獻給某公會」，夾帶公會名
             " has just logged in",      // 上線通知，夾帶玩家名
             " has just logged out",
