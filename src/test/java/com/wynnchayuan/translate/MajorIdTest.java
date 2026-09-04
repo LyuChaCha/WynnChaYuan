@@ -46,6 +46,19 @@ public final class MajorIdTest {
             check("佔位符數量守住", numberSlots(flowed) == numberSlots(AS_RENDERED));
         }
 
+        // 實機回報的那一份：名稱前面帶兩個置中偏移字元。
+        //
+        // capture 裡這幾行各出現兩百多次，全部被記成「沒有譯文」——per-line
+        // 查表本來就查不到（語料的鍵是整段），所以那不算證據。真正要確認的是
+        // 整段這條路救不救得回來。救不回來的話畫面上就是一整段英文，
+        // 而使用者看到的會是「Major ID 裡有英文技能名稱」。
+        String blinding = LineTranslator.lookupFlowed(BLINDING, store);
+        check("帶兩個偏移字元的整段也查得到（實際：" + shorten(blinding) + "）",
+                blinding != null);
+        if (blinding != null) {
+            check("名稱有翻到", blinding.contains("眩目之光"));
+        }
+
         // 反面：冒號兩邊只要有一邊不在語料裡就不該亂猜
         check("不認得的名稱不會硬翻",
                 LineTranslator.lookupFlowed(
@@ -57,6 +70,27 @@ public final class MajorIdTest {
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 實機的「眩目之光」，照 capture 裡逐行記下來的樣子。
+     *
+     * <p>第一行前面那兩個 {@code {#}} 是面板的置中偏移，不是內容。
+     */
+    private static final String BLINDING =
+            "{#}{#}Blinding Lights: All Ophanim\n"
+            + "orbs deal {~} damage, gain\n"
+            + "+{~} Crystallize per hit, and\n"
+            + "instead orbit around you.\n"
+            + "Using Main Attack causes all\n"
+            + "orbs to travel faster.";
+
+    private static String shorten(String text) {
+        if (text == null) {
+            return "null";
+        }
+        String one = text.replace('\n', ' ');
+        return one.length() > 40 ? one.substring(0, 40) + "…" : one;
     }
 
     /** 數值佔位符有幾個，{@code {~}} 與編號版 {@code {~1}} 都算。 */
