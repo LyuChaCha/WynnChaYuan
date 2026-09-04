@@ -3886,7 +3886,11 @@ public final class LineTranslator {
             return hit;
         }
         hit = withQuality(key, store, percent);
-        return hit != null ? hit : withMaker(key, store);
+        if (hit != null) {
+            return hit;
+        }
+        hit = withMaker(key, store);
+        return hit != null ? hit : withOwner(key, store);
     }
 
     /**
@@ -3917,6 +3921,52 @@ public final class LineTranslator {
         }
         return null;
     }
+
+    /**
+     * 「{@code <玩家名>'s <東西>}」這種<b>名字在前</b>的漂浮字。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 石碑放下去之後，頭上浮著：
+     *
+     * <pre>
+     *   PoorChaCha's Mob Totem
+     *   ⌛ 4m 56s
+     * </pre>
+     *
+     * 名字是別人的（也可能是自己的），永遠不會進語料——擷取那一關就擋掉了
+     * （見 {@code PlayerDataFilter}）。所以整行查不到，畫面上一直是英文。
+     *
+     * <p>{@link #withMaker} 處理的是「固定開頭 + 名字」（{@code Crafted by X}），
+     * 這裡是<b>反過來</b>的那一半：名字在前、東西在後。
+     *
+     * <h2>為什麼不會亂認</h2>
+     * 兩道關卡都得過：前半要像 Minecraft 的 ID（見 {@link #isName}），
+     * 後半要<b>剛好是語料裡的一個鍵</b>。設定裡的所有格（{@code Orphion's Grace}）
+     * 整條本來就查得到，根本輪不到這裡；真的輪到了，「Grace」也不是語料的鍵。
+     */
+    private static String withOwner(String key, TranslationStore store) {
+        String core = key.strip();
+        int at = -1;
+        for (String mark : OWNER_MARKS) {
+            int found = core.indexOf(mark);
+            if (found > 0 && (at < 0 || found < at)) {
+                at = found;
+            }
+        }
+        if (at <= 0) {
+            return null;
+        }
+        String name = core.substring(0, at);
+        if (!isName(name)) {
+            return null;
+        }
+        String thing = core.substring(at + 3).strip();
+        String zh = thing.isEmpty() ? null : store.lookup(thing);
+        return zh == null || zh.isBlank() ? null : name + " 的" + zh;
+    }
+
+    /** 見 {@link #withOwner}：所有格的兩種撇號，材質包兩種都出現過。 */
+    private static final String[] OWNER_MARKS = {"'s ", "’s "};
 
     /**
      * Minecraft 的 ID：英數與底線。

@@ -86,6 +86,7 @@ public final class StatRowTest {
         starts(store, false, "Spell Damage {#}+{~} [{~}]", "法術傷害值");
 
         everyLabel(store);
+        ownerLabels(store);
 
         // 數值原樣留著——數字被吃掉的話畫面上就少了一個屬性
         keeps(store, "Fire Spell Damage {#}+{~} [{~}]", "{#}+{~} [{~}]");
@@ -110,6 +111,35 @@ public final class StatRowTest {
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 「{@code <玩家名>'s <東西>}」的漂浮字。
+     *
+     * <h2>為什麼整行永遠查不到</h2>
+     * 石碑放下去頭上浮的是「PoorChaCha's Mob Totem」——名字是玩家的，
+     * 擷取那一關就擋掉了（見 {@code PlayerDataFilter}），所以這種句子
+     * 從來沒進過語料，畫面上一直是英文。使用者回報了兩次。
+     *
+     * <p>做法是只翻後半、名字原樣留著。兩道關卡：前半要像 Minecraft 的 ID，
+     * 後半要剛好是語料裡的一個鍵。
+     */
+    private static void ownerLabels(TranslationStore store) {
+        owner(store, "PoorChaCha's Mob Totem", "PoorChaCha 的怪物石碑");
+        owner(store, "PoorChaCha's Gathering Totem", "PoorChaCha 的採集石碑");
+        // 全形撇號的版本，材質包兩種都出現過
+        owner(store, "PoorChaCha’s Mob Totem", "PoorChaCha 的怪物石碑");
+
+        // 反面：後半不是語料的鍵就整行不翻，免得中英夾雜
+        report("後半不認得就不翻（實際："
+                        + LineTranslator.lookup("Someone's Unknown Thingy", store, false) + "）",
+                LineTranslator.lookup("Someone's Unknown Thingy", store, false) == null);
+    }
+
+    private static void owner(TranslationStore store, String row, String want) {
+        String hit = LineTranslator.lookup(row, store, false);
+        report("「" + row + "」-> 「" + want + "」（實際：" + hit + "）",
+                want.equals(hit));
     }
 
     /**
