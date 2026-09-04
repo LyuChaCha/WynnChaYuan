@@ -3580,13 +3580,152 @@ public final class LineTranslator {
      * {@code an {#}Item Identifier can unlock}），剝掉會改變語意。
      */
     private static String lookup(String template, TranslationStore store) {
-        return lookup(template, store, false);
+        // 這個沒帶 percent 的版本<b>不走屬性列那條路</b>。屬性列要看數值有沒有
+        // 百分號才知道該挑哪一個標籤（生命回復 vs 生命回復百分比），而百分號
+        // 這時候常常已經被吃進 {~} 裡了——只有呼叫端算得出來。這裡硬猜的話，
+        // 「Health Regen -20%」會被標成非百分比的譯法，看起來只是翻得不夠好，
+        // 其實是查錯鍵了。帶 percent 的那個版本才試。
+        return lookupTrimmed(template, store, false);
     }
 
     /**
      * @param percent 這一行的數值是百分比，優先找「標籤 + {@code %}」的鍵
      */
     static String lookup(String template, TranslationStore store, boolean percent) {
+        String hit = lookupTrimmed(template, store, percent);
+        return hit != null ? hit : statRow(template, store, percent);
+    }
+
+    /**
+     * 裝備面板的「標籤 + 數值」整行。
+     *
+     * <h2>為什麼不能靠整行條目收</h2>
+     * 同一個「法術傷害」在實機上長這些樣子：
+     *
+     * <pre>
+     *   Fire Spell Damage {#}+{~} [{~}]
+     *   Water Spell Damage{#}-{~} to -{~}
+     *   Spell Damage {#}+{~} [{~}, {~}]
+     *   Elemental Spell Damage {#}+{~} ★{~} ⇧{~} ⇩{~}
+     *   [{~}] Spell Damage
+     * </pre>
+     *
+     * <b>七種元素 × 正負 × 五六種數值格式</b>，而整行條目一種只收一個。
+     * 收不完——每補一批，下一份 capture 又冒出新的排列。
+     *
+     * <h2>做法</h2>
+     * 標籤本來就都在 {@code ui-labels.json} 裡（288 條，含
+     * {@code Fire Spell Damage}、{@code Damage Scale} 這些）。
+     * 所以不查整行，改成把行尾<b>純數值的那一段</b>切掉、只查前面的標籤，
+     * 數值原樣接回去。一條標籤就涵蓋所有排列。
+     *
+     * <h2>為什麼很安全</h2>
+     * 尾巴必須<b>整段都是數值</b>——佔位符、數字、正負號、括號、箭頭這些。
+     * 只要還有一個英文字，就不是屬性列而是句子，這條路直接放棄。例外只有
+     * {@link #TAIL_WORDS} 那兩個字，它們本來就只出現在數值中間。
+     *
+     * @return 譯好的整行；不是屬性列、或標籤查不到時回傳 {@code null}
+     */
+    private static String statRow(String template, TranslationStore store, boolean percent) {
+        int from = valueTailStart(template);
+        if (from <= 0 || from >= template.length()) {
+            return null;                       // 沒有數值尾巴，或整行都是數值
+        }
+        String label = template.substring(0, from);
+        if (!GlyphSplitter.hasLetter(label)) {
+            return null;
+        }
+        // 數值帶百分號的話，標籤要選「%」那一個版本（生命回復 vs 生命回復百分比）。
+        // 呼叫端算的 percent 是看整行的原文，而模板裡的百分號有時候已經被吃進
+        // {~} 裡了——所以兩邊都看，只要有一邊說是百分比就算。
+        String tail = template.substring(from);
+        String zh = lookupTrimmed(label, store, percent || tail.indexOf('%') >= 0);
+        if (zh == null || zh.isBlank()) {
+            return null;
+        }
+        return zh + translateTail(tail);
+    }
+
+    /**
+     * 行尾那段純數值從哪裡開始。
+     *
+     * <p>從尾巴往回走：佔位符整組跳過，數值字元一個一個退，
+     * {@link #TAIL_WORDS} 裡的小字也算數值的一部分。遇到別的就停。
+     *
+     * @return 數值段的起點；整行都不是數值時回傳 {@code template.length()}
+     */
+    private static int valueTailStart(String template) {
+        int at = template.length();
+        while (at > 0) {
+            char last = template.charAt(at - 1);
+            if (last == '}') {
+                int open = template.lastIndexOf('{', at - 1);
+                if (open < 0) {
+                    break;                     // 沒頭沒尾的括號，別猜
+                }
+                at = open;
+            } else if (isValueChar(last)) {
+                at--;
+            } else {
+                int word = tailWordStart(template, at);
+                if (word < 0) {
+                    break;
+                }
+                at = word;
+            }
+        }
+        return at;
+    }
+
+    /** {@code at} 前面那個字如果是尾巴允許的小字，回傳它的起點，否則 -1。 */
+    private static int tailWordStart(String template, int at) {
+        int start = at;
+        while (start > 0 && Character.isLetter(template.charAt(start - 1))) {
+            start--;
+        }
+        return start < at && TAIL_WORDS.containsKey(template.substring(start, at))
+                ? start : -1;
+    }
+
+    /** 數值段裡的小字也要換掉，不然「+1 tier」會留一個英文在中文中間。 */
+    private static String translateTail(String tail) {
+        StringBuilder out = new StringBuilder(tail.length());
+        int at = 0;
+        while (at < tail.length()) {
+            if (!Character.isLetter(tail.charAt(at))) {
+                out.append(tail.charAt(at));
+                at++;
+                continue;
+            }
+            int end = at;
+            while (end < tail.length() && Character.isLetter(tail.charAt(end))) {
+                end++;
+            }
+            String word = tail.substring(at, end);
+            out.append(TAIL_WORDS.getOrDefault(word, word));
+            at = end;
+        }
+        return out.toString();
+    }
+
+    /** 見 {@link #statRow}：這些字元自己不是內容，只是數值的一部分。 */
+    private static boolean isValueChar(char c) {
+        return Character.isDigit(c) || Character.isWhitespace(c)
+                || "+-±%/[](){}<>,.:~*★⇧⇩⇨❤✦✤✹✽✧'\"".indexOf(c) >= 0;
+    }
+
+    /**
+     * 數值段裡唯一允許出現的英文字。
+     *
+     * <p>{@code to} 是區間（{@code +100 to +200}）、{@code tier} 是攻速階級
+     * （{@code +1 tier}）。兩個都只出現在數值中間，不會讓句子被誤判成屬性列。
+     */
+    private static final java.util.Map<String, String> TAIL_WORDS = java.util.Map.of(
+            "to", "至", "tier", "階", "tiers", "階");
+
+    /** 見 {@link #lookup}：先剝首尾再查，這是原本那條路。 */
+    private static String lookupTrimmed(String template, TranslationStore store,
+                                        boolean percent) {
         String exact = withPercent(template, store, percent);
         if (exact != null) {
             // `store.lookup` 會把鍵 strip 過再查，命中時<b>原文首尾的空白就消失了</b>——
