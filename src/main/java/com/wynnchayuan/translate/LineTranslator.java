@@ -4421,6 +4421,7 @@ public final class LineTranslator {
 
         // 譯者自己指定的顏色可以挑哪些。見 #colourToken。
         List<Style> palette = palette(allRuns);
+        List<Style> words = wordPalette(allRuns);
         FlowedDebug.palette(palette, allRuns, flowed);
 
         // 譯者指定的顏色管到 {/} 或下一個 {cN} 為止，<b>可以跨行</b>。
@@ -4444,7 +4445,7 @@ public final class LineTranslator {
             for (int i = 0; i < tokens.size(); i++) {
                 Token token = tokens.get(i);
                 switch (token.kind()) {
-                    case COLOR -> forced = colourOf(token, palette, textStyle);
+                    case COLOR -> forced = colourOf(token, palette, words, textStyle);
                     case GLYPH -> {
                         // 符號連同原樣式（含自訂字型）整段搬回，這是它顯示得出來的唯一方式
                         LineParts.Piece piece = glyphs.get(glyph++);
@@ -5280,8 +5281,10 @@ public final class LineTranslator {
         if (template.startsWith(COLOR_END, at)) {
             return new Token(Kind.COLOR, COLOR_END, 0);
         }
-        if (at + 3 > template.length()
-                || template.charAt(at) != '{' || template.charAt(at + 1) != 'c') {
+        boolean word = at + 3 <= template.length()
+                && template.charAt(at) == '{' && template.charAt(at + 1) == 'w';
+        if (!word && (at + 3 > template.length()
+                || template.charAt(at) != '{' || template.charAt(at + 1) != 'c')) {
             return null;
         }
         int end = template.indexOf('}', at + 2);
@@ -5291,7 +5294,11 @@ public final class LineTranslator {
         String body = template.substring(at + 2, end);
         String whole = template.substring(at, end + 1);
         if (body.length() == 1 && body.charAt(0) >= '1' && body.charAt(0) <= '9') {
-            return new Token(Kind.COLOR, whole, body.charAt(0) - '0');
+            int slot = body.charAt(0) - '0';
+            return new Token(Kind.COLOR, whole, word ? slot + WORD_SLOT : slot);
+        }
+        if (word) {
+            return null;                       // {w:…} 沒有這種寫法
         }
         if (body.length() > 1 && body.charAt(0) == ':') {
             return new Token(Kind.COLOR, whole, -1);
@@ -5320,13 +5327,58 @@ public final class LineTranslator {
     }
 
     /**
+     * 只看<b>有字母</b>的片段的顏色，同樣依第一次出現的順序編號。{@code {w1}} 是第一個。
+     *
+     * <h2>為什麼要有第二套編號</h2>
+     * {@link #palette} 是照<b>所有</b>有內容的片段編的，而有些行裡夾著純符號的
+     * 片段——意象的層級進度就是：
+     *
+     * <pre>
+     *   Tier I  &gt;&gt;&gt;&gt;&gt;  &gt;&gt;&gt;&gt;&gt;  Tier II  [2/4]
+     *   灰      綠        暗灰     洋紅     白
+     * </pre>
+     *
+     * 綠箭頭的數量<b>隨進度變動</b>：進度 0 的時候只有一段暗灰，滿的時候只有
+     * 一段綠。於是「下一層」那一段在 palette 裡一下是第 4 個、一下是第 3 個——
+     * 譯文裡寫死 {@code {c4}} 或 {@code {c3}} 都會有一半的時候落空，落空就當作
+     * 沒寫，畫面上整行變成灰的。使用者回報了兩次。
+     *
+     * <p>{@code {wN}} 只數有字母的片段：箭頭與 {@code [2/4]} 都不算，所以
+     * {@code {w1}} 永遠是目前層級、{@code {w2}} 永遠是下一層級，跟進度無關。
+     *
+     * <p>刻意<b>另開</b>一套而不是改 {@link #palette}：語料裡已經有八百多條在用
+     * {@code {cN}}，改編號規則會把它們全部挪位。
+     */
+    static List<Style> wordPalette(List<LineParts.Piece> runs) {
+        List<Style> out = new ArrayList<>();
+        for (LineParts.Piece run : runs) {
+            if (!GlyphSplitter.hasLetter(run.text())) {
+                continue;
+            }
+            Style style = run.style() == null ? Style.EMPTY : run.style();
+            if (!out.contains(style)) {
+                out.add(style);
+            }
+        }
+        return out;
+    }
+
+    /** 見 {@link #wordPalette}：{@code {wN}} 的編號從這裡起跳，跟 {@code {cN}} 分開。 */
+    private static final int WORD_SLOT = 100;
+
+    /**
      * 一個顏色佔位符要套的樣式；套不出來就回傳 {@code null}（照舊走猜的那條路）。
      *
      * @param base 這一段原本的樣式，{@code {c:…}} 只換顏色、其餘沿用
      */
-    private static Style colourOf(Token token, List<Style> palette, Style base) {
+    private static Style colourOf(Token token, List<Style> palette,
+                                  List<Style> words, Style base) {
         if (token.index() == 0) {
             return null;                       // {/}：回到底色
+        }
+        if (token.index() > WORD_SLOT) {
+            int slot = token.index() - WORD_SLOT;
+            return slot <= words.size() ? forDisplay(words.get(slot - 1)) : null;
         }
         if (token.index() > 0) {
             return token.index() <= palette.size()

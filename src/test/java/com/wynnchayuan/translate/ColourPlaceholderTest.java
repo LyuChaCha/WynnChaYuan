@@ -8,6 +8,8 @@ import net.minecraft.network.chat.TextColor;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import com.wynnchayuan.capture.LineParts;
+
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -130,6 +132,7 @@ public final class ColourPlaceholderTest {
                               && !odd.getString().contains("{/}")));
 
         crossesLines(src);
+        wordPalette();
         report();
     }
 
@@ -219,6 +222,53 @@ public final class ColourPlaceholderTest {
             out.addAll(flatten(child));
         }
         return out;
+    }
+
+    /**
+     * {@code {wN}} 只數<b>有字母</b>的片段，所以進度變了編號也不會挪位。
+     *
+     * <h2>為什麼需要它</h2>
+     * 意象的層級進度長這樣，綠箭頭的數量隨進度變動：
+     *
+     * <pre>
+     *   Tier I  &gt;&gt;&gt;&gt;&gt;  &gt;&gt;&gt;&gt;&gt;  Tier II  [2/4]
+     *   灰      綠        暗灰     洋紅     白
+     * </pre>
+     *
+     * 進度 0 或滿的時候箭頭只有一段，{@code {cN}} 的編號就整個往前挪一格，
+     * 寫死的號碼有一半的時候會落空——落空當作沒寫，畫面上整行變灰。
+     */
+    private static void wordPalette() {
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA));
+        Style green = Style.EMPTY.withColor(TextColor.fromRgb(0x55FF55));
+        Style dark = Style.EMPTY.withColor(TextColor.fromRgb(0x555555));
+        Style rare = Style.EMPTY.withColor(TextColor.fromRgb(0xFF55FF));
+        Style white = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
+
+        // 進度做到一半：綠箭頭與暗箭頭各一段
+        List<LineParts.Piece> half = List.of(
+                new LineParts.Piece("Tier I ", grey),
+                new LineParts.Piece(">>>>>", green),
+                new LineParts.Piece(">>>>>", dark),
+                new LineParts.Piece(" Tier II ", rare),
+                new LineParts.Piece("[2/4]", white));
+        // 進度是 0：只有一段暗箭頭
+        List<LineParts.Piece> none = List.of(
+                new LineParts.Piece("Tier I ", grey),
+                new LineParts.Piece(">>>>>>>>>>", dark),
+                new LineParts.Piece(" Tier II ", rare),
+                new LineParts.Piece("[0/4]", white));
+
+        for (var runs : List.of(half, none)) {
+            List<Style> words = LineTranslator.wordPalette(runs);
+            check("{w1} 是目前層級的灰（實際 " + words.size() + " 色）",
+                    words.size() >= 2 && grey.equals(words.get(0)));
+            check("{w2} 是下一層級的稀有度色", words.size() >= 2 && rare.equals(words.get(1)));
+        }
+
+        // 對照：舊的 palette 會因為箭頭段數不同而挪位，這正是要避開的
+        check("舊編號確實會挪位",
+                LineTranslator.palette(half).size() != LineTranslator.palette(none).size());
     }
 
     private static void check(String what, boolean ok) {
