@@ -210,6 +210,14 @@ tasks.register('runLiteralPlayerChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLiteralPlayerChecks' }
 
+tasks.register('runAbilityTermChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證敘述裡的技能名稱畫出來是中文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.AbilityTermTest'
+}
+tasks.named('check') { dependsOn 'runAbilityTermChecks' }
+
 tasks.register('runChatAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證聊天訊息的譯文跟原文那一塊形狀一樣'
