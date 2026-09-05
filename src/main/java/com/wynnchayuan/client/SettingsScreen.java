@@ -5,242 +5,620 @@ import com.wynnchayuan.WynnChaYuan;
 import com.wynnchayuan.render.Colors;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 /**
  * F6 開啟的設定畫面。
  *
- * <p>分成三張卡片：顯示、翻譯、資料。純按鈕堆疊看不出哪些設定是一組的，
- * 分卡之後不用看說明也大致猜得到。
+ * <h2>為什麼重做</h2>
+ * 舊版是「左右兩張卡片、每個按鈕底下印一行說明」。三個問題：
+ *
+ * <ol>
+ *   <li><b>找不到東西。</b>分類是〈顯示〉〈翻譯〉〈資料〉，但「物品翻譯」在顯示、
+ *       「翻譯物品名稱」在翻譯、「名牌漂浮字」也在翻譯——按功能分聽起來合理，
+ *       用起來要一欄一欄掃。</li>
+ *   <li><b>說明擠在按鈕底下很亂。</b>每一列佔兩倍高，整片畫面都是小字。</li>
+ *   <li><b>版面會跟方框對不上。</b>這是結構問題：按鈕在 {@code init()} 用
+ *       {@code TOP + rowH()*N} 擺，說明在 {@code render()} 用<b>另一組</b>手算座標擺，
+ *       卡片高度是第三條公式。三邊各算各的，實際上早就漂掉了——第 2 列的按鈕是
+ *       「任務對話」，底下印的卻是「對話框停留秒數」，而第 5 到第 8 列
+ *       <b>一行說明都沒有</b>。加一列就會再壞一次。</li>
+ * </ol>
+ *
+ * <h2>現在怎麼做</h2>
+ * <ul>
+ *   <li>左邊分類、右邊只顯示那一類。分類照<b>「這東西出現在遊戲的哪裡」</b>取名
+ *       （物品／面板／對話／世界與聊天／資料），不是照程式怎麼分。</li>
+ *   <li>一列 = 左邊名稱、右邊控制項。說明改成<b>滑鼠移上去</b>時顯示在底下那一條，
+ *       清單本身乾淨。</li>
+ *   <li><b>說明跟著那一列走</b>（{@link Row} 同時帶名稱、說明與控制項），
+ *       座標只算一次。結構上不可能再漂掉。</li>
+ *   <li>放不下就可以滾。以後再加二十個設定也不會擠爆。</li>
+ * </ul>
  *
  * <p>只用原版 {@link Button} 與 {@link EditBox}，不引入 Cloth Config／YACL——
  * 設定就這幾項，多一個依賴只是多一個會壞掉的東西。
  */
 public final class SettingsScreen extends Screen {
 
-    private static final int COL_W = 204;
-    private static final int PAD = 10;
-    private static final int TOP = 84;   // 標題列 41 + 卡片標題與留白
+    // ------------------------------------------------------------ 版面常數
+
+    /** 左邊分類欄的寬度。 */
+    private static final int TAB_W = 96;
+
+    /** 右邊清單想要多寬。畫面窄的時候會自己縮。 */
+    private static final int PANE_W = 330;
+
+    /** 分類欄與清單之間、以及清單左右內距。 */
+    private static final int GAP = 8;
+
+    /** 一列的間距：控制項 20 + 呼吸空間 4。 */
+    private static final int ROW_H = 24;
+
+    /** 控制項那一半想要多寬。畫面窄的時候會讓給名稱，見 {@link #ctrlW}。 */
+    private static final int CTRL_W = 156;
+
+    /** 名稱那一半至少要留多寬（約八個中文字）。 */
+    private static final int NAME_MIN = 76;
+
+    /** 標題列高度，見 {@link Cards#header}。 */
+    private static final int HEADER_H = 47;
+
+    /** 清單從哪裡開始。 */
+    private static final int TOP = HEADER_H + 12;
+
+    /** 底下留給說明列與按鈕列的高度。 */
+    private static final int FOOT_H = 56;
+
+    // ------------------------------------------------------------ 狀態
+
+    /**
+     * 目前選到第幾個分類，以及清單捲到哪。
+     *
+     * <p>做成靜態的：關掉再開回來時停在原地，調完一個設定不必再找一次。
+     * 捲動以<b>列</b>為單位，不是像素——半列露在外面比較難看。
+     */
+    private static int tab = 0;
+
+    private static int scroll = 0;
 
     private Component status = Component.empty();
+    private final List<Row> rows = new ArrayList<>();
     private EditBox colorBox;
+    private EditBox gapBox;
     private EditBox dialogueHoldBox;
     private Button reloadButton;
-    private EditBox gapBox;
 
     public SettingsScreen() {
         super(Component.literal("WynnChaYuan"));
     }
 
-    private int leftX() {
-        return this.width / 2 - COL_W - PAD;
+    // ------------------------------------------------------------ 一列
+
+    /**
+     * 一列設定。
+     *
+     * <p>名稱、說明與控制項<b>綁在同一個物件上</b>，這正是舊版漂掉的地方：
+     * 那時候三樣東西分別在兩個方法裡各自手算座標。
+     */
+    private static final class Row {
+        final String name;
+        final String hint;
+        final List<AbstractWidget> widgets = new ArrayList<>();
+        int y;
+
+        Row(String name, String hint) {
+            this.name = name;
+            this.hint = hint;
+        }
     }
 
-    private int rightX() {
-        return this.width / 2 + PAD;
+    /** 分類的名字。順序就是左邊那一排的順序。 */
+    private static final String[] TABS = {
+        "物品", "面板", "對話", "世界與聊天", "資料",
+    };
+
+    // ------------------------------------------------------------ 佈局
+
+    private int paneW() {
+        return Math.min(PANE_W, this.width - TAB_W - GAP * 3);
+    }
+
+    private int originX() {
+        return (this.width - (TAB_W + GAP + paneW())) / 2;
+    }
+
+    private int paneX() {
+        return originX() + TAB_W + GAP;
     }
 
     /**
-     * 一列的高度：按鈕 20 + 說明文字 + 呼吸空間。
+     * 控制項那一半實際上有多寬。
      *
-     * <p>畫面不夠高時自動縮排——寧可擠一點，也不要讓最下面那張卡被切掉。
-     * 門檻是照最高那一欄（翻譯 5 列 + 資料 5 列）反推出來的。
+     * <p>畫面窄的時候先縮控制項，把寬度讓給名稱——名稱是中文，一個字九像素，
+     * 擠不下就會凸出格子外。那正是舊版「排版與方框對不上」的其中一種。
      */
-    private int rowH() {
-        return this.height >= 510 ? 37 : 30;
+    private int ctrlW() {
+        return Math.max(96, Math.min(CTRL_W, paneW() - NAME_MIN));
     }
 
-    /** 說明文字距離按鈕頂端多遠。 */
-    private int hintDy() {
-        return rowH() >= 36 ? 23 : 21;
-    }
-
-    /**
-     * 一張卡片要多高。
-     *
-     * <p>先前寫成 {@code ROW * rows + 14}，漏算了<b>最後一列的說明文字</b>——
-     * 那行字會掉到卡片外面。這裡改成從最後一行說明的底部往回推。
-     */
-    private int cardH(int rows) {
-        return rowH() * (rows - 1) + hintDy() + 37;
-    }
-
-    /** 左欄「顯示」用掉幾列。 */
-    private static final int SHOW_ROWS = 6;
-
-    /** 右欄「翻譯」用掉幾列。 */
-    private static final int TRANSLATE_ROWS = 10;
-
-    /**
-     * 「資料」卡接在<b>左欄</b>底下，不是右欄。
-     *
-     * <p>兩欄不一樣高：右欄一路加到八列，左欄只有六列。先前資料卡接在右欄
-     * 底下、起點又照右欄的高度算，右欄每多一列就把它往下推一列——
-     * 加完「聊天訊息」與「畫面中央大字」之後就整張掉出畫面。
-     * 接在矮的那一欄底下，右欄以後再長也不會撞到它。
-     */
-    private int dataY() {
-        return TOP - 20 + cardH(SHOW_ROWS) + 20 + 20;   // 顯示卡底部 + 間距 + 卡片標題
+    /** 清單放得下幾列。 */
+    private int perPage() {
+        return Math.max(1, (this.height - FOOT_H - TOP) / ROW_H);
     }
 
     @Override
     protected void init() {
-        int left = leftX();
-        int right = rightX();
+        rows.clear();
+        buildRows();
 
-        // ---- 顯示 ----
-        row(left, TOP, this::tooltipModeLabel, b -> {
-            WynnChaYuan.config().cycleTooltipMode();
-            b.setMessage(tooltipModeLabel());
-        });
-        row(left, TOP + rowH(), this::anchorLabel, b -> {
-            WynnChaYuan.config().togglePanelAnchor();
-            b.setMessage(anchorLabel());
-        });
-        addRenderableWidget(Button.builder(
-                Component.literal("調整面板位置…"),
-                b -> this.minecraft.setScreen(new PositionScreen(this)))
-                .bounds(left, TOP + rowH() * 2, COL_W, 20).build());
-        row(left, TOP + rowH() * 3, this::sideLabel, b -> {
-            WynnChaYuan.config().cyclePanelSide();
-            b.setMessage(sideLabel());
-        });
-        gapBox = new EditBox(this.font, left, TOP + rowH() * 4, COL_W - 46, 20,
-                Component.literal("間距"));
-        gapBox.setValue(String.valueOf(WynnChaYuan.config().panelGap()));
-        gapBox.setMaxLength(3);
-        addRenderableWidget(gapBox);
-        addRenderableWidget(Button.builder(Component.literal("套用"), b -> applyGap())
-                .bounds(left + COL_W - 42, TOP + rowH() * 4, 42, 20).build());
+        // 換分類之後列數變少，捲動位置要跟著收回來，不然會停在空白處。
+        scroll = Math.max(0, Math.min(scroll, rows.size() - perPage()));
 
-        colorBox = new EditBox(this.font, left, TOP + rowH() * 5, COL_W - 46, 20,
-                Component.literal("框線顏色"));
-        colorBox.setValue(WynnChaYuan.config().accentColor());
-        colorBox.setMaxLength(7);
-        addRenderableWidget(colorBox);
-        addRenderableWidget(Button.builder(Component.literal("套用"), b -> applyColor())
-                .bounds(left + COL_W - 42, TOP + rowH() * 5, 42, 20).build());
+        int right = paneX() + paneW() - ctrlW();
+        for (int i = 0; i < rows.size(); i++) {
+            Row row = rows.get(i);
+            int at = i - scroll;
+            row.y = TOP + at * ROW_H;
+            boolean shown = at >= 0 && at < perPage();
+            for (AbstractWidget w : row.widgets) {
+                // 建列時座標是「相對控制項左緣」的偏移，這裡才平移到實際位置。
+                w.setX(w.getX() + right);
+                w.setY(row.y);
+                w.visible = shown;
+                w.active = shown;
+                addRenderableWidget(w);
+            }
+        }
 
-        // ---- 翻譯 ----
-        row(right, TOP, this::itemNameLabel, b -> {
-            boolean on = WynnChaYuan.config().toggleItemNames();
-            WynnChaYuan.translations().setTranslateNames(on);
-            b.setMessage(itemNameLabel());
-        });
-        // 名牌與漂浮字的三段模式直接摆在這裡。
+        // ---- 左邊的分類 ----
+        for (int i = 0; i < TABS.length; i++) {
+            int which = i;
+            addRenderableWidget(Button.builder(
+                    Component.literal((i == tab ? "▸ " : "   ") + TABS[i]),
+                    b -> {
+                        tab = which;
+                        scroll = 0;
+                        rebuildWidgets();
+                    })
+                    .bounds(originX(), TOP + i * ROW_H, TAB_W, 20).build());
+        }
+
+        // ---- 底部 ----
+        int mid = this.width / 2;
+        addRenderableWidget(Button.builder(Component.literal("關於／貢獻者"),
+                b -> this.minecraft.setScreen(new CreditsScreen(this)))
+                .bounds(mid - 104, this.height - 26, 100, 20).build());
+        addRenderableWidget(Button.builder(Component.literal("完成"), b -> onClose())
+                .bounds(mid + 4, this.height - 26, 100, 20).build());
+    }
+
+    // ------------------------------------------------------------ 建一列
+
+    private Row add(String name, String hint) {
+        Row row = new Row(name, hint);
+        rows.add(row);
+        return row;
+    }
+
+    /** 一顆佔滿控制項那一半的按鈕（切換、循環都用這個）。 */
+    private void cycle(String name, String hint,
+                       Supplier<Component> label, Consumer<Button> onPress) {
+        add(name, hint).widgets.add(Button.builder(label.get(), onPress::accept)
+                .bounds(0, 0, ctrlW(), 20).build());
+    }
+
+    /** 按鈕 + 右邊一顆小的（進階…）。 */
+    private void cycleWith(String name, String hint, Supplier<Component> label,
+                           Consumer<Button> onPress, String extra, Runnable action) {
+        Row row = add(name, hint);
+        row.widgets.add(Button.builder(label.get(), onPress::accept)
+                .bounds(0, 0, ctrlW() - 46, 20).build());
+        row.widgets.add(Button.builder(Component.literal(extra), b -> action.run())
+                .bounds(ctrlW() - 42, 0, 42, 20).build());
+    }
+
+    /** 輸入框 + 套用。 */
+    private EditBox field(String name, String hint, String value, int max, Runnable apply) {
+        Row row = add(name, hint);
+        EditBox box = new EditBox(this.font, 0, 0, ctrlW() - 46, 20,
+                Component.literal(name));
+        box.setValue(value);
+        box.setMaxLength(max);
+        row.widgets.add(box);
+        row.widgets.add(Button.builder(Component.literal("套用"), b -> apply.run())
+                .bounds(ctrlW() - 42, 0, 42, 20).build());
+        return box;
+    }
+
+    /** 只有一顆按鈕的一列（開子畫面、執行動作）。 */
+    private Button action(String name, String hint, Component label, Runnable go) {
+        Button button = Button.builder(label, b -> go.run())
+                .bounds(0, 0, ctrlW(), 20).build();
+        add(name, hint).widgets.add(button);
+        return button;
+    }
+
+    // ------------------------------------------------------------ 每個分類有哪些列
+
+    /**
+     * 分類照<b>「這東西出現在遊戲的哪裡」</b>取名。
+     *
+     * <p>舊版按功能分成〈顯示〉〈翻譯〉〈資料〉，聽起來合理，但玩家想關掉
+     * 名牌翻譯的時候不會知道那是〈翻譯〉還是〈顯示〉。改成照畫面上的位置分，
+     * 不用看說明也找得到。
+     */
+    private void buildRows() {
+        switch (tab) {
+            case 0 -> items();
+            case 1 -> panel();
+            case 2 -> dialogue();
+            case 3 -> world();
+            default -> data();
+        }
+    }
+
+    private void items() {
+        cycle("物品翻譯", "滑鼠指著物品時的說明；面板保留原文，取代則畫面較乾淨",
+                this::tooltipModeLabel, b -> {
+                    WynnChaYuan.config().cycleTooltipMode();
+                    b.setMessage(tooltipModeLabel());
+                });
+        cycle("翻譯物品名稱", "裝備名稱多是專有名詞，保留原文才對得上 wiki 與交易市場",
+                this::itemNameLabel, b -> {
+                    boolean on = WynnChaYuan.config().toggleItemNames();
+                    WynnChaYuan.translations().setTranslateNames(on);
+                    b.setMessage(itemNameLabel());
+                });
+        String clash = com.wynnchayuan.render.PanelShot.conflict();
+        cycle("譯文截圖",
+                clash == null ? "把譯文面板拍成圖檔；按鍵在原版設定的 WynnChaYuan 區改綁"
+                              : "截圖鍵和「" + clash + "」撞在一起，請改綁",
+                this::shotLabel, b -> {
+                    WynnChaYuan.config().cycleShotMode();
+                    b.setMessage(shotLabel());
+                });
+    }
+
+    private void panel() {
+        cycle("面板定位", "固定位置時面板不跟著滑鼠跑",
+                this::anchorLabel, b -> {
+                    WynnChaYuan.config().togglePanelAnchor();
+                    b.setMessage(anchorLabel());
+                });
+        action("面板位置", "拖曳示意方框決定固定位置",
+                Component.literal("調整…"),
+                () -> this.minecraft.setScreen(new PositionScreen(this)));
+        cycle("跟隨時放在", "自動會依畫面空間左右讓位",
+                this::sideLabel, b -> {
+                    WynnChaYuan.config().cyclePanelSide();
+                    b.setMessage(sideLabel());
+                });
+        gapBox = field("面板間距", "面板與原本 tooltip 之間留多寬（像素，0–200）",
+                String.valueOf(WynnChaYuan.config().panelGap()), 3, this::applyGap);
+        colorBox = field("框線顏色", "16 進位色碼，例如 #6FA8D8",
+                WynnChaYuan.config().accentColor(), 7, this::applyColor);
+    }
+
+    private void dialogue() {
+        cycle("任務對話", "NPC 講話那個框",
+                this::dialogueModeLabel, b -> {
+                    WynnChaYuan.config().cycleDialogueMode();
+                    b.setMessage(dialogueModeLabel());
+                });
+        // 選項是<b>另一條訊息、另一個框</b>，所以自己一列。見 CollectorConfig#choiceMode
+        cycle("對話選項", "選項是另一個框，可以跟上面分開設",
+                this::choiceModeLabel, b -> {
+                    WynnChaYuan.config().cycleChoiceMode();
+                    b.setMessage(choiceModeLabel());
+                });
+        dialogueHoldBox = field("對話停留", "譯文小框停留幾秒（0 = 持續顯示）",
+                holdSeconds(), 3, this::applySeconds);
+        cycle("對話／追蹤小框", "NPC 對話與任務追蹤的翻譯小框",
+                this::overlayLabel, b -> {
+                    WynnChaYuan.config().toggleOverlays();
+                    b.setMessage(overlayLabel());
+                });
+    }
+
+    private void world() {
+        // 名牌與漂浮字的三段模式擺在最上面。
         //
         // 它本來只在子畫面裡，而子畫面又叫「NPC 名牌設定」——
         // 想把畫面中央那些大字換成中文的人，根本不會點進去。
         // 剩下的參數（停留秒數、偵測距離與夾角）才留在子畫面。
-        addRenderableWidget(Button.builder(nametagLabel(),
-                b -> {
+        cycleWith("名牌與漂浮字", "工作站、「空手右鍵」那些字也算；進階可調距離與夾角",
+                this::nametagLabel, b -> {
                     WynnChaYuan.config().cycleNametagMode();
                     b.setMessage(nametagLabel());
-                })
-                .bounds(right, TOP + rowH(), COL_W - 46, 20).build());
-        addRenderableWidget(Button.builder(Component.literal("進階…"),
-                b -> this.minecraft.setScreen(new NametagScreen(this)))
-                .bounds(right + COL_W - 42, TOP + rowH(), 42, 20).build());
-
-        row(right, TOP + rowH() * 2, this::dialogueModeLabel, b -> {
-            WynnChaYuan.config().cycleDialogueMode();
-            b.setMessage(dialogueModeLabel());
-        });
-
-        // 選項是<b>另一條訊息、另一個框</b>，所以自己一列。見 CollectorConfig#choiceMode
-        row(right, TOP + rowH() * 3, this::choiceModeLabel, b -> {
-            WynnChaYuan.config().cycleChoiceMode();
-            b.setMessage(choiceModeLabel());
-        });
-
-        dialogueHoldBox = secondsBox(right, TOP + rowH() * 4,
-                WynnChaYuan.config().dialogueHoldMs());
-        addRenderableWidget(Button.builder(Component.literal("套用"),
-                b -> applySeconds(false))
-                .bounds(right + COL_W - 42, TOP + rowH() * 4, 42, 20).build());
-
-        row(right, TOP + rowH() * 5, this::overlayLabel, b -> {
-            WynnChaYuan.config().toggleOverlays();
-            b.setMessage(overlayLabel());
-        });
-
-        row(right, TOP + rowH() * 6, this::shotLabel, b -> {
-            WynnChaYuan.config().cycleShotMode();
-            b.setMessage(shotLabel());
-        });
-
-        row(right, TOP + rowH() * 7, this::chatModeLabel, b -> {
-            WynnChaYuan.config().cycleChatMode();
-            b.setMessage(chatModeLabel());
-        });
-
-        row(right, TOP + rowH() * 8, this::titleLabel, b -> {
-            WynnChaYuan.config().toggleTitles();
-            b.setMessage(titleLabel());
-        });
-
-        row(right, TOP + rowH() * 9, this::chatCopyLabel, b -> {
-            WynnChaYuan.config().toggleChatCopy();
-            b.setMessage(chatCopyLabel());
-        });
-
-
-        // ---- 資料 ----
-        int dataY = dataY();
-        row(left, dataY, this::guiCollectLabel, b -> {
-            WynnChaYuan.config().toggleCollectGuiText();
-            b.setMessage(guiCollectLabel());
-        });
-        row(left, dataY + rowH(), this::sourceLabel, b -> {
-            WynnChaYuan.config().toggleSource();
-            b.setMessage(sourceLabel());
-            reloadButton.setMessage(reloadLabel());   // 按鈕的意思跟著來源變
-        });
-        row(left, dataY + rowH() * 2, this::collectLabel, b -> {
-            WynnChaYuan.config().toggleCollect();
-            b.setMessage(collectLabel());
-        });
-        row(left, dataY + rowH() * 3, this::debugLabel, b -> {
-            WynnChaYuan.config().toggleDebugDumps();
-            b.setMessage(debugLabel());
-            status = Component.literal(WynnChaYuan.config().debugDumps()
-                    ? "✔ 診斷檔已開啟——重進遊戲後才會開始寫"
-                    : "✔ 診斷檔已關閉——重進遊戲後生效")
-                    .withStyle(ChatFormatting.GREEN);
-        });
-        reloadButton = Button.builder(reloadLabel(), b -> reload())
-                .bounds(left, dataY + rowH() * 4, COL_W, 20).build();
-        addRenderableWidget(reloadButton);
-
-        // ---- 底部 ----
-        addRenderableWidget(Button.builder(Component.literal("關於／貢獻者"),
-                b -> this.minecraft.setScreen(new CreditsScreen(this)))
-                .bounds(this.width / 2 - 152, this.height - 28, 100, 20).build());
-        addRenderableWidget(Button.builder(Component.literal("完成"), b -> onClose())
-                .bounds(this.width / 2 + 52, this.height - 28, 100, 20).build());
+                }, "進階…", () -> this.minecraft.setScreen(new NametagScreen(this)));
+        cycle("聊天訊息", "伺服器發的訊息；玩家發言不會被翻",
+                this::chatModeLabel, b -> {
+                    WynnChaYuan.config().cycleChatMode();
+                    b.setMessage(chatModeLabel());
+                });
+        cycle("畫面中央大字", "進入區域、任務完成那些大字",
+                this::titleLabel, b -> {
+                    WynnChaYuan.config().toggleTitles();
+                    b.setMessage(titleLabel());
+                });
+        cycle("複製聊天", "留下最近的訊息，方便回報翻譯問題",
+                this::chatCopyLabel, b -> {
+                    WynnChaYuan.config().toggleChatCopy();
+                    b.setMessage(chatCopyLabel());
+                });
     }
 
-    /** 秒數輸入框。持續顯示以 0 表示，比「999」直觀。 */
-    private EditBox secondsBox(int x, int y, int ms) {
-        EditBox box = new EditBox(this.font, x, y, COL_W - 46, 20,
-                Component.literal("秒數"));
-        box.setValue(ms == Integer.MAX_VALUE ? "0" : String.valueOf(ms / 1000));
-        box.setMaxLength(3);
-        addRenderableWidget(box);
-        return box;
+    private void data() {
+        cycle("譯文來源", "GitHub 會同步大家的最新翻譯",
+                this::sourceLabel, b -> {
+                    WynnChaYuan.config().toggleSource();
+                    b.setMessage(sourceLabel());
+                    reloadButton.setMessage(reloadLabel());   // 按鈕的意思跟著來源變
+                });
+        reloadButton = action("重新載入",
+                WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
+                        ? "譯者剛改完 GitHub 的話按這個" : "改完 json 按這個就生效",
+                reloadLabel(), this::reload);
+        cycle("收集未翻譯字串", "把沒翻到的句子記進 captured.json",
+                this::collectLabel, b -> {
+                    WynnChaYuan.config().toggleCollect();
+                    b.setMessage(collectLabel());
+                });
+        cycle("收集介面文字", "公會、任務書等 GUI 的文字（預設關）",
+                this::guiCollectLabel, b -> {
+                    WynnChaYuan.config().toggleCollectGuiText();
+                    b.setMessage(guiCollectLabel());
+                });
+        cycle("寫出診斷檔", "回報問題時才需要，重進遊戲後生效",
+                this::debugLabel, b -> {
+                    WynnChaYuan.config().toggleDebugDumps();
+                    b.setMessage(debugLabel());
+                    status = Component.literal(WynnChaYuan.config().debugDumps()
+                            ? "✔ 診斷檔已開啟——重進遊戲後才會開始寫"
+                            : "✔ 診斷檔已關閉——重進遊戲後生效")
+                            .withStyle(ChatFormatting.GREEN);
+                });
     }
 
-    private void applySeconds(boolean unusedNametagFlag) {
+    // ------------------------------------------------------------ 繪製
+
+    @Override
+    public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
+        int x0 = originX();
+        int pane = paneW();
+        int px = paneX();
+        int listH = Math.min(rows.size(), perPage()) * ROW_H;
+
+        // 卡片墊在按鈕底下，所以先於 super.render
+        Cards.panel(g, x0 - 4, TOP - 6, TAB_W + 8, TABS.length * ROW_H + 4);
+        Cards.panel(g, px - GAP, TOP - 6, pane + GAP * 2, listH + 4);
+
+        super.render(g, mouseX, mouseY, delta);
+
+        Cards.header(g, this.font, this.width, "WynnChaYuan",
+                "Wynncraft 繁體中文翻譯 · v" + WynnChaYuan.version());
+
+        // 選到的那一類左邊加一條主題色，比只有「▸」看得清楚
+        g.fill(x0 - 4, TOP + tab * ROW_H, x0 - 2, TOP + tab * ROW_H + 20,
+                WynnChaYuan.config().accentARGB());
+
+        // 每一列的名稱。控制項自己會畫。
+        String hovered = null;
+        for (int i = 0; i < rows.size(); i++) {
+            int at = i - scroll;
+            if (at < 0 || at >= perPage()) {
+                continue;
+            }
+            Row row = rows.get(i);
+            boolean on = mouseX >= px - GAP && mouseX <= px + pane + GAP
+                    && mouseY >= row.y - 2 && mouseY < row.y + 22;
+            if (on) {
+                hovered = row.hint;
+                g.fill(px - GAP + 1, row.y - 2, px + pane + GAP - 1, row.y + 22,
+                       0x18FFFFFF);
+            }
+            // 真的還是放不下就裁掉。凸出去比截斷難看得多。
+            String shown = this.font.plainSubstrByWidth(row.name, pane - ctrlW() - 6);
+            g.drawString(this.font, Component.literal(shown),
+                    px, row.y + 6, on ? Colors.TEXT : Colors.HINT);
+        }
+
+        // 還有更多列的時候講一聲，不然使用者不知道可以滾
+        if (rows.size() > perPage()) {
+            g.drawString(this.font,
+                    Component.literal("滾輪捲動 · " + (scroll + 1) + "–"
+                            + Math.min(rows.size(), scroll + perPage())
+                            + " / " + rows.size()),
+                    px, TOP + listH + 2, Colors.HINT);
+        }
+
+        footer(g, x0, pane, hovered);
+    }
+
+    /**
+     * 底下那一條說明。
+     *
+     * <p>三種東西共用同一行，優先序：剛做完的動作結果 &gt; 滑鼠指著的那一列的說明
+     * &gt; 載入了幾條譯文。分成三個位置的話，畫面下緣會空一大片沒人看的字。
+     */
+    private void footer(GuiGraphics g, int x0, int pane, String hovered) {
+        int w = TAB_W + GAP + pane + 8;
+        int y = this.height - FOOT_H + 8;
+        Cards.panel(g, x0 - 4, y, w, 20);
+
+        Component line;
+        if (!status.getString().isEmpty()) {
+            line = status;
+        } else if (hovered != null) {
+            line = Component.literal(hovered).withStyle(ChatFormatting.GRAY);
+        } else {
+            int size = WynnChaYuan.translations().size();
+            line = Component.literal(size + " 條譯文已載入")
+                    .withStyle(size > 0 ? ChatFormatting.DARK_GRAY : ChatFormatting.RED);
+        }
+        g.drawString(this.font, line, x0 + 2, y + 6, Colors.TEXT);
+    }
+
+    @Override
+    public boolean mouseScrolled(double mouseX, double mouseY, double dx, double dy) {
+        if (rows.size() > perPage()) {
+            int max = rows.size() - perPage();
+            int next = Math.max(0, Math.min(max, scroll - (int) Math.signum(dy)));
+            if (next != scroll) {
+                scroll = next;
+                rebuildWidgets();
+                return true;
+            }
+        }
+        return super.mouseScrolled(mouseX, mouseY, dx, dy);
+    }
+
+    @Override
+    public boolean isPauseScreen() {
+        return false;
+    }
+
+    // ------------------------------------------------------------ 標籤
+    //
+    // 只寫「值」，不寫「名稱：值」——名稱已經在左邊那一欄了。
+
+    private Component tooltipModeLabel() {
+        return Component.literal(switch (WynnChaYuan.config().tooltipMode()) {
+            case PANEL -> "另開面板";
+            case REPLACE -> "就地取代";
+            case OFF -> "關閉";
+        });
+    }
+
+    private Component dialogueModeLabel() {
+        return Component.literal(switch (WynnChaYuan.config().dialogueMode()) {
+            case PANEL -> "另開小框";
+            case REPLACE -> "就地取代";
+            case OFF -> "關閉";
+        });
+    }
+
+    /** 對話<b>選項</b>那幾列，跟上面的內文分開管。 */
+    private Component choiceModeLabel() {
+        return Component.literal(switch (WynnChaYuan.config().choiceMode()) {
+            case PANEL -> "另開小框";
+            case REPLACE -> "就地取代";
+            case OFF -> "關閉";
+        });
+    }
+
+    /** 聊天視窗裡的伺服器訊息。玩家發言不在範圍內，見 {@code ChatListener}。 */
+    private Component chatModeLabel() {
+        return Component.literal(switch (WynnChaYuan.config().chatMode()) {
+            case OFF -> "關閉";
+            case REPLACE -> "就地取代";
+            case BOTH -> "原文加譯文";
+        });
+    }
+
+    /** 螢幕正中央那行大字。沒有面板選項——那裡沒空間，見 {@code TitleListener}。 */
+    private Component titleLabel() {
+        return Component.literal(
+                WynnChaYuan.config().translateTitles() ? "就地取代" : "關閉");
+    }
+
+    /** 名牌與漂浮字。跟 {@code NametagScreen} 那一個是同一個設定。 */
+    private Component nametagLabel() {
+        return Component.literal(switch (WynnChaYuan.config().nametagMode()) {
+            case OFF -> "關閉";
+            case LOOK_AT -> "注視時小框";
+            case REPLACE -> "就地取代";
+        });
+    }
+
+    private Component chatCopyLabel() {
+        return Component.literal(onOff(WynnChaYuan.config().chatCopy()));
+    }
+
+    private Component shotLabel() {
+        return Component.literal(switch (WynnChaYuan.config().shotMode()) {
+            case OFF -> "關閉";
+            case KEY -> "按 " + com.wynnchayuan.render.PanelShot.keyName() + " 拍";
+            case AUTO -> "自動";
+        });
+    }
+
+    private Component overlayLabel() {
+        return Component.literal(onOff(WynnChaYuan.config().showOverlays()));
+    }
+
+    private Component anchorLabel() {
+        boolean fixed = WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED;
+        return Component.literal(fixed ? "固定位置" : "跟隨滑鼠");
+    }
+
+    private Component sideLabel() {
+        return Component.literal(switch (WynnChaYuan.config().panelSide()) {
+            case AUTO -> "自動";
+            case RIGHT -> "固定右側";
+            case LEFT -> "固定左側";
+        });
+    }
+
+    private Component itemNameLabel() {
+        return Component.literal(onOff(WynnChaYuan.config().translateItemNames()));
+    }
+
+    private Component sourceLabel() {
+        boolean github = WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB;
+        return Component.literal(github ? "GitHub（統一）" : "本機（測試）");
+    }
+
+    private Component collectLabel() {
+        return Component.literal(onOff(WynnChaYuan.config().collect()));
+    }
+
+    private Component guiCollectLabel() {
+        return Component.literal(onOff(WynnChaYuan.config().collectGuiText()));
+    }
+
+    /**
+     * 診斷檔開關。
+     *
+     * <p>預設關閉：那些檔案是回報問題用的，一般玩家的 config 資料夾不該被
+     * 十幾個 txt 洗版。跟「收集未翻譯字串」是兩件事——那個是缺哪些句子要翻，
+     * 這個是翻了但畫面上不對。
+     */
+    private Component debugLabel() {
+        return Component.literal(onOff(WynnChaYuan.config().debugDumps()));
+    }
+
+    private Component reloadLabel() {
+        return Component.literal(
+                WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
+                        ? "從 GitHub 抓" : "重讀本機檔");
+    }
+
+    private static String onOff(boolean on) {
+        return on ? "開啟" : "關閉";
+    }
+
+    // ------------------------------------------------------------ 動作
+
+    /** 秒數以 0 表示持續顯示，比「999」直觀。 */
+    private String holdSeconds() {
+        int ms = WynnChaYuan.config().dialogueHoldMs();
+        return ms == Integer.MAX_VALUE ? "0" : String.valueOf(ms / 1000);
+    }
+
+    private void applySeconds() {
         if (WynnChaYuan.config().setDialogueHoldSeconds(dialogueHoldBox.getValue())) {
-            int ms = WynnChaYuan.config().dialogueHoldMs();
-            dialogueHoldBox.setValue(
-                    ms == Integer.MAX_VALUE ? "0" : String.valueOf(ms / 1000));
+            dialogueHoldBox.setValue(holdSeconds());
             status = Component.literal("✔ 已設定停留時間").withStyle(ChatFormatting.GREEN);
         } else {
             status = Component.literal("✘ 請輸入秒數（整數，0 = 持續顯示）")
@@ -259,140 +637,6 @@ public final class SettingsScreen extends Screen {
         }
     }
 
-    private Component guiCollectLabel() {
-        return Component.literal("收集介面文字："
-                + onOff(WynnChaYuan.config().collectGuiText()));
-    }
-
-    private void row(int x, int y, Supplier<Component> label, Consumer<Button> onPress) {
-        addRenderableWidget(Button.builder(label.get(), onPress::accept)
-                .bounds(x, y, COL_W, 20).build());
-    }
-
-    // ------------------------------------------------------------ 標籤
-
-    private Component tooltipModeLabel() {
-        String name = switch (WynnChaYuan.config().tooltipMode()) {
-            case PANEL -> "另開面板";
-            case REPLACE -> "就地取代";
-            case OFF -> "關閉";
-        };
-        return Component.literal("物品翻譯：" + name);
-    }
-
-    private Component dialogueModeLabel() {
-        String name = switch (WynnChaYuan.config().dialogueMode()) {
-            case PANEL -> "另開小框";
-            case REPLACE -> "就地取代";
-            case OFF -> "關閉";
-        };
-        return Component.literal("任務對話：" + name);
-    }
-
-    /** 對話<b>選項</b>那幾列，跟上面的內文分開管。 */
-    private Component choiceModeLabel() {
-        String name = switch (WynnChaYuan.config().choiceMode()) {
-            case PANEL -> "另開小框";
-            case REPLACE -> "就地取代";
-            case OFF -> "關閉";
-        };
-        return Component.literal("對話選項：" + name);
-    }
-
-    /** 聊天視窗裡的伺服器訊息。玩家發言不在範圍內，見 {@code ChatListener}。 */
-    private Component chatModeLabel() {
-        String name = switch (WynnChaYuan.config().chatMode()) {
-            case OFF -> "關閉";
-            case REPLACE -> "就地取代";
-            case BOTH -> "原文加譯文";
-        };
-        return Component.literal("聊天訊息：" + name);
-    }
-
-    /** 螢幕正中央那行大字。沒有面板選項——那裡沒空間，見 {@code TitleListener}。 */
-    private Component titleLabel() {
-        return Component.literal("畫面中央大字："
-                + (WynnChaYuan.config().translateTitles() ? "就地取代" : "關閉"));
-    }
-
-    /**
-     * 複製聊天。這是<b>記錄</b>的開關，不是翻譯的——關掉就不再留最近的訊息。
-     */
-    /**
-     * 名牌與漂浮字。跟 {@code NametagScreen} 那一個是同一個設定，
-     * 只是這裡要短一點——按鈕實際實在窄了 46px。
-     */
-    private Component nametagLabel() {
-        String name = switch (WynnChaYuan.config().nametagMode()) {
-            case OFF -> "關閉";
-            case LOOK_AT -> "注視時小框";
-            case REPLACE -> "就地取代";
-        };
-        return Component.literal("名牌漂浮字: " + name);
-    }
-
-    private Component chatCopyLabel() {
-        return Component.literal("複製聊天："
-                + (WynnChaYuan.config().chatCopy() ? "開啟" : "關閉"));
-    }
-
-    private Component shotLabel() {
-        String name = switch (WynnChaYuan.config().shotMode()) {
-            case OFF -> "關閉";
-            case KEY -> "按 " + com.wynnchayuan.render.PanelShot.keyName() + " 拍";
-            case AUTO -> "自動";
-        };
-        return Component.literal("譯文截圖：" + name);
-    }
-
-    private Component overlayLabel() {
-        return Component.literal("對話／追蹤小框：" + onOff(WynnChaYuan.config().showOverlays()));
-    }
-
-    private Component anchorLabel() {
-        boolean fixed = WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED;
-        return Component.literal("面板定位：" + (fixed ? "固定位置" : "跟隨滑鼠"));
-    }
-
-    private Component sideLabel() {
-        String name = switch (WynnChaYuan.config().panelSide()) {
-            case AUTO -> "自動";
-            case RIGHT -> "固定右側";
-            case LEFT -> "固定左側";
-        };
-        return Component.literal("跟隨時放在：" + name);
-    }
-
-    private Component itemNameLabel() {
-        return Component.literal("翻譯物品名稱：" + onOff(WynnChaYuan.config().translateItemNames()));
-    }
-
-    private Component sourceLabel() {
-        boolean github = WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB;
-        return Component.literal("譯文來源：" + (github ? "GitHub（統一）" : "本機（測試）"));
-    }
-
-    private Component collectLabel() {
-        return Component.literal("收集未翻譯字串：" + onOff(WynnChaYuan.config().collect()));
-    }
-
-    /**
-     * 診斷檔開關。
-     *
-     * <p>預設關閉：那些檔案是回報問題用的，一般玩家的 config 資料夾不該被
-     * 十幾個 txt 洗版。跟上面的「收集未翻譯字串」是兩件事——那個是缺哪些句子
-     * 要翻，這個是翻了但畫面上不對。
-     */
-    private Component debugLabel() {
-        return Component.literal("寫出診斷檔：" + onOff(WynnChaYuan.config().debugDumps()));
-    }
-
-    private static String onOff(boolean on) {
-        return on ? "開" : "關";
-    }
-
-    // ------------------------------------------------------------ 動作
-
     /** 套用色碼；格式不對就講清楚並還原，不要靜靜地忽略。 */
     private void applyColor() {
         if (WynnChaYuan.config().setAccentColor(colorBox.getValue())) {
@@ -402,12 +646,6 @@ public final class SettingsScreen extends Screen {
             colorBox.setValue(WynnChaYuan.config().accentColor());
             status = Component.literal("✘ 色碼格式要像 #6FA8D8").withStyle(ChatFormatting.RED);
         }
-    }
-
-    private Component reloadLabel() {
-        return Component.literal(
-                WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
-                        ? "從 GitHub 重新抓譯文" : "重新載入本機譯文檔");
     }
 
     /**
@@ -440,76 +678,5 @@ public final class SettingsScreen extends Screen {
                     Component.literal("[WynnChaYuan] " + result)
                             .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED), false);
         }
-    }
-
-    // ------------------------------------------------------------ 繪製
-
-    @Override
-    public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
-        int left = leftX();
-        int right = rightX();
-        int dataY = dataY();
-
-        // 卡片要墊在按鈕底下，所以先於 super.render
-        Cards.panel(g, left - 8, TOP - 20, COL_W + 16, cardH(SHOW_ROWS));
-        Cards.panel(g, right - 8, TOP - 20, COL_W + 16, cardH(TRANSLATE_ROWS));
-        Cards.panel(g, left - 8, dataY - 20, COL_W + 16, cardH(5));
-
-        super.render(g, mouseX, mouseY, delta);
-
-        Cards.header(g, this.font, this.width, "WynnChaYuan",
-                "Wynncraft 繁體中文翻譯 · v" + WynnChaYuan.version());
-
-        Cards.title(g, this.font, left, TOP - 16, "顯示");
-        Cards.title(g, this.font, right, TOP - 16, "翻譯");
-        Cards.title(g, this.font, left, dataY - 16, "資料");
-
-        Cards.hint(g, this.font, left + 4, TOP + hintDy(), "面板保留原文；取代則畫面較乾淨");
-        Cards.hint(g, this.font, left + 4, TOP + rowH() + hintDy(), "固定位置時面板不跟著滑鼠跑");
-        Cards.hint(g, this.font, left + 4, TOP + rowH() * 2 + hintDy(), "拖曳示意方框決定位置");
-        Cards.hint(g, this.font, left + 4, TOP + rowH() * 3 + hintDy(), "自動會依畫面空間左右讓位");
-        Cards.hint(g, this.font, left + 4, TOP + rowH() * 4 + hintDy(),
-                "面板與原本 tooltip 之間留多寬（像素）");
-        Cards.hint(g, this.font, left + 4, TOP + rowH() * 5 + hintDy(),
-                "框線顏色（16 進位色碼，例如 #6FA8D8）");
-
-        Cards.hint(g, this.font, right + 4, TOP + hintDy(), "裝備名稱多是專有名詞，通常保留原文");
-        Cards.hint(g, this.font, right + 4, TOP + rowH() + hintDy(),
-                "工作站、「空手右鍵」那些字也算；進階調秒數與距離");
-        Cards.hint(g, this.font, right + 4, TOP + rowH() * 2 + hintDy(),
-                "對話框停留秒數（0 = 持續顯示）");
-        Cards.hint(g, this.font, right + 4, TOP + rowH() * 3 + hintDy(),
-                "選項是另一個框，可以跟上面分開設");
-        Cards.hint(g, this.font, right + 4, TOP + rowH() * 4 + hintDy(),
-                "NPC 對話與任務追蹤的翻譯小框");
-        // 撞鍵的話這一行就是唯一講得出實話的地方。見 PanelShot#conflict：
-        // 實機回報預設的 F8 按下去沒反應，而原版按鍵畫面上那個紅色警告
-        // 玩家多半不會特地去翻。
-        String clash = com.wynnchayuan.render.PanelShot.conflict();
-        Cards.hint(g, this.font, right + 4, TOP + rowH() * 9 + hintDy(),
-                clash == null ? "按鍵到原版設定的 WynnChaYuan 區綁"
-                              : "截圖鍵和「" + clash + "」撞在一起，請改綁");
-
-        Cards.hint(g, this.font, left + 4, dataY + hintDy(), "公會、任務書等 GUI 的文字（預設關）");
-        Cards.hint(g, this.font, left + 4, dataY + rowH() + hintDy(), "GitHub 會同步大家的最新翻譯");
-        Cards.hint(g, this.font, left + 4, dataY + rowH() * 2 + hintDy(), "把沒翻到的句子記進 captured.json");
-        Cards.hint(g, this.font, left + 4, dataY + rowH() * 3 + hintDy(),
-                "回報問題時才需要，重進遊戲後生效");
-        Cards.hint(g, this.font, left + 4, dataY + rowH() * 4 + hintDy(),
-                WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
-                        ? "譯者剛改完 GitHub 的話按這個" : "改完 json 按這個就生效");
-
-        Component now = status.getString().isEmpty()
-                ? Component.literal(WynnChaYuan.translations().size() + " 條譯文已載入")
-                        .withStyle(WynnChaYuan.translations().size() > 0
-                                ? ChatFormatting.GRAY : ChatFormatting.RED)
-                : status;
-        g.drawCenteredString(this.font, now, this.width / 2, this.height - 44, Colors.TEXT);
-
-    }
-
-    @Override
-    public boolean isPauseScreen() {
-        return false;
     }
 }
