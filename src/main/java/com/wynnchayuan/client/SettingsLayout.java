@@ -52,14 +52,25 @@ final class SettingsLayout {
      * 不然最多的那一類會放不下而變成要捲。
      */
     int rowH() {
-        return height >= 300 ? 28 : 24;
+        if (height >= 300) {
+            return 28;
+        }
+        return height >= 260 ? 24 : 22;
     }
 
     /** 標題列高度，見 {@link Cards#header}。 */
     static final int HEADER_H = 47;
 
-    /** 清單從哪裡開始。 */
-    static final int TOP = HEADER_H + 12;
+    /**
+     * 清單從哪裡開始。
+     *
+     * <p>標題列與卡片之間留得下一行「分類名稱 + 這一類在管什麼」——
+     * 不用滑上去也知道這一頁是幹嘛的。
+     */
+    static final int TOP = HEADER_H + 26;
+
+    /** 分類說明那一行的 y。 */
+    static final int LEAD_Y = HEADER_H + 8;
 
     /** 底下留給說明條與按鈕列的高度。 */
     static final int FOOT_H = 56;

@@ -142,6 +142,20 @@ public final class SettingsScreen extends Screen {
         "物品", "面板", "對話", "世界與聊天", "資料",
     };
 
+    /**
+     * 每一類在管什麼，印在清單上面那一行。
+     *
+     * <p>分類名稱只有兩三個字，光看「面板」不知道裡面有什麼。多這一行就
+     * 不用一個一個滑過去才知道自己找對地方沒有。
+     */
+    private static final String[] ABOUT = {
+        "滑鼠指著裝備、素材、書卷時跳出來的說明框",
+        "譯文面板畫在哪、長什麼樣子",
+        "NPC 講話的框、選項，以及翻譯用的小框",
+        "名牌、漂浮字、聊天視窗與畫面中央的大字",
+        "譯文從哪裡來，以及要不要幫忙收集沒翻到的字",
+    };
+
     // ------------------------------------------------------------ 佈局
 
     private int paneW() {
@@ -423,8 +437,18 @@ public final class SettingsScreen extends Screen {
                 "Wynncraft 繁體中文翻譯 · v" + WynnChaYuan.version());
 
         // 選到的那一類，左邊一條主題色。貼著按鈕畫，不要壓在卡片框線上。
-        g.fill(x0 - PAD + 2, box.rowY(tab), x0 - 2, box.rowY(tab) + 20,
+        g.fill(x0 - PAD + 2, box.rowY(tab), x0 - 1, box.rowY(tab) + 20,
                 WynnChaYuan.config().accentARGB());
+
+        // 這一頁在管什麼。標題列與卡片之間那一行。
+        int accent = WynnChaYuan.config().accentARGB();
+        g.drawString(this.font, Component.literal(TABS[tab]),
+                box.tabsCardX() + 2, SettingsLayout.LEAD_Y, accent);
+        int lead = box.tabsCardX() + 2 + this.font.width(TABS[tab]) + 8;
+        g.drawString(this.font,
+                Component.literal(Cards.fit(this.font, ABOUT[tab],
+                        box.tabsCardX() + box.footerW() - lead - 4)),
+                lead, SettingsLayout.LEAD_Y, Colors.FAINT);
 
         // 每一列的名稱。控制項自己會畫。
         String hovered = null;
@@ -442,6 +466,13 @@ public final class SettingsScreen extends Screen {
             if (on) {
                 hovered = row.hint;
                 g.fill(hiL, row.y - 2, hiR, row.y + 22, 0x18FFFFFF);
+            }
+            // 列與列之間一條很淡的線。滑鼠沒指著任何一列時，眼睛也分得出來
+            // 哪個控制項配哪個名稱——右邊那一欄離名稱有一段距離。
+            if (at > 0) {
+                g.fill(hiL + 3, row.y - (box.rowH() - 20) / 2 - 1,
+                       hiR - 3, row.y - (box.rowH() - 20) / 2,
+                       0x14FFFFFF);
             }
             // 真的還是放不下就截斷。凸出去比截斷難看得多。
             g.drawString(this.font,
@@ -518,14 +549,31 @@ public final class SettingsScreen extends Screen {
     // 全部走 #ctrl／#ctrlNarrow：按鍵名稱這種<b>長度事先不知道</b>的字
     // （「Left Control」、「Mouse Button 4」）不截的話會凸出按鈕外面。
 
-    /** 控制項按鈕上的字。左右各留 4px 內距。 */
+    /**
+     * 開關類的值：開著綠色、關著灰色。
+     *
+     * <p>一眼掃過去就知道哪幾項是關的，不必逐行讀字。灰色也順便暗示
+     * 「這一項現在沒在做事」。
+     */
     private Component ctrl(String text) {
+        return Component.literal(Cards.fit(this.font, text, ctrlW() - 8))
+                .withStyle("關閉".equals(text) ? ChatFormatting.GRAY : ChatFormatting.GREEN);
+    }
+
+    /**
+     * 選擇類的值：固定位置／跟隨滑鼠、GitHub／本機。
+     *
+     * <p>這種沒有「開」與「關」之分，兩個選項一樣正常，所以不上綠也不上灰——
+     * 上了顏色反而像在暗示哪一個才對。
+     */
+    private Component pick(String text) {
         return Component.literal(Cards.fit(this.font, text, ctrlW() - 8));
     }
 
     /** 右邊還帶一顆小按鈕的那一列，主按鈕窄 46px。見 {@link #cycleWith}。 */
     private Component ctrlNarrow(String text) {
-        return Component.literal(Cards.fit(this.font, text, ctrlW() - 46 - 8));
+        return Component.literal(Cards.fit(this.font, text, ctrlW() - 46 - 8))
+                .withStyle("關閉".equals(text) ? ChatFormatting.GRAY : ChatFormatting.GREEN);
     }
 
     private Component tooltipModeLabel() {
@@ -594,11 +642,11 @@ public final class SettingsScreen extends Screen {
 
     private Component anchorLabel() {
         boolean fixed = WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED;
-        return ctrl(fixed ? "固定位置" : "跟隨滑鼠");
+        return pick(fixed ? "固定位置" : "跟隨滑鼠");
     }
 
     private Component sideLabel() {
-        return ctrl(switch (WynnChaYuan.config().panelSide()) {
+        return pick(switch (WynnChaYuan.config().panelSide()) {
             case AUTO -> "自動";
             case RIGHT -> "固定右側";
             case LEFT -> "固定左側";
@@ -611,7 +659,7 @@ public final class SettingsScreen extends Screen {
 
     private Component sourceLabel() {
         boolean github = WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB;
-        return ctrl(github ? "GitHub（統一）" : "本機（測試）");
+        return pick(github ? "GitHub（統一）" : "本機（測試）");
     }
 
     private Component collectLabel() {
@@ -634,7 +682,7 @@ public final class SettingsScreen extends Screen {
     }
 
     private Component reloadLabel() {
-        return ctrl(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
+        return pick(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
                         ? "從 GitHub 抓" : "重讀本機檔");
     }
 
