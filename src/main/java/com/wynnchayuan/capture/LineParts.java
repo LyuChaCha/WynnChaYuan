@@ -63,6 +63,58 @@ public record LineParts(
     public record Piece(String text, Style style) {}
 
     /**
+     * 遊戲有時候<b>真的印出「Player」這四個字</b>，而不是玩家的名字。
+     *
+     * <h2>畫面上是什麼樣子</h2>
+     * 新手任務 King's Recruit 的幾句台詞，Wynncraft 送過來就是字面的
+     * {@code "Alright! Let's go, Player."}、{@code "Great job, Player!"}——
+     * 同一個任務裡別的台詞卻帶著真名（{@code "Hey, Arclass_!"}），
+     * 同一次遊玩、同一段劇情，兩種都有。
+     *
+     * <p>語料裡那幾句<b>早就翻好了</b>，鍵是 {@code "Alright! Let's go, {u}."}。
+     * 只因為畫面上是「Player」而不是名字，模板對不起來，於是整句掉回英文——
+     * 而且是新手任務，每個新玩家都會撞到。使用者回報的正是這個。
+     *
+     * <p>做法是把那個字當成玩家名收成 {@code {u}}，並且補一個內容就是
+     * 「Player」的片段——填回去畫面上還是「Player」，跟遊戲一致。
+     *
+     * <h2>兩道限制</h2>
+     * <ul>
+     *   <li>只在<b>整行查不到</b>時才走這條（呼叫端負責）。語料裡有五條
+     *       正經的介面字帶著這個字（{@code Player Slot}、{@code Max Player Count}、
+     *       {@code Looking for a Player...}），它們自己查得到，走不到這裡。</li>
+     *   <li>本來就有 {@code {u}} 的行不動。混在一起的話兩種來源的順序會錯開，
+     *       名字就填到別的位置去了。</li>
+     * </ul>
+     */
+    public LineParts namingPlayer() {
+        if (!users.isEmpty() || !LITERAL_PLAYER.matcher(template).find()) {
+            return this;
+        }
+        Style style = runs.isEmpty() || runs.get(0).style() == null
+                ? Style.EMPTY : runs.get(0).style();
+        List<Piece> named = new ArrayList<>(users);
+        StringBuilder out = new StringBuilder();
+        Matcher m = LITERAL_PLAYER.matcher(template);
+        int from = 0;
+        while (m.find()) {
+            out.append(template, from, m.start())
+               .append(GlyphSplitter.PLAYER_PLACEHOLDER);
+            named.add(new Piece(LITERAL_NAME, style));
+            from = m.end();
+        }
+        out.append(template.substring(from));
+        return new LineParts(out.toString(), glyphs, places, numbers,
+                             named, accents, textStyle, runs);
+    }
+
+    /** 見 {@link #namingPlayer}：整個字才算，{@code Players}、{@code Playerbase} 不算。 */
+    private static final java.util.regex.Pattern LITERAL_PLAYER =
+            java.util.regex.Pattern.compile("\\bPlayer\\b");
+
+    private static final String LITERAL_NAME = "Player";
+
+    /**
      * 拆解一行。
      *
      * <p>逐個 part 走，才能把每個碎片的樣式對應到它所在的片段——

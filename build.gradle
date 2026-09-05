@@ -202,6 +202,14 @@ tasks.register('runColourPlaceholderChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runColourPlaceholderChecks' }
 
+tasks.register('runLiteralPlayerChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證遊戲印出字面 Player 時那幾句台詞還是翻得出來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.LiteralPlayerTest'
+}
+tasks.named('check') { dependsOn 'runLiteralPlayerChecks' }
+
 tasks.register('runChatAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證聊天訊息的譯文跟原文那一塊形狀一樣'
