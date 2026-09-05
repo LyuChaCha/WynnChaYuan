@@ -16,6 +16,13 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
+// 版面常數統一由 SettingsLayout 定義——分兩份會再走上舊版各算各的老路。
+import static com.wynnchayuan.client.SettingsLayout.FOOT_H;
+import static com.wynnchayuan.client.SettingsLayout.GAP;
+import static com.wynnchayuan.client.SettingsLayout.ROW_H;
+import static com.wynnchayuan.client.SettingsLayout.TAB_W;
+import static com.wynnchayuan.client.SettingsLayout.TOP;
+
 /**
  * F6 開啟的設定畫面。
  *
@@ -50,34 +57,12 @@ import java.util.function.Supplier;
  */
 public final class SettingsScreen extends Screen {
 
-    // ------------------------------------------------------------ 版面常數
+    // ------------------------------------------------------------ 版面
 
-    /** 左邊分類欄的寬度。 */
-    private static final int TAB_W = 96;
-
-    /** 右邊清單想要多寬。畫面窄的時候會自己縮。 */
-    private static final int PANE_W = 330;
-
-    /** 分類欄與清單之間、以及清單左右內距。 */
-    private static final int GAP = 8;
-
-    /** 一列的間距：控制項 20 + 呼吸空間 4。 */
-    private static final int ROW_H = 24;
-
-    /** 控制項那一半想要多寬。畫面窄的時候會讓給名稱，見 {@link #ctrlW}。 */
-    private static final int CTRL_W = 156;
-
-    /** 名稱那一半至少要留多寬（約八個中文字）。 */
-    private static final int NAME_MIN = 76;
-
-    /** 標題列高度，見 {@link Cards#header}。 */
-    private static final int HEADER_H = 47;
-
-    /** 清單從哪裡開始。 */
-    private static final int TOP = HEADER_H + 12;
-
-    /** 底下留給說明列與按鈕列的高度。 */
-    private static final int FOOT_H = 56;
+    /** 版面算式全部在 {@link SettingsLayout}——那裡是純算術，測得到。 */
+    private SettingsLayout box() {
+        return new SettingsLayout(this.width, this.height, rows.size());
+    }
 
     // ------------------------------------------------------------ 狀態
 
@@ -130,30 +115,23 @@ public final class SettingsScreen extends Screen {
     // ------------------------------------------------------------ 佈局
 
     private int paneW() {
-        return Math.min(PANE_W, this.width - TAB_W - GAP * 3);
+        return box().paneW();
     }
 
     private int originX() {
-        return (this.width - (TAB_W + GAP + paneW())) / 2;
+        return box().originX();
     }
 
     private int paneX() {
-        return originX() + TAB_W + GAP;
+        return box().paneX();
     }
 
-    /**
-     * 控制項那一半實際上有多寬。
-     *
-     * <p>畫面窄的時候先縮控制項，把寬度讓給名稱——名稱是中文，一個字九像素，
-     * 擠不下就會凸出格子外。那正是舊版「排版與方框對不上」的其中一種。
-     */
     private int ctrlW() {
-        return Math.max(96, Math.min(CTRL_W, paneW() - NAME_MIN));
+        return box().ctrlW();
     }
 
-    /** 清單放得下幾列。 */
     private int perPage() {
-        return Math.max(1, (this.height - FOOT_H - TOP) / ROW_H);
+        return box().perPage();
     }
 
     @Override
@@ -164,11 +142,11 @@ public final class SettingsScreen extends Screen {
         // 換分類之後列數變少，捲動位置要跟著收回來，不然會停在空白處。
         scroll = Math.max(0, Math.min(scroll, rows.size() - perPage()));
 
-        int right = paneX() + paneW() - ctrlW();
+        int right = box().ctrlX();
         for (int i = 0; i < rows.size(); i++) {
             Row row = rows.get(i);
             int at = i - scroll;
-            row.y = TOP + at * ROW_H;
+            row.y = box().rowY(at);
             boolean shown = at >= 0 && at < perPage();
             for (AbstractWidget w : row.widgets) {
                 // 建列時座標是「相對控制項左緣」的偏移，這裡才平移到實際位置。
@@ -184,7 +162,9 @@ public final class SettingsScreen extends Screen {
         for (int i = 0; i < TABS.length; i++) {
             int which = i;
             addRenderableWidget(Button.builder(
-                    Component.literal((i == tab ? "▸ " : "   ") + TABS[i]),
+                    Component.literal(Cards.fit(this.font,
+                            (i == tab ? "▸ " : "   ") + TABS[i],
+                            TAB_W - 8)),
                     b -> {
                         tab = which;
                         scroll = 0;
@@ -427,9 +407,9 @@ public final class SettingsScreen extends Screen {
                 g.fill(px - GAP + 1, row.y - 2, px + pane + GAP - 1, row.y + 22,
                        0x18FFFFFF);
             }
-            // 真的還是放不下就裁掉。凸出去比截斷難看得多。
-            String shown = this.font.plainSubstrByWidth(row.name, pane - ctrlW() - 6);
-            g.drawString(this.font, Component.literal(shown),
+            // 真的還是放不下就截斷。凸出去比截斷難看得多。
+            g.drawString(this.font,
+                    Component.literal(Cards.fit(this.font, row.name, pane - ctrlW() - 6)),
                     px, row.y + 6, on ? Colors.TEXT : Colors.HINT);
         }
 
@@ -466,7 +446,12 @@ public final class SettingsScreen extends Screen {
             line = Component.literal(size + " 條譯文已載入")
                     .withStyle(size > 0 ? ChatFormatting.DARK_GRAY : ChatFormatting.RED);
         }
-        g.drawString(this.font, line, x0 + 2, y + 6, Colors.TEXT);
+        // GitHub 回來的訊息長度事先不知道（「連線失敗：UnknownHostException…」），
+        // 不截的話會跑到卡片外面去。顏色要留著，所以截字不截 Component。
+        g.drawString(this.font,
+                Component.literal(Cards.fit(this.font, line.getString(), w - 10))
+                        .withStyle(line.getStyle()),
+                x0 + 2, y + 6, Colors.TEXT);
     }
 
     @Override
@@ -491,9 +476,22 @@ public final class SettingsScreen extends Screen {
     // ------------------------------------------------------------ 標籤
     //
     // 只寫「值」，不寫「名稱：值」——名稱已經在左邊那一欄了。
+    //
+    // 全部走 #ctrl／#ctrlNarrow：按鍵名稱這種<b>長度事先不知道</b>的字
+    // （「Left Control」、「Mouse Button 4」）不截的話會凸出按鈕外面。
+
+    /** 控制項按鈕上的字。左右各留 4px 內距。 */
+    private Component ctrl(String text) {
+        return Component.literal(Cards.fit(this.font, text, ctrlW() - 8));
+    }
+
+    /** 右邊還帶一顆小按鈕的那一列，主按鈕窄 46px。見 {@link #cycleWith}。 */
+    private Component ctrlNarrow(String text) {
+        return Component.literal(Cards.fit(this.font, text, ctrlW() - 46 - 8));
+    }
 
     private Component tooltipModeLabel() {
-        return Component.literal(switch (WynnChaYuan.config().tooltipMode()) {
+        return ctrl(switch (WynnChaYuan.config().tooltipMode()) {
             case PANEL -> "另開面板";
             case REPLACE -> "就地取代";
             case OFF -> "關閉";
@@ -501,7 +499,7 @@ public final class SettingsScreen extends Screen {
     }
 
     private Component dialogueModeLabel() {
-        return Component.literal(switch (WynnChaYuan.config().dialogueMode()) {
+        return ctrl(switch (WynnChaYuan.config().dialogueMode()) {
             case PANEL -> "另開小框";
             case REPLACE -> "就地取代";
             case OFF -> "關閉";
@@ -510,7 +508,7 @@ public final class SettingsScreen extends Screen {
 
     /** 對話<b>選項</b>那幾列，跟上面的內文分開管。 */
     private Component choiceModeLabel() {
-        return Component.literal(switch (WynnChaYuan.config().choiceMode()) {
+        return ctrl(switch (WynnChaYuan.config().choiceMode()) {
             case PANEL -> "另開小框";
             case REPLACE -> "就地取代";
             case OFF -> "關閉";
@@ -519,7 +517,7 @@ public final class SettingsScreen extends Screen {
 
     /** 聊天視窗裡的伺服器訊息。玩家發言不在範圍內，見 {@code ChatListener}。 */
     private Component chatModeLabel() {
-        return Component.literal(switch (WynnChaYuan.config().chatMode()) {
+        return ctrl(switch (WynnChaYuan.config().chatMode()) {
             case OFF -> "關閉";
             case REPLACE -> "就地取代";
             case BOTH -> "原文加譯文";
@@ -528,13 +526,12 @@ public final class SettingsScreen extends Screen {
 
     /** 螢幕正中央那行大字。沒有面板選項——那裡沒空間，見 {@code TitleListener}。 */
     private Component titleLabel() {
-        return Component.literal(
-                WynnChaYuan.config().translateTitles() ? "就地取代" : "關閉");
+        return ctrl(WynnChaYuan.config().translateTitles() ? "就地取代" : "關閉");
     }
 
     /** 名牌與漂浮字。跟 {@code NametagScreen} 那一個是同一個設定。 */
     private Component nametagLabel() {
-        return Component.literal(switch (WynnChaYuan.config().nametagMode()) {
+        return ctrlNarrow(switch (WynnChaYuan.config().nametagMode()) {
             case OFF -> "關閉";
             case LOOK_AT -> "注視時小框";
             case REPLACE -> "就地取代";
@@ -542,11 +539,11 @@ public final class SettingsScreen extends Screen {
     }
 
     private Component chatCopyLabel() {
-        return Component.literal(onOff(WynnChaYuan.config().chatCopy()));
+        return ctrl(onOff(WynnChaYuan.config().chatCopy()));
     }
 
     private Component shotLabel() {
-        return Component.literal(switch (WynnChaYuan.config().shotMode()) {
+        return ctrl(switch (WynnChaYuan.config().shotMode()) {
             case OFF -> "關閉";
             case KEY -> "按 " + com.wynnchayuan.render.PanelShot.keyName() + " 拍";
             case AUTO -> "自動";
@@ -554,16 +551,16 @@ public final class SettingsScreen extends Screen {
     }
 
     private Component overlayLabel() {
-        return Component.literal(onOff(WynnChaYuan.config().showOverlays()));
+        return ctrl(onOff(WynnChaYuan.config().showOverlays()));
     }
 
     private Component anchorLabel() {
         boolean fixed = WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED;
-        return Component.literal(fixed ? "固定位置" : "跟隨滑鼠");
+        return ctrl(fixed ? "固定位置" : "跟隨滑鼠");
     }
 
     private Component sideLabel() {
-        return Component.literal(switch (WynnChaYuan.config().panelSide()) {
+        return ctrl(switch (WynnChaYuan.config().panelSide()) {
             case AUTO -> "自動";
             case RIGHT -> "固定右側";
             case LEFT -> "固定左側";
@@ -571,20 +568,20 @@ public final class SettingsScreen extends Screen {
     }
 
     private Component itemNameLabel() {
-        return Component.literal(onOff(WynnChaYuan.config().translateItemNames()));
+        return ctrl(onOff(WynnChaYuan.config().translateItemNames()));
     }
 
     private Component sourceLabel() {
         boolean github = WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB;
-        return Component.literal(github ? "GitHub（統一）" : "本機（測試）");
+        return ctrl(github ? "GitHub（統一）" : "本機（測試）");
     }
 
     private Component collectLabel() {
-        return Component.literal(onOff(WynnChaYuan.config().collect()));
+        return ctrl(onOff(WynnChaYuan.config().collect()));
     }
 
     private Component guiCollectLabel() {
-        return Component.literal(onOff(WynnChaYuan.config().collectGuiText()));
+        return ctrl(onOff(WynnChaYuan.config().collectGuiText()));
     }
 
     /**
@@ -595,12 +592,11 @@ public final class SettingsScreen extends Screen {
      * 這個是翻了但畫面上不對。
      */
     private Component debugLabel() {
-        return Component.literal(onOff(WynnChaYuan.config().debugDumps()));
+        return ctrl(onOff(WynnChaYuan.config().debugDumps()));
     }
 
     private Component reloadLabel() {
-        return Component.literal(
-                WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
+        return ctrl(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
                         ? "從 GitHub 抓" : "重讀本機檔");
     }
 
