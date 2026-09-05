@@ -4860,8 +4860,16 @@ public final class LineTranslator {
             // 後果：`Dimensional Tear` 在原文被 tooltip 寬度拆成兩行，第一行只剩
             // `Dimensional`，那一段成了重點段。它跟詞典裡的 `Dimensional Tear`
             // 從同一個位置開始，於是短的贏——譯文就卡著半個英文名字。
+            //
+            // <b>一樣長也算詞典贏。</b>技能名稱在原文裡本來就帶著自己的樣式
+            // （`Bash` 是灰色加底線），所以它同時是重點段、也是詞典裡的詞——
+            // 同一個位置、同樣長。用「嚴格比較長」的話重點段勝，而重點段做的事
+            // 是<b>原樣貼回英文</b>，於是技能名永遠換不掉：意象敘述上是
+            // 「Bash 的技能範圍增加」，而對照表寫的是「重擊」。使用者回報的正是這個。
+            //
+            // 樣式不會因此丟掉——底下那段會把同一個位置的重點段樣式套到譯文上。
             boolean longer = term != null && at >= 0 && term.start() == at
-                    && term.end() - term.start() > accents.get(which).text().length();
+                    && term.end() - term.start() >= accents.get(which).text().length();
             if (term != null && (at < 0 || term.start() < at || longer)) {
                 if (term.start() > from) {
                     String before = text.substring(from, term.start());
