@@ -64,13 +64,36 @@ public final class GuiTextCapture {
         // 照收。
         boolean skipTitle = stack != null && stack.is(Items.PLAYER_HEAD);
 
-        boolean first = true;
+        // 先把整份攤成模板再決定要不要收。
+        //
+        // 「這是不是一張隊伍卡」看的是<b>整份</b>——卡片上那一行伺服器世界
+        // （World: NA{~}）是遊戲自己排的，而標題是玩家打的字。逐行看的時候
+        // 標題還沒遇到那一行，判斷不出來。見 PlayerDataFilter#isPartyCard。
+        List<String> templates = new java.util.ArrayList<>(tooltip.size());
         for (Component line : tooltip) {
             StyledText styled = StyledText.fromComponent(line);
             if (GlyphSplitter.isGlyphOnly(styled)) {
+                templates.add(null);           // 純圖示的分隔行
+                continue;
+            }
+            templates.add(GlyphSplitter.toTemplate(styled));
+        }
+        // 隊伍名是玩家自己取的，跟帳號名一樣不進共享語料。
+        skipTitle = skipTitle || PlayerDataFilter.isPartyCard(templates);
+        // 整段翻好了的，它的每一行都不是缺口。見 #covered。
+        boolean[] covered = covered(templates, GuiTextCapture::whole);
+
+        boolean first = true;
+        for (int i = 0; i < templates.size(); i++) {
+            String template = templates.get(i);
+            if (template == null) {
                 continue;                      // 純圖示的分隔行
             }
-            String template = GlyphSplitter.toTemplate(styled);
+            if (covered[i]) {
+                WynnChaYuan.store().noteEvent("gui.skipped.inBlock");
+                first = false;                 // 標題用掉了，下一行是內文
+                continue;
+            }
             if (template.isBlank() || !GlyphSplitter.hasLetter(template)) {
                 continue;
             }
@@ -94,5 +117,60 @@ public final class GuiTextCapture {
                     first ? "gui/title" : "gui/line");
             first = false;
         }
+    }
+
+    /**
+     * 哪幾行屬於<b>整段已經翻好</b>的段落。
+     *
+     * <h2>為什麼需要這個</h2>
+     * tooltip 的一段話在畫面上是被寬度切成好幾行的，而語料收的是<b>整段</b>：
+     *
+     * <pre>
+     *   畫面  Contains one of several
+     *         exclusive ingredients in
+     *         high quantities.
+     *   語料  Contains one of several exclusive ingredients in high quantities.
+     *         內含數種專屬素材之一，數量豐沛。
+     * </pre>
+     *
+     * 逐行問「這一行翻了沒」，三行都是「沒有」——於是整段明明翻好了，
+     * captured.json 還是把三行都列成缺口。實機那一份 123 條裡有 70 條是這種。
+     *
+     * <p>後果不只是雜訊：翻譯團隊照著清單補，補出來的是<b>逐行</b>條目，
+     * 而逐行條目會蓋掉整段那條路，畫面上就成了半中半英。
+     *
+     * <p>整段是什麼，這裡<b>知道</b>——同一份 tooltip 裡連續的幾行就是一段，
+     * 中間隔著純圖示或空白行。所以在這裡問一次整段，比在別處猜便宜也準。
+     * 空白接法與換行接法都問：語料兩種形狀都有。
+     */
+    static boolean[] covered(List<String> templates,
+                             java.util.function.Predicate<List<String>> known) {
+        boolean[] out = new boolean[templates.size()];
+        int from = 0;
+        while (from < templates.size()) {
+            String line = templates.get(from);
+            if (line == null || line.isBlank()) {
+                from++;
+                continue;
+            }
+            int to = from;
+            while (to < templates.size() && templates.get(to) != null
+                    && !templates.get(to).isBlank()) {
+                to++;
+            }
+            if (to - from > 1 && known.test(templates.subList(from, to))) {
+                for (int i = from; i < to; i++) {
+                    out[i] = true;
+                }
+            }
+            from = to;
+        }
+        return out;
+    }
+
+    /** 這幾行接起來，語料裡有沒有。見 {@link #covered}。 */
+    private static boolean whole(List<String> lines) {
+        return WynnChaYuan.translations().hasTranslation(String.join(" ", lines))
+                || WynnChaYuan.translations().hasTranslation(String.join("\n", lines));
     }
 }

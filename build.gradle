@@ -218,6 +218,14 @@ tasks.register('runAbilityTermChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runAbilityTermChecks' }
 
+tasks.register('runGuiBlockGapChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證整段翻好的 tooltip 不會被逐行列成缺口'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.GuiBlockGapTest'
+}
+tasks.named('check') { dependsOn 'runGuiBlockGapChecks' }
+
 tasks.register('runChatAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證聊天訊息的譯文跟原文那一塊形狀一樣'

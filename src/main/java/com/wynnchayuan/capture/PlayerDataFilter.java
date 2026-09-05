@@ -175,6 +175,38 @@ public final class PlayerDataFilter {
      * 那一行永遠跟著公會名出現，收得到的話公會名也一定跟著進來。
      * 量過整份語料，有譯文的三萬條裡<b>一條都不會</b>被擋到。
      */
+    /**
+     * 這一整份 tooltip 是不是<b>組隊尋找</b>清單上的一張隊伍卡。
+     *
+     * <h2>為什麼要看整份而不是看那一行</h2>
+     * 隊伍名是玩家自己打的字——{@code Batcave}、{@code Gikyu Boss Fight :(}、
+     * {@code Scrapyard dxp totems}。這種字沒有形狀可以認，跟一般的介面標題
+     * 長得一模一樣，{@link #looksAccountNamed} 與 {@link #GUILD_TAG} 兩條路
+     * 都擋不住——實機開一次組隊清單就漏了三個進 captured.json。
+     *
+     * <p>但「這是一張隊伍卡」是<b>整份</b> tooltip 才看得出來的：卡片上一定有
+     * 一行伺服器世界（{@code World: NA{~}}）。那一行是遊戲自己排的，玩家改不動。
+     * 認出卡片之後，把<b>標題那一行</b>整個丟掉就行——底下的
+     * 「這個隊伍所在的世界已滿」那些是正常的介面字，照收。
+     *
+     * <p>代價是遇到隊伍卡時少收一個標題。那個標題本來就不該收。
+     */
+    public static boolean isPartyCard(java.util.List<String> templates) {
+        if (templates == null) {
+            return false;
+        }
+        for (String line : templates) {
+            if (line != null && PARTY_WORLD.matcher(line.strip()).matches()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** 見 {@link #isPartyCard}：隊伍卡上那一行伺服器世界。 */
+    private static final Pattern PARTY_WORLD =
+            Pattern.compile("^World: [A-Z]{2}\\{~}$");
+
     private static final Pattern GUILD_HOLOGRAM =
             Pattern.compile("(?m)^\\s*<[^<>\\n]{1,40}>\\s*$");
 
