@@ -699,6 +699,13 @@ public final class DialogueRewriter {
         // 用的是跟語料同一支參數化程式，兩邊算出來的模板才會一樣。
         String raw = text.strip();
         LineParts parts = LineParts.of(StyledText.fromString(raw));
+        // 遊戲有時候真的印出「Player」這四個字，而不是玩家的名字——新手任務
+        // 就有好幾句。那幾句語料裡早就翻好了（鍵是 {u}），只是模板對不起來。
+        // 見 LineParts#namingPlayer；只在整行查不到時才改，介面上那幾條正經的
+        // 「Player Slot」「Looking for a Player...」自己查得到，走不到這裡。
+        if (store.lookup(parts.template().strip()) == null) {
+            parts = parts.namingPlayer();
+        }
         String typed = parts.template().strip();
         String source = typed;
         String hit = store.lookup(typed);

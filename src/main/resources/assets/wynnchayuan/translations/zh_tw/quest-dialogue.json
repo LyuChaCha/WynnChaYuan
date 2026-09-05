@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 22067,
-  "translated": 22067,
+  "count": 22126,
+  "translated": 22126,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -45039,6 +45039,30 @@
    "speaker": "The Cook",
    "source": "wiki"
   },
+  "Cook Assistant#017": {
+   "src": "I can't believe what is happening to me...",
+   "dst": "我真不敢相信自己會碰上這種事……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "source": "capture"
+  },
+  "Cook Assistant#018": {
+   "src": "Now, how can you help...",
+   "dst": "那麼，你能幫上什麼忙呢……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "source": "capture"
+  },
+  "Cook Assistant#019": {
+   "src": "Wait! That's the Grook! Go chase it down and get my cake back!",
+   "dst": "等等！就是那隻 Grook！快去追，把我的蛋糕搶回來！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "source": "capture"
+  },
   "Corrupted Betrayal#000": {
    "src": "Talk to Lanu at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] 與Lanu對話",
@@ -49108,6 +49132,110 @@
    "stage": "Stage 6",
    "speaker": "Farmer Kelri",
    "source": "wiki"
+  },
+  "Dearly Departed#045": {
+   "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
+   "dst": "你也把屬性點分配掉了吧？真出了什麼事，那些點數會派上用場。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#046": {
+   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
+   "dst": "一共有五種。力量、靈巧、智慧、防禦、敏捷，各自有不同的加成。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#047": {
+   "src": "Why are you asking me that?",
+   "dst": "你為什麼問我這個？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#048": {
+   "src": "What are Skill Points?",
+   "dst": "屬性點是什麼？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#049": {
+   "src": "I got it.",
+   "dst": "我懂了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#050": {
+   "src": "About Strength.",
+   "dst": "說說力量。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#051": {
+   "src": "About Dexterity.",
+   "dst": "說說靈巧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#052": {
+   "src": "About Intelligence.",
+   "dst": "說說智慧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#053": {
+   "src": "Not yet...",
+   "dst": "還沒……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#054": {
+   "src": "Dig up the grave?",
+   "dst": "要挖開這座墳嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#055": {
+   "src": "There you go...",
+   "dst": "好了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#056": {
+   "src": "Now to see if you can find that ring Cevalus mentioned...",
+   "dst": "接下來就看你找不找得到 Cevalus 說的那枚戒指了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#057": {
+   "src": "You manage to pry the ring off the monster's finger...",
+   "dst": "你費了點力，總算把戒指從怪物的手指上撬了下來……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
   },
   "Death Whistle (Quest)#000": {
    "src": "Talk to Voer at [-{~}, {~}, -{~}].",
@@ -70339,6 +70467,46 @@
    "speaker": "Therck",
    "source": "wiki"
   },
+  "Enzan's Brother#020": {
+   "src": "You should meet me there once you've gotten a little stronger. Well, see you around, {u} .",
+   "dst": "等你再強一點，就到那裡來找我吧。好啦，回頭見，{u}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "source": "capture"
+  },
+  "Enzan's Brother#021": {
+   "src": "Ah, you're back. Do you have the mushroom?",
+   "dst": "啊，你回來了。蘑菇拿到了嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "source": "capture"
+  },
+  "Enzan's Brother#022": {
+   "src": "Excellent... Now I might finally be able to climb these stairs...",
+   "dst": "太好了……這下我總算爬得上這些樓梯了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "source": "capture"
+  },
+  "Enzan's Brother#023": {
+   "src": "Who knows, maybe there's a treasure or something up there?",
+   "dst": "誰知道呢，說不定上面有什麼寶藏之類的？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "source": "capture"
+  },
+  "Enzan's Brother#024": {
+   "src": "Take this ring. It's an accessory item. You can identify it at the nearby Item Identifier.",
+   "dst": "這枚戒指給你。這是一件飾品，可以拿去附近的物品鑑定師鑑定。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enzan's Brother",
+   "source": "capture"
+  },
   "Fallen Delivery#000": {
    "src": "Talk to Bricot.",
    "dst": "與 Bricot 對話",
@@ -88049,6 +88217,270 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
+  "Infested Plants#033": {
+   "src": "Oh, {u}! There you are. It's good to see you. I'd say we should keep heading towards {p}, but...",
+   "dst": "哦，{u}！你在這。見到你真好。照理說我們該繼續往 {p} 走，可是……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#034": {
+   "src": "It looks like we'll need to pass through the {p} first. I've heard the forest is crawling with spiders... and the undead are a danger, as always... but between you and me, we should be-",
+   "dst": "看來得先穿過 {p}。聽說那座森林裡到處都是蜘蛛……不死族也一樣危險，老樣子……不過我們兩個應該還是——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#035": {
+   "src": "H-hey! You two! You're soldiers, right?",
+   "dst": "喂、喂！你們兩個！你們是軍人吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#036": {
+   "src": "Uh- yes, we are, but-",
+   "dst": "呃——是沒錯，可是——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#037": {
+   "src": "Yep, I could tell from your weird fashion sense! You folk are supposed to help people, right? So. Help!",
+   "dst": "對嘛，看你們那身怪品味就知道！你們這種人不是該幫人嗎？那就。幫忙啊！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#038": {
+   "src": "Well, sure- but who are you? Why are you out on your own, isn't it dangerous? Aren't the undead...",
+   "dst": "呃，是啦——不過你是誰？怎麼一個人跑到外面來，這樣不危險嗎？不死族不是……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#039": {
+   "src": "I'm Ope! And the undead... eh, there's not as many of them around here. The spiders aren't picky 'bout who they go for.",
+   "dst": "我叫 Ope！至於不死族……欸，這一帶沒那麼多。倒是蜘蛛不挑對象，逮到誰算誰。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#040": {
+   "src": "Right... okay. That makes sense. What did you need help with?",
+   "dst": "這樣……好吧，說得也是。你需要我們幫什麼忙？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#041": {
+   "src": "I... uh... so, there's this rare medicinal herb that grows in these woods, right? And it's important. But the only place I know to find it is an infested cave, filled with creepy crawly spiders.",
+   "dst": "我……呃……是這樣，這片林子裡長著一種稀有的藥草，對吧？那東西很重要。可是我只知道一個地方找得到，就是那個爬滿噁心蜘蛛的巢穴。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#042": {
+   "src": "And, y'know, I- I'm no soldier! Can't just go in there and get it myself! So, I was hoping you could help me out.",
+   "dst": "而且你也知道，我、我又不是軍人！總不能自己衝進去拿吧！所以我才想說，你們能不能幫我這個忙。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#043": {
+   "src": "Well... we came to Wynn to help out, after all. So... we can get you that herb!",
+   "dst": "嗯……我們來 Wynn 本來就是為了幫忙。所以……那株藥草我們幫你拿！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#044": {
+   "src": "Great. Great! I'll bring you to the cave, and you can do the rest from there. Follow me!",
+   "dst": "太好了。太好了！我帶你們到洞口，剩下的就交給你們。跟我來！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#045": {
+   "src": "Well, here we are! That's the cave right over there- just climb up the rocks and jump into it. It's safe! Uh, probably.",
+   "dst": "好，到了！洞口就在那邊——爬上那些岩石再跳下去就行。很安全的！呃，大概吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#046": {
+   "src": "...eek. There's a lot of spiders even up here... hey, since there's two of you- one of you can go get the herb, and the other can, uh... protect me from the crawly spiders?",
+   "dst": "……唔哇。連這上面都一堆蜘蛛……欸，反正你們有兩個人——一個進去拿藥草，另一個就，呃……幫我擋一下那些爬來爬去的蜘蛛？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#047": {
+   "src": "That works for me. {u}, you go into the cave, and I'll defend Ope up here while you do that.",
+   "dst": "我沒問題。{u}，你進洞裡去，我在上面顧著 Ope。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#048": {
+   "src": "Yep... good! Good, good! Good, uh, luck up there! Try not to get bitten too much by the spiders!",
+   "dst": "對……很好！好、好！那個，呃，祝你好運！盡量別被蜘蛛咬太多口！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#049": {
+   "src": "...ah- there you are!! What took you so long, it feels like we've been waiting for hours!",
+   "dst": "……啊——你出來了！！怎麼那麼久，感覺我們等了好幾個小時！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#050": {
+   "src": "It-... mm. A-anyway! Do you have the herb? It's very important, yep.",
+   "dst": "那個——……嗯。總、總之！藥草拿到了嗎？那東西很重要的，對。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#051": {
+   "src": "Come to think of it... I don't think you ever mentioned what you needed it for.",
+   "dst": "說起來……你好像一直沒說你要那東西做什麼。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#052": {
+   "src": "Oh, I- eheh, it... I... uh, it's n-none of your business, actually.",
+   "dst": "哦，我——欸嘿，那……我……呃，其實這、這不關你的事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#053": {
+   "src": "I- I thank you kindly for your work, soldiers! Now, about your payment... let's see, what do I have...",
+   "dst": "我、我很感謝兩位軍人幫忙！那麼，報酬的部分……我看看，身上還有什麼……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#054": {
+   "src": "Oh. I seem to be out of emeralds. Well- then, I- I can offer some advice! There's lots to find in this forest. Plenty of other caves with valuables to explore! Might be worth your time!",
+   "dst": "哦。我的綠寶石好像用完了。那、那我、我可以給你們一點建議！這片森林裡好東西多得是。還有一堆藏著寶物的洞穴可以探！說不定值得你們跑一趟！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#055": {
+   "src": "Wait, what? Hey, are you seriously not going to-",
+   "dst": "等等，什麼？喂，你該不會真的不打算——",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#056": {
+   "src": "It has been a time soldiers, but I- I truly must be going! Important things to get to! We're near {p}, you should stop on by! Just keep going east down the main road!",
+   "dst": "兩位軍人，跟你們相處得很愉快，但我、我真的得走了！還有要緊事要辦！這裡離 {p} 不遠，你們可以順道去看看！沿著大路一直往東就到了！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#057": {
+   "src": "You can, uh, go speak to the mayor! He can cover my expenses!",
+   "dst": "你們可以，呃，去找鎮長談！我的帳讓他來付！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#058": {
+   "src": "...well. Goodbye!",
+   "dst": "……好啦。再見！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#059": {
+   "src": "That's... frustrating. I really did just want to know... well. What's done is done. Let's just go talk to that mayor he mentioned.",
+   "dst": "真是……讓人不痛快。我只是想知道而已……算了，事情都這樣了。我們就去找他說的那位鎮長吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#060": {
+   "src": "I'm going to go on ahead. I'll meet you in {p}, it's just down the main road to the east.",
+   "dst": "我先走一步。我們在 {p} 碰面，沿著大路往東走就到了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#061": {
+   "src": "Ah, recruits... welcome to our humble forest town. Have you come to stay, or are you simply passing through?",
+   "dst": "啊，兩位新兵……歡迎來到我們這座小小的森林城鎮。是要住下來，還是只是路過呢？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#062": {
+   "src": "Just passing through, our destination is {p}. Though... we ran into a man named Ope, who directed us to speak with you.",
+   "dst": "只是路過，我們要去 {p}。不過……我們遇到一個叫 Ope 的人，他要我們來找您談談。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#063": {
+   "src": "Oh, Ope... I take it your meeting with him went poorly? I must apologize for him, he is... a tough man to deal with sometimes.",
+   "dst": "哦，Ope 啊……我猜你們跟他談得不太愉快吧？我替他向兩位道歉，他這個人……有時候確實不好相處。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#064": {
+   "src": "Oh... thank you. That's very kind of you. We'll probably stay a while, before we continue towards {p}.",
+   "dst": "哦……謝謝您。您太客氣了。我們大概會待上一陣子，再繼續往 {p} 走。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
+  "Infested Plants#065": {
+   "src": "Then feel free to make yourselves at home! We welcome all travelers here, no matter how long their stay.",
+   "dst": "那就請兩位別客氣，把這裡當自己家！不管待多久，我們都歡迎所有旅人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "source": "capture"
+  },
   "Jungle Fever#000": {
    "src": "Talk to Worid in the jungle village at [-{~}, {~}, -{~}]",
    "dst": "前往叢林村落與 Worid 對話，座標 [-{~1}, {~2}, -{~3}]",
@@ -89608,6 +90040,30 @@
    "stage": "Stage 22",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "King's Recruit#124": {
+   "src": "What are you waiting for recruits? Go identify your helmet at the  Item Identifier and then equip it in your helmet slot!",
+   "dst": "新兵們還在等什麼？快去物品鑑定師那裡鑑定你的頭盔，再把它裝到頭盔欄位上！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "source": "capture"
+  },
+  "King's Recruit#125": {
+   "src": "Unless you'd rather stand around here all day, that's fine by me too.",
+   "dst": "除非你們想在這裡站上一整天——那樣我也無所謂。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "source": "capture"
+  },
+  "King's Recruit#126": {
+   "src": "Well, what are we waiting for?",
+   "dst": "那我們還等什麼？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "source": "capture"
   },
   "Kingdom of Sand#000": {
    "src": "Talk to Junes at [{~}, {~}, -{~}]",
@@ -136928,6 +137384,22 @@
    "stage": "Stage 14",
    "speaker": "Sui",
    "source": "wiki"
+  },
+  "Skittering Spiders#000": {
+   "src": "I am everywhere. M-mushroom soup, stew, soup m-makes me fast!",
+   "dst": "我無所不在。蘑、蘑菇湯、燉湯，湯讓我變、變快！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Skittering Spiders",
+   "source": "capture"
+  },
+  "Skittering Spiders#001": {
+   "src": "...Oh. It's- you. Hello.",
+   "dst": "……哦。是、是你啊。你好。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Skittering Spiders",
+   "source": "capture"
   },
   "Solidarity of Steel#000": {
    "src": "Regroup with your friends outside {p} at [-{~}, {~}, -{~}].",
