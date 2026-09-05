@@ -18,8 +18,7 @@ import java.util.function.Supplier;
 
 // 版面常數統一由 SettingsLayout 定義——分兩份會再走上舊版各算各的老路。
 import static com.wynnchayuan.client.SettingsLayout.FOOT_H;
-import static com.wynnchayuan.client.SettingsLayout.GAP;
-import static com.wynnchayuan.client.SettingsLayout.ROW_H;
+import static com.wynnchayuan.client.SettingsLayout.PAD;
 import static com.wynnchayuan.client.SettingsLayout.TAB_W;
 import static com.wynnchayuan.client.SettingsLayout.TOP;
 
@@ -162,15 +161,15 @@ public final class SettingsScreen extends Screen {
         for (int i = 0; i < TABS.length; i++) {
             int which = i;
             addRenderableWidget(Button.builder(
-                    Component.literal(Cards.fit(this.font,
-                            (i == tab ? "▸ " : "   ") + TABS[i],
-                            TAB_W - 8)),
+                    // 選到的那一類靠<b>左邊那條主題色</b>表示，不加「▸」——
+                    // 加了字會被推右，跟其他幾個對不齊，一眼就看得出來歪。
+                    Component.literal(Cards.fit(this.font, TABS[i], TAB_W - 8)),
                     b -> {
                         tab = which;
                         scroll = 0;
                         rebuildWidgets();
                     })
-                    .bounds(originX(), TOP + i * ROW_H, TAB_W, 20).build());
+                    .bounds(originX(), box().rowY(i), TAB_W, 20).build());
         }
 
         // ---- 底部 ----
@@ -374,22 +373,26 @@ public final class SettingsScreen extends Screen {
 
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
+        SettingsLayout box = box();
         int x0 = originX();
         int pane = paneW();
         int px = paneX();
-        int listH = Math.min(rows.size(), perPage()) * ROW_H;
+        int listH = box.listH();
 
-        // 卡片墊在按鈕底下，所以先於 super.render
-        Cards.panel(g, x0 - 4, TOP - 6, TAB_W + 8, TABS.length * ROW_H + 4);
-        Cards.panel(g, px - GAP, TOP - 6, pane + GAP * 2, listH + 4);
+        // 卡片墊在按鈕底下，所以先於 super.render。
+        // 左右緣都問 SettingsLayout——先前兩張卡片各自 ±8，實際上疊了 4px。
+        Cards.panel(g, box.tabsCardX(), box.tabsY(),
+                box.tabsCardW(), box.tabsBottom() - box.tabsY());
+        Cards.panel(g, box.listCardX(), box.tabsY(),
+                box.listCardW(), box.listBottom() - box.tabsY());
 
         super.render(g, mouseX, mouseY, delta);
 
         Cards.header(g, this.font, this.width, "WynnChaYuan",
                 "Wynncraft 繁體中文翻譯 · v" + WynnChaYuan.version());
 
-        // 選到的那一類左邊加一條主題色，比只有「▸」看得清楚
-        g.fill(x0 - 4, TOP + tab * ROW_H, x0 - 2, TOP + tab * ROW_H + 20,
+        // 選到的那一類，左邊一條主題色。貼著按鈕畫，不要壓在卡片框線上。
+        g.fill(x0 - PAD + 2, box.rowY(tab), x0 - 2, box.rowY(tab) + 20,
                 WynnChaYuan.config().accentARGB());
 
         // 每一列的名稱。控制項自己會畫。
@@ -400,12 +403,14 @@ public final class SettingsScreen extends Screen {
                 continue;
             }
             Row row = rows.get(i);
-            boolean on = mouseX >= px - GAP && mouseX <= px + pane + GAP
+            // 指到這一列的判定範圍就是卡片內緣，跟底下畫的高亮同一組座標。
+            int hiL = box.listCardX() + 1;
+            int hiR = box.listCardX() + box.listCardW() - 1;
+            boolean on = mouseX >= hiL && mouseX <= hiR
                     && mouseY >= row.y - 2 && mouseY < row.y + 22;
             if (on) {
                 hovered = row.hint;
-                g.fill(px - GAP + 1, row.y - 2, px + pane + GAP - 1, row.y + 22,
-                       0x18FFFFFF);
+                g.fill(hiL, row.y - 2, hiR, row.y + 22, 0x18FFFFFF);
             }
             // 真的還是放不下就截斷。凸出去比截斷難看得多。
             g.drawString(this.font,
@@ -432,9 +437,9 @@ public final class SettingsScreen extends Screen {
      * &gt; 載入了幾條譯文。分成三個位置的話，畫面下緣會空一大片沒人看的字。
      */
     private void footer(GuiGraphics g, int x0, int pane, String hovered) {
-        int w = TAB_W + GAP + pane + 8;
-        int y = this.height - FOOT_H + 8;
-        Cards.panel(g, x0 - 4, y, w, 20);
+        int w = box().footerW();
+        int y = box().footerY();
+        Cards.panel(g, box().tabsCardX(), y, w, 20);
 
         Component line;
         if (!status.getString().isEmpty()) {
@@ -451,7 +456,7 @@ public final class SettingsScreen extends Screen {
         g.drawString(this.font,
                 Component.literal(Cards.fit(this.font, line.getString(), w - 10))
                         .withStyle(line.getStyle()),
-                x0 + 2, y + 6, Colors.TEXT);
+                x0 - 2, y + 6, Colors.TEXT);
     }
 
     @Override
