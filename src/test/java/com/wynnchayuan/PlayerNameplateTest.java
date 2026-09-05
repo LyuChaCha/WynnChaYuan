@@ -69,6 +69,8 @@ public final class PlayerNameplateTest {
             check("不誤擋：" + keep, !PlayerDataFilter.looksPlayerNamed(keep));
         }
 
+        partyCards();
+
         // ★ 拿真實語料當對照。npc.json 是人工翻過的，裡面的名字都是遊戲內容。
         //
         // 只測上面那幾個手寫的例子是不夠的——真正的風險是某個沒想到的命名
@@ -213,6 +215,35 @@ public final class PlayerNameplateTest {
         check("人工翻過的語料沒有新的誤擋（實際 " + blocked + "）", blocked.isEmpty());
 
         report();
+    }
+
+    /**
+     * 組隊尋找清單上的隊伍名不進語料。
+     *
+     * <h2>怎麼漏掉的</h2>
+     * 隊伍名是玩家自己打的字——實機那一份 captured.json 裡有
+     * {@code Batcave}、{@code Gikyu Boss Fight :(}、{@code Scrapyard dxp totems}。
+     * 它們沒有底線也沒有駝峰，{@code looksPlayerNamed} 認不出來；也沒有公會標籤，
+     * {@code GUILD_TAG} 一樣認不出來。逐行看永遠擋不住。
+     *
+     * <p>擋得住的是<b>整份</b>：卡片上一定有一行伺服器世界，那是遊戲自己排的。
+     */
+    private static void partyCards() {
+        List<String> card = List.of(
+                "Batcave", "World: NA{~}", "✖ This party's world is full");
+        check("認得出隊伍卡", PlayerDataFilter.isPartyCard(card));
+
+        // 反面：一般的介面 tooltip 不能被誤認，不然那些標題就白白少收了
+        check("素材袋不是隊伍卡", !PlayerDataFilter.isPartyCard(
+                List.of("Packed Crafter Bag [{~}/{~}]", "Contains one of several")));
+        check("技能節點不是隊伍卡", !PlayerDataFilter.isPartyCard(
+                List.of("Vacuokinesis", "Your Main Attack is imbued with vacuum,")));
+        check("空的不是隊伍卡", !PlayerDataFilter.isPartyCard(List.of()));
+        check("null 不是隊伍卡", !PlayerDataFilter.isPartyCard(null));
+
+        // 世界那一行本身是正常的介面字，收得到才對——擋的只有標題
+        check("世界那一行不算玩家資料",
+                !PlayerDataFilter.carriesPlayerData("World: NA{~}"));
     }
 
     private static void check(String what, boolean ok) {
