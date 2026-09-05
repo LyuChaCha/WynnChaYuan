@@ -52,8 +52,13 @@ public final class SettingsLayoutTest {
         // 下限那一組特別列出來，數字看得見才知道有多緊
         SettingsLayout floor = new SettingsLayout(320, 240, MAX_ROWS);
         System.out.println("  320×240：名稱欄 " + floor.nameW() + "px、控制項 "
-                + floor.ctrlW() + "px、放得下 " + floor.perPage() + " 列、"
+                + floor.ctrlW() + "px、列距 " + floor.rowH() + "px、放得下 "
+                + floor.perPage() + " 列、卡片間距 " + floor.cardGap() + "px、"
                 + (floor.scrolls() ? "要捲動" : "不用捲"));
+        SettingsLayout normal = new SettingsLayout(854, 480, MAX_ROWS);
+        System.out.println("  854×480：名稱欄 " + normal.nameW() + "px、控制項 "
+                + normal.ctrlW() + "px、列距 " + normal.rowH() + "px、放得下 "
+                + normal.perPage() + " 列、卡片間距 " + normal.cardGap() + "px");
         report("下限畫面放得下最多的那一類（" + floor.perPage() + " 列）",
                 floor.perPage() >= MAX_ROWS);
 
@@ -72,15 +77,19 @@ public final class SettingsLayoutTest {
         must(at + "：名稱欄放得下最長的名稱", box.nameW() >= LONGEST_NAME);
         must(at + "：控制項放得下最長的值", box.ctrlW() >= LONGEST_VALUE);
         must(at + "：左緣不出界", box.originX() >= 0);
-        must(at + "：右緣不出界",
-                box.paneX() + box.paneW() + SettingsLayout.GAP <= w);
         must(at + "：控制項在清單裡", box.ctrlX() + box.ctrlW()
                 <= box.paneX() + box.paneW());
         must(at + "：說明條不出界",
-                box.originX() - 4 + box.footerW() <= w);
+                box.tabsCardX() >= 0 && box.tabsCardX() + box.footerW() <= w);
+
+        // 兩張卡片不能疊在一起——使用者一眼看出來的就是這個。
+        must(at + "：兩張卡片之間有空隙（實際 " + box.cardGap() + "px）",
+                box.cardGap() >= 4);
+        must(at + "：清單卡片不出界",
+                box.listCardX() + box.listCardW() <= w);
 
         // ---- 縱向：由上到下不重疊 ----
-        must(at + "：清單在標題列底下", SettingsLayout.TOP - 6 >= SettingsLayout.HEADER_H);
+        must(at + "：清單在標題列底下", box.tabsY() >= SettingsLayout.HEADER_H);
         must(at + "：清單卡片沒壓到說明條", box.listBottom() <= box.footerY());
         must(at + "：分類卡片沒壓到說明條", box.tabsBottom() <= box.footerY());
         must(at + "：說明條沒壓到按鈕列", box.footerY() + 20 <= box.buttonsY());
