@@ -22,11 +22,18 @@ final class SettingsLayout {
     /** 右邊清單想要多寬。畫面窄的時候會自己縮。 */
     static final int PANE_W = 330;
 
-    /** 分類欄與清單之間、以及清單左右內距。 */
-    static final int GAP = 8;
+    /**
+     * 分類欄與清單<b>之間</b>留多寬。
+     *
+     * <p>這個值要大於 {@code PAD * 2}，否則兩張卡片的邊框會疊在一起——
+     * 先前 GAP 和卡片內距都是 8，左卡右緣在 {@code x+100}、右卡左緣在
+     * {@code x+96}，實際上是重疊的。使用者一眼就看出來「排序有點怪」。
+     * 兩張卡片之間留 {@code GAP - PAD * 2} 的空隙。
+     */
+    static final int GAP = 20;
 
-    /** 一列的間距：控制項 20 + 呼吸空間 4。 */
-    static final int ROW_H = 24;
+    /** 卡片比裡面的東西往外多留多少。 */
+    static final int PAD = 6;
 
     /** 控制項那一半想要多寬。畫面窄的時候會讓給名稱。 */
     static final int CTRL_W = 156;
@@ -36,6 +43,17 @@ final class SettingsLayout {
 
     /** 控制項最窄縮到多少。再窄下去「原文加譯文」那種字就塞不進去了。 */
     static final int CTRL_MIN = 96;
+
+    /**
+     * 一列的間距。
+     *
+     * <p>控制項高 20，剩下的是列與列之間的空隙。畫面夠高就多留一點——
+     * 使用者回報「可以再分開點」。矮畫面（Minecraft 的下限 240）縮回去，
+     * 不然最多的那一類會放不下而變成要捲。
+     */
+    int rowH() {
+        return height >= 300 ? 28 : 24;
+    }
 
     /** 標題列高度，見 {@link Cards#header}。 */
     static final int HEADER_H = 47;
@@ -65,11 +83,35 @@ final class SettingsLayout {
     // ------------------------------------------------------------ 橫向
 
     int paneW() {
-        return Math.min(PANE_W, width - TAB_W - GAP * 3);
+        // 再扣 4：貼著畫面邊緣的卡片看起來像被切掉。
+        return Math.min(PANE_W, width - TAB_W - GAP - PAD * 2 - 4);
     }
 
     int originX() {
         return (width - (TAB_W + GAP + paneW())) / 2;
+    }
+
+    /** 分類卡片的左緣與寬度。 */
+    int tabsCardX() {
+        return originX() - PAD;
+    }
+
+    int tabsCardW() {
+        return TAB_W + PAD * 2;
+    }
+
+    /** 清單卡片的左緣與寬度。 */
+    int listCardX() {
+        return paneX() - PAD;
+    }
+
+    int listCardW() {
+        return paneW() + PAD * 2;
+    }
+
+    /** 兩張卡片共用的上緣。 */
+    int tabsY() {
+        return TOP - PAD;
     }
 
     int paneX() {
@@ -105,11 +147,11 @@ final class SettingsLayout {
      * <b>但只有真的要捲時才讓</b>——不然放得下的分類會平白少一列。
      */
     int perPage() {
-        int room = Math.max(1, (height - FOOT_H - TOP) / ROW_H);
+        int room = Math.max(1, (height - FOOT_H - TOP) / rowH());
         if (rows <= room) {
             return room;
         }
-        return Math.max(1, (height - FOOT_H - TOP - CAPTION_H) / ROW_H);
+        return Math.max(1, (height - FOOT_H - TOP - CAPTION_H) / rowH());
     }
 
     /** 需不需要捲動。 */
@@ -124,27 +166,32 @@ final class SettingsLayout {
 
     /** 第 {@code at} 個看得到的位置在哪一條 y（畫面座標）。 */
     int rowY(int at) {
-        return TOP + at * ROW_H;
+        return TOP + at * rowH();
     }
 
     /** 清單卡片的高度。 */
     int listH() {
-        return shown() * ROW_H;
+        return shown() * rowH();
     }
 
     /** 清單卡片的底邊。 */
     int listBottom() {
-        return TOP - 6 + listH() + 4;
+        return tabsY() + listH() + PAD;
     }
 
     /** 分類卡片的底邊。 */
     int tabsBottom() {
-        return TOP - 6 + TABS * ROW_H + 4;
+        return tabsY() + TABS * rowH() + PAD;
     }
 
     /** 捲動提示那一行的 y。 */
     int captionY() {
         return TOP + listH() + 2;
+    }
+
+    /** 兩張卡片之間的空隙。負的就是疊在一起。 */
+    int cardGap() {
+        return listCardX() - (tabsCardX() + tabsCardW());
     }
 
     /** 底部說明條的 y。 */
@@ -153,7 +200,7 @@ final class SettingsLayout {
     }
 
     int footerW() {
-        return TAB_W + GAP + paneW() + 8;
+        return TAB_W + GAP + paneW() + PAD * 2;
     }
 
     /** 最底下那兩顆按鈕的 y。 */
