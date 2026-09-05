@@ -134,6 +134,7 @@ public final class ColourPlaceholderTest {
         crossesLines(src);
         wordPalette();
         progressBar();
+        tierBrackets();
         report();
     }
 
@@ -329,6 +330,62 @@ public final class ColourPlaceholderTest {
         check("兩格的重複符號不算", LineTranslator.barSpan("看!! 這樣") == null);
         check("[2/4] 不算", LineTranslator.barSpan("[2/4]") == null);
         check("空白不算", LineTranslator.barSpan("第 I 層     第 II 層") == null);
+    }
+
+    /**
+     * 層級那一行的 {@code [2/4]}，括號要留在底色。
+     *
+     * <h2>畫面上是什麼樣子</h2>
+     * <pre>
+     *   原文  Tier I  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;  Tier II  [2/4]
+     *         灰      綠／暗灰            洋紅     <b>灰</b>
+     * </pre>
+     *
+     * 譯文原本把色段一路開到行尾（{@code {w2}第 II 層 [{~1}/{~2}]{/}}），
+     * 於是中括號與斜線跟著吃到層級的顏色——畫面上整串
+     * 「第 II 層 [2/4]」都是洋紅的，而原文只有「Tier II」是。使用者回報的正是這個。
+     *
+     * <p>數字本身不受影響：它們是 {@code {~}}，連同原本的樣式填回去。
+     * 會走色的只有譯文自己打的那三個字元。所以 {@code {/}} 要收在層級後面。
+     */
+    private static void tierBrackets() throws Exception {
+        // 這一條要拿<b>真的語料</b>跑：盯的是 raid.json 裡那三條的寫法，
+        // 而這支測試其餘部分用的是暫用語料。
+        TranslationStore store = new TranslationStore();
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                            Languages.DEFAULT));
+
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA));
+        Style dark = Style.EMPTY.withColor(TextColor.fromRgb(0x555555));
+        Style tier = Style.EMPTY.withColor(TextColor.fromRgb(0x55FFFF));
+
+        MutableComponent line = Component.empty();
+        // 行首那個看不見的位移符號。語料的鍵是「{#}Tier I …」，少了它整行查不到。
+        line.append(Component.literal(new String(Character.toChars(0xD0012)))
+                .withStyle(Style.EMPTY.withFont(
+                        new net.minecraft.network.chat.FontDescription.Resource(
+                                net.minecraft.resources.Identifier
+                                        .withDefaultNamespace("space")))));
+        line.append(Component.literal("Tier I ").withStyle(grey));
+        line.append(Component.literal(">>>>>>>>>>").withStyle(dark));
+        line.append(Component.literal(" ").withStyle(grey));
+        line.append(Component.literal("Tier II").withStyle(tier));
+        line.append(Component.literal(" [2/4]").withStyle(grey));
+
+        Component built = LineTranslator.translate(StyledText.fromComponent(line), store);
+        if (built == null) {
+            check("層級那一行查得到譯文", false);
+            return;
+        }
+        String all = built.getString();
+        check("層級翻出來了（實際：" + all + "）", all.contains("第 II 層"));
+
+        Integer bracket = colourOf(built, "[");
+        Integer name = colourOf(built, "第 II 層");
+        check("層級是層級的顏色（拿到 " + hex(name) + "）",
+                name != null && name == 0x55FFFF);
+        check("中括號不是層級的顏色（拿到 " + hex(bracket) + "）",
+                bracket != null && bracket != 0x55FFFF);
     }
 
     private static void check(String what, boolean ok) {
