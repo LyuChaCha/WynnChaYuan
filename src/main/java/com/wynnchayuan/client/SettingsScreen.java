@@ -76,6 +76,37 @@ public final class SettingsScreen extends Screen {
     private static int scroll = 0;
 
     private Component status = Component.empty();
+
+    /**
+     * 動作結果是<b>什麼時候</b>設的。
+     *
+     * <p>先前 status 設了就不清，而它的優先序在說明之上——按過一次「套用」之後，
+     * 底下那條就被「✔ 已套用顏色」佔住，之後滑到任何一列都看不到說明了。
+     * 使用者回報「希望還是可以保有說明」講的就是這個。
+     *
+     * <p>兩件事都要看得到，所以改成<b>輪流</b>：結果先顯示幾秒——按下去的當下
+     * 滑鼠通常正壓在那一列上，說明先讓開——過了就換回說明。
+     */
+    private long statusAt = 0;
+
+    /** 動作結果顯示多久。見 {@link #statusAt}。 */
+    private static final long STATUS_MS = 4000;
+
+    /** 設一則動作結果。 */
+    private void say(Component text) {
+        status = text;
+        statusAt = System.currentTimeMillis();
+    }
+
+    /** 正在向 GitHub 抓譯文。抓多久不知道，這期間那條訊息不能被說明蓋掉。 */
+    private boolean fetching = false;
+
+    private boolean statusFresh() {
+        if (status.getString().isEmpty()) {
+            return false;
+        }
+        return fetching || System.currentTimeMillis() - statusAt < STATUS_MS;
+    }
     private final List<Row> rows = new ArrayList<>();
     private EditBox colorBox;
     private EditBox gapBox;
@@ -362,10 +393,10 @@ public final class SettingsScreen extends Screen {
                 this::debugLabel, b -> {
                     WynnChaYuan.config().toggleDebugDumps();
                     b.setMessage(debugLabel());
-                    status = Component.literal(WynnChaYuan.config().debugDumps()
+                    say(Component.literal(WynnChaYuan.config().debugDumps()
                             ? "✔ 診斷檔已開啟——重進遊戲後才會開始寫"
                             : "✔ 診斷檔已關閉——重進遊戲後生效")
-                            .withStyle(ChatFormatting.GREEN);
+                            .withStyle(ChatFormatting.GREEN));
                 });
     }
 
@@ -442,13 +473,15 @@ public final class SettingsScreen extends Screen {
         Cards.panel(g, box().tabsCardX(), y, w, 20);
 
         Component line;
-        if (!status.getString().isEmpty()) {
-            line = status;
+        if (statusFresh()) {
+            line = status;                     // 剛做完的事先講，幾秒後讓開
         } else if (hovered != null) {
             line = Component.literal(hovered).withStyle(ChatFormatting.GRAY);
         } else {
+            // 沒指著任何一列時順便教一次——不然沒人知道說明藏在滑鼠底下。
             int size = WynnChaYuan.translations().size();
-            line = Component.literal(size + " 條譯文已載入")
+            line = Component.literal("滑鼠移到設定上會顯示說明 · "
+                            + size + " 條譯文已載入")
                     .withStyle(size > 0 ? ChatFormatting.DARK_GRAY : ChatFormatting.RED);
         }
         // GitHub 回來的訊息長度事先不知道（「連線失敗：UnknownHostException…」），
@@ -620,10 +653,10 @@ public final class SettingsScreen extends Screen {
     private void applySeconds() {
         if (WynnChaYuan.config().setDialogueHoldSeconds(dialogueHoldBox.getValue())) {
             dialogueHoldBox.setValue(holdSeconds());
-            status = Component.literal("✔ 已設定停留時間").withStyle(ChatFormatting.GREEN);
+            say(Component.literal("✔ 已設定停留時間").withStyle(ChatFormatting.GREEN));
         } else {
-            status = Component.literal("✘ 請輸入秒數（整數，0 = 持續顯示）")
-                    .withStyle(ChatFormatting.RED);
+            say(Component.literal("✘ 請輸入秒數（整數，0 = 持續顯示）")
+                    .withStyle(ChatFormatting.RED));
         }
     }
 
@@ -631,10 +664,10 @@ public final class SettingsScreen extends Screen {
         if (WynnChaYuan.config().setPanelGap(gapBox.getValue())) {
             // 超出範圍會被夾住，把實際生效的值寫回去，免得使用者以為沒生效
             gapBox.setValue(String.valueOf(WynnChaYuan.config().panelGap()));
-            status = Component.literal("✔ 已設定間距").withStyle(ChatFormatting.GREEN);
+            say(Component.literal("✔ 已設定間距").withStyle(ChatFormatting.GREEN));
         } else {
-            status = Component.literal("✘ 請輸入整數像素（0–200）")
-                    .withStyle(ChatFormatting.RED);
+            say(Component.literal("✘ 請輸入整數像素（0–200）")
+                    .withStyle(ChatFormatting.RED));
         }
     }
 
@@ -642,10 +675,10 @@ public final class SettingsScreen extends Screen {
     private void applyColor() {
         if (WynnChaYuan.config().setAccentColor(colorBox.getValue())) {
             colorBox.setValue(WynnChaYuan.config().accentColor());
-            status = Component.literal("✔ 已套用顏色").withStyle(ChatFormatting.GREEN);
+            say(Component.literal("✔ 已套用顏色").withStyle(ChatFormatting.GREEN));
         } else {
             colorBox.setValue(WynnChaYuan.config().accentColor());
-            status = Component.literal("✘ 色碼格式要像 #6FA8D8").withStyle(ChatFormatting.RED);
+            say(Component.literal("✘ 色碼格式要像 #6FA8D8").withStyle(ChatFormatting.RED));
         }
     }
 
@@ -658,9 +691,11 @@ public final class SettingsScreen extends Screen {
      */
     private void reload() {
         if (WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB) {
-            status = Component.literal("… 正在從 GitHub 抓取").withStyle(ChatFormatting.GRAY);
+            say(Component.literal("… 正在從 GitHub 抓取").withStyle(ChatFormatting.GRAY));
+            fetching = true;
             reloadButton.active = false;
             WynnChaYuan.resyncTranslations(result -> {
+                fetching = false;
                 reloadButton.active = true;
                 report(result, WynnChaYuan.translations().size() > 0);
             });
@@ -672,8 +707,8 @@ public final class SettingsScreen extends Screen {
     }
 
     private void report(String result, boolean ok) {
-        status = Component.literal((ok ? "✔ " : "✘ ") + result)
-                .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED);
+        say(Component.literal((ok ? "✔ " : "✘ ") + result)
+                .withStyle(ok ? ChatFormatting.GREEN : ChatFormatting.RED));
         if (this.minecraft != null && this.minecraft.player != null) {
             this.minecraft.player.displayClientMessage(
                     Component.literal("[WynnChaYuan] " + result)
