@@ -44,6 +44,22 @@ public final class Cards {
         g.fill(x, y + 10, x + w, y + 11, accent);
     }
 
+    /**
+     * 放不下就截斷，尾巴補上省略號。
+     *
+     * <p>中文一個字九像素，英文一個字母六像素——同一句話換成中文常常寬一截。
+     * 凸出格子外比截斷難看得多，而且看起來像壞掉。所以寧可截。
+     *
+     * <p>會變動的字（按鍵名稱、GitHub 回來的訊息）長度事先不知道，一定要走這裡。
+     */
+    public static String fit(Font font, String text, int maxW) {
+        if (maxW <= 0 || font.width(text) <= maxW) {
+            return text;
+        }
+        String cut = font.plainSubstrByWidth(text, Math.max(0, maxW - font.width("…")));
+        return cut + "…";
+    }
+
     /** 按鈕下方的說明文字。 */
     public static void hint(GuiGraphics g, Font font, int x, int y, String text) {
         g.drawString(font, Component.literal(text), x, y, Colors.HINT);

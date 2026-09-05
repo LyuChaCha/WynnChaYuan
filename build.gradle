@@ -226,6 +226,14 @@ tasks.register('runGuiBlockGapChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runGuiBlockGapChecks' }
 
+tasks.register('runSettingsLayoutChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證 F6 版面在任何畫面尺寸下都不會凸出或重疊'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.client.SettingsLayoutTest'
+}
+tasks.named('check') { dependsOn 'runSettingsLayoutChecks' }
+
 tasks.register('runChatAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證聊天訊息的譯文跟原文那一塊形狀一樣'
