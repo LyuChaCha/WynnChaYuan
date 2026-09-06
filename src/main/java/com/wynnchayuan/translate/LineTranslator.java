@@ -3593,8 +3593,150 @@ public final class LineTranslator {
      */
     static String lookup(String template, TranslationStore store, boolean percent) {
         String hit = lookupTrimmed(template, store, percent);
-        return hit != null ? hit : statRow(template, store, percent);
+        if (hit == null) {
+            hit = statRow(template, store, percent);
+        }
+        return hit != null ? hit : nameRow(template, store);
     }
+
+    /**
+     * 技能樹的「項目符號 + 標籤 + 名稱」整行。
+     *
+     * <h2>實機長相</h2>
+     * 法師技能樹的節點說明裡有這幾種行：
+     *
+     * <pre>
+     *   ✔ Required Ability: Heal
+     *   ✖ Required Ability: Dimensional Tear
+     *   - Psychokinesis
+     *   - Meteor Shower
+     * </pre>
+     *
+     * <h2>為什麼不能靠整行條目收</h2>
+     * 跟 {@link #statRow} 同一個道理：<b>五個職業約兩百多個技能 × 三種形狀</b>，
+     * 而整行條目一種只收一個。上一版手動補了五組 {@code Required Ability:}，
+     * 這次 capture 又冒出八組沒收到的——每補一批就再冒一批，收不完。
+     * 而且 {@code misc.json} 裡已經躺著一批 dst 留空的同形狀條目，
+     * 正是「一行一條」補不動的證據。
+     *
+     * <h2>做法</h2>
+     * 兩邊本來就都有：標籤（{@code Required Ability:} → 前置技能:）在
+     * {@code ability-labels.json}，技能名（{@code Heal} → 治療）在
+     * {@code ability/} 底下五個職業檔裡，共一千兩百多條。所以不查整行，
+     * 改成把行首的項目符號剝掉、冒號前後<b>各自查、再原樣組回去</b>——
+     * 跟 {@link #statRow} 只查標籤是同一招。一條標籤涵蓋五個職業。
+     *
+     * <h2>為什麼很安全</h2>
+     * 切開後<b>每一段都必須自己命中語料</b>，只要有一段查不到就整條放棄，
+     * 不會把一般句子拼成半中半英。唯一的例外是 {@link #NAME_LABELS}
+     * 那幾個<b>後面必定接技能名</b>的標籤：Wynncraft 改版新增的技能還沒進
+     * 語料時，至少把標籤翻出來，剩半個技能名是原文——那本來就是專有名詞。
+     *
+     * <p>而且這條路排在整行查與 {@link #statRow} 後面，真正收在語料裡的整行
+     * （翻譯團隊手寫的那六組、{@code - Converts up to} 那種）永遠先命中。
+     *
+     * @return 譯好的整行；切不開、或查不到標籤時回傳 {@code null}
+     */
+    private static String nameRow(String template, TranslationStore store) {
+        int start = 0;
+        while (start < template.length()
+                && Character.isWhitespace(template.charAt(start))) {
+            start++;
+        }
+        int body = start;
+        for (int next = bulletEnd(template, body); next > body;
+                next = bulletEnd(template, body)) {
+            body = next;
+        }
+        String rest = template.substring(body);
+        String head = template.substring(0, body);
+
+        int colon = labelEnd(rest);
+        if (colon > 0) {
+            String label = rest.substring(0, colon);
+            String zhLabel = lookupTrimmed(label, store, false);
+            int name = colon;
+            while (name < rest.length() && rest.charAt(name) == ' ') {
+                name++;
+            }
+            String tail = rest.substring(name);
+            if (zhLabel != null && !zhLabel.isBlank() && !tail.isBlank()) {
+                String zhName = lookupTrimmed(tail, store, false);
+                if ((zhName == null || zhName.isBlank())
+                        && NAME_LABELS.contains(label.strip())) {
+                    zhName = tail;             // 還沒進語料的新技能，名字留原文
+                }
+                if (zhName != null && !zhName.isBlank()) {
+                    // 中間的空白交給 reattach：譯文收在全形冒號時不再補半形
+                    // 空格，否則「前置技能：␣Ophanim」會留白疊留白。
+                    return head + zhLabel
+                            + reattach(zhLabel, rest.substring(colon, name)) + zhName;
+                }
+            }
+        }
+        if (body == start) {
+            return null;                       // 行首沒剝掉東西，跟整行查是同一件事
+        }
+        String zh = lookupTrimmed(rest, store, false);
+        return zh == null || zh.isBlank() ? null : head + zh;
+    }
+
+    /**
+     * 見 {@link #nameRow}：這幾個標籤的冒號後面<b>必定是技能名</b>，
+     * 查不到譯文時可以原樣留著——技能名是專有名詞，留原文玩家看得懂，
+     * 整行英文才是問題。改版新增的技能進語料之前就靠這一條撐著。
+     *
+     * <p>刻意用<b>英文原文</b>當條件而不是譯文：原文各語言共用，
+     * 這條路對 {@code ja_jp}、{@code de_de} 一樣成立。
+     */
+    private static final java.util.Set<String> NAME_LABELS = java.util.Set.of(
+            "Required Ability:", "Unlocked Ability:");
+
+    /**
+     * 行首那個項目符號到哪裡結束（含它後面的空白）。
+     *
+     * <p>{@link #isDecoration} 刻意不含 {@code -}——那是因為
+     * {@code "- Converts up to"} 這種<b>整條收在語料裡</b>的鍵就是這樣開頭的，
+     * 在整行查的時候剝掉它會查不到。但這裡跑在整行查<b>失敗之後</b>，
+     * 剝了才有機會，所以連 {@code -} 一起認。要求它後面有空白，
+     * 不然 {@code "-20%"} 的負號也會被當成項目符號。
+     *
+     * @return 符號後面的位置；{@code at} 不是項目符號時回傳 {@code at}
+     */
+    private static int bulletEnd(String template, int at) {
+        if (at >= template.length()) {
+            return at;
+        }
+        int cp = template.codePointAt(at);
+        boolean bullet = BULLETS.indexOf(cp) >= 0;
+        if (!bullet && !isDecoration(cp)) {
+            return at;
+        }
+        int next = at + Character.charCount(cp);
+        int spaced = next;
+        while (spaced < template.length() && template.charAt(spaced) == ' ') {
+            spaced++;
+        }
+        if (bullet && spaced == next) {
+            return at;                         // 「-20%」的負號，不是項目符號
+        }
+        return spaced;
+    }
+
+    /**
+     * 冒號在哪裡——只認<b>後面跟著空白</b>的那個，
+     * {@code "Ability: Heal"} 才算，{@code "12:30"} 不算。
+     *
+     * @return 冒號的下一個位置；沒有可切的冒號時回傳 -1
+     */
+    private static int labelEnd(String rest) {
+        int at = rest.indexOf(':');
+        return at > 0 && at + 1 < rest.length() && rest.charAt(at + 1) == ' '
+                ? at + 1 : -1;
+    }
+
+    /** 見 {@link #bulletEnd}：這些字元自己不是內容，只是行首的項目符號。 */
+    private static final String BULLETS = "-–—•*";
 
     /**
      * 裝備面板的「標籤 + 數值」整行。
