@@ -4,6 +4,7 @@ import com.wynnchayuan.capture.CaptureStore;
 import com.wynnchayuan.listener.ActionBarListener;
 import com.wynnchayuan.listener.BadgeListener;
 import com.wynnchayuan.listener.ChatListener;
+import com.wynnchayuan.listener.MarketListener;
 import com.wynnchayuan.listener.TitleListener;
 import com.wynnchayuan.listener.CaptureListener;
 import com.wynnchayuan.listener.RenderListener;
@@ -370,6 +371,11 @@ public final class WynnChaYuan implements ClientModInitializer {
             WynntilsMod.registerEventListener(new BadgeListener());
             WynntilsMod.registerEventListener(new ChatListener());
             WynntilsMod.registerEventListener(new TitleListener());
+            WynntilsMod.registerEventListener(new MarketListener());
+            // 市集搜尋打中文換成英文。這是唯一會改寫玩家自己打的字的地方，
+            // 觸發條件由 Wynntils 的市集狀態決定，見 MarketListener。
+            net.fabricmc.fabric.api.client.message.v1.ClientSendMessageEvents
+                    .MODIFY_CHAT.register(MarketListener::rewrite);
             System.out.println("[WynnChaYuan] 已掛上 Wynntils 事件，開始收集");
         } catch (Throwable t) {
             System.err.println("[WynnChaYuan] 掛載失敗，停用收集功能: " + t);
