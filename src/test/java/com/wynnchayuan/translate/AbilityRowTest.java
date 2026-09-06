@@ -71,6 +71,12 @@ public final class AbilityRowTest {
         // 同一片面板上的紅字，沒有冒號也沒有符號，就是一條普通條目
         row(store, "Blocked by another ability", "已被其他技能阻擋");
 
+        // 同一條路也收 Lootrun 的洞窟清單。洞窟名是專有名詞，留原文。
+        row(store, "✔ Cave: Eyeball Gauntlet", "✔ 洞穴: Eyeball Gauntlet");
+        row(store, "✖ Cave: Spiteful Crossing", "✖ 洞穴: Spiteful Crossing");
+        row(store, "✔ Cave: The Lantern Keeper's Abode",
+                "✔ 洞穴: The Lantern Keeper's Abode");
+
         newAbility(store);
         negatives(store);
 
