@@ -65,11 +65,51 @@ public final class MarketSearchTest {
         keeps("只有空白", "   ");
         MarketListener.searching(false);
 
+        prompts();
+
         System.out.println(failures == 0
                 ? "市集搜尋：全部通過" : "市集搜尋：" + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 那句提示出現才會啟動。
+     *
+     * <h2>為什麼要自己認</h2>
+     * Wynntils 判斷「市集在等你輸入」靠的是比對<b>英文原文加行尾錨點</b>：
+     * {@code ^§5(圖示) Type the item name or type 'cancel' to cancel:$}。
+     * 而我們自己會翻聊天——就地取代模式下那一行整個變成中文，原文加譯文模式下
+     * 行尾也不再是 {@code cancel:}。兩種都會讓它比不到，狀態永遠不會進入搜尋輸入。
+     * 我們的翻譯把它自己要用的訊號弄壞了，使用者回報「沒有真的轉換」就是這個。
+     */
+    private static void prompts() {
+        MarketListener listener = new MarketListener();
+        MarketListener.searching(false);
+
+        listener.onChat(chat("§5✦ Type the item name or type 'cancel' to cancel:"));
+        report("英文提示會啟動", MarketListener.armed());
+
+        // 就地取代之後畫面上只剩中文，一樣要認得
+        MarketListener.searching(false);
+        listener.onChat(chat("§5✦ 輸入物品名稱，或輸入 'cancel' 取消："));
+        report("中文提示也會啟動", MarketListener.armed());
+
+        // 取消之後要關掉，不然下一句正常聊天會被改
+        listener.onChat(chat("§4✖ You moved and your chat input was canceled."));
+        report("取消之後就關掉", !MarketListener.armed());
+
+        // 反面：一般聊天不能啟動
+        MarketListener.searching(false);
+        listener.onChat(chat("§7有人說：這個增幅器不錯"));
+        report("一般聊天不會啟動", !MarketListener.armed());
+    }
+
+    private static com.wynntils.handlers.chat.event.ChatMessageEvent.Match chat(String text) {
+        return new com.wynntils.handlers.chat.event.ChatMessageEvent.Match(
+                com.wynntils.core.text.StyledText.fromString(text),
+                com.wynntils.handlers.chat.type.RecipientType.INFO);
     }
 
     private static void turns(MarketSearch market, String zh, String want) {
