@@ -52,13 +52,51 @@ public final class MarketSearch {
             return;
         }
         String zh = key(chinese);
-        String en = english.strip();
+        String en = bare(english);
         if (zh.length() < MIN_NAME || en.isEmpty() || zh.equals(en)
                 || !looksLikeName(en)) {
             return;
         }
         index.computeIfAbsent(zh, k -> new LinkedHashSet<>()).add(en);
     }
+
+    /**
+     * 剝掉名字前後的裝飾。
+     *
+     * <h2>為什麼</h2>
+     * 語料裡同一個東西常常收了兩次，差別只在面板上的項目符號：
+     *
+     * <pre>
+     *   "Silverbull Share"    -> "Silverbull 股份"
+     *   "✮ Silverbull Share"  -> "✮ Silverbull 股份"
+     * </pre>
+     *
+     * 兩條都進索引的話，玩家打「股份」會看到<b>同一個物品出現兩次</b>，
+     * 而且那個 {@code ✮} 打進市集只會搜不到。使用者回報的就是這個。
+     *
+     * <p>行尾的冒號同理（{@code "Tradable Shares:"}）。
+     */
+    private static String bare(String english) {
+        int at = 0;
+        while (at < english.length()) {
+            int cp = english.codePointAt(at);
+            if (Character.isWhitespace(cp) || BULLETS.indexOf(cp) >= 0
+                    || Character.getType(cp) == Character.OTHER_SYMBOL) {
+                at += Character.charCount(cp);
+            } else {
+                break;
+            }
+        }
+        int end = english.length();
+        while (end > at && (english.charAt(end - 1) == ':'
+                || Character.isWhitespace(english.charAt(end - 1)))) {
+            end--;
+        }
+        return english.substring(at, end);
+    }
+
+    /** 見 {@link #bare}：行首的項目符號。{@code ✮ ✦ ➤} 那些走 OTHER_SYMBOL。 */
+    private static final String BULLETS = "-–—•*";
 
     /** 重新載入譯文時要先清掉，不然舊語料的名字會留著。 */
     public void clear() {
@@ -91,8 +129,48 @@ public final class MarketSearch {
         if (english.endsWith(".") || english.endsWith("!") || english.endsWith("?")) {
             return false;
         }
-        return english.split(" ").length <= MAX_WORDS;
+        String[] words = english.split(" ");
+        return words.length <= MAX_WORDS && titleCase(words);
     }
+
+    /**
+     * 這幾個字看起來像<b>名字</b>而不是句子被折斷的一截。
+     *
+     * <h2>為什麼光看長度不夠</h2>
+     * 面板上的句子會照寬度折行，每一截都短得像個名字，句號也留在最後一行：
+     *
+     * <pre>
+     *   "Only tradable shares can be"    -> "只有可交易的股份才能"
+     *   "Shares can be used on"          -> "股份可用於兌換"
+     *   "Not enough tradable shares"     -> "可交易的股份不足"
+     * </pre>
+     *
+     * 五個字以內、沒有句號，長度那一關全部放行，於是玩家打「股份」會拿到
+     * 一串句子碎片當候選。
+     *
+     * <h2>怎麼分</h2>
+     * 物品名是 Title Case，句子不是。但不能要求<b>每個</b>字都大寫開頭——
+     * 真的有 {@code Ring of the Wild} 這種名字。所以放寬成兩條：
+     * 小寫開頭的字不能超過一半，而且不能有<b>長的</b>小寫字。
+     * 名字裡的小寫只會是 {@code of}、{@code the} 這種虛詞，
+     * 句子裡的是 {@code tradable}、{@code enough} 這種實詞。
+     */
+    private static boolean titleCase(String[] words) {
+        int lower = 0;
+        for (String word : words) {
+            if (word.isEmpty() || !Character.isLowerCase(word.codePointAt(0))) {
+                continue;
+            }
+            if (word.length() > MAX_PARTICLE) {
+                return false;
+            }
+            lower++;
+        }
+        return lower * 2 <= words.length;
+    }
+
+    /** 見 {@link #titleCase}：名字裡容得下的小寫虛詞有多長（{@code of}、{@code the}）。 */
+    private static final int MAX_PARTICLE = 4;
 
     /** 見 {@link #looksLikeName}。「Legendary Corkian Augment」是三個字、25 個字元。 */
     private static final int MAX_NAME = 40;
@@ -157,7 +235,50 @@ public final class MarketSearch {
         for (String name : names) {
             out.add(singular(name));
         }
-        return new ArrayList<>(out);
+        return covered(new ArrayList<>(out));
+    }
+
+    /**
+     * 別的候選<b>包含</b>得到的就不必再問。
+     *
+     * <h2>為什麼</h2>
+     * 同一個物品在語料裡被不同面板收了好幾次，長短不一：
+     *
+     * <pre>
+     *   Silverbull Share
+     *   Trade Silverbull Share
+     *   Get Tradable Silverbull Share
+     * </pre>
+     *
+     * 玩家打「股份」會看到三個候選，可是它們<b>是同一個東西</b>——使用者回報的
+     * 「只有關鍵字股份，但會找到多個同個物品」就是這個。
+     *
+     * <h2>為什麼留短的一定不吃虧</h2>
+     * 市集是<b>包含</b>比對（{@link #singulars} 那條複數規則靠的也是這件事）。
+     * 搜 {@code Silverbull Share} 找得到的東西，是搜
+     * {@code Trade Silverbull Share} 的超集合——短的嚴格比較好，
+     * 沒有任何一筆會因此漏掉。
+     *
+     * <p>只在<b>本來就要問玩家</b>的時候才會動到：候選剩一個時這個迴圈什麼都不做。
+     * 所以最壞的情況是「本來要問三個，現在問一個」，不會把單一答案弄丟。
+     */
+    private static List<String> covered(List<String> names) {
+        List<String> out = new ArrayList<>(names.size());
+        for (String name : names) {
+            String lower = name.toLowerCase(java.util.Locale.ROOT);
+            boolean redundant = false;
+            for (String other : names) {
+                if (other.length() < name.length()
+                        && lower.contains(other.toLowerCase(java.util.Locale.ROOT))) {
+                    redundant = true;
+                    break;
+                }
+            }
+            if (!redundant) {
+                out.add(name);
+            }
+        }
+        return out;
     }
 
     /**
