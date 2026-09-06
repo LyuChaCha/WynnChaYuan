@@ -3690,7 +3690,10 @@ public final class LineTranslator {
      * 這條路對 {@code ja_jp}、{@code de_de} 一樣成立。
      */
     private static final java.util.Set<String> NAME_LABELS = java.util.Set.of(
-            "Required Ability:", "Unlocked Ability:");
+            "Required Ability:", "Unlocked Ability:",
+            // Lootrun 的洞窟清單「✔ Cave: Eyeball Gauntlet」十二條，
+            // 冒號後面是洞窟的專有名詞，跟技能名一樣留原文。
+            "Cave:");
 
     /**
      * 行首那個項目符號到哪裡結束（含它後面的空白）。
