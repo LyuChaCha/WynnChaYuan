@@ -165,7 +165,10 @@ public final class TooltipPanel {
         //
         // 擋在<b>這裡</b>而不是查表層，是因為同一個字在別的位置可能完全正當：
         // 有一把裝備叫 Reflection，在查表層擋掉會連屬性列的「遠程反傷」一起擋死。
-        String gearName = n == 0 ? null : bareName(
+        //
+        // 但守門是<b>看名字</b>的，不看面板——技能樹的節點標題撞到同名裝備時
+        // 會被一起擋住，所以要先排除技能樹。見 #isAbilityNode。
+        String gearName = n == 0 || isAbilityNode(styled) ? null : bareName(
                 com.wynnchayuan.capture.LineParts.of(styled.get(0)).template());
         if (gearName != null && store.isBareGearName(gearName)) {
             out.add(LineTranslator.untranslated(styled.get(0)));
@@ -404,6 +407,40 @@ public final class TooltipPanel {
      * <p>剝的是<b>結尾</b>連續的方括號，因為註記一律掛在後面；名字本身帶方括號
      * 的裝備並不存在，而就算有，剝過頭也只是少擋一次，不會誤擋別的東西。
      */
+    /**
+     * 這一份 tooltip 是技能樹的節點，不是一件裝備。
+     *
+     * <h2>為什麼要分</h2>
+     * 上面那道裝備名守門是<b>看名字</b>的，不看面板。而技能名跟「還沒翻的
+     * 裝備名」撞名的有 <b>25 組</b>，五個職業都有：法師的 Diffraction／
+     * Gleam／Paradox／Sunshower，戰士的 Comet／Harmony／Cyclone，
+     * 刺客的 Echo／Paranoia……只要同名的那件裝備還沒翻，守門就把技能樹的
+     * 節點標題也一起擋住，於是 {@code ability/mage.json} 裡明明寫著
+     * 「晶化蔓延」，畫面上還是 {@code Diffraction}。使用者回報的就是這個。
+     *
+     * <p>擋錯的只有<b>標題那一兩行</b>，敘述照樣翻——所以看起來像是漏翻了
+     * 幾個技能名，其實語料是滿的，capture 也抓不到（{@code hasTranslation}
+     * 說得出譯文，只是畫的時候被擋掉）。
+     *
+     * <h2>怎麼分</h2>
+     * 技能樹的每個節點都有一行「{@code Ability Points:}」，裝備永遠沒有。
+     * 用<b>英文原文</b>比對而不是譯文：原文各語言共用，這條路對
+     * {@code ja_jp}、{@code de_de} 一樣成立。
+     *
+     * <p>認不出來時退回原本的行為（標題留原文），不會比現在更糟。
+     */
+    private static boolean isAbilityNode(List<StyledText> styled) {
+        for (StyledText line : styled) {
+            if (line.getStringWithoutFormatting().contains(ABILITY_POINTS)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** 見 {@link #isAbilityNode}：技能樹節點必有、裝備必無的那一行。 */
+    private static final String ABILITY_POINTS = "Ability Points:";
+
     public static String bareName(String template) {
         String s = template
                 .replace(com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER, "")
