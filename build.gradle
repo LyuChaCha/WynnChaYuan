@@ -443,6 +443,14 @@ tasks.register('runStatRowChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runStatRowChecks' }
 
+tasks.register('runAbilityRowChecks', JavaExec) {
+    group = 'verification'
+    description = '技能樹的「標籤 + 技能名」整行，只查標籤、技能名原樣接回去'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.AbilityRowTest'
+}
+tasks.named('check') { dependsOn 'runAbilityRowChecks' }
+
 tasks.register('runMajorIdTermChecks', JavaExec) {
     group = 'verification'
     description = 'Major ID 敘述裡的技能名稱，畫面上要換得成中文'
