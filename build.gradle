@@ -234,6 +234,14 @@ tasks.register('runSettingsLayoutChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runSettingsLayoutChecks' }
 
+tasks.register('runStatusColourChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證狀態名稱在譯文裡拿得到原文的顏色'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.StatusColourTest'
+}
+tasks.named('check') { dependsOn 'runStatusColourChecks' }
+
 tasks.register('runChatAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證聊天訊息的譯文跟原文那一塊形狀一樣'
