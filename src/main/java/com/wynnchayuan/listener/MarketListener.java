@@ -1,8 +1,12 @@
 package com.wynnchayuan.listener;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynntils.core.text.StyledText;
+import com.wynntils.handlers.chat.event.ChatMessageEvent;
 import com.wynntils.models.trademarket.event.TradeMarketStateEvent;
 import com.wynntils.models.trademarket.type.TradeMarketState;
+
+import net.neoforged.bus.api.EventPriority;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -43,10 +47,82 @@ public final class MarketListener {
     /** 候選最多列幾個。列太多會把聊天洗掉。 */
     private static final int MAX_SHOWN = 6;
 
+    /**
+     * Wynntils 的市集狀態。<b>不能只靠它</b>——見 {@link #onChat}。
+     */
     @SubscribeEvent
     public void onMarketState(TradeMarketStateEvent event) {
-        searching = event.getNewState() == TradeMarketState.SEARCH_CHAT_INPUT;
+        if (event.getNewState() == TradeMarketState.SEARCH_CHAT_INPUT) {
+            arm();
+        } else if (event.getOldState() == TradeMarketState.SEARCH_CHAT_INPUT) {
+            searching = false;
+        }
     }
+
+    /**
+     * 自己認那句提示。
+     *
+     * <h2>為什麼不能只靠 Wynntils 的狀態</h2>
+     * Wynntils 判斷「市集在等你輸入」靠的是比對那句提示，而且是<b>英文原文
+     * 加上行尾錨點</b>：
+     *
+     * <pre>
+     *   ^§5(圖示) Type the item name or type 'cancel' to cancel:$
+     * </pre>
+     *
+     * 而我們自己會翻聊天。就地取代模式下那一行整個變成中文；原文加譯文模式下
+     * 行尾也不再是 {@code cancel:}。兩種都會讓 Wynntils 比不到，狀態永遠不會
+     * 進入搜尋輸入——<b>我們的翻譯把它自己要用的訊號弄壞了</b>。
+     * 使用者回報「輸入完只顯示英文、沒有真的轉換」就是這個。
+     *
+     * <p>所以自己認一次。這裡拿到的是<b>還沒被我們動過</b>的原文，
+     * 而且英文與中文兩種寫法都認——不管聊天翻譯開成哪一種都有效。
+     */
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public void onChat(ChatMessageEvent.Match event) {
+        StyledText message = event.getMessage();
+        if (message == null) {
+            return;
+        }
+        String plain = message.getStringWithoutFormatting();
+        if (PROMPT.matcher(plain).find()) {
+            arm();
+        } else if (CANCELLED.matcher(plain).find()) {
+            searching = false;
+        }
+    }
+
+    /**
+     * 那句提示長什麼樣。
+     *
+     * <p>前面有圖示與顏色碼，所以用「找得到」而不是「整行相同」。
+     * 中文那一版也收：就地取代模式下畫面上只剩中文，而這條濾網跑在
+     * 翻譯前後都可能，收兩種比較保險。
+     */
+    private static final java.util.regex.Pattern PROMPT =
+            java.util.regex.Pattern.compile(
+                    "Type the item name or type 'cancel' to cancel:|輸入物品名稱");
+
+    /** 取消或走開之後就關掉。 */
+    private static final java.util.regex.Pattern CANCELLED =
+            java.util.regex.Pattern.compile(
+                    "chat input was canceled|聊天輸入已取消");
+
+    /**
+     * 開啟轉換，並記下時間。
+     *
+     * <p>有時效：提示出現之後如果玩家沒打字就跑掉了，狀態要自己失效，
+     * 不能一直開著等下一句聊天被改掉。
+     */
+    private static void arm() {
+        searching = true;
+        armedAt = System.currentTimeMillis();
+    }
+
+    private static volatile long armedAt = 0;
+
+    /** 提示出現後多久內打的字才算搜尋。 */
+    private static final long WINDOW_MS = 120_000;
 
     /**
      * 送出去的聊天訊息。
@@ -56,9 +132,11 @@ public final class MarketListener {
      */
     public static String rewrite(String message) {
         if (!searching || message == null || message.isBlank()
-                || message.startsWith("/")) {
+                || message.startsWith("/")
+                || System.currentTimeMillis() - armedAt > WINDOW_MS) {
             return message;
         }
+        searching = false;                     // 一次性：搜尋字送出去就關掉
         try {
             return translate(message);
         } catch (Throwable t) {
@@ -122,8 +200,14 @@ public final class MarketListener {
         }
     }
 
+    /** 給測試用：現在會不會轉換。 */
+    static boolean armed() {
+        return searching;
+    }
+
     /** 給測試用：市集狀態是外面給的，測的時候要能自己設。 */
     static void searching(boolean on) {
         searching = on;
+        armedAt = on ? System.currentTimeMillis() : 0;
     }
 }
