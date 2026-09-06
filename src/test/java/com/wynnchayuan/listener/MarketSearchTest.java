@@ -70,6 +70,9 @@ public final class MarketSearchTest {
         report("「Corkian 增幅器」只對到一個（實際：" + corkian + "）",
                 corkian.size() == 1);
 
+        sameItemOnce(market);
+        shapes();
+
         report("查不到的回 null", market.lookup("這不是任何一個物品的名字") == null);
         report("太短的不查", market.lookup("石") == null);
 
@@ -94,6 +97,76 @@ public final class MarketSearchTest {
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 同一個物品只問一次。
+     *
+     * <h2>實機回報</h2>
+     * 打「股份」跳出 <b>13 個</b>候選，而其中一半根本是同一個東西：
+     *
+     * <pre>
+     *   Silverbull Share
+     *   ✮ Silverbull Share              ← 差一個面板上的項目符號
+     *   Trade Silverbull Shares         ← 按鈕文字
+     *   Get Tradable Silverbull Shares  ← 按鈕文字
+     *   Only tradable shares can be     ← 句子被折斷的一截
+     *   Not enough tradable shares      ← 同上
+     *   Shares can be used on           ← 同上
+     * </pre>
+     *
+     * <p>三道處理：項目符號剝掉、句子碎片擋掉、<b>短的候選包含得到的長候選</b>
+     * 直接不問（市集是包含比對，搜短的一定不比搜長的差）。
+     */
+    private static void sameItemOnce(MarketSearch market) {
+        List<String> shares = market.candidates("股份");
+        report("「股份」的候選收斂了（實際 " + shares.size() + " 個：" + shares + "）",
+                shares.size() <= 4);
+        report("真正的物品還在", shares.contains("Silverbull Share"));
+
+        // ★ 同一個物品的其他寫法都不該再出現
+        for (String dup : new String[] {"✮ Silverbull Share", "Trade Silverbull Share",
+                                        "Trade Silverbull Shares",
+                                        "Get Tradable Silverbull Share"}) {
+            report("不再重複問「" + dup + "」", !shares.contains(dup));
+        }
+        // ★ 句子碎片不該當候選
+        for (String junk : new String[] {"Only tradable shares can be",
+                                         "Not enough tradable shares",
+                                         "Shares can be used on"}) {
+            report("句子碎片不當候選「" + junk + "」", !shares.contains(junk));
+        }
+        for (String hit : shares) {
+            report("候選沒有裝飾符號（" + hit + "）",
+                    hit.equals(hit.strip()) && Character.isLetterOrDigit(hit.charAt(0)));
+        }
+    }
+
+    /**
+     * 名字與句子的形狀判斷。
+     *
+     * <p>用<b>捏的</b>資料而不是真語料——這裡要釘住的是規則本身，
+     * 真語料哪天被改動不該讓這幾條變成假通過或假失敗。
+     */
+    private static void shapes() {
+        MarketSearch m = new MarketSearch();
+        m.add("Silverbull Share", "Silverbull 股份");
+        m.add("✮ Silverbull Share", "✮ Silverbull 股份");
+        m.add("Trade Silverbull Shares", "交易 Silverbull 股份");
+        m.add("Only tradable shares can be", "只有可交易的股份才能");
+        m.add("Ring of the Wild", "荒野之戒");
+        m.add("Tradable Shares:", "可交易股份:");
+
+        // 四條「Silverbull 股份」併成一條；「可交易股份」是<b>別的</b>標籤，
+        // 本來就該留著——收斂的是重複，不是把候選壓成一個。
+        List<String> all = m.candidates("股份");
+        report("同一個物品只留一條（實際：" + all + "）",
+                all.equals(List.of("Silverbull Share", "Tradable Share")));
+
+        // ★ 反面：名字裡本來就有的小寫虛詞不能被當成句子擋掉
+        List<String> ring = m.candidates("荒野之戒");
+        report("「Ring of the Wild」不是句子（實際：" + ring + "）",
+                ring.size() == 1 && "Ring of the Wild".equals(ring.get(0)));
     }
 
     /**
