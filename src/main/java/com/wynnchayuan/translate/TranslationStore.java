@@ -89,6 +89,18 @@ public final class TranslationStore {
      */
     private final java.util.Set<String> gearNameKeys = new java.util.HashSet<>();
 
+    /**
+     * 中文物品名 → 英文原文，給市集搜尋用。見 {@link MarketSearch}。
+     *
+     * <p>跟其他索引一起在載入時建好——市集在等你打字的那一秒才建會卡一下，
+     * 而那正是最不能卡的時候。
+     */
+    private final MarketSearch market = new MarketSearch();
+
+    public MarketSearch market() {
+        return market;
+    }
+
     private final java.util.Set<String> nameKeys =
             java.util.concurrent.ConcurrentHashMap.newKeySet();
     private volatile int loadedFiles = 0;
@@ -115,6 +127,7 @@ public final class TranslationStore {
         maxBlockLines = 1;
         nameKeys.clear();
         gearNameKeys.clear();
+        market.clear();
         ordered.clear();
         byQuest.clear();
         fromWiki.clear();
@@ -299,6 +312,7 @@ public final class TranslationStore {
                     speakers.put(srcKey, who.strip());
                 }
                 if ("name".equals(optString(e, "role"))) {
+                    market.add(srcKey, dst.strip());
                     if (!itemNames) {
                         // 技能名稱與 Major ID 名稱會出現在別的敘述裡；
                         // 裝備與素材名稱不會，收進來只會亂替換。
@@ -325,6 +339,7 @@ public final class TranslationStore {
             JsonElement v = obj.get(key);
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
                 entries.put(key.strip(), v.getAsString().strip());
+                market.add(key.strip(), v.getAsString().strip());
                 ordered.add(key.strip());
                 // 逐字打字時靠這個索引找「目前打到一半的是哪一句」。
                 //
