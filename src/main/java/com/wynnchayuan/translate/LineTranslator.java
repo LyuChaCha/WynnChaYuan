@@ -4262,6 +4262,93 @@ public final class LineTranslator {
     }
 
     /**
+     * 「標籤: 數值」兩半各自的顏色。
+     *
+     * <h2>先前壞在哪</h2>
+     * 派對面板與世界清單整片都是這個形狀，而兩半的顏色<b>是不一樣的</b>：
+     *
+     * <pre>
+     *   #00AAAA 「Type: 」   #55FFFF 「Grinding Mobs」
+     *   #00AAAA 「World: 」  #55FFFF 「NA12」
+     * </pre>
+     *
+     * 這種行是<b>整行</b>收在語料裡的（{@code "Type: Grinding Mobs": "類型：刷怪"}），
+     * 走不到 {@link #labelAccent} 那條「名稱：說明」的路，於是整行只拿得到
+     * 一個 {@link #dominantStyle}——而主樣式是<b>照字數</b>算的：
+     *
+     * <pre>
+     *   Type:  6 字 &lt; Grinding Mobs 13 字   -&gt; 整行套上數值的顏色，標籤變亮
+     *   World: 7 字 &gt; NA12          4 字   -&gt; 整行套上標籤的顏色，數值變暗
+     * </pre>
+     *
+     * 同一個面板上下兩行，一行標籤太亮、一行數值太暗，而且錯的方向還相反——
+     * 純粹看哪半的字比較多。使用者回報的顏色錯誤就是這個。
+     *
+     * <h2>做法</h2>
+     * 原文在冒號那裡換色的話，譯文也照冒號切兩半，各自貼回原本那半的顏色。
+     * 交給既有的重點段機制去貼，不必另外開一條上色的路。
+     *
+     * <h2>何時不做</h2>
+     * 冒號兩邊<b>同色</b>時不做（那本來就沒得分）、原文只有一行時才做
+     * （多行的話「哪一半」指的不是同一件事）、譯文沒有冒號時不做。
+     * 跟主樣式相同的那一半也不登記——它本來就會拿到那個顏色，
+     * 重複登記只會讓貼樣式那一步挑錯（見 {@link #covered}）。
+     */
+    private static List<LineParts.Piece> labelValueAccents(
+            List<LineParts> parts, String[] translated, Style blockStyle,
+            List<LineParts.Piece> known) {
+        if (parts.size() != 1 || translated.length != 1) {
+            return List.of();
+        }
+        Style label = null;
+        Style value = null;
+        for (LineParts.Piece run : parts.get(0).runs()) {
+            if (isNote(run.text())) {
+                continue;
+            }
+            if (label == null) {
+                int colon = run.text().indexOf(':');
+                if (colon < 0) {
+                    continue;                  // 冒號前面的「- 」那類，跳過
+                }
+                if (hasContent(run.text().substring(colon + 1))) {
+                    return List.of();          // 兩半同色，沒得分
+                }
+                label = undecorated(run.style());
+            } else if (hasContent(run.text())) {
+                value = undecorated(run.style());
+                break;
+            }
+        }
+        if (label == null || value == null || label.equals(value)) {
+            return List.of();
+        }
+        int at = translated[0].indexOf(':');
+        int wide = translated[0].indexOf('：');
+        if (at < 0 || (wide >= 0 && wide < at)) {
+            at = wide;                         // 譯文的冒號常常是全形的
+        }
+        if (at < 0) {
+            return List.of();
+        }
+        List<LineParts.Piece> out = new ArrayList<>();
+        add(out, translated[0].substring(0, at + 1), label, blockStyle, known);
+        add(out, translated[0].substring(at + 1), value, blockStyle, known);
+        return out;
+    }
+
+    /** 見 {@link #labelValueAccents}：剝掉佔位符之後還有字才登記。 */
+    private static void add(List<LineParts.Piece> out, String text, Style style,
+                            Style blockStyle, List<LineParts.Piece> known) {
+        String bare = PLACEHOLDER.matcher(text).replaceAll("").strip();
+        if (!hasContent(bare) || java.util.Objects.equals(style, blockStyle)
+                || covered(known, bare, style)) {
+            return;
+        }
+        out.add(new LineParts.Piece(bare, style));
+    }
+
+    /**
      * 混色的那一行退而求其次：整行套上<b>多數色</b>。
      *
      * <h2>為什麼要有這一步</h2>
@@ -4486,6 +4573,8 @@ public final class LineTranslator {
         // 譯文接成一整串再傳：詞幹要不要登記得看它在譯文裡有沒有自成一個詞，
         // 而換行不是詞的一部分（見 #addStem）。
         accents = withTranslations(accents, String.join(String.valueOf(NEWLINE), translated), store);
+        // 「標籤: 數值」兩半各自的顏色。見 #labelValueAccents。
+        accents.addAll(labelValueAccents(parts, translated, blockStyle, accents));
         // 整行同色的那幾行，直接拿譯文那一行當重點段。見 #wholeLineAccents。
         accents.addAll(wholeLineAccents(parts, allRuns, translated, blockStyle, accents));
 

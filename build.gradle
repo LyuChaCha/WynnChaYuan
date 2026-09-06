@@ -451,6 +451,22 @@ tasks.register('runAbilityRowChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runAbilityRowChecks' }
 
+tasks.register('runLabelValueColourChecks', JavaExec) {
+    group = 'verification'
+    description = '「標籤: 數值」兩半各自的顏色要跟原文一樣'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LabelValueColourTest'
+}
+tasks.named('check') { dependsOn 'runLabelValueColourChecks' }
+
+tasks.register('runPartyPanelChecks', JavaExec) {
+    group = 'verification'
+    description = '排隊找隊伍那一面板整片都要是中文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.PartyPanelTest'
+}
+tasks.named('check') { dependsOn 'runPartyPanelChecks' }
+
 tasks.register('runMajorIdTermChecks', JavaExec) {
     group = 'verification'
     description = 'Major ID 敘述裡的技能名稱，畫面上要換得成中文'
