@@ -99,7 +99,7 @@ public final class PositionScreen extends Screen {
         }
 
         int cx = this.width / 2;
-        int bottom = this.height - 30;
+        int bottom = this.height - 26;   // 說明條在 height-48..-28，別壓到
 
         addRenderableWidget(Button.builder(Component.literal("全部回到預設"), b -> {
             for (Box box : boxes) {
@@ -137,14 +137,28 @@ public final class PositionScreen extends Screen {
                 box.x = (this.width - box.w) / 2;
                 box.y = this.height / 2 + 16;
             }
+            // 先前這個 case 漏掉了，於是「全部回到預設」會把對話選項丟到
+            // 畫面左上角 (0,0)——那不是它的預設，是 switch 沒接到而已。
+            // 數字要跟 DialogueOverlay 實際畫的一致：貼右緣、五分之八高。
+            case CHOICES -> {
+                box.x = this.width - box.w - 8;
+                box.y = this.height * 5 / 8;
+            }
         }
         clampIntoScreen(box);
     }
 
-    /** 拖到畫面外就再也抓不回來了，所以限制在畫面內（標題列也要留得下）。 */
+    /**
+     * 拖到畫面外就再也抓不回來了，所以限制在畫面內。
+     *
+     * <p>上下再讓開標題列與底部那排按鈕——框疊在按鈕上的話，想按「儲存」
+     * 會先抓到框。框自己的標題列也要留得下。
+     */
     private void clampIntoScreen(Box box) {
+        int top = HEADER_H + TITLE_H + 2;
+        int floor = Math.max(top, this.height - FOOT - box.h);
         box.x = Math.max(0, Math.min(box.x, Math.max(0, this.width - box.w)));
-        box.y = Math.max(TITLE_H, Math.min(box.y, Math.max(TITLE_H, this.height - box.h)));
+        box.y = Math.max(top, Math.min(box.y, floor));
     }
 
     /**
@@ -193,13 +207,27 @@ public final class PositionScreen extends Screen {
     @Override
     public boolean mouseDragged(MouseButtonEvent event, double dx, double dy) {
         if (dragging != null) {
-            dragging.x = (int) event.x() - grabX;
-            dragging.y = (int) event.y() - grabY;
+            dragging.x = snap((int) event.x() - grabX, dragging.w, this.width);
+            dragging.y = snap((int) event.y() - grabY, dragging.h, this.height);
             clampIntoScreen(dragging);
             return true;
         }
         return super.mouseDragged(event, dx, dy);
     }
+
+    /**
+     * 靠近畫面中線就吸過去。
+     *
+     * <p>要把對話框擺正中央，靠手拖永遠差一兩格——而那一兩格在遊戲裡看得出來。
+     * 吸附範圍給得小（{@value #SNAP}px），想擺在中線<b>旁邊</b>一點的人不會被綁住。
+     */
+    private static int snap(int at, int size, int screen) {
+        int centred = (screen - size) / 2;
+        return Math.abs(at - centred) <= SNAP ? centred : at;
+    }
+
+    /** 見 {@link #snap}。 */
+    private static final int SNAP = 5;
 
     @Override
     public boolean mouseReleased(MouseButtonEvent event) {
@@ -211,27 +239,76 @@ public final class PositionScreen extends Screen {
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {
         super.render(g, mouseX, mouseY, delta);
 
-        g.drawCenteredString(this.font, this.title, this.width / 2, 14, Colors.TEXT);
-        g.drawCenteredString(this.font,
-                Component.literal("拖曳任一個方框；四個同時顯示，方便看有沒有互相擋到")
-                        .withStyle(ChatFormatting.GRAY),
-                this.width / 2, 28, Colors.SUBTLE);
+        // 標題列跟設定畫面同一套（含模組圖示），兩個畫面看起來才像同一個東西。
+        Cards.header(g, this.font, this.width, "調整面板位置",
+                "拖曳任一個方框。全部同時顯示，方便看有沒有互相擋到");
+
+        // 拖曳時把畫面的中線畫出來。要把對話框擺正中央的話，沒有這條線
+        // 只能靠眼睛猜——而框寬會隨對話長短變，猜不準。
+        if (dragging != null) {
+            g.fill(this.width / 2, HEADER_H, this.width / 2 + 1, this.height - FOOT,
+                    0x30FFFFFF);
+            g.fill(0, this.height / 2, this.width, this.height / 2 + 1, 0x30FFFFFF);
+        }
 
         for (Box box : boxes) {
-            drawBox(g, box);
+            drawBox(g, box, box.contains(mouseX, mouseY));
         }
 
-        if (saved && System.currentTimeMillis() - savedAt < 2000) {
-            g.drawCenteredString(this.font,
-                    Component.literal("✔ 已儲存四個框的位置").withStyle(ChatFormatting.GREEN),
-                    this.width / 2, this.height - 48, Colors.TEXT);
-        }
+        footer(g, mouseX, mouseY);
     }
 
-    private void drawBox(GuiGraphics g, Box box) {
+    /** 標題列高度，跟 {@link Cards#header} 畫的一致。 */
+    private static final int HEADER_H = 47;
+
+    /** 底下留給說明條與按鈕列的高度。 */
+    private static final int FOOT = 56;
+
+    /**
+     * 底部那一條，跟設定畫面同一套：剛做完的事 &gt; 滑鼠指著的框 &gt; 操作說明。
+     *
+     * <p>先前確認訊息浮在畫面中間、說明浮在最上面，兩句話各據一方，
+     * 而中間那一大片正是要拖框的地方——訊息會壓在框上。
+     */
+    private void footer(GuiGraphics g, int mouseX, int mouseY) {
+        int w = Math.min(420, this.width - 20);
+        int x = (this.width - w) / 2;
+        int y = this.height - FOOT + 8;
+        Cards.panel(g, x, y, w, 20);
+
+        String text;
+        int colour = Colors.TEXT;
+        if (saved && System.currentTimeMillis() - savedAt < 2000) {
+            text = "✔ 已儲存所有方框的位置";
+            colour = WynnChaYuan.config().accentARGB();
+        } else if (dragging != null) {
+            text = dragging.label + "：靠近中線會自動對齊";
+        } else {
+            Box under = null;
+            for (int i = boxes.size() - 1; i >= 0; i--) {
+                if (boxes.get(i).contains(mouseX, mouseY)) {
+                    under = boxes.get(i);
+                    break;
+                }
+            }
+            text = under != null
+                    ? under.label + "：按住拖曳到你想要的位置"
+                    : "按住任一個方框拖曳；「全部回到預設」可以復原";
+        }
+        g.drawString(this.font,
+                Component.literal(Cards.fit(this.font, text, w - 8)),
+                x + 4, y + 6, colour);
+    }
+
+    private void drawBox(GuiGraphics g, Box box, boolean hovered) {
         int accent = WynnChaYuan.config().accentARGB();
         boolean active = box == dragging;
 
+        // 滑鼠指著的框整塊淡淡地提亮——哪一塊抓得到，不必按下去才知道。
+        if (hovered || active) {
+            g.fill(box.x - 1, box.y - TITLE_H - 1, box.x + box.w + 1, box.y + box.h + 1,
+                    0x18FFFFFF);
+        }
         g.fill(box.x, box.y - TITLE_H, box.x + box.w, box.y - 1, 0xD00B1119);
         g.fill(box.x, box.y - TITLE_H, box.x + box.w, box.y - TITLE_H + 1, accent);
         g.drawString(this.font,
