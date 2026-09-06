@@ -83,6 +83,11 @@ public final class MarketSearch {
         if (english.length() > MAX_NAME || english.indexOf('\n') >= 0) {
             return false;
         }
+        // 佔位符是<b>模板</b>不是名字。「{~} emeralds」被當成候選丟給玩家，
+        // 打進市集只會搜到空的——使用者回報的「會有佔位符號」就是這個。
+        if (english.indexOf('{') >= 0 || english.indexOf('}') >= 0) {
+            return false;
+        }
         if (english.endsWith(".") || english.endsWith("!") || english.endsWith("?")) {
             return false;
         }
@@ -122,8 +127,7 @@ public final class MarketSearch {
         }
         Set<String> exact = index.get(zh);
         if (exact != null) {
-            out.addAll(exact);
-            return out;
+            return singulars(exact);
         }
         Set<String> loose = new LinkedHashSet<>();
         for (Map.Entry<String, Set<String>> e : index.entrySet()) {
@@ -131,9 +135,53 @@ public final class MarketSearch {
                 loose.addAll(e.getValue());
             }
         }
-        out.addAll(loose);
-        return out;
+        return singulars(loose);
     }
+
+    /**
+     * 候選一律收斂成<b>單數</b>，一樣的就併成一個。
+     *
+     * <h2>為什麼</h2>
+     * 語料裡的分類標題常常是複數：「增幅器」對到的是 {@code Amplifiers}、
+     * 「絕緣器」對到 {@code Insulators}。而市集上的物品叫
+     * {@code Corkian Amplifier I}——用複數搜不到東西。
+     *
+     * <p>市集是<b>包含</b>比對，所以單數一定不比複數差：搜 {@code Amplifier}
+     * 找得到所有 Amplifier，搜 {@code Boot} 也照樣找得到 {@code Boots}。
+     *
+     * <p>順帶把「綠寶石」那種收乾淨：語料裡同時有 {@code Emeralds} 與
+     * {@code Emerald}，收斂之後剩一個，就不必再問玩家要哪一個。
+     */
+    private static List<String> singulars(Set<String> names) {
+        Set<String> out = new LinkedHashSet<>();
+        for (String name : names) {
+            out.add(singular(name));
+        }
+        return new ArrayList<>(out);
+    }
+
+    /**
+     * 去掉結尾那個複數的 s。
+     *
+     * <p>只動<b>最後一個字</b>，而且謹慎：{@code ss} 結尾不動（Glass 不能變 Glas）、
+     * 所有格的 {@code 's} 不動、太短的不動。
+     */
+    public static String singular(String name) {
+        int at = name.lastIndexOf(' ');
+        String head = at < 0 ? "" : name.substring(0, at + 1);
+        String last = name.substring(at + 1);
+        if (last.length() < MIN_PLURAL || !last.endsWith("s")) {
+            return name;
+        }
+        char before = last.charAt(last.length() - 2);
+        if (before == 's' || before == '\'' || before == '’') {
+            return name;
+        }
+        return head + last.substring(0, last.length() - 1);
+    }
+
+    /** 見 {@link #singular}：短於這個長度的字不去 s。 */
+    private static final int MIN_PLURAL = 4;
 
     /**
      * 比對用的形狀。

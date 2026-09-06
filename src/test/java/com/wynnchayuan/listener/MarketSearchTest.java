@@ -40,6 +40,28 @@ public final class MarketSearchTest {
         // 大小寫與前後空白不該影響結果
         turns(market, "  熟成金果  ", "Ripe Aureate Fruit");
 
+        // ---- 分類標題是複數，市集要的是單數 ----
+        // 語料裡的分類標題常常是複數（Amplifiers、Insulators），而市集上的
+        // 物品叫「Corkian Amplifier I」——用複數一筆都搜不到。實機回報的就是這個。
+        turns(market, "增幅器", "Amplifier");
+        turns(market, "絕緣器", "Insulator");
+
+        // 「綠寶石」先前對到三個：Emeralds、Emerald、以及模板「{~} emeralds」。
+        // 模板本來就不該當候選，複數收斂之後剩一個，就不必再問玩家了。
+        List<String> emerald = market.candidates("綠寶石");
+        report("「綠寶石」收斂成一個（實際：" + emerald + "）",
+                emerald.size() == 1 && "Emerald".equals(emerald.get(0)));
+        for (String hit : market.candidates("綠寶石")) {
+            report("候選裡沒有佔位符（" + hit + "）",
+                    hit.indexOf('{') < 0 && hit.indexOf('}') < 0);
+        }
+
+        // 去 s 要謹慎，不能把本來就以 s 結尾的字弄壞
+        keepsSingular("Glass", "Glass");
+        keepsSingular("Bob's Tear", "Bob's Tear");
+        keepsSingular("Corkian Amplifier III", "Corkian Amplifier III");
+        keepsSingular("Boots", "Boot");
+
         // ---- 對不準的時候不要猜 ----
         // 「Corkian 增幅器」先前對到 Amplifier 與 Augments 兩個，那是 gui.json
         // 把 Augments 也翻成「增幅器」造成的（其他四條都是「強化道具」）。
@@ -110,6 +132,12 @@ public final class MarketSearchTest {
         return new com.wynntils.handlers.chat.event.ChatMessageEvent.Match(
                 com.wynntils.core.text.StyledText.fromString(text),
                 com.wynntils.handlers.chat.type.RecipientType.INFO);
+    }
+
+    /** 去複數的 s 只該動真的複數。 */
+    private static void keepsSingular(String name, String want) {
+        String got = MarketSearch.singular(name);
+        report("「" + name + "」→「" + want + "」（實際：" + got + "）", want.equals(got));
     }
 
     private static void turns(MarketSearch market, String zh, String want) {
