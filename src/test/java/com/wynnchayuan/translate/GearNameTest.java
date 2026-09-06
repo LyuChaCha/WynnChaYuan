@@ -84,7 +84,91 @@ public final class GearNameTest {
 
         decorations();
         twoLineName();
+        abilityNodeTitles();
         report();
+    }
+
+    /**
+     * 技能樹的節點標題撞到「還沒翻的裝備名」時不能被守門擋住。
+     *
+     * <h2>實機回報</h2>
+     * 法師技能樹的 {@code Diffraction}／{@code Gleam}／{@code Paradox}
+     * 標題一直是英文，但 {@code ability/mage.json} 裡明明寫著
+     * 「晶化蔓延」「耀光」「悖論」，capture 也抓不到這幾行——
+     * {@code hasTranslation} 說得出譯文，是<b>畫的時候</b>被擋掉的。
+     *
+     * <p>原因是守門看的是名字不是面板：Wynncraft 剛好也有叫
+     * {@code Diffraction} 的飾品、叫 {@code Gleam} 與 {@code Paradox} 的防具，
+     * 三件都還沒翻，於是三個名字都在 {@code gearNameKeys} 裡。
+     * 全庫掃過去這種撞名有 <b>25 組</b>，五個職業都有，不能一條一條排除。
+     *
+     * <h2>怎麼分</h2>
+     * 技能樹的每個節點都有一行 {@code Ability Points:}，裝備永遠沒有。
+     * 這裡兩個方向都測：技能樹的標題要翻出來，裝備的標題仍然要擋住——
+     * 只測前者的話，把守門整個拿掉也會過。
+     */
+    private static void abilityNodeTitles() throws Exception {
+        TranslationStore store = new TranslationStore();
+        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                            Languages.DEFAULT));
+
+        // 前提：這幾個字確實同時是「還沒翻的裝備名」與「翻好的技能名」。
+        // 哪天翻譯團隊把那幾件裝備翻了，這裡會變成假通過，所以一起釘住。
+        for (String[] pair : new String[][] {
+                {"Diffraction", "晶化蔓延"}, {"Gleam", "耀光"}, {"Paradox", "悖論"},
+                {"Sunshower", "太陽雨"}, {"Harmony", "調和"}, {"Echo", "複演"}}) {
+            check("★「" + pair[0] + "」是還沒翻的裝備名（守門會對它出手）",
+                  store.isBareGearName(pair[0]));
+            check("「" + pair[0] + "」查得到技能譯名（實際 "
+                            + store.lookup(pair[0]) + "）",
+                  pair[1].equals(store.lookup(pair[0])));
+        }
+
+        // 技能樹的節點：標題兩行都要翻出來
+        titleBecomes(store, "Diffraction", "晶化蔓延", "✖ Ability Points: 1");
+        titleBecomes(store, "Gleam", "耀光", "✖ Ability Points: 1");
+        titleBecomes(store, "Paradox", "悖論", "✖ Ability Points: 2");
+
+        // ★ 反方向：真的是裝備時照樣擋住。裝備沒有 Ability Points 那一行。
+        //
+        // 第三行故意挑一條<b>翻得出來的</b>屬性列：translateLines 整份都沒翻到
+        // 的時候回傳空清單，那樣「名字沒被翻」就變成廢話，擋不擋得住都會過。
+        titleStays(store, "Diffraction", "Fire Spell Damage +100");
+        titleStays(store, "Gleam", "Fire Spell Damage +100");
+    }
+
+    /** 技能樹節點的標題兩行都換成中文。 */
+    private static void titleBecomes(TranslationStore store, String name,
+                                     String want, String points) {
+        java.util.List<net.minecraft.network.chat.Component> out =
+                com.wynnchayuan.render.TooltipPanel.translateLines(
+                        java.util.List.of(
+                                net.minecraft.network.chat.Component.literal(name),
+                                net.minecraft.network.chat.Component.literal(name),
+                                net.minecraft.network.chat.Component.literal(points)),
+                        store);
+        String line0 = out.isEmpty() ? "" : out.get(0).getString();
+        String line1 = out.size() < 2 ? "" : out.get(1).getString();
+        check("技能樹「" + name + "」-> 「" + want + "」（實際 "
+                        + line0 + " / " + line1 + "）",
+              want.equals(line0) && want.equals(line1));
+    }
+
+    /** 同一個名字掛在裝備上時，標題仍然留原文。 */
+    private static void titleStays(TranslationStore store, String name, String gearLine) {
+        java.util.List<net.minecraft.network.chat.Component> out =
+                com.wynnchayuan.render.TooltipPanel.translateLines(
+                        java.util.List.of(
+                                net.minecraft.network.chat.Component.literal(name),
+                                net.minecraft.network.chat.Component.literal(name),
+                                net.minecraft.network.chat.Component.literal(gearLine)),
+                        store);
+        check("★ 裝備「" + name + "」那份 tooltip 有翻到東西（不然下一項是廢話）",
+              out.size() == 3);
+        String line0 = out.isEmpty() ? "" : out.get(0).getString();
+        String line1 = out.size() < 2 ? "" : out.get(1).getString();
+        check("★ 裝備「" + name + "」仍然留原文（實際 " + line0 + " / " + line1 + "）",
+              name.equals(line0) && name.equals(line1));
     }
 
     /**
