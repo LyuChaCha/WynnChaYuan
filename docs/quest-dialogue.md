@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**22,067 / 22,067 句已翻（100.0%），共 157 個任務，還沒有人動的有 0 個。**
+**22,126 / 22,126 句已翻（100.0%），共 158 個任務，還沒有人動的有 0 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -60,12 +60,12 @@
 | Celebrations in Smoke | [`celebrations-in-smoke.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/celebrations-in-smoke.json) | 528 | 509 | 14 | ✅ |
 | Clearing the Camps | [`clearing-the-camps.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/clearing-the-camps.json) | 14 | 11 | 1 | ✅ |
 | Cluck Cluck | [`cluck-cluck.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cluck-cluck.json) | 10 | 8 | 1 | ✅ |
-| Cook Assistant | [`cook-assistant.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cook-assistant.json) | 17 | 12 | 1 | ✅ |
+| Cook Assistant | [`cook-assistant.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cook-assistant.json) | 20 | 15 | 1 | ✅ |
 | Corrupted Betrayal | [`corrupted-betrayal.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/corrupted-betrayal.json) | 51 | 45 | 4 | ✅ |
 | Cowfusion | [`cowfusion.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cowfusion.json) | 223 | 206 | 5 | ✅ |
 | Creeper Infiltration | [`creeper-infiltration.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/creeper-infiltration.json) | 44 | 38 | 1 | ✅ |
 | Crop Failure | [`crop-failure.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/crop-failure.json) | 44 | 39 | 2 | ✅ |
-| Dearly Departed | [`dearly-departed.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dearly-departed.json) | 45 | 39 | 2 | ✅ |
+| Dearly Departed | [`dearly-departed.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dearly-departed.json) | 58 | 52 | 2 | ✅ |
 | Death Whistle (Quest) | [`death-whistle-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/death-whistle-quest.json) | 31 | 25 | 3 | ✅ |
 | Deja Vu | [`deja-vu.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/deja-vu.json) | 87 | 79 | 2 | ✅ |
 | Desperate Metal | [`desperate-metal.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/desperate-metal.json) | 37 | 32 | 4 | ✅ |
@@ -78,7 +78,7 @@
 | Elemental Exercise | [`elemental-exercise.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/elemental-exercise.json) | 65 | 56 | 4 | ✅ |
 | Ensemble of Hope | [`ensemble-of-hope.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/ensemble-of-hope.json) | 765 | 743 | 34 | ✅ |
 | Enter the Dojo | [`enter-the-dojo.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/enter-the-dojo.json) | 34 | 26 | 1 | ✅ |
-| Enzan's Brother | [`enzan-s-brother.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/enzan-s-brother.json) | 20 | 17 | 2 | ✅ |
+| Enzan's Brother | [`enzan-s-brother.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/enzan-s-brother.json) | 25 | 22 | 2 | ✅ |
 | Fallen Delivery | [`fallen-delivery.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fallen-delivery.json) | 65 | 55 | 5 | ✅ |
 | Fantastic Voyage | [`fantastic-voyage.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fantastic-voyage.json) | 283 | 264 | 5 | ✅ |
 | Fate of the Fallen | [`fate-of-the-fallen.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/fate-of-the-fallen.json) | 70 | 61 | 5 | ✅ |
@@ -97,9 +97,9 @@
 | Hunger of the Gerts Part I | [`hunger-of-the-gerts-part-i.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hunger-of-the-gerts-part-i.json) | 112 | 98 | 8 | ✅ |
 | Hunger of the Gerts Part II | [`hunger-of-the-gerts-part-ii.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/hunger-of-the-gerts-part-ii.json) | 76 | 65 | 7 | ✅ |
 | Ice Nations | [`ice-nations.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/ice-nations.json) | 26 | 22 | 2 | ✅ |
-| Infested Plants | [`infested-plants.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/infested-plants.json) | 33 | 28 | 4 | ✅ |
+| Infested Plants | [`infested-plants.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/infested-plants.json) | 66 | 61 | 4 | ✅ |
 | Jungle Fever | [`jungle-fever.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/jungle-fever.json) | 32 | 26 | 3 | ✅ |
-| King's Recruit | [`king-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/king-s-recruit.json) | 124 | 102 | 8 | ✅ |
+| King's Recruit | [`king-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/king-s-recruit.json) | 127 | 105 | 8 | ✅ |
 | Kingdom of Sand | [`kingdom-of-sand.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/kingdom-of-sand.json) | 60 | 51 | 8 | ✅ |
 | Lava Springs | [`lava-springs.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lava-springs.json) | 41 | 33 | 3 | ✅ |
 | Lazarus Pit (Quest) | [`lazarus-pit-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lazarus-pit-quest.json) | 76 | 57 | 7 | ✅ |
@@ -136,6 +136,7 @@
 | Royal Trials | [`royal-trials.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/royal-trials.json) | 85 | 66 | 7 | ✅ |
 | Shattered Minds | [`shattered-minds.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/shattered-minds.json) | 51 | 45 | 7 | ✅ |
 | Shrouded in Mist | [`shrouded-in-mist.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/shrouded-in-mist.json) | 299 | 281 | 14 | ✅ |
+| Skittering Spiders | [`skittering-spiders.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/skittering-spiders.json) | 2 | 2 | 0 | ✅ |
 | Solidarity of Steel | [`solidarity-of-steel.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/solidarity-of-steel.json) | 508 | 486 | 17 | ✅ |
 | Stable Story | [`stable-story.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/stable-story.json) | 19 | 17 | 1 | ✅ |
 | Star Thief | [`star-thief.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/star-thief.json) | 22 | 15 | 3 | ✅ |
