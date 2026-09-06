@@ -10,6 +10,8 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -550,15 +552,46 @@ public final class SettingsScreen extends Screen {
     // （「Left Control」、「Mouse Button 4」）不截的話會凸出按鈕外面。
 
     /**
-     * 開關類的值：開著綠色、關著灰色。
+     * 開關類的值：開著用主題色、關著灰色。
      *
      * <p>一眼掃過去就知道哪幾項是關的，不必逐行讀字。灰色也順便暗示
      * 「這一項現在沒在做事」。
+     *
+     * <p>本來用的是原版的綠（{@code #55FF55}）。那個綠很飽和，畫在按鈕的
+     * 淺色底上刺眼——使用者回報「有點小刺眼」。改用<b>主題色</b>：那個顏色
+     * 本來就在畫框線與標題，畫面上早就看習慣了，而且使用者可以在
+     * 〈面板〉→〈框線顏色〉自己換成任何喜歡的顏色。
      */
     private Component ctrl(String text) {
-        return Component.literal(Cards.fit(this.font, text, ctrlW() - 8))
-                .withStyle("關閉".equals(text) ? ChatFormatting.GRAY : ChatFormatting.GREEN);
+        return state(Component.literal(Cards.fit(this.font, text, ctrlW() - 8)), text);
     }
+
+    private Component state(Component text, String value) {
+        if ("關閉".equals(value)) {
+            return text.copy().withStyle(ChatFormatting.GRAY);
+        }
+        return text.copy().withStyle(
+                Style.EMPTY.withColor(TextColor.fromRgb(onColour())));
+    }
+
+    /**
+     * 「開著」用什麼顏色。
+     *
+     * <p>主題色太暗的話畫在按鈕上看不清楚，那時候退回一個柔和的青綠。
+     * 亮度用的是常見的加權公式，不是三個通道的平均——綠色對亮度的貢獻
+     * 遠大於藍色，取平均會把深藍判成夠亮。
+     */
+    private int onColour() {
+        int accent = WynnChaYuan.config().accentARGB();
+        int r = (accent >> 16) & 0xFF;
+        int g = (accent >> 8) & 0xFF;
+        int b = accent & 0xFF;
+        int lum = (r * 299 + g * 587 + b * 114) / 1000;
+        return lum >= 96 ? (accent | 0xFF000000) : SOFT_ON;
+    }
+
+    /** 主題色太暗時的替代色：柔和的青綠，不像原版的綠那麼跳。 */
+    private static final int SOFT_ON = 0xFF8FD3B6;
 
     /**
      * 選擇類的值：固定位置／跟隨滑鼠、GitHub／本機。
@@ -572,8 +605,7 @@ public final class SettingsScreen extends Screen {
 
     /** 右邊還帶一顆小按鈕的那一列，主按鈕窄 46px。見 {@link #cycleWith}。 */
     private Component ctrlNarrow(String text) {
-        return Component.literal(Cards.fit(this.font, text, ctrlW() - 46 - 8))
-                .withStyle("關閉".equals(text) ? ChatFormatting.GRAY : ChatFormatting.GREEN);
+        return state(Component.literal(Cards.fit(this.font, text, ctrlW() - 46 - 8)), text);
     }
 
     private Component tooltipModeLabel() {
