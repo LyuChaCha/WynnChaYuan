@@ -507,8 +507,11 @@ public final class DialogueOverlay {
         if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.CHOICES)) {
             x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.CHOICES)
                     - boxW / 2;
-            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.CHOICES)
-                    - boxH / 2;
+            // y 存的是<b>上緣</b>，跟對話框與名牌同一套。
+            //
+            // 先前這裡減了半個框高，而拖曳畫面存進去的是上緣——於是玩家排好的
+            // 位置，進遊戲會往上跳半個框。四個框裡只有這一個是這樣算的。
+            y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.CHOICES);
         }
         // 拖到畫面外就拉回來，不然框會整個看不見
         x = Math.max(2, Math.min(graphics.guiWidth() - boxW - 2, x));
