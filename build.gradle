@@ -242,6 +242,14 @@ tasks.register('runStatusColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runStatusColourChecks' }
 
+tasks.register('runMarketSearchChecks', JavaExec) {
+    group = 'verification'
+    description = '驗證市集搜尋的中文轉英文：該換的換得對，不該碰的一個字都不動'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.listener.MarketSearchTest'
+}
+tasks.named('check') { dependsOn 'runMarketSearchChecks' }
+
 tasks.register('runChatAlignChecks', JavaExec) {
     group = 'verification'
     description = '驗證聊天訊息的譯文跟原文那一塊形狀一樣'

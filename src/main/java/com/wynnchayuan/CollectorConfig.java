@@ -105,6 +105,14 @@ public final class CollectorConfig {
     private boolean chatCopy = true;
 
     /**
+     * 市集搜尋打中文自動換成英文。
+     *
+     * <p>預設<b>開啟</b>：用就地取代的人看到的是中文，照著打卻搜不到東西——
+     * 那是翻譯造成的問題，預設就該補起來。不想要的人可以關掉。
+     */
+    private boolean marketSearch = true;
+
+    /**
      * 譯文截圖：什麼時候拍。
      *
      * <p>{@code OFF} 不拍。{@code KEY} 只在按下快捷鍵時拍一張。
@@ -278,6 +286,16 @@ public final class CollectorConfig {
         translateTitles = !translateTitles;
         save();
         return translateTitles;
+    }
+
+    public boolean marketSearch() {
+        return marketSearch;
+    }
+
+    public boolean toggleMarketSearch() {
+        marketSearch = !marketSearch;
+        save();
+        return marketSearch;
     }
 
     public boolean chatCopy() {

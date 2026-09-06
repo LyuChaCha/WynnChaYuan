@@ -305,6 +305,11 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.translations().setTranslateNames(on);
                     b.setMessage(itemNameLabel());
                 });
+        cycle("市集搜尋轉英文", "在市集搜尋打中文，送出前自動換成英文的原文名",
+                this::marketLabel, b -> {
+                    WynnChaYuan.config().toggleMarketSearch();
+                    b.setMessage(marketLabel());
+                });
         String clash = com.wynnchayuan.render.PanelShot.conflict();
         cycle("譯文截圖",
                 clash == null ? "把譯文面板拍成圖檔；按鍵在原版設定的 WynnChaYuan 區改綁"
@@ -683,6 +688,11 @@ public final class SettingsScreen extends Screen {
             case RIGHT -> "固定右側";
             case LEFT -> "固定左側";
         });
+    }
+
+    /** 市集搜尋打中文自動換成英文。見 {@code MarketListener}。 */
+    private Component marketLabel() {
+        return ctrl(onOff(WynnChaYuan.config().marketSearch()));
     }
 
     private Component itemNameLabel() {
