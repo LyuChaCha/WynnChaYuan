@@ -46,16 +46,25 @@ RAW = Path(__file__).resolve().parent.parent / "raw"
 DEST = RAW / "discoveries.json"
 
 INDEX = "Secret_Discoveries"
+# redirects=1 非加不可。索引頁上有幾個名稱指到的是**重新導向頁**，那種頁的
+# section 0 只有一行「#REDIRECT [[目標]]」，沒有 infobox，於是 lore 抓不到——
+# Far from the Roots、Messengers from Beyond、Rulers of the Skies 三條就是
+# 這樣一直缺著，而輸出只寫「沒有 lore 欄」，看起來像 wiki 那邊沒寫。
 API = ("https://wynncraft.wiki.gg/api.php"
-       "?action=parse&format=json&prop=wikitext&section=0&page=")
+       "?action=parse&format=json&prop=wikitext&section=0&redirects=1&page=")
 UA = ("WynnChaYuan-corpus/1.0 (zh_tw translation mod; "
       "+https://github.com/LyuChaCha/WynnChaYuan)")
 
 # 對 wiki 客氣一點。121 頁 × 0.5 秒約一分鐘，不值得為了快而被擋。
 DELAY = 0.5
 
+# 索引頁的撇號是彎的（U+2019），條目頁用的是直的。差這一個字元就整頁抓不到，
+# 而且錯誤長得跟「這條沒有敘述」一模一樣。查不到就換一種撇號再試一次。
+QUOTES = ("’", "'")
 
-def wikitext(page: str, section0: bool = True) -> str | None:
+
+def fetch(page: str, section0: bool = True) -> tuple[str, str] | None:
+    """回傳 (實際頁面標題, wikitext)。查不到回傳 None。"""
     url = API + urllib.parse.quote(page.replace(" ", "_"))
     if not section0:
         url = url.replace("&section=0", "")
@@ -68,7 +77,21 @@ def wikitext(page: str, section0: bool = True) -> str | None:
         return None
     if "error" in payload:
         return None
-    return payload["parse"]["wikitext"]["*"]
+    parsed = payload["parse"]
+    return parsed.get("title", page), parsed["wikitext"]["*"]
+
+
+def wikitext(page: str, section0: bool = True) -> tuple[str, str] | None:
+    """{@link fetch}，外加撇號的兩種寫法都試。見 {@link QUOTES}。"""
+    got = fetch(page, section0)
+    if got is not None:
+        return got
+    for a, b in (QUOTES, QUOTES[::-1]):
+        if a in page:
+            got = fetch(page.replace(a, b), section0)
+            if got is not None:
+                return got
+    return None
 
 
 def names(index: str) -> list[str]:
@@ -111,20 +134,25 @@ def main() -> int:
     RAW.mkdir(exist_ok=True)
 
     print(f"索引：{INDEX}")
-    index = wikitext(INDEX, section0=False)
-    if index is None:
+    got = wikitext(INDEX, section0=False)
+    if got is None:
         print("  索引頁抓不到，放棄", file=sys.stderr)
         return 1
-    pages = names(index)
+    pages = names(got[1])
     print(f"  找到 {len(pages)} 個隱藏探索點\n")
 
     found: dict[str, str] = {}
     missing: list[str] = []
+    # 索引頁上的名稱與條目頁的標題不一樣的那幾個。差別是大小寫、單複數或撇號，
+    # 而**分不出遊戲送的是哪一種**——語料兩種都要收，所以這裡記下來給人看。
+    renamed: dict[str, str] = {}
     for i, page in enumerate(pages, 1):
-        text = wikitext(page)
-        got = lore(text) if text else None
-        if got:
-            found[page] = got
+        page_got = wikitext(page)
+        text = lore(page_got[1]) if page_got else None
+        if text:
+            found[page] = text
+            if page_got[0] != page:
+                renamed[page] = page_got[0]
         else:
             missing.append(page)
         if i % 20 == 0 or i == len(pages):
@@ -132,6 +160,10 @@ def main() -> int:
         time.sleep(DELAY)
 
     print(f"\n有敘述 {len(found)} 條，沒有 {len(missing)} 條")
+    if renamed:
+        print(f"  索引與條目頁名稱不同的有 {len(renamed)} 個（語料兩種都要收）：")
+        for k, v in renamed.items():
+            print(f"      {k}  ->  {v}")
 
     # ★ 大括號絕對不能留下。它跟佔位符語法（{#} {~} {p} {cN}）撞在一起，帶進語料
     #   會被當成佔位符解析——譯文對不上，甚至整串印到畫面上。剝不乾淨就寧可不收。
@@ -172,6 +204,7 @@ def main() -> int:
             "licence": "CC BY-SA（wiki.gg）",
             "count": len(found),
             "missing": missing,
+            "renamed": renamed,
         },
         "entries": dict(sorted(found.items())),
     }
