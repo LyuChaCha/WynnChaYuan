@@ -119,6 +119,75 @@ public final class ChatUnwrapTest {
         report("語料裡沒有的照樣查不到", none == null);
 
         glyphPool();
+        colours();
+    }
+
+    /**
+     * 併句之後每一段還是要拿到原文那一段的顏色。
+     *
+     * <h2>實機回報</h2>
+     * 世界事件通知的「{@code Click to track}」原文是粉紅色加底線，譯文的
+     * 「點擊追蹤」卻掉回整行的主色、也沒有底線。
+     *
+     * <p>原因是貼樣式那一步是<b>比對字面</b>的——譯文是中文，跟
+     * {@code Click to track} 對不上，於是那一段拿不到自己的顏色。
+     *
+     * <p>語料本來就有顏色佔位符可以直接指定（{@code {c1}}…{@code {/}}），
+     * 世界事件那七十條都改成這樣寫。這裡釘住 {@code {cN}} 的編號確實對應到
+     * 原文<b>由左到右第 N 種樣式</b>——編號錯掉的話顏色會整組對調，
+     * 那比沒有顏色更難看出問題。
+     */
+    private static void colours() throws Exception {
+        Path dir = Files.createTempDirectory("wynnchayuan-colour");
+        Files.writeString(dir.resolve("misc.json"),
+                "{\"The Necromantic Site World Event starts in {~}m {~}s!"
+                        + " ({~} blocks away) Click to track\": \""
+                        + "{c1}亡靈法陣 世界事件將在 {~1} 分 {~2} 秒後開始！{/}"
+                        + "{c2}(距離 {~3} 格) {/}{c3}點擊追蹤{/}\"}",
+                StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+
+        // 實機那一行的三種樣式：主色、灰色的距離、粉紅加底線的「點擊追蹤」
+        StyledText line = StyledText.fromString(
+                "§bThe Necromantic Site World Event starts in 3m 59s! §7(425\n"
+                        + "§7blocks away) §d§nClick to track");
+        Object hit = LineTranslator.translateChat(line, store);
+        if (hit == null) {
+            report("有顏色的也翻得出來", false);
+            return;
+        }
+        java.util.List<String> text = new java.util.ArrayList<>();
+        java.util.List<String> style = new java.util.ArrayList<>();
+        ((net.minecraft.network.chat.Component) hit).visit((s, t) -> {
+            text.add(t);
+            style.add((s.getColor() == null ? "-" : s.getColor().serialize())
+                    + (s.isUnderlined() ? "+底線" : ""));
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+
+        String joined = String.join("", text);
+        report("整句翻出來了（實際：" + joined + "）", joined.contains("點擊追蹤"));
+
+        // ★ 「點擊追蹤」要拿到粉紅加底線，不是整行的主色
+        String click = null;
+        for (int i = 0; i < text.size(); i++) {
+            if (text.get(i).contains("點擊追蹤")) {
+                click = style.get(i);
+            }
+        }
+        report("「點擊追蹤」是粉紅加底線（實際：" + click + "）",
+                click != null && click.contains("底線") && !click.startsWith("-"));
+
+        // ★ 反面：主句那一段不能也被上成粉紅
+        String head = null;
+        for (int i = 0; i < text.size(); i++) {
+            if (text.get(i).contains("亡靈法陣")) {
+                head = style.get(i);
+            }
+        }
+        report("主句沒有被上成粉紅（實際：" + head + "）",
+                head != null && !head.equals(click));
     }
 
     /**

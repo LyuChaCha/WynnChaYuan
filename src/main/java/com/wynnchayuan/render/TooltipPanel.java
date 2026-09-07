@@ -430,16 +430,38 @@ public final class TooltipPanel {
      * <p>認不出來時退回原本的行為（標題留原文），不會比現在更糟。
      */
     private static boolean isAbilityNode(List<StyledText> styled) {
+        StringBuilder all = new StringBuilder();
         for (StyledText line : styled) {
-            if (line.getStringWithoutFormatting().contains(ABILITY_POINTS)) {
+            all.append(line.getStringWithoutFormatting()).append('\n');
+        }
+        String text = all.toString();
+        for (String[] markers : PANEL_MARKERS) {
+            boolean every = true;
+            for (String marker : markers) {
+                every &= text.contains(marker);
+            }
+            if (every) {
                 return true;
             }
         }
         return false;
     }
 
-    /** 見 {@link #isAbilityNode}：技能樹節點必有、裝備必無的那一行。 */
-    private static final String ABILITY_POINTS = "Ability Points:";
+    /**
+     * 見 {@link #isAbilityNode}：這幾組行只會出現在<b>不是裝備</b>的面板上。
+     *
+     * <p>一組裡的每一行都要出現才算。Lootrun 的使命用兩行認：單看
+     * {@code Objective:} 太鬆，別的地方也有類似的字。
+     *
+     * <p>撞名的使命名稱有 {@code Redemption}、{@code Stasis}、{@code Heavensent}、
+     * {@code Serendipity}、{@code Ostinato}——五個<b>全部</b>都有同名的裝備、
+     * 而且那些裝備還沒翻，所以五個全部被守門擋住。跟技能樹那次是同一個 bug，
+     * 這裡把面板清單抽出來，下次再遇到只要多加一組。
+     */
+    private static final String[][] PANEL_MARKERS = {
+        {"Ability Points:"},            // 技能樹的節點
+        {"Objective:", "Reward:"},      // Lootrun 的使命
+    };
 
     public static String bareName(String template) {
         String s = template

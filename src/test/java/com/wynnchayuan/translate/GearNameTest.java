@@ -129,6 +129,20 @@ public final class GearNameTest {
         titleBecomes(store, "Gleam", "耀光", "✖ Ability Points: 1");
         titleBecomes(store, "Paradox", "悖論", "✖ Ability Points: 2");
 
+        // ★ Lootrun 的使命是<b>同一個 bug 的第二次</b>：四個使命名稱都有同名而且
+        //   還沒翻的裝備，於是標題被守門擋住。使命面板用「Objective: + Reward:」
+        //   兩行認，單看一行太鬆。
+        for (String[] pair : new String[][] {
+                {"Redemption", "救贖"}, {"Stasis", "停滯"},
+                {"Heavensent", "天賜"}, {"Serendipity", "機緣"}}) {
+            check("★ 使命「" + pair[0] + "」也是還沒翻的裝備名（守門會對它出手）",
+                  store.isBareGearName(pair[0]));
+            missionTitle(store, pair[0], pair[1]);
+        }
+        // Ostinato 沒有同名裝備，守門本來就碰不到它——它先前是空條目而已。
+        // 一起測是為了讓五個使命的標題都有人看著。
+        missionTitle(store, "Ostinato", "頑固音型");
+
         // ★ 反方向：真的是裝備時照樣擋住。裝備沒有 Ability Points 那一行。
         //
         // 第三行故意挑一條<b>翻得出來的</b>屬性列：translateLines 整份都沒翻到
@@ -152,6 +166,21 @@ public final class GearNameTest {
         check("技能樹「" + name + "」-> 「" + want + "」（實際 "
                         + line0 + " / " + line1 + "）",
               want.equals(line0) && want.equals(line1));
+    }
+
+    /** Lootrun 使命面板的標題要翻出來。用「Objective: + Reward:」認出面板。 */
+    private static void missionTitle(TranslationStore store, String name, String want) {
+        java.util.List<net.minecraft.network.chat.Component> out =
+                com.wynnchayuan.render.TooltipPanel.translateLines(
+                        java.util.List.of(
+                                net.minecraft.network.chat.Component.literal(name),
+                                net.minecraft.network.chat.Component.literal("Objective:"),
+                                net.minecraft.network.chat.Component.literal("Open 12 Chests"),
+                                net.minecraft.network.chat.Component.literal("Reward:")),
+                        store);
+        String line0 = out.isEmpty() ? "" : out.get(0).getString();
+        check("使命「" + name + "」-> 「" + want + "」（實際 " + line0 + "）",
+              want.equals(line0));
     }
 
     /** 同一個名字掛在裝備上時，標題仍然留原文。 */
