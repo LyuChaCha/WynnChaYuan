@@ -149,6 +149,60 @@ public final class GearNameTest {
         // 的時候回傳空清單，那樣「名字沒被翻」就變成廢話，擋不擋得住都會過。
         titleStays(store, "Diffraction", "Fire Spell Damage +100");
         titleStays(store, "Gleam", "Fire Spell Damage +100");
+
+        loreLines(store);
+    }
+
+    /**
+     * 撞名的裝備名不是只出現在名稱那一行。
+     *
+     * <h2>實機回報</h2>
+     * 「裝備撞名的問題還是有，會出現在箱子裡的 lore」。守門本來只看第 0、1 行，
+     * 而套裝的成員清單、寶箱的獎勵預覽、鑄造材料，都是「項目符號 + 裝備名」
+     * <b>單獨佔一行</b>，落在守門外面——實測 33 個裝備名撞名，其中 23 個
+     * 不管裸的還是帶項目符號，都會被同名的技能／Major ID 譯文頂掉。
+     *
+     * <h2>兩邊都要測</h2>
+     * 同樣是「- Paradox」，在裝備 tooltip 裡是套裝成員（留原文），在技能樹裡
+     * 是「解鎖後將封鎖」的技能（要翻）。分辨靠的是面板，不是那一行本身——
+     * 這正是先前那兩次 bug 的教訓。
+     */
+    private static void loreLines(TranslationStore store) {
+        // 裝備 tooltip：成員名留原文，一般的項目符號行照翻
+        java.util.List<net.minecraft.network.chat.Component> gear =
+                com.wynnchayuan.render.TooltipPanel.translateLines(
+                        java.util.List.of(
+                                net.minecraft.network.chat.Component.literal("Ashen Conscience"),
+                                net.minecraft.network.chat.Component.literal(
+                                        "- Converts up to Liquid Emeralds"),
+                                net.minecraft.network.chat.Component.literal("- Guardian"),
+                                net.minecraft.network.chat.Component.literal("- Tempest"),
+                                net.minecraft.network.chat.Component.literal(
+                                        "Left-Click to view contents")),
+                        store);
+        check("★ 清單那份 tooltip 有翻到東西（不然下面幾項是廢話）", gear.size() == 5);
+        String bullet = gear.size() < 2 ? "" : gear.get(1).getString();
+        check("一般的項目符號行照翻（實際 " + bullet + "）", bullet.contains("液態綠寶石"));
+        for (int row : new int[] {2, 3}) {
+            String line = gear.size() <= row ? "" : gear.get(row).getString();
+            check("★ 清單裡的裝備名留原文（實際 " + line + "）",
+                  line.startsWith("- ") && line.equals(line.replaceAll("[一-鿿]", "")));
+        }
+
+        // 技能樹：同樣的行要翻出來
+        java.util.List<net.minecraft.network.chat.Component> node =
+                com.wynnchayuan.render.TooltipPanel.translateLines(
+                        java.util.List.of(
+                                net.minecraft.network.chat.Component.literal("Gleam"),
+                                net.minecraft.network.chat.Component.literal(
+                                        "Unlocking will block:"),
+                                net.minecraft.network.chat.Component.literal("- Paradox"),
+                                net.minecraft.network.chat.Component.literal("- Diffraction"),
+                                net.minecraft.network.chat.Component.literal(
+                                        "✔ Ability Points: 2")),
+                        store);
+        String blocked = node.size() < 3 ? "" : node.get(2).getString();
+        check("★ 技能樹的封鎖清單照樣翻（實際 " + blocked + "）", blocked.contains("悖論"));
     }
 
     /** 技能樹節點的標題兩行都換成中文。 */
