@@ -2620,12 +2620,22 @@ public final class LineTranslator {
             // 整行查不到時，多欄的行改成<b>一欄一欄查</b>。見 #byColumn。
             translated = byColumn(parts.template(), store);
         }
+        List<LineParts.Piece> glyphs = null;
+        if (translated == null || translated.isBlank()) {
+            // 還是查不到：把斷好的行併成一句再查一次。見 #unwrapped。
+            translated = store.lookupUnwrapped(parts.template());
+            if (translated != null && !translated.isBlank()) {
+                glyphs = unwrappedGlyphs(parts.template(), parts.glyphs());
+            }
+        }
         if (translated == null || translated.isBlank()) {
             FlowedDebug.chatRows(message.getString(), "  鍵：" + parts.template(),
                                  "語料裡查不到這一塊");
             return null;
         }
-        Component rebuilt = rebuild(translated, parts, store);
+        Component rebuilt = glyphs == null
+                ? rebuild(translated, parts, store)
+                : rebuild(translated, parts, glyphs, store);
         if (rebuilt == null) {
             FlowedDebug.chatRows(message.getString(), "  譯文：" + translated,
                                  "佔位符數量對不上，整塊放棄");
@@ -4193,6 +4203,58 @@ public final class LineTranslator {
                                      TranslationStore store) {
         List<Component> one = rebuildAll(new String[] {translated}, List.of(parts), List.of(), store);
         return one == null ? null : one.get(0);
+    }
+
+    /** 同上，但自己指定符號池——併成一句之後續行的圖示要拿掉。見 {@link #unwrappedGlyphs}。 */
+    private static Component rebuild(String translated, LineParts parts,
+                                     List<LineParts.Piece> glyphs, TranslationStore store) {
+        List<Component> one = rebuildAll(new String[] {translated}, List.of(parts),
+                                         List.of(), glyphs, null, store);
+        return one == null ? null : one.get(0);
+    }
+
+    /**
+     * 併成一句之後還剩下哪些符號。
+     *
+     * <h2>為什麼池子要跟著少</h2>
+     * {@link TranslationStore#unwrap} 把換行與<b>續行的行首圖示</b>一起拿掉了，
+     * 而語料那條是照併起來的樣子寫的——它要的 {@code {#}} 比原文少一個。
+     * 池子沒跟著少的話 {@link #rebuildAll} 會判定「佔位符數量對不上」整條放棄
+     * （那個檢查是嚴格相等的，本來就該嚴格）。
+     *
+     * <p>只拿掉<b>緊接在換行後面</b>的那幾個。句子中間的圖示是內容
+     * （{@code craft {#} Boots}），拿掉會讓譯文少一個圖示。
+     * 判斷方式跟 {@code unwrap} 逐字對齊：換行之後連續的空白與圖示都算行首，
+     * 遇到第一個實字就結束。
+     */
+    static List<LineParts.Piece> unwrappedGlyphs(
+            String template, List<LineParts.Piece> glyphs) {
+        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
+        List<LineParts.Piece> kept = new ArrayList<>();
+        int at = 0;
+        int index = 0;
+        boolean lineStart = false;
+        while (at < template.length() && index < glyphs.size()) {
+            if (template.startsWith(glyph, at)) {
+                if (!lineStart) {
+                    kept.add(glyphs.get(index));
+                }
+                index++;
+                at += glyph.length();
+                continue;
+            }
+            char c = template.charAt(at);
+            if (c == '\n') {
+                lineStart = true;
+            } else if (!Character.isWhitespace(c)) {
+                lineStart = false;
+            }
+            at++;
+        }
+        while (index < glyphs.size()) {
+            kept.add(glyphs.get(index++));
+        }
+        return kept;
     }
 
     /**
