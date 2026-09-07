@@ -37,6 +37,9 @@ public final class ChatColourTest {
     private static final int WHITE = 0xFFFFFF;    // /char
     private static final int BROWN = 0x8F663D;    // 坐騎那一行的主色
     private static final int LIGHT = 0xBC8F62;    // 同一行裡被挑亮的「no food」
+    private static final int LIME = 0x55FF55;     // Lootrun 結算的 Rewards
+    private static final int MAGENTA = 0xFF55FF;  // 同一行右欄的 Statistics
+    private static final int CYAN = 0x55FFFF;     // 結算數字
 
     /** 行首那個符號。語料裡它是 {@code {#}}，實際送來的是私用區碼位。 */
     private static final String ICON = "\ue001";
@@ -209,7 +212,64 @@ public final class ChatColourTest {
             check("譯文維持自己的行數（實際 " + padRows + " 行）", padRows == 4);
         }
 
+        lootrunEnd(store);
+
         report();
+    }
+
+    /**
+     * Lootrun 結算面板：兩欄各有各的顏色。
+     *
+     * <h2>為什麼要釘</h2>
+     * 「{@code Rewards}／{@code Statistics}」左綠右粉，是<b>同一行</b>的兩欄。
+     * 譯文如果不標顏色，主色是<b>照字數</b>挑的——「獎勵」與「統計」一樣長，
+     * 挑到誰全憑順序，實測整行都變成粉紅。兩欄不同色的行一律用
+     * {@code &#123;c1&#125;}／{@code &#123;c2&#125;} 明寫，跟信標那一批一致。
+     *
+     * <p>底下那一列相反：數字自己就是一個帶樣式的片段，字面在譯文裡找得到，
+     * 顏色會自動貼回去，不必標。兩種一起釘住，免得日後有人「順手補齊」
+     * 把每一行都加上顏色標記。
+     */
+    private static void lootrunEnd(TranslationStore store) {
+        MutableComponent heads = Component.empty();
+        heads.append(lit(ICON, LIME, false));
+        heads.append(lit("Rewards", LIME, false));
+        heads.append(lit(ICON, MAGENTA, false));
+        heads.append(lit("Statistics", MAGENTA, false));
+        Component row = LineTranslator.translateChat(
+                StyledText.fromComponent(heads), store);
+        check("結算標題列翻得出來", row != null);
+        if (row != null) {
+            List<Component> one = List.of(row);
+            Integer left = colourOf(one, "獎勵");
+            Integer right = colourOf(one, "統計");
+            check("「獎勵」是左欄的綠（拿到 " + hex(left) + "）",
+                    left != null && left == LIME);
+            check("「統計」是右欄的粉（拿到 " + hex(right) + "）",
+                    right != null && right == MAGENTA);
+        }
+
+        MutableComponent pulls = Component.empty();
+        pulls.append(lit(ICON, CYAN, false));
+        pulls.append(lit("31", CYAN, false));
+        pulls.append(lit(" Reward Pulls", WHITE, false));
+        pulls.append(lit(ICON, WHITE, false));
+        pulls.append(lit("Time Elapsed: 11:58", WHITE, false));
+        Component stat = LineTranslator.translateChat(
+                StyledText.fromComponent(pulls), store);
+        check("結算抽數列翻得出來", stat != null);
+        if (stat != null) {
+            String zh = stat.getString();
+            check("兩欄都換成中文（實際 " + zh + "）",
+                    zh.contains("次獎勵抽數") && zh.contains("經過時間"));
+            Integer number = colourOf(List.of(stat), "31");
+            check("數字自己保住水藍（拿到 " + hex(number) + "）",
+                    number != null && number == CYAN);
+        }
+    }
+
+    private static String hex(Integer colour) {
+        return colour == null ? "null" : "#" + String.format("%06X", colour);
     }
 
     private static Integer colourOf(List<Component> lines, String needle) {
