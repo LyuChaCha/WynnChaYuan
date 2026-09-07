@@ -268,10 +268,42 @@ public final class TooltipPanel {
         if (!anyTranslated) {
             return List.of();
         }
+        // 翻一半的記一份診斷。看得到「哪一行沒翻、它的模板長什麼樣」，才有辦法
+        // 判斷是語料沒有、還是算繪端擋掉的——這兩件事在畫面上長得一模一樣。
+        // 見 TooltipDebug#dumpPartial。
+        if (anyMissed(styled, hit, store)) {
+            TooltipDebug.dumpPartial(tooltip, hit);
+        }
         // 整塊拉正。中文不能跟著斜（會糊），但只拉正中文那幾行會讓同一份說明
         // 裡「翻好的正、沒翻的斜」參差不齊——見 LineTranslator#unslantAll。
         out.replaceAll(LineTranslator::unslantAll);
         return out;
+    }
+
+    /**
+     * 這份 tooltip 裡有沒有<b>語料明明有、畫面上卻是英文</b>的行。
+     *
+     * <h2>為什麼不是「有沒有沒翻的行」</h2>
+     * 那樣幾乎每一份 tooltip 都算數——還沒翻的裝備名本來就該留原文。診斷檔的
+     * 額度會被那些吃光，真正的 bug 一份也記不到。
+     *
+     * <p>問 {@link TranslationStore#hasTranslation} 才問到重點：它跟收集端
+     * 判斷「這是不是缺口」用的是同一個問題。答案是「有譯文」而畫面上卻是英文，
+     * 那就<b>一定</b>是算繪這一端擋掉的，值得記一份。
+     */
+    private static boolean anyMissed(List<StyledText> styled, boolean[] hit,
+                                     TranslationStore store) {
+        for (int k = 0; k < hit.length && k < styled.size(); k++) {
+            if (hit[k]) {
+                continue;
+            }
+            String template = com.wynnchayuan.capture.LineParts
+                    .of(styled.get(k)).template();
+            if (!template.isBlank() && store.hasTranslation(template)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
