@@ -166,6 +166,27 @@ public final class DialogueOffsetTest {
                                 + "abcdefghijklmnopqrstuvwxyz0123456789"
                                 + "abcdefghijklmnopqrstuvwxyz"));
 
+        // ★ 岔開的位置必須正好是佔位符。實機回報：Espren 市民那句
+        //   「They've been a symbol of our town…」畫面上出現的是語料裡<b>另一句</b>
+        //   「They've been at it for a while now…」的譯文（他們吵好一陣子了）。
+        //
+        //   兩句共同前綴「They've been a」剛好 14 個字，過了 AGREED 門檻，
+        //   長度又碰巧落在 NAME_ROOM 裡，於是一路錯到底。錯的中文是假的資訊，
+        //   比整句沒翻糟得多。
+        String rival = "They've been at it for a while now. "
+                + "Which one do you think will beat the other tomorrow?";
+        check("岔在句子中間的，是別句話（打到一半）",
+                !DialogueRewriter.within(rival,
+                        "They've been a symbol of our town for lon"));
+        check("岔在句子中間的，是別句話（打完）",
+                !DialogueRewriter.within(rival,
+                        "They've been a symbol of our town for longer than anyone "
+                                + "can remember, their original use long forgotten."));
+        // 反面：岔在佔位符上的還是要放行，不然名字打到一半又會掉回英文
+        check("岔在佔位符上的仍然算同一句",
+                DialogueRewriter.within("Nice to see you again, {u}! How goes it?",
+                        "Nice to see you again, Green_te"));
+
         // 「還在打字」與「打完了」要有不同的態度。沒有現成的訊號，
         // 字停住幾幀就等於停住了。見 DialogueRewriter#settled。
         check("字還在長就不算停下來",
