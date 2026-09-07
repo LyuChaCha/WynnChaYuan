@@ -2609,6 +2609,15 @@ public final class LineTranslator {
 
     public static Component translateChat(StyledText message, TranslationStore store,
                                           Boolean centred) {
+        return translateChat(message, store, centred, false);
+    }
+
+    /**
+     * @param inPanel 呼叫端已經知道這一行屬於一塊「兩欄併排的面板」。
+     *                見 {@link #chatPanel}
+     */
+    public static Component translateChat(StyledText message, TranslationStore store,
+                                          Boolean centred, boolean inPanel) {
         LineParts parts = LineParts.of(message);
         if (parts.template().isBlank() || !GlyphSplitter.hasLetter(parts.template())) {
             return null;
@@ -2641,7 +2650,7 @@ public final class LineTranslator {
                                  "佔位符數量對不上，整塊放棄");
             return null;
         }
-        return unslant(realignChat(message, rebuilt, centred));
+        return unslant(realignChat(message, rebuilt, centred, inPanel));
     }
 
     /**
@@ -2967,8 +2976,62 @@ public final class LineTranslator {
         return BlockLayout.centered(lines);
     }
 
+    /**
+     * 這一塊聊天訊息是不是「兩欄併排的面板」。整塊逐行查表時先算好再傳進來。
+     *
+     * <h2>為什麼不能一行一行問</h2>
+     * 獵殺信標的面板是<b>一行一則訊息</b>送過來的。一則裡只有一行時，
+     * {@link #columnPanel} 看不到旁邊那幾行，只好說「不是面板」——
+     * 於是同一塊裡的多欄行照欄置中、單欄的接續行卻靠左不動，兩者就錯開。
+     *
+     * <p>實機回報「Lootrun 有時候不對齊」就是這個：紅色信標那一欄往右移了
+     * 16px（中文短了一半的補償），而它折下來的
+     * 「{@code no Time Bonus for}」「{@code completing them.}」原地不動。
+     *
+     * <p>{@link #chatCentred} 也接不住這種行：它問的是「這一行在<b>整塊</b>裡
+     * 置不置中」，而欄位的接續行是置中在<b>自己那一欄</b>上，不是整塊。
+     */
+    public static boolean chatPanel(List<StyledText> rows) {
+        for (StyledText row : rows) {
+            for (List<Run> line : splitRows(runs(row.getComponent()))) {
+                if (spacedColumns(line) >= 2) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 這一行有幾段實字被<b>正的排版偏移</b>隔開。
+     *
+     * <p>跟 {@link #columns} 問的是同一件事，但<b>不看字寬</b>——偏移的寬度是
+     * 從碼位解出來的，不必問字型。{@link #chatPanel} 用這一支，
+     * 因為判斷「是不是面板」不需要知道每一欄多寬，而且測試環境沒有字型。
+     */
+    private static int spacedColumns(List<Run> row) {
+        int columns = 0;
+        boolean text = false;
+        for (Run run : row) {
+            if (run.space()) {
+                if (text && run.px() > 0) {
+                    columns++;                 // 一段實字結束在一個間隔上
+                    text = false;
+                }
+            } else if (hasContent(run.text())) {
+                text = true;
+            }
+        }
+        return text ? columns + 1 : columns;
+    }
+
     private static Component realignChat(StyledText original, Component rebuilt,
                                          Boolean centred) {
+        return realignChat(original, rebuilt, centred, false);
+    }
+
+    private static Component realignChat(StyledText original, Component rebuilt,
+                                         Boolean centred, boolean inPanel) {
         List<List<Run>> origRows = splitRows(runs(original.getComponent()));
         List<List<Run>> madeRows = splitRows(runs(rebuilt));
         int[] keepOrig = solidRows(origRows);
@@ -2982,7 +3045,10 @@ public final class LineTranslator {
         }
         boolean[] centre = centred == null ? centredRows(origRows) : null;
         // 這一塊是不是「兩欄併排的面板」。見 #columnPanel。
-        boolean panel = columnPanel(origRows);
+        //
+        // 呼叫端說了算優先：信標面板是一行一則訊息送來的，這裡看到的
+        // origRows 只有那一行，自己判斷永遠是 false。見 #chatPanel。
+        boolean panel = inPanel || columnPanel(origRows);
         StringBuilder log = new StringBuilder();
         MutableComponent out = Component.empty();
         for (int i = 0; i < madeRows.size(); i++) {
