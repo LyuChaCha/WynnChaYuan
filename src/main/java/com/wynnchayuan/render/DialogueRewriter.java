@@ -580,6 +580,24 @@ public final class DialogueRewriter {
      * <p>所以岔開是允許的，但只允許岔在<b>語料那條的裡面</b>。岔開的位置
      * 剛好是語料的結尾，代表畫面上的字已經比那條長了——那就不是同一句
      * （任務開始那則後面還接著進度顯示就是這樣），要讓它往下走 {@link #join}。
+     *
+     * <h2>岔開的位置必須正好是佔位符</h2>
+     * 光看「對上幾個字」不夠。實機回報：Espren 市民說
+     *
+     * <pre>
+     *   They've been a symbol of our town for longer than anyone can remember…
+     * </pre>
+     *
+     * 畫面上出現的卻是「他們吵好一陣子了。你覺得明天誰會贏誰？」——那是語料裡
+     * <b>另一句</b> {@code They've been at it for a while now…} 的譯文。
+     * 兩句共同前綴「{@code They've been a}」剛好 14 個字，過了 {@link #AGREED}，
+     * 而長度又碰巧落在 {@link #NAME_ROOM} 裡，於是一路錯到底。
+     *
+     * <p>整句英文只是沒翻，錯的中文是<b>假的資訊</b>，比沒翻糟得多。
+     *
+     * <p>分辨的方法是問「岔在哪裡」：名字造成的岔開<b>一定</b>落在語料那條的
+     * 佔位符上（{@code {u}}、{@code {p}}、{@code {~}}），因為除了那裡兩邊
+     * 本來就一模一樣。岔在別的地方，就是另一句話。
      */
     static boolean within(String source, String typed) {
         if (source.startsWith(typed)) {
@@ -591,6 +609,7 @@ public final class DialogueRewriter {
             agreed++;
         }
         return agreed >= AGREED && agreed < source.length()
+                && source.charAt(agreed) == '{'
                 && typed.length() <= source.length() + NAME_ROOM;
     }
 
