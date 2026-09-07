@@ -168,7 +168,8 @@ public final class TooltipPanel {
         //
         // 但守門是<b>看名字</b>的，不看面板——技能樹的節點標題撞到同名裝備時
         // 會被一起擋住，所以要先排除技能樹。見 #isAbilityNode。
-        String gearName = n == 0 || isAbilityNode(styled) ? null : bareName(
+        boolean abilityPanel = isAbilityNode(styled);
+        String gearName = n == 0 || abilityPanel ? null : bareName(
                 com.wynnchayuan.capture.LineParts.of(styled.get(0)).template());
         if (gearName != null && store.isBareGearName(gearName)) {
             out.add(LineTranslator.untranslated(styled.get(0)));
@@ -236,9 +237,19 @@ public final class TooltipPanel {
                 }
                 LineTranslator.noteBlockMiss(key.toString(), store);
             }
+            // 撞名的裝備名不是只會出現在名稱那一行。套裝的成員清單、寶箱裡的
+            // 獎勵預覽、鑄造材料，都是「項目符號 + 裝備名」單獨佔一行——那些行
+            // 一樣會被同名的技能／Major ID 譯文頂掉。實測 33 個裝備名撞名，
+            // 其中 23 個不管裸的還是帶項目符號都會被換掉。
+            //
+            // 只在<b>不是</b>技能樹／使命面板時擋。技能樹的「解鎖後將封鎖:」
+            // 底下列的正是技能名，那些該翻——而它們剛好也有同名裝備，
+            // 所以分辨面板這一步不能省。見 #isAbilityNode。
             Component translated =
-                    LineTranslator.translate(styled.get(i), store, centered[i],
-                                             leftAligned);
+                    !abilityPanel && blockedGearName(styled.get(i), store)
+                    ? null
+                    : LineTranslator.translate(styled.get(i), store, centered[i],
+                                               leftAligned);
             if (translated != null) {
                 anyTranslated = true;
                 hit[i] = true;
@@ -494,6 +505,28 @@ public final class TooltipPanel {
         {"Ability Points:"},            // 技能樹的節點
         {"Objective:", "Reward:"},      // Lootrun 的使命
     };
+
+    /**
+     * 這一行整行就是一個<b>還沒翻的裝備名</b>嗎？
+     *
+     * <p>是的話它得留原文：它自己沒有譯文，唯一查得到的必然是別的領域同名的
+     * 那一條（技能名、Major ID）——換上去一定是錯的。
+     *
+     * <p>行首的項目符號要先剝掉，套裝成員與獎勵清單都長成「- 名稱」。
+     * 剝到剩下的東西必須<b>整個</b>就是那個名字才算，所以
+     * 「- 最多可轉換成液態綠寶石」那種一般句子碰不到這一段。
+     */
+    private static boolean blockedGearName(StyledText line, TranslationStore store) {
+        String bare = bareName(com.wynnchayuan.capture.LineParts.of(line).template());
+        int at = 0;
+        while (at < bare.length() && BULLETS.indexOf(bare.charAt(at)) >= 0) {
+            at++;
+        }
+        return store.isBareGearName(bare.substring(at).strip());
+    }
+
+    /** 見 {@link #blockedGearName}。跟 {@code LineTranslator} 那一份是同一組。 */
+    private static final String BULLETS = "-–—•*";
 
     public static String bareName(String template) {
         String s = template
