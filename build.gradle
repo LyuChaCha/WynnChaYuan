@@ -475,6 +475,14 @@ tasks.register('runChatUnwrapChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runChatUnwrapChecks' }
 
+tasks.register('runBeaconPanelChecks', JavaExec) {
+    group = 'verification'
+    description = '信標面板的接續行要跟著它那一欄一起移動'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.BeaconPanelTest'
+}
+tasks.named('check') { dependsOn 'runBeaconPanelChecks' }
+
 tasks.register('runMajorIdTermChecks', JavaExec) {
     group = 'verification'
     description = 'Major ID 敘述裡的技能名稱，畫面上要換得成中文'
