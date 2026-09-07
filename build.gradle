@@ -554,3 +554,11 @@ tasks.register('runDividerBlockChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.DividerBlockTest'
 }
 tasks.named('check') { dependsOn 'runDividerBlockChecks' }
+
+tasks.register('runGambitBlockChecks', JavaExec) {
+    group = 'verification'
+    description = '賭注敘述要整段翻，不能照英文的斷行走'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.GambitBlockTest'
+}
+tasks.named('check') { dependsOn 'runGambitBlockChecks' }
