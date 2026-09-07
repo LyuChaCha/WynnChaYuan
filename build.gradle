@@ -538,3 +538,11 @@ tasks.register('runEvenParagraphChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.render.EvenParagraphTest'
 }
 tasks.named('check') { dependsOn 'runEvenParagraphChecks' }
+
+tasks.register('runDiscoveryNameChecks', JavaExec) {
+    group = 'verification'
+    description = '隱藏探索點的名稱每一條都要真的查得到（含地名的走 {p} 模板）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.DiscoveryNameTest'
+}
+tasks.named('check') { dependsOn 'runDiscoveryNameChecks' }
