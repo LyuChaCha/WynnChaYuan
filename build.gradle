@@ -467,6 +467,14 @@ tasks.register('runPartyPanelChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runPartyPanelChecks' }
 
+tasks.register('runChatUnwrapChecks', JavaExec) {
+    group = 'verification'
+    description = '聊天訊息斷在哪裡都要查得到'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.ChatUnwrapTest'
+}
+tasks.named('check') { dependsOn 'runChatUnwrapChecks' }
+
 tasks.register('runMajorIdTermChecks', JavaExec) {
     group = 'verification'
     description = 'Major ID 敘述裡的技能名稱，畫面上要換得成中文'
