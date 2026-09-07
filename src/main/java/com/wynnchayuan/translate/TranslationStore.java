@@ -119,6 +119,7 @@ public final class TranslationStore {
     public void loadAll(Path dir) {
         entries.clear();
         flat.clear();
+        unwrapped.clear();
         unindented.clear();
         speakers.clear();
         prefixIndex.clear();
@@ -295,6 +296,7 @@ public final class TranslationStore {
                 }
                 noteBlockSize(srcKey);
                 noteFlat(srcKey, dst.strip());
+                noteUnwrapped(srcKey, dst.strip());
                 noteIndented(srcKey, dst.strip());
                 noteMarked(srcKey, dst.strip());
                 // 同一個任務的台詞另外建一份索引。全庫裡「Hey, {u}」撞到幾十句，
@@ -352,6 +354,7 @@ public final class TranslationStore {
                 }
                 noteBlockSize(key.strip());
                 noteFlat(key.strip(), v.getAsString().strip());
+                noteUnwrapped(key.strip(), v.getAsString().strip());
                 noteIndented(key.strip(), v.getAsString().strip());
                 noteMarked(key.strip(), v.getAsString().strip());
                 if (asTerms) {
@@ -379,6 +382,80 @@ public final class TranslationStore {
     /** 把所有連續空白（含換行）壓成一個空格。 */
     public static String normalise(String text) {
         return text == null ? "" : text.strip().replaceAll("\\s+", " ");
+    }
+
+    /**
+     * 續行的<b>行首圖示</b>也一併拿掉之後的索引。
+     *
+     * <h2>為什麼 {@link #flat} 不夠</h2>
+     * 聊天訊息是伺服器<b>先斷好行</b>送過來的，而且每一行開頭都掛著頻道圖示：
+     *
+     * <pre>
+     *   {#} The Karoshi Union World Event starts in {~}m {~}s! ({~}
+     *   {#} blocks away) Click to track
+     * </pre>
+     *
+     * 斷在哪裡取決於事件名多長、以及玩家自己設定的聊天欄寬度。
+     * {@link #normalise} 只壓空白，那個續行的 {@code {#}} 會留在原地——
+     * 而它的位置正好隨著斷點移動，於是同一句話的每一種斷法都是不同的鍵。
+     *
+     * <p>七十個世界事件 × 三種斷點，一條一條收是收不完的（而且斷點算不出來）。
+     * 把換行與續行的圖示一起拿掉，同一句話就只剩一個鍵。
+     */
+    private final Map<String, String> unwrapped = new ConcurrentHashMap<>();
+
+    /**
+     * 把換行與續行的行首圖示都拿掉，併成一句。
+     *
+     * <p>只拿掉<b>緊接在換行後面</b>的圖示。句子中間的圖示是內容的一部分
+     * （{@code craft {#} Boots}），拿掉會改變語意，也會讓佔位符數量對不上。
+     */
+    public static String unwrap(String text) {
+        if (text == null) {
+            return "";
+        }
+        String glyph = com.wynnchayuan.capture.GlyphSplitter.GLYPH_PLACEHOLDER;
+        StringBuilder out = new StringBuilder(text.length());
+        int at = 0;
+        while (at < text.length()) {
+            if (text.charAt(at) != '\n') {
+                out.append(text.charAt(at));
+                at++;
+                continue;
+            }
+            at++;                              // 吃掉換行
+            while (at < text.length()) {
+                if (text.startsWith(glyph, at)) {
+                    at += glyph.length();      // 續行的行首圖示
+                } else if (Character.isWhitespace(text.charAt(at))) {
+                    at++;
+                } else {
+                    break;
+                }
+            }
+            out.append(' ');                   // 接起來的兩截之間要有一個空白
+        }
+        return normalise(out.toString());
+    }
+
+    /** 見 {@link #unwrapped}。索引<b>所有</b>夠長的條目，語料那邊不必也帶著換行。 */
+    private void noteUnwrapped(String key, String value) {
+        if (key.length() >= MIN_FLAT_LENGTH) {
+            unwrapped.putIfAbsent(unwrap(key), value);
+        }
+    }
+
+    /**
+     * 把斷好行的整則訊息當成一句話查。
+     *
+     * @param text 帶著換行與續行圖示的完整模板
+     * @return 譯文；沒有對應條目時回傳 {@code null}
+     */
+    public String lookupUnwrapped(String text) {
+        if (text == null || text.length() < MIN_FLAT_LENGTH) {
+            return null;
+        }
+        return unwrapped.get(unwrap(text));
     }
 
     /**
