@@ -213,6 +213,11 @@ public final class ChatBlock {
         //
         // 交給 translateChat 自己拆行判斷才對——它看得到裡面有幾行。
         boolean[] centred = null;
+        // 這一塊是不是「兩欄併排的面板」。跟置中一樣要<b>整塊一起看</b>：
+        // 信標面板是一行一則訊息送來的，逐行重譯時每一行只看得到自己，
+        // 於是多欄的行照欄置中、單欄的接續行卻靠左不動，兩者就錯開。
+        // 見 LineTranslator#chatPanel。
+        boolean panel = false;
         if (rows.size() > 1) {
             List<StyledText> originals = new ArrayList<>(rows.size());
             for (Row row : rows) {
@@ -220,8 +225,10 @@ public final class ChatBlock {
             }
             try {
                 centred = LineTranslator.chatCentred(originals);
+                panel = LineTranslator.chatPanel(originals);
             } catch (Throwable t) {
                 centred = null;
+                panel = false;
             }
         }
         net.minecraft.network.chat.MutableComponent out = Component.empty();
@@ -243,7 +250,8 @@ public final class ChatBlock {
                 try {
                     line = LineTranslator.translateChat(rows.get(i).original(),
                                                         WynnChaYuan.translations(),
-                                                        centred == null ? null : centred[i]);
+                                                        centred == null ? null : centred[i],
+                                                        panel);
                 } catch (Throwable t) {
                     line = null;
                 }
