@@ -74,6 +74,7 @@ public final class LineTranslator {
         }
         List<LineParts> parts = new ArrayList<>(run.size());
         StringBuilder key = new StringBuilder();
+        boolean layoutRow = false;
         for (StyledText line : run) {
             LineParts p = LineParts.of(line);
             if (p.template().isBlank()) {
@@ -81,6 +82,9 @@ public final class LineTranslator {
                 // 於是整段連著空行一起被換掉——譯文出來就跟上一段黏在一起了。
                 return null;
             }
+            // 純排版的行（分隔線、只有圖示與偏移的那種）也是同一件事，只是
+            // 它的模板<b>不是空的</b>（「{#}{#}」），所以躲過上面那一關。見 layoutRow。
+            layoutRow |= !GlyphSplitter.hasLetter(p.template());
             parts.add(p);
             if (key.length() > 0) {
                 key.append('\n');
@@ -96,6 +100,27 @@ public final class LineTranslator {
         List<LineParts.Piece> places = null;
         List<LineParts.Piece> glyphs = null;
         boolean flowed = false;
+        if ((translated == null || translated.isBlank()) && layoutRow) {
+            // 攤平查表這條路<b>只能</b>給「被 tooltip 寬度折斷的一整段」用：
+            // 它把換行壓成空格，等於假設每一行都是同一句話的一部分。
+            //
+            // 這段裡有純排版的行時那個假設就不成立，而後果不是「查不到」，
+            // 是<b>查到別的東西</b>：Shiny 物品的統計列上面正好是一條分隔線，
+            //
+            // <pre>
+            //   [n  ] {#}{#}                                ← 分隔線
+            //   [n+1] {#} Boss Altars Won{#}{~} {#}{#}{#}    ← 統計列
+            // </pre>
+            //
+            // 攤平之後剛好對上語料裡那條「{#}{#} Boss Altars Won…」——那條本身
+            // 就是從攤平過的 capture 收進來的。命中之後兩行被併成一行：分隔線
+            // 不見了，而它的縮排偏移接到了標籤前面，整列被推到面板中間。
+            // 使用者回報的「應該在兩條橫線中間，卻獨立出一行」就是這個。
+            //
+            // 整段收在語料裡的那種（{@code raid.json} 有幾條第一行就是 {#}{#}）
+            // 走的是上面那次<b>精確</b>查表，不受這一關影響。
+            return null;
+        }
         if (translated == null || translated.isBlank()) {
             // 原文可能是被 tooltip 寬度自動斷行的，斷點跟語料對不上。
             // 把整段攤平成一行再查一次。

@@ -546,3 +546,11 @@ tasks.register('runDiscoveryNameChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.DiscoveryNameTest'
 }
 tasks.named('check') { dependsOn 'runDiscoveryNameChecks' }
+
+tasks.register('runDividerBlockChecks', JavaExec) {
+    group = 'verification'
+    description = '分隔線不能被攤平查表併進上下的文字段'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.DividerBlockTest'
+}
+tasks.named('check') { dependsOn 'runDividerBlockChecks' }
