@@ -107,11 +107,14 @@ public final class PartyPanelTest {
                 + "than {~} times this Lootrun,\ngain +{~} {#}Defence";
         report("信標加防：模板查得到（實際 " + store.lookup(beacon) + "）",
                 store.lookup(beacon) != null && store.lookup(beacon).contains("信標"));
-        block(store, "寶箱戰利品品質", new String[] {
+        // 詞用 GLOSSARY.md 的「寶物品質」。這條測試就是拿來擋詞表漂移的——
+        // 語料裡先前兩種譯法並存過（寶物品質／戰利品品質），統一之後這裡
+        // 一起釘住，下次再分岔會馬上失敗。
+        block(store, "寶箱寶物品質", new String[] {
                 "For the rest of this Lootrun,",
                 "gain +5% Loot Quality (Max",
                 "x10) for every 3 items",
-                "offered to you from a Chest"}, "戰利品品質");
+                "offered to you from a Chest"}, "寶物品質");
         block(store, "挑戰加生命", new String[] {
                 "Once you reach 10 Challenges",
                 "completed during your",
