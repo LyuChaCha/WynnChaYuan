@@ -134,6 +134,62 @@ public final class PartyPanelTest {
         block(store, "確認投降", new String[] {
                 "Click again to confirm",
                 "surrendering"}, "投降");
+        lootrunEnd(store);
+    }
+
+    /**
+     * Lootrun 跑完之後那幾面：結算統計、獎勵寶箱、信標次數。
+     *
+     * <h2>為什麼單獨列一塊</h2>
+     * 這幾面只有<b>跑完一整趟</b>才看得到，所以一直沒人收。實機 capture 一次
+     * 就吐出四十幾條缺口，形狀分成三種：面板標題（{@code Yellow Beacon}）、
+     * 統計列（{@code Offered: {~}}）、照寬度切碎的說明（三到六行）。
+     * 三種各釘一條，下次改動哪一種都會被抓到。
+     */
+    private static void lootrunEnd(TranslationStore store) {
+        // 信標名稱：雙欄的那些早就翻好了（「{#}黃色信標{#}藍色信標」），
+        // 單獨當標題出現的那一份卻一直是空的。顏色詞要跟雙欄那份一致。
+        row(store, "Yellow Beacon", "黃色信標");
+        row(store, "Dark Grey Beacon", "深灰信標");
+        row(store, "Crimson Beacon", "緋紅信標");
+        row(store, "Obscured Beacon", "晦暗信標");
+        // 統計列
+        row(store, "Offered: {~}", "提供次數");
+        row(store, "Chosen: {~}/{~}", "選取次數");
+        row(store, "Decay: {~} Challenges", "衰減");
+        row(store, "Choices: +{~}", "信標選項");
+        // 使命名稱照團隊的語調——兩個字的意象詞（救贖、停滯、天賜、機緣）
+        row(store, "Knife Edge", "刀鋒");
+        row(store, "Thrill Seeker", "逐險者");
+
+        block(store, "詛咒減半", new String[] {
+                "Curses are now half as",
+                "effective."}, "詛咒");
+        block(store, "逐險者說明", new String[] {
+                "Gain +1 Pull per Red Beacon",
+                "Challenge completed. This",
+                "amount is increased by +1 per",
+                "3 challenges completed (max",
+                "+5). This boost is reset upon",
+                "taking a Green Beacon."}, "紅色信標");
+        block(store, "捨棄獎勵說明", new String[] {
+                "Sacrificing your rewards",
+                "will add a percentage of your",
+                "pulls into your next lootrun"}, "捨棄");
+        block(store, "捨棄越多保留越多", new String[] {
+                "A higher amount of sacrifices",
+                "increases the amount of pulls",
+                "saved for your next run"}, "抽數");
+        block(store, "關閉寶箱", new String[] {
+                "By closing your chest",
+                "inside of it will be lost"}, "寶箱");
+    }
+
+    /** 單獨一行的條目：查得到，而且用的是講好的詞。 */
+    private static void row(TranslationStore store, String src, String want) {
+        String zh = LineTranslator.lookup(src, store, false);
+        report("「" + src + "」→「" + want + "」（實際 " + zh + "）",
+                zh != null && zh.contains(want));
     }
 
     /** 整段要翻出來，而且不能剩下英文的原句。 */
