@@ -283,7 +283,7 @@ public final class TooltipPanel {
         // 判斷是語料沒有、還是算繪端擋掉的——這兩件事在畫面上長得一模一樣。
         // 見 TooltipDebug#dumpPartial。
         if (anyMissed(styled, hit, store)) {
-            TooltipDebug.dumpPartial(tooltip, hit);
+            TooltipDebug.dumpPartial(tooltip, out, hit);
         }
         // 整塊拉正。中文不能跟著斜（會糊），但只拉正中文那幾行會讓同一份說明
         // 裡「翻好的正、沒翻的斜」參差不齊——見 LineTranslator#unslantAll。

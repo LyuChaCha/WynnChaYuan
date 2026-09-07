@@ -75,7 +75,7 @@ public final class TooltipDebug {
             return;
         }
         written++;
-        write(tooltip, null, "tooltip-debug-" + written + ".json",
+        write(tooltip, null, null, "tooltip-debug-" + written + ".json",
               "查不到譯文的 tooltip。比對 template 與譯文檔的 src 是否相同。");
     }
 
@@ -86,7 +86,8 @@ public final class TooltipDebug {
      *
      * @param hit 每一行有沒有換成中文，長度與 {@code tooltip} 相同
      */
-    public static synchronized void dumpPartial(List<Component> tooltip, boolean[] hit) {
+    public static synchronized void dumpPartial(List<Component> tooltip,
+                                                List<Component> shown, boolean[] hit) {
         if (file == null || partial >= MAX_PARTIAL || tooltip.isEmpty()) {
             return;
         }
@@ -94,9 +95,10 @@ public final class TooltipDebug {
             return;                            // 同一件物品只記一次
         }
         partial++;
-        write(tooltip, hit, "tooltip-partial-" + partial + ".json",
+        write(tooltip, shown, hit, "tooltip-partial-" + partial + ".json",
               "翻了一半的 tooltip。translated=false 的那幾行，"
-              + "如果語料裡其實查得到，就是算繪端擋掉的。");
+              + "如果語料裡其實查得到，就是算繪端擋掉的。"
+              + "shown 是實際畫出去的那一行；兩邊的 spacePx 對照就看得出欄距補了多少。");
     }
 
     /** 同一份 tooltip 只寫一次，見 {@link #seen}。 */
@@ -108,39 +110,24 @@ public final class TooltipDebug {
         return sb.toString();
     }
 
-    private static void write(List<Component> tooltip, boolean[] hit,
-                              String name, String note) {
+    private static void write(List<Component> tooltip, List<Component> shown,
+                              boolean[] hit, String name, String note) {
         JsonArray lines = new JsonArray();
         int at = -1;
         for (Component line : tooltip) {
             at++;
-            StyledText styled = StyledText.fromComponent(line);
-            JsonObject o = new JsonObject();
+            JsonObject o = describe(line);
             o.addProperty("row", at);
             if (hit != null && at < hit.length) {
                 o.addProperty("translated", hit[at]);
             }
-            o.addProperty("plain", styled.getStringWithoutFormatting());
-            o.addProperty("template", GlyphSplitter.toTemplate(styled));
-            o.addProperty("glyphOnly", GlyphSplitter.isGlyphOnly(styled));
-
-            LineParts parts = LineParts.of(styled);
-            o.addProperty("glyphs", parts.glyphs().size());
-            o.addProperty("places", parts.places().size());
-            o.addProperty("numbers", parts.numbers().size());
-
-            // 每個片段的字型 —— 整行被當成圖示時，原因幾乎都在這裡
-            JsonArray segs = new JsonArray();
-            for (StyledTextPart part : styled) {
-                JsonObject seg = new JsonObject();
-                seg.addProperty("text", part.getString(null, StyleType.NONE));
-                PartStyle ps = part.getPartStyle();
-                seg.addProperty("font", ps == null || ps.getFont() == null
-                        ? "(none)" : ps.getFont().toString());
-                seg.addProperty("isGlyph", GlyphSplitter.isGlyphPart(part));
-                segs.add(seg);
+            // 同一行<b>畫出去</b>的樣子。欄距是用空白偏移字元做的，譯文比原文
+            // 短多少就要往那個偏移補多少——補了沒有、補了多少，只有把兩邊的
+            // spacePx 擺在一起才看得出來。實機回報「兩欄沒對齊」時，畫面上
+            // 看到的只有結果，看不出是沒補、補錯方向、還是補過頭。
+            if (shown != null && at < shown.size()) {
+                o.add("shown", describe(shown.get(at)));
             }
-            o.add("segments", segs);
             lines.add(o);
         }
 
@@ -158,5 +145,39 @@ public final class TooltipDebug {
         } catch (Exception e) {
             System.err.println("[WynnChaYuan] 診斷檔寫入失敗: " + e.getMessage());
         }
+    }
+
+    /** 一行的模板、片段、字型與空白偏移。 */
+    private static JsonObject describe(Component line) {
+        StyledText styled = StyledText.fromComponent(line);
+        JsonObject o = new JsonObject();
+        o.addProperty("plain", styled.getStringWithoutFormatting());
+        o.addProperty("template", GlyphSplitter.toTemplate(styled));
+        o.addProperty("glyphOnly", GlyphSplitter.isGlyphOnly(styled));
+
+        LineParts parts = LineParts.of(styled);
+        o.addProperty("glyphs", parts.glyphs().size());
+        o.addProperty("places", parts.places().size());
+        o.addProperty("numbers", parts.numbers().size());
+
+        // 每個片段的字型 —— 整行被當成圖示時，原因幾乎都在這裡
+        JsonArray segs = new JsonArray();
+        for (StyledTextPart part : styled) {
+            String raw = part.getString(null, StyleType.NONE);
+            JsonObject seg = new JsonObject();
+            seg.addProperty("text", raw);
+            PartStyle ps = part.getPartStyle();
+            seg.addProperty("font", ps == null || ps.getFont() == null
+                    ? "(none)" : ps.getFont().toString());
+            seg.addProperty("isGlyph", GlyphSplitter.isGlyphPart(part));
+            // 排版用的空白偏移。這是欄距真正的載體，沒有它就只能猜。
+            int px = com.wynnchayuan.translate.SpaceOffset.decode(raw);
+            if (px != 0) {
+                seg.addProperty("spacePx", px);
+            }
+            segs.add(seg);
+        }
+        o.add("segments", segs);
+        return o;
     }
 }
