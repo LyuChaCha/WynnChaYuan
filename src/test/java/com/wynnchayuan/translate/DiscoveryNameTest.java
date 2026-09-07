@@ -89,11 +89,48 @@ public final class DiscoveryNameTest {
                    zh != null && zh.contains(pair[1]));
         }
 
+        descriptions(store);
+
         System.out.println(failures == 0
-                ? "探索點名稱：全部通過" : "探索點名稱：" + failures + " 項失敗");
+                ? "探索點：全部通過" : "探索點：" + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 敘述那一份（{@code discovery.json}）踩的是同一個坑。
+     *
+     * <h2>實測</h2>
+     * 117 條裡有 <b>34 條</b>含地名或年份，實機的鍵是 {@code {p}}／{@code {~}} 版本，
+     * 照 wiki 原文收的那一份永遠查不到——翻好的中文一直沒出現在畫面上，
+     * 而且看起來就跟「還沒翻」一模一樣。
+     *
+     * <p>修法是<b>另外收一份參數化的鍵</b>，原文那一份留著：
+     * {@code tools/fetch-discoveries.py} 重抓時要靠它比對 wiki 改過哪幾條。
+     * 所以這裡只問「每一條敘述都查得到」，不管檔案裡有幾個鍵。
+     */
+    private static void descriptions(TranslationStore store) throws Exception {
+        Path file = Path.of("src/main/resources/assets/wynnchayuan/translations",
+                            Languages.DEFAULT, "discovery.json");
+        JsonObject root;
+        try (BufferedReader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
+            root = JsonParser.parseReader(r).getAsJsonObject();
+        }
+        int dead = 0;
+        for (String key : root.keySet()) {
+            if (key.startsWith("_") || key.indexOf('{') >= 0) {
+                continue;                      // 參數化的那一份不用再跑一次
+            }
+            String template = com.wynnchayuan.capture.LineParts
+                    .of(StyledText.fromComponent(Component.literal(key))).template();
+            if (LineTranslator.lookup(template, store, false) == null) {
+                dead++;
+                report("敘述查不到：" + template.substring(0, Math.min(90, template.length())),
+                       false);
+            }
+        }
+        report("★ 沒有查不到的敘述（實際 " + dead + " 條）", dead == 0);
     }
 
     private static void report(String what, boolean ok) {
