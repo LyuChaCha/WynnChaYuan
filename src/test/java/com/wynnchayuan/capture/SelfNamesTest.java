@@ -26,9 +26,16 @@ import java.util.List;
  * 語料的鍵是「{@code Hey, {u}! …}」，永遠對不上。這不是一句話的問題——
  * <b>每一句提到玩家名字的台詞</b>都會這樣，而 capture 裡也確實躺著這個壞掉的鍵。
  *
+ * <h2>第二次回報</h2>
+ * 認得暱稱之後使用者說「還是一樣」。診斷檔挖出來兩件事，兩件都不是「找不到名字」：
+ * 伺服器把名字<b>轉成大寫</b>（對話框收到的是 {@code Hey, WYNNCHAYUAN!}，帳號名卻是
+ * {@code Wynnchayuan}），而角色建立畫面那一行 {@code - Nickname: Not Defined}
+ * 被當成名字收了進去。
+ *
  * <h2>釘住什麼</h2>
  * 學到暱稱之後，模板要抽成 {@code {u}}，而且抽出來的那一段要<b>就是暱稱</b>
- * ——多吃或少吃一個字都會讓鍵對不上。
+ * ——多吃或少吃一個字都會讓鍵對不上。大小寫不同要照樣命中，但不能因此讓短名字
+ * 掉進一般英文單字裡。
  */
 public final class SelfNamesTest {
 
@@ -72,6 +79,30 @@ public final class SelfNamesTest {
         SelfNames.learn("- Nickname: ab");
         report("★ 太短的名字不收（實際 " + SelfNames.all() + "）",
                !SelfNames.all().contains("ab"));
+
+        // 「還沒設定」不是名字。角色建立畫面上真的有這一行，收進去之後每一句
+        // 出現這兩個字的英文都會被抽成 {u}。
+        SelfNames.learn("§6- Nickname: Not Defined");
+        report("★ 「Not Defined」不收（實際 " + SelfNames.all() + "）",
+               !SelfNames.all().contains("Not Defined"));
+
+        // ★ 伺服器把名字轉成大寫再送出來——實機對話框收到的就是這一句
+        SelfNames.learn("- Nickname: Wynnchayuan");
+        String shouted = "Hey, WYNNCHAYUAN! Are you alright in there? "
+                       + "It looks like we've hit something.";
+        report("★ 大小寫不同也找得到（實際 " + SelfNames.find(shouted) + "）",
+               "WYNNCHAYUAN".equals(SelfNames.find(shouted)));
+        report("★ 大寫的名字抽成 {u}（實際 " + template(shouted) + "）",
+               ("Hey, {u}! Are you alright in there? "
+                + "It looks like we've hit something.").equals(template(shouted)));
+
+        // 不分大小寫之後，短名字更容易掉進一般英文單字裡——前後不能再接英數
+        SelfNames.learn("- Nickname: Ash");
+        report("★ 名字不會夾在單字中間命中（實際 "
+                       + SelfNames.find("You see a bright flash of light.") + "）",
+               SelfNames.find("You see a bright flash of light.") == null);
+        report("整個詞出現時照樣找得到",
+               "ASH".equals(SelfNames.find("Hey, ASH! Over here.")));
 
         System.out.println(failures == 0
                 ? "暱稱：全部通過" : "暱稱：" + failures + " 項失敗");
