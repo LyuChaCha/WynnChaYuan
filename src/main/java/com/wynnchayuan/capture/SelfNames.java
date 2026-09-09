@@ -30,14 +30,20 @@ import java.util.Set;
  * 可以是數字開頭，所以名字不能只從帳號名來。
  *
  * <h2>從哪裡知道暱稱</h2>
- * 三個來源都收，哪個真的出現在字裡就用哪個，不去猜哪一個「應該」是對的：
+ * 都收，哪個真的出現在字裡就用哪個，不去猜哪一個「應該」是對的：
  *
  * <ul>
- *   <li>帳號名（原本就有的）。</li>
- *   <li>玩家清單與實體的<b>顯示名稱</b>——伺服器把暱稱放在這裡。可能帶著階級
- *       前綴，所以連同「去掉開頭幾個詞」的變體一起收，見 {@link #suffixes}。</li>
- *   <li>角色選單那一行「{@code - Nickname: X}」，由 {@link #learn} 記下來。
- *       這一個是<b>有實據</b>的：capture 裡就躺著這一行。</li>
+ *   <li><b>語料自己</b>。鍵是「{@code Hey, {u}! Are you alright in there?…}」，
+ *       畫面上是「{@code Hey, WYNNCHAYUAN! Are you…}」，前後都對得上，中間夾的
+ *       就是名字。見
+ *       {@link com.wynnchayuan.translate.TranslationStore#playerNameIn}。
+ *       這一個最可靠：玩家一講話就認得出來，不必先去開哪個介面。</li>
+ *   <li>角色選單那一行「{@code - Nickname: X}」，由 {@link #learn} 記下來。</li>
+ *   <li>帳號名。<b>不等於</b>暱稱——實機診斷檔裡帳號名是 {@code Green_teaTW}，
+ *       畫面上的名字卻是 {@code WYNNCHAYUAN}。</li>
+ *   <li>玩家清單與實體的顯示名稱。Wynncraft 這兩個地方拿不到暱稱，留著只是
+ *       因為其他伺服器可能有。可能帶著階級前綴，所以連同「去掉開頭幾個詞」的
+ *       變體一起收，見 {@link #suffixes}。</li>
  * </ul>
  *
  * <p>比對時取<b>最長</b>的那一個：暱稱整個出現時就不會只換到後半截。
@@ -79,9 +85,24 @@ public final class SelfNames {
         if (at < 0) {
             return;
         }
-        String name = line.substring(at + tag.length()).strip();
-        if (name.length() >= MIN_NAME && !UNSET.contains(name.toLowerCase(Locale.ROOT))) {
-            learned.add(name);
+        remember(line.substring(at + tag.length()).strip());
+    }
+
+    /**
+     * 直接記下一個名字。
+     *
+     * <p>給{@link com.wynnchayuan.translate.TranslationStore#playerNameIn 語料反推}
+     * 用的入口——那一邊已經確認過是名字，這裡只擋長度與「還沒設定」。
+     *
+     * @param name 可以是 {@code null}，那樣什麼都不做
+     */
+    public static void remember(String name) {
+        if (name == null) {
+            return;
+        }
+        String bare = name.strip();
+        if (bare.length() >= MIN_NAME && !UNSET.contains(bare.toLowerCase(Locale.ROOT))) {
+            learned.add(bare);
         }
     }
 
