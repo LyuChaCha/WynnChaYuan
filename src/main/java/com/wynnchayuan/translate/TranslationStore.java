@@ -1,5 +1,7 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.capture.GlyphSplitter;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -131,6 +133,7 @@ public final class TranslationStore {
         market.clear();
         ordered.clear();
         byQuest.clear();
+        playerKeys.clear();
         fromWiki.clear();
         loadedFiles = 0;
 
@@ -296,6 +299,7 @@ public final class TranslationStore {
                 }
                 noteBlockSize(srcKey);
                 noteFlat(srcKey, dst.strip());
+                notePlayerKey(srcKey);
                 noteUnwrapped(srcKey, dst.strip());
                 noteIndented(srcKey, dst.strip());
                 noteMarked(srcKey, dst.strip());
@@ -354,6 +358,7 @@ public final class TranslationStore {
                 }
                 noteBlockSize(key.strip());
                 noteFlat(key.strip(), v.getAsString().strip());
+                notePlayerKey(key.strip());
                 noteUnwrapped(key.strip(), v.getAsString().strip());
                 noteIndented(key.strip(), v.getAsString().strip());
                 noteMarked(key.strip(), v.getAsString().strip());
@@ -377,6 +382,127 @@ public final class TranslationStore {
         // 不能只收「正規化之後有變」的。語料裡的長句本來就沒有換行——
         // 會斷行的是<b>畫面</b>，不是語料。查詢端才是那個帶著換行進來的。
         flat.putIfAbsent(normalise(key), value);
+    }
+
+    /** 名字前後至少要有這麼多字被打出來，才敢認。見 {@link #playerNameIn}。 */
+    private static final int NAME_EVIDENCE = 8;
+
+    /** 認得出來的名字長度上限——暱稱可以有空格，但不會是一整句話。 */
+    private static final int MAX_PLAYER_NAME = 40;
+
+    /**
+     * 鍵裡帶著一個 {@code {u}} 的那些，拆成「名字前面」與「名字後面」兩段。
+     *
+     * <p>前面那一段還有別的佔位符就不收——那種鍵沒辦法直接拿來比對開頭。
+     */
+    private final List<String[]> playerKeys = new java.util.ArrayList<>();
+
+    private void notePlayerKey(String key) {
+        int at = key.indexOf(GlyphSplitter.PLAYER_PLACEHOLDER);
+        if (at < 0 || key.indexOf(GlyphSplitter.PLAYER_PLACEHOLDER,
+                                 at + GlyphSplitter.PLAYER_PLACEHOLDER.length()) >= 0) {
+            return;                        // 沒有 {u}，或不只一個
+        }
+        String pre = key.substring(0, at);
+        if (pre.indexOf('{') >= 0) {
+            return;                        // 前面還有別的佔位符，比不了開頭
+        }
+        String post = key.substring(at + GlyphSplitter.PLAYER_PLACEHOLDER.length());
+        int stop = post.indexOf('{');
+        if (stop >= 0) {
+            post = post.substring(0, stop); // 只留到下一個佔位符為止
+        }
+        if (post.length() < NAME_EVIDENCE) {
+            return;                        // 名字後面沒幾個字，認不準
+        }
+        playerKeys.add(new String[] {pre, post});
+    }
+
+    /**
+     * 從語料反推「玩家在這句話裡叫什麼名字」。
+     *
+     * <h2>為什麼需要這個</h2>
+     * Wynncraft 的<b>暱稱</b>不在任何一個 Minecraft API 裡：帳號名是
+     * {@code Green_teaTW}，畫面上卻是 {@code Hey, WYNNCHAYUAN!}。玩家清單與實體
+     * 的顯示名稱都拿不到它，只有角色選單那一行「{@code - Nickname:}」有——而那要
+     * 玩家自己去開。沒開過就等於<b>每一句叫到名字的台詞都翻不出來</b>。
+     *
+     * <p>可是語料自己就知道答案：鍵是「{@code Hey, {u}! Are you alright in
+     * there?…}」，畫面上是「{@code Hey, WYNNCHAYUAN! Are you alright in ther}」。
+     * 前面對得上、後面也對得上，中間夾的那一段就是名字。認出來之後交給
+     * {@link com.wynnchayuan.capture.SelfNames}，往後每一句、連同收集語料那一邊
+     * 都會自己抽成 {@code {u}}。
+     *
+     * <h2>怎麼防止認錯</h2>
+     * <ul>
+     *   <li>名字<b>後面</b>至少要打出 {@value #NAME_EVIDENCE} 個字才算數——
+     *       逐字打字時前幾幀還看不出邊界在哪。</li>
+     *   <li>兩條鍵推出<b>不一樣</b>的名字就整個放棄，寧可不認。</li>
+     *   <li>推出來的字本身是語料裡的一條（NPC 名字之類）就不算——
+     *       「{@code Aledar, I've been waiting.}」不該把 Aledar 當成玩家。</li>
+     * </ul>
+     *
+     * @param raw 畫面上的原文，可能只打到一半
+     * @return 玩家在這句話裡的名字；認不出來或不只一種答案時回傳 {@code null}
+     */
+    /** 目前收了哪些鍵。只給檢查用——正式查表一律走 {@link #lookup}。 */
+    java.util.Set<String> keys() {
+        return java.util.Collections.unmodifiableSet(entries.keySet());
+    }
+
+    public String playerNameIn(String raw) {
+        if (raw == null || raw.isEmpty()) {
+            return null;
+        }
+        String found = null;
+        for (String[] key : playerKeys) {
+            String name = nameBetween(raw, key[0], key[1]);
+            if (name == null) {
+                continue;
+            }
+            if (found == null) {
+                found = name;
+            } else if (!found.equals(name)) {
+                return null;               // 兩條鍵各說各話，不猜
+            }
+        }
+        return found;
+    }
+
+    /** {@code raw} 去掉開頭的 {@code pre}、結尾對得上 {@code post} 之後夾著的那一段。 */
+    private String nameBetween(String raw, String pre, String post) {
+        if (!raw.startsWith(pre)) {
+            return null;
+        }
+        String rest = raw.substring(pre.length());
+        // 打字是從左往右的，所以 rest 一定是「名字 + post 的前幾個字」。
+        // 取最長的那個 k，夾出來的名字才不會多吃到後面的字。
+        int most = Math.min(rest.length(), post.length());
+        for (int k = most; k >= NAME_EVIDENCE; k--) {
+            if (!rest.regionMatches(rest.length() - k, post, 0, k)) {
+                continue;
+            }
+            String name = rest.substring(0, rest.length() - k);
+            return plausibleName(name) ? name : null;
+        }
+        return null;
+    }
+
+    /** 看起來像名字嗎——長度、字元，而且不是語料裡本來就有的一條。 */
+    private boolean plausibleName(String name) {
+        if (name.length() < 3 || name.length() > MAX_PLAYER_NAME) {
+            return false;
+        }
+        if (name.strip().length() != name.length()) {
+            return false;                  // 前後有空白：邊界切錯了
+        }
+        for (int i = 0; i < name.length(); i++) {
+            char c = name.charAt(i);
+            if (!Character.isLetterOrDigit(c) && c != '_' && c != ' ') {
+                return false;
+            }
+        }
+        return !entries.containsKey(name) && !speakers.containsKey(name);
     }
 
     /** 把所有連續空白（含換行）壓成一個空格。 */

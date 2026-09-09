@@ -570,3 +570,10 @@ tasks.register('runSelfNameChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.capture.SelfNamesTest'
 }
 tasks.named('check') { dependsOn 'runSelfNameChecks' }
+tasks.register('runNickFromCorpusChecks', JavaExec) {
+    group = 'verification'
+    description = '從語料反推玩家的暱稱'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.PlayerNameFromCorpusTest'
+}
+tasks.named('check') { dependsOn 'runNickFromCorpusChecks' }
