@@ -2,6 +2,7 @@ package com.wynnchayuan.capture;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -230,6 +231,14 @@ public final class CaptureStore {
                 .sorted(Map.Entry.comparingByKey())
                 .forEach(e -> events.addProperty(e.getKey(), e.getValue().get()));
         meta.add("events", events);
+        // 目前認得幾種「就是我」的寫法。暱稱認不出來的話 {u} 抽不掉，而畫面上
+        // 只看得到「這句沒翻」——把清單擺出來才分得出是沒學到還是學錯。
+        // 只寫<b>幾個</b>與長度，不寫內容：那是玩家自己的名字。見 SelfNames。
+        JsonArray selves = new JsonArray();
+        for (String name : SelfNames.all()) {
+            selves.add(name.length() + " 個字元");
+        }
+        meta.add("selfNames", selves);
         root.add("_meta", meta);
         // ★ 照收集順序寫，不是照雜湊順序。
         //
