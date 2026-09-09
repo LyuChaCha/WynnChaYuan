@@ -277,8 +277,9 @@ public final class PlayerDataFilter {
                 || CJK.matcher(text).find()) {
             return true;
         }
-        String self = localPlayerName();
-        if (self != null && !self.isBlank() && text.contains(self)) {
+        // 帳號名<b>與暱稱</b>都要擋。暱稱是玩家自己取的，跟公會名一樣不能進
+        // 共享語料——而它跟帳號名毫無關係，只比對帳號名等於沒擋。見 SelfNames。
+        if (SelfNames.find(text) != null) {
             return true;
         }
         return mentionsOnlinePlayer(text);

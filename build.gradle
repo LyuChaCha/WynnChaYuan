@@ -562,3 +562,11 @@ tasks.register('runGambitBlockChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.GambitBlockTest'
 }
 tasks.named('check') { dependsOn 'runGambitBlockChecks' }
+
+tasks.register('runSelfNameChecks', JavaExec) {
+    group = 'verification'
+    description = 'Wynncraft 的暱稱也要抽成 {u}'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.SelfNamesTest'
+}
+tasks.named('check') { dependsOn 'runSelfNameChecks' }
