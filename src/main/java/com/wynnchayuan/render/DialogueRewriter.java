@@ -717,6 +717,11 @@ public final class DialogueRewriter {
         // 一律查不到——側邊面板翻得出來、就地取代翻不出來，差別就在這一步。
         // 用的是跟語料同一支參數化程式，兩邊算出來的模板才會一樣。
         String raw = text.strip();
+        // 暱稱不在任何一個 Minecraft API 裡，所以反過來問語料。見
+        // TranslationStore#playerNameIn：認出來一次，往後每一句都自己抽成 {u}。
+        if (com.wynnchayuan.capture.SelfNames.find(raw) == null) {
+            com.wynnchayuan.capture.SelfNames.remember(store.playerNameIn(raw));
+        }
         LineParts parts = LineParts.of(StyledText.fromString(raw));
         // 遊戲有時候真的印出「Player」這四個字，而不是玩家的名字——新手任務
         // 就有好幾句。那幾句語料裡早就翻好了（鍵是 {u}），只是模板對不起來。
