@@ -133,16 +133,6 @@ public record LineParts(
      * {@code "Tailoring "} 變成 {@code "Tailoring"}，兩者的語料鍵不同。
      */
     /** 本機玩家的帳號名稱；取不到就回傳 null。 */
-    private static String localPlayerName() {
-        try {
-            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
-            String name = mc == null || mc.getUser() == null ? null : mc.getUser().getName();
-            return name == null || name.isBlank() ? null : name;
-        } catch (Throwable t) {
-            return null;
-        }
-    }
-
     private static String leadingGlyphs(String raw) {
         int n = 0;
         while (n < raw.length()) {
@@ -367,7 +357,11 @@ public record LineParts(
                                            List<Piece> places, List<Piece> numbers,
                                            List<Piece> users) {
         // 玩家名字最先抽掉。它可能長得像地名或含數字，先處理才不會被拆散。
-        String self = localPlayerName();
+        //
+        // 認的<b>不只是帳號名</b>：Wynncraft 的暱稱跟帳號名毫無關係，而對話框送來
+        // 的是暱稱。只認帳號名的話「Hey, 0 QUEST WYNNCHAYUAN!」裡的 0 會被數字
+        // 比對抽成 {~}，模板就再也對不上語料的「Hey, {u}!」。見 SelfNames。
+        String self = SelfNames.find(text);
         if (self != null) {
             int at = text.indexOf(self);
             if (at >= 0) {

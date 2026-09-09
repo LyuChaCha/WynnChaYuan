@@ -146,6 +146,10 @@ public final class TooltipPanel {
         List<StyledText> styled = new ArrayList<>(n);
         for (Component line : tooltip) {
             styled.add(StyledText.fromComponent(line));
+            // 角色選單的「- Nickname: X」是唯一把暱稱明擺出來的地方。學在這裡
+            // 而不是收集那一端，是因為收集可以被關掉，而暱稱認不出來會害
+            // <b>每一句</b>提到玩家名字的台詞都翻不出來。見 SelfNames。
+            com.wynnchayuan.capture.SelfNames.learn(line.getString());
         }
 
         // 第二欄靠左還是靠右，一行看不出來，得看整份 tooltip
