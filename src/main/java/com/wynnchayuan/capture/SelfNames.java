@@ -6,28 +6,28 @@ import net.minecraft.network.chat.Component;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 /**
  * 「這串字就是本機玩家」的所有寫法。
  *
- * <h2>為什麼不能只看帳號名</h2>
- * Wynncraft 有<b>暱稱</b>，而暱稱跟 Minecraft 帳號名毫無關係——它可以有空格、
- * 可以是數字開頭。對話框送過來的是暱稱：
+ * <h2>為什麼不能照原樣比對帳號名</h2>
+ * 使用者回報「有暱稱的時候翻譯就失效」，而它打到的是<b>每一句提到玩家名字的
+ * 台詞</b>。實機診斷檔挖出來的原因有兩個，兩個都不是「找不到名字」：
  *
- * <pre>
- *   Hey, 0 QUEST WYNNCHAYUAN! Are you alright in there?
- * </pre>
+ * <ol>
+ *   <li><b>伺服器把名字轉成大寫</b>。帳號名 {@code Wynnchayuan} 到了對話框是
+ *       {@code Hey, WYNNCHAYUAN!}、到了角色選單是 {@code 0 QUEST WYNNCHAYUAN}。
+ *       照原樣 {@code contains} 一律落空，模板留著英文名字，語料的
+ *       「{@code Hey, {u}! …}」永遠對不上。見 {@link #find}。</li>
+ *   <li><b>學到了假名字</b>。角色建立畫面有一行
+ *       {@code - Nickname: Not Defined}，照收就等於把「Not Defined」當成玩家的
+ *       名字。見 {@link #UNSET}。</li>
+ * </ol>
  *
- * <p>{@code LineParts} 只認得帳號名，於是 {@code {u}} 沒有命中，接著數字比對
- * 把開頭那個 {@code 0} 抽成 {@code {~}}，模板變成
- *
- * <pre>
- *   Hey, {~} QUEST WYNNCHAYUAN! Are you alright in there?
- * </pre>
- *
- * 而語料的鍵是「{@code Hey, {u}! …}」——永遠對不上。使用者回報「有暱稱的時候
- * 翻譯就失效」講的就是這個，而且它會打到<b>每一句提到玩家名字的台詞</b>。
+ * <p>Wynncraft 的<b>暱稱</b>另外還跟 Minecraft 帳號名毫無關係——它可以有空格、
+ * 可以是數字開頭，所以名字不能只從帳號名來。
  *
  * <h2>從哪裡知道暱稱</h2>
  * 三個來源都收，哪個真的出現在字裡就用哪個，不去猜哪一個「應該」是對的：
@@ -53,6 +53,16 @@ public final class SelfNames {
     /** 執行時學到的名字（角色選單的「- Nickname:」那一行）。 */
     private static final Set<String> learned = new LinkedHashSet<>();
 
+    /**
+     * 「還沒設定」的那幾種寫法。
+     *
+     * <p>角色<b>建立</b>畫面上就有一行「{@code - Nickname: Not Defined}」——照收
+     * 的話「Not Defined」會被當成玩家的名字，之後每一句出現這兩個字的英文都會被
+     * 抽成 {@code {u}}。實機診斷檔裡真的收到了這一筆。
+     */
+    private static final Set<String> UNSET =
+            Set.of("not defined", "none", "n/a", "unset", "not set", "-");
+
     private SelfNames() {}
 
     /**
@@ -70,7 +80,7 @@ public final class SelfNames {
             return;
         }
         String name = line.substring(at + tag.length()).strip();
-        if (name.length() >= MIN_NAME) {
+        if (name.length() >= MIN_NAME && !UNSET.contains(name.toLowerCase(Locale.ROOT))) {
             learned.add(name);
         }
     }
@@ -90,18 +100,54 @@ public final class SelfNames {
     /**
      * 這段字裡出現的、最長的那個「我」。
      *
-     * @return 實際出現的字串；沒有就回傳 {@code null}
+     * <h2>為什麼不分大小寫</h2>
+     * Wynncraft 的對話框與角色選單把玩家名字<b>整個轉成大寫</b>再送出來：帳號名
+     * {@code Wynnchayuan} 到了台詞裡是
+     *
+     * <pre>
+     *   Hey, WYNNCHAYUAN! Are you alright in there?
+     * </pre>
+     *
+     * <p>照原樣比對就永遠差那一步——實機診斷檔裡側邊面板抽得出 {@code {u}}、
+     * 對話框抽不出，差別只在大小寫。改成不分大小寫之後，兩邊算出來的模板才會
+     * 跟語料的「{@code Hey, {u}! …}」對得上。
+     *
+     * <p>比對到的位置<b>前後不能再接英數</b>：不分大小寫會讓短名字（三個字母的
+     * ID）掉進一般英文單字裡，例如 {@code Ash} 命中 {@code flash}。
+     *
+     * @return <b>照原文大小寫</b>的那一段（呼叫端還要拿它回頭切字串）；
+     *         沒有就回傳 {@code null}
      */
     public static String find(String text) {
         if (text == null || text.isEmpty()) {
             return null;
         }
         for (String name : all()) {
-            if (text.contains(name)) {
-                return name;
+            int at = indexOfWord(text, name);
+            if (at >= 0) {
+                return text.substring(at, at + name.length());
             }
         }
         return null;
+    }
+
+    /** 不分大小寫、且前後不接英數的位置；找不到回傳 {@code -1}。 */
+    private static int indexOfWord(String text, String name) {
+        int last = text.length() - name.length();
+        for (int at = 0; at <= last; at++) {
+            if (!text.regionMatches(true, at, name, 0, name.length())) {
+                continue;
+            }
+            if (at > 0 && Character.isLetterOrDigit(text.charAt(at - 1))) {
+                continue;
+            }
+            int after = at + name.length();
+            if (after < text.length() && Character.isLetterOrDigit(text.charAt(after))) {
+                continue;
+            }
+            return at;
+        }
+        return -1;
     }
 
     /**
