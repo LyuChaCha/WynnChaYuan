@@ -63,6 +63,17 @@ jobs:
       - name: 檢查譯文格式
         run: python tools/validate.py
 
+      # quest/ 底下是譯者改的工作檔，遊戲讀的是合併後的 quest-dialogue.json。
+      # 合併本來全交給 rebuild-quest-bundle——但那支開 PR 需要倉庫允許
+      # Actions 開 PR，沒開的話它只會把產生物推到 auto/rebuild-* 分支，
+      # 然後<b>刻意不變紅燈</b>。於是遠端堆了一百多個沒人合的分支，而譯者
+      # 在 quest/ 補的句子一句都沒進遊戲——實機回報「翻到一半變英文」查了
+      # 兩輪才發現是這個。
+      #
+      # 所以這裡再擋一次：合併檔沒跟上就紅燈，看得見才修得掉。
+      - name: 合併檔有沒有跟著 quest/ 更新
+        run: python tools/quest-bundle.py --check
+
       - name: 顯示翻譯進度
         if: always()
         run: python tools/progress.py
