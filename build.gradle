@@ -426,6 +426,14 @@ tasks.register('runMajorIdColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runMajorIdColourChecks' }
 
+tasks.register('runGlyphHugChecks', JavaExec) {
+    group = 'verification'
+    description = '緊貼 {#} 的標點不跟符號走顏色'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.GlyphHugTest'
+}
+tasks.named('check') { dependsOn 'runGlyphHugChecks' }
+
 
 tasks.register('runFlowedBlockChecks', JavaExec) {
     group = 'verification'
