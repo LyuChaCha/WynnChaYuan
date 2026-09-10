@@ -90,8 +90,17 @@ public final class SelfNames {
         remember(line.substring(at + tag.length()).strip());
     }
 
-    /** 一個猜出來的名字要有幾條<b>不同的鍵</b>撐腰才算數。見 {@link #propose}。 */
-    public static final int MIN_EVIDENCE = 2;
+    /**
+     * 一個猜出來的名字要有幾條<b>不同的鍵</b>撐腰才算數。見 {@link #propose}。
+     *
+     * <p>曾經是 2。當時語料反推只要求名字後面對上幾個字，打字中途誤認一堆，
+     * 只好靠「兩條鍵互相佐證」擋住。代價是名字要等<b>第二句</b>叫到你的台詞
+     * 才定案——而 King&apos;s Recruit 開頭那幾句全在叫名字，於是前面整段留在英文。
+     *
+     * <p>改成要求名字後面那一段<b>整段</b>吻合之後，誤認歸零（逐字模擬掃過
+     * 三萬條語料），一條鍵就夠可靠了。
+     */
+    public static final int MIN_EVIDENCE = 1;
 
     /** 猜出來的名字 → 夾出它的那些鍵。 */
     private static final Map<String, Set<String>> proposals = new LinkedHashMap<>();
@@ -99,16 +108,8 @@ public final class SelfNames {
     /**
      * 提出一個<b>用語料猜出來的</b>名字。
      *
-     * <h2>為什麼不能一票定案</h2>
-     * 語料裡有兩百多條以 {@code {u}} 開頭的鍵（「{@code {u}, you take the lead.}」），
-     * 於是畫面上任何一句「{@code 某某, you take the …}」都會被夾出開頭那個詞。
-     * 實機掃過整份語料，這樣的誤認有 29 種——{@code Tasim}（NPC 名字）、
-     * {@code Alright}、{@code Anyway}、{@code Well}⋯⋯ 認錯一個，往後每一句提到
-     * 它的台詞都會被抽成 {@code {u}}，整句翻不出來。
-     *
-     * <p>可是誤認有個共通點：<b>只有一條鍵撐腰</b>。NPC 名字要湊到兩條不同的
-     * {@code {u}} 鍵幾乎不可能，玩家的名字則是每一句叫到他的台詞都會夾出來。
-     * 所以要兩條不同的鍵說同一個答案才收。
+     * <p>提出來就會被記住（見 {@link #MIN_EVIDENCE}）。記著是哪一條鍵夾出來的，
+     * 是為了診斷檔分得出「這個名字是語料反推的還是別的來源」。
      *
      * @param name   夾出來的名字，可以是 {@code null}
      * @param source 夾出它的那一條鍵，用來數「幾條不同的鍵」
