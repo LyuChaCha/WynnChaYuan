@@ -251,8 +251,34 @@ public final class BlockLayout {
             minSpan = Math.min(minSpan, span);
             maxSpan = Math.max(maxSpan, span);
         }
-        // 縮排完全沒變化的話，這一塊「置中」與「靠左」畫出來一模一樣，當靠左最安全。
-        if (maxSpan <= 0 || maxLead - minLead <= TOLERANCE) {
+        // 縮排<b>與內容寬度</b>都沒變化的話，這一塊「置中」與「靠左」畫出來
+        // 一模一樣，當靠左最安全。
+        //
+        // 只看縮排不夠：置中的行，縮排差<b>是內容差的一半</b>，所以兩行內容只
+        // 差 9px 時縮排才差 4px——落進容差裡就被當成「沒變化」。洞穴完成那塊
+        // 的標題兩行就是這樣被判成靠左的：
+        //
+        // <pre>
+        //   縮排 92  內容 85   [Cave Completed]
+        //   縮排 96  內容 76   Grook's Nest
+        // </pre>
+        //
+        // 兩行的 span（內容 + 兩側留白）是 269 與 268——置中得不能再置中。
+        //
+        // 放寬不會放進誤判：縮排相同時 span 差就等於內容差，所以底下那道
+        // span 一致性檢查照樣擋得住靠左的清單。
+        // 一行縮排都沒有的話一律靠左：置中的行左邊一定留白，除非它自己就是
+        // 最寬的那行，而那種時候置中與靠左畫出來也一樣。
+        if (maxSpan <= 0 || maxLead <= TOLERANCE) {
+            return false;
+        }
+        int minContent = Integer.MAX_VALUE;
+        int maxContent = Integer.MIN_VALUE;
+        for (int i = start; i < end; i++) {
+            minContent = Math.min(minContent, content[i]);
+            maxContent = Math.max(maxContent, content[i]);
+        }
+        if (maxLead - minLead <= TOLERANCE && maxContent - minContent <= TOLERANCE) {
             return false;
         }
         // 越長的行縮排越小——這是置中的定義，而且它<b>不受量測誤差影響</b>：
