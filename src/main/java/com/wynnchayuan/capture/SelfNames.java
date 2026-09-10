@@ -5,8 +5,10 @@ import net.minecraft.network.chat.Component;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -86,6 +88,40 @@ public final class SelfNames {
             return;
         }
         remember(line.substring(at + tag.length()).strip());
+    }
+
+    /** 一個猜出來的名字要有幾條<b>不同的鍵</b>撐腰才算數。見 {@link #propose}。 */
+    public static final int MIN_EVIDENCE = 2;
+
+    /** 猜出來的名字 → 夾出它的那些鍵。 */
+    private static final Map<String, Set<String>> proposals = new LinkedHashMap<>();
+
+    /**
+     * 提出一個<b>用語料猜出來的</b>名字。
+     *
+     * <h2>為什麼不能一票定案</h2>
+     * 語料裡有兩百多條以 {@code {u}} 開頭的鍵（「{@code {u}, you take the lead.}」），
+     * 於是畫面上任何一句「{@code 某某, you take the …}」都會被夾出開頭那個詞。
+     * 實機掃過整份語料，這樣的誤認有 29 種——{@code Tasim}（NPC 名字）、
+     * {@code Alright}、{@code Anyway}、{@code Well}⋯⋯ 認錯一個，往後每一句提到
+     * 它的台詞都會被抽成 {@code {u}}，整句翻不出來。
+     *
+     * <p>可是誤認有個共通點：<b>只有一條鍵撐腰</b>。NPC 名字要湊到兩條不同的
+     * {@code {u}} 鍵幾乎不可能，玩家的名字則是每一句叫到他的台詞都會夾出來。
+     * 所以要兩條不同的鍵說同一個答案才收。
+     *
+     * @param name   夾出來的名字，可以是 {@code null}
+     * @param source 夾出它的那一條鍵，用來數「幾條不同的鍵」
+     */
+    public static void propose(String name, String source) {
+        if (name == null || source == null) {
+            return;
+        }
+        Set<String> keys = proposals.computeIfAbsent(name, n -> new LinkedHashSet<>());
+        keys.add(source);
+        if (keys.size() >= MIN_EVIDENCE) {
+            remember(name);
+        }
     }
 
     /**

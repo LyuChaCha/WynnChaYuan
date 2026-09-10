@@ -720,7 +720,10 @@ public final class DialogueRewriter {
         // 暱稱不在任何一個 Minecraft API 裡，所以反過來問語料。見
         // TranslationStore#playerNameIn：認出來一次，往後每一句都自己抽成 {u}。
         if (com.wynnchayuan.capture.SelfNames.find(raw) == null) {
-            com.wynnchayuan.capture.SelfNames.remember(store.playerNameIn(raw));
+            TranslationStore.Guess guess = store.playerNameIn(raw);
+            if (guess != null) {
+                com.wynnchayuan.capture.SelfNames.propose(guess.name(), guess.source());
+            }
         }
         LineParts parts = LineParts.of(StyledText.fromString(raw));
         // 遊戲有時候真的印出「Player」這四個字，而不是玩家的名字——新手任務

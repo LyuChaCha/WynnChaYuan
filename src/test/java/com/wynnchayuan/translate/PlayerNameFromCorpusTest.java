@@ -6,6 +6,12 @@ import com.wynntils.core.text.StyledText;
 import net.minecraft.network.chat.Component;
 
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 從語料反推玩家的暱稱。
@@ -46,17 +52,17 @@ public final class PlayerNameFromCorpusTest {
                               "zh_tw"));
 
         // ★ 整句：夾出來的要就是名字，不能多吃驚嘆號、也不能少吃字母
-        report("★ 整句夾得出暱稱（實際 " + store.playerNameIn(FULL) + "）",
-               NICK.equals(store.playerNameIn(FULL)));
+        report("★ 整句夾得出暱稱（實際 " + name(store, FULL) + "）",
+               NICK.equals(name(store, FULL)));
 
         // ★ 打到一半也要認得——對話框是一個字一個字長出來的
-        report("★ 打到一半也夾得出來（實際 " + store.playerNameIn(TYPING) + "）",
-               NICK.equals(store.playerNameIn(TYPING)));
+        report("★ 打到一半也夾得出來（實際 " + name(store, TYPING) + "）",
+               NICK.equals(name(store, TYPING)));
 
         // 名字後面才打出一個驚嘆號：邊界還看不準，寧可不認
         String early = "Hey, " + NICK + "!";
-        report("★ 證據不夠時不認（實際 " + store.playerNameIn(early) + "）",
-               store.playerNameIn(early) == null);
+        report("★ 證據不夠時不認（實際 " + name(store, early) + "）",
+               name(store, early) == null);
 
         // 沒提到玩家的句子不能生出名字
         report("沒提到玩家就回 null",
@@ -64,29 +70,63 @@ public final class PlayerNameFromCorpusTest {
                        == null);
         report("空字串不會爆", store.playerNameIn("") == null);
 
+        // ★ 實機那一句：打到「…out here, you're」時，語料裡某條 {u} 的鍵
+        // 會把半句台詞夾出來當名字。v1.99.172 真的收了它，於是往後每一句
+        // 含這幾個字的台詞都翻不出來。
+        String halfLine = "If you want to survive out here, you're";
+        report("★ 半句台詞不能被當成名字（實際 " + name(store, halfLine) + "）",
+               name(store, halfLine) == null);
+
         // ★ 整份語料掃一次：沒有 {u} 的句子一條都不能被夾出名字。
         //
         // 這一條看的是<b>誤認</b>。反推是在查表之前跑的，所以每一句台詞都會經過
         // 它；只要有一句被夾出「名字」，那個字就會被記成玩家，往後所有句子裡的
         // 它都變成 {u}——比翻不出來糟糕得多。
-        int wrong = 0;
-        String worst = null;
+        // ★ 整份語料<b>逐字模擬</b>掃一次：沒有 {u} 的句子一條都不能湊到兩票。
+        //
+        // 一定要逐字模擬，不能只拿整句去問。實機那個誤認就是打到
+        // 「…out here, you're」那一幀發生的，整句反而夾不出東西——只查整句的
+        // 版本掃過三萬條回報「零誤認」，隔天就在遊戲裡炸了。
+        Map<String, Set<String>> votes = new HashMap<>();
         for (String key : store.keys()) {
-            if (key.contains("{u}")) {
+            if (key.contains("{u}") || key.indexOf(10) >= 0) {
                 continue;                  // 這些本來就該夾得出東西
             }
-            String name = store.playerNameIn(key);
-            if (name != null) {
-                wrong++;
-                worst = key + " → " + name;
+            for (int i = 4; i <= key.length(); i++) {
+                TranslationStore.Guess guess = store.playerNameIn(key.substring(0, i));
+                if (guess != null) {
+                    votes.computeIfAbsent(guess.name(), n -> new HashSet<>())
+                         .add(guess.source());
+                    break;
+                }
             }
         }
-        report("★ 三萬條語料沒有一句被誤認（誤認 " + wrong + " 條"
-                       + (worst == null ? "" : "，例如 " + worst) + "）",
-               wrong == 0);
+        List<String> settled = new ArrayList<>();
+        for (Map.Entry<String, Set<String>> vote : votes.entrySet()) {
+            if (vote.getValue().size() >= SelfNames.MIN_EVIDENCE) {
+                settled.add(vote.getKey());
+            }
+        }
+        report("★ 三萬條語料逐字模擬，沒有一個假名字湊到兩票（單票猜測 "
+                       + votes.size() + " 種，兩票 " + settled + "）",
+               settled.isEmpty());
 
-        // ★ 認出來之後，模板要跟語料的鍵長得一樣
-        SelfNames.remember(store.playerNameIn(TYPING));
+        // ★ 一條鍵不夠：要兩條不同的鍵說同一個答案才收。
+        // NPC 名字湊不到兩條，玩家的名字則是每一句叫到他的台詞都夾得出來。
+        TranslationStore.Guess first = store.playerNameIn(TYPING);
+        SelfNames.propose(first.name(), first.source());
+        report("★ 只有一條鍵撐腰時不算數（實際 " + SelfNames.all() + "）",
+               !SelfNames.all().contains(NICK));
+
+        String second = "Woah! That sure did the trick, " + NICK + ". Good thinking!";
+        TranslationStore.Guess again = store.playerNameIn(second);
+        report("另一句台詞也夾得出來（實際 " + (again == null ? null : again.name()) + "）",
+               again != null && NICK.equals(again.name()));
+        report("而且是另一條鍵",
+               again != null && !again.source().equals(first.source()));
+        SelfNames.propose(again.name(), again.source());
+        report("★ 兩條鍵說同一個答案就收了（實際 " + SelfNames.all() + "）",
+               SelfNames.all().contains(NICK));
         String template = LineParts.of(StyledText.fromComponent(
                 Component.literal(FULL))).template();
         report("★ 之後模板抽成 {u}（實際 " + template + "）",
@@ -103,6 +143,12 @@ public final class PlayerNameFromCorpusTest {
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /** 夾出來的名字，沒有就是 {@code null}。 */
+    private static String name(TranslationStore store, String raw) {
+        TranslationStore.Guess guess = store.playerNameIn(raw);
+        return guess == null ? null : guess.name();
     }
 
     private static void report(String what, boolean ok) {
