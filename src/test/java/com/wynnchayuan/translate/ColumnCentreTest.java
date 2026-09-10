@@ -471,6 +471,24 @@ public final class ColumnCentreTest {
         check("負偏移後面有實字就不是疊字",
               !LineTranslator.overlayGap(pulled, 0, -12));
 
+        // ★ 幾像素的微調不是欄界。
+        //
+        // 洞穴完成的獎勵那一行是「- +1 {圖示}Unidentified Helmet」，圖示前有
+        // 一個 2px 的偏移純粹是為了對齊。把它數成第二欄，整塊訊息就被當成
+        // 兩欄面板：上面兩行獎勵各自被推開不同的距離，破折號對不齊，而這一行
+        // 自己又被補了欄距，圖示跟文字中間裂了一道縫。
+        check("★ 對齊圖示的 2px 微調不是欄界",
+              !LineTranslator.isColumnGap(
+                      new LineTranslator.Run(true, 2, s, SpaceOffset.encode(2))));
+        check("素材 tooltip 往回拉的 12px 是欄界",
+              LineTranslator.isColumnGap(
+                      new LineTranslator.Run(true, -12, s, SpaceOffset.encode(-12))));
+        check("信標選單的 69px 是欄界",
+              LineTranslator.isColumnGap(
+                      new LineTranslator.Run(true, 76, s, SpaceOffset.encode(76))));
+        check("實字不是欄界",
+              !LineTranslator.isColumnGap(new LineTranslator.Run(false, 0, s, "法師")));
+
         // 中間那一段的判斷不能看到更後面去
         check("只看緊接在後面那一段", !LineTranslator.textAfterGap(plate, 1));
     }
