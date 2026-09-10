@@ -11,7 +11,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -134,6 +136,7 @@ public final class TranslationStore {
         ordered.clear();
         byQuest.clear();
         playerKeys.clear();
+        wordCount.clear();
         fromWiki.clear();
         loadedFiles = 0;
 
@@ -300,6 +303,7 @@ public final class TranslationStore {
                 noteBlockSize(srcKey);
                 noteFlat(srcKey, dst.strip());
                 notePlayerKey(srcKey);
+                noteWords(srcKey);
                 noteUnwrapped(srcKey, dst.strip());
                 noteIndented(srcKey, dst.strip());
                 noteMarked(srcKey, dst.strip());
@@ -359,6 +363,7 @@ public final class TranslationStore {
                 noteBlockSize(key.strip());
                 noteFlat(key.strip(), v.getAsString().strip());
                 notePlayerKey(key.strip());
+                noteWords(key.strip());
                 noteUnwrapped(key.strip(), v.getAsString().strip());
                 noteIndented(key.strip(), v.getAsString().strip());
                 noteMarked(key.strip(), v.getAsString().strip());
@@ -385,10 +390,10 @@ public final class TranslationStore {
     }
 
     /** 名字前後至少要有這麼多字被打出來，才敢認。見 {@link #playerNameIn}。 */
-    private static final int NAME_EVIDENCE = 8;
+    private static final int NAME_EVIDENCE = 12;
 
     /** 認得出來的名字長度上限——暱稱可以有空格，但不會是一整句話。 */
-    private static final int MAX_PLAYER_NAME = 40;
+    private static final int MAX_PLAYER_NAME = 24;
 
     /**
      * 鍵裡帶著一個 {@code {u}} 的那些，拆成「名字前面」與「名字後面」兩段。
@@ -450,24 +455,32 @@ public final class TranslationStore {
         return java.util.Collections.unmodifiableSet(entries.keySet());
     }
 
-    public String playerNameIn(String raw) {
+    public Guess playerNameIn(String raw) {
         if (raw == null || raw.isEmpty()) {
             return null;
         }
-        String found = null;
+        Guess found = null;
         for (String[] key : playerKeys) {
             String name = nameBetween(raw, key[0], key[1]);
             if (name == null) {
                 continue;
             }
             if (found == null) {
-                found = name;
-            } else if (!found.equals(name)) {
+                found = new Guess(name, key[0] + '\u0000' + key[1]);
+            } else if (!found.name().equals(name)) {
                 return null;               // 兩條鍵各說各話，不猜
             }
         }
         return found;
     }
+
+    /**
+     * 一次猜測：夾出來的名字，以及夾出它的<b>是哪一條鍵</b>。
+     *
+     * <p>來源要記著，因為單獨一條鍵不足以定案——見
+     * {@link com.wynnchayuan.capture.SelfNames#propose}。
+     */
+    public record Guess(String name, String source) {}
 
     /** {@code raw} 去掉開頭的 {@code pre}、結尾對得上 {@code post} 之後夾著的那一段。 */
     private String nameBetween(String raw, String pre, String post) {
@@ -483,12 +496,52 @@ public final class TranslationStore {
                 continue;
             }
             String name = rest.substring(0, rest.length() - k);
+            // 名字不會佔掉半句話。夾出來的東西比後面對上的字還長，
+            // 幾乎都是「整句英文剛好尾巴撞上某條 {u} 的鍵」。
+            if (name.length() > k) {
+                return null;
+            }
             return plausibleName(name) ? name : null;
         }
         return null;
     }
 
-    /** 看起來像名字嗎——長度、字元，而且不是語料裡本來就有的一條。 */
+    /** 名字最多幾個詞。暱稱可以有空格，但不會是一句話。 */
+    private static final int MAX_NAME_WORDS = 3;
+
+    /**
+     * 英文原文裡每個詞出現過幾次。<b>語料自己就是一本英文字典。</b>
+     *
+     * <h2>為什麼需要</h2>
+     * 逐字打字時 {@code post} 只要對上 {@value #NAME_EVIDENCE} 個字就算數，
+     * 於是打到「{@code If you want to survive out here, you're}」那一幀，語料裡
+     * 某條「{@code {u}, you're…}」的鍵夾出了<b>半句台詞</b>當名字。實機診斷檔
+     * 裡 {@code selfNames} 真的躺著那 31 個字元，之後每一句含這幾個字的台詞
+     * 都被抽成 {@code {u}}，模板全對不上——畫面上就是「翻到一半忽然變英文」。
+     *
+     * <p>短的版本一樣危險：語料有兩百多條以 {@code {u}} 開頭的鍵，於是
+     * 「{@code Well, I guess…}」「{@code Alright, let's…}」開頭那個詞都會被夾
+     * 出來。手寫一份虛詞表擋不完——{@code Exploring}、{@code Psst}、
+     * {@code Anyway}、NPC 的 {@code Tasim}⋯⋯ 每補一個就多一個漏網的。
+     *
+     * <p>所以換個問法：<b>這個詞在三萬條英文原文裡出現過嗎</b>。玩家的名字不會
+     * 出現在語料裡，普通英文詞與 NPC 名字則到處都是。這份字典隨語料自己長大，
+     * 不必維護，換一種語言也照樣成立。
+     */
+    private final Map<String, Integer> wordCount = new ConcurrentHashMap<>();
+
+    /** 在語料裡出現這麼多次以上，就當成「英文本來就有的詞」，不是名字。 */
+    private static final int COMMON_WORD = 2;
+
+    private void noteWords(String key) {
+        for (String word : key.split("[^A-Za-z0-9_]+")) {
+            if (word.length() >= 2) {
+                wordCount.merge(word.toLowerCase(Locale.ROOT), 1, Integer::sum);
+            }
+        }
+    }
+
+    /** 看起來像名字嗎——長度、字元、詞數，而且不是語料裡本來就有的字。 */
     private boolean plausibleName(String name) {
         if (name.length() < 3 || name.length() > MAX_PLAYER_NAME) {
             return false;
@@ -501,6 +554,22 @@ public final class TranslationStore {
             if (!Character.isLetterOrDigit(c) && c != '_' && c != ' ') {
                 return false;
             }
+        }
+        String[] words = name.split(" ");
+        if (words.length > MAX_NAME_WORDS) {
+            return false;
+        }
+        // 至少要有一個詞是語料裡沒有的。名字整串都是英文本來就有的詞，
+        // 那夾出來的就是一句話，不是名字。
+        boolean own = false;
+        for (String word : words) {
+            if (wordCount.getOrDefault(word.toLowerCase(Locale.ROOT), 0) < COMMON_WORD) {
+                own = true;
+                break;
+            }
+        }
+        if (!own) {
+            return false;
         }
         return !entries.containsKey(name) && !speakers.containsKey(name);
     }
