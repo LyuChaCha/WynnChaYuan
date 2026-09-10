@@ -55,9 +55,9 @@ public final class PlayerNameFromCorpusTest {
         report("★ 整句夾得出暱稱（實際 " + name(store, FULL) + "）",
                NICK.equals(name(store, FULL)));
 
-        // ★ 打到一半也要認得——對話框是一個字一個字長出來的
-        report("★ 打到一半也夾得出來（實際 " + name(store, TYPING) + "）",
-               NICK.equals(name(store, TYPING)));
+        // ★ 打到一半先不認：名字後面那一段還沒打完，看起來像什麼都有可能
+        report("★ 打到一半先不認（實際 " + name(store, TYPING) + "）",
+               name(store, TYPING) == null);
 
         // 名字後面才打出一個驚嘆號：邊界還看不準，寧可不認
         String early = "Hey, " + NICK + "!";
@@ -107,26 +107,25 @@ public final class PlayerNameFromCorpusTest {
                 settled.add(vote.getKey());
             }
         }
-        report("★ 三萬條語料逐字模擬，沒有一個假名字湊到兩票（單票猜測 "
-                       + votes.size() + " 種，兩票 " + settled + "）",
+        report("★ 三萬條語料逐字模擬，沒有一個假名字被收（單票猜測 "
+                       + votes.size() + " 種，被收 " + settled + "）",
                settled.isEmpty());
 
         // ★ 一條鍵不夠：要兩條不同的鍵說同一個答案才收。
         // NPC 名字湊不到兩條，玩家的名字則是每一句叫到他的台詞都夾得出來。
-        TranslationStore.Guess first = store.playerNameIn(TYPING);
+        // ★ 整句吻合就夠了：玩家第一次被叫到名字就認得出來，
+        // 不必等第二句台詞——King&apos;s Recruit 開頭那幾句全是叫名字的，
+        // 拖到第二句才定案，前面就整段留在英文。
+        TranslationStore.Guess first = store.playerNameIn(FULL);
+        report("整句夾得出來", first != null && NICK.equals(first.name()));
         SelfNames.propose(first.name(), first.source());
-        report("★ 只有一條鍵撐腰時不算數（實際 " + SelfNames.all() + "）",
-               !SelfNames.all().contains(NICK));
+        report("★ 一句就收了（實際 " + SelfNames.all() + "）",
+               SelfNames.all().contains(NICK));
 
         String second = "Woah! That sure did the trick, " + NICK + ". Good thinking!";
         TranslationStore.Guess again = store.playerNameIn(second);
-        report("另一句台詞也夾得出來（實際 " + (again == null ? null : again.name()) + "）",
+        report("別句台詞也夾得出來（實際 " + (again == null ? null : again.name()) + "）",
                again != null && NICK.equals(again.name()));
-        report("而且是另一條鍵",
-               again != null && !again.source().equals(first.source()));
-        SelfNames.propose(again.name(), again.source());
-        report("★ 兩條鍵說同一個答案就收了（實際 " + SelfNames.all() + "）",
-               SelfNames.all().contains(NICK));
         String template = LineParts.of(StyledText.fromComponent(
                 Component.literal(FULL))).template();
         report("★ 之後模板抽成 {u}（實際 " + template + "）",
