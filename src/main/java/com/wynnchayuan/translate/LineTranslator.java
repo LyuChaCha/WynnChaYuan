@@ -3218,7 +3218,7 @@ public final class LineTranslator {
         int[] px = new int[spaces];
         int index = 0;
         for (Run r : made) {
-            if (r.space()) {
+            if (isColumnGap(r)) {
                 px[index++] = r.px();
             }
         }
@@ -3499,7 +3499,7 @@ public final class LineTranslator {
         int seen = 0;
         boolean after = false;
         for (Run r : runs) {
-            if (r.space()) {
+            if (isColumnGap(r)) {
                 if (after) {
                     return false;          // 走到下一個間隔了，這一段沒有實字
                 }
@@ -3526,7 +3526,7 @@ public final class LineTranslator {
         int[] out = new int[countSpaces(runs)];
         int n = 0;
         for (Run r : runs) {
-            if (r.space()) {
+            if (isColumnGap(r)) {
                 out[n++] = r.px();
             }
         }
@@ -3536,7 +3536,7 @@ public final class LineTranslator {
     static boolean labelledRun(List<Run> runs, int gap) {
         int seen = 0;
         for (Run r : runs) {
-            if (r.space()) {
+            if (isColumnGap(r)) {
                 if (seen++ == gap) {
                     return false;              // 走到這個間隔了，前面沒有標籤
                 }
@@ -3611,10 +3611,35 @@ public final class LineTranslator {
         return split ? out : runs;
     }
 
+    /**
+     * 這個間隔是<b>欄與欄之間</b>的嗎。
+     *
+     * <h2>為什麼要有門檻</h2>
+     * 材質包用寬度偏移做兩件完全不同的事：一種是把兩欄推開（獵殺信標的選單
+     * 是 69px），另一種是把圖示往旁邊挪幾像素對齊文字。兩種都是偏移字元，
+     * 分不出來的話後者也會被當成欄界——洞穴完成的獎勵那一行就是這樣：
+     *
+     * <pre>
+     *   - +1 {@literal 🔒}Unidentified Helmet
+     * </pre>
+     *
+     * 圖示前那個 2px 的微調被數成第二欄，整塊訊息於是被當成「兩欄面板」。
+     * 面板裡的單欄行會照原文的中心擺，於是上面兩行獎勵各自被推開不同的距離，
+     * 破折號對不齊；而這一行自己又被補了 17px 的欄距，圖示跟文字中間裂了一道縫。
+     *
+     * <p>真正的欄界動輒數十像素（信標是 69px，素材 tooltip 把數值往回拉 12px），
+     * 對齊圖示的微調則是個位數。以八像素為界——大約一個半字元寬。
+     */
+    private static final int MIN_GAP_PX = 8;
+
+    static boolean isColumnGap(Run r) {
+        return r.space() && Math.abs(r.px()) >= MIN_GAP_PX;
+    }
+
     private static int countSpaces(List<Run> runs) {
         int n = 0;
         for (Run r : runs) {
-            if (r.space()) {
+            if (isColumnGap(r)) {
                 n++;
             }
         }
@@ -3626,7 +3651,7 @@ public final class LineTranslator {
         List<Integer> out = new ArrayList<>();
         int width = 0;
         for (Run r : runs) {
-            if (r.space()) {
+            if (isColumnGap(r)) {
                 out.add(width);
                 width = 0;
             } else {
@@ -3650,7 +3675,7 @@ public final class LineTranslator {
         MutableComponent out = Component.empty();
         int index = 0;
         for (Run r : runs) {
-            if (!r.space()) {
+            if (!isColumnGap(r)) {
                 out.append(literal(r.text(), r.style()));
                 continue;
             }

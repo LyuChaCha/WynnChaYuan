@@ -76,6 +76,25 @@ public final class BlockLayoutTest {
                 "its potential."), WIDTH);
         check("偏移吻合置中算式 -> 置中", sealed[0] && sealed[1] && sealed[2]);
 
+        // ★ 洞穴完成的獎勵訊息：上面兩行是置中的標題，下面三行是靠左的清單。
+        //
+        // 標題兩行的縮排只差 6px（內容差 12px，置中的縮排差正好是它的一半），
+        // 先前那道「縮排沒變化就當靠左」把它們判成靠左了——於是它們只好靠
+        // 「整塊被誤判成兩欄面板」才被推到中間，而同一個誤判又把下面三行各自
+        // 推開不同的距離，破折號對不齊。
+        List<Component> cave = new java.util.ArrayList<>(List.of(
+                line(92, "xxxxxxxxxxxxxx"),          // [Cave Completed]
+                line(98, "xxxxxxxxxxxx"),            // Grook's Nest
+                Component.literal(" "),
+                line(44, "xxxxxxxxx"),               // - Rewards:
+                line(44, "xxxxxxxxxxxxxxxxxxx"),     // - +5 Experience Points
+                line(44, "xxxxxxxxxxxxxxxxxxxxx"))); // - +1 Unidentified Helmet
+        boolean[] flags = BlockLayout.centered(cave, WIDTH);
+        check("★ 置中的標題兩行：縮排差只有內容差的一半也要認得出來",
+              flags[0] && flags[1]);
+        check("★ 底下縮排相同的清單三行仍然靠左",
+              !flags[3] && !flags[4] && !flags[5]);
+
         // 材料的配方清單：整塊靠左，縮排都是 0
         boolean[] recipes = BlockLayout.centered(List.of(
                 line(0, "Crafting Level"),
@@ -102,9 +121,9 @@ public final class BlockLayoutTest {
                 line(0, "Duration"),
                 Component.literal(" ")));
         mixed.addAll(centredBlock("This item's power has been sealed,", "its potential."));
-        boolean[] flags = BlockLayout.centered(mixed, WIDTH);
-        check("空行前的靠左段不受影響", !flags[0] && !flags[1]);
-        check("空行後的置中段判得出來", flags[3] && flags[4]);
+        boolean[] mixedFlags = BlockLayout.centered(mixed, WIDTH);
+        check("空行前的靠左段不受影響", !mixedFlags[0] && !mixedFlags[1]);
+        check("空行後的置中段判得出來", mixedFlags[3] && mixedFlags[4]);
 
         // tooltip 的分隔多半不是空行，而是由排版字元組成的分隔線。
         // 只看 isBlank 的話整份 tooltip 會被當成同一段，置中的區塊
