@@ -4865,7 +4865,7 @@ public final class LineTranslator {
                         // 符號連同原樣式（含自訂字型）整段搬回，這是它顯示得出來的唯一方式
                         LineParts.Piece piece = glyphs.get(glyph++);
                         line.append(Component.literal(piece.text()).withStyle(piece.style()));
-                        justFilled = piece.style();
+                        justFilled = null;    // 見 #appendHugging：標點不跟符號走
                         afterNumber = false;
                     }
                     case PLACE -> {
@@ -4959,7 +4959,7 @@ public final class LineTranslator {
                                    List<LineParts.Piece> numbers, List<LineParts.Piece> users,
                                    int glyph, int place, int number, int user) {
         return switch (next.kind()) {
-            case GLYPH -> at(glyphs, glyph);
+            case GLYPH -> null;            // 見 #appendHugging：標點不跟符號走
             case PLACE -> at(places, place);
             case NUMBER -> at(numbers, next.index() > 0 ? next.index() - 1 : number);
             case USER -> at(users, user);
@@ -4987,6 +4987,17 @@ public final class LineTranslator {
      *
      * <p>圓括號不算在內：它們是註解的界線（見 {@link #appendNoting}），
      * 交給註解那一套處理，這裡動它只會把註解的顏色弄亂。
+     *
+     * <h2>{@code {#}} 不算「前一個佔位符」</h2>
+     * 黏著的前提是「原文裡那個標點跟佔位符同屬一個片段」——數值、地名、玩家名
+     * 都是從一段文字裡挖出來的，挖出來之前確實跟旁邊的標點同色。符號不是：
+     * {@code GlyphSplitter} 一定會把它切成自己的片段，所以標點<b>從來沒有</b>
+     * 跟符號同過一段，黏過去只是把符號那一段的顏色平白搬給標點。
+     *
+     * <p>實機回報的是任務完成的橫幅：原文 {@code 󐁴§6[Quest Completed]} 整串金色，
+     * 但那個排版符號自己不帶顏色（{@code §6} 在它<b>後面</b>才開始）。譯文
+     * {@code {#}[任務完成]} 的左中括號緊貼著 {@code {#}}，於是拿到符號那一段的
+     * 白色，畫面上就是「白色的 [ 配金色的字」。
      */
     /**
      * 整段都是標點時，那段標點該跟<b>後面</b>的佔位符走嗎。
