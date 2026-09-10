@@ -142,7 +142,33 @@ public final class SelfNames {
         }
     }
 
-    /** 目前認得的所有寫法，長的排前面。診斷檔會印這一份。 */
+    /**
+     * 診斷用：每一個名字是<b>哪裡來的</b>，以及它有多長。
+     *
+     * <p>不印名字本身——那是玩家的名字，不能進診斷檔。可是只印長度也查不動：
+     * 實機回報第四輪時 {@code selfNames} 是「13 個字元、11 個字元」，光看這個
+     * 分不出 13 那筆是帳號名、暱稱、還是語料反推出來的，得回頭翻別的診斷檔對
+     * 字數才猜得到。標上來源就一眼看得出該去查哪一條路。
+     */
+    public static List<String> describe() {
+        List<String> out = new ArrayList<>();
+        for (String name : learned) {
+            out.add((proposals.containsKey(name) ? "語料反推 " : "角色選單 ")
+                    + name.length() + " 個字元");
+        }
+        String account = accountName();
+        if (account != null && account.length() >= MIN_NAME) {
+            out.add("帳號名 " + account.length() + " 個字元");
+        }
+        for (String shown : displayNames()) {
+            for (String variant : suffixes(shown)) {
+                out.add("顯示名稱 " + variant.length() + " 個字元");
+            }
+        }
+        return out;
+    }
+
+    /** 目前認得的所有寫法，長的排前面。 */
     public static List<String> all() {
         Set<String> out = new LinkedHashSet<>(learned);
         addName(out, accountName());
