@@ -488,13 +488,15 @@ public final class TranslationStore {
             return null;
         }
         String rest = raw.substring(pre.length());
-        // 打字是從左往右的，所以 rest 一定是「名字 + post 的前幾個字」。
-        // 取最長的那個 k，夾出來的名字才不會多吃到後面的字。
-        int most = Math.min(rest.length(), post.length());
-        for (int k = most; k >= NAME_EVIDENCE; k--) {
-            if (!rest.regionMatches(rest.length() - k, post, 0, k)) {
-                continue;
-            }
+        // 名字後面那一段要<b>整段</b>對上，不能只對上前幾個字。
+        //
+        // 先前為了「打字打到一半就認出名字」而放寬成只要對上
+        // {@value #NAME_EVIDENCE} 個字，結果整份語料逐字模擬掃出 29 種誤認
+        // ——都發生在打字中途，那時後面還沒打完，看起來像什麼都有可能。
+        // 要求整段對上就等於「整句話完全吻合語料，只差名字那一段」，
+        // 證據強得多，也就不必再靠「兩條鍵互相佐證」把定案時機往後拖。
+        int k = post.length();
+        if (rest.length() > k && rest.regionMatches(rest.length() - k, post, 0, k)) {
             String name = rest.substring(0, rest.length() - k);
             // 名字不會佔掉半句話。夾出來的東西比後面對上的字還長，
             // 幾乎都是「整句英文剛好尾巴撞上某條 {u} 的鍵」。
