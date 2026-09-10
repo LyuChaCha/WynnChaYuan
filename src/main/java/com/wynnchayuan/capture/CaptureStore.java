@@ -235,8 +235,8 @@ public final class CaptureStore {
         // 只看得到「這句沒翻」——把清單擺出來才分得出是沒學到還是學錯。
         // 只寫<b>幾個</b>與長度，不寫內容：那是玩家自己的名字。見 SelfNames。
         JsonArray selves = new JsonArray();
-        for (String name : SelfNames.all()) {
-            selves.add(name.length() + " 個字元");
+        for (String where : SelfNames.describe()) {
+            selves.add(where);
         }
         meta.add("selfNames", selves);
         root.add("_meta", meta);
