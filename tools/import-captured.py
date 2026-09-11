@@ -44,6 +44,10 @@ TARGET = {
     "chat": "misc.json",
     "quest": "quest.json",
     "item": "misc.json",
+    # 收的當下就認不出歸屬的（見 CaptureStore#classify）。單獨一個檔，
+    # 不要塞進 misc——misc 是「雜項介面字串」，不是「不知道」。
+    # 混在一起之後，沒有人分得出哪些是真的該翻、哪些是還沒查清楚的。
+    "unknown": "unsorted.json",
 }
 
 # 劇情來源資料夾。祕密發現不是任務，但走同一條對話路徑，所以形狀一樣。
@@ -84,6 +88,11 @@ def quest_of(entry: dict) -> tuple[str, str] | None:
     收的當下追蹤器上寫著什麼就是什麼，所以這是線索不是權威——玩家可能追著 A
     卻順手跟 B 的 NPC 講話。分錯了頂多是排序不理想，不影響譯文本身。
     """
+    # 模組現在會把這兩件事各寫一欄（見 CaptureStore#flush）。有就用，
+    # 不必再去解 ctx——解字串是舊版的做法，兩條路留著遲早會分岔。
+    quest = (entry.get("quest") or "").strip()
+    if quest:
+        return quest, (entry.get("speaker") or "").strip()
     match = CTX.match(entry.get("ctx", ""))
     if not match:
         return None

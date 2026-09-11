@@ -492,6 +492,14 @@ tasks.register('runCorpusShareChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runCorpusShareChecks' }
 
+tasks.register('runCapturedShapeChecks', JavaExec) {
+    group = 'verification'
+    description = 'captured.json 的分類看得懂嗎'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.CapturedShapeTest'
+}
+tasks.named('check') { dependsOn 'runCapturedShapeChecks' }
+
 tasks.register('runLanguagePickChecks', JavaExec) {
     group = 'verification'
     description = '挑哪一種語言的譯文，以及那個設定存不存得住'
