@@ -32,6 +32,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 GLOSSARY_FILE = ROOT / "GLOSSARY.md"
+
+# 對照表是哪一種語言的。見 check_one 裡那段說明。
+GLOSSARY_LANG = "zh_tw"
 TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw"
 # 所有語言的根。譯文按語言分層之後，檢查要<b>每一種語言各跑一輪</b>——
 # 尤其是「同一個原文兩種譯法」那條：zh_tw 與 ja_jp 的同一句話本來就會
@@ -373,10 +376,14 @@ def check_pair(path: str, key: str, src: str, dst: str,
 
     # 整條就是對照表裡的詞，卻翻成別的說法 —— 同一個詞兩種譯法，
     # 玩家會以為是兩個不同的東西
-    # GLOSSARY.md 是<b>中文</b>的對照表。拿它去比西班牙文，每一條都會被指控
-    # 「與對照表不一致」——那不是提醒，那是把檢查變成雜訊。
+    # GLOSSARY.md 是<b>繁體中文</b>的對照表。拿它去比別的語言，每一條都會被
+    # 指控「與對照表不一致」——那不是提醒，那是把檢查變成雜訊。
+    #
+    # 簡體中文也不行，而且原因跟西班牙文一樣實在：簡體不是繁體的字元轉換，
+    # 用詞本來就不同（資訊／信息、回復／恢复、滑鼠／鼠标）。拿繁體的對照表
+    # 去比，等於要求簡體寫成繁體的說法——那正好是這份翻譯要避免的事。
     # 其他語言要有自己的對照表時再說。
-    agreed = glossary.get(src.strip()) if lang.startswith("zh") else None
+    agreed = glossary.get(src.strip()) if lang == GLOSSARY_LANG else None
     if agreed and agreed != dst.strip():
         out.append(Problem("warn", path, key,
                            f"與對照表不一致：GLOSSARY.md 寫「{agreed}」。"

@@ -283,14 +283,44 @@ def write_language_manifest() -> list[str]:
     shipped.sort()
     (root / "_languages.json").write_text(
         json.dumps({
-            "_note": "打包了哪些語言。由 tools/update-docs.py 產生，不要手改。"
+            "_note": "打包了哪些語言，以及各語言有哪些檔案一條都還沒翻。"
+                     "由 tools/update-docs.py 產生，不要手改。"
                      "一條譯文都沒有的語言不會列進來，也不會打進 jar——"
                      "空骨架是給翻譯的人用的，玩家不需要多下載一份原文。"
+                     "empty 裡的檔案同理：語言剛開始翻的時候，整包幾乎都是"
+                     "空的，照樣打進 jar 等於讓每個玩家多下載兩 MB 的英文原文。"
                      "新增一種語言請跑 tools/new-language.py。",
             "languages": shipped,
+            "empty": {name: untranslated_files(root / name)
+                      for name in shipped},
         }, ensure_ascii=False, indent=1) + chr(10),
         encoding="utf-8")
     return shipped
+
+
+def untranslated_files(base: Path) -> list[str]:
+    """這個語言底下，哪些檔案一條譯文都沒有。
+
+    <h2>為什麼要一個一個檔算</h2>
+    「有沒有譯文」原本是<b>整個語言</b>一起判斷的：只要有一條就整包打進 jar。
+    簡體中文剛開始翻的時候踩到這個——介面標籤翻好了 458 條，於是連同兩萬兩千
+    條全空的任務對話一起被打包，jar 從 6.5MB 變成 8.6MB。多出來的兩 MB 裡
+    一個字都不會顯示，它們全是英文原文。
+
+    <p>照檔案算就沒這個問題：翻好的檔案跟著走，還沒開始的留在倉庫裡給譯者用。
+    玩家那邊也不會少什麼——譯文本來就會在啟動時從 GitHub 同步（見 RemoteSync），
+    打進 jar 的那一份只是離線時的墊底。
+
+    <p>回傳的是相對於語言資料夾的路徑，例如 ``quest/king-s-recruit.json``。
+    """
+    empty = []
+    for path in sorted(base.rglob("*.json")):
+        if path.name.startswith("_"):
+            continue                      # _index.json 之類的一定要在
+        done, total = count([path])
+        if total and not done:
+            empty.append(path.relative_to(base).as_posix())
+    return empty
 
 
 def main(argv: list[str]) -> int:

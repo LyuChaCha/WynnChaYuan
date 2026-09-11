@@ -122,13 +122,13 @@ already tells the project what players actually run into.
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
 | `zh_tw` 繁體中文 | ██████████ 98.9% | 29,119 / 29,447 |
+| `zh_cn` 简体中文 | ░░░░░░░░░░ 1.1% | 288 / 26,830 |
 | `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 | `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 | `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 | `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 | `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
-| `zh_cn` 简体中文 | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
@@ -317,13 +317,13 @@ Wynncraft's; this mod only displays them.
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
 | `zh_tw` 繁體中文 | ██████████ 98.9% | 29,119 / 29,447 |
+| `zh_cn` 简体中文 | ░░░░░░░░░░ 1.1% | 288 / 26,830 |
 | `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 | `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 | `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 | `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 | `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
-| `zh_cn` 简体中文 | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
