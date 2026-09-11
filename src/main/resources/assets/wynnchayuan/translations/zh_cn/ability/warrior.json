@@ -78,7 +78,7 @@
   },
   "ability-warrior#0005": {
    "src": "Improve your Main Attack's damage\nand range when using a spear.",
-   "dst": "使用长矛时，提高你普攻的\n伤害与攻击距离。",
+   "dst": "使用长矛时，提高你{c2}普攻{/}的\n伤害与攻击距离。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -950,7 +950,7 @@
   },
   "ability-warrior#0069": {
    "src": "You gain a broken mantle whenever\nMantle of the Bovemists loses a charge.",
-   "dst": "Mantle of the Bovemists 每失去一层，\n你就获得一片破碎的护罩。",
+   "dst": "Mantle of the Bovemists 每失去一层，\n{c1}你就获得一片{c2}破碎的护罩{/}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1870,7 +1870,7 @@
   },
   "ability-warrior#0137": {
    "src": "Increases the damage and mana cost\nof Uppercut.",
-   "dst": "提高 Uppercut 的伤害，\n法力消耗也一并提高。",
+   "dst": "提高 Uppercut 的伤害，\n{c1}法力消耗也一并提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2200,7 +2200,7 @@
   },
   "ability-warrior#0161": {
    "src": "Bash will buff positive IDs\nof yourself and allies.\n(Max Mana, XP Bonus, Loot Bonus, Loot Quality,\nGather XP Bonus, and Gather Speed Bonus\nare excluded)",
-   "dst": "Bash 会强化你与队友身上的\n正面词条。\n(最大法力、经验加成、战利品加成、战利品品质、\n采集经验加成与采集速度加成\n不在其中)",
+   "dst": "Bash {c2}会强化你与队友身上的\n正面词条。\n{c3}(不含：最大法力、经验加成、\n战利品加成、战利品品质、\n采集经验加成与采集速度加成)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2337,7 +2337,7 @@
   },
   "ability-warrior#0171": {
    "src": "Sacred Surge grants +{~} Holy Power ✧\nfor every spell or ability triggered\nand deals increased damage.",
-   "dst": "Sacred Surge 每触发一次技能或能力\n就多给 +{~} 点神圣能量 ✧，\n造成的伤害也提高。",
+   "dst": "{c2}每触发一次技能或能力时，\n{/}Sacred Surge 多给 +{~} 点神圣能量 ✧，\n造成的伤害也提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2688,7 +2688,7 @@
   },
   "ability-warrior#0197": {
    "src": "Activating Blood Pact adds a blood swipe\nto your next Main Attack. (Max {~})\n(Damage is dealt as Main Attack Damage)",
-   "dst": "触发 Blood Pact 会在你的下一次普攻\n附加一道血斩。(上限 {~})\n(伤害按普攻伤害结算)",
+   "dst": "触发 Blood Pact 会在你的下一次普攻\n附加一道血斩。{c1}(上限 {~})\n{/}(伤害按普攻伤害结算)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3124,7 +3124,7 @@
   },
   "ability-warrior#0229": {
    "src": "Casting F switches them\nbetween Spell and Main Attack form.",
-   "dst": "按 F 可以在法术形态与\n普攻形态之间切换。",
+   "dst": "按下{c2} F {/}键即可在法术形态与普攻形态之间切换。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3139,7 +3139,7 @@
   },
   "ability-warrior#0230": {
    "src": "In Spell form, casting a spell performs\nan attack. In Main Attack form,\nMain Attacks perform an attack instead.",
-   "dst": "法术形态下，施放技能会发动一次攻击；\n普攻形态下，则由普攻发动攻击。",
+   "dst": "法术形态下，施放技能会发动一次追加攻击。\n{c2}普攻{/}形态下，\n则改由普攻发动追加攻击。",
    "role": "desc",
    "kind": "block",
    "ctx": [
