@@ -233,6 +233,11 @@ public final class CollectorConfig {
      *
      * <p>空字串表示「跟著遊戲語言走」——日文玩家裝好就是日文，不必先來翻設定。
      * jar 裡沒有對應的語言就退回繁體中文。見 {@code Languages#pick}。
+     *
+     * <p>寫死一個語言的用途是<b>校稿</b>：譯者的 Minecraft 是繁中，但要看
+     * 簡中翻得對不對，總不能為了看一眼就把整個遊戲切成簡體再切回來。
+     * 指名之後 {@code Languages#pick} 不再看遊戲設定，也不再看 jar 裡打包了
+     * 哪幾種——譯文本來就是啟動時從 GitHub 抓的，jar 裡有沒有不影響。
      */
     private String language = "";
 
@@ -844,6 +849,9 @@ public final class CollectorConfig {
             if (o.has("notifiedVersion")) {
                 notifiedVersion = o.get("notifiedVersion").getAsString();
             }
+            if (o.has("language")) {
+                language = o.get("language").getAsString().trim();
+            }
             if (o.has("debugDumps")) {
                 debugDumps = o.get("debugDumps").getAsBoolean();
             }
@@ -925,6 +933,7 @@ public final class CollectorConfig {
             o.addProperty("collect", collect);
             o.addProperty("shareCaptures", shareCaptures);
             o.addProperty("notifiedVersion", notifiedVersion);
+            o.addProperty("language", language);
             o.addProperty("source", source.name());
             o.addProperty("debugDumps", debugDumps);
             o.addProperty("collectGuiText", collectGuiText);
