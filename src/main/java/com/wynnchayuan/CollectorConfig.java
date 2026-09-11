@@ -241,6 +241,24 @@ public final class CollectorConfig {
      */
     private String language = "";
 
+    /**
+     * 沒翻到的地方要退回哪一種語言。
+     *
+     * <p>三種值：
+     *
+     * <ul>
+     *   <li>空字串＝<b>自動</b>。同語族的墊在底下（簡中沒翻到就看繁中），
+     *       不同語族的不墊——見 {@code Languages#fallbackFor}。</li>
+     *   <li>{@code "off"}＝<b>不墊</b>。沒翻到就顯示英文原文。</li>
+     *   <li>語言代碼＝指名拿那一種墊。</li>
+     * </ul>
+     *
+     * <p>為什麼要能關：簡中剛開始翻的時候，滿畫面繁中對某些人是幫助、對
+     * 某些人是干擾——他寧可看原文，至少那是他本來就在讀的東西。這件事
+     * 沒有一個對所有人都對的答案，所以交給玩家。
+     */
+    private String fallbackLanguage = "";
+
     /** 面板與原 tooltip 之間的間距（像素）。 */
     private int panelGap = 12;
 
@@ -412,6 +430,16 @@ public final class CollectorConfig {
     /** 設定檔裡寫的語言；空字串表示跟著遊戲走。 */
     public String language() {
         return language;
+    }
+
+    /** 見 {@link #fallbackLanguage}：空字串＝自動、{@code "off"}＝不墊。 */
+    public String fallbackLanguage() {
+        return fallbackLanguage;
+    }
+
+    public void setFallbackLanguage(String lang) {
+        fallbackLanguage = lang == null ? "" : lang.trim();
+        save();
     }
 
     public void setLanguage(String lang) {
@@ -852,6 +880,9 @@ public final class CollectorConfig {
             if (o.has("language")) {
                 language = o.get("language").getAsString().trim();
             }
+            if (o.has("fallbackLanguage")) {
+                fallbackLanguage = o.get("fallbackLanguage").getAsString().trim();
+            }
             if (o.has("debugDumps")) {
                 debugDumps = o.get("debugDumps").getAsBoolean();
             }
@@ -934,6 +965,7 @@ public final class CollectorConfig {
             o.addProperty("shareCaptures", shareCaptures);
             o.addProperty("notifiedVersion", notifiedVersion);
             o.addProperty("language", language);
+            o.addProperty("fallbackLanguage", fallbackLanguage);
             o.addProperty("source", source.name());
             o.addProperty("debugDumps", debugDumps);
             o.addProperty("collectGuiText", collectGuiText);
