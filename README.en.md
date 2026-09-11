@@ -141,7 +141,7 @@ This table answers the other half:
 | Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
 | Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
 | Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 1,881 + 1,037 collected | **No official list** - only what players run into |
+| NPC nameplates, menus, system messages | — | 1,883 + 1,050 collected | **No official list** - only what players run into |
 
 Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
 

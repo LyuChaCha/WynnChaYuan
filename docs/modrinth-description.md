@@ -169,7 +169,7 @@ ever run into sits in neither the numerator nor the denominator.
 | Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
 | Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
 | Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 1,881 + 1,037 collected | **No official list** - only what players run into |
+| NPC nameplates, menus, system messages | — | 1,883 + 1,050 collected | **No official list** - only what players run into |
 
 Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
 
@@ -182,7 +182,7 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | 裝備的傳說敘述 | ██████████ | 全部 | 官方 CDN，整批下載 |
 | 材料、素材、書卷、Aspect | ██████████ | 全部 | 官方 CDN，整批下載 |
 | 技能樹 | ██████████ | 全部 | 官方 CDN，整批下載 |
-| NPC 名牌、介面、系統訊息 | — | 已收 1,881 + 1,037 條 | **沒有官方清單**，只能靠玩家遇到 |
+| NPC 名牌、介面、系統訊息 | — | 已收 1,883 + 1,050 條 | **沒有官方清單**，只能靠玩家遇到 |
 
 任務對話、NPC 名牌與介面文字**沒有任何公開資料可以爬**——不在 Wynncraft API，也不在 Wynntils 的 CDN。只能靠玩家在遊戲裡實際遇到時由模組收集回來，所以「還差多少」這件事，名牌與介面那一列是誠實的空白：
 
