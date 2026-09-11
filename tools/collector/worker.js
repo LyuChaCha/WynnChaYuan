@@ -45,6 +45,37 @@ const LOOKS_PERSONAL = [
   /[A-Za-z0-9]*_[A-Za-z0-9_]{2,}/, // 帳號名裡的底線
   /\shas given you\s/,
   /would like to trade/,
+
+  // ---- 聊天室折行之後留下的半截句子 ----
+  //
+  // chat/INFO 是允許的來源，而玩家名字最常就是從這裡漏出去的。下面幾條
+  // 都是實際在 captured.json 裡撿到的，句型是遊戲寫死的、主詞永遠是別人：
+  //
+  //   {#} {#}JC grindeando has thrown a
+  //   {#} JC grindeando Loot Bomb has expired! …
+  //   {#} {#}Thank JC grindeando
+  //   {~}jimmy's Totem of Tales
+  //   {#}{#}ChangJenChief has died
+  //
+  // 比對的是<b>句型</b>不是名字：名字沒有形狀可以認（被折行截斷、
+  // 被數字佔位符吃掉半截、或伺服器根本沒把那個人放進分頁清單）。
+  /\shas thrown a/,
+  /Loot Bomb has expired/,
+  /['\u2019]s Totem of Tales/,
+  // 行首一個詞加句型才算，不然劇情裡的「The king has died」也會被擋掉。
+  /^(?:\{#\}\s*)*\S+ has died/m,
+  // 前面至少要有一個符號佔位符，任務對話裡的「Thank ...」不帶那個。
+  /^(?:\{#\}\s*)+Thank /m,
+
+  // ---- 其餘已知會夾帶別人 ID 的廣播 ----
+  // 這幾類在過去的語料裡都真的漏進來過，見 PlayerDataFilter 的 MARKERS。
+  /\sshouts:/,
+  /has logged into server/,
+  /\shas chosen the\s/,
+  /\shas placed a (mob|gathering) totem/,
+  /from their crate!/,
+  /Party Finder: Hey\s/,
+  /\sis now (online|offline)/,
 ];
 
 async function sha256(text) {
