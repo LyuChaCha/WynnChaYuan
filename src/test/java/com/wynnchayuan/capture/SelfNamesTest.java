@@ -104,6 +104,21 @@ public final class SelfNamesTest {
         report("整個詞出現時照樣找得到",
                "ASH".equals(SelfNames.find("Hey, ASH! Over here.")));
 
+        // ★ 實機那一份 captured.json 挖出來的：顯示名稱帶空格，剝前綴剝到最後
+        //   剩下一個英文常用字，於是那個字在每一句台詞裡都被換成 {u}。
+        //
+        //   "If what I've done was what needed to happen, why do I feel..."
+        //   → "If {u} I've done was {u} needed to happen, why do I feel..."
+        //
+        //   六千多條任務對話就是這樣被改寫的，而且會分享回共享語料。
+        report("★ 剝前綴不會剝出英文常用字（實際 "
+                       + SelfNames.suffixes("Iamnot what") + "）",
+               !SelfNames.suffixes("Iamnot what").contains("what"));
+        report("整串還是收得到", SelfNames.suffixes("Iamnot what").contains("Iamnot what"));
+        report("★ 常用字當不了名字", !SelfNames.usable("what")
+                && !SelfNames.usable("They") && !SelfNames.usable("the"));
+        report("正常的名字照收", SelfNames.usable("Arcla") && SelfNames.usable("Watari"));
+
         System.out.println(failures == 0
                 ? "暱稱：全部通過" : "暱稱：" + failures + " 項失敗");
         if (failures > 0) {
