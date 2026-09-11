@@ -506,6 +506,15 @@ public final class SettingsScreen extends Screen {
         // 語言擺在「譯文來源」前面：先決定要哪一種語言，再談那一種從哪裡來。
         languageRow();
         fallbackRow();
+        back(cycle("data.ui", this::uiLanguageLabel, b -> {
+            WynnChaYuan.config().setUiLanguage(stepUi(1));
+            b.setMessage(uiLanguageLabel());
+            rebuildWidgets();          // 整個畫面的字都要跟著換
+        }), b -> {
+            WynnChaYuan.config().setUiLanguage(stepUi(-1));
+            b.setMessage(uiLanguageLabel());
+            rebuildWidgets();
+        });
         cycle("data.source",
                 this::sourceLabel, b -> {
                     WynnChaYuan.config().toggleSource();
@@ -1058,6 +1067,37 @@ public final class SettingsScreen extends Screen {
                 ? T.s("data.fallback.auto.none")
                 : T.s("data.fallback.auto",
                       com.wynnchayuan.translate.Languages.nativeName(under)));
+    }
+
+    /**
+     * 下一個介面語言。
+     *
+     * <p>順序是「跟著譯文語言」→ 有介面語言檔的每一種 → 回到開頭。
+     * 清單問的是檔案在不在，所以多放一份 json 進去就會自己出現。
+     */
+    private String stepUi(int step) {
+        java.util.List<String> all = new java.util.ArrayList<>();
+        all.add("");                       // 跟著譯文語言
+        all.addAll(T.available());
+        int at = all.indexOf(WynnChaYuan.config().uiLanguage());
+        return all.get(Math.floorMod((at < 0 ? 0 : at) + step, all.size()));
+    }
+
+    /**
+     * 介面語言按鈕的字。
+     *
+     * <p>「跟著譯文語言」時把實際用到的那一種寫在括號裡——不寫的話，
+     * 畫面上是日文而按鈕寫著「跟著譯文語言」，看不出這兩件事的關係。
+     */
+    private Component uiLanguageLabel() {
+        String chosen = WynnChaYuan.config().uiLanguage();
+        if (!chosen.isEmpty()) {
+            return ctrl(com.wynnchayuan.translate.Languages.nativeName(chosen));
+        }
+        String following = WynnChaYuan.config().language();
+        return ctrl(T.s("data.ui.auto",
+                com.wynnchayuan.translate.Languages.nativeName(
+                        following.isEmpty() ? WynnChaYuan.autoLanguage() : following)));
     }
 
     private Component sourceLabel() {

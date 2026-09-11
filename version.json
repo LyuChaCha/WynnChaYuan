@@ -1,12 +1,42 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.4_1",
+ "latest": "0.1.5",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.5": {
+   "headline": "Japanese and Korean settings screens, and the Shift prompt is back",
+   "items": [
+    "The settings screen has its own language setting — Japanese and Korean are selectable now",
+    "Fixed the \"press SHIFT\" prompt vanishing in Simplified Chinese",
+    "Collection now measures gaps against Traditional Chinese, not your display language",
+    "Simplified Chinese: the Warrior ability tree — all five trees are done",
+    "Fixed the damage breakdown row showing the wrong label"
+   ],
+   "zh_tw": {
+    "headline": "日文與韓文的設定畫面；SHIFT 提示回來了",
+    "items": [
+     "設定畫面多了自己的語言設定，日文與韓文現在選得到",
+     "修正簡體中文的「按 SHIFT 繼續」提示消失",
+     "收集缺口改以繁體中文為準，不再跟著你的顯示語言跑",
+     "簡體中文：戰士技能樹，五棵樹全部翻完",
+     "修正傷害細項那一列顯示錯誤的標籤"
+    ]
+   },
+   "zh_cn": {
+    "headline": "日文与韩文的设置界面；SHIFT 提示回来了",
+    "items": [
+     "设置界面多了自己的语言设置，日文与韩文现在选得到",
+     "修正简体中文的「按 SHIFT 继续」提示消失",
+     "收集缺口改以繁体中文为准，不再跟着你的显示语言跑",
+     "简体中文：战士技能树，五棵树全部翻完",
+     "修正伤害细项那一行显示错误的标签"
+    ]
+   }
+  },
   "0.1.4_1": {
    "headline": "Simplified Chinese was showing Traditional on long lines",
    "items": [

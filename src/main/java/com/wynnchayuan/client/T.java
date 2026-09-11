@@ -70,7 +70,12 @@ public final class T {
     private static String pinned(String key) {
         String lang;
         try {
-            lang = com.wynnchayuan.WynnChaYuan.config().language();
+            // 介面語言指名了就用它；沒指名才跟著譯文語言走。
+            // 日文與韓文的介面檔做好了卻選不到，就是因為先前只看譯文語言。
+            lang = com.wynnchayuan.WynnChaYuan.config().uiLanguage();
+            if (lang == null || lang.isBlank()) {
+                lang = com.wynnchayuan.WynnChaYuan.config().language();
+            }
         } catch (Exception e) {
             return null;                  // 設定還沒建立（測試、啟動極早期）
         }
@@ -84,6 +89,25 @@ public final class T {
 
     private static Map<String, String> load(String lang) {
         return LOADED.computeIfAbsent(lang, T::read);
+    }
+
+    /**
+     * 有介面語言檔的語言有哪幾種。
+     *
+     * <p>問的是<b>檔案在不在</b>，不是寫死的名單——多放一份 json 進
+     * {@code assets/wynnchayuan/lang/} 就會自己出現在 F6 的選單裡。
+     *
+     * <p>只問 {@link com.wynnchayuan.translate.Languages} 認得的那些代碼：
+     * jar 裡沒辦法列目錄，而那份表本來就是「這個模組打算支援的語言」。
+     */
+    public static java.util.List<String> available() {
+        java.util.List<String> out = new java.util.ArrayList<>();
+        for (String lang : com.wynnchayuan.translate.Languages.known()) {
+            if (!load(lang).isEmpty()) {
+                out.add(lang);
+            }
+        }
+        return out;
     }
 
     private static Map<String, String> read(String lang) {

@@ -249,6 +249,18 @@ public final class CollectorConfig {
     private String language = "";
 
     /**
+     * F6 這幾個畫面自己用哪一種語言。
+     *
+     * <h2>為什麼跟譯文語言分開</h2>
+     * 介面原本跟著譯文語言走。但譯文語言的清單只列<b>有語料</b>的語言，
+     * 而介面語言檔可以先做好——日文與韓文的介面早就翻完了，卻永遠選不到，
+     * 也就沒辦法測。
+     *
+     * <p>空字串＝跟著譯文語言（原本的行為）。
+     */
+    private String uiLanguage = "";
+
+    /**
      * 沒翻到的地方要退回哪一種語言。
      *
      * <p>三種值：
@@ -465,6 +477,16 @@ public final class CollectorConfig {
     /** 設定檔裡寫的語言；空字串表示跟著遊戲走。 */
     public String language() {
         return language;
+    }
+
+    /** 見 {@link #uiLanguage}：空字串＝跟著譯文語言。 */
+    public String uiLanguage() {
+        return uiLanguage;
+    }
+
+    public void setUiLanguage(String lang) {
+        uiLanguage = lang == null ? "" : lang.trim();
+        save();
     }
 
     /** 見 {@link #fallbackLanguage}：空字串＝自動、{@code "off"}＝不墊。 */

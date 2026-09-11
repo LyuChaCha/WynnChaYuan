@@ -80,6 +80,11 @@ public final class Languages {
                     java.util.Map.entry("en_us", "English"));
 
     /** 顯示給人看的語言名字。認不出來就回傳代碼本身。 */
+    /** 這份表上有哪些語言代碼。見 {@link com.wynnchayuan.client.T#available}。 */
+    public static java.util.List<String> known() {
+        return NATIVE.keySet().stream().sorted().toList();
+    }
+
     public static String nativeName(String lang) {
         String clean = normalise(lang);
         return NATIVE.getOrDefault(clean, clean);
