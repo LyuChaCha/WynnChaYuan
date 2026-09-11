@@ -141,7 +141,7 @@ This table answers the other half:
 | Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
 | Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
 | Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 4,079 + 1,050 collected | **No official list** - only what players run into |
+| NPC nameplates, menus, system messages | — | 4,011 + 1,050 collected | **No official list** - only what players run into |
 
 Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
 
@@ -154,9 +154,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,591 | 1,591 | 1,591 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 7,236 | 14,166 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 9,488 | 14,092 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 48,952 lines estimated**, **40,792 collected** (83%), **33,858 translated** (69% of the estimate, 83.0% of what we have).
+> All together: **at least 48,878 lines estimated**, **40,718 collected** (83%), **36,110 translated** (74% of the estimate, 88.7% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->
