@@ -465,6 +465,14 @@ tasks.register('runCorpusShareChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runCorpusShareChecks' }
 
+tasks.register('runLanguagePickChecks', JavaExec) {
+    group = 'verification'
+    description = '挑哪一種語言的譯文，以及那個設定存不存得住'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LanguagePickTest'
+}
+tasks.named('check') { dependsOn 'runLanguagePickChecks' }
+
 
 tasks.register('runFlowedBlockChecks', JavaExec) {
     group = 'verification'
