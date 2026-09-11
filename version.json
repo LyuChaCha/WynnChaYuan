@@ -1,6 +1,6 @@
 {
   "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
-  "latest": "0.1.2_1",
+  "latest": "0.1.3",
   "download": {
     "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
     "modrinth": "https://modrinth.com/mod/wynnchayuan",
@@ -100,6 +100,33 @@
           "认不出归属的句子单独一堆，不再塞进某一类",
           "别的模组会读的字符串不再收集",
           "模组列表的介绍改成英文"
+        ]
+      }
+    },
+    "0.1.3": {
+      "headline": "The tracker says what it is tracking",
+      "items": [
+        "The tracker heading now matches what is being tracked — World Event, Cave, Raid and so on, instead of always saying Quest",
+        "Long tracker text wraps instead of running off the screen",
+        "The changelog screen shows one box per version",
+        "The settings screen follows the translation language you pick in F6"
+      ],
+      "zh_tw": {
+        "headline": "追蹤框會說清楚它在追什麼",
+        "items": [
+          "追蹤框的抬頭照實際追蹤的東西顯示——世界事件、洞窟、討伐戰等等，不再一律寫「進行中的任務」",
+          "追蹤框的長句子會自動換行，不再畫出螢幕外",
+          "更新說明改成一版一個方框",
+          "設定畫面會跟著 F6 選的譯文語言走"
+        ]
+      },
+      "zh_cn": {
+        "headline": "追踪框会说清楚它在追什么",
+        "items": [
+          "追踪框的标题按实际追踪的东西显示——世界事件、洞窟、副本等等，不再一律写「进行中的任务」",
+          "追踪框的长句子会自动换行，不再画出屏幕外",
+          "更新说明改成一版一个方框",
+          "设置界面会跟着 F6 选的译文语言走"
         ]
       }
     }

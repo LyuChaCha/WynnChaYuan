@@ -60,6 +60,17 @@ public final class LangKeysTest {
         check("掃到程式裡用了 " + used.size() + " 個鍵", used.size() > 50);
         List<String> missing = new ArrayList<>();
         for (String key : used) {
+            // 以點結尾的是<b>前綴</b>——鍵是拼出來的
+            // （{@code T.s("tracker.heading." + type)}）。那種要求的是
+            // 「這個前綴底下至少有東西」，不是「有這一條」。
+            if (key.endsWith(".")) {
+                boolean any = en.keySet().stream()
+                        .anyMatch(k -> k.startsWith("wynnchayuan." + key));
+                if (!any) {
+                    missing.add(key + "*");
+                }
+                continue;
+            }
             if (!en.has("wynnchayuan." + key)) {
                 missing.add(key);
             }
@@ -115,11 +126,16 @@ public final class LangKeysTest {
         // 嚴格的正規式抓不到。寧可把沒用到的當成有用到，也不要指控一條
         // 其實有在用的鍵——那會逼人把好好的檢查關掉。
         Set<String> mentioned = mentionedKeys();
+        List<String> prefixes = mentioned.stream()
+                .filter(k -> k.endsWith(".")).toList();
         List<String> unused = new ArrayList<>();
         for (String key : en.keySet()) {
-            if (!mentioned.contains(key.substring("wynnchayuan.".length()))) {
-                unused.add(key);
+            String bare = key.substring("wynnchayuan.".length());
+            if (mentioned.contains(bare)
+                    || prefixes.stream().anyMatch(bare::startsWith)) {
+                continue;
             }
+            unused.add(key);
         }
         check("語言檔裡沒有用不到的鍵"
                         + (unused.isEmpty() ? "" : "：" + unused), unused.isEmpty());
