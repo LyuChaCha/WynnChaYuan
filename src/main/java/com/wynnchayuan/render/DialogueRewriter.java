@@ -76,12 +76,24 @@ public final class DialogueRewriter {
     private static final String CHOICE = "/choice_";
 
     /**
-     * 有附中日韓字型的語言。
+     * 這個語言有沒有附對話字型。
      *
-     * <p>加一個語言就是「放一個 ttf、產六份 JSON、在這裡多一行」。
-     * 沒附字型的語言不會壞掉，只是就地取代那一段會退回預設字型。
+     * <h2>為什麼不寫死名單</h2>
+     * 先前這裡是 {@code Set.of("zh_tw")}。簡體的字型檔<b>早就放進去了</b>
+     * （{@code font/dialogue/zh_cn/} 十一份 JSON 加一個 ttf），只是沒有人記得
+     * 回來改這一行——於是簡體玩家的對話框走「沒附字型」那條路，退回預設字型。
+     *
+     * <p>而退回預設字型對 {@code control}（那行 SHIFT 提示）是致命的：原版那一份
+     * 的垂直位移是 -38，預設字型是 7，差了四十幾格。字還在，只是畫到了畫面外——
+     * 使用者看到的是「簡體的 SHIFT 繼續會消失」。
+     *
+     * <p>改成問檔案在不在。加一個語言就只是「放一個 ttf、產十一份 JSON」，
+     * 這裡不用再動——那本來就是上面那段註解答應的事。
      */
-    private static final java.util.Set<String> SHIPPED = java.util.Set.of("zh_tw");
+    private static boolean hasDialogueFonts(String lang) {
+        // body_0 當哨兵：有附字型的語言一定有它，缺了就是整套都沒有。
+        return fontShipped(lang, "body_0");
+    }
 
     /** 每個語言那套字型畫得出來的碼位區間，第一次用到才讀。 */
     private static final Map<String, int[]> COVERAGE = new java.util.HashMap<>();
@@ -1030,7 +1042,7 @@ public final class DialogueRewriter {
      */
     static boolean fontMissing(String font) {
         String lang = WynnChaYuan.language();
-        if (!SHIPPED.contains(lang)) {
+        if (!hasDialogueFonts(lang)) {
             return false;                  // 本來就沒附，走既有的「退回預設字型」
         }
         String name = pairedName(font);
@@ -1093,7 +1105,7 @@ public final class DialogueRewriter {
         // 預設字型——位置會掉，但總比整段空白好。之後某個語言開始翻對話時，
         // 就只是「多一個 ttf + 多六個 JSON」，這裡不用再動。
         String lang = WynnChaYuan.language();
-        if (!SHIPPED.contains(lang)) {
+        if (!hasDialogueFonts(lang)) {
             return null;
         }
         return new FontDescription.Resource(Identifier.fromNamespaceAndPath(

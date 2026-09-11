@@ -1409,6 +1409,16 @@ public final class TranslationStore {
      * 拿它來判斷缺口的話，每一件裝備的名稱都會被當成沒翻，
      * {@code captured.json} 又會塞滿雜訊。
      */
+    /**
+     * 這一份收了哪些原文（不管翻了沒）。
+     *
+     * <p>給收集那一關判斷「這句<b>繁體</b>收過沒有」用的。回傳的是拷貝，
+     * 呼叫端存起來之後整個 store 就可以丟掉。
+     */
+    public java.util.Set<String> sourceKeys() {
+        return java.util.Set.copyOf(entries.keySet());
+    }
+
     public boolean hasTranslation(String template) {
         if (template == null) {
             return false;

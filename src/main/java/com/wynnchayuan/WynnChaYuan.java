@@ -127,7 +127,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         // captured.json 只該列「還沒翻的」。接上這一條之前它是照單全收——
         // 實機那份 308 條裡有 249 條語料早就翻好了，真正的缺口全被淹掉。
         // 用述詞接而不是把 store 交過去，收集端就不必認識翻譯端。
-        store.knowsTranslations(translations::hasTranslation);
+        store.knowsTranslations(WynnChaYuan::alreadyCollected);
         // 同語族的語言先鋪一層當底，再把選定的那一種疊上去。
         //
         // 新語言是從 zh_tw 複製出來、dst 全部清空的骨架，剛開張時一條譯文
@@ -242,6 +242,56 @@ public final class WynnChaYuan implements ClientModInitializer {
      * <p>疊的動作交給 {@code TranslationStore#loadAll(List)}：清空只做一次，
      * 然後照順序讀，後面的蓋掉前面的。
      */
+    /**
+     * 這一句<b>收過了嗎</b>。
+     *
+     * <h2>收集的缺口與畫面的缺口是兩件事</h2>
+     * 簡體玩家看到英文，多半只代表<b>簡體還沒翻</b>——那一句繁體早就收過、
+     * 也早就翻好了。把它記成缺口，{@code captured.json} 就會被別人早就收過的
+     * 東西塞滿，而真正沒人遇過的句子淹在裡面。
+     *
+     * <p>所以判準是「{@link Languages#DEFAULT} 有沒有這一條」，不是
+     * 「我這一種語言有沒有」。
+     *
+     * <p>多數情況下畫面那一份就夠用：簡體底下墊著繁體，查得到就不會記。
+     * 但<b>輔助語言設成「顯示原文」</b>時那一層不在，整份繁體語料就全變成
+     * 「缺口」了——{@link #referenceKeys} 補的正是這個洞。
+     */
+    private static boolean alreadyCollected(String template) {
+        if (translations.hasTranslation(template)) {
+            return true;
+        }
+        java.util.Set<String> keys = referenceKeys;
+        return keys != null && template != null && keys.contains(template.strip());
+    }
+
+    /**
+     * 繁體收過哪些原文。
+     *
+     * <p>只在繁體<b>沒有</b>鋪在畫面那幾層裡時才建——鋪著的話
+     * {@code translations.hasTranslation} 本來就查得到，再存一份是白花記憶體。
+     */
+    private static volatile java.util.Set<String> referenceKeys;
+
+    private static void loadReferenceKeys(java.util.List<Path> layers) {
+        String reference = com.wynnchayuan.translate.Languages.DEFAULT;
+        Path dir = com.wynnchayuan.translate.Languages.dir(configDir, reference);
+        if (layers.contains(dir)) {
+            referenceKeys = null;            // 畫面上已經有這一層了
+            return;
+        }
+        try {
+            com.wynnchayuan.translate.TranslationStore probe =
+                    new com.wynnchayuan.translate.TranslationStore();
+            probe.loadAll(dir);
+            referenceKeys = probe.sourceKeys();
+            System.out.println("[WynnChaYuan] 收集的判準用 " + reference
+                    + " 的 " + referenceKeys.size() + " 條原文");
+        } catch (Exception e) {
+            referenceKeys = null;            // 讀不到就退回舊行為，不要壞掉
+        }
+    }
+
     private static void loadLayers() {
         translations.setTranslateNames(config.translateItemNames());
         java.util.List<Path> layers = new java.util.ArrayList<>();
@@ -255,6 +305,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         StarterFiles.installIfEmpty(dir, language);   // 被清空的話順手補回來
         layers.add(dir);
         translations.loadAll(layers);
+        loadReferenceKeys(layers);
     }
 
     /**

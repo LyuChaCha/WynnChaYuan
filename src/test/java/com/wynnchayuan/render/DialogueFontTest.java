@@ -53,8 +53,35 @@ public final class DialogueFontTest {
         ASCENT.put("control", -38);
     }
 
-    /** 有附字型的語言。加語言時這裡跟著加，測試就會一起檢查。 */
-    private static final String[] LANGS = { "zh_tw" };
+    /**
+     * 要檢查哪幾種語言。
+     *
+     * <h2>為什麼不是寫死的名單</h2>
+     * 先前這裡是 {@code { "zh_tw" }}。簡體的字型檔早就放進去了，這一行沒跟上
+     * ——於是<b>簡體的字型從來沒被檢查過</b>，而 {@code DialogueRewriter} 裡
+     * 另一份同樣停在 zh_tw 的名單也沒人發現。實機的症狀是簡體玩家的
+     * 「SHIFT 繼續」那一行被畫到畫面外（control 的位移是 -38，預設字型是 7）。
+     *
+     * <p>改成問 {@code _languages.json}：會打包出去的語言就會有人用對話框，
+     * 有人用就要檢查。加一個語言不必回來改這裡。
+     */
+    private static String[] langs() throws IOException {
+        Path manifest = Path.of("src/main/resources/assets/wynnchayuan"
+                + "/translations/_languages.json");
+        String json = Files.readString(manifest, StandardCharsets.UTF_8);
+        java.util.regex.Matcher m = java.util.regex.Pattern
+                .compile("\"languages\"\\s*:\\s*\\[([^]]*)]").matcher(json);
+        if (!m.find()) {
+            return new String[0];
+        }
+        java.util.List<String> out = new java.util.ArrayList<>();
+        java.util.regex.Matcher one = java.util.regex.Pattern
+                .compile("\"([a-z]{2}_[a-z]{2})\"").matcher(m.group(1));
+        while (one.find()) {
+            out.add(one.group(1));
+        }
+        return out.toArray(new String[0]);
+    }
 
     private static final Path ROOT = Path.of(
             "src/main/resources/assets/wynnchayuan/font");
@@ -69,9 +96,11 @@ public final class DialogueFontTest {
         check("授權檔在（SIL OFL 隨模組散布必須附上）",
                 Files.isRegularFile(ROOT.resolve("OFL-fusion.txt")));
 
-        for (String lang : LANGS) {
-            check(lang + " 的字型檔在",
-                    Files.isRegularFile(ROOT.resolve("fusion_pixel_10px_zh_hant.ttf")));
+        String[] langs = langs();
+        check("讀得到會打包的語言：" + java.util.Arrays.toString(langs),
+                langs.length > 0);
+
+        for (String lang : langs) {
             // 覆蓋率表是「缺字就不就地取代」的依據，掉了會讓方框跑到畫面上
             Path cover = ROOT.resolve("dialogue").resolve(lang)
                     .resolve("coverage.txt");
@@ -107,8 +136,16 @@ public final class DialogueFontTest {
 
             check(name + " 先參照 Wynncraft 自己的字型（ASCII 外觀與高度不能變）",
                     json.contains("\"type\":\"reference\""));
-            check(name + " 有中日韓的 ttf",
-                    json.contains("fusion_pixel_10px_zh_hant.ttf"));
+            // ttf 的檔名<b>按語言不同</b>（zh_hant 與 zh_hans 是兩份字型：
+            // 同一個碼位的內部筆畫不一樣）。所以不比對固定檔名，
+            // 而是把 JSON 裡指到的那一份撈出來，確認它真的在。
+            java.util.regex.Matcher ref = java.util.regex.Pattern
+                    .compile("\"file\":\"wynnchayuan:([^\"]+)\"").matcher(json);
+            check(name + " 指名了一份中日韓 ttf", ref.find());
+            if (ref.reset().find()) {
+                check(name + " 指到的 " + ref.group(1) + " 真的在",
+                        Files.isRegularFile(ROOT.resolve(ref.group(1))));
+            }
             // Fusion Pixel 10px 的 unitsPerEm 是 1000，capHeight 700、
             // ascender 1100、descender -300——全是 100 的倍數，也就是
             // 「一個設計像素 = 100 單位、一個 em = 10 像素」。size 不是 10 的
