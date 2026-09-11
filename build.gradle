@@ -480,6 +480,13 @@ tasks.register('runDialogueOffsetChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueOffsetChecks' }
 
+tasks.register('probeNoteColour', JavaExec) {
+    group = 'verification'
+    description = '括號註解在譯文裡拿到什麼顏色（診斷用）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.NoteColourProbe'
+}
+
 tasks.register('probeStatLabels', JavaExec) {
     group = 'verification'
     description = '看那幾行技能屬性到底查成什麼（診斷用，不判對錯）'
