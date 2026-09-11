@@ -69,6 +69,63 @@ SHAPES = [
 # 那是該收的內容——教學訊息，每個人看到的都一樣。
 ALLOW = ("<name>", "{u}")
 
+# 公會大廳的立牌與改過名字的物品
+# ------------------------------
+# 上面那些句型認的是「遊戲寫死的模板 + 別人的名字」。公會大廳是另一回事：
+# 整段字都是玩家自己打的。實際掃到的長這樣（下面用 ⏎ 代表換行）：
+#
+#     Teleporter ⏎ to afk bata
+#     Undead Heart ⏎ noki's heart
+#     Coconut Ring ⏎ from zxfire
+#     Uchouten Tea House's HQ ⏎ by Uchouten Tea House
+#
+# 第一行是遊戲真的有的東西（傳送點、某件物品），第二行是玩家取的名字——
+# 常常直接就是某個人的 ID。這種東西翻了也沒有意義：每個公會的立牌都不一樣。
+SIGN_SHAPES = [
+    (r"(?s)\A(?:\{#\})*Teleporter\nto .", "公會大廳的傳送立牌"),
+    (r"(?m)^by [A-Z]", "立牌上的「by 某某」"),
+]
+
+# 第二行是模板的標記。有任何一個就不是玩家打的字——遊戲自己的第二行一定
+# 帶 {#} 圖示、✔ 勾、✫ 星等或進度條。
+#
+# {~} 不算：玩家取的名字裡也會有數字（"insu spell 5 times"）。
+TEMPLATE_MARKS = ("{#}", "✔", "✖", "✫", "[|")
+
+
+def player_sign(src: str, items: set) -> str | None:
+    """第一行是遊戲的物品名、其餘是玩家自己打的字 —— 回傳說明，否則 None。"""
+    if "\n" not in src:
+        return None
+    head, rest = src.split("\n", 1)
+    if not rest.strip() or any(mark in rest for mark in TEMPLATE_MARKS):
+        return None
+    base = re.sub(r"\s*\[\{~\}/\{~\}\]$", "", head).strip()
+    return "改過名字的物品" if base in items else None
+
+
+def known_items() -> set:
+    """語料裡已有的物品名，拿來認立牌的第一行。"""
+    names: set[str] = set()
+    for name in ("gear-weapon.json", "gear-armour.json", "gear-accessory.json",
+                 "material.json", "ingredient.json", "tome.json", "charm.json",
+                 "aspect.json"):
+        path = TRANSLATIONS / "zh_tw" / name
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        entries = data.get("entries")
+        if isinstance(entries, dict):
+            for value in entries.values():
+                if isinstance(value, dict) and isinstance(value.get("src"), str):
+                    names.add(value["src"])
+        else:
+            names.update(k for k in data if not k.startswith("_"))
+    return names
+
 
 def rows(path: Path):
     """檔案裡的 (鍵, 原文)。兩種格式都認。"""
@@ -113,7 +170,8 @@ def drop(path: Path, keys: set[str]) -> int:
 
 def main(argv: list[str]) -> int:
     write = "--write" in argv
-    compiled = [(re.compile(p), why) for p, why in SHAPES]
+    compiled = [(re.compile(p), why) for p, why in SHAPES + SIGN_SHAPES]
+    items = known_items()
 
     found: dict[Path, set[str]] = {}
     total = 0
@@ -123,14 +181,15 @@ def main(argv: list[str]) -> int:
         for key, src in rows(path):
             if any(a in src for a in ALLOW):
                 continue
-            for pattern, why in compiled:
-                if pattern.search(src):
-                    rel = path.relative_to(TRANSLATIONS).as_posix()
-                    print(f"  [{rel}] {why}")
-                    print(f"      {json.dumps(src, ensure_ascii=False)[:100]}")
-                    found.setdefault(path, set()).add(key)
-                    total += 1
-                    break
+            why = next((w for p, w in compiled if p.search(src)), None)
+            if why is None:
+                why = player_sign(src, items)
+            if why:
+                rel = path.relative_to(TRANSLATIONS).as_posix()
+                print(f"  [{rel}] {why}")
+                print(f"      {json.dumps(src, ensure_ascii=False)[:100]}")
+                found.setdefault(path, set()).add(key)
+                total += 1
 
     if not total:
         print("語料裡沒有夾帶別人的名字。")
