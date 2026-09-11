@@ -1,6 +1,6 @@
 {
   "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
-  "latest": "0.1.1",
+  "latest": "0.1.2",
   "download": {
     "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
     "modrinth": "https://modrinth.com/mod/wynnchayuan",
@@ -43,6 +43,33 @@
           "F6 →「数据」→「译文语言」可以直接换译文，不用重开游戏",
           "修正：某个语言只翻了一部分时，没翻到的地方会掉成英文而不是繁体中文",
           "修正：按「重新加载」之后垫底那一层会不见"
+        ]
+      }
+    },
+    "0.1.2": {
+      "headline": "Pick what to fall back to, and a cleaner Simplified Chinese",
+      "items": [
+        "F6 → Data → Fallback language: choose what to show where a language has nothing yet — auto, the original English, or any other language",
+        "Simplified Chinese: another 704 interface strings (ability tree labels, NPC nameplates, item lore, powders)",
+        "Simplified Chinese wording cleaned of Traditional-Chinese habits; a check now guards against them",
+        "The mods list entry is bilingual"
+      ],
+      "zh_tw": {
+        "headline": "沒翻到的地方看什麼由你決定，簡中也清乾淨了",
+        "items": [
+          "F6 →「資料」→「輔助語言」：某一種語言還沒翻到的地方要顯示什麼——自動、英文原文，或任何一種其他語言",
+          "簡體中文再翻 704 條（技能樹標籤、NPC 名牌、物品說明、粉末）",
+          "簡中用詞清掉繁中直譯的痕跡，並加了檢查擋在 CI 上",
+          "模組列表裡的介紹改成雙語"
+        ]
+      },
+      "zh_cn": {
+        "headline": "没翻到的地方看什么由你决定，简中也清干净了",
+        "items": [
+          "F6 →「数据」→「辅助语言」：某种语言还没翻到的地方要显示什么——自动、英文原文，或任何一种其他语言",
+          "简体中文再翻 704 条(技能树标签、NPC 名牌、物品说明、粉末)",
+          "简中用词清掉繁中直译的痕迹，并加了检查挡在 CI 上",
+          "模组列表里的介绍改成双语"
         ]
       }
     }

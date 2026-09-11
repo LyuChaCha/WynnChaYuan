@@ -436,6 +436,18 @@ public final class SettingsScreen extends Screen {
                                 .withStyle(ChatFormatting.GREEN));
                     });
                 });
+        cycle("data.fallback",
+                this::fallbackLabel, b -> {
+                    String next = nextFallback();
+                    b.setMessage(Component.literal("…"));
+                    fetching = true;
+                    WynnChaYuan.switchFallback(next, result -> {
+                        fetching = false;
+                        b.setMessage(fallbackLabel());
+                        say(Component.literal("✔ " + result)
+                                .withStyle(ChatFormatting.GREEN));
+                    });
+                });
         cycle("data.source",
                 this::sourceLabel, b -> {
                     WynnChaYuan.config().toggleSource();
@@ -790,6 +802,46 @@ public final class SettingsScreen extends Screen {
         String inUse = com.wynnchayuan.translate.Languages.nativeName(
                 WynnChaYuan.language());
         return ctrl(chosen.isEmpty() ? T.s("data.language.auto", inUse) : inUse);
+    }
+
+    /**
+     * 下一個要切到的輔助語言。
+     *
+     * <p>順序：自動 → 不墊（顯示原文）→ 打包進來的每一種 → 回到自動。
+     * 目前這一種語言自己不列——拿自己墊自己沒有意義。
+     */
+    private String nextFallback() {
+        java.util.List<String> all = new java.util.ArrayList<>();
+        all.add("");                       // 自動
+        all.add(WynnChaYuan.OFF);          // 不墊
+        for (String lang : com.wynnchayuan.translate.Languages.bundled()) {
+            if (!lang.equals(WynnChaYuan.language())) {
+                all.add(lang);
+            }
+        }
+        int at = all.indexOf(WynnChaYuan.config().fallbackLanguage());
+        return all.get((at + 1 + all.size()) % all.size());
+    }
+
+    /**
+     * 輔助語言按鈕的字。
+     *
+     * <p>「自動」時把實際墊的那一種寫在括號裡，沒有墊就寫「顯示原文」——
+     * 不寫的話「自動」兩個字看不出它到底做了什麼。
+     */
+    private Component fallbackLabel() {
+        String chosen = WynnChaYuan.config().fallbackLanguage();
+        if (WynnChaYuan.OFF.equals(chosen)) {
+            return ctrl(T.s("data.fallback.off"));
+        }
+        if (!chosen.isEmpty()) {
+            return ctrl(com.wynnchayuan.translate.Languages.nativeName(chosen));
+        }
+        String under = WynnChaYuan.fallbackLanguage();
+        return ctrl(under == null
+                ? T.s("data.fallback.auto.none")
+                : T.s("data.fallback.auto",
+                      com.wynnchayuan.translate.Languages.nativeName(under)));
     }
 
     private Component sourceLabel() {
