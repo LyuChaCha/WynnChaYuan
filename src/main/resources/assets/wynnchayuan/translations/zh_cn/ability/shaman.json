@@ -4,27 +4,26 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 243,
-  "translated": 0,
+  "translated": 243,
   "note": "萨满的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-shaman#0000": {
    "src": "Totem",
-   "dst": "",
+   "dst": "图腾",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/01/000/004",
-   "keep": "en",
    "ability": "Totem",
    "code": "SHAMAN-P1-R00-C04"
   },
   "ability-shaman#0001": {
    "src": "Summon a Totem that damages\nenemies around it every {~}s.",
-   "dst": "",
+   "dst": "召唤一座图腾，每 {~} 秒\n对周围的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -39,20 +38,19 @@
   },
   "ability-shaman#0002": {
    "src": "Relik Proficiency I",
-   "dst": "",
+   "dst": "法器精通 I",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/01/002/004",
-   "keep": "en",
    "ability": "Relik Proficiency I",
    "code": "SHAMAN-P1-R02-C04"
   },
   "ability-shaman#0003": {
    "src": "Double your Main Attack's beam speed and\nincrease your damage when using a relik.",
-   "dst": "",
+   "dst": "使用法器时，普攻光束的速度翻倍，\n并提高你的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -67,7 +65,7 @@
   },
   "ability-shaman#0004": {
    "src": "{#}(Damage is split between beams)",
-   "dst": "",
+   "dst": "{#}(伤害由所有光束平分)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -80,20 +78,19 @@
   },
   "ability-shaman#0005": {
    "src": "Cheaper Totem",
-   "dst": "",
+   "dst": "节约·图腾",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/01/002/006",
-   "keep": "en",
    "ability": "Cheaper Totem",
    "code": "SHAMAN-P1-R02-C06"
   },
   "ability-shaman#0006": {
    "src": "Reduce the mana cost of Totem.",
-   "dst": "",
+   "dst": "降低 Totem 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -109,20 +106,19 @@
   },
   "ability-shaman#0007": {
    "src": "Totemic Smash",
-   "dst": "",
+   "dst": "图腾砸击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/01/004/004",
-   "keep": "en",
    "ability": "Totemic Smash",
    "code": "SHAMAN-P1-R04-C04"
   },
   "ability-shaman#0008": {
    "src": "Your Totem will deal damage where it lands.",
-   "dst": "",
+   "dst": "你的图腾落地时会造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -137,20 +133,19 @@
   },
   "ability-shaman#0009": {
    "src": "Distant Grasp",
-   "dst": "",
+   "dst": "远程掌控",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/02/001/002",
-   "keep": "en",
    "ability": "Distant Grasp",
    "code": "SHAMAN-P2-R01-C02"
   },
   "ability-shaman#0010": {
    "src": "Reduce your Main Attack's spread,\nand increase its beam speed by +{~}.",
-   "dst": "",
+   "dst": "减少普攻的散布，\n并让光束速度提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -165,20 +160,19 @@
   },
   "ability-shaman#0011": {
    "src": "Haul",
-   "dst": "",
+   "dst": "牵引",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/02/001/004",
-   "keep": "en",
    "ability": "Haul",
    "code": "SHAMAN-P2-R01-C04"
   },
   "ability-shaman#0012": {
    "src": "Leap towards your Totem.",
-   "dst": "",
+   "dst": "朝你的图腾跃去。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -193,20 +187,19 @@
   },
   "ability-shaman#0013": {
    "src": "Hand of the Shaman",
-   "dst": "",
+   "dst": "萨满之手",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/02/001/006",
-   "keep": "en",
    "ability": "Hand of the Shaman",
    "code": "SHAMAN-P2-R01-C06"
   },
   "ability-shaman#0014": {
    "src": "Your Main Attack will emit +{~} extra beams.\n(Increases your overall damage by +{~})",
-   "dst": "",
+   "dst": "普攻多射出 +{~1} 道光束。\n(整体伤害提高 +{~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -221,20 +214,19 @@
   },
   "ability-shaman#0015": {
    "src": "Uproot",
-   "dst": "",
+   "dst": "连根拔起",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/02/003/002",
-   "keep": "en",
    "ability": "Uproot",
    "code": "SHAMAN-P2-R03-C02"
   },
   "ability-shaman#0016": {
    "src": "Emits a rapid projectile that will\nexplode and knock enemies away.\n(Hold shift to pull instead)",
-   "dst": "",
+   "dst": "射出一发高速弹体，爆炸后\n将敌人击退。\n(按住 Shift 改为把敌人拉过来)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -249,20 +241,19 @@
   },
   "ability-shaman#0017": {
    "src": "Cheaper Haul",
-   "dst": "",
+   "dst": "节约·牵引",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/02/003/004",
-   "keep": "en",
    "ability": "Cheaper Haul",
    "code": "SHAMAN-P2-R03-C04"
   },
   "ability-shaman#0018": {
    "src": "Reduce the mana cost of Haul.",
-   "dst": "",
+   "dst": "降低 Haul 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -278,20 +269,19 @@
   },
   "ability-shaman#0019": {
    "src": "Aura",
-   "dst": "",
+   "dst": "光环",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/02/003/006",
-   "keep": "en",
    "ability": "Aura",
    "code": "SHAMAN-P2-R03-C06"
   },
   "ability-shaman#0020": {
    "src": "Radiates an aura from your Totem\nthat damages enemies.",
-   "dst": "",
+   "dst": "从你的图腾扩散出一圈光环，\n对敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -306,20 +296,19 @@
   },
   "ability-shaman#0021": {
    "src": "Totem Shove",
-   "dst": "",
+   "dst": "图腾推进",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/02/004/001",
-   "keep": "en",
    "ability": "Totem Shove",
    "code": "SHAMAN-P2-R04-C01"
   },
   "ability-shaman#0022": {
    "src": "Casting Totem while looking\nat an existing Totem will shove it forwards \nfor half the mana cost, dealing damage\nto any enemy it crashes into.\n(Sneak to reverse its direction)",
-   "dst": "",
+   "dst": "看着已有的图腾施放 Totem，\n会以一半的法力把它往前推， \n撞到的敌人都会受到伤害。\n(潜行可以让它往反方向走)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -334,7 +323,7 @@
   },
   "ability-shaman#0023": {
    "src": "{#} Range: ~{~} Blocks",
-   "dst": "",
+   "dst": "{#} 范围: 约 {~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -347,20 +336,19 @@
   },
   "ability-shaman#0024": {
    "src": "Nature's Jolt",
-   "dst": "",
+   "dst": "自然震击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/03/004/000",
-   "keep": "en",
    "ability": "Nature's Jolt",
    "code": "SHAMAN-P3-R04-C00"
   },
   "ability-shaman#0025": {
    "src": "Hitting the ground after using Haul\nwill deal damage around you.",
-   "dst": "",
+   "dst": "使用 Haul 落地时\n会对身周造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -375,20 +363,19 @@
   },
   "ability-shaman#0026": {
    "src": "Overseer",
-   "dst": "",
+   "dst": "监视者",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/03/004/002",
-   "keep": "en",
    "ability": "Overseer",
    "code": "SHAMAN-P3-R04-C02"
   },
   "ability-shaman#0027": {
    "src": "Increases Uproot and\nHaunting Memory's range.\nHitting Totem with either\nwill reset its duration.",
-   "dst": "",
+   "dst": "提高 Uproot 与\nHaunting Memory 的射程。\n用两者命中图腾\n会重置它的持续时间。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -403,20 +390,19 @@
   },
   "ability-shaman#0028": {
    "src": "Rain Dance",
-   "dst": "",
+   "dst": "祈雨舞",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/03/004/004",
-   "keep": "en",
    "ability": "Rain Dance",
    "code": "SHAMAN-P3-R04-C04"
   },
   "ability-shaman#0029": {
    "src": "While mid-air, your Totem will\nleave a streak of rain that damages\nenemies under it every {~}s.",
-   "dst": "",
+   "dst": "图腾在空中飞行时会\n拖出一道雨迹，每 {~} 秒\n对下方的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -431,7 +417,7 @@
   },
   "ability-shaman#0030": {
    "src": "{#} Area of Effect: {~} Blocks (Line-Shaped)",
-   "dst": "",
+   "dst": "{#} 作用范围: {~} 格 (线形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -444,20 +430,19 @@
   },
   "ability-shaman#0031": {
    "src": "Shocking Aura",
-   "dst": "",
+   "dst": "雷击光环",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/03/004/006",
-   "keep": "en",
    "ability": "Shocking Aura",
    "code": "SHAMAN-P3-R04-C06"
   },
   "ability-shaman#0032": {
    "src": "Aura will travel {~}s faster and\ndeal additional damage.",
-   "dst": "",
+   "dst": "Aura 的扩散速度快 {~} 秒，\n并造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -472,20 +457,19 @@
   },
   "ability-shaman#0033": {
    "src": "Flaming Tongue",
-   "dst": "",
+   "dst": "烈焰之舌",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/03/004/008",
-   "keep": "en",
    "ability": "Flaming Tongue",
    "code": "SHAMAN-P3-R04-C08"
   },
   "ability-shaman#0034": {
    "src": "Haunting Memory will no longer\nattach Masks to enemies.",
-   "dst": "",
+   "dst": "Haunting Memory 不再把\n假面附到敌人身上。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -500,7 +484,7 @@
   },
   "ability-shaman#0035": {
    "src": "Uproot becomes lashing flames, which hit\n{~} times at {~} hits per second, but it will not\nexplode or knockback enemies.",
-   "dst": "",
+   "dst": "Uproot 变成鞭打的烈焰，以每秒 {~2} 下的频率\n总共打出 {~1} 下，但不会爆炸，也不会击退敌人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -515,7 +499,7 @@
   },
   "ability-shaman#0036": {
    "src": "{#}({#}{#}Earth: -{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}土: -{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -528,7 +512,7 @@
   },
   "ability-shaman#0037": {
    "src": "{#} Total Damage: -{~} (of your DPS, for Uproot, per hit)",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~} (你的每秒伤害，Uproot，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -541,20 +525,19 @@
   },
   "ability-shaman#0038": {
    "src": "Puppet Master",
-   "dst": "",
+   "dst": "傀儡师",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/001/001",
-   "keep": "en",
    "ability": "Puppet Master",
    "code": "SHAMAN-P4-R01-C01"
   },
   "ability-shaman#0039": {
    "src": "Your Totem will summon {~} Puppet\nevery {~}s. (Max {~}) They throw knives\nat nearby enemies every {~}s.",
-   "dst": "",
+   "dst": "你的图腾每 {~2} 秒召唤 {~1} 个人偶。\n(上限 {~3}) 它们每 {~4} 秒向附近的\n敌人掷出飞刀。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -569,20 +552,19 @@
   },
   "ability-shaman#0040": {
    "src": "Mystic Masks",
-   "dst": "",
+   "dst": "神秘假面",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/001/003",
-   "keep": "en",
    "ability": "Mystic Masks",
    "code": "SHAMAN-P4-R01-C03"
   },
   "ability-shaman#0041": {
    "src": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to remove it)",
-   "dst": "",
+   "dst": "施放 Uproot 时改为\n戴上其中一张神秘假面。\n(Shift + Uproot 摘下)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -597,7 +579,7 @@
   },
   "ability-shaman#0042": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Walk Speed to Self",
-   "dst": "",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} 对自身移动速度",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -612,7 +594,7 @@
   },
   "ability-shaman#0043": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Damage Bonus to Self",
-   "dst": "",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} 对自身伤害加成",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -627,7 +609,7 @@
   },
   "ability-shaman#0044": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Resistance Bonus to Self",
-   "dst": "",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} 对自身抗性加成",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -642,7 +624,7 @@
   },
   "ability-shaman#0045": {
    "src": "{#} Fanatic: +{~} Resistance Bonus to Self",
-   "dst": "",
+   "dst": "{#} 金虔: 对自身 +{~} 抗性加成",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -655,7 +637,7 @@
   },
   "ability-shaman#0046": {
    "src": "{#} Heretic: +{~} Walk Speed to Self",
-   "dst": "",
+   "dst": "{#} 苍逆: 对自身 +{~} 移动速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -668,7 +650,7 @@
   },
   "ability-shaman#0047": {
    "src": "{#} Lunatic: +{~} Damage Bonus to Self",
-   "dst": "",
+   "dst": "{#} 赤狂: 对自身 +{~} 伤害加成",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -681,20 +663,19 @@
   },
   "ability-shaman#0048": {
    "src": "Hymn of Hate",
-   "dst": "",
+   "dst": "憎恨圣歌",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/001/006",
-   "keep": "en",
    "ability": "Hymn of Hate",
    "code": "SHAMAN-P4-R01-C06"
   },
   "ability-shaman#0049": {
    "src": "When wearing the Mask of the Lunatic {#}, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -{~} of its damage.",
-   "dst": "",
+   "dst": "戴着赤狂假面 {#} 时，用 Aura 击杀敌人\n会在该处再施放一次 Aura，\n伤害降低 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -709,20 +690,19 @@
   },
   "ability-shaman#0050": {
    "src": "Sacrificial Shrine",
-   "dst": "",
+   "dst": "献祭神龛",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/001/008",
-   "keep": "en",
    "ability": "Sacrificial Shrine",
    "code": "SHAMAN-P4-R01-C08"
   },
   "ability-shaman#0051": {
    "src": "Aura will spend {~} points of Blood Pool {#}\nto deal +{~} damage and heal all allies.",
-   "dst": "",
+   "dst": "Aura 会消耗 {~1} 点血池 {#}，\n多造成 +{~2} 伤害并治疗所有队友。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -737,7 +717,7 @@
   },
   "ability-shaman#0052": {
    "src": "Your Totem will siphon {~} of your health\nevery {~}s and transfer it into a Blood Pool {#}.",
-   "dst": "",
+   "dst": "你的图腾每 {~2} 秒抽取你 {~1} 的生命，\n转化为血池 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -752,20 +732,19 @@
   },
   "ability-shaman#0053": {
    "src": "Stagnation",
-   "dst": "",
+   "dst": "滞塞",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/003/000",
-   "keep": "en",
    "ability": "Stagnation",
    "code": "SHAMAN-P4-R03-C00"
   },
   "ability-shaman#0054": {
    "src": "Enemies hit by Nature's Jolt\nwill be slowed down.",
-   "dst": "",
+   "dst": "被 Nature's Jolt 命中的敌人\n会被减速。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -780,20 +759,19 @@
   },
   "ability-shaman#0055": {
    "src": "Cheaper Aura",
-   "dst": "",
+   "dst": "节约·光环",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/003/002",
-   "keep": "en",
    "ability": "Cheaper Aura",
    "code": "SHAMAN-P4-R03-C02"
   },
   "ability-shaman#0056": {
    "src": "Reduce the mana cost of Aura.",
-   "dst": "",
+   "dst": "降低 Aura 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -809,20 +787,19 @@
   },
   "ability-shaman#0057": {
    "src": "Cheaper Uproot",
-   "dst": "",
+   "dst": "节约·连根拔起",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/003/004",
-   "keep": "en",
    "ability": "Cheaper Uproot",
    "code": "SHAMAN-P4-R03-C04"
   },
   "ability-shaman#0058": {
    "src": "Reduce the mana cost of Uproot.",
-   "dst": "",
+   "dst": "降低 Uproot 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -838,20 +815,19 @@
   },
   "ability-shaman#0059": {
    "src": "Rebound",
-   "dst": "",
+   "dst": "回弹",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/003/007",
-   "keep": "en",
    "ability": "Rebound",
    "code": "SHAMAN-P4-R03-C07"
   },
   "ability-shaman#0060": {
    "src": "Once Aura reaches its maximum\nrange, it will bounce back and\ndeal its effects a second time.",
-   "dst": "",
+   "dst": "Aura 扩散到最大范围后\n会弹回来，\n再生效一次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -866,7 +842,7 @@
   },
   "ability-shaman#0061": {
    "src": "Sacrificial Shrine will\nheal {~} less health.",
-   "dst": "",
+   "dst": "Sacrificial Shrine 的\n治疗量减少 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -881,20 +857,19 @@
   },
   "ability-shaman#0062": {
    "src": "More Puppets",
-   "dst": "",
+   "dst": "更多人偶",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/004/001",
-   "keep": "en",
    "ability": "More Puppets",
    "code": "SHAMAN-P4-R04-C01"
   },
   "ability-shaman#0063": {
    "src": "Increase your maximum Puppets by +{~}.",
-   "dst": "",
+   "dst": "人偶上限提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -911,20 +886,19 @@
   },
   "ability-shaman#0064": {
    "src": "Haunting Memory",
-   "dst": "",
+   "dst": "萦绕的记忆",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/004/003",
-   "keep": "en",
    "ability": "Haunting Memory",
    "code": "SHAMAN-P4-R04-C03"
   },
   "ability-shaman#0065": {
    "src": "When you switch Masks, throw your previous one\nforwards. If it hits an enemy, it will attach for a\nshort time and debuff them. You will not receive\nthe effects of your Mask until it returns.",
-   "dst": "",
+   "dst": "换假面时，把上一张往前扔出去。\n若命中敌人，它会附在敌人身上一小段时间\n并施加减益。假面回来之前，\n你无法获得它的效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -939,7 +913,7 @@
   },
   "ability-shaman#0066": {
    "src": "{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 金虔: 对敌人 -{~} 抗性加成 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -952,7 +926,7 @@
   },
   "ability-shaman#0067": {
    "src": "{#} Heretic: +{~} Slowness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 苍逆: 对敌人 +{~} 缓速 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -965,7 +939,7 @@
   },
   "ability-shaman#0068": {
    "src": "{#} Lunatic: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 赤狂: 对敌人 -{~} 伤害加成 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -978,7 +952,7 @@
   },
   "ability-shaman#0069": {
    "src": "{#} Effects:",
-   "dst": "",
+   "dst": "{#} 效果:",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -991,20 +965,19 @@
   },
   "ability-shaman#0070": {
    "src": "Totemic Reach",
-   "dst": "",
+   "dst": "图腾延展",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/004/005",
-   "keep": "en",
    "ability": "Totemic Reach",
    "code": "SHAMAN-P4-R04-C05"
   },
   "ability-shaman#0071": {
    "src": "Increase your Totem's area of effect.",
-   "dst": "",
+   "dst": "提高图腾的作用范围。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1019,20 +992,19 @@
   },
   "ability-shaman#0072": {
    "src": "Blood Connection",
-   "dst": "",
+   "dst": "血之联系",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/04/004/008",
-   "keep": "en",
    "ability": "Blood Connection",
    "code": "SHAMAN-P4-R04-C08"
   },
   "ability-shaman#0073": {
    "src": "If you are outside of your Totem's\nrange, Haul will teleport you to it.",
-   "dst": "",
+   "dst": "你在图腾范围之外时，\nHaul 会把你直接传送过去。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1047,20 +1019,19 @@
   },
   "ability-shaman#0074": {
    "src": "Exploding Puppets",
-   "dst": "",
+   "dst": "爆裂人偶",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/001/001",
-   "keep": "en",
    "ability": "Exploding Puppets",
    "code": "SHAMAN-P5-R01-C01"
   },
   "ability-shaman#0075": {
    "src": "When your Puppets have {~}s left,\nthey will charge towards enemies\nat high speed and explode.",
-   "dst": "",
+   "dst": "人偶剩下 {~} 秒时，\n会高速冲向敌人\n并爆炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1075,20 +1046,19 @@
   },
   "ability-shaman#0076": {
    "src": "Frog Dance",
-   "dst": "",
+   "dst": "蛙跳舞",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/001/004",
-   "keep": "en",
    "ability": "Frog Dance",
    "code": "SHAMAN-P5-R01-C04"
   },
   "ability-shaman#0077": {
    "src": "Frog Dance does not require Totem to be used.",
-   "dst": "",
+   "dst": "Frog Dance 不需要图腾就能使用。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1103,7 +1073,7 @@
   },
   "ability-shaman#0078": {
    "src": "When wearing the Mask of the Heretic {#},\nHaul will instead bounce you off\nthe ground {~} times at an increasing\nspeed and damage nearby enemies.\n(Hold shift to cancel)",
-   "dst": "",
+   "dst": "戴着苍逆假面 {#} 时，Haul 改为\n让你在地面弹跳 {~} 次，\n速度越来越快，\n并对附近的敌人造成伤害。\n(按住 Shift 可取消)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1118,20 +1088,19 @@
   },
   "ability-shaman#0079": {
    "src": "Larger Blood Pool",
-   "dst": "",
+   "dst": "更大的血池",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/001/007",
-   "keep": "en",
    "ability": "Larger Blood Pool",
    "code": "SHAMAN-P5-R01-C07"
   },
   "ability-shaman#0080": {
    "src": "Increase your maximum Blood Pool {#} by +{~} points.",
-   "dst": "",
+   "dst": "血池 {#} 上限提高 +{~} 点。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1146,20 +1115,19 @@
   },
   "ability-shaman#0081": {
    "src": "Bullwhip",
-   "dst": "",
+   "dst": "长鞭",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/002/000",
-   "keep": "en",
    "ability": "Bullwhip",
    "code": "SHAMAN-P5-R02-C00"
   },
   "ability-shaman#0082": {
    "src": "Hitting enemies with Uproot or\nHaunting Memory will inflict them\nwith Whipped ⇶. Your Summons will\nfocus Whipped ⇶ enemies and deal\nadditional damage to them.",
-   "dst": "",
+   "dst": "用 Uproot 或 Haunting Memory\n命中敌人会使其陷入鞭笞 ⇶。\n你的召唤物会优先攻击\n鞭笞 ⇶ 的敌人，\n并对它们造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1174,7 +1142,7 @@
   },
   "ability-shaman#0083": {
    "src": "{#} Effect: +{~} Damage Bonus to Summons",
-   "dst": "",
+   "dst": "{#} 效果: 对召唤物 +{~} 伤害加成",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1187,20 +1155,19 @@
   },
   "ability-shaman#0084": {
    "src": "Totemic Shatter",
-   "dst": "",
+   "dst": "图腾碎裂",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/002/003",
-   "keep": "en",
    "ability": "Totemic Shatter",
    "code": "SHAMAN-P5-R02-C03"
   },
   "ability-shaman#0085": {
    "src": "Regeneration will only heal\n{~} of its usual amount.",
-   "dst": "",
+   "dst": "Regeneration 的治疗量\n只剩平常的 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1215,7 +1182,7 @@
   },
   "ability-shaman#0086": {
    "src": "While wearing the Mask of the Fanatic {#},\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s\nworth of its effects.",
-   "dst": "",
+   "dst": "戴着金虔假面 {#} 时，图腾落地\n会碎裂，瞬间触发相当于 {~} 秒的\n效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1230,20 +1197,19 @@
   },
   "ability-shaman#0087": {
    "src": "Masquerade",
-   "dst": "",
+   "dst": "假面舞会",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/002/005",
-   "keep": "en",
    "ability": "Masquerade",
    "code": "SHAMAN-P5-R02-C05"
   },
   "ability-shaman#0088": {
    "src": "Switching between Masks {~} times\nwill give you {~} Mana.",
-   "dst": "",
+   "dst": "换假面 {~1} 次\n会给你 {~2} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1258,20 +1224,19 @@
   },
   "ability-shaman#0089": {
    "src": "Lashing Lance",
-   "dst": "",
+   "dst": "鞭挞之枪",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/002/008",
-   "keep": "en",
    "ability": "Lashing Lance",
    "code": "SHAMAN-P5-R02-C08"
   },
   "ability-shaman#0090": {
    "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "",
+   "dst": "流血 {#} 的敌人每 {~1} 秒受到伤害。\n在图腾范围内造成的流血 {#} 伤害\n还会为血池 {#} 增加 +{~2} 点。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1286,7 +1251,7 @@
   },
   "ability-shaman#0091": {
    "src": "Flaming Tongue gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding {#} for\n+{~}s per hit. (Max {~}s)",
-   "dst": "",
+   "dst": "Flaming Tongue 多命中 +{~1} 次、伤害提高，\n且每次命中都会让敌人流血 {#} +{~2} 秒。\n(上限 {~3} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1301,7 +1266,7 @@
   },
   "ability-shaman#0092": {
    "src": "Haunting Memory will instead\ninflict +{~}s of Bleeding {#}.",
-   "dst": "",
+   "dst": "Haunting Memory 改为\n施加 +{~} 秒的流血 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1316,7 +1281,7 @@
   },
   "ability-shaman#0093": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Uproot, per hit)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Uproot，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1329,7 +1294,7 @@
   },
   "ability-shaman#0094": {
    "src": "{#} Total Damage: {~} (of your DPS, from Bleeding)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，来自流血)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1343,33 +1308,31 @@
   },
   "ability-shaman#0095": {
    "src": "More Puppets II",
-   "dst": "",
+   "dst": "更多人偶 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/003/001",
-   "keep": "en",
    "ability": "More Puppets II",
    "code": "SHAMAN-P5-R03-C01"
   },
   "ability-shaman#0096": {
    "src": "Artist's Immersion",
-   "dst": "",
+   "dst": "艺者入境",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/003/004",
-   "keep": "en",
    "ability": "Artist's Immersion",
    "code": "SHAMAN-P5-R03-C04"
   },
   "ability-shaman#0097": {
    "src": "Your Masks reduce the cost of different\nabilities based on the active Mask.",
-   "dst": "",
+   "dst": "假面会依当前戴的那一张，\n降低不同技能的消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1384,7 +1347,7 @@
   },
   "ability-shaman#0098": {
    "src": "{#} Fanatic: -{~} {#} Totem Cost",
-   "dst": "",
+   "dst": "{#} 金虔: -{~} {#} Totem 消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1397,7 +1360,7 @@
   },
   "ability-shaman#0099": {
    "src": "{#} Heretic: -{~} {#} Haul Cost",
-   "dst": "",
+   "dst": "{#} 苍逆: -{~} {#} Haul 消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1410,7 +1373,7 @@
   },
   "ability-shaman#0100": {
    "src": "{#} Lunatic: -{~} {#} Aura Cost",
-   "dst": "",
+   "dst": "{#} 赤狂: -{~} {#} Aura 消耗",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1423,20 +1386,19 @@
   },
   "ability-shaman#0101": {
    "src": "Vengeful Spirit",
-   "dst": "",
+   "dst": "复仇之灵",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/003/007",
-   "keep": "en",
    "ability": "Vengeful Spirit",
    "code": "SHAMAN-P5-R03-C07"
   },
   "ability-shaman#0102": {
    "src": "Your Totem will give all players\nin its range a damage bonus.",
-   "dst": "",
+   "dst": "你的图腾会给范围内的\n所有玩家伤害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1451,20 +1413,19 @@
   },
   "ability-shaman#0103": {
    "src": "Double Totem",
-   "dst": "",
+   "dst": "双重图腾",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/004/000",
-   "keep": "en",
    "ability": "Double Totem",
    "code": "SHAMAN-P5-R04-C00"
   },
   "ability-shaman#0104": {
    "src": "Increase your maximum Totems by +{~}.\nTotem and Aura will do {~} less damage.",
-   "dst": "",
+   "dst": "图腾上限提高 +{~1}。\nTotem 与 Aura 的伤害降低 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1480,7 +1441,7 @@
   },
   "ability-shaman#0105": {
    "src": "Regeneration and Sacrificial Shrine\nwill heal {~} less health.",
-   "dst": "",
+   "dst": "Regeneration 与 Sacrificial Shrine\n的治疗量减少 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1496,33 +1457,31 @@
   },
   "ability-shaman#0106": {
    "src": "Cheaper Totem II",
-   "dst": "",
+   "dst": "节约·图腾 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/004/002",
-   "keep": "en",
    "ability": "Cheaper Totem II",
    "code": "SHAMAN-P5-R04-C02"
   },
   "ability-shaman#0107": {
    "src": "Storm Dance",
-   "dst": "",
+   "dst": "风暴之舞",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/004/005",
-   "keep": "en",
    "ability": "Storm Dance",
    "code": "SHAMAN-P5-R04-C05"
   },
   "ability-shaman#0108": {
    "src": "Enemies hit by Aura will be\npulled towards your totem.",
-   "dst": "",
+   "dst": "被 Aura 命中的敌人\n会被拉向你的图腾。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1537,33 +1496,31 @@
   },
   "ability-shaman#0109": {
    "src": "Cheaper Haul II",
-   "dst": "",
+   "dst": "节约·牵引 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/004/008",
-   "keep": "en",
    "ability": "Cheaper Haul II",
    "code": "SHAMAN-P5-R04-C08"
   },
   "ability-shaman#0110": {
    "src": "Regeneration",
-   "dst": "",
+   "dst": "回春",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/005/003",
-   "keep": "en",
    "ability": "Regeneration",
    "code": "SHAMAN-P5-R05-C03"
   },
   "ability-shaman#0111": {
    "src": "Every {~}s, your Totem will heal\nevery player within its range.",
-   "dst": "",
+   "dst": "你的图腾每 {~} 秒\n治疗范围内的所有玩家。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1578,20 +1535,19 @@
   },
   "ability-shaman#0112": {
    "src": "Twisted Tether",
-   "dst": "",
+   "dst": "扭曲之系",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/05/005/006",
-   "keep": "en",
    "ability": "Twisted Tether",
    "code": "SHAMAN-P5-R05-C06"
   },
   "ability-shaman#0113": {
    "src": "Nearby Bleeding {#} enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
-   "dst": "",
+   "dst": "你每损失 {~1} 点生命，附近流血 {#} 的\n敌人就受到一次伤害。\n(每秒最多触发 {~2} 次)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1606,7 +1562,7 @@
   },
   "ability-shaman#0114": {
    "src": "{#} Total Damage: {~} (of your DPS, per {~} health)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~1} (你的每秒伤害，每 {~2} 点生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1619,20 +1575,19 @@
   },
   "ability-shaman#0115": {
    "src": "Crimson Effigy",
-   "dst": "",
+   "dst": "赤红塑像",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/001/001",
-   "keep": "en",
    "ability": "Crimson Effigy",
    "code": "SHAMAN-P6-R01-C01"
   },
   "ability-shaman#0116": {
    "src": "Each Totem will summon its own Effigy.\nEach additional Effigy summoned will\ndecrease all Effigy damage by {~}x.",
-   "dst": "",
+   "dst": "每座图腾都会召唤自己的塑像。\n每多召唤一个塑像，所有塑像的\n伤害就降为 {~} 倍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1647,7 +1602,7 @@
   },
   "ability-shaman#0117": {
    "src": "Totem will summon an Effigy that will\nattack enemies and push them towards\nthe nearest Totem every {~}s.\nThe Effigy will live for as long as its\nTotem does.",
-   "dst": "",
+   "dst": "Totem 会召唤一个塑像，每 {~} 秒\n攻击敌人并把它们推向\n最近的图腾。\n塑像与它的图腾\n同生共死。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1662,20 +1617,19 @@
   },
   "ability-shaman#0118": {
    "src": "Tribal Chants",
-   "dst": "",
+   "dst": "部族吟唱",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/001/004",
-   "keep": "en",
    "ability": "Tribal Chants",
    "code": "SHAMAN-P6-R01-C04"
   },
   "ability-shaman#0119": {
    "src": "(-{~} of the bonus decays every second)",
-   "dst": "",
+   "dst": "(该加成每秒衰减 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1690,7 +1644,7 @@
   },
   "ability-shaman#0120": {
    "src": "Switching Masks buffs nearby allies.",
-   "dst": "",
+   "dst": "换假面会强化附近的队友。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1705,7 +1659,7 @@
   },
   "ability-shaman#0121": {
    "src": "{#} Fanatic: +{~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#} 金虔: 对友军 +{~} 抗性加成 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1719,7 +1673,7 @@
   },
   "ability-shaman#0122": {
    "src": "{#} Heretic: +{~} Walk Speed to Allies",
-   "dst": "",
+   "dst": "{#} 苍逆: 对友军 +{~} 移动速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1733,7 +1687,7 @@
   },
   "ability-shaman#0123": {
    "src": "{#} Lunatic: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#} 赤狂: 对友军 +{~} 伤害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1747,7 +1701,7 @@
   },
   "ability-shaman#0124": {
    "src": "{#} Cooldown: {~}s (per Chant)",
-   "dst": "",
+   "dst": "{#} 冷却时间: {~} 秒 (每次吟唱)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1760,20 +1714,19 @@
   },
   "ability-shaman#0125": {
    "src": "Eldritch Call",
-   "dst": "",
+   "dst": "邪祟呼唤",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/001/007",
-   "keep": "en",
    "ability": "Eldritch Call",
    "code": "SHAMAN-P6-R01-C07"
   },
   "ability-shaman#0126": {
    "src": "Blood Connection turns into a teleport\nwhile Eldritch Call is active.",
-   "dst": "",
+   "dst": "Eldritch Call 生效期间，\nBlood Connection 变成传送。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1788,7 +1741,7 @@
   },
   "ability-shaman#0127": {
    "src": "Casting Totem while holding shift will spend\n{~} points of Blood Pool {#} (per Totem) to\ncall upon {~} nightmarish tentacles that attack\nnearby enemies.",
-   "dst": "",
+   "dst": "按住 Shift 施放 Totem，会消耗\n{~1} 点血池 {#}(每座图腾)，唤出\n{~2} 条梦魇般的触手\n攻击附近的敌人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1803,7 +1756,7 @@
   },
   "ability-shaman#0128": {
    "src": "Tentacles will attack Bleeding {#} enemies from an\nadditional +{~} blocks away.",
-   "dst": "",
+   "dst": "触手攻击流血 {#} 敌人的距离\n再增加 +{~} 格。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1818,20 +1771,19 @@
   },
   "ability-shaman#0129": {
    "src": "Maddening Roots",
-   "dst": "",
+   "dst": "疯长之根",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/002/000",
-   "keep": "en",
    "ability": "Maddening Roots",
    "code": "SHAMAN-P6-R02-C00"
   },
   "ability-shaman#0130": {
    "src": "Uproot will slow down enemies. Additionally,\nincrease the damage bonus granted by Bullwhip.",
-   "dst": "",
+   "dst": "Uproot 会减速敌人，\n同时提高 Bullwhip 给的伤害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1846,7 +1798,7 @@
   },
   "ability-shaman#0131": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Bullwhip Damage Bonus",
-   "dst": "",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~} Bullwhip 伤害加成",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1861,7 +1813,7 @@
   },
   "ability-shaman#0132": {
    "src": "{#} Effects: {~} Slowness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 效果: 对敌人 {~} 缓速 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1874,20 +1826,19 @@
   },
   "ability-shaman#0133": {
    "src": "Seeking Totem",
-   "dst": "",
+   "dst": "追寻图腾",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/002/003",
-   "keep": "en",
    "ability": "Seeking Totem",
    "code": "SHAMAN-P6-R02-C03"
   },
   "ability-shaman#0134": {
    "src": "While wearing the Mask of the Heretic {#},\nyour Totem will move towards you,\nunless you are within its range.",
-   "dst": "",
+   "dst": "戴着苍逆假面 {#} 时，你的图腾\n会朝你移动，除非你已经在\n它的范围内。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1902,33 +1853,31 @@
   },
   "ability-shaman#0135": {
    "src": "Cheaper Aura II",
-   "dst": "",
+   "dst": "节约·光环 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/003/001",
-   "keep": "en",
    "ability": "Cheaper Aura II",
    "code": "SHAMAN-P6-R03-C01"
   },
   "ability-shaman#0136": {
    "src": "Imbued Totem",
-   "dst": "",
+   "dst": "灌能图腾",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/003/004",
-   "keep": "en",
    "ability": "Imbued Totem",
    "code": "SHAMAN-P6-R03-C04"
   },
   "ability-shaman#0137": {
    "src": "Increase Totem's damage.",
-   "dst": "",
+   "dst": "提高 Totem 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1943,20 +1892,19 @@
   },
   "ability-shaman#0138": {
    "src": "Rupture",
-   "dst": "",
+   "dst": "崩裂",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/003/006",
-   "keep": "en",
    "ability": "Rupture",
    "code": "SHAMAN-P6-R03-C06"
   },
   "ability-shaman#0139": {
    "src": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes\nup to {~}s of Bleeding {#}, granting +{~} Blood Pool {#} for each\nsecond of Bleeding {#} consumed.",
-   "dst": "",
+   "dst": "Sacrificial Shrine 让 Aura 的伤害提高 +{~1}，\n并消耗最多 {~2} 秒的流血 {#}；每消耗一秒\n流血 {#} 就获得 +{~3} 点血池 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1971,20 +1919,19 @@
   },
   "ability-shaman#0140": {
    "src": "Bloody",
-   "dst": "",
+   "dst": "血腥",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/003/008",
-   "keep": "en",
    "ability": "Bloody",
    "code": "SHAMAN-P6-R03-C08"
   },
   "ability-shaman#0141": {
    "src": "Increase your maximum Blood Pool {#} by +{~} points.\nIncrease your maximum Bleeding {#} duration by +{~}s.",
-   "dst": "",
+   "dst": "血池 {#} 上限提高 +{~1} 点。\n流血 {#} 的最长持续时间提高 +{~2} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2001,20 +1948,19 @@
   },
   "ability-shaman#0142": {
    "src": "Commander",
-   "dst": "",
+   "dst": "指挥官",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/004/000",
-   "keep": "en",
    "ability": "Commander",
    "code": "SHAMAN-P6-R04-C00"
   },
   "ability-shaman#0143": {
    "src": "Casting Aura while holding shift will\nrally all active Puppets to your\nside, granting them increased\nattack speed and accuracy.",
-   "dst": "",
+   "dst": "按住 Shift 施放 Aura，会把所有\n在场的人偶集结到你身边，\n提高它们的攻速\n与准度。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2029,7 +1975,7 @@
   },
   "ability-shaman#0144": {
    "src": "While not rallied, your Summons' attacks\nwill build up the duration of this ability\nby +{~}s per attack. (Max {~}s)",
-   "dst": "",
+   "dst": "未集结时，召唤物每攻击一次\n就为这个技能累积 +{~1} 秒。(上限 {~2} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2044,7 +1990,7 @@
   },
   "ability-shaman#0145": {
    "src": "Your Main Attack deals {~} more\ndamage for each rallied Puppet.",
-   "dst": "",
+   "dst": "每有一个集结的人偶，\n你的普攻就多造成 {~} 伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2059,7 +2005,7 @@
   },
   "ability-shaman#0146": {
    "src": "{#} Effect: +{~} Attack Speed to Puppets",
-   "dst": "",
+   "dst": "{#} 效果: 对人偶 +{~} 攻击速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2072,20 +2018,19 @@
   },
   "ability-shaman#0147": {
    "src": "Friendly Fire",
-   "dst": "",
+   "dst": "友军误伤",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/004/002",
-   "keep": "en",
    "ability": "Friendly Fire",
    "code": "SHAMAN-P6-R04-C02"
   },
   "ability-shaman#0148": {
    "src": "Hitting your Puppets with Main Attack will\ncause them to lose {~}s of their duration\nper beam and give them a damage boost.",
-   "dst": "",
+   "dst": "用普攻打到自己的人偶时，\n每道光束会让它们少 {~} 秒持续时间，\n并给它们伤害提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2100,7 +2045,7 @@
   },
   "ability-shaman#0149": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Puppets",
-   "dst": "",
+   "dst": "{#} 效果: 对人偶 +{~} 伤害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2113,20 +2058,19 @@
   },
   "ability-shaman#0150": {
    "src": "Depersonalization",
-   "dst": "",
+   "dst": "人格解离",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/004/005",
-   "keep": "en",
    "ability": "Depersonalization",
    "code": "SHAMAN-P6-R04-C05"
   },
   "ability-shaman#0151": {
    "src": "Masquerade will trigger after -{~}\nless Mask switch. Reduces mana\nbonus by -{~}.",
-   "dst": "",
+   "dst": "Masquerade 少换 {~1} 次假面\n就会触发，但法力加成\n减少 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2141,20 +2085,19 @@
   },
   "ability-shaman#0152": {
    "src": "Scourge",
-   "dst": "",
+   "dst": "灾厄",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/004/007",
-   "keep": "en",
    "ability": "Scourge",
    "code": "SHAMAN-P6-R04-C07"
   },
   "ability-shaman#0153": {
    "src": "Flaming Tongue gains +{~} hit and attacks +{~} faster.",
-   "dst": "",
+   "dst": "Flaming Tongue 多命中 +{~1} 次，攻击快 +{~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2169,20 +2112,19 @@
   },
   "ability-shaman#0154": {
    "src": "Meticulous Act",
-   "dst": "",
+   "dst": "精湛演出",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/005/003",
-   "keep": "en",
    "ability": "Meticulous Act",
    "code": "SHAMAN-P6-R05-C03"
   },
   "ability-shaman#0155": {
    "src": "Your Masks will give higher bonuses.",
-   "dst": "",
+   "dst": "假面给的加成更高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2197,7 +2139,7 @@
   },
   "ability-shaman#0156": {
    "src": "{#} Fanatic: +{~} Resistance Bonus",
-   "dst": "",
+   "dst": "{#} 金虔: +{~} 抗性加成",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2210,7 +2152,7 @@
   },
   "ability-shaman#0157": {
    "src": "{#} Heretic: +{~} Walk Speed",
-   "dst": "",
+   "dst": "{#} 苍逆: +{~} 移动速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2223,7 +2165,7 @@
   },
   "ability-shaman#0158": {
    "src": "{#} Lunatic: +{~} Damage Bonus",
-   "dst": "",
+   "dst": "{#} 赤狂: +{~} 伤害加成",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2236,20 +2178,19 @@
   },
   "ability-shaman#0159": {
    "src": "Bloodletting",
-   "dst": "",
+   "dst": "放血",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/06/005/008",
-   "keep": "en",
    "ability": "Bloodletting",
    "code": "SHAMAN-P6-R05-C08"
   },
   "ability-shaman#0160": {
    "src": "Increase Twisted Tether's damage.",
-   "dst": "",
+   "dst": "提高 Twisted Tether 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2264,20 +2205,19 @@
   },
   "ability-shaman#0161": {
    "src": "Hummingbird's Song",
-   "dst": "",
+   "dst": "蜂鸟之歌",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/001/001",
-   "keep": "en",
    "ability": "Hummingbird's Song",
    "code": "SHAMAN-P7-R01-C01"
   },
   "ability-shaman#0162": {
    "src": "Casting Haul while holding shift will\ntemporarily send your Hummingbirds\nto attack nearby enemies, rapidly\npiercing through them every {~}s.\nCasting it again will call them back early.",
-   "dst": "",
+   "dst": "按住 Shift 施放 Haul，会暂时\n派出你的蜂鸟攻击附近的敌人，\n每 {~} 秒急速贯穿它们。\n再施放一次可以提前召回。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2292,7 +2232,7 @@
   },
   "ability-shaman#0163": {
    "src": "Summon {~} Hummingbird Carvings\nwhich fly around you, passively\ngranting a walk speed buff.",
-   "dst": "",
+   "dst": "召唤 {~} 只蜂鸟雕刻绕着你飞，\n被动提供移速增益。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2307,7 +2247,7 @@
   },
   "ability-shaman#0164": {
    "src": "While they are attacking, your Hummingbirds\nwill not apply their passive effects to you.",
-   "dst": "",
+   "dst": "蜂鸟在攻击期间，\n不会给你被动效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2322,7 +2262,7 @@
   },
   "ability-shaman#0165": {
    "src": "{#} Effect: +{~} Walk Speed to Self",
-   "dst": "",
+   "dst": "{#} 效果: 对自身 +{~} 移动速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2335,20 +2275,19 @@
   },
   "ability-shaman#0166": {
    "src": "Blood Rite",
-   "dst": "",
+   "dst": "血之仪式",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/001/007",
-   "keep": "en",
    "ability": "Blood Rite",
    "code": "SHAMAN-P7-R01-C07"
   },
   "ability-shaman#0167": {
    "src": "When any player takes damage within\nyour Totem's range, {~} of the damage\ntaken proportional to your maximum\nhealth is added to your Blood Pool {#}.\n(Max {~} Blood Pool per second)",
-   "dst": "",
+   "dst": "图腾范围内有任何玩家受到伤害时，\n按你最大生命的比例，把其中 {~1}\n加进你的血池 {#}。\n(每秒最多 {~2} 点血池)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2363,33 +2302,31 @@
   },
   "ability-shaman#0168": {
    "src": "Triple Totem",
-   "dst": "",
+   "dst": "三重图腾",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/002/000",
-   "keep": "en",
    "ability": "Triple Totem",
    "code": "SHAMAN-P7-R02-C00"
   },
   "ability-shaman#0169": {
    "src": "Invigorating Wave",
-   "dst": "",
+   "dst": "振奋之波",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/002/002",
-   "keep": "en",
    "ability": "Invigorating Wave",
    "code": "SHAMAN-P7-R02-C02"
   },
   "ability-shaman#0170": {
    "src": "Aura will temporarily increase\nyour Summons' attack speed.\nPlayers hit will gain +{~} mana.",
-   "dst": "",
+   "dst": "Aura 会暂时提高召唤物的攻速。\n被命中的玩家获得 +{~} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2404,7 +2341,7 @@
   },
   "ability-shaman#0171": {
    "src": "{#} Effect: +{~} Attack Speed to Summons",
-   "dst": "",
+   "dst": "{#} 效果: 对召唤物 +{~} 攻击速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2417,20 +2354,19 @@
   },
   "ability-shaman#0172": {
    "src": "Chorus of the Ancients",
-   "dst": "",
+   "dst": "远古合唱",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/002/004",
-   "keep": "en",
    "ability": "Chorus of the Ancients",
    "code": "SHAMAN-P7-R02-C04"
   },
   "ability-shaman#0173": {
    "src": "Increase the power of all Chants.",
-   "dst": "",
+   "dst": "提高所有吟唱的强度。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2445,20 +2381,19 @@
   },
   "ability-shaman#0174": {
    "src": "Sanguine Strike",
-   "dst": "",
+   "dst": "血色打击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/003/006",
-   "keep": "en",
    "ability": "Sanguine Strike",
    "code": "SHAMAN-P7-R03-C06"
   },
   "ability-shaman#0175": {
    "src": "Bleeding {#} enemies take damage every {~}s.\nBleeding {#} damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool {#}.",
-   "dst": "",
+   "dst": "流血 {#} 的敌人每 {~1} 秒受到伤害。\n在图腾范围内造成的流血 {#} 伤害\n还会为血池 {#} 增加 +{~2} 点。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2473,7 +2408,7 @@
   },
   "ability-shaman#0176": {
    "src": "Greatly reduce Main Attack spread.",
-   "dst": "",
+   "dst": "大幅减少普攻的散布。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2488,7 +2423,7 @@
   },
   "ability-shaman#0177": {
    "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#} for +{~}s.",
-   "dst": "",
+   "dst": "你的普攻现在会让敌人\n流血 {#} +{~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2503,33 +2438,31 @@
   },
   "ability-shaman#0178": {
    "src": "Bloodier",
-   "dst": "",
+   "dst": "更血腥",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/003/008",
-   "keep": "en",
    "ability": "Bloodier",
    "code": "SHAMAN-P7-R03-C08"
   },
   "ability-shaman#0179": {
    "src": "Soaring Wingbeats",
-   "dst": "",
+   "dst": "振翅高飞",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/004/001",
-   "keep": "en",
    "ability": "Soaring Wingbeats",
    "code": "SHAMAN-P7-R04-C01"
   },
   "ability-shaman#0180": {
    "src": "Your Hummingbirds' passive\neffects are improved.",
-   "dst": "",
+   "dst": "蜂鸟的被动效果增强。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2544,7 +2477,7 @@
   },
   "ability-shaman#0181": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}Jump Height to Self",
-   "dst": "",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ +{~}{#}对自身跳跃高度",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2559,7 +2492,7 @@
   },
   "ability-shaman#0182": {
    "src": "{#} Effects: +{~} Walk Speed to Self",
-   "dst": "",
+   "dst": "{#} 效果: 对自身 +{~} 移动速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2572,33 +2505,31 @@
   },
   "ability-shaman#0183": {
    "src": "Cheaper Uproot II",
-   "dst": "",
+   "dst": "节约·连根拔起 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/004/003",
-   "keep": "en",
    "ability": "Cheaper Uproot II",
    "code": "SHAMAN-P7-R04-C03"
   },
   "ability-shaman#0184": {
    "src": "Awakened",
-   "dst": "",
+   "dst": "觉醒",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/004/005",
-   "keep": "en",
    "ability": "Awakened",
    "code": "SHAMAN-P7-R04-C05"
   },
   "ability-shaman#0185": {
    "src": "After saving {~} mana from your Masks'\nmana reductions, switching Masks will\ncause you to become Awakened ♚,\ngiving you the upsides of all\nMasks at once with no downsides.",
-   "dst": "",
+   "dst": "靠假面的法力减免省下 {~} 点法力后，\n换假面会让你进入觉醒 ♚ 状态，\n同时获得所有假面的好处，\n没有任何副作用。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2613,7 +2544,7 @@
   },
   "ability-shaman#0186": {
    "src": "Switching to an attached Mask\nwhile Awakened ♚ will immediately\nrecall the Mask back to you.",
-   "dst": "",
+   "dst": "觉醒 ♚ 时切换到已附在敌人身上的\n假面，会立刻把它召回。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2628,20 +2559,19 @@
   },
   "ability-shaman#0187": {
    "src": "Blood Sorrow",
-   "dst": "",
+   "dst": "血之悲歌",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/004/007",
-   "keep": "en",
    "ability": "Blood Sorrow",
    "code": "SHAMAN-P7-R04-C07"
   },
   "ability-shaman#0188": {
    "src": "Casting Uproot or Haunting Memory while\nholding shift will spend {~} points\nof Blood Pool {#} to cast a destructive beam\nthat chains between enemies and allies,\nand damages enemies every {~}s.",
-   "dst": "",
+   "dst": "按住 Shift 施放 Uproot 或 Haunting Memory，\n会消耗 {~1} 点血池 {#}，射出一道毁灭光束，\n在敌人与队友之间连锁，\n每 {~2} 秒对敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2656,7 +2586,7 @@
   },
   "ability-shaman#0189": {
    "src": "You and any allies within the beam will\nreceive +{~} Overhealth ❤ per hit.\nBonus health decays over {~}s.",
-   "dst": "",
+   "dst": "光束内的你与队友每被命中一次，\n就获得 +{~1} 点护盾值 ❤。\n这份额外生命会在 {~2} 秒内衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2671,20 +2601,19 @@
   },
   "ability-shaman#0190": {
    "src": "Shepherd",
-   "dst": "",
+   "dst": "牧者",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/07/005/000",
-   "keep": "en",
    "ability": "Shepherd",
    "code": "SHAMAN-P7-R05-C00"
   },
   "ability-shaman#0191": {
    "src": "When you or your Summons kill an enemy,\nor when you kill a Puppet with Friendly Fire,\ngain +{~} Max Puppets ⚘ for {~}s. (Max +{~})",
-   "dst": "",
+   "dst": "你或召唤物击杀敌人，或你用\nFriendly Fire 打掉一个人偶时，\n人偶上限 ⚘ +{~1}，持续 {~2} 秒。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2699,20 +2628,19 @@
   },
   "ability-shaman#0192": {
    "src": "Puppetry",
-   "dst": "",
+   "dst": "傀儡术",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/001/001",
-   "keep": "en",
    "ability": "Puppetry",
    "code": "SHAMAN-P8-R01-C01"
   },
   "ability-shaman#0193": {
    "src": "Totem summons Puppets {~} faster.",
-   "dst": "",
+   "dst": "Totem 召唤人偶的速度快 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2727,20 +2655,19 @@
   },
   "ability-shaman#0194": {
    "src": "Eldritch Transfusion",
-   "dst": "",
+   "dst": "邪祟灌血",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/001/007",
-   "keep": "en",
    "ability": "Eldritch Transfusion",
    "code": "SHAMAN-P8-R01-C07"
   },
   "ability-shaman#0195": {
    "src": "For each Transfused {#} Eldritch Call has, its\nattacks deal more damage. All Transfused {#}\nis lost when Eldritch Call expires.",
-   "dst": "",
+   "dst": "Eldritch Call 身上每有一层灌血 {#}，\n它的攻击就多造成伤害。Eldritch Call\n结束时所有灌血 {#} 都会消失。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2755,7 +2682,7 @@
   },
   "ability-shaman#0196": {
    "src": "Refreshing Eldritch Call while it is already active\nwill imbue its attacks with blood, granting it +{~}\nTransfused {#}. (Max {~})",
-   "dst": "",
+   "dst": "在 Eldritch Call 还生效时再次施放，\n会为它的攻击注入鲜血，获得 +{~1}\n层灌血 {#}。(上限 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2770,7 +2697,7 @@
   },
   "ability-shaman#0197": {
    "src": "{#} Effect: +{~} damage to Eldritch Call (Per stack)",
-   "dst": "",
+   "dst": "{#} 效果: Eldritch Call +{~} 伤害 (每层)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2783,20 +2710,19 @@
   },
   "ability-shaman#0198": {
    "src": "Crystal Knives",
-   "dst": "",
+   "dst": "水晶飞刀",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/002/002",
-   "keep": "en",
    "ability": "Crystal Knives",
    "code": "SHAMAN-P8-R02-C02"
   },
   "ability-shaman#0199": {
    "src": "Your Puppet's knives become stronger,\nand can pass through walls and enemies.\n(Max {~} enemies)",
-   "dst": "",
+   "dst": "人偶的飞刀变强，\n而且可以穿过墙壁与敌人。\n(最多 {~} 个敌人)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2811,20 +2737,19 @@
   },
   "ability-shaman#0200": {
    "src": "Freestyle",
-   "dst": "",
+   "dst": "自由式",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/002/004",
-   "keep": "en",
    "ability": "Freestyle",
    "code": "SHAMAN-P8-R02-C04"
   },
   "ability-shaman#0201": {
    "src": "Haul, Blood Connection, and Frog Dance\nlaunch you further.",
-   "dst": "",
+   "dst": "Haul、Blood Connection 与 Frog Dance\n把你送得更远。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2839,20 +2764,19 @@
   },
   "ability-shaman#0202": {
    "src": "Repulse",
-   "dst": "",
+   "dst": "斥退",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/002/006",
-   "keep": "en",
    "ability": "Repulse",
    "code": "SHAMAN-P8-R02-C06"
   },
   "ability-shaman#0203": {
    "src": "Once Aura rebounds, it will radiate back out\nand deal its effects a third time.",
-   "dst": "",
+   "dst": "Aura 弹回来之后会再向外扩散一次，\n效果总共生效三次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2867,7 +2791,7 @@
   },
   "ability-shaman#0204": {
    "src": "Sacrificial Shrine will heal {~} less health.",
-   "dst": "",
+   "dst": "Sacrificial Shrine 的治疗量减少 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2882,20 +2806,19 @@
   },
   "ability-shaman#0205": {
    "src": "Effuse",
-   "dst": "",
+   "dst": "涌流",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/002/008",
-   "keep": "en",
    "ability": "Effuse",
    "code": "SHAMAN-P8-R02-C08"
   },
   "ability-shaman#0206": {
    "src": "Flaming Tongue grants +{~} Blood Pool {#} per hit.",
-   "dst": "",
+   "dst": "Flaming Tongue 每次命中获得 +{~} 点血池 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2910,20 +2833,19 @@
   },
   "ability-shaman#0207": {
    "src": "Slingshot",
-   "dst": "",
+   "dst": "弹射",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/003/000",
-   "keep": "en",
    "ability": "Slingshot",
    "code": "SHAMAN-P8-R03-C00"
   },
   "ability-shaman#0208": {
    "src": "Haul slings you upwards\nbefore leaping towards Totem.",
-   "dst": "",
+   "dst": "Haul 会先把你弹向空中，\n再朝图腾跃去。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2938,20 +2860,19 @@
   },
   "ability-shaman#0209": {
    "src": "Egomania",
-   "dst": "",
+   "dst": "自我狂热",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/003/003",
-   "keep": "en",
    "ability": "Egomania",
    "code": "SHAMAN-P8-R03-C03"
   },
   "ability-shaman#0210": {
    "src": "Increase Aura's damage.",
-   "dst": "",
+   "dst": "提高 Aura 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2966,7 +2887,7 @@
   },
   "ability-shaman#0211": {
    "src": "When wearing the Mask of the Fanatic {#},\nAura will radiate from yourself\ninstead of your Totem.",
-   "dst": "",
+   "dst": "戴着金虔假面 {#} 时，Aura 改为\n从你自己身上扩散，\n而不是图腾。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2981,20 +2902,19 @@
   },
   "ability-shaman#0212": {
    "src": "Totemic Hammer",
-   "dst": "",
+   "dst": "图腾之锤",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/003/005",
-   "keep": "en",
    "ability": "Totemic Hammer",
    "code": "SHAMAN-P8-R03-C05"
   },
   "ability-shaman#0213": {
    "src": "Increase Totemic Smash's damage.",
-   "dst": "",
+   "dst": "提高 Totemic Smash 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3009,7 +2929,7 @@
   },
   "ability-shaman#0214": {
    "src": "When wearing the Mask of the Lunatic {#},\nTotem will smash down onto the ground.",
-   "dst": "",
+   "dst": "戴着赤狂假面 {#} 时，\nTotem 会砸向地面。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3024,33 +2944,31 @@
   },
   "ability-shaman#0215": {
    "src": "Bloodiest",
-   "dst": "",
+   "dst": "最血腥",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/003/007",
-   "keep": "en",
    "ability": "Bloodiest",
    "code": "SHAMAN-P8-R03-C07"
   },
   "ability-shaman#0216": {
    "src": "Fortified Formation",
-   "dst": "",
+   "dst": "固守阵型",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/004/002",
-   "keep": "en",
    "ability": "Fortified Formation",
    "code": "SHAMAN-P8-R04-C02"
   },
   "ability-shaman#0217": {
    "src": "If your health drops to {~} or less,\nyour Effigies protect you until you\nare above {~} health again.",
-   "dst": "",
+   "dst": "生命降到 {~1} 以下时，塑像会\n保护你，直到生命回到 {~2} 以上。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3065,7 +2983,7 @@
   },
   "ability-shaman#0218": {
    "src": "While protected, you take reduced\ndamage and your Effigies strike\nback at attackers every {~}s.",
-   "dst": "",
+   "dst": "被保护期间，你受到的伤害降低，\n塑像每 {~} 秒对攻击者\n反击一次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3080,20 +2998,19 @@
   },
   "ability-shaman#0219": {
    "src": "Pool of Rejuvenation",
-   "dst": "",
+   "dst": "回春之池",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/004/004",
-   "keep": "en",
    "ability": "Pool of Rejuvenation",
    "code": "SHAMAN-P8-R04-C04"
   },
   "ability-shaman#0220": {
    "src": "Gain +{~} Mana every {~}s while\ninside of at least one pool.",
-   "dst": "",
+   "dst": "站在至少一个池子里时，\n每 {~2} 秒获得 +{~1} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3108,7 +3025,7 @@
   },
   "ability-shaman#0221": {
    "src": "When wearing the Mask of the Heretic {#},\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
-   "dst": "",
+   "dst": "戴着苍逆假面 {#} 时，Frog Dance\n落地会生成一个小池子。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3123,20 +3040,19 @@
   },
   "ability-shaman#0222": {
    "src": "Haemomagnetic",
-   "dst": "",
+   "dst": "血磁",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/004/008",
-   "keep": "en",
    "ability": "Haemomagnetic",
    "code": "SHAMAN-P8-R04-C08"
   },
   "ability-shaman#0223": {
    "src": "Blood Sorrow will chain {~} further\nand deals increased damage.",
-   "dst": "",
+   "dst": "Blood Sorrow 的连锁距离再增加 {~}，\n伤害也提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3151,20 +3067,19 @@
   },
   "ability-shaman#0224": {
    "src": "Corporeal Manifestation",
-   "dst": "",
+   "dst": "具现化身",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/08/005/005",
-   "keep": "en",
    "ability": "Corporeal Manifestation",
    "code": "SHAMAN-P8-R05-C05"
   },
   "ability-shaman#0225": {
    "src": "When wearing the Mask of the Awakened ♚,\nall of your other Masks will spin around\nyou, dealing damage and applying\nHaunting Memory's effects.",
-   "dst": "",
+   "dst": "戴着觉醒 ♚ 假面时，其余所有假面\n会绕着你旋转，造成伤害并施加\nHaunting Memory 的效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3179,20 +3094,19 @@
   },
   "ability-shaman#0226": {
    "src": "Patchwork Abomination",
-   "dst": "",
+   "dst": "千缀魔孽",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/09/002/001",
-   "keep": "en",
    "ability": "Patchwork Abomination",
    "code": "SHAMAN-P9-R02-C01"
   },
   "ability-shaman#0227": {
    "src": "Activate abilities to charge\nyour Ultimate Meter {#} to {~}.",
-   "dst": "",
+   "dst": "使用技能把大招 {#} 充到 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3207,7 +3121,7 @@
   },
   "ability-shaman#0228": {
    "src": "Exploding Puppets will cause the\nAbomination to explode when it dies.",
-   "dst": "",
+   "dst": "Exploding Puppets 会让魔孽\n死亡时爆炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3222,7 +3136,7 @@
   },
   "ability-shaman#0229": {
    "src": "Hit the Abomination with Overseer whilst\nsneaking to switch between close and\nlong ranged mode.",
-   "dst": "",
+   "dst": "潜行时用 Overseer 命中魔孽，\n可以在近战与远程模式之间\n切换。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3237,7 +3151,7 @@
   },
   "ability-shaman#0230": {
    "src": "Summon the Patchwork Abomination,\na highly unstable summon.",
-   "dst": "",
+   "dst": "召唤千缀魔孽——\n一个极不稳定的召唤物。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3252,7 +3166,7 @@
   },
   "ability-shaman#0231": {
    "src": "The Abomination will attack enemies\nevery {~}s in close-ranged mode,\nand every {~}s in long-ranged mode.",
-   "dst": "",
+   "dst": "魔孽在近战模式下每 {~1} 秒攻击一次，\n远程模式下每 {~2} 秒攻击一次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3267,7 +3181,7 @@
   },
   "ability-shaman#0232": {
    "src": "{#} Area of Effect: {~} Blocks (Circle-Shaped, Explosion)",
-   "dst": "",
+   "dst": "{#} 作用范围: {~} 格 (圆形，爆炸)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3280,7 +3194,7 @@
   },
   "ability-shaman#0233": {
    "src": "{#} Total Damage: {~} (of your DPS, Attack)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，攻击)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3293,7 +3207,7 @@
   },
   "ability-shaman#0234": {
    "src": "{#} Total Damage: {~} (of your DPS, Explosion)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，爆炸)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3306,20 +3220,19 @@
   },
   "ability-shaman#0235": {
    "src": "Monument to Gloom",
-   "dst": "",
+   "dst": "阴郁之碑",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/09/002/007",
-   "keep": "en",
    "ability": "Monument to Gloom",
    "code": "SHAMAN-P9-R02-C07"
   },
   "ability-shaman#0236": {
    "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#}{#}to {~}.",
-   "dst": "",
+   "dst": "使用技能或损失生命来把大招 {#}{#}充到 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3334,7 +3247,7 @@
   },
   "ability-shaman#0237": {
    "src": "Others receive +{~} Health {#} every {~}s.",
-   "dst": "",
+   "dst": "其他人每 {~2} 秒获得 +{~1} 生命 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3349,7 +3262,7 @@
   },
   "ability-shaman#0238": {
    "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#} to nearby\nacolytes every {~}s.",
-   "dst": "",
+   "dst": "你的图腾被邪祟恶魔附身，\n每 {~2} 秒给附近的信徒\n+{~1} 点血池 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3364,20 +3277,19 @@
   },
   "ability-shaman#0239": {
    "src": "Sundered Skies",
-   "dst": "",
+   "dst": "裂空",
    "role": "name",
    "kind": "term",
    "ctx": [
     "shaman/技能名稱"
    ],
    "tree": "04/shaman/09/003/004",
-   "keep": "en",
    "ability": "Sundered Skies",
    "code": "SHAMAN-P9-R03-C04"
   },
   "ability-shaman#0240": {
    "src": "Damage is split between all enemies.",
-   "dst": "",
+   "dst": "伤害由所有敌人平分。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3392,7 +3304,7 @@
   },
   "ability-shaman#0241": {
    "src": "When your Totem lands, it summons\na massive Thundercloud that zaps enemies\nevery {~}s, stunning them for {~}s.",
-   "dst": "",
+   "dst": "图腾落地时会召唤一朵巨大的雷云，\n每 {~1} 秒电击敌人，\n并使其昏迷 {~2} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3407,7 +3319,7 @@
   },
   "ability-shaman#0242": {
    "src": "Your Totem massively grows in size,\ndoubling all of its effects.",
-   "dst": "",
+   "dst": "你的图腾体积暴涨，\n所有效果翻倍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
