@@ -245,7 +245,7 @@ public final class WynnChaYuan implements ClientModInitializer {
     private static void loadLayers() {
         translations.setTranslateNames(config.translateItemNames());
         java.util.List<Path> layers = new java.util.ArrayList<>();
-        String under = com.wynnchayuan.translate.Languages.fallbackFor(language);
+        String under = fallbackLanguage();
         if (under != null) {
             Path fallback = com.wynnchayuan.translate.Languages.dir(configDir, under);
             StarterFiles.installIfEmpty(fallback, under);
@@ -256,6 +256,58 @@ public final class WynnChaYuan implements ClientModInitializer {
         layers.add(dir);
         translations.loadAll(layers);
     }
+
+    /**
+     * 沒翻到的地方要拿哪一種語言墊底。
+     *
+     * <p>設定沒指定時照 {@code Languages#fallbackFor} 的自動規則（同語族才墊）；
+     * 指名了就照指名的；{@code "off"} 就不墊，沒翻到的地方顯示英文原文。
+     *
+     * @return 要墊的語言；不墊時回傳 {@code null}
+     */
+    public static String fallbackLanguage() {
+        String chosen = config.fallbackLanguage();
+        if (OFF.equals(chosen)) {
+            return null;
+        }
+        if (!chosen.isEmpty()) {
+            // 指名自己沒有意義，那會讀同一個資料夾兩次
+            return chosen.equals(language) ? null : chosen;
+        }
+        return com.wynnchayuan.translate.Languages.fallbackFor(language);
+    }
+
+    /**
+     * 換輔助語言，不必重開遊戲。
+     *
+     * <p>跟 {@link #switchLanguage} 的差別是<b>主語言沒有變</b>，所以只要
+     * 重新鋪層；但墊底那一種可能還沒抓下來過，所以照樣去同步一次。
+     */
+    public static void switchFallback(String lang,
+                                      java.util.function.Consumer<String> done) {
+        config.setFallbackLanguage(lang);
+        loadLayers();
+        String under = fallbackLanguage();
+        if (under == null || config.source() != CollectorConfig.Source.GITHUB) {
+            done.accept(com.wynnchayuan.client.T.s("data.fallback.done",
+                    translations.size()));
+            return;
+        }
+        Path dir = com.wynnchayuan.translate.Languages.dir(configDir, under);
+        Thread worker = new Thread(() -> {
+            RemoteSync.fetchInto(dir, under);
+            net.minecraft.client.Minecraft.getInstance().execute(() -> {
+                loadLayers();
+                done.accept(com.wynnchayuan.client.T.s("data.fallback.done",
+                        translations.size()));
+            });
+        }, MOD_ID + "-fallback");
+        worker.setDaemon(true);
+        worker.start();
+    }
+
+    /** {@code fallbackLanguage} 設成這個就是「不墊，顯示原文」。 */
+    public static final String OFF = "off";
 
     /**
      * 換一種語言的譯文，不必重開遊戲。

@@ -59,6 +59,19 @@ public final class LanguagePickTest {
         check("清回空字串也存得住",
                 new CollectorConfig(file).language().isEmpty());
 
+        // ---- 輔助語言 ----
+        check("輔助語言預設是自動（空字串）",
+                again.fallbackLanguage().isEmpty());
+        again.setFallbackLanguage("off");
+        check("★ 選了『顯示原文』之後存得住",
+                "off".equals(new CollectorConfig(file).fallbackLanguage()));
+        again.setFallbackLanguage("zh_tw");
+        check("指名一種語言也存得住",
+                "zh_tw".equals(new CollectorConfig(file).fallbackLanguage()));
+        again.setFallbackLanguage("");
+        check("清回自動也存得住",
+                new CollectorConfig(file).fallbackLanguage().isEmpty());
+
         report();
     }
 
