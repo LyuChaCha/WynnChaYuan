@@ -165,6 +165,7 @@ public final class TranslationStore {
         playerKeys.clear();
         wordCount.clear();
         fromWiki.clear();
+        thisLayer.clear();
         loadedFiles = 0;
 
         for (Path dir : dirs) {
@@ -173,8 +174,41 @@ public final class TranslationStore {
         report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
     }
 
+    /**
+     * 這一層已經寫過哪些鍵。見 {@link #layered}。
+     *
+     * <p>每讀一層清一次，所以它記的永遠是「<b>這一層</b>寫過什麼」。
+     */
+    private final java.util.Set<String> thisLayer = new java.util.HashSet<>();
+
+    /**
+     * 往輔助索引寫一筆，遵守「層內先到先贏、跨層後來居上」。
+     *
+     * <h2>為什麼不能直接用 putIfAbsent</h2>
+     * 四個輔助索引（{@link #flat}、{@link #unwrapped}、{@link #marked}、
+     * {@link #unindented}）原本都是 {@code putIfAbsent}——<b>先寫的贏</b>。
+     * 單層的時候那是對的：同一層裡撞鍵時，排在前面的檔案勝出。
+     *
+     * <p>但疊層之後就反了。墊底的那一層<b>先</b>載入，於是它把每一條長句都
+     * 先佔走，上面那一層永遠寫不進去。實機的症狀是「簡體明明翻好了，
+     * 畫面上卻是繁體」，而且<b>只發生在長句</b>——短標籤走的是主查表
+     * （{@code entries.put}，後來居上），長句走的才是這幾個索引。
+     *
+     * <p>所以判準從「這個鍵有沒有人寫過」改成「<b>這一層</b>有沒有人寫過」。
+     * 層內的先到先贏沒有變，跨層則跟主查表一致：後面那一層蓋掉前面那一層。
+     *
+     * @param tag 哪一個索引。不同索引的鍵可能長得一樣，要分開記
+     */
+    private void layered(java.util.Map<String, String> index, String tag,
+                         String key, String value) {
+        if (thisLayer.add(tag + '\u0000' + key)) {
+            index.put(key, value);
+        }
+    }
+
     /** 讀一層。清空是 {@link #loadAll(List)} 的事，這裡只負責往上疊。 */
     private void readOne(Path dir) {
+        thisLayer.clear();
         if (!Files.isDirectory(dir)) {
             try {
                 Files.createDirectories(dir);
@@ -426,7 +460,7 @@ public final class TranslationStore {
         }
         // 不能只收「正規化之後有變」的。語料裡的長句本來就沒有換行——
         // 會斷行的是<b>畫面</b>，不是語料。查詢端才是那個帶著換行進來的。
-        flat.putIfAbsent(normalise(key), value);
+        layered(flat, "flat", normalise(key), value);
     }
 
     /** 名字前後至少要有這麼多字被打出來，才敢認。見 {@link #playerNameIn}。 */
@@ -678,7 +712,7 @@ public final class TranslationStore {
     /** 見 {@link #unwrapped}。索引<b>所有</b>夠長的條目，語料那邊不必也帶著換行。 */
     private void noteUnwrapped(String key, String value) {
         if (key.length() >= MIN_FLAT_LENGTH) {
-            unwrapped.putIfAbsent(unwrap(key), value);
+            layered(unwrapped, "unwrapped", unwrap(key), value);
         }
     }
 
@@ -1294,7 +1328,7 @@ public final class TranslationStore {
 
     private void noteMarked(String src, String dst) {
         if (hasMark(src) && countMarks(src) == countMarks(dst)) {
-            marked.putIfAbsent(sameMarks(src), dst);
+            layered(marked, "marked", sameMarks(src), dst);
         }
     }
 
@@ -1462,7 +1496,8 @@ public final class TranslationStore {
     private void noteIndented(String src, String dst) {
         int n = indentOf(src);
         if (n > 0) {
-            unindented.putIfAbsent(src.substring(n), dst.substring(indentOf(dst)));
+            layered(unindented, "unindented",
+                    src.substring(n), dst.substring(indentOf(dst)));
         }
     }
 

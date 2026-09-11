@@ -37,6 +37,14 @@ public final class LanguageFallbackTest {
     /** 一條簡體已經翻好的介面標籤。 */
     private static final String BOTH = "Combat Level";
 
+    /**
+     * 一條<b>夠長</b>、兩種語言都翻好而且翻得不一樣的條目。
+     *
+     * <p>要夠長才會進 flat 索引（{@code MIN_FLAT_LENGTH} 是 24）。
+     * 「地」與「土」的差別剛好一眼看得出是哪一層勝出。
+     */
+    private static final String LONG = "Earth Main Attack Damage:";
+
     public static void main(String[] args) {
         TranslationStore tw = new TranslationStore();
         tw.loadAll(ROOT.resolve("zh_tw"));
@@ -66,6 +74,28 @@ public final class LanguageFallbackTest {
         flipped.loadAll(List.of(ROOT.resolve("zh_cn"), ROOT.resolve("zh_tw")));
         check("順序反過來就換繁體勝出（拿到 " + flipped.lookup(BOTH) + "）",
                 "戰鬥等級".equals(flipped.lookup(BOTH)));
+
+        // ---- 輔助索引也要照同一個順序 ----
+        //
+        // 主查表（entries）是「後載入的蓋前面的」，所以簡體勝出。但長句還有
+        // 另一條路：畫面會把長句自動斷行，查表前要先把幾行併回一段，
+        // 那條路走的是 flat 索引（見 lookupFlat）。
+        //
+        // 而 flat 用的是 putIfAbsent——<b>先寫的贏</b>。疊層時繁體先載入，
+        // 於是每一條長句都被繁體先佔走，簡體那一份永遠寫不進去。
+        // 實機的症狀是「簡體明明翻好了，畫面上卻是繁體」，而且<b>只發生在長句</b>，
+        // 短標籤完全正常——因為短的走 entries，長的走 flat。
+        //
+        // 層內先到先贏是刻意的（同一層裡撞鍵時，排前面的檔案勝出）；
+        // 要改的是<b>跨層</b>：後面那一層必須蓋得掉前面那一層。
+        check("★ 長句也要簡體勝出（flat 索引，拿到 "
+                        + both.lookupFlat(LONG) + "）",
+                "土属性普攻伤害:".equals(both.lookupFlat(LONG)));
+        check("順序反過來時長句換繁體勝出（拿到 "
+                        + flipped.lookupFlat(LONG) + "）",
+                "地屬性普攻傷害:".equals(flipped.lookupFlat(LONG)));
+        check("長句在單層時本來就查得到",
+                "土属性普攻伤害:".equals(cn.lookupFlat(LONG)));
 
         // 只有一層時行為不變
         TranslationStore one = new TranslationStore();
