@@ -83,7 +83,41 @@ CONVERTED = {
     "列印": "打印",
     "预设值": "默认值",
     "伺服器": "服务器",
+    # Profession：採礦、釣魚、鍛造那一整套。大陸的網遊一律叫「生活技能」，
+    # 「专业」是照字面搬的——讀起來像大學科系，而且跟 Class（职业）擺在
+    # 同一個畫面上時，兩個詞看起來像同一件事。
+    "专业": "生活技能",
 }
+
+# 只在繁體裡才有的字。出現在簡中語料裡就是<b>連字都沒轉</b>。
+#
+# 為什麼要有這一條：上面那張詞表比對的是「詞」，前提是字已經轉成簡體了。
+# 但骨架是從繁體複製過來的，說明欄整段是繁體原文——詞表一條都比不到，
+# 193 個檔就這樣過關。這一條擋的是更前面的那一層。
+#
+# 只收<b>簡繁真的不同形</b>的常用字。兩邊同形的（的、和、在）當然不收；
+# 簡體裡也用得到的異體字也不收，不然會冒出一堆假警報。
+TRAD_ONLY = (
+    # 高頻虛詞與常用字
+    "個們這來對開關沒還當為與並將"
+    "會時間長點種類樣結給級組經統體"
+    "國學問題選單導專業務員動參區"
+    "發現實際進數無東圖團園圍場塊"
+    "說話語譯讀誰講詞論訊調變讓認識議請謝證護課試"
+    "標籤產備復錯銀錢鐵鋼鎖鐘陣隨險雙難電靈"
+    "頁項順須預領頭顏願風飛飯養馬駕驗鬥魚鳥麗齊"
+    "聲聯聰聽腦臉藝蟲號衛裝複見規視覺親觀"
+    "計訂記訓討設訪許訴診評買賣質賽軍軟輪輸轉農遠"
+    "擊擔據斷書條絲兩嚴豐臨烏雲廳慶億則剛創辦"
+    "師帳廣廠廢彈強歸錄戰戲戶歲歷殺氣漢潔濟"
+    "爐爭牆獨獲獻獸環畢異療盜監盤碼確禮積穩競筆"
+    "納純紛紙細終絕絡綜綠維網緊線編緩縣縮總織繩繪"
+    "罰羅聞職脅舉舊艙蘇蘋蠻術衝補裡製覽觸"
+    "負責貨貪貴費賀賊賓賜賞購贈贏趕跡躍軌較載輔輕"
+    "辭邊遷鄰鍾鑽長門閃閉閱闊關陽隊階隱雖雜離"
+    "韓響頂頓頻顆額類顧顯飄餅餐餘館駐騎騙驚鬆鬧魯"
+    "鮮鴨鷹麥麵黃黨齡龍龜"
+)
 
 # 這幾個詞在某些脈絡是對的，命中也不報。
 ALLOW = {
@@ -94,11 +128,22 @@ ALLOW = {
 
 
 def rows(path: Path):
-    """一個檔案裡的 (鍵, 譯文)。兩種格式都認。"""
+    """一個檔案裡的 (鍵, 譯文)。兩種格式都認。
+
+    <p>說明欄（{@code _note}、{@code _meta.note}）也算一條。它不是譯文，
+    但它是簡中譯者打開檔案看到的第一段字——整段繁體擺在那裡，等於在說
+    「這份東西是從繁體搬來的，照著轉就好」。實測 193 個檔都是這樣。
+    """
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return
+    note = data.get("_note")
+    if isinstance(note, str) and note.strip():
+        yield "_note", note
+    meta = data.get("_meta")
+    if isinstance(meta, dict) and isinstance(meta.get("note"), str):
+        yield "_meta.note", meta["note"]
     entries = data.get("entries")
     if isinstance(entries, dict):
         for key, value in entries.items():
@@ -127,17 +172,25 @@ def main(argv: list[str]) -> int:
     hits = 0
     checked = 0
     for path in sorted(base.rglob("*.json")):
-        if path.name.startswith("_"):
-            continue
         for key, dst in rows(path):
             if not dst.strip():
                 continue
             checked += 1
+            rel = path.relative_to(base).as_posix()
+            short = key if len(key) <= 42 else key[:42] + "…"
+
+            # 先問「字轉了沒」。連字都是繁體的話，下面的詞表一條也比不到，
+            # 報一堆「建議用」只會蓋掉真正的問題。
+            trad = sorted({c for c in dst if c in TRAD_ONLY})
+            if trad:
+                print(f"  [{rel}] 還是繁體字：{''.join(trad)}")
+                print(f"      {short}  ->  {dst[:60]}")
+                hits += 1
+                continue
+
             for bad, good in CONVERTED.items():
                 if bad in ALLOW or bad not in dst:
                     continue
-                rel = path.relative_to(base).as_posix()
-                short = key if len(key) <= 42 else key[:42] + "…"
                 print(f"  [{rel}] 「{bad}」建議用「{good}」")
                 print(f"      {short}  ->  {dst[:60]}")
                 hits += 1
