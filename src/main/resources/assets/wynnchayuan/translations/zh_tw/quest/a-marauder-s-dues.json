@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "A Marauder's Dues",
   "count": 73,
-  "translated": 58,
+  "translated": 73,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Marauder's Dues#000": {
    "src": "The very sight of you offends me! Let this gust of wind relieve me of your presence. Take it as a warning- you are not welcome here!",
-   "dst": "",
+   "dst": "光是看到你就讓我不快！讓這陣風替我把你颳走吧。當成警告收下——這裡不歡迎你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -18,7 +18,7 @@
   },
   "A Marauder's Dues#001": {
    "src": "...rrgh! The tunnels! Once again, humans try so hard to spoil my fun... But do you really think you've evaded me?",
-   "dst": "",
+   "dst": "……嘖！那些隧道！人類又來壞我的興致……但你真以為躲得掉我？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -28,7 +28,7 @@
   },
   "A Marauder's Dues#002": {
    "src": "A dullard to the end, walking to your obliteration. I'm going to savor this delectable moment...it's been decades since I've rendered a human to dust!",
-   "dst": "",
+   "dst": "蠢到最後一刻，自己走向灰飛煙滅。我要好好品嚐這一刻……我已經幾十年沒把人類碾成灰了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -38,7 +38,7 @@
   },
   "A Marauder's Dues#003": {
    "src": "A shard of the crystal seems to have remained behind. Maybe you can use this to escape!",
-   "dst": "",
+   "dst": "水晶似乎留下了一塊碎片。也許你可以靠它逃出去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -48,7 +48,7 @@
   },
   "A Marauder's Dues#004": {
    "src": "...fine. The defenses of my tower were absolute enough that I never needed to defend myself inside. I should have taken you seriously from the start.",
-   "dst": "",
+   "dst": "……好吧。我這座塔的防禦滴水不漏，漏到我從來不必在裡面親自動手。我一開始就該認真看待你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -58,7 +58,7 @@
   },
   "A Marauder's Dues#005": {
    "src": "HA! I still get the last laugh! Even at my most vulnerable, I've gracefully outwitted you! As if I would really surrender to a human.",
-   "dst": "",
+   "dst": "哈！笑到最後的還是我！就算在我最脆弱的時候，我照樣漂亮地擺了你一道！我怎麼可能真的向人類投降。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -68,7 +68,7 @@
   },
   "A Marauder's Dues#006": {
    "src": "I'll just drain Norsten's vitality to refill my own if you attack! There's nothing you can do- can't jump after the gem, can't defeat me! It's hopeless for you!",
-   "dst": "",
+   "dst": "你敢動手，我就抽乾 Norsten 的生命來補我自己！你什麼都做不了——跳不到寶石那裡，也打不贏我！你沒指望了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -78,7 +78,7 @@
   },
   "A Marauder's Dues#007": {
    "src": "There's the strange gem that Dramele threw away... You should take it with you, he said it would save Norsten.",
-   "dst": "",
+   "dst": "那就是 Dramele 丟掉的怪寶石……你該把它帶走，他說那能救 Norsten。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -88,7 +88,7 @@
   },
   "A Marauder's Dues#008": {
    "src": "Although the strange beings are now gone, some parts of them were left behind. They look very unstable.",
-   "dst": "",
+   "dst": "那些怪東西雖然不見了，卻留下了一些殘骸。看起來很不穩定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -98,7 +98,7 @@
   },
   "A Marauder's Dues#009": {
    "src": "Perhaps if you combine them in the right way you can cause an explosion and escape.",
-   "dst": "",
+   "dst": "也許把它們用對的方式組合起來，就能炸出一條路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -108,7 +108,7 @@
   },
   "A Marauder's Dues#010": {
    "src": "Goal: Get {~} Explosive Power by combining the {~} different cores in the grid made of green particles.",
-   "dst": "",
+   "dst": "目標：在綠色粒子構成的格子裡組合 {~1} 種不同的核心，湊出 {~2} 點爆炸威力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -118,7 +118,7 @@
   },
   "A Marauder's Dues#011": {
    "src": "Right Click a core to select it, then Right Click one of the {~} green spots in the grid to place it there.",
-   "dst": "",
+   "dst": "右鍵點選一個核心，再右鍵點格子裡 {~} 個綠點的其中一個，把它放上去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -128,7 +128,7 @@
   },
   "A Marauder's Dues#012": {
    "src": "Remember, you need to get {~} Explosive Power! If you need a hint, click on Hints and Rules and select \"I want a hint.\"",
-   "dst": "",
+   "dst": "記住，你需要 {~} 點爆炸威力！需要提示的話，點「提示與規則」再選「我要提示」。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -138,7 +138,7 @@
   },
   "A Marauder's Dues#013": {
    "src": "That terrible wizard must have captured you in his spell when you did. It was terrible, it was- Such a hard look you had in your eyes...",
-   "dst": "",
+   "dst": "你那時候一定是被那個可怕的巫師困進了法術裡。太可怕了，真的——你的眼神好凶……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
@@ -148,7 +148,7 @@
   },
   "A Marauder's Dues#014": {
    "src": "...I barely remember anything. Just...feelings of anger, and...disgust, I suppose, but... You wouldn't lie to me, Grand-Peli.",
-   "dst": "",
+   "dst": "……我幾乎什麼都不記得了。只有……憤怒的感覺，還有……大概是厭惡吧，可是…… Grand-Peli，你不會騙我的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Marauder's Dues",
