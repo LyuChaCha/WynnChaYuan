@@ -2,9 +2,9 @@
  "_meta": {
   "domain": "ability/mage",
   "itemNames": false,
-  "lang": "zh_tw",
+  "lang": "zh_cn",
   "count": 236,
-  "translated": 0,
+  "translated": 236,
   "note": "法師的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
   "_note_from_98": "我快被 AI 改的文本氣瘋了。"
@@ -12,7 +12,7 @@
  "entries": {
   "ability-mage#0000": {
    "src": "Meteor",
-   "dst": "",
+   "dst": "陨石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -24,7 +24,7 @@
   },
   "ability-mage#0001": {
    "src": "Conjures a slow but powerful meteor\nfrom the sky, dealing massive\ndamage over a large area.",
-   "dst": "",
+   "dst": "从天空召唤一颗缓慢但强大的陨石，\n对大范围内的敌人造成巨量伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -39,7 +39,7 @@
   },
   "ability-mage#0002": {
    "src": "{#} Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} 作用范围: {~} 格 (圆形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -55,7 +55,7 @@
   },
   "ability-mage#0003": {
    "src": "{#} Mana Cost: {~}",
-   "dst": "",
+   "dst": "{#} 法力消耗: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -71,7 +71,7 @@
   },
   "ability-mage#0004": {
    "src": "{#} Range: {~} Blocks",
-   "dst": "",
+   "dst": "{#} 范围: {~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -87,7 +87,7 @@
   },
   "ability-mage#0005": {
    "src": "{#} Total Damage: {~} (of your DPS)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -103,7 +103,7 @@
   },
   "ability-mage#0006": {
    "src": "Wand Proficiency I",
-   "dst": "",
+   "dst": "魔杖精通 I",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -115,7 +115,7 @@
   },
   "ability-mage#0007": {
    "src": "Improve your Main Attack's damage\nand range when using a wand.",
-   "dst": "",
+   "dst": "使用魔杖时，提高你普通攻击的\n伤害与攻击距离。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -131,7 +131,7 @@
   },
   "ability-mage#0008": {
    "src": "Cheaper Meteor",
-   "dst": "",
+   "dst": "节约·陨石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -143,7 +143,7 @@
   },
   "ability-mage#0009": {
    "src": "Reduce the mana cost of Meteor.",
-   "dst": "",
+   "dst": "降低 Meteor 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -159,7 +159,7 @@
   },
   "ability-mage#0010": {
    "src": "{#} Mana Cost: -{~}",
-   "dst": "",
+   "dst": "{#} 法力消耗: -{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -175,7 +175,7 @@
   },
   "ability-mage#0011": {
    "src": "Shooting Star",
-   "dst": "",
+   "dst": "流星",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -187,7 +187,7 @@
   },
   "ability-mage#0012": {
    "src": "Drastically increase the\nspeed of your Meteor ability.",
-   "dst": "",
+   "dst": "大幅提高 Meteor 的\n飞行速度。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -202,7 +202,7 @@
   },
   "ability-mage#0013": {
    "src": "Wand Proficiency II",
-   "dst": "",
+   "dst": "魔杖精通 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -214,7 +214,7 @@
   },
   "ability-mage#0014": {
    "src": "Teleport",
-   "dst": "",
+   "dst": "传送",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -226,7 +226,7 @@
   },
   "ability-mage#0015": {
    "src": "Instantly teleport in the\ndirection you're facing.",
-   "dst": "",
+   "dst": "朝你面对的方向\n瞬间移动。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -241,7 +241,7 @@
   },
   "ability-mage#0016": {
    "src": "Wisdom",
-   "dst": "",
+   "dst": "睿智",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -253,7 +253,7 @@
   },
   "ability-mage#0017": {
    "src": "For every {~} or {~} Raw Spell Damage you have\nfrom items, gain +{~}/{~}s Mana Regen (Max {~}/{~}s)",
-   "dst": "",
+   "dst": "装备上每 {~} 或 {~} 点固定法术伤害，\n额外获得 +{~}/{~}s 法力恢复 (上限 {~}/{~}s)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -268,7 +268,7 @@
   },
   "ability-mage#0018": {
    "src": "Heal",
-   "dst": "",
+   "dst": "治疗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -280,7 +280,7 @@
   },
   "ability-mage#0019": {
    "src": "Heals you and nearby allies in\na large area around you.\n(When healing others, you can't heal\nmore than {~} of their max health)",
-   "dst": "",
+   "dst": "治疗你自己与周围大范围内的友军。\n \n(治疗他人时，单次不会超过\n其最大生命的 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -295,7 +295,7 @@
   },
   "ability-mage#0020": {
    "src": "{#} Duration: {~}s",
-   "dst": "",
+   "dst": "{#} 持续时间: {~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -311,7 +311,7 @@
   },
   "ability-mage#0021": {
    "src": "Cheaper Teleport",
-   "dst": "",
+   "dst": "节约·传送",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -323,7 +323,7 @@
   },
   "ability-mage#0022": {
    "src": "Reduce the mana cost of Teleport.",
-   "dst": "",
+   "dst": "降低 Teleport 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -339,7 +339,7 @@
   },
   "ability-mage#0023": {
    "src": "Ice Snake",
-   "dst": "",
+   "dst": "冰蛇",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -351,7 +351,7 @@
   },
   "ability-mage#0024": {
    "src": "Conjures a fast-moving ice snake that\ndamages and slows enemies.",
-   "dst": "",
+   "dst": "召唤一条快速移动的冰蛇，\n对敌人造成伤害并使其缓速。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -366,7 +366,7 @@
   },
   "ability-mage#0025": {
    "src": "Sunshower",
-   "dst": "",
+   "dst": "太阳雨",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -378,7 +378,7 @@
   },
   "ability-mage#0026": {
    "src": "Arcane Transfer will damage nearby\nenemies when transferring {~}+ Mana.",
-   "dst": "",
+   "dst": "Arcane Transfer 转换超过 {~} 法力时，\n会对附近的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -393,7 +393,7 @@
   },
   "ability-mage#0027": {
    "src": "Heal emits a strong light,\ndamaging nearby enemies.",
-   "dst": "",
+   "dst": "Heal 会发出强光，\n对附近的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -408,7 +408,7 @@
   },
   "ability-mage#0028": {
    "src": "Burning Sigil",
-   "dst": "",
+   "dst": "烈焰印记",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -420,7 +420,7 @@
   },
   "ability-mage#0029": {
    "src": "Meteor and Ophanim will leave a sigil of fire\non the ground that damages enemies every {~}s.",
-   "dst": "",
+   "dst": "Meteor 与 Ophanim 会在地上留下烈焰印记，\n每 {~} 秒对敌人造成一次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -435,7 +435,7 @@
   },
   "ability-mage#0030": {
    "src": "{#}({#}{#}Fire: {~})",
-   "dst": "",
+   "dst": "{#}({#}{#}火: {~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -451,7 +451,7 @@
   },
   "ability-mage#0031": {
    "src": "{#} Cooldown: {~}s",
-   "dst": "",
+   "dst": "{#} 冷却时间: {~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -467,7 +467,7 @@
   },
   "ability-mage#0032": {
    "src": "Etheric Slash",
-   "dst": "",
+   "dst": "裂界斩",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -479,7 +479,7 @@
   },
   "ability-mage#0033": {
    "src": "When using Teleport, slash through reality\nand deal damage to enemies you pierce.",
-   "dst": "",
+   "dst": "使用 Teleport 时撕裂现实，\n对沿途穿过的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -494,7 +494,7 @@
   },
   "ability-mage#0034": {
    "src": "Crashing Comet",
-   "dst": "",
+   "dst": "彗星冲撞",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -506,7 +506,7 @@
   },
   "ability-mage#0035": {
    "src": "Increase the damage of Meteor.",
-   "dst": "",
+   "dst": "提高 Meteor 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -521,7 +521,7 @@
   },
   "ability-mage#0036": {
    "src": "{#}({#}{#}Damage: +{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}伤害: +{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -537,7 +537,7 @@
   },
   "ability-mage#0037": {
    "src": "{#} Total Damage: +{~} (of your DPS)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -553,7 +553,7 @@
   },
   "ability-mage#0038": {
    "src": "Ophanim",
-   "dst": "",
+   "dst": "奥法尼姆",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -565,7 +565,7 @@
   },
   "ability-mage#0039": {
    "src": "When casting Meteor, instead summon\n{~} orbs of light with {~} Health that will\nattack when you use your Main Attack.",
-   "dst": "",
+   "dst": "施放 Meteor 时改为召唤 {~} 颗\n拥有 {~} 点生命的光球；当你使用普通攻击时，\n它们会跟着攻击。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -580,7 +580,7 @@
   },
   "ability-mage#0040": {
    "src": "When they damage an enemy, they lose {~}\nof their Health. They can be healed back.",
-   "dst": "",
+   "dst": "它们每对敌人造成一次伤害，就会失去 {~}\n的生命。它们可以被治疗回来。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -595,7 +595,7 @@
   },
   "ability-mage#0041": {
    "src": "Distortion",
-   "dst": "",
+   "dst": "扭曲",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -607,7 +607,7 @@
   },
   "ability-mage#0042": {
    "src": "Each Distortion {#} gives +{~} Raw Damage\nand decays at a rate of -{~} per second,\nincreasing as you gain Distortion {#}.",
-   "dst": "",
+   "dst": "每一层 Distortion {#} 提供 +{~} 固定伤害，\n并以每秒 -{~} 的速度衰减；\nDistortion {#} 叠得越高，衰减得越快。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -622,7 +622,7 @@
   },
   "ability-mage#0043": {
    "src": "Hitting an enemy with Etheric Slash grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "",
+   "dst": "用 Etheric Slash 命中敌人时，每 {~2} 秒\n最多获得 +{~1} 层 Distortion {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -637,7 +637,7 @@
   },
   "ability-mage#0044": {
    "src": "Displacement",
-   "dst": "",
+   "dst": "回溯",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -649,7 +649,7 @@
   },
   "ability-mage#0045": {
    "src": "Casting Teleport while sneaking places an\nethereal image of yourself at your location.",
-   "dst": "",
+   "dst": "潜行时施放 Teleport，会在原地\n留下一个你自己的虚影。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -664,7 +664,7 @@
   },
   "ability-mage#0046": {
    "src": "You're teleported to its location upon recasting it.",
-   "dst": "",
+   "dst": "再次施放时，你会被传送到虚影的位置。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -679,7 +679,7 @@
   },
   "ability-mage#0047": {
    "src": "Arcane Transfer",
-   "dst": "",
+   "dst": "秘法回流",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -691,7 +691,7 @@
   },
   "ability-mage#0048": {
    "src": "Heal will now transfer the contents of your\nMana Bank ✺ into usable Mana instead of healing.",
-   "dst": "",
+   "dst": "Heal 不再治疗，改为把你 Mana Bank ✺ 里\n的存量转换成可用的法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -706,7 +706,7 @@
   },
   "ability-mage#0049": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\na Mana Bank ✺ for every aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.",
-   "dst": "",
+   "dst": "Meteor、Ice Snake 与 Etheric Slash 每命中一个有敌意的敌人，\n就为 Mana Bank ✺ 增加 +{~} 点法力。\nFrozen Tornado 与 Meteor Shower 则增加 +{~} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -721,7 +721,7 @@
   },
   "ability-mage#0050": {
    "src": "Astral Fragmentation",
-   "dst": "",
+   "dst": "星碎",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -733,7 +733,7 @@
   },
   "ability-mage#0051": {
    "src": "Meteor scatters into debris upon\nlanding, dealing additional damage.",
-   "dst": "",
+   "dst": "Meteor 落地时会溅出碎片，\n造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -748,7 +748,7 @@
   },
   "ability-mage#0052": {
    "src": "Ophanim draws light from the\nstars, dealing additional damage.",
-   "dst": "",
+   "dst": "Ophanim 会从星辰汲取光芒，\n造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -763,7 +763,7 @@
   },
   "ability-mage#0053": {
    "src": "{#} Meteor Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} Meteor 作用范围: {~} 格 (圆形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -776,7 +776,7 @@
   },
   "ability-mage#0054": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Meteor)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Meteor)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -789,7 +789,7 @@
   },
   "ability-mage#0055": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Ophanim)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Ophanim)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -802,7 +802,7 @@
   },
   "ability-mage#0056": {
    "src": "Purification",
-   "dst": "",
+   "dst": "净化",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -814,7 +814,7 @@
   },
   "ability-mage#0057": {
    "src": "Heal and Arcane Transfer will purify\nallies of all negative effects and fire.",
-   "dst": "",
+   "dst": "Heal 与 Arcane Transfer 会清除友军身上的\n燃烧与所有负面效果。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -829,7 +829,7 @@
   },
   "ability-mage#0058": {
    "src": "Cheaper Heal",
-   "dst": "",
+   "dst": "节约·治疗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -841,7 +841,7 @@
   },
   "ability-mage#0059": {
    "src": "Reduce the mana cost of Heal.",
-   "dst": "",
+   "dst": "降低 Heal 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -857,7 +857,7 @@
   },
   "ability-mage#0060": {
    "src": "Frozen Tornado",
-   "dst": "",
+   "dst": "冰冻龙卷风",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -869,7 +869,7 @@
   },
   "ability-mage#0061": {
    "src": "Casting Ice Snake instead summons a frozen\ntornado that deals damage every {~}s.",
-   "dst": "",
+   "dst": "施放 Ice Snake 改为召唤一座冰冻龙卷风，\n每 {~} 秒造成一次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -884,7 +884,7 @@
   },
   "ability-mage#0062": {
    "src": "For every +{~} Distortion {#}, the tornado gains\n+{~} {#} Area of Effect and +{~} {#} Damage.",
-   "dst": "",
+   "dst": "每有 +{~} 层 Distortion {#}，龙卷风的\n{#} 作用范围 增加 +{~}，{#} 伤害 增加 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -899,7 +899,7 @@
   },
   "ability-mage#0063": {
    "src": "{#} Slow Duration: {~}s",
-   "dst": "",
+   "dst": "{#} 缓速持续时间: {~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -912,7 +912,7 @@
   },
   "ability-mage#0064": {
    "src": "{#} Tornado Duration: {~}s",
-   "dst": "",
+   "dst": "{#} 龙卷风持续时间: {~} 秒",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -925,7 +925,7 @@
   },
   "ability-mage#0065": {
    "src": "Sentient Snake",
-   "dst": "",
+   "dst": "蛇笛",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -937,7 +937,7 @@
   },
   "ability-mage#0066": {
    "src": "Frozen Tornado drifts towards nearby enemies.",
-   "dst": "",
+   "dst": "Frozen Tornado 会朝附近的敌人漂移。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -952,7 +952,7 @@
   },
   "ability-mage#0067": {
    "src": "Ice Snake will follow the direction you're\nfacing, allowing you to control it.",
-   "dst": "",
+   "dst": "Ice Snake 会跟着你面对的方向前进，\n所以你可以操控它。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -967,7 +967,7 @@
   },
   "ability-mage#0068": {
    "src": "({#} Water: {~})",
-   "dst": "",
+   "dst": "({#} 水: {~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -983,7 +983,7 @@
   },
   "ability-mage#0069": {
    "src": "{#} Drift Range: {~} Blocks",
-   "dst": "",
+   "dst": "{#} 漂移范围: {~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -996,7 +996,7 @@
   },
   "ability-mage#0070": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Frozen Tornado)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Frozen Tornado)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1011,7 +1011,7 @@
   },
   "ability-mage#0071": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Ice Snake)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Ice Snake)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1027,7 +1027,7 @@
   },
   "ability-mage#0072": {
    "src": "Larger Heal",
-   "dst": "",
+   "dst": "扩展·治疗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1039,7 +1039,7 @@
   },
   "ability-mage#0073": {
    "src": "Increase your Heal's range.",
-   "dst": "",
+   "dst": "提高 Heal 的范围。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1054,7 +1054,7 @@
   },
   "ability-mage#0074": {
    "src": "Warp Blast",
-   "dst": "",
+   "dst": "扭曲波动",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1066,7 +1066,7 @@
   },
   "ability-mage#0075": {
    "src": "Hitting an enemy with Main Attack grants up\nto +{~} Distortion {#} per {~}s.",
-   "dst": "",
+   "dst": "用普通攻击命中敌人时，每 {~2} 秒\n最多获得 +{~1} 层 Distortion {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1081,7 +1081,7 @@
   },
   "ability-mage#0076": {
    "src": "Larger Mana Bank",
-   "dst": "",
+   "dst": "法力储备扩增",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1093,7 +1093,7 @@
   },
   "ability-mage#0077": {
    "src": "Increase your maximum\nMana Bank ✺ by +{~}.",
-   "dst": "",
+   "dst": "你的 Mana Bank ✺ 上限\n提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1110,7 +1110,7 @@
   },
   "ability-mage#0078": {
    "src": "Cheaper Teleport II",
-   "dst": "",
+   "dst": "节约·传送 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1122,7 +1122,7 @@
   },
   "ability-mage#0079": {
    "src": "Fortitude",
-   "dst": "",
+   "dst": "振奋",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1134,7 +1134,7 @@
   },
   "ability-mage#0080": {
    "src": "Healing {~} of your max health\nwithin {~}s will apply a damage bonus\nto every player you've healed.",
-   "dst": "",
+   "dst": "在 {~2} 秒内治疗量达到你最大生命的 {~1} 后，\n你治疗过的每一位玩家\n都会获得伤害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1149,7 +1149,7 @@
   },
   "ability-mage#0081": {
    "src": "{#} Effect: {~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#} 效果: 对友军 {~} 伤害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1162,7 +1162,7 @@
   },
   "ability-mage#0082": {
    "src": "Cheaper Ice Snake",
-   "dst": "",
+   "dst": "节约·冰蛇",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1174,7 +1174,7 @@
   },
   "ability-mage#0083": {
    "src": "Reduce the mana cost of Ice Snake.",
-   "dst": "",
+   "dst": "降低 Ice Snake 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1190,7 +1190,7 @@
   },
   "ability-mage#0084": {
    "src": "Pyrokinesis",
-   "dst": "",
+   "dst": "驭火",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1202,7 +1202,7 @@
   },
   "ability-mage#0085": {
    "src": "When your Mana Bank ✺ reaches {~},\nyour Main Attack will explode\nupon impact with enemies.",
-   "dst": "",
+   "dst": "当你的 Mana Bank ✺ 达到 {~} 时，\n你的普通攻击会在命中敌人时\n引发爆炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1217,7 +1217,7 @@
   },
   "ability-mage#0086": {
    "src": "Freezing Sigil",
-   "dst": "",
+   "dst": "冰霜印记",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1229,7 +1229,7 @@
   },
   "ability-mage#0087": {
    "src": "Ice Snake will leave a sigil of ice\nbeneath you that slows and damages\nenemies every {~}s. Allies standing on\nthe sigil will be immune to knockback.",
-   "dst": "",
+   "dst": "Ice Snake 会在你脚下留下冰霜印记，\n每 {~} 秒对敌人造成一次伤害并使其缓速。\n站在印记上的友军\n不会被击退。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1244,7 +1244,7 @@
   },
   "ability-mage#0088": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ Knockback Immunity to Allies",
-   "dst": "",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ 给友军击退免疫",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1259,7 +1259,7 @@
   },
   "ability-mage#0089": {
    "src": "Vacuokinesis",
-   "dst": "",
+   "dst": "驭虚",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1271,7 +1271,7 @@
   },
   "ability-mage#0090": {
    "src": "For every +{~} Distortion {#}, Vacuokinesis\ndeals +{~} {#} Damage.",
-   "dst": "",
+   "dst": "每有 +{~} 层 Distortion {#}，Vacuokinesis\n就多造成 +{~} {#} 伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1286,7 +1286,7 @@
   },
   "ability-mage#0091": {
    "src": "Your Main Attack is imbued with vacuum,\ndealing additional damage.",
-   "dst": "",
+   "dst": "你的普通攻击被灌注了真空之力，\n造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1301,7 +1301,7 @@
   },
   "ability-mage#0092": {
    "src": "Snake Nest",
-   "dst": "",
+   "dst": "蛇影",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1313,7 +1313,7 @@
   },
   "ability-mage#0093": {
    "src": "Frozen Tornado will summon {~} tornados.\n(Enemies cannot be damaged by multiple\ntornados or snakes at the same time.)",
-   "dst": "",
+   "dst": "Frozen Tornado 会召唤 {~} 座龙卷风。\n(同一个敌人不会同时被多座龙卷风\n或多条蛇重复伤害。)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1328,7 +1328,7 @@
   },
   "ability-mage#0094": {
    "src": "Ice Snake will summon {~} snakes.",
-   "dst": "",
+   "dst": "Ice Snake 会召唤 {~} 条冰蛇。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1343,7 +1343,7 @@
   },
   "ability-mage#0095": {
    "src": "Seance",
-   "dst": "",
+   "dst": "请神",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1355,7 +1355,7 @@
   },
   "ability-mage#0096": {
    "src": "For every {~}/{~}s Lifesteal you have\nfrom items, gain +{~} Spell Damage. (Max {~})",
-   "dst": "",
+   "dst": "装备上每 {~}/{~}s 生命偷取，\n额外获得 +{~} 法术伤害。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1370,7 +1370,7 @@
   },
   "ability-mage#0097": {
    "src": "Orphion's Pulse",
-   "dst": "",
+   "dst": "Orphion 之脉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1382,7 +1382,7 @@
   },
   "ability-mage#0098": {
    "src": "Heal becomes slower and stronger,\npulsing {~} more times for greater healing.",
-   "dst": "",
+   "dst": "Heal 变得更慢也更强，\n多脉冲 {~} 次以提供更高的治疗量。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1397,7 +1397,7 @@
   },
   "ability-mage#0099": {
    "src": "{#} Delay: {~}s (per pulse)",
-   "dst": "",
+   "dst": "{#} 延迟: {~} 秒 (每次脉冲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1410,7 +1410,7 @@
   },
   "ability-mage#0100": {
    "src": "{#} Pulse Self Heal: {~} (of your max health)",
-   "dst": "",
+   "dst": "{#} 每次脉冲自疗: {~} (你的最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1423,7 +1423,7 @@
   },
   "ability-mage#0101": {
    "src": "Meteor Shower",
-   "dst": "",
+   "dst": "流星雨",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1435,7 +1435,7 @@
   },
   "ability-mage#0102": {
    "src": "Casting Meteor summons an additional\nmeteor near the target location for\nevery {~} Distortion {#} you have.\n(Max {~} Meteors, only one Meteor\nShower can be active at the same time.)",
-   "dst": "",
+   "dst": "施放 Meteor 时，你每拥有 {~} 层\nDistortion {#}，就在目标位置附近\n额外召唤一颗陨石。\n(最多 {~} 颗陨石，同时只能有一组\nMeteor Shower 生效。)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1450,7 +1450,7 @@
   },
   "ability-mage#0103": {
    "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~} {#} Damage and\nlosing -{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Meteor 与 Astral Fragmentation 会变小，\n{#} 伤害 减少 -{~}，\n{#} 作用范围 减少 -{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1465,7 +1465,7 @@
   },
   "ability-mage#0104": {
    "src": "{#} Target Radius: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} 目标半径: {~} 格 (圆形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1478,7 +1478,7 @@
   },
   "ability-mage#0105": {
    "src": "Arcane Restoration",
-   "dst": "",
+   "dst": "秘法再生",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1490,7 +1490,7 @@
   },
   "ability-mage#0106": {
    "src": "Pyrokinesis will add +{~} Mana every\n{~}s to your Mana Bank ✺ when\nhitting an aggressive enemy.",
-   "dst": "",
+   "dst": "用 Pyrokinesis 命中有敌意的敌人时，\n每 {~2} 秒为你的 Mana Bank ✺\n增加 +{~1} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1505,7 +1505,7 @@
   },
   "ability-mage#0107": {
    "src": "Resilient Light",
-   "dst": "",
+   "dst": "韧光",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1517,7 +1517,7 @@
   },
   "ability-mage#0108": {
    "src": "Increases the health of Ophanim's\norbs by +{~} and reduces the\ndamage they take when attacking by -{~}.",
-   "dst": "",
+   "dst": "Ophanim 光球的生命提高 +{~}，\n它们攻击时受到的损耗\n减少 -{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1532,7 +1532,7 @@
   },
   "ability-mage#0109": {
    "src": "Incandescence",
-   "dst": "",
+   "dst": "炽光",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1544,7 +1544,7 @@
   },
   "ability-mage#0110": {
    "src": "Increase the damage of Ophanim.",
-   "dst": "",
+   "dst": "提高 Ophanim 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1560,7 +1560,7 @@
   },
   "ability-mage#0111": {
    "src": "Lightweaver",
-   "dst": "",
+   "dst": "织光",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1572,7 +1572,7 @@
   },
   "ability-mage#0112": {
    "src": "Healing {~} of your max health within\n{~}s will summon a rotating orb that\ndamages enemies upon contact. (Max {~} orbs)",
-   "dst": "",
+   "dst": "在 {~2} 秒内治疗量达到你最大生命的 {~1} 后，\n召唤一颗绕着你旋转的光球，\n接触敌人时造成伤害。(最多 {~3} 颗)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1587,7 +1587,7 @@
   },
   "ability-mage#0113": {
    "src": "{#} Area of Effect: {~} Block (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} 作用范围: {~} 格 (圆形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1600,7 +1600,7 @@
   },
   "ability-mage#0114": {
    "src": "Dimensional Tear",
-   "dst": "",
+   "dst": "次元裂隙",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1612,7 +1612,7 @@
   },
   "ability-mage#0115": {
    "src": "Hitting an enemy with Etheric Slash tears\nopen a dimensional rift between you\nand your destination.",
-   "dst": "",
+   "dst": "用 Etheric Slash 命中敌人时，会在你\n与目的地之间撕开一道次元裂隙。\n ",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1627,7 +1627,7 @@
   },
   "ability-mage#0116": {
    "src": "The rift damages enemies every {~}s, increases\nyour Distortion {#} gain by +{~} and reduces\ndamage taken while standing in it.",
-   "dst": "",
+   "dst": "裂隙每 {~} 秒对敌人造成一次伤害，\n让你的 Distortion {#} 累积加快 +{~}，\n并降低站在其中时受到的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1642,7 +1642,7 @@
   },
   "ability-mage#0117": {
    "src": "The rift's benefits and damage linger\nfor {~}s upon leaving its area.",
-   "dst": "",
+   "dst": "离开裂隙范围后，它的增益与伤害\n还会残留 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1657,7 +1657,7 @@
   },
   "ability-mage#0118": {
    "src": "Arcane Speed",
-   "dst": "",
+   "dst": "秘法疾行",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1669,7 +1669,7 @@
   },
   "ability-mage#0119": {
    "src": "You gain a walk speed buff after\ncasting Heal or Arcane Transfer.",
-   "dst": "",
+   "dst": "施放 Heal 或 Arcane Transfer 之后，\n你会获得移动速度加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1684,7 +1684,7 @@
   },
   "ability-mage#0120": {
    "src": "{#} Effects: +{~} Walk Speed",
-   "dst": "",
+   "dst": "{#} 效果: +{~} 移动速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1697,7 +1697,7 @@
   },
   "ability-mage#0121": {
    "src": "Larger Mana Bank II",
-   "dst": "",
+   "dst": "法力储备扩增 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1709,7 +1709,7 @@
   },
   "ability-mage#0122": {
    "src": "Cheaper Meteor II",
-   "dst": "",
+   "dst": "节约·陨石 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1721,7 +1721,7 @@
   },
   "ability-mage#0123": {
    "src": "Rift Rupture",
-   "dst": "",
+   "dst": "裂隙爆发",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1733,7 +1733,7 @@
   },
   "ability-mage#0124": {
    "src": "Dimensional Tear erupts violently when\ncreated, damaging enemies inside it.",
-   "dst": "",
+   "dst": "Dimensional Tear 生成时会猛烈爆发，\n对其中的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1748,7 +1748,7 @@
   },
   "ability-mage#0125": {
    "src": "While Riftbound, Etheric Slash implodes your\nbound rift instead, damaging nearby enemies.",
-   "dst": "",
+   "dst": "处于 Riftbound 时，Etheric Slash 改为让你\n绑定的裂隙内爆，对附近的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1763,7 +1763,7 @@
   },
   "ability-mage#0126": {
    "src": "{#} Cooldown: {~}s (Riftbound)",
-   "dst": "",
+   "dst": "{#} 冷却时间: {~} 秒 (Riftbound)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1776,7 +1776,7 @@
   },
   "ability-mage#0127": {
    "src": "Cheaper Ice Snake II",
-   "dst": "",
+   "dst": "节约·冰蛇 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1788,7 +1788,7 @@
   },
   "ability-mage#0128": {
    "src": "Psychokinesis",
-   "dst": "",
+   "dst": "驭念",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1800,7 +1800,7 @@
   },
   "ability-mage#0129": {
    "src": "Shoots Meteor from you as a slow projectile.",
-   "dst": "",
+   "dst": "Meteor 改为从你身上以缓慢的弹道发射。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1815,7 +1815,7 @@
   },
   "ability-mage#0130": {
    "src": "Chaos Explosion",
-   "dst": "",
+   "dst": "混沌爆发",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1827,7 +1827,7 @@
   },
   "ability-mage#0131": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer will rapidly unleash\nthe last {~} spells you've cast in order.",
-   "dst": "",
+   "dst": "当你的 Mana Bank ✺ 达到 {~} 时，\n施放 Arcane Transfer 会依序快速\n重放你最后施放的 {~} 个法术。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1842,7 +1842,7 @@
   },
   "ability-mage#0132": {
    "src": "Augury",
-   "dst": "",
+   "dst": "神谕",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1854,7 +1854,7 @@
   },
   "ability-mage#0133": {
    "src": "Increase your maximum orbs\nfrom Ophanim by +{~}.",
-   "dst": "",
+   "dst": "Ophanim 的光球数量上限\n提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1869,7 +1869,7 @@
   },
   "ability-mage#0134": {
    "src": "Frigid Grasp",
-   "dst": "",
+   "dst": "霜缚",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1881,7 +1881,7 @@
   },
   "ability-mage#0135": {
    "src": "Ice Snake and Frozen Tornado now deal\nincreased damage and their slow is stronger.",
-   "dst": "",
+   "dst": "Ice Snake 与 Frozen Tornado 的伤害提高，\n缓速效果也更强。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1896,7 +1896,7 @@
   },
   "ability-mage#0136": {
    "src": "{#} Effect: +{~} Slowness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 效果: 对敌人 +{~} 缓速 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1909,7 +1909,7 @@
   },
   "ability-mage#0137": {
    "src": "Time Dilation",
-   "dst": "",
+   "dst": "时流偏移",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1921,7 +1921,7 @@
   },
   "ability-mage#0138": {
    "src": "Creates an area of effect when sprinting\nthat increases the walk speed of all\nallies the longer they run in it.\n(You lose {~} Walk Speed Bonus every second\nonce you stop running)",
-   "dst": "",
+   "dst": "疾跑时产生一个作用区域，\n区域内的友军跑得越久，\n移动速度加成就越高。\n(一旦停下来，你每秒会失去\n{~} 的移动速度加成)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1936,7 +1936,7 @@
   },
   "ability-mage#0139": {
    "src": "{#} Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
-   "dst": "",
+   "dst": "{#} 效果: 对友军 +{~1} 移动速度 (每 {~2} 秒，上限 +{~3})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1949,7 +1949,7 @@
   },
   "ability-mage#0140": {
    "src": "Arctic Snake",
-   "dst": "",
+   "dst": "凛冬蛇影",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1961,7 +1961,7 @@
   },
   "ability-mage#0141": {
    "src": "Ice Snake will freeze enemies for {~}s.",
-   "dst": "",
+   "dst": "Ice Snake 会冻结敌人 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1976,7 +1976,7 @@
   },
   "ability-mage#0142": {
    "src": "Searing Light",
-   "dst": "",
+   "dst": "灼光",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1988,7 +1988,7 @@
   },
   "ability-mage#0143": {
    "src": "Increase the damage of Sunshower.",
-   "dst": "",
+   "dst": "提高 Sunshower 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2003,7 +2003,7 @@
   },
   "ability-mage#0144": {
    "src": "Accelerated Strike",
-   "dst": "",
+   "dst": "势能打击",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2015,7 +2015,7 @@
   },
   "ability-mage#0145": {
    "src": "Hitting an enemy with your Main Attack stops\nTime Dilation from decaying for {~}s.",
-   "dst": "",
+   "dst": "用普通攻击命中敌人后，Time Dilation\n在 {~} 秒内不会衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2030,7 +2030,7 @@
   },
   "ability-mage#0146": {
    "src": "Time Dilation increases your Main Attack damage\nfor every {~} Walk Speed you gain from it.",
-   "dst": "",
+   "dst": "你每从 Time Dilation 获得 {~} 移动速度，\n普攻伤害就提高一些。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2045,7 +2045,7 @@
   },
   "ability-mage#0147": {
    "src": "{#} Main Attack Damage: +{~} (per {~} Walk Speed)",
-   "dst": "",
+   "dst": "{#} 普攻伤害: +{~1} (每 {~2} 移动速度)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2058,7 +2058,7 @@
   },
   "ability-mage#0148": {
    "src": "Arcane Power",
-   "dst": "",
+   "dst": "秘法增幅",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2070,7 +2070,7 @@
   },
   "ability-mage#0149": {
    "src": "Arcane Restoration will restore mana {~}s faster.",
-   "dst": "",
+   "dst": "Arcane Restoration 恢复法力的速度加快 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2085,7 +2085,7 @@
   },
   "ability-mage#0150": {
    "src": "Meteor, Ice Snake, and Etheric Slash will add +{~} Mana to\nyour Mana Bank ✺ for each aggressive enemy you hit.\nFrozen Tornado and Meteor Shower will add +{~} Mana.",
-   "dst": "",
+   "dst": "Meteor、Ice Snake 与 Etheric Slash 每命中一个有敌意的敌人，\n就为你的 Mana Bank ✺ 增加 +{~} 点法力。\nFrozen Tornado 与 Meteor Shower 则增加 +{~} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2100,7 +2100,7 @@
   },
   "ability-mage#0151": {
    "src": "Everlasting Light",
-   "dst": "",
+   "dst": "不灭之光",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2112,7 +2112,7 @@
   },
   "ability-mage#0152": {
    "src": "Increase the health of your orbs\nfrom Ophanim by +{~}.",
-   "dst": "",
+   "dst": "Ophanim 光球的生命\n提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2127,7 +2127,7 @@
   },
   "ability-mage#0153": {
    "src": "Devitalize",
-   "dst": "",
+   "dst": "侵蚀",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2139,7 +2139,7 @@
   },
   "ability-mage#0154": {
    "src": "Heal and Arcane Transfer weaken nearby enemies.",
-   "dst": "",
+   "dst": "Heal 与 Arcane Transfer 会削弱附近的敌人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2154,7 +2154,7 @@
   },
   "ability-mage#0155": {
    "src": "You gain +{~} Distortion {#} for every enemy weakened.\n(Up to +{~})",
-   "dst": "",
+   "dst": "每削弱一个敌人，你就获得 +{~} 层 Distortion {#}。\n(最多 +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2169,7 +2169,7 @@
   },
   "ability-mage#0156": {
    "src": "{#} Effect: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 效果: 对敌人 -{~} 伤害加成 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2182,7 +2182,7 @@
   },
   "ability-mage#0157": {
    "src": "Influx Shift",
-   "dst": "",
+   "dst": "扭曲升华",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2194,7 +2194,7 @@
   },
   "ability-mage#0158": {
    "src": "Increase the effects gained from Distortion {#} by +{~}.",
-   "dst": "",
+   "dst": "Distortion {#} 带来的效果提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2209,7 +2209,7 @@
   },
   "ability-mage#0159": {
    "src": "Larger Mana Bank III",
-   "dst": "",
+   "dst": "法力储备扩增 III",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2221,7 +2221,7 @@
   },
   "ability-mage#0160": {
    "src": "Divination",
-   "dst": "",
+   "dst": "神视",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2233,7 +2233,7 @@
   },
   "ability-mage#0161": {
    "src": "Increases your maximum orbs\nfrom Ophanim by +{~} and\nreduces their damage.",
-   "dst": "",
+   "dst": "Ophanim 的光球数量上限\n提高 +{~}，但它们的\n伤害降低。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2248,7 +2248,7 @@
   },
   "ability-mage#0162": {
    "src": "Void Acceleration",
-   "dst": "",
+   "dst": "虚空加速",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2260,7 +2260,7 @@
   },
   "ability-mage#0163": {
    "src": "Double Meteor's speed and increase its damage.",
-   "dst": "",
+   "dst": "Meteor 的速度翻倍，伤害也提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2275,7 +2275,7 @@
   },
   "ability-mage#0164": {
    "src": "Meteor Shower summons meteors +{~} faster.",
-   "dst": "",
+   "dst": "Meteor Shower 召唤陨石的速度加快 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2290,7 +2290,7 @@
   },
   "ability-mage#0165": {
    "src": "Riftbound",
-   "dst": "",
+   "dst": "裂隙系身",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2302,7 +2302,7 @@
   },
   "ability-mage#0166": {
    "src": "Casting Heal while sneaking binds you to your\nDimensional Tear, making you Riftbound.",
-   "dst": "",
+   "dst": "潜行时施放 Heal 会把你绑定到你的\nDimensional Tear 上，使你进入 Riftbound。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2317,7 +2317,7 @@
   },
   "ability-mage#0167": {
    "src": "While Riftbound, your Dimensional Tear follows you,\nreaches further and your Distortion {#} stops decaying.",
-   "dst": "",
+   "dst": "处于 Riftbound 时，你的 Dimensional Tear 会跟着你移动、\n范围更远，而且你的 Distortion {#} 不再衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2332,7 +2332,7 @@
   },
   "ability-mage#0168": {
    "src": "Sunflare",
-   "dst": "",
+   "dst": "日耀",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2344,7 +2344,7 @@
   },
   "ability-mage#0169": {
    "src": "Healing {~} of your max health within {~}s\nwill make your next Heal activate Sunflare.",
-   "dst": "",
+   "dst": "在 {~2} 秒内治疗量达到你最大生命的 {~1} 后，\n你的下一次 Heal 会触发 Sunflare。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2359,7 +2359,7 @@
   },
   "ability-mage#0170": {
    "src": "While Sunflare is active, you will restore\nhealth and mana to all nearby allies, and\nyour Ophanim orbs will attack constantly.",
-   "dst": "",
+   "dst": "Sunflare 生效期间，你会为附近所有友军\n恢复生命与法力，而且你的\nOphanim 光球会持续攻击。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2374,7 +2374,7 @@
   },
   "ability-mage#0171": {
    "src": "{#} Health Regen: {~} per second (of your max health)",
-   "dst": "",
+   "dst": "{#} 生命恢复: 每秒 {~} (你的最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2387,7 +2387,7 @@
   },
   "ability-mage#0172": {
    "src": "{#} Mana Regen: {~} per second (of your max mana)",
-   "dst": "",
+   "dst": "{#} 法力恢复: 每秒 {~} (你的最大法力)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2400,7 +2400,7 @@
   },
   "ability-mage#0173": {
    "src": "Cheaper Heal II",
-   "dst": "",
+   "dst": "节约·治疗 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2412,7 +2412,7 @@
   },
   "ability-mage#0174": {
    "src": "Manastorm",
-   "dst": "",
+   "dst": "法力风暴",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2424,7 +2424,7 @@
   },
   "ability-mage#0175": {
    "src": "If you have more than {~}\nMana, casting a spell will give\nyou +{~} Mana over {~}s.",
-   "dst": "",
+   "dst": "当你的法力超过 {~} 时，\n施放法术会在 {~2} 秒内\n为你恢复 +{~1} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2439,7 +2439,7 @@
   },
   "ability-mage#0176": {
    "src": "Judrajim",
-   "dst": "",
+   "dst": "Judrajim",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2451,7 +2451,7 @@
   },
   "ability-mage#0177": {
    "src": "Mana cost and damage increase by\n{~} every time it deals damage.",
-   "dst": "",
+   "dst": "它每造成一次伤害，法力消耗\n与伤害就提高 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2466,7 +2466,7 @@
   },
   "ability-mage#0178": {
    "src": "When your Mana Bank ✺ reaches {~},\ncasting Arcane Transfer while sneaking\nwill summon a ball lightning that deals\ndamage to nearby enemies and drains\n{~} Mana every {~}s, until you run out\nof Mana.",
-   "dst": "",
+   "dst": "当你的 Mana Bank ✺ 达到 {~1} 时，\n潜行施放 Arcane Transfer 会召唤一颗球状闪电，\n对附近的敌人造成伤害，\n并每 {~3} 秒消耗 {~2} 点法力，\n直到法力耗尽。\n ",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2481,7 +2481,7 @@
   },
   "ability-mage#0179": {
    "src": "Halo",
-   "dst": "",
+   "dst": "光环",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2493,7 +2493,7 @@
   },
   "ability-mage#0180": {
    "src": "Increase your Max Orbs\nfrom Lightweaver by +{~}.",
-   "dst": "",
+   "dst": "Lightweaver 的光球数量上限\n提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2508,7 +2508,7 @@
   },
   "ability-mage#0181": {
    "src": "Memory Recollection",
-   "dst": "",
+   "dst": "追忆",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2520,7 +2520,7 @@
   },
   "ability-mage#0182": {
    "src": "Chaos Explosion will cast +{~} spells.",
-   "dst": "",
+   "dst": "Chaos Explosion 会多施放 +{~} 个法术。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2535,7 +2535,7 @@
   },
   "ability-mage#0183": {
    "src": "Interweave",
-   "dst": "",
+   "dst": "交织",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2547,7 +2547,7 @@
   },
   "ability-mage#0184": {
    "src": "Hitting an ally with a Lightweaver orb\nconsumes the orb and applies Shining {#}.",
-   "dst": "",
+   "dst": "用 Lightweaver 的光球命中友军时，\n会消耗该光球并施加 Shining {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2562,7 +2562,7 @@
   },
   "ability-mage#0185": {
    "src": "Shining {#} players can be healed from\nany distance, and they deal the orb's\ndamage to nearby enemies.",
-   "dst": "",
+   "dst": "带有 Shining {#} 的玩家可以在任意距离\n被治疗，并且会对附近的敌人\n造成该光球的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2577,7 +2577,7 @@
   },
   "ability-mage#0186": {
    "src": "Time Vortex",
-   "dst": "",
+   "dst": "时空涡流",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2589,7 +2589,7 @@
   },
   "ability-mage#0187": {
    "src": "Casting Frozen Tornado inside your Dimensional\nTear infuses it with otherworldly energies,\nturning it into a Time Vortex.",
-   "dst": "",
+   "dst": "在你的 Dimensional Tear 里施放 Frozen Tornado，\n会为它灌注异界能量，\n使它变成 Time Vortex。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2604,7 +2604,7 @@
   },
   "ability-mage#0188": {
    "src": "Time Vortex deals damage {~} faster, lasts\nlonger and grants +{~} Distortion {#} every\ntime it deals damage to an enemy.",
-   "dst": "",
+   "dst": "Time Vortex 造成伤害的速度加快 {~}、持续时间\n更长，而且每次对敌人造成伤害时\n都提供 +{~} 层 Distortion {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2619,7 +2619,7 @@
   },
   "ability-mage#0189": {
    "src": "{#} Tornado Duration: +{~}s",
-   "dst": "",
+   "dst": "{#} 龙卷风持续时间: +{~} 秒",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2632,7 +2632,7 @@
   },
   "ability-mage#0190": {
    "src": "Arcane Overflow",
-   "dst": "",
+   "dst": "秘法超限",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2644,7 +2644,7 @@
   },
   "ability-mage#0191": {
    "src": "Arcane Transfer will allow you to overflow\nyour mana over its maximum limits. (Max {~})",
-   "dst": "",
+   "dst": "Arcane Transfer 转换的法力可以\n超过你的法力上限。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2659,7 +2659,7 @@
   },
   "ability-mage#0192": {
    "src": "Gospel of Light",
-   "dst": "",
+   "dst": "光之福音",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2671,7 +2671,7 @@
   },
   "ability-mage#0193": {
    "src": "Nearby players gain {~}\nof the Mana you gain from\nMana Regen and Mana Steal.",
-   "dst": "",
+   "dst": "附近的玩家会获得你从法力恢复\n与法力偷取中所得法力的\n{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2686,7 +2686,7 @@
   },
   "ability-mage#0194": {
    "src": "Blitz",
-   "dst": "",
+   "dst": "疾袭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2698,7 +2698,7 @@
   },
   "ability-mage#0195": {
    "src": "Increase the damage of Frozen Tornado\nby an additional +{~} every time\nthe tornado damages an enemy.",
-   "dst": "",
+   "dst": "Frozen Tornado 每对敌人造成一次伤害，\n它的伤害就再提高 +{~}。\n ",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2713,7 +2713,7 @@
   },
   "ability-mage#0196": {
    "src": "Increase the damage of Ice Snake\nand double its speed.",
-   "dst": "",
+   "dst": "Ice Snake 的伤害提高，\n速度翻倍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2728,7 +2728,7 @@
   },
   "ability-mage#0197": {
    "src": "Crystallize",
-   "dst": "",
+   "dst": "结晶",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2740,7 +2740,7 @@
   },
   "ability-mage#0198": {
    "src": "Casting Ice Snake shatters\nenemies with {~} Crystallized {#},\ndamaging and slowing them.",
-   "dst": "",
+   "dst": "施放 Ice Snake 会震碎带有\n{~} 层 Crystallized {#} 的敌人，\n对其造成伤害并使其缓速。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2755,7 +2755,7 @@
   },
   "ability-mage#0199": {
    "src": "Crystallized {#} starts decaying at\na rate of -{~} every second if\nnone is applied for {~}s.",
-   "dst": "",
+   "dst": "若 {~2} 秒内没有再施加，\nCrystallized {#} 会开始以每秒 -{~1}\n的速度衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2770,7 +2770,7 @@
   },
   "ability-mage#0200": {
    "src": "Lightweaver applies +{~} Crystallized {#}\nto enemies it hits.",
-   "dst": "",
+   "dst": "Lightweaver 命中的敌人会被施加\n+{~} 层 Crystallized {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2785,7 +2785,7 @@
   },
   "ability-mage#0201": {
    "src": "Gleam",
-   "dst": "",
+   "dst": "耀光",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2797,7 +2797,7 @@
   },
   "ability-mage#0202": {
    "src": "Portal to the Beyond",
-   "dst": "",
+   "dst": "异界之门",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2809,7 +2809,7 @@
   },
   "ability-mage#0203": {
    "src": "Dimensional Tear is now inhabited\nby a Riftspawn while active.",
-   "dst": "",
+   "dst": "Dimensional Tear 生效期间，\n里面会住着一只 Riftspawn。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2824,7 +2824,7 @@
   },
   "ability-mage#0204": {
    "src": "The Riftspawn shoots homing distorting\nblasts to nearby enemies every {~}s,\ndealing damage and increasing your\nDistortion {#} by +{~}.",
-   "dst": "",
+   "dst": "Riftspawn 每 {~} 秒会朝附近的敌人\n射出追踪的扭曲弹，造成伤害\n并使你的 Distortion {#}\n增加 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2839,7 +2839,7 @@
   },
   "ability-mage#0205": {
    "src": "Paradox",
-   "dst": "",
+   "dst": "悖论",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2851,7 +2851,7 @@
   },
   "ability-mage#0206": {
    "src": "For every +{~} Distortion {#}, the\nmana is refunded -{~}s faster.",
-   "dst": "",
+   "dst": "每有 +{~} 层 Distortion {#}，\n法力返还就加快 -{~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2866,7 +2866,7 @@
   },
   "ability-mage#0207": {
    "src": "You send {~} of the damage you take\nto the future, dealing it over {~}s and\nborrow mana from the past, refunding\n{~} of your spent mana over {~}s.",
-   "dst": "",
+   "dst": "你把所受伤害的 {~1} 送往未来，\n在 {~2} 秒内分次承受；并向过去借法力，\n在 {~4} 秒内返还你已消耗法力的\n{~3}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2881,7 +2881,7 @@
   },
   "ability-mage#0208": {
    "src": "Induced Instability",
-   "dst": "",
+   "dst": "强制失衡",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2893,7 +2893,7 @@
   },
   "ability-mage#0209": {
    "src": "Judrajim applies Unstable {#} to enemies.",
-   "dst": "",
+   "dst": "Judrajim 会对敌人施加 Unstable {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2908,7 +2908,7 @@
   },
   "ability-mage#0210": {
    "src": "Meteor, Pyrokinesis and Powder Specials\nconsume Unstable {#} to deal +{~} damage.",
-   "dst": "",
+   "dst": "Meteor、Pyrokinesis 与粉末技能会消耗\nUnstable {#}，多造成 +{~} 伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2923,7 +2923,7 @@
   },
   "ability-mage#0211": {
    "src": "Diffraction",
-   "dst": "",
+   "dst": "晶化蔓延",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2935,7 +2935,7 @@
   },
   "ability-mage#0212": {
    "src": "Ophanim also applies +{~} Crystallized {#}.",
-   "dst": "",
+   "dst": "Ophanim 也会施加 +{~} 层 Crystallized {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2950,7 +2950,7 @@
   },
   "ability-mage#0213": {
    "src": "When an enemy dies, leftover Crystallized {#}\nis transferred to other nearby enemies.",
-   "dst": "",
+   "dst": "敌人死亡时，剩下的 Crystallized {#}\n会转移到附近其他敌人身上。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2965,7 +2965,7 @@
   },
   "ability-mage#0214": {
    "src": "Thunderstorm",
-   "dst": "",
+   "dst": "雷暴",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2977,7 +2977,7 @@
   },
   "ability-mage#0215": {
    "src": "After casting Meteor, generate a lightning\nstrike near the point of impact that\nadds +{~} Mana to your Mana Bank ✺\nfor each aggressive enemy you hit.",
-   "dst": "",
+   "dst": "施放 Meteor 之后，会在落点附近\n降下一道闪电；每命中一个有敌意的敌人，\n就为你的 Mana Bank ✺\n增加 +{~} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2992,7 +2992,7 @@
   },
   "ability-mage#0216": {
    "src": "Dawn",
-   "dst": "",
+   "dst": "破晓",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3004,7 +3004,7 @@
   },
   "ability-mage#0217": {
    "src": "Activate abilities or heal to charge\nyour Ultimate Meter {#} to {~}",
-   "dst": "",
+   "dst": "使用技能或治疗，把你的 大招 {#} 充能到 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3019,7 +3019,7 @@
   },
   "ability-mage#0218": {
    "src": "Channel the power of Orphion and summon\nthe sun itself above you.",
-   "dst": "",
+   "dst": "引导 Orphion 的力量，\n在你上方召来太阳本身。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3034,7 +3034,7 @@
   },
   "ability-mage#0219": {
    "src": "The Sun will summon solar wisps that move\noutwards, damaging all enemies and healing\nall allies in their path.",
-   "dst": "",
+   "dst": "太阳会召出向外移动的日光灵体，\n对路径上的所有敌人造成伤害，\n并治疗路径上的所有友军。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3049,7 +3049,7 @@
   },
   "ability-mage#0220": {
    "src": "{#} Total Damage: {~} (of your DPS, per Wisp)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，每个灵体)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3062,7 +3062,7 @@
   },
   "ability-mage#0221": {
    "src": "{#} Total Heal: {~} (of max health)",
-   "dst": "",
+   "dst": "{#} 总治疗量: {~} (最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3075,7 +3075,7 @@
   },
   "ability-mage#0222": {
    "src": "Tangled Origin",
-   "dst": "",
+   "dst": "混沌本源",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3087,7 +3087,7 @@
   },
   "ability-mage#0223": {
    "src": "Summon a Thunder Serpent and a Fire\nSerpent, which will attack nearby enemies.",
-   "dst": "",
+   "dst": "召唤 Thunder Serpent 与 Fire Serpent，\n它们会攻击附近的敌人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3102,7 +3102,7 @@
   },
   "ability-mage#0224": {
    "src": "The Fire Serpent fires at Unstable {#}\ntargets every {~}s, gaining the damage bonus.",
-   "dst": "",
+   "dst": "Fire Serpent 每 {~} 秒会朝带有 Unstable {#}\n的目标开火，并获得该伤害加成。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3117,7 +3117,7 @@
   },
   "ability-mage#0225": {
    "src": "The Thunder Serpent strikes up to\n{~} enemies with arcing lightning\nevery {~}s, making them Unstable {#}.",
-   "dst": "",
+   "dst": "Thunder Serpent 每 {~2} 秒会以弧状闪电\n击中最多 {~1} 个敌人，\n使它们进入 Unstable {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3132,7 +3132,7 @@
   },
   "ability-mage#0226": {
    "src": "{#} Total Damage: {~} (of your DPS, Fire)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，炎蛟)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3145,7 +3145,7 @@
   },
   "ability-mage#0227": {
    "src": "{#} Total Damage: {~} (of your DPS, Thunder)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，雷蛟)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3158,7 +3158,7 @@
   },
   "ability-mage#0228": {
    "src": "{#} Vision: {~} Blocks",
-   "dst": "",
+   "dst": "{#} 视野: {~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3171,7 +3171,7 @@
   },
   "ability-mage#0229": {
    "src": "Gravitational Collapse",
-   "dst": "",
+   "dst": "引力坍缩",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3183,7 +3183,7 @@
   },
   "ability-mage#0230": {
    "src": "The Dimensional Tear collapses when it expires,\ndealing massive damage to nearby enemies.",
-   "dst": "",
+   "dst": "Dimensional Tear 到期时会坍缩，\n对附近的敌人造成巨量伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3198,7 +3198,7 @@
   },
   "ability-mage#0231": {
    "src": "While it is overloaded, it deals +{~} increased\ndamage, turns your Teleport into a deadly ray\nthat fires off {~} times in quick succession,\nprovides flight, and prevents mana drain.",
-   "dst": "",
+   "dst": "过载期间它造成的伤害提高 +{~}，\n并把你的 Teleport 变成一道致命光束，\n可以短时间内连射 {~} 次，\n同时提供飞行并防止法力流失。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3213,7 +3213,7 @@
   },
   "ability-mage#0232": {
    "src": "Your Dimensional Tear overloads, growing\nin size and damage while pulling all enemies in.",
-   "dst": "",
+   "dst": "你的 Dimensional Tear 会过载，体积与\n伤害不断增长，并把所有敌人拉进去。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3228,7 +3228,7 @@
   },
   "ability-mage#0233": {
    "src": "{#} Area of Effect: +{~}",
-   "dst": "",
+   "dst": "{#} 作用范围: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3241,7 +3241,7 @@
   },
   "ability-mage#0234": {
    "src": "{#} Total Damage: {~} (of your DPS, Collapse)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，坍缩)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3254,7 +3254,7 @@
   },
   "ability-mage#0235": {
    "src": "{#} Total Damage: {~} (of your DPS, Deadly Beam)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，致命光束)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

@@ -2,16 +2,16 @@
  "_meta": {
   "domain": "ability/shared",
   "itemNames": false,
-  "lang": "zh_tw",
+  "lang": "zh_cn",
   "count": 74,
-  "translated": 0,
+  "translated": 74,
   "note": "不只一個職業共用的條目。改這裡會同時影響好幾個職業，請留意。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-shared#0000": {
    "src": "Click Combo: RIGHT-LEFT-RIGHT",
-   "dst": "",
+   "dst": "{c1}技能组合: {c2}右-左-右",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -29,7 +29,7 @@
   },
   "ability-shared#0001": {
    "src": "{#} Main Attack Damage: +{~}",
-   "dst": "",
+   "dst": "{#} 普攻伤害: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -45,7 +45,7 @@
   },
   "ability-shared#0002": {
    "src": "{#} Range: +{~} Blocks",
-   "dst": "",
+   "dst": "{#} 范围: +{~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -61,7 +61,7 @@
   },
   "ability-shared#0003": {
    "src": "Click Combo: RIGHT-RIGHT-RIGHT",
-   "dst": "",
+   "dst": "{c1}技能组合: {c2}右-右-右",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -79,7 +79,7 @@
   },
   "ability-shared#0004": {
    "src": "Click Combo: RIGHT-LEFT-LEFT",
-   "dst": "",
+   "dst": "{c1}技能组合: {c2}右-左-左",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -97,7 +97,7 @@
   },
   "ability-shared#0005": {
    "src": "Click Combo: RIGHT-RIGHT-LEFT",
-   "dst": "",
+   "dst": "{c1}技能组合: {c2}右-右-左",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -115,7 +115,7 @@
   },
   "ability-shared#0006": {
    "src": "Earth Mastery",
-   "dst": "",
+   "dst": "土元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -130,7 +130,7 @@
   },
   "ability-shared#0007": {
    "src": "Increase your base damage\nfrom all Earth attacks.",
-   "dst": "",
+   "dst": "提高你所有土属性攻击的\n基础伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -148,7 +148,7 @@
   },
   "ability-shared#0008": {
    "src": "{#} Earth Damage: +{~}",
-   "dst": "",
+   "dst": "{#} 土属性伤害: +{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -164,7 +164,7 @@
   },
   "ability-shared#0009": {
    "src": "{#} Earth Damage: +{~}-{~}",
-   "dst": "",
+   "dst": "{#} 土属性伤害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -180,7 +180,7 @@
   },
   "ability-shared#0010": {
    "src": "Thunder Mastery",
-   "dst": "",
+   "dst": "雷元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -195,7 +195,7 @@
   },
   "ability-shared#0011": {
    "src": "Increase your base damage\nfrom all Thunder attacks.",
-   "dst": "",
+   "dst": "提高你所有雷属性攻击的\n基础伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -213,7 +213,7 @@
   },
   "ability-shared#0012": {
    "src": "{#} Thunder Damage: +{~}",
-   "dst": "",
+   "dst": "{#} 雷属性伤害: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -229,7 +229,7 @@
   },
   "ability-shared#0013": {
    "src": "{#} Thunder Damage: +{~}-{~}",
-   "dst": "",
+   "dst": "{#} 雷属性伤害: +{~1}-{~2}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -245,7 +245,7 @@
   },
   "ability-shared#0014": {
    "src": "Air Mastery",
-   "dst": "",
+   "dst": "风元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -260,7 +260,7 @@
   },
   "ability-shared#0015": {
    "src": "Increase your base damage\nfrom all Air attacks.",
-   "dst": "",
+   "dst": "提高你所有风属性攻击的\n基础伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -278,7 +278,7 @@
   },
   "ability-shared#0016": {
    "src": "{#} Air Damage: +{~}",
-   "dst": "",
+   "dst": "{#} 风属性伤害: +{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -294,7 +294,7 @@
   },
   "ability-shared#0017": {
    "src": "{#} Air Damage: +{~}-{~}",
-   "dst": "",
+   "dst": "{#} 风属性伤害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -310,7 +310,7 @@
   },
   "ability-shared#0018": {
    "src": "Fire Mastery",
-   "dst": "",
+   "dst": "火元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -325,7 +325,7 @@
   },
   "ability-shared#0019": {
    "src": "Increase your base damage\nfrom all Fire attacks.",
-   "dst": "",
+   "dst": "提高你所有火属性攻击的\n基础伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -343,7 +343,7 @@
   },
   "ability-shared#0020": {
    "src": "{#} Fire Damage: +{~}",
-   "dst": "",
+   "dst": "{#} 火属性伤害: +{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -359,7 +359,7 @@
   },
   "ability-shared#0021": {
    "src": "{#} Fire Damage: +{~}-{~}",
-   "dst": "",
+   "dst": "{#} 火属性伤害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -375,7 +375,7 @@
   },
   "ability-shared#0022": {
    "src": "Water Mastery",
-   "dst": "",
+   "dst": "水元素精通",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -390,7 +390,7 @@
   },
   "ability-shared#0023": {
    "src": "Increase your base damage\nfrom all Water attacks.",
-   "dst": "",
+   "dst": "提高你所有水属性攻击的\n基础伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -408,7 +408,7 @@
   },
   "ability-shared#0024": {
    "src": "{#} Water Damage: +{~}",
-   "dst": "",
+   "dst": "{#} 水属性伤害: +{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -424,7 +424,7 @@
   },
   "ability-shared#0025": {
    "src": "{#} Water Damage: +{~}-{~}",
-   "dst": "",
+   "dst": "{#} 水属性伤害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -440,7 +440,7 @@
   },
   "ability-shared#0026": {
    "src": "{#} Total Damage: -{~} (of your DPS)",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~} (你的每秒伤害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -456,7 +456,7 @@
   },
   "ability-shared#0027": {
    "src": "{#} Range: +{~} Block",
-   "dst": "",
+   "dst": "{#} 范围: +{~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -470,7 +470,7 @@
   },
   "ability-shared#0028": {
    "src": "{#} Cooldown: {~}s (per enemy)",
-   "dst": "",
+   "dst": "{#} 冷却时间: {~} 秒 (每个敌人)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -485,7 +485,7 @@
   },
   "ability-shared#0029": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#} 效果: 对友军 +{~} 伤害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -499,7 +499,7 @@
   },
   "ability-shared#0030": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Self",
-   "dst": "",
+   "dst": "{#} 效果: 对自己 +{~} 伤害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -513,7 +513,7 @@
   },
   "ability-shared#0031": {
    "src": "{#} Mana Cost: +{~}",
-   "dst": "",
+   "dst": "{#} 法力消耗: +{~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -528,7 +528,7 @@
   },
   "ability-shared#0032": {
    "src": "{#} Area of Effect: +{~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} 作用范围: +{~} 格 (圆形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -544,7 +544,7 @@
   },
   "ability-shared#0033": {
    "src": "{#} Range: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} 范围: {~} 格 (圆形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -559,7 +559,7 @@
   },
   "ability-shared#0034": {
    "src": "Activate abilities or take damage to charge\nyour Ultimate Meter {#} to {~}",
-   "dst": "",
+   "dst": "使用技能或受到伤害，把你的 大招 {#} 充能到 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -577,7 +577,7 @@
   },
   "ability-shared#0035": {
    "src": "{#} Total Damage: {~} (Main Attack Damage)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (普攻伤害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -593,7 +593,7 @@
   },
   "ability-shared#0036": {
    "src": "{#} Main Attack Range: +{~} Blocks",
-   "dst": "",
+   "dst": "{#} 普攻范围: +{~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -608,7 +608,7 @@
   },
   "ability-shared#0037": {
    "src": "{#} Total Heal: {~} (of your max health)",
-   "dst": "",
+   "dst": "{#} 总治疗量: {~} (你的最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -623,7 +623,7 @@
   },
   "ability-shared#0038": {
    "src": "{#} Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
-   "dst": "",
+   "dst": "{#} 效果: 每次命中对敌人 {~1} 缓速 ({#}) (上限 {~2})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -637,7 +637,7 @@
   },
   "ability-shared#0039": {
    "src": "{#} Effect: {~} Resistance Bonus (❁)",
-   "dst": "",
+   "dst": "{#} 效果: {~} 抗性加成 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -651,7 +651,7 @@
   },
   "ability-shared#0040": {
    "src": "{#} Vision: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} 视野: {~} 格 (圆形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -667,7 +667,7 @@
   },
   "ability-shared#0041": {
    "src": "Click Combo: F",
-   "dst": "",
+   "dst": "技能组合: F",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -685,7 +685,7 @@
   },
   "ability-shared#0042": {
    "src": "Activate abilities to charge\nyour Ultimate Meter {#} to {~}",
-   "dst": "",
+   "dst": "使用技能把你的 大招 {#} 充能到 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -703,7 +703,7 @@
   },
   "ability-shared#0043": {
    "src": "{#} Total Damage: {~} (of your DPS, per hit)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -717,7 +717,7 @@
   },
   "ability-shared#0044": {
    "src": "{#} Effect: Blindness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 效果: 对敌人致盲 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -732,7 +732,7 @@
   },
   "ability-shared#0045": {
    "src": "{#} Area of Effect: +{~} Blocks",
-   "dst": "",
+   "dst": "{#} 作用范围: +{~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -746,7 +746,7 @@
   },
   "ability-shared#0046": {
    "src": "{#} Effects: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 效果: 对敌人 -{~} 伤害加成 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -760,7 +760,7 @@
   },
   "ability-shared#0047": {
    "src": "{#} Area of Effect: +{~} Block (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#} 作用范围: +{~} 格 (圆形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -776,7 +776,7 @@
   },
   "ability-shared#0048": {
    "src": "{#} Effect: {~} Resistance Bonus (❁) to Self",
-   "dst": "",
+   "dst": "{#} 效果: 对自己 {~} 抗性加成 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -791,7 +791,7 @@
   },
   "ability-shared#0049": {
    "src": "{#} Total Damage: {~} (of your DPS, per strike)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，每次打击)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -805,122 +805,122 @@
   },
   "ability-shared#0050": {
    "src": "ÀÀÀÀ({#} Damage: +{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 总伤害: +{~})",
    "domain": "ability"
   },
   "ability-shared#0051": {
    "src": "ÀÀÀÀ({#} Damage: -{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 总伤害: -{~})",
    "domain": "ability"
   },
   "ability-shared#0052": {
    "src": "ÀÀÀÀ({#} Damage: {~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 总伤害: {~})",
    "domain": "ability"
   },
   "ability-shared#0053": {
    "src": "ÀÀÀÀ({#} Neutral: +{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 无属性伤害: +{~})",
    "domain": "ability"
   },
   "ability-shared#0054": {
    "src": "ÀÀÀÀ({#} Neutral: -{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 无属性伤害: -{~})",
    "domain": "ability"
   },
   "ability-shared#0055": {
    "src": "ÀÀÀÀ({#} Neutral: {~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 无属性伤害: {~})",
    "domain": "ability"
   },
   "ability-shared#0056": {
    "src": "ÀÀÀÀ({#} Earth: +{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 土属性伤害: +{~})",
    "domain": "ability"
   },
   "ability-shared#0057": {
    "src": "ÀÀÀÀ({#} Earth: -{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 土属性伤害: -{~})",
    "domain": "ability"
   },
   "ability-shared#0058": {
    "src": "ÀÀÀÀ({#} Earth: {~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 土属性伤害: {~})",
    "domain": "ability"
   },
   "ability-shared#0059": {
    "src": "ÀÀÀÀ({#} Thunder: +{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 雷属性伤害: +{~})",
    "domain": "ability"
   },
   "ability-shared#0060": {
    "src": "ÀÀÀÀ({#} Thunder: -{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 雷属性伤害: -{~})",
    "domain": "ability"
   },
   "ability-shared#0061": {
    "src": "ÀÀÀÀ({#} Thunder: {~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 雷属性伤害: {~})",
    "domain": "ability"
   },
   "ability-shared#0062": {
    "src": "ÀÀÀÀ({#} Water: +{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 水属性伤害: +{~})",
    "domain": "ability"
   },
   "ability-shared#0063": {
    "src": "ÀÀÀÀ({#} Water: -{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 水属性伤害: -{~})",
    "domain": "ability"
   },
   "ability-shared#0064": {
    "src": "ÀÀÀÀ({#} Water: {~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 水属性伤害: {~})",
    "domain": "ability"
   },
   "ability-shared#0065": {
    "src": "ÀÀÀÀ({#} Fire: +{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 火属性伤害: +{~})",
    "domain": "ability"
   },
   "ability-shared#0066": {
    "src": "ÀÀÀÀ({#} Fire: -{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 火属性伤害: -{~})",
    "domain": "ability"
   },
   "ability-shared#0067": {
    "src": "ÀÀÀÀ({#} Fire: {~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 火属性伤害: {~})",
    "domain": "ability"
   },
   "ability-shared#0068": {
    "src": "ÀÀÀÀ({#} Air: +{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 风属性伤害: +{~})",
    "domain": "ability"
   },
   "ability-shared#0069": {
    "src": "ÀÀÀÀ({#} Air: -{~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 风属性伤害: -{~})",
    "domain": "ability"
   },
   "ability-shared#0070": {
    "src": "ÀÀÀÀ({#} Air: {~})",
-   "dst": "",
+   "dst": "ÀÀÀÀ({#} 风属性伤害: {~})",
    "domain": "ability"
   },
   "ability-shared#0071": {
    "src": "ÀÀÀÀ{#} Heretic: +{~} Slowness ({#}) to Enemies",
-   "dst": "",
+   "dst": "ÀÀÀÀ{#} 苍逆: 对敌人 +{~} 缓速 ({#})",
    "domain": "ability"
   },
   "ability-shared#0072": {
    "src": "ÀÀÀÀ{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "ÀÀÀÀ{#} 金虔: 对敌人 -{~} 抗性加成 ({#})",
    "domain": "ability"
   },
   "ability-shared#0073": {
    "src": "ÀÀÀÀ{#} Lunatic: -{~} Damage Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "ÀÀÀÀ{#} 赤狂: 对敌人 -{~} 伤害加成 ({#})",
    "domain": "ability"
   }
  }
