@@ -103,6 +103,34 @@ processResources {
         into 'assets/wynnchayuan'
     }
 
+    // 沒有任何字型檔引用的字型不打進 jar。
+    //
+    // font/ 底下放著日文與韓文兩份點陣字型，但目前沒有任何 font JSON 引用
+    // 它們——沒有 ja/ko 的譯文，也就沒有東西會去載。兩份加起來 7.9MB，
+    // 壓進 jar 還有 1.9MB，等於讓每個玩家為了將來也許會做的語言多下載一份。
+    //
+    // 判準是「有沒有人引用」而不是寫死檔名：哪天真的開了 ja，
+    // 那時的 font JSON 會寫上它，這裡就自動跟著打包。
+    def fontDir = file('src/main/resources/assets/wynnchayuan/font')
+    if (fontDir.exists()) {
+        def referenced = new HashSet<String>()
+        fontDir.eachFileRecurse { f ->
+            if (f.name.endsWith('.json')) {
+                (f.text =~ /wynnchayuan:([\w.-]+[.]ttf)/).each { m ->
+                    referenced.add(m[1])
+                }
+            }
+        }
+        inputs.property 'referencedFonts', referenced.toSorted().join(',')
+        fontDir.listFiles()?.each { f ->
+            if (f.name.endsWith('.ttf') && !referenced.contains(f.name)) {
+                exclude "assets/wynnchayuan/font/${f.name}"
+                logger.lifecycle(
+                    "[WynnChaYuan] ${f.name} 沒有字型檔引用，不打進 jar")
+            }
+        }
+    }
+
     // 一條譯文都沒有的語言不打進 jar。
     //
     // 新語言剛開的時候是一份空骨架：結構完整、原文齊全、譯文全空。那是給
