@@ -121,14 +121,14 @@ already tells the project what players actually run into.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | ██████████ 96.7% | 33,406 / 34,552 |
-| `zh_cn` 简体中文 | █░░░░░░░░░ 8.8% | 2,499 / 28,278 |
-| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
-| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
-| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
-| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
-| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
-| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
+| `zh_tw` 繁體中文 | ██████████ 96.9% | 33,477 / 34,545 |
+| `zh_cn` 简体中文 | █░░░░░░░░░ 8.8% | 2,499 / 28,277 |
+| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
+| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
+| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
+| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
+| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
@@ -158,9 +158,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,591 | 1,591 | 1,591 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 7,030 | 8,172 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 7,101 | 8,165 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 42,712 lines estimated**, **34,552 collected** (81%), **33,406 translated** (78% of the estimate, 96.7% of what we have).
+> All together: **at least 42,705 lines estimated**, **34,545 collected** (81%), **33,477 translated** (78% of the estimate, 96.9% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 
@@ -184,9 +184,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | 裝備的傳說敘述 | 986 | 990 | 990 | 官方 CDN 整批下載，收到的就是全部 |
 | 材料、素材、書卷、Aspect | 1,603 | 1,603 | 1,603 | 官方 CDN 整批下載，收到的就是全部 |
 | 技能樹 | 1,591 | 1,591 | 1,591 | 官方 CDN 整批下載，收到的就是全部 |
-| NPC 名牌、介面、系統訊息 | 7,030 | 8,172 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
+| NPC 名牌、介面、系統訊息 | 7,101 | 8,165 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
 
-> 全部加起來：**預估至少 42,712 句**，已收集 **34,552 句**（81%），已翻譯 **33,406 句**（佔預估的 78%、佔已收集的 96.7%）。
+> 全部加起來：**預估至少 42,705 句**，已收集 **34,545 句**（81%），已翻譯 **33,477 句**（佔預估的 78%、佔已收集的 96.9%）。
 
 「至少」是因為名牌與介面那一類沒有清單，它在總數裡只算了**已經收到的**——真正的數字只會更大。
 <!-- 涵蓋率:結束 -->
@@ -342,14 +342,14 @@ Wynncraft's; this mod only displays them.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | ██████████ 96.7% | 33,406 / 34,552 |
-| `zh_cn` 简体中文 | █░░░░░░░░░ 8.8% | 2,499 / 28,278 |
-| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
-| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
-| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
-| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
-| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
-| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
+| `zh_tw` 繁體中文 | ██████████ 96.9% | 33,477 / 34,545 |
+| `zh_cn` 简体中文 | █░░░░░░░░░ 8.8% | 2,499 / 28,277 |
+| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
+| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
+| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
+| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
+| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->

@@ -7,16 +7,16 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 96.7%（33,406 / 34,552）
+## `zh_tw` 繁體中文 — 96.9%（33,477 / 34,545）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 288 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ██████░░░░ 64% | 1,362 / 2,115 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ██████░░░░ 65% | 1,362 / 2,109 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 319 / 319 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
 | `npc.json` | ████████░░ 84% | 1,586 / 1,883 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ██████████ 99% | 1,041 / 1,050 | 選單與介面<br>Menus and interface text |
-| `quest-ui.json` | █████████░ 88% | 84 / 96 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
+| `gui.json` | ██████████ 100% | 1,050 / 1,050 | 選單與介面<br>Menus and interface text |
+| `quest-ui.json` | ██████████ 99% | 94 / 95 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ████████░░ 81% | 76 / 94 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,251 / 1,251 | 開技能樹時<br>Ability tree |
@@ -28,8 +28,8 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 156 / 156 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 137 / 137 | 探索點的名稱<br>Discovery names |
-| `lootrun.json` | ██████████ 98% | 986 / 1,007 | 跑 Lootrun 時<br>Seen during a lootrun |
-| `raid.json` | █████████░ 93% | 336 / 360 | 打 Raid 時<br>Seen during a raid |
+| `lootrun.json` | ██████████ 100% | 1,006 / 1,007 | 跑 Lootrun 時<br>Seen during a lootrun |
+| `raid.json` | ██████████ 100% | 360 / 360 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 22 / 22 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
@@ -38,13 +38,13 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `aspect-desc.json` | ██████████ 100% | 209 / 209 | Aspect 的敘述<br>Aspect descriptions |
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
-| `guild.json` | █████████░ 93% | 110 / 118 | 公會選單<br>Guild menus |
+| `guild.json` | ██████████ 100% | 118 / 118 | 公會選單<br>Guild menus |
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
 | `dialogue-choice.json` | ██████████ 100% | 3 / 3 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 986 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 8.8%（2,499 / 28,278）
+## `zh_cn` 简体中文 — 8.8%（2,499 / 28,277）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -52,7 +52,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `misc.json` | ██████░░░░ 57% | 246 / 432 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `npc.json` | ██████████ 97% | 211 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 516 / 516 | 選單與介面<br>Menus and interface text |
-| `quest-ui.json` | █████████░ 87% | 75 / 86 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
+| `quest-ui.json` | █████████░ 88% | 75 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
 | `ability/*.json` | ███████░░░ 72% | 775 / 1,072 | 開技能樹時<br>Ability tree |
@@ -74,7 +74,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `de_de` Deutsch — 0.0%（0 / 28,050）
+## `de_de` Deutsch — 0.0%（0 / 28,049）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -82,7 +82,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `misc.json` | ░░░░░░░░░░ 0% | 0 / 432 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
-| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 86 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
+| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -104,7 +104,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ░░░░░░░░░░ 0% | 0 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 0.0%（0 / 28,050）
+## `es_es` Español — 0.0%（0 / 28,049）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -112,7 +112,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `misc.json` | ░░░░░░░░░░ 0% | 0 / 432 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
-| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 86 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
+| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -134,7 +134,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ░░░░░░░░░░ 0% | 0 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `fr_fr` Français — 0.0%（0 / 28,050）
+## `fr_fr` Français — 0.0%（0 / 28,049）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -142,7 +142,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `misc.json` | ░░░░░░░░░░ 0% | 0 / 432 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
-| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 86 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
+| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -164,7 +164,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ░░░░░░░░░░ 0% | 0 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 0.0%（0 / 28,050）
+## `ja_jp` 日本語 — 0.0%（0 / 28,049）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -172,7 +172,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `misc.json` | ░░░░░░░░░░ 0% | 0 / 432 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
-| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 86 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
+| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -194,7 +194,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ░░░░░░░░░░ 0% | 0 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 0.0%（0 / 28,050）
+## `ko_kr` 한국어 — 0.0%（0 / 28,049）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -202,7 +202,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `misc.json` | ░░░░░░░░░░ 0% | 0 / 432 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
-| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 86 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
+| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
@@ -224,7 +224,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ░░░░░░░░░░ 0% | 0 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 0.0%（0 / 28,050）
+## `ru_ru` Русский — 0.0%（0 / 28,049）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -232,7 +232,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `misc.json` | ░░░░░░░░░░ 0% | 0 / 432 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
-| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 86 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
+| `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
