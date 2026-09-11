@@ -410,6 +410,15 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().toggleCollectGuiText();
                     b.setMessage(guiCollectLabel());
                 });
+        cycle("分享給翻譯團隊", "把沒翻到的句子送回收集站（預設關）",
+                this::shareLabel, b -> {
+                    boolean on = WynnChaYuan.config().toggleShareCaptures();
+                    b.setMessage(shareLabel());
+                    say(Component.literal(on
+                            ? "✔ 已開啟——只送沒翻到的英文原文，不送帳號、座標，也不送公會／隊伍／喊話"
+                            : "✔ 已關閉——不會再送出任何東西")
+                            .withStyle(on ? ChatFormatting.GREEN : ChatFormatting.GRAY));
+                });
         cycle("寫出診斷檔", "回報問題時才需要，重進遊戲後生效",
                 this::debugLabel, b -> {
                     WynnChaYuan.config().toggleDebugDumps();
@@ -710,6 +719,16 @@ public final class SettingsScreen extends Screen {
 
     private Component guiCollectLabel() {
         return ctrl(onOff(WynnChaYuan.config().collectGuiText()));
+    }
+
+    /**
+     * 分享語料的開關。
+     *
+     * <p>這是唯一一個會把字串送出去的開關，所以預設關閉、說明寫在旁邊，
+     * 打開時還會在聊天室說一次到底送什麼。見 {@code CorpusUpload}。
+     */
+    private Component shareLabel() {
+        return ctrl(onOff(WynnChaYuan.config().shareCaptures()));
     }
 
     /**

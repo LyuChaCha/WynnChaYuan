@@ -1,0 +1,10 @@
+name = "wynnchayuan-corpus"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# 佇列就放在這個 KV 裡。id 要換成你自己建立的那一個，見 README.md。
+[[kv_namespaces]]
+binding = "CORPUS"
+id = "填成 wrangler kv namespace create CORPUS 印出來的 id"
+
+# DRAIN_TOKEN 不寫在這裡——它是秘密，用 wrangler secret put DRAIN_TOKEN 設定。

@@ -1,0 +1,6 @@
+{
+  "note": "語料收集站的總開關。模組每 30 分鐘讀一次這個檔（見 CorpusUpload）——改這裡不必重新發 jar，也不必玩家重開遊戲。enabled 設成 false 就是全面停收。",
+  "enabled": false,
+  "endpoint": "",
+  "setup": "把收集站部署起來之後（見 tools/collector/README.md），把 endpoint 填成它的 /submit 位址，再把 enabled 改成 true。位址必須是 https。"
+}
