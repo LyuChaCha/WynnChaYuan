@@ -130,8 +130,15 @@ public final class CollectorConfig {
 
     /** 在 關閉 → 快捷鍵 → 自動 之間輪替。 */
     public ShotMode cycleShotMode() {
+        return cycleShotMode(1);
+    }
+
+    /**
+     * @param step 往前幾格。{@code -1} 就是回到上一個——設定畫面的右鍵走這條。
+     */
+    public ShotMode cycleShotMode(int step) {
         ShotMode[] all = ShotMode.values();
-        shotMode = all[(shotMode.ordinal() + 1) % all.length];
+        shotMode = all[Math.floorMod(shotMode.ordinal() + step, all.length)];
         save();
         return shotMode;
     }
@@ -357,32 +364,60 @@ public final class CollectorConfig {
 
     /** 在 關閉 → 就地取代 → 原文加譯文 之間輪替。 */
     public ChatMode cycleChatMode() {
+        return cycleChatMode(1);
+    }
+
+    /**
+     * @param step 往前幾格。{@code -1} 就是回到上一個——設定畫面的右鍵走這條。
+     */
+    public ChatMode cycleChatMode(int step) {
         ChatMode[] all = ChatMode.values();
-        chatMode = all[(chatMode.ordinal() + 1) % all.length];
+        chatMode = all[Math.floorMod(chatMode.ordinal() + step, all.length)];
         save();
         return chatMode;
     }
 
     /** 在 小框 → 就地取代 → 關閉 之間輪替。 */
     public DialogueMode cycleDialogueMode() {
+        return cycleDialogueMode(1);
+    }
+
+    /**
+     * @param step 往前幾格。{@code -1} 就是回到上一個——設定畫面的右鍵走這條。
+     */
+    public DialogueMode cycleDialogueMode(int step) {
         DialogueMode[] all = DialogueMode.values();
-        dialogueMode = all[(dialogueMode.ordinal() + 1) % all.length];
+        dialogueMode = all[Math.floorMod(dialogueMode.ordinal() + step, all.length)];
         save();
         return dialogueMode;
     }
 
     /** 在 面板 → 就地取代 → 關閉 之間輪替。見 {@link #choiceMode}。 */
     public DialogueMode cycleChoiceMode() {
+        return cycleChoiceMode(1);
+    }
+
+    /**
+     * @param step 往前幾格。{@code -1} 就是回到上一個——設定畫面的右鍵走這條。
+     */
+    public DialogueMode cycleChoiceMode(int step) {
         DialogueMode[] all = DialogueMode.values();
-        choiceMode = all[(choiceMode.ordinal() + 1) % all.length];
+        choiceMode = all[Math.floorMod(choiceMode.ordinal() + step, all.length)];
         save();
         return choiceMode;
     }
 
     /** 在 面板 → 就地取代 → 關閉 之間輪替。 */
     public TooltipMode cycleTooltipMode() {
+        return cycleTooltipMode(1);
+    }
+
+    /**
+     * @param step 往前幾格。{@code -1} 就是回到上一個——設定畫面的右鍵走這條。
+     */
+    public TooltipMode cycleTooltipMode(int step) {
         TooltipMode[] all = TooltipMode.values();
-        tooltipMode = all[(tooltipMode.ordinal() + 1) % all.length];
+        tooltipMode = all[Math.floorMod(tooltipMode.ordinal() + step, all.length)];
         save();
         return tooltipMode;
     }
@@ -768,8 +803,15 @@ public final class CollectorConfig {
 
     /** 在 關閉 → 注視顯示 → 就地取代 之間輪替。 */
     public NametagMode cycleNametagMode() {
+        return cycleNametagMode(1);
+    }
+
+    /**
+     * @param step 往前幾格。{@code -1} 就是回到上一個——設定畫面的右鍵走這條。
+     */
+    public NametagMode cycleNametagMode(int step) {
         NametagMode[] all = NametagMode.values();
-        nametagMode = all[(nametagMode.ordinal() + 1) % all.length];
+        nametagMode = all[Math.floorMod(nametagMode.ordinal() + step, all.length)];
         save();
         return nametagMode;
     }
@@ -780,8 +822,15 @@ public final class CollectorConfig {
 
     /** 依序在 AUTO → RIGHT → LEFT 之間輪替。 */
     public PanelSide cyclePanelSide() {
+        return cyclePanelSide(1);
+    }
+
+    /**
+     * @param step 往前幾格。{@code -1} 就是回到上一個——設定畫面的右鍵走這條。
+     */
+    public PanelSide cyclePanelSide(int step) {
         PanelSide[] all = PanelSide.values();
-        panelSide = all[(panelSide.ordinal() + 1) % all.length];
+        panelSide = all[Math.floorMod(panelSide.ordinal() + step, all.length)];
         save();
         return panelSide;
     }

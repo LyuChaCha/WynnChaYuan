@@ -184,6 +184,7 @@ public final class SettingsScreen extends Screen {
     @Override
     protected void init() {
         rows.clear();
+        backward.clear();
         buildRows();
 
         // 換分類之後列數變少，捲動位置要跟著收回來，不然會停在空白處。
@@ -233,8 +234,18 @@ public final class SettingsScreen extends Screen {
         addRenderableWidget(Button.builder(T.c("button.credits"),
                 b -> this.minecraft.setScreen(new CreditsScreen(this)))
                 .bounds(left + 96, this.height - 26, 108, 20).build());
-        addRenderableWidget(Button.builder(T.c("button.done"), b -> onClose())
-                .bounds(left + 208, this.height - 26, 88, 20).build());
+        // 「完成」順手把還沒套用的選擇套用掉。
+        //
+        // 套用鈕就在同一個畫面上，但沒有人會覺得「完成」不含「套用」——
+        // 選好語言按完成，畫面關掉、選的東西沒了，那是最容易踩到的坑。
+        addRenderableWidget(Button.builder(T.c("button.done"), b -> {
+            if (pendingLanguage != null) {
+                applyLanguage();
+            } else if (pendingFallback != null) {
+                applyFallback();
+            }
+            onClose();
+        }).bounds(left + 208, this.height - 26, 88, 20).build());
     }
 
     // ------------------------------------------------------------ 建一列
@@ -252,9 +263,9 @@ public final class SettingsScreen extends Screen {
      * <p>兩個字串各寫一次的話，改名時一定有一邊會被忘掉——而忘掉的那一邊
      * 不會編譯失敗，畫面上直接印出鍵名。
      */
-    private void cycle(String key, Supplier<Component> label,
-                       Consumer<Button> onPress) {
-        cycleNamed(T.s(key), T.s(key + ".hint"), label, onPress);
+    private Button cycle(String key, Supplier<Component> label,
+                         Consumer<Button> onPress) {
+        return cycleNamed(T.s(key), T.s(key + ".hint"), label, onPress);
     }
 
     /**
@@ -266,10 +277,50 @@ public final class SettingsScreen extends Screen {
      * 印出來的是 {@code items.shot} 四個字——那一列的名字就這樣消失了一版。
      * 取不同的名字，這種傳錯就變成編譯錯誤。
      */
-    private void cycleNamed(String name, String hint,
-                            Supplier<Component> label, Consumer<Button> onPress) {
-        add(name, hint).widgets.add(Button.builder(label.get(), onPress::accept)
-                .bounds(0, 0, ctrlW(), 20).build());
+    private Button cycleNamed(String name, String hint,
+                              Supplier<Component> label, Consumer<Button> onPress) {
+        Button button = Button.builder(label.get(), onPress::accept)
+                .bounds(0, 0, ctrlW(), 20).build();
+        add(name, hint).widgets.add(button);
+        // 預設「往回一步」就是往前一步。兩態的選項前後本來就是同一件事，
+        // 三態以上的用 #back 另外登記。
+        backward.put(button, onPress);
+        return button;
+    }
+
+    /**
+     * 右鍵要往回走哪一步。
+     *
+     * <h2>為什麼需要</h2>
+     * 循環按鈕只能往前。選項一多，按過頭就得再繞一整圈——而「繞一圈」
+     * 在切換語言那一列的代價是把每一種語言都點過一次。
+     *
+     * <p>沒登記的按鈕右鍵等同左鍵，那對兩態的選項是對的。
+     */
+    private final java.util.Map<net.minecraft.client.gui.components.AbstractWidget,
+            Consumer<Button>> backward = new java.util.HashMap<>();
+
+    /** 給多態的那幾列登記真正的「上一個」。 */
+    private Button back(Button button, Consumer<Button> step) {
+        backward.put(button, step);
+        return button;
+    }
+
+    @Override
+    public boolean mouseClicked(net.minecraft.client.input.MouseButtonEvent event,
+                                boolean doubleClick) {
+        if (event.button() == 1) {
+            for (var entry : backward.entrySet()) {
+                var widget = entry.getKey();
+                if (widget.active && widget.visible
+                        && widget.isMouseOver(event.x(), event.y())) {
+                    widget.playDownSound(this.minecraft.getSoundManager());
+                    entry.getValue().accept((Button) widget);
+                    return true;
+                }
+            }
+        }
+        return super.mouseClicked(event, doubleClick);
     }
 
     /** 按鈕 + 右邊一顆小的（進階…）。 */
@@ -340,9 +391,12 @@ public final class SettingsScreen extends Screen {
     }
 
     private void items() {
-        cycle("items.tooltip",
+        back(cycle("items.tooltip",
                 this::tooltipModeLabel, b -> {
                     WynnChaYuan.config().cycleTooltipMode();
+                    b.setMessage(tooltipModeLabel());
+                }), b -> {
+                    WynnChaYuan.config().cycleTooltipMode(-1);
                     b.setMessage(tooltipModeLabel());
                 });
         cycle("items.names",
@@ -357,10 +411,13 @@ public final class SettingsScreen extends Screen {
                     b.setMessage(marketLabel());
                 });
         String clash = com.wynnchayuan.render.PanelShot.conflict();
-        cycleNamed(T.s("items.shot"),
+        back(cycleNamed(T.s("items.shot"),
                 clash == null ? T.s("items.shot.hint") : T.s("items.shot.clash", clash),
                 this::shotLabel, b -> {
                     WynnChaYuan.config().cycleShotMode();
+                    b.setMessage(shotLabel());
+                }), b -> {
+                    WynnChaYuan.config().cycleShotMode(-1);
                     b.setMessage(shotLabel());
                 });
     }
@@ -373,9 +430,12 @@ public final class SettingsScreen extends Screen {
                 });
         action("panel.place", T.s("panel.place.hint"), T.c("button.adjust"),
                 () -> this.minecraft.setScreen(new PositionScreen(this)));
-        cycle("panel.side",
+        back(cycle("panel.side",
                 this::sideLabel, b -> {
                     WynnChaYuan.config().cyclePanelSide();
+                    b.setMessage(sideLabel());
+                }), b -> {
+                    WynnChaYuan.config().cyclePanelSide(-1);
                     b.setMessage(sideLabel());
                 });
         gapBox = field("panel.gap", T.s("panel.gap.hint"),
@@ -385,15 +445,21 @@ public final class SettingsScreen extends Screen {
     }
 
     private void dialogue() {
-        cycle("dialogue.mode",
+        back(cycle("dialogue.mode",
                 this::dialogueModeLabel, b -> {
                     WynnChaYuan.config().cycleDialogueMode();
                     b.setMessage(dialogueModeLabel());
+                }), b -> {
+                    WynnChaYuan.config().cycleDialogueMode(-1);
+                    b.setMessage(dialogueModeLabel());
                 });
         // 選項是<b>另一條訊息、另一個框</b>，所以自己一列。見 CollectorConfig#choiceMode
-        cycle("dialogue.choices",
+        back(cycle("dialogue.choices",
                 this::choiceModeLabel, b -> {
                     WynnChaYuan.config().cycleChoiceMode();
+                    b.setMessage(choiceModeLabel());
+                }), b -> {
+                    WynnChaYuan.config().cycleChoiceMode(-1);
                     b.setMessage(choiceModeLabel());
                 });
         dialogueHoldBox = field("dialogue.hold", T.s("dialogue.hold.hint"),
@@ -416,9 +482,12 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().cycleNametagMode();
                     b.setMessage(nametagLabel());
                 }, T.s("button.advanced"), () -> this.minecraft.setScreen(new NametagScreen(this)));
-        cycle("world.chat",
+        back(cycle("world.chat",
                 this::chatModeLabel, b -> {
                     WynnChaYuan.config().cycleChatMode();
+                    b.setMessage(chatModeLabel());
+                }), b -> {
+                    WynnChaYuan.config().cycleChatMode(-1);
                     b.setMessage(chatModeLabel());
                 });
         cycle("world.titles",
@@ -783,6 +852,11 @@ public final class SettingsScreen extends Screen {
             b.setMessage(languageLabel());
             refreshApply();
         }).bounds(0, 0, ctrlW() - 46, 20).build();
+        back(languageButton, b -> {
+            pendingLanguage = stepLanguage(-1);
+            b.setMessage(languageLabel());
+            refreshApply();
+        });
         languageApply = Button.builder(T.c("button.apply"), b -> applyLanguage())
                 .bounds(ctrlW() - 42, 0, 42, 20).build();
         row.widgets.add(languageButton);
@@ -798,6 +872,11 @@ public final class SettingsScreen extends Screen {
             b.setMessage(fallbackLabel());
             refreshApply();
         }).bounds(0, 0, ctrlW() - 46, 20).build();
+        back(fallbackButton, b -> {
+            pendingFallback = stepFallback(-1);
+            b.setMessage(fallbackLabel());
+            refreshApply();
+        });
         fallbackApply = Button.builder(T.c("button.apply"), b -> applyFallback())
                 .bounds(ctrlW() - 42, 0, 42, 20).build();
         row.widgets.add(fallbackButton);
@@ -847,7 +926,11 @@ public final class SettingsScreen extends Screen {
         say(T.c("data.language.switching").withStyle(ChatFormatting.GRAY));
         WynnChaYuan.switchLanguage(next, result -> {
             pendingLanguage = null;
-            pendingFallback = null;
+            // 待套用的輔助語言留著——除非它剛好就是現在切過去的這一種，
+            // 那樣的話它已經沒有意義（拿自己墊自己）。
+            if (next.equals(pendingFallback)) {
+                pendingFallback = null;
+            }
             lockLanguageRows(false);
             languageButton.setMessage(languageLabel());
             fallbackButton.setMessage(fallbackLabel());
@@ -900,13 +983,17 @@ public final class SettingsScreen extends Screen {
      * 空字串代表跟著遊戲走，它排在最前面是因為那是預設、也是多數人要的。
      */
     private String nextLanguage() {
+        return stepLanguage(1);
+    }
+
+    /** @param step 往前幾格；{@code -1} 是右鍵那條路 */
+    private String stepLanguage(int step) {
         java.util.List<String> all = new java.util.ArrayList<>();
         all.add("");                       // 跟著遊戲
         all.addAll(com.wynnchayuan.translate.Languages.bundled());
         String now = pendingLanguage != null
                 ? pendingLanguage : WynnChaYuan.config().language();
-        int at = all.indexOf(now);
-        return all.get((at + 1 + all.size()) % all.size());
+        return all.get(Math.floorMod(all.indexOf(now) + step, all.size()));
     }
 
     /**
@@ -933,6 +1020,11 @@ public final class SettingsScreen extends Screen {
      * 目前這一種語言自己不列——拿自己墊自己沒有意義。
      */
     private String nextFallback() {
+        return stepFallback(1);
+    }
+
+    /** @param step 往前幾格；{@code -1} 是右鍵那條路 */
+    private String stepFallback(int step) {
         java.util.List<String> all = new java.util.ArrayList<>();
         all.add("");                       // 自動
         all.add(WynnChaYuan.OFF);          // 不墊
@@ -943,8 +1035,7 @@ public final class SettingsScreen extends Screen {
         }
         String now = pendingFallback != null
                 ? pendingFallback : WynnChaYuan.config().fallbackLanguage();
-        int at = all.indexOf(now);
-        return all.get((at + 1 + all.size()) % all.size());
+        return all.get(Math.floorMod(all.indexOf(now) + step, all.size()));
     }
 
     /**
