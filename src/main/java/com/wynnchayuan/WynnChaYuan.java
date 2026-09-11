@@ -139,13 +139,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         //
         // 疊得起來是因為載入端本來就會跳過空的 dst（見 TranslationStore），
         // 而後載入的會蓋掉先載入的。於是每一條各自回退。
-        String under = com.wynnchayuan.translate.Languages.fallbackFor(language);
-        if (under != null) {
-            Path fallback = com.wynnchayuan.translate.Languages.dir(dir, under);
-            StarterFiles.installIfEmpty(fallback, under);
-            translations.loadAll(fallback);
-        }
-        translations.loadAll(trDir);
+        loadLayers();
 
         // 從 GitHub 同步最新譯文。放背景執行緒，不拖慢進遊戲；
         // 抓不到就沿用剛剛載入的本機版本。
@@ -234,11 +228,70 @@ public final class WynnChaYuan implements ClientModInitializer {
      * 再讀一次——所以另外有 {@link #resyncTranslations}。
      */
     public static void reloadTranslations() {
+        loadLayers();
+    }
+
+    /**
+     * 把目前語言的譯文載入，底下鋪同語族的那一層。
+     *
+     * <h2>為什麼抽出來</h2>
+     * 「要鋪哪幾層」先前寫在啟動流程裡，而 {@link #reloadTranslations} 只讀
+     * 自己那一層——按一次「重新載入譯文檔」，墊底的那一層就沒了。
+     * 一份邏輯兩個地方寫，遲早會分岔，這次就是。
+     *
+     * <p>疊的動作交給 {@code TranslationStore#loadAll(List)}：清空只做一次，
+     * 然後照順序讀，後面的蓋掉前面的。
+     */
+    private static void loadLayers() {
+        translations.setTranslateNames(config.translateItemNames());
+        java.util.List<Path> layers = new java.util.ArrayList<>();
+        String under = com.wynnchayuan.translate.Languages.fallbackFor(language);
+        if (under != null) {
+            Path fallback = com.wynnchayuan.translate.Languages.dir(configDir, under);
+            StarterFiles.installIfEmpty(fallback, under);
+            layers.add(fallback);
+        }
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
         StarterFiles.installIfEmpty(dir, language);   // 被清空的話順手補回來
-        translations.setTranslateNames(config.translateItemNames());
-        translations.loadAll(dir);
+        layers.add(dir);
+        translations.loadAll(layers);
     }
+
+    /**
+     * 換一種語言的譯文，不必重開遊戲。
+     *
+     * <h2>為什麼要能在遊戲裡換</h2>
+     * 校稿的人要看的是「這一句在畫面上長什麼樣」。改設定檔再重開遊戲，
+     * 每看一句就是一次重開——實際上沒有人會這樣校稿。
+     *
+     * <p>換完要做三件事：記住選擇、重新鋪層、把新語言的譯文抓下來。
+     * 抓取放背景執行緒，抓完再載入一次。
+     *
+     * @param lang 語言代碼；空字串表示「跟著遊戲語言走」
+     */
+    public static void switchLanguage(String lang,
+                                      java.util.function.Consumer<String> done) {
+        config.setLanguage(lang);
+        language = com.wynnchayuan.translate.Languages.pick(
+                config.language(), gameLanguage());
+        loadLayers();
+        if (config.source() != CollectorConfig.Source.GITHUB) {
+            done.accept("已切換到 " + language + "，共 " + translations.size() + " 條");
+            return;
+        }
+        Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
+        Thread worker = new Thread(() -> {
+            RemoteSync.fetchInto(dir, language);
+            net.minecraft.client.Minecraft.getInstance().execute(() -> {
+                loadLayers();
+                done.accept("已切換到 " + language + "，共 "
+                        + translations.size() + " 條");
+            });
+        }, MOD_ID + "-switch");
+        worker.setDaemon(true);
+        worker.start();
+    }
+
 
     /**
      * 重新從 GitHub 抓一次譯文，抓完再載入。

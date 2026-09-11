@@ -121,6 +121,33 @@ public final class TranslationStore {
      * <p>檔案格式錯誤只會被略過，不中斷遊戲。
      */
     public void loadAll(Path dir) {
+        loadAll(List.of(dir));
+    }
+
+    /**
+     * 依序載入好幾層，後面的蓋掉前面的。
+     *
+     * <h2>為什麼要有這個多層版本</h2>
+     * 新語言是從 {@code zh_tw} 複製、把 {@code dst} 清空的骨架，剛開張時一條
+     * 譯文都沒有。所以簡體中文的玩家要先鋪一層繁體當底，再把簡體疊上去——
+     * 讀得懂，而且比看英文原文近得多（見 {@code Languages#fallbackFor}）。
+     *
+     * <p>先前的寫法是<b>連呼叫兩次</b> {@link #loadAll(Path)}：
+     *
+     * <pre>
+     *   translations.loadAll(fallback);   // 繁體
+     *   translations.loadAll(trDir);      // 簡體
+     * </pre>
+     *
+     * 但 {@code loadAll} 開頭就 {@code entries.clear()}，第二次把第一次載入的
+     * 整片清掉了。實測疊完只剩 449 條（簡體自己那些），繁體那 31,137 條一條
+     * 都沒留下——也就是說墊底這件事<b>從來沒有生效過</b>，而畫面上看到的是
+     * 英文，正好是那段程式碼寫來要避免的結果。
+     *
+     * <p>改成一次把所有層交進來：清空只做一次，然後照順序讀。
+     * 「疊」這件事現在是這個方法的職責，呼叫端想弄錯也弄不錯。
+     */
+    public void loadAll(List<Path> dirs) {
         entries.clear();
         flat.clear();
         unwrapped.clear();
@@ -140,6 +167,14 @@ public final class TranslationStore {
         fromWiki.clear();
         loadedFiles = 0;
 
+        for (Path dir : dirs) {
+            readOne(dir);
+        }
+        report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
+    }
+
+    /** 讀一層。清空是 {@link #loadAll(List)} 的事，這裡只負責往上疊。 */
+    private void readOne(Path dir) {
         if (!Files.isDirectory(dir)) {
             try {
                 Files.createDirectories(dir);
@@ -180,9 +215,14 @@ public final class TranslationStore {
         } catch (Exception e) {
             lastResult = "讀取失敗：" + e.getMessage();
             System.err.println("[WynnChaYuan] 讀取譯文目錄失敗 " + dir + ": " + e.getMessage());
+        }
+    }
+
+    /** 全部載完之後給人看的一句話。 */
+    private void report(Path dir) {
+        if (dir == null) {
             return;
         }
-
         if (loadedFiles == 0) {
             lastResult = "資料夾裡沒有 .json 檔案";
             System.out.println("[WynnChaYuan] " + dir + " 裡沒有譯文檔");

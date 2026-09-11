@@ -398,6 +398,19 @@ public final class SettingsScreen extends Screen {
     }
 
     private void data() {
+        // 語言擺在「譯文來源」前面：先決定要哪一種語言，再談那一種從哪裡來。
+        cycle("譯文語言", "校稿時可以只換譯文，遊戲本身的語言不用動",
+                this::languageLabel, b -> {
+                    String next = nextLanguage();
+                    b.setMessage(Component.literal("切換中…"));
+                    fetching = true;
+                    WynnChaYuan.switchLanguage(next, result -> {
+                        fetching = false;
+                        b.setMessage(languageLabel());
+                        say(Component.literal("✔ " + result)
+                                .withStyle(ChatFormatting.GREEN));
+                    });
+                });
         cycle("譯文來源", "GitHub 會同步大家的最新翻譯",
                 this::sourceLabel, b -> {
                     WynnChaYuan.config().toggleSource();
@@ -726,6 +739,35 @@ public final class SettingsScreen extends Screen {
         return com.wynnchayuan.Releases.newer() == null
                 ? Component.literal("更新說明")
                 : Component.literal("● 有新版").withStyle(ChatFormatting.YELLOW);
+    }
+
+    /**
+     * 下一個要切到的語言。
+     *
+     * <p>順序是「跟著遊戲」→ 打包進來的每一種 → 回到「跟著遊戲」。
+     * 空字串代表跟著遊戲走，它排在最前面是因為那是預設、也是多數人要的。
+     */
+    private String nextLanguage() {
+        java.util.List<String> all = new java.util.ArrayList<>();
+        all.add("");                       // 跟著遊戲
+        all.addAll(com.wynnchayuan.translate.Languages.bundled());
+        String now = WynnChaYuan.config().language();
+        int at = all.indexOf(now);
+        return all.get((at + 1 + all.size()) % all.size());
+    }
+
+    /**
+     * 語言按鈕的字。
+     *
+     * <p>「跟著遊戲」時把實際選到的那一種寫在括號裡——不寫的話，
+     * 玩家看到的是「跟著遊戲」四個字，而畫面上是中文，他無從確認這兩件事
+     * 是不是同一回事。
+     */
+    private Component languageLabel() {
+        String chosen = WynnChaYuan.config().language();
+        String inUse = com.wynnchayuan.translate.Languages.nativeName(
+                WynnChaYuan.language());
+        return ctrl(chosen.isEmpty() ? "跟著遊戲（" + inUse + "）" : inUse);
     }
 
     private Component sourceLabel() {
