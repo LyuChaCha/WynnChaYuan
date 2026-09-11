@@ -50,19 +50,11 @@ jobs:
       - name: 取出本倉庫的程式
         uses: actions/checkout@v4
 
-      # 產生出來的表（涵蓋率、進度）也要一起取。
-      #
-      # 先前只取 translations/，於是 pull_request_target 這一路拿的是
-      # <b>PR 的語料配 main 的表</b>——凡是改動條目數的 PR，涵蓋率那一關
-      # 必定紅燈，而那個紅燈跟 PR 本身一點關係也沒有。
-      #
-      # Markdown 是資料不是程式，跟譯文 JSON 同一個道理，取過來不會被執行。
-      - name: 取出 PR 的譯文檔與產生的表（只取資料，不取程式）
+      - name: 取出 PR 的譯文檔（只取資料，不取程式）
         if: github.event_name == 'pull_request_target'
         run: |
           git fetch origin "pull/${{ github.event.pull_request.number }}/head:pr"
           git checkout pr -- src/main/resources/assets/wynnchayuan/translations/
-          git checkout pr -- README.md README.en.md CONTRIBUTING.md docs/
 
       - uses: actions/setup-python@v5
         with:
@@ -95,7 +87,15 @@ jobs:
         run: python tools/check-version.py
 
       # 涵蓋率表跟進度表一樣是產生的，過期就會變成謊話。
+      #
+      # 這一關<b>不在 pull_request_target 跑</b>。那一路的規矩是「程式用本倉庫的、
+      # 資料用 PR 的」，而這一關比的是產生器與產生物合不合——兩邊必須來自
+      # 同一棵樹。main 的 coverage.py 配 PR 的 README，只要 PR 動過產生器
+      # 就一定紅燈，而那個紅燈跟 PR 對不對一點關係也沒有。
+      #
+      # pull_request 那一路整棵樹都是 PR 的，它已經在檢查了。
       - name: 涵蓋率表有沒有跟著更新
+        if: github.event_name != 'pull_request_target'
         run: python tools/coverage.py --check
 
       - name: 收集站的濾網
