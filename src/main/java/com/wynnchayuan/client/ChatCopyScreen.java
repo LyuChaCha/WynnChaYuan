@@ -54,7 +54,7 @@ public final class ChatCopyScreen extends Screen {
     private long copiedAt;
 
     public ChatCopyScreen() {
-        super(Component.literal("複製聊天"));
+        super(T.c("chatcopy.title"));
     }
 
     @Override
@@ -62,7 +62,7 @@ public final class ChatCopyScreen extends Screen {
         entries = ChatLog.recent();
         rows = flatten();
         scroll = 0;
-        addRenderableWidget(Button.builder(Component.literal("關閉"), b -> onClose())
+        addRenderableWidget(Button.builder(T.c("button.close"), b -> onClose())
                 .bounds(this.width / 2 - 50, this.height - 28, 100, 20).build());
     }
 
@@ -108,9 +108,8 @@ public final class ChatCopyScreen extends Screen {
 
         if (rows.isEmpty()) {
             g.drawCenteredString(this.font,
-                    Component.literal(WynnChaYuan.config().chatCopy()
-                            ? "還沒有收到聊天訊息"
-                            : "「複製聊天」目前是關閉的，到 F6 設定裡打開")
+                    T.c(WynnChaYuan.config().chatCopy()
+                            ? "chatcopy.empty" : "chatcopy.disabled")
                             .withStyle(ChatFormatting.GRAY),
                     this.width / 2, this.height / 2 - 4, Colors.SUBTLE);
             return;
@@ -141,13 +140,11 @@ public final class ChatCopyScreen extends Screen {
 
         if (System.currentTimeMillis() - copiedAt < COPIED_MS) {
             g.drawCenteredString(this.font,
-                    Component.literal("已複製").withStyle(ChatFormatting.GREEN),
+                    T.c("chatcopy.copied").withStyle(ChatFormatting.GREEN),
                     this.width / 2, this.height - 44, Colors.TEXT);
         } else {
             g.drawCenteredString(this.font,
-                    Component.literal("點一則複製　·　滾輪捲動　·　"
-                            + "複製的內容跟著「聊天訊息」設定走")
-                            .withStyle(ChatFormatting.DARK_GRAY),
+                    T.c("chatcopy.hint").withStyle(ChatFormatting.DARK_GRAY),
                     this.width / 2, this.height - 44, Colors.FAINT);
         }
     }

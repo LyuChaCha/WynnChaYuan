@@ -481,6 +481,14 @@ tasks.register('runLanguageFallbackChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLanguageFallbackChecks' }
 
+tasks.register('runLangKeyChecks', JavaExec) {
+    group = 'verification'
+    description = 'F6 介面的語言檔對得起程式嗎'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.client.LangKeysTest'
+}
+tasks.named('check') { dependsOn 'runLangKeyChecks' }
+
 
 tasks.register('runFlowedBlockChecks', JavaExec) {
     group = 'verification'

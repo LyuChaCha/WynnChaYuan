@@ -64,7 +64,7 @@ public final class NametagScreen extends Screen {
     private Component status = Component.empty();
 
     public NametagScreen(Screen parent) {
-        super(Component.literal("NPC 名牌設定"));
+        super(T.c("nametag.title"));
         this.parent = parent;
     }
 
@@ -80,9 +80,9 @@ public final class NametagScreen extends Screen {
     private String[] insideLines() {
         return new String[] {
             modeHint(),
-            "停留秒數（0 = 持續顯示）",
-            "偵測距離：幾格內的名牌才算（2–64 格）",
-            "準心夾角：偏離準心幾度內還算在看（1–45 度）",
+            T.s("nametag.hold"),
+            T.s("nametag.range"),
+            T.s("nametag.angle"),
         };
     }
 
@@ -94,8 +94,8 @@ public final class NametagScreen extends Screen {
      */
     private String[] aroundLines() {
         return new String[] {
-            "名牌要怎麼顯示，還有什麼情況下才算「你在看它」",
-            "城裡 NPC 站得密就把角度調小；曠野找人可以調大",
+            T.s("nametag.about1"),
+            T.s("nametag.about2"),
         };
     }
 
@@ -123,22 +123,22 @@ public final class NametagScreen extends Screen {
         }).bounds(x, y, W, 20).build());
 
         holdBox = field(x, fieldY(0), hold());
-        addRenderableWidget(Button.builder(Component.literal("套用"),
+        addRenderableWidget(Button.builder(T.c("button.apply"),
                 b -> apply(Field.HOLD)).bounds(x + W - 42, fieldY(0), 42, 20).build());
 
         rangeBox = field(x, fieldY(1),
                 trim(WynnChaYuan.config().nametagRange()));
-        addRenderableWidget(Button.builder(Component.literal("套用"),
+        addRenderableWidget(Button.builder(T.c("button.apply"),
                 b -> apply(Field.RANGE)).bounds(x + W - 42, fieldY(1), 42, 20).build());
 
         angleBox = field(x, fieldY(2),
                 trim(WynnChaYuan.config().nametagAngle()));
-        addRenderableWidget(Button.builder(Component.literal("套用"),
+        addRenderableWidget(Button.builder(T.c("button.apply"),
                 b -> apply(Field.ANGLE)).bounds(x + W - 42, fieldY(2), 42, 20).build());
 
-        addRenderableWidget(Button.builder(Component.literal("回到預設值"), b -> resetAll())
+        addRenderableWidget(Button.builder(T.c("nametag.reset"), b -> resetAll())
                 .bounds(this.width / 2 - 105, this.height - 30, 100, 20).build());
-        addRenderableWidget(Button.builder(Component.literal("返回"), b -> onClose())
+        addRenderableWidget(Button.builder(T.c("button.back"), b -> onClose())
                 .bounds(this.width / 2 + 5, this.height - 30, 100, 20).build());
     }
 
@@ -148,7 +148,7 @@ public final class NametagScreen extends Screen {
     }
 
     private EditBox field(int x, int y, String value) {
-        EditBox box = new EditBox(this.font, x, y, W - 46, 20, Component.literal("數值"));
+        EditBox box = new EditBox(this.font, x, y, W - 46, 20, T.c("nametag.value"));
         box.setValue(value);
         box.setMaxLength(5);
         addRenderableWidget(box);
@@ -168,8 +168,8 @@ public final class NametagScreen extends Screen {
         // 輸入 999 被夾成 64 的話，框裡還留著 999 會讓人以為沒生效
         refresh();
         status = ok
-                ? Component.literal("✔ 已套用").withStyle(ChatFormatting.GREEN)
-                : Component.literal("✘ 請輸入數字").withStyle(ChatFormatting.RED);
+                ? T.c("nametag.applied").withStyle(ChatFormatting.GREEN)
+                : T.c("nametag.notanumber").withStyle(ChatFormatting.RED);
     }
 
     private void resetAll() {
@@ -178,7 +178,7 @@ public final class NametagScreen extends Screen {
         cfg.setNametagRange("24");
         cfg.setNametagAngle("6");
         refresh();
-        status = Component.literal("✔ 已回到預設值").withStyle(ChatFormatting.GREEN);
+        status = T.c("nametag.reset.done").withStyle(ChatFormatting.GREEN);
     }
 
     private void refresh() {
@@ -200,21 +200,22 @@ public final class NametagScreen extends Screen {
     }
 
     private Component modeLabel() {
-        String name = switch (WynnChaYuan.config().nametagMode()) {
-            case OFF -> "關閉";
-            case LOOK_AT -> "注視時顯示";
-            case REPLACE -> "直接取代原文";
-        };
-        return Component.literal("名牌與漂浮字: " + name);   // 標籤用半形，跟語料一致
+        String name = T.s(switch (WynnChaYuan.config().nametagMode()) {
+            case OFF -> "mode.off";
+            case LOOK_AT -> "nametag.mode.lookat";
+            case REPLACE -> "nametag.mode.replace";
+        });
+        // 標籤用半形冒號，跟語料一致
+        return T.c("nametag.label", name);
     }
 
     /** 目前這個模式的但書。 */
     private String modeHint() {
-        return switch (WynnChaYuan.config().nametagMode()) {
-            case OFF -> "NPC 名牌、工作站、「空手右鍵」那些字都不動";
-            case LOOK_AT -> "原文保留著，看著它才在準心旁補一個小框";
-            case REPLACE -> "就地換成中文，連畫面中央那些大字也換；看不到原文";
-        };
+        return T.s(switch (WynnChaYuan.config().nametagMode()) {
+            case OFF -> "nametag.desc.off";
+            case LOOK_AT -> "nametag.desc.lookat";
+            case REPLACE -> "nametag.desc.replace";
+        });
     }
 
     @Override

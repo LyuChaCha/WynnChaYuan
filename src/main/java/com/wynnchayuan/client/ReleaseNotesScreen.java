@@ -36,7 +36,7 @@ public final class ReleaseNotesScreen extends Screen {
     private final Screen parent;
 
     public ReleaseNotesScreen(Screen parent) {
-        super(Component.literal("更新說明"));
+        super(T.c("notes.title"));
         this.parent = parent;
     }
 
@@ -49,11 +49,11 @@ public final class ReleaseNotesScreen extends Screen {
             // 只會讓人以為自己漏看了什麼。
             String url = Releases.downloadUrl();
             addRenderableWidget(Button.builder(
-                    Component.literal("前往 CurseForge 下載 " + latest),
+                    T.c("notes.download", latest),
                     b -> ConfirmLinkScreen.confirmLinkNow(this, url))
                     .bounds(cx - 100, this.height - 54, 200, 20).build());
         }
-        addRenderableWidget(Button.builder(Component.literal("返回"), b -> onClose())
+        addRenderableWidget(Button.builder(T.c("button.back"), b -> onClose())
                 .bounds(cx - 50, this.height - 28, 100, 20).build());
     }
 
@@ -69,8 +69,7 @@ public final class ReleaseNotesScreen extends Screen {
 
         String latest = Releases.newer();
         if (latest != null) {
-            g.drawCenteredString(this.font, Component.literal(
-                            "有新版本 " + latest + "　你目前是 " + WynnChaYuan.version())
+            g.drawCenteredString(this.font, T.c("notes.newer", latest, WynnChaYuan.version())
                     .withStyle(ChatFormatting.YELLOW), cx, y, Colors.TEXT);
             y += 12;
             Releases.Notes fresh = Releases.notesFor(latest);
@@ -83,7 +82,7 @@ public final class ReleaseNotesScreen extends Screen {
             y += 10;
         } else {
             g.drawCenteredString(this.font,
-                    Component.literal("v" + WynnChaYuan.version() + "　已是最新版本")
+                    T.c("notes.uptodate", WynnChaYuan.version())
                             .withStyle(ChatFormatting.DARK_GRAY), cx, y, Colors.DIM);
             y += 22;
         }
@@ -91,13 +90,13 @@ public final class ReleaseNotesScreen extends Screen {
         Releases.Notes notes = Releases.running();
         if (notes == null) {
             g.drawCenteredString(this.font,
-                    Component.literal("這一版沒有附更新說明。").withStyle(ChatFormatting.DARK_GRAY),
+                    T.c("notes.none").withStyle(ChatFormatting.DARK_GRAY),
                     cx, y, Colors.FAINT);
             return;
         }
 
         g.drawCenteredString(this.font,
-                Component.literal("本版更新內容（v" + WynnChaYuan.version() + "）"),
+                T.c("notes.thisversion", WynnChaYuan.version()),
                 cx, y, Colors.TEXT);
         y += 16;
         if (!notes.headline().isBlank()) {

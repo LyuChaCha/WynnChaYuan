@@ -71,18 +71,18 @@ public final class PositionScreen extends Screen {
     private long savedAt = 0;
 
     public PositionScreen(Screen parent) {
-        super(Component.literal("調整面板位置"));
+        super(T.c("pos.title"));
         this.parent = parent;
     }
 
     @Override
     protected void init() {
         boxes.clear();
-        boxes.add(new Box(Overlay.TOOLTIP, "翻譯面板", 150, 90));
-        boxes.add(new Box(Overlay.TRACKER, "任務追蹤", 112, 62));
-        boxes.add(new Box(Overlay.DIALOGUE, "NPC 對話", 200, 42));
-        boxes.add(new Box(Overlay.CHOICES, "對話選項", 150, 34));
-        boxes.add(new Box(Overlay.NAMETAG, "NPC 名牌", 96, 22));
+        boxes.add(new Box(Overlay.TOOLTIP, T.s("pos.box.tooltip"), 150, 90));
+        boxes.add(new Box(Overlay.TRACKER, T.s("pos.box.tracker"), 112, 62));
+        boxes.add(new Box(Overlay.DIALOGUE, T.s("pos.box.dialogue"), 200, 42));
+        boxes.add(new Box(Overlay.CHOICES, T.s("pos.box.choices"), 150, 34));
+        boxes.add(new Box(Overlay.NAMETAG, T.s("pos.box.nametag"), 96, 22));
 
         CollectorConfig cfg = WynnChaYuan.config();
         for (Box box : boxes) {
@@ -101,16 +101,16 @@ public final class PositionScreen extends Screen {
         int cx = this.width / 2;
         int bottom = this.height - 26;   // 說明條在 height-48..-28，別壓到
 
-        addRenderableWidget(Button.builder(Component.literal("全部回到預設"), b -> {
+        addRenderableWidget(Button.builder(T.c("pos.reset"), b -> {
             for (Box box : boxes) {
                 resetToDefault(box);
             }
         }).bounds(cx - 155, bottom, 100, 20).build());
 
-        addRenderableWidget(Button.builder(Component.literal("儲存"), b -> save())
+        addRenderableWidget(Button.builder(T.c("pos.save"), b -> save())
                 .bounds(cx - 50, bottom, 100, 20).build());
 
-        addRenderableWidget(Button.builder(Component.literal("取消"), b -> onClose())
+        addRenderableWidget(Button.builder(T.c("pos.cancel"), b -> onClose())
                 .bounds(cx + 55, bottom, 100, 20).build());
     }
 
@@ -240,8 +240,7 @@ public final class PositionScreen extends Screen {
         super.render(g, mouseX, mouseY, delta);
 
         // 標題列跟設定畫面同一套（含模組圖示），兩個畫面看起來才像同一個東西。
-        Cards.header(g, this.font, this.width, "調整面板位置",
-                "拖曳任一個方框。全部同時顯示，方便看有沒有互相擋到");
+        Cards.header(g, this.font, this.width, T.s("pos.title"), T.s("pos.hint"));
 
         // 拖曳時把畫面的中線畫出來。要把對話框擺正中央的話，沒有這條線
         // 只能靠眼睛猜——而框寬會隨對話長短變，猜不準。
@@ -279,10 +278,10 @@ public final class PositionScreen extends Screen {
         String text;
         int colour = Colors.TEXT;
         if (saved && System.currentTimeMillis() - savedAt < 2000) {
-            text = "✔ 已儲存所有方框的位置";
+            text = T.s("pos.saved");
             colour = WynnChaYuan.config().accentARGB();
         } else if (dragging != null) {
-            text = dragging.label + "：靠近中線會自動對齊";
+            text = T.s("pos.snapping", dragging.label);
         } else {
             Box under = null;
             for (int i = boxes.size() - 1; i >= 0; i--) {
@@ -292,8 +291,8 @@ public final class PositionScreen extends Screen {
                 }
             }
             text = under != null
-                    ? under.label + "：按住拖曳到你想要的位置"
-                    : "按住任一個方框拖曳；「全部回到預設」可以復原";
+                    ? T.s("pos.dragging", under.label)
+                    : T.s("pos.idle");
         }
         g.drawString(this.font,
                 Component.literal(Cards.fit(this.font, text, w - 8)),
@@ -312,7 +311,7 @@ public final class PositionScreen extends Screen {
         g.fill(box.x, box.y - TITLE_H, box.x + box.w, box.y - 1, 0xD00B1119);
         g.fill(box.x, box.y - TITLE_H, box.x + box.w, box.y - TITLE_H + 1, accent);
         g.drawString(this.font,
-                Component.literal(active ? box.label + "（拖曳中…）" : box.label),
+                active ? T.c("pos.grabbed", box.label) : Component.literal(box.label),
                 box.x + 4, box.y - 10, accent);
 
         Boxes.draw(g, box.x, box.y, box.w, box.h);
@@ -328,25 +327,25 @@ public final class PositionScreen extends Screen {
     private static List<Component> sampleFor(Overlay which) {
         return switch (which) {
             case TOOLTIP -> List.of(
-                    Component.literal("神話 弓").withStyle(ChatFormatting.LIGHT_PURPLE),
-                    Component.literal("每秒傷害 897"),
-                    Component.literal("戰鬥等級 114"),
-                    Component.literal("生命竊取 +978/3s"));
+                    T.c("pos.demo.bow").withStyle(ChatFormatting.LIGHT_PURPLE),
+                    T.c("pos.demo.dps"),
+                    T.c("pos.demo.level"),
+                    T.c("pos.demo.steal"));
             case TRACKER -> List.of(
-                    Component.literal("任務追蹤").withStyle(ChatFormatting.YELLOW),
-                    Component.literal("前往 Ragni"),
-                    Component.literal("擊敗 5 隻史萊姆"));
+                    T.c("pos.demo.tracker").withStyle(ChatFormatting.YELLOW),
+                    T.c("pos.demo.goto"),
+                    T.c("pos.demo.slay"));
             case DIALOGUE -> List.of(
-                    Component.literal("廚師").withStyle(ChatFormatting.GREEN),
-                    Component.literal("希望別再有 grook 闖進來了。"));
+                    T.c("pos.demo.cook").withStyle(ChatFormatting.GREEN),
+                    T.c("pos.demo.line"));
             case NAMETAG -> List.of(
-                    Component.literal("廚師").withStyle(ChatFormatting.GREEN));
+                    T.c("pos.demo.cook").withStyle(ChatFormatting.GREEN));
             // 選項的示意用真的三句，長度才貼近實際——遊戲自己的選項在右上角，
             // 這一塊預設就是貼過去跟它並排的。
             case CHOICES -> List.of(
-                    Component.literal("你要去哪裡嗎？"),
-                    Component.literal("這裡的生活如何？"),
-                    Component.literal("只是打個招呼。"));
+                    T.c("pos.demo.choice1"),
+                    T.c("pos.demo.choice2"),
+                    T.c("pos.demo.choice3"));
         };
     }
 

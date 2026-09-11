@@ -183,18 +183,18 @@ public final class Releases {
         WynnChaYuan.config().notifiedVersion(latest);
 
         String url = downloadUrl();
-        client.player.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                "[WynnChaYuan] 有新版本 " + latest + " 可以更新（你目前是 "
-                + WynnChaYuan.version() + "）")
-                .withStyle(net.minecraft.ChatFormatting.AQUA), false);
+        client.player.displayClientMessage(
+                com.wynnchayuan.client.T.c("chat.update.line1",
+                                latest, WynnChaYuan.version())
+                        .withStyle(net.minecraft.ChatFormatting.AQUA), false);
         Notes notes = notesFor(latest);
         if (notes != null && !notes.headline().isBlank()) {
             client.player.displayClientMessage(net.minecraft.network.chat.Component.literal(
                     "  " + notes.headline())
                     .withStyle(net.minecraft.ChatFormatting.GRAY), false);
         }
-        client.player.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                "  ▸ 點這裡到 CurseForge 下載")
+        client.player.displayClientMessage(
+                com.wynnchayuan.client.T.c("chat.update.link")
                 .withStyle(style -> style
                         .withColor(net.minecraft.ChatFormatting.YELLOW)
                         .withUnderlined(true)
@@ -203,9 +203,9 @@ public final class Releases {
                         .withHoverEvent(new net.minecraft.network.chat.HoverEvent.ShowText(
                                 net.minecraft.network.chat.Component.literal(url)))),
                 false);
-        client.player.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                "  更新內容看 F6 →「關於／更新」")
-                .withStyle(net.minecraft.ChatFormatting.DARK_GRAY), false);
+        client.player.displayClientMessage(
+                com.wynnchayuan.client.T.c("chat.update.where")
+                        .withStyle(net.minecraft.ChatFormatting.DARK_GRAY), false);
     }
 
     /** 這一場講過了沒。見 {@link #tellOnce}。 */
@@ -214,6 +214,25 @@ public final class Releases {
     /** 手上這一版改了什麼。查不到就回傳 {@code null}，呼叫端自己決定要不要空著。 */
     public static Notes running() {
         return notesFor(WynnChaYuan.version());
+    }
+
+    /**
+     * 這一版的更新說明，挑玩家看得懂的那一種語言。
+     *
+     * <p>每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個
+     * 語言代碼的物件。查不到就用英文那一份——跟介面文字同一個規則
+     * （見 {@code client.T}）。
+     */
+    private static JsonObject localised(JsonObject one) {
+        String lang;
+        try {
+            lang = net.minecraft.client.Minecraft.getInstance()
+                    .getLanguageManager().getSelected();
+        } catch (Exception e) {
+            return one;        // 還沒有遊戲實例（測試、啟動極早期）
+        }
+        return lang != null && one.has(lang) && one.get(lang).isJsonObject()
+                ? one.getAsJsonObject(lang) : one;
     }
 
     public static Notes notesFor(String version) {
@@ -225,7 +244,7 @@ public final class Releases {
         if (!all.has(version)) {
             return null;
         }
-        JsonObject one = all.getAsJsonObject(version);
+        JsonObject one = localised(all.getAsJsonObject(version));
         List<String> items = new ArrayList<>();
         if (one.has("items")) {
             JsonArray rows = one.getAsJsonArray("items");

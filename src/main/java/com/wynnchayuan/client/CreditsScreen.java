@@ -34,7 +34,7 @@ public final class CreditsScreen extends Screen {
     private final Screen parent;
 
     public CreditsScreen(Screen parent) {
-        super(Component.literal("關於 " + WynnChaYuan.MOD_NAME));
+        super(T.c("credits.title", WynnChaYuan.MOD_NAME));
         this.parent = parent;
     }
 
@@ -52,19 +52,20 @@ public final class CreditsScreen extends Screen {
             b.setMessage(styleLabel());
         }).bounds(this.width / 2 + 5, this.height - 54, 150, 20).build());
 
-        addRenderableWidget(Button.builder(Component.literal("返回"), b -> onClose())
+        addRenderableWidget(Button.builder(T.c("button.back"), b -> onClose())
                 .bounds(this.width / 2 - 50, this.height - 28, 100, 20).build());
     }
 
     private Component badgeLabel() {
-        return Component.literal("遊戲內標記："
-                + (WynnChaYuan.config().showBadges() ? "開" : "關"));
+        return T.c("credits.badges",
+                T.s(WynnChaYuan.config().showBadges() ? "mode.on" : "mode.off"));
     }
 
     private Component styleLabel() {
         boolean gradient = WynnChaYuan.config().badgeStyle()
                 == CollectorConfig.BadgeStyle.GRADIENT;
-        return Component.literal("多重身分：" + (gradient ? "全部（漸層）" : "只顯示主要"));
+        return T.c("credits.badges.style",
+                T.s(gradient ? "credits.badges.all" : "credits.badges.main"));
     }
 
     @Override
@@ -82,7 +83,7 @@ public final class CreditsScreen extends Screen {
         y += 22;
 
         g.drawCenteredString(this.font,
-                Component.literal("Wynncraft 繁體中文翻譯").withStyle(ChatFormatting.GRAY),
+                T.c("credits.tagline").withStyle(ChatFormatting.GRAY),
                 cx, y, Colors.SUBTLE);
         y += 24;
 
@@ -98,7 +99,7 @@ public final class CreditsScreen extends Screen {
             List<Credits.Member> members = section.members();
             if (members.isEmpty()) {
                 g.drawCenteredString(this.font,
-                        Component.literal("—— 等你加入 ——"), cx, y, Colors.FAINT);
+                        T.c("credits.empty"), cx, y, Colors.FAINT);
                 y += 13;
             }
             int used = Math.min(columns, Math.max(1, members.size()));
@@ -118,11 +119,9 @@ public final class CreditsScreen extends Screen {
         }
 
         y = this.height - FOOTER_HEIGHT + 8;
-        for (String line : List.of(
-                "名單上的人，名牌上方會多一行標記 —— 只有裝了本模組的人看得到",
-                "本模組依賴 Wynntils，物品與技能資料取自其公開 CDN")) {
+        for (String key : List.of("credits.note1", "credits.note2")) {
             g.drawCenteredString(this.font,
-                    Component.literal(line).withStyle(ChatFormatting.DARK_GRAY), cx, y, Colors.FAINT);
+                    T.c(key).withStyle(ChatFormatting.DARK_GRAY), cx, y, Colors.FAINT);
             y += 11;
         }
     }
