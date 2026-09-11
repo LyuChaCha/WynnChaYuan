@@ -64,7 +64,34 @@ tasks.named('compileJava') { dependsOn 'checkWynntilsJar' }
 processResources {
     inputs.property "version", project.version
     filesMatching("fabric.mod.json") {
-        expand "version": project.version
+        // escapeBackslash 一定要開。
+        //
+        // expand 走的是 Groovy 的樣板引擎，它會把反斜線加 n 當成「換行的
+        // 跳脫」而不是兩個字元——於是 description 裡那一個跳脫在 jar 裡變成
+        // 真的換行，而 JSON 的字串不能有真的換行。結果是 fabric.mod.json
+        // 解析失敗、模組整個載不起來，而原始碼看起來完全正常。
+        expand(["version": project.version]) {
+            it.escapeBackslash = true
+        }
+    }
+
+    // 產生出來的 fabric.mod.json 一定要是合法 JSON。
+    //
+    // 上面那個跳脫問題是「原始碼對、產生物壞」，唯一看得到的地方就是這裡。
+    // 少了這道檢查，壞掉的 jar 會一路發到 CurseForge 上才被發現——
+    // 而玩家看到的是模組沒出現在列表裡，沒有任何錯誤訊息指向這個檔。
+    doLast {
+        def built = new File(destinationDir, 'fabric.mod.json')
+        if (built.exists()) {
+            try {
+                new groovy.json.JsonSlurper().parseText(built.text)
+            } catch (Exception e) {
+                throw new GradleException(
+                    "產生出來的 fabric.mod.json 不是合法 JSON：${e.message}"
+                    + "　多半是 description 裡的跳脫被 expand 吃掉了，"
+                    + "見上面 escapeBackslash 那段說明。")
+            }
+        }
     }
 
     // 版本說明跟著 jar 走一份。
