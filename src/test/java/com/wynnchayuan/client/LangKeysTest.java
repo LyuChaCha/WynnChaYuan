@@ -145,6 +145,12 @@ public final class LangKeysTest {
                 .filter(k -> k.endsWith(".")).toList();
         List<String> unused = new ArrayList<>();
         for (String key : en.keySet()) {
+            // key.* 是<b>Minecraft 自己</b>要查的，不走 T。它從模組的語言檔查
+            // 按鍵的名字與分類名（見 registerKeyBind），底下另外有一條檢查
+            // 釘住「程式裡註冊了哪幾個，語言檔就要有哪幾個」。
+            if (key.startsWith("key.")) {
+                continue;
+            }
             String bare = key.substring("wynnchayuan.".length());
             if (mentioned.contains(bare)
                     || prefixes.stream().anyMatch(bare::startsWith)) {
@@ -154,6 +160,23 @@ public final class LangKeysTest {
         }
         check("語言檔裡沒有用不到的鍵"
                         + (unused.isEmpty() ? "" : "：" + unused), unused.isEmpty());
+
+        // ---- 按鍵的名字 ----
+        //
+        // 這幾條漏掉不會有任何錯誤訊息：原版的按鍵設定畫面直接把鍵名印出來
+        // （`key.wynnchayuan.openSettings`），看起來像壞掉但什麼都沒壞。
+        // 實機就這樣過了好幾版。
+        List<String> binds = new ArrayList<>(keyBindings());
+        binds.add("key.category.wynnchayuan.main");      // 分類名是拼出來的
+        check("掃到程式裡註冊了 " + (binds.size() - 1) + " 個按鍵", binds.size() > 1);
+        List<String> noName = new ArrayList<>();
+        for (String key : binds) {
+            if (!en.has(key)) {
+                noName.add(key);
+            }
+        }
+        check("★ 每個按鍵都有名字（少了原版會印出鍵名）"
+                        + (noName.isEmpty() ? "" : "：" + noName), noName.isEmpty());
 
         report();
     }
@@ -181,6 +204,23 @@ public final class LangKeysTest {
     private static JsonObject load(String code) throws Exception {
         return JsonParser.parseString(
                 Files.readString(LANG.resolve(code + ".json"))).getAsJsonObject();
+    }
+
+    /** 程式裡 {@code new KeyMapping("…")} 註冊了哪幾個按鍵。 */
+    private static Set<String> keyBindings() throws Exception {
+        Set<String> out = new LinkedHashSet<>();
+        // 至少兩個點才算：註解裡有個 "key.category"，那是用來<b>拼</b>分類鍵的
+        // 前綴，不是語言檔裡的一條。
+        Pattern bind = Pattern.compile("\"(key\\.[A-Za-z0-9_]+\\.[A-Za-z0-9_.]+)\"");
+        try (Stream<Path> files = Files.walk(SRC)) {
+            for (Path file : files.filter(p -> p.toString().endsWith(".java")).toList()) {
+                Matcher m = bind.matcher(Files.readString(file));
+                while (m.find()) {
+                    out.add(m.group(1));
+                }
+            }
+        }
+        return out;
     }
 
     private static Set<String> usedKeys() throws Exception {
