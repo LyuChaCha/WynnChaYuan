@@ -113,8 +113,8 @@ needs**.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | ██████████ 96.7% | 33,168 / 34,313 |
-| `zh_cn` 简体中文 | █░░░░░░░░░ 7.1% | 1,989 / 28,050 |
+| `zh_tw` 繁體中文 | ██████████ 96.7% | 33,402 / 34,546 |
+| `zh_cn` 简体中文 | █░░░░░░░░░ 8.0% | 2,240 / 28,162 |
 | `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
 | `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
 | `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,050 |
@@ -141,7 +141,7 @@ This table answers the other half:
 | Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
 | Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
 | Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 1,881 + 1,037 collected | **No official list** - only what players run into |
+| NPC nameplates, menus, system messages | — | 1,883 + 1,050 collected | **No official list** - only what players run into |
 
 Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
 
