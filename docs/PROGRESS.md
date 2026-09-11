@@ -25,13 +25,13 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `gear-*.json` | ██████████ 100% | 986 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 1.1%（288 / 26,830）
+## `zh_cn` 简体中文 — 3.0%（804 / 26,830）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 288 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
 | `npc.json` | ░░░░░░░░░░ 0% | 0 / 217 | 走在城裡就會看到<br>NPC names, seen while walking around town |
-| `gui.json` | ░░░░░░░░░░ 0% | 0 / 516 | 選單與介面<br>Menus and interface text |
+| `gui.json` | ██████████ 100% | 516 / 516 | 選單與介面<br>Menus and interface text |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務名稱與任務介面<br>Quest names and the quest interface |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
