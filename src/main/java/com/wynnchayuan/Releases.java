@@ -235,6 +235,44 @@ public final class Releases {
                 ? one.getAsJsonObject(lang) : one;
     }
 
+    /**
+     * 有更新說明的版本，新的排前面。
+     *
+     * <p>排序用「拆成數字一段一段比」，不是字串比大小——字串比的話
+     * {@code 0.1.10} 會排在 {@code 0.1.2} 前面，而那是錯的。
+     * 底線那一段（{@code 0.1.2_1}）當成又一段數字。
+     */
+    public static List<String> versions() {
+        JsonObject o = data;
+        if (o == null || !o.has("notes")) {
+            return List.of();
+        }
+        List<String> all = new ArrayList<>(o.getAsJsonObject("notes").keySet());
+        all.sort((a, b) -> compare(b, a));
+        return List.copyOf(all);
+    }
+
+    private static int compare(String a, String b) {
+        String[] left = a.split("[._]");
+        String[] right = b.split("[._]");
+        for (int i = 0; i < Math.max(left.length, right.length); i++) {
+            int x = i < left.length ? number(left[i]) : 0;
+            int y = i < right.length ? number(right[i]) : 0;
+            if (x != y) {
+                return Integer.compare(x, y);
+            }
+        }
+        return 0;
+    }
+
+    private static int number(String part) {
+        try {
+            return Integer.parseInt(part);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
+
     public static Notes notesFor(String version) {
         JsonObject o = data;
         if (o == null || !o.has("notes")) {
