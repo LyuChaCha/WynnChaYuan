@@ -259,6 +259,41 @@ public final class CorpusUpload {
         return null;
     }
 
+    /**
+     * 第一次進遊戲時說一次「語料會分享出去」。
+     *
+     * <h2>為什麼預設開著也要講</h2>
+     * 分享的內容是遊戲自己的英文文字，不是玩家的東西，所以預設開啟是合理的
+     * ——翻譯進度本來就被「要有人真的去跑那段任務」卡著。但「合理」不等於
+     * 「不用說」：會送東西出去的功能，玩家至少要知道它存在、知道在哪裡關。
+     *
+     * <p>只講一次。講過就記在 {@code shared.json} 裡，之後不再提——
+     * 每次進遊戲都跳一次的提示，第三次之後就沒有人在看了。
+     *
+     * <p>關掉的人不講：他已經表態過了。
+     */
+    public static void greetOnce(net.minecraft.client.Minecraft client) {
+        if (greeted || client == null || client.player == null) {
+            return;
+        }
+        greeted = true;                 // 不管有沒有講成，這一場都不要再試
+        if (!enabled.getAsBoolean()) {
+            return;
+        }
+        writeSent();                    // 把 greeted 記下來
+        client.player.displayClientMessage(net.minecraft.network.chat.Component.literal(
+                "[WynnChaYuan] 你玩到的、還沒翻到的句子會分享回翻譯團隊，"
+                + "讓所有人都看得到那段翻譯。")
+                .withStyle(net.minecraft.ChatFormatting.AQUA), false);
+        client.player.displayClientMessage(net.minecraft.network.chat.Component.literal(
+                "  只有遊戲自己的英文字。不含你的帳號、座標，"
+                + "也不含公會／隊伍／喊話。F6 →「分享給翻譯團隊」可以關掉。")
+                .withStyle(net.minecraft.ChatFormatting.GRAY), false);
+    }
+
+    /** 開場白講過了沒。見 {@link #greetOnce}。 */
+    private static volatile boolean greeted;
+
     private static void readSent() {
         if (sentFile == null || !Files.exists(sentFile)) {
             return;
@@ -269,6 +304,7 @@ public final class CorpusUpload {
             for (var e : o.getAsJsonArray("hashes")) {
                 sent.add(e.getAsString());
             }
+            greeted = o.has("greeted") && o.get("greeted").getAsBoolean();
         } catch (Exception e) {
             // 壞掉就當沒送過。最壞情況是重送一次，伺服器那邊會去重。
         }
@@ -285,6 +321,7 @@ public final class CorpusUpload {
             }
             JsonObject root = new JsonObject();
             root.addProperty("note", "已經分享過的字串雜湊，避免重複送。刪掉只會重送一次。");
+            root.addProperty("greeted", greeted);
             root.add("hashes", hashes);
             Files.writeString(sentFile, root.toString(), StandardCharsets.UTF_8);
         } catch (Exception e) {

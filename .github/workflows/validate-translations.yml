@@ -76,6 +76,10 @@ jobs:
 
       # 收集站那一道個資濾網。三道濾網各自獨立（模組端、收集站、進倉庫前），
       # 所以三邊都要有自己的測試——只要有一道擋得住就不會外流。
+      # 涵蓋率表跟進度表一樣是產生的，過期就會變成謊話。
+      - name: 涵蓋率表有沒有跟著更新
+        run: python tools/coverage.py --check
+
       - name: 收集站的濾網
         run: node tools/collector/worker.test.mjs
 

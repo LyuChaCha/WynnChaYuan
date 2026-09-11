@@ -410,7 +410,7 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().toggleCollectGuiText();
                     b.setMessage(guiCollectLabel());
                 });
-        cycle("分享給翻譯團隊", "把沒翻到的句子送回收集站（預設關）",
+        cycle("分享給翻譯團隊", "把沒翻到的句子送回收集站，讓大家都看得到那段翻譯",
                 this::shareLabel, b -> {
                     boolean on = WynnChaYuan.config().toggleShareCaptures();
                     b.setMessage(shareLabel());

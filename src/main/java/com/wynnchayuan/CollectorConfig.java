@@ -145,14 +145,15 @@ public final class CollectorConfig {
     /**
      * 收集到的缺口要不要分享回收集站。
      *
-     * <p><b>預設關閉。</b>這是唯一一個會把字串送到別人機器上的開關，
-     * 所以一定要玩家自己打開——不能靠「反正我們過濾得很乾淨」就默默開著。
+     * <p><b>預設開啟。</b>這個模組的翻譯進度一直被「要有人真的去跑那段任務」
+     * 卡著，而分享的內容是遊戲自己的英文文字——沒有帳號、沒有座標、
+     * 也沒有別人打的字（見 {@code CorpusUpload#shareable}）。
      *
-     * <p>打開之後送出去的只有「沒翻到的英文原文」與它出現在哪一類畫面，
-     * 不含帳號、UUID、座標、世界，也不含公會／隊伍／喊話那些別人打的字。
-     * 詳見 {@code CorpusUpload}。
+     * <p>預設開啟不等於默默開著：第一次啟動會在聊天室說一次到底送什麼、
+     * 以及在哪裡關掉（見 {@code CorpusUpload#greetOnce}），之後不再提。
+     * F6 →「分享給翻譯團隊」隨時可以關。
      */
-    private boolean shareCaptures = false;
+    private boolean shareCaptures = true;
 
     /**
      * 是否寫出診斷檔。

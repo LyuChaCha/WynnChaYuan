@@ -349,6 +349,9 @@ public final class WynnChaYuan implements ClientModInitializer {
             // 真正的拍照在這裡——tick 跑在兩幀之間，那時畫面裡才是
             // 上一幀完整合成後的結果。見 PanelShot#tick。
             com.wynnchayuan.render.PanelShot.tick();
+            // 第一次進遊戲說一次「語料會分享出去、要關在哪裡關」。
+            // 預設是開的，所以這一句不能省——見 CorpusUpload#greetOnce。
+            com.wynnchayuan.capture.CorpusUpload.greetOnce(client);
         });
     }
 
