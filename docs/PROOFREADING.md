@@ -89,7 +89,7 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 沒有 `_meta.review` 的檔。**這裡不代表已經校過**——
 只代表沒有人記錄過它是誰翻的。多半是團隊自己翻的、或早期沒有這個欄位。
 
-<details><summary>展開（164 個檔）</summary>
+<details><summary>展開（153 個檔）</summary>
 
 | 內容 | 句數 | 檔案 |
 |---|---:|---|
@@ -110,12 +110,12 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | ability-labels.json | 249 | [`ability-labels.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability-labels.json) |
 | shaman.json | 243 | [`shaman.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/shaman.json) |
 | A Journey Beyond | 243 | [`a-journey-beyond.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-journey-beyond.json) |
+| quest.json | 241 | [`quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest.json) |
 | mage.json | 236 | [`mage.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/mage.json) |
 | assassin.json | 234 | [`assassin.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/assassin.json) |
 | warrior.json | 233 | [`warrior.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/warrior.json) |
 | archer.json | 231 | [`archer.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/ability/archer.json) |
 | aspect-desc.json | 209 | [`aspect-desc.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/aspect-desc.json) |
-| quest.json | 203 | [`quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest.json) |
 | discovery.json | 156 | [`discovery.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/discovery.json) |
 | tome.json | 156 | [`tome.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/tome.json) |
 | quest-name.json | 154 | [`quest-name.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest-name.json) |
@@ -230,7 +230,6 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Cook Assistant | 20 | [`cook-assistant.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cook-assistant.json) |
 | Stable Story | 19 | [`stable-story.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/stable-story.json) |
 | Tower of Ascension (Quest) | 18 | [`tower-of-ascension-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/tower-of-ascension-quest.json) |
-| choice/A New Beginning | 17 | [`choice-a-new-beginning.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/choice-a-new-beginning.json) |
 | Dwelling Walls | 17 | [`dwelling-walls.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dwelling-walls.json) |
 | A Grave Mistake | 16 | [`a-grave-mistake.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/a-grave-mistake.json) |
 | Pirate's Trove | 16 | [`pirate-s-trove.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/pirate-s-trove.json) |
@@ -241,21 +240,11 @@ AI 翻得快，但快不等於對。語氣、雙關、角色口癖這些東西�
 | Pit of the Dead (Quest) | 12 | [`pit-of-the-dead-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/pit-of-the-dead-quest.json) |
 | Cluck Cluck | 10 | [`cluck-cluck.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cluck-cluck.json) |
 | Lost Tower | 10 | [`lost-tower.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lost-tower.json) |
-| choice | 8 | [`choice.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/choice.json) |
 | Skittering Spiders | 8 | [`skittering-spiders.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/skittering-spiders.json) |
 | charm.json | 5 | [`charm.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/charm.json) |
 | dialogue-choice.json | 3 | [`dialogue-choice.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/dialogue-choice.json) |
 | major-id-terms.json | 3 | [`major-id-terms.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/major-id-terms.json) |
 | chat-terms.json | 2 | [`chat-terms.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/chat-terms.json) |
-| choice/Karoshi Union | 2 | [`choice-karoshi-union.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/choice-karoshi-union.json) |
-| Dark Deacons (42s left) | 2 | [`dark-deacons-42s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-42s-left.json) |
-| Dark Deacons (46s left) | 2 | [`dark-deacons-46s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-46s-left.json) |
-| Karoshi Union | 2 | [`karoshi-union.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/karoshi-union.json) |
-| choices | 1 | [`choices.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/choices.json) |
-| Dark Deacons (39s left) | 1 | [`dark-deacons-39s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-39s-left.json) |
-| Dark Deacons (43s left) | 1 | [`dark-deacons-43s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-43s-left.json) |
-| Dark Deacons (44s left) | 1 | [`dark-deacons-44s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-44s-left.json) |
-| Dark Deacons (45s left) | 1 | [`dark-deacons-45s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-45s-left.json) |
 | Rogue Wyrmling | 1 | [`rogue-wyrmling.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/rogue-wyrmling.json) |
 
 </details>

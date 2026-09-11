@@ -1,6 +1,6 @@
 # 任務對話認領清單
 
-**22,128 / 22,412 句已翻（98.7%），共 170 個任務，還沒有人動的有 11 個。**
+**22,128 / 22,374 句已翻（98.9%），共 159 個任務，還沒有人動的有 0 個。**
 
 **一個任務一個檔案**，放在 [`translations/quest/`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/)。接了哪個任務就開哪個檔，不會跟別人在同一個檔案裡打架。
 
@@ -26,24 +26,6 @@
 
 **動手前先講一聲**（[開一則 issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 或直接找 LyuChaCha），說你要接哪個任務。
 兩個人同時翻同一個任務，合併時會互相覆蓋。
-
-## 適合第一次接的（20 句以內、還沒有人動）
-
-| 任務 | 句數 |
-|---|---|
-| Dark Deacons (39s left) | 1 |
-| Dark Deacons (43s left) | 1 |
-| Dark Deacons (44s left) | 1 |
-| Dark Deacons (45s left) | 1 |
-| choices | 1 |
-| Dark Deacons (42s left) | 2 |
-| Dark Deacons (46s left) | 2 |
-| Karoshi Union | 2 |
-| choice/Karoshi Union | 2 |
-| choice | 8 |
-| choice/A New Beginning | 17 |
-
----
 
 ## 全部任務
 
@@ -83,12 +65,6 @@
 | Cowfusion | [`cowfusion.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/cowfusion.json) | 223 | 206 | 5 | ✅ |
 | Creeper Infiltration | [`creeper-infiltration.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/creeper-infiltration.json) | 44 | 38 | 1 | ✅ |
 | Crop Failure | [`crop-failure.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/crop-failure.json) | 44 | 39 | 2 | ✅ |
-| Dark Deacons (39s left) | [`dark-deacons-39s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-39s-left.json) | 1 | 1 | 0 | — |
-| Dark Deacons (42s left) | [`dark-deacons-42s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-42s-left.json) | 2 | 2 | 0 | — |
-| Dark Deacons (43s left) | [`dark-deacons-43s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-43s-left.json) | 1 | 1 | 0 | — |
-| Dark Deacons (44s left) | [`dark-deacons-44s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-44s-left.json) | 1 | 1 | 0 | — |
-| Dark Deacons (45s left) | [`dark-deacons-45s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-45s-left.json) | 1 | 1 | 0 | — |
-| Dark Deacons (46s left) | [`dark-deacons-46s-left.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dark-deacons-46s-left.json) | 2 | 2 | 0 | — |
 | Dearly Departed | [`dearly-departed.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/dearly-departed.json) | 58 | 52 | 2 | ✅ |
 | Death Whistle (Quest) | [`death-whistle-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/death-whistle-quest.json) | 31 | 25 | 3 | ✅ |
 | Deja Vu | [`deja-vu.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/deja-vu.json) | 87 | 79 | 2 | ✅ |
@@ -123,7 +99,6 @@
 | Ice Nations | [`ice-nations.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/ice-nations.json) | 26 | 22 | 2 | ✅ |
 | Infested Plants | [`infested-plants.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/infested-plants.json) | 68 | 63 | 4 | 97% |
 | Jungle Fever | [`jungle-fever.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/jungle-fever.json) | 32 | 26 | 3 | ✅ |
-| Karoshi Union | [`karoshi-union.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/karoshi-union.json) | 2 | 2 | 0 | — |
 | King's Recruit | [`king-s-recruit.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/king-s-recruit.json) | 128 | 106 | 8 | ✅ |
 | Kingdom of Sand | [`kingdom-of-sand.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/kingdom-of-sand.json) | 60 | 51 | 8 | ✅ |
 | Lava Springs | [`lava-springs.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/lava-springs.json) | 41 | 33 | 3 | ✅ |
@@ -217,10 +192,6 @@
 | WynnExcavation Site C | [`wynnexcavation-site-c.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-c.json) | 42 | 33 | 5 | ✅ |
 | WynnExcavation Site D | [`wynnexcavation-site-d.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/wynnexcavation-site-d.json) | 97 | 68 | 15 | ✅ |
 | Zhight Island (Quest) | [`zhight-island-quest.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/zhight-island-quest.json) | 50 | 45 | 4 | ✅ |
-| choice | [`choice.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/choice.json) | 8 | 8 | 0 | — |
-| choice/A New Beginning | [`choice-a-new-beginning.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/choice-a-new-beginning.json) | 17 | 17 | 0 | — |
-| choice/Karoshi Union | [`choice-karoshi-union.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/choice-karoshi-union.json) | 2 | 2 | 0 | — |
-| choices | [`choices.json`](../src/main/resources/assets/wynnchayuan/translations/zh_tw/quest/choices.json) | 1 | 1 | 0 | — |
 
 ---
 
