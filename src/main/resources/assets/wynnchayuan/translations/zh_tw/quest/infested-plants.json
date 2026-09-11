@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Infested Plants",
-  "count": 66,
+  "count": 68,
   "translated": 66,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Infested Plants#000": {
+   "src": "[+{~} Saccharum Plant]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#002": {
+   "src": "[-{~} Saccharum Plant]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Infested Plants",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Infested Plants#003": {
    "src": "Meet up with Tasim at the entrance to {p} at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~1}, {~2}, -{~3}] 的 {p} 入口與 Tasim 會合。",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Infested Plants#001": {
+  "Infested Plants#004": {
    "src": "Oh, {u}! There you are. It's good to see you. Are you ready to continue on towards {p}?",
    "dst": "哦，{u}！你在這。見到你真好。準備好繼續往 {p} 走了嗎？",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#002": {
+  "Infested Plants#005": {
    "src": "It seems we'll need to pass through the {p} first. I've heard the forest is crawling with spiders... But between you and me, we should be-",
    "dst": "看來我們得先穿過 {p}。我聽說那座森林裡到處都是蜘蛛……不過你我之間說說，我們應該——",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#003": {
+  "Infested Plants#006": {
    "src": "H-hey! You two! You're soldiers, right? I can tell from your weird fashion sense. You folk are supposed to help people! So. Help!",
    "dst": "喂——喂！你們兩個！你們是士兵吧？從你們那身怪品味我看得出來。你們這種人不是應該幫助別人嗎？所以——幫幫忙！",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Infested Plants#004": {
+  "Infested Plants#007": {
    "src": "Huh? Oh- yes, of course! What's your name? What do you need help with?",
    "dst": "啊？哦——當然！你叫什麼名字？需要什麼幫忙？",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#005": {
+  "Infested Plants#008": {
    "src": "I'm Ope! I was recently... uh... bit by a spider! And now I need your help to get a rare medicinal herb to heal me!",
    "dst": "我叫 Ope！我最近……呃……被蜘蛛咬了！現在我需要你們幫我拿一種稀有的藥草來治我！",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#006": {
+  "Infested Plants#009": {
    "src": "It only grows in an infested cave filled with creepy crawlies. And I'm clearly in no condition to go get it myself!",
    "dst": "那東西只長在一個滿是爬蟲的洞窟裡。而我這副身體顯然沒辦法自己去拿！",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#007": {
+  "Infested Plants#010": {
    "src": "Well, alright! We're here to help, after all, so... We'll get you that herb!",
    "dst": "好吧，沒問題！我們本來就是來幫忙的，所以……那株藥草我們替你拿！",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#008": {
+  "Infested Plants#011": {
    "src": "Perfect. I'll bring you to the cave, and you can do the rest from there. Follow me, soldiers!",
    "dst": "太好了。我帶你們到洞窟，剩下的就交給你們。跟我來，士兵們！",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#009": {
+  "Infested Plants#012": {
    "src": "Follow Ope to the cave at [-{~}, {~}, -{~}].",
    "dst": "跟著 Ope 前往 [-{~1}, {~2}, -{~3}] 的洞窟。",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Infested Plants#010": {
+  "Infested Plants#013": {
    "src": "Well, here we are! The cave's right over there - just climb up the rocks and jump into it.",
    "dst": "好啦，到了！洞窟就在那邊——爬上那些岩石跳進去就行。",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#011": {
+  "Infested Plants#014": {
    "src": "Hm... There's two of you. Good! One of your can climb up into that cave, and the other can protect me from the crawly spiders down here!",
    "dst": "嗯……你們有兩個人。太好了！一個爬上去進洞窟，另一個留在下面保護我不被那些爬來爬去的蜘蛛咬！",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#012": {
+  "Infested Plants#015": {
    "src": "Alright! {u}, you can go into the cave, and I can defend Ope here while you do that.",
    "dst": "好！{u}，你進洞窟，我在這裡護著 Ope。",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#013": {
+  "Infested Plants#016": {
    "src": "Good, good. Well, good luck up there! Try not to get bitten too much by the spiders!",
    "dst": "很好、很好。那麼，上面小心啊！盡量別被蜘蛛咬太多口！",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#014": {
+  "Infested Plants#017": {
    "src": "Locate the medicine in the spider cave behind Ope at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] Ope 身後的蜘蛛洞窟裡找出藥草。",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Infested Plants#015": {
+  "Infested Plants#018": {
    "src": "Exit the cave at [-{~}, {~}, -{~}] with the medicinal herb.",
    "dst": "帶著藥草從 [-{~1}, {~2}, -{~3}] 離開洞窟。",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Infested Plants#016": {
+  "Infested Plants#019": {
    "src": "There you are! It feels like we've been waiting for hours.",
    "dst": "你可算回來了！感覺我們等了好幾個鐘頭。",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#017": {
+  "Infested Plants#020": {
    "src": "It... really hasn't been that long. Maybe ten minutes at most.",
    "dst": "其實……根本沒那麼久。頂多十分鐘吧。",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#018": {
+  "Infested Plants#021": {
    "src": "Well-... Anyway! Do you have the herb? It's very- uh, important! To cure me. Yep.",
    "dst": "呃……總之！藥草拿到了嗎？那東西非常——呃，重要！可以治好我。對。",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#019": {
+  "Infested Plants#022": {
    "src": "There it is! Eheh. Thank you kindly for your work, soldiers! Now, about your payment...Let's see, what do I have...",
    "dst": "就是它！嘿嘿。多謝兩位辛苦了，士兵！那麼，關於你們的報酬……我看看，我身上有什麼……",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#020": {
+  "Infested Plants#023": {
    "src": "Oh. I seem to be out of emeralds. Well- I can, uh, offer some advice! There's lots to find in this forest. Plenty of caves with valuables to explore! Might be worth your time.",
    "dst": "哦。我的綠寶石好像用完了。不過——我可以，呃，給你們一點建議！這座森林裡有很多東西可以找。有不少藏著寶物的洞窟值得探！說不定挺划算的。",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#021": {
+  "Infested Plants#024": {
    "src": "Wait, are you seriously not going to-",
    "dst": "等等，你該不會真的不打算——",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#022": {
+  "Infested Plants#025": {
    "src": "It has been a time, soldiers, but I truly must be going! We're near {p}, you should stop on by! Just keep going east down the main road! Go and speak to the mayor! He can cover my expenses!",
    "dst": "時間不早了，士兵們，我真的得走了！我們離 {p} 很近，你們該過去看看！沿著大路一直往東走就到了！去找鎮長談！他可以幫我付這筆帳！",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#023": {
+  "Infested Plants#026": {
    "src": "Well. Goodbye!",
    "dst": "那麼。再見啦！",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Ope",
    "source": "wiki"
   },
-  "Infested Plants#024": {
+  "Infested Plants#027": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#025": {
+  "Infested Plants#028": {
    "src": "That's... frustrating. He seemed shady from the start, I should have-... Well. What's done is done. Let's go speak to that mayor.",
    "dst": "這實在……讓人火大。他從一開始就一副不老實的樣子，我早該——……算了。木已成舟。我們去找那位鎮長吧。",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#026": {
+  "Infested Plants#029": {
    "src": "Speak to Mayor Alvin in {p} at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~1}, {~2}, -{~3}] 的 {p} 跟 Alvin 鎮長談話。",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Infested Plants#027": {
+  "Infested Plants#030": {
    "src": "Ah, travelers... welcome to our humble forest town. Have you come to stay, or are you simply passing through?",
    "dst": "啊，旅人……歡迎來到我們這座樸實的林間小鎮。兩位是要留下來，還是只是路過？",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Infested Plants#028": {
+  "Infested Plants#031": {
    "src": "Probably the latter. Though, we ran into a man named Ope, who directed us to speak with you.",
    "dst": "大概是後者。不過，我們遇到一個叫 Ope 的人，他要我們來找您談。",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#029": {
+  "Infested Plants#032": {
    "src": "Oh, Ope... I take it your meeting with him went poorly? I must apologize for him, he is... a tough man to deal with.",
    "dst": "哦，Ope 啊……看來兩位跟他打交道的過程不太愉快？我得替他向兩位致歉，他是個……不太好相處的人。",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Infested Plants#030": {
+  "Infested Plants#033": {
    "src": "Here, I may offer you a small sum of emeralds as an apology. I hope he has not soured your opinion of our small town, here...",
    "dst": "來，我給兩位一小筆綠寶石當作賠罪。希望他沒有壞了兩位對我們這座小鎮的印象……",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Infested Plants#031": {
+  "Infested Plants#034": {
    "src": "Oh... Thank you. That's very kind of you. We'll probably stay for a while, before we continue towards {p}.",
    "dst": "哦……謝謝您。您真是太客氣了。我們大概會待上一陣子，再繼續往 {p} 去。",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Infested Plants#032": {
+  "Infested Plants#035": {
    "src": "Then feel free to make yourselves at home! We welcome all travelers here, no matter how long their stay is.",
    "dst": "那就請兩位把這裡當自己家！不論停留多久，我們都歡迎每一位旅人。",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Mayor Alvin",
    "source": "wiki"
   },
-  "Infested Plants#033": {
+  "Infested Plants#036": {
    "src": "Oh, {u}! There you are. It's good to see you. I'd say we should keep heading towards {p}, but...",
    "dst": "哦，{u}！你在這。見到你真好。照理說我們該繼續往 {p} 走，可是……",
    "role": "desc",
@@ -344,7 +364,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#034": {
+  "Infested Plants#037": {
    "src": "It looks like we'll need to pass through the {p} first. I've heard the forest is crawling with spiders... and the undead are a danger, as always... but between you and me, we should be-",
    "dst": "看來得先穿過 {p}。聽說那座森林裡到處都是蜘蛛……不死族也一樣危險，老樣子……不過我們兩個應該還是——",
    "role": "desc",
@@ -352,7 +372,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#035": {
+  "Infested Plants#038": {
    "src": "H-hey! You two! You're soldiers, right?",
    "dst": "喂、喂！你們兩個！你們是軍人吧？",
    "role": "desc",
@@ -360,7 +380,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#036": {
+  "Infested Plants#039": {
    "src": "Uh- yes, we are, but-",
    "dst": "呃——是沒錯，可是——",
    "role": "desc",
@@ -368,7 +388,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#037": {
+  "Infested Plants#040": {
    "src": "Yep, I could tell from your weird fashion sense! You folk are supposed to help people, right? So. Help!",
    "dst": "對嘛，看你們那身怪品味就知道！你們這種人不是該幫人嗎？那就。幫忙啊！",
    "role": "desc",
@@ -376,7 +396,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#038": {
+  "Infested Plants#041": {
    "src": "Well, sure- but who are you? Why are you out on your own, isn't it dangerous? Aren't the undead...",
    "dst": "呃，是啦——不過你是誰？怎麼一個人跑到外面來，這樣不危險嗎？不死族不是……",
    "role": "desc",
@@ -384,7 +404,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#039": {
+  "Infested Plants#042": {
    "src": "I'm Ope! And the undead... eh, there's not as many of them around here. The spiders aren't picky 'bout who they go for.",
    "dst": "我叫 Ope！至於不死族……欸，這一帶沒那麼多。倒是蜘蛛不挑對象，逮到誰算誰。",
    "role": "desc",
@@ -392,7 +412,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#040": {
+  "Infested Plants#043": {
    "src": "Right... okay. That makes sense. What did you need help with?",
    "dst": "這樣……好吧，說得也是。你需要我們幫什麼忙？",
    "role": "desc",
@@ -400,7 +420,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#041": {
+  "Infested Plants#044": {
    "src": "I... uh... so, there's this rare medicinal herb that grows in these woods, right? And it's important. But the only place I know to find it is an infested cave, filled with creepy crawly spiders.",
    "dst": "我……呃……是這樣，這片林子裡長著一種稀有的藥草，對吧？那東西很重要。可是我只知道一個地方找得到，就是那個爬滿噁心蜘蛛的巢穴。",
    "role": "desc",
@@ -408,7 +428,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#042": {
+  "Infested Plants#045": {
    "src": "And, y'know, I- I'm no soldier! Can't just go in there and get it myself! So, I was hoping you could help me out.",
    "dst": "而且你也知道，我、我又不是軍人！總不能自己衝進去拿吧！所以我才想說，你們能不能幫我這個忙。",
    "role": "desc",
@@ -416,7 +436,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#043": {
+  "Infested Plants#046": {
    "src": "Well... we came to Wynn to help out, after all. So... we can get you that herb!",
    "dst": "嗯……我們來 Wynn 本來就是為了幫忙。所以……那株藥草我們幫你拿！",
    "role": "desc",
@@ -424,7 +444,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#044": {
+  "Infested Plants#047": {
    "src": "Great. Great! I'll bring you to the cave, and you can do the rest from there. Follow me!",
    "dst": "太好了。太好了！我帶你們到洞口，剩下的就交給你們。跟我來！",
    "role": "desc",
@@ -432,7 +452,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#045": {
+  "Infested Plants#048": {
    "src": "Well, here we are! That's the cave right over there- just climb up the rocks and jump into it. It's safe! Uh, probably.",
    "dst": "好，到了！洞口就在那邊——爬上那些岩石再跳下去就行。很安全的！呃，大概吧。",
    "role": "desc",
@@ -440,7 +460,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#046": {
+  "Infested Plants#049": {
    "src": "...eek. There's a lot of spiders even up here... hey, since there's two of you- one of you can go get the herb, and the other can, uh... protect me from the crawly spiders?",
    "dst": "……唔哇。連這上面都一堆蜘蛛……欸，反正你們有兩個人——一個進去拿藥草，另一個就，呃……幫我擋一下那些爬來爬去的蜘蛛？",
    "role": "desc",
@@ -448,7 +468,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#047": {
+  "Infested Plants#050": {
    "src": "That works for me. {u}, you go into the cave, and I'll defend Ope up here while you do that.",
    "dst": "我沒問題。{u}，你進洞裡去，我在上面顧著 Ope。",
    "role": "desc",
@@ -456,7 +476,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#048": {
+  "Infested Plants#051": {
    "src": "Yep... good! Good, good! Good, uh, luck up there! Try not to get bitten too much by the spiders!",
    "dst": "對……很好！好、好！那個，呃，祝你好運！盡量別被蜘蛛咬太多口！",
    "role": "desc",
@@ -464,7 +484,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#049": {
+  "Infested Plants#052": {
    "src": "...ah- there you are!! What took you so long, it feels like we've been waiting for hours!",
    "dst": "……啊——你出來了！！怎麼那麼久，感覺我們等了好幾個小時！",
    "role": "desc",
@@ -472,7 +492,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#050": {
+  "Infested Plants#053": {
    "src": "It-... mm. A-anyway! Do you have the herb? It's very important, yep.",
    "dst": "那個——……嗯。總、總之！藥草拿到了嗎？那東西很重要的，對。",
    "role": "desc",
@@ -480,7 +500,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#051": {
+  "Infested Plants#054": {
    "src": "Come to think of it... I don't think you ever mentioned what you needed it for.",
    "dst": "說起來……你好像一直沒說你要那東西做什麼。",
    "role": "desc",
@@ -488,7 +508,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#052": {
+  "Infested Plants#055": {
    "src": "Oh, I- eheh, it... I... uh, it's n-none of your business, actually.",
    "dst": "哦，我——欸嘿，那……我……呃，其實這、這不關你的事。",
    "role": "desc",
@@ -496,7 +516,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#053": {
+  "Infested Plants#056": {
    "src": "I- I thank you kindly for your work, soldiers! Now, about your payment... let's see, what do I have...",
    "dst": "我、我很感謝兩位軍人幫忙！那麼，報酬的部分……我看看，身上還有什麼……",
    "role": "desc",
@@ -504,7 +524,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#054": {
+  "Infested Plants#057": {
    "src": "Oh. I seem to be out of emeralds. Well- then, I- I can offer some advice! There's lots to find in this forest. Plenty of other caves with valuables to explore! Might be worth your time!",
    "dst": "哦。我的綠寶石好像用完了。那、那我、我可以給你們一點建議！這片森林裡好東西多得是。還有一堆藏著寶物的洞穴可以探！說不定值得你們跑一趟！",
    "role": "desc",
@@ -512,7 +532,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#055": {
+  "Infested Plants#058": {
    "src": "Wait, what? Hey, are you seriously not going to-",
    "dst": "等等，什麼？喂，你該不會真的不打算——",
    "role": "desc",
@@ -520,7 +540,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#056": {
+  "Infested Plants#059": {
    "src": "It has been a time soldiers, but I- I truly must be going! Important things to get to! We're near {p}, you should stop on by! Just keep going east down the main road!",
    "dst": "兩位軍人，跟你們相處得很愉快，但我、我真的得走了！還有要緊事要辦！這裡離 {p} 不遠，你們可以順道去看看！沿著大路一直往東就到了！",
    "role": "desc",
@@ -528,7 +548,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#057": {
+  "Infested Plants#060": {
    "src": "You can, uh, go speak to the mayor! He can cover my expenses!",
    "dst": "你們可以，呃，去找鎮長談！我的帳讓他來付！",
    "role": "desc",
@@ -536,7 +556,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#058": {
+  "Infested Plants#061": {
    "src": "...well. Goodbye!",
    "dst": "……好啦。再見！",
    "role": "desc",
@@ -544,7 +564,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#059": {
+  "Infested Plants#062": {
    "src": "That's... frustrating. I really did just want to know... well. What's done is done. Let's just go talk to that mayor he mentioned.",
    "dst": "真是……讓人不痛快。我只是想知道而已……算了，事情都這樣了。我們就去找他說的那位鎮長吧。",
    "role": "desc",
@@ -552,7 +572,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#060": {
+  "Infested Plants#063": {
    "src": "I'm going to go on ahead. I'll meet you in {p}, it's just down the main road to the east.",
    "dst": "我先走一步。我們在 {p} 碰面，沿著大路往東走就到了。",
    "role": "desc",
@@ -560,7 +580,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#061": {
+  "Infested Plants#064": {
    "src": "Ah, recruits... welcome to our humble forest town. Have you come to stay, or are you simply passing through?",
    "dst": "啊，兩位新兵……歡迎來到我們這座小小的森林城鎮。是要住下來，還是只是路過呢？",
    "role": "desc",
@@ -568,7 +588,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#062": {
+  "Infested Plants#065": {
    "src": "Just passing through, our destination is {p}. Though... we ran into a man named Ope, who directed us to speak with you.",
    "dst": "只是路過，我們要去 {p}。不過……我們遇到一個叫 Ope 的人，他要我們來找您談談。",
    "role": "desc",
@@ -576,7 +596,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#063": {
+  "Infested Plants#066": {
    "src": "Oh, Ope... I take it your meeting with him went poorly? I must apologize for him, he is... a tough man to deal with sometimes.",
    "dst": "哦，Ope 啊……我猜你們跟他談得不太愉快吧？我替他向兩位道歉，他這個人……有時候確實不好相處。",
    "role": "desc",
@@ -584,7 +604,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#064": {
+  "Infested Plants#067": {
    "src": "Oh... thank you. That's very kind of you. We'll probably stay a while, before we continue towards {p}.",
    "dst": "哦……謝謝您。您太客氣了。我們大概會待上一陣子，再繼續往 {p} 走。",
    "role": "desc",
@@ -592,7 +612,7 @@
    "quest": "Infested Plants",
    "source": "capture"
   },
-  "Infested Plants#065": {
+  "Infested Plants#068": {
    "src": "Then feel free to make yourselves at home! We welcome all travelers here, no matter how long their stay.",
    "dst": "那就請兩位別客氣，把這裡當自己家！不管待多久，我們都歡迎所有旅人。",
    "role": "desc",
