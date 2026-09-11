@@ -1,134 +1,161 @@
 {
-  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
-  "latest": "0.1.3",
-  "download": {
-    "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
-    "modrinth": "https://modrinth.com/mod/wynnchayuan",
-    "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
+ "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
+ "latest": "0.1.3_1",
+ "download": {
+  "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
+  "modrinth": "https://modrinth.com/mod/wynnchayuan",
+  "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
+ },
+ "notes": {
+  "0.1.3_1": {
+   "headline": "World event names in the tracker, and a tighter privacy filter",
+   "items": [
+    "World event names in the tracker are translated — all 70 events, in every countdown format",
+    "Added the chat lines and shop-booth screens collected this week",
+    "The privacy filter now catches four kinds of message that were slipping player names through",
+    "Simplified Chinese: the Archer ability tree"
+   ],
+   "zh_tw": {
+    "headline": "世界事件在追蹤框裡有中文名了，個資濾網補了四類",
+    "items": [
+     "追蹤框裡的世界事件名稱翻好了——七十個活動、三種倒數格式全部補齊",
+     "補上這週收到的聊天訊息與市集攤位視窗",
+     "個資濾網補上四類先前會漏掉玩家名字的訊息",
+     "簡體中文：弓手技能樹"
+    ]
+   },
+   "zh_cn": {
+    "headline": "世界事件在追踪框里有中文名了，隐私过滤补了四类",
+    "items": [
+     "追踪框里的世界事件名称翻好了——七十个活动、三种倒计时格式全部补齐",
+     "补上这周收到的聊天消息与集市摊位界面",
+     "隐私过滤补上四类此前会漏掉玩家名字的消息",
+     "简体中文：弓手技能树"
+    ]
+   }
   },
-  "notes": {
-    "0.1.0": {
-      "headline": "第一個對外的 Beta 版本",
-      "items": [
-        "版本號重新從 0.1.0 起算，之前的 1.x 是開發期的內部編號",
-        "新增「分享給翻譯團隊」：你玩到而模組還沒翻到的句子會送回來，整理進語料之後所有人都看得到（預設開啟，F6 可關）",
-        "分享的只有遊戲自己的英文字；不含帳號、座標，也不含公會／隊伍／喊話",
-        "修正任務完成橫幅的左中括號變成白色"
-      ]
-    },
-    "0.1.1": {
-      "headline": "Simplified Chinese, and the settings screen now speaks your language",
-      "items": [
-        "The F6 settings, credits and changelog screens are translated — English, 繁體中文 and 简体中文, following your Minecraft language",
-        "Simplified Chinese: 974 interface strings translated (tooltips, menus, ability tree, aspects, guild, trade market)",
-        "F6 → Data → Translation language switches the translations without restarting the game",
-        "Fixed: a language with partial translations fell back to English instead of Traditional Chinese",
-        "Fixed: pressing Reload dropped the fallback layer"
-      ],
-      "zh_tw": {
-        "headline": "簡體中文，以及設定畫面會說你的語言了",
-        "items": [
-          "F6 設定、貢獻者、更新說明三個畫面都翻了——英文、繁體中文、簡體中文，跟著你的 Minecraft 語言走",
-          "簡體中文：介面字串翻好 974 條（物品說明、選單、技能樹、意象、公會、交易市場）",
-          "F6 →「資料」→「譯文語言」可以直接換譯文，不用重開遊戲",
-          "修正：某個語言只翻了一部分時，沒翻到的地方會掉成英文而不是繁體中文",
-          "修正：按「重新載入」之後墊底那一層會不見"
-        ]
-      },
-      "zh_cn": {
-        "headline": "简体中文，以及设置界面会说你的语言了",
-        "items": [
-          "F6 设置、贡献者、更新说明三个界面都翻了——英文、繁体中文、简体中文，跟着你的 Minecraft 语言走",
-          "简体中文：界面字符串翻好 974 条(物品说明、菜单、技能树、意象、公会、交易市场)",
-          "F6 →「数据」→「译文语言」可以直接换译文，不用重开游戏",
-          "修正：某个语言只翻了一部分时，没翻到的地方会掉成英文而不是繁体中文",
-          "修正：按「重新加载」之后垫底那一层会不见"
-        ]
-      }
-    },
-    "0.1.2": {
-      "headline": "Pick what to fall back to, and a cleaner Simplified Chinese",
-      "items": [
-        "F6 → Data → Fallback language: choose what to show where a language has nothing yet — auto, the original English, or any other language",
-        "Simplified Chinese: another 704 interface strings (ability tree labels, NPC nameplates, item lore, powders)",
-        "Simplified Chinese wording cleaned of Traditional-Chinese habits; a check now guards against them",
-        "The mods list entry is bilingual"
-      ],
-      "zh_tw": {
-        "headline": "沒翻到的地方看什麼由你決定，簡中也清乾淨了",
-        "items": [
-          "F6 →「資料」→「輔助語言」：某一種語言還沒翻到的地方要顯示什麼——自動、英文原文，或任何一種其他語言",
-          "簡體中文再翻 704 條（技能樹標籤、NPC 名牌、物品說明、粉末）",
-          "簡中用詞清掉繁中直譯的痕跡，並加了檢查擋在 CI 上",
-          "模組列表裡的介紹改成雙語"
-        ]
-      },
-      "zh_cn": {
-        "headline": "没翻到的地方看什么由你决定，简中也清干净了",
-        "items": [
-          "F6 →「数据」→「辅助语言」：某种语言还没翻到的地方要显示什么——自动、英文原文，或任何一种其他语言",
-          "简体中文再翻 704 条(技能树标签、NPC 名牌、物品说明、粉末)",
-          "简中用词清掉繁中直译的痕迹，并加了检查挡在 CI 上",
-          "模组列表里的介绍改成双语"
-        ]
-      }
-    },
-    "0.1.2_1": {
-      "headline": "Simplified Chinese ability trees, clearer corpus collection",
-      "items": [
-        "Simplified Chinese: mage ability tree and the shared ability entries",
-        "captured.json now writes the quest, the speaker and the line number as their own fields",
-        "Lines we cannot place go under their own heading instead of being filed under a guess",
-        "Strings other mods read are no longer collected",
-        "The mods list entry is in English"
-      ],
-      "zh_tw": {
-        "headline": "簡中的技能樹，語料收集的分類",
-        "items": [
-          "簡體中文：法師技能樹與共用的技能條目",
-          "captured.json 多了 quest／speaker／line 三欄",
-          "認不出歸屬的句子單獨一堆，不再塞進某一類",
-          "別的模組會讀的字串不再收集",
-          "模組列表的介紹改成英文"
-        ]
-      },
-      "zh_cn": {
-        "headline": "简中的技能树，语料收集的分类",
-        "items": [
-          "简体中文：法师技能树与共用的技能条目",
-          "captured.json 多了 quest／speaker／line 三栏",
-          "认不出归属的句子单独一堆，不再塞进某一类",
-          "别的模组会读的字符串不再收集",
-          "模组列表的介绍改成英文"
-        ]
-      }
-    },
-    "0.1.3": {
-      "headline": "The tracker says what it is tracking",
-      "items": [
-        "The tracker heading now matches what is being tracked — World Event, Cave, Raid and so on, instead of always saying Quest",
-        "Long tracker text wraps instead of running off the screen",
-        "The changelog screen shows one box per version",
-        "The settings screen follows the translation language you pick in F6"
-      ],
-      "zh_tw": {
-        "headline": "追蹤框會說清楚它在追什麼",
-        "items": [
-          "追蹤框的抬頭照實際追蹤的東西顯示——世界事件、洞窟、討伐戰等等，不再一律寫「進行中的任務」",
-          "追蹤框的長句子會自動換行，不再畫出螢幕外",
-          "更新說明改成一版一個方框",
-          "設定畫面會跟著 F6 選的譯文語言走"
-        ]
-      },
-      "zh_cn": {
-        "headline": "追踪框会说清楚它在追什么",
-        "items": [
-          "追踪框的标题按实际追踪的东西显示——世界事件、洞窟、副本等等，不再一律写「进行中的任务」",
-          "追踪框的长句子会自动换行，不再画出屏幕外",
-          "更新说明改成一版一个方框",
-          "设置界面会跟着 F6 选的译文语言走"
-        ]
-      }
-    }
+  "0.1.0": {
+   "headline": "第一個對外的 Beta 版本",
+   "items": [
+    "版本號重新從 0.1.0 起算，之前的 1.x 是開發期的內部編號",
+    "新增「分享給翻譯團隊」：你玩到而模組還沒翻到的句子會送回來，整理進語料之後所有人都看得到（預設開啟，F6 可關）",
+    "分享的只有遊戲自己的英文字；不含帳號、座標，也不含公會／隊伍／喊話",
+    "修正任務完成橫幅的左中括號變成白色"
+   ]
+  },
+  "0.1.1": {
+   "headline": "Simplified Chinese, and the settings screen now speaks your language",
+   "items": [
+    "The F6 settings, credits and changelog screens are translated — English, 繁體中文 and 简体中文, following your Minecraft language",
+    "Simplified Chinese: 974 interface strings translated (tooltips, menus, ability tree, aspects, guild, trade market)",
+    "F6 → Data → Translation language switches the translations without restarting the game",
+    "Fixed: a language with partial translations fell back to English instead of Traditional Chinese",
+    "Fixed: pressing Reload dropped the fallback layer"
+   ],
+   "zh_tw": {
+    "headline": "簡體中文，以及設定畫面會說你的語言了",
+    "items": [
+     "F6 設定、貢獻者、更新說明三個畫面都翻了——英文、繁體中文、簡體中文，跟著你的 Minecraft 語言走",
+     "簡體中文：介面字串翻好 974 條（物品說明、選單、技能樹、意象、公會、交易市場）",
+     "F6 →「資料」→「譯文語言」可以直接換譯文，不用重開遊戲",
+     "修正：某個語言只翻了一部分時，沒翻到的地方會掉成英文而不是繁體中文",
+     "修正：按「重新載入」之後墊底那一層會不見"
+    ]
+   },
+   "zh_cn": {
+    "headline": "简体中文，以及设置界面会说你的语言了",
+    "items": [
+     "F6 设置、贡献者、更新说明三个界面都翻了——英文、繁体中文、简体中文，跟着你的 Minecraft 语言走",
+     "简体中文：界面字符串翻好 974 条(物品说明、菜单、技能树、意象、公会、交易市场)",
+     "F6 →「数据」→「译文语言」可以直接换译文，不用重开游戏",
+     "修正：某个语言只翻了一部分时，没翻到的地方会掉成英文而不是繁体中文",
+     "修正：按「重新加载」之后垫底那一层会不见"
+    ]
+   }
+  },
+  "0.1.2": {
+   "headline": "Pick what to fall back to, and a cleaner Simplified Chinese",
+   "items": [
+    "F6 → Data → Fallback language: choose what to show where a language has nothing yet — auto, the original English, or any other language",
+    "Simplified Chinese: another 704 interface strings (ability tree labels, NPC nameplates, item lore, powders)",
+    "Simplified Chinese wording cleaned of Traditional-Chinese habits; a check now guards against them",
+    "The mods list entry is bilingual"
+   ],
+   "zh_tw": {
+    "headline": "沒翻到的地方看什麼由你決定，簡中也清乾淨了",
+    "items": [
+     "F6 →「資料」→「輔助語言」：某一種語言還沒翻到的地方要顯示什麼——自動、英文原文，或任何一種其他語言",
+     "簡體中文再翻 704 條（技能樹標籤、NPC 名牌、物品說明、粉末）",
+     "簡中用詞清掉繁中直譯的痕跡，並加了檢查擋在 CI 上",
+     "模組列表裡的介紹改成雙語"
+    ]
+   },
+   "zh_cn": {
+    "headline": "没翻到的地方看什么由你决定，简中也清干净了",
+    "items": [
+     "F6 →「数据」→「辅助语言」：某种语言还没翻到的地方要显示什么——自动、英文原文，或任何一种其他语言",
+     "简体中文再翻 704 条(技能树标签、NPC 名牌、物品说明、粉末)",
+     "简中用词清掉繁中直译的痕迹，并加了检查挡在 CI 上",
+     "模组列表里的介绍改成双语"
+    ]
+   }
+  },
+  "0.1.2_1": {
+   "headline": "Simplified Chinese ability trees, clearer corpus collection",
+   "items": [
+    "Simplified Chinese: mage ability tree and the shared ability entries",
+    "captured.json now writes the quest, the speaker and the line number as their own fields",
+    "Lines we cannot place go under their own heading instead of being filed under a guess",
+    "Strings other mods read are no longer collected",
+    "The mods list entry is in English"
+   ],
+   "zh_tw": {
+    "headline": "簡中的技能樹，語料收集的分類",
+    "items": [
+     "簡體中文：法師技能樹與共用的技能條目",
+     "captured.json 多了 quest／speaker／line 三欄",
+     "認不出歸屬的句子單獨一堆，不再塞進某一類",
+     "別的模組會讀的字串不再收集",
+     "模組列表的介紹改成英文"
+    ]
+   },
+   "zh_cn": {
+    "headline": "简中的技能树，语料收集的分类",
+    "items": [
+     "简体中文：法师技能树与共用的技能条目",
+     "captured.json 多了 quest／speaker／line 三栏",
+     "认不出归属的句子单独一堆，不再塞进某一类",
+     "别的模组会读的字符串不再收集",
+     "模组列表的介绍改成英文"
+    ]
+   }
+  },
+  "0.1.3": {
+   "headline": "The tracker says what it is tracking",
+   "items": [
+    "The tracker heading now matches what is being tracked — World Event, Cave, Raid and so on, instead of always saying Quest",
+    "Long tracker text wraps instead of running off the screen",
+    "The changelog screen shows one box per version",
+    "The settings screen follows the translation language you pick in F6"
+   ],
+   "zh_tw": {
+    "headline": "追蹤框會說清楚它在追什麼",
+    "items": [
+     "追蹤框的抬頭照實際追蹤的東西顯示——世界事件、洞窟、討伐戰等等，不再一律寫「進行中的任務」",
+     "追蹤框的長句子會自動換行，不再畫出螢幕外",
+     "更新說明改成一版一個方框",
+     "設定畫面會跟著 F6 選的譯文語言走"
+    ]
+   },
+   "zh_cn": {
+    "headline": "追踪框会说清楚它在追什么",
+    "items": [
+     "追踪框的标题按实际追踪的东西显示——世界事件、洞窟、副本等等，不再一律写「进行中的任务」",
+     "追踪框的长句子会自动换行，不再画出屏幕外",
+     "更新说明改成一版一个方框",
+     "设置界面会跟着 F6 选的译文语言走"
+    ]
+   }
   }
+ }
 }
