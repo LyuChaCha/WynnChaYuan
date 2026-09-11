@@ -67,6 +67,15 @@ processResources {
         expand "version": project.version
     }
 
+    // 版本說明跟著 jar 走一份。
+    //
+    // 線上那一份（倉庫根目錄的 version.json）是「現在最新是哪一版」的真相，
+    // 但斷網的時候讀不到——而 F6 的「本版更新內容」講的是<b>手上這個 jar</b>，
+    // 那件事不需要連線也該看得到。一份檔案兩個用途，來源只有一個。
+    from(rootProject.file('version.json')) {
+        into 'assets/wynnchayuan'
+    }
+
     // 一條譯文都沒有的語言不打進 jar。
     //
     // 新語言剛開的時候是一份空骨架：結構完整、原文齊全、譯文全空。那是給
