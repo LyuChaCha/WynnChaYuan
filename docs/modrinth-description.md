@@ -145,8 +145,8 @@ already tells the project what players actually run into.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | ██████████ 96.9% | 33,477 / 34,545 |
-| `zh_cn` 简体中文 | █░░░░░░░░░ 8.8% | 2,499 / 28,277 |
+| `zh_tw` 繁體中文 | ██████████ 96.9% | 33,464 / 34,545 |
+| `zh_cn` 简体中文 | █░░░░░░░░░ 9.7% | 2,743 / 28,366 |
 | `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
 | `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
 | `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
@@ -182,9 +182,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,591 | 1,591 | 1,591 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 7,101 | 8,165 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 7,088 | 8,165 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 42,705 lines estimated**, **34,545 collected** (81%), **33,477 translated** (78% of the estimate, 96.9% of what we have).
+> All together: **at least 42,705 lines estimated**, **34,545 collected** (81%), **33,464 translated** (78% of the estimate, 96.9% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 
@@ -208,9 +208,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | 裝備的傳說敘述 | 986 | 990 | 990 | 官方 CDN 整批下載，收到的就是全部 |
 | 材料、素材、書卷、Aspect | 1,603 | 1,603 | 1,603 | 官方 CDN 整批下載，收到的就是全部 |
 | 技能樹 | 1,591 | 1,591 | 1,591 | 官方 CDN 整批下載，收到的就是全部 |
-| NPC 名牌、介面、系統訊息 | 7,101 | 8,165 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
+| NPC 名牌、介面、系統訊息 | 7,088 | 8,165 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
 
-> 全部加起來：**預估至少 42,705 句**，已收集 **34,545 句**（81%），已翻譯 **33,477 句**（佔預估的 78%、佔已收集的 96.9%）。
+> 全部加起來：**預估至少 42,705 句**，已收集 **34,545 句**（81%），已翻譯 **33,464 句**（佔預估的 78%、佔已收集的 96.9%）。
 
 「至少」是因為名牌與介面那一類沒有清單，它在總數裡只算了**已經收到的**——真正的數字只會更大。
 <!-- 涵蓋率:結束 -->
@@ -387,8 +387,8 @@ download.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | ██████████ 96.9% | 33,477 / 34,545 |
-| `zh_cn` 简体中文 | █░░░░░░░░░ 8.8% | 2,499 / 28,277 |
+| `zh_tw` 繁體中文 | ██████████ 96.9% | 33,464 / 34,545 |
+| `zh_cn` 简体中文 | █░░░░░░░░░ 9.7% | 2,743 / 28,366 |
 | `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
 | `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
 | `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,049 |
