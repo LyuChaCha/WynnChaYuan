@@ -53,7 +53,7 @@ public final class ShotScreen extends Screen {
     private Component note = Component.empty();
 
     public ShotScreen(NativeImage shot, String name, Screen parent) {
-        super(Component.literal("譯文截圖"));
+        super(T.c("shot.title"));
         this.shot = shot;
         this.name = name;
         this.parent = parent;
@@ -75,11 +75,11 @@ public final class ShotScreen extends Screen {
         int x = leftColumn() - w / 2;
         int y = this.height / 2 - 22;
 
-        addRenderableWidget(Button.builder(Component.literal("複製到剪貼簿"),
+        addRenderableWidget(Button.builder(T.c("shot.clipboard"),
                 b -> copy()).bounds(x, y, w, 20).build());
-        addRenderableWidget(Button.builder(Component.literal("儲存成檔案"),
+        addRenderableWidget(Button.builder(T.c("shot.save"),
                 b -> save()).bounds(x, y + 24, w, 20).build());
-        addRenderableWidget(Button.builder(Component.literal("關閉"),
+        addRenderableWidget(Button.builder(T.c("button.close"),
                 b -> onClose()).bounds(x, y + 48, w, 20).build());
     }
 
@@ -161,12 +161,12 @@ public final class ShotScreen extends Screen {
             BufferedImage image = toBuffered(shot);
             java.awt.Toolkit.getDefaultToolkit().getSystemClipboard()
                     .setContents(new ImageClip(image), null);
-            note = Component.literal("已複製，可以直接 Ctrl+V 貼上")
+            note = T.c("shot.copied")
                     .withStyle(ChatFormatting.GREEN);
         } catch (Throwable t) {
             // 有些環境沒有可用的剪貼簿（無頭、遠端桌面）。存檔那條路還在，
             // 所以這裡只要說清楚就好，不必當成錯誤。
-            note = Component.literal("這個系統上複製不了，請改用「儲存成檔案」")
+            note = T.c("shot.nocopy")
                     .withStyle(ChatFormatting.RED);
         }
     }
@@ -187,7 +187,7 @@ public final class ShotScreen extends Screen {
             note = com.wynnchayuan.render.PanelShot.saved(file);
             com.wynnchayuan.render.PanelShot.announce(note);
         } catch (Exception e) {
-            note = Component.literal("存檔失敗：" + e.getMessage())
+            note = T.c("shot.failed", e.getMessage())
                     .withStyle(ChatFormatting.RED);
         }
     }

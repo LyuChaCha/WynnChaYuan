@@ -276,7 +276,9 @@ public final class WynnChaYuan implements ClientModInitializer {
                 config.language(), gameLanguage());
         loadLayers();
         if (config.source() != CollectorConfig.Source.GITHUB) {
-            done.accept("已切換到 " + language + "，共 " + translations.size() + " 條");
+            done.accept(com.wynnchayuan.client.T.s("data.language.done",
+                    com.wynnchayuan.translate.Languages.nativeName(language),
+                    translations.size()));
             return;
         }
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
@@ -284,8 +286,9 @@ public final class WynnChaYuan implements ClientModInitializer {
             RemoteSync.fetchInto(dir, language);
             net.minecraft.client.Minecraft.getInstance().execute(() -> {
                 loadLayers();
-                done.accept("已切換到 " + language + "，共 "
-                        + translations.size() + " 條");
+                done.accept(com.wynnchayuan.client.T.s("data.language.done",
+                        com.wynnchayuan.translate.Languages.nativeName(language),
+                        translations.size()));
             });
         }, MOD_ID + "-switch");
         worker.setDaemon(true);
