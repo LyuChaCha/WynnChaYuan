@@ -79,13 +79,6 @@ public final class WynnChaYuan implements ClientModInitializer {
         return config;
     }
 
-    /** 目前這一版的版本號，回報與分享語料時附上。 */
-    public static String modVersion() {
-        return FabricLoader.getInstance().getModContainer(MOD_ID)
-                .map(m -> m.getMetadata().getVersion().getFriendlyString())
-                .orElse("?");
-    }
-
     public static TranslationStore translations() {
         return translations;
     }
@@ -115,6 +108,8 @@ public final class WynnChaYuan implements ClientModInitializer {
             com.wynnchayuan.capture.DialogueProbe.init(dir);
         }
         com.wynnchayuan.translate.ErrorDebug.into(dir);
+        // 版本說明：先讀 jar 內建那份，背景再換成線上的。見 Releases。
+        Releases.init();
 
         // 譯文放在 config/wynnchayuan/translations/ 下，格式與 corpus/workspace 相同，
         // 所以離線語料與遊戲內收集的內容可以直接混放。
@@ -215,7 +210,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 分享語料：預設關閉，開了才會送。第一次延遲兩分鐘，不跟登入時的
         // 譯文同步搶頻寬；之後十分鐘一次，沒有新的就什麼都不做。
         com.wynnchayuan.capture.CorpusUpload.init(
-                dir, store, modVersion(), language, () -> config.shareCaptures());
+                dir, store, version(), language, () -> config.shareCaptures());
         flusher.scheduleWithFixedDelay(
                 com.wynnchayuan.capture.CorpusUpload::push, 2, 10, TimeUnit.MINUTES);
 
@@ -352,6 +347,8 @@ public final class WynnChaYuan implements ClientModInitializer {
             // 第一次進遊戲說一次「語料會分享出去、要關在哪裡關」。
             // 預設是開的，所以這一句不能省——見 CorpusUpload#greetOnce。
             com.wynnchayuan.capture.CorpusUpload.greetOnce(client);
+            // 有新版就在聊天室說一次，附下載連結。見 Releases#tellOnce。
+            Releases.tellOnce(client);
         });
     }
 

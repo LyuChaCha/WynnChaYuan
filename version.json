@@ -1,0 +1,20 @@
+{
+  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
+  "latest": "0.1.0",
+  "download": {
+    "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
+    "modrinth": "https://modrinth.com/mod/wynnchayuan",
+    "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
+  },
+  "notes": {
+    "0.1.0": {
+      "headline": "第一個對外的 Beta 版本",
+      "items": [
+        "版本號重新從 0.1.0 起算，之前的 1.x 是開發期的內部編號",
+        "新增「分享給翻譯團隊」：你玩到而模組還沒翻到的句子會送回來，整理進語料之後所有人都看得到（預設開啟，F6 可關）",
+        "分享的只有遊戲自己的英文字；不含帳號、座標，也不含公會／隊伍／喊話",
+        "修正任務完成橫幅的左中括號變成白色"
+      ]
+    }
+  }
+}
