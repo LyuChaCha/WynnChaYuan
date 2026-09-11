@@ -480,6 +480,13 @@ tasks.register('runDialogueOffsetChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueOffsetChecks' }
 
+tasks.register('probeStatLabels', JavaExec) {
+    group = 'verification'
+    description = '看那幾行技能屬性到底查成什麼（診斷用，不判對錯）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.StatLabelProbe'
+}
+
 tasks.register('runReferenceGateChecks', JavaExec) {
     group = 'verification'
     description = '收集的缺口以繁體為準，不是以顯示語言為準'
