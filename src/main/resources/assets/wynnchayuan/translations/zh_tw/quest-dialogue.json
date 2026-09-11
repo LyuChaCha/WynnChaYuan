@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 22127,
-  "translated": 22127,
+  "count": 22128,
+  "translated": 22128,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -133044,6 +133044,16 @@
    "stage": "Stage 10",
    "speaker": "Nasea",
    "source": "wiki"
+  },
+  "Rogue Wyrmling#000": {
+   "src": "Never speak of this again...stranger.",
+   "dst": "這件事，別再跟任何人提起……陌生人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Rogue Wyrmling",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   },
   "Royal Trials#000": {
    "src": "Speak to Skyraider Guard at [{~}, {~}, -{~}].",
