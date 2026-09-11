@@ -154,9 +154,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,591 | 1,591 | 1,591 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 7,090 | 14,166 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 7,236 | 14,166 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 48,952 lines estimated**, **40,792 collected** (83%), **33,712 translated** (69% of the estimate, 82.6% of what we have).
+> All together: **at least 48,952 lines estimated**, **40,792 collected** (83%), **33,858 translated** (69% of the estimate, 83.0% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->

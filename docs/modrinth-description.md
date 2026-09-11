@@ -182,9 +182,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,591 | 1,591 | 1,591 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 7,090 | 14,166 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 7,236 | 14,166 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 48,952 lines estimated**, **40,792 collected** (83%), **33,712 translated** (69% of the estimate, 82.6% of what we have).
+> All together: **at least 48,952 lines estimated**, **40,792 collected** (83%), **33,858 translated** (69% of the estimate, 83.0% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 
@@ -208,9 +208,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | 裝備的傳說敘述 | 986 | 990 | 990 | 官方 CDN 整批下載，收到的就是全部 |
 | 材料、素材、書卷、Aspect | 1,603 | 1,603 | 1,603 | 官方 CDN 整批下載，收到的就是全部 |
 | 技能樹 | 1,591 | 1,591 | 1,591 | 官方 CDN 整批下載，收到的就是全部 |
-| NPC 名牌、介面、系統訊息 | 7,090 | 14,166 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
+| NPC 名牌、介面、系統訊息 | 7,236 | 14,166 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
 
-> 全部加起來：**預估至少 48,952 句**，已收集 **40,792 句**（83%），已翻譯 **33,712 句**（佔預估的 69%、佔已收集的 82.6%）。
+> 全部加起來：**預估至少 48,952 句**，已收集 **40,792 句**（83%），已翻譯 **33,858 句**（佔預估的 69%、佔已收集的 83.0%）。
 
 「至少」是因為名牌與介面那一類沒有清單，它在總數裡只算了**已經收到的**——真正的數字只會更大。
 <!-- 涵蓋率:結束 -->
