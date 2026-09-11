@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 96.9%（33,477 / 34,545）
+## `zh_tw` 繁體中文 — 96.9%（33,464 / 34,545）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -29,7 +29,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `discovery.json` | ██████████ 100% | 156 / 156 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 137 / 137 | 探索點的名稱<br>Discovery names |
 | `lootrun.json` | ██████████ 100% | 1,006 / 1,007 | 跑 Lootrun 時<br>Seen during a lootrun |
-| `raid.json` | ██████████ 100% | 360 / 360 | 打 Raid 時<br>Seen during a raid |
+| `raid.json` | ██████████ 96% | 347 / 360 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 22 / 22 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
