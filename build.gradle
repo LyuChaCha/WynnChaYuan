@@ -88,15 +88,29 @@ processResources {
     def manifest = file(
         'src/main/resources/assets/wynnchayuan/translations/_languages.json')
     if (manifest.exists()) {
-        def shipped = new groovy.json.JsonSlurper()
-                .parse(manifest)['languages'] as Set
+        def parsed = new groovy.json.JsonSlurper().parse(manifest)
+        def shipped = parsed['languages'] as Set
+        def empty = (parsed['empty'] ?: [:]) as Map
         inputs.property 'shippedLanguages', shipped.toSorted().join(',')
+        inputs.property 'emptyFiles', empty.toString()
         def root = file('src/main/resources/assets/wynnchayuan/translations')
         root.listFiles()?.each { dir ->
             if (dir.directory && !shipped.contains(dir.name)) {
                 exclude "assets/wynnchayuan/translations/${dir.name}/**"
                 logger.lifecycle(
                     "[WynnChaYuan] ${dir.name} 還沒有譯文，不打進 jar")
+            }
+        }
+        // 一條都還沒翻的<b>檔案</b>同樣不打。整個語言一起判斷的話，
+        // 簡體中文只要翻好介面標籤，就會連同兩萬多條全空的任務對話一起
+        // 被打包——jar 從 6.5MB 變成 8.6MB，而多出來的全是英文原文。
+        empty.each { lang, files ->
+            files.each { name ->
+                exclude "assets/wynnchayuan/translations/${lang}/${name}"
+            }
+            if (files) {
+                logger.lifecycle(
+                    "[WynnChaYuan] ${lang} 有 ${files.size()} 個檔案還沒開始翻，不打進 jar")
             }
         }
     }
