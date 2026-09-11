@@ -60,6 +60,31 @@ public final class Languages {
      * <p>讀 {@code translations/_languages.json}——那是一份純清單，
      * 由 {@code tools/update-docs.py} 依實際資料夾產生，不必手動維護。
      */
+    /**
+     * 語言代碼對它自己的名字。
+     *
+     * <p>用<b>母語</b>寫：日文玩家在清單裡要找的是「日本語」，不是「日文」。
+     * 認不出來的就只顯示代碼——寧可少一欄，也不要在別人的語言名字上瞎猜。
+     */
+    private static final java.util.Map<String, String> NATIVE =
+            java.util.Map.ofEntries(
+                    java.util.Map.entry("zh_tw", "繁體中文"),
+                    java.util.Map.entry("zh_cn", "简体中文"),
+                    java.util.Map.entry("ja_jp", "日本語"),
+                    java.util.Map.entry("ko_kr", "한국어"),
+                    java.util.Map.entry("ru_ru", "Русский"),
+                    java.util.Map.entry("de_de", "Deutsch"),
+                    java.util.Map.entry("fr_fr", "Français"),
+                    java.util.Map.entry("es_es", "Español"),
+                    java.util.Map.entry("pt_br", "Português"),
+                    java.util.Map.entry("en_us", "English"));
+
+    /** 顯示給人看的語言名字。認不出來就回傳代碼本身。 */
+    public static String nativeName(String lang) {
+        String clean = normalise(lang);
+        return NATIVE.getOrDefault(clean, clean);
+    }
+
     public static List<String> bundled() {
         try (InputStream in = Languages.class.getResourceAsStream(
                 ASSETS + "_languages.json")) {
