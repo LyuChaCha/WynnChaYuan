@@ -4,27 +4,26 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 233,
-  "translated": 0,
+  "translated": 233,
   "note": "战士的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-warrior#0000": {
    "src": "Bash",
-   "dst": "",
+   "dst": "重击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/01/000/004",
-   "keep": "en",
    "ability": "Bash",
    "code": "WARRIOR-P1-R00-C04"
   },
   "ability-warrior#0001": {
    "src": "Violently bash the ground, dealing\nhigh damage in a large area.",
-   "dst": "",
+   "dst": "狠狠砸向地面，\n在大范围内造成高额伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -39,20 +38,19 @@
   },
   "ability-warrior#0002": {
    "src": "Cheaper Bash",
-   "dst": "",
+   "dst": "节约·重击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/01/002/002",
-   "keep": "en",
    "ability": "Cheaper Bash",
    "code": "WARRIOR-P1-R02-C02"
   },
   "ability-warrior#0003": {
    "src": "Reduce the Mana cost of Bash.",
-   "dst": "",
+   "dst": "降低 Bash 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -68,20 +66,19 @@
   },
   "ability-warrior#0004": {
    "src": "Spear Proficiency I",
-   "dst": "",
+   "dst": "长矛精通 I",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/01/002/004",
-   "keep": "en",
    "ability": "Spear Proficiency I",
    "code": "WARRIOR-P1-R02-C04"
   },
   "ability-warrior#0005": {
    "src": "Improve your Main Attack's damage\nand range when using a spear.",
-   "dst": "",
+   "dst": "使用长矛时，提高你普攻的\n伤害与攻击距离。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -97,7 +94,7 @@
   },
   "ability-warrior#0006": {
    "src": "{#} Main Attack Range: +{~} Block",
-   "dst": "",
+   "dst": "{#} 普攻距离: +{~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -110,20 +107,19 @@
   },
   "ability-warrior#0007": {
    "src": "Double Bash",
-   "dst": "",
+   "dst": "双重重击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/01/004/004",
-   "keep": "en",
    "ability": "Double Bash",
    "code": "WARRIOR-P1-R04-C04"
   },
   "ability-warrior#0008": {
    "src": "Bash will hit a second\ntime at a farther range.",
-   "dst": "",
+   "dst": "Bash 会在更远的距离\n再命中一次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -138,7 +134,7 @@
   },
   "ability-warrior#0009": {
    "src": "{#} Total Damage: -{~} (of your DPS, per bash)",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~} (你的每秒伤害，每次重击)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -152,20 +148,19 @@
   },
   "ability-warrior#0010": {
    "src": "Vehement",
-   "dst": "",
+   "dst": "激昂",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/02/001/002",
-   "keep": "en",
    "ability": "Vehement",
    "code": "WARRIOR-P2-R01-C02"
   },
   "ability-warrior#0011": {
    "src": "For every {~} or {~} Raw Main\nAttack Damage you have from items,\ngain +{~} Walk Speed. (Max {~})",
-   "dst": "",
+   "dst": "装备上每有 {~1} 或 {~2} 点普攻伤害\n固定值，就获得 +{~3} 移动速度。\n(上限 {~4})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -180,7 +175,7 @@
   },
   "ability-warrior#0012": {
    "src": "{#} Damage Bonus: +{~} (Raw)",
-   "dst": "",
+   "dst": "{#} 伤害加成: +{~} (固定值)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -193,20 +188,19 @@
   },
   "ability-warrior#0013": {
    "src": "Charge",
-   "dst": "",
+   "dst": "冲锋",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/02/001/004",
-   "keep": "en",
    "ability": "Charge",
    "code": "WARRIOR-P2-R01-C04"
   },
   "ability-warrior#0014": {
    "src": "Charge forward at a high speed.\n(Hold shift while charging to cancel)",
-   "dst": "",
+   "dst": "高速向前冲锋。\n(冲锋途中按住 Shift 可取消)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -221,20 +215,19 @@
   },
   "ability-warrior#0015": {
    "src": "Tougher Skin",
-   "dst": "",
+   "dst": "硬化皮肤",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/02/001/006",
-   "keep": "en",
    "ability": "Tougher Skin",
    "code": "WARRIOR-P2-R01-C06"
   },
   "ability-warrior#0016": {
    "src": "For every {~} or {~} Raw Health Regen you have\nfrom items, gain +{~} Health. (Max {~})",
-   "dst": "",
+   "dst": "装备上每有 {~1} 或 {~2} 点生命恢复固定值，\n就获得 +{~3} 生命。(上限 {~4})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -249,7 +242,7 @@
   },
   "ability-warrior#0017": {
    "src": "Harden your skin and gain\n+{~} Base Resistance.",
-   "dst": "",
+   "dst": "硬化你的皮肤，\n获得 +{~} 基础抗性。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -264,20 +257,19 @@
   },
   "ability-warrior#0018": {
    "src": "Uppercut",
-   "dst": "",
+   "dst": "上勾拳",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/02/003/002",
-   "keep": "en",
    "ability": "Uppercut",
    "code": "WARRIOR-P2-R03-C02"
   },
   "ability-warrior#0019": {
    "src": "Hurls enemies upwards and\ndeals massive damage.",
-   "dst": "",
+   "dst": "把敌人挑向空中，\n并造成巨量伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -292,7 +284,7 @@
   },
   "ability-warrior#0020": {
    "src": "{#} Area of Effect: {~}-{~} Blocks (Cone-Shaped)",
-   "dst": "",
+   "dst": "{#} 作用范围: {~1}-{~2} 格 (扇形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -306,20 +298,19 @@
   },
   "ability-warrior#0021": {
    "src": "Cheaper Charge",
-   "dst": "",
+   "dst": "节约·冲锋",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/02/003/004",
-   "keep": "en",
    "ability": "Cheaper Charge",
    "code": "WARRIOR-P2-R03-C04"
   },
   "ability-warrior#0022": {
    "src": "Reduce the Mana cost of Charge.",
-   "dst": "",
+   "dst": "降低 Charge 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -334,20 +325,19 @@
   },
   "ability-warrior#0023": {
    "src": "War Scream",
-   "dst": "",
+   "dst": "战吼",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/02/003/006",
-   "keep": "en",
    "ability": "War Scream",
    "code": "WARRIOR-P2-R03-C06"
   },
   "ability-warrior#0024": {
    "src": "Emits a roar that deals damage, pulls\nnearby enemies and gives you and\nnearby players resistance.",
-   "dst": "",
+   "dst": "发出怒吼造成伤害，把附近的敌人\n拉过来，并给你和附近的玩家\n抗性。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -362,7 +352,7 @@
   },
   "ability-warrior#0025": {
    "src": "{#} Effect: {~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#} 效果: 对友军 {~} 抗性加成 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -375,20 +365,19 @@
   },
   "ability-warrior#0026": {
    "src": "Flyby Slam",
-   "dst": "",
+   "dst": "飞扑砸地",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/02/004/001",
-   "keep": "en",
    "ability": "Flyby Slam",
    "code": "WARRIOR-P2-R04-C01"
   },
   "ability-warrior#0027": {
    "src": "After using Charge, violently crash\ndown unto the ground and deal damage.",
-   "dst": "",
+   "dst": "使用 Charge 之后，猛地砸向\n地面并造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -403,7 +392,7 @@
   },
   "ability-warrior#0028": {
    "src": "Charge damages enemies in your way.",
-   "dst": "",
+   "dst": "Charge 会伤害沿途的敌人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -418,7 +407,7 @@
   },
   "ability-warrior#0029": {
    "src": "{#} Area of Effect: {~} Blocks",
-   "dst": "",
+   "dst": "{#} 作用范围: {~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -434,7 +423,7 @@
   },
   "ability-warrior#0030": {
    "src": "{#} Total Damage: {~} (of your DPS, airborne)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，空中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -447,7 +436,7 @@
   },
   "ability-warrior#0031": {
    "src": "{#} Total Damage: {~} (of your DPS, landing)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，落地)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -460,20 +449,19 @@
   },
   "ability-warrior#0032": {
    "src": "Final Crush",
-   "dst": "",
+   "dst": "终末粉碎",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/03/003/000",
-   "keep": "en",
    "ability": "Final Crush",
    "code": "WARRIOR-P3-R03-C00"
   },
   "ability-warrior#0033": {
    "src": "Bash's last hit is delayed, but deals\n+{~} damage and has +{~} radius.",
-   "dst": "",
+   "dst": "Bash 的最后一击会延迟，但多造成\n+{~1} 伤害，范围也多 +{~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -488,20 +476,19 @@
   },
   "ability-warrior#0034": {
    "src": "Fireworks",
-   "dst": "",
+   "dst": "烟火",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/03/003/002",
-   "keep": "en",
    "ability": "Fireworks",
    "code": "WARRIOR-P3-R03-C02"
   },
   "ability-warrior#0035": {
    "src": "Mobs hit by Uppercut will explode\nmid-air and receive additional damage.",
-   "dst": "",
+   "dst": "被 Uppercut 击中的敌人会在空中\n炸开，并受到额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -516,20 +503,19 @@
   },
   "ability-warrior#0036": {
    "src": "Quadruple Bash",
-   "dst": "",
+   "dst": "四重重击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/03/003/006",
-   "keep": "en",
    "ability": "Quadruple Bash",
    "code": "WARRIOR-P3-R03-C06"
   },
   "ability-warrior#0037": {
    "src": "Bash will cast {~} times consecutively\nat double the speed.",
-   "dst": "",
+   "dst": "Bash 会以两倍速度\n连续施放 {~} 次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -544,20 +530,19 @@
   },
   "ability-warrior#0038": {
    "src": "Flaming Uppercut",
-   "dst": "",
+   "dst": "烈焰上勾拳",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/03/003/008",
-   "keep": "en",
    "ability": "Flaming Uppercut",
    "code": "WARRIOR-P3-R03-C08"
   },
   "ability-warrior#0039": {
    "src": "Uppercut will light mobs on fire,\ndealing damage every {~} seconds.",
-   "dst": "",
+   "dst": "Uppercut 会点燃敌人，\n每 {~} 秒造成一次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -572,20 +557,19 @@
   },
   "ability-warrior#0040": {
    "src": "Half-Moon Swipe",
-   "dst": "",
+   "dst": "半月扫",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/03/004/004",
-   "keep": "en",
    "ability": "Half-Moon Swipe",
    "code": "WARRIOR-P3-R04-C04"
   },
   "ability-warrior#0041": {
    "src": "Uppercut will deal a footsweep\nattack at a longer and wider angle.",
-   "dst": "",
+   "dst": "Uppercut 改为一记扫堂腿，\n距离更远、角度更宽。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -600,20 +584,19 @@
   },
   "ability-warrior#0042": {
    "src": "Iron Lungs",
-   "dst": "",
+   "dst": "铁肺",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/03/004/007",
-   "keep": "en",
    "ability": "Iron Lungs",
    "code": "WARRIOR-P3-R04-C07"
   },
   "ability-warrior#0043": {
    "src": "War Scream will deal more damage.",
-   "dst": "",
+   "dst": "War Scream 造成更多伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -628,20 +611,19 @@
   },
   "ability-warrior#0044": {
    "src": "Generalist",
-   "dst": "",
+   "dst": "通才",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/001/002",
-   "keep": "en",
    "ability": "Generalist",
    "code": "WARRIOR-P4-R01-C02"
   },
   "ability-warrior#0045": {
    "src": "After casting {~} different spells\nin a row, your next spell will cost {~} Mana.",
-   "dst": "",
+   "dst": "连续施放 {~1} 个不同的技能后，\n下一个技能只要 {~2} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -656,20 +638,19 @@
   },
   "ability-warrior#0046": {
    "src": "Air Shout",
-   "dst": "",
+   "dst": "风之吼",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/001/004",
-   "keep": "en",
    "ability": "Air Shout",
    "code": "WARRIOR-P4-R01-C04"
   },
   "ability-warrior#0047": {
    "src": "War Scream will fire a projectile that can\ngo through walls and deal damage up to {~} times.",
-   "dst": "",
+   "dst": "War Scream 会射出一道可穿墙的弹体，\n最多命中 {~} 次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -684,7 +665,7 @@
   },
   "ability-warrior#0048": {
    "src": "{#} Total Damage: {~}",
-   "dst": "",
+   "dst": "{#} 总伤害: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -697,20 +678,19 @@
   },
   "ability-warrior#0049": {
    "src": "Mantle of the Bovemists",
-   "dst": "",
+   "dst": "Bovemists 之庇",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/001/007",
-   "keep": "en",
    "ability": "Mantle of the Bovemists",
    "code": "WARRIOR-P4-R01-C07"
   },
   "ability-warrior#0050": {
    "src": "When casting War Scream, create a holy\nshield around you that reduces all\nincoming damage by -{~} for {~} hits.",
-   "dst": "",
+   "dst": "施放 War Scream 时，在身周张开一面\n神圣护盾，把受到的所有伤害降低\n{~1}，可挡 {~2} 次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -725,20 +705,19 @@
   },
   "ability-warrior#0051": {
    "src": "Bak'al's Grasp",
-   "dst": "",
+   "dst": "Bak'al 之握",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/002/001",
-   "keep": "en",
    "ability": "Bak'al's Grasp",
    "code": "WARRIOR-P4-R02-C01"
   },
   "ability-warrior#0052": {
    "src": "Casting War Scream will make you Corrupted {#},\nbut no longer grants resistance.\n(Shift + War Scream to cancel)",
-   "dst": "",
+   "dst": "施放 War Scream 会让你陷入腐化 {#}，\n但不再提供抗性。\n(Shift + War Scream 可取消)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -753,7 +732,7 @@
   },
   "ability-warrior#0053": {
    "src": "Gain +{~} Raw Damage per {~} Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "每 {~2} 层腐化 {#} 获得 +{~1} 固定伤害。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -768,7 +747,7 @@
   },
   "ability-warrior#0054": {
    "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~} Corrupted {#}.",
-   "dst": "",
+   "dst": "腐化 {#} 期间你无法恢复生命，\n而且每损失 {~1} 点生命就会\n获得 +{~2} 层腐化 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -783,33 +762,31 @@
   },
   "ability-warrior#0055": {
    "src": "Spear Proficiency II",
-   "dst": "",
+   "dst": "长矛精通 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/003/000",
-   "keep": "en",
    "ability": "Spear Proficiency II",
    "code": "WARRIOR-P4-R03-C00"
   },
   "ability-warrior#0056": {
    "src": "Cheaper Uppercut",
-   "dst": "",
+   "dst": "节约·上勾拳",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/003/004",
-   "keep": "en",
    "ability": "Cheaper Uppercut",
    "code": "WARRIOR-P4-R03-C04"
   },
   "ability-warrior#0057": {
    "src": "Reduce the Mana cost of Uppercut.",
-   "dst": "",
+   "dst": "降低 Uppercut 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -825,20 +802,19 @@
   },
   "ability-warrior#0058": {
    "src": "Aerodynamics",
-   "dst": "",
+   "dst": "空气动力学",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/003/006",
-   "keep": "en",
    "ability": "Aerodynamics",
    "code": "WARRIOR-P4-R03-C06"
   },
   "ability-warrior#0059": {
    "src": "During Charge, you can\nsteer and change direction.",
-   "dst": "",
+   "dst": "Charge 期间可以转向，\n自由控制方向。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -853,20 +829,19 @@
   },
   "ability-warrior#0060": {
    "src": "Manachism",
-   "dst": "",
+   "dst": "法力反制",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/003/008",
-   "keep": "en",
    "ability": "Manachism",
    "code": "WARRIOR-P4-R03-C08"
   },
   "ability-warrior#0061": {
    "src": "If you receive a hit that's less than\n{~} of your max health, gain {~} Mana.",
-   "dst": "",
+   "dst": "受到的伤害若低于最大生命的 {~1}，\n就获得 {~2} 点法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -881,20 +856,19 @@
   },
   "ability-warrior#0062": {
    "src": "Intoxicating Blood",
-   "dst": "",
+   "dst": "醉人之血",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/004/001",
-   "keep": "en",
    "ability": "Intoxicating Blood",
    "code": "WARRIOR-P4-R04-C01"
   },
   "ability-warrior#0063": {
    "src": "After leaving Corrupted {#}, gain {~} of\nmissing health back for each hit dealt and\nenemy killed while Corrupted {#}.",
-   "dst": "",
+   "dst": "脱离腐化 {#} 后，按你在腐化 {#} 期间\n每次命中与每次击杀，恢复 {~} 的\n已失生命。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -909,7 +883,7 @@
   },
   "ability-warrior#0064": {
    "src": "{#} Cooldown: {~}s (for hits)",
-   "dst": "",
+   "dst": "{#} 冷却时间: {~} 秒 (命中的部分)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -922,20 +896,19 @@
   },
   "ability-warrior#0065": {
    "src": "Counter",
-   "dst": "",
+   "dst": "反击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/004/005",
-   "keep": "en",
    "ability": "Counter",
    "code": "WARRIOR-P4-R04-C05"
   },
   "ability-warrior#0066": {
    "src": "You take {~} reduced damage and\nattack back when hit by an enemy attack.",
-   "dst": "",
+   "dst": "被敌人攻击时，你受到的伤害降低 {~}，\n并会反击回去。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -950,20 +923,19 @@
   },
   "ability-warrior#0067": {
    "src": "Shield Strike",
-   "dst": "",
+   "dst": "盾击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/04/004/007",
-   "keep": "en",
    "ability": "Shield Strike",
    "code": "WARRIOR-P4-R04-C07"
   },
   "ability-warrior#0068": {
    "src": "Hitting an enemy with Bash sends all broken\nmantles at them, dealing damage to nearby enemies.",
-   "dst": "",
+   "dst": "用 Bash 命中敌人时，会把所有破碎的护罩\n全砸过去，对附近的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -978,7 +950,7 @@
   },
   "ability-warrior#0069": {
    "src": "You gain a broken mantle whenever\nMantle of the Bovemists loses a charge.",
-   "dst": "",
+   "dst": "Mantle of the Bovemists 每失去一层，\n你就获得一片破碎的护罩。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -993,7 +965,7 @@
   },
   "ability-warrior#0070": {
    "src": "{#} Total Damage: {~} (of your DPS, per broken mantle)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，每片破碎护罩)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1006,20 +978,19 @@
   },
   "ability-warrior#0071": {
    "src": "Blood Pact",
-   "dst": "",
+   "dst": "血之契约",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/001/000",
-   "keep": "en",
    "ability": "Blood Pact",
    "code": "WARRIOR-P5-R01-C00"
   },
   "ability-warrior#0072": {
    "src": "A spell cast using health will\ndeal +{~} to +{~} bonus damage, depending\non how much of its cost is paid in blood.",
-   "dst": "",
+   "dst": "用生命施放的技能会多造成 +{~1} 到 +{~2}\n的额外伤害，取决于有多少消耗\n是用血付的。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1034,7 +1005,7 @@
   },
   "ability-warrior#0073": {
    "src": "If you do not have enough mana to\ncast a spell, spend health instead.\n({~} health per mana)",
-   "dst": "",
+   "dst": "法力不够施放技能时，改用生命。\n(每点法力折 {~} 点生命)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1049,20 +1020,19 @@
   },
   "ability-warrior#0074": {
    "src": "Flying Kick",
-   "dst": "",
+   "dst": "飞踢",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/001/004",
-   "keep": "en",
    "ability": "Flying Kick",
    "code": "WARRIOR-P5-R01-C04"
   },
   "ability-warrior#0075": {
    "src": "Hitting mobs with Charge will halt your\nmomentum and knock them away.",
-   "dst": "",
+   "dst": "用 Charge 撞到敌人会让你停下，\n并把它们击飞。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1077,20 +1047,19 @@
   },
   "ability-warrior#0076": {
    "src": "Crushing Blow",
-   "dst": "",
+   "dst": "粉碎打击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/001/006",
-   "keep": "en",
    "ability": "Crushing Blow",
    "code": "WARRIOR-P5-R01-C06"
   },
   "ability-warrior#0077": {
    "src": "Increase the damage of Bash.",
-   "dst": "",
+   "dst": "提高 Bash 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1105,7 +1074,7 @@
   },
   "ability-warrior#0078": {
    "src": "{#} Total Damage: +{~} (of your DPS, per bash)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，每次重击)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1119,20 +1088,19 @@
   },
   "ability-warrior#0079": {
    "src": "Rejuvenating Skin",
-   "dst": "",
+   "dst": "回春皮肤",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/001/008",
-   "keep": "en",
    "ability": "Rejuvenating Skin",
    "code": "WARRIOR-P5-R01-C08"
   },
   "ability-warrior#0080": {
    "src": "For any damage you take,\nregenerate {~} of the\ndamage over the next {~}s.",
-   "dst": "",
+   "dst": "你受到的任何伤害，都会在接下来的\n{~2} 秒内恢复其中 {~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1147,20 +1115,19 @@
   },
   "ability-warrior#0081": {
    "src": "Enraged Blow",
-   "dst": "",
+   "dst": "暴怒重击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/002/001",
-   "keep": "en",
    "ability": "Enraged Blow",
    "code": "WARRIOR-P5-R02-C01"
   },
   "ability-warrior#0082": {
    "src": "Gain +{~} damage per {~} Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "每 {~2} 层腐化 {#} 获得 +{~1} 伤害。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1175,20 +1142,19 @@
   },
   "ability-warrior#0083": {
    "src": "Sparkling Hope",
-   "dst": "",
+   "dst": "闪耀希望",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/002/007",
-   "keep": "en",
    "ability": "Sparkling Hope",
    "code": "WARRIOR-P5-R02-C07"
   },
   "ability-warrior#0084": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations at once)",
-   "dst": "",
+   "dst": "你每恢复最大生命的 {~1}，\n就对附近所有敌人造成一次伤害。\n(同时最多触发 {~2} 次)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1203,20 +1169,19 @@
   },
   "ability-warrior#0085": {
    "src": "Exhilarate",
-   "dst": "",
+   "dst": "振奋",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/003/000",
-   "keep": "en",
    "ability": "Exhilarate",
    "code": "WARRIOR-P5-R03-C00"
   },
   "ability-warrior#0086": {
    "src": "After leaving Corrupted {#}, restore {~}\nof your Corrupted {#} bar as max health.",
-   "dst": "",
+   "dst": "脱离腐化 {#} 后，把腐化 {#} 条的 {~}\n转化为最大生命恢复。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1231,20 +1196,19 @@
   },
   "ability-warrior#0087": {
    "src": "Comet",
-   "dst": "",
+   "dst": "彗星",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/003/002",
-   "keep": "en",
    "ability": "Comet",
    "code": "WARRIOR-P5-R03-C02"
   },
   "ability-warrior#0088": {
    "src": "After being hit by Fireworks, enemies will crash\nunto the ground and receive more damage.",
-   "dst": "",
+   "dst": "被 Fireworks 击中的敌人会砸向地面，\n并受到更多伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1259,20 +1223,19 @@
   },
   "ability-warrior#0089": {
    "src": "Spirit of the Rabbit",
-   "dst": "",
+   "dst": "兔之魂",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/003/004",
-   "keep": "en",
    "ability": "Spirit of the Rabbit",
    "code": "WARRIOR-P5-R03-C04"
   },
   "ability-warrior#0090": {
    "src": "Reduce the Mana cost of Charge\nand increase your Walk Speed by +{~}.",
-   "dst": "",
+   "dst": "降低 Charge 的法力消耗，\n并让移动速度提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1287,20 +1250,19 @@
   },
   "ability-warrior#0091": {
    "src": "Cleansing Breeze",
-   "dst": "",
+   "dst": "净化之风",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/003/006",
-   "keep": "en",
    "ability": "Cleansing Breeze",
    "code": "WARRIOR-P5-R03-C06"
   },
   "ability-warrior#0092": {
    "src": "Charge will cleanse you of all\nnegative effects and fire, as well\nas any allies you pass through.",
-   "dst": "",
+   "dst": "Charge 会清除你身上所有负面效果\n与火焰，穿过的队友也一样。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1315,33 +1277,31 @@
   },
   "ability-warrior#0093": {
    "src": "Cheaper Bash II",
-   "dst": "",
+   "dst": "节约·重击 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/003/008",
-   "keep": "en",
    "ability": "Cheaper Bash II",
    "code": "WARRIOR-P5-R03-C08"
   },
   "ability-warrior#0094": {
    "src": "Boiling Blood",
-   "dst": "",
+   "dst": "沸血",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/004/001",
-   "keep": "en",
    "ability": "Boiling Blood",
    "code": "WARRIOR-P5-R04-C01"
   },
   "ability-warrior#0095": {
    "src": "Bash will leave a puddle of boiling blood\nafter its last explosion, slowing down and\ndamaging enemies in it every {~} seconds.",
-   "dst": "",
+   "dst": "Bash 最后一次爆炸后会留下一滩沸血，\n减速其中的敌人并每 {~} 秒\n造成一次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1356,20 +1316,19 @@
   },
   "ability-warrior#0096": {
    "src": "Collide",
-   "dst": "",
+   "dst": "碰撞",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/004/005",
-   "keep": "en",
    "ability": "Collide",
    "code": "WARRIOR-P5-R04-C05"
   },
   "ability-warrior#0097": {
    "src": "Enemies thrown into walls from Flying Kick\nwill explode and receive additional damage.",
-   "dst": "",
+   "dst": "被 Flying Kick 撞进墙里的敌人会炸开，\n并受到额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1384,20 +1343,19 @@
   },
   "ability-warrior#0098": {
    "src": "Sacred Surge",
-   "dst": "",
+   "dst": "神圣涌动",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/004/007",
-   "keep": "en",
    "ability": "Sacred Surge",
    "code": "WARRIOR-P5-R04-C07"
   },
   "ability-warrior#0099": {
    "src": "Gain the ability to unleash a Sacred Surge ✧.\nWhenever any of your spells or abilities are\ntriggered, increase your Holy Power ✧ by {~}.",
-   "dst": "",
+   "dst": "获得释放神圣涌动 ✧ 的能力。你每触发\n一次技能或能力，神圣能量 ✧ 就\n增加 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1412,7 +1370,7 @@
   },
   "ability-warrior#0100": {
    "src": "Uppercut will spend {~} Holy Power ✧\nto smite hit enemies with holy energy,\ndealing extra damage.",
-   "dst": "",
+   "dst": "Uppercut 会消耗 {~} 点神圣能量 ✧，\n以神圣之力惩击命中的敌人，\n造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1427,20 +1385,19 @@
   },
   "ability-warrior#0101": {
    "src": "Massacre",
-   "dst": "",
+   "dst": "大屠杀",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/005/002",
-   "keep": "en",
    "ability": "Massacre",
    "code": "WARRIOR-P5-R05-C02"
   },
   "ability-warrior#0102": {
    "src": "While Corrupted {#}, hitting an\nenemy with your Main Attack\nwill add +{~} Corruption {#},\nper second.\n(Powder Specials always add +{~})",
-   "dst": "",
+   "dst": "腐化 {#} 期间，用普攻命中\n敌人会每秒增加 +{~1} 层\n腐化 {#}。\n(粉末技能固定增加 +{~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1455,20 +1412,19 @@
   },
   "ability-warrior#0103": {
    "src": "Emboldening Cry",
-   "dst": "",
+   "dst": "鼓舞之吼",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/05/005/008",
-   "keep": "en",
    "ability": "Emboldening Cry",
    "code": "WARRIOR-P5-R05-C08"
   },
   "ability-warrior#0104": {
    "src": "War Scream bolsters courage,\ngranting players a damage bonus\nand additional resistance.",
-   "dst": "",
+   "dst": "War Scream 会鼓舞士气，\n给玩家伤害加成\n与额外抗性。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1483,7 +1439,7 @@
   },
   "ability-warrior#0105": {
    "src": "{#} Effect: +{~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#} 效果: 对友军 +{~} 抗性加成 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1496,20 +1452,19 @@
   },
   "ability-warrior#0106": {
    "src": "Uncontainable Corruption",
-   "dst": "",
+   "dst": "无从遏制的腐化",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/001/000",
-   "keep": "en",
    "ability": "Uncontainable Corruption",
    "code": "WARRIOR-P6-R01-C00"
   },
   "ability-warrior#0107": {
    "src": "Reduces the cooldown of Bak'al's Grasp\nby -{~}s, and increases the raw damage\ngained for every {~} of health lost by +{~}.",
-   "dst": "",
+   "dst": "Bak'al's Grasp 的冷却减少 {~1} 秒，\n每损失 {~2} 生命获得的固定伤害\n提高 +{~3}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1524,20 +1479,19 @@
   },
   "ability-warrior#0108": {
    "src": "Tempest",
-   "dst": "",
+   "dst": "风暴",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/001/002",
-   "keep": "en",
    "ability": "Tempest",
    "code": "WARRIOR-P6-R01-C02"
   },
   "ability-warrior#0109": {
    "src": "War Scream will ripple the ground and\ndeal damage to enemies {~} times\nover a large area every {~}s.",
-   "dst": "",
+   "dst": "War Scream 会震荡地面，每 {~2} 秒\n在大范围内对敌人造成 {~1} 次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1552,7 +1506,7 @@
   },
   "ability-warrior#0110": {
    "src": "{#} Total Damage: {~} (of your DPS, per ripple)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，每次震荡)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1565,20 +1519,19 @@
   },
   "ability-warrior#0111": {
    "src": "Whirlwind Strike",
-   "dst": "",
+   "dst": "旋风打击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/001/004",
-   "keep": "en",
    "ability": "Whirlwind Strike",
    "code": "WARRIOR-P6-R01-C04"
   },
   "ability-warrior#0112": {
    "src": "Uppercut will create a strong gust of air,\nlaunching you upward with enemies.\n(Hold shift to stay grounded)",
-   "dst": "",
+   "dst": "Uppercut 会卷起一股强风，\n把你和敌人一起送上天。\n(按住 Shift 可留在地面)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1593,7 +1546,7 @@
   },
   "ability-warrior#0113": {
    "src": "{#} Area of Effect: Circle-Shaped",
-   "dst": "",
+   "dst": "{#} 作用范围: 圆形",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1606,20 +1559,19 @@
   },
   "ability-warrior#0114": {
    "src": "Mythril Skin",
-   "dst": "",
+   "dst": "秘银皮肤",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/001/007",
-   "keep": "en",
    "ability": "Mythril Skin",
    "code": "WARRIOR-P6-R01-C07"
   },
   "ability-warrior#0115": {
    "src": "Gain +{~} Base Resistance and\nbecome immune to knockback.",
-   "dst": "",
+   "dst": "获得 +{~} 基础抗性，\n并免疫击退。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1634,20 +1586,19 @@
   },
   "ability-warrior#0116": {
    "src": "Armour Breaker",
-   "dst": "",
+   "dst": "破甲者",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/002/001",
-   "keep": "en",
    "ability": "Armour Breaker",
    "code": "WARRIOR-P6-R02-C01"
   },
   "ability-warrior#0117": {
    "src": "Gaining {~} Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
-   "dst": "",
+   "dst": "累积到 {~} 层腐化 {#} 时，你的下一次\nUppercut 会给你伤害提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1662,20 +1613,19 @@
   },
   "ability-warrior#0118": {
    "src": "Radiant Devotee",
-   "dst": "",
+   "dst": "光辉信徒",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/002/003",
-   "keep": "en",
    "ability": "Radiant Devotee",
    "code": "WARRIOR-P6-R02-C03"
   },
   "ability-warrior#0119": {
    "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "dst": "",
+   "dst": "装备上每有 {~1} 点反射，就获得\n+{~2}/{~3} 秒法力恢复。(上限 {~4}/{~5} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1690,20 +1640,19 @@
   },
   "ability-warrior#0120": {
    "src": "Freestream Flow",
-   "dst": "",
+   "dst": "顺流",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/002/005",
-   "keep": "en",
    "ability": "Freestream Flow",
    "code": "WARRIOR-P6-R02-C05"
   },
   "ability-warrior#0121": {
    "src": "You fall more slowly during Charge.",
-   "dst": "",
+   "dst": "Charge 期间你下坠得更慢。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1718,20 +1667,19 @@
   },
   "ability-warrior#0122": {
    "src": "Riposte",
-   "dst": "",
+   "dst": "还击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/003/002",
-   "keep": "en",
    "ability": "Riposte",
    "code": "WARRIOR-P6-R03-C02"
   },
   "ability-warrior#0123": {
    "src": "Increase the damage of Counter and reduce its\ncooldown by -{~}s.",
-   "dst": "",
+   "dst": "提高 Counter 的伤害，\n并把冷却减少 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1746,7 +1694,7 @@
   },
   "ability-warrior#0124": {
    "src": "Increase the damage reduction of Counter by +{~}.",
-   "dst": "",
+   "dst": "Counter 的伤害减免提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1761,20 +1709,19 @@
   },
   "ability-warrior#0125": {
    "src": "Cheaper War Scream",
-   "dst": "",
+   "dst": "节约·战吼",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/003/004",
-   "keep": "en",
    "ability": "Cheaper War Scream",
    "code": "WARRIOR-P6-R03-C04"
   },
   "ability-warrior#0126": {
    "src": "Reduce the Mana cost of War Scream.",
-   "dst": "",
+   "dst": "降低 War Scream 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1791,20 +1738,19 @@
   },
   "ability-warrior#0127": {
    "src": "Luster Purge",
-   "dst": "",
+   "dst": "光耀净化",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/003/006",
-   "keep": "en",
    "ability": "Luster Purge",
    "code": "WARRIOR-P6-R03-C06"
   },
   "ability-warrior#0128": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "",
+   "dst": "神圣能量 ✧ 达到 {~1} 时，\n你的普攻会被强化，\n并为你带来 {~2} 点神圣能量。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1819,7 +1765,7 @@
   },
   "ability-warrior#0129": {
    "src": "{#} Cooldown: {~}s (for Holy Power)",
-   "dst": "",
+   "dst": "{#} 冷却时间: {~} 秒 (神圣能量的部分)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1832,7 +1778,7 @@
   },
   "ability-warrior#0130": {
    "src": "{#} Main Attack Damage Bonus: +{~}",
-   "dst": "",
+   "dst": "{#} 普攻伤害加成: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1845,7 +1791,7 @@
   },
   "ability-warrior#0131": {
    "src": "{#} Main Attack Range: +{~}",
-   "dst": "",
+   "dst": "{#} 普攻距离: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1858,20 +1804,19 @@
   },
   "ability-warrior#0132": {
    "src": "Hallowed Blaze",
-   "dst": "",
+   "dst": "圣焰",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/003/008",
-   "keep": "en",
    "ability": "Hallowed Blaze",
    "code": "WARRIOR-P6-R03-C08"
   },
   "ability-warrior#0133": {
    "src": "Flaming Uppercut will deal more damage\nand grant {~} Holy Power ✧ whenever\nit deals damage.",
-   "dst": "",
+   "dst": "Flaming Uppercut 造成更多伤害，\n而且每次造成伤害都会给你\n{~} 点神圣能量 ✧。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1886,20 +1831,19 @@
   },
   "ability-warrior#0134": {
    "src": "Massive Bash",
-   "dst": "",
+   "dst": "巨型重击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/004/000",
-   "keep": "en",
    "ability": "Massive Bash",
    "code": "WARRIOR-P6-R04-C00"
   },
   "ability-warrior#0135": {
    "src": "Increase Bash's area of effect radius\nby +{~} per {~} Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "每 {~2} 层腐化 {#} 让 Bash 的作用\n范围半径增加 +{~1}。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1914,20 +1858,19 @@
   },
   "ability-warrior#0136": {
    "src": "Axe Kick",
-   "dst": "",
+   "dst": "斧劈踢",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/004/003",
-   "keep": "en",
    "ability": "Axe Kick",
    "code": "WARRIOR-P6-R04-C03"
   },
   "ability-warrior#0137": {
    "src": "Increases the damage and mana cost\nof Uppercut.",
-   "dst": "",
+   "dst": "提高 Uppercut 的伤害，\n法力消耗也一并提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1942,20 +1885,19 @@
   },
   "ability-warrior#0138": {
    "src": "Blessed Bulwark",
-   "dst": "",
+   "dst": "受祝壁垒",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/004/007",
-   "keep": "en",
    "ability": "Blessed Bulwark",
    "code": "WARRIOR-P6-R04-C07"
   },
   "ability-warrior#0139": {
    "src": "Add +{~} additional charges and\n+{~} damage reduction to\nMantle of the Bovemists.",
-   "dst": "",
+   "dst": "Mantle of the Bovemists 额外获得\n+{~1} 层，伤害减免提高 +{~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1970,20 +1912,19 @@
   },
   "ability-warrior#0140": {
    "src": "Mindless Slaughter",
-   "dst": "",
+   "dst": "无脑杀戮",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/005/001",
-   "keep": "en",
    "ability": "Mindless Slaughter",
    "code": "WARRIOR-P6-R05-C01"
   },
   "ability-warrior#0141": {
    "src": "Massacre adds twice as much Corruption {#}.",
-   "dst": "",
+   "dst": "Massacre 增加的腐化 {#} 翻倍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1998,7 +1939,7 @@
   },
   "ability-warrior#0142": {
    "src": "While Corrupted, your Main Attack and\nPowder Specials now cost {~} health to\nuse, activating Blood Pact.",
-   "dst": "",
+   "dst": "腐化期间，你的普攻与粉末技能\n改为消耗 {~} 点生命，\n并触发 Blood Pact。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2013,20 +1954,19 @@
   },
   "ability-warrior#0143": {
    "src": "Provoke",
-   "dst": "",
+   "dst": "挑衅",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/06/005/006",
-   "keep": "en",
    "ability": "Provoke",
    "code": "WARRIOR-P6-R05-C06"
   },
   "ability-warrior#0144": {
    "src": "Enemies damaged by War Scream\nwill become Provoked {#}, targeting\nonly you for at least {~}s.",
-   "dst": "",
+   "dst": "被 War Scream 伤到的敌人会被\n激怒 {#}，至少 {~} 秒内只盯着你打。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2041,33 +1981,31 @@
   },
   "ability-warrior#0145": {
    "src": "Cheaper War Scream II",
-   "dst": "",
+   "dst": "节约·战吼 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/001/000",
-   "keep": "en",
    "ability": "Cheaper War Scream II",
    "code": "WARRIOR-P7-R01-C00"
   },
   "ability-warrior#0146": {
    "src": "Overwhelming Rage",
-   "dst": "",
+   "dst": "滔天怒火",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/001/002",
-   "keep": "en",
    "ability": "Overwhelming Rage",
    "code": "WARRIOR-P7-R01-C02"
   },
   "ability-warrior#0147": {
    "src": "Increase the cap of Enraged Blow by +{~}.",
-   "dst": "",
+   "dst": "Enraged Blow 的上限提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2083,20 +2021,19 @@
   },
   "ability-warrior#0148": {
    "src": "Cyclone",
-   "dst": "",
+   "dst": "气旋",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/001/004",
-   "keep": "en",
    "ability": "Cyclone",
    "code": "WARRIOR-P7-R01-C04"
   },
   "ability-warrior#0149": {
    "src": "After casting War Scream, envelop yourself with\na vortex that damages nearby enemies every {~}s.",
-   "dst": "",
+   "dst": "施放 War Scream 后，你会被一股漩涡包住，\n每 {~} 秒对附近的敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2111,20 +2048,19 @@
   },
   "ability-warrior#0150": {
    "src": "Pressure",
-   "dst": "",
+   "dst": "压制",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/002/003",
-   "keep": "en",
    "ability": "Pressure",
    "code": "WARRIOR-P7-R02-C03"
   },
   "ability-warrior#0151": {
    "src": "Bash gains {~}x as many hits and is {~}s faster.",
-   "dst": "",
+   "dst": "Bash 的命中次数变为 {~1} 倍，且快 {~2} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2139,7 +2075,7 @@
   },
   "ability-warrior#0152": {
    "src": "Uppercut deals additional damage.",
-   "dst": "",
+   "dst": "Uppercut 造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2154,7 +2090,7 @@
   },
   "ability-warrior#0153": {
    "src": "War Scream grants a damage boost,\nbut effect duration is reduced.",
-   "dst": "",
+   "dst": "War Scream 给予伤害提升，\n但效果持续时间缩短。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2169,7 +2105,7 @@
   },
   "ability-warrior#0154": {
    "src": "When Generalist acts on a spell, it is enhanced.",
-   "dst": "",
+   "dst": "Generalist 生效的那个技能会被强化。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2184,7 +2120,7 @@
   },
   "ability-warrior#0155": {
    "src": "{#}({#}{#}{#}{#}{#}{#}Damage: +{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}{#}{#}{#}{#}伤害: +{~})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2197,7 +2133,7 @@
   },
   "ability-warrior#0156": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Players",
-   "dst": "",
+   "dst": "{#} 效果: 对玩家 +{~} 伤害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2210,20 +2146,19 @@
   },
   "ability-warrior#0157": {
    "src": "Thunderclap",
-   "dst": "",
+   "dst": "雷鸣",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/002/005",
-   "keep": "en",
    "ability": "Thunderclap",
    "code": "WARRIOR-P7-R02-C05"
   },
   "ability-warrior#0158": {
    "src": "Bash will cast at the player's position at\ndouble the speed and with an increased area of effect.",
-   "dst": "",
+   "dst": "Bash 改为在玩家所在位置施放，\n速度翻倍，作用范围也更大。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2238,7 +2173,7 @@
   },
   "ability-warrior#0159": {
    "src": "With Quadruple Bash, gain less damage.",
-   "dst": "",
+   "dst": "搭配 Quadruple Bash 时伤害增益较少。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2253,20 +2188,19 @@
   },
   "ability-warrior#0160": {
    "src": "Radiance",
-   "dst": "",
+   "dst": "光辉",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/002/007",
-   "keep": "en",
    "ability": "Radiance",
    "code": "WARRIOR-P7-R02-C07"
   },
   "ability-warrior#0161": {
    "src": "Bash will buff positive IDs\nof yourself and allies.\n(Max Mana, XP Bonus, Loot Bonus, Loot Quality,\nGather XP Bonus, and Gather Speed Bonus\nare excluded)",
-   "dst": "",
+   "dst": "Bash 会强化你与队友身上的\n正面词条。\n(最大法力、经验加成、战利品加成、战利品品质、\n采集经验加成与采集速度加成\n不在其中)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2281,7 +2215,7 @@
   },
   "ability-warrior#0162": {
    "src": "{#} Effect: +{~} ID Effectiveness (❈) to Allies",
-   "dst": "",
+   "dst": "{#} 效果: 对友军 +{~} 词条效力 (❈)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2295,20 +2229,19 @@
   },
   "ability-warrior#0163": {
    "src": "Bloodlust",
-   "dst": "",
+   "dst": "嗜血",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/003/001",
-   "keep": "en",
    "ability": "Bloodlust",
    "code": "WARRIOR-P7-R03-C01"
   },
   "ability-warrior#0164": {
    "src": "After leaving Corrupted {#}, annihilate all\nenemies around you. For every {~} Corrupted {#}\nyou had, damage increases by {~}.",
-   "dst": "",
+   "dst": "脱离腐化 {#} 后，湮灭你身周所有的\n敌人。先前每有 {~1} 层腐化 {#}，\n伤害就提高 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2323,20 +2256,19 @@
   },
   "ability-warrior#0165": {
    "src": "Discombobulate",
-   "dst": "",
+   "dst": "破绽",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/003/004",
-   "keep": "en",
    "ability": "Discombobulate",
    "code": "WARRIOR-P7-R03-C04"
   },
   "ability-warrior#0166": {
    "src": "Damaging enemies will inflict them\nwith +{~} Discombobulated ⚙. (Max {~})",
-   "dst": "",
+   "dst": "对敌人造成伤害会施加\n+{~1} 层破绽 ⚙。(上限 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2351,7 +2283,7 @@
   },
   "ability-warrior#0167": {
    "src": "You will deal +{~} damage to enemies\nfor every Discombobulated ⚙ they have.\n-{~} of the bonus decays every second.",
-   "dst": "",
+   "dst": "敌人身上每有一层破绽 ⚙，你就对它\n多造成 +{~1} 伤害。\n该加成每秒衰减 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2366,20 +2298,19 @@
   },
   "ability-warrior#0168": {
    "src": "Reverberance",
-   "dst": "",
+   "dst": "回响",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/003/006",
-   "keep": "en",
    "ability": "Reverberance",
    "code": "WARRIOR-P7-R03-C06"
   },
   "ability-warrior#0169": {
    "src": "Air Shout can hit +{~} times,\nand deals more damage.",
-   "dst": "",
+   "dst": "Air Shout 可以多命中 +{~} 次，\n伤害也提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2394,20 +2325,19 @@
   },
   "ability-warrior#0170": {
    "src": "Consecration",
-   "dst": "",
+   "dst": "祝圣",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/003/008",
-   "keep": "en",
    "ability": "Consecration",
    "code": "WARRIOR-P7-R03-C08"
   },
   "ability-warrior#0171": {
    "src": "Sacred Surge grants +{~} Holy Power ✧\nfor every spell or ability triggered\nand deals increased damage.",
-   "dst": "",
+   "dst": "Sacred Surge 每触发一次技能或能力\n就多给 +{~} 点神圣能量 ✧，\n造成的伤害也提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2422,20 +2352,19 @@
   },
   "ability-warrior#0172": {
    "src": "Haemorrhage",
-   "dst": "",
+   "dst": "失血",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/004/000",
-   "keep": "en",
    "ability": "Haemorrhage",
    "code": "WARRIOR-P7-R04-C00"
   },
   "ability-warrior#0173": {
    "src": "Reduce Blood Pact's health cost.\n({~} health per mana)",
-   "dst": "",
+   "dst": "降低 Blood Pact 的生命消耗。\n(每点法力折 {~} 点生命)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2450,20 +2379,19 @@
   },
   "ability-warrior#0174": {
    "src": "Brink of Madness",
-   "dst": "",
+   "dst": "疯狂边缘",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/004/002",
-   "keep": "en",
    "ability": "Brink of Madness",
    "code": "WARRIOR-P7-R04-C02"
   },
   "ability-warrior#0175": {
    "src": "You gain a +{~} Resistance buff\nif your health is at {~} or less.",
-   "dst": "",
+   "dst": "生命在 {~2} 以下时，\n你获得 +{~1} 抗性增益。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2478,33 +2406,31 @@
   },
   "ability-warrior#0176": {
    "src": "Cheaper Uppercut II",
-   "dst": "",
+   "dst": "节约·上勾拳 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/004/005",
-   "keep": "en",
    "ability": "Cheaper Uppercut II",
    "code": "WARRIOR-P7-R04-C05"
   },
   "ability-warrior#0177": {
    "src": "Heavenly Trumpet",
-   "dst": "",
+   "dst": "天堂号角",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/004/007",
-   "keep": "en",
    "ability": "Heavenly Trumpet",
    "code": "WARRIOR-P7-R04-C07"
   },
   "ability-warrior#0178": {
    "src": "All nearby allies are granted +{~} Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
-   "dst": "",
+   "dst": "每消耗一点神圣能量 ✧，附近所有队友\n就获得 +{~1} 点护盾值 ❤。\n护盾值 ❤ 会在 {~2} 秒内衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2519,7 +2445,7 @@
   },
   "ability-warrior#0179": {
    "src": "Casting War Scream while holding shift\nwith at least {~} Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
-   "dst": "",
+   "dst": "神圣能量 ✧ 至少 {~} 点时，按住 Shift\n施放 War Scream，会把它全部用掉\n吹响一记护佑的号角。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2534,20 +2460,19 @@
   },
   "ability-warrior#0180": {
    "src": "Concussion",
-   "dst": "",
+   "dst": "震荡",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/005/001",
-   "keep": "en",
    "ability": "Concussion",
    "code": "WARRIOR-P7-R05-C01"
   },
   "ability-warrior#0181": {
    "src": "Final Crush will deal additional +{~} damage to\nenemies damaged by the previous Bash hit.",
-   "dst": "",
+   "dst": "Final Crush 会对被前一次 Bash 伤到的\n敌人多造成 +{~} 伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2562,20 +2487,19 @@
   },
   "ability-warrior#0182": {
    "src": "Second Chance",
-   "dst": "",
+   "dst": "第二次机会",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/07/005/008",
-   "keep": "en",
    "ability": "Second Chance",
    "code": "WARRIOR-P7-R05-C08"
   },
   "ability-warrior#0183": {
    "src": "Keeps you alive with {~} of your health\nremaining and makes all nearby allies invincible\nafter receiving a fatal blow.",
-   "dst": "",
+   "dst": "受到致命一击时，会让你保住 {~} 的生命，\n并让附近所有队友短暂无敌。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2590,7 +2514,7 @@
   },
   "ability-warrior#0184": {
    "src": "{#} Cooldown: {~}m",
-   "dst": "",
+   "dst": "{#} 冷却时间: {~} 分",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -2603,7 +2527,7 @@
   },
   "ability-warrior#0185": {
    "src": "{#} Effect: Invincibility (☗) to Allies",
-   "dst": "",
+   "dst": "{#} 效果: 对友军无敌 (☗)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2616,20 +2540,19 @@
   },
   "ability-warrior#0186": {
    "src": "Rumble",
-   "dst": "",
+   "dst": "隆隆",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/001/000",
-   "keep": "en",
    "ability": "Rumble",
    "code": "WARRIOR-P8-R01-C00"
   },
   "ability-warrior#0187": {
    "src": "Increase Bash's damage by {~}\nper {~} {#} Area of Effect it has.",
-   "dst": "",
+   "dst": "Bash 的作用范围每有 {~2} {#}，\n伤害就提高 {~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2644,20 +2567,19 @@
   },
   "ability-warrior#0188": {
    "src": "Tempestuous Winds",
-   "dst": "",
+   "dst": "狂暴之风",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/001/003",
-   "keep": "en",
    "ability": "Tempestuous Winds",
    "code": "WARRIOR-P8-R01-C03"
   },
   "ability-warrior#0189": {
    "src": "Cyclone will deal damage {~}s faster.",
-   "dst": "",
+   "dst": "Cyclone 造成伤害的频率快 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2672,7 +2594,7 @@
   },
   "ability-warrior#0190": {
    "src": "Increase Tempest's damage.",
-   "dst": "",
+   "dst": "提高 Tempest 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2687,7 +2609,7 @@
   },
   "ability-warrior#0191": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Tempest)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Tempest)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2700,20 +2622,19 @@
   },
   "ability-warrior#0192": {
    "src": "Acceleration",
-   "dst": "",
+   "dst": "加速",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/001/005",
-   "keep": "en",
    "ability": "Acceleration",
    "code": "WARRIOR-P8-R01-C05"
   },
   "ability-warrior#0193": {
    "src": "Increase Flying Kick's damage\nby +{~} per block travelled.\n(Max +{~})",
-   "dst": "",
+   "dst": "Flying Kick 每移动一格，\n伤害就提高 +{~1}。\n(上限 +{~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2728,20 +2649,19 @@
   },
   "ability-warrior#0194": {
    "src": "Shine",
-   "dst": "",
+   "dst": "耀眼",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/001/007",
-   "keep": "en",
    "ability": "Shine",
    "code": "WARRIOR-P8-R01-C07"
   },
   "ability-warrior#0195": {
    "src": "Increase Radiance's effectiveness.",
-   "dst": "",
+   "dst": "提高 Radiance 的效力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2756,20 +2676,19 @@
   },
   "ability-warrior#0196": {
    "src": "Bloodied Armory",
-   "dst": "",
+   "dst": "血染武库",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/002/001",
-   "keep": "en",
    "ability": "Bloodied Armory",
    "code": "WARRIOR-P8-R02-C01"
   },
   "ability-warrior#0197": {
    "src": "Activating Blood Pact adds a blood swipe\nto your next Main Attack. (Max {~})\n(Damage is dealt as Main Attack Damage)",
-   "dst": "",
+   "dst": "触发 Blood Pact 会在你的下一次普攻\n附加一道血斩。(上限 {~})\n(伤害按普攻伤害结算)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2784,7 +2703,7 @@
   },
   "ability-warrior#0198": {
    "src": "{#} Total Damage: {~} (of your DPS, per Swipe)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，每道血斩)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2797,20 +2716,19 @@
   },
   "ability-warrior#0199": {
    "src": "Ecstasy",
-   "dst": "",
+   "dst": "狂喜",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/003/000",
-   "keep": "en",
    "ability": "Ecstasy",
    "code": "WARRIOR-P8-R03-C00"
   },
   "ability-warrior#0200": {
    "src": "Increase Bloodlust's bonus damage per\n{~} Corrupted {#} by +{~}.",
-   "dst": "",
+   "dst": "Bloodlust 每 {~1} 层腐化 {#} 提供的\n额外伤害提高 +{~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2825,20 +2743,19 @@
   },
   "ability-warrior#0201": {
    "src": "Baffling Blows",
-   "dst": "",
+   "dst": "扰神之击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/003/003",
-   "keep": "en",
    "ability": "Baffling Blows",
    "code": "WARRIOR-P8-R03-C03"
   },
   "ability-warrior#0202": {
    "src": "Increase your maximum\nDiscombobulated ⚙ by +{~}.",
-   "dst": "",
+   "dst": "破绽 ⚙ 的上限提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2853,20 +2770,19 @@
   },
   "ability-warrior#0203": {
    "src": "Harmony",
-   "dst": "",
+   "dst": "和谐",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/003/005",
-   "keep": "en",
    "ability": "Harmony",
    "code": "WARRIOR-P8-R03-C05"
   },
   "ability-warrior#0204": {
    "src": "Activating Generalist grants\n+{~} Harmony for {~}s. (Max {~})",
-   "dst": "",
+   "dst": "触发 Generalist 会给你 +{~1} 层和谐，\n持续 {~2} 秒。(上限 {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2881,7 +2797,7 @@
   },
   "ability-warrior#0205": {
    "src": "Gain +{~} Damage per {~} Harmony.",
-   "dst": "",
+   "dst": "每 {~2} 层和谐获得 +{~1} 伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2896,20 +2812,19 @@
   },
   "ability-warrior#0206": {
    "src": "Buried Light",
-   "dst": "",
+   "dst": "掩埋之光",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/003/007",
-   "keep": "en",
    "ability": "Buried Light",
    "code": "WARRIOR-P8-R03-C07"
   },
   "ability-warrior#0207": {
    "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
-   "dst": "",
+   "dst": "潜行时施放 Bash，会消耗 {~1} 点\n神圣能量 ✧ 唤出一道缓缓前行的\n光柱，每 {~2} 秒对敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2924,20 +2839,19 @@
   },
   "ability-warrior#0208": {
    "src": "Spectacle",
-   "dst": "",
+   "dst": "奇景",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/004/002",
-   "keep": "en",
    "ability": "Spectacle",
    "code": "WARRIOR-P8-R04-C02"
   },
   "ability-warrior#0209": {
    "src": "Increase Fireworks' and Comet's damage.",
-   "dst": "",
+   "dst": "提高 Fireworks 与 Comet 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2952,7 +2866,7 @@
   },
   "ability-warrior#0210": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Comet)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Comet)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2965,7 +2879,7 @@
   },
   "ability-warrior#0211": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Fireworks)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Fireworks)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2978,20 +2892,19 @@
   },
   "ability-warrior#0212": {
    "src": "Devout Union",
-   "dst": "",
+   "dst": "虔诚同盟",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/004/006",
-   "keep": "en",
    "ability": "Devout Union",
    "code": "WARRIOR-P8-R04-C06"
   },
   "ability-warrior#0213": {
    "src": "Gain +{~} Base Resistance.",
-   "dst": "",
+   "dst": "获得 +{~} 基础抗性。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3006,7 +2919,7 @@
   },
   "ability-warrior#0214": {
    "src": "{~} of damage taken by nearby\nallies is redirected to you.",
-   "dst": "",
+   "dst": "附近队友受到的伤害有 {~}\n会转移到你身上。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3021,20 +2934,19 @@
   },
   "ability-warrior#0215": {
    "src": "Enlightenment",
-   "dst": "",
+   "dst": "启蒙",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/08/004/008",
-   "keep": "en",
    "ability": "Enlightenment",
    "code": "WARRIOR-P8-R04-C08"
   },
   "ability-warrior#0216": {
    "src": "Add +{~} additional charge\nto Mantle of the Bovemists.",
-   "dst": "",
+   "dst": "Mantle of the Bovemists 额外\n获得 +{~} 层。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3049,7 +2961,7 @@
   },
   "ability-warrior#0217": {
    "src": "Shield Strike will deal more damage and grant\n{~} charge of Mantle of the Bovemists to nearby\nallies for every {~} broken mantles used. (Max {~})",
-   "dst": "",
+   "dst": "Shield Strike 造成更多伤害；每用掉 {~2} 片\n破碎护罩，就给附近的队友 {~1} 层\nMantle of the Bovemists。(上限 {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3064,20 +2976,19 @@
   },
   "ability-warrior#0218": {
    "src": "Beyond Salvation",
-   "dst": "",
+   "dst": "超越救赎",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/09/002/001",
-   "keep": "en",
    "ability": "Beyond Salvation",
    "code": "WARRIOR-P9-R02-C01"
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "",
+   "dst": "用普攻或 Uppercut 打中尖刺会引爆它，\n造成伤害并给你 {~1} 点护盾值 ❤，\n腐化期间也一样。\n护盾值会在 {~2} 秒内衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3092,7 +3003,7 @@
   },
   "ability-warrior#0220": {
    "src": "Summons {~} Corrupted Spikes that rise from\nthe earth around you, dealing damage.",
-   "dst": "",
+   "dst": "从你身周的地面唤出 {~} 根腐化尖刺，\n对敌人造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3107,7 +3018,7 @@
   },
   "ability-warrior#0221": {
    "src": "{#} Range: {~}~{~} Blocks",
-   "dst": "",
+   "dst": "{#} 范围: {~1}~{~2} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3120,7 +3031,7 @@
   },
   "ability-warrior#0222": {
    "src": "{#} Total Damage: {~} (of your DPS, detonate)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，引爆)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3133,7 +3044,7 @@
   },
   "ability-warrior#0223": {
    "src": "{#} Total Damage: {~} (of your DPS, summon)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，召唤)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3146,20 +3057,19 @@
   },
   "ability-warrior#0224": {
    "src": "Judgement",
-   "dst": "",
+   "dst": "审判",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/09/002/007",
-   "keep": "en",
    "ability": "Judgement",
    "code": "WARRIOR-P9-R02-C07"
   },
   "ability-warrior#0225": {
    "src": "Call upon a blade from the heavens\nthat deals damage upon impact\nand grants buffs to nearby allies.",
-   "dst": "",
+   "dst": "从天上召来一柄利刃，落地时造成伤害，\n并给附近的队友增益。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3174,7 +3084,7 @@
   },
   "ability-warrior#0226": {
    "src": "À  +{~} Resistance Bonus (❁) to Allies\nÀ  +{~} ID Effectiveness (❈) to Allies",
-   "dst": "",
+   "dst": "À  +{~1} 对友军抗性加成 (❁)\nÀ  +{~2} 对友军词条效力 (❈)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3189,7 +3099,7 @@
   },
   "ability-warrior#0227": {
    "src": "{#} Effects: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#} 效果: 对友军 +{~} 伤害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3202,20 +3112,19 @@
   },
   "ability-warrior#0228": {
    "src": "Zenith Stance",
-   "dst": "",
+   "dst": "天顶架势",
    "role": "name",
    "kind": "term",
    "ctx": [
     "warrior/技能名稱"
    ],
    "tree": "00/warrior/09/003/004",
-   "keep": "en",
    "ability": "Zenith Stance",
    "code": "WARRIOR-P9-R03-C04"
   },
   "ability-warrior#0229": {
    "src": "Casting F switches them\nbetween Spell and Main Attack form.",
-   "dst": "",
+   "dst": "按 F 可以在法术形态与\n普攻形态之间切换。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3230,7 +3139,7 @@
   },
   "ability-warrior#0230": {
    "src": "In Spell form, casting a spell performs\nan attack. In Main Attack form,\nMain Attacks perform an attack instead.",
-   "dst": "",
+   "dst": "法术形态下，施放技能会发动一次攻击；\n普攻形态下，则由普攻发动攻击。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3245,7 +3154,7 @@
   },
   "ability-warrior#0231": {
    "src": "Manifest your combat mastery as two floating\nfists that you freely command.",
-   "dst": "",
+   "dst": "把你的战斗造诣具现成两只悬浮的拳头，\n任你驱使。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3260,7 +3169,7 @@
   },
   "ability-warrior#0232": {
    "src": "{#} Total Damage: {~} (of your DPS, spell)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，法术)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
