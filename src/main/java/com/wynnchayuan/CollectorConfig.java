@@ -156,6 +156,14 @@ public final class CollectorConfig {
     private boolean shareCaptures = true;
 
     /**
+     * 已經提示過「有新版」的那個版本號。
+     *
+     * <p>每次進遊戲都跳一次的更新提示，第三次之後就沒有人在看了。記住提示過
+     * 哪一版，同一版只講一次；下一版出來時因為版本號不同，會再講一次。
+     */
+    private String notifiedVersion = "";
+
+    /**
      * 是否寫出診斷檔。
      *
      * <p><b>預設關閉。</b>那些檔案是拿來回報問題用的——對排查很有用，
@@ -373,6 +381,15 @@ public final class CollectorConfig {
 
     public boolean shareCaptures() {
         return shareCaptures;
+    }
+
+    public String notifiedVersion() {
+        return notifiedVersion;
+    }
+
+    public void notifiedVersion(String version) {
+        notifiedVersion = version == null ? "" : version;
+        save();
     }
 
     public boolean debugDumps() {
@@ -824,6 +841,9 @@ public final class CollectorConfig {
             if (o.has("shareCaptures")) {
                 shareCaptures = o.get("shareCaptures").getAsBoolean();
             }
+            if (o.has("notifiedVersion")) {
+                notifiedVersion = o.get("notifiedVersion").getAsString();
+            }
             if (o.has("debugDumps")) {
                 debugDumps = o.get("debugDumps").getAsBoolean();
             }
@@ -904,6 +924,7 @@ public final class CollectorConfig {
             o.addProperty("showOverlays", showOverlays);
             o.addProperty("collect", collect);
             o.addProperty("shareCaptures", shareCaptures);
+            o.addProperty("notifiedVersion", notifiedVersion);
             o.addProperty("source", source.name());
             o.addProperty("debugDumps", debugDumps);
             o.addProperty("collectGuiText", collectGuiText);

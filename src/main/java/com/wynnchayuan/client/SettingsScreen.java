@@ -220,12 +220,20 @@ public final class SettingsScreen extends Screen {
         }
 
         // ---- 底部 ----
+        //
+        // 「更新說明」擺在這裡而不是藏進某一個分類：它講的是<b>整個模組</b>，
+        // 不屬於物品、面板或對話任何一類；而有新版時那個提示要從 F6 一打開
+        // 就看得到，不能要人先點對分類。
         int mid = this.width / 2;
+        int left = mid - 148;
+        addRenderableWidget(Button.builder(updateLabel(),
+                b -> this.minecraft.setScreen(new ReleaseNotesScreen(this)))
+                .bounds(left, this.height - 26, 92, 20).build());
         addRenderableWidget(Button.builder(Component.literal("關於／貢獻者"),
                 b -> this.minecraft.setScreen(new CreditsScreen(this)))
-                .bounds(mid - 104, this.height - 26, 100, 20).build());
+                .bounds(left + 96, this.height - 26, 108, 20).build());
         addRenderableWidget(Button.builder(Component.literal("完成"), b -> onClose())
-                .bounds(mid + 4, this.height - 26, 100, 20).build());
+                .bounds(left + 208, this.height - 26, 88, 20).build());
     }
 
     // ------------------------------------------------------------ 建一列
@@ -706,6 +714,18 @@ public final class SettingsScreen extends Screen {
 
     private Component itemNameLabel() {
         return ctrl(onOff(WynnChaYuan.config().translateItemNames()));
+    }
+
+    /**
+     * 更新按鈕的字。
+     *
+     * <p>有新版時加一個亮黃色的點。按鈕上只有四個字的空間，寫不下版本號——
+     * 但「這裡有東西要看」一個點就夠了，版本號點進去就看得到。
+     */
+    private Component updateLabel() {
+        return com.wynnchayuan.Releases.newer() == null
+                ? Component.literal("更新說明")
+                : Component.literal("● 有新版").withStyle(ChatFormatting.YELLOW);
     }
 
     private Component sourceLabel() {
