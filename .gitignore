@@ -29,3 +29,7 @@ __pycache__/
 
 # 一次性的批次腳本，不進版控
 workspace/scratch/
+
+# wrangler 在本機跑出來的快取與模擬狀態。裡面是帳號 id 與 miniflare 的
+# sqlite 檔，換一台機器就沒有意義，也不該進倉庫。
+tools/collector/.wrangler/
