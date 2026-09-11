@@ -473,6 +473,14 @@ tasks.register('runLanguagePickChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLanguagePickChecks' }
 
+tasks.register('runLanguageFallbackChecks', JavaExec) {
+    group = 'verification'
+    description = '簡中沒翻到的地方要看到繁中，不是英文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LanguageFallbackTest'
+}
+tasks.named('check') { dependsOn 'runLanguageFallbackChecks' }
+
 
 tasks.register('runFlowedBlockChecks', JavaExec) {
     group = 'verification'
