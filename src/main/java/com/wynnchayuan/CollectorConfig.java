@@ -143,6 +143,18 @@ public final class CollectorConfig {
     private boolean collect = true;
 
     /**
+     * 收集到的缺口要不要分享回收集站。
+     *
+     * <p><b>預設關閉。</b>這是唯一一個會把字串送到別人機器上的開關，
+     * 所以一定要玩家自己打開——不能靠「反正我們過濾得很乾淨」就默默開著。
+     *
+     * <p>打開之後送出去的只有「沒翻到的英文原文」與它出現在哪一類畫面，
+     * 不含帳號、UUID、座標、世界，也不含公會／隊伍／喊話那些別人打的字。
+     * 詳見 {@code CorpusUpload}。
+     */
+    private boolean shareCaptures = false;
+
+    /**
      * 是否寫出診斷檔。
      *
      * <p><b>預設關閉。</b>那些檔案是拿來回報問題用的——對排查很有用，
@@ -356,6 +368,10 @@ public final class CollectorConfig {
 
     public boolean collect() {
         return collect;
+    }
+
+    public boolean shareCaptures() {
+        return shareCaptures;
     }
 
     public boolean debugDumps() {
@@ -745,6 +761,12 @@ public final class CollectorConfig {
         return collect;
     }
 
+    public boolean toggleShareCaptures() {
+        shareCaptures = !shareCaptures;
+        save();
+        return shareCaptures;
+    }
+
     public boolean toggleDebugDumps() {
         debugDumps = !debugDumps;
         save();
@@ -797,6 +819,9 @@ public final class CollectorConfig {
             }
             if (o.has("collect")) {
                 collect = o.get("collect").getAsBoolean();
+            }
+            if (o.has("shareCaptures")) {
+                shareCaptures = o.get("shareCaptures").getAsBoolean();
             }
             if (o.has("debugDumps")) {
                 debugDumps = o.get("debugDumps").getAsBoolean();
@@ -877,6 +902,7 @@ public final class CollectorConfig {
             o.addProperty("tooltipMode", tooltipMode.name());
             o.addProperty("showOverlays", showOverlays);
             o.addProperty("collect", collect);
+            o.addProperty("shareCaptures", shareCaptures);
             o.addProperty("source", source.name());
             o.addProperty("debugDumps", debugDumps);
             o.addProperty("collectGuiText", collectGuiText);

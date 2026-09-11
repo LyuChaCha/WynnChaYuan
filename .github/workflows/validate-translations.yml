@@ -74,6 +74,11 @@ jobs:
       - name: 合併檔有沒有跟著 quest/ 更新
         run: python tools/quest-bundle.py --check
 
+      # 收集站那一道個資濾網。三道濾網各自獨立（模組端、收集站、進倉庫前），
+      # 所以三邊都要有自己的測試——只要有一道擋得住就不會外流。
+      - name: 收集站的濾網
+        run: node tools/collector/worker.test.mjs
+
       - name: 顯示翻譯進度
         if: always()
         run: python tools/progress.py
