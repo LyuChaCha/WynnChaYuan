@@ -34,7 +34,16 @@ public final class TrackerOverlay {
     private TrackerOverlay() {}
 
     /** 追蹤內容變了就更新；名稱與目標都翻不到時整塊不顯示。 */
-    public static void setCurrent(String name, StyledText task, TranslationStore store) {
+    public static void setCurrent(String name, StyledText task,
+                                  TranslationStore store) {
+        setCurrent(null, name, task, store);
+    }
+
+    /**
+     * @param type Wynntils 說這是哪一種活動；不知道時傳 {@code null}
+     */
+    public static void setCurrent(Object type, String name, StyledText task,
+                                  TranslationStore store) {
         List<Component> lines = new ArrayList<>();
         boolean any = false;
 
@@ -51,7 +60,7 @@ public final class TrackerOverlay {
             if (translated != null) {
                 any = true;
             }
-            lines.add(Component.literal(HEADING).append(shown));
+            lines.add(Component.literal(heading(type)).append(shown));
         }
         if (task != null) {
             Component translated = LineTranslator.translate(task, store);
@@ -108,36 +117,57 @@ public final class TrackerOverlay {
         }
         Minecraft mc = Minecraft.getInstance();
         int lineHeight = mc.font.lineHeight + 1;
-        // 第一行是任務名，其餘是目標。原文那一欄也是這樣分主次的，
-        // 全部畫成同一個大小的話，一眼看不出「現在在做哪個任務」。
-        int nameHeight = Math.round(lineHeight * NAME_SCALE);
-        int boxH = nameHeight + (lines.size() - 1) * lineHeight + PADDING * 2;
-        int boxW = Math.round(mc.font.width(lines.get(0)) * NAME_SCALE);
-        for (int i = 1; i < lines.size(); i++) {
-            boxW = Math.max(boxW, mc.font.width(lines.get(i)));
-        }
-        boxW += PADDING * 2;
-
         int x = LEFT_MARGIN;
         int y = TOP_OFFSET;
         if (WynnChaYuan.config().hasOverlayPos(CollectorConfig.Overlay.TRACKER)) {
             x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.TRACKER);
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.TRACKER);
         }
+        // 第一行是放大的抬頭，量寬度要照放大後的算，所以換行寬度也要先縮回去。
+        int wrapAt = wrapWidth(x, graphics.guiWidth());
+        List<net.minecraft.util.FormattedCharSequence> wrapped =
+                new ArrayList<>();
+        int firstRows = 0;
+        for (int i = 0; i < lines.size(); i++) {
+            int room = i == 0 ? Math.round(wrapAt / NAME_SCALE) : wrapAt;
+            List<net.minecraft.util.FormattedCharSequence> parts =
+                    mc.font.split(lines.get(i), room);
+            if (parts.isEmpty()) {
+                parts = List.of(lines.get(i).getVisualOrderText());
+            }
+            if (i == 0) {
+                firstRows = parts.size();
+            }
+            wrapped.addAll(parts);
+        }
+        // 第一行是任務名，其餘是目標。原文那一欄也是這樣分主次的，
+        // 全部畫成同一個大小的話，一眼看不出「現在在做哪個任務」。
+        int nameHeight = Math.round(lineHeight * NAME_SCALE);
+        int boxH = firstRows * nameHeight
+                + (wrapped.size() - firstRows) * lineHeight + PADDING * 2;
+        int boxW = 0;
+        for (int i = 0; i < wrapped.size(); i++) {
+            int w = mc.font.width(wrapped.get(i));
+            boxW = Math.max(boxW, i < firstRows ? Math.round(w * NAME_SCALE) : w);
+        }
+        boxW += PADDING * 2;
 
         Boxes.draw(graphics, x, y, boxW, boxH);
 
         int textY = y + PADDING;
-        graphics.pose().pushMatrix();
-        graphics.pose().scale(NAME_SCALE, NAME_SCALE);
-        graphics.drawString(mc.font, lines.get(0),
-                Math.round((x + PADDING) / NAME_SCALE),
-                Math.round(textY / NAME_SCALE),
-                NAME_COLOR);
-        graphics.pose().popMatrix();
-        textY += nameHeight;
-        for (int i = 1; i < lines.size(); i++) {
-            graphics.drawString(mc.font, lines.get(i), x + PADDING, textY, Colors.TEXT);
+        for (int i = 0; i < firstRows; i++) {
+            graphics.pose().pushMatrix();
+            graphics.pose().scale(NAME_SCALE, NAME_SCALE);
+            graphics.drawString(mc.font, wrapped.get(i),
+                    Math.round((x + PADDING) / NAME_SCALE),
+                    Math.round(textY / NAME_SCALE),
+                    NAME_COLOR);
+            graphics.pose().popMatrix();
+            textY += nameHeight;
+        }
+        for (int i = firstRows; i < wrapped.size(); i++) {
+            graphics.drawString(mc.font, wrapped.get(i), x + PADDING, textY,
+                    Colors.TEXT);
             textY += lineHeight;
         }
     }
@@ -153,6 +183,44 @@ public final class TrackerOverlay {
      */
     private static final int NAME_COLOR = 0xFF40E0C0;
 
-    /** 任務名前面的抬頭。 */
-    private static final String HEADING = "進行中的任務 - ";
+    /**
+     * 任務名前面的抬頭。
+     *
+     * <h2>為什麼不能寫死</h2>
+     * 追蹤欄不只追任務——世界事件、洞穴、地城、Raid、祕密發現都走同一個欄位。
+     * 先前抬頭寫死成「進行中的任務」，於是世界事件也被說成任務，
+     * 而原文那一欄明明白白寫著 {@code World Event}。一眼就對不起來。
+     *
+     * <p>Wynntils 的事件本來就帶著類型（{@code ActivityType}），拿它就好，
+     * 不必猜。認不出來的類型退回通用的「進行中」。
+     */
+    private static String heading(Object type) {
+        String key = type == null ? null : String.valueOf(type);
+        String suffix = key == null ? "default"
+                : key.toLowerCase(java.util.Locale.ROOT);
+        String text = com.wynnchayuan.client.T.s("tracker.heading." + suffix);
+        if (text.startsWith("wynnchayuan.")) {
+            text = com.wynnchayuan.client.T.s("tracker.heading.default");
+        }
+        return text + " - ";
+    }
+
+    /**
+     * 一行最寬畫到哪裡。
+     *
+     * <h2>踩到什麼</h2>
+     * 世界事件的說明是一整句話（「Though these pirates are long past their
+     * prime…」）。原文那一欄由 Wynntils 自己換行，我們這一塊沒有——
+     * 於是整句往右畫出去，直接衝出螢幕外。實機截圖裡右半句就這樣不見了。
+     *
+     * <p>所以量一次：從框的左緣到螢幕右緣，再留一點邊。上限是螢幕的一半，
+     * 不然一句長話會橫跨整個畫面，比截掉還難讀。
+     */
+    private static int wrapWidth(int x, int screenWidth) {
+        int room = screenWidth - x - LEFT_MARGIN - PADDING * 2;
+        return Math.max(MIN_WRAP, Math.min(room, screenWidth / 2));
+    }
+
+    /** 再窄就一行擠不下幾個字了，寧可讓它超出去。 */
+    private static final int MIN_WRAP = 80;
 }

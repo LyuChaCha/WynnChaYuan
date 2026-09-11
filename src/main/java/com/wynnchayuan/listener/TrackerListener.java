@@ -75,7 +75,7 @@ public final class TrackerListener {
             TrackerOverlay.clear();
             return;
         }
-        TrackerOverlay.setCurrent(name, task, WynnChaYuan.translations());
+        TrackerOverlay.setCurrent(event.getType(), name, task, WynnChaYuan.translations());
     }
 
     /**
