@@ -140,8 +140,8 @@ public final class SettingsScreen extends Screen {
     }
 
     /** 分類的名字。順序就是左邊那一排的順序。 */
-    private static final String[] TABS = {
-        "物品", "面板", "對話", "世界與聊天", "資料",
+    private static final String[] TAB_KEYS = {
+        "tab.items", "tab.panel", "tab.dialogue", "tab.world", "tab.data",
     };
 
     /**
@@ -150,13 +150,14 @@ public final class SettingsScreen extends Screen {
      * <p>分類名稱只有兩三個字，光看「面板」不知道裡面有什麼。多這一行就
      * 不用一個一個滑過去才知道自己找對地方沒有。
      */
-    private static final String[] ABOUT = {
-        "滑鼠指著裝備、素材、書卷時跳出來的說明框",
-        "譯文面板畫在哪、長什麼樣子",
-        "NPC 講話的框、選項，以及翻譯用的小框",
-        "名牌、漂浮字、聊天視窗與畫面中央的大字",
-        "譯文從哪裡來，以及要不要幫忙收集沒翻到的字",
-    };
+    private static String tabName(int which) {
+        return T.s(TAB_KEYS[which]);
+    }
+
+    /** 每一類在管什麼，印在清單上面那一行。 */
+    private static String tabAbout(int which) {
+        return T.s(TAB_KEYS[which] + ".about");
+    }
 
     // ------------------------------------------------------------ 佈局
 
@@ -205,12 +206,12 @@ public final class SettingsScreen extends Screen {
         }
 
         // ---- 左邊的分類 ----
-        for (int i = 0; i < TABS.length; i++) {
+        for (int i = 0; i < TAB_KEYS.length; i++) {
             int which = i;
             addRenderableWidget(Button.builder(
                     // 選到的那一類靠<b>左邊那條主題色</b>表示，不加「▸」——
                     // 加了字會被推右，跟其他幾個對不齊，一眼就看得出來歪。
-                    Component.literal(Cards.fit(this.font, TABS[i], TAB_W - 8)),
+                    Component.literal(Cards.fit(this.font, tabName(i), TAB_W - 8)),
                     b -> {
                         tab = which;
                         scroll = 0;
@@ -229,10 +230,10 @@ public final class SettingsScreen extends Screen {
         addRenderableWidget(Button.builder(updateLabel(),
                 b -> this.minecraft.setScreen(new ReleaseNotesScreen(this)))
                 .bounds(left, this.height - 26, 92, 20).build());
-        addRenderableWidget(Button.builder(Component.literal("關於／貢獻者"),
+        addRenderableWidget(Button.builder(T.c("button.credits"),
                 b -> this.minecraft.setScreen(new CreditsScreen(this)))
                 .bounds(left + 96, this.height - 26, 108, 20).build());
-        addRenderableWidget(Button.builder(Component.literal("完成"), b -> onClose())
+        addRenderableWidget(Button.builder(T.c("button.done"), b -> onClose())
                 .bounds(left + 208, this.height - 26, 88, 20).build());
     }
 
@@ -245,6 +246,17 @@ public final class SettingsScreen extends Screen {
     }
 
     /** 一顆佔滿控制項那一半的按鈕（切換、循環都用這個）。 */
+    /**
+     * 大部分的列，名稱與說明都照同一個鍵取：{@code key} 與 {@code key + ".hint"}。
+     *
+     * <p>兩個字串各寫一次的話，改名時一定有一邊會被忘掉——而忘掉的那一邊
+     * 不會編譯失敗，畫面上直接印出鍵名。
+     */
+    private void cycle(String key, Supplier<Component> label,
+                       Consumer<Button> onPress) {
+        cycle(T.s(key), T.s(key + ".hint"), label, onPress);
+    }
+
     private void cycle(String name, String hint,
                        Supplier<Component> label, Consumer<Button> onPress) {
         add(name, hint).widgets.add(Button.builder(label.get(), onPress::accept)
@@ -252,6 +264,11 @@ public final class SettingsScreen extends Screen {
     }
 
     /** 按鈕 + 右邊一顆小的（進階…）。 */
+    private void cycleWith(String key, Supplier<Component> label,
+                           Consumer<Button> onPress, String extra, Runnable action) {
+        cycleWith(T.s(key), T.s(key + ".hint"), label, onPress, extra, action);
+    }
+
     private void cycleWith(String name, String hint, Supplier<Component> label,
                            Consumer<Button> onPress, String extra, Runnable action) {
         Row row = add(name, hint);
@@ -262,20 +279,30 @@ public final class SettingsScreen extends Screen {
     }
 
     /** 輸入框 + 套用。 */
-    private EditBox field(String name, String hint, String value, int max, Runnable apply) {
+    private EditBox field(String key, String hint, String value, int max,
+                          Runnable apply) {
+        return fieldNamed(T.s(key), hint, value, max, apply);
+    }
+
+    private EditBox fieldNamed(String name, String hint, String value, int max,
+                               Runnable apply) {
         Row row = add(name, hint);
         EditBox box = new EditBox(this.font, 0, 0, ctrlW() - 46, 20,
                 Component.literal(name));
         box.setValue(value);
         box.setMaxLength(max);
         row.widgets.add(box);
-        row.widgets.add(Button.builder(Component.literal("套用"), b -> apply.run())
+        row.widgets.add(Button.builder(T.c("button.apply"), b -> apply.run())
                 .bounds(ctrlW() - 42, 0, 42, 20).build());
         return box;
     }
 
     /** 只有一顆按鈕的一列（開子畫面、執行動作）。 */
-    private Button action(String name, String hint, Component label, Runnable go) {
+    private Button action(String key, String hint, Component label, Runnable go) {
+        return actionNamed(T.s(key), hint, label, go);
+    }
+
+    private Button actionNamed(String name, String hint, Component label, Runnable go) {
         Button button = Button.builder(label, b -> go.run())
                 .bounds(0, 0, ctrlW(), 20).build();
         add(name, hint).widgets.add(button);
@@ -302,26 +329,25 @@ public final class SettingsScreen extends Screen {
     }
 
     private void items() {
-        cycle("物品翻譯", "滑鼠指著物品時的說明；面板保留原文，取代則畫面較乾淨",
+        cycle("items.tooltip",
                 this::tooltipModeLabel, b -> {
                     WynnChaYuan.config().cycleTooltipMode();
                     b.setMessage(tooltipModeLabel());
                 });
-        cycle("翻譯物品名稱", "裝備名稱多是專有名詞，保留原文才對得上 wiki 與交易市場",
+        cycle("items.names",
                 this::itemNameLabel, b -> {
                     boolean on = WynnChaYuan.config().toggleItemNames();
                     WynnChaYuan.translations().setTranslateNames(on);
                     b.setMessage(itemNameLabel());
                 });
-        cycle("市集搜尋轉英文", "在市集搜尋打中文，送出前自動換成英文的原文名",
+        cycle("items.market",
                 this::marketLabel, b -> {
                     WynnChaYuan.config().toggleMarketSearch();
                     b.setMessage(marketLabel());
                 });
         String clash = com.wynnchayuan.render.PanelShot.conflict();
-        cycle("譯文截圖",
-                clash == null ? "把譯文面板拍成圖檔；按鍵在原版設定的 WynnChaYuan 區改綁"
-                              : "截圖鍵和「" + clash + "」撞在一起，請改綁",
+        cycle("items.shot",
+                clash == null ? T.s("items.shot.hint") : T.s("items.shot.clash", clash),
                 this::shotLabel, b -> {
                     WynnChaYuan.config().cycleShotMode();
                     b.setMessage(shotLabel());
@@ -329,40 +355,39 @@ public final class SettingsScreen extends Screen {
     }
 
     private void panel() {
-        cycle("面板定位", "固定位置時面板不跟著滑鼠跑",
+        cycle("panel.anchor",
                 this::anchorLabel, b -> {
                     WynnChaYuan.config().togglePanelAnchor();
                     b.setMessage(anchorLabel());
                 });
-        action("面板位置", "拖曳示意方框決定固定位置",
-                Component.literal("調整…"),
+        action("panel.place", T.s("panel.place.hint"), T.c("button.adjust"),
                 () -> this.minecraft.setScreen(new PositionScreen(this)));
-        cycle("跟隨時放在", "自動會依畫面空間左右讓位",
+        cycle("panel.side",
                 this::sideLabel, b -> {
                     WynnChaYuan.config().cyclePanelSide();
                     b.setMessage(sideLabel());
                 });
-        gapBox = field("面板間距", "面板與原本 tooltip 之間留多寬（像素，0–200）",
+        gapBox = field("panel.gap", T.s("panel.gap.hint"),
                 String.valueOf(WynnChaYuan.config().panelGap()), 3, this::applyGap);
-        colorBox = field("框線顏色", "16 進位色碼，例如 #6FA8D8",
+        colorBox = field("panel.colour", T.s("panel.colour.hint"),
                 WynnChaYuan.config().accentColor(), 7, this::applyColor);
     }
 
     private void dialogue() {
-        cycle("任務對話", "NPC 講話那個框",
+        cycle("dialogue.mode",
                 this::dialogueModeLabel, b -> {
                     WynnChaYuan.config().cycleDialogueMode();
                     b.setMessage(dialogueModeLabel());
                 });
         // 選項是<b>另一條訊息、另一個框</b>，所以自己一列。見 CollectorConfig#choiceMode
-        cycle("對話選項", "選項是另一個框，可以跟上面分開設",
+        cycle("dialogue.choices",
                 this::choiceModeLabel, b -> {
                     WynnChaYuan.config().cycleChoiceMode();
                     b.setMessage(choiceModeLabel());
                 });
-        dialogueHoldBox = field("對話停留", "譯文小框停留幾秒（0 = 持續顯示）",
+        dialogueHoldBox = field("dialogue.hold", T.s("dialogue.hold.hint"),
                 holdSeconds(), 3, this::applySeconds);
-        cycle("對話／追蹤小框", "NPC 對話與任務追蹤的翻譯小框",
+        cycle("dialogue.overlays",
                 this::overlayLabel, b -> {
                     WynnChaYuan.config().toggleOverlays();
                     b.setMessage(overlayLabel());
@@ -375,22 +400,22 @@ public final class SettingsScreen extends Screen {
         // 它本來只在子畫面裡，而子畫面又叫「NPC 名牌設定」——
         // 想把畫面中央那些大字換成中文的人，根本不會點進去。
         // 剩下的參數（停留秒數、偵測距離與夾角）才留在子畫面。
-        cycleWith("名牌與漂浮字", "工作站、「空手右鍵」那些字也算；進階可調距離與夾角",
+        cycleWith("world.nametag",
                 this::nametagLabel, b -> {
                     WynnChaYuan.config().cycleNametagMode();
                     b.setMessage(nametagLabel());
-                }, "進階…", () -> this.minecraft.setScreen(new NametagScreen(this)));
-        cycle("聊天訊息", "伺服器發的訊息；玩家發言不會被翻",
+                }, T.s("button.advanced"), () -> this.minecraft.setScreen(new NametagScreen(this)));
+        cycle("world.chat",
                 this::chatModeLabel, b -> {
                     WynnChaYuan.config().cycleChatMode();
                     b.setMessage(chatModeLabel());
                 });
-        cycle("畫面中央大字", "進入區域、任務完成那些大字",
+        cycle("world.titles",
                 this::titleLabel, b -> {
                     WynnChaYuan.config().toggleTitles();
                     b.setMessage(titleLabel());
                 });
-        cycle("複製聊天", "留下最近的訊息，方便回報翻譯問題",
+        cycle("world.chatcopy",
                 this::chatCopyLabel, b -> {
                     WynnChaYuan.config().toggleChatCopy();
                     b.setMessage(chatCopyLabel());
@@ -399,10 +424,10 @@ public final class SettingsScreen extends Screen {
 
     private void data() {
         // 語言擺在「譯文來源」前面：先決定要哪一種語言，再談那一種從哪裡來。
-        cycle("譯文語言", "校稿時可以只換譯文，遊戲本身的語言不用動",
+        cycle("data.language",
                 this::languageLabel, b -> {
                     String next = nextLanguage();
-                    b.setMessage(Component.literal("切換中…"));
+                    b.setMessage(T.c("data.language.switching"));
                     fetching = true;
                     WynnChaYuan.switchLanguage(next, result -> {
                         fetching = false;
@@ -411,42 +436,39 @@ public final class SettingsScreen extends Screen {
                                 .withStyle(ChatFormatting.GREEN));
                     });
                 });
-        cycle("譯文來源", "GitHub 會同步大家的最新翻譯",
+        cycle("data.source",
                 this::sourceLabel, b -> {
                     WynnChaYuan.config().toggleSource();
                     b.setMessage(sourceLabel());
                     reloadButton.setMessage(reloadLabel());   // 按鈕的意思跟著來源變
                 });
-        reloadButton = action("重新載入",
-                WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
-                        ? "譯者剛改完 GitHub 的話按這個" : "改完 json 按這個就生效",
+        reloadButton = action("data.reload",
+                T.s(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
+                        ? "data.reload.github" : "data.reload.local"),
                 reloadLabel(), this::reload);
-        cycle("收集未翻譯字串", "把沒翻到的句子記進 captured.json",
+        cycle("data.collect",
                 this::collectLabel, b -> {
                     WynnChaYuan.config().toggleCollect();
                     b.setMessage(collectLabel());
                 });
-        cycle("收集介面文字", "公會、任務書等 GUI 的文字（預設關）",
+        cycle("data.collectgui",
                 this::guiCollectLabel, b -> {
                     WynnChaYuan.config().toggleCollectGuiText();
                     b.setMessage(guiCollectLabel());
                 });
-        cycle("分享給翻譯團隊", "把沒翻到的句子送回收集站，讓大家都看得到那段翻譯",
+        cycle("data.share",
                 this::shareLabel, b -> {
                     boolean on = WynnChaYuan.config().toggleShareCaptures();
                     b.setMessage(shareLabel());
-                    say(Component.literal(on
-                            ? "✔ 已開啟——只送沒翻到的英文原文，不送帳號、座標，也不送公會／隊伍／喊話"
-                            : "✔ 已關閉——不會再送出任何東西")
+                    say(T.c(on ? "data.share.on" : "data.share.off")
                             .withStyle(on ? ChatFormatting.GREEN : ChatFormatting.GRAY));
                 });
-        cycle("寫出診斷檔", "回報問題時才需要，重進遊戲後生效",
+        cycle("data.debug",
                 this::debugLabel, b -> {
                     WynnChaYuan.config().toggleDebugDumps();
                     b.setMessage(debugLabel());
-                    say(Component.literal(WynnChaYuan.config().debugDumps()
-                            ? "✔ 診斷檔已開啟——重進遊戲後才會開始寫"
-                            : "✔ 診斷檔已關閉——重進遊戲後生效")
+                    say(T.c(WynnChaYuan.config().debugDumps()
+                            ? "data.debug.on" : "data.debug.off")
                             .withStyle(ChatFormatting.GREEN));
                 });
     }
@@ -471,7 +493,7 @@ public final class SettingsScreen extends Screen {
         super.render(g, mouseX, mouseY, delta);
 
         Cards.header(g, this.font, this.width, "WynnChaYuan",
-                "Wynncraft 繁體中文翻譯 · v" + WynnChaYuan.version());
+                T.s("header.subtitle", WynnChaYuan.version()));
 
         // 選到的那一類，左邊一條主題色。貼著按鈕畫，不要壓在卡片框線上。
         g.fill(x0 - PAD + 2, box.rowY(tab), x0 - 1, box.rowY(tab) + 20,
@@ -479,11 +501,11 @@ public final class SettingsScreen extends Screen {
 
         // 這一頁在管什麼。標題列與卡片之間那一行。
         int accent = WynnChaYuan.config().accentARGB();
-        g.drawString(this.font, Component.literal(TABS[tab]),
+        g.drawString(this.font, Component.literal(tabName(tab)),
                 box.tabsCardX() + 2, SettingsLayout.LEAD_Y, accent);
-        int lead = box.tabsCardX() + 2 + this.font.width(TABS[tab]) + 8;
+        int lead = box.tabsCardX() + 2 + this.font.width(tabName(tab)) + 8;
         g.drawString(this.font,
-                Component.literal(Cards.fit(this.font, ABOUT[tab],
+                Component.literal(Cards.fit(this.font, tabAbout(tab),
                         box.tabsCardX() + box.footerW() - lead - 4)),
                 lead, SettingsLayout.LEAD_Y, Colors.FAINT);
 
@@ -520,9 +542,9 @@ public final class SettingsScreen extends Screen {
         // 還有更多列的時候講一聲，不然使用者不知道可以滾
         if (rows.size() > perPage()) {
             g.drawString(this.font,
-                    Component.literal("滾輪捲動 · " + (scroll + 1) + "–"
-                            + Math.min(rows.size(), scroll + perPage())
-                            + " / " + rows.size()),
+                    T.c("footer.scroll", scroll + 1,
+                            Math.min(rows.size(), scroll + perPage()),
+                            rows.size()),
                     px, TOP + listH + 2, Colors.HINT);
         }
 
@@ -548,8 +570,7 @@ public final class SettingsScreen extends Screen {
         } else {
             // 沒指著任何一列時順便教一次——不然沒人知道說明藏在滑鼠底下。
             int size = WynnChaYuan.translations().size();
-            line = Component.literal("滑鼠移到設定上會顯示說明 · "
-                            + size + " 條譯文已載入")
+            line = T.c("footer.hint", size)
                     .withStyle(size > 0 ? ChatFormatting.DARK_GRAY : ChatFormatting.RED);
         }
         // GitHub 回來的訊息長度事先不知道（「連線失敗：UnknownHostException…」），
@@ -602,7 +623,7 @@ public final class SettingsScreen extends Screen {
     }
 
     private Component state(Component text, String value) {
-        if ("關閉".equals(value)) {
+        if (T.s("mode.off").equals(value)) {
             return text.copy().withStyle(ChatFormatting.GRAY);
         }
         return text.copy().withStyle(
@@ -645,49 +666,50 @@ public final class SettingsScreen extends Screen {
 
     private Component tooltipModeLabel() {
         return ctrl(switch (WynnChaYuan.config().tooltipMode()) {
-            case PANEL -> "另開面板";
-            case REPLACE -> "就地取代";
-            case OFF -> "關閉";
+            case PANEL -> T.s("mode.panel");
+            case REPLACE -> T.s("mode.replace");
+            case OFF -> T.s("mode.off");
         });
     }
 
     private Component dialogueModeLabel() {
         return ctrl(switch (WynnChaYuan.config().dialogueMode()) {
-            case PANEL -> "另開小框";
-            case REPLACE -> "就地取代";
-            case OFF -> "關閉";
+            case PANEL -> T.s("mode.box");
+            case REPLACE -> T.s("mode.replace");
+            case OFF -> T.s("mode.off");
         });
     }
 
     /** 對話<b>選項</b>那幾列，跟上面的內文分開管。 */
     private Component choiceModeLabel() {
         return ctrl(switch (WynnChaYuan.config().choiceMode()) {
-            case PANEL -> "另開小框";
-            case REPLACE -> "就地取代";
-            case OFF -> "關閉";
+            case PANEL -> T.s("mode.box");
+            case REPLACE -> T.s("mode.replace");
+            case OFF -> T.s("mode.off");
         });
     }
 
     /** 聊天視窗裡的伺服器訊息。玩家發言不在範圍內，見 {@code ChatListener}。 */
     private Component chatModeLabel() {
         return ctrl(switch (WynnChaYuan.config().chatMode()) {
-            case OFF -> "關閉";
-            case REPLACE -> "就地取代";
-            case BOTH -> "原文加譯文";
+            case OFF -> T.s("mode.off");
+            case REPLACE -> T.s("mode.replace");
+            case BOTH -> T.s("mode.both");
         });
     }
 
     /** 螢幕正中央那行大字。沒有面板選項——那裡沒空間，見 {@code TitleListener}。 */
     private Component titleLabel() {
-        return ctrl(WynnChaYuan.config().translateTitles() ? "就地取代" : "關閉");
+        return ctrl(T.s(WynnChaYuan.config().translateTitles()
+                ? "mode.replace" : "mode.off"));
     }
 
     /** 名牌與漂浮字。跟 {@code NametagScreen} 那一個是同一個設定。 */
     private Component nametagLabel() {
         return ctrlNarrow(switch (WynnChaYuan.config().nametagMode()) {
-            case OFF -> "關閉";
-            case LOOK_AT -> "注視時小框";
-            case REPLACE -> "就地取代";
+            case OFF -> T.s("mode.off");
+            case LOOK_AT -> T.s("mode.lookat");
+            case REPLACE -> T.s("mode.replace");
         });
     }
 
@@ -697,9 +719,9 @@ public final class SettingsScreen extends Screen {
 
     private Component shotLabel() {
         return ctrl(switch (WynnChaYuan.config().shotMode()) {
-            case OFF -> "關閉";
-            case KEY -> "按 " + com.wynnchayuan.render.PanelShot.keyName() + " 拍";
-            case AUTO -> "自動";
+            case OFF -> T.s("mode.off");
+            case KEY -> T.s("mode.key", com.wynnchayuan.render.PanelShot.keyName());
+            case AUTO -> T.s("mode.auto");
         });
     }
 
@@ -709,14 +731,14 @@ public final class SettingsScreen extends Screen {
 
     private Component anchorLabel() {
         boolean fixed = WynnChaYuan.config().panelAnchor() == CollectorConfig.PanelAnchor.FIXED;
-        return pick(fixed ? "固定位置" : "跟隨滑鼠");
+        return pick(T.s(fixed ? "mode.pinned" : "mode.follow"));
     }
 
     private Component sideLabel() {
         return pick(switch (WynnChaYuan.config().panelSide()) {
-            case AUTO -> "自動";
-            case RIGHT -> "固定右側";
-            case LEFT -> "固定左側";
+            case AUTO -> T.s("mode.auto");
+            case RIGHT -> T.s("mode.right");
+            case LEFT -> T.s("mode.left");
         });
     }
 
@@ -737,8 +759,8 @@ public final class SettingsScreen extends Screen {
      */
     private Component updateLabel() {
         return com.wynnchayuan.Releases.newer() == null
-                ? Component.literal("更新說明")
-                : Component.literal("● 有新版").withStyle(ChatFormatting.YELLOW);
+                ? T.c("button.updates")
+                : T.c("button.updates.new").withStyle(ChatFormatting.YELLOW);
     }
 
     /**
@@ -767,12 +789,12 @@ public final class SettingsScreen extends Screen {
         String chosen = WynnChaYuan.config().language();
         String inUse = com.wynnchayuan.translate.Languages.nativeName(
                 WynnChaYuan.language());
-        return ctrl(chosen.isEmpty() ? "跟著遊戲（" + inUse + "）" : inUse);
+        return ctrl(chosen.isEmpty() ? T.s("data.language.auto", inUse) : inUse);
     }
 
     private Component sourceLabel() {
         boolean github = WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB;
-        return pick(github ? "GitHub（統一）" : "本機（測試）");
+        return pick(T.s(github ? "data.source.github" : "data.source.local"));
     }
 
     private Component collectLabel() {
@@ -805,12 +827,12 @@ public final class SettingsScreen extends Screen {
     }
 
     private Component reloadLabel() {
-        return pick(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
-                        ? "從 GitHub 抓" : "重讀本機檔");
+        return pick(T.s(WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB
+                ? "data.reload.fetch" : "data.reload.reread"));
     }
 
     private static String onOff(boolean on) {
-        return on ? "開啟" : "關閉";
+        return T.s(on ? "mode.on" : "mode.off");
     }
 
     // ------------------------------------------------------------ 動作
@@ -824,9 +846,9 @@ public final class SettingsScreen extends Screen {
     private void applySeconds() {
         if (WynnChaYuan.config().setDialogueHoldSeconds(dialogueHoldBox.getValue())) {
             dialogueHoldBox.setValue(holdSeconds());
-            say(Component.literal("✔ 已設定停留時間").withStyle(ChatFormatting.GREEN));
+            say(T.c("status.hold.ok").withStyle(ChatFormatting.GREEN));
         } else {
-            say(Component.literal("✘ 請輸入秒數（整數，0 = 持續顯示）")
+            say(T.c("status.hold.bad")
                     .withStyle(ChatFormatting.RED));
         }
     }
@@ -835,9 +857,9 @@ public final class SettingsScreen extends Screen {
         if (WynnChaYuan.config().setPanelGap(gapBox.getValue())) {
             // 超出範圍會被夾住，把實際生效的值寫回去，免得使用者以為沒生效
             gapBox.setValue(String.valueOf(WynnChaYuan.config().panelGap()));
-            say(Component.literal("✔ 已設定間距").withStyle(ChatFormatting.GREEN));
+            say(T.c("status.gap.ok").withStyle(ChatFormatting.GREEN));
         } else {
-            say(Component.literal("✘ 請輸入整數像素（0–200）")
+            say(T.c("status.gap.bad")
                     .withStyle(ChatFormatting.RED));
         }
     }
@@ -846,10 +868,10 @@ public final class SettingsScreen extends Screen {
     private void applyColor() {
         if (WynnChaYuan.config().setAccentColor(colorBox.getValue())) {
             colorBox.setValue(WynnChaYuan.config().accentColor());
-            say(Component.literal("✔ 已套用顏色").withStyle(ChatFormatting.GREEN));
+            say(T.c("status.colour.ok").withStyle(ChatFormatting.GREEN));
         } else {
             colorBox.setValue(WynnChaYuan.config().accentColor());
-            say(Component.literal("✘ 色碼格式要像 #6FA8D8").withStyle(ChatFormatting.RED));
+            say(T.c("status.colour.bad").withStyle(ChatFormatting.RED));
         }
     }
 
@@ -862,7 +884,7 @@ public final class SettingsScreen extends Screen {
      */
     private void reload() {
         if (WynnChaYuan.config().source() == CollectorConfig.Source.GITHUB) {
-            say(Component.literal("… 正在從 GitHub 抓取").withStyle(ChatFormatting.GRAY));
+            say(T.c("status.fetching").withStyle(ChatFormatting.GRAY));
             fetching = true;
             reloadButton.active = false;
             WynnChaYuan.resyncTranslations(result -> {

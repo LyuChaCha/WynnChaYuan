@@ -281,14 +281,12 @@ public final class CorpusUpload {
             return;
         }
         writeSent();                    // 把 greeted 記下來
-        client.player.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                "[WynnChaYuan] 你玩到的、還沒翻到的句子會分享回翻譯團隊，"
-                + "讓所有人都看得到那段翻譯。")
-                .withStyle(net.minecraft.ChatFormatting.AQUA), false);
-        client.player.displayClientMessage(net.minecraft.network.chat.Component.literal(
-                "  只有遊戲自己的英文字。不含你的帳號、座標，"
-                + "也不含公會／隊伍／喊話。F6 →「分享給翻譯團隊」可以關掉。")
-                .withStyle(net.minecraft.ChatFormatting.GRAY), false);
+        client.player.displayClientMessage(
+                com.wynnchayuan.client.T.c("chat.share.line1")
+                        .withStyle(net.minecraft.ChatFormatting.AQUA), false);
+        client.player.displayClientMessage(
+                com.wynnchayuan.client.T.c("chat.share.line2")
+                        .withStyle(net.minecraft.ChatFormatting.GRAY), false);
     }
 
     /** 開場白講過了沒。見 {@link #greetOnce}。 */
