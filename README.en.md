@@ -11,7 +11,7 @@ left untouched.
 繁體中文說明請見 [README.md](README.md)。
 
 > [!IMPORTANT]
-> **This is a beta.** Features and translations are still being worked on. If you
+> **This is a beta (0.1.0).** Features and translations are still being worked on. If you
 > run into anything, find **LyuChaCha** on Discord — all reports are welcome.
 >
 > **The translations are mostly AI-generated; only some have been proofread by a
@@ -28,13 +28,6 @@ resource-pack glyphs and invisible alignment characters, so a naive replacement
 breaks the display.
 
 So the **default** is: keep the original, show the translation beside it.
-
-| Content | How it is shown |
-|---|---|
-| Item tooltips | A separate translation panel next to the tooltip |
-| NPC nameplates, floating text | A small box under the crosshair while you look at them |
-| Quest dialogue | A small box at the bottom of the screen |
-| Quest tracker | A small box on the left |
 
 If you don't need the English, **F6 → Item translation** can be switched to
 **replace in place**, writing the translation into the tooltip itself.
@@ -54,11 +47,41 @@ box, keeping its frame, nameplate and portrait — or off.
 | Dialogue choices | The same three modes as the dialogue, set separately |
 | NPC nameplates, floating text | Off / a box while you look at one / replaced in place (switchable). Crafting stations and the "Right-Click with an Empty Hand" prompts count too |
 | Quest tracker | A translated box on the left |
-| Ability tree | Every node, description and archetype |
+| Ability tree | Every node, description and archetype, all five classes |
+| Major IDs | Name and full description |
+| Dungeons and raids | Aspects, gambits, the loot panel |
+| Lootruns | Missions, boons, beacons, the end-of-run panel |
+| Discoveries and secret discoveries | Names and descriptions |
 | System messages | Quest completions, reward lists, area transitions — the chat ones |
 | Title text | The big text in the middle of the screen |
-| Copy chat | Lists recent chat messages; click one to copy (key unbound by default) |
-| Screenshots | **F9** captures the translation panel — clipboard or file (rebindable) |
+
+### Beyond translating
+
+| Feature | What it does |
+|---|---|
+| **Market search in your language** | Type the translated name in the trade market and it is turned back into the English one before the search is sent |
+| **Translations update themselves** | Translations are not baked into the jar — once a change is merged everyone gets it on their next launch, **no new download** |
+| **Corpus sharing** | Lines the mod could not translate are sent back to the translation team so they can be translated for everyone (can be turned off) |
+| **Copy chat** | Lists recent chat messages; click one to copy (key unbound by default) |
+| **Screenshots** | **F9** captures the translation panel — clipboard or file (rebindable) |
+| **Contributor tags** | People who have translated get an extra line above their nameplate, visible only to others running this mod (can be turned off) |
+
+### Settings (F6)
+
+Five tabs; hover an entry for an explanation.
+
+| Tab | What's in it |
+|---|---|
+| **Items** | Tooltip mode, whether to translate gear names, market search, screenshots |
+| **Panel** | Follow the mouse or pin it, which side, gap, border colour |
+| **Dialogue** | Quest dialogue, dialogue choices, hold time, the dialogue/tracker boxes |
+| **World & chat** | Nameplates and floating text (with range and aim angle), chat, title text, copy chat |
+| **Data** | Translation source, reload, collect untranslated strings, collect GUI text, share with the translation team, debug dumps |
+
+All four boxes can be **dragged into position**, and are shown together while you
+arrange them so you can tell whether they overlap.
+
+**Client-side only.** The server does not need it and cannot tell you are using it.
 
 ## Install
 
@@ -78,27 +101,79 @@ A language with no translations at all is **not shipped in the jar** and does no
 appear in the game's language list; it joins automatically once it has its first
 line.
 
-See the [README](README.md) for the current progress table, and
-[docs/PROGRESS.md](docs/PROGRESS.md) for **which files each language still
+See [docs/PROGRESS.md](docs/PROGRESS.md) for **which files each language still
 needs**.
+
+## Progress
+
+### How much of the collected corpus is translated
+
+<!-- 進度:開始 -->
+更新於 2026-09-11。
+
+| 語言 | 進度 | 已翻 / 總數 |
+|---|---|---:|
+| `zh_tw` 繁體中文 | ██████████ 98.9% | 29,119 / 29,447 |
+| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
+| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
+| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
+| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
+| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
+| `zh_cn` 简体中文 | ░░░░░░░░░░ 0.0% | 0 / 26,830 |
+
+每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
+<!-- 進度:結束 -->
+
+### How much of the whole game has been collected
+
+The denominator above is **the lines we have**. A line nobody has ever run into
+sits in neither the numerator nor the denominator — so that percentage is not
+"this much left to go".
+
+This table answers the other half:
+
+<!-- 涵蓋率:開始 -->
+| Category | Collected | Count | Where the denominator comes from |
+|---|---|---:|---|
+| Quest dialogue | ██████████ | 157 / 157 quests | Official quest list (wiki) |
+| Secret discovery stories | ░░░░░░░░░░ | 1 / 121 discoveries | Official secret discovery list (wiki) |
+| Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
+| Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
+| Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
+| NPC nameplates, menus, system messages | — | 1,881 + 1,037 collected | **No official list** - only what players run into |
+
+Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
+
+> We know how much we **have**. We do not know how much there **is**.
+<!-- 涵蓋率:結束 -->
 
 ## Installing the mod helps finish it
 
 Quest dialogue and NPC names **have no official data source**. There is no file to
 scrape — somebody has to walk up to that NPC in game.
 
-So the mod can collect the lines it could not translate. Turn on **Collect
-untranslated strings** in F6, play normally, and it writes them to
-`config/wynnchayuan/captured.json`. Attach that file to a
-[GitHub issue](https://github.com/LyuChaCha/WynnChaYuan/issues) and those lines
-become translatable for everyone.
+So the mod records the lines it could not translate and, **by default**, sends
+them back to the translation team (F6 → *Share with the translation team* turns
+this off). A hundred people each playing their own way add up to the whole game —
+**you do not have to translate anything; just playing with it on already helps.**
 
-> **Please glance at the file before attaching it.** The mod filters out player
-> names, friend lists and coordinates, but Wynncraft has a lot of notification
-> formats and something may slip through. Delete any line with somebody's name in
-> it — and tell us, so the filter can be fixed.
+What is sent:
 
-You do not have to translate anything to help.
+| | |
+|---|---|
+| **Sent** | The game's own English text: quest dialogue, menus, item lore, NPC nameplates, server announcements |
+| **Never sent** | Your account, UUID, coordinates, which world you are on; guild, party, shout and private chat — **anything other people typed** |
+
+There are three independent personal-data filters — one in the mod before sending,
+one in the collector, one before anything reaches the repository — each with its
+own tests. The mod explains this in chat once, on your first launch, and never
+again.
+
+If you would rather not share, you can turn sharing off and leave only **Collect
+untranslated strings** on: the lines go to `config/wynnchayuan/captured.json` for
+you to read through and attach to a
+[GitHub issue](https://github.com/LyuChaCha/WynnChaYuan/issues) yourself.
 
 ## Helping translate
 
@@ -184,6 +259,35 @@ The build tells you if it is missing.
 ./gradlew check          # 19 test suites
 python tools/validate.py # corpus checks
 ```
+
+## Sponsoring
+
+This project is free and will stay free. If you would like to buy us a tea:
+
+**<https://ko-fi.com/lyuchacha>**
+
+| | |
+|---|---|
+| **3 USD/month** or more | Listed in the sponsor credits |
+| **10 USD** one-off or more | Listed in the sponsor credits |
+
+The list appears in the [README](README.md), in game under **F6 → About /
+Contributors**, and as an extra line above your nameplate.
+
+Sponsoring does not influence what gets translated, and there are no paid
+features.
+
+## Versioning
+
+Beta versions start at `0.1.0`:
+
+| | |
+|---|---|
+| Major or notable update | `0.1.0` → `0.1.1` |
+| Bug fix, small change, test build | `0.1.0` → `0.1.0_1` |
+
+**Translation-only updates are not released** — translations sync themselves from
+GitHub, so there is nothing to download.
 
 ## Licence
 

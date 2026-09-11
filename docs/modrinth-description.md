@@ -9,7 +9,7 @@
 > Wynncraft translation mod — shown beside the original text, not replacing it. Traditional Chinese 98% done, seven more languages open. Requires Wynntils.
 
 > [!IMPORTANT]
-> **This is a beta.** Features and translations are still being worked on. If you
+> **This is a beta (0.1.0).** Features and translations are still being worked on. If you
 > run into anything, find **LyuChaCha** on Discord — all reports are welcome.
 >
 > **The translations are mostly AI-generated; only some have been proofread by a
@@ -116,24 +116,32 @@ jar. Losing your connection means "not the newest", never "no translations".
 Quest dialogue and NPC names **have no official data source**. There is no file to
 scrape — somebody has to walk up to that NPC in game.
 
-So the mod can collect the lines it could not translate. Turn on **"收集未翻譯字串"
-/ Collect untranslated strings** in F6, play normally, and it writes them to
-`config/wynnchayuan/captured.json`. Attach that file to a
-[GitHub issue](https://github.com/LyuChaCha/WynnChaYuan/issues) and those lines
-become translatable for everyone.
+So the mod records the lines it could not translate and, **by default**, sends
+them back to the translation team (F6 -> *Share with the translation team* turns
+this off). A hundred people each playing their own way add up to the whole game.
 
-> **Please glance at the file before attaching it.** The mod filters out player
-> names, friend lists and coordinates, but Wynncraft has a lot of notification
-> formats and something may slip through. Delete any line with somebody's name in
-> it — and tell us, so the filter can be fixed.
+| | |
+|---|---|
+| **Sent** | The game's own English text: quest dialogue, menus, item lore, NPC nameplates, server announcements |
+| **Never sent** | Your account, UUID, coordinates, which world you are on; guild, party, shout and private chat - **anything other people typed** |
 
-You do not have to translate anything to help. Just playing with collection on
-tells the project what players actually run into.
+Three independent personal-data filters stand in the way: one in the mod before
+sending, one in the collector, one before anything reaches the repository - each
+with its own tests. The mod explains this in chat once, on your first launch,
+and never again.
+
+If you would rather not share, turn sharing off and leave only **Collect
+untranslated strings** on: the lines go to `config/wynnchayuan/captured.json`
+for you to read through and attach to a
+[GitHub issue](https://github.com/LyuChaCha/WynnChaYuan/issues) yourself.
+
+**You do not have to translate anything to help.** Just playing with it on
+already tells the project what players actually run into.
 
 ### Progress, and helping out
 
 <!-- 進度:開始 -->
-更新於 2026-09-10。
+更新於 2026-09-11。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
@@ -149,23 +157,39 @@ tells the project what players actually run into.
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
 
-Everything you see minute to minute is already done:
+**How much of the whole game has been collected** is a different
+question. The percentages above are out of *the lines we have* - a line nobody has
+ever run into sits in neither the numerator nor the denominator.
 
-| File | Progress |
-|---|---|
-| Quest dialogue | 22,067 / 22,067 ✅ |
-| Item and UI labels | 288 / 288 ✅ |
-| Ability panel labels | 303 / 303 ✅ |
-| Major IDs | 325 / 325 ✅ |
-| Ingredients, materials, tomes, charms, aspects | all ✅ |
-| Ability trees (5 classes) | 1,250 / 1,251 |
-| Gear lore | 986 / 990 |
-| Menus | 866 / 875 |
-| Quest names | 221 / 336 |
-| NPC names | 512 / 1,039 |
-| Misc UI strings | 628 / 1,625 |
+<!-- 涵蓋率:開始 -->
+| Category | Collected | Count | Where the denominator comes from |
+|---|---|---:|---|
+| Quest dialogue | ██████████ | 157 / 157 quests | Official quest list (wiki) |
+| Secret discovery stories | ░░░░░░░░░░ | 1 / 121 discoveries | Official secret discovery list (wiki) |
+| Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
+| Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
+| Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
+| NPC nameplates, menus, system messages | — | 1,881 + 1,037 collected | **No official list** - only what players run into |
 
-**Gear names are deliberately left in English** (5,389 of them) — they are proper
+Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
+
+> We know how much we **have**. We do not know how much there **is**.
+
+| 類別 | 收集進度 | 數量 | 分母從哪來 |
+|---|---|---:|---|
+| 任務對話 | ██████████ | 157 / 157 個任務 | 官方任務清單（wiki） |
+| 祕密發現的故事 | ░░░░░░░░░░ | 1 / 121 個發現 | 官方祕密發現清單（wiki） |
+| 裝備的傳說敘述 | ██████████ | 全部 | 官方 CDN，整批下載 |
+| 材料、素材、書卷、Aspect | ██████████ | 全部 | 官方 CDN，整批下載 |
+| 技能樹 | ██████████ | 全部 | 官方 CDN，整批下載 |
+| NPC 名牌、介面、系統訊息 | — | 已收 1,881 + 1,037 條 | **沒有官方清單**，只能靠玩家遇到 |
+
+任務對話、NPC 名牌與介面文字**沒有任何公開資料可以爬**——不在 Wynncraft API，也不在 Wynntils 的 CDN。只能靠玩家在遊戲裡實際遇到時由模組收集回來，所以「還差多少」這件事，名牌與介面那一列是誠實的空白：
+
+> 我們知道**已經收到**多少，不知道**總共**有多少。
+<!-- 涵蓋率:結束 -->
+
+**Gear names are deliberately left in English** (5,389 of them). They are proper
 nouns, and the trade market, the wiki and other players all use them.
 
 **No programming needed.** The translation files are plain JSON — click the pencil
@@ -194,6 +218,27 @@ tooltip sections (Nori, Wynnpool) are explicitly handled.
 Translate one line and it will be. The list is under F6 → About/Contributors, with
 Minecraft heads — and people on it get an extra line above their nametag, visible
 only to others running this mod.
+
+### Sponsoring
+
+This project is free and will stay free. If you would like to buy us a tea:
+**<https://ko-fi.com/lyuchacha>**
+
+| | |
+|---|---|
+| **3 USD/month** or more | Listed in the sponsor credits |
+| **10 USD** one-off or more | Listed in the sponsor credits |
+
+The list appears on GitHub, in game under **F6 -> About / Contributors**, and as
+an extra line above your nameplate. Sponsoring does not influence what gets
+translated, and there are no paid features.
+
+### Versioning
+
+Beta versions start at `0.1.0`. A major or notable update bumps it to `0.1.1`;
+a bug fix or small change becomes `0.1.0_1`. **Translation-only updates are not
+released** - translations sync themselves from GitHub, so there is nothing to
+download.
 
 ### Licence and credits
 
@@ -267,6 +312,8 @@ only to others running this mod.
 - **NPC 名牌**：模式、停留秒數、偵測距離與準心夾角
 - **框線顏色**：自訂 16 進位色碼
 - **譯文來源**：GitHub（統一）或本機（測試自己的翻譯用）
+- **市集搜尋轉英文**：用中文搜尋，送出前自動換回英文原名
+- **分享給翻譯團隊**：預設開啟，把模組翻不出來的句子送回來
 
 ---
 
@@ -287,24 +334,30 @@ only to others running this mod.
 任務對話與 NPC 名稱**沒有官方資料可以抓**。沒有檔案可以爬，只能靠玩家在遊戲裡
 真的走到那個 NPC 面前。
 
-所以模組可以幫忙收集它翻不出來的句子。在 F6 打開**「收集未翻譯字串」**，照常玩，
-它會把那些句子記進 `config/wynnchayuan/captured.json`。玩一段時間後把這個檔
-[開 Issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 附上來，就變成大家
-共用的待翻條目。
+所以模組會把它翻不出來的句子記下來，並且**預設**送回翻譯團隊
+（F6 →「分享給翻譯團隊」可以關）。一百個人各玩各的，語料就是所有人的總和。
 
-> **附上前請先看一眼。** 模組會過濾玩家名稱、好友名單與座標，但 Wynncraft 的
-> 通知格式很多，可能有漏網。看到別人的名字就刪掉那一條，順便回報一下，
-> 我們補過濾規則。
+| | |
+|---|---|
+| **會送** | 遊戲自己的英文字：任務對話、介面、物品說明、NPC 名牌、伺服器公告 |
+| **不會送** | 你的帳號、UUID、座標、在哪個世界；公會、隊伍、喊話、私訊那些**別人打的字** |
 
-**你不用翻任何東西也能幫上忙。** 光是開著收集玩，就等於告訴這個專案
-「玩家實際會遇到什麼」。
+個資濾網一共三道——模組送出前一道、收集站一道、進倉庫前一道，三道各自獨立
+寫、各有各的測試。第一次進遊戲時模組會在聊天室說明一次，之後不再提。
+
+不想分享的話，把分享關掉、只留「收集未翻譯字串」，句子就只會寫進
+`config/wynnchayuan/captured.json`，自己看過再
+[開 Issue](https://github.com/LyuChaCha/WynnChaYuan/issues) 附上來。
+
+**你不用翻任何東西也能幫上忙。** 光是開著玩，就等於告訴這個專案「玩家實際
+會遇到什麼」。
 
 ---
 
 ### 目前進度與參與翻譯
 
 <!-- 進度:開始 -->
-更新於 2026-09-10。
+更新於 2026-09-11。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
@@ -320,23 +373,12 @@ only to others running this mod.
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
 
-日常最常看到的部分已經翻完：
+**全部的語料收集到多少**是另一個問題。上面的百分比，分母是
+「我們手上有的句子」——一句沒有人在遊戲裡遇到過的台詞，既不在分子也不在分母裡。
 
-| 檔案 | 進度 |
-|---|---|
-| 任務對話 | 22,067 / 22,067 ✅ |
-| 物品與介面標籤 | 288 / 288 ✅ |
-| 技能面板標籤 | 303 / 303 ✅ |
-| Major ID | 325 / 325 ✅ |
-| 素材、材料、典籍、護符、意象 | 全部 ✅ |
-| 技能樹（五職業） | 1,250 / 1,251 |
-| 裝備背景敘述 | 986 / 990 |
-| 選單 | 866 / 875 |
-| 任務名稱 | 221 / 336 |
-| NPC 名稱 | 512 / 1,039 |
-| 雜項介面字串 | 628 / 1,625 |
+（上面英文區塊裡那張「收集進度」表就是答案，中英各一份。）
 
-**裝備名稱刻意保留原文**（共 5,389 條）——那些是專有名詞，交易市場、wiki 與
+**裝備名稱刻意保留原文**（共 5,389 條）。那些是專有名詞，交易市場、wiki 與
 其他玩家用的都是英文。
 
 **不需要會寫程式。** 翻譯檔是純 JSON，在 GitHub 網頁上點鉛筆就能改。
@@ -364,6 +406,25 @@ only to others running this mod.
 名單上的人，名牌上方還會多一行標記（只有裝了本模組的人看得到）。
 
 ---
+
+### 贊助
+
+這個專案是免費的，也會一直免費。想請我們喝杯茶的話：
+**<https://ko-fi.com/lyuchacha>**
+
+| 方式 | 回饋 |
+|---|---|
+| 每月贊助 **3 USD** 以上 | 列入贊助者名單 |
+| 單次贊助 **10 USD** 以上 | 列入贊助者名單 |
+
+名單會出現在 GitHub 首頁、遊戲內的 **F6 →「關於／貢獻者」**，名牌上方也會多
+一行贊助者標記。贊助不影響翻譯內容，也不會有任何付費才能用的功能。
+
+### 版本號
+
+Beta 期間從 `0.1.0` 起算。重大或重點更新進到 `0.1.1`，修 bug 與小調整則是
+`0.1.0_1`。**純翻譯的更新不發版**——譯文會自己從 GitHub 同步，不需要重新
+下載模組。
 
 ### 授權與致謝
 
