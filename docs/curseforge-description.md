@@ -151,6 +151,19 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 
 > We know how much we **have**. We do not know how much there **is**.
 
+| Category | Translated | Collected | Estimated total | Where the estimate comes from |
+|---|---:|---:|---:|---|
+| Quest dialogue | 22,127 | 22,127 | 22,127 | all 157/157 quests collected - what we have is all there is |
+| Secret discovery stories | 68 | 68 | ~8,228 | only 1 of 121 discoveries collected; scaled up from those (tiny sample - an order of magnitude, not a figure) |
+| Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
+| Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
+| Ability trees | 1,591 | 1,591 | 1,591 | official CDN, downloaded wholesale - what we have is all there is |
+| NPC nameplates, menus, system messages | 7,027 | 8,167 | — | **no list exists** - only what players run into; cannot be estimated |
+
+> All together: **at least 42,706 lines estimated**, **34,546 collected** (81%), **33,402 translated** (78% of the estimate, 96.7% of what we have).
+
+"At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
+
 | 類別 | 收集進度 | 數量 | 分母從哪來 |
 |---|---|---:|---|
 | 任務對話 | ██████████ | 157 / 157 個任務 | 官方任務清單（wiki） |
@@ -163,6 +176,19 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 任務對話、NPC 名牌與介面文字**沒有任何公開資料可以爬**——不在 Wynncraft API，也不在 Wynntils 的 CDN。只能靠玩家在遊戲裡實際遇到時由模組收集回來，所以「還差多少」這件事，名牌與介面那一列是誠實的空白：
 
 > 我們知道**已經收到**多少，不知道**總共**有多少。
+
+| 類別 | 已翻譯 | 已收集 | 預估總數 | 這個預估怎麼來的 |
+|---|---:|---:|---:|---|
+| 任務對話 | 22,127 | 22,127 | 22,127 | 157/157 個任務都收齊了，收到的就是全部 |
+| 祕密發現的故事 | 68 | 68 | ~8,228 | 121 個發現只收到 1 個，照那 1 個平均 68 句往外推（樣本很少，只是個量級） |
+| 裝備的傳說敘述 | 986 | 990 | 990 | 官方 CDN 整批下載，收到的就是全部 |
+| 材料、素材、書卷、Aspect | 1,603 | 1,603 | 1,603 | 官方 CDN 整批下載，收到的就是全部 |
+| 技能樹 | 1,591 | 1,591 | 1,591 | 官方 CDN 整批下載，收到的就是全部 |
+| NPC 名牌、介面、系統訊息 | 7,027 | 8,167 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
+
+> 全部加起來：**預估至少 42,706 句**，已收集 **34,546 句**（81%），已翻譯 **33,402 句**（佔預估的 78%、佔已收集的 96.7%）。
+
+「至少」是因為名牌與介面那一類沒有清單，它在總數裡只算了**已經收到的**——真正的數字只會更大。
 <!-- 涵蓋率:結束 -->
 
 **Gear names are deliberately left in English** (5,389 of them). They are proper

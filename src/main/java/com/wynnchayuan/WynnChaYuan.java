@@ -285,6 +285,15 @@ public final class WynnChaYuan implements ClientModInitializer {
      */
     public static void switchFallback(String lang,
                                       java.util.function.Consumer<String> done) {
+        switchFallback(lang, done, null);
+    }
+
+    /**
+     * @param progress 下載進度，在背景執行緒上叫；不需要就傳 {@code null}
+     */
+    public static void switchFallback(String lang,
+                                      java.util.function.Consumer<String> done,
+                                      RemoteSync.Progress progress) {
         config.setFallbackLanguage(lang);
         loadLayers();
         String under = fallbackLanguage();
@@ -295,7 +304,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         }
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, under);
         Thread worker = new Thread(() -> {
-            RemoteSync.fetchInto(dir, under);
+            RemoteSync.fetchInto(dir, under, progress);
             net.minecraft.client.Minecraft.getInstance().execute(() -> {
                 loadLayers();
                 done.accept(com.wynnchayuan.client.T.s("data.fallback.done",
@@ -323,6 +332,15 @@ public final class WynnChaYuan implements ClientModInitializer {
      */
     public static void switchLanguage(String lang,
                                       java.util.function.Consumer<String> done) {
+        switchLanguage(lang, done, null);
+    }
+
+    /**
+     * @param progress 下載進度，在背景執行緒上叫；不需要就傳 {@code null}
+     */
+    public static void switchLanguage(String lang,
+                                      java.util.function.Consumer<String> done,
+                                      RemoteSync.Progress progress) {
         config.setLanguage(lang);
         language = com.wynnchayuan.translate.Languages.pick(
                 config.language(), gameLanguage());
@@ -335,7 +353,7 @@ public final class WynnChaYuan implements ClientModInitializer {
         }
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
         Thread worker = new Thread(() -> {
-            RemoteSync.fetchInto(dir, language);
+            RemoteSync.fetchInto(dir, language, progress);
             net.minecraft.client.Minecraft.getInstance().execute(() -> {
                 loadLayers();
                 done.accept(com.wynnchayuan.client.T.s("data.language.done",
@@ -378,6 +396,11 @@ public final class WynnChaYuan implements ClientModInitializer {
      * <p>取不到就回傳空字串，交給 {@code Languages#pick} 退回預設——
      * 這個方法在遊戲還沒初始化完時也可能被呼叫到。
      */
+    /** 「跟著遊戲」會挑到哪一種。設定畫面要先算得出來才能顯示。 */
+    public static String autoLanguage() {
+        return com.wynnchayuan.translate.Languages.pick("", gameLanguage());
+    }
+
     private static String gameLanguage() {
         try {
             net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();

@@ -48,12 +48,26 @@ public final class LangKeysTest {
 
     public static void main(String[] args) throws Exception {
         JsonObject en = load("en_us");
-        JsonObject tw = load("zh_tw");
-        JsonObject cn = load("zh_cn");
+
+        // 資料夾裡有幾種就檢查幾種。
+        //
+        // 先前寫死 zh_tw 與 zh_cn 兩行。日文與韓文加進來的那一版，
+        // 這裡<b>一條都沒檢查到</b>——而語言檔的錯誤（鍵打錯、%s 個數不對）
+        // 全部是安靜的：前者永遠用不到，後者在畫面上丟例外。
+        java.util.Map<String, JsonObject> others = new java.util.LinkedHashMap<>();
+        for (String code : codes()) {
+            if (!code.equals("en_us")) {
+                others.put(code, load(code));
+            }
+        }
 
         check("en_us 讀得到（" + en.size() + " 條）", en.size() > 0);
-        check("zh_tw 讀得到（" + tw.size() + " 條）", tw.size() > 0);
-        check("zh_cn 讀得到（" + cn.size() + " 條）", cn.size() > 0);
+        check("除了 en_us 還有 " + others.size() + " 種語言："
+                        + others.keySet(), !others.isEmpty());
+        for (var one : others.entrySet()) {
+            check(one.getKey() + " 讀得到（" + one.getValue().size() + " 條）",
+                    one.getValue().size() > 0);
+        }
 
         // ---- 程式用到的鍵，en_us 一定要有 ----
         Set<String> used = usedKeys();
@@ -82,9 +96,9 @@ public final class LangKeysTest {
         // ---- 三份語言檔的鍵要一致 ----
         // en_us 是回退的底，所以它一定要最齊；其他語言少了哪一條只是顯示英文，
         // 但<b>多</b>了哪一條就表示鍵名打錯了——那一條永遠不會被用到。
-        for (var entry : List.of(new String[] {"zh_tw"}, new String[] {"zh_cn"})) {
-            String name = entry[0];
-            JsonObject one = name.equals("zh_tw") ? tw : cn;
+        for (var entry : others.entrySet()) {
+            String name = entry.getKey();
+            JsonObject one = entry.getValue();
             List<String> extra = new ArrayList<>();
             List<String> absent = new ArrayList<>();
             for (String key : one.keySet()) {
@@ -109,13 +123,14 @@ public final class LangKeysTest {
         List<String> mismatched = new ArrayList<>();
         for (String key : en.keySet()) {
             int want = count(en.get(key).getAsString());
-            for (JsonObject other : List.of(tw, cn)) {
+            for (var one : others.entrySet()) {
+                JsonObject other = one.getValue();
                 if (other.has(key) && count(other.get(key).getAsString()) != want) {
-                    mismatched.add(key);
+                    mismatched.add(one.getKey() + ":" + key);
                 }
             }
         }
-        check("★ 每一條的 %s 個數三份語言一致（對不上會在執行期丟例外）"
+        check("★ 每一條的 %s 個數每種語言都一致（對不上會在執行期丟例外）"
                         + (mismatched.isEmpty() ? "" : "：" + mismatched),
                 mismatched.isEmpty());
 
@@ -150,6 +165,17 @@ public final class LangKeysTest {
             n++;
         }
         return n;
+    }
+
+    /** {@code lang/} 底下有哪幾種語言。 */
+    private static List<String> codes() throws Exception {
+        try (Stream<Path> files = Files.list(LANG)) {
+            return files.map(p -> p.getFileName().toString())
+                    .filter(n -> n.endsWith(".json"))
+                    .map(n -> n.substring(0, n.length() - 5))
+                    .sorted()
+                    .toList();
+        }
     }
 
     private static JsonObject load(String code) throws Exception {

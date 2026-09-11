@@ -123,8 +123,14 @@ def collected_quests() -> set[str]:
     return out
 
 
+_CACHE: dict | None = None
+
+
 def cache() -> dict:
-    return json.loads(CACHE.read_text(encoding="utf-8"))
+    global _CACHE
+    if _CACHE is None:
+        _CACHE = json.loads(CACHE.read_text(encoding="utf-8"))
+    return _CACHE
 
 
 def flat_count(name: str) -> int:
@@ -164,6 +170,132 @@ def rows() -> list[tuple[str, str, str, str]]:
                 f"已收 {flat_count('npc.json'):,} + {flat_count('gui.json'):,} 條",
                 "**沒有官方清單**，只能靠玩家遇到"))
     return out
+
+
+# 每一類是由哪幾個語料檔組成的。
+#
+# 跟 update-docs.py 的 ORDER 涵蓋同一批檔案，只是那邊一檔一列、這邊按「玩家
+# 會在哪裡看到」歸成六類。少列一個檔的代價是它從分母裡消失——所以底下的
+# {@code leftover} 會把沒歸到類的檔印出來。
+GROUPS = [
+    ("任務對話", ["quest-dialogue.json"]),
+    ("祕密發現的故事", ["secret-dialogue.json"]),
+    ("裝備的傳說敘述", ["gear-*.json"]),
+    ("材料、素材、書卷、Aspect",
+     ["ingredient.json", "material.json", "tome.json", "charm.json",
+      "aspect.json", "aspect-desc.json"]),
+    ("技能樹", ["ability/*.json", "ability-labels.json", "ability-terms.json"]),
+    ("NPC 名牌、介面、系統訊息",
+     ["npc.json", "gui.json", "label.json", "misc.json", "ui-labels.json",
+      "quest-ui.json", "quest.json", "quest-name.json", "discovery.json",
+      "discovery-name.json", "lootrun.json", "raid.json", "dungeon.json",
+      "guild.json", "major-id.json", "major-id-terms.json",
+      "profession-terms.json", "chat-terms.json", "dialogue-choice.json",
+      "wynntils.json", "unsorted.json"]),
+]
+
+
+def optional(path: Path, entry: dict) -> bool:
+    """裝備的<b>名稱</b>不算。跟 update-docs.py 同一條規則，改要一起改。"""
+    return path.name.startswith("gear-") and entry.get("role") == "name"
+
+
+def tally(patterns: list[str]) -> tuple[int, int]:
+    """（已翻譯, 已收集）。"""
+    done = total = 0
+    for pattern in patterns:
+        for name in sorted(glob.glob(str(TRANSLATIONS / pattern))):
+            path = Path(name)
+            try:
+                data = json.loads(path.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            entries = data.get("entries")
+            if isinstance(entries, dict):
+                for value in entries.values():
+                    if not isinstance(value, dict) or value.get("keep"):
+                        continue
+                    if optional(path, value):
+                        continue
+                    total += 1
+                    if value.get("dst", "").strip():
+                        done += 1
+            else:
+                for key, value in data.items():
+                    if key.startswith("_") or not isinstance(value, str):
+                        continue
+                    total += 1
+                    if value.strip():
+                        done += 1
+    return done, total
+
+
+def estimate(label: str, collected: int) -> tuple[int | None, str]:
+    """這一類總共大概有多少句，以及那個數字是怎麼來的。
+
+    <p>估不出來就回傳 {@code None}。這一欄的用處全在那句「怎麼來的」——
+    沒有依據的數字比空白更糟，因為它看起來是知道的。
+    """
+    saved = cache()
+    if label == "任務對話":
+        quests = saved["quests"]
+        got = len([q for q in quests if q in collected_quests()])
+        if got >= len(quests):
+            return collected, f"{got}/{len(quests)} 個任務都收齊了，收到的就是全部"
+        # 還沒收齊就照「每個任務平均幾句」往外推
+        per = collected / max(got, 1)
+        return round(per * len(quests)), (
+            f"已收 {got}/{len(quests)} 個任務，照每個任務平均 {per:.0f} 句推算")
+    if label == "祕密發現的故事":
+        total = saved.get("secrets", 0)
+        got = len(glob.glob(str(TRANSLATIONS / "secret/*.json")))
+        if not total or not got:
+            return None, "還沒收到任何一個，估不出來"
+        per = collected / got
+        return round(per * total), (
+            f"{total} 個發現只收到 {got} 個，"
+            f"照那 {got} 個平均 {per:.0f} 句往外推（樣本很少，只是個量級）")
+    if label in ("裝備的傳說敘述", "材料、素材、書卷、Aspect", "技能樹"):
+        return collected, "官方 CDN 整批下載，收到的就是全部"
+    return None, "**沒有清單**，只能靠玩家遇到；估不出來"
+
+
+_ROWS_CACHE: list | None = None
+
+
+def estimate_rows() -> list[tuple[str, int, int, int | None, str]]:
+    """（類別, 已翻譯, 已收集, 預估總數, 依據）。
+
+    <p>算一次要把整份語料讀過一遍，其中 quest-dialogue.json 是兩萬多條。
+    四個檔案、每個檔案兩三份表，不記住的話同一份東西會被讀十幾次——
+    --write 就從兩秒變成兩分鐘。
+    """
+    global _ROWS_CACHE
+    if _ROWS_CACHE is not None:
+        return _ROWS_CACHE
+    out = []
+    for label, patterns in GROUPS:
+        done, total = tally(patterns)
+        guess, why = estimate(label, total)
+        out.append((label, done, total, guess, why))
+    _ROWS_CACHE = out
+    return out
+
+
+def leftover() -> list[str]:
+    """沒有被歸進任何一類的語料檔。漏掉一個就等於它從分母裡消失了。"""
+    counted = set()
+    for _, patterns in GROUPS:
+        for pattern in patterns:
+            for name in glob.glob(str(TRANSLATIONS / pattern)):
+                counted.add(Path(name).name)
+    everything = {p.name for p in TRANSLATIONS.rglob("*.json")
+                  if not p.name.startswith("_")}
+    # quest/ 與 secret/ 底下是譯者的工作檔，遊戲讀的是合併後的那一份，
+    # 兩邊都算會重複計算一次。
+    for folder in ("quest", "secret"):
+        everything -= {p.name for p in (TRANSLATIONS / folder).glob("*.json")}
+    return sorted(everything - counted)
 
 
 EN = {
@@ -209,13 +341,89 @@ def english_block() -> str:
     return "\n".join(lines)
 
 
+def summary() -> tuple[int, int, int, bool]:
+    """（已翻譯, 已收集, 預估總數, 有沒有估不出來的類別）。"""
+    done = collected = guessed = 0
+    partial = False
+    for _, one_done, one_total, guess, _ in estimate_rows():
+        done += one_done
+        collected += one_total
+        # 估不出來的那一類，就拿「已經收到的」當它的下界——
+        # 整份總數因此是「至少」，而不是一個假裝知道的數字。
+        guessed += guess if guess is not None else one_total
+        partial = partial or guess is None
+    return done, collected, guessed, partial
+
+
+def estimate_block() -> str:
+    lines = ["| 類別 | 已翻譯 | 已收集 | 預估總數 | 這個預估怎麼來的 |",
+             "|---|---:|---:|---:|---|"]
+    for label, done, total, guess, why in estimate_rows():
+        shown = f"~{guess:,}" if guess is not None else "—"
+        if guess is not None and guess == total:
+            shown = f"{guess:,}"
+        lines.append(f"| {label} | {done:,} | {total:,} | {shown} | {why} |")
+    done, collected, guessed, partial = summary()
+    lines.append("")
+    lines.append(f"> 全部加起來：**預估{'至少 ' if partial else ' '}{guessed:,} 句**"
+                 f"，已收集 **{collected:,} 句**（{collected / guessed * 100:.0f}%）"
+                 f"，已翻譯 **{done:,} 句**（佔預估的 {done / guessed * 100:.0f}%、"
+                 f"佔已收集的 {done / collected * 100:.1f}%）。")
+    if partial:
+        lines.append("")
+        lines.append("「至少」是因為名牌與介面那一類沒有清單，"
+                     "它在總數裡只算了**已經收到的**——真正的數字只會更大。")
+    return "\n".join(lines)
+
+
+def estimate_block_en() -> str:
+    lines = ["| Category | Translated | Collected | Estimated total "
+             "| Where the estimate comes from |",
+             "|---|---:|---:|---:|---|"]
+    for label, done, total, guess, why in estimate_rows():
+        shown = f"~{guess:,}" if guess is not None else "—"
+        if guess is not None and guess == total:
+            shown = f"{guess:,}"
+        lines.append(f"| {english(label)} | {done:,} | {total:,} | {shown} "
+                     f"| {english_why(label, guess, total)} |")
+    done, collected, guessed, partial = summary()
+    lines.append("")
+    lines.append(f"> All together: **{'at least ' if partial else ''}"
+                 f"{guessed:,} lines estimated**, **{collected:,} collected** "
+                 f"({collected / guessed * 100:.0f}%), "
+                 f"**{done:,} translated** ({done / guessed * 100:.0f}% of the "
+                 f"estimate, {done / collected * 100:.1f}% of what we have).")
+    if partial:
+        lines.append("")
+        lines.append("\"At least\" because nameplates and menu text have no "
+                     "list; that row counts only what has **already been "
+                     "collected**, so the real number is larger.")
+    return "\n".join(lines)
+
+
+def english_why(label: str, guess: int | None, total: int) -> str:
+    """預估依據的英文。每一類只有一句，直接寫死比翻譯那幾句中文可靠。"""
+    if label == "任務對話":
+        return "all 157/157 quests collected - what we have is all there is"
+    if label == "祕密發現的故事":
+        saved = cache()
+        got = len(glob.glob(str(TRANSLATIONS / "secret/*.json")))
+        return (f"only {got} of {saved.get('secrets', 0)} discoveries collected; "
+                f"scaled up from those (tiny sample - an order of magnitude, "
+                f"not a figure)")
+    if guess is not None:
+        return "official CDN, downloaded wholesale - what we have is all there is"
+    return "**no list exists** - only what players run into; cannot be estimated"
+
+
 def body_for(kind: str) -> str:
     """這個檔要寫哪一種語言的表。"""
     if kind == "en":
-        return english_block()
+        return english_block() + "\n\n" + estimate_block_en()
     if kind == "both":
-        return english_block() + "\n\n" + block()
-    return block()
+        return (english_block() + "\n\n" + estimate_block_en()
+                + "\n\n" + block() + "\n\n" + estimate_block())
+    return block() + "\n\n" + estimate_block()
 
 
 def block() -> str:
@@ -257,7 +465,7 @@ def main(argv: list[str]) -> int:
               f"先跑 python tools/coverage.py --refresh")
         return 2
     if "--write" not in argv and "--check" not in argv:
-        print(block())
+        print(body_for("zh"))
         return 0
     stale = [name for name, kind in TARGETS.items()
              if (ROOT / name).is_file()
