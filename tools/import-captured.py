@@ -76,7 +76,33 @@ def story_file(quest: str) -> str:
         for folder in STORY_DIRS:
             if (TRANSLATIONS / folder / name).is_file():
                 return f"{folder}/{name}"
+    # 官方清單上沒有的名字不開新檔。
+    #
+    # 追蹤欄不只追任務——世界事件、洞穴、地城都走同一個欄位，而 ctx 只寫
+    # `dialogue/<那一欄的名字>`。照單全收的下場是 quest/ 底下長出
+    # `dark-deacons-39s-left.json`（活動名還帶著倒數秒數）、`karoshi-union.json`、
+    # `choice.json` 這種東西——台詞是真的，歸屬是假的。
+    #
+    # 而假的歸屬比沒有歸屬更難發現：檔案看起來像個任務，譯者不會去懷疑它。
+    if quest not in official_quests():
+        return None
     return f"quest/{base}.json"
+
+
+def official_quests() -> set[str]:
+    """官方的任務名單。涵蓋率本來就讀這一份，這裡跟著用同一個來源。"""
+    global _OFFICIAL
+    if _OFFICIAL is None:
+        try:
+            cache = json.loads(
+                (ROOT / "tools/coverage-data.json").read_text(encoding="utf-8"))
+            _OFFICIAL = set(cache.get("quests", []))
+        except Exception:
+            _OFFICIAL = set()      # 讀不到就退回舊行為，不要整個匯入壞掉
+    return _OFFICIAL
+
+
+_OFFICIAL: set[str] | None = None
 
 # ctx 長成 dialogue/Cook Assistant#Aledar 或 dialogue/choices/Cook Assistant
 CTX = re.compile(r"^dialogue(?:/choices)?/([^#]+)(?:#(.*))?$")
@@ -451,8 +477,14 @@ def main(argv: list[str]) -> int:
             have.add(bare(src))
             if found:
                 quest, speaker = found
-                entry["_quest"], entry["_speaker"] = quest, speaker
-                by_file[story_file(quest)].append((key, entry))
+                where = story_file(quest)
+                if where is None:
+                    # 官方清單上沒有這個名字——世界事件、洞穴、對話選項都會走到
+                    # 這裡。台詞是真的，但歸屬是假的，所以放進「還沒歸類」那一份。
+                    by_file["quest.json"].append((key, entry))
+                else:
+                    entry["_quest"], entry["_speaker"] = quest, speaker
+                    by_file[where].append((key, entry))
             else:
                 by_file[TARGET.get(entry.get("domain"), "misc.json")].append((key, entry))
 

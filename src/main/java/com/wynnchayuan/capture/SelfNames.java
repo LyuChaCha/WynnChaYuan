@@ -71,6 +71,43 @@ public final class SelfNames {
     private static final Set<String> UNSET =
             Set.of("not defined", "none", "n/a", "unset", "not set", "-");
 
+    /**
+     * 英文的常用字不能當成名字。
+     *
+     * <h2>踩到什麼</h2>
+     * 顯示名稱帶空格時，{@link #suffixes} 會把開頭的詞一個一個剝掉——那是為了
+     * 認出 {@code [VIP] Someone} 裡的 {@code Someone}。但剝出來的東西沒有人檢查，
+     * 而實機有一位玩家的名字剝到最後剩下 {@code what}。
+     *
+     * <p>後果是<b>整份任務對話被改寫</b>：
+     *
+     * <pre>
+     *   If what I've done was what needed to happen, why do I feel...
+     *   → "If {u} I've done was {u} needed to happen, why do I feel..."
+     * </pre>
+     *
+     * <p>而且這些會被分享回共享語料——別人拿到的是一句句挖了洞的台詞。
+     *
+     * <p>代價是名字剛好等於這些字的玩家不會被認出來。那個代價很小：
+     * 他的名字會原樣留在模板裡，變成一條沒有人對得上的鍵；
+     * 而反過來錯認的代價是<b>語料被汙染</b>，還洗不掉。
+     */
+    private static final Set<String> COMMON_WORDS = Set.of(
+            "the", "and", "you", "your", "yours", "for", "with", "that",
+            "this", "what", "who", "whom", "whose", "why", "how", "when",
+            "where", "they", "them", "their", "there", "here", "these", "those",
+            "not", "but", "all", "any", "one", "two", "now", "new",
+            "old", "out", "own", "off", "get", "got", "let", "man",
+            "men", "way", "say", "see", "too", "use", "yes", "was",
+            "are", "been", "have", "has", "had", "will", "would", "can",
+            "could", "should", "may", "him", "his", "her", "hers", "she",
+            "its", "our", "ours", "mine", "from", "into", "just", "like",
+            "more", "most", "much", "some", "such", "than", "then", "very",
+            "well", "were", "only", "over", "same", "take", "come", "know",
+            "good", "back", "give", "make", "need", "want", "look", "find",
+            "help", "keep", "let's", "yeah", "okay", "hey", "hi", "oh",
+            "ah", "no");
+
     private SelfNames() {}
 
     /**
@@ -207,12 +244,29 @@ public final class SelfNames {
             return null;
         }
         for (String name : all()) {
+            if (!usable(name)) {
+                continue;              // 再擋一次：學來的那條路也可能塞進常用字
+            }
             int at = indexOfWord(text, name);
             if (at >= 0) {
                 return text.substring(at, at + name.length());
             }
         }
         return null;
+    }
+
+    /**
+     * 這串字可以當成「我」嗎。
+     *
+     * <p>見 {@link #COMMON_WORDS}：剝前綴剝出一個英文常用字的話，
+     * 那個字會在每一句台詞裡被換成 {@code {u}}。
+     */
+    static boolean usable(String name) {
+        if (name == null || name.isBlank()) {
+            return false;
+        }
+        String core = name.strip().toLowerCase(Locale.ROOT);
+        return !UNSET.contains(core) && !COMMON_WORDS.contains(core);
     }
 
     /** 不分大小寫、且前後不接英數的位置；找不到回傳 {@code -1}。 */
@@ -248,7 +302,7 @@ public final class SelfNames {
         }
         String s = shown.strip();
         for (int i = 0; i <= MAX_PREFIX_WORDS && !s.isEmpty(); i++) {
-            if (s.length() >= MIN_NAME) {
+            if (s.length() >= MIN_NAME && usable(s)) {
                 out.add(s);
             }
             int space = s.indexOf(' ');
