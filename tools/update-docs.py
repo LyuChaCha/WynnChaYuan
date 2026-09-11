@@ -31,19 +31,47 @@ START = "<!-- 進度:開始 -->"
 END = "<!-- 進度:結束 -->"
 
 # 玩家看到的頻率。數字是自動算的，這裡只排順序與說明。
+#
+# 這張表就是分母——**漏列一個檔，它裡面沒翻的東西就不存在**。
+# 先前只列了十三個樣式，於是 misc、quest-ui、lootrun、raid、label⋯⋯
+# 十九個檔案完全不算數：繁中的頭條數字寫 98.9%，實際上還有 4,649 條
+# 沒被算進去（其中 817 條沒翻）。數字好看但沒說實話。
+#
+# 加檔案時順手想一下：玩家真的看得到嗎？看得到就該在這裡。
+# quest/ 與 secret/ 例外——它們是 quest-dialogue.json 的來源，
+# 兩邊都列會算兩次（見 language_totals 的說明）。
 ORDER = [
     ("ui-labels.json", "每次看物品都會看到（力量、戰鬥等級…）"),
+    ("misc.json", "物品說明、粉末、交易市場的零碎字串"),
+    ("label.json", "浮在世界裡的字（工作站、互動提示）"),
     ("npc.json", "走在城裡就會看到"),
     ("gui.json", "選單與介面"),
-    ("quest.json", "任務名稱與任務介面"),
+    ("quest-ui.json", "任務開始、完成、獎勵那些訊息"),
+    ("quest.json", "任務介面"),
+    ("quest-name.json", "任務名稱"),
     ("ability/*.json", "開技能樹時"),
+    ("ability-labels.json", "技能樹的介面標籤"),
+    ("ability-terms.json", "技能敘述裡的專有名詞"),
     ("major-id.json", "傳奇裝備的特殊詞條"),
+    ("major-id-terms.json", "特殊詞條裡的專有名詞"),
     ("quest-dialogue.json", "任務對話"),
     ("secret-dialogue.json", "祕密發現的故事"),
+    ("discovery.json", "探索點的說明"),
+    ("discovery-name.json", "探索點的名稱"),
+    ("lootrun.json", "跑 Lootrun 時"),
+    ("raid.json", "打 Raid 時"),
+    ("dungeon.json", "打地城時"),
     ("ingredient.json", "做職業時"),
     ("material.json", "做職業時"),
     ("tome.json", "書卷"),
+    ("charm.json", "護符"),
     ("aspect.json", "Raid 的 Aspect"),
+    ("aspect-desc.json", "Aspect 的敘述"),
+    ("profession-terms.json", "職業名稱"),
+    ("guild.json", "公會選單"),
+    ("chat-terms.json", "聊天訊息裡的專有名詞"),
+    ("dialogue-choice.json", "對話選項的介面"),
+    ("wynntils.json", "Wynntils 自己的介面字串"),
     ("gear-*.json", "裝備的傳說敘述（名稱是專有名詞，不計入）"),
 ]
 
@@ -195,17 +223,36 @@ def language_table(rows: list[tuple[str, int, int]]) -> str:
 # 每一個檔案的英文說明，給非中文的翻譯團隊看。
 ORDER_EN = {
     "ui-labels.json": "Seen on every item tooltip (Strength, Combat Level, ...)",
+    "misc.json": "Item lore, powders, and the trade market's odds and ends",
+    "label.json": "Text floating in the world (stations, interaction prompts)",
     "npc.json": "NPC names, seen while walking around town",
     "gui.json": "Menus and interface text",
-    "quest.json": "Quest names and the quest interface",
+    "quest-ui.json": "Quest started/completed banners and reward lists",
+    "quest.json": "The quest interface",
+    "quest-name.json": "Quest names",
     "ability/*.json": "Ability tree",
+    "ability-labels.json": "Ability tree interface labels",
+    "ability-terms.json": "Proper nouns inside ability descriptions",
     "major-id.json": "Major IDs on mythic gear",
+    "major-id-terms.json": "Proper nouns inside Major IDs",
     "quest-dialogue.json": "NPC dialogue (by far the largest file)",
     "secret-dialogue.json": "Secret discovery stories",
+    "discovery.json": "Discovery descriptions",
+    "discovery-name.json": "Discovery names",
+    "lootrun.json": "Seen during a lootrun",
+    "raid.json": "Seen during a raid",
+    "dungeon.json": "Seen during a dungeon",
     "ingredient.json": "Crafting ingredients",
     "material.json": "Crafting materials",
     "tome.json": "Tomes",
+    "charm.json": "Charms",
     "aspect.json": "Raid aspects",
+    "aspect-desc.json": "Aspect descriptions",
+    "profession-terms.json": "Profession names",
+    "guild.json": "Guild menus",
+    "chat-terms.json": "Proper nouns inside chat messages",
+    "dialogue-choice.json": "The dialogue choice interface",
+    "wynntils.json": "Wynntils' own interface strings",
     "gear-*.json": "Gear lore (names stay in English, not counted)",
 }
 
