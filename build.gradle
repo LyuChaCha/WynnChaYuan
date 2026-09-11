@@ -480,6 +480,14 @@ tasks.register('runDialogueOffsetChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runDialogueOffsetChecks' }
 
+tasks.register('runReferenceGateChecks', JavaExec) {
+    group = 'verification'
+    description = '收集的缺口以繁體為準，不是以顯示語言為準'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.ReferenceGateTest'
+}
+tasks.named('check') { dependsOn 'runReferenceGateChecks' }
+
 tasks.register('runDialogueFontChecks', JavaExec) {
     group = 'verification'
     description = '驗證對話字型的位移跟 Wynncraft 的 ascent 對得上'
