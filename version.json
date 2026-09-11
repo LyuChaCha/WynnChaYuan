@@ -1,12 +1,45 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.3_1",
+ "latest": "0.1.4",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.4": {
+   "headline": "Pick a language, then apply it",
+   "items": [
+    "Switching translation language now waits for Apply, and shows how many files are left",
+    "The Items tab showed a raw key instead of \"Panel screenshot\"",
+    "The changelog screen no longer draws its scroll hint on top of the buttons",
+    "Added Japanese and Korean for the mod's own settings screen",
+    "Simplified Chinese: the Archer ability tree, and mainland wording for professions",
+    "The README now estimates how many lines there are in total, not just how many we have"
+   ],
+   "zh_tw": {
+    "headline": "語言選好再按套用",
+    "items": [
+     "切換譯文語言改成按過套用才換，過程中會顯示還剩幾個檔",
+     "物品分頁那一列顯示的是鍵名，不是「譯文截圖」",
+     "更新說明底下的捲動提示不再壓在按鈕上",
+     "新增日文與韓文的設定畫面",
+     "簡體中文：弓手技能樹，以及生活技能等用詞的在地化",
+     "README 多了一張表，寫出全部大概有多少句，不只是已經收到多少"
+    ]
+   },
+   "zh_cn": {
+    "headline": "语言选好再按应用",
+    "items": [
+     "切换译文语言改成按过应用才换，过程中会显示还剩几个文件",
+     "物品页那一行显示的是键名，而不是「译文截图」",
+     "更新说明底下的滚动提示不再压在按钮上",
+     "新增日文与韩文的设置界面",
+     "简体中文：弓手技能树，以及生活技能等用词的本地化",
+     "README 多了一张表，写出全部大概有多少句，不只是已经收到多少"
+    ]
+   }
+  },
   "0.1.3_1": {
    "headline": "World event names in the tracker, and a tighter privacy filter",
    "items": [
