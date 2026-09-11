@@ -55,6 +55,28 @@ no('帳號名的底線', 'Green_teaTW', 'label/floating');
 no('公會欄位', '- Guild: Cloud Tavern', 'gui/line');
 no('收禮通知', 'SomeOne has given you an item', 'gui/line');
 
+// ★ 這一輪跑世界事件回傳的語料裡漏掉的四類。三道濾網都要各自擋得住。
+no('丟炸彈的人（折行截斷）', '{#} {#}JC grindeando has thrown a', 'chat/INFO');
+no('炸彈過期通知', '{#} JC grindeando Loot Bomb has expired!', 'chat/INFO');
+no('謝謝某某', '{#} {#}Thank JC grindeando', 'chat/INFO');
+no('石碑的主人', "{~}jimmy's Totem of Tales", 'label/floating');
+no('死亡快訊', '{#}{#}ChangJenChief has died', 'chat/INFO');
+no('討伐戰的增益選擇', '{#} Watari has chosen the Elder III buff!', 'chat/INFO');
+no('石碑廣播', '{#} PoorChaCha has placed a mob totem in {p}', 'chat/INFO');
+no('開箱廣播', '{#} userUwU has gotten a Spear from their crate!', 'chat/INFO');
+no('上線廣播', 'eric18960 has logged into server AS12', 'chat/INFO');
+no('喊話', '{#} PoorChaCha shouts: hello', 'chat/INFO');
+no('組隊搜尋', '{#} Party Finder: Hey MorphCascade, over here!', 'chat/INFO');
+
+// ★ 反方向：句型比對最容易連坐到旁邊的正常句子。
+yes('沒有所有格的圖騰提示',
+    '{#} You are gaining effects from a Totem of Tales!', 'chat/INFO');
+yes('劇情裡的死亡', 'The king has died in his sleep.', "dialogue/X");
+yes('對話裡的道謝', 'Thank you for your help!', "dialogue/X");
+yes('世界事件公告',
+    '{#} The Lonely Islet World Event starts in {~}m {~}s!', 'chat/INFO');
+yes('未進場提示', '{#} You did not enter the event radius in time', 'chat/INFO');
+
 no('空字串', '', 'dialogue/X');
 no('純符號', '{#}{#}', 'gui/line');
 no('太長', 'x'.repeat(601) + ' word', 'dialogue/X');
