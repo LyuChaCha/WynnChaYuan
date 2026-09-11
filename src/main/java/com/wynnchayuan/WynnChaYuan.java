@@ -79,6 +79,13 @@ public final class WynnChaYuan implements ClientModInitializer {
         return config;
     }
 
+    /** 目前這一版的版本號，回報與分享語料時附上。 */
+    public static String modVersion() {
+        return FabricLoader.getInstance().getModContainer(MOD_ID)
+                .map(m -> m.getMetadata().getVersion().getFriendlyString())
+                .orElse("?");
+    }
+
     public static TranslationStore translations() {
         return translations;
     }
@@ -204,6 +211,13 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 每秒檢查對話是否已經打完（打字停住夠久就送出），寫檔仍維持 30 秒一次
         flusher.scheduleWithFixedDelay(WynnChaYuan::tick, 1, 1, TimeUnit.SECONDS);
         flusher.scheduleWithFixedDelay(store::flush, 30, 30, TimeUnit.SECONDS);
+
+        // 分享語料：預設關閉，開了才會送。第一次延遲兩分鐘，不跟登入時的
+        // 譯文同步搶頻寬；之後十分鐘一次，沒有新的就什麼都不做。
+        com.wynnchayuan.capture.CorpusUpload.init(
+                dir, store, modVersion(), language, () -> config.shareCaptures());
+        flusher.scheduleWithFixedDelay(
+                com.wynnchayuan.capture.CorpusUpload::push, 2, 10, TimeUnit.MINUTES);
 
         // 關遊戲時確保最後一批資料有落地
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {

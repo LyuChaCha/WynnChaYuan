@@ -30,6 +30,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # 有 PAT 就用 PAT。GITHUB_TOKEN 推的分支與開的 PR 不會
+          # 觸發任何工作流程（GitHub 為了防迴圈刻意如此），所以 validate
+          # 永遠不會跑，必要檢查永遠是空的，PR 就永遠合不進去——
+          # 實際踩過，累積了一百多個沒人動得了的 auto/rebuild-* 分支。
+          token: ${{ secrets.REBUILD_PAT || secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-python@v5
         with:
@@ -50,7 +56,7 @@ jobs:
       # 所以這裡推到分支再開 PR。
       - name: 有變動就開 PR
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.REBUILD_PAT || secrets.GITHUB_TOKEN }}
         run: |
           if git diff --quiet; then
             echo "沒有變動。"
@@ -82,9 +88,11 @@ jobs:
               echo
               echo "產生物已經推到分支 **$BRANCH**，只差一個 PR。"
               echo
-              echo "倉庫目前不允許 Actions 開 PR。要讓這件事完全自動化，到"
+              echo "倉庫目前不允許 Actions 開 PR，或是 PR 開了也跑不了檢查。"
               echo "**Settings → Actions → General → Workflow permissions**，勾選"
-              echo "**Allow GitHub Actions to create and approve pull requests**。"
+              echo "**Allow GitHub Actions to create and approve pull requests**；"
+              echo "另外設一個 **REBUILD_PAT** secret（內容寫入權限的細粒度 PAT），"
+              echo "否則 PR 開得出來卻不會觸發 validate，必要檢查永遠是空的。"
               echo
               echo "在那之前，手動開一個："
               echo

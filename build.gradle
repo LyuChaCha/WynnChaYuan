@@ -434,6 +434,14 @@ tasks.register('runGlyphHugChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runGlyphHugChecks' }
 
+tasks.register('runCorpusShareChecks', JavaExec) {
+    group = 'verification'
+    description = '分享語料的個資濾網'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.CorpusShareTest'
+}
+tasks.named('check') { dependsOn 'runCorpusShareChecks' }
+
 
 tasks.register('runFlowedBlockChecks', JavaExec) {
     group = 'verification'

@@ -1,0 +1,107 @@
+# 把收集站累積的缺口撈回來，分類進語料，開一個 PR 等人看過。
+#
+# 為什麼要有這條
+# --------------
+# captured.json 只長在玩的人自己那一台。要把一段任務對話收進語料，就得有人
+# 真的去把那段任務跑一遍——維護者一個人的遊玩時數，實際上就是翻譯進度的上限。
+# 分享出來之後，一百個人各跑各的，語料是所有人的總和。
+#
+# 為什麼是開 PR 不是直接寫進去
+# ----------------------------
+# 收集站是公開端點，任何人都送得進東西。開 PR 讓人先看過，最壞情況就是
+# 一個 PR 被關掉；直接寫進 main 的話，最壞情況是語料被灌垃圾。
+#
+# 沒設定 secrets 的話這條會安靜跳過——fork 出去的倉庫不會因此變紅燈。
+name: 撈回分享的語料
+
+on:
+  schedule:
+    - cron: '17 19 * * *'      # 每天台灣時間清晨三點多
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 撈回佇列
+        id: drain
+        env:
+          URL: ${{ secrets.COLLECTOR_URL }}
+          TOKEN: ${{ secrets.COLLECTOR_TOKEN }}
+        run: |
+          if [ -z "$URL" ] || [ -z "$TOKEN" ]; then
+            echo "沒有設定收集站，跳過。設定方式見 tools/collector/README.md。"
+            echo "have=no" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          curl -sS --fail-with-body -H "Authorization: Bearer $TOKEN" "$URL/drain" -o raw.json
+          # 佇列的鍵另外留一份：撈的時候不刪，開完 PR 才回頭刪（見最後一步）。
+          # 剩下的部分刻意跟 captured.json 同形，可以直接餵給 import-captured.py。
+          COUNT=$(python tools/collector/split-drain.py raw.json inbox.json "$RUNNER_TEMP/ack.json")
+          rm -f raw.json
+          echo "撈回 $COUNT 條。"
+          if [ "$COUNT" -gt 0 ]; then
+            echo "have=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "have=no" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 分類進語料
+        if: steps.drain.outputs.have == 'yes'
+        run: |
+          # import-captured.py 自己會擋掉已經翻好的、拆得出來的、以及夾帶個資的。
+          # 這是第三道濾網（模組端一道、收集站一道），刻意重複。
+          python tools/import-captured.py inbox.json --write
+          python tools/quest-bundle.py
+          python tools/quest-index.py
+          python tools/update-docs.py
+          python tools/proofread.py
+          rm -f inbox.json
+
+      - name: 檢查一次才開 PR
+        if: steps.drain.outputs.have == 'yes'
+        run: python tools/validate.py
+
+      - name: 開 PR
+        if: steps.drain.outputs.have == 'yes'
+        env:
+          # 有 PAT 就用 PAT：GITHUB_TOKEN 開的 PR 不會觸發 validate，
+          # 必要檢查永遠是空的，PR 就永遠合不進去（實際踩過）。
+          GH_TOKEN: ${{ secrets.REBUILD_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet; then
+            echo "撈回來的都已經在語料裡了，沒有變動。"
+            exit 0
+          fi
+          BRANCH="auto/inbox-$(date +%Y%m%d)"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add -A
+          git commit -m "收進大家分享的待譯字串
+
+          由 collect-inbox 工作流程自動提交，內容是玩家分享回來的缺口，
+          dst 全部留空等人翻。"
+          git push -u origin "$BRANCH" --force
+          gh pr create --base main --head "$BRANCH" --title "收進大家分享的待譯字串" --body "由 collect-inbox 自動產生，全部是 dst 留空的待譯條目。
+
+          合併前請掃一眼有沒有夾帶到玩家名或公會名——三道濾網都過了，但這是最後一次有人看得到的機會。" || echo "PR 沒開成（可能已經有一個開著）。"
+
+      - name: 回報處理完成
+        if: steps.drain.outputs.have == 'yes'
+        env:
+          URL: ${{ secrets.COLLECTOR_URL }}
+          TOKEN: ${{ secrets.COLLECTOR_TOKEN }}
+        run: |
+          # 撈的時候不刪，開完 PR 才刪——中間掛掉的話下一次還撈得到同一批。
+          curl -sS -X POST -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" --data @"$RUNNER_TEMP/ack.json" "$URL/ack" || true

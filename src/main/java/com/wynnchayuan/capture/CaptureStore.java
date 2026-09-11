@@ -184,6 +184,16 @@ public final class CaptureStore {
         return entries.containsKey(hash(template));
     }
 
+    /**
+     * 目前手上所有條目的快照。
+     *
+     * <p>給 {@link CorpusUpload} 挑要分享哪些用的。拷貝一份而不是把
+     * {@code entries} 交出去——收集發生在渲染路徑上，邊走邊改會炸。
+     */
+    java.util.List<Captured> snapshot() {
+        return java.util.List.copyOf(entries.values());
+    }
+
     public int size() {
         return entries.size();
     }
@@ -341,7 +351,7 @@ public final class CaptureStore {
         return quest.isEmpty() ? null : quest;
     }
 
-    private static String hash(String s) {
+    static String hash(String s) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-1");
             byte[] d = md.digest(s.strip().getBytes(StandardCharsets.UTF_8));
