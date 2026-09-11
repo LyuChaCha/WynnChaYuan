@@ -1,6 +1,6 @@
 {
   "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
-  "latest": "0.1.2",
+  "latest": "0.1.2_1",
   "download": {
     "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
     "modrinth": "https://modrinth.com/mod/wynnchayuan",
@@ -70,6 +70,36 @@
           "简体中文再翻 704 条(技能树标签、NPC 名牌、物品说明、粉末)",
           "简中用词清掉繁中直译的痕迹，并加了检查挡在 CI 上",
           "模组列表里的介绍改成双语"
+        ]
+      }
+    },
+    "0.1.2_1": {
+      "headline": "Simplified Chinese ability trees, clearer corpus collection",
+      "items": [
+        "Simplified Chinese: mage ability tree and the shared ability entries",
+        "captured.json now writes the quest, the speaker and the line number as their own fields",
+        "Lines we cannot place go under their own heading instead of being filed under a guess",
+        "Strings other mods read are no longer collected",
+        "The mods list entry is in English"
+      ],
+      "zh_tw": {
+        "headline": "簡中的技能樹，語料收集的分類",
+        "items": [
+          "簡體中文：法師技能樹與共用的技能條目",
+          "captured.json 多了 quest／speaker／line 三欄",
+          "認不出歸屬的句子單獨一堆，不再塞進某一類",
+          "別的模組會讀的字串不再收集",
+          "模組列表的介紹改成英文"
+        ]
+      },
+      "zh_cn": {
+        "headline": "简中的技能树，语料收集的分类",
+        "items": [
+          "简体中文：法师技能树与共用的技能条目",
+          "captured.json 多了 quest／speaker／line 三栏",
+          "认不出归属的句子单独一堆，不再塞进某一类",
+          "别的模组会读的字符串不再收集",
+          "模组列表的介绍改成英文"
         ]
       }
     }

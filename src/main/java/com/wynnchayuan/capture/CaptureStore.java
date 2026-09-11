@@ -131,16 +131,43 @@ public final class CaptureStore {
             noteEvent("skipped.translated");
             return false;
         }
+        // 別的模組拿來判斷遊戲狀態的句子不收。
+        //
+        // 那些字串一翻就會害對方算錯（見 ThirdPartyLiterals 的說明），
+        // 所以它們不是「待翻的缺口」——擺進這個檔只會讓人以為該翻。
+        // 記個數就好，這樣「為什麼那一行沒翻」看得到答案。
+        if (com.wynnchayuan.render.ThirdPartyLiterals.reserved(template)) {
+            noteEvent("skipped.thirdParty");
+            return false;
+        }
         String key = hash(template);
         Captured existing = entries.get(key);
         if (existing != null) {
             existing.seen++;
             return false;
         }
-        entries.put(key, new Captured(template.strip(), role, domain, ctx,
-                nextSeq.getAndIncrement()));
+        entries.put(key, new Captured(template.strip(), role, classify(domain, ctx),
+                ctx, nextSeq.getAndIncrement()));
         dirty.set(true);
         return true;
+    }
+
+    /**
+     * 收的當下知不知道這句話是哪裡來的。
+     *
+     * <p>對話如果<b>既沒有任務名也沒有說話者</b>，那它在譯者眼裡就是一句
+     * 沒有出處的台詞——不知道誰講的、不知道接在哪裡、不知道語氣。
+     * 這種硬歸在 {@code quest} 底下是在騙人：看起來有分類，實際上沒有。
+     *
+     * <p>所以誠實標成 {@link #UNKNOWN}，鍵也會用 {@code ?} 開頭聚在一起。
+     * 塞錯的分類比沒有分類更難發現——沒有分類至少一眼看得出要補。
+     */
+    private static String classify(String domain, String ctx) {
+        if (ctx != null && ctx.startsWith("dialogue")
+                && questOf(ctx) == null && speakerOf(ctx) == null) {
+            return UNKNOWN;
+        }
+        return domain;
     }
 
     /**
@@ -235,7 +262,11 @@ public final class CaptureStore {
                 + "不會出現在這裡（被略過幾次看 events 的 skipped.translated）。"
                 + "dst 留空代表等人翻。{#} 是材質包符號、{~} 是數值、"
                 + "{p} 是地名、{u} 是玩家名字，譯文都必須原樣保留。"
-                + "seq 是收集順序，任務對話照它排就是原本的先後。");
+                + "seq 是收集順序，任務對話照它排就是原本的先後。"
+                + " 任務對話的鍵就是「任務名 #第幾句」，另外 quest／speaker／line "
+                + "三欄把同一件事拆開寫，不用自己去解 ctx。"
+                + " 認不出來歸屬的（含別的模組的字）集中在 ? 開頭的鍵，"
+                + "domain 是 unknown——那是<b>還沒分類</b>，不是一種分類。");
         JsonObject events = new JsonObject();
         eventCounts.entrySet().stream()
                 .sorted(Map.Entry.comparingByKey())
@@ -249,6 +280,14 @@ public final class CaptureStore {
             selves.add(where);
         }
         meta.add("selfNames", selves);
+        // 每一類各幾條。沒有這一欄，「這份檔案裡到底有什麼」得自己捲完整份。
+        JsonObject groups = new JsonObject();
+        Map<String, Integer> tally = new java.util.TreeMap<>();
+        for (Captured c : entries.values()) {
+            tally.merge(groupOf(c), 1, Integer::sum);
+        }
+        tally.forEach(groups::addProperty);
+        meta.add("groups", groups);
         root.add("_meta", meta);
         // ★ 照收集順序寫，不是照雜湊順序。
         //
@@ -271,7 +310,19 @@ public final class CaptureStore {
             for (int n = 2; !used.add(unique); n++) {
                 unique = key + "~" + n;
             }
-            rows.add(unique, GSON.toJsonTree(c));
+            JsonObject row = GSON.toJsonTree(c).getAsJsonObject();
+            // 任務／說話者／第幾句各自一欄。ctx 是機器用的字串，
+            // 要譯者自己去解「dialogue/King's Recruit#Aledar」不合理。
+            String quest = questOf(c.ctx);
+            if (quest != null) {
+                row.addProperty("quest", quest);
+                row.addProperty("line", nth.get(quest));
+            }
+            String who = speakerOf(c.ctx);
+            if (who != null) {
+                row.addProperty("speaker", who);
+            }
+            rows.add(unique, row);
         }
         root.add("entries", rows);
 
@@ -332,7 +383,47 @@ public final class CaptureStore {
             int n = nth.merge(quest, 1, Integer::sum);
             return String.format("%s #%03d", quest, n);
         }
-        return String.format("%04d", c.seq);
+        // 認不出歸屬的用 ? 開頭。排序時它們會聚在一起，而那個問號就是
+        // 「我不知道這是哪裡來的」——不要為了看起來整齊而塞進某一類，
+        // 塞錯的分類比沒有分類更難發現。
+        return UNKNOWN.equals(c.domain)
+                ? String.format("? #%04d", c.seq)
+                : String.format("%04d", c.seq);
+    }
+
+    /** 認不出歸屬時的 domain。 */
+    public static final String UNKNOWN = "unknown";
+
+    /**
+     * 這一條屬於哪一堆——給 {@code _meta.groups} 統計用。
+     *
+     * <p>用的是<b>已經有的</b>欄位（任務名、domain），不另外發明分類。
+     * 發明一套只有這個檔案懂的分類，接手的人還得先學它。
+     */
+    private static String groupOf(Captured c) {
+        String quest = questOf(c.ctx);
+        if (quest != null) {
+            return "quest: " + quest;
+        }
+        return c.domain == null || c.domain.isBlank() ? UNKNOWN : c.domain;
+    }
+
+    /**
+     * 對話 ctx 裡的說話者。
+     *
+     * <p>格式是 {@code dialogue/Cook Assistant#Aledar}，井號後面那一段。
+     * 沒有名牌的對話（旁白框）回傳 {@code null}。
+     */
+    private static String speakerOf(String ctx) {
+        if (ctx == null || !ctx.startsWith("dialogue")) {
+            return null;
+        }
+        int at = ctx.indexOf('#');
+        if (at < 0) {
+            return null;
+        }
+        String who = ctx.substring(at + 1).strip();
+        return who.isEmpty() ? null : who;
     }
 
     /**
