@@ -255,6 +255,24 @@ NAMED = re.compile(
     # 帳號名的數字會先被抽成佔位符，`FengLingYu_1234` 變成 `FengLingYu_{~}`，
     # 剛好躲過下面那條「底線後面至少兩個字元」的規則。
     r"|[A-Za-z]{2,}_\{~\}"
+    # 死亡快訊：`ChangJenChief has died`。走的是標題那條路，
+    # 前綴是連著的兩個符號、中間沒有空白。
+    #
+    # 要求「行首一個詞」才算，不然劇情裡的「The king has died」也會被擋掉。
+    r"|(?m:^(?:\{#\})*\S+ has died)"
+    # 寶物炸彈的廣播被折成好幾片，名字散在不同片上：
+    #   `{#} {#}JC grindeando has thrown a`
+    #   `{#} {#}Thank JC grindeando`
+    #   `{#} JC grindeando Loot Bomb has expired! …`
+    #
+    # 折行位置是遊戲決定的，所以不能把後面的空白算進比對——模組端原本寫的是
+    # 「has thrown a 」帶空白，就是這樣整句穿了過去。
+    r"|\shas thrown a"
+    r"|Loot Bomb has expired"
+    r"|(?m:^(?:\{#\}\s*)+Thank )"
+    # 故事石碑的主人。玩家名開頭是數字時，數字會先被抽成佔位符，
+    # 剩下半截名字（`{~}jimmy`）就不再等於名單上那個 ID。
+    r"|['’]s Totem of Tales"
     # 交易邀請一句夾兩個名字。
     r"|would like to trade"
     r"|/trade\s"

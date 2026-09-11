@@ -210,6 +210,44 @@ public final class PlayerNameplateTest {
                   !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(item));
         }
 
+        // ★ 這一輪跑世界事件回傳的語料裡漏掉的四類。
+        //
+        // 四類的共同點是<b>名字沒有出現在線上名單能比對的形狀裡</b>：
+        // 被折行截斷、被數字佔位符吃掉半截、或是伺服器根本沒把那個人
+        // 放進分頁清單。所以四條都改認<b>句型</b>，不認名字。
+        for (String leak : new String[] {
+                // 死亡快訊走標題那條路，前綴是連著的兩個符號、中間沒有空白
+                "ChangJenChief has died",
+                "{#}{#}ChangJenChief has died",
+                // 名字開頭是數字，數字先被抽成佔位符，剩下半截名字
+                "{~}jimmy's Totem of Tales",
+                // 寶物炸彈廣播被折成好幾片，名字散在不同片上
+                "{#} {#}JC grindeando has thrown a",
+                "{#} {#}Thank JC grindeando",
+                "{#} JC grindeando Loot Bomb has expired! "
+                        + "\n{#} Get your own bombs at wynncraft.com/store"}) {
+            check("擋得下：" + leak.replace("\n", "⏎"),
+                  com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(leak));
+        }
+
+        // ★ 反方向：同一批語料裡<b>該收</b>的那些一條都不能誤擋。
+        //
+        // 上面四條都用句型比對，句型比對最容易連坐到旁邊的正常句子——
+        // 「Totem of Tales」不帶所有格時是遊戲自己的提示，
+        // 「has died」不接在行首的一個詞後面時是劇情。
+        for (String keep : new String[] {
+                "{#} You are gaining effects from a Totem of Tales!",
+                "{#} You did not enter the event radius in time",
+                "{#} Your guild is already attacking this territory!",
+                "The king has died in his sleep.",
+                "Thank you for your help!",
+                "{#} The Lonely Islet World Event starts in {~}m {~}s! ({~}"
+                        + "\n{#} blocks away) Click to track",
+                "Swashbuckling Brawl ({~}m {~}s left)"}) {
+            check("不誤擋：" + keep.replace("\n", "⏎"),
+                  !com.wynnchayuan.capture.PlayerDataFilter.carriesPlayerData(keep));
+        }
+
         List<String> accepted = List.of("manage your island", "repair items");
         blocked.removeAll(accepted);
         check("人工翻過的語料沒有新的誤擋（實際 " + blocked + "）", blocked.isEmpty());
