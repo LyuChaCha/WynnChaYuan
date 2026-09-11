@@ -139,6 +139,27 @@ public final class RemoteSync {
      *             多語言對玩家來說因此是零流量成本。
      */
     public static int fetchInto(Path cacheDir, String lang) {
+        return fetchInto(cacheDir, lang, null);
+    }
+
+    /**
+     * 抓到第幾個檔了。
+     *
+     * <h2>為什麼要有</h2>
+     * 一種語言是三十幾個檔，其中幾個很大。玩家按下切換之後，畫面上唯一的
+     * 變化是按鈕變成「…」，然後幾十秒沒有動靜——分不出「正在下載」與「當掉了」。
+     *
+     * <p>回呼是在<b>背景執行緒</b>上叫的，收的人自己負責回主執行緒再動畫面。
+     */
+    @FunctionalInterface
+    public interface Progress {
+        void at(int done, int total);
+    }
+
+    /**
+     * @param progress 每抓完一個檔叫一次；不需要就傳 {@code null}
+     */
+    public static int fetchInto(Path cacheDir, String lang, Progress progress) {
         int ok = 0;
         int failed = 0;
         try {
@@ -157,11 +178,18 @@ public final class RemoteSync {
             // 這一步失敗不算錯——那就只是沿用內建清單而已。
             fetchOne(client, cacheDir, lang, INDEX);
 
-            for (String name : files(cacheDir, lang)) {
+            List<String> names = files(cacheDir, lang);
+            if (progress != null) {
+                progress.at(0, names.size());
+            }
+            for (String name : names) {
                 if (fetchOne(client, cacheDir, lang, name)) {
                     ok++;
                 } else {
                     failed++;
+                }
+                if (progress != null) {
+                    progress.at(ok + failed, names.size());
                 }
             }
         } catch (Exception e) {

@@ -79,9 +79,27 @@ public final class ReleaseNotesScreen extends Screen {
         return 44;
     }
 
+    /**
+     * 卡片畫到哪裡為止。
+     *
+     * <h2>先前壓到按鈕上</h2>
+     * 「滾輪往下看更早的版本」那一行畫在 {@code bottom() + 3}，而按鈕的上緣
+     * 就在它下面幾格——兩者重疊，那一行的下半截被按鈕蓋掉。
+     *
+     * <p>改成先算按鈕的上緣，再往上讓出提示那一行的高度。兩邊都從同一個地方算，
+     * 就不會再有「一邊改了另一邊沒跟上」。
+     */
     private int bottom() {
-        return this.height - (Releases.newer() != null ? 60 : 34);
+        return buttonsTop() - HINT_H;
     }
+
+    /** 底下那排按鈕的上緣。有新版時多一顆下載鈕。 */
+    private int buttonsTop() {
+        return this.height - (Releases.newer() != null ? 52 : 26);
+    }
+
+    /** 捲動提示那一行佔的高度，含跟按鈕之間的空隙。 */
+    private static final int HINT_H = 14;
 
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float delta) {

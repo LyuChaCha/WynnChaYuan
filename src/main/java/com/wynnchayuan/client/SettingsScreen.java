@@ -254,11 +254,20 @@ public final class SettingsScreen extends Screen {
      */
     private void cycle(String key, Supplier<Component> label,
                        Consumer<Button> onPress) {
-        cycle(T.s(key), T.s(key + ".hint"), label, onPress);
+        cycleNamed(T.s(key), T.s(key + ".hint"), label, onPress);
     }
 
-    private void cycle(String name, String hint,
-                       Supplier<Component> label, Consumer<Button> onPress) {
+    /**
+     * 名稱與說明都<b>已經是現成的字</b>的版本。
+     *
+     * <h2>為什麼不跟上面那支同名</h2>
+     * 兩支只差一個參數，而多的那個也是 {@code String}。於是
+     * {@code cycle("items.shot", hint, …)} 編得過、跑得動，只是畫面上那一列
+     * 印出來的是 {@code items.shot} 四個字——那一列的名字就這樣消失了一版。
+     * 取不同的名字，這種傳錯就變成編譯錯誤。
+     */
+    private void cycleNamed(String name, String hint,
+                            Supplier<Component> label, Consumer<Button> onPress) {
         add(name, hint).widgets.add(Button.builder(label.get(), onPress::accept)
                 .bounds(0, 0, ctrlW(), 20).build());
     }
@@ -266,11 +275,13 @@ public final class SettingsScreen extends Screen {
     /** 按鈕 + 右邊一顆小的（進階…）。 */
     private void cycleWith(String key, Supplier<Component> label,
                            Consumer<Button> onPress, String extra, Runnable action) {
-        cycleWith(T.s(key), T.s(key + ".hint"), label, onPress, extra, action);
+        cycleWithNamed(T.s(key), T.s(key + ".hint"), label, onPress, extra, action);
     }
 
-    private void cycleWith(String name, String hint, Supplier<Component> label,
-                           Consumer<Button> onPress, String extra, Runnable action) {
+    /** 見 {@link #cycleNamed}：名稱與說明都已經是現成的字。 */
+    private void cycleWithNamed(String name, String hint, Supplier<Component> label,
+                                Consumer<Button> onPress, String extra,
+                                Runnable action) {
         Row row = add(name, hint);
         row.widgets.add(Button.builder(label.get(), onPress::accept)
                 .bounds(0, 0, ctrlW() - 46, 20).build());
@@ -346,7 +357,7 @@ public final class SettingsScreen extends Screen {
                     b.setMessage(marketLabel());
                 });
         String clash = com.wynnchayuan.render.PanelShot.conflict();
-        cycle("items.shot",
+        cycleNamed(T.s("items.shot"),
                 clash == null ? T.s("items.shot.hint") : T.s("items.shot.clash", clash),
                 this::shotLabel, b -> {
                     WynnChaYuan.config().cycleShotMode();
@@ -424,30 +435,8 @@ public final class SettingsScreen extends Screen {
 
     private void data() {
         // 語言擺在「譯文來源」前面：先決定要哪一種語言，再談那一種從哪裡來。
-        cycle("data.language",
-                this::languageLabel, b -> {
-                    String next = nextLanguage();
-                    b.setMessage(T.c("data.language.switching"));
-                    fetching = true;
-                    WynnChaYuan.switchLanguage(next, result -> {
-                        fetching = false;
-                        b.setMessage(languageLabel());
-                        say(Component.literal("✔ " + result)
-                                .withStyle(ChatFormatting.GREEN));
-                    });
-                });
-        cycle("data.fallback",
-                this::fallbackLabel, b -> {
-                    String next = nextFallback();
-                    b.setMessage(Component.literal("…"));
-                    fetching = true;
-                    WynnChaYuan.switchFallback(next, result -> {
-                        fetching = false;
-                        b.setMessage(fallbackLabel());
-                        say(Component.literal("✔ " + result)
-                                .withStyle(ChatFormatting.GREEN));
-                    });
-                });
+        languageRow();
+        fallbackRow();
         cycle("data.source",
                 this::sourceLabel, b -> {
                     WynnChaYuan.config().toggleSource();
@@ -776,6 +765,135 @@ public final class SettingsScreen extends Screen {
     }
 
     /**
+     * 譯文語言那一列。
+     *
+     * <h2>為什麼要按過套用才真的換</h2>
+     * 換一種語言＝把那一種的<b>整份</b>譯文從 GitHub 抓下來，三十幾個檔。
+     * 先前是「點一下就換」，於是從〈跟著遊戲〉走到〈简体中文〉的路上，
+     * <b>每點一下都會觸發一次完整下載</b>，而按鈕上只有一個「…」——
+     * 分不出是在下載還是當掉了，也很容易停在半路上那個沒人要的語言。
+     *
+     * <p>所以拆成兩件事：點按鈕只改<b>待套用</b>的選擇（不連線，立刻反應），
+     * 按下套用才真的換，期間按鈕上顯示抓到第幾個檔。
+     */
+    private void languageRow() {
+        Row row = add(T.s("data.language"), T.s("data.language.hint"));
+        languageButton = Button.builder(languageLabel(), b -> {
+            pendingLanguage = nextLanguage();
+            b.setMessage(languageLabel());
+            refreshApply();
+        }).bounds(0, 0, ctrlW() - 46, 20).build();
+        languageApply = Button.builder(T.c("button.apply"), b -> applyLanguage())
+                .bounds(ctrlW() - 42, 0, 42, 20).build();
+        row.widgets.add(languageButton);
+        row.widgets.add(languageApply);
+        refreshApply();
+    }
+
+    /** 輔助語言那一列。跟 {@link #languageRow} 同一套理由。 */
+    private void fallbackRow() {
+        Row row = add(T.s("data.fallback"), T.s("data.fallback.hint"));
+        fallbackButton = Button.builder(fallbackLabel(), b -> {
+            pendingFallback = nextFallback();
+            b.setMessage(fallbackLabel());
+            refreshApply();
+        }).bounds(0, 0, ctrlW() - 46, 20).build();
+        fallbackApply = Button.builder(T.c("button.apply"), b -> applyFallback())
+                .bounds(ctrlW() - 42, 0, 42, 20).build();
+        row.widgets.add(fallbackButton);
+        row.widgets.add(fallbackApply);
+        refreshApply();
+    }
+
+    /** 選的跟現在用的不一樣，套用才亮得起來。 */
+    private void refreshApply() {
+        if (languageApply != null) {
+            languageApply.active = pendingLanguage != null
+                    && !pendingLanguage.equals(WynnChaYuan.config().language());
+        }
+        if (fallbackApply != null) {
+            fallbackApply.active = pendingFallback != null
+                    && !pendingFallback.equals(WynnChaYuan.config().fallbackLanguage());
+        }
+    }
+
+    /** 切換期間全部鎖住——同時跑兩個切換，最後是哪一種說了不算。 */
+    private void lockLanguageRows(boolean locked) {
+        fetching = locked;
+        if (languageButton != null) {
+            languageButton.active = !locked;
+        }
+        if (fallbackButton != null) {
+            fallbackButton.active = !locked;
+        }
+        if (locked) {
+            if (languageApply != null) {
+                languageApply.active = false;
+            }
+            if (fallbackApply != null) {
+                fallbackApply.active = false;
+            }
+        } else {
+            refreshApply();
+        }
+    }
+
+    private void applyLanguage() {
+        String next = pendingLanguage;
+        if (next == null) {
+            return;
+        }
+        lockLanguageRows(true);
+        say(T.c("data.language.switching").withStyle(ChatFormatting.GRAY));
+        WynnChaYuan.switchLanguage(next, result -> {
+            pendingLanguage = null;
+            pendingFallback = null;
+            lockLanguageRows(false);
+            languageButton.setMessage(languageLabel());
+            fallbackButton.setMessage(fallbackLabel());
+            say(Component.literal("✔ " + result)
+                    .withStyle(ChatFormatting.GREEN));
+        }, (done, total) -> showProgress(languageButton, done, total));
+    }
+
+    private void applyFallback() {
+        String next = pendingFallback;
+        if (next == null) {
+            return;
+        }
+        lockLanguageRows(true);
+        say(T.c("data.language.switching").withStyle(ChatFormatting.GRAY));
+        WynnChaYuan.switchFallback(next, result -> {
+            pendingFallback = null;
+            lockLanguageRows(false);
+            fallbackButton.setMessage(fallbackLabel());
+            say(Component.literal("✔ " + result)
+                    .withStyle(ChatFormatting.GREEN));
+        }, (done, total) -> showProgress(fallbackButton, done, total));
+    }
+
+    /**
+     * 抓到第幾個檔了。
+     *
+     * <p>回呼是在背景執行緒上叫的，動畫面上的東西一定要先回主執行緒。
+     */
+    private void showProgress(Button button, int done, int total) {
+        net.minecraft.client.Minecraft.getInstance().execute(() -> {
+            button.setMessage(ctrl(T.s("data.language.progress", done, total)));
+            say(T.c("data.language.progress", done, total)
+                    .withStyle(ChatFormatting.GRAY));
+        });
+    }
+
+    /** 還沒套用的選擇。{@code null} 表示沒改過，畫面上顯示現在用的那一種。 */
+    private String pendingLanguage;
+    private String pendingFallback;
+    private Button languageButton;
+    private Button languageApply;
+    private Button fallbackButton;
+    private Button fallbackApply;
+
+    /**
      * 下一個要切到的語言。
      *
      * <p>順序是「跟著遊戲」→ 打包進來的每一種 → 回到「跟著遊戲」。
@@ -785,7 +903,8 @@ public final class SettingsScreen extends Screen {
         java.util.List<String> all = new java.util.ArrayList<>();
         all.add("");                       // 跟著遊戲
         all.addAll(com.wynnchayuan.translate.Languages.bundled());
-        String now = WynnChaYuan.config().language();
+        String now = pendingLanguage != null
+                ? pendingLanguage : WynnChaYuan.config().language();
         int at = all.indexOf(now);
         return all.get((at + 1 + all.size()) % all.size());
     }
@@ -798,9 +917,12 @@ public final class SettingsScreen extends Screen {
      * 是不是同一回事。
      */
     private Component languageLabel() {
-        String chosen = WynnChaYuan.config().language();
+        String chosen = pendingLanguage != null
+                ? pendingLanguage : WynnChaYuan.config().language();
+        // 「跟著遊戲」時要算的是<b>遊戲</b>語言會挑到哪一種，不能拿現在用的那一種。
+        // 現在釘著簡體、待套用選了「跟著遊戲」的話，那兩件事是不一樣的。
         String inUse = com.wynnchayuan.translate.Languages.nativeName(
-                WynnChaYuan.language());
+                chosen.isEmpty() ? WynnChaYuan.autoLanguage() : chosen);
         return ctrl(chosen.isEmpty() ? T.s("data.language.auto", inUse) : inUse);
     }
 
@@ -819,7 +941,9 @@ public final class SettingsScreen extends Screen {
                 all.add(lang);
             }
         }
-        int at = all.indexOf(WynnChaYuan.config().fallbackLanguage());
+        String now = pendingFallback != null
+                ? pendingFallback : WynnChaYuan.config().fallbackLanguage();
+        int at = all.indexOf(now);
         return all.get((at + 1 + all.size()) % all.size());
     }
 
@@ -830,7 +954,8 @@ public final class SettingsScreen extends Screen {
      * 不寫的話「自動」兩個字看不出它到底做了什麼。
      */
     private Component fallbackLabel() {
-        String chosen = WynnChaYuan.config().fallbackLanguage();
+        String chosen = pendingFallback != null
+                ? pendingFallback : WynnChaYuan.config().fallbackLanguage();
         if (WynnChaYuan.OFF.equals(chosen)) {
             return ctrl(T.s("data.fallback.off"));
         }
