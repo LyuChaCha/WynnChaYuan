@@ -48,11 +48,25 @@ public final class PlayerDataFilter {
             " has invited you",
             " sent you a friend request",
             " from their crate!",       // 開箱廣播，夾帶開箱者的玩家名
-            " has thrown a ",           // 「某某人丟了經驗炸彈」，夾帶玩家名
+            // 「某某人丟了經驗炸彈」，夾帶玩家名。
+            //
+            // 原本比對的是後面<b>帶空白</b>的 " has thrown a "，而聊天室會把
+            // 這句折行，剛好折在 a 後面：收到的是
+            // 「{#} {#}JC grindeando has thrown a」——結尾沒有那個空白，
+            // 整句穿了過去。折行位置是遊戲決定的，不能當作比對的一部分。
+            " has thrown a",
+            // 同一則廣播的其餘幾片，名字散在不同片上：
+            // 「{#} JC grindeando Loot Bomb has expired! …」
+            " Loot Bomb has expired",
             // 「PoorChaCha has placed a mob totem in {p} at …」與
             // 「You are inside of PoorChaCha's mob totem.」——石碑是誰放的
             // 就寫誰的名字，而且句子裡還有座標。實機的 captured.json 裡
             // 這兩句都漏進來過。
+            // 「某某人的故事石碑」。玩家名開頭是數字時，數字會先被抽成
+            // {~} 佔位符，剩下的半截名字（{~}jimmy）就不再等於名單上那個 ID，
+            // 線上名單那條路整個失效。認後面那個物件名比認名字穩。
+            "'s Totem of Tales",
+            "\u2019s Totem of Tales",
             " has placed a mob totem",
             " has placed a gathering totem",
             " mob totem. Get your own",
@@ -95,7 +109,7 @@ public final class PlayerDataFilter {
      * 那是該收的內容，不能一起擋掉。
      */
     private static final Pattern RAID_DEATH = Pattern.compile(
-            "(^|\\{#} )\\S+ (passed away"
+            "(^|(?:\\{#}\\s*)+)\\S+ (passed away"
                     + "|was purified by"
                     + "|was drained of"
                     + "|lost their color to"
@@ -105,9 +119,23 @@ public final class PlayerDataFilter {
                     + "|has been crystallized"  // NOL：隊友被結晶封住
                     + "|was minced to bits by"  // 地底之巢：被幼龍絞碎
                     + "|began to glow and then faded"
-                    + "|has reconnected!)"
+                    + "|has reconnected"
+                    // 一般地圖上的死亡快訊，走的是<b>標題</b>那條路：
+                    // 「{#}{#}ChangJenChief has died」。前綴是連著的兩個符號、
+                    // 中間沒有空白，所以先前那個 "{#} " 的前綴對不上。
+                    + "|has died)"
                     + "|['’]s existence was redacted",
             Pattern.MULTILINE);
+
+    /**
+     * 廣播裡那句「謝謝某某」，例如 {@code {#} {#}Thank JC grindeando}。
+     *
+     * <p>這是寶物炸彈廣播折出來的其中一片，整片只有句首兩個字是遊戲的，
+     * 後面就是別人的 ID。要求前面至少有一個符號佔位符，才不會誤傷
+     * 任務對話裡的「Thank ...」——那些不帶符號。
+     */
+    private static final Pattern THANK_SOMEONE =
+            Pattern.compile("(?m)^(?:\\{#}\\s*)+Thank ");
 
     /** 座標，例如 {@code [-781, 89, -5563]}。 */
     private static final Pattern COORDS =
@@ -274,6 +302,7 @@ public final class PlayerDataFilter {
                 || CRAFTED_BY.matcher(text).find()
                 || XP_SHARE_TARGET.matcher(text).find()
                 || GUILD_HOLOGRAM.matcher(text).find()
+                || THANK_SOMEONE.matcher(text).find()
                 || CJK.matcher(text).find()) {
             return true;
         }

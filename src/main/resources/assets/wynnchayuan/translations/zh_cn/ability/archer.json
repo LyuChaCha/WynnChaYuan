@@ -4,27 +4,26 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 231,
-  "translated": 0,
+  "translated": 231,
   "note": "弓箭手的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-archer#0000": {
    "src": "Arrow Bomb",
-   "dst": "",
+   "dst": "箭矢炸弹",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/01/000/004",
-   "keep": "en",
    "ability": "Arrow Bomb",
    "code": "ARCHER-P1-R00-C04"
   },
   "ability-archer#0001": {
    "src": "Click Combo: LEFT-RIGHT-RIGHT",
-   "dst": "",
+   "dst": "{c1}技能组合: {c2}左-右-右",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -39,7 +38,7 @@
   },
   "ability-archer#0002": {
    "src": "Shoots a long-ranged arrow that explodes\nand deals high damage over a large area.\n(Self-damage for {~} of your DPS)",
-   "dst": "",
+   "dst": "射出一支远程箭矢，落点处炸开，\n对大范围内的敌人造成高额伤害。\n(自身也会受到相当于你每秒伤害 {~} 的伤害)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -54,7 +53,7 @@
   },
   "ability-archer#0003": {
    "src": "{#} Range: ±{~} Blocks",
-   "dst": "",
+   "dst": "{#} 范围: ±{~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -68,20 +67,19 @@
   },
   "ability-archer#0004": {
    "src": "Bow Proficiency",
-   "dst": "",
+   "dst": "弓术精通",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/01/002/004",
-   "keep": "en",
    "ability": "Bow Proficiency",
    "code": "ARCHER-P1-R02-C04"
   },
   "ability-archer#0005": {
    "src": "Improve your Main Attack's damage\nand range when using a bow.",
-   "dst": "",
+   "dst": "使用弓时，提高你普攻的\n伤害与射程。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -96,20 +94,19 @@
   },
   "ability-archer#0006": {
    "src": "Cheaper Arrow Bomb",
-   "dst": "",
+   "dst": "节约·箭矢炸弹",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/01/002/006",
-   "keep": "en",
    "ability": "Cheaper Arrow Bomb",
    "code": "ARCHER-P1-R02-C06"
   },
   "ability-archer#0007": {
    "src": "Reduce the Mana cost of Arrow Bomb.",
-   "dst": "",
+   "dst": "降低 Arrow Bomb 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -125,20 +122,19 @@
   },
   "ability-archer#0008": {
    "src": "Heart Shatter",
-   "dst": "",
+   "dst": "碎心",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/01/004/004",
-   "keep": "en",
    "ability": "Heart Shatter",
    "code": "ARCHER-P1-R04-C04"
   },
   "ability-archer#0009": {
    "src": "Hitting a mob directly with Arrow Bomb\nwill shatter its heart and deal additional damage.",
-   "dst": "",
+   "dst": "用 Arrow Bomb 直接命中敌人时，\n会击碎它的心脏并造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -153,20 +149,19 @@
   },
   "ability-archer#0010": {
    "src": "Double Shots",
-   "dst": "",
+   "dst": "双重射击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/02/001/002",
-   "keep": "en",
    "ability": "Double Shots",
    "code": "ARCHER-P2-R01-C02"
   },
   "ability-archer#0011": {
    "src": "Doubles Main Attack arrows\nand reduces their damage.\n(Harder to hit distant enemies)",
-   "dst": "",
+   "dst": "普攻箭矢数量翻倍，\n但每支箭的伤害降低。\n(更难命中远处的敌人)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -181,7 +176,7 @@
   },
   "ability-archer#0012": {
    "src": "{#} Main Attack Damage: -{~} (per arrow)",
-   "dst": "",
+   "dst": "{#} 普攻伤害: -{~} (每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -194,20 +189,19 @@
   },
   "ability-archer#0013": {
    "src": "Escape",
-   "dst": "",
+   "dst": "脱身",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/02/001/004",
-   "keep": "en",
    "ability": "Escape",
    "code": "ARCHER-P2-R01-C04"
   },
   "ability-archer#0014": {
    "src": "Click Combo: LEFT-LEFT-LEFT",
-   "dst": "",
+   "dst": "{c1}技能组合: {c2}左-左-左",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -222,7 +216,7 @@
   },
   "ability-archer#0015": {
    "src": "Throw yourself backward to avoid danger.\n(Hold shift while escaping to cancel)",
-   "dst": "",
+   "dst": "向后跃出以躲避危险。\n(脱身途中按住 Shift 可取消)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -237,20 +231,19 @@
   },
   "ability-archer#0016": {
    "src": "Power Shots",
-   "dst": "",
+   "dst": "强力射击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/02/001/006",
-   "keep": "en",
    "ability": "Power Shots",
    "code": "ARCHER-P2-R01-C06"
   },
   "ability-archer#0017": {
    "src": "Your Main Attack arrows have\nincreased speed and knockback.",
-   "dst": "",
+   "dst": "你的普攻箭矢获得\n更快的飞行速度与更强的击退。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -265,20 +258,19 @@
   },
   "ability-archer#0018": {
    "src": "Arrow Storm",
-   "dst": "",
+   "dst": "箭雨",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/02/003/002",
-   "keep": "en",
    "ability": "Arrow Storm",
    "code": "ARCHER-P2-R03-C02"
   },
   "ability-archer#0019": {
    "src": "Click Combo: LEFT-RIGHT-LEFT",
-   "dst": "",
+   "dst": "{c1}技能组合: {c2}左-右-左",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -293,7 +285,7 @@
   },
   "ability-archer#0020": {
    "src": "Shoots a stream of {~} arrows,\ndealing significant damage to close\nmobs and pushing them away.",
-   "dst": "",
+   "dst": "射出一轮 {~} 支箭，\n对近处的敌人造成可观伤害\n并将它们击退。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -308,7 +300,7 @@
   },
   "ability-archer#0021": {
    "src": "{#} Total Damage: {~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -324,20 +316,19 @@
   },
   "ability-archer#0022": {
    "src": "Cheaper Escape",
-   "dst": "",
+   "dst": "节约·脱身",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/02/003/004",
-   "keep": "en",
    "ability": "Cheaper Escape",
    "code": "ARCHER-P2-R03-C04"
   },
   "ability-archer#0023": {
    "src": "Reduce the Mana cost of Escape.",
-   "dst": "",
+   "dst": "降低 Escape 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -353,20 +344,19 @@
   },
   "ability-archer#0024": {
    "src": "Arrow Shield",
-   "dst": "",
+   "dst": "箭盾",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/02/003/006",
-   "keep": "en",
    "ability": "Arrow Shield",
    "code": "ARCHER-P2-R03-C06"
   },
   "ability-archer#0025": {
    "src": "Click Combo: LEFT-LEFT-RIGHT",
-   "dst": "",
+   "dst": "{c1}技能组合: {c2}左-左-右",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -381,7 +371,7 @@
   },
   "ability-archer#0026": {
    "src": "Forms a shield around you that slightly reduces\nthe damage you take. Being hit will consume one\ncharge of the shield. Enemies that get too close\nwill take damage and be knocked away. ({~} charges)",
-   "dst": "",
+   "dst": "在身周形成一面护盾，略微减少\n你受到的伤害。每被击中一次消耗一层。\n靠得太近的敌人会受到伤害\n并被击飞。({~} 层)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -396,20 +386,19 @@
   },
   "ability-archer#0027": {
    "src": "Windy Feet",
-   "dst": "",
+   "dst": "疾风之足",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/02/004/001",
-   "keep": "en",
    "ability": "Windy Feet",
    "code": "ARCHER-P2-R04-C01"
   },
   "ability-archer#0028": {
    "src": "Casting Escape grants a speed buff\nto you and nearby players.",
-   "dst": "",
+   "dst": "施放 Escape 时，为你和附近的\n玩家提供移速增益。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -424,7 +413,7 @@
   },
   "ability-archer#0029": {
    "src": "{#} Effect: +{~} Speed Bonus (➲) to Allies",
-   "dst": "",
+   "dst": "{#} 效果: 对友军 +{~} 速度加成 (➲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -438,20 +427,19 @@
   },
   "ability-archer#0030": {
    "src": "Nimble String",
-   "dst": "",
+   "dst": "灵巧弓弦",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/03/003/001",
-   "keep": "en",
    "ability": "Nimble String",
    "code": "ARCHER-P3-R03-C01"
   },
   "ability-archer#0031": {
    "src": "Arrow Storm fires twice as fast and\nshoots +{~} arrows per stream.",
-   "dst": "",
+   "dst": "Arrow Storm 的射速翻倍，\n每轮多射出 +{~} 支箭。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -466,7 +454,7 @@
   },
   "ability-archer#0032": {
    "src": "Phantom Ray hits twice as fast but lasts half as long.",
-   "dst": "",
+   "dst": "Phantom Ray 的命中频率翻倍，但持续时间减半。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -481,7 +469,7 @@
   },
   "ability-archer#0033": {
    "src": "{#} Total Damage: -{~} (of your DPS, per arrow/ray)",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~} (你的每秒伤害，每支箭/每道射线)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -494,20 +482,19 @@
   },
   "ability-archer#0034": {
    "src": "Buckshot",
-   "dst": "",
+   "dst": "霰弹",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/03/004/000",
-   "keep": "en",
    "ability": "Buckshot",
    "code": "ARCHER-P3-R04-C00"
   },
   "ability-archer#0035": {
    "src": "When Arrow Shield loses its last charge, spew\n{~} piercing arrows forth from your bow.",
-   "dst": "",
+   "dst": "Arrow Shield 失去最后一层时，从弓上\n喷出 {~} 支穿透箭。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -522,20 +509,19 @@
   },
   "ability-archer#0036": {
    "src": "Triple Shots",
-   "dst": "",
+   "dst": "三重射击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/03/004/002",
-   "keep": "en",
    "ability": "Triple Shots",
    "code": "ARCHER-P3-R04-C02"
   },
   "ability-archer#0037": {
    "src": "Triples Main Attack arrows but they deal\n-{~} of normal Main Attack arrow damage.",
-   "dst": "",
+   "dst": "普攻箭矢数量变为三倍，但每支箭的伤害\n比普通普攻箭矢低 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -550,7 +536,7 @@
   },
   "ability-archer#0038": {
    "src": "{#} Main Attack Damage: -{~}",
-   "dst": "",
+   "dst": "{#} 普攻伤害: -{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -563,20 +549,19 @@
   },
   "ability-archer#0039": {
    "src": "Bryophyte Roots",
-   "dst": "",
+   "dst": "苔藓之根",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/03/004/004",
-   "keep": "en",
    "ability": "Bryophyte Roots",
    "code": "ARCHER-P3-R04-C04"
   },
   "ability-archer#0040": {
    "src": "Hitting an enemy with Arrow Storm will\ncreate an area of effect that slows them\ndown and deals damage every {~}s.",
-   "dst": "",
+   "dst": "用 Arrow Storm 命中敌人时，会在\n原地生成一片区域，减缓敌人的\n移动速度并每 {~} 秒造成一次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -591,20 +576,19 @@
   },
   "ability-archer#0041": {
    "src": "Fire Creep",
-   "dst": "",
+   "dst": "蔓火",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/03/004/006",
-   "keep": "en",
    "ability": "Fire Creep",
    "code": "ARCHER-P3-R04-C06"
   },
   "ability-archer#0042": {
    "src": "Arrow Bomb will leave a trail of\nfire for {~}s. Enemies that walk\ninto it take damage every {~}s.",
-   "dst": "",
+   "dst": "Arrow Bomb 会留下一道火痕，\n持续 {~1} 秒。走进火里的敌人\n每 {~2} 秒受到一次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -619,20 +603,19 @@
   },
   "ability-archer#0043": {
    "src": "Phantom Ray",
-   "dst": "",
+   "dst": "幻影射线",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/03/004/008",
-   "keep": "en",
    "ability": "Phantom Ray",
    "code": "ARCHER-P3-R04-C08"
   },
   "ability-archer#0044": {
    "src": "Condense Arrow Storm into a single ray\nthat damages enemies {~} times per second.",
-   "dst": "",
+   "dst": "将 Arrow Storm 凝聚成一道射线，\n每秒对敌人造成 {~} 次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -647,20 +630,19 @@
   },
   "ability-archer#0045": {
    "src": "Guardian Angels",
-   "dst": "",
+   "dst": "守护天使",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/001/001",
-   "keep": "en",
    "ability": "Guardian Angels",
    "code": "ARCHER-P4-R01-C01"
   },
   "ability-archer#0046": {
    "src": "Your Arrow Shield turns into {~} sentient bows\nthat fire at nearby enemies every {~}s, each\nwith {~} ammunition. (Arrow Shield will no longer\npush enemies away or provide resistance)",
-   "dst": "",
+   "dst": "你的 Arrow Shield 化为 {~1} 把有灵之弓，\n每 {~2} 秒向附近的敌人射击一次，各自\n拥有 {~3} 发弹药。(Arrow Shield 不再击退\n敌人，也不再提供抗性)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -675,7 +657,7 @@
   },
   "ability-archer#0047": {
    "src": "{#} Total Damage: {~} (of your DPS, per shot)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，每次射击)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -688,20 +670,19 @@
   },
   "ability-archer#0048": {
    "src": "Basaltic Trap",
-   "dst": "",
+   "dst": "玄武岩陷阱",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/001/004",
-   "keep": "en",
    "ability": "Basaltic Trap",
    "code": "ARCHER-P4-R01-C04"
   },
   "ability-archer#0049": {
    "src": "When you hit the ground with Arrow Bomb, leave\na Trap that damages enemies. (Max {~} Traps)",
-   "dst": "",
+   "dst": "用 Arrow Bomb 命中地面时，留下一个\n会对敌人造成伤害的陷阱。(最多 {~} 个陷阱)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -716,20 +697,19 @@
   },
   "ability-archer#0050": {
    "src": "Focus",
-   "dst": "",
+   "dst": "专注",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/001/008",
-   "keep": "en",
    "ability": "Focus",
    "code": "ARCHER-P4-R01-C08"
   },
   "ability-archer#0051": {
    "src": "When hitting an aggressive enemy {~}+\nblocks away, gain +{~} Focus {#}. (Max {~})\n(Lose {~} Focus if you miss once)",
-   "dst": "",
+   "dst": "击中 {~1} 格以外的敌对目标时，\n获得 +{~2} 层专注 {#}。(上限 {~3})\n(一次落空就失去 {~4} 层专注)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -744,7 +724,7 @@
   },
   "ability-archer#0052": {
    "src": "{#} Damage Bonus: +{~} (per Focus)",
-   "dst": "",
+   "dst": "{#} 伤害加成: +{~} (每层专注)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -757,20 +737,19 @@
   },
   "ability-archer#0053": {
    "src": "Leap",
-   "dst": "",
+   "dst": "腾跃",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/003/001",
-   "keep": "en",
    "ability": "Leap",
    "code": "ARCHER-P4-R03-C01"
   },
   "ability-archer#0054": {
    "src": "Leap in the direction of your movement\nwhen you double jump.",
-   "dst": "",
+   "dst": "二段跳时，朝你的移动方向\n腾跃而出。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -785,7 +764,7 @@
   },
   "ability-archer#0055": {
    "src": "The distance scales with your Walk Speed.",
-   "dst": "",
+   "dst": "跃出的距离随你的移动速度提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -800,20 +779,19 @@
   },
   "ability-archer#0056": {
    "src": "Cheaper Arrow Storm",
-   "dst": "",
+   "dst": "节约·箭雨",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/003/003",
-   "keep": "en",
    "ability": "Cheaper Arrow Storm",
    "code": "ARCHER-P4-R03-C03"
   },
   "ability-archer#0057": {
    "src": "Reduce the Mana cost of Arrow Storm.",
-   "dst": "",
+   "dst": "降低 Arrow Storm 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -829,20 +807,19 @@
   },
   "ability-archer#0058": {
    "src": "Implosion",
-   "dst": "",
+   "dst": "内爆",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/003/005",
-   "keep": "en",
    "ability": "Implosion",
    "code": "ARCHER-P4-R03-C05"
   },
   "ability-archer#0059": {
    "src": "Arrow Bomb pulls enemies\ntowards you. If a Trap is nearby,\nit will pull them towards it instead.\nIncreases Heart Shatter's damage.",
-   "dst": "",
+   "dst": "Arrow Bomb 会把敌人拉向你。\n若附近有陷阱，则改为把\n敌人拉向陷阱。\n同时提高 Heart Shatter 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -857,20 +834,19 @@
   },
   "ability-archer#0060": {
    "src": "Arrow Wall",
-   "dst": "",
+   "dst": "箭墙",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/003/007",
-   "keep": "en",
    "ability": "Arrow Wall",
    "code": "ARCHER-P4-R03-C07"
   },
   "ability-archer#0061": {
    "src": "Gives Arrow Shield +{~} extra charges.\nGuardian Angels will deal -{~} damage.",
-   "dst": "",
+   "dst": "Arrow Shield 额外获得 +{~1} 层。\nGuardian Angels 的伤害降低 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -885,20 +861,19 @@
   },
   "ability-archer#0062": {
    "src": "Arsenal Synergy",
-   "dst": "",
+   "dst": "军械协同",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/004/000",
-   "keep": "en",
    "ability": "Arsenal Synergy",
    "code": "ARCHER-P4-R04-C00"
   },
   "ability-archer#0063": {
    "src": "For every {~} arrows shot by Arrow Storm\nrecently, your Main Attacks will additionally\nfire a flint arrow that damages enemies.\n(Max {~} flints per main attack)",
-   "dst": "",
+   "dst": "近期 Arrow Storm 每射出 {~1} 支箭，\n你的普攻就会额外射出一支燧石箭\n对敌人造成伤害。\n(每次普攻最多 {~2} 支燧石箭)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -913,7 +888,7 @@
   },
   "ability-archer#0064": {
    "src": "{#} Total Damage: {~} (Main Attack Damage, per arrow)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (普攻伤害，每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -926,20 +901,19 @@
   },
   "ability-archer#0065": {
    "src": "Fierce Stomp",
-   "dst": "",
+   "dst": "猛踏",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/004/002",
-   "keep": "en",
    "ability": "Fierce Stomp",
    "code": "ARCHER-P4-R04-C02"
   },
   "ability-archer#0066": {
    "src": "When using Escape, hold shift to\nquickly drop down to deal damage\nand blind enemies.",
-   "dst": "",
+   "dst": "使用 Escape 时按住 Shift，\n可迅速下坠，造成伤害\n并使敌人失明。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -954,20 +928,19 @@
   },
   "ability-archer#0067": {
    "src": "Patient Hunter",
-   "dst": "",
+   "dst": "蛰伏猎手",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/004/004",
-   "keep": "en",
    "ability": "Patient Hunter",
    "code": "ARCHER-P4-R04-C04"
   },
   "ability-archer#0068": {
    "src": "Increase your maximum Traps by +{~}.",
-   "dst": "",
+   "dst": "陷阱上限提高 +{~} 个。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -985,7 +958,7 @@
   },
   "ability-archer#0069": {
    "src": "Your Traps will deal +{~} more damage\nfor every second it's active. (Max +{~})",
-   "dst": "",
+   "dst": "陷阱每存在一秒，伤害就提高 +{~1}。\n(上限 +{~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1000,20 +973,19 @@
   },
   "ability-archer#0070": {
    "src": "Grappling Hook",
-   "dst": "",
+   "dst": "抓钩",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/004/006",
-   "keep": "en",
    "ability": "Grappling Hook",
    "code": "ARCHER-P4-R04-C06"
   },
   "ability-archer#0071": {
    "src": "Holding Shift while casting\nwill pull any enemy you hit.",
-   "dst": "",
+   "dst": "施放时按住 Shift，\n可把命中的敌人拉过来。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1028,7 +1000,7 @@
   },
   "ability-archer#0072": {
    "src": "When casting Escape, throw a hook\nthat pulls you when hitting a block.\n(Escape will not throw you backward anymore)",
-   "dst": "",
+   "dst": "施放 Escape 时抛出一枚抓钩，\n钩中方块后把你拉过去。\n(Escape 不再把你向后弹开)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1043,20 +1015,19 @@
   },
   "ability-archer#0073": {
    "src": "More Focus",
-   "dst": "",
+   "dst": "更多专注",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/004/008",
-   "keep": "en",
    "ability": "More Focus",
    "code": "ARCHER-P4-R04-C08"
   },
   "ability-archer#0074": {
    "src": "Increase your maximum Focus {#} by +{~}.",
-   "dst": "",
+   "dst": "专注 {#} 的上限提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1072,20 +1043,19 @@
   },
   "ability-archer#0075": {
    "src": "Murder Flock",
-   "dst": "",
+   "dst": "鸦群索命",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/005/003",
-   "keep": "en",
    "ability": "Murder Flock",
    "code": "ARCHER-P4-R05-C03"
   },
   "ability-archer#0076": {
    "src": "Basaltic Trap summons a Crow upon detonation that\nwill peck at aggressive enemies every {~}s. (Max {~})\nDamaged enemies will be distracted for {~}s.",
-   "dst": "",
+   "dst": "Basaltic Trap 引爆时召唤一只乌鸦，\n每 {~1} 秒啄击一次敌对目标。(上限 {~2})\n被啄中的敌人会分心 {~3} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1100,20 +1070,19 @@
   },
   "ability-archer#0077": {
    "src": "Refined Gunpowder",
-   "dst": "",
+   "dst": "精制火药",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/005/005",
-   "keep": "en",
    "ability": "Refined Gunpowder",
    "code": "ARCHER-P4-R05-C05"
   },
   "ability-archer#0078": {
    "src": "Increase the damage of Arrow Bomb.",
-   "dst": "",
+   "dst": "提高 Arrow Bomb 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1128,20 +1097,19 @@
   },
   "ability-archer#0079": {
    "src": "Phantom Force",
-   "dst": "",
+   "dst": "幻影之力",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/04/005/007",
-   "keep": "en",
    "ability": "Phantom Force",
    "code": "ARCHER-P4-R05-C07"
   },
   "ability-archer#0080": {
    "src": "Phantom Ray gains extra forward\nrange and becomes wider.",
-   "dst": "",
+   "dst": "Phantom Ray 的射程更远，\n光束也更宽。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1156,20 +1124,19 @@
   },
   "ability-archer#0081": {
    "src": "Windstorm",
-   "dst": "",
+   "dst": "风暴",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/001/001",
-   "keep": "en",
    "ability": "Windstorm",
    "code": "ARCHER-P5-R01-C01"
   },
   "ability-archer#0082": {
    "src": "Arrow Storm gains recoil while midair.",
-   "dst": "",
+   "dst": "在空中施放 Arrow Storm 时会产生后坐力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1184,7 +1151,7 @@
   },
   "ability-archer#0083": {
    "src": "Arrow Storm will shoot +{~} stream\nof arrows and +{~} extra arrows per stream.",
-   "dst": "",
+   "dst": "Arrow Storm 多射出 +{~1} 轮箭，\n且每轮多射 +{~2} 支箭。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1199,7 +1166,7 @@
   },
   "ability-archer#0084": {
    "src": "{#} Total Damage: -{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~} (你的每秒伤害，每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1212,20 +1179,19 @@
   },
   "ability-archer#0085": {
    "src": "Grape Bomb",
-   "dst": "",
+   "dst": "葡萄弹",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/001/004",
-   "keep": "en",
    "ability": "Grape Bomb",
    "code": "ARCHER-P5-R01-C04"
   },
   "ability-archer#0086": {
    "src": "Arrow Bomb will throw {~} additional\nsmaller bombs when exploding.",
-   "dst": "",
+   "dst": "Arrow Bomb 爆炸时会额外抛出\n{~} 枚更小的炸弹。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1240,20 +1206,19 @@
   },
   "ability-archer#0087": {
    "src": "Ivyroot Mamba",
-   "dst": "",
+   "dst": "藤根曼巴",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/001/006",
-   "keep": "en",
    "ability": "Ivyroot Mamba",
    "code": "ARCHER-P5-R01-C06"
   },
   "ability-archer#0088": {
    "src": "Bryophyte Roots summons a Snake after\ndisappearing that will spit weakening\nvenom at aggressive enemies every {~}s. (Max {~})\nEnemies will be weakened for {~}s.",
-   "dst": "",
+   "dst": "Bryophyte Roots 消失后召唤一条蛇，\n每 {~1} 秒向敌对目标喷吐一次\n削弱毒液。(上限 {~2})\n中毒的敌人会被削弱 {~3} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1268,20 +1233,19 @@
   },
   "ability-archer#0089": {
    "src": "Twain's Arc",
-   "dst": "",
+   "dst": "Twain 之弧",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/001/008",
-   "keep": "en",
    "ability": "Twain's Arc",
    "code": "ARCHER-P5-R01-C08"
   },
   "ability-archer#0090": {
    "src": "If you have {~}+ Focus {#}, holding shift will\nsummon Twain's Arc. Charge it up to\nshoot a destructive long-range beam.",
-   "dst": "",
+   "dst": "专注 {#} 达到 {~} 层以上时，按住 Shift\n可召唤 Twain's Arc。蓄力后射出\n一道毁灭性的远程光束。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1296,20 +1260,19 @@
   },
   "ability-archer#0091": {
    "src": "Frenzy",
-   "dst": "",
+   "dst": "狂热",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/002/000",
-   "keep": "en",
    "ability": "Frenzy",
    "code": "ARCHER-P5-R02-C00"
   },
   "ability-archer#0092": {
    "src": "Hitting an enemy will give you a brief buff\nof +{~} Walk Speed, up to {~} per second. (Max +{~})\n-{~} of the bonus decays every second.",
-   "dst": "",
+   "dst": "命中敌人时短暂获得 +{~1} 移动速度，\n每秒最多叠加 {~2} 次。(上限 +{~3})\n该加成每秒衰减 {~4}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1324,20 +1287,19 @@
   },
   "ability-archer#0093": {
    "src": "Shrapnel Bomb",
-   "dst": "",
+   "dst": "破片弹",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/002/002",
-   "keep": "en",
    "ability": "Shrapnel Bomb",
    "code": "ARCHER-P5-R02-C02"
   },
   "ability-archer#0094": {
    "src": "Arrow Bomb's explosion will fling {~}\nshrapnel, dealing damage in a large area.\n(Each enemy can only be hit by three shrapnel)",
-   "dst": "",
+   "dst": "Arrow Bomb 爆炸时会甩出 {~} 块弹片，\n在大范围内造成伤害。\n(每个敌人最多被三块弹片命中)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1352,7 +1314,7 @@
   },
   "ability-archer#0095": {
    "src": "{#} Total Damage: {~} (of your DPS, per shrapnel)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，每块弹片)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1365,20 +1327,19 @@
   },
   "ability-archer#0096": {
    "src": "Rocket Jump",
-   "dst": "",
+   "dst": "火箭跳",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/002/005",
-   "keep": "en",
    "ability": "Rocket Jump",
    "code": "ARCHER-P5-R02-C05"
   },
   "ability-archer#0097": {
    "src": "Arrow Bomb's recoil is increased, and\nits self-damage is reduced to {~}.",
-   "dst": "",
+   "dst": "Arrow Bomb 的后坐力提高，\n对自身的伤害降至 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1393,20 +1354,19 @@
   },
   "ability-archer#0098": {
    "src": "Scorched Earth",
-   "dst": "",
+   "dst": "焦土",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/002/007",
-   "keep": "en",
    "ability": "Scorched Earth",
    "code": "ARCHER-P5-R02-C07"
   },
   "ability-archer#0099": {
    "src": "Fire Creep becomes much stronger.",
-   "dst": "",
+   "dst": "Fire Creep 大幅增强。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1421,7 +1381,7 @@
   },
   "ability-archer#0100": {
    "src": "{#} Duration: +{~}s",
-   "dst": "",
+   "dst": "{#} 持续时间: +{~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1435,33 +1395,31 @@
   },
   "ability-archer#0101": {
    "src": "More Traps",
-   "dst": "",
+   "dst": "更多陷阱",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/003/003",
-   "keep": "en",
    "ability": "More Traps",
    "code": "ARCHER-P5-R03-C03"
   },
   "ability-archer#0102": {
    "src": "Divine Intervention",
-   "dst": "",
+   "dst": "神圣干预",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/004/001",
-   "keep": "en",
    "ability": "Divine Intervention",
    "code": "ARCHER-P5-R04-C01"
   },
   "ability-archer#0103": {
    "src": "Casting Arrow Bomb will cause them to\nshoot explosive shots, dealing +{~} damage.",
-   "dst": "",
+   "dst": "施放 Arrow Bomb 时，它们会射出\n爆裂弹，造成 +{~} 伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1476,7 +1434,7 @@
   },
   "ability-archer#0104": {
    "src": "Casting Arrow Storm will cause them to\nshoot {~}x faster while Arrow Storm is active",
-   "dst": "",
+   "dst": "施放 Arrow Storm 时，它们的射速在\nArrow Storm 持续期间提升至 {~} 倍",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1491,7 +1449,7 @@
   },
   "ability-archer#0105": {
    "src": "Guardian Angels gain +{~} additional ammunition.\nWhenever you cast a spell, your Guardian Angels\nbecome briefly empowered.",
-   "dst": "",
+   "dst": "Guardian Angels 额外获得 +{~} 发弹药。\n你每施放一次技能，Guardian Angels\n都会短暂强化。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1506,20 +1464,19 @@
   },
   "ability-archer#0106": {
    "src": "Cheaper Arrow Shield",
-   "dst": "",
+   "dst": "节约·箭盾",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/004/004",
-   "keep": "en",
    "ability": "Cheaper Arrow Shield",
    "code": "ARCHER-P5-R04-C04"
   },
   "ability-archer#0107": {
    "src": "Reduce the Mana cost of Arrow Shield.",
-   "dst": "",
+   "dst": "降低 Arrow Shield 的法力消耗。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1535,20 +1492,19 @@
   },
   "ability-archer#0108": {
    "src": "Honed Shield",
-   "dst": "",
+   "dst": "淬锋之盾",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/004/006",
-   "keep": "en",
    "ability": "Honed Shield",
    "code": "ARCHER-P5-R04-C06"
   },
   "ability-archer#0109": {
    "src": "Arrow Shield's radius, knockback,\nand damage is increased.",
-   "dst": "",
+   "dst": "Arrow Shield 的半径、击退\n与伤害都获得提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1563,7 +1519,7 @@
   },
   "ability-archer#0110": {
    "src": "Guardian Angels' damage is increased.",
-   "dst": "",
+   "dst": "Guardian Angels 的伤害提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1578,7 +1534,7 @@
   },
   "ability-archer#0111": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Arrow Shield)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Arrow Shield)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1591,7 +1547,7 @@
   },
   "ability-archer#0112": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Guardian Angels, per shot)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Guardian Angels，每次射击)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1605,20 +1561,19 @@
   },
   "ability-archer#0113": {
    "src": "Shocking Bomb",
-   "dst": "",
+   "dst": "震荡弹",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/004/008",
-   "keep": "en",
    "ability": "Shocking Bomb",
    "code": "ARCHER-P5-R04-C08"
   },
   "ability-archer#0114": {
    "src": "Arrow Bomb will be unaffected by\ngravity and increase its explosion damage.",
-   "dst": "",
+   "dst": "Arrow Bomb 不再受重力影响，\n爆炸伤害也随之提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1633,20 +1588,19 @@
   },
   "ability-archer#0115": {
    "src": "Stormy Feet",
-   "dst": "",
+   "dst": "风暴之足",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/005/000",
-   "keep": "en",
    "ability": "Stormy Feet",
    "code": "ARCHER-P5-R05-C00"
   },
   "ability-archer#0116": {
    "src": "Windy Feet will last longer and grant a stronger\nspeed buff.",
-   "dst": "",
+   "dst": "Windy Feet 的持续时间更长，\n提供的移速增益也更强。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1661,20 +1615,19 @@
   },
   "ability-archer#0117": {
    "src": "Bounding Stride",
-   "dst": "",
+   "dst": "大步流星",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/005/002",
-   "keep": "en",
    "ability": "Bounding Stride",
    "code": "ARCHER-P5-R05-C02"
   },
   "ability-archer#0118": {
    "src": "Leap will launch you further.",
-   "dst": "",
+   "dst": "Leap 会把你送得更远。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1689,20 +1642,19 @@
   },
   "ability-archer#0119": {
    "src": "Homing Shots",
-   "dst": "",
+   "dst": "追踪射击",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/05/005/005",
-   "keep": "en",
    "ability": "Homing Shots",
    "code": "ARCHER-P5-R05-C05"
   },
   "ability-archer#0120": {
    "src": "Your Main Attack arrows will follow nearby\nenemies and will be unaffected by gravity.",
-   "dst": "",
+   "dst": "你的普攻箭矢会追踪附近的敌人，\n且不再受重力影响。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1717,20 +1669,19 @@
   },
   "ability-archer#0121": {
    "src": "Recycling",
-   "dst": "",
+   "dst": "回收",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/001/001",
-   "keep": "en",
    "ability": "Recycling",
    "code": "ARCHER-P6-R01-C01"
   },
   "ability-archer#0122": {
    "src": "When any of your projectiles miss, gain +{~} Mana.",
-   "dst": "",
+   "dst": "你的弹射物落空时，获得 +{~} 法力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1745,20 +1696,19 @@
   },
   "ability-archer#0123": {
    "src": "Mana Trap",
-   "dst": "",
+   "dst": "法力陷阱",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/001/003",
-   "keep": "en",
    "ability": "Mana Trap",
    "code": "ARCHER-P6-R01-C03"
   },
   "ability-archer#0124": {
    "src": "Your Traps will give you {~} Mana\nper second and {~} Mana\nwhen they explode.",
-   "dst": "",
+   "dst": "你的陷阱每秒为你提供 {~1} 点法力，\n引爆时再额外提供 {~2} 点。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1773,33 +1723,31 @@
   },
   "ability-archer#0125": {
    "src": "Cheaper Escape II",
-   "dst": "",
+   "dst": "节约·脱身 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/001/005",
-   "keep": "en",
    "ability": "Cheaper Escape II",
    "code": "ARCHER-P6-R01-C05"
   },
   "ability-archer#0126": {
    "src": "Initiator",
-   "dst": "",
+   "dst": "先手",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/001/007",
-   "keep": "en",
    "ability": "Initiator",
    "code": "ARCHER-P6-R01-C07"
   },
   "ability-archer#0127": {
    "src": "If you do not damage an enemy for\n{~}s or more, your next successful hit\nwill deal +{~} damage and add +{~} Focus {#}.",
-   "dst": "",
+   "dst": "若你超过 {~1} 秒没有对敌人造成伤害，\n下一次成功命中会造成 +{~2} 伤害，\n并额外获得 +{~3} 层专注 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1814,20 +1762,19 @@
   },
   "ability-archer#0128": {
    "src": "Courier's Edict",
-   "dst": "",
+   "dst": "信使谕令",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/002/000",
-   "keep": "en",
    "ability": "Courier's Edict",
    "code": "ARCHER-P6-R02-C00"
   },
   "ability-archer#0129": {
    "src": "Fierce Stomp sends out {~} waves of\nheavenly light in front of you.",
-   "dst": "",
+   "dst": "Fierce Stomp 会在你身前\n送出 {~} 道天光。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1842,7 +1789,7 @@
   },
   "ability-archer#0130": {
    "src": "Landing after Leap triggers Fierce Stomp.",
-   "dst": "",
+   "dst": "Leap 落地时触发 Fierce Stomp。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1857,7 +1804,7 @@
   },
   "ability-archer#0131": {
    "src": "{#} Total Damage: {~} (of your DPS, per wave)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，每道光波)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1870,20 +1817,19 @@
   },
   "ability-archer#0132": {
    "src": "Vigilant Sentinels",
-   "dst": "",
+   "dst": "警醒哨卫",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/002/002",
-   "keep": "en",
    "ability": "Vigilant Sentinels",
    "code": "ARCHER-P6-R02-C02"
   },
   "ability-archer#0133": {
    "src": "Casting Arrow Shield while Guardian Angels are active\nwill also cast Buckshot. Increase Buckshot's damage.",
-   "dst": "",
+   "dst": "Guardian Angels 生效期间施放 Arrow Shield，\n会同时施放 Buckshot，并提高它的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1898,7 +1844,7 @@
   },
   "ability-archer#0134": {
    "src": "Increase Guardian Angels' range and damage.",
-   "dst": "",
+   "dst": "提高 Guardian Angels 的射程与伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1913,7 +1859,7 @@
   },
   "ability-archer#0135": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，Buckshot，每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1926,20 +1872,19 @@
   },
   "ability-archer#0136": {
    "src": "Call of the Hound",
-   "dst": "",
+   "dst": "唤犬之号",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/002/004",
-   "keep": "en",
    "ability": "Call of the Hound",
    "code": "ARCHER-P6-R02-C04"
   },
   "ability-archer#0137": {
    "src": "Arrow Shield summons a Hound that will\nattack aggressive enemies every {~}s\nand drag them towards your traps.",
-   "dst": "",
+   "dst": "Arrow Shield 会召唤一只猎犬，\n每 {~} 秒攻击一次敌对目标，\n并把它们拖向你的陷阱。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1954,20 +1899,19 @@
   },
   "ability-archer#0138": {
    "src": "Decimator",
-   "dst": "",
+   "dst": "歼灭者",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/002/006",
-   "keep": "en",
    "ability": "Decimator",
    "code": "ARCHER-P6-R02-C06"
   },
   "ability-archer#0139": {
    "src": "Phantom Ray gains extra forward range.",
-   "dst": "",
+   "dst": "Phantom Ray 的射程更远。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1982,7 +1926,7 @@
   },
   "ability-archer#0140": {
    "src": "Phantom Ray will increase its damage by {~}\nevery time you do not miss with it. (Max {~})",
-   "dst": "",
+   "dst": "Phantom Ray 每有一次没有落空，\n伤害就提高 {~1}。(上限 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1997,20 +1941,19 @@
   },
   "ability-archer#0141": {
    "src": "Phasing Beam",
-   "dst": "",
+   "dst": "相位光束",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/002/008",
-   "keep": "en",
    "ability": "Phasing Beam",
    "code": "ARCHER-P6-R02-C08"
   },
   "ability-archer#0142": {
    "src": "Twain's Arc charges {~} faster, and\ncan now pierce through up to {~} enemies,\ndealing reduced damage after piercing.\n(Damage is dealt as Main Attack Damage)",
-   "dst": "",
+   "dst": "Twain's Arc 的蓄力速度提升 {~1}，\n并且最多可穿透 {~2} 个敌人，\n穿透之后伤害有所降低。\n(伤害按普攻伤害结算)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2025,7 +1968,7 @@
   },
   "ability-archer#0143": {
    "src": "{#} Total Damage: -{~} (after piercing)",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~} (穿透后)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2038,20 +1981,19 @@
   },
   "ability-archer#0144": {
    "src": "Spectral Hover",
-   "dst": "",
+   "dst": "幽影滞空",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/003/005",
-   "keep": "en",
    "ability": "Spectral Hover",
    "code": "ARCHER-P6-R03-C05"
   },
   "ability-archer#0145": {
    "src": "Slow Falling is applied upon using Escape.\nCrouching at any point will cancel this effect.\n(Effect cannot be refreshed mid-air)",
-   "dst": "",
+   "dst": "使用 Escape 后获得缓降效果。\n任何时候下蹲都会取消这个效果。\n(该效果无法在空中刷新)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2066,20 +2008,19 @@
   },
   "ability-archer#0146": {
    "src": "Parting Gift",
-   "dst": "",
+   "dst": "临别之礼",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/004/000",
-   "keep": "en",
    "ability": "Parting Gift",
    "code": "ARCHER-P6-R04-C00"
   },
   "ability-archer#0147": {
    "src": "When casting Escape, release a\ncluster bomb mid-air that explodes,\nsending a payload of {~} arrows\nto your previous location.\n(Each enemy can only be hit by one arrow)",
-   "dst": "",
+   "dst": "施放 Escape 时，在空中\n投下一枚集束炸弹，炸开后\n把 {~} 支箭洒向你原先的位置。\n(每个敌人最多被一支箭命中)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2094,20 +2035,19 @@
   },
   "ability-archer#0148": {
    "src": "Bouncing Bomb",
-   "dst": "",
+   "dst": "弹跳炸弹",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/004/002",
-   "keep": "en",
    "ability": "Bouncing Bomb",
    "code": "ARCHER-P6-R04-C02"
   },
   "ability-archer#0149": {
    "src": "Arrow Bomb will travel {~} slower and\nbounce once when hitting a block or enemy.",
-   "dst": "",
+   "dst": "Arrow Bomb 的飞行速度降低 {~}，\n命中方块或敌人时会弹跳一次。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2122,46 +2062,43 @@
   },
   "ability-archer#0150": {
    "src": "Cheaper Arrow Storm II",
-   "dst": "",
+   "dst": "节约·箭雨 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/004/004",
-   "keep": "en",
    "ability": "Cheaper Arrow Storm II",
    "code": "ARCHER-P6-R04-C04"
   },
   "ability-archer#0151": {
    "src": "Cheaper Arrow Shield II",
-   "dst": "",
+   "dst": "节约·箭盾 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/004/007",
-   "keep": "en",
    "ability": "Cheaper Arrow Shield II",
    "code": "ARCHER-P6-R04-C07"
   },
   "ability-archer#0152": {
    "src": "Hookshot",
-   "dst": "",
+   "dst": "钩索",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/005/006",
-   "keep": "en",
    "ability": "Hookshot",
    "code": "ARCHER-P6-R05-C06"
   },
   "ability-archer#0153": {
    "src": "Increases your Grappling Hook's\nrange, speed and strength.",
-   "dst": "",
+   "dst": "提高 Grappling Hook 的\n射程、速度与力道。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2176,20 +2113,19 @@
   },
   "ability-archer#0154": {
    "src": "Ghostly Trigger",
-   "dst": "",
+   "dst": "幽灵扳机",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/06/005/008",
-   "keep": "en",
    "ability": "Ghostly Trigger",
    "code": "ARCHER-P6-R05-C08"
   },
   "ability-archer#0155": {
    "src": "While airborne after casting Escape, your\nnext {~} Main Attacks can be fired in quick\nsuccession regardless of attack speed,\nand will instantly fire from Twain's Arc.",
-   "dst": "",
+   "dst": "施放 Escape 后滞空期间，你接下来的\n{~} 次普攻可以无视攻速连续射出，\n并且会直接由 Twain's Arc 发射。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2204,20 +2140,19 @@
   },
   "ability-archer#0156": {
    "src": "Arrow Hurricane",
-   "dst": "",
+   "dst": "箭矢飓风",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/001/001",
-   "keep": "en",
    "ability": "Arrow Hurricane",
    "code": "ARCHER-P7-R01-C01"
   },
   "ability-archer#0157": {
    "src": "Arrow Storm will shoot +{~} extra streams of arrows.",
-   "dst": "",
+   "dst": "Arrow Storm 额外多射出 +{~} 轮箭。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2232,7 +2167,7 @@
   },
   "ability-archer#0158": {
    "src": "Arrow Storm's recoil is doubled.",
-   "dst": "",
+   "dst": "Arrow Storm 的后坐力翻倍。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2247,20 +2182,19 @@
   },
   "ability-archer#0159": {
    "src": "Beast Lore",
-   "dst": "",
+   "dst": "驭兽之识",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/001/003",
-   "keep": "en",
    "ability": "Beast Lore",
    "code": "ARCHER-P7-R01-C03"
   },
   "ability-archer#0160": {
    "src": "Increase your maximum Snakes by +{~}.\nIncrease your maximum Crows by +{~}.\nIncrease the damage of your Hound.",
-   "dst": "",
+   "dst": "蛇的上限提高 +{~1}。\n乌鸦的上限提高 +{~2}。\n猎犬的伤害提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2275,20 +2209,19 @@
   },
   "ability-archer#0161": {
    "src": "Tangled Traps",
-   "dst": "",
+   "dst": "缠结陷阱",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/001/005",
-   "keep": "en",
    "ability": "Tangled Traps",
    "code": "ARCHER-P7-R01-C05"
   },
   "ability-archer#0162": {
    "src": "Grape Bomb gains +{~} grape.",
-   "dst": "",
+   "dst": "Grape Bomb 多出 +{~} 颗葡萄弹。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2303,7 +2236,7 @@
   },
   "ability-archer#0163": {
    "src": "Your Traps will be connected by a rope\nthat deals damage to enemies every {~}s.",
-   "dst": "",
+   "dst": "你的陷阱之间会连起一条绳索，\n每 {~} 秒对敌人造成一次伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2318,20 +2251,19 @@
   },
   "ability-archer#0164": {
    "src": "Coursing Restraints",
-   "dst": "",
+   "dst": "电流束缚",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/001/007",
-   "keep": "en",
    "ability": "Coursing Restraints",
    "code": "ARCHER-P7-R01-C07"
   },
   "ability-archer#0165": {
    "src": "Shocking Bomb will temporarily shock\nenemies, reducing their defences.",
-   "dst": "",
+   "dst": "Shocking Bomb 会短暂电击敌人，\n降低它们的防御。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2346,7 +2278,7 @@
   },
   "ability-archer#0166": {
    "src": "{#} Effect: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 效果: 对敌人 -{~} 抗性加成 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2359,20 +2291,19 @@
   },
   "ability-archer#0167": {
    "src": "Elusive",
-   "dst": "",
+   "dst": "灵动",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/002/002",
-   "keep": "en",
    "ability": "Elusive",
    "code": "ARCHER-P7-R02-C02"
   },
   "ability-archer#0168": {
    "src": "Arrow Bomb and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
-   "dst": "",
+   "dst": "Arrow Bomb 与 Arrow Storm 不再产生后坐力，\n而且 Arrow Bomb 不会再伤到你自己。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2387,20 +2318,19 @@
   },
   "ability-archer#0169": {
    "src": "Chilling Snare",
-   "dst": "",
+   "dst": "寒霜陷套",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/002/004",
-   "keep": "en",
    "ability": "Chilling Snare",
    "code": "ARCHER-P7-R02-C04"
   },
   "ability-archer#0170": {
    "src": "Attach an icy snare to Basaltic Trap,\ndrastically inhibiting and damaging nearby\nenemies every {~}s after it detonates.",
-   "dst": "",
+   "dst": "为 Basaltic Trap 附上一道冰霜陷套，\n引爆后每 {~} 秒大幅削弱附近的敌人\n并造成伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2415,20 +2345,19 @@
   },
   "ability-archer#0171": {
    "src": "Feedback Loop",
-   "dst": "",
+   "dst": "反馈循环",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/003/000",
-   "keep": "en",
    "ability": "Feedback Loop",
    "code": "ARCHER-P7-R03-C00"
   },
   "ability-archer#0172": {
    "src": "Hitting {~} flint arrow will make your next\nArrow Storm shoot +{~} arrow per stream. (Max {~})",
-   "dst": "",
+   "dst": "命中 {~1} 支燧石箭后，你的下一次\nArrow Storm 每轮多射 +{~2} 支箭。(上限 {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2443,20 +2372,19 @@
   },
   "ability-archer#0173": {
    "src": "Swift Primer",
-   "dst": "",
+   "dst": "速燃引信",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/003/003",
-   "keep": "en",
    "ability": "Swift Primer",
    "code": "ARCHER-P7-R03-C03"
   },
   "ability-archer#0174": {
    "src": "Patient Hunter will increase its damage by +{~}\nper second, and increase its Max Damage by +{~}.",
-   "dst": "",
+   "dst": "Patient Hunter 每秒提高的伤害增加 +{~1}，\n它的伤害上限提高 +{~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2471,20 +2399,19 @@
   },
   "ability-archer#0175": {
    "src": "Crepuscular Ray",
-   "dst": "",
+   "dst": "曙暮光线",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/003/007",
-   "keep": "en",
    "ability": "Crepuscular Ray",
    "code": "ARCHER-P7-R03-C07"
   },
   "ability-archer#0176": {
    "src": "If you have {~}+ Focus {#}, casting Arrow Storm\nwhile {~}+ blocks above the ground will cause\nyou to levitate and shoot {~} homing arrows\nper second until you run out of Focus {#}.",
-   "dst": "",
+   "dst": "专注 {#} 达到 {~1} 层以上时，在离地 {~2} 格\n以上施放 Arrow Storm，你会悬浮在空中，\n每秒射出 {~3} 支追踪箭，\n直到专注 {#} 耗尽。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2499,7 +2426,7 @@
   },
   "ability-archer#0177": {
    "src": "While in this state, lose {~} Focus {#} every {~}s.",
-   "dst": "",
+   "dst": "处于该状态时，每 {~2} 秒失去 {~1} 层专注 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2514,20 +2441,19 @@
   },
   "ability-archer#0178": {
    "src": "Transience",
-   "dst": "",
+   "dst": "无常",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/004/001",
-   "keep": "en",
    "ability": "Transience",
    "code": "ARCHER-P7-R04-C01"
   },
   "ability-archer#0179": {
    "src": "Arrow Storm will pierce enemies.",
-   "dst": "",
+   "dst": "Arrow Storm 会穿透敌人。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2542,20 +2468,19 @@
   },
   "ability-archer#0180": {
    "src": "Snow Storm",
-   "dst": "",
+   "dst": "暴风雪",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/004/004",
-   "keep": "en",
    "ability": "Snow Storm",
    "code": "ARCHER-P7-R04-C04"
   },
   "ability-archer#0181": {
    "src": "Enemies near you will be slowed down.",
-   "dst": "",
+   "dst": "你附近的敌人会被减速。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2570,46 +2495,43 @@
   },
   "ability-archer#0182": {
    "src": "Cheaper Arrow Bomb II",
-   "dst": "",
+   "dst": "节约·箭矢炸弹 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/004/006",
-   "keep": "en",
    "ability": "Cheaper Arrow Bomb II",
    "code": "ARCHER-P7-R04-C06"
   },
   "ability-archer#0183": {
    "src": "More Focus II",
-   "dst": "",
+   "dst": "更多专注 II",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/07/004/008",
-   "keep": "en",
    "ability": "More Focus II",
    "code": "ARCHER-P7-R04-C08"
   },
   "ability-archer#0184": {
    "src": "Wild Light",
-   "dst": "",
+   "dst": "野性之光",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/001/000",
-   "keep": "en",
    "ability": "Wild Light",
    "code": "ARCHER-P8-R01-C00"
   },
   "ability-archer#0185": {
    "src": "Increase your Main Attack's damage by +{~}\nfor every +{~} Walk Speed you gain from Frenzy.",
-   "dst": "",
+   "dst": "Frenzy 每为你提供 +{~2} 移动速度，\n你的普攻伤害就提高 +{~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2624,20 +2546,19 @@
   },
   "ability-archer#0186": {
    "src": "Fimbulwinter",
-   "dst": "",
+   "dst": "芬布尔之冬",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/001/005",
-   "keep": "en",
    "ability": "Fimbulwinter",
    "code": "ARCHER-P8-R01-C05"
   },
   "ability-archer#0187": {
    "src": "Enemies take additional damage after standing\ninside of Chilling Snare for {~}s.",
-   "dst": "",
+   "dst": "敌人在 Chilling Snare 里站满 {~} 秒后，\n会受到额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2652,20 +2573,19 @@
   },
   "ability-archer#0188": {
    "src": "Warding Wisps",
-   "dst": "",
+   "dst": "守护灵火",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/001/008",
-   "keep": "en",
    "ability": "Warding Wisps",
    "code": "ARCHER-P8-R01-C08"
   },
   "ability-archer#0189": {
    "src": "When Arrow Shield loses a charge,\nsummon a Wisp that follows and\nprotects you. (Max {~})",
-   "dst": "",
+   "dst": "Arrow Shield 每失去一层，\n就召唤一团灵火跟随并\n保护你。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2680,7 +2600,7 @@
   },
   "ability-archer#0190": {
    "src": "Your Wisps can possess nearby\nenemies for {~}s, dealing damage\nevery {~}s and slowing them.",
-   "dst": "",
+   "dst": "你的灵火可以附身于附近的敌人 {~1} 秒，\n每 {~2} 秒造成一次伤害并使其减速。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2695,20 +2615,19 @@
   },
   "ability-archer#0191": {
    "src": "Shrieking Arrows",
-   "dst": "",
+   "dst": "鸣镝",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/002/002",
-   "keep": "en",
    "ability": "Shrieking Arrows",
    "code": "ARCHER-P8-R02-C02"
   },
   "ability-archer#0192": {
    "src": "Arrow Storm and Phantom Ray will deal additional damage.",
-   "dst": "",
+   "dst": "Arrow Storm 与 Phantom Ray 会造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2723,7 +2642,7 @@
   },
   "ability-archer#0193": {
    "src": "{#} Total Damage: +{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2737,7 +2656,7 @@
   },
   "ability-archer#0194": {
    "src": "{#} Total Damage: +{~} (of your DPS, per ray)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，每道射线)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2750,20 +2669,19 @@
   },
   "ability-archer#0195": {
    "src": "Overgrowth",
-   "dst": "",
+   "dst": "疯长",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/002/004",
-   "keep": "en",
    "ability": "Overgrowth",
    "code": "ARCHER-P8-R02-C04"
   },
   "ability-archer#0196": {
    "src": "Bryophyte Roots spreads further\nand deals damage {~} faster.",
-   "dst": "",
+   "dst": "Bryophyte Roots 蔓延得更远，\n造成伤害的频率提高 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2778,20 +2696,19 @@
   },
   "ability-archer#0197": {
    "src": "Quick Draw",
-   "dst": "",
+   "dst": "快弓",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/002/006",
-   "keep": "en",
    "ability": "Quick Draw",
    "code": "ARCHER-P8-R02-C06"
   },
   "ability-archer#0198": {
    "src": "Not missing with Phantom Ray {~} times\nin a row will transform your next\nMain Attack into a Twain's Arc beam.",
-   "dst": "",
+   "dst": "连续 {~} 次用 Phantom Ray 命中后，\n你的下一次普攻会变成\n一道 Twain's Arc 光束。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2806,20 +2723,19 @@
   },
   "ability-archer#0199": {
    "src": "Sniffer Dog",
-   "dst": "",
+   "dst": "嗅探犬",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/003/005",
-   "keep": "en",
    "ability": "Sniffer Dog",
    "code": "ARCHER-P8-R03-C05"
   },
   "ability-archer#0200": {
    "src": "Your Hound has a {~} chance to\ndig up a Trap when attacking enemies.",
-   "dst": "",
+   "dst": "你的猎犬攻击敌人时，有 {~} 的几率\n刨出一个陷阱。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2834,20 +2750,19 @@
   },
   "ability-archer#0201": {
    "src": "Repel",
-   "dst": "",
+   "dst": "斥退",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/003/007",
-   "keep": "en",
    "ability": "Repel",
    "code": "ARCHER-P8-R03-C07"
   },
   "ability-archer#0202": {
    "src": "Casting Arrow Shield will push back nearby\nenemies and provide a brief burst of resistance.",
-   "dst": "",
+   "dst": "施放 Arrow Shield 会击退附近的敌人，\n并短暂提供一段抗性。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2862,7 +2777,7 @@
   },
   "ability-archer#0203": {
    "src": "Reduce this ability's cooldown by {~}s\nevery time Arrow Shield loses a charge.",
-   "dst": "",
+   "dst": "Arrow Shield 每失去一层，\n这个技能的冷却时间就减少 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2877,20 +2792,19 @@
   },
   "ability-archer#0204": {
    "src": "Pyrotechnics",
-   "dst": "",
+   "dst": "烟火术",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/004/001",
-   "keep": "en",
    "ability": "Pyrotechnics",
    "code": "ARCHER-P8-R04-C01"
   },
   "ability-archer#0205": {
    "src": "Arrow Bomb and Grape Bomb\nbecome much hotter, increasing\nthe damage of their explosion.",
-   "dst": "",
+   "dst": "Arrow Bomb 与 Grape Bomb\n变得更加炽热，爆炸伤害\n随之提高。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2905,7 +2819,7 @@
   },
   "ability-archer#0206": {
    "src": "{#} Total Damage: {~} (of your DPS, for Arrow Bomb)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，Arrow Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2918,7 +2832,7 @@
   },
   "ability-archer#0207": {
    "src": "{#} Total Damage: {~} (of your DPS, for Grape Bomb)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，Grape Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2931,20 +2845,19 @@
   },
   "ability-archer#0208": {
    "src": "Canine Colleague",
-   "dst": "",
+   "dst": "犬类同僚",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/004/003",
-   "keep": "en",
    "ability": "Canine Colleague",
    "code": "ARCHER-P8-R04-C03"
   },
   "ability-archer#0209": {
    "src": "Increase your maximum Hounds by +{~}.",
-   "dst": "",
+   "dst": "猎犬的上限提高 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2959,20 +2872,19 @@
   },
   "ability-archer#0210": {
    "src": "Mael's Quiver",
-   "dst": "",
+   "dst": "Mael 之箙",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/004/006",
-   "keep": "en",
    "ability": "Mael's Quiver",
    "code": "ARCHER-P8-R04-C06"
   },
   "ability-archer#0211": {
    "src": "Increase the damage of Crepuscular Ray.",
-   "dst": "",
+   "dst": "提高 Crepuscular Ray 的伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2987,20 +2899,19 @@
   },
   "ability-archer#0212": {
    "src": "Repositioning",
-   "dst": "",
+   "dst": "换位",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/08/004/008",
-   "keep": "en",
    "ability": "Repositioning",
    "code": "ARCHER-P8-R04-C08"
   },
   "ability-archer#0213": {
    "src": "Gain a brief speed boost\nafter shooting Twain's Arc.",
-   "dst": "",
+   "dst": "射出 Twain's Arc 之后\n短暂获得移速提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3015,7 +2926,7 @@
   },
   "ability-archer#0214": {
    "src": "{#} Effect: +{~} Walk Speed (➲) to Self",
-   "dst": "",
+   "dst": "{#} 效果: 对自身 +{~} 移动速度 (➲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3028,20 +2939,19 @@
   },
   "ability-archer#0215": {
    "src": "Angelic Ascension",
-   "dst": "",
+   "dst": "天使升华",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/09/002/001",
-   "keep": "en",
    "ability": "Angelic Ascension",
    "code": "ARCHER-P9-R02-C01"
   },
   "ability-archer#0216": {
    "src": "Arrow Bomb will smite enemies it hits\ndirectly with a bolt from the heavens.",
-   "dst": "",
+   "dst": "被 Arrow Bomb 直接命中的敌人\n会被一道天雷击中。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3056,7 +2966,7 @@
   },
   "ability-archer#0217": {
    "src": "Arrow Storm last {~} times longer\nand releases in a tighter spread",
-   "dst": "",
+   "dst": "Arrow Storm 的持续时间延长至 {~} 倍，\n箭矢的散布也更加集中",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3071,7 +2981,7 @@
   },
   "ability-archer#0218": {
    "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap have no cooldown.",
-   "dst": "",
+   "dst": "召来光之力量强化你的攻击，\n持续 {~} 秒，期间 Leap\n没有冷却时间。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3086,7 +2996,7 @@
   },
   "ability-archer#0219": {
    "src": "Guardian Angels will have unlimited ammunition\nand trigger Buckshot after firing {~} volleys.",
-   "dst": "",
+   "dst": "Guardian Angels 的弹药无限，\n每射出 {~} 轮齐射后触发 Buckshot。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3101,7 +3011,7 @@
   },
   "ability-archer#0220": {
    "src": "Main Attack will instead shoot Light Arrows\nthat deal {~} more damage over {~}s.",
-   "dst": "",
+   "dst": "普攻改为射出光之箭，\n在 {~2} 秒内造成 {~1} 的额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3116,7 +3026,7 @@
   },
   "ability-archer#0221": {
    "src": "{#} Total Damage: {~} (of your DPS, Arrow Bomb's smite)",
-   "dst": "",
+   "dst": "{#} 总伤害: {~} (你的每秒伤害，Arrow Bomb 的天雷)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3129,20 +3039,19 @@
   },
   "ability-archer#0222": {
    "src": "The Twilight Zone",
-   "dst": "",
+   "dst": "暮光地带",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/09/002/007",
-   "keep": "en",
    "ability": "The Twilight Zone",
    "code": "ARCHER-P9-R02-C07"
   },
   "ability-archer#0223": {
    "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#} stack on a target.",
-   "dst": "",
+   "dst": "持续时间结束时，或再次按下 F，向每个被标记的\n敌人射出一支法术箭和一支普攻箭。\n箭矢会按目标身上的暮光 {#} 层数\n造成额外伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3157,7 +3066,7 @@
   },
   "ability-archer#0224": {
    "src": "Enter a focused state for {~}s.",
-   "dst": "",
+   "dst": "进入专注状态，持续 {~} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3172,7 +3081,7 @@
   },
   "ability-archer#0225": {
    "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#} every {~}s. (Max {~})",
-   "dst": "",
+   "dst": "处于该状态时，你跳得更高、落得更慢，\n视线里的所有敌人每 {~1} 秒\n会被暮光 {#} 标记一次。(上限 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3187,7 +3096,7 @@
   },
   "ability-archer#0226": {
    "src": "{#} Total Damage: +{~} (Main Attack Damage, per Twilight)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (普攻伤害，每层暮光)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3200,7 +3109,7 @@
   },
   "ability-archer#0227": {
    "src": "{#} Total Damage: +{~} (of your DPS, per Twilight)",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~} (你的每秒伤害，每层暮光)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3213,20 +3122,19 @@
   },
   "ability-archer#0228": {
    "src": "Extinction Event",
-   "dst": "",
+   "dst": "灭绝事件",
    "role": "name",
    "kind": "term",
    "ctx": [
     "archer/技能名稱"
    ],
    "tree": "02/archer/09/003/004",
-   "keep": "en",
    "ability": "Extinction Event",
    "code": "ARCHER-P9-R03-C04"
   },
   "ability-archer#0229": {
    "src": "Bombs will leave behind Basaltic Traps\nand occasionally Chilling Snares.",
-   "dst": "",
+   "dst": "炸弹落地后会留下 Basaltic Trap，\n偶尔还会留下 Chilling Snare。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3241,7 +3149,7 @@
   },
   "ability-archer#0230": {
    "src": "Calls forth a flock of tactical crows\nwhich will perform a carpet bombing of\na large area in front of you.",
-   "dst": "",
+   "dst": "召来一群战术乌鸦，\n对你身前的大片区域\n进行地毯式轰炸。",
    "role": "desc",
    "kind": "block",
    "ctx": [
