@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 270,
-  "translated": 261,
+  "translated": 270,
   "note": "弓箭手的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-archer#0234": {
    "src": "Arrow Bomb{#}and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
-   "dst": "",
+   "dst": "Arrow Bomb{#}与 Arrow Storm 不再产生后座，\n而且你的 Arrow Bomb 不会伤到自己。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -25,7 +25,7 @@
   },
   "ability-archer#0231": {
    "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#}{#}stack on a target.",
-   "dst": "",
+   "dst": "持续时间结束时，或按 F 主动结束时，向每个被标记的敌人\n各射出一发法术箭与一发普通攻击箭。\n目标身上每有一层暮光 {#}{#}，箭矢就多造成一份伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -39,7 +39,7 @@
   },
   "ability-archer#0235": {
    "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap{#}have no cooldown.",
-   "dst": "",
+   "dst": "召唤光的力量强化你的攻击 {~} 秒，\n期间 Leap{#}没有冷却。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -53,7 +53,7 @@
   },
   "ability-archer#0236": {
    "src": "Gives Arrow Shield{#}+{~} extra charges.\nGuardian Angels will deal -{~} damage.",
-   "dst": "",
+   "dst": "Arrow Shield{#}额外获得 {~1} 层充能。\nGuardian Angels 造成的伤害降低 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -67,7 +67,7 @@
   },
   "ability-archer#0238": {
    "src": "Increase your maximum Focus {#}{#}by +{~}.",
-   "dst": "",
+   "dst": "专注 {#}{#}的上限提高 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -82,7 +82,7 @@
   },
   "ability-archer#0233": {
    "src": "Not missing with Phantom Ray{#}{~}{#}times\nin a row will transform your next\nMain Attack{#}into a Twain's Arc beam.",
-   "dst": "",
+   "dst": "连续 {~} 次用 Phantom Ray{#}{#}命中不落空后，\n你的下一次普通攻击{#}会变成\nTwain's Arc 光束。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -96,7 +96,7 @@
   },
   "ability-archer#0237": {
    "src": "While in this state, lose {~} Focus {#}{#}every {~}s.",
-   "dst": "",
+   "dst": "处于此状态时，每 {~2} 秒失去 {~1} 层专注 {#}{#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -110,7 +110,7 @@
   },
   "ability-archer#0232": {
    "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#}{#}every {~}s. (Max {~})",
-   "dst": "",
+   "dst": "处于此状态时你跳得更高、落得更慢，\n视线内的所有敌人每 {~1} 秒被暮光 {#}{#}标记一次。\n(上限 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -244,7 +244,7 @@
   },
   "ability-archer#0250": {
    "src": "{#}{#}Effects: -{~}{#}Damage Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}效果: 敌人伤害加成 -{~}{#} ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -657,7 +657,7 @@
   },
   "ability-archer#0006": {
    "src": "Cheaper Arrow Bomb",
-   "dst": "节约·箭矢炸弹",
+   "dst": "箭矢炸弹减耗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -879,7 +879,7 @@
   },
   "ability-archer#0022": {
    "src": "Cheaper Escape",
-   "dst": "节约·脱身",
+   "dst": "脱身减耗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1342,7 +1342,7 @@
   },
   "ability-archer#0056": {
    "src": "Cheaper Arrow Storm",
-   "dst": "节约·箭雨",
+   "dst": "箭雨减耗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2027,7 +2027,7 @@
   },
   "ability-archer#0106": {
    "src": "Cheaper Arrow Shield",
-   "dst": "节约·箭盾",
+   "dst": "箭盾减耗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2286,7 +2286,7 @@
   },
   "ability-archer#0125": {
    "src": "Cheaper Escape II",
-   "dst": "节约·脱身 II",
+   "dst": "脱身减耗 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2625,7 +2625,7 @@
   },
   "ability-archer#0150": {
    "src": "Cheaper Arrow Storm II",
-   "dst": "节约·箭雨 II",
+   "dst": "箭雨减耗 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2637,7 +2637,7 @@
   },
   "ability-archer#0151": {
    "src": "Cheaper Arrow Shield II",
-   "dst": "节约·箭盾 II",
+   "dst": "箭盾减耗 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3058,7 +3058,7 @@
   },
   "ability-archer#0182": {
    "src": "Cheaper Arrow Bomb II",
-   "dst": "节约·箭矢炸弹 II",
+   "dst": "箭矢炸弹减耗 II",
    "role": "name",
    "kind": "term",
    "ctx": [
