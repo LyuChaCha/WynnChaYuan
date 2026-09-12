@@ -274,6 +274,21 @@ NAMED = re.compile(
     # 死亡訊息：`PoorChaCha is six feet under`。句型是遊戲寫死的，
     # 名字一定在最前面，認句尾那一段最穩。
     r"|\sis six feet under"
+    # 同一批的其他死法。`ChangJenChief met their fate` 躲過了上面那條
+    # 「整行就是一個帳號名」——它是一整句，名字只佔開頭。
+    r"|\smet their fate\b"
+    r"|\swas devoured by\b"
+    r"|\shad their skull shattered\b"
+    r"|\smet their demise\b"
+    r"|\shas perished\b"
+    # 公會大廳的傳送立牌：`Teleporter ⏎ to afk bata`。整段都是玩家打的字，
+    # 目的地名稱常常直接就是某個人的 ID。跟 check-leaks 的 SIGN_SHAPES
+    # 是同一條規則——那邊管存量，這裡管入口，不然刪掉之後又會被收回來。
+    r"|(?s:\A(?:\{#\})*Teleporter\nto .)"
+    # 領地擁有者：`Owned by Titans Valor`。跟 Controlled by 同一類。
+    r"|(?m:^Owned by\s)"
+    # 交易所篩選器把玩家自己打的搜尋字顯示出來，而且是邊打邊更新。
+    r"|(?m:^-?\s*Name Contains:\s)"
     # 公會／玩家名牌後面接等級：`YuChaYuan [Lv. 106]`。
     r"|^(?:\{#\})*[A-Za-z][a-z0-9]*[a-z][A-Z][A-Za-z0-9]*\s\[Lv\."
     # 名牌後面只接圖示：`ImagineKami {#}{#}`。
