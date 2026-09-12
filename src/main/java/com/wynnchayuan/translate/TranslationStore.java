@@ -38,6 +38,20 @@ public final class TranslationStore {
 
     private final Map<String, String> entries = new ConcurrentHashMap<>();
 
+    /**
+     * 這一份收過哪些原文，<b>包含還沒翻的</b>。給收集端判斷「這句收過沒有」。
+     *
+     * <h2>為什麼不能拿 {@link #entries} 當判準</h2>
+     * {@code entries} 只放<b>有譯文</b>的——載入時就把空 dst 跳掉了。拿它去問
+     * 「收過沒有」，語料裡已經躺著、只是還沒翻的那幾千條每一次都會回答「沒有」，
+     * 於是每個玩家每一次進遊戲看到就再收一次、再上傳一次。收集站每天撈回來的
+     * 因此幾乎都是早就有的東西。
+     *
+     * <p>所以另外記一份。代價是多存一組字串，換掉的是每天成千上萬筆重複上傳。
+     */
+    private final java.util.Set<String> seenSources =
+            java.util.concurrent.ConcurrentHashMap.newKeySet();
+
     /** 見 {@link #maxBlockLines()}。載入時一併算出來，查詢時不必再掃一次。 */
     private volatile int maxBlockLines = 1;
 
@@ -149,6 +163,7 @@ public final class TranslationStore {
      */
     public void loadAll(List<Path> dirs) {
         entries.clear();
+        seenSources.clear();
         flat.clear();
         unwrapped.clear();
         unindented.clear();
@@ -367,6 +382,10 @@ public final class TranslationStore {
                     && "name".equals(optString(e, "role"))) {
                 gearNameKeys.add(src.strip());
             }
+            // 收過就記下來，翻了沒有另外算——見 seenSources 的說明。
+            if (src != null && !src.isBlank()) {
+                seenSources.add(src.strip());
+            }
             if (src != null && dst != null && !dst.isBlank()) {
                 String srcKey = src.strip();
                 entries.put(srcKey, dst.strip());
@@ -421,6 +440,8 @@ public final class TranslationStore {
                 continue;                     // _meta 之類的欄位
             }
             JsonElement v = obj.get(key);
+            // 平鋪格式的鍵就是原文，翻了沒有一律記下來——見 seenSources。
+            seenSources.add(key.strip());
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
                 entries.put(key.strip(), v.getAsString().strip());
                 market.add(key.strip(), v.getAsString().strip());
@@ -1416,7 +1437,7 @@ public final class TranslationStore {
      * 呼叫端存起來之後整個 store 就可以丟掉。
      */
     public java.util.Set<String> sourceKeys() {
-        return java.util.Set.copyOf(entries.keySet());
+        return java.util.Set.copyOf(seenSources);
     }
 
     public boolean hasTranslation(String template) {
