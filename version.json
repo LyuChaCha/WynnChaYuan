@@ -1,12 +1,42 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.5_1",
+ "latest": "0.1.5_2",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.5_2": {
+   "headline": "Japanese and Korean item labels, and Simplified Chinese Major IDs",
+   "items": [
+    "Japanese and Korean: item tooltip labels and Major IDs",
+    "Simplified Chinese: Major IDs",
+    "Traditional Chinese: gathering nodes, cave boards, loot chests, store offers and raid buff panels",
+    "Fixed a quest line showing a stray bold tag in the dialogue box",
+    "The mob totem expiry broadcast is no longer collected"
+   ],
+   "zh_tw": {
+    "headline": "日文與韓文的物品欄位，簡體中文的 Major ID",
+    "items": [
+     "日文與韓文：物品說明的欄位標籤與 Major ID",
+     "簡體中文：Major ID",
+     "繁體中文：採集點、洞窟看板、戰利品寶箱、商城優惠與討伐戰的增益面板",
+     "修正任務對話裡多出來的粗體標籤",
+     "怪物圖騰到期的廣播不再被收集"
+    ]
+   },
+   "zh_cn": {
+    "headline": "日文与韩文的物品栏位，简体中文的 Major ID",
+    "items": [
+     "日文与韩文：物品说明的栏位标签与 Major ID",
+     "简体中文：Major ID",
+     "繁体中文：采集点、洞窟看板、战利品宝箱、商城优惠与副本的增益面板",
+     "修正任务对话里多出来的粗体标签",
+     "怪物图腾到期的广播不再被收集"
+    ]
+   }
+  },
   "0.1.5_1": {
    "headline": "Update notices now point at GitHub",
    "items": [
