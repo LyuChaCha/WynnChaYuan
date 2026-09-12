@@ -4,15 +4,15 @@
   "lang": "zh_tw",
   "generated": "2026-08-19T12:14:19+00:00",
   "count": 136,
-  "translated": 0,
+  "translated": 136,
   "note": "只需填 dst。src 里的材质包图标与数字在抽取阶段就已经排除了。 名称不受「翻译物品名称」开关影响——那个开关是为了让装备名保持英文，跟制作材料无关。",
-  "itemNames": false,
+  "itemNames": true,
   "gearNames": false
  },
  "entries": {
   "material#0000": {
    "src": "Feed to your Mount to upgrade its Altitude and Boost\nCan be used to purchase blocks in Housing, or to craft {#} Scrolls, {#} Helmets, & {#} Chestplates",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的高度与冲刺\n也可以用来购买住宅的方块，或制作 {#} 卷轴、{#} 头盔与 {#} 胸甲",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -26,7 +26,7 @@
   },
   "material#0001": {
    "src": "Feed to your Mount to upgrade its Acceleration, Toughness and Speed\nCan be used to purchase blocks in Housing, or to craft {#} Spears, {#} Daggers, {#} Bows, {#} Reliks & {#} Wands",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的加速、韧性与速度\n也可以用来购买住宅的方块，或制作 {#} 长矛、{#} 匕首、{#} 弓、{#} 法器与 {#} 魔杖",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -40,7 +40,7 @@
   },
   "material#0002": {
    "src": "Feed to your Mount to upgrade its Speed and Altitude\nCan be used to purchase blocks in Housing, or to craft {#} Potions & {#} Food",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的速度与高度\n也可以用来购买住宅的方块，或制作 {#} 药水与 {#} 食物",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -54,7 +54,7 @@
   },
   "material#0003": {
    "src": "Feed to your Mount to upgrade its Boost, Handling and Acceleration\nCan be used to purchase blocks in Housing, or to craft {#} Boots, {#} Leggings, {#} Bows & {#} Wands",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的冲刺、操控与加速\n也可以用来购买住宅的方块，或制作 {#} 靴子、{#} 护腿、{#} 弓与 {#} 魔杖",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -68,7 +68,7 @@
   },
   "material#0004": {
    "src": "Feed to your Mount to upgrade its Energy and Acceleration\nCan be used to purchase blocks in Housing, or to craft {#} Food",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的能量与加速\n也可以用来购买住宅的方块，或制作 {#} 食物",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -82,7 +82,7 @@
   },
   "material#0005": {
    "src": "Feed to your Mount to upgrade its Handling, Training and Altitude\nCan be used to purchase blocks in Housing, or to craft {#} Scrolls, {#} Rings, {#} Bracelets, {#} Necklaces, {#} Potions & {#} Reliks",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的操控、训练与高度\n也可以用来购买住宅的方块，或制作 {#} 卷轴、{#} 戒指、{#} 手镯、{#} 项链、{#} 药水与 {#} 法器",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -96,7 +96,7 @@
   },
   "material#0006": {
    "src": "Feed to your Mount to upgrade its Training, Speed and Energy\nCan be used to purchase blocks in Housing, or to craft {#} Rings, {#} Bracelets & {#} Necklaces",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的训练、速度与能量\n也可以用来购买住宅的方块，或制作 {#} 戒指、{#} 手镯与 {#} 项链",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -110,7 +110,7 @@
   },
   "material#0007": {
    "src": "Feed to your Mount to upgrade its Toughness and Energy\nCan be used to purchase blocks in Housing, or to craft {#} Spears, {#} Daggers, {#} Boots, {#} Leggings, {#} Helmets, & {#} Chestplates",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的韧性与能量\n也可以用来购买住宅的方块，或制作 {#} 长矛、{#} 匕首、{#} 靴子、{#} 护腿、{#} 头盔与 {#} 胸甲",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -124,7 +124,7 @@
   },
   "material#0008": {
    "src": "Acacia Paper",
-   "dst": "",
+   "dst": "金合欢纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -133,7 +133,7 @@
   },
   "material#0009": {
    "src": "Acacia Plank",
-   "dst": "",
+   "dst": "金合欢木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -142,7 +142,7 @@
   },
   "material#0010": {
    "src": "Avo Paper",
-   "dst": "",
+   "dst": "Avo 纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -151,7 +151,7 @@
   },
   "material#0011": {
    "src": "Avo Plank",
-   "dst": "",
+   "dst": "Avo 木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -160,7 +160,7 @@
   },
   "material#0012": {
    "src": "Barley Grains",
-   "dst": "",
+   "dst": "大麦谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -169,7 +169,7 @@
   },
   "material#0013": {
    "src": "Barley String",
-   "dst": "",
+   "dst": "大麦线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -178,7 +178,7 @@
   },
   "material#0014": {
    "src": "Bass Meat",
-   "dst": "",
+   "dst": "鲈鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -187,7 +187,7 @@
   },
   "material#0015": {
    "src": "Bass Oil",
-   "dst": "",
+   "dst": "鲈鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -196,7 +196,7 @@
   },
   "material#0016": {
    "src": "Birch Paper",
-   "dst": "",
+   "dst": "白桦纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -205,7 +205,7 @@
   },
   "material#0017": {
    "src": "Birch Plank",
-   "dst": "",
+   "dst": "白桦木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -214,7 +214,7 @@
   },
   "material#0018": {
    "src": "Carp Meat",
-   "dst": "",
+   "dst": "鲤鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -223,7 +223,7 @@
   },
   "material#0019": {
    "src": "Carp Oil",
-   "dst": "",
+   "dst": "鲤鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -232,7 +232,7 @@
   },
   "material#0020": {
    "src": "Cinnabar Gem",
-   "dst": "",
+   "dst": "朱砂宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -241,7 +241,7 @@
   },
   "material#0021": {
    "src": "Cinnabar Ingot",
-   "dst": "",
+   "dst": "朱砂锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -250,7 +250,7 @@
   },
   "material#0022": {
    "src": "Cobalt Gem",
-   "dst": "",
+   "dst": "钴宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -259,7 +259,7 @@
   },
   "material#0023": {
    "src": "Cobalt Ingot",
-   "dst": "",
+   "dst": "钴锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -268,7 +268,7 @@
   },
   "material#0024": {
    "src": "Copper Gem",
-   "dst": "",
+   "dst": "铜宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -277,7 +277,7 @@
   },
   "material#0025": {
    "src": "Copper Ingot",
-   "dst": "",
+   "dst": "铜锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -286,7 +286,7 @@
   },
   "material#0026": {
    "src": "Dark Paper",
-   "dst": "",
+   "dst": "暗木纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -295,7 +295,7 @@
   },
   "material#0027": {
    "src": "Dark Plank",
-   "dst": "",
+   "dst": "暗木木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -304,7 +304,7 @@
   },
   "material#0028": {
    "src": "Decay Grains",
-   "dst": "",
+   "dst": "腐朽谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -313,7 +313,7 @@
   },
   "material#0029": {
    "src": "Decay String",
-   "dst": "",
+   "dst": "腐朽线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -322,7 +322,7 @@
   },
   "material#0030": {
    "src": "Dernic Gem",
-   "dst": "",
+   "dst": "Dernic 宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -331,7 +331,7 @@
   },
   "material#0031": {
    "src": "Dernic Grains",
-   "dst": "",
+   "dst": "Dernic 谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -340,7 +340,7 @@
   },
   "material#0032": {
    "src": "Dernic Ingot",
-   "dst": "",
+   "dst": "Dernic 锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -349,7 +349,7 @@
   },
   "material#0033": {
    "src": "Dernic Meat",
-   "dst": "",
+   "dst": "Dernic 肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -358,7 +358,7 @@
   },
   "material#0034": {
    "src": "Dernic Oil",
-   "dst": "",
+   "dst": "Dernic 油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -367,7 +367,7 @@
   },
   "material#0035": {
    "src": "Dernic Paper",
-   "dst": "",
+   "dst": "Dernic 纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -376,7 +376,7 @@
   },
   "material#0036": {
    "src": "Dernic Plank",
-   "dst": "",
+   "dst": "Dernic 木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -385,7 +385,7 @@
   },
   "material#0037": {
    "src": "Dernic String",
-   "dst": "",
+   "dst": "Dernic 线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -394,7 +394,7 @@
   },
   "material#0038": {
    "src": "Diamond Gem",
-   "dst": "",
+   "dst": "钻石宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -403,7 +403,7 @@
   },
   "material#0039": {
    "src": "Diamond Ingot",
-   "dst": "",
+   "dst": "钻石锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -412,7 +412,7 @@
   },
   "material#0040": {
    "src": "Gold Gem",
-   "dst": "",
+   "dst": "金宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -421,7 +421,7 @@
   },
   "material#0041": {
    "src": "Gold Ingot",
-   "dst": "",
+   "dst": "金锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -430,7 +430,7 @@
   },
   "material#0042": {
    "src": "Granite Gem",
-   "dst": "",
+   "dst": "花岗岩宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -439,7 +439,7 @@
   },
   "material#0043": {
    "src": "Granite Ingot",
-   "dst": "",
+   "dst": "花岗岩锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -448,7 +448,7 @@
   },
   "material#0044": {
    "src": "Gudgeon Meat",
-   "dst": "",
+   "dst": "鮈鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -457,7 +457,7 @@
   },
   "material#0045": {
    "src": "Gudgeon Oil",
-   "dst": "",
+   "dst": "鮈鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -466,7 +466,7 @@
   },
   "material#0046": {
    "src": "Gylia Meat",
-   "dst": "",
+   "dst": "Gylia 鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -475,7 +475,7 @@
   },
   "material#0047": {
    "src": "Gylia Oil",
-   "dst": "",
+   "dst": "Gylia 鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -484,7 +484,7 @@
   },
   "material#0048": {
    "src": "Heather Grains",
-   "dst": "",
+   "dst": "石南谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -493,7 +493,7 @@
   },
   "material#0049": {
    "src": "Heather String",
-   "dst": "",
+   "dst": "石南线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -502,7 +502,7 @@
   },
   "material#0050": {
    "src": "Hemp Grains",
-   "dst": "",
+   "dst": "大麻谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -511,7 +511,7 @@
   },
   "material#0051": {
    "src": "Hemp String",
-   "dst": "",
+   "dst": "大麻线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -520,7 +520,7 @@
   },
   "material#0052": {
    "src": "Hops Grains",
-   "dst": "",
+   "dst": "啤酒花谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -529,7 +529,7 @@
   },
   "material#0053": {
    "src": "Hops String",
-   "dst": "",
+   "dst": "啤酒花线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -538,7 +538,7 @@
   },
   "material#0054": {
    "src": "Icefish Meat",
-   "dst": "",
+   "dst": "冰鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -547,7 +547,7 @@
   },
   "material#0055": {
    "src": "Icefish Oil",
-   "dst": "",
+   "dst": "冰鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -556,7 +556,7 @@
   },
   "material#0056": {
    "src": "Iron Gem",
-   "dst": "",
+   "dst": "铁宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -565,7 +565,7 @@
   },
   "material#0057": {
    "src": "Iron Ingot",
-   "dst": "",
+   "dst": "铁锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -574,7 +574,7 @@
   },
   "material#0058": {
    "src": "Jungle Paper",
-   "dst": "",
+   "dst": "丛林木纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -583,7 +583,7 @@
   },
   "material#0059": {
    "src": "Jungle Plank",
-   "dst": "",
+   "dst": "丛林木木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -592,7 +592,7 @@
   },
   "material#0060": {
    "src": "Jute Grains",
-   "dst": "",
+   "dst": "黄麻谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -601,7 +601,7 @@
   },
   "material#0061": {
    "src": "Jute String",
-   "dst": "",
+   "dst": "黄麻线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -610,7 +610,7 @@
   },
   "material#0062": {
    "src": "Kanderstone Gem",
-   "dst": "",
+   "dst": "Kanderstone 宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -619,7 +619,7 @@
   },
   "material#0063": {
    "src": "Kanderstone Ingot",
-   "dst": "",
+   "dst": "Kanderstone 锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -628,7 +628,7 @@
   },
   "material#0064": {
    "src": "Koi Meat",
-   "dst": "",
+   "dst": "锦鲤肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -637,7 +637,7 @@
   },
   "material#0065": {
    "src": "Koi Oil",
-   "dst": "",
+   "dst": "锦鲤油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -646,7 +646,7 @@
   },
   "material#0066": {
    "src": "Light Paper",
-   "dst": "",
+   "dst": "光木纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -655,7 +655,7 @@
   },
   "material#0067": {
    "src": "Light Plank",
-   "dst": "",
+   "dst": "光木木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -664,7 +664,7 @@
   },
   "material#0068": {
    "src": "Mahseer Meat",
-   "dst": "",
+   "dst": "结鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -673,7 +673,7 @@
   },
   "material#0069": {
    "src": "Mahseer Oil",
-   "dst": "",
+   "dst": "结鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -682,7 +682,7 @@
   },
   "material#0070": {
    "src": "Malt Grains",
-   "dst": "",
+   "dst": "麦芽谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -691,7 +691,7 @@
   },
   "material#0071": {
    "src": "Malt String",
-   "dst": "",
+   "dst": "麦芽线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -700,7 +700,7 @@
   },
   "material#0072": {
    "src": "Maple Paper",
-   "dst": "",
+   "dst": "枫木纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -709,7 +709,7 @@
   },
   "material#0073": {
    "src": "Maple Plank",
-   "dst": "",
+   "dst": "枫木木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -718,7 +718,7 @@
   },
   "material#0074": {
    "src": "Millet Grains",
-   "dst": "",
+   "dst": "小米谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -727,7 +727,7 @@
   },
   "material#0075": {
    "src": "Millet String",
-   "dst": "",
+   "dst": "小米线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -736,7 +736,7 @@
   },
   "material#0076": {
    "src": "Molten Gem",
-   "dst": "",
+   "dst": "熔融宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -745,7 +745,7 @@
   },
   "material#0077": {
    "src": "Molten Ingot",
-   "dst": "",
+   "dst": "熔融锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -754,7 +754,7 @@
   },
   "material#0078": {
    "src": "Molten Meat",
-   "dst": "",
+   "dst": "熔岩鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -763,7 +763,7 @@
   },
   "material#0079": {
    "src": "Molten Oil",
-   "dst": "",
+   "dst": "熔岩鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -772,7 +772,7 @@
   },
   "material#0080": {
    "src": "Oak Paper",
-   "dst": "",
+   "dst": "橡木纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -781,7 +781,7 @@
   },
   "material#0081": {
    "src": "Oak Plank",
-   "dst": "",
+   "dst": "橡木木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -790,7 +790,7 @@
   },
   "material#0082": {
    "src": "Oat Grains",
-   "dst": "",
+   "dst": "燕麦谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -799,7 +799,7 @@
   },
   "material#0083": {
    "src": "Oat String",
-   "dst": "",
+   "dst": "燕麦线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -808,7 +808,7 @@
   },
   "material#0084": {
    "src": "Pine Paper",
-   "dst": "",
+   "dst": "松木纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -817,7 +817,7 @@
   },
   "material#0085": {
    "src": "Pine Plank",
-   "dst": "",
+   "dst": "松木木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -826,7 +826,7 @@
   },
   "material#0086": {
    "src": "Piranha Meat",
-   "dst": "",
+   "dst": "食人鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -835,7 +835,7 @@
   },
   "material#0087": {
    "src": "Piranha Oil",
-   "dst": "",
+   "dst": "食人鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -844,7 +844,7 @@
   },
   "material#0088": {
    "src": "Redwood Paper",
-   "dst": "",
+   "dst": "红杉纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -853,7 +853,7 @@
   },
   "material#0089": {
    "src": "Redwood Plank",
-   "dst": "",
+   "dst": "红杉木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -862,7 +862,7 @@
   },
   "material#0090": {
    "src": "Rice Grains",
-   "dst": "",
+   "dst": "稻米谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -871,7 +871,7 @@
   },
   "material#0091": {
    "src": "Rice String",
-   "dst": "",
+   "dst": "稻米线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -880,7 +880,7 @@
   },
   "material#0092": {
    "src": "Rye Grains",
-   "dst": "",
+   "dst": "黑麦谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -889,7 +889,7 @@
   },
   "material#0093": {
    "src": "Rye String",
-   "dst": "",
+   "dst": "黑麦线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -898,7 +898,7 @@
   },
   "material#0094": {
    "src": "Salmon Meat",
-   "dst": "",
+   "dst": "鲑鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -907,7 +907,7 @@
   },
   "material#0095": {
    "src": "Salmon Oil",
-   "dst": "",
+   "dst": "鲑鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -916,7 +916,7 @@
   },
   "material#0096": {
    "src": "Sandstone Gem",
-   "dst": "",
+   "dst": "砂岩宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -925,7 +925,7 @@
   },
   "material#0097": {
    "src": "Sandstone Ingot",
-   "dst": "",
+   "dst": "砂岩锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -934,7 +934,7 @@
   },
   "material#0098": {
    "src": "Silver Gem",
-   "dst": "",
+   "dst": "银宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -943,7 +943,7 @@
   },
   "material#0099": {
    "src": "Silver Ingot",
-   "dst": "",
+   "dst": "银锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -952,7 +952,7 @@
   },
   "material#0100": {
    "src": "Sky Paper",
-   "dst": "",
+   "dst": "天空木纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -961,7 +961,7 @@
   },
   "material#0101": {
    "src": "Sky Plank",
-   "dst": "",
+   "dst": "天空木木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -970,7 +970,7 @@
   },
   "material#0102": {
    "src": "Sorghum Grains",
-   "dst": "",
+   "dst": "高粱谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -979,7 +979,7 @@
   },
   "material#0103": {
    "src": "Sorghum String",
-   "dst": "",
+   "dst": "高粱线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -988,7 +988,7 @@
   },
   "material#0104": {
    "src": "Spruce Paper",
-   "dst": "",
+   "dst": "云杉纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -997,7 +997,7 @@
   },
   "material#0105": {
    "src": "Spruce Plank",
-   "dst": "",
+   "dst": "云杉木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1006,7 +1006,7 @@
   },
   "material#0106": {
    "src": "Starfish Meat",
-   "dst": "",
+   "dst": "海星肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1015,7 +1015,7 @@
   },
   "material#0107": {
    "src": "Starfish Oil",
-   "dst": "",
+   "dst": "海星油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1024,7 +1024,7 @@
   },
   "material#0108": {
    "src": "Sturgeon Meat",
-   "dst": "",
+   "dst": "鲟鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1033,7 +1033,7 @@
   },
   "material#0109": {
    "src": "Sturgeon Oil",
-   "dst": "",
+   "dst": "鲟鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1042,7 +1042,7 @@
   },
   "material#0110": {
    "src": "Titanium Gem",
-   "dst": "",
+   "dst": "钛宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1051,7 +1051,7 @@
   },
   "material#0111": {
    "src": "Titanium Ingot",
-   "dst": "",
+   "dst": "钛锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1060,7 +1060,7 @@
   },
   "material#0112": {
    "src": "Trout Meat",
-   "dst": "",
+   "dst": "鳟鱼肉",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1069,7 +1069,7 @@
   },
   "material#0113": {
    "src": "Trout Oil",
-   "dst": "",
+   "dst": "鳟鱼油",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1078,7 +1078,7 @@
   },
   "material#0114": {
    "src": "Voidstone Gem",
-   "dst": "",
+   "dst": "虚空石宝石",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1087,7 +1087,7 @@
   },
   "material#0115": {
    "src": "Voidstone Ingot",
-   "dst": "",
+   "dst": "虚空石锭",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1096,7 +1096,7 @@
   },
   "material#0116": {
    "src": "Wheat Grains",
-   "dst": "",
+   "dst": "小麦谷粒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1105,7 +1105,7 @@
   },
   "material#0117": {
    "src": "Wheat String",
-   "dst": "",
+   "dst": "小麦线",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1114,7 +1114,7 @@
   },
   "material#0118": {
    "src": "Willow Paper",
-   "dst": "",
+   "dst": "柳木纸",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1123,7 +1123,7 @@
   },
   "material#0119": {
    "src": "Willow Plank",
-   "dst": "",
+   "dst": "柳木木板",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1132,82 +1132,82 @@
   },
   "material#0120": {
    "src": "Feed to your Mount to upgrade its Altitude and Boost",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的高度与冲刺",
    "role": "desc"
   },
   "material#0121": {
    "src": "Can be used to purchase blocks in Housing, or to craft {#} Scrolls, {#} Helmets, & {#} Chestplates",
-   "dst": "",
+   "dst": "也可以用来购买住宅的方块，或制作 {#} 卷轴、{#} 头盔与 {#} 胸甲",
    "role": "desc"
   },
   "material#0122": {
    "src": "Feed to your Mount to upgrade its Acceleration, Toughness and Speed",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的加速、韧性与速度",
    "role": "desc"
   },
   "material#0123": {
    "src": "Can be used to purchase blocks in Housing, or to craft {#} Spears, {#} Daggers, {#} Bows, {#} Reliks & {#} Wands",
-   "dst": "",
+   "dst": "也可以用来购买住宅的方块，或制作 {#} 长矛、{#} 匕首、{#} 弓、{#} 法器与 {#} 魔杖",
    "role": "desc"
   },
   "material#0124": {
    "src": "Feed to your Mount to upgrade its Speed and Altitude",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的速度与高度",
    "role": "desc"
   },
   "material#0125": {
    "src": "Can be used to purchase blocks in Housing, or to craft {#} Potions & {#} Food",
-   "dst": "",
+   "dst": "也可以用来购买住宅的方块，或制作 {#} 药水与 {#} 食物",
    "role": "desc"
   },
   "material#0126": {
    "src": "Feed to your Mount to upgrade its Boost, Handling and Acceleration",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的冲刺、操控与加速",
    "role": "desc"
   },
   "material#0127": {
    "src": "Can be used to purchase blocks in Housing, or to craft {#} Boots, {#} Leggings, {#} Bows & {#} Wands",
-   "dst": "",
+   "dst": "也可以用来购买住宅的方块，或制作 {#} 靴子、{#} 护腿、{#} 弓与 {#} 魔杖",
    "role": "desc"
   },
   "material#0128": {
    "src": "Feed to your Mount to upgrade its Energy and Acceleration",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的能量与加速",
    "role": "desc"
   },
   "material#0129": {
    "src": "Can be used to purchase blocks in Housing, or to craft {#} Food",
-   "dst": "",
+   "dst": "也可以用来购买住宅的方块，或制作 {#} 食物",
    "role": "desc"
   },
   "material#0130": {
    "src": "Feed to your Mount to upgrade its Handling, Training and Altitude",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的操控、训练与高度",
    "role": "desc"
   },
   "material#0131": {
    "src": "Can be used to purchase blocks in Housing, or to craft {#} Scrolls, {#} Rings, {#} Bracelets, {#} Necklaces, {#} Potions & {#} Reliks",
-   "dst": "",
+   "dst": "也可以用来购买住宅的方块，或制作 {#} 卷轴、{#} 戒指、{#} 手镯、{#} 项链、{#} 药水与 {#} 法器",
    "role": "desc"
   },
   "material#0132": {
    "src": "Feed to your Mount to upgrade its Training, Speed and Energy",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的训练、速度与能量",
    "role": "desc"
   },
   "material#0133": {
    "src": "Can be used to purchase blocks in Housing, or to craft {#} Rings, {#} Bracelets & {#} Necklaces",
-   "dst": "",
+   "dst": "也可以用来购买住宅的方块，或制作 {#} 戒指、{#} 手镯与 {#} 项链",
    "role": "desc"
   },
   "material#0134": {
    "src": "Feed to your Mount to upgrade its Toughness and Energy",
-   "dst": "",
+   "dst": "喂给你的坐骑可提升它的韧性与能量",
    "role": "desc"
   },
   "material#0135": {
    "src": "Can be used to purchase blocks in Housing, or to craft {#} Spears, {#} Daggers, {#} Boots, {#} Leggings, {#} Helmets, & {#} Chestplates",
-   "dst": "",
+   "dst": "也可以用来购买住宅的方块，或制作 {#} 长矛、{#} 匕首、{#} 靴子、{#} 护腿、{#} 头盔与 {#} 胸甲",
    "role": "desc"
   }
  }
