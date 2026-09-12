@@ -174,7 +174,11 @@ def worth_keeping(src: str) -> bool:
 # 別的模組自己印在聊天室的東西：`wmd >> Rejoined raid`、
 # `wynnmod has new updates - v1.2.3`。那不是 Wynncraft 的字，翻它沒有意義
 # （對方有自己的語言檔），而且動別的模組會讀的字串還可能害它算錯。
-OTHER_MOD = re.compile(r"wynnmod|wynnextras|\bwmd\s*[>|]", re.IGNORECASE)
+OTHER_MOD = re.compile(r"wynnmod|wynnextras|wynnaspects|\bwmd\s*[>|]"
+                       # WynnAspects 的每一則聊天訊息都以 `››` 開頭，
+                       # 而它自我介紹的那幾則不見得提到自己的名字
+                       # （`›› Reconnected.`、`›› Your account isn't linked yet.`）。
+                       r"|››", re.IGNORECASE)
 
 
 def bare(src: str) -> str:
