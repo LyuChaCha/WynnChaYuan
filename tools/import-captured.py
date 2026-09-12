@@ -327,6 +327,16 @@ NAMED = re.compile(
     r"|\shad their skull shattered\b"
     r"|\smet their demise\b"
     r"|\shas perished\b"
+    # 各地區還有自己的死法。`was reduced to ashes` 要連 was 一起認——
+    # 「has been almost entirely reduced to ashes」是地景敘述，那句該收。
+    r"|\sbecame another casualty of War"
+    r"|Cleansing fire melted .+ away"
+    r"|\swas entirely corrupted\b"
+    r"|\swas reduced to ashes\b"
+    r"|\swas instantly evaporated\b"
+    r"|\sceased to be anything human\b"
+    r"|\swas buried beneath earth\b"
+    r"|\smade a fatal mistake\b"
     # 公會大廳的傳送立牌：`Teleporter ⏎ to afk bata`。整段都是玩家打的字，
     # 目的地名稱常常直接就是某個人的 ID。跟 check-leaks 的 SIGN_SHAPES
     # 是同一條規則——那邊管存量，這裡管入口，不然刪掉之後又會被收回來。
