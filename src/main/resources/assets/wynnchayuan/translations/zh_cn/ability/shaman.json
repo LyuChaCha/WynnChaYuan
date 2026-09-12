@@ -4,7 +4,7 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 364,
-  "translated": 243,
+  "translated": 266,
   "note": "萨满的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
@@ -1362,7 +1362,7 @@
   },
   "ability-shaman#0319": {
    "src": "{#}{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#} 金虔: 对敌人 -{~} 抗性加成 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1376,7 +1376,7 @@
   },
   "ability-shaman#0326": {
    "src": "{#}{#} Heretic: +{~} Slowness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#} 苍逆: 对敌人 +{~} 缓速 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1404,7 +1404,7 @@
   },
   "ability-shaman#0316": {
    "src": "{#}{#}Area of Effect: {~} Blocks (Circle-Shaped, Explosion)",
-   "dst": "",
+   "dst": "{#}{#}作用范围: {~} 格 (圆形，爆炸)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1418,7 +1418,7 @@
   },
   "ability-shaman#0327": {
    "src": "{#}{#}Area of Effect: {~} Blocks (Line-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}作用范围: {~} 格 (线形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1432,7 +1432,7 @@
   },
   "ability-shaman#0346": {
    "src": "{#}{#}Cooldown: {~}s (per enemy)",
-   "dst": "",
+   "dst": "{#}{#}冷却时间: {~} 秒 (每个敌人)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1448,7 +1448,7 @@
   },
   "ability-shaman#0333": {
    "src": "{#}{#}Effect: +{~} Attack Speed to Puppets",
-   "dst": "",
+   "dst": "{#}{#}效果: 对人偶 +{~} 攻击速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1462,7 +1462,7 @@
   },
   "ability-shaman#0334": {
    "src": "{#}{#}Effect: +{~} Attack Speed to Summons",
-   "dst": "",
+   "dst": "{#}{#}效果: 对召唤物 +{~} 攻击速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1476,7 +1476,7 @@
   },
   "ability-shaman#0330": {
    "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#}{#}效果: 对友军 +{~} 伤害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1491,7 +1491,7 @@
   },
   "ability-shaman#0328": {
    "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Puppets",
-   "dst": "",
+   "dst": "{#}{#}效果: 对人偶 +{~} 伤害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1505,7 +1505,7 @@
   },
   "ability-shaman#0335": {
    "src": "{#}{#}Effect: +{~} Damage Bonus to Summons",
-   "dst": "",
+   "dst": "{#}{#}效果: 对召唤物 +{~} 伤害加成",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1519,7 +1519,7 @@
   },
   "ability-shaman#0339": {
    "src": "{#}{#}Effect: +{~} Walk Speed to Self",
-   "dst": "",
+   "dst": "{#}{#}效果: 对自身 +{~} 移动速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1533,7 +1533,7 @@
   },
   "ability-shaman#0320": {
    "src": "{#}{#}Effect: +{~} damage to Eldritch Call (Per stack)",
-   "dst": "",
+   "dst": "{#}{#}效果: Eldritch Call +{~} 伤害 (每层)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1547,7 +1547,7 @@
   },
   "ability-shaman#0329": {
    "src": "{#}{#}Effect: {~} Resistance Bonus (❁) to Self",
-   "dst": "",
+   "dst": "{#}{#}效果: 对自己 {~} 抗性加成 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1563,7 +1563,7 @@
   },
   "ability-shaman#0347": {
    "src": "{#}{#}Effects:",
-   "dst": "",
+   "dst": "{#}{#}效果:",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1577,7 +1577,7 @@
   },
   "ability-shaman#0338": {
    "src": "{#}{#}Effects: +{~} Walk Speed to Self",
-   "dst": "",
+   "dst": "{#}{#}效果: 对自身 +{~} 移动速度",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1591,7 +1591,7 @@
   },
   "ability-shaman#0332": {
    "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}效果: 对敌人 {~} 缓速 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1605,7 +1605,7 @@
   },
   "ability-shaman#0348": {
    "src": "{#}{#}Range: ~{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}范围: 约 {~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1619,7 +1619,7 @@
   },
   "ability-shaman#0317": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Uproot, per hit)",
-   "dst": "",
+   "dst": "{#}{#}总伤害: +{~} (你的每秒伤害，Uproot，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1633,7 +1633,7 @@
   },
   "ability-shaman#0318": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS, for Uproot, per hit)",
-   "dst": "",
+   "dst": "{#}{#}总伤害: -{~} (你的每秒伤害，Uproot，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1647,7 +1647,7 @@
   },
   "ability-shaman#0331": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, Attack)",
-   "dst": "",
+   "dst": "{#}{#}总伤害: {~} (你的每秒伤害，攻击)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1661,7 +1661,7 @@
   },
   "ability-shaman#0325": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, Explosion)",
-   "dst": "",
+   "dst": "{#}{#}总伤害: {~} (你的每秒伤害，爆炸)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1675,7 +1675,7 @@
   },
   "ability-shaman#0323": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, from Bleeding)",
-   "dst": "",
+   "dst": "{#}{#}总伤害: {~} (你的每秒伤害，来自流血)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1690,7 +1690,7 @@
   },
   "ability-shaman#0324": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per strike)",
-   "dst": "",
+   "dst": "{#}{#}总伤害: {~} (你的每秒伤害，每次打击)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

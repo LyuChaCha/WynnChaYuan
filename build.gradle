@@ -566,6 +566,14 @@ tasks.register('runLanguageFallbackChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLanguageFallbackChecks' }
 
+tasks.register('runLayerWinsChecks', JavaExec) {
+    group = 'verification'
+    description = '疊層之後上面那一層翻好的每一條都要贏（全庫掃）'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LayerWinsTest'
+}
+tasks.named('check') { dependsOn 'runLayerWinsChecks' }
+
 tasks.register('runLangKeyChecks', JavaExec) {
     group = 'verification'
     description = 'F6 介面的語言檔對得起程式嗎'
