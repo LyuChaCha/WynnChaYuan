@@ -93,9 +93,35 @@ jobs:
           由 collect-inbox 工作流程自動提交，內容是玩家分享回來的缺口，
           dst 全部留空等人翻。"
           git push -u origin "$BRANCH" --force
-          gh pr create --base main --head "$BRANCH" --title "收進大家分享的待譯字串" --body "由 collect-inbox 自動產生，全部是 dst 留空的待譯條目。
 
-          合併前請掃一眼有沒有夾帶到玩家名或公會名——三道濾網都過了，但這是最後一次有人看得到的機會。" || echo "PR 沒開成（可能已經有一個開著）。"
+          BODY="由 collect-inbox 自動產生，全部是 dst 留空的待譯條目。
+
+          合併前請掃一眼有沒有夾帶到玩家名或公會名——三道濾網都過了，但這是最後一次有人看得到的機會。"
+
+          # 已經有一個開著就不是錯誤，直接結束。
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            echo "已經有一個 PR 開著，這次不再開。"
+            exit 0
+          fi
+
+          # REBUILD_PAT 少了 Pull requests: Read and write 時，createPullRequest 會被
+          # 擋下來。先前這裡寫成 `|| echo`，於是<b>整個工作流程照樣是綠的</b>——
+          # 分支推上去了、佇列也 ack 掉了，但沒有人知道 PR 沒開成。
+          # 2026-09-11 那一輪的 1000 條就是這樣躺在分支上沒人發現。
+          if gh pr create --base main --head "$BRANCH" \
+               --title "收進大家分享的待譯字串" --body "$BODY"; then
+            exit 0
+          fi
+
+          echo "::warning::REBUILD_PAT 開不了 PR，改用 GITHUB_TOKEN 再試一次。"
+          echo "::warning::用 GITHUB_TOKEN 開的 PR 不會自動跑檢查，合併前請手動觸發。"
+          if GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" gh pr create --base main --head "$BRANCH" \
+               --title "收進大家分享的待譯字串" --body "$BODY"; then
+            exit 0
+          fi
+
+          echo "::error::PR 開不起來。資料在分支 $BRANCH 上，不會遺失，但要有人手動開 PR。"
+          exit 1
 
       - name: 回報處理完成
         if: steps.drain.outputs.have == 'yes'
