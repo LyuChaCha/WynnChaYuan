@@ -67,6 +67,7 @@ SHAPES = [
     (r"\swas devoured by\b", "誰被吞了"),
     (r"\shad their skull shattered\b", "誰被打爆頭了"),
     (r"\smet their demise\b", "誰死了"),
+    (r"\smet their fate\b", "誰死了"),
     (r"\shas perished\b", "誰死了"),
     (r"\sis preparing to descend", "誰要下去討伐戰了"),
     (r"[A-Za-z]{2,}_\{~\}", "帳號名裡的底線加數字"),
