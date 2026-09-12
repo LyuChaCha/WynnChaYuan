@@ -113,14 +113,14 @@ needs**.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | █████████░ 89.6% | 37,148 / 41,438 |
-| `zh_cn` 简体中文 | █░░░░░░░░░ 11.5% | 3,297 / 28,777 |
-| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
-| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
-| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
-| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
-| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
-| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
+| `zh_tw` 繁體中文 | █████████░ 90.4% | 37,450 / 41,405 |
+| `zh_cn` 简体中文 | █░░░░░░░░░ 11.5% | 3,296 / 28,776 |
+| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,728 |
+| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,728 |
+| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,728 |
+| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 28,728 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 28,728 |
+| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 28,728 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
@@ -141,7 +141,7 @@ This table answers the other half:
 | Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
 | Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
 | Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 4,414 + 1,050 collected | **No official list** - only what players run into |
+| NPC nameplates, menus, system messages | — | 4,385 + 1,050 collected | **No official list** - only what players run into |
 
 Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
 
@@ -149,14 +149,14 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 
 | Category | Translated | Collected | Estimated total | Where the estimate comes from |
 |---|---:|---:|---:|---|
-| Quest dialogue | 22,378 | 22,383 | 22,383 | all 157/157 quests collected - what we have is all there is |
+| Quest dialogue | 22,383 | 22,383 | 22,383 | all 157/157 quests collected - what we have is all there is |
 | Secret discovery stories | 68 | 68 | ~8,228 | only 1 of 121 discoveries collected; scaled up from those (tiny sample - an order of magnitude, not a figure) |
 | Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,914 | 1,914 | 1,914 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 10,199 | 14,480 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 10,496 | 14,447 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 49,598 lines estimated**, **41,438 collected** (84%), **37,148 translated** (75% of the estimate, 89.6% of what we have).
+> All together: **at least 49,565 lines estimated**, **41,405 collected** (84%), **37,450 translated** (76% of the estimate, 90.4% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->
