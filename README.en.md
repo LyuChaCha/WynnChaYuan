@@ -113,14 +113,14 @@ needs**.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | █████████░ 88.9% | 36,844 / 41,457 |
-| `zh_cn` 简体中文 | █░░░░░░░░░ 10.3% | 2,974 / 28,778 |
-| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,730 |
-| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,730 |
-| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,730 |
-| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 28,730 |
-| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 28,730 |
-| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 28,730 |
+| `zh_tw` 繁體中文 | █████████░ 89.2% | 36,946 / 41,438 |
+| `zh_cn` 简体中文 | █░░░░░░░░░ 10.3% | 2,974 / 28,777 |
+| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
+| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
+| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
+| `ja_jp` 日本語 | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
+| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
@@ -154,9 +154,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,712 | 1,914 | 1,914 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 10,097 | 14,499 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 10,199 | 14,480 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 49,617 lines estimated**, **41,457 collected** (84%), **36,844 translated** (74% of the estimate, 88.9% of what we have).
+> All together: **at least 49,598 lines estimated**, **41,438 collected** (84%), **36,946 translated** (74% of the estimate, 89.2% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->
