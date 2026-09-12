@@ -44,7 +44,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 13.0%（3,754 / 28,776）
+## `zh_cn` 简体中文 — 13.6%（3,924 / 28,776）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -52,7 +52,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `misc.json` | ██████░░░░ 57% | 248 / 434 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `npc.json` | ██████████ 97% | 206 / 212 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 516 / 516 | 選單與介面<br>Menus and interface text |
-| `quest-ui.json` | █████████░ 89% | 75 / 84 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
+| `quest-ui.json` | ██████████ 100% | 84 / 84 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
 | `ability/*.json` | ██████████ 100% | 1,574 / 1,574 | 開技能樹時<br>Ability tree |
@@ -65,8 +65,8 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `lootrun.json` | ██████████ 100% | 4 / 4 | 跑 Lootrun 時<br>Seen during a lootrun |
 | `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
-| `tome.json` | ░░░░░░░░░░ 0% | 0 / 156 | 書卷<br>Tomes |
-| `charm.json` | ░░░░░░░░░░ 0% | 0 / 5 | 護符<br>Charms |
+| `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
+| `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
 | `aspect.json` | ░░░░░░░░░░ 0% | 0 / 128 | Raid 的 Aspect<br>Raid aspects |
 | `aspect-desc.json` | ░░░░░░░░░░ 0% | 0 / 209 | Aspect 的敘述<br>Aspect descriptions |
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
