@@ -113,7 +113,7 @@ needs**.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | █████████░ 89.9% | 36,630 / 40,746 |
+| `zh_tw` 繁體中文 | █████████░ 90.0% | 36,739 / 40,834 |
 | `zh_cn` 简体中文 | █░░░░░░░░░ 10.3% | 2,974 / 28,778 |
 | `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,730 |
 | `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,730 |
@@ -141,7 +141,7 @@ This table answers the other half:
 | Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
 | Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
 | Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 4,011 + 1,050 collected | **No official list** - only what players run into |
+| NPC nameplates, menus, system messages | — | 4,012 + 1,050 collected | **No official list** - only what players run into |
 
 Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
 
@@ -154,9 +154,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,712 | 1,914 | 1,914 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 9,887 | 13,797 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 9,996 | 13,885 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 48,906 lines estimated**, **40,746 collected** (83%), **36,630 translated** (75% of the estimate, 89.9% of what we have).
+> All together: **at least 48,994 lines estimated**, **40,834 collected** (83%), **36,739 translated** (75% of the estimate, 90.0% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->
