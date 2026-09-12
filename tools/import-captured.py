@@ -231,16 +231,47 @@ def already_piecewise(src: str, have: set[str]) -> bool:
             for g in groups)
 
 
+def reveal_frame(src: str, have: set[str]) -> bool:
+    """一段敘述被推到一半的樣子。
+
+    內容書的長敘述是一格一格推出來的，收集器每一格都收一次，於是同一段話
+    會留下好幾條長度不同的殘影：
+
+        Something from the other side roars
+        Something from the other side roars through the portal with a hatred for
+        Something from the other side roars through the portal with a hatred for
+            all that lives.
+
+    只有最後那一條是真的。前面幾條翻了會在動畫跑到那一格時，把整句的中文
+    塞進半句的位置。
+
+    <p>認法：<b>是倉庫裡某一條的前綴</b>，而且自己沒有結尾標點。
+    長度門檻是為了保住短標籤——`Emeralds: {~}` 是 `Emeralds: {~}/{~}` 的前綴，
+    但它是個真的欄位，不是殘影。內容書的敘述都是整段的長句。
+    """
+    if len(src) < 40 or src.rstrip().endswith((".", "!", "?", "”")):
+        return False
+    return any(w.startswith(src) and len(w) > len(src) for w in have)
+
+
 # 別人的名字。Minecraft 帳號名是英數加底線，長度 3-16。
 NAMED = re.compile(
     r"\bCrafted by\b|\bParty\b.*\binvit"
     # 「某某的狀態」也是別人的資料：`YuChaYuan's Status`。
     # 注意<b>不能</b>把所有 `'s` 都擋掉——`Monte's Village` 是遊戲裡的領地名。
     r"|'s (?i:party|guild|island|house|status)\b"
+    # 玩家把寵物或物品改成自己的名字：`Tomzd{~}'s Bird`、`{~}Seele's gift to …`。
+    # 認的是「帳號名 + 's」——帳號名裡的數字收集時會變成 {~}，數字在前在後都有，
+    # 而遊戲自己的字串不會出現「單字黏著一個 {~} 再接 's」。
+    r"|(?:[A-Za-z]{2,}\{~\}|\{~\}[A-Za-z]{2,})'s\s"
     # 領地名牌：「Controlled by Paladins United [Lv. 32]」。公會名稱跟玩家名稱
     # 一樣是別人的資料。它沒有底線，所以下面那條「帳號名的形狀」抓不到——
     # 一次 Lootrun 就有 83 條這樣穿了過去。
     r"|\bControlled by\b"
+    # 改過名字的未鑑定裝備：第一行是 `{#}{#}Unidentified Wand`，第二行是
+    # 玩家自己打的字（`cutter of melons #{~}`）。遊戲不會在未鑑定裝備的
+    # 名字底下再放一行，有第二行就是玩家改的。
+    r"|\A(?:\{#\})*Unidentified [A-Z][a-z]+\n\S"
     # 公會標籤 `[YCY]`、`[SEQ]`、`[CTRN]`——三到四個大寫字母的方括號。
     #
     # 這是公會資料最穩定的形狀，公會名本身反而抓不到（`JFZN JAPAN`、
@@ -500,6 +531,7 @@ def main(argv: list[str]) -> int:
             if (not src or known
                     or not worth_keeping(src)
                     or already_piecewise(src, have)
+                    or reveal_frame(src, have)
                     or names_a_player(src)):
                 skipped += 1
                 continue
