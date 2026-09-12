@@ -166,7 +166,15 @@ def worth_keeping(src: str) -> bool:
         return False
     if text.endswith("{#}") and not ITEM_NAME.match(text):
         return False
+    if OTHER_MOD.search(text):
+        return False
     return not ITEM_NAME.match(text)
+
+
+# 別的模組自己印在聊天室的東西：`wmd >> Rejoined raid`、
+# `wynnmod has new updates - v1.2.3`。那不是 Wynncraft 的字，翻它沒有意義
+# （對方有自己的語言檔），而且動別的模組會讀的字串還可能害它算錯。
+OTHER_MOD = re.compile(r"wynnmod|\bwmd\s*[>|]", re.IGNORECASE)
 
 
 def bare(src: str) -> str:
