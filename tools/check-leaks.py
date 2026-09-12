@@ -67,6 +67,11 @@ SHAPES = [
     # 「某某的怪物圖騰到期了」。這一句有兩種版本：`{u}'s mob totem` 是
     # 已經匿名化的（上面的 ALLOW 會放行），帶真名的那一種要擋。
     (r"['’]s Mob Totem\b", "誰的怪物圖騰"),
+    # 住宅島的訪客通知。主詞是別人的帳號名，而且那一行每個島主看到的都不一樣。
+    (r"\sis visiting this island", "誰來參觀你的島"),
+    (r"\binvited .+ into your island", "你邀了誰進島"),
+    # 無名異常體的死亡廣播。跟其他討伐戰死法同一類，只是動詞不一樣。
+    (r"\shad their existence effaced", "誰被抹除了"),
     (r"\bControlled by\b", "誰的公會佔著這塊地"),
     (r"(?m)^Owned by\s", "這東西是誰的公會的"),
     # 交易所的篩選器把玩家<b>自己打的搜尋字</b>顯示出來，而且是邊打邊更新，
