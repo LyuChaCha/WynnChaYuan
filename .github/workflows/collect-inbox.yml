@@ -59,6 +59,18 @@ jobs:
       - name: 分類進語料
         if: steps.drain.outputs.have == 'yes'
         run: |
+          # 先修「早就翻好、只是原文差一點」的那些。
+          #
+          # 任務對話有九成八抓自 wiki，而 wiki 是人打的：標點、省略號的個數、
+          # 被連結吃掉的一個字，都會讓查表完全落空——畫面上跟「還沒翻」
+          # 一模一樣，所以沒有人會發現那一句其實早就翻好了。實際踩過：
+          # 語料裡的 `reach the from this house` 少了一個 rooftops，
+          # 那句台詞在遊戲裡一直是英文（2026-09-12 玩家回報）。
+          #
+          # 這一步拿玩家收到的真實字串把 src 改對。它只動已經有譯文的條目、
+          # 只改 src，相似度低於 0.9 或佔位符數量對不上都不寫——剩下的才是
+          # 真的新句子，交給下一行。
+          python tools/near-miss.py inbox.json --write
           # import-captured.py 自己會擋掉已經翻好的、拆得出來的、以及夾帶個資的。
           # 這是第三道濾網（模組端一道、收集站一道），刻意重複。
           python tools/import-captured.py inbox.json --write
