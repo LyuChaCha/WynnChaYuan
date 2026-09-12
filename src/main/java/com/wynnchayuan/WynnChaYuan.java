@@ -277,7 +277,16 @@ public final class WynnChaYuan implements ClientModInitializer {
         String reference = com.wynnchayuan.translate.Languages.DEFAULT;
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, reference);
         if (layers.contains(dir)) {
-            referenceKeys = null;            // 畫面上已經有這一層了
+            // 這一層已經載進畫面用的 store 了，直接跟它要就好。
+            //
+            // 這裡原本寫 null，理由是「鋪著的話 hasTranslation 本來就查得到」。
+            // 那是錯的：hasTranslation 只認<b>有譯文</b>的，而這份判準要的是
+            // 「語料裡有沒有這一條」。還沒翻的那幾千條每次都會被判成「沒有」，
+            // 於是繁體玩家每進一次遊戲就把它們重收一遍、重傳一遍——收集站
+            // 每天撈回來的幾乎都是早就在倉庫裡的東西。
+            referenceKeys = translations.sourceKeys();
+            System.out.println("[WynnChaYuan] 收集的判準用畫面上這幾層的 "
+                    + referenceKeys.size() + " 條原文");
             return;
         }
         try {
