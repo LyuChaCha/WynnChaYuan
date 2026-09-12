@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 92.2%（38,107 / 41,326）
+## `zh_tw` 繁體中文 — 92.2%（38,095 / 41,314）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -24,7 +24,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `ability-terms.json` | ██████████ 100% | 97 / 97 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 322 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
-| `quest-dialogue.json` | ██████████ 100% | 22,383 / 22,383 | 任務對話<br>NPC dialogue (by far the largest file) |
+| `quest-dialogue.json` | ██████████ 100% | 22,371 / 22,371 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `discovery.json` | ██████████ 100% | 156 / 156 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 137 / 137 | 探索點的名稱<br>Discovery names |

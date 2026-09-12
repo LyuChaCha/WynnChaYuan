@@ -113,7 +113,7 @@ needs**.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | █████████░ 92.2% | 38,107 / 41,326 |
+| `zh_tw` 繁體中文 | █████████░ 92.2% | 38,095 / 41,314 |
 | `zh_cn` 简体中文 | █░░░░░░░░░ 14.1% | 4,052 / 28,776 |
 | `ja_jp` 日本語 | ░░░░░░░░░░ 2.1% | 612 / 28,728 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 2.1% | 612 / 28,728 |
@@ -149,14 +149,14 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 
 | Category | Translated | Collected | Estimated total | Where the estimate comes from |
 |---|---:|---:|---:|---|
-| Quest dialogue | 22,383 | 22,383 | 22,383 | all 157/157 quests collected - what we have is all there is |
+| Quest dialogue | 22,371 | 22,371 | 22,371 | all 157/157 quests collected - what we have is all there is |
 | Secret discovery stories | 68 | 68 | ~8,228 | only 1 of 121 discoveries collected; scaled up from those (tiny sample - an order of magnitude, not a figure) |
 | Gear lore | 988 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,858 | 1,920 | 1,920 | official CDN, downloaded wholesale - what we have is all there is |
 | NPC nameplates, menus, system messages | 11,207 | 14,362 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 49,486 lines estimated**, **41,326 collected** (84%), **38,107 translated** (77% of the estimate, 92.2% of what we have).
+> All together: **at least 49,474 lines estimated**, **41,314 collected** (84%), **38,095 translated** (77% of the estimate, 92.2% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->
