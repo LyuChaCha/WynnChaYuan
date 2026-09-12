@@ -362,6 +362,24 @@ def check_pair(path: str, key: str, src: str, dst: str,
         out.append(Problem("error", path, key,
                            f"譯文含材質包符號（{codes}）—— 請用 {{#}} 佔位，程式會填回去"))
 
+    # 原文被 wiki 吃掉一個字。
+    #
+    # 任務對話多半抓自 wiki，`[[Rooftops|rooftops]]` 這種連結偶爾會連顯示文字
+    # 一起消失，語料裡就留下 `reach the from this house`——`the` 後面直接接
+    # 介係詞，中間那個名詞不見了。這種 src 永遠對不上遊戲送出的字串，
+    # 於是<b>整句在畫面上留英文</b>，看起來跟「還沒翻」一模一樣。
+    #
+    # 只認 the，排掉 up／down（`the up button` 是真的），也排掉後面接連字號的
+    # （`the in-between` 是真的）。
+    hole = re.search(r"\bthe\s+(?:from|to|in|on|at|with|of|and|but|through"
+                     r"|into|over|for|behind|around|near|under)(?![\w-])",
+                     src, re.I)
+    if hole:
+        out.append(Problem("warn", path, key,
+                           f"原文像是少了一個字（「{hole.group(0)}」）—— "
+                           f"多半是 wiki 的連結被吃掉了。這種 src 對不上遊戲的字串，"
+                           f"整句會留英文；等玩家收到實機字串後由 near-miss.py 補上"))
+
     # 地名永遠保留原文，翻掉的話跟其他玩家對不上話
     for place in places:
         if re.search(rf"\b{re.escape(place)}\b", src) and place not in dst:
