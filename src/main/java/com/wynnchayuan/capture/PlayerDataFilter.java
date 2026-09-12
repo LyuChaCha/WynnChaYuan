@@ -67,6 +67,10 @@ public final class PlayerDataFilter {
             // 線上名單那條路整個失效。認後面那個物件名比認名字穩。
             "'s Totem of Tales",
             "\u2019s Totem of Tales",
+            // 「RedHeartCCC's Mob Totem has run out」。跟下面那句 mob totem
+            // 是兩則不同的廣播——這一則大寫、句尾也不一樣，下面那條比對不到。
+            "'s Mob Totem",
+            "’s Mob Totem",
             " has placed a mob totem",
             " has placed a gathering totem",
             " mob totem. Get your own",

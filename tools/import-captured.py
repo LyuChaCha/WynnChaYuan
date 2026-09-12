@@ -360,6 +360,9 @@ NAMED = re.compile(
     # 故事石碑的主人。玩家名開頭是數字時，數字會先被抽成佔位符，
     # 剩下半截名字（`{~}jimmy`）就不再等於名單上那個 ID。
     r"|['’]s Totem of Tales"
+    # 「某某的怪物圖騰到期了」。模組端擋的是 `mob totem. Get your own`——
+    # 那是另一句。這一句大寫、而且句尾不一樣，得自己認。
+    r"|['’]s Mob Totem\b"
     # 交易邀請一句夾兩個名字。
     r"|would like to trade"
     r"|/trade\s"
