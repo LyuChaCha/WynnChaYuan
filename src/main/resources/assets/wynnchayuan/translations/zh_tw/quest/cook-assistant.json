@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Cook Assistant",
-  "count": 20,
+  "count": 22,
   "translated": 20,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
@@ -199,6 +199,26 @@
    "kind": "dialogue",
    "quest": "Cook Assistant",
    "source": "capture"
+  },
+  "Cook Assistant#000~1": {
+   "src": "Now, how can you h{#}",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Cook Assistant#001~1": {
+   "src": "Wait! That's the Grook! Go{#}",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }
