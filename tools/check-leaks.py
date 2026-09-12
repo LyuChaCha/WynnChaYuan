@@ -59,6 +59,16 @@ SHAPES = [
     (r"(?m)^(?:\{#\})*\S+ has died", "誰死了"),
     (r"['’]s Totem of Tales", "誰的石碑"),
     (r"\bControlled by\b", "誰的公會佔著這塊地"),
+    (r"(?m)^Owned by\s", "這東西是誰的公會的"),
+    # 交易所的篩選器把玩家<b>自己打的搜尋字</b>顯示出來，而且是邊打邊更新，
+    # 所以「dark e」這種打到一半的也會收進來。翻了沒有意義，變體無限多。
+    (r"(?m)^-?\s*Name Contains:\s", "玩家在交易所打的搜尋字"),
+    # 討伐戰與掠奪的死亡廣播。每一種死法各一句模板，主詞永遠是別人。
+    (r"\swas devoured by\b", "誰被吞了"),
+    (r"\shad their skull shattered\b", "誰被打爆頭了"),
+    (r"\smet their demise\b", "誰死了"),
+    (r"\shas perished\b", "誰死了"),
+    (r"\sis preparing to descend", "誰要下去討伐戰了"),
     (r"[A-Za-z]{2,}_\{~\}", "帳號名裡的底線加數字"),
 ]
 
