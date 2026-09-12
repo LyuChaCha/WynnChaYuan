@@ -113,7 +113,7 @@ needs**.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | █████████░ 89.3% | 36,754 / 41,175 |
+| `zh_tw` 繁體中文 | █████████░ 88.6% | 36,754 / 41,470 |
 | `zh_cn` 简体中文 | █░░░░░░░░░ 10.3% | 2,974 / 28,778 |
 | `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,730 |
 | `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,730 |
@@ -141,7 +141,7 @@ This table answers the other half:
 | Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
 | Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
 | Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 4,207 + 1,050 collected | **No official list** - only what players run into |
+| NPC nameplates, menus, system messages | — | 4,414 + 1,050 collected | **No official list** - only what players run into |
 
 Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
 
@@ -149,14 +149,14 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 
 | Category | Translated | Collected | Estimated total | Where the estimate comes from |
 |---|---:|---:|---:|---|
-| Quest dialogue | 22,378 | 22,378 | 22,378 | all 157/157 quests collected - what we have is all there is |
+| Quest dialogue | 22,378 | 22,383 | 22,383 | all 157/157 quests collected - what we have is all there is |
 | Secret discovery stories | 68 | 68 | ~8,228 | only 1 of 121 discoveries collected; scaled up from those (tiny sample - an order of magnitude, not a figure) |
 | Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,712 | 1,914 | 1,914 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 10,007 | 14,222 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 10,007 | 14,512 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 49,335 lines estimated**, **41,175 collected** (83%), **36,754 translated** (74% of the estimate, 89.3% of what we have).
+> All together: **at least 49,630 lines estimated**, **41,470 collected** (84%), **36,754 translated** (74% of the estimate, 88.6% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->

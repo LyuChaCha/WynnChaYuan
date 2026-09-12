@@ -4,7 +4,7 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 22378,
+  "count": 22383,
   "translated": 22378,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
@@ -74968,6 +74968,16 @@
    "source": "wiki"
   },
   "Fate of the Fallen#000": {
+   "src": "You can not return until your goal is fulfilled...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Fate of the Fallen",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Fate of the Fallen#001": {
    "src": "Talk to Telvu the mage at [{~}, {~}, -{~}].",
    "dst": "到 [{~1}, {~2}, -{~3}] 與法師 Telvu 對話。",
    "role": "desc",
@@ -74977,7 +74987,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#001": {
+  "Fate of the Fallen#002": {
    "src": "Ah, a member of the {p} army. We're trying to gain entry to this frozen barrow. We could use your aid.",
    "dst": "啊，{p} 軍隊的人。我們正想辦法進入這座冰封的古墳。你的幫忙來得正好。",
    "role": "desc",
@@ -74987,7 +74997,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#002": {
+  "Fate of the Fallen#003": {
    "src": "Are you familiar with the story of Theorick and {p}?",
    "dst": "你熟悉 Theorick 與 {p} 的故事嗎？",
    "role": "desc",
@@ -74997,7 +75007,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#003": {
+  "Fate of the Fallen#004": {
    "src": "Probably not. Well, you see, {p} was not always frozen.",
    "dst": "大概不熟。是這樣的，{p} 並非一直都是冰封的。",
    "role": "desc",
@@ -75007,7 +75017,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#004": {
+  "Fate of the Fallen#005": {
    "src": "During Theorick's time, this place was like the Wynn plains, warm and arable.",
    "dst": "在 Theorick 的年代，這裡就像 Wynn 的平原，溫暖而適於耕作。",
    "role": "desc",
@@ -75017,7 +75027,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#005": {
+  "Fate of the Fallen#006": {
    "src": "For some reason, Theorick Twain used his immense power to freeze the land before exiling himself here.",
    "dst": "不知為何，Theorick Twain 動用了他龐大的力量把這片土地凍結，然後把自己流放在此。",
    "role": "desc",
@@ -75027,7 +75037,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#006": {
+  "Fate of the Fallen#007": {
    "src": "We need to find out why so we can reverse this spell. Presumably, the source of that spell's magic would lie within the barrow... but we don't want to go in empty-handed.",
    "dst": "我們得查出原因，才能解開這道法術。照理說，法術的魔力源頭應該就在古墳裡……但我們不想空著手進去。",
    "role": "desc",
@@ -75037,7 +75047,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#007": {
+  "Fate of the Fallen#008": {
    "src": "As such...have you heard of a place called {p}? We could use it to go back in time, to try to learn more about Theorick's actions.",
    "dst": "因此……你聽過一個叫 {p} 的地方嗎？我們可以藉它回到過去，多了解一些 Theorick 的作為。",
    "role": "desc",
@@ -75047,7 +75057,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#008": {
+  "Fate of the Fallen#009": {
    "src": "Well...in a way, at least. There are laws to this sort of magic. For one, you need an item from the specific time we want to see. Second, you can witness the past, not change it.",
    "dst": "呃……至少某種程度上是。這類魔法有它的規矩。其一，你需要一件來自我們想看的那個年代的物品。其二，你只能目睹過去，不能改變它。",
    "role": "desc",
@@ -75057,7 +75067,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#009": {
+  "Fate of the Fallen#010": {
    "src": "One of Theorick's staves is on display in the {p} bank. Presumably, it should work for what we need. Could you retrieve it somehow?",
    "dst": "Theorick 的其中一根法杖就陳列在 {p} 的銀行裡。照理說應該合用。你有辦法把它弄來嗎？",
    "role": "desc",
@@ -75067,7 +75077,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#010": {
+  "Fate of the Fallen#011": {
    "src": "Find Theorick's stave at {p} bank.",
    "dst": "在 {p} 的銀行找到 Theorick 的法杖。",
    "role": "desc",
@@ -75077,7 +75087,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#011": {
+  "Fate of the Fallen#012": {
    "src": "Aha, quick job. I see you've got the wand. Must've needed a sharp tongue to get the bankers to give it up.",
    "dst": "啊哈，動作真快。看來你把法杖拿到手了。要讓那些銀行的人鬆手，想必得有一副好口才。",
    "role": "desc",
@@ -75087,7 +75097,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#012": {
+  "Fate of the Fallen#013": {
    "src": "Now, it is a long walk to {p}. Needn't take that walk, though, as I can teleport you there. Hopefully.",
    "dst": "走去 {p} 可是一段長路。不過不必用走的，我可以把你傳送過去。但願如此。",
    "role": "desc",
@@ -75097,7 +75107,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#013": {
+  "Fate of the Fallen#014": {
    "src": "Once you're there, enter the Temple of Time. You should know what to do once you are there. Careful dealing with time travel, friend... No idea what you might find.",
    "dst": "到了之後，進入 Temple of Time。到了那裡你就會知道該怎麼做。時光旅行要小心，朋友……誰也不知道你會碰上什麼。",
    "role": "desc",
@@ -75107,7 +75117,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#014": {
+  "Fate of the Fallen#015": {
    "src": "Just step into the portal.",
    "dst": "直接走進傳送門就是了。",
    "role": "desc",
@@ -75117,7 +75127,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#015": {
+  "Fate of the Fallen#016": {
    "src": "Should anything go wrong, I'll stay here to teleport you back to the temple.",
    "dst": "萬一出了什麼差錯，我會留在這裡把你傳送回神殿。",
    "role": "desc",
@@ -75127,7 +75137,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#016": {
+  "Fate of the Fallen#017": {
    "src": "Enter the portal the mage made.",
    "dst": "進入法師開啟的傳送門。",
    "role": "desc",
@@ -75137,7 +75147,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#017": {
+  "Fate of the Fallen#018": {
    "src": "Enter the Gate of Time at [-{~}, {~}, -{~}] and travel back in time.",
    "dst": "進入 [-{~1}, {~2}, -{~3}] 的 Gate of Time，回到過去。",
    "role": "desc",
@@ -75147,7 +75157,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#018": {
+  "Fate of the Fallen#019": {
    "src": "Explore Past {p}.",
    "dst": "探索過去的 {p}。",
    "role": "desc",
@@ -75157,7 +75167,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#019": {
+  "Fate of the Fallen#020": {
    "src": "What the...",
    "dst": "搞什麼……",
    "role": "desc",
@@ -75167,7 +75177,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#020": {
+  "Fate of the Fallen#021": {
    "src": "Woah, your weaponry and armour is so advanced!",
    "dst": "哇，你的武器跟護甲好先進！",
    "role": "desc",
@@ -75177,7 +75187,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#021": {
+  "Fate of the Fallen#022": {
    "src": "Are you another Twain? Only the Twains know magic like that.",
    "dst": "你也是 Twain 嗎？只有 Twains 懂那種魔法。",
    "role": "desc",
@@ -75187,7 +75197,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#022": {
+  "Fate of the Fallen#023": {
    "src": "Oh, you're looking for Theorick.",
    "dst": "喔，你是來找 Theorick 的。",
    "role": "desc",
@@ -75197,7 +75207,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#023": {
+  "Fate of the Fallen#024": {
    "src": "He's busy fighting in the war, shouldn't you be doing the same?",
    "dst": "他忙著在前線打仗，你不也該去嗎？",
    "role": "desc",
@@ -75207,7 +75217,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#024": {
+  "Fate of the Fallen#025": {
    "src": "He went west. There was some kind of emergency.",
    "dst": "他往西邊去了。好像出了什麼緊急狀況。",
    "role": "desc",
@@ -75217,7 +75227,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#025": {
+  "Fate of the Fallen#026": {
    "src": "We've been fighting the corruption for years, it seems like it might finally engulf {p}.",
    "dst": "我們跟腐敗打了好幾年，看樣子它終究要把 {p} 吞掉了。",
    "role": "desc",
@@ -75227,7 +75237,7 @@
    "speaker": "Psern",
    "source": "wiki"
   },
-  "Fate of the Fallen#026": {
+  "Fate of the Fallen#027": {
    "src": "Find Theorick in the forest west of {p} [{~}, {~}, {~}].",
    "dst": "在 {p} 西邊的森林裡找到 Theorick [{~1}, {~2}, {~3}]。",
    "role": "desc",
@@ -75237,7 +75247,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#027": {
+  "Fate of the Fallen#028": {
    "src": "I could've sworn she had gone this way... Oh, what now, more imbeciles? This forest isn't safe to travel!",
    "dst": "我敢發誓她是往這邊走的……喔，又怎麼了，又來一個蠢貨？這片森林不能亂走！",
    "role": "desc",
@@ -75247,7 +75257,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#028": {
+  "Fate of the Fallen#029": {
    "src": "If you need help, lodge a complaint with the guards. I'm busy and I can't exactly break away from saving this god-blessed province to chill your milk!!",
    "dst": "要幫忙就去跟衛兵申訴。我很忙，總不能丟下拯救這個天殺的行省，跑去幫你冰牛奶吧！！",
    "role": "desc",
@@ -75257,7 +75267,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#029": {
+  "Fate of the Fallen#030": {
    "src": "Are your ears full of wax?! I said-",
    "dst": "你耳朵塞了耳屎嗎？！我說了——",
    "role": "desc",
@@ -75267,7 +75277,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#030": {
+  "Fate of the Fallen#031": {
    "src": "Urgh, the things followed you! See what happens?! STAND ASIDE.",
    "dst": "唔，那些東西跟著你來了！看吧，會出什麼事？！退到一邊去。",
    "role": "desc",
@@ -75277,7 +75287,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#031": {
+  "Fate of the Fallen#032": {
    "src": "As though I needed TWO people to save! Now get out of here, I have to find that woman who went missing!",
    "dst": "好像我還嫌只救一個人不夠似的！快滾，我還得去找那個失蹤的女人！",
    "role": "desc",
@@ -75287,7 +75297,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#032": {
+  "Fate of the Fallen#033": {
    "src": "HEEEELP! I can't outrun them!!! Guards! Someone!!",
    "dst": "救命啊——！我跑不過牠們！！！衛兵！誰來啊！！",
    "role": "desc",
@@ -75297,7 +75307,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Fate of the Fallen#033": {
+  "Fate of the Fallen#034": {
    "src": "Whuh! That's her voice! Where is she?! I just cleared this area!",
    "dst": "咦！那是她的聲音！她人在哪？！我剛才才清過這一帶！",
    "role": "desc",
@@ -75307,7 +75317,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#034": {
+  "Fate of the Fallen#035": {
    "src": "Th-Theorick!! There's corrupteds!!",
    "dst": "Theo、Theorick！！有腐敗物！！",
    "role": "desc",
@@ -75317,7 +75327,7 @@
    "speaker": "Girl",
    "source": "wiki"
   },
-  "Fate of the Fallen#035": {
+  "Fate of the Fallen#036": {
    "src": "Ugh, is she dragging them over from the west?! You there, If you don't want to end up frozen, GET BEHIND ME, NOW!!",
    "dst": "唔，她是從西邊一路把牠們引過來的嗎？！你，不想被凍成冰塊的話，立刻躲到我身後！！",
    "role": "desc",
@@ -75327,7 +75337,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#036": {
+  "Fate of the Fallen#037": {
    "src": "Phew... You're out of danger now. If you hadn't left town, though, you wouldn't have been IN any danger at all!",
    "dst": "呼……你安全了。不過你要是沒離開城裡，根本就不會有什麼危險！",
    "role": "desc",
@@ -75337,7 +75347,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#037": {
+  "Fate of the Fallen#038": {
    "src": "Don't bother apologizing to me, just get back to town. Now.",
    "dst": "不必跟我道歉，回城裡去就是了。立刻。",
    "role": "desc",
@@ -75347,7 +75357,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#038": {
+  "Fate of the Fallen#039": {
    "src": "Next time you feel like picking flowers in the forest or whatever you were doing, remember you have a life to live, hm?!",
    "dst": "下次想到森林裡採花還是幹嘛的時候，記得你的命只有一條，聽見沒？！",
    "role": "desc",
@@ -75357,7 +75367,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#039": {
+  "Fate of the Fallen#040": {
    "src": "Every day, more corrupteds, more deaths... There is only one thing for it. I have to tackle it myself. Cut the roots...and kill this hellish weed.",
    "dst": "每一天，腐敗物更多，死的人也更多……只剩一條路了。我得親自去處理。斬斷根源……除掉這株地獄來的雜草。",
    "role": "desc",
@@ -75367,7 +75377,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#040": {
+  "Fate of the Fallen#041": {
    "src": "Still here? Well, listen up. Myself and a few others are planning something risky. Damned be it if our minds are lost, I need to go through that portal.",
    "dst": "還在啊？那就聽好。我和另外幾個人在籌畫一件冒險的事。就算心智因此喪失也罷，我必須穿過那道傳送門。",
    "role": "desc",
@@ -75377,7 +75387,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#041": {
+  "Fate of the Fallen#042": {
    "src": "You look heavily geared, so I'm conscripting you. Meet us at our base, immediately. Follow the river south and you'll see a house on the right side.",
    "dst": "你裝備看起來很齊，我徵召你了。立刻到我們的據點會合。沿著河往南走，右手邊會看到一棟房子。",
    "role": "desc",
@@ -75387,7 +75397,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#042": {
+  "Fate of the Fallen#043": {
    "src": "Head to the base of the operation south of {p} [{~}, {~}, {~}].",
    "dst": "前往 {p} 南邊的行動據點 [{~1}, {~2}, {~3}]。",
    "role": "desc",
@@ -75397,7 +75407,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#043": {
+  "Fate of the Fallen#044": {
    "src": "Well, I'll give you this. You're prompt to listen to orders, at least. We're headed to the {p}.",
    "dst": "好吧，這點我承認。你至少聽令很快。我們要前往 {p}。",
    "role": "desc",
@@ -75407,7 +75417,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#044": {
+  "Fate of the Fallen#045": {
    "src": "The last man that entered the portal and returned became Bak’al... But if there is even a fraction of a chance this could work, we must take it at this point.",
    "dst": "上一個進了那道門又回來的人，變成了 Bak’al……但只要還有一絲成功的可能，事到如今我們就得賭。",
    "role": "desc",
@@ -75417,7 +75427,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#045": {
+  "Fate of the Fallen#046": {
    "src": "Let's get moving. We'll be taking no breaks on the trip, so I hope you were prepared.",
    "dst": "出發吧。這一路不休息，希望你早有準備。",
    "role": "desc",
@@ -75427,7 +75437,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#046": {
+  "Fate of the Fallen#047": {
    "src": "Now. The sheer cold I command can stave off corruption itself. Somehow I doubt any of you can say the same. I'll go in alone.",
    "dst": "好。我所駕馭的極寒能夠擋住腐敗本身。我可不覺得你們哪個也做得到。我一個人進去。",
    "role": "desc",
@@ -75437,7 +75447,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#047": {
+  "Fate of the Fallen#048": {
    "src": "When I enter... If I had to make an assumption, corrupteds will swarm the portal after me. Your job? Slay them. I can't have distractions in there.",
    "dst": "我進去之後……照我推測，腐敗物會跟著湧向那道門。你們的任務？把牠們殺光。我不能在裡面分心。",
    "role": "desc",
@@ -75447,7 +75457,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#048": {
+  "Fate of the Fallen#049": {
    "src": "You will not be leaving your post here until I exit that portal. Understood?",
    "dst": "在我從那道門出來之前，你不准離開崗位。聽懂了嗎？",
    "role": "desc",
@@ -75457,7 +75467,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#049": {
+  "Fate of the Fallen#050": {
    "src": "Protect the portal.",
    "dst": "守住傳送門。",
    "role": "desc",
@@ -75467,7 +75477,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#050": {
+  "Fate of the Fallen#051": {
    "src": "...no...",
    "dst": "……不……",
    "role": "desc",
@@ -75477,7 +75487,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#051": {
+  "Fate of the Fallen#052": {
    "src": "...no, no, no no no NO!! DAMN IT ALL!!",
    "dst": "……不、不，不不不，不要啊！！全都該死！！",
    "role": "desc",
@@ -75487,7 +75497,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#052": {
+  "Fate of the Fallen#053": {
    "src": "You know what happened?! I lost!! I will destroy the province if I turn completely! GET AWAY, NOW! DO YOU HEAR ME?! RUN!!",
    "dst": "你知道發生什麼事了嗎？！我輸了！！我要是徹底轉化，會毀了整個行省！走開，快！聽見沒有？！快跑！！",
    "role": "desc",
@@ -75497,7 +75507,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#053": {
+  "Fate of the Fallen#054": {
    "src": "I... C-calm yourself, Theorick...don't...don't lose yourself to it...there's...yet a solution...one way...",
    "dst": "我……冷、冷靜下來，Theorick……別……別讓它吞掉你……還有……還有辦法……有一條路……",
    "role": "desc",
@@ -75507,7 +75517,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#054": {
+  "Fate of the Fallen#055": {
    "src": "Oh...you again...the others...dead? Run off? Cowards...urgh...",
    "dst": "喔……又是你……其他人呢……死了？跑了？一群懦夫……唔……",
    "role": "desc",
@@ -75517,7 +75527,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#055": {
+  "Fate of the Fallen#056": {
    "src": "You live...so...eyes up. Listen to me. If I turn...w-when...when I turn...n-no, can't...gaaah, I'll destr- Nggh...",
    "dst": "你還活著……那……抬起頭來。聽我說。如果我轉化……不，是當、當我轉化的時候……不、不行……啊啊啊，我會毀——唔……",
    "role": "desc",
@@ -75527,7 +75537,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#056": {
+  "Fate of the Fallen#057": {
    "src": "I won't last, you can tell... Right now...killing me is an impossibility, you idiotic weakl- Agh, GET OUT OF MY MIND!!",
    "dst": "我撐不了多久，你看得出來……此刻……要殺我是不可能的，你這蠢弱的——啊，滾出我的腦袋！！",
    "role": "desc",
@@ -75537,7 +75547,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#057": {
+  "Fate of the Fallen#058": {
    "src": "Gaaah... Tell...everyone. I will freeze this place. I...t-too fargone. It needs time to heal...and my powers m-must be dampened...frozen...",
    "dst": "啊啊啊……告訴……所有人。我要把這裡凍結。我……我已經、太遲了。這片土地需要時間癒合……而我的力量，必、必須被壓下……被凍住……",
    "role": "desc",
@@ -75547,7 +75557,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#058": {
+  "Fate of the Fallen#059": {
    "src": "All worthless... Urgh, no...they yet deserve life...and this spell...it will surely claim some. Please, let them know why...",
    "dst": "全都不值一提……唔，不……他們仍配得上活著……而這道法術……必定會奪走一些人的命。拜託，讓他們知道原因……",
    "role": "desc",
@@ -75557,7 +75567,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#059": {
+  "Fate of the Fallen#060": {
    "src": "If I have learned anything from that insufferable f- ...from Mael...deaths without reason lets spirits to linger. I would...prefer against giving him a harder time.",
    "dst": "如果說我從那個討人厭的傢——……從 Mael 那裡學到了什麼，那就是死得不明不白會讓亡魂徘徊不去。我……不想再給他添麻煩。",
    "role": "desc",
@@ -75567,7 +75577,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#060": {
+  "Fate of the Fallen#061": {
    "src": "K-keep advancing. Your things, if everyone was as strong as you...we may stand a chance. This could end me, in time, once I am weaker.",
    "dst": "繼、繼續前進吧。你這身裝備，要是人人都像你這麼強……我們也許還有機會。等我更虛弱了，這終有一天能了結我。",
    "role": "desc",
@@ -75577,7 +75587,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#061": {
+  "Fate of the Fallen#062": {
    "src": "Let it be known...Theorick Twain is not dead. He cannot be killed...all will burn...until future days. Here, in this accursed place. Find me...and end it all.",
    "dst": "讓世人知道……Theorick Twain 並沒有死。他是殺不死的……一切都將焚毀……直到將來的某一天。就在這裡，在這片受詛咒的土地上。找到我……然後為這一切畫下句點。",
    "role": "desc",
@@ -75587,7 +75597,7 @@
    "speaker": "Theorick",
    "source": "wiki"
   },
-  "Fate of the Fallen#062": {
+  "Fate of the Fallen#063": {
    "src": "Tell Telvu the mage what happened.",
    "dst": "把經過告訴法師 Telvu。",
    "role": "desc",
@@ -75597,7 +75607,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Fate of the Fallen#063": {
+  "Fate of the Fallen#064": {
    "src": "You must have succeeded, or you would be yet in the memory of the past. I can feel some potent magic on you.",
    "dst": "你想必是成功了，否則你此刻還困在過去的記憶裡。我感覺得到你身上帶著強大的魔力。",
    "role": "desc",
@@ -75607,7 +75617,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#064": {
+  "Fate of the Fallen#065": {
    "src": "So, you met Theorick? He was always said to have fallen from heroism after the great freezing.",
    "dst": "這麼說，你見到 Theorick 了？一直以來的說法都是，大冰封之後他就從英雄的位置上墮落了。",
    "role": "desc",
@@ -75617,7 +75627,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#065": {
+  "Fate of the Fallen#066": {
    "src": "Were you able to figure out why it was he froze this place, at least?",
    "dst": "至少，你查出他為什麼要把這裡凍結了嗎？",
    "role": "desc",
@@ -75627,7 +75637,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#066": {
+  "Fate of the Fallen#067": {
    "src": "What... so many revelations... ice magic staves off corruption...? It is true this palce has seen less corrupted threats than other places in the province...",
    "dst": "什麼……這麼多真相……冰魔法能擋住腐敗……？的確，這個地方遇到的腐敗威脅，比行省裡其他地方都要少……",
    "role": "desc",
@@ -75637,7 +75647,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#067": {
+  "Fate of the Fallen#068": {
    "src": "Dear gods... We've had it all wrong this whole time... This was to protect everyone...but surely he would have told someone his intentions if he was of that sound a mind!",
    "dst": "天上諸神啊……我們一直以來全都弄錯了……這是為了保護所有人……可他要是神智還那麼清楚，總該跟誰交代一聲吧！",
    "role": "desc",
@@ -75647,7 +75657,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#068": {
+  "Fate of the Fallen#069": {
    "src": "All this time, spent buried alive, wrestling with the corruption. The thought horrifies you, as well, judging by your face. Killing him would be a mercy.",
    "dst": "這麼多年，就這樣被活埋著，與腐敗搏鬥。看你的臉色，這念頭也讓你毛骨悚然吧。殺了他，反而是慈悲。",
    "role": "desc",
@@ -75657,7 +75667,7 @@
    "speaker": "Telvu",
    "source": "wiki"
   },
-  "Fate of the Fallen#069": {
+  "Fate of the Fallen#070": {
    "src": "Here. Use this. It may help protect you within the Ice Barrows... Please, soldier. Be Theorick's guardian angel. Free him from this torment.",
    "dst": "來。用這個。在 Ice Barrows 裡面它或許能保護你……拜託了，士兵。當 Theorick 的守護天使吧。把他從這場折磨裡解脫出來。",
    "role": "desc",
@@ -155152,6 +155162,46 @@
    "source": "wiki"
   },
   "The Cursed One#000": {
+   "src": "As of late, I have felt a distinct lack of impact in our actions. Certainly- we've done good for the downtrodden and overlooked! But we have failed to make any real change.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#001": {
+   "src": "Yeah, curses, blessings - whatever. So, what, you think all of us could just... use \"magic\"? What would that even look like?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#002": {
+   "src": "However, the traditional \"cursed one\" mythos has the afflicted wielding such power without the use of any blessed artifacts.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#003": {
+   "src": "As an example- I learned that I have an affinity for the fire element, but I didn't know what form that would take until I actually received my blessing.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Cursed One",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Cursed One#004": {
    "src": "Return to the resistance camp at [-{~}, {~}, -{~}].",
    "dst": "回到 [-{~1}, {~2}, -{~3}] 的反抗軍營地。",
    "role": "desc",
@@ -155161,7 +155211,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#001": {
+  "The Cursed One#005": {
    "src": "{u}, it's good to see you. Have you been well?",
    "dst": "{u}，很高興見到你。你還好嗎？",
    "role": "desc",
@@ -155171,7 +155221,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#002": {
+  "The Cursed One#006": {
    "src": "...no one has recognized you in {p}, have they?",
    "dst": "……在 {p} 沒有人認出你吧？",
    "role": "desc",
@@ -155181,7 +155231,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#003": {
+  "The Cursed One#007": {
    "src": "Good, good. Be sure to tell me if it does happen, and we'll figure out what to do from there.",
    "dst": "很好，很好。萬一真的發生了，一定要告訴我，我們再從那裡想辦法。",
    "role": "desc",
@@ -155191,7 +155241,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#004": {
+  "The Cursed One#008": {
    "src": "Anyway, since you're here, I'd like to follow up on our earlier discussion. About... magic.",
    "dst": "總之，既然你來了，我想接續我們稍早的討論。關於……魔法。",
    "role": "desc",
@@ -155201,7 +155251,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#005": {
+  "The Cursed One#009": {
    "src": "I would like for you to describe what you know of it, how you use it, and how most people in your province can wield it.",
    "dst": "我想請你描述一下你對它的了解、你怎麼使用它，以及你們行省大多數人是怎麼駕馭它的。",
    "role": "desc",
@@ -155211,7 +155261,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#006": {
+  "The Cursed One#010": {
    "src": "I've informed the Leaves about our plans, and those interested will join us. Though, I will not force anyone to attend if they do not wish to. Are you ready?",
    "dst": "我已經把我們的計畫告訴風中之葉了，有興趣的人會來。不過，不願意來的我不會勉強。你準備好了嗎？",
    "role": "desc",
@@ -155221,7 +155271,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#007": {
+  "The Cursed One#011": {
    "src": "Alright, everyone! It's meeting time!",
    "dst": "各位！開會時間到了！",
    "role": "desc",
@@ -155231,7 +155281,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#008": {
+  "The Cursed One#012": {
    "src": "Teach the Leaves in the Wind magic.",
    "dst": "教風中之葉魔法。",
    "role": "desc",
@@ -155241,7 +155291,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#009": {
+  "The Cursed One#013": {
    "src": "Hello, everyone. Hm... has anyone seen Sui?",
    "dst": "各位好。唔……有人看到 Sui 嗎？",
    "role": "desc",
@@ -155251,7 +155301,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#010": {
+  "The Cursed One#014": {
    "src": "She told me she did not feel particularly comfortable listening in on this discussion, so I did not push her further.",
    "dst": "她跟我說她不太想旁聽這場討論，所以我就沒有再逼她。",
    "role": "desc",
@@ -155261,7 +155311,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#011": {
+  "The Cursed One#015": {
    "src": "I see. I think it would be good for her to hear this, though. Could someone fetch her for me?",
    "dst": "我明白了。不過我認為讓她聽到這些會比較好。有誰可以幫我去找她？",
    "role": "desc",
@@ -155271,7 +155321,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#012": {
+  "The Cursed One#016": {
    "src": "I can go find her, ma'am.",
    "dst": "我可以去找她，長官。",
    "role": "desc",
@@ -155281,7 +155331,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#013": {
+  "The Cursed One#017": {
    "src": "Thank you, Rex.",
    "dst": "謝謝你，Rex。",
    "role": "desc",
@@ -155291,7 +155341,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#014": {
+  "The Cursed One#018": {
    "src": "It... isn't something you need to worry about. Not yet, at least.",
    "dst": "那……不是你需要操心的事。至少現在還不是。",
    "role": "desc",
@@ -155301,7 +155351,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#015": {
+  "The Cursed One#019": {
    "src": "Magic... or, rather, curses have a tendency to be associated with bad memories.",
    "dst": "魔法……或者說，詛咒，往往和不好的回憶連在一起。",
    "role": "desc",
@@ -155311,7 +155361,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#016": {
+  "The Cursed One#020": {
    "src": "It's not my place to tell you why. Sui can share more if she wants to, later.",
    "dst": "那不是我該說的。如果 Sui 願意，她晚點可以自己多說一些。",
    "role": "desc",
@@ -155321,7 +155371,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#017": {
+  "The Cursed One#021": {
    "src": "Sui is... the exception.",
    "dst": "Sui 是……例外。",
    "role": "desc",
@@ -155331,7 +155381,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#018": {
+  "The Cursed One#022": {
    "src": "I have my reasons for it. I believe it would be better for her to hear this now, rather than later.",
    "dst": "我有我的理由。我相信讓她現在就聽到，會比晚一點才聽到好。",
    "role": "desc",
@@ -155341,7 +155391,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#019": {
+  "The Cursed One#023": {
    "src": "It's not my place to tell you why. Sui can share more if she wants to, later.",
    "dst": "那不是我該說的。如果 Sui 願意，她晚點可以自己多說一些。",
    "role": "desc",
@@ -155351,7 +155401,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#020": {
+  "The Cursed One#024": {
    "src": "Here we are! So, could we get started already? Some of us actually have responsibilities.",
    "dst": "我們來了！那麼，可以開始了嗎？我們有些人是真的有事要做的。",
    "role": "desc",
@@ -155361,7 +155411,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#021": {
+  "The Cursed One#025": {
    "src": "Seeing as everyone is here, yes, Rex, we may. {u}, let us start with the basics.",
    "dst": "既然大家都到齊了，可以，Rex。{u}，我們從基礎開始吧。",
    "role": "desc",
@@ -155371,7 +155421,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#022": {
+  "The Cursed One#026": {
    "src": "Ah, yes, such as the cursed... the stories do tell of the original evil lurking within us. It would follow that it exists in all things.",
    "dst": "啊，是的，比如受詛者……那些故事確實說了，最初的邪惡潛伏在我們之中。照這樣推，它應該存在於萬物之中。",
    "role": "desc",
@@ -155381,7 +155431,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#023": {
+  "The Cursed One#027": {
    "src": "Indeed. So {u}, how do you wield your magic?",
    "dst": "確實。那麼 {u}，你是怎麼駕馭你的魔法的？",
    "role": "desc",
@@ -155391,7 +155441,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#024": {
+  "The Cursed One#028": {
    "src": "Similar to the blessed implements of the crown's commanders, yes? I remember hearing of this from the military recruiters.",
    "dst": "跟王室指揮官那些受祝福的器具類似，是嗎？我記得軍方招募官提過這個。",
    "role": "desc",
@@ -155401,7 +155451,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#025": {
+  "The Cursed One#029": {
    "src": "Don't those usually only have one specific blessing attached to them? I don't remember them being as... uh, flexible, I guess.",
    "dst": "那些通常不是只附著一種特定的祝福嗎？我不記得它們有那麼……呃，那麼靈活。",
    "role": "desc",
@@ -155411,7 +155461,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#026": {
+  "The Cursed One#030": {
    "src": "You'd be correct, Rex, though the same principle applies. A blessed weapon is referred to as a \"focus\" by the crown. They allow the wielder to more easily access the blessing placed within.",
    "dst": "你說得對，Rex，不過原理是一樣的。王室把受祝福的武器稱為「媒介」。它讓持有者更容易取用其中封存的祝福。",
    "role": "desc",
@@ -155421,7 +155471,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#027": {
+  "The Cursed One#031": {
    "src": "Ah, I do have experience with this. We call it mana. Once one receives a blessing, it takes time to learn how to draw from your own source of mana.",
    "dst": "啊，這個我有經驗。我們稱它為魔力。一個人領受祝福之後，要花時間才學得會如何從自己的魔力源汲取。",
    "role": "desc",
@@ -155431,7 +155481,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#028": {
+  "The Cursed One#032": {
    "src": "This is where foci come into play they are crafted or forged from mana-dense materials, and so provide a more easily accessible source to power one's blessing.",
    "dst": "媒介就是在這裡派上用場的——它們是用魔力密度高的材料製作或鍛造的，因此提供一個更容易取用的來源來驅動祝福。",
    "role": "desc",
@@ -155441,7 +155491,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#029": {
+  "The Cursed One#033": {
    "src": "And, so... what? You think any of us could just... do it? That's hard to believe.",
    "dst": "所以……怎樣？你覺得我們任何一個人都能……做得到？這很難相信。",
    "role": "desc",
@@ -155451,7 +155501,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#030": {
+  "The Cursed One#034": {
    "src": "Ha! If it were truly the case, would there not be many, many more cursed ones running around? I concur with Rex, it seems outlandish.",
    "dst": "哈！如果真是那樣，外面跑來跑去的受詛者不是應該多得多嗎？我同意 Rex，這聽起來太離譜了。",
    "role": "desc",
@@ -155461,7 +155511,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#031": {
+  "The Cursed One#035": {
    "src": "I d- d- don't know... {u} doesn't seem like they're l- ly- like they're lying. What- wh- what if it is true?",
    "dst": "我不、不、不知道……{u} 看起來不像在說、說——不像在說謊。萬、萬一那是真的呢？",
    "role": "desc",
@@ -155471,7 +155521,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#032": {
+  "The Cursed One#036": {
    "src": "It would explain certain aspects of the crown's response to cursed ones...",
    "dst": "那確實能解釋王室對受詛者的某些反應……",
    "role": "desc",
@@ -155481,7 +155531,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#033": {
+  "The Cursed One#037": {
    "src": "But... if you didn't receive a blessing, doesn't it still make you cursed?",
    "dst": "可是……如果你沒有領受祝福，那不還是會讓你成為受詛者嗎？",
    "role": "desc",
@@ -155491,7 +155541,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#034": {
+  "The Cursed One#038": {
    "src": "Yes, precisely! My sister is correct. Any... \"magic\" not sourced from the crown is innately tainted, from my understanding.",
    "dst": "是的，正是如此！我妹妹說得對。就我的理解，任何不是源自王室的……「魔法」，本質上都是被玷污的。",
    "role": "desc",
@@ -155501,7 +155551,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#035": {
+  "The Cursed One#039": {
    "src": "Yeah, curses, blessings whatever. So, what, you think all of us could just... use \"magic\"? What would that even look like?",
    "dst": "是啦，詛咒、祝福——隨便。所以，怎樣，你覺得我們所有人都能就這樣……使用「魔法」？那看起來會是什麼樣子？",
    "role": "desc",
@@ -155511,7 +155561,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#036": {
+  "The Cursed One#040": {
    "src": "Ha. Right, sure. \"Belief.\" So if I think hard enough, I can just start calling down lightning strikes?",
    "dst": "哈。是喔，當然。「相信」。所以只要我想得夠用力，就能開始召喚閃電了？",
    "role": "desc",
@@ -155521,7 +155571,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#037": {
+  "The Cursed One#041": {
    "src": "Ugh. This was a waste of time.",
    "dst": "唉。這根本是浪費時間。",
    "role": "desc",
@@ -155531,7 +155581,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#038": {
+  "The Cursed One#042": {
    "src": "Now, now, Rex. Don't be so hasty in writing it off entirely. You have seen with your own eyes what {u} can do!",
    "dst": "好了好了，Rex。別這麼急著全盤否定。你可是親眼看過 {u} 能做什麼的！",
    "role": "desc",
@@ -155541,7 +155591,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#039": {
+  "The Cursed One#043": {
    "src": "Belief... I- I- I can do that.",
    "dst": "相信……我、我、我做得到。",
    "role": "desc",
@@ -155551,7 +155601,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#040": {
+  "The Cursed One#044": {
    "src": "Oh, come on Zeph, really? You can't seriously",
    "dst": "喔，拜託 Zeph，認真的嗎？你不會真的",
    "role": "desc",
@@ -155561,7 +155611,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#041": {
+  "The Cursed One#045": {
    "src": "We're getting off track. {u}, what else is there?",
    "dst": "我們扯遠了。{u}，還有什麼？",
    "role": "desc",
@@ -155571,7 +155621,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#042": {
+  "The Cursed One#046": {
    "src": "So... s- so you don't even know what your m- ma- magic will look like?",
    "dst": "所以……所、所以你連自己的魔、魔法會長什麼樣子都不知道？",
    "role": "desc",
@@ -155581,7 +155631,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#043": {
+  "The Cursed One#047": {
    "src": "Correct. There are aptitude tests which the crown uses before giving out blessings, but those only provide an idea of the general typing.",
    "dst": "沒錯。王室在授予祝福之前有一套資質測驗，但那只能給出大致的類型概念。",
    "role": "desc",
@@ -155591,7 +155641,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#044": {
+  "The Cursed One#048": {
    "src": "As an example I learned that I have an affinity for the fire element, but I didn't know what form that would take until I actually received my blessing.",
    "dst": "舉例來說——我當年得知自己對火元素有親和性，但直到真正領受祝福之前，我都不知道它會以什麼形式呈現。",
    "role": "desc",
@@ -155601,7 +155651,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#045": {
+  "The Cursed One#049": {
    "src": "Oh! S- s- so, what type of magic do you think I w- would- I would have?",
    "dst": "喔！所、所、所以，你覺得我會、會有什麼類型的魔法？",
    "role": "desc",
@@ -155611,7 +155661,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#046": {
+  "The Cursed One#050": {
    "src": "Something with wind, probably. You have that sort of... feel to you. Hey we'll be the Leaves, and you can be the Wind!",
    "dst": "大概跟風有關吧。你有那種……感覺。欸——我們是「葉」，你就可以是「風」！",
    "role": "desc",
@@ -155621,7 +155671,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#047": {
+  "The Cursed One#051": {
    "src": "He- hey! That... oh, that would be c- c- cool, actually...",
    "dst": "喂、喂！那……喔，那其實還蠻酷、酷的……",
    "role": "desc",
@@ -155631,7 +155681,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#048": {
+  "The Cursed One#052": {
    "src": "If I may interrupt thus far, you have spoken at length on casting through the use of a focus.",
    "dst": "容我在此插一句話——目前為止，你談的都是透過媒介施法。",
    "role": "desc",
@@ -155641,7 +155691,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#049": {
+  "The Cursed One#053": {
    "src": "However, the traditional \"cursed one\" mythos has afflicted wielding such power without the use of any blessed artifacts.",
    "dst": "然而，傳統上「受詛者」的傳說，講的是在不使用任何受祝福的器物之下駕馭那樣的力量。",
    "role": "desc",
@@ -155651,7 +155701,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#050": {
+  "The Cursed One#054": {
    "src": "Aha. Of course, then those must be the dangerous ones.",
    "dst": "啊哈。那麼，那些想必就是危險的那一種了。",
    "role": "desc",
@@ -155661,7 +155711,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#051": {
+  "The Cursed One#055": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -155671,7 +155721,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#052": {
+  "The Cursed One#056": {
    "src": "Uncommon, but still common enough to maintain the reputation the cursed have... It would make sense.",
    "dst": "不常見，但也常見到足以讓受詛者維持那樣的名聲……這說得通。",
    "role": "desc",
@@ -155681,7 +155731,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#053": {
+  "The Cursed One#057": {
    "src": "Well, thank you for your time, {u}. I think we'll call it there. You're all dismissed.",
    "dst": "好，謝謝你撥空，{u}。我想今天就到這裡。大家解散吧。",
    "role": "desc",
@@ -155691,7 +155741,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#054": {
+  "The Cursed One#058": {
    "src": "...So what, is- is that it? We talk about th- th- theory for a while, and th- a- and then do nothing?",
    "dst": "……所以呢，就、就這樣？我們談了一陣子理、理論，然、然後就什麼都不做？",
    "role": "desc",
@@ -155701,7 +155751,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#055": {
+  "The Cursed One#059": {
    "src": "Zeph, even if {u}'s information is true, it doesn't mean it's immediately applicable.",
    "dst": "Zeph，就算 {u} 的資訊屬實，那也不代表它能立刻應用。",
    "role": "desc",
@@ -155711,7 +155761,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#056": {
+  "The Cursed One#060": {
    "src": "If I could be certain that experimenting with cur... magic... would be safe, maybe there could be an opportunity here. As it stands... it's too risky.",
    "dst": "如果我能確定拿詛……魔法……做實驗是安全的，也許這裡確實有機會。但以目前的情況……風險太大了。",
    "role": "desc",
@@ -155721,7 +155771,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#057": {
+  "The Cursed One#061": {
    "src": "R- ris- risky... maybe the reason we've been stuck is because we d- d- we don't take risks!",
    "dst": "風、風——風險……也許我們一直卡住的原因，就是我們不、不、我們不冒險！",
    "role": "desc",
@@ -155731,7 +155781,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#058": {
+  "The Cursed One#062": {
    "src": "The per- perfect opportunity to be a- a- able to hold our own against the c- cr- crown, a- and- and we're gonna do n- no- nothing? Are you h- hear- hearing yourself?",
    "dst": "這是能讓我們有本事與王、王室抗衡的完、完美機會，而、而我們卻要什、什麼都不做？你有在聽、聽自己說什麼嗎？",
    "role": "desc",
@@ -155741,7 +155791,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#059": {
+  "The Cursed One#063": {
    "src": "Zeph...",
    "dst": "Zeph……",
    "role": "desc",
@@ -155751,7 +155801,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#060": {
+  "The Cursed One#064": {
    "src": "No, I- I'm gonna ta- take the chance. Even- e- even if no- nobody else will. Come- c- come on, {u}, let's go.",
    "dst": "不，我——我要試試看。就、就算——就算沒、沒有別人願意。走、走吧，{u}，我們走。",
    "role": "desc",
@@ -155761,7 +155811,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#061": {
+  "The Cursed One#065": {
    "src": "Talk to Zeph at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~1}, {~2}, -{~3}] 與 Zeph 談話。",
    "role": "desc",
@@ -155771,7 +155821,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#062": {
+  "The Cursed One#066": {
    "src": "Sigh. I suppose I should have expected something like this. Of all the children, he's the one with the most to prove...",
    "dst": "唉。我大概早該料到會有這種事。這些孩子裡，就屬他最急著證明自己……",
    "role": "desc",
@@ -155781,7 +155831,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#063": {
+  "The Cursed One#067": {
    "src": "You may as well go with him, {u}. Maybe you'll be able to prove my worries wrong.",
    "dst": "你不如跟他去吧，{u}。也許你能證明我的擔心是多餘的。",
    "role": "desc",
@@ -155791,7 +155841,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#064": {
+  "The Cursed One#068": {
    "src": "Hum... I suppose the pieces fit together, yet...",
    "dst": "唔……我想這些碎片是拼得起來，只是……",
    "role": "desc",
@@ -155801,7 +155851,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#065": {
+  "The Cursed One#069": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -155811,7 +155861,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#066": {
+  "The Cursed One#070": {
    "src": "I... I may have gotten a bit h- he- heated there...",
    "dst": "我……我剛才可能有點激、激動了……",
    "role": "desc",
@@ -155821,7 +155871,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#067": {
+  "The Cursed One#071": {
    "src": "It's just... all so- s- so frustrating! So often, people are h- hur- hurt by the crown, and- and th- there's nothing we can do about it! If we had m- m- if we had m- magic, we'd be able to- to sta- stand up to them!",
    "dst": "只是……這一切都太、太讓人洩氣了！那麼多人被王室傷、傷害，而、而我們卻什麼都做不了！如果我們有魔——如果我們有魔法，我們就能站出來對、對抗他們！",
    "role": "desc",
@@ -155831,7 +155881,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#068": {
+  "The Cursed One#072": {
    "src": "But they don't... eugh. What- wh- whatever. We can just",
    "dst": "可是他們不……唉。算、算了。我們可以就",
    "role": "desc",
@@ -155841,7 +155891,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#069": {
+  "The Cursed One#073": {
    "src": "Hey, wait up!",
    "dst": "喂，等一下！",
    "role": "desc",
@@ -155851,7 +155901,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#070": {
+  "The Cursed One#074": {
    "src": "R- Rex? What are you",
    "dst": "R——Rex？你怎麼會",
    "role": "desc",
@@ -155861,7 +155911,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#071": {
+  "The Cursed One#075": {
    "src": "Well, I can't just let you go off and do this on your own. Even if I think it's stupid and reckless.",
    "dst": "嗯，我總不能就這樣讓你自己一個人去做這件事。就算我覺得那既愚蠢又魯莽。",
    "role": "desc",
@@ -155871,7 +155921,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#072": {
+  "The Cursed One#076": {
    "src": "So, what's the plan? You didn't just run off without one, right?",
    "dst": "所以，計畫是什麼？你不會是連計畫都沒有就衝出來了吧？",
    "role": "desc",
@@ -155881,7 +155931,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#073": {
+  "The Cursed One#077": {
    "src": "Um...",
    "dst": "呃……",
    "role": "desc",
@@ -155891,7 +155941,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#074": {
+  "The Cursed One#078": {
    "src": "Zeph. Come on.",
    "dst": "Zeph。拜託。",
    "role": "desc",
@@ -155901,7 +155951,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#075": {
+  "The Cursed One#079": {
    "src": "Hey! I know that I- I need a f- fo- focus, right? We just need to find some... s- some magical materials to ma- make it out of. Even if I- I- I don't know where to... look.",
    "dst": "喂！我知道我需、需要一個媒、媒介，對吧？我們只要找到一些……一、一些有魔法的材料來做就好。雖然我、我、我不知道要去哪裡……找。",
    "role": "desc",
@@ -155911,7 +155961,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#076": {
+  "The Cursed One#080": {
    "src": "Sigh. Okay. Well, luckily for you, I know a spot. Remember that cave to the west of the festival grounds? Soldiers were swarming the place a week or two ago. Blocked it off 'cause of... cursed activity, or something.",
    "dst": "唉。好吧。算你走運，我知道一個地方。記得慶典場地西邊那個洞穴嗎？一兩個星期前，士兵在那裡到處都是。把它封起來，說是因為……受詛者活動之類的。",
    "role": "desc",
@@ -155921,7 +155971,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#077": {
+  "The Cursed One#081": {
    "src": "And... y- you- you think there might be s- some- something there?",
    "dst": "而……你、你——你覺得那裡可能有什、什麼東西？",
    "role": "desc",
@@ -155931,7 +155981,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#078": {
+  "The Cursed One#082": {
    "src": "Yep! Why else would they prevent people from going there for so long? There's gotta be something.",
    "dst": "沒錯！不然他們幹嘛把人擋在外面這麼久？那裡一定有東西。",
    "role": "desc",
@@ -155941,7 +155991,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#079": {
+  "The Cursed One#083": {
    "src": "Okay. It's w- worth a shot... Thanks for the help, Rex.",
    "dst": "好。值、值得一試……謝謝你幫忙，Rex。",
    "role": "desc",
@@ -155951,7 +156001,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#080": {
+  "The Cursed One#084": {
    "src": "Don't mention it. We'll just have to follow those blue flowers, they'll lead us right to the cave. I'll stand guard outside while you two search it.",
    "dst": "別放在心上。我們只要跟著那些藍色的花走，它們會直接帶我們到那個洞穴。我在外面把風，你們兩個進去搜。",
    "role": "desc",
@@ -155961,7 +156011,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#081": {
+  "The Cursed One#085": {
    "src": "Sounds g- good. Let's go!",
    "dst": "聽起來不、不錯。走吧！",
    "role": "desc",
@@ -155971,7 +156021,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#082": {
+  "The Cursed One#086": {
    "src": "Head to the blocked off cave at [-{~}, {~}, -{~}].",
    "dst": "前往 [-{~1}, {~2}, -{~3}] 那個被封起來的洞穴。",
    "role": "desc",
@@ -155981,7 +156031,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#083": {
+  "The Cursed One#087": {
    "src": "...Hm? What? I'm not here for you, just to be clear.",
    "dst": "……嗯？什麼？我不是為了你來的，先講清楚。",
    "role": "desc",
@@ -155991,7 +156041,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#084": {
+  "The Cursed One#088": {
    "src": "You should stop wasting time talking to me, and hurry up after Zeph already.",
    "dst": "你別浪費時間跟我講話了，快去追 Zeph 吧。",
    "role": "desc",
@@ -156001,7 +156051,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#085": {
+  "The Cursed One#089": {
    "src": "He's probably trying to compete with you to see who can get to the end fastest, and every second you spend here is not doing you any favors in beating him.",
    "dst": "他八成正在跟你比誰先到終點，而你在這裡待的每一秒，對你贏他都沒有好處。",
    "role": "desc",
@@ -156011,7 +156061,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#086": {
+  "The Cursed One#090": {
    "src": "Heh. Not that you'd win anyway!",
    "dst": "呵。反正你也贏不了就是了！",
    "role": "desc",
@@ -156021,7 +156071,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#087": {
+  "The Cursed One#091": {
    "src": "Hah! Too s- sl- slow! I guess I probably sh- should- should've warned you about the r- roly-bugs...",
    "dst": "哈！太、太慢了！我大概應該先提醒你 Roly 蟲的事……",
    "role": "desc",
@@ -156031,7 +156081,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#088": {
+  "The Cursed One#092": {
    "src": "If you're quiet en- enough, they usually don't bother you. I th- th- I think you even woke up the lea- leader of the colony!",
    "dst": "只要你夠安、安靜，牠們通常不會理你。我想、想——我想你甚至把整窩的頭、頭目吵醒了！",
    "role": "desc",
@@ -156041,7 +156091,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#089": {
+  "The Cursed One#093": {
    "src": "Anyway... I think Rex was right. Lo- look at these crystals! If- if a- any- anything's magical, it's got to be them!",
    "dst": "總之……我想 Rex 說得對。你、你看這些水晶！如、如果有什麼東西是有魔法的，那一定就是它們！",
    "role": "desc",
@@ -156051,7 +156101,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#090": {
+  "The Cursed One#094": {
    "src": "Let's grab some and g- get- get out of here. We don't want to get c- cau- caught in a res- restricted area.",
    "dst": "我們拿幾顆就離、離開吧。我們可不想在管、管制區被抓、抓到。",
    "role": "desc",
@@ -156061,7 +156111,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#091": {
+  "The Cursed One#095": {
    "src": "I'll take one... M- may- maybe we should take some more? In ca- c- in case anyone else wants to- y- you know. Co- coming back here again later would be da- dangerous.",
    "dst": "我拿一顆……也、也許我們該多拿幾顆？以、以防——以防還有別人想要。之、之後再回來這裡會很危、危險。",
    "role": "desc",
@@ -156071,7 +156121,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#092": {
+  "The Cursed One#096": {
    "src": "Grab a crystal before you leave.",
    "dst": "離開前拿一顆水晶。",
    "role": "desc",
@@ -156081,7 +156131,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#093": {
+  "The Cursed One#097": {
    "src": "Took you long enough! So, who won the race?",
    "dst": "你們可花了不少時間！所以，誰贏了？",
    "role": "desc",
@@ -156091,7 +156141,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#094": {
+  "The Cursed One#098": {
    "src": "You say that like you don't a- al- already know, Rex!",
    "dst": "你這樣講，好像你已、已經不知道答案一樣，Rex！",
    "role": "desc",
@@ -156101,7 +156151,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#095": {
+  "The Cursed One#099": {
    "src": "Excuses, excuses. You should always have your guard up around Zeph. You never know when he'll strike with a surprise race.",
    "dst": "藉口，藉口。跟 Zeph 在一起你永遠要保持警戒。你不知道他什麼時候會突然發動一場賽跑。",
    "role": "desc",
@@ -156111,7 +156161,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#096": {
+  "The Cursed One#100": {
    "src": "Am I tha- that predictable?",
    "dst": "我有那、那麼好猜嗎？",
    "role": "desc",
@@ -156121,7 +156171,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#097": {
+  "The Cursed One#101": {
    "src": "Uh... yeah? Obviously?",
    "dst": "呃……對啊？很明顯吧？",
    "role": "desc",
@@ -156131,7 +156181,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#098": {
+  "The Cursed One#102": {
    "src": "Well... it- it's fun!",
    "dst": "可是……那、那很好玩嘛！",
    "role": "desc",
@@ -156141,7 +156191,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#099": {
+  "The Cursed One#103": {
    "src": "Sure, Zeph. Well, what'd you find? I haven't seen anybody out here, so I think we're in the clear to go if we're done here.",
    "dst": "是啦，Zeph。那麼，你們找到什麼了？我在外面沒看到任何人，所以我想如果這裡完事了，我們可以安全離開。",
    "role": "desc",
@@ -156151,7 +156201,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#100": {
+  "The Cursed One#104": {
    "src": "We fou- found some crystals growing at the end of the cave. They f- fe- feel magical to me, so... they should w- wor- work. Let's get going back.",
    "dst": "我們在洞穴盡頭找、找到一些長出來的水晶。它們摸起來有魔、魔法的感覺，所以……應該可、可以用。我們回去吧。",
    "role": "desc",
@@ -156161,7 +156211,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#101": {
+  "The Cursed One#105": {
    "src": "Return to the resistance camp at [-{~}, {~}, -{~}].",
    "dst": "回到 [-{~1}, {~2}, -{~3}] 的反抗軍營地。",
    "role": "desc",
@@ -156171,7 +156221,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#102": {
+  "The Cursed One#106": {
    "src": "Come on. Just because we're in the clear now doesn't mean we can dilly-dally. Let's go.",
    "dst": "走吧。現在安全不代表可以拖拖拉拉。我們走。",
    "role": "desc",
@@ -156181,7 +156231,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#103": {
+  "The Cursed One#107": {
    "src": "Let's get going back. I r- really hope these crystals w- wor- work.",
    "dst": "我們回去吧。我真、真希望這些水晶有、有用。",
    "role": "desc",
@@ -156191,7 +156241,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#104": {
+  "The Cursed One#108": {
    "src": "...Ah! You return! I'd best inform miss Syndra of your arrival.",
    "dst": "……啊！你們回來了！我最好去通知 Syndra 小姐一聲。",
    "role": "desc",
@@ -156201,7 +156251,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#105": {
+  "The Cursed One#109": {
    "src": "You were wai- waiting for us? Why?",
    "dst": "你在等、等我們？為什麼？",
    "role": "desc",
@@ -156211,7 +156261,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#106": {
+  "The Cursed One#110": {
    "src": "Hrm... I suppose your words resonated with me, in the end. Having taken some time to mull it over while you were gone... I must admit, you make a solid point.",
    "dst": "唔……我想你的話終究還是說動了我。你們不在的時候，我花了些時間細想……我必須承認，你講得有道理。",
    "role": "desc",
@@ -156221,7 +156271,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#107": {
+  "The Cursed One#111": {
    "src": "As of late, I have felt a distinct lack of impact in our actions. Certainly we've done good for the downtrodden and overlooked! But we have failed to make any real change.",
    "dst": "最近這陣子，我明顯感覺我們的行動缺乏影響力。我們當然為那些被踐踏、被忽視的人做了好事！但我們沒能帶來任何真正的改變。",
    "role": "desc",
@@ -156231,7 +156281,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#108": {
+  "The Cursed One#112": {
    "src": "Well, you're not the only one feeling that way, if it makes you feel any better. I think Syndra's the same.",
    "dst": "嗯，有這種感覺的不只你一個，如果這樣能讓你好過一點的話。我想 Syndra 也一樣。",
    "role": "desc",
@@ -156241,7 +156291,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#109": {
+  "The Cursed One#113": {
    "src": "Even more reason to try something new, then! This... magic, as you call it if indeed it is what you have described, though I still have my doubts",
    "dst": "那就更有理由嘗試新的東西了！這個……你所謂的魔法——如果它真的如你所描述的那樣，雖然我仍有疑慮——",
    "role": "desc",
@@ -156251,7 +156301,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#110": {
+  "The Cursed One#114": {
    "src": "I do too.",
    "dst": "我也有。",
    "role": "desc",
@@ -156261,7 +156311,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#111": {
+  "The Cursed One#115": {
    "src": "Yes, Rex, I appreciate the encouragement as I was saying, it could be just what we need to truly make a difference.",
    "dst": "是的，Rex，多謝你的鼓勵——正如我所說的，它可能正是我們真正做出改變所需要的東西。",
    "role": "desc",
@@ -156271,7 +156321,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#112": {
+  "The Cursed One#116": {
    "src": "...I h- ho- hope so. Um... you were g- go- going to tell Syndra we were back?",
    "dst": "我……希、希望如此。嗯……你剛才不是要去跟 Syndra 說我們回、回來了嗎？",
    "role": "desc",
@@ -156281,7 +156331,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#113": {
+  "The Cursed One#117": {
    "src": "So I was! Allow me one moment, please.",
    "dst": "確實如此！請容我失陪片刻。",
    "role": "desc",
@@ -156291,7 +156341,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#114": {
+  "The Cursed One#118": {
    "src": "...You're really sure you want to go through with this, Zeph?",
    "dst": "……你真的確定要把這件事做下去嗎，Zeph？",
    "role": "desc",
@@ -156301,7 +156351,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#115": {
+  "The Cursed One#119": {
    "src": "I- I am. I w- wa- I want to try it! Maybe then, I could...",
    "dst": "我——我確定。我想、想試試看！也許那樣，我就能……",
    "role": "desc",
@@ -156311,7 +156361,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#116": {
+  "The Cursed One#120": {
    "src": "Okay! Okay. It's your choice. I just worry sometimes!",
    "dst": "好吧！好。那是你的選擇。我只是有時候會擔心！",
    "role": "desc",
@@ -156321,7 +156371,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#117": {
+  "The Cursed One#121": {
    "src": "I... I ne- need to get into the r- r- right mood for it, I thi- I- I think. I'm... kind of ner- nervous, actually.",
    "dst": "我……我需、需要先進入對、對的狀態，我想、我——我想。我其實……有點緊、緊張。",
    "role": "desc",
@@ -156331,7 +156381,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#118": {
+  "The Cursed One#122": {
    "src": "...Hey, {u}, could you... do- d- do some magic. As a- a d- dem- demonstration!",
    "dst": "……嘿，{u}，你可以……做、做——做點魔法嗎。當作示、示範！",
    "role": "desc",
@@ -156341,7 +156391,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#119": {
+  "The Cursed One#123": {
    "src": "Is that safe?",
    "dst": "那樣安全嗎？",
    "role": "desc",
@@ -156351,7 +156401,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#120": {
+  "The Cursed One#124": {
    "src": "N- no, she- she's just paranoid. It'll be f- f- fine! You were casting sp- spells in the cave a- and- and nothing bad happened!",
    "dst": "不、不會，她——她只是太多疑了。不、不會有事的！你在洞穴裡也施、施過法，而、而且什麼壞事都沒發生！",
    "role": "desc",
@@ -156361,7 +156411,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#121": {
+  "The Cursed One#125": {
    "src": "Sigh. If you insist, Zeph. Whatever you do had better be cool though, {u}.",
    "dst": "唉。既然你堅持，Zeph。不過你等一下做的東西最好夠酷，{u}。",
    "role": "desc",
@@ -156371,7 +156421,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#122": {
+  "The Cursed One#126": {
    "src": "Hm, I don't quite like the sound of \"probably\".",
    "dst": "唔，我不太喜歡「大概」這兩個字。",
    "role": "desc",
@@ -156381,7 +156431,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#123": {
+  "The Cursed One#127": {
    "src": "Good- g- good enough for me! Come on, {u}, sh- show- show me a spell!",
    "dst": "對、對我來說夠了！來吧，{u}，讓、讓我看看法術！",
    "role": "desc",
@@ -156391,7 +156441,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#124": {
+  "The Cursed One#128": {
    "src": "Showcase magic by casting spells in the resistance camp.",
    "dst": "在反抗軍營地施法展示魔法。",
    "role": "desc",
@@ -156401,7 +156451,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#125": {
+  "The Cursed One#129": {
    "src": "Woah! That w- was cool! Can you d- do- do it again?",
    "dst": "哇！那太、太酷了！你可以再做、做一次嗎？",
    "role": "desc",
@@ -156411,7 +156461,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#126": {
+  "The Cursed One#130": {
    "src": "...Hm. I guess it was alright.",
    "dst": "……唔。我想還可以吧。",
    "role": "desc",
@@ -156421,7 +156471,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#127": {
+  "The Cursed One#131": {
    "src": "What's going on out here? I heard",
    "dst": "外面是怎麼回事？我聽到",
    "role": "desc",
@@ -156431,7 +156481,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#128": {
+  "The Cursed One#132": {
    "src": "{u} is show- sh- showing me some magic!",
    "dst": "{u} 正在展、展——展示魔法給我看！",
    "role": "desc",
@@ -156441,7 +156491,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#129": {
+  "The Cursed One#133": {
    "src": "... I take it you found what you were looking for then?",
    "dst": "……那我猜你們找到要找的東西了？",
    "role": "desc",
@@ -156451,7 +156501,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#130": {
+  "The Cursed One#134": {
    "src": "Yup. Cursed crystals from the roly-nest.",
    "dst": "對。從 Roly 巢拿回來的受詛水晶。",
    "role": "desc",
@@ -156461,7 +156511,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#131": {
+  "The Cursed One#135": {
    "src": "The... of all places, you went to the roly-nest?! Did you even consider the risk?!",
    "dst": "那個……你們偏偏跑去了 Roly 巢？！你們有沒有考慮過風險？！",
    "role": "desc",
@@ -156471,7 +156521,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#132": {
+  "The Cursed One#136": {
    "src": "What if you were caught? We are only able to operate here because we avoid drawing attention to ourselves. If you had been seen",
    "dst": "萬一你們被抓到怎麼辦？我們能在這裡活動，靠的就是不引人注意。如果你們被看到了——",
    "role": "desc",
@@ -156481,7 +156531,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#133": {
+  "The Cursed One#137": {
    "src": "But we weren't. I know the shift schedule of the guards, nobody was going to stop by while we were there.",
    "dst": "但我們沒有。我知道守衛的輪班表，我們在那裡的時候不會有人經過。",
    "role": "desc",
@@ -156491,7 +156541,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#134": {
+  "The Cursed One#138": {
    "src": "...sigh. You children, you'll be the death of me. Fine. You found the crystals, and you weren't spotted good.",
    "dst": "……唉。你們這些孩子，遲早會被你們氣死。好吧。你們找到水晶，也沒被發現——很好。",
    "role": "desc",
@@ -156501,7 +156551,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#135": {
+  "The Cursed One#139": {
    "src": "Um... not to interrupt, or, anything, but... I missed the c magic. Could you... show us some more?",
    "dst": "嗯……不是要打斷，或、或什麼的，可是……我錯過了那個——魔法。可以……再多展示一些嗎？",
    "role": "desc",
@@ -156511,7 +156561,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#136": {
+  "The Cursed One#140": {
    "src": "Hmph. Impressive!",
    "dst": "哼。令人佩服！",
    "role": "desc",
@@ -156521,7 +156571,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#137": {
+  "The Cursed One#141": {
    "src": "Indeed. Thank you for the demonstration, {u}. Now, we should",
    "dst": "確實。謝謝你的示範，{u}。現在，我們該",
    "role": "desc",
@@ -156531,7 +156581,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#138": {
+  "The Cursed One#142": {
    "src": "Oh! Syndra, do- d- do you think you could show us something t- t- too? You're b- bl- blessed, so maybe it'd be",
    "dst": "喔！Syndra，你、你覺得你也可以展、展示一點什麼嗎？你是受、受祝福的，所以也許會",
    "role": "desc",
@@ -156541,7 +156591,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#139": {
+  "The Cursed One#143": {
    "src": "No.",
    "dst": "不。",
    "role": "desc",
@@ -156551,7 +156601,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#140": {
+  "The Cursed One#144": {
    "src": "... O- o- okay! If- if you s- say- say so...",
    "dst": "……好、好吧！既、既然你這、這麼說……",
    "role": "desc",
@@ -156561,7 +156611,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#141": {
+  "The Cursed One#145": {
    "src": "If we're done with the demonstrations, we should discuss",
    "dst": "如果示範結束了，我們該來討論",
    "role": "desc",
@@ -156571,7 +156621,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#142": {
+  "The Cursed One#146": {
    "src": "But- b- but I want to tr- try now! I have a- a fo- focus, so I sh- should- I should be able to do... something.",
    "dst": "可、可是我現在就想試！我有了媒、媒介，所以我應、應該——我應該做得到……某種東西。",
    "role": "desc",
@@ -156581,7 +156631,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#143": {
+  "The Cursed One#147": {
    "src": "Sigh. Yes, alright, Zeph. But let me guide you through it, would you?",
    "dst": "唉。好吧，可以，Zeph。不過讓我引導你，好嗎？",
    "role": "desc",
@@ -156591,7 +156641,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#144": {
+  "The Cursed One#148": {
    "src": "Watch Zeph attempt magic.",
    "dst": "看 Zeph 嘗試魔法。",
    "role": "desc",
@@ -156601,7 +156651,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#145": {
+  "The Cursed One#149": {
    "src": "Take your position, Zeph. Everyone else, let's move out of the way.",
    "dst": "站定位，Zeph。其他人，我們讓開一點。",
    "role": "desc",
@@ -156611,7 +156661,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#146": {
+  "The Cursed One#150": {
    "src": "Yes, indeed, it would not do well for us to be injured, unintentionally or otherwise. Come on, Sui!",
    "dst": "是的，確實，我們若因此受傷——不論有意無意——都不是什麼好事。來吧，Sui！",
    "role": "desc",
@@ -156621,7 +156671,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#147": {
+  "The Cursed One#151": {
    "src": "And we're sure this is safe?",
    "dst": "所以我們確定這是安全的？",
    "role": "desc",
@@ -156631,7 +156681,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#148": {
+  "The Cursed One#152": {
    "src": "We have all seen {u} in action, and they appear to be unharmed, no?",
    "dst": "我們都看過 {u} 出手，而他們看起來毫髮無傷，不是嗎？",
    "role": "desc",
@@ -156641,7 +156691,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#149": {
+  "The Cursed One#153": {
    "src": "Okay, sure, but what if someone sees? It's not like we're especially hidden here.",
    "dst": "好啦，是沒錯，可是萬一有人看到怎麼辦？我們在這裡也不算特別隱蔽。",
    "role": "desc",
@@ -156651,7 +156701,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#150": {
+  "The Cursed One#154": {
    "src": "You know as well as I that the only ones showing up in these parts are outcasts and drunks!",
    "dst": "你跟我一樣清楚，會出現在這一帶的只有被放逐的人和醉漢！",
    "role": "desc",
@@ -156661,7 +156711,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#151": {
+  "The Cursed One#155": {
    "src": "In any case, we can make it quick. Zeph, are you ready?",
    "dst": "無論如何，我們可以快一點。Zeph，你準備好了嗎？",
    "role": "desc",
@@ -156671,7 +156721,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#152": {
+  "The Cursed One#156": {
    "src": "Yes! I- I- I'm ready.",
    "dst": "好了！我——我準備好了。",
    "role": "desc",
@@ -156681,7 +156731,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#153": {
+  "The Cursed One#157": {
    "src": "Close your eyes, and hold the crystal close to your chest. Concentrate on the points of contact. Your hands, your chest. Do you feel anything?",
    "dst": "閉上眼睛，把水晶貼近你的胸口。專注在接觸的那幾點上。你的手，你的胸口。你感覺到什麼了嗎？",
    "role": "desc",
@@ -156691,7 +156741,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#154": {
+  "The Cursed One#158": {
    "src": "...oh! I- I do! It's l- l- like... st- static electricity, li- little sparks bouncing around...",
    "dst": "……喔！我——我感覺到了！那就像、像……靜、靜電，一點一點小小的火花在四處彈跳……",
    "role": "desc",
@@ -156701,7 +156751,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#155": {
+  "The Cursed One#159": {
    "src": "Good. Now, you'll try to draw your focus inwards. Imagine the sparks being pulled towards the center of your body. Feel them gathering together.",
    "dst": "很好。現在，試著把你的專注往內收。想像那些火花被拉向你身體的中心。感覺它們聚在一起。",
    "role": "desc",
@@ -156711,7 +156761,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#156": {
+  "The Cursed One#160": {
    "src": "I... okay.",
    "dst": "我……好。",
    "role": "desc",
@@ -156721,7 +156771,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#157": {
+  "The Cursed One#161": {
    "src": "Now, finally, try releasing that energy. Concentrate on the crystal again, the points of contact. Imagine pushing the sparks back into it, and then further, sending them out through the crystal",
    "dst": "現在，最後，試著把那股能量釋放出去。再一次專注在水晶上，在接觸的那幾點。想像把火花推回它裡面，然後再更遠，讓它們穿過水晶送出去——",
    "role": "desc",
@@ -156731,7 +156781,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#158": {
+  "The Cursed One#162": {
    "src": "A-ah! That- th- that was...",
    "dst": "啊——！那、那——那真是……",
    "role": "desc",
@@ -156741,7 +156791,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#159": {
+  "The Cursed One#163": {
    "src": "Hey! Are you okay? Not hurt? I don't see anything visible, but",
    "dst": "喂！你還好嗎？沒受傷吧？我沒看到明顯的傷，可是",
    "role": "desc",
@@ -156751,7 +156801,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#160": {
+  "The Cursed One#164": {
    "src": "W- would you s- st- stop, already? I'm fine!",
    "dst": "你可、可以停、停下來了嗎？我沒事！",
    "role": "desc",
@@ -156761,7 +156811,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#161": {
+  "The Cursed One#165": {
    "src": "Ow! What- wh- what was that for?!",
    "dst": "痛！那、那是幹嘛啦？！",
    "role": "desc",
@@ -156771,7 +156821,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#162": {
+  "The Cursed One#166": {
    "src": "For being annoying, idiot.",
    "dst": "因為你很煩，白痴。",
    "role": "desc",
@@ -156781,7 +156831,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#163": {
+  "The Cursed One#167": {
    "src": "Well done, Zeph. You've done just as well as any of the soldiers I've seen receive blessings. Just... as well...",
    "dst": "做得好，Zeph。你的表現不輸給我見過的任何一個領受祝福的士兵。就……不輸給……",
    "role": "desc",
@@ -156791,7 +156841,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#164": {
+  "The Cursed One#168": {
    "src": "...was it really that easy all this time?",
    "dst": "……原來這麼多年來，真的就這麼簡單嗎？",
    "role": "desc",
@@ -156801,7 +156851,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#165": {
+  "The Cursed One#169": {
    "src": "...um, Syndra. Are you...",
    "dst": "……嗯，Syndra。你是不是……",
    "role": "desc",
@@ -156811,7 +156861,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#166": {
+  "The Cursed One#170": {
    "src": "Yes... yes, I'm alright. {u}, I apologize for doubting you. It would seem... you were right all along.",
    "dst": "是的……是的，我沒事。{u}，我為懷疑過你而道歉。看來……你從頭到尾都是對的。",
    "role": "desc",
@@ -156821,7 +156871,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#167": {
+  "The Cursed One#171": {
    "src": "Or maybe Zeph's just cursed...",
    "dst": "或者只是 Zeph 本來就受詛……",
    "role": "desc",
@@ -156831,7 +156881,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#168": {
+  "The Cursed One#172": {
    "src": "Rex.",
    "dst": "Rex。",
    "role": "desc",
@@ -156841,7 +156891,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#169": {
+  "The Cursed One#173": {
    "src": "Sorry! Sorry. No, you're right. It was... cool, I guess. It's just... weird.",
    "dst": "抱歉！抱歉。不，你說得對。那……還蠻酷的吧，我想。只是……很怪。",
    "role": "desc",
@@ -156851,7 +156901,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#170": {
+  "The Cursed One#174": {
    "src": "A- a little, I guess. But if f- f- felt right. Like- l- like I always co- could have done it. Even if it was just sp- spark- sparkles.",
    "dst": "是有、有一點吧，我想。可是那感覺很對。就、就像我一直都做得到一樣。就算那只是一點火、火花。",
    "role": "desc",
@@ -156861,7 +156911,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#171": {
+  "The Cursed One#175": {
    "src": "That's part of the process. You'll need a proper focus to do more... specially-forged weapons have always done the trick, in my experience.",
    "dst": "那是過程的一部分。你需要一個正式的媒介才能做更多……以我的經驗，特別鍛造的武器一向管用。",
    "role": "desc",
@@ -156871,7 +156921,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#172": {
+  "The Cursed One#176": {
    "src": "Specially-forged weapons, you say? Miss, is there anything in particular one would need to create one? With the right materials, I'm certain I could forge Zeph what he needs.",
    "dst": "特別鍛造的武器，你說？小姐，製作那樣一件東西需要什麼特別的材料嗎？只要材料對，我相信我能替 Zeph 鍛出他需要的東西。",
    "role": "desc",
@@ -156881,7 +156931,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#173": {
+  "The Cursed One#177": {
    "src": "A- a new weapon? That I ca- can cast ma- magic with?",
    "dst": "一、一把新武器？可以讓我施展魔、魔法的？",
    "role": "desc",
@@ -156891,7 +156941,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#174": {
+  "The Cursed One#178": {
    "src": "I could see it coming in use. We'll want more sturdy materials than usual preferably something magical in and of itself... Zeph, do you think you could",
    "dst": "我看得出它的用處。我們會需要比一般更堅固的材料——最好本身就帶有魔法……Zeph，你覺得你能不能",
    "role": "desc",
@@ -156901,7 +156951,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#175": {
+  "The Cursed One#179": {
    "src": "Yes!!! I- I mean, uh, y- yes, I can do that.",
    "dst": "可以！！！我、我是說，呃，可、可以，我做得到。",
    "role": "desc",
@@ -156911,7 +156961,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#176": {
+  "The Cursed One#180": {
    "src": "...Okay! {u}, I kn- I- I know where to start! Me- meet me by the big tree to the n- nor- northeast! The one for the riddle!",
    "dst": "……好！{u}，我知、我——我知道從哪裡開始！到東、東——東北邊那棵大樹旁邊等我！就是那個謎題的那一棵！",
    "role": "desc",
@@ -156921,7 +156971,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#177": {
+  "The Cursed One#181": {
    "src": "Head to the big tree and find Zeph at [-{~}, {~}, -{~}].",
    "dst": "前往 [-{~1}, {~2}, -{~3}] 的大樹找 Zeph。",
    "role": "desc",
@@ -156931,7 +156981,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#178": {
+  "The Cursed One#182": {
    "src": "I suppose I should get around to firing up the forge... Sui, will you need me for anything?",
    "dst": "我想我該去把爐子燒起來了……Sui，你有什麼需要我的嗎？",
    "role": "desc",
@@ -156941,7 +156991,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#179": {
+  "The Cursed One#183": {
    "src": "Um... n-no, I don't think so.",
    "dst": "嗯……沒、沒有，我想沒有。",
    "role": "desc",
@@ -156951,7 +157001,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#180": {
+  "The Cursed One#184": {
    "src": "He's taken to it remarkably well, hasn't he? Better than I could have hoped.",
    "dst": "他適應得非常好，不是嗎？比我所能期望的還好。",
    "role": "desc",
@@ -156961,7 +157011,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#181": {
+  "The Cursed One#185": {
    "src": "{u}... you have opened a path for me that I never could have imagined. Thank you.",
    "dst": "{u}……你為我打開了一條我從未想像過的路。謝謝你。",
    "role": "desc",
@@ -156971,7 +157021,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#182": {
+  "The Cursed One#186": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -156981,7 +157031,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#183": {
+  "The Cursed One#187": {
    "src": "Enthusiastic as always, isn't he?",
    "dst": "一如既往地熱情，對吧？",
    "role": "desc",
@@ -156991,7 +157041,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#184": {
+  "The Cursed One#188": {
    "src": "...don't talk to me.",
    "dst": "……別跟我說話。",
    "role": "desc",
@@ -157001,7 +157051,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#185": {
+  "The Cursed One#189": {
    "src": "Magic... Hoh!",
    "dst": "魔法……嚯！",
    "role": "desc",
@@ -157011,7 +157061,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#186": {
+  "The Cursed One#190": {
    "src": "Never in my life did I expect to have my whole world view challenged, hoh!",
    "dst": "我這輩子從沒想過我的整個世界觀會被挑戰，嚯！",
    "role": "desc",
@@ -157021,7 +157071,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#187": {
+  "The Cursed One#191": {
    "src": "Admittedly, this information will take some time to progress...",
    "dst": "老實說，這些資訊需要一些時間才消化得完……",
    "role": "desc",
@@ -157031,7 +157081,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#188": {
+  "The Cursed One#192": {
    "src": "I'll most likely seek you out later with some follow up questions.",
    "dst": "我多半晚點會再來找你，帶著一些後續的問題。",
    "role": "desc",
@@ -157041,7 +157091,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#189": {
+  "The Cursed One#193": {
    "src": "...well, Synny, don't suppose any of this changes your usual approach?",
    "dst": "……那麼，小 Syn，我想這些不會改變你一貫的做法吧？",
    "role": "desc",
@@ -157051,7 +157101,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "The Cursed One#190": {
+  "The Cursed One#194": {
    "src": "Sigh... You know it does, Kaio. If there's a possibility more of our members could wield magic, then...",
    "dst": "唉……你知道它會的，Kaio。如果我們有更多成員可能駕馭魔法，那麼……",
    "role": "desc",
@@ -157061,7 +157111,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#191": {
+  "The Cursed One#195": {
    "src": "Then?",
    "dst": "那麼？",
    "role": "desc",
@@ -157071,7 +157121,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "The Cursed One#192": {
+  "The Cursed One#196": {
    "src": "... I don't know. I don't know if it'll work, yet.",
    "dst": "……我不知道。我還不知道行不行得通。",
    "role": "desc",
@@ -157081,7 +157131,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#193": {
+  "The Cursed One#197": {
    "src": "Mmn. I don't like it.",
    "dst": "唔。我不喜歡這樣。",
    "role": "desc",
@@ -157091,7 +157141,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "The Cursed One#194": {
+  "The Cursed One#198": {
    "src": "You don't like anything, Kaio.",
    "dst": "你什麼都不喜歡，Kaio。",
    "role": "desc",
@@ -157101,7 +157151,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#195": {
+  "The Cursed One#199": {
    "src": "Yes, well, I especially don't like this. Don't like the ideas you're gettin' all up there in your head. It's a risk.",
    "dst": "是啦，不過這個我特別不喜歡。不喜歡你腦袋裡開始冒出來的那些念頭。那是個風險。",
    "role": "desc",
@@ -157111,7 +157161,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "The Cursed One#196": {
+  "The Cursed One#200": {
    "src": "Everything is a risk. But it doesn't matter yet. It'll depend on what Quill has to tell me during the festival.",
    "dst": "每件事都是風險。但現在還不重要。那要看 Quill 在慶典上會跟我說什麼。",
    "role": "desc",
@@ -157121,7 +157171,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#197": {
+  "The Cursed One#201": {
    "src": "So...",
    "dst": "所以……",
    "role": "desc",
@@ -157131,7 +157181,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#198": {
+  "The Cursed One#202": {
    "src": "When I m- ma- when I make my weapon... do you think I'll be a- a- able to cast real spells? And not just... poofs of sp- s- sparkles?",
    "dst": "等我做、做——等我做出我的武器之後……你覺得我就能施展真正的法術了嗎？而不只是……噗一下的火、火花？",
    "role": "desc",
@@ -157141,7 +157191,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#199": {
+  "The Cursed One#203": {
    "src": "Oh...",
    "dst": "喔……",
    "role": "desc",
@@ -157151,7 +157201,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#200": {
+  "The Cursed One#204": {
    "src": "Oh...",
    "dst": "喔……",
    "role": "desc",
@@ -157161,7 +157211,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#201": {
+  "The Cursed One#205": {
    "src": "Sigh... I was h- h- hoping that- that- that I could do... I- I don't know! Something! A- any- anything to help. But... you're right.",
    "dst": "唉……我本來希、希、希望我能做到……我、我不知道！某種事！任、任何能幫上忙的事。可是……你說得對。",
    "role": "desc",
@@ -157171,7 +157221,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#202": {
+  "The Cursed One#206": {
    "src": "Oh. O- okay! That means it- it m- might help me, too. Thank you.",
    "dst": "喔。好、好吧！那代表它也、也許能幫到我。謝謝你。",
    "role": "desc",
@@ -157181,7 +157231,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#203": {
+  "The Cursed One#207": {
    "src": "Oh! R- ri- right! Well, Syndra said we sh- should find something magical, right? Well, I- I don't know for- f- for sure if it's magical or not, but...",
    "dst": "喔！對、對了！Syndra 說我們應、應該找有魔法的東西，對吧？嗯，我、我不確定它到、到底有沒有魔法，不過……",
    "role": "desc",
@@ -157191,7 +157241,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#204": {
+  "The Cursed One#208": {
    "src": "A long, long time ago, th- this- this tree was more than just a stump! It had long arms st- str- stretching out over the whole forest, watching over th- the people and w- wi- wildlife.",
    "dst": "很久很久以前，這、這——這棵樹不只是一個樹樁！它有長長的手臂伸、伸展在整座森林之上，看顧著人們與野、野生動物。",
    "role": "desc",
@@ -157201,7 +157251,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#205": {
+  "The Cursed One#209": {
    "src": "When anyone was hurt, o- or- or unwell, the tree would reach out with its br- branches and grow fruit- fruit that was said to he- h- heal all injuries and illnesses.",
    "dst": "只要有人受傷、或、或是生病，這棵樹就會用它的枝、枝椏伸過去，長出果實——據說那果實能治、治——治癒一切傷病。",
    "role": "desc",
@@ -157211,7 +157261,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#206": {
+  "The Cursed One#210": {
    "src": "It took care of the people, and the p- people took care of the tree. But then- then the c- cur- curse took hold of the people.",
    "dst": "它照顧人們，而人們也照顧它。可是後來——後來詛、詛咒抓住了人們。",
    "role": "desc",
@@ -157221,7 +157271,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#207": {
+  "The Cursed One#211": {
    "src": "In the chaos and d- des- destruction caused by the cursed ones, the tree was hurt. It stopped gr- grow- growing its gifts, and went to sleep... f- forever.",
    "dst": "在受詛者造成的混亂與破、破壞之中，這棵樹受傷了。它不再長、長——長出它的贈禮，然後就睡去了……永、永遠地。",
    "role": "desc",
@@ -157231,7 +157281,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#208": {
+  "The Cursed One#212": {
    "src": "Even after the Queen arrived a- and blessed the people, the tree di- didn't- didn't wake up. Its trust had been broken...",
    "dst": "即使後來女王到來、賜福於人們，這棵樹也沒、沒有——沒有醒過來。它的信任已經被打破了……",
    "role": "desc",
@@ -157241,7 +157291,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#209": {
+  "The Cursed One#213": {
    "src": "Ev- even though it's just a story... I hope s- some- someday the tree can trust us again. We could- c- could- we could really use its help, these days...",
    "dst": "就、就算那只是個故事……我還是希望有、有一天這棵樹能再次信任我們。這些日子，我們真、真的很需要它的幫助……",
    "role": "desc",
@@ -157251,7 +157301,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#210": {
+  "The Cursed One#214": {
    "src": "... A- a- anyway! The cavern you met Syndra in is also said to be s- sa- sacred. And the feel of the crystals reminds me of h- how I feel there.",
    "dst": "……總、總、總之！你和 Syndra 見面的那個洞窟據說也是神、神聖的。而那些水晶的感覺讓我想起我在那裡的感、感覺。",
    "role": "desc",
@@ -157261,7 +157311,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#211": {
+  "The Cursed One#215": {
    "src": "So- s- so if we can find our way into the tree... we co- could find some m- ma- s- some magical wood. Follow me!",
    "dst": "所、所以如果我們能找到進入這棵樹的路……我們就可、可能找到一些有魔、魔法的木頭。跟我來！",
    "role": "desc",
@@ -157271,7 +157321,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#212": {
+  "The Cursed One#216": {
    "src": "Head to the top of the giant tree at [-{~}, {~}, -{~}].",
    "dst": "爬到 [-{~1}, {~2}, -{~3}] 那棵巨樹的頂端。",
    "role": "desc",
@@ -157281,7 +157331,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#213": {
+  "The Cursed One#217": {
    "src": "Hey! F- faster than last time! Keep up the im- im- improvement, and maybe soon I'll have to put in mo- more than {~}!",
    "dst": "嘿！比上、上次快！保持這個進、進步，說不定我很快就得讓、讓超過 {~} 了！",
    "role": "desc",
@@ -157291,7 +157341,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#214": {
+  "The Cursed One#218": {
    "src": "Ha... yeah... Um, earlier you m- me- mentioned that magic can be found in- in everything.",
    "dst": "哈……對啊……嗯，你剛才提、提到魔法可以在——在萬物之中找到。",
    "role": "desc",
@@ -157301,7 +157351,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#215": {
+  "The Cursed One#219": {
    "src": "So... so ma- maybe we didn't need to come to- to- to this old tree... But- b- but it feels right to me.",
    "dst": "所以……所以也、也許我們不必來這、這、這棵老樹……可、可是——可是這對我來說感覺是對的。",
    "role": "desc",
@@ -157311,7 +157361,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#216": {
+  "The Cursed One#220": {
    "src": "... Thank you for c- c- coming along.",
    "dst": "……謝謝你陪、陪我來。",
    "role": "desc",
@@ -157321,7 +157371,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#217": {
+  "The Cursed One#221": {
    "src": "It's a breath of fresh air, having someone n- n- new around! I don't know, having you around just f- fe- feels... good! Like- like anything is possible!",
    "dst": "身邊有個新、新——新的人在，真的讓人耳目一新！我不知道，有你在身邊就是感、感覺……很好！好、好像什麼都有可能一樣！",
    "role": "desc",
@@ -157331,7 +157381,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#218": {
+  "The Cursed One#222": {
    "src": "... Oh, I- I- I'm getting too sappy. Sorry, sorry!",
    "dst": "……喔，我、我、我太肉麻了。抱歉，抱歉！",
    "role": "desc",
@@ -157341,7 +157391,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#219": {
+  "The Cursed One#223": {
    "src": "Well... my h- h- my heart is telling me that this wood is what I w- w- what I want!",
    "dst": "嗯……我的心、心——我的心告訴我，這種木頭就是我想、想要的！",
    "role": "desc",
@@ -157351,7 +157401,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#220": {
+  "The Cursed One#224": {
    "src": "That old tale... it's one of the o- o- only things I still remember from my childhood.",
    "dst": "那個古老的故事……那是我童年還記得的少、少——少數幾件事之一。",
    "role": "desc",
@@ -157361,7 +157411,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#221": {
+  "The Cursed One#225": {
    "src": "So, s- so this is definitely what I want my w- we- weapon to be made out of.",
    "dst": "所、所以，我的武、武器絕對就是要用這個做的。",
    "role": "desc",
@@ -157371,7 +157421,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#222": {
+  "The Cursed One#226": {
    "src": "Oh... y- y- yeah. Maybe you're right...",
    "dst": "喔……對、對啊。也許你說得對……",
    "role": "desc",
@@ -157381,7 +157431,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#223": {
+  "The Cursed One#227": {
    "src": "I just thought... choosing s- some- something special to me would- would be b- best.",
    "dst": "我只是想……選一個對我特、特——特別的東西會、會比較好。",
    "role": "desc",
@@ -157391,7 +157441,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#224": {
+  "The Cursed One#228": {
    "src": "B- but we're here now any- a- anyway, aren't we? So we can just use the- the- the wood here...",
    "dst": "但、但我們反正都、都已經在這裡了，不是嗎？所以我們就用這、這、這裡的木頭好了……",
    "role": "desc",
@@ -157401,7 +157451,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#225": {
+  "The Cursed One#229": {
    "src": "So, we've gotta find a way into the tr- the tree...",
    "dst": "所以，我們得找到進、進去這棵樹的路……",
    "role": "desc",
@@ -157411,7 +157461,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#226": {
+  "The Cursed One#230": {
    "src": "Ha, I- I'm not exactly a wood- woodcutting expert... maybe it'd have been smart to ask Mora t- to- to join us?",
    "dst": "哈，我又不、不是伐——伐木專家……也許當初該叫 Mora 跟、跟我們一起來的？",
    "role": "desc",
@@ -157421,7 +157471,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#227": {
+  "The Cursed One#231": {
    "src": "... Do- do you have any ideas? May- maybe you could break through with a sp- spe- spell?",
    "dst": "……你、你有什麼想法嗎？也、也許你可以用法、法——法術打穿它？",
    "role": "desc",
@@ -157431,7 +157481,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#228": {
+  "The Cursed One#232": {
    "src": "Cast a spell ontop of the tree at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 的樹頂施放一個法術。",
    "role": "desc",
@@ -157441,7 +157491,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#229": {
+  "The Cursed One#233": {
    "src": "Maybe you could break through with a sp- spe- spell?",
    "dst": "也許你可以用法、法——法術打穿它？",
    "role": "desc",
@@ -157451,7 +157501,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#230": {
+  "The Cursed One#234": {
    "src": "Woah! What just happened?!",
    "dst": "哇！剛剛那是怎麼回事？！",
    "role": "desc",
@@ -157461,7 +157511,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#231": {
+  "The Cursed One#235": {
    "src": "... Do- do you think the t- tr- the tree heard me earlier? Is it...",
    "dst": "……你、你覺得那棵樹剛才聽、聽——聽到我說的話了嗎？它是不是……",
    "role": "desc",
@@ -157471,7 +157521,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#232": {
+  "The Cursed One#236": {
    "src": "This- th- this has to be a sign! Come on, let's go in!",
    "dst": "這、這——這一定是個徵兆！走吧，我們進去！",
    "role": "desc",
@@ -157481,7 +157531,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#233": {
+  "The Cursed One#237": {
    "src": "Find the wood Zeph wants at the end of the root system.",
    "dst": "在根系的盡頭找到 Zeph 想要的木頭。",
    "role": "desc",
@@ -157491,7 +157541,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#234": {
+  "The Cursed One#238": {
    "src": "Th- th- there! That should- sh- should be a big enough chunk for Mora... right?",
    "dst": "在、在——在那裡！那一塊對 Mora 來說應、應該夠大了……對吧？",
    "role": "desc",
@@ -157501,7 +157551,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#235": {
+  "The Cursed One#239": {
    "src": "A- and- you're still not fast enough to beat me to th- th- to the end!",
    "dst": "而、而且——你還是不夠快，追不上我到終、終、終點！",
    "role": "desc",
@@ -157511,7 +157561,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#236": {
+  "The Cursed One#240": {
    "src": "Okay, next... We- weapons are usually made of m- me- metal, right? That's why Mora has a f- fo- a forge.",
    "dst": "好，接下來……武、武器通常是用金、金屬做的，對吧？所以 Mora 才有一座熔、熔——一座熔爐。",
    "role": "desc",
@@ -157521,7 +157571,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#237": {
+  "The Cursed One#241": {
    "src": "...I have a- an- an idea! Let's meet up near {p}, wh- where we first met.",
    "dst": "……我有、有——有個主意！我們約在 {p} 附近，就、就是我們第一次見面的地方。",
    "role": "desc",
@@ -157531,7 +157581,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#238": {
+  "The Cursed One#242": {
    "src": "Find Zeph at near {p}.",
    "dst": "在 {p} 附近找到 Zeph。",
    "role": "desc",
@@ -157541,7 +157591,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#239": {
+  "The Cursed One#243": {
    "src": "O- okay, so. The crown usually uses t- ti- titanium for their equipment. Th- that's what Mora says, at least.",
    "dst": "好、好，是這樣的。王室的裝備通常用鈦、鈦。至、至少 Mora 是這麼說的。",
    "role": "desc",
@@ -157551,7 +157601,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#240": {
+  "The Cursed One#244": {
    "src": "But- b- but, it can be hard to come by, b- be- because the crown keeps most of it for themselves.",
    "dst": "可、可是——可是那很難弄到，因、因為王室把大部分的鈦都留給自己了。",
    "role": "desc",
@@ -157561,7 +157611,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#241": {
+  "The Cursed One#245": {
    "src": "Luckily, it's F- F- Festival time, so a bunch of m- merchants are in town! And they're fr- from all over the p- pr- province, not just here!",
    "dst": "幸、幸——幸好現在是慶典期間，所以一堆商、商人都在城裡！而且他們是從行省各、各處來的，不只是這裡！",
    "role": "desc",
@@ -157571,7 +157621,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#242": {
+  "The Cursed One#246": {
    "src": "So someone m- must have titanium, somewhere... we'll j- just- just have to look around.",
    "dst": "所以一、一定有人有鈦，在某個地方……我們只、只要——只要四處找找。",
    "role": "desc",
@@ -157581,7 +157631,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#243": {
+  "The Cursed One#247": {
    "src": "Ah! Th- that- that's the Sovereign!",
    "dst": "啊！那、那——那是統領！",
    "role": "desc",
@@ -157591,7 +157641,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#244": {
+  "The Cursed One#248": {
    "src": "...and alongside that, does she really think it's safe to hold the festival right now, sir? That opens up a really big risk!",
    "dst": "……除此之外，長官，她真的認為現在辦慶典是安全的嗎？那可是開了一個很大的風險口子！",
    "role": "desc",
@@ -157601,7 +157651,7 @@
    "speaker": "Xao",
    "source": "wiki"
   },
-  "The Cursed One#245": {
+  "The Cursed One#249": {
    "src": "What do you th- th- think they're t- talking about? Come on, let- l- let's shadow them.",
    "dst": "那個受詛者要是以為他們過得了我和女王陛下這兩關，那他們的向量就偏得太離譜了。人民的事你不必擔心。",
    "role": "desc",
@@ -157611,7 +157661,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#246": {
+  "The Cursed One#250": {
    "src": "If the cursed thinks they can get past both myself and Her Majesty, they're out of their vector. You don't need to worry about the people.",
    "dst": "你覺得他、他們在講什麼？走吧，我、我們跟上去。",
    "role": "desc",
@@ -157621,7 +157671,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#247": {
+  "The Cursed One#251": {
    "src": "I was more worried about... ...um... W-well, never mind that! If you think we'll all be safe, sir, I'll take you at your word!",
    "dst": "我剛才擔心的其實是……嗯……那、那個，算了！長官，既然您認為我們都會安全，那我就相信您的話！",
    "role": "desc",
@@ -157631,7 +157681,7 @@
    "speaker": "Xao",
    "source": "wiki"
   },
-  "The Cursed One#248": {
+  "The Cursed One#252": {
    "src": "Let me rephrase you don't need to worry about anyone. ...heh. Any wait. What's that noise?",
    "dst": "讓我換個說法——你誰都不必擔心。……呵。任何——等等。那是什麼聲音？",
    "role": "desc",
@@ -157641,7 +157691,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#249": {
+  "The Cursed One#253": {
    "src": "Just someone out on a random walk? Back to the point is everything for the festival shaping up according to schedule?",
    "dst": "只是有人隨便散個步嗎？回到正題——慶典的一切都按時程進行嗎？",
    "role": "desc",
@@ -157651,7 +157701,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#250": {
+  "The Cursed One#254": {
    "src": "Oh yes! Yes it is, sir! The vendors have all been assigned, the game stands have all been constructed, we've commissioned a local band... The one you liked last year!",
    "dst": "喔，是的！是的，長官！攤商都分配好了，遊戲攤都搭好了，我們還請了一支本地樂團……就是您去年喜歡的那一支！",
    "role": "desc",
@@ -157661,7 +157711,7 @@
    "speaker": "Xao",
    "source": "wiki"
   },
-  "The Cursed One#251": {
+  "The Cursed One#255": {
    "src": "Golden. That rendition of \"CHASE\" is what really sold me on them.",
    "dst": "太好了。他們那首〈CHASE〉的版本才是真正打動我的。",
    "role": "desc",
@@ -157671,7 +157721,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#252": {
+  "The Cursed One#256": {
    "src": "That just leaves your speech, sir! Have you Oh, who am I kidding, you already have it memorized.",
    "dst": "那就只剩您的演說了，長官！您有——喔，我在說什麼呢，您早就背起來了。",
    "role": "desc",
@@ -157681,7 +157731,7 @@
    "speaker": "Xao",
    "source": "wiki"
   },
-  "The Cursed One#253": {
+  "The Cursed One#257": {
    "src": "Naturally, Xao. We have the whole festival set down to the last point, it looks like. Any more business to factor out?",
    "dst": "那是自然，Xao。看來慶典的每一個環節我們都定到最後一項了。還有什麼要因式分解掉的事務嗎？",
    "role": "desc",
@@ -157691,7 +157741,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#254": {
+  "The Cursed One#258": {
    "src": "Yes, sir! I've received word that Inquisitor Renn will be arriving tonight, as you sent me to request for!",
    "dst": "有的，長官！我收到消息，Renn 審訊官今晚會抵達，就是您派我去請求的那位！",
    "role": "desc",
@@ -157701,7 +157751,7 @@
    "speaker": "Xao",
    "source": "wiki"
   },
-  "The Cursed One#255": {
+  "The Cursed One#259": {
    "src": "Fantastic job. I have to remember that the Inquisitors aren't like me. When they're busy they can't just go triple-time... Still, good to have that problem solved.",
    "dst": "做得漂亮。我得記住審訊官跟我不一樣。他們忙起來可沒辦法直接切三倍速……不過，那個問題解決了就好。",
    "role": "desc",
@@ -157711,7 +157761,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#256": {
+  "The Cursed One#260": {
    "src": "You know, they should check your work. This is proof positive they can keep pace with me like you can.",
    "dst": "你知道嗎，該讓他們來檢查你的成果才對。這就是確鑿的證明——他們跟得上我的節奏，就像你一樣。",
    "role": "desc",
@@ -157721,7 +157771,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#257": {
+  "The Cursed One#261": {
    "src": "Well! Sir! You know I've had to insist you stop and rest sometimes, and Inquisitors do serve the whole rest of the province, so...",
    "dst": "哎呀！長官！您知道我有時候還得堅持要您停下來休息，而審訊官是服務整個行省的，所以……",
    "role": "desc",
@@ -157731,7 +157781,7 @@
    "speaker": "Xao",
    "source": "wiki"
   },
-  "The Cursed One#258": {
+  "The Cursed One#262": {
    "src": "Hmm... ev- even with us r- r- raiding Nixeph, he isn't concerned...",
    "dst": "唔……就、就算我們去突襲了 Nixeph，他也一點都不擔、擔心……",
    "role": "desc",
@@ -157741,7 +157791,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#259": {
+  "The Cursed One#263": {
    "src": "A- and- an Inquisitor! Th- that- that's not good. We need to tell the others to be c- ca- careful...",
    "dst": "而、而且——還有一位審訊官！那、那——那可不妙。我們得去跟大家說小、小心一點……",
    "role": "desc",
@@ -157751,7 +157801,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#260": {
+  "The Cursed One#264": {
    "src": "Oh! R- r- right! You're not from here. They're, uh, b- b- bad news. They're sent to d- d- deal with... um, c- cursed ones, and other s- si- similar stuff.",
    "dst": "喔！對、對、對！你不是這裡的人。他們，呃，是壞、壞消息。他們是被派來處、處理……嗯，受詛者，還有其他類、類似的事情的。",
    "role": "desc",
@@ -157761,7 +157811,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#261": {
+  "The Cursed One#265": {
    "src": "If one's a- around... we have to b- be careful. But, since w- we- since we're here, we should still find the t- ti- titanium.",
    "dst": "如果有一個在附、附近……我們就得小心。不過，既然我、我們——既然我們都來了，還是該把鈦、鈦找到。",
    "role": "desc",
@@ -157771,7 +157821,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#262": {
+  "The Cursed One#266": {
    "src": "There's a b- b- bazaar in the tunnel... if anyone wi- will have it, they'll be there.",
    "dst": "隧、隧道裡有一個市、市集……如果有人會有，那一定在那裡。",
    "role": "desc",
@@ -157781,7 +157831,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#263": {
+  "The Cursed One#267": {
    "src": "Find the metal merchant at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~1}, {~2}, -{~3}] 找到金屬商人。",
    "role": "desc",
@@ -157791,7 +157841,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#264": {
+  "The Cursed One#268": {
    "src": "Fine quality metals, fine quality metals for Ah, hello, hello! Might you be interested in my stock, friends?",
    "dst": "上等金屬，上等金屬——啊，你好，你好！兩位對我的貨有興趣嗎？",
    "role": "desc",
@@ -157801,7 +157851,7 @@
    "speaker": "Metal Merchant",
    "source": "wiki"
   },
-  "The Cursed One#265": {
+  "The Cursed One#269": {
    "src": "I've got all sorts for sale. Ingots, pre-made bangles and bracelets and trinkets I've got hold of this lovely iron leaf, in fact. Quite fine decor, I might think!",
    "dst": "我這裡什麼都有。錠、現成的手鐲、臂環、小飾品——事實上我還弄到了這片可愛的鐵葉。相當精緻的擺飾，我認為！",
    "role": "desc",
@@ -157811,7 +157861,7 @@
    "speaker": "Metal Merchant",
    "source": "wiki"
   },
-  "The Cursed One#266": {
+  "The Cursed One#270": {
    "src": "Hello! We're a- ac- actually looking for titanium! Would you h- ha- happen to have any in stock?",
    "dst": "你好！我們其、其實是在找鈦！你這裡剛、剛好有存貨嗎？",
    "role": "desc",
@@ -157821,7 +157871,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#267": {
+  "The Cursed One#271": {
    "src": "Aha, you're in luck then! I've managed to obtain some from a passing {p} merchant! Straight from the {p} and so I'm told, quite good quality!",
    "dst": "啊哈，那你們運氣真好！我剛好從一位路過的 {p} 商人那裡弄到了一些！直接從 {p} 來的——而且據他所說，品質相當好！",
    "role": "desc",
@@ -157831,7 +157881,7 @@
    "speaker": "Metal Merchant",
    "source": "wiki"
   },
-  "The Cursed One#268": {
+  "The Cursed One#272": {
    "src": "I think the man was struck dumb by the offer of leaves I handed in return, he left with such a bewiledered face but I digress! Would you like ingots, or anything pre-hewn?",
    "dst": "我拿葉子跟他換的時候，那人好像整個傻住了，離開時一臉茫然——不過我扯遠了！你們要錠，還是已經加工過的東西？",
    "role": "desc",
@@ -157841,7 +157891,7 @@
    "speaker": "Metal Merchant",
    "source": "wiki"
   },
-  "The Cursed One#269": {
+  "The Cursed One#273": {
    "src": "Uh... just- j- just some ingots would be fine.",
    "dst": "呃……就、就給我們一些錠就好。",
    "role": "desc",
@@ -157851,7 +157901,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#270": {
+  "The Cursed One#274": {
    "src": "Indeed, then! It is always fine to see those interested in the crafting trades. For this, I might say ten Liff Leaves would be an agreeable price, yes?",
    "dst": "那就這樣了！看到有人對工藝有興趣總是令人欣慰。這樣吧，我說十片 Liff 葉是個合理的價錢，如何？",
    "role": "desc",
@@ -157861,7 +157911,7 @@
    "speaker": "Metal Merchant",
    "source": "wiki"
   },
-  "The Cursed One#271": {
+  "The Cursed One#275": {
    "src": "Ten!? Oh, f- fine... you said it's h- high- high quality? It's pr- probably worth the price. Here.",
    "dst": "十片！？喔，好、好吧……你說它品、品質很好？那應、應該值這個價。給你。",
    "role": "desc",
@@ -157871,7 +157921,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#272": {
+  "The Cursed One#276": {
    "src": "Indeed, friend, so I have been assured! May you have fine fortune in your endeavors!",
    "dst": "確實如此，朋友，我可是得到保證的！願你們前程順遂！",
    "role": "desc",
@@ -157881,7 +157931,7 @@
    "speaker": "Metal Merchant",
    "source": "wiki"
   },
-  "The Cursed One#273": {
+  "The Cursed One#277": {
    "src": "{u}, let's go.",
    "dst": "{u}，我們走。",
    "role": "desc",
@@ -157891,7 +157941,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#274": {
+  "The Cursed One#278": {
    "src": "Hm... I d- don't- I don't think titanium is meant to have th- these purple streaks...",
    "dst": "唔……我不、不覺得鈦應該有這、這些紫色的紋路……",
    "role": "desc",
@@ -157901,7 +157951,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#275": {
+  "The Cursed One#279": {
    "src": "But I- I- I'm not the blacksmith, so... a- a- and it's not like anyone else is s- se- selling titanium, so.",
    "dst": "可是我、我、我又不是鐵匠，所以……而、而且也沒有別人在賣、賣鈦，所以。",
    "role": "desc",
@@ -157911,7 +157961,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#276": {
+  "The Cursed One#280": {
    "src": "Huh? Oh, r- r- right, I keep forgetting you don't know e- ev- everything around here.",
    "dst": "咦？喔，對、對，我一直忘記你不知道這裡的每、每件事。",
    "role": "desc",
@@ -157921,7 +157971,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#277": {
+  "The Cursed One#281": {
    "src": "The Auburn F- Fo- Forest may be a poorer area, so we d- do- don't have many emeralds...",
    "dst": "Auburn 森、森林也許是比較窮的地區，所以我們沒、沒有很多綠寶石……",
    "role": "desc",
@@ -157931,7 +157981,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#278": {
+  "The Cursed One#282": {
    "src": "But we make up for it by u- u- using all the varied m- materials from the forest! People here v- val- value things from the wild more than e- em- emeralds.",
    "dst": "但我們用森林裡各、各種各樣的材、材料來彌補！這裡的人重視野外來的東西勝、勝過綠、綠寶石。",
    "role": "desc",
@@ -157941,7 +157991,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#279": {
+  "The Cursed One#283": {
    "src": "Liff Leaves especially are in high d- d- demand due to their versatility.",
    "dst": "Liff 葉尤其搶手，因為它的用、用——用途很廣。",
    "role": "desc",
@@ -157951,7 +158001,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#280": {
+  "The Cursed One#284": {
    "src": "You don't need a- an- anything else? Then I'm r- ready to go.",
    "dst": "你不需要別、別的東西了？那我準、準備好可以走了。",
    "role": "desc",
@@ -157961,7 +158011,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#281": {
+  "The Cursed One#285": {
    "src": "Want to tr- travel back with me?",
    "dst": "要跟我一、一起回去嗎？",
    "role": "desc",
@@ -157971,7 +158021,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#282": {
+  "The Cursed One#286": {
    "src": "Alrighty! Let's go.",
    "dst": "好嘞！我們走。",
    "role": "desc",
@@ -157981,7 +158031,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#283": {
+  "The Cursed One#287": {
    "src": "Okay! I'll m- m- meet you later, then.",
    "dst": "好！那我們待、待會兒見。",
    "role": "desc",
@@ -157991,7 +158041,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#284": {
+  "The Cursed One#288": {
    "src": "Return to the resistance camp at [-{~}, {~}, -{~}].",
    "dst": "回到 [-{~1}, {~2}, -{~3}] 的反抗軍營地。",
    "role": "desc",
@@ -158001,7 +158051,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#285": {
+  "The Cursed One#289": {
    "src": "We're back!",
    "dst": "我們回來了！",
    "role": "desc",
@@ -158011,7 +158061,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#286": {
+  "The Cursed One#290": {
    "src": "Ah! Good, you're just in time.",
    "dst": "啊！很好，你們正好趕上。",
    "role": "desc",
@@ -158021,7 +158071,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#287": {
+  "The Cursed One#291": {
    "src": "Uh... in time for wh- what? A- and- and where is everybody?",
    "dst": "呃……趕、趕上什麼？而、而且——大家人呢？",
    "role": "desc",
@@ -158031,7 +158081,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#288": {
+  "The Cursed One#292": {
    "src": "Have you forgotten? The Festival of the Queen is about to start!",
    "dst": "你忘了嗎？女王慶典就要開始了！",
    "role": "desc",
@@ -158041,7 +158091,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#289": {
+  "The Cursed One#293": {
    "src": "Wh- th- that was today?! Oh, man, I g- g- got so excited about the m- m- the ma- magic... I forgot!",
    "dst": "什——那、那是今天？！喔，天啊，我對魔、魔、對魔法太興、興奮了……我忘了！",
    "role": "desc",
@@ -158051,7 +158101,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#290": {
+  "The Cursed One#294": {
    "src": "Wait... w- wait, before I go Syndra, we o- ov- overheard something in town. The S- S- Sovereign said an In- Inquisitor would be arriving t- t- tonight!",
    "dst": "等等……等、等一下，在我走之前——Syndra，我們在城裡聽、聽到了一件事。那位統、統領說有一位審、審訊官今、今晚會到！",
    "role": "desc",
@@ -158061,7 +158111,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#291": {
+  "The Cursed One#295": {
    "src": "...ah. Well, that pushes ahead our timeline significantly...",
    "dst": "……啊。那我們的時程得大幅提前了……",
    "role": "desc",
@@ -158071,7 +158121,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#292": {
+  "The Cursed One#296": {
    "src": "Hopefully, they're just here to clear out that cave you found the crystals in, but... better to be safe than sorry.",
    "dst": "希望他們只是來清理你們找到水晶的那個洞穴，不過……小心駛得萬年船。",
    "role": "desc",
@@ -158081,7 +158131,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#293": {
+  "The Cursed One#297": {
    "src": "That can wait until after the festival, though. You should go on ahead an enjoy yourself.",
    "dst": "不過那可以等慶典之後再說。你們就先去好好玩吧。",
    "role": "desc",
@@ -158091,7 +158141,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#294": {
+  "The Cursed One#298": {
    "src": "...if you s- s- say so, Syndra. {u}, you should c- come to the festival too! See you there!",
    "dst": "……既、既然你這、這麼說，Syndra。{u}，你也該來慶、慶典！那裡見！",
    "role": "desc",
@@ -158101,7 +158151,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#295": {
+  "The Cursed One#299": {
    "src": "Ah... there he goes. Well, what do you say? Will you join us for the festival?",
    "dst": "啊……他跑了。那麼，你覺得呢？要不要跟我們一起去慶典？",
    "role": "desc",
@@ -158111,7 +158161,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#296": {
+  "The Cursed One#300": {
    "src": "It is a celebration of the crown... but you have a limited time here, and it is still a part of our culture. You wouldn't want to miss it.",
    "dst": "那是慶祝王室的活動……但你在這裡的時間有限，而它終究是我們文化的一部分。你不會想錯過的。",
    "role": "desc",
@@ -158121,7 +158171,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#297": {
+  "The Cursed One#301": {
    "src": "It's a day for everyone to relax and enjoy themselves. The children certainly do... it's good for them, I think, to have some normalcy.",
    "dst": "那是所有人放鬆、好好享受的一天。孩子們當然是的……我覺得那對他們有好處，讓他們有一點正常的生活。",
    "role": "desc",
@@ -158131,7 +158181,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#298": {
+  "The Cursed One#302": {
    "src": "I'll finish packing some things here, then I'll head on over. You should meet me there. If you head south, the river will lead you right to it.",
    "dst": "我把這裡的東西收拾完就過去。你到那裡跟我會合吧。往南走，那條河會直接帶你過去。",
    "role": "desc",
@@ -158141,7 +158191,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#299": {
+  "The Cursed One#303": {
    "src": "Join Syndra at the festival at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~1}, {~2}, -{~3}] 與 Syndra 在慶典會合。",
    "role": "desc",
@@ -158151,7 +158201,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#300": {
+  "The Cursed One#304": {
    "src": "I'll head on over soon. I just need to take care of some things before I leave.",
    "dst": "我很快就過去。我只是得先處理一些事情才能離開。",
    "role": "desc",
@@ -158161,7 +158211,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#301": {
+  "The Cursed One#305": {
    "src": "You're here! Allow me to welcome you to the annual Festival of the Crown.",
    "dst": "你來了！容我歡迎你來到一年一度的王室慶典。",
    "role": "desc",
@@ -158171,7 +158221,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#302": {
+  "The Cursed One#306": {
    "src": "I have some business to attend to, so Zeph, would you be able to show {u} around?",
    "dst": "我有些事要處理，所以——Zeph，你能不能帶 {u} 四處看看？",
    "role": "desc",
@@ -158181,7 +158231,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#303": {
+  "The Cursed One#307": {
    "src": "Sure! L- le- let's go!",
    "dst": "沒問題！走、走吧！",
    "role": "desc",
@@ -158191,7 +158241,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#304": {
+  "The Cursed One#308": {
    "src": "So there's some g- games over there... and right here is the f- foo- food and beverages s- s- stand!",
    "dst": "那邊有一些遊、遊戲……而這裡就是食、食物和飲料攤！",
    "role": "desc",
@@ -158201,7 +158251,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#305": {
+  "The Cursed One#309": {
    "src": "They sell re- r- regional food and drinks. And, a- ac- according to Rex... they've even im- im- imported some fancy alcohol from the h- high- highlands!",
    "dst": "他們賣本地的食物和飲料。而且，根、根據 Rex 的說法……他們甚至從高、高——高地進口了一些高級酒！",
    "role": "desc",
@@ -158211,7 +158261,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#306": {
+  "The Cursed One#310": {
    "src": "Here are some at- attractions, and an animal exhibit! I, uh, d- d- don't- I don't like the Mudkins game very much...",
    "dst": "這裡是一些設、設施，還有動物展！我，呃，不、不、不太喜歡 Mudkin 那個遊戲……",
    "role": "desc",
@@ -158221,7 +158271,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#307": {
+  "The Cursed One#311": {
    "src": "I th- think I saw Sui back there, so... I'm gonna h- ha- hang out with her. You sh- should check out some of the stalls!",
    "dst": "我想、想我剛才看到 Sui 在後面，所以……我要去陪、陪她。你應、應該去逛逛那些攤位！",
    "role": "desc",
@@ -158231,7 +158281,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#308": {
+  "The Cursed One#312": {
    "src": "Complete {~} festival activities.",
    "dst": "完成 {~} 項慶典活動。",
    "role": "desc",
@@ -158241,7 +158291,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#309": {
+  "The Cursed One#313": {
    "src": "...thank you, Jiro. It's always good to hear from",
    "dst": "……謝謝你，Jiro。能收到消息總是好的",
    "role": "desc",
@@ -158251,7 +158301,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#310": {
+  "The Cursed One#314": {
    "src": "Ahem! Hello, stranger.",
    "dst": "咳！你好啊，陌生人。",
    "role": "desc",
@@ -158261,7 +158311,7 @@
    "speaker": "Jiro",
    "source": "wiki"
   },
-  "The Cursed One#311": {
+  "The Cursed One#315": {
    "src": "Hm? Oh, that's just {u} they're who I was hoping to write to Quill about. {u}, this is Jiro, my contact from the Roughworks.",
    "dst": "嗯？喔，那只是 {u}——他們正是我想寫信告訴 Quill 的人。{u}，這位是 Jiro，我在 Roughworks 的聯絡人。",
    "role": "desc",
@@ -158271,7 +158321,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#312": {
+  "The Cursed One#316": {
    "src": "Ah. Well, it's good to meet you then.",
    "dst": "啊。那麼，幸會了。",
    "role": "desc",
@@ -158281,7 +158331,7 @@
    "speaker": "Jiro",
    "source": "wiki"
   },
-  "The Cursed One#313": {
+  "The Cursed One#317": {
    "src": "Quill is... an old friend. It can be hard for us to stay in contact... discretely... so we often send messages this way.",
    "dst": "Quill 是……一位老朋友。我們很難……低調地……保持聯繫，所以我們常常用這種方式傳話。",
    "role": "desc",
@@ -158291,7 +158341,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#314": {
+  "The Cursed One#318": {
    "src": "Wasn't going to use my yearly rail pass for anything anyway, so might as well.",
    "dst": "反正我那張年度鐵路通行證也沒別的用處，不如拿來用。",
    "role": "desc",
@@ -158301,7 +158351,7 @@
    "speaker": "Jiro",
    "source": "wiki"
   },
-  "The Cursed One#315": {
+  "The Cursed One#319": {
    "src": "Well, it's more than I'm able to do, so I appreciate it. In any case, Quill runs his own... organization, shall we say.",
    "dst": "嗯，那已經比我能做的多了，我很感激。總之，Quill 有他自己的……組織，姑且這麼說吧。",
    "role": "desc",
@@ -158311,7 +158361,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#316": {
+  "The Cursed One#320": {
    "src": "...huh? You don't know the",
    "dst": "……咦？你不知道那個",
    "role": "desc",
@@ -158321,7 +158371,7 @@
    "speaker": "Jiro",
    "source": "wiki"
   },
-  "The Cursed One#317": {
+  "The Cursed One#321": {
    "src": "The Roughworks is the region directly to the south of here, just past the wall. Officially, it's known as the {p}.",
    "dst": "Roughworks 是這裡正南方的地區，就在那道牆的另一邊。官方名稱是 {p}。",
    "role": "desc",
@@ -158331,7 +158381,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#318": {
+  "The Cursed One#322": {
    "src": "I can fill you in on it later. This isn't the place for it.",
    "dst": "我晚點再跟你細說。這裡不是講這個的地方。",
    "role": "desc",
@@ -158341,7 +158391,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#319": {
+  "The Cursed One#323": {
    "src": "...ahem. Should we get back to it, then?",
    "dst": "……咳。那我們繼續？",
    "role": "desc",
@@ -158351,7 +158401,7 @@
    "speaker": "Jiro",
    "source": "wiki"
   },
-  "The Cursed One#320": {
+  "The Cursed One#324": {
    "src": "We should. {u}, take a look around the stalls and come back later.",
    "dst": "我們繼續吧。{u}，去逛逛那些攤位，晚點再回來。",
    "role": "desc",
@@ -158361,7 +158411,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#321": {
+  "The Cursed One#325": {
    "src": "{u}, take a look around the stalls and come back later.",
    "dst": "{u}，去逛逛那些攤位，晚點再回來。",
    "role": "desc",
@@ -158371,7 +158421,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#322": {
+  "The Cursed One#326": {
    "src": "Heeey!",
    "dst": "嘿——！",
    "role": "desc",
@@ -158381,7 +158431,7 @@
    "speaker": "Highlands Tourist",
    "source": "wiki"
   },
-  "The Cursed One#323": {
+  "The Cursed One#327": {
    "src": "You're here visiting too I see!",
    "dst": "看來你也是來玩的！",
    "role": "desc",
@@ -158391,7 +158441,7 @@
    "speaker": "Highlands Tourist",
    "source": "wiki"
   },
-  "The Cursed One#324": {
+  "The Cursed One#328": {
    "src": "I plan on touring the whole festival this year around. Next up for me is the {p}!",
    "dst": "我打算今年把整輪慶典都逛過一遍。我下一站是 {p}！",
    "role": "desc",
@@ -158401,7 +158451,7 @@
    "speaker": "Highlands Tourist",
    "source": "wiki"
   },
-  "The Cursed One#325": {
+  "The Cursed One#329": {
    "src": "But the Auburn festival is known for the best food and beverages around the province. Trust me! Those rumours are true.",
    "dst": "不過 Auburn 慶典是以全行省最好的食物和飲料聞名的。相信我！那些傳言是真的。",
    "role": "desc",
@@ -158411,7 +158461,7 @@
    "speaker": "Highlands Tourist",
    "source": "wiki"
   },
-  "The Cursed One#326": {
+  "The Cursed One#330": {
    "src": "Will that be enough boar meat, ma'am?",
    "dst": "這些野豬肉夠嗎，女士？",
    "role": "desc",
@@ -158421,7 +158471,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#327": {
+  "The Cursed One#331": {
    "src": "Yes, dear. Thank you for always being so kind-hearted, helping us out each and every year.",
    "dst": "夠了，親愛的。謝謝你每一年都這麼好心來幫我們。",
    "role": "desc",
@@ -158431,7 +158481,7 @@
    "speaker": "Food Merchant",
    "source": "wiki"
   },
-  "The Cursed One#328": {
+  "The Cursed One#332": {
    "src": "No worries, Oya! Hope you sell... oh. It's you.",
    "dst": "別客氣，Oya！希望你生意——喔。是你。",
    "role": "desc",
@@ -158441,7 +158491,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#329": {
+  "The Cursed One#333": {
    "src": "...what do you want?",
    "dst": "……你想幹嘛？",
    "role": "desc",
@@ -158451,7 +158501,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#330": {
+  "The Cursed One#334": {
    "src": "You what? Why?",
    "dst": "你什麼？為什麼？",
    "role": "desc",
@@ -158461,7 +158511,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#331": {
+  "The Cursed One#335": {
    "src": "Huh? I'm just here with a delivery. Nothing much.",
    "dst": "咦？我只是來送貨的。沒什麼特別的。",
    "role": "desc",
@@ -158471,7 +158521,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#332": {
+  "The Cursed One#336": {
    "src": "...ugh, why am I humoring you?!",
    "dst": "……唉，我幹嘛跟你廢話？！",
    "role": "desc",
@@ -158481,7 +158531,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#333": {
+  "The Cursed One#337": {
    "src": "Just cause you've got everyone else wrapped around your finger, doesn't mean I have to be fine with you!",
    "dst": "就因為你把其他所有人都哄得服服貼貼，不代表我就得對你順眼！",
    "role": "desc",
@@ -158491,7 +158541,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#334": {
+  "The Cursed One#338": {
    "src": "Everything was fine until you showed up. I- I- I'd gotten over it! I made a home here, and now- and now, you",
    "dst": "在你出現之前，一切都好好的。我——我——我本來已經放下了！我在這裡成了家，而現在——而現在，你",
    "role": "desc",
@@ -158501,7 +158551,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#335": {
+  "The Cursed One#339": {
    "src": "And- and sure, I'm happy for Zeph, but your- your- your everything, it's got Syndra plotting, and- and we were safe, and you've ruined that.",
    "dst": "而且——而且沒錯，我替 Zeph 高興，可是你的——你的——你這一整個人，害得 Syndra 開始密謀，而——而我們本來是安全的，你把那個毀了。",
    "role": "desc",
@@ -158511,7 +158561,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#336": {
+  "The Cursed One#340": {
    "src": "So... so, no, I don't have to be okay with you. I don't trust you, I don't trust where you're from, and I definitely don't trust your... your c",
    "dst": "所以……所以，不，我沒有義務對你順眼。我不信任你，我不信任你來的地方，而且我絕對不信任你的……你的那個受",
    "role": "desc",
@@ -158521,7 +158571,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#337": {
+  "The Cursed One#341": {
    "src": "...don't talk to me. Okay?",
    "dst": "……別跟我說話。好嗎？",
    "role": "desc",
@@ -158531,7 +158581,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Cursed One#338": {
+  "The Cursed One#342": {
    "src": "{u}, hey!",
    "dst": "{u}，嘿！",
    "role": "desc",
@@ -158541,7 +158591,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#339": {
+  "The Cursed One#343": {
    "src": "Have you seen an- any- anyone else yet?",
    "dst": "你有沒有看到其、其他人了？",
    "role": "desc",
@@ -158551,7 +158601,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#340": {
+  "The Cursed One#344": {
    "src": "I was, um, looking for Mora... earlier. I, ah, didn't find him.",
    "dst": "我，嗯，剛才在找 Mora……我，啊，沒找到他。",
    "role": "desc",
@@ -158561,7 +158611,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#341": {
+  "The Cursed One#345": {
    "src": "We, uh, s- saw Rex run past just a bit ago. Did s- so- something happen?",
    "dst": "我們，呃，剛、剛才看到 Rex 跑過去。是、是不是發生了什麼事？",
    "role": "desc",
@@ -158571,7 +158621,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#342": {
+  "The Cursed One#346": {
    "src": "I can... um, take a guess.",
    "dst": "我可以……嗯，猜得到。",
    "role": "desc",
@@ -158581,7 +158631,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#343": {
+  "The Cursed One#347": {
    "src": "An- anyway, how are you liking the f- fes- festival?",
    "dst": "總、總之，你覺得這場慶、慶典怎麼樣？",
    "role": "desc",
@@ -158591,7 +158641,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#344": {
+  "The Cursed One#348": {
    "src": "Hey, th- that's good to hear!",
    "dst": "嘿，那太好、好了！",
    "role": "desc",
@@ -158601,7 +158651,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#345": {
+  "The Cursed One#349": {
    "src": "Have you, um, had the chance to, to taste any of the food? From the... food stall?",
    "dst": "你有，嗯，有機會嘗嘗那些食物嗎？從那個……食物攤？",
    "role": "desc",
@@ -158611,7 +158661,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#346": {
+  "The Cursed One#350": {
    "src": "Hahaha, as if th- th- there's any left after y- you- you ate so much!",
    "dst": "哈哈哈，你都吃、吃——吃那麼多了，哪還會有剩的！",
    "role": "desc",
@@ -158621,7 +158671,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#347": {
+  "The Cursed One#351": {
    "src": "Okay... well, I, I was hungry! That's... not my fault.",
    "dst": "好啦……嗯，我，我那時候餓了！那……不是我的錯。",
    "role": "desc",
@@ -158631,7 +158681,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#348": {
+  "The Cursed One#352": {
    "src": "Oh... finally, someone else who, um, who gets it.",
    "dst": "喔……終於，嗯，有另一個懂的人了。",
    "role": "desc",
@@ -158641,7 +158691,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#349": {
+  "The Cursed One#353": {
    "src": "Wh- wh- what?! Sui, you don't like the f- fes- festival?",
    "dst": "什、什、什麼？！Sui，你不喜歡這場慶、慶典？",
    "role": "desc",
@@ -158651,7 +158701,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#350": {
+  "The Cursed One#354": {
    "src": "I- I didn't, say that. It's just... a little boring. There's, um, not much to do.",
    "dst": "我——我沒有那樣說。只是……有點無聊。這裡，嗯，沒什麼可做的。",
    "role": "desc",
@@ -158661,7 +158711,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#351": {
+  "The Cursed One#355": {
    "src": "There's good f- food, fun rides a- and- and games... okay, m- maybe except the Mudkin g- game...",
    "dst": "有好吃的食、食物、好玩的設施和遊、遊戲……好吧，也、也許 Mudkin 那個遊戲除外……",
    "role": "desc",
@@ -158671,7 +158721,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#352": {
+  "The Cursed One#356": {
    "src": "Why don't you, um, like the Mudkins? I... I think they're fun.",
    "dst": "你為什麼，嗯，不喜歡 Mudkin？我……我覺得它們很好玩。",
    "role": "desc",
@@ -158681,7 +158731,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#353": {
+  "The Cursed One#357": {
    "src": "They're s- s- so- there's no strategy! You j- just pick a random one, and- a- and sometimes you win!",
    "dst": "它們太、太——那根本沒有策略！你就、就隨便選一個，然、然後有時候你就贏了！",
    "role": "desc",
@@ -158691,7 +158741,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#354": {
+  "The Cursed One#358": {
    "src": "Um... okay? And?",
    "dst": "嗯……好吧？然後呢？",
    "role": "desc",
@@ -158701,7 +158751,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#355": {
+  "The Cursed One#359": {
    "src": "Unbelievable. {u}, a- a- are you hearing this?",
    "dst": "難以置信。{u}，你、你、你有在聽嗎？",
    "role": "desc",
@@ -158711,7 +158761,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#356": {
+  "The Cursed One#360": {
    "src": "Okay, wh- whatever... Sui, let's go t- try out the zipline. I wonder if th- th- they changed it this year.",
    "dst": "好吧，隨、隨便……Sui，我們去玩、玩滑索吧。不知道他們今、今年有沒有換過。",
    "role": "desc",
@@ -158721,7 +158771,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#357": {
+  "The Cursed One#361": {
    "src": "...could we, um, get food first? I'm hungry.",
    "dst": "……我們可以，嗯，先去吃東西嗎？我餓了。",
    "role": "desc",
@@ -158731,7 +158781,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#358": {
+  "The Cursed One#362": {
    "src": "A- ag- again?! No, we should do the z- z- zipline first. I don't want you th- thr- throwing up all over me.",
    "dst": "又、又、又來？！不行，我們該先玩滑、滑、滑索。我可不想你吐、吐得我一身。",
    "role": "desc",
@@ -158741,7 +158791,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#359": {
+  "The Cursed One#363": {
    "src": "Oh, shut it. Dummy.",
    "dst": "喔，閉嘴啦。笨蛋。",
    "role": "desc",
@@ -158751,7 +158801,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Cursed One#360": {
+  "The Cursed One#364": {
    "src": "You kn- know I'm right! Oh, uh, {u}, you can j- j- join us if you want! It's fun, I pr- promise.",
    "dst": "你知、知道我說得對！喔，呃，{u}，你想的話也可、可以一起來！那很好玩，我保、保證。",
    "role": "desc",
@@ -158761,7 +158811,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Cursed One#361": {
+  "The Cursed One#365": {
    "src": "I absolutely love the music.",
    "dst": "我超愛那個音樂。",
    "role": "desc",
@@ -158771,7 +158821,7 @@
    "speaker": "Festival Goer",
    "source": "wiki"
   },
-  "The Cursed One#362": {
+  "The Cursed One#366": {
    "src": "The {p} orchestra is definitely the best in all of Fruma! Well, not that I've heard any other orchestras.",
    "dst": "{p} 管弦樂團絕對是全 Fruma 最好的！嗯，雖然我也沒聽過別的管弦樂團。",
    "role": "desc",
@@ -158781,7 +158831,7 @@
    "speaker": "Festival Goer",
    "source": "wiki"
   },
-  "The Cursed One#363": {
+  "The Cursed One#367": {
    "src": "Aha! Hello there, {u}! Enjoying our festival, are you?",
    "dst": "啊哈！你好啊，{u}！享受我們的慶典嗎？",
    "role": "desc",
@@ -158791,7 +158841,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#364": {
+  "The Cursed One#368": {
    "src": "I trust you and Zeph have acquired all the necessary materials in the time since we last spoke?",
    "dst": "我相信自從我們上次談話以來，你和 Zeph 已經取得所有必要的材料了？",
    "role": "desc",
@@ -158801,7 +158851,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#365": {
+  "The Cursed One#369": {
    "src": "As soon as the festival concludes, I shall get right to smithing. I have a good feeling about this one!",
    "dst": "慶典一結束，我就立刻開始鍛造。我對這一件有很好的預感！",
    "role": "desc",
@@ -158811,7 +158861,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#366": {
+  "The Cursed One#370": {
    "src": "I, ah... am still learning. But I have greatly improved since I started, worry not!",
    "dst": "我，啊……還在學習。但自從我開始以來已經大有長進，不必擔心！",
    "role": "desc",
@@ -158821,7 +158871,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#367": {
+  "The Cursed One#371": {
    "src": "...ehm. I suppose I should return to my report...",
    "dst": "……呃。我想我該回去做我的紀錄了……",
    "role": "desc",
@@ -158831,7 +158881,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#368": {
+  "The Cursed One#372": {
    "src": "Hm? Ah, yes, I forget this is your first year. First week, even.",
    "dst": "嗯？啊，是的，我忘了這是你的第一年。甚至是第一週。",
    "role": "desc",
@@ -158841,7 +158891,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#369": {
+  "The Cursed One#373": {
    "src": "I am... gathering data. Recording the changes since last year's festival guard positioning and numbers, types of stands, amount of attendees and so on.",
    "dst": "我在……蒐集資料。記錄自去年慶典以來的變化——守衛的配置與人數、攤位的種類、參加的人數，諸如此類。",
    "role": "desc",
@@ -158851,7 +158901,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#370": {
+  "The Cursed One#374": {
    "src": "It is... perhaps unnecessarily thorough. Much of this data has not proven to be useful thus far... but it is something for me to do, and I do it well.",
    "dst": "這……也許細得沒有必要。到目前為止，這些資料大多沒有證明有用……但這是我可以做的事，而且我做得好。",
    "role": "desc",
@@ -158861,7 +158911,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#371": {
+  "The Cursed One#375": {
    "src": "These festivals... I suppose our discomfort is something Syndra and I share. It can be hard for us to enjoy ourselves, knowing what we do.",
    "dst": "這些慶典……我想那份不自在是 Syndra 和我共有的。知道了我們所知道的事，就很難真正放鬆。",
    "role": "desc",
@@ -158871,7 +158921,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#372": {
+  "The Cursed One#376": {
    "src": "I am grateful that the younger Leaves can still find joy here. Perhaps you might as well, given your... relative lack of history.",
    "dst": "我很慶幸年輕的葉子們還能在這裡找到快樂。也許你也可以，考慮到你……相對而言沒有那些過往。",
    "role": "desc",
@@ -158881,7 +158931,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#373": {
+  "The Cursed One#377": {
    "src": "Ah, but I am rambling. If you will excuse me, I need to get back to... counting all the new food items... hm.",
    "dst": "啊，我又扯遠了。若你不介意，我得回去……數那些新的食物品項了……唔。",
    "role": "desc",
@@ -158891,7 +158941,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Cursed One#374": {
+  "The Cursed One#378": {
    "src": "Welcome. Can I interest you in buying anything?",
    "dst": "歡迎。有什麼想買的嗎？",
    "role": "desc",
@@ -158901,7 +158951,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#375": {
+  "The Cursed One#379": {
    "src": "Perhaps you would like to hear what we have to offer?",
    "dst": "或許你想聽聽我們有什麼？",
    "role": "desc",
@@ -158911,7 +158961,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#376": {
+  "The Cursed One#380": {
    "src": "What do you say?",
    "dst": "你覺得如何？",
    "role": "desc",
@@ -158921,7 +158971,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#377": {
+  "The Cursed One#381": {
    "src": "We are selling both the raw ingredients and some freshly brewed tea.",
    "dst": "我們生的原料和現泡的茶都有賣。",
    "role": "desc",
@@ -158931,7 +158981,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#378": {
+  "The Cursed One#382": {
    "src": "Let me bring you on a history lesson to learn about the finest ingredients the forest has to offer.",
    "dst": "讓我為你上一堂歷史課，認識這座森林所能提供的最上乘的原料。",
    "role": "desc",
@@ -158941,7 +158991,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#379": {
+  "The Cursed One#383": {
    "src": "Tea is very popular in Auburn and the people have managed to make tea out of almost any plant you can find! Some are... more tasty than others.",
    "dst": "茶在 Auburn 非常受歡迎，而這裡的人幾乎能把你找得到的任何植物都做成茶！有些……比另一些好喝。",
    "role": "desc",
@@ -158951,7 +159001,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#380": {
+  "The Cursed One#384": {
    "src": "The Reishi Mushroom for example! Brewing tea of the mushroom alone often turns... bitter. With the help of herbs and spices it goes from a bitter to a rich spicy flavour!",
    "dst": "舉靈芝為例！單獨用這種菇泡茶往往會……很苦。但加上香草與香料之後，它就從苦味變成濃郁的辛香風味！",
    "role": "desc",
@@ -158961,7 +159011,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#381": {
+  "The Cursed One#385": {
    "src": "The mushroom itself is said to keep you healthy. It is also said to boost your resistances!",
    "dst": "據說這種菇本身能讓人保持健康。還有人說它能提升抗性！",
    "role": "desc",
@@ -158971,7 +159021,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#382": {
+  "The Cursed One#386": {
    "src": "The Tea Tree Mushroom on the other hand is perfect for a good tea blend. The mushroom alone gives it a sweet and earthy flavour.",
    "dst": "另一方面，茶樹菇非常適合調配好茶。單獨的這種菇會帶出甜而樸實的風味。",
    "role": "desc",
@@ -158981,7 +159031,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#383": {
+  "The Cursed One#387": {
    "src": "The mushroom is also said to regenerate you back to health and alleviate the feeling of tiredness! How amazing.",
    "dst": "據說這種菇還能讓你恢復健康、減輕疲倦的感覺！多麼神奇。",
    "role": "desc",
@@ -158991,7 +159041,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#384": {
+  "The Cursed One#388": {
    "src": "If you feel like buying something, please talk to my assistant.",
    "dst": "如果你想買點什麼，請找我的助手。",
    "role": "desc",
@@ -159001,7 +159051,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#385": {
+  "The Cursed One#389": {
    "src": "Alright! Enjoy the festival.",
    "dst": "好的！好好享受慶典。",
    "role": "desc",
@@ -159011,7 +159061,7 @@
    "speaker": "Tea Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#386": {
+  "The Cursed One#390": {
    "src": "*Hic* Aheyo!",
    "dst": "*嗝* 唷嘿！",
    "role": "desc",
@@ -159021,7 +159071,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#387": {
+  "The Cursed One#391": {
    "src": "It's festival time! *hic* that means... drinking time!!!",
    "dst": "慶典時間到！*嗝* 那就是說……喝酒時間到！！！",
    "role": "desc",
@@ -159031,7 +159081,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#388": {
+  "The Cursed One#392": {
    "src": "Inteeeerested in any of our mouth-watering beverages?",
    "dst": "對——我們哪一款令人垂涎的飲品有興趣嗎？",
    "role": "desc",
@@ -159041,7 +159091,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#389": {
+  "The Cursed One#393": {
    "src": "What do you say?",
    "dst": "你覺得如何？",
    "role": "desc",
@@ -159051,7 +159101,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#390": {
+  "The Cursed One#394": {
    "src": "*Hic* Todaaaay, we have a couple of imported drinks as well as our classic Autumn Amaretto.",
    "dst": "*嗝* 今——天，我們有幾款進口酒，還有我們的經典秋日杏仁酒。",
    "role": "desc",
@@ -159061,7 +159111,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#391": {
+  "The Cursed One#395": {
    "src": "Seen them blue fruits in the trees around here? Most of 'em are inedible Liffberries, buuut, some of 'em are actually a more edible fruit called Autumn Fruit, which carry a high value!",
    "dst": "看到這一帶樹上那些藍色的果子了嗎？大部分是不能吃的 Liff 莓，不——過，有些其實是比較能吃的果子，叫秋果，價值很高！",
    "role": "desc",
@@ -159071,7 +159121,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#392": {
+  "The Cursed One#396": {
    "src": "The Amaretto is made from Autumn Fruit kernels! We have aaaalso mixed in some Liff Leaves which *hic* gives it its warm colour and slightly bitter and metallic taste.",
    "dst": "杏仁酒就是用秋果的核做的！我們還——摻了一些 Liff 葉，*嗝* 那給了它溫暖的顏色和微苦帶點金屬味的口感。",
    "role": "desc",
@@ -159081,7 +159131,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#393": {
+  "The Cursed One#397": {
    "src": "Isn't alcohol making interesssting *hic*!",
    "dst": "釀酒是不是很有意——思 *嗝*！",
    "role": "desc",
@@ -159091,7 +159141,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#394": {
+  "The Cursed One#398": {
    "src": "We have also imported the faaaamed Heather Beer from the rich highlands.",
    "dst": "我們還進口了富庶高地的名——酒石楠啤酒。",
    "role": "desc",
@@ -159101,7 +159151,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#395": {
+  "The Cursed One#399": {
    "src": "A beer infused with the most beautiful heather grown across the highlands. *hic* You can almost taste the richness of the aristocrats.",
    "dst": "一種用高地各處長出來最美的石楠釀的啤酒。*嗝* 你幾乎能嘗到貴族的那份富庶。",
    "role": "desc",
@@ -159111,7 +159161,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#396": {
+  "The Cursed One#400": {
    "src": "*hic* If I were you, I would deeefinitely try this drink. Stuff like this doesn't come to Auburn often.",
    "dst": "*嗝* 如果我是你，我一定——會試試這一款。這種東西在 Auburn 可不常見。",
    "role": "desc",
@@ -159121,7 +159171,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#397": {
+  "The Cursed One#401": {
    "src": "If you feel like blessing your taste buds, talk to my brother over there. *hic*",
    "dst": "如果你想賜福你的味蕾，去找那邊我兄弟。*嗝*",
    "role": "desc",
@@ -159131,7 +159181,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#398": {
+  "The Cursed One#402": {
    "src": "*hic* Your loss!",
    "dst": "*嗝* 你的損失！",
    "role": "desc",
@@ -159141,7 +159191,7 @@
    "speaker": "Alcohol Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#399": {
+  "The Cursed One#403": {
    "src": "Hi dear. Feeling peckish?",
    "dst": "嗨，親愛的。餓了嗎？",
    "role": "desc",
@@ -159151,7 +159201,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#400": {
+  "The Cursed One#404": {
    "src": "We have freshly cooked and baked regional goods.",
    "dst": "我們有現煮現烤的在地食品。",
    "role": "desc",
@@ -159161,7 +159211,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#401": {
+  "The Cursed One#405": {
    "src": "Would you like to hear about our menu, dear?",
    "dst": "想聽聽我們的菜單嗎，親愛的？",
    "role": "desc",
@@ -159171,7 +159221,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#402": {
+  "The Cursed One#406": {
    "src": "Just perfect! Auburn is famous for their bold, earthy and cosy flavours!",
    "dst": "太好了！Auburn 以濃郁、樸實而溫暖的風味聞名！",
    "role": "desc",
@@ -159181,7 +159231,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#403": {
+  "The Cursed One#407": {
    "src": "We also love to cook using our wild animals and resources, but I'm sure you already know all of this, haha.",
    "dst": "我們也喜歡用野生動物和在地資源入菜，不過我相信這些你早就知道了，哈哈。",
    "role": "desc",
@@ -159191,7 +159241,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#404": {
+  "The Cursed One#408": {
    "src": "Let me go over some of our special dishes for today, dear.",
    "dst": "讓我介紹幾道今天的特色料理，親愛的。",
    "role": "desc",
@@ -159201,7 +159251,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#405": {
+  "The Cursed One#409": {
    "src": "The most important dish in Auburn, is of course the \"Gift of the Forest\". A wonderful meat and fruit mixture inside a steamed leaf wrap.",
    "dst": "Auburn 最重要的一道菜，當然是「森林的贈禮」。肉與果實的美妙組合，包在蒸過的葉子裡。",
    "role": "desc",
@@ -159211,7 +159261,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#406": {
+  "The Cursed One#410": {
    "src": "We have hand wrapped all of our gifts this morning and they are steamed to go!",
    "dst": "我們今天早上把所有的贈禮都手工包好了，蒸好就能帶走！",
    "role": "desc",
@@ -159221,7 +159271,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#407": {
+  "The Cursed One#411": {
    "src": "If that doesn't interest you, we also have the classic \"Forest Feast\". A grilled piece of boar meat with a mud-kin salad.",
    "dst": "如果那不合你的意，我們還有經典的「森林盛宴」。一塊烤野豬肉配上 Mudkin 沙拉。",
    "role": "desc",
@@ -159231,7 +159281,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#408": {
+  "The Cursed One#412": {
    "src": "I'm afraid we have run out of ingredients at the moment. Please come back later!",
    "dst": "恐怕我們目前的食材用完了。請晚點再來！",
    "role": "desc",
@@ -159241,7 +159291,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#409": {
+  "The Cursed One#413": {
    "src": "Have a lovely day.",
    "dst": "祝你有美好的一天。",
    "role": "desc",
@@ -159251,7 +159301,7 @@
    "speaker": "Food Stand Merchant",
    "source": "wiki"
   },
-  "The Cursed One#410": {
+  "The Cursed One#414": {
    "src": "Hey! You look like a tourist to me!",
    "dst": "嘿！你看起來像個觀光客！",
    "role": "desc",
@@ -159261,7 +159311,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#411": {
+  "The Cursed One#415": {
    "src": "I'm glad you decided to check out my little exhibition here.",
    "dst": "很高興你決定來看看我這個小小的展區。",
    "role": "desc",
@@ -159271,7 +159321,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#412": {
+  "The Cursed One#416": {
    "src": "Is it your first time in this part of the region? Would you perhaps like to hear some fun facts about our animals?",
    "dst": "這是你第一次來這一帶嗎？也許你想聽聽關於我們這些動物的有趣知識？",
    "role": "desc",
@@ -159281,7 +159331,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#413": {
+  "The Cursed One#417": {
    "src": "Marvelous!",
    "dst": "太棒了！",
    "role": "desc",
@@ -159291,7 +159341,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#414": {
+  "The Cursed One#418": {
    "src": "First we have our Roly-bugs here! These little buggers are a pest to the people here.",
    "dst": "首先是我們的 Roly 蟲！這些小傢伙是這裡居民的一大害。",
    "role": "desc",
@@ -159301,7 +159351,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#415": {
+  "The Cursed One#419": {
    "src": "They love gnawing on our houses. Luckily, we built most of our structures on stilts aaaand those bugs can't climb.",
    "dst": "牠們最愛啃我們的房子。幸好我們大部分的建築都蓋在高腳柱上，而——且那些蟲不會爬。",
    "role": "desc",
@@ -159311,7 +159361,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#416": {
+  "The Cursed One#420": {
    "src": "Now! Frogs! The north-western bog is the best place for frog-watching. Just be careful of the bog monster.",
    "dst": "接下來！青蛙！西北邊的沼澤是賞蛙最好的地方。只要小心那隻沼澤怪物就好。",
    "role": "desc",
@@ -159321,7 +159371,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#417": {
+  "The Cursed One#421": {
    "src": "Frogs might be a good source of food but we like to see them more as... pets!",
    "dst": "青蛙或許是不錯的食物來源，不過我們更喜歡把牠們當成……寵物！",
    "role": "desc",
@@ -159331,7 +159381,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#418": {
+  "The Cursed One#422": {
    "src": "Lastly, we have foxes! These little cuties are very shy in nature. But beware, there are bigger versions of them, known as Foxhounds.",
    "dst": "最後是狐狸！這些小可愛天性非常害羞。不過要小心，牠們還有體型更大的版本，叫做狐獵犬。",
    "role": "desc",
@@ -159341,7 +159391,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#419": {
+  "The Cursed One#423": {
    "src": "Those are not as shy... or peaceful, as their smaller cousins. They are just as cute though!",
    "dst": "那些就沒有牠們的小表親那麼害羞……或那麼溫和了。不過一樣可愛就是了！",
    "role": "desc",
@@ -159351,7 +159401,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#420": {
+  "The Cursed One#424": {
    "src": "Please have a looksie around! You can also pet them.",
    "dst": "請隨意看看！你也可以摸摸牠們。",
    "role": "desc",
@@ -159361,7 +159411,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#421": {
+  "The Cursed One#425": {
    "src": "Have a loooovely day!",
    "dst": "祝你有美——好的一天！",
    "role": "desc",
@@ -159371,7 +159421,7 @@
    "speaker": "Zoo Keeper",
    "source": "wiki"
   },
-  "The Cursed One#422": {
+  "The Cursed One#426": {
    "src": "Howdy and welcome to a mudkin farm!",
    "dst": "哈囉，歡迎來到 Mudkin 農場！",
    "role": "desc",
@@ -159381,7 +159431,7 @@
    "speaker": "Kabo",
    "source": "wiki"
   },
-  "The Cursed One#423": {
+  "The Cursed One#427": {
    "src": "Mudkins are popular vegetables in food around here. They grow underground and you have to yoikn em' out!",
    "dst": "Mudkin 是這一帶菜餚裡很受歡迎的蔬菜。它們長在地底下，你得把它們拔出來！",
    "role": "desc",
@@ -159391,7 +159441,7 @@
    "speaker": "Kabo",
    "source": "wiki"
   },
-  "The Cursed One#424": {
+  "The Cursed One#428": {
    "src": "Are ya interested in a game of Mudkin Picking?",
    "dst": "你有興趣玩一場「拔 Mudkin」嗎？",
    "role": "desc",
@@ -159401,7 +159451,7 @@
    "speaker": "Kabo",
    "source": "wiki"
   },
-  "The Cursed One#425": {
+  "The Cursed One#429": {
    "src": "Basically, ye goal is to get as many points as possible before the time runs out.",
    "dst": "簡單說，你的目標是在時間結束前拿到愈多分愈好。",
    "role": "desc",
@@ -159411,7 +159461,7 @@
    "speaker": "Kabo",
    "source": "wiki"
   },
-  "The Cursed One#426": {
+  "The Cursed One#430": {
    "src": "There are three sizes of Mudkins, each size gives a set of points. However! There are two ginger roots that give negative points.",
    "dst": "Mudkin 有三種大小，每一種給的分數不同。不過！有兩顆薑根會給你負分。",
    "role": "desc",
@@ -159421,7 +159471,7 @@
    "speaker": "Kabo",
    "source": "wiki"
   },
-  "The Cursed One#427": {
+  "The Cursed One#431": {
    "src": "Simply click on the dirt particles appearing in the field. There are five spots for ya to pick.",
    "dst": "只要點擊田裡出現的泥土粒子就好。有五個地方可以讓你拔。",
    "role": "desc",
@@ -159431,7 +159481,7 @@
    "speaker": "Kabo",
    "source": "wiki"
   },
-  "The Cursed One#428": {
+  "The Cursed One#432": {
    "src": "So! Are ya ready?",
    "dst": "那麼！你準備好了嗎？",
    "role": "desc",
@@ -159441,7 +159491,7 @@
    "speaker": "Kabo",
    "source": "wiki"
   },
-  "The Cursed One#429": {
+  "The Cursed One#433": {
    "src": "Enjoy the festival!",
    "dst": "好好享受慶典！",
    "role": "desc",
@@ -159451,7 +159501,7 @@
    "speaker": "Kabo",
    "source": "wiki"
   },
-  "The Cursed One#430": {
+  "The Cursed One#434": {
    "src": "Return to Syndra at or keep exploring the festival.",
    "dst": "回到 Syndra 那裡，或繼續逛慶典。",
    "role": "desc",
@@ -159461,7 +159511,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Cursed One#431": {
+  "The Cursed One#435": {
    "src": "Ah. There you are. Have you been enjoying yourself?",
    "dst": "啊。你來了。玩得開心嗎？",
    "role": "desc",
@@ -159471,7 +159521,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#432": {
+  "The Cursed One#436": {
    "src": "That's good to hear.",
    "dst": "那就好。",
    "role": "desc",
@@ -159481,7 +159531,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#433": {
+  "The Cursed One#437": {
    "src": "For all that the festival revolves around the crown, I've always appreciated its representation of our culture.**",
    "dst": "儘管這場慶典是圍繞著王室辦的，我一向欣賞它對我們文化的呈現。",
    "role": "desc",
@@ -159491,7 +159541,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#434": {
+  "The Cursed One#438": {
    "src": "I hope your experience with the crown has not ruined your perception of our province... there are still many things to celebrate.",
    "dst": "希望你和王室打交道的經驗，沒有毀掉你對我們行省的印象……這裡還是有很多值得慶祝的東西。",
    "role": "desc",
@@ -159501,7 +159551,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#435": {
+  "The Cursed One#439": {
    "src": "Sometimes, it can be nice to set aside your woes, and... take things as they are. Breathe, a little.",
    "dst": "有時候，把煩惱放到一邊、就……照事情本來的樣子接受它，也是不錯的。喘口氣。",
    "role": "desc",
@@ -159511,7 +159561,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#436": {
+  "The Cursed One#440": {
    "src": "Better than nothing, I suppose.",
    "dst": "總比什麼都沒有好，我想。",
    "role": "desc",
@@ -159521,7 +159571,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#437": {
+  "The Cursed One#441": {
    "src": "It's hard to enjoy yourself with your experiences with the crown weighing you down, isn't it? I know the feeling.",
    "dst": "背著跟王室打交道的那些經歷，是很難放鬆的，對吧？我懂那種感覺。",
    "role": "desc",
@@ -159531,7 +159581,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#438": {
+  "The Cursed One#442": {
    "src": "Mmn. I'd suggest to take what you can get. Happy moments like this can be fleeting, in my experience.",
    "dst": "唔。我會建議你能拿多少就拿多少。以我的經驗，這樣的快樂時刻往往轉瞬即逝。",
    "role": "desc",
@@ -159541,7 +159591,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#439": {
+  "The Cursed One#443": {
    "src": "If there's even the smallest spark of joy... take hold of it before it's gone. Cherish it while you still can. Try not to grow old and jaded like I have, would you?",
    "dst": "只要有一點點喜悅的火花……就在它消失之前抓住它。趁還能珍惜的時候珍惜它。試著別像我一樣變得又老又麻木，好嗎？",
    "role": "desc",
@@ -159551,7 +159601,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#440": {
+  "The Cursed One#444": {
    "src": "Ha! It's alright. Neither have I.",
    "dst": "哈！沒關係。我也沒有。",
    "role": "desc",
@@ -159561,7 +159611,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#441": {
+  "The Cursed One#445": {
    "src": "Every year... every single year, the crown hosts these festivals. Starting here, and moving around in a ring around the province.",
    "dst": "每一年……年年如此，王室都會辦這些慶典。從這裡開始，繞著行省轉一圈。",
    "role": "desc",
@@ -159571,7 +159621,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#442": {
+  "The Cursed One#446": {
    "src": "The festival's a holiday, a day of rest, of celebration. What a gift it is, not needing to work for a time! How generous.",
    "dst": "慶典是假日，是休息的一天、慶祝的一天。有一段時間不必工作，這是多大的恩賜啊！何等慷慨。",
    "role": "desc",
@@ -159581,7 +159631,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#443": {
+  "The Cursed One#447": {
    "src": "I can't stand it here... Every year, I convince myself I can bear it. The reminder it brings, of memories long passed. Every year, I'm proven wrong.",
    "dst": "我受不了待在這裡……每一年，我都說服自己我撐得住。它帶來的那些提醒，那些久遠的記憶。而每一年，我都被證明錯了。",
    "role": "desc",
@@ -159591,7 +159641,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#444": {
+  "The Cursed One#448": {
    "src": "...Ah. It's time. The main event is about to begin.",
    "dst": "……啊。時間到了。主要活動就要開始了。",
    "role": "desc",
@@ -159601,7 +159651,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#445": {
+  "The Cursed One#449": {
    "src": "Why, Her Majesty's annual speech, of course! It wouldn't be a Festival of the Crown if she didn't make an appearance, would it?",
    "dst": "當然是女王陛下的年度演說！沒有她露面，那還算什麼王室慶典，對吧？",
    "role": "desc",
@@ -159611,7 +159661,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#446": {
+  "The Cursed One#450": {
    "src": "Ha! No, no. Of course not. It wouldn't be a Festival of the Crown without a speech from Her Majesty herself, would it?",
    "dst": "哈！不，不。當然不是。沒有女王陛下親自演說，那還算什麼王室慶典，對吧？",
    "role": "desc",
@@ -159621,7 +159671,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#447": {
+  "The Cursed One#451": {
    "src": "Now... observe. Behold our enemy, take note of how she presents herself, what she says, what she doesn't say.",
    "dst": "現在……仔細看。看清楚我們的敵人，注意她如何呈現自己、她說了什麼、以及她沒有說什麼。",
    "role": "desc",
@@ -159631,7 +159681,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#448": {
+  "The Cursed One#452": {
    "src": "Ah... beloved people of the {p}! What a joy, what an honor it is to stand amongst you once again.",
    "dst": "啊……{p} 我親愛的人民！能再一次站在你們之中，是何等的喜悅、何等的榮幸。",
    "role": "desc",
@@ -159641,7 +159691,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#449": {
+  "The Cursed One#453": {
    "src": "Some will claim the stunning {p} to be our most beautiful region, with its vibrant blossoming trees and grand historic castles...",
    "dst": "有些人會說，那壯麗的 {p} 才是我們最美的地區，有著它繁花盛開的樹木與宏偉的歷史城堡……",
    "role": "desc",
@@ -159651,7 +159701,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#450": {
+  "The Cursed One#454": {
    "src": "But I've always held a special regard for this place. The leaves and their warm shades, blowing in the soft breeze... all the woes of the world would be worth this sight.",
    "dst": "但我一向對這個地方懷有特別的情感。那些葉子與它們溫暖的色調，在微風中搖曳……世上所有的煩憂，都值得換這一幅景象。",
    "role": "desc",
@@ -159661,7 +159711,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#451": {
+  "The Cursed One#455": {
    "src": "If I were able, perhaps I could stay here year-round! Ah, but alas... work in the Citadel keeps us all occupied!",
    "dst": "如果可以，也許我願意整年都待在這裡！啊，可惜……城堡裡的事務讓我們都脫不開身！",
    "role": "desc",
@@ -159671,7 +159721,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#452": {
+  "The Cursed One#456": {
    "src": "We have many plans for the coming year. Increased imports from the other regions, easier access to travel for all, and additional openings in military positions!",
    "dst": "來年我們有許多計畫。增加從其他地區的進口、讓所有人更容易出行，還有更多的軍職空缺！",
    "role": "desc",
@@ -159681,7 +159731,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#453": {
+  "The Cursed One#457": {
    "src": "More will be revealed soon. Now, some words from your beloved Sovereign.",
    "dst": "更多內容很快就會公布。現在，請聽你們敬愛的統領說幾句。",
    "role": "desc",
@@ -159691,7 +159741,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#454": {
+  "The Cursed One#458": {
    "src": "...ah. The one thing I miscalculated. The mic height. Oh well Testing, testing, one two three...",
    "dst": "……啊。我唯一算錯的一項。麥克風的高度。算了——測試，測試，一二三……",
    "role": "desc",
@@ -159701,7 +159751,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#455": {
+  "The Cursed One#459": {
    "src": "Welcome one and all! I'm your Sovereign, Zhiraok. It's an honor to be here before you all again today.",
    "dst": "歡迎各位！我是你們的統領，Zhiraok。今天能再一次站在各位面前，是我的榮幸。",
    "role": "desc",
@@ -159711,7 +159761,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#456": {
+  "The Cursed One#460": {
    "src": "Two decades of work in the {p}. Twenty years. It feels like I've been here for so much longer this place, these people, really have become my home.",
    "dst": "在 {p} 工作了二十年。二十年。感覺我在這裡待得比那還久得多——這個地方、這些人，真的已經成了我的家。",
    "role": "desc",
@@ -159721,7 +159771,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#457": {
+  "The Cursed One#461": {
    "src": "My duty is not just to serve the Crown, but also to serve you. To make your lives better, to raise this region we live in to new heights.",
    "dst": "我的職責不只是效忠王室，也是服務各位。讓各位的生活更好，把我們共同生活的這個地區推向新的高度。",
    "role": "desc",
@@ -159731,7 +159781,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#458": {
+  "The Cursed One#462": {
    "src": "Whether that's by increasing production of Liff Leaves to share our resources and knowledge the province over, which we owe to your hard work...",
    "dst": "無論是透過增加 Liff 葉的產量，好把我們的資源與知識分享給整個行省——那要歸功於各位的辛勤……",
    "role": "desc",
@@ -159741,7 +159791,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#459": {
+  "The Cursed One#463": {
    "src": "...or through sharpening our infrastructure to exponentiate your quality of life, in thanks for what you do!",
    "dst": "……還是透過強化我們的基礎建設，讓各位的生活品質指數成長，以答謝各位的付出！",
    "role": "desc",
@@ -159751,7 +159801,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#460": {
+  "The Cursed One#464": {
    "src": "I'd be here all day listing the improvements over the last year, but I'll summarize Multiple major road improvements, countless new job opportunities, multiplying guard patrols to keep you safe...",
    "dst": "要把過去一年的改善一一列出，我大概得在這裡站上一整天，所以我長話短說——多條主要道路改善、無數新的工作機會、加倍的守衛巡邏來保障各位的安全……",
    "role": "desc",
@@ -159761,7 +159811,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#461": {
+  "The Cursed One#465": {
    "src": "The place we came from twenty years ago is unrecognizable now. My vow is that twenty years ahead, I can say the same thing for how much more we, together, improve our home.",
    "dst": "二十年前我們出發的那個地方，如今已經認不出來了。我的誓言是：二十年後，我還能對我們共同把這個家改善了多少，說出同樣的話。",
    "role": "desc",
@@ -159771,7 +159821,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#462": {
+  "The Cursed One#466": {
    "src": "'til the day we sum up to the grandeur of {p} Thank you all! Enjoy the festivities!",
    "dst": "……直到我們的總和比得上 {p} 的壯麗那一天——謝謝各位！好好享受慶典！",
    "role": "desc",
@@ -159781,7 +159831,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#463": {
+  "The Cursed One#467": {
    "src": "What fine work Sovereign Zhiraok has done for our province! Truly, there could have been no better choice to fill that role!",
    "dst": "Zhiraok 統領為我們的行省做了何等出色的工作！要填補那個職位，確實再也找不到更好的人選了！",
    "role": "desc",
@@ -159791,7 +159841,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#464": {
+  "The Cursed One#468": {
    "src": "The {p} flourishes under his governance, and I could not be more pleased by the progress he has made.",
    "dst": "{p} 在他的治理下欣欣向榮，而我對他所取得的進展再滿意不過。",
    "role": "desc",
@@ -159801,7 +159851,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#465": {
+  "The Cursed One#469": {
    "src": "One final message before we conclude. These past few years, we have seen fewer and fewer reports of the cursed a sign of our strength as a people.",
    "dst": "在我們結束之前還有最後一件事。過去這幾年，我們收到關於受詛者的通報愈來愈少——那是我們作為一個民族強盛的徵兆。",
    "role": "desc",
@@ -159811,7 +159861,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#466": {
+  "The Cursed One#470": {
    "src": "And it is all thanks to you! Your diligent reporting of suspicious activity makes all the difference in keeping our province safe.",
    "dst": "而這一切都要歸功於各位！各位勤勉地通報可疑活動，正是保障我們行省安全的關鍵。",
    "role": "desc",
@@ -159821,7 +159871,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#467": {
+  "The Cursed One#471": {
    "src": "We must stand strong, together! We will not allow this evil its victory, we will not let our province fall like so many others have beyond our walls!",
    "dst": "我們必須團結、堅定！我們不會讓這份邪惡得勝，我們不會讓我們的行省像牆外那麼多地方一樣淪陷！",
    "role": "desc",
@@ -159831,7 +159881,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#468": {
+  "The Cursed One#472": {
    "src": "With that, let the celebrations begin!",
    "dst": "那麼，就讓慶典開始吧！",
    "role": "desc",
@@ -159841,7 +159891,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Cursed One#469": {
+  "The Cursed One#473": {
    "src": "Hm... The standard, then.",
    "dst": "唔……跟往常一樣。",
    "role": "desc",
@@ -159851,7 +159901,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#470": {
+  "The Cursed One#474": {
    "src": "Did anything stand out to you?",
    "dst": "有什麼特別引起你注意的嗎？",
    "role": "desc",
@@ -159861,7 +159911,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#471": {
+  "The Cursed One#475": {
    "src": "Indeed, it is. It's quite puzzling, isn't it? It's a sort of reverence she never displays elsewhere.",
    "dst": "確實。這很費解，不是嗎？那是一種她在別處從不流露的敬意。",
    "role": "desc",
@@ -159871,7 +159921,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#472": {
+  "The Cursed One#476": {
    "src": "And if there's one thing I'm certain she's being truthful about, it's this. Which only makes it all the stranger.",
    "dst": "而如果有一件事我確定她說的是真話，就是這一件。這反而讓它更加奇怪。",
    "role": "desc",
@@ -159881,7 +159931,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#473": {
+  "The Cursed One#477": {
    "src": "Yes, yes... improvements. Life has improved since he ascended to that position. I'll give him that. He's invested in Auburn.",
    "dst": "是啊，是啊……改善。自從他升上那個位置，生活確實變好了。這一點我認。他確實投入在 Auburn 上。",
    "role": "desc",
@@ -159891,7 +159941,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#474": {
+  "The Cursed One#478": {
    "src": "But he is still working under the crown. Don't forget that. For every improvement he has made, there's another he has left ignored.",
    "dst": "但他仍然是在王室底下做事。別忘了這一點。他每做出一項改善，就有另一項是他放著不管的。",
    "role": "desc",
@@ -159901,7 +159951,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#475": {
+  "The Cursed One#479": {
    "src": "No, I suppose they wouldn't. Better to leave the public unaware of such failures.",
    "dst": "不，我想他們不會提。讓大眾不知道那些失敗，對他們比較好。",
    "role": "desc",
@@ -159911,7 +159961,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#476": {
+  "The Cursed One#480": {
    "src": "But rest assured that internally, they have not forgotten. They will keep searching for you.",
    "dst": "但你可以確定，在內部他們並沒有忘記。他們會繼續找你。",
    "role": "desc",
@@ -159921,7 +159971,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#477": {
+  "The Cursed One#481": {
    "src": "Yes... the cursed. The crown needs to keep the people afraid. If there's another enemy out there that the crown supposedly protects them from...",
    "dst": "是的……受詛者。王室需要讓人民保持恐懼。如果外面還有另一個敵人，而王室宣稱保護他們免於那個敵人……",
    "role": "desc",
@@ -159931,7 +159981,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#478": {
+  "The Cursed One#482": {
    "src": "There's a reason they want people to believe the outside world is destroyed. Any contact could break the illusion.",
    "dst": "他們要人們相信外面的世界已經毀滅，是有原因的。任何接觸都可能戳破那個幻象。",
    "role": "desc",
@@ -159941,7 +159991,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#479": {
+  "The Cursed One#483": {
    "src": "They'll be closing out the festival soon... so, our work here is done. We should be leaving before the crowd thins enough for us to be spotted.",
    "dst": "他們很快就要結束慶典了……所以我們這裡的工作完成了。我們該在人群散到足以讓我們被認出來之前離開。",
    "role": "desc",
@@ -159951,7 +160001,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#480": {
+  "The Cursed One#484": {
    "src": "I've scheduled a meeting for tomorrow I'd like for you to attend. It'll be about our next steps, now that the crown has moved on. I'll see you there.",
    "dst": "我明天安排了一場會議，希望你能出席。內容是關於下一步——既然王室已經移動了。到時候見。",
    "role": "desc",
@@ -159961,7 +160011,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Cursed One#481": {
+  "The Cursed One#485": {
    "src": "Sovereign, a word?",
    "dst": "統領，能談一下嗎？",
    "role": "desc",
@@ -159971,7 +160021,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Cursed One#482": {
+  "The Cursed One#486": {
    "src": "I think I've had just about enough of people sneaking into my office. Care to knock next time?",
    "dst": "我想我對有人溜進我的辦公室這件事已經受夠了。下次能不能敲個門？",
    "role": "desc",
@@ -159981,7 +160031,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#483": {
+  "The Cursed One#487": {
    "src": "Mmn. It's more interesting this way. I have news from the capital your request for additional troops has been granted. Reassignments should come through by the end of the week.",
    "dst": "唔。這樣比較有意思。我從首都帶來消息——你增派部隊的請求批准了。調動應該在本週結束前下來。",
    "role": "desc",
@@ -159991,7 +160041,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Cursed One#484": {
+  "The Cursed One#488": {
    "src": "Well, that'll solve some problems. But that's not the whole message, is it? What obtuse remark has he got for me this time?",
    "dst": "嗯，那能解決一些問題。不過那不是全部的訊息，對吧？他這次又要我聽什麼鈍話？",
    "role": "desc",
@@ -160001,7 +160051,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#485": {
+  "The Cursed One#489": {
    "src": "Merely a reminder to... \"get your act together,\" as it were.",
    "dst": "只是提醒你……用他的說法，「振作一點」。",
    "role": "desc",
@@ -160011,7 +160061,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Cursed One#486": {
+  "The Cursed One#490": {
    "src": "Get my act toge That floundering fractal's developed less in his quadrant in a hundred-fifty years than I've done in two, in the last ten!",
    "dst": "振作一——那個原地打轉的碎形在他那個象限裡一百五十年做的事，還不如我這十年裡兩年做的！",
    "role": "desc",
@@ -160021,7 +160071,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#487": {
+  "The Cursed One#491": {
    "src": "I Ugh, focus, Z... He's not even here, don't let him get under your skin...",
    "dst": "我——唉，專注，Z……他人根本不在這裡，別讓他惹到你……",
    "role": "desc",
@@ -160031,7 +160081,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#488": {
+  "The Cursed One#492": {
    "src": "I'll get off that tangent. If that was all you had to say, it'd be a waste of your time. What do you need to say that a courier can't send in a letter?",
    "dst": "我不扯那條切線了。如果你要說的就這些，那才是浪費你的時間。有什麼是信差送信送不了、非得你親口說的？",
    "role": "desc",
@@ -160041,7 +160091,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#489": {
+  "The Cursed One#493": {
    "src": "The intruder. Does your administration believe it can get the situation under control?",
    "dst": "那個入侵者。你的行政單位相信自己能控制住局面嗎？",
    "role": "desc",
@@ -160051,7 +160101,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Cursed One#490": {
+  "The Cursed One#494": {
    "src": "There it is. Listen, I've got their number, alright? There's no way in or out of the district where they won't be detected. We'll track them down.",
    "dst": "來了。聽著，我已經掌握他們的數了，好嗎？這個轄區沒有任何一條進出的路是他們不會被偵測到的。我們會把他們找出來。",
    "role": "desc",
@@ -160061,7 +160111,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#491": {
+  "The Cursed One#495": {
    "src": "Though unlike some people, my ego isn't so massive I can't recognize when an ally can be of use. Your types have an expertise here, so if you could spare a set or two of eyes it'd be much appreciated.",
    "dst": "不過跟某些人不一樣，我的自尊還沒大到認不出盟友什麼時候能派上用場。你們那一類在這方面是專家，所以如果你能撥一兩雙眼睛過來，我會非常感激。",
    "role": "desc",
@@ -160071,7 +160121,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#492": {
+  "The Cursed One#496": {
    "src": "I'll see what I can do. There happens to be an ongoing operation in the area already, we can discuss redirecting the agent once it's concluded.",
    "dst": "我看看能做什麼。這一帶剛好已經有一項行動在進行，等它結束之後，我們可以討論把那名探員轉調過來。",
    "role": "desc",
@@ -160081,7 +160131,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Cursed One#493": {
+  "The Cursed One#497": {
    "src": "One last thing the identity of the intruder has been made clear to you already, yes?",
    "dst": "最後一件事——入侵者的身分已經明確告知你了，對吧？",
    "role": "desc",
@@ -160091,7 +160141,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Cursed One#494": {
+  "The Cursed One#498": {
    "src": "Mhm. Like I said, I've got their number.",
    "dst": "嗯哼。就像我說的，我掌握了他們的數。",
    "role": "desc",
@@ -160101,7 +160151,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Cursed One#495": {
+  "The Cursed One#499": {
    "src": "Then you will understand Her Majesty's order not to speak of this ordeal to our newest. Ascension is a difficult process, and it would be... unwise to add additional distractions to it.",
    "dst": "那你就會明白女王陛下的命令——這件事不得向我們那位最新的成員提起。飛升是個艱難的過程，替它添上額外的干擾會是……不明智的。",
    "role": "desc",
@@ -160111,7 +160161,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Cursed One#496": {
+  "The Cursed One#500": {
    "src": "Wouldn't want to distract a hard worker like him, right. But if that's everything, Spymaster? My to-do list is getting more added by the minute.",
    "dst": "可不想打擾一個這麼勤奮的人，是吧。不過如果就這些了，諜報總管？我的待辦清單每分鐘都在增加。",
    "role": "desc",
