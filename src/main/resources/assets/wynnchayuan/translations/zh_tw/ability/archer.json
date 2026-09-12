@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 270,
-  "translated": 231,
-  "note": "弓箭手的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
-  "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
+  "translated": 270,
+  "note": "弓箭手的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
+  "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-archer#0234": {
    "src": "Arrow Bomb{#}and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
-   "dst": "",
+   "dst": "Arrow Bomb{#}與 Arrow Storm 不再產生後座，\n而且你的 Arrow Bomb 不會傷到自己。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -25,7 +25,7 @@
   },
   "ability-archer#0231": {
    "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#}{#}stack on a target.",
-   "dst": "",
+   "dst": "持續時間結束時，或按 F 主動結束時，向每個被標記的敵人\n各射出一發法術箭與一發普攻箭。\n目標身上每有一層暮光 {#}{#}，箭矢就多造成一份傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -39,7 +39,7 @@
   },
   "ability-archer#0235": {
    "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap{#}have no cooldown.",
-   "dst": "",
+   "dst": "召喚光的力量強化你的攻擊 {~} 秒，\n期間 Leap{#}沒有冷卻。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -53,7 +53,7 @@
   },
   "ability-archer#0236": {
    "src": "Gives Arrow Shield{#}+{~} extra charges.\nGuardian Angels will deal -{~} damage.",
-   "dst": "",
+   "dst": "Arrow Shield{#}額外獲得 {~1} 層充能。\nGuardian Angels 造成的傷害降低 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -67,7 +67,7 @@
   },
   "ability-archer#0238": {
    "src": "Increase your maximum Focus {#}{#}by +{~}.",
-   "dst": "",
+   "dst": "專注 {#}{#}的上限提高 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -82,7 +82,7 @@
   },
   "ability-archer#0233": {
    "src": "Not missing with Phantom Ray{#}{~}{#}times\nin a row will transform your next\nMain Attack{#}into a Twain's Arc beam.",
-   "dst": "",
+   "dst": "連續 {~} 次用 Phantom Ray{#}{#}命中不落空後，\n你的下一次普通攻擊{#}會變成\nTwain's Arc 光束。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -96,7 +96,7 @@
   },
   "ability-archer#0237": {
    "src": "While in this state, lose {~} Focus {#}{#}every {~}s.",
-   "dst": "",
+   "dst": "處於此狀態時，每 {~2} 秒失去 {~1} 層專注 {#}{#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -110,7 +110,7 @@
   },
   "ability-archer#0232": {
    "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#}{#}every {~}s. (Max {~})",
-   "dst": "",
+   "dst": "處於此狀態時你跳得更高、落得更慢，\n視線內的所有敵人每 {~1} 秒被暮光 {#}{#}標記一次。\n(最多 {~2} 層)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -124,7 +124,7 @@
   },
   "ability-archer#0254": {
    "src": "{#}{#}Area of Effect: +{~} Block (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}作用範圍增加: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -141,7 +141,7 @@
   },
   "ability-archer#0266": {
    "src": "{#}{#}Area of Effect: +{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}作用範圍增加: {~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -156,7 +156,7 @@
   },
   "ability-archer#0265": {
    "src": "{#}{#}Damage Bonus: +{~} (per Focus)",
-   "dst": "",
+   "dst": "{#}{#}傷害加成: +{~} (每點 Focus)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -170,7 +170,7 @@
   },
   "ability-archer#0269": {
    "src": "{#}{#}Duration: +{~}s",
-   "dst": "",
+   "dst": "{#}{#}持續時間: +{~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -185,7 +185,7 @@
   },
   "ability-archer#0260": {
    "src": "{#}{#}Effect: +{~} Speed Bonus (➲) to Allies",
-   "dst": "",
+   "dst": "{#}{#}效果: +{~} 速度加成 (➲) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -200,7 +200,7 @@
   },
   "ability-archer#0262": {
    "src": "{#}{#}Effect: +{~} Walk Speed (➲) to Self",
-   "dst": "",
+   "dst": "{#}{#}效果: +{~} 移動速度 (➲) 給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -214,7 +214,7 @@
   },
   "ability-archer#0248": {
    "src": "{#}{#}Effect: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}效果: -{~} 抗性加成 ({#} ) 給敵人",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-archer#0264": {
    "src": "{#}{#}Effect: Blindness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}效果: 敵方失明 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -244,7 +244,7 @@
   },
   "ability-archer#0250": {
    "src": "{#}{#}Effects: -{~}{#}Damage Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}效果: 敵人傷害加成 -{~}{#} ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -259,7 +259,7 @@
   },
   "ability-archer#0267": {
    "src": "{#}{#}Main Attack Damage: -{~}",
-   "dst": "",
+   "dst": "{#}{#}普攻傷害: -{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -273,7 +273,7 @@
   },
   "ability-archer#0261": {
    "src": "{#}{#}Main Attack Damage: -{~} (per arrow)",
-   "dst": "",
+   "dst": "{#}{#}普攻傷害: -{~} (每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -287,7 +287,7 @@
   },
   "ability-archer#0268": {
    "src": "{#}{#}Range: ±{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}施放範圍: ±{~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -302,7 +302,7 @@
   },
   "ability-archer#0241": {
    "src": "{#}{#}Total Damage: +{~} (Main Attack Damage, per Twilight)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (普攻傷害，每層暮光)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -316,7 +316,7 @@
   },
   "ability-archer#0243": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Arrow Shield)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，箭盾)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -330,7 +330,7 @@
   },
   "ability-archer#0240": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，Buckshot，每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -344,7 +344,7 @@
   },
   "ability-archer#0239": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Guardian Angels, per shot)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，Guardian Angels，每發)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -359,7 +359,7 @@
   },
   "ability-archer#0249": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per Twilight)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，每層暮光)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -373,7 +373,7 @@
   },
   "ability-archer#0252": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -388,7 +388,7 @@
   },
   "ability-archer#0256": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per ray)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，每道光線)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -402,7 +402,7 @@
   },
   "ability-archer#0263": {
    "src": "{#}{#}Total Damage: -{~} (after piercing)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: -{~} (穿透之後)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -416,7 +416,7 @@
   },
   "ability-archer#0253": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: -{~} (你的每秒傷害，每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -430,7 +430,7 @@
   },
   "ability-archer#0245": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow/ray)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: -{~} (你的每秒傷害，每支箭／每道光線)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -444,7 +444,7 @@
   },
   "ability-archer#0244": {
    "src": "{#}{#}Total Damage: {~} (Main Attack Damage, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (普攻傷害，每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -458,7 +458,7 @@
   },
   "ability-archer#0242": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, Arrow Bomb's smite)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，Arrow Bomb 的重擊)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -472,7 +472,7 @@
   },
   "ability-archer#0246": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, for Arrow Bomb)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，Arrow Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -486,7 +486,7 @@
   },
   "ability-archer#0247": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, for Grape Bomb)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，Grape Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -500,7 +500,7 @@
   },
   "ability-archer#0255": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，每支箭)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -517,7 +517,7 @@
   },
   "ability-archer#0259": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per hit)",
-   "dst": "",
+   "dst": "{#}{#}每次命中傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -532,7 +532,7 @@
   },
   "ability-archer#0257": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per shot)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，每發)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -546,7 +546,7 @@
   },
   "ability-archer#0251": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per shrapnel)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，每片碎片)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -560,7 +560,7 @@
   },
   "ability-archer#0258": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per wave)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，每波)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 278,
-  "translated": 233,
-  "note": "戰士的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
-  "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
+  "translated": 278,
+  "note": "戰士的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
+  "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-warrior#0239": {
    "src": "Activate abilities or take damage to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "",
+   "dst": "發動技能或受到傷害，將終極技能量表 {#}{#}充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -28,7 +28,7 @@
   },
   "ability-warrior#0235": {
    "src": "All nearby allies are granted +{~}{#}Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
-   "dst": "",
+   "dst": "每消耗一點神聖能量 ✧，附近所有友軍就獲得\n+{~1}{#}吸收 ❤。\n吸收 ❤ 會在 {~2} 秒內衰減。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -42,7 +42,7 @@
   },
   "ability-warrior#0233": {
    "src": "Casting Main Attack or Uppercut{#}on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "",
+   "dst": "對尖刺使用普通攻擊或 Uppercut{#}會將它引爆，\n造成傷害並給予 {~1} 吸收 ❤，腐敗期間同樣有效。\n額外生命會在 {~2} 秒內衰減。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -56,7 +56,7 @@
   },
   "ability-warrior#0234": {
    "src": "Casting War Scream while holding shift\nwith at least {~}{#}Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
-   "dst": "",
+   "dst": "持有至少 {~}{#}神聖能量 ✧ 時按住 shift 施放 War Scream，\n會將其全部消耗，吹響一記護體號角。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -70,7 +70,7 @@
   },
   "ability-warrior#0243": {
    "src": "Gain +{~} Damage per {~}{#}Harmony.",
-   "dst": "",
+   "dst": "每 {~2}{#}層和諧獲得 +{~1} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -84,7 +84,7 @@
   },
   "ability-warrior#0241": {
    "src": "Gain +{~} Raw Damage per {~}{#}Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "每 {~2}{#}層腐敗 {#} 獲得 +{~1} 固定傷害。(最多 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -98,7 +98,7 @@
   },
   "ability-warrior#0242": {
    "src": "Gain +{~} damage per {~}{#}Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "每 {~2}{#}層腐敗 {#} 獲得 +{~1} 傷害。(最多 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -112,7 +112,7 @@
   },
   "ability-warrior#0238": {
    "src": "Gaining {~}{#}Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
-   "dst": "",
+   "dst": "獲得 {~}{#}層腐敗 {#} 後，你的下一次\nUppercut 會給予傷害提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -126,7 +126,7 @@
   },
   "ability-warrior#0240": {
    "src": "Increase Bash's damage by {~}\nper {~} {#}{#}Area of Effect it has.",
-   "dst": "",
+   "dst": "Bash 每擁有 {~2} 點 {#}{#}作用範圍，\n傷害就提高 {~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -140,7 +140,7 @@
   },
   "ability-warrior#0236": {
    "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~}{#}Corrupted {#}.",
-   "dst": "",
+   "dst": "腐敗 {#} 期間你無法回復生命，\n而且每損失 {~1} 點生命就會\n獲得 +{~2}{#}層腐敗 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -154,7 +154,7 @@
   },
   "ability-warrior#0237": {
    "src": "While you have {~}{#}Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "",
+   "dst": "持有 {~1}{#}神聖能量 ✧ 時，\n你的普通攻擊獲得強化，\n並為你提供 {~2} 點神聖能量。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -168,7 +168,7 @@
   },
   "ability-warrior#0268": {
    "src": "{#}{#}Area of Effect: Circle-Shaped",
-   "dst": "",
+   "dst": "{#}{#}技能範圍: 圓形",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -182,7 +182,7 @@
   },
   "ability-warrior#0270": {
    "src": "{#}{#}Area of Effect: {~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}技能範圍: {~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -199,7 +199,7 @@
   },
   "ability-warrior#0246": {
    "src": "{#}{#}Area of Effect: {~}-{~} Blocks (Cone-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}作用範圍: {~1}-{~2} 格 (錐形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -214,7 +214,7 @@
   },
   "ability-warrior#0277": {
    "src": "{#}{#}Cooldown: {~}m",
-   "dst": "",
+   "dst": "{#}{#}冷卻時間: {~}m",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-warrior#0266": {
    "src": "{#}{#}Cooldown: {~}s (for Holy Power)",
-   "dst": "",
+   "dst": "{#}{#}冷卻時間: {~} 秒 (神聖之力)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -242,7 +242,7 @@
   },
   "ability-warrior#0271": {
    "src": "{#}{#}Cooldown: {~}s (for hits)",
-   "dst": "",
+   "dst": "{#}{#}冷卻時間: {~} 秒 (命中時)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -256,7 +256,7 @@
   },
   "ability-warrior#0272": {
    "src": "{#}{#}Damage Bonus: +{~} (Raw)",
-   "dst": "",
+   "dst": "{#}{#}傷害加成: +{~} (實數)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -270,7 +270,7 @@
   },
   "ability-warrior#0258": {
    "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Players",
-   "dst": "",
+   "dst": "{#}{#}效果: +{~} 傷害加成 (⚔) 給玩家",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -284,7 +284,7 @@
   },
   "ability-warrior#0263": {
    "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Self",
-   "dst": "",
+   "dst": "{#}{#}效果: {~} 自身傷害增加 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -299,7 +299,7 @@
   },
   "ability-warrior#0248": {
    "src": "{#}{#}Effect: +{~} ID Effectiveness (❈) to Allies",
-   "dst": "",
+   "dst": "{#}{#}效果: +{~} 詞條效果 (❈) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -314,7 +314,7 @@
   },
   "ability-warrior#0249": {
    "src": "{#}{#}Effect: +{~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#}{#}效果: +{~} 抗性加成 (❁) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -328,7 +328,7 @@
   },
   "ability-warrior#0264": {
    "src": "{#}{#}Effect: Invincibility (☗) to Allies",
-   "dst": "",
+   "dst": "{#}{#}效果: 無敵 (☗) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -342,7 +342,7 @@
   },
   "ability-warrior#0251": {
    "src": "{#}{#}Effect: {~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#}{#}效果: {~} 抗性加成 (❁) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -356,7 +356,7 @@
   },
   "ability-warrior#0259": {
    "src": "{#}{#}Effects: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#}{#}效果: +{~} 傷害加成 (⚔) 給友軍",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -370,7 +370,7 @@
   },
   "ability-warrior#0267": {
    "src": "{#}{#}Main Attack Damage Bonus: +{~}",
-   "dst": "",
+   "dst": "{#}{#}普攻傷害加成: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -384,7 +384,7 @@
   },
   "ability-warrior#0273": {
    "src": "{#}{#}Main Attack Range: +{~}",
-   "dst": "",
+   "dst": "{#}{#}普攻距離: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -398,7 +398,7 @@
   },
   "ability-warrior#0269": {
    "src": "{#}{#}Main Attack Range: +{~} Block",
-   "dst": "",
+   "dst": "{#}{#}普攻距離: +{~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -412,7 +412,7 @@
   },
   "ability-warrior#0275": {
    "src": "{#}{#}Range: +{~} Block",
-   "dst": "",
+   "dst": "{#}{#}範圍增加: {~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -427,7 +427,7 @@
   },
   "ability-warrior#0265": {
    "src": "{#}{#}Range: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}範圍: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -443,7 +443,7 @@
   },
   "ability-warrior#0274": {
    "src": "{#}{#}Range: {~}~{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}範圍: {~1}~{~2} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -457,7 +457,7 @@
   },
   "ability-warrior#0252": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per bash)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，每次重擊)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -472,7 +472,7 @@
   },
   "ability-warrior#0253": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, to Comet)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，對 Comet)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -486,7 +486,7 @@
   },
   "ability-warrior#0245": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, to Fireworks)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，對 Fireworks)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -500,7 +500,7 @@
   },
   "ability-warrior#0247": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, to Tempest)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，對 Tempest)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -514,7 +514,7 @@
   },
   "ability-warrior#0254": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS, per bash)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: -{~} (你的每秒傷害，每次重擊)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -529,7 +529,7 @@
   },
   "ability-warrior#0276": {
    "src": "{#}{#}Total Damage: {~}",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -543,7 +543,7 @@
   },
   "ability-warrior#0256": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, airborne)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，空中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -557,7 +557,7 @@
   },
   "ability-warrior#0257": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, detonate)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，引爆)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -571,7 +571,7 @@
   },
   "ability-warrior#0260": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, landing)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，落地)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -585,7 +585,7 @@
   },
   "ability-warrior#0255": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per Swipe)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，每次揮擊)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -599,7 +599,7 @@
   },
   "ability-warrior#0244": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per broken mantle)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，每片破碎的護罩)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -613,7 +613,7 @@
   },
   "ability-warrior#0250": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per ripple)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，每次漣漪)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -627,7 +627,7 @@
   },
   "ability-warrior#0262": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, spell)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，法術)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -641,7 +641,7 @@
   },
   "ability-warrior#0261": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, summon)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，召喚)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [

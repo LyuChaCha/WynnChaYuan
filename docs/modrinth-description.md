@@ -145,7 +145,7 @@ already tells the project what players actually run into.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | █████████░ 89.2% | 36,946 / 41,438 |
+| `zh_tw` 繁體中文 | █████████░ 89.6% | 37,148 / 41,438 |
 | `zh_cn` 简体中文 | █░░░░░░░░░ 11.5% | 3,297 / 28,777 |
 | `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
 | `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
@@ -181,10 +181,10 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Secret discovery stories | 68 | 68 | ~8,228 | only 1 of 121 discoveries collected; scaled up from those (tiny sample - an order of magnitude, not a figure) |
 | Gear lore | 986 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
-| Ability trees | 1,712 | 1,914 | 1,914 | official CDN, downloaded wholesale - what we have is all there is |
+| Ability trees | 1,914 | 1,914 | 1,914 | official CDN, downloaded wholesale - what we have is all there is |
 | NPC nameplates, menus, system messages | 10,199 | 14,480 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 49,598 lines estimated**, **41,438 collected** (84%), **36,946 translated** (74% of the estimate, 89.2% of what we have).
+> All together: **at least 49,598 lines estimated**, **41,438 collected** (84%), **37,148 translated** (75% of the estimate, 89.6% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 
@@ -207,10 +207,10 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | 祕密發現的故事 | 68 | 68 | ~8,228 | 121 個發現只收到 1 個，照那 1 個平均 68 句往外推（樣本很少，只是個量級） |
 | 裝備的傳說敘述 | 986 | 990 | 990 | 官方 CDN 整批下載，收到的就是全部 |
 | 材料、素材、書卷、Aspect | 1,603 | 1,603 | 1,603 | 官方 CDN 整批下載，收到的就是全部 |
-| 技能樹 | 1,712 | 1,914 | 1,914 | 官方 CDN 整批下載，收到的就是全部 |
+| 技能樹 | 1,914 | 1,914 | 1,914 | 官方 CDN 整批下載，收到的就是全部 |
 | NPC 名牌、介面、系統訊息 | 10,199 | 14,480 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
 
-> 全部加起來：**預估至少 49,598 句**，已收集 **41,438 句**（84%），已翻譯 **36,946 句**（佔預估的 74%、佔已收集的 89.2%）。
+> 全部加起來：**預估至少 49,598 句**，已收集 **41,438 句**（84%），已翻譯 **37,148 句**（佔預估的 75%、佔已收集的 89.6%）。
 
 「至少」是因為名牌與介面那一類沒有清單，它在總數裡只算了**已經收到的**——真正的數字只會更大。
 <!-- 涵蓋率:結束 -->
@@ -387,7 +387,7 @@ download.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | █████████░ 89.2% | 36,946 / 41,438 |
+| `zh_tw` 繁體中文 | █████████░ 89.6% | 37,148 / 41,438 |
 | `zh_cn` 简体中文 | █░░░░░░░░░ 11.5% | 3,297 / 28,777 |
 | `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,729 |
 | `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,729 |

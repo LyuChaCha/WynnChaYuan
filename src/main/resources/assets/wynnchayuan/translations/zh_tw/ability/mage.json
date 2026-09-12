@@ -4,15 +4,15 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 320,
-  "translated": 236,
-  "note": "法師的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
-  "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
+  "translated": 320,
+  "note": "法師的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
+  "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
   "_note_from_98": "我快被 AI 改的文本氣瘋了。"
  },
  "entries": {
   "ability-mage#0242": {
    "src": "Activate abilities or heal to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "",
+   "dst": "發動技能或進行治療，將終極技能量表 {#}{#}充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -26,7 +26,7 @@
   },
   "ability-mage#0246": {
    "src": "Activate abilities to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "",
+   "dst": "發動技能，將終極技能量表 {#}{#}充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -43,7 +43,7 @@
   },
   "ability-mage#0236": {
    "src": "Casting Meteor summons an additional\nmeteor near the target location for\nevery {~}{#}Distortion {#} you have.\n(Max {~} Meteors, only one Meteor\nShower can be active at the same time.)",
-   "dst": "",
+   "dst": "每擁有 {~1} 層{#}扭曲 {#}，施放 Meteor 時就會在目標位置附近\n多召來一顆隕石。\n(最多 {~2} 顆；同一時間只能有一個\nMeteor Shower 生效。)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -57,7 +57,7 @@
   },
   "ability-mage#0241": {
    "src": "For every +{~}{#}Distortion {#}, Vacuokinesis\ndeals +{~}{#}{#}{#}Damage.",
-   "dst": "",
+   "dst": "每增加 {~1} 層{#}扭曲 {#}，Vacuokinesis\n就多造成 {~2}{#}{#}{#}傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -71,7 +71,7 @@
   },
   "ability-mage#0244": {
    "src": "For every +{~}{#}Distortion {#}, the\nmana is refunded -{~}s faster.",
-   "dst": "",
+   "dst": "每增加 {~1} 層{#}扭曲 {#}，魔力返還\n提前 {~2} 秒。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -85,7 +85,7 @@
   },
   "ability-mage#0238": {
    "src": "For every +{~}{#}Distortion {#}, the tornado gains\n+{~}{#}{#}{#}Area of Effect{#}and +{~}{#}{#}{#}Damage.",
-   "dst": "",
+   "dst": "每增加 {~1} 層{#}扭曲 {#}，龍捲的\n{#}{#}{#}作用範圍{#}增加 {~2}，{#}{#}{#}傷害增加 {~3}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -99,7 +99,7 @@
   },
   "ability-mage#0245": {
    "src": "Lightweaver{#}applies +{~} Crystallized {#}\nto enemies it hits.",
-   "dst": "",
+   "dst": "Lightweaver{#}會對命中的敵人附加 {~} 層結晶化 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -113,7 +113,7 @@
   },
   "ability-mage#0237": {
    "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~}{#}{#}{#}Damage and\nlosing -{~}{#}{#}{#}Area of Effect.",
-   "dst": "",
+   "dst": "Meteor 與 Astral Fragmentation 的體積變小，{#}{#}{#}傷害\n降低 {~1}，{#}{#}{#}作用範圍縮小 {~2}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -127,7 +127,7 @@
   },
   "ability-mage#0240": {
    "src": "Meteor, Main Attack and Powder Specials\nconsume Unstable {#}{#}to deal +{~} damage.",
-   "dst": "",
+   "dst": "Meteor、普通攻擊與粉末特效會消耗\n失衡 {#}{#}，多造成 {~} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -141,7 +141,7 @@
   },
   "ability-mage#0243": {
    "src": "You gain +{~}{#}Distortion {#} for every enemy weakened.\n(Up to +{~})",
-   "dst": "",
+   "dst": "每削弱一名敵人，你就獲得 {~1} 層{#}扭曲 {#}。\n(最多 {~2} 層)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -155,7 +155,7 @@
   },
   "ability-mage#0239": {
    "src": "Your Dimensional Tear{#}overloads, growing\nin size and damage while pulling all enemies in.",
-   "dst": "",
+   "dst": "你的 Dimensional Tear{#}過載，體積與傷害同時增長，\n並把所有敵人拉進去。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -169,7 +169,7 @@
   },
   "ability-mage#0315": {
    "src": "{#}({#}{#}Air: +{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}風屬性傷害: +{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -186,7 +186,7 @@
   },
   "ability-mage#0319": {
    "src": "{#}({#}{#}Air: {~})",
-   "dst": "",
+   "dst": "{#}({#}{#}風屬性傷害: {~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -203,7 +203,7 @@
   },
   "ability-mage#0301": {
    "src": "{#}({#}{#}Damage: -{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}傷害: -{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -220,7 +220,7 @@
   },
   "ability-mage#0305": {
    "src": "{#}({#}{#}Damage: {~})",
-   "dst": "",
+   "dst": "{#}({#}{#}傷害: {~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -237,7 +237,7 @@
   },
   "ability-mage#0306": {
    "src": "{#}({#}{#}Earth: +{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}地屬性傷害: +{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -254,7 +254,7 @@
   },
   "ability-mage#0310": {
    "src": "{#}({#}{#}Earth: {~})",
-   "dst": "",
+   "dst": "{#}({#}{#}地屬性傷害: {~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -271,7 +271,7 @@
   },
   "ability-mage#0311": {
    "src": "{#}({#}{#}Fire: +{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}火屬性傷害: +{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -288,7 +288,7 @@
   },
   "ability-mage#0295": {
    "src": "{#}({#}{#}Thunder: +{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}雷屬性傷害: +{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -305,7 +305,7 @@
   },
   "ability-mage#0296": {
    "src": "{#}({#}{#}Thunder: -{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}雷屬性傷害: -{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -321,7 +321,7 @@
   },
   "ability-mage#0302": {
    "src": "{#}({#}{#}Thunder: {~})",
-   "dst": "",
+   "dst": "{#}({#}{#}雷屬性傷害: {~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -338,7 +338,7 @@
   },
   "ability-mage#0307": {
    "src": "{#}({#}{#}Water: +{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}水屬性傷害: +{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -355,7 +355,7 @@
   },
   "ability-mage#0308": {
    "src": "{#}({#}{#}Water: -{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}水屬性傷害: -{~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -369,7 +369,7 @@
   },
   "ability-mage#0312": {
    "src": "{#}({#}{#}Water: {~})",
-   "dst": "",
+   "dst": "{#}({#}{#}水屬性傷害: {~})",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -386,7 +386,7 @@
   },
   "ability-mage#0309": {
    "src": "{#}{#}Air Damage: +{~}",
-   "dst": "",
+   "dst": "{#}{#}風屬性傷害百分比增加: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -403,7 +403,7 @@
   },
   "ability-mage#0293": {
    "src": "{#}{#}Air Damage: +{~}-{~}",
-   "dst": "",
+   "dst": "{#}{#}風屬性傷害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -420,7 +420,7 @@
   },
   "ability-mage#0288": {
    "src": "{#}{#}Area of Effect: +{~}",
-   "dst": "",
+   "dst": "{#}{#}作用範圍增加: {~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -434,7 +434,7 @@
   },
   "ability-mage#0259": {
    "src": "{#}{#}Area of Effect: +{~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}作用範圍: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -451,7 +451,7 @@
   },
   "ability-mage#0261": {
    "src": "{#}{#}Area of Effect: {~} Block (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}作用範圍: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -465,7 +465,7 @@
   },
   "ability-mage#0260": {
    "src": "{#}{#}Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}作用範圍: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -482,7 +482,7 @@
   },
   "ability-mage#0316": {
    "src": "{#}{#}Cooldown: {~}s",
-   "dst": "",
+   "dst": "{#}{#}冷卻時間: {~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -499,7 +499,7 @@
   },
   "ability-mage#0280": {
    "src": "{#}{#}Cooldown: {~}s (Riftbound)",
-   "dst": "",
+   "dst": "{#}{#}裂隙繫身冷卻時間: {~} 秒",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -513,7 +513,7 @@
   },
   "ability-mage#0284": {
    "src": "{#}{#}Delay: {~}s (per pulse)",
-   "dst": "",
+   "dst": "{#}{#}延遲: {~} 秒 (每次脈衝)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -527,7 +527,7 @@
   },
   "ability-mage#0285": {
    "src": "{#}{#}Drift Range: {~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}漂移範圍: {~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -541,7 +541,7 @@
   },
   "ability-mage#0317": {
    "src": "{#}{#}Duration: {~}s",
-   "dst": "",
+   "dst": "{#}{#}持續時間: {~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -558,7 +558,7 @@
   },
   "ability-mage#0297": {
    "src": "{#}{#}Earth Damage: +{~}",
-   "dst": "",
+   "dst": "{#}{#}地屬性傷害百分比增加: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -575,7 +575,7 @@
   },
   "ability-mage#0290": {
    "src": "{#}{#}Earth Damage: +{~}-{~}",
-   "dst": "",
+   "dst": "{#}{#}地屬性傷害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -592,7 +592,7 @@
   },
   "ability-mage#0267": {
    "src": "{#}{#}Effect: +{~} Slowness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}效果: 對敵人 +{~} 緩速({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -606,7 +606,7 @@
   },
   "ability-mage#0248": {
    "src": "{#}{#}Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
-   "dst": "",
+   "dst": "{#}{#}效果: 友軍移動速度 +{~1} (每 {~2} 秒，最多 +{~3})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -620,7 +620,7 @@
   },
   "ability-mage#0256": {
    "src": "{#}{#}Effect: -{~}{#}Damage Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}效果: 敵人傷害加成 -{~}{#} ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -634,7 +634,7 @@
   },
   "ability-mage#0268": {
    "src": "{#}{#}Effect: {~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#}{#}效果: {~} 友軍傷害加成 (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -648,7 +648,7 @@
   },
   "ability-mage#0274": {
    "src": "{#}{#}Effect: {~} Resistance Bonus (❁)",
-   "dst": "",
+   "dst": "{#}{#}效果: {~} 抗性增加 (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -663,7 +663,7 @@
   },
   "ability-mage#0270": {
    "src": "{#}{#}Effect: {~} Slowness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}效果: 對敵人 {~} 緩速({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -680,7 +680,7 @@
   },
   "ability-mage#0281": {
    "src": "{#}{#}Effects: +{~} Walk Speed",
-   "dst": "",
+   "dst": "{#}{#}效果: {~} 移動速度增加",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -694,7 +694,7 @@
   },
   "ability-mage#0247": {
    "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
-   "dst": "",
+   "dst": "{#}{#}效果: 每次命中給予敵人 {~1} 緩速 ({#})，最多 {~2} 層",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -709,7 +709,7 @@
   },
   "ability-mage#0303": {
    "src": "{#}{#}Fire Damage: +{~}",
-   "dst": "",
+   "dst": "{#}{#}火屬性傷害百分比增加: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -726,7 +726,7 @@
   },
   "ability-mage#0292": {
    "src": "{#}{#}Fire Damage: +{~}-{~}",
-   "dst": "",
+   "dst": "{#}{#}火屬性傷害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -743,7 +743,7 @@
   },
   "ability-mage#0250": {
    "src": "{#}{#}Health Regen: {~} per second (of your max health)",
-   "dst": "",
+   "dst": "{#}{#}生命回復: 每秒 {~} (你的最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -757,7 +757,7 @@
   },
   "ability-mage#0282": {
    "src": "{#}{#}Main Attack Damage: +{~}",
-   "dst": "",
+   "dst": "{#}{#}普攻傷害值增加: {~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -774,7 +774,7 @@
   },
   "ability-mage#0252": {
    "src": "{#}{#}Main Attack Damage: +{~}{#}(per {~} Walk Speed)",
-   "dst": "",
+   "dst": "{#}{#}普攻傷害: +{~1}{#}(每 {~2} 移動速度)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -788,7 +788,7 @@
   },
   "ability-mage#0279": {
    "src": "{#}{#}Main Attack Range: +{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}普攻距離增加: {~} 格",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -804,7 +804,7 @@
   },
   "ability-mage#0313": {
    "src": "{#}{#}Mana Cost: +{~}",
-   "dst": "",
+   "dst": "{#}{#}魔力消耗增加: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -820,7 +820,7 @@
   },
   "ability-mage#0314": {
    "src": "{#}{#}Mana Cost: -{~}",
-   "dst": "",
+   "dst": "{#}{#}魔力消耗減少: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -837,7 +837,7 @@
   },
   "ability-mage#0318": {
    "src": "{#}{#}Mana Cost: {~}",
-   "dst": "",
+   "dst": "{#}{#}魔力消耗: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -854,7 +854,7 @@
   },
   "ability-mage#0254": {
    "src": "{#}{#}Mana Regen: {~} per second (of your max mana)",
-   "dst": "",
+   "dst": "{#}{#}魔力回復: 每秒 {~} (你的最大魔力)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -868,7 +868,7 @@
   },
   "ability-mage#0251": {
    "src": "{#}{#}Meteor Area of Effect: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}Meteor作用範圍: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -882,7 +882,7 @@
   },
   "ability-mage#0262": {
    "src": "{#}{#}Pulse Self Heal: {~} (of your max health)",
-   "dst": "",
+   "dst": "{#}{#}脈衝自療: {~} (你的最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -896,7 +896,7 @@
   },
   "ability-mage#0298": {
    "src": "{#}{#}Range: +{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}範圍增加: {~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -913,7 +913,7 @@
   },
   "ability-mage#0304": {
    "src": "{#}{#}Range: {~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}範圍: {~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -930,7 +930,7 @@
   },
   "ability-mage#0294": {
    "src": "{#}{#}Slow Duration: {~}s",
-   "dst": "",
+   "dst": "{#}{#}緩速持續時間: {~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -944,7 +944,7 @@
   },
   "ability-mage#0263": {
    "src": "{#}{#}Target Radius: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}目標半徑: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -958,7 +958,7 @@
   },
   "ability-mage#0289": {
    "src": "{#}{#}Thunder Damage: +{~}",
-   "dst": "",
+   "dst": "{#}{#}雷屬性傷害百分比增加: {~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -975,7 +975,7 @@
   },
   "ability-mage#0283": {
    "src": "{#}{#}Thunder Damage: +{~}-{~}",
-   "dst": "",
+   "dst": "{#}{#}雷屬性傷害: +{~1}-{~2}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -992,7 +992,7 @@
   },
   "ability-mage#0286": {
    "src": "{#}{#}Tornado Duration: +{~}s",
-   "dst": "",
+   "dst": "{#}{#}龍捲風持續時間: +{~} 秒",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1006,7 +1006,7 @@
   },
   "ability-mage#0287": {
    "src": "{#}{#}Tornado Duration: {~}s",
-   "dst": "",
+   "dst": "{#}{#}龍捲風持續時間: {~} 秒",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1020,7 +1020,7 @@
   },
   "ability-mage#0275": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS)",
-   "dst": "",
+   "dst": "{#}{#}總傷害增加: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1037,7 +1037,7 @@
   },
   "ability-mage#0249": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Frozen Tornado)",
-   "dst": "",
+   "dst": "{#}{#}冰凍龍捲風總傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1053,7 +1053,7 @@
   },
   "ability-mage#0253": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Ice Snake)",
-   "dst": "",
+   "dst": "{#}{#}冰蛇總傷害增加: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1070,7 +1070,7 @@
   },
   "ability-mage#0257": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Meteor)",
-   "dst": "",
+   "dst": "{#}{#}隕石總傷害增加: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1084,7 +1084,7 @@
   },
   "ability-mage#0255": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Ophanim)",
-   "dst": "",
+   "dst": "{#}{#}奧法尼姆總傷害增加: {~} (你的每秒傷害，Ophanim)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1098,7 +1098,7 @@
   },
   "ability-mage#0276": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS)",
-   "dst": "",
+   "dst": "{#}{#}總傷害降低: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1115,7 +1115,7 @@
   },
   "ability-mage#0269": {
    "src": "{#}{#}Total Damage: {~} (Main Attack Damage)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (普攻傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1132,7 +1132,7 @@
   },
   "ability-mage#0277": {
    "src": "{#}{#}Total Damage: {~} (of your DPS)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1149,7 +1149,7 @@
   },
   "ability-mage#0264": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, Collapse)",
-   "dst": "",
+   "dst": "{#}{#}塌縮傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1163,7 +1163,7 @@
   },
   "ability-mage#0258": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, Deadly Beam)",
-   "dst": "",
+   "dst": "{#}{#}致命光束傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1177,7 +1177,7 @@
   },
   "ability-mage#0271": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, Fire)",
-   "dst": "",
+   "dst": "{#}{#}炎蛟傷害: {~} (你的每秒傷害，)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1191,7 +1191,7 @@
   },
   "ability-mage#0266": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, Thunder)",
-   "dst": "",
+   "dst": "{#}{#}霆蛟傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1205,7 +1205,7 @@
   },
   "ability-mage#0265": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per Wisp)",
-   "dst": "",
+   "dst": "{#}{#}靈體傷害: {~} (你的每秒傷害)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1219,7 +1219,7 @@
   },
   "ability-mage#0278": {
    "src": "{#}{#}Total Heal: {~} (of max health)",
-   "dst": "",
+   "dst": "{#}{#}總治療量: {~} (最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1233,7 +1233,7 @@
   },
   "ability-mage#0272": {
    "src": "{#}{#}Total Heal: {~} (of your max health)",
-   "dst": "",
+   "dst": "{#}{#}總治療量: {~} (你的最大生命)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1249,7 +1249,7 @@
   },
   "ability-mage#0299": {
    "src": "{#}{#}Vision: {~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}視野: {~} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1263,7 +1263,7 @@
   },
   "ability-mage#0273": {
    "src": "{#}{#}Vision: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}視野: {~} 格 (圓形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1280,7 +1280,7 @@
   },
   "ability-mage#0300": {
    "src": "{#}{#}Water Damage: +{~}",
-   "dst": "",
+   "dst": "{#}{#}水屬性傷害百分比增加: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1297,7 +1297,7 @@
   },
   "ability-mage#0291": {
    "src": "{#}{#}Water Damage: +{~}-{~}",
-   "dst": "",
+   "dst": "{#}{#}水屬性傷害: +{~1}-{~2}",
    "role": "stat",
    "kind": "term",
    "ctx": [
