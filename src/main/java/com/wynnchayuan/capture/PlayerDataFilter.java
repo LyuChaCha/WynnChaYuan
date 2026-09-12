@@ -77,6 +77,17 @@ public final class PlayerDataFilter {
             " into your island",
             // 無名異常體的死亡廣播。跟其他討伐戰死法同一類，動詞不同而已。
             " had their existence effaced",
+            // 各地區還有自己的死法，一種一句模板，主詞永遠是別人。
+            // `was reduced to ashes` 要連 was 一起認——「has been almost
+            // entirely reduced to ashes」是地景敘述，那句該收。
+            " became another casualty of War",
+            " was entirely corrupted",
+            " was reduced to ashes",
+            " was instantly evaporated",
+            " ceased to be anything human",
+            " was buried beneath earth",
+            " made a fatal mistake",
+            "Cleansing fire melted ",
             " has placed a mob totem",
             " has placed a gathering totem",
             " mob totem. Get your own",
