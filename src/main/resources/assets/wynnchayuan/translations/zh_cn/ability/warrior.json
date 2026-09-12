@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 278,
-  "translated": 265,
+  "translated": 278,
   "note": "战士的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-warrior#0239": {
    "src": "Activate abilities or take damage to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "",
+   "dst": "发动技能或受到伤害，将大招槽 {#}{#}充能至 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -28,7 +28,7 @@
   },
   "ability-warrior#0235": {
    "src": "All nearby allies are granted +{~}{#}Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
-   "dst": "",
+   "dst": "每消耗一点神圣能量 ✧，附近所有友军就获得\n+{~1}{#}护盾值 ❤。\n护盾值 ❤ 会在 {~2} 秒内衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -42,7 +42,7 @@
   },
   "ability-warrior#0233": {
    "src": "Casting Main Attack or Uppercut{#}on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "",
+   "dst": "对尖刺使用普通攻击或 Uppercut{#}会将其引爆，\n造成伤害并给予 {~1} 护盾值 ❤，腐化期间同样有效。\n额外生命会在 {~2} 秒内衰减。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -56,7 +56,7 @@
   },
   "ability-warrior#0234": {
    "src": "Casting War Scream while holding shift\nwith at least {~}{#}Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
-   "dst": "",
+   "dst": "持有至少 {~}{#}神圣能量 ✧ 时按住 shift 施放 War Scream，\n会将其全部消耗，吹响一记护体号角。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -70,7 +70,7 @@
   },
   "ability-warrior#0243": {
    "src": "Gain +{~} Damage per {~}{#}Harmony.",
-   "dst": "",
+   "dst": "每 {~2}{#}层和谐获得 +{~1} 伤害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -84,7 +84,7 @@
   },
   "ability-warrior#0241": {
    "src": "Gain +{~} Raw Damage per {~}{#}Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "每 {~2}{#}层腐化 {#} 获得 +{~1} 固定伤害。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -98,7 +98,7 @@
   },
   "ability-warrior#0242": {
    "src": "Gain +{~} damage per {~}{#}Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "每 {~2}{#}层腐化 {#} 获得 +{~1} 伤害。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -112,7 +112,7 @@
   },
   "ability-warrior#0238": {
    "src": "Gaining {~}{#}Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
-   "dst": "",
+   "dst": "获得 {~}{#}层腐化 {#} 后，你的下一次\nUppercut 会给予伤害提升。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -126,7 +126,7 @@
   },
   "ability-warrior#0240": {
    "src": "Increase Bash's damage by {~}\nper {~} {#}{#}Area of Effect it has.",
-   "dst": "",
+   "dst": "Bash 每拥有 {~2} 点 {#}{#}作用范围，\n伤害就提高 {~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -140,7 +140,7 @@
   },
   "ability-warrior#0236": {
    "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~}{#}Corrupted {#}.",
-   "dst": "",
+   "dst": "腐化 {#} 期间你无法恢复生命，\n而且每损失 {~1} 点生命就会\n获得 +{~2}{#}层腐化 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -154,7 +154,7 @@
   },
   "ability-warrior#0237": {
    "src": "While you have {~}{#}Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "",
+   "dst": "持有 {~1}{#}神圣能量 ✧ 时，\n你的普通攻击获得强化，\n并为你提供 {~2} 点神圣能量。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -199,7 +199,7 @@
   },
   "ability-warrior#0246": {
    "src": "{#}{#}Area of Effect: {~}-{~} Blocks (Cone-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}作用范围: {~1}-{~2} 格 (锥形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -443,7 +443,7 @@
   },
   "ability-warrior#0274": {
    "src": "{#}{#}Range: {~}~{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}范围: {~1}~{~2} 格",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -682,7 +682,7 @@
   },
   "ability-warrior#0002": {
    "src": "Cheaper Bash",
-   "dst": "节约·重击",
+   "dst": "重击减耗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -942,7 +942,7 @@
   },
   "ability-warrior#0021": {
    "src": "Cheaper Charge",
-   "dst": "节约·冲锋",
+   "dst": "冲锋减耗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1418,7 +1418,7 @@
   },
   "ability-warrior#0056": {
    "src": "Cheaper Uppercut",
-   "dst": "节约·上勾拳",
+   "dst": "上勾拳减耗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1921,7 +1921,7 @@
   },
   "ability-warrior#0093": {
    "src": "Cheaper Bash II",
-   "dst": "节约·重击 II",
+   "dst": "重击减耗 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2353,7 +2353,7 @@
   },
   "ability-warrior#0125": {
    "src": "Cheaper War Scream",
-   "dst": "节约·战吼",
+   "dst": "战吼减耗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2625,7 +2625,7 @@
   },
   "ability-warrior#0145": {
    "src": "Cheaper War Scream II",
-   "dst": "节约·战吼 II",
+   "dst": "战吼减耗 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3050,7 +3050,7 @@
   },
   "ability-warrior#0176": {
    "src": "Cheaper Uppercut II",
-   "dst": "节约·上勾拳 II",
+   "dst": "上勾拳减耗 II",
    "role": "name",
    "kind": "term",
    "ctx": [
