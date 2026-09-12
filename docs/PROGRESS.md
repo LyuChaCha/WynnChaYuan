@@ -7,12 +7,12 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 92.2%（38,095 / 41,314）
+## `zh_tw` 繁體中文 — 92.2%（38,111 / 41,314）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 288 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | █████░░░░░ 47% | 2,681 / 5,671 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | █████░░░░░ 48% | 2,697 / 5,671 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 313 / 313 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
 | `npc.json` | ██████████ 97% | 4,228 / 4,380 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,050 / 1,050 | 選單與介面<br>Menus and interface text |
@@ -44,7 +44,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 14.4%（4,136 / 28,776）
+## `zh_cn` 简体中文 — 14.6%（4,207 / 28,776）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -68,7 +68,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
 | `aspect.json` | ██████████ 100% | 128 / 128 | Raid 的 Aspect<br>Raid aspects |
-| `aspect-desc.json` | ░░░░░░░░░░ 0% | 0 / 209 | Aspect 的敘述<br>Aspect descriptions |
+| `aspect-desc.json` | ███░░░░░░░ 34% | 71 / 209 | Aspect 的敘述<br>Aspect descriptions |
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 12 / 12 | 公會選單<br>Guild menus |
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |

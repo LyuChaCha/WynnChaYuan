@@ -4,28 +4,28 @@
   "itemNames": true,
   "lang": "zh_tw",
   "count": 209,
-  "translated": 0,
+  "translated": 71,
   "note": "Aspect 各阶的能力说明，取自 Wynntils CDN。句式重复度很高，所以是按规则转的——同一个句式永远得到同样的中文。技能名保持原样，交给技能名词表去换。dst 空着表示还没有对应的句式规则，画面上会显示灰色原文。 名称不受「翻译物品名称」开关影响——那个开关是为了让装备名保持英文，跟这里的道具无关。",
   "gearNames": false
  },
  "entries": {
   "aspect-desc#0000": {
    "src": "Your Ultimate charges {~} faster.",
-   "dst": "",
+   "dst": "你的大招蓄能速度加快 {~}。",
    "role": "desc",
    "aspect": "Archer's Embodiment of Perceptive Finesse",
    "class": "archer"
   },
   "aspect-desc#0001": {
    "src": "Ascension lasts +{~} longer.",
-   "dst": "",
+   "dst": "Ascension 的持续时间延长 +{~}。",
    "role": "desc",
    "aspect": "Archer's Embodiment of Perceptive Finesse",
    "class": "archer"
   },
   "aspect-desc#0002": {
    "src": "Extinction Event spawns +{~} bombs.",
-   "dst": "",
+   "dst": "Extinction Event 多生成 +{~} 颗炸弹。",
    "role": "desc",
    "aspect": "Archer's Embodiment of Perceptive Finesse",
    "class": "archer"
@@ -39,49 +39,49 @@
   },
   "aspect-desc#0004": {
    "src": "Arrow Shield gains +{~} ❁ Resistance.",
-   "dst": "",
+   "dst": "Arrow Shield 的 ❁ 抗性增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Battlement Fortification",
    "class": "archer"
   },
   "aspect-desc#0005": {
    "src": "Shrapnel Bomb gains +{~} shrapnel.",
-   "dst": "",
+   "dst": "Shrapnel Bomb 的破片增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Bullet Hell",
    "class": "archer"
   },
   "aspect-desc#0006": {
    "src": "Bryophyte Roots gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Bryophyte Roots 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Clinging Lichen",
    "class": "archer"
   },
   "aspect-desc#0007": {
    "src": "Fierce Stomp gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Fierce Stomp 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Dynamic Entry",
    "class": "archer"
   },
   "aspect-desc#0008": {
    "src": "Coursing Restraints gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Coursing Restraints 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Extreme Current",
    "class": "archer"
   },
   "aspect-desc#0009": {
    "src": "Arrow Bomb gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Arrow Bomb 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Extreme Firepower",
    "class": "archer"
   },
   "aspect-desc#0010": {
    "src": "Grape Bomb deals additional damage.",
-   "dst": "",
+   "dst": "Grape Bomb 造成额外伤害。",
    "role": "desc",
    "aspect": "Aspect of Fragmentation Rounds",
    "class": "archer"
@@ -102,7 +102,7 @@
   },
   "aspect-desc#0013": {
    "src": "Phantom Ray gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Phantom Ray 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Further Horizons",
    "class": "archer"
@@ -123,14 +123,14 @@
   },
   "aspect-desc#0016": {
    "src": "Increase Grappling Hook's range by +{~}.",
-   "dst": "",
+   "dst": "Grappling Hook 的射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Barley-Woven",
    "class": "archer"
   },
   "aspect-desc#0017": {
    "src": "Increase your maximum Flint Arrows by +{~}.",
-   "dst": "",
+   "dst": "Flint Arrows 的上限增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Battle-Fletcher",
    "class": "archer"
@@ -179,42 +179,42 @@
   },
   "aspect-desc#0024": {
    "src": "Arrow Storm gains +{~} arrow per stream.",
-   "dst": "",
+   "dst": "Arrow Storm 每道箭流多 +{~} 支箭。",
    "role": "desc",
    "aspect": "Aspect of the Inexhaustible Quiver",
    "class": "archer"
   },
   "aspect-desc#0025": {
    "src": "Arrow Storm gains +{~} arrows per stream.",
-   "dst": "",
+   "dst": "Arrow Storm 每道箭流多 +{~} 支箭。",
    "role": "desc",
    "aspect": "Aspect of the Inexhaustible Quiver",
    "class": "archer"
   },
   "aspect-desc#0026": {
    "src": "Phasing Beam can pierce through +{~} enemy.",
-   "dst": "",
+   "dst": "Phasing Beam 可以额外贯穿 +{~} 个敌人。",
    "role": "desc",
    "aspect": "Aspect of the Iron String",
    "class": "archer"
   },
   "aspect-desc#0027": {
    "src": "Phasing Beam can pierce through +{~} enemies.",
-   "dst": "",
+   "dst": "Phasing Beam 可以额外贯穿 +{~} 个敌人。",
    "role": "desc",
    "aspect": "Aspect of the Iron String",
    "class": "archer"
   },
   "aspect-desc#0028": {
    "src": "Snow Storm gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Snow Storm 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the North Wind",
    "class": "archer"
   },
   "aspect-desc#0029": {
    "src": "Phantom Ray gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Phantom Ray 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Aspect of the Poltergeist",
    "class": "archer"
@@ -256,7 +256,7 @@
   },
   "aspect-desc#0035": {
    "src": "Focus' cooldown is reduced by -{~}s.",
-   "dst": "",
+   "dst": "Focus' cooldown 缩短 -{~} 秒。",
    "role": "desc",
    "aspect": "Sharpshooter's Embodiment of Laser Precision",
    "class": "archer"
@@ -270,7 +270,7 @@
   },
   "aspect-desc#0037": {
    "src": "Chilling Snare gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Chilling Snare 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Trapper's Embodiment of Persistence Predation",
    "class": "archer"
@@ -319,21 +319,21 @@
   },
   "aspect-desc#0044": {
    "src": "Bamboozle gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Bamboozle 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Flamboyance",
    "class": "assassin"
   },
   "aspect-desc#0045": {
    "src": "Multihit gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Multihit 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Redoublement",
    "class": "assassin"
   },
   "aspect-desc#0046": {
    "src": "Backstab gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Backstab 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Redoublement",
    "class": "assassin"
@@ -347,14 +347,14 @@
   },
   "aspect-desc#0048": {
    "src": "Ricochets gains +{~} bounces.",
-   "dst": "",
+   "dst": "Ricochets 的弹跳次数增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Seeking Stars",
    "class": "assassin"
   },
   "aspect-desc#0049": {
    "src": "Dissolution gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Dissolution 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Shadow Armor",
    "class": "assassin"
@@ -410,7 +410,7 @@
   },
   "aspect-desc#0057": {
    "src": "Aerial Ace gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Aerial Ace 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Aspect of the Agile Blade",
    "class": "assassin"
@@ -431,7 +431,7 @@
   },
   "aspect-desc#0060": {
    "src": "Your Main Attack gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Your Main Attack 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Chain Knife",
    "class": "assassin"
@@ -459,7 +459,7 @@
   },
   "aspect-desc#0064": {
    "src": "Smoke Bomb gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Smoke Bomb 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Fog Machine",
    "class": "assassin"
@@ -494,7 +494,7 @@
   },
   "aspect-desc#0069": {
    "src": "Pierce the Veil lasts +{~}s longer.",
-   "dst": "",
+   "dst": "Pierce the Veil 的持续时间延长 +{~} 秒。",
    "role": "desc",
    "aspect": "Assassin's Embodiment of Otherworldly Detachment",
    "class": "assassin"
@@ -508,21 +508,21 @@
   },
   "aspect-desc#0071": {
    "src": "Serpent's Garden lasts +{~}s longer.",
-   "dst": "",
+   "dst": "Serpent's Garden 的持续时间延长 +{~} 秒。",
    "role": "desc",
    "aspect": "Assassin's Embodiment of Otherworldly Detachment",
    "class": "assassin"
   },
   "aspect-desc#0072": {
    "src": "Vanish's cooldown is reduced by -{~}s.",
-   "dst": "",
+   "dst": "Vanish's cooldown 缩短 -{~} 秒。",
    "role": "desc",
    "aspect": "Shadestepper's Embodiment of Unseen Execution",
    "class": "assassin"
   },
   "aspect-desc#0073": {
    "src": "Satsujin's cooldown is reduced by -{~}s.",
-   "dst": "",
+   "dst": "Satsujin's cooldown 缩短 -{~} 秒。",
    "role": "desc",
    "aspect": "Shadestepper's Embodiment of Unseen Execution",
    "class": "assassin"
@@ -564,7 +564,7 @@
   },
   "aspect-desc#0079": {
    "src": "Increase your maximum Mana Bank ✺ by +{~}.",
-   "dst": "",
+   "dst": "Mana Bank ✺ 的上限增加 +{~}。",
    "role": "desc",
    "aspect": "Arcanist's Embodiment of Total Obliteration",
    "class": "mage"
@@ -592,14 +592,14 @@
   },
   "aspect-desc#0083": {
    "src": "Gospel of Light gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Gospel of Light 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Indoctrination",
    "class": "mage"
   },
   "aspect-desc#0084": {
    "src": "Increase your maximum Arcane Overflow Mana by +{~}.",
-   "dst": "",
+   "dst": "Arcane Overflow Mana 的上限增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Limitless Knowledge",
    "class": "mage"
@@ -613,7 +613,7 @@
   },
   "aspect-desc#0086": {
    "src": "Fortitude gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Fortitude 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Mystic Transfer",
    "class": "mage"
@@ -641,14 +641,14 @@
   },
   "aspect-desc#0090": {
    "src": "Pyrokinesis gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Pyrokinesis 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of a Scorching Sun",
    "class": "mage"
   },
   "aspect-desc#0091": {
    "src": "Time Dilation gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Time Dilation 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of a Thousand Hours",
    "class": "mage"
@@ -662,7 +662,7 @@
   },
   "aspect-desc#0093": {
    "src": "Ophanim gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Ophanim 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Comet",
    "class": "mage"
@@ -676,14 +676,14 @@
   },
   "aspect-desc#0095": {
    "src": "Teleport gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Teleport 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Dimension's Door",
    "class": "mage"
   },
   "aspect-desc#0096": {
    "src": "Displacement gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Displacement 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Dimension's Door",
    "class": "mage"
@@ -718,28 +718,28 @@
   },
   "aspect-desc#0101": {
    "src": "Dimensional Tear gains +{~} ❁ Resistance.",
-   "dst": "",
+   "dst": "Dimensional Tear 的 ❁ 抗性增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Inescapable Void",
    "class": "mage"
   },
   "aspect-desc#0102": {
    "src": "Psychokinesis gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Psychokinesis 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Magic Missile",
    "class": "mage"
   },
   "aspect-desc#0103": {
    "src": "Ice Snake and Frozen Tornado gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Ice Snake and Frozen Tornado 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Ray of Frost",
    "class": "mage"
   },
   "aspect-desc#0104": {
    "src": "Heal gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Heal 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Savior",
    "class": "mage"
@@ -774,7 +774,7 @@
   },
   "aspect-desc#0109": {
    "src": "Gravitational Collapse lasts +{~}s longer.",
-   "dst": "",
+   "dst": "Gravitational Collapse 的持续时间延长 +{~} 秒。",
    "role": "desc",
    "aspect": "Mage's Embodiment of Morbid Curiosity",
    "class": "mage"
@@ -795,14 +795,14 @@
   },
   "aspect-desc#0112": {
    "src": "Riftbound gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Riftbound 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Riftwalker's Embodiment of Reality Alteration",
    "class": "mage"
   },
   "aspect-desc#0113": {
    "src": "Blood Sorrow gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Blood Sorrow 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Acolyte's Embodiment of Unwavering Adherence",
    "class": "shaman"
@@ -823,14 +823,14 @@
   },
   "aspect-desc#0116": {
    "src": "Totem gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Totem 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Emanant Force",
    "class": "shaman"
   },
   "aspect-desc#0117": {
    "src": "Eldritch Call gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Eldritch Call 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Emanant Force",
    "class": "shaman"
@@ -844,7 +844,7 @@
   },
   "aspect-desc#0119": {
    "src": "Increase your maximum Blood Pool {#} and Bleeding {#} duration by +{~}.",
-   "dst": "",
+   "dst": "Blood Pool {#} and Bleeding {#} duration 的上限增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Exsanguination",
    "class": "shaman"
@@ -879,14 +879,14 @@
   },
   "aspect-desc#0124": {
    "src": "Totemic Smash gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Totemic Smash 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Reverberation",
    "class": "shaman"
   },
   "aspect-desc#0125": {
    "src": "Nature's Jolt gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Nature's Jolt 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Seismic Sense",
    "class": "shaman"
@@ -921,7 +921,7 @@
   },
   "aspect-desc#0130": {
    "src": "Frog Dance gains +{~} bounces.",
-   "dst": "",
+   "dst": "Frog Dance 的弹跳次数增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Amphibian",
    "class": "shaman"
@@ -984,7 +984,7 @@
   },
   "aspect-desc#0139": {
    "src": "Totem gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Totem 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Aspect of the Monolith",
    "class": "shaman"
@@ -998,14 +998,14 @@
   },
   "aspect-desc#0141": {
    "src": "Awakened gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Awakened 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
    "class": "shaman"
   },
   "aspect-desc#0142": {
    "src": "Patchwork Abomination lasts +{~}s longer.",
-   "dst": "",
+   "dst": "Patchwork Abomination 的持续时间延长 +{~} 秒。",
    "role": "desc",
    "aspect": "Shaman's Embodiment of Serene Harmony",
    "class": "shaman"
@@ -1019,7 +1019,7 @@
   },
   "aspect-desc#0144": {
    "src": "Monument to Gloom lasts +{~} longer.",
-   "dst": "",
+   "dst": "Monument to Gloom 的持续时间延长 +{~}。",
    "role": "desc",
    "aspect": "Shaman's Embodiment of Serene Harmony",
    "class": "shaman"
@@ -1075,21 +1075,21 @@
   },
   "aspect-desc#0152": {
    "src": "Bash gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Bash 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Earthshaking",
    "class": "warrior"
   },
   "aspect-desc#0153": {
    "src": "Radiance gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Radiance 的 {#} 持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Empowering Fantasy",
    "class": "warrior"
   },
   "aspect-desc#0154": {
    "src": "Counter's cooldown is reduced by -{~}s.",
-   "dst": "",
+   "dst": "Counter's cooldown 缩短 -{~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Hyper-Perception",
    "class": "warrior"
@@ -1131,14 +1131,14 @@
   },
   "aspect-desc#0160": {
    "src": "Increase your maximum Discombobulated ⚙ by +{~}.",
-   "dst": "",
+   "dst": "Discombobulated ⚙ 的上限增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Seeing Stars",
    "class": "warrior"
   },
   "aspect-desc#0161": {
    "src": "Uppercut gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Uppercut 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Skyward Strikes",
    "class": "warrior"
@@ -1152,14 +1152,14 @@
   },
   "aspect-desc#0163": {
    "src": "Cyclone gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Cyclone 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Turbulence",
    "class": "warrior"
   },
   "aspect-desc#0164": {
    "src": "Boiling Blood's cooldown is reduced by -{~}s.",
-   "dst": "",
+   "dst": "Boiling Blood's cooldown 缩短 -{~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Unquenching Flames",
    "class": "warrior"
@@ -1201,21 +1201,21 @@
   },
   "aspect-desc#0170": {
    "src": "Devout Union gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Devout Union 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Humming Choir",
    "class": "warrior"
   },
   "aspect-desc#0171": {
    "src": "Air Shout gains +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Air Shout 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Megaphone",
    "class": "warrior"
   },
   "aspect-desc#0172": {
    "src": "Your Main Attack and Bloodied Armory gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Your Main Attack and Bloodied Armory 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Returning Javelin",
    "class": "warrior"
@@ -1313,14 +1313,14 @@
   },
   "aspect-desc#0186": {
    "src": "Zenith Stance lasts +{~}s longer.",
-   "dst": "",
+   "dst": "Zenith Stance 的持续时间延长 +{~} 秒。",
    "role": "desc",
    "aspect": "Warrior's Embodiment of Everlasting Perseverance",
    "class": "warrior"
   },
   "aspect-desc#0187": {
    "src": "Judgement lasts +{~} longer.",
-   "dst": "",
+   "dst": "Judgement 的持续时间延长 +{~}。",
    "role": "desc",
    "aspect": "Warrior's Embodiment of Everlasting Perseverance",
    "class": "warrior"
