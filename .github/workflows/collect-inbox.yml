@@ -66,6 +66,9 @@ jobs:
           python tools/quest-index.py
           python tools/update-docs.py
           python tools/proofread.py
+          # 收進新條目會改變分母，涵蓋率表跟著過期。validate 有一關專門看
+          # 這個，漏跑的話 PR 一開出來就是紅的（2026-09-12 #538 踩過）。
+          python tools/coverage.py --write
           rm -f inbox.json
 
       - name: 檢查一次才開 PR

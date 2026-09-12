@@ -46,7 +46,13 @@ TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations"
 # 是同一批句型。四邊都要有，因為四邊管的是不同的時機。
 SHAPES = [
     (r"\shas thrown a", "誰丟了炸彈"),
-    (r"Loot Bomb has expired", "誰的炸彈到期了"),
+    # 炸彈不只 Loot 一種：Profession Speed、Profession Experience、Combat
+    # Experience…，每一種到期都一句廣播，主詞永遠是丟炸彈的那個人。
+    (r"\bBomb has expired", "誰的炸彈到期了"),
+    # 全服開箱廣播：「某某 has gotten a Chocolate Wybel from their crate!」
+    # 名字跟折行位置都會變，認句尾那一段最穩。
+    (r"from their\s*(?:\n\{#\}\s*)?crate!", "誰開到了東西"),
+    (r"\shad their anatomy refashioned", "誰死了"),
     (r"(?m)^(?:\{#\}\s*)+Thank ", "謝謝某某"),
     (r"\shas opted in", "誰報名了"),
     (r"\shas chosen the", "誰選了增益"),
