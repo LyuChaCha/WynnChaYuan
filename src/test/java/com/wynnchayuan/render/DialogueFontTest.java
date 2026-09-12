@@ -94,7 +94,7 @@ public final class DialogueFontTest {
         System.out.println("=== 對話字型 ===");
 
         check("授權檔在（SIL OFL 隨模組散布必須附上）",
-                Files.isRegularFile(ROOT.resolve("OFL-fusion.txt")));
+                Files.isRegularFile(ROOT.resolve("ofl-fusion.txt")));
 
         String[] langs = langs();
         check("讀得到會打包的語言：" + java.util.Arrays.toString(langs),

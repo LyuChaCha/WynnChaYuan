@@ -309,7 +309,7 @@ this mod only ships translations of it.
 
 CJK glyphs inside the dialogue box use [Fusion Pixel 10px](https://github.com/TakWolf/fusion-pixel-font)
 (proportional), licensed under SIL OFL 1.1 — full text in
-`assets/wynnchayuan/font/OFL-fusion.txt`. Its cap height is exactly 7px, matching
+`assets/wynnchayuan/font/ofl-fusion.txt`. Its cap height is exactly 7px, matching
 the Latin caps in Wynncraft's own dialogue font.
 Fonts are shipped **per language**, since the same codepoint is drawn differently
 across regions; only Traditional Chinese (`zh_tw`) is bundled today. No pixel font
