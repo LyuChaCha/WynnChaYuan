@@ -3,12 +3,575 @@
   "domain": "ability/archer",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 231,
+  "count": 270,
   "translated": 231,
   "note": "弓箭手的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
+  "ability-archer#0234": {
+   "src": "Arrow Bomb{#}and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Elusive"
+   ],
+   "lines": 2,
+   "flat": "Arrow Bomb{#}and Arrow Storm will no longer have recoil, and your Arrow Bombs will not deal self-damage.",
+   "_raw": "Arrow Bomb and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
+   "ability": "Elusive",
+   "code": "ARCHER"
+  },
+  "ability-archer#0231": {
+   "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#}{#}stack on a target.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/The Twilight Zone"
+   ],
+   "lines": 4,
+   "flat": "At the end of its duration, or by casting F, fire a Spell and a Main Attack arrow at every marked enemy. Arrows will deal bonus damage for each Twilight {#}{#}stack on a target.",
+   "_raw": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight  stack on a target.",
+   "ability": "The Twilight Zone",
+   "code": "ARCHER"
+  },
+  "ability-archer#0235": {
+   "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap{#}have no cooldown.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Angelic Ascension"
+   ],
+   "lines": 3,
+   "flat": "Call upon the power of the Light to empower your attacks for {~}s and make Leap{#}have no cooldown.",
+   "_raw": "Call upon the power of the Light\nto empower your attacks for 15s\nand make Leap have no cooldown.",
+   "ability": "Angelic Ascension",
+   "code": "ARCHER"
+  },
+  "ability-archer#0236": {
+   "src": "Gives Arrow Shield{#}+{~} extra charges.\nGuardian Angels will deal -{~} damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Arrow Wall"
+   ],
+   "lines": 2,
+   "flat": "Gives Arrow Shield{#}+{~} extra charges. Guardian Angels will deal -{~} damage.",
+   "_raw": "Gives Arrow Shield +2 extra charges.\nGuardian Angels will deal -40% damage.",
+   "ability": "Arrow Wall",
+   "code": "ARCHER"
+  },
+  "ability-archer#0238": {
+   "src": "Increase your maximum Focus {#}{#}by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/More Focus",
+    "archer/More Focus II"
+   ],
+   "lines": 1,
+   "flat": "Increase your maximum Focus {#}{#}by +{~}.",
+   "_raw": "Increase your maximum Focus  by +2.",
+   "ability": "More Focus、More Focus II",
+   "code": "ARCHER"
+  },
+  "ability-archer#0233": {
+   "src": "Not missing with Phantom Ray{#}{~}{#}times\nin a row will transform your next\nMain Attack{#}into a Twain's Arc beam.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Quick Draw"
+   ],
+   "lines": 3,
+   "flat": "Not missing with Phantom Ray{#}{~}{#}times in a row will transform your next Main Attack{#}into a Twain's Arc beam.",
+   "_raw": "Not missing with Phantom Ray 7 times\nin a row will transform your next\nMain Attack into a Twain's Arc beam.",
+   "ability": "Quick Draw",
+   "code": "ARCHER"
+  },
+  "ability-archer#0237": {
+   "src": "While in this state, lose {~} Focus {#}{#}every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/Crepuscular Ray"
+   ],
+   "lines": 1,
+   "flat": "While in this state, lose {~} Focus {#}{#}every {~}s.",
+   "_raw": "While in this state, lose 1 Focus  every 0.5s.",
+   "ability": "Crepuscular Ray",
+   "code": "ARCHER"
+  },
+  "ability-archer#0232": {
+   "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#}{#}every {~}s. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "archer/The Twilight Zone"
+   ],
+   "lines": 3,
+   "flat": "While in this state, you jump higher, fall slower, and all enemies within your line of sight are marked by Twilight {#}{#}every {~}s. (Max {~})",
+   "_raw": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight  every 0.05s. (Max 100)",
+   "ability": "The Twilight Zone",
+   "code": "ARCHER"
+  },
+  "ability-archer#0254": {
+   "src": "{#}{#}Area of Effect: +{~} Block (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Overgrowth",
+    "assassin/Rolling Fog",
+    "assassin/Fatal Spin",
+    "assassin/Eviscerate"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: +1 Block (Circle-Shaped)",
+   "ability": "Overgrowth、Rolling Fog、Fatal Spin、Eviscerate",
+   "code": "ARCHER"
+  },
+  "ability-archer#0266": {
+   "src": "{#}{#}Area of Effect: +{~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Phantom Force",
+    "assassin/Petal Storm"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: +0.2 Blocks",
+   "ability": "Phantom Force、Petal Storm",
+   "code": "ARCHER"
+  },
+  "ability-archer#0265": {
+   "src": "{#}{#}Damage Bonus: +{~} (per Focus)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Focus"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Damage Bonus: +15% (per Focus)",
+   "ability": "Focus",
+   "code": "ARCHER"
+  },
+  "ability-archer#0269": {
+   "src": "{#}{#}Duration: +{~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "archer/Scorched Earth",
+    "archer/Stormy Feet"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Duration: +2s",
+   "ability": "Scorched Earth、Stormy Feet",
+   "code": "ARCHER"
+  },
+  "ability-archer#0260": {
+   "src": "{#}{#}Effect: +{~} Speed Bonus (➲) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Windy Feet",
+    "archer/Stormy Feet"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +40% Speed Bonus (➲) to Allies",
+   "ability": "Windy Feet、Stormy Feet",
+   "code": "ARCHER"
+  },
+  "ability-archer#0262": {
+   "src": "{#}{#}Effect: +{~} Walk Speed (➲) to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Repositioning"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +80% Walk Speed (➲) to Self",
+   "ability": "Repositioning",
+   "code": "ARCHER"
+  },
+  "ability-archer#0248": {
+   "src": "{#}{#}Effect: -{~} Resistance Bonus ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Coursing Restraints"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: -15% Resistance Bonus () to Enemies",
+   "ability": "Coursing Restraints",
+   "code": "ARCHER"
+  },
+  "ability-archer#0264": {
+   "src": "{#}{#}Effect: Blindness ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Fierce Stomp",
+    "archer/Murder Flock",
+    "assassin/Swan Dive"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: Blindness () to Enemies",
+   "ability": "Fierce Stomp、Murder Flock、Swan Dive",
+   "code": "ARCHER"
+  },
+  "ability-archer#0250": {
+   "src": "{#}{#}Effects: -{~}{#}Damage Bonus ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Ivyroot Mamba",
+    "assassin/Distraction"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effects: -15% Damage Bonus () to Enemies",
+   "ability": "Ivyroot Mamba、Distraction",
+   "code": "ARCHER"
+  },
+  "ability-archer#0267": {
+   "src": "{#}{#}Main Attack Damage: -{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Triple Shots"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Damage: -10%",
+   "ability": "Triple Shots",
+   "code": "ARCHER"
+  },
+  "ability-archer#0261": {
+   "src": "{#}{#}Main Attack Damage: -{~} (per arrow)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Double Shots"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Damage: -40% (per arrow)",
+   "ability": "Double Shots",
+   "code": "ARCHER"
+  },
+  "ability-archer#0268": {
+   "src": "{#}{#}Range: ±{~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "archer/Arrow Bomb",
+    "archer/Arrow Storm"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Range: ±26 Blocks",
+   "ability": "Arrow Bomb、Arrow Storm",
+   "code": "ARCHER"
+  },
+  "ability-archer#0241": {
+   "src": "{#}{#}Total Damage: +{~} (Main Attack Damage, per Twilight)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/The Twilight Zone"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +15% (Main Attack Damage, per Twilight)",
+   "ability": "The Twilight Zone",
+   "code": "ARCHER"
+  },
+  "ability-archer#0243": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Arrow Shield)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Honed Shield"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +30% (of your DPS, for Arrow Shield)",
+   "ability": "Honed Shield",
+   "code": "ARCHER"
+  },
+  "ability-archer#0240": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Vigilant Sentinels"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +3% (of your DPS, for Buckshot, per arrow)",
+   "ability": "Vigilant Sentinels",
+   "code": "ARCHER"
+  },
+  "ability-archer#0239": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Guardian Angels, per shot)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Honed Shield",
+    "archer/Vigilant Sentinels"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +10% (of your DPS, for Guardian Angels, per shot)",
+   "ability": "Honed Shield、Vigilant Sentinels",
+   "code": "ARCHER"
+  },
+  "ability-archer#0249": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, per Twilight)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/The Twilight Zone"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +100% (of your DPS, per Twilight)",
+   "ability": "The Twilight Zone",
+   "code": "ARCHER"
+  },
+  "ability-archer#0252": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, per arrow)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Shrieking Arrows",
+    "archer/Mael's Quiver"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +8% (of your DPS, per arrow)",
+   "ability": "Shrieking Arrows、Mael's Quiver",
+   "code": "ARCHER"
+  },
+  "ability-archer#0256": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, per ray)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Shrieking Arrows"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +6% (of your DPS, per ray)",
+   "ability": "Shrieking Arrows",
+   "code": "ARCHER"
+  },
+  "ability-archer#0263": {
+   "src": "{#}{#}Total Damage: -{~} (after piercing)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Phasing Beam"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: -150% (after piercing)",
+   "ability": "Phasing Beam",
+   "code": "ARCHER"
+  },
+  "ability-archer#0253": {
+   "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Windstorm"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: -10% (of your DPS, per arrow)",
+   "ability": "Windstorm",
+   "code": "ARCHER"
+  },
+  "ability-archer#0245": {
+   "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow/ray)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Nimble String"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: -10% (of your DPS, per arrow/ray)",
+   "ability": "Nimble String",
+   "code": "ARCHER"
+  },
+  "ability-archer#0244": {
+   "src": "{#}{#}Total Damage: {~} (Main Attack Damage, per arrow)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Arsenal Synergy"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 20% (Main Attack Damage, per arrow)",
+   "ability": "Arsenal Synergy",
+   "code": "ARCHER"
+  },
+  "ability-archer#0242": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Arrow Bomb's smite)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Angelic Ascension"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 550% (of your DPS, Arrow Bomb's smite)",
+   "ability": "Angelic Ascension",
+   "code": "ARCHER"
+  },
+  "ability-archer#0246": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, for Arrow Bomb)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Pyrotechnics"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 65% (of your DPS, for Arrow Bomb)",
+   "ability": "Pyrotechnics",
+   "code": "ARCHER"
+  },
+  "ability-archer#0247": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, for Grape Bomb)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Pyrotechnics"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 25% (of your DPS, for Grape Bomb)",
+   "ability": "Pyrotechnics",
+   "code": "ARCHER"
+  },
+  "ability-archer#0255": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per arrow)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Arrow Storm",
+    "archer/Buckshot",
+    "archer/Parting Gift",
+    "archer/Crepuscular Ray"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 40% (of your DPS, per arrow)",
+   "ability": "Arrow Storm、Buckshot、Parting Gift、Crepuscular Ray",
+   "code": "ARCHER"
+  },
+  "ability-archer#0259": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per hit)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Phantom Ray",
+    "assassin/Multihit"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 30% (of your DPS, per hit)",
+   "ability": "Phantom Ray、Multihit",
+   "code": "ARCHER"
+  },
+  "ability-archer#0257": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per shot)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Guardian Angels"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 40% (of your DPS, per shot)",
+   "ability": "Guardian Angels",
+   "code": "ARCHER"
+  },
+  "ability-archer#0251": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per shrapnel)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Shrapnel Bomb"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 100% (of your DPS, per shrapnel)",
+   "ability": "Shrapnel Bomb",
+   "code": "ARCHER"
+  },
+  "ability-archer#0258": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per wave)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "archer/Courier's Edict"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 60% (of your DPS, per wave)",
+   "ability": "Courier's Edict",
+   "code": "ARCHER"
+  },
   "ability-archer#0000": {
    "src": "Arrow Bomb",
    "dst": "箭矢炸弹",

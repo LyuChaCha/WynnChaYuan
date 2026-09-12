@@ -3,12 +3,489 @@
   "domain": "ability/assassin",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 234,
+  "count": 268,
   "translated": 0,
   "note": "刺客的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
+  "ability-assassin#0253": {
+   "src": "Confused {#}{#}enemies take +{~} more",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Misdirection"
+   ],
+   "lines": 1,
+   "flat": "Confused {#}{#}enemies take +{~} more",
+   "_raw": "Confused  enemies take +20% more",
+   "ability": "Misdirection",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0245": {
+   "src": "Detonating {~}+{#}Tricks {#} on enemies\nContaminates {#} them with toxic ooze.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Toxic Sludge"
+   ],
+   "lines": 2,
+   "flat": "Detonating {~}+{#}Tricks {#} on enemies Contaminates {#} them with toxic ooze.",
+   "_raw": "Detonating 20+ Tricks  on enemies\nContaminates  them with toxic ooze.",
+   "ability": "Toxic Sludge",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0247": {
+   "src": "Detonating {~}+{#}Tricks {#} on enemies\nwill make them Confused {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Misdirection"
+   ],
+   "lines": 2,
+   "flat": "Detonating {~}+{#}Tricks {#} on enemies will make them Confused {#}.",
+   "_raw": "Detonating 25+ Tricks  on enemies\nwill make them Confused .",
+   "ability": "Misdirection",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0237": {
+   "src": "Detonating {~}+{#}Tricks {#} on enemies will\nmake them {~} Drained {#} and take\n+{~} more {#} Water damage from you.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Soul Siphon"
+   ],
+   "lines": 3,
+   "flat": "Detonating {~}+{#}Tricks {#} on enemies will make them {~} Drained {#} and take +{~} more {#} Water damage from you.",
+   "_raw": "Detonating 30+ Tricks  on enemies will\nmake them 200% Drained  and take\n+20% more  Water damage from you.",
+   "ability": "Soul Siphon",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0246": {
+   "src": "Detonating {~}+{#}Tricks {#} on enemies will\ntemporarily reduce their damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Distraction"
+   ],
+   "lines": 2,
+   "flat": "Detonating {~}+{#}Tricks {#} on enemies will temporarily reduce their damage.",
+   "_raw": "Detonating 15+ Tricks  on enemies will\ntemporarily reduce their damage.",
+   "ability": "Distraction",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0252": {
+   "src": "Enkindled {#}{#}enemies take +{~} more",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Deflagrate"
+   ],
+   "lines": 1,
+   "flat": "Enkindled {#}{#}enemies take +{~} more",
+   "_raw": "Enkindled  enemies take +30% more",
+   "ability": "Deflagrate",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0236": {
+   "src": "If an enemy has {~}+ Marks {#}, your next\nBackstab{#}will deal +{~} damage, or your next\nPowder Special{#}will deal +{~} damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Satsujin"
+   ],
+   "lines": 3,
+   "flat": "If an enemy has {~}+ Marks {#}, your next Backstab{#}will deal +{~} damage, or your next Powder Special{#}will deal +{~} damage.",
+   "_raw": "If an enemy has 4+ Marks , your next\nBackstab will deal +200% damage, or your next\nPowder Special will deal +100% damage.",
+   "ability": "Satsujin",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0234": {
+   "src": "If cast while in Vanish,\nSpin Attack will consume all\nMarks {#}{#}from nearby enemies.\nFor every {~} Marks {#}{#}consumed,\nsummon a Knife. (Max {~} Knives)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Nightcloak Knives"
+   ],
+   "lines": 5,
+   "flat": "If cast while in Vanish, Spin Attack will consume all Marks {#}{#}from nearby enemies. For every {~} Marks {#}{#}consumed, summon a Knife. (Max {~} Knives)",
+   "_raw": "If cast while in Vanish,\nSpin Attack will consume all\nMarks  from nearby enemies.\nFor every 2 Marks  consumed,\nsummon a Knife. (Max 5 Knives)",
+   "ability": "Nightcloak Knives",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0250": {
+   "src": "Increase your maximum Marks {#}{#}by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/More Marks"
+   ],
+   "lines": 1,
+   "flat": "Increase your maximum Marks {#}{#}by +{~}.",
+   "_raw": "Increase your maximum Marks  by +2.",
+   "ability": "More Marks",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0240": {
+   "src": "Increases Spin Attack and Lacerate's range\nand damage, and adds +{~} Mark {#}{#}to enemies hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Fatal Spin"
+   ],
+   "lines": 2,
+   "flat": "Increases Spin Attack and Lacerate's range and damage, and adds +{~} Mark {#}{#}to enemies hit.",
+   "_raw": "Increases Spin Attack and Lacerate's range\nand damage, and adds +1 Mark  to enemies hit.",
+   "ability": "Fatal Spin",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0238": {
+   "src": "Last Laugh stores a number of Tricks {#}{#}on\nenemies based on the type of Clone {#}{#}{#}.\n(Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Malicious Mockery"
+   ],
+   "lines": 3,
+   "flat": "Last Laugh stores a number of Tricks {#}{#}on enemies based on the type of Clone {#}{#}{#}. (Max {~})",
+   "_raw": "Last Laugh stores a number of Tricks  on\nenemies based on the type of Clone .\n(Max 25)",
+   "ability": "Malicious Mockery",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0243": {
+   "src": "Marked {#}{#}enemies will take +{~} damage\nfrom attacks for each mark they have.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Marked"
+   ],
+   "lines": 2,
+   "flat": "Marked {#}{#}enemies will take +{~} damage from attacks for each mark they have.",
+   "_raw": "Marked  enemies will take +7% damage\nfrom attacks for each mark they have.",
+   "ability": "Marked",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0251": {
+   "src": "Marked {#}{#}will decay once every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Marked"
+   ],
+   "lines": 1,
+   "flat": "Marked {#}{#}will decay once every {~}s.",
+   "_raw": "Marked  will decay once every 10s.",
+   "ability": "Marked",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0235": {
+   "src": "Reduce the cooldown on all of your\nabilities by {~} every time you get hit\nfor less than {~} of your max health or\nyour Mirage Clone {#}{#}lures an enemy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Sandbagging"
+   ],
+   "lines": 4,
+   "flat": "Reduce the cooldown on all of your abilities by {~} every time you get hit for less than {~} of your max health or your Mirage Clone {#}{#}lures an enemy.",
+   "_raw": "Reduce the cooldown on all of your\nabilities by 30% every time you get hit\nfor less than 10% of your max health or\nyour Mirage Clone  lures an enemy.",
+   "ability": "Sandbagging",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0241": {
+   "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#}{#}for +{~}s.\n(Max {~}s)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Choke Bomb"
+   ],
+   "lines": 3,
+   "flat": "Smoke Bomb releases a cloud of dust every {~}s, applying Hypoxia {#}{#}for +{~}s. (Max {~}s)",
+   "_raw": "Smoke Bomb releases a cloud of dust\nevery 0.5s, applying Hypoxia  for +2s.\n(Max 10s)",
+   "ability": "Choke Bomb",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0244": {
+   "src": "Smoke Bomb will add +{~} Mark {#}{#}to\nenemies it hits. (Max {~}, {~}s Cooldown)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Marked"
+   ],
+   "lines": 2,
+   "flat": "Smoke Bomb will add +{~} Mark {#}{#}to enemies it hits. (Max {~}, {~}s Cooldown)",
+   "_raw": "Smoke Bomb will add +1 Mark  to\nenemies it hits. (Max 4, 0.1s Cooldown)",
+   "ability": "Marked",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0242": {
+   "src": "When exiting Vanish, pull all\nnearby Marked {#}{#}mobs towards\nwhere you entered Vanish.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Death Magnet"
+   ],
+   "lines": 3,
+   "flat": "When exiting Vanish, pull all nearby Marked {#}{#}mobs towards where you entered Vanish.",
+   "_raw": "When exiting Vanish, pull all\nnearby Marked  mobs towards\nwhere you entered Vanish.",
+   "ability": "Death Magnet",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0239": {
+   "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~}{#}maximum stacks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Serpent's Garden"
+   ],
+   "lines": 3,
+   "flat": "While above your garden, your Momentum {#} charges twice as fast and gains +{~}{#}maximum stacks.",
+   "_raw": "While above your garden, your Momentum \ncharges twice as fast and gains\n+5 maximum stacks.",
+   "ability": "Serpent's Garden",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0248": {
+   "src": "You may store +{~} more Tricks {#}{#}on\nenemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Toxic Sludge"
+   ],
+   "lines": 2,
+   "flat": "You may store +{~} more Tricks {#}{#}on enemies.",
+   "_raw": "You may store +15 more Tricks  on\nenemies.",
+   "ability": "Toxic Sludge",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0249": {
+   "src": "You may store +{~} more Tricks {#}{#}on enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "assassin/Misdirection",
+    "assassin/Soul Siphon"
+   ],
+   "lines": 1,
+   "flat": "You may store +{~} more Tricks {#}{#}on enemies.",
+   "_raw": "You may store +15 more Tricks  on enemies.",
+   "ability": "Misdirection、Soul Siphon",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0261": {
+   "src": "{#}{#}Area of Effect: +{~} Blocks (per bloom)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Jasmine Bloom"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: +1.5 Blocks (per bloom)",
+   "ability": "Jasmine Bloom",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0266": {
+   "src": "{#}{#}Cooldown: +{~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "assassin/Duplicity"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Cooldown: +5s",
+   "ability": "Duplicity",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0267": {
+   "src": "{#}{#}Duration: -{~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "assassin/Thermobaric Smoke"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Duration: -1s",
+   "ability": "Thermobaric Smoke",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0259": {
+   "src": "{#}{#}Effect: +{~} Resistance Bonus (❁) to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Dissolution"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +60% Resistance Bonus (❁) to Self",
+   "ability": "Dissolution",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0264": {
+   "src": "{#}{#}Effect: Invisibility to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Vanish"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: Invisibility to Self",
+   "ability": "Vanish",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0262": {
+   "src": "{#}{#}Effect: {~} Damage Bonus (⚔) to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Mirror Image"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: 30% Damage Bonus (⚔) to Self",
+   "ability": "Mirror Image",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0265": {
+   "src": "{#}{#}Explosion Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Petal Storm"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Explosion Damage: +200%",
+   "ability": "Petal Storm",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0257": {
+   "src": "{#}{#}Multihit Damage: +{~} (of your DPS, per hit)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Blade Fury"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Multihit Damage: +10% (of your DPS, per hit)",
+   "ability": "Blade Fury",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0263": {
+   "src": "{#}{#}Range: {~} Blocks (Cone-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Multihit"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Range: 3 Blocks (Cone-Shaped)",
+   "ability": "Multihit",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0260": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, per hit)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Finality"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +6% (of your DPS, per hit)",
+   "ability": "Finality",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0255": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, over {~} hits)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Swan Dive"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 480% (of your DPS, over 5 hits)",
+   "ability": "Swan Dive",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0258": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per Trick)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Malicious Mockery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 10% (of your DPS, per Trick)",
+   "ability": "Malicious Mockery",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0256": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per shuriken)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Shurikens"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 120% (of your DPS, per shuriken)",
+   "ability": "Shurikens",
+   "code": "ASSASSIN"
+  },
+  "ability-assassin#0254": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} Enkindle)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "assassin/Deflagrate"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 15% (of your DPS, per 1% Enkindle)",
+   "ability": "Deflagrate",
+   "code": "ASSASSIN"
+  },
   "ability-assassin#0000": {
    "src": "Spin Attack",
    "dst": "",
@@ -18,7 +495,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/01/000/004",
-   "keep": "en",
    "ability": "Spin Attack",
    "code": "ASSASSIN-P1-R00-C04"
   },
@@ -46,7 +522,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/01/002/002",
-   "keep": "en",
    "ability": "Cheaper Spin Attack",
    "code": "ASSASSIN-P1-R02-C02"
   },
@@ -75,7 +550,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/01/002/004",
-   "keep": "en",
    "ability": "Dagger Proficiency I",
    "code": "ASSASSIN-P1-R02-C04"
   },
@@ -103,7 +577,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/01/004/004",
-   "keep": "en",
    "ability": "Double Spin",
    "code": "ASSASSIN-P1-R04-C04"
   },
@@ -131,7 +604,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/001/002",
-   "keep": "en",
    "ability": "Poisoned Blade",
    "code": "ASSASSIN-P2-R01-C02"
   },
@@ -174,7 +646,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/001/004",
-   "keep": "en",
    "ability": "Dash",
    "code": "ASSASSIN-P2-R01-C04"
   },
@@ -202,7 +673,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/001/006",
-   "keep": "en",
    "ability": "Double Slice",
    "code": "ASSASSIN-P2-R01-C06"
   },
@@ -230,7 +700,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/003/002",
-   "keep": "en",
    "ability": "Smoke Bomb",
    "code": "ASSASSIN-P2-R03-C02"
   },
@@ -258,7 +727,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/003/004",
-   "keep": "en",
    "ability": "Cheaper Dash",
    "code": "ASSASSIN-P2-R03-C04"
   },
@@ -287,7 +755,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/003/006",
-   "keep": "en",
    "ability": "Multihit",
    "code": "ASSASSIN-P2-R03-C06"
   },
@@ -328,7 +795,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/02/004/001",
-   "keep": "en",
    "ability": "Sticky Bomb",
    "code": "ASSASSIN-P2-R04-C01"
   },
@@ -356,7 +822,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/03/002/007",
-   "keep": "en",
    "ability": "Ripple",
    "code": "ASSASSIN-P3-R02-C07"
   },
@@ -399,7 +864,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/03/003/001",
-   "keep": "en",
    "ability": "Backstab",
    "code": "ASSASSIN-P3-R03-C01"
   },
@@ -427,7 +891,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/03/004/002",
-   "keep": "en",
    "ability": "Vanish",
    "code": "ASSASSIN-P3-R04-C02"
   },
@@ -468,7 +931,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/03/004/004",
-   "keep": "en",
    "ability": "Bamboozle",
    "code": "ASSASSIN-P3-R04-C04"
   },
@@ -496,7 +958,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/03/004/007",
-   "keep": "en",
    "ability": "Hop",
    "code": "ASSASSIN-P3-R04-C07"
   },
@@ -524,7 +985,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/001/002",
-   "keep": "en",
    "ability": "Surprise Strike",
    "code": "ASSASSIN-P4-R01-C02"
   },
@@ -552,7 +1012,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/001/004",
-   "keep": "en",
    "ability": "Mirror Image",
    "code": "ASSASSIN-P4-R01-C04"
   },
@@ -608,7 +1067,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/001/007",
-   "keep": "en",
    "ability": "Lacerate",
    "code": "ASSASSIN-P4-R01-C07"
   },
@@ -651,7 +1109,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/002/001",
-   "keep": "en",
    "ability": "Silent Killer",
    "code": "ASSASSIN-P4-R02-C01"
   },
@@ -679,7 +1136,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/002/005",
-   "keep": "en",
    "ability": "Foul Play",
    "code": "ASSASSIN-P4-R02-C05"
   },
@@ -724,7 +1180,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/002/008",
-   "keep": "en",
    "ability": "Wall of Smoke",
    "code": "ASSASSIN-P4-R02-C08"
   },
@@ -752,7 +1207,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/003/004",
-   "keep": "en",
    "ability": "Last Laugh",
    "code": "ASSASSIN-P4-R03-C04"
   },
@@ -795,7 +1249,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/003/007",
-   "keep": "en",
    "ability": "Psithurism",
    "code": "ASSASSIN-P4-R03-C07"
   },
@@ -823,7 +1276,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/004/000",
-   "keep": "en",
    "ability": "Rolling Fog",
    "code": "ASSASSIN-P4-R04-C00"
   },
@@ -851,7 +1303,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/004/002",
-   "keep": "en",
    "ability": "Shadow Travel",
    "code": "ASSASSIN-P4-R04-C02"
   },
@@ -879,7 +1330,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/004/005",
-   "keep": "en",
    "ability": "Cheaper Multihit",
    "code": "ASSASSIN-P4-R04-C05"
   },
@@ -892,7 +1342,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/004/008",
-   "keep": "en",
    "ability": "Finality",
    "code": "ASSASSIN-P4-R04-C08"
   },
@@ -933,7 +1382,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/005/001",
-   "keep": "en",
    "ability": "Shadow Siphon",
    "code": "ASSASSIN-P4-R05-C01"
   },
@@ -961,7 +1409,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/04/005/004",
-   "keep": "en",
    "ability": "Mirage",
    "code": "ASSASSIN-P4-R05-C04"
   },
@@ -1004,7 +1451,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/001/000",
-   "keep": "en",
    "ability": "Cheaper Smoke Bomb",
    "code": "ASSASSIN-P5-R01-C00"
   },
@@ -1033,7 +1479,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/001/003",
-   "keep": "en",
    "ability": "Blazing Powder",
    "code": "ASSASSIN-P5-R01-C03"
   },
@@ -1061,7 +1506,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/001/007",
-   "keep": "en",
    "ability": "Weightless",
    "code": "ASSASSIN-P5-R01-C07"
   },
@@ -1089,7 +1533,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/002/001",
-   "keep": "en",
    "ability": "Black Hole",
    "code": "ASSASSIN-P5-R02-C01"
   },
@@ -1117,7 +1560,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/002/004",
-   "keep": "en",
    "ability": "Sandbagging",
    "code": "ASSASSIN-P5-R02-C04"
   },
@@ -1145,7 +1587,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/002/006",
-   "keep": "en",
    "ability": "Mutilate",
    "code": "ASSASSIN-P5-R02-C06"
   },
@@ -1188,7 +1629,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/002/008",
-   "keep": "en",
    "ability": "Swan Dive",
    "code": "ASSASSIN-P5-R02-C08"
   },
@@ -1259,7 +1699,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/003/000",
-   "keep": "en",
    "ability": "Violent Vortex",
    "code": "ASSASSIN-P5-R03-C00"
   },
@@ -1287,7 +1726,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/003/003",
-   "keep": "en",
    "ability": "Duplicity",
    "code": "ASSASSIN-P5-R03-C03"
   },
@@ -1328,7 +1766,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/003/005",
-   "keep": "en",
    "ability": "Righting Reflex",
    "code": "ASSASSIN-P5-R03-C05"
   },
@@ -1356,7 +1793,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/004/001",
-   "keep": "en",
    "ability": "Marked",
    "code": "ASSASSIN-P5-R04-C01"
   },
@@ -1414,7 +1850,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/004/004",
-   "keep": "en",
    "ability": "Malicious Mockery",
    "code": "ASSASSIN-P5-R04-C04"
   },
@@ -1485,7 +1920,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/004/006",
-   "keep": "en",
    "ability": "Shurikens",
    "code": "ASSASSIN-P5-R04-C06"
   },
@@ -1541,7 +1975,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/004/008",
-   "keep": "en",
    "ability": "Blade Fury",
    "code": "ASSASSIN-P5-R04-C08"
   },
@@ -1582,7 +2015,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/005/003",
-   "keep": "en",
    "ability": "Hoodwink",
    "code": "ASSASSIN-P5-R05-C03"
   },
@@ -1625,7 +2057,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/05/005/007",
-   "keep": "en",
    "ability": "Dancing Blade",
    "code": "ASSASSIN-P5-R05-C07"
   },
@@ -1653,7 +2084,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/001/000",
-   "keep": "en",
    "ability": "Ambush",
    "code": "ASSASSIN-P6-R01-C00"
   },
@@ -1681,7 +2111,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/001/002",
-   "keep": "en",
    "ability": "Death Magnet",
    "code": "ASSASSIN-P6-R01-C02"
   },
@@ -1709,7 +2138,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/001/004",
-   "keep": "en",
    "ability": "Distraction",
    "code": "ASSASSIN-P6-R01-C04"
   },
@@ -1752,7 +2180,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/001/006",
-   "keep": "en",
    "ability": "Wall Jump",
    "code": "ASSASSIN-P6-R01-C06"
   },
@@ -1780,7 +2207,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/001/008",
-   "keep": "en",
    "ability": "Cheaper Dash II",
    "code": "ASSASSIN-P6-R01-C08"
   },
@@ -1793,7 +2219,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/002/005",
-   "keep": "en",
    "ability": "Misdirection",
    "code": "ASSASSIN-P6-R02-C05"
   },
@@ -1880,7 +2305,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/003/000",
-   "keep": "en",
    "ability": "Nightcloak Knives",
    "code": "ASSASSIN-P6-R03-C00"
   },
@@ -1923,7 +2347,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/003/002",
-   "keep": "en",
    "ability": "Cheaper Multihit II",
    "code": "ASSASSIN-P6-R03-C02"
   },
@@ -1936,7 +2359,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/003/004",
-   "keep": "en",
    "ability": "Shadow Projection",
    "code": "ASSASSIN-P6-R03-C04"
   },
@@ -1994,7 +2416,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/003/006",
-   "keep": "en",
    "ability": "Cheaper Spin Attack II",
    "code": "ASSASSIN-P6-R03-C06"
   },
@@ -2007,7 +2428,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/003/008",
-   "keep": "en",
    "ability": "Aerial Ace",
    "code": "ASSASSIN-P6-R03-C08"
   },
@@ -2035,7 +2455,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/004/001",
-   "keep": "en",
    "ability": "Fatal Spin",
    "code": "ASSASSIN-P6-R04-C01"
   },
@@ -2063,7 +2482,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/004/003",
-   "keep": "en",
    "ability": "Toxic Sludge",
    "code": "ASSASSIN-P6-R04-C03"
   },
@@ -2149,7 +2567,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/004/005",
-   "keep": "en",
    "ability": "Echo",
    "code": "ASSASSIN-P6-R04-C05"
   },
@@ -2177,7 +2594,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/004/007",
-   "keep": "en",
    "ability": "Eviscerate",
    "code": "ASSASSIN-P6-R04-C07"
   },
@@ -2205,7 +2621,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/005/000",
-   "keep": "en",
    "ability": "Bladestorm",
    "code": "ASSASSIN-P6-R05-C00"
   },
@@ -2233,7 +2648,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/06/005/002",
-   "keep": "en",
    "ability": "Dissolution",
    "code": "ASSASSIN-P6-R05-C02"
   },
@@ -2274,7 +2688,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/001/001",
-   "keep": "en",
    "ability": "Harvester",
    "code": "ASSASSIN-P7-R01-C01"
   },
@@ -2302,7 +2715,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/001/004",
-   "keep": "en",
    "ability": "Cheaper Smoke Bomb II",
    "code": "ASSASSIN-P7-R01-C04"
   },
@@ -2315,7 +2727,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/001/007",
-   "keep": "en",
    "ability": "Far Reach",
    "code": "ASSASSIN-P7-R01-C07"
   },
@@ -2343,7 +2754,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/002/002",
-   "keep": "en",
    "ability": "More Marks",
    "code": "ASSASSIN-P7-R02-C02"
   },
@@ -2371,7 +2781,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/002/005",
-   "keep": "en",
    "ability": "Deflagrate",
    "code": "ASSASSIN-P7-R02-C05"
   },
@@ -2455,7 +2864,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/002/008",
-   "keep": "en",
    "ability": "Ricochets",
    "code": "ASSASSIN-P7-R02-C08"
   },
@@ -2483,7 +2891,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/003/001",
-   "keep": "en",
    "ability": "Satsujin",
    "code": "ASSASSIN-P7-R03-C01"
   },
@@ -2526,7 +2933,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/003/004",
-   "keep": "en",
    "ability": "Noxious Haze",
    "code": "ASSASSIN-P7-R03-C04"
   },
@@ -2569,7 +2975,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/003/007",
-   "keep": "en",
    "ability": "Jasmine Bloom",
    "code": "ASSASSIN-P7-R03-C07"
   },
@@ -2625,7 +3030,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/004/003",
-   "keep": "en",
    "ability": "Soul Siphon",
    "code": "ASSASSIN-P7-R04-C03"
   },
@@ -2668,7 +3072,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/004/006",
-   "keep": "en",
    "ability": "Braced Impact",
    "code": "ASSASSIN-P7-R04-C06"
   },
@@ -2696,7 +3099,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/005/000",
-   "keep": "en",
    "ability": "Devour",
    "code": "ASSASSIN-P7-R05-C00"
   },
@@ -2724,7 +3126,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/07/005/002",
-   "keep": "en",
    "ability": "Marked for Death",
    "code": "ASSASSIN-P7-R05-C02"
   },
@@ -2752,7 +3153,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/001/001",
-   "keep": "en",
    "ability": "Thrill",
    "code": "ASSASSIN-P8-R01-C01"
   },
@@ -2780,7 +3180,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/001/004",
-   "keep": "en",
    "ability": "Doppelganger",
    "code": "ASSASSIN-P8-R01-C04"
   },
@@ -2808,7 +3207,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/001/008",
-   "keep": "en",
    "ability": "Celerity",
    "code": "ASSASSIN-P8-R01-C08"
   },
@@ -2851,7 +3249,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/002/003",
-   "keep": "en",
    "ability": "Shadow Dance",
    "code": "ASSASSIN-P8-R02-C03"
   },
@@ -2879,7 +3276,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/002/005",
-   "keep": "en",
    "ability": "Paranoia",
    "code": "ASSASSIN-P8-R02-C05"
   },
@@ -2907,7 +3303,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/002/007",
-   "keep": "en",
    "ability": "Petal Storm",
    "code": "ASSASSIN-P8-R02-C07"
   },
@@ -2948,7 +3343,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/003/000",
-   "keep": "en",
    "ability": "Billowing Death",
    "code": "ASSASSIN-P8-R03-C00"
   },
@@ -2976,7 +3370,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/003/002",
-   "keep": "en",
    "ability": "Looming Presence",
    "code": "ASSASSIN-P8-R03-C02"
   },
@@ -3004,7 +3397,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/003/004",
-   "keep": "en",
    "ability": "Disappearing Act",
    "code": "ASSASSIN-P8-R03-C04"
   },
@@ -3032,7 +3424,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/003/006",
-   "keep": "en",
    "ability": "Dextrous Hands",
    "code": "ASSASSIN-P8-R03-C06"
   },
@@ -3060,7 +3451,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/003/008",
-   "keep": "en",
    "ability": "Thermobaric Smoke",
    "code": "ASSASSIN-P8-R03-C08"
   },
@@ -3116,7 +3506,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/08/004/005",
-   "keep": "en",
    "ability": "Choke Bomb",
    "code": "ASSASSIN-P8-R04-C05"
   },
@@ -3159,7 +3548,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/09/002/001",
-   "keep": "en",
    "ability": "Pierce the Veil",
    "code": "ASSASSIN-P9-R02-C01"
   },
@@ -3202,7 +3590,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/09/002/007",
-   "keep": "en",
    "ability": "Serpent's Garden",
    "code": "ASSASSIN-P9-R02-C07"
   },
@@ -3245,7 +3632,6 @@
     "assassin/技能名稱"
    ],
    "tree": "03/assassin/09/003/004",
-   "keep": "en",
    "ability": "Another Self",
    "code": "ASSASSIN-P9-R03-C04"
   },
