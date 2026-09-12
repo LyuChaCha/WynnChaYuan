@@ -342,6 +342,19 @@ def check_pair(path: str, key: str, src: str, dst: str,
                                f"遊戲裡會原樣印出來。顏色是 §0–§9 §a–§f，"
                                f"§r 回到原本的樣式"))
 
+    # HTML 標籤。Minecraft 沒有粗體標籤這種東西，寫了就會原樣印在對話框裡。
+    # 實際發生過一次：The Realm of Light #040 的譯文帶著 <b>…</b>，玩家看到的
+    # 就是那六個字元。
+    #
+    # 只認排版標籤，不認所有的角括號：`/trade <name>` 是遊戲自己的教學訊息，
+    # 那個 <name> 該留著。
+    html = re.findall(r"</?(?:b|i|u|s|em|strong|br|p|span|font|color)\b[^>]*>",
+                      dst, re.IGNORECASE)
+    if html:
+        out.append(Problem("error", path, key,
+                           f"譯文含 HTML 標籤（{', '.join(sorted(set(html)))}）—— "
+                           f"遊戲裡會原樣印出來。要粗體請用 §l，結束用 §r"))
+
     # 材質包符號不能直接貼進譯文 —— 那些由程式填回原位，手寫的會是錯的碼位
     glyphs = {ch for ch in dst if is_glyph(ch)}
     if glyphs:
