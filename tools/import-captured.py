@@ -174,7 +174,7 @@ def worth_keeping(src: str) -> bool:
 # 別的模組自己印在聊天室的東西：`wmd >> Rejoined raid`、
 # `wynnmod has new updates - v1.2.3`。那不是 Wynncraft 的字，翻它沒有意義
 # （對方有自己的語言檔），而且動別的模組會讀的字串還可能害它算錯。
-OTHER_MOD = re.compile(r"wynnmod|\bwmd\s*[>|]", re.IGNORECASE)
+OTHER_MOD = re.compile(r"wynnmod|wynnextras|\bwmd\s*[>|]", re.IGNORECASE)
 
 
 def bare(src: str) -> str:
@@ -363,6 +363,11 @@ NAMED = re.compile(
     # 「某某的怪物圖騰到期了」。模組端擋的是 `mob totem. Get your own`——
     # 那是另一句。這一句大寫、而且句尾不一樣，得自己認。
     r"|['’]s Mob Totem\b"
+    # 住宅島的訪客通知，主詞是別人的帳號名。
+    r"|\sis visiting this island"
+    r"|\binvited .+ into your island"
+    # 無名異常體的死亡廣播。跟其他討伐戰死法同一類，動詞不同而已。
+    r"|\shad their existence effaced"
     # 交易邀請一句夾兩個名字。
     r"|would like to trade"
     r"|/trade\s"

@@ -71,6 +71,12 @@ public final class PlayerDataFilter {
             // 是兩則不同的廣播——這一則大寫、句尾也不一樣，下面那條比對不到。
             "'s Mob Totem",
             "’s Mob Totem",
+            // 住宅島的訪客通知：「Elaina Lover is visiting this island. Say hi!」
+            // 與「You have invited Elaina Lover into your island.」
+            " is visiting this island",
+            " into your island",
+            // 無名異常體的死亡廣播。跟其他討伐戰死法同一類，動詞不同而已。
+            " had their existence effaced",
             " has placed a mob totem",
             " has placed a gathering totem",
             " mob totem. Get your own",
