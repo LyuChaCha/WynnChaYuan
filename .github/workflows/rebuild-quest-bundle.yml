@@ -62,7 +62,13 @@ jobs:
             echo "沒有變動。"
             exit 0
           fi
-          BRANCH="auto/rebuild-${GITHUB_SHA::7}"
+          # 分支名固定。以前是 auto/rebuild-<sha>，每合進一個 PR 就開一個新的
+          # ——倉庫沒開自動合併時它們不會自己消失，一個上午疊了十一個內容
+          # 互相覆蓋的 PR，而且只有最新的那個是對的。
+          #
+          # 固定成一個分支、強制推上去，開著的那個 PR 就會就地更新成最新的
+          # 產生物，同一時間最多只有一個。
+          BRANCH="auto/rebuild"
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
@@ -70,7 +76,15 @@ jobs:
           git commit -m "重新產生合併檔、認領清單與進度表
 
           由 rebuild-quest-bundle 工作流程自動提交。"
-          git push -u origin "$BRANCH"
+          git push --force -u origin "$BRANCH"
+
+          # 已經有一個開著就不用再開一個——上面那一推已經把它更新了。
+          OPEN=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')
+          if [ -n "$OPEN" ]; then
+            echo "PR #$OPEN 已經開著，內容已更新成這一次的產生物。"
+            exit 0
+          fi
+
           # 開 PR 需要倉庫允許 Actions 這麼做。沒開的話這裡會是
           #   GitHub Actions is not permitted to create or approve pull requests
           # 分支已經推上去了，所以不讓它變成紅燈——改成把該怎麼處理寫進執行摘要。
