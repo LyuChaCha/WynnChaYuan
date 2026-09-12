@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 90.3%（36,509 / 40,423）
+## `zh_tw` 繁體中文 — 89.9%（36,630 / 40,746）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -19,7 +19,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ██████████ 99% | 94 / 95 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | █████████░ 92% | 222 / 241 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
-| `ability/*.json` | ██████████ 100% | 1,251 / 1,251 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | █████████░ 87% | 1,372 / 1,574 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 249 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
 | `ability-terms.json` | ██████████ 100% | 91 / 91 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ██████████ 100% | 322 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
@@ -44,7 +44,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 986 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 10.5%（2,974 / 28,455）
+## `zh_cn` 简体中文 — 10.3%（2,974 / 28,778）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -55,7 +55,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | █████████░ 88% | 75 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
-| `ability/*.json` | ██████████ 100% | 1,251 / 1,251 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ████████░░ 79% | 1,251 / 1,574 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 247 / 247 | 技能樹的介面標籤<br>Ability tree interface labels |
 | `ability-terms.json` | ██████████ 100% | 80 / 80 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
@@ -74,7 +74,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `de_de` Deutsch — 0.0%（0 / 28,045）
+## `de_de` Deutsch — 0.0%（0 / 28,730）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -85,7 +85,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
-| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 1,574 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ░░░░░░░░░░ 0% | 0 / 247 | 技能樹的介面標籤<br>Ability tree interface labels |
 | `ability-terms.json` | ░░░░░░░░░░ 0% | 0 / 34 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
@@ -104,7 +104,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ░░░░░░░░░░ 0% | 0 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `es_es` Español — 0.0%（0 / 28,045）
+## `es_es` Español — 0.0%（0 / 28,730）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -115,7 +115,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
-| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 1,574 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ░░░░░░░░░░ 0% | 0 / 247 | 技能樹的介面標籤<br>Ability tree interface labels |
 | `ability-terms.json` | ░░░░░░░░░░ 0% | 0 / 34 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
@@ -134,7 +134,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ░░░░░░░░░░ 0% | 0 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `fr_fr` Français — 0.0%（0 / 28,045）
+## `fr_fr` Français — 0.0%（0 / 28,730）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -145,7 +145,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
-| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 1,574 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ░░░░░░░░░░ 0% | 0 / 247 | 技能樹的介面標籤<br>Ability tree interface labels |
 | `ability-terms.json` | ░░░░░░░░░░ 0% | 0 / 34 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
@@ -164,7 +164,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ░░░░░░░░░░ 0% | 0 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 0.0%（0 / 28,045）
+## `ja_jp` 日本語 — 0.0%（0 / 28,730）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -175,7 +175,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
-| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 1,574 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ░░░░░░░░░░ 0% | 0 / 247 | 技能樹的介面標籤<br>Ability tree interface labels |
 | `ability-terms.json` | ░░░░░░░░░░ 0% | 0 / 34 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
@@ -194,7 +194,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ░░░░░░░░░░ 0% | 0 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 0.0%（0 / 28,045）
+## `ko_kr` 한국어 — 0.0%（0 / 28,730）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -205,7 +205,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
-| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 1,574 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ░░░░░░░░░░ 0% | 0 / 247 | 技能樹的介面標籤<br>Ability tree interface labels |
 | `ability-terms.json` | ░░░░░░░░░░ 0% | 0 / 34 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |
@@ -224,7 +224,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ░░░░░░░░░░ 0% | 0 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 0.0%（0 / 28,045）
+## `ru_ru` Русский — 0.0%（0 / 28,730）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -235,7 +235,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-ui.json` | ░░░░░░░░░░ 0% | 0 / 85 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | ░░░░░░░░░░ 0% | 0 / 62 | 任務介面<br>The quest interface |
 | `quest-name.json` | ░░░░░░░░░░ 0% | 0 / 145 | 任務名稱<br>Quest names |
-| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 889 | 開技能樹時<br>Ability tree |
+| `ability/*.json` | ░░░░░░░░░░ 0% | 0 / 1,574 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ░░░░░░░░░░ 0% | 0 / 247 | 技能樹的介面標籤<br>Ability tree interface labels |
 | `ability-terms.json` | ░░░░░░░░░░ 0% | 0 / 34 | 技能敘述裡的專有名詞<br>Proper nouns inside ability descriptions |
 | `major-id.json` | ░░░░░░░░░░ 0% | 0 / 322 | 傳奇裝備的特殊詞條<br>Major IDs on mythic gear |

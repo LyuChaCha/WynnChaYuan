@@ -3,12 +3,1720 @@
   "domain": "ability/shaman",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 243,
+  "count": 364,
   "translated": 243,
   "note": "萨满的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
+  "ability-shaman#0359": {
+   "src": "Acid Rain",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Acid Rain",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0355": {
+   "src": "Charged Ritual",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Charged Ritual",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0363": {
+   "src": "Doom",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Doom",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0353": {
+   "src": "Eye of the Storm",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Eye of the Storm",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0351": {
+   "src": "Greater Sacrifice",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Greater Sacrifice",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0357": {
+   "src": "Malediction",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Malediction",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0362": {
+   "src": "Mantra",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Mantra",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0358": {
+   "src": "Overcharge",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Overcharge",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0356": {
+   "src": "Ritual Circle",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Ritual Circle",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0352": {
+   "src": "Strides of Heresy",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Strides of Heresy",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0360": {
+   "src": "Synchrony",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Synchrony",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0361": {
+   "src": "Transmute",
+   "dst": "",
+   "role": "name",
+   "kind": "term",
+   "ctx": [
+    "shaman/技能名稱"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": null,
+   "ability": "Transmute",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0304": {
+   "src": "({#}{#}Damage: {~})\n({#}{#}Air: {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Bloodletting"
+   ],
+   "lines": 2,
+   "flat": "({#}{#}Damage: {~}) ({#}{#}Air: {~})",
+   "_raw": "( Damage: 10%)\n( Air: 5%)",
+   "ability": "Bloodletting",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0303": {
+   "src": "({#}{#}Damage: {~})\n({#}{#}Fire: {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Effuse"
+   ],
+   "lines": 2,
+   "flat": "({#}{#}Damage: {~}) ({#}{#}Fire: {~})",
+   "_raw": "( Damage: 20%)\n( Fire: 5%)",
+   "ability": "Effuse",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0279": {
+   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#}{#}to {~}.",
+   "dst": "使用技能或损失生命来把大招 {#}{#}充到 {~}。",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Monument to Gloom"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#}{#}to {~}.",
+   "_raw": "Activate abilities or lose health to charge\nyour Ultimate Meter  to 100%.",
+   "ability": "Monument to Gloom",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0290": {
+   "src": "Activate abilities to charge\nyour Ultimate Meter {#}{#}to {~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities to charge your Ultimate Meter {#}{#}to {~}.",
+   "_raw": "Activate abilities to charge\nyour Ultimate Meter  to 100%.",
+   "ability": "Patchwork Abomination",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0276": {
+   "src": "Activating Totemic Shatter will cause all\nrain from Rain Dance to turn into Acid Rain.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Acid Rain"
+   ],
+   "lines": 2,
+   "flat": "Activating Totemic Shatter will cause all rain from Rain Dance to turn into Acid Rain.",
+   "_raw": "Activating Totemic Shatter will cause all\nrain from Rain Dance to turn into Acid Rain.",
+   "ability": "Acid Rain",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0288": {
+   "src": "Additionally, Aura will radiate from yourself\ninstead of your Totem.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Shatter"
+   ],
+   "lines": 2,
+   "flat": "Additionally, Aura will radiate from yourself instead of your Totem.",
+   "_raw": "Additionally, Aura will radiate from yourself\ninstead of your Totem.",
+   "ability": "Totemic Shatter",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0245": {
+   "src": "Additionally, while wearing the {#} Mask of The Fanatic,\nenemies hit by Aura will be affected by Weathering\nfor {~}s, reducing their damage by {~} and slowing\nthem by {~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Storm Dance"
+   ],
+   "lines": 4,
+   "flat": "Additionally, while wearing the {#} Mask of The Fanatic, enemies hit by Aura will be affected by Weathering for {~}s, reducing their damage by {~} and slowing them by {~}.",
+   "_raw": "Additionally, while wearing the  Mask of The Fanatic,\nenemies hit by Aura will be affected by Weathering\nfor 3s, reducing their damage by 20% and slowing\nthem by 20%.",
+   "ability": "Storm Dance",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0271": {
+   "src": "All of your Masks will spin around\nyou, dealing damage and applying\nHaunting Memory's effects.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Awakened"
+   ],
+   "lines": 3,
+   "flat": "All of your Masks will spin around you, dealing damage and applying Haunting Memory's effects.",
+   "_raw": "All of your Masks will spin around\nyou, dealing damage and applying\nHaunting Memory's effects.",
+   "ability": "Awakened",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0263": {
+   "src": "Awakened ♚ grants you the upsides of all\nMasks at once with no downsides, and\nMantra at {~} with no decay.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Awakened"
+   ],
+   "lines": 3,
+   "flat": "Awakened ♚ grants you the upsides of all Masks at once with no downsides, and Mantra at {~} with no decay.",
+   "_raw": "Awakened ♚ grants you the upsides of all\nMasks at once with no downsides, and\nMantra at 250% with no decay.",
+   "ability": "Awakened",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0272": {
+   "src": "Based on your Mask, performing certain actions\nwill increase Ritual Circle's radius and hits.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Synchrony"
+   ],
+   "lines": 2,
+   "flat": "Based on your Mask, performing certain actions will increase Ritual Circle's radius and hits.",
+   "_raw": "Based on your Mask, performing certain actions\nwill increase Ritual Circle's radius and hits.",
+   "ability": "Synchrony",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0307": {
+   "src": "Become Awakened ♚ for {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Awakened"
+   ],
+   "lines": 1,
+   "flat": "Become Awakened ♚ for {~}s.",
+   "_raw": "Become Awakened ♚ for 25s.",
+   "ability": "Awakened",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0250": {
+   "src": "Bleeding{#}{#}{#}enemies take damage every {~}s.\nBleeding{#}{#}{#}damage dealt within Totem's range\nalso adds +{~} points to your Blood Pool{#}{#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Lashing Lance"
+   ],
+   "lines": 3,
+   "flat": "Bleeding{#}{#}{#}enemies take damage every {~}s. Bleeding{#}{#}{#}damage dealt within Totem's range also adds +{~} points to your Blood Pool{#}{#}.",
+   "_raw": "Bleeding  enemies take damage every 0.5s.\nBleeding  damage dealt within Totem's range\nalso adds +0.8 points to your Blood Pool .",
+   "ability": "Lashing Lance",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0249": {
+   "src": "Bleeding{#}{#}{#}enemies take damage every {~}s.\nBleeding{#}{#}{#}damage dealt within Totem's{#}range\nalso adds +{~} points to your Blood Pool{#}{#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Sanguine Strike"
+   ],
+   "lines": 3,
+   "flat": "Bleeding{#}{#}{#}enemies take damage every {~}s. Bleeding{#}{#}{#}damage dealt within Totem's{#}range also adds +{~} points to your Blood Pool{#}{#}.",
+   "_raw": "Bleeding  enemies take damage every 0.5s.\nBleeding  damage dealt within Totem's range\nalso adds +0.8 points to your Blood Pool .",
+   "ability": "Sanguine Strike",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0248": {
+   "src": "Casting Totem while holding shift will spend\n{~} points of Blood Pool {#}{#}(per Totem) to\ncall upon {~} nightmarish tentacles that attack\nnearby enemies.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eldritch Call"
+   ],
+   "lines": 4,
+   "flat": "Casting Totem while holding shift will spend {~} points of Blood Pool {#}{#}(per Totem) to call upon {~} nightmarish tentacles that attack nearby enemies.",
+   "_raw": "Casting Totem while holding shift will spend\n35 points of Blood Pool  (per Totem) to\ncall upon 4 nightmarish tentacles that attack\nnearby enemies.",
+   "ability": "Eldritch Call",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0244": {
+   "src": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totem Shove"
+   ],
+   "lines": 6,
+   "flat": "Casting Totem while looking at an existing Totem will shove it forwards for half the mana cost, dealing damage to any enemy it crashes into. (Sneak to reverse its direction)",
+   "_raw": "Casting Totem while looking\nat an existing Totem will shove it\nforwards for half the mana cost,\ndealing damage to any enemy it\ncrashes into.\n(Sneak to reverse its direction)",
+   "ability": "Totem Shove",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0243": {
+   "src": "Casting a spell whose cost is reduced by Artist's\nImmersion will summon a ritual circle. Additional casts\nincrease the ritual circle's radius and hits by {~}.\n(Max {~} blocks)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Ritual Circle"
+   ],
+   "lines": 4,
+   "flat": "Casting a spell whose cost is reduced by Artist's Immersion will summon a ritual circle. Additional casts increase the ritual circle's radius and hits by {~}. (Max {~} blocks)",
+   "_raw": "Casting a spell whose cost is reduced by Artist's\nImmersion will summon a ritual circle. Additional casts\nincrease the ritual circle's radius and hits by 1.\n(Max 8 blocks)",
+   "ability": "Ritual Circle",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0291": {
+   "src": "Corroded enemies will take +{~} more\ndamage from all sources.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Acid Rain"
+   ],
+   "lines": 2,
+   "flat": "Corroded enemies will take +{~} more damage from all sources.",
+   "_raw": "Corroded enemies will take +8% more\ndamage from all sources.",
+   "ability": "Acid Rain",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0295": {
+   "src": "Enemies hit by Aura will be pulled towards your totem.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Storm Dance"
+   ],
+   "lines": 1,
+   "flat": "Enemies hit by Aura will be pulled towards your totem.",
+   "_raw": "Enemies hit by Aura will be pulled towards your totem.",
+   "ability": "Storm Dance",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0273": {
+   "src": "Eye of the Storm will inflict +{~} Static on hit enemies\nper Surge you have. (Max {~} Static)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Charged Ritual"
+   ],
+   "lines": 2,
+   "flat": "Eye of the Storm will inflict +{~} Static on hit enemies per Surge you have. (Max {~} Static)",
+   "_raw": "Eye of the Storm will inflict +1 Static on hit enemies\nper Surge you have. (Max 150 Static)",
+   "ability": "Charged Ritual",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0283": {
+   "src": "Flaming Tongue deals more damage and grants\n+{~} Blood Pool {#} per hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Effuse"
+   ],
+   "lines": 2,
+   "flat": "Flaming Tongue deals more damage and grants +{~} Blood Pool {#} per hit.",
+   "_raw": "Flaming Tongue deals more damage and grants\n+1.2 Blood Pool  per hit.",
+   "ability": "Effuse",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0255": {
+   "src": "Flaming Tongue{#}gains +{~} hits, deals more damage,\nand now inflicts enemies with Bleeding{#}{#} for\n+{~}s{#}per hit. (Max {~}s)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Lashing Lance"
+   ],
+   "lines": 3,
+   "flat": "Flaming Tongue{#}gains +{~} hits, deals more damage, and now inflicts enemies with Bleeding{#}{#} for +{~}s{#}per hit. (Max {~}s)",
+   "_raw": "Flaming Tongue gains +2 hits, deals more damage,\nand now inflicts enemies with Bleeding  for\n+1s per hit. (Max 6s)",
+   "ability": "Lashing Lance",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0256": {
+   "src": "For each Transfused {#}{#}Eldritch Call has, its\nattacks deal more damage. All Transfused {#}\nis lost when Eldritch Call expires.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eldritch Transfusion"
+   ],
+   "lines": 3,
+   "flat": "For each Transfused {#}{#}Eldritch Call has, its attacks deal more damage. All Transfused {#} is lost when Eldritch Call expires.",
+   "_raw": "For each Transfused  Eldritch Call has, its\nattacks deal more damage. All Transfused \nis lost when Eldritch Call expires.",
+   "ability": "Eldritch Transfusion",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0281": {
+   "src": "Gain +{~} Mana every {~}s if you\nor a Totem are inside at least {~}\npool.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Pool of Rejuvenation"
+   ],
+   "lines": 3,
+   "flat": "Gain +{~} Mana every {~}s if you or a Totem are inside at least {~} pool.",
+   "_raw": "Gain +1 Mana every 0.2s if you\nor a Totem are inside at least 1\npool.",
+   "ability": "Pool of Rejuvenation",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0264": {
+   "src": "Grant nearby allies a stack of buffs per {~}s\nwhile near you, based on your current Mask.\n(Max {~} Stacks)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Tribal Chants"
+   ],
+   "lines": 3,
+   "flat": "Grant nearby allies a stack of buffs per {~}s while near you, based on your current Mask. (Max {~} Stacks)",
+   "_raw": "Grant nearby allies a stack of buffs per 0.5s\nwhile near you, based on your current Mask.\n(Max 10 Stacks)",
+   "ability": "Tribal Chants",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0267": {
+   "src": "Hitting enemies with your Main Attack\nwill consume {~}{#}Static per beam to\ncause a small explosion.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Malediction"
+   ],
+   "lines": 3,
+   "flat": "Hitting enemies with your Main Attack will consume {~}{#}Static per beam to cause a small explosion.",
+   "_raw": "Hitting enemies with your Main Attack\nwill consume 1 Static per beam to\ncause a small explosion.",
+   "ability": "Malediction",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0305": {
+   "src": "Increase Eye of the Storm's damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Doom"
+   ],
+   "lines": 1,
+   "flat": "Increase Eye of the Storm's damage.",
+   "_raw": "Increase Eye of the Storm's damage.",
+   "ability": "Doom",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0292": {
+   "src": "Increase Ritual Circle's maximum radius and hits by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Synchrony"
+   ],
+   "lines": 1,
+   "flat": "Increase Ritual Circle's maximum radius and hits by +{~}.",
+   "_raw": "Increase Ritual Circle's maximum radius and hits by +4.",
+   "ability": "Synchrony",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0296": {
+   "src": "Increase your maximum Blood Pool {#}{#}by +{~} points.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Larger Blood Pool"
+   ],
+   "lines": 1,
+   "flat": "Increase your maximum Blood Pool {#}{#}by +{~} points.",
+   "_raw": "Increase your maximum Blood Pool  by +30 points.",
+   "ability": "Larger Blood Pool",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0260": {
+   "src": "Increase your maximum Blood Pool {#}{#}by +{~} points.\nIncrease your maximum Bleeding {#}{#}duration by +{~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Bloody",
+    "shaman/Bloodier",
+    "shaman/Bloodiest"
+   ],
+   "lines": 2,
+   "flat": "Increase your maximum Blood Pool {#}{#}by +{~} points. Increase your maximum Bleeding {#}{#}duration by +{~}s.",
+   "_raw": "Increase your maximum Blood Pool  by +30 points.\nIncrease your maximum Bleeding  duration by +1.5s.",
+   "ability": "Bloody、Bloodier、Bloodiest",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0261": {
+   "src": "Nearby Bleeding {#}{#}enemies will take\ndamage for every {~} Health you lose.\n(Max {~} activations per second)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Twisted Tether"
+   ],
+   "lines": 3,
+   "flat": "Nearby Bleeding {#}{#}enemies will take damage for every {~} Health you lose. (Max {~} activations per second)",
+   "_raw": "Nearby Bleeding  enemies will take\ndamage for every 2% Health you lose.\n(Max 10 activations per second)",
+   "ability": "Twisted Tether",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0300": {
+   "src": "Others receive +{~} Health {#}{#}every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Monument to Gloom"
+   ],
+   "lines": 1,
+   "flat": "Others receive +{~} Health {#}{#}every {~}s.",
+   "_raw": "Others receive +5% Health  every 0.4s.",
+   "ability": "Monument to Gloom",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0246": {
+   "src": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes\nup to {~}s of Bleeding{#}{#}, granting +{~} Blood Pool {#}{#}for each\nsecond of Bleeding{#}{#}{#}consumed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Rupture"
+   ],
+   "lines": 3,
+   "flat": "Sacrificial Shrine boosts Aura's damage by +{~} and consumes up to {~}s of Bleeding{#}{#}, granting +{~} Blood Pool {#}{#}for each second of Bleeding{#}{#}{#}consumed.",
+   "_raw": "Sacrificial Shrine boosts Aura's damage by +30% and consumes\nup to 2s of Bleeding , granting +2.2 Blood Pool  for each\nsecond of Bleeding  consumed.",
+   "ability": "Rupture",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0274": {
+   "src": "Sacrificial Shrine siphons +{~} of your health\nevery {~}s and boosts Aura's damage by +{~}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Greater Sacrifice"
+   ],
+   "lines": 2,
+   "flat": "Sacrificial Shrine siphons +{~} of your health every {~}s and boosts Aura's damage by +{~}.",
+   "_raw": "Sacrificial Shrine siphons +1% of your health\nevery 0.4s and boosts Aura's damage by +20%.",
+   "ability": "Greater Sacrifice",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0265": {
+   "src": "Switching Masks while your current Mask is\nover {~} Mantra will overclock the next\nMask to {~}{#}Mantra.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Overcharge"
+   ],
+   "lines": 3,
+   "flat": "Switching Masks while your current Mask is over {~} Mantra will overclock the next Mask to {~}{#}Mantra.",
+   "_raw": "Switching Masks while your current Mask is\nover 150% Mantra will overclock the next\nMask to 250% Mantra.",
+   "ability": "Overcharge",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0280": {
+   "src": "Switching Masks will detonate the circle, inflicting\n{~}{#}Static per hit.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Ritual Circle"
+   ],
+   "lines": 2,
+   "flat": "Switching Masks will detonate the circle, inflicting {~}{#}Static per hit.",
+   "_raw": "Switching Masks will detonate the circle, inflicting\n2 Static per hit.",
+   "ability": "Ritual Circle",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0277": {
+   "src": "Tentacles will attack Bleeding{#}{#} enemies from an\nadditional +{~} blocks away.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eldritch Call"
+   ],
+   "lines": 2,
+   "flat": "Tentacles will attack Bleeding{#}{#} enemies from an additional +{~} blocks away.",
+   "_raw": "Tentacles will attack Bleeding  enemies from an\nadditional +6 blocks away.",
+   "ability": "Eldritch Call",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0275": {
+   "src": "The Acid Rain lasts for {~}s, inflicting{#}{~}s\nof Corroded every time it hits an enemy.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Acid Rain"
+   ],
+   "lines": 2,
+   "flat": "The Acid Rain lasts for {~}s, inflicting{#}{~}s of Corroded every time it hits an enemy.",
+   "_raw": "The Acid Rain lasts for 2s, inflicting 1.5s\nof Corroded every time it hits an enemy.",
+   "ability": "Acid Rain",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0306": {
+   "src": "Totem summons Puppets{#}{~} faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Puppetry"
+   ],
+   "lines": 1,
+   "flat": "Totem summons Puppets{#}{~} faster.",
+   "_raw": "Totem summons Puppets 25% faster.",
+   "ability": "Puppetry",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0266": {
+   "src": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to equip the previous mask)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "lines": 3,
+   "flat": "When casting Uproot, instead wear one of the Mystic Masks. (Shift + Uproot to equip the previous mask)",
+   "_raw": "When casting Uproot, instead\nwear one of the Mystic Masks.\n(Shift + Uproot to equip the previous mask)",
+   "ability": "Mystic Masks",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0247": {
+   "src": "When entering the {#}{#}Mask of the Heretic, knock back\nall nearby enemies, regenerate {~} of your Mana,\nand gain a large Walk Speed boost that decays\nover {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Strides of Heresy"
+   ],
+   "lines": 4,
+   "flat": "When entering the {#}{#}Mask of the Heretic, knock back all nearby enemies, regenerate {~} of your Mana, and gain a large Walk Speed boost that decays over {~}s.",
+   "_raw": "When entering the  Mask of the Heretic, knock back\nall nearby enemies, regenerate 30% of your Mana,\nand gain a large Walk Speed boost that decays\nover 6s.",
+   "ability": "Strides of Heresy",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0251": {
+   "src": "When wearing the {#} Mask of the Lunatic, casting Totem{#}\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Charged Ritual"
+   ],
+   "lines": 3,
+   "flat": "When wearing the {#} Mask of the Lunatic, casting Totem{#} while sneaking will cause it to smash down onto the ground, detonating all Static.",
+   "_raw": "When wearing the  Mask of the Lunatic, casting Totem\nwhile sneaking will cause it to smash down onto the\nground, detonating all Static.",
+   "ability": "Charged Ritual",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0254": {
+   "src": "When wearing the {#} Mask of the Lunatic, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -{~} of its damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Hymn of Hate"
+   ],
+   "lines": 3,
+   "flat": "When wearing the {#} Mask of the Lunatic, killing an enemy with Aura will cast a new Aura at its location, dealing -{~} of its damage.",
+   "_raw": "When wearing the  Mask of the Lunatic, killing\nan enemy with Aura will cast a new Aura\nat its location, dealing -50% of its damage.",
+   "ability": "Hymn of Hate",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0258": {
+   "src": "When wearing the {#}{#}Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max {~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Pool of Rejuvenation"
+   ],
+   "lines": 3,
+   "flat": "When wearing the {#}{#}Mask of the Heretic, Frog Dance will create a small pool when hitting the ground. (Max {~})",
+   "_raw": "When wearing the  Mask of the Heretic,\nFrog Dance will create a small pool\nwhen hitting the ground. (Max 3)",
+   "ability": "Pool of Rejuvenation",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0253": {
+   "src": "When wearing the {#}{#}Mask of the Heretic,\nHaul will instead bounce you off the\nground and damage nearby enemies.\n(Hold shift to cancel)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Frog Dance"
+   ],
+   "lines": 4,
+   "flat": "When wearing the {#}{#}Mask of the Heretic, Haul will instead bounce you off the ground and damage nearby enemies. (Hold shift to cancel)",
+   "_raw": "When wearing the  Mask of the Heretic,\nHaul will instead bounce you off the\nground and damage nearby enemies.\n(Hold shift to cancel)",
+   "ability": "Frog Dance",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0268": {
+   "src": "When you switch Masks, throw your previous one\nforwards. If it hits an enemy, it will debuff them.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "lines": 2,
+   "flat": "When you switch Masks, throw your previous one forwards. If it hits an enemy, it will debuff them.",
+   "_raw": "When you switch Masks, throw your previous one\nforwards. If it hits an enemy, it will debuff them.",
+   "ability": "Haunting Memory",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0269": {
+   "src": "While not worn, each Mask's positive effects\ngradually overload by +{~} every {~}s§=. (Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mantra"
+   ],
+   "lines": 2,
+   "flat": "While not worn, each Mask's positive effects gradually overload by +{~} every {~}s§=. (Max +{~})",
+   "_raw": "While not worn, each Mask's positive effects\ngradually overload by +20% every 1.5s§=. (Max +200%)",
+   "ability": "Mantra",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0257": {
+   "src": "While wearing the {#} Mask of the Lunatic, casting Aura\nwill charge you up, granting you a stack of Surge.\n(Max {~} Surge)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eye of the Storm"
+   ],
+   "lines": 3,
+   "flat": "While wearing the {#} Mask of the Lunatic, casting Aura will charge you up, granting you a stack of Surge. (Max {~} Surge)",
+   "_raw": "While wearing the  Mask of the Lunatic, casting Aura\nwill charge you up, granting you a stack of Surge.\n(Max 5 Surge)",
+   "ability": "Eye of the Storm",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0252": {
+   "src": "While wearing the {#}{#}Mask of the Fanatic,\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering {~}s\nworth of its effects.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Totemic Shatter"
+   ],
+   "lines": 4,
+   "flat": "While wearing the {#}{#}Mask of the Fanatic, your Totem will shatter upon impacting the ground, rapidly triggering {~}s worth of its effects.",
+   "_raw": "While wearing the  Mask of the Fanatic,\nyour Totem will shatter upon impacting\nthe ground, rapidly triggering 4s\nworth of its effects.",
+   "ability": "Totemic Shatter",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0294": {
+   "src": "While worn, the overload will decay\nby -{~} every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mantra"
+   ],
+   "lines": 2,
+   "flat": "While worn, the overload will decay by -{~} every {~}s.",
+   "_raw": "While worn, the overload will decay\nby -20% every 1s.",
+   "ability": "Mantra",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0286": {
+   "src": "While you have Surge, strike nearby enemies with\nlightning every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eye of the Storm"
+   ],
+   "lines": 2,
+   "flat": "While you have Surge, strike nearby enemies with lightning every {~}s.",
+   "_raw": "While you have Surge, strike nearby enemies with\nlightning every 1.5s.",
+   "ability": "Eye of the Storm",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0262": {
+   "src": "You and any allies within the beam will\nreceive +{~}{#}Overhealth ❤ per hit.\nBonus health decays over {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Blood Sorrow"
+   ],
+   "lines": 3,
+   "flat": "You and any allies within the beam will receive +{~}{#}Overhealth ❤ per hit. Bonus health decays over {~}s.",
+   "_raw": "You and any allies within the beam will\nreceive +2% Overhealth ❤ per hit.\nBonus health decays over 20s.",
+   "ability": "Blood Sorrow",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0284": {
+   "src": "Your Main Attack will now inflict enemies\nwith Bleeding {#}{#}for +{~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Sanguine Strike"
+   ],
+   "lines": 2,
+   "flat": "Your Main Attack will now inflict enemies with Bleeding {#}{#}for +{~}s.",
+   "_raw": "Your Main Attack will now inflict enemies\nwith Bleeding  for +2s.",
+   "ability": "Sanguine Strike",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0297": {
+   "src": "Your Masks grant a bonus effect\nto your Main Attack.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Transmute"
+   ],
+   "lines": 2,
+   "flat": "Your Masks grant a bonus effect to your Main Attack.",
+   "_raw": "Your Masks grant a bonus effect\nto your Main Attack.",
+   "ability": "Transmute",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0285": {
+   "src": "Your Masks reduce the cost of different\nspells based on the active Mask.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Artist's Immersion"
+   ],
+   "lines": 2,
+   "flat": "Your Masks reduce the cost of different spells based on the active Mask.",
+   "_raw": "Your Masks reduce the cost of different\nspells based on the active Mask.",
+   "ability": "Artist's Immersion",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0259": {
+   "src": "Your Totem becomes possessed by an eldritch\ndemon, granting +{~} Blood Pool {#}{#}to nearby\nacolytes every {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Monument to Gloom"
+   ],
+   "lines": 3,
+   "flat": "Your Totem becomes possessed by an eldritch demon, granting +{~} Blood Pool {#}{#}to nearby acolytes every {~}s.",
+   "_raw": "Your Totem becomes possessed by an eldritch\ndemon, granting +5% Blood Pool  to nearby\nacolytes every 0.4s.",
+   "ability": "Monument to Gloom",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0298": {
+   "src": "increase Ritual Circle's radius by +{~} blocks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Synchrony"
+   ],
+   "lines": 1,
+   "flat": "increase Ritual Circle's radius by +{~} blocks.",
+   "_raw": "increase Ritual Circle's radius by +1 blocks.",
+   "ability": "Synchrony",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0308": {
+   "src": "radius by +{~} blocks.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Synchrony"
+   ],
+   "lines": 1,
+   "flat": "radius by +{~} blocks.",
+   "_raw": "radius by +1 blocks.",
+   "ability": "Synchrony",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0289": {
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Damage Bonus to Self",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Damage Bonus to Self",
+   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -10% Damage Bonus to Self",
+   "ability": "Mystic Masks",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0287": {
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Resistance Bonus to Self",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~}{#}Resistance Bonus to Self",
+   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -15% Resistance Bonus to Self",
+   "ability": "Mystic Masks",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0311": {
+   "src": "⌚ Cooldown: {~}s",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Overcharge"
+   ],
+   "lines": 1,
+   "flat": "⌚ Cooldown: {~}s",
+   "_raw": "⌚ Cooldown: 10s",
+   "ability": "Overcharge",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0312": {
+   "src": "⌛ Duration: {~}s",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Storm Dance"
+   ],
+   "lines": 1,
+   "flat": "⌛ Duration: {~}s",
+   "_raw": "⌛ Duration: 3s",
+   "ability": "Storm Dance",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0282": {
+   "src": "⌛ Duration: {~}s (per stack)\n☀ Area of Effect: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Tribal Chants"
+   ],
+   "lines": 2,
+   "flat": "⌛ Duration: {~}s (per stack) ☀ Area of Effect: {~} Blocks (Circle-Shaped)",
+   "_raw": "⌛ Duration: 5s (per stack)\n☀ Area of Effect: 6 Blocks (Circle-Shaped)",
+   "ability": "Tribal Chants",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0309": {
+   "src": "⌛ Max Duration: {~}s",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Acid Rain"
+   ],
+   "lines": 1,
+   "flat": "⌛ Max Duration: {~}s",
+   "_raw": "⌛ Max Duration: 10s",
+   "ability": "Acid Rain",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0301": {
+   "src": "☀ Area of Effect: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Charged Ritual"
+   ],
+   "lines": 1,
+   "flat": "☀ Area of Effect: {~} Blocks (Circle-Shaped)",
+   "_raw": "☀ Area of Effect: 4 Blocks (Circle-Shaped)",
+   "ability": "Charged Ritual",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0293": {
+   "src": "⚔ Total Damage: {~} (of your DPS, as Main Attack\ndamage)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Malediction"
+   ],
+   "lines": 2,
+   "flat": "⚔ Total Damage: {~} (of your DPS, as Main Attack damage)",
+   "_raw": "⚔ Total Damage: 40% (of your DPS, as Main Attack\ndamage)",
+   "ability": "Malediction",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0299": {
+   "src": "⚔ Total Damage: {~} (of your DPS, per Static)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Charged Ritual"
+   ],
+   "lines": 1,
+   "flat": "⚔ Total Damage: {~} (of your DPS, per Static)",
+   "_raw": "⚔ Total Damage: 40% (of your DPS, per Static)",
+   "ability": "Charged Ritual",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0302": {
+   "src": "⚔ Total Damage: {~} (of your DPS, per Surge)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eye of the Storm",
+    "shaman/Doom"
+   ],
+   "lines": 1,
+   "flat": "⚔ Total Damage: {~} (of your DPS, per Surge)",
+   "_raw": "⚔ Total Damage: 120% (of your DPS, per Surge)",
+   "ability": "Eye of the Storm、Doom",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0270": {
+   "src": "✧ Effect: +{~} Walk Speed to self\n☀ Area of Effect: {~} Blocks (Circle-Shaped)\n⌚ Cooldown: {~}s",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Strides of Heresy"
+   ],
+   "lines": 3,
+   "flat": "✧ Effect: +{~} Walk Speed to self ☀ Area of Effect: {~} Blocks (Circle-Shaped) ⌚ Cooldown: {~}s",
+   "_raw": "✧ Effect: +120% Walk Speed to self\n☀ Area of Effect: 6 Blocks (Circle-Shaped)\n⌚ Cooldown: 8s",
+   "ability": "Strides of Heresy",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0310": {
+   "src": "➼ Range: {~} Blocks",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Awakened"
+   ],
+   "lines": 1,
+   "flat": "➼ Range: {~} Blocks",
+   "_raw": "➼ Range: 6 Blocks",
+   "ability": "Awakened",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0278": {
+   "src": "➼ Range: {~} Blocks\n☀ Area of Effect: {~} Blocks (Circle-Shaped)\n⌛ Duration: {~}s",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Eye of the Storm"
+   ],
+   "lines": 3,
+   "flat": "➼ Range: {~} Blocks ☀ Area of Effect: {~} Blocks (Circle-Shaped) ⌛ Duration: {~}s",
+   "_raw": "➼ Range: 12 Blocks\n☀ Area of Effect: 2 Blocks (Circle-Shaped)\n⌛ Duration: 18s",
+   "ability": "Eye of the Storm",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0337": {
+   "src": "{#} Fanatic: +{~} Resistance to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Tribal Chants"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Fanatic: +3% Resistance to Allies",
+   "ability": "Tribal Chants",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0340": {
+   "src": "{#} Fanatic: -{~} {#}{#}Totem Cost",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Artist's Immersion"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Fanatic: -65%  Totem Cost",
+   "ability": "Artist's Immersion",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0345": {
+   "src": "{#} Fanatic: Increased Knockback",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Transmute"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Fanatic: Increased Knockback",
+   "ability": "Transmute",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0315": {
+   "src": "{#} Fanatic: Inflicting {~}s worth of debuffs will increase",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Synchrony"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Fanatic: Inflicting 1s worth of debuffs will increase",
+   "ability": "Synchrony",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0342": {
+   "src": "{#} Heretic: -{~} {#}{#}Haul Cost",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Artist's Immersion"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Heretic: -50%  Haul Cost",
+   "ability": "Artist's Immersion",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0313": {
+   "src": "{#} Heretic: Gaining +{~} mana will increase Ritual Circle's",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Synchrony"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Heretic: Gaining +10 mana will increase Ritual Circle's",
+   "ability": "Synchrony",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0343": {
+   "src": "{#} Heretic: Increased Beam Speed",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Transmute"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Heretic: Increased Beam Speed",
+   "ability": "Transmute",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0341": {
+   "src": "{#} Lunatic: +{~} Main Attack Beam",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Transmute"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Lunatic: +1 Main Attack Beam",
+   "ability": "Transmute",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0344": {
+   "src": "{#} Lunatic: -{~} {#}{#}Aura Cost",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Artist's Immersion"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Lunatic: -50%  Aura Cost",
+   "ability": "Artist's Immersion",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0314": {
+   "src": "{#} Lunatic: Hitting enemies with {~} Main Attack beams will",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Synchrony"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Lunatic: Hitting enemies with 3 Main Attack beams will",
+   "ability": "Synchrony",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0350": {
+   "src": "{#}(✣ Damage: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "shaman/Eye of the Storm",
+    "shaman/Charged Ritual",
+    "shaman/Malediction",
+    "shaman/Doom"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "(✣ Damage: 90%)",
+   "ability": "Eye of the Storm、Charged Ritual、Malediction、Doom",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0349": {
+   "src": "{#}(✦ Thunder: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "shaman/Eye of the Storm",
+    "shaman/Charged Ritual"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "(✦ Thunder: 30%)",
+   "ability": "Eye of the Storm、Charged Ritual",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0354": {
+   "src": "{#}(✹ Fire: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "shaman/Doom"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "(✹ Fire: 20%)",
+   "ability": "Doom",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0336": {
+   "src": "{#}Ritual Circle's radius by +{~} blocks.",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Synchrony"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "Ritual Circle's radius by +1 blocks.",
+   "ability": "Synchrony",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0319": {
+   "src": "{#}{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Fanatic: -15% Resistance Bonus () to Enemies",
+   "ability": "Haunting Memory",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0326": {
+   "src": "{#}{#} Heretic: +{~} Slowness ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Heretic: +30% Slowness () to Enemies",
+   "ability": "Haunting Memory",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0322": {
+   "src": "{#}{#} Lunatic: -{~}{#}Damage Bonus ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Lunatic: -15% Damage Bonus () to Enemies",
+   "ability": "Haunting Memory",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0316": {
+   "src": "{#}{#}Area of Effect: {~} Blocks (Circle-Shaped, Explosion)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: 12 Blocks (Circle-Shaped, Explosion)",
+   "ability": "Patchwork Abomination",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0327": {
+   "src": "{#}{#}Area of Effect: {~} Blocks (Line-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Rain Dance"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: 3.5 Blocks (Line-Shaped)",
+   "ability": "Rain Dance",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0346": {
+   "src": "{#}{#}Cooldown: {~}s (per enemy)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Sanguine Strike",
+    "warrior/Counter",
+    "assassin/Satsujin"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Cooldown: 2s (per enemy)",
+   "ability": "Sanguine Strike、Counter、Satsujin",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0333": {
+   "src": "{#}{#}Effect: +{~} Attack Speed to Puppets",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Commander"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +25% Attack Speed to Puppets",
+   "ability": "Commander",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0334": {
+   "src": "{#}{#}Effect: +{~} Attack Speed to Summons",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Invigorating Wave"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +30% Attack Speed to Summons",
+   "ability": "Invigorating Wave",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0330": {
+   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Vengeful Spirit",
+    "warrior/Emboldening Cry"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +20% Damage Bonus (⚔) to Allies",
+   "ability": "Vengeful Spirit、Emboldening Cry",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0328": {
+   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Puppets",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Friendly Fire"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +10% Damage Bonus (⚔) to Puppets",
+   "ability": "Friendly Fire",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0335": {
+   "src": "{#}{#}Effect: +{~} Damage Bonus to Summons",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Bullwhip"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +20% Damage Bonus to Summons",
+   "ability": "Bullwhip",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0339": {
+   "src": "{#}{#}Effect: +{~} Walk Speed to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Hummingbird's Song"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +40% Walk Speed to Self",
+   "ability": "Hummingbird's Song",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0320": {
+   "src": "{#}{#}Effect: +{~} damage to Eldritch Call (Per stack)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Eldritch Transfusion"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +15% damage to Eldritch Call (Per stack)",
+   "ability": "Eldritch Transfusion",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0329": {
+   "src": "{#}{#}Effect: {~} Resistance Bonus (❁) to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Fortified Formation",
+    "archer/Repel",
+    "assassin/Braced Impact"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: 50% Resistance Bonus (❁) to Self",
+   "ability": "Fortified Formation、Repel、Braced Impact",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0347": {
+   "src": "{#}{#}Effects:",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effects:",
+   "ability": "Haunting Memory",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0338": {
+   "src": "{#}{#}Effects: +{~} Walk Speed to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Soaring Wingbeats"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effects: +20% Walk Speed to Self",
+   "ability": "Soaring Wingbeats",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0332": {
+   "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Maddening Roots"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effects: 40% Slowness () to Enemies",
+   "ability": "Maddening Roots",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0348": {
+   "src": "{#}{#}Range: ~{~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "shaman/Totem Shove"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Range: ~12 Blocks",
+   "ability": "Totem Shove",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0317": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Uproot, per hit)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Lashing Lance"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +15% (of your DPS, for Uproot, per hit)",
+   "ability": "Lashing Lance",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0318": {
+   "src": "{#}{#}Total Damage: -{~} (of your DPS, for Uproot, per hit)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Flaming Tongue"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: -35% (of your DPS, for Uproot, per hit)",
+   "ability": "Flaming Tongue",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0331": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Attack)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 2400% (of your DPS, Attack)",
+   "ability": "Patchwork Abomination",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0325": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Explosion)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 5000% (of your DPS, Explosion)",
+   "ability": "Patchwork Abomination",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0323": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, from Bleeding)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Lashing Lance",
+    "shaman/Sanguine Strike"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 60% (of your DPS, from Bleeding)",
+   "ability": "Lashing Lance、Sanguine Strike",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0324": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per strike)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Eldritch Call",
+    "assassin/Lacerate"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 850% (of your DPS, per strike)",
+   "ability": "Eldritch Call、Lacerate",
+   "code": "SHAMAN"
+  },
+  "ability-shaman#0321": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Twisted Tether"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 50% (of your DPS, per 2% health)",
+   "ability": "Twisted Tether",
+   "code": "SHAMAN"
+  },
   "ability-shaman#0000": {
    "src": "Totem",
    "dst": "图腾",
@@ -497,19 +2205,6 @@
    "ability": "Flaming Tongue",
    "code": "SHAMAN-P3-R04-C08"
   },
-  "ability-shaman#0036": {
-   "src": "{#}({#}{#}Earth: -{~})",
-   "dst": "{#}({#}{#}土: -{~})",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "shaman/Flaming Tongue"
-   ],
-   "_raw": "( Earth: -30%)",
-   "tree": "04/shaman/03/004/008",
-   "ability": "Flaming Tongue",
-   "code": "SHAMAN-P3-R04-C08"
-  },
   "ability-shaman#0037": {
    "src": "{#} Total Damage: -{~} (of your DPS, for Uproot, per hit)",
    "dst": "{#} 总伤害: -{~} (你的每秒伤害，Uproot，每次命中)",
@@ -519,6 +2214,19 @@
     "shaman/Flaming Tongue"
    ],
    "_raw": " Total Damage: -35% (of your DPS, for Uproot, per hit)",
+   "tree": "04/shaman/03/004/008",
+   "ability": "Flaming Tongue",
+   "code": "SHAMAN-P3-R04-C08"
+  },
+  "ability-shaman#0036": {
+   "src": "{#}({#}{#}Earth: -{~})",
+   "dst": "{#}({#}{#}土: -{~})",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "shaman/Flaming Tongue"
+   ],
+   "_raw": "( Earth: -30%)",
    "tree": "04/shaman/03/004/008",
    "ability": "Flaming Tongue",
    "code": "SHAMAN-P3-R04-C08"
@@ -577,21 +2285,6 @@
    "ability": "Mystic Masks",
    "code": "SHAMAN-P4-R01-C03"
   },
-  "ability-shaman#0042": {
-   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Walk Speed to Self",
-   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} 对自身移动速度",
-   "role": "desc",
-   "kind": "block",
-   "ctx": [
-    "shaman/Mystic Masks"
-   ],
-   "lines": 1,
-   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Walk Speed to Self",
-   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -25% Walk Speed to Self",
-   "tree": "04/shaman/04/001/003",
-   "ability": "Mystic Masks",
-   "code": "SHAMAN-P4-R01-C03"
-  },
   "ability-shaman#0043": {
    "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Damage Bonus to Self",
    "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} 对自身伤害加成",
@@ -618,6 +2311,21 @@
    "lines": 1,
    "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Resistance Bonus to Self",
    "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -15% Resistance Bonus to Self",
+   "tree": "04/shaman/04/001/003",
+   "ability": "Mystic Masks",
+   "code": "SHAMAN-P4-R01-C03"
+  },
+  "ability-shaman#0042": {
+   "src": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Walk Speed to Self",
+   "dst": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} 对自身移动速度",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "shaman/Mystic Masks"
+   ],
+   "lines": 1,
+   "flat": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -{~} Walk Speed to Self",
+   "_raw": "ÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀÀ -25% Walk Speed to Self",
    "tree": "04/shaman/04/001/003",
    "ability": "Mystic Masks",
    "code": "SHAMAN-P4-R01-C03"
@@ -911,6 +2619,19 @@
    "ability": "Haunting Memory",
    "code": "SHAMAN-P4-R04-C03"
   },
+  "ability-shaman#0069": {
+   "src": "{#} Effects:",
+   "dst": "{#} 效果:",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Haunting Memory"
+   ],
+   "_raw": " Effects:",
+   "tree": "04/shaman/04/004/003",
+   "ability": "Haunting Memory",
+   "code": "SHAMAN-P4-R04-C03"
+  },
   "ability-shaman#0066": {
    "src": "{#} Fanatic: -{~} Resistance Bonus ({#}) to Enemies",
    "dst": "{#} 金虔: 对敌人 -{~} 抗性加成 ({#})",
@@ -946,19 +2667,6 @@
     "shaman/Haunting Memory"
    ],
    "_raw": " Lunatic: -15% Damage Bonus () to Enemies",
-   "tree": "04/shaman/04/004/003",
-   "ability": "Haunting Memory",
-   "code": "SHAMAN-P4-R04-C03"
-  },
-  "ability-shaman#0069": {
-   "src": "{#} Effects:",
-   "dst": "{#} 效果:",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Haunting Memory"
-   ],
-   "_raw": " Effects:",
    "tree": "04/shaman/04/004/003",
    "ability": "Haunting Memory",
    "code": "SHAMAN-P4-R04-C03"
@@ -1657,6 +3365,19 @@
    "ability": "Tribal Chants",
    "code": "SHAMAN-P6-R01-C04"
   },
+  "ability-shaman#0124": {
+   "src": "{#} Cooldown: {~}s (per Chant)",
+   "dst": "{#} 冷却时间: {~} 秒 (每次吟唱)",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "shaman/Tribal Chants"
+   ],
+   "_raw": " Cooldown: 8s (per Chant)",
+   "tree": "04/shaman/06/001/004",
+   "ability": "Tribal Chants",
+   "code": "SHAMAN-P6-R01-C04"
+  },
   "ability-shaman#0121": {
    "src": "{#} Fanatic: +{~} Resistance Bonus (❁) to Allies",
    "dst": "{#} 金虔: 对友军 +{~} 抗性加成 (❁)",
@@ -1697,19 +3418,6 @@
    "_raw": " Lunatic: +15% Damage Bonus (⚔) to Allies",
    "tree": "04/shaman/06/001/004",
    "ability": "Tribal Chants、Chorus of the Ancients",
-   "code": "SHAMAN-P6-R01-C04"
-  },
-  "ability-shaman#0124": {
-   "src": "{#} Cooldown: {~}s (per Chant)",
-   "dst": "{#} 冷却时间: {~} 秒 (每次吟唱)",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "shaman/Tribal Chants"
-   ],
-   "_raw": " Cooldown: 8s (per Chant)",
-   "tree": "04/shaman/06/001/004",
-   "ability": "Tribal Chants",
    "code": "SHAMAN-P6-R01-C04"
   },
   "ability-shaman#0125": {
@@ -3231,15 +4939,15 @@
    "code": "SHAMAN-P9-R02-C07"
   },
   "ability-shaman#0236": {
-   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#}{#}to {~}.",
-   "dst": "使用技能或损失生命来把大招 {#}{#}充到 {~}。",
+   "src": "Activate abilities or lose health to charge\nyour Ultimate Meter {#} to {~}.",
+   "dst": "",
    "role": "desc",
    "kind": "block",
    "ctx": [
     "shaman/Monument to Gloom"
    ],
    "lines": 2,
-   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#}{#}to {~}.",
+   "flat": "Activate abilities or lose health to charge your Ultimate Meter {#} to {~}.",
    "_raw": "Activate abilities or lose health to charge\nyour Ultimate Meter  to 100%.",
    "tree": "04/shaman/09/002/007",
    "ability": "Monument to Gloom",

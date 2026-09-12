@@ -3,13 +3,1315 @@
   "domain": "ability/mage",
   "itemNames": false,
   "lang": "zh_cn",
-  "count": 236,
+  "count": 320,
   "translated": 236,
   "note": "法师的技能树。按游戏里的排版顺序（页 → 行 → 列），也就是从上到下、从左到右。 技能自己的名字翻成中文；描述里提到别的技能时保留英文，由 ability-terms.json 在画面上替换。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。",
   "_note_from_98": "我快被 AI 改的文本氣瘋了。"
  },
  "entries": {
+  "ability-mage#0242": {
+   "src": "Activate abilities or heal to charge\nyour Ultimate Meter {#}{#}to {~}",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities or heal to charge your Ultimate Meter {#}{#}to {~}",
+   "_raw": "Activate abilities or heal to charge\nyour Ultimate Meter  to 100%",
+   "ability": "Dawn",
+   "code": "MAGE"
+  },
+  "ability-mage#0246": {
+   "src": "Activate abilities to charge\nyour Ultimate Meter {#}{#}to {~}",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Tangled Origin",
+    "mage/Gravitational Collapse",
+    "archer/Angelic Ascension",
+    "archer/The Twilight Zone"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities to charge your Ultimate Meter {#}{#}to {~}",
+   "_raw": "Activate abilities to charge\nyour Ultimate Meter  to 100%",
+   "ability": "Tangled Origin、Gravitational Collapse、Angelic Ascension、The Twilight Zone",
+   "code": "MAGE"
+  },
+  "ability-mage#0236": {
+   "src": "Casting Meteor summons an additional\nmeteor near the target location for\nevery {~}{#}Distortion {#} you have.\n(Max {~} Meteors, only one Meteor\nShower can be active at the same time.)",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Meteor Shower"
+   ],
+   "lines": 5,
+   "flat": "Casting Meteor summons an additional meteor near the target location for every {~}{#}Distortion {#} you have. (Max {~} Meteors, only one Meteor Shower can be active at the same time.)",
+   "_raw": "Casting Meteor summons an additional\nmeteor near the target location for\nevery 20 Distortion  you have.\n(Max 20 Meteors, only one Meteor\nShower can be active at the same time.)",
+   "ability": "Meteor Shower",
+   "code": "MAGE"
+  },
+  "ability-mage#0241": {
+   "src": "For every +{~}{#}Distortion {#}, Vacuokinesis\ndeals +{~}{#}{#}{#}Damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Vacuokinesis"
+   ],
+   "lines": 2,
+   "flat": "For every +{~}{#}Distortion {#}, Vacuokinesis deals +{~}{#}{#}{#}Damage.",
+   "_raw": "For every +1 Distortion , Vacuokinesis\ndeals +0.8%  Damage.",
+   "ability": "Vacuokinesis",
+   "code": "MAGE"
+  },
+  "ability-mage#0244": {
+   "src": "For every +{~}{#}Distortion {#}, the\nmana is refunded -{~}s faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Paradox"
+   ],
+   "lines": 2,
+   "flat": "For every +{~}{#}Distortion {#}, the mana is refunded -{~}s faster.",
+   "_raw": "For every +1 Distortion , the\nmana is refunded -0.02s faster.",
+   "ability": "Paradox",
+   "code": "MAGE"
+  },
+  "ability-mage#0238": {
+   "src": "For every +{~}{#}Distortion {#}, the tornado gains\n+{~}{#}{#}{#}Area of Effect{#}and +{~}{#}{#}{#}Damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Frozen Tornado"
+   ],
+   "lines": 2,
+   "flat": "For every +{~}{#}Distortion {#}, the tornado gains +{~}{#}{#}{#}Area of Effect{#}and +{~}{#}{#}{#}Damage.",
+   "_raw": "For every +1 Distortion , the tornado gains\n+0.015  Area of Effect and +1.1%  Damage.",
+   "ability": "Frozen Tornado",
+   "code": "MAGE"
+  },
+  "ability-mage#0245": {
+   "src": "Lightweaver{#}applies +{~} Crystallized {#}\nto enemies it hits.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Crystallize"
+   ],
+   "lines": 2,
+   "flat": "Lightweaver{#}applies +{~} Crystallized {#} to enemies it hits.",
+   "_raw": "Lightweaver applies +7 Crystallized \nto enemies it hits.",
+   "ability": "Crystallize",
+   "code": "MAGE"
+  },
+  "ability-mage#0237": {
+   "src": "Meteor and Astral Fragmentation become\nsmaller, dealing -{~}{#}{#}{#}Damage and\nlosing -{~}{#}{#}{#}Area of Effect.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Meteor Shower"
+   ],
+   "lines": 3,
+   "flat": "Meteor and Astral Fragmentation become smaller, dealing -{~}{#}{#}{#}Damage and losing -{~}{#}{#}{#}Area of Effect.",
+   "_raw": "Meteor and Astral Fragmentation become\nsmaller, dealing -20%  Damage and\nlosing -20%  Area of Effect.",
+   "ability": "Meteor Shower",
+   "code": "MAGE"
+  },
+  "ability-mage#0240": {
+   "src": "Meteor, Main Attack and Powder Specials\nconsume Unstable {#}{#}to deal +{~} damage.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Induced Instability"
+   ],
+   "lines": 2,
+   "flat": "Meteor, Main Attack and Powder Specials consume Unstable {#}{#}to deal +{~} damage.",
+   "_raw": "Meteor, Main Attack and Powder Specials\nconsume Unstable  to deal +100% damage.",
+   "ability": "Induced Instability",
+   "code": "MAGE"
+  },
+  "ability-mage#0243": {
+   "src": "You gain +{~}{#}Distortion {#} for every enemy weakened.\n(Up to +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Devitalize"
+   ],
+   "lines": 2,
+   "flat": "You gain +{~}{#}Distortion {#} for every enemy weakened. (Up to +{~})",
+   "_raw": "You gain +5 Distortion  for every enemy weakened.\n(Up to +15)",
+   "ability": "Devitalize",
+   "code": "MAGE"
+  },
+  "ability-mage#0239": {
+   "src": "Your Dimensional Tear{#}overloads, growing\nin size and damage while pulling all enemies in.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": 2,
+   "flat": "Your Dimensional Tear{#}overloads, growing in size and damage while pulling all enemies in.",
+   "_raw": "Your Dimensional Tear overloads, growing\nin size and damage while pulling all enemies in.",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE"
+  },
+  "ability-mage#0315": {
+   "src": "{#}({#}{#}Air: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Incandescence",
+    "mage/Void Acceleration",
+    "shaman/Storm Dance",
+    "warrior/Iron Lungs"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Air: +10%)",
+   "ability": "Incandescence、Void Acceleration、Storm Dance、Iron Lungs",
+   "code": "MAGE"
+  },
+  "ability-mage#0319": {
+   "src": "{#}({#}{#}Air: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Etheric Slash",
+    "mage/Frozen Tornado",
+    "mage/Dimensional Tear",
+    "mage/Rift Rupture"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Air: 50%)",
+   "ability": "Etheric Slash、Frozen Tornado、Dimensional Tear、Rift Rupture",
+   "code": "MAGE"
+  },
+  "ability-mage#0301": {
+   "src": "{#}({#}{#}Damage: -{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Divination",
+    "shaman/Flaming Tongue",
+    "warrior/Double Bash",
+    "warrior/Quadruple Bash"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Damage: -20%)",
+   "ability": "Divination、Flaming Tongue、Double Bash、Quadruple Bash",
+   "code": "MAGE"
+  },
+  "ability-mage#0305": {
+   "src": "{#}({#}{#}Damage: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Ice Snake",
+    "mage/Sunshower",
+    "mage/Burning Sigil"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Damage: 330%)",
+   "ability": "Meteor、Ice Snake、Sunshower、Burning Sigil",
+   "code": "MAGE"
+  },
+  "ability-mage#0306": {
+   "src": "{#}({#}{#}Earth: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Astral Fragmentation",
+    "shaman/Crystal Knives",
+    "warrior/Comet",
+    "warrior/Spectacle"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Earth: +30%)",
+   "ability": "Astral Fragmentation、Crystal Knives、Comet、Spectacle",
+   "code": "MAGE"
+  },
+  "ability-mage#0310": {
+   "src": "{#}({#}{#}Earth: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Dimensional Tear",
+    "mage/Rift Rupture",
+    "mage/Portal to the Beyond"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Earth: 70%)",
+   "ability": "Meteor、Dimensional Tear、Rift Rupture、Portal to the Beyond",
+   "code": "MAGE"
+  },
+  "ability-mage#0311": {
+   "src": "{#}({#}{#}Fire: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Crashing Comet",
+    "mage/Searing Light",
+    "shaman/Flaming Tongue",
+    "warrior/Hallowed Blaze"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Fire: +20%)",
+   "ability": "Crashing Comet、Searing Light、Flaming Tongue、Hallowed Blaze",
+   "code": "MAGE"
+  },
+  "ability-mage#0295": {
+   "src": "{#}({#}{#}Thunder: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Blitz",
+    "shaman/Shocking Aura",
+    "shaman/Lashing Lance",
+    "warrior/Fireworks"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Thunder: +25%)",
+   "ability": "Blitz、Shocking Aura、Lashing Lance、Fireworks",
+   "code": "MAGE"
+  },
+  "ability-mage#0296": {
+   "src": "{#}({#}{#}Thunder: -{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Divination",
+    "shaman/Flaming Tongue",
+    "archer/Windstorm"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Thunder: -5%)",
+   "ability": "Divination、Flaming Tongue、Windstorm",
+   "code": "MAGE"
+  },
+  "ability-mage#0302": {
+   "src": "{#}({#}{#}Thunder: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Ophanim",
+    "mage/Judrajim",
+    "mage/Thunderstorm",
+    "mage/Tangled Origin"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Thunder: 15%)",
+   "ability": "Ophanim、Judrajim、Thunderstorm、Tangled Origin",
+   "code": "MAGE"
+  },
+  "ability-mage#0307": {
+   "src": "{#}({#}{#}Water: +{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Sentient Snake",
+    "mage/Snake Nest",
+    "mage/Frigid Grasp",
+    "mage/Searing Light"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Water: +15%)",
+   "ability": "Sentient Snake、Snake Nest、Frigid Grasp、Searing Light",
+   "code": "MAGE"
+  },
+  "ability-mage#0308": {
+   "src": "{#}({#}{#}Water: -{~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Divination"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Water: -5%)",
+   "ability": "Divination",
+   "code": "MAGE"
+  },
+  "ability-mage#0312": {
+   "src": "{#}({#}{#}Water: {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Ice Snake",
+    "mage/Sunshower",
+    "mage/Ophanim",
+    "mage/Frozen Tornado"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": "( Water: 55%)",
+   "ability": "Ice Snake、Sunshower、Ophanim、Frozen Tornado",
+   "code": "MAGE"
+  },
+  "ability-mage#0309": {
+   "src": "{#}{#}Air Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Air Mastery",
+    "shaman/Air Mastery",
+    "warrior/Air Mastery",
+    "archer/Air Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Air Damage: +15%",
+   "ability": "Air Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0293": {
+   "src": "{#}{#}Air Damage: +{~}-{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Air Mastery",
+    "shaman/Air Mastery",
+    "warrior/Air Mastery",
+    "archer/Air Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Air Damage: +3-4",
+   "ability": "Air Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0288": {
+   "src": "{#}{#}Area of Effect: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: +100%",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE"
+  },
+  "ability-mage#0259": {
+   "src": "{#}{#}Area of Effect: +{~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Riftbound",
+    "shaman/Totemic Reach",
+    "warrior/Thunderclap",
+    "archer/Honed Shield"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: +50% Blocks (Circle-Shaped)",
+   "ability": "Riftbound、Totemic Reach、Thunderclap、Honed Shield",
+   "code": "MAGE"
+  },
+  "ability-mage#0261": {
+   "src": "{#}{#}Area of Effect: {~} Block (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Lightweaver"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: 1.5 Block (Circle-Shaped)",
+   "ability": "Lightweaver",
+   "code": "MAGE"
+  },
+  "ability-mage#0260": {
+   "src": "{#}{#}Area of Effect: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Ice Snake",
+    "mage/Burning Sigil",
+    "mage/Etheric Slash"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: 5 Blocks (Circle-Shaped)",
+   "ability": "Meteor、Ice Snake、Burning Sigil、Etheric Slash",
+   "code": "MAGE"
+  },
+  "ability-mage#0316": {
+   "src": "{#}{#}Cooldown: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Burning Sigil",
+    "mage/Displacement",
+    "mage/Purification",
+    "mage/Fortitude"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Cooldown: 8s",
+   "ability": "Burning Sigil、Displacement、Purification、Fortitude",
+   "code": "MAGE"
+  },
+  "ability-mage#0280": {
+   "src": "{#}{#}Cooldown: {~}s (Riftbound)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Rift Rupture"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Cooldown: 2s (Riftbound)",
+   "ability": "Rift Rupture",
+   "code": "MAGE"
+  },
+  "ability-mage#0284": {
+   "src": "{#}{#}Delay: {~}s (per pulse)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Orphion's Pulse"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Delay: 1.5s (per pulse)",
+   "ability": "Orphion's Pulse",
+   "code": "MAGE"
+  },
+  "ability-mage#0285": {
+   "src": "{#}{#}Drift Range: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sentient Snake"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Drift Range: 10 Blocks",
+   "ability": "Sentient Snake",
+   "code": "MAGE"
+  },
+  "ability-mage#0317": {
+   "src": "{#}{#}Duration: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Heal",
+    "mage/Ice Snake",
+    "mage/Burning Sigil",
+    "mage/Fortitude"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Duration: 0.6s",
+   "ability": "Heal、Ice Snake、Burning Sigil、Fortitude",
+   "code": "MAGE"
+  },
+  "ability-mage#0297": {
+   "src": "{#}{#}Earth Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Earth Mastery",
+    "shaman/Earth Mastery",
+    "warrior/Earth Mastery",
+    "archer/Earth Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Earth Damage: +20%",
+   "ability": "Earth Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0290": {
+   "src": "{#}{#}Earth Damage: +{~}-{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Earth Mastery",
+    "shaman/Earth Mastery",
+    "warrior/Earth Mastery",
+    "archer/Earth Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Earth Damage: +2-4",
+   "ability": "Earth Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0267": {
+   "src": "{#}{#}Effect: +{~} Slowness ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Frigid Grasp"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +10% Slowness () to Enemies",
+   "ability": "Frigid Grasp",
+   "code": "MAGE"
+  },
+  "ability-mage#0248": {
+   "src": "{#}{#}Effect: +{~} Walk Speed to Allies (per {~}s, +{~} Max)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Time Dilation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +10% Walk Speed to Allies (per 1s, +140% Max)",
+   "ability": "Time Dilation",
+   "code": "MAGE"
+  },
+  "ability-mage#0256": {
+   "src": "{#}{#}Effect: -{~}{#}Damage Bonus ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Devitalize"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: -15% Damage Bonus () to Enemies",
+   "ability": "Devitalize",
+   "code": "MAGE"
+  },
+  "ability-mage#0268": {
+   "src": "{#}{#}Effect: {~} Damage Bonus (⚔) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Fortitude"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: 40% Damage Bonus (⚔) to Allies",
+   "ability": "Fortitude",
+   "code": "MAGE"
+  },
+  "ability-mage#0274": {
+   "src": "{#}{#}Effect: {~} Resistance Bonus (❁)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Dimensional Tear",
+    "archer/Arrow Shield"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: 15% Resistance Bonus (❁)",
+   "ability": "Dimensional Tear、Arrow Shield",
+   "code": "MAGE"
+  },
+  "ability-mage#0270": {
+   "src": "{#}{#}Effect: {~} Slowness ({#}) to Enemies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Ice Snake",
+    "mage/Frozen Tornado",
+    "mage/Arctic Snake",
+    "mage/Crystallize"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: 40% Slowness () to Enemies",
+   "ability": "Ice Snake、Frozen Tornado、Arctic Snake、Crystallize",
+   "code": "MAGE"
+  },
+  "ability-mage#0281": {
+   "src": "{#}{#}Effects: +{~} Walk Speed",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Arcane Speed"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effects: +40% Walk Speed",
+   "ability": "Arcane Speed",
+   "code": "MAGE"
+  },
+  "ability-mage#0247": {
+   "src": "{#}{#}Effects: {~} Slowness ({#}) to Enemies, per hit (Max {~})",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Freezing Sigil",
+    "archer/Chilling Snare"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effects: 15% Slowness () to Enemies, per hit (Max 60%)",
+   "ability": "Freezing Sigil、Chilling Snare",
+   "code": "MAGE"
+  },
+  "ability-mage#0303": {
+   "src": "{#}{#}Fire Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Fire Mastery",
+    "shaman/Fire Mastery",
+    "warrior/Fire Mastery",
+    "archer/Fire Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Fire Damage: +15%",
+   "ability": "Fire Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0292": {
+   "src": "{#}{#}Fire Damage: +{~}-{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Fire Mastery",
+    "shaman/Fire Mastery",
+    "warrior/Fire Mastery",
+    "archer/Fire Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Fire Damage: +3-5",
+   "ability": "Fire Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0250": {
+   "src": "{#}{#}Health Regen: {~} per second (of your max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sunflare"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Health Regen: 5% per second (of your max health)",
+   "ability": "Sunflare",
+   "code": "MAGE"
+  },
+  "ability-mage#0282": {
+   "src": "{#}{#}Main Attack Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Wand Proficiency I",
+    "mage/Wand Proficiency II",
+    "shaman/Relik Proficiency I",
+    "warrior/Spear Proficiency I"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Damage: +5%",
+   "ability": "Wand Proficiency I、Wand Proficiency II、Relik Proficiency I、Spear Proficiency I",
+   "code": "MAGE"
+  },
+  "ability-mage#0252": {
+   "src": "{#}{#}Main Attack Damage: +{~}{#}(per {~} Walk Speed)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Accelerated Strike"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Damage: +4% (per 10% Walk Speed)",
+   "ability": "Accelerated Strike",
+   "code": "MAGE"
+  },
+  "ability-mage#0279": {
+   "src": "{#}{#}Main Attack Range: +{~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Wand Proficiency I",
+    "mage/Wand Proficiency II",
+    "archer/Bow Proficiency"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Range: +2 Blocks",
+   "ability": "Wand Proficiency I、Wand Proficiency II、Bow Proficiency",
+   "code": "MAGE"
+  },
+  "ability-mage#0313": {
+   "src": "{#}{#}Mana Cost: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Ophanim",
+    "warrior/Axe Kick",
+    "archer/Mana Trap"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Mana Cost: +30",
+   "ability": "Ophanim、Axe Kick、Mana Trap",
+   "code": "MAGE"
+  },
+  "ability-mage#0314": {
+   "src": "{#}{#}Mana Cost: -{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Cheaper Meteor",
+    "mage/Cheaper Teleport",
+    "mage/Cheaper Heal",
+    "mage/Cheaper Teleport II"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Mana Cost: -10",
+   "ability": "Cheaper Meteor、Cheaper Teleport、Cheaper Heal、Cheaper Teleport II",
+   "code": "MAGE"
+  },
+  "ability-mage#0318": {
+   "src": "{#}{#}Mana Cost: {~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Teleport",
+    "mage/Heal",
+    "mage/Ice Snake"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Mana Cost: 50",
+   "ability": "Meteor、Teleport、Heal、Ice Snake",
+   "code": "MAGE"
+  },
+  "ability-mage#0254": {
+   "src": "{#}{#}Mana Regen: {~} per second (of your max mana)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sunflare"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Mana Regen: 5% per second (of your max mana)",
+   "ability": "Sunflare",
+   "code": "MAGE"
+  },
+  "ability-mage#0251": {
+   "src": "{#}{#}Meteor Area of Effect: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Meteor Area of Effect: 6 Blocks (Circle-Shaped)",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE"
+  },
+  "ability-mage#0262": {
+   "src": "{#}{#}Pulse Self Heal: {~} (of your max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Orphion's Pulse"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Pulse Self Heal: 20% (of your max health)",
+   "ability": "Orphion's Pulse",
+   "code": "MAGE"
+  },
+  "ability-mage#0298": {
+   "src": "{#}{#}Range: +{~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Larger Heal",
+    "mage/Psychokinesis",
+    "shaman/Overseer",
+    "warrior/Double Bash"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Range: +2 Blocks",
+   "ability": "Larger Heal、Psychokinesis、Overseer、Double Bash",
+   "code": "MAGE"
+  },
+  "ability-mage#0304": {
+   "src": "{#}{#}Range: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Teleport",
+    "mage/Heal",
+    "mage/Ice Snake"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Range: 18 Blocks",
+   "ability": "Meteor、Teleport、Heal、Ice Snake",
+   "code": "MAGE"
+  },
+  "ability-mage#0294": {
+   "src": "{#}{#}Slow Duration: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Frozen Tornado"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Slow Duration: 1s",
+   "ability": "Frozen Tornado",
+   "code": "MAGE"
+  },
+  "ability-mage#0263": {
+   "src": "{#}{#}Target Radius: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Meteor Shower"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Target Radius: 1 Blocks (Circle-Shaped)",
+   "ability": "Meteor Shower",
+   "code": "MAGE"
+  },
+  "ability-mage#0289": {
+   "src": "{#}{#}Thunder Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Thunder Mastery",
+    "shaman/Thunder Mastery",
+    "warrior/Thunder Mastery",
+    "archer/Thunder Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Thunder Damage: +10%",
+   "ability": "Thunder Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0283": {
+   "src": "{#}{#}Thunder Damage: +{~}-{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Thunder Mastery",
+    "shaman/Thunder Mastery",
+    "warrior/Thunder Mastery",
+    "archer/Thunder Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Thunder Damage: +1-8",
+   "ability": "Thunder Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0286": {
+   "src": "{#}{#}Tornado Duration: +{~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Time Vortex"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Tornado Duration: +3s",
+   "ability": "Time Vortex",
+   "code": "MAGE"
+  },
+  "ability-mage#0287": {
+   "src": "{#}{#}Tornado Duration: {~}s",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Frozen Tornado"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Tornado Duration: 5s",
+   "ability": "Frozen Tornado",
+   "code": "MAGE"
+  },
+  "ability-mage#0275": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Crashing Comet",
+    "mage/Incandescence",
+    "mage/Searing Light",
+    "mage/Void Acceleration"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +90% (of your DPS)",
+   "ability": "Crashing Comet、Incandescence、Searing Light、Void Acceleration",
+   "code": "MAGE"
+  },
+  "ability-mage#0249": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Frozen Tornado)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sentient Snake",
+    "mage/Snake Nest",
+    "mage/Frigid Grasp"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +15% (of your DPS, for Frozen Tornado)",
+   "ability": "Sentient Snake、Snake Nest、Frigid Grasp",
+   "code": "MAGE"
+  },
+  "ability-mage#0253": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Ice Snake)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Sentient Snake",
+    "mage/Snake Nest",
+    "mage/Frigid Grasp",
+    "mage/Blitz"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +40% (of your DPS, for Ice Snake)",
+   "ability": "Sentient Snake、Snake Nest、Frigid Grasp、Blitz",
+   "code": "MAGE"
+  },
+  "ability-mage#0257": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Meteor)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +120% (of your DPS, for Meteor)",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE"
+  },
+  "ability-mage#0255": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, for Ophanim)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Astral Fragmentation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +40% (of your DPS, for Ophanim)",
+   "ability": "Astral Fragmentation",
+   "code": "MAGE"
+  },
+  "ability-mage#0276": {
+   "src": "{#}{#}Total Damage: -{~} (of your DPS)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Divination",
+    "warrior/Half-Moon Swipe",
+    "assassin/Double Spin",
+    "assassin/Wall of Smoke"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: -30% (of your DPS)",
+   "ability": "Divination、Half-Moon Swipe、Double Spin、Wall of Smoke",
+   "code": "MAGE"
+  },
+  "ability-mage#0269": {
+   "src": "{#}{#}Total Damage: {~} (Main Attack Damage)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Pyrokinesis",
+    "mage/Vacuokinesis",
+    "warrior/Zenith Stance",
+    "archer/Twain's Arc"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 200% (Main Attack Damage)",
+   "ability": "Pyrokinesis、Vacuokinesis、Zenith Stance、Twain's Arc",
+   "code": "MAGE"
+  },
+  "ability-mage#0277": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Meteor",
+    "mage/Ice Snake",
+    "mage/Sunshower",
+    "mage/Burning Sigil"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 400% (of your DPS)",
+   "ability": "Meteor、Ice Snake、Sunshower、Burning Sigil",
+   "code": "MAGE"
+  },
+  "ability-mage#0264": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Collapse)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 8000% (of your DPS, Collapse)",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE"
+  },
+  "ability-mage#0258": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Deadly Beam)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Gravitational Collapse"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 300% (of your DPS, Deadly Beam)",
+   "ability": "Gravitational Collapse",
+   "code": "MAGE"
+  },
+  "ability-mage#0271": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Fire)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 2000% (of your DPS, Fire)",
+   "ability": "Tangled Origin",
+   "code": "MAGE"
+  },
+  "ability-mage#0266": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, Thunder)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 900% (of your DPS, Thunder)",
+   "ability": "Tangled Origin",
+   "code": "MAGE"
+  },
+  "ability-mage#0265": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per Wisp)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 300% (of your DPS, per Wisp)",
+   "ability": "Dawn",
+   "code": "MAGE"
+  },
+  "ability-mage#0278": {
+   "src": "{#}{#}Total Heal: {~} (of max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Dawn"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Heal: 10% (of max health)",
+   "ability": "Dawn",
+   "code": "MAGE"
+  },
+  "ability-mage#0272": {
+   "src": "{#}{#}Total Heal: {~} (of your max health)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Heal",
+    "shaman/Sacrificial Shrine",
+    "shaman/Regeneration"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Heal: 15% (of your max health)",
+   "ability": "Heal、Sacrificial Shrine、Regeneration",
+   "code": "MAGE"
+  },
+  "ability-mage#0299": {
+   "src": "{#}{#}Vision: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Tangled Origin"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Vision: 15 Blocks",
+   "ability": "Tangled Origin",
+   "code": "MAGE"
+  },
+  "ability-mage#0273": {
+   "src": "{#}{#}Vision: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "mage/Portal to the Beyond",
+    "shaman/Crimson Effigy",
+    "shaman/Hummingbird's Song",
+    "shaman/Patchwork Abomination"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Vision: 12 Blocks (Circle-Shaped)",
+   "ability": "Portal to the Beyond、Crimson Effigy、Hummingbird's Song、Patchwork Abomination",
+   "code": "MAGE"
+  },
+  "ability-mage#0300": {
+   "src": "{#}{#}Water Damage: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Water Mastery",
+    "shaman/Water Mastery",
+    "warrior/Water Mastery",
+    "archer/Water Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Water Damage: +15%",
+   "ability": "Water Mastery",
+   "code": "MAGE"
+  },
+  "ability-mage#0291": {
+   "src": "{#}{#}Water Damage: +{~}-{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Water Mastery",
+    "shaman/Water Mastery",
+    "warrior/Water Mastery",
+    "archer/Water Mastery"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Water Damage: +2-4",
+   "ability": "Water Mastery",
+   "code": "MAGE"
+  },
   "ability-mage#0000": {
    "src": "Meteor",
    "dst": "陨石",
@@ -433,22 +1735,6 @@
    "ability": "Burning Sigil",
    "code": "MAGE-P3-R03-C07"
   },
-  "ability-mage#0030": {
-   "src": "{#}({#}{#}Fire: {~})",
-   "dst": "{#}({#}{#}火: {~})",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "mage/Burning Sigil",
-    "mage/Lightweaver",
-    "mage/Dawn",
-    "mage/Tangled Origin"
-   ],
-   "_raw": "( Fire: 15%)",
-   "tree": "01/mage/03/003/007",
-   "ability": "Burning Sigil、Lightweaver、Dawn、Tangled Origin",
-   "code": "MAGE-P3-R03-C07"
-  },
   "ability-mage#0031": {
    "src": "{#} Cooldown: {~}s",
    "dst": "{#} 冷却时间: {~} 秒",
@@ -463,6 +1749,22 @@
    "_raw": " Cooldown: 8s",
    "tree": "01/mage/03/003/007",
    "ability": "Burning Sigil、Displacement、Purification、Fortitude",
+   "code": "MAGE-P3-R03-C07"
+  },
+  "ability-mage#0030": {
+   "src": "{#}({#}{#}Fire: {~})",
+   "dst": "{#}({#}{#}火: {~})",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Burning Sigil",
+    "mage/Lightweaver",
+    "mage/Dawn",
+    "mage/Tangled Origin"
+   ],
+   "_raw": "( Fire: 15%)",
+   "tree": "01/mage/03/003/007",
+   "ability": "Burning Sigil、Lightweaver、Dawn、Tangled Origin",
    "code": "MAGE-P3-R03-C07"
   },
   "ability-mage#0032": {
@@ -519,22 +1821,6 @@
    "ability": "Crashing Comet",
    "code": "MAGE-P3-R04-C06"
   },
-  "ability-mage#0036": {
-   "src": "{#}({#}{#}Damage: +{~})",
-   "dst": "{#}({#}{#}伤害: +{~})",
-   "role": "stat",
-   "kind": "term",
-   "ctx": [
-    "mage/Crashing Comet",
-    "mage/Astral Fragmentation",
-    "mage/Sentient Snake",
-    "mage/Snake Nest"
-   ],
-   "_raw": "( Damage: +70%)",
-   "tree": "01/mage/03/004/006",
-   "ability": "Crashing Comet、Astral Fragmentation、Sentient Snake、Snake Nest",
-   "code": "MAGE-P3-R04-C06"
-  },
   "ability-mage#0037": {
    "src": "{#} Total Damage: +{~} (of your DPS)",
    "dst": "{#} 总伤害: +{~} (你的每秒伤害)",
@@ -549,6 +1835,22 @@
    "_raw": " Total Damage: +90% (of your DPS)",
    "tree": "01/mage/03/004/006",
    "ability": "Crashing Comet、Incandescence、Searing Light、Void Acceleration",
+   "code": "MAGE-P3-R04-C06"
+  },
+  "ability-mage#0036": {
+   "src": "{#}({#}{#}Damage: +{~})",
+   "dst": "{#}({#}{#}伤害: +{~})",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "mage/Crashing Comet",
+    "mage/Astral Fragmentation",
+    "mage/Sentient Snake",
+    "mage/Snake Nest"
+   ],
+   "_raw": "( Damage: +70%)",
+   "tree": "01/mage/03/004/006",
+   "ability": "Crashing Comet、Astral Fragmentation、Sentient Snake、Snake Nest",
    "code": "MAGE-P3-R04-C06"
   },
   "ability-mage#0038": {

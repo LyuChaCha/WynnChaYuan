@@ -3,12 +3,656 @@
   "domain": "ability/warrior",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 233,
+  "count": 278,
   "translated": 233,
   "note": "戰士的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
+  "ability-warrior#0239": {
+   "src": "Activate abilities or take damage to charge\nyour Ultimate Meter {#}{#}to {~}",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Beyond Salvation",
+    "warrior/Judgement",
+    "warrior/Zenith Stance",
+    "assassin/Another Self"
+   ],
+   "lines": 2,
+   "flat": "Activate abilities or take damage to charge your Ultimate Meter {#}{#}to {~}",
+   "_raw": "Activate abilities or take damage to charge\nyour Ultimate Meter  to 100%",
+   "ability": "Beyond Salvation、Judgement、Zenith Stance、Another Self",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0235": {
+   "src": "All nearby allies are granted +{~}{#}Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Heavenly Trumpet"
+   ],
+   "lines": 3,
+   "flat": "All nearby allies are granted +{~}{#}Overhealth ❤ for each point of Holy Power ✧ consumed. Overhealth ❤ decays over {~}s.",
+   "_raw": "All nearby allies are granted +1% Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over 20s.",
+   "ability": "Heavenly Trumpet",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0233": {
+   "src": "Casting Main Attack or Uppercut{#}on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Beyond Salvation"
+   ],
+   "lines": 4,
+   "flat": "Casting Main Attack or Uppercut{#}on a spike will detonate it, dealing damage and granting {~} Overhealth ❤ even while Corrupted. Bonus health decays over {~}s.",
+   "_raw": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n10% Overhealth ❤ even while Corrupted.\nBonus health decays over 20s.",
+   "ability": "Beyond Salvation",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0234": {
+   "src": "Casting War Scream while holding shift\nwith at least {~}{#}Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Heavenly Trumpet"
+   ],
+   "lines": 3,
+   "flat": "Casting War Scream while holding shift with at least {~}{#}Holy Power ✧ will spend all of it to sound off a protective trumpet.",
+   "_raw": "Casting War Scream while holding shift\nwith at least 25 Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
+   "ability": "Heavenly Trumpet",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0243": {
+   "src": "Gain +{~} Damage per {~}{#}Harmony.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Harmony"
+   ],
+   "lines": 1,
+   "flat": "Gain +{~} Damage per {~}{#}Harmony.",
+   "_raw": "Gain +4% Damage per 1 Harmony.",
+   "ability": "Harmony",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0241": {
+   "src": "Gain +{~} Raw Damage per {~}{#}Corrupted {#}. (Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Bak'al's Grasp"
+   ],
+   "lines": 1,
+   "flat": "Gain +{~} Raw Damage per {~}{#}Corrupted {#}. (Max +{~})",
+   "_raw": "Gain +4 Raw Damage per 2% Corrupted . (Max +120)",
+   "ability": "Bak'al's Grasp",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0242": {
+   "src": "Gain +{~} damage per {~}{#}Corrupted {#}. (Max +{~})",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Enraged Blow"
+   ],
+   "lines": 1,
+   "flat": "Gain +{~} damage per {~}{#}Corrupted {#}. (Max +{~})",
+   "_raw": "Gain +1.5% damage per 1% Corrupted . (Max +55%)",
+   "ability": "Enraged Blow",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0238": {
+   "src": "Gaining {~}{#}Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Armour Breaker"
+   ],
+   "lines": 2,
+   "flat": "Gaining {~}{#}Corrupted {#} will make your next Uppercut give you a damage boost.",
+   "_raw": "Gaining 40% Corrupted  will make your\nnext Uppercut give you a damage boost.",
+   "ability": "Armour Breaker",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0240": {
+   "src": "Increase Bash's damage by {~}\nper {~} {#}{#}Area of Effect it has.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Rumble"
+   ],
+   "lines": 2,
+   "flat": "Increase Bash's damage by {~} per {~} {#}{#}Area of Effect it has.",
+   "_raw": "Increase Bash's damage by 5%\nper 1  Area of Effect it has.",
+   "ability": "Rumble",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0236": {
+   "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~}{#}Corrupted {#}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Bak'al's Grasp"
+   ],
+   "lines": 3,
+   "flat": "While Corrupted {#}, you lose the ability to heal, and every {~} health you lose will grant you +{~}{#}Corrupted {#}.",
+   "_raw": "While Corrupted , you lose the ability\nto heal, and every 1% health you lose will\ngrant you +1% Corrupted .",
+   "ability": "Bak'al's Grasp",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0237": {
+   "src": "While you have {~}{#}Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
+   "dst": "",
+   "role": "desc",
+   "kind": "block",
+   "ctx": [
+    "warrior/Luster Purge"
+   ],
+   "lines": 3,
+   "flat": "While you have {~}{#}Holy Power ✧, your Main Attacks are empowered, and grant you {~} Holy Power.",
+   "_raw": "While you have 10 Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you 5 Holy Power.",
+   "ability": "Luster Purge",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0268": {
+   "src": "{#}{#}Area of Effect: Circle-Shaped",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Whirlwind Strike"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: Circle-Shaped",
+   "ability": "Whirlwind Strike",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0270": {
+   "src": "{#}{#}Area of Effect: {~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Flyby Slam",
+    "warrior/Flying Kick",
+    "warrior/Cleansing Breeze",
+    "warrior/Collide"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: 2 Blocks",
+   "ability": "Flyby Slam、Flying Kick、Cleansing Breeze、Collide",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0246": {
+   "src": "{#}{#}Area of Effect: {~}-{~} Blocks (Cone-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Uppercut",
+    "warrior/Bloodied Armory"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Area of Effect: 1-4 Blocks (Cone-Shaped)",
+   "ability": "Uppercut、Bloodied Armory",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0277": {
+   "src": "{#}{#}Cooldown: {~}m",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "warrior/Second Chance"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Cooldown: 10m",
+   "ability": "Second Chance",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0266": {
+   "src": "{#}{#}Cooldown: {~}s (for Holy Power)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Luster Purge"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Cooldown: 2s (for Holy Power)",
+   "ability": "Luster Purge",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0271": {
+   "src": "{#}{#}Cooldown: {~}s (for hits)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Intoxicating Blood"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Cooldown: 0.45s (for hits)",
+   "ability": "Intoxicating Blood",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0272": {
+   "src": "{#}{#}Damage Bonus: +{~} (Raw)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Vehement"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Damage Bonus: +5 (Raw)",
+   "ability": "Vehement",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0258": {
+   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Players",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Pressure"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +10% Damage Bonus (⚔) to Players",
+   "ability": "Pressure",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0263": {
+   "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Self",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Armour Breaker",
+    "assassin/Aerial Ace"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +30% Damage Bonus (⚔) to Self",
+   "ability": "Armour Breaker、Aerial Ace",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0248": {
+   "src": "{#}{#}Effect: +{~} ID Effectiveness (❈) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Radiance",
+    "warrior/Shine"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +15% ID Effectiveness (❈) to Allies",
+   "ability": "Radiance、Shine",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0249": {
+   "src": "{#}{#}Effect: +{~} Resistance Bonus (❁) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Emboldening Cry"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: +5% Resistance Bonus (❁) to Allies",
+   "ability": "Emboldening Cry",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0264": {
+   "src": "{#}{#}Effect: Invincibility (☗) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Second Chance"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: Invincibility (☗) to Allies",
+   "ability": "Second Chance",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0251": {
+   "src": "{#}{#}Effect: {~} Resistance Bonus (❁) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/War Scream"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effect: 20% Resistance Bonus (❁) to Allies",
+   "ability": "War Scream",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0259": {
+   "src": "{#}{#}Effects: +{~} Damage Bonus (⚔) to Allies",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Judgement"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Effects: +20% Damage Bonus (⚔) to Allies",
+   "ability": "Judgement",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0267": {
+   "src": "{#}{#}Main Attack Damage Bonus: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Luster Purge"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Damage Bonus: +40%",
+   "ability": "Luster Purge",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0273": {
+   "src": "{#}{#}Main Attack Range: +{~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Luster Purge"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Range: +25%",
+   "ability": "Luster Purge",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0269": {
+   "src": "{#}{#}Main Attack Range: +{~} Block",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Spear Proficiency I"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Main Attack Range: +1 Block",
+   "ability": "Spear Proficiency I",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0275": {
+   "src": "{#}{#}Range: +{~} Block",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "warrior/Spear Proficiency II",
+    "assassin/Poisoned Blade"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Range: +1 Block",
+   "ability": "Spear Proficiency II、Poisoned Blade",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0265": {
+   "src": "{#}{#}Range: {~} Blocks (Circle-Shaped)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Heavenly Trumpet",
+    "archer/Basaltic Trap",
+    "assassin/Nightcloak Knives"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Range: 16 Blocks (Circle-Shaped)",
+   "ability": "Heavenly Trumpet、Basaltic Trap、Nightcloak Knives",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0274": {
+   "src": "{#}{#}Range: {~}~{~} Blocks",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "warrior/Beyond Salvation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Range: 5~8 Blocks",
+   "ability": "Beyond Salvation",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0252": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, per bash)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Crushing Blow",
+    "warrior/Thunderclap"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +30% (of your DPS, per bash)",
+   "ability": "Crushing Blow、Thunderclap",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0253": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, to Comet)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Spectacle"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +120% (of your DPS, to Comet)",
+   "ability": "Spectacle",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0245": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, to Fireworks)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Spectacle"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +60% (of your DPS, to Fireworks)",
+   "ability": "Spectacle",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0247": {
+   "src": "{#}{#}Total Damage: +{~} (of your DPS, to Tempest)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Tempestuous Winds"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: +25% (of your DPS, to Tempest)",
+   "ability": "Tempestuous Winds",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0254": {
+   "src": "{#}{#}Total Damage: -{~} (of your DPS, per bash)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Double Bash",
+    "warrior/Quadruple Bash"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: -30% (of your DPS, per bash)",
+   "ability": "Double Bash、Quadruple Bash",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0276": {
+   "src": "{#}{#}Total Damage: {~}",
+   "dst": "",
+   "role": "stat",
+   "kind": "term",
+   "ctx": [
+    "warrior/Air Shout"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 75%",
+   "ability": "Air Shout",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0256": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, airborne)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Flyby Slam"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 120% (of your DPS, airborne)",
+   "ability": "Flyby Slam",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0257": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, detonate)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Beyond Salvation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 2000% (of your DPS, detonate)",
+   "ability": "Beyond Salvation",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0260": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, landing)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Flyby Slam"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 120% (of your DPS, landing)",
+   "ability": "Flyby Slam",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0255": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per Swipe)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Bloodied Armory"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 65% (of your DPS, per Swipe)",
+   "ability": "Bloodied Armory",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0244": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per broken mantle)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Shield Strike"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 300% (of your DPS, per broken mantle)",
+   "ability": "Shield Strike",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0250": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, per ripple)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Tempest"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 75% (of your DPS, per ripple)",
+   "ability": "Tempest",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0262": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, spell)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Zenith Stance"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 2400% (of your DPS, spell)",
+   "ability": "Zenith Stance",
+   "code": "WARRIOR"
+  },
+  "ability-warrior#0261": {
+   "src": "{#}{#}Total Damage: {~} (of your DPS, summon)",
+   "dst": "",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Beyond Salvation"
+   ],
+   "lines": null,
+   "flat": null,
+   "_raw": " Total Damage: 1500% (of your DPS, summon)",
+   "ability": "Beyond Salvation",
+   "code": "WARRIOR"
+  },
   "ability-warrior#0000": {
    "src": "Bash",
    "dst": "重擊",
@@ -2118,19 +2762,6 @@
    "ability": "Pressure",
    "code": "WARRIOR-P7-R02-C03"
   },
-  "ability-warrior#0155": {
-   "src": "{#}({#}{#}{#}{#}{#}{#}Damage: +{~})",
-   "dst": "{#}({#}{#}{#}{#}{#}{#}傷害: +{~})",
-   "role": "stat",
-   "kind": "sentence",
-   "ctx": [
-    "warrior/Pressure"
-   ],
-   "_raw": "( Damage: +45%)",
-   "tree": "00/warrior/07/002/003",
-   "ability": "Pressure",
-   "code": "WARRIOR-P7-R02-C03"
-  },
   "ability-warrior#0156": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Players",
    "dst": "{#} 效果: +{~} 傷害加成 (⚔) 給玩家",
@@ -2140,6 +2771,19 @@
     "warrior/Pressure"
    ],
    "_raw": " Effect: +10% Damage Bonus (⚔) to Players",
+   "tree": "00/warrior/07/002/003",
+   "ability": "Pressure",
+   "code": "WARRIOR-P7-R02-C03"
+  },
+  "ability-warrior#0155": {
+   "src": "{#}({#}{#}{#}{#}{#}{#}Damage: +{~})",
+   "dst": "{#}({#}{#}{#}{#}{#}{#}傷害: +{~})",
+   "role": "stat",
+   "kind": "sentence",
+   "ctx": [
+    "warrior/Pressure"
+   ],
+   "_raw": "( Damage: +45%)",
    "tree": "00/warrior/07/002/003",
    "ability": "Pressure",
    "code": "WARRIOR-P7-R02-C03"
