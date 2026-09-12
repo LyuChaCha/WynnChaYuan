@@ -7,14 +7,14 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_tw` 繁體中文 — 89.9%（36,630 / 40,746）
+## `zh_tw` 繁體中文 — 90.0%（36,739 / 40,834）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 288 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ███░░░░░░░ 32% | 1,763 / 5,472 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ███░░░░░░░ 34% | 1,871 / 5,558 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 313 / 313 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
-| `npc.json` | ██████████ 96% | 3,844 / 4,011 | 走在城裡就會看到<br>NPC names, seen while walking around town |
+| `npc.json` | ██████████ 96% | 3,844 / 4,012 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ██████████ 100% | 1,050 / 1,050 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 99% | 94 / 95 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
 | `quest.json` | █████████░ 92% | 222 / 241 | 任務介面<br>The quest interface |
@@ -29,7 +29,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `discovery.json` | ██████████ 100% | 156 / 156 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 137 / 137 | 探索點的名稱<br>Discovery names |
 | `lootrun.json` | ██████████ 100% | 1,006 / 1,007 | 跑 Lootrun 時<br>Seen during a lootrun |
-| `raid.json` | ██████████ 96% | 347 / 360 | 打 Raid 時<br>Seen during a raid |
+| `raid.json` | ██████████ 96% | 348 / 361 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 22 / 22 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |

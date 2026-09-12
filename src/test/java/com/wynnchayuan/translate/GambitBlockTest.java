@@ -67,12 +67,21 @@ public final class GambitBlockTest {
                 "temporarily lock your",
                 "equipment and potions"}, "裝備與藥水");
 
+        // 墮天使：實機折成五行，收到的逐行條目只有第一行
+        block("墮天使", store, new String[] {
+                "After being airborne for 2s",
+                "you become unable to gain",
+                "health in any way. This",
+                "effect persists for 2.5s",
+                "after landing."}, "落地後");
+
         // ★ 逐行條目必須是空的，否則它會先命中，整段那條路等於沒用
         for (String line : new String[] {
                 "The more gambits you enable the", "more rewards next ones will give",
                 "For each {~} health you lack,", "make your attacks {~} weaker",
                 "Every hit you take will deal", "health as damage",
-                "temporarily lock your", "equipment and potions"}) {
+                "temporarily lock your", "equipment and potions",
+                "After being airborne for {~}s"}) {
             report("★ 逐行條目沒有譯文：「" + line + "」",
                    LineTranslator.lookup(line, store, false) == null);
         }
