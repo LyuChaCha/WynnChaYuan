@@ -84,6 +84,17 @@ SHAPES = [
     (r"\smet their fate\b", "誰死了"),
     (r"\shas perished\b", "誰死了"),
     (r"\sis preparing to descend", "誰要下去討伐戰了"),
+    # 各地區的死亡廣播，一種死法一句模板，主詞永遠是別人。
+    # 註：`was reduced to ashes` 要連 `was` 一起認——語料裡有一句正當的
+    # 「has been almost entirely reduced to ashes」，那是地景敘述不是廣播。
+    (r"\sbecame another casualty of War", "誰死了"),
+    (r"Cleansing fire melted .+ away", "誰死了"),
+    (r"\swas entirely corrupted\b", "誰死了"),
+    (r"\swas reduced to ashes\b", "誰死了"),
+    (r"\swas instantly evaporated\b", "誰死了"),
+    (r"\sceased to be anything human\b", "誰死了"),
+    (r"\swas buried beneath earth\b", "誰死了"),
+    (r"\smade a fatal mistake\b", "誰死了"),
     (r"[A-Za-z]{2,}_\{~\}", "帳號名裡的底線加數字"),
     # 玩家把寵物或物品改成自己的名字：`Tomzd{~}'s Bird`、`{~}Seele's gift to …`。
     # 帳號名裡的數字收集時變成 {~}，數字在前在後都有。遊戲自己的字串不會
