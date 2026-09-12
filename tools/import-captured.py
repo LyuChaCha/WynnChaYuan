@@ -152,12 +152,19 @@ def worth_keeping(src: str) -> bool:
         沒有前後文，那半句根本讀不出意思。小寫開頭或逗號結尾就是接續句的痕跡。
     <li><b>裝備名</b>——那是官方 CDN 的地盤，而且照專案的原則名字保留原文。
         收進來只會讓譯者面對一長串不該動的東西。
+    <li><b>打字動畫的殘影</b>——對話是一個字一個字打出來的，游標走的是自訂
+        字型，收集時被記成 {@code {#}}。於是同一句話會收到一堆半截：
+        {@code Before anyb{#}}、{@code Shut yer{#}}、{@code Aft{#}}。
+        模組是拿<b>整句</b>去查表再逐字顯示的，這些半截永遠用不到。
+        2026-09-12 清倉時 quest/ 底下躺著 184 條，全部是這個形狀。
     </ul>
     """
     text = src.strip()
     if len(text) < 2 or sum(c.isalpha() for c in text) < 2:
         return False
     if text.endswith(",") or text[0].islower():
+        return False
+    if text.endswith("{#}") and not ITEM_NAME.match(text):
         return False
     return not ITEM_NAME.match(text)
 
