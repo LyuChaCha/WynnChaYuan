@@ -1,12 +1,48 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.5_2",
+ "latest": "0.1.5_3",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.5_3": {
+   "headline": "Fewer repeat uploads, and the element colour on skill points",
+   "items": [
+    "The corpus collector no longer re-sends lines it has already collected",
+    "Island visitor notices and eight kinds of death broadcast are no longer collected",
+    "Fixed the skill point tooltip colouring the whole \"Earth damage\" instead of just the element",
+    "Fixed quest lines that were translated but still showed in English",
+    "Traditional Chinese: trade market filters, system messages, dungeon narration, lootrun trials and guild territory upgrades",
+    "Traditional Chinese: the Shaman ability tree, from the translation team",
+    "Simplified Chinese: Major IDs, crafting materials, tomes, charms and aspects"
+   ],
+   "zh_tw": {
+    "headline": "語料收集不再重複送，技能點的元素色也修好了",
+    "items": [
+     "語料收集不再重複送出已經收過的句子",
+     "住宅島的訪客通知與八種死亡廣播不再被收集",
+     "修正技能點說明把整串「地屬性傷害」染成元素色，原文只有元素名是有顏色的",
+     "修正部分任務對話明明翻好了卻顯示英文",
+     "繁體中文：交易所篩選器、系統訊息、地城旁白、掠奪的試煉、公會領地升級",
+     "繁體中文：薩滿技能樹，來自翻譯團隊",
+     "簡體中文：Major ID、加工材料、書卷、護符、意象"
+    ]
+   },
+   "zh_cn": {
+    "headline": "语料收集不再重复送，技能点的元素色也修好了",
+    "items": [
+     "语料收集不再重复送出已经收过的句子",
+     "住宅岛的访客通知与八种死亡广播不再被收集",
+     "修正技能点说明把整串「土属性伤害」染成元素色，原文只有元素名是有颜色的",
+     "修正部分任务对话明明翻好了却显示英文",
+     "繁体中文：交易所筛选器、系统消息、副本旁白、掠夺的试炼、公会领地升级",
+     "繁体中文：萨满技能树，来自翻译团队",
+     "简体中文：Major ID、加工材料、书卷、护符、意象"
+    ]
+   }
+  },
   "0.1.5_2": {
    "headline": "Japanese and Korean item labels, and Simplified Chinese Major IDs",
    "items": [
