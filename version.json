@@ -1,12 +1,36 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.5",
+ "latest": "0.1.5_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.5_1": {
+   "headline": "Update notices now point at GitHub",
+   "items": [
+    "The update notice and the download button link to GitHub instead of CurseForge",
+    "Traditional Chinese: NPC nameplates, cave signs, loot chests and the trade market — about 2,600 lines",
+    "Removed corpus entries that carried other players' names: guild-hall signs, guild territory owners, trade-market search text and raid death broadcasts"
+   ],
+   "zh_tw": {
+    "headline": "版本更新改以 GitHub 為主",
+    "items": [
+     "更新提示與下載按鈕改連到 GitHub，不再是 CurseForge",
+     "繁體中文：NPC 名牌、洞窟立牌、戰利品寶箱與交易市場，約 2,600 條",
+     "移除語料裡夾帶別人名字的條目：公會大廳立牌、公會領地、交易所搜尋字、討伐戰死亡廣播"
+    ]
+   },
+   "zh_cn": {
+    "headline": "版本更新改以 GitHub 为主",
+    "items": [
+     "更新提示与下载按钮改为链接到 GitHub，不再是 CurseForge",
+     "繁体中文：NPC 名牌、洞窟立牌、战利品宝箱与交易市场，约 2,600 条",
+     "移除语料里夹带他人名字的条目：公会大厅立牌、公会领地、交易所搜索字、副本死亡广播"
+    ]
+   }
+  },
   "0.1.5": {
    "headline": "Japanese and Korean settings screens, and the Shift prompt is back",
    "items": [

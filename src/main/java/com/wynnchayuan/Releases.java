@@ -141,12 +141,12 @@ public final class Releases {
         return latest.equals(WynnChaYuan.version()) ? null : latest;
     }
 
-    /** 下載頁。CurseForge 優先——使用者指定的。 */
+    /** 下載頁。GitHub 優先——使用者指定的：版本更新以 GitHub 為主。 */
     public static String downloadUrl() {
         JsonObject o = data;
         if (o != null && o.has("download")) {
             JsonObject urls = o.getAsJsonObject("download");
-            for (String key : new String[] {"curseforge", "modrinth", "github"}) {
+            for (String key : new String[] {"github", "curseforge", "modrinth"}) {
                 if (urls.has(key) && !urls.get(key).getAsString().isBlank()) {
                     return urls.get(key).getAsString();
                 }
