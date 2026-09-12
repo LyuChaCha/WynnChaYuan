@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "zh_tw",
   "count": 268,
-  "translated": 234,
-  "note": "刺客的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
-  "legend": "ability = 這一條屬於哪個技能（共用的會列出全部）；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
+  "translated": 268,
+  "note": "刺客的技能樹。照遊戲裡的版面排序(頁 → 列 → 欄)，也就是由上而下、由左而右。 技能名稱刻意保留英文(keep: en)，見 GLOSSARY.md。",
+  "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-assassin#0253": {
    "src": "Confused {#}{#}enemies take +{~} more",
-   "dst": "",
+   "dst": "陷入亂神 {#}{#}的敵人多受到 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -25,7 +25,7 @@
   },
   "ability-assassin#0245": {
    "src": "Detonating {~}+{#}Tricks {#} on enemies\nContaminates {#} them with toxic ooze.",
-   "dst": "",
+   "dst": "在敵人身上引爆 {~}+{#}層詭計 {#}，\n會以毒性黏液汙染 {#} 他們。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -39,7 +39,7 @@
   },
   "ability-assassin#0247": {
    "src": "Detonating {~}+{#}Tricks {#} on enemies\nwill make them Confused {#}.",
-   "dst": "",
+   "dst": "在敵人身上引爆 {~}+{#}層詭計 {#}，\n會讓他們陷入亂神 {#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -53,7 +53,7 @@
   },
   "ability-assassin#0237": {
    "src": "Detonating {~}+{#}Tricks {#} on enemies will\nmake them {~} Drained {#} and take\n+{~} more {#} Water damage from you.",
-   "dst": "",
+   "dst": "在敵人身上引爆 {~1}+{#}層詭計 {#}，會使其\n枯竭 {#} {~2}，並多受到你造成的\n+{~3} {#} 水屬性傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -67,7 +67,7 @@
   },
   "ability-assassin#0246": {
    "src": "Detonating {~}+{#}Tricks {#} on enemies will\ntemporarily reduce their damage.",
-   "dst": "",
+   "dst": "在敵人身上引爆 {~}+{#}層詭計 {#}，\n會暫時降低他們的傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -81,7 +81,7 @@
   },
   "ability-assassin#0252": {
    "src": "Enkindled {#}{#}enemies take +{~} more",
-   "dst": "",
+   "dst": "陷入熾燃 {#}{#}的敵人多受到 {~}",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -95,7 +95,7 @@
   },
   "ability-assassin#0236": {
    "src": "If an enemy has {~}+ Marks {#}, your next\nBackstab{#}will deal +{~} damage, or your next\nPowder Special{#}will deal +{~} damage.",
-   "dst": "",
+   "dst": "敵人身上有 {~1}+ 層標記 {#} 時，你的下一次\nBackstab{#}多造成 {~2} 傷害，或下一次\n粉末特效{#}多造成 {~3} 傷害。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -109,7 +109,7 @@
   },
   "ability-assassin#0234": {
    "src": "If cast while in Vanish,\nSpin Attack will consume all\nMarks {#}{#}from nearby enemies.\nFor every {~} Marks {#}{#}consumed,\nsummon a Knife. (Max {~} Knives)",
-   "dst": "",
+   "dst": "在 Vanish 期間施放時，\nSpin Attack 會吸走附近敵人身上\n所有的標記 {#}{#}。\n每消耗 {~1} 層標記 {#}{#}就召出一把飛刀。\n(最多 {~2} 把)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -123,7 +123,7 @@
   },
   "ability-assassin#0250": {
    "src": "Increase your maximum Marks {#}{#}by +{~}.",
-   "dst": "",
+   "dst": "標記 {#}{#}的上限提高 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -137,7 +137,7 @@
   },
   "ability-assassin#0240": {
    "src": "Increases Spin Attack and Lacerate's range\nand damage, and adds +{~} Mark {#}{#}to enemies hit.",
-   "dst": "",
+   "dst": "提升 Spin Attack 與 Lacerate 的範圍與傷害，\n並為命中的敵人附加 {~} 層標記 {#}{#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -151,7 +151,7 @@
   },
   "ability-assassin#0238": {
    "src": "Last Laugh stores a number of Tricks {#}{#}on\nenemies based on the type of Clone {#}{#}{#}.\n(Max {~})",
-   "dst": "",
+   "dst": "Last Laugh 會依幻象 {#}{#}{#}的種類，\n在敵人身上存下相應層數的詭計 {#}{#}。\n(最多 {~} 層)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -165,7 +165,7 @@
   },
   "ability-assassin#0243": {
    "src": "Marked {#}{#}enemies will take +{~} damage\nfrom attacks for each mark they have.",
-   "dst": "",
+   "dst": "被標記 {#}{#}的敵人每有一層標記，\n受到的攻擊傷害就提高 {~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -179,7 +179,7 @@
   },
   "ability-assassin#0251": {
    "src": "Marked {#}{#}will decay once every {~}s.",
-   "dst": "",
+   "dst": "標記 {#}{#}每 {~} 秒衰減一層。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -193,7 +193,7 @@
   },
   "ability-assassin#0235": {
    "src": "Reduce the cooldown on all of your\nabilities by {~} every time you get hit\nfor less than {~} of your max health or\nyour Mirage Clone {#}{#}lures an enemy.",
-   "dst": "",
+   "dst": "每當你受到的單次傷害低於最大生命的 {~2}，\n或你的 Mirage Clone {#}{#}引開一名敵人時，\n所有技能的冷卻縮短 {~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -207,7 +207,7 @@
   },
   "ability-assassin#0241": {
    "src": "Smoke Bomb releases a cloud of dust\nevery {~}s, applying Hypoxia {#}{#}for +{~}s.\n(Max {~}s)",
-   "dst": "",
+   "dst": "Smoke Bomb 每 {~1} 秒釋放一團塵霧，\n附加 {~2} 秒的缺氧 {#}{#}。\n(最多 {~3} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -221,7 +221,7 @@
   },
   "ability-assassin#0244": {
    "src": "Smoke Bomb will add +{~} Mark {#}{#}to\nenemies it hits. (Max {~}, {~}s Cooldown)",
-   "dst": "",
+   "dst": "Smoke Bomb 會為命中的敵人附加 {~1} 層標記 {#}{#}。\n(最多 {~2}，冷卻 {~3} 秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -235,7 +235,7 @@
   },
   "ability-assassin#0242": {
    "src": "When exiting Vanish, pull all\nnearby Marked {#}{#}mobs towards\nwhere you entered Vanish.",
-   "dst": "",
+   "dst": "離開 Vanish 時，把附近所有\n被標記 {#}{#}的怪物拉向\n你進入 Vanish 的位置。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -249,7 +249,7 @@
   },
   "ability-assassin#0239": {
    "src": "While above your garden, your Momentum {#}\ncharges twice as fast and gains\n+{~}{#}maximum stacks.",
-   "dst": "",
+   "dst": "位於你的花園上方時，動勢 {#}\n的累積速度加倍，上限也提高\n+{~}{#}層。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -263,7 +263,7 @@
   },
   "ability-assassin#0248": {
    "src": "You may store +{~} more Tricks {#}{#}on\nenemies.",
-   "dst": "",
+   "dst": "你可以在敵人身上多存 {~} 層詭計 {#}{#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -277,7 +277,7 @@
   },
   "ability-assassin#0249": {
    "src": "You may store +{~} more Tricks {#}{#}on enemies.",
-   "dst": "",
+   "dst": "你可以在敵人身上多存 {~} 層詭計 {#}{#}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -292,7 +292,7 @@
   },
   "ability-assassin#0261": {
    "src": "{#}{#}Area of Effect: +{~} Blocks (per bloom)",
-   "dst": "",
+   "dst": "{#}{#}技能範圍: +{~} 格 (每次綻放)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -306,7 +306,7 @@
   },
   "ability-assassin#0266": {
    "src": "{#}{#}Cooldown: +{~}s",
-   "dst": "",
+   "dst": "{#}{#}冷卻時間: +{~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -320,7 +320,7 @@
   },
   "ability-assassin#0267": {
    "src": "{#}{#}Duration: -{~}s",
-   "dst": "",
+   "dst": "{#}{#}持續時間: -{~} 秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -334,7 +334,7 @@
   },
   "ability-assassin#0259": {
    "src": "{#}{#}Effect: +{~} Resistance Bonus (❁) to Self",
-   "dst": "",
+   "dst": "{#}{#}效果: +{~} 抗性加成 (❁) 給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -348,7 +348,7 @@
   },
   "ability-assassin#0264": {
    "src": "{#}{#}Effect: Invisibility to Self",
-   "dst": "",
+   "dst": "{#}{#}效果: 隱形給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -362,7 +362,7 @@
   },
   "ability-assassin#0262": {
    "src": "{#}{#}Effect: {~} Damage Bonus (⚔) to Self",
-   "dst": "",
+   "dst": "{#}{#}效果: {~} 傷害加成 (⚔) 給自己",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -376,7 +376,7 @@
   },
   "ability-assassin#0265": {
    "src": "{#}{#}Explosion Damage: +{~}",
-   "dst": "",
+   "dst": "{#}{#}爆炸傷害: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -390,7 +390,7 @@
   },
   "ability-assassin#0257": {
    "src": "{#}{#}Multihit Damage: +{~} (of your DPS, per hit)",
-   "dst": "",
+   "dst": "{#}{#}Multihit 傷害: +{~} (你的每秒傷害，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -404,7 +404,7 @@
   },
   "ability-assassin#0263": {
    "src": "{#}{#}Range: {~} Blocks (Cone-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}施放範圍: {~} 格 (扇形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -418,7 +418,7 @@
   },
   "ability-assassin#0260": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per hit)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: +{~} (你的每秒傷害，每次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -432,7 +432,7 @@
   },
   "ability-assassin#0255": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, over {~} hits)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~1} (你的每秒傷害，共 {~2} 次命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -446,7 +446,7 @@
   },
   "ability-assassin#0258": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per Trick)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，每個 Trick)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -460,7 +460,7 @@
   },
   "ability-assassin#0256": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per shuriken)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~} (你的每秒傷害，每枚手裏劍)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -474,7 +474,7 @@
   },
   "ability-assassin#0254": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per {~} Enkindle)",
-   "dst": "",
+   "dst": "{#}{#}總傷害: {~1} (你的每秒傷害，每 {~2} 層熾燃)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
