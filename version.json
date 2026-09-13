@@ -1,12 +1,48 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.5_3",
+ "latest": "0.1.6",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.6": {
+   "headline": "Resize the dialogue box yourself",
+   "items": [
+    "F6 → Adjust panel positions: drag the bottom-right corner of the dialogue and choice boxes to resize them",
+    "Death notices, level-up broadcasts and guild hall signs are no longer collected",
+    "Half-typed lines from the typewriter animation are no longer collected",
+    "Removed corpus entries that carried other players' names",
+    "Traditional Chinese: quest dialogue is complete, plus NPC nameplates, area discoveries and shop messages",
+    "Simplified Chinese: aspect descriptions, The Legend of Bob, 969 ingredient names, accessory and armour lore",
+    "Simplified Chinese: the item roll weighting is now called 词缀"
+   ],
+   "zh_tw": {
+    "headline": "對話框大小可以自己拉了",
+    "items": [
+     "F6 →「調整面板位置」：拉對話框與選項框的右下角就能改大小",
+     "死亡快訊、升等廣播與公會大廳招牌不再被收集",
+     "打字機動畫打到一半的半句不再被收集",
+     "移除語料裡夾帶別人名字的條目",
+     "繁體中文：任務對話全部翻完，另有 NPC 名牌、地區發現與商店訊息",
+     "簡體中文：意象敘述、Bob 的傳說、969 個材料名、飾品與護甲的敘述",
+     "簡體中文：詞條權重改稱「词缀」"
+    ]
+   },
+   "zh_cn": {
+    "headline": "对话框大小可以自己拉了",
+    "items": [
+     "F6 →「调整面板位置」：拉对话框与选项框的右下角就能改大小",
+     "死亡快讯、升级广播与公会大厅招牌不再被收集",
+     "打字机动画打到一半的半句不再被收集",
+     "移除语料里夹带他人名字的条目",
+     "繁体中文：任务对话全部翻完，另有 NPC 名牌、地区发现与商店消息",
+     "简体中文：特质说明、Bob 的传说、969 个材料名、饰品与护甲的说明",
+     "简体中文：词条权重改称「词缀」"
+    ]
+   }
+  },
   "0.1.5_3": {
    "headline": "Fewer repeat uploads, and the element colour on skill points",
    "items": [
