@@ -4,7 +4,7 @@
   "lang": "zh_tw",
   "generated": "2026-08-19T12:14:19+00:00",
   "count": 2769,
-  "translated": 0,
+  "translated": 59,
   "note": "只需填 dst。src 里的材质包图标与数字在抽取阶段就已经排除了。"
  },
  "entries": {
@@ -33,7 +33,7 @@
   },
   "gear-weapon#0002": {
    "src": "\"Those bloody zombies don't kip down at night, what makes you think a curfew might bally-well help?\" -General Graken, {p} Militia",
-   "dst": "",
+   "dst": "「那些该死的僵尸晚上又不睡觉，你凭什么觉得宵禁他娘的会管用？」——Graken 将军，{p} 民兵",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -45,7 +45,7 @@
   },
   "gear-weapon#0003": {
    "src": "A deep regret stains this weapon-once a healing implement of the scholar-priest, its gentle power was turned and twisted as his ideals and resolve were tested, and faltered. With its wielder long passed, perhaps it can finally be absolved of the atrocities committed by his hand... and remember the peace it has long forgotten.",
-   "dst": "",
+   "dst": "这把武器沾染着深深的悔恨——它曾是那位学者祭司的治疗器具，可当他的理想与决心受到考验而动摇时，它温和的力量也随之被扭曲。如今持有者早已离世，或许它终于能从他亲手犯下的暴行中得到赦免……想起它遗忘已久的平静。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -283,7 +283,7 @@
   },
   "gear-weapon#0024": {
    "src": "...It's pulling towards something.",
-   "dst": "",
+   "dst": "……它正被什么东西牵引着。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -576,7 +576,7 @@
   },
   "gear-weapon#0050": {
    "src": "A blade of pure light forms in your hands. It moves of its own accord, a blinding radiance dancing through your enemies, using you as a vessel for its brilliance.",
-   "dst": "",
+   "dst": "一把纯粹由光构成的刀刃在你手中成形。它自行舞动，一道炫目的光芒穿梭在敌人之间，拿你当作承载它光辉的容器。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -653,7 +653,7 @@
   },
   "gear-weapon#0057": {
    "src": "A great magical cataclysm at {p} brought on by a strange, seemingly disconnected series of events resulted in this wand absorbing nearly uncontrollably high levels of magic.",
-   "dst": "",
+   "dst": "{p} 曾因一连串古怪、看似毫不相干的事件引发一场魔法大灾变，结果让这根魔杖吸收了高得几乎失控的魔法。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -677,7 +677,7 @@
   },
   "gear-weapon#0059": {
    "src": "\"The gravestone for the brother of that man, Sayleros? For whatever reason, it didn't have a proper name on it.\" -Sacre, {p} Priest",
-   "dst": "",
+   "dst": "「那个叫 Sayleros 的人，他哥哥的墓碑？不知为什么，上面没刻正式的名字。」——Sacre，{p} 祭司",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -744,7 +744,7 @@
   },
   "gear-weapon#0065": {
    "src": "\"My husband's such a scaredy-cat. What good is tomb raiding if you're not in the tomb?\"  -Dr. Junes, {p} Archaeologist",
-   "dst": "",
+   "dst": "「我丈夫胆子真小。不进墓里，盗什么墓？」——Junes 博士，{p} 考古学家",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -789,7 +789,7 @@
   },
   "gear-weapon#0069": {
    "src": "\"It never rains here, but we hear the thunder echoing in the distance.\"  -Lanu, {p} Archaeomancer",
-   "dst": "",
+   "dst": "「这里从不下雨，可我们听得见远处回荡的雷声。」——Lanu，{p} 考古术士",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -856,7 +856,7 @@
   },
   "gear-weapon#0075": {
    "src": "\"Catch a fresh-raised corrupted, it's like catching a soldier without his morning coffee. Stumbly and unfocused.\" -Enzan, Retired {p} Soldier",
-   "dst": "",
+   "dst": "「逮到一个刚爬起来的腐化者，就像逮到一个没喝早上咖啡的士兵：东倒西歪，心不在焉。」——Enzan，{p} 退役士兵",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -912,7 +912,7 @@
   },
   "gear-weapon#0080": {
    "src": "\"I got a name, known far and wide! Run along, you bandit scum, before you have to learn it the hard way!\" -Sayleros' Brother, killed by bandits",
-   "dst": "",
+   "dst": "「我的名号远近皆知！滚吧，强盗人渣，免得你们用吃苦头的方式学会它！」——Sayleros 的哥哥，死于强盗之手",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -958,7 +958,7 @@
   },
   "gear-weapon#0084": {
    "src": "\"We'll ensure that under our watch, all your families will be reunited!\" -Haros, of the Banished Legion",
-   "dst": "",
+   "dst": "「有我们守着，保证你们全家都能团聚！」——Haros，放逐军团",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -980,7 +980,7 @@
   },
   "gear-weapon#0086": {
    "src": "\"The first time I saw one of those zombies I nearly had a heart attack! The blighters are terrifying.\" -Rynend, {p} Citizen",
-   "dst": "",
+   "dst": "「我第一次看到那种僵尸，差点心脏病发！那些混账东西太吓人了。」——Rynend，{p} 居民",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1003,7 +1003,7 @@
   },
   "gear-weapon#0088": {
    "src": "A dusty old tome, containing all the powers of the abyss. From its pages spring forth the blackest of secrets and the darkest of truths. Do not let yourself slip into its grasp, for it will consume you too.",
-   "dst": "",
+   "dst": "一本积满灰尘的古老书卷，蕴藏着深渊的全部力量。书页间涌出最漆黑的秘密与最黑暗的真相。千万别让自己落入它的掌握，因为它也会把你吞噬。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1092,7 +1092,7 @@
   },
   "gear-weapon#0096": {
    "src": "\"You don't really advance much when it comes to ovens. For clay, glass, ceramics...it was perfected a long time ago.\" -Treous, {p} Glassblower",
-   "dst": "",
+   "dst": "「炉子这种东西其实没什么好进步的。烧陶、烧玻璃、烧瓷器……老早就做到完美了。」——Treous，{p} 玻璃匠",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1227,7 +1227,7 @@
   },
   "gear-weapon#0108": {
    "src": "\"Not every spider is venomous, but do you really want to get bitten by them all to figure out which are?\" -Alvin, Nivla Forest Resident",
-   "dst": "",
+   "dst": "「不是每只蜘蛛都有毒，但你真的想让它们挨个咬一遍，才搞清楚哪些有毒吗？」——Alvin，Nivla 森林居民",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1261,7 +1261,7 @@
   },
   "gear-weapon#0111": {
    "src": "A brilliant waltz on the razor's edge. Dance, dance through the fields of broken bodies and the vacant cities of empty people. Become the inevitable; the hands of time announce your interminable arrival. Raise your symphony to a crescendo, now: you are the dealer, and fate is the deck. The whole world will know your song.",
-   "dst": "",
+   "dst": "刀锋上一曲璀璨的华尔兹。跳吧，跳过那片支离破碎的尸骸之野，跳过那些空了人的空城。成为必然；时间的指针宣告着你永无止境的到来。现在，把你的交响推向高潮吧：你是发牌人，命运是那副牌。全世界都会听见你的歌。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1317,7 +1317,7 @@
   },
   "gear-weapon#0116": {
    "src": "A defiant pang joins the ruckus, a tune to run counter to the pain and the chaos of the rest. The strings of the forest are played just so, and the fall of each leaf echoes in an enchanted rhythm.",
-   "dst": "",
+   "dst": "一声倔强的弦响加入喧闹，那是一段与其余的痛苦和混乱背道而驰的曲调。森林的琴弦被恰到好处地拨动，每一片落叶都回荡着着了魔的节奏。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1617,7 +1617,7 @@
   },
   "gear-weapon#0143": {
    "src": "\"Betrayal stings sharper than a scorpion's tail, and festers worse than the poison inside.\"   -Attributed to Hashr",
-   "dst": "",
+   "dst": "「背叛比蝎子的尾刺更扎人，溃烂得也比里头的毒液更厉害。」——据传出自 Hashr",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1751,7 +1751,7 @@
   },
   "gear-weapon#0155": {
    "src": "\"I saw that spider queen once. It felt like it was only a matter of time before she found my home, so I moved here.\" -Babhla, Nivla Bowl Merchant",
-   "dst": "",
+   "dst": "「我见过那只蜘蛛女王一次。感觉她找上我家只是时间问题，所以我就搬来这里了。」——Babhla，Nivla 碗具商人",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1773,7 +1773,7 @@
   },
   "gear-weapon#0157": {
    "src": "A blade crafted from the ocean's elements. It slices through enemies with the grace of the tides.",
-   "dst": "",
+   "dst": "一把以海洋元素锻成的刀刃。它劈开敌人时，带着潮汐般的优雅。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1795,7 +1795,7 @@
   },
   "gear-weapon#0159": {
    "src": "\"The dead can still hear. I figure a lullaby might help convince them to sleep a bit longer.\" -Merloni, {p} Priest",
-   "dst": "",
+   "dst": "「死人还听得见。我想唱首摇篮曲，说不定能哄他们多睡一会儿。」——Merloni，{p} 祭司",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1854,7 +1854,7 @@
   },
   "gear-weapon#0164": {
    "src": "\"I am not making this up! That spider teleported ONTO MY FACE!\" -Stiba, Elemental Researcher",
-   "dst": "",
+   "dst": "「我没有乱编！那只蜘蛛直接瞬移到我脸上！」——Stiba，元素研究员",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1921,7 +1921,7 @@
   },
   "gear-weapon#0170": {
    "src": "A curious prototype from the labs of Sock Brewing, simply looking at this liquored effigy begins to induce vertigo, tipsiness, and then shortly afterward the ever-familiar mania which only drink can inspire.",
-   "dst": "",
+   "dst": "这是 Sock 酿酒厂实验室里一件古怪的原型品。光是盯着这尊泡着酒的雕像看，就会开始头晕、微醉，没多久便涌上那股再熟悉不过、只有酒才激得起的狂热。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2109,7 +2109,7 @@
   },
   "gear-weapon#0187": {
    "src": "\"The vines you'll find among the foliage make for great rope!\" -Alekin's Guide to Plant Fiber Cordage",
-   "dst": "",
+   "dst": "「枝叶间找到的藤蔓可以做成很好的绳子！」——《Alekin 植物纤维绳索指南》",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2131,7 +2131,7 @@
   },
   "gear-weapon#0189": {
    "src": "\"Bandit attacks losing you sleep? Free fighting classes here! Only {~} emeralds- they won't know what hit 'em!\" -{p} Self-Defense Class Advertisement",
-   "dst": "",
+   "dst": "「被强盗吓得睡不着？这里有免费格斗课！只要 {~} 绿宝石——保证打得他们晕头转向！」——{p} 防身课程广告",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2154,7 +2154,7 @@
   },
   "gear-weapon#0191": {
    "src": "\"When payback is the rule of the land, it feels safest to do nothing.\"  -Ormrod, Self-exiled {p} Resident",
-   "dst": "",
+   "dst": "「当以牙还牙成了这片土地的规矩，什么都不做反而最安全。」——Ormrod，自我放逐的 {p} 居民",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2222,7 +2222,7 @@
   },
   "gear-weapon#0197": {
    "src": "\"Against all heed, to Fruma eternal.\"\nThe engraving appears extremely weathered.",
-   "dst": "",
+   "dst": "「不顾一切警告，献给永恒的 Fruma。」\n这段刻字已经风化得非常严重。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2321,7 +2321,7 @@
   },
   "gear-weapon#0206": {
    "src": "\"Only the most wicked in Gavel could dream of a circumstance as what plagues this Wynn province.\" -King of {p}",
-   "dst": "",
+   "dst": "「只有 Gavel 最邪恶的人，才想得出折磨 Wynn 行省的这种处境。」——{p} 国王",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2450,7 +2450,7 @@
   },
   "gear-weapon#0217": {
    "src": "\"Controlled burns are healthy, but it's clear why no one wants to do them.\" -Darek, Alekin Trailblazer",
-   "dst": "",
+   "dst": "「计划烧除对林子有好处，但也不难理解为什么没人愿意干。」——Darek，Alekin 开路人",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2461,7 +2461,7 @@
   },
   "gear-weapon#0218": {
    "src": "\"If you squish a spider egg, sometimes little spiders pop out. So, squish the whole area instead!\" -Captain Fenor, {p} Legion",
-   "dst": "",
+   "dst": "「踩破一颗蜘蛛卵，有时候会跳出小蜘蛛。所以干脆把整片都踩烂！」——Fenor 队长，{p} 军团",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2495,7 +2495,7 @@
   },
   "gear-weapon#0221": {
    "src": "\"I have to wonder just how healthy slime found in the depths of a desert  cavern can be to drink.\" -Eluzterp, {p} resident",
-   "dst": "",
+   "dst": "「我实在很怀疑，从沙漠洞穴深处找到的黏液喝下去能有多健康。」——Eluzterp，{p} 居民",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2586,7 +2586,7 @@
   },
   "gear-weapon#0229": {
    "src": "A bow drawn from the air itself. It imbues the wielder with all the spirit of the wind.",
-   "dst": "",
+   "dst": "一张从空气本身拉出的弓。它为持有者灌注风的全部精魂。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2632,7 +2632,7 @@
   },
   "gear-weapon#0233": {
    "src": "\"If anyone finds this, leave it at my Gale's gravesite. I promised her a memento, too.\" This inscription is extremely weathered.",
-   "dst": "",
+   "dst": "「如果有人找到这个，请把它放在我的 Gale 墓前。我也答应过要给她留个纪念。」这段铭文已经风化得非常严重。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2764,7 +2764,7 @@
   },
   "gear-weapon#0245": {
    "src": "\"I am only human in the snow. When it melts away, so too do I, for then I am cursed to be a swan.\"",
-   "dst": "",
+   "dst": "「我只有在雪中才是人。雪一融化，我也跟着消逝，因为那时我便受诅化作天鹅。」",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2842,7 +2842,7 @@
   },
   "gear-weapon#0252": {
    "src": "...I'll finish writing this later.",
-   "dst": "",
+   "dst": "……这个我之后再写完。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2886,7 +2886,7 @@
   },
   "gear-weapon#0256": {
    "src": "\"Leave us down here to die, why don't you all. Just turn us into another statistic and be done, huh?\" -Ragamal, {p} Sewer Dweller",
-   "dst": "",
+   "dst": "「干脆把我们丢在这底下等死算了。把我们变成又一个统计数字就完事了，是吧？」——Ragamal，{p} 下水道居民",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2898,7 +2898,7 @@
   },
   "gear-weapon#0257": {
    "src": "\"I always thought Yahya was venom-addled, but the symptoms don't match...\" -Pyeka, Alekin Herbalist",
-   "dst": "",
+   "dst": "「我一直以为 Yahya 是中毒中得脑子糊涂了，可症状对不上……」——Pyeka，Alekin 草药师",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2931,7 +2931,7 @@
   },
   "gear-weapon#0260": {
    "src": "A grave digger uncovered this blade from the resting place of a notorious pirate that pillaged the islands of the ocean for four decades.",
-   "dst": "",
+   "dst": "一名掘墓人从一个恶名昭彰的海盗的长眠之地挖出了这把刀——那海盗劫掠大洋诸岛长达四十年。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2997,7 +2997,7 @@
   },
   "gear-weapon#0266": {
    "src": "\"Skin worked so thin, we see the bone; she grinds us up from on her throne. Their houses made of flimsy steel; scars from bombs will never heal.\"",
-   "dst": "",
+   "dst": "「皮肉磨得薄见骨，她坐在王座上把我们碾成泥。他们的房子是薄铁搭的，炸弹留下的伤疤永远好不了。」",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3074,7 +3074,7 @@
   },
   "gear-weapon#0273": {
    "src": "A boiling rage has been gathering, the pain of an entire empire yearning to be freed. With all the power of the downtrodden and the overlooked and the starved, you echo out a shout with ten thousand voices, each too quiet to hear by itself, but together a catastrophic force to make the heavens cower.",
-   "dst": "",
+   "dst": "一股沸腾的怒火一直在积聚，那是整个帝国渴望解脱的痛苦。你凝聚起被践踏、被忽视、被饿着的人们全部的力量，发出一声由万千嗓音汇成的呐喊——每一道单独都轻得听不见，汇在一起却是足以让天穹畏缩的毁灭之力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3174,7 +3174,7 @@
   },
   "gear-weapon#0282": {
    "src": "\"Can anyone else understand that General Graken? Because I can't.\" -Commander Takan, {p} Militia",
-   "dst": "",
+   "dst": "「有谁听得懂那位 Graken 将军在说什么吗？反正我听不懂。」——Takan 指挥官，{p} 民兵",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3252,7 +3252,7 @@
   },
   "gear-weapon#0289": {
    "src": "\"I bet those sewer-dwellers have horrible morning breath.\" -Folzoy, {p} Escort",
-   "dst": "",
+   "dst": "「我敢打赌那些下水道居民早上起来口气一定很可怕。」——Folzoy，{p} 护卫",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3308,7 +3308,7 @@
   },
   "gear-weapon#0294": {
    "src": "\"Cut a web, and its owner will feel it and come out. That's your chance to strike.\" -Lieutenant Van, {p} {~}nd Regiment",
-   "dst": "",
+   "dst": "「割断一张网，织网的家伙就会察觉然后跑出来。那就是你出手的机会。」——Van 中尉，{p} 第 {~} 团",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3331,7 +3331,7 @@
   },
   "gear-weapon#0296": {
    "src": "\"As much as they're terrifying, at least those lousy skeletons give us lots of bonemeal for the crops!\" -Bylvis, {p} Farmer",
-   "dst": "",
+   "dst": "「那些讨厌的骷髅虽然吓人，至少能给庄稼提供一大堆骨粉！」——Bylvis，{p} 农夫",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3354,7 +3354,7 @@
   },
   "gear-weapon#0298": {
    "src": "\"Even a corrupted would get crushed by one of these!\" -Roche 'Stone-thrower' Diamant, {p} Citizen",
-   "dst": "",
+   "dst": "「就算是腐化者，挨上这一下也会被砸扁！」——「掷石者」Roche Diamant，{p} 居民",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3410,7 +3410,7 @@
   },
   "gear-weapon#0303": {
    "src": "\"The sun and related symbols appear quite often in these ancient glyphs.  Interesting, but unsurprising, no?\" -Svin, Legend Keeper",
-   "dst": "",
+   "dst": "「太阳和相关的符号在这些远古象形文字里出现得相当频繁。有意思，但也不意外，对吧？」——Svin，传说守护者",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3488,7 +3488,7 @@
   },
   "gear-weapon#0310": {
    "src": "\"The plants loathe to take hold upon the red stone. And so, we must hunt instead.\"  -Caras, Owl Tribesman",
-   "dst": "",
+   "dst": "「植物不愿在红石上扎根。所以我们只能改为狩猎。」——Caras，猫头鹰部族人",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3510,7 +3510,7 @@
   },
   "gear-weapon#0312": {
    "src": "\"There's never new water flowing into those sewers. It all cycles back into itself...not natural.\" -Jenprest, {p} Legion {~}nd Division",
-   "dst": "",
+   "dst": "「从来没有新的水流进那些下水道。全都在里头自己循环……这不自然。」——Jenprest，{p} 军团第 {~} 师",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3544,7 +3544,7 @@
   },
   "gear-weapon#0315": {
    "src": "\"I swear on my life those spiders were covered in spikes! Go out there, see if I'm wrong!\" -Suri, Elemental Researcher",
-   "dst": "",
+   "dst": "「我拿性命发誓，那些蜘蛛浑身长满了刺！不信你自己出去看看！」——Suri，元素研究员",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3577,7 +3577,7 @@
   },
   "gear-weapon#0318": {
    "src": "\"Never wish to see a dead loved one again. In this day and age, they'll come back to see you.\" -Mylo, {p} Conscript",
-   "dst": "",
+   "dst": "「千万别许愿再见到死去的亲人。这年头，他们真的会回来找你。」——Mylo，{p} 新兵",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3809,7 +3809,7 @@
   },
   "gear-weapon#0339": {
    "src": "\"How perfect can a form be? The creatures here are warped. Distorted. their flesh bubbles and oozes with the most toxic of acids. But it makes them powerful. Resilient. Perhaps it would be better to become one of them. Perhaps it would make your form . . . perfect.\"",
-   "dst": "",
+   "dst": "「形体能完美到什么程度？这里的生物都是扭曲的、变形的，它们的血肉冒着泡，渗出最毒的酸液。可这让它们强大、坚韧。或许变成它们的一员会更好。或许那会让你的形体……臻于完美。」",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3832,7 +3832,7 @@
   },
   "gear-weapon#0341": {
    "src": "\"They tear the earth open day after day after day, ripping out her most precious and vital stones, and dumping them into the abyss of their hungry, bottomless coffers. They would sell out the world for a bit of cash; after all, these stones bleed green.\"",
-   "dst": "",
+   "dst": "「他们一天又一天地撕开大地，挖走她最珍贵、最要命的石头，倒进他们那永远填不满的金库深渊。为了一点钱，他们连整个世界都肯出卖；毕竟这些石头流的血是绿色的。」",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3843,7 +3843,7 @@
   },
   "gear-weapon#0342": {
    "src": "\"In the days before they ripped out its heart, there was a pulse to these streets: the sanguine flow of life through the sturdy buildings and cobbled roads and hidden alleys. What remains is a bloodless husk, dusty walls populated solely by those hideous things which can only see and never know.\"",
-   "dst": "",
+   "dst": "「在他们挖走它的心脏之前，这些街道是有脉搏的：生命像血一样流过坚固的建筑、卵石路和隐秘的小巷。如今剩下的只是一具没有血色的空壳，积满灰尘的墙边只住着那些丑恶的东西——它们只会看，永远不会懂。」",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3887,7 +3887,7 @@
   },
   "gear-weapon#0346": {
    "src": "\"The feeling begins as a prickle on the neck. Is that tree staring? What does it see? How much does it know? This place is not right. It sees too much. It knows too much. The forest is staring at you. It burns the secrets out of you through its awful, unnatural retinas. There is nowhere to hide.\"",
-   "dst": "",
+   "dst": "「那种感觉从脖子后面一阵刺痒开始。那棵树在盯着看吗？它看见了什么？它知道多少？这地方不对劲。它看得太多，知道得太多。森林正盯着你。它通过那对可怕而不自然的视网膜，把你的秘密烧出来。无处可躲。」",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3898,7 +3898,7 @@
   },
   "gear-weapon#0347": {
    "src": "\"And no one's going to save us from the beasts about to strike. We've seen horrors stare us in the eyes, and we're fighting for our lives.\" -Poe, {p} Sewer Dweller",
-   "dst": "",
+   "dst": "「野兽就要扑过来了，没有人会来救我们。我们直视过恐怖的双眼，现在是在拼命求生。」——Poe，{p} 下水道居民",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -4031,7 +4031,7 @@
   },
   "gear-weapon#0359": {
    "src": "\"It feels like all these \"ancient\" civilizations have better tech than we do nowadays.\"  -Knox, Corkus Immigrant and Sandstorm Vandals bandit",
-   "dst": "",
+   "dst": "「感觉这些「远古」文明的技术都比我们现在还好。」——Knox，Corkus 移民兼沙暴破坏者强盗",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -4108,7 +4108,7 @@
   },
   "gear-weapon#0366": {
    "src": "\"{~} curse-free or your money back!\" The merchant explained that this policy is not legally binding after you read it.",
-   "dst": "",
+   "dst": "「保证 {~} 无诅咒，不然退钱！」你读完之后，商人才解释说这项保证不具法律效力。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -4318,7 +4318,7 @@
   },
   "gear-weapon#0385": {
    "src": "\"I've been wishin' I was dead for a long time.\"",
-   "dst": "",
+   "dst": "「我老早就巴不得自己死了。」",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -4363,7 +4363,7 @@
   },
   "gear-weapon#0389": {
    "src": "\"And you thought walking into a cobweb was bad.\" -Ope, {p} Botanist",
-   "dst": "",
+   "dst": "「你还以为一头撞进蜘蛛网就够糟了。」——Ope，{p} 植物学家",
    "role": "desc",
    "kind": "block",
    "ctx": [
