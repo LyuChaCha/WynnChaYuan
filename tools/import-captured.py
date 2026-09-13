@@ -382,6 +382,8 @@ NAMED = re.compile(
     r"|\binvited .+ into your island"
     # 無名異常體的死亡廣播。跟其他討伐戰死法同一類，動詞不同而已。
     r"|\shad their existence effaced"
+    # 討伐戰的下降預告，主詞是隊友的帳號名。
+    r"|\sis preparing to descend"
     # 交易邀請一句夾兩個名字。
     r"|would like to trade"
     r"|/trade\s"
