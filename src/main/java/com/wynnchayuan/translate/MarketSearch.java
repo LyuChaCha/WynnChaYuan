@@ -38,6 +38,14 @@ public final class MarketSearch {
      */
     private final Map<String, Set<String>> index = new TreeMap<>();
 
+    /**
+     * 正規化後的中文名 → 畫面上看到的寫法。
+     *
+     * <p>索引的鍵拿掉了空白、英文轉小寫，給人看會變成「corkian增幅器iii」。
+     * 候選清單（{@code MarketPicker}）要列出玩家認得的名字，所以另外記一份原樣。
+     */
+    private final Map<String, String> shown = new java.util.HashMap<>();
+
     /** 太短的不收：一兩個字幾乎一定撞名，換出來的東西不會是玩家要的。 */
     private static final int MIN_NAME = 2;
 
@@ -67,6 +75,7 @@ public final class MarketSearch {
             return;
         }
         index.computeIfAbsent(zh, k -> new LinkedHashSet<>()).add(en);
+        shown.putIfAbsent(zh, bare(chinese));
     }
 
     /**
@@ -161,6 +170,58 @@ public final class MarketSearch {
     /** 重新載入譯文時要先清掉，不然舊語料的名字會留著。 */
     public void clear() {
         index.clear();
+        shown.clear();
+    }
+
+    /** 候選清單的一列：玩家認得的中文名，與要送出去的英文名。 */
+    public record Suggestion(String chinese, String english) {}
+
+    /**
+     * 給候選清單用：打到一半就列出所有可能的物品。
+     *
+     * <h2>跟 {@link #candidates} 差在哪</h2>
+     * {@code candidates} 是<b>自動換字</b>用的，要保守：太短不查、
+     * 長的候選被短的包含就不問。這裡是<b>玩家自己挑</b>，所以反過來：
+     * <ul>
+     *   <li>一個字也查——「石」列出所有石頭，玩家自己看。</li>
+     *   <li>不收斂包含關係——「石頭」與「石頭碎片」是兩個東西，玩家要的可能是後者。</li>
+     *   <li>完全相同的排最前面，其餘照名字長短排，越接近打的字越前面。</li>
+     * </ul>
+     * 同一個英文名只列一次（單數化、大小寫不分），避免「股份」列出三個一樣的東西。
+     */
+    public List<Suggestion> suggestions(String typed) {
+        List<Suggestion> out = new ArrayList<>();
+        if (typed == null) {
+            return out;
+        }
+        String zh = key(typed);
+        if (zh.isEmpty()) {
+            return out;
+        }
+        List<String> keys = new ArrayList<>();
+        for (String k : index.keySet()) {
+            if (k.contains(zh)) {
+                keys.add(k);
+            }
+        }
+        keys.sort((a, b) -> {
+            boolean ea = a.equals(zh);
+            boolean eb = b.equals(zh);
+            if (ea != eb) {
+                return ea ? -1 : 1;
+            }
+            return Integer.compare(a.length(), b.length());
+        });
+        Set<String> seen = new java.util.HashSet<>();
+        for (String k : keys) {
+            for (String en : index.get(k)) {
+                String name = singular(en);
+                if (seen.add(name.toLowerCase(java.util.Locale.ROOT))) {
+                    out.add(new Suggestion(shown.getOrDefault(k, k), name));
+                }
+            }
+        }
+        return out;
     }
 
     public int size() {

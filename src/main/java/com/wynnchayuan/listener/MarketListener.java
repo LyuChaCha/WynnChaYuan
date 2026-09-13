@@ -269,6 +269,16 @@ public final class MarketListener {
         }
     }
 
+    /**
+     * 市集現在是不是在等搜尋字，而且還在時效內。
+     *
+     * <p>給候選清單（{@code MarketPicker}）用：跟 {@link #rewrite} 同一條件，
+     * 清單出現的時候，送出去的字也一定會被這裡處理。
+     */
+    public static boolean active() {
+        return searching && System.currentTimeMillis() - armedAt <= WINDOW_MS;
+    }
+
     /** 給測試用：現在會不會轉換。 */
     static boolean armed() {
         return searching;
