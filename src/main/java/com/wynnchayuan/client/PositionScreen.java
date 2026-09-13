@@ -33,23 +33,33 @@ public final class PositionScreen extends Screen {
     /** 標題列高度。標題也算在可抓取範圍內，框太小時比較好抓。 */
     private static final int TITLE_H = 12;
 
+    /** 右下角那一小塊斜線，抓著它改大小。 */
+    private static final int GRIP = 8;
+
     /**
      * 一個可以拖的框。
      *
-     * <p>尺寸取各自實際內容的概數。畫得跟實際差太多的話，玩家排好了進遊戲
-     * 才發現會重疊，等於白排。
+     * <p>預設尺寸取各自實際內容的概數。畫得跟實際差太多的話，玩家排好了進遊戲
+     * 才發現會重疊，等於白排。玩家自己拉過之後就用拉出來的大小。
      */
     private static final class Box {
         final Overlay which;
         final String label;
-        final int w;
-        final int h;
+        /** 沒被拉過時的大小，「回到預設」要拿它還原。 */
+        final int defW;
+        final int defH;
+        int w;
+        int h;
         int x;
         int y;
+        /** 玩家拉過大小才要存；沒拉過就別把自動算的尺寸寫死進設定檔。 */
+        boolean resized;
 
         Box(Overlay which, String label, int w, int h) {
             this.which = which;
             this.label = label;
+            this.defW = w;
+            this.defH = h;
             this.w = w;
             this.h = h;
         }
@@ -57,12 +67,49 @@ public final class PositionScreen extends Screen {
         boolean contains(double mx, double my) {
             return mx >= x && mx < x + w && my >= y - TITLE_H && my < y + h;
         }
+
+        /** 滑鼠在不在右下角那塊斜線上。 */
+        boolean onGrip(double mx, double my) {
+            return mx >= x + w - GRIP && mx < x + w
+                    && my >= y + h - GRIP && my < y + h;
+        }
+    }
+
+    /**
+     * 每個框拉得動的範圍。
+     *
+     * <p>下限是「還放得下一行字」，上限是不要一拉就蓋掉半個畫面。名牌不給拉
+     * ——它的寬度就是名字本身的寬度，拉了也沒有東西會跟著變。
+     */
+    private static int minW(Overlay which) {
+        return which == Overlay.TOOLTIP ? 90 : 100;
+    }
+
+    private static int maxW(Overlay which) {
+        return which == Overlay.CHOICES ? 420 : 640;
+    }
+
+    private static final int MIN_H = 24;
+    private static final int MAX_H = 320;
+
+    /**
+     * 哪幾個框拉得動。
+     *
+     * <p>只有<b>會折行</b>的框給拉：對話框與選項框的寬度決定字要在哪裡斷，
+     * 拉了看得到差別。名牌的寬度就是名字本身；翻譯面板與任務追蹤走的是
+     * 遊戲原本的 tooltip 元件，寬度由元件自己算——給它們一個抓不動的角落，
+     * 只會讓人以為壞了。
+     */
+    private static boolean resizable(Overlay which) {
+        return which == Overlay.DIALOGUE || which == Overlay.CHOICES;
     }
 
     private final Screen parent;
     private final List<Box> boxes = new ArrayList<>();
 
     private Box dragging;
+    /** 抓的是右下角那塊斜線（改大小）還是框身（搬位置）。 */
+    private boolean resizing;
     private int grabX;
     private int grabY;
 
@@ -86,6 +133,13 @@ public final class PositionScreen extends Screen {
 
         CollectorConfig cfg = WynnChaYuan.config();
         for (Box box : boxes) {
+            // 大小要在算位置之前套用：置中的框換算左緣時用得到寬度。
+            if (resizable(box.which) && cfg.hasOverlaySize(box.which)) {
+                box.w = clamp(cfg.overlayW(box.which),
+                        minW(box.which), Math.min(maxW(box.which), this.width));
+                box.h = clamp(cfg.overlayH(box.which), MIN_H, MAX_H);
+                box.resized = true;
+            }
             if (cfg.hasOverlayPos(box.which)) {
                 // 置中的框存的是中心，畫面上要換回左緣
                 box.x = centred(box.which)
@@ -120,6 +174,9 @@ public final class PositionScreen extends Screen {
      * <p>不一致的話，玩家按了「回到預設」看到框停在 A，進遊戲卻出現在 B。
      */
     private void resetToDefault(Box box) {
+        box.w = box.defW;
+        box.h = box.defH;
+        box.resized = false;
         switch (box.which) {
             case TOOLTIP -> {
                 box.x = 20;
@@ -178,6 +235,11 @@ public final class PositionScreen extends Screen {
             cfg.setOverlayPos(box.which,
                     centred(box.which) ? box.x + box.w / 2 : box.x,
                     box.y);
+            if (box.resized) {
+                cfg.setOverlaySize(box.which, box.w, box.h);
+            } else {
+                cfg.clearOverlaySize(box.which);
+            }
         }
         cfg.saveIfDirty();
         saved = true;                          // 關閉前先讓使用者看到確認
@@ -192,10 +254,13 @@ public final class PositionScreen extends Screen {
         // 由後往前找：畫在上層的先被抓到，和看到的疊放順序一致
         for (int i = boxes.size() - 1; i >= 0; i--) {
             Box box = boxes.get(i);
-            if (box.contains(event.x(), event.y())) {
+            // 角落那一小塊先判斷，否則它永遠被框身吃掉
+            boolean grip = resizable(box.which) && box.onGrip(event.x(), event.y());
+            if (grip || box.contains(event.x(), event.y())) {
                 dragging = box;
-                grabX = (int) event.x() - box.x;
-                grabY = (int) event.y() - box.y;
+                resizing = grip;
+                grabX = (int) event.x() - (grip ? box.w : box.x);
+                grabY = (int) event.y() - (grip ? box.h : box.y);
                 boxes.remove(i);
                 boxes.add(box);                // 移到最上層
                 return true;
@@ -206,6 +271,14 @@ public final class PositionScreen extends Screen {
 
     @Override
     public boolean mouseDragged(MouseButtonEvent event, double dx, double dy) {
+        if (dragging != null && resizing) {
+            dragging.w = clamp((int) event.x() - grabX, minW(dragging.which),
+                    Math.min(maxW(dragging.which), this.width - dragging.x));
+            dragging.h = clamp((int) event.y() - grabY, MIN_H,
+                    Math.min(MAX_H, this.height - FOOT - dragging.y));
+            dragging.resized = true;
+            return true;
+        }
         if (dragging != null) {
             dragging.x = snap((int) event.x() - grabX, dragging.w, this.width);
             dragging.y = snap((int) event.y() - grabY, dragging.h, this.height);
@@ -213,6 +286,10 @@ public final class PositionScreen extends Screen {
             return true;
         }
         return super.mouseDragged(event, dx, dy);
+    }
+
+    private static int clamp(int v, int lo, int hi) {
+        return Math.max(lo, Math.min(v, Math.max(lo, hi)));
     }
 
     /**
@@ -232,6 +309,7 @@ public final class PositionScreen extends Screen {
     @Override
     public boolean mouseReleased(MouseButtonEvent event) {
         dragging = null;
+        resizing = false;
         return super.mouseReleased(event);
     }
 
@@ -280,19 +358,34 @@ public final class PositionScreen extends Screen {
         if (saved && System.currentTimeMillis() - savedAt < 2000) {
             text = T.s("pos.saved");
             colour = WynnChaYuan.config().accentARGB();
+        } else if (dragging != null && resizing) {
+            // 拉的時候把數字寫出來——「差不多這麼寬」對不齊兩個框。
+            text = T.s("pos.resizing", dragging.label, dragging.w, dragging.h);
+            colour = WynnChaYuan.config().accentARGB();
         } else if (dragging != null) {
             text = T.s("pos.snapping", dragging.label);
         } else {
             Box under = null;
+            boolean onGrip = false;
             for (int i = boxes.size() - 1; i >= 0; i--) {
-                if (boxes.get(i).contains(mouseX, mouseY)) {
-                    under = boxes.get(i);
+                Box box = boxes.get(i);
+                if (resizable(box.which) && box.onGrip(mouseX, mouseY)) {
+                    under = box;
+                    onGrip = true;
+                    break;
+                }
+                if (box.contains(mouseX, mouseY)) {
+                    under = box;
                     break;
                 }
             }
-            text = under != null
-                    ? T.s("pos.dragging", under.label)
-                    : T.s("pos.idle");
+            if (under == null) {
+                text = T.s("pos.idle");
+            } else if (onGrip) {
+                text = T.s("pos.grip", under.label);
+            } else {
+                text = T.s("pos.dragging", under.label);
+            }
         }
         g.drawString(this.font,
                 Component.literal(Cards.fit(this.font, text, w - 8)),
@@ -320,6 +413,26 @@ public final class PositionScreen extends Screen {
         for (Component line : sampleFor(box.which)) {
             g.drawString(this.font, line, box.x + 6, ty, Colors.TEXT);
             ty += this.font.lineHeight + 1;
+        }
+
+        if (resizable(box.which)) {
+            drawGrip(g, box, accent, hovered || active);
+        }
+    }
+
+    /**
+     * 右下角三條斜線——桌面視窗都是這個樣子，不必解釋就知道可以拉。
+     *
+     * <p>只有滑鼠指著那個框時才畫得明顯；五個框全都亮著角落會很吵。
+     */
+    private void drawGrip(GuiGraphics g, Box box, int accent, boolean lit) {
+        int colour = lit ? accent : (accent & 0x00FFFFFF) | 0x50000000;
+        int right = box.x + box.w - 2;
+        int bottom = box.y + box.h - 2;
+        for (int i = 0; i < 3; i++) {
+            int off = i * 3;
+            g.fill(right - off - 1, bottom - 1, right - off, bottom, colour);
+            g.fill(right - 1, bottom - off - 1, right, bottom - off, colour);
         }
     }
 
