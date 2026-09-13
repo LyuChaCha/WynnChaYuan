@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_cn",
   "count": 22089,
-  "translated": 6139,
+  "translated": 6476,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -32711,7 +32711,7 @@
   },
   "Arachnids' Ascent#000": {
    "src": "Talk to Admiral Aegis in the {p} Barracks at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 {p} 兵营 [{~}, {~}, -{~}] 的 Aegis 上将交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -32721,7 +32721,7 @@
   },
   "Arachnids' Ascent#001": {
    "src": "Let's see... ah, {u}! There you are. I was just about to send someone to fetch you.",
-   "dst": "",
+   "dst": "我看看……啊，{u}！你在这里。我正要派人去找你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32731,7 +32731,7 @@
   },
   "Arachnids' Ascent#002": {
    "src": "Follow me- we have a conversation to have in my office. It's on the top floor of the barracks.",
-   "dst": "",
+   "dst": "跟我来——我们到我的办公室谈。在兵营的顶楼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32741,7 +32741,7 @@
   },
   "Arachnids' Ascent#003": {
    "src": "...ahem. Now that we're here, we can discuss the matter of {p}.",
-   "dst": "",
+   "dst": "……咳。既然到了，我们来谈谈 {p} 的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32751,7 +32751,7 @@
   },
   "Arachnids' Ascent#004": {
    "src": "Our preparations are complete, and it's time for the assault on Nivla's spider den! With you here, we'll just need to wait for-...",
-   "dst": "",
+   "dst": "我们的准备已经完成，是时候突袭 Nivla 的蜘蛛巢穴了！你来了，我们只需要再等——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32761,7 +32761,7 @@
   },
   "Arachnids' Ascent#005": {
    "src": "Admiral- we're here! Sorry we're late, we were sparring in the training room and lost track of time...",
-   "dst": "",
+   "dst": "上将——我们到了！抱歉来晚了，我们在训练室对练，忘了时间……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32771,7 +32771,7 @@
   },
   "Arachnids' Ascent#006": {
    "src": "If {u} is here, I take it that means today is the day we strike at the spiders?",
-   "dst": "",
+   "dst": "既然 {u} 在这里，我想今天就是我们对蜘蛛出手的日子了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32781,7 +32781,7 @@
   },
   "Arachnids' Ascent#007": {
    "src": "Indeed it is. Now, you three are to be the force which will fight through their den and clear out as many of those spiders as you can. For that, you'll need support.",
-   "dst": "",
+   "dst": "正是。你们三个将作为主力，杀进它们的巢穴，尽可能多清除那些蜘蛛。为此，你们需要支援。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32791,7 +32791,7 @@
   },
   "Arachnids' Ascent#008": {
    "src": "We've sent out several soldiers ahead of time to make preparations on site. You'll want to first speak to Private Cob on the {p}, who will have supplies for you.",
-   "dst": "",
+   "dst": "我们已经提前派了几名士兵去现场做准备。你们要先去 {p} 找 Cob 列兵，他会给你们补给。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32801,7 +32801,7 @@
   },
   "Arachnids' Ascent#009": {
    "src": "I expect this mission will hold some danger, but I trust the three of you will be able to deal with anything you come across. Good luck, soldiers!",
-   "dst": "",
+   "dst": "我料到这次任务会有些危险，但我相信你们三个无论遇到什么都能应付。祝你们好运，士兵们！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32811,7 +32811,7 @@
   },
   "Arachnids' Ascent#010": {
    "src": "Yes, sir. We'll do our best.",
-   "dst": "",
+   "dst": "是，长官。我们会尽力的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32821,7 +32821,7 @@
   },
   "Arachnids' Ascent#011": {
    "src": "These spiders won't stand a chance! Let's get going.",
-   "dst": "",
+   "dst": "这些蜘蛛根本没有胜算！我们出发吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32831,7 +32831,7 @@
   },
   "Arachnids' Ascent#012": {
    "src": "Speak to Private Cob in the Savannah at [{~}, {~}, -{~}] to receive supplies.",
-   "dst": "",
+   "dst": "去 Savannah 草原 [{~}, {~}, -{~}] 找 Cob 列兵领取补给。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -32841,7 +32841,7 @@
   },
   "Arachnids' Ascent#013": {
    "src": "'ey there, chaps! You lot must be the spider killin' force, eh?",
-   "dst": "",
+   "dst": "嘿，伙计们！你们这帮人一定就是杀蜘蛛的部队吧，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32851,7 +32851,7 @@
   },
   "Arachnids' Ascent#014": {
    "src": "That's us! The Admiral told us you had supplies to give us?",
-   "dst": "",
+   "dst": "就是我们！上将说你有补给要给我们？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32861,7 +32861,7 @@
   },
   "Arachnids' Ascent#015": {
    "src": "That I do! Now, 'fore I send ya off, there's been sum news from the Cap'n!",
-   "dst": "",
+   "dst": "没错！在我送你们出发之前，上尉那边传来了点消息！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32871,7 +32871,7 @@
   },
   "Arachnids' Ascent#016": {
    "src": "Buncha terrorised citizens been found right next to the bloomin' den! Trapped in a sticky old web, they were.",
-   "dst": "",
+   "dst": "在该死的巢穴旁边发现了一群吓坏了的居民！被困在一张黏糊糊的旧网里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32881,7 +32881,7 @@
   },
   "Arachnids' Ascent#017": {
    "src": "Priority number one is gettin' them out, before takin' on the den. But nothin' can get through the web!",
-   "dst": "",
+   "dst": "头号任务是先把他们救出来，再去打巢穴。可是什么都穿不过那张网！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32891,7 +32891,7 @@
   },
   "Arachnids' Ascent#018": {
    "src": "No fire, no magic... nothin' has broken through. The cap'n decided- 'ey, why not try some lava? 's hotter than fire, anyway.",
-   "dst": "",
+   "dst": "火不行，魔法也不行……什么都破不了。上尉就想——嘿，何不试试岩浆？反正比火还烫。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32901,7 +32901,7 @@
   },
   "Arachnids' Ascent#019": {
    "src": "Point is. Along with all your supplies 'n whatnot, ya've gotta bring along some lava for the cap'n. Magically contained, o' course!",
-   "dst": "",
+   "dst": "重点是，除了你们的补给什么的，你们还得给上尉带点岩浆过去。当然是用魔法封装好的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32911,7 +32911,7 @@
   },
   "Arachnids' Ascent#020": {
    "src": "Sure, that sounds easy enough. A bit of extra work, but we were heading in that direction anyway.",
-   "dst": "",
+   "dst": "好，听起来挺简单的。是多了点活，不过反正我们也要往那个方向走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32921,7 +32921,7 @@
   },
   "Arachnids' Ascent#021": {
    "src": "That's the spirit! If ya want the best route to the den, follow that road with the burn marks. It'll send ya straight to the cap'n!",
-   "dst": "",
+   "dst": "就是这股劲！想走最好的路去巢穴，就沿着那条有烧焦痕迹的路走。它会直接带你们找到上尉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32931,7 +32931,7 @@
   },
   "Arachnids' Ascent#022": {
    "src": "Bring the supplies to Captain Enduyn at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把补给带给 [-{~}, {~}, -{~}] 的 Enduyn 上尉。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -32941,7 +32941,7 @@
   },
   "Arachnids' Ascent#023": {
    "src": "At ease, soldiers! You're the three Aegis told me to look out for, aren't you? Have you spoken to Cob yet?",
-   "dst": "",
+   "dst": "稍息，士兵们！你们就是 Aegis 叫我留意的那三位吧？跟 Cob 谈过了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32951,7 +32951,7 @@
   },
   "Arachnids' Ascent#024": {
    "src": "We have, and we've brought supplies. As well as... lava, I think?",
-   "dst": "",
+   "dst": "谈过了，我们带来了补给。还有……岩浆，我想是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32961,7 +32961,7 @@
   },
   "Arachnids' Ascent#025": {
    "src": "Ah, good! You can see the pickle we're in, hmm? We've tried everything to get those poor souls out, but the damned web is like glue!",
-   "dst": "",
+   "dst": "啊，很好！你们看得出我们的处境有多难办吧，嗯？我们想尽办法要把那些可怜人救出来，但该死的网就跟胶水一样！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32971,7 +32971,7 @@
   },
   "Arachnids' Ascent#026": {
    "src": "Now, let's see here... If I cast a spell on it like this, then...",
-   "dst": "",
+   "dst": "来，让我看看……如果我这样对它施个法术，那么……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32981,7 +32981,7 @@
   },
   "Arachnids' Ascent#027": {
    "src": "Hm... That's not good.",
-   "dst": "",
+   "dst": "嗯……这可不妙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -32991,7 +32991,7 @@
   },
   "Arachnids' Ascent#028": {
    "src": "So, what do we do now? You mentioned another option- what was that about? What about it made it difficult?",
-   "dst": "",
+   "dst": "那现在怎么办？你提过还有别的办法——那是什么？它哪里难办？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33001,7 +33001,7 @@
   },
   "Arachnids' Ascent#029": {
    "src": "Right. You may have noticed on your way here, but the nest is at the base of {p}, a dormant volcano.",
-   "dst": "",
+   "dst": "对。你们来的路上可能注意到了，巢穴就在 {p} 的山脚下，那是一座休眠火山。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33011,7 +33011,7 @@
   },
   "Arachnids' Ascent#030": {
    "src": "Legends speak of incredible magic granted by the mountain- that of protection, incinerating any who dare go against it.",
-   "dst": "",
+   "dst": "传说这座山会赐予不可思议的魔法——守护的魔法，会焚尽任何胆敢与它作对的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33021,7 +33021,7 @@
   },
   "Arachnids' Ascent#031": {
    "src": "These are only stories, of course. It's very unlikely the mountain actually could grant such magic. However... there may be some truth in the legend.",
-   "dst": "",
+   "dst": "当然，这些只是传说。这座山真的能赐予那种魔法的可能性很小。不过……传说里也许有几分真实。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33031,7 +33031,7 @@
   },
   "Arachnids' Ascent#032": {
    "src": "So what's the catch? You would have tried it first if it were that simple.",
-   "dst": "",
+   "dst": "那问题出在哪？要是那么简单，你早就先去试了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33041,7 +33041,7 @@
   },
   "Arachnids' Ascent#033": {
    "src": "The mountain is infested with spiders, even more so than {p}. Our few attempts at scouting it out have shown they're incredibly hostile towards intruders.",
-   "dst": "",
+   "dst": "山里全是蜘蛛，比 {p} 还多。我们几次去侦察，都发现它们对闯入者极具敌意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33051,7 +33051,7 @@
   },
   "Arachnids' Ascent#034": {
    "src": "As though they're protecting something, I assume?",
-   "dst": "",
+   "dst": "我猜，就像是在守护什么东西？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33061,7 +33061,7 @@
   },
   "Arachnids' Ascent#035": {
    "src": "Indeed. So, here's the plan... If you enter the mountain, the spiders will quickly try to move inside to stop you. I'll need one of you to stay here with me to fight them off.",
-   "dst": "",
+   "dst": "正是。所以，计划是这样的……一旦你们进山，蜘蛛很快就会想往里面移动来阻止你们。我需要你们其中一个留在这里跟我一起打退它们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33071,7 +33071,7 @@
   },
   "Arachnids' Ascent#036": {
    "src": "So two of us take on the volcano, and two stay behind. Got it! {u}, you should be part of the Mount Wynn group. But then, Tasim, which of us should go with them?",
-   "dst": "",
+   "dst": "所以两个人去闯火山，两个人留下。明白！{u}，你应该在 Wynn 山那一组。那么，Tasim，我们俩谁跟他们去？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33081,7 +33081,7 @@
   },
   "Arachnids' Ascent#037": {
    "src": "Why don't we let {u} decide? Which of us do you want to join you in the volcano?",
-   "dst": "",
+   "dst": "不如让 {u} 决定？你想让我们哪一个跟你进火山？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33091,7 +33091,7 @@
   },
   "Arachnids' Ascent#038": {
    "src": "Alright! We'll handle the volcano then. Captain, Tasim, don't die out here!",
-   "dst": "",
+   "dst": "好！那火山就交给我们了。上尉、Tasim，可别死在外面啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33101,7 +33101,7 @@
   },
   "Arachnids' Ascent#039": {
    "src": "Alright. We'll fight through the spiders in the mountain, then. Captain, Aledar, good luck!",
-   "dst": "",
+   "dst": "好。那我们就杀穿山里的蜘蛛。上尉、Aledar，祝你们好运！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33111,7 +33111,7 @@
   },
   "Arachnids' Ascent#040": {
    "src": "Then take more time. But don't take too long- we don't want the spiders to realize we're planning something.",
-   "dst": "",
+   "dst": "那就再多想一会儿。但别拖太久——我们可不想让蜘蛛察觉我们在计划什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33121,7 +33121,7 @@
   },
   "Arachnids' Ascent#041": {
    "src": "Decide who to bring with you into Mount Wynn at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 决定带谁一起进入 Wynn 山。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -33131,7 +33131,7 @@
   },
   "Arachnids' Ascent#042": {
    "src": "So, who do you want to join you to fight through Mount Wynn?",
-   "dst": "",
+   "dst": "那么，你想让谁跟你一起杀穿 Wynn 山？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33141,7 +33141,7 @@
   },
   "Arachnids' Ascent#043": {
    "src": "Alright! We'll handle the volcano then. Captain, Tasim, don't die out here!",
-   "dst": "",
+   "dst": "好！那火山就交给我们了。上尉、Tasim，可别死在外面啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33151,7 +33151,7 @@
   },
   "Arachnids' Ascent#044": {
    "src": "Alright. We'll fight through the spiders in the mountain, then. Captain, Aledar, good luck!",
-   "dst": "",
+   "dst": "好。那我们就杀穿山里的蜘蛛。上尉、Aledar，祝你们好运！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33161,7 +33161,7 @@
   },
   "Arachnids' Ascent#045": {
    "src": "Then take more time. But don't take too long- we don't want the spiders to realize we're planning something.",
-   "dst": "",
+   "dst": "那就再多想一会儿。但别拖太久——我们可不想让蜘蛛察觉我们在计划什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33171,7 +33171,7 @@
   },
   "Arachnids' Ascent#046": {
    "src": "Enter Mount Wynn and reach the summit through the cave at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "进入 Wynn 山，穿过 [-{~}, {~}, -{~}] 的洞穴抵达山顶。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -33181,7 +33181,7 @@
   },
   "Arachnids' Ascent#047": {
    "src": "...Wow, it's hot in here! That makes sense, I guess, given what we're here for. Let's reach the top as quickly as we can.",
-   "dst": "",
+   "dst": "……哇，这里面好热！想想我们来这里的目的，这也说得通。我们尽快爬到顶上去吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33191,7 +33191,7 @@
   },
   "Arachnids' Ascent#048": {
    "src": "W-woah! You felt that too, right? What's going-",
-   "dst": "",
+   "dst": "哇、哇！你也感觉到了吧？怎么回事——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33201,7 +33201,7 @@
   },
   "Arachnids' Ascent#049": {
    "src": "We've got to run for it! Come on, jump!",
-   "dst": "",
+   "dst": "我们得快跑！快，跳！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33211,7 +33211,7 @@
   },
   "Arachnids' Ascent#050": {
    "src": "That... that was a close one. Phew! Can't believe we made it out in one piece. I think we're near the top, too.",
-   "dst": "",
+   "dst": "刚……刚才好险。呼！真不敢相信我们毫发无伤地逃出来了。我觉得我们也快到山顶了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33221,7 +33221,7 @@
   },
   "Arachnids' Ascent#051": {
    "src": "Well, here we are! ...The heat's gotten more intense up here. Come on, let's find out what we're looking for, before I over-",
-   "dst": "",
+   "dst": "好，我们到了！……上面更热了。快，我们找找要找的东西，免得我热——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33231,7 +33231,7 @@
   },
   "Arachnids' Ascent#052": {
    "src": "...intruders....come to take....sacred protection....",
-   "dst": "",
+   "dst": "……闯入者……来夺走……神圣的守护……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33241,7 +33241,7 @@
   },
   "Arachnids' Ascent#053": {
    "src": ".....must not......allow....will kill.....for queen!....",
-   "dst": "",
+   "dst": "……不能……允许……要杀……为了女王！……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33251,7 +33251,7 @@
   },
   "Arachnids' Ascent#054": {
    "src": "Ack! We should have known it wouldn't be that easy. Alright, let's take down this spider and get what we came for!",
-   "dst": "",
+   "dst": "呃！我们早该知道不会那么容易。好，我们干掉这只蜘蛛，拿到我们要的东西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33261,7 +33261,7 @@
   },
   "Arachnids' Ascent#055": {
    "src": "Well, there it is. We have what we need to burn through those webs!... I hope.",
-   "dst": "",
+   "dst": "好，就是它了。我们有能烧穿那些网的东西了！……希望如此。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33271,7 +33271,7 @@
   },
   "Arachnids' Ascent#056": {
    "src": "The spider mentioned a queen... I guess that's what we'll be facing in their nest, then.",
-   "dst": "",
+   "dst": "那只蜘蛛提到了女王……我想那就是我们在它们巢穴里要面对的对手了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33281,7 +33281,7 @@
   },
   "Arachnids' Ascent#057": {
    "src": "Alright, let's get back to Tasim and the captain!",
-   "dst": "",
+   "dst": "好，我们回去找 Tasim 和上尉吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33291,7 +33291,7 @@
   },
   "Arachnids' Ascent#058": {
    "src": "...I can hear the spiders already. We'll need to fight through them if we want to reach the top. Let's get going, we don't want to take too long.",
-   "dst": "",
+   "dst": "……我已经听到蜘蛛的声音了。要到山顶，我们得杀出一条路。走吧，别拖太久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33301,7 +33301,7 @@
   },
   "Arachnids' Ascent#059": {
    "src": "H-huh? That shaking, it's almost like-",
-   "dst": "",
+   "dst": "嗯、嗯？这震动，简直就像——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33311,7 +33311,7 @@
   },
   "Arachnids' Ascent#060": {
    "src": "What are those spiders doing!? {u}, come on, we need to move!",
-   "dst": "",
+   "dst": "那些蜘蛛在干什么！？{u}，快，我们得走了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33321,7 +33321,7 @@
   },
   "Arachnids' Ascent#061": {
    "src": "...That was closer than it should have been. The spiders must be real desperate to protect whatever it is they have up here, huh? Let's keep going.",
-   "dst": "",
+   "dst": "……刚才比预想的还要险。这些蜘蛛一定是拼了命在保护山上的某样东西，是吧？我们继续走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33331,7 +33331,7 @@
   },
   "Arachnids' Ascent#062": {
    "src": "It was a tough climb, but we made it... It's, uh, very hot up here. So- what was it we were looking for-",
-   "dst": "",
+   "dst": "爬得很辛苦，不过我们到了……这里，呃，好热。那么——我们要找的是什么来着——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33341,7 +33341,7 @@
   },
   "Arachnids' Ascent#063": {
    "src": "...intruders....come to take....sacred protection....",
-   "dst": "",
+   "dst": "……闯入者……来夺走……神圣的守护……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33351,7 +33351,7 @@
   },
   "Arachnids' Ascent#064": {
    "src": ".....must not......allow....will kill.....for queen!....",
-   "dst": "",
+   "dst": "……不能……允许……要杀……为了女王！……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33361,7 +33361,7 @@
   },
   "Arachnids' Ascent#065": {
    "src": "Of course it wouldn't be that easy... Alright, {u}, let's do what we came here for. Let's claim that magic, and burn through the webs!",
-   "dst": "",
+   "dst": "当然不会那么容易……好，{u}，我们来完成我们的目的吧。夺下那股魔法，烧穿那些网！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33371,7 +33371,7 @@
   },
   "Arachnids' Ascent#066": {
    "src": "I guess that's that taken care of. We'll be able to burn through that web and save the villagers!",
-   "dst": "",
+   "dst": "看来这边解决了。我们可以烧穿那张网，救出村民了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33381,7 +33381,7 @@
   },
   "Arachnids' Ascent#067": {
    "src": "You heard the spider mention a queen, right? We'll probably have to defeat it in it's nest to stop the spiders, once and for all.",
-   "dst": "",
+   "dst": "你也听到那只蜘蛛提到女王了吧？我们大概得在它的巢穴里打倒它，才能彻底阻止这些蜘蛛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33391,7 +33391,7 @@
   },
   "Arachnids' Ascent#068": {
    "src": "We should probably get going back down the mountain. We don't want to keep Aledar and the Captain waiting.",
-   "dst": "",
+   "dst": "我们差不多该下山了。别让 Aledar 和上尉等太久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33401,7 +33401,7 @@
   },
   "Arachnids' Ascent#069": {
    "src": "Return to Captain Enduyn with the flame at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "带着火焰回到 [-{~}, {~}, -{~}] 的 Enduyn 上尉那里。",
    "role": "desc",
    "kind": "objective",
    "quest": "Arachnids' Ascent",
@@ -33411,7 +33411,7 @@
   },
   "Arachnids' Ascent#070": {
    "src": "You've returned! I trust you found something that can help us pass through these webs?",
-   "dst": "",
+   "dst": "你们回来了！我相信你们找到了能帮我们穿过这些网的东西？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33421,7 +33421,7 @@
   },
   "Arachnids' Ascent#071": {
    "src": "We did! We fought off a spider at the summit, and claimed a magical flame.",
-   "dst": "",
+   "dst": "找到了！我们在山顶打退了一只蜘蛛，拿到了一团魔法火焰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33431,7 +33431,7 @@
   },
   "Arachnids' Ascent#072": {
    "src": "Excellent! Now, give it here. Let's see if we can't get these villagers free... watch out, folks! It might get a little warm for a moment...",
-   "dst": "",
+   "dst": "太好了！来，给我。我们来看看能不能把这些村民放出来……大家小心！可能会热一下……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33441,7 +33441,7 @@
   },
   "Arachnids' Ascent#073": {
    "src": "Great work, soldiers. With these villagers out we can turn our focus to the main den.",
-   "dst": "",
+   "dst": "干得好，士兵们。村民救出来了，我们可以把注意力转到主巢穴了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33451,7 +33451,7 @@
   },
   "Arachnids' Ascent#074": {
    "src": "If you're prepared, I don't see any reason to hold back. Good luck in there, soldiers! Let's stop this spider blight once and for all.",
-   "dst": "",
+   "dst": "如果你们准备好了，我看没理由再犹豫。进去之后祝你们好运，士兵们！我们一劳永逸地终结这场蜘蛛之灾吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33461,7 +33461,7 @@
   },
   "Arachnids' Ascent#075": {
    "src": "We'll do our best, Captain. Aledar, {u}, let's head down to the den entrance.",
-   "dst": "",
+   "dst": "我们会尽力的，上尉。Aledar、{u}，我们去巢穴入口吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33471,7 +33471,7 @@
   },
   "Arachnids' Ascent#076": {
    "src": "You've returned! I trust you found something that can help us pass through these webs?",
-   "dst": "",
+   "dst": "你们回来了！我相信你们找到了能帮我们穿过这些网的东西？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33481,7 +33481,7 @@
   },
   "Arachnids' Ascent#077": {
    "src": "We did, yes. There was a powerful spider at the peak, which was making use of this magical flame.",
-   "dst": "",
+   "dst": "找到了，是的。山顶有一只强大的蜘蛛，它一直在使用这团魔法火焰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33491,7 +33491,7 @@
   },
   "Arachnids' Ascent#078": {
    "src": "Excellent! Now, give it here. Let's see if we can't get these villagers free... watch out, folks! It might get a little warm for a moment...",
-   "dst": "",
+   "dst": "太好了！来，给我。我们来看看能不能把这些村民放出来……大家小心！可能会热一下……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33501,7 +33501,7 @@
   },
   "Arachnids' Ascent#079": {
    "src": "Great work, soldiers. With these villagers out we can turn our focus to the main den.",
-   "dst": "",
+   "dst": "干得好，士兵们。村民救出来了，我们可以把注意力转到主巢穴了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33511,7 +33511,7 @@
   },
   "Arachnids' Ascent#080": {
    "src": "If you're prepared, I don't see any reason to hold back. Good luck in there, soldiers! Let's stop this spider blight once and for all.",
-   "dst": "",
+   "dst": "如果你们准备好了，我看没理由再犹豫。进去之后祝你们好运，士兵们！我们一劳永逸地终结这场蜘蛛之灾吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33521,7 +33521,7 @@
   },
   "Arachnids' Ascent#081": {
    "src": "We'll do our best, Captain. Aledar, {u}, let's head down to the den entrance.",
-   "dst": "",
+   "dst": "我们会尽力的，上尉。Aledar、{u}，我们去巢穴入口吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33531,7 +33531,7 @@
   },
   "Arachnids' Ascent#082": {
    "src": "H-hah! F-freedom! No m-more c-creepy crawlies... Just me a-and my... mushrooms.",
-   "dst": "",
+   "dst": "哈、哈！自、自由了！再也没、没有爬来爬去的恶心东西……只有我和我的……蘑菇。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33541,7 +33541,7 @@
   },
   "Arachnids' Ascent#083": {
    "src": "We did it! We killed the spider queen! {p} is safe from that threat now!",
-   "dst": "",
+   "dst": "我们做到了！我们杀了蜘蛛女王！{p} 再也不会受那个威胁了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33551,7 +33551,7 @@
   },
   "Arachnids' Ascent#084": {
    "src": "We- we did! That was... intense. But we succeeded in the end!",
-   "dst": "",
+   "dst": "我们——我们做到了！刚才……真是惊心动魄。但我们最后成功了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33561,7 +33561,7 @@
   },
   "Arachnids' Ascent#085": {
    "src": "...So, what now? We completed the mission, so we should report back to the Admiral, but... what's after that?",
-   "dst": "",
+   "dst": "……那么，接下来呢？任务完成了，我们该回去向上将报告，可是……之后呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33571,7 +33571,7 @@
   },
   "Arachnids' Ascent#086": {
    "src": "I guess we'll have to figure that out. I know I still want to help defend the province, but beyond that... I don't know.",
-   "dst": "",
+   "dst": "我想我们得自己想清楚。我知道我还是想帮忙守卫这个省份，但除此之外……我也不知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33581,7 +33581,7 @@
   },
   "Arachnids' Ascent#087": {
    "src": "...Yeah, alright. Well, hey, let's all meet back at {p} and celebrate! We deserve it after that whole ordeal.",
-   "dst": "",
+   "dst": "……是啊，好吧。嘿，我们都回 {p} 会合，好好庆祝一下吧！经历了这一切，我们值得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33591,7 +33591,7 @@
   },
   "Arachnids' Ascent#088": {
    "src": "That sounds good, yeah. {u}, we'll rest up here a little, but we'll meet you back at the barracks soon.",
-   "dst": "",
+   "dst": "听起来不错。{u}，我们在这里稍微休息一下，很快就回兵营跟你会合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33601,7 +33601,7 @@
   },
   "Arachnids' Ascent#089": {
    "src": "Well, here we are! Back at the barracks, after a successful mission. It feels a little... unreal, you know?",
-   "dst": "",
+   "dst": "好，我们到了！任务成功，回到兵营。感觉有点……不真实，你懂吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33611,7 +33611,7 @@
   },
   "Arachnids' Ascent#090": {
    "src": "I know what you mean. But, well, we did good! We managed to make the woods safer for the people living there.",
-   "dst": "",
+   "dst": "我懂你的意思。不过，嗯，我们干得不错！我们让住在森林里的人更安全了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33621,7 +33621,7 @@
   },
   "Arachnids' Ascent#091": {
    "src": "We did! And now, we celebrate! Here, let's all some {p} Whiskey for the occasion.",
-   "dst": "",
+   "dst": "没错！现在，我们庆祝吧！来，大家都来点 {p} 威士忌应应景。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33631,7 +33631,7 @@
   },
   "Arachnids' Ascent#092": {
    "src": "So, what are you two planning to do next? I think I'll speak to the Admiral about finding an assignment somewhere.",
-   "dst": "",
+   "dst": "那么，你们两个接下来打算做什么？我想我会去找上将，看看能不能在哪里接个任务。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33641,7 +33641,7 @@
   },
   "Arachnids' Ascent#093": {
    "src": "Hm. I've been thinking a little about... looking into more advanced powder techniques. Something about their magic sticks out to me.",
-   "dst": "",
+   "dst": "嗯。我一直在想……去研究更高深的粉末技术。它们的魔法有种特别吸引我的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33651,7 +33651,7 @@
   },
   "Arachnids' Ascent#094": {
    "src": "Oh, really? I thought you would be more into basic fighting, what with our journey to {p}.",
-   "dst": "",
+   "dst": "噢，真的？经过我们去 {p} 的那一趟，我还以为你会更喜欢基本的战斗。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33661,7 +33661,7 @@
   },
   "Arachnids' Ascent#095": {
    "src": "Yeah... well, I guess I found something a little more interesting along the way. I'll let you know how it all goes.",
-   "dst": "",
+   "dst": "是啊……嗯，我想我是在路上发现了更有意思的东西。进展如何我会告诉你们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33671,7 +33671,7 @@
   },
   "Arachnids' Ascent#096": {
    "src": "Keep us updated, Aledar. So, {u}, what are you thinking of doing next?",
-   "dst": "",
+   "dst": "记得跟我们说说近况，Aledar。那么，{u}，你接下来想做什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33681,7 +33681,7 @@
   },
   "Arachnids' Ascent#097": {
    "src": "Not a bad idea! I might join you with that later, once I've decided on things more.",
-   "dst": "",
+   "dst": "主意不错！等我把事情想得更清楚一些，说不定之后会跟你一起。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33691,7 +33691,7 @@
   },
   "Arachnids' Ascent#098": {
    "src": "Helping people is a good goal. There's bound to be lots of people around who need it.",
-   "dst": "",
+   "dst": "帮助别人是个好目标。这附近一定有很多人需要帮忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33701,7 +33701,7 @@
   },
   "Arachnids' Ascent#099": {
    "src": "Exploring, huh? That's a good idea. There's plenty to see around here!",
-   "dst": "",
+   "dst": "去探索，是吧？好主意。这附近有很多值得一看的地方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33711,7 +33711,7 @@
   },
   "Arachnids' Ascent#100": {
    "src": "...And- well, we all came here for a reason. Might as well see the province while we're here, right?",
-   "dst": "",
+   "dst": "……还有——嗯，我们都是有原因才来这里的。既然来了，不如看看这个省份，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33721,7 +33721,7 @@
   },
   "Arachnids' Ascent#101": {
    "src": "Well, if you're staying in the area, maybe we'll cross paths! I'll likely be defending {p} in the short-term.",
-   "dst": "",
+   "dst": "嗯，如果你会留在这一带，说不定我们会碰到！短期内我大概会在守卫 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33731,7 +33731,7 @@
   },
   "Arachnids' Ascent#102": {
    "src": "And, well, I'll probably be in the area as well! There's plenty of experts in the area.",
-   "dst": "",
+   "dst": "还有，嗯，我大概也会在这一带！这附近有很多行家。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33741,7 +33741,7 @@
   },
   "Arachnids' Ascent#103": {
    "src": "Well, hey, there's no shame in that. There's lots to do around here. I'm sure you'll figure it out!",
-   "dst": "",
+   "dst": "嘿，这没什么好丢脸的。这附近有很多事可以做。我相信你会想清楚的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33751,7 +33751,7 @@
   },
   "Arachnids' Ascent#104": {
    "src": "If you need a goal, the next place you might want to visit is {p} {p}, to the north. Maybe pay it a visit when you reach level {~}.",
-   "dst": "",
+   "dst": "如果你需要一个目标，下一个可以去的地方是北边的 {p} {p}。等你到了 {~} 级也许可以去看看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33761,7 +33761,7 @@
   },
   "Arachnids' Ascent#105": {
    "src": "...Well, I'm glad we're all able to be here together. Here's to a long and fulfilling friendship!",
-   "dst": "",
+   "dst": "……嗯，我很高兴我们都能聚在这里。敬我们长久又充实的友谊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33771,7 +33771,7 @@
   },
   "Arachnids' Ascent#106": {
    "src": "I'll drink to that! To all our future adventures.",
-   "dst": "",
+   "dst": "我干了！敬我们未来所有的冒险。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33781,7 +33781,7 @@
   },
   "Arachnids' Ascent#107": {
    "src": "...Oh, {u}! Good to see you. Anything interesting going on with you?",
-   "dst": "",
+   "dst": "……噢，{u}！见到你真好。你那边有什么有趣的事吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33791,7 +33791,7 @@
   },
   "Arachnids' Ascent#108": {
    "src": "Me? Well, I've been making little progress... but, nothing too big yet. I'm keeping at it, though!",
-   "dst": "",
+   "dst": "我？嗯，我有一点小进展……不过还没什么大突破。我会继续努力的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33801,7 +33801,7 @@
   },
   "Arachnids' Ascent#109": {
    "src": "Oh, hello {u}. I'm probably not going to be here for long- I've been assigned to help defend {p} to the south.",
-   "dst": "",
+   "dst": "噢，你好，{u}。我大概不会在这里待太久——我被派去帮忙守卫南边的 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -33811,7 +33811,7 @@
   },
   "Arachnids' Ascent#110": {
    "src": "You should come visit, if you have the chance!",
-   "dst": "",
+   "dst": "有机会的话，你该来看看！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Arachnids' Ascent",
@@ -80091,7 +80091,7 @@
   },
   "General's Orders#000": {
    "src": "Speak to Private Tylas outside of Kitrios Barracks at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 Kitrios 兵营外 [{~}, {~}, -{~}] 的 Tylas 列兵交谈",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80101,7 +80101,7 @@
   },
   "General's Orders#001": {
    "src": "...snrrrk... ... ... ...mimimimimi... ... ... ...snrrrk... ... ... ...mimimimimi...",
-   "dst": "",
+   "dst": "……呼噜噜……………咪咪咪咪咪……………呼噜噜……………咪咪咪咪咪……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80111,7 +80111,7 @@
   },
   "General's Orders#002": {
    "src": "...snrrrk... ...mrrf. ...five more minnns... ...snrrrk...",
-   "dst": "",
+   "dst": "……呼噜噜……嗯呼。……再五分钟……呼噜噜……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80121,7 +80121,7 @@
   },
   "General's Orders#003": {
    "src": "...wh...? Oh...OH! Oh oh oh! Ahem! Yes, um! Absolutely sir! Right away sir! I don't think you're crazy at all sir!",
-   "dst": "",
+   "dst": "……什……？噢……噢！噢噢噢！咳咳！是，呃！没问题，长官！马上办，长官！我一点都不觉得您疯了，长官！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80131,7 +80131,7 @@
   },
   "General's Orders#004": {
    "src": "...oh. Wait, you're just one of those heavily armored human types. Cripes, I thought you were Lecade... Even nuts as he's gotten I'd get the thumbscrews if he caught me napping.",
-   "dst": "",
+   "dst": "……噢。等等，你只是个穿着重甲的人类。天啊，我还以为你是 Lecade……就算他现在疯成那样，要是被他逮到我在打瞌睡，我还是得挨夹手指的刑。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80141,7 +80141,7 @@
   },
   "General's Orders#005": {
    "src": "Hum...well, hey. You humans like doing work, right? I hear about it from folks in the army that you lot are pretty zealous about your favors.",
-   "dst": "",
+   "dst": "嗯……好吧，嘿。你们人类喜欢干活，对吧？我听军队里的人说，你们这帮人帮起忙来可热心了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80151,7 +80151,7 @@
   },
   "General's Orders#006": {
    "src": "Then I think today might be your lucky day, because General Lecade is running out of free hands to push asinine tasks onto. No one knows what in the world's gotten into him.",
-   "dst": "",
+   "dst": "那今天可能是你的幸运日，因为 Lecade 将军快找不到闲人来塞那些莫名其妙的任务了。没人知道他到底中了什么邪。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80161,7 +80161,7 @@
   },
   "General's Orders#007": {
    "src": "Between you and me, I'm using this time to work on sleep instead. I mean, honestly! He wants me to dance with the other privates to greet visitors! We don't even ALLOW visitors normally.",
-   "dst": "",
+   "dst": "我跟你说，我在用这段时间补觉。我是说，说真的！他要我跟其他列兵一起跳舞迎接访客！我们平常根本就不准有访客。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80171,7 +80171,7 @@
   },
   "General's Orders#008": {
    "src": "So if you want to eat up a few hours, talk with Lecade. Up the hill and into the barracks. I'm going to try and do my actual guard duty here instead of doing the funky Grook.",
-   "dst": "",
+   "dst": "所以如果你想打发几个小时，就去找 Lecade 谈谈。往山上走进兵营。我要在这里好好站我的岗，才不去跳什么怪咖 Grook 舞。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80181,7 +80181,7 @@
   },
   "General's Orders#009": {
    "src": "Speak to General Lecade.",
-   "dst": "",
+   "dst": "与 Lecade 将军交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80191,7 +80191,7 @@
   },
   "General's Orders#010": {
    "src": "Hey, hey, hey! What is this person? Why is it in my administrator's? New work! New work! Get this person out of the administrator's!",
-   "dst": "",
+   "dst": "嘿、嘿、嘿！这个人是什么？为什么它在我的管理者的里？新工作！新工作！把这个人弄出管理者的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80201,7 +80201,7 @@
   },
   "General's Orders#011": {
    "src": "Wait. Wait, you. Wait right there. Don't move until someone comes to get you. Order! I order it!",
-   "dst": "",
+   "dst": "等等。等等，你。在那里等着。有人来带你之前不许动。命令！我命令它！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80211,7 +80211,7 @@
   },
   "General's Orders#012": {
    "src": "... ... ...",
-   "dst": "",
+   "dst": "…………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80221,7 +80221,7 @@
   },
   "General's Orders#013": {
    "src": "...okay, person. No one wants to bring you from administrator's, so instead I will give you another orders! Listen, listen, listen!",
-   "dst": "",
+   "dst": "……好，人。没人想把你从管理者的带走，所以我改给你另一个命令们！听、听、听着！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80231,7 +80231,7 @@
   },
   "General's Orders#014": {
    "src": "You intended to firstly? Convenient! Here is my order then- Check the war tools. They need to be maintained for use!",
-   "dst": "",
+   "dst": "你本来就打算首先？方便！那这是我的命令——检查战争工具。它们必须被保养以便使用！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80241,7 +80241,7 @@
   },
   "General's Orders#015": {
    "src": "Cannons and catapults, fortifications and barriers. A barracks needs to be armed to the tooth! I order it! Bad weapons are no weapons!",
-   "dst": "",
+   "dst": "大炮和投石机，工事和路障。兵营必须武装到牙齿！我命令它！坏的武器就是没有武器！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80251,7 +80251,7 @@
   },
   "General's Orders#016": {
    "src": "Armaments are to be stored outside fort walls at all times. To the left path leaving the walls. There will be Smithy stationed.",
-   "dst": "",
+   "dst": "军备必须随时存放在要塞城墙外面。离开城墙走左边的路。那里会驻有铁匠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80261,7 +80261,7 @@
   },
   "General's Orders#017": {
    "src": "Move along! I have many orders to make! Return when the task is concluded!",
-   "dst": "",
+   "dst": "快走！我有很多命令要下！任务结束了就回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80271,7 +80271,7 @@
   },
   "General's Orders#018": {
    "src": "Go check on the malfunctioning equipment at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "去 [{~}, {~}, -{~}] 检查故障的装备。",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80281,7 +80281,7 @@
   },
   "General's Orders#019": {
    "src": "Return to General Lecade.",
-   "dst": "",
+   "dst": "回到 Lecade 将军那里。",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80291,7 +80291,7 @@
   },
   "General's Orders#020": {
    "src": "Hey, hey, hey! Person is in my administrator's again! This means the armaments are maintained! That is right?",
-   "dst": "",
+   "dst": "嘿、嘿、嘿！人又在我的管理者的里了！这表示军备保养好了！是这样没错吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80301,7 +80301,7 @@
   },
   "General's Orders#021": {
    "src": "Convenient! Very convenient! Now I will give you another orders! I must ponder for a moment.",
-   "dst": "",
+   "dst": "方便！非常方便！现在我要给你另一个命令们！我必须思考一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80311,7 +80311,7 @@
   },
   "General's Orders#022": {
    "src": "... ... ...",
-   "dst": "",
+   "dst": "…………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80321,7 +80321,7 @@
   },
   "General's Orders#023": {
    "src": "Here is my new work then- Find the coin. A soldier has dropped a lucky coin in the wastewater!",
-   "dst": "",
+   "dst": "那这是我的新工作——找到硬币。一个士兵把幸运硬币掉进污水里了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80331,7 +80331,7 @@
   },
   "General's Orders#024": {
    "src": "All is confused without fortune. Soldiers must not be confused, or else I cannot give orders! Generally orders must be given!",
-   "dst": "",
+   "dst": "没有好运，一切都会混乱。士兵不能混乱，不然我就不能下命令！将军地必须下命令！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80341,7 +80341,7 @@
   },
   "General's Orders#025": {
    "src": "The coin has been pushed into the sewage. My orders are convenient, as there is accessibility! The aqua ducts have means of entrance.",
-   "dst": "",
+   "dst": "硬币被冲进了污水里。我的命令很方便，因为有可达性！水、渠有入口的手段。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80351,7 +80351,7 @@
   },
   "General's Orders#026": {
    "src": "Outside, the cracked aqua ducts have Sergeant nearby. It shall mark accessibility for you. Return when the charm is gotten!",
-   "dst": "",
+   "dst": "外面，裂开的水、渠旁边有中士。它会为你标出可达性。拿到护身符就回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80361,7 +80361,7 @@
   },
   "General's Orders#027": {
    "src": "Recover the Good-Luck Charm from the sewers at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "从 [{~}, {~}, -{~}] 的下水道找回幸运护身符",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80371,7 +80371,7 @@
   },
   "General's Orders#028": {
    "src": "My, what an odd task to give to the chief advisor of the general...",
-   "dst": "",
+   "dst": "天啊，把这种任务交给将军的首席顾问，也太奇怪了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80381,7 +80381,7 @@
   },
   "General's Orders#029": {
    "src": "You see, human, I was told to dig an extension to the sewer with my own hands.",
-   "dst": "",
+   "dst": "你看，人类，他要我亲手给下水道挖一条延伸管道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80391,7 +80391,7 @@
   },
   "General's Orders#030": {
    "src": "And at that, it's supposed to just loop right around back in to the pipe.",
-   "dst": "",
+   "dst": "而且，它还应该绕一圈直接接回管道里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80401,7 +80401,7 @@
   },
   "General's Orders#031": {
    "src": "I think the General is starting to snap under the stress. If you need to return to the fort, just follow along.",
-   "dst": "",
+   "dst": "我觉得将军快被压力逼疯了。如果你需要回要塞，跟着走就行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80411,7 +80411,7 @@
   },
   "General's Orders#032": {
    "src": "Return to General Lecade with the Good-Luck Charm.",
-   "dst": "",
+   "dst": "带着幸运护身符回到 Lecade 将军那里。",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80421,7 +80421,7 @@
   },
   "General's Orders#033": {
    "src": "Hey, hey, hey! Administrator's has person once more! The charm has been gotten! That is right?",
-   "dst": "",
+   "dst": "嘿、嘿、嘿！管理者的又有人了！护身符被拿到了！是这样没错吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80431,7 +80431,7 @@
   },
   "General's Orders#034": {
    "src": "Yipy! Soldier will get returned the coin very soon! Person, the actions you take are convenient! I appreciate your help. I must ponder for a moment.",
-   "dst": "",
+   "dst": "耶比！士兵很快就会被还硬币了！人，你采取的行动很方便！我感谢你的帮忙。我必须思考一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80441,7 +80441,7 @@
   },
   "General's Orders#035": {
    "src": "... ... ...",
-   "dst": "",
+   "dst": "…………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80451,7 +80451,7 @@
   },
   "General's Orders#036": {
    "src": "Here is my new work then- Show your love. You have made me smile wide through your tasks! The other soldier would appreciate you too!",
-   "dst": "",
+   "dst": "那这是我的新工作——展现你的爱。你的任务让我笑得好开！另一个士兵也会感激你的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80461,7 +80461,7 @@
   },
   "General's Orders#037": {
    "src": "Walk jauntily across the tight rope, and make the other soldier smile as well! Soldiers must be happy at life.",
-   "dst": "",
+   "dst": "轻快地走过钢索，让另一个士兵也笑！士兵必须对人生快乐。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80471,7 +80471,7 @@
   },
   "General's Orders#038": {
    "src": "The tight rope is right from administrator's- stairs are nearby the passage. Return when the soldier is happy!",
-   "dst": "",
+   "dst": "钢索就在管理者的右边——楼梯在通道附近。士兵快乐了就回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80481,7 +80481,7 @@
   },
   "General's Orders#039": {
    "src": "Walk across the tightrope.",
-   "dst": "",
+   "dst": "走过钢索。",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80491,7 +80491,7 @@
   },
   "General's Orders#040": {
    "src": "Well I'll be, the soldier's crossing the tightrope.",
-   "dst": "",
+   "dst": "哎哟，那个士兵在走钢索呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80501,7 +80501,7 @@
   },
   "General's Orders#041": {
    "src": "Convenient! So convenient! Many cheers for person!",
-   "dst": "",
+   "dst": "方便！太方便了！为人欢呼！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80511,7 +80511,7 @@
   },
   "General's Orders#042": {
    "src": "I think he might actually make it across...",
-   "dst": "",
+   "dst": "我觉得他说不定真的走得过去……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80521,7 +80521,7 @@
   },
   "General's Orders#043": {
    "src": "Gah, what in blazes are you thinking, Lecade?! First this confounded contraption, then...grumble, grumble...",
-   "dst": "",
+   "dst": "啊，你到底在想什么，Lecade？！先是这个该死的玩意，然后……嘟囔、嘟囔……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80531,7 +80531,7 @@
   },
   "General's Orders#044": {
    "src": "Return to General Lecade.",
-   "dst": "",
+   "dst": "回到 Lecade 将军那里。",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80541,7 +80541,7 @@
   },
   "General's Orders#045": {
    "src": "Very, very, very happy! The tight rope has been walked! I saw the task!",
-   "dst": "",
+   "dst": "非常、非常、非常快乐！钢索被走过了！我看到任务了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80551,7 +80551,7 @@
   },
   "General's Orders#046": {
    "src": "The soldier is very happy now! A smile is brightening the room! Yet the day still is dark. Why this is, I must ponder for a moment.",
-   "dst": "",
+   "dst": "士兵现在很快乐！笑容照亮了房间！可是今天还是很暗。为什么是这样，我必须思考一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80561,7 +80561,7 @@
   },
   "General's Orders#047": {
    "src": "... ... ...",
-   "dst": "",
+   "dst": "…………",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80571,7 +80571,7 @@
   },
   "General's Orders#048": {
    "src": "I have devised my plan! I have observed the hills are naked. That must be why the soldiers become upset.",
-   "dst": "",
+   "dst": "我想出计划了！我观察到山丘是光溜溜的。士兵们一定就是因为这样才不开心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80581,7 +80581,7 @@
   },
   "General's Orders#049": {
    "src": "Here is my new work then- Dress the hill. It is bare and trashy. No good! Trashy hills mean our day is trashy.",
-   "dst": "",
+   "dst": "那这是我的新工作——打扮山丘。它光秃又垃圾。不好！垃圾的山丘表示我们的一天很垃圾。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80591,7 +80591,7 @@
   },
   "General's Orders#050": {
    "src": "Turn the hill purple! I order it! Purple is King's color! The fortress will feel a castle and we will feast for a hundred!",
-   "dst": "",
+   "dst": "把山丘变成紫色！我命令它！紫色是国王的颜色！要塞会感觉一座城堡，我们会为一百人设宴！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80601,7 +80601,7 @@
   },
   "General's Orders#051": {
    "src": "Previously, Springy were introduced. They will make easy accessibility! Person will find Springy past the tight rope.",
-   "dst": "",
+   "dst": "之前，弹弹被引进了。它们会让可达性变容易！人会在钢索的另一边找到弹弹。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80611,7 +80611,7 @@
   },
   "General's Orders#052": {
    "src": "Paint the mountain by using the trampolines at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "用 [{~}, {~}, -{~}] 的弹跳床把山涂上颜色",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80621,7 +80621,7 @@
   },
   "General's Orders#053": {
    "src": "Return to General Lecade.",
-   "dst": "",
+   "dst": "回到 Lecade 将军那里。",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80631,7 +80631,7 @@
   },
   "General's Orders#054": {
    "src": "WOOO!! Finally! Someone to help- Hey, look over here!!",
-   "dst": "",
+   "dst": "呜呼！！终于！有人可以帮忙了——嘿，看这边！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80641,7 +80641,7 @@
   },
   "General's Orders#055": {
    "src": "Gosh, what a stroke of luck! I finally beat the Bantisu monks to one of you lost fellas!",
-   "dst": "",
+   "dst": "天啊，运气真好！我终于抢在 Bantisu 僧侣前面找到你们其中一个迷路的家伙了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80651,7 +80651,7 @@
   },
   "General's Orders#056": {
    "src": "I'm here searching for soldiers lost in the canyon, you're the first person I've found!",
-   "dst": "",
+   "dst": "我在这里搜索在峡谷里迷路的士兵，你是我找到的第一个人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80661,7 +80661,7 @@
   },
   "General's Orders#057": {
    "src": "This propeller hat is great, by the way. At first it seemed sort of silly, but it works a treat, and it's real fun, too!",
-   "dst": "",
+   "dst": "顺带一提，这顶螺旋桨帽子超棒。一开始看起来有点蠢，但它好用得很，而且真的很好玩！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80671,7 +80671,7 @@
   },
   "General's Orders#058": {
    "src": "That aside, just stand under me, and I'll lift you down! Come on now!",
-   "dst": "",
+   "dst": "先不说这个，站到我下面，我载你下去！快点！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80681,7 +80681,7 @@
   },
   "General's Orders#059": {
    "src": "Here we go!",
-   "dst": "",
+   "dst": "出发！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80691,7 +80691,7 @@
   },
   "General's Orders#060": {
    "src": "There you go, fella! It's back to the skies for me! Best orders ever!! WOOO!!",
-   "dst": "",
+   "dst": "到啦，伙计！我要回天上去了！史上最棒的命令！！呜呼！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80701,7 +80701,7 @@
   },
   "General's Orders#061": {
    "src": "Hey, hey, hey! Person has returned to Administrator's! The hill is King's color now! That is right?",
-   "dst": "",
+   "dst": "嘿、嘿、嘿！人回到管理者的了！山丘现在是国王的颜色了！是这样没错吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80711,7 +80711,7 @@
   },
   "General's Orders#062": {
    "src": "Convenient, convenient, convenient! Our day will no longer be trashy. Good tasks have been concluded!",
-   "dst": "",
+   "dst": "方便、方便、方便！我们的一天不会再垃圾了。好任务被结束了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80721,7 +80721,7 @@
   },
   "General's Orders#063": {
    "src": "However, tasks must be serious. Person's next work is very important. Mister \"Gren\" needs of help.",
-   "dst": "",
+   "dst": "不过，任务必须认真。人的下一个工作非常重要。“Gren”先生需要的帮忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80731,7 +80731,7 @@
   },
   "General's Orders#064": {
    "src": "\"Gren\" Lieutenant has worked on task for many days. He needs assistance, fast- Time is required of a machine!",
-   "dst": "",
+   "dst": "“Gren”中尉已经做任务很多天了。他需要协助，要快——一台机器需要时间！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80741,7 +80741,7 @@
   },
   "General's Orders#065": {
    "src": "Here is my new work then- Assist \"Gren.\" It is important work. Science machines are complicating.",
-   "dst": "",
+   "dst": "那这是我的新工作——协助“Gren”。这是重要的工作。科学机器很复杂化。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80751,7 +80751,7 @@
   },
   "General's Orders#066": {
    "src": "Build the machine with time! \"Gren\" is left outside Administrator's. Assist Lieutenant!",
-   "dst": "",
+   "dst": "用时间造出机器！“Gren”被留在管理者的外面。协助中尉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80761,7 +80761,7 @@
   },
   "General's Orders#067": {
    "src": "Speak to Lieutenant Gren at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 [{~}, {~}, -{~}] 的 Gren 中尉交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80771,7 +80771,7 @@
   },
   "General's Orders#068": {
    "src": "...hm? Oh, the madman's roped you into this too?! I asked for a Corkian engineer, not- Urgh. Look, have you got any technical knowhow?",
-   "dst": "",
+   "dst": "……嗯？噢，那个疯子也把你拖进来了？！我要的是 Corkus 的工程师，不是——呃。听着，你懂什么技术吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80781,7 +80781,7 @@
   },
   "General's Orders#069": {
    "src": "He wants me to construct him a time machine!! Why does he even need more time when there's plenty about?",
-   "dst": "",
+   "dst": "他要我给他造一台时光机！！时间多的是，他到底为什么还需要更多时间？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80791,7 +80791,7 @@
   },
   "General's Orders#070": {
    "src": "Well, beggars can't be choosers. If you think you have any ideas on how to get it functioning, step inside and see what you can do.",
-   "dst": "",
+   "dst": "嗯，有总比没有好。如果你觉得有什么让它运转的主意，就进去看看你能做什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80801,7 +80801,7 @@
   },
   "General's Orders#071": {
    "src": "...wait. It's ticking. Does that mean- Wait, no! HUMAN! GET OUT OF THERE-",
-   "dst": "",
+   "dst": "……等等。它在滴答响。难道说——等等，不！人类！快出来——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80811,7 +80811,7 @@
   },
   "General's Orders#072": {
    "src": "GAH!!!",
-   "dst": "",
+   "dst": "啊！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80821,7 +80821,7 @@
   },
   "General's Orders#073": {
    "src": "Investigate the mysterious prison within the fort.",
-   "dst": "",
+   "dst": "调查要塞里神秘的监狱。",
    "role": "desc",
    "kind": "objective",
    "quest": "General's Orders",
@@ -80831,7 +80831,7 @@
   },
   "General's Orders#074": {
    "src": "Who goes there?! What, come and try to finish the job, you beast?! ...wait...a human?! Whatever reason you're down here for, you need to listen!",
-   "dst": "",
+   "dst": "谁在那里？！怎么，来把事情做个了结吗，你这畜生？！……等等……人类？！不管你为什么来这下面，你都得听我说！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80841,7 +80841,7 @@
   },
   "General's Orders#075": {
    "src": "I am General Lecade of the Kitrios Barracks! While you are on my ground, you must follow my orders!",
-   "dst": "",
+   "dst": "我是 Kitrios 兵营的 Lecade 将军！你在我的地盘上，就得听从我的命令！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80851,7 +80851,7 @@
   },
   "General's Orders#076": {
    "src": "Soldier, I order you to unlock this door! They tossed the key behind that desk; we'll be able to discuss this once I'm out.",
-   "dst": "",
+   "dst": "士兵，我命令你打开这扇门！他们把钥匙扔到那张桌子后面了；等我出去我们再谈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80861,7 +80861,7 @@
   },
   "General's Orders#077": {
    "src": "Good. Thank you, soldier. There's a lot to explain. I'll tell you everything along the way.",
-   "dst": "",
+   "dst": "很好。谢谢你，士兵。有很多事要解释。我们边走我边告诉你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80871,7 +80871,7 @@
   },
   "General's Orders#078": {
    "src": "For now, though, we should get out of this dilapidated prison. Let's go.",
-   "dst": "",
+   "dst": "不过现在，我们得先离开这座破败的监狱。走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80881,7 +80881,7 @@
   },
   "General's Orders#079": {
    "src": "Inconvenient! No escape!",
-   "dst": "",
+   "dst": "不方便！不许逃！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80891,7 +80891,7 @@
   },
   "General's Orders#080": {
    "src": "What in the...?!",
-   "dst": "",
+   "dst": "这是……？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80901,7 +80901,7 @@
   },
   "General's Orders#081": {
    "src": "You...! You're... What is the meaning of this, why do you look like me?!",
-   "dst": "",
+   "dst": "你……！你是……这是什么意思，你为什么长得跟我一样？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80911,7 +80911,7 @@
   },
   "General's Orders#082": {
    "src": "Trashy liar! No escape! I order it! Generally orders must be done! Return to the room!",
-   "dst": "",
+   "dst": "垃圾骗子！不许逃！我命令它！将军地命令必须被做！回房间去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80921,7 +80921,7 @@
   },
   "General's Orders#083": {
    "src": "What nonsense...! I'll wrestle that costume off of you, you impostor!",
-   "dst": "",
+   "dst": "胡说八道……！我要把你那身伪装扒下来，你这冒牌货！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80931,7 +80931,7 @@
   },
   "General's Orders#084": {
    "src": "Agh... As insane as you sound, you're a tough fight... Human, you need to finish this thing off!",
-   "dst": "",
+   "dst": "呃……你说话虽然疯疯癫癫，打起来倒是很难缠……人类，你得把这东西解决掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80941,7 +80941,7 @@
   },
   "General's Orders#085": {
    "src": "Person! I have new work for you- Knock down the fake soldier! Assist fast!",
-   "dst": "",
+   "dst": "人！我有新工作给你——打倒假的士兵！协助快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80951,7 +80951,7 @@
   },
   "General's Orders#086": {
    "src": "What folly! A doppelganger calling ME a fake! How about you go ahead and prove yourself!",
-   "dst": "",
+   "dst": "荒唐！一个冒牌货说我是假的！不如你先证明你自己！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80961,7 +80961,7 @@
   },
   "General's Orders#087": {
    "src": "Hey, hey, hey! Smart thoughts from fakeman! Our home- we called it Gravel!",
-   "dst": "",
+   "dst": "嘿、嘿、嘿！假人有聪明的想法！我们的家——我们叫它 Gravel！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80971,7 +80971,7 @@
   },
   "General's Orders#088": {
    "src": "Gravel? I've never heard something more outlandish, it's called Gavel!",
-   "dst": "",
+   "dst": "Gravel？我从没听过这么离谱的说法，那叫 Gavel！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80981,7 +80981,7 @@
   },
   "General's Orders#089": {
    "src": "Are the rumors about humans being brainless mercenaries REALLY true?!",
-   "dst": "",
+   "dst": "关于人类是没脑子的佣兵那些传闻，难道是真的吗？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -80991,7 +80991,7 @@
   },
   "General's Orders#090": {
    "src": "What!? Books have told me this home is hilly and crumbly!",
-   "dst": "",
+   "dst": "什么！？书告诉我这个家是多山又碎碎的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81001,7 +81001,7 @@
   },
   "General's Orders#091": {
    "src": "Do you even know where we are...? How about this then, who's the private that guards the entrance?",
-   "dst": "",
+   "dst": "你到底知不知道我们在哪……？那这个呢，看守入口的列兵是谁？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81011,7 +81011,7 @@
   },
   "General's Orders#092": {
    "src": "Tiger! The soldier with dance is Tiger!",
-   "dst": "",
+   "dst": "Tiger！会跳舞的士兵是 Tiger！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81021,7 +81021,7 @@
   },
   "General's Orders#093": {
    "src": "Tiger?! His name is Tylas!! A tiger is an exotic animal, not some drowsy private!",
-   "dst": "",
+   "dst": "Tiger？！他叫 Tylas！！老虎是异国的动物，不是什么打瞌睡的列兵！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81031,7 +81031,7 @@
   },
   "General's Orders#094": {
    "src": "No wonder he was asleep, it seems he was even too lazy to give you his name!",
-   "dst": "",
+   "dst": "难怪他在睡觉，看来他连把名字告诉你都懒！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81041,7 +81041,7 @@
   },
   "General's Orders#095": {
    "src": "Weak worm!! Person has been convenient with work- Why do stupid things?!",
-   "dst": "",
+   "dst": "软弱的虫！！人一直在工作上很方便——为什么做蠢事？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81051,7 +81051,7 @@
   },
   "General's Orders#096": {
    "src": "AHA! I have pondered- say where Springy is held!",
-   "dst": "",
+   "dst": "啊哈！我思考过了——说出弹弹被放在哪里！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81061,7 +81061,7 @@
   },
   "General's Orders#097": {
    "src": "What in the... Springy- What in the world are you talking about?! We don't store springs in the fort!!",
-   "dst": "",
+   "dst": "这是什么……弹弹——你到底在说什么？！我们要塞里才不放弹簧！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81071,7 +81071,7 @@
   },
   "General's Orders#098": {
    "src": "Weak fake soldier!! Springy is held to sleep! Springy is held on top of the pillar!!",
-   "dst": "",
+   "dst": "软弱的假士兵！！弹弹被放着睡觉！弹弹被放在柱子顶上！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81081,7 +81081,7 @@
   },
   "General's Orders#099": {
    "src": "Human!! What are you thinking?! He's speaking utter nonsense!!",
-   "dst": "",
+   "dst": "人类！！你在想什么？！他说的全是胡言乱语！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81091,7 +81091,7 @@
   },
   "General's Orders#100": {
    "src": "What even is a springy?! He's speaking utter nonsense!",
-   "dst": "",
+   "dst": "弹弹到底是什么东西？！他说的全是胡言乱语！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81101,7 +81101,7 @@
   },
   "General's Orders#101": {
    "src": "Enough of this! Soldier, you can't possibly believe that fraud, we have to team up on him!",
-   "dst": "",
+   "dst": "够了！士兵，你不可能相信那个骗子吧，我们得联手对付他！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81111,7 +81111,7 @@
   },
   "General's Orders#102": {
    "src": "Fine then- If I'm alone on this, it's time for the classic Lecade Power Play!!",
-   "dst": "",
+   "dst": "好吧——既然只有我一个，那就是经典的 Lecade 强势出击的时候了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81121,7 +81121,7 @@
   },
   "General's Orders#103": {
    "src": "Good! Let's make him pay!",
-   "dst": "",
+   "dst": "很好！我们让他付出代价！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81131,7 +81131,7 @@
   },
   "General's Orders#104": {
    "src": "Inconvenient! Person is trashy! Terrible fake! I will not intend the victim on returning to home!",
-   "dst": "",
+   "dst": "不方便！人很垃圾！糟糕的假货！我不会打算让受害者回到家！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81141,7 +81141,7 @@
   },
   "General's Orders#105": {
    "src": "He... he transformed! A shapeshifter?!",
-   "dst": "",
+   "dst": "他……他变身了！是变形怪？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81151,7 +81151,7 @@
   },
   "General's Orders#106": {
    "src": "I did fine work! I generally performed tasks to soldiers! There's nothing wrong!",
-   "dst": "",
+   "dst": "我做了好工作！我将军地对士兵们执行了任务！没有任何错！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81161,7 +81161,7 @@
   },
   "General's Orders#107": {
    "src": "Too much! Too much! Too much! Escape! Need escape! Too strong!",
-   "dst": "",
+   "dst": "太多了！太多了！太多了！逃跑！需要逃跑！太强了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81171,7 +81171,7 @@
   },
   "General's Orders#108": {
    "src": "Damn! He's gone... I don't think we'll be able to catch him on foot at this rate.",
-   "dst": "",
+   "dst": "该死！他跑了……照这样子，我想我们徒步是追不上他了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81181,7 +81181,7 @@
   },
   "General's Orders#109": {
    "src": "I can't believe you actually trusted him, but I couldn't hold a grudge about it. The thing's gone, anyways.",
-   "dst": "",
+   "dst": "真不敢相信你居然信了他，不过我也不会为此记恨。反正那东西已经跑了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81191,7 +81191,7 @@
   },
   "General's Orders#110": {
    "src": "It wouldn't be right to leave you empty handed over it. Perhaps you can find a use for that odd slime it left behind.",
-   "dst": "",
+   "dst": "为了这件事让你空手而归不太对。也许你能找到它留下的那团怪史莱姆的用处。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81201,7 +81201,7 @@
   },
   "General's Orders#111": {
    "src": "Well soldier, I'll be checking out what degree of havoc he's wrecked on this fort.",
-   "dst": "",
+   "dst": "好了，士兵，我要去看看他把这座要塞搞得有多乱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81211,7 +81211,7 @@
   },
   "General's Orders#112": {
    "src": "I couldn't leave you unrewarded for your efforts though. You seem resourceful- Perhaps you can find a use for that odd slime it left behind.",
-   "dst": "",
+   "dst": "不过我不能不奖励你的努力。你看起来很机灵——也许你能找到它留下的那团怪史莱姆的用处。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -81221,7 +81221,7 @@
   },
   "General's Orders#113": {
    "src": "Some clay I see! I'll take that off of you. Not without compensation of course!",
-   "dst": "",
+   "dst": "我看到一些黏土！我帮你收下吧。当然不会让你白给！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "General's Orders",
@@ -85741,7 +85741,7 @@
   },
   "Hunger of the Gerts Part I#000": {
    "src": "Talk to Cikal at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 的 Cikal 交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -85751,7 +85751,7 @@
   },
   "Hunger of the Gerts Part I#001": {
    "src": "Oh, ho ho. What is this? A Human? What brings you to Gylia Watch - want to let your hair down a bit, I bet!",
-   "dst": "",
+   "dst": "噢，呵呵呵。这是什么？人类？什么风把你吹到 Gylia 守望队来了——我打赌是想来放松一下吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85761,7 +85761,7 @@
   },
   "Hunger of the Gerts Part I#002": {
    "src": "Of course you know who we are! The Gylia Watch was founded over {~} years ago in wake of the Villager victory in the war.",
-   "dst": "",
+   "dst": "你当然知道我们是谁！Gylia 守望队是在村民打赢那场战争之后成立的，已经有 {~} 多年了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85771,7 +85771,7 @@
   },
   "Hunger of the Gerts Part I#003": {
    "src": "The Gerten war! Only the most famous war in all of modern Gavel! The might of the Villagers crushed those blasted Gerts - not that they were particularly hard to beat, heh.",
-   "dst": "",
+   "dst": "Gert 战争！现代 Gavel 最有名的战争！村民的力量把那些该死的 Gert 族打得落花流水——倒也不是说他们有多难打，嘿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85781,7 +85781,7 @@
   },
   "Hunger of the Gerts Part I#004": {
    "src": "Gerts are stupid brutes, you see. The only thing they ever think about is food.",
-   "dst": "",
+   "dst": "你看，Gert 族都是些愚蠢的蛮子。他们脑子里除了吃什么都没有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85791,7 +85791,7 @@
   },
   "Hunger of the Gerts Part I#005": {
    "src": "Get too close to one and it'll chomp your fingers off, quick as you like. And then the rest of you as well!",
-   "dst": "",
+   "dst": "离他们太近，他们眨眼间就会把你的手指咬掉。然后把你整个人也吃了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85801,7 +85801,7 @@
   },
   "Hunger of the Gerts Part I#006": {
    "src": "The peace treaty keeps them inside their borders, and we get a delivery of supplies every month from {p} to send over to them.",
-   "dst": "",
+   "dst": "和平条约让他们待在自己的边界内，我们每个月会从 {p} 收到一批补给，再转送给他们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85811,7 +85811,7 @@
   },
   "Hunger of the Gerts Part I#007": {
    "src": "Of course, we have to keep some of the supplies for ourselves - you've seen how hard these men are working, they deserve a bit of a party!",
-   "dst": "",
+   "dst": "当然，我们得留一些补给给自己——你也看到这些人工作多辛苦了，他们值得开个派对！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85821,7 +85821,7 @@
   },
   "Hunger of the Gerts Part I#008": {
    "src": "The Watch keeps a lookout over the Gerten borders day and night... well, maybe not on poker nights!",
-   "dst": "",
+   "dst": "守望队日夜监视着 Gert 的边界……嗯，打扑克的晚上可能不算！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85831,7 +85831,7 @@
   },
   "Hunger of the Gerts Part I#009": {
    "src": "Although... we have heard a couple of nasty rumors floating about - farmers disappearing from their houses and the such.",
-   "dst": "",
+   "dst": "不过……我们确实听到了一些不太好的传闻——农夫从家里失踪之类的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85841,7 +85841,7 @@
   },
   "Hunger of the Gerts Part I#010": {
    "src": "If I really can't tempt you with a glass of wine and a round of poker, maybe you could go and check them out for us?",
-   "dst": "",
+   "dst": "如果一杯葡萄酒加一局扑克真的打动不了你，也许你可以帮我们去查查看？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85851,7 +85851,7 @@
   },
   "Hunger of the Gerts Part I#011": {
    "src": "I'd send the men, but... well, I'd feel bad if one of them went and missed all the partying!",
-   "dst": "",
+   "dst": "我是可以派手下去，可是……嗯，要是他们哪个错过了派对，我会过意不去的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85861,7 +85861,7 @@
   },
   "Hunger of the Gerts Part I#012": {
    "src": "Here, you should head over and talk to Jitak, they're one of the farmers that lodged a complaint. Their house is west of here, I'll write down the co-ordinates.",
-   "dst": "",
+   "dst": "来，你该去找 Jitak 谈谈，他们是提出投诉的农夫之一。他们家在这里西边，我把坐标写给你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85871,7 +85871,7 @@
   },
   "Hunger of the Gerts Part I#013": {
    "src": "Talk to Jitak at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 的 Jitak 交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -85881,7 +85881,7 @@
   },
   "Hunger of the Gerts Part I#014": {
    "src": "If you are looking for a suit or something, I can't help you. Now is a very bad time.",
-   "dst": "",
+   "dst": "如果你是来找西装之类的，我帮不了你。现在很不是时候。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85891,7 +85891,7 @@
   },
   "Hunger of the Gerts Part I#015": {
    "src": "Oh, you're here on behalf of the Watch? Ha, even sending Humans to do their work is not beneath them.",
-   "dst": "",
+   "dst": "噢，你是替守望队来的？哈，他们连派人类来替他们干活都做得出来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85901,7 +85901,7 @@
   },
   "Hunger of the Gerts Part I#016": {
    "src": "All they do is sit up in that tower playing drinking games and act like they own this region!",
-   "dst": "",
+   "dst": "他们就只会坐在那座塔上玩喝酒游戏，还表现得好像这片地区是他们的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85911,7 +85911,7 @@
   },
   "Hunger of the Gerts Part I#017": {
    "src": "I reported the fact there is clearly a Gert camp right in front of my house and they just ignored me! Now look, my pigs are all gone!",
-   "dst": "",
+   "dst": "我报告说我家门前明明就有个 Gert 营地，他们却不理我！现在你看，我的猪全没了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85921,7 +85921,7 @@
   },
   "Hunger of the Gerts Part I#018": {
    "src": "I knew it was a mistake getting this property so close to gerten borders. See, gerts aren't the 'brutes' people insist, but...",
-   "dst": "",
+   "dst": "我就知道把房子买在离 Gert 边界这么近的地方是个错误。你看，Gert 族并不像大家说的是“蛮子”，但是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85931,7 +85931,7 @@
   },
   "Hunger of the Gerts Part I#019": {
    "src": "Well, they'll eat anything! Animals, fish, monsters, villagers, even humans! Biologically, they're just constantly hungry.",
-   "dst": "",
+   "dst": "嗯，他们什么都吃！动物、鱼、怪物、村民，连人类都吃！从生物学上来说，他们就是一直在饿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85941,7 +85941,7 @@
   },
   "Hunger of the Gerts Part I#020": {
    "src": "The watch is meant to keep them behind their borders...",
-   "dst": "",
+   "dst": "守望队本该把他们挡在边界里面……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85951,7 +85951,7 @@
   },
   "Hunger of the Gerts Part I#021": {
    "src": "I even bought a golem to watch over them - Got it for a good price because of some incident down at the {p} factory.",
-   "dst": "",
+   "dst": "我甚至买了一台魔像来盯着他们——因为 {p} 工厂出了些事故，买得挺便宜的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85961,7 +85961,7 @@
   },
   "Hunger of the Gerts Part I#022": {
    "src": "But somehow the gerts are managing to avoid it! Look, if you're here from the watch, could you help me out?",
-   "dst": "",
+   "dst": "可 Gert 族不知怎么就是能避开它！听着，如果你是守望队派来的，能帮帮我吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85971,7 +85971,7 @@
   },
   "Hunger of the Gerts Part I#023": {
    "src": "Go to the gert camp west of here and find out how they are doing all of this!",
-   "dst": "",
+   "dst": "去这里西边的 Gert 营地，查出他们是怎么做到这一切的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -85981,7 +85981,7 @@
   },
   "Hunger of the Gerts Part I#024": {
    "src": "Inspect the Gerten Forwarding Camp at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "调查 [-{~}, {~}, -{~}] 的 Gert 前哨营地。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -85991,7 +85991,7 @@
   },
   "Hunger of the Gerts Part I#025": {
    "src": "Investigate the cave in the back of the camp at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "调查 [-{~}, {~}, -{~}] 营地后方的洞穴。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86001,7 +86001,7 @@
   },
   "Hunger of the Gerts Part I#026": {
    "src": "Explore the Gerten cave.",
-   "dst": "",
+   "dst": "探索 Gert 洞穴。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86011,7 +86011,7 @@
   },
   "Hunger of the Gerts Part I#027": {
    "src": "-Good job to all of you! I am proud to say we made the cave road very well.",
-   "dst": "",
+   "dst": "——大家都干得好！我很骄傲地说，我们把洞穴路挖得很好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86021,7 +86021,7 @@
   },
   "Hunger of the Gerts Part I#028": {
    "src": "The town folk at Gylia steal the stuff meant for us for their party, and leave us high and dry!",
-   "dst": "",
+   "dst": "Gylia 的镇民拿走给我们的东西去开派对，让我们什么都拿不到！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86031,7 +86031,7 @@
   },
   "Hunger of the Gerts Part I#029": {
    "src": "But those dumb over fed town folk did not catch us when we dug our cave road right under their watch house.",
-   "dst": "",
+   "dst": "可是那些吃太饱的笨镇民，没发现我们就在他们的守望屋底下挖了洞穴路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86041,7 +86041,7 @@
   },
   "Hunger of the Gerts Part I#030": {
    "src": "With our new way to get to Gylia land we have more stuff than ever!",
-   "dst": "",
+   "dst": "有了去 Gylia 地盘的新路，我们的东西比以前都多！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86051,7 +86051,7 @@
   },
   "Hunger of the Gerts Part I#031": {
    "src": "Exit the gerten cave.",
-   "dst": "",
+   "dst": "离开 Gert 洞穴。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86061,7 +86061,7 @@
   },
   "Hunger of the Gerts Part I#032": {
    "src": "Return to Jitak at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, -{~}] 的 Jitak 那里。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86071,7 +86071,7 @@
   },
   "Hunger of the Gerts Part I#033": {
    "src": "Human! You're back... and haven't been eaten by a Gert!",
-   "dst": "",
+   "dst": "人类！你回来了……而且没被 Gert 吃掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86081,7 +86081,7 @@
   },
   "Hunger of the Gerts Part I#034": {
    "src": "What did you discover in the camp?",
-   "dst": "",
+   "dst": "你在营地里发现了什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86091,7 +86091,7 @@
   },
   "Hunger of the Gerts Part I#035": {
    "src": "A tunnel?! Past Gerten borders? That must be how they're managing to get in and steal my livestock.",
-   "dst": "",
+   "dst": "隧道？！穿过 Gert 边界？他们一定就是这样溜进来偷我的牲畜的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86101,7 +86101,7 @@
   },
   "Hunger of the Gerts Part I#036": {
    "src": "Look, human. The Watch aren't gonna do anything about this. Please... maybe you can help me.",
-   "dst": "",
+   "dst": "听着，人类。守望队是不会管这件事的。拜托……也许你能帮我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86111,7 +86111,7 @@
   },
   "Hunger of the Gerts Part I#037": {
    "src": "If you can disguise yourself as a Gert maybe you could sneak into their main camp and check out this tunnel?",
-   "dst": "",
+   "dst": "如果你能伪装成 Gert，也许就能偷偷溜进他们的主营地，查查这条隧道？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86121,7 +86121,7 @@
   },
   "Hunger of the Gerts Part I#038": {
    "src": "Okay! As you can see, all Gerts wear a carved pumpkin on their head - something to do with their culture.",
-   "dst": "",
+   "dst": "好！你也看到了，所有 Gert 头上都戴着雕刻过的南瓜——跟他们的文化有关。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86131,7 +86131,7 @@
   },
   "Hunger of the Gerts Part I#039": {
    "src": "There's a pumpkin farm near here at [-{~}, {~}, -{~}]... maybe you could get one from there?",
-   "dst": "",
+   "dst": "这附近 [-{~}, {~}, -{~}] 有个南瓜田……也许你可以从那里弄一个？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86141,7 +86141,7 @@
   },
   "Hunger of the Gerts Part I#040": {
    "src": "Go to the gerten pumpkin farm at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 [-{~}, {~}, -{~}] 的 Gert 南瓜田。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86151,7 +86151,7 @@
   },
   "Hunger of the Gerts Part I#041": {
    "src": "... hello.",
-   "dst": "",
+   "dst": "……你好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86161,7 +86161,7 @@
   },
   "Hunger of the Gerts Part I#042": {
    "src": "Oh good, were you sent here to be my lunch?",
-   "dst": "",
+   "dst": "噢太好了，你是被派来当我午饭的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86171,7 +86171,7 @@
   },
   "Hunger of the Gerts Part I#043": {
    "src": "Are you here to be my lunch?",
-   "dst": "",
+   "dst": "你是来当我午饭的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86181,7 +86181,7 @@
   },
   "Hunger of the Gerts Part I#044": {
    "src": "Oh, goodie!",
-   "dst": "",
+   "dst": "噢，太棒了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86191,7 +86191,7 @@
   },
   "Hunger of the Gerts Part I#045": {
    "src": "Oh. What are you then, some kind of snack?",
-   "dst": "",
+   "dst": "噢。那你是什么，某种点心吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86201,7 +86201,7 @@
   },
   "Hunger of the Gerts Part I#046": {
    "src": "... Is that a joke? What are you, some kind of snack?",
-   "dst": "",
+   "dst": "……那是在开玩笑吗？你是什么，某种点心吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86211,7 +86211,7 @@
   },
   "Hunger of the Gerts Part I#047": {
    "src": "A who.. man? Oh, you mean new folk! All the way here in gerten lands? I have not seen one of you here.",
-   "dst": "",
+   "dst": "一个人……类？噢，你是说新来的人！大老远跑到 Gert 的地盘来？我在这里还没见过你们这种人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86221,7 +86221,7 @@
   },
   "Hunger of the Gerts Part I#048": {
    "src": "I do want to know how you taste...",
-   "dst": "",
+   "dst": "我真的很想知道你是什么味道……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86231,7 +86231,7 @@
   },
   "Hunger of the Gerts Part I#049": {
    "src": "Doing? I am here to guard the orange gourd farm, of course!",
-   "dst": "",
+   "dst": "在做什么？我当然是在这里看守橙色葫芦田啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86241,7 +86241,7 @@
   },
   "Hunger of the Gerts Part I#050": {
    "src": "This farm right here is where all the gerts get their day mask from!",
-   "dst": "",
+   "dst": "所有 Gert 的白天面具都是从这片田里来的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86251,7 +86251,7 @@
   },
   "Hunger of the Gerts Part I#051": {
    "src": "No, new folk. Gerts only in this farm.",
-   "dst": "",
+   "dst": "不行，新来的人。这片田只让 Gert 进。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86261,7 +86261,7 @@
   },
   "Hunger of the Gerts Part I#052": {
    "src": "That is why I am put here. To make sure no one gets in.",
-   "dst": "",
+   "dst": "所以才派我在这里。确保没有人进去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86271,7 +86271,7 @@
   },
   "Hunger of the Gerts Part I#053": {
    "src": "But but I get so bored... and I really want to eat...",
-   "dst": "",
+   "dst": "可是可是我好无聊……而且我真的好想吃东西……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86281,7 +86281,7 @@
   },
   "Hunger of the Gerts Part I#054": {
    "src": "Like, with the clear green rocks?",
-   "dst": "",
+   "dst": "像是，那种透明的绿石头？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86291,7 +86291,7 @@
   },
   "Hunger of the Gerts Part I#055": {
    "src": "No new folk, gerts do not have any need for green rocks. But...",
-   "dst": "",
+   "dst": "不要，新来的人，Gert 不需要绿石头。可是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86301,7 +86301,7 @@
   },
   "Hunger of the Gerts Part I#056": {
    "src": "How about this - I will just eat you!",
-   "dst": "",
+   "dst": "不如这样——我直接把你吃了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86311,7 +86311,7 @@
   },
   "Hunger of the Gerts Part I#057": {
    "src": "Amazing! Here I go!",
-   "dst": "",
+   "dst": "太好了！我要开动了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86321,7 +86321,7 @@
   },
   "Hunger of the Gerts Part I#058": {
    "src": "Oh...",
-   "dst": "",
+   "dst": "噢……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86331,7 +86331,7 @@
   },
   "Hunger of the Gerts Part I#059": {
    "src": "Well, I think I will still eat you. Just how it is!",
-   "dst": "",
+   "dst": "嗯，我想我还是要吃你。就是这样！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86341,7 +86341,7 @@
   },
   "Hunger of the Gerts Part I#060": {
    "src": "Oh, it is a thing gerts have been doing for as long as we know.",
-   "dst": "",
+   "dst": "噢，那是 Gert 从我们记得的时候就一直在做的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86351,7 +86351,7 @@
   },
   "Hunger of the Gerts Part I#061": {
    "src": "At wake time each day a gert takes an orange gourd and eats into it a shape that shows their mood!",
-   "dst": "",
+   "dst": "每天起床的时候，Gert 会拿一个橙色葫芦，在上面咬出代表自己心情的形状！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86361,7 +86361,7 @@
   },
   "Hunger of the Gerts Part I#062": {
    "src": "It is really nice, is it not?",
-   "dst": "",
+   "dst": "真的很不错，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86371,7 +86371,7 @@
   },
   "Hunger of the Gerts Part I#063": {
    "src": "We all want to eat all the time!",
-   "dst": "",
+   "dst": "我们一直都想吃东西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86381,7 +86381,7 @@
   },
   "Hunger of the Gerts Part I#064": {
    "src": "On that note...",
-   "dst": "",
+   "dst": "说到这个……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86391,7 +86391,7 @@
   },
   "Hunger of the Gerts Part I#065": {
    "src": "Oh... goodbye. Come back soon? With some food?",
-   "dst": "",
+   "dst": "噢……再见。快点回来好吗？带点吃的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86401,7 +86401,7 @@
   },
   "Hunger of the Gerts Part I#066": {
    "src": "Find a way to distract the Gert Guard with some food nearby.",
-   "dst": "",
+   "dst": "在附近找些食物引开 Gert 守卫的注意。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86411,7 +86411,7 @@
   },
   "Hunger of the Gerts Part I#067": {
    "src": "Oh man, a red tree fruit! I should not leave my post... but I want to eat...",
-   "dst": "",
+   "dst": "噢天啊，红色的树果！我不该离开岗位……可是我想吃……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86421,7 +86421,7 @@
   },
   "Hunger of the Gerts Part I#068": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86431,7 +86431,7 @@
   },
   "Hunger of the Gerts Part I#069": {
    "src": "It is only a few steps that way...",
-   "dst": "",
+   "dst": "只要往那边走几步……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86441,7 +86441,7 @@
   },
   "Hunger of the Gerts Part I#070": {
    "src": "That tastes so good! What a good red tree fruit.",
-   "dst": "",
+   "dst": "太好吃了！真是个好红树果。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86451,7 +86451,7 @@
   },
   "Hunger of the Gerts Part I#071": {
    "src": "... If I wait here, more might fall from the sky!",
-   "dst": "",
+   "dst": "……如果我在这里等，也许还会有更多从天上掉下来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86461,7 +86461,7 @@
   },
   "Hunger of the Gerts Part I#072": {
    "src": "Enter the pumpkin farm at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "进入 [-{~}, {~}, -{~}] 的南瓜田。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86471,7 +86471,7 @@
   },
   "Hunger of the Gerts Part I#073": {
    "src": "Find a pumpkin to use as a gert mask.",
-   "dst": "",
+   "dst": "找一个南瓜当作 Gert 面具。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86481,7 +86481,7 @@
   },
   "Hunger of the Gerts Part I#074": {
    "src": "Hey! What're you doing in the pumpkin farm at this hour?",
-   "dst": "",
+   "dst": "嘿！这个时间你在南瓜田里干什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86491,7 +86491,7 @@
   },
   "Hunger of the Gerts Part I#075": {
    "src": "Wait a minute... why does your pumpkin look like that?!",
-   "dst": "",
+   "dst": "等一下……你的南瓜为什么长那样？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86501,7 +86501,7 @@
   },
   "Hunger of the Gerts Part I#076": {
    "src": "Why isn't your pumpkin like all the others?",
-   "dst": "",
+   "dst": "你的南瓜为什么跟其他人的不一样？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86511,7 +86511,7 @@
   },
   "Hunger of the Gerts Part I#077": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86521,7 +86521,7 @@
   },
   "Hunger of the Gerts Part I#078": {
    "src": "You're not a gert at all! You're a human! Gerts are never not hungry!",
-   "dst": "",
+   "dst": "你根本不是 Gert！你是人类！Gert 从来不会不饿！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86531,7 +86531,7 @@
   },
   "Hunger of the Gerts Part I#079": {
    "src": "Sorry, human, but this is private gerten land. And, well... a gert's gotta eat!",
-   "dst": "",
+   "dst": "抱歉了，人类，这里是 Gert 的私有土地。而且，嗯……Gert 总得吃饭嘛！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86541,7 +86541,7 @@
   },
   "Hunger of the Gerts Part I#080": {
    "src": "Hey! Why are you at the orange gourd farm so late?",
-   "dst": "",
+   "dst": "嘿！你这么晚在橙色葫芦田干什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86551,7 +86551,7 @@
   },
   "Hunger of the Gerts Part I#081": {
    "src": "Look, we need some gerts for a trip to hunt in the new cave road.",
-   "dst": "",
+   "dst": "听着，我们需要一些 Gert 去新的洞穴路打猎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86561,7 +86561,7 @@
   },
   "Hunger of the Gerts Part I#082": {
    "src": "You know, the one in the camp just north of the Gylia Watch?",
-   "dst": "",
+   "dst": "你知道的，就是 Gylia 守望队北边那个营地里的那条？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86571,7 +86571,7 @@
   },
   "Hunger of the Gerts Part I#083": {
    "src": "Come over here to help us!",
-   "dst": "",
+   "dst": "过来帮我们！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86581,7 +86581,7 @@
   },
   "Hunger of the Gerts Part I#084": {
    "src": "Return to Jitak with the gert mask at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "带着 Gert 面具回到 [-{~}, {~}, -{~}] 的 Jitak 那里。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86591,7 +86591,7 @@
   },
   "Hunger of the Gerts Part I#085": {
    "src": "Ah, a Gert!",
-   "dst": "",
+   "dst": "啊，一个 Gert！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86601,7 +86601,7 @@
   },
   "Hunger of the Gerts Part I#086": {
    "src": "Oh wait...human, it's you! Wow, you look exactly like a Gert. You're definitely going to blend in at the main camp.",
-   "dst": "",
+   "dst": "噢等等……人类，是你！哇，你看起来跟 Gert 一模一样。你到主营地一定能混进去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86611,7 +86611,7 @@
   },
   "Hunger of the Gerts Part I#087": {
    "src": "Okay, head over to the main camp at [-{~}, {~}, -{~}] and see if you can find the tunnel!",
-   "dst": "",
+   "dst": "好，去 [-{~}, {~}, -{~}] 的主营地，看看能不能找到隧道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86621,7 +86621,7 @@
   },
   "Hunger of the Gerts Part I#088": {
    "src": "Enter the secret gert tunnel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "进入 [-{~}, {~}, -{~}] 的 Gert 秘密隧道。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86631,7 +86631,7 @@
   },
   "Hunger of the Gerts Part I#089": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86641,7 +86641,7 @@
   },
   "Hunger of the Gerts Part I#090": {
    "src": "Why aren't you eating?",
-   "dst": "",
+   "dst": "你怎么不吃东西？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86651,7 +86651,7 @@
   },
   "Hunger of the Gerts Part I#091": {
    "src": "You're not a gert... you're a human! Get them!",
-   "dst": "",
+   "dst": "你不是 Gert……你是人类！抓住他们！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86661,7 +86661,7 @@
   },
   "Hunger of the Gerts Part I#092": {
    "src": "Quiet! We need to try to hear what the bad town folk at the watch house talk about!",
-   "dst": "",
+   "dst": "安静！我们得试着听听守望屋那些坏镇民在说什么！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86671,7 +86671,7 @@
   },
   "Hunger of the Gerts Part I#093": {
    "src": "Watch!",
-   "dst": "",
+   "dst": "看！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86681,7 +86681,7 @@
   },
   "Hunger of the Gerts Part I#094": {
    "src": "-silly gerts don't even know we're taking their supplies!",
-   "dst": "",
+   "dst": "——那些蠢 Gert 根本不知道我们在拿他们的补给！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86691,7 +86691,7 @@
   },
   "Hunger of the Gerts Part I#095": {
    "src": "Besides, we need those supplies more than they do... especially the alcohol, eh boys?!",
-   "dst": "",
+   "dst": "况且，我们比他们更需要那些补给……尤其是酒，对吧兄弟们？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86701,7 +86701,7 @@
   },
   "Hunger of the Gerts Part I#096": {
    "src": "I don't even know why {p} keeps on sending all this stuff for the Gerts - can't we just starve 'em out? Screw the lot of 'em, I say!",
-   "dst": "",
+   "dst": "我真搞不懂 {p} 为什么一直给 Gert 族送这些东西——就不能饿死他们吗？我说，让他们全都去死吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86711,7 +86711,7 @@
   },
   "Hunger of the Gerts Part I#097": {
    "src": "Damned right, boys! Now look, another shipment just came in - let's skim a little more of the top this time, eh?",
-   "dst": "",
+   "dst": "说得好，兄弟们！看，又来了一批货——这次我们再多揩一点油，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86721,7 +86721,7 @@
   },
   "Hunger of the Gerts Part I#098": {
    "src": "Our kegs have been running a bit low again.",
-   "dst": "",
+   "dst": "我们的酒桶又快见底了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86731,7 +86731,7 @@
   },
   "Hunger of the Gerts Part I#099": {
    "src": "Agh! That stuff is meant to be ours... the peace deal said we have to get some stuff each month!",
-   "dst": "",
+   "dst": "啊！那些东西本来是我们的……和平协议说我们每个月都要拿到一些东西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86741,7 +86741,7 @@
   },
   "Hunger of the Gerts Part I#100": {
    "src": "Those bad town folk... -you! go tell the chief!",
-   "dst": "",
+   "dst": "那些坏镇民……——你！去告诉首领！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86751,7 +86751,7 @@
   },
   "Hunger of the Gerts Part I#101": {
    "src": "tell the chief what we heard! It might be time to fight back at the watch house!",
-   "dst": "",
+   "dst": "把我们听到的告诉首领！也许是时候反击守望屋了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86761,7 +86761,7 @@
   },
   "Hunger of the Gerts Part I#102": {
    "src": "Leave the tunnel and inform someone about the information you overheard.",
-   "dst": "",
+   "dst": "离开隧道，把你偷听到的情报告诉别人。",
    "role": "desc",
    "kind": "objective",
    "quest": "Hunger of the Gerts Part I",
@@ -86771,7 +86771,7 @@
   },
   "Hunger of the Gerts Part I#103": {
    "src": "What? The town folk talk out loud that they take our stuff!",
-   "dst": "",
+   "dst": "什么？镇民大声说他们拿走我们的东西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86781,7 +86781,7 @@
   },
   "Hunger of the Gerts Part I#104": {
    "src": "That is it! We will go to war with them!",
-   "dst": "",
+   "dst": "够了！我们要跟他们开战！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86791,7 +86791,7 @@
   },
   "Hunger of the Gerts Part I#105": {
    "src": "Thank you, small gert, that you told me this! We will crush the lazy town folk and eat what is left of them!",
-   "dst": "",
+   "dst": "谢谢你，小 Gert，把这件事告诉我！我们要打垮那些懒惰的镇民，把他们剩下的都吃掉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86801,7 +86801,7 @@
   },
   "Hunger of the Gerts Part I#106": {
    "src": "Hey there! How's the - burp - investigation going, heh?",
-   "dst": "",
+   "dst": "嘿，你好！调查进行得——嗝——怎么样了，嘿？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86811,7 +86811,7 @@
   },
   "Hunger of the Gerts Part I#107": {
    "src": "Eh? Oh, you're back.",
-   "dst": "",
+   "dst": "嗯？噢，你回来了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86821,7 +86821,7 @@
   },
   "Hunger of the Gerts Part I#108": {
    "src": "What's that?! You're accusing the Watch of stealing supplies from the Gerts? Well I don't even know what to say, I've never even HEARD of such-",
-   "dst": "",
+   "dst": "什么？！你指控守望队偷 Gert 族的补给？我简直不知道该说什么，我从来没听说过这种——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86831,7 +86831,7 @@
   },
   "Hunger of the Gerts Part I#109": {
    "src": "Actually, you know what? I was going to make up a lie, but why bother? We have been stealing those supplies!",
-   "dst": "",
+   "dst": "其实，你知道吗？我本来想编个谎，但何必呢？我们确实一直在偷那些补给！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86841,7 +86841,7 @@
   },
   "Hunger of the Gerts Part I#110": {
    "src": "It's not like the Gerts deserve them - all they do is sit in their little camps talk about how tasty the Watch members must be.",
-   "dst": "",
+   "dst": "反正 Gert 族也不配拿——他们就只会坐在自己的小营地里，谈论守望队的人吃起来会有多香。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
@@ -86851,7 +86851,7 @@
   },
   "Hunger of the Gerts Part I#111": {
    "src": "So if they think they can attack us, the might Gylia Watch, let them try! And you, human, would do well to stay out of the way!",
-   "dst": "",
+   "dst": "所以如果他们以为能攻击我们，攻击强大的 Gylia 守望队，就让他们来试试！至于你，人类，最好别挡路！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Hunger of the Gerts Part I",
