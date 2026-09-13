@@ -215,6 +215,50 @@ public final class MarketSearchTest {
         simplified();
         quantityLines();
         latinNames();
+        pickerList();
+    }
+
+    /**
+     * 候選清單：打到一半就列出來讓玩家自己點。
+     *
+     * <h2>實機需求</h2>
+     * 「石頭」對到好幾個物品時，自動換字不敢猜，只能原樣送出——那次搜尋就浪費了。
+     * 清單要在<b>送出前</b>列出所有可能，而且跟自動換字的規則相反：
+     * 一個字也列、不把「石頭碎片」收進「石頭」裡。
+     */
+    private static void pickerList() {
+        MarketSearch m = new MarketSearch();
+        m.add("Stone", "石頭");
+        m.add("Stone Fragment", "石頭碎片");
+        m.add("Doom Stone", "厄運之石");
+        m.add("Silverbull Share", "Silverbull 股份");
+        m.add("✮ Silverbull Share", "✮ Silverbull 股份");
+        m.add("Stones", "石頭");
+
+        List<MarketSearch.Suggestion> stone = m.suggestions("石頭");
+        report("完全相同的排第一（實際：" + stone + "）",
+                !stone.isEmpty() && "Stone".equals(stone.get(0).english())
+                        && "石頭".equals(stone.get(0).chinese()));
+        report("「石頭碎片」不被收進「石頭」",
+                stone.stream().anyMatch(s -> "Stone Fragment".equals(s.english())));
+        report("複數與單數只列一次",
+                stone.stream().filter(s -> "Stone".equals(s.english())).count() == 1);
+
+        List<MarketSearch.Suggestion> one = m.suggestions("石");
+        report("一個字也列（實際 " + one.size() + " 個）", one.size() == 3);
+
+        List<MarketSearch.Suggestion> shares = m.suggestions("股份");
+        report("項目符號版本不重複列（實際：" + shares + "）",
+                shares.size() == 1 && "Silverbull 股份".equals(shares.get(0).chinese()));
+
+        report("空字串不列", m.suggestions("   ").isEmpty());
+
+        // 真語料：「石」一定列得出東西，而且每一列都是能送出去的英文名
+        MarketListener.searching(false);
+        report("沒在市集裡時 active() 是 false", !MarketListener.active());
+        MarketListener.searching(true);
+        report("市集在等搜尋字時 active() 是 true", MarketListener.active());
+        MarketListener.searching(false);
     }
 
     /**

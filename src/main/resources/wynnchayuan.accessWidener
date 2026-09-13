@@ -4,4 +4,8 @@ accessWidener	v2	named
 # 遊戲裡是 Wynntils 自己的 accessWidener 打開的（我們依賴它，所以執行期本來就通），
 # 但獨立跑驗證程式時沒有 Fabric loader 套用 AW，會拿到 IllegalAccessError。
 # 這裡宣告同一條，讓開發與測試環境跟正式環境一致。
+# 市集搜尋的候選清單（MarketPicker）要讀、要改聊天框裡正在打的字。
+# 這個欄位是 protected，而這個模組不用 mixin，所以從這裡打開。
+accessible	field	net/minecraft/client/gui/screens/ChatScreen	input	Lnet/minecraft/client/gui/components/EditBox;
+
 accessible	method	net/minecraft/network/chat/Style	<init>	(Lnet/minecraft/network/chat/TextColor;Ljava/lang/Integer;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Ljava/lang/Boolean;Lnet/minecraft/network/chat/ClickEvent;Lnet/minecraft/network/chat/HoverEvent;Ljava/lang/String;Lnet/minecraft/network/chat/FontDescription;)V
