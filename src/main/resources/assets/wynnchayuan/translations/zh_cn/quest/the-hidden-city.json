@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Hidden City",
   "count": 75,
-  "translated": 0,
+  "translated": 75,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Hidden City#000": {
    "src": "Speak to Narder.",
-   "dst": "",
+   "dst": "与 Narder 交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -18,7 +18,7 @@
   },
   "The Hidden City#001": {
    "src": "A Human! Agh! Don't worry about getting me medical attention, I've got this under control...",
-   "dst": "",
+   "dst": "是人类！啊！不用担心帮我找医生，我自己能处理……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -28,7 +28,7 @@
   },
   "The Hidden City#002": {
    "src": "It's a broken leg. I'm already getting it treated, but I have a job to do elsewise- and a time sensitive one, too.",
-   "dst": "",
+   "dst": "腿断了。我已经在治疗了，但我另外还有一份工作要做——而且还有时间限制。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -38,7 +38,7 @@
   },
   "The Hidden City#003": {
    "src": "I won't be able to do it like this, but it doesn't matter if I'm the one who carries it out. It just needs to be done.",
-   "dst": "",
+   "dst": "我这样是办不了的，不过由谁来办都无所谓。只要把它办完就行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -48,7 +48,7 @@
   },
   "The Hidden City#004": {
    "src": "I don't work for villagers, I was hired to come here by other humans... there's something you must keep secret.",
-   "dst": "",
+   "dst": "我不是替村民做事的，是别的人类雇我来这里的……有件事你必须保密。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -58,7 +58,7 @@
   },
   "The Hidden City#005": {
    "src": "Swear it! If you're going to take the job, and my payment for it, you must be silent about it!",
-   "dst": "",
+   "dst": "发誓！如果你要接这份工作，拿我的报酬，就必须守口如瓶！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -68,7 +68,7 @@
   },
   "The Hidden City#006": {
    "src": "Do you agree?",
-   "dst": "",
+   "dst": "你同意吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -78,7 +78,7 @@
   },
   "The Hidden City#007": {
    "src": "Good. To business then.",
-   "dst": "",
+   "dst": "很好。那就说正事吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -88,7 +88,7 @@
   },
   "The Hidden City#008": {
    "src": "There is a hidden town in the canyon here. Up in the mountains- it was built and run by humans.",
-   "dst": "",
+   "dst": "这座峡谷里有个隐秘的小镇。在山上——是人类建造、人类在管理的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -98,7 +98,7 @@
   },
   "The Hidden City#009": {
    "src": "Now, the villagers have very strict rules about humans living in their lands, and it's VERY illegal.",
-   "dst": "",
+   "dst": "你知道，村民对人类住在他们的土地上有非常严格的规定，而这是非常违法的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -108,7 +108,7 @@
   },
   "The Hidden City#010": {
    "src": "I was contacted by the Mayor because he is aware that the town may have become... compromised.",
-   "dst": "",
+   "dst": "镇长联系了我，因为他知道小镇可能已经……暴露了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -118,7 +118,7 @@
   },
   "The Hidden City#011": {
    "src": "The job is to figure out who and why, of course. To let this slip could collapse the treatise between our races.",
-   "dst": "",
+   "dst": "工作内容当然是查出是谁、为什么。要是让这件事泄露出去，我们两个种族之间的条约可能会崩溃。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -128,7 +128,7 @@
   },
   "The Hidden City#012": {
    "src": "I've never been to the city in the mountains, but I was given instructions. Here, I'll write down the location in your book.",
-   "dst": "",
+   "dst": "我从来没去过山上那座城，但我拿到了指示。来，我把地点写进你的书里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -138,7 +138,7 @@
   },
   "The Hidden City#013": {
    "src": "Be aware though, they won't let you in unless the area is safe. They can't risk villagers wandering in.",
-   "dst": "",
+   "dst": "不过要注意，除非周围安全，否则他们不会放你进去。他们不能冒险让村民闯进去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -148,7 +148,7 @@
   },
   "The Hidden City#014": {
    "src": "Good luck.",
-   "dst": "",
+   "dst": "祝你好运。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -158,7 +158,7 @@
   },
   "The Hidden City#015": {
    "src": "Head to [{~}, {~}, -{~}] to find the human town.",
-   "dst": "",
+   "dst": "前往 [{~}, {~}, -{~}] 寻找人类小镇。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -168,7 +168,7 @@
   },
   "The Hidden City#016": {
    "src": "Hm? Oh, a fellow adventurer, I see! I'm sorry, but this discovery is mine to make. There's something strange about that door...",
-   "dst": "",
+   "dst": "嗯？噢，一位冒险同好啊！抱歉，但这个发现是我的。那扇门有点古怪……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -178,7 +178,7 @@
   },
   "The Hidden City#017": {
    "src": "Deadly gasses? Nonsense! As you can see the two of us are breathing just fine.",
-   "dst": "",
+   "dst": "致命毒气？胡说！你看，我们俩呼吸得好好的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -188,7 +188,7 @@
   },
   "The Hidden City#018": {
    "src": "You want me to leave? Why, so that you can have all of the glory for yourself? Ha, not a chance!",
-   "dst": "",
+   "dst": "你要我离开？为什么，好让你独占所有荣耀？哈，想都别想！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -198,7 +198,7 @@
   },
   "The Hidden City#019": {
    "src": "The only way I'm leaving is if I can get that door open or if the whole cave starts crashing down on us.",
-   "dst": "",
+   "dst": "除非我能打开那扇门，或者整个洞窟开始塌下来砸在我们头上，否则我是不会走的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -208,7 +208,7 @@
   },
   "The Hidden City#020": {
    "src": "Cause the cave to collapse",
-   "dst": "",
+   "dst": "让洞窟坍塌",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -218,7 +218,7 @@
   },
   "The Hidden City#021": {
    "src": "Gweh! I just had to go running my mouth about the cave collapsing! I'm out- if you have any sense you'll leave too!",
-   "dst": "",
+   "dst": "呃！我就不该乱说洞窟会塌！我走了——你要是有脑子也赶快走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -228,7 +228,7 @@
   },
   "The Hidden City#022": {
    "src": "Go up to the door and inspect the noise.",
-   "dst": "",
+   "dst": "走到门前查看声音的来源。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -238,7 +238,7 @@
   },
   "The Hidden City#023": {
    "src": "Talk to {p} Guard.",
-   "dst": "",
+   "dst": "与 {p} 守卫交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -248,7 +248,7 @@
   },
   "The Hidden City#024": {
    "src": "Thank you for getting rid of that curious villager! We thought he'd never leave.",
-   "dst": "",
+   "dst": "谢谢你把那个好奇的村民赶走了！我们还以为他永远不会走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -258,7 +258,7 @@
   },
   "The Hidden City#025": {
    "src": "I've never seen you before. Who gave you access to the town?",
-   "dst": "",
+   "dst": "我从没见过你。是谁准你进入小镇的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -268,7 +268,7 @@
   },
   "The Hidden City#026": {
    "src": "You're here in place of the detective the mayor hired?",
-   "dst": "",
+   "dst": "你是来代替镇长雇的那个侦探的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -278,7 +278,7 @@
   },
   "The Hidden City#027": {
    "src": "Normally, I wouldn't believe that, but come in. We're desperate.",
-   "dst": "",
+   "dst": "平常我是不会信的，不过进来吧。我们走投无路了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -288,7 +288,7 @@
   },
   "The Hidden City#028": {
    "src": "If you ever need to leave and get back, I can simply open the way.",
-   "dst": "",
+   "dst": "如果你需要出去再回来，我可以直接帮你开路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -298,7 +298,7 @@
   },
   "The Hidden City#029": {
    "src": "You probably should be going now. Our mayor can get impatient.",
-   "dst": "",
+   "dst": "你大概该走了。我们镇长可没什么耐心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -308,7 +308,7 @@
   },
   "The Hidden City#030": {
    "src": "Talk to Mayor Eoric in the town hall.",
-   "dst": "",
+   "dst": "与镇公所里的 Eoric 镇长交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -318,7 +318,7 @@
   },
   "The Hidden City#031": {
    "src": "What are you doing here? I'm writing an important letter, this better be worth my time.",
-   "dst": "",
+   "dst": "你在这里干什么？我正在写一封重要的信，你最好有值得我花时间的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -328,7 +328,7 @@
   },
   "The Hidden City#032": {
    "src": "What? Narder sent you? Why'd he send a {p} soldier?",
-   "dst": "",
+   "dst": "什么？Narder 派你来的？他为什么派一个 {p} 的士兵来？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -338,7 +338,7 @@
   },
   "The Hidden City#033": {
    "src": "I didn't think the army were authorized to know about {p}, especially Fruma recruits.",
-   "dst": "",
+   "dst": "我以为军队无权知道 {p} 的事，尤其是 Fruma 来的新兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -348,7 +348,7 @@
   },
   "The Hidden City#034": {
    "src": "Anyway, {p}'s secrecy is in great danger. We have found evidence of the traitor.",
-   "dst": "",
+   "dst": "总之，{p} 的秘密正面临极大的危险。我们找到了叛徒的证据。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -358,7 +358,7 @@
   },
   "The Hidden City#035": {
    "src": "We have locked down all of the exits. No one leaves or enters without my permission.",
-   "dst": "",
+   "dst": "我们已经封锁了所有出口。没有我的许可，谁都不能进出。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -368,7 +368,7 @@
   },
   "The Hidden City#036": {
    "src": "We need a detective to sniff out the traitor and expose him.",
-   "dst": "",
+   "dst": "我们需要一个侦探把叛徒揪出来，揭穿他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -378,7 +378,7 @@
   },
   "The Hidden City#037": {
    "src": "Start by asking the citizens around here about anything suspicious they've seen.",
-   "dst": "",
+   "dst": "先去问问附近的市民有没有看到什么可疑的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -388,7 +388,7 @@
   },
   "The Hidden City#038": {
    "src": "When you find the culprit, remember to leave him alive! The guards will take care of him.",
-   "dst": "",
+   "dst": "找到犯人的时候，记住要留活口！守卫会处理他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -398,7 +398,7 @@
   },
   "The Hidden City#039": {
    "src": "Ask {p} Citizens about the note.",
-   "dst": "",
+   "dst": "向 {p} 的市民询问那张字条的事。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -408,7 +408,7 @@
   },
   "The Hidden City#040": {
    "src": "Sorry, detective, but I haven't seen anything suspicious. In fact, I haven't even left my house for the last week.",
-   "dst": "",
+   "dst": "抱歉，侦探，我没看到什么可疑的事。说实话，我上个星期连家门都没出过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -418,7 +418,7 @@
   },
   "The Hidden City#041": {
    "src": "The only suspicious thing I've seen is a hooded man walking around. There's not many people in {p} so it's weird.",
-   "dst": "",
+   "dst": "我唯一看到的可疑的事，是有个戴兜帽的男人在附近走来走去。{p} 人不多，所以挺奇怪的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -428,7 +428,7 @@
   },
   "The Hidden City#042": {
    "src": "If you want to find out anything, the best person to ask is Lumilda. She's in her bakery, next to the Scroll Shop.",
-   "dst": "",
+   "dst": "如果你想打听什么，最好去问 Lumilda。她在她的面包店里，就在卷轴店旁边。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -438,7 +438,7 @@
   },
   "The Hidden City#043": {
    "src": "Ah, detective! What brings you to the sweet Lumilda's Bakery?",
-   "dst": "",
+   "dst": "啊，侦探！是什么风把你吹到甜蜜的 Lumilda 面包店来的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -448,7 +448,7 @@
   },
   "The Hidden City#044": {
    "src": "Hm, yes, there is a weird person coming through.",
-   "dst": "",
+   "dst": "嗯，是啊，确实有个怪人来过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -458,7 +458,7 @@
   },
   "The Hidden City#045": {
    "src": "It's a hooded man. Never seen the face. A trouble maker, if you ask me!",
-   "dst": "",
+   "dst": "是个戴兜帽的男人。从来没看过他的脸。要我说，就是个惹麻烦的家伙！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -468,7 +468,7 @@
   },
   "The Hidden City#046": {
    "src": "He's been here a few times, usually writing things on a piece of paper. That man's a real mystery. No one even knows where he lives.",
-   "dst": "",
+   "dst": "他来过几次，通常在一张纸上写东西。那个男人真是个谜。连他住在哪都没人知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -478,7 +478,7 @@
   },
   "The Hidden City#047": {
    "src": "One time my grandson couldn't resist and followed the man. Last thing he saw was the man leaving through the Eastern Exit.",
-   "dst": "",
+   "dst": "有一次我孙子忍不住跟踪了他。最后看到他从东边出口离开了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -488,7 +488,7 @@
   },
   "The Hidden City#048": {
    "src": "Ain't that a place to start, sweetheart?",
-   "dst": "",
+   "dst": "这不就是个线索吗，亲爱的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -498,7 +498,7 @@
   },
   "The Hidden City#049": {
    "src": "Inspect anything beyond the Eastern Exit.",
-   "dst": "",
+   "dst": "检查东边出口外面的一切。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -508,7 +508,7 @@
   },
   "The Hidden City#050": {
    "src": "Inspect the house.",
-   "dst": "",
+   "dst": "检查那栋房子。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -518,7 +518,7 @@
   },
   "The Hidden City#051": {
    "src": "Ah. You must be the detective then. None of those half witted Eltomites would figure it out.",
-   "dst": "",
+   "dst": "啊。那你一定就是那个侦探了。那些脑子不灵光的 Eltom 人是想不出来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -528,7 +528,7 @@
   },
   "The Hidden City#052": {
    "src": "I guess the Grook is out of the pen then.",
-   "dst": "",
+   "dst": "看来 Grook 已经跑出圈了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -538,7 +538,7 @@
   },
   "The Hidden City#053": {
    "src": "This town shouldn’t even be here. Humans aren't allowed to settle in Gavel.",
-   "dst": "",
+   "dst": "这个小镇根本就不该存在。人类不准在 Gavel 定居。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -548,7 +548,7 @@
   },
   "The Hidden City#054": {
    "src": "These Humans couldn’t be bothered to fight their own war, so they hid an entire city here.",
-   "dst": "",
+   "dst": "这些人类懒得自己去打他们的仗，就在这里藏了一整座城。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -558,7 +558,7 @@
   },
   "The Hidden City#055": {
    "src": "Traitor? I’m no traitor. I'm just looking to carry out the law where it needs to be carried out. Nothing personal, yes?",
-   "dst": "",
+   "dst": "叛徒？我可不是叛徒。我只是想在需要执法的地方执法而已。不针对个人，好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -568,7 +568,7 @@
   },
   "The Hidden City#056": {
    "src": "Maybe they'll actually use \"Ardulf\" instead of saying \"freak\" once they've seen the good I can do for them!",
-   "dst": "",
+   "dst": "等他们见识到我能为他们做的好事，也许就会真的叫我“Ardulf”，而不是叫我“怪胎”了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -578,7 +578,7 @@
   },
   "The Hidden City#057": {
    "src": "Read the note on the table.",
-   "dst": "",
+   "dst": "阅读桌上的字条。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -588,7 +588,7 @@
   },
   "The Hidden City#058": {
    "src": "*- Airship leaves {p} {~}:{~} to {p}",
-   "dst": "",
+   "dst": "*- 飞艇 {~}:{~} 从 {p} 出发前往 {p}",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -598,7 +598,7 @@
   },
   "The Hidden City#059": {
    "src": "Head to {p}'s Airbase.",
-   "dst": "",
+   "dst": "前往 {p} 的航空站。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -608,7 +608,7 @@
   },
   "The Hidden City#060": {
    "src": "Talk to Hilan.",
-   "dst": "",
+   "dst": "与 Hilan 交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -618,7 +618,7 @@
   },
   "The Hidden City#061": {
    "src": "H-h-help!",
-   "dst": "",
+   "dst": "救、救、救命！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -628,7 +628,7 @@
   },
   "The Hidden City#062": {
    "src": "Hooded man... Climbed tower...",
-   "dst": "",
+   "dst": "戴兜帽的男人……爬上塔了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -638,7 +638,7 @@
   },
   "The Hidden City#063": {
    "src": "Requested to use a ship... I refused...",
-   "dst": "",
+   "dst": "要求使用一艘船……我拒绝了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -648,7 +648,7 @@
   },
   "The Hidden City#064": {
    "src": "He beat me up... And left...",
-   "dst": "",
+   "dst": "他把我打了一顿……然后走了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -658,7 +658,7 @@
   },
   "The Hidden City#065": {
    "src": "Hurry!",
-   "dst": "",
+   "dst": "快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -668,7 +668,7 @@
   },
   "The Hidden City#066": {
    "src": "Head up to the Airbase's Tower to confront the hooded man.",
-   "dst": "",
+   "dst": "爬上航空站的塔楼，与戴兜帽的男人对质。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -678,7 +678,7 @@
   },
   "The Hidden City#067": {
    "src": "Board the {p} Cargo Ship.",
-   "dst": "",
+   "dst": "登上 {p} 货船。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -688,7 +688,7 @@
   },
   "The Hidden City#068": {
    "src": "What are you doing here? Why are you protecting this illegal town?",
-   "dst": "",
+   "dst": "你在这里干什么？你为什么要保护这个违法的小镇？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -698,7 +698,7 @@
   },
   "The Hidden City#069": {
    "src": "The Villagers will not be happy about {p}. This could seriously harm the Gavel-Wynn relationship.",
-   "dst": "",
+   "dst": "村民不会乐见 {p} 的存在。这可能会严重损害 Gavel 与 Wynn 的关系。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -708,7 +708,7 @@
   },
   "The Hidden City#070": {
    "src": "You can't stop me. You wouldn't murder one of your own, would you?",
-   "dst": "",
+   "dst": "你拦不住我的。你不会杀害自己的同胞吧，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -718,7 +718,7 @@
   },
   "The Hidden City#071": {
    "src": "I will tell the mayor of {p} all about this place, and claim my reward for doing so. I will be rich and if you want to stop me you will have to do it yourself!",
-   "dst": "",
+   "dst": "我会把这地方的事全都告诉 {p} 的镇长，然后领取我的奖赏。我会发大财，你要是想阻止我，就得亲自动手！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -728,7 +728,7 @@
   },
   "The Hidden City#072": {
    "src": "Escape your cell and find a way to sabotage the ship.",
-   "dst": "",
+   "dst": "逃出牢房，想办法破坏这艘船。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
@@ -738,7 +738,7 @@
   },
   "The Hidden City#073": {
    "src": "*To Hilan.",
-   "dst": "",
+   "dst": "*致 Hilan。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hidden City",
@@ -748,7 +748,7 @@
   },
   "The Hidden City#074": {
    "src": "Talk to {p}'s Mayor at the top of {p}.",
-   "dst": "",
+   "dst": "与 {p} 的镇长对话，他在 {p} 的顶端。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hidden City",
