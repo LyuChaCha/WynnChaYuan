@@ -250,12 +250,27 @@ def reveal_frame(src: str, have: set[str]) -> bool:
     塞進半句的位置。
 
     <p>認法：<b>是倉庫裡某一條的前綴</b>，而且自己沒有結尾標點。
-    長度門檻是為了保住短標籤——`Emeralds: {~}` 是 `Emeralds: {~}/{~}` 的前綴，
-    但它是個真的欄位，不是殘影。內容書的敘述都是整段的長句。
+
+    <p>再加三道，都是為了保住真的短條目：接下去的第一個字元必須是空白或
+    換行、後面必須真的有字母，這樣 `Emeralds: {~}` ⊂ `Emeralds: {~}/{~}`、
+    `Sell Items I` ⊂ `Sell Items IX`、`hour` ⊂ `hours` 都不會被當成殘影；
+    只有三個字、而且續下去是大寫開頭的也不算，`Infested Pit Key` 是真的
+    物品名，不是 `Infested Pit Key Guardian` 的半截。
     """
-    if len(src) < 40 or src.rstrip().endswith((".", "!", "?", "”")):
+    if len(src) < 12 or len(src.split()) < 3:
         return False
-    return any(w.startswith(src) and len(w) > len(src) for w in have)
+    if src.rstrip().endswith((".", "!", "?", "”")):
+        return False
+    for w in have:
+        if not w.startswith(src) or len(w) == len(src):
+            continue
+        tail = w[len(src):]
+        if tail[0] not in " \n" or not re.search(r"[A-Za-z]", tail):
+            continue
+        if len(src.split()) <= 3 and tail.lstrip()[:1].isupper():
+            continue
+        return True
+    return False
 
 
 # 別人的名字。Minecraft 帳號名是英數加底線，長度 3-16。
