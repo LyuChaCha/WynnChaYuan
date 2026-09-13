@@ -90,6 +90,22 @@ public final class PlayerDataFilter {
             " was buried beneath earth",
             " made a fatal mistake",
             "Cleansing fire melted ",
+            // 一般地圖上的死亡快訊，一種怪一句俏皮的模板，主詞是死掉的玩家。
+            " fell victim to ",
+            " was clobbered by ",
+            " was bashed into paste by ",
+            " was impaled by ",
+            " was silenced by ",
+            " was stomped by ",
+            " was weaker than ",
+            "took a shortcut to death's door",
+            "There's only ashes where ",
+            "-- oops, other way around",
+            // 升等廣播，主詞是別人的帳號名。
+            " is now combat level",
+            // 公會大廳／住宅島的招牌：撇號前面是玩家或公會取的名字。
+            "'s HQ",
+            "’s HQ",
             " has placed a mob totem",
             " has placed a gathering totem",
             " mob totem. Get your own",
