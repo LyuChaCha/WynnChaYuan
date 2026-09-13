@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Beyond the Grave",
   "count": 186,
-  "translated": 0,
+  "translated": 186,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Beyond the Grave#000": {
    "src": "Speak to Irlok in the {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 {p} [{~}, {~}, -{~}] 的 Irlok 交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -18,7 +18,7 @@
   },
   "Beyond the Grave#001": {
    "src": "Welcome to the Bantisu Temple, traveler. We guide lost souls onwards, be they wandering men to town or spirits unable to exit the canyon.",
-   "dst": "",
+   "dst": "欢迎来到 Bantisu 寺，旅人。我们为迷失的灵魂指引方向，无论是在荒野徘徊、找不到城镇的人，还是离不开峡谷的亡魂。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -28,7 +28,7 @@
   },
   "Beyond the Grave#002": {
    "src": "However, recently, our job has become much more difficult. The canyon shakes, and changes. Often, long-buried creatures are released as the walls shift.",
-   "dst": "",
+   "dst": "然而最近，我们的工作变得困难多了。峡谷在震动、在变化。岩壁移动时，常常会放出埋藏已久的生物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38,7 +38,7 @@
   },
   "Beyond the Grave#003": {
    "src": "And unfortunately, the worst has come to pass, that one of these creatures is hostile. The Bantisu monks of old collapsed the entrance to its cave to seal it away...",
-   "dst": "",
+   "dst": "很不幸，最糟的情况发生了——其中一只生物充满敌意。古时的 Bantisu 僧侣曾让它的洞穴入口坍塌，把它封印起来……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -48,7 +48,7 @@
   },
   "Beyond the Grave#004": {
    "src": "...but the rubble has shifted, and the cave is open once more. We were not strong enough to defeat it then, and we are not strong enough to defeat it now.",
-   "dst": "",
+   "dst": "……可是碎石移动了，洞穴又打开了。当年我们不够强，打不倒它，现在我们也一样不够强。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -58,7 +58,7 @@
   },
   "Beyond the Grave#005": {
    "src": "Even trying to collapse the cave again has ended in failure, for the beast, Krolton, slays our mages and demolitionists in but an instant.",
-   "dst": "",
+   "dst": "就连想再次让洞穴坍塌也失败了，因为那头野兽 Krolton 一眨眼就能杀光我们的法师和爆破手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -68,7 +68,7 @@
   },
   "Beyond the Grave#006": {
    "src": "However, the word on the wind tells tales of humans doing the impossible as a matter of rote. Krolton must be dealt with before it leaves the cave- I beg your assistance!",
-   "dst": "",
+   "dst": "不过，风中传来消息，说人类把不可能的事当家常便饭。必须在 Krolton 离开洞穴之前解决它——我恳求你帮忙！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -78,7 +78,7 @@
   },
   "Beyond the Grave#007": {
    "src": "We've no time to spare. I will prepare a short spell to bring you to the cave- Please, wait outside, and prepare yourself.",
-   "dst": "",
+   "dst": "我们没有时间可以浪费。我会准备一个简短的法术，把你送到洞穴——请在外面等候，做好准备。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -88,7 +88,7 @@
   },
   "Beyond the Grave#008": {
    "src": "Seek out the creature in the mines at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [{~}, {~}, -{~}] 的矿坑里寻找那只生物。",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -98,7 +98,7 @@
   },
   "Beyond the Grave#009": {
    "src": "I apologize for the suddenness of this, but you must understand the urgency. We have no way of knowing when Krolton will emerge.",
-   "dst": "",
+   "dst": "很抱歉这么突然，但你得明白事态紧急。我们根本无从得知 Krolton 什么时候会出来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -108,7 +108,7 @@
   },
   "Beyond the Grave#010": {
    "src": "We will pray for your safety, and that your spirit will not become among those we must guide out of the canyon.",
-   "dst": "",
+   "dst": "我们会为你的平安祈祷，也祈祷你的灵魂不会成为我们得引导出峡谷的其中一个。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -118,7 +118,7 @@
   },
   "Beyond the Grave#011": {
    "src": "Now, hold tight, and godspeed!!",
-   "dst": "",
+   "dst": "现在，抓紧了，一路顺风！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -128,7 +128,7 @@
   },
   "Beyond the Grave#012": {
    "src": "Explore the strange realm and bargain with Death.",
-   "dst": "",
+   "dst": "探索这个奇异的领域，与死神谈条件。",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -138,7 +138,7 @@
   },
   "Beyond the Grave#013": {
    "src": "SO THAT IS YOUR FIRST INSTINCT? TO CLIMB THE VALLEY WALLS IN FRUITLESS SEARCH OF AN ESCAPE?",
-   "dst": "",
+   "dst": "所以这就是你的第一反应？爬上山谷的岩壁，徒劳地寻找出路？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -148,7 +148,7 @@
   },
   "Beyond the Grave#014": {
    "src": "AMUSING. BUT THIS IS WHERE YOU MUST BE. TAKE ALL THE TIME YOU LIKE, THOUGH. I WILL WAIT FOR YOU TO COME TO MY MANOR.",
-   "dst": "",
+   "dst": "真有趣。不过这里就是你该待的地方。慢慢来吧，我会在我的宅邸等你过来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -158,7 +158,7 @@
   },
   "Beyond the Grave#015": {
    "src": "SO MY MANSION IS DULL ENOUGH YOU'D RATHER GO ROCK CLIMBING?",
-   "dst": "",
+   "dst": "所以我的宅邸无聊到你宁可去攀岩？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -168,7 +168,7 @@
   },
   "Beyond the Grave#016": {
    "src": "OR DID I SIMPLY SCARE YOU OFF SAYING SUCH SERIOUS THINGS?",
-   "dst": "",
+   "dst": "还是我说了那么严肃的话，把你吓跑了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -178,7 +178,7 @@
   },
   "Beyond the Grave#017": {
    "src": "NEVERTHELESS, YOU WILL BE BACK EVENTUALLY. THERE IS NOTHING FOR ANYONE OUT THERE.",
-   "dst": "",
+   "dst": "不管怎样，你迟早会回来的。外面什么都没有，对谁都一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -188,7 +188,7 @@
   },
   "Beyond the Grave#018": {
    "src": "IT SEEMS I HAVE A NEW GUEST. WELCOME.",
-   "dst": "",
+   "dst": "看来我有新客人了。欢迎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -198,7 +198,7 @@
   },
   "Beyond the Grave#019": {
    "src": "MAKE YOURSELF COMFORTABLE. YOU'LL BE STAYING HERE FOR A WHILE.",
-   "dst": "",
+   "dst": "别拘束。你会在这里待上一阵子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -208,7 +208,7 @@
   },
   "Beyond the Grave#020": {
    "src": "NOTHING IS STOPPING YOU FROM TAKING A LOOK AROUND. DON'T TOUCH ANYTHING THOUGH. AND TAKE OFF YOUR SHOES AS YOU ENTER.",
-   "dst": "",
+   "dst": "没什么能拦着你四处看看。不过什么都别碰。还有，进门请脱鞋。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -218,7 +218,7 @@
   },
   "Beyond the Grave#021": {
    "src": "WHEN YOU FEEL LIKE IT, COME TO MY OFFICE UPSTAIRS. WE HAVE A LENGTHY TALK TO HAVE.",
-   "dst": "",
+   "dst": "等你想来了，就到楼上我的办公室。我们有很长的话要谈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -228,7 +228,7 @@
   },
   "Beyond the Grave#022": {
    "src": "THIS IS WHERE I SERVE MEALS TO MY GUESTS. THEY GIVE SUCH GLOWING REVIEWS.",
-   "dst": "",
+   "dst": "这里是我招待客人用餐的地方。他们的评价都好得不得了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -238,7 +238,7 @@
   },
   "Beyond the Grave#023": {
    "src": "AFTER ALL, IT IS SAID ONE'S LAST MEAL IS THE SWEETEST, SO HAVING ANOTHER AFTER THAT IS SURELY TO DIE FOR. AH HA HA.",
-   "dst": "",
+   "dst": "毕竟人家都说最后一餐最美味，那吃完最后一餐再来一顿，肯定好吃到要命。啊哈哈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -248,7 +248,7 @@
   },
   "Beyond the Grave#024": {
    "src": "IF I HAD BROUGHT ANY FLOUR THIS MORNING, I WOULD HAVE OFFERED A BISCUIT FOR DYING. I'M TOLD I MAKE THE BEST CHOCOLATE CHIP ONES.",
-   "dst": "",
+   "dst": "要是我今天早上带了面粉，就能请你吃块饼干，送你上路。听说我做的巧克力豆饼干是最好吃的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -258,7 +258,7 @@
   },
   "Beyond the Grave#025": {
    "src": "BUT ALAS. WE WILL HAVE TO CONTENT OURSELVES WITH A LAST DRINK FOR THE DEPARTED INSTEAD. I'LL PUT THE KETTLE ON.",
-   "dst": "",
+   "dst": "可惜啊。我们只能退而求其次，为逝者干最后一杯了。我去烧水。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -268,7 +268,7 @@
   },
   "Beyond the Grave#026": {
    "src": "FEET OFF THE TABLE, PLEASE.",
-   "dst": "",
+   "dst": "请把脚从桌上拿下来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -278,7 +278,7 @@
   },
   "Beyond the Grave#027": {
    "src": "THIS SECTION OF THE MANSION IS UNDERGOING RENOVATIONS. FOR THE TIME BEING, IT GOES EMPTY.",
-   "dst": "",
+   "dst": "宅邸的这一区正在翻修。暂时空着。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -288,7 +288,7 @@
   },
   "Beyond the Grave#028": {
    "src": "SOULS DO LINGER HERE. LINGERING EVER LONGER THAN BEFORE. AND WITH SO MANY ARRIVING...",
-   "dst": "",
+   "dst": "灵魂确实会在这里逗留。逗留得比以前还要久。而且来的又这么多……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -298,7 +298,7 @@
   },
   "Beyond the Grave#029": {
    "src": "IT IS, PERHAPS, A POINTLESS COMFORT TO GIVE. BUT I FEEL A GUEST ROOM WOULD BE APPRECIATED, UNDER THE CIRCUMSTANCES.",
-   "dst": "",
+   "dst": "这也许是种没什么意义的安慰。但我觉得，在这种情况下，一间客房应该会受欢迎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -308,7 +308,7 @@
   },
   "Beyond the Grave#030": {
    "src": "PERHAPS GROWING THINGS IN A PLACE LIKE THIS IS A FOOL'S ERRAND.",
-   "dst": "",
+   "dst": "也许在这种地方种东西是白费力气。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -318,7 +318,7 @@
   },
   "Beyond the Grave#031": {
    "src": "IF IT IS, THEN I WILL MERRILY JINGLE MY BELLS AS I WATER THEM. IT IS FLEETING JOY TO CARE FOR THEM, BUT A JOY NONETHELESS.",
-   "dst": "",
+   "dst": "就算是，我浇水的时候也会开开心心地摇响我的铃铛。照顾它们的快乐很短暂，但终究是快乐。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -328,7 +328,7 @@
   },
   "Beyond the Grave#032": {
    "src": "THESE ARE BUSHES. NOTHING YOU DON'T ALREADY KNOW.",
-   "dst": "",
+   "dst": "这些是灌木。都是你早就知道的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -338,7 +338,7 @@
   },
   "Beyond the Grave#033": {
    "src": "WELCOME TO MY LIBRARY. I FIND MY GUESTS ARE DRAWN TO HERE. PERHAPS IT IS BECAUSE KNOWLEDGE IS POWER, AS I HAVE BEEN TOLD.",
-   "dst": "",
+   "dst": "欢迎来到我的图书馆。我发现我的客人都会被这里吸引。也许是因为，就像别人告诉我的，知识就是力量。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -348,7 +348,7 @@
   },
   "Beyond the Grave#034": {
    "src": "ALTHOUGH, GIVEN SO MANY OF MY BOOKS ARE WRITTEN IN DEAD LANGUAGES, THERE IS LITTLE POWER TO BE FOUND HERE.",
-   "dst": "",
+   "dst": "不过，我这里有太多书是用死语言写的，所以在这里找不到多少力量。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -358,7 +358,7 @@
   },
   "Beyond the Grave#035": {
    "src": "BUT I WILL NEVER BEGRUDGE A GUEST A REPRIEVE. HOWEVER MOMENTARY. MORTALITY CAN BE A HARSH LESSON.",
-   "dst": "",
+   "dst": "但我绝不会吝于让客人喘口气。不管多短暂。生死这一课可能很残酷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -368,7 +368,7 @@
   },
   "Beyond the Grave#036": {
    "src": "IT SEEMS YOU REALLY WANTED TO KNOW WHAT WAS BEHIND THIS DOOR.",
-   "dst": "",
+   "dst": "看来你真的很想知道这扇门后面是什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -378,7 +378,7 @@
   },
   "Beyond the Grave#037": {
    "src": "I GUESS YOU WILL GET WHAT YOU WANTED...",
-   "dst": "",
+   "dst": "我想你会得到你想要的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -388,7 +388,7 @@
   },
   "Beyond the Grave#038": {
    "src": "ANOTHER DOOR.",
-   "dst": "",
+   "dst": "又一扇门。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -398,7 +398,7 @@
   },
   "Beyond the Grave#039": {
    "src": "DO YOU REALLY THINK IT WAS WORTH YOUR TIME?",
-   "dst": "",
+   "dst": "你真觉得这值得你花时间吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -408,7 +408,7 @@
   },
   "Beyond the Grave#040": {
    "src": "AH, I SEE YOU HAVE DISCOVERED THE HOURGLASSES. I SUPPOSE IT IS ONLY NATURAL THEY WOULD DRAW YOUR ATTENTION.",
-   "dst": "",
+   "dst": "啊，看来你发现那些沙漏了。我想它们会吸引你的注意也是理所当然的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -418,7 +418,7 @@
   },
   "Beyond the Grave#041": {
    "src": "EACH ONE MEASURES THE LIFE OF A BEING. WHEN ALL THE SAND REACHES THE BOTTOM, I RECEIVE A NEW GUEST.",
-   "dst": "",
+   "dst": "每一个都在计量一个生命的寿命。当所有的沙都落到底部，我就会迎来一位新客人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -428,7 +428,7 @@
   },
   "Beyond the Grave#042": {
    "src": "BUT A MEASURED LIFESPAN IS NOT A GUARANTEE. IT IS ONLY AN ESTIMATE. THE RATE OF THE HOURGLASS WILL SHIFT IN RESPONSE TO ANY NUMBER OF FACTORS.",
-   "dst": "",
+   "dst": "但计量出来的寿命并不是保证。那只是个估计。沙漏的流速会因为各种因素而改变。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -438,7 +438,7 @@
   },
   "Beyond the Grave#043": {
    "src": "I AM SURE WE COULD FIND YOURS, IF WE SEARCHED HARD ENOUGH. BUT I FIND MOST VISITORS STRUGGLE TO GRAPPLE WITH SUCH A TANGIBLE DISPLAY.",
-   "dst": "",
+   "dst": "我相信只要找得够仔细，我们也能找到你的那一个。不过我发现大多数访客都很难面对这么具体的呈现。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -448,7 +448,7 @@
   },
   "Beyond the Grave#044": {
    "src": "THIS ONE... IT IS SPECIAL. IT DISPLAYS SOMETHING FAR MORE IMPORTANT THAN INDIVIDUAL LIFESPANS.",
-   "dst": "",
+   "dst": "这一个……很特别。它显示的东西，远比个人的寿命重要得多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -458,7 +458,7 @@
   },
   "Beyond the Grave#045": {
    "src": "IT IS HERE TO MEASURE HOW MUCH TIME THE WORLD HAS LEFT.",
-   "dst": "",
+   "dst": "它在这里计量的是这个世界还剩多少时间。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -468,7 +468,7 @@
   },
   "Beyond the Grave#046": {
    "src": "AS WITH THE OTHERS, IT IS MERELY AN ESTIMATE. IT HAS BEEN SLOWED AND HALTED IN THE PAST.",
-   "dst": "",
+   "dst": "跟其他沙漏一样，它只是个估计。过去它曾经变慢，也曾经停下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -478,7 +478,7 @@
   },
   "Beyond the Grave#047": {
    "src": "BUT I FEAR THE COMING END IS INEVITABLE. IT WAS SET IN MOTION LONG, LONG AGO, BY ACTORS BEYOND THE BOTH OF US.",
-   "dst": "",
+   "dst": "但我担心即将到来的终结无可避免。它在很久、很久以前就被启动了，启动它的，是凌驾于你我之上的存在。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -488,7 +488,7 @@
   },
   "Beyond the Grave#048": {
    "src": "I KEEP IT AS A REMINDER, TO CHERISH WHAT STILL IS LEFT. BEFORE IT, TOO, IS LOST.",
-   "dst": "",
+   "dst": "我留着它当作提醒，提醒自己珍惜还剩下的一切。在它们也消逝之前。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -498,7 +498,7 @@
   },
   "Beyond the Grave#049": {
    "src": "PLEASE REFRAIN FROM TOUCHING ANY OF MY JARS. I KEEP THINGS VERY DEAR TO ME IN THEM.",
-   "dst": "",
+   "dst": "请不要碰我的任何一个罐子。里面装着对我来说非常珍贵的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -508,7 +508,7 @@
   },
   "Beyond the Grave#050": {
    "src": "PARTICULARLY MY JAR OF SOIL. THAT IS A SOUVENIR FROM VERY, VERY LONG AGO.",
-   "dst": "",
+   "dst": "尤其是我那罐泥土。那是很久、很久以前的纪念品。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -518,7 +518,7 @@
   },
   "Beyond the Grave#051": {
    "src": "I HAVE NO NEED FOR SLEEP. SO, MY BEDROOM NOW SERVES MERELY A SYMBOLIC PURPOSE.",
-   "dst": "",
+   "dst": "我不需要睡觉。所以，我的卧室现在只剩象征意义。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -528,7 +528,7 @@
   },
   "Beyond the Grave#052": {
    "src": "SYMBOLIC OF WHAT, YOU ASK? MY LOVING MARRIAGE. JUST BECAUSE I DO NOT HAVE A HEART, IT DOES NOT MEAN I CANNOT LOVE.",
-   "dst": "",
+   "dst": "象征什么，你问？我美满的婚姻。我没有心，不代表我不能爱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -538,7 +538,7 @@
   },
   "Beyond the Grave#053": {
    "src": "\"TIL DEATH DO US PART\" IS FOR QUITTERS, I SAY. I WILL LOVE HER BEYOND THE END OF TIME ITSELF.",
-   "dst": "",
+   "dst": "要我说，“至死不渝”是给半途而废的人说的。我会爱她，爱到时间本身的尽头之后。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -548,7 +548,7 @@
   },
   "Beyond the Grave#054": {
    "src": "THESE DAYS, THE CATS LAY CLAIM TO THE BED FOR THE MOST PART. AT LEAST SOMEONE IS GETTING USE OUT OF IT, IN THE END.",
-   "dst": "",
+   "dst": "如今这张床大多被猫占据了。至少到头来还有人用得上它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -558,7 +558,7 @@
   },
   "Beyond the Grave#055": {
    "src": "THIS IS THE DARK LORD, SNUGGLEBUNS. GREET HIM WITH RESPECT, WITH A PAT ON THE HEAD AND A SCRATCH UNDER THE CHIN.",
-   "dst": "",
+   "dst": "这位是黑暗领主，抱抱团子。请恭敬地向他问好，摸摸他的头，再挠挠他的下巴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -568,7 +568,7 @@
   },
   "Beyond the Grave#056": {
    "src": "HE IS A GUEST, MUCH LIKE YOURSELF. UNLIKE YOU, HOWEVER, HE HAS BEEN HERE A VERY LONG TIME.",
-   "dst": "",
+   "dst": "他跟你一样是客人。不过跟你不同的是，他已经在这里待了非常久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -578,7 +578,7 @@
   },
   "Beyond the Grave#057": {
    "src": "HE IS ONE OF THE MORE STUBBORN BEASTS I HAVE ENCOUNTERED ACROSS THESE EONS. YOU SEE, HE IS WAITING FOR SOMEONE TO CROSS OVER. MUCH LIKE MYSELF, HE CAN BE VERY PATIENT.",
-   "dst": "",
+   "dst": "他是我这亿万年来遇过最固执的野兽之一。你看，他在等某个人跨过来。跟我一样，他可以非常有耐心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -588,7 +588,7 @@
   },
   "Beyond the Grave#058": {
    "src": "TOO PATIENT FOR HIS OWN GOOD, PERHAPS.",
-   "dst": "",
+   "dst": "也许耐心过头了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -598,7 +598,7 @@
   },
   "Beyond the Grave#059": {
    "src": "...I DO NOT HAVE THE HEART TO TELL HIM THE TRUTH. AND SO, AS THE YEARS PASS, HIS CLAIM ON MY HOME CONTINUES TO GROW.",
-   "dst": "",
+   "dst": "……我没有心——也狠不下心——告诉他真相。所以随着岁月流逝，他对我家的占领一直在扩大。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -608,7 +608,7 @@
   },
   "Beyond the Grave#060": {
    "src": "AND I ALLOW IT. I FIND HIS COMPANIONSHIP WORTH THE HASSLE.",
-   "dst": "",
+   "dst": "而我由着他。我觉得有他作伴，这点麻烦很值得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -618,7 +618,7 @@
   },
   "Beyond the Grave#061": {
    "src": "IT MAY NOT SEEM AS SUCH FROM YOUR PERSPECTIVE. BUT LIFE IS LIMITED. STILL, SOULS PASS THROUGH THE CYCLE, AND THE WORLD KEEPS ON SPINNING.",
-   "dst": "",
+   "dst": "从你的角度看也许不是这样。但生命是有限的。即便如此，灵魂依旧会在轮回中流转，世界也会继续转动。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -628,7 +628,7 @@
   },
   "Beyond the Grave#062": {
    "src": "...THEY WERE NOT MEANT TO BE LOST. TO PASS BEYOND MY REACH, TO REACH AN END SOMEWHERE I CANNOT FIND THEM.",
-   "dst": "",
+   "dst": "……它们本不该迷失。本不该越出我所及之处，在我找不到的地方走向终结。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -638,7 +638,7 @@
   },
   "Beyond the Grave#063": {
    "src": "AND YET, THROUGH MEANS BEYOND MY CONTROL, THEY DO. THEY HAVE. WITH EACH AND EVERY ONE, I LOSE A PIECE OF MYSELF. IRREVERSIBLY.",
-   "dst": "",
+   "dst": "然而，通过我无法掌控的手段，它们确实迷失了。已经迷失了。每失去一个，我就失去自己的一部分。无法挽回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -648,7 +648,7 @@
   },
   "Beyond the Grave#064": {
    "src": "AND THE CYCLE MUST KEEP SPINNING, LESSENED EVEN AS IT MAY BE. BUT I STILL REMEMBER THEM, EACH LIFE THAT THEY LIVED.",
-   "dst": "",
+   "dst": "而轮回必须继续转动，即使它可能已经残缺。但我仍然记得它们，记得它们活过的每一段人生。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -658,7 +658,7 @@
   },
   "Beyond the Grave#065": {
    "src": "SOMEONE HAS TO, AFTER ALL.",
-   "dst": "",
+   "dst": "毕竟，总得有人记得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -668,7 +668,7 @@
   },
   "Beyond the Grave#066": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -678,7 +678,7 @@
   },
   "Beyond the Grave#067": {
    "src": "THIS ONE SHOULD BE FAMILIAR TO YOU.",
-   "dst": "",
+   "dst": "这一位你应该很眼熟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -688,7 +688,7 @@
   },
   "Beyond the Grave#068": {
    "src": "FEW EVER HAVE THE CHANCE TO COME FACE TO FACE WITH A LIFE THEY THEMSELVES HAVE BROUGHT TO AN END. I WONDER HOW YOU FEEL NOW.",
-   "dst": "",
+   "dst": "很少有人有机会跟亲手终结的生命面对面。不知道你现在是什么感受。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -698,7 +698,7 @@
   },
   "Beyond the Grave#069": {
    "src": "HE WAS ONCE A GOOD MAN. BUT SUCH IS THE TRAVESTY OF THAT WAR-RAVAGED PROVINCE, THAT IT TWISTS THE MIND AND SPIRIT IN SUCH A WAY.",
-   "dst": "",
+   "dst": "他曾经是个好人。但那个饱受战火蹂躏的行省就是这么荒唐，会用那样的方式扭曲人的心智与灵魂。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -708,7 +708,7 @@
   },
   "Beyond the Grave#070": {
    "src": "I WILL NOT PASS JUDGEMENT ON YOUR ACTIONS. BUT PERHAPS DEATH WAS A KINDER FATE THAN THE TURMOIL HE WAS DROWNING IN.",
-   "dst": "",
+   "dst": "我不会评判你的行为。但比起他深陷其中的那片混乱，也许死亡是更仁慈的命运。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -718,7 +718,7 @@
   },
   "Beyond the Grave#071": {
    "src": "EVEN HERE, FREED OF ITS INFLUENCE, HE STRUGGLES TO RELEASE THAT ANGER THAT GRIPPED HIM SO TIGHTLY. HE REFUSES TO MOVE ON.",
-   "dst": "",
+   "dst": "即使在这里，摆脱了那股影响，他依然难以放下那份死死攫住他的愤怒。他不肯继续前行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -728,7 +728,7 @@
   },
   "Beyond the Grave#072": {
    "src": "BUT HE WILL, EVENTUALLY. THEY ALL DO. IT IS ONLY A MATTER OF TIME.",
-   "dst": "",
+   "dst": "但他终究会的。他们都会。只是时间问题。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -738,7 +738,7 @@
   },
   "Beyond the Grave#073": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -748,7 +748,7 @@
   },
   "Beyond the Grave#074": {
    "src": "HE IS NOT THE FIRST TO HAVE SUFFERED SUCH A FATE. THAT BLIGHT HAS TAKEN HOLD OF OH SO MANY OVER THE YEARS.",
-   "dst": "",
+   "dst": "他不是第一个遭受这种命运的人。这些年来，那场祸害已经缠上了太多、太多人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -758,7 +758,7 @@
   },
   "Beyond the Grave#075": {
    "src": "A MILLENNIUM IS A RAINDROP IN THE SEA COMPARED TO MY EXISTENCE. SO WHY HAVE THESE YEARS FELT SO MUCH LONGER THAN EVER BEFORE?",
-   "dst": "",
+   "dst": "跟我的存在相比，一千年不过是沧海一滴。那为什么这些年感觉比以往任何时候都要漫长？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -768,7 +768,7 @@
   },
   "Beyond the Grave#076": {
    "src": "IT IS FORTUNATE THAT IT ONLY TARGETS THE BODY, AND ONLY ONCE ITS SPARK FLICKERS OUT.",
-   "dst": "",
+   "dst": "幸好它只针对肉体，而且只在生命的火花熄灭之后。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -778,7 +778,7 @@
   },
   "Beyond the Grave#077": {
    "src": "WHAT IT DOES IS BAD ENOUGH ALREADY. IF IT WERE TO TAKE THE SOUL, AS WELL...",
-   "dst": "",
+   "dst": "它做的事已经够糟了。要是连灵魂也夺走……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -788,7 +788,7 @@
   },
   "Beyond the Grave#078": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -798,7 +798,7 @@
   },
   "Beyond the Grave#079": {
    "src": "AH HA HA. I WOULD RATHER NOT DWELL ON THAT ANY LONGER. IT ISN'T AS IF I COULD DO SOMETHING ABOUT IT, ANYWAY.",
-   "dst": "",
+   "dst": "啊哈哈。我还是别再想那件事了。反正我也无能为力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -808,7 +808,7 @@
   },
   "Beyond the Grave#080": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -818,7 +818,7 @@
   },
   "Beyond the Grave#081": {
    "src": "WELCOME TO MY OFFICE. GO ON, TAKE A GUESS AT WHAT I DO HERE.",
-   "dst": "",
+   "dst": "欢迎来到我的办公室。来，猜猜我在这里做什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -828,7 +828,7 @@
   },
   "Beyond the Grave#082": {
    "src": "I DIE OF BOREDOM.",
-   "dst": "",
+   "dst": "我在这里无聊到死。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -838,7 +838,7 @@
   },
   "Beyond the Grave#083": {
    "src": "...REALLY? NOTHING? PERHAPS I NEED SOME NEW MATERIAL.",
-   "dst": "",
+   "dst": "……真的？没反应？也许我该想点新段子了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -848,7 +848,7 @@
   },
   "Beyond the Grave#084": {
    "src": "PLEASE TAKE A SEAT. LET US REVIEW YOUR OPTIONS.",
-   "dst": "",
+   "dst": "请坐。我们来看看你有哪些选择。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -858,7 +858,7 @@
   },
   "Beyond the Grave#085": {
    "src": "PERHAPS SITTING IN FRONT OF DEATH MAY SEEM AN ODD PLACE TO BE. I APOLOGIZE FOR ANY DISCOMFORT.",
-   "dst": "",
+   "dst": "坐在死神面前，也许感觉是个奇怪的位置。如有任何不适，我深表歉意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -868,7 +868,7 @@
   },
   "Beyond the Grave#086": {
    "src": "NOW, BEFORE WE BEGIN IN EARNEST. LIVING BEINGS ARE NOT SUBTLE ABOUT HAVING QUESTIONS. I AM SURE YOU HAVE THEM.",
-   "dst": "",
+   "dst": "那么，在正式开始之前。活着的生物有问题时从来藏不住。我相信你一定有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -878,7 +878,7 @@
   },
   "Beyond the Grave#087": {
    "src": "GO ON. ASK THEM NOW. I DO NOT WANT TO BE INTERRUPTED LATER.",
-   "dst": "",
+   "dst": "问吧。现在就问。我不希望待会儿被打断。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -888,7 +888,7 @@
   },
   "Beyond the Grave#088": {
    "src": "SO IT WOULD SEEM.",
-   "dst": "",
+   "dst": "看来是这样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -898,7 +898,7 @@
   },
   "Beyond the Grave#089": {
    "src": "FEEL FREE TO TAKE A MOMENT TO COME TO TERMS WITH YOUR MORTALITY, IF YOU NEED IT. I HAVE TIME.",
-   "dst": "",
+   "dst": "如果需要的话，尽管花点时间接受自己终有一死的事实。我有的是时间。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -908,7 +908,7 @@
   },
   "Beyond the Grave#090": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "还有别的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -918,7 +918,7 @@
   },
   "Beyond the Grave#091": {
    "src": "MANY, MANY, MANY TIMES. AS HAS EVERY OTHER LIVING BEING.",
-   "dst": "",
+   "dst": "很多、很多、很多次了。其他所有活着的生物也一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -928,7 +928,7 @@
   },
   "Beyond the Grave#092": {
    "src": "ONCE A LIFE REACHES AN END, THE SOUL PASSES THROUGH THE VEIL, CROSSING OVER INTO DEATH.",
-   "dst": "",
+   "dst": "当生命走到尽头，灵魂便会穿过帷幕，跨入死亡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -938,7 +938,7 @@
   },
   "Beyond the Grave#093": {
    "src": "HERE, THEY LINGER. MEMORIES FADE WITH TIME, AND THE SOUL IS REDUCED TO THE ESSENTIALS. PREPARED TO RETURN TO THE CYCLE.",
-   "dst": "",
+   "dst": "在这里，它们会逗留。记忆随时间淡去，灵魂被简化到只剩本质。准备好回归轮回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -948,7 +948,7 @@
   },
   "Beyond the Grave#094": {
    "src": "LIFE AND DEATH ARE NOT IN OPPOSITION, AS YOU MORTALS OFTEN ASSUME. THEY ARE TWO PARTS OF THE SAME WHOLE.",
-   "dst": "",
+   "dst": "生与死并不像你们凡人常以为的那样对立。它们是同一个整体的两个部分。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -958,7 +958,7 @@
   },
   "Beyond the Grave#095": {
    "src": "YOU, THE ESSENCE AT THE CORE OF YOUR BEING, HAVE BEEN HERE MANY TIMES BEFORE. AND YOU WILL BE HERE MANY TIMES AGAIN.",
-   "dst": "",
+   "dst": "你，也就是你存在核心的本质，以前来过这里很多次。以后也会再来很多次。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -968,7 +968,7 @@
   },
   "Beyond the Grave#096": {
    "src": "...OR, SO I WOULD HOPE. BUT I DIGRESS.",
-   "dst": "",
+   "dst": "……至少，我是这么希望的。不过我扯远了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -978,7 +978,7 @@
   },
   "Beyond the Grave#097": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "还有别的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -988,7 +988,7 @@
   },
   "Beyond the Grave#098": {
    "src": "IT IS DEATH. IT MAY BE HARD TO BELIEVE, I KNOW. AH HA HA. BUT I HAVE BEEN EXCEEDINGLY CLEAR, HAVEN'T I?",
-   "dst": "",
+   "dst": "这里就是死亡。我知道，这可能很难相信。啊哈哈。不过我已经说得非常清楚了，不是吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -998,7 +998,7 @@
   },
   "Beyond the Grave#099": {
    "src": "BUT NOT EVERY SOUL WILL SEE IT THE SAME WAY. MOST LACK THE CAPACITY TO CONCEPTUALIZE IT AS ANYTHING MORE THAN A HAZE. A BLURRED STATE OF BEING.",
-   "dst": "",
+   "dst": "但不是每个灵魂看到的都一样。大多数灵魂没有能力把它想象成比一团迷雾更多的东西。一种模糊的存在状态。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1008,7 +1008,7 @@
   },
   "Beyond the Grave#100": {
    "src": "IT IS RARE THAT I MAY HOST A GUEST WITH THE CLARITY OF MIND AND THE WILLPOWER REMAINING TO SEE THIS PLACE FOR WHAT IT TRULY IS.",
-   "dst": "",
+   "dst": "很少有客人还保有足够清醒的心智与意志力，能看清这地方的真面目。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1018,7 +1018,7 @@
   },
   "Beyond the Grave#101": {
    "src": "HOWEVER FLEETINGLY, I DO ENJOY WHEN IT HAPPENS. IT IS WORTH CELEBRATING. NOW IF ONLY I HAD SOME SPIRITS TO SHARE. AH HA HA.",
-   "dst": "",
+   "dst": "尽管转瞬即逝，我确实很享受这种时候。值得庆祝。要是我有点烈酒——或者说‘灵’酒——能跟你分享就好了。啊哈哈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1028,7 +1028,7 @@
   },
   "Beyond the Grave#102": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "还有别的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1038,7 +1038,7 @@
   },
   "Beyond the Grave#103": {
    "src": "OH, IT CHANGES WITH THE TIMES. AND ACCORDING TO MY WHIMS.",
-   "dst": "",
+   "dst": "噢，它会随着时代改变。也会随我高兴改变。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1048,7 +1048,7 @@
   },
   "Beyond the Grave#104": {
    "src": "IT HAS PREVIOUSLY BEEN A TOWER, A CASTLE, A FOREST, A CAVERN... I WAS IN A VERY UNDERGROUND PHASE OF MY EXISTENCE BACK THEN.",
-   "dst": "",
+   "dst": "它以前当过塔、城堡、森林、洞窟……那时候我正处于一个非常‘地下’的人生阶段。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1058,7 +1058,7 @@
   },
   "Beyond the Grave#105": {
    "src": "FOR NOW, A MANOR SERVES ME WELL. I DO ADMIRE THE ARCHITECTURAL STYLE OF ITS TIME. VERY GOTHIC.",
-   "dst": "",
+   "dst": "目前，一座宅邸很合我意。我很欣赏那个时代的建筑风格。非常哥特。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1068,7 +1068,7 @@
   },
   "Beyond the Grave#106": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "还有别的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1078,7 +1078,7 @@
   },
   "Beyond the Grave#107": {
    "src": "CERTAINLY NOT. WHEREVER WOULD I FIND THE TIME?",
-   "dst": "",
+   "dst": "当然不是。我哪来的时间？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1088,7 +1088,7 @@
   },
   "Beyond the Grave#108": {
    "src": "FOR MOST SOULS, THERE IS LITTLE NEED TO INTERVENE. THEY WILL LINGER, BUT GIVEN TIME, THEY WILL FIND THEIR WAY FORWARD.",
-   "dst": "",
+   "dst": "对大多数灵魂来说，几乎没有介入的必要。它们会逗留，但只要给它们时间，它们会自己找到前进的路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1098,7 +1098,7 @@
   },
   "Beyond the Grave#109": {
    "src": "BUT ON OCCASION, AN ARRIVAL WILL DRAW MY INTEREST. ONE WHICH DEMANDS A PROPER WELCOME.",
-   "dst": "",
+   "dst": "但偶尔，会有某个到来的灵魂引起我的兴趣。一个值得好好迎接的灵魂。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1108,7 +1108,7 @@
   },
   "Beyond the Grave#110": {
    "src": "THIS MEETING IN MY OFFICE IS NOT TRULY NECESSARY. THE PAPERWORK IS JUST FOR SHOW. BUT I LIKE TO INDULGE, ON OCCASION.",
-   "dst": "",
+   "dst": "在我办公室的这场会面其实并不必要。那些文书只是做做样子。但我偶尔也喜欢放纵一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1118,7 +1118,7 @@
   },
   "Beyond the Grave#111": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "还有别的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1128,7 +1128,7 @@
   },
   "Beyond the Grave#112": {
    "src": "THAT SHOULD BE EVERYTHING, THEN. PERHAPS IF I GAVE YOU MORE TIME, YOU COULD THINK OF MORE.",
-   "dst": "",
+   "dst": "那应该就是全部了。也许我多给你一点时间，你还能想出更多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1138,7 +1138,7 @@
   },
   "Beyond the Grave#113": {
    "src": "BUT IT IS BEST WE GET ON WITH OUR DISCUSSION, I WOULD SAY.",
-   "dst": "",
+   "dst": "但我认为我们最好继续谈正事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1148,7 +1148,7 @@
   },
   "Beyond the Grave#114": {
    "src": "LET US BEGIN WITH THE BASICS.",
-   "dst": "",
+   "dst": "我们从基本的开始。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1158,7 +1158,7 @@
   },
   "Beyond the Grave#115": {
    "src": "CAUSE OF DEATH: SLAIN BY THE HORROR KNOWN AS KROLTON. ANOTHER ADD TO THE TALLY.",
-   "dst": "",
+   "dst": "死因：被名为 Krolton 的恐怖之物所杀。又一笔记录。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1168,7 +1168,7 @@
   },
   "Beyond the Grave#116": {
    "src": "SWIFT AND UNAVOIDABLE. THERE IS NO SHAME IN LOSING TO SUCH A FORE. YOU ARE NOT THE FIRST, AND YOU WILL LIKELY NOT BE THE LAST.",
-   "dst": "",
+   "dst": "迅速，而且无法避免。败给那样的敌人并不丢脸。你不是第一个，大概也不会是最后一个。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1178,7 +1178,7 @@
   },
   "Beyond the Grave#117": {
    "src": "THOUGH PERHAPS I FIND MYSELF HOPING SOMEONE DOES MANAGE TO SUCCEED IN PUTTING AN END TO IT. IT HAS LIVED WELL BEYOND ITS MEAN, AND PROVES A NUISANCE EVERY TIME IT RE-EMERGES...",
-   "dst": "",
+   "dst": "不过，也许我发现自己暗暗希望有人能成功终结它。它活得远远超出了它的限度，而且每次重新现身都是个麻烦……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1188,7 +1188,7 @@
   },
   "Beyond the Grave#118": {
    "src": "BUT I DIGRESS. NEXT, LET US PERUSE YOUR LIFE'S RECORD. IT IS A FORMALITY, FOR THE MOST PART. ONLY APPLICABLE IF YOU WISH TO RETURN TO THE CYCLE.",
-   "dst": "",
+   "dst": "不过我扯远了。接下来，我们来翻阅你的生平记录。这大部分只是形式。只有在你希望回归轮回时才适用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1198,7 +1198,7 @@
   },
   "Beyond the Grave#119": {
    "src": "SELFISHLY, HOWEVER, I WOULD URGE YOU TO LINGER A WHILE. IT HAS BEEN SOME TIME SINCE I HAVE HAD GUEST. YOUR COMPANY WOULD NOT BE UNAPPRECIATED.",
-   "dst": "",
+   "dst": "不过，我私心希望你能在这里多待一阵子。我已经有段时间没有客人了。你的陪伴不会不受欢迎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1208,7 +1208,7 @@
   },
   "Beyond the Grave#120": {
    "src": "...YOU HAVE TIME TO DECIDE. FOR NOW, WE MAY...",
-   "dst": "",
+   "dst": "……你有时间决定。现在，我们可以……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1218,7 +1218,7 @@
   },
   "Beyond the Grave#121": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1228,7 +1228,7 @@
   },
   "Beyond the Grave#122": {
    "src": "HM. HOW VERY INTERESTING. THAT WOULD EXPLAIN SOME THINGS.",
-   "dst": "",
+   "dst": "嗯。真是非常有意思。这就能解释一些事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1238,7 +1238,7 @@
   },
   "Beyond the Grave#123": {
    "src": "SOMETHING HAS GONE WRONG. IT WOULD SEEM YOUR SPARK HAS PERSISTED EVEN THROUGH THE VEIL... EVEN THOUGH SUCH A THING SHOULD BE IMPOSSIBLE.",
-   "dst": "",
+   "dst": "出了差错。看来你的火花即使穿过了帷幕依然存续……尽管这种事本该不可能发生。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1248,7 +1248,7 @@
   },
   "Beyond the Grave#124": {
    "src": "IT HAS IMPRINTED ITSELF INTO YOUR VERY ESSENCE... HOW HAS THIS COME TO PASS? COULD IT HAVE BEEN...",
-   "dst": "",
+   "dst": "它已经烙印进你的本质之中……怎么会变成这样？难道是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1258,7 +1258,7 @@
   },
   "Beyond the Grave#125": {
    "src": "AH. I SEE... THIS COMPLICATES MATTERS.",
-   "dst": "",
+   "dst": "啊。我明白了……这让事情变复杂了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1268,7 +1268,7 @@
   },
   "Beyond the Grave#126": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1278,7 +1278,7 @@
   },
   "Beyond the Grave#127": {
    "src": "I WOULD NOT WISH TO KEEP YOU HERE. IT WOULD NOT BE RIGHT. AND YET, I LACK THE MEANS TO RETURN YOU TO THE LIVING. SUCH AN ACT IS BEYOND MY OWN CAPABILITY.",
-   "dst": "",
+   "dst": "我不想把你留在这里。那样不对。然而，我没有办法让你回到生者之中。那种事超出了我自己的能力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1288,7 +1288,7 @@
   },
   "Beyond the Grave#128": {
    "src": "WHAT TO DO, WHAT TO DO...",
-   "dst": "",
+   "dst": "怎么办，怎么办……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1298,7 +1298,7 @@
   },
   "Beyond the Grave#129": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1308,7 +1308,7 @@
   },
   "Beyond the Grave#130": {
    "src": "A THOUGHT OCCURS TO ME. THOUGH I LACK THE MEANS MYSELF, THERE IS AN OPTION YET OPEN TO US. A THREAD I MAY REACH OUT AND GRASP.",
-   "dst": "",
+   "dst": "我想到一个办法。虽然我自己没有这个能力，但我们还有一个选项。一条我可以伸手抓住的线。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1318,7 +1318,7 @@
   },
   "Beyond the Grave#131": {
    "src": "THE WRETCHED KROLTON. ITS SPARK IS STRONG, HAVING TAKEN SO MANY LIVES TO MAINTAIN IT. IF IT IS SLAIN, THAT STRENGTH WILL QUICKLY DISPERSE.",
-   "dst": "",
+   "dst": "那可憎的 Krolton。它的火花很强，靠夺走无数生命才维持至今。一旦它被杀，那股力量很快就会散去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1328,7 +1328,7 @@
   },
   "Beyond the Grave#132": {
    "src": "BUT FOR ONE SHORT MOMENT, IT WILL BE WITHIN MY REACH. AND WITH IT, WE MAY REIGNITE YOUR OWN CRADLED SPARK.",
-   "dst": "",
+   "dst": "但在那短短的一瞬间，它会落在我可及之处。借着它，我们也许能重新点燃你自己护着的那点火花。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1338,7 +1338,7 @@
   },
   "Beyond the Grave#133": {
    "src": "...THIS IS NOT AN ACT I TAKE LIGHTLY. TO TWIST THE CYCLE IN SUCH A WAY... IT IS AGAINST MY VERY NATURE.",
-   "dst": "",
+   "dst": "……这不是我会轻易做的事。以这种方式扭曲轮回……违背了我的本性。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1348,7 +1348,7 @@
   },
   "Beyond the Grave#134": {
    "src": "BUT, SELFISHLY, I FIND MYSELF CARING LESS ABOUT SUCH THINGS AS OF LATE.",
-   "dst": "",
+   "dst": "但是，出于私心，我发现自己最近越来越不在乎这种事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1358,7 +1358,7 @@
   },
   "Beyond the Grave#135": {
    "src": "SO IT IS DECIDED. I WILL GRANT YOU PASSAGE BACK BEYOND THE VEIL, WHERE YOU WILL RETURN TO THE BODY YOU HAD LEFT BEHIND.",
-   "dst": "",
+   "dst": "那就这么决定了。我会准许你穿回帷幕另一边，回到你留下的那具身体里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1368,7 +1368,7 @@
   },
   "Beyond the Grave#136": {
    "src": "THERE, WITH WHAT STRENGTH YOU HAVE, YOU WILL BRING AND END TO THAT HORROR. AND THROUGH THAT END, WE SHALL STAVE OFF YOUR OWN.",
-   "dst": "",
+   "dst": "在那里，用你拥有的力量，终结那个恐怖之物。而借着它的终结，我们将推迟你自己的终结。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1378,7 +1378,7 @@
   },
   "Beyond the Grave#137": {
    "src": "IT WILL TAKE SOME TIME TO PREPARE. IN THE MEANTIME, YOU MAY EXPLORE THE MANSION FURTHER.",
-   "dst": "",
+   "dst": "准备需要一些时间。在这段时间里，你可以继续探索宅邸。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1388,7 +1388,7 @@
   },
   "Beyond the Grave#138": {
    "src": "THERE IS A GAME I HAD SET UP, IN THE OTHER UPSTAIRS ROOM. IT WAS MEANT TO BE A SURPRISE FOR YOU, BUT SINCE YOU WILL BE LEAVING, I SUPPOSE WE MAY PUSH IT FORWARD.",
-   "dst": "",
+   "dst": "楼上另一个房间里，我准备了一个游戏。本来是要给你的惊喜，不过既然你要离开了，我想我们可以提前。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1398,7 +1398,7 @@
   },
   "Beyond the Grave#139": {
    "src": "YES? WHAT ELSE DO YOU NEED?",
-   "dst": "",
+   "dst": "嗯？你还需要什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1408,7 +1408,7 @@
   },
   "Beyond the Grave#140": {
    "src": "HM.",
-   "dst": "",
+   "dst": "嗯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1418,7 +1418,7 @@
   },
   "Beyond the Grave#141": {
    "src": "WHY INDEED.",
-   "dst": "",
+   "dst": "问得好，为什么呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1428,7 +1428,7 @@
   },
   "Beyond the Grave#142": {
    "src": "I SUPPOSE I HAVE GROWN TIRED OF STANDING BY.",
-   "dst": "",
+   "dst": "我想我是厌倦了袖手旁观。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1438,7 +1438,7 @@
   },
   "Beyond the Grave#143": {
    "src": "IT IS DIFFICULT, WATCHING THE WORLD'S FATE UNFOLD, UNABLE TO LIFT EVEN A SINGLE SKELETAL FINGER TO MAKE A DIFFERENCE.",
-   "dst": "",
+   "dst": "看着世界的命运逐渐展开，却连一根骨头手指都抬不起来做点什么，是很难受的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1448,7 +1448,7 @@
   },
   "Beyond the Grave#144": {
    "src": "YOU DO NOT YET UNDERSTAND, I TAKE IT. FEW EVER WILL. IT IS SOMETHING FAR BEYOND ANY MORTAL'S CAPACITY TO COMPREHEND.",
-   "dst": "",
+   "dst": "我想你还不明白。很少有人会明白。那远远超出任何凡人所能理解的范围。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1458,7 +1458,7 @@
   },
   "Beyond the Grave#145": {
    "src": "I SUSPECT YOU WILL SOMEDAY. I DO NOT BELIEVE IN DESTINY. BUT PERHAPS THIS IS CLOSE ENOUGH.",
-   "dst": "",
+   "dst": "我猜你总有一天会明白。我不相信命运。但也许这已经够接近了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1468,7 +1468,7 @@
   },
   "Beyond the Grave#146": {
    "src": "IN TRUTH, YOU ARE RATHER FORTUNATE. YOU HAVE FOUND YOURSELF IN THE EXACT SET OF CIRCUMSTANCES TO ALLOW ME TO INTERVENE.",
-   "dst": "",
+   "dst": "说实话，你相当幸运。你正好处在让我能够介入的那一组情况里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1478,7 +1478,7 @@
   },
   "Beyond the Grave#147": {
    "src": "IT WOULD NOT BE RIGHT TO LET THE OPPORTUNITY PASS ME BY.",
-   "dst": "",
+   "dst": "放过这个机会是不对的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1488,7 +1488,7 @@
   },
   "Beyond the Grave#148": {
    "src": "IN ANY OTHER CIRCUMSTANCE, I WOULD BE HAPPY TO OBLIGE. A LONG-TERM GUEST IS ALWAYS APPRECIATED IN THESE LONESOME TIMES.",
-   "dst": "",
+   "dst": "在其他任何情况下，我都会很乐意答应。在这寂寞的时光里，长住的客人总是很受欢迎的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1498,7 +1498,7 @@
   },
   "Beyond the Grave#149": {
    "src": "BUT I CAN NOT. I WILL NOT.",
-   "dst": "",
+   "dst": "但我不能。我也不会。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1508,7 +1508,7 @@
   },
   "Beyond the Grave#150": {
    "src": "...I HOPE YOU WILL UNDERSTAND.",
-   "dst": "",
+   "dst": "……希望你能明白。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1518,7 +1518,7 @@
   },
   "Beyond the Grave#151": {
    "src": "...GO. DO NOT LINGER HERE ANY LONGER.",
-   "dst": "",
+   "dst": "……去吧。别再在这里逗留了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1528,7 +1528,7 @@
   },
   "Beyond the Grave#152": {
    "src": "THE GAME IS IN THE OTHER UPSTAIRS ROOM, ON THE OTHER END OF THE MANSION. I THINK YOU WILL ENJOY IT.",
-   "dst": "",
+   "dst": "游戏在楼上另一个房间，宅邸的另一头。我想你会喜欢的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1538,7 +1538,7 @@
   },
   "Beyond the Grave#153": {
    "src": "I CANNOT HELP BUT NOTICE YOU ARE STILL HERE. ARE YOU LOST? THE GAME IS READY FOR YOU IN THE OTHER UPSTAIRS ROOM, ON THE OTHER END OF THE MANSION.",
-   "dst": "",
+   "dst": "我不禁注意到你还在这里。迷路了吗？游戏已经在楼上另一个房间为你准备好了，就在宅邸的另一头。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1548,7 +1548,7 @@
   },
   "Beyond the Grave#154": {
    "src": "Find a way to exit the strange realm by looking around the mansion.",
-   "dst": "",
+   "dst": "在宅邸里四处查看，找到离开这个奇异领域的方法。",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -1558,7 +1558,7 @@
   },
   "Beyond the Grave#155": {
    "src": "WELL, I DID SAY YOU NEED TO BE SITTING ON THE COUCH. THE SCREEN TURNS OFF IF YOU MOVE TOO FAR AWAY. YOU'LL HAVE TO START OVER.",
-   "dst": "",
+   "dst": "嗯，我确实说过你得坐在沙发上。离得太远屏幕就会关掉。你得重新开始了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1568,7 +1568,7 @@
   },
   "Beyond the Grave#156": {
    "src": "IMPRESSIVE. HOWEVER, THAT WAS SIMPLY ROUND {~}, OUT OF {~}. EACH ONE WILL BE PROGRESSIVELY MORE DIFFICULT THAN THE LAST. READY?",
-   "dst": "",
+   "dst": "了不起。不过，那只是第 {~} 轮，共 {~} 轮。每一轮都会比上一轮更难。准备好了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1578,7 +1578,7 @@
   },
   "Beyond the Grave#157": {
    "src": "...AH, THE LOOK ON YOUR FACE. PRICELESS. GIVEN HOW MY SKULL IS SOLID, MY GUESTS HAVE TO MEET MY FILL OF MAKING FACES FOR ME.",
-   "dst": "",
+   "dst": "……啊，你脸上那表情。千金难买。毕竟我的头骨是硬的，只能靠客人帮我过足做鬼脸的瘾。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1588,7 +1588,7 @@
   },
   "Beyond the Grave#158": {
    "src": "SEEING AS YOU NEED TO LEAVE SOON, I HAVE ELECTED TO CUT THE QUIZ SHOW SHORT. FOR NOW, WE WILL PICK BACK UP WHERE WE LEFT OFF ONCE YOU INEVITABLY RETURN.",
-   "dst": "",
+   "dst": "既然你很快就得离开，我决定把问答节目缩短。暂时先这样，等你不可避免地回来时，我们再从中断的地方继续。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1598,7 +1598,7 @@
   },
   "Beyond the Grave#159": {
    "src": "...WAS IT ENJOYABLE? I HAD PUT A GREAT DEAL OF WORK INTO IT.",
-   "dst": "",
+   "dst": "……好玩吗？我花了很多心思准备的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1608,7 +1608,7 @@
   },
   "Beyond the Grave#160": {
    "src": "I AM GLAD. I PUT A LOT OF TIME IN ENSURING MY GUESTS ARE ENTERTAINED HERE.",
-   "dst": "",
+   "dst": "那我就放心了。我花了很多时间确保我的客人在这里玩得开心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1618,7 +1618,7 @@
   },
   "Beyond the Grave#161": {
    "src": "I SEE. VERY WELL. YOUR FEEDBACK IS APPRECIATED. I WILL HAVE TO MAKE SOME REVISIONS.",
-   "dst": "",
+   "dst": "我明白了。好吧。感谢你的意见。我得做些修改了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1628,7 +1628,7 @@
   },
   "Beyond the Grave#162": {
    "src": "THEN THAT IS ALL. IF ONLY YOU COULD STAY LONGER- I DO ENJOY ACTIVITIES WITH LUCID GUESTS. COOK CLUBS, LITTLE PARADES... BUT IT WILL HAVE TO WAIT.",
-   "dst": "",
+   "dst": "那就这样了。要是你能多待一会儿就好了——我很喜欢跟清醒的客人一起活动。烹饪社、小游行……不过只能等以后了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1638,7 +1638,7 @@
   },
   "Beyond the Grave#163": {
    "src": "NOW. THIS MANOR HASN'T GOT A BACK DOOR, SO I WILL NEED TO MAKE ONE FOR YOU TO EXIT. EXCUSE THE NOISE FOR MOMENT, AND TAKE THE NEW EXIT ANY TIME YOU LIKE.",
-   "dst": "",
+   "dst": "好了。这座宅邸没有后门，所以我得给你开一个出口。请稍微忍耐一下噪音，随时都可以从新出口离开。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1648,7 +1648,7 @@
   },
   "Beyond the Grave#164": {
    "src": "WELL, I DID SAY YOU NEED TO BE SITTING ON THE COUCH. THE SCREEN TURNS OFF IF YOU MOVE TOO FAR AWAY. YOU'LL HAVE TO START OVER.",
-   "dst": "",
+   "dst": "嗯，我确实说过你得坐在沙发上。离得太远屏幕就会关掉。你得重新开始了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1658,7 +1658,7 @@
   },
   "Beyond the Grave#165": {
    "src": "SO, THERE YOU GO, WALKING BACK INTO THE LONG DREAM OF LIFE.",
-   "dst": "",
+   "dst": "那么，你就这样走回生命那场漫长的梦里了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1668,7 +1668,7 @@
   },
   "Beyond the Grave#166": {
    "src": "IT WAS A SHORT STAY. BUT, I DID ENJOY HAVING YOU HERE. I ALWAYS DO LIKE THE GUESTS WHO CAN SEE ME FOR WHAT I AM.",
-   "dst": "",
+   "dst": "虽然停留得很短。但我确实很高兴有你来。我一向喜欢能看清我真面目的客人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1678,7 +1678,7 @@
   },
   "Beyond the Grave#167": {
    "src": "THE CIRCUMSTANCES HAVE NEVER ALIGNED FOR A GUEST TO LEAVE THIS WAY. TYPICALLY, THEY WILL MOVE ON AND EVENTUALLY RETURN TO THE CYCLE.",
-   "dst": "",
+   "dst": "从来没有哪位客人碰上能以这种方式离开的时机。通常，他们会继续前行，最终回归轮回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1688,7 +1688,7 @@
   },
   "Beyond the Grave#168": {
    "src": "SO IN A WAY, THIS CANNOT BE CALLED A \"GOODBYE.\" AH HA HA. NO, INSTEAD IT IS A \"SEE YOU SOON.\"",
-   "dst": "",
+   "dst": "所以某种意义上，这不能叫“再见”。啊哈哈。不，这应该叫“待会见”。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1698,7 +1698,7 @@
   },
   "Beyond the Grave#169": {
    "src": "Defeat Krolton to earn your way back to the living.",
-   "dst": "",
+   "dst": "击败 Krolton，赢得回到生者之中的机会。",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -1708,7 +1708,7 @@
   },
   "Beyond the Grave#170": {
    "src": "...ONE LAST THING. YOU HAVE NOT YET ENTIRELY REINTEGRATED INTO YOUR BODY.",
-   "dst": "",
+   "dst": "……最后一件事。你还没有完全回到你的身体里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1718,7 +1718,7 @@
   },
   "Beyond the Grave#171": {
    "src": "AS SUCH, FOR THE TIME BEING, MORTALITY IS MERELY A SUGGESTION. SO BE AS RECKLESS AS YOU WANT.",
-   "dst": "",
+   "dst": "因此，暂时来说，死亡对你只是个建议。所以尽管放手去莽吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1728,7 +1728,7 @@
   },
   "Beyond the Grave#172": {
    "src": "SO LONG AS THE HORROR DIES, NOT MATTER THE CAUSE, IT WILL BE ENOUGH FOR OUR NEEDS. REMEMBER THAT.",
-   "dst": "",
+   "dst": "只要那个恐怖之物死了，不管是怎么死的，都足以满足我们的需要。记住这一点。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1738,7 +1738,7 @@
   },
   "Beyond the Grave#173": {
    "src": "AND THERE SHALL I DECLARE IT BE DONE. THE HORROR'S SPARK UNWOVEN.. AND YOU, BODY, SOUL, SPARK, KNITTED BACK TOGETHER. A NEW PATCH FOR THE TAPESTRY OF YOUR LIFE.",
-   "dst": "",
+   "dst": "那么我在此宣告，一切已了结。恐怖之物的火花已被拆解……而你，身体、灵魂、火花，重新缝合为一。为你人生的挂毯补上一块新布。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1748,7 +1748,7 @@
   },
   "Beyond the Grave#174": {
    "src": "IT WAS NICE TO SEE THIS PLACE IN PERSON AGAIN, EVEN IF I WAS ONLY VISITING FOR A MOMENT. BUT NOW I MUST RETURN TO MY OWN BUSINESS.",
-   "dst": "",
+   "dst": "能再次亲眼看看这个地方真好，就算我只是来一会儿。但现在我得回去忙我自己的事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1758,7 +1758,7 @@
   },
   "Beyond the Grave#175": {
    "src": "THIS MEANS FAREWELL, FOR THE TIME BEING. WHEN WE NEXT MEET, YOU WILL HAVE REACHED YOUR FINAL END.",
-   "dst": "",
+   "dst": "这意味着暂时道别了。下次我们见面时，你就已经走到最终的终点了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1768,7 +1768,7 @@
   },
   "Beyond the Grave#176": {
    "src": "TIL THEN, TREASURE YOUR LIFE AS YOU LIVE IT TO THE FULLEST. I LOOK FORWARD TO SHARING STORIES OVER TEA, AH HA HA.",
-   "dst": "",
+   "dst": "在那之前，好好珍惜你的人生，把它活得淋漓尽致。我期待着跟你边喝茶边分享故事，啊哈哈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1778,7 +1778,7 @@
   },
   "Beyond the Grave#177": {
    "src": "Take proof of Krolton's demise to Irlok at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "把 Krolton 已死的证据带给 [{~}, {~}, -{~}] 的 Irlok",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -1788,7 +1788,7 @@
   },
   "Beyond the Grave#178": {
    "src": "Oh, thank goodness. You've returned- not free of wear, but certainly alive. Did you need to flee from Krolton, or is he...?",
-   "dst": "",
+   "dst": "噢，谢天谢地。你回来了——虽然带着伤，但肯定还活着。你是不得不从 Krolton 那里逃出来，还是它已经……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1798,7 +1798,7 @@
   },
   "Beyond the Grave#179": {
    "src": "Truly? The beast is dead?",
-   "dst": "",
+   "dst": "真的？那头野兽死了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1808,7 +1808,7 @@
   },
   "Beyond the Grave#180": {
    "src": "Gracious, I don't think I've ever been so relieved. Krolton was responsible for thousands of deaths long ago. You've prevented an oncoming massacre!",
-   "dst": "",
+   "dst": "天啊，我想我从来没有这么如释重负过。很久以前 Krolton 造成了数以千计的死亡。你阻止了一场即将到来的屠杀！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1818,7 +1818,7 @@
   },
   "Beyond the Grave#181": {
    "src": "Bantisu Temple owes you a great deal. Here then- a suitable reward.",
-   "dst": "",
+   "dst": "Bantisu 寺欠你一个大人情。来吧——这是一份相称的奖赏。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1828,7 +1828,7 @@
   },
   "Beyond the Grave#182": {
    "src": "A powerful Bantisu artifact, as a reward for defeating a beast that menaced in antiquated times.",
-   "dst": "",
+   "dst": "一件强大的 Bantisu 宝物，奖赏你打败了那头在远古时代肆虐的野兽。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1838,7 +1838,7 @@
   },
   "Beyond the Grave#183": {
    "src": "Safe travels, human. Whether it was luck or strength that had you prevail, I pray it will not fail you in the future.",
-   "dst": "",
+   "dst": "一路平安，人类。无论让你获胜的是运气还是力量，我都祈祷它将来不会辜负你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1848,7 +1848,7 @@
   },
   "Beyond the Grave#184": {
    "src": "REVISITING OLD MEMORIES, ARE WE?",
-   "dst": "",
+   "dst": "在重温旧日回忆，是吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1858,7 +1858,7 @@
   },
   "Beyond the Grave#185": {
    "src": "THIS BOOK IS SO BAD, EVEN THE LONG-WINDED AND PAINFUL DEATH OF SWEENEY S. GREENVILLE IS BETTER THAN THIS.",
-   "dst": "",
+   "dst": "这本书烂到连 Sweeney S. Greenville 那漫长又痛苦的死法都比它好看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
