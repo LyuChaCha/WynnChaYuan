@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Meaningful Holiday",
   "count": 108,
-  "translated": 0,
+  "translated": 108,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Meaningful Holiday#000": {
    "src": "Talk to Haily in {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 {p} [{~}, {~}, -{~}] 的 Haily 交谈",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -18,7 +18,7 @@
   },
   "Meaningful Holiday#001": {
    "src": "Hello, dear. My name is Haily. Nice to meet you.",
-   "dst": "",
+   "dst": "你好，亲爱的。我叫 Haily。很高兴认识你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -28,7 +28,7 @@
   },
   "Meaningful Holiday#002": {
    "src": "This is the {p} Charity center. We're looking for volunteers to help the homeless this year.",
-   "dst": "",
+   "dst": "这里是 {p} 慈善中心。我们今年在招募志愿者帮助无家可归的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -38,7 +38,7 @@
   },
   "Meaningful Holiday#003": {
    "src": "If you want to help someone else this year, our boss Nick is already in the thick of it.",
-   "dst": "",
+   "dst": "如果你今年想帮助别人，我们的负责人 Nick 已经在第一线忙着了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -48,7 +48,7 @@
   },
   "Meaningful Holiday#004": {
    "src": "He's a really special man. I'll write his location down for you in your book. Oh, remember this is charity work, so hopefully gratitude is a good enough reward for you.",
-   "dst": "",
+   "dst": "他是个很特别的人。我把他的位置写在你的书里。噢，记住这是慈善工作，希望别人的感激对你来说就是足够的回报。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -58,7 +58,7 @@
   },
   "Meaningful Holiday#005": {
    "src": "Go talk to Haily's friend Nick at the poor area.",
-   "dst": "",
+   "dst": "去贫民区找 Haily 的朋友 Nick 谈谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -68,7 +68,7 @@
   },
   "Meaningful Holiday#006": {
    "src": "Oh. Oh... Oh dear. There's more people here than ever.",
-   "dst": "",
+   "dst": "噢。噢……噢天哪。这里的人比以往都多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -78,7 +78,7 @@
   },
   "Meaningful Holiday#007": {
    "src": "Hm, are you just passing through? Oh! A volunteer!",
-   "dst": "",
+   "dst": "嗯，你只是路过吗？噢！是志愿者！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -88,7 +88,7 @@
   },
   "Meaningful Holiday#008": {
    "src": "You're the only one this year. Things have really changed. We used to have hundreds of volunteers this time of year.",
-   "dst": "",
+   "dst": "你是今年唯一的一个。情况真的变了。以前每年这个时候都有好几百个志愿者。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -98,7 +98,7 @@
   },
   "Meaningful Holiday#009": {
    "src": "The people here are starving. There's no two ways about it.",
-   "dst": "",
+   "dst": "这里的人都在挨饿。这是明摆着的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -108,7 +108,7 @@
   },
   "Meaningful Holiday#010": {
    "src": "I don't know how we're going to feed everyone this year.",
-   "dst": "",
+   "dst": "我不知道今年要怎么让所有人都吃上饭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -118,7 +118,7 @@
   },
   "Meaningful Holiday#011": {
    "src": "The man who runs the budget store used to be homeless... He knows the struggles they face.",
-   "dst": "",
+   "dst": "经营廉价商店的那个人以前也无家可归……他知道他们面临的难处。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -128,7 +128,7 @@
   },
   "Meaningful Holiday#012": {
    "src": "I'll look after things here. Can you go to the budget store? It's really close. Any food is gratefully received.",
-   "dst": "",
+   "dst": "这里我来照看。你能去廉价商店一趟吗？就在附近。任何食物我们都会感激地收下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -138,7 +138,7 @@
   },
   "Meaningful Holiday#013": {
    "src": "Go to the budget store and ask for food.",
-   "dst": "",
+   "dst": "去廉价商店讨些食物。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -148,7 +148,7 @@
   },
   "Meaningful Holiday#014": {
    "src": "'ello young lad.",
-   "dst": "",
+   "dst": "你好啊，小伙子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -158,7 +158,7 @@
   },
   "Meaningful Holiday#015": {
    "src": "What can I do fer ye?",
-   "dst": "",
+   "dst": "有啥能为你效劳的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -168,7 +168,7 @@
   },
   "Meaningful Holiday#016": {
    "src": "A food donation fer the 'omless?",
-   "dst": "",
+   "dst": "给无家可归的人捐点吃的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -178,7 +178,7 @@
   },
   "Meaningful Holiday#017": {
    "src": "I'm sorry but everyfin is sold out, everyone is preparing for Craftmas lad.",
-   "dst": "",
+   "dst": "抱歉啊，东西全卖光了，小伙子，大家都在准备过 Craftmas 呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -188,7 +188,7 @@
   },
   "Meaningful Holiday#018": {
    "src": "I might have something in the attic, if you find anyfin, you can 'ave it. I know how difficult it gets.",
-   "dst": "",
+   "dst": "阁楼上可能还有点东西，你要是找到啥，就拿去吧。我知道日子有多难熬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -198,7 +198,7 @@
   },
   "Meaningful Holiday#019": {
    "src": "Look for food on the second floor.",
-   "dst": "",
+   "dst": "在二楼寻找食物。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -208,7 +208,7 @@
   },
   "Meaningful Holiday#020": {
    "src": "Hm... This apple has seen betta days.",
-   "dst": "",
+   "dst": "嗯……这颗苹果已经不太新鲜了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -218,7 +218,7 @@
   },
   "Meaningful Holiday#021": {
    "src": "Looks like i'm fresh outta food. Barely got enough to feed myself.",
-   "dst": "",
+   "dst": "看来我这里的吃的全没了。连我自己都快不够吃了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -228,7 +228,7 @@
   },
   "Meaningful Holiday#022": {
    "src": "I wish I had something to give this year. I guess people are having a feast in the city.",
-   "dst": "",
+   "dst": "真希望我今年有东西能拿出来。我猜大家都在城里大吃大喝吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -238,7 +238,7 @@
   },
   "Meaningful Holiday#023": {
    "src": "Return to Nick and tell him the bad news.",
-   "dst": "",
+   "dst": "回到 Nick 那里，告诉他这个坏消息。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -248,7 +248,7 @@
   },
   "Meaningful Holiday#024": {
    "src": "Any news?",
-   "dst": "",
+   "dst": "有消息吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -258,7 +258,7 @@
   },
   "Meaningful Holiday#025": {
    "src": "I see. I was counting on him.",
-   "dst": "",
+   "dst": "我明白了。我本来还指望他呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -268,7 +268,7 @@
   },
   "Meaningful Holiday#026": {
    "src": "I can't be too upset. He donates so much the rest of the year.",
-   "dst": "",
+   "dst": "我也不能太难过。一年里其他时候他捐了很多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -278,7 +278,7 @@
   },
   "Meaningful Holiday#027": {
    "src": "We may have to ask the farmers directly...",
-   "dst": "",
+   "dst": "我们可能得直接去找农夫了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -288,7 +288,7 @@
   },
   "Meaningful Holiday#028": {
    "src": "I know someone in {p} with a kind heart.",
-   "dst": "",
+   "dst": "我认识 {p} 一个心地善良的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -298,7 +298,7 @@
   },
   "Meaningful Holiday#029": {
    "src": "We've fallen out before, seems he didn't understand what a donation was.",
-   "dst": "",
+   "dst": "我们以前闹翻过，他好像不太明白捐赠是什么意思。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -308,7 +308,7 @@
   },
   "Meaningful Holiday#030": {
    "src": "There is a shortcut south from here, in a cave. Go through there.",
-   "dst": "",
+   "dst": "从这里往南有一条捷径，在一个洞穴里。从那里过去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -318,7 +318,7 @@
   },
   "Meaningful Holiday#031": {
    "src": "Oh, also, could you give this blanket to Margaret while you're down in the tunnel? Just follow the road behind me.",
-   "dst": "",
+   "dst": "噢，还有，你下到隧道的时候，能不能把这条毯子交给 Margaret？沿着我身后的路走就行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -328,7 +328,7 @@
   },
   "Meaningful Holiday#032": {
    "src": "Bring the blanket to the woman in the tunnel south of Nick.",
-   "dst": "",
+   "dst": "把毯子交给 Nick 南边隧道里的那位妇人。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -338,7 +338,7 @@
   },
   "Meaningful Holiday#033": {
    "src": "Oh, please don't move me along. I have nowhere else to go!",
-   "dst": "",
+   "dst": "噢，拜托别赶我走。我没有别的地方可去了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -348,7 +348,7 @@
   },
   "Meaningful Holiday#034": {
    "src": "Oh, a blanket for me? How sweet... From Nick, you say? He's always so kind... Thank you, as well.",
-   "dst": "",
+   "dst": "噢，给我的毯子？真贴心……你说是 Nick 送的？他总是这么好心……也谢谢你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -358,7 +358,7 @@
   },
   "Meaningful Holiday#035": {
    "src": "If you want to get to {p} quickly, just keep going through this tunnel. Some unfriendly homeless folks live around here too, so be careful. It's so sad, their state.",
-   "dst": "",
+   "dst": "如果你想快点到 {p}，就沿着这条隧道一直走。这附近也住着一些不太友善的流浪汉，所以要小心。他们的处境真叫人难过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -368,7 +368,7 @@
   },
   "Meaningful Holiday#036": {
    "src": "Continue the tunnel and find Nick's friend.",
-   "dst": "",
+   "dst": "继续穿过隧道，找到 Nick 的朋友。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -378,7 +378,7 @@
   },
   "Meaningful Holiday#037": {
    "src": "Welcome to my farm! Looking to buy some of my fresh crops?",
-   "dst": "",
+   "dst": "欢迎来到我的农场！想买点我新鲜的作物吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -388,7 +388,7 @@
   },
   "Meaningful Holiday#038": {
    "src": "Well, it seems you're out of luck. I've just sold the last of them from this harvest.",
-   "dst": "",
+   "dst": "嗯，看来你运气不好。这一季收成的最后一批我刚卖完。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -398,7 +398,7 @@
   },
   "Meaningful Holiday#039": {
    "src": "It was all for that big Craftmas feast happening in {p}. Wish I could help you out, but I'm fresh out of food to sell you.",
-   "dst": "",
+   "dst": "全都卖给 {p} 那场盛大的 Craftmas 宴会了。真希望能帮上你，但我手上已经没有能卖给你的吃的了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -408,7 +408,7 @@
   },
   "Meaningful Holiday#040": {
    "src": "Wait, I bet Nick sent you, didn't he? Well, he's coming up on your left. Remind him that this isn't a charity.",
-   "dst": "",
+   "dst": "等等，我敢打赌是 Nick 叫你来的，对吧？嗯，他正从你左边过来。提醒他一下，我这里可不是慈善机构。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -418,7 +418,7 @@
   },
   "Meaningful Holiday#041": {
    "src": "Hey, {u}! Any luck?",
-   "dst": "",
+   "dst": "嘿，{u}！有收获吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -428,7 +428,7 @@
   },
   "Meaningful Holiday#042": {
    "src": "We can't get any food? We're running out of options here...",
-   "dst": "",
+   "dst": "我们弄不到任何食物？我们快没办法了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -438,7 +438,7 @@
   },
   "Meaningful Holiday#043": {
    "src": "Well, there's only one person left that we can appeal to at this time of year.",
-   "dst": "",
+   "dst": "嗯，每年这个时候，我们只剩一个人可以求助了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -448,7 +448,7 @@
   },
   "Meaningful Holiday#044": {
    "src": "Follow me.",
-   "dst": "",
+   "dst": "跟我来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -458,7 +458,7 @@
   },
   "Meaningful Holiday#045": {
    "src": "Explore the area and look for Santa.",
-   "dst": "",
+   "dst": "在这一带探索，寻找圣诞老人。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -468,7 +468,7 @@
   },
   "Meaningful Holiday#046": {
    "src": "Heya! I just finished decorating this christmas tree!",
-   "dst": "",
+   "dst": "嗨！我刚把这棵圣诞树装饰好！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -478,7 +478,7 @@
   },
   "Meaningful Holiday#047": {
    "src": "Oh, you're looking for Santa?",
-   "dst": "",
+   "dst": "噢，你在找圣诞老人？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -488,7 +488,7 @@
   },
   "Meaningful Holiday#048": {
    "src": "He is right down the stairs to the right.",
-   "dst": "",
+   "dst": "他就在楼梯下去右边。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -498,7 +498,7 @@
   },
   "Meaningful Holiday#049": {
    "src": "Enter Santa's home and speak to him.",
-   "dst": "",
+   "dst": "进入圣诞老人的家，与他交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -508,7 +508,7 @@
   },
   "Meaningful Holiday#050": {
    "src": "Nick... You know the deal.",
-   "dst": "",
+   "dst": "Nick……你知道规矩的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -518,7 +518,7 @@
   },
   "Meaningful Holiday#051": {
    "src": "The council all have their areas to care for. Yours is {p}. How you care for it is your responsibility.",
-   "dst": "",
+   "dst": "理事会的每个人都有各自负责照顾的地区。你负责的是 {p}。怎么照顾它是你的责任。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -528,7 +528,7 @@
   },
   "Meaningful Holiday#052": {
    "src": "There's five times more homeless and hungry than last year!",
-   "dst": "",
+   "dst": "无家可归、挨饿的人比去年多了五倍！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -538,7 +538,7 @@
   },
   "Meaningful Holiday#053": {
    "src": "Nick, I know times are tough there, but-",
-   "dst": "",
+   "dst": "Nick，我知道那里日子不好过，但是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -548,7 +548,7 @@
   },
   "Meaningful Holiday#054": {
    "src": "Tough?! It's impossible! What happened to people's good will? I had one volunteer this year! ONE!",
-   "dst": "",
+   "dst": "不好过？！根本是不可能！大家的善心都跑哪去了？我今年只有一个志愿者！一个！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -558,7 +558,7 @@
   },
   "Meaningful Holiday#055": {
    "src": "I'm sorry Nick. You could go to {p} and ask there, they have a feast big enough to feed an army!",
-   "dst": "",
+   "dst": "我很抱歉，Nick。你可以去 {p} 问问，他们的宴会大到能喂饱一支军队！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -568,7 +568,7 @@
   },
   "Meaningful Holiday#056": {
    "src": "Hmmm... Oh, sorry. I miscalculated your journey here. Good to see you.",
-   "dst": "",
+   "dst": "嗯……噢，抱歉。我算错你赶过来的时间了。很高兴见到你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -578,7 +578,7 @@
   },
   "Meaningful Holiday#057": {
    "src": "I suppose you heard Santa and I. Our next location is {p}.",
-   "dst": "",
+   "dst": "我想你听到我和圣诞老人的话了。我们的下一站是 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -588,7 +588,7 @@
   },
   "Meaningful Holiday#058": {
    "src": "Alright, that's settled then. Leave through the fireplace behind me, it will bring you directly to {p}. Good luck, Nick.",
-   "dst": "",
+   "dst": "好，那就这么定了。从我身后的壁炉离开，它会直接把你们送到 {p}。祝你好运，Nick。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -598,7 +598,7 @@
   },
   "Meaningful Holiday#059": {
    "src": "Leave through the portal behind Santa.",
-   "dst": "",
+   "dst": "从圣诞老人身后的传送门离开。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -608,7 +608,7 @@
   },
   "Meaningful Holiday#060": {
    "src": "Enter the ball room.",
-   "dst": "",
+   "dst": "进入舞厅。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -618,7 +618,7 @@
   },
   "Meaningful Holiday#061": {
    "src": "Wow. The people here live in such grandure. I wonder if they know people are starving to the east.",
-   "dst": "",
+   "dst": "哇。这里的人过得真奢华。不知道他们知不知道东边有人正在挨饿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -628,7 +628,7 @@
   },
   "Meaningful Holiday#062": {
    "src": "Let's ask around for some donations.",
-   "dst": "",
+   "dst": "我们四处问问，看能不能讨到一些捐赠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -638,7 +638,7 @@
   },
   "Meaningful Holiday#063": {
    "src": "More importantly, let's hope they'll share a trifle of food.",
-   "dst": "",
+   "dst": "更重要的是，希望他们愿意分出一点点食物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -648,7 +648,7 @@
   },
   "Meaningful Holiday#064": {
    "src": "Ask the guests for food.",
-   "dst": "",
+   "dst": "向宾客讨要食物。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -658,7 +658,7 @@
   },
   "Meaningful Holiday#065": {
    "src": "What are you doing here?",
-   "dst": "",
+   "dst": "你在这里干什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -668,7 +668,7 @@
   },
   "Meaningful Holiday#066": {
    "src": "This event is invite-only.",
-   "dst": "",
+   "dst": "这场活动只限受邀者参加。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -678,7 +678,7 @@
   },
   "Meaningful Holiday#067": {
    "src": "You aren't even in a formal dress.",
-   "dst": "",
+   "dst": "你连正式礼服都没穿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -688,7 +688,7 @@
   },
   "Meaningful Holiday#068": {
    "src": "What do you want?!",
-   "dst": "",
+   "dst": "你想干什么？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -698,7 +698,7 @@
   },
   "Meaningful Holiday#069": {
    "src": "Food? You want food? Does this look like a charity to you?",
-   "dst": "",
+   "dst": "食物？你想要食物？你看这里像慈善机构吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -708,7 +708,7 @@
   },
   "Meaningful Holiday#070": {
    "src": "Of course not! We have an obligation to feed our partygoers, not some poor scraps of men in the desert!",
-   "dst": "",
+   "dst": "当然不像！我们有义务招待我们的宾客，而不是喂饱沙漠里那些可怜的穷鬼！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -718,7 +718,7 @@
   },
   "Meaningful Holiday#071": {
    "src": "Now get out of here before I call the security golems. And don't even think of stealing from the kitchen!",
-   "dst": "",
+   "dst": "趁我还没叫安保魔像，快滚出去。还有，想都别想去厨房偷东西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -728,7 +728,7 @@
   },
   "Meaningful Holiday#072": {
    "src": "Steal the food from the kitchen and talk to Nick.",
-   "dst": "",
+   "dst": "从厨房偷走食物，然后与 Nick 交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -738,7 +738,7 @@
   },
   "Meaningful Holiday#073": {
    "src": "Were you able to get any food?",
-   "dst": "",
+   "dst": "你弄到食物了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -748,7 +748,7 @@
   },
   "Meaningful Holiday#074": {
    "src": "You do?! I didn't expect them to be so generous, a whole crate?",
-   "dst": "",
+   "dst": "你弄到了？！没想到他们这么慷慨，一整箱？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -758,7 +758,7 @@
   },
   "Meaningful Holiday#075": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -768,7 +768,7 @@
   },
   "Meaningful Holiday#076": {
    "src": "Oh...",
-   "dst": "",
+   "dst": "噢……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -778,7 +778,7 @@
   },
   "Meaningful Holiday#077": {
    "src": "Stealing is not in the christmas spirit... But I think I can make this work.",
-   "dst": "",
+   "dst": "偷东西可不符合圣诞精神……不过我想我能让这件事行得通。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -788,7 +788,7 @@
   },
   "Meaningful Holiday#078": {
    "src": "Go on ahead. I have a plan. Don't worry, I'll return all this food.",
-   "dst": "",
+   "dst": "你先走吧。我有个计划。别担心，这些食物我都会还回去的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -798,7 +798,7 @@
   },
   "Meaningful Holiday#079": {
    "src": "Escape the ball with Nick.",
-   "dst": "",
+   "dst": "与 Nick 一起逃出舞会。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -808,7 +808,7 @@
   },
   "Meaningful Holiday#080": {
    "src": "Listen up everyone!",
-   "dst": "",
+   "dst": "大家听好！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -818,7 +818,7 @@
   },
   "Meaningful Holiday#081": {
    "src": "I know you are hungry. Because I am too.",
-   "dst": "",
+   "dst": "我知道你们饿了。因为我也饿了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -828,7 +828,7 @@
   },
   "Meaningful Holiday#082": {
    "src": "But your dinner will not be served tonight.",
-   "dst": "",
+   "dst": "但今晚你们的晚餐不会上桌了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -838,7 +838,7 @@
   },
   "Meaningful Holiday#083": {
    "src": "There will be no Craftmas feast this year!",
-   "dst": "",
+   "dst": "今年不会有 Craftmas 宴会了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -848,7 +848,7 @@
   },
   "Meaningful Holiday#084": {
    "src": "You can't do that!",
-   "dst": "",
+   "dst": "你不能这样做！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -858,7 +858,7 @@
   },
   "Meaningful Holiday#085": {
    "src": "The food on the table isn't enough to feed everyone here!",
-   "dst": "",
+   "dst": "桌上的食物不够这里所有人吃！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -868,7 +868,7 @@
   },
   "Meaningful Holiday#086": {
    "src": "This one night, this one missed meal.",
-   "dst": "",
+   "dst": "就这一个晚上，就错过这一顿饭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -878,7 +878,7 @@
   },
   "Meaningful Holiday#087": {
    "src": "This is how thousands of people live every day.",
-   "dst": "",
+   "dst": "而成千上万的人每天都是这样过的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -888,7 +888,7 @@
   },
   "Meaningful Holiday#088": {
    "src": "Hungry, wondering when the food will be available.",
-   "dst": "",
+   "dst": "饿着肚子，不知道什么时候才有东西吃。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -898,7 +898,7 @@
   },
   "Meaningful Holiday#089": {
    "src": "And while you sit there with empty stomachs be thankful for what you have. Spare a thought for those who have not.",
-   "dst": "",
+   "dst": "当你们空着肚子坐在那里时，请感激你们所拥有的。也想想那些一无所有的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -908,7 +908,7 @@
   },
   "Meaningful Holiday#090": {
    "src": "Hundreds of men, women and children, just like you, will not eat tonight, at all.",
-   "dst": "",
+   "dst": "数百名跟你们一样的男人、女人和孩子，今晚一口饭都吃不上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -918,7 +918,7 @@
   },
   "Meaningful Holiday#091": {
    "src": "All because this enormous feast was not enough. {p} bought all the food, cheap or expensive.",
-   "dst": "",
+   "dst": "全都是因为这场盛大的宴会还嫌不够。{p} 把所有的食物都买光了，不管便宜还是昂贵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -928,7 +928,7 @@
   },
   "Meaningful Holiday#092": {
    "src": "I'm here to remind you the real meaning of this day. To think of others..",
-   "dst": "",
+   "dst": "我来这里是要提醒你们这一天真正的意义。那就是为他人着想……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -938,7 +938,7 @@
   },
   "Meaningful Holiday#093": {
    "src": "I will return your meal tonight, but while you eat it... I want you to remember every empty mouth it could have fed.",
-   "dst": "",
+   "dst": "今晚我会把你们的晚餐还回来，但当你们吃的时候……我希望你们记住，这些食物本可以喂饱多少张空空的嘴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -948,7 +948,7 @@
   },
   "Meaningful Holiday#094": {
    "src": "Share what you have, be thankful for what you are given.",
-   "dst": "",
+   "dst": "分享你们所拥有的，感激你们所得到的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -958,7 +958,7 @@
   },
   "Meaningful Holiday#095": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -968,7 +968,7 @@
   },
   "Meaningful Holiday#096": {
    "src": "Well, looks like you came through yet again Nick.",
-   "dst": "",
+   "dst": "嗯，看来你又一次做到了，Nick。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -978,7 +978,7 @@
   },
   "Meaningful Holiday#097": {
    "src": "I came to see if I could help out. But it looks like you've done it.",
-   "dst": "",
+   "dst": "我来看看能不能帮上忙。不过看来你已经办到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -988,7 +988,7 @@
   },
   "Meaningful Holiday#098": {
    "src": "Well, I guess there is only one thing left to do to complete this scene.",
-   "dst": "",
+   "dst": "嗯，我想要让这一幕圆满，只剩下一件事要做了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -998,7 +998,7 @@
   },
   "Meaningful Holiday#099": {
    "src": "Hope you all have a merry craftmas. Ho-ho!",
-   "dst": "",
+   "dst": "祝大家 Craftmas 快乐。呵呵！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -1008,7 +1008,7 @@
   },
   "Meaningful Holiday#100": {
    "src": "Talk to Nick.",
-   "dst": "",
+   "dst": "与 Nick 交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Meaningful Holiday",
@@ -1018,7 +1018,7 @@
   },
   "Meaningful Holiday#101": {
    "src": "It looks like my little speech brought the rich back down to earth.",
-   "dst": "",
+   "dst": "看来我那番小小的演讲让那些有钱人回到了现实。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -1028,7 +1028,7 @@
   },
   "Meaningful Holiday#102": {
    "src": "They gave us half of their feast. Can you believe they still had leftovers?",
-   "dst": "",
+   "dst": "他们把一半的宴席分给了我们。你能相信他们居然还有剩吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -1038,7 +1038,7 @@
   },
   "Meaningful Holiday#103": {
    "src": "All of that food, going straight to waste.",
-   "dst": "",
+   "dst": "那么多食物，就这样直接浪费掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -1048,7 +1048,7 @@
   },
   "Meaningful Holiday#104": {
    "src": "They have no idea what they have, compared to these poor folks.",
-   "dst": "",
+   "dst": "跟这些可怜人比起来，他们根本不知道自己拥有多少。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -1058,7 +1058,7 @@
   },
   "Meaningful Holiday#105": {
    "src": "You might be wondering why I know Santa. Well, he's my brother.",
-   "dst": "",
+   "dst": "你可能在想我为什么认识圣诞老人。嗯，他是我哥哥。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -1068,7 +1068,7 @@
   },
   "Meaningful Holiday#106": {
    "src": "Me and my siblings take care of people at Craftmas. My area is the {p} desert. I guess you could call me Sanda Claus, heh.",
-   "dst": "",
+   "dst": "我和我的兄弟姐妹们在 Craftmas 照顾大家。我负责的地区是 {p} 沙漠。我想你可以叫我沙诞老人，嘿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
@@ -1078,7 +1078,7 @@
   },
   "Meaningful Holiday#107": {
    "src": "It's people like you that keep the real meaning of this holiday alive. It gets harder every year as the meaning is distorted. Here is a personal gift from me. Thank you.",
-   "dst": "",
+   "dst": "正是像你这样的人，让这个节日真正的意义延续下去。随着它的意义被扭曲，一年比一年难。这是我个人送你的礼物。谢谢你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Meaningful Holiday",
