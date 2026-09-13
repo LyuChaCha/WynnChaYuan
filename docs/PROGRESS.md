@@ -44,7 +44,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 19.8%（5,685 / 28,769）
+## `zh_cn` 简体中文 — 20.0%（5,743 / 28,769）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -72,7 +72,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 12 / 12 | 公會選單<br>Guild menus |
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
-| `gear-*.json` | ███░░░░░░░ 29% | 284 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
+| `gear-*.json` | ███░░░░░░░ 35% | 342 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
 ## `ja_jp` 日本語 — 2.1%（612 / 28,728）
 
