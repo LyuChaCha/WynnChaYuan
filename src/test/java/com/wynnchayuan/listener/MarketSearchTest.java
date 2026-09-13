@@ -199,6 +199,76 @@ public final class MarketSearchTest {
         MarketListener.searching(false);
         listener.onChat(chat("§7有人說：這個增幅器不錯"));
         report("一般聊天不會啟動", !MarketListener.armed());
+
+        // ★ 簡體就地取代之後的提示。先前只認繁體，簡體底下市集搜尋整個沒有啟動。
+        listener.onChat(chat("§5✦ 输入物品名称，或输入 'cancel' 取消："));
+        report("簡體提示也會啟動", MarketListener.armed());
+        listener.onChat(chat("§4✖ 你移动了，聊天输入已取消。"));
+        report("簡體的取消也會關掉", !MarketListener.armed());
+        MarketListener.searching(false);
+
+        // 其他語言靠問當下的譯文：前後只放圖示的那兩行剝掉，留下真正的字
+        String core = MarketListener.core("{#} \n{#} 입력하세요 'cancel'\n{#}");
+        report("譯文剝掉圖示後取最長的那一行（實際：" + core + "）",
+                "입력하세요 'cancel'".equals(core));
+
+        simplified();
+        quantityLines();
+        latinNames();
+    }
+
+    /**
+     * 簡體玩家打的是<b>畫面上看到的</b>名字。
+     *
+     * <h2>實機回報</h2>
+     * 素材袋裡寫「龙之灵气」，打進市集卻說查不到英文名。兩個原因疊在一起：
+     * 那一行是 misc.json 的數量模板（帶佔位符，被當成模板擋掉），
+     * 而 ingredient.json 裡同一個素材寫的是「龙之光环」——同一個東西兩個名字。
+     *
+     * <p>用繁體墊底、簡體疊上去，跟遊戲裡載入的順序一樣。
+     */
+    private static void simplified() {
+        TranslationStore store = new TranslationStore();
+        Path base = Path.of("src/main/resources/assets/wynnchayuan/translations");
+        store.loadAll(List.of(base.resolve(Languages.DEFAULT), base.resolve("zh_cn")));
+        MarketSearch cn = store.market();
+        turns(cn, "龙之光环", "Dragon Aura");
+        turns(cn, "厄运之石", "Doom Stone");
+        turns(cn, "熟透的金色果实", "Ripe Aureate Fruit");
+        // 繁體墊在底下，打繁體一樣找得到
+        turns(cn, "龍之靈氣", "Dragon Aura");
+    }
+
+    /** 數量行（素材袋、背包清單）裡的名字也要收。 */
+    private static void quantityLines() {
+        MarketSearch m = new MarketSearch();
+        m.add("{~} x Dragon Aura {#}{#}{#}{#}", "{~} x 龙之灵气 {#}{#}{#}{#}");
+        m.add("{~} x Doom Stone {#}{#}{#}", "{~} x 厄运之石 {#}{#}{#}");
+        List<String> aura = m.candidates("龙之灵气");
+        report("數量行裡的名字也收（實際：" + aura + "）",
+                aura.equals(List.of("Dragon Aura")));
+        turns(m, "厄运之石", "Doom Stone");
+
+        // 反面：只有一邊是數量行（譯文改了形狀）時對不準，不收
+        MarketSearch odd = new MarketSearch();
+        odd.add("{~} x Dragon Aura {#}{#}{#}{#}", "龙之灵气 ×{~}");
+        report("只有一邊是數量行時不收（實際 " + odd.size() + " 條）", odd.size() == 0);
+    }
+
+    /**
+     * 拉丁字母的譯名。法文、德文的譯名可能整串都是 ASCII，
+     * 一律當英文跳過的話那幾種語言永遠用不了市集搜尋。
+     */
+    private static void latinNames() {
+        MarketSearch m = new MarketSearch();
+        m.add("Doom Stone", "Pierre du Destin");
+        m.add("Cataratite", "Cataratite");
+        report("拉丁字母的譯名整個對上才換",
+                "Doom Stone".equals(m.exact("pierre du destin")));
+        report("拉丁字母只打片段不換", m.exact("Pierre") == null);
+        report("英文原名打進去不會對到東西", m.exact("Doom Stone") == null);
+        // 照抄原文的「譯名」先前會進索引（大小寫比對的疏漏）
+        report("跟原文一樣的不收", m.exact("Cataratite") == null && m.size() == 1);
     }
 
     private static com.wynntils.handlers.chat.event.ChatMessageEvent.Match chat(String text) {

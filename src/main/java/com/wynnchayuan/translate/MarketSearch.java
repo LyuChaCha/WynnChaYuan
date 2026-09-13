@@ -51,13 +51,73 @@ public final class MarketSearch {
         if (english == null || chinese == null) {
             return;
         }
+        String enName = quantityName(english);
+        String zhName = quantityName(chinese);
+        if (enName != null && zhName != null) {
+            english = enName;
+            chinese = zhName;
+        }
         String zh = key(chinese);
         String en = bare(english);
-        if (zh.length() < MIN_NAME || en.isEmpty() || zh.equals(en)
+        // 跟原文一樣的（沒翻、或專有名詞照抄）不收。兩邊都要用 key() 的形狀比：
+        // 先前拿正規化過的中文去比原樣的英文，大小寫與空白一不同就比不到，
+        // 「Cataratite → Cataratite」這種照抄的名字全都進了索引。
+        if (zh.length() < MIN_NAME || en.isEmpty() || zh.equals(key(en))
                 || !looksLikeName(en)) {
             return;
         }
         index.computeIfAbsent(zh, k -> new LinkedHashSet<>()).add(en);
+    }
+
+    /**
+     * 「{@code {~} x 名字 {#}{#}{#}}」那種數量行裡的名字。
+     *
+     * <h2>為什麼</h2>
+     * 素材袋、背包清單是一行一個物品：
+     *
+     * <pre>
+     *   "{~} x Dragon Aura {#}{#}{#}{#}"  -> "{~} x 龙之灵气 {#}{#}{#}{#}"
+     * </pre>
+     *
+     * 玩家在畫面上看到的是這一行裡的名字，打進市集的也是它。可是整行帶著佔位符，
+     * {@link #looksLikeName} 會把它當模板擋掉——畫面上看得到、搜尋卻查不到。
+     * 簡體實機回報的「查不到龙之灵气」就是這個。
+     *
+     * <p>兩邊都剝得出名字才收。只剝得出一邊表示譯文改了句子形狀，對不準，寧可不收。
+     *
+     * @return 名字；不是數量行就回傳 {@code null}
+     */
+    static String quantityName(String text) {
+        java.util.regex.Matcher m = QUANTITY.matcher(text.strip());
+        return m.matches() ? m.group(1).strip() : null;
+    }
+
+    /** 見 {@link #quantityName}：數量、{@code x}、名字，後面接著稀有度圖示。 */
+    private static final java.util.regex.Pattern QUANTITY =
+            java.util.regex.Pattern.compile("^\\{~\\} ?[x×] (.+?)(?: *(?:\\{#\\})+)?$");
+
+    /**
+     * 只認<b>整個名字完全相同</b>的，不走「包含」那一路。
+     *
+     * <p>給拉丁字母的輸入用（見 {@code MarketListener#translate}）：法文、德文的譯名
+     * 可能整串都是 ASCII，但片段查在拉丁字母上太容易撞到英文單字。
+     *
+     * @return 剛好對到一個就回傳它；否則 {@code null}
+     */
+    public String exact(String typed) {
+        if (typed == null) {
+            return null;
+        }
+        String zh = key(typed);
+        if (zh.length() < MIN_NAME) {
+            return null;
+        }
+        Set<String> hit = index.get(zh);
+        if (hit == null) {
+            return null;
+        }
+        List<String> out = singulars(hit);
+        return out.size() == 1 ? out.get(0) : null;
     }
 
     /**
