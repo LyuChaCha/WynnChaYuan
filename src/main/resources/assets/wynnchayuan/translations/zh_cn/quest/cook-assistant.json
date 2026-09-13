@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Cook Assistant",
   "count": 17,
-  "translated": 0,
+  "translated": 17,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Cook Assistant#000": {
    "src": "Talk to the Cook in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 {p} [-{~}, {~}, -{~}] 的厨师对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -18,7 +18,7 @@
   },
   "Cook Assistant#001": {
    "src": "I can't believe what is happening to me.",
-   "dst": "",
+   "dst": "真不敢相信这种事会落到我头上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -28,7 +28,7 @@
   },
   "Cook Assistant#002": {
    "src": "The King ordered me to bake cakes for all those new recruits!",
-   "dst": "",
+   "dst": "国王命令我给所有新兵烤蛋糕！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -38,7 +38,7 @@
   },
   "Cook Assistant#003": {
    "src": "Unfortunately, a Grook took my last cake, and I ran out of ingredients!",
-   "dst": "",
+   "dst": "不幸的是，一只 Grook 拿走了我最后一个蛋糕，我的材料也用完了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -48,7 +48,7 @@
   },
   "Cook Assistant#004": {
    "src": "Now can you help...",
-   "dst": "",
+   "dst": "现在你能不能帮……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -58,7 +58,7 @@
   },
   "Cook Assistant#005": {
    "src": "That's the Grook! Go chase it down and get my cake back!",
-   "dst": "",
+   "dst": "就是那只 Grook！快去追，把我的蛋糕抢回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -68,7 +68,7 @@
   },
   "Cook Assistant#006": {
    "src": "Follow the pesky Grook.",
-   "dst": "",
+   "dst": "跟上那只讨厌的 Grook。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -78,7 +78,7 @@
   },
   "Cook Assistant#007": {
    "src": "The Grook got away! Return to the Cook at [-{~}, {~}, -{~}] to figure out what to do.",
-   "dst": "",
+   "dst": "Grook 跑掉了！回到 [-{~}, {~}, -{~}] 的厨师那里，想想该怎么办。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -88,7 +88,7 @@
   },
   "Cook Assistant#008": {
    "src": "What are you doing? Go after the Grook...",
-   "dst": "",
+   "dst": "你在干什么？快去追那只 Grook……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -98,7 +98,7 @@
   },
   "Cook Assistant#009": {
    "src": "It got away!",
-   "dst": "",
+   "dst": "它跑掉了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -108,7 +108,7 @@
   },
   "Cook Assistant#010": {
    "src": "Well, I guess you are going to have to help me find the ingredients and bake another...",
-   "dst": "",
+   "dst": "好吧，看来你得帮我找材料，再烤一个……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -118,7 +118,7 @@
   },
   "Cook Assistant#011": {
    "src": "There he is again! After him!",
-   "dst": "",
+   "dst": "它又出现了！追上去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -128,7 +128,7 @@
   },
   "Cook Assistant#012": {
    "src": "Find out where the Grook flew up to at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "找出 Grook 飞到 [-{~}, {~}, -{~}] 的哪里去了。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -138,7 +138,7 @@
   },
   "Cook Assistant#013": {
    "src": "Return to the cook at [-{~}, {~}, -{~}]. Use a Scroll to get there faster.",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, -{~}] 的厨师那里。用卷轴能更快到达。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -148,7 +148,7 @@
   },
   "Cook Assistant#014": {
    "src": "Great! You got the cake!",
-   "dst": "",
+   "dst": "太好了！你拿到蛋糕了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -158,7 +158,7 @@
   },
   "Cook Assistant#015": {
    "src": "I can't thank you enough! Here, take these emeralds and armour for all your trouble.",
-   "dst": "",
+   "dst": "真是太感谢你了！来，收下这些绿宝石和护甲，辛苦你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -168,7 +168,7 @@
   },
   "Cook Assistant#016": {
    "src": "You should explore around to become stronger. I hear there might be work to do in {p}.",
-   "dst": "",
+   "dst": "你应该到处探索，让自己变强。我听说 {p} 可能有活要干。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",

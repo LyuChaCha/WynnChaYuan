@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Clearing the Camps",
   "count": 14,
-  "translated": 0,
+  "translated": 14,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Clearing the Camps#000": {
    "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 {p} 外 [-{~}, {~}, -{~}] 的 Kymer 队长对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Clearing the Camps",
@@ -18,7 +18,7 @@
   },
   "Clearing the Camps#001": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
-   "dst": "",
+   "dst": "啊哈，又一个 {p} 的士兵，是吧？好啊，热烈欢迎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -28,7 +28,7 @@
   },
   "Clearing the Camps#002": {
    "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
-   "dst": "",
+   "dst": "你听说我们收到的村民请求了吗？他们说那些“兽人”和“哥布林”正在威胁他们的城镇。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -38,7 +38,7 @@
   },
   "Clearing the Camps#003": {
    "src": "Primitive, brutal creatures, apparently little better than the zombies we're used to, at least according to the {p} military.",
-   "dst": "",
+   "dst": "据说是些原始又野蛮的生物，比我们平常对付的僵尸好不了多少——至少 {p} 军方是这么说的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -48,7 +48,7 @@
   },
   "Clearing the Camps#004": {
    "src": "So, we figure if might makes right with them, then defeating their leaders should scare them into submission.",
-   "dst": "",
+   "dst": "所以我们想，既然对它们来说拳头大就是道理，那打败它们的首领应该就能把它们吓得服服帖帖。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -58,7 +58,7 @@
   },
   "Clearing the Camps#005": {
    "src": "Our scouts have identified three \"chief\" orcs in the area- Elisu, Ceifko and Veltu. Though, strangely Veltu is always surrounded by goblins...",
-   "dst": "",
+   "dst": "我们的斥候在这一带找到了三个兽人“酋长”——Elisu、Ceifko 和 Veltu。不过奇怪的是，Veltu 身边总是围着哥布林……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -68,7 +68,7 @@
   },
   "Clearing the Camps#006": {
    "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags- search the plains, return once they're dealt with!",
-   "dst": "",
+   "dst": "好了，不管怎样，这里需要我们守着 {p}。那些酋长你能对付吗？它们好像躲在插着绿旗的营地里——去平原上搜一搜，解决之后再回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -78,7 +78,7 @@
   },
   "Clearing the Camps#007": {
    "src": "Find and kill Orc Chieftains Elisu, Veltu, and Ceifko in the camps around {p}- look for green flags",
-   "dst": "",
+   "dst": "在 {p} 周围的营地找到并击杀兽人酋长 Elisu、Veltu 和 Ceifko——留意绿色旗帜",
    "role": "desc",
    "kind": "objective",
    "quest": "Clearing the Camps",
@@ -88,7 +88,7 @@
   },
   "Clearing the Camps#008": {
    "src": "Report back to Captain Kymer once you have the three heads.",
-   "dst": "",
+   "dst": "拿到三颗首级后，回去向 Kymer 队长报告。",
    "role": "desc",
    "kind": "objective",
    "quest": "Clearing the Camps",
@@ -98,7 +98,7 @@
   },
   "Clearing the Camps#009": {
    "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
-   "dst": "",
+   "dst": "啊，刚才那个士兵！看来你回来了。打败那些家伙的事顺利——……哎哟。那是它们的头？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -108,7 +108,7 @@
   },
   "Clearing the Camps#010": {
    "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead of alive, as long as they're dealt with. I have your share of the reward here.",
-   "dst": "",
+   "dst": "这……比我预想的狠了点，不过也行……反正村民也不在乎它们是死是活，只要解决了就好。你那份奖励在我这儿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -118,7 +118,7 @@
   },
   "Clearing the Camps#011": {
    "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
-   "dst": "",
+   "dst": "这种精准打击应该能避免跟兽人全面开战。我们可不想每个行省都得打一场全面战争，哈！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -128,7 +128,7 @@
   },
   "Clearing the Camps#012": {
    "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah...livelier than usual. Better get used to it.",
-   "dst": "",
+   "dst": "你出去的时候发现了吧，Gavel 的生物跟 Wynn 那边的不太一样？它们有点，呃……比平常更有活力。最好早点习惯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -138,7 +138,7 @@
   },
   "Clearing the Camps#013": {
    "src": "The next major settlement is {p}, in the swamp up north, but I hear the swamp ogres are a lot tougher than the plains' fare. I'd stick around here and train up, first.",
-   "dst": "",
+   "dst": "下一个大聚落是北边沼泽里的 {p}，不过我听说沼泽食人魔比平原上的家伙难对付多了。我会先留在这附近练练。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
