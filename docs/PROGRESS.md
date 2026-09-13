@@ -44,7 +44,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_cn` 简体中文 — 15.4%（4,431 / 28,769）
+## `zh_cn` 简体中文 — 18.8%（5,400 / 28,769）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -63,7 +63,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `quest-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 22,089 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ██████████ 100% | 68 / 68 | 祕密發現的故事<br>Secret discovery stories |
 | `lootrun.json` | ██████████ 100% | 4 / 4 | 跑 Lootrun 時<br>Seen during a lootrun |
-| `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
+| `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
 | `charm.json` | ██████████ 100% | 5 / 5 | 護符<br>Charms |
