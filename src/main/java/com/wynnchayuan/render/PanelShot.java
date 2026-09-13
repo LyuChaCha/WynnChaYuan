@@ -332,6 +332,12 @@ public final class PanelShot {
      *
      * <p>拍整個畫面雖然不如裁好的漂亮，但<b>一定拍得到</b>。
      * 要精確裁切的場合（物品 tooltip）本來就會走上面那條路。
+     *
+     * <h2>但畫面上什麼譯文都沒有的時候要拒絕</h2>
+     * 「沒有框」有兩種：一種是<b>有譯文但畫不出框</b>（對話框、名牌），
+     * 那就該拍整個畫面；另一種是<b>根本沒有譯文</b>——玩家只是按到了鍵，
+     * 滑鼠不在任何東西上。後者拍出來的是一張純風景照，存了也沒有用，
+     * 而且會讓人以為截圖功能壞了（「我明明拍了，怎麼沒有面板」）。
      */
     public static void tick() {
         if (!pending) {
@@ -343,9 +349,16 @@ public final class PanelShot {
             capture();
             return;
         }
-        log("tick：沒有可裁的框（w=" + lastW + " h=" + lastH
-                + " 距上次繪製=" + (System.currentTimeMillis() - lastFrame)
-                + "ms），改拍整個畫面");
+        if (!com.wynnchayuan.render.DialogueOverlay.hasContent()) {
+            log("tick：畫面上沒有任何譯文（w=" + lastW + " h=" + lastH
+                    + " 距上次繪製=" + (System.currentTimeMillis() - lastFrame)
+                    + "ms），不拍");
+            tell(com.wynnchayuan.client.T.c("shot.nothing")
+                    .withStyle(ChatFormatting.YELLOW));
+            return;
+        }
+        log("tick：沒有可裁的框但對話框有譯文（距上次繪製="
+                + (System.currentTimeMillis() - lastFrame) + "ms），改拍整個畫面");
         captureScreen();
     }
 
