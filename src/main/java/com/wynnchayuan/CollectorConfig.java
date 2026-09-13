@@ -316,6 +316,17 @@ public final class CollectorConfig {
      */
     private final java.util.EnumMap<Overlay, int[]> overlayPos = new java.util.EnumMap<>(Overlay.class);
 
+    /**
+     * 玩家自己拉的框大小，{@code {寬, 高}}。沒設過就不在這張表裡，呼叫端沿用
+     * 自己算出來的尺寸。
+     *
+     * <p><b>寬是實際寬度，高是最小高度。</b>兩者不對稱是刻意的：寬度決定
+     * 換行位置，是玩家真正想控制的東西；高度則由折了幾行決定，硬鎖住只會
+     * 把長句切掉。設成下限的話，短句也撐得住一個固定大小的框——NPC 是一個字
+     * 一個字打出來的，框跟著行數長高會看起來像在抽搐。
+     */
+    private final java.util.EnumMap<Overlay, int[]> overlaySize = new java.util.EnumMap<>(Overlay.class);
+
     /** 可以自由擺位的四個框。 */
     public enum Overlay { TOOLTIP, DIALOGUE, TRACKER, NAMETAG, CHOICES }
 
@@ -774,6 +785,39 @@ public final class CollectorConfig {
         save();
     }
 
+    /** 這個框的大小有沒有被拉過。沒有的話呼叫端該用自己算出來的尺寸。 */
+    public boolean hasOverlaySize(Overlay which) {
+        return overlaySize.containsKey(which);
+    }
+
+    /** 玩家拉的寬度；沒設過回 0。 */
+    public int overlayW(Overlay which) {
+        int[] s = overlaySize.get(which);
+        return s == null ? 0 : s[0];
+    }
+
+    /** 玩家拉的高度，意義是<b>最小</b>高度；沒設過回 0。 */
+    public int overlayH(Overlay which) {
+        int[] s = overlaySize.get(which);
+        return s == null ? 0 : s[1];
+    }
+
+    public void setOverlaySize(Overlay which, int w, int h) {
+        int[] old = overlaySize.get(which);
+        if (old != null && old[0] == w && old[1] == h) {
+            return;
+        }
+        overlaySize.put(which, new int[] {w, h});
+        save();
+    }
+
+    /** 回到自動算的大小。 */
+    public void clearOverlaySize(Overlay which) {
+        if (overlaySize.remove(which) != null) {
+            save();
+        }
+    }
+
     /** 回到預設錨點。 */
     public void clearOverlayPos(Overlay which) {
         if (which == Overlay.TOOLTIP) {
@@ -1003,6 +1047,19 @@ public final class CollectorConfig {
                     }
                 }
             }
+            if (o.has("overlaySize")) {
+                com.google.gson.JsonObject sizes = o.getAsJsonObject("overlaySize");
+                for (Overlay which : Overlay.values()) {
+                    if (!sizes.has(which.name())) {
+                        continue;
+                    }
+                    com.google.gson.JsonArray wh = sizes.getAsJsonArray(which.name());
+                    if (wh != null && wh.size() == 2) {
+                        overlaySize.put(which,
+                                new int[] {wh.get(0).getAsInt(), wh.get(1).getAsInt()});
+                    }
+                }
+            }
             if (o.has("showBadges")) {
                 showBadges = o.get("showBadges").getAsBoolean();
             }
@@ -1063,6 +1120,14 @@ public final class CollectorConfig {
                 positions.add(which.name(), arr);
             });
             o.add("overlayPos", positions);
+            com.google.gson.JsonObject sizes = new com.google.gson.JsonObject();
+            overlaySize.forEach((which, wh) -> {
+                com.google.gson.JsonArray arr = new com.google.gson.JsonArray();
+                arr.add(wh[0]);
+                arr.add(wh[1]);
+                sizes.add(which.name(), arr);
+            });
+            o.add("overlaySize", sizes);
             o.addProperty("showBadges", showBadges);
             o.addProperty("badgeStyle", badgeStyle.name());
             o.addProperty("nametagRange", nametagRange);

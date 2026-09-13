@@ -372,8 +372,11 @@ public final class DialogueOverlay {
             lines = withName;
         }
         int lineHeight = mc.font.lineHeight + 1;
-        int boxH = lines.isEmpty() ? 0 : lines.size() * lineHeight + PADDING * 2;
-        int boxW = widthOf(mc, lines);
+        boolean sized = WynnChaYuan.config()
+                .hasOverlaySize(CollectorConfig.Overlay.DIALOGUE);
+        int boxW = sized ? dialogueWidth(0) : widthOf(mc, lines);
+        int boxH = lines.isEmpty() ? 0
+                : atLeastTall(lines.size() * lineHeight + PADDING * 2);
 
         // 玩家自己擺過就照他的，否則用預設錨點（下方置中）
         int x = (graphics.guiWidth() - boxW) / 2;
@@ -385,7 +388,11 @@ public final class DialogueOverlay {
         }
 
         if (!lines.isEmpty()) {
-            draw(graphics, mc, lines, x + boxW / 2, y, alpha, true);
+            if (sized) {
+                drawSized(graphics, mc, lines, x, y, boxW, alpha);
+            } else {
+                draw(graphics, mc, lines, x + boxW / 2, y, alpha, true);
+            }
         }
         // 選項也走 drawChoices，兩種模式的位置與樣式才會一致
         if (!options.isEmpty() && choicesInPanel()) {
@@ -412,15 +419,16 @@ public final class DialogueOverlay {
     private static void drawInPlace(GuiGraphics graphics, Minecraft mc,
                                     List<Component> lines, List<Component> options,
                                     float alpha) {
-        int boxW = Math.max(MIN_BOX_W, Math.min(MAX_BOX_W,
-                graphics.guiWidth() * 5 / 8));
+        int boxW = dialogueWidth(Math.max(MIN_BOX_W, Math.min(MAX_BOX_W,
+                graphics.guiWidth() * 5 / 8)));
         int inner = boxW - PADDING * 2 - 2;
         int lineHeight = mc.font.lineHeight + 1;
 
         List<FormattedCharSequence> body = wrapAll(mc, lines, inner);
         List<FormattedCharSequence> picks = wrapAll(mc, options, inner);
 
-        int bodyH = body.isEmpty() ? 0 : body.size() * lineHeight + PADDING * 2;
+        int bodyH = body.isEmpty() ? 0
+                : atLeastTall(body.size() * lineHeight + PADDING * 2);
         int x = (graphics.guiWidth() - boxW) / 2;
         int y = graphics.guiHeight() - IN_PLACE_MARGIN - bodyH;
 
@@ -480,8 +488,11 @@ public final class DialogueOverlay {
      */
     private static void drawChoices(GuiGraphics graphics, Minecraft mc,
                                     List<List<Component>> options, float alpha) {
-        int boxW = Math.max(MIN_CHOICE_W, Math.min(MAX_CHOICE_W,
-                graphics.guiWidth() / 4));
+        CollectorConfig cfg = WynnChaYuan.config();
+        int boxW = cfg.hasOverlaySize(CollectorConfig.Overlay.CHOICES)
+                ? cfg.overlayW(CollectorConfig.Overlay.CHOICES)
+                : Math.max(MIN_CHOICE_W, Math.min(MAX_CHOICE_W,
+                        graphics.guiWidth() / 4));
         int inner = boxW - PADDING * 2 - MARKER_W - 2;
         int lineHeight = mc.font.lineHeight + 1;
 
@@ -642,6 +653,51 @@ public final class DialogueOverlay {
             width = Math.max(width, mc.font.width(line));
         }
         return width + PADDING * 2;
+    }
+
+    /**
+     * 玩家在 F6 →「調整面板位置」拉過對話框的話就照他的寬度，否則用傳進來
+     * 的自動值。
+     *
+     * <p>寬度決定的是<b>折行位置</b>，所以這個值一改，整段話重新排版。
+     */
+    private static int dialogueWidth(int auto) {
+        CollectorConfig cfg = WynnChaYuan.config();
+        return cfg.hasOverlaySize(CollectorConfig.Overlay.DIALOGUE)
+                ? cfg.overlayW(CollectorConfig.Overlay.DIALOGUE)
+                : auto;
+    }
+
+    /**
+     * 玩家拉的高度是<b>下限</b>不是固定值：長句該撐開就撐開，短句則不會讓
+     * 框縮回去。NPC 是一個字一個字打出來的，框跟著行數長高會像在抽搐。
+     */
+    private static int atLeastTall(int auto) {
+        CollectorConfig cfg = WynnChaYuan.config();
+        return cfg.hasOverlaySize(CollectorConfig.Overlay.DIALOGUE)
+                ? Math.max(auto, cfg.overlayH(CollectorConfig.Overlay.DIALOGUE))
+                : auto;
+    }
+
+    /**
+     * 小框模式套用玩家拉的大小。
+     *
+     * <p>寬度一旦是玩家指定的，就不能再讓框去遷就內容——太長的句子要折行，
+     * 所以這條路改走 {@code FormattedCharSequence}，跟就地取代那一條一樣。
+     */
+    private static void drawSized(GuiGraphics graphics, Minecraft mc,
+                                  List<Component> lines, int x, int y,
+                                  int boxW, float alpha) {
+        int lineHeight = mc.font.lineHeight + 1;
+        List<FormattedCharSequence> rows = wrapAll(mc, lines, boxW - PADDING * 2);
+        int boxH = atLeastTall(rows.size() * lineHeight + PADDING * 2);
+        Boxes.draw(graphics, x, y, boxW, boxH, alpha);
+        int textY = y + PADDING;
+        for (FormattedCharSequence row : rows) {
+            graphics.drawString(mc.font, row, x + PADDING, textY,
+                    Colors.fade(Colors.TEXT, alpha));
+            textY += lineHeight;
+        }
     }
 
     /** 兩塊之間留一點空隙，才看得出來是兩件事。 */
