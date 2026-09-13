@@ -418,6 +418,8 @@ NAMED = re.compile(
     r"|\sis now combat level"
     # 公會大廳／住宅島的招牌：撇號前面是玩家或公會取的名字。
     r"|['’]s HQ\b"
+    # 玩家打的公會招人廣告：「… DM Owner or Chiefs」。
+    r"|\bDM (?:the )?(?:Owner|Chiefs?)\b"
     # 交易邀請一句夾兩個名字。
     r"|would like to trade"
     r"|/trade\s"

@@ -78,6 +78,9 @@ SHAPES = [
     # 交易所的篩選器把玩家<b>自己打的搜尋字</b>顯示出來，而且是邊打邊更新，
     # 所以「dark e」這種打到一半的也會收進來。翻了沒有意義，變體無限多。
     (r"(?m)^-?\s*Name Contains:\s", "玩家在交易所打的搜尋字"),
+    # 玩家打的公會招人廣告：「TW Guild ! DM Owner or Chiefs」。遊戲自己的字
+    # 不會叫你去私訊會長或幹部。
+    (r"\bDM (?:the )?(?:Owner|Chiefs?)\b", "公會招人廣告"),
     # 討伐戰與掠奪的死亡廣播。每一種死法各一句模板，主詞永遠是別人。
     (r"\swas devoured by\b", "誰被吞了"),
     (r"\shad their skull shattered\b", "誰被打爆頭了"),

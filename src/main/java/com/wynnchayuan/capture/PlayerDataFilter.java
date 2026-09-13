@@ -106,6 +106,9 @@ public final class PlayerDataFilter {
             // 公會大廳／住宅島的招牌：撇號前面是玩家或公會取的名字。
             "'s HQ",
             "’s HQ",
+            // 玩家打的公會招人廣告：「TW Guild ! DM Owner or Chiefs」。
+            "DM Owner",
+            "DM Chiefs",
             " has placed a mob totem",
             " has placed a gathering totem",
             " mob totem. Get your own",
