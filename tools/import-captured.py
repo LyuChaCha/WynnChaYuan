@@ -178,7 +178,11 @@ OTHER_MOD = re.compile(r"wynnmod|wynnextras|wynnaspects|\bwmd\s*[>|]"
                        # WynnAspects 的每一則聊天訊息都以 `››` 開頭，
                        # 而它自我介紹的那幾則不見得提到自己的名字
                        # （`›› Reconnected.`、`›› Your account isn't linked yet.`）。
-                       r"|››", re.IGNORECASE)
+                       r"|››"
+                       # Wynntils 自己的訊息。伺服器不可能叫你重開 Minecraft，
+                       # 「遠端玩家伺服器」也是它的 API，不是遊戲裡的東西。
+                       r"|restart Minecraft to apply the update"
+                       r"|remote player server", re.IGNORECASE)
 
 
 def bare(src: str) -> str:
@@ -399,6 +403,21 @@ NAMED = re.compile(
     r"|\shad their existence effaced"
     # 討伐戰的下降預告，主詞是隊友的帳號名。
     r"|\sis preparing to descend"
+    # 一般地圖上的死亡快訊，一種怪一句俏皮的模板，主詞是死掉的那個玩家。
+    r"|\sfell victim to"
+    r"|\swas clobbered by"
+    r"|\swas bashed into paste by"
+    r"|\swas impaled by"
+    r"|\swas silenced by"
+    r"|\swas stomped by"
+    r"|\swas weaker than"
+    r"|took a shortcut to death's door"
+    r"|There's only ashes where"
+    r"|-- oops, other way around"
+    # 升等廣播，主詞是別人的帳號名。
+    r"|\sis now combat level"
+    # 公會大廳／住宅島的招牌：撇號前面是玩家或公會取的名字。
+    r"|['’]s HQ\b"
     # 交易邀請一句夾兩個名字。
     r"|would like to trade"
     r"|/trade\s"

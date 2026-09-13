@@ -50,8 +50,9 @@ SHAPES = [
     # Experience…，每一種到期都一句廣播，主詞永遠是丟炸彈的那個人。
     (r"\bBomb has expired", "誰的炸彈到期了"),
     # 全服開箱廣播：「某某 has gotten a Chocolate Wybel from their crate!」
-    # 名字跟折行位置都會變，認句尾那一段最穩。
-    (r"from their\s*(?:\n\{#\}\s*)?crate!", "誰開到了東西"),
+    # 名字跟折行位置都會變，認句尾那一段最穩。折行可能落在 from 與 their
+    # 之間，也可能落在 their 與 crate 之間，兩個位置都要認得。
+    (r"from\s*(?:\n\{#\}\s*)?their\s*(?:\n\{#\}\s*)?crate!", "誰開到了東西"),
     (r"\shad their anatomy refashioned", "誰死了"),
     (r"(?m)^(?:\{#\}\s*)+Thank ", "謝謝某某"),
     (r"\shas opted in", "誰報名了"),
@@ -95,6 +96,23 @@ SHAPES = [
     (r"\sceased to be anything human\b", "誰死了"),
     (r"\swas buried beneath earth\b", "誰死了"),
     (r"\smade a fatal mistake\b", "誰死了"),
+    # 一般地圖上的死亡快訊。Wynncraft 每種怪各有一句俏皮的死法模板，
+    # 主詞永遠是死掉的那個玩家，2026-09-12 那批就漏了五句進來。
+    (r"\sfell victim to\b", "誰死了"),
+    (r"\swas clobbered by\b", "誰死了"),
+    (r"\swas bashed into paste by\b", "誰死了"),
+    (r"\swas impaled by\b", "誰死了"),
+    (r"\swas silenced by\b", "誰死了"),
+    (r"\swas stomped by\b", "誰死了"),
+    (r"\swas weaker than\b", "誰死了"),
+    (r"took a shortcut to death's door", "誰死了"),
+    (r"There's only ashes where\b", "誰死了"),
+    (r"-- oops, other way around", "誰被怪物殺了"),
+    # 升等廣播。主詞是別人的帳號名；自己的那一句會被匿名成 {u}，上面的
+    # ALLOW 會放行。
+    (r"\sis now combat level", "誰升等了"),
+    # 公會大廳／住宅島的招牌：「Smol Rat's HQ」。撇號前面是玩家或公會取的名字。
+    (r"['’]s HQ\b", "誰的大廳"),
     (r"[A-Za-z]{2,}_\{~\}", "帳號名裡的底線加數字"),
     # 玩家把寵物或物品改成自己的名字：`Tomzd{~}'s Bird`、`{~}Seele's gift to …`。
     # 帳號名裡的數字收集時變成 {~}，數字在前在後都有。遊戲自己的字串不會
