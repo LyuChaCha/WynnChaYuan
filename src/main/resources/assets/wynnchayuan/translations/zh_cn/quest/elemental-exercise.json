@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Elemental Exercise",
   "count": 65,
-  "translated": 0,
+  "translated": 62,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Elemental Exercise#000": {
    "src": "Talk to Captain Ragon in the {p} Barracks at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 [{~}, {~}, -{~}] 的 {p} 兵营里的 Ragon 上尉对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -18,7 +18,7 @@
   },
   "Elemental Exercise#001": {
    "src": "Ah! You must be one of the new recruits the Admiral told me to look out for! What was it... {u}, yes?",
-   "dst": "",
+   "dst": "啊！你一定是上将叫我留意的新兵之一！叫什么来着……{u}，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -28,7 +28,7 @@
   },
   "Elemental Exercise#002": {
    "src": "You've done well to reach this city as quickly as you have, which must have required a great deal of fighting the undead.",
-   "dst": "",
+   "dst": "你这么快就来到这座城市，干得不错，这一路上一定跟不死生物打了不少仗。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -38,7 +38,7 @@
   },
   "Elemental Exercise#003": {
    "src": "Now, I've heard from Sergeant Van of your aid in his assault on our overtaken fort- which, good work, very well done...",
-   "dst": "",
+   "dst": "我从 Van 中士那里听说了你协助他突袭我们被占领的要塞——那个，干得好，非常好……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -48,7 +48,7 @@
   },
   "Elemental Exercise#004": {
    "src": "But the fact still stands that you lack experience. You can certainly fight, yes, but can you fight well?",
-   "dst": "",
+   "dst": "但事实仍然是，你缺乏经验。你当然会打，是的，但你打得好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -58,7 +58,7 @@
   },
   "Elemental Exercise#005": {
    "src": "Lucky for you, that's where I come in. You're just in time for today's training session! Come here, follow me.",
-   "dst": "",
+   "dst": "算你走运，这就轮到我了。你正好赶上今天的训练课！过来，跟我来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -68,7 +68,7 @@
   },
   "Elemental Exercise#006": {
    "src": "Follow Captain Ragon to the Training Room at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟随 Ragon 上尉前往 [{~}, {~}, -{~}] 的训练室。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -78,7 +78,7 @@
   },
   "Elemental Exercise#007": {
    "src": "...Oh! {u}, hello. Are you here for training as well?",
-   "dst": "",
+   "dst": "……噢！{u}，你好。你也是来训练的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -88,7 +88,7 @@
   },
   "Elemental Exercise#008": {
    "src": "Ahem. Now, in front of you, you'll see five special training dummies. Each one finely imbued with elemental magic. You are aware of the elements, yes? There's five of them in total.",
-   "dst": "",
+   "dst": "咳。好，你们面前有五个特殊的训练假人。每一个都精心注入了元素魔法。你们知道元素吧？总共有五种。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -118,7 +118,7 @@
   },
   "Elemental Exercise#011": {
    "src": "Elemental weaknesses may vary based on the enemy, but that order holds true in most cases.",
-   "dst": "",
+   "dst": "元素弱点会因敌人而异，但在大多数情况下都遵循这个顺序。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -128,7 +128,7 @@
   },
   "Elemental Exercise#012": {
    "src": "Enemies will take more damage from elements they're weak to, and take less damage from elements they resist. This change to your damage is always a flat value, and it varies from enemy to enemy.",
-   "dst": "",
+   "dst": "敌人受到它弱点元素的伤害会更高，受到它抵抗元素的伤害会更低。这种伤害变化永远是固定值，而且因敌人而异。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -138,7 +138,7 @@
   },
   "Elemental Exercise#013": {
    "src": "Now. For training purposes, you'll be given an elemental weapon to try out on these training dummies. Take note of how each elemental defense and weakness affects your damage dealt. Speak to me once you feel you understand the concept.",
-   "dst": "",
+   "dst": "好了。为了训练，你们会拿到一把元素武器，拿来在这些训练假人身上试试。留意每种元素防御和弱点如何影响你造成的伤害。觉得弄懂了就来找我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -148,7 +148,7 @@
   },
   "Elemental Exercise#014": {
    "src": "Test out the elemental training weapons on the dummies, then speak to Captain Ragon at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "用元素训练武器测试假人，然后与 [{~}, {~}, -{~}] 的 Ragon 上尉交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -158,7 +158,7 @@
   },
   "Elemental Exercise#015": {
    "src": "Well? Have you noted the effect of elemental defenses and weaknesses on your damage?",
-   "dst": "",
+   "dst": "怎么样？注意到元素防御和弱点对你的伤害有什么影响了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -168,7 +168,7 @@
   },
   "Elemental Exercise#016": {
    "src": "Excellent. I'll take those training weapons back from the two of you. Any questions?",
-   "dst": "",
+   "dst": "很好。我把你们俩的训练武器收回来。有什么问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -178,7 +178,7 @@
   },
   "Elemental Exercise#017": {
    "src": "I do have one. If our enemies are susceptible to elements in this way, would that also apply to us?",
-   "dst": "",
+   "dst": "我有一个。如果我们的敌人会这样受元素影响，那对我们也一样吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -188,7 +188,7 @@
   },
   "Elemental Exercise#018": {
    "src": "Ah, yes. A fine observation. Indeed, you are also bound by the rules of the elements. Elemental defenses and weaknesses from your equipment will affect you in the very same way.",
-   "dst": "",
+   "dst": "啊，是的。观察得很好。确实，你们也受元素规则的约束。你们装备上的元素防御和弱点会以完全一样的方式影响你们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -198,7 +198,7 @@
   },
   "Elemental Exercise#019": {
    "src": "One final note before we move on from the elements- your weapon may not always be as effective against an enemy as you would like.",
-   "dst": "",
+   "dst": "在结束元素这个话题之前，最后一点——你的武器对敌人未必总是如你所愿那么有效。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -208,7 +208,7 @@
   },
   "Elemental Exercise#020": {
    "src": "However, you have another tool at your disposal in the form of your spells! Different spells will deal different elemental damage, even if your weapon does use that element by default.",
-   "dst": "",
+   "dst": "不过，你还有另一个工具可以用，那就是你的法术！不同的法术会造成不同的元素伤害，即使你的武器默认不是那种元素。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -228,7 +228,7 @@
   },
   "Elemental Exercise#022": {
    "src": "Correct! Now, let's see... We have the two of you here. Why don't we have a friendly duel? A chance to test your battle skills in a save environment.",
-   "dst": "",
+   "dst": "正确！好，我看看……你们俩都在。何不来一场友谊决斗？在安全的环境下测试一下你们的战斗技巧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -238,7 +238,7 @@
   },
   "Elemental Exercise#023": {
    "src": "That sounds good to me! {u}, we've been traveling together for some time now... I can't say I haven't been curious to see how you fight. Let's see who comes out on top, shall we?",
-   "dst": "",
+   "dst": "听起来不错！{u}，我们一起旅行也有一阵子了……说我不好奇你怎么打，那是骗人的。来看看谁更厉害吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -248,7 +248,7 @@
   },
   "Elemental Exercise#024": {
    "src": "Alright! Let's do this!",
-   "dst": "",
+   "dst": "好！来吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -258,7 +258,7 @@
   },
   "Elemental Exercise#025": {
    "src": "Alright. I'll be waiting here when you're ready!",
-   "dst": "",
+   "dst": "好。等你准备好了，我就在这里等你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -268,7 +268,7 @@
   },
   "Elemental Exercise#026": {
    "src": "Go on, then. Just speak to me when you're ready to move on.",
-   "dst": "",
+   "dst": "那就去吧。准备好继续的时候来找我就行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -278,7 +278,7 @@
   },
   "Elemental Exercise#027": {
    "src": "Return to Tasim at [{~}, {~}, -{~}] for a duel.",
-   "dst": "",
+   "dst": "回到 [{~}, {~}, -{~}] 的 Tasim 那里进行决斗。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -288,7 +288,7 @@
   },
   "Elemental Exercise#028": {
    "src": "There you are! Are you ready for our duel?",
-   "dst": "",
+   "dst": "你来了！准备好我们的决斗了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -298,7 +298,7 @@
   },
   "Elemental Exercise#029": {
    "src": "Alright! Let's see which of us is the better fighter!",
-   "dst": "",
+   "dst": "好！来看看我们谁是更好的战士！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -308,7 +308,7 @@
   },
   "Elemental Exercise#030": {
    "src": "Alright. I'll be waiting!",
-   "dst": "",
+   "dst": "好。我等你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -318,7 +318,7 @@
   },
   "Elemental Exercise#031": {
    "src": "Fight Tasim in a friendly duel.",
-   "dst": "",
+   "dst": "与 Tasim 进行友谊决斗。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -328,7 +328,7 @@
   },
   "Elemental Exercise#032": {
    "src": "Speak to Captain Ragon at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 [{~}, {~}, -{~}] 的 Ragon 上尉交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -338,7 +338,7 @@
   },
   "Elemental Exercise#033": {
    "src": "Phew! That was a good fight. You did well, {u}. We'll have to do this again- and maybe we can get Aledar to join!",
-   "dst": "",
+   "dst": "呼！打得真好。你表现得很好，{u}。我们下次再来——说不定还能叫上 Aledar！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -348,7 +348,7 @@
   },
   "Elemental Exercise#034": {
    "src": "Woo! You fought well, {u}, but it looks like I'm still better! Wait until Aledar hears about this...",
-   "dst": "",
+   "dst": "耶！你打得很好，{u}，不过看来还是我更强！等 Aledar 听说这件事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -358,7 +358,7 @@
   },
   "Elemental Exercise#035": {
    "src": "Yes, yes, fine work, the two of you. Now-",
-   "dst": "",
+   "dst": "是是，干得好，你们俩。好了——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -368,7 +368,7 @@
   },
   "Elemental Exercise#036": {
    "src": "Captain! Captain Ragon! There's- there's corrupted forces! Advancing from {p}!",
-   "dst": "",
+   "dst": "上尉！Ragon 上尉！有——有腐化者部队！正从 {p} 推进过来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -378,7 +378,7 @@
   },
   "Elemental Exercise#037": {
    "src": "Hm. And the Admiral is away... Very well. Mobilize the troops! We meet the forces at the north gate!",
-   "dst": "",
+   "dst": "嗯。上将又不在……好吧。集结部队！我们在北门迎战！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -388,7 +388,7 @@
   },
   "Elemental Exercise#038": {
    "src": "Yes sir!",
-   "dst": "",
+   "dst": "是，长官！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -398,7 +398,7 @@
   },
   "Elemental Exercise#039": {
    "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead!",
-   "dst": "",
+   "dst": "上尉——我们也是能打的战士。让我们一起去帮忙击退这些不死生物吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -408,7 +408,7 @@
   },
   "Elemental Exercise#040": {
    "src": "Hm... As I see it, this is a fine opportunity for you to gain some firsthand experience! Very well. Prepare yourselves, and come to {p}' north gate when you're ready.",
-   "dst": "",
+   "dst": "嗯……依我看，这是让你们获得第一手经验的好机会！好吧。做好准备，准备好了就到 {p} 的北门来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -418,7 +418,7 @@
   },
   "Elemental Exercise#041": {
    "src": "This is exciting! But... I'm a little bit nervous, still.",
-   "dst": "",
+   "dst": "好刺激！不过……我还是有点紧张。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -428,7 +428,7 @@
   },
   "Elemental Exercise#042": {
    "src": "... We'll be alright. Come on, let's go follow the captain.",
-   "dst": "",
+   "dst": "……我们会没事的。来吧，我们跟上上尉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -438,7 +438,7 @@
   },
   "Elemental Exercise#043": {
    "src": "Follow Captain Ragon to {p}' north gate at [{~}, {~}, -{~}] to face the undead forces.",
-   "dst": "",
+   "dst": "跟随 Ragon 上尉前往 [{~}, {~}, -{~}] 的 {p} 北门，迎战不死生物部队。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -448,7 +448,7 @@
   },
   "Elemental Exercise#044": {
    "src": "There you are! Ready for battle?",
-   "dst": "",
+   "dst": "你来了！准备好战斗了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -458,7 +458,7 @@
   },
   "Elemental Exercise#045": {
    "src": "I'm prepared as well. These corrupted won't stand a chance against us!",
-   "dst": "",
+   "dst": "我也准备好了。这些腐化者绝不是我们的对手！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -468,7 +468,7 @@
   },
   "Elemental Exercise#046": {
    "src": "Yes, yes, very good. Now, it shouldn't be long until-",
-   "dst": "",
+   "dst": "是是，很好。好了，应该不会太久就——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -478,7 +478,7 @@
   },
   "Elemental Exercise#047": {
    "src": "Captain! They're here!",
-   "dst": "",
+   "dst": "上尉！它们来了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -488,7 +488,7 @@
   },
   "Elemental Exercise#048": {
    "src": "Hm... Take note of the leader. I expect if we can defeat it, the rest of the forces will disperse.",
-   "dst": "",
+   "dst": "嗯……留意那个首领。我估计只要打败它，其他部队就会溃散。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -498,7 +498,7 @@
   },
   "Elemental Exercise#049": {
    "src": "Stronger foes such as this one will cast spells one after the other, in a specific order. These spell combos can be dangerous, so make sure to take note of them.",
-   "dst": "",
+   "dst": "像这样更强的敌人会按照特定顺序接连施放法术。这些法术连招可能很危险，所以一定要留意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -508,7 +508,7 @@
   },
   "Elemental Exercise#050": {
    "src": "We'll be fighting all around you, so shout if you're in need of aid. Alright, soldiers, let's defend our city!",
-   "dst": "",
+   "dst": "我们会在你周围作战，需要帮忙就喊一声。好了，士兵们，保卫我们的城市！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -518,7 +518,7 @@
   },
   "Elemental Exercise#051": {
    "src": "Alright {u}, let's do this!",
-   "dst": "",
+   "dst": "好，{u}，我们上吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -528,7 +528,7 @@
   },
   "Elemental Exercise#052": {
    "src": "I understand. We have time until the corrupted forces arrive, so go prepare. Don't take too long, though.",
-   "dst": "",
+   "dst": "我明白。腐化者部队到达之前还有时间，去准备吧。不过别太久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -538,7 +538,7 @@
   },
   "Elemental Exercise#053": {
    "src": "Defeat the Corrupted Captain and the force threatening {p}.",
-   "dst": "",
+   "dst": "击败腐化队长和威胁 {p} 的部队。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -548,7 +548,7 @@
   },
   "Elemental Exercise#054": {
    "src": "Return to the {p} Barracks and talk to Captain Ragon at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到 [{~}, {~}, -{~}] 的 {p} 兵营与 Ragon 上尉交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -558,7 +558,7 @@
   },
   "Elemental Exercise#055": {
    "src": "Ah, there you two are. Come here.",
-   "dst": "",
+   "dst": "啊，你们俩来了。过来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -568,7 +568,7 @@
   },
   "Elemental Exercise#056": {
    "src": "Oh, Admiral! You're back already?",
-   "dst": "",
+   "dst": "噢，上将！您已经回来了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -578,7 +578,7 @@
   },
   "Elemental Exercise#057": {
    "src": "Yes, my absence was never meant to take long. I was paying a visit to the desert city of {p}, for a meeting with an Admiral Amerigo...",
-   "dst": "",
+   "dst": "是的，我本来就不会离开太久。我去沙漠城市 {p} 拜访，跟一位 Amerigo 上将开会……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -588,7 +588,7 @@
   },
   "Elemental Exercise#058": {
    "src": "But I digress. I've been told the two of you were essential in the defense of our city! Excellent work.",
-   "dst": "",
+   "dst": "扯远了。我听说你们俩在保卫城市时起了关键作用！干得非常好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -598,7 +598,7 @@
   },
   "Elemental Exercise#059": {
    "src": "Our preparations for the assault on {p}' spider den are nearing completion. I'd like the two of you to join that mission.",
-   "dst": "",
+   "dst": "我们对 {p} 蜘蛛巢穴的突袭准备工作快完成了。我希望你们俩加入那次任务。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -608,7 +608,7 @@
   },
   "Elemental Exercise#060": {
    "src": "Sir- are you certain? I mean, we'd be happy to join, but surely there are many others more worthy of such a task.",
-   "dst": "",
+   "dst": "长官——您确定吗？我是说，我们很乐意加入，但肯定还有很多人更配得上这样的任务。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -618,7 +618,7 @@
   },
   "Elemental Exercise#061": {
    "src": "Nonsense! Captain Ragon has assessed your skills, and has deemed them sufficient. And I trust the Captain's judgement.",
-   "dst": "",
+   "dst": "胡说！Ragon 上尉评估过你们的实力，认为已经足够。而我信任上尉的判断。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -628,7 +628,7 @@
   },
   "Elemental Exercise#062": {
    "src": "Now, I must be off. I'll see the two of you when it's time for the mission.",
-   "dst": "",
+   "dst": "好了，我得走了。到任务的时候再见你们俩。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -638,7 +638,7 @@
   },
   "Elemental Exercise#063": {
    "src": "A big mission to take out the spiders, huh... You know, even though I'm a little worried, I think I'm excited.",
-   "dst": "",
+   "dst": "一次清除蜘蛛的大任务啊……你知道吗，虽然我有点担心，但我想我很兴奋。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -648,7 +648,7 @@
   },
   "Elemental Exercise#064": {
    "src": "Ahem. Before the two of you return on your business, I have something for the two of you. Payment for your work today, and a special piece of equipment. Make good use of it.",
-   "dst": "",
+   "dst": "咳。在你们俩回去忙之前，我有东西给你们。这是你们今天工作的报酬，还有一件特别的装备。好好利用它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
