@@ -1,6 +1,9 @@
 package com.wynnchayuan.listener;
 
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.client.T;
+import com.wynnchayuan.translate.MarketSearch;
+import com.wynnchayuan.translate.TranslationStore;
 import com.wynntils.core.text.StyledText;
 import com.wynntils.handlers.chat.event.ChatMessageEvent;
 import com.wynntils.models.trademarket.event.TradeMarketStateEvent;
@@ -76,7 +79,7 @@ public final class MarketListener {
      * 使用者回報「輸入完只顯示英文、沒有真的轉換」就是這個。
      *
      * <p>所以自己認一次。這裡拿到的是<b>還沒被我們動過</b>的原文，
-     * 而且英文與中文兩種寫法都認——不管聊天翻譯開成哪一種都有效。
+     * 而且英文與譯文兩種寫法都認——不管聊天翻譯開成哪一種都有效。
      */
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onChat(ChatMessageEvent.Match event) {
@@ -85,9 +88,9 @@ public final class MarketListener {
             return;
         }
         String plain = message.getStringWithoutFormatting();
-        if (PROMPT.matcher(plain).find()) {
+        if (PROMPT.matcher(plain).find() || showsTranslation(plain, PROMPT_KEY)) {
             arm();
-        } else if (CANCELLED.matcher(plain).find()) {
+        } else if (CANCELLED.matcher(plain).find() || showsTranslation(plain, CANCEL_KEY)) {
             searching = false;
         }
     }
@@ -96,17 +99,75 @@ public final class MarketListener {
      * 那句提示長什麼樣。
      *
      * <p>前面有圖示與顏色碼，所以用「找得到」而不是「整行相同」。
-     * 中文那一版也收：就地取代模式下畫面上只剩中文，而這條濾網跑在
+     * 譯文那一版也收：就地取代模式下畫面上只剩譯文，而這條濾網跑在
      * 翻譯前後都可能，收兩種比較保險。
+     *
+     * <p>先前只寫了繁體。簡體玩家就地取代之後看到的是「输入物品名称」，
+     * 一個字都對不上，市集搜尋在簡體底下<b>整個沒有啟動</b>。
+     * 寫死的只是保底，其他語言靠 {@link #showsTranslation} 去問當下的譯文。
      */
     private static final java.util.regex.Pattern PROMPT =
             java.util.regex.Pattern.compile(
-                    "Type the item name or type 'cancel' to cancel:|輸入物品名稱");
+                    "Type the item name or type 'cancel' to cancel:|輸入物品名稱|输入物品名称");
 
     /** 取消或走開之後就關掉。 */
     private static final java.util.regex.Pattern CANCELLED =
             java.util.regex.Pattern.compile(
-                    "chat input was canceled|聊天輸入已取消");
+                    "chat input was canceled|聊天輸入已取消|聊天输入已取消");
+
+    /** 語料裡那句提示的鍵。見 {@link #showsTranslation}。 */
+    static final String PROMPT_KEY =
+            "{#} \n{#} Type the item name or type 'cancel' to cancel:\n{#}";
+
+    /** 語料裡「走開所以取消」那句的鍵。 */
+    static final String CANCEL_KEY = "{#} You moved and your chat input was canceled.";
+
+    /**
+     * 這一行是不是那句話<b>在目前語言的譯文</b>。
+     *
+     * <h2>為什麼要問語料</h2>
+     * 寫死在 {@link #PROMPT} 裡的只有繁簡兩種。日文、韓文哪天把這句翻了，
+     * 就地取代之後畫面上就沒有英文可比——跟簡體先前壞掉的方式一模一樣。
+     * 問當下載入的譯文，哪一種語言翻了都自動跟上。
+     *
+     * <p>模組還沒起來（測試、啟動極早期）時什麼都不認，退回寫死的那兩種。
+     */
+    static boolean showsTranslation(String plain, String key) {
+        TranslationStore store;
+        try {
+            store = WynnChaYuan.translations();
+        } catch (Throwable t) {
+            return false;
+        }
+        if (store == null || plain == null) {
+            return false;
+        }
+        String dst = store.lookup(key);
+        if (dst == null) {
+            return false;
+        }
+        String core = core(dst);
+        return core.length() >= MIN_CORE && plain.contains(core);
+    }
+
+    /**
+     * 譯文裡真正的字：拿掉佔位符後，最長的那一行。
+     *
+     * <p>提示前後各有一行只放圖示，那兩行剝完是空的，不能拿來比。
+     */
+    static String core(String dst) {
+        String best = "";
+        for (String line : dst.replaceAll("\\{[#~pu][0-9]?\\}", "").split("\n")) {
+            String s = line.strip();
+            if (s.length() > best.length()) {
+                best = s;
+            }
+        }
+        return best;
+    }
+
+    /** 太短的譯文不拿來比：一兩個字到處都會出現，一般聊天就會誤觸。 */
+    private static final int MIN_CORE = 4;
 
     /**
      * 開啟轉換，並記下時間。
@@ -151,30 +212,38 @@ public final class MarketListener {
         if (!WynnChaYuan.config().marketSearch()) {
             return message;
         }
+        MarketSearch market = WynnChaYuan.translations().market();
+        String typed = message.strip();
         if (isLatin(message)) {
-            return message;                    // 本來就是英文，不用翻
+            // 本來就是英文的不該被「翻譯」一次。但法文、德文、西文的譯名也可能
+            // 整串都是 ASCII，一律跳過的話那幾種語言永遠用不了這個功能。
+            // 所以只收<b>整個名字完全相同</b>、而且對到的不是它自己的——
+            // 片段查那一路在拉丁字母上太容易撞到英文單字，不走。
+            String hit = market.exact(message);
+            if (hit == null || hit.equalsIgnoreCase(typed)) {
+                return message;
+            }
+            say(T.c("market.sent", typed, hit).withStyle(ChatFormatting.GRAY));
+            return hit;
         }
-        List<String> hits = WynnChaYuan.translations().market().candidates(message);
+        List<String> hits = market.candidates(message);
         if (hits.size() == 1) {
-            say(Component.literal("[WynnChaYuan] 搜尋「" + message.strip() + "」→ "
-                            + hits.get(0)).withStyle(ChatFormatting.GRAY));
+            say(T.c("market.sent", typed, hits.get(0)).withStyle(ChatFormatting.GRAY));
             return hits.get(0);
         }
         if (hits.isEmpty()) {
-            say(Component.literal("[WynnChaYuan] 查不到「" + message.strip()
-                            + "」的英文名，原樣送出").withStyle(ChatFormatting.GRAY));
+            say(T.c("market.notfound", typed).withStyle(ChatFormatting.GRAY));
             return message;
         }
         // 對到好幾個就不猜。列出來讓玩家挑，並原樣送出——至少不會搜到別的東西。
         StringBuilder list = new StringBuilder();
         for (int i = 0; i < Math.min(MAX_SHOWN, hits.size()); i++) {
-            list.append(i > 0 ? "、" : "").append(hits.get(i));
+            list.append(i > 0 ? ", " : "").append(hits.get(i));
         }
         if (hits.size() > MAX_SHOWN) {
-            list.append("…（共 ").append(hits.size()).append(" 個）");
+            list.append(T.s("market.more", hits.size()));
         }
-        say(Component.literal("[WynnChaYuan]「" + message.strip() + "」對到好幾個，"
-                        + "請改打其中一個：" + list).withStyle(ChatFormatting.YELLOW));
+        say(T.c("market.ambiguous", typed, list.toString()).withStyle(ChatFormatting.YELLOW));
         return message;
     }
 
@@ -182,7 +251,7 @@ public final class MarketListener {
      * 整串都是英文字母、數字與標點。
      *
      * <p>玩家自己打英文時不該被動到——而且英文名本來就是市集認得的形式，
-     * 「翻譯」它只會把對的東西弄壞。
+     * 「翻譯」它只會把對的東西弄壞。見 {@link #translate} 怎麼放行拉丁字母的譯名。
      */
     private static boolean isLatin(String text) {
         for (int i = 0; i < text.length(); i++) {
