@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Out of my Mind",
   "count": 60,
-  "translated": 0,
+  "translated": 60,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Out of my Mind#000": {
    "src": "Speak with the {p} children in the treehouse.",
-   "dst": "",
+   "dst": "与树屋里的 {p} 孩子们交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -18,7 +18,7 @@
   },
   "Out of my Mind#001": {
    "src": "Did ye two hear about some guy wandering around town? I've heard strange rumours about him...",
-   "dst": "",
+   "dst": "你们俩听说有个家伙在镇上到处晃吗？我听到一些关于他的怪传闻……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -28,7 +28,7 @@
   },
   "Out of my Mind#002": {
    "src": "Of course I have, he's the talk of the town! I heard he only brushes his teeth once a day and that he enjoys books about gardening!",
-   "dst": "",
+   "dst": "当然听说了，全镇都在讲他！我听说他一天只刷一次牙，还喜欢看园艺书！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -38,7 +38,7 @@
   },
   "Out of my Mind#003": {
    "src": "I don't know, you guys, all these rumors seem a little far-fetched. What next? Will he suddenly turn out to be a mad scientist?",
-   "dst": "",
+   "dst": "我不知道，你们俩，这些传闻好像有点离谱。接下来呢？他突然变成一个疯狂科学家？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -48,7 +48,7 @@
   },
   "Out of my Mind#004": {
    "src": "Oh shush you, we're not living inside some storybook! Besides, if he *was* a mad scientist, wouldn't he be trying to take over the city like all mad scientists in stories do?",
-   "dst": "",
+   "dst": "噢，你闭嘴，我们又不是活在故事书里！再说，如果他*真的*是疯狂科学家，不是应该像故事里所有疯狂科学家那样想占领城市吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -58,7 +58,7 @@
   },
   "Out of my Mind#005": {
    "src": "To me that doesn't sound all that strange compared to these other things I've been hearing, anyway... Something about labs and a \"hermit\".",
-   "dst": "",
+   "dst": "反正在我看来，跟我听到的其他事比起来，那也没那么奇怪……好像跟什么实验室和“隐士”有关。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -68,7 +68,7 @@
   },
   "Out of my Mind#006": {
    "src": "I think that's a type of crab or something. Adults are right old weirdos sometimes.",
-   "dst": "",
+   "dst": "我觉得那应该是某种螃蟹吧。大人有时候真是怪人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -78,7 +78,7 @@
   },
   "Out of my Mind#007": {
    "src": "Hey, a stranger! How long have you been listening to us? Didn't your mom teach you any manners?",
-   "dst": "",
+   "dst": "嘿，有陌生人！你偷听我们多久了？你妈妈没教过你礼貌吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -88,7 +88,7 @@
   },
   "Out of my Mind#008": {
    "src": "Wait Viola, this is our chance! This stranger sure seems like they could tackle anything, even evil hermit crabs! We could just ask them to see if these rumours are true!",
-   "dst": "",
+   "dst": "等等 Viola，这是我们的机会！这个陌生人看起来什么都对付得了，连邪恶的寄居蟹都行！我们可以请他们去查查这些传闻是不是真的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -98,7 +98,7 @@
   },
   "Out of my Mind#009": {
    "src": "Ignore my friends over there, they're always like that, but what Prentiss said was true. This might be our only chance to really know who this mystery man really is!",
-   "dst": "",
+   "dst": "别理那边我的朋友们，他们一直都那样，不过 Prentiss 说得对。这可能是我们唯一能真正弄清楚那个神秘人是谁的机会！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -108,7 +108,7 @@
   },
   "Out of my Mind#010": {
    "src": "It might be a good idea to look at that weird house next to those spooky ruins just south-east of the city. We found this key you could try out, but if you lose it there are some spares in our base.",
-   "dst": "",
+   "dst": "也许可以去看看城市东南边那片阴森废墟旁边的怪房子。我们找到了这把钥匙，你可以试试，要是弄丢了，我们基地里还有备用的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -118,7 +118,7 @@
   },
   "Out of my Mind#011": {
    "src": "Find the hidden door next to the gate near the Undergrowth Ruins outside {p}",
-   "dst": "",
+   "dst": "在 {p} 外的灌木废墟附近，找到大门旁边的暗门",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -128,7 +128,7 @@
   },
   "Out of my Mind#012": {
    "src": "Find a way inside the house at [-{~},-{~}]",
-   "dst": "",
+   "dst": "想办法进入 [-{~},-{~}] 的房子",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -138,7 +138,7 @@
   },
   "Out of my Mind#013": {
    "src": "Explore the hidden lab in search of information",
-   "dst": "",
+   "dst": "探索隐秘的实验室，寻找情报",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -148,7 +148,7 @@
   },
   "Out of my Mind#014": {
    "src": "Hello stranger! Welcome to my humble wooden abode. Comfy, isn't it? I bet you'd like a cup of this coff-",
-   "dst": "",
+   "dst": "你好啊，陌生人！欢迎来到我简朴的木屋。很舒服吧？我敢打赌你想来一杯这咖——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -158,7 +158,7 @@
   },
   "Out of my Mind#015": {
    "src": "Oh yes, I am the affable Ariodo, friendly neighbourhood neighbour. What do you need me for?",
-   "dst": "",
+   "dst": "噢对，我就是和蔼可亲的 Ariodo，友善的邻里好邻居。你找我有什么事？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -168,7 +168,7 @@
   },
   "Out of my Mind#016": {
    "src": "Kidnappings? Poaching? Not brushing my teeth?! Who is the lowly person you're talking about... they don't seem like a nice fellow such as myself.",
-   "dst": "",
+   "dst": "绑架？偷猎？不刷牙？！你说的是哪个卑鄙的家伙……听起来可不像我这样的好人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -178,7 +178,7 @@
   },
   "Out of my Mind#017": {
    "src": "Lets go, I'll take you to the exit so that I don't waste your time any longer!",
-   "dst": "",
+   "dst": "走吧，我带你去出口，免得再浪费你的时间！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -188,7 +188,7 @@
   },
   "Out of my Mind#018": {
    "src": "This is the room you came from. I call it the \"Vivarium\", creative name I came up with, right? It keeps my pets that aren't quite ready.",
-   "dst": "",
+   "dst": "这就是你刚才进来的房间。我叫它“饲育室”，这名字很有创意吧？里面养着我那些还没准备好的宠物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -198,7 +198,7 @@
   },
   "Out of my Mind#019": {
    "src": "Ready for what? Well that would ruin the surprise, wouldn't it? Can't have anyone finding out before the big event!",
-   "dst": "",
+   "dst": "准备好做什么？那样就没惊喜了，不是吗？大事发生之前可不能让任何人发现！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -208,7 +208,7 @@
   },
   "Out of my Mind#020": {
    "src": "Let us go now, time is precious.",
-   "dst": "",
+   "dst": "我们走吧，时间宝贵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -218,7 +218,7 @@
   },
   "Out of my Mind#021": {
    "src": "So you must be thinking, how have you never met a fine fellow such as myself until now? To be quite honest, you must have been terribly unlucky, I used to travel the world, you know!",
-   "dst": "",
+   "dst": "所以你一定在想，怎么到现在才遇见我这样的好人？说实话，那一定是你运气太差了，你知道吗，我以前可是周游世界的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -228,7 +228,7 @@
   },
   "Out of my Mind#022": {
    "src": "Oh, the places I've been were wonderful! From the depths of the jungle to the lesser depths of the jungle to even my back garden, I've done my fair share of exploring, if I do say so myself!",
-   "dst": "",
+   "dst": "噢，我去过的地方都太美妙了！从丛林深处，到丛林没那么深的地方，甚至到我家后花园，要我说，我可是探索过不少地方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -238,7 +238,7 @@
   },
   "Out of my Mind#023": {
    "src": "You are the first normal person I've seen recently, {PlayerName}. I went out recently and was met with some very rude remarks by some very rude townsfolk!",
-   "dst": "",
+   "dst": "你是我最近见过的第一个正常人，{PlayerName}。我前阵子出门，结果被一些很没礼貌的镇民说了一些很没礼貌的话！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -248,7 +248,7 @@
   },
   "Out of my Mind#024": {
    "src": "The last time I visited the town it was all empty too, but I could feel people were hiding in their homes, even on such a lovely day as then. There was no one even to hide from! Strange people.",
-   "dst": "",
+   "dst": "上次我去镇上的时候也是空荡荡的，但我感觉得到大家都躲在家里，就算那天天气那么好也一样。根本没什么好躲的！怪人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -258,7 +258,7 @@
   },
   "Out of my Mind#025": {
    "src": "I'm just a normal guy, so why can't anyone appreciate me for once? I'm sure you do, right?",
-   "dst": "",
+   "dst": "我只是个普通人，为什么就没人能欣赏我一次呢？我相信你会的，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -268,7 +268,7 @@
   },
   "Out of my Mind#026": {
    "src": "Here we are, the library! I could spend years in here, but who has time for that? I could talk about books hours too! Here's one right now.",
-   "dst": "",
+   "dst": "到了，图书馆！我可以在这里待上好几年，可谁有那个时间呢？我聊书也能聊上好几个小时！现在就有一本。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -278,7 +278,7 @@
   },
   "Out of my Mind#027": {
    "src": "This is 'The Long-Winded and Painful Death of Sweeney S. Greenville' and I must say it is a hidden gem among books! One day it just suddenly appeared in here so I couldn't resist reading it. So it starts off with Sweeney S. Greenville...",
-   "dst": "",
+   "dst": "这本是《Sweeney S. Greenville 冗长又痛苦的死亡》，我得说这是书中的遗珠！有一天它突然就出现在这里，我忍不住就读了。故事开头是 Sweeney S. Greenville……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -288,7 +288,7 @@
   },
   "Out of my Mind#028": {
    "src": "We're here now! Take the exit right in front of you, don't mind the corridor to the right, it's only decoration!",
-   "dst": "",
+   "dst": "我们到了！走你正前方的出口，别管右边的走廊，那只是装饰！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -298,7 +298,7 @@
   },
   "Out of my Mind#029": {
    "src": "Maybe you can come back some day for a tea or coffee and a long talk about books, since I noticed you were very interested in my long-winded review! Have fun out there and don't forget, I'm always here for you!",
-   "dst": "",
+   "dst": "也许你哪天可以回来喝杯茶或咖啡，好好聊聊书，我看得出来你对我那篇冗长的书评很感兴趣！出去玩得开心，别忘了，我永远在这里等你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -308,7 +308,7 @@
   },
   "Out of my Mind#030": {
    "src": "The ground is shaking... I thought that was supposed to happen later! Come back, friend, I can't do this alone!",
-   "dst": "",
+   "dst": "地面在震动……我还以为那应该晚点才发生！回来，朋友，我一个人办不到！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -318,7 +318,7 @@
   },
   "Out of my Mind#031": {
    "src": "Build a machine to hit your head and get back to normal",
-   "dst": "",
+   "dst": "造一台机器砸你的头，让你恢复正常",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -328,7 +328,7 @@
   },
   "Out of my Mind#032": {
    "src": "Help me keep this door shut, or else my surprise will be ruined!",
-   "dst": "",
+   "dst": "帮我把这扇门顶住，不然我的惊喜就要被毁了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -338,7 +338,7 @@
   },
   "Out of my Mind#033": {
    "src": "Just keep to the sides, it's safer that way.",
-   "dst": "",
+   "dst": "靠边站就好，那样比较安全。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -348,7 +348,7 @@
   },
   "Out of my Mind#034": {
    "src": "Just stay here for one more momen...",
-   "dst": "",
+   "dst": "再在这里待一下……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -358,7 +358,7 @@
   },
   "Out of my Mind#035": {
    "src": "Oh my, a ghost? Wait, is this just you, my trusty friend, playing a prank on me? No? Well that certainly is a problem!",
-   "dst": "",
+   "dst": "天哪，鬼？等等，是你吗，我可靠的朋友，在跟我恶作剧？不是？那可真是个问题！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -368,7 +368,7 @@
   },
   "Out of my Mind#036": {
    "src": "If you remember, we were talking about keeping the door shut when suddenly something heavy fell off a shell hitting you square in the head!",
-   "dst": "",
+   "dst": "你还记得的话，我们刚才在说要顶住门，结果突然有个重东西从架子上掉下来，正好砸中你的头！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -378,7 +378,7 @@
   },
   "Out of my Mind#037": {
    "src": "I think I heard something about fighting fire with fire, so I think I have a way to get you back! You are a bit too heavy for me, so we need to think of a workaround.",
-   "dst": "",
+   "dst": "我好像听过以火攻火的说法，所以我想我有办法让你回来！你对我来说太重了，所以我们得想个变通的办法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -388,7 +388,7 @@
   },
   "Out of my Mind#038": {
    "src": "During the shaking, some of my machines broke apart, but we could use these to build something capable of dropping someting heavier on your head for the second time.",
-   "dst": "",
+   "dst": "震动的时候，我有些机器坏掉了，不过我们可以用这些零件造个东西，能把更重的东西第二次砸到你头上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -398,7 +398,7 @@
   },
   "Out of my Mind#039": {
    "src": "Surely by that logic everything has to go well, you know. Now let me explain how we can do this. First, choose what part you want to use to make our machine, then choose where you want it to go and face.",
-   "dst": "",
+   "dst": "照这个逻辑，一切肯定都会顺利的，你懂吧。现在我来解释怎么做。首先，选你要用来造机器的零件，然后选它要放在哪、朝哪个方向。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -408,7 +408,7 @@
   },
   "Out of my Mind#040": {
    "src": "The [Cart] can carry the coconut from one end of the platform to another for a few tiles, while the [Fan] can push the coconut even further.",
-   "dst": "",
+   "dst": "[推车] 可以把椰子从平台的一端运到另一端，走上几格；[风扇] 则能把椰子推得更远。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -418,7 +418,7 @@
   },
   "Out of my Mind#041": {
    "src": "The [Hammer] is able to knock the coconut over a one space gap while the [Cannon] can shoot the coconut one grid up diagonally in the direction it is facing.",
-   "dst": "",
+   "dst": "[锤子] 能把椰子敲过一格的空隙，[大炮] 则能把椰子朝它面对的方向往斜上方射一格。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -428,7 +428,7 @@
   },
   "Out of my Mind#042": {
    "src": "I think I hit my head too, so I'll need your help deciding where to place each part. You want to get the coconut across to the green tile, remember?",
-   "dst": "",
+   "dst": "我好像也撞到头了，所以需要你帮我决定每个零件放在哪。你要把椰子送到绿色的格子上，记得吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -438,7 +438,7 @@
   },
   "Out of my Mind#043": {
    "src": "You're back! To be quite honest, I didn't think that would work, but I'm glad it did!",
-   "dst": "",
+   "dst": "你回来了！说实话，我没想到那会管用，不过真高兴成功了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -448,7 +448,7 @@
   },
   "Out of my Mind#044": {
    "src": "Quick, head through the large door and stop the cause of all this shaking!",
-   "dst": "",
+   "dst": "快，穿过那扇大门，阻止这场震动的源头！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -458,7 +458,7 @@
   },
   "Out of my Mind#045": {
    "src": "Find a way to destroy the plant monster, then return to the group in {p} at [-{~},-{~}] to report your findings",
-   "dst": "",
+   "dst": "想办法消灭植物怪物，然后回到 {p} [-{~},-{~}] 的孩子们那里报告你的发现",
    "role": "desc",
    "kind": "objective",
    "quest": "Out of my Mind",
@@ -468,7 +468,7 @@
   },
   "Out of my Mind#046": {
    "src": "Oh no no, this is not good! If I had known that my little pet has grown so much I would have rushed you out sooner. Now it is wilted...",
-   "dst": "",
+   "dst": "噢不不，这可不妙！要是我早知道我的小宠物长这么大了，我就会早点把你赶出去。现在它枯萎了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -478,7 +478,7 @@
   },
   "Out of my Mind#047": {
    "src": "You did what you had to, though. I am sorry to say this friend, but I think I'll stay inside a little longer. Sorry, my only friend.",
-   "dst": "",
+   "dst": "不过你也是不得不这么做。朋友，很抱歉这么说，但我想我还是在屋里多待一阵子吧。对不起，我唯一的朋友。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -488,7 +488,7 @@
   },
   "Out of my Mind#048": {
    "src": "We'll surely meet again in the future, so don't be sad. I'll still be the one and only friendly neighbourhood neighbour when that moment comes, I promise. Goodbye now!",
-   "dst": "",
+   "dst": "我们以后一定还会再见的，所以别难过。到那时我还会是那个独一无二的友善邻里好邻居，我保证。再见啦！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -498,7 +498,7 @@
   },
   "Out of my Mind#049": {
    "src": "You're back! You were gone for ages too, and what happened to your head? Who did the mystery man turn out to be?",
-   "dst": "",
+   "dst": "你回来了！你去了好久，你的头怎么了？那个神秘人到底是谁？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -508,7 +508,7 @@
   },
   "Out of my Mind#050": {
    "src": "That sounds ridiculous! Who could ever belie-",
-   "dst": "",
+   "dst": "这听起来太荒唐了！谁会相——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -518,7 +518,7 @@
   },
   "Out of my Mind#051": {
    "src": "Wow that sounded just like in the stories, but it came from you, so it must be true!",
-   "dst": "",
+   "dst": "哇，听起来就跟故事里一样，不过是你说的，所以一定是真的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -528,7 +528,7 @@
   },
   "Out of my Mind#052": {
    "src": "I don't know about you, Todd, but I fell like we should make them our honorary club member for finding such amazing things!",
-   "dst": "",
+   "dst": "我不知道你怎么想，Todd，但我觉得我们应该让他们当我们俱乐部的荣誉会员，因为他们发现了这么了不起的事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -538,7 +538,7 @@
   },
   "Out of my Mind#053": {
    "src": "Why do I even try... You two would believe anything.",
-   "dst": "",
+   "dst": "我干嘛还要费劲……你们俩什么都信。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -548,7 +548,7 @@
   },
   "Out of my Mind#054": {
    "src": "I'm pretty sure they mentioned something about being hit by coconut crabs, and just look at their head. One... two... two huge bumps!",
-   "dst": "",
+   "dst": "我很确定他们提到被椰子蟹砸到，你看他们的头。一个……两个……两个大包！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -558,7 +558,7 @@
   },
   "Out of my Mind#055": {
    "src": "Oh fine... whatever you say, Prentiss. I'm sure they'll bring you on some wacky adventures next time around!",
-   "dst": "",
+   "dst": "噢好吧……你说什么都对，Prentiss。我相信他们下次会带你去什么古怪的冒险！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -568,7 +568,7 @@
   },
   "Out of my Mind#056": {
    "src": "Ignore Viola, she's acting up today, probably because you're got the spotlight this time. However, I agree with Prentiss.",
-   "dst": "",
+   "dst": "别理 Viola，她今天在闹别扭，大概是因为这次风头被你抢走了。不过，我同意 Prentiss。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -578,7 +578,7 @@
   },
   "Out of my Mind#057": {
    "src": "Thanks to you, we solved the case of the mystery man as well as the mystery house! For this I'd like to...",
-   "dst": "",
+   "dst": "多亏了你，我们解开了神秘人和神秘房子的谜团！为此，我要……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -588,7 +588,7 @@
   },
   "Out of my Mind#058": {
    "src": "Welcome you to the club, new member! Here is your shiny new badge that you can parade around town to show off how cool you are to the other with style.",
-   "dst": "",
+   "dst": "欢迎你加入俱乐部，新会员！这是你闪亮的新徽章，你可以戴着它在镇上神气地走来走去，让大家看看你有多酷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",
@@ -598,7 +598,7 @@
   },
   "Out of my Mind#059": {
    "src": "Also since all the adults do it, we'll give you some emeralds that you rightly deserve for such an achievement. We all pitched in!",
-   "dst": "",
+   "dst": "还有，因为大人都这么做，所以我们也给你一些绿宝石，这是你立下这种功劳应得的。我们大家一起凑的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Out of my Mind",

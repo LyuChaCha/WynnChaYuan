@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "From the Mountains",
   "count": 63,
-  "translated": 0,
+  "translated": 63,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "From the Mountains#000": {
    "src": "Find out what's going on at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "查明 [-{~}, {~}, -{~}] 发生了什么事。",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -18,7 +18,7 @@
   },
   "From the Mountains#001": {
    "src": "Mmph! Humnym! Mah houfhs fhs on fifhre! Gft hfrelp, tiff brafze womd strfp!",
-   "dst": "",
+   "dst": "唔唔！人唔类！我唔房子唔着火唔了！快唔找唔人唔，快唔去唔灭火！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -28,7 +28,7 @@
   },
   "From the Mountains#002": {
    "src": "Ouh hff do hflp! I hff nho glue wfhtsh doon fifs!",
-   "dst": "",
+   "dst": "唔唔唔帮唔忙！我唔知唔道唔怎么唔灭唔这火！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -38,7 +38,7 @@
   },
   "From the Mountains#003": {
    "src": "Find what Arnod wants inside of the house.",
-   "dst": "",
+   "dst": "进屋找到 Arnod 想要的东西。",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -48,7 +48,7 @@
   },
   "From the Mountains#004": {
    "src": "...well, that explains why you didn't help. But, uh, did the RAGING FIRE escape your notice somehow?!",
-   "dst": "",
+   "dst": "……好吧，这就解释了你为什么不帮忙。可是，呃，那熊熊大火你怎么就没注意到呢？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -58,7 +58,7 @@
   },
   "From the Mountains#005": {
    "src": "I don't care who it is, get me help!! I don't care if you do it, I don't care if you get someone to do it, but someone's got to help with this crazy re-igniting fire!",
-   "dst": "",
+   "dst": "我不管是谁，快找人帮我！！我不管是你来，还是你找别人来，总之得有人帮忙对付这场一直重新烧起来的疯狂大火！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -68,7 +68,7 @@
   },
   "From the Mountains#006": {
    "src": "Check around {p} if you need to, but hurry up already! My house is going to burn to ashes if you don't hurry!",
-   "dst": "",
+   "dst": "有需要就去 {p} 附近找找，但快点！再不快点，我的房子就要烧成灰了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -78,7 +78,7 @@
   },
   "From the Mountains#007": {
    "src": "Find someone in {p} who can help you with the fires.",
-   "dst": "",
+   "dst": "在 {p} 找一个能帮你对付大火的人。",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -88,7 +88,7 @@
   },
   "From the Mountains#008": {
    "src": "Hm... where am I going to get help now- Mh? You're one of those human types, right? Do you have-",
-   "dst": "",
+   "dst": "嗯……我现在要去哪找帮手——嗯？你是人类那种人，对吧？你有没有——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -98,7 +98,7 @@
   },
   "From the Mountains#009": {
    "src": "Huh? Someone's house is on fire? Guess that's a little more pressing than what I was going to ask. Where is it?",
-   "dst": "",
+   "dst": "嗯？有人的房子着火了？看来这比我要问的事急。在哪里？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -108,7 +108,7 @@
   },
   "From the Mountains#010": {
    "src": "Oh, that valley by the gate? I think I know where you mean. Let's walk together. So, tell me what exactly happened?",
-   "dst": "",
+   "dst": "噢，大门旁边那个山谷？我想我知道你说的地方。我们一起走吧。那么，跟我说说到底发生了什么事？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -118,7 +118,7 @@
   },
   "From the Mountains#011": {
    "src": "Ah, so you're like a mercenary then, and you found this man's house on fire. He said... what? It re-ignited itself? Well, that doesn't make any sense.",
-   "dst": "",
+   "dst": "啊，所以你算是个佣兵，然后发现这个人的房子着火了。他说……什么？火自己重新烧起来了？嗯，这说不通啊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -128,7 +128,7 @@
   },
   "From the Mountains#012": {
    "src": "Eh, I'll see when we get there. Oh, what am I doing over here? Yeah, I suppose I do look different from the fare you'd have seen. Well, I'm a dwarf.",
-   "dst": "",
+   "dst": "呃，到了再看吧。噢，我在这边干什么？是啊，我想我看起来跟你平常见到的家伙不太一样。嗯，我是矮人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -138,7 +138,7 @@
   },
   "From the Mountains#013": {
    "src": "Normally I live in the {p}, past the canyons to the east. Guess for yourself what the land is like, considering the name.",
-   "dst": "",
+   "dst": "我平常住在东边峡谷过去的 {p}。看名字你自己猜猜那片土地是什么样子吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -148,7 +148,7 @@
   },
   "From the Mountains#014": {
    "src": "Without getting into too much detail, there's... A few problems, with how it's being governed, and I was trying to drum up support over in {p}.",
-   "dst": "",
+   "dst": "不讲太多细节的话，那里的治理方式有……一些问题，我本来想去 {p} 争取点支持。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -158,7 +158,7 @@
   },
   "From the Mountains#015": {
    "src": "It, uh. Well, I'm used to getting laughed out of the room back home, but I wasn't expecting to see the same thing over there, just with quartz wallpaper.",
-   "dst": "",
+   "dst": "结果，呃。嗯，在老家被人笑着赶出门我已经习惯了，可没想到在那边也是一样的情况，只是墙纸换成了石英。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -168,7 +168,7 @@
   },
   "From the Mountains#016": {
    "src": "I was going to ask if you had any way that you might've been able to help, but... well, I can smell the smoke from here. One thing at a time.",
-   "dst": "",
+   "dst": "我本来想问你有没有办法帮上忙，不过……嗯，我在这里就闻得到烟味了。一件一件来吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -178,7 +178,7 @@
   },
   "From the Mountains#017": {
    "src": "...and where there's smoke, there's fire. This is, uh... that's looking a little more like home, and I'm fairly certain that it isn't supposed to be.",
-   "dst": "",
+   "dst": "……有烟的地方就有火。这个，呃……这看起来越来越像我老家了，而我很确定不应该是这样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -188,7 +188,7 @@
   },
   "From the Mountains#018": {
    "src": "Yep, this fire isn't natural at all... Hell, this almost looks like arson to me!",
-   "dst": "",
+   "dst": "没错，这火一点都不自然……见鬼，这简直像是纵火！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -198,7 +198,7 @@
   },
   "From the Mountains#019": {
    "src": "So that's the house, hm? Alright, I'll see what I can do. Might not be able to put it out, but if it's re-igniting, then maybe...",
-   "dst": "",
+   "dst": "那就是那栋房子，嗯？好吧，我看看能做些什么。也许灭不了火，但如果它一直重新烧起来，那也许……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -208,7 +208,7 @@
   },
   "From the Mountains#020": {
    "src": "Hm... didn't think they'd be this far out, but it'd make sense if...",
-   "dst": "",
+   "dst": "嗯……没想到它们会跑到这么远，不过如果……那就说得通了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -218,7 +218,7 @@
   },
   "From the Mountains#021": {
    "src": "Aha! Here's the problem. It's just a little Fleris. Ehm, to explain, they normally live in the Heights.",
-   "dst": "",
+   "dst": "啊哈！问题就在这。只是一只小火灵。呃，解释一下，它们平常住在高地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -228,7 +228,7 @@
   },
   "From the Mountains#022": {
    "src": "Pretty affectionate, good if you can stand the heat, but if you take them away from their mounds they get spooked.",
-   "dst": "",
+   "dst": "很亲人，如果你受得了热的话是好伙伴，但如果把它们带离它们的土堆，它们就会受惊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -238,7 +238,7 @@
   },
   "From the Mountains#023": {
    "src": "One fleris could have kept setting this man's house on fire, but all the other fallout... there's certainly more where this one came from.",
-   "dst": "",
+   "dst": "一只火灵就能让这个人的房子一直着火，可是其他那些灾情……肯定还有更多同类在附近。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -248,7 +248,7 @@
   },
   "From the Mountains#024": {
    "src": "Let's go talk to the villager outside. He might've seen where the others got off to, or where they came from.",
-   "dst": "",
+   "dst": "我们去跟外面的村民谈谈吧。他也许看到其他的跑去哪了，或者是从哪来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -258,7 +258,7 @@
   },
   "From the Mountains#025": {
    "src": "Sir, I figured out why your house kept re-igniting and solved that issue, but tell me, have you seen any moving sludgy things around here?",
-   "dst": "",
+   "dst": "先生，我查出你的房子为什么一直重新着火，也把问题解决了，不过请告诉我，你有没有在附近看到什么会动的泥浆状东西？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -268,7 +268,7 @@
   },
   "From the Mountains#026": {
    "src": "Uhm, I don't really know. I've been trying to douse my house so many times over that I haven't really paid attention!",
-   "dst": "",
+   "dst": "呃，我不太清楚。我一直忙着一遍又一遍地给房子浇水，根本没注意！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -278,7 +278,7 @@
   },
   "From the Mountains#027": {
    "src": "I remember seeing some tar-looking stuff dripping from the mountains behind my house, but that's it!",
-   "dst": "",
+   "dst": "我只记得看到有些像焦油的东西从我家后面的山上滴下来，就这样！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -288,7 +288,7 @@
   },
   "From the Mountains#028": {
    "src": "Sounds concrete enough to me. Let's check out what's going on on top of the mountain ridge. Check that book of yours if you need directions.",
-   "dst": "",
+   "dst": "对我来说够具体了。我们去山脊顶上看看是怎么回事。需要方向的话就看看你那本书。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -298,7 +298,7 @@
   },
   "From the Mountains#029": {
    "src": "Go to the path at [-{~}, {~}, -{~}], and follow it up to the top of the mountain.",
-   "dst": "",
+   "dst": "前往 [-{~}, {~}, -{~}] 的小路，沿着它爬上山顶。",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -308,7 +308,7 @@
   },
   "From the Mountains#030": {
    "src": "Hm, you're a pretty quick climber. I thought I'd get ahead of you. Well, this looks like the scorched area down in the valley... Hm! I thought so.",
-   "dst": "",
+   "dst": "嗯，你爬得挺快的。我还以为我会比你先到。嗯，这里看起来就像山谷下面那片烧焦的区域……嗯！我就知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -318,7 +318,7 @@
   },
   "From the Mountains#031": {
    "src": "There's only one reason I can think of that there would be so many Flerisi around here... If that wagon's reinforced, then...",
-   "dst": "",
+   "dst": "我只想得到一个原因，会让这里有这么多火灵……如果那辆货车是加固过的，那……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -328,7 +328,7 @@
   },
   "From the Mountains#032": {
    "src": "Gah, I knew it. Traffickers! And incompetent ones, too, considering they couldn't hold the things.",
-   "dst": "",
+   "dst": "啊，我就知道。走私贩！而且还是无能的走私贩，连这些东西都看不住。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -338,7 +338,7 @@
   },
   "From the Mountains#033": {
    "src": "There's a black market issue in the {p}. Things that you can't find anywhere else is harvested in the Heights for their high value.",
-   "dst": "",
+   "dst": "{p} 有黑市问题。那些在别处找不到的东西，因为价值高而在高地被大肆捕采。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -348,7 +348,7 @@
   },
   "From the Mountains#034": {
    "src": "Flerisi are one of them. In the Heights, they're kept as pets. They're relatively friendly, keep your house warm, and don't need much care...",
-   "dst": "",
+   "dst": "火灵就是其中之一。在高地，人们把它们当宠物养。它们相对友善，能让屋子保暖，也不需要怎么照顾……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -358,7 +358,7 @@
   },
   "From the Mountains#035": {
    "src": "...But if you take them away from a warm place, they burn everything. To think- Some people use the things as weapons. Can't leave well enough alone...",
-   "dst": "",
+   "dst": "……可是如果把它们带离温暖的地方，它们就会把一切都烧了。想想看——有些人还拿它们当武器。就是不肯安分……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -368,7 +368,7 @@
   },
   "From the Mountains#036": {
    "src": "We'll need to catch these Flerisi. Here, take this net. While you catch them, I'll repair the cart so we can put them in there later.",
-   "dst": "",
+   "dst": "我们得抓住这些火灵。来，拿着这张网。你去抓的时候，我来修货车，之后好把它们放进去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -378,7 +378,7 @@
   },
   "From the Mountains#037": {
    "src": "Capture all of the rogue Flerisi and bring them to Axelus.",
-   "dst": "",
+   "dst": "抓住所有失控的火灵，带去给 Axelus。",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -388,7 +388,7 @@
   },
   "From the Mountains#038": {
    "src": "I've got the cart all repaired and ready, did you get all the Flerisi? Come over to the cart then. There's still have work to do.",
-   "dst": "",
+   "dst": "货车我修好了，你把火灵都抓到了吗？那到货车这边来吧。还有活要干。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -398,7 +398,7 @@
   },
   "From the Mountains#039": {
    "src": "I'll keep the Flerisi in a smaller fire to keep them calm, see if I can't get them back to the Heights when this is done.",
-   "dst": "",
+   "dst": "我会把火灵放在小一点的火里让它们保持冷静，看看等这件事结束后能不能把它们送回高地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -408,7 +408,7 @@
   },
   "From the Mountains#040": {
    "src": "For now, I want to see if I can find anything on who these traffickers were. Let's see if they left anything in the front of the cart.",
-   "dst": "",
+   "dst": "现在，我想看看能不能找到关于这些走私贩的线索。看看他们有没有在货车前面留下什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -418,7 +418,7 @@
   },
   "From the Mountains#041": {
    "src": "...oh. Well, didn't notice that the fire went THAT far earlier. That's a problem, isn't it?",
-   "dst": "",
+   "dst": "……噢。嗯，刚才没注意到火烧到那么远了。这是个问题，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -428,7 +428,7 @@
   },
   "From the Mountains#042": {
    "src": "To explain, Flerisi aren't all as tiny as the ones we've found here. They feed of cinders and fire... And for this much damage to be caused, well...",
-   "dst": "",
+   "dst": "解释一下，火灵不是全都像我们在这里找到的这么小。它们靠余烬和火为食……而要造成这么大的破坏，嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -438,7 +438,7 @@
   },
   "From the Mountains#043": {
    "src": "Methinks this one's getting a bit out of control. This is right next to that big forest, too. Could be a problem if we leave this one be.",
-   "dst": "",
+   "dst": "我看这一只有点失控了。这里还紧挨着那片大森林。如果我们放着不管，可能会出问题。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -448,7 +448,7 @@
   },
   "From the Mountains#044": {
    "src": "We're going to have to track it down and subdue it. Here, follow me. I'll dig us down to the valley. Watch a dwarf at work!",
-   "dst": "",
+   "dst": "我们得追踪它，把它制服。来，跟我来。我挖条路下到山谷。看看矮人干活吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -458,7 +458,7 @@
   },
   "From the Mountains#045": {
    "src": "Enter the hole at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "进入 [-{~}, {~}, -{~}] 的洞。",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -468,7 +468,7 @@
   },
   "From the Mountains#046": {
    "src": "Investigate the trail of fire.",
-   "dst": "",
+   "dst": "调查火焰的痕迹。",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -478,7 +478,7 @@
   },
   "From the Mountains#047": {
    "src": "Not bad, eh? Anyways, dunno what that huge gate's for, but it looks like our Fleris friend has commandeered it for a bonfire.",
-   "dst": "",
+   "dst": "不错吧，嗯？总之，不知道那扇大门是干嘛的，不过看来我们的火灵朋友把它占来当篝火了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -488,7 +488,7 @@
   },
   "From the Mountains#048": {
    "src": "At least it's a little more contained than I thought, being in that cave, but we still have to catch it. Lead the way. I'm right with you.",
-   "dst": "",
+   "dst": "至少它在那个洞窟里，比我想的更好控制一些，不过我们还是得抓住它。你带路。我就跟在你身边。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -498,7 +498,7 @@
   },
   "From the Mountains#049": {
    "src": "What the...?! It inflamed the creatures in this cave! Fend 'em off!",
-   "dst": "",
+   "dst": "什么……？！它把这个洞窟里的生物都点着了！把它们打退！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -508,7 +508,7 @@
   },
   "From the Mountains#050": {
    "src": "There are more of them coming! Get to the end of the cave!",
-   "dst": "",
+   "dst": "还有更多过来了！冲到洞窟尽头！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -518,7 +518,7 @@
   },
   "From the Mountains#051": {
    "src": "Gah, more?! Behind you!",
-   "dst": "",
+   "dst": "啊，还有？！在你后面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -528,7 +528,7 @@
   },
   "From the Mountains#052": {
    "src": "Both of us stopping is going to make it take too much time, the traffickers might come back!",
-   "dst": "",
+   "dst": "我们俩都停下来会拖太久，走私贩可能会回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -538,7 +538,7 @@
   },
   "From the Mountains#053": {
    "src": "Listen up. I'll handle these things, while you go after the Fleris. If it's a big one like we think, it'll be a downhill battle- It should shrink if you attack it!",
-   "dst": "",
+   "dst": "听好了。这些东西我来对付，你去追火灵。如果它真像我们想的那么大，那会是场越打越轻松的仗——你攻击它，它应该就会变小！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -548,7 +548,7 @@
   },
   "From the Mountains#054": {
    "src": "Alright, time for a little royal rumble!",
-   "dst": "",
+   "dst": "好了，来场小小的大乱斗吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -558,7 +558,7 @@
   },
   "From the Mountains#055": {
    "src": "Subdue the Fleris.",
-   "dst": "",
+   "dst": "制服火灵。",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -568,7 +568,7 @@
   },
   "From the Mountains#056": {
    "src": "Phew, you're alright! Charred and covered in soot, but that's to be expected. Subdued the Fleris, too! I have the net with me, so allow me.",
-   "dst": "",
+   "dst": "呼，你没事！全身烧焦、沾满煤灰，不过这也在意料之中。火灵也制服了！网在我这里，让我来吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -578,7 +578,7 @@
   },
   "From the Mountains#057": {
    "src": "Well, this is probably a bit of thankless work we just did, but so is a lot of work. Let's get out of here. We can talk outside.",
-   "dst": "",
+   "dst": "嗯，我们刚才干的大概是没人会感谢的活，不过很多活都是这样。我们离开这里吧。出去再聊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -588,7 +588,7 @@
   },
   "From the Mountains#058": {
    "src": "Exit the cave and talk with Axelus at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "离开洞窟，到 [-{~}, {~}, -{~}] 与 Axelus 交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "From the Mountains",
@@ -598,7 +598,7 @@
   },
   "From the Mountains#059": {
    "src": "Well, I say the work is thankless, but that won't stop me, anyways. Thank you for the help, human- This would've been overwhelming alone.",
-   "dst": "",
+   "dst": "嗯，我是说这活没人感谢，不过那也拦不住我。谢谢你的帮忙，人类——要是我一个人，肯定应付不过来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -608,7 +608,7 @@
   },
   "From the Mountains#060": {
    "src": "I'll ask the local police force if they've found the traffickers. If they cut and run, well... I got a free cart for the ride home. There's thing for me to attend to there.",
-   "dst": "",
+   "dst": "我会去问问本地警方有没有抓到那些走私贩。如果他们跑了，嗯……我就白得一辆回家的货车。我在老家还有事要处理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -618,7 +618,7 @@
   },
   "From the Mountains#061": {
    "src": "Oh, where are my manners? Never even introduced myself this whole time. The name is Axelus. And yours?",
-   "dst": "",
+   "dst": "噢，我的礼貌呢？我从头到尾都没自我介绍。我叫 Axelus。你呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
@@ -628,7 +628,7 @@
   },
   "From the Mountains#062": {
    "src": ", huh? I'll try and remember that. For now, take this armor for the trouble. Safe travels, {u}!",
-   "dst": "",
+   "dst": "，是吧？我会尽量记住的。现在，收下这件护甲，辛苦你了。一路平安，{u}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "From the Mountains",
