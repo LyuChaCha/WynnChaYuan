@@ -3,15 +3,15 @@
   "generated": true,
   "domain": "quest-dialogue",
   "itemNames": false,
-  "lang": "zh_tw",
+  "lang": "zh_cn",
   "count": 22089,
-  "translated": 0,
+  "translated": 501,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
   "A Grave Mistake#000": {
    "src": "You might want to leave.",
-   "dst": "",
+   "dst": "你最好离开。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -21,7 +21,7 @@
   },
   "A Grave Mistake#001": {
    "src": "There is nothing in this graveyard.",
-   "dst": "",
+   "dst": "这片墓地里什么都没有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -31,7 +31,7 @@
   },
   "A Grave Mistake#002": {
    "src": "This place is private.",
-   "dst": "",
+   "dst": "这里是私人地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -41,7 +41,7 @@
   },
   "A Grave Mistake#003": {
    "src": ".;I. ,told;.",
-   "dst": "",
+   "dst": ".;我. ,说过;.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Grave Mistake",
@@ -51,7 +51,7 @@
   },
   "A Grave Mistake#004": {
    "src": "I have warned you...",
-   "dst": "",
+   "dst": "我警告过你了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -61,7 +61,7 @@
   },
   "A Grave Mistake#005": {
    "src": "Oh, my arm.. It's ba...",
-   "dst": "",
+   "dst": "噢，我的手臂.. 它回……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -71,7 +71,7 @@
   },
   "A Grave Mistake#006": {
    "src": "Where di.. my arm.? I need my a... I had it somewh... upstairs?",
-   "dst": "",
+   "dst": "我的手臂.. 去哪.了？我需要我的手…… 我放在某个地…… 楼上？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -81,7 +81,7 @@
   },
   "A Grave Mistake#008": {
    "src": "You were warned not to enter this forsaken place.",
-   "dst": "",
+   "dst": "早就警告过你，不要进入这个被遗弃的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -91,7 +91,7 @@
   },
   "A Grave Mistake#009": {
    "src": "But since you made it thusfar, I suppose I shall show you the truth...",
-   "dst": "",
+   "dst": "不过既然你走到了这一步，我想我该让你看看真相……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -101,7 +101,7 @@
   },
   "A Grave Mistake#010": {
    "src": "Do you understand now?",
-   "dst": "",
+   "dst": "现在你明白了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -111,7 +111,7 @@
   },
   "A Grave Mistake#011": {
    "src": "Now leave, and forget the horrors you have witnessed here today...",
-   "dst": "",
+   "dst": "现在离开吧，忘掉你今天在这里目睹的恐怖……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -121,7 +121,7 @@
   },
   "A Grave Mistake#012": {
    "src": "They are safer here.",
-   "dst": "",
+   "dst": "它们在这里更安全。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -131,7 +131,7 @@
   },
   "A Grave Mistake#013": {
    "src": ".Return;' to:, 'Alem;,",
-   "dst": "",
+   "dst": ".回去;' 找:, 'Alem;,",
    "role": "desc",
    "kind": "objective",
    "quest": "A Grave Mistake",
@@ -141,7 +141,7 @@
   },
   "A Grave Mistake#014": {
    "src": "I have nothing more to say. Take these.",
-   "dst": "",
+   "dst": "我没什么好说的了。拿着这些。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -151,7 +151,7 @@
   },
   "A Grave Mistake#015": {
    "src": "Ooh.. oh... another victim... Welcome... there is no need for a quick introduction... ... you will have just time enough now...",
-   "dst": "",
+   "dst": "噢.. 噢…… 又一个受害者…… 欢迎…… 不必急着自我介绍…… …… 你现在的时间刚刚好……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -161,7 +161,7 @@
   },
   "A Grave Mistake#016": {
    "src": "After all... you just fell into a grave... but, let us make it a little comfortable... where shall I bite first?!",
-   "dst": "",
+   "dst": "毕竟…… 你刚掉进了坟墓…… 不过，让我们弄得舒服点…… 我先咬哪里好呢？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Grave Mistake",
@@ -9411,7 +9411,7 @@
   },
   "A New Beginning#000": {
    "src": "Enter the city at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "进入 [-{~}, {~}, -{~}] 的城市",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -9421,7 +9421,7 @@
   },
   "A New Beginning#001": {
    "src": "Halt! I'll need to see some form of identification.",
-   "dst": "",
+   "dst": "站住！请出示身份证明。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9431,7 +9431,7 @@
   },
   "A New Beginning#002": {
    "src": "New policy, sorry for the inconvenience. We're heightening security around here.",
-   "dst": "",
+   "dst": "新规定，给你添麻烦了。我们正在加强这一带的戒备。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9441,7 +9441,7 @@
   },
   "A New Beginning#003": {
    "src": "It shouldn't take too much of your time, don't worry! Just show us your citizen identification papers, and we'll let you on through.",
-   "dst": "",
+   "dst": "不会耽误你太久，别担心！只要把公民身份文件给我们看一下，就放你过去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9451,7 +9451,7 @@
   },
   "A New Beginning#004": {
    "src": "Yep! All good.",
-   "dst": "",
+   "dst": "好！没问题。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9461,7 +9461,7 @@
   },
   "A New Beginning#005": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9471,7 +9471,7 @@
   },
   "A New Beginning#006": {
    "src": "What's taking so long? It can't be that hard to find those. You should have them on your person at all times.",
-   "dst": "",
+   "dst": "怎么这么久？找个文件没那么难吧。那东西本来就该随身带着。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9481,7 +9481,7 @@
   },
   "A New Beginning#007": {
    "src": "It’s a very new restriction. There was some incident nearby. I’m not sure on the details, but-",
-   "dst": "",
+   "dst": "这是刚出的规定。附近出了点事。具体情况我也不太清楚，不过——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9491,7 +9491,7 @@
   },
   "A New Beginning#008": {
    "src": "Enough stalling. Where are your papers?",
-   "dst": "",
+   "dst": "别拖时间了。你的文件呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9501,7 +9501,7 @@
   },
   "A New Beginning#009": {
    "src": "If you don’t present identification, I’m going to need to take you in for questioning.",
-   "dst": "",
+   "dst": "如果你拿不出身份证明，我就只能带你回去问话了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9511,7 +9511,7 @@
   },
   "A New Beginning#010": {
    "src": "O-oh, hey, th-there you are! Gosh, I was w-wondering where you'd gotten off to!",
-   "dst": "",
+   "dst": "噢、噢，嘿，你、你在这儿！天哪，我还在想你跑、跑哪儿去了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9521,7 +9521,7 @@
   },
   "A New Beginning#011": {
    "src": "Ha... d-don't tell me you forgot your papers again! I k-keep telling you to keep th-them with you...",
-   "dst": "",
+   "dst": "哈……别、别告诉我你又忘带文件了！我一、一直叫你随身带、带着……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9531,7 +9531,7 @@
   },
   "A New Beginning#012": {
    "src": "One of th-these days, you'll remember! F-for sure...",
-   "dst": "",
+   "dst": "总有一天你、你会记住的！肯、肯定会……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9541,7 +9541,7 @@
   },
   "A New Beginning#013": {
    "src": "You d-didn’t forget our conversation too, d-did you? S-s-sorry for my friend, sir!",
-   "dst": "",
+   "dst": "你没、没把我们刚才说的也忘了吧？抱、抱、抱歉，长官，我朋友就这样！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9551,7 +9551,7 @@
   },
   "A New Beginning#014": {
    "src": "Ahem. I'll still need to see identification if you want to enter the city.",
-   "dst": "",
+   "dst": "咳。想进城的话，我还是得看身份证明。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9561,7 +9561,7 @@
   },
   "A New Beginning#015": {
    "src": "Oh! O-o-of course! L-let me just...",
-   "dst": "",
+   "dst": "噢！当、当、当然！让、让我找一下……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9571,7 +9571,7 @@
   },
   "A New Beginning#016": {
    "src": "...They're a-around here s-s-somewhere, I'm s-sure... I think they m-might be",
-   "dst": "",
+   "dst": "……应该就在这、这附近，我确、确、确定……我想可、可能在——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9581,7 +9581,7 @@
   },
   "A New Beginning#017": {
    "src": "Aha! Here! Identification p-papers, just for y-you!",
-   "dst": "",
+   "dst": "找到了！在这儿！身份文件，给、给您！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9591,7 +9591,7 @@
   },
   "A New Beginning#018": {
    "src": "...What even is this? I can barely read the handwriting... Is that Sovereign Selium's signature? The previous sovereign?",
-   "dst": "",
+   "dst": "……这到底是什么？字迹我几乎认不出来……这是 Selium 统领的签名？前任统领？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9601,7 +9601,7 @@
   },
   "A New Beginning#019": {
    "src": "I've had enough of these games. The two of you are under",
-   "dst": "",
+   "dst": "我受够这种把戏了。你们两个现在因为——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9611,7 +9611,7 @@
   },
   "A New Beginning#020": {
    "src": "You two! Make room!",
-   "dst": "",
+   "dst": "你们两个！让开！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9621,7 +9621,7 @@
   },
   "A New Beginning#021": {
    "src": "Y-yessir! What's going on?",
-   "dst": "",
+   "dst": "是、是，长官！出什么事了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9631,7 +9631,7 @@
   },
   "A New Beginning#022": {
    "src": "We've received more information about the incident at {p}. There's a new cursed one to look out for. Dozens of soldiers were killed in an attempt to capture them.",
-   "dst": "",
+   "dst": "我们收到了关于 {p} 那件事的更多情报。又出现了一个新的受诅者，要多加提防。为了抓住对方，已经死了几十个士兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9641,7 +9641,7 @@
   },
   "A New Beginning#023": {
    "src": "We're taking reinforcements to the fort, but I need you to remain at your posts. Keep a watchful eye on any suspicious individuals.",
-   "dst": "",
+   "dst": "我们要带援军去堡垒，但我需要你们留守岗位。留意任何可疑的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9651,7 +9651,7 @@
   },
   "A New Beginning#024": {
    "src": "...Th-this might be a good time to run. While they're distracted! Quick, f-follow me!",
-   "dst": "",
+   "dst": "……现、现在大概是逃跑的好时机。趁他们分心！快，跟、跟我来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9661,7 +9661,7 @@
   },
   "A New Beginning#025": {
    "src": "Understood. Now, back to where did they go?!",
-   "dst": "",
+   "dst": "明白。好，回到刚才——人去哪儿了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9671,7 +9671,7 @@
   },
   "A New Beginning#026": {
    "src": "Talk to the man at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 的男人对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -9681,7 +9681,7 @@
   },
   "A New Beginning#027": {
    "src": "Phew... G-glad we got out of there...",
-   "dst": "",
+   "dst": "呼……还、还好我们逃出来了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9691,7 +9691,7 @@
   },
   "A New Beginning#028": {
    "src": "A-anyway. What were you th-thinking? Trying to enter the city without p-papers...",
-   "dst": "",
+   "dst": "总、总之。你在想什、什么啊？没有文、文件还想进城……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9701,7 +9701,7 @@
   },
   "A New Beginning#029": {
    "src": "You're n-new around here, right? Transferred in f-from elsewhere. Y-you're interesting, though.",
-   "dst": "",
+   "dst": "你是新、新来的吧？从别、别的地方调过来的。不、不过你挺有意思的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9711,7 +9711,7 @@
   },
   "A New Beginning#030": {
    "src": "Um. The thing at T-Torann... you w-wouldn't happen to... n-n-nevermind. I don't need to know!",
-   "dst": "",
+   "dst": "呃。T、Torann 那件事……你该、该不会……算、算、算了。我不用知道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9721,7 +9721,7 @@
   },
   "A New Beginning#031": {
    "src": "But, if y-you're interested... The military k-keeps records of these sorts of things! Th-they want a paper trail... or s-something.",
-   "dst": "",
+   "dst": "不过，如、如果你有兴趣……军队会、会把这类事情记录下来！他、他们要留个书面记录……之类的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9731,7 +9731,7 @@
   },
   "A New Beginning#032": {
    "src": "You d-didn't hear this from me... but the l-leaves have whispered something about th-the location of a record storage. Here, hand me that b-book of yours...",
-   "dst": "",
+   "dst": "你没、没从我这儿听说过……不过树、树叶透露了一些关于记录存放处位置的消息。来，把你那本书给、给我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9741,7 +9741,7 @@
   },
   "A New Beginning#033": {
    "src": "Well, good luck s-stranger! If anyone asks, we never m-met. But, um... y-you can call me Zeph.",
-   "dst": "",
+   "dst": "好啦，祝你好运，陌、陌生人！要是有人问起，我们从没见、见过。不过，呃……你、你可以叫我 Zeph。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9751,7 +9751,7 @@
   },
   "A New Beginning#034": {
    "src": "Find your report in the storage at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 的记录存放处找到你的报告。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -9761,7 +9761,7 @@
   },
   "A New Beginning#035": {
    "src": "W-we never met, remember?",
-   "dst": "",
+   "dst": "我、我们没见过，记得吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9771,7 +9771,7 @@
   },
   "A New Beginning#036": {
    "src": "HALT! Intruder! For trespassing on restricted property, you are under",
-   "dst": "",
+   "dst": "站住！有人擅闯！你擅自闯入禁区，现在因为——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9781,7 +9781,7 @@
   },
   "A New Beginning#037": {
    "src": "Wait, a suspicious person in the region is this the cursed one?! Get them!!",
-   "dst": "",
+   "dst": "等等，这一带有可疑人物——难道就是那个受诅者？！抓住他们！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9791,7 +9791,7 @@
   },
   "A New Beginning#038": {
    "src": "They're after... Sovereign Zhiraok... D-don't...y...you...",
-   "dst": "",
+   "dst": "他们的目标是……Zhiraok 统领……别、别……你……你……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9801,7 +9801,7 @@
   },
   "A New Beginning#039": {
    "src": "Well? You've crunched the numbers. Give me the report.",
-   "dst": "",
+   "dst": "怎么样？数字都算好了吧。把报告给我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9811,7 +9811,7 @@
   },
   "A New Beginning#040": {
    "src": "Sovereign, sir. It seems {p} was not directly prepared to face a cursed one. Dozens of soldiers are dead.",
-   "dst": "",
+   "dst": "统领大人。看来 {p} 并没有做好直接面对受诅者的准备。几十个士兵阵亡了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9821,7 +9821,7 @@
   },
   "A New Beginning#041": {
    "src": "...of all the possibilities. How could that have factored out...? Hm. Who was the commanding officer? Their take on the problem would help fill the gaps.",
-   "dst": "",
+   "dst": "……偏偏是这种可能。这怎么会没算进去……？嗯。指挥官是谁？他对这个问题的看法能帮忙补上缺口。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9831,7 +9831,7 @@
   },
   "A New Beginning#042": {
    "src": "Well... it seems it was Commander Lilles, sir. But he was one of the casualties of the incident, and a replacement has yet to be promoted.",
-   "dst": "",
+   "dst": "这个……好像是 Lilles 指挥官，大人。但他也在这次事件中殉职了，接替的人选还没提拔。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9841,7 +9841,7 @@
   },
   "A New Beginning#043": {
    "src": "Naturally... I'll need to get hold of his family later and break the news. What else do you have on the Cursed One?",
-   "dst": "",
+   "dst": "果然……之后我得联系他的家人，把消息告诉他们。关于那个受诅者，你还掌握了什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9851,7 +9851,7 @@
   },
   "A New Beginning#044": {
    "src": "I've heard reports that they're... from outside. Possibly one of the ones who were invited into our province recently, though nobody seems certain on that.",
-   "dst": "",
+   "dst": "我听到的报告说，他们是……从外面来的。可能是最近受邀进入我们行省的那批人之一，不过似乎没人能确定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9861,7 +9861,7 @@
   },
   "A New Beginning#045": {
    "src": "We've already raised security in {p}, and we have forces moving to Torann.",
-   "dst": "",
+   "dst": "我们已经加强了 {p} 的戒备，也有部队正在前往 Torann。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9871,7 +9871,7 @@
   },
   "A New Beginning#046": {
    "src": "One positive in a sea of negatives, I suppose. Good work. File the report in the records room, and then we'll go view the damages for ourselves.",
-   "dst": "",
+   "dst": "一片坏消息里总算有一个好消息。干得好。把报告送去资料室归档，然后我们亲自去看看损失。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9881,7 +9881,7 @@
   },
   "A New Beginning#047": {
    "src": "One more thing. Since Torann is compromised, we've taken the liberty of storing the cursed one's report here, so",
-   "dst": "",
+   "dst": "还有一件事。由于 Torann 已经失守，我们擅自把那个受诅者的报告存放在这里，所以——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9891,7 +9891,7 @@
   },
   "A New Beginning#048": {
    "src": "Do we not have a higher priority right now?!",
-   "dst": "",
+   "dst": "我们现在难道没有更要紧的事吗？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9901,7 +9901,7 @@
   },
   "A New Beginning#049": {
    "src": "...N-n-no, sir. My- my apologies. I simply thought",
-   "dst": "",
+   "dst": "……没、没、没有，大人。是、是我失礼了。我只是以为——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9911,7 +9911,7 @@
   },
   "A New Beginning#050": {
    "src": "I have a dozen and a half other problems to solve that need to be pushed back oh, would you put away the key already?",
-   "dst": "",
+   "dst": "我还有十几个别的问题等着解决，全都得往后推——噢，你能不能先把钥匙收起来？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9921,7 +9921,7 @@
   },
   "A New Beginning#051": {
    "src": "We haven't got time to sit around like this when there's a tragedy of that value to look into! We need to get to {p}, yesterday!",
-   "dst": "",
+   "dst": "出了那么大的惨剧要调查，我们没时间在这里干坐着！我们得马上赶去 {p}，一刻都不能等！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9931,7 +9931,7 @@
   },
   "A New Beginning#052": {
    "src": "Locate the key inside the eastern tower and retrieve your report.",
-   "dst": "",
+   "dst": "找到东边塔楼里的钥匙，取回你的报告。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -9941,7 +9941,7 @@
   },
   "A New Beginning#053": {
    "src": "* Subject brought to {p} by the Driver. (Note: Interrogate Driver for reasoning.)",
-   "dst": "",
+   "dst": "* 该对象由车夫带到 {p}。(注：审问车夫的动机。)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9951,7 +9951,7 @@
   },
   "A New Beginning#054": {
    "src": "Guards! Return to your stations!",
-   "dst": "",
+   "dst": "守卫！回到你们的岗位！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9961,7 +9961,7 @@
   },
   "A New Beginning#055": {
    "src": "Someone's been here... search the outpost, quickly!",
-   "dst": "",
+   "dst": "有人来过这里……快，搜查前哨站！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9971,7 +9971,7 @@
   },
   "A New Beginning#056": {
    "src": "Find a way out of Nexiph Outpost.",
-   "dst": "",
+   "dst": "找出离开 Nixeph 前哨站的路。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -9981,7 +9981,7 @@
   },
   "A New Beginning#057": {
    "src": "H-hold tight!",
-   "dst": "",
+   "dst": "抓、抓紧了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -9991,7 +9991,7 @@
   },
   "A New Beginning#058": {
    "src": "H-hey again, at the w-window! Tough s-situation, huh?",
-   "dst": "",
+   "dst": "嘿、嘿，又见面了，就在窗、窗边！处境很棘、棘手吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10001,7 +10001,7 @@
   },
   "A New Beginning#059": {
    "src": "I f-figured you could use a hand... Stand back a m-moment.",
-   "dst": "",
+   "dst": "我想、想你可能需要帮一把……往后站一、一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10011,7 +10011,7 @@
   },
   "A New Beginning#060": {
    "src": "Rex! The r-rope!",
-   "dst": "",
+   "dst": "Rex！绳、绳子！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10021,7 +10021,7 @@
   },
   "A New Beginning#061": {
    "src": "I-I'll be down in a bit. Just h-hold on tight to the rope, and you'll be f-fine!",
-   "dst": "",
+   "dst": "我、我马上下来。抓紧绳子就行，你会没、没事的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10031,7 +10031,7 @@
   },
   "A New Beginning#062": {
    "src": "Talk to Rex and Zeph at .",
-   "dst": "",
+   "dst": "与 Rex 和 Zeph 对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -10041,7 +10041,7 @@
   },
   "A New Beginning#063": {
    "src": "Phew! W-we got you out. G-good work back there, though!",
-   "dst": "",
+   "dst": "呼！我、我们把你救出来了。刚、刚才干得不错！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10051,7 +10051,7 @@
   },
   "A New Beginning#064": {
    "src": "Good enough, I guess.",
-   "dst": "",
+   "dst": "凑合吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10061,7 +10061,7 @@
   },
   "A New Beginning#065": {
    "src": "D-don't mind her, she's just like that. Rex, this is",
-   "dst": "",
+   "dst": "别、别在意她，她就这样。Rex，这位是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10071,7 +10071,7 @@
   },
   "A New Beginning#066": {
    "src": "The stranger you found trying to get into {p} without identification, I know. Do you really need me here still?",
-   "dst": "",
+   "dst": "就是你发现的那个没带身份证明想进 {p} 的陌生人，我知道。我真的还得待在这儿吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10081,7 +10081,7 @@
   },
   "A New Beginning#067": {
    "src": "...I-I-I'd like it if you s-stayed, yes.",
-   "dst": "",
+   "dst": "……我、我、我希望你留、留下来，是的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10091,7 +10091,7 @@
   },
   "A New Beginning#068": {
    "src": "Hmph.",
-   "dst": "",
+   "dst": "哼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10101,7 +10101,7 @@
   },
   "A New Beginning#069": {
    "src": "Um... I- I don't think I c-c-caught your name.",
-   "dst": "",
+   "dst": "呃……我、我好像没、没、没听到你的名字。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10111,7 +10111,7 @@
   },
   "A New Beginning#070": {
    "src": "{u}... so, wh-where are you from? Y-you must've transferred in from an-another region, right?",
-   "dst": "",
+   "dst": "{u}……那，你是从哪、哪里来的？你一定是从别、别的地区调过来的吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10121,7 +10121,7 @@
   },
   "A New Beginning#071": {
    "src": "Another... um... wh-what do you-... you d-don't know?",
-   "dst": "",
+   "dst": "别的……呃……你是什、什么意——……你不、不知道？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10131,7 +10131,7 @@
   },
   "A New Beginning#072": {
    "src": "Obviously they're not from here, Zeph! Remember that thing I told you about? The big spectacle event they had with people from beyond the gates?",
-   "dst": "",
+   "dst": "Zeph，他们明显不是这里的人啊！还记得我跟你说过的那件事吗？他们搞的那场盛大活动，有从大门另一边来的人？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10141,7 +10141,7 @@
   },
   "A New Beginning#073": {
    "src": "You w-w-what?! But, there’s- th-that’s not possible...",
-   "dst": "",
+   "dst": "你、你、你说什么？！可是，那——那、那不可能……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10151,7 +10151,7 @@
   },
   "A New Beginning#074": {
    "src": "Possible or not, they’re obviously from outside the province! They’re probably involved with that big spectacle event with people from beyond the gates that I was telling you about.",
-   "dst": "",
+   "dst": "不管可不可能，他们显然是从行省外面来的！多半跟我跟你说过的那场有外面的人参加的盛大活动有关。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10161,7 +10161,7 @@
   },
   "A New Beginning#075": {
    "src": "…I th-thought you were m-making things up again.",
-   "dst": "",
+   "dst": "……我还、还以为你又在编故事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10171,7 +10171,7 @@
   },
   "A New Beginning#076": {
    "src": "Excuse you? I don’t make things up! You can ask Mora, he saw it too.",
-   "dst": "",
+   "dst": "你说什么？我才不编故事！不信你去问 Mora，他也看到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10181,7 +10181,7 @@
   },
   "A New Beginning#077": {
    "src": "If you s-say so… I just- I-I-I thought there were no p-people left out there. The c-crown keeps a whole g-garrison stationed to f-fight off… um… m-m-monsters.",
-   "dst": "",
+   "dst": "你说是就、就是吧……我只是——我、我、我一直以为外面已经没、没有人了。王、王室不是派了一整支驻、驻军在那边抵挡……呃……怪、怪、怪物嘛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10191,7 +10191,7 @@
   },
   "A New Beginning#078": {
    "src": "And you believed that? Really?",
-   "dst": "",
+   "dst": "你还真信了？真的假的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10201,7 +10201,7 @@
   },
   "A New Beginning#079": {
    "src": "Wh- I d-don’t know! It s-s-sounded believable to me!",
-   "dst": "",
+   "dst": "什——我、我不知道啊！我听、听、听着挺像真的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10211,7 +10211,7 @@
   },
   "A New Beginning#080": {
    "src": "Ugh, whatever! I don’t have time for this. Zeph, I have work to do. Just… stay on your guard. I don’t trust whatever’s going on with this stranger.",
-   "dst": "",
+   "dst": "唉，随便啦！我没时间陪你们。Zeph，我还有事要做。你就……多提防点。这个陌生人身上的事，我一点都信不过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10221,7 +10221,7 @@
   },
   "A New Beginning#081": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10231,7 +10231,7 @@
   },
   "A New Beginning#082": {
    "src": "She's- um... she's n-not normally like this. S-sorry about that.",
-   "dst": "",
+   "dst": "她——呃……她平、平常不是这样的。抱、抱歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10241,7 +10241,7 @@
   },
   "A New Beginning#083": {
    "src": "O-Oh! I f-followed you, of course.",
-   "dst": "",
+   "dst": "噢、噢！我当、当然是跟着你来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10251,7 +10251,7 @@
   },
   "A New Beginning#084": {
    "src": "A s-stranger comes to our region without p-papers and is supposedly a c-cursed one? I wasn't letting you go th-that easily!",
-   "dst": "",
+   "dst": "一个没带文、文件的陌生人来到我们这一带，还可、可能是受诅者？我哪、哪可能就这样让你走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10261,7 +10261,7 @@
   },
   "A New Beginning#085": {
    "src": "O-Oh! N-no problem! It was... it w-was nothing. Y-you did most of the work.",
-   "dst": "",
+   "dst": "噢、噢！不、不客气！那没……那没、没什么。大、大部分都是你自己做的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10271,7 +10271,7 @@
   },
   "A New Beginning#086": {
    "src": "N-Nixeph is... n-not an easy place to break into! I g-guess all the guards were gone.",
-   "dst": "",
+   "dst": "N、Nixeph 可……可不是那么好闯的地方！我猜、猜守卫都走光了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10281,7 +10281,7 @@
   },
   "A New Beginning#087": {
    "src": "But, um... y-you got what you needed, and I got what I- what I needed, s-so...",
-   "dst": "",
+   "dst": "不过，呃……你拿到了你要的，我也拿到了我——我要的，所、所以……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10291,7 +10291,7 @@
   },
   "A New Beginning#088": {
    "src": "B-besides! I had s-something I needed to get from... f-from the outpost, anyway.",
-   "dst": "",
+   "dst": "再、再说！我本来就有东西要从……从前哨站拿出来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10301,7 +10301,7 @@
   },
   "A New Beginning#089": {
    "src": "Um... th-there is someone you should meet. I was told to pass on a m-message...",
-   "dst": "",
+   "dst": "呃……有、有个人你应该见一见。有人托我转、转达一句话……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10311,7 +10311,7 @@
   },
   "A New Beginning#090": {
    "src": "And- and you'll be on y-your own this time. N-no help from me!",
-   "dst": "",
+   "dst": "而——而且这次你得靠自、自己了。我可不、不帮忙！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10321,7 +10321,7 @@
   },
   "A New Beginning#091": {
    "src": "The m-message is: w-westward, the giant lays its roots. As the wind blows, they s-sing along.",
-   "dst": "",
+   "dst": "那句话、话是：往、往西，巨人扎下根。风一吹，它们便跟、跟着歌唱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10331,7 +10331,7 @@
   },
   "A New Beginning#092": {
    "src": "\"Westward, the giant lays its roots. As the wind blows, they sing along.\"",
-   "dst": "",
+   "dst": "“往西，巨人扎下根。风一吹，它们便跟着歌唱。”",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -10341,7 +10341,7 @@
   },
   "A New Beginning#093": {
    "src": "The m-message is: w-westward, the giant lays its roots. As the wind blows, they s-sing along.",
-   "dst": "",
+   "dst": "那句话、话是：往、往西，巨人扎下根。风一吹，它们便跟、跟着歌唱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10351,7 +10351,7 @@
   },
   "A New Beginning#094": {
    "src": "Talk to the woman in the cave.",
-   "dst": "",
+   "dst": "与洞窟里的女人对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -10361,7 +10361,7 @@
   },
   "A New Beginning#095": {
    "src": "Well, well. If it isn't a fresh breeze dancing in the leaves...",
-   "dst": "",
+   "dst": "哎呀哎呀。这不是在树叶间起舞的一阵清风吗……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10371,7 +10371,7 @@
   },
   "A New Beginning#096": {
    "src": "You must be the Cursed One who caused such a stir at Torann, yes? News has spread quickly of your actions.",
-   "dst": "",
+   "dst": "你就是在 Torann 闹出那么大动静的受诅者吧？你做的事已经传得很快了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10381,7 +10381,7 @@
   },
   "A New Beginning#097": {
    "src": "I'm impressed you found your way to me.",
-   "dst": "",
+   "dst": "你能找到我这里，我很佩服。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10391,7 +10391,7 @@
   },
   "A New Beginning#098": {
    "src": "So let's get to the business at hand. I'll start with this you're from the Wynn Province, aren't you?",
-   "dst": "",
+   "dst": "那我们就说正事吧。先从这个开始——你是从 Wynn 行省来的，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10401,7 +10401,7 @@
   },
   "A New Beginning#099": {
    "src": "I thought so... You're certainly not from around here. Though, I would recommend you keep that information close to your chest.",
-   "dst": "",
+   "dst": "果然……你肯定不是本地人。不过，我建议你把这件事藏在心里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10411,7 +10411,7 @@
   },
   "A New Beginning#100": {
    "src": "Very few people have knowledge of the outside world, and those that do... they're the ones who will be looking for you. Best to avoid drawing their attention.",
-   "dst": "",
+   "dst": "知道外面世界的人少之又少，而知道的那些人……正是会来找你的人。最好别引起他们的注意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10421,7 +10421,7 @@
   },
   "A New Beginning#101": {
    "src": "But I should introduce myself. My name is Syndra, leader of the Leaves in the Wind resistance group.",
-   "dst": "",
+   "dst": "不过我该先自我介绍。我叫 Syndra，是抵抗组织“风中之叶”的首领。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10431,7 +10431,7 @@
   },
   "A New Beginning#102": {
    "src": "Call it something of a gamble. Given your... shall we say, explosive entrance into the province, I find it unlikely you're with the crown.",
-   "dst": "",
+   "dst": "就当是赌一把吧。以你……这么说吧，这么轰动地进入行省的方式来看，我不太相信你是王室那边的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10441,7 +10441,7 @@
   },
   "A New Beginning#103": {
    "src": "Even if you chose to reveal my secrets and if anyone even believed you you'd have no guarantee of your own safety.",
-   "dst": "",
+   "dst": "就算你把我的秘密说出去——而且就算真有人信你——你也无法保证自己的安全。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10451,7 +10451,7 @@
   },
   "A New Beginning#104": {
    "src": "Yes. You haven’t been here long, but you’ve felt it, haven’t you? The crown has its roots buried deep in this province, and it certainly isn’t kind to all.",
-   "dst": "",
+   "dst": "是的。你来这里还不久，但你已经感觉到了，对吧？王室在这个行省扎根很深，而它绝不是对所有人都仁慈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10461,7 +10461,7 @@
   },
   "A New Beginning#105": {
    "src": "Those it sees as disposable… they don’t often make it far. That is why I have taken my role. I’d like to see a day where none are left behind.",
-   "dst": "",
+   "dst": "那些被它视为可以舍弃的人……往往走不了多远。所以我才担起这个角色。我希望有一天，没有任何人会被抛下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10471,7 +10471,7 @@
   },
   "A New Beginning#106": {
    "src": "But that's enough about me. On to you. Why are you here, cursed one? For what purpose have you come to Fruma?",
-   "dst": "",
+   "dst": "我的事就说到这里。说说你吧。受诅者，你为什么在这里？你来 Fruma 是为了什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10481,7 +10481,7 @@
   },
   "A New Beginning#107": {
    "src": "Interesting. A sense that something isn't right...",
-   "dst": "",
+   "dst": "有意思。觉得有什么地方不对劲……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10491,7 +10491,7 @@
   },
   "A New Beginning#108": {
    "src": "To tell you the truth, it's one I've had myself for quite some time. Though, likely for a different reason to you.",
-   "dst": "",
+   "dst": "说实话，我自己也有这种感觉很久了。不过，理由大概跟你不一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10501,7 +10501,7 @@
   },
   "A New Beginning#109": {
    "src": "A noble cause… It is one I can wholeheartedly support.",
-   "dst": "",
+   "dst": "崇高的理由……我全心全意支持。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10511,7 +10511,7 @@
   },
   "A New Beginning#110": {
    "src": "In a world like this, the most we can do sometimes is hold on to those we care for. Take care not to lose that drive.",
-   "dst": "",
+   "dst": "在这样的世界里，有时我们能做的，最多就是守住自己在乎的人。别丢了这份动力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10521,7 +10521,7 @@
   },
   "A New Beginning#111": {
    "src": "Then, I would ask of you one more thing. A test, in a way...",
-   "dst": "",
+   "dst": "那么，我还想请你做一件事。某种意义上，算是一场考验……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10531,7 +10531,7 @@
   },
   "A New Beginning#112": {
    "src": "The power you carry the curse you bear. I have seen such things before, yet always at a distance. Never up close.",
-   "dst": "",
+   "dst": "你身上的力量——你背负的诅咒。我以前见过这种东西，但一直是远远地看。从没这么近过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10541,7 +10541,7 @@
   },
   "A New Beginning#113": {
    "src": "I would ask for a duel. Nothing dangerous, or lethal... I have safeguards in place for myself, so do not test my limits. When I call it, we stop.",
-   "dst": "",
+   "dst": "我想跟你决斗一场。不危险，也不致命……我这边有保命的手段，所以别去试探我的极限。我喊停，我们就停。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10551,7 +10551,7 @@
   },
   "A New Beginning#114": {
    "src": "I would simply like to see the strength of a cursed one in battle firsthand. So, then. Let us begin!",
-   "dst": "",
+   "dst": "我只是想亲眼看看受诅者在战斗中的实力。那么，开始吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10561,7 +10561,7 @@
   },
   "A New Beginning#115": {
    "src": "Complete Syndra's challenge.",
-   "dst": "",
+   "dst": "完成 Syndra 的挑战。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -10571,7 +10571,7 @@
   },
   "A New Beginning#116": {
    "src": "Enough! Come speak to me.",
-   "dst": "",
+   "dst": "够了！过来跟我说话。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10581,7 +10581,7 @@
   },
   "A New Beginning#117": {
    "src": "Impressive. Very impressive. I have never seen a cursed one with such control and technique...",
-   "dst": "",
+   "dst": "厉害。非常厉害。我从没见过哪个受诅者有这样的控制力和技巧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10591,7 +10591,7 @@
   },
   "A New Beginning#118": {
    "src": "If I did not know better, I would believe you to have been blessed by the crown itself.",
-   "dst": "",
+   "dst": "要不是我清楚内情，我会以为你受过王室本身的祝福。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10601,7 +10601,7 @@
   },
   "A New Beginning#119": {
    "src": "Your power, your spells. The ability to bend the world to your whim, to wield the elements for your own gain.",
-   "dst": "",
+   "dst": "你的力量，你的法术。随心所欲地改变世界，驾驭元素为己所用的能力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10611,7 +10611,7 @@
   },
   "A New Beginning#120": {
    "src": "Eons ago, so the stories say, the world was pure and balanced. Our people lived with the land, content with what we had.",
-   "dst": "",
+   "dst": "传说在很久很久以前，世界纯净而平衡。我们的人民与大地共存，满足于自己拥有的一切。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10621,7 +10621,7 @@
   },
   "A New Beginning#121": {
    "src": "And yet, an evil force lurked within us, a malice which despised our peace and happiness. One day, it burst forth, granting unimaginable power to those it deemed worthy...",
-   "dst": "",
+   "dst": "然而，我们内心潜伏着一股邪恶的力量，一种憎恶我们和平与幸福的恶意。有一天，它爆发出来，把难以想象的力量赐给了它认为配得上的人……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10631,7 +10631,7 @@
   },
   "A New Beginning#122": {
    "src": "Its power could not be controlled. Those cursed by its touch went on to tear apart the land, destroying cities and towns... fear overtook the land, none were safe.",
-   "dst": "",
+   "dst": "那股力量无法控制。被它触碰而受到诅咒的人开始撕裂大地，摧毁城市与村镇……恐惧笼罩了大地，无人幸免。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10641,7 +10641,7 @@
   },
   "A New Beginning#123": {
    "src": "Until she arrived, a force of good to counter the evil. She granted her own blessings to the people of Fruma, power which could be controlled and wielded to banish the cursed.",
-   "dst": "",
+   "dst": "直到她出现，一股对抗邪恶的善良力量。她把自己的祝福赐予 Fruma 的人民，那是能被控制、能被驾驭、用来驱逐受诅者的力量。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10651,7 +10651,7 @@
   },
   "A New Beginning#124": {
    "src": "She saved our province, and became our immortal Queen. Always looking out for the people, always alert for the presence of evil... for it could not be killed, only staved off.",
-   "dst": "",
+   "dst": "她拯救了我们的行省，成为我们永生的女王。她始终守护着人民，始终警惕着邪恶的存在……因为邪恶无法被杀死，只能被阻挡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10661,7 +10661,7 @@
   },
   "A New Beginning#125": {
    "src": "The cursed ones never left. They only grew smarter, more capable of hiding from the crown's watchful eye.",
-   "dst": "",
+   "dst": "受诅者从未离开。他们只是变得更聪明，更懂得躲过王室的监视。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10671,7 +10671,7 @@
   },
   "A New Beginning#126": {
    "src": "And so, it tells the people, always be aware. Always be looking for the cursed ones. It is only a matter of time before they hurt you.",
-   "dst": "",
+   "dst": "所以，王室告诉人民，要时刻警惕。要时刻留意受诅者。他们迟早会伤害你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10681,7 +10681,7 @@
   },
   "A New Beginning#127": {
    "src": "...I have a different perspective on this story, you might imagine. The crown has wronged me, and many others. Yet, the stories hold truths to them, to an extent.",
-   "dst": "",
+   "dst": "……你大概想得到，我对这个故事有不同的看法。王室亏待了我，也亏待了许多人。不过，这些故事在某种程度上确实有真实的成分。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10691,7 +10691,7 @@
   },
   "A New Beginning#128": {
    "src": "That is why your control over your power has interested me. It bears more traits of the crown's blessings than of the evil's curses, and yet...",
-   "dst": "",
+   "dst": "所以你对自身力量的控制才引起我的兴趣。它更像王室的祝福，而不像邪恶的诅咒，然而……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10701,7 +10701,7 @@
   },
   "A New Beginning#129": {
    "src": "Magic... yes, that term has been used in higher studies at the University.",
-   "dst": "",
+   "dst": "魔法……是的，大学里的高等研究用过这个词。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10711,7 +10711,7 @@
   },
   "A New Beginning#130": {
    "src": "But a land filled with cursed ones... and it isn't destroyed? I suppose I have had no reason to believe the crown's reports about it, but...",
-   "dst": "",
+   "dst": "可是一片满是受诅者的土地……却没有毁灭？我想我本来就没理由相信王室关于那里的报告，但……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10721,7 +10721,7 @@
   },
   "A New Beginning#131": {
    "src": "I need time to process this information. But I would like to discuss it with you further, at a later date, if you would be willing.",
-   "dst": "",
+   "dst": "我需要时间消化这些信息。不过，如果你愿意，我想改天再跟你深入谈谈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10731,7 +10731,7 @@
   },
   "A New Beginning#132": {
    "src": "Then that leads me to my final request. Would you join our cause, and offer your help to our resistance group? Your knowledge and strength would be greatly appreciated.",
-   "dst": "",
+   "dst": "那就说到我最后一个请求了。你愿意加入我们的事业，帮助我们的抵抗组织吗？你的知识和力量对我们会有很大的帮助。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10741,7 +10741,7 @@
   },
   "A New Beginning#133": {
    "src": "Thank you. I will take you to meet with the others, then. Our home is directly to the south-west, it should be hard to miss. I'll meet you there.",
-   "dst": "",
+   "dst": "谢谢你。那我带你去见其他人吧。我们的家就在西南方，应该很好找。我们在那里会合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10751,7 +10751,7 @@
   },
   "A New Beginning#134": {
    "src": "Follow Syndra to the resistance base at .",
-   "dst": "",
+   "dst": "跟随 Syndra 前往抵抗组织的基地。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -10761,7 +10761,7 @@
   },
   "A New Beginning#135": {
    "src": "There you are, {u}. I see you found your way here alright.",
-   "dst": "",
+   "dst": "你来了，{u}。看来你顺利找到这里了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10771,7 +10771,7 @@
   },
   "A New Beginning#136": {
    "src": "If you're going to be joining us, I should introduce you to the others.",
-   "dst": "",
+   "dst": "既然你要加入我们，我该把你介绍给其他人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10781,7 +10781,7 @@
   },
   "A New Beginning#137": {
    "src": "Ahem... Children, come on out! We have a new member I'd like you to meet.",
-   "dst": "",
+   "dst": "咳……孩子们，出来吧！有位新成员想让你们认识一下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10791,7 +10791,7 @@
   },
   "A New Beginning#138": {
    "src": "We m-meet again! I knew you'd be a g-good fit!",
-   "dst": "",
+   "dst": "我、我们又见面了！我就知道你一、一定合适！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10801,7 +10801,7 @@
   },
   "A New Beginning#139": {
    "src": "Yeah, Zeph, we know. You've been saying so for hours...",
-   "dst": "",
+   "dst": "是啦，Zeph，我们知道。你已经念叨好几个小时了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10811,7 +10811,7 @@
   },
   "A New Beginning#140": {
    "src": "Ah, lighten up Rex. Welcome to the Leaves, friend! No matter your origin, if Syndra believes you to be trustworthy, it must be so.",
-   "dst": "",
+   "dst": "哎，放轻松点，Rex。欢迎加入风中之叶，朋友！不管你从哪里来，只要 Syndra 认为你值得信任，那就一定没错。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10821,7 +10821,7 @@
   },
   "A New Beginning#141": {
    "src": "On that subject, {u} here is from outside of our province. They'll be joining our resistance against the crown...",
-   "dst": "",
+   "dst": "说到这个，这位 {u} 来自我们行省之外。他们会加入我们对抗王室……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10831,7 +10831,7 @@
   },
   "A New Beginning#142": {
    "src": "...and, hopefully, they'll be able to help me resolve some theories I have on the nature of curses and blessings.",
-   "dst": "",
+   "dst": "……而且，希望他们能帮我解开我对诅咒与祝福本质的一些推测。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10841,7 +10841,7 @@
   },
   "A New Beginning#143": {
    "src": "Oh... they're cursed...?",
-   "dst": "",
+   "dst": "噢……他们是受诅者……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10851,7 +10851,7 @@
   },
   "A New Beginning#144": {
    "src": "Yes. But they're no threat to us. We share the same enemies. And, having that power on our side could make a huge difference for our efforts.",
-   "dst": "",
+   "dst": "是的。但他们对我们没有威胁。我们有共同的敌人。而且，有这份力量站在我们这边，会对我们的行动带来巨大的改变。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10861,7 +10861,7 @@
   },
   "A New Beginning#145": {
    "src": "Hm... are you certain, miss? I do trust your judgment, but perhaps it would be best to err on the side of caution when dealing with the cursed.",
-   "dst": "",
+   "dst": "嗯……您确定吗，女士？我当然相信您的判断，但面对受诅者，也许还是谨慎为上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10871,7 +10871,7 @@
   },
   "A New Beginning#146": {
    "src": "The curse is the least of our problems! Are we really blindly trusting someone who says they're from Wynn? People don't just... just... come back from there!",
-   "dst": "",
+   "dst": "诅咒是我们最不用担心的！我们真的要盲目相信一个自称从 Wynn 来的人？人不可能就这样……就这样……从那里回来啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10881,7 +10881,7 @@
   },
   "A New Beginning#147": {
    "src": "That's enough, Rex. I understand your misgivings, but I have reasons for my trust. I would ask you to have faith in me.",
-   "dst": "",
+   "dst": "够了，Rex。我理解你的疑虑，但我信任他们是有原因的。我希望你们相信我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10891,7 +10891,7 @@
   },
   "A New Beginning#148": {
    "src": "...fine. Whatever.",
-   "dst": "",
+   "dst": "……好吧。随便。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10901,7 +10901,7 @@
   },
   "A New Beginning#149": {
    "src": "Now. I still need to acquire the proper papers for {u} to be able to access {p}. In the meantime, why don't you all get to know each other properly?",
-   "dst": "",
+   "dst": "好了。我还得替 {u} 弄到进入 {p} 需要的文件。在这段时间里，你们何不好好互相认识一下？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10911,7 +10911,7 @@
   },
   "A New Beginning#150": {
    "src": "I'll be back shortly.",
-   "dst": "",
+   "dst": "我很快就回来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10921,7 +10921,7 @@
   },
   "A New Beginning#151": {
    "src": "Introduce yourself to the Resistance Members are .",
-   "dst": "",
+   "dst": "向抵抗组织的成员们自我介绍。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -10931,7 +10931,7 @@
   },
   "A New Beginning#152": {
    "src": "...What do you want? Do you need something?",
-   "dst": "",
+   "dst": "……你想干嘛？有什么事吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10941,7 +10941,7 @@
   },
   "A New Beginning#153": {
    "src": "I... shoot things? With my bow?",
-   "dst": "",
+   "dst": "我……射东西？用我的弓？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10951,7 +10951,7 @@
   },
   "A New Beginning#154": {
    "src": "I'm a tactician, otherwise. Not the tactician that'd be Syndra but... y'know.",
-   "dst": "",
+   "dst": "除此之外我是个战术家。不是那个战术家——那是 Syndra——不过……你懂的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10961,7 +10961,7 @@
   },
   "A New Beginning#155": {
    "src": "...You don't know. Because look, it doesn't matter what I do! Not to you, at least.",
-   "dst": "",
+   "dst": "……你不懂。因为你看，我做什么根本不重要！至少对你来说不重要。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10971,7 +10971,7 @@
   },
   "A New Beginning#156": {
    "src": "What, are you looking for gossip?",
-   "dst": "",
+   "dst": "怎么，你是来打听八卦的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10981,7 +10981,7 @@
   },
   "A New Beginning#157": {
    "src": "Well, you're not going to get any out of me.",
-   "dst": "",
+   "dst": "反正你从我这儿什么也问不出来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -10991,7 +10991,7 @@
   },
   "A New Beginning#158": {
    "src": "No, you didn't ugh! It's not you personally, it's just...",
-   "dst": "",
+   "dst": "不，你没有——唉！不是针对你，只是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11001,7 +11001,7 @@
   },
   "A New Beginning#159": {
    "src": "Nevermind. Doesn't matter.",
-   "dst": "",
+   "dst": "算了。无所谓。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11011,7 +11011,7 @@
   },
   "A New Beginning#160": {
    "src": "You're cursed, and you say you're from Wynn. Both of those are problems.",
-   "dst": "",
+   "dst": "你是受诅者，还说自己从 Wynn 来。这两件事都是问题。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11021,7 +11021,7 @@
   },
   "A New Beginning#161": {
    "src": "I don't know what Syndra sees in you... but whatever it is, it'd better make up for both of those things.",
-   "dst": "",
+   "dst": "我不知道 Syndra 看上你哪一点……但不管是什么，最好能抵得过这两件事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11031,7 +11031,7 @@
   },
   "A New Beginning#162": {
    "src": "...okay? Whatever.",
-   "dst": "",
+   "dst": "……好吧？随便。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11041,7 +11041,7 @@
   },
   "A New Beginning#163": {
    "src": "Well, welcome to the Leaves in the Wind! Pardon on the hesitation earlier, the cursed are a… sensitive subject. If Syndra believes you to be safe, I will choose to believe her.",
-   "dst": "",
+   "dst": "那么，欢迎加入风中之叶！刚才犹豫了一下，还请见谅，受诅者这个话题有点……敏感。既然 Syndra 认为你安全，我就选择相信她。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11051,7 +11051,7 @@
   },
   "A New Beginning#164": {
    "src": "It’s always nice to have some fresh blood under our canopy! No matter how abnormal. We may wait for Syndra’s return before getting you properly settled in.",
-   "dst": "",
+   "dst": "树冠下多了新鲜血液总是好事！不管有多不寻常。等 Syndra 回来，再好好帮你安顿下来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11061,7 +11061,7 @@
   },
   "A New Beginning#165": {
    "src": "If you have any issues whatsoever, don’t hesitate to inform me!",
-   "dst": "",
+   "dst": "要是有任何问题，尽管来告诉我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11071,7 +11071,7 @@
   },
   "A New Beginning#166": {
    "src": "Now, what could I do for you?",
-   "dst": "",
+   "dst": "那么，我能为你做些什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11081,7 +11081,7 @@
   },
   "A New Beginning#167": {
    "src": "I am Syndra’s right hand! I deal with many of the tasks involving our family here, to lighten the workload she places upon herself.",
-   "dst": "",
+   "dst": "我是 Syndra 的左右手！这个大家庭里的许多事务都由我处理，好减轻她给自己揽下的担子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11091,7 +11091,7 @@
   },
   "A New Beginning#168": {
    "src": "Such tasks could include onboarding new recruits, assigning members to various missions… handling disputes- that sort of thing.",
-   "dst": "",
+   "dst": "这些事务包括接待新成员、给成员分派各种任务……处理纠纷——诸如此类。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11101,7 +11101,7 @@
   },
   "A New Beginning#169": {
    "src": "Of course, my “official” occupation by the crown’s terms is that of a lumberjack. Fighting for a better future isn’t exactly a well paying job, hoho!",
-   "dst": "",
+   "dst": "当然，照王室的说法，我“正式”的职业是伐木工。为更好的未来而战可不是什么高薪工作，呵呵！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11111,7 +11111,7 @@
   },
   "A New Beginning#170": {
    "src": "Ah! Yes, well, these are not our full numbers. The others live elsewhere, either in town or in various villages. They stop by every so often, so perhaps you’ll have the chance to meet them later!",
-   "dst": "",
+   "dst": "啊！是的，嗯，这里不是我们全部的人手。其他人住在别处，有的在城里，有的在各个村子。他们时不时会过来，说不定你之后有机会见到他们！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11121,7 +11121,7 @@
   },
   "A New Beginning#171": {
    "src": "We all are the ones who live here full-time. Nowhere else in particular we can go, if you catch my meaning.",
-   "dst": "",
+   "dst": "我们这些人都是长住这里的。我们也没有别的地方可去，你懂我的意思吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11131,7 +11131,7 @@
   },
   "A New Beginning#172": {
    "src": "If you’re from beyond our province’s walls, I expect we’ll be wanting to set you up with a room of your own sometime… but we can discuss that later.",
-   "dst": "",
+   "dst": "既然你来自行省城墙之外，我想我们总得给你安排一个自己的房间……不过这件事之后再谈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11141,7 +11141,7 @@
   },
   "A New Beginning#173": {
    "src": "Indeed. I hope we can do some good work together, young leaf!",
-   "dst": "",
+   "dst": "正是如此。希望我们能一起做些好事，年轻的叶子！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11151,7 +11151,7 @@
   },
   "A New Beginning#174": {
    "src": "Um... nice to meet you, I guess?",
-   "dst": "",
+   "dst": "呃……很高兴认识你……吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11161,7 +11161,7 @@
   },
   "A New Beginning#175": {
    "src": "Oh... I take care of the injured. I also cook... sometimes.",
-   "dst": "",
+   "dst": "噢……我照顾伤员。有时候……也做饭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11171,7 +11171,7 @@
   },
   "A New Beginning#176": {
    "src": "I'm not really much of a fighter... not much of, um, anything, really.",
-   "dst": "",
+   "dst": "我不太会打架……其实，呃，什么都不太行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11181,7 +11181,7 @@
   },
   "A New Beginning#177": {
    "src": "I'm mostly just here because of Mora... he's, um, my brother.",
-   "dst": "",
+   "dst": "我在这里主要是因为 Mora……他是，呃，我哥哥。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11191,7 +11191,7 @@
   },
   "A New Beginning#178": {
    "src": "Yeah.",
-   "dst": "",
+   "dst": "嗯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11201,7 +11201,7 @@
   },
   "A New Beginning#179": {
    "src": "Um... wait, can I ask actually... nevermind.",
-   "dst": "",
+   "dst": "呃……等等，我能不能问一下……算了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11211,7 +11211,7 @@
   },
   "A New Beginning#180": {
    "src": "I'm g-glad you were able to c-convince Syndra to let you j-join! It'll be n-nice having someone new a-around.",
-   "dst": "",
+   "dst": "我很高、高兴你说服了 Syndra 让你加、加入！有新人在身、身边会很好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11221,7 +11221,7 @@
   },
   "A New Beginning#181": {
    "src": "S-so... what do you need?",
-   "dst": "",
+   "dst": "那、那么……你需要什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11231,7 +11231,7 @@
   },
   "A New Beginning#182": {
    "src": "I... d-don't know, actually. It looks like she's h-heading towards the F-Frog Tavern... but why...?",
-   "dst": "",
+   "dst": "我……其实不、不知道。她好像正往青、青蛙酒馆去……可是为什么……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11241,7 +11241,7 @@
   },
   "A New Beginning#183": {
    "src": "Hey... {u}. How'd you l-like to have your first of-official resistance mission with me?",
-   "dst": "",
+   "dst": "嘿……{u}。要不要跟我一起执行你第一个正、正式的抵抗组织任务？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11251,7 +11251,7 @@
   },
   "A New Beginning#184": {
    "src": "I-I want to f-follow her and see what she g-gets up to at a r-random bar, of all places...",
-   "dst": "",
+   "dst": "我、我想跟着她，看看她跑去一家随、随便的酒吧做什么，偏偏是酒吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11261,7 +11261,7 @@
   },
   "A New Beginning#185": {
    "src": "You know, I-I-I've always suspected that the t-tavern isn't what it a-appears to be!",
-   "dst": "",
+   "dst": "你知道吗，我、我、我一直怀疑那家酒、酒馆不像表面上那么简单！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11271,7 +11271,7 @@
   },
   "A New Beginning#186": {
    "src": "...Everyone else thinks I'm p-paranoid.",
-   "dst": "",
+   "dst": "……其他人都觉得我是被、被害妄想。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11281,7 +11281,7 @@
   },
   "A New Beginning#187": {
    "src": "Y-yeah! Th-that's the spirit!",
-   "dst": "",
+   "dst": "对、对！就、就是这个劲头！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11291,7 +11291,7 @@
   },
   "A New Beginning#188": {
    "src": "Wh- I- n-no! I j-just want to m-m-make sure she's okay. Th-that's all.",
-   "dst": "",
+   "dst": "什——我——不、不是！我只、只是想确、确、确定她没事。就、就这样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11301,7 +11301,7 @@
   },
   "A New Beginning#189": {
    "src": "Let's m-meet up at the tavern. It's j-just to the north of here.",
-   "dst": "",
+   "dst": "我们在酒馆碰头吧。就、就在这里北边。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11311,7 +11311,7 @@
   },
   "A New Beginning#190": {
    "src": "I m-mainly gather intel for the resistance! Th-that usually involves needing to st-stay hidden.",
-   "dst": "",
+   "dst": "我主、主要替抵抗组织收集情报！那通、通常得躲、躲着别被发现。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11321,7 +11321,7 @@
   },
   "A New Beginning#191": {
    "src": "I've picked up a t-t-trick or two over the y-years.",
-   "dst": "",
+   "dst": "这些年我学、学、学会了一两招。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11331,7 +11331,7 @@
   },
   "A New Beginning#192": {
    "src": "S-sometimes I sell stuff I f-find in the forest in town! B-but that's not really f-for the resistance. That's for m-me.",
-   "dst": "",
+   "dst": "有、有时候我会把在森林里找、找到的东西拿到城里卖！不、不过那不算是为了抵抗组织。那是为了我、我自己。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11341,7 +11341,7 @@
   },
   "A New Beginning#193": {
    "src": "Huh? Oh, r-right! I was l-looking for guard rotations, for th-the upcoming festival.",
-   "dst": "",
+   "dst": "嗯？噢，对、对！我当时在找守卫的轮班表，为了即、即将到来的庆典。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11351,7 +11351,7 @@
   },
   "A New Beginning#194": {
    "src": "S-security is usually pretty high, so... it's g-good to know where and when is s-s-safe.",
-   "dst": "",
+   "dst": "戒备通常很严，所以……知道什么时候、在哪里安、安、安全很有用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11361,7 +11361,7 @@
   },
   "A New Beginning#195": {
    "src": "I-I've been wondering the s-same thing...",
-   "dst": "",
+   "dst": "我、我也一直在想同、同样的事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11371,7 +11371,7 @@
   },
   "A New Beginning#196": {
    "src": "She usually isn't l-like this! I wonder if s-something's wrong...",
-   "dst": "",
+   "dst": "她平常不、不是这样的！不知道是不、不是出什么事了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11381,7 +11381,7 @@
   },
   "A New Beginning#197": {
    "src": "...I can t-talk to her about it later.",
-   "dst": "",
+   "dst": "……我之后可以找、找她谈谈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11391,7 +11391,7 @@
   },
   "A New Beginning#198": {
    "src": "It's g-good to have you!",
-   "dst": "",
+   "dst": "有你在真、真好！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11401,7 +11401,7 @@
   },
   "A New Beginning#199": {
    "src": "Meet up with Zeph outside the Frog Tavern at .",
-   "dst": "",
+   "dst": "在青蛙酒馆外面与 Zeph 会合。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -11411,7 +11411,7 @@
   },
   "A New Beginning#200": {
    "src": "W-wait. We can't j-just go through the f-front, she'll s-see us.",
-   "dst": "",
+   "dst": "等、等等。我们不能直、直接从正门进去，她会看、看到我们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11421,7 +11421,7 @@
   },
   "A New Beginning#201": {
    "src": "C-come on, follow me!",
-   "dst": "",
+   "dst": "来、来吧，跟我走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11431,7 +11431,7 @@
   },
   "A New Beginning#202": {
    "src": "You'll get s-spotted! Let's get in from above i-instead.",
-   "dst": "",
+   "dst": "你会被发、发现的！我们从上面进、进去吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11441,7 +11441,7 @@
   },
   "A New Beginning#203": {
    "src": "Sneak into the Frog Tavern at .",
-   "dst": "",
+   "dst": "潜入青蛙酒馆。",
    "role": "desc",
    "kind": "objective",
    "quest": "A New Beginning",
@@ -11451,7 +11451,7 @@
   },
   "A New Beginning#204": {
    "src": "R-right behind you. D-don't get spotted!",
-   "dst": "",
+   "dst": "就、就在你后面。别、别被发现！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11461,7 +11461,7 @@
   },
   "A New Beginning#205": {
    "src": "Th-there she is! I w-wonder what she's",
-   "dst": "",
+   "dst": "她、她在那里！不知道她在——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11471,7 +11471,7 @@
   },
   "A New Beginning#206": {
    "src": "... W-wait. Is that...",
-   "dst": "",
+   "dst": "……等、等等。那不是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11481,7 +11481,7 @@
   },
   "A New Beginning#207": {
    "src": "Sovereign.",
-   "dst": "",
+   "dst": "统领。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11491,7 +11491,7 @@
   },
   "A New Beginning#208": {
    "src": "You interrupt my sequence like this and won't even say my name? Come on, now.",
-   "dst": "",
+   "dst": "你这样打断我的节奏，连我的名字都不肯叫？别这样嘛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11501,7 +11501,7 @@
   },
   "A New Beginning#209": {
    "src": "Bartender, my usual mix. I need a boost.",
-   "dst": "",
+   "dst": "酒保，老样子。我需要提提神。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11511,7 +11511,7 @@
   },
   "A New Beginning#210": {
    "src": "You seem... stressed.",
-   "dst": "",
+   "dst": "你看起来……压力很大。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11521,7 +11521,7 @@
   },
   "A New Beginning#211": {
    "src": "Oh, thank you for noticing! It's because of the stress. Look, I know you're aware of the attack on Torann by now. You've always kept up with the details.",
-   "dst": "",
+   "dst": "噢，谢谢你注意到了！就是因为压力。听着，我知道你现在已经知道 Torann 遇袭的事了。细节你一向都掌握得很清楚。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11531,7 +11531,7 @@
   },
   "A New Beginning#212": {
    "src": "But how about we accelerate this. You know how little time I have and you didn't bring me here just for drinks.",
-   "dst": "",
+   "dst": "不过我们加快进度吧。你知道我时间有多少，而你找我来可不只是为了喝酒。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11541,7 +11541,7 @@
   },
   "A New Beginning#213": {
    "src": "Skipping the small talk, I see. Are my intentions really that transparent?",
-   "dst": "",
+   "dst": "连寒暄都省了。我的意图真有那么明显？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11551,7 +11551,7 @@
   },
   "A New Beginning#214": {
    "src": "Predictable, more like, after all this time. You've always got an angle you're working towards when you call me here.",
-   "dst": "",
+   "dst": "应该说是好预测吧，都这么久了。每次你叫我来这里，总是在打什么主意。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11561,7 +11561,7 @@
   },
   "A New Beginning#215": {
    "src": "Maybe I just like the ambience.",
-   "dst": "",
+   "dst": "也许我只是喜欢这里的气氛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11571,7 +11571,7 @@
   },
   "A New Beginning#216": {
    "src": "...I need another passport. Same as the rest.",
-   "dst": "",
+   "dst": "……我需要另一本护照。跟其他人一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11581,7 +11581,7 @@
   },
   "A New Beginning#217": {
    "src": "Naturally. You and your trend for collecting strays... Really you should just start a family by this point.",
-   "dst": "",
+   "dst": "果然。你跟你那收留流浪者的习惯……说真的，都到这个地步了，你干脆成家算了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11591,7 +11591,7 @@
   },
   "A New Beginning#218": {
    "src": "You of all people should know that I can't just stand by and leave them to fend for themselves.",
-   "dst": "",
+   "dst": "你比谁都清楚，我不能袖手旁观，让他们自生自灭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11601,7 +11601,7 @@
   },
   "A New Beginning#219": {
    "src": "Yes... A toddler could calculate that by watching you. I'll solve that problem for you. Keep them out of trouble, and we won't have any issues as usual.",
-   "dst": "",
+   "dst": "是啊……小孩子看你一眼都算得出来。这个问题我替你解决。别让他们惹麻烦，我们就跟往常一样相安无事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11611,7 +11611,7 @@
   },
   "A New Beginning#220": {
    "src": "Of course. As I always do.",
-   "dst": "",
+   "dst": "当然。我一向如此。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11621,7 +11621,7 @@
   },
   "A New Beginning#221": {
    "src": "Ha! \"Always.\" If I were a gambling man I'd never bet on your odds.",
-   "dst": "",
+   "dst": "哈！“一向。”我要是个赌徒，绝不会押你赢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11631,7 +11631,7 @@
   },
   "A New Beginning#222": {
    "src": "I need to get moving. There's always something that needs me to crunch the numbers... and today's events have only added to the pile.",
-   "dst": "",
+   "dst": "我得走了。永远有事情等着我去算那些数字……而今天发生的事又往那堆上面加了一叠。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11641,7 +11641,7 @@
   },
   "A New Beginning#223": {
    "src": "I certainly wouldn't want to delay you, Sovereign. I hope you manage to sort out all these problems.",
-   "dst": "",
+   "dst": "我当然不想耽误你，统领。希望你能把这些问题都处理好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11651,7 +11651,7 @@
   },
   "A New Beginning#224": {
    "src": "Oh, we will. It's only a matter of time. Take care, Syndra. Keep it constant.",
-   "dst": "",
+   "dst": "噢，会的。只是时间问题。保重，Syndra。保持稳定。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11661,7 +11661,7 @@
   },
   "A New Beginning#225": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11671,7 +11671,7 @@
   },
   "A New Beginning#226": {
    "src": "Sigh. You may as well come down now. Zeph, {u}.",
-   "dst": "",
+   "dst": "唉。你们还是下来吧。Zeph，{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11681,7 +11681,7 @@
   },
   "A New Beginning#227": {
    "src": "D-damn it... Sh-she spotted us.",
-   "dst": "",
+   "dst": "可、可恶……她、她发现我们了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11691,7 +11691,7 @@
   },
   "A New Beginning#228": {
    "src": "That was... risky. You're lucky he didn't look up.",
-   "dst": "",
+   "dst": "刚才那样……太冒险了。算你们运气好，他没抬头。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11701,7 +11701,7 @@
   },
   "A New Beginning#229": {
    "src": "S-sure, but- b-but what were you d-doing meeting up w-with him?!",
-   "dst": "",
+   "dst": "是、是没错，可——可是你跟、跟他见面到底在做什、什么？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11711,7 +11711,7 @@
   },
   "A New Beginning#230": {
    "src": "Its... complicated we have something of an agreement. What matters is that everything is taken care of. Since you're here, {u}, take this. Your passport.",
-   "dst": "",
+   "dst": "这……很复杂——我们之间有某种协议。重要的是一切都安排好了。既然你在这里，{u}，拿着。你的护照。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11721,7 +11721,7 @@
   },
   "A New Beginning#231": {
    "src": "He's... h-he's with the c-crown, though. H-how can you t-trust him?",
-   "dst": "",
+   "dst": "他……他、他是王室的人啊。你怎、怎么能信、信任他？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11731,7 +11731,7 @@
   },
   "A New Beginning#232": {
    "src": "Simple I don't. You don't need to worry about him. As I said, we have an agreement. He doesn't know about anything we do.",
-   "dst": "",
+   "dst": "很简单——我不信任他。你不用担心他。我说过，我们有协议。我们做的任何事他都不知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11741,7 +11741,7 @@
   },
   "A New Beginning#233": {
    "src": "I had hoped to keep this a secret for a reason... but what's done is done. Just... don't do anything rash, would you?",
-   "dst": "",
+   "dst": "我本来有理由想瞒着这件事的……但事已至此。只是……别做什么冲动的事，好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11751,7 +11751,7 @@
   },
   "A New Beginning#234": {
    "src": "{u}, your passport will let you enter the city. I'd suggest you take some time to visit and look around, to familiarize yourself with the place.",
-   "dst": "",
+   "dst": "{u}，有了护照你就能进城了。我建议你花点时间去逛逛，熟悉一下那个地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11761,7 +11761,7 @@
   },
   "A New Beginning#235": {
    "src": "And when you have time... I'd like to follow up on our discussion we had earlier. I think it's time we start taking steps forward.",
-   "dst": "",
+   "dst": "等你有空的时候……我想接着我们之前的谈话继续聊。我想是时候开始往前迈进了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11771,7 +11771,7 @@
   },
   "A New Beginning#236": {
    "src": "I'll be returning to our home. Zeph, you can come with me if you'd like.",
-   "dst": "",
+   "dst": "我要回家了。Zeph，你愿意的话可以跟我一起走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11781,7 +11781,7 @@
   },
   "A New Beginning#237": {
    "src": "I-I guess... S-see you later, {u}.",
-   "dst": "",
+   "dst": "我、我想是吧……回、回头见，{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11791,7 +11791,7 @@
   },
   "A New Beginning#238": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11801,7 +11801,7 @@
   },
   "A New Beginning#239": {
    "src": "Ugh. What do you want? I'm clearly busy.",
-   "dst": "",
+   "dst": "唉。你想干嘛？我明明很忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11811,7 +11811,7 @@
   },
   "A New Beginning#240": {
    "src": "...what?",
-   "dst": "",
+   "dst": "……什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11821,7 +11821,7 @@
   },
   "A New Beginning#241": {
    "src": "No, just... leave me alone, okay? I don't want to talk to you.",
-   "dst": "",
+   "dst": "不，就是……别烦我，好吗？我不想跟你说话。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11831,7 +11831,7 @@
   },
   "A New Beginning#242": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11841,7 +11841,7 @@
   },
   "A New Beginning#243": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11851,7 +11851,7 @@
   },
   "A New Beginning#244": {
    "src": "Ah! You ca-caught- caught me off guard. How's your time in Auburn bee-been?",
-   "dst": "",
+   "dst": "啊！你吓、吓——吓了我一跳。你在 Auburn 过、过得怎么样？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11861,7 +11861,7 @@
   },
   "A New Beginning#245": {
    "src": "Yup! I've s-s-stayed here the longest so I've ma-managed to gather quite the assortment of useful stuff. Rex w-w-would call it junk but...",
-   "dst": "",
+   "dst": "是啊！我在这里住、住、住得最久，所以收集了不少有用的东西。Rex 会、会、会说是垃圾就是了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11871,7 +11871,7 @@
   },
   "A New Beginning#246": {
    "src": "An old friend a-actually helped me make this training dum-dummy.",
-   "dst": "",
+   "dst": "其实是一个老朋友帮我做了这个训练假、假人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11881,7 +11881,7 @@
   },
   "A New Beginning#247": {
    "src": "Gotta stay on t-top of my training! Especially with you here.",
-   "dst": "",
+   "dst": "训练可不能落、落下！尤其是你来了之后。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11891,7 +11891,7 @@
   },
   "A New Beginning#248": {
    "src": "Besides, I wa-wa-want I want to be able to help when it matters.",
-   "dst": "",
+   "dst": "而且，我想、想、想——我想在关键时刻帮得上忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11901,7 +11901,7 @@
   },
   "A New Beginning#249": {
    "src": "We should t-train together some day.",
-   "dst": "",
+   "dst": "我们哪天应该一、一起训练。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11911,7 +11911,7 @@
   },
   "A New Beginning#250": {
    "src": "...oh. Um, hi.",
-   "dst": "",
+   "dst": "……噢。呃，嗨。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11921,7 +11921,7 @@
   },
   "A New Beginning#251": {
    "src": "Did you... need help with anything?",
-   "dst": "",
+   "dst": "你……需要帮什么忙吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11931,7 +11931,7 @@
   },
   "A New Beginning#252": {
    "src": "Mhm! Me, Zeph, Rex, and Mora all, um, have rooms here. Oh, and Syndra, too. And Kaio lives nearby too...",
-   "dst": "",
+   "dst": "嗯嗯！我、Zeph、Rex 和 Mora，呃，在这里都有房间。噢，还有 Syndra。Kaio 也住在附近……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11941,7 +11941,7 @@
   },
   "A New Beginning#253": {
    "src": "I've... been meaning to decorate some more. You know... make it more, um, homely.",
-   "dst": "",
+   "dst": "我……一直想多布置一下。你知道的……让这里更，呃，像个家。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11951,7 +11951,7 @@
   },
   "A New Beginning#254": {
    "src": "...but life's been getting in the way, I suppose.",
-   "dst": "",
+   "dst": "……不过日子总是忙不过来吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11961,7 +11961,7 @@
   },
   "A New Beginning#255": {
    "src": "Um! I d-don't, ha, judge me for this, but... I'm, um, writing in my diary.",
-   "dst": "",
+   "dst": "呃！我、我不……哈，别笑我，不过……我在，呃，写日记。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11971,7 +11971,7 @@
   },
   "A New Beginning#256": {
    "src": "...a-and before you ask! No!! You're, um, not allowed to read it.",
-   "dst": "",
+   "dst": "……还、还有，你别想问！不行！！你，呃，不准看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11981,7 +11981,7 @@
   },
   "A New Beginning#257": {
    "src": "...thank you. I'll, um, see you later.",
-   "dst": "",
+   "dst": "……谢谢。那，呃，回头见。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -11991,7 +11991,7 @@
   },
   "A New Beginning#258": {
    "src": "Hmm... Delivering mail from river settlement to {p}... Kaio... Check... Hmmm.",
-   "dst": "",
+   "dst": "嗯……把信件从河边聚落送到 {p}……Kaio……确认……嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12001,7 +12001,7 @@
   },
   "A New Beginning#259": {
    "src": "Ah! {u}, do you require my assistance?",
-   "dst": "",
+   "dst": "啊！{u}，需要我帮忙吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12011,7 +12011,7 @@
   },
   "A New Beginning#260": {
    "src": "Ah... You overheard me talking to myself, then. Hoh!",
-   "dst": "",
+   "dst": "啊……你听到我在自言自语了。呵呵！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12021,7 +12021,7 @@
   },
   "A New Beginning#261": {
    "src": "I am just writing and filing some reports I had forgotten about. We are trying to keep better track of our activities throughout the forest, you see.",
-   "dst": "",
+   "dst": "我只是在写一些之前忘掉的报告并归档。你看，我们想更好地记录我们在森林各处的行动。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12031,7 +12031,7 @@
   },
   "A New Beginning#262": {
    "src": "Mmn... So, you're cursed, then?",
-   "dst": "",
+   "dst": "嗯……所以，你是受诅者？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12041,7 +12041,7 @@
   },
   "A New Beginning#263": {
    "src": "Hm... I guess not, thinking on it now. A few years ago, had you asked, I'd've probably said yes. But I don't got the strength in me for it anymore.",
-   "dst": "",
+   "dst": "嗯……现在想想，大概不是吧。几年前你要是问我，我多半会说是。但我已经没那个力气了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12051,7 +12051,7 @@
   },
   "A New Beginning#264": {
    "src": "It's good your arrival has given Syndra and the younguns some hope, for once. We've been a bit, eh... lacking in it lately.",
-   "dst": "",
+   "dst": "你来了之后，Syndra 和那些孩子总算有了点希望，这是好事。我们最近有点，呃……缺这个。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12061,7 +12061,7 @@
   },
   "A New Beginning#265": {
    "src": "I've got no such delusions, unfortunately. I reckon this path only ends in tragedy. But it's not my place to say so, so I don't.",
-   "dst": "",
+   "dst": "可惜我没这种幻想。我估计这条路只会以悲剧收场。不过这轮不到我说，所以我不说。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12071,7 +12071,7 @@
   },
   "A New Beginning#266": {
    "src": "Would be good to be proven wrong... but I don't think I will be. I've seen this sorta thing before.",
-   "dst": "",
+   "dst": "能被证明是我错了当然好……但我不觉得会。这种事我以前见过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12081,7 +12081,7 @@
   },
   "A New Beginning#267": {
    "src": "...what? I got nothin' else to say.",
-   "dst": "",
+   "dst": "……干嘛？我没别的话要说了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12091,7 +12091,7 @@
   },
   "A New Beginning#268": {
    "src": "Interesting that you're drawn to that grave in particular. S'our latest loss, that'n there.",
-   "dst": "",
+   "dst": "有意思，你偏偏被那座坟吸引。那是我们最近失去的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12101,7 +12101,7 @@
   },
   "A New Beginning#269": {
    "src": "It's a damn shame. A tragedy each 'n every time, yet still happens often enough to feel routine. But that's life, I reckon.",
-   "dst": "",
+   "dst": "真是可惜。每一次都是悲剧，却又常见得像家常便饭。不过人生就是这样，我想。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12111,7 +12111,7 @@
   },
   "A New Beginning#270": {
    "src": "...did you now? Funny thing to say about a dead man, considering I ain't ever seen you 'round these parts before.",
-   "dst": "",
+   "dst": "……是吗？对一个死人说这种话还真奇怪，毕竟我从没在这一带见过你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12121,7 +12121,7 @@
   },
   "A New Beginning#271": {
    "src": "Now, spill. 'Fore I go and tell Synny you ain't no good after all.",
-   "dst": "",
+   "dst": "好了，说吧。免得我去跟 Synny 说你果然不是什么好东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12131,7 +12131,7 @@
   },
   "A New Beginning#272": {
    "src": "Ah... caught Rex muttering something 'bout that once or twice before. Poor girl... it'd do her well to set it aside, for a time.",
-   "dst": "",
+   "dst": "啊……以前听过 Rex 嘀咕过一两次这件事。可怜的丫头……暂时把这件事放下对她比较好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12141,7 +12141,7 @@
   },
   "A New Beginning#273": {
    "src": "Didn't think much of it, but I suppose you're livin' proof, aren'tcha? Strange as can be...",
-   "dst": "",
+   "dst": "我没怎么当回事，不过我想你就是活生生的证据，对吧？真是怪到家了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12151,7 +12151,7 @@
   },
   "A New Beginning#274": {
    "src": "Say, is the memory wipin' a real thing? Got no damn clue where that theory started, but... well, if one thing's true, why not the rest?",
-   "dst": "",
+   "dst": "说起来，抹除记忆是真的吗？我根本不知道那个说法是从哪儿来的，不过……嗯，如果有一件是真的，其他的为什么不会是？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12161,7 +12161,7 @@
   },
   "A New Beginning#275": {
    "src": "Damn. Damn. That's rough. That real rough, ain't it. And you're tellin' me that's where he ended up?",
-   "dst": "",
+   "dst": "该死。该死。这太难受了。真的太难受了，是吧。你是说他最后到了那里？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12171,7 +12171,7 @@
   },
   "A New Beginning#276": {
    "src": "Hrm... y'know, it's funny. Big guy like him, you wouldn't take him for a thief. Hard to keep hidden, eh? And yet...",
-   "dst": "",
+   "dst": "嗯……你知道吗，说来好笑。他那么大个子，谁也看不出他是个小偷。很难藏得住吧？可是……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12181,7 +12181,7 @@
   },
   "A New Beginning#277": {
    "src": "He'd manage to turn blending into a crowd into an art. No matter where he was, who he spoke to, how he was actin', he'd always seem like he fit right in.",
-   "dst": "",
+   "dst": "他硬是把混进人群变成了一门艺术。不管在哪里、跟谁说话、表现得怎样，他看起来总是完全融入其中。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12191,7 +12191,7 @@
   },
   "A New Beginning#278": {
    "src": "...t'was a right stupid risk that did him in, in the end. I told him, I did it ain't worth breaking into the Sovereign's place, especially not during festival times...",
-   "dst": "",
+   "dst": "……最后害死他的，是一次蠢透了的冒险。我跟他说过，我真说过——闯进统领的地方不值得，尤其是在庆典期间……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12201,7 +12201,7 @@
   },
   "A New Beginning#279": {
    "src": "But he was the kinda sort to dig in his heels. Said he'd be fine, said it'd be worth it, nabbin' all those documents. Something to help the cause... I hardly even remember now.",
-   "dst": "",
+   "dst": "但他就是那种死不回头的人。说他不会有事，说那样值得，把那些文件全都弄到手。说是能帮上我们的事业……我现在都快记不得了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12211,7 +12211,7 @@
   },
   "A New Beginning#280": {
    "src": "Can't save 'em all. Especially not from themselves. I've learned that many times over, over my years.",
-   "dst": "",
+   "dst": "救不了所有人。尤其是救不了执意害自己的人。这些年来，我已经领教过太多次了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12221,7 +12221,7 @@
   },
   "A New Beginning#281": {
    "src": "So he got caught. Heard a cursed one got involved... was a whole damn mess. Sovereign really wasn't happy with Synny when he heard, let me tell you. Ain't seen her that shellshocked in years.",
-   "dst": "",
+   "dst": "于是他被抓了。听说还有个受诅者掺和进来……整个乱成一团。告诉你，统领听说之后对 Synny 非常不满。我好几年没见过她那么震惊了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12231,7 +12231,7 @@
   },
   "A New Beginning#282": {
    "src": "...but you're sayin' he lived? How's that all work out?",
-   "dst": "",
+   "dst": "……可你说他活下来了？这到底是怎么回事？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12241,7 +12241,7 @@
   },
   "A New Beginning#283": {
    "src": "Ah. I see. I... see.",
-   "dst": "",
+   "dst": "啊。我明白了。我……明白了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12251,7 +12251,7 @@
   },
   "A New Beginning#284": {
    "src": "Well... tell me this, then. Was he happy, you think? Out there in the wider world? Did he live a good life?",
-   "dst": "",
+   "dst": "好吧……那告诉我这个。你觉得他快乐吗？在外面那个更广阔的世界？他过得好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12261,7 +12261,7 @@
   },
   "A New Beginning#285": {
    "src": "...alright. Alrighty. Good. That that's good, y'hear. I... I'm glad for that much.",
-   "dst": "",
+   "dst": "……好吧。好吧。很好。那——那很好，听到了吗。我……至少这点我很欣慰。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12271,7 +12271,7 @@
   },
   "A New Beginning#286": {
    "src": "Thank you for... for tellin' me all that. S'not a tale that ends in happiness, but I reckon so long as he made the most of it... that's all you can really hope for.",
-   "dst": "",
+   "dst": "谢谢你……谢谢你告诉我这些。这不是一个圆满结局的故事，但我想只要他尽力活出了自己……人能盼的也就这么多了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12281,7 +12281,7 @@
   },
   "A New Beginning#287": {
    "src": "Y'may as well leave me be a while, now. Got some thinkin' to get through.",
-   "dst": "",
+   "dst": "你还是让我自己待一会儿吧。我得好好想一想。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -12291,7 +12291,7 @@
   },
   "A New Beginning#288": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A New Beginning",
@@ -44791,7 +44791,7 @@
   },
   "Clearing the Camps#000": {
    "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 {p} 外 [-{~}, {~}, -{~}] 的 Kymer 队长对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Clearing the Camps",
@@ -44801,7 +44801,7 @@
   },
   "Clearing the Camps#001": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
-   "dst": "",
+   "dst": "啊哈，又一个 {p} 的士兵，是吧？好啊，热烈欢迎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44811,7 +44811,7 @@
   },
   "Clearing the Camps#002": {
    "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
-   "dst": "",
+   "dst": "你听说我们收到的村民请求了吗？他们说那些“兽人”和“哥布林”正在威胁他们的城镇。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44821,7 +44821,7 @@
   },
   "Clearing the Camps#003": {
    "src": "Primitive, brutal creatures, apparently little better than the zombies we're used to, at least according to the {p} military.",
-   "dst": "",
+   "dst": "据说是些原始又野蛮的生物，比我们平常对付的僵尸好不了多少——至少 {p} 军方是这么说的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44831,7 +44831,7 @@
   },
   "Clearing the Camps#004": {
    "src": "So, we figure if might makes right with them, then defeating their leaders should scare them into submission.",
-   "dst": "",
+   "dst": "所以我们想，既然对它们来说拳头大就是道理，那打败它们的首领应该就能把它们吓得服服帖帖。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44841,7 +44841,7 @@
   },
   "Clearing the Camps#005": {
    "src": "Our scouts have identified three \"chief\" orcs in the area- Elisu, Ceifko and Veltu. Though, strangely Veltu is always surrounded by goblins...",
-   "dst": "",
+   "dst": "我们的斥候在这一带找到了三个兽人“酋长”——Elisu、Ceifko 和 Veltu。不过奇怪的是，Veltu 身边总是围着哥布林……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44851,7 +44851,7 @@
   },
   "Clearing the Camps#006": {
    "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags- search the plains, return once they're dealt with!",
-   "dst": "",
+   "dst": "好了，不管怎样，这里需要我们守着 {p}。那些酋长你能对付吗？它们好像躲在插着绿旗的营地里——去平原上搜一搜，解决之后再回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44861,7 +44861,7 @@
   },
   "Clearing the Camps#007": {
    "src": "Find and kill Orc Chieftains Elisu, Veltu, and Ceifko in the camps around {p}- look for green flags",
-   "dst": "",
+   "dst": "在 {p} 周围的营地找到并击杀兽人酋长 Elisu、Veltu 和 Ceifko——留意绿色旗帜",
    "role": "desc",
    "kind": "objective",
    "quest": "Clearing the Camps",
@@ -44871,7 +44871,7 @@
   },
   "Clearing the Camps#008": {
    "src": "Report back to Captain Kymer once you have the three heads.",
-   "dst": "",
+   "dst": "拿到三颗首级后，回去向 Kymer 队长报告。",
    "role": "desc",
    "kind": "objective",
    "quest": "Clearing the Camps",
@@ -44881,7 +44881,7 @@
   },
   "Clearing the Camps#009": {
    "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
-   "dst": "",
+   "dst": "啊，刚才那个士兵！看来你回来了。打败那些家伙的事顺利——……哎哟。那是它们的头？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44891,7 +44891,7 @@
   },
   "Clearing the Camps#010": {
    "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead of alive, as long as they're dealt with. I have your share of the reward here.",
-   "dst": "",
+   "dst": "这……比我预想的狠了点，不过也行……反正村民也不在乎它们是死是活，只要解决了就好。你那份奖励在我这儿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44901,7 +44901,7 @@
   },
   "Clearing the Camps#011": {
    "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
-   "dst": "",
+   "dst": "这种精准打击应该能避免跟兽人全面开战。我们可不想每个行省都得打一场全面战争，哈！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44911,7 +44911,7 @@
   },
   "Clearing the Camps#012": {
    "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah...livelier than usual. Better get used to it.",
-   "dst": "",
+   "dst": "你出去的时候发现了吧，Gavel 的生物跟 Wynn 那边的不太一样？它们有点，呃……比平常更有活力。最好早点习惯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44921,7 +44921,7 @@
   },
   "Clearing the Camps#013": {
    "src": "The next major settlement is {p}, in the swamp up north, but I hear the swamp ogres are a lot tougher than the plains' fare. I'd stick around here and train up, first.",
-   "dst": "",
+   "dst": "下一个大聚落是北边沼泽里的 {p}，不过我听说沼泽食人魔比平原上的家伙难对付多了。我会先留在这附近练练。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -44931,7 +44931,7 @@
   },
   "Cluck Cluck#000": {
    "src": "Talk to Nohno on {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 {p} [-{~}, {~}, -{~}] 的 Nohno 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Cluck Cluck",
@@ -44941,7 +44941,7 @@
   },
   "Cluck Cluck#001": {
    "src": "Hey, you aren't a chicken! Wait, you're a human! You can help me! Maybe you are the guy who helped my brother Yahya, but who knows, you humans all look the same to me.",
-   "dst": "",
+   "dst": "嘿，你不是鸡！等等，你是人类！你能帮我！说不定你就是帮过我兄弟 Yahya 的那个人，不过谁知道呢，你们人类在我看来都长一个样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -44951,7 +44951,7 @@
   },
   "Cluck Cluck#002": {
    "src": "I really love my chickens, but there is one that I just cannot control...",
-   "dst": "",
+   "dst": "我真的很爱我的鸡，可是有一只我怎么也管不住……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -44961,7 +44961,7 @@
   },
   "Cluck Cluck#003": {
    "src": "His name is Cluckles, he was given to me by a man named Bob before he went to war, but when Bob never came back, Cluckles got angry...",
-   "dst": "",
+   "dst": "它叫 Cluckles，是一个叫 Bob 的人上战场前送给我的。可是 Bob 一直没回来，Cluckles 就发怒了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -44971,7 +44971,7 @@
   },
   "Cluck Cluck#004": {
    "src": "He's really dangerous to keep on my lovely island, so I keep him in my basement...",
-   "dst": "",
+   "dst": "把它留在我可爱的小岛上太危险了，所以我把它关在地下室……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -44981,7 +44981,7 @@
   },
   "Cluck Cluck#005": {
    "src": "I want to take care of him, but my wife says it's too dangerous. Where's my wife you say? Oh, I think she's around here eating some grain.",
-   "dst": "",
+   "dst": "我想好好照顾它，可我老婆说太危险了。你问我老婆在哪？噢，我想她就在这附近吃谷子吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -44991,7 +44991,7 @@
   },
   "Cluck Cluck#006": {
    "src": "Anyway, I need you to go down there and... Take care of him for me. I would really appreciate it.",
-   "dst": "",
+   "dst": "总之，我需要你下去……帮我把它料理好。我会非常感激的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -45001,7 +45001,7 @@
   },
   "Cluck Cluck#007": {
    "src": "Bring back [{~} Cluckles' Favourite Feather] to Nohno.",
-   "dst": "",
+   "dst": "把 [{~} Cluckles 最爱的羽毛] 带回给 Nohno。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cluck Cluck",
@@ -45011,7 +45011,7 @@
   },
   "Cluck Cluck#008": {
    "src": "What is this?! His feather? What did you do to Cluckles?! I wanted you to take care of him, not kill him!",
-   "dst": "",
+   "dst": "这是什么？！它的羽毛？你对 Cluckles 做了什么？！我是要你照顾它，不是要你杀了它！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -45021,7 +45021,7 @@
   },
   "Cluck Cluck#009": {
    "src": "You monster! Leave this place now, and keep that feather to remind you of your hideous crime!",
-   "dst": "",
+   "dst": "你这个怪物！马上离开这里，留着那根羽毛，让它提醒你犯下的可怕罪行！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -45031,7 +45031,7 @@
   },
   "Cook Assistant#000": {
    "src": "Talk to the Cook in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 {p} [-{~}, {~}, -{~}] 的厨师对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -45041,7 +45041,7 @@
   },
   "Cook Assistant#001": {
    "src": "I can't believe what is happening to me.",
-   "dst": "",
+   "dst": "真不敢相信这种事会落到我头上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45051,7 +45051,7 @@
   },
   "Cook Assistant#002": {
    "src": "The King ordered me to bake cakes for all those new recruits!",
-   "dst": "",
+   "dst": "国王命令我给所有新兵烤蛋糕！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45061,7 +45061,7 @@
   },
   "Cook Assistant#003": {
    "src": "Unfortunately, a Grook took my last cake, and I ran out of ingredients!",
-   "dst": "",
+   "dst": "不幸的是，一只 Grook 拿走了我最后一个蛋糕，我的材料也用完了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45071,7 +45071,7 @@
   },
   "Cook Assistant#004": {
    "src": "Now can you help...",
-   "dst": "",
+   "dst": "现在你能不能帮……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45081,7 +45081,7 @@
   },
   "Cook Assistant#005": {
    "src": "That's the Grook! Go chase it down and get my cake back!",
-   "dst": "",
+   "dst": "就是那只 Grook！快去追，把我的蛋糕抢回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45091,7 +45091,7 @@
   },
   "Cook Assistant#006": {
    "src": "Follow the pesky Grook.",
-   "dst": "",
+   "dst": "跟上那只讨厌的 Grook。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -45101,7 +45101,7 @@
   },
   "Cook Assistant#007": {
    "src": "The Grook got away! Return to the Cook at [-{~}, {~}, -{~}] to figure out what to do.",
-   "dst": "",
+   "dst": "Grook 跑掉了！回到 [-{~}, {~}, -{~}] 的厨师那里，想想该怎么办。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -45111,7 +45111,7 @@
   },
   "Cook Assistant#008": {
    "src": "What are you doing? Go after the Grook...",
-   "dst": "",
+   "dst": "你在干什么？快去追那只 Grook……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45121,7 +45121,7 @@
   },
   "Cook Assistant#009": {
    "src": "It got away!",
-   "dst": "",
+   "dst": "它跑掉了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45131,7 +45131,7 @@
   },
   "Cook Assistant#010": {
    "src": "Well, I guess you are going to have to help me find the ingredients and bake another...",
-   "dst": "",
+   "dst": "好吧，看来你得帮我找材料，再烤一个……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45141,7 +45141,7 @@
   },
   "Cook Assistant#011": {
    "src": "There he is again! After him!",
-   "dst": "",
+   "dst": "它又出现了！追上去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45151,7 +45151,7 @@
   },
   "Cook Assistant#012": {
    "src": "Find out where the Grook flew up to at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "找出 Grook 飞到 [-{~}, {~}, -{~}] 的哪里去了。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -45161,7 +45161,7 @@
   },
   "Cook Assistant#013": {
    "src": "Return to the cook at [-{~}, {~}, -{~}]. Use a Scroll to get there faster.",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, -{~}] 的厨师那里。用卷轴能更快到达。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -45171,7 +45171,7 @@
   },
   "Cook Assistant#014": {
    "src": "Great! You got the cake!",
-   "dst": "",
+   "dst": "太好了！你拿到蛋糕了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45181,7 +45181,7 @@
   },
   "Cook Assistant#015": {
    "src": "I can't thank you enough! Here, take these emeralds and armour for all your trouble.",
-   "dst": "",
+   "dst": "真是太感谢你了！来，收下这些绿宝石和护甲，辛苦你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -45191,7 +45191,7 @@
   },
   "Cook Assistant#016": {
    "src": "You should explore around to become stronger. I hear there might be work to do in {p}.",
-   "dst": "",
+   "dst": "你应该到处探索，让自己变强。我听说 {p} 可能有活要干。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -54241,7 +54241,7 @@
   },
   "Dwelling Walls#000": {
    "src": "Talk to Leucsaa at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 [{~}, {~}, -{~}] 的 Leucsaa 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -54251,7 +54251,7 @@
   },
   "Dwelling Walls#001": {
    "src": "Let's see here... mother's old vase... check!",
-   "dst": "",
+   "dst": "我看看……母亲的旧花瓶……有了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54261,7 +54261,7 @@
   },
   "Dwelling Walls#002": {
    "src": "Dining room table... got it here, check!",
-   "dst": "",
+   "dst": "餐桌……在这儿，有了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54271,7 +54271,7 @@
   },
   "Dwelling Walls#003": {
    "src": "Finally, the journal. It's out here somewhere, I assume. I'll look around.",
-   "dst": "",
+   "dst": "最后是日志。我想应该就在外面哪里吧。我找找看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54281,7 +54281,7 @@
   },
   "Dwelling Walls#004": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54291,7 +54291,7 @@
   },
   "Dwelling Walls#005": {
    "src": "Hold on, what? The journal! I must have forgotten it inside the mansion!",
-   "dst": "",
+   "dst": "等等，什么？日志！我一定是把它忘在宅邸里了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54301,7 +54301,7 @@
   },
   "Dwelling Walls#006": {
    "src": "You there! Would you mind doing me a deed?",
-   "dst": "",
+   "dst": "那边的你！能帮我个忙吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54311,7 +54311,7 @@
   },
   "Dwelling Walls#007": {
    "src": "I left a very precious journal inside this mansion, a hell within walls. It was my great grandfather's!",
-   "dst": "",
+   "dst": "我把一本非常珍贵的日志忘在这座宅邸里了，这里简直是四面墙围起来的地狱。那是我曾祖父的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54321,7 +54321,7 @@
   },
   "Dwelling Walls#008": {
    "src": "The mansion was designed by a Corkian architect, and I was scammed into buying it.",
-   "dst": "",
+   "dst": "这座宅邸是一位 Corkus 建筑师设计的，我是被骗才买下它的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54331,7 +54331,7 @@
   },
   "Dwelling Walls#009": {
    "src": "If you step inside the mansion just for a few moments, you'll understand why the sellers had to trick someone into investing in their god forsaken real estate!",
-   "dst": "",
+   "dst": "你只要进去待上一小会儿，就会明白卖家为什么非得骗人来买他们这块鬼地方了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54341,7 +54341,7 @@
   },
   "Dwelling Walls#010": {
    "src": "Navigating from room to room is nearly impossible, the rooms move around. I've only been in the mansion for a week and I'm already packing my bags and moving to {p}.",
-   "dst": "",
+   "dst": "在房间之间走动几乎不可能，房间会自己移动。我才住了一个星期，就已经在打包行李准备搬去 {p} 了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54351,7 +54351,7 @@
   },
   "Dwelling Walls#011": {
    "src": "Enter the mansion",
-   "dst": "",
+   "dst": "进入宅邸",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -54361,7 +54361,7 @@
   },
   "Dwelling Walls#012": {
    "src": "Navigate the mansion to the room holding the journal",
-   "dst": "",
+   "dst": "在宅邸里找路，前往放着日志的房间",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -54371,7 +54371,7 @@
   },
   "Dwelling Walls#013": {
    "src": "Talk to Leucsaa",
-   "dst": "",
+   "dst": "与 Leucsaa 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Dwelling Walls",
@@ -54381,7 +54381,7 @@
   },
   "Dwelling Walls#014": {
    "src": "The journal! You outsmarted the mansion!",
-   "dst": "",
+   "dst": "日志！你智胜了这座宅邸！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54391,7 +54391,7 @@
   },
   "Dwelling Walls#015": {
    "src": "I must thank you, that journal was priceless to my family.",
-   "dst": "",
+   "dst": "我得谢谢你，那本日志对我家来说是无价之宝。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -54401,7 +54401,7 @@
   },
   "Dwelling Walls#016": {
    "src": "Let this be a life lesson to you. Never buy a house from a Corkian architect.",
-   "dst": "",
+   "dst": "就当是给你的人生教训吧。千万别买 Corkus 建筑师盖的房子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dwelling Walls",
@@ -70301,7 +70301,7 @@
   },
   "Enzan's Brother#000": {
    "src": "Talk to Enzan close to the exit of {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 靠近 {p} 出口的 Enzan 对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Enzan's Brother",
@@ -70311,7 +70311,7 @@
   },
   "Enzan's Brother#001": {
    "src": "I see you want to venture into the wilderness!",
-   "dst": "",
+   "dst": "看来你想去荒野闯一闯！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70321,7 +70321,7 @@
   },
   "Enzan's Brother#002": {
    "src": "My name is Enzan, and I am now a retired knight. I've spent most of my life fighting for {p}'s army, just like you.",
-   "dst": "",
+   "dst": "我叫 Enzan，现在是个退役骑士。我这辈子大部分时间都在为 {p} 的军队作战，就跟你一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70331,7 +70331,7 @@
   },
   "Enzan's Brother#003": {
    "src": "I know how hard it must be to be a recruit at this time, so I've got something that could help you! Well, I don't have it, but my brother does!",
-   "dst": "",
+   "dst": "我知道这个时候当新兵有多辛苦，所以我有样东西能帮到你！嗯，东西不在我这儿，在我兄弟那儿！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70341,7 +70341,7 @@
   },
   "Enzan's Brother#004": {
    "src": "Follow this road, he's just past the item identifier, you can't miss him. Just head to the big set of stairs, past the item identifier.",
-   "dst": "",
+   "dst": "沿着这条路走，他就在物品鉴定师过去一点，你不会错过的。往那段大楼梯走，过了物品鉴定师就是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70351,7 +70351,7 @@
   },
   "Enzan's Brother#005": {
    "src": "Tell him I sent you! He can be such a jerk to strangers sometimes, especially when he's focused on his stairs...",
-   "dst": "",
+   "dst": "告诉他是我叫你去的！他有时候对陌生人很不客气，尤其是在专心研究他的楼梯的时候……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70361,7 +70361,7 @@
   },
   "Enzan's Brother#006": {
    "src": "Find Enzan's brother near the Item Identifier on the {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 {p} [-{~}, {~}, -{~}] 的物品鉴定师附近找到 Enzan 的兄弟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Enzan's Brother",
@@ -70371,7 +70371,7 @@
   },
   "Enzan's Brother#007": {
    "src": "Excuse me? Can't you see I'm busy?",
-   "dst": "",
+   "dst": "干什么？没看到我很忙吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70381,7 +70381,7 @@
   },
   "Enzan's Brother#008": {
    "src": "Oh, my brother? Sorry, I didn't know.",
-   "dst": "",
+   "dst": "噢，我兄弟叫你来的？抱歉，我不知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70391,7 +70391,7 @@
   },
   "Enzan's Brother#009": {
    "src": "Why yes, I actually have something that could help you...",
-   "dst": "",
+   "dst": "是啊，我确实有样东西能帮到你……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70401,7 +70401,7 @@
   },
   "Enzan's Brother#010": {
    "src": "But before I give it to you, why don't you help me with something first?",
-   "dst": "",
+   "dst": "不过给你之前，你何不先帮我一个忙？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70411,7 +70411,7 @@
   },
   "Enzan's Brother#011": {
    "src": "You see, there's a special kind of mushroom that grows in this cave. I hear it has certain... energizing properties.",
-   "dst": "",
+   "dst": "你看，这个洞窟里长着一种特别的蘑菇。听说它有某种……提神的功效。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70421,7 +70421,7 @@
   },
   "Enzan's Brother#012": {
    "src": "If you can bring me [{~} Energy Mushroom], I'll help you out. Enter the cave down the stairs, and bring me that mushroom!",
-   "dst": "",
+   "dst": "如果你能给我带来 [{~} 能量蘑菇]，我就帮你。从楼梯下去进入洞窟，把那个蘑菇带给我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70431,7 +70431,7 @@
   },
   "Enzan's Brother#013": {
    "src": "Descend into the cave at [-{~}, {~}, -{~}] and bring [{~} Energy Mushroom] to Therck",
-   "dst": "",
+   "dst": "下到 [-{~}, {~}, -{~}] 的洞窟，把 [{~} 能量蘑菇] 带给 Therck",
    "role": "desc",
    "kind": "objective",
    "quest": "Enzan's Brother",
@@ -70441,7 +70441,7 @@
   },
   "Enzan's Brother#014": {
    "src": "Ah, you're back! Do you have the mushroom?",
-   "dst": "",
+   "dst": "啊，你回来了！蘑菇拿到了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70451,7 +70451,7 @@
   },
   "Enzan's Brother#015": {
    "src": "Excellent... Now I might be able to finally climb these stairs!",
-   "dst": "",
+   "dst": "太好了……这下我也许终于能爬上这段楼梯了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70461,7 +70461,7 @@
   },
   "Enzan's Brother#016": {
    "src": "Who knows, maybe there's a treasure up there?",
-   "dst": "",
+   "dst": "谁知道呢，说不定上面有宝藏？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70471,7 +70471,7 @@
   },
   "Enzan's Brother#017": {
    "src": "Take this ring. It's an accessory item! You can identify it at the nearby Item Identifier.",
-   "dst": "",
+   "dst": "拿着这枚戒指。这是饰品！你可以在附近的物品鉴定师那里鉴定它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70481,7 +70481,7 @@
   },
   "Enzan's Brother#018": {
    "src": "It's a very good ring for someone starting out like you. There's just one small issue...",
-   "dst": "",
+   "dst": "对你这样刚起步的人来说，这是枚很好的戒指。只是有个小问题……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -70491,7 +70491,7 @@
   },
   "Enzan's Brother#019": {
    "src": "To wear it, you must help my friend back in {p}. He's been pestering me for days about needing help.",
-   "dst": "",
+   "dst": "要戴上它，你得去帮我在 {p} 的朋友。他已经缠着我好几天说需要帮忙了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -93061,7 +93061,7 @@
   },
   "Lost Tower#000": {
    "src": "Talk to Laen in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 {p} [{~}, {~}, -{~}] 的 Laen 对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Tower",
@@ -93071,7 +93071,7 @@
   },
   "Lost Tower#001": {
    "src": "Hey adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
-   "dst": "",
+   "dst": "嘿，冒险者！能帮我一下吗？我手上有点麻烦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -93081,7 +93081,7 @@
   },
   "Lost Tower#002": {
    "src": "A while ago, before {p} was destroyed, my family used to own quite an interesting book, that held knowledge of places and beings of great power.",
-   "dst": "",
+   "dst": "很久以前，在 {p} 被摧毁之前，我家曾经有一本相当有意思的书，里面记载着强大力量之地与强大存在的知识。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -93091,7 +93091,7 @@
   },
   "Lost Tower#003": {
    "src": "Unfortunately, a creature stole it from them during the attack that led to the destruction of {p}, and no one has seen it since.",
-   "dst": "",
+   "dst": "不幸的是，在导致 {p} 毁灭的那场袭击中，一只怪物把书从他们手里偷走了，从此再也没人见过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -93101,7 +93101,7 @@
   },
   "Lost Tower#004": {
    "src": "If you are willing to help, bring me [{~} Book of the Bones], I believe this book is now between the hands of skeletons, in an old tower in {p}.",
-   "dst": "",
+   "dst": "如果你愿意帮忙，就把 [{~} 骸骨之书] 带给我。我相信那本书现在落在骷髅手里，就在 {p} 的一座古塔中。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -93111,7 +93111,7 @@
   },
   "Lost Tower#005": {
    "src": "See if you can find this tower, one of the skeletons probably has the book somewhere in there.",
-   "dst": "",
+   "dst": "看看你能不能找到这座塔，书多半就在里面某个骷髅身上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -93121,7 +93121,7 @@
   },
   "Lost Tower#006": {
    "src": "Find the lost tower in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "找到 {p} [{~}, {~}, -{~}] 的失落之塔。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Tower",
@@ -93131,7 +93131,7 @@
   },
   "Lost Tower#007": {
    "src": "Find the book in the tower, and bring it back to Laen.",
-   "dst": "",
+   "dst": "在塔里找到那本书，带回给 Laen。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Tower",
@@ -93141,7 +93141,7 @@
   },
   "Lost Tower#008": {
    "src": "Bring back the book to Laen.",
-   "dst": "",
+   "dst": "把书带回给 Laen。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Tower",
@@ -93151,7 +93151,7 @@
   },
   "Lost Tower#009": {
    "src": "Great! This will be very interesting to read, thank you!",
-   "dst": "",
+   "dst": "太好了！这本书读起来一定很有意思，谢谢你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -114891,7 +114891,7 @@
   },
   "Pirate's Trove#000": {
    "src": "Talk to Damiral, outside {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 {p} 外 [-{~}, {~}, -{~}] 的 Damiral 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -114901,7 +114901,7 @@
   },
   "Pirate's Trove#001": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
-   "dst": "",
+   "dst": "嘿，冒险者！欢迎来到伟大的 Gavel 行省，村民一族与在下的家乡。你很快就要进入宏伟的 {p} 城堡了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -114911,7 +114911,7 @@
   },
   "Pirate's Trove#002": {
    "src": "But enough with the pleasantries. Tell me... have you ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
-   "dst": "",
+   "dst": "客套话就说到这里。告诉我……你听说过大海盗 Hastor 船长的故事吗？很久以前在海上航行的人物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -114921,7 +114921,7 @@
   },
   "Pirate's Trove#003": {
    "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune within the walls someplace!",
-   "dst": "",
+   "dst": "传说多年前重建 {p} 的时候，他把自己的财宝藏在了城墙里的某个地方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -114931,7 +114931,7 @@
   },
   "Pirate's Trove#004": {
    "src": "I'm a retired sailor now, but I could still do with a few extra emeralds from that treasure. Perhaps, if you're up to it... we could come to an agreement?",
-   "dst": "",
+   "dst": "我现在是个退休的水手，不过那份宝藏里要是能多分我几块绿宝石也不错。或许，如果你有兴趣……我们可以谈个条件？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -114941,7 +114941,7 @@
   },
   "Pirate's Trove#005": {
    "src": "I have a riddle, the first of a number of clues that are supposed to lead to where Hastor hid his fortune, but I can't for the life of me figure it out.",
-   "dst": "",
+   "dst": "我有一道谜题，是指向 Hastor 藏宝地点的一连串线索里的第一条，可我怎么都解不开。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -114951,7 +114951,7 @@
   },
   "Pirate's Trove#006": {
    "src": "Maybe you'll be able to solve it. If you can, I'll make sure to split the treasure with you!",
-   "dst": "",
+   "dst": "也许你能解开。要是解开了，我保证宝藏跟你平分！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -114961,7 +114961,7 @@
   },
   "Pirate's Trove#007": {
    "src": "This first riddle goes like so: “Toward the sunset, among the northern flowers shaded by quartz”.",
-   "dst": "",
+   "dst": "第一道谜题是这样的：“朝着日落，在石英荫蔽下的北方花丛之间”。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -114971,7 +114971,7 @@
   },
   "Pirate's Trove#008": {
    "src": "I do wish you good luck, adventurer! Remember, everything you need to solve the clues should be found somewhere inside {p}.",
-   "dst": "",
+   "dst": "祝你好运，冒险者！记住，解开线索需要的一切，都应该能在 {p} 里找到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -114981,7 +114981,7 @@
   },
   "Pirate's Trove#009": {
    "src": "Clue I: Toward the sunset, among northern flowers shaded by quartz",
-   "dst": "",
+   "dst": "线索一：朝着日落，在石英荫蔽下的北方花丛之间",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -114991,7 +114991,7 @@
   },
   "Pirate's Trove#010": {
    "src": "Clue II: In a place of identity, above the leaves and between the glass",
-   "dst": "",
+   "dst": "线索二：在确认身份之处，树叶之上、玻璃之间",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -115001,7 +115001,7 @@
   },
   "Pirate's Trove#011": {
    "src": "Clue III: In an emerald fountain, surrounded by the wealth of the villagers",
-   "dst": "",
+   "dst": "线索三：在绿宝石喷泉里，被村民的财富环绕",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -115011,7 +115011,7 @@
   },
   "Pirate's Trove#012": {
    "src": "Clue IV: Beneath the cowl of an eastern titan, keeping watch over our heads",
-   "dst": "",
+   "dst": "线索四：在东方巨人的兜帽下，守望着我们头顶",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -115021,7 +115021,7 @@
   },
   "Pirate's Trove#013": {
    "src": "Aha! I'd come to ask how it was coming when I saw you jump over here!",
-   "dst": "",
+   "dst": "啊哈！我正想来问问进展如何，就看到你跳到这里来了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -115031,7 +115031,7 @@
   },
   "Pirate's Trove#014": {
    "src": "Phenomenal work, my compatriot. Though, do remember our deal?",
-   "dst": "",
+   "dst": "干得太漂亮了，我的伙伴。不过，还记得我们的约定吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -115041,7 +115041,7 @@
   },
   "Pirate's Trove#015": {
    "src": "You find the treasure, I give you a cut. I'll just take my part and be on my way!",
-   "dst": "",
+   "dst": "你找到宝藏，我分你一份。我拿走我那份就上路啦！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -115051,7 +115051,7 @@
   },
   "Pit of the Dead (Quest)#000": {
    "src": "Talk to Merloni in {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 {p} [{~}, {~}, -{~}] 的 Merloni 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -115061,7 +115061,7 @@
   },
   "Pit of the Dead (Quest)#001": {
    "src": "Would you like to hear the tale of the pit of the dead?",
-   "dst": "",
+   "dst": "想听听亡者之坑的故事吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -115071,7 +115071,7 @@
   },
   "Pit of the Dead (Quest)#002": {
    "src": "It is the pit where the corpses of the poor miners who discovered the Portal by the {p} are buried.",
-   "dst": "",
+   "dst": "那个坑里埋着可怜矿工们的尸体，就是他们在 {p} 旁发现了那道传送门。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -115081,7 +115081,7 @@
   },
   "Pit of the Dead (Quest)#003": {
    "src": "Those that had not already died had to be executed due to the insanity brought on from the corruption.",
-   "dst": "",
+   "dst": "那些还没死的人，因为腐化带来的疯狂，也不得不被处决。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -115091,7 +115091,7 @@
   },
   "Pit of the Dead (Quest)#004": {
    "src": "Their spirits still haunt the grave and infect the minds of people who disturb them. It isn't pretty.",
-   "dst": "",
+   "dst": "他们的灵魂至今仍在墓地徘徊，侵蚀打扰他们的人的心智。场面可不好看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -115101,7 +115101,7 @@
   },
   "Pit of the Dead (Quest)#005": {
    "src": "However, I heard rumours of those who were able to bathe in their waters and be accepted by them, to show no fear of the dead is to be admired.",
-   "dst": "",
+   "dst": "不过，我听说有人能在那里的水中沐浴并被他们接纳。对亡者毫无畏惧，是值得敬佩的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -115111,7 +115111,7 @@
   },
   "Pit of the Dead (Quest)#006": {
    "src": "Maybe this shrine that I keep hearing about has something to do with it? It's apparently hidden deep inside the pit.",
-   "dst": "",
+   "dst": "说不定跟我一直听说的那座神龛有关？据说它藏在坑的深处。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -115121,7 +115121,7 @@
   },
   "Pit of the Dead (Quest)#007": {
    "src": "Soldier, the pit is located south east of {p}, across the bridge behind us. I will write down the coordinates inside your quest book.",
-   "dst": "",
+   "dst": "士兵，坑在 {p} 的东南方，过了我们身后的那座桥。我会把坐标写进你的任务书里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -115131,7 +115131,7 @@
   },
   "Pit of the Dead (Quest)#008": {
    "src": "Enter the pit. Learn it's mysteries, then come back to me.",
-   "dst": "",
+   "dst": "进入那个坑。弄清它的秘密，再回来找我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -115141,7 +115141,7 @@
   },
   "Pit of the Dead (Quest)#009": {
    "src": "Explore the pit at [{~}, {~}, -{~}] and find the shrine",
-   "dst": "",
+   "dst": "探索 [{~}, {~}, -{~}] 的坑，找到神龛",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -115151,7 +115151,7 @@
   },
   "Pit of the Dead (Quest)#010": {
    "src": "Go back to {p} and tell Merloni that you succeeded",
-   "dst": "",
+   "dst": "回到 {p}，告诉 Merloni 你成功了",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -115161,7 +115161,7 @@
   },
   "Pit of the Dead (Quest)#011": {
    "src": "Very impressive! Here's your reward. I found it a while ago while walking around {p}. It probably fell off a skeleton!",
-   "dst": "",
+   "dst": "非常厉害！这是你的奖励。是我前阵子在 {p} 附近闲逛时捡到的。多半是从哪个骷髅身上掉下来的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -142171,7 +142171,7 @@
   },
   "Stable Story#000": {
    "src": "Talk to Enkser outside {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 {p} 外 [{~}, {~}, -{~}] 的 Enkser 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Stable Story",
@@ -142181,7 +142181,7 @@
   },
   "Stable Story#001": {
    "src": "Looking for able-bodied adventurers! Preferably with no friends or family, but I'm not picky!",
-   "dst": "",
+   "dst": "招募身强体壮的冒险者！最好没有朋友或家人，不过我不挑！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142191,7 +142191,7 @@
   },
   "Stable Story#002": {
    "src": "You see, I'm a horse merchant. Make my living selling these beauties to adventurers like you.",
-   "dst": "",
+   "dst": "你看，我是个马贩子。靠把这些小美人卖给你这样的冒险者过活。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142201,7 +142201,7 @@
   },
   "Stable Story#003": {
    "src": "I work at this barn, selling the horses I raise in {p} out here to rich {p} folk.",
-   "dst": "",
+   "dst": "我在这个马厩干活，把我在 {p} 养的马卖给 {p} 的有钱人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142211,7 +142211,7 @@
   },
   "Stable Story#004": {
    "src": "Until these rabble-rousing troublemakers blew a tunnel through my barn and smuggled MY horses out.",
-   "dst": "",
+   "dst": "直到那群惹是生非的捣蛋鬼在我的马厩里炸出一条隧道，把我的马偷运了出去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142221,7 +142221,7 @@
   },
   "Stable Story#005": {
    "src": "Usually, I'd be charging a high price for these horses Not to be rude, but one you couldn't afford.",
-   "dst": "",
+   "dst": "平常这些马我是要高价卖的——不是我说话难听，是你买不起的价钱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142231,7 +142231,7 @@
   },
   "Stable Story#006": {
    "src": "So, let's cut a deal They stole my stable key. If you can go to my barn in {p}...",
-   "dst": "",
+   "dst": "所以，我们做个交易吧——他们偷走了我的马厩钥匙。如果你能去我在 {p} 的马厩……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142241,7 +142241,7 @@
   },
   "Stable Story#007": {
    "src": "And return the key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
-   "dst": "",
+   "dst": "把钥匙还给我，我就大发慈悲送你一匹马。这笔交易比你想的还划算……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142251,7 +142251,7 @@
   },
   "Stable Story#008": {
    "src": "Betty'll be there to help! Strong as she is, don't you DARE let them touch her!",
-   "dst": "",
+   "dst": "Betty 会在那里帮忙！她是很壮没错，但你敢让他们碰她一下试试！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142261,7 +142261,7 @@
   },
   "Stable Story#009": {
    "src": "I'll be making my way to {p} myself to ensure Betty's safety.",
-   "dst": "",
+   "dst": "我自己也会赶去 {p}，确保 Betty 的安全。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142271,7 +142271,7 @@
   },
   "Stable Story#010": {
    "src": "Now, best be on your way. {p} is a fair bit down the {p} from here, off to the east.",
-   "dst": "",
+   "dst": "好了，你最好快上路。{p} 离这里有好一段路，沿着 {p} 往东走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142281,7 +142281,7 @@
   },
   "Stable Story#011": {
    "src": "Bring back [{~} Stable Key] to Enkser from the tunnel at",
-   "dst": "",
+   "dst": "从隧道里把 [{~} 马厩钥匙] 带回给 Enkser",
    "role": "desc",
    "kind": "objective",
    "quest": "Stable Story",
@@ -142291,7 +142291,7 @@
   },
   "Stable Story#012": {
    "src": "Hey, have you found my [{~} Stable Key] yet? It should be somewhere in {p} to the east.",
-   "dst": "",
+   "dst": "嘿，找到我的 [{~} 马厩钥匙] 了吗？应该在东边的 {p} 某处。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142311,7 +142311,7 @@
   },
   "Stable Story#014": {
    "src": "Hey, it's you! Got my barn key yet?",
-   "dst": "",
+   "dst": "嘿，是你！拿到我的马厩钥匙了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142321,7 +142321,7 @@
   },
   "Stable Story#015": {
    "src": "Ah, god bless. And I presume Betty did all the work while you just lounged around.",
-   "dst": "",
+   "dst": "啊，谢天谢地。我猜活都是 Betty 干的，你就在旁边闲着吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142331,7 +142331,7 @@
   },
   "Stable Story#016": {
    "src": "Hm. Cows, huh? Ah who knows!? Life is full of mysterious, huh?",
-   "dst": "",
+   "dst": "嗯。牛，是吧？啊，谁知道呢！？人生充满了神秘，是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142341,7 +142341,7 @@
   },
   "Stable Story#017": {
    "src": "Either way. As the great bovine above is my witness if I see the smallest bruise I will",
-   "dst": "",
+   "dst": "不管怎样。伟大的天上神牛为我作证——要是让我看到一丁点瘀伤，我就——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142351,7 +142351,7 @@
   },
   "Stable Story#018": {
    "src": "Nevermind all that. A horse I promised, and a horse you shall have. Much thanks to you.",
-   "dst": "",
+   "dst": "那些都不提了。答应你的马，你一定会拿到。非常感谢你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -142361,7 +142361,7 @@
   },
   "Star Thief#000": {
    "src": "Look into the rumors of strange weather near the Imal Inn at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "调查 Imal 旅店 [-{~}, {~}, -{~}] 附近天气异常的传闻。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -142371,7 +142371,7 @@
   },
   "Star Thief#001": {
    "src": "Find the meteor's crash site at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "找到 [-{~}, {~}, -{~}] 的陨石坠落地点。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -142381,7 +142381,7 @@
   },
   "Star Thief#002": {
    "src": "Hey you! Human. What are you doing here?",
-   "dst": "",
+   "dst": "嘿，你！人类。你在这里干什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142391,7 +142391,7 @@
   },
   "Star Thief#003": {
    "src": "Under Villager law any extra terrestrial or extra voidal entities are prohibited and owned by the state.",
-   "dst": "",
+   "dst": "根据村民法律，任何地外或虚空外的物体都是违禁品，归国家所有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142401,7 +142401,7 @@
   },
   "Star Thief#004": {
    "src": "Seeing as you are new to the land, I can't see you being prosecuted, especially a {p} Guard.",
-   "dst": "",
+   "dst": "考虑到你是初来乍到，我想你不会被起诉，更何况你还是 {p} 的守卫。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142411,7 +142411,7 @@
   },
   "Star Thief#005": {
    "src": "This meteor is different to what we've seen before. We suspect that direct contact with the meteor is dangerous.",
-   "dst": "",
+   "dst": "这颗陨石跟我们以前见过的都不一样。我们怀疑直接接触陨石很危险。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142421,7 +142421,7 @@
   },
   "Star Thief#006": {
    "src": "The magical radiation doesn't seem to be affecting you at all though. Do you not feel anything? Perhaps you could help me locate it.",
-   "dst": "",
+   "dst": "不过魔法辐射好像对你完全没有影响。你一点感觉都没有吗？也许你能帮我找到它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142431,7 +142431,7 @@
   },
   "Star Thief#007": {
    "src": "Explore the cave that the meteor crashed into.",
-   "dst": "",
+   "dst": "探索陨石坠入的洞窟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -142441,7 +142441,7 @@
   },
   "Star Thief#008": {
    "src": "It's... mine.",
-   "dst": "",
+   "dst": "这是……我的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142451,7 +142451,7 @@
   },
   "Star Thief#009": {
    "src": "Escape the collapsing cave.",
-   "dst": "",
+   "dst": "逃出正在坍塌的洞窟。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -142461,7 +142461,7 @@
   },
   "Star Thief#010": {
    "src": "Follow the trail leading off to the east from the cave.",
-   "dst": "",
+   "dst": "沿着从洞窟往东延伸的痕迹走。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -142471,7 +142471,7 @@
   },
   "Star Thief#011": {
    "src": "Explore the cave at [-{~}, {~}, -{~}] and defeat the insane thief.",
-   "dst": "",
+   "dst": "探索 [-{~}, {~}, -{~}] 的洞窟，击败发疯的小偷。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -142481,7 +142481,7 @@
   },
   "Star Thief#012": {
    "src": ".̸.̴.̵.̴ I can't control myself...f̸j̷f̴j̵f̵j̴ This rock...",
-   "dst": "",
+   "dst": ".̸.̴.̵.̴ 我控制不住自己……f̸j̷f̴j̵f̵j̴ 这块石头……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142491,7 +142491,7 @@
   },
   "Star Thief#013": {
    "src": "What is... this feeling… No I won't listen..",
-   "dst": "",
+   "dst": "这是……什么感觉…… 不，我不会听的..",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142501,7 +142501,7 @@
   },
   "Star Thief#014": {
    "src": "I can't... control... my mind... e̴n̴d̴ ̷m̶e̷.̷",
-   "dst": "",
+   "dst": "我控制不了……我的……脑子…… 了̴结̴ ̷我̷.̷",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142511,7 +142511,7 @@
   },
   "Star Thief#015": {
    "src": "Bring back the piece of meteor to the secret agent at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把陨石碎片带回给 [-{~}, {~}, -{~}] 的秘密特工。",
    "role": "desc",
    "kind": "objective",
    "quest": "Star Thief",
@@ -142521,7 +142521,7 @@
   },
   "Star Thief#016": {
    "src": "Hello again. Did you find the meteor down there? Why on earth are you holding some?!",
-   "dst": "",
+   "dst": "又见面了。你在下面找到陨石了吗？你手里怎么会拿着一块？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142531,7 +142531,7 @@
   },
   "Star Thief#017": {
    "src": "I see. This material is incredibly rare and magically powerful. Meteors fall all over Gavel and come in a variety of colours and potency.",
-   "dst": "",
+   "dst": "我明白了。这种材料极其稀有，魔法力量也很强。陨石会落在 Gavel 各地，颜色和威力各不相同。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142541,7 +142541,7 @@
   },
   "Star Thief#018": {
    "src": "We don't fully understand them, but we know they are dangerous. Every scientist who has studied them has lost their minds.",
-   "dst": "",
+   "dst": "我们对它们了解得并不透彻，但我们知道它们很危险。研究过它们的科学家全都疯了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142551,7 +142551,7 @@
   },
   "Star Thief#019": {
    "src": "The meteors hold many secrets and powers, maybe the ones we need to end your war. Thank you, here's a small reward for helping us.",
-   "dst": "",
+   "dst": "陨石藏着许多秘密和力量，也许正是结束你们那场战争所需要的。谢谢你，这是帮忙的一点小小报酬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142561,7 +142561,7 @@
   },
   "Star Thief#020": {
    "src": "Hello again. Did you find the meteor down there? No? Maybe go back and try to find it?",
-   "dst": "",
+   "dst": "又见面了。你在下面找到陨石了吗？没有？也许回去再找找？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -142571,7 +142571,7 @@
   },
   "Star Thief#021": {
    "src": "Remember... Just follow the white trail leading to the cave!",
-   "dst": "",
+   "dst": "记住……沿着通往洞窟的白色痕迹走就行！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Star Thief",
@@ -178121,7 +178121,7 @@
   },
   "The House of Twain (Quest)#000": {
    "src": "Talk to Twendle at The {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 {p} [{~}, {~}, -{~}] 的 Twendle 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "The House of Twain (Quest)",
@@ -178131,7 +178131,7 @@
   },
   "The House of Twain (Quest)#001": {
    "src": "Oh, hey you there! Are you heading down this road? You know it's a dead end, right?",
-   "dst": "",
+   "dst": "噢，嘿，那边的！你要走这条路吗？你知道这是条死路吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178141,7 +178141,7 @@
   },
   "The House of Twain (Quest)#002": {
    "src": "It leads to an old mansion, that has fallen into decay.",
-   "dst": "",
+   "dst": "它通往一座已经荒废的老宅。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178151,7 +178151,7 @@
   },
   "The House of Twain (Quest)#003": {
    "src": "That mansion is the house of my ancestor; Dwendle Twain. It was a house of incredible heritage and magical powers, Dwendle himself was adopted into it.",
-   "dst": "",
+   "dst": "那座宅邸是我祖先 Dwendle Twain 的家。那是一个传承非凡、拥有魔法力量的家族，Dwendle 本人是被收养进去的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178161,7 +178161,7 @@
   },
   "The House of Twain (Quest)#004": {
    "src": "Marius Twain was the leader of the mansion; they fought against evil spirits, I think. The history of the house is not well-known, outside of a novel.",
-   "dst": "",
+   "dst": "Marius Twain 是宅邸的主人，我想他们是在对抗恶灵。除了一本小说以外，这个家族的历史没什么人知道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178171,7 +178171,7 @@
   },
   "The House of Twain (Quest)#005": {
    "src": "I want to know the history of the mansion and uncover its secrets, but every time I get close, dark beings prevent me from entering.",
-   "dst": "",
+   "dst": "我想知道宅邸的历史、揭开它的秘密，可每次我一靠近，就有黑暗的东西挡着不让我进去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178181,7 +178181,7 @@
   },
   "The House of Twain (Quest)#006": {
    "src": "I am no soldier, and I don't think I will ever uncover the truth without your help. I can greatly reward you for your help.",
-   "dst": "",
+   "dst": "我不是士兵，没有你的帮助，我想我永远查不出真相。你帮了我，我会重重酬谢你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178191,7 +178191,7 @@
   },
   "The House of Twain (Quest)#007": {
    "src": "My ancestor left our family a large amount of emeralds. Beware though, traveller, the mansion's secrets are incredibly difficult to uncover and the monsters are powerful.",
-   "dst": "",
+   "dst": "我的祖先给家里留下了一大笔绿宝石。不过要小心，旅人，宅邸的秘密极难解开，里面的怪物也很强。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178201,7 +178201,7 @@
   },
   "The House of Twain (Quest)#008": {
    "src": "Unravel the secrets of the mansion and help me uncover the secrets of my heritage. Bring me [{~} Twain Journal].",
-   "dst": "",
+   "dst": "解开宅邸的秘密，帮我揭开我家族传承的秘密。把 [{~} Twain 日志] 带给我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178211,7 +178211,7 @@
   },
   "The House of Twain (Quest)#009": {
    "src": "This book has been hidden within the depths of the mansion and is protected by far more than puzzles or walls.",
-   "dst": "",
+   "dst": "这本书藏在宅邸深处，守护它的远不只是谜题和墙壁。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178221,7 +178221,7 @@
   },
   "The House of Twain (Quest)#010": {
    "src": "I believe the spirits that now haunt the mansion will do anything to protect the book. I'm sure they think it's their own, and the secrets it hides.",
-   "dst": "",
+   "dst": "我相信现在盘踞宅邸的灵魂会不惜一切保护这本书。我敢肯定，它们把这本书和书里藏的秘密当成自己的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178231,7 +178231,7 @@
   },
   "The House of Twain (Quest)#011": {
    "src": "Bring [{~} Twain Journal] to Twendle",
-   "dst": "",
+   "dst": "把 [{~} Twain 日志] 带给 Twendle",
    "role": "desc",
    "kind": "objective",
    "quest": "The House of Twain (Quest)",
@@ -178241,7 +178241,7 @@
   },
   "The House of Twain (Quest)#012": {
    "src": "If you already have a Ghostly Cap, you can wear that one and do not have to do any previous steps in order for the quest to work.",
-   "dst": "",
+   "dst": "如果你已经有 Ghostly Cap，戴上它就行，不必完成前面的步骤，任务也能正常进行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178251,7 +178251,7 @@
   },
   "The House of Twain (Quest)#013": {
    "src": "I guess I put my faith in the right person. My history lies within these pages, and I don't intend to keep them secret. I shall make them public.",
-   "dst": "",
+   "dst": "看来我没信错人。我的家族历史就在这些书页里，我不打算保密。我要把它们公之于众。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -178261,7 +178261,7 @@
   },
   "The House of Twain (Quest)#014": {
    "src": "Thank you traveller. As promised, here is your reward.",
-   "dst": "",
+   "dst": "谢谢你，旅人。说好的，这是你的奖励。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -186341,7 +186341,7 @@
   },
   "The Olmic Rune#000": {
    "src": "Explore the abandoned drill at [{~},-{~}]",
-   "dst": "",
+   "dst": "探索 [{~},-{~}] 的废弃钻机",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -186351,7 +186351,7 @@
   },
   "The Olmic Rune#001": {
    "src": "Find some sort of fuel in the Ruined City.",
-   "dst": "",
+   "dst": "在废墟之城里找些燃料。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -186361,7 +186361,7 @@
   },
   "The Olmic Rune#002": {
    "src": "Explore the cave for the fuel",
-   "dst": "",
+   "dst": "在洞窟里寻找燃料",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -186371,7 +186371,7 @@
   },
   "The Olmic Rune#003": {
    "src": "Collect [{~} Fuel Sprites] and bring it back to the machine.",
-   "dst": "",
+   "dst": "收集 [{~} 燃料精灵]，带回机器那里。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -186381,7 +186381,7 @@
   },
   "The Olmic Rune#004": {
    "src": "Head back to the machine at [{~},-{~}]",
-   "dst": "",
+   "dst": "回到 [{~},-{~}] 的机器那里",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -186391,7 +186391,7 @@
   },
   "The Olmic Rune#005": {
    "src": "Defend the machine from the incoming attackers.",
-   "dst": "",
+   "dst": "保护机器，抵挡来袭的敌人。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -186401,7 +186401,7 @@
   },
   "The Olmic Rune#006": {
    "src": "Enter the opened crypt.",
-   "dst": "",
+   "dst": "进入打开的墓穴。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Olmic Rune",
@@ -209351,7 +209351,7 @@
   },
   "Tower of Ascension (Quest)#000": {
    "src": "Hehehe... Hello there.",
-   "dst": "",
+   "dst": "嘿嘿嘿……你好啊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209361,7 +209361,7 @@
   },
   "Tower of Ascension (Quest)#001": {
    "src": "Welcome to the {p}!",
-   "dst": "",
+   "dst": "欢迎来到 {p}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209371,7 +209371,7 @@
   },
   "Tower of Ascension (Quest)#002": {
    "src": "I challenge you to reach the final floor!",
-   "dst": "",
+   "dst": "我向你发起挑战，登上最顶层吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209381,7 +209381,7 @@
   },
   "Tower of Ascension (Quest)#003": {
    "src": "Have you got what it takes to conquer it?",
-   "dst": "",
+   "dst": "你有征服它的本事吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209391,7 +209391,7 @@
   },
   "Tower of Ascension (Quest)#004": {
    "src": "Perhaps you would like to know the layout of the tower first? Hehehehe...",
-   "dst": "",
+   "dst": "也许你想先了解一下塔的结构？嘿嘿嘿嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209401,7 +209401,7 @@
   },
   "Tower of Ascension (Quest)#005": {
    "src": "There are {~} floors in this tower, each with ten levels.",
-   "dst": "",
+   "dst": "这座塔有 {~} 大层，每一大层有十关。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209411,7 +209411,7 @@
   },
   "Tower of Ascension (Quest)#006": {
    "src": "Each floor has nine regular levels and one boss level.",
-   "dst": "",
+   "dst": "每一大层有九个普通关卡和一个首领关卡。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209421,7 +209421,7 @@
   },
   "Tower of Ascension (Quest)#007": {
    "src": "To pass a regular level, you must collect five tokens from the challenge on that level, and one token from boss levels.",
-   "dst": "",
+   "dst": "要通过普通关卡，你得从该关的挑战中收集五枚代币；首领关卡则是一枚。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209431,7 +209431,7 @@
   },
   "Tower of Ascension (Quest)#008": {
    "src": "After you beat a whole floor, you will return here and you can begin the next one...",
-   "dst": "",
+   "dst": "打完一整层之后，你会回到这里，然后就能开始下一层……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209441,7 +209441,7 @@
   },
   "Tower of Ascension (Quest)#009": {
    "src": "So, what do you say? Hehehe...",
-   "dst": "",
+   "dst": "那么，你怎么说？嘿嘿嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209451,7 +209451,7 @@
   },
   "Tower of Ascension (Quest)#010": {
    "src": "Turn left and head to the first floor...if you dare...",
-   "dst": "",
+   "dst": "左转，前往第一层……如果你敢的话……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209461,7 +209461,7 @@
   },
   "Tower of Ascension (Quest)#011": {
    "src": "Well done, adventurer, you have successfully completed this floor! You may proceed.",
-   "dst": "",
+   "dst": "干得好，冒险者，你成功完成了这一层！可以继续前进了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209471,7 +209471,7 @@
   },
   "Tower of Ascension (Quest)#012": {
    "src": "You have completed my tower, I see...",
-   "dst": "",
+   "dst": "看来你完成了我的塔……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209481,7 +209481,7 @@
   },
   "Tower of Ascension (Quest)#013": {
    "src": "Did you enjoy Death? Many challengers certainly did. Her power is... unmatched, hehehe...",
-   "dst": "",
+   "dst": "你喜欢死神吗？很多挑战者肯定很喜欢。她的力量……无人能及，嘿嘿嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209491,7 +209491,7 @@
   },
   "Tower of Ascension (Quest)#014": {
    "src": "And you... You are unlike all of them, yes? Few have managed to ascend these floors.",
-   "dst": "",
+   "dst": "而你……你跟他们都不一样，对吧？能登上这些楼层的人寥寥无几。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209501,7 +209501,7 @@
   },
   "Tower of Ascension (Quest)#015": {
    "src": "A tower of madness, fueled by Death herself... Quite a challenge, yes?",
-   "dst": "",
+   "dst": "一座由死神亲自驱动的疯狂之塔……挺有挑战性的，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209511,7 +209511,7 @@
   },
   "Tower of Ascension (Quest)#016": {
    "src": "You have joined us now, champion... Few can claim this victory as their own. Fewer still have held their mind.",
-   "dst": "",
+   "dst": "你现在是我们的一员了，冠军……能把这场胜利据为己有的人寥寥无几。能保住理智的就更少了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",
@@ -209521,7 +209521,7 @@
   },
   "Tower of Ascension (Quest)#017": {
    "src": "For this honor... A reward, for you. You have truly earned it... Hehehehe...",
-   "dst": "",
+   "dst": "为了这份荣耀……给你一份奖励。这是你应得的……嘿嘿嘿嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Tower of Ascension (Quest)",

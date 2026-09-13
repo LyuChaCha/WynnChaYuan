@@ -13,6 +13,9 @@
 `quest-dialogue.json`、`secret-dialogue.json` 是<b>產生物</b>（程式讀的）。
 改完跑一次這支就好。
 
+**每個語言資料夾都要產生。** 這支原本只認 zh_tw：簡中翻好的任務對話
+改在 `zh_cn/quest/`，`--check` 卻照樣說「是最新的」，遊戲裡一句都不會出現。
+
 為什麼祕密發現要跟任務分開
 --------------------------
 兩者走的是<b>同一條對話路徑</b>，所以機制共用；但它們在遊戲裡是不同的東西
@@ -35,19 +38,24 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BASE = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw"
+BASE = ROOT / "src/main/resources/assets/wynnchayuan/translations"
 
 
 class Kind:
-    """一種劇情來源：一個資料夾配一個產生物。"""
+    """一種劇情來源：一個語言的一個資料夾配一個產生物。"""
 
-    def __init__(self, folder: str, bundle: str, domain: str, what: str, unit: str):
-        self.parts = BASE / folder
-        self.bundle = BASE / bundle
+    def __init__(self, lang: str, folder: str, bundle: str, domain: str, what: str, unit: str):
+        self.lang = lang
+        self.parts = BASE / lang / folder
+        self.bundle = BASE / lang / bundle
         self.folder = folder
         self.domain = domain
         self.what = what
         self.unit = unit
+
+    @property
+    def name(self) -> str:
+        return f"{self.lang}/{self.bundle.name}"
 
     @property
     def note(self) -> str:
@@ -60,10 +68,12 @@ class Kind:
         return f"一個{self.unit}一個檔。改完跑 tools/quest-bundle.py。"
 
 
-KINDS = (
-    Kind("quest", "quest-dialogue.json", "quest-dialogue", "任務對話", "任務"),
-    Kind("secret", "secret-dialogue.json", "secret-dialogue", "祕密發現的對話", "故事"),
-)
+def kinds() -> list[Kind]:
+    out = []
+    for lang in sorted(p.name for p in BASE.iterdir() if p.is_dir()):
+        out.append(Kind(lang, "quest", "quest-dialogue.json", "quest-dialogue", "任務對話", "任務"))
+        out.append(Kind(lang, "secret", "secret-dialogue.json", "secret-dialogue", "祕密發現的對話", "故事"))
+    return out
 
 
 def slug(name: str) -> str:
@@ -101,6 +111,13 @@ def build(kind: Kind) -> dict:
     entries: dict[str, dict] = {}
     for path in sorted(kind.parts.glob("*.json")):
         entries.update(json.loads(path.read_text(encoding="utf-8"))["entries"])
+    # 說明欄沿用檔案裡現有的那一段：簡中的已經換成簡體，
+    # 蓋回繁體的預設句會被 check-zh-cn 抓成「還是繁體字」。
+    note = kind.note
+    if kind.bundle.exists():
+        old = json.loads(kind.bundle.read_text(encoding="utf-8")).get("_meta", {}).get("note")
+        if isinstance(old, str) and old.strip():
+            note = old
     return {
         "_meta": {
             # 讓 validate.py 知道這是產生物。產生物參與「兩個檔案譯法不同」
@@ -108,10 +125,10 @@ def build(kind: Kind) -> dict:
             "generated": True,
             "domain": kind.domain,
             "itemNames": False,
-            "lang": "zh_tw",
+            "lang": kind.lang,
             "count": len(entries),
             "translated": sum(1 for e in entries.values() if e.get("dst")),
-            "note": kind.note,
+            "note": note,
         },
         "entries": entries,
     }
@@ -119,28 +136,27 @@ def build(kind: Kind) -> dict:
 
 def main(argv: list[str]) -> int:
     if "--split" in argv:
-        for kind in KINDS:
+        for kind in kinds():
             split(kind)
         return 0
 
     stale = 0
-    for kind in KINDS:
+    for kind in kinds():
         if not kind.parts.is_dir():
-            print(f"找不到 {kind.parts.relative_to(ROOT)}/，跳過")
             continue
         payload = build(kind)
         text = json.dumps(payload, ensure_ascii=False, indent=1) + "\n"
         if "--check" in argv:
             current = kind.bundle.read_text(encoding="utf-8") if kind.bundle.exists() else ""
             if current == text:
-                print(f"{kind.bundle.name} 是最新的。")
+                print(f"{kind.name} 是最新的。")
             else:
-                print(f"{kind.bundle.name} 沒有跟著 {kind.folder}/ 更新"
+                print(f"{kind.name} 沒有跟著 {kind.lang}/{kind.folder}/ 更新"
                       f" —— 跑 python tools/quest-bundle.py")
                 stale += 1
             continue
         kind.bundle.write_text(text, encoding="utf-8")
-        print(f"{len(list(kind.parts.glob('*.json')))} 個檔、"
+        print(f"{kind.lang}：{len(list(kind.parts.glob('*.json')))} 個檔、"
               f"{payload['_meta']['count']} 句 -> {kind.bundle.name}")
     return 1 if stale else 0
 
