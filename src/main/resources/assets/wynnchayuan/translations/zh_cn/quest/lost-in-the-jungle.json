@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lost in the Jungle",
   "count": 32,
-  "translated": 0,
+  "translated": 32,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost in the Jungle#000": {
    "src": "Speak to Gracen at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 的 Gracen 交谈",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost in the Jungle",
@@ -18,7 +18,7 @@
   },
   "Lost in the Jungle#001": {
    "src": "Excuse me, traveller... I am dreadfully sorry to ask this of you, but I need your help.",
-   "dst": "",
+   "dst": "打扰一下，旅人……很抱歉要这样请求你，但我需要你的帮助。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -28,7 +28,7 @@
   },
   "Lost in the Jungle#002": {
    "src": "You see, my son, Aryn. Very recently, he underwent a traditional coming-of-age ceremony from our tribe.",
-   "dst": "",
+   "dst": "是这样的，我的儿子 Aryn。就在最近，他参加了我们部落传统的成年礼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -38,7 +38,7 @@
   },
   "Lost in the Jungle#003": {
    "src": "He was tasked to enter the dangerous {p}, just south of here, and brave the wilderness for three days. He returned a true man, successful.",
-   "dst": "",
+   "dst": "他的任务是进入这里南边危险的 {p}，在荒野里撑过三天。他顺利回来，成了真正的男子汉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -48,7 +48,7 @@
   },
   "Lost in the Jungle#004": {
    "src": "However, he also brought with him an odd purple gemstone. Our shaman saw it as a bad omen, but I was so caught up in the celebrations, I brushed it off.",
-   "dst": "",
+   "dst": "可是，他还带回了一颗奇怪的紫色宝石。我们的萨满认为那是不祥之兆，但我当时沉浸在庆祝里，没当回事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -58,7 +58,7 @@
   },
   "Lost in the Jungle#005": {
    "src": "Strange happenings began around the village. Aryn walked about at night, talking to someone, but no one else was there with him.",
-   "dst": "",
+   "dst": "村子里开始发生怪事。Aryn 半夜到处走，跟某个人说话，可他身边根本没有别人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -68,7 +68,7 @@
   },
   "Lost in the Jungle#006": {
    "src": "Just last sunrise, he vanished entirely. We sent out a search for him, but even our hardiest warriors could not venture deep into the jungle.",
-   "dst": "",
+   "dst": "就在昨天日出时，他彻底消失了。我们派人去找他，可就连我们最强悍的战士也没法深入丛林。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -78,7 +78,7 @@
   },
   "Lost in the Jungle#007": {
    "src": "We returned empty-handed, having lost our newest tribesman. The village is in terrible spirits, and I feel as though I am responsible.",
-   "dst": "",
+   "dst": "我们空手而归，失去了部落最年轻的成员。村子里士气低落，我觉得这都是我的责任。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -88,7 +88,7 @@
   },
   "Lost in the Jungle#008": {
    "src": "You Wynn warriors, however... great stories are told of your exploits. Surely, you will be able to brave the jungle, yes?",
-   "dst": "",
+   "dst": "不过你们 Wynn 的战士……你们的事迹被传得很神。你一定能闯进丛林，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -98,7 +98,7 @@
   },
   "Lost in the Jungle#009": {
    "src": "I beg of you, please, find my son. I do not know quite where he is, but undoubtedly he has been taken quite a ways in...",
-   "dst": "",
+   "dst": "我求求你，请找到我的儿子。我不太清楚他在哪里，但他肯定被带到丛林很深的地方去了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -108,7 +108,7 @@
   },
   "Lost in the Jungle#010": {
    "src": "Hm... I just now am seeing a strange trail on the ground... it matches the color of the gemstone! It may take you to him, please, follow it!",
-   "dst": "",
+   "dst": "嗯……我刚刚才看到地上有一道奇怪的痕迹……颜色跟那颗宝石一样！它也许能带你找到他，拜托，跟着它走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -118,7 +118,7 @@
   },
   "Lost in the Jungle#011": {
    "src": "Search the {p} for Aryn",
-   "dst": "",
+   "dst": "在 {p} 搜索 Aryn",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost in the Jungle",
@@ -128,7 +128,7 @@
   },
   "Lost in the Jungle#012": {
    "src": "P-please, I beg of you spirit, let me go free! The tribesmen must be so worried-",
-   "dst": "",
+   "dst": "求、求求你，灵魂，放我走吧！部落的人一定急坏了——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -138,7 +138,7 @@
   },
   "Lost in the Jungle#013": {
    "src": "DO NOT RESIST, BOY! YOUR BODY IS MINE. I WAS TRAPPED IN THAT STONE FOR MILLENIA, AND NOW I AM FREE.",
-   "dst": "",
+   "dst": "别反抗，小子！你的身体归我了。我被困在那块石头里上千年，现在我自由了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -148,7 +148,7 @@
   },
   "Lost in the Jungle#014": {
    "src": "Aha, I hear someone coming! Surely a tribesman here to rescue me!",
-   "dst": "",
+   "dst": "啊哈，我听到有人来了！一定是部落的人来救我了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -158,7 +158,7 @@
   },
   "Lost in the Jungle#015": {
    "src": "Oh! If so, the body of this warrior will be far better suited to my needs! Grant me your power, boy! I need to thrash them first to possess them!",
-   "dst": "",
+   "dst": "噢！如果是这样，那个战士的身体会更合我的需要！把你的力量给我，小子！我得先把他们打趴下才能附身！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -168,7 +168,7 @@
   },
   "Lost in the Jungle#016": {
    "src": "Defeat the spirit possessing Aryn",
-   "dst": "",
+   "dst": "击败附身在 Aryn 身上的灵魂",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost in the Jungle",
@@ -178,7 +178,7 @@
   },
   "Lost in the Jungle#017": {
    "src": "Make sure Aryn is safe at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 确认 Aryn 平安无事",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost in the Jungle",
@@ -188,7 +188,7 @@
   },
   "Lost in the Jungle#018": {
    "src": "Hahah, take that, evil wraith! You'll never match the power of our tribe-",
-   "dst": "",
+   "dst": "哈哈，吃我一击吧，邪恶的幽灵！你永远比不上我们部落的力量——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -198,7 +198,7 @@
   },
   "Lost in the Jungle#019": {
    "src": "W-wait, you aren't part of our tribe! Who are you, why did you come here?",
-   "dst": "",
+   "dst": "等、等等，你不是我们部落的人！你是谁，你为什么来这里？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -208,7 +208,7 @@
   },
   "Lost in the Jungle#020": {
    "src": "Oh... my father sent you? Well, I am very impressed, Wynn warrior. You fight with ferocity of our own!",
-   "dst": "",
+   "dst": "噢……是我父亲派你来的？好吧，我非常佩服，Wynn 的战士。你打起来跟我们的人一样凶猛！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -218,7 +218,7 @@
   },
   "Lost in the Jungle#021": {
    "src": "I...can't say the same for myself. That spirit completely overtook me, I still can't move right now...",
-   "dst": "",
+   "dst": "我……就没法这么说自己了。那个灵魂完全控制了我，我现在还动不了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -228,7 +228,7 @@
   },
   "Lost in the Jungle#022": {
    "src": "For now, please. Take away this gemstone. It caused all this, I don't want to be near such a bad luck charm.",
-   "dst": "",
+   "dst": "现在，拜托了。把这颗宝石拿走。都是它惹的祸，我不想靠近这种不祥之物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -238,7 +238,7 @@
   },
   "Lost in the Jungle#023": {
    "src": "Tell the tribe that I will return on my own. I made it back once, I can do it again once I am prepared.",
-   "dst": "",
+   "dst": "告诉部落的人，我会自己回去。我回去过一次，等我准备好了，就能再回去一次。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -248,7 +248,7 @@
   },
   "Lost in the Jungle#024": {
    "src": "Bring the Mysterious Gemstone to Gracen at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "把神秘宝石带给 [-{~}, {~}, -{~}] 的 Gracen",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost in the Jungle",
@@ -258,7 +258,7 @@
   },
   "Lost in the Jungle#025": {
    "src": "Oh my... Aryn was possessed by a spirit residing within the gemstone?",
-   "dst": "",
+   "dst": "天哪……Aryn 被宝石里的灵魂附身了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -268,7 +268,7 @@
   },
   "Lost in the Jungle#026": {
    "src": "How shameful... Our shaman has never been wrong before, why did I disregard his warning...",
-   "dst": "",
+   "dst": "真是惭愧……我们的萨满从来没错过，我为什么不听他的警告……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -278,7 +278,7 @@
   },
   "Lost in the Jungle#027": {
    "src": "But that is beside the point. You say you have destroyed the spirit and it does not feel tainted any longer, so I will trust you.",
-   "dst": "",
+   "dst": "不过这不是重点。你说你已经消灭了那个灵魂，而它也感觉不到邪气了，那我就相信你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -288,7 +288,7 @@
   },
   "Lost in the Jungle#028": {
    "src": "Looking at it now, this is actually quite a valuable stone. If crushed to dust, it can be used in special charms we make.",
-   "dst": "",
+   "dst": "现在仔细看看，这其实是一颗相当贵重的宝石。磨成粉末的话，可以用在我们制作的特殊护符里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -298,7 +298,7 @@
   },
   "Lost in the Jungle#029": {
    "src": "Here, allow me to grind this down for you. You can keep the shards for whatever purposes you may find for them in the future.",
-   "dst": "",
+   "dst": "来，让我帮你把它磨碎。你可以留着这些碎片，以后找到什么用处都行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -308,7 +308,7 @@
   },
   "Lost in the Jungle#030": {
    "src": "Our tribe, and especially myself... We thank you for your service. We shall consider you one of our own, from this day forward.",
-   "dst": "",
+   "dst": "我们部落，尤其是我自己……感谢你的付出。从今天起，我们把你当作自己人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",
@@ -318,7 +318,7 @@
   },
   "Lost in the Jungle#031": {
    "src": "In fact, if you'd like, you may even enter my house here whenever you'd like.",
-   "dst": "",
+   "dst": "事实上，只要你愿意，随时都可以进我这里的房子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost in the Jungle",

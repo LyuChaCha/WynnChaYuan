@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Canyon Condor",
   "count": 42,
-  "translated": 0,
+  "translated": 42,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Canyon Condor#000": {
    "src": "Talk to Svin in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 {p} [{~}, {~}, -{~}] 的 Svin 对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -18,7 +18,7 @@
   },
   "Canyon Condor#001": {
    "src": "I am one of the Keepers in the great {p}. There we hoard secrets about the world.",
-   "dst": "",
+   "dst": "我是伟大的 {p} 的守护者之一。我们在那里收藏着关于这个世界的秘密。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -28,7 +28,7 @@
   },
   "Canyon Condor#002": {
    "src": "I am here to investigate an old tale of the canyon. Does that interest you? I'm sure it does!",
-   "dst": "",
+   "dst": "我来这里是为了调查峡谷里的一个古老传说。你有兴趣吗？我相信你一定有！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -38,7 +38,7 @@
   },
   "Canyon Condor#003": {
    "src": "Legend has it that a ferocious beast lives among these cliffs. A dangerous bird that has survived for many years.",
-   "dst": "",
+   "dst": "传说这些悬崖之间住着一头凶猛的野兽。一只存活了很多年的危险巨鸟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -48,7 +48,7 @@
   },
   "Canyon Condor#004": {
    "src": "I would love to seek the beast out, but it seems the natives here are too busy thieving each other to inform me of it.",
-   "dst": "",
+   "dst": "我很想去找那头野兽，可是这里的原住民好像都忙着互相偷东西，没空告诉我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -58,7 +58,7 @@
   },
   "Canyon Condor#005": {
    "src": "I have heard of an old prospector nearby who has ventured throughout this mesa. He may have some information.",
-   "dst": "",
+   "dst": "我听说附近有个老探矿人，他走遍了这片台地。他也许有些情报。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -68,7 +68,7 @@
   },
   "Canyon Condor#006": {
    "src": "His name is Jankan and he lives east from {p}. Could you perhaps seek him out and ask him about this foul beast?",
-   "dst": "",
+   "dst": "他叫 Jankan，住在 {p} 东边。你能不能去找他，问问这头恶兽的事？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -78,7 +78,7 @@
   },
   "Canyon Condor#007": {
    "src": "If you help me, I'll let you use the elevators spread in the canyon. Well...",
-   "dst": "",
+   "dst": "如果你帮我，我就让你使用峡谷里各处的升降梯。嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -88,7 +88,7 @@
   },
   "Canyon Condor#008": {
    "src": "A strange hermit decided to take control of them, but I'm sure we can reason with him.",
-   "dst": "",
+   "dst": "有个古怪的隐士决定霸占它们，不过我相信我们能跟他讲道理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -98,7 +98,7 @@
   },
   "Canyon Condor#009": {
    "src": "I hope you are able to find the beast, and if you do, could you bring me back [{~} Beast Egg] as evidence?",
-   "dst": "",
+   "dst": "希望你能找到那头野兽，如果找到了，能不能带 [{~} 野兽蛋] 回来当证据？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -108,7 +108,7 @@
   },
   "Canyon Condor#010": {
    "src": "Talk to Jankan east from {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 {p} 东边 [{~}, {~}, -{~}] 的 Jankan 对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -118,7 +118,7 @@
   },
   "Canyon Condor#011": {
    "src": "Hello there, youngster! Ye must be the stranger folks 'been talkin' 'bout.",
-   "dst": "",
+   "dst": "你好啊，年轻人！你一定就是大伙儿一直在说的那个陌生人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -128,7 +128,7 @@
   },
   "Canyon Condor#012": {
    "src": "If yer lookin fer gold, I can promise ye that there ain' any for you in this here mineshaft!",
-   "dst": "",
+   "dst": "要是你来找金子，俺可以跟你保证，这矿井里没有你的份！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -138,7 +138,7 @@
   },
   "Canyon Condor#013": {
    "src": "Oh.. Yer lookin fer a winged wilder beast? Are ye out of yer mind?",
-   "dst": "",
+   "dst": "噢.. 你在找一只长翅膀的野兽？你疯了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -148,7 +148,7 @@
   },
   "Canyon Condor#014": {
    "src": "The devil of a bird is complete chaos! It can move mountains with a single screech! Men twice yer size 'ave weeped from the sight of it!",
-   "dst": "",
+   "dst": "那只鬼鸟简直是混沌化身！叫一声就能移山！比你大一倍的汉子看到它都哭了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -158,7 +158,7 @@
   },
   "Canyon Condor#015": {
    "src": "As it turns out, I did me back in trying to transport me earnin's from that there cave, left them right at the back did' I.",
-   "dst": "",
+   "dst": "说来也巧，俺想把俺挣的东西从那边洞里运出来，结果闪了腰，就把东西留在最里面了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -168,7 +168,7 @@
   },
   "Canyon Condor#016": {
    "src": "Go fetch me Gold Chunk and I'll tell ye where ye need to go next.",
-   "dst": "",
+   "dst": "去把俺的金块拿来，俺就告诉你下一步该去哪。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -178,7 +178,7 @@
   },
   "Canyon Condor#017": {
    "src": "Collect [{~} Gold Chunks] for Jankan in the mineshaft at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [{~2}, {~3}, -{~4}] 的矿井里替 Jankan 收集 [{~1} 金块]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -188,7 +188,7 @@
   },
   "Canyon Condor#018": {
    "src": "Finally! It took ye long enough, hand it over! Oh right.. yer want'n somethin'.",
-   "dst": "",
+   "dst": "总算来了！磨蹭了这么久，交出来！噢对.. 你想要点什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -198,7 +198,7 @@
   },
   "Canyon Condor#019": {
    "src": "I ain' got any intention of help'n ye with yer demise, but I can send ye along to a young fellow who might help.",
-   "dst": "",
+   "dst": "俺可没打算帮你去送死，不过俺可以把你介绍给一个也许能帮上忙的年轻人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -208,7 +208,7 @@
   },
   "Canyon Condor#020": {
    "src": "There's this Hermit feller ye wanna talk to, he is a right nutter, that one. Feeds the bird'n all.",
-   "dst": "",
+   "dst": "你得去找一个隐士，那家伙是个十足的疯子。还喂那只鸟呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -218,7 +218,7 @@
   },
   "Canyon Condor#021": {
    "src": "I think ye can find him up the mountain and across the canyon abyss, he ain' a friendly fella, I can tell yer that much.",
-   "dst": "",
+   "dst": "俺想你能在山上、峡谷深渊的另一边找到他，他可不是什么友善的家伙，这点俺可以告诉你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -228,7 +228,7 @@
   },
   "Canyon Condor#022": {
    "src": "Take the canyon elevator up to the Hermit at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "搭乘峡谷升降梯上去找 [{~}, {~}, -{~}] 的隐士。",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -238,7 +238,7 @@
   },
   "Canyon Condor#023": {
    "src": "What do you think you're doing here, kid? Think you can waltz in my humble abode and get across my bridge?",
-   "dst": "",
+   "dst": "你以为你在这里干什么，小鬼？以为能大摇大摆走进我的寒舍，过我的桥？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -248,7 +248,7 @@
   },
   "Canyon Condor#024": {
    "src": "Oh, you want to know about the bird of the mountain? Hah, a little weed like you wouldn't stand a chance against it.",
-   "dst": "",
+   "dst": "噢，你想知道山上那只鸟的事？哈，你这种小豆芽根本不是它的对手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -258,7 +258,7 @@
   },
   "Canyon Condor#025": {
    "src": "It doesn't take kindly to strangers you know. I once saw it turn a group of poachers to ash!",
-   "dst": "",
+   "dst": "你知道吗，它对陌生人可不客气。我亲眼见过它把一群偷猎者烧成灰！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -268,7 +268,7 @@
   },
   "Canyon Condor#026": {
    "src": "If you want to go through here, you'll need to pay. Oh, I don't want your money, why would I need money, I have everything!",
-   "dst": "",
+   "dst": "如果你想从这里过去，就得付出代价。噢，我不要你的钱，我要钱干什么，我什么都有！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -278,7 +278,7 @@
   },
   "Canyon Condor#027": {
    "src": "If you want access to these plateaus then you will have to find me a rare flower for my little cave here.",
-   "dst": "",
+   "dst": "如果你想上这些高地，就得为我这小洞窟找一朵稀有的花来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -288,7 +288,7 @@
   },
   "Canyon Condor#028": {
    "src": "It is found on top of one of the stacks in the mesa, it shouldn't be too hard to find.",
-   "dst": "",
+   "dst": "它长在台地上其中一根石柱的顶端，应该不会太难找。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -298,7 +298,7 @@
   },
   "Canyon Condor#029": {
    "src": "Bring me [{~} Rare Rose] and I shall let you pass on to the creature of the mesa.",
-   "dst": "",
+   "dst": "给我带来 [{~} 稀有玫瑰]，我就让你过去找台地上的那只生物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -308,7 +308,7 @@
   },
   "Canyon Condor#030": {
    "src": "Find and collect [{~} Rare Rose] at [{~}, {~}, -{~}] for the Hermit",
-   "dst": "",
+   "dst": "在 [{~2}, {~3}, -{~4}] 找到并采集 [{~1} 稀有玫瑰]，交给隐士",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -318,7 +318,7 @@
   },
   "Canyon Condor#031": {
    "src": "A ha! This will do perfectly. My chickling will love it! I suppose you can cross the bridge now.",
-   "dst": "",
+   "dst": "啊哈！这个再合适不过了。我的小鸡崽会喜欢的！我想你现在可以过桥了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -328,7 +328,7 @@
   },
   "Canyon Condor#032": {
    "src": "The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.",
-   "dst": "",
+   "dst": "那头野兽住在其中一块高地的顶上。稍微找一找，你应该就能找到它。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -338,7 +338,7 @@
   },
   "Canyon Condor#033": {
    "src": "I'll let you use my elevators too. After all, it's not like you will last long...",
-   "dst": "",
+   "dst": "我也让你用我的升降梯。反正你也撑不了多久……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -348,7 +348,7 @@
   },
   "Canyon Condor#034": {
    "src": "Only one traveler I have heard of could stand against the beast. I believe he took an egg from it for a pet, hah!",
-   "dst": "",
+   "dst": "我只听说过一个旅人能跟那头野兽抗衡。我记得他还从它那里拿了颗蛋当宠物养，哈！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -358,7 +358,7 @@
   },
   "Canyon Condor#035": {
    "src": "He is long gone now, just like you will be in a few moments. It was nice not knowing you, kid.",
-   "dst": "",
+   "dst": "他早就不在了，就像你过一会儿也会一样。很高兴没认识你，小鬼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -368,7 +368,7 @@
   },
   "Canyon Condor#036": {
    "src": "Defeat the Cockatrice at [{~}, {~}, -{~}] and collect an egg for Svin",
-   "dst": "",
+   "dst": "击败 [{~}, {~}, -{~}] 的鸡蛇，替 Svin 取得一颗蛋",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -378,7 +378,7 @@
   },
   "Canyon Condor#037": {
    "src": "Traveler! You have returned! Tell me, what have you learned?",
-   "dst": "",
+   "dst": "旅人！你回来了！告诉我，你发现了什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -388,7 +388,7 @@
   },
   "Canyon Condor#038": {
    "src": "You found it?! This is wonderful news! You collected an egg from it's nest as well? You are very brave indeed!",
-   "dst": "",
+   "dst": "你找到它了？！这真是个好消息！你还从它的巢里拿到了一颗蛋？你真是太勇敢了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -398,7 +398,7 @@
   },
   "Canyon Condor#039": {
    "src": "So the legend of the Cockatrice is true! You've seen it and battled it with your own courage!",
-   "dst": "",
+   "dst": "原来鸡蛇的传说是真的！你亲眼见到了它，还凭自己的勇气跟它交战！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -408,7 +408,7 @@
   },
   "Canyon Condor#040": {
    "src": "If only you could enter the {p}, brave soul! But it would seem our paths are to part now.",
-   "dst": "",
+   "dst": "要是你能进入 {p} 就好了，勇敢的人！不过看来我们要在这里分道扬镳了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -418,7 +418,7 @@
   },
   "Canyon Condor#041": {
    "src": "Do not worry, I shall keep the egg safe. One day your legend shall be as greatly told!",
-   "dst": "",
+   "dst": "别担心，我会好好保管这颗蛋。总有一天，你的传说也会被广为传颂！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",

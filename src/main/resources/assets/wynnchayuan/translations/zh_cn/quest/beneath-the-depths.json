@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Beneath the Depths",
   "count": 42,
-  "translated": 0,
+  "translated": 42,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Beneath the Depths#000": {
    "src": "Talk to Javier in the Pirate Cove at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 海盗湾里的 Javier 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -18,7 +18,7 @@
   },
   "Beneath the Depths#001": {
    "src": "Garh, you look like a mighty fine adventurer, lad. But perhaps your pockets are a little lighter than you want, eh?",
-   "dst": "",
+   "dst": "嘎，小子，你看起来是个了不起的冒险者。不过你的口袋大概没你想的那么鼓吧，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -28,7 +28,7 @@
   },
   "Beneath the Depths#002": {
    "src": "Perhaps we be making a deal, lad, and it'll make us both rich!",
-   "dst": "",
+   "dst": "也许咱们可以做笔交易，小子，保证让咱俩都发大财！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -38,7 +38,7 @@
   },
   "Beneath the Depths#003": {
    "src": "Ye see, lad, me treasure has been lost for quite some time, I kept it in a ocean village named Sarnfic, in a secret room.",
-   "dst": "",
+   "dst": "你瞧，小子，俺的宝藏丢了好一阵子了，俺把它藏在一个叫 Sarnfic 的海上村子里，一个秘密房间里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -48,7 +48,7 @@
   },
   "Beneath the Depths#004": {
    "src": "Argh, but lad. The village vanished out of nowhere! Like some kind of dark magic! I swears to ye, I tell no lies!",
-   "dst": "",
+   "dst": "啊，可是小子。那个村子莫名其妙就消失了！就像什么黑魔法一样！俺对你发誓，俺绝没说谎！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -58,7 +58,7 @@
   },
   "Beneath the Depths#005": {
    "src": "So ye see, in me old age I could use a spot of me lawful gold to see me through me final years.",
-   "dst": "",
+   "dst": "所以你瞧，俺年纪大了，需要点俺那合法的金子来养老送终。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -68,7 +68,7 @@
   },
   "Beneath the Depths#006": {
    "src": "Don't fret though, chuck, old Javier always kept a back up plan.",
-   "dst": "",
+   "dst": "不过别担心，伙计，老 Javier 向来都留着后手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -78,7 +78,7 @@
   },
   "Beneath the Depths#007": {
    "src": "I left me old sea fearin' map in me old hideout, it'll tell ye where we can find me old gold.",
-   "dst": "",
+   "dst": "俺把俺那张老航海图留在了俺的旧藏身处，它会告诉你到哪去找俺的老金子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -88,7 +88,7 @@
   },
   "Beneath the Depths#008": {
    "src": "So, lad. Are ya willin' to make ye'self mighty wealthy? Good.",
-   "dst": "",
+   "dst": "那么，小子。你愿不愿意让自己发笔横财？很好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -98,7 +98,7 @@
   },
   "Beneath the Depths#009": {
    "src": "Me old hideout's hidden inside that there skull at the entrance to our mighty fine establishment, Bring me that map, lad!",
-   "dst": "",
+   "dst": "俺的旧藏身处就藏在咱们这了不起的地盘入口那个骷髅里，把那张图给俺拿来，小子！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -108,7 +108,7 @@
   },
   "Beneath the Depths#010": {
    "src": "Find Javier's map, hidden in the skull tomb at the entrance of the island",
-   "dst": "",
+   "dst": "找到藏在岛屿入口骷髅墓穴里的 Javier 的地图",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -118,7 +118,7 @@
   },
   "Beneath the Depths#011": {
    "src": "Halt it there, laddy! The wind has told us that yer looking for treasure map. Ah, ye'll not get it so easily.",
-   "dst": "",
+   "dst": "站住，小子！风告诉我们你在找藏宝图。啊，你可没那么容易拿到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -128,7 +128,7 @@
   },
   "Beneath the Depths#012": {
    "src": "Ye see, us spirits are as greedy as our physical selves were. 'ere's no foolin' 'round there. We want yer money, and only then will we open the paths to the map.",
-   "dst": "",
+   "dst": "你瞧，我们这些鬼魂跟活着的时候一样贪。这事可没得商量。我们要你的钱，给了钱，我们才会打开通往地图的路。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -138,7 +138,7 @@
   },
   "Beneath the Depths#013": {
    "src": "One full stack of emeralds will satisfy our needs. Go to the front of this tomb if ye have what we want.",
-   "dst": "",
+   "dst": "一整组绿宝石就能满足我们。如果你有我们要的，就到这座墓的前面去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -148,7 +148,7 @@
   },
   "Beneath the Depths#014": {
    "src": "Good luck on that petty journey of yers. Just find the whole path, and yerself'll be just fine...",
-   "dst": "",
+   "dst": "祝你这趟小小的旅程顺利。只要把整条路找出来，你就不会有事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -158,7 +158,7 @@
   },
   "Beneath the Depths#015": {
    "src": "Argh, yer talented aren't you lad! Many thanks indeed, now we can see where me treasure be buried.",
-   "dst": "",
+   "dst": "啊，你真有本事，小子！真是太感谢了，现在咱们能看看俺的宝藏埋在哪儿了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -168,7 +168,7 @@
   },
   "Beneath the Depths#016": {
    "src": "Hrmm, well, garr, blast it all",
-   "dst": "",
+   "dst": "嗯……唉，嘎，全都见鬼去吧",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -178,7 +178,7 @@
   },
   "Beneath the Depths#017": {
    "src": "I canne read me own darn map, lad! What'dya do with it? Scratch off the ink with yer pennies?",
-   "dst": "",
+   "dst": "俺连俺自己的破地图都看不懂了，小子！你对它干了啥？拿你的铜板把墨水刮掉了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -188,7 +188,7 @@
   },
   "Beneath the Depths#018": {
    "src": "Gar, sorry lad. It be the test of time that failed old Javier, not you.",
-   "dst": "",
+   "dst": "嘎，抱歉，小子。是岁月害了老 Javier，不是你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -198,7 +198,7 @@
   },
   "Beneath the Depths#019": {
    "src": "Fear not, lad. There be an old friend of Javier's that can help decipher this old rag.",
-   "dst": "",
+   "dst": "别怕，小子。老 Javier 有个老朋友能帮忙解读这块破布。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -208,7 +208,7 @@
   },
   "Beneath the Depths#020": {
    "src": "Go to the old {p}, there be a man by the name of Dalben who can restore me map to its former glory. Get it done lad, and bring me treasure back!",
-   "dst": "",
+   "dst": "去旧 {p}，那里有个叫 Dalben 的人能把俺的地图恢复原样。办好了，小子，把俺的宝藏带回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -218,7 +218,7 @@
   },
   "Beneath the Depths#021": {
    "src": "Talk to Dalben on {p} about restoring the map",
-   "dst": "",
+   "dst": "与 {p} 的 Dalben 谈谈修复地图的事",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -228,7 +228,7 @@
   },
   "Beneath the Depths#022": {
    "src": "What's this? A traveller? How might we assist you?",
-   "dst": "",
+   "dst": "这是什么？一位旅人？我们能帮你什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -238,7 +238,7 @@
   },
   "Beneath the Depths#023": {
    "src": "Ah, I see, you wish to explore the ocean depths? But for what possible reason?",
-   "dst": "",
+   "dst": "啊，我明白了，你想探索海洋深处？可到底是为了什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -248,7 +248,7 @@
   },
   "Beneath the Depths#024": {
    "src": "This map... How did you acquire it? This is enchanted by our people.",
-   "dst": "",
+   "dst": "这张地图……你是怎么弄到的？它被我们的人施过魔法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -258,7 +258,7 @@
   },
   "Beneath the Depths#025": {
    "src": "You... You seek Sarnfic, don't you?",
-   "dst": "",
+   "dst": "你……你在找 Sarnfic，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -268,7 +268,7 @@
   },
   "Beneath the Depths#026": {
    "src": "Alas, that place has history. We, the Mage Council, banished that city long ago to hide the horrific power hidden within a treasure a pirate hid there.",
-   "dst": "",
+   "dst": "唉，那地方是有来历的。很久以前，我们法师议会把那座城放逐了，为了藏起一个海盗藏在那里的宝物中那股可怕的力量。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -278,7 +278,7 @@
   },
   "Beneath the Depths#027": {
    "src": "A pair of boots, made from a black material fashioned from the stone of an evil place, incredibly dark magic. But we do not believe the filthy idiotic pirate knew what he'd found.",
-   "dst": "",
+   "dst": "一双靴子，用取自一处邪恶之地的石头炼成的黑色材料打造，蕴含着极其黑暗的魔法。不过我们不认为那个肮脏愚蠢的海盗知道自己找到了什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -288,7 +288,7 @@
   },
   "Beneath the Depths#028": {
    "src": "I must say, we, the council regret having to lay waste an entire village over a pair of boots. There was no other way.",
-   "dst": "",
+   "dst": "我必须说，我们议会很后悔为了一双靴子毁掉整个村子。可当时别无他法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -298,7 +298,7 @@
   },
   "Beneath the Depths#029": {
    "src": "Who knows why he even kept the boots. If he had known about their power, I'm sure he would have used it for evil. But we sense no evil in you, so as such we will aid you in your quest.",
-   "dst": "",
+   "dst": "谁知道他为什么要留着那双靴子。如果他知道靴子的力量，我敢肯定他会拿去作恶。不过我们在你身上感觉不到邪恶，因此我们会协助你完成任务。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -308,7 +308,7 @@
   },
   "Beneath the Depths#030": {
    "src": "We hope that you will use the boots for good, despite the dark intentions. We will lift the enchantment once lain upon the charts, but it will cost you.",
-   "dst": "",
+   "dst": "尽管靴子带着黑暗的意图，我们仍希望你能善用它。我们会解除当年施加在海图上的魔法，但你得付出代价。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -318,7 +318,7 @@
   },
   "Beneath the Depths#031": {
    "src": "Give me [{~} Emerald Blocks], that should cover the cost.",
-   "dst": "",
+   "dst": "给我 [{~} 绿宝石块]，应该够付费用了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -328,7 +328,7 @@
   },
   "Beneath the Depths#032": {
    "src": "Bring back [{~} Blocks of Emerald] to Dalben",
-   "dst": "",
+   "dst": "把 [{~} 绿宝石块] 带回给 Dalben",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -338,7 +338,7 @@
   },
   "Beneath the Depths#033": {
    "src": "Brilliant. That seems in order. Here you go.",
-   "dst": "",
+   "dst": "太好了。看起来没问题。给你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -348,7 +348,7 @@
   },
   "Beneath the Depths#034": {
    "src": "We only hope that the treasure will never fall into the hands of that pirate again, we'd much rather they fall into yours.",
-   "dst": "",
+   "dst": "我们只希望那份宝藏永远别再落到那个海盗手里，我们宁可它落到你手里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -358,7 +358,7 @@
   },
   "Beneath the Depths#035": {
    "src": "Well? What does it say? Go to that location! Find the treasure!",
-   "dst": "",
+   "dst": "怎么样？上面写着什么？去那个地方！找到宝藏！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -368,7 +368,7 @@
   },
   "Beneath the Depths#036": {
    "src": "Explore the cave in the ocean, located at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "探索位于 [-{~}, {~}, -{~}] 的海中洞窟",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -378,7 +378,7 @@
   },
   "Beneath the Depths#037": {
    "src": "Find [{~} Ocean Treasure] and bring it back to Javier in Pirate Cove",
-   "dst": "",
+   "dst": "找到 [{~} 海洋宝藏]，带回给海盗湾的 Javier",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -388,7 +388,7 @@
   },
   "Beneath the Depths#038": {
    "src": "Gnar, you did it lad! Ye brought back old Javiers gold! And as I promised, heres yer share of the loot.",
-   "dst": "",
+   "dst": "哈，你办到了，小子！你把老 Javier 的金子带回来了！说好的，这是你那份战利品。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -398,7 +398,7 @@
   },
   "Beneath the Depths#039": {
    "src": "I threw in something extra for ye. It's an old key I salvaged a few years back, from the shipwreck of a legendary pirate.",
-   "dst": "",
+   "dst": "俺还额外送你一样东西。是俺几年前从一位传奇海盗的沉船里捞出来的一把旧钥匙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -408,7 +408,7 @@
   },
   "Beneath the Depths#040": {
    "src": "Who knows what it leads to? Maybe a treasure hoard, or maybe the ol' swashbuckler wanted to lead someone into a trap.",
-   "dst": "",
+   "dst": "谁知道它能打开什么？也许是一堆宝藏，也许是那个老冒险家想把谁引进陷阱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -418,7 +418,7 @@
   },
   "Beneath the Depths#041": {
    "src": "Me bones are too old for a grand adventure like that, guess ye'll have to figure it out for yerself.",
-   "dst": "",
+   "dst": "俺这把老骨头经不起那种大冒险了，看来你得自己去弄明白了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
