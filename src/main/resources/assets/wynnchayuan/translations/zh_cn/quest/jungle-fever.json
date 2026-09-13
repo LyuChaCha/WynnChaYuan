@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Jungle Fever",
   "count": 32,
-  "translated": 0,
+  "translated": 32,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Jungle Fever#000": {
    "src": "Talk to Worid in the jungle village at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 丛林村落里的 Worid 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -18,7 +18,7 @@
   },
   "Jungle Fever#001": {
    "src": "Oh, I am so happy to see you! *cough*, I caught a very bad fever, and I really need help! *cough*",
-   "dst": "",
+   "dst": "噢，见到你真是太高兴了！*咳咳*，我发了很严重的高烧，真的需要帮忙！*咳咳*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -28,7 +28,7 @@
   },
   "Jungle Fever#002": {
    "src": "The only cure against this fever is to drink Liquid Emeralds! Yes, exactly! *cough*",
-   "dst": "",
+   "dst": "治这种烧唯一的办法就是喝液态绿宝石！对，没错！*咳咳*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -38,7 +38,7 @@
   },
   "Jungle Fever#003": {
    "src": "Do you think you could ask the Banker at {p} if he could give me, oh I don't know, [{~} Liquified Emeralds]?",
-   "dst": "",
+   "dst": "你能不能去问问 {p} 的银行家，看他能不能给我，噢我也不知道，[{~} 液态绿宝石]？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -48,7 +48,7 @@
   },
   "Jungle Fever#004": {
    "src": "If he has the audacity to *cough* say no... you will have to use brute force...",
-   "dst": "",
+   "dst": "如果他胆敢 *咳咳* 拒绝……你就只好用蛮力了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -58,7 +58,7 @@
   },
   "Jungle Fever#005": {
    "src": "Break into *cough* to the emerald storage, but don't take anything... come back to me immediately after, if you make it out alive, heheh...",
-   "dst": "",
+   "dst": "闯进 *咳咳* 绿宝石仓库，但什么都别拿……如果你能活着出来，马上回来找我，嘿嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -68,7 +68,7 @@
   },
   "Jungle Fever#006": {
    "src": "Oh, uh... I mean *cough* *cough*",
-   "dst": "",
+   "dst": "噢，呃……我是说 *咳咳* *咳咳*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -78,7 +78,7 @@
   },
   "Jungle Fever#007": {
    "src": "Talk to {p}'s Banker about the cure for Worid at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "向 [{~}, {~}, -{~}] 的 {p} 银行家询问 Worid 的解药",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -88,7 +88,7 @@
   },
   "Jungle Fever#008": {
    "src": "[{~} Liquified Emeralds]? He is crazy! Liquified Emeralds cannot cure anyone from anything, except being poor!",
-   "dst": "",
+   "dst": "[{~} 液态绿宝石]？他疯了！液态绿宝石什么病都治不了，除了穷病！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -98,7 +98,7 @@
   },
   "Jungle Fever#009": {
    "src": "I will not participate in this pathetic fraud attempt!",
-   "dst": "",
+   "dst": "我才不会参与这种可悲的诈骗！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -108,7 +108,7 @@
   },
   "Jungle Fever#010": {
    "src": "Enter {p}' Emerald Stash at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "进入 [{~}, {~}, -{~}] 的 {p} 绿宝石藏库",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -118,7 +118,7 @@
   },
   "Jungle Fever#011": {
    "src": "Oh no! How will I ever cure my sickness without any Liquified Emeralds?... *cough*",
-   "dst": "",
+   "dst": "噢不！没有液态绿宝石，我的病要怎么治啊？……*咳咳*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -128,7 +128,7 @@
   },
   "Jungle Fever#012": {
    "src": "We'll have to change our strategy, we won't ask for permission. It's to help me after all.",
-   "dst": "",
+   "dst": "我们得改变策略，不去征求许可了。反正是为了帮我嘛。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -138,7 +138,7 @@
   },
   "Jungle Fever#013": {
    "src": "First, I need to make sure you can easily break into a bank. Try to enter {p}' Secret Stash.",
-   "dst": "",
+   "dst": "首先，我得确认你能轻松闯进银行。试着进入 {p} 的秘密藏库。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -148,7 +148,7 @@
   },
   "Jungle Fever#014": {
    "src": "When you're done, talk to me again. Be careful too, they might have some Guards.",
-   "dst": "",
+   "dst": "办完了再来找我。小心点，他们可能有守卫。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -158,7 +158,7 @@
   },
   "Jungle Fever#015": {
    "src": "Return to Worid",
-   "dst": "",
+   "dst": "回到 Worid 那里",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -168,7 +168,7 @@
   },
   "Jungle Fever#016": {
    "src": "What? You're here already. I thought you would take too long so I just went myself.",
-   "dst": "",
+   "dst": "什么？你已经回来了。我以为你会花太久，所以我就自己去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -178,7 +178,7 @@
   },
   "Jungle Fever#017": {
    "src": "My sickness? RIGHT. *cough* You should feel bad for forcing a sick man to do your job.",
-   "dst": "",
+   "dst": "我的病？对哦。*咳咳* 你应该感到愧疚，竟然逼一个病人去干你的活。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -188,7 +188,7 @@
   },
   "Jungle Fever#018": {
    "src": "Anyway I see you proved yourself, we can start the real thing now.",
-   "dst": "",
+   "dst": "总之，看来你证明了自己，我们现在可以开始干真正的事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -198,7 +198,7 @@
   },
   "Jungle Fever#019": {
    "src": "You see, {p} has a very well guarded emerald vault named \"The Emerald Labyrinth\".",
-   "dst": "",
+   "dst": "你看，{p} 有一座戒备森严的绿宝石金库，叫作“绿宝石迷宫”。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -208,7 +208,7 @@
   },
   "Jungle Fever#020": {
    "src": "It is guarded with tons of well trained Guard Golem, who can easily kill any adventurer.",
-   "dst": "",
+   "dst": "那里有大量训练有素的守卫魔像把守，杀掉任何冒险者都不费吹灰之力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -218,7 +218,7 @@
   },
   "Jungle Fever#021": {
    "src": "The Banker in the secret vault must be completely bored out of his mind, and won't mind if you find him.",
-   "dst": "",
+   "dst": "秘密金库里的银行家一定无聊透顶了，你找到他他也不会介意的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -228,7 +228,7 @@
   },
   "Jungle Fever#022": {
    "src": "Good luck with that. Haha.. I mean, *cough*.",
-   "dst": "",
+   "dst": "祝你好运。哈哈.. 我是说，*咳咳*。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -238,7 +238,7 @@
   },
   "Jungle Fever#023": {
    "src": "Infiltrate {p}'s Secret Emerald Labyrinth at [{~}, {~}, -{~}] underground and find the Banker in the Emerald Room",
-   "dst": "",
+   "dst": "潜入 [{~}, {~}, -{~}] 地下的 {p} 秘密绿宝石迷宫，在绿宝石室找到银行家",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -248,7 +248,7 @@
   },
   "Jungle Fever#024": {
    "src": "Oh, uh! Somebody! It has been so long since I've seen someone!",
-   "dst": "",
+   "dst": "噢，呃！有人！我好久没见过人了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -258,7 +258,7 @@
   },
   "Jungle Fever#025": {
    "src": "Liquified Emeralds? Of course, of course! I've got tons! Here, take them.",
-   "dst": "",
+   "dst": "液态绿宝石？当然，当然！我多的是！来，拿去吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -268,7 +268,7 @@
   },
   "Jungle Fever#026": {
    "src": "Talk to Worid at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 [{~}, {~}, -{~}] 的 Worid 对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Jungle Fever",
@@ -278,7 +278,7 @@
   },
   "Jungle Fever#027": {
    "src": "You are back! Wonderful!",
-   "dst": "",
+   "dst": "你回来了！太好了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -288,7 +288,7 @@
   },
   "Jungle Fever#028": {
    "src": "That is a lot of money, thank you very much, I will finally be able to... *cough* to cure myself!",
-   "dst": "",
+   "dst": "这可是一大笔钱，太谢谢你了，我终于可以……*咳咳* 把病治好了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -298,7 +298,7 @@
   },
   "Jungle Fever#029": {
    "src": "Here, take this part, you deserve it. I have to use most of the... *cough* money so I can heal, so I've instead paid you with a key.",
-   "dst": "",
+   "dst": "来，这部分给你，是你应得的。大部分的……*咳咳* 钱我得拿去治病，所以我改用一把钥匙当你的报酬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -308,7 +308,7 @@
   },
   "Jungle Fever#030": {
    "src": "I stole- *cough* I mean, borrowed it, from our tribe's leader. Apparently it was used to lock up a great evil.",
-   "dst": "",
+   "dst": "我偷——*咳咳* 我是说，借来的，从我们部落首领那里。据说它是用来封印一个大恶魔的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",
@@ -318,7 +318,7 @@
   },
   "Jungle Fever#031": {
    "src": "Good ridda- *cough* Er... luck. Yes, good luck, adventurer!",
-   "dst": "",
+   "dst": "终于摆脱——*咳咳* 呃……祝你好运。对，祝你好运，冒险者！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Jungle Fever",

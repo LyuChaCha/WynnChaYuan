@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Reincarnation",
   "count": 33,
-  "translated": 0,
+  "translated": 33,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Reincarnation#000": {
    "src": "Talk to Batelu in Bob's Tomb.",
-   "dst": "",
+   "dst": "与 Bob 之墓里的 Batelu 对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Reincarnation",
@@ -18,7 +18,7 @@
   },
   "Reincarnation#001": {
    "src": "Hello adventurer! I see you want to solve the mystery of Bob's tomb also? Glad to meet you.",
-   "dst": "",
+   "dst": "你好，冒险者！看来你也想解开 Bob 之墓的谜团？很高兴认识你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -28,7 +28,7 @@
   },
   "Reincarnation#002": {
    "src": "My name is Batelu. Lately, I've been studying these strange symbols on the walls.",
-   "dst": "",
+   "dst": "我叫 Batelu。最近我一直在研究墙上这些奇怪的符号。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -38,7 +38,7 @@
   },
   "Reincarnation#003": {
    "src": "It's about Bob. Hopefully you do not believe the stories of his death, right? Bob couldn't have died so easily. Not to something so mundane as a wolf.",
-   "dst": "",
+   "dst": "是关于 Bob 的。希望你不相信那些关于他死因的故事，对吧？Bob 不可能那么轻易就死了。更不可能死在狼这种平凡的东西手里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -48,7 +48,7 @@
   },
   "Reincarnation#004": {
    "src": "He wasn't only strong, he was absolutely un-killable, a master in almost every skill.",
-   "dst": "",
+   "dst": "他不只是强大，他根本杀不死，几乎样样精通。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -58,7 +58,7 @@
   },
   "Reincarnation#005": {
    "src": "I believe he knew he was about to die. How? What of? Nobody knows, but he left this world prepared.",
-   "dst": "",
+   "dst": "我相信他知道自己快死了。怎么知道的？死于什么？没人知道，但他离开这个世界之前已经做好了准备。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -68,7 +68,7 @@
   },
   "Reincarnation#006": {
    "src": "You see, it says here Bob had three loyal animals. Before dying, he scattered them across the ocean.",
-   "dst": "",
+   "dst": "你看，这里写着 Bob 有三只忠诚的动物。死之前，他把它们散布到大海各处。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -78,7 +78,7 @@
   },
   "Reincarnation#007": {
    "src": "I think those animals are the key to accessing his real tomb...",
-   "dst": "",
+   "dst": "我认为那些动物就是进入他真正墓穴的关键……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -88,7 +88,7 @@
   },
   "Reincarnation#008": {
    "src": "You see that little gap right there? It's the entrance...",
-   "dst": "",
+   "dst": "看到那边那个小缝隙了吗？那就是入口……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -98,7 +98,7 @@
   },
   "Reincarnation#009": {
    "src": "Unfortunately, nobody was able to remove the spell blocking it.",
-   "dst": "",
+   "dst": "可惜，一直没人能解除封住它的法术。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -108,7 +108,7 @@
   },
   "Reincarnation#010": {
    "src": "But I do. I know how to open the passage to Bob. This is where the animals come in useful...",
-   "dst": "",
+   "dst": "但我能。我知道怎么打开通往 Bob 的通道。这就是那些动物派上用场的地方……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -118,7 +118,7 @@
   },
   "Reincarnation#011": {
    "src": "I believe Bob did something to those animals. I think if we could reunite them in some way, we could open the passage.",
-   "dst": "",
+   "dst": "我相信 Bob 对那些动物做了什么。我想如果我们能用某种方式让它们重聚，就能打开通道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -128,7 +128,7 @@
   },
   "Reincarnation#012": {
    "src": "Bring me {~} Cluckles' Favourite Feather, {~} Baab's Wool & {~} Mooington's Skin if you can find them.",
-   "dst": "",
+   "dst": "如果你找得到，就把 {~} 根 Cluckles 最爱的羽毛、{~} 份 Baab 的羊毛和 {~} 张 Mooington 的皮带给我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -138,7 +138,7 @@
   },
   "Reincarnation#013": {
    "src": "I am sure that together, we can open the passage. Good luck.",
-   "dst": "",
+   "dst": "我相信我们一起一定能打开通道。祝你好运。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -148,7 +148,7 @@
   },
   "Reincarnation#014": {
    "src": "Bring back {~} Cluckles' Favourite Feather, Baab's Wool, and Mooington's Skin to Batelu.",
-   "dst": "",
+   "dst": "把 {~} 根 Cluckles 最爱的羽毛、Baab 的羊毛和 Mooington 的皮带回给 Batelu。",
    "role": "desc",
    "kind": "objective",
    "quest": "Reincarnation",
@@ -158,7 +158,7 @@
   },
   "Reincarnation#015": {
    "src": "Wonderful! We can now open the passage to the true tomb of Bob...",
-   "dst": "",
+   "dst": "太好了！现在我们可以打开通往 Bob 真正墓穴的通道了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -168,7 +168,7 @@
   },
   "Reincarnation#016": {
    "src": "I am not worthy enough to enter it. I did not complete the task of the animals, merely read it. You shall go alone, be careful.",
-   "dst": "",
+   "dst": "我不配进去。我没有完成动物的任务，只是读到了而已。你一个人去吧，小心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -178,7 +178,7 @@
   },
   "Reincarnation#017": {
    "src": "Kill Bob's Reincarnation.",
-   "dst": "",
+   "dst": "杀死 Bob 的转世。",
    "role": "desc",
    "kind": "objective",
    "quest": "Reincarnation",
@@ -188,7 +188,7 @@
   },
   "Reincarnation#018": {
    "src": "I am Bob, master of the arts of Wynn.",
-   "dst": "",
+   "dst": "我是 Bob，Wynn 诸艺的大师。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -198,7 +198,7 @@
   },
   "Reincarnation#019": {
    "src": "Let me explain why you are here.",
-   "dst": "",
+   "dst": "让我来解释你为什么在这里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -208,7 +208,7 @@
   },
   "Reincarnation#020": {
    "src": "My animals, were my greatest allies in my travels through the world.",
-   "dst": "",
+   "dst": "我的动物，是我周游世界时最好的伙伴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -218,7 +218,7 @@
   },
   "Reincarnation#021": {
    "src": "I travelled too far, mined too deep, and of course challenged what should not be challenged. My time in Wynn was coming to an end.",
-   "dst": "",
+   "dst": "我走得太远，挖得太深，当然也挑战了不该挑战的东西。我在 Wynn 的时间快要结束了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -228,7 +228,7 @@
   },
   "Reincarnation#022": {
    "src": "I knew so, too. But I refused to leave without giving the power i had attained to those worthy of it.",
-   "dst": "",
+   "dst": "我自己也知道。但我不愿意在没把自己获得的力量交给配得上的人之前就离开。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -238,7 +238,7 @@
   },
   "Reincarnation#023": {
    "src": "Using what ability I had left to me, I transferred my power to my animals, in three pieces. In the hope that those worthy to harness it will seek them out.",
-   "dst": "",
+   "dst": "我用仅剩的能力，把我的力量分成三份，转移到我的动物身上。希望配得上驾驭它的人会去找到它们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -248,7 +248,7 @@
   },
   "Reincarnation#024": {
    "src": "The spell I placed on the door to this realm will only break to the one who collects my power. But it cannot have escaped your notice, you do not have my power.",
-   "dst": "",
+   "dst": "我在通往这个领域的门上施的法术，只会为收集了我力量的人解开。但你一定已经发现了，你身上并没有我的力量。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -258,7 +258,7 @@
   },
   "Reincarnation#025": {
    "src": "The truth is, you must pass a test, the ultimate test. Hone your skills you have learnt throughout your travels, and face me. Face me, and earn your place amongst soldiers of Wynn.",
-   "dst": "",
+   "dst": "事实是，你必须通过一场考验，终极的考验。磨练你一路上学到的技艺，来面对我。面对我，赢得你在 Wynn 士兵之中的一席之地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -268,7 +268,7 @@
   },
   "Reincarnation#026": {
    "src": "Bring back {~} Bob's Seal of Approval to Batelu.",
-   "dst": "",
+   "dst": "把 {~} 个 Bob 的认可印章带回给 Batelu。",
    "role": "desc",
    "kind": "objective",
    "quest": "Reincarnation",
@@ -278,7 +278,7 @@
   },
   "Reincarnation#027": {
    "src": "Ah! You have returned! Tell me, what did you find within?",
-   "dst": "",
+   "dst": "啊！你回来了！告诉我，你在里面发现了什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -288,7 +288,7 @@
   },
   "Reincarnation#028": {
    "src": "...You faced Bob himself in combat? And you triumphed? That's quite remarkable!",
-   "dst": "",
+   "dst": "……你跟 Bob 本人交手了？而且赢了？这太了不起了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -298,7 +298,7 @@
   },
   "Reincarnation#029": {
    "src": "And he gave you his Seal of Approval... Hm. If that is the case, then there is something I may do for you.",
-   "dst": "",
+   "dst": "他还给了你他的认可印章……嗯。既然如此，那我有件事可以为你做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -308,7 +308,7 @@
   },
   "Reincarnation#030": {
    "src": "Before Bob passed, he left his mythical weapons with a trusted friend. They were, so he said, to be kept for one who would be worthy to wield them...",
-   "dst": "",
+   "dst": "Bob 去世之前，把他的神话武器留给了一位信任的朋友。照他的说法，那些武器要留给配得上使用它们的人……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -318,7 +318,7 @@
   },
   "Reincarnation#031": {
    "src": "Yes... Yes, I am certain. You have proven yourself worthy. Take this relic, the Stone of Myths, and bring it to the Temple of the Legends.",
-   "dst": "",
+   "dst": "是的……是的，我确定。你已经证明了自己配得上。拿着这件圣物，神话之石，把它带到传奇神殿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",
@@ -328,7 +328,7 @@
   },
   "Reincarnation#032": {
    "src": "Within, you will find a merchant who will offer you a weapon in exchange for it. I wish you luck with your future travels.",
-   "dst": "",
+   "dst": "你会在里面找到一位商人，他会用一把武器跟你交换。祝你今后的旅途顺利。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Reincarnation",

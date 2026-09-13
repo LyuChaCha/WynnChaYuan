@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Green Gloop",
   "count": 32,
-  "translated": 0,
+  "translated": 32,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Green Gloop#000": {
    "src": "Talk to Eluzterp at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 [{~}, {~}, -{~}] 的 Eluzterp 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Green Gloop",
@@ -18,7 +18,7 @@
   },
   "Green Gloop#001": {
    "src": "Oh, hey! You, adventurer over there! Would you mind helping me?",
-   "dst": "",
+   "dst": "噢，嘿！那边的冒险者！能帮我个忙吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -28,7 +28,7 @@
   },
   "Green Gloop#002": {
    "src": "You see, this cave behind me has been troubling me for the past while now.",
-   "dst": "",
+   "dst": "你看，我身后这个洞窟最近一直让我很头疼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -38,7 +38,7 @@
   },
   "Green Gloop#003": {
    "src": "There are special slimes that live in there, and they drop a certain goo that is quite a delicacy when brewed into a drink!",
-   "dst": "",
+   "dst": "里面住着一种特别的史莱姆，它们会掉一种黏液，酿成饮料可是难得的美味！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -48,7 +48,7 @@
   },
   "Green Gloop#004": {
    "src": "They are called Gooey Slimes, and should be at the very back. A friend of mine drinks the stuff like water, and he refuses to work without it.",
-   "dst": "",
+   "dst": "它们叫黏糊史莱姆，应该就在洞窟最里面。我有个朋友把那东西当水喝，没有它就不肯干活。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -58,7 +58,7 @@
   },
   "Green Gloop#005": {
    "src": "However, the slimes have gotten stronger about a month ago. I'm unable to retrieve it any more, I've come close to getting killed a few times!",
-   "dst": "",
+   "dst": "可是大约一个月前，那些史莱姆变强了。我再也拿不到了，还差点被打死好几次！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -68,7 +68,7 @@
   },
   "Green Gloop#006": {
    "src": "You, however, seem much better equipped than I. Hopefully you can do it.",
-   "dst": "",
+   "dst": "不过，你的装备看起来比我好多了。希望你能办到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -78,7 +78,7 @@
   },
   "Green Gloop#007": {
    "src": "If you decide to help me, you'll need to obtain a special device for retrieving it, as the slime will dry up quickly in the air.",
-   "dst": "",
+   "dst": "如果你决定帮我，就得先弄一个专门用来装黏液的工具，因为黏液在空气里很快就会干掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -88,7 +88,7 @@
   },
   "Green Gloop#008": {
    "src": "A...less fickle glassblower, Yodbon, can make it for you. He should be living in a house in front of the {p} bank.",
-   "dst": "",
+   "dst": "一位……没那么难搞的玻璃匠 Yodbon 能帮你做。他应该住在 {p} 银行前面的一栋房子里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -98,7 +98,7 @@
   },
   "Green Gloop#009": {
    "src": "I'll need [{~} Slimey Goo] since we'll need a big batch of drinks. If you help, I'll be sure to tell my friend, and he'll probably let you into his shop.",
-   "dst": "",
+   "dst": "我需要 [{~} 史莱姆黏液]，因为我们要酿一大批饮料。如果你帮忙，我一定会跟我朋友说，他多半会让你进他的店。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -108,7 +108,7 @@
   },
   "Green Gloop#010": {
    "src": "Find Yodbon near the {p} Bank at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [{~}, {~}, -{~}] 的 {p} 银行附近找到 Yodbon",
    "role": "desc",
    "kind": "objective",
    "quest": "Green Gloop",
@@ -118,7 +118,7 @@
   },
   "Green Gloop#011": {
    "src": "Welcome to Yodbon's Glass Blowery, what can I do f-",
-   "dst": "",
+   "dst": "欢迎光临 Yodbon 玻璃坊，有什么能为您——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -128,7 +128,7 @@
   },
   "Green Gloop#012": {
    "src": "Oh, another stinkin' adventurer, eh...",
-   "dst": "",
+   "dst": "噢，又是个臭烘烘的冒险者，是吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -138,7 +138,7 @@
   },
   "Green Gloop#013": {
    "src": "So many've been coming up to me recently, askin' for a bloody Slime Scooper...",
-   "dst": "",
+   "dst": "最近好多人跑来找我，要什么该死的史莱姆舀子……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -148,7 +148,7 @@
   },
   "Green Gloop#014": {
    "src": "Izzat brother o' mine stopped workin' again? I swear, he's addicted to that slop...",
-   "dst": "",
+   "dst": "我那个兄弟又不干活了？我发誓，他对那种糊糊上瘾了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -158,7 +158,7 @@
   },
   "Green Gloop#015": {
    "src": "Anyways, for me to make you a scooper you'll need to get [{~} Soft Sand].",
-   "dst": "",
+   "dst": "总之，要我给你做舀子，你得先弄来 [{~} 软沙]。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -168,7 +168,7 @@
   },
   "Green Gloop#016": {
    "src": "Come back to me once you've gotten ahold of it. You can dig it up from those sand piles 'round the desert.",
-   "dst": "",
+   "dst": "拿到了再回来找我。沙漠一带那些沙堆里就挖得到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -178,7 +178,7 @@
   },
   "Green Gloop#017": {
    "src": "Bring [{~} Soft Sand] from enemies in the desert to Yodbon at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "从沙漠里的敌人身上取得 [{~} 软沙]，带给 [{~}, {~}, -{~}] 的 Yodbon",
    "role": "desc",
    "kind": "objective",
    "quest": "Green Gloop",
@@ -188,7 +188,7 @@
   },
   "Green Gloop#018": {
    "src": "You've returned, I see.",
-   "dst": "",
+   "dst": "看来你回来了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -198,7 +198,7 @@
   },
   "Green Gloop#019": {
    "src": "A'ight, fork 'em over and I'll make you the scooper.",
-   "dst": "",
+   "dst": "好嘞，交出来，我给你做舀子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -208,7 +208,7 @@
   },
   "Green Gloop#020": {
    "src": "..There you go. No idea why he wants that stuff though. Maybe it's an acquired taste...",
-   "dst": "",
+   "dst": "..做好了。真不知道他为什么要那种东西。也许是越喝越上瘾吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -218,7 +218,7 @@
   },
   "Green Gloop#021": {
    "src": "G'luck on whatever you're doing.",
-   "dst": "",
+   "dst": "不管你要干什么，祝你好运。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -228,7 +228,7 @@
   },
   "Green Gloop#022": {
    "src": "Fetch [{~} Slimey Goo] for Eluzterp from the cave at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "从 [{~2}, {~3}, -{~4}] 的洞窟里帮 Eluzterp 取来 [{~1} 史莱姆黏液]",
    "role": "desc",
    "kind": "objective",
    "quest": "Green Gloop",
@@ -238,7 +238,7 @@
   },
   "Green Gloop#023": {
    "src": "Oh, you're back! Good to see you were able to get through there. Have you got a full Slime Scooper?",
-   "dst": "",
+   "dst": "噢，你回来了！看到你顺利闯过去真好。史莱姆舀子装满了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -248,7 +248,7 @@
   },
   "Green Gloop#024": {
    "src": "Hmm, yes, everything seems to be in order. Perfect!",
-   "dst": "",
+   "dst": "嗯，没错，一切都没问题。太好了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -258,7 +258,7 @@
   },
   "Green Gloop#025": {
    "src": "Thank you very much. Finally, I'll be able to get him in gear again... Why are all Villagers so fickle like that?",
-   "dst": "",
+   "dst": "非常感谢。终于能让他重新开工了……为什么村民都这么难搞？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -268,7 +268,7 @@
   },
   "Green Gloop#026": {
    "src": "Well, I suppose that's beside the point. I'll be sure to let him know you got him his most recent fix.",
-   "dst": "",
+   "dst": "好吧，这不是重点。我一定会跟他说，他最近这一口是你帮他弄来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -278,7 +278,7 @@
   },
   "Green Gloop#027": {
    "src": "He hangs around in a little black stall in the bazaar, there's a basement to it. He should let you inside now.",
-   "dst": "",
+   "dst": "他常待在集市里一个黑色的小摊子，摊子底下有个地下室。他现在应该会让你进去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -288,7 +288,7 @@
   },
   "Green Gloop#028": {
    "src": "And, for your troubles, a little something from me as well.",
-   "dst": "",
+   "dst": "还有，辛苦你了，我也有点小东西给你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -298,7 +298,7 @@
   },
   "Green Gloop#029": {
    "src": "Ah, hello again. This latest batch of drinks apparently really revitalized him. He said he's looking to make some great craft.",
-   "dst": "",
+   "dst": "啊，又见面了。这批饮料好像真的让他恢复了活力。他说想做点了不起的手工艺品。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -308,7 +308,7 @@
   },
   "Green Gloop#030": {
    "src": "Those Villagers are a little bit crazy though... I have no idea what kind of material it is that he insists he needs for it.",
-   "dst": "",
+   "dst": "不过那些村民有点疯疯癫癫的……我完全不知道他坚持说需要的是什么材料。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
@@ -318,7 +318,7 @@
   },
   "Green Gloop#031": {
    "src": "Oh, it's you again. Yes, my brother there just loves makin' his little trinkets. He oughta make somethin' useful out of his glass instead...",
-   "dst": "",
+   "dst": "噢，又是你。对，我那个兄弟就爱做他那些小玩意儿。他应该用玻璃做点有用的东西才对……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Green Gloop",
