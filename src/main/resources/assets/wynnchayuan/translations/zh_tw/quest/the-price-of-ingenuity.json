@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "The Price of Ingenuity",
-  "count": 584,
+  "count": 586,
   "translated": 584,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
@@ -11,6 +11,16 @@
  },
  "entries": {
   "The Price of Ingenuity#000": {
+   "src": "Previously implemented locomotive models employ an engine with relatively low efficiency.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Price of Ingenuity#001": {
    "src": "Rest for the night in you room in the Steel Feather at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 鋼羽的房間裡過夜休息。",
    "role": "desc",
@@ -20,7 +30,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#001": {
+  "The Price of Ingenuity#002": {
    "src": "...what. Where is it? W-where is it?!",
    "dst": "……什麼。它在哪裡？在——在哪裡？！",
    "role": "desc",
@@ -30,7 +40,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#002": {
+  "The Price of Ingenuity#003": {
    "src": "Yo, yo, chill! What's going-",
    "dst": "喂、喂，冷靜！怎麼——",
    "role": "desc",
@@ -40,7 +50,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#003": {
+  "The Price of Ingenuity#004": {
    "src": "My bow, Yuman! Where is it? WHERE did you put it?!",
    "dst": "我的弓，Yuman！它在哪裡？你把它放到哪裡去了？！",
    "role": "desc",
@@ -50,7 +60,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#004": {
+  "The Price of Ingenuity#005": {
    "src": "Hey, hey, relax, jeez! It's over here, on the meeting table! It fell off your bed in the early morning, so I figured I'd put it somewhere safe!",
    "dst": "嘿、嘿，放輕鬆，天啊！它在這邊，在會議桌上！它今天一大早從你床上掉下來，所以我想說把它放到安全的地方！",
    "role": "desc",
@@ -60,7 +70,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#005": {
+  "The Price of Ingenuity#006": {
    "src": "I didn't, like, snatch it off ya or anything! Sorry, man! My bad. I forgot you got like this.",
    "dst": "我又沒有硬從你身上搶走！抱歉啦，老兄！我的錯。我忘了你會這樣。",
    "role": "desc",
@@ -70,7 +80,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#006": {
+  "The Price of Ingenuity#007": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -80,7 +90,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#007": {
+  "The Price of Ingenuity#008": {
    "src": "Sorry. For shouting at you. I... don't know what came over me.",
    "dst": "抱歉。對你大吼。我……不知道我剛才是怎麼了。",
    "role": "desc",
@@ -90,7 +100,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#008": {
+  "The Price of Ingenuity#009": {
    "src": "Hey, it's all good! I get grouchy too when one of my bros moves my stuff without tellin' me! 'Kay, well, maybe not that grouchy, but- I sorta get it, is what I mean.",
    "dst": "嘿，沒事啦！我哥沒跟我說一聲就動我東西的時候，我也會不爽！好啦，也許沒有那麼不爽，不過——我大概懂啦，我的意思是。",
    "role": "desc",
@@ -100,7 +110,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#009": {
+  "The Price of Ingenuity#010": {
    "src": "Mmh. Did I ever tell you about it back when I was staying here?",
    "dst": "唔。我以前住在這裡的時候，有跟你講過這件事嗎？",
    "role": "desc",
@@ -110,7 +120,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#010": {
+  "The Price of Ingenuity#011": {
    "src": "Nah, don't think you ever did. You were still keepin' everyone an arm's length away back then, so I didn't want to push my luck.",
    "dst": "沒，我想你沒講過。你那時候還把每個人都推得遠遠的，所以我也不想太進一步。",
    "role": "desc",
@@ -120,7 +130,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#011": {
+  "The Price of Ingenuity#012": {
    "src": "Right... right. It's not even that big of a deal. My bow's just... important to me.",
    "dst": "對……對。其實也沒什麼大不了的。我的弓只是……對我很重要。",
    "role": "desc",
@@ -130,7 +140,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#012": {
+  "The Price of Ingenuity#013": {
    "src": "Yes, I know I look silly walking around with the bulky thing all day! But I can't afford to lose it. I need it. I can't explain why, but I do.",
    "dst": "對，我知道我整天扛著這個大傢伙走來走去看起來很蠢！可是我不能弄丟它。我需要它。我說不出為什麼，但我就是需要。",
    "role": "desc",
@@ -140,7 +150,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#013": {
+  "The Price of Ingenuity#014": {
    "src": "Nah that's cool, man! If we're talkin' silly, just take a look at me! I fight using my GUITAR! How d'you get sillier than that?",
    "dst": "欸那沒什麼啦，老兄！要講蠢的話，看看我！我是用我的「吉他」打架欸！還有比這更蠢的嗎？",
    "role": "desc",
@@ -150,7 +160,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#014": {
+  "The Price of Ingenuity#015": {
    "src": "Pff, ha! What, do you just play bad music until your enemies give up? \"Please, stop, I can't bear it! The melody's too discordant!\"",
    "dst": "噗，哈！怎樣，你就彈難聽的音樂彈到敵人放棄嗎？「拜託，住手，我受不了了！這旋律太不和諧了！」",
    "role": "desc",
@@ -160,7 +170,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#015": {
+  "The Price of Ingenuity#016": {
    "src": "Hahahah! That'd be fun, I should try that! But nah, I just club 'em with it. Yus stuck some metal plates in, so it hurts more and doesn't break!",
    "dst": "哈哈哈！那應該蠻好玩的，我該試試看！不過不是啦，我就是拿它敲他們。Yus 在裡面塞了幾片金屬板，所以打起來更痛，也不會壞掉！",
    "role": "desc",
@@ -170,7 +180,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#016": {
+  "The Price of Ingenuity#017": {
    "src": "Wow. You're right, that's way sillier than what I do. I've got to tell Zeph about this.",
    "dst": "哇。你說得對，那比我做的蠢多了。我一定要跟 Zeph 講這件事。",
    "role": "desc",
@@ -180,7 +190,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#017": {
+  "The Price of Ingenuity#018": {
    "src": "Woah, hey! You don't gotta do that, let him think I'm cool! But, uh, jokes aside. Feeling better?",
    "dst": "哇、喂！你不用去講啦，讓他覺得我很酷就好！不過，呃，玩笑歸玩笑。感覺好一點了嗎？",
    "role": "desc",
@@ -190,7 +200,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#018": {
+  "The Price of Ingenuity#019": {
    "src": "I am. Thanks, Yuman.",
    "dst": "好多了。謝了，Yuman。",
    "role": "desc",
@@ -200,7 +210,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#019": {
+  "The Price of Ingenuity#020": {
    "src": "Good! Cool, then you should wake up the rest of your gang. Quill said he'd be over soon, wanted to talk to you about something.",
    "dst": "很好！那你該去把你其他同伴叫醒了。Quill 說他很快就會過來，想跟你們談件事。",
    "role": "desc",
@@ -210,7 +220,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#020": {
+  "The Price of Ingenuity#021": {
    "src": "Wake up the other three members at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 叫醒另外三位成員。",
    "role": "desc",
@@ -220,7 +230,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#021": {
+  "The Price of Ingenuity#022": {
    "src": "Wait, don't wake her!",
    "dst": "等等，別叫醒她！",
    "role": "desc",
@@ -230,7 +240,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#022": {
+  "The Price of Ingenuity#023": {
    "src": "Ughhhhhhhh. What. Is. It.",
    "dst": "唔——————。什麼。事。啦。",
    "role": "desc",
@@ -240,7 +250,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#023": {
+  "The Price of Ingenuity#024": {
    "src": "Morning, Sui! She's not exactly a... morning person. Guess I forgot to warn you!",
    "dst": "早安，Sui！她不太算是……早起的人。看來我忘了先提醒你！",
    "role": "desc",
@@ -250,7 +260,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#024": {
+  "The Price of Ingenuity#025": {
    "src": "Grrrrr.",
    "dst": "嗚嗚嗚嗚。",
    "role": "desc",
@@ -260,7 +270,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#025": {
+  "The Price of Ingenuity#026": {
    "src": "Hm.",
    "dst": "嗯。",
    "role": "desc",
@@ -270,7 +280,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#026": {
+  "The Price of Ingenuity#027": {
    "src": "I'm hungry.",
    "dst": "我餓了。",
    "role": "desc",
@@ -280,7 +290,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#027": {
+  "The Price of Ingenuity#028": {
    "src": "Why'd you wake me up? Um, this early.",
    "dst": "你幹嘛叫醒我？嗯，這麼早。",
    "role": "desc",
@@ -290,7 +300,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#028": {
+  "The Price of Ingenuity#029": {
    "src": "Hm!",
    "dst": "嗯！",
    "role": "desc",
@@ -300,7 +310,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#029": {
+  "The Price of Ingenuity#030": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -310,7 +320,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#030": {
+  "The Price of Ingenuity#031": {
    "src": "Um... is he... expecting me to, ha, prepare, breakfast? Oh, no...",
    "dst": "嗯……他是不是……在等我，哈，準備，早餐？喔，不會吧……",
    "role": "desc",
@@ -320,7 +330,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#031": {
+  "The Price of Ingenuity#032": {
    "src": "It... probably isn't that.",
    "dst": "那……大概不是那樣。",
    "role": "desc",
@@ -330,7 +340,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#032": {
+  "The Price of Ingenuity#033": {
    "src": "And there she goes. Well, no stopping her anxieties now! Might as well just let her get it out of her system.",
    "dst": "她又開始了。好啦，現在攔不住她的焦慮了！乾脆讓她自己發洩完吧。",
    "role": "desc",
@@ -340,7 +350,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#033": {
+  "The Price of Ingenuity#034": {
    "src": "yaaaawn*",
    "dst": "＊呵——欠＊",
    "role": "desc",
@@ -350,7 +360,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#034": {
+  "The Price of Ingenuity#035": {
    "src": "Good morning to you, {u}, Rex.",
    "dst": "早安，{u}、Rex。",
    "role": "desc",
@@ -360,7 +370,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#035": {
+  "The Price of Ingenuity#036": {
    "src": "Ah, yes, I had overheard! I assume he has some work for us then.",
    "dst": "啊，是的，我聽說了！那我想他是有工作要交給我們了。",
    "role": "desc",
@@ -370,7 +380,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#036": {
+  "The Price of Ingenuity#037": {
    "src": "Allow me to go freshen up, and then I will join you.",
    "dst": "容我先去梳洗一下，然後就來與你們會合。",
    "role": "desc",
@@ -380,7 +390,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#037": {
+  "The Price of Ingenuity#038": {
    "src": "Surprisingly so, yes! These beds were much more comfortable than I had anticipated...",
    "dst": "意外地好，是的！這些床比我預期的舒服得多……",
    "role": "desc",
@@ -390,7 +400,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#038": {
+  "The Price of Ingenuity#039": {
    "src": "However... hm. I appear to have been afflicted with repeating night terrors.",
    "dst": "不過……唔。我似乎染上了反覆的夜間驚夢。",
    "role": "desc",
@@ -400,7 +410,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#039": {
+  "The Price of Ingenuity#040": {
    "src": "Reality is setting in, in a sense. Returning to the {p} now is out of the question. We cannot come home until the deed is done.",
    "dst": "現實感正在滲進來，某種意義上。現在要回 {p} 是不可能的了。事情辦成之前，我們回不了家。",
    "role": "desc",
@@ -410,7 +420,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#040": {
+  "The Price of Ingenuity#041": {
    "src": "It does weigh on me a little. We have made new friends and allies here, but this is the furthest away I have ever been from home.",
    "dst": "那確實讓我有點沉重。我們在這裡結交了新的朋友與盟友，但這是我離家最遠的一次。",
    "role": "desc",
@@ -420,7 +430,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#041": {
+  "The Price of Ingenuity#042": {
    "src": "Hm. I know the feeling, Mora. If it helps, it never really goes away, but it becomes... lighter. Easier to deal with.",
    "dst": "唔。我懂那種感覺，Mora。如果這有幫助的話——那種感覺其實不會真的消失，但它會變得……輕一點。比較好承受。",
    "role": "desc",
@@ -430,7 +440,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#042": {
+  "The Price of Ingenuity#043": {
    "src": "Hoho! It does not especially, no. But I appreciate the sentiment. I am glad to have my family here with me.",
    "dst": "嚯嚯！並不特別會，不會。不過我領你這份心意。我很慶幸我的家人在這裡陪著我。",
    "role": "desc",
@@ -440,7 +450,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#043": {
+  "The Price of Ingenuity#044": {
    "src": "But enough of that! I heard Quill was coming over? I had best freshen up before he arrives. I will join the rest of you later.",
    "dst": "不過這些就談到這裡！我聽說 Quill 要過來？那我最好在他到之前先梳洗一下。我晚點再與你們會合。",
    "role": "desc",
@@ -450,7 +460,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#044": {
+  "The Price of Ingenuity#045": {
    "src": "Zzzzzzzzz.......",
    "dst": "呼————……",
    "role": "desc",
@@ -460,7 +470,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#045": {
+  "The Price of Ingenuity#046": {
    "src": "Hrrk..... f-f-five more minutes, m- s- Synd- Zzzzzzzzz.....",
    "dst": "呃……再、再五分鐘，S——Synd——呼————……",
    "role": "desc",
@@ -470,7 +480,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#046": {
+  "The Price of Ingenuity#047": {
    "src": "This child...",
    "dst": "這孩子……",
    "role": "desc",
@@ -480,7 +490,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#047": {
+  "The Price of Ingenuity#048": {
    "src": "Okay, he's slept enough. What do you think, should I shoot him?",
    "dst": "好，他睡夠了。你覺得呢，我要不要射他一箭？",
    "role": "desc",
@@ -490,7 +500,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#048": {
+  "The Price of Ingenuity#049": {
    "src": "Pfft! Ha, kidding. It wouldn't work anyway, he's stubborn enough to just roll over and keep sleeping.",
    "dst": "噗！哈，開玩笑的。反正也沒用，他固執到會直接翻個身繼續睡。",
    "role": "desc",
@@ -500,7 +510,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#049": {
+  "The Price of Ingenuity#050": {
    "src": "Hm, what can we try... oh, I know.",
    "dst": "唔，我們可以試什麼呢……喔，我知道了。",
    "role": "desc",
@@ -510,7 +520,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#050": {
+  "The Price of Ingenuity#051": {
    "src": "Oh, wow, these sure are some nice and shiny and rare trinkets! Gosh, if only Zeph were awake, he'd love these. What a shame!",
    "dst": "喔，哇，這些小飾品又亮又稀有耶！唉呀，Zeph 要是醒著的話一定會超愛。真可惜！",
    "role": "desc",
@@ -520,7 +530,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#051": {
+  "The Price of Ingenuity#052": {
    "src": "HUH! N-no, wait, I- I- I'm awake, where are- sh-sh-show me the t-trinkets, I want to see-",
    "dst": "咦！不、不，等等，我——我——我醒了，在哪裡——給、給、給我看那些小飾品，我要看——",
    "role": "desc",
@@ -530,7 +540,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#052": {
+  "The Price of Ingenuity#053": {
    "src": "Ack! Ow... m-my head...",
    "dst": "啊！痛……我、我的頭……",
    "role": "desc",
@@ -540,7 +550,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#053": {
+  "The Price of Ingenuity#054": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -550,7 +560,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#054": {
+  "The Price of Ingenuity#055": {
    "src": "There aren't an-any tr-trinkets, are there.",
    "dst": "根本沒有什、什麼小飾品，對吧。",
    "role": "desc",
@@ -560,7 +570,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#055": {
+  "The Price of Ingenuity#056": {
    "src": "Nope! But I like the enthusiasm.",
    "dst": "沒有！不過我喜歡你的熱情。",
    "role": "desc",
@@ -570,7 +580,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#056": {
+  "The Price of Ingenuity#057": {
    "src": "Ugh... wh-why are you w-waking everyone up, anyway? I d-didn't think we had an-anything planned today..",
    "dst": "唉……你幹、幹嘛把大家都叫醒？我不、不覺得我們今天有安、安排什麼……",
    "role": "desc",
@@ -580,7 +590,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#057": {
+  "The Price of Ingenuity#058": {
    "src": "O-oh! Uh... I- I- I- I slept... fine. G-g-good, even! Yeah!",
    "dst": "喔——喔！呃……我、我、我、我睡得……很好。很、很好，甚至！對！",
    "role": "desc",
@@ -590,7 +600,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#058": {
+  "The Price of Ingenuity#059": {
    "src": "Uh-huh.",
    "dst": "是喔。",
    "role": "desc",
@@ -600,7 +610,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#059": {
+  "The Price of Ingenuity#060": {
    "src": "H-hey! What's that s-s-supposed to mean!?",
    "dst": "喂、喂！那是什、什、什麼意思！？",
    "role": "desc",
@@ -610,7 +620,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#060": {
+  "The Price of Ingenuity#061": {
    "src": "You got in bed super late! And you know how I know that? Because your snoring only started waking me up after that!",
    "dst": "你超晚才上床的！你知道我怎麼知道的嗎？因為你的打呼是在那之後才開始把我吵醒的！",
    "role": "desc",
@@ -620,7 +630,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#061": {
+  "The Price of Ingenuity#062": {
    "src": "I kept waking up thinking it was thundering outside, that's how loud it was!",
    "dst": "我一直醒過來，以為外面在打雷，就是那麼大聲！",
    "role": "desc",
@@ -630,7 +640,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#062": {
+  "The Price of Ingenuity#063": {
    "src": "Wh-what?! N-n-no, that's not- {u}, b-back me up here! I- I wasn't sn-snoring loudly, right?",
    "dst": "什、什麼？！不、不、不，才不是——{u}，你幫、幫我說句話！我、我沒有打呼很大聲吧？",
    "role": "desc",
@@ -640,7 +650,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#063": {
+  "The Price of Ingenuity#064": {
    "src": "S-see! It couldn't have been th-that bad.",
    "dst": "看、看吧！不可能有那、那麼糟。",
    "role": "desc",
@@ -650,7 +660,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#064": {
+  "The Price of Ingenuity#065": {
    "src": "Or maybe {u} needs to sleep lighter! Next thing you know, an enemy's gonna sneak up on you at night, and you're not gonna hear it because you're too used to Zeph's loud snoring!",
    "dst": "或者是 {u} 該把覺睡淺一點！等哪天敵人半夜偷偷靠近你，你聽不到，就是因為你早就習慣 Zeph 的打呼聲了！",
    "role": "desc",
@@ -660,7 +670,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#065": {
+  "The Price of Ingenuity#066": {
    "src": "Oh my g-gods... the whole station m-must have heard me!",
    "dst": "我的天、天啊……整個車站一、一定都聽到我了！",
    "role": "desc",
@@ -670,7 +680,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#066": {
+  "The Price of Ingenuity#067": {
    "src": "It better have been just the station! Next thing you know, the crown's going to raid this hideout, and they would've only found it because your snoring echoes around {p} every night!",
    "dst": "最好只有車站！等哪天王室來突襲這個藏身處，而他們之所以找得到，就是因為你的打呼每天晚上在 {p} 迴盪！",
    "role": "desc",
@@ -680,7 +690,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#067": {
+  "The Price of Ingenuity#068": {
    "src": "You guys are such b-bullies...",
    "dst": "你們這些人真是霸、霸凌……",
    "role": "desc",
@@ -690,7 +700,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#068": {
+  "The Price of Ingenuity#069": {
    "src": "Oh! W-wonder what it's about. Do you-",
    "dst": "喔！不、不知道是什麼事。你們覺——",
    "role": "desc",
@@ -700,7 +710,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#069": {
+  "The Price of Ingenuity#070": {
    "src": "Do you think h-he's mad about my mistake?",
    "dst": "你們覺得他是不是在氣我犯、犯的那個錯？",
    "role": "desc",
@@ -710,7 +720,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#070": {
+  "The Price of Ingenuity#071": {
    "src": "You heard him yourself, stupid. He wasn't mad! He thinks you did the right thing!",
    "dst": "你自己親耳聽到的，笨蛋。他沒有生氣！他覺得你做得對！",
    "role": "desc",
@@ -720,7 +730,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#071": {
+  "The Price of Ingenuity#072": {
    "src": "B-but... Still! Ugh. I'll have to go freshen up b-before he's here then!",
    "dst": "可、可是……還是！唉。那我得在他到之前先去梳、梳洗一下！",
    "role": "desc",
@@ -730,7 +740,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#072": {
+  "The Price of Ingenuity#073": {
    "src": "And that leaves one more. Hm...",
    "dst": "那就剩最後一個了。唔……",
    "role": "desc",
@@ -740,7 +750,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#073": {
+  "The Price of Ingenuity#074": {
    "src": "{u}, you should let me wake her.",
    "dst": "{u}，這個讓我來叫她。",
    "role": "desc",
@@ -750,7 +760,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#074": {
+  "The Price of Ingenuity#075": {
    "src": "She's... kind of like Sui, but more intense? In the way she's, y'know. Military trained.",
    "dst": "她……有點像 Sui，但更激烈？就是那種，你知道的。受過軍事訓練的。",
    "role": "desc",
@@ -760,7 +770,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#075": {
+  "The Price of Ingenuity#076": {
    "src": "So it's probably better if I do it since I know what I'm dealing with!",
    "dst": "所以大概還是我來比較好，因為我知道我在面對什麼！",
    "role": "desc",
@@ -770,7 +780,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#076": {
+  "The Price of Ingenuity#077": {
    "src": "Something like that!",
    "dst": "差不多是那樣！",
    "role": "desc",
@@ -780,7 +790,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#077": {
+  "The Price of Ingenuity#078": {
    "src": "You know, you'd think she'd wake up at the crack of dawn with her military background... but nope.",
    "dst": "你知道嗎，以她的軍旅背景，你會以為她天一亮就會起床……結果並沒有。",
    "role": "desc",
@@ -790,7 +800,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#078": {
+  "The Price of Ingenuity#079": {
    "src": "Alright, wish me luck!",
    "dst": "好，祝我好運！",
    "role": "desc",
@@ -800,7 +810,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#079": {
+  "The Price of Ingenuity#080": {
    "src": "Ow!",
    "dst": "痛！",
    "role": "desc",
@@ -810,7 +820,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#080": {
+  "The Price of Ingenuity#081": {
    "src": "Rex! What are you doing?",
    "dst": "Rex！你在做什麼？",
    "role": "desc",
@@ -820,7 +830,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#081": {
+  "The Price of Ingenuity#082": {
    "src": "I thought I'd be prepared for it, but nope...",
    "dst": "我以為我準備好了，結果並沒有……",
    "role": "desc",
@@ -830,7 +840,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#082": {
+  "The Price of Ingenuity#083": {
    "src": "We thought you were asleep, Syndra! I was coming up to wake you!",
    "dst": "我們以為你還在睡，Syndra！我正要上來叫你！",
    "role": "desc",
@@ -840,7 +850,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#083": {
+  "The Price of Ingenuity#084": {
    "src": "Well... I'm awake. Quill is stopping by, right?",
    "dst": "嗯……我醒著。Quill 要過來，對吧？",
    "role": "desc",
@@ -850,7 +860,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#084": {
+  "The Price of Ingenuity#085": {
    "src": "Yeah... how'd you know?",
    "dst": "對……你怎麼知道的？",
    "role": "desc",
@@ -860,7 +870,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#085": {
+  "The Price of Ingenuity#086": {
    "src": "I've been awake for a while, Rex. I heard you talking about it downstairs!",
    "dst": "我已經醒了一陣子了，Rex。我聽到你們在樓下講！",
    "role": "desc",
@@ -870,7 +880,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#086": {
+  "The Price of Ingenuity#087": {
    "src": "And here I thought I was a morning person...",
    "dst": "虧我還以為自己是早起的人……",
    "role": "desc",
@@ -880,7 +890,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#087": {
+  "The Price of Ingenuity#088": {
    "src": "Listen to Quill at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 聽 Quill 說話。",
    "role": "desc",
@@ -890,7 +900,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#088": {
+  "The Price of Ingenuity#089": {
    "src": "Ah, hello! Good morning to you all.",
    "dst": "啊，你們好！各位早安。",
    "role": "desc",
@@ -900,7 +910,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#089": {
+  "The Price of Ingenuity#090": {
    "src": "Good morning, sir!",
    "dst": "早安，長官！",
    "role": "desc",
@@ -910,7 +920,7 @@
    "speaker": "Everyone",
    "source": "wiki"
   },
-  "The Price of Ingenuity#090": {
+  "The Price of Ingenuity#091": {
    "src": "Oh, dear. What is with all the formality this morning?",
    "dst": "唉呀。今天早上怎麼這麼多禮節？",
    "role": "desc",
@@ -920,7 +930,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#091": {
+  "The Price of Ingenuity#092": {
    "src": "Well, Yuman told us to be up and ready since you were coming-",
    "dst": "嗯，Yuman 叫我們起床準備好，因為你要來——",
    "role": "desc",
@@ -930,7 +940,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#092": {
+  "The Price of Ingenuity#093": {
    "src": "-so, naturally, the assumption was made that you had a mission for us-",
    "dst": "——所以，很自然地，我們就假設你有任務要交給我們——",
    "role": "desc",
@@ -940,7 +950,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#093": {
+  "The Price of Ingenuity#094": {
    "src": "-o-o-or that w-we had done something wrong...",
    "dst": "——或、或者是我、我們做錯了什麼……",
    "role": "desc",
@@ -950,7 +960,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#094": {
+  "The Price of Ingenuity#095": {
    "src": "Like! Not, um, preparing breakfast!",
    "dst": "比如！沒有，嗯，準備早餐！",
    "role": "desc",
@@ -960,7 +970,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#095": {
+  "The Price of Ingenuity#096": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -970,7 +980,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#096": {
+  "The Price of Ingenuity#097": {
    "src": "Pahaha! Goodness, that was a lot all at once. Syndra, are they typically like this?",
    "dst": "噗哈哈！我的天，一次來這麼多。Syndra，他們平常都是這樣嗎？",
    "role": "desc",
@@ -980,7 +990,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#097": {
+  "The Price of Ingenuity#098": {
    "src": "They're not usually this snappy, no. But between meeting the brothers and experiencing the Roughworks, they're probably getting swept up in their emotions.",
    "dst": "他們平常沒有這麼衝，沒有。不過在見過那幾兄弟、又親身體驗過 Roughworks 之後，他們大概是被情緒帶著走了。",
    "role": "desc",
@@ -990,7 +1000,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#098": {
+  "The Price of Ingenuity#099": {
    "src": "Ah... I understand, don't worry. But no, I'm not here to assign you all a mission, nor to scold you, or anything else of the sort.",
    "dst": "啊……我明白，別擔心。不過不是的，我不是來指派任務的，也不是來責備誰，或任何那一類的事。",
    "role": "desc",
@@ -1000,7 +1010,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#099": {
+  "The Price of Ingenuity#100": {
    "src": "I simply wanted to offer you all a starting sum of tickets for the shops. I'd meant to give them yesterday, but in the chaos I forgot to.",
    "dst": "我只是想給你們一筆初始的商店票券。我本來昨天就要給的，但在混亂之中忘了。",
    "role": "desc",
@@ -1010,7 +1020,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#100": {
+  "The Price of Ingenuity#101": {
    "src": "The ticket system is used to ration out food and other items to people that need it. You'll receive a weekly allowance of tickets to spend on whatever you'd like, in addition to this starting sum.",
    "dst": "票券制度是用來把食物與其他物資配給給需要的人。除了這筆初始額度之外，你們每週還會有一份配額，想買什麼都可以。",
    "role": "desc",
@@ -1020,7 +1030,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#101": {
+  "The Price of Ingenuity#102": {
    "src": "Of course, basic amenities are free of charge if you're part of our community. Wouldn't want any of our members to sleep on the tracks, after all!",
    "dst": "當然，只要你是我們社群的一員，基本生活所需都是免費的。畢竟我們可不想讓成員睡在鐵軌上！",
    "role": "desc",
@@ -1030,7 +1040,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#102": {
+  "The Price of Ingenuity#103": {
    "src": "So... I baked bread for, um, no reason?",
    "dst": "所以……我烤的麵包，嗯，白烤了？",
    "role": "desc",
@@ -1040,7 +1050,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#103": {
+  "The Price of Ingenuity#104": {
    "src": "I fear so, haha! Do not worry, you will not be forced to do work here.",
    "dst": "恐怕是的，哈哈！別擔心，你們在這裡不會被強迫做工。",
    "role": "desc",
@@ -1050,7 +1060,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#104": {
+  "The Price of Ingenuity#105": {
    "src": "And, besides, if I wanted you to cook for us, I would have let you know well in advance.",
    "dst": "而且，如果我真要你替我們做飯，我一定會提早很久跟你說。",
    "role": "desc",
@@ -1060,7 +1070,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#105": {
+  "The Price of Ingenuity#106": {
    "src": "I mean... I w-wouldn't mind some fr-fresh bread...",
    "dst": "我是說……我不、不介意來點新鮮的麵包……",
    "role": "desc",
@@ -1070,7 +1080,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#106": {
+  "The Price of Ingenuity#107": {
    "src": "Nope! It's all mine!",
    "dst": "才不要！全都是我的！",
    "role": "desc",
@@ -1080,7 +1090,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#107": {
+  "The Price of Ingenuity#108": {
    "src": "Ah, one more thing. I wanted to point you all towards the training yard- Zeph, I believe you have been there already?",
    "dst": "啊，還有一件事。我想請各位去看看訓練場——Zeph，我想你已經去過了？",
    "role": "desc",
@@ -1090,7 +1100,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#108": {
+  "The Price of Ingenuity#109": {
    "src": "Y-yes.",
    "dst": "去、去過了。",
    "role": "desc",
@@ -1100,7 +1110,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#109": {
+  "The Price of Ingenuity#110": {
    "src": "I believe the brothers should be there right now. If you're to be working with us, it would be best to get used to each other's fighting styles.",
    "dst": "我想那幾兄弟現在應該在那裡。既然要跟我們一起行動，最好先熟悉彼此的戰鬥方式。",
    "role": "desc",
@@ -1110,7 +1120,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#110": {
+  "The Price of Ingenuity#111": {
    "src": "Why don't you go join them there, while Syndra and I discuss further matters?",
    "dst": "你們何不過去跟他們會合，我和 Syndra 則繼續討論其他事情？",
    "role": "desc",
@@ -1120,7 +1130,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#111": {
+  "The Price of Ingenuity#112": {
    "src": "Find the brothers at the training yard at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~1}, {~2}, -{~3}] 的訓練場找那幾兄弟。",
    "role": "desc",
@@ -1130,7 +1140,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#112": {
+  "The Price of Ingenuity#113": {
    "src": "...do you really gotta head out there again?",
    "dst": "……你真的非得再出去一趟不可嗎？",
    "role": "desc",
@@ -1140,7 +1150,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#113": {
+  "The Price of Ingenuity#114": {
    "src": "You know contracts are rare, man. I have to take what I can get.",
    "dst": "你知道委託很少的，老兄。有得接我就得接。",
    "role": "desc",
@@ -1150,7 +1160,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#114": {
+  "The Price of Ingenuity#115": {
    "src": "Why's it always gotta be you and Yus heading out?! For once- for once, man, take care of yourself!",
    "dst": "為什麼每次都是你跟 Yus 出去？！有一次——就一次，老兄，照顧一下你自己！",
    "role": "desc",
@@ -1160,7 +1170,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#115": {
+  "The Price of Ingenuity#116": {
    "src": "I-",
    "dst": "我——",
    "role": "desc",
@@ -1170,7 +1180,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#116": {
+  "The Price of Ingenuity#117": {
    "src": "Are we interrupting something?",
    "dst": "我們是不是打斷了什麼？",
    "role": "desc",
@@ -1180,7 +1190,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#117": {
+  "The Price of Ingenuity#118": {
    "src": "Uh, yeah, a little-!",
    "dst": "呃，對，有一點——！",
    "role": "desc",
@@ -1190,7 +1200,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#118": {
+  "The Price of Ingenuity#119": {
    "src": "No, this can wait. Did Quill send you over?",
    "dst": "沒有，這可以晚點再說。Quill 叫你們過來的？",
    "role": "desc",
@@ -1200,7 +1210,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#119": {
+  "The Price of Ingenuity#120": {
    "src": "Indeed he did. He suggested we get to know each other's fighting styles!",
    "dst": "確實如此。他建議我們互相熟悉彼此的戰鬥方式！",
    "role": "desc",
@@ -1210,7 +1220,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#120": {
+  "The Price of Ingenuity#121": {
    "src": "Not a bad idea. Yuman and I would be happy to show off what we can do, right?",
    "dst": "這主意不錯。Yuman 和我很樂意展示我們的本事，對吧？",
    "role": "desc",
@@ -1220,7 +1230,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#121": {
+  "The Price of Ingenuity#122": {
    "src": "...yeah, man, sure.",
    "dst": "……對啊，老兄，好啊。",
    "role": "desc",
@@ -1230,7 +1240,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#122": {
+  "The Price of Ingenuity#123": {
    "src": "Well, Zeph, {u}, and I've already been through it! Some cool moves from you both! Man, getting to see a cursed one in action was awesome...",
    "dst": "Zeph、{u}，還有我已經比劃過了！你們兩個都有幾招不錯的！天啊，能親眼看到受詛者出手實在太讚了……",
    "role": "desc",
@@ -1240,7 +1250,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#123": {
+  "The Price of Ingenuity#124": {
    "src": "...it was?",
    "dst": "……是嗎？",
    "role": "desc",
@@ -1250,7 +1260,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#124": {
+  "The Price of Ingenuity#125": {
    "src": "Yeah! Like, I'd hear all the stories, and think... man, having those kinds of powers sounds so cool. Sometimes I wished I could have em! Without, uh, being evil, of course.",
    "dst": "對啊！就像，我從小聽那些故事，然後想……天啊，有那種力量聽起來超酷的。有時候我還希望我也有！當然，不要順便變成壞人那種。",
    "role": "desc",
@@ -1260,7 +1270,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#125": {
+  "The Price of Ingenuity#126": {
    "src": "You'd be even harder to deal with if you did, bro. But on that subject- Quill said something about you all practicing... what was the word he used... \"magic?\"",
    "dst": "你要是有了，那才更難搞，老弟。不過說到這個——Quill 提到你們在練……他用的詞是什麼來著……「魔法」？",
    "role": "desc",
@@ -1270,7 +1280,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#126": {
+  "The Price of Ingenuity#127": {
    "src": "What?! Ey, princess, why didn't you show anything off the other day?",
    "dst": "什麼？！欸，公主，你那天怎麼什麼都沒露一手？",
    "role": "desc",
@@ -1280,7 +1290,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#127": {
+  "The Price of Ingenuity#128": {
    "src": "O- oh, I- I- I-",
    "dst": "喔——喔，我、我、我——",
    "role": "desc",
@@ -1290,7 +1300,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#128": {
+  "The Price of Ingenuity#129": {
    "src": "Don't be insensitive, Yuman. It isn't something people just... pick up.",
    "dst": "別那麼白目，Yuman。那不是人隨便就……學得會的東西。",
    "role": "desc",
@@ -1300,7 +1310,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#129": {
+  "The Price of Ingenuity#130": {
    "src": "From what little I've heard from Quill, it can take years of study to master a blessing... so I wouldn't be surprised if they couldn't even make a spark! Uh, no offense.",
    "dst": "就我從 Quill 那裡聽到的一點皮毛，光是掌握一份祝福就可能要花上好幾年……所以就算他們連一點火花都變不出來我也不會意外。呃，沒有冒犯的意思。",
    "role": "desc",
@@ -1310,7 +1320,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#130": {
+  "The Price of Ingenuity#131": {
    "src": "W- well... maybe we'll s- sur- surprise you!",
    "dst": "那、那……也許我們會讓你意、意外喔！",
    "role": "desc",
@@ -1320,7 +1330,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#131": {
+  "The Price of Ingenuity#132": {
    "src": "Ha, think you're the only ones with hidden talents? I've got a trick or two up my sleeve too!",
    "dst": "哈，以為只有你們有藏一手？我也有一兩招壓箱寶！",
    "role": "desc",
@@ -1330,7 +1340,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#132": {
+  "The Price of Ingenuity#133": {
    "src": "Bro, you don't have sleeves...",
    "dst": "老哥，你根本沒有箱子……",
    "role": "desc",
@@ -1340,7 +1350,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#133": {
+  "The Price of Ingenuity#134": {
    "src": "It's an expression, dumbass. Like you're one to talk. Why are you half-naked?",
    "dst": "那是成語，白痴。你也好意思講。你幹嘛半裸？",
    "role": "desc",
@@ -1350,7 +1360,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#134": {
+  "The Price of Ingenuity#135": {
    "src": "To show off my abs? Obviously. Anyway, {u}, why don't you decide who goes first?",
    "dst": "秀我的腹肌啊？不然呢。總之，{u}，不如你來決定誰先上？",
    "role": "desc",
@@ -1360,7 +1370,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#135": {
+  "The Price of Ingenuity#136": {
    "src": "Talk to each member at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 跟每一位成員談話。",
    "role": "desc",
@@ -1370,7 +1380,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#136": {
+  "The Price of Ingenuity#137": {
    "src": "Who, me? Sorry, but I'll sit this one out until you're all done.",
    "dst": "誰，我嗎？抱歉，我最後再上，等你們都比完。",
    "role": "desc",
@@ -1380,7 +1390,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#137": {
+  "The Price of Ingenuity#138": {
    "src": "Got to save the best for last, right? Heh.",
    "dst": "壓軸總得留給最好的，對吧？呵。",
    "role": "desc",
@@ -1390,7 +1400,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#138": {
+  "The Price of Ingenuity#139": {
    "src": "I'll have to add arrows until my bowstring runs out of space next time...",
    "dst": "下次我得多搭幾支箭，搭到弦上沒位置為止……",
    "role": "desc",
@@ -1400,7 +1410,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#139": {
+  "The Price of Ingenuity#140": {
    "src": "I'll h-have to come back here a-again tonight!",
    "dst": "我今、今晚得再來這裡一趟！",
    "role": "desc",
@@ -1410,7 +1420,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#140": {
+  "The Price of Ingenuity#141": {
    "src": "It's like there's ripples gently spreading within me...",
    "dst": "就像有漣漪在我體內輕輕擴散……",
    "role": "desc",
@@ -1420,7 +1430,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#141": {
+  "The Price of Ingenuity#142": {
    "src": "To see my powers growing this clearly...",
    "dst": "能這麼清楚地看見自己的力量在成長……",
    "role": "desc",
@@ -1430,7 +1440,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#142": {
+  "The Price of Ingenuity#143": {
    "src": "So. Impressed yet?",
    "dst": "怎麼樣。佩服了嗎？",
    "role": "desc",
@@ -1440,7 +1450,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#143": {
+  "The Price of Ingenuity#144": {
    "src": "Dang, I think I overloaded it. I'll have to put it through a charge cycle...",
    "dst": "糟，我好像讓它過載了。得跑一輪充能循環……",
    "role": "desc",
@@ -1450,7 +1460,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#144": {
+  "The Price of Ingenuity#145": {
    "src": "Oh, my turn?",
    "dst": "喔，輪到我了？",
    "role": "desc",
@@ -1460,7 +1470,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#145": {
+  "The Price of Ingenuity#146": {
    "src": "So. Magic, curses, blessings... whatever you want to call it, it hasn't worked for me. It just doesn't... click.",
    "dst": "所以呢。魔法、詛咒、祝福……你想怎麼叫都行，反正對我沒用。它就是……接不上。",
    "role": "desc",
@@ -1470,7 +1480,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#146": {
+  "The Price of Ingenuity#147": {
    "src": "Ah, not to worry, Rex! Even without it, none in the province could match your accuracy with a bow.",
    "dst": "啊，別擔心，Rex！就算沒有它，這個行省裡也沒有人的弓術準得過你。",
    "role": "desc",
@@ -1480,7 +1490,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#147": {
+  "The Price of Ingenuity#148": {
    "src": "Y- yeah! And if you d- did get magic, it'd j- jus- just be unfair for the rest of us!",
    "dst": "對、對啊！而且你要是也有了魔、魔法，那對我們其他人就太不公平了！",
    "role": "desc",
@@ -1490,7 +1500,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#148": {
+  "The Price of Ingenuity#149": {
    "src": "Yeah, yeah, sure. Either way, I've been practicing a new technique... let's see if I can pull it off.",
    "dst": "是啦，是啦。反正我一直在練一個新技巧……來看看我使不使得出來。",
    "role": "desc",
@@ -1500,7 +1510,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#149": {
+  "The Price of Ingenuity#150": {
    "src": "...are you sure that's not magic?",
    "dst": "……你確定那不是魔法？",
    "role": "desc",
@@ -1510,7 +1520,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#150": {
+  "The Price of Ingenuity#151": {
    "src": "Yep! I just place every arrow on the string at once, which lets me shoot at a much larger area!",
    "dst": "確定！我只是把每一支箭同時搭上弦，這樣就能射到大得多的範圍！",
    "role": "desc",
@@ -1520,7 +1530,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#151": {
+  "The Price of Ingenuity#152": {
    "src": "But... how'd you manage to hit each arrow right on target?! That's... insane!",
    "dst": "可是……你怎麼有辦法讓每一支箭都正中目標？！那……太扯了！",
    "role": "desc",
@@ -1530,7 +1540,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#152": {
+  "The Price of Ingenuity#153": {
    "src": "Ha. Go on, keep praising my skill. That was actually the first time I tried that many arrows at once... glad it worked out!",
    "dst": "哈。繼續誇，繼續誇我的本事。其實那是我第一次一次搭那麼多支箭……還好成功了！",
    "role": "desc",
@@ -1540,7 +1550,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#153": {
+  "The Price of Ingenuity#154": {
    "src": "The... first... You said you'd practiced it, man! What do you mean that was the first time?!",
    "dst": "第……一……你說你練過的啊，老兄！什麼叫那是第一次？！",
    "role": "desc",
@@ -1550,7 +1560,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#154": {
+  "The Price of Ingenuity#155": {
    "src": "Yeah? I practiced theoretically. In my head. Keep up, Yulie.",
    "dst": "對啊？我在腦子裡練過。理論上的。跟上啊，Yulie。",
    "role": "desc",
@@ -1560,7 +1570,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#155": {
+  "The Price of Ingenuity#156": {
    "src": "Okay, so, who's next?",
    "dst": "好，那麼，下一個是誰？",
    "role": "desc",
@@ -1570,7 +1580,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#156": {
+  "The Price of Ingenuity#157": {
    "src": "Couldn't even make a spark, eh?",
    "dst": "「連一點火花都變不出來」，是吧？",
    "role": "desc",
@@ -1580,7 +1590,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#157": {
+  "The Price of Ingenuity#158": {
    "src": "Alright, alright! I've been proven wrong.",
    "dst": "好啦，好啦！算我看走眼。",
    "role": "desc",
@@ -1590,7 +1600,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#158": {
+  "The Price of Ingenuity#159": {
    "src": "It's my t-turn, huh?",
    "dst": "輪、輪到我了嗎？",
    "role": "desc",
@@ -1600,7 +1610,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#159": {
+  "The Price of Ingenuity#160": {
    "src": "So... I w-want to first say that I've been c-coming here every night.",
    "dst": "那……我想先說，我每天晚、晚上都有來這裡。",
    "role": "desc",
@@ -1610,7 +1620,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#160": {
+  "The Price of Ingenuity#161": {
    "src": "I was e-embarrassed that I just didn't g-get it.",
    "dst": "我很不、不好意思自己就是學不會。",
    "role": "desc",
@@ -1620,7 +1630,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#161": {
+  "The Price of Ingenuity#162": {
    "src": "I mean, j-just look at how fast your m-magic developed, Mora!",
    "dst": "我是說，你看你的魔、魔法發展得多快，Mora！",
    "role": "desc",
@@ -1630,7 +1640,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#162": {
+  "The Price of Ingenuity#163": {
    "src": "And you, S-sui! You are a natural, a-after all.",
    "dst": "還有你，S——Sui！你根本就是天生的。",
    "role": "desc",
@@ -1640,7 +1650,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#163": {
+  "The Price of Ingenuity#164": {
    "src": "I still don't know any form of magic. Why feel so embarassed?",
    "dst": "我到現在還是一種魔法都不會。有什麼好不好意思的？",
    "role": "desc",
@@ -1650,7 +1660,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#164": {
+  "The Price of Ingenuity#165": {
    "src": "Rex, you don't even n-need magic to be a valuable asset! You're the best archer in the w-world!",
    "dst": "Rex，你根本不需、需要魔法就已經是重要戰力了！你是全世界最好的弓手！",
    "role": "desc",
@@ -1660,7 +1670,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#165": {
+  "The Price of Ingenuity#166": {
    "src": "I don't h-have that skill! My blade skills a-aren't good enough! You've h-had to save me time and time a-again.",
    "dst": "我沒、沒有那種本事！我的劍術也不、不夠好！你已經救、救過我太多次了。",
    "role": "desc",
@@ -1670,7 +1680,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#166": {
+  "The Price of Ingenuity#167": {
    "src": "And {u}, I felt like I had l-let you down after all the k-knowledge you had given me.",
    "dst": "而 {u}，你教了我那麼多，我卻覺得自己讓、讓你失望了。",
    "role": "desc",
@@ -1680,7 +1690,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#167": {
+  "The Price of Ingenuity#168": {
    "src": "I may not have talked to you a lot, Zeph. But from what I know of the science behind magic, you don't have to blame yourself for not getting it.",
    "dst": "Zeph，我跟你聊得不多。不過就我對魔法背後那套科學的了解，你不必為了學不會而責怪自己。",
    "role": "desc",
@@ -1690,7 +1700,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#168": {
+  "The Price of Ingenuity#169": {
    "src": "A lot of people study magic their whole lives. I'm sure you'll get there eventually.",
    "dst": "很多人一輩子都在研究魔法。我相信你遲早會走到那一步的。",
    "role": "desc",
@@ -1700,7 +1710,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#169": {
+  "The Price of Ingenuity#170": {
    "src": "Thank y-you, Yusanu. However, I think I f-finally figured it out...",
    "dst": "謝、謝謝你，Yusanu。不過，我想我終、終於抓到訣竅了……",
    "role": "desc",
@@ -1710,7 +1720,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#170": {
+  "The Price of Ingenuity#171": {
    "src": "Yo! Where'd he go?",
    "dst": "喲！他跑哪去了？",
    "role": "desc",
@@ -1720,7 +1730,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#171": {
+  "The Price of Ingenuity#172": {
    "src": "I think I'm finally g-getting this magic thing somewhat down!",
    "dst": "我想我總算把魔法這件事摸出一點門、門道了！",
    "role": "desc",
@@ -1730,7 +1740,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#172": {
+  "The Price of Ingenuity#173": {
    "src": "I will n-not stop practicing! N-not until I can m-m-match you all!",
    "dst": "我不、不會停下來練習！在我能追、追、追上你們所有人之前都不會！",
    "role": "desc",
@@ -1740,7 +1750,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#173": {
+  "The Price of Ingenuity#174": {
    "src": "Do I, um, have to?",
    "dst": "我，嗯，一定要嗎？",
    "role": "desc",
@@ -1750,7 +1760,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#174": {
+  "The Price of Ingenuity#175": {
    "src": "Come on, man! Show us what you've got!",
    "dst": "來嘛，老兄！讓我們看看你的本事！",
    "role": "desc",
@@ -1760,7 +1770,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#175": {
+  "The Price of Ingenuity#176": {
    "src": "...okay. I've tried to, um, practice a bit, now that I'm... yeah.",
    "dst": "……好吧。我，嗯，有試著練一點，既然我現在……嗯。",
    "role": "desc",
@@ -1770,7 +1780,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#176": {
+  "The Price of Ingenuity#177": {
    "src": "I haven't fully developed it, but, I have this new skill...",
    "dst": "我還沒完全練成，不過，我有一招新的……",
    "role": "desc",
@@ -1780,7 +1790,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#177": {
+  "The Price of Ingenuity#178": {
    "src": "Okay! I'm going to try it!",
    "dst": "好！我要試了！",
    "role": "desc",
@@ -1790,7 +1800,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#178": {
+  "The Price of Ingenuity#179": {
    "src": "W- woah! It's like you ma- made that out of n- n- nothing!",
    "dst": "哇、哇喔！那就像你從無、無、無中生出來的一樣！",
    "role": "desc",
@@ -1800,7 +1810,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#179": {
+  "The Price of Ingenuity#180": {
    "src": "...ugh! It takes so much concentration... even a word makes me fail...",
    "dst": "……唔！那超級需要專注……有人講一個字我就失敗了……",
    "role": "desc",
@@ -1810,7 +1820,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#180": {
+  "The Price of Ingenuity#181": {
    "src": "Also. It's not, um, out of nothing.",
    "dst": "還有。那不是，嗯，無中生有。",
    "role": "desc",
@@ -1820,7 +1830,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#181": {
+  "The Price of Ingenuity#182": {
    "src": "It's like... there's an ocean of swirling energy, all around me. If I can get a bit, in, like... a bucket, I can use it. But... I don't know how to get it without, um, falling into it and getting overwhelmed.",
    "dst": "那就像是……我周圍有一整片翻騰的能量之海。如果我能舀一點起來，像是裝進，嗯，一個桶子裡，我就能用它。可是……我不知道怎麼舀才不會，嗯，掉進去被淹沒。",
    "role": "desc",
@@ -1830,7 +1840,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#182": {
+  "The Price of Ingenuity#183": {
    "src": "...does that, um, make sense?",
    "dst": "那樣……嗯，講得通嗎？",
    "role": "desc",
@@ -1840,7 +1850,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#183": {
+  "The Price of Ingenuity#184": {
    "src": "Uh... n- not- not really, but-",
    "dst": "呃……不、不太懂，不過——",
    "role": "desc",
@@ -1850,7 +1860,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#184": {
+  "The Price of Ingenuity#185": {
    "src": "Let me try again!",
    "dst": "讓我再試一次！",
    "role": "desc",
@@ -1860,7 +1870,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#185": {
+  "The Price of Ingenuity#186": {
    "src": "Come... on... do it!!",
    "dst": "來……啊……成功啊！！",
    "role": "desc",
@@ -1870,7 +1880,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#186": {
+  "The Price of Ingenuity#187": {
    "src": "Woah!!",
    "dst": "哇喔！！",
    "role": "desc",
@@ -1880,7 +1890,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#187": {
+  "The Price of Ingenuity#188": {
    "src": "Sui!! Are you alright?",
    "dst": "Sui！！你還好嗎？",
    "role": "desc",
@@ -1890,7 +1900,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#188": {
+  "The Price of Ingenuity#189": {
    "src": "I... I'm fine. No, even... more than that...",
    "dst": "我……我沒事。不，甚至……不只沒事……",
    "role": "desc",
@@ -1900,7 +1910,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#189": {
+  "The Price of Ingenuity#190": {
    "src": "It's like... I finally felt this power's ebb and flow, not just... it pouring out, I...",
    "dst": "那就像……我終於感覺到這股力量的漲落，而不只是……讓它傾瀉出來，我……",
    "role": "desc",
@@ -1910,7 +1920,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#190": {
+  "The Price of Ingenuity#191": {
    "src": "...ah! Is everyone fine? You... you all seem fine. Okay...",
    "dst": "……啊！大家都沒事吧？你們……你們看起來都沒事。好……",
    "role": "desc",
@@ -1920,7 +1930,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#191": {
+  "The Price of Ingenuity#192": {
    "src": "I think... I think that's all from me.",
    "dst": "我想……我想我就到這裡。",
    "role": "desc",
@@ -1930,7 +1940,7 @@
    "speaker": "Sui",
    "source": "wiki"
   },
-  "The Price of Ingenuity#192": {
+  "The Price of Ingenuity#193": {
    "src": "Very well! This is as good an opportunity as any to show off my progress!",
    "dst": "很好！這正是展示我進展的大好機會！",
    "role": "desc",
@@ -1940,7 +1950,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#193": {
+  "The Price of Ingenuity#194": {
    "src": "Although I am proficient in combat with my hammer, that is... standard. So, allow me to show my magic instead, as that is what I have been training!",
    "dst": "雖然我用鎚子作戰相當熟練，但那是……常規。所以，容我改為展示我的魔法，因為那才是我一直在鍛鍊的！",
    "role": "desc",
@@ -1950,7 +1960,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#194": {
+  "The Price of Ingenuity#195": {
    "src": "...oh, dear. I did not expect it to have become so powerful! It seems I must still master control over it...",
    "dst": "……哎呀。我沒料到它已經變得這麼強！看來我還得再掌握對它的控制……",
    "role": "desc",
@@ -1960,7 +1970,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#195": {
+  "The Price of Ingenuity#196": {
    "src": "I apologize for the damage I have caused. If you would ask for compensation, I would gladly provide it.",
    "dst": "我為造成的損壞致歉。若你們要求賠償，我樂意支付。",
    "role": "desc",
@@ -1970,7 +1980,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#196": {
+  "The Price of Ingenuity#197": {
    "src": "Eh, don't worry about it. It's just a training room. Besides, all this junk in here doesn't even work anymore.",
    "dst": "欸，別放在心上。這只是個訓練室。何況這裡面這些破爛本來就都不能用了。",
    "role": "desc",
@@ -1980,7 +1990,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#197": {
+  "The Price of Ingenuity#198": {
    "src": "What a relief.",
    "dst": "那真是鬆一口氣。",
    "role": "desc",
@@ -1990,7 +2000,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#198": {
+  "The Price of Ingenuity#199": {
    "src": "Yo, that was badass, man! Your curse is awesome.",
    "dst": "喲，那超屌的欸，老兄！你的詛咒好猛。",
    "role": "desc",
@@ -2000,7 +2010,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#199": {
+  "The Price of Ingenuity#200": {
    "src": "Is it! I suppose it is, haha! I am glad to have had the oppurtunity to learn to use it.",
    "dst": "是嗎！我想確實如此，哈哈！我很慶幸有機會學會使用它。",
    "role": "desc",
@@ -2010,7 +2020,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#200": {
+  "The Price of Ingenuity#201": {
    "src": "That is all, then. Who will go next?",
    "dst": "那我就到這裡。下一位是誰？",
    "role": "desc",
@@ -2020,7 +2030,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#201": {
+  "The Price of Ingenuity#202": {
    "src": "Lemme show you just what I can really do, man.",
    "dst": "讓我給你們看看我真正的本事，老兄。",
    "role": "desc",
@@ -2030,7 +2040,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#202": {
+  "The Price of Ingenuity#203": {
    "src": "Watch and learn, princess. Not every day you get to see me shred.",
    "dst": "看好了，公主。可不是每天都看得到我開幹。",
    "role": "desc",
@@ -2040,7 +2050,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#203": {
+  "The Price of Ingenuity#204": {
    "src": "Alright, let's rock!",
    "dst": "好，來搖滾吧！",
    "role": "desc",
@@ -2050,7 +2060,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#204": {
+  "The Price of Ingenuity#205": {
    "src": "Yuman But wait! That's not all!",
    "dst": "但是等等！還沒完呢！",
    "role": "desc",
@@ -2060,7 +2070,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#205": {
+  "The Price of Ingenuity#206": {
    "src": "My Sonic Boomer can help out with defense too! I'm no one trick pony - I can cover every genre of combat!",
    "dst": "我的音爆者在防禦上也能幫上忙！我可不是只會一招——各種戰鬥曲風我都能罩！",
    "role": "desc",
@@ -2070,7 +2080,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#206": {
+  "The Price of Ingenuity#207": {
    "src": "And bam! That's it from me and Sonic Boomer for today.",
    "dst": "然後，砰！我和音爆者今天就到這裡。",
    "role": "desc",
@@ -2080,7 +2090,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#207": {
+  "The Price of Ingenuity#208": {
    "src": "Who's next?",
    "dst": "下一個是誰？",
    "role": "desc",
@@ -2090,7 +2100,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#208": {
+  "The Price of Ingenuity#209": {
    "src": "I suppose it's my turn.",
    "dst": "我想輪到我了。",
    "role": "desc",
@@ -2100,7 +2110,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#209": {
+  "The Price of Ingenuity#210": {
    "src": "I'll say, I'm not as... direct... as Yuman. But I can hold my own in a fight.",
    "dst": "我得說，我沒有 Yuman 那麼……直接。不過打起來我也撐得住。",
    "role": "desc",
@@ -2110,7 +2120,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#210": {
+  "The Price of Ingenuity#211": {
    "src": "A ranged weapon, huh?",
    "dst": "遠程武器啊？",
    "role": "desc",
@@ -2120,7 +2130,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#211": {
+  "The Price of Ingenuity#212": {
    "src": "I mean... yeah? Yusanu made this thing for me, and he calls it the Electric Blaster.",
    "dst": "我是說……對啊？Yusanu 幫我做的，他管它叫電擊爆能槍。",
    "role": "desc",
@@ -2130,7 +2140,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#212": {
+  "The Price of Ingenuity#213": {
    "src": "It's also able to fire a much larger blast with way more power, but that does make it less... precise.",
    "dst": "它也能發射威力大得多的大範圍轟擊，不過那樣就比較不……精準了。",
    "role": "desc",
@@ -2140,7 +2150,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#213": {
+  "The Price of Ingenuity#214": {
    "src": "That's all from me. Next one!",
    "dst": "我就到這裡。下一位！",
    "role": "desc",
@@ -2150,7 +2160,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#214": {
+  "The Price of Ingenuity#215": {
    "src": "Alrighty! Let's see... where to start...",
    "dst": "好嘞！我看看……從哪裡開始好呢……",
    "role": "desc",
@@ -2160,7 +2170,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#215": {
+  "The Price of Ingenuity#216": {
    "src": "Oh, you have gotta be... again?! Really?! Ugh!",
    "dst": "喔，不是吧……又來？！真的假的？！唉！",
    "role": "desc",
@@ -2170,7 +2180,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#216": {
+  "The Price of Ingenuity#217": {
    "src": "Yulie, Yuman, can you check the tunnels for any intruders?",
    "dst": "Yulie、Yuman，你們可以去隧道那邊查一下有沒有入侵者嗎？",
    "role": "desc",
@@ -2180,7 +2190,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#217": {
+  "The Price of Ingenuity#218": {
    "src": "If you need us to. Keep us updated, would you?",
    "dst": "既然你需要的話。有狀況記得跟我們說。",
    "role": "desc",
@@ -2190,7 +2200,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#218": {
+  "The Price of Ingenuity#219": {
    "src": "Sure. Get the others to help you, I gotta run and check on things!",
    "dst": "沒問題。找其他人幫你們，我得跑一趟去看看情況！",
    "role": "desc",
@@ -2200,7 +2210,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#219": {
+  "The Price of Ingenuity#220": {
    "src": "Of course we can help, just tell us what to do!",
    "dst": "我們當然可以幫忙，你只管吩咐！",
    "role": "desc",
@@ -2210,7 +2220,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#220": {
+  "The Price of Ingenuity#221": {
    "src": "{u} and I actually have some important tasks Syndra needed done!! Will you be okay without us?",
    "dst": "{u} 和我其實有 Syndra 交代的重要任務要辦！！沒有我們你們可以嗎？",
    "role": "desc",
@@ -2220,7 +2230,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#221": {
+  "The Price of Ingenuity#222": {
    "src": "We will. It shouldn't be too hard for us, anyway- just routine check ups.",
    "dst": "可以。反正對我們來說應該不難——只是例行檢查。",
    "role": "desc",
@@ -2230,7 +2240,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#222": {
+  "The Price of Ingenuity#223": {
    "src": "Yep, yep! Alright guys, follow papa!",
    "dst": "沒問題沒問題！好啦各位，跟著爸爸走！",
    "role": "desc",
@@ -2240,7 +2250,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#223": {
+  "The Price of Ingenuity#224": {
    "src": "Wh- what? Ugh... put some c- cl- clothes on, a- at- at least.",
    "dst": "什、什麼？唉……至、至少穿件衣服吧。",
    "role": "desc",
@@ -2250,7 +2260,7 @@
    "speaker": "Zeph",
    "source": "wiki"
   },
-  "The Price of Ingenuity#224": {
+  "The Price of Ingenuity#225": {
    "src": "Ha! Getting flustered, eh?",
    "dst": "哈！害羞啦？",
    "role": "desc",
@@ -2260,7 +2270,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#225": {
+  "The Price of Ingenuity#226": {
    "src": "Wait for them to leave...",
    "dst": "等他們走……",
    "role": "desc",
@@ -2270,7 +2280,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#226": {
+  "The Price of Ingenuity#227": {
    "src": "Okay! They're gone.",
    "dst": "好！他們走了。",
    "role": "desc",
@@ -2280,7 +2290,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#227": {
+  "The Price of Ingenuity#228": {
    "src": "I needed a way to get everyone else out of here so we could talk!",
    "dst": "我需要一個把其他人都支開的辦法，這樣我們才能談！",
    "role": "desc",
@@ -2290,7 +2300,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#228": {
+  "The Price of Ingenuity#229": {
    "src": "Yeah, obviously! It was the best excuse I could come up with in the moment.",
    "dst": "對啊，很明顯吧！那是我當下想得出來最好的藉口了。",
    "role": "desc",
@@ -2300,7 +2310,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#229": {
+  "The Price of Ingenuity#230": {
    "src": "So, look. Yusanu's been really hard to get a read of! He's barely ever around- I'm honestly surprised he even showed up today!",
    "dst": "所以，聽著。Yusanu 這個人真的很難看透！他幾乎從來不在——老實說我今天看到他出現還挺意外的！",
    "role": "desc",
@@ -2310,7 +2320,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#230": {
+  "The Price of Ingenuity#231": {
    "src": "But anyway, when you and Zeph headed out with Yuman during the last alarm, I wanted to check in with Yusanu and see what he was up to.",
    "dst": "總之，上次警報響的時候你和 Zeph 跟 Yuman 出去了，那時我想去找 Yusanu 看看他在忙什麼。",
    "role": "desc",
@@ -2320,7 +2330,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#231": {
+  "The Price of Ingenuity#232": {
    "src": "But guess what? He was gone! Walked into his workshop and never walked out. Isn't that weird?",
    "dst": "結果你猜怎樣？他不見了！走進他的工坊，然後就沒再走出來。這不奇怪嗎？",
    "role": "desc",
@@ -2330,7 +2340,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#232": {
+  "The Price of Ingenuity#233": {
    "src": "I don't know what it means, and I don't know if he's a risk to us or not. But what I do know is that he's suspicious!",
    "dst": "我不知道那代表什麼，也不知道他對我們是不是威脅。但我知道的是，他很可疑！",
    "role": "desc",
@@ -2340,7 +2350,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#233": {
+  "The Price of Ingenuity#234": {
    "src": "Because they'd all probably tell me not to do anything impulsive right now. Which isn't even true, I've thought this plan out extensively!",
    "dst": "因為他們大概都會叫我現在別衝動行事。但那根本不對，我這個計畫可是想得很周全！",
    "role": "desc",
@@ -2350,7 +2360,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#234": {
+  "The Price of Ingenuity#235": {
    "src": "Come on, meet me outside his workshop! I just want to look. If it's nothing, then it's nothing! But I don't think it's nothing.",
    "dst": "來吧，在他工坊外面跟我碰面！我只是想看一眼。如果沒事，那就沒事！但我不覺得會沒事。",
    "role": "desc",
@@ -2360,7 +2370,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#235": {
+  "The Price of Ingenuity#236": {
    "src": "Meet up with Rex at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~1}, {~2}, -{~3}] 與 Rex 會合。",
    "role": "desc",
@@ -2370,7 +2380,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#236": {
+  "The Price of Ingenuity#237": {
    "src": "I'll meet up with you at the workshop.",
    "dst": "我在工坊那邊跟你會合。",
    "role": "desc",
@@ -2380,7 +2390,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#237": {
+  "The Price of Ingenuity#238": {
    "src": "Any signs of him?",
    "dst": "有他的蹤跡嗎？",
    "role": "desc",
@@ -2390,7 +2400,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#238": {
+  "The Price of Ingenuity#239": {
    "src": "Sure does, huh.",
    "dst": "確實沒有，對吧。",
    "role": "desc",
@@ -2400,7 +2410,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#239": {
+  "The Price of Ingenuity#240": {
    "src": "See? I told you! He's just... gone.",
    "dst": "看吧？我就說了！他就是……不見了。",
    "role": "desc",
@@ -2410,7 +2420,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#240": {
+  "The Price of Ingenuity#241": {
    "src": "Not even a trace... Seems like I wasn't distrustful for nothing. But how?",
    "dst": "連一點痕跡都沒有……看來我不是白白起疑心。但怎麼辦到的？",
    "role": "desc",
@@ -2420,7 +2430,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#241": {
+  "The Price of Ingenuity#242": {
    "src": "He has to have gone somewhere! He couldn't have just... vanished.",
    "dst": "他一定是去了什麼地方！他不可能就這樣……憑空消失。",
    "role": "desc",
@@ -2430,7 +2440,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#242": {
+  "The Price of Ingenuity#243": {
    "src": "There has to be something else going on here! Do you see why I suspect him now?",
    "dst": "這裡一定還有別的名堂！現在你懂我為什麼懷疑他了吧？",
    "role": "desc",
@@ -2440,7 +2450,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#243": {
+  "The Price of Ingenuity#244": {
    "src": "Let's snoop around a bit and make sure he's not posing a threat to us.",
    "dst": "我們四處翻一翻，確定他不會對我們構成威脅。",
    "role": "desc",
@@ -2450,7 +2460,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#244": {
+  "The Price of Ingenuity#245": {
    "src": "I'm glad you feel that way. Makes me feel less... horrible... about it.",
    "dst": "我很高興你這麼想。這讓我覺得……沒那麼糟糕。",
    "role": "desc",
@@ -2460,7 +2470,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#245": {
+  "The Price of Ingenuity#246": {
    "src": "I guess we can be horrible people together, then.",
    "dst": "那我們就一起當糟糕的人吧。",
    "role": "desc",
@@ -2470,7 +2480,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#246": {
+  "The Price of Ingenuity#247": {
    "src": "I get it, trust me. They've taken us in and given us a place to stay, and now...",
    "dst": "我懂，相信我。他們收留了我們，給了我們住的地方，而現在……",
    "role": "desc",
@@ -2480,7 +2490,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#247": {
+  "The Price of Ingenuity#248": {
    "src": "If we're wrong, if I'm wrong, then we both might get thrown out.",
    "dst": "如果我們錯了，如果我錯了，那我們兩個可能都會被趕出去。",
    "role": "desc",
@@ -2490,7 +2500,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#248": {
+  "The Price of Ingenuity#249": {
    "src": "The blame will land squarely on us both. I really hope that even if we are kicked out, the rest can still stay here...",
    "dst": "責任會全落在我們兩個身上。我真的希望就算我們被趕出去，其他人還是能留在這裡……",
    "role": "desc",
@@ -2500,7 +2510,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#249": {
+  "The Price of Ingenuity#250": {
    "src": "...no time to dwell on that. He must have left the workshop through an exit somewhere. Let's look around and see what we can find.",
    "dst": "……沒時間想那些了。他一定是從工坊某個出口離開的。我們四處看看能找到什麼。",
    "role": "desc",
@@ -2510,7 +2520,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#250": {
+  "The Price of Ingenuity#251": {
    "src": "Try and find Yusanu in his workshop at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 的工坊裡試著找到 Yusanu。",
    "role": "desc",
@@ -2520,7 +2530,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#251": {
+  "The Price of Ingenuity#252": {
    "src": "Aha! And you thought I was just being paranoid.",
    "dst": "啊哈！你剛才還以為我只是疑神疑鬼。",
    "role": "desc",
@@ -2530,7 +2540,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#252": {
+  "The Price of Ingenuity#253": {
    "src": "But you were thinking it, I could tell!",
    "dst": "但你有在想，我看得出來！",
    "role": "desc",
@@ -2540,7 +2550,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#253": {
+  "The Price of Ingenuity#254": {
    "src": "Okay, fine, maybe a little. But I was right to be!",
    "dst": "好啦，好吧，也許是有一點。但我起疑是對的！",
    "role": "desc",
@@ -2550,7 +2560,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#254": {
+  "The Price of Ingenuity#255": {
    "src": "That's confirmation. Though, not like we needed it...",
    "dst": "這就證實了。雖然，我們也不太需要證實……",
    "role": "desc",
@@ -2560,7 +2570,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#255": {
+  "The Price of Ingenuity#256": {
    "src": "Let's keep moving!",
    "dst": "繼續走吧！",
    "role": "desc",
@@ -2570,7 +2580,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#256": {
+  "The Price of Ingenuity#257": {
    "src": "Hmm... the door's shut.",
    "dst": "唔……門關著。",
    "role": "desc",
@@ -2580,7 +2590,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#257": {
+  "The Price of Ingenuity#258": {
    "src": "Yusanu's really puulling out all the stops to make sure nobody follows him!",
    "dst": "Yusanu 真是用盡了一切手段，就為了確保沒人跟得上他！",
    "role": "desc",
@@ -2590,7 +2600,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#258": {
+  "The Price of Ingenuity#259": {
    "src": "Too bad we're persistent, though. There's got to be some way to open it, we just need to find it!",
    "dst": "可惜我們夠執著。一定有辦法打開它，我們只要找到就好！",
    "role": "desc",
@@ -2600,7 +2610,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#259": {
+  "The Price of Ingenuity#260": {
    "src": "Whatever you did seems to have worked, the door's open!",
    "dst": "你剛才做的事好像有用，門開了！",
    "role": "desc",
@@ -2610,7 +2620,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#260": {
+  "The Price of Ingenuity#261": {
    "src": "Wait up!",
    "dst": "等等我！",
    "role": "desc",
@@ -2620,7 +2630,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#261": {
+  "The Price of Ingenuity#262": {
    "src": "Dead end? No, I see something on the other side...",
    "dst": "死路？不對，我看到另一邊有東西……",
    "role": "desc",
@@ -2630,7 +2640,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#262": {
+  "The Price of Ingenuity#263": {
    "src": "How do we get across? I guess you could try to use your magic... but I don't want you to put yourself at risk just cause I dragged you along for this.",
    "dst": "我們要怎麼過去？我想你可以試試用你的魔法……不過我不希望你為了我硬拉你來而讓自己冒險。",
    "role": "desc",
@@ -2640,7 +2650,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#263": {
+  "The Price of Ingenuity#264": {
    "src": "Think, Rex, think!",
    "dst": "動腦，Rex，動腦！",
    "role": "desc",
@@ -2650,7 +2660,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#264": {
+  "The Price of Ingenuity#265": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -2660,7 +2670,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#265": {
+  "The Price of Ingenuity#266": {
    "src": "Oh! Yusanu has to have taken this way, there aren't any other options. So, there's a trick to it...",
    "dst": "喔！Yusanu 一定是走這條路的，沒有別的選擇。所以，這裡有機關……",
    "role": "desc",
@@ -2670,7 +2680,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#266": {
+  "The Price of Ingenuity#267": {
    "src": "Look, over there! Do you see the button on the other side? I bet he uses it to close off this path whenever he takes it.",
    "dst": "你看，那邊！你看到另一邊那個按鈕了嗎？我打賭他每次走這條路都用它把通道關上。",
    "role": "desc",
@@ -2680,7 +2690,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#267": {
+  "The Price of Ingenuity#268": {
    "src": "It's a good thing you have the best sharpshooter in all of Fruma on your side! A shot like that is nothing to me.",
    "dst": "還好你身邊有全 Fruma 最好的神射手！那種距離對我來說不算什麼。",
    "role": "desc",
@@ -2690,7 +2700,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#268": {
+  "The Price of Ingenuity#269": {
    "src": "Just a moment... need to line it up... just right...",
    "dst": "等一下……我得瞄準……剛好……",
    "role": "desc",
@@ -2700,7 +2710,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#269": {
+  "The Price of Ingenuity#270": {
    "src": "Got it! Oh, that's more precarious than I expected. Be careful!",
    "dst": "中了！喔，這比我想的還要險。小心點！",
    "role": "desc",
@@ -2710,7 +2720,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#270": {
+  "The Price of Ingenuity#271": {
    "src": "Talk to Rex at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~1}, {~2}, -{~3}] 與 Rex 談話。",
    "role": "desc",
@@ -2720,7 +2730,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#271": {
+  "The Price of Ingenuity#272": {
    "src": "...okay, why are we right outside the Sovereign's mansion?!",
    "dst": "……好，我們為什麼會在統領的宅邸正外面？！",
    "role": "desc",
@@ -2730,7 +2740,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#272": {
+  "The Price of Ingenuity#273": {
    "src": "This place is so heavily guarded, and he just has a secret tunnel directly to the front door?!",
    "dst": "這地方守衛那麼森嚴，而他居然有一條秘密隧道直通大門口？！",
    "role": "desc",
@@ -2740,7 +2750,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#273": {
+  "The Price of Ingenuity#274": {
    "src": "Okay... okay, okay, okay. Calm.",
    "dst": "好……好、好、好。冷靜。",
    "role": "desc",
@@ -2750,7 +2760,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#274": {
+  "The Price of Ingenuity#275": {
    "src": "We can't just leave it here, obviously, but we're definitely not getting through the front door...",
    "dst": "我們顯然不能就這樣算了，但我們絕對不可能從正門進去……",
    "role": "desc",
@@ -2760,8 +2770,8 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#275": {
-   "src": "Loko, up there. The arch connects to the main structure, and probably has a way inside.",
+  "The Price of Ingenuity#276": {
+   "src": "Look, up there. The arch connects to the main structure, and probably has a way inside.",
    "dst": "你看，上面那裡。那道拱橋連到主建築，大概有辦法進去。",
    "role": "desc",
    "kind": "dialogue",
@@ -2770,7 +2780,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#276": {
+  "The Price of Ingenuity#277": {
    "src": "Maybe we can get up by climbing this building over here!",
    "dst": "也許我們可以爬這邊這棟樓上去！",
    "role": "desc",
@@ -2780,7 +2790,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#277": {
+  "The Price of Ingenuity#278": {
    "src": "Travel up the nearby building at [-{~}, {~}, -{~}] and enter Soosu's mansion.",
    "dst": "爬上 [-{~1}, {~2}, -{~3}] 附近的建築，進入 Soosu 的宅邸。",
    "role": "desc",
@@ -2790,7 +2800,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#278": {
+  "The Price of Ingenuity#279": {
    "src": "Sneak through Soosu's mansion looking for Yusanu at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 潛行穿過 Soosu 的宅邸，尋找 Yusanu。",
    "role": "desc",
@@ -2800,7 +2810,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#279": {
+  "The Price of Ingenuity#280": {
    "src": "... Hey, stay on your guard. We don't want to get caught in here.",
    "dst": "……喂，保持警戒。我們可不想在這裡被抓到。",
    "role": "desc",
@@ -2810,7 +2820,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#280": {
+  "The Price of Ingenuity#281": {
    "src": "Though... it's kind of quiet in here. Weird.",
    "dst": "不過……這裡安靜得有點怪。奇怪。",
    "role": "desc",
@@ -2820,7 +2830,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#281": {
+  "The Price of Ingenuity#282": {
    "src": "Okay. Okay okay. That's a lot of buttons.",
    "dst": "好。好、好。這也太多按鈕了。",
    "role": "desc",
@@ -2830,7 +2840,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#282": {
+  "The Price of Ingenuity#283": {
    "src": "So these two say up and down... over here it looks like a list...? Office, Workshop, Quarters, Workshop {~}, Roof Workshop... And why is there a lever? It's not even labeled.",
    "dst": "這兩個寫著上和下……這邊看起來像一份清單……？辦公室、工坊、住處、工坊 {~}、屋頂工坊……然後為什麼還有一根拉桿？連標示都沒有。",
    "role": "desc",
@@ -2840,7 +2850,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#283": {
+  "The Price of Ingenuity#284": {
    "src": "Ugh, I can never figure out Roughworks machines. Always overly complicated...",
    "dst": "唉，我永遠搞不懂 Roughworks 的機器。總是複雜得沒必要……",
    "role": "desc",
@@ -2850,7 +2860,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#284": {
+  "The Price of Ingenuity#285": {
    "src": "Well, what about you? Any thoughts?",
    "dst": "那，你呢？有什麼想法嗎？",
    "role": "desc",
@@ -2860,7 +2870,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#285": {
+  "The Price of Ingenuity#286": {
    "src": "Okay. Sure! As good a suggestion as any.",
    "dst": "好。行！這建議跟其他的一樣好。",
    "role": "desc",
@@ -2870,7 +2880,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#286": {
+  "The Price of Ingenuity#287": {
    "src": "...so, which one of these is up?",
    "dst": "……所以，這裡面哪一個是上？",
    "role": "desc",
@@ -2880,7 +2890,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#287": {
+  "The Price of Ingenuity#288": {
    "src": "Okay. Thanks for the input. I'm... not going to do that! That sounds like an awful idea- has Zeph been rubbing off on you?",
    "dst": "好。謝謝你的意見。我……才不要那樣做！那聽起來是個爛透了的主意——你是不是被 Zeph 傳染了？",
    "role": "desc",
@@ -2890,7 +2900,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#288": {
+  "The Price of Ingenuity#289": {
    "src": "And I thought one of him was bad enough...",
    "dst": "而我還以為有一個他就夠糟了……",
    "role": "desc",
@@ -2900,7 +2910,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#289": {
+  "The Price of Ingenuity#290": {
    "src": "Oh, whatever! Let's just try something.",
    "dst": "喔，隨便啦！我們就隨便試一個。",
    "role": "desc",
@@ -2910,7 +2920,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#290": {
+  "The Price of Ingenuity#291": {
    "src": "...uh. What's-",
    "dst": "……呃。這是什——",
    "role": "desc",
@@ -2920,7 +2930,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#291": {
+  "The Price of Ingenuity#292": {
    "src": "What's going on?!",
    "dst": "怎麼回事？！",
    "role": "desc",
@@ -2930,7 +2940,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#292": {
+  "The Price of Ingenuity#293": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -2940,7 +2950,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#293": {
+  "The Price of Ingenuity#294": {
    "src": "That was... I don't want to talk about it.",
    "dst": "剛才那……我不想談。",
    "role": "desc",
@@ -2950,7 +2960,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#294": {
+  "The Price of Ingenuity#295": {
    "src": "Wait! {u}, quietly, come look at this.",
    "dst": "等等！{u}，小聲點，過來看這個。",
    "role": "desc",
@@ -2960,7 +2970,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#295": {
+  "The Price of Ingenuity#296": {
    "src": "Shoot, they're coming this way! Follow me!",
    "dst": "糟，他們往這邊來了！跟我來！",
    "role": "desc",
@@ -2970,7 +2980,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#296": {
+  "The Price of Ingenuity#297": {
    "src": "Did – you also – see that?",
    "dst": "你——也有——看到——那個嗎？",
    "role": "desc",
@@ -2980,7 +2990,7 @@
    "speaker": "Sparkles",
    "source": "wiki"
   },
-  "The Price of Ingenuity#297": {
+  "The Price of Ingenuity#298": {
    "src": "I'm sca-a-a-a-a-a-ared!",
    "dst": "我好怕——怕——怕啊！",
    "role": "desc",
@@ -2990,7 +3000,7 @@
    "speaker": "Glitter",
    "source": "wiki"
   },
-  "The Price of Ingenuity#298": {
+  "The Price of Ingenuity#299": {
    "src": "What – if – it's a – GHOST?!",
    "dst": "萬——一——那是——鬼呢？！",
    "role": "desc",
@@ -3000,7 +3010,7 @@
    "speaker": "Sparkles",
    "source": "wiki"
   },
-  "The Price of Ingenuity#299": {
+  "The Price of Ingenuity#300": {
    "src": "N-O-O-O!!! Mother w-o-o-o-ould know what to do!",
    "dst": "不——要——啊！！！媽——媽——會知道該怎麼辦的！",
    "role": "desc",
@@ -3010,7 +3020,7 @@
    "speaker": "Glitter",
    "source": "wiki"
   },
-  "The Price of Ingenuity#300": {
+  "The Price of Ingenuity#301": {
    "src": "...let's just... go.",
    "dst": "……我們……還是走吧。",
    "role": "desc",
@@ -3020,7 +3030,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#301": {
+  "The Price of Ingenuity#302": {
    "src": "Those \"guards\" don't seem very normal, do they? Isn't this supposed to be the Sovereign's mansion?",
    "dst": "那些「守衛」看起來不太正常，對吧？這裡不是應該是統領的宅邸嗎？",
    "role": "desc",
@@ -3030,7 +3040,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#302": {
+  "The Price of Ingenuity#303": {
    "src": "They didn't even see us... oh, whatever. Let's keep moving.",
    "dst": "他們根本沒看到我們……喔，算了。繼續走。",
    "role": "desc",
@@ -3040,7 +3050,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#303": {
+  "The Price of Ingenuity#304": {
    "src": "Hey! Get back.",
    "dst": "喂！退後。",
    "role": "desc",
@@ -3050,7 +3060,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#304": {
+  "The Price of Ingenuity#305": {
    "src": "Why did you call me here again so soon? I was just here yesterday.",
    "dst": "為什麼這麼快又叫我過來？我昨天才來過。",
    "role": "desc",
@@ -3060,7 +3070,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#305": {
+  "The Price of Ingenuity#306": {
    "src": "Oh, don't play dumb! Dead soldiers! Killed on the job! Sound familiar??",
    "dst": "喔，別裝傻！死掉的士兵！在執勤時被殺！聽起來耳熟嗎？？",
    "role": "desc",
@@ -3070,7 +3080,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#306": {
+  "The Price of Ingenuity#307": {
    "src": "Uh...",
    "dst": "呃……",
    "role": "desc",
@@ -3080,7 +3090,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#307": {
+  "The Price of Ingenuity#308": {
    "src": "Well, it better! Again - dead soldiers!! We had an agreement, Yus, and you've clearly gone and broken it!",
    "dst": "最好耳熟！再說一次——死掉的士兵！！我們有協議的，Yus，而你顯然把它打破了！",
    "role": "desc",
@@ -3090,7 +3100,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#308": {
+  "The Price of Ingenuity#309": {
    "src": "I- I know. And I'm sorry that it happened. But- it happened while I was here, working! What do you expect me to have done about it?!",
    "dst": "我——我知道。那件事發生了，我很抱歉。可是——那件事發生的時候我人在這裡工作！你要我當時能做什麼？！",
    "role": "desc",
@@ -3100,7 +3110,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#309": {
+  "The Price of Ingenuity#310": {
    "src": "Hmph! You're smart, aren't you? Smart enough to be able to grasp the fundamentals of conductivity and electrical currents! You could have found a way.",
    "dst": "哼！你很聰明，不是嗎？聰明到能掌握導電性與電流的基本原理！你本來可以想出辦法的。",
    "role": "desc",
@@ -3110,7 +3120,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#310": {
+  "The Price of Ingenuity#311": {
    "src": "It's such a shame... you were one of my favorites, Yus. And now you've really let me down.",
    "dst": "真是可惜……你本來是我最喜歡的幾個之一，Yus。而現在你真的讓我失望了。",
    "role": "desc",
@@ -3120,7 +3130,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#311": {
+  "The Price of Ingenuity#312": {
    "src": "...I know. I- I'll find a way to fix it. Tell me what to do, and- and I can. Whatever I need to- so I can keep them safe- I'll, I'll do it.",
    "dst": "……我知道。我——我會想辦法補救。告訴我要做什麼，我——我做得到。只要能保護他們，不管要我做什麼——我、我都做。",
    "role": "desc",
@@ -3130,7 +3140,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#312": {
+  "The Price of Ingenuity#313": {
    "src": "Oh, Yus, you're so silly. There's nothing you can do to fix this now. The damage is done, and nobody around here will shut! Up! About it!!!",
    "dst": "喔，Yus，你好傻。現在已經沒有什麼補救得了了。傷害已經造成，而這附近沒有人肯閉！上！嘴！！！",
    "role": "desc",
@@ -3140,7 +3150,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#313": {
+  "The Price of Ingenuity#314": {
    "src": "I let you live in that abandoned trainyard because I thought you'd be quiet. But this isn't quiet! I can't focus now that everyone is-",
    "dst": "我讓你住在那個廢棄的調車場，是因為我以為你會安靜。但這一點都不安靜！大家都在——我根本沒辦法專心——",
    "role": "desc",
@@ -3150,7 +3160,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#314": {
+  "The Price of Ingenuity#315": {
    "src": "MOTHER! MOTHER!",
    "dst": "媽媽！媽媽！",
    "role": "desc",
@@ -3160,7 +3170,7 @@
    "speaker": "Sparkles",
    "source": "wiki"
   },
-  "The Price of Ingenuity#315": {
+  "The Price of Ingenuity#316": {
    "src": "A GHO–O–O–OST! SPARKLES HEARD A GHO–O–O–O–OST! WHAT DO WE–E–E–E DO???",
    "dst": "有鬼——鬼——鬼——啊！Sparkles 聽到鬼——鬼——鬼——了！我們該怎——怎——麼辦？？？",
    "role": "desc",
@@ -3170,7 +3180,7 @@
    "speaker": "Glitter",
    "source": "wiki"
   },
-  "The Price of Ingenuity#316": {
+  "The Price of Ingenuity#317": {
    "src": "Ugh! Not now!! Can't you see mommy's busy?!",
    "dst": "唉！現在不行！！你們沒看到媽媽在忙嗎？！",
    "role": "desc",
@@ -3180,7 +3190,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#317": {
+  "The Price of Ingenuity#318": {
    "src": "...Oh. I liked those two...",
    "dst": "……喔。我還蠻喜歡那兩個的……",
    "role": "desc",
@@ -3190,7 +3200,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#318": {
+  "The Price of Ingenuity#319": {
    "src": "...They'll be fine. I'll just bring them back later!",
    "dst": "……他們不會有事的。我等一下再把他們弄回來就好！",
    "role": "desc",
@@ -3200,7 +3210,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#319": {
+  "The Price of Ingenuity#320": {
    "src": "You know, they've been getting better and better at replicating human behavior! My latest constructs were at an estimated {~} accuracy-",
    "dst": "你知道嗎，他們在模仿人類行為這方面愈來愈厲害了！我最新的構裝估計已經有 {~} 的準確度——",
    "role": "desc",
@@ -3210,7 +3220,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#320": {
+  "The Price of Ingenuity#321": {
    "src": "...Um. Where was I...",
    "dst": "……嗯。我剛才講到哪……",
    "role": "desc",
@@ -3220,7 +3230,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#321": {
+  "The Price of Ingenuity#322": {
    "src": "Right! Here's what you can do for me, Yus. This isn't going to go away. I need someone to pin this on, so they'll all shut up and move on from it!",
    "dst": "對了！Yus，你可以為我做這件事。這件事不會自己消失。我需要有個人來背這個鍋，好讓他們全都閉嘴、翻篇。",
    "role": "desc",
@@ -3230,7 +3240,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#322": {
+  "The Price of Ingenuity#323": {
    "src": "Especially that loudmouth from the north! Would it kill him to leave me alone and stop meddling in my business??",
    "dst": "尤其是北邊那個大嘴巴！他要是能放過我、別再管我的事，會死嗎？？",
    "role": "desc",
@@ -3240,7 +3250,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#323": {
+  "The Price of Ingenuity#324": {
    "src": "Uh...",
    "dst": "呃……",
    "role": "desc",
@@ -3250,7 +3260,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#324": {
+  "The Price of Ingenuity#325": {
    "src": "Don't answer that. Look, this is the only way. You need to hand over whoever is responsible for this whole thing. That's the only way we can keep our peace and keep being friends.",
    "dst": "別回答。聽著，這是唯一的辦法。你得把造成這整件事的人交出來。只有這樣我們才能維持和平、繼續當朋友。",
    "role": "desc",
@@ -3260,7 +3270,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#325": {
+  "The Price of Ingenuity#326": {
    "src": "Wh- you can't be serious! I can't do that, Soosu! You- you really expect me to give up one of my friends or family?!",
    "dst": "什——你不是認真的吧！我做不到，Soosu！你——你真的指望我交出我的朋友或家人？！",
    "role": "desc",
@@ -3270,7 +3280,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#326": {
+  "The Price of Ingenuity#327": {
    "src": "No, Yus, what I expected from you was to keep your \"friends and family\" quiet! But we're past that point now. Something needs to happen.",
    "dst": "不，Yus，我本來指望你做的是讓你那些「朋友和家人」安靜。但我們已經過了那個階段了。總得有事情發生。",
    "role": "desc",
@@ -3280,7 +3290,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#327": {
+  "The Price of Ingenuity#328": {
    "src": "I-... I understand. I need to think. I'll... I'll let you know soon.",
    "dst": "我——……我明白了。我需要想一想。我……我很快會告訴你。",
    "role": "desc",
@@ -3290,7 +3300,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#328": {
+  "The Price of Ingenuity#329": {
    "src": "What is he doing?! Sneaking around, meeting with the Sovereign?!",
    "dst": "他在做什麼？！偷偷摸摸，跟統領碰面？！",
    "role": "desc",
@@ -3300,7 +3310,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#329": {
+  "The Price of Ingenuity#330": {
    "src": "We need to cut him off. I'm not letting him get away with this. Follow me, quickly!",
    "dst": "我們得攔住他。我不會讓他就這樣蒙混過去。跟我來，快！",
    "role": "desc",
@@ -3310,7 +3320,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#330": {
+  "The Price of Ingenuity#331": {
    "src": "Come on! Let's see if we can cut him off before he enters the tunnel!",
    "dst": "走！我們看看能不能在他進隧道之前攔住他！",
    "role": "desc",
@@ -3320,7 +3330,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#331": {
+  "The Price of Ingenuity#332": {
    "src": "Wait for Yusanu's return at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 等 Yusanu 回來。",
    "role": "desc",
@@ -3330,7 +3340,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#332": {
+  "The Price of Ingenuity#333": {
    "src": "Okay. This is as good a place as any to hide out and wait...",
    "dst": "好。這裡跟其他地方一樣適合躲起來等……",
    "role": "desc",
@@ -3340,7 +3350,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#333": {
+  "The Price of Ingenuity#334": {
    "src": "I can't believe this! I can't believe him! How long has he been doing this?",
    "dst": "我真不敢相信！我真不敢相信他！他到底做這件事多久了？",
    "role": "desc",
@@ -3350,7 +3360,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#334": {
+  "The Price of Ingenuity#335": {
    "src": "I... uh, I'll see you guys later, I... guess.",
    "dst": "我……呃，我等等再跟你們見，我……大概吧。",
    "role": "desc",
@@ -3360,7 +3370,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#335": {
+  "The Price of Ingenuity#336": {
    "src": "Here he comes!",
    "dst": "他來了！",
    "role": "desc",
@@ -3370,7 +3380,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#336": {
+  "The Price of Ingenuity#337": {
    "src": "Ahh!",
    "dst": "啊！",
    "role": "desc",
@@ -3380,7 +3390,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#337": {
+  "The Price of Ingenuity#338": {
    "src": "What are y-",
    "dst": "你們在幹什——",
    "role": "desc",
@@ -3390,7 +3400,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#338": {
+  "The Price of Ingenuity#339": {
    "src": "Not a word, Yusanu. You are in no position to be asking questions!",
    "dst": "一個字都別說，Yusanu。你現在沒有立場發問！",
    "role": "desc",
@@ -3400,7 +3410,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#339": {
+  "The Price of Ingenuity#340": {
    "src": "Secretly meeting with the Sovereign? Really? Are you insane?!",
    "dst": "偷偷跟統領碰面？真的假的？你瘋了嗎？！",
    "role": "desc",
@@ -3410,7 +3420,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#340": {
+  "The Price of Ingenuity#341": {
    "src": "You- you... followed me... oh, no... no no no, no... you weren't seen, were you? You're going to ruin ev-",
    "dst": "你們——你們……跟蹤我……喔不……不不不，不——你們沒有被看到吧？你們會毀掉一——",
    "role": "desc",
@@ -3420,7 +3430,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#341": {
+  "The Price of Ingenuity#342": {
    "src": "We're going to ruin everything?! And not you, the guy always sneaking off to meet the Sovereign?!",
    "dst": "「我們」會毀掉一切？！而不是你這個老是偷溜去見統領的人？！",
    "role": "desc",
@@ -3430,7 +3440,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#342": {
+  "The Price of Ingenuity#343": {
    "src": "You don't understand! The only reason we're safe down there is BECAUSE I struck a deal with her!!",
    "dst": "你不懂！我們在下面之所以安全，「就是因為」我跟她做了交易！！",
    "role": "desc",
@@ -3440,7 +3450,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#343": {
+  "The Price of Ingenuity#344": {
    "src": "You WHAT?!",
    "dst": "你做了「什麼」？！",
    "role": "desc",
@@ -3450,7 +3460,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#344": {
+  "The Price of Ingenuity#345": {
    "src": "I work as her assistant in her workshop, help her with whatever projects she's working on, and in exchange she allows us to live in the station!",
    "dst": "我在她的工坊當她的助手，幫她處理任何她在做的計畫，作為交換，她讓我們住在車站裡！",
    "role": "desc",
@@ -3460,7 +3470,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#345": {
+  "The Price of Ingenuity#346": {
    "src": "As long as we don't cause any trouble with soldiers, at least- which, might I remind you, you people caused? So don't- don't act like...",
    "dst": "至少在我們不跟士兵起衝突的前提下——而那個，容我提醒你，是你們這些人惹出來的？所以別——別裝作……",
    "role": "desc",
@@ -3470,7 +3480,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#346": {
+  "The Price of Ingenuity#347": {
    "src": "Oh my god, you idiot. How long were you planning to keep this a secret? Were you ever going to tell anyone?",
    "dst": "我的天啊，你這個白痴。你原本打算把這件事瞞多久？你到底有沒有打算告訴任何人？",
    "role": "desc",
@@ -3480,7 +3490,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#347": {
+  "The Price of Ingenuity#348": {
    "src": "I-",
    "dst": "我——",
    "role": "desc",
@@ -3490,8 +3500,8 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#348": {
-   "src": "You were just gonna let it sit until, inevitably, someone was going to piss off the soldiers? Because, trust me, that would have happened eventually. With or without us.",
+  "The Price of Ingenuity#349": {
+   "src": "You were just gonna let it sit until, inevitably , someone was going to piss off the soldiers? Because, trust me, that would have happened eventually. With or without us.",
    "dst": "你就打算讓它擱著，直到——不可避免地——有人惹毛了士兵？因為，相信我，那遲早會發生。不管有沒有我們。",
    "role": "desc",
    "kind": "dialogue",
@@ -3500,7 +3510,17 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#349": {
+  "The Price of Ingenuity#350": {
+   "src": "Status: On Hold. She needs my attention elsewhere.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Price of Ingenuity",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Price of Ingenuity#351": {
    "src": "...it seemed safer this way.",
    "dst": "……這樣好像比較安全。",
    "role": "desc",
@@ -3510,7 +3530,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#350": {
+  "The Price of Ingenuity#352": {
    "src": "Ack! You- you heard that part too?",
    "dst": "啊！你——你連那一段也聽到了？",
    "role": "desc",
@@ -3520,7 +3540,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#351": {
+  "The Price of Ingenuity#353": {
    "src": "Duh?",
    "dst": "不然呢？",
    "role": "desc",
@@ -3530,7 +3550,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#352": {
+  "The Price of Ingenuity#354": {
    "src": "Ughhh.... I don't know! I don't know. I don't want to, obviously! You're all good people, and it'd break every single one of our guidelines to throw someone out like that!",
    "dst": "唉……我不知道！我不知道。我當然不想這麼做！你們都是好人，而且那會違反我們每一條準則——把人就這樣交出去！",
    "role": "desc",
@@ -3540,7 +3560,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#353": {
+  "The Price of Ingenuity#355": {
    "src": "But... I don't think I have a choice. The Steel Feather's safety is on the line, and I could fix it by just- just- handing someone over, but- I- I can't. I can't do that.",
    "dst": "可是……我不覺得我有選擇。鋼羽的安全懸在那裡，我只要——只要——交出一個人就能解決，但——我——我做不到。我做不到。",
    "role": "desc",
@@ -3550,7 +3570,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#354": {
+  "The Price of Ingenuity#356": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -3560,7 +3580,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#355": {
+  "The Price of Ingenuity#357": {
    "src": "Okay. You were doing what you thought was right. I can understand that. But this - keeping secrets, following their rules - it was never going to end well!",
    "dst": "好。你當時是在做你認為對的事。這我可以理解。但這件事——保守秘密、照他們的規矩走——它從來就不可能有好結局！",
    "role": "desc",
@@ -3570,7 +3590,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#356": {
+  "The Price of Ingenuity#358": {
    "src": "We can get past this choice by doing what we were already doing - trying to take down the crown! If we succeed, there won't be any more risk for you all.",
    "dst": "我們可以靠繼續做我們本來在做的事來越過這個選擇——扳倒王室！如果我們成功，你們就不會再有任何風險。",
    "role": "desc",
@@ -3580,7 +3600,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#357": {
+  "The Price of Ingenuity#359": {
    "src": "...but-",
    "dst": "……可是——",
    "role": "desc",
@@ -3590,7 +3610,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#358": {
+  "The Price of Ingenuity#360": {
    "src": "This is your chance to make it right, Yusanu! You have information. Tell us what you and the Sovereign were working on. Is it important?",
    "dst": "這是你把事情做對的機會，Yusanu！你有情報。告訴我們你和那位統領在做什麼。那東西重要嗎？",
    "role": "desc",
@@ -3600,7 +3620,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#359": {
+  "The Price of Ingenuity#361": {
    "src": "...I don't know much about... what it is. I know it's not a weapon, at least- Soosu was clear on that. It's... an important assignment from the Queen.",
    "dst": "……我對……它是什麼所知不多。至少我知道它不是武器——Soosu 講得很清楚。那是……女王交下來的一項重要任務。",
    "role": "desc",
@@ -3610,7 +3630,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#360": {
+  "The Price of Ingenuity#362": {
    "src": "It's- it's strange. Very, very strange. It uses science that sounds... impossible. I think we're building over an existing device, something the Queen already had.",
    "dst": "那……那很奇怪。非常、非常奇怪。它用到的科學聽起來……不可能。我想我們是在一個既有的裝置上加工，某種女王本來就有的東西。",
    "role": "desc",
@@ -3620,7 +3640,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#361": {
+  "The Price of Ingenuity#363": {
    "src": "Soosu... she's stressed about the project. She needs to get it done, but it- it seems like an impossible task. There's something on the line for her.",
    "dst": "Soosu……她為那個計畫很焦慮。她必須把它完成，可是那……看起來像是不可能的任務。她有什麼東西押在上面。",
    "role": "desc",
@@ -3630,7 +3650,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#362": {
+  "The Price of Ingenuity#364": {
    "src": "...mysterious device, important to the crown... got it. {u}, Yusanu- we need to steal it. If it's important to the crown... whatever it does, it's better if they don't have it.",
    "dst": "……神秘裝置、對王室很重要……了解。{u}、Yusanu——我們得把它偷走。既然對王室重要……不管它做什麼，別讓他們拿到比較好。",
    "role": "desc",
@@ -3640,7 +3660,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#363": {
+  "The Price of Ingenuity#365": {
    "src": "Wh- what?! You can't be serious! We can't just-",
    "dst": "什——什麼？！你不是認真的吧！我們不能就這樣——",
    "role": "desc",
@@ -3650,7 +3670,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#364": {
+  "The Price of Ingenuity#366": {
    "src": "We can, and we should! The Sovereigns aren't your friends, Yusanu, they're complicit in and responsible for everything wrong with Fruma!!",
    "dst": "我們可以，而且我們應該！那些統領不是你的朋友，Yusanu，他們是 Fruma 一切問題的共犯與責任人！！",
    "role": "desc",
@@ -3660,7 +3680,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#365": {
+  "The Price of Ingenuity#367": {
    "src": "If we can hurt them, then we can hurt the crown. And if we can hurt the crown... we might actually stand a chance.",
    "dst": "如果我們能傷到他們，就能傷到王室。而如果我們能傷到王室……我們或許真的有勝算。",
    "role": "desc",
@@ -3670,7 +3690,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#366": {
+  "The Price of Ingenuity#368": {
    "src": "...okay. Okay, fine! You're right. You're... right.",
    "dst": "……好。好吧！你說得對。你……說得對。",
    "role": "desc",
@@ -3680,7 +3700,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#367": {
+  "The Price of Ingenuity#369": {
    "src": "I can get you to it. Uh... how did you get in, anyway?",
    "dst": "我可以帶你們過去。呃……話說回來，你們是怎麼進來的？",
    "role": "desc",
@@ -3690,7 +3710,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#368": {
+  "The Price of Ingenuity#370": {
    "src": "We'll show you. Come on, back in we go.",
    "dst": "我們帶你看。走吧，我們再進去一次。",
    "role": "desc",
@@ -3700,7 +3720,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#369": {
+  "The Price of Ingenuity#371": {
    "src": "Enter the mansion again at [-{~}, {~}, -{~}].",
    "dst": "從 [-{~1}, {~2}, -{~3}] 再次進入宅邸。",
    "role": "desc",
@@ -3710,7 +3730,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#370": {
+  "The Price of Ingenuity#372": {
    "src": "...this had better be worth it.",
    "dst": "……這最好值得。",
    "role": "desc",
@@ -3720,7 +3740,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#371": {
+  "The Price of Ingenuity#373": {
    "src": "Follow Yusanu to Soosu's workshop.",
    "dst": "跟著 Yusanu 前往 Soosu 的工坊。",
    "role": "desc",
@@ -3730,7 +3750,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#372": {
+  "The Price of Ingenuity#374": {
    "src": "Right, we'll need to be fast. Soosu tends to spend most of her time in the workshops...",
    "dst": "好，我們得快。Soosu 大部分時間都待在那幾間工坊……",
    "role": "desc",
@@ -3740,7 +3760,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#373": {
+  "The Price of Ingenuity#375": {
    "src": "What if she shows up?",
    "dst": "萬一她出現怎麼辦？",
    "role": "desc",
@@ -3750,7 +3770,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#374": {
+  "The Price of Ingenuity#376": {
    "src": "I... would probably be fine. But if she sees you two, then...",
    "dst": "我……大概不會有事。但如果她看到你們兩個，那……",
    "role": "desc",
@@ -3760,7 +3780,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#375": {
+  "The Price of Ingenuity#377": {
    "src": "So don't get caught, got it. I'm guessing we wouldn't stand a chance fighting her?",
    "dst": "所以別被抓到，了解。我猜我們跟她打是沒有勝算的？",
    "role": "desc",
@@ -3770,7 +3790,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#376": {
+  "The Price of Ingenuity#378": {
    "src": "No!! No, no, absolutely not. Her blessing... I haven't seen her use it in combat, but knowing what it can do...",
    "dst": "沒有！！不、不，絕對沒有。她的祝福……我沒看過她在戰鬥中用，但知道它能做什麼之後……",
    "role": "desc",
@@ -3780,7 +3800,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#377": {
+  "The Price of Ingenuity#379": {
    "src": "Being able to mold matter... it means more than just putting together machines. So...",
    "dst": "能夠塑形物質……那代表的不只是組裝機器而已。所以……",
    "role": "desc",
@@ -3790,7 +3810,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#378": {
+  "The Price of Ingenuity#380": {
    "src": "It won't come to that. Come one, let's get going.",
    "dst": "不會走到那一步的。走吧，我們動身。",
    "role": "desc",
@@ -3800,7 +3820,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#379": {
+  "The Price of Ingenuity#381": {
    "src": "Alright, before we descend - Soosu has a bunch of golems walking around her workshop.",
    "dst": "好，在我們下去之前——Soosu 的工坊裡有一堆魔像在走動。",
    "role": "desc",
@@ -3810,7 +3830,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#380": {
+  "The Price of Ingenuity#382": {
    "src": "They're more... uh, advanced than Sparkles and Glitter. If they see us, they'll sound the alarms. So don't get caught!",
    "dst": "他們比 Sparkles 和 Glitter……呃，先進一些。被他們看到就會拉警報。所以別被抓到！",
    "role": "desc",
@@ -3820,7 +3840,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#381": {
+  "The Price of Ingenuity#383": {
    "src": "How did you two even manage to find me?",
    "dst": "你們兩個到底是怎麼找到我的？",
    "role": "desc",
@@ -3830,7 +3850,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#382": {
+  "The Price of Ingenuity#384": {
    "src": "Really? I'm... surprised the system held together long enough for that.",
    "dst": "真的假的？我……很意外那套系統撐得夠久讓你們辦到。",
    "role": "desc",
@@ -3840,7 +3860,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#383": {
+  "The Price of Ingenuity#385": {
    "src": "Look, it's not our fault this... thing doesn't come with an instruction manual!",
    "dst": "聽著，這個……東西沒有附說明書，不是我們的錯！",
    "role": "desc",
@@ -3850,7 +3870,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#384": {
+  "The Price of Ingenuity#386": {
    "src": "Ha! Okay, it's a little hard to figure out. You have to pick the destination, then hit up or down, and then pull the lever to turn it on! Simple.",
    "dst": "哈！好啦，它是有一點難搞。你得先選目的地，再按上或下，然後拉那根拉桿啟動！很簡單。",
    "role": "desc",
@@ -3860,7 +3880,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#385": {
+  "The Price of Ingenuity#387": {
    "src": "That... sounds right, but the way you say that is concerning. What actually happened?",
    "dst": "那……聽起來是對的，可是你這樣講的方式讓我很不安。到底發生了什麼事？",
    "role": "desc",
@@ -3870,7 +3890,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#386": {
+  "The Price of Ingenuity#388": {
    "src": "Ugh, it doesn't matter what happened. What matters is this stupid box is overly complicated and annoying!",
    "dst": "唉，發生什麼事不重要。重要的是這個蠢盒子複雜又煩人得沒必要！",
    "role": "desc",
@@ -3880,7 +3900,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#387": {
+  "The Price of Ingenuity#389": {
    "src": "Okay, okay! It is... a little hard to figure out. You have to pick the destination, then hit up or down, and then pull the lever to turn it on! Simple.",
    "dst": "好啦，好啦！它是……有一點難搞。你得先選目的地，再按上或下，然後拉那根拉桿啟動！很簡單。",
    "role": "desc",
@@ -3890,7 +3910,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#388": {
+  "The Price of Ingenuity#390": {
    "src": "...I chose the music, by the way.",
    "dst": "……順帶一提，音樂是我選的。",
    "role": "desc",
@@ -3900,7 +3920,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#389": {
+  "The Price of Ingenuity#391": {
    "src": "It's... unique!",
    "dst": "那……很獨特！",
    "role": "desc",
@@ -3910,7 +3930,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#390": {
+  "The Price of Ingenuity#392": {
    "src": "Oh... I forgot how much of a mess it was down here.",
    "dst": "喔……我都忘了下面亂成什麼樣子。",
    "role": "desc",
@@ -3920,7 +3940,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#391": {
+  "The Price of Ingenuity#393": {
    "src": "Sneak through the mansion avoiding the guards.",
    "dst": "潛行穿過宅邸，避開守衛。",
    "role": "desc",
@@ -3930,7 +3950,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#392": {
+  "The Price of Ingenuity#394": {
    "src": "Alright! That's our goal, over there.",
    "dst": "好！我們的目標就在那邊。",
    "role": "desc",
@@ -3940,7 +3960,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#393": {
+  "The Price of Ingenuity#395": {
    "src": "It's the most important sector of Soosu's workshop.",
    "dst": "那是 Soosu 工坊裡最重要的一區。",
    "role": "desc",
@@ -3950,7 +3970,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#394": {
+  "The Price of Ingenuity#396": {
    "src": "Look around Soosu's workshop for the device.",
    "dst": "在 Soosu 的工坊裡尋找那個裝置。",
    "role": "desc",
@@ -3960,7 +3980,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#395": {
+  "The Price of Ingenuity#397": {
    "src": "And you're sure she won't be coming down here?",
    "dst": "你確定她不會下來這裡？",
    "role": "desc",
@@ -3970,7 +3990,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#396": {
+  "The Price of Ingenuity#398": {
    "src": "Uh... mostly. {~} sure. We should be fine today, if we move quickly.",
    "dst": "呃……大致上。{~} 確定。只要我們動作快，今天應該不會有事。",
    "role": "desc",
@@ -3980,7 +4000,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#397": {
+  "The Price of Ingenuity#399": {
    "src": "How do you know?",
    "dst": "你怎麼知道？",
    "role": "desc",
@@ -3990,7 +4010,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#398": {
+  "The Price of Ingenuity#400": {
    "src": "The festival's coming up, so she has a lot to handle. She'll be busy cleaning up the other workshops, building whatever contraptions she needs for this year's festival... that sort of stuff.",
    "dst": "慶典快到了，所以她有一堆事要處理。她會忙著整理其他工坊、做今年慶典需要的各種裝置……那一類的事。",
    "role": "desc",
@@ -4000,7 +4020,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#399": {
+  "The Price of Ingenuity#401": {
    "src": "She only comes down here for the big projects. Well, or when she needs to let out some steam. But she doesn't have anything going on today, so... we're safe.",
    "dst": "她只有在做大計畫的時候才會下來這裡。嗯，或者是需要發洩的時候。不過她今天沒有什麼事在進行，所以……我們是安全的。",
    "role": "desc",
@@ -4010,7 +4030,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#400": {
+  "The Price of Ingenuity#402": {
    "src": "...if you say so, Yusanu. Still, I'd rather be out of here quickly.",
    "dst": "……既然你這麼說，Yusanu。不過我還是希望快點離開這裡。",
    "role": "desc",
@@ -4020,7 +4040,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#401": {
+  "The Price of Ingenuity#403": {
    "src": "Yeah... same. Let's take the device and go.",
    "dst": "對啊……我也是。我們拿了裝置就走。",
    "role": "desc",
@@ -4030,7 +4050,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#402": {
+  "The Price of Ingenuity#404": {
    "src": "This is Soosu's favorite room in the workshop. Her golem creation room.",
    "dst": "這是 Soosu 在工坊裡最喜歡的房間。她的魔像製造室。",
    "role": "desc",
@@ -4040,7 +4060,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#403": {
+  "The Price of Ingenuity#405": {
    "src": "She... told me once that she likes working with plants. It's why a lot of her golems are built off of flower pots and soil.",
    "dst": "她……有一次跟我說她喜歡跟植物打交道。所以她很多魔像都是用花盆和土做出來的。",
    "role": "desc",
@@ -4050,7 +4070,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#404": {
+  "The Price of Ingenuity#406": {
    "src": "Hm. Well, good thing she's using her blessing on this, and not... I don't know. Reshaping the whole world?",
    "dst": "唔。嗯，還好她把祝福用在這上面，而不是……我不知道。重塑整個世界之類的？",
    "role": "desc",
@@ -4060,7 +4080,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#405": {
+  "The Price of Ingenuity#407": {
    "src": "A-another golem? Should we turn back?",
    "dst": "又、又一個魔像？我們該掉頭嗎？",
    "role": "desc",
@@ -4070,7 +4090,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#406": {
+  "The Price of Ingenuity#408": {
    "src": "Oh, hey, it's Flowers! That's Soosu's favourite golem! Wonder why he's sleeping here and not on his Flowersbed, though. ... I wasn't the one that named that.",
    "dst": "喔，嘿，那是 Flowers！那是 Soosu 最喜歡的魔像！不過不知道他為什麼睡在這裡，而不是他的 Flowers 床上。……那個名字不是我取的。",
    "role": "desc",
@@ -4080,7 +4100,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#407": {
+  "The Price of Ingenuity#409": {
    "src": "Finally!!! He said yes!!! Uncle T finally let me visit his workshop, I'm so excited!!!!",
    "dst": "終於！！！他答應了！！！T 叔叔終於讓我去參觀他的工坊了，我好興奮！！！！",
    "role": "desc",
@@ -4090,7 +4110,7 @@
    "speaker": "125 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#408": {
+  "The Price of Ingenuity#410": {
    "src": "He's real!! Flowers is REAL NOW!!!! I showed Ma my drawing, and she helped me sew him together!! Now I can match with Fiona! She has Daruma, and I have... Flowers!",
    "dst": "他是真的！！Flowers 現在是真的了！！！！我把我的畫給媽看，她幫我把他縫了出來！！現在我可以跟 Fiona 配成對了！她有 Daruma，我有……Flowers！",
    "role": "desc",
@@ -4100,7 +4120,7 @@
    "speaker": "125 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#409": {
+  "The Price of Ingenuity#411": {
    "src": "Hmph. Hmph!!!!!!!! Fiona's old enough now, she's gotta work too... she's always so tired now, she won't play with me anymore!!!! This sucks. This sucks!!!!",
    "dst": "哼。哼！！！！！！Fiona 現在夠大了，她也得去工作……她現在總是好累，再也不跟我玩了！！！！這爛透了。這爛透了！！！",
    "role": "desc",
@@ -4110,7 +4130,7 @@
    "speaker": "126 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#410": {
+  "The Price of Ingenuity#412": {
    "src": "Uncle T agreed to help me make the super ultra cow milker o-matic!!",
    "dst": "T 叔叔答應幫我做超級無敵自動擠牛奶機了！！",
    "role": "desc",
@@ -4120,7 +4140,7 @@
    "speaker": "126 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#411": {
+  "The Price of Ingenuity#413": {
    "src": "She LOVED IT!!! AHHHH!!!!!!!",
    "dst": "她超愛的！！！啊啊啊！！！！！！",
    "role": "desc",
@@ -4130,7 +4150,7 @@
    "speaker": "126 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#412": {
+  "The Price of Ingenuity#414": {
    "src": "Grrrrrr............ I haven't written in AGES......... and it's because I gotta WORK!!!! In the FIELDS!!!!",
    "dst": "咕嚕嚕嚕嚕…………我好久好久沒寫了………都是因為我得去工作！！！！在田裡！！！！",
    "role": "desc",
@@ -4140,7 +4160,7 @@
    "speaker": "127 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#413": {
+  "The Price of Ingenuity#415": {
    "src": "I've been READING!! Reading so so many books... about FARMING!",
    "dst": "我一直在讀書！！讀了好多好多書……關於農耕的！",
    "role": "desc",
@@ -4150,7 +4170,7 @@
    "speaker": "128 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#414": {
+  "The Price of Ingenuity#416": {
    "src": "It's that time of year again!! The FESTIVAL OF THE CROWN!!! Just a week away!!!",
    "dst": "又到了一年一度的時候！！王室慶典！！！只剩一週！！！",
    "role": "desc",
@@ -4160,7 +4180,7 @@
    "speaker": "128 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#415": {
+  "The Price of Ingenuity#417": {
    "src": "Weird thing happened today. Uncle T came home with a strange man from the military, big ol fancy uniform and all!",
    "dst": "今天發生了怪事。T 叔叔帶了一個軍隊來的怪人回家，穿著超級氣派的制服！",
    "role": "desc",
@@ -4170,7 +4190,7 @@
    "speaker": "128 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#416": {
+  "The Price of Ingenuity#418": {
    "src": "It turns out, the Crown really liked my super duper farmer!! Cause it makes it easier to harvest crops and stuff, they want us to make more of them, so everyone can do their work faster!!!",
    "dst": "結果王室超喜歡我的超級厲害農夫機！！因為它讓收成之類的事變得更容易，他們要我們多做一些，這樣大家做事都能更快！！！",
    "role": "desc",
@@ -4180,7 +4200,7 @@
    "speaker": "128 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#417": {
+  "The Price of Ingenuity#419": {
    "src": "Ugh...... ughhhhhhhh......... UGHHHHHHH...... I'm so TIRED!!!",
    "dst": "唉…………唉唉唉唉唉…………唉唉唉唉唉唉…………我好累！！！",
    "role": "desc",
@@ -4190,7 +4210,7 @@
    "speaker": "128 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#418": {
+  "The Price of Ingenuity#420": {
    "src": "Uncle T got really hurt today. Really, really, really hurt.",
    "dst": "T 叔叔今天受了重傷。非常、非常、非常重的傷。",
    "role": "desc",
@@ -4200,7 +4220,7 @@
    "speaker": "129 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#419": {
+  "The Price of Ingenuity#421": {
    "src": "Ma says Uncle T's gonna be okay. He will.",
    "dst": "媽說 T 叔叔會沒事的。他一定會的。",
    "role": "desc",
@@ -4210,7 +4230,7 @@
    "speaker": "129 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#420": {
+  "The Price of Ingenuity#422": {
    "src": "Maybe deadlines are easy, actually?",
    "dst": "也許截止日期其實很簡單？",
    "role": "desc",
@@ -4220,7 +4240,7 @@
    "speaker": "129 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#421": {
+  "The Price of Ingenuity#423": {
    "src": "OK. BIG things are happening!!!",
    "dst": "好。大事要發生了！！！",
    "role": "desc",
@@ -4230,7 +4250,7 @@
    "speaker": "129 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#422": {
+  "The Price of Ingenuity#424": {
    "src": "The Citadel was AWESOME!!! I've always dreamed of going up there, someday... and now I HAVE!!",
    "dst": "城堡超讚的！！！我一直夢想著有一天能上去那裡……而現在我去過了！！",
    "role": "desc",
@@ -4240,7 +4260,7 @@
    "speaker": "129 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#423": {
+  "The Price of Ingenuity#425": {
    "src": "Work on project E-lec-tricity is ongoing (yes, the name changed... the Sovereign didn't like what I called it before...... bleh.), and it's going really well!!",
    "dst": "電——力計畫還在進行(對，名字改了……統領不喜歡我原本取的那個……唉。)，而且進行得很順利！！！",
    "role": "desc",
@@ -4250,7 +4270,7 @@
    "speaker": "129 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#424": {
+  "The Price of Ingenuity#426": {
    "src": "OKAY!!! DO NOT PANIC!!!! BUT THINGS! ARE! HAPPENING!!!!",
    "dst": "好！！！不要慌！！！！可是事情！正在！發生！！！！",
    "role": "desc",
@@ -4260,7 +4280,7 @@
    "speaker": "130 NA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#425": {
+  "The Price of Ingenuity#427": {
    "src": "I feel... strange.",
    "dst": "我覺得……很奇怪。",
    "role": "desc",
@@ -4270,7 +4290,7 @@
    "speaker": "0 IA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#426": {
+  "The Price of Ingenuity#428": {
    "src": "Looking back at these entries, I... I feel hollow.",
    "dst": "回頭看這些紀錄，我……覺得空空的。",
    "role": "desc",
@@ -4280,7 +4300,7 @@
    "speaker": "3 IA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#427": {
+  "The Price of Ingenuity#429": {
    "src": "Mother passed away from her illness, a few days ago. They knew it was coming for a while, apparently, but... it was still a shock.",
    "dst": "媽媽幾天前因病過世了。他們說其實早就知道會有這一天，可是……還是很震驚。",
    "role": "desc",
@@ -4290,7 +4310,7 @@
    "speaker": "4 IA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#428": {
+  "The Price of Ingenuity#430": {
    "src": "What's the point in writing these, anymore? I don't know what to say. I could talk about my projects, about all the progress I've been making, but it all feels so hollow.",
    "dst": "現在寫這些還有什麼意義？我不知道該說什麼。我可以談我的計畫、談我取得的所有進展，但那一切感覺都好空。",
    "role": "desc",
@@ -4300,7 +4320,7 @@
    "speaker": "10 IA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#429": {
+  "The Price of Ingenuity#431": {
    "src": "How many years has it been? I can check the dates, but... I don't want to.",
    "dst": "已經多少年了？我可以去查日期，可是……我不想查。",
    "role": "desc",
@@ -4310,7 +4330,7 @@
    "speaker": "40 IA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#430": {
+  "The Price of Ingenuity#432": {
    "src": "Never forget, never stop creating, never give in!",
    "dst": "永不遺忘，永不停止創造，永不屈服！",
    "role": "desc",
@@ -4320,7 +4340,7 @@
    "speaker": "45 IA",
    "source": "wiki"
   },
-  "The Price of Ingenuity#431": {
+  "The Price of Ingenuity#433": {
    "src": "And there it is... looking at it like this, it really is impressive.",
    "dst": "就是它了……這樣看著，它確實令人印象深刻。",
    "role": "desc",
@@ -4330,7 +4350,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#432": {
+  "The Price of Ingenuity#434": {
    "src": "Again, you really don't know what this is for? And more importantly, which of us will carry it out?",
    "dst": "再問一次，你真的不知道這東西是做什麼的？還有更重要的，我們之中誰來拿？",
    "role": "desc",
@@ -4340,7 +4360,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#433": {
+  "The Price of Ingenuity#435": {
    "src": "I'd say until we're in the clear, {u} should carry it. And no... I really, absolutely do not. Every time I've asked Soosu to elaborate, she's just blown me off.",
    "dst": "我會說在我們脫離險境之前，由 {u} 拿著。至於那個問題——不知道，我是真的完全不知道。每次我問 Soosu 細節，她都把我打發掉。",
    "role": "desc",
@@ -4350,7 +4370,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#434": {
+  "The Price of Ingenuity#436": {
    "src": "Well. Whatever this is, it can't be any good if the Crown wants it. {u}, are you ready?",
    "dst": "嗯。不管這是什麼，既然王室想要，那就不會是好東西。{u}，你準備好了嗎？",
    "role": "desc",
@@ -4360,7 +4380,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#435": {
+  "The Price of Ingenuity#437": {
    "src": "Wait. Do you also hear that sound? Are those footsteps?",
    "dst": "等等。你們也聽到那個聲音了嗎？那是腳步聲嗎？",
    "role": "desc",
@@ -4370,7 +4390,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#436": {
+  "The Price of Ingenuity#438": {
    "src": "Can't be anything else - and there's two pairs of them. So Soosu is here, but with whom...?",
    "dst": "不可能是別的——而且是兩個人的。所以 Soosu 來了，但跟她一起的是誰……？",
    "role": "desc",
@@ -4380,7 +4400,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#437": {
+  "The Price of Ingenuity#439": {
    "src": "...are you sure this is the best idea? Dividing your attention between the discussion, and your...projects... It hasn't worked out in the past.",
    "dst": "……你確定這是最好的做法嗎？把注意力分給討論和你的……計畫……過去從來沒有成功過。",
    "role": "desc",
@@ -4390,7 +4410,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#438": {
+  "The Price of Ingenuity#440": {
    "src": "Well, you know, Zhiraok, not eeeveryone seems to have the time to drop everything and leave their region. Sometimes, we have a job to do.",
    "dst": "嗯，你知道的，Zhiraok，不是「每——個人」都有那個閒工夫把手邊的事全放下、離開自己的地區。有時候，我們是有工作要做的。",
    "role": "desc",
@@ -4400,7 +4420,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#439": {
+  "The Price of Ingenuity#441": {
    "src": "Ah, there you are, Flowers! Wakey wakey, sleepyhead - you've got some guarding to get back to!",
    "dst": "啊，你在這裡啊，Flowers！起床囉，愛睏鬼——你有守衛工作要回去做了！",
    "role": "desc",
@@ -4410,7 +4430,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#440": {
+  "The Price of Ingenuity#442": {
    "src": "???",
    "dst": "？？？",
    "role": "desc",
@@ -4420,7 +4440,7 @@
    "speaker": "Flowers",
    "source": "wiki"
   },
-  "The Price of Ingenuity#441": {
+  "The Price of Ingenuity#443": {
    "src": "Awareness, Soosu! A bit of warning before you stop like that?",
    "dst": "留意一下，Soosu！你要那樣突然停下來，能不能先給個提醒？",
    "role": "desc",
@@ -4430,7 +4450,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#442": {
+  "The Price of Ingenuity#444": {
    "src": "Hm? Ah, sorry, sorry, but an unexpected run-in with a close friend is just sooo nice! Surely there's space somewhere in your mind to know that, hmm?",
    "dst": "嗯？啊，抱歉，抱歉，不過跟好朋友意外重逢實在是太——棒了嘛！你腦子裡總還有個位置放得下這件事吧，嗯？",
    "role": "desc",
@@ -4440,7 +4460,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#443": {
+  "The Price of Ingenuity#445": {
    "src": "Soosu... This is a solved problem! How many times have I told you that? ...Alright, look, that's a tangent. What I really need to tell you-",
    "dst": "Soosu……這是一個已經解過的問題了！我跟你講過多少次了？……好吧，聽著，那是條切線。我真正要跟你說的是——",
    "role": "desc",
@@ -4450,7 +4470,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#444": {
+  "The Price of Ingenuity#446": {
    "src": "Escape the workshop without being spotted.",
    "dst": "在不被發現的情況下逃出工坊。",
    "role": "desc",
@@ -4460,7 +4480,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#445": {
+  "The Price of Ingenuity#447": {
    "src": "Soosu's here? And with Zhiraok, of all people?! We have to get out, now!",
    "dst": "Soosu 來了？而且偏偏還跟 Zhiraok 一起？！我們得馬上出去！",
    "role": "desc",
@@ -4470,7 +4490,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#446": {
+  "The Price of Ingenuity#448": {
    "src": "Yeah, but I bet Soosu's got Flowers on high alert! Don't use your magic, and whatever you do, don't get spotted!",
    "dst": "對，可是我打賭 Soosu 已經讓 Flowers 進入高度警戒了！別用你的魔法，還有無論如何，別被發現！",
    "role": "desc",
@@ -4480,7 +4500,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#447": {
+  "The Price of Ingenuity#449": {
    "src": "Wait- What's that, Flowers? Intruders?! Right by the device room?!",
    "dst": "等等——什麼，Flowers？入侵者？！就在裝置室旁邊？！",
    "role": "desc",
@@ -4490,7 +4510,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#448": {
+  "The Price of Ingenuity#450": {
    "src": "...!! The Cursed!! You're not laying one digit on her, you hear me?!",
    "dst": "……！！那個受詛者！！你一根指頭都別想碰她，聽到沒有？！",
    "role": "desc",
@@ -4500,7 +4520,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#449": {
+  "The Price of Ingenuity#451": {
    "src": "Wh-what the helix Infiltrators! You aren't getting away this time!",
    "dst": "搞、搞什麼螺旋——滲透者！這次你們跑不掉了！",
    "role": "desc",
@@ -4510,7 +4530,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#450": {
+  "The Price of Ingenuity#452": {
    "src": "Yusanu?! Who is that with you? Wait, are you trying to steal the device?!",
    "dst": "Yusanu？！跟你一起的是誰？等等，你們是想偷那個裝置嗎？！",
    "role": "desc",
@@ -4520,7 +4540,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#451": {
+  "The Price of Ingenuity#453": {
    "src": "Hello, we're meant to run! Are you even taking this seriously?!",
    "dst": "喂，我們現在應該要跑的！你到底有沒有把這件事當回事？！",
    "role": "desc",
@@ -4530,7 +4550,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#452": {
+  "The Price of Ingenuity#454": {
    "src": "...you're smart enough that I shouldn't need to reiterate this! I know you are! Please, take the problem seriously!",
    "dst": "……你聰明到我不該需要重複這件事！我知道你很聰明！拜託，把這個問題當回事！",
    "role": "desc",
@@ -4540,7 +4560,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#453": {
+  "The Price of Ingenuity#455": {
    "src": "A set of criminals is in your quadrant, the Cursed behind the Torann massacre is with them, they're infil-",
    "dst": "有一群罪犯在你的象限裡，Torann 屠殺背後那個受詛者跟他們在一起，他們正在滲——",
    "role": "desc",
@@ -4550,7 +4570,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#454": {
+  "The Price of Ingenuity#456": {
    "src": "Oh my god, Z, I get it!!! All you do is yap yap yap yap YAP!!! Give me some room to think!!!",
    "dst": "我的天啊，Z，我知道了！！！你就只會嘰嘰喳喳嘰嘰喳喳「喳」！！！給我一點空間想事情！！！",
    "role": "desc",
@@ -4560,7 +4580,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#455": {
+  "The Price of Ingenuity#457": {
    "src": "Bla bla criminals, bla bla cursed one!!!! Yes, I know how important it is! Flowers, hold this steady for me, won't you?",
    "dst": "什麼罪犯什麼受詛者！！！！對，我知道那有多重要！Flowers，幫我把這個扶穩，好嗎？",
    "role": "desc",
@@ -4570,7 +4590,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#456": {
+  "The Price of Ingenuity#458": {
    "src": "As long as your focus is on the solutions, not your... But, Soosu, I haven't heard anything from you. There was key information I had to learn offhand!",
    "dst": "只要你的專注是放在解法上，而不是你的……但是，Soosu，我完全沒收到你的任何消息。有關鍵的情報是我從別處聽來的！",
    "role": "desc",
@@ -4580,7 +4600,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#457": {
+  "The Price of Ingenuity#459": {
    "src": "One of your commanders summarized the topic for me. I should've heard it from you! So...what's your angle? It feels like you're ignoring the issue.",
    "dst": "是你的一位指揮官幫我摘要了那個題目。那應該由你告訴我才對！所以……你的意圖是什麼？感覺你在無視這個問題。",
    "role": "desc",
@@ -4590,7 +4610,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#458": {
+  "The Price of Ingenuity#460": {
    "src": "...Soosu? Soosu, are you listening? I asked you a question!",
    "dst": "……Soosu？Soosu，你有在聽嗎？我問了你一個問題！",
    "role": "desc",
@@ -4600,7 +4620,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#459": {
+  "The Price of Ingenuity#461": {
    "src": "Hm? Yeah, yeah, sure. Hey, could you fetch me some bolts?",
    "dst": "嗯？對啊，對啊，好。欸，你可以幫我拿幾根螺栓嗎？",
    "role": "desc",
@@ -4610,7 +4630,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#460": {
+  "The Price of Ingenuity#462": {
    "src": "...fine, sure- But please, we have to round this out, Soosu. You have to get involved.",
    "dst": "……好吧，行——但拜託，我們得把這件事湊個整，Soosu。你必須投入進來。",
    "role": "desc",
@@ -4620,7 +4640,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#461": {
+  "The Price of Ingenuity#463": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -4630,7 +4650,7 @@
    "speaker": "Flowers",
    "source": "wiki"
   },
-  "The Price of Ingenuity#462": {
+  "The Price of Ingenuity#464": {
    "src": "Oh, right, about Flowers. Could you go check if his body picked up any parts while walking that I could use?",
    "dst": "喔對，關於 Flowers。你可以去看看他身上走一走有沒有沾到什麼我用得上的零件嗎？",
    "role": "desc",
@@ -4640,7 +4660,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#463": {
+  "The Price of Ingenuity#465": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -4650,7 +4670,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#464": {
+  "The Price of Ingenuity#466": {
    "src": "I knew letting you work in here was irrational. There's such a greater sum of problems than your toys! You're acting like a child, but you aren't one!",
    "dst": "我就知道讓你在這裡工作是不理性的。要解的問題總和遠遠大過你那些玩具！你表現得像個孩子，但你不是！",
    "role": "desc",
@@ -4660,7 +4680,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#465": {
+  "The Price of Ingenuity#467": {
    "src": "I know you can do such good work if you just apply yourself! Why are you just ignoring a high-ranking defector and a Cursed exponentiating each others' threat?!",
    "dst": "我知道只要你肯用心，你能做出多好的成果！為什麼你要無視一個高階叛逃者和一個受詛者在那裡指數級地放大彼此的威脅？！",
    "role": "desc",
@@ -4670,7 +4690,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#466": {
+  "The Price of Ingenuity#468": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -4680,7 +4700,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#467": {
+  "The Price of Ingenuity#469": {
    "src": "Do you think you're better than me, Zhiraok?",
    "dst": "你覺得你比我好嗎，Zhiraok？",
    "role": "desc",
@@ -4690,7 +4710,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#468": {
+  "The Price of Ingenuity#470": {
    "src": "Oh, look at Soosu, always so inattentive and clueless, always ignoring the needs of her district, always cooped up in her laboratory.",
    "dst": "喔，看看 Soosu，總是那麼漫不經心又搞不清楚狀況，總是無視自己轄區的需求，總是窩在她的實驗室裡。",
    "role": "desc",
@@ -4700,7 +4720,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#469": {
+  "The Price of Ingenuity#471": {
    "src": "Who even cares about the work she does? The projects she's assigned?! Who even cares that she knows, she knows, she KNOWS!!!!",
    "dst": "誰在乎她做的工作？她被指派的那些計畫？！誰在乎她知道，她知道，她「知道」！！！！",
    "role": "desc",
@@ -4710,7 +4730,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#470": {
+  "The Price of Ingenuity#472": {
    "src": "...Hm! Maybe you are better, Z. If you weren't, maybe we wouldn't be here right now!!",
    "dst": "……哼！也許你確實比較好，Z。你要是沒有比較好，也許我們現在就不會落到這個地步！！",
    "role": "desc",
@@ -4720,7 +4740,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#471": {
+  "The Price of Ingenuity#473": {
    "src": "I... ... ...I'm sorry Soosu. That...that wasn't my angle, I didn't mean t-",
    "dst": "我……………對不起，Soosu。那……那不是我的意圖，我不是想——",
    "role": "desc",
@@ -4730,7 +4750,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#472": {
+  "The Price of Ingenuity#474": {
    "src": "But you did! Hand me cog C-{~}, would you?",
    "dst": "但你就是！把 C-{~} 號齒輪遞給我，好嗎？",
    "role": "desc",
@@ -4740,7 +4760,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#473": {
+  "The Price of Ingenuity#475": {
    "src": "...alright. I just want to reach the end of this sequence as fast as possible.",
    "dst": "……好吧。我只是想盡快走到這條數列的盡頭。",
    "role": "desc",
@@ -4750,7 +4770,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#474": {
+  "The Price of Ingenuity#476": {
    "src": "That makes two of us. I'm working on it. You can stop bugging me about it!!",
    "dst": "那我們兩個一樣。我在做了。你可以別再煩我了！！",
    "role": "desc",
@@ -4760,7 +4780,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#475": {
+  "The Price of Ingenuity#477": {
    "src": "...maybe I should've been paying more attention. I didn't realize her project was putting so much weight on your soldiers. And I promised to help, too...",
    "dst": "……也許我早該多留意一點的。我沒有意識到她的計畫把這麼重的擔子壓在你的士兵身上。而我還答應過要幫忙……",
    "role": "desc",
@@ -4770,7 +4790,7 @@
    "speaker": "Sovereign Zhiraok",
    "source": "wiki"
   },
-  "The Price of Ingenuity#476": {
+  "The Price of Ingenuity#478": {
    "src": "What are you doing?!",
    "dst": "你在做什麼？！",
    "role": "desc",
@@ -4780,7 +4800,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#477": {
+  "The Price of Ingenuity#479": {
    "src": "Return to the Steel Feather through Yusanu's tunnel at [-{~}, {~}, -{~}].",
    "dst": "從 [-{~1}, {~2}, -{~3}] 的 Yusanu 隧道回到鋼羽。",
    "role": "desc",
@@ -4790,7 +4810,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#478": {
+  "The Price of Ingenuity#480": {
    "src": "...what was that?! What were they DOING there?!",
    "dst": "……剛才那是怎麼回事？！他們在那裡「做什麼」？！",
    "role": "desc",
@@ -4800,7 +4820,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#479": {
+  "The Price of Ingenuity#481": {
    "src": "I- I- I don't know! A surprise visit? I didn't... I didn't think...",
    "dst": "我——我——我不知道！突然來訪？我沒有……我沒想到……",
    "role": "desc",
@@ -4810,7 +4830,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#480": {
+  "The Price of Ingenuity#482": {
    "src": "So, \"letting off some steam\", huh?! Oh, sure, bring Sovereign Zhiraok along with you!! Why not!!!",
    "dst": "所以，「發洩一下」，是吧？！喔，當然，還順便帶 Zhiraok 統領一起來！！為什麼不呢！！！",
    "role": "desc",
@@ -4820,7 +4840,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#481": {
+  "The Price of Ingenuity#483": {
    "src": "We almost got caught! We- oh god, we... we almost got caught...",
    "dst": "我們差點被抓到！我們——天啊，我們……我們差點被抓到……",
    "role": "desc",
@@ -4830,7 +4850,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#482": {
+  "The Price of Ingenuity#484": {
    "src": "...what are we doing? Why did- why did we do that? That was so...",
    "dst": "……我們在幹嘛？我們為什麼——我們為什麼要做那種事？那實在太……",
    "role": "desc",
@@ -4840,7 +4860,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#483": {
+  "The Price of Ingenuity#485": {
    "src": "You're asking ME?! Yeah, Rex, why did we do that?!",
    "dst": "你在問「我」？！對啊，Rex，我們為什麼要做那種事？！",
    "role": "desc",
@@ -4850,7 +4870,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#484": {
+  "The Price of Ingenuity#486": {
    "src": "Stop. Just... stop, for a second. I need to... think.",
    "dst": "停。就……停一下。我需要……想一想。",
    "role": "desc",
@@ -4860,7 +4880,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#485": {
+  "The Price of Ingenuity#487": {
    "src": "...damn it. Damn it, damn it, damn it! Stupid, impulsive... ugh!!",
    "dst": "……可惡。可惡、可惡、可惡！愚蠢、衝動……唉！！",
    "role": "desc",
@@ -4870,7 +4890,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#486": {
+  "The Price of Ingenuity#488": {
    "src": "Uh... Rex, are you-",
    "dst": "呃……Rex，你還——",
    "role": "desc",
@@ -4880,7 +4900,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#487": {
+  "The Price of Ingenuity#489": {
    "src": "No, I... I'm not. I'm sorry, I- I should know better by now...",
    "dst": "不，我……我不好。對不起，我——我這時候應該要更懂事了……",
    "role": "desc",
@@ -4890,7 +4910,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#488": {
+  "The Price of Ingenuity#490": {
    "src": "It... doesn't matter. It's too late to take it back. We can... we can use it as a trump card. Yusanu, please tell me you can figure out what it is.",
    "dst": "那……不重要了。現在收不回來了。我們可以……把它當成王牌。Yusanu，拜託告訴我你能搞清楚它是什麼。",
    "role": "desc",
@@ -4900,7 +4920,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#489": {
+  "The Price of Ingenuity#491": {
    "src": "I... I don't know. I never got to work too closely with it, so... I have no idea what it is. If I work with it, maybe I can get somewhere. But...",
    "dst": "我……我不知道。我從來沒能近距離接觸它，所以……我完全不知道它是什麼。如果我能拿它做點研究，也許能有點頭緒。不過……",
    "role": "desc",
@@ -4910,7 +4930,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#490": {
+  "The Price of Ingenuity#492": {
    "src": "Good enough, I guess. Come on, let's get back to. I need to... find Mora. And you need to tell everyone what you've been up to.",
    "dst": "夠好了，我想。走吧，我們回去。我需要……找 Mora。而你需要告訴大家你都在做什麼。",
    "role": "desc",
@@ -4920,7 +4940,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#491": {
+  "The Price of Ingenuity#493": {
    "src": "...so just hiding what we did today isn't an option?",
    "dst": "……所以把今天做的事瞞下來不是個選項？",
    "role": "desc",
@@ -4930,7 +4950,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#492": {
+  "The Price of Ingenuity#494": {
    "src": "And let it come back to bite us later down the line? No thanks. Let's go.",
    "dst": "然後讓它以後回頭咬我們一口？不了，謝謝。我們走。",
    "role": "desc",
@@ -4940,7 +4960,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#493": {
+  "The Price of Ingenuity#495": {
    "src": "Really, Rex, are you... alright? I don't think I've ever seen-",
    "dst": "說真的，Rex，你……還好嗎？我想我從來沒看過——",
    "role": "desc",
@@ -4950,7 +4970,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#494": {
+  "The Price of Ingenuity#496": {
    "src": "Don't. Don't push it. Not right now.",
    "dst": "別。別逼我。現在不行。",
    "role": "desc",
@@ -4960,7 +4980,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#495": {
+  "The Price of Ingenuity#497": {
    "src": "Hey! You three, where the heck have you been all day?!",
    "dst": "喂！你們三個，一整天到底跑哪去了？！",
    "role": "desc",
@@ -4970,7 +4990,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#496": {
+  "The Price of Ingenuity#498": {
    "src": "I- I can explain-",
    "dst": "我——我可以解釋——",
    "role": "desc",
@@ -4980,7 +5000,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#497": {
+  "The Price of Ingenuity#499": {
    "src": "Yes, it's rather curious! I happened to speak to Syndra, and apparently there were no such \"important tasks\" assigned to you! She seemed rather clueless about the whole matter!",
    "dst": "是啊，這確實很耐人尋味！我剛好跟 Syndra 談過，顯然根本沒有什麼「重要任務」指派給你們！她對整件事似乎一無所知！",
    "role": "desc",
@@ -4990,7 +5010,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#498": {
+  "The Price of Ingenuity#500": {
    "src": "... Oh, Rex... what happened?",
    "dst": "……喔，Rex……發生了什麼事？",
    "role": "desc",
@@ -5000,7 +5020,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#499": {
+  "The Price of Ingenuity#501": {
    "src": "You know what happened, Mora. I- I messed up. Again.",
    "dst": "你知道發生了什麼事，Mora。我——我又搞砸了。又一次。",
    "role": "desc",
@@ -5010,7 +5030,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#500": {
+  "The Price of Ingenuity#502": {
    "src": "Huh? What do you mean, agai-",
    "dst": "咦？你說又一——",
    "role": "desc",
@@ -5020,7 +5040,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#501": {
+  "The Price of Ingenuity#503": {
    "src": "Ah, Yuman, would you mind taking Yusanu along with you to go tell the others we'll be a little late to the meeting? I believe there will be some additional news today.",
    "dst": "啊，Yuman，可以麻煩你帶 Yusanu 一起去告訴其他人，我們開會會晚到一點嗎？我想今天會有一些額外的消息。",
    "role": "desc",
@@ -5030,7 +5050,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#502": {
+  "The Price of Ingenuity#504": {
    "src": "Uh... sure, I guess. Yus, can you tell me what's up while we walk?",
    "dst": "呃……好啊，我想可以。Yus，你可以邊走邊跟我說怎麼回事嗎？",
    "role": "desc",
@@ -5040,7 +5060,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#503": {
+  "The Price of Ingenuity#505": {
    "src": "...yeah, sure, Yuman.",
    "dst": "……好啊，Yuman。",
    "role": "desc",
@@ -5050,7 +5070,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#504": {
+  "The Price of Ingenuity#506": {
    "src": "...well, how bad it it?",
    "dst": "……那麼，有多糟？",
    "role": "desc",
@@ -5060,7 +5080,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#505": {
+  "The Price of Ingenuity#507": {
    "src": "It's... bad. We stole something important from the Sovereign's workshop. It's... a long story. Yusanu should tell his part of it. But...",
    "dst": "……很糟。我們從統領的工坊偷走了一件重要的東西。那……說來話長。Yusanu 該講他那一部分。不過……",
    "role": "desc",
@@ -5070,7 +5090,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#506": {
+  "The Price of Ingenuity#508": {
    "src": "I see. I apologize, Rex, I should have been more attentive.",
    "dst": "我明白了。我很抱歉，Rex，我應該多留意你的。",
    "role": "desc",
@@ -5080,7 +5100,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#507": {
+  "The Price of Ingenuity#509": {
    "src": "No! No, it's not your fault, I should have- I should have known I was being impulsive, I... I wasn't thinking straight.",
    "dst": "不！不，那不是你的錯，我應該——我應該要察覺自己在衝動，我……我當時腦子不清楚。",
    "role": "desc",
@@ -5090,7 +5110,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#508": {
+  "The Price of Ingenuity#510": {
    "src": "Ah. Of course, you don't know. I should have informed you the last time this happened...",
    "dst": "啊。當然，你不知道。上一次發生的時候我就該告訴你的……",
    "role": "desc",
@@ -5100,7 +5120,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#509": {
+  "The Price of Ingenuity#511": {
    "src": "Rex has these... ah, \"moods,\" sometimes, wherein she gets... overly excitable and impulsive. Many a time have they led her into trouble.",
    "dst": "Rex 有時候會有這種……啊，「情緒」，那時候她會變得……過度亢奮而衝動。那已經帶她惹上過不少麻煩。",
    "role": "desc",
@@ -5110,7 +5130,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#510": {
+  "The Price of Ingenuity#512": {
    "src": "Ugh, I should know better by now! Especially here, especially now, when...",
    "dst": "唉，我到現在應該要更懂事了！尤其是在這裡、在這個時候，當……",
    "role": "desc",
@@ -5120,7 +5140,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#511": {
+  "The Price of Ingenuity#513": {
    "src": "Well, what is done is done, and nevertheless, we must press on. Let's join the others for the meeting. Syndra has something important to tell us.",
    "dst": "嗯，事已至此，無論如何我們都得繼續前進。我們去跟大家會合開會吧。Syndra 有重要的事要告訴我們。",
    "role": "desc",
@@ -5130,7 +5150,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "The Price of Ingenuity#512": {
+  "The Price of Ingenuity#514": {
    "src": "Attend the meeting in the Steel Feather at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~1}, {~2}, -{~3}] 的鋼羽參加會議。",
    "role": "desc",
@@ -5140,7 +5160,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#513": {
+  "The Price of Ingenuity#515": {
    "src": "There you are! Mora, Rex, what's going-",
    "dst": "你們來了！Mora、Rex，是怎麼——",
    "role": "desc",
@@ -5150,7 +5170,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#514": {
+  "The Price of Ingenuity#516": {
    "src": "Syndra, I believe that can wait. We've, ah, held up dinner long enough, I believe. If everyone is here, we should begin. First- Yusanu, what was it you had to tell us?",
    "dst": "Syndra，我想那可以晚點再說。我們，啊，已經把晚餐拖夠久了。既然大家都到齊，我們該開始了。首先——Yusanu，你要告訴我們的是什麼？",
    "role": "desc",
@@ -5160,7 +5180,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#515": {
+  "The Price of Ingenuity#517": {
    "src": "...sigh. Before I begin, I need to make it clear- I was doing what I thought was best for the Steel Feather.",
    "dst": "……唉。在我開始之前，我得先講清楚——我做的是我認為對鋼羽最好的事。",
    "role": "desc",
@@ -5170,7 +5190,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#516": {
+  "The Price of Ingenuity#518": {
    "src": "Yeah, man, good start... really instills confidence.",
    "dst": "是喔，老兄，好開頭……真讓人放心。",
    "role": "desc",
@@ -5180,7 +5200,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#517": {
+  "The Price of Ingenuity#519": {
    "src": "Yuman, please... let me get through this. Don't interrupt.",
    "dst": "Yuman，拜託……讓我把話講完。別打斷。",
    "role": "desc",
@@ -5190,7 +5210,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#518": {
+  "The Price of Ingenuity#520": {
    "src": "So. So, so,so... The... the reason the crown has left us alone down here is because I have been working with Sovereign Soosu.",
    "dst": "所以。所以，所以……王室之所以放過我們，是因為我一直在為 Soosu 統領工作。",
    "role": "desc",
@@ -5200,7 +5220,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#519": {
+  "The Price of Ingenuity#521": {
    "src": "You WHAT?!",
    "dst": "你做了「什麼」？！",
    "role": "desc",
@@ -5210,7 +5230,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#520": {
+  "The Price of Ingenuity#522": {
    "src": "Hey! Let him speak.",
    "dst": "喂！讓他講。",
    "role": "desc",
@@ -5220,7 +5240,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#521": {
+  "The Price of Ingenuity#523": {
    "src": "The reason we've been able to stay under the radar for so long is because of this, Yulie.",
    "dst": "我們之所以能這麼久都不被盯上，就是因為這個，Yulie。",
    "role": "desc",
@@ -5230,7 +5250,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#522": {
+  "The Price of Ingenuity#524": {
    "src": "The reason we can live here, leave our home, make use of the city's electricity... it's because of my collaboration.",
    "dst": "我們之所以能住在這裡、能離開家、能用城裡的電……都是因為我的合作。",
    "role": "desc",
@@ -5240,7 +5260,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#523": {
+  "The Price of Ingenuity#525": {
    "src": "She said she saw potential in me. Told me that if I helped her in her workshops, then... then you all would be safe down here.",
    "dst": "她說她在我身上看到潛力。她告訴我，只要我在她的工坊幫她，那……你們所有人在下面就會安全。",
    "role": "desc",
@@ -5250,7 +5270,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#524": {
+  "The Price of Ingenuity#526": {
    "src": "I didn't tell anybody because I knew you wouldn't get it. You'd think it was stupid, and risky, and a bad idea. Working with... with someone responsible for our problems.",
    "dst": "我沒告訴任何人，是因為我知道你們不會懂。你們會覺得那很蠢、很冒險、是個爛主意。跟……跟一個要為我們的問題負責的人合作。",
    "role": "desc",
@@ -5260,7 +5280,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#525": {
+  "The Price of Ingenuity#527": {
    "src": "And I knew it was risky. I did. But I thought that if I were to mess up, only I would be punished. You all would be safe.",
    "dst": "而我知道那很冒險。我知道。但我以為如果我搞砸了，受罰的只會是我。你們都會安全。",
    "role": "desc",
@@ -5270,7 +5290,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#526": {
+  "The Price of Ingenuity#528": {
    "src": "...now. I understand emotions are running high right now. I would ask everyone to take a step back, think through it logically, and remain c-",
    "dst": "……好了。我理解現在情緒都很激動。我請大家退一步，把它想清楚，並保持冷——",
    "role": "desc",
@@ -5280,7 +5300,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#527": {
+  "The Price of Ingenuity#529": {
    "src": "Are you insane, Yusanu?! Of all the secrets you could have been keeping-",
    "dst": "你瘋了嗎，Yusanu？！你能瞞的秘密那麼多，偏偏是這一個——",
    "role": "desc",
@@ -5290,7 +5310,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#528": {
+  "The Price of Ingenuity#530": {
    "src": "Hey, bro, leave him alone.",
    "dst": "喂，老哥，別為難他。",
    "role": "desc",
@@ -5300,7 +5320,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#529": {
+  "The Price of Ingenuity#531": {
    "src": "No, I don't think I will! Is that what the alarms were about? How long has this been going on? What was running through your head when you decided-",
    "dst": "不，我想我還是要！那些警報就是為了這個嗎？這件事持續多久了？你決定的時候腦袋裡在想什麼——",
    "role": "desc",
@@ -5310,7 +5330,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#530": {
+  "The Price of Ingenuity#532": {
    "src": "As if you haven't been doing the same thing this whole time! Trying to put all the weight on your own shoulders, not getting help from anyone else!!",
    "dst": "好像你自己這段時間沒在做一樣的事！！什麼都想扛在自己肩上，不肯讓任何人幫忙！！",
    "role": "desc",
@@ -5320,7 +5340,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#531": {
+  "The Price of Ingenuity#533": {
    "src": "So- so, y'know, I'm a little mad. He should have talked to us about it! But... he's telling us now. He's asking for help now.",
    "dst": "所以——所以，你知道嗎，我是有點生氣。他早該跟我們講的！可是……他現在講了。他現在在求助了。",
    "role": "desc",
@@ -5330,7 +5350,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#532": {
+  "The Price of Ingenuity#534": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -5340,7 +5360,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#533": {
+  "The Price of Ingenuity#535": {
    "src": "Unfortunately, it gets worse.",
    "dst": "很遺憾，還有更糟的。",
    "role": "desc",
@@ -5350,7 +5370,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#534": {
+  "The Price of Ingenuity#536": {
    "src": "How?!",
    "dst": "怎麼可能還有？！",
    "role": "desc",
@@ -5360,7 +5380,7 @@
    "speaker": "Yulie",
    "source": "wiki"
   },
-  "The Price of Ingenuity#535": {
+  "The Price of Ingenuity#537": {
    "src": "After yesterday's run-in with the soldiers... Soosu is demanding I hand over whoever's responsible. I... I can't do that.",
    "dst": "在昨天跟士兵起衝突之後……Soosu 要求我把該負責的人交出去。我……我做不到。",
    "role": "desc",
@@ -5370,7 +5390,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#536": {
+  "The Price of Ingenuity#538": {
    "src": "Rex and {u} caught me talking to her today. That's why... that's why I'm telling you.",
    "dst": "Rex 和 {u} 今天撞見我在跟她講話。所以……所以我才告訴你們。",
    "role": "desc",
@@ -5380,7 +5400,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#537": {
+  "The Price of Ingenuity#539": {
    "src": "...yeah. I convinced him to stop working with her, and to tell you all about it.",
    "dst": "……對。我說服他別再跟她合作，並且把這件事全部告訴你們。",
    "role": "desc",
@@ -5390,7 +5410,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#538": {
+  "The Price of Ingenuity#540": {
    "src": "We also... stole an important gadget she and Yusanu were working on. Something the Queen was very invested in.",
    "dst": "我們還……偷走了她和 Yusanu 在做的一件重要裝置。某種女王非常重視的東西。",
    "role": "desc",
@@ -5400,7 +5420,7 @@
    "speaker": "Rex",
    "source": "wiki"
   },
-  "The Price of Ingenuity#539": {
+  "The Price of Ingenuity#541": {
    "src": "I don't know what it is or what it does. I don't know what it's for. All I know is that the Queen needs it finished. It's all she's had Soosu working on for... months.",
    "dst": "我不知道那是什麼、有什麼功能。我不知道它是做什麼用的。我只知道女王需要它完成。她讓 Soosu 做的就只有這件事，做了……好幾個月。",
    "role": "desc",
@@ -5410,7 +5430,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#540": {
+  "The Price of Ingenuity#542": {
    "src": "I'll try to figure out what it is in my spare time. Maybe it'll help us! I... hope it will.",
    "dst": "我會用空閒時間試著搞清楚它是什麼。也許它能幫到我們！我……希望如此。",
    "role": "desc",
@@ -5420,7 +5440,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#541": {
+  "The Price of Ingenuity#543": {
    "src": "Yulie, Yuman... I owe you a better apology. I can talk to you in private later, but... right now, we should continue with the meeting.",
    "dst": "Yulie、Yuman……我欠你們一個更好的道歉。我可以晚點私下跟你們談，但……現在，我們該繼續開會。",
    "role": "desc",
@@ -5430,7 +5450,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#542": {
+  "The Price of Ingenuity#544": {
    "src": "Ow... yeah, I deserved that.",
    "dst": "痛……好啦，這我活該。",
    "role": "desc",
@@ -5440,7 +5460,7 @@
    "speaker": "Yusanu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#543": {
+  "The Price of Ingenuity#545": {
    "src": "...that was certainly a lot. Fortunately, angering the Sovereign may not ultimately matter. If all goes according to plan... the crown will fall at the end of the festival.",
    "dst": "……那確實是很大的一堆事。所幸，惹惱那位統領最終可能無關緊要。如果一切照計畫走……王室會在慶典結束時倒下。",
    "role": "desc",
@@ -5450,7 +5470,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#544": {
+  "The Price of Ingenuity#546": {
    "src": "My goal, as always, has been to find a way to destroy the crown's influence and to free our province. I believe this upcoming festival is an opportunity to do just that.",
    "dst": "我的目標一如既往，是找到摧毀王室影響力、解放我們行省的辦法。我相信這次即將到來的慶典正是這樣一個機會。",
    "role": "desc",
@@ -5460,7 +5480,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#545": {
+  "The Price of Ingenuity#547": {
    "src": "During the Crown Festival, Her Majesty will die.",
    "dst": "在王室慶典期間，女王陛下將會死。",
    "role": "desc",
@@ -5470,7 +5490,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#546": {
+  "The Price of Ingenuity#548": {
    "src": "Settle down, everyone, settle down! Please, allow Syndra to continue.",
    "dst": "冷靜，各位，冷靜！請讓 Syndra 繼續說。",
    "role": "desc",
@@ -5480,7 +5500,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#547": {
+  "The Price of Ingenuity#549": {
    "src": "It will not be easy. But if we strike when her guard is down, and catch her by surprise, I believe it is possible.",
    "dst": "這不會容易。但如果我們趁她鬆懈時出手、打她個措手不及，我相信是可能的。",
    "role": "desc",
@@ -5490,7 +5510,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#548": {
+  "The Price of Ingenuity#550": {
    "src": "I'll be splitting you all into several groups, and will assign tasks that must be completed before the festival.",
    "dst": "我會把你們分成幾個小組，並指派慶典前必須完成的任務。",
    "role": "desc",
@@ -5500,7 +5520,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#549": {
+  "The Price of Ingenuity#551": {
    "src": "The decision Quill and I have come to is that I alone will be going for the kill. That way, if anything goes wrong... no one else faces the consequences.",
    "dst": "我和 Quill 得出的決定是，由我一個人去執行擊殺。這樣一來，萬一出了任何差錯……其他人都不必承擔後果。",
    "role": "desc",
@@ -5510,7 +5530,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#550": {
+  "The Price of Ingenuity#552": {
    "src": "I'll go over the details tomorrow. I think... we've had enough excitement today. Please, hold your complaints until then, as well.",
    "dst": "細節我明天再說。我想……我們今天的刺激已經夠多了。你們的意見也請留到那時候再說。",
    "role": "desc",
@@ -5520,7 +5540,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Price of Ingenuity#551": {
+  "The Price of Ingenuity#553": {
    "src": "Ahem. Yes, indeed. I suppose we should be getting to dinner, as well.",
    "dst": "咳。是的，確實。我想我們也該去吃晚餐了。",
    "role": "desc",
@@ -5530,7 +5550,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#552": {
+  "The Price of Ingenuity#554": {
    "src": "Yuman... this may be unfair of me to ask, but would you be willing to play us a song tonight? We will not have many days left together.",
    "dst": "Yuman……這樣要求也許對你不公平，但今晚你願意為我們彈一首歌嗎？我們剩下能相聚的日子不多了。",
    "role": "desc",
@@ -5540,7 +5560,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#553": {
+  "The Price of Ingenuity#555": {
    "src": "Yeah... yeah, man, of course. I can do that.",
    "dst": "好啊……好啊，老兄，當然。我可以。",
    "role": "desc",
@@ -5550,7 +5570,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#554": {
+  "The Price of Ingenuity#556": {
    "src": "Then let us enjoy the remainder of our company!",
    "dst": "那就讓我們好好享受剩下的相聚吧！",
    "role": "desc",
@@ -5560,7 +5580,7 @@
    "speaker": "Quill",
    "source": "wiki"
   },
-  "The Price of Ingenuity#555": {
+  "The Price of Ingenuity#557": {
    "src": "Watch Yuman's performance at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~1}, {~2}, -{~3}] 觀賞 Yuman 的表演。",
    "role": "desc",
@@ -5570,7 +5590,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Price of Ingenuity#556": {
+  "The Price of Ingenuity#558": {
    "src": "Hey, everyone! Man, uh... small crowd today, huh?",
    "dst": "嘿，各位！天啊，呃……今天觀眾有點少喔？",
    "role": "desc",
@@ -5580,7 +5600,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#557": {
+  "The Price of Ingenuity#559": {
    "src": "Oh, man, is that Jiro I see? Hey, man! I didn't, uh... expect to see ya.",
    "dst": "喔，天啊，我看到的是 Jiro 嗎？嘿，老兄！我，呃……沒想到會看到你。",
    "role": "desc",
@@ -5590,7 +5610,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#558": {
+  "The Price of Ingenuity#560": {
    "src": "Huh? Why not?",
    "dst": "咦？為什麼不會？",
    "role": "desc",
@@ -5600,7 +5620,7 @@
    "speaker": "Jiro",
    "source": "wiki"
   },
-  "The Price of Ingenuity#559": {
+  "The Price of Ingenuity#561": {
    "src": "Uh, just, you didn't seem super happy with me after... after yesterday. With the- soldier thing.",
    "dst": "呃，就是，昨天之後你看起來不太高興……就是那個——士兵的事。",
    "role": "desc",
@@ -5610,7 +5630,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#560": {
+  "The Price of Ingenuity#562": {
    "src": "... Oh! Yeah. No worries. Water under the bridge.",
    "dst": "……喔！對。別擔心。都過去了。",
    "role": "desc",
@@ -5620,7 +5640,7 @@
    "speaker": "Jiro",
    "source": "wiki"
   },
-  "The Price of Ingenuity#561": {
+  "The Price of Ingenuity#563": {
    "src": "If... if you say so! Don't think you've heard this one before, so tell me how you like it!",
    "dst": "既、既然你這麼說！這首我想你應該沒聽過，聽完跟我說你喜不喜歡！",
    "role": "desc",
@@ -5630,7 +5650,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#562": {
+  "The Price of Ingenuity#564": {
    "src": "But first... Yus. Yusanu. Look, I... I'm not one to hold grudges. So I don't need any more apologies from you! I get it.",
    "dst": "不過首先……Yus。Yusanu。聽著，我……我不是會記仇的人。所以你不用再跟我道歉了！我懂。",
    "role": "desc",
@@ -5640,7 +5660,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#563": {
+  "The Price of Ingenuity#565": {
    "src": "I just... want you to trust us more, 'kay? You and Yulie both, haha! 'Cause... I want to help!",
    "dst": "我只是……希望你多信任我們一點，好嗎？你跟 Yulie 都是，哈哈！因為……我想幫忙！",
    "role": "desc",
@@ -5650,7 +5670,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#564": {
+  "The Price of Ingenuity#566": {
    "src": "I had a think, and yeah. It sucks you didn't tell us. But your deal with Soosu- it saved us! Gave us a home, gave us a future!",
    "dst": "我想了一下，是啊。你沒告訴我們是很爛。但你跟 Soosu 的那個交易——它救了我們！給了我們一個家，給了我們一個未來！",
    "role": "desc",
@@ -5660,7 +5680,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#565": {
+  "The Price of Ingenuity#567": {
    "src": "So... this song's dedicated to you. Hope you like it.",
    "dst": "所以……這首歌獻給你。希望你喜歡。",
    "role": "desc",
@@ -5670,7 +5690,7 @@
    "speaker": "Yuman",
    "source": "wiki"
   },
-  "The Price of Ingenuity#566": {
+  "The Price of Ingenuity#568": {
    "src": "No... no no no no no, where is it, where IS IT?! I can't... I need to find it, I-",
    "dst": "不……不不不不不，它在哪裡，它「在哪裡」？！我不能……我得找到它，我——",
    "role": "desc",
@@ -5680,7 +5700,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#567": {
+  "The Price of Ingenuity#569": {
    "src": "Not a good look, Sovereign.",
    "dst": "這樣可不好看，統領。",
    "role": "desc",
@@ -5690,7 +5710,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Price of Ingenuity#568": {
+  "The Price of Ingenuity#570": {
    "src": "EEP! Y- your Majesty, I- I- I wasn't expecting you until... tomorrow. Wh- what're you doing here?",
    "dst": "咿！陛、陛下，我——我——我沒想到您會在……明天之前來。您、您怎麼會在這裡？",
    "role": "desc",
@@ -5700,7 +5720,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#569": {
+  "The Price of Ingenuity#571": {
    "src": "My schedule freed up, so I decided to check in early. Is something wrong, Sovereign?",
    "dst": "我的行程空了出來，所以我決定提早來看看。有什麼不對勁嗎，統領？",
    "role": "desc",
@@ -5710,7 +5730,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Price of Ingenuity#570": {
+  "The Price of Ingenuity#572": {
    "src": "Um... I-",
    "dst": "嗯……我——",
    "role": "desc",
@@ -5720,7 +5740,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#571": {
+  "The Price of Ingenuity#573": {
    "src": "Don't bother. How incompetent must you be, to have lost it from your own workshop?!",
    "dst": "不必說了。要有多無能，才會把它從自己的工坊裡弄丟？！",
    "role": "desc",
@@ -5730,7 +5750,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Price of Ingenuity#572": {
+  "The Price of Ingenuity#574": {
    "src": "I- I- I don't understand how, my golems haven't been disturbed! They didn't detect anything!",
    "dst": "我——我——我不明白怎麼會，我的魔像都沒有被驚動！它們什麼都沒偵測到！",
    "role": "desc",
@@ -5740,7 +5760,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#573": {
+  "The Price of Ingenuity#575": {
    "src": "Perhaps if you focused more on efficiency instead of playing around with your toys, this could have been prevented.",
    "dst": "如果你多把心思放在效率上，而不是拿你那些玩具在玩，這件事或許就能避免。",
    "role": "desc",
@@ -5750,7 +5770,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Price of Ingenuity#574": {
+  "The Price of Ingenuity#576": {
    "src": "I'll- I'll fix this, I promise! I promise I promise I promise, I can fix it! I can... I can restart! I still have all the research notes, and I-",
    "dst": "我會——我會補救的，我保證！我保證我保證我保證，我可以修好！我可以……我可以重來！我還留著所有的研究筆記，而且我——",
    "role": "desc",
@@ -5760,7 +5780,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#575": {
+  "The Price of Ingenuity#577": {
    "src": "Enough. I have been lenient with your performance maintaining your district, because I had faith there would be results.",
    "dst": "夠了。我對你治理轄區的表現一直很寬容，因為我相信會有成果。",
    "role": "desc",
@@ -5770,7 +5790,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Price of Ingenuity#576": {
+  "The Price of Ingenuity#578": {
    "src": "Restarting the Resonance Weaver project... it cannot be done. That artifact I entrusted you with... that magic is a lost art. It cannot be replicated.",
    "dst": "要重啟共鳴織機的計畫……那是做不到的。我託付給你的那件遺物……那份魔法是一門失傳的技藝。它複製不了。",
    "role": "desc",
@@ -5780,7 +5800,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Price of Ingenuity#577": {
+  "The Price of Ingenuity#579": {
    "src": "N- no, I have the notes, I- I know how it works, I can do it, just- just give me a chance! I can fix this!",
    "dst": "不——不，我有筆記，我——我知道它怎麼運作，我做得到，只要——只要給我一次機會！我可以補救！",
    "role": "desc",
@@ -5790,7 +5810,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#578": {
+  "The Price of Ingenuity#580": {
    "src": "I must prepare for the festival. I will expect your presence there, as usual. Please... clean yourself up before that.",
    "dst": "我得去準備慶典了。我期待你一如往常地出席。請……在那之前把自己整理乾淨。",
    "role": "desc",
@@ -5800,7 +5820,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Price of Ingenuity#579": {
+  "The Price of Ingenuity#581": {
    "src": "Sovereign.",
    "dst": "統領。",
    "role": "desc",
@@ -5810,7 +5830,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Price of Ingenuity#580": {
+  "The Price of Ingenuity#582": {
    "src": "Y- yes?",
    "dst": "是、是的？",
    "role": "desc",
@@ -5820,7 +5840,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#581": {
+  "The Price of Ingenuity#583": {
    "src": "Consider our agreement null. You have failed me. You will continue your service as Sovereign indefinitely... with your blessing intact.",
    "dst": "我們的協議就此作廢。你辜負了我。你將無限期地繼續擔任統領之職……並保有你的祝福。",
    "role": "desc",
@@ -5830,7 +5850,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "The Price of Ingenuity#582": {
+  "The Price of Ingenuity#584": {
    "src": "...what? No- no, no no no, you- you can't, you can't, you can't!!!!",
    "dst": "……什麼？不——不，不不不，你——你不能，你不能，你不能！！！！",
    "role": "desc",
@@ -5840,7 +5860,7 @@
    "speaker": "Sovereign Soosu",
    "source": "wiki"
   },
-  "The Price of Ingenuity#583": {
+  "The Price of Ingenuity#585": {
    "src": "AHHHHHHHHHH!!!!!!!!",
    "dst": "啊啊啊啊啊啊啊！！！！！！",
    "role": "desc",
