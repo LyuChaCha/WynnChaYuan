@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Zhight Island (Quest)",
   "count": 50,
-  "translated": 0,
+  "translated": 50,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Zhight Island (Quest)#000": {
    "src": "Talk to Zhight of {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 的 {p} 的 Zhight 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -18,7 +18,7 @@
   },
   "Zhight Island (Quest)#001": {
    "src": "Hello, esteemed tourist sir or madame! I see you have found my illustrious resort, {p}!",
-   "dst": "",
+   "dst": "您好，尊贵的游客先生或女士！看来您找到了我这间赫赫有名的度假村，{p}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -28,7 +28,7 @@
   },
   "Zhight Island (Quest)#002": {
    "src": "Normally, you'd need a reservation to stay here, but our human visitors are ALWAYS welcome! Ehm...",
-   "dst": "",
+   "dst": "平常要住这里得先预约，不过我们永远欢迎人类访客！呃……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -38,7 +38,7 @@
   },
   "Zhight Island (Quest)#003": {
    "src": "...w-well, actually...wait, no, it's nothing, nothing, friend! I guarantee you'll enjoy your stay here!",
-   "dst": "",
+   "dst": "……其、其实……等等，不，没什么，没什么，朋友！我保证您会在这里住得很愉快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -48,7 +48,7 @@
   },
   "Zhight Island (Quest)#004": {
    "src": "Even if m-my usual supplies haven't arrived in weeks, I, um, I'm TOTALLY sure we can accommodate for you!",
-   "dst": "",
+   "dst": "就算我、我平常的物资已经好几个星期没送来了，我，呃，我绝对确定我们能好好招待您！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -58,7 +58,7 @@
   },
   "Zhight Island (Quest)#005": {
    "src": "We can just...um...w-well, I won't impose on you, dearest most welcomest traveller, no sir! Or madame!",
-   "dst": "",
+   "dst": "我们可以就……呃……好、好吧，我不会给您添麻烦的，最最亲爱最最受欢迎的旅人，不会的先生！或女士！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -68,7 +68,7 @@
   },
   "Zhight Island (Quest)#006": {
    "src": "B-But, if, perchance, you were to, um...happen to find my supplier, Phief, who hasn't come around in weeks the bas-",
-   "dst": "",
+   "dst": "不、不过，如果，万一，您碰巧，呃……遇到我的供货商 Phief，那个好几个星期没来的混——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -78,7 +78,7 @@
   },
   "Zhight Island (Quest)#007": {
    "src": "I! I mean! Nothing, nothing! Just, ehm, our extra reliable supplier often stops by {p} for supplies...",
-   "dst": "",
+   "dst": "我！我是说！没什么，没什么！只是，呃，我们那位超级可靠的供货商经常去 {p} 进货……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -88,7 +88,7 @@
   },
   "Zhight Island (Quest)#008": {
    "src": "S-So, if you just happen to stop by there after your lovely stay here, and tell him to get off his sorry butt and send me my supplies that'd be just peachy!",
-   "dst": "",
+   "dst": "所、所以，如果您在这里愉快地住完之后刚好去那边，叫他挪挪他那没用的屁股，把我的物资送来，那就再好不过了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -98,7 +98,7 @@
   },
   "Zhight Island (Quest)#009": {
    "src": "Look for Phief at {p}",
-   "dst": "",
+   "dst": "在 {p} 寻找 Phief",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -108,7 +108,7 @@
   },
   "Zhight Island (Quest)#010": {
    "src": "Hello there. I see Zhight has sent you, correct?",
-   "dst": "",
+   "dst": "你好。是 Zhight 派你来的，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -118,7 +118,7 @@
   },
   "Zhight Island (Quest)#011": {
    "src": "I do hope he isn't mad at me. I fully intended to bring the supplies to him.",
-   "dst": "",
+   "dst": "希望他没生我的气。我是真的打算把物资送去给他的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -128,7 +128,7 @@
   },
   "Zhight Island (Quest)#012": {
    "src": "But things took a turn for the worst quickly, and I no longer have access to my ship.",
-   "dst": "",
+   "dst": "可是情况很快就变糟了，我现在没法上我的船了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -138,7 +138,7 @@
   },
   "Zhight Island (Quest)#013": {
    "src": "A madman jumped onto my ship, overpowered me, and held me hostage!",
-   "dst": "",
+   "dst": "一个疯子跳上我的船，制服了我，还把我当人质！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -148,7 +148,7 @@
   },
   "Zhight Island (Quest)#014": {
    "src": "He was telling me how he wanted to \"take back what was stolen from him\", and it looked like he was heading to {p}.",
-   "dst": "",
+   "dst": "他一直跟我说他想“夺回被偷走的东西”，看起来他是要往 {p} 去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -158,7 +158,7 @@
   },
   "Zhight Island (Quest)#015": {
    "src": "I have no clue whether he was deranged, paranoid, or if someone really did take something from him.",
-   "dst": "",
+   "dst": "我完全不知道他是疯了、妄想，还是真的有人偷了他的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -168,7 +168,7 @@
   },
   "Zhight Island (Quest)#016": {
    "src": "I am certain of one thing. Nobody is going to sail my boat but me. I took my first chance to escape, broke the controls.",
-   "dst": "",
+   "dst": "有一件事我很确定。除了我，谁也别想开我的船。我一有机会就逃了，还把操控装置弄坏了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -178,7 +178,7 @@
   },
   "Zhight Island (Quest)#017": {
    "src": "And I swam back to land, here. Problem is, I haven't exactly decided how I'll get the ship back for myself.",
-   "dst": "",
+   "dst": "然后我就游回陆地，到了这里。问题是，我还没想好要怎么把船拿回来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -188,7 +188,7 @@
   },
   "Zhight Island (Quest)#018": {
    "src": "Maybe you can help me with that. The ship should still be stuck, due north of here. I'd love to get my sea legs back.",
-   "dst": "",
+   "dst": "也许你能帮我这个忙。船应该还卡在这里正北方。我真想重新站上甲板。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -198,7 +198,7 @@
   },
   "Zhight Island (Quest)#019": {
    "src": "Find Phief's ship, and return it to its rightful owner",
-   "dst": "",
+   "dst": "找到 Phief 的船，把它还给真正的主人",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -208,7 +208,7 @@
   },
   "Zhight Island (Quest)#020": {
    "src": "He told you what?! That fumbleknuckle...",
-   "dst": "",
+   "dst": "他跟你说什么？！那个笨手笨脚的家伙……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -218,7 +218,7 @@
   },
   "Zhight Island (Quest)#021": {
    "src": "We didn't steal the ship from Phief, we were taking back what he stole from us years ago!",
-   "dst": "",
+   "dst": "我们没有从 Phief 那里偷船，我们是在拿回他几年前从我们这里偷走的东西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -228,7 +228,7 @@
   },
   "Zhight Island (Quest)#022": {
    "src": "He attacked us on our way home to {p}, kicked us off the boat, and sailed it to who-knows-where.",
-   "dst": "",
+   "dst": "我们回 {p} 的路上他袭击了我们，把我们踢下船，然后把船开到谁知道哪里去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -238,7 +238,7 @@
   },
   "Zhight Island (Quest)#023": {
    "src": "We didn't think we would ever get it back, until we started seeing him sailing to that doofbumble Zhight.",
-   "dst": "",
+   "dst": "我们本来以为再也拿不回来了，直到我们开始看到他开船去找那个糊涂蛋 Zhight。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -248,7 +248,7 @@
   },
   "Zhight Island (Quest)#024": {
    "src": "Luckily, he decided to claim an island so close to {p}, or else we would have never seen him.",
-   "dst": "",
+   "dst": "幸好他决定占的岛离 {p} 那么近，不然我们根本不会看到他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -258,7 +258,7 @@
   },
   "Zhight Island (Quest)#025": {
    "src": "My father started following him with a small sailboat he made, and decided on the perfect place to attack.",
-   "dst": "",
+   "dst": "我爸爸开着他自己做的小帆船开始跟踪他，还挑好了下手的最佳地点。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -268,7 +268,7 @@
   },
   "Zhight Island (Quest)#026": {
    "src": "But then Phief just had to throw a hissy fit and leave us stranded here.",
-   "dst": "",
+   "dst": "可是 Phief 偏偏大发脾气，把我们困在了这里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -278,7 +278,7 @@
   },
   "Zhight Island (Quest)#027": {
    "src": "My father took a paddleboat back to {p} to gather supplies. He took the cargo the ship had with him.",
-   "dst": "",
+   "dst": "我爸爸划着脚踏船回 {p} 去找补给了。他把船上的货物也一起带走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -288,7 +288,7 @@
   },
   "Zhight Island (Quest)#028": {
    "src": "If you need that, you should go talk to him. His name is Czytash.",
-   "dst": "",
+   "dst": "如果你需要那些货，就去找他谈吧。他叫 Czytash。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -298,7 +298,7 @@
   },
   "Zhight Island (Quest)#029": {
    "src": "Get Zhight's supplies from Czytash at {p}",
-   "dst": "",
+   "dst": "在 {p} 向 Czytash 取回 Zhight 的物资",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -308,7 +308,7 @@
   },
   "Zhight Island (Quest)#030": {
    "src": "Ah, yes, I did find plenty o' supplies on that ship.",
-   "dst": "",
+   "dst": "啊，对，我在那艘船上确实找到了不少物资。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -318,7 +318,7 @@
   },
   "Zhight Island (Quest)#031": {
    "src": "I assumed it was more of Phief's thiefed goods, so I took it home to use it myself.",
-   "dst": "",
+   "dst": "我以为又是 Phief 偷来的赃物，所以就拿回家自己用了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -328,7 +328,7 @@
   },
   "Zhight Island (Quest)#032": {
    "src": "It is Zhight's supplies you say?",
-   "dst": "",
+   "dst": "你说那是 Zhight 的物资？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -338,7 +338,7 @@
   },
   "Zhight Island (Quest)#033": {
    "src": "Aye, of course it had to be that idiot's.",
-   "dst": "",
+   "dst": "唉，当然了，肯定是那个白痴的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -348,7 +348,7 @@
   },
   "Zhight Island (Quest)#034": {
    "src": "I guess me thinking he's dumber'n a box o' rocks is no reason for me to let him starve... Here, take the crate.",
-   "dst": "",
+   "dst": "我想，就算我觉得他比一箱石头还蠢，也不能因此让他饿死……给，拿走这个箱子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -358,7 +358,7 @@
   },
   "Zhight Island (Quest)#035": {
    "src": "I haven't opened it yet, so everything is left exactly how he ordered it.",
-   "dst": "",
+   "dst": "我还没打开过，所以里面的东西完全跟他订的一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -368,7 +368,7 @@
   },
   "Zhight Island (Quest)#036": {
    "src": "I wonder what is on that numbskull's menu, that crate smelled rancid. Almost threw it off me boat.",
-   "dst": "",
+   "dst": "真好奇那个傻瓜的菜单上都有什么，那个箱子臭得要命。我差点把它扔下船。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -378,7 +378,7 @@
   },
   "Zhight Island (Quest)#037": {
    "src": "Anyways, good luck on your adventure matey.",
-   "dst": "",
+   "dst": "总之，祝你冒险顺利，伙计。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -388,7 +388,7 @@
   },
   "Zhight Island (Quest)#038": {
    "src": "Sorry, what was that? My son?",
-   "dst": "",
+   "dst": "抱歉，你说什么？我儿子？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -398,7 +398,7 @@
   },
   "Zhight Island (Quest)#039": {
    "src": "Ah, I figured it is about time he learned how to maneuver a boat. I fixed everything before I left.",
-   "dst": "",
+   "dst": "啊，我想他也该学学怎么驾船了。我走之前把一切都修好了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -408,7 +408,7 @@
   },
   "Zhight Island (Quest)#040": {
    "src": "When he returns, he will return a man.",
-   "dst": "",
+   "dst": "等他回来的时候，他就是个男子汉了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -418,7 +418,7 @@
   },
   "Zhight Island (Quest)#041": {
    "src": "Wait, why am I telling you this? Butt out of my personal life, and just bring the man his crate.",
-   "dst": "",
+   "dst": "等等，我干嘛跟你说这些？少管我的私事，把箱子送去给他就是了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -428,7 +428,7 @@
   },
   "Zhight Island (Quest)#042": {
    "src": "Give Zhight his supplies",
-   "dst": "",
+   "dst": "把物资交给 Zhight",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -438,7 +438,7 @@
   },
   "Zhight Island (Quest)#043": {
    "src": "Ahaaa, esteemed sir! Or madame! I can't actually tell under all that armour...",
-   "dst": "",
+   "dst": "啊哈——尊贵的先生！或女士！您穿着这身盔甲，我实在分辨不出来……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -448,7 +448,7 @@
   },
   "Zhight Island (Quest)#044": {
    "src": "ER! I MEAN! N-No trouble at all, esteemed visitor! We at {p} Resort are always welcoming!",
-   "dst": "",
+   "dst": "呃！我是说！不、不麻烦，一点都不麻烦，尊贵的访客！我们 {p} 度假村永远欢迎您！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -458,7 +458,7 @@
   },
   "Zhight Island (Quest)#045": {
    "src": "...wait, is that the... Oh my! The supply crate! You went out and found Phief?! What an upstanding fellow you are!",
-   "dst": "",
+   "dst": "……等等，那是……噢天哪！物资箱！您出去找到了 Phief？！您真是个正直的好人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -468,7 +468,7 @@
   },
   "Zhight Island (Quest)#046": {
    "src": "Wait, he was a boat thief? Well, good thing you've told me, we can't have pirates here at our resort! I'll blacklist him ASAP!",
-   "dst": "",
+   "dst": "等等，他是个偷船贼？好吧，还好您告诉我了，我们度假村可不能有海盗！我马上把他列入黑名单！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -478,7 +478,7 @@
   },
   "Zhight Island (Quest)#047": {
    "src": "You're only a visitor but you've been more help today than anyone else, really, I'm honestly in your debt.",
-   "dst": "",
+   "dst": "您只是位访客，今天却比任何人都帮了更多的忙，真的，我实在欠您一份人情。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -488,7 +488,7 @@
   },
   "Zhight Island (Quest)#048": {
    "src": "So here! The repairs at the Zhight Grand Exchange and Zhight Treasure Tour have just finished, so you can head in and see the fruits of your labor!",
-   "dst": "",
+   "dst": "所以，您看！Zhight 大交易所和 Zhight 寻宝之旅的修缮刚刚完工，您可以进去看看您努力的成果！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -498,7 +498,7 @@
   },
   "Zhight Island (Quest)#049": {
    "src": "And, as a token of my thanks, some exclusive currency for our resort, Zhight Money, on the house and just for you! I hope you enjoy your stay!",
-   "dst": "",
+   "dst": "还有，作为我的谢礼，这是我们度假村专用的货币，Zhight 币，免费送您，专属于您！祝您住得愉快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",

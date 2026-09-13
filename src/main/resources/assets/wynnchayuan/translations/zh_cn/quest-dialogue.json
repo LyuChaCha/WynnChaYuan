@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_cn",
   "count": 22089,
-  "translated": 1566,
+  "translated": 1969,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -47941,7 +47941,7 @@
   },
   "Creeper Infiltration#000": {
    "src": "Talk to Thomas in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 {p} [-{~}, {~}, -{~}] 的 Thomas 对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -47951,7 +47951,7 @@
   },
   "Creeper Infiltration#001": {
    "src": "Anyone! Can anyone- oh, hello. You look strong enough to help me.",
-   "dst": "",
+   "dst": "有人吗！有没有人——噢，你好。你看起来够强，能帮我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -47961,7 +47961,7 @@
   },
   "Creeper Infiltration#002": {
    "src": "I am Thomas, and I help manage the supplies for a village in the Pigman Ravine. Though, I have a bit of a problem...",
-   "dst": "",
+   "dst": "我叫 Thomas，负责帮猪人峡谷里的一个村子管理物资。不过，我遇到了点麻烦……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -47971,7 +47971,7 @@
   },
   "Creeper Infiltration#003": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
-   "dst": "",
+   "dst": "我们的峡谷谷物快吃完了，那是我们做食物用的主粮。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -47981,7 +47981,7 @@
   },
   "Creeper Infiltration#004": {
    "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "",
+   "dst": "平常我们都自己去采，可是最近有一群愤怒的猪人占领了通往峡谷顶端的隧道，谷物就长在那上面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -47991,7 +47991,7 @@
   },
   "Creeper Infiltration#005": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
-   "dst": "",
+   "dst": "上一次我们进去的时候，我听到上面传来爆炸声。我担心那些猪人在用 TNT 炸我们的谷物……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48001,7 +48001,7 @@
   },
   "Creeper Infiltration#006": {
    "src": "I came here to {p} to see if I could find help here, but I've had no luck. Until now, that is. Would you be willing to help?",
-   "dst": "",
+   "dst": "我来 {p} 是想找人帮忙，可一直没找到。直到现在。你愿意帮忙吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48011,7 +48011,7 @@
   },
   "Creeper Infiltration#007": {
    "src": "You would? You're a life saver. I'll meet you at the village, just follow the path out of town and take the northern-most entrance to the ravines.",
-   "dst": "",
+   "dst": "你愿意？你真是救命恩人。我们在村子里碰头，沿着小路出城，走峡谷最北边的入口就行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48021,7 +48021,7 @@
   },
   "Creeper Infiltration#008": {
    "src": "Once you get there, keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
-   "dst": "",
+   "dst": "到了之后，沿着峡谷右侧的岩壁走，爬上楼梯就能到入口。还有，在隧道里要小心，猪人会拿石头当武器扔。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48031,7 +48031,7 @@
   },
   "Creeper Infiltration#009": {
    "src": "Oh, finally, someone has come to this hidden village!",
-   "dst": "",
+   "dst": "噢，总算有人来到这个隐秘的村子了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48041,7 +48041,7 @@
   },
   "Creeper Infiltration#010": {
    "src": "I am Thomas, and I help manage the supplies for this ravine village. Though, I have a bit of a problem...",
-   "dst": "",
+   "dst": "我叫 Thomas，负责帮这个峡谷村子管理物资。不过，我遇到了点麻烦……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48051,7 +48051,7 @@
   },
   "Creeper Infiltration#011": {
    "src": "We're running low on ravine grains, which is our main staple we use for our food.",
-   "dst": "",
+   "dst": "我们的峡谷谷物快吃完了，那是我们做食物用的主粮。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48061,7 +48061,7 @@
   },
   "Creeper Infiltration#012": {
    "src": "We usually get it ourselves but recently an angry group of pigmen took over the tunnel to the top of the ravine, where the grain grows.",
-   "dst": "",
+   "dst": "平常我们都自己去采，可是最近有一群愤怒的猪人占领了通往峡谷顶端的隧道，谷物就长在那上面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48071,7 +48071,7 @@
   },
   "Creeper Infiltration#013": {
    "src": "The last time we entered, I heard an explosion from the top. I fear the pigmen are blowing up our grain supply with TNT...",
-   "dst": "",
+   "dst": "上一次我们进去的时候，我听到上面传来爆炸声。我担心那些猪人在用 TNT 炸我们的谷物……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48081,7 +48081,7 @@
   },
   "Creeper Infiltration#014": {
    "src": "You appear to be much stronger than I am, so maybe you could get past the tunnel pigmen and eliminate the explosions at the top.",
-   "dst": "",
+   "dst": "你看起来比我强多了，也许你能闯过隧道里的猪人，把上面的爆炸解决掉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48091,7 +48091,7 @@
   },
   "Creeper Infiltration#015": {
    "src": "Just keep to the right wall of the ravine and climb up the stairs to reach the entrance. Also, be careful in the tunnel, as the pigmen throw rocks as a weapon.",
-   "dst": "",
+   "dst": "沿着峡谷右侧的岩壁走，爬上楼梯就能到入口。还有，在隧道里要小心，猪人会拿石头当武器扔。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48101,7 +48101,7 @@
   },
   "Creeper Infiltration#016": {
    "src": "Enter the tunnel at [-{~}, {~}, -{~}] and reach the top of the ravine",
-   "dst": "",
+   "dst": "进入 [-{~}, {~}, -{~}] 的隧道，到达峡谷顶端",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -48111,7 +48111,7 @@
   },
   "Creeper Infiltration#017": {
    "src": "Bring back the [Creeper Skin] to Thomas at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "把 [苦力怕皮] 带回给 [-{~}, {~}, -{~}] 的 Thomas",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -48121,7 +48121,7 @@
   },
   "Creeper Infiltration#018": {
    "src": "I didn't expect you to fall out of the sky like that. Are you okay, or should I go get the potion merchant to heal you?",
-   "dst": "",
+   "dst": "没想到你会那样从天上掉下来。你还好吗，要不要我去找药水商人来给你治疗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48131,7 +48131,7 @@
   },
   "Creeper Infiltration#019": {
    "src": "You're fine? Oh, good to hear. Did you manage to get rid of the pigmen and their explosives?",
-   "dst": "",
+   "dst": "你没事？噢，那就好。你把那些猪人和他们的炸药解决了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48141,7 +48141,7 @@
   },
   "Creeper Infiltration#020": {
    "src": "A green creature? A \"creeper\"? No such thing exists in this world, especially with the pigmen all around!",
-   "dst": "",
+   "dst": "绿色的生物？“苦力怕”？这世界上根本没有那种东西，更何况到处都是猪人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48151,7 +48151,7 @@
   },
   "Creeper Infiltration#021": {
    "src": "Oh, you brought a piece of skin back. How odd, I've seen this skin before...",
-   "dst": "",
+   "dst": "噢，你带回来一块皮。真奇怪，我以前见过这种皮……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48161,7 +48161,7 @@
   },
   "Creeper Infiltration#022": {
    "src": "There's a large cave over to the south. I tried to enter it, but I got ambushed by green creatures...",
-   "dst": "",
+   "dst": "南边有个大洞窟。我试着进去过，结果被绿色的生物伏击了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48171,7 +48171,7 @@
   },
   "Creeper Infiltration#023": {
    "src": "I thought I was just dreaming, but these \"creepers\" you talk about...they might live in that cave.",
-   "dst": "",
+   "dst": "我还以为只是在做梦，可你说的这些“苦力怕”……它们可能就住在那个洞窟里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48181,7 +48181,7 @@
   },
   "Creeper Infiltration#024": {
    "src": "I have an idea. I need to know for sure that they live there. A merchant can make you a mask with the skin and another material.",
-   "dst": "",
+   "dst": "我有个主意。我得确定它们真的住在那里。商人可以用这块皮和另一种材料给你做个面具。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48191,7 +48191,7 @@
   },
   "Creeper Infiltration#025": {
    "src": "There's a Pigman Overlord that sometimes hangs in a cave nearby. If you can kill it, you can get a pigman hide strong enough to make the mask.",
-   "dst": "",
+   "dst": "附近的洞窟里有时会有一个猪人霸主。如果你能杀掉它，就能拿到够结实的猪人皮革来做面具。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48201,7 +48201,7 @@
   },
   "Creeper Infiltration#026": {
    "src": "If you continue on the western path past the tunnel entrance, you should find a camp where the Overlord is located.",
-   "dst": "",
+   "dst": "如果你沿着隧道入口过去的西边小路继续走，应该能找到猪人霸主所在的营地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48211,7 +48211,7 @@
   },
   "Creeper Infiltration#027": {
    "src": "Go get the pigman hide, and then come back to me so I can tell you what to do next.",
-   "dst": "",
+   "dst": "去把猪人皮革拿来，然后回来找我，我再告诉你下一步怎么做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48221,7 +48221,7 @@
   },
   "Creeper Infiltration#028": {
    "src": "Retrieve [{~} Pigman Hide] from the Pigman Overlord near [-{~}, {~}, -{~}] and return to Thomas",
-   "dst": "",
+   "dst": "从 [-{~2}, {~3}, -{~4}] 附近的猪人霸主身上取得 [{~1} 猪人皮革]，然后回到 Thomas 那里",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -48231,7 +48231,7 @@
   },
   "Creeper Infiltration#029": {
    "src": "I see you have the hide. This skin will work perfectly for my plan.",
-   "dst": "",
+   "dst": "看来你拿到皮革了。这块皮正好能用在我的计划上。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48241,7 +48241,7 @@
   },
   "Creeper Infiltration#030": {
    "src": "There is a Mask Merchant in this village. He can make you a mask with the two materials I have.",
-   "dst": "",
+   "dst": "这个村子里有个面具商人。他可以用我手上这两种材料给你做个面具。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48251,7 +48251,7 @@
   },
   "Creeper Infiltration#031": {
    "src": "With the mask, you can put it on and go undetected into the cave with these \"creepers\". Only then will we know the truth.",
-   "dst": "",
+   "dst": "戴上面具，你就能不被发现地进入那个有“苦力怕”的洞窟。只有那样我们才能知道真相。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48261,7 +48261,7 @@
   },
   "Creeper Infiltration#032": {
    "src": "To get to the creeper cave, follow the western path and turn left at the pigman camps.",
-   "dst": "",
+   "dst": "要去苦力怕洞窟，就沿着西边的小路走，在猪人营地那里左转。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48271,7 +48271,7 @@
   },
   "Creeper Infiltration#033": {
    "src": "Also, if you somehow lose the mask, the merchant can make you another one if you bring him another piece of skin and hide.",
-   "dst": "",
+   "dst": "还有，如果你不小心弄丢了面具，只要再带一块皮和一块皮革给商人，他就能再给你做一个。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48281,7 +48281,7 @@
   },
   "Creeper Infiltration#034": {
    "src": "Here are the materials. Be careful out there. Who knows what those green monsters could do to you...",
-   "dst": "",
+   "dst": "材料在这里。出去之后小心点。谁知道那些绿色怪物会对你做什么……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48291,7 +48291,7 @@
   },
   "Creeper Infiltration#035": {
    "src": "Buy the creeper mask from the merchant and enter the creeper hideout at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "向商人购买苦力怕面具，进入 [-{~}, {~}, -{~}] 的苦力怕藏身处",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -48301,7 +48301,7 @@
   },
   "Creeper Infiltration#036": {
    "src": "Bring Thomas [{~} Creeper Powder] to prove him creepers exist in Wynn at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "把 [{~} 苦力怕粉末] 带给 [-{~}, {~}, -{~}] 的 Thomas，证明 Wynn 真的有苦力怕",
    "role": "desc",
    "kind": "objective",
    "quest": "Creeper Infiltration",
@@ -48311,7 +48311,7 @@
   },
   "Creeper Infiltration#037": {
    "src": "So, what was in the cave? Were there really creepers in there?",
-   "dst": "",
+   "dst": "所以，洞窟里有什么？里面真的有苦力怕吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48321,7 +48321,7 @@
   },
   "Creeper Infiltration#038": {
    "src": "What's this? It smells like gunpowder...but more earthy. And this came from the cave?",
-   "dst": "",
+   "dst": "这是什么？闻起来像火药……但土味更重。这是从那个洞窟里拿来的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48331,7 +48331,7 @@
   },
   "Creeper Infiltration#039": {
    "src": "This powder is definitely not native to this area. It has to have come from those creepers.",
-   "dst": "",
+   "dst": "这种粉末绝对不是这一带原产的。一定是从那些苦力怕身上来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48341,7 +48341,7 @@
   },
   "Creeper Infiltration#040": {
    "src": "I guess for now we'll leave them at peace. If they do exist, they don't need to be hunted down to extinction.",
-   "dst": "",
+   "dst": "我想目前还是别去打扰它们吧。如果它们真的存在，也没必要把它们赶尽杀绝。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48351,7 +48351,7 @@
   },
   "Creeper Infiltration#041": {
    "src": "Besides, if they are composed of gunpowder, they could easily blow this ravine to pieces.",
-   "dst": "",
+   "dst": "而且，如果它们是由火药组成的，轻轻松松就能把这座峡谷炸成碎片。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48361,7 +48361,7 @@
   },
   "Creeper Infiltration#042": {
    "src": "Thank you for your help. I guess you deserve some sort of reward, considering you helped solve the ravine's big mystery.",
-   "dst": "",
+   "dst": "谢谢你的帮忙。你帮忙解开了峡谷的大谜团，我想你应该得到点奖励。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48371,7 +48371,7 @@
   },
   "Creeper Infiltration#043": {
    "src": "Feel free to come back to our village any time. By then our food supply should be stable.",
-   "dst": "",
+   "dst": "随时欢迎回我们村子来。到那时我们的粮食供应应该就稳定了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Creeper Infiltration",
@@ -48381,7 +48381,7 @@
   },
   "Crop Failure#000": {
    "src": "Talk to Anast in {p}, at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 {p} [-{~}, {~}, -{~}] 的 Anast 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Crop Failure",
@@ -48391,7 +48391,7 @@
   },
   "Crop Failure#001": {
    "src": "Grr...that no-good, lying, cheating, thieving...graaah!",
-   "dst": "",
+   "dst": "呃啊……那个没用的、撒谎的、骗人的、偷东西的……啊啊啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48401,7 +48401,7 @@
   },
   "Crop Failure#002": {
    "src": "You! Help me out over here! You aren't doing anything important right now, and this is urgent!",
-   "dst": "",
+   "dst": "你！过来帮我一下！你现在又没在干什么正事，而这件事很急！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48411,7 +48411,7 @@
   },
   "Crop Failure#003": {
    "src": "I got a few questions for you, see? Question one: D'you think crops are supposed to look like THIS?",
-   "dst": "",
+   "dst": "我有几个问题要问你，懂吗？第一个问题：你觉得庄稼应该长成这副鬼样子吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48421,7 +48421,7 @@
   },
   "Crop Failure#004": {
    "src": "Look at them. I don't think there's a way for 'em to look any more sorry than this.",
-   "dst": "",
+   "dst": "你看看它们。我不觉得它们还能比这更惨了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48431,7 +48431,7 @@
   },
   "Crop Failure#005": {
    "src": "Wha- You think the Oats over there look fine?! Pff. Yeah, right.",
-   "dst": "",
+   "dst": "什——你觉得那边的燕麦看起来还行？！呸。是啊，才怪。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48441,7 +48441,7 @@
   },
   "Crop Failure#006": {
    "src": "If that's the case, go grab a scythe and try harvesting those Oats yourself!!",
-   "dst": "",
+   "dst": "要是你这么觉得，就去拿把镰刀，自己收收那些燕麦试试！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48451,7 +48451,7 @@
   },
   "Crop Failure#007": {
    "src": "Go on, do it! I dare you! See how good they really are!!",
-   "dst": "",
+   "dst": "去啊，动手啊！我赌你不敢！看看它们到底有多好！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48461,7 +48461,7 @@
   },
   "Crop Failure#008": {
    "src": "Gather [{~} Oats] from around Anast.",
-   "dst": "",
+   "dst": "在 Anast 周围收集 [{~} 燕麦]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Crop Failure",
@@ -48471,7 +48471,7 @@
   },
   "Crop Failure#009": {
    "src": "See? What'd I tell ya? Rotten to the roots! Nothing here is ANY good!!",
-   "dst": "",
+   "dst": "看吧？我怎么跟你说的？连根都烂了！这里没有一样是好的！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48481,7 +48481,7 @@
   },
   "Crop Failure#010": {
    "src": "They were growing pretty slow this year, all my crops, and then some salesman walks into town with some \"MiracleCure\" fertilizer.",
-   "dst": "",
+   "dst": "今年我的庄稼全都长得很慢，然后就有个推销员带着什么“MiracleCure”肥料进了镇子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48491,7 +48491,7 @@
   },
   "Crop Failure#011": {
    "src": "I shoulda known it was too good to be true, but he said everyone else tried it too, so I bought some and tried to salvage this mess.",
-   "dst": "",
+   "dst": "我早该知道天下没有这么好的事，可他说其他人也都用了，所以我就买了点，想挽救这烂摊子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48501,7 +48501,7 @@
   },
   "Crop Failure#012": {
    "src": "And here we are- me out half my savings and my fields as smelly and dead as an actual CORPSE!",
-   "dst": "",
+   "dst": "结果呢——我的积蓄没了一半，田里又臭又死，跟一具真的尸体一样！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48511,7 +48511,7 @@
   },
   "Crop Failure#013": {
    "src": "Just to prove this ridiculous phony Doubiss is a fraud- Here. I see some roots over here. Watch this, and tell me if this is a \"miracle!\"",
-   "dst": "",
+   "dst": "为了证明那个荒唐的骗子 Doubiss 是个骗子——来。我看到这边有些根。看好了，告诉我这是不是“奇迹”！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48521,7 +48521,7 @@
   },
   "Crop Failure#014": {
    "src": "Here we go, here comes the big phenomenal growth he promised me!",
-   "dst": "",
+   "dst": "来了来了，他跟我保证的惊人生长要来了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48531,7 +48531,7 @@
   },
   "Crop Failure#015": {
    "src": "WOW, INCREDIBLE! AMAZING! It's almost like this is actual poison or something!!",
-   "dst": "",
+   "dst": "哇，太不可思议了！太神奇了！简直跟真的毒药一样！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48541,7 +48541,7 @@
   },
   "Crop Failure#016": {
    "src": "That Doubiss won't budge for my refund. I spent... so many emeralds... on this tripe! So that's where YOU come in.",
-   "dst": "",
+   "dst": "那个 Doubiss 死活不肯给我退款。我花了……好多绿宝石……买这种垃圾！所以这就轮到你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48551,7 +48551,7 @@
   },
   "Crop Failure#017": {
    "src": "He's in that blue and gray tent by the bank. I don't care how you do it, but get my money back and we'll split it half-and-half, deal?",
-   "dst": "",
+   "dst": "他在银行旁边那顶蓝灰色的帐篷里。我不管你用什么办法，把我的钱要回来，我们对半分，成交？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48561,7 +48561,7 @@
   },
   "Crop Failure#018": {
    "src": "Find Doubiss the salesman in {p} near the bank at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 {p} 银行附近 [-{~}, {~}, -{~}] 找到推销员 Doubiss。",
    "role": "desc",
    "kind": "objective",
    "quest": "Crop Failure",
@@ -48571,7 +48571,7 @@
   },
   "Crop Failure#019": {
    "src": "Good day to ya! What is it ye be needin' from ol' Doubiss' stock?",
-   "dst": "",
+   "dst": "你好啊！想从老 Doubiss 的货里买点什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48581,7 +48581,7 @@
   },
   "Crop Failure#020": {
    "src": "Oh. Oh, goodie. That idiot farmer's sendin' ya to get his money back, ain't he? Sweet baby bovine, this is ridiculous...",
-   "dst": "",
+   "dst": "噢。噢，好极了。那个白痴农夫派你来要他的钱，是吧？我的小牛宝宝啊，这太荒唐了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48591,7 +48591,7 @@
   },
   "Crop Failure#021": {
    "src": "Since he obviously ain't gonna be listenin' to me anytime soon, lemme tell ya what the issue is with my fertilizer...",
-   "dst": "",
+   "dst": "既然他显然不会听我说，那我来告诉你我的肥料有什么问题……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48601,7 +48601,7 @@
   },
   "Crop Failure#022": {
    "src": "Nothing! My fertilizer really does work! He probl'ly exaggerated how good I said it'd work, too! What'd he say, twice, three times the growth? More?",
-   "dst": "",
+   "dst": "什么问题都没有！我的肥料真的有用！他八成还夸大了我说的效果！他怎么说的，两倍、三倍的生长？还是更多？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48611,7 +48611,7 @@
   },
   "Crop Failure#023": {
    "src": "All the other farmers are usin' it right now and look at their fields! Heck, the only reason these crops ain't dead is because of my product!",
-   "dst": "",
+   "dst": "其他农夫现在都在用，你看看他们的田！见鬼，这些庄稼到现在还没死，全靠我的产品！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48621,7 +48621,7 @@
   },
   "Crop Failure#024": {
    "src": "Y'know why? Next time ya' pass a farm, take a good whiff o' the water, maybe a sip or two if you can manage. It'll be smelly and bitter.",
-   "dst": "",
+   "dst": "知道为什么吗？下次你经过农场，好好闻闻那里的水，能的话再喝一两口。又臭又苦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48631,7 +48631,7 @@
   },
   "Crop Failure#025": {
    "src": "The crops, when I got here, were lookin' as pathetic as ya get. I ain't a gamblin' man, but I'd be willing ta bet something's up with the water here.",
-   "dst": "",
+   "dst": "我刚来的时候，庄稼的样子惨得不能再惨。我不是赌徒，但我敢打赌这里的水有问题。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48641,7 +48641,7 @@
   },
   "Crop Failure#026": {
    "src": "The smell gets worse the closer ya get to the crypts in town, and while I ain't a native Oluxer, I've heard enough to know the wellspring is in the cave hear there.",
-   "dst": "",
+   "dst": "越靠近镇上的墓穴，臭味就越重，虽然我不是 Olux 本地人，但我听到的足够让我知道水源就在那附近的洞里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48651,7 +48651,7 @@
   },
   "Crop Failure#027": {
    "src": "It'll prob'ly be best fer everyone if ya took a looksee. Maybe if ya find some evidence, ya can show that to the crazy farmer, have 'im quit pesterin' me, eh?",
-   "dst": "",
+   "dst": "你去看一看，对大家可能都好。说不定你找到证据，拿给那个疯农夫看，他就不会再来烦我了，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48661,7 +48661,7 @@
   },
   "Crop Failure#028": {
    "src": "The cave is on a little hill, next to the crypt. Careful ya don't go trippin' over a gravestone, now!",
-   "dst": "",
+   "dst": "洞窟在墓穴旁边的一座小山丘上。小心别被墓碑绊倒了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48671,7 +48671,7 @@
   },
   "Crop Failure#029": {
    "src": "Search the aquifer at [-{~}, {~}, -{~}] for the problem with the water.",
-   "dst": "",
+   "dst": "搜索 [-{~}, {~}, -{~}] 的地下水层，找出水的问题。",
    "role": "desc",
    "kind": "objective",
    "quest": "Crop Failure",
@@ -48681,7 +48681,7 @@
   },
   "Crop Failure#030": {
    "src": "Oi, bucko! Took my advice, eh? I'd figured I'd join ye, 'n see for myself what was goin' on.",
-   "dst": "",
+   "dst": "喂，伙计！听了我的建议，是吧？我想我也来看看到底是怎么回事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48691,7 +48691,7 @@
   },
   "Crop Failure#031": {
    "src": "And boy am I glad I bring me water in bottles. This stuff's rancid, full a' swamp slimes. No idea why they're here, though.",
-   "dst": "",
+   "dst": "天哪，还好我喝的水都是瓶装的。这东西臭死了，满是沼泽史莱姆。不过不知道它们为什么会在这里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48701,7 +48701,7 @@
   },
   "Crop Failure#032": {
    "src": "The buggers stick to mountain caves. They don't come down this far, usually... suppose there's an exception fer everything.",
-   "dst": "",
+   "dst": "那些小鬼平常都待在山洞里。通常不会下到这么低的地方……我想凡事都有例外吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48711,7 +48711,7 @@
   },
   "Crop Failure#033": {
    "src": "'s no wonder that Anast's crops ain't growin'. This is right under his farm! But we got some clear proof now, ain't we?",
-   "dst": "",
+   "dst": "难怪 Anast 的庄稼长不起来。这里就在他的农场正下方！不过我们现在有确凿的证据了，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48721,7 +48721,7 @@
   },
   "Crop Failure#034": {
    "src": "Howzabout ya take care o' this? I ain't a fighter, but if ya mulch these slimes the water oughta clear up, I figure.",
-   "dst": "",
+   "dst": "你来处理这个怎么样？我不会打架，不过我想如果你把这些史莱姆剁碎，水应该就会变清。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48731,7 +48731,7 @@
   },
   "Crop Failure#035": {
    "src": "Kill the slimes in the aquifer and bring back [Polluted Slime] to Anast.",
-   "dst": "",
+   "dst": "杀死地下水层里的史莱姆，把 [被污染的史莱姆] 带回给 Anast。",
    "role": "desc",
    "kind": "objective",
    "quest": "Crop Failure",
@@ -48741,7 +48741,7 @@
   },
   "Crop Failure#036": {
    "src": "Pyyyyeww! Yeesh, kid! You smell worse than a pig's sty! What the heck happened to you, where've you been?!",
-   "dst": "",
+   "dst": "呕呕呕！天哪，小鬼！你比猪圈还臭！你到底怎么了，去哪里了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48751,7 +48751,7 @@
   },
   "Crop Failure#037": {
    "src": "Ugh, eww! I don't want any of this sludge! I demand an explanation, now!!",
-   "dst": "",
+   "dst": "呃，恶！我才不要这些烂泥！马上给我解释清楚！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48761,7 +48761,7 @@
   },
   "Crop Failure#038": {
    "src": "...mhm, mhm...you went into the well cave...and found what, slimes?! Why would SLIMES be there?",
-   "dst": "",
+   "dst": "……嗯嗯，嗯嗯……你进了那口井的洞……然后发现了什么，史莱姆？！史莱姆怎么会在那里？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48771,7 +48771,7 @@
   },
   "Crop Failure#039": {
    "src": "I wouldn't believe you if you weren't... well, uh... covered in the stuff. But that's definitely rancid.",
-   "dst": "",
+   "dst": "要不是你……呃，全身都沾满了那东西，我才不会信你。不过那绝对是臭掉了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48781,7 +48781,7 @@
   },
   "Crop Failure#040": {
    "src": "So... that means I've been... oh dear lord I'm an idiot.",
-   "dst": "",
+   "dst": "所以……这代表我一直……噢天哪，我真是个白痴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48791,7 +48791,7 @@
   },
   "Crop Failure#041": {
    "src": "I guess I owe you some thanks anyway for trying to clear the sludge out. Suppose this year's harvest is just a bust.",
-   "dst": "",
+   "dst": "不管怎样，你想帮忙清掉那些烂泥，我还是欠你一声谢谢。我想今年的收成就这样泡汤了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48801,7 +48801,7 @@
   },
   "Crop Failure#042": {
    "src": "Can't sell what little I have, so I figure you can take it, and a bit of cash too, since you basically did an exterminator's job.",
-   "dst": "",
+   "dst": "我手上这点东西也卖不出去，所以你就拿去吧，再加一点钱，毕竟你基本上干了灭虫工的活。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48811,7 +48811,7 @@
   },
   "Crop Failure#043": {
    "src": "Just... do me a favor and use that money to buy some good soap and wash up. I'm thankful and all, but you stink to high heaven!",
-   "dst": "",
+   "dst": "只是……帮我个忙，拿那些钱去买块好肥皂洗干净。我是很感激啦，可你臭得熏天！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Crop Failure",
@@ -48821,7 +48821,7 @@
   },
   "Dearly Departed#000": {
    "src": "Talk to Farmer Cevalus at",
-   "dst": "",
+   "dst": "与农夫 Cevalus 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -48831,7 +48831,7 @@
   },
   "Dearly Departed#001": {
    "src": "Ah, looks like a fresh recruit! Did you see my posting? Good, good.",
-   "dst": "",
+   "dst": "啊，看起来是个新兵！你看到我贴的告示了吗？很好，很好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48841,7 +48841,7 @@
   },
   "Dearly Departed#002": {
    "src": "You see, my dear father-in-law recently passed, and I had to bury him hastily out back. Couldn't get a priest here in time to bury him all properly...",
-   "dst": "",
+   "dst": "是这样的，我亲爱的岳父最近过世了，我只好匆匆忙忙把他埋在屋后。没来得及请牧师来好好安葬他……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48851,7 +48851,7 @@
   },
   "Dearly Departed#003": {
    "src": "Unfortunately, it so happens that my wedding ring might have slipped off as I was putting him to rest...",
-   "dst": "",
+   "dst": "不幸的是，我在让他入土为安的时候，结婚戒指可能刚好滑掉了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48861,7 +48861,7 @@
   },
   "Dearly Departed#004": {
    "src": "I need you to go back there and, well, recover the ring.",
-   "dst": "",
+   "dst": "我需要你去后面，嗯，把戒指找回来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48871,7 +48871,7 @@
   },
   "Dearly Departed#005": {
    "src": "It's nothing I couldn't handle myself, of course, but the wife already suspects something, and with her dear father passing so recently...",
-   "dst": "",
+   "dst": "当然，这种事我自己也办得到，可是我老婆已经起疑了，而且她亲爱的父亲才刚过世……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48881,7 +48881,7 @@
   },
   "Dearly Departed#006": {
    "src": "Well, you see the situation I'm in? Help a poor fellow out, just go and grab that [Muddy Shovel] over there, and then come back to me.",
-   "dst": "",
+   "dst": "嗯，你明白我的处境了吧？帮帮我这可怜人，去把那边那把 [沾满泥的铲子] 拿来，然后回来找我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48891,7 +48891,7 @@
   },
   "Dearly Departed#007": {
    "src": "Pick up the shovel at .",
-   "dst": "",
+   "dst": "捡起铲子。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -48901,7 +48901,7 @@
   },
   "Dearly Departed#008": {
    "src": "The [Muddy Shovel] is just over there. I'd really appreciate the help, recruit.",
-   "dst": "",
+   "dst": "[沾满泥的铲子] 就在那边。你帮我这个忙，我会非常感激的，新兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48911,7 +48911,7 @@
   },
   "Dearly Departed#009": {
    "src": "Return to Farmer Cevalus at",
-   "dst": "",
+   "dst": "回到农夫 Cevalus 那里",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -48921,7 +48921,7 @@
   },
   "Dearly Departed#010": {
    "src": "You've got the shovel? Great! You've got some sturdy armour and a weapon too, I presume?",
-   "dst": "",
+   "dst": "铲子拿到了？太好了！我猜你也有结实的护甲和武器吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48931,7 +48931,7 @@
   },
   "Dearly Departed#011": {
    "src": "Good, good. Better safe than sorry... As I always say! Always, ha ha...",
-   "dst": "",
+   "dst": "很好，很好。小心驶得万年船……我一向这么说！一向，哈哈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48941,7 +48941,7 @@
   },
   "Dearly Departed#012": {
    "src": "Oh, no reason really! Just making sure, ha ha... Should be perfectly safe back there, perfectly safe.",
-   "dst": "",
+   "dst": "噢，其实也没什么原因！只是确认一下，哈哈……后面应该非常安全，非常安全。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48951,7 +48951,7 @@
   },
   "Dearly Departed#013": {
    "src": "You've used your Skill Points too, right? They come in handy, should something happen.",
-   "dst": "",
+   "dst": "你的技能点也用了吧？万一出了什么事，它们很派得上用场。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48961,7 +48961,7 @@
   },
   "Dearly Departed#014": {
    "src": "Well, they're Skill Points! You gain them as you level up, then you can assign them to get bonuses in combat. Look, I'm no soldier, but even I know you really should be using them...",
-   "dst": "",
+   "dst": "嗯，就是技能点啊！升级的时候会获得，然后可以分配它们来获得战斗加成。听着，我不是士兵，但连我都知道你真的应该用掉它们……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -48981,7 +48981,7 @@
   },
   "Dearly Departed#016": {
    "src": "You get it, or do you want me to tell you what they are?",
-   "dst": "",
+   "dst": "你懂了吗，还是要我跟你说说它们是什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49031,7 +49031,7 @@
   },
   "Dearly Departed#021": {
    "src": "Agility, now that one is for the risktakers. The more you have, the likelier you are to dodge incoming attacks, negating most of their damage.",
-   "dst": "",
+   "dst": "敏捷嘛，那是给爱冒险的人的。点得越多，你就越有可能闪避来袭的攻击，抵消掉大部分伤害。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49041,7 +49041,7 @@
   },
   "Dearly Departed#022": {
    "src": "Best part is, you can combine them however you want, no matter your class or style of fighting.",
-   "dst": "",
+   "dst": "最棒的是，不管你是什么职业、什么战斗风格，都可以随意搭配。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49051,7 +49051,7 @@
   },
   "Dearly Departed#023": {
    "src": "Just open your compass to assign your Skill Points. Then, when you're ready, head in there and get my ring.",
-   "dst": "",
+   "dst": "打开你的罗盘就能分配技能点。然后，等你准备好了，就进去把我的戒指拿来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49061,7 +49061,7 @@
   },
   "Dearly Departed#024": {
    "src": "Dig up the grave at .",
-   "dst": "",
+   "dst": "挖开坟墓。",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -49071,7 +49071,7 @@
   },
   "Dearly Departed#025": {
    "src": "Go on then, soldier! Show us the might of {p}'s army! Uh, I mean... get me that ring!",
-   "dst": "",
+   "dst": "去吧，士兵！让我们见识 {p} 军队的威力！呃，我是说……帮我把戒指拿来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49081,7 +49081,7 @@
   },
   "Dearly Departed#026": {
    "src": "What's going on in there, soldier? Have you found the ring yet?",
-   "dst": "",
+   "dst": "里面怎么样了，士兵？找到戒指了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49091,7 +49091,7 @@
   },
   "Dearly Departed#027": {
    "src": "You really should hurry, before... nevermind! Just find the ring and get out of there!",
-   "dst": "",
+   "dst": "你真的得快点，免得……算了！找到戒指就赶快出来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49101,7 +49101,7 @@
   },
   "Dearly Departed#028": {
    "src": "Holy Bovine! It's... it's... he's back! Kill it, quickly!",
-   "dst": "",
+   "dst": "神圣的牛啊！那……那……他回来了！快杀了它！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49111,7 +49111,7 @@
   },
   "Dearly Departed#029": {
    "src": "Kill the Corrupted Father-in-Law!",
-   "dst": "",
+   "dst": "杀死腐化的岳父！",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -49121,7 +49121,7 @@
   },
   "Dearly Departed#030": {
    "src": "You did it! Come back here now, so I can finally get my ring back.",
-   "dst": "",
+   "dst": "你成功了！快回来，好让我终于能拿回我的戒指。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49131,7 +49131,7 @@
   },
   "Dearly Departed#031": {
    "src": "Return to Farmer Cevalus at",
-   "dst": "",
+   "dst": "回到农夫 Cevalus 那里",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -49141,7 +49141,7 @@
   },
   "Dearly Departed#032": {
    "src": "Goodness, that was a little more exciting than I anticipated, hmph. Still, good work! I'm glad we were able to get rid of that monster...",
-   "dst": "",
+   "dst": "天哪，这比我预想的刺激了一点，哼。不过，干得好！我很高兴我们能除掉那个怪物……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49151,7 +49151,7 @@
   },
   "Dearly Departed#033": {
    "src": "I mean... poor father-in-law! I don't know how I'll explain this to the wife...",
-   "dst": "",
+   "dst": "我是说……可怜的岳父！我不知道该怎么跟老婆解释……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49161,7 +49161,7 @@
   },
   "Dearly Departed#034": {
    "src": "I'll take the ring now, it's rather precious to me...",
-   "dst": "",
+   "dst": "戒指我现在就拿走了，它对我来说挺珍贵的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49171,7 +49171,7 @@
   },
   "Dearly Departed#035": {
    "src": "Anyhow, take this well-deserved reward for the, well, actions you took today. Perhaps, if you keep it up, you could even become a hero like Ragnar one day.",
-   "dst": "",
+   "dst": "总之，拿着这份奖励吧，是你今天，嗯，这番作为应得的。说不定你继续努力下去，有一天还能成为像 Ragnar 那样的英雄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49181,7 +49181,7 @@
   },
   "Dearly Departed#036": {
    "src": "Hello there, stranger. Was there something you wanted to speak to me about?",
-   "dst": "",
+   "dst": "你好，陌生人。你有什么事想跟我说吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49191,7 +49191,7 @@
   },
   "Dearly Departed#037": {
    "src": "I should be angry but... I can't pretend to be surprised. He's always been such a forgetful oaf.",
-   "dst": "",
+   "dst": "我应该生气的，可是……我也没法假装惊讶。他一向是个健忘的傻大个。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49201,7 +49201,7 @@
   },
   "Dearly Departed#038": {
    "src": "But, it explains a lot... He's been acting weird lately, ever since dad passed. That must've been what happened, so thank you for telling me.",
-   "dst": "",
+   "dst": "不过，这就说得通了……自从爸爸过世，他最近就一直怪怪的。一定就是这么回事，谢谢你告诉我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49211,7 +49211,7 @@
   },
   "Dearly Departed#039": {
    "src": "That's right. The one and only, ha ha...",
-   "dst": "",
+   "dst": "没错。就是他本人，哈哈……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49221,7 +49221,7 @@
   },
   "Dearly Departed#040": {
    "src": "We're just simple farmers, trying to get by. We were taking care of my dad until... well... yeah...",
-   "dst": "",
+   "dst": "我们只是普通的农民，努力过日子。我们一直在照顾我爸爸，直到……嗯……唉……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49231,7 +49231,7 @@
   },
   "Dearly Departed#041": {
    "src": "Thank you... It all happened so suddenly. On the day I left for {p}, dad was as healthy as ever, but when I came back he was already buried. The sickness must have come so fast...",
-   "dst": "",
+   "dst": "谢谢你……一切都发生得太突然了。我去 {p} 的那天，爸爸还跟平常一样健康，可等我回来，他已经被埋了。病一定来得很快……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49241,7 +49241,7 @@
   },
   "Dearly Departed#042": {
    "src": "But at his age, I'm not surprised... It's just regrettable that we couldn't get a priest out here in time, dad was such a pious man.",
-   "dst": "",
+   "dst": "不过以他的年纪，我也不意外……只是可惜我们没能及时请牧师来，爸爸是那么虔诚的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49251,7 +49251,7 @@
   },
   "Dearly Departed#043": {
    "src": "Dad... Above all, he was kind and always generous. He left us this entire farm. And very pious too, a true believer. Maybe that's why he lived so long...",
-   "dst": "",
+   "dst": "爸爸……最重要的是，他很善良，一向慷慨。他把整座农场都留给了我们。而且非常虔诚，是个真正的信徒。也许这就是他能活那么久的原因……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -49261,7 +49261,7 @@
   },
   "Dearly Departed#044": {
    "src": "Oh, dear... If I don't stop, I'm gonna start crying again.",
-   "dst": "",
+   "dst": "噢，天哪……再说下去，我又要哭了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",
@@ -143351,7 +143351,7 @@
   },
   "Taking the Tower#000": {
    "src": "Speak to Aledar in the {p} Barracks at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "与 [{~}, {~}, -{~}] 的 {p} 兵营里的 Aledar 交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143361,7 +143361,7 @@
   },
   "Taking the Tower#001": {
    "src": "Oh, {u}! Hey! It's good to see you and Tasim again. Hope you didn't have too many adventures without me!",
-   "dst": "",
+   "dst": "噢，{u}！嘿！又见到你和 Tasim 真好。希望你们没背着我去冒太多险！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143371,7 +143371,7 @@
   },
   "Taking the Tower#002": {
    "src": "Tasim's gone off to the training room, if you were looking for him. He's really jumping straight into it, which... is good! We all need to get stronger so we can defend the province.",
-   "dst": "",
+   "dst": "如果你在找 Tasim，他去训练室了。他真的是一头就扎进去了，这……很好啊！我们都得变强，才能保卫行省。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143381,7 +143381,7 @@
   },
   "Taking the Tower#003": {
    "src": "Tasim told me all about the corrupted force you took out. I wish I could have been there to help!",
-   "dst": "",
+   "dst": "Tasim 跟我讲了你们消灭腐化者部队的事。真希望我当时也在场帮忙！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143391,7 +143391,7 @@
   },
   "Taking the Tower#004": {
    "src": "...Oh! Since you're here- I was about to head out to join Lieutenant Van's squad to take back a tower overtaken by corrupteds. You should come with us, too!",
-   "dst": "",
+   "dst": "……噢！既然你在这里——我正要去加入 Van 中尉的小队，夺回一座被腐化者占领的塔。你也应该跟我们一起来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143401,7 +143401,7 @@
   },
   "Taking the Tower#005": {
    "src": "Well? What do you think? Want to get some real combat experience? It shouldn't take long.",
-   "dst": "",
+   "dst": "怎么样？你觉得呢？想积累点真正的战斗经验吗？应该不会花太久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143411,7 +143411,7 @@
   },
   "Taking the Tower#006": {
    "src": "Perfect. Well, no time better than the present! Let's get going.",
-   "dst": "",
+   "dst": "太好了。好，择日不如撞日！我们出发吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143421,7 +143421,7 @@
   },
   "Taking the Tower#007": {
    "src": "Oh, wait. There's a stop we've got to make first. Follow me to the Powder Master!",
-   "dst": "",
+   "dst": "噢，等等。我们得先去一个地方。跟我去找粉末大师！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143431,7 +143431,7 @@
   },
   "Taking the Tower#008": {
    "src": "Oh. Alright.",
-   "dst": "",
+   "dst": "噢。好吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143441,7 +143441,7 @@
   },
   "Taking the Tower#009": {
    "src": "Well, I'll still be here for a while. If you change your mind, let me know!",
-   "dst": "",
+   "dst": "嗯，我还会在这里待一阵子。如果你改变主意了，跟我说一声！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143451,7 +143451,7 @@
   },
   "Taking the Tower#010": {
    "src": "Hey, you're back! Have you changed you mind? Want to join a raid on a corrupted tower?",
-   "dst": "",
+   "dst": "嘿，你回来了！改变主意了吗？想一起去突袭腐化者的塔吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143461,7 +143461,7 @@
   },
   "Taking the Tower#011": {
    "src": "Follow Aledar to the Powder Master at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "跟着 Aledar 去找 [{~}, {~}, -{~}] 的粉末大师。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143471,7 +143471,7 @@
   },
   "Taking the Tower#012": {
    "src": "Alright, so. There's something I've been told about the tower we're going to be attacking which we can prepare for!",
-   "dst": "",
+   "dst": "好，是这样。我听说了一件关于我们要进攻的那座塔的事，我们可以提前做准备！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143481,7 +143481,7 @@
   },
   "Taking the Tower#013": {
    "src": "Apparently, the big bad at the top of the tower is weak to damage! And so, here we are at the Powder Master.",
-   "dst": "",
+   "dst": "据说塔顶那个大坏蛋怕这种伤害！所以，我们就来找粉末大师了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143491,7 +143491,7 @@
   },
   "Taking the Tower#014": {
    "src": "You can apply various elemental powders to your weapons here, which lets them deal types of damage they might not have been able to before.",
-   "dst": "",
+   "dst": "你可以在这里给武器附上各种元素粉末，让武器能造成以前可能造成不了的伤害类型。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143501,7 +143501,7 @@
   },
   "Taking the Tower#015": {
    "src": "In this case, you can apply a powder, so that your weapon will be more effective against the corrupted enemies at the tower!",
-   "dst": "",
+   "dst": "这次你可以附上一种粉末，这样你的武器对塔里的腐化敌人会更有效！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143511,7 +143511,7 @@
   },
   "Taking the Tower#016": {
    "src": "I, uh... don't remember the whole elemental speech off the top of my head. If you want to know more about those, you'll have to talk to Captain Ragon in the barracks. He has a whole course about it!",
-   "dst": "",
+   "dst": "我，呃……一时想不起那一整套元素的说明了。如果你想了解更多，就得去兵营找 Ragon 上尉。他有一整门课在讲这个！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143521,7 +143521,7 @@
   },
   "Taking the Tower#017": {
    "src": "...The point is- here. Take this elemental powder and talk to the Powder Master to apply it. Let me know when you're done!",
-   "dst": "",
+   "dst": "……重点是——给你。拿着这份元素粉末，去找粉末大师附上。弄好了跟我说一声！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143531,7 +143531,7 @@
   },
   "Taking the Tower#018": {
    "src": "Apply a Water Powder to your weapon, then let Aledar know at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "给你的武器附上水之粉末，然后到 [{~}, {~}, -{~}] 告诉 Aledar。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143541,7 +143541,7 @@
   },
   "Taking the Tower#019": {
    "src": "Got the powder on your weapon? Good, that means we're ready.",
-   "dst": "",
+   "dst": "武器附上粉末了吗？很好，那我们准备好了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143551,7 +143551,7 @@
   },
   "Taking the Tower#020": {
    "src": "Lieutenant Van and the others are by that bunch of houses in the {p} Suburbs- you probably saw it on your way in.",
-   "dst": "",
+   "dst": "Van 中尉和其他人在 {p} 郊区那一片房子旁边——你来的路上应该看到过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143561,7 +143561,7 @@
   },
   "Taking the Tower#021": {
    "src": "Lead the way! I'll be right behind you.",
-   "dst": "",
+   "dst": "你带路吧！我就跟在你后面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143571,7 +143571,7 @@
   },
   "Taking the Tower#022": {
    "src": "Meet up with Lieutenant Van's squad near the Raging Tower at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [{~}, {~}, -{~}] 的狂暴之塔附近与 Van 中尉的小队会合。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143581,7 +143581,7 @@
   },
   "Taking the Tower#023": {
    "src": "Ah, Aledar! Good to see you here. Who's this with you?",
-   "dst": "",
+   "dst": "啊，Aledar！很高兴在这里见到你。跟你一起的是谁？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143591,7 +143591,7 @@
   },
   "Taking the Tower#024": {
    "src": "This is {u}, sir. They're here to join our assault, if you'll allow it.",
-   "dst": "",
+   "dst": "长官，这位是 {u}。如果您同意的话，他们想加入我们的突袭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143601,7 +143601,7 @@
   },
   "Taking the Tower#025": {
    "src": "Hm... Well, I don't see why not. The more the merrier, that's what I say.",
-   "dst": "",
+   "dst": "嗯……好吧，我看不出有什么不行的。人越多越热闹，我一向这么说。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143611,7 +143611,7 @@
   },
   "Taking the Tower#026": {
    "src": "If everyone's here, we can begin. Here's the plan! We'll need to fight off some of the forces near the base of the tower, so that someone can climb to the top.",
-   "dst": "",
+   "dst": "如果大家都到齐了，我们就可以开始了。计划是这样的！我们得击退塔底附近的一部分敌军，好让某个人爬上塔顶。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143621,7 +143621,7 @@
   },
   "Taking the Tower#027": {
    "src": "It doesn't matter who does the job, so long as it gets done. If you see an opportunity- go for it!",
-   "dst": "",
+   "dst": "谁去做都没关系，只要把事情办成就行。如果你看到机会——就上！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143631,7 +143631,7 @@
   },
   "Taking the Tower#028": {
    "src": "If you need to retreat, or the corrupteds are slain, regroup here!| Understood?",
-   "dst": "",
+   "dst": "如果需要撤退，或者腐化者被消灭了，就回这里集合！| 明白了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143641,7 +143641,7 @@
   },
   "Taking the Tower#029": {
    "src": "Yes, sir!",
-   "dst": "",
+   "dst": "是，长官！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143651,7 +143651,7 @@
   },
   "Taking the Tower#030": {
    "src": "Yes, sir!",
-   "dst": "",
+   "dst": "是，长官！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143661,7 +143661,7 @@
   },
   "Taking the Tower#043": {
    "src": "Good. Alright soldiers, let's take back that tower!",
-   "dst": "",
+   "dst": "很好。好了士兵们，我们去把那座塔夺回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143671,7 +143671,7 @@
   },
   "Taking the Tower#031": {
    "src": "Go on, head for the tower! If we're lucky, we'll be able to clear out the corrupteds who have taken over it.",
-   "dst": "",
+   "dst": "去吧，往塔那边冲！运气好的话，我们就能把占领那里的腐化者清干净。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143681,7 +143681,7 @@
   },
   "Taking the Tower#032": {
    "src": "Assault the Raging Tower at [{~}, {~}, -{~}] and defeat the monster at the top.",
-   "dst": "",
+   "dst": "突袭 [{~}, {~}, -{~}] 的狂暴之塔，击败塔顶的怪物。",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143691,7 +143691,7 @@
   },
   "Taking the Tower#033": {
    "src": "Alright. It's time to take on the tower! We've got this, {u}.",
-   "dst": "",
+   "dst": "好。是时候拿下这座塔了！我们办得到的，{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143701,7 +143701,7 @@
   },
   "Taking the Tower#034": {
    "src": "Report back to Lieutenant Van about your success at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "回到 [{~}, {~}, -{~}] 向 Van 中尉报告你的胜利",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143711,7 +143711,7 @@
   },
   "Taking the Tower#035": {
    "src": "We did it, we killed the corrupted! Come on, let's get back to Lieutenant Van with the news!",
-   "dst": "",
+   "dst": "我们成功了，我们杀掉那个腐化者了！走吧，回去把消息告诉 Van 中尉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143721,7 +143721,7 @@
   },
   "Taking the Tower#036": {
    "src": "It seems everyone has returned. Well? Have the corrupted forces been vanquished?",
-   "dst": "",
+   "dst": "看来大家都回来了。怎么样？腐化者的部队被消灭了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143731,7 +143731,7 @@
   },
   "Taking the Tower#037": {
    "src": "They have, lieutenant. {u} and I reached the top and defeated the corrupted.",
-   "dst": "",
+   "dst": "消灭了，中尉。{u} 和我登上了塔顶，击败了那个腐化者。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143741,7 +143741,7 @@
   },
   "Taking the Tower#038": {
    "src": "Fine work, soldiers! Another great victory for the {p} army. With the leader killed, it shouldn't be too difficult to clear out the rest of them.",
-   "dst": "",
+   "dst": "干得好，士兵们！又是 {p} 军队的一场大胜。首领被杀了，剩下的应该不难清理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143751,7 +143751,7 @@
   },
   "Taking the Tower#039": {
    "src": "I'll let the Admiral know of your victory today, soldiers. And- here, some payment for your work.",
-   "dst": "",
+   "dst": "我会向上将报告你们今天的胜利，士兵们。还有——给，这是你们的报酬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143761,7 +143761,7 @@
   },
   "Taking the Tower#040": {
    "src": "The two of you have a promising future. I look forward to serving with you in the future!",
-   "dst": "",
+   "dst": "你们两个前途无量。我期待将来能与你们并肩作战！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -143771,7 +143771,7 @@
   },
   "Taking the Tower#041": {
    "src": "Talking Lieutenant Van",
-   "dst": "",
+   "dst": "与 Van 中尉对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Taking the Tower",
@@ -143781,7 +143781,7 @@
   },
   "Taking the Tower#042": {
    "src": "We'll take care of the remaining stragglers, don't you worry. Thank you for your work today, soldier.",
-   "dst": "",
+   "dst": "剩下的散兵我们会处理，别担心。谢谢你今天的付出，士兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Taking the Tower",
@@ -158181,7 +158181,7 @@
   },
   "The Dark Descent#000": {
    "src": "Talk to General Graken at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 [{~}, {~}, -{~}] 的 Graken 将军对话",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -158191,7 +158191,7 @@
   },
   "The Dark Descent#001": {
    "src": "Ah, hello there chap! I must say, I didn't expect to see a part of the old {p} regiment over 'ere.",
-   "dst": "",
+   "dst": "啊，你好啊老兄！我得说，真没想到会在这边见到老 {p} 部队的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158201,7 +158201,7 @@
   },
   "The Dark Descent#002": {
    "src": "I am General Graken, leader of the {p} militia. Charmed to meet you!",
-   "dst": "",
+   "dst": "我是 Graken 将军，{p} 民兵的首领。幸会幸会！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158211,7 +158211,7 @@
   },
   "The Dark Descent#003": {
    "src": "You've seen all the bloody zombies faffing about everywhere, yes? They're all seeming to come from this massive skull.",
-   "dst": "",
+   "dst": "你看到那些到处瞎晃的该死僵尸了吧？它们好像全都是从这个巨大的头骨里冒出来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158221,7 +158221,7 @@
   },
   "The Dark Descent#004": {
    "src": "I'm putting together a crack team for an expedition inside, but we haven't got any bleedin' idea what's down there!",
-   "dst": "",
+   "dst": "我正在组建一支精锐小队进去探险，可我们压根不知道下面到底有什么鬼东西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158231,7 +158231,7 @@
   },
   "The Dark Descent#005": {
    "src": "If you're up for it, chap, we could absolutely do with some recon 'round the old town, look for clues and the like.",
-   "dst": "",
+   "dst": "如果你愿意，老兄，我们非常需要人在老镇子周围侦察一下，找找线索之类的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158241,7 +158241,7 @@
   },
   "The Dark Descent#006": {
    "src": "I took a gander earlier, and one of the ol' houses caught my eye - it had a bloomin' great skull right over the door!",
-   "dst": "",
+   "dst": "我刚才去瞄了一眼，有一栋老房子引起了我的注意——它门上方挂着一个大得吓人的头骨！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158251,7 +158251,7 @@
   },
   "The Dark Descent#007": {
    "src": "I didn't have time to look in proper, but I'd start the investigation there, chap.",
-   "dst": "",
+   "dst": "我没时间仔细看，不过要是我，就从那里开始调查，老兄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158261,7 +158261,7 @@
   },
   "The Dark Descent#008": {
    "src": "It's just south of here. The house still had solid wood boarding in it, despite the age, so look lively, chum!",
-   "dst": "",
+   "dst": "就在这里南边。那栋房子虽然老，里面还钉着结实的木板，所以机灵点，伙计！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158271,7 +158271,7 @@
   },
   "The Dark Descent#009": {
    "src": "Investigate the house in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "调查 {p} [{~}, {~}, -{~}] 的房子。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -158281,7 +158281,7 @@
   },
   "The Dark Descent#010": {
    "src": "Oh, sod it, I knew I was forgetting something! Steady there, chum! I'm on my way!",
-   "dst": "",
+   "dst": "噢，该死，我就知道我忘了什么！稳住，伙计！我这就来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158291,7 +158291,7 @@
   },
   "The Dark Descent#011": {
    "src": "Drat! Too late, it seems. Yes, I forgot to mention the floor was in poor condition. Up here! You took quite the tumble, are you alright?",
-   "dst": "",
+   "dst": "糟了！看来来不及了。是的，我忘了提那地板已经很破了。在上面！你摔得可不轻，没事吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158301,7 +158301,7 @@
   },
   "The Dark Descent#012": {
    "src": "Well, there's some good news, I suppose. Still though, seems I sent you a ticket to a bit of a sticky wicket! Do you see a way out anywhere down there?",
-   "dst": "",
+   "dst": "嗯，我想这也算有个好消息。不过，看来我把你送进了个棘手的烂摊子！你在下面看得到出口吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158311,7 +158311,7 @@
   },
   "The Dark Descent#013": {
    "src": "There's a tunnel? Aha, spiffing! I suggest you take it immediately. I'll have to return to my post now, post-haste!",
-   "dst": "",
+   "dst": "有条隧道？啊哈，太棒了！我建议你马上走。我得回我的岗位了，立刻马上！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158321,7 +158321,7 @@
   },
   "The Dark Descent#014": {
    "src": "Good luck, chum! Now, back, you cads! Back I say!",
-   "dst": "",
+   "dst": "祝你好运，伙计！好了，退后，你们这些混蛋！我说退后！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158331,7 +158331,7 @@
   },
   "The Dark Descent#015": {
    "src": "Keheh... Come further, little human... Step into the shadows...",
-   "dst": "",
+   "dst": "嘿嘿……再往前走，小人类……走进阴影里来……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158341,7 +158341,7 @@
   },
   "The Dark Descent#016": {
    "src": "Explore the tunnel in the basement of the house.",
-   "dst": "",
+   "dst": "探索房子地下室里的隧道。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -158351,7 +158351,7 @@
   },
   "The Dark Descent#017": {
    "src": "Investigate the strange dark realm.",
-   "dst": "",
+   "dst": "调查那个奇怪的黑暗领域。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -158361,7 +158361,7 @@
   },
   "The Dark Descent#018": {
    "src": "Welcome...",
-   "dst": "",
+   "dst": "欢迎……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158371,7 +158371,7 @@
   },
   "The Dark Descent#019": {
    "src": "Scout! Report your findings, immediately! How many corrupteds are coming?",
-   "dst": "",
+   "dst": "斥候！立刻报告你的发现！有多少腐化者正在过来？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158381,7 +158381,7 @@
   },
   "The Dark Descent#020": {
    "src": "I...there...too many...th-thousands, at...at least...",
-   "dst": "",
+   "dst": "我……那边……太多了……至、至少……有几千……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158391,7 +158391,7 @@
   },
   "The Dark Descent#021": {
    "src": "Thousands...? This is far worse than I expected. Men! Prepare for-",
-   "dst": "",
+   "dst": "几千……？这比我预想的糟太多了。弟兄们！准备——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158401,7 +158401,7 @@
   },
   "The Dark Descent#022": {
    "src": "No point...we're...doomed...",
-   "dst": "",
+   "dst": "没用的……我们……完了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158411,7 +158411,7 @@
   },
   "The Dark Descent#023": {
    "src": "Wait, w-what's going on? What's happening to you?!",
-   "dst": "",
+   "dst": "等等，怎、怎么回事？你怎么了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158421,7 +158421,7 @@
   },
   "The Dark Descent#024": {
    "src": "Please, stop this! Whoever you are, leave me and my family in peace! What did we ever do to deserve this?!",
-   "dst": "",
+   "dst": "求求你，住手！不管你是谁，放过我和我的家人吧！我们到底做了什么要遭这种罪？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158431,7 +158431,7 @@
   },
   "The Dark Descent#025": {
    "src": "Ah, but if you had only said so sooner! They have already left this mortal coil...oh, what a shame.",
-   "dst": "",
+   "dst": "啊，你要是早点说就好了！他们已经离开这凡尘了……噢，真可惜。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158441,7 +158441,7 @@
   },
   "The Dark Descent#026": {
    "src": "Y-you...I thought they...oh, god, no...",
-   "dst": "",
+   "dst": "你、你……我还以为他们……噢，天哪，不……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158451,7 +158451,7 @@
   },
   "The Dark Descent#027": {
    "src": "Hush now. I will ensure that you and your family are reunited. You will even be able to partake in...keheh...family outings, under my watchful eye...",
-   "dst": "",
+   "dst": "嘘。我会让你和你的家人团聚的。你们甚至还能在我的注视下……嘿嘿……来一场家庭出游……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158461,7 +158461,7 @@
   },
   "The Dark Descent#028": {
    "src": "Wha...you mean... N-no, please! I don't want to hurt anyone! I don't want to die!!",
-   "dst": "",
+   "dst": "什……你是说……不、不，求你了！我不想伤害任何人！我不想死！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158471,7 +158471,7 @@
   },
   "The Dark Descent#029": {
    "src": "Aha, naive girl. How cute, you believe you have a choice in the matter. What you want, is not what I need.",
-   "dst": "",
+   "dst": "啊哈，天真的丫头。真可爱，你以为这件事你有选择的余地。你想要什么，并不是我需要什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158481,7 +158481,7 @@
   },
   "The Dark Descent#030": {
    "src": "Heheh...do you see now?",
-   "dst": "",
+   "dst": "嘿嘿……现在你明白了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158491,7 +158491,7 @@
   },
   "The Dark Descent#031": {
    "src": "Do you see how easily this place fell? How quickly I became its master? And how I could simply dispose of you without a second thought?",
-   "dst": "",
+   "dst": "你看到这地方有多容易沦陷了吗？我多快就成了它的主人？我又能多么轻易、不假思索地把你处理掉？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158501,7 +158501,7 @@
   },
   "The Dark Descent#032": {
    "src": "Hundreds slaughtered in mere moments... only to rise again as my soldiers in infinite amounts.",
-   "dst": "",
+   "dst": "转眼之间屠杀数百人……只为让他们作为我的士兵无穷无尽地再次站起来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158511,7 +158511,7 @@
   },
   "The Dark Descent#033": {
    "src": "You can barely keep them at bay on the surface, and yet you think you can enter my own domain, to challenge me in the Underworld?",
-   "dst": "",
+   "dst": "你们在地面上都快挡不住它们了，竟然还以为能闯进我的领地，在冥界向我挑战？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158521,7 +158521,7 @@
   },
   "The Dark Descent#034": {
    "src": "You will fail, and I will be free to string your body up like a puppet and make you dance for me.",
-   "dst": "",
+   "dst": "你会失败的，然后我就能随心所欲地把你的身体像木偶一样吊起来，让你为我跳舞。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158531,7 +158531,7 @@
   },
   "The Dark Descent#035": {
    "src": "So enter the mouth of the skull, soldier, make your way below the ground. I look forward to our next meeting, keheheh...",
-   "dst": "",
+   "dst": "那就走进头骨的嘴里吧，士兵，往地底下去。我很期待我们下一次见面，嘿嘿嘿……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158541,7 +158541,7 @@
   },
   "The Dark Descent#036": {
    "src": "Leave the strange dark realm.",
-   "dst": "",
+   "dst": "离开那个奇怪的黑暗领域。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -158551,7 +158551,7 @@
   },
   "The Dark Descent#037": {
    "src": "Return the ruby to Graken at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "把红宝石带回给 [{~}, {~}, -{~}] 的 Graken",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -158561,7 +158561,7 @@
   },
   "The Dark Descent#038": {
    "src": "Return to your world, now. And if you still want to challenge me... I'll be waiting.",
-   "dst": "",
+   "dst": "回到你的世界去吧。如果你还想挑战我……我会等着。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158571,7 +158571,7 @@
   },
   "The Dark Descent#039": {
    "src": "Hey! Come on, come over here! Quit milling about with the zombies, chap!",
-   "dst": "",
+   "dst": "嘿！快，过来这边！别跟僵尸一起瞎晃了，老兄！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158581,7 +158581,7 @@
   },
   "The Dark Descent#040": {
    "src": "Oi! Hallo?! Chum? Why're you wandering round all bog-eyed? Come back to me now!",
-   "dst": "",
+   "dst": "喂！哈啰？！伙计？你干嘛两眼发直地到处乱走？快回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158591,7 +158591,7 @@
   },
   "The Dark Descent#041": {
    "src": "Come on, pip pip! Let's see a bit more colour in your eyes- There we are! Back now, chap?",
-   "dst": "",
+   "dst": "来吧，快快快！让你眼睛里多点神采——这就对了！回过神来了吗，老兄？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158601,7 +158601,7 @@
   },
   "The Dark Descent#042": {
    "src": "Capital! You had me quite worried for a spot, there. Do bubble about just what went on down there, mm?",
-   "dst": "",
+   "dst": "太好了！你刚才可让我担心了一阵子。快说说下面到底发生了什么，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158611,7 +158611,7 @@
   },
   "The Dark Descent#043": {
    "src": "But, you were stumbling about like a senile biddy, eyes blank as cream, and you kept muttering something about a Charon.",
-   "dst": "",
+   "dst": "可是你刚才跌跌撞撞的像个老糊涂，眼神空得跟奶油一样，嘴里还一直念叨着什么 Charon。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158621,7 +158621,7 @@
   },
   "The Dark Descent#044": {
    "src": "I'm supposing he was the one who took you for a spin there? Well, you certainly haven't carked it, so I might call this operation a jolly good success!",
-   "dst": "",
+   "dst": "我猜就是他带你去兜了一圈吧？好吧，你肯定没翘辫子，那我就当这次行动大获成功了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158631,7 +158631,7 @@
   },
   "The Dark Descent#045": {
    "src": "Your discoveries fit in jolly-well with what we already know - and I'm convinced. To stop all these bleedin' zombos, we're going to have to go down under.",
-   "dst": "",
+   "dst": "你的发现跟我们已知的情况完全吻合——我信了。要阻止这些该死的僵尸，我们就得下到地底去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158641,7 +158641,7 @@
   },
   "The Dark Descent#046": {
    "src": "Preliminary expeditions have brought back some real nasty bits, brains and such - but also some fancy-as-you-like jewellery!",
-   "dst": "",
+   "dst": "先遣探险队带回了些非常恶心的东西，脑子之类的——不过也有些华丽得不得了的首饰！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158651,7 +158651,7 @@
   },
   "The Dark Descent#047": {
    "src": "Take some with you, remind you what we're up against. But keep your eyes on the prize!",
-   "dst": "",
+   "dst": "拿一些走吧，提醒你我们面对的是什么。不过要紧盯着目标！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158661,7 +158661,7 @@
   },
   "The Dark Descent#048": {
    "src": "When you're ready, I'd be chuffed to have you along again in the expedition down into the depths, old bean!",
-   "dst": "",
+   "dst": "等你准备好了，要是你能再跟我们一起下到深处探险，我会非常高兴的，老伙计！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -178271,7 +178271,7 @@
   },
   "The Lost#000": {
    "src": "Find Dejol at [{~}, {~}, {~}]",
-   "dst": "",
+   "dst": "找到 [{~}, {~}, {~}] 的 Dejol",
    "role": "desc",
    "kind": "objective",
    "quest": "The Lost",
@@ -178281,7 +178281,7 @@
   },
   "The Lost#001": {
    "src": "Ho, traveler! I need the help of a true explorer, I can see it in your eyes, you are an adventurer like me!",
-   "dst": "",
+   "dst": "嘿，旅人！我需要一位真正的探险家帮忙，我从你眼里看得出来，你跟我一样是个冒险者！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178291,7 +178291,7 @@
   },
   "The Lost#002": {
    "src": "While you are here, adventurer, I could use your help with something. I have gotten myself into a small predicament in my travels.",
-   "dst": "",
+   "dst": "既然你来了，冒险者，我有件事想请你帮忙。我在旅途中遇到了一点小麻烦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178301,7 +178301,7 @@
   },
   "The Lost#003": {
    "src": "You see, me and three others were on a grand expedition to explore the entire canyon! Unfortunately, we ran into a slight problem...",
-   "dst": "",
+   "dst": "是这样的，我和另外三个人正在进行一场宏大的探险，要把整座峡谷探索个遍！可惜我们碰上了一点小问题……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178311,7 +178311,7 @@
   },
   "The Lost#004": {
    "src": "The {p} is clearly called that for a reason, within hours, we had lost each other!",
-   "dst": "",
+   "dst": "{p} 叫这个名字显然是有原因的，没过几个小时，我们就走散了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178321,7 +178321,7 @@
   },
   "The Lost#005": {
    "src": "Luckily, we were prepared for it. We each carried a flag so if we ever got lost, we can raise it to be found.",
-   "dst": "",
+   "dst": "幸好我们有准备。我们每个人都带了一面旗子，万一迷路了，就把旗子升起来让人找到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178331,7 +178331,7 @@
   },
   "The Lost#006": {
    "src": "They were all meant to come to my blue flag, but they must all be trapped in some predicament! The canyon can be a dangerous place.",
-   "dst": "",
+   "dst": "他们应该都要来我的蓝旗这里集合，可他们一定都被什么麻烦困住了！峡谷可是个危险的地方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178341,7 +178341,7 @@
   },
   "The Lost#007": {
    "src": "I can see all three red flags from here, but it would be terrible if I went looking and they came back to this flag to find me gone!",
-   "dst": "",
+   "dst": "三面红旗我在这里都看得到，可要是我去找他们，他们却回到这面旗子发现我不在，那就糟了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178351,7 +178351,7 @@
   },
   "The Lost#008": {
    "src": "Do you think you could go and check if they're all alright? I'm sure I can find some reward for you if you help!",
-   "dst": "",
+   "dst": "你能不能去看看他们是不是都没事？如果你帮忙，我一定能找点奖励给你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178361,7 +178361,7 @@
   },
   "The Lost#009": {
    "src": "Find the three lost crew members at the red flags around [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [{~}, {~}, -{~}] 周围的红旗处找到三名走散的队员",
    "role": "desc",
    "kind": "objective",
    "quest": "The Lost",
@@ -178371,7 +178371,7 @@
   },
   "The Lost#010": {
    "src": "...AAAAAAAAAAAAAAAAAAAAHHHHHHHH!!!!!!!!! HEEEEEEEEEEEEELLLLLLLLPPPPPP!!!!!! THERE ARE BIIIIIIIIIIIRDS!!!!!!",
-   "dst": "",
+   "dst": "……啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊！！！！！！！！！救命啊啊啊啊啊啊啊啊啊啊！！！！！！有鸟啊啊啊啊啊啊啊啊！！！！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178381,7 +178381,7 @@
   },
   "The Lost#011": {
    "src": "HUMAN! YOU, DOWN THERE! HELP ME! I was just trying to find my way back to my friends...",
-   "dst": "",
+   "dst": "人类！下面的你！救救我！我只是想找路回到我朋友那里……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178391,7 +178391,7 @@
   },
   "The Lost#012": {
    "src": "When this GIANT BIRD KIDNAPPED ME and threw me in her nest! I think she thinks I'm one of her chicks!",
-   "dst": "",
+   "dst": "结果这只巨鸟把我抓走，丢进了她的巢里！我觉得她把我当成她的雏鸟了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178401,7 +178401,7 @@
   },
   "The Lost#013": {
    "src": "The Canyon's movements must've dislodged her eggs from her nest-",
-   "dst": "",
+   "dst": "一定是峡谷的变动把她的蛋从巢里震出去了——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178411,7 +178411,7 @@
   },
   "The Lost#014": {
    "src": "O-OH GROOK, SHE'S PECKING ME! FIND HER EGGS NEARBY AND THROW THEM UP HERE... QUICKLY!!",
-   "dst": "",
+   "dst": "噢、噢 GROOK 啊，她在啄我！在附近找到她的蛋，扔上来……快点！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178421,7 +178421,7 @@
   },
   "The Lost#015": {
    "src": "YOU HAVE THE EGGS?? GOOD! THROW THEM UP HERE, PLEASE!!!",
-   "dst": "",
+   "dst": "你拿到蛋了？？太好了！拜托，扔上来！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178431,7 +178431,7 @@
   },
   "The Lost#016": {
    "src": "W-WOAH, STAY BACK, BIRD! I have a... uhh... I DON'T HAVE A WEAPON, HUMAN! PLEASE HURRY UP!",
-   "dst": "",
+   "dst": "哇、哇哦，退后，鸟！我有……呃……我没有武器啊，人类！拜托快点！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178441,7 +178441,7 @@
   },
   "The Lost#017": {
    "src": "YES YES YES!!! THANK YOU, HUMAN! Oh, thank grook, this bird's leaving me alone now... It worked!",
-   "dst": "",
+   "dst": "好好好！！！谢谢你，人类！噢，谢天谢 Grook，这只鸟现在不理我了……成功了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178451,7 +178451,7 @@
   },
   "The Lost#018": {
    "src": "I'll head back to Dejol, now... And I'm never going to go near another bird again!",
-   "dst": "",
+   "dst": "我现在就回 Dejol 那里去……而且我再也不要靠近任何鸟了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178461,7 +178461,7 @@
   },
   "The Lost#019": {
    "src": "A-ah, hello. I'm g-guessing Dejol sent you?",
-   "dst": "",
+   "dst": "啊、啊，你好。我、我猜是 Dejol 派你来的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178471,7 +178471,7 @@
   },
   "The Lost#020": {
    "src": "W-Well, I was just walking through the c-canyon, when... the ground suddenly rose up underneath me and launched me all the way up here!",
-   "dst": "",
+   "dst": "我、我当时只是在峡、峡谷里走着，结果……地面突然在我脚下升起来，一路把我弹到了这上面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178481,7 +178481,7 @@
   },
   "The Lost#021": {
    "src": "N-Now, I'm... embarrassed to admit it, but I'm REALLY afraid of heights, s-so I don't know what to do... Do you have any ideas?",
-   "dst": "",
+   "dst": "现、现在，我……说出来很丢脸，但我真的很怕高，所、所以我不知道该怎么办……你有什么主意吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178491,7 +178491,7 @@
   },
   "The Lost#022": {
    "src": "AAAAAAAAHHHHH!!!",
-   "dst": "",
+   "dst": "啊啊啊啊啊啊！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178501,7 +178501,7 @@
   },
   "The Lost#023": {
    "src": "Y-YOU JERK!! I COULD HAVE DIED!! WHAT THE HELL IS WRONG WITH YOU???",
-   "dst": "",
+   "dst": "你、你这混蛋！！我差点就死了！！你到底有什么毛病？？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178511,7 +178511,7 @@
   },
   "The Lost#024": {
    "src": "P-Please NEVER do that again! That was the worst thing I have ever done in my entire life!!",
-   "dst": "",
+   "dst": "拜、拜托千万别再那样了！那是我这辈子做过最可怕的事！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178521,7 +178521,7 @@
   },
   "The Lost#025": {
    "src": "...Ugh! I-I'm going to head back to Dejol now. I hope I NEVER have to see you again!",
-   "dst": "",
+   "dst": "……唉！我、我现在要回 Dejol 那里去了。希望我再也不用见到你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178531,7 +178531,7 @@
   },
   "The Lost#026": {
    "src": "Hey there! I'm in a bit of a pickle right now, you see. This house I took refuge in, well... The original owner must have left for a reason!",
-   "dst": "",
+   "dst": "嘿！你看，我现在有点进退两难。我躲进来的这栋房子，嗯……原来的主人离开一定是有原因的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178541,7 +178541,7 @@
   },
   "The Lost#027": {
    "src": "It's so sad... So many people are constantly displaced by the canyon's movements destroying their homes every year. I remember hearing a story once, it was about-",
-   "dst": "",
+   "dst": "真让人难过……每年都有好多人因为峡谷的变动毁了家园而流离失所。我记得以前听过一个故事，讲的是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178551,7 +178551,7 @@
   },
   "The Lost#028": {
    "src": "Wait... Hey, do you hear that?",
-   "dst": "",
+   "dst": "等等……嘿，你听到了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178561,7 +178561,7 @@
   },
   "The Lost#029": {
    "src": "Hey! You alright down there?! Oh, lord, how are we going to get out of this? I'm up here, come find me.",
-   "dst": "",
+   "dst": "嘿！下面的你还好吗？！噢天哪，我们要怎么出去？我在上面，来找我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178571,7 +178571,7 @@
   },
   "The Lost#030": {
    "src": "Oh... Well, this isn't good! The house just went and collapsed on us!",
-   "dst": "",
+   "dst": "噢……好吧，这下不妙了！房子直接塌在我们身上了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178581,7 +178581,7 @@
   },
   "The Lost#031": {
    "src": "See what I was talking about, human? The canyon isn't really a good place to be. Now we're stuck in this pit!",
-   "dst": "",
+   "dst": "看到我说的了吧，人类？峡谷真不是个好待的地方。现在我们被困在这个坑里了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178591,7 +178591,7 @@
   },
   "The Lost#032": {
    "src": "Although... there is a crafting table over there... Hey, maybe you could collect some supplies and make something to get us out of here?",
-   "dst": "",
+   "dst": "不过……那边有张工作台……嘿，也许你可以收集点材料，做个东西把我们弄出去？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178601,7 +178601,7 @@
   },
   "The Lost#033": {
    "src": "Heh, that's certainly one way to get out here! You made an entire catapult, huh?",
-   "dst": "",
+   "dst": "嘿，这倒确实是个出去的办法！你做了一整台投石机，是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178611,7 +178611,7 @@
   },
   "The Lost#034": {
    "src": "So we're just going to launch ourselves out of this pit? You got it!",
-   "dst": "",
+   "dst": "所以我们就直接把自己弹出这个坑？没问题！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178621,7 +178621,7 @@
   },
   "The Lost#035": {
    "src": "Alrighty, I'll be right behind you!",
-   "dst": "",
+   "dst": "好嘞，我就跟在你后面！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178631,7 +178631,7 @@
   },
   "The Lost#036": {
    "src": "Me first? Okay, I'll do just that!",
-   "dst": "",
+   "dst": "我先？好，就这么办！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178641,7 +178641,7 @@
   },
   "The Lost#037": {
    "src": "Alright, here I... GOOO!!",
-   "dst": "",
+   "dst": "好，我……出发啦！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178651,7 +178651,7 @@
   },
   "The Lost#038": {
    "src": "Hey, I made it!! You should come up as well, now.",
-   "dst": "",
+   "dst": "嘿，我成功了！！现在你也上来吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178661,7 +178661,7 @@
   },
   "The Lost#039": {
    "src": "Woah... That's certainly a lot of fun! Anyways, come talk to me.",
-   "dst": "",
+   "dst": "哇哦……这可真好玩！总之，过来跟我说话。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178671,7 +178671,7 @@
   },
   "The Lost#040": {
    "src": "Thanks for the help, friend! I couldn't have done it without you!",
-   "dst": "",
+   "dst": "谢谢你的帮忙，朋友！没有你我办不到！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178681,7 +178681,7 @@
   },
   "The Lost#041": {
    "src": "I'm gonna go find my friend Dejol now- wait, you know who he is??",
-   "dst": "",
+   "dst": "我现在要去找我的朋友 Dejol 了——等等，你认识他？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178691,7 +178691,7 @@
   },
   "The Lost#042": {
    "src": "Oh... Wow, guess it's a small world, huh? That's funny! I'll see you down there later, then!",
-   "dst": "",
+   "dst": "噢……哇，看来世界真小，是吧？真好笑！那待会儿下面见！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178701,7 +178701,7 @@
   },
   "The Lost#043": {
    "src": "Return to Dejol at [{~}, {~}, -{~}] to tell him of your success",
-   "dst": "",
+   "dst": "回到 [{~}, {~}, -{~}] 的 Dejol 那里，告诉他你成功了",
    "role": "desc",
    "kind": "objective",
    "quest": "The Lost",
@@ -178711,7 +178711,7 @@
   },
   "The Lost#044": {
    "src": "Ho, adventurer! Looks like you had some adventures helping out my crew!",
-   "dst": "",
+   "dst": "嘿，冒险者！看来你帮我的队员们经历了不少冒险！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178721,7 +178721,7 @@
   },
   "The Lost#045": {
    "src": "Thank goodness they all found their way back unharmed. Mostly. Yuge's pride seems to have taken a hit.",
-   "dst": "",
+   "dst": "谢天谢地，他们都平安回来了。大体上吧。Yuge 的自尊心好像受了点伤。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178731,7 +178731,7 @@
   },
   "The Lost#046": {
    "src": "Anyway, we ought to get back to our exploration - and we'll stick together closer this time!",
-   "dst": "",
+   "dst": "总之，我们该继续探险了——这次我们会靠得更紧一点！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -178741,7 +178741,7 @@
   },
   "The Lost#047": {
    "src": "You were a huge help, though, so please take this as a reward!",
-   "dst": "",
+   "dst": "不过你帮了大忙，请收下这份奖励！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Lost",
@@ -205411,7 +205411,7 @@
   },
   "The Thanos Depository#000": {
    "src": "Find out what's happening at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "查明 [{~}, {~}, -{~}] 发生了什么事",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -205421,7 +205421,7 @@
   },
   "The Thanos Depository#001": {
    "src": "This is just a disaster... I pray nothing goes awry with the recovery team.",
-   "dst": "",
+   "dst": "这真是一场灾难……我祈祷回收小队千万别出什么岔子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205431,7 +205431,7 @@
   },
   "The Thanos Depository#002": {
    "src": "I'd never be able to live it off if I'm responsible for more deaths.",
-   "dst": "",
+   "dst": "如果再有人因为我而死，我这辈子都没法原谅自己。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205441,7 +205441,7 @@
   },
   "The Thanos Depository#003": {
    "src": "But I must do what it takes to prevent {p} from any more disaster.",
-   "dst": "",
+   "dst": "但为了不让 {p} 再遭受灾难，我必须不惜一切代价。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205451,7 +205451,7 @@
   },
   "The Thanos Depository#004": {
    "src": "Sir! Coulmis, sir!",
-   "dst": "",
+   "dst": "长官！Coulmis 长官！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205461,7 +205461,7 @@
   },
   "The Thanos Depository#005": {
    "src": "Atila, you're back! Give it to me straight, did they succeed? We can't afford any more losses.",
-   "dst": "",
+   "dst": "Atila，你回来了！直说吧，他们成功了吗？我们承受不起更多损失了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205471,7 +205471,7 @@
   },
   "The Thanos Depository#006": {
    "src": "No, sir... I'm afraid not.",
-   "dst": "",
+   "dst": "没有，长官……恐怕没有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205481,7 +205481,7 @@
   },
   "The Thanos Depository#007": {
    "src": "The elevator leads right in to where the dragon lays. Without knowing when it's asleep, it's a gamble.",
-   "dst": "",
+   "dst": "升降梯直通那条龙躺着的地方。不知道它什么时候睡着，下去就是赌命。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205491,7 +205491,7 @@
   },
   "The Thanos Depository#008": {
    "src": "So we truly do need to go through the vault. But with the defense systems gone haywire...",
-   "dst": "",
+   "dst": "所以我们真的得穿过金库。可是防御系统已经失控了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205501,7 +205501,7 @@
   },
   "The Thanos Depository#009": {
    "src": "I'm sorry sir...",
-   "dst": "",
+   "dst": "对不起，长官……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205511,7 +205511,7 @@
   },
   "The Thanos Depository#010": {
    "src": "Think nothing of it, let's get back to the drawing board.",
-   "dst": "",
+   "dst": "别放在心上，我们重新想办法。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205521,7 +205521,7 @@
   },
   "The Thanos Depository#011": {
    "src": "Yes, I'll get to it immediately.",
-   "dst": "",
+   "dst": "是，我马上去办。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205531,7 +205531,7 @@
   },
   "The Thanos Depository#012": {
    "src": "You there, human! What's your business here? Come speak to me.",
-   "dst": "",
+   "dst": "那边的人类！你来这里有什么事？过来跟我说话。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205541,7 +205541,7 @@
   },
   "The Thanos Depository#013": {
    "src": "What's your business here? This place is off limits, the vault is very dangerous right now.",
-   "dst": "",
+   "dst": "你来这里有什么事？这里禁止进入，金库现在非常危险。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205551,7 +205551,7 @@
   },
   "The Thanos Depository#014": {
    "src": "Now that I look, say, that gear of yours is pretty high-quality, yeah? What's your name?",
-   "dst": "",
+   "dst": "我这么一看，嘿，你那身装备品质相当好啊，是吧？你叫什么名字？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205561,7 +205561,7 @@
   },
   "The Thanos Depository#015": {
    "src": "... where have I heard that name before... Oh, I remember! You're that guy who defeated that Qira woman, yeah?",
-   "dst": "",
+   "dst": "……我在哪里听过这个名字……噢，我想起来了！你就是打败那个叫 Qira 的女人的家伙，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205571,7 +205571,7 @@
   },
   "The Thanos Depository#016": {
    "src": "... where have I heard that name before... Oh, I remember! You're the one who helped resolve the whole Dogun thing, right?",
-   "dst": "",
+   "dst": "……我在哪里听过这个名字……噢，我想起来了！你就是帮忙解决了整个 Dogun 事件的那个人，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205581,7 +205581,7 @@
   },
   "The Thanos Depository#017": {
    "src": "I see, I haven't seen you around before.",
-   "dst": "",
+   "dst": "原来如此，我之前没在这一带见过你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205591,7 +205591,7 @@
   },
   "The Thanos Depository#018": {
    "src": "Nevertheless, {p} is in danger. To put it simply, a dragon is living uninvited in our depository.",
-   "dst": "",
+   "dst": "不管怎样，{p} 正处于危险之中。简单来说，有一条龙不请自来，住进了我们的仓库。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205601,7 +205601,7 @@
   },
   "The Thanos Depository#019": {
    "src": "Perhaps, you've seen its lair above our city. Normally she leaves us unharmed, but one day she suddenly made her way in to this vault.",
-   "dst": "",
+   "dst": "你也许见过它在我们城市上方的巢穴。平常她不会伤害我们，可是有一天，她突然闯进了这座金库。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205611,7 +205611,7 @@
   },
   "The Thanos Depository#020": {
    "src": "My great friend Atila has been leading a recon squad, he's discerned that she's nesting an egg.",
-   "dst": "",
+   "dst": "我的好朋友 Atila 一直带着侦察小队，他发现她正在孵一颗蛋。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205621,7 +205621,7 @@
   },
   "The Thanos Depository#021": {
    "src": "We've tried at our greatest expenses to steal the egg, and bring it back to her nest, so that maybe she would leave... But, as you've heard, it's not going well.",
-   "dst": "",
+   "dst": "我们不惜一切代价想偷走那颗蛋，把它送回她的巢里，这样她也许就会离开……可是，你也听到了，进展并不顺利。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205631,7 +205631,7 @@
   },
   "The Thanos Depository#022": {
    "src": "I don't normally ask this of strangers, but we've run ourselves thin. Do you think you're up to help? I'll make sure it's all worth your trouble.",
-   "dst": "",
+   "dst": "我平常不会拜托陌生人这种事，但我们已经人手不足了。你觉得你能帮忙吗？我保证不会让你白辛苦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205641,7 +205641,7 @@
   },
   "The Thanos Depository#023": {
    "src": "So you'll help!? Thank you so much! I'll make sure it's worth every moment!",
-   "dst": "",
+   "dst": "所以你愿意帮忙！？太谢谢你了！我保证你的每一分努力都值得！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205651,7 +205651,7 @@
   },
   "The Thanos Depository#024": {
    "src": "You'll have to go through this chamber behind me to reach the depository. Our only other way in is right where the dragon is...",
-   "dst": "",
+   "dst": "你得穿过我身后这个房间才能到仓库。我们唯一的另一条路，就在那条龙待着的地方……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205661,7 +205661,7 @@
   },
   "The Thanos Depository#025": {
    "src": "Atila knows some of the inner workings of the vault. I bid you good luck and will be praying for your success. Your courage will inspire {p}.",
-   "dst": "",
+   "dst": "Atila 知道一些金库内部的运作方式。祝你好运，我会为你的成功祈祷。你的勇气会激励整个 {p}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205671,7 +205671,7 @@
   },
   "The Thanos Depository#026": {
    "src": "Oh, so it wasn't meant to be I suppose...",
-   "dst": "",
+   "dst": "噢，看来是命中注定不行吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205681,7 +205681,7 @@
   },
   "The Thanos Depository#027": {
    "src": "Well, if we cross paths again, I'll always much appreciate your help... Back to the drawing board...",
-   "dst": "",
+   "dst": "好吧，如果我们再遇到，我还是会非常感激你的帮忙……重新想办法吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205691,7 +205691,7 @@
   },
   "The Thanos Depository#028": {
    "src": "Enter the vault at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "进入 [{~}, {~}, -{~}] 的金库",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -205701,7 +205701,7 @@
   },
   "The Thanos Depository#029": {
    "src": "Head to the {p} Depository at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "前往 [{~}, {~}, -{~}] 的 {p} 仓库",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -205711,7 +205711,7 @@
   },
   "The Thanos Depository#030": {
    "src": "Find a way through the depository.",
-   "dst": "",
+   "dst": "想办法穿过仓库。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -205721,7 +205721,7 @@
   },
   "The Thanos Depository#031": {
    "src": "Ride the minecarts to get further in to the depository",
-   "dst": "",
+   "dst": "搭乘矿车深入仓库",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -205731,7 +205731,7 @@
   },
   "The Thanos Depository#032": {
    "src": "Steal Ozoth's egg and escape the depository.",
-   "dst": "",
+   "dst": "偷走 Ozoth 的蛋，逃出仓库。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -205741,7 +205741,7 @@
   },
   "The Thanos Depository#033": {
    "src": "Use the lift to escape.",
-   "dst": "",
+   "dst": "搭乘升降梯逃脱。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -205751,7 +205751,7 @@
   },
   "The Thanos Depository#034": {
    "src": "Oh-oh my gosh!! I took you for dead, and thought the dragon was sending me up a corpse!",
-   "dst": "",
+   "dst": "噢、噢天哪！！我还以为你死了，以为那条龙送了具尸体上来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205761,7 +205761,7 @@
   },
   "The Thanos Depository#035": {
    "src": "You really got it!? Hurry, then, the nest is up through this cave! Maybe {p} can finally be rid of its woes...",
-   "dst": "",
+   "dst": "你真的拿到了！？那快点，巢穴就在这个洞窟上面！也许 {p} 终于能摆脱苦难了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205771,7 +205771,7 @@
   },
   "The Thanos Depository#036": {
    "src": "Place Ozoth's egg back in her nest at [{~},-{~}].",
-   "dst": "",
+   "dst": "把 Ozoth 的蛋放回 [{~},-{~}] 的巢里。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -205781,7 +205781,7 @@
   },
   "The Thanos Depository#037": {
    "src": "Talk to Atila.",
-   "dst": "",
+   "dst": "与 Atila 对话。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Thanos Depository",
@@ -205791,7 +205791,7 @@
   },
   "The Thanos Depository#038": {
    "src": "She's a beauty, isn't she? A monster though, nevertheless.",
-   "dst": "",
+   "dst": "她很美，对吧？不过终究还是头怪物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205801,7 +205801,7 @@
   },
   "The Thanos Depository#039": {
    "src": "{u}! Over here... Atila told me the news, I came as fast as I could!",
-   "dst": "",
+   "dst": "{u}！这边……Atila 跟我说了消息，我马上就赶来了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205811,7 +205811,7 @@
   },
   "The Thanos Depository#040": {
    "src": "You're a hero, lad! With the dragon out of our city, {p} no longer has to live in fear.",
-   "dst": "",
+   "dst": "你是英雄，小伙子！龙离开了我们的城市，{p} 再也不必活在恐惧之中了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -205821,7 +205821,7 @@
   },
   "The Thanos Depository#041": {
    "src": "I've prepared your reward. The people of {p} will remember your contribution for years to come.",
-   "dst": "",
+   "dst": "我已经准备好你的奖励了。{p} 的人民在往后的岁月里都会记得你的贡献。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Thanos Depository",
@@ -219011,7 +219011,7 @@
   },
   "WynnExcavation Site C#000": {
    "src": "Talk to Excavator Placardus at [-{~}, {~}, -{~}] (Requires shard from Site B)",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 的挖掘员 Placardus 对话 (需要 B 点的碎片)",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site C",
@@ -219021,7 +219021,7 @@
   },
   "WynnExcavation Site C#001": {
    "src": "All operations functional... Transportation on schedule... Oh. It's you. We've been looking for you.",
-   "dst": "",
+   "dst": "所有作业正常……运输按计划进行……噢。是你。我们一直在找你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219031,7 +219031,7 @@
   },
   "WynnExcavation Site C#002": {
    "src": "Locating you was far harder than we thought, but here you are, having come right to us.",
-   "dst": "",
+   "dst": "找到你比我们想的难多了，结果你自己送上门来了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219041,7 +219041,7 @@
   },
   "WynnExcavation Site C#003": {
    "src": "Now you're here, I'm not sure what to say. But I feel I must explain, we at WynnExcavation apologise for all our previous encounters.",
-   "dst": "",
+   "dst": "既然你来了，我也不知道该说什么。不过我觉得必须解释一下，我们 WynnExcavation 为之前所有的冲突向你道歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219051,7 +219051,7 @@
   },
   "WynnExcavation Site C#004": {
    "src": "We completely got off on the wrong foot. We are a company from Gavel which specialises in historic artifacts of great mystical importance.",
-   "dst": "",
+   "dst": "我们一开始就闹了误会。我们是一家来自 Gavel 的公司，专门研究具有重大神秘意义的历史文物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219061,7 +219061,7 @@
   },
   "WynnExcavation Site C#005": {
    "src": "After our encounter in {p}, we naturally thought you were a black market salesperson trying to steal pieces of the artifact for monetary gain.",
-   "dst": "",
+   "dst": "在 {p} 那次相遇之后，我们自然以为你是个黑市贩子，想偷文物的碎片去卖钱。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219071,7 +219071,7 @@
   },
   "WynnExcavation Site C#006": {
    "src": "So we instructed all of our employees in all of our sites to thwart you at any cost. Historical loss is a very important issue, especially with something so powerful.",
-   "dst": "",
+   "dst": "所以我们指示所有据点的所有员工，不惜代价阻止你。历史文物的流失是非常严重的问题，尤其是这么强大的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219081,7 +219081,7 @@
   },
   "WynnExcavation Site C#007": {
    "src": "But after hearing the stories of your travels in the province, we realised what had happened, and you mistook us for the enemy. This is obviously not the case.",
-   "dst": "",
+   "dst": "可是听说了你在行省各地的事迹之后，我们才明白是怎么回事，你是把我们误当成了敌人。显然我们不是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219091,7 +219091,7 @@
   },
   "WynnExcavation Site C#008": {
    "src": "I hope this clears everything up between us and we can both move our separate ways, now if you'll excuse me, I have a meeting to attend.",
-   "dst": "",
+   "dst": "希望这样能消除我们之间的误会，从此各走各的路。好了，失陪，我还有个会要开。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219101,7 +219101,7 @@
   },
   "WynnExcavation Site C#009": {
    "src": "Infiltrate the Excavation Meeting. The meeting is held in a diamond-pickaxe room, the portal being located to the left of the entrance to a large lava cave.",
-   "dst": "",
+   "dst": "潜入挖掘会议。会议在一个钻石镐房间里举行，传送门位于一个大型熔岩洞入口的左边。",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site C",
@@ -219111,7 +219111,7 @@
   },
   "WynnExcavation Site C#010": {
    "src": "I'm sorry. This is a private meeting.",
-   "dst": "",
+   "dst": "抱歉。这是私人会议。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219121,7 +219121,7 @@
   },
   "WynnExcavation Site C#011": {
    "src": "It is only my first day on the job, so I can't let you in without a pass. Sorry.",
-   "dst": "",
+   "dst": "今天是我上班第一天，没有通行证我不能放你进去。抱歉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219131,7 +219131,7 @@
   },
   "WynnExcavation Site C#012": {
    "src": "The door will be locked shortly.",
-   "dst": "",
+   "dst": "门马上就要锁上了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219141,7 +219141,7 @@
   },
   "WynnExcavation Site C#013": {
    "src": "Eavesdrop on WynnExcavation's plans",
-   "dst": "",
+   "dst": "偷听 WynnExcavation 的计划",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site C",
@@ -219151,7 +219151,7 @@
   },
   "WynnExcavation Site C#014": {
    "src": "Hello and welcome, senior members of Wynn Excavation Site C. May the dark's gaze forever watch over us. I want to update you on our progress thus far. The fire relic crystal has been largely intact in the heart of the volcano for many years.",
-   "dst": "",
+   "dst": "你们好，欢迎各位 WynnExcavation C 号发掘点的资深成员。愿黑暗的目光永远注视着我们。我想向各位报告目前的进展。火之遗物水晶多年来一直基本完好地待在火山的核心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219161,7 +219161,7 @@
   },
   "WynnExcavation Site C#015": {
    "src": "Removing it will most likely cause a chain reaction and make things difficult. Fortunately, a mage from the other side of the ocean is here to counter that. We can expect to have it moved and be shipped over to the undisclosed location any day now.",
-   "dst": "",
+   "dst": "移走它多半会引发连锁反应，让事情变得棘手。幸好，一位来自大洋彼岸的法师在这里帮我们应对。它随时都可能被移走，运往那个不公开的地点。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219171,7 +219171,7 @@
   },
   "WynnExcavation Site C#016": {
    "src": "I would also like to inform you that the crystals removed from our possession from sites B and A have not been retrieved. However, the culprit should no longer be interested in our operations. The lost crystals did not harness any raw magic, thus are not essential to the overall scheme.",
-   "dst": "",
+   "dst": "我还要通知各位，从 B 号和 A 号发掘点被夺走的水晶还没有追回来。不过，犯人应该已经对我们的行动不感兴趣了。遗失的水晶并没有蕴含任何原始魔法，因此对整体计划并不关键。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219181,7 +219181,7 @@
   },
   "WynnExcavation Site C#017": {
    "src": "Now, our short term goals are to move our equipment out of the heart of the volcano and start moving the fire stone for assimilation at the concealed location. All senior officers are responsible for their quadrants. Let's get this done efficiently and discreetly.",
-   "dst": "",
+   "dst": "现在，我们的短期目标是把设备撤出火山核心，并开始把火之石运到隐秘地点进行同化。所有资深干部负责各自的区域。让我们高效而低调地完成这件事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219191,7 +219191,7 @@
   },
   "WynnExcavation Site C#018": {
    "src": "Leave the meeting",
-   "dst": "",
+   "dst": "离开会议",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site C",
@@ -219201,7 +219201,7 @@
   },
   "WynnExcavation Site C#019": {
    "src": "The alarm has been set off! There is an unauthorized guest! Guards, seize them!",
-   "dst": "",
+   "dst": "警报响了！有未经授权的外人！守卫，抓住他们！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219211,7 +219211,7 @@
   },
   "WynnExcavation Site C#020": {
    "src": "Escape the WynnExcavation guards",
-   "dst": "",
+   "dst": "甩掉 WynnExcavation 的守卫",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site C",
@@ -219221,7 +219221,7 @@
   },
   "WynnExcavation Site C#021": {
    "src": "Explore the area and search for the traitor",
-   "dst": "",
+   "dst": "探索这一带，寻找叛徒",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site C",
@@ -219231,7 +219231,7 @@
   },
   "WynnExcavation Site C#022": {
    "src": "You. You are the one they are worried about.",
-   "dst": "",
+   "dst": "你。你就是他们在担心的那个人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219241,7 +219241,7 @@
   },
   "WynnExcavation Site C#023": {
    "src": "I am Amadel, leader of the rebellion.",
-   "dst": "",
+   "dst": "我是 Amadel，反抗组织的首领。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219251,7 +219251,7 @@
   },
   "WynnExcavation Site C#024": {
    "src": "I know this is all a bit sudden, but I have some information you must hear.",
-   "dst": "",
+   "dst": "我知道这一切有点突然，但我有些情报你必须听。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219261,7 +219261,7 @@
   },
   "WynnExcavation Site C#025": {
    "src": "Everything you have been told is a lie. The Wynn Excavation “company” are not what they appear to be.",
-   "dst": "",
+   "dst": "你听到的一切都是谎言。WynnExcavation 这家“公司”并不是表面上看起来的样子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219271,7 +219271,7 @@
   },
   "WynnExcavation Site C#026": {
    "src": "They are using that as a front and their reach stretches further than I even know.",
-   "dst": "",
+   "dst": "他们只是拿公司当幌子，他们的势力范围比我所知道的还要广。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219281,7 +219281,7 @@
   },
   "WynnExcavation Site C#027": {
    "src": "There is no higher authority than them, not even the kings. And their intentions are not good.",
-   "dst": "",
+   "dst": "没有比他们更高的权威，连国王也不例外。而且他们居心不良。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219291,7 +219291,7 @@
   },
   "WynnExcavation Site C#028": {
    "src": "They seek the ultimate power, a power hidden across Wynn by various civilizations over hundreds of years.",
-   "dst": "",
+   "dst": "他们在追求终极的力量，一股数百年来被各个文明藏在 Wynn 各地的力量。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219301,7 +219301,7 @@
   },
   "WynnExcavation Site C#029": {
    "src": "They heard about it, and of course, began to gather the ingredients to create something that would lead them to total domination of the province.",
-   "dst": "",
+   "dst": "他们听说了这件事，当然就开始收集材料，想打造出能让他们彻底统治整个行省的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219311,7 +219311,7 @@
   },
   "WynnExcavation Site C#030": {
    "src": "They've been on to me for some time. I can't tell you everything here, but first, you must gather parts of the crystal, like you did with the others. It is essential.",
-   "dst": "",
+   "dst": "他们盯上我有一阵子了。我没办法在这里把一切都告诉你，但首先，你得像之前那样收集水晶的碎片。这至关重要。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219321,7 +219321,7 @@
   },
   "WynnExcavation Site C#031": {
    "src": "The crystal is in the cave just inside the volcano past the base. Hurry, they are all off duty at the moment, the cave to the heart of the volcano is clear. Act swiftly, and good luck.",
-   "dst": "",
+   "dst": "水晶就在基地过去、火山里面的洞窟里。快点，他们现在都下班了，通往火山核心的洞窟没人把守。动作要快，祝你好运。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219331,7 +219331,7 @@
   },
   "WynnExcavation Site C#032": {
    "src": "Explore the depths of the volcano",
-   "dst": "",
+   "dst": "探索火山深处",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site C",
@@ -219341,7 +219341,7 @@
   },
   "WynnExcavation Site C#033": {
    "src": "Escape the volcano with the crystal shard",
-   "dst": "",
+   "dst": "带着水晶碎片逃出火山",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site C",
@@ -219351,7 +219351,7 @@
   },
   "WynnExcavation Site C#034": {
    "src": "Report back to Excavator Placardus with a [Red Crystal Shard]",
-   "dst": "",
+   "dst": "带着 [红色水晶碎片] 回去向挖掘员 Placardus 报告",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site C",
@@ -219361,7 +219361,7 @@
   },
   "WynnExcavation Site C#035": {
    "src": "You couldn't just take my polite word and leave it at that, could you?",
-   "dst": "",
+   "dst": "你就不能接受我客客气气说的话，就此罢手吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219371,7 +219371,7 @@
   },
   "WynnExcavation Site C#036": {
    "src": "You had to go snooping around, meddle in things that are far beyond your comprehension. No matter. Something did come out of this, it would appear.",
-   "dst": "",
+   "dst": "你非得到处打探，插手那些远远超出你理解范围的事。无所谓。看来这件事倒也有点收获。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219381,7 +219381,7 @@
   },
   "WynnExcavation Site C#037": {
    "src": "You were caught, conversing with Amadel, who we now know to be a traitor, thanks to you. There are eyes everywhere, young hero.",
-   "dst": "",
+   "dst": "你跟 Amadel 说话的时候被抓到了，多亏了你，我们现在知道他是叛徒了。到处都有眼睛，年轻的英雄。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219391,7 +219391,7 @@
   },
   "WynnExcavation Site C#038": {
    "src": "I'm willing to bet he's already been... taken care of by senior staff.",
-   "dst": "",
+   "dst": "我敢打赌，他已经被资深人员……处理掉了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219401,7 +219401,7 @@
   },
   "WynnExcavation Site C#039": {
    "src": "We also now know you are operating in the dark. You know nothing of the crystals or their power, and you know not that even the crystals you possess are inconsequential to our plans.",
-   "dst": "",
+   "dst": "我们现在也知道你是在摸黑行事。你对水晶和它们的力量一无所知，你甚至不知道你手上的水晶对我们的计划根本无关紧要。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219411,7 +219411,7 @@
   },
   "WynnExcavation Site C#040": {
    "src": "You're lucky you aren't dead. How you infiltrated us this far has shown nothing but beginner's luck for the province's new hero.",
-   "dst": "",
+   "dst": "你没死算你走运。你能潜入到这一步，不过是这位行省新英雄的新手运气罢了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -219421,7 +219421,7 @@
   },
   "WynnExcavation Site C#041": {
    "src": "I suggest you leave, before the guards get here and you meet the same fate as Amadel. Our power is limitless; armies, resources, even royalty are on our side. Our gaze is everpresent. Now, get out of my sight!",
-   "dst": "",
+   "dst": "我建议你离开，免得守卫赶到，你落得跟 Amadel 一样的下场。我们的力量无穷无尽；军队、资源，连王室都站在我们这边。我们的目光无处不在。现在，从我眼前消失！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site C",
@@ -220401,7 +220401,7 @@
   },
   "Zhight Island (Quest)#000": {
    "src": "Talk to Zhight of {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 的 {p} 的 Zhight 对话",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -220411,7 +220411,7 @@
   },
   "Zhight Island (Quest)#001": {
    "src": "Hello, esteemed tourist sir or madame! I see you have found my illustrious resort, {p}!",
-   "dst": "",
+   "dst": "您好，尊贵的游客先生或女士！看来您找到了我这间赫赫有名的度假村，{p}！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220421,7 +220421,7 @@
   },
   "Zhight Island (Quest)#002": {
    "src": "Normally, you'd need a reservation to stay here, but our human visitors are ALWAYS welcome! Ehm...",
-   "dst": "",
+   "dst": "平常要住这里得先预约，不过我们永远欢迎人类访客！呃……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220431,7 +220431,7 @@
   },
   "Zhight Island (Quest)#003": {
    "src": "...w-well, actually...wait, no, it's nothing, nothing, friend! I guarantee you'll enjoy your stay here!",
-   "dst": "",
+   "dst": "……其、其实……等等，不，没什么，没什么，朋友！我保证您会在这里住得很愉快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220441,7 +220441,7 @@
   },
   "Zhight Island (Quest)#004": {
    "src": "Even if m-my usual supplies haven't arrived in weeks, I, um, I'm TOTALLY sure we can accommodate for you!",
-   "dst": "",
+   "dst": "就算我、我平常的物资已经好几个星期没送来了，我，呃，我绝对确定我们能好好招待您！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220451,7 +220451,7 @@
   },
   "Zhight Island (Quest)#005": {
    "src": "We can just...um...w-well, I won't impose on you, dearest most welcomest traveller, no sir! Or madame!",
-   "dst": "",
+   "dst": "我们可以就……呃……好、好吧，我不会给您添麻烦的，最最亲爱最最受欢迎的旅人，不会的先生！或女士！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220461,7 +220461,7 @@
   },
   "Zhight Island (Quest)#006": {
    "src": "B-But, if, perchance, you were to, um...happen to find my supplier, Phief, who hasn't come around in weeks the bas-",
-   "dst": "",
+   "dst": "不、不过，如果，万一，您碰巧，呃……遇到我的供货商 Phief，那个好几个星期没来的混——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220471,7 +220471,7 @@
   },
   "Zhight Island (Quest)#007": {
    "src": "I! I mean! Nothing, nothing! Just, ehm, our extra reliable supplier often stops by {p} for supplies...",
-   "dst": "",
+   "dst": "我！我是说！没什么，没什么！只是，呃，我们那位超级可靠的供货商经常去 {p} 进货……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220481,7 +220481,7 @@
   },
   "Zhight Island (Quest)#008": {
    "src": "S-So, if you just happen to stop by there after your lovely stay here, and tell him to get off his sorry butt and send me my supplies that'd be just peachy!",
-   "dst": "",
+   "dst": "所、所以，如果您在这里愉快地住完之后刚好去那边，叫他挪挪他那没用的屁股，把我的物资送来，那就再好不过了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220491,7 +220491,7 @@
   },
   "Zhight Island (Quest)#009": {
    "src": "Look for Phief at {p}",
-   "dst": "",
+   "dst": "在 {p} 寻找 Phief",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -220501,7 +220501,7 @@
   },
   "Zhight Island (Quest)#010": {
    "src": "Hello there. I see Zhight has sent you, correct?",
-   "dst": "",
+   "dst": "你好。是 Zhight 派你来的，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220511,7 +220511,7 @@
   },
   "Zhight Island (Quest)#011": {
    "src": "I do hope he isn't mad at me. I fully intended to bring the supplies to him.",
-   "dst": "",
+   "dst": "希望他没生我的气。我是真的打算把物资送去给他的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220521,7 +220521,7 @@
   },
   "Zhight Island (Quest)#012": {
    "src": "But things took a turn for the worst quickly, and I no longer have access to my ship.",
-   "dst": "",
+   "dst": "可是情况很快就变糟了，我现在没法上我的船了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220531,7 +220531,7 @@
   },
   "Zhight Island (Quest)#013": {
    "src": "A madman jumped onto my ship, overpowered me, and held me hostage!",
-   "dst": "",
+   "dst": "一个疯子跳上我的船，制服了我，还把我当人质！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220541,7 +220541,7 @@
   },
   "Zhight Island (Quest)#014": {
    "src": "He was telling me how he wanted to \"take back what was stolen from him\", and it looked like he was heading to {p}.",
-   "dst": "",
+   "dst": "他一直跟我说他想“夺回被偷走的东西”，看起来他是要往 {p} 去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220551,7 +220551,7 @@
   },
   "Zhight Island (Quest)#015": {
    "src": "I have no clue whether he was deranged, paranoid, or if someone really did take something from him.",
-   "dst": "",
+   "dst": "我完全不知道他是疯了、妄想，还是真的有人偷了他的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220561,7 +220561,7 @@
   },
   "Zhight Island (Quest)#016": {
    "src": "I am certain of one thing. Nobody is going to sail my boat but me. I took my first chance to escape, broke the controls.",
-   "dst": "",
+   "dst": "有一件事我很确定。除了我，谁也别想开我的船。我一有机会就逃了，还把操控装置弄坏了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220571,7 +220571,7 @@
   },
   "Zhight Island (Quest)#017": {
    "src": "And I swam back to land, here. Problem is, I haven't exactly decided how I'll get the ship back for myself.",
-   "dst": "",
+   "dst": "然后我就游回陆地，到了这里。问题是，我还没想好要怎么把船拿回来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220581,7 +220581,7 @@
   },
   "Zhight Island (Quest)#018": {
    "src": "Maybe you can help me with that. The ship should still be stuck, due north of here. I'd love to get my sea legs back.",
-   "dst": "",
+   "dst": "也许你能帮我这个忙。船应该还卡在这里正北方。我真想重新站上甲板。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220591,7 +220591,7 @@
   },
   "Zhight Island (Quest)#019": {
    "src": "Find Phief's ship, and return it to its rightful owner",
-   "dst": "",
+   "dst": "找到 Phief 的船，把它还给真正的主人",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -220601,7 +220601,7 @@
   },
   "Zhight Island (Quest)#020": {
    "src": "He told you what?! That fumbleknuckle...",
-   "dst": "",
+   "dst": "他跟你说什么？！那个笨手笨脚的家伙……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220611,7 +220611,7 @@
   },
   "Zhight Island (Quest)#021": {
    "src": "We didn't steal the ship from Phief, we were taking back what he stole from us years ago!",
-   "dst": "",
+   "dst": "我们没有从 Phief 那里偷船，我们是在拿回他几年前从我们这里偷走的东西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220621,7 +220621,7 @@
   },
   "Zhight Island (Quest)#022": {
    "src": "He attacked us on our way home to {p}, kicked us off the boat, and sailed it to who-knows-where.",
-   "dst": "",
+   "dst": "我们回 {p} 的路上他袭击了我们，把我们踢下船，然后把船开到谁知道哪里去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220631,7 +220631,7 @@
   },
   "Zhight Island (Quest)#023": {
    "src": "We didn't think we would ever get it back, until we started seeing him sailing to that doofbumble Zhight.",
-   "dst": "",
+   "dst": "我们本来以为再也拿不回来了，直到我们开始看到他开船去找那个糊涂蛋 Zhight。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220641,7 +220641,7 @@
   },
   "Zhight Island (Quest)#024": {
    "src": "Luckily, he decided to claim an island so close to {p}, or else we would have never seen him.",
-   "dst": "",
+   "dst": "幸好他决定占的岛离 {p} 那么近，不然我们根本不会看到他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220651,7 +220651,7 @@
   },
   "Zhight Island (Quest)#025": {
    "src": "My father started following him with a small sailboat he made, and decided on the perfect place to attack.",
-   "dst": "",
+   "dst": "我爸爸开着他自己做的小帆船开始跟踪他，还挑好了下手的最佳地点。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220661,7 +220661,7 @@
   },
   "Zhight Island (Quest)#026": {
    "src": "But then Phief just had to throw a hissy fit and leave us stranded here.",
-   "dst": "",
+   "dst": "可是 Phief 偏偏大发脾气，把我们困在了这里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220671,7 +220671,7 @@
   },
   "Zhight Island (Quest)#027": {
    "src": "My father took a paddleboat back to {p} to gather supplies. He took the cargo the ship had with him.",
-   "dst": "",
+   "dst": "我爸爸划着脚踏船回 {p} 去找补给了。他把船上的货物也一起带走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220681,7 +220681,7 @@
   },
   "Zhight Island (Quest)#028": {
    "src": "If you need that, you should go talk to him. His name is Czytash.",
-   "dst": "",
+   "dst": "如果你需要那些货，就去找他谈吧。他叫 Czytash。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220691,7 +220691,7 @@
   },
   "Zhight Island (Quest)#029": {
    "src": "Get Zhight's supplies from Czytash at {p}",
-   "dst": "",
+   "dst": "在 {p} 向 Czytash 取回 Zhight 的物资",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -220701,7 +220701,7 @@
   },
   "Zhight Island (Quest)#030": {
    "src": "Ah, yes, I did find plenty o' supplies on that ship.",
-   "dst": "",
+   "dst": "啊，对，我在那艘船上确实找到了不少物资。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220711,7 +220711,7 @@
   },
   "Zhight Island (Quest)#031": {
    "src": "I assumed it was more of Phief's thiefed goods, so I took it home to use it myself.",
-   "dst": "",
+   "dst": "我以为又是 Phief 偷来的赃物，所以就拿回家自己用了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220721,7 +220721,7 @@
   },
   "Zhight Island (Quest)#032": {
    "src": "It is Zhight's supplies you say?",
-   "dst": "",
+   "dst": "你说那是 Zhight 的物资？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220731,7 +220731,7 @@
   },
   "Zhight Island (Quest)#033": {
    "src": "Aye, of course it had to be that idiot's.",
-   "dst": "",
+   "dst": "唉，当然了，肯定是那个白痴的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220741,7 +220741,7 @@
   },
   "Zhight Island (Quest)#034": {
    "src": "I guess me thinking he's dumber'n a box o' rocks is no reason for me to let him starve... Here, take the crate.",
-   "dst": "",
+   "dst": "我想，就算我觉得他比一箱石头还蠢，也不能因此让他饿死……给，拿走这个箱子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220751,7 +220751,7 @@
   },
   "Zhight Island (Quest)#035": {
    "src": "I haven't opened it yet, so everything is left exactly how he ordered it.",
-   "dst": "",
+   "dst": "我还没打开过，所以里面的东西完全跟他订的一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220761,7 +220761,7 @@
   },
   "Zhight Island (Quest)#036": {
    "src": "I wonder what is on that numbskull's menu, that crate smelled rancid. Almost threw it off me boat.",
-   "dst": "",
+   "dst": "真好奇那个傻瓜的菜单上都有什么，那个箱子臭得要命。我差点把它扔下船。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220771,7 +220771,7 @@
   },
   "Zhight Island (Quest)#037": {
    "src": "Anyways, good luck on your adventure matey.",
-   "dst": "",
+   "dst": "总之，祝你冒险顺利，伙计。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220781,7 +220781,7 @@
   },
   "Zhight Island (Quest)#038": {
    "src": "Sorry, what was that? My son?",
-   "dst": "",
+   "dst": "抱歉，你说什么？我儿子？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220791,7 +220791,7 @@
   },
   "Zhight Island (Quest)#039": {
    "src": "Ah, I figured it is about time he learned how to maneuver a boat. I fixed everything before I left.",
-   "dst": "",
+   "dst": "啊，我想他也该学学怎么驾船了。我走之前把一切都修好了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220801,7 +220801,7 @@
   },
   "Zhight Island (Quest)#040": {
    "src": "When he returns, he will return a man.",
-   "dst": "",
+   "dst": "等他回来的时候，他就是个男子汉了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220811,7 +220811,7 @@
   },
   "Zhight Island (Quest)#041": {
    "src": "Wait, why am I telling you this? Butt out of my personal life, and just bring the man his crate.",
-   "dst": "",
+   "dst": "等等，我干嘛跟你说这些？少管我的私事，把箱子送去给他就是了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220821,7 +220821,7 @@
   },
   "Zhight Island (Quest)#042": {
    "src": "Give Zhight his supplies",
-   "dst": "",
+   "dst": "把物资交给 Zhight",
    "role": "desc",
    "kind": "objective",
    "quest": "Zhight Island (Quest)",
@@ -220831,7 +220831,7 @@
   },
   "Zhight Island (Quest)#043": {
    "src": "Ahaaa, esteemed sir! Or madame! I can't actually tell under all that armour...",
-   "dst": "",
+   "dst": "啊哈——尊贵的先生！或女士！您穿着这身盔甲，我实在分辨不出来……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220841,7 +220841,7 @@
   },
   "Zhight Island (Quest)#044": {
    "src": "ER! I MEAN! N-No trouble at all, esteemed visitor! We at {p} Resort are always welcoming!",
-   "dst": "",
+   "dst": "呃！我是说！不、不麻烦，一点都不麻烦，尊贵的访客！我们 {p} 度假村永远欢迎您！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220851,7 +220851,7 @@
   },
   "Zhight Island (Quest)#045": {
    "src": "...wait, is that the... Oh my! The supply crate! You went out and found Phief?! What an upstanding fellow you are!",
-   "dst": "",
+   "dst": "……等等，那是……噢天哪！物资箱！您出去找到了 Phief？！您真是个正直的好人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220861,7 +220861,7 @@
   },
   "Zhight Island (Quest)#046": {
    "src": "Wait, he was a boat thief? Well, good thing you've told me, we can't have pirates here at our resort! I'll blacklist him ASAP!",
-   "dst": "",
+   "dst": "等等，他是个偷船贼？好吧，还好您告诉我了，我们度假村可不能有海盗！我马上把他列入黑名单！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220871,7 +220871,7 @@
   },
   "Zhight Island (Quest)#047": {
    "src": "You're only a visitor but you've been more help today than anyone else, really, I'm honestly in your debt.",
-   "dst": "",
+   "dst": "您只是位访客，今天却比任何人都帮了更多的忙，真的，我实在欠您一份人情。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220881,7 +220881,7 @@
   },
   "Zhight Island (Quest)#048": {
    "src": "So here! The repairs at the Zhight Grand Exchange and Zhight Treasure Tour have just finished, so you can head in and see the fruits of your labor!",
-   "dst": "",
+   "dst": "所以，您看！Zhight 大交易所和 Zhight 寻宝之旅的修缮刚刚完工，您可以进去看看您努力的成果！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
@@ -220891,7 +220891,7 @@
   },
   "Zhight Island (Quest)#049": {
    "src": "And, as a token of my thanks, some exclusive currency for our resort, Zhight Money, on the house and just for you! I hope you enjoy your stay!",
-   "dst": "",
+   "dst": "还有，作为我的谢礼，这是我们度假村专用的货币，Zhight 币，免费送您，专属于您！祝您住得愉快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Zhight Island (Quest)",
