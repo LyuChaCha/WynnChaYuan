@@ -4,7 +4,7 @@
   "itemNames": true,
   "lang": "zh_tw",
   "count": 209,
-  "translated": 71,
+  "translated": 209,
   "note": "Aspect 各阶的能力说明，取自 Wynntils CDN。句式重复度很高，所以是按规则转的——同一个句式永远得到同样的中文。技能名保持原样，交给技能名词表去换。dst 空着表示还没有对应的句式规则，画面上会显示灰色原文。 名称不受「翻译物品名称」开关影响——那个开关是为了让装备名保持英文，跟这里的道具无关。",
   "gearNames": false
  },
@@ -32,7 +32,7 @@
   },
   "aspect-desc#0003": {
    "src": "Twilight Zone's mark cap is +{~} higher.",
-   "dst": "",
+   "dst": "Twilight Zone 的标记上限提高 +{~}。",
    "role": "desc",
    "aspect": "Archer's Embodiment of Perceptive Finesse",
    "class": "archer"
@@ -88,14 +88,14 @@
   },
   "aspect-desc#0011": {
    "src": "{#} Total Damage: +{~} (of your DPS) ({#} Damage: +{~})",
-   "dst": "",
+   "dst": "{#} 总伤害: +{~1} (你的每秒伤害) ({#} 伤害: +{~2})",
    "role": "desc",
    "aspect": "Aspect of Fragmentation Rounds",
    "class": "archer"
   },
   "aspect-desc#0012": {
    "src": "Arrow Storm gains velocity and {~} reduced spread.",
-   "dst": "",
+   "dst": "Arrow Storm 的飞行速度提高，散布减少 {~}。",
    "role": "desc",
    "aspect": "Aspect of Further Horizons",
    "class": "archer"
@@ -109,14 +109,14 @@
   },
   "aspect-desc#0014": {
    "src": "Reduces Sniffer Dog's cooldown by -{~}s.",
-   "dst": "",
+   "dst": "Sniffer Dog 的冷却时间缩短 {~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Olfactorial Enhancement",
    "class": "archer"
   },
   "aspect-desc#0015": {
    "src": "Frenzy builds walk speed +{~} faster and its maximum walk speed is increased by +{~}.",
-   "dst": "",
+   "dst": "Frenzy 累积移动速度的速度加快 +{~1}，移动速度上限提高 +{~2}。",
    "role": "desc",
    "aspect": "Aspect of Undercrank",
    "class": "archer"
@@ -137,42 +137,42 @@
   },
   "aspect-desc#0018": {
    "src": "{#} Total Damage: -{~} (Main Attack Damage, per arrow) ({#} Damage: -{~})",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~1} (普攻伤害，每支箭) ({#} 伤害: -{~2})",
    "role": "desc",
    "aspect": "Aspect of the Battle-Fletcher",
    "class": "archer"
   },
   "aspect-desc#0019": {
    "src": "Increase your Hound's attack speed by +{~}.",
-   "dst": "",
+   "dst": "你的 Hound 攻击速度增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
    "class": "archer"
   },
   "aspect-desc#0020": {
    "src": "Increase your Snake's weakness effect by +{~}.",
-   "dst": "",
+   "dst": "你的 Snake 的虚弱效果增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
    "class": "archer"
   },
   "aspect-desc#0021": {
    "src": "Increase your Crow's distraction duration by +{~}s.",
-   "dst": "",
+   "dst": "你的 Crow 的干扰持续时间增加 +{~} 秒。",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
    "class": "archer"
   },
   "aspect-desc#0022": {
    "src": "Increase your Hound's attack speed by +{~} and movement speed by +{~}.",
-   "dst": "",
+   "dst": "你的 Hound 攻击速度增加 +{~1}，移动速度增加 +{~2}。",
    "role": "desc",
    "aspect": "Aspect of the Beastmaster",
    "class": "archer"
   },
   "aspect-desc#0023": {
    "src": "Guardian Angels gain +{~} ammunition.",
-   "dst": "",
+   "dst": "Guardian Angels 的弹药增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Heavenly Mandate",
    "class": "archer"
@@ -221,49 +221,49 @@
   },
   "aspect-desc#0030": {
    "src": "Reduce Ghostly Trigger's cooldown by -{~}s.",
-   "dst": "",
+   "dst": "Ghostly Trigger 的冷却时间缩短 {~} 秒。",
    "role": "desc",
    "aspect": "Aspect of the Steadying Hand",
    "class": "archer"
   },
   "aspect-desc#0031": {
    "src": "Arrow Bomb travels +{~} faster.",
-   "dst": "",
+   "dst": "Arrow Bomb 的飞行速度加快 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Thunderbolt",
    "class": "archer"
   },
   "aspect-desc#0032": {
    "src": "Divine Intervention will cause Guardian Angels to fire {~}x faster instead.",
-   "dst": "",
+   "dst": "Divine Intervention 改为让 Guardian Angels 的射速变为 {~} 倍。",
    "role": "desc",
    "aspect": "Boltslinger's Embodiment of Rended Skies",
    "class": "archer"
   },
   "aspect-desc#0033": {
    "src": "Divine Intervention will cause Guardian Angels to fire {~}x faster instead, and cause explosive shots to deal +{~} more damage.",
-   "dst": "",
+   "dst": "Divine Intervention 改为让 Guardian Angels 的射速变为 {~1} 倍，并让爆裂射击多造成 +{~2} 伤害。",
    "role": "desc",
    "aspect": "Boltslinger's Embodiment of Rended Skies",
    "class": "archer"
   },
   "aspect-desc#0034": {
    "src": "Triple Shots gains +{~} arrows.",
-   "dst": "",
+   "dst": "Triple Shots 多 +{~} 支箭。",
    "role": "desc",
    "aspect": "Boltslinger's Embodiment of Rended Skies",
    "class": "archer"
   },
   "aspect-desc#0035": {
    "src": "Focus' cooldown is reduced by -{~}s.",
-   "dst": "Focus' cooldown 缩短 -{~} 秒。",
+   "dst": "Focus 的冷却时间缩短 {~} 秒。",
    "role": "desc",
    "aspect": "Sharpshooter's Embodiment of Laser Precision",
    "class": "archer"
   },
   "aspect-desc#0036": {
    "src": "Patient Hunter gains +{~} damage per second.",
-   "dst": "",
+   "dst": "Patient Hunter 每秒伤害增加 +{~}。",
    "role": "desc",
    "aspect": "Trapper's Embodiment of Persistence Predation",
    "class": "archer"
@@ -277,42 +277,42 @@
   },
   "aspect-desc#0038": {
    "src": "Lacerate gains +{~} hits, and becomes {~} faster.",
-   "dst": "",
+   "dst": "Lacerate 的打击次数增加 +{~1}，速度加快 {~2}。",
    "role": "desc",
    "aspect": "Acrobat's Embodiment of Gravity Defiance",
    "class": "assassin"
   },
   "aspect-desc#0039": {
    "src": "Momentum {#} requires -{~} hits to gain a stack.",
-   "dst": "",
+   "dst": "Momentum {#} 每层所需的命中次数减少 -{~}。",
    "role": "desc",
    "aspect": "Acrobat's Embodiment of Gravity Defiance",
    "class": "assassin"
   },
   "aspect-desc#0040": {
    "src": "Dash is {~} stronger, and Shadow Projection launches {~} further.",
-   "dst": "",
+   "dst": "Dash 增强 {~1}，Shadow Projection 弹射得更远 {~2}。",
    "role": "desc",
    "aspect": "Aspect of Athleticism",
    "class": "assassin"
   },
   "aspect-desc#0041": {
    "src": "Increase Smoke Bomb's duration by {~}.",
-   "dst": "",
+   "dst": "Smoke Bomb 的持续时间增加 {~}。",
    "role": "desc",
    "aspect": "Aspect of Clouded Vision",
    "class": "assassin"
   },
   "aspect-desc#0042": {
    "src": "Mirror Clones {#} reduce damage by -{~}.",
-   "dst": "",
+   "dst": "Mirror Clones {#} 减少 -{~} 伤害。",
    "role": "desc",
    "aspect": "Aspect of Enduring Illusions",
    "class": "assassin"
   },
   "aspect-desc#0043": {
    "src": "Sandbagging's damage threshold is increased by +{~} of your max health.",
-   "dst": "",
+   "dst": "Sandbagging 的伤害门槛提高你最大生命的 +{~}。",
    "role": "desc",
    "aspect": "Aspect of False Coercing",
    "class": "assassin"
@@ -340,7 +340,7 @@
   },
   "aspect-desc#0047": {
    "src": "Ricochets gains +{~} bounce.",
-   "dst": "",
+   "dst": "Ricochets 的弹跳次数增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Seeking Stars",
    "class": "assassin"
@@ -361,49 +361,49 @@
   },
   "aspect-desc#0050": {
    "src": "Shurikens and Dextrous Hands prepare +{~} shurikens.",
-   "dst": "",
+   "dst": "Shurikens 与 Dextrous Hands 多准备 +{~} 枚手里剑。",
    "role": "desc",
    "aspect": "Aspect of Sleight-Of-Hand",
    "class": "assassin"
   },
   "aspect-desc#0051": {
    "src": "Increase the amount of Shurikens you can hold by.",
-   "dst": "",
+   "dst": "提高你能持有的手里剑数量。",
    "role": "desc",
    "aspect": "Aspect of Sleight-Of-Hand",
    "class": "assassin"
   },
   "aspect-desc#0052": {
    "src": "{~} {#} Total Damage: {~} (of your DPS, per shuriken) ({#} Damage: {~}) ({#} Fire: {~})",
-   "dst": "",
+   "dst": "{~1} {#} 总伤害: {~2} (你的每秒伤害，每枚手里剑) ({#} 伤害: {~3}) ({#} 火属性: {~4})",
    "role": "desc",
    "aspect": "Aspect of Sleight-Of-Hand",
    "class": "assassin"
   },
   "aspect-desc#0053": {
    "src": "Increase the amount of Shurikens you can hold by +{~}.",
-   "dst": "",
+   "dst": "你能持有的手里剑数量增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Sleight-Of-Hand",
    "class": "assassin"
   },
   "aspect-desc#0054": {
    "src": "{#} Total Damage: -{~} (of your DPS, per shuriken) ({#} Damage: -{~}) ({#} Fire: -{~})",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~1} (你的每秒伤害，每枚手里剑) ({#} 伤害: -{~2}) ({#} 火属性: -{~3})",
    "role": "desc",
    "aspect": "Aspect of Sleight-Of-Hand",
    "class": "assassin"
   },
   "aspect-desc#0055": {
    "src": "Backstab's angle to deal double damage is increased by +{~}°.",
-   "dst": "",
+   "dst": "Backstab 造成双倍伤害的角度增加 +{~}°。",
    "role": "desc",
    "aspect": "Aspect of Unyielding Fate",
    "class": "assassin"
   },
   "aspect-desc#0056": {
    "src": "Reduce Mirage's cooldown by {~}s.",
-   "dst": "",
+   "dst": "Mirage 的冷却时间缩短 {~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Visual Distortion",
    "class": "assassin"
@@ -417,42 +417,42 @@
   },
   "aspect-desc#0058": {
    "src": "Jasmine Bloom gains +{~} {#} Area of Effect per bloom.",
-   "dst": "",
+   "dst": "Jasmine Bloom 每次绽放的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Airborne",
    "class": "assassin"
   },
   "aspect-desc#0059": {
    "src": "Decrease your damage per Mark {#} by -{~}.",
-   "dst": "",
+   "dst": "每层 Mark {#} 提供的伤害降低 -{~}。",
    "role": "desc",
    "aspect": "Aspect of the Calling Card",
    "class": "assassin"
   },
   "aspect-desc#0060": {
    "src": "Your Main Attack gains +{~} {#} Range.",
-   "dst": "Your Main Attack 的 {#} 射程增加 +{~}。",
+   "dst": "你的 Main Attack 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Chain Knife",
    "class": "assassin"
   },
   "aspect-desc#0061": {
    "src": "Decrease your maximum Knives by -{~}.",
-   "dst": "",
+   "dst": "Knives 的上限降低 -{~}。",
    "role": "desc",
    "aspect": "Aspect of the Dagger's Silhouette",
    "class": "assassin"
   },
   "aspect-desc#0062": {
    "src": "Increase the damage of each Knife by +{~}.",
-   "dst": "",
+   "dst": "每把 Knife 的伤害增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Dagger's Silhouette",
    "class": "assassin"
   },
   "aspect-desc#0063": {
    "src": "Reduce Shadow Projection's cooldown by {~}s.",
-   "dst": "",
+   "dst": "Shadow Projection 的冷却时间缩短 {~} 秒。",
    "role": "desc",
    "aspect": "Aspect of the Disappearing Act",
    "class": "assassin"
@@ -466,28 +466,28 @@
   },
   "aspect-desc#0065": {
    "src": "Spin Attack and Lacerate gain +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Spin Attack 与 Lacerate 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Pinwheel",
    "class": "assassin"
   },
   "aspect-desc#0066": {
    "src": "Multihit gains +{~} hit.",
-   "dst": "",
+   "dst": "Multihit 的打击次数增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Stellar Flurry",
    "class": "assassin"
   },
   "aspect-desc#0067": {
    "src": "Multihit gains +{~} hits.",
-   "dst": "",
+   "dst": "Multihit 的打击次数增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Stellar Flurry",
    "class": "assassin"
   },
   "aspect-desc#0068": {
    "src": "Aerial Ace gains +{~} {#} Damage Bonus.",
-   "dst": "",
+   "dst": "Aerial Ace 的 {#} 伤害加成增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Unstoppable Force",
    "class": "assassin"
@@ -501,7 +501,7 @@
   },
   "aspect-desc#0070": {
    "src": "Another Self has +{~} more health.",
-   "dst": "",
+   "dst": "Another Self 的生命增加 +{~}。",
    "role": "desc",
    "aspect": "Assassin's Embodiment of Otherworldly Detachment",
    "class": "assassin"
@@ -529,35 +529,35 @@
   },
   "aspect-desc#0074": {
    "src": "Noxious Haze can benefit from +{~} debuff.",
-   "dst": "",
+   "dst": "Noxious Haze 可多受益于 +{~} 项减益。",
    "role": "desc",
    "aspect": "Trickster's Embodiment of Malevolent Mischief",
    "class": "assassin"
   },
   "aspect-desc#0075": {
    "src": "Summon +{~} additional Mirror Clone {#} with Mirror Image.",
-   "dst": "",
+   "dst": "Mirror Image 额外召唤 +{~} 个 Mirror Clone {#}。",
    "role": "desc",
    "aspect": "Trickster's Embodiment of Malevolent Mischief",
    "class": "assassin"
   },
   "aspect-desc#0076": {
    "src": "Noxious Haze can benefit from +{~} debuff, and grants +{~} damage per debuff.",
-   "dst": "",
+   "dst": "Noxious Haze 可多受益于 +{~1} 项减益，且每项减益提供 +{~2} 伤害。",
    "role": "desc",
    "aspect": "Trickster's Embodiment of Malevolent Mischief",
    "class": "assassin"
   },
   "aspect-desc#0077": {
    "src": "Chaos Explosion requires -{~} mana to activate.",
-   "dst": "",
+   "dst": "Chaos Explosion 的发动法力消耗减少 -{~}。",
    "role": "desc",
    "aspect": "Arcanist's Embodiment of Total Obliteration",
    "class": "mage"
   },
   "aspect-desc#0078": {
    "src": "Chaos Explosion casts {~} faster.",
-   "dst": "",
+   "dst": "Chaos Explosion 的施放速度加快 {~}。",
    "role": "desc",
    "aspect": "Arcanist's Embodiment of Total Obliteration",
    "class": "mage"
@@ -571,21 +571,21 @@
   },
   "aspect-desc#0080": {
    "src": "Sunflare requires -{~} healing to activate.",
-   "dst": "",
+   "dst": "Sunflare 的发动治疗量需求减少 -{~}。",
    "role": "desc",
    "aspect": "Aspect of Burning Providence",
    "class": "mage"
   },
   "aspect-desc#0081": {
    "src": "Paradox delays +{~} more damage.",
-   "dst": "",
+   "dst": "Paradox 多延迟 +{~} 伤害。",
    "role": "desc",
    "aspect": "Aspect of Futures Rewritten",
    "class": "mage"
   },
   "aspect-desc#0082": {
    "src": "Paradox delays +{~} more damage and refunds +{~} more mana.",
-   "dst": "",
+   "dst": "Paradox 多延迟 +{~1} 伤害，并多返还 +{~2} 法力。",
    "role": "desc",
    "aspect": "Aspect of Futures Rewritten",
    "class": "mage"
@@ -606,7 +606,7 @@
   },
   "aspect-desc#0085": {
    "src": "Manastorm requires -{~} Mana to activate.",
-   "dst": "",
+   "dst": "Manastorm 的发动法力消耗减少 -{~}。",
    "role": "desc",
    "aspect": "Aspect of Manaflux",
    "class": "mage"
@@ -620,21 +620,21 @@
   },
   "aspect-desc#0087": {
    "src": "Burning Sigil and Freezing Sigil gain +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Burning Sigil 与 Freezing Sigil 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Runic Extravagance",
    "class": "mage"
   },
   "aspect-desc#0088": {
    "src": "Lightweaver requires -{~} healing to activate.",
-   "dst": "",
+   "dst": "Lightweaver 的发动治疗量需求减少 -{~}。",
    "role": "desc",
    "aspect": "Aspect of Shining Status",
    "class": "mage"
   },
   "aspect-desc#0089": {
    "src": "Arcane Speed gains +{~} speed.",
-   "dst": "",
+   "dst": "Arcane Speed 的速度增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Wind Walking",
    "class": "mage"
@@ -655,7 +655,7 @@
   },
   "aspect-desc#0092": {
    "src": "Meteor and Astral Fragmentation gain +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Meteor 与 Astral Fragmentation 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Comet",
    "class": "mage"
@@ -669,7 +669,7 @@
   },
   "aspect-desc#0094": {
    "src": "Ophanim's orbs travel {~} faster.",
-   "dst": "",
+   "dst": "Ophanim 的光球移动速度加快 {~}。",
    "role": "desc",
    "aspect": "Aspect of the Comet",
    "class": "mage"
@@ -690,28 +690,28 @@
   },
   "aspect-desc#0097": {
    "src": "Reduce Judrajim's cooldown by {~}s.",
-   "dst": "",
+   "dst": "Judrajim 的冷却时间缩短 {~} 秒。",
    "role": "desc",
    "aspect": "Aspect of the Forbidden Ritual",
    "class": "mage"
   },
   "aspect-desc#0098": {
    "src": "Increase your Riftspawn's attack speed by +{~}.",
-   "dst": "",
+   "dst": "你的 Riftspawn 攻击速度增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Indescribable",
    "class": "mage"
   },
   "aspect-desc#0099": {
    "src": "Riftspawn gains +{~} {#} Vision.",
-   "dst": "",
+   "dst": "Riftspawn 的 {#} 视野增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Indescribable",
    "class": "mage"
   },
   "aspect-desc#0100": {
    "src": "Dimensional Tear and Rift Rupture gain +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Dimensional Tear 与 Rift Rupture 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Inescapable Void",
    "class": "mage"
@@ -746,28 +746,28 @@
   },
   "aspect-desc#0105": {
    "src": "Vacuokinesis gains +{~} {#} Damage from Distortion {#}.",
-   "dst": "",
+   "dst": "Vacuokinesis 从 Distortion {#} 获得的 {#} 伤害增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Vast Emptiness",
    "class": "mage"
   },
   "aspect-desc#0106": {
    "src": "Lightweaver gains +{~} orbs.",
-   "dst": "",
+   "dst": "Lightweaver 的光球增加 +{~} 个。",
    "role": "desc",
    "aspect": "Light Bender's Embodiment of Celestial Brilliance",
    "class": "mage"
   },
   "aspect-desc#0107": {
    "src": "Ophanim gains +{~} orb.",
-   "dst": "",
+   "dst": "Ophanim 的光球增加 +{~} 个。",
    "role": "desc",
    "aspect": "Light Bender's Embodiment of Celestial Brilliance",
    "class": "mage"
   },
   "aspect-desc#0108": {
    "src": "Dawn spawns +{~} more wisps.",
-   "dst": "",
+   "dst": "Dawn 多生成 +{~} 个幽光。",
    "role": "desc",
    "aspect": "Mage's Embodiment of Morbid Curiosity",
    "class": "mage"
@@ -781,14 +781,14 @@
   },
   "aspect-desc#0110": {
    "src": "Tangled Origin attacks +{~} faster.",
-   "dst": "",
+   "dst": "Tangled Origin 的攻击速度加快 +{~}。",
    "role": "desc",
    "aspect": "Mage's Embodiment of Morbid Curiosity",
    "class": "mage"
   },
   "aspect-desc#0111": {
    "src": "Distortion {#} decays -{~} slower.",
-   "dst": "",
+   "dst": "Distortion {#} 的衰减速度减慢 -{~}。",
    "role": "desc",
    "aspect": "Riftwalker's Embodiment of Reality Alteration",
    "class": "mage"
@@ -809,14 +809,14 @@
   },
   "aspect-desc#0114": {
    "src": "Eldritch Call summons +{~} tentacle, and strikes {~} faster.",
-   "dst": "",
+   "dst": "Eldritch Call 多召唤 +{~1} 条触手，出击速度加快 {~2}。",
    "role": "desc",
    "aspect": "Acolyte's Embodiment of Unwavering Adherence",
    "class": "shaman"
   },
   "aspect-desc#0115": {
    "src": "Your Puppets and Effigies move {~} faster.",
-   "dst": "",
+   "dst": "你的 Puppets 与 Effigies 移动速度加快 {~}。",
    "role": "desc",
    "aspect": "Aspect of Acceleration",
    "class": "shaman"
@@ -837,7 +837,7 @@
   },
   "aspect-desc#0118": {
    "src": "Twisted Tether requires -{~} Health lost to activate.",
-   "dst": "",
+   "dst": "Twisted Tether 的发动失血需求减少 -{~}。",
    "role": "desc",
    "aspect": "Aspect of Empathy",
    "class": "shaman"
@@ -851,28 +851,28 @@
   },
   "aspect-desc#0120": {
    "src": "Lashing Lance inflicts +{~}s of Bleeding {#} per hit.",
-   "dst": "",
+   "dst": "Lashing Lance 每次命中多施加 +{~} 秒 Bleeding {#}。",
    "role": "desc",
    "aspect": "Aspect of Gushing Blood",
    "class": "shaman"
   },
   "aspect-desc#0121": {
    "src": "Friendly Fire reduces &BPuppet duration by -{~}s.",
-   "dst": "",
+   "dst": "Friendly Fire 让人偶的持续时间缩短 {~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Incineration",
    "class": "shaman"
   },
   "aspect-desc#0122": {
    "src": "Bullwhip gains +{~} {#} Damage Bonus to Summons.",
-   "dst": "",
+   "dst": "Bullwhip 对召唤物的 {#} 伤害加成增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Motivation",
    "class": "shaman"
   },
   "aspect-desc#0123": {
    "src": "Your Hummingbird Carvings attack enemies for +{~}s and gain +{~} {#} Vision.",
-   "dst": "",
+   "dst": "你的 Hummingbird Carvings 攻击敌人的时间延长 +{~1} 秒，{#} 视野增加 +{~2}。",
    "role": "desc",
    "aspect": "Aspect of Occupation",
    "class": "shaman"
@@ -893,28 +893,28 @@
   },
   "aspect-desc#0126": {
    "src": "Mystics Masks bonus effect is increased by {~}x",
-   "dst": "",
+   "dst": "Mystic Masks 的额外效果变为 {~} 倍",
    "role": "desc",
    "aspect": "Aspect of Stances",
    "class": "shaman"
   },
   "aspect-desc#0127": {
    "src": "Increase Storm Dance's pull strength by {~}.",
-   "dst": "",
+   "dst": "Storm Dance 的牵引力增加 {~}。",
    "role": "desc",
    "aspect": "Aspect of Summer Storms",
    "class": "shaman"
   },
   "aspect-desc#0128": {
    "src": "Aura travels {~}s faster.",
-   "dst": "",
+   "dst": "Aura 的扩散速度加快 {~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Surging Presence",
    "class": "shaman"
   },
   "aspect-desc#0129": {
    "src": "Uproot and Haunting Memory gain +{~} {#} Range.",
-   "dst": "",
+   "dst": "Uproot 与 Haunting Memory 的 {#} 射程增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Alraune's Roots",
    "class": "shaman"
@@ -928,56 +928,56 @@
   },
   "aspect-desc#0131": {
    "src": "Crystal Knives gains +{~} pierce.",
-   "dst": "",
+   "dst": "Crystal Knives 的贯穿增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Artisan",
    "class": "shaman"
   },
   "aspect-desc#0132": {
    "src": "Puppet Master gains +{~} Puppets.",
-   "dst": "",
+   "dst": "Puppet Master 的 Puppets 增加 +{~} 个。",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
   "aspect-desc#0133": {
    "src": "{#} Total Damage: -{~} (of your DPS) ({#} Earth: -{~})",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~1} (你的每秒伤害) ({#} 土属性: -{~2})",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
   "aspect-desc#0134": {
    "src": "{#} Total Damage: -{~} (of your DPS) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~1} (你的每秒伤害) ({#} 风属性: -{~2}) ({#} 土属性: -{~3})",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
   "aspect-desc#0135": {
    "src": "{#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "",
+   "dst": "{#} 总伤害: -{~1} (你的每秒伤害) ({#} 伤害: -{~2}) ({#} 风属性: -{~3}) ({#} 土属性: -{~4})",
    "role": "desc",
    "aspect": "Aspect of the Beckoned Legion",
    "class": "shaman"
   },
   "aspect-desc#0136": {
    "src": "Corporeal Manifestation spins {~} faster.",
-   "dst": "",
+   "dst": "Corporeal Manifestation 的旋转速度加快 {~}。",
    "role": "desc",
    "aspect": "Aspect of the Blurred Line",
    "class": "shaman"
   },
   "aspect-desc#0137": {
    "src": "Fortified Formation grants +{~} ❁ Resistance.",
-   "dst": "",
+   "dst": "Fortified Formation 提供 +{~} ❁ 抗性。",
    "role": "desc",
    "aspect": "Aspect of the Bodyguard",
    "class": "shaman"
   },
   "aspect-desc#0138": {
    "src": "Tribal Chants gain +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Tribal Chants 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Channeler",
    "class": "shaman"
@@ -991,7 +991,7 @@
   },
   "aspect-desc#0140": {
    "src": "Awakened requires -{~} mana to activate.",
-   "dst": "",
+   "dst": "Awakened 的发动法力消耗减少 -{~}。",
    "role": "desc",
    "aspect": "Ritualist's Embodiment of the Ancestral Avatar",
    "class": "shaman"
@@ -1012,7 +1012,7 @@
   },
   "aspect-desc#0143": {
    "src": "Sundered Skies' delay between lightning strikes is -{~}s shorter.",
-   "dst": "",
+   "dst": "Sundered Skies 每次落雷之间的间隔缩短 {~} 秒。",
    "role": "desc",
    "aspect": "Shaman's Embodiment of Serene Harmony",
    "class": "shaman"
@@ -1026,49 +1026,49 @@
   },
   "aspect-desc#0145": {
    "src": "Triple Totem gains +{~} Totem.",
-   "dst": "",
+   "dst": "Triple Totem 的图腾增加 +{~} 个。",
    "role": "desc",
    "aspect": "Summoner's Embodiment of the Omnipotent Overseer",
    "class": "shaman"
   },
   "aspect-desc#0146": {
    "src": "Totem and Aura will do {~} less damage.",
-   "dst": "",
+   "dst": "Totem 与 Aura 造成的伤害降低 {~}。",
    "role": "desc",
    "aspect": "Summoner's Embodiment of the Omnipotent Overseer",
    "class": "shaman"
   },
   "aspect-desc#0147": {
    "src": "Regeneration and Sacrificial Shrine will heal {~} less health.",
-   "dst": "",
+   "dst": "Regeneration 与 Sacrificial Shrine 恢复的生命减少 {~}。",
    "role": "desc",
    "aspect": "Summoner's Embodiment of the Omnipotent Overseer",
    "class": "shaman"
   },
   "aspect-desc#0148": {
    "src": "Hummingbird's Song gains +{~} Hummingbird.",
-   "dst": "",
+   "dst": "Hummingbird's Song 的蜂鸟增加 +{~} 只。",
    "role": "desc",
    "aspect": "Summoner's Embodiment of the Omnipotent Overseer",
    "class": "shaman"
   },
   "aspect-desc#0149": {
    "src": "Hummingbirds attack {~} faster.",
-   "dst": "",
+   "dst": "蜂鸟的攻击速度加快 {~}。",
    "role": "desc",
    "aspect": "Summoner's Embodiment of the Omnipotent Overseer",
    "class": "shaman"
   },
   "aspect-desc#0150": {
    "src": "Emboldening Cry grants +{~} ❁ Resistance to Allies.",
-   "dst": "",
+   "dst": "Emboldening Cry 为友方提供 +{~} ❁ 抗性。",
    "role": "desc",
    "aspect": "Aspect of Bovine Inspiration",
    "class": "warrior"
   },
   "aspect-desc#0151": {
    "src": "Tempest hits delay is reduced by {~}s.",
-   "dst": "",
+   "dst": "Tempest 每次命中的间隔缩短 {~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Deafening Echoes",
    "class": "warrior"
@@ -1096,35 +1096,35 @@
   },
   "aspect-desc#0155": {
    "src": "Exhilarate restores +{~} of your Corrupted {#} bar as max health.",
-   "dst": "",
+   "dst": "Exhilarate 将你 Corrupted {#} 量表的 +{~} 恢复为最大生命。",
    "role": "desc",
    "aspect": "Aspect of Maniacal Frisson",
    "class": "warrior"
   },
   "aspect-desc#0156": {
    "src": "Sparkling Hope requires -{~} healing to activate.",
-   "dst": "",
+   "dst": "Sparkling Hope 的发动治疗量需求减少 -{~}。",
    "role": "desc",
    "aspect": "Aspect of Overflowing Hope",
    "class": "warrior"
   },
   "aspect-desc#0157": {
    "src": "Sacred Surge gains +{~} holy power for every spell or ability triggered.",
-   "dst": "",
+   "dst": "每触发一次法术或技能，Sacred Surge 就额外获得 +{~} 点圣能。",
    "role": "desc",
    "aspect": "Aspect of Rallying Fervor",
    "class": "warrior"
   },
   "aspect-desc#0158": {
    "src": "Luster Purge grants +{~} holy power.",
-   "dst": "",
+   "dst": "Luster Purge 提供 +{~} 点圣能。",
    "role": "desc",
    "aspect": "Aspect of Rallying Fervor",
    "class": "warrior"
   },
   "aspect-desc#0159": {
    "src": "Rejuvenating Skin restores Health {~}s faster.",
-   "dst": "",
+   "dst": "Rejuvenating Skin 恢复生命的速度加快 {~} 秒。",
    "role": "desc",
    "aspect": "Aspect of Rekindling",
    "class": "warrior"
@@ -1145,7 +1145,7 @@
   },
   "aspect-desc#0162": {
    "src": "War Scream, Tempest, and Bloodlust gain +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "War Scream、Tempest 与 Bloodlust 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of Steel Chords",
    "class": "warrior"
@@ -1166,35 +1166,35 @@
   },
   "aspect-desc#0165": {
    "src": "Flyby Slam's landing, Flying Kick and Collide gain +{~} {#} Area of Effect.",
-   "dst": "",
+   "dst": "Flyby Slam 的落地、Flying Kick 与 Collide 的 {#} 作用范围增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Anvil Drop",
    "class": "warrior"
   },
   "aspect-desc#0166": {
    "src": "Armour Breaker gains +{~} Damage Bonus (⚔) to Self.",
-   "dst": "",
+   "dst": "Armour Breaker 对自身的伤害加成 (⚔) 增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Berserker",
    "class": "warrior"
   },
   "aspect-desc#0167": {
    "src": "Increase Bloodied Armory's angle by +{~}°.",
-   "dst": "",
+   "dst": "Bloodied Armory 的角度增加 +{~}°。",
    "role": "desc",
    "aspect": "Aspect of the Crimson Scrivener",
    "class": "warrior"
   },
   "aspect-desc#0168": {
    "src": "Increase your damage per Harmony by +{~}.",
-   "dst": "",
+   "dst": "每层 Harmony 提供的伤害增加 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Enforcer",
    "class": "warrior"
   },
   "aspect-desc#0169": {
    "src": "Luster Purge grants +{~} {#} Main Attack Damage and +{~} {#} Main Attack Range.",
-   "dst": "",
+   "dst": "Luster Purge 提供 +{~1} {#} 普攻伤害与 +{~2} {#} 普攻范围。",
    "role": "desc",
    "aspect": "Aspect of the Golden Dawn",
    "class": "warrior"
@@ -1222,91 +1222,91 @@
   },
   "aspect-desc#0173": {
    "src": "Brink of Madness activates at +{~} higher Health.",
-   "dst": "",
+   "dst": "Brink of Madness 的触发生命门槛提高 +{~}。",
    "role": "desc",
    "aspect": "Aspect of the Tightrope Walk",
    "class": "warrior"
   },
   "aspect-desc#0174": {
    "src": "Pressure is stronger.",
-   "dst": "",
+   "dst": "Pressure 变得更强。",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
   },
   "aspect-desc#0175": {
    "src": "Bash gains +{~}x as many hits.",
-   "dst": "",
+   "dst": "Bash 的打击次数变为 +{~} 倍。",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
   },
   "aspect-desc#0176": {
    "src": "Uppercut deals +{~} neutral and +{~} Damage in all Elements.",
-   "dst": "",
+   "dst": "Uppercut 造成 +{~1} 无属性伤害，以及各元素 +{~2} 伤害。",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
   },
   "aspect-desc#0177": {
    "src": "{#} Total Damage: {~} ({#} Damage: {~}) ({#}{#}{#}{#}{#} Damage: {~})",
-   "dst": "",
+   "dst": "{#} 总伤害: {~1} ({#} 伤害: {~2}) ({#}{#}{#}{#}{#} 伤害: {~3})",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
   },
   "aspect-desc#0178": {
    "src": "{#} Total Damage: {~} ({#} Damage: {~}) ({#}{#}{#}{#}{#} Damage: {~}) War Scream grants a higher damage boost.",
-   "dst": "",
+   "dst": "{#} 总伤害: {~1} ({#} 伤害: {~2}) ({#}{#}{#}{#}{#} 伤害: {~3}) War Scream 提供更高的伤害提升。",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
   },
   "aspect-desc#0179": {
    "src": "Bash gains +{~}x as many hits and more damage.",
-   "dst": "",
+   "dst": "Bash 的打击次数变为 +{~} 倍，且伤害提高。",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
   },
   "aspect-desc#0180": {
    "src": "{#} Total Damage: {~} ({#} Thunder: {~}) Uppercut deals {~} neutral and {~} Damage in all Elements.",
-   "dst": "",
+   "dst": "{#} 总伤害: {~1} ({#} 雷属性: {~2}) Uppercut 造成 {~3} 无属性伤害，以及各元素 {~4} 伤害。",
    "role": "desc",
    "aspect": "Battle Monk's Embodiment of Complete Synchrony",
    "class": "warrior"
   },
   "aspect-desc#0181": {
    "src": "Blood Pact's health cost is reduced by {~}.",
-   "dst": "",
+   "dst": "Blood Pact 的生命消耗减少 {~}。",
    "role": "desc",
    "aspect": "Fallen's Embodiment of Blind Fury",
    "class": "warrior"
   },
   "aspect-desc#0182": {
    "src": "Blood Pact adds +{~} to +{~} more damage when using health.",
-   "dst": "",
+   "dst": "Blood Pact 在消耗生命时多提供 +{~1} 至 +{~2} 伤害。",
    "role": "desc",
    "aspect": "Fallen's Embodiment of Blind Fury",
    "class": "warrior"
   },
   "aspect-desc#0183": {
    "src": "Mantle of the Bovemists gains +{~} charges.",
-   "dst": "",
+   "dst": "Mantle of the Bovemists 的使用次数增加 +{~}。",
    "role": "desc",
    "aspect": "Paladin's Embodiment of Undying Determination",
    "class": "warrior"
   },
   "aspect-desc#0184": {
    "src": "Sacred Surge spends -{~} Holy Power ✧ to activate.",
-   "dst": "",
+   "dst": "Sacred Surge 的发动圣能 ✧ 消耗减少 -{~}。",
    "role": "desc",
    "aspect": "Paladin's Embodiment of Undying Determination",
    "class": "warrior"
   },
   "aspect-desc#0185": {
    "src": "Beyond Salvation spawns +{~} spikes.",
-   "dst": "",
+   "dst": "Beyond Salvation 多生成 +{~} 根尖刺。",
    "role": "desc",
    "aspect": "Warrior's Embodiment of Everlasting Perseverance",
    "class": "warrior"
@@ -1327,107 +1327,107 @@
   },
   "blk000": {
    "src": "Ascension lasts +{~} longer. Extinction Event spawns +{~} bombs. Twilight Zone's mark cap is +{~} higher.",
-   "dst": "",
+   "dst": "Ascension 的持续时间延长 +{~1}。Extinction Event 多生成 +{~2} 颗炸弹。Twilight Zone 的标记上限提高 +{~3}。",
    "role": "desc"
   },
   "blk001": {
    "src": "Multihit gains +{~} {#} Range. Backstab gains +{~} {#} Range.",
-   "dst": "",
+   "dst": "Multihit 的 {#} 射程增加 +{~1}。Backstab 的 {#} 射程增加 +{~2}。",
    "role": "desc"
   },
   "blk002": {
    "src": "Increase the amount of Shurikens you can hold by. +{~}",
-   "dst": "",
+   "dst": "你能持有的手里剑数量增加 +{~}。",
    "role": "desc"
   },
   "blk003": {
    "src": "Increase your maximum Marks {#} by +{~}. Decrease your damage per Mark {#} by -{~}.",
-   "dst": "",
+   "dst": "Marks {#} 的上限增加 +{~1}。每层 Mark {#} 提供的伤害降低 -{~2}。",
    "role": "desc"
   },
   "blk004": {
    "src": "Decrease your maximum Knives by -{~}. Increase the damage of each Knife by +{~}.",
-   "dst": "",
+   "dst": "Knives 的上限降低 -{~1}。每把 Knife 的伤害增加 +{~2}。",
    "role": "desc"
   },
   "blk005": {
    "src": "Pierce the Veil lasts +{~}s longer. Another Self has +{~} more health. Serpent's Garden lasts +{~}s longer.",
-   "dst": "",
+   "dst": "Pierce the Veil 的持续时间延长 +{~1} 秒。Another Self 的生命增加 +{~2}。Serpent's Garden 的持续时间延长 +{~3} 秒。",
    "role": "desc"
   },
   "blk006": {
    "src": "Chaos Explosion requires -{~} mana to activate. Chaos Explosion casts {~} faster.",
-   "dst": "",
+   "dst": "Chaos Explosion 的发动法力消耗减少 -{~1}。Chaos Explosion 的施放速度加快 {~2}。",
    "role": "desc"
   },
   "blk007": {
    "src": "Ophanim gains +{~} {#} Range. Ophanim's orbs travel {~} faster.",
-   "dst": "",
+   "dst": "Ophanim 的 {#} 射程增加 +{~1}。Ophanim 的光球移动速度加快 {~2}。",
    "role": "desc"
   },
   "blk008": {
    "src": "Dawn spawns +{~} more wisps. Gravitational Collapse lasts +{~}s longer. Tangled Origin attacks +{~} faster.",
-   "dst": "",
+   "dst": "Dawn 多生成 +{~1} 个幽光。Gravitational Collapse 的持续时间延长 +{~2} 秒。Tangled Origin 的攻击速度加快 +{~3}。",
    "role": "desc"
   },
   "blk009": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Earth: -{~})",
-   "dst": "",
+   "dst": "Puppet Master 的 Puppets 增加 +{~1} 个。{#} 总伤害: -{~2} (你的每秒伤害) ({#} 土属性: -{~3})",
    "role": "desc"
   },
   "blk010": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "",
+   "dst": "Puppet Master 的 Puppets 增加 +{~1} 个。{#} 总伤害: -{~2} (你的每秒伤害) ({#} 风属性: -{~3}) ({#} 土属性: -{~4})",
    "role": "desc"
   },
   "blk011": {
    "src": "Puppet Master gains +{~} Puppets. {#} Total Damage: -{~} (of your DPS) ({#} Damage: -{~}) ({#} Air: -{~}) ({#} Earth: -{~})",
-   "dst": "",
+   "dst": "Puppet Master 的 Puppets 增加 +{~1} 个。{#} 总伤害: -{~2} (你的每秒伤害) ({#} 伤害: -{~3}) ({#} 风属性: -{~4}) ({#} 土属性: -{~5})",
    "role": "desc"
   },
   "blk012": {
    "src": "Awakened requires -{~} mana to activate. Awakened gains +{~}s {#} Duration.",
-   "dst": "",
+   "dst": "Awakened 的发动法力消耗减少 -{~1}。Awakened 的 {#} 持续时间增加 +{~2} 秒。",
    "role": "desc"
   },
   "blk013": {
    "src": "Patchwork Abomination lasts +{~}s longer. Sundered Skies' delay between lightning strikes is -{~}s shorter. Monument to Gloom lasts +{~} longer.",
-   "dst": "",
+   "dst": "Patchwork Abomination 的持续时间延长 +{~1} 秒。Sundered Skies 每次落雷之间的间隔缩短 {~2} 秒。Monument to Gloom 的持续时间延长 +{~3}。",
    "role": "desc"
   },
   "blk014": {
    "src": "Triple Totem gains +{~} Totem. Totem and Aura will do {~} less damage.",
-   "dst": "",
+   "dst": "Triple Totem 的图腾增加 +{~1} 个。Totem 与 Aura 造成的伤害降低 {~2}。",
    "role": "desc"
   },
   "blk015": {
    "src": "Hummingbird's Song gains +{~} Hummingbird. Hummingbirds attack {~} faster.",
-   "dst": "",
+   "dst": "Hummingbird's Song 的蜂鸟增加 +{~1} 只。蜂鸟的攻击速度加快 {~2}。",
    "role": "desc"
   },
   "blk016": {
    "src": "Uppercut deals +{~} neutral and +{~} Damage in all Elements. {#} Total Damage: +{~} ({#} Damage: +{~}) ({#} Damage: +{~})",
-   "dst": "",
+   "dst": "Uppercut 造成 +{~1} 无属性伤害，以及各元素 +{~2} 伤害。{#} 总伤害: +{~3} ({#} 伤害: +{~4}) ({#} 伤害: +{~5})",
    "role": "desc"
   },
   "blk017": {
    "src": "War Scream grants a higher damage boost. {#} Effect: +{~} Damage Bonus (⚔) to Players",
-   "dst": "",
+   "dst": "War Scream 提供更高的伤害提升。{#} 效果: 对玩家 +{~} 伤害加成 (⚔)",
    "role": "desc"
   },
   "blk018": {
    "src": "Bash gains +{~}x as many hits and more damage. {#} Total Damage: +{~} ({#} Thunder: +{~})",
-   "dst": "",
+   "dst": "Bash 的打击次数变为 +{~1} 倍，且伤害提高。{#} 总伤害: +{~2} ({#} 雷属性: +{~3})",
    "role": "desc"
   },
   "blk019": {
    "src": "Blood Pact's health cost is reduced by {~}. Blood Pact adds +{~} to +{~} more damage when using health.",
-   "dst": "",
+   "dst": "Blood Pact 的生命消耗减少 {~1}。Blood Pact 在消耗生命时多提供 +{~2} 至 +{~3} 伤害。",
    "role": "desc"
   },
   "blk020": {
    "src": "Beyond Salvation spawns +{~} spikes. Zenith Stance lasts +{~}s longer. Judgement lasts +{~} longer.",
-   "dst": "",
+   "dst": "Beyond Salvation 多生成 +{~1} 根尖刺。Zenith Stance 的持续时间延长 +{~2} 秒。Judgement 的持续时间延长 +{~3}。",
    "role": "desc"
   }
  }
