@@ -111,6 +111,13 @@ def build(kind: Kind) -> dict:
     entries: dict[str, dict] = {}
     for path in sorted(kind.parts.glob("*.json")):
         entries.update(json.loads(path.read_text(encoding="utf-8"))["entries"])
+    # 說明欄沿用檔案裡現有的那一段：簡中的已經換成簡體，
+    # 蓋回繁體的預設句會被 check-zh-cn 抓成「還是繁體字」。
+    note = kind.note
+    if kind.bundle.exists():
+        old = json.loads(kind.bundle.read_text(encoding="utf-8")).get("_meta", {}).get("note")
+        if isinstance(old, str) and old.strip():
+            note = old
     return {
         "_meta": {
             # 讓 validate.py 知道這是產生物。產生物參與「兩個檔案譯法不同」
@@ -121,7 +128,7 @@ def build(kind: Kind) -> dict:
             "lang": kind.lang,
             "count": len(entries),
             "translated": sum(1 for e in entries.values() if e.get("dst")),
-            "note": kind.note,
+            "note": note,
         },
         "entries": entries,
     }
