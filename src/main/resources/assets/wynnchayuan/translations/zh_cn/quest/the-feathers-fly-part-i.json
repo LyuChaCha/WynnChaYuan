@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Feathers Fly Part I",
   "count": 210,
-  "translated": 0,
+  "translated": 210,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Feathers Fly Part I#000": {
    "src": "Visit the workshop at [-{~}, {~}, -{~}] (Requires completion of The Envoy Part II)",
-   "dst": "",
+   "dst": "前往 [-{~}, {~}, -{~}] 的工坊 (需要先完成「使者 第二部」)",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -18,7 +18,7 @@
   },
   "The Feathers Fly Part I#001": {
    "src": "Oh?! Hold on, is anyone there..!",
-   "dst": "",
+   "dst": "噢？！等等，有人在吗……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -28,7 +28,7 @@
   },
   "The Feathers Fly Part I#002": {
    "src": "Why hello there! Whatcha doin' here? I'm Ava!",
-   "dst": "",
+   "dst": "哎呀你好！你在这里干嘛？我是 Ava！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -38,7 +38,7 @@
   },
   "The Feathers Fly Part I#003": {
    "src": "Want a quick job? How 'bout helpin' me out?! That was perfect timing!",
-   "dst": "",
+   "dst": "想接个小活吗？帮我个忙怎么样？！你来得正是时候！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -48,7 +48,7 @@
   },
   "The Feathers Fly Part I#004": {
    "src": "Y'see, while the other Avos hate it, I just find electromagic so fascinating!",
-   "dst": "",
+   "dst": "你看，虽然其他 Avos 都讨厌它，但我就是觉得电磁魔法太迷人了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -58,7 +58,7 @@
   },
   "The Feathers Fly Part I#005": {
    "src": "Look, I think I got a breakthrough invention. If it works... Oh man...",
-   "dst": "",
+   "dst": "听着，我觉得我做出了一个突破性的发明。要是它成功了……噢天啊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -68,7 +68,7 @@
   },
   "The Feathers Fly Part I#006": {
    "src": "I just need to harness some nature magic, and there's an amazing source in the chief's hut. Ya comin'?",
-   "dst": "",
+   "dst": "我只需要驾驭一些自然魔法，而族长的小屋里就有个超棒的来源。你要来吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -78,7 +78,7 @@
   },
   "The Feathers Fly Part I#007": {
    "src": "Don't you worry about rewards! I got you! See ya' there!",
-   "dst": "",
+   "dst": "别担心报酬！包在我身上！到时见！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -88,7 +88,7 @@
   },
   "The Feathers Fly Part I#008": {
    "src": "Meet Ava at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 与 Ava 会合",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -98,7 +98,7 @@
   },
   "The Feathers Fly Part I#009": {
    "src": "Hey! You showed up! Listen up, here's the plan...",
-   "dst": "",
+   "dst": "嘿！你来了！听好，计划是这样的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -108,7 +108,7 @@
   },
   "The Feathers Fly Part I#010": {
    "src": "There's a small museum inside the hut with all kinds of trophies.",
-   "dst": "",
+   "dst": "小屋里有个小博物馆，放着各种战利品。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -118,7 +118,7 @@
   },
   "The Feathers Fly Part I#011": {
    "src": "Our chief is quite the talkative fella, and I can guarantee he'd love to tell you stories.",
-   "dst": "",
+   "dst": "我们的族长很爱聊天，我敢保证他会很乐意讲故事给你听。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -128,7 +128,7 @@
   },
   "The Feathers Fly Part I#012": {
    "src": "That should keep him and his guards busy. And that's where I come in!",
-   "dst": "",
+   "dst": "这样应该能让他和他的守卫忙得团团转。然后就轮到我出场了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -138,7 +138,7 @@
   },
   "The Feathers Fly Part I#013": {
    "src": "I'll take that chance to sneak behind the throne, where our sacred totem is. I'm not stealing it, don't worry!",
-   "dst": "",
+   "dst": "我会趁机溜到王座后面，我们神圣的图腾就在那里。我不是要偷它，别担心！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -148,7 +148,7 @@
   },
   "The Feathers Fly Part I#014": {
    "src": "I'm a little clumsy, but I'm sure I can count on ya'! No matter what, keep the chief busy!",
-   "dst": "",
+   "dst": "我有点笨手笨脚，不过我相信我能靠你！不管发生什么，都要让族长一直忙着！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -158,7 +158,7 @@
   },
   "The Feathers Fly Part I#015": {
    "src": "Distract the Avos Chief at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 引开 Avos 族长的注意",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -168,7 +168,7 @@
   },
   "The Feathers Fly Part I#016": {
    "src": "Greetings, human. Welcome back.",
-   "dst": "",
+   "dst": "你好，人类。欢迎回来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -178,7 +178,7 @@
   },
   "The Feathers Fly Part I#017": {
    "src": "So, what brings you here, hm?",
-   "dst": "",
+   "dst": "那么，什么风把你吹来了，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -188,7 +188,7 @@
   },
   "The Feathers Fly Part I#018": {
    "src": "Oh, you want to learn more about us... Of course, of course!",
-   "dst": "",
+   "dst": "噢，你想多了解我们……当然，当然！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -198,7 +198,7 @@
   },
   "The Feathers Fly Part I#019": {
    "src": "We have a room where I can show you some of our history.",
-   "dst": "",
+   "dst": "我们有个房间，我可以带你看看我们的一些历史。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -208,7 +208,7 @@
   },
   "The Feathers Fly Part I#020": {
    "src": "You're in luck, I'm in a good mood. Follow me then.",
-   "dst": "",
+   "dst": "你运气好，我今天心情不错。那就跟我来吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -218,7 +218,7 @@
   },
   "The Feathers Fly Part I#021": {
    "src": "Gah! What are you doing?!",
-   "dst": "",
+   "dst": "啊！你在干什么？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -228,7 +228,7 @@
   },
   "The Feathers Fly Part I#022": {
    "src": "It's alright, these books aren't important... Be careful though.",
-   "dst": "",
+   "dst": "没关系，这些书不重要……不过还是小心点。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -238,7 +238,7 @@
   },
   "The Feathers Fly Part I#023": {
    "src": "Ah, our wisteria tree! Yes...",
-   "dst": "",
+   "dst": "啊，我们的紫藤树！是的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -248,7 +248,7 @@
   },
   "The Feathers Fly Part I#024": {
    "src": "It's one of a kind! We planted it eons ago. It has never ever grown an inch. Or moved.",
-   "dst": "",
+   "dst": "它独一无二！我们在亿万年前种下它。它从来没长高过一寸。也没动过。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -258,7 +258,7 @@
   },
   "The Feathers Fly Part I#025": {
    "src": "Never died or anything either. For all we know, it might predate your corruption too!",
-   "dst": "",
+   "dst": "也从来没死过什么的。说不定它比你们的腐化还要古老！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -268,7 +268,7 @@
   },
   "The Feathers Fly Part I#026": {
    "src": "Oh, this is quite the important tome.",
-   "dst": "",
+   "dst": "噢，这可是本相当重要的典籍。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -278,7 +278,7 @@
   },
   "The Feathers Fly Part I#027": {
    "src": "This book has a signature from all Avos chiefs ever since we discovered ink!",
-   "dst": "",
+   "dst": "自从我们发现墨水以来，每一任 Avos 族长都在这本书上签过名！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -288,7 +288,7 @@
   },
   "The Feathers Fly Part I#028": {
    "src": "Right, the feathery crate!",
-   "dst": "",
+   "dst": "对了，羽毛箱！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -298,7 +298,7 @@
   },
   "The Feathers Fly Part I#029": {
    "src": "It's a custom for every Avos chief to keep their feathers somewhere. I guess I left that here.",
-   "dst": "",
+   "dst": "每一任 Avos 族长都有把自己的羽毛存放在某处的习俗。我想是我把它忘在这里了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -308,7 +308,7 @@
   },
   "The Feathers Fly Part I#030": {
    "src": "And here's some important history!",
-   "dst": "",
+   "dst": "这里有些重要的历史！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -318,7 +318,7 @@
   },
   "The Feathers Fly Part I#031": {
    "src": "Though, we don't really have the time to sit down and read all of it, do we?",
-   "dst": "",
+   "dst": "不过，我们其实没时间坐下来全部读完，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -328,7 +328,7 @@
   },
   "The Feathers Fly Part I#032": {
    "src": "What was that?! I'll check.",
-   "dst": "",
+   "dst": "那是什么声音？！我去看看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -338,7 +338,7 @@
   },
   "The Feathers Fly Part I#033": {
    "src": "Someone broke in? But why? Anyone can use our totem...",
-   "dst": "",
+   "dst": "有人闯进来了？可是为什么？谁都可以使用我们的图腾……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -348,7 +348,7 @@
   },
   "The Feathers Fly Part I#034": {
    "src": "I don't get it. They could've just asked...",
-   "dst": "",
+   "dst": "我不明白。他们直接问就好了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -358,7 +358,7 @@
   },
   "The Feathers Fly Part I#035": {
    "src": "Report back to Ava in the Workshop at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, -{~}] 的工坊向 Ava 报告",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -368,7 +368,7 @@
   },
   "The Feathers Fly Part I#036": {
    "src": "Oh, hey! Thanks for earlier. You were a big help.",
-   "dst": "",
+   "dst": "噢，嘿！谢谢你刚才帮忙。你帮了大忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -378,7 +378,7 @@
   },
   "The Feathers Fly Part I#037": {
    "src": "Truth is, anyone can use that totem. They just don't like me very much.",
-   "dst": "",
+   "dst": "老实说，谁都可以使用那个图腾。只是他们不太喜欢我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -388,7 +388,7 @@
   },
   "The Feathers Fly Part I#038": {
    "src": "Anyway, we got what we needed, and it's promising! Now onto the next part...",
-   "dst": "",
+   "dst": "总之，我们拿到了需要的东西，而且很有希望！接下来是下一步……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -398,7 +398,7 @@
   },
   "The Feathers Fly Part I#039": {
    "src": "Y'see, I managed to bottle up some of our magic, but I still need corkian stuff.",
-   "dst": "",
+   "dst": "你看，我成功把一些我们的魔法装进瓶子里了，但我还需要 Corkus 的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -408,7 +408,7 @@
   },
   "The Feathers Fly Part I#040": {
    "src": "Fortunately for us, there's a shop outside the city. Though, things might get complicated...",
-   "dst": "",
+   "dst": "幸好城外有家商店。不过，事情可能会变得有点复杂……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -418,7 +418,7 @@
   },
   "The Feathers Fly Part I#041": {
    "src": "A bunch of Corkians aren't too fond of... Us. I just think you should come along with me, y'know?",
-   "dst": "",
+   "dst": "很多 Corkus 人不太喜欢……我们。我就是觉得你该跟我一起去，你懂吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -428,7 +428,7 @@
   },
   "The Feathers Fly Part I#042": {
    "src": "Here, I wrote the coords into that book of yours. It's a bit far, so come on out and I'll give you a lift!",
-   "dst": "",
+   "dst": "来，我把坐标写进你那本书里了。有点远，所以出来吧，我载你一程！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -438,7 +438,7 @@
   },
   "The Feathers Fly Part I#043": {
    "src": "Meet Ava near the Corkian shop at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 的 Corkus 商店附近与 Ava 会合",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -448,7 +448,7 @@
   },
   "The Feathers Fly Part I#044": {
    "src": "Alright, if you want a lift, tell me, or you could just walk!",
-   "dst": "",
+   "dst": "好，如果你想搭便车就告诉我，或者你也可以直接走过去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -458,7 +458,7 @@
   },
   "The Feathers Fly Part I#045": {
    "src": "Not sure why you'd do that when I'm right here though!",
-   "dst": "",
+   "dst": "不过我就在这里，不知道你为什么要走路就是了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -468,7 +468,7 @@
   },
   "The Feathers Fly Part I#046": {
    "src": "Alright, buckle up, we're taking off!",
-   "dst": "",
+   "dst": "好，抓紧了，我们要起飞了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -478,7 +478,7 @@
   },
   "The Feathers Fly Part I#047": {
    "src": "Still holding on? We're almost there!",
-   "dst": "",
+   "dst": "还抓着吗？我们快到了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -488,7 +488,7 @@
   },
   "The Feathers Fly Part I#048": {
    "src": "Here we are! Enjoyed the lift? I'm a great form of fast travel, right?!",
-   "dst": "",
+   "dst": "到啦！搭得开心吗？我是超棒的快速交通工具，对吧？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -498,7 +498,7 @@
   },
   "The Feathers Fly Part I#049": {
    "src": "Well, this was my first time using this magic magnet on people, but...",
-   "dst": "",
+   "dst": "嗯，这是我第一次在人身上用这个魔法磁铁，不过……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -508,7 +508,7 @@
   },
   "The Feathers Fly Part I#050": {
    "src": "This is the shop! I think we can buy an Enhanced Potential Microchip here.",
-   "dst": "",
+   "dst": "就是这家店！我想我们可以在这里买到强化潜能微芯片。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -518,7 +518,7 @@
   },
   "The Feathers Fly Part I#051": {
    "src": "I need you to accompany me.",
-   "dst": "",
+   "dst": "我需要你陪我进去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -528,7 +528,7 @@
   },
   "The Feathers Fly Part I#052": {
    "src": "If I'm with a human, surely they'll sell one, right?",
-   "dst": "",
+   "dst": "如果我跟人类一起，他们总该会卖一个给我吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -538,7 +538,7 @@
   },
   "The Feathers Fly Part I#053": {
    "src": "You go first, I'll follow you.",
-   "dst": "",
+   "dst": "你先走，我跟着你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -548,7 +548,7 @@
   },
   "The Feathers Fly Part I#054": {
    "src": "Or I guess you could just leave, that's cool too...",
-   "dst": "",
+   "dst": "或者你也可以直接走人，那也没关系……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -558,7 +558,7 @@
   },
   "The Feathers Fly Part I#055": {
    "src": "Ah, finally! I could've taken you there y'know!",
-   "dst": "",
+   "dst": "啊，终于！我本来可以载你过去的，你知道吗！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -568,7 +568,7 @@
   },
   "The Feathers Fly Part I#056": {
    "src": "Honestly, I just wanted to test something on you... Oh well!",
-   "dst": "",
+   "dst": "老实说，我只是想在你身上测试点东西……算了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -578,7 +578,7 @@
   },
   "The Feathers Fly Part I#057": {
    "src": "This is the shop! I think we can buy an Enhanced Potential Microchip here.",
-   "dst": "",
+   "dst": "就是这家店！我想我们可以在这里买到强化潜能微芯片。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -588,7 +588,7 @@
   },
   "The Feathers Fly Part I#058": {
    "src": "I need you to accompany me.",
-   "dst": "",
+   "dst": "我需要你陪我进去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -598,7 +598,7 @@
   },
   "The Feathers Fly Part I#059": {
    "src": "If I'm with a human, surely they'll sell one, right?",
-   "dst": "",
+   "dst": "如果我跟人类一起，他们总该会卖一个给我吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -608,7 +608,7 @@
   },
   "The Feathers Fly Part I#060": {
    "src": "You go first, I'll follow you.",
-   "dst": "",
+   "dst": "你先走，我跟着你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -618,7 +618,7 @@
   },
   "The Feathers Fly Part I#061": {
    "src": "Hmpf. What are you doing in here, Avo?!",
-   "dst": "",
+   "dst": "哼。你来这里干什么，Avos 人？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -628,7 +628,7 @@
   },
   "The Feathers Fly Part I#062": {
    "src": "Hmph...",
-   "dst": "",
+   "dst": "哼……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -638,7 +638,7 @@
   },
   "The Feathers Fly Part I#063": {
    "src": "So-uh, I was, y'know, wonderin' if you had any-",
-   "dst": "",
+   "dst": "那个——呃，我在，你知道的，想问问你有没有——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -648,7 +648,7 @@
   },
   "The Feathers Fly Part I#064": {
    "src": "So-uh, I was wonderin'...",
-   "dst": "",
+   "dst": "那个——呃，我在想……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -658,7 +658,7 @@
   },
   "The Feathers Fly Part I#065": {
    "src": "Huh?!",
-   "dst": "",
+   "dst": "嗯？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -668,7 +668,7 @@
   },
   "The Feathers Fly Part I#066": {
    "src": "There's NO WAY I'm selling anythin' to an Avo! Shoo! Get out!",
-   "dst": "",
+   "dst": "我绝对不会卖任何东西给 Avos 人！滚！出去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -678,7 +678,7 @@
   },
   "The Feathers Fly Part I#067": {
    "src": "But...!",
-   "dst": "",
+   "dst": "可是……！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -688,7 +688,7 @@
   },
   "The Feathers Fly Part I#068": {
    "src": "I... can't believe this.",
-   "dst": "",
+   "dst": "我……真不敢相信。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -698,7 +698,7 @@
   },
   "The Feathers Fly Part I#069": {
    "src": "I am NOT giving up! To hell with all this!",
-   "dst": "",
+   "dst": "我才不要放弃！去他的这一切！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -708,7 +708,7 @@
   },
   "The Feathers Fly Part I#070": {
    "src": "Here, go in yourself and ask. I'll cover the cost later.",
-   "dst": "",
+   "dst": "来，你自己进去问。钱我之后再补给你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -718,7 +718,7 @@
   },
   "The Feathers Fly Part I#071": {
    "src": "I'll stand back. CLEARLY this guy is too STUCK up to- Ugh, I'm getting angry! Just go in again.",
-   "dst": "",
+   "dst": "我站远一点。这家伙显然傲慢到——呃，我要生气了！你再进去一次就是了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -728,7 +728,7 @@
   },
   "The Feathers Fly Part I#072": {
    "src": "Ask for an Enhanced Microchip at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 询问强化微芯片",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -738,7 +738,7 @@
   },
   "The Feathers Fly Part I#073": {
    "src": "Huh?! I made myself clear! You were with her!",
-   "dst": "",
+   "dst": "啊？！我说得很清楚了！你跟她是一伙的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -748,7 +748,7 @@
   },
   "The Feathers Fly Part I#074": {
    "src": "I'm closing for today, I cannot stand this! OUT!!",
-   "dst": "",
+   "dst": "我今天打烊了，我受不了了！出去！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -758,7 +758,7 @@
   },
   "The Feathers Fly Part I#075": {
    "src": "Oh, and don't even think about even approaching MY shop!",
-   "dst": "",
+   "dst": "噢，还有，想都别想靠近我的店！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -768,7 +768,7 @@
   },
   "The Feathers Fly Part I#076": {
    "src": "Find the control panel near the shop at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 找到商店附近的控制面板",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -778,7 +778,7 @@
   },
   "The Feathers Fly Part I#077": {
    "src": "So you did come back! Hang tight!",
-   "dst": "",
+   "dst": "你果然回来了！等一下！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -788,7 +788,7 @@
   },
   "The Feathers Fly Part I#078": {
    "src": "Look, we need a plan. Talk to me.",
-   "dst": "",
+   "dst": "听着，我们需要一个计划。跟我说话。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -798,7 +798,7 @@
   },
   "The Feathers Fly Part I#079": {
    "src": "Urgh, this guy's nuts. Hmm...",
-   "dst": "",
+   "dst": "呃，这家伙疯了。嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -808,7 +808,7 @@
   },
   "The Feathers Fly Part I#080": {
    "src": "I'm... surprised he kicked you out, too. Maybe he's a patriot?",
-   "dst": "",
+   "dst": "我……很意外他连你也赶出来。也许他是个爱国者？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -818,7 +818,7 @@
   },
   "The Feathers Fly Part I#081": {
    "src": "Well, anyway, we need a plan. I don't wanna wait this out.",
-   "dst": "",
+   "dst": "嗯，总之，我们需要一个计划。我可不想干等。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -828,7 +828,7 @@
   },
   "The Feathers Fly Part I#082": {
    "src": "Look, this guy has to have a control panel somewhere. Maybe we can neutralize the robots.",
-   "dst": "",
+   "dst": "听着，这家伙一定在某处有个控制面板。也许我们能让那些机器人失效。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -838,7 +838,7 @@
   },
   "The Feathers Fly Part I#083": {
    "src": "That stuff hates water, y'know? So I'll go fetch some in the meantime.",
-   "dst": "",
+   "dst": "那些东西怕水，你知道吧？所以我先去打点水来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -848,7 +848,7 @@
   },
   "The Feathers Fly Part I#084": {
    "src": "I'd like to NOT get zapped by a forcefield, so I'll sneak inside once we're done with that.",
-   "dst": "",
+   "dst": "我可不想被力场电到，所以等我们搞定那个我再溜进去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -858,7 +858,7 @@
   },
   "The Feathers Fly Part I#085": {
    "src": "Got it? Find the control panel. It should be somewhere around the house. Talk to me once you're ready.",
-   "dst": "",
+   "dst": "懂了吗？找到控制面板。应该就在房子附近某处。准备好了就跟我说。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -868,7 +868,7 @@
   },
   "The Feathers Fly Part I#086": {
    "src": "Good luck, then! I'll be back once you find the control panel!",
-   "dst": "",
+   "dst": "那就祝你好运！等你找到控制面板我就回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -878,7 +878,7 @@
   },
   "The Feathers Fly Part I#087": {
    "src": "Here we are! Good job! Alright, let's see...",
-   "dst": "",
+   "dst": "我们到了！干得好！好，让我看看……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -888,7 +888,7 @@
   },
   "The Feathers Fly Part I#088": {
    "src": "Wait... Why are there... Buttons... Everywhere??",
-   "dst": "",
+   "dst": "等等……为什么……到处……都是按钮？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -898,7 +898,7 @@
   },
   "The Feathers Fly Part I#089": {
    "src": "I feel like soaking everything would be quite the mistake.",
-   "dst": "",
+   "dst": "我觉得把所有东西都泡水会是个大错误。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -908,7 +908,7 @@
   },
   "The Feathers Fly Part I#090": {
    "src": "And none of them are labelled! What is that?!",
-   "dst": "",
+   "dst": "而且一个都没有标签！这是什么鬼？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -918,7 +918,7 @@
   },
   "The Feathers Fly Part I#091": {
    "src": "Look, your choice. What should we neutralize first?",
-   "dst": "",
+   "dst": "听着，你来选。我们先让哪个失效？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -928,7 +928,7 @@
   },
   "The Feathers Fly Part I#092": {
    "src": "Left, huh? Well, let's see how that goes.",
-   "dst": "",
+   "dst": "左边，是吧？好，看看结果怎样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -938,7 +938,7 @@
   },
   "The Feathers Fly Part I#093": {
    "src": "Alright, let's soak this.",
-   "dst": "",
+   "dst": "好，把这个泡湿。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -948,7 +948,7 @@
   },
   "The Feathers Fly Part I#094": {
    "src": "TELEPORTATION?!",
-   "dst": "",
+   "dst": "传送？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -958,7 +958,7 @@
   },
   "The Feathers Fly Part I#095": {
    "src": "Center... I guess the most important stuff could be here. In theory. I wouldn't count on it.",
-   "dst": "",
+   "dst": "中间……我猜最重要的东西可能在这里。理论上。我可不敢指望。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -968,7 +968,7 @@
   },
   "The Feathers Fly Part I#096": {
    "src": "Huh! This wasn't that bad. And... I see something poking out, hold on...",
-   "dst": "",
+   "dst": "嗯！还不算太糟。而且……我看到有东西露出来了，等一下……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -978,7 +978,7 @@
   },
   "The Feathers Fly Part I#097": {
    "src": "Haha!... Wait, that's not it. Urgh.",
-   "dst": "",
+   "dst": "哈哈！……等等，不是这个。呃。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -988,7 +988,7 @@
   },
   "The Feathers Fly Part I#098": {
    "src": "Hey, I'll just give that to you. Though, you probably don't know how to use it, heh!",
-   "dst": "",
+   "dst": "嘿，这个就给你吧。不过你大概不知道怎么用，嘿！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -998,7 +998,7 @@
   },
   "The Feathers Fly Part I#099": {
    "src": "Looks like we got another shot. I still have some water left.",
-   "dst": "",
+   "dst": "看来我们还有一次机会。我还剩一些水。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1008,7 +1008,7 @@
   },
   "The Feathers Fly Part I#100": {
    "src": "Center... I guess the most important stuff could be here. In theory. I wouldn't count on it.",
-   "dst": "",
+   "dst": "中间……我猜最重要的东西可能在这里。理论上。我可不敢指望。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1018,7 +1018,7 @@
   },
   "The Feathers Fly Part I#101": {
    "src": "Huh! This wasn't that bad. And... I see something poking out, hold on...",
-   "dst": "",
+   "dst": "嗯！还不算太糟。而且……我看到有东西露出来了，等一下……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1028,7 +1028,7 @@
   },
   "The Feathers Fly Part I#102": {
    "src": "Haha! I think that's what we're looking for!",
-   "dst": "",
+   "dst": "哈哈！我想这就是我们要找的东西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1038,7 +1038,7 @@
   },
   "The Feathers Fly Part I#103": {
    "src": "Look, I still want to make it up to the guy. I really don't want to be the villain of his story.",
-   "dst": "",
+   "dst": "听着，我还是想跟那家伙赔个不是。我真的不想当他故事里的坏人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1048,7 +1048,7 @@
   },
   "The Feathers Fly Part I#104": {
    "src": "I'll meet you back at the Workshop. You can go on ahead.",
-   "dst": "",
+   "dst": "我们在工坊碰头。你先走吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1058,7 +1058,7 @@
   },
   "The Feathers Fly Part I#105": {
    "src": "Right, right. Stand back, just in case.",
-   "dst": "",
+   "dst": "好，好。站远一点，以防万一。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1068,7 +1068,7 @@
   },
   "The Feathers Fly Part I#106": {
    "src": "Oh wow. You got the right one, first try! How'd you know?",
-   "dst": "",
+   "dst": "噢哇。你一次就选对了！你怎么知道的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1078,7 +1078,7 @@
   },
   "The Feathers Fly Part I#107": {
    "src": "Well, good job. I still want to make it up to the poor guy though.",
-   "dst": "",
+   "dst": "嗯，干得好。不过我还是想跟那个可怜的家伙赔个不是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1088,7 +1088,7 @@
   },
   "The Feathers Fly Part I#108": {
    "src": "Just meet me back at the Workshop, I'll be there!",
-   "dst": "",
+   "dst": "我们在工坊碰头就好，我会在那里！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1098,7 +1098,7 @@
   },
   "The Feathers Fly Part I#109": {
    "src": "Fight your way out of the shop at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 杀出商店",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -1108,7 +1108,7 @@
   },
   "The Feathers Fly Part I#110": {
    "src": "Meet Ava in the workshop at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 的工坊与 Ava 会合",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -1118,7 +1118,7 @@
   },
   "The Feathers Fly Part I#111": {
    "src": "Ouch!",
-   "dst": "",
+   "dst": "哎哟！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1128,7 +1128,7 @@
   },
   "The Feathers Fly Part I#112": {
    "src": "Sorry about all the trouble I caused... I hope this makes it up to you.",
-   "dst": "",
+   "dst": "抱歉给你惹了这么多麻烦……希望这个能弥补你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1138,7 +1138,7 @@
   },
   "The Feathers Fly Part I#113": {
    "src": "I hope 's alright... I managed to find the microchip right away, after all.",
-   "dst": "",
+   "dst": "希望 没事……毕竟我马上就找到微芯片了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1148,7 +1148,7 @@
   },
   "The Feathers Fly Part I#114": {
    "src": "...Alright. Time to go. I'll wait for , I guess.",
-   "dst": "",
+   "dst": "……好了。该走了。我想我就等等 吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1158,7 +1158,7 @@
   },
   "The Feathers Fly Part I#115": {
    "src": "Ouch!",
-   "dst": "",
+   "dst": "哎哟！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1168,7 +1168,7 @@
   },
   "The Feathers Fly Part I#116": {
    "src": "Sorry about all the trouble I caused... I hope this makes it up to you.",
-   "dst": "",
+   "dst": "抱歉给你惹了这么多麻烦……希望这个能弥补你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1178,7 +1178,7 @@
   },
   "The Feathers Fly Part I#117": {
    "src": "...Alright. Time to go.",
-   "dst": "",
+   "dst": "……好了。该走了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1188,7 +1188,7 @@
   },
   "The Feathers Fly Part I#118": {
    "src": "Oh, there you are! I felt sad leaving you behind!",
-   "dst": "",
+   "dst": "噢，你在这里！把你丢下我好难过！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1198,7 +1198,7 @@
   },
   "The Feathers Fly Part I#119": {
    "src": "Say, if you need a lift, just tell me.",
-   "dst": "",
+   "dst": "对了，如果你需要搭便车，跟我说就行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1208,7 +1208,7 @@
   },
   "The Feathers Fly Part I#120": {
    "src": "Alright then, buckle up!",
-   "dst": "",
+   "dst": "好，抓紧了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1218,7 +1218,7 @@
   },
   "The Feathers Fly Part I#121": {
    "src": "Alright, I'm dropping you off! Stick the landing!",
-   "dst": "",
+   "dst": "好，我要放你下去了！落地要稳！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1228,7 +1228,7 @@
   },
   "The Feathers Fly Part I#122": {
    "src": "I can't believe it! It's working! Look! Look at it!",
-   "dst": "",
+   "dst": "真不敢相信！它成功了！你看！你看它！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1238,7 +1238,7 @@
   },
   "The Feathers Fly Part I#123": {
    "src": "A Growth Accelerator... Can you imagine the possibilities?!",
-   "dst": "",
+   "dst": "生长加速器……你能想象有多少可能性吗？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1248,7 +1248,7 @@
   },
   "The Feathers Fly Part I#124": {
    "src": "We'll be able to... I don't know, help the poor, that's nice, right?",
-   "dst": "",
+   "dst": "我们就能……我也不知道，帮助穷人，这很好，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1258,7 +1258,7 @@
   },
   "The Feathers Fly Part I#125": {
    "src": "But we're not done. Well, I'm not done. I'd still like your help.",
-   "dst": "",
+   "dst": "但我们还没完。嗯，是我还没完。我还是想请你帮忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1268,7 +1268,7 @@
   },
   "The Feathers Fly Part I#126": {
    "src": "Look, let's try it out together, alright? Maybe I'll let you go afterwards?",
-   "dst": "",
+   "dst": "听着，我们一起来试试，好吗？说不定试完我就放你走？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1278,7 +1278,7 @@
   },
   "The Feathers Fly Part I#127": {
    "src": "I'll join you outside. Once I'm sure this works, I'll be able to... Show it to them.",
-   "dst": "",
+   "dst": "我到外面跟你会合。等我确定它管用，我就能……拿给他们看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1288,7 +1288,7 @@
   },
   "The Feathers Fly Part I#128": {
    "src": "In theory, it should be easy to operate... I'm trusting you. Again. Sorry 'bout that.",
-   "dst": "",
+   "dst": "理论上，它应该很容易操作……我相信你。又一次。抱歉啦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1298,7 +1298,7 @@
   },
   "The Feathers Fly Part I#129": {
    "src": "Meet Ava outside of the Workshop and help her operate her machine at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 的工坊外与 Ava 会合，帮她操作机器",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -1308,7 +1308,7 @@
   },
   "The Feathers Fly Part I#130": {
    "src": "Alright, it's just on the hill next to us, but I can bring you there if ya want!",
-   "dst": "",
+   "dst": "好，就在我们旁边的山丘上，不过你想的话我可以载你过去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1318,7 +1318,7 @@
   },
   "The Feathers Fly Part I#131": {
    "src": "Just don't get too used to me, alright? Tell me when you're ready.",
-   "dst": "",
+   "dst": "只是别太依赖我，好吗？准备好了就告诉我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1328,7 +1328,7 @@
   },
   "The Feathers Fly Part I#132": {
    "src": "Here we go!",
-   "dst": "",
+   "dst": "出发！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1338,7 +1338,7 @@
   },
   "The Feathers Fly Part I#133": {
    "src": "Or I guess you could just leave, that's cool too...",
-   "dst": "",
+   "dst": "或者你也可以直接走人，那也没关系……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1348,7 +1348,7 @@
   },
   "The Feathers Fly Part I#134": {
    "src": "Alright, this should be good. Talk to me and I'll explain!",
-   "dst": "",
+   "dst": "好，这里应该可以。跟我说话，我来解释！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1358,7 +1358,7 @@
   },
   "The Feathers Fly Part I#135": {
    "src": "I'll do a quick rundown of how to operate this. It's not automatic yet.",
-   "dst": "",
+   "dst": "我快速讲一下怎么操作。它还不是自动的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1368,7 +1368,7 @@
   },
   "The Feathers Fly Part I#136": {
    "src": "I'll give you a remote. You'll simply have to click in the right orders. You'll see!",
-   "dst": "",
+   "dst": "我会给你一个遥控器。你只要按正确的顺序点击就行。你会明白的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1378,7 +1378,7 @@
   },
   "The Feathers Fly Part I#137": {
    "src": "You have to be quick, though! You can't just take all the time you want.",
-   "dst": "",
+   "dst": "不过你得动作快！可不能想花多少时间就花多少时间。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1388,7 +1388,7 @@
   },
   "The Feathers Fly Part I#138": {
    "src": "I have no clue how stable all of this is, so we'll start slowly!",
-   "dst": "",
+   "dst": "我完全不知道这一切有多稳定，所以我们先慢慢来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1398,7 +1398,7 @@
   },
   "The Feathers Fly Part I#139": {
    "src": "I know this sounds a li'l scary, but you've shown yourself being capable.",
-   "dst": "",
+   "dst": "我知道这听起来有点吓人，不过你已经证明了自己很能干。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1408,7 +1408,7 @@
   },
   "The Feathers Fly Part I#140": {
    "src": "Tell me when you're ready, I'll give you the remote then start the machine!",
-   "dst": "",
+   "dst": "准备好了就告诉我，我会给你遥控器，然后启动机器！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1418,7 +1418,7 @@
   },
   "The Feathers Fly Part I#141": {
    "src": "Ready? Take this first.",
-   "dst": "",
+   "dst": "准备好了吗？先拿着这个。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1428,7 +1428,7 @@
   },
   "The Feathers Fly Part I#142": {
    "src": "Think of it like... Casting one of your spells. You're used to that, right?",
-   "dst": "",
+   "dst": "就把它想成……施放你的法术。你很习惯那个，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1438,7 +1438,7 @@
   },
   "The Feathers Fly Part I#143": {
    "src": "Let's start slowly! You have {~} seconds to fully charge it up!",
-   "dst": "",
+   "dst": "我们先慢慢来！你有 {~} 秒把它完全充能！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1448,7 +1448,7 @@
   },
   "The Feathers Fly Part I#144": {
    "src": "And now, we observe!",
-   "dst": "",
+   "dst": "现在，我们来观察！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1458,7 +1458,7 @@
   },
   "The Feathers Fly Part I#145": {
    "src": "Oh my... I- No way...",
-   "dst": "",
+   "dst": "噢天啊……我——不会吧……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1468,7 +1468,7 @@
   },
   "The Feathers Fly Part I#146": {
    "src": "Do you have ANY idea what it is we've just done?",
-   "dst": "",
+   "dst": "你知道我们刚刚做了什么吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1478,7 +1478,7 @@
   },
   "The Feathers Fly Part I#147": {
    "src": "I have to show that to the Chief. They WILL accept me! I cannot fail now!",
-   "dst": "",
+   "dst": "我得拿给族长看。他们一定会接纳我的！我现在不能失败！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1488,7 +1488,7 @@
   },
   "The Feathers Fly Part I#148": {
    "src": "Tell you what, let's meet up at the Chief's hut. If you want me to take you there right now, you can just go ahead and tell me!",
-   "dst": "",
+   "dst": "这样吧，我们在族长的小屋碰头。如果你想让我现在就载你过去，直接跟我说就行！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1498,7 +1498,7 @@
   },
   "The Feathers Fly Part I#149": {
    "src": "Operate the machine with Ava for the Avos Chief at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 与 Ava 一起为 Avos 族长操作机器",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -1508,7 +1508,7 @@
   },
   "The Feathers Fly Part I#150": {
    "src": "Alright, let's fly!",
-   "dst": "",
+   "dst": "好，我们飞吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1518,7 +1518,7 @@
   },
   "The Feathers Fly Part I#151": {
    "src": "It really is convenient being with me, huh?",
-   "dst": "",
+   "dst": "跟我在一起真的很方便，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1528,7 +1528,7 @@
   },
   "The Feathers Fly Part I#152": {
    "src": "On second thought... Isn't it too soon?",
-   "dst": "",
+   "dst": "再想想……是不是太快了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1538,7 +1538,7 @@
   },
   "The Feathers Fly Part I#153": {
    "src": "I-I think I want to turn back... I...",
-   "dst": "",
+   "dst": "我、我想我想回头……我……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1548,7 +1548,7 @@
   },
   "The Feathers Fly Part I#154": {
    "src": "You should approach the Chief first. It... won't work if I do it. I'll come by afterwards.",
-   "dst": "",
+   "dst": "你应该先去找族长。如果是我去……不会有用的。我之后再过去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1558,7 +1558,7 @@
   },
   "The Feathers Fly Part I#155": {
    "src": "Ah, human! Welcome back. Good timing...",
-   "dst": "",
+   "dst": "啊，人类！欢迎回来。来得正好……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1568,7 +1568,7 @@
   },
   "The Feathers Fly Part I#156": {
    "src": "Did you happen to see... An oddly dressed Avo around here recently?",
-   "dst": "",
+   "dst": "你最近有没有碰巧在这附近看到……一个穿着古怪的 Avos 人？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1578,7 +1578,7 @@
   },
   "The Feathers Fly Part I#157": {
    "src": "We kicked that girl from the tribe, and we do have our reasons.",
-   "dst": "",
+   "dst": "我们把那个女孩赶出了部落，我们是有理由的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1588,7 +1588,7 @@
   },
   "The Feathers Fly Part I#158": {
    "src": "I've heard reports of her snooping around recently. With a human, even.",
-   "dst": "",
+   "dst": "我听说她最近在附近鬼鬼祟祟的。还跟一个人类在一起。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1598,7 +1598,7 @@
   },
   "The Feathers Fly Part I#159": {
    "src": "And I believe... That this is no coincidence you're here.",
-   "dst": "",
+   "dst": "而我相信……你会在这里并不是巧合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1608,7 +1608,7 @@
   },
   "The Feathers Fly Part I#160": {
    "src": "I will be frank. You're with her, aren't you? I won't hurt you. I won't hurt her either.",
-   "dst": "",
+   "dst": "我就直说了。你跟她是一伙的，对吧？我不会伤害你。我也不会伤害她。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1618,7 +1618,7 @@
   },
   "The Feathers Fly Part I#161": {
    "src": "She's not exactly welcome here. But she's never told you about that, did she?",
-   "dst": "",
+   "dst": "她在这里不太受欢迎。不过她从来没跟你提过这件事，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1628,7 +1628,7 @@
   },
   "The Feathers Fly Part I#162": {
    "src": "And I have nothing to hide, Chief.",
-   "dst": "",
+   "dst": "我没有什么好隐瞒的，族长。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1638,7 +1638,7 @@
   },
   "The Feathers Fly Part I#163": {
    "src": "STOP IT, you two! Let her talk!",
-   "dst": "",
+   "dst": "住手，你们两个！让她说！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1648,7 +1648,7 @@
   },
   "The Feathers Fly Part I#164": {
    "src": "You're all scared of change, and that's all there is to it. Now...",
-   "dst": "",
+   "dst": "你们全都害怕改变，就这么简单。现在……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1658,7 +1658,7 @@
   },
   "The Feathers Fly Part I#165": {
    "src": "May I... Show you something?",
-   "dst": "",
+   "dst": "能让我……给你们看样东西吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1668,7 +1668,7 @@
   },
   "The Feathers Fly Part I#166": {
    "src": "Hmpf. Let's see that broken atrocity of yours.",
-   "dst": "",
+   "dst": "哼。让我们看看你那个破烂玩意吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1678,7 +1678,7 @@
   },
   "The Feathers Fly Part I#167": {
    "src": "...It's time. Talk to me.",
-   "dst": "",
+   "dst": "……时候到了。跟我说话。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1688,7 +1688,7 @@
   },
   "The Feathers Fly Part I#168": {
    "src": "This is it. I can't fail now... I really hope I can trust you.",
-   "dst": "",
+   "dst": "就是现在。我现在不能失败……真希望我能信任你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1698,7 +1698,7 @@
   },
   "The Feathers Fly Part I#169": {
    "src": "You have no idea how important this is to me.",
-   "dst": "",
+   "dst": "你不知道这对我有多重要。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1708,7 +1708,7 @@
   },
   "The Feathers Fly Part I#170": {
    "src": "It'll be slightly more difficult than last time, so get ready.",
-   "dst": "",
+   "dst": "这次会比上次难一点，所以做好准备。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1718,7 +1718,7 @@
   },
   "The Feathers Fly Part I#171": {
    "src": "I'll give you the remote once you're ready!",
-   "dst": "",
+   "dst": "等你准备好了我就把遥控器给你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1728,7 +1728,7 @@
   },
   "The Feathers Fly Part I#172": {
    "src": "Wait, are you sure this isn't dang-",
-   "dst": "",
+   "dst": "等等，你确定这不危——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1738,7 +1738,7 @@
   },
   "The Feathers Fly Part I#173": {
    "src": "Don't worry 'bout that!",
-   "dst": "",
+   "dst": "别担心那个！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1748,7 +1748,7 @@
   },
   "The Feathers Fly Part I#174": {
    "src": "That's it, I-",
-   "dst": "",
+   "dst": "够了，我——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1758,7 +1758,7 @@
   },
   "The Feathers Fly Part I#175": {
    "src": "Let's just give her a chance for now.",
-   "dst": "",
+   "dst": "暂时先给她一个机会吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1768,7 +1768,7 @@
   },
   "The Feathers Fly Part I#176": {
    "src": "Why is she getting away with using such magic?!",
-   "dst": "",
+   "dst": "她凭什么可以使用那种魔法还不受惩罚？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1778,7 +1778,7 @@
   },
   "The Feathers Fly Part I#177": {
    "src": "Oh I'm gonna charge this sapling like crazy!",
-   "dst": "",
+   "dst": "噢，我要把这棵树苗充能到爆！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1788,7 +1788,7 @@
   },
   "The Feathers Fly Part I#178": {
    "src": "Hmm... Interesting...",
-   "dst": "",
+   "dst": "嗯……有意思……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1798,7 +1798,7 @@
   },
   "The Feathers Fly Part I#179": {
    "src": "One last time soldier, and I'm counting on you to be quick!",
-   "dst": "",
+   "dst": "最后一次了，士兵，我就靠你动作快了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1808,7 +1808,7 @@
   },
   "The Feathers Fly Part I#180": {
    "src": "Stand back... Almost there!",
-   "dst": "",
+   "dst": "站远一点……快好了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1818,7 +1818,7 @@
   },
   "The Feathers Fly Part I#181": {
    "src": "...Oh my!",
-   "dst": "",
+   "dst": "……天啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1828,7 +1828,7 @@
   },
   "The Feathers Fly Part I#182": {
    "src": "Wait... That's it?? No, this isn't right...",
-   "dst": "",
+   "dst": "等等……就这样？？不，这不对……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1838,7 +1838,7 @@
   },
   "The Feathers Fly Part I#183": {
    "src": "Let me just...",
-   "dst": "",
+   "dst": "让我来……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1848,7 +1848,7 @@
   },
   "The Feathers Fly Part I#184": {
    "src": "That's enough!",
-   "dst": "",
+   "dst": "够了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1858,7 +1858,7 @@
   },
   "The Feathers Fly Part I#185": {
    "src": "Chief! Have you seen what she just did?!",
-   "dst": "",
+   "dst": "族长！你看到她刚才做了什么吗？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1868,7 +1868,7 @@
   },
   "The Feathers Fly Part I#186": {
    "src": "I-I didn't mean to! I told you to stand back!!",
-   "dst": "",
+   "dst": "我、我不是故意的！我叫你们站远一点了！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1878,7 +1878,7 @@
   },
   "The Feathers Fly Part I#187": {
    "src": "Under normal circumstances, I'd have sent you down the pit after cutting off your feathers.",
-   "dst": "",
+   "dst": "要是在平常，我早就剪掉你的羽毛，把你扔进深坑了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1888,7 +1888,7 @@
   },
   "The Feathers Fly Part I#188": {
    "src": "But these are not normal circumstances. Soldier, may you come over here as well?",
-   "dst": "",
+   "dst": "但现在不是平常。士兵，你也过来这边好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1898,7 +1898,7 @@
   },
   "The Feathers Fly Part I#189": {
    "src": "Talk to the Avos Chief with Ava at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "与 Ava 一起跟 [-{~}, {~}, -{~}] 的 Avos 族长谈谈",
    "role": "desc",
    "kind": "objective",
    "quest": "The Feathers Fly Part I",
@@ -1908,7 +1908,7 @@
   },
   "The Feathers Fly Part I#190": {
    "src": "So you fused OUR magic... With electromagic?",
-   "dst": "",
+   "dst": "所以你把我们的魔法……跟电磁魔法融合在一起了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1918,7 +1918,7 @@
   },
   "The Feathers Fly Part I#191": {
    "src": "I recognized extracts from the totem too. You're the one who stole from us, right?",
-   "dst": "",
+   "dst": "我也认出了图腾的萃取物。偷我们东西的就是你，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1928,7 +1928,7 @@
   },
   "The Feathers Fly Part I#192": {
    "src": "I... might have done that.",
-   "dst": "",
+   "dst": "我……可能是我干的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1938,7 +1938,7 @@
   },
   "The Feathers Fly Part I#193": {
    "src": "And on top of that, you used the Wynn warrior to fool us?",
-   "dst": "",
+   "dst": "而且除此之外，你还利用 Wynn 的战士来骗我们？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1948,7 +1948,7 @@
   },
   "The Feathers Fly Part I#194": {
    "src": "And I'm sure you know why I did!",
-   "dst": "",
+   "dst": "我相信你知道我为什么这么做！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1958,7 +1958,7 @@
   },
   "The Feathers Fly Part I#195": {
    "src": "Do you have any idea how unstable this wretched electromagic is?!",
-   "dst": "",
+   "dst": "你知道这可恶的电磁魔法有多不稳定吗？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1968,7 +1968,7 @@
   },
   "The Feathers Fly Part I#196": {
    "src": "I-I can control it!!",
-   "dst": "",
+   "dst": "我、我控制得住！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1978,7 +1978,7 @@
   },
   "The Feathers Fly Part I#197": {
    "src": "And you should NOT! Don't you understand? This is too dangerous!",
-   "dst": "",
+   "dst": "你就不该去控制！你难道不明白吗？这太危险了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1988,7 +1988,7 @@
   },
   "The Feathers Fly Part I#198": {
    "src": "Should we kill her on the spot?! We almost died!",
-   "dst": "",
+   "dst": "我们要不要当场杀了她？！我们差点就死了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -1998,7 +1998,7 @@
   },
   "The Feathers Fly Part I#199": {
    "src": "No, don't kill her. I want her and the soldier in my hut, now.",
-   "dst": "",
+   "dst": "不，别杀她。我要她和那个士兵马上到我的小屋来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2008,7 +2008,7 @@
   },
   "The Feathers Fly Part I#200": {
    "src": "Ava. You can't keep going with this. Just stop. This is your final warning.",
-   "dst": "",
+   "dst": "Ava。你不能再继续这样下去了。停手吧。这是最后警告。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2018,7 +2018,7 @@
   },
   "The Feathers Fly Part I#201": {
    "src": "What do you even hope to accomplish? You used to be such a brilliant kid.",
-   "dst": "",
+   "dst": "你到底想达成什么？你以前是个多聪明的孩子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2028,7 +2028,7 @@
   },
   "The Feathers Fly Part I#202": {
    "src": "I just... wanna help people. You know that, I'm sure you understand!",
-   "dst": "",
+   "dst": "我只是……想帮助大家。你知道的，我相信你能理解！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2038,7 +2038,7 @@
   },
   "The Feathers Fly Part I#203": {
    "src": "Have you seen the Factory? They tried to help people, and instead they killed hundreds!",
-   "dst": "",
+   "dst": "你看过那座工厂了吗？他们也想帮助大家，结果却害死了几百人！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2048,7 +2048,7 @@
   },
   "The Feathers Fly Part I#204": {
    "src": "Do you think you're able change the world?! Well, you can't, Ava! This is beyond you!",
-   "dst": "",
+   "dst": "你以为你能改变世界吗？！嗯，你不能，Ava！这超出你的能力了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2058,7 +2058,7 @@
   },
   "The Feathers Fly Part I#205": {
    "src": "So, for the last time. Stop all of this. I might reconsider your banishment then.",
-   "dst": "",
+   "dst": "所以，最后一次。停止这一切。到时我也许会重新考虑你的放逐。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2068,7 +2068,7 @@
   },
   "The Feathers Fly Part I#206": {
    "src": "You... You're really serious about that, huh? You'll NEVER change, will you?!",
-   "dst": "",
+   "dst": "你……你是认真的，是吧？你们永远都不会改变，对吧？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2078,7 +2078,7 @@
   },
   "The Feathers Fly Part I#207": {
    "src": "Do you guys have ANY idea how archaic you all are?! A final warning??",
-   "dst": "",
+   "dst": "你们到底知不知道你们有多老古板？！最后警告？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2088,7 +2088,7 @@
   },
   "The Feathers Fly Part I#208": {
    "src": "I can't believe you worked with her, soldier. Well, now you know to avoid her.",
-   "dst": "",
+   "dst": "真不敢相信你会跟她合作，士兵。好了，现在你知道该离她远一点了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
@@ -2098,7 +2098,7 @@
   },
   "The Feathers Fly Part I#209": {
    "src": "...It appears she left some device on the floor. You might as well take them. And here, take these. We haven't had the chance to thank you regarding the Factory.",
-   "dst": "",
+   "dst": "……看来她在地上留下了一些装置。你不如就拿走吧。还有，收下这些。关于工厂的事，我们一直没机会谢谢你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Feathers Fly Part I",
