@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lost Soles",
   "count": 61,
-  "translated": 0,
+  "translated": 57,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost Soles#000": {
    "src": "Talk to Ferndor at [-{~}, {~}, -{~}], make sure to bring Abysso Galoshes with you.",
-   "dst": "",
+   "dst": "与 [-{~}, {~}, -{~}] 的 Ferndor 对话，记得带上 Abysso Galoshes。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -18,7 +18,7 @@
   },
   "Lost Soles#001": {
    "src": "Have you seen boots called Abysso Galoshes on your journey, a pirate stole them from us years ago! I could reward you if you could bring me the Abysso Galoshes and help us!",
-   "dst": "",
+   "dst": "你在旅途中见过一双叫 Abysso Galoshes 的靴子吗？几年前被一个海盗从我们这里偷走了！如果你能把 Abysso Galoshes 带来帮我们，我会给你奖励！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -28,7 +28,7 @@
   },
   "Lost Soles#002": {
    "src": "Bring back Abysso Galoshes, received during the quest Beneath the Depths.",
-   "dst": "",
+   "dst": "带回 Abysso Galoshes，它是在任务 Beneath the Depths 中获得的。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -38,7 +38,7 @@
   },
   "Lost Soles#003": {
    "src": "I see you have the infamous galoshes with you. But do you know even half of the story of them?",
-   "dst": "",
+   "dst": "看来你带着那双恶名昭彰的靴子。不过你知道它们一半的故事吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -48,7 +48,7 @@
   },
   "Lost Soles#004": {
    "src": "The boots were once owned by my ancestors, who decided to lock it away in this manor years ago.",
-   "dst": "",
+   "dst": "这双靴子曾经属于我的祖先，他们多年前决定把它锁在这座庄园里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -58,7 +58,7 @@
   },
   "Lost Soles#005": {
    "src": "Nobody knows why they decided to hide the boots just after they got into my family's hands. I was told they were acquired from a strange man with pale grey skin.",
-   "dst": "",
+   "dst": "没人知道为什么靴子一到我家人手里，他们就决定把它藏起来。我听说是从一个皮肤灰白的怪人手里弄到的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -68,7 +68,7 @@
   },
   "Lost Soles#006": {
    "src": "We think they hid the boots in some kind of basement in the manor. You can get to it by following the river to the waterfall, but you will need some kind of code to open it...",
-   "dst": "",
+   "dst": "我们认为他们把靴子藏在庄园的某个地下室里。沿着河走到瀑布就能到，不过你需要某种密码才能打开……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -78,7 +78,7 @@
   },
   "Lost Soles#007": {
    "src": "I remember Grandon saying that he found a book which is apparently a diary from one of my ancestors. Ever since that filthy pirate raided our home and stole our treasures, weird things have been happening.",
-   "dst": "",
+   "dst": "我记得 Grandon 说过他找到一本书，好像是我一位祖先的日记。自从那个肮脏的海盗洗劫了我们家、偷走了我们的宝物，怪事就一直发生。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -88,7 +88,7 @@
   },
   "Lost Soles#008": {
    "src": "Grandon should already have finished reading it. If I allow you to enter my home, would you talk to him?",
-   "dst": "",
+   "dst": "Grandon 应该已经读完了。如果我让你进我家，你愿意去跟他谈谈吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -98,7 +98,7 @@
   },
   "Lost Soles#009": {
    "src": "There are strange things going on in this mansion and I hope that book reveals everything we need to know...",
-   "dst": "",
+   "dst": "这座宅邸里发生着奇怪的事，我希望那本书能告诉我们需要知道的一切……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -108,7 +108,7 @@
   },
   "Lost Soles#010": {
    "src": "I almost forgot to give you your boots back, I am not sure if I want to have them near me. Remember, it is imperative you find the {~} digit code to the basement.",
-   "dst": "",
+   "dst": "我差点忘了把靴子还给你，我不太想让它们待在我身边。记住，你一定要找到地下室的 {~} 位数密码。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -118,7 +118,7 @@
   },
   "Lost Soles#011": {
    "src": "Visit the mansion dining room and ask Grandon about the book",
-   "dst": "",
+   "dst": "去宅邸的餐厅向 Grandon 询问那本书",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -128,7 +128,7 @@
   },
   "Lost Soles#012": {
    "src": "Ferndor sent you here, correct? That must mean you’re here to help find the hidden {~} digit code in the manor.",
-   "dst": "",
+   "dst": "是 Ferndor 叫你来的，对吧？那你一定是来帮忙找庄园里隐藏的 {~} 位数密码的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -138,7 +138,7 @@
   },
   "Lost Soles#013": {
    "src": "The book is actually a diary written by our ancestors decades ago. It is actually very interesting, how they remodeled almost the whole house.",
-   "dst": "",
+   "dst": "这本书其实是我们祖先几十年前写的日记。其实很有意思，他们几乎把整栋房子都改造过了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -148,7 +148,7 @@
   },
   "Lost Soles#014": {
    "src": "Ferndor probably told you about the boots, right? The diary has some information about them...ah, here, on this page.",
-   "dst": "",
+   "dst": "Ferndor 大概跟你说过靴子的事了吧？日记里有一些关于它们的信息……啊，在这里，这一页。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -158,7 +158,7 @@
   },
   "Lost Soles#015": {
    "src": "Here...our family bought them from \"a dark and mysterious humanoid creature\" a long time ago.",
-   "dst": "",
+   "dst": "这里……很久以前，我们家族从“一个黑暗而神秘的类人生物”手里买下了它们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -168,7 +168,7 @@
   },
   "Lost Soles#016": {
    "src": "The boots were apparently so valuable that the creature as part of the deal, said they put some kind of spell on them, but that was a lie.",
-   "dst": "",
+   "dst": "那双靴子显然非常贵重，那个生物说作为交易的一部分，给它们施了某种法术，但那是谎话。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -178,7 +178,7 @@
   },
   "Lost Soles#017": {
    "src": "It was found that the boots themselves were horrendously powerful, imbued with dark magic that will deteriorate and decay everything around it over time.",
-   "dst": "",
+   "dst": "后来发现靴子本身强大得可怕，蕴含着黑暗魔法，会随着时间让周围的一切衰败腐朽。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -188,7 +188,7 @@
   },
   "Lost Soles#018": {
    "src": "They were given a special boot container with similar effects, but when the Galoshes are within the Container, they cancel each others' effects out.",
-   "dst": "",
+   "dst": "他们得到了一个效果类似的特殊靴盒，而当靴子放在盒子里时，两者的效果就会互相抵消。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -198,7 +198,7 @@
   },
   "Lost Soles#019": {
    "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get them, maybe you can find out what they mean. Here, try this one:",
-   "dst": "",
+   "dst": "他们把靴子和盒子一起藏在宅邸里。这本日记的作者写下了一些拿到它们的提示，也许你能弄明白是什么意思。来，试试这一条：",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -208,7 +208,7 @@
   },
   "Lost Soles#020": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
-   "dst": "",
+   "dst": "“大厅上方那张脸，它的鼻子得更重才能打开道路”。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -218,7 +218,7 @@
   },
   "Lost Soles#021": {
    "src": "Hmm, all the hints appear in a chapter about this room, the dining hall. Any idea what this meant? It feels like it should be obvious, but I can't for the life of me figure this out.",
-   "dst": "",
+   "dst": "嗯，所有提示都出现在讲这个房间——餐厅——的那一章里。你知道这是什么意思吗？感觉应该很明显，可我怎么也想不通。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -228,7 +228,7 @@
   },
   "Lost Soles#022": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\"",
-   "dst": "",
+   "dst": "“大厅上方那张脸，它的鼻子得更重才能打开道路”",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -238,7 +238,7 @@
   },
   "Lost Soles#023": {
    "src": "Talk to Grandon and tell him about your findings",
-   "dst": "",
+   "dst": "与 Grandon 对话，告诉他你的发现",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -248,7 +248,7 @@
   },
   "Lost Soles#024": {
    "src": "A room hidden underneath the big head? Why didn't I think of that!? I always wondered how self-centered they had to be to put that in, but who knew it actually had a valid purpose!",
-   "dst": "",
+   "dst": "大头下面藏着一个房间？我怎么没想到！我一直在想他们得多自恋才会放那个东西，谁知道它真的有用处！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -258,7 +258,7 @@
   },
   "Lost Soles#025": {
    "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
-   "dst": "",
+   "dst": "所以，有块告示叫你去角落找石头？嗯……有意思！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -268,7 +268,7 @@
   },
   "Lost Soles#026": {
    "src": "Whoever placed down that sign might have a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
-   "dst": "",
+   "dst": "放那块告示的人可能有一条通往二楼的秘密通道。楼梯塌了以后，二楼已经很久没人能上去了。除了 Leacen，不过她有点疯疯的……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -278,7 +278,7 @@
   },
   "Lost Soles#027": {
    "src": "Anyway, seems they guessed that we would have to search for a way to return the boots, and made preparations. Good thing, that.",
-   "dst": "",
+   "dst": "总之，看来他们猜到我们得想办法把靴子放回去，还提前做了准备。那真是太好了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -288,7 +288,7 @@
   },
   "Lost Soles#028": {
    "src": "As I said, the stairs are all broken. I mean, I certainly couldn't climb up those rotten scraps of wood. Suppose it might be best to look for that stone, hm?",
-   "dst": "",
+   "dst": "我说过，楼梯全都坏了。我是说，我肯定爬不上那些烂木头。我想最好还是去找那块石头吧，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -298,7 +298,7 @@
   },
   "Lost Soles#029": {
    "src": "But where could it be...oh? Is this a hint? I just noticed this on the next page.",
-   "dst": "",
+   "dst": "可是会在哪呢……噢？这是提示吗？我刚在下一页注意到这个。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -308,7 +308,7 @@
   },
   "Lost Soles#030": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\".",
-   "dst": "",
+   "dst": "“颜色不同的地毯会指出那块石头，揭开桌子的秘密”。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -318,7 +318,7 @@
   },
   "Lost Soles#031": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\"",
-   "dst": "",
+   "dst": "“颜色不同的地毯会指出那块石头，揭开桌子的秘密”",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -328,7 +328,7 @@
   },
   "Lost Soles#032": {
    "src": "Talk to Grandon and tell him about your findings",
-   "dst": "",
+   "dst": "与 Grandon 对话，告诉他你的发现",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -338,7 +338,7 @@
   },
   "Lost Soles#033": {
    "src": "Sheesh! Quite the engineers, these old fellows! Never would've imagined any of this in the house. Anyway, was there a message? What did it say?",
-   "dst": "",
+   "dst": "哎呀！这些老家伙真是了不起的工程师！我从来没想过房子里会有这些东西。总之，有留言吗？上面写了什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -348,7 +348,7 @@
   },
   "Lost Soles#034": {
    "src": "The hole nobody wanted? He can only mean the little rat hole in the back part of this hall. Though, it's more just a hole anymore, all the rats are gone.",
-   "dst": "",
+   "dst": "没人要的洞？他指的一定是这个大厅后面的小老鼠洞。不过现在它就只是个洞了，老鼠都没了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -358,7 +358,7 @@
   },
   "Lost Soles#035": {
    "src": "Well, details, details. We never checked it any more than just laying mouse traps, so I suppose there could be something in there given how complex these contraptions have been.",
-   "dst": "",
+   "dst": "嗯，细节，细节。我们除了放捕鼠器之外从没仔细查过，考虑到这些机关有多复杂，我想里面可能真有什么东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -368,7 +368,7 @@
   },
   "Lost Soles#036": {
    "src": "I would say, you look into the hole and then search on top of the blue flags!",
-   "dst": "",
+   "dst": "我建议你去看看那个洞，然后到蓝旗子上面找找！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -378,7 +378,7 @@
   },
   "Lost Soles#037": {
    "src": "But if that's the way up to the second floor, what does the diary mean by this?",
-   "dst": "",
+   "dst": "可是如果那是通往二楼的路，日记里这句又是什么意思？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -388,7 +388,7 @@
   },
   "Lost Soles#038": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"? Wait, that probably means the code to the basement! Come back to me at once when you've done that, I have more to tell you!",
-   "dst": "",
+   "dst": "“往墙上的地图后面扔点东西，就能揭开一部分密码”？等等，那大概是指地下室的密码！弄好之后马上回来找我，我还有更多事要告诉你！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -398,7 +398,7 @@
   },
   "Lost Soles#039": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"",
-   "dst": "",
+   "dst": "“往墙上的地图后面扔点东西，就能揭开一部分密码”",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -408,7 +408,7 @@
   },
   "Lost Soles#040": {
    "src": "You found a piece of the code!? Hahah, excellent! I must say, you've made more progress in a few minutes than I have in a few years! You humans really are something!",
-   "dst": "",
+   "dst": "你找到一部分密码了！？哈哈，太好了！我得说，你几分钟的进展比我几年的还多！你们人类真是了不起！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -418,7 +418,7 @@
   },
   "Lost Soles#041": {
    "src": "Now, the diary now says you must make your way to the second floor to find the other {~} digits of the code.",
-   "dst": "",
+   "dst": "好了，日记上说你得想办法上二楼，找出密码的另外 {~} 位数字。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -428,7 +428,7 @@
   },
   "Lost Soles#042": {
    "src": "Remember, to get up to the second floor you need to use the button in the rat hole to open the passage above the blue flags hanging from the ceiling.",
-   "dst": "",
+   "dst": "记住，要上二楼，你得按老鼠洞里的按钮，打开从天花板垂下的蓝旗子上方的通道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -438,7 +438,7 @@
   },
   "Lost Soles#043": {
    "src": "It doesn't say where they are, just that they're well hidden and that there are additional clues around the house. The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
-   "dst": "",
+   "dst": "日记没说在哪，只说藏得很好，而且房子里还有其他线索。另外 {~} 位数字应该都在二楼上面！也许 Leacen 在上面的时候也看到过相关的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -448,7 +448,7 @@
   },
   "Lost Soles#044": {
    "src": "Once you've found the whole code, head to the basement. Just follow the path and signs outside the manor once you have it.",
-   "dst": "",
+   "dst": "找到完整的密码后，就去地下室。拿到密码之后，沿着庄园外的小路和告示走就行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -458,7 +458,7 @@
   },
   "Lost Soles#045": {
    "src": "Open the secret passage above the flags by reaching into the unwanted hole",
-   "dst": "",
+   "dst": "把手伸进没人要的洞里，打开旗子上方的秘密通道",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -468,7 +468,7 @@
   },
   "Lost Soles#046": {
    "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor",
-   "dst": "",
+   "dst": "把 [{~} 靴盒] 和 [Abysso Galoshes] 带回给 Ferndor",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -478,7 +478,7 @@
   },
   "Lost Soles#047": {
    "src": "Darn, I thought for sure one of these books would open a secret shelf...oh, heya Humie. Did you manage to climb up the stairs too?",
-   "dst": "",
+   "dst": "可恶，我还以为这些书里总有一本能打开秘密书架……噢，嗨，人类小家伙。你也爬上楼梯了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -488,7 +488,7 @@
   },
   "Lost Soles#048": {
    "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
-   "dst": "",
+   "dst": "哇，秘密通道！没有爬上来那么厉害，不过还是干得好！我猜你在找密码的提示？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -498,7 +498,7 @@
   },
   "Lost Soles#049": {
    "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a secret passage, can you believe it?",
-   "dst": "",
+   "dst": "对啊，我也找了好一阵子。有好几次我还以为找到头绪了！比如这里。这些书没有一本能打开秘密通道，你敢相信吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -508,7 +508,7 @@
   },
   "Lost Soles#050": {
    "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow for two seconds, and then it disappeared!",
-   "dst": "",
+   "dst": "而且我的笔记本也弄丢了，连笔记都没法记。我就把它放在枕头上两秒钟，然后它就不见了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -518,7 +518,7 @@
   },
   "Lost Soles#051": {
    "src": "Tell you what, Humie. You help us out, and I'll give you some information you might be interested in hearing. Sound good to you?",
-   "dst": "",
+   "dst": "这样吧，人类小家伙。你帮我们的忙，我就告诉你一些你可能会感兴趣的情报。怎么样？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -568,7 +568,7 @@
   },
   "Lost Soles#056": {
    "src": "You found the container? I wish I would have gone with you...",
-   "dst": "",
+   "dst": "你找到盒子了？真希望我当时跟你一起去……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -578,7 +578,7 @@
   },
   "Lost Soles#057": {
    "src": "At least we can stop the manor's slow decay! Let me just put the boots into the container...",
-   "dst": "",
+   "dst": "至少我们能阻止庄园慢慢衰败了！让我把靴子放进盒子里……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -588,7 +588,7 @@
   },
   "Lost Soles#058": {
    "src": "That was easy. I still can not believe that such a small thing can cause so much trouble.",
-   "dst": "",
+   "dst": "真简单。我还是不敢相信这么小的东西会惹出这么多麻烦。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -598,7 +598,7 @@
   },
   "Lost Soles#059": {
    "src": "Well, I can not just let you stand there without a reward, right?",
-   "dst": "",
+   "dst": "好了，我总不能让你空手站在那里，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -608,7 +608,7 @@
   },
   "Lost Soles#060": {
    "src": "Here, how about some emeralds, and these boots? They're heirlooms given to my family by the Sodeta Guild who once owned this mansion. I promise they aren’t evil! Feel free to visit us at any time!",
-   "dst": "",
+   "dst": "来，给你一些绿宝石，还有这双靴子怎么样？这是曾经拥有这座宅邸的 Sodeta 公会送给我家族的传家宝。我保证它们不邪恶！随时欢迎来看我们！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
