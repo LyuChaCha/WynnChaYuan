@@ -141,11 +141,11 @@ already tells the project what players actually run into.
 ### Progress, and helping out
 
 <!-- 進度:開始 -->
-更新於 2026-09-12。
+更新於 2026-09-13。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | █████████░ 92.2% | 38,111 / 41,314 |
+| `zh_tw` 繁體中文 | █████████░ 92.4% | 38,165 / 41,311 |
 | `zh_cn` 简体中文 | █░░░░░░░░░ 14.6% | 4,207 / 28,776 |
 | `ja_jp` 日本語 | ░░░░░░░░░░ 2.1% | 612 / 28,728 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 2.1% | 612 / 28,728 |
@@ -182,9 +182,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 988 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,858 | 1,920 | 1,920 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 11,223 | 14,362 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 11,277 | 14,359 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 49,474 lines estimated**, **41,314 collected** (84%), **38,111 translated** (77% of the estimate, 92.2% of what we have).
+> All together: **at least 49,471 lines estimated**, **41,311 collected** (84%), **38,165 translated** (77% of the estimate, 92.4% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 
@@ -208,9 +208,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | 裝備的傳說敘述 | 988 | 990 | 990 | 官方 CDN 整批下載，收到的就是全部 |
 | 材料、素材、書卷、Aspect | 1,603 | 1,603 | 1,603 | 官方 CDN 整批下載，收到的就是全部 |
 | 技能樹 | 1,858 | 1,920 | 1,920 | 官方 CDN 整批下載，收到的就是全部 |
-| NPC 名牌、介面、系統訊息 | 11,223 | 14,362 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
+| NPC 名牌、介面、系統訊息 | 11,277 | 14,359 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
 
-> 全部加起來：**預估至少 49,474 句**，已收集 **41,314 句**（84%），已翻譯 **38,111 句**（佔預估的 77%、佔已收集的 92.2%）。
+> 全部加起來：**預估至少 49,471 句**，已收集 **41,311 句**（84%），已翻譯 **38,165 句**（佔預估的 77%、佔已收集的 92.4%）。
 
 「至少」是因為名牌與介面那一類沒有清單，它在總數裡只算了**已經收到的**——真正的數字只會更大。
 <!-- 涵蓋率:結束 -->
@@ -383,11 +383,11 @@ download.
 ### 目前進度與參與翻譯
 
 <!-- 進度:開始 -->
-更新於 2026-09-12。
+更新於 2026-09-13。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | █████████░ 92.2% | 38,111 / 41,314 |
+| `zh_tw` 繁體中文 | █████████░ 92.4% | 38,165 / 41,311 |
 | `zh_cn` 简体中文 | █░░░░░░░░░ 14.6% | 4,207 / 28,776 |
 | `ja_jp` 日本語 | ░░░░░░░░░░ 2.1% | 612 / 28,728 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 2.1% | 612 / 28,728 |
