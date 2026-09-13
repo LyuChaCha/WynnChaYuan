@@ -5,7 +5,7 @@
   "itemNames": false,
   "lang": "zh_cn",
   "count": 22089,
-  "translated": 17124,
+  "translated": 17797,
   "note": "任务对话。这个文件是<b>生成物</b>——请改 quest/ 下面对应任务的文件，再跑 tools/quest-bundle.py。直接改这里，下次会被覆盖掉。"
  },
  "entries": {
@@ -116741,7 +116741,7 @@
   },
   "Queen's Recruit#000": {
    "src": "Tasim is looking to catch up in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Tasim 想在 [{~}, {~}, -{~}] 的 {p} 跟你叙叙旧。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -116751,7 +116751,7 @@
   },
   "Queen's Recruit#001": {
    "src": "{u}! Hey! It's lucky I managed to catch you here.",
-   "dst": "",
+   "dst": "{u}！嘿！真走运，能在这里碰上你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116761,7 +116761,7 @@
   },
   "Queen's Recruit#002": {
    "src": "It's been a while, hasn't it? We should catch up! You've probably had lots of adventures, right?",
-   "dst": "",
+   "dst": "好久不见了，对吧？我们该好好叙叙旧！你大概经历了很多冒险吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116771,7 +116771,7 @@
   },
   "Queen's Recruit#003": {
    "src": "But before that... I've just got to find...",
-   "dst": "",
+   "dst": "不过在那之前……我得先找到……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116781,7 +116781,7 @@
   },
   "Queen's Recruit#004": {
    "src": "Huh? What am I oh, yeah. I'm trying to find Aledar.",
-   "dst": "",
+   "dst": "嗯？我在干什么——哦，对。我在找 Aledar。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116791,7 +116791,7 @@
   },
   "Queen's Recruit#005": {
    "src": "He sent me a letter asking me to join him on some... scouting mission. But I haven't been able to find him.",
-   "dst": "",
+   "dst": "他寄了封信给我，要我跟他去执行某个……侦察任务。但我一直没找到他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116801,7 +116801,7 @@
   },
   "Queen's Recruit#006": {
    "src": "It did take me a while to get here... so maybe he's gone somewhere else by now. Aegis did tell me the mission ended up being called off, so...",
-   "dst": "",
+   "dst": "我确实花了好一阵子才赶到这里……所以他现在也许已经去别处了。Aegis 也跟我说，那个任务最后取消了，所以……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116811,7 +116811,7 @@
   },
   "Queen's Recruit#007": {
    "src": "But if he's not here, then I should probably stop trying to catch him on the streets, huh? I'll just leave a message for him at the barracks.",
-   "dst": "",
+   "dst": "不过既然他不在这里，我大概也别再在街上到处堵他了，是吧？我就在营房给他留个话。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116821,7 +116821,7 @@
   },
   "Queen's Recruit#008": {
    "src": "We can head to the tavern and catch up! Gods, I've missed the Rusty Recruit's drinks... that barkeeper, he says it's the same as anywhere else, but it really isn't! Nowhere else pours it like he does.",
-   "dst": "",
+   "dst": "我们可以去酒馆叙叙旧！天哪，我好想念 Rusty Recruit 的酒……那个酒保老说跟别家没两样，才怪！没有人倒得出他那个味道。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116831,7 +116831,7 @@
   },
   "Queen's Recruit#009": {
    "src": "Pardon me, excuse me coming through! Coming through! Ah, you two! Just the folks I was looking for.",
-   "dst": "",
+   "dst": "借过借过，让一让！让一让！啊，你们两个！正是我要找的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116841,7 +116841,7 @@
   },
   "Queen's Recruit#010": {
    "src": "Huh? Us two specifically?",
-   "dst": "",
+   "dst": "嗯？特地找我们两个？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116851,7 +116851,7 @@
   },
   "Queen's Recruit#011": {
    "src": "Well, perhaps not specifically. I've got a list of folks to try and track down, and the two of you are on it! Tasim and {u}, right?",
-   "dst": "",
+   "dst": "嗯，也许不算特地。我有张名单，要把上面的人一个个找出来，你们两个都在上面！Tasim 和 {u}，没错吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116861,7 +116861,7 @@
   },
   "Queen's Recruit#012": {
    "src": "I've got an important missive from {p}. Direct from the King himself, yep yep!",
-   "dst": "",
+   "dst": "我带来了 {p} 的一份重要公函。是国王亲自发的，没错没错！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116871,7 +116871,7 @@
   },
   "Queen's Recruit#013": {
    "src": "Really? I don't think I've seen him since... what could he possibly want us for?",
-   "dst": "",
+   "dst": "真的？我好像从……之后就没见过他了。他会找我们做什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116881,7 +116881,7 @@
   },
   "Queen's Recruit#014": {
    "src": "I'm not privy to the details I'm afraid! He's summoning a number of you seasoned visitors to the castle, for some sort of meeting.",
-   "dst": "",
+   "dst": "恐怕我不清楚细节！他召集了好几位像你们这样身经百战的外来者到城堡，要开个什么会。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116891,7 +116891,7 @@
   },
   "Queen's Recruit#015": {
    "src": "Anyway, I've got more to try and track down, so I'll give you the written letters and be on my way! Best of luck with whatever it is!",
-   "dst": "",
+   "dst": "总之，我还有其他人要找，就把书面信件交给你们，我先走了！不管是什么事，祝你们好运！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116901,7 +116901,7 @@
   },
   "Queen's Recruit#016": {
    "src": "Thanks...",
-   "dst": "",
+   "dst": "谢谢……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116911,7 +116911,7 @@
   },
   "Queen's Recruit#017": {
    "src": "Hm. That is strange, isn't it? I guess we'll have to call off drinks for later... probably for the best. Maybe I'll be able to catch him before...",
-   "dst": "",
+   "dst": "嗯。确实很奇怪，对吧？看来喝酒只能改天了……也许这样最好。说不定我还能在……之前找到他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116921,7 +116921,7 @@
   },
   "Queen's Recruit#018": {
    "src": "Oh, uh you go on ahead. I have to stop by the barracks first. I'll meet you in {p}, then?",
-   "dst": "",
+   "dst": "哦，呃，你先去吧。我得先去营房一趟。那我们在 {p} 碰头？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116931,7 +116931,7 @@
   },
   "Queen's Recruit#019": {
    "src": "I'll meet you in {p}. I have to deal with some things at the barracks first.",
-   "dst": "",
+   "dst": "我们在 {p} 碰头。我得先去营房处理些事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116941,7 +116941,7 @@
   },
   "Queen's Recruit#020": {
    "src": "Attend the meeting with the King in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 的 {p} 参加国王召开的会议。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -116951,7 +116951,7 @@
   },
   "Queen's Recruit#021": {
    "src": "...oh, there you are. Didn't you head out before me?",
-   "dst": "",
+   "dst": "……哦，你在这儿。你不是比我先出发吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116961,7 +116961,7 @@
   },
   "Queen's Recruit#022": {
    "src": "I don't know most of the people here, so I'll stick with you for now.",
-   "dst": "",
+   "dst": "这里的人我大多不认识，所以我先跟着你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116971,7 +116971,7 @@
   },
   "Queen's Recruit#023": {
    "src": "...and it's all crashing down, right? So I knock the zombie back, grab the kid, and jump for",
-   "dst": "",
+   "dst": "……然后整个都塌下来了，对吧？所以我把僵尸击退，抓住那孩子，然后跳向——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116981,7 +116981,7 @@
   },
   "Queen's Recruit#024": {
    "src": "Wait, wait wait wait you're tellin' me there was a kid involved? And you still set off the bombs?!",
-   "dst": "",
+   "dst": "等等，等等等等，你是说那里还有个孩子？结果你还是引爆了炸弹？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -116991,7 +116991,7 @@
   },
   "Queen's Recruit#025": {
    "src": "Yeah! I said that already, right? That was the whole reason I",
-   "dst": "",
+   "dst": "对啊！我刚才就说过了，不是吗？那正是我——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117001,7 +117001,7 @@
   },
   "Queen's Recruit#026": {
    "src": "Ahem. Pause the story for a bit, Linton. We have company.",
-   "dst": "",
+   "dst": "咳咳。故事先停一下，Linton。有人来了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117011,7 +117011,7 @@
   },
   "Queen's Recruit#027": {
    "src": "Well if it ain't {u}! It's good to see someone else familiar 'round here.",
-   "dst": "",
+   "dst": "这不是 {u} 吗！在这儿看到别的熟面孔真好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117021,7 +117021,7 @@
   },
   "Queen's Recruit#028": {
    "src": "What, and I'm not familiar?",
-   "dst": "",
+   "dst": "什么，我就不算熟面孔？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117031,7 +117031,7 @@
   },
   "Queen's Recruit#029": {
    "src": "I do try to keep my distance.",
-   "dst": "",
+   "dst": "我是尽量跟你保持距离。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117041,7 +117041,7 @@
   },
   "Queen's Recruit#030": {
    "src": "So, you received the summons too? The King has a lot of people here. It's interesting.",
-   "dst": "",
+   "dst": "所以你们也收到召集令了？国王找来了很多人。挺有意思的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117051,7 +117051,7 @@
   },
   "Queen's Recruit#031": {
    "src": "We did, yes. And it sounded like they had even more people on that list that they were searching for.",
-   "dst": "",
+   "dst": "是的，我们收到了。而且听起来，他们名单上还有更多人在找。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117061,7 +117061,7 @@
   },
   "Queen's Recruit#032": {
    "src": "Oh, apologies, I hadn't noticed you there. You're a friend of {u}'s, I take it?",
-   "dst": "",
+   "dst": "哦，抱歉，我刚才没注意到你。我猜你是 {u} 的朋友？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117071,7 +117071,7 @@
   },
   "Queen's Recruit#033": {
    "src": "I am! We arrived in Wynn on the same caravan. I'm Tasim.",
-   "dst": "",
+   "dst": "是的！我们是搭同一支商队来到 Wynn 的。我叫 Tasim。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117081,7 +117081,7 @@
   },
   "Queen's Recruit#034": {
    "src": "Tasim?! You're Tasim?",
-   "dst": "",
+   "dst": "Tasim？！你就是 Tasim？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117091,7 +117091,7 @@
   },
   "Queen's Recruit#035": {
    "src": "So you're the one Aledar was always talking about! I thought you were off in Gavel?",
-   "dst": "",
+   "dst": "原来你就是 Aledar 老挂在嘴边的那个人！我还以为你去 Gavel 了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117101,7 +117101,7 @@
   },
   "Queen's Recruit#036": {
    "src": "I... was. How do you all know him?",
-   "dst": "",
+   "dst": "我……之前是。你们怎么都认识他？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117111,7 +117111,7 @@
   },
   "Queen's Recruit#037": {
    "src": "I believe we first met on a mission to reclaim {p}'s barracks from a treasonous commander. We've run into each other a few times since.",
-   "dst": "",
+   "dst": "我记得我们第一次见面，是在一次从叛变的指挥官手中夺回 {p} 营房的任务上。之后我们又碰过几次面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117121,7 +117121,7 @@
   },
   "Queen's Recruit#038": {
    "src": "Still, it's good to finally get t' meet you! We've heard lots of stories! Including somethin' about not respondin' to letters...?",
-   "dst": "",
+   "dst": "总之，终于见到你真好！我们听过好多故事！包括什么不回信的事……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117131,7 +117131,7 @@
   },
   "Queen's Recruit#039": {
    "src": "Oh... right. We, uh... sorted that out.",
-   "dst": "",
+   "dst": "哦……对。我们，呃……那件事已经说开了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117141,7 +117141,7 @@
   },
   "Queen's Recruit#040": {
    "src": "But speaking of have any of you seen him recently?",
-   "dst": "",
+   "dst": "不过说到这个——你们最近有人见过他吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117151,7 +117151,7 @@
   },
   "Queen's Recruit#041": {
    "src": "'fraid not. I don't think our paths've crossed since... was it the siege at {p}? Must've been.",
-   "dst": "",
+   "dst": "恐怕没有。我想我们上次碰面是在……{p} 的围城战？应该是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117161,7 +117161,7 @@
   },
   "Queen's Recruit#042": {
    "src": "I saw him a month ago in {p}! I asked him what he was working on and if I could help and he just brushed me off. Weird, right?",
-   "dst": "",
+   "dst": "我一个月前在 {p} 见过他！我问他在忙什么、要不要帮忙，结果他直接把我打发走了。很怪吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117171,7 +117171,7 @@
   },
   "Queen's Recruit#043": {
    "src": "Mmn. No, that sounds like him. I think he had enough of your antics last time.",
-   "dst": "",
+   "dst": "嗯。不，这很像他的作风。我看他上次已经受够你的胡闹了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117181,7 +117181,7 @@
   },
   "Queen's Recruit#044": {
    "src": "What?! I'm capable. C'mon, Mel, tell her I'm capable.",
-   "dst": "",
+   "dst": "什么？！我很能干的。拜托，Mel，跟她说我很能干。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117191,7 +117191,7 @@
   },
   "Queen's Recruit#045": {
    "src": "Linton, y'were just tellin' us about how you caved in a whole temple by",
-   "dst": "",
+   "dst": "Linton，你刚才还在跟我们讲你是怎么把整座神殿弄塌的，靠的是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117201,7 +117201,7 @@
   },
   "Queen's Recruit#046": {
    "src": "Okay! Okay, okay okay, let's talk about literally anything else! Tasim, right? What's... uh...",
-   "dst": "",
+   "dst": "好啦！好啦好啦好啦，我们随便聊点别的吧！Tasim，对吧？你……呃……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117211,7 +117211,7 @@
   },
   "Queen's Recruit#047": {
    "src": "...so, your... no, no, give me a moment you were... and... um... oh, right...",
-   "dst": "",
+   "dst": "……所以，你的……不，不，等我一下，你是……还有……嗯……哦，对了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117221,7 +117221,7 @@
   },
   "Queen's Recruit#048": {
    "src": "...d'you like guys?",
-   "dst": "",
+   "dst": "……你喜欢男生吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117231,7 +117231,7 @@
   },
   "Queen's Recruit#049": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117241,7 +117241,7 @@
   },
   "Queen's Recruit#050": {
    "src": "Linton!! Y'can't just ask someone that!!",
-   "dst": "",
+   "dst": "Linton！！你不能随便问人家这种事！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117251,7 +117251,7 @@
   },
   "Queen's Recruit#051": {
    "src": "...uh",
-   "dst": "",
+   "dst": "……呃",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117261,7 +117261,7 @@
   },
   "Queen's Recruit#052": {
    "src": "It was nice meeting you, Tasim. I look forward to working with you during this mission.",
-   "dst": "",
+   "dst": "很高兴认识你，Tasim。期待这次任务能跟你合作。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117271,7 +117271,7 @@
   },
   "Queen's Recruit#053": {
    "src": "...likewise. It's always nice meeting friends of Aledar.",
-   "dst": "",
+   "dst": "……彼此彼此。能认识 Aledar 的朋友总是件好事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117281,7 +117281,7 @@
   },
   "Queen's Recruit#054": {
    "src": "Well, look at you! It's been quite a time since we last spoke. Far above the task of cleaning out sewers now, eh?",
-   "dst": "",
+   "dst": "哎呀，瞧瞧你！咱们上次说话已经是好久以前的事了。现在可比清理下水道的活儿高出不少了吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117291,7 +117291,7 @@
   },
   "Queen's Recruit#055": {
    "src": "I've heard some tell of your accomplishments. Fine work, fine work.",
-   "dst": "",
+   "dst": "我听人说过你的事迹。干得好，干得好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117301,7 +117301,7 @@
   },
   "Queen's Recruit#056": {
    "src": "And... hm. Aren't you the one who ran off to Gavel without sayin' a word? Didn't expect you to be one o' the ones picked out for this.",
-   "dst": "",
+   "dst": "还有……嗯。你不就是那个一声不吭跑去 Gavel 的人吗？没想到你也会被挑中来做这件事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117311,7 +117311,7 @@
   },
   "Queen's Recruit#057": {
    "src": "I... didn't expect it either. I didn't even realize the King still remembered me, truth be told.",
-   "dst": "",
+   "dst": "我……也没想到。说实话，我连国王还记得我都没想到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117321,7 +117321,7 @@
   },
   "Queen's Recruit#058": {
    "src": "Mmn. Well, whatever the reason, you're here now. Don't suppose it matters much the path you took to get here. We need all the folks we can get or so Kymer's been sayin'.",
-   "dst": "",
+   "dst": "嗯。好吧，不管是什么原因，你现在人在这儿。你是怎么走到这里的，我想也不怎么重要。我们需要所有能找到的人——至少 Kymer 是这么说的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117331,7 +117331,7 @@
   },
   "Queen's Recruit#059": {
    "src": "Well well! If my eyes don't deceive me! {u} and Tasim!",
-   "dst": "",
+   "dst": "哎呀哎呀！要是我没看错的话！是 {u} 和 Tasim！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117341,7 +117341,7 @@
   },
   "Queen's Recruit#060": {
    "src": "I'll say, I didn't quite expect them to track you down! What with your... extended stint off in Gavel.",
-   "dst": "",
+   "dst": "说真的，我没想到他们能把你找回来！毕竟你……在 Gavel 待了那么久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117351,7 +117351,7 @@
   },
   "Queen's Recruit#061": {
    "src": "I should say the same about you, captain. Did {p} no longer have a use for you once the war ended?",
-   "dst": "",
+   "dst": "我也想这么说你呢，队长。战争结束后，{p} 就用不上你了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117361,7 +117361,7 @@
   },
   "Queen's Recruit#062": {
    "src": "Ah... nothing of the sort. You know, I was sent out there initially to serve as more of an envoy from {p}! If the King needs a diplomatic situation sorted, I'm the one he turns to first.",
-   "dst": "",
+   "dst": "啊……完全不是那么回事。你知道吗，我当初被派到那边，主要是作为 {p} 的使节！国王要是需要处理外交问题，第一个找的就是我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117371,7 +117371,7 @@
   },
   "Queen's Recruit#063": {
    "src": "Which... is indeed why I am here now. I was recalled rather abruptly several weeks ago. It seems we've entered a tricky situation with our... neighboring province.",
-   "dst": "",
+   "dst": "这……也正是我现在在这里的原因。几个星期前，我被相当突然地召回。看来我们和……邻近的行省之间出了棘手的状况。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117381,7 +117381,7 @@
   },
   "Queen's Recruit#064": {
    "src": "But! I shan't say more before the King arrives. He'll tell you all of the problem that hopefully we will be able to resolve.",
-   "dst": "",
+   "dst": "不过！国王到来之前我就不多说了。他会把问题告诉大家，希望我们能把它解决。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117391,7 +117391,7 @@
   },
   "Queen's Recruit#065": {
    "src": "...I see. We'll leave you to it, then.",
-   "dst": "",
+   "dst": "……我明白了。那我们就不打扰你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117401,7 +117401,7 @@
   },
   "Queen's Recruit#066": {
    "src": "If we align the manaflow with Water, then nudge it to the side, maybe... ah Reynauld, pass me my notes on... damn, what was it oh, yes, the recovery period! Pass me those ones.",
-   "dst": "",
+   "dst": "如果我们让法力流与水属性对齐，再往旁边推一点，也许……啊 Reynauld，把我关于……该死，是什么来着——哦，对，恢复期！把那些笔记递给我。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117411,7 +117411,7 @@
   },
   "Queen's Recruit#067": {
    "src": "...You already have them on your left, doctor.",
-   "dst": "",
+   "dst": "……就在你左手边啊，博士。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117421,7 +117421,7 @@
   },
   "Queen's Recruit#068": {
    "src": "Do I now! It seems I do... oh, but this is only the first half where did I leave the rest...",
-   "dst": "",
+   "dst": "是吗！好像是……哦，可这只有前半部分——剩下的我放哪去了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117431,7 +117431,7 @@
   },
   "Queen's Recruit#069": {
    "src": "Sigh... If you'd just allow me to organize for you, maybe you wouldn't",
-   "dst": "",
+   "dst": "唉……要是你肯让我帮你整理，也许你就不会——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117441,7 +117441,7 @@
   },
   "Queen's Recruit#070": {
    "src": "And ruin my predefined sorting system?! No, Reynauld, I do think it works perfectly well as it is, thank you very much! Now, where could it have",
-   "dst": "",
+   "dst": "然后毁掉我预先定好的分类系统？！不，Reynauld，我认为它现在这样就运作得非常好，多谢你了！好了，到底放到哪——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117451,7 +117451,7 @@
   },
   "Queen's Recruit#071": {
    "src": "Ah! You two! Good, good, you're here I was worried Reynauld would be the only other one with recovered memories around here!",
-   "dst": "",
+   "dst": "啊！你们两个！很好，很好，你们来了——我还担心这里除了 Reynauld 就没有别人恢复了记忆！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117461,7 +117461,7 @@
   },
   "Queen's Recruit#072": {
    "src": "What, you didn't test it on anyone else after we left?",
-   "dst": "",
+   "dst": "怎么，我们走了之后你都没在别人身上试过？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117471,7 +117471,7 @@
   },
   "Queen's Recruit#073": {
    "src": "Test it on no, of course not! After what I saw? No, no, that would certainly not have been worth the risk. No new test subjects until I am certain it's flawless!",
-   "dst": "",
+   "dst": "在别人身上试——当然没有！在我看到那种情况之后？不，不，那肯定不值得冒险。在我确定它万无一失之前，不找新的受试者！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117481,7 +117481,7 @@
   },
   "Queen's Recruit#074": {
    "src": "I've been using it on myself instead! And, let me tell you the breakthroughs I have made... there is much to be learned.",
-   "dst": "",
+   "dst": "我改在自己身上用！而且，我跟你说——我取得的突破……还有好多东西值得研究。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117491,7 +117491,7 @@
   },
   "Queen's Recruit#075": {
    "src": "And is that... safe?",
-   "dst": "",
+   "dst": "那……安全吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117501,7 +117501,7 @@
   },
   "Queen's Recruit#076": {
    "src": "Pah! \"Safety\" a meaningless term made only to stifle progress. Have there been side effects certainly! But it has all been worth it.",
-   "dst": "",
+   "dst": "呸！“安全”——一个毫无意义、只会扼杀进步的词。有没有副作用——当然有！但一切都值得。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117511,7 +117511,7 @@
   },
   "Queen's Recruit#077": {
    "src": "Now, I must return to the pages... I've some equations I need to perfect before the King arrives...",
-   "dst": "",
+   "dst": "好了，我得回去看我的稿子……国王到来之前，我还有几道方程得完善……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117521,7 +117521,7 @@
   },
   "Queen's Recruit#078": {
    "src": "Hm. I can't say I would have expected you to be here, Tasim.",
-   "dst": "",
+   "dst": "嗯。说实话，我没想到你会在这里，Tasim。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117531,7 +117531,7 @@
   },
   "Queen's Recruit#079": {
    "src": "Well... fate has other plans, I guess. How about you? Did you stay in {p}?",
-   "dst": "",
+   "dst": "嗯……我想命运另有安排吧。你呢？你一直留在 {p} 吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117541,7 +117541,7 @@
   },
   "Queen's Recruit#080": {
    "src": "Mostly. Moved around for a few assignments here and there, but I kept coming back.",
-   "dst": "",
+   "dst": "大部分时间是。有几次任务调到各处，但我总会回来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117551,7 +117551,7 @@
   },
   "Queen's Recruit#081": {
    "src": "...we haven't spoken in a while. Are you... doing well? How have you been managing the memories?",
-   "dst": "",
+   "dst": "……我们好久没说话了。你……还好吗？那些记忆你是怎么面对的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117561,7 +117561,7 @@
   },
   "Queen's Recruit#082": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117571,7 +117571,7 @@
   },
   "Queen's Recruit#083": {
    "src": "As well as I could be expected to, I guess. It was rough for the first few months. Eventually, I got used to it.",
-   "dst": "",
+   "dst": "大概就像预料中那样吧。头几个月很难熬。后来也就习惯了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117581,7 +117581,7 @@
   },
   "Queen's Recruit#084": {
    "src": "How about you? I also wouldn't have expected you to show for a mission like this.",
-   "dst": "",
+   "dst": "你呢？我也没想到你会来参加这种任务。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117591,7 +117591,7 @@
   },
   "Queen's Recruit#085": {
    "src": "Same as you. Helped that Caid and I managed to talk it through. We meet every so often, talk about it. He talks about his sister, how he wants to find her one day.",
-   "dst": "",
+   "dst": "跟你一样。幸好我和 Caid 能好好谈过。我们时不时见个面，聊聊这件事。他会说起他的妹妹，说总有一天想找到她。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117601,7 +117601,7 @@
   },
   "Queen's Recruit#086": {
    "src": "That's... good. Happy for you.",
-   "dst": "",
+   "dst": "那……很好。替你高兴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117611,7 +117611,7 @@
   },
   "Queen's Recruit#087": {
    "src": "Hm. Nothing stopping you from stopping by, yourself. It might even help you.",
-   "dst": "",
+   "dst": "嗯。没人拦着你也来坐坐。说不定对你也有帮助。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117621,7 +117621,7 @@
   },
   "Queen's Recruit#088": {
    "src": "I'll... consider it. Good to see you again, Reynauld.",
-   "dst": "",
+   "dst": "我……会考虑的。很高兴再见到你，Reynauld。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117631,7 +117631,7 @@
   },
   "Queen's Recruit#089": {
    "src": "Another soldier? Allow me to see your summons.",
-   "dst": "",
+   "dst": "又一位士兵？请出示你的召集令。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117641,7 +117641,7 @@
   },
   "Queen's Recruit#090": {
    "src": "...good. Come on in, {u}. The King will be arriving shortly.",
-   "dst": "",
+   "dst": "……很好。进来吧，{u}。国王马上就到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117651,7 +117651,7 @@
   },
   "Queen's Recruit#091": {
    "src": "Right this way.",
-   "dst": "",
+   "dst": "这边请。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117661,7 +117661,7 @@
   },
   "Queen's Recruit#092": {
    "src": "If you insist. Don't take too long.",
-   "dst": "",
+   "dst": "既然你坚持。别耽搁太久。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117671,7 +117671,7 @@
   },
   "Queen's Recruit#093": {
    "src": "Ah... here we are. I thank you all for coming on such short notice. It has been some time since I have seen many of you.",
-   "dst": "",
+   "dst": "啊……都到了。感谢各位在这么短的时间内赶来。你们之中许多人，我已经很久没见了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117681,7 +117681,7 @@
   },
   "Queen's Recruit#094": {
    "src": "...I'll get right to the point. We find ourselves in a very delicate position when it comes to relations with our neighboring province, Fruma.",
-   "dst": "",
+   "dst": "……我就开门见山了。在与邻近行省 Fruma 的关系上，我们正处于非常微妙的处境。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117691,7 +117691,7 @@
   },
   "Queen's Recruit#095": {
    "src": "We rely heavily on the flow of new recruits sent to us, but we have no means of contacting their province. Only they may reach out to us, and only once they have chosen to do so.",
-   "dst": "",
+   "dst": "我们非常依赖他们持续送来的新兵，但我们没有任何办法联系他们的行省。只有他们能主动联系我们，而且得等他们决定这么做。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117701,7 +117701,7 @@
   },
   "Queen's Recruit#096": {
    "src": "...several weeks ago, we received a cloaked visitor through the outskirts. She claimed to be of Fruma, one of their Sovereigns.",
-   "dst": "",
+   "dst": "……几个星期前，有一位披着斗篷的访客从边境来到这里。她自称来自 Fruma，是他们的统领之一。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117711,7 +117711,7 @@
   },
   "Queen's Recruit#097": {
    "src": "We were extended an invitation, of sorts. Of all the recruits we have ever received, we were to select the greatest, and send them into Fruma for some sort of celebration.",
-   "dst": "",
+   "dst": "我们收到了一份邀请，算是吧。要我们从所有接收过的新兵之中，挑选出最优秀的，送进 Fruma 参加某种庆典。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117721,7 +117721,7 @@
   },
   "Queen's Recruit#098": {
    "src": "Is that who we are? The greatest?",
-   "dst": "",
+   "dst": "那就是我们？最优秀的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117731,7 +117731,7 @@
   },
   "Queen's Recruit#099": {
    "src": "The ones that could be reached, at the very least! Perhaps some were greater yet, but we all know the roaming habits of your sort, and tracking them down really can prove",
-   "dst": "",
+   "dst": "至少是找得到的那些！也许还有更优秀的，不过我们都知道你们这类人到处漂泊的习性，要把他们找出来实在是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117741,7 +117741,7 @@
   },
   "Queen's Recruit#100": {
    "src": "Ugh, we're not going along with this, are we?",
-   "dst": "",
+   "dst": "呃，我们不会真的要照办吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117751,7 +117751,7 @@
   },
   "Queen's Recruit#101": {
    "src": "Linton! You can't just",
-   "dst": "",
+   "dst": "Linton！你不能就这样——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117761,7 +117761,7 @@
   },
   "Queen's Recruit#102": {
    "src": "What? They're demanding something weird and obviously suspicious, so why should we just accept it?",
-   "dst": "",
+   "dst": "怎么了？他们提出的要求这么怪、明摆着有问题，我们凭什么就这样接受？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117771,7 +117771,7 @@
   },
   "Queen's Recruit#103": {
    "src": "I'm afraid we don't have a choice in the matter. As I mentioned, the recruits we receive make all the difference in our province's continued survival. If we were to reject this invitation...",
-   "dst": "",
+   "dst": "恐怕我们在这件事上别无选择。我说过，我们接收的新兵对行省能否延续下去至关重要。如果我们拒绝这份邀请……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117781,7 +117781,7 @@
   },
   "Queen's Recruit#104": {
    "src": "...who's to say they wouldn't just stop sendin' 'em, eh? Tough.",
-   "dst": "",
+   "dst": "……谁敢说他们不会干脆不再送人来，嗯？难办啊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117791,7 +117791,7 @@
   },
   "Queen's Recruit#105": {
    "src": "Besides all that, think of the opportunity this presents! A true, freely-given view of what lies beyond those walls! We'd be fools not to accept it, no matter the implied threat!",
-   "dst": "",
+   "dst": "何况，想想这带来的机会！一个真正、自愿开放的机会，让我们看看那些城墙后面是什么！不管有什么暗中的威胁，不接受才是傻子！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117801,7 +117801,7 @@
   },
   "Queen's Recruit#106": {
    "src": "Indeed. I regret that I must request this of you... but there is no other choice. You must accept this invitation.",
-   "dst": "",
+   "dst": "正是如此。我很遗憾必须向你们提出这个请求……但别无他法。你们必须接受这份邀请。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117811,7 +117811,7 @@
   },
   "Queen's Recruit#107": {
    "src": "...even those of us with bad experiences of the province?",
-   "dst": "",
+   "dst": "……就连我们这些在那个行省有过不好经历的人也是？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117821,7 +117821,7 @@
   },
   "Queen's Recruit#108": {
    "src": "I apologize... but you must. My hands are tied.",
-   "dst": "",
+   "dst": "我很抱歉……但你们必须去。我也无能为力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117831,7 +117831,7 @@
   },
   "Queen's Recruit#109": {
    "src": "I take it we are expected to gather as much intelligence on Fruma as we can while we're in there?",
-   "dst": "",
+   "dst": "我想，我们在那里的时候，应该要尽可能多收集 Fruma 的情报吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117841,7 +117841,7 @@
   },
   "Queen's Recruit#110": {
    "src": "That's the plan, indeed! I'll explain more once we're there, but I believe we're on a time limit, correct?",
-   "dst": "",
+   "dst": "正是这个计划！到了那里我再详细说明，不过我们应该有时间限制，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117851,7 +117851,7 @@
   },
   "Queen's Recruit#111": {
    "src": "You are correct, doctor. I have been told that a representative will greet you all at the royal gates of Fruma, situated on the western coast.",
-   "dst": "",
+   "dst": "没错，博士。我得到的消息是，会有一位代表在 Fruma 的皇家城门迎接各位，地点在西岸。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117861,7 +117861,7 @@
   },
   "Queen's Recruit#112": {
    "src": "I've sent a courier ahead to {p} to inform the local captains of the destination they are to take you to.",
-   "dst": "",
+   "dst": "我已经先派了一名信使去 {p}，通知当地的船长要把你们送到哪里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117871,7 +117871,7 @@
   },
   "Queen's Recruit#113": {
    "src": "{p}... I know a captain there. {u}, want to join me?",
-   "dst": "",
+   "dst": "{p}……我在那里认识一位船长。{u}，要跟我一起去吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117881,7 +117881,7 @@
   },
   "Queen's Recruit#114": {
    "src": "Finally... a glimpse at the province's inner workings... how long have I been seeking these answers?",
-   "dst": "",
+   "dst": "终于……能一窥那个行省的内部运作了……我追寻这些答案多久了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117891,7 +117891,7 @@
   },
   "Queen's Recruit#115": {
    "src": "So many theories... how many will be proven right? How many will be wrong? I cannot wait to find out!",
-   "dst": "",
+   "dst": "那么多理论……会有多少被证明是对的？又会有多少是错的？我等不及要知道了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117901,7 +117901,7 @@
   },
   "Queen's Recruit#116": {
    "src": "Sigh... I did know this was coming. Why else would the doctor have been summoned? But I hoped I was wrong.",
-   "dst": "",
+   "dst": "唉……我早就知道会这样。不然为什么要召集博士？但我还是希望是我想错了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117911,7 +117911,7 @@
   },
   "Queen's Recruit#117": {
    "src": "Tough situation, isn't it? Lots o' secrecy on part of the Frumans...",
-   "dst": "",
+   "dst": "情况棘手，是吧？Fruma 人藏着一大堆秘密……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117921,7 +117921,7 @@
   },
   "Queen's Recruit#118": {
    "src": "But we'll handle it. Everyone here's plenty capable, after all.",
-   "dst": "",
+   "dst": "不过我们应付得来。毕竟这里每个人都很有本事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117931,7 +117931,7 @@
   },
   "Queen's Recruit#119": {
    "src": "Hm... what a situation it is we find ourselves in! Diplomacy is my specialty, of course, but my expertise has not prepared me for... this.",
-   "dst": "",
+   "dst": "嗯……我们陷入的这是什么处境啊！外交当然是我的强项，但我的专长可没让我为……这种事做好准备。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117941,7 +117941,7 @@
   },
   "Queen's Recruit#120": {
    "src": "Fruma knows what they want, and know they are strong enough that they can afford to let up their position.",
-   "dst": "",
+   "dst": "Fruma 很清楚自己想要什么，也知道自己够强，完全不必让步。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117951,7 +117951,7 @@
   },
   "Queen's Recruit#121": {
    "src": "Another top secret mission already? And I'm not even allowed to bring my explosives?",
-   "dst": "",
+   "dst": "又是一个绝密任务？而且我连炸药都不能带？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117961,7 +117961,7 @@
   },
   "Queen's Recruit#122": {
    "src": "It's interesting, at least! Way better than that last assignment...",
-   "dst": "",
+   "dst": "至少挺有意思的！比上一次的任务好太多了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117971,7 +117971,7 @@
   },
   "Queen's Recruit#123": {
    "src": "This mission's a big deal, huh? Lot's o' strong folks recalled for it, at least.",
-   "dst": "",
+   "dst": "这次任务很重要，是吧？至少召回了好多厉害的人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117981,7 +117981,7 @@
   },
   "Queen's Recruit#124": {
    "src": "Makes me a bit nervous, honestly!",
-   "dst": "",
+   "dst": "老实说，搞得我有点紧张！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -117991,7 +117991,7 @@
   },
   "Queen's Recruit#125": {
    "src": "Fruma... I can't say it's been on my mind much. It's a mystery, yes, but not one with any available answers.",
-   "dst": "",
+   "dst": "Fruma……我不能说我常想到它。它确实是个谜，但不是一个有答案可找的谜。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118001,7 +118001,7 @@
   },
   "Queen's Recruit#126": {
    "src": "Well, until now, I suppose. I'll have to prepare a list of details to look out for...",
-   "dst": "",
+   "dst": "嗯，我想直到现在为止是这样。我得准备一张清单，列出要留意的细节……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118011,7 +118011,7 @@
   },
   "Queen's Recruit#127": {
    "src": "And yet again, I must send you all into danger... a different sort, this time around, but danger nonetheless.",
-   "dst": "",
+   "dst": "又一次，我不得不把你们所有人送进危险之中……这次是另一种危险，但终究是危险。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118021,7 +118021,7 @@
   },
   "Queen's Recruit#128": {
    "src": "I remember each face which passes through my castle. I rarely see any of them again.",
-   "dst": "",
+   "dst": "每一张经过我城堡的面孔，我都记得。但我很少能再见到他们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118031,7 +118031,7 @@
   },
   "Queen's Recruit#129": {
    "src": "But this time... I have faith we will meet once more. Go on, young hero. YOur mission lies ahead of you.",
-   "dst": "",
+   "dst": "但这一次……我相信我们会再见面的。去吧，年轻的英雄。你的任务就在前方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118041,7 +118041,7 @@
   },
   "Queen's Recruit#130": {
    "src": "...back to Fruma. I've only just come back to Wynn, and now...",
-   "dst": "",
+   "dst": "……回到 Fruma。我才刚回到 Wynn，现在又……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118051,7 +118051,7 @@
   },
   "Queen's Recruit#131": {
    "src": "But it had to happen eventually. And I do want answers. So... in we go.",
-   "dst": "",
+   "dst": "不过这一天迟早要来。而且我确实想要答案。所以……出发吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118061,7 +118061,7 @@
   },
   "Queen's Recruit#132": {
    "src": "I'll be heading to the {p} Seaskipper, if you want to tag along.",
-   "dst": "",
+   "dst": "我会先去 {p} 的渡船口，你想跟就一起来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118071,7 +118071,7 @@
   },
   "Queen's Recruit#133": {
    "src": "Travel to the Gate of Fruma at [-{~}, {~}, -{~}] or meet up with Tasim in {p}.",
-   "dst": "",
+   "dst": "前往 [-{~}, {~}, -{~}] 的 Fruma 城门，或在 {p} 与 Tasim 会合。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -118081,7 +118081,7 @@
   },
   "Queen's Recruit#134": {
    "src": "...Oh! You're here! Lost in thought, sorry.",
-   "dst": "",
+   "dst": "……哦！你来了！抱歉，我刚才在想事情。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118091,7 +118091,7 @@
   },
   "Queen's Recruit#135": {
    "src": "It's all a little surreal, isn't it? I only just got back to Wynn, and now... Fruma!",
-   "dst": "",
+   "dst": "这一切有点不真实，对吧？我才刚回到 Wynn，现在就要……去 Fruma！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118101,7 +118101,7 @@
   },
   "Queen's Recruit#136": {
    "src": "Kind of make me wish we had Aledar here too. The three of us on an adventure again! Going back... home...",
-   "dst": "",
+   "dst": "有点希望 Aledar 也在这里。我们三个又一起冒险！回到……家乡……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118111,7 +118111,7 @@
   },
   "Queen's Recruit#137": {
    "src": "I guess we'll just have to tell him all about it when we get back. He'll be sad he missed it, I bet.",
-   "dst": "",
+   "dst": "看来只能等回来再把一切都告诉他了。我敢说他会很遗憾错过了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118121,7 +118121,7 @@
   },
   "Queen's Recruit#138": {
    "src": "Oi, there! Are those my two favorite customers I see?",
-   "dst": "",
+   "dst": "喂，那边的！我没看错吧，是我最喜欢的两位客人？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118131,7 +118131,7 @@
   },
   "Queen's Recruit#139": {
    "src": "You call everyone your favorite customer, captain! Don't think I didn't notice!",
-   "dst": "",
+   "dst": "你对每个人都说是你最喜欢的客人，船长！别以为我没发现！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118141,7 +118141,7 @@
   },
   "Queen's Recruit#140": {
    "src": "Eheheheh, well, it's true, ain't it? I got lots o' favorites! Ah, anyhow, you're here for a trip, ain't'cha?",
-   "dst": "",
+   "dst": "嘿嘿嘿嘿，嗯，这是真的嘛，不是吗？我最喜欢的客人可多了！啊，总之，你们是来搭船的吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118151,7 +118151,7 @@
   },
   "Queen's Recruit#141": {
    "src": "We are! You've... probably heard the details already? There should have been something about a new destination.",
-   "dst": "",
+   "dst": "是的！你……大概已经听说详情了？应该有提到一个新的目的地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118161,7 +118161,7 @@
   },
   "Queen's Recruit#142": {
    "src": "Aye. That I have. Some scrawny {p} courier wooshed past earlier! I barely got a word in before he was off again! Real interesting fellow.",
-   "dst": "",
+   "dst": "嗯。听说了。有个瘦巴巴的 {p} 信使刚才一阵风似的跑过去！我话都没说上几句他就又跑了！真是个有意思的家伙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118171,7 +118171,7 @@
   },
   "Queen's Recruit#143": {
    "src": "... Not a part o' the sea I like to visit, but I reckon I can make an exception this time.",
-   "dst": "",
+   "dst": "……那片海我可不喜欢去，但我想这次可以破个例。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118181,7 +118181,7 @@
   },
   "Queen's Recruit#144": {
    "src": "Hm... I can pay you extra for the trip, if you'd like.",
-   "dst": "",
+   "dst": "嗯……如果你愿意，我可以多付你一些船费。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118191,7 +118191,7 @@
   },
   "Queen's Recruit#145": {
    "src": "Ha! No, no, there's no need for that. It's free of charge for my two favorite customers, eheh!",
-   "dst": "",
+   "dst": "哈！不，不，不用。我最喜欢的两位客人免费，嘿嘿！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118201,7 +118201,7 @@
   },
   "Queen's Recruit#146": {
    "src": "...and, 'course, s'all paid for from {p}'s royal coffers anyhow. Now, hop on abour 'fore I change my mind and leave without ya!",
-   "dst": "",
+   "dst": "……而且，当然啦，反正都是 {p} 的王室金库出钱。好了，快上船，趁我还没改变主意丢下你们自己走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118211,7 +118211,7 @@
   },
   "Queen's Recruit#147": {
    "src": "Yes, sir!",
-   "dst": "",
+   "dst": "是，长官！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118221,7 +118221,7 @@
   },
   "Queen's Recruit#148": {
    "src": "...Oh! You're here! Lost in thought, sorry.",
-   "dst": "",
+   "dst": "……哦！你来了！抱歉，我刚才在想事情。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118231,7 +118231,7 @@
   },
   "Queen's Recruit#149": {
    "src": "It's all a little surreal, isn't it? I only just got back to Wynn, and now... Fruma!",
-   "dst": "",
+   "dst": "这一切有点不真实，对吧？我才刚回到 Wynn，现在就要……去 Fruma！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118241,7 +118241,7 @@
   },
   "Queen's Recruit#150": {
    "src": "Kind of make me wish we had Aledar here too. The three of us on an adventure again! Going back... home...",
-   "dst": "",
+   "dst": "有点希望 Aledar 也在这里。我们三个又一起冒险！回到……家乡……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118251,7 +118251,7 @@
   },
   "Queen's Recruit#151": {
    "src": "I guess we'll just have to tell him all about it when we get back. He'll be sad he missed it, I bet.",
-   "dst": "",
+   "dst": "看来只能等回来再把一切都告诉他了。我敢说他会很遗憾错过了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118261,7 +118261,7 @@
   },
   "Queen's Recruit#152": {
    "src": "Oi, there! Are those my two favorite customers I see?",
-   "dst": "",
+   "dst": "喂，那边的！我没看错吧，是我最喜欢的两位客人？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118271,7 +118271,7 @@
   },
   "Queen's Recruit#153": {
    "src": "You call everyone your favorite customer, captain! Don't think I didn't notice!",
-   "dst": "",
+   "dst": "你对每个人都说是你最喜欢的客人，船长！别以为我没发现！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118281,7 +118281,7 @@
   },
   "Queen's Recruit#154": {
    "src": "Eheheheh, well, it's true, ain't it? I got lots o' favorites! Ah, anyhow, you're here for a trip, ain't'cha?",
-   "dst": "",
+   "dst": "嘿嘿嘿嘿，嗯，这是真的嘛，不是吗？我最喜欢的客人可多了！啊，总之，你们是来搭船的吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118291,7 +118291,7 @@
   },
   "Queen's Recruit#155": {
    "src": "We are! You've... probably heard the details already? There should have been something about a new destination.",
-   "dst": "",
+   "dst": "是的！你……大概已经听说详情了？应该有提到一个新的目的地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118301,7 +118301,7 @@
   },
   "Queen's Recruit#156": {
    "src": "Aye. That I have. Some scrawny {p} courier wooshed past earlier! I barely got a word in before he was off again! Real interesting fellow.",
-   "dst": "",
+   "dst": "嗯。听说了。有个瘦巴巴的 {p} 信使刚才一阵风似的跑过去！我话都没说上几句他就又跑了！真是个有意思的家伙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118311,7 +118311,7 @@
   },
   "Queen's Recruit#157": {
    "src": "... Not a part o' the sea I like to visit, but I reckon I can make an exception this time.",
-   "dst": "",
+   "dst": "……那片海我可不喜欢去，但我想这次可以破个例。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118321,7 +118321,7 @@
   },
   "Queen's Recruit#158": {
    "src": "Hm... I can pay you extra for the trip, if you'd like.",
-   "dst": "",
+   "dst": "嗯……如果你愿意，我可以多付你一些船费。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118331,7 +118331,7 @@
   },
   "Queen's Recruit#159": {
    "src": "Ha! No, no, there's no need for that. It's free of charge for my two favorite customers, eheh!",
-   "dst": "",
+   "dst": "哈！不，不，不用。我最喜欢的两位客人免费，嘿嘿！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118341,7 +118341,7 @@
   },
   "Queen's Recruit#160": {
    "src": "...and, 'course, s'all paid for from {p}'s royal coffers anyhow. Now, hop on abour 'fore I change my mind and leave without ya!",
-   "dst": "",
+   "dst": "……而且，当然啦，反正都是 {p} 的王室金库出钱。好了，快上船，趁我还没改变主意丢下你们自己走！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118351,7 +118351,7 @@
   },
   "Queen's Recruit#161": {
    "src": "Yes, sir!",
-   "dst": "",
+   "dst": "是，长官！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118361,7 +118361,7 @@
   },
   "Queen's Recruit#162": {
    "src": "...so, Fruma, eh? I'd ask what business ya've got there, but... figure it's top secret.",
-   "dst": "",
+   "dst": "……所以，要去 Fruma 啊？我本来想问你们去那儿有什么事，但……我猜是绝密。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118371,7 +118371,7 @@
   },
   "Queen's Recruit#163": {
    "src": "We've been... invited into the province. Supposedly, it's for some sort of celebration, but...",
-   "dst": "",
+   "dst": "我们……受邀进入那个行省。说是要参加某种庆典，但……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118381,7 +118381,7 @@
   },
   "Queen's Recruit#164": {
    "src": "Mmn. Aye, knowin' the rumors... not the kind o' place to just invite folks in, is it?",
-   "dst": "",
+   "dst": "嗯。是啊，照那些传闻来看……那可不是个会随便邀人进去的地方，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118391,7 +118391,7 @@
   },
   "Queen's Recruit#165": {
    "src": "...no. It isn't.",
-   "dst": "",
+   "dst": "……不是。的确不是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118401,7 +118401,7 @@
   },
   "Queen's Recruit#166": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118411,7 +118411,7 @@
   },
   "Queen's Recruit#167": {
    "src": "Tell me, what's on yer mind then? The both o' you. Speakin' thoughts out tends to make 'em easier to manage, in my experience.",
-   "dst": "",
+   "dst": "说说吧，你们在想什么？你们两个都说说。依我的经验，把心里的想法说出来，通常会比较好面对。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118421,7 +118421,7 @@
   },
   "Queen's Recruit#168": {
    "src": "Fruma went through all that trouble to erase our memories, to get rid of us... just to ask for us back out of nowhere.",
-   "dst": "",
+   "dst": "Fruma 费了那么大功夫抹掉我们的记忆、把我们赶走……现在却突然要我们回去。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118431,7 +118431,7 @@
   },
   "Queen's Recruit#169": {
    "src": "I don't know why they're doing it, but I'm worried there's more going on.",
-   "dst": "",
+   "dst": "我不知道他们为什么这么做，但我担心背后还有别的事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118441,7 +118441,7 @@
   },
   "Queen's Recruit#170": {
    "src": "I've not got more of a clue than either o' you, but I reckon that suspicion is warranted.",
-   "dst": "",
+   "dst": "我知道的不比你们多，但我觉得这份怀疑是有道理的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118451,7 +118451,7 @@
   },
   "Queen's Recruit#171": {
    "src": "But don't let it consume you, aye? Some suspicion is healthy, but if it colors everything ya do, it'll hurt ya just as bad as naivety would. Keep an open mind.",
-   "dst": "",
+   "dst": "但别让它吞噬你，嗯？有点怀疑是好事，但要是它影响了你做的每一件事，对你的伤害就跟天真一样大。保持开放的心态。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118461,7 +118461,7 @@
   },
   "Queen's Recruit#172": {
    "src": "...it's possible. I hope you're right, and it is all fine, and we are all overthinking it...",
-   "dst": "",
+   "dst": "……有可能。希望你说得对，一切都没事，是我们都想太多了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118471,7 +118471,7 @@
   },
   "Queen's Recruit#173": {
    "src": "But I can't let my guard down. Everything about this situation is screaming that something isn't right, and... I don't know what.",
-   "dst": "",
+   "dst": "但我不能放松警惕。这件事处处都不对劲，而……我不知道是哪里不对。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118481,7 +118481,7 @@
   },
   "Queen's Recruit#174": {
    "src": "Nothin' wrong with hopin' for the best. Stayin' positive is all ya can really do, sometimes.",
-   "dst": "",
+   "dst": "往好处想没什么不对。有时候，保持乐观就是你唯一能做的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118491,7 +118491,7 @@
   },
   "Queen's Recruit#175": {
    "src": "Out here on the sea, we have a saying... go searchin' for the storm, and it'll find ya itself. Don't expect the worst, or it'll find a way to come to pass.",
-   "dst": "",
+   "dst": "我们在海上有句老话……去找风暴，风暴自己就会找上门。别总往最坏处想，不然它总会找到办法成真。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118501,7 +118501,7 @@
   },
   "Queen's Recruit#176": {
    "src": "... home? Home. I guess. It’ll be nice to have more memories of it than just… you know. Curses and all that.",
-   "dst": "",
+   "dst": "……家乡？家乡。大概吧。能对那里有更多记忆，而不只是……你知道的。诅咒那些事，应该会不错。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118511,7 +118511,7 @@
   },
   "Queen's Recruit#177": {
    "src": "Hm. I don’t got much of a home to get back to, either. Had it taken from me by those I trusted, eheh!",
-   "dst": "",
+   "dst": "嗯。我也没什么家可回。被我信任的人夺走了，嘿嘿！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118521,7 +118521,7 @@
   },
   "Queen's Recruit#178": {
    "src": "... But, I made my own home, out here on the sea. Think even if I could go back now, I wouldn’t!",
-   "dst": "",
+   "dst": "……不过，我在这海上给自己安了个家。我想就算现在能回去，我也不会回去！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118531,7 +118531,7 @@
   },
   "Queen's Recruit#179": {
    "src": "So, if y’don’t like what ya find... don’t feel forced to take it, y’hear?",
-   "dst": "",
+   "dst": "所以，要是你们不喜欢在那里找到的东西……别觉得非接受不可，听到没？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118541,7 +118541,7 @@
   },
   "Queen's Recruit#180": {
    "src": "...I'll keep that in mind. Thank you, captain.",
-   "dst": "",
+   "dst": "……我会记住的。谢谢你，船长。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118551,7 +118551,7 @@
   },
   "Queen's Recruit#181": {
    "src": "Ah, it's what I'm here for, ain't it? Givin' sage advice and salin' folks around the sea!",
-   "dst": "",
+   "dst": "啊，这不就是我的本分嘛？给人一些金玉良言，载着大家在海上航行！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118561,7 +118561,7 @@
   },
   "Queen's Recruit#182": {
    "src": "And look at that, on the horizon! Shinin' opulent docks... seems we've arrived.",
-   "dst": "",
+   "dst": "看那边，海平线上！闪闪发亮、富丽堂皇的码头……看来我们到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118571,7 +118571,7 @@
   },
   "Queen's Recruit#183": {
    "src": "Dunno what you'll be facin' in there... but good luck anyway, aye?",
-   "dst": "",
+   "dst": "不知道你们在里面会碰上什么……但还是祝你们好运，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118581,7 +118581,7 @@
   },
   "Queen's Recruit#184": {
    "src": "We'll need it. Thanks for bringing us here, captain.",
-   "dst": "",
+   "dst": "我们会需要的。谢谢你送我们过来，船长。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118591,7 +118591,7 @@
   },
   "Queen's Recruit#185": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118601,7 +118601,7 @@
   },
   "Queen's Recruit#186": {
    "src": "It's... impressive. To build something like this for a gate no one ever uses...",
-   "dst": "",
+   "dst": "这……真壮观。为一座根本没人用的城门建造这样的东西……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118611,7 +118611,7 @@
   },
   "Queen's Recruit#187": {
    "src": "I guess they have the resources to spare.",
-   "dst": "",
+   "dst": "我想他们的资源多得用不完吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118621,7 +118621,7 @@
   },
   "Queen's Recruit#188": {
    "src": "Meet up with the group at the gate at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, -{~}] 的城门与大家会合。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -118631,7 +118631,7 @@
   },
   "Queen's Recruit#189": {
    "src": "Finally! The stragglers arrive. You certainly took your time, didn't you?",
-   "dst": "",
+   "dst": "终于！掉队的人到了。你们可真是不慌不忙啊，是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118641,7 +118641,7 @@
   },
   "Queen's Recruit#190": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118651,7 +118651,7 @@
   },
   "Queen's Recruit#191": {
    "src": "Not the time, Kymer. Leave the poor man be for an hour, eh? Got bigger fish to fry, n' all that.",
-   "dst": "",
+   "dst": "现在不是时候，Kymer。让这可怜的家伙清静一个钟头，嗯？还有更要紧的事要办呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118661,7 +118661,7 @@
   },
   "Queen's Recruit#192": {
    "src": "Yes, yes, fine. We've not been able to get a word out of any of these soldiers! Do we even have the right time and place?",
-   "dst": "",
+   "dst": "好，好，行吧。这些士兵我们一句话都问不出来！我们到底有没有来对时间和地点？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118671,7 +118671,7 @@
   },
   "Queen's Recruit#193": {
    "src": "Nah, you just haven't been trying hard enough. Hey, tin can! This is Fruma, right?",
-   "dst": "",
+   "dst": "才不是，是你们不够努力。嘿，铁皮罐头！这里是 Fruma 吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118681,7 +118681,7 @@
   },
   "Queen's Recruit#194": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118691,7 +118691,7 @@
   },
   "Queen's Recruit#195": {
    "src": "Wow. Nevermind, you were right.",
-   "dst": "",
+   "dst": "哇。算了，你们说得对。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118701,7 +118701,7 @@
   },
   "Queen's Recruit#196": {
    "src": "As I often am!",
-   "dst": "",
+   "dst": "我一向都对！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118711,7 +118711,7 @@
   },
   "Queen's Recruit#197": {
    "src": "It really is an impressive construction, isn't it? All this for a closed-off province.",
-   "dst": "",
+   "dst": "这建筑真的很壮观，不是吗？就为了一个封闭的行省建成这样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118721,7 +118721,7 @@
   },
   "Queen's Recruit#198": {
    "src": "Impressive or not, we have work to do! On your guard, everyone. We don't know what to expect, so watch your backs.",
-   "dst": "",
+   "dst": "壮不壮观都好，我们有正事要办！大家提高警惕。我们不知道会碰到什么，所以都小心点。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118731,7 +118731,7 @@
   },
   "Queen's Recruit#199": {
    "src": "S'anyone's guess when they'll actually let us in...",
-   "dst": "",
+   "dst": "谁知道他们什么时候才会真的让我们进去……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118741,7 +118741,7 @@
   },
   "Queen's Recruit#200": {
    "src": "Oh! The gate!!",
-   "dst": "",
+   "dst": "哦！城门！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118751,7 +118751,7 @@
   },
   "Queen's Recruit#201": {
    "src": "Thank you, Xao. Now!",
-   "dst": "",
+   "dst": "谢谢你，Xao。好了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118761,7 +118761,7 @@
   },
   "Queen's Recruit#202": {
    "src": "Soldiers of Wynn! Her Majesty welcomes you to the province, as guests of the crown!",
-   "dst": "",
+   "dst": "Wynn 的士兵们！女王陛下欢迎各位来到本行省，作为王室的宾客！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118771,7 +118771,7 @@
   },
   "Queen's Recruit#203": {
    "src": "Follow me, and you will be escorted to the royal palace. Let's not keep her waiting you all are of great importance to her.",
-   "dst": "",
+   "dst": "跟我来，你们会被护送到皇宫。别让她久等——你们对她来说非常重要。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118781,7 +118781,7 @@
   },
   "Queen's Recruit#204": {
    "src": "Listen to the introduction. Go to [-{~}, {~}, -{~}] to return to the palace.",
-   "dst": "",
+   "dst": "聆听介绍。前往 [-{~}, {~}, -{~}] 返回皇宫。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -118791,7 +118791,7 @@
   },
   "Queen's Recruit#205": {
    "src": "Fruma's... a lot bigger than what I saw in my memories...",
-   "dst": "",
+   "dst": "Fruma……比我记忆中看到的大多了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118801,7 +118801,7 @@
   },
   "Queen's Recruit#206": {
    "src": "I guess that makes sense. I probably didn't travel much, back then. But... still.",
-   "dst": "",
+   "dst": "我想这也说得通。那时候我大概没去过多少地方。但……还是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118811,7 +118811,7 @@
   },
   "Queen's Recruit#207": {
    "src": "What'd you think?",
-   "dst": "",
+   "dst": "你觉得怎么样？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118821,7 +118821,7 @@
   },
   "Queen's Recruit#208": {
    "src": "It... was. I don't know what I expected going in, but... it was stunning.",
-   "dst": "",
+   "dst": "的……确是。我不知道进来之前期待的是什么，但……真是令人惊叹。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118831,7 +118831,7 @@
   },
   "Queen's Recruit#209": {
    "src": "Ha! Yeah, you know, I think you're right. It was impressive, but Gavel also has impressive sights.",
-   "dst": "",
+   "dst": "哈！是啊，你知道吗，我觉得你说得对。这里是很壮观，但 Gavel 也有壮观的景色。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118841,7 +118841,7 @@
   },
   "Queen's Recruit#210": {
    "src": "But let's not get distracted. The tour felt very... controlled. We were never let out of the carriages, and the Sovereign was keeping a watchful eye on us.",
-   "dst": "",
+   "dst": "但我们别分心了。这趟参观感觉非常……受控。我们一直没被放出马车，统领也一直紧盯着我们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118851,7 +118851,7 @@
   },
   "Queen's Recruit#211": {
    "src": "I'm interested in what they're choosing not to show us...",
-   "dst": "",
+   "dst": "我很好奇他们选择不让我们看到的是什么……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118861,7 +118861,7 @@
   },
   "Queen's Recruit#212": {
    "src": "Hey! Someone's coming!",
-   "dst": "",
+   "dst": "嘿！有人来了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118871,7 +118871,7 @@
   },
   "Queen's Recruit#213": {
    "src": "Greetings, soldiers of Wynn.",
-   "dst": "",
+   "dst": "欢迎，Wynn 的士兵们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118881,7 +118881,7 @@
   },
   "Queen's Recruit#214": {
    "src": "It is my honor as Queen to facilitate your return to our wonderful province. Though long you have spent away, you will always remain children of Fruma!",
-   "dst": "",
+   "dst": "身为女王，能促成各位回到我们美好的行省，是我的荣幸。虽然你们离开了很久，但你们永远都是 Fruma 的孩子！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118891,7 +118891,7 @@
   },
   "Queen's Recruit#215": {
    "src": "Your work to battle against the blight beyond our walls has been of great interest. You have certainly made our province proud.",
-   "dst": "",
+   "dst": "各位在城墙外对抗那场灾祸的作为，我们一直十分关注。你们确实让我们的行省引以为傲。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118901,7 +118901,7 @@
   },
   "Queen's Recruit#216": {
    "src": "You must have questions on the nature of your summons. All will be revealed but first, allow me to introduce two of my wonderful Sovereigns.",
-   "dst": "",
+   "dst": "各位想必对召集的缘由有所疑问。一切都会揭晓——但首先，请容我介绍两位出色的统领。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118911,7 +118911,7 @@
   },
   "Queen's Recruit#217": {
    "src": "You heard my name, but let me introduce myself. I am",
-   "dst": "",
+   "dst": "你们听过我的名字，但让我自我介绍一下。我是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118921,7 +118921,7 @@
   },
   "Queen's Recruit#218": {
    "src": "Majin of House Thalas, the Morning Star, Sovereign of our fair {p}. It's a pleasure, dear soldiers, to join our Queen for this ceremony!",
-   "dst": "",
+   "dst": "Thalas 家族的 Majin，人称晨星，我们美丽的 {p} 的统领。亲爱的士兵们，能与我们的女王共同出席这场典礼，是我的荣幸！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118931,7 +118931,7 @@
   },
   "Queen's Recruit#219": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118941,7 +118941,7 @@
   },
   "Queen's Recruit#220": {
    "src": "...Zhiraok Nasin, Sovereign of the {p}. The value of that title should speak for itself.",
-   "dst": "",
+   "dst": "……Zhiraok Nasin，{p} 的统领。这个头衔的价值不言自明。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118951,7 +118951,7 @@
   },
   "Queen's Recruit#221": {
    "src": "Thank you, Sovereigns. These two, and the rest, are my council for ruling over our province. Each Sovereign is given governance over their own district, and works to serve the people there.",
-   "dst": "",
+   "dst": "谢谢两位统领。他们两位，以及其他几位，组成了我治理行省的议会。每位统领各自掌管一个区，为那里的人民服务。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118961,7 +118961,7 @@
   },
   "Queen's Recruit#222": {
    "src": "There are others. Though none could attend this event they find themselves occupied with various assignments.",
-   "dst": "",
+   "dst": "还有其他几位。不过他们都没能出席这次活动——他们各自有任务在身。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118971,7 +118971,7 @@
   },
   "Queen's Recruit#223": {
    "src": "Enough of the boring talk! It is time for the welcoming feast!",
-   "dst": "",
+   "dst": "无聊的话就说到这里！该享用欢迎宴了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118981,7 +118981,7 @@
   },
   "Queen's Recruit#224": {
    "src": "We would like to share a taste of what our province has to deliver. Please find your way to the grand dining hall, situated just behind me.",
-   "dst": "",
+   "dst": "我们想让各位尝尝本行省所能提供的美味。请前往就在我身后的大宴会厅。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118991,7 +118991,7 @@
   },
   "Queen's Recruit#225": {
    "src": "Head to the royal dining hall at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "前往 [-{~}, {~}, {~}] 的皇家宴会厅。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -119001,7 +119001,7 @@
   },
   "Queen's Recruit#226": {
    "src": "Make your way to the dining hall, the Queen will be starting her speech soon.",
-   "dst": "",
+   "dst": "请前往宴会厅，女王很快就要开始致辞了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119011,7 +119011,7 @@
   },
   "Queen's Recruit#227": {
    "src": "...you can't even follow the order of operations while Her Majesty is watching?! What kind of expected value must the recruits ha",
-   "dst": "",
+   "dst": "……女王陛下就在旁边看着，你连运算顺序都跟不上？！那些新兵的期望值到底得有多——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119021,7 +119021,7 @@
   },
   "Queen's Recruit#228": {
    "src": "Now, now, Nasin, settle down. We wouldn't want to leave a poor impression on our guest, would we?",
-   "dst": "",
+   "dst": "好了，好了，Nasin，冷静点。我们可不想给客人留下坏印象，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119031,7 +119031,7 @@
   },
   "Queen's Recruit#229": {
    "src": "Quit interrupting my sequence, hypocr",
-   "dst": "",
+   "dst": "别打断我的运算序列，你这伪君——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119041,7 +119041,7 @@
   },
   "Queen's Recruit#230": {
    "src": "Oh, you. You should report to the dining hall with the remainder of your group.",
-   "dst": "",
+   "dst": "哦，是你。你应该跟你那组其他人一起去宴会厅报到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119051,7 +119051,7 @@
   },
   "Queen's Recruit#231": {
    "src": "Yes, yes, move along. You certainly don't want to keep Her Majesty waiting!",
-   "dst": "",
+   "dst": "对，对，快走吧。你肯定不想让女王陛下久等！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119061,7 +119061,7 @@
   },
   "Queen's Recruit#232": {
    "src": "Well, I have put it off long enough. Before the first course is served, I will reveal the purpose of your presence here today.",
-   "dst": "",
+   "dst": "好了，我已经拖得够久了。在第一道菜上桌之前，我要揭晓各位今天来到这里的目的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119071,7 +119071,7 @@
   },
   "Queen's Recruit#233": {
    "src": "In celebration of your work in the Wynn Province, we shall be hosting a tournament! You will all partake in a set of duels in order to crown the greatest soldier among you.",
-   "dst": "",
+   "dst": "为了庆祝各位在 Wynn 行省的功绩，我们将举办一场锦标赛！你们全都将参加一系列决斗，以决出你们之中最优秀的士兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119081,7 +119081,7 @@
   },
   "Queen's Recruit#234": {
    "src": "You have all grown in your time spent beyond our walls, and what better way to show it?",
-   "dst": "",
+   "dst": "你们在城墙外的这段日子都成长了，还有什么比这更好的展现方式呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119091,7 +119091,7 @@
   },
   "Queen's Recruit#235": {
    "src": "We will, of course, provide compensation for all participants. A generous monetary reward shall be granted to each of you, no matter your placing in the tournament.",
-   "dst": "",
+   "dst": "当然，我们会为所有参赛者提供报酬。无论名次如何，每人都将获得一笔丰厚的奖金。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119101,7 +119101,7 @@
   },
   "Queen's Recruit#236": {
    "src": "However, for whichever of you finds themselves crowned winner... a greater reward awaits. The specifics shall be revealed once the tournament has concluded.",
-   "dst": "",
+   "dst": "不过，对于最终夺冠的那一位……还有更大的奖赏等着。具体内容会在锦标赛结束后公布。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119111,7 +119111,7 @@
   },
   "Queen's Recruit#237": {
    "src": "Ah, your majesty if I may... I am not much of a fighter my specialty is in research and study of magic.",
-   "dst": "",
+   "dst": "啊，陛下，恕我冒昧——我不太擅长战斗——我的专长是魔法的研究。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119121,7 +119121,7 @@
   },
   "Queen's Recruit#238": {
    "src": "...very well. Accommodations shall be made. A different request may be made of you later, in exchange.",
-   "dst": "",
+   "dst": "……好吧。会为你另作安排。作为交换，稍后可能会对你提出另一项请求。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119131,7 +119131,7 @@
   },
   "Queen's Recruit#239": {
    "src": "I thank you for your grace and understanding, your majesty.",
-   "dst": "",
+   "dst": "感谢陛下的恩典与体谅。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119141,7 +119141,7 @@
   },
   "Queen's Recruit#240": {
    "src": "Yes... now. Once the meal comes to a close, you shall all be assigned a room to stay in for the remainder of your stay in my palace.",
-   "dst": "",
+   "dst": "是的……那么。用餐结束后，各位都会分配到一个房间，在皇宫的这段期间就住在那里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119151,7 +119151,7 @@
   },
   "Queen's Recruit#241": {
    "src": "Ah! It seems the first course has been prepared! Please, enjoy our province's finest cuisine.",
-   "dst": "",
+   "dst": "啊！看来第一道菜已经准备好了。请享用本行省最精致的佳肴。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119161,7 +119161,7 @@
   },
   "Queen's Recruit#242": {
    "src": "...I can't say I was expecting that, of all things.",
-   "dst": "",
+   "dst": "……这可真是我怎么也没想到的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119171,7 +119171,7 @@
   },
   "Queen's Recruit#243": {
    "src": "You'll be joining the tournament, right?",
-   "dst": "",
+   "dst": "你会参加锦标赛，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119181,7 +119181,7 @@
   },
   "Queen's Recruit#244": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119191,7 +119191,7 @@
   },
   "Queen's Recruit#245": {
    "src": "We'd better get going and find our rooms everyone else headed south.",
-   "dst": "",
+   "dst": "我们该走了，去找我们的房间——大家都往南边去了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119201,7 +119201,7 @@
   },
   "Queen's Recruit#246": {
    "src": "Get your assigned room from the representative at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, {~}] 找代表领取分配给你的房间。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -119211,7 +119211,7 @@
   },
   "Queen's Recruit#247": {
    "src": "Welcome to the courtyard.",
-   "dst": "",
+   "dst": "欢迎来到庭院。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119221,7 +119221,7 @@
   },
   "Queen's Recruit#248": {
    "src": "Your rooms are located on the east and west side of here.",
-   "dst": "",
+   "dst": "你们的房间在这里的东侧和西侧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119231,7 +119231,7 @@
   },
   "Queen's Recruit#249": {
    "src": "Your rooms are on the other side of the castle. Please make your way over there.",
-   "dst": "",
+   "dst": "你们的房间在城堡另一边。请往那边走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119241,7 +119241,7 @@
   },
   "Queen's Recruit#250": {
    "src": "Guests. Hm...",
-   "dst": "",
+   "dst": "宾客。嗯……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119251,7 +119251,7 @@
   },
   "Queen's Recruit#251": {
    "src": "Allow me a moment.",
-   "dst": "",
+   "dst": "请稍等。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119261,7 +119261,7 @@
   },
   "Queen's Recruit#252": {
    "src": "Name?",
-   "dst": "",
+   "dst": "名字？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119271,7 +119271,7 @@
   },
   "Queen's Recruit#253": {
    "src": "...that's {u} and I'm Tasim.",
-   "dst": "",
+   "dst": "……那是 {u}，我是 Tasim。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119281,7 +119281,7 @@
   },
   "Queen's Recruit#254": {
    "src": "Talk about a fancy feast, huh?",
-   "dst": "",
+   "dst": "这宴会也太豪华了吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119291,7 +119291,7 @@
   },
   "Queen's Recruit#255": {
    "src": "They're really pullin' out all the stops, huh? Don't think I've had anythin' that good in a long while.",
-   "dst": "",
+   "dst": "他们真的是使出浑身解数了，是吧？我好久没吃过那么好吃的东西了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119301,7 +119301,7 @@
   },
   "Queen's Recruit#256": {
    "src": "Yeah, that was probably the best meal I've had in a long time... Really tired me out. Can't wait for a long and good rest.",
-   "dst": "",
+   "dst": "是啊，那大概是我好久以来吃过最好的一顿……吃得我好累。真想好好睡一大觉。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119311,7 +119311,7 @@
   },
   "Queen's Recruit#257": {
    "src": "Ah, there we are. Tasim and {u}, you'll be in room W3... in the western wing.",
-   "dst": "",
+   "dst": "啊，找到了。Tasim 和 {u}，你们住 W3 号房……在西翼。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119321,7 +119321,7 @@
   },
   "Queen's Recruit#258": {
    "src": "How 'bout us? I'm Mel, and this is Linton.",
-   "dst": "",
+   "dst": "那我们呢？我是 Mel，这位是 Linton。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119331,7 +119331,7 @@
   },
   "Queen's Recruit#259": {
    "src": "Let's see...",
-   "dst": "",
+   "dst": "我看看……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119341,7 +119341,7 @@
   },
   "Queen's Recruit#260": {
    "src": "...hm.",
-   "dst": "",
+   "dst": "……嗯。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119351,7 +119351,7 @@
   },
   "Queen's Recruit#261": {
    "src": "Mel and Lanu, you'll be in E2.",
-   "dst": "",
+   "dst": "Mel 和 Lanu，你们住 E2。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119361,7 +119361,7 @@
   },
   "Queen's Recruit#262": {
    "src": "Uh hey, I think you forgot someone! Where am I staying?",
-   "dst": "",
+   "dst": "呃，嘿，我觉得你漏了一个人！我住哪？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119371,7 +119371,7 @@
   },
   "Queen's Recruit#263": {
    "src": "Linton... let me see...",
-   "dst": "",
+   "dst": "Linton……我看看……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119381,7 +119381,7 @@
   },
   "Queen's Recruit#264": {
    "src": "Ehm..... Hm........ Oh....",
-   "dst": "",
+   "dst": "呃……嗯……哦……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119391,7 +119391,7 @@
   },
   "Queen's Recruit#265": {
    "src": "Linton and Kymer are in W2.",
-   "dst": "",
+   "dst": "Linton 和 Kymer 住 W2。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119401,7 +119401,7 @@
   },
   "Queen's Recruit#266": {
    "src": "Oh... uh, Kymer, huh? That's... hm. Okay.",
-   "dst": "",
+   "dst": "哦……呃，Kymer 啊？那……嗯。好吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119411,7 +119411,7 @@
   },
   "Queen's Recruit#267": {
    "src": "Ha. Good luck with that.",
-   "dst": "",
+   "dst": "哈。祝你好运。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119421,7 +119421,7 @@
   },
   "Queen's Recruit#268": {
    "src": "Head to your room, W-{~}, and check it out.",
-   "dst": "",
+   "dst": "前往你的房间 W-{~}，看看里面。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -119431,7 +119431,7 @@
   },
   "Queen's Recruit#269": {
    "src": "Room W3... Now get going. I have a lot of rooms to assign...",
-   "dst": "",
+   "dst": "W3 号房……好了快走吧。我还有很多房间要分配……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119441,7 +119441,7 @@
   },
   "Queen's Recruit#270": {
    "src": "I'm just gonna wait here for Lanu.",
-   "dst": "",
+   "dst": "我就在这里等 Lanu。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119451,7 +119451,7 @@
   },
   "Queen's Recruit#271": {
    "src": "Hm... {u}? Think you've got the wrong room!",
-   "dst": "",
+   "dst": "嗯……{u}？你好像走错房间了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119461,7 +119461,7 @@
   },
   "Queen's Recruit#272": {
    "src": "Odd that I've got a room all to myself... but eh, I won't complain.",
-   "dst": "",
+   "dst": "奇怪，居然给我一个人一间房……不过嘛，我不会有意见。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119471,7 +119471,7 @@
   },
   "Queen's Recruit#273": {
    "src": "Kymer. Sure! Cool, cool cool cool... I can stay with the... big biceps... yep. That's... fine. That's fine. Good, even.",
-   "dst": "",
+   "dst": "Kymer。好啊！很好，很好很好很好……我可以跟那位……大二头肌……住。嗯。那……没问题。没问题。甚至挺好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119481,7 +119481,7 @@
   },
   "Queen's Recruit#274": {
    "src": "So, this is our room?",
-   "dst": "",
+   "dst": "所以，这就是我们的房间？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119491,7 +119491,7 @@
   },
   "Queen's Recruit#275": {
    "src": "It seems cozy enough, I guess... hard to relax, though, given... you know. all of it.",
-   "dst": "",
+   "dst": "看起来够舒适的，我想……不过很难放松，毕竟……你知道的。这一切。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119501,7 +119501,7 @@
   },
   "Queen's Recruit#276": {
    "src": "...it's easier than I thought it would be, being in Fruma. There's enough distance from... the, uh, memories.",
-   "dst": "",
+   "dst": "……待在 Fruma 比我想的容易。离那些……呃，记忆，有足够的距离。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119511,7 +119511,7 @@
   },
   "Queen's Recruit#277": {
    "src": "But, okay, we're in private now. So.. what do you actually think of the tournament? It's weird, right? Why would we be invited for this?",
-   "dst": "",
+   "dst": "不过，好了，现在就我们两个。所以……你到底怎么看这场锦标赛？很怪吧？为什么要邀请我们来参加这个？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119521,7 +119521,7 @@
   },
   "Queen's Recruit#278": {
    "src": "Me neither. I don't know what I was expecting when we were entering Fruma, but it wasn't... this.",
-   "dst": "",
+   "dst": "我也是。我不知道进 Fruma 的时候我在期待什么，但不是……这个。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119531,7 +119531,7 @@
   },
   "Queen's Recruit#279": {
    "src": "I think we'll have to participate, but keep an eye out. Maybe the secret reward will have some answers..",
-   "dst": "",
+   "dst": "我想我们得参加，但要保持警惕。说不定那个秘密奖赏会带来一些答案……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119541,7 +119541,7 @@
   },
   "Queen's Recruit#280": {
    "src": "Hm... you're probably right, I just don't know what it could possibly be.",
-   "dst": "",
+   "dst": "嗯……你大概说得对，我只是想不出那到底会是什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119551,7 +119551,7 @@
   },
   "Queen's Recruit#281": {
    "src": "Maybe there's something going on with that secret reward for the winner... we'll have to wait and see, I guess.",
-   "dst": "",
+   "dst": "说不定冠军的那个秘密奖赏有什么蹊跷……我想只能等着看了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119561,7 +119561,7 @@
   },
   "Queen's Recruit#282": {
    "src": "Ha! Yeah, alright. I’m a little excited, too. I haven’t had any friendly duels for a long time, so maybe it’ll be nice to test my strength.",
-   "dst": "",
+   "dst": "哈！是啊，好吧。我也有点兴奋。我很久没进行过友谊决斗了，也许试试自己的实力也不错。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119571,7 +119571,7 @@
   },
   "Queen's Recruit#283": {
    "src": "But don’t forget why we’re here. Keep your guard up. Something about that reward she mentioned... it makes me uneasy.",
-   "dst": "",
+   "dst": "但别忘了我们来这里的目的。保持警惕。她提到的那个奖赏……让我很不安。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119581,7 +119581,7 @@
   },
   "Queen's Recruit#284": {
    "src": "It strikes me as the kind of thing Aledar would enjoy. What better way to prove himself than to win this big tournament?",
-   "dst": "",
+   "dst": "这感觉就是 Aledar 会喜欢的那种事。还有什么比赢下这场大型锦标赛更能证明自己的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119591,7 +119591,7 @@
   },
   "Queen's Recruit#285": {
    "src": "He'd get to use all his potions and tricks, too! He's always telling me about the horrific creations he's mixed together.",
-   "dst": "",
+   "dst": "他还能用上他所有的药水和把戏！他老是跟我说他调出了什么恐怖的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119601,7 +119601,7 @@
   },
   "Queen's Recruit#286": {
    "src": "...I think I miss him.",
-   "dst": "",
+   "dst": "……我想我很想他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119611,7 +119611,7 @@
   },
   "Queen's Recruit#287": {
    "src": "So, this is our room?",
-   "dst": "",
+   "dst": "所以，这就是我们的房间？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119621,7 +119621,7 @@
   },
   "Queen's Recruit#288": {
    "src": "It seems cozy enough, I guess... hard to relax, though, given... you know. all of it.",
-   "dst": "",
+   "dst": "看起来够舒适的，我想……不过很难放松，毕竟……你知道的。这一切。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119631,7 +119631,7 @@
   },
   "Queen's Recruit#289": {
    "src": "...it's easier than I thought it would be, being in Fruma. There's enough distance from... the, uh, memories.",
-   "dst": "",
+   "dst": "……待在 Fruma 比我想的容易。离那些……呃，记忆，有足够的距离。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119641,7 +119641,7 @@
   },
   "Queen's Recruit#290": {
    "src": "But, okay, we're in private now. So.. what do you actually think of the tournament? It's weird, right? Why would we be invited for this?",
-   "dst": "",
+   "dst": "不过，好了，现在就我们两个。所以……你到底怎么看这场锦标赛？很怪吧？为什么要邀请我们来参加这个？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119651,7 +119651,7 @@
   },
   "Queen's Recruit#291": {
    "src": "Me neither. I don't know what I was expecting when we were entering Fruma, but it wasn't... this.",
-   "dst": "",
+   "dst": "我也是。我不知道进 Fruma 的时候我在期待什么，但不是……这个。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119661,7 +119661,7 @@
   },
   "Queen's Recruit#292": {
    "src": "I think we'll have to participate, but keep an eye out. Maybe the secret reward will have some answers..",
-   "dst": "",
+   "dst": "我想我们得参加，但要保持警惕。说不定那个秘密奖赏会带来一些答案……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119671,7 +119671,7 @@
   },
   "Queen's Recruit#293": {
    "src": "Hm... you're probably right, I just don't know what it could possibly be.",
-   "dst": "",
+   "dst": "嗯……你大概说得对，我只是想不出那到底会是什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119681,7 +119681,7 @@
   },
   "Queen's Recruit#294": {
    "src": "Maybe there's something going on with that secret reward for the winner... we'll have to wait and see, I guess.",
-   "dst": "",
+   "dst": "说不定冠军的那个秘密奖赏有什么蹊跷……我想只能等着看了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119691,7 +119691,7 @@
   },
   "Queen's Recruit#295": {
    "src": "Ha! Yeah, alright. I’m a little excited, too. I haven’t had any friendly duels for a long time, so maybe it’ll be nice to test my strength.",
-   "dst": "",
+   "dst": "哈！是啊，好吧。我也有点兴奋。我很久没进行过友谊决斗了，也许试试自己的实力也不错。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119701,7 +119701,7 @@
   },
   "Queen's Recruit#296": {
    "src": "But don’t forget why we’re here. Keep your guard up. Something about that reward she mentioned... it makes me uneasy.",
-   "dst": "",
+   "dst": "但别忘了我们来这里的目的。保持警惕。她提到的那个奖赏……让我很不安。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119711,7 +119711,7 @@
   },
   "Queen's Recruit#297": {
    "src": "It strikes me as the kind of thing Aledar would enjoy. What better way to prove himself than to win this big tournament?",
-   "dst": "",
+   "dst": "这感觉就是 Aledar 会喜欢的那种事。还有什么比赢下这场大型锦标赛更能证明自己的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119721,7 +119721,7 @@
   },
   "Queen's Recruit#298": {
    "src": "He'd get to use all his potions and tricks, too! He's always telling me about the horrific creations he's mixed together.",
-   "dst": "",
+   "dst": "他还能用上他所有的药水和把戏！他老是跟我说他调出了什么恐怖的东西。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119731,7 +119731,7 @@
   },
   "Queen's Recruit#299": {
    "src": "...I think I miss him.",
-   "dst": "",
+   "dst": "……我想我很想他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119741,7 +119741,7 @@
   },
   "Queen's Recruit#300": {
    "src": "Uh... come in?",
-   "dst": "",
+   "dst": "呃……请进？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119751,7 +119751,7 @@
   },
   "Queen's Recruit#301": {
    "src": "Hey! You two!",
-   "dst": "",
+   "dst": "嘿！你们两个！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119761,7 +119761,7 @@
   },
   "Queen's Recruit#302": {
    "src": "Linton? What's going on?",
-   "dst": "",
+   "dst": "Linton？怎么了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119771,7 +119771,7 @@
   },
   "Queen's Recruit#303": {
    "src": "Oh, uh, nothing much. Just a secret meeting. In Jenprest's room that's W1, at the start of the corridor.",
-   "dst": "",
+   "dst": "哦，呃，没什么大事。就是个秘密会议。在 Jenprest 的房间——就是 W1，在走廊开头。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119781,7 +119781,7 @@
   },
   "Queen's Recruit#304": {
    "src": "Picard says we should talk about what we've got so far. He also said to space out people coming to the room so wait a few minutes before stopping by!",
-   "dst": "",
+   "dst": "Picard 说我们应该谈谈目前掌握的情况。他还说来房间的人要错开时间——所以等几分钟再过来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119791,7 +119791,7 @@
   },
   "Queen's Recruit#305": {
    "src": "I... guess that makes sense. But why are you here, and not",
-   "dst": "",
+   "dst": "我……想这也有道理。但为什么是你来，而不是——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119801,7 +119801,7 @@
   },
   "Queen's Recruit#306": {
    "src": "'Cause I'm fast and stealthy. Gotta run now, I don't want to draw the guards' attention. Remember, room W1!",
-   "dst": "",
+   "dst": "因为我又快又隐秘。我得走了，我不想引起守卫的注意。记住，W1 号房！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119811,7 +119811,7 @@
   },
   "Queen's Recruit#307": {
    "src": "...he's energetic, huh. Okay, let's head over to the meeting. I wonder what the others have noticed.",
-   "dst": "",
+   "dst": "……他真有活力啊。好，我们去开会吧。不知道其他人注意到了什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119821,7 +119821,7 @@
   },
   "Queen's Recruit#308": {
    "src": "Meet up with the others in room W-{~} at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "到 W-{~} 号房与其他人会合，位置在 [-{~}, {~}, {~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -119831,7 +119831,7 @@
   },
   "Queen's Recruit#309": {
    "src": "Ah, good, they're here. Come in, come in. Quickly now.",
-   "dst": "",
+   "dst": "啊，很好，他们来了。进来，进来。动作快。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119841,7 +119841,7 @@
   },
   "Queen's Recruit#310": {
    "src": "Are we the last ones in?",
-   "dst": "",
+   "dst": "我们是最后到的吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119851,7 +119851,7 @@
   },
   "Queen's Recruit#311": {
    "src": "That y'are. Now, Picard, mind tellin' me what was on your damned mind when you commandeered my room without sayin' a word?!",
-   "dst": "",
+   "dst": "没错。好了，Picard，你倒是说说，你一声不吭就霸占我的房间，脑子里到底在想什么？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119861,7 +119861,7 @@
   },
   "Queen's Recruit#312": {
    "src": "Ah, eheh, well I suppose it, er, may have slipped the mind... not important! We're under a time constraint!",
-   "dst": "",
+   "dst": "啊，嘿嘿，这个嘛，我想我，呃，可能是忘了……不重要！我们时间有限！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119871,7 +119871,7 @@
   },
   "Queen's Recruit#313": {
    "src": "We've made it this far, but we'll need to plan our next steps. Firstly, however let us start with what information we have gleaned thus far.",
-   "dst": "",
+   "dst": "我们已经走到这一步，但得计划下一步了。不过首先——我们先从目前收集到的情报说起。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119881,7 +119881,7 @@
   },
   "Queen's Recruit#314": {
    "src": "Well, the crown certainly has money to spare! What we've seen thus far seems to rival even the richest of nobility I had the pleasure of working with in {p}.",
-   "dst": "",
+   "dst": "嗯，王室肯定是钱多得花不完！我们目前看到的，简直能跟我在 {p} 有幸共事过的最富有的贵族相媲美。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119891,7 +119891,7 @@
   },
   "Queen's Recruit#315": {
    "src": "And the architectrual style... it's unique. I haven't seen anything like it before. I suppose it would make sense, if the province has been closed off for so long...",
-   "dst": "",
+   "dst": "还有那种建筑风格……很独特。我从来没见过类似的。我想这也说得通，毕竟这个行省封闭了那么久……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119901,7 +119901,7 @@
   },
   "Queen's Recruit#316": {
    "src": "Eh, enough of the unimportant details any of the rest o' you feelin' strange about the tournament? Seems an odd thing to invite us folks back for.",
-   "dst": "",
+   "dst": "嗯，不重要的细节就说到这——你们其他人有没有觉得这场锦标赛怪怪的？为这个把我们这些人叫回来，未免太奇怪了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119911,7 +119911,7 @@
   },
   "Queen's Recruit#317": {
    "src": "I was thinking the same thing. And they're willing to pay all of us for participating, no matter how we do... I don't get why.",
-   "dst": "",
+   "dst": "我也是这么想的。而且不管我们表现如何，他们都愿意付钱给所有参赛者……我不明白为什么。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119921,7 +119921,7 @@
   },
   "Queen's Recruit#318": {
    "src": "Hm, well, in truth I am not overly concerned about it",
-   "dst": "",
+   "dst": "嗯，好吧，说实话我倒不是太担心这件事——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119931,7 +119931,7 @@
   },
   "Queen's Recruit#319": {
    "src": "Yes, actually, Picard, what was that back there in the dining hall? You're going to draw attention to yourself by opting out of it?",
-   "dst": "",
+   "dst": "对了，说真的，Picard，刚才在宴会厅那是怎么回事？你选择不参加，会引人注意的吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119941,7 +119941,7 @@
   },
   "Queen's Recruit#320": {
    "src": "Oh, what use is there in placing me in such a combat scenario?! I'll be far more useful outside of that structure, free to look around the palace.",
-   "dst": "",
+   "dst": "哦，把我放进那种战斗场面有什么用？！在那之外，我能在皇宫里自由四处看看，会有用得多。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119951,7 +119951,7 @@
   },
   "Queen's Recruit#321": {
    "src": "And besides, they have me giving them a summary of my research notes, so it's not as though I'm free of it entirely, not to mention",
-   "dst": "",
+   "dst": "而且，他们要我给他们一份研究笔记的摘要，所以我也不是完全不用干活，更别提——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119961,7 +119961,7 @@
   },
   "Queen's Recruit#322": {
    "src": "Alright, settle down y'all! Limited time, remember? We've gone off track. They're rich, fancy, and want us fightin' for some reason. What else?",
-   "dst": "",
+   "dst": "好了，大家冷静点！时间有限，记得吗？我们扯远了。他们有钱、讲究，还出于某种原因想让我们打架。还有呢？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119971,7 +119971,7 @@
   },
   "Queen's Recruit#323": {
    "src": "...as I was saying before I was rudely interrupted I don't believe there is much to be gleaned from the tournament just yet. It's a puzzle piece we'll have to connect later.",
-   "dst": "",
+   "dst": "……就像我被粗鲁打断之前说的——我认为目前从锦标赛里还看不出什么。那是块拼图，我们得以后再拼起来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119981,7 +119981,7 @@
   },
   "Queen's Recruit#324": {
    "src": "Do we have anything on the Queen and her Sovereigns? It's an interesting governmental structure, but I suppose having a more direct line to the Queen has value for the districts.",
-   "dst": "",
+   "dst": "我们有关于女王和她那些统领的情报吗？这种政府结构很有意思，不过我想，能更直接地通达女王，对各区来说是有好处的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -119991,7 +119991,7 @@
   },
   "Queen's Recruit#325": {
    "src": "Well, they're obviously putting on an act. They're definitely hiding something from us, and I don't think any of them are as happy to see us as they say they are.",
-   "dst": "",
+   "dst": "嗯，他们显然是在演戏。他们肯定对我们隐瞒了什么，而且我不认为他们有嘴上说的那么高兴见到我们。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120001,7 +120001,7 @@
   },
   "Queen's Recruit#326": {
    "src": "Yes, indeed... we were sent to Wynn as exiles, not as honored soldiers. So why are they pretending otherwise? They called us back here.",
-   "dst": "",
+   "dst": "是啊，的确……我们是作为流放者被送到 Wynn 的，而不是作为光荣的士兵。那他们为什么要装作不是这样？是他们把我们叫回来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120011,7 +120011,7 @@
   },
   "Queen's Recruit#327": {
    "src": "Ah! Perhaps we're unaware that we've cracked that memory spell? For all they know, we still believe their lies.",
-   "dst": "",
+   "dst": "啊！也许他们不知道我们已经破解了那个记忆咒术？在他们看来，我们还相信他们的谎言。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120021,7 +120021,7 @@
   },
   "Queen's Recruit#328": {
    "src": "It'd explain some things, for certain...",
-   "dst": "",
+   "dst": "这确实能解释一些事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120031,7 +120031,7 @@
   },
   "Queen's Recruit#329": {
    "src": "So am I the only one confused by the amount of guards around?",
-   "dst": "",
+   "dst": "所以只有我对这附近守卫的数量感到困惑吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120041,7 +120041,7 @@
   },
   "Queen's Recruit#330": {
    "src": "You'd think that nine strangers entering the royal palace would be placed under more watchful eyes.",
-   "dst": "",
+   "dst": "照理说，九个陌生人进入皇宫，应该会被盯得更紧才对。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120051,7 +120051,7 @@
   },
   "Queen's Recruit#331": {
    "src": "Now that you mention it... the only guards I saw on the way to our rooms were by the courtyard exit. There aren't any outside our rooms.",
-   "dst": "",
+   "dst": "你这么一说……我在去房间的路上，只在庭院出口看到守卫。我们房间外面一个都没有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120061,7 +120061,7 @@
   },
   "Queen's Recruit#332": {
    "src": "...so we don't need to do the whole stealthy thing?",
-   "dst": "",
+   "dst": "……所以我们不用搞那套偷偷摸摸的东西了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120071,7 +120071,7 @@
   },
   "Queen's Recruit#333": {
    "src": "I thought it was fun!",
-   "dst": "",
+   "dst": "我还觉得挺好玩的！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120081,7 +120081,7 @@
   },
   "Queen's Recruit#334": {
    "src": "Seems they want us t' feel safe and trusted. They've got to know we'll be talkin' about everything we see, so why not leave a good impression, eh?",
-   "dst": "",
+   "dst": "看来他们想让我们觉得安全、受到信任。他们一定知道我们会把看到的一切都说出去，那何不留个好印象，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120091,7 +120091,7 @@
   },
   "Queen's Recruit#335": {
    "src": "Besides, they've got those two Sovereigns lookin' over us. Pretty strong, aren't they? Figure that's enough incentive not to cause trouble.",
-   "dst": "",
+   "dst": "再说，他们有那两位统领盯着我们。挺厉害的，不是吗？我想这就足以让人不敢惹事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120101,7 +120101,7 @@
   },
   "Queen's Recruit#336": {
    "src": "Speakin' of the Sovereigns... and the guards by extension anyone else adept at readin' mana? It hardly feels like there's any of it in use at all!",
-   "dst": "",
+   "dst": "说到统领……连带那些守卫——还有谁擅长感知法力的？感觉这里几乎没有人在用法力！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120111,7 +120111,7 @@
   },
   "Queen's Recruit#337": {
    "src": "I was going to bring that up. I haven't seen any mages at all. The closest I've seen is the higher ranked soldiers wielding magical weapons.",
-   "dst": "",
+   "dst": "我正想提这件事。我一个法师都没见到。最接近的，是那些持有魔法武器的高阶士兵。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120121,7 +120121,7 @@
   },
   "Queen's Recruit#338": {
    "src": "I'm not as good with reading mana, but... there's something wrong with the Sovereigns. They've got an incredibly powerful aura surrounding them. It feels... unnatural.",
-   "dst": "",
+   "dst": "我不太擅长感知法力，但……那些统领不太对劲。他们身上围绕着一股极其强大的气场。感觉……很不自然。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120131,7 +120131,7 @@
   },
   "Queen's Recruit#339": {
    "src": "Yes, you're right. They, and the Queen, are the only ones I've seen here who possess innate magical abilities. If anything, all three of them seem closely linked in terms of energy...",
-   "dst": "",
+   "dst": "对，你说得没错。他们和女王，是我在这里见过唯一拥有天生魔法能力的人。要说的话，他们三个在能量上似乎紧密相连……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120141,7 +120141,7 @@
   },
   "Queen's Recruit#340": {
    "src": "As interesting as that is, it doesn't leave much for the rest of us to go off of. Doctor, you're the one who organized us here. What are our plans?",
-   "dst": "",
+   "dst": "这确实很有意思，但对我们其他人来说没多少线索可循。博士，是你把我们组织起来的。我们的计划是什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120151,7 +120151,7 @@
   },
   "Queen's Recruit#341": {
    "src": "Yes, that I am... well, it seems our most promising lead is the Sovereigns. We'll want to focus on them though, do not neglect general information. We still want to know as much about Fruma as possible.",
-   "dst": "",
+   "dst": "是的，没错……嗯，看来我们最有希望的线索是那些统领。我们要把重点放在他们身上——不过，也别忽视一般情报。我们还是想尽可能多了解 Fruma。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120161,7 +120161,7 @@
   },
   "Queen's Recruit#342": {
    "src": "We've been running long enough, let's call it a day. Everyone, get some rest, we must be at our best performance tomorrow.",
-   "dst": "",
+   "dst": "我们已经谈得够久了，今天就到这里吧。大家都去休息，明天我们必须拿出最好的状态。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120171,7 +120171,7 @@
   },
   "Queen's Recruit#343": {
    "src": "Let us gather here again tomorrow evening for another meeting. Goodnight, everyone.",
-   "dst": "",
+   "dst": "明天傍晚我们再到这里集合开一次会。晚安，各位。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120181,7 +120181,7 @@
   },
   "Queen's Recruit#344": {
    "src": "Make your way back to W-{~} and sleep.",
-   "dst": "",
+   "dst": "回到 W-{~} 睡觉。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -120191,7 +120191,7 @@
   },
   "Queen's Recruit#345": {
    "src": "Those Sovereigns... they do concern me. If Fruma's leadership holds this much power, then...",
-   "dst": "",
+   "dst": "那些统领……确实让我担心。如果 Fruma 的领导层拥有这么大的力量，那……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120201,7 +120201,7 @@
   },
   "Queen's Recruit#346": {
    "src": "Hm. Perhaps our King is right not to get on their bad side.",
-   "dst": "",
+   "dst": "嗯。也许我们的国王不去得罪他们是对的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120211,7 +120211,7 @@
   },
   "Queen's Recruit#347": {
    "src": "Ah, great, now all o' you are lingerin'. Get out of my room! Not gonna get a lick o' sleep till you're gone...",
-   "dst": "",
+   "dst": "啊，好极了，现在你们全都赖着不走。出去！你们不走我一点觉都睡不了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120221,7 +120221,7 @@
   },
   "Queen's Recruit#348": {
    "src": "...damned Doctor should'a just used his own room!!",
-   "dst": "",
+   "dst": "……该死的博士就该用他自己的房间！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120231,7 +120231,7 @@
   },
   "Queen's Recruit#349": {
    "src": "...sigh. What am I doing here? I should have stayed back in {p}.",
-   "dst": "",
+   "dst": "……唉。我在这里做什么？我应该留在 {p} 的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120241,7 +120241,7 @@
   },
   "Queen's Recruit#350": {
    "src": "I just hope nobody here knew me before. I'm not sure I could handle that.",
-   "dst": "",
+   "dst": "我只希望这里没有人以前认识我。我不确定我承受得了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120251,7 +120251,7 @@
   },
   "Queen's Recruit#351": {
    "src": "Hm... a shame I could not fight in the tournament. A monetary reward would be appreciated, given my dwindling research funds...",
-   "dst": "",
+   "dst": "嗯……可惜我不能参加锦标赛。我的研究经费越来越少，有笔奖金会很有帮助……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120261,7 +120261,7 @@
   },
   "Queen's Recruit#352": {
    "src": "But, alas, I am no fighter. Perhaps the King would be willing to fund my future research...",
-   "dst": "",
+   "dst": "但，唉，我不是战士。也许国王会愿意资助我将来的研究……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120271,7 +120271,7 @@
   },
   "Queen's Recruit#353": {
    "src": "Gosh, I hope my match tomorrow goes well. I'm a bit nervous... never really dueled anyone before!",
-   "dst": "",
+   "dst": "天哪，希望我明天的比赛顺利。我有点紧张……从来没真正跟人决斗过！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120281,7 +120281,7 @@
   },
   "Queen's Recruit#354": {
    "src": "yaaaawn",
-   "dst": "",
+   "dst": "哈——啊——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120291,7 +120291,7 @@
   },
   "Queen's Recruit#355": {
    "src": "What? It's been a long day.",
-   "dst": "",
+   "dst": "干嘛？今天很漫长啊。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120301,7 +120301,7 @@
   },
   "Queen's Recruit#356": {
    "src": "That magic... why does it feel familiar? I can't pinpoint what it is, but...",
-   "dst": "",
+   "dst": "那股魔法……为什么感觉很熟悉？我说不出是什么，但……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120311,7 +120311,7 @@
   },
   "Queen's Recruit#357": {
    "src": "Let's just go get some sleep.",
-   "dst": "",
+   "dst": "我们去睡觉吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120321,7 +120321,7 @@
   },
   "Queen's Recruit#358": {
    "src": "Goodnight, {u}. I hope you'll sleep better than I will.",
-   "dst": "",
+   "dst": "晚安，{u}。希望你睡得比我好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120331,7 +120331,7 @@
   },
   "Queen's Recruit#359": {
    "src": "See you in the morning.",
-   "dst": "",
+   "dst": "明天早上见。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120341,7 +120341,7 @@
   },
   "Queen's Recruit#360": {
    "src": "{u}! We're going to miss the first round if you sleep any longer!",
-   "dst": "",
+   "dst": "{u}！你再睡下去我们就要错过第一轮了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120351,7 +120351,7 @@
   },
   "Queen's Recruit#361": {
    "src": "Ah, you're up! Good morning.",
-   "dst": "",
+   "dst": "啊，你醒了！早上好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120361,7 +120361,7 @@
   },
   "Queen's Recruit#362": {
    "src": "Sleep well?",
-   "dst": "",
+   "dst": "睡得好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120371,7 +120371,7 @@
   },
   "Queen's Recruit#363": {
    "src": "Well, I feel your pain. I don't think I got more than an hour or two. I kept... I should have expected it'd be worse here. I just hoped... well, it is what it is.",
-   "dst": "",
+   "dst": "嗯，我懂你的感受。我好像只睡了一两个小时。我一直……我早该料到在这里会更糟。我只是希望……算了，就这样吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120381,7 +120381,7 @@
   },
   "Queen's Recruit#364": {
    "src": "But anyway, it's good you're up. A soldier just came by to tell us to head over to the tournament arena.",
-   "dst": "",
+   "dst": "不过总之，你醒了就好。刚才有个士兵过来，要我们去锦标赛的竞技场。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120391,7 +120391,7 @@
   },
   "Queen's Recruit#365": {
    "src": "You... no, they just... knocked and slid the notice under the door.",
-   "dst": "",
+   "dst": "你……不，他们只是……敲了敲门，把通知从门缝底下塞进来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120401,7 +120401,7 @@
   },
   "Queen's Recruit#366": {
    "src": "Was someone in our room during the night...?",
-   "dst": "",
+   "dst": "昨晚有人进过我们的房间……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120411,7 +120411,7 @@
   },
   "Queen's Recruit#367": {
    "src": "I don't... like... that. Not at all.",
-   "dst": "",
+   "dst": "我不……喜欢……这样。一点都不喜欢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120421,7 +120421,7 @@
   },
   "Queen's Recruit#368": {
    "src": "Still. We need to head over to the arena. Apparently, it's in the northern part of the palace.",
-   "dst": "",
+   "dst": "不过。我们得去竞技场了。好像在皇宫的北边。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120431,7 +120431,7 @@
   },
   "Queen's Recruit#369": {
    "src": "Find the location of the tournament in the northern side of the palace at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, {~}] 的皇宫北侧找到锦标赛的地点。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -120441,7 +120441,7 @@
   },
   "Queen's Recruit#370": {
    "src": "Well, well. Looks like we'll finally get to test which o' us is stronger, eh, captain?",
-   "dst": "",
+   "dst": "哎呀哎呀。看来我们终于能比比谁更强了，嗯，队长？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120451,7 +120451,7 @@
   },
   "Queen's Recruit#371": {
    "src": "Oh, finally? I wasn't aware there was even a question! Lieutenant, do you truly think you stand a chance against me?",
-   "dst": "",
+   "dst": "哦，终于？我都不知道这还是个问题！中尉，你真以为你有机会赢我？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120461,7 +120461,7 @@
   },
   "Queen's Recruit#372": {
    "src": "Ah, enough o' your posturin', Kymer! You might be all up n' fancy these days, but I still remember when you were but a rookie, all afraid of a lil' old zombie!",
-   "dst": "",
+   "dst": "啊，少摆架子了，Kymer！你现在或许风光体面，但我还记得你还是个菜鸟的时候，被一只小僵尸吓得半死！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120471,7 +120471,7 @@
   },
   "Queen's Recruit#373": {
    "src": "Ha! Ah, good times. Good times. You'll get your recognition too one of these days, you know. Maybe you'll even surpass my rank someday!",
-   "dst": "",
+   "dst": "哈！啊，那段日子真好。真好。你知道吗，总有一天你也会得到赏识的。说不定哪天你的军衔还会超过我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120481,7 +120481,7 @@
   },
   "Queen's Recruit#374": {
    "src": "Eh, you say that every time. Besides, the lower ranks suit me well. Don't think I'd do well with all that \"responsibility\" the big wigs put on your shoulders.",
-   "dst": "",
+   "dst": "呃，你每次都这么说。再说，低阶的职位挺适合我的。我可不觉得自己应付得了那些大人物压在你肩上的“责任”。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120491,7 +120491,7 @@
   },
   "Queen's Recruit#375": {
    "src": "...all that bein' said, you're still goin' down when it's our go! I got some new tricks since the last time we fought, so don't get too cocky!",
-   "dst": "",
+   "dst": "……话虽如此，轮到我们的时候你还是要输！自从上次交手之后，我学了些新招，所以别太得意！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120501,7 +120501,7 @@
   },
   "Queen's Recruit#376": {
    "src": "Ha! Then I look forward to seeing them.",
-   "dst": "",
+   "dst": "哈！那我可期待看到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120511,7 +120511,7 @@
   },
   "Queen's Recruit#377": {
    "src": "If you're looking for the tournament arena, go down this corridor then turn to the left.",
-   "dst": "",
+   "dst": "如果你在找锦标赛的竞技场，沿着这条走廊走，然后左转。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120521,7 +120521,7 @@
   },
   "Queen's Recruit#378": {
    "src": "The tournament arena is further down the corridor.",
-   "dst": "",
+   "dst": "锦标赛的竞技场在走廊更里面。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120531,7 +120531,7 @@
   },
   "Queen's Recruit#379": {
    "src": "This area is unfortunately not accessible at this moment.",
-   "dst": "",
+   "dst": "很抱歉，这个区域目前无法进入。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120541,7 +120541,7 @@
   },
   "Queen's Recruit#380": {
    "src": "This is Her Majesty's own personal quarter.",
-   "dst": "",
+   "dst": "这里是女王陛下的私人寝宫。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120551,7 +120551,7 @@
   },
   "Queen's Recruit#381": {
    "src": "I'm afraid I can't let you in just yet. Not until",
-   "dst": "",
+   "dst": "恐怕我现在还不能让你进去。要等到——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120561,7 +120561,7 @@
   },
   "Queen's Recruit#382": {
    "src": "Yes, yes, my research notes, I am aware. It has been sorted already. May I visit the library now?",
-   "dst": "",
+   "dst": "是，是，我的研究笔记，我知道。已经处理好了。我现在可以去图书馆了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120571,7 +120571,7 @@
   },
   "Queen's Recruit#383": {
    "src": "Don't interrupt me. You can't enter until this round of tournament matches concludes. Her Majesty's orders.",
-   "dst": "",
+   "dst": "别打断我。这一轮锦标赛比赛结束之前，你不能进去。这是女王陛下的命令。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120581,7 +120581,7 @@
   },
   "Queen's Recruit#384": {
    "src": "Pah. Fine! Fine, yes, I'll wait. Good grief.",
-   "dst": "",
+   "dst": "哼。好吧！好吧，行，我等。真是的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120591,7 +120591,7 @@
   },
   "Queen's Recruit#385": {
    "src": "You'd think I would have some level of freedom, but no! What does it matter if I don't want to watch the matches if there's nothing else to do?!",
-   "dst": "",
+   "dst": "你还以为我能有点自由，结果没有！如果没别的事可做，我不想看比赛又有什么关系？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120601,7 +120601,7 @@
   },
   "Queen's Recruit#386": {
    "src": "Oh, just go and get your match over with. Quit stalling.",
-   "dst": "",
+   "dst": "哦，快去把你的比赛打完吧。别拖拖拉拉的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120611,7 +120611,7 @@
   },
   "Queen's Recruit#387": {
    "src": "Hey! No entry!",
-   "dst": "",
+   "dst": "嘿！禁止进入！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120621,7 +120621,7 @@
   },
   "Queen's Recruit#388": {
    "src": "Just head down these stairs to find the tournament arena.",
-   "dst": "",
+   "dst": "沿着这道楼梯下去，就能找到锦标赛的竞技场。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120631,7 +120631,7 @@
   },
   "Queen's Recruit#389": {
    "src": "The match ups will be announced once everyone is present.",
-   "dst": "",
+   "dst": "等所有人到齐后，就会公布对战组合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120641,7 +120641,7 @@
   },
   "Queen's Recruit#390": {
    "src": "Uh. Sovereign... Majin? Sovereign Majin. We're all here.",
-   "dst": "",
+   "dst": "呃。统领……Majin？Majin 统领。我们都到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120651,7 +120651,7 @@
   },
   "Queen's Recruit#391": {
    "src": "My, it's about time! As guests of the crown, it would do you well to arrive on time for such things, hm? Tardiness is not a good look.",
-   "dst": "",
+   "dst": "哎呀，也该到了！身为王室的宾客，这种场合准时到场才得体，嗯？迟到可不好看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120661,7 +120661,7 @@
   },
   "Queen's Recruit#392": {
    "src": "Our apologies, Sovereign. It would seem we were not given the time to be here in advance a humble mistake, I'm certain.",
-   "dst": "",
+   "dst": "非常抱歉，统领。看来我们事先没被告知时间——我相信只是个无心之失。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120671,7 +120671,7 @@
   },
   "Queen's Recruit#393": {
    "src": "Ah, the incompetence of our lessers... it never ceases to amaze! Nevertheless, the duty of arriving on schedule remains on your shoulders. Do better next time, would you?",
-   "dst": "",
+   "dst": "啊，底下人的无能……真是永远令人叹为观止！不过，准时到场的责任仍然在你们肩上。下次做好一点，行吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120681,7 +120681,7 @@
   },
   "Queen's Recruit#394": {
    "src": "Now, I am a very busy man, so I will keep this brief. As Her Majesty has already explained, this tournament will consist of multiple duels! You are not required to watch each match.",
-   "dst": "",
+   "dst": "好了，我是个大忙人，所以长话短说。正如女王陛下所说，这场锦标赛由多场决斗组成！你们不必每场都看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120691,7 +120691,7 @@
   },
   "Queen's Recruit#395": {
    "src": "The standard rules apply. No killing, no maiming, no attacking anyone outside the arena though, do try, I'd find much pleasure in watching you fail!",
-   "dst": "",
+   "dst": "规则照旧。不准杀人，不准致残，不准攻击竞技场外的任何人——不过，尽管试试吧，看着你们失败会让我非常愉快！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120701,7 +120701,7 @@
   },
   "Queen's Recruit#396": {
    "src": "With that settled, are there any questions? I would certainly hope not, I have much to return to once this is",
-   "dst": "",
+   "dst": "那就这么定了，还有问题吗？我当然希望没有，等这里结束我还有一大堆事要——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120711,7 +120711,7 @@
   },
   "Queen's Recruit#397": {
    "src": "Ah, I do I am not participating in the tournament. I had been told to expect some alternative today.",
-   "dst": "",
+   "dst": "啊，我有——我不参加锦标赛。有人跟我说今天会有别的安排。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120721,7 +120721,7 @@
   },
   "Queen's Recruit#398": {
    "src": "Oh, yes... you. What did you say you were again, a... researcher?",
-   "dst": "",
+   "dst": "哦，对……你。你说你是干什么的来着，一个……研究员？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120731,7 +120731,7 @@
   },
   "Queen's Recruit#399": {
    "src": "Ahahaha! Oh, and they selected you as one of your province's greatest? Don't make me laugh! Ahahahahaha!",
-   "dst": "",
+   "dst": "啊哈哈哈！哦，他们居然把你选为你们行省最优秀的人之一？别逗我笑了！啊哈哈哈哈哈！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120741,7 +120741,7 @@
   },
   "Queen's Recruit#400": {
    "src": "Ah, but it's just as well, I suppose. Nine certainly doesn't fit cleanly for such a tournament. Better a researcher than a ninth fighter!",
-   "dst": "",
+   "dst": "啊，不过这样也好吧。九个人办这种锦标赛本来就不好分组。与其来个第九名战士，还不如来个研究员！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120751,7 +120751,7 @@
   },
   "Queen's Recruit#401": {
    "src": "Yes, someone will be with you shortly. Just sit on the sidelines and twiddle your thumbs, or whatever you do you certainly aren't my problem anymore.",
-   "dst": "",
+   "dst": "是的，很快就会有人来找你。你就坐在场边玩玩手指，或者随便做什么——反正你已经不关我的事了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120761,7 +120761,7 @@
   },
   "Queen's Recruit#402": {
    "src": "Now! Any more questions?",
-   "dst": "",
+   "dst": "好了！还有问题吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120771,7 +120771,7 @@
   },
   "Queen's Recruit#403": {
    "src": "Yes, actua",
-   "dst": "",
+   "dst": "有，其实——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120781,7 +120781,7 @@
   },
   "Queen's Recruit#404": {
    "src": "Excellent! The first match up appears to be... {u} and Mel. Step forward, the two of you.",
-   "dst": "",
+   "dst": "太好了！第一场对战组合是……{u} 和 Mel。你们两个上前来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120791,7 +120791,7 @@
   },
   "Queen's Recruit#405": {
    "src": "That's me!",
-   "dst": "",
+   "dst": "是我！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120801,7 +120801,7 @@
   },
   "Queen's Recruit#406": {
    "src": "How wonderful. Mel and {u}.",
-   "dst": "",
+   "dst": "太好了。Mel 和 {u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120811,7 +120811,7 @@
   },
   "Queen's Recruit#407": {
    "src": "Well, hurry up now, get prepared! Choose a corridor each, north or south, and get to fighting already!",
-   "dst": "",
+   "dst": "好了，快点，去准备！各选一条走廊，北边或南边，然后赶快开打！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120821,7 +120821,7 @@
   },
   "Queen's Recruit#408": {
    "src": "As for the rest of you... oh, I can't be bothered. Read your matchups on the board yourselves.",
-   "dst": "",
+   "dst": "至于你们其他人……哦，我懒得管了。自己去看板子上的对战组合。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120831,7 +120831,7 @@
   },
   "Queen's Recruit#409": {
    "src": "Uh... alrighty then. I guess I'll choose this one.",
-   "dst": "",
+   "dst": "呃……好吧。那我选这条。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120841,7 +120841,7 @@
   },
   "Queen's Recruit#410": {
    "src": "Begin your fight against Mel in the southern waiting room.",
-   "dst": "",
+   "dst": "在南边的等候室开始与 Mel 的战斗。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -120851,7 +120851,7 @@
   },
   "Queen's Recruit#411": {
    "src": "Hey, good luck out there!",
-   "dst": "",
+   "dst": "嘿，加油啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120861,7 +120861,7 @@
   },
   "Queen's Recruit#412": {
    "src": "Just 'cause we've got a mission here, doesn't mean I'll go easy on ya!",
-   "dst": "",
+   "dst": "别以为我们有任务在身，我就会手下留情！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120871,7 +120871,7 @@
   },
   "Queen's Recruit#413": {
    "src": "Ready to go?! Let's show them what we're made of!",
-   "dst": "",
+   "dst": "准备好了吗？！让他们看看我们的本事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120881,7 +120881,7 @@
   },
   "Queen's Recruit#414": {
    "src": "Phew! What a fight! Got my blood rushin'!",
-   "dst": "",
+   "dst": "呼！好一场战斗！打得我热血沸腾！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120891,7 +120891,7 @@
   },
   "Queen's Recruit#415": {
    "src": "What'd you think of my trick? Pretty good, right? Makes me less of a sittin' duck in combat!",
-   "dst": "",
+   "dst": "你觉得我那招怎么样？挺不错吧？这样打起来我就不会是个活靶子了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120901,7 +120901,7 @@
   },
   "Queen's Recruit#416": {
    "src": "Ah, I didn't think I was gonna be winnin' anything, really. But it was fun givin' it a shot.",
-   "dst": "",
+   "dst": "啊，我本来就没想过要赢什么啦。不过试试看还挺好玩的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120911,7 +120911,7 @@
   },
   "Queen's Recruit#417": {
    "src": "{u} has bested Mel in the first round, and will progress to the next!",
-   "dst": "",
+   "dst": "{u} 在第一轮击败了 Mel，晋级下一轮！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120921,7 +120921,7 @@
   },
   "Queen's Recruit#418": {
    "src": "Hm, so what now?",
-   "dst": "",
+   "dst": "嗯，那现在怎么办？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120931,7 +120931,7 @@
   },
   "Queen's Recruit#419": {
    "src": "You will be permitted to remain in the palace for the duration of the tournament. You will be paid for your participation at the end of your stay.",
-   "dst": "",
+   "dst": "锦标赛期间，你可以留在皇宫。参赛的报酬会在你离开时支付。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120941,7 +120941,7 @@
   },
   "Queen's Recruit#420": {
    "src": "I figure that makes sense. I wonder when Lanu's match is...",
-   "dst": "",
+   "dst": "我想这也说得通。不知道 Lanu 的比赛是什么时候……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120951,7 +120951,7 @@
   },
   "Queen's Recruit#421": {
    "src": "{u}, congratulations on your victory. You will be notified when your next match is. In the meantime, feel free to rest.",
-   "dst": "",
+   "dst": "{u}，恭喜你获胜。下一场比赛的时间会另行通知。在此期间，请随意休息。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120961,7 +120961,7 @@
   },
   "Queen's Recruit#422": {
    "src": "Leave the arena waiting room and find Picard at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "离开竞技场等候室，到 [-{~}, {~}, {~}] 找 Picard。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -120971,7 +120971,7 @@
   },
   "Queen's Recruit#423": {
    "src": "It was a good fight! But you'd better win in my honor now, y'hear?",
-   "dst": "",
+   "dst": "打得真好！不过你现在可得替我赢下去，听到没？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120981,7 +120981,7 @@
   },
   "Queen's Recruit#424": {
    "src": "We will announce your next match later. Please feel free to rest or enjoy the palace in the meantime.",
-   "dst": "",
+   "dst": "我们稍后会公布你的下一场比赛。在此期间，请随意休息或在皇宫里走走。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -120991,7 +120991,7 @@
   },
   "Queen's Recruit#425": {
    "src": "Ah, {u}, I saw the match! Very good technique, better than many soldiers I've seen pass through {p} in my time.",
-   "dst": "",
+   "dst": "啊，{u}，我看了比赛！技巧非常好，比我这些年在 {p} 看过的许多士兵都强。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121001,7 +121001,7 @@
   },
   "Queen's Recruit#426": {
    "src": "I suppose I'm not surprised! When the tournament was announced, you came to mind as a potential winner. You, and one other person, that is.",
-   "dst": "",
+   "dst": "我想我并不意外！锦标赛一宣布，我就想到你可能会夺冠。你，还有另外一个人。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121011,7 +121011,7 @@
   },
   "Queen's Recruit#427": {
    "src": "Hm... maybe I could start taking bets on who will win... ah, no, no, I'm far too busy. Stay focused, Picard.",
-   "dst": "",
+   "dst": "嗯……也许我可以开个赌局，赌谁会赢……啊，不，不，我太忙了。专心点，Picard。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121021,7 +121021,7 @@
   },
   "Queen's Recruit#428": {
    "src": "Hm? Oh dear, I'd forgotten you were here! Yes, I was going to do something...",
-   "dst": "",
+   "dst": "嗯？哎呀，我都忘了你在这儿！对，我本来要去做件事……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121031,7 +121031,7 @@
   },
   "Queen's Recruit#429": {
    "src": "Oh! The library! Can you believe it, that damnable guard finally stepped away! It's ridiculous, really who even cares to guard a library of all things?!",
-   "dst": "",
+   "dst": "哦！图书馆！你敢相信吗，那个该死的守卫终于走开了！真是荒唐——到底谁会去守一座图书馆啊？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121041,7 +121041,7 @@
   },
   "Queen's Recruit#430": {
    "src": "But. But but but. The way is open, and although the tournament round is still ongoing, I'd like to take the opportunity while I can!",
-   "dst": "",
+   "dst": "不过。不过不过不过。路已经通了，虽然这一轮锦标赛还在进行，我还是想趁机会去看看！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121051,7 +121051,7 @@
   },
   "Queen's Recruit#431": {
    "src": "Care to join me? I'm sure there's something you'll find interesting in there. What sorts of knowledge have the Frumans kept hidden in these walls...",
-   "dst": "",
+   "dst": "要一起来吗？我相信里面一定有你会感兴趣的东西。Fruma 人在这些墙里藏了些什么知识……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121061,7 +121061,7 @@
   },
   "Queen's Recruit#432": {
    "src": "Well, are you coming? Come now, quickly, before the guard returns!",
-   "dst": "",
+   "dst": "怎么样，你来不来？快来，快点，趁守卫还没回来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121071,7 +121071,7 @@
   },
   "Queen's Recruit#433": {
    "src": "Follow Picard into the library.",
-   "dst": "",
+   "dst": "跟着 Picard 进入图书馆。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -121081,7 +121081,7 @@
   },
   "Queen's Recruit#434": {
    "src": "Goodness, where even to begin? There's so much here...",
-   "dst": "",
+   "dst": "天哪，从哪里开始才好？这里的东西太多了……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121091,7 +121091,7 @@
   },
   "Queen's Recruit#435": {
    "src": "...and that we're rifling through the Cursed instead of our own citizens is an incalculable risk!",
-   "dst": "",
+   "dst": "……而且我们在受诅者里翻找，而不是在自己的国民里找，这是个无法估算的风险！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121101,7 +121101,7 @@
   },
   "Queen's Recruit#436": {
    "src": "What was that?! Quickly, quickly now, follow me!",
-   "dst": "",
+   "dst": "那是什么？！快，快点，跟我来！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121111,7 +121111,7 @@
   },
   "Queen's Recruit#437": {
    "src": "Do you have eyes on the speaker? Who is it?",
-   "dst": "",
+   "dst": "你看得到说话的人吗？是谁？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121121,7 +121121,7 @@
   },
   "Queen's Recruit#438": {
    "src": "I can't find her angle for this hunt.",
-   "dst": "",
+   "dst": "我算不出她这次物色人选的角度。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121131,7 +121131,7 @@
   },
   "Queen's Recruit#439": {
    "src": "Ah, it's like I'm talking with her again! It's so nostalgic to speak with a clueless Nasin trying their hardest, in spite of their incompe",
-   "dst": "",
+   "dst": "啊，就好像我又在跟她说话一样！看一个毫无头绪的 Nasin 拼尽全力，却还是那么无能，真让人怀念——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121141,7 +121141,7 @@
   },
   "Queen's Recruit#440": {
    "src": "I'M SORRY, YOU IGNORANT INTEGRAND? You really think now is the time for Rrgh... Why. Do I even bother.",
-   "dst": "",
+   "dst": "你说什么，你这个无知的被积函数？你真以为现在是——啧……我到底何必呢。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121151,7 +121151,7 @@
   },
   "Queen's Recruit#441": {
    "src": "Why, indeed! It truly is a bad habit. Something to work on while your seniors do the important work, hm?",
-   "dst": "",
+   "dst": "说得是啊，何必呢！这真是个坏习惯。趁你的前辈在做重要工作的时候，好好改一改吧，嗯？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121161,7 +121161,7 @@
   },
   "Queen's Recruit#442": {
    "src": "Speaking of, I must put forth that I do find this all a bit strange. We most certainly aren't lacking in strength here, so why bother with the exiles?",
-   "dst": "",
+   "dst": "说到这个，我得说我确实觉得这一切有点奇怪。我们这里显然不缺战力，何必去找那些流放者？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121171,7 +121171,7 @@
   },
   "Queen's Recruit#443": {
    "src": "...sigh... The risk factor is much greater than I'd bet on. She has to know more than we do, so maybe we'll get a summation later.",
-   "dst": "",
+   "dst": "……唉……这风险系数比我愿意押注的高多了。她一定知道得比我们多，也许之后我们会拿到一份总结。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121181,7 +121181,7 @@
   },
   "Queen's Recruit#444": {
    "src": "Are you two done?",
-   "dst": "",
+   "dst": "你们两个说完了没？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121191,7 +121191,7 @@
   },
   "Queen's Recruit#445": {
    "src": "Ah, there she is. Fashionably late as always!",
-   "dst": "",
+   "dst": "啊，她来了。一如往常地姗姗来迟！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121201,7 +121201,7 @@
   },
   "Queen's Recruit#446": {
    "src": "Hm. If anything, I was early.",
-   "dst": "",
+   "dst": "嗯。要说的话，我还早到了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121211,7 +121211,7 @@
   },
   "Queen's Recruit#447": {
    "src": "I'd say your timing was golden if you're here for that summation I mentioned, and this isn't anything else.",
-   "dst": "",
+   "dst": "如果你是来给我刚才说的那份总结，而不是别的事，那我得说你的时机抓得正好。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121221,7 +121221,7 @@
   },
   "Queen's Recruit#448": {
    "src": "It's the former. But first, have you been watching the battles? Do any of the contestants stick out to you?",
-   "dst": "",
+   "dst": "是前者。不过首先，你们一直在看比赛吗？参赛者里有谁让你们印象深刻的？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121231,7 +121231,7 @@
   },
   "Queen's Recruit#449": {
    "src": "Stick out? Hardly. Thus far, I have been thoroughly unimpressed.",
-   "dst": "",
+   "dst": "印象深刻？几乎没有。到目前为止，我完全不为所动。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121241,7 +121241,7 @@
   },
   "Queen's Recruit#450": {
    "src": "Naturally you would be. I've seen some generally promising things, but I need to know the expected solution to narrow the pool",
-   "dst": "",
+   "dst": "你当然会这么说。我看到了一些大体上有潜力的东西，但我需要知道期望解，才能缩小范围——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121251,7 +121251,7 @@
   },
   "Queen's Recruit#451": {
    "src": "Ah, ah! Settle down, Nasin, your betters are speaking. Calculate yourself out of dead last, first.",
-   "dst": "",
+   "dst": "啊，啊！冷静点，Nasin，你的前辈在说话。先把自己从倒数第一算出来再说。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121261,7 +121261,7 @@
   },
   "Queen's Recruit#452": {
    "src": "Later, then. We have problems. The contestants have been sneaking around. And the doctor has been taking meticulous notes.",
-   "dst": "",
+   "dst": "那就之后再说。我们有麻烦了。参赛者一直在偷偷摸摸地四处活动。而那位博士一直在一丝不苟地做笔记。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121271,7 +121271,7 @@
   },
   "Queen's Recruit#453": {
    "src": "...looks like you letting him sit out the problem was a miscalculation, huh?",
-   "dst": "",
+   "dst": "……看来你让他不用参赛，是个计算失误啊？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121281,7 +121281,7 @@
   },
   "Queen's Recruit#454": {
    "src": "For once, we appear to be in agreement. What a pity, what a hassle... it hardly seems worth the effort to me.",
-   "dst": "",
+   "dst": "难得我们意见一致。真可惜，真麻烦……在我看来根本不值得费这个劲。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121291,7 +121291,7 @@
   },
   "Queen's Recruit#455": {
    "src": "It will be. But I've spent too much time here already. You'll have to wait for answers.",
-   "dst": "",
+   "dst": "会值得的。但我在这里已经待太久了。答案你们得等。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121301,7 +121301,7 @@
   },
   "Queen's Recruit#456": {
    "src": "Of course. How much more irrational can we get, I wonder.",
-   "dst": "",
+   "dst": "当然。不知道还能多不合理。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121311,7 +121311,7 @@
   },
   "Queen's Recruit#457": {
    "src": "If you'd like something to look out for, one of the more promising candidates is set to have a match soon. Go watch it.",
-   "dst": "",
+   "dst": "如果你们想找点东西留意，有位比较有潜力的人选很快就有一场比赛。去看看吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121321,7 +121321,7 @@
   },
   "Queen's Recruit#458": {
    "src": "A joy as always. Well, you heard her, Nasin! Chop chop, off to the stands we go!",
-   "dst": "",
+   "dst": "一如往常地令人愉快。好了，你听到她说的了，Nasin！快快快，我们去看台！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121331,7 +121331,7 @@
   },
   "Queen's Recruit#459": {
    "src": "...so not even the Sovereigns know what's happening. Fascinating. Very fascinating.",
-   "dst": "",
+   "dst": "……所以连统领都不知道是怎么回事。有意思。非常有意思。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121341,7 +121341,7 @@
   },
   "Queen's Recruit#460": {
    "src": "And there was a third! Who were they? Another Sovereign...? Damn it, damn it all, how did I not notice?",
-   "dst": "",
+   "dst": "而且还有第三个人！那是谁？另一位统领……？该死，全都该死，我怎么会没注意到？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121351,7 +121351,7 @@
   },
   "Queen's Recruit#461": {
    "src": "Well, they appear to be onto us. No matter. We'll need to be more careful.",
-   "dst": "",
+   "dst": "好吧，他们似乎已经盯上我们了。无所谓。我们得更加小心。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121361,7 +121361,7 @@
   },
   "Queen's Recruit#462": {
    "src": "You'd best get back to the arena. In the meantime, I'll keep searching here... there must be something useful!",
-   "dst": "",
+   "dst": "你最好回竞技场去。在此期间，我会继续在这里找……一定有什么有用的东西！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121371,7 +121371,7 @@
   },
   "Queen's Recruit#463": {
    "src": "Leave the library.",
-   "dst": "",
+   "dst": "离开图书馆。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -121381,7 +121381,7 @@
   },
   "Queen's Recruit#464": {
    "src": "...hm? Oh, yes, fine, I'll tell the rest about what we heard. After I'm done here, of course.",
-   "dst": "",
+   "dst": "……嗯？哦，对，好，我会把我们听到的事告诉其他人。当然，等我在这里忙完之后。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121391,7 +121391,7 @@
   },
   "Queen's Recruit#465": {
    "src": "The first round of the tournament has concluded!",
-   "dst": "",
+   "dst": "锦标赛第一轮结束了！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121401,7 +121401,7 @@
   },
   "Queen's Recruit#466": {
    "src": "The names that will proceed to the next round... {u}! Tasim! Reynauld! Kymer!",
-   "dst": "",
+   "dst": "晋级下一轮的是……{u}！Tasim！Reynauld！Kymer！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121411,7 +121411,7 @@
   },
   "Queen's Recruit#467": {
    "src": "{u}, your match will begin shortly. Your opponent is already in the waiting room.",
-   "dst": "",
+   "dst": "{u}，你的比赛马上就要开始了。你的对手已经在等候室了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121421,7 +121421,7 @@
   },
   "Queen's Recruit#468": {
    "src": "Make your way to the arena.",
-   "dst": "",
+   "dst": "请前往竞技场。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121431,7 +121431,7 @@
   },
   "Queen's Recruit#469": {
    "src": "Begin your next duel in the arena down the stairs.",
-   "dst": "",
+   "dst": "在楼梯下方的竞技场开始你的下一场决斗。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -121441,7 +121441,7 @@
   },
   "Queen's Recruit#470": {
    "src": "Please make your way to the arena by following the stairs down.",
-   "dst": "",
+   "dst": "请沿着楼梯往下走，前往竞技场。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121451,7 +121451,7 @@
   },
   "Queen's Recruit#471": {
    "src": "Please go to the waiting room and prepare for the battle.",
-   "dst": "",
+   "dst": "请前往等候室，为战斗做好准备。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121461,7 +121461,7 @@
   },
   "Queen's Recruit#472": {
    "src": "Ah, it's you.",
-   "dst": "",
+   "dst": "啊，是你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121471,7 +121471,7 @@
   },
   "Queen's Recruit#473": {
    "src": "Well, you'll likely prove more of a challenge than Linton, that's for sure.",
-   "dst": "",
+   "dst": "嗯，你肯定会比 Linton 更难对付，这是确定的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121481,7 +121481,7 @@
   },
   "Queen's Recruit#474": {
    "src": "You've come a long way since {p}, haven't you? Well, so have I! Let's battle.",
-   "dst": "",
+   "dst": "从 {p} 那时到现在，你进步了很多，对吧？嗯，我也是！开战吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121491,7 +121491,7 @@
   },
   "Queen's Recruit#475": {
    "src": "The battle is decided! {u} has come out victorious.",
-   "dst": "",
+   "dst": "胜负已分！{u} 获胜。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121501,7 +121501,7 @@
   },
   "Queen's Recruit#476": {
    "src": "Ah... good fighting, {u}. I even used some of my most powerful arrows.",
-   "dst": "",
+   "dst": "啊……打得好，{u}。我连一些最强的箭都用上了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121511,7 +121511,7 @@
   },
   "Queen's Recruit#477": {
    "src": "Reynauld, you have been eliminated.",
-   "dst": "",
+   "dst": "Reynauld，你被淘汰了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121521,7 +121521,7 @@
   },
   "Queen's Recruit#478": {
    "src": "I know, I know. You were a worthy opponent, {u}. Now, you'll be winning this whole thing, yes?",
-   "dst": "",
+   "dst": "我知道，我知道。你是个值得尊敬的对手，{u}。现在，你会赢下整个锦标赛的，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121531,7 +121531,7 @@
   },
   "Queen's Recruit#479": {
    "src": "{u}, congratulations on reaching the finals. All other opponents have been defeated, except for you and your fellow finalist.",
-   "dst": "",
+   "dst": "{u}，恭喜你进入决赛。除了你和另一位决赛选手，其他对手都已经被击败。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121541,7 +121541,7 @@
   },
   "Queen's Recruit#480": {
    "src": "Hmph. That will be announced shortly. Please make your way to the courtyard and await further instructions.",
-   "dst": "",
+   "dst": "哼。那会很快公布。请前往庭院，等候进一步指示。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121551,7 +121551,7 @@
   },
   "Queen's Recruit#481": {
    "src": "Return to the courtyard at [-{~}, {~}, {~}] and find other contestants.",
-   "dst": "",
+   "dst": "回到 [-{~}, {~}, {~}] 的庭院，找到其他参赛者。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -121561,7 +121561,7 @@
   },
   "Queen's Recruit#482": {
    "src": "I did well enough, I suppose. I'll be glad for this to all be over, anyway.",
-   "dst": "",
+   "dst": "我想我表现得还算可以。不管怎样，我会很高兴这一切结束。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121571,7 +121571,7 @@
   },
   "Queen's Recruit#483": {
    "src": "Please make your way to the courtyard and await further instructions.",
-   "dst": "",
+   "dst": "请前往庭院，等候进一步指示。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121581,7 +121581,7 @@
   },
   "Queen's Recruit#484": {
    "src": "{u}, you return! Well, how did your match go?",
-   "dst": "",
+   "dst": "{u}，你回来了！怎么样，你的比赛打得如何？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121591,7 +121591,7 @@
   },
   "Queen's Recruit#485": {
    "src": "You? I suppose that would make sense. No offense intended, Reynauld, but I would have bet on {u} if I had the chance.",
-   "dst": "",
+   "dst": "你？我想这也说得通。无意冒犯，Reynauld，但要是有机会，我也会押 {u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121601,7 +121601,7 @@
   },
   "Queen's Recruit#486": {
    "src": "Ha. For me, certainly! It felt like I could barely make a dent in your stamina.",
-   "dst": "",
+   "dst": "哈。赢我的话，那当然！感觉我根本没法消耗你多少体力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121611,7 +121611,7 @@
   },
   "Queen's Recruit#487": {
    "src": "Yes, yes, congratulations are in order, and all that we have problems.",
-   "dst": "",
+   "dst": "是，是，是该恭喜，诸如此类——我们有麻烦了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121621,7 +121621,7 @@
   },
   "Queen's Recruit#488": {
    "src": "It was problem enough that he was called here in the first place... to think, he could",
-   "dst": "",
+   "dst": "他一开始被叫来这里就已经够麻烦了……想想看，他居然可能——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121631,7 +121631,7 @@
   },
   "Queen's Recruit#489": {
    "src": "That's enough about the tournament. I don't want to hear about it anymore. The doctor is right.",
-   "dst": "",
+   "dst": "锦标赛的事说够了。我不想再听了。博士说得对。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121641,7 +121641,7 @@
   },
   "Queen's Recruit#490": {
    "src": "Yes, well, it's not your honour on the line... but fine, I admit, this third Sovereign is... troubling.",
-   "dst": "",
+   "dst": "是啊，嗯，赌上的又不是你的荣誉……但好吧，我承认，这第三位统领……令人不安。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121651,7 +121651,7 @@
   },
   "Queen's Recruit#491": {
    "src": "Hm. Have we been able to find the information we needed?",
-   "dst": "",
+   "dst": "嗯。我们找到需要的情报了吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121661,7 +121661,7 @@
   },
   "Queen's Recruit#492": {
    "src": "No! And that is precisely our problem we are missing something, and we are running out of time! One final match, and then it's done.",
-   "dst": "",
+   "dst": "没有！这正是我们的问题——我们漏掉了什么，而时间快不够了！再一场决赛，然后就结束了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121671,7 +121671,7 @@
   },
   "Queen's Recruit#493": {
    "src": "...truthfully, I'm surprised you were on my side for that match.",
-   "dst": "",
+   "dst": "……说实话，那场比赛你站在我这边，我挺意外的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121681,7 +121681,7 @@
   },
   "Queen's Recruit#494": {
    "src": "Ah, well, someone had t' take him down a peg! Guess that someone was you.",
-   "dst": "",
+   "dst": "啊，这个嘛，总得有人挫挫他的锐气！看来那个人就是你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121691,7 +121691,7 @@
   },
   "Queen's Recruit#495": {
    "src": "Oh, give me a break, lieutenant. Him? Of all people to",
-   "dst": "",
+   "dst": "哦，饶了我吧，中尉。他？偏偏是他——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121701,7 +121701,7 @@
   },
   "Queen's Recruit#496": {
    "src": "Hey, everyone's here! Is... this where they wanted everyone to gather up?",
-   "dst": "",
+   "dst": "嘿，大家都在！这……就是他们要大家集合的地方吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121711,7 +121711,7 @@
   },
   "Queen's Recruit#497": {
    "src": "Seems that way. You won your match?",
-   "dst": "",
+   "dst": "看起来是。你赢了你的比赛？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121721,7 +121721,7 @@
   },
   "Queen's Recruit#498": {
    "src": "I did. It seems I'm a finalist now. So, who's the other one?",
-   "dst": "",
+   "dst": "赢了。看来我现在是决赛选手了。那么，另一位是谁？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121731,7 +121731,7 @@
   },
   "Queen's Recruit#499": {
    "src": "Oh! Well, congratulations! Though, I guess we'll be facing each other soon.",
-   "dst": "",
+   "dst": "哦！嗯，恭喜！不过，我想我们很快就要对上了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121741,7 +121741,7 @@
   },
   "Queen's Recruit#500": {
    "src": "Good grief... yes, the tournament has happened, congratulations to the finalists, whatever where are Mel and Linton? We need to discuss what's next, before",
-   "dst": "",
+   "dst": "真是的……对，锦标赛是打了，恭喜决赛选手，随便啦——Mel 和 Linton 在哪？我们得先讨论下一步，在……之前——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121751,7 +121751,7 @@
   },
   "Queen's Recruit#501": {
    "src": "...and so, what, I'm not allowed to take a nap now? I wasn't even fighting!! Mel, back me up, come on!",
-   "dst": "",
+   "dst": "……所以怎样，我现在连睡个午觉都不行？我又没参赛！！Mel，帮我说句话啊！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121761,7 +121761,7 @@
   },
   "Queen's Recruit#502": {
    "src": "He's right, this hardly seems fair! We were told we could stay in our rooms until the tournament had concluded, so why the change?!",
-   "dst": "",
+   "dst": "他说得对，这太不公平了！他们说我们可以待在房间里直到锦标赛结束，为什么突然变了？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121771,7 +121771,7 @@
   },
   "Queen's Recruit#503": {
    "src": "...what's going on?",
-   "dst": "",
+   "dst": "……发生什么事了？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121781,7 +121781,7 @@
   },
   "Queen's Recruit#504": {
    "src": "Any competitors who have lost in the tournament are to be escorted out of Fruma, effective immediately.",
-   "dst": "",
+   "dst": "所有在锦标赛中落败的参赛者，即刻起将被护送出 Fruma。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121791,7 +121791,7 @@
   },
   "Queen's Recruit#505": {
    "src": "what is the meaning of this?!",
-   "dst": "",
+   "dst": "这是什么意思？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121801,7 +121801,7 @@
   },
   "Queen's Recruit#506": {
    "src": "SILENCE! These are new orders from Her Majesty.",
-   "dst": "",
+   "dst": "安静！这是女王陛下的新命令。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121811,7 +121811,7 @@
   },
   "Queen's Recruit#507": {
    "src": "Only {u} and Tasim are permitted to remain in the palace. Any defiance will be seen as an official threat against Fruma from the Wynn province.",
-   "dst": "",
+   "dst": "只有 {u} 和 Tasim 可以留在皇宫。任何违抗都将被视为 Wynn 行省对 Fruma 的正式威胁。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121821,7 +121821,7 @@
   },
   "Queen's Recruit#508": {
    "src": "Comply, and no one will be hurt. You will still receive your promised reward for participation.",
-   "dst": "",
+   "dst": "服从命令，就不会有人受伤。你们仍会收到承诺的参赛报酬。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121831,7 +121831,7 @@
   },
   "Queen's Recruit#509": {
    "src": "...this is an outrage. The disrespect",
-   "dst": "",
+   "dst": "……这简直是侮辱。这种无礼——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121841,7 +121841,7 @@
   },
   "Queen's Recruit#510": {
    "src": "Enough, Kymer. What's done is done. We have no choice.",
-   "dst": "",
+   "dst": "够了，Kymer。事已至此。我们别无选择。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121851,7 +121851,7 @@
   },
   "Queen's Recruit#511": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121861,7 +121861,7 @@
   },
   "Queen's Recruit#512": {
    "src": "You two. Stay safe, and be on guard. I'll report back to the King with this news. If you're not released safely...",
-   "dst": "",
+   "dst": "你们两个。注意安全，保持警惕。我会回去向国王报告这件事。如果你们没能平安被放出来……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121871,7 +121871,7 @@
   },
   "Queen's Recruit#513": {
    "src": "...{u}. Tasim. I've gotten what I came here for originally, but... I don't know what they're planning. You'll have to handle it on your own.",
-   "dst": "",
+   "dst": "……{u}。Tasim。我本来要找的东西已经到手了，但……我不知道他们在打什么主意。你们只能靠自己了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121881,7 +121881,7 @@
   },
   "Queen's Recruit#514": {
    "src": "Good luck.",
-   "dst": "",
+   "dst": "祝你好运。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121891,7 +121891,7 @@
   },
   "Queen's Recruit#515": {
    "src": "Remaining finalists, you are expected in the dining hall shortly. Attend your last meal before the finals.",
-   "dst": "",
+   "dst": "剩下的决赛选手，你们稍后要到宴会厅。去吃决赛前的最后一餐吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121901,7 +121901,7 @@
   },
   "Queen's Recruit#516": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121911,7 +121911,7 @@
   },
   "Queen's Recruit#517": {
    "src": "What was that? What just happened?",
-   "dst": "",
+   "dst": "刚才那是怎么回事？到底发生了什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121921,7 +121921,7 @@
   },
   "Queen's Recruit#518": {
    "src": "They've changed the rules on us, and now... ugh, we have no choice... We need to see it through.",
-   "dst": "",
+   "dst": "他们临时改了规则，现在……唉，我们别无选择……只能撑到最后。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121931,7 +121931,7 @@
   },
   "Queen's Recruit#519": {
    "src": "Well... come on. Let's attend our final dinner here.",
-   "dst": "",
+   "dst": "嗯……走吧。我们去吃在这里的最后一顿晚餐。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121941,7 +121941,7 @@
   },
   "Queen's Recruit#520": {
    "src": "Attend the royal dinner at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, {~}] 参加皇家晚宴。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -121951,7 +121951,7 @@
   },
   "Queen's Recruit#521": {
    "src": "What are we supposed to do...?",
-   "dst": "",
+   "dst": "我们该怎么办……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121961,7 +121961,7 @@
   },
   "Queen's Recruit#522": {
    "src": "They'll let us out. They have to. It'd be a diplomatic disaster if they didn't.",
-   "dst": "",
+   "dst": "他们会放我们走的。他们必须放。不然会是一场外交灾难。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121971,7 +121971,7 @@
   },
   "Queen's Recruit#523": {
    "src": "Finalists. Welcome.",
-   "dst": "",
+   "dst": "决赛选手们。欢迎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121981,7 +121981,7 @@
   },
   "Queen's Recruit#524": {
    "src": "If you were not already aware, your fellow soldiers have been returned to Wynn. Safely.",
-   "dst": "",
+   "dst": "你们也许还不知道，你们的士兵同伴已经被送回 Wynn 了。平安无事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -121991,7 +121991,7 @@
   },
   "Queen's Recruit#525": {
    "src": "...if you don't mind me asking, Your Majesty, I thought we had an agreement? We would all remain here until the tournament concluded with the finals.",
-   "dst": "",
+   "dst": "……恕我冒昧，女王陛下，我以为我们有过约定？我们所有人都会留在这里，直到锦标赛以决赛落幕。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122001,7 +122001,7 @@
   },
   "Queen's Recruit#526": {
    "src": "Oh? And would you like to join the rest of them? That could certainly be arranged we could simply select a victor here and now, and be done with this whole",
-   "dst": "",
+   "dst": "哦？你想跟他们一起走吗？那当然可以安排——我们大可以现在就选出一个冠军，然后把这整件——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122011,7 +122011,7 @@
   },
   "Queen's Recruit#527": {
    "src": "What is your problem, Thalas?! They're guests of Her Majesty! How irrational are you, trying to subtract them without her appr",
-   "dst": "",
+   "dst": "你到底有什么毛病，Thalas？！他们是女王陛下的宾客！你到底有多不理智，没经过她同意就想把他们减——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122021,7 +122021,7 @@
   },
   "Queen's Recruit#528": {
    "src": "Enough. Both of you.",
-   "dst": "",
+   "dst": "够了。你们两个都是。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122031,7 +122031,7 @@
   },
   "Queen's Recruit#529": {
    "src": "To answer your question, the circumstances have changed. There is no need for the rest of your group to remain here.",
-   "dst": "",
+   "dst": "回答你的问题，情况有变。你们其他同伴已经没有必要留在这里了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122041,7 +122041,7 @@
   },
   "Queen's Recruit#530": {
    "src": "The remainder of the tournament will proceed as expected.",
-   "dst": "",
+   "dst": "锦标赛剩下的部分会照常进行。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122051,7 +122051,7 @@
   },
   "Queen's Recruit#531": {
    "src": "I... see.",
-   "dst": "",
+   "dst": "我……明白了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122061,7 +122061,7 @@
   },
   "Queen's Recruit#532": {
    "src": "Good. Now, let us enjoy the meal!",
-   "dst": "",
+   "dst": "很好。那么，让我们享用这顿饭吧！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122071,7 +122071,7 @@
   },
   "Queen's Recruit#533": {
    "src": "Another taste of Fruman cuisine... the meat was imported the {p}, and the vegetables came from the royal garden.",
-   "dst": "",
+   "dst": "再尝一次 Fruma 的佳肴……肉是从 {p} 进口的，蔬菜则来自皇家花园。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122081,7 +122081,7 @@
   },
   "Queen's Recruit#534": {
    "src": "Now, to business. The final will take place tomorrow morning. But first, I would like to speak to each of you individually.",
-   "dst": "",
+   "dst": "那么，谈正事。决赛将在明天早上举行。但首先，我想分别跟你们每个人谈谈。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122091,7 +122091,7 @@
   },
   "Queen's Recruit#535": {
    "src": "Let us begin with... {u}. Please come to the north-eastern wing when you are ready.",
-   "dst": "",
+   "dst": "我们就从……{u} 开始。准备好之后，请到东北翼来。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122101,7 +122101,7 @@
   },
   "Queen's Recruit#536": {
    "src": "Sigh... good luck out there.",
-   "dst": "",
+   "dst": "唉……祝你好运。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122111,7 +122111,7 @@
   },
   "Queen's Recruit#537": {
    "src": "Talk to Her Majesty in the north-eastern wing of the palace at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "到 [-{~}, {~}, {~}] 的皇宫东北翼与女王陛下谈话。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -122121,7 +122121,7 @@
   },
   "Queen's Recruit#538": {
    "src": "Good luck.",
-   "dst": "",
+   "dst": "祝你好运。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122131,7 +122131,7 @@
   },
   "Queen's Recruit#539": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122141,7 +122141,7 @@
   },
   "Queen's Recruit#540": {
    "src": "Well. I suppose congratulations are in order, finalist.",
-   "dst": "",
+   "dst": "好。我想该恭喜你，决赛选手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122151,7 +122151,7 @@
   },
   "Queen's Recruit#541": {
    "src": "You're curious, surely? For what purpose would I call you soldiers back to our province?",
-   "dst": "",
+   "dst": "你一定很好奇吧？我为什么要把你们这些士兵召回我们的行省？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122161,7 +122161,7 @@
   },
   "Queen's Recruit#542": {
    "src": "Certainly not for a vanity tournament. A meaningless celebration.",
-   "dst": "",
+   "dst": "当然不是为了一场虚荣的锦标赛。一场毫无意义的庆典。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122171,7 +122171,7 @@
   },
   "Queen's Recruit#543": {
    "src": "Oh, let us drop the facade. I know what you have been doing in secret. I am not blind.",
-   "dst": "",
+   "dst": "哦，我们就别再装了。我知道你们一直在暗中做什么。我又不瞎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122181,7 +122181,7 @@
   },
   "Queen's Recruit#544": {
    "src": "You chose this opportunity to seek out information on our province. What little you have learned, we have deemed an acceptable cost.",
-   "dst": "",
+   "dst": "你们借这个机会打探我们行省的情报。你们打听到的那点东西，我们认为是可以接受的代价。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122191,7 +122191,7 @@
   },
   "Queen's Recruit#545": {
    "src": "Given the circumstances, I would have sacrificed much, much more if necessary.",
-   "dst": "",
+   "dst": "照当前的情况，必要的话，我愿意牺牲的远不止这些。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122201,7 +122201,7 @@
   },
   "Queen's Recruit#546": {
    "src": "The greatest that Wynn has... a broad category. We had to thin the numbers a contest of strength did the job nicely.",
-   "dst": "",
+   "dst": "Wynn 最优秀的人……这个范围太广了。我们得削减人数——比试实力正好能办到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122211,7 +122211,7 @@
   },
   "Queen's Recruit#547": {
    "src": "And now... two candidates remain. You have done well to make it this far. I have been watching the duels intently, and you are certainly not unimpressive.",
-   "dst": "",
+   "dst": "而现在……只剩两位人选。你能走到这一步，表现得很好。我一直专注地看着那些决斗，你绝对称得上令人刮目相看。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122221,7 +122221,7 @@
   },
   "Queen's Recruit#548": {
    "src": "Yet of the two of you... you certainly leave a lesser impression than him. You are one amongst hundreds, thousands... indistinguishable.",
-   "dst": "",
+   "dst": "但你们两个之中……你给人的印象确实不如他深刻。你只是成百上千人之中的一个……毫无分别。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122231,7 +122231,7 @@
   },
   "Queen's Recruit#549": {
    "src": "And still, here you stand. It intrigues me. What is so special about you? What strength has led you here?",
-   "dst": "",
+   "dst": "而你依然站在这里。这让我很好奇。你有什么特别之处？是什么力量把你带到了这里？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122241,7 +122241,7 @@
   },
   "Queen's Recruit#550": {
    "src": "But no matter. Answers will come with time... should you be selected. I can tell you have a question. Speak it.",
-   "dst": "",
+   "dst": "不过无所谓。答案会随着时间到来……如果你被选中的话。我看得出你有个问题。说吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122251,7 +122251,7 @@
   },
   "Queen's Recruit#551": {
    "src": "Hm. A blank slate... to be able to see the outside world, for all its splendor and all its faults, to witness firsthand the deep rooted seeds of its inevitable destruction... there is value to that.",
-   "dst": "",
+   "dst": "嗯。一张白纸……能够亲眼见识外面的世界，见识它一切的壮丽与一切的缺陷，亲身见证它注定毁灭的那些深植的种子——那是有价值的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122261,7 +122261,7 @@
   },
   "Queen's Recruit#552": {
    "src": "You have seen it, haven't you? Forces beyond any of us vie for control of our world, caring not for what destruction they instill.",
-   "dst": "",
+   "dst": "你已经见过了，不是吗？超越我们所有人的力量在争夺我们世界的控制权，丝毫不在乎自己带来了多少毁灭。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122271,7 +122271,7 @@
   },
   "Queen's Recruit#553": {
    "src": "And it truly is a beautiful world, isn't it? To think, it could be destroyed, taken for their ceaseless war which holds no meaning, no purpose...",
-   "dst": "",
+   "dst": "而这真的是个美丽的世界，不是吗？想想看，它可能会被摧毁，被卷入他们那场毫无意义、毫无目的的无尽战争……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122281,7 +122281,7 @@
   },
   "Queen's Recruit#554": {
    "src": "Then you have seen firsthand the benefits. The province is unburdened by those who may cause problems, and Wynn's front in its war is bolstered.",
-   "dst": "",
+   "dst": "那你已经亲眼见过它的好处了。行省摆脱了那些可能制造麻烦的人，而 Wynn 在战争中的前线也得到了加强。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122291,7 +122291,7 @@
   },
   "Queen's Recruit#555": {
    "src": "Of course, many will refuse the call. Many grow stagnant in their newfound roles. Yet, in a select few... there is potential for much, much more.",
-   "dst": "",
+   "dst": "当然，许多人会拒绝这份召唤。许多人在新的角色中停滞不前。然而，在少数人身上……蕴藏着远远更多的潜力。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122301,7 +122301,7 @@
   },
   "Queen's Recruit#556": {
    "src": "I wonder... which are you?",
-   "dst": "",
+   "dst": "我很好奇……你是哪一种？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122311,7 +122311,7 @@
   },
   "Queen's Recruit#557": {
    "src": "That will be all. Return to your chambers for the night. I will be sending for the other finalist shortly.",
-   "dst": "",
+   "dst": "就这样吧。今晚回你的房间去。我很快就会派人去叫另一位决赛选手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122321,7 +122321,7 @@
   },
   "Queen's Recruit#558": {
    "src": "Return to room W-{~} and talk to Tasim at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "回到 W-{~} 号房，到 [-{~}, {~}, {~}] 跟 Tasim 谈谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -122331,7 +122331,7 @@
   },
   "Queen's Recruit#559": {
    "src": "Please, make your exit.",
-   "dst": "",
+   "dst": "请退下吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122341,7 +122341,7 @@
   },
   "Queen's Recruit#560": {
    "src": "You're back! Still in one piece?",
-   "dst": "",
+   "dst": "你回来了！还完好无损吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122351,7 +122351,7 @@
   },
   "Queen's Recruit#561": {
    "src": "...I was getting a little worried. You were up there a while.",
-   "dst": "",
+   "dst": "……我有点担心了。你在上面待了好一阵子。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122361,7 +122361,7 @@
   },
   "Queen's Recruit#562": {
    "src": "What did she want?",
-   "dst": "",
+   "dst": "她想要什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122371,7 +122371,7 @@
   },
   "Queen's Recruit#563": {
    "src": "... right. A weird conversation, then?",
-   "dst": "",
+   "dst": "……好吧。那么，是一场很怪的谈话？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122381,7 +122381,7 @@
   },
   "Queen's Recruit#564": {
    "src": "Ha. Well, now I'm a little nervous.",
-   "dst": "",
+   "dst": "哈。嗯，现在我有点紧张了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122391,7 +122391,7 @@
   },
   "Queen's Recruit#565": {
    "src": "...really. A... blank slate...",
-   "dst": "",
+   "dst": "……真的假的。一张……白纸……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122401,7 +122401,7 @@
   },
   "Queen's Recruit#566": {
    "src": "I'll... need to ask some follow-up questions.",
-   "dst": "",
+   "dst": "我……得问些后续的问题。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122411,7 +122411,7 @@
   },
   "Queen's Recruit#567": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122421,7 +122421,7 @@
   },
   "Queen's Recruit#568": {
    "src": "Oh, this is a disaster. We've been separated, and now we're stuck in here.",
-   "dst": "",
+   "dst": "哦，这真是场灾难。我们被分开了，现在又被困在这里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122431,7 +122431,7 @@
   },
   "Queen's Recruit#569": {
    "src": "We need to come up with a plan... is there a way we could",
-   "dst": "",
+   "dst": "我们得想个计划……有没有办法能——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122441,7 +122441,7 @@
   },
   "Queen's Recruit#570": {
    "src": "Tasim! Her Majesty will speak with you now.",
-   "dst": "",
+   "dst": "Tasim！女王陛下现在要见你。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122451,7 +122451,7 @@
   },
   "Queen's Recruit#571": {
    "src": "Oh. There it is.",
-   "dst": "",
+   "dst": "哦。来了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122461,7 +122461,7 @@
   },
   "Queen's Recruit#572": {
    "src": "Okay, wish me luck. I'll be back.",
-   "dst": "",
+   "dst": "好，祝我好运吧。我会回来的。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122471,7 +122471,7 @@
   },
   "Queen's Recruit#573": {
    "src": "Don't... stay up waiting for me. You can go rest. I'll be... fine, probably.",
-   "dst": "",
+   "dst": "别……熬夜等我。你可以先去休息。我会……没事的，大概吧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122481,7 +122481,7 @@
   },
   "Queen's Recruit#574": {
    "src": "Rest for the night.",
-   "dst": "",
+   "dst": "休息一晚。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -122491,7 +122491,7 @@
   },
   "Queen's Recruit#575": {
    "src": "Catch up with Tasim.",
-   "dst": "",
+   "dst": "去找 Tasim。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -122501,7 +122501,7 @@
   },
   "Queen's Recruit#576": {
    "src": "...oh, you're up.",
-   "dst": "",
+   "dst": "……哦，你醒了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122511,7 +122511,7 @@
   },
   "Queen's Recruit#577": {
    "src": "Sorry for waking you.",
-   "dst": "",
+   "dst": "抱歉吵醒你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122521,7 +122521,7 @@
   },
   "Queen's Recruit#578": {
    "src": "It went... fine, I guess. She probably said... most of the same things to you.",
-   "dst": "",
+   "dst": "谈得……还行吧，我想。她大概跟你说的……差不多都一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122531,7 +122531,7 @@
   },
   "Queen's Recruit#579": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122541,7 +122541,7 @@
   },
   "Queen's Recruit#580": {
    "src": "Hey, {u}...",
-   "dst": "",
+   "dst": "嘿，{u}……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122551,7 +122551,7 @@
   },
   "Queen's Recruit#581": {
    "src": "Could I ask you a favor?",
-   "dst": "",
+   "dst": "我能请你帮个忙吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122561,7 +122561,7 @@
   },
   "Queen's Recruit#582": {
    "src": "Could we spar? A test match, before... before tomorrow. Just like old times.",
-   "dst": "",
+   "dst": "我们能切磋一下吗？一场练习赛，在……在明天之前。就像以前那样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122571,7 +122571,7 @@
   },
   "Queen's Recruit#583": {
    "src": "Just, get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "就，准备好，到竞技场找我。好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122581,7 +122581,7 @@
   },
   "Queen's Recruit#584": {
    "src": "I yes. I'm okay. Just... could we spar? A test match, before... tomorrow. For old times' sake.",
-   "dst": "",
+   "dst": "我——是的。我没事。只是……我们能切磋一下吗？一场练习赛，在……明天之前。就当是为了过去的时光。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122591,7 +122591,7 @@
   },
   "Queen's Recruit#585": {
    "src": "Just... get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "就……准备好，到竞技场找我。好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122601,7 +122601,7 @@
   },
   "Queen's Recruit#586": {
    "src": "...oh, you're up.",
-   "dst": "",
+   "dst": "……哦，你醒了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122611,7 +122611,7 @@
   },
   "Queen's Recruit#587": {
    "src": "Sorry for waking you.",
-   "dst": "",
+   "dst": "抱歉吵醒你了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122621,7 +122621,7 @@
   },
   "Queen's Recruit#588": {
    "src": "It went... fine, I guess. She probably said... most of the same things to you.",
-   "dst": "",
+   "dst": "谈得……还行吧，我想。她大概跟你说的……差不多都一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122631,7 +122631,7 @@
   },
   "Queen's Recruit#589": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122641,7 +122641,7 @@
   },
   "Queen's Recruit#590": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122651,7 +122651,7 @@
   },
   "Queen's Recruit#591": {
    "src": "I was going to ask if I could ask you a favor.",
-   "dst": "",
+   "dst": "我本来想问，能不能请你帮个忙。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122661,7 +122661,7 @@
   },
   "Queen's Recruit#592": {
    "src": "Could we spar? A test match, before... before tomorrow. Just like old times.",
-   "dst": "",
+   "dst": "我们能切磋一下吗？一场练习赛，在……在明天之前。就像以前那样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122671,7 +122671,7 @@
   },
   "Queen's Recruit#593": {
    "src": "Just, get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "就，准备好，到竞技场找我。好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122681,7 +122681,7 @@
   },
   "Queen's Recruit#594": {
    "src": "I yes. I'm okay. Just... could we spar? A test match, before... tomorrow. For old times' sake.",
-   "dst": "",
+   "dst": "我——是的。我没事。只是……我们能切磋一下吗？一场练习赛，在……明天之前。就当是为了过去的时光。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122691,7 +122691,7 @@
   },
   "Queen's Recruit#595": {
    "src": "Just... get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "就……准备好，到竞技场找我。好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122701,7 +122701,7 @@
   },
   "Queen's Recruit#596": {
    "src": "H... huh?",
-   "dst": "",
+   "dst": "什……什么？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122711,7 +122711,7 @@
   },
   "Queen's Recruit#597": {
    "src": "He's... n-no, that",
-   "dst": "",
+   "dst": "他……不、不，那——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122721,7 +122721,7 @@
   },
   "Queen's Recruit#598": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122731,7 +122731,7 @@
   },
   "Queen's Recruit#599": {
    "src": "What...?",
-   "dst": "",
+   "dst": "什么……？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122741,7 +122741,7 @@
   },
   "Queen's Recruit#600": {
    "src": "I... I... I don't understand.",
-   "dst": "",
+   "dst": "我……我……我不明白。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122751,7 +122751,7 @@
   },
   "Queen's Recruit#601": {
    "src": "He's... what what happened? How do you know? How how could you know?",
-   "dst": "",
+   "dst": "他……发生——发生了什么？你怎么知道？你怎——你怎么会知道？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122761,7 +122761,7 @@
   },
   "Queen's Recruit#602": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122771,7 +122771,7 @@
   },
   "Queen's Recruit#603": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122781,7 +122781,7 @@
   },
   "Queen's Recruit#604": {
    "src": "...oh. That mission.",
-   "dst": "",
+   "dst": "……哦。那个任务。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122791,7 +122791,7 @@
   },
   "Queen's Recruit#605": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122801,7 +122801,7 @@
   },
   "Queen's Recruit#606": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122811,7 +122811,7 @@
   },
   "Queen's Recruit#607": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122821,7 +122821,7 @@
   },
   "Queen's Recruit#608": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122831,7 +122831,7 @@
   },
   "Queen's Recruit#609": {
    "src": "I... Gods. And, you you've been tr-trying to",
-   "dst": "",
+   "dst": "我……天啊。而你——你一直想、想要——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122841,7 +122841,7 @@
   },
   "Queen's Recruit#610": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122851,7 +122851,7 @@
   },
   "Queen's Recruit#611": {
    "src": "I I need to go. I need some space. I'll I'm going to the arena. I need to... to...",
-   "dst": "",
+   "dst": "我——我得走了。我需要一点空间。我——我要去竞技场。我需要……需要……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122861,7 +122861,7 @@
   },
   "Queen's Recruit#612": {
    "src": "No. No, d-don't. Don't do that. Not now, not not now. If... if you need me... you'll you'll know where I am.",
-   "dst": "",
+   "dst": "不。不，别、别这样。别这样。不是现在，不——不是现在。如果……如果你需要我……你——你知道我在哪里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122871,7 +122871,7 @@
   },
   "Queen's Recruit#613": {
    "src": "Head to the arena for a training match against Tasim.",
-   "dst": "",
+   "dst": "前往竞技场，与 Tasim 进行练习赛。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -122881,7 +122881,7 @@
   },
   "Queen's Recruit#614": {
    "src": "Get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "准备好，到竞技场找我。好吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122891,7 +122891,7 @@
   },
   "Queen's Recruit#615": {
    "src": "It's... quiet. No guards in sight.",
-   "dst": "",
+   "dst": "这里……好安静。一个守卫都没有。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122901,7 +122901,7 @@
   },
   "Queen's Recruit#616": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122911,7 +122911,7 @@
   },
   "Queen's Recruit#617": {
    "src": "Sigh. There's no point in trying to get out of here. We have to just see it through to the end.",
-   "dst": "",
+   "dst": "唉。想逃出去也没有意义。我们只能撑到最后。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122921,7 +122921,7 @@
   },
   "Queen's Recruit#618": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122931,7 +122931,7 @@
   },
   "Queen's Recruit#619": {
    "src": "What do you think? About what she said? About... forces destroying the world.",
-   "dst": "",
+   "dst": "你怎么想？关于她说的那些？关于……那些正在摧毁世界的力量。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122941,7 +122941,7 @@
   },
   "Queen's Recruit#620": {
    "src": "She's right. I've seen it I know you've seen it. It's... getting worse.",
-   "dst": "",
+   "dst": "她说得对。我见过——我知道你也见过。情况……越来越糟了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122951,7 +122951,7 @@
   },
   "Queen's Recruit#621": {
    "src": "But... the recruits. The recruits. I can't get over that. It's so...",
-   "dst": "",
+   "dst": "但是……那些新兵。那些新兵。我就是没办法释怀。那太……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122961,7 +122961,7 @@
   },
   "Queen's Recruit#622": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122971,7 +122971,7 @@
   },
   "Queen's Recruit#623": {
    "src": "Let's just get down there and fight. Usual spots, right?",
-   "dst": "",
+   "dst": "我们就下去打吧。老位置，对吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122981,7 +122981,7 @@
   },
   "Queen's Recruit#624": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -122991,7 +122991,7 @@
   },
   "Queen's Recruit#625": {
    "src": "...so you're here.",
-   "dst": "",
+   "dst": "……你来了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123001,7 +123001,7 @@
   },
   "Queen's Recruit#626": {
    "src": "No words. Let's fight. Just just a training battle. To... test our skills.",
-   "dst": "",
+   "dst": "什么都别说。开打吧。只是——只是一场练习赛。试试……我们的身手。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123011,7 +123011,7 @@
   },
   "Queen's Recruit#627": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123021,7 +123021,7 @@
   },
   "Queen's Recruit#628": {
    "src": "Ha. You've gotten strong, huh?",
-   "dst": "",
+   "dst": "哈。你变强了，是吧？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123031,7 +123031,7 @@
   },
   "Queen's Recruit#629": {
    "src": "Still can't beat you, huh...",
-   "dst": "",
+   "dst": "还是赢不了你啊……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123041,7 +123041,7 @@
   },
   "Queen's Recruit#630": {
    "src": "I guess we know how tomorrow will turn out, then.",
-   "dst": "",
+   "dst": "看来明天会怎样，我们都知道了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123051,7 +123051,7 @@
   },
   "Queen's Recruit#631": {
    "src": "No don't deny it. We both know I'm right.",
-   "dst": "",
+   "dst": "别——别否认。我们都知道我说得对。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123061,7 +123061,7 @@
   },
   "Queen's Recruit#632": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123071,7 +123071,7 @@
   },
   "Queen's Recruit#633": {
    "src": "She gave me a choice, you know?",
-   "dst": "",
+   "dst": "她给了我一个选择，你知道吗？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123081,7 +123081,7 @@
   },
   "Queen's Recruit#634": {
    "src": "A choice. I don't know what to do with it. And... I'm afraid of taking either option.",
-   "dst": "",
+   "dst": "一个选择。我不知道该怎么办。而且……两个选项我都怕选。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123091,7 +123091,7 @@
   },
   "Queen's Recruit#635": {
    "src": "I... I need to think over it some more. And we both need to rest.",
-   "dst": "",
+   "dst": "我……我需要再想想。而且我们都需要休息。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123101,7 +123101,7 @@
   },
   "Queen's Recruit#636": {
    "src": "Huh? I... yes. I think I am. I just have a lot on my mind.",
-   "dst": "",
+   "dst": "嗯？我……是的。我想我是。我只是心里有很多事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123111,7 +123111,7 @@
   },
   "Queen's Recruit#637": {
    "src": "I'll... tell you in the morning. I just have a lot on my mind.",
-   "dst": "",
+   "dst": "我……明天早上再告诉你。我只是心里有很多事。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123121,7 +123121,7 @@
   },
   "Queen's Recruit#638": {
    "src": "Ha. You're you're good. Oof. I'll be feeling that one for... for a while.",
-   "dst": "",
+   "dst": "哈。你——你真行。唔。这一下我得……得痛上好一阵子了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123131,7 +123131,7 @@
   },
   "Queen's Recruit#639": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123141,7 +123141,7 @@
   },
   "Queen's Recruit#640": {
    "src": "Why did it have to come to this? Why couldn't why couldn't we all have just been happy?",
-   "dst": "",
+   "dst": "为什么会走到这一步？为什么——为什么我们就不能都幸福快乐？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123151,7 +123151,7 @@
   },
   "Queen's Recruit#641": {
    "src": "He he sent me a letter for that mission, you know. Did I tell you that? It's why I went back to Wynn.",
-   "dst": "",
+   "dst": "他——他为了那个任务寄了封信给我，你知道吗？我跟你说过吗？所以我才回到 Wynn。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123161,7 +123161,7 @@
   },
   "Queen's Recruit#642": {
    "src": "And, it turns out he was already... already gone. And you were there, and I wasn't.",
-   "dst": "",
+   "dst": "结果，原来他那时已经……已经不在了。而你在那里，我却不在。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123171,7 +123171,7 @@
   },
   "Queen's Recruit#643": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123181,7 +123181,7 @@
   },
   "Queen's Recruit#644": {
    "src": "I want to blame you for it. I want to be able to be mad, to hate you. But... I can't. I just can't.",
-   "dst": "",
+   "dst": "我想怪你。我想能够生气，能够恨你。但是……我做不到。我就是做不到。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123191,7 +123191,7 @@
   },
   "Queen's Recruit#645": {
    "src": "I wish I could've been there. I wish I could've done it better. Maybe I could have or maybe it would've just gone the same way.",
-   "dst": "",
+   "dst": "我真希望我当时在场。真希望我能做得更好。也许我能——又或者结果还是一样。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123201,7 +123201,7 @@
   },
   "Queen's Recruit#646": {
    "src": "...maybe it'd have gone worse.",
-   "dst": "",
+   "dst": "……也许会更糟。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123211,7 +123211,7 @@
   },
   "Queen's Recruit#647": {
    "src": "And now we're both here in the place we were all exiled from! But he's he isn't. He's gone, and and we're still here.",
-   "dst": "",
+   "dst": "而现在我们两个都在这里，在我们全都被流放出来的地方！可他——他不在。他走了，而——而我们还在这里。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123221,7 +123221,7 @@
   },
   "Queen's Recruit#648": {
    "src": "...what am I supposed to do? What are we supposed to do? About all of this?",
-   "dst": "",
+   "dst": "……我该怎么办？我们该怎么办？面对这一切？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123231,7 +123231,7 @@
   },
   "Queen's Recruit#649": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123241,7 +123241,7 @@
   },
   "Queen's Recruit#650": {
    "src": "She gave me a choice.",
-   "dst": "",
+   "dst": "她给了我一个选择。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123251,7 +123251,7 @@
   },
   "Queen's Recruit#651": {
    "src": "I asked a lot of questions. I didn't like all the answers, but... she left me with a choice.",
-   "dst": "",
+   "dst": "我问了很多问题。我不喜欢所有的答案，但是……她留给我一个选择。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123261,7 +123261,7 @@
   },
   "Queen's Recruit#652": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123271,7 +123271,7 @@
   },
   "Queen's Recruit#653": {
    "src": "I don't know what to do. I need to... to... I need to think.",
-   "dst": "",
+   "dst": "我不知道该怎么办。我需要……需要……我需要想一想。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123281,7 +123281,7 @@
   },
   "Queen's Recruit#654": {
    "src": "Give me some space, please. I'll see you in the morning.",
-   "dst": "",
+   "dst": "请给我一点空间。明天早上见。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123291,7 +123291,7 @@
   },
   "Queen's Recruit#655": {
    "src": "Return to your room and sleep for the night.",
-   "dst": "",
+   "dst": "回到你的房间，睡一晚。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -123301,7 +123301,7 @@
   },
   "Queen's Recruit#656": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123311,7 +123311,7 @@
   },
   "Queen's Recruit#657": {
    "src": "Read the note Tasim left you before heading out.",
-   "dst": "",
+   "dst": "出发前，先读 Tasim 留给你的纸条。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -123321,7 +123321,7 @@
   },
   "Queen's Recruit#658": {
    "src": "Head to Her Majesty's office for her decision.",
-   "dst": "",
+   "dst": "前往女王陛下的办公室，听取她的决定。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -123331,7 +123331,7 @@
   },
   "Queen's Recruit#659": {
    "src": "Choices, choices, choices, choices...",
-   "dst": "",
+   "dst": "选择，选择，选择，选择……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123341,7 +123341,7 @@
   },
   "Queen's Recruit#660": {
    "src": "You've already failed, you know. You did not meet her criteria for selection.",
-   "dst": "",
+   "dst": "你知道吗，你已经失败了。你不符合她的选拔标准。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123351,7 +123351,7 @@
   },
   "Queen's Recruit#661": {
    "src": "But is dismissing you outright an error? Certainly, you're powerful. Perhaps even more so than you should be, given the circumstances.",
-   "dst": "",
+   "dst": "但直接把你打发掉会是个错误吗？毫无疑问，你很强大。以你的处境来说，也许强大得有点过头了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123361,7 +123361,7 @@
   },
   "Queen's Recruit#662": {
    "src": "Still. You lack the drive, the perspective. The dedication. The understanding.",
-   "dst": "",
+   "dst": "但是。你缺乏动力、眼界。缺乏奉献。缺乏理解。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123371,7 +123371,7 @@
   },
   "Queen's Recruit#663": {
    "src": "And, most critically you're unpredictable. And that makes you dangerous.",
-   "dst": "",
+   "dst": "而最关键的是——你难以预测。这让你很危险。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123381,7 +123381,7 @@
   },
   "Queen's Recruit#664": {
    "src": "Ah! It seems Her Majesty and I have come to the same conclusion. Wonderful.",
-   "dst": "",
+   "dst": "啊！看来女王陛下和我得出了同样的结论。太好了。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123391,7 +123391,7 @@
   },
   "Queen's Recruit#665": {
    "src": "So, where does that leave you? Cast out, discarded?",
-   "dst": "",
+   "dst": "那么，这让你落得什么下场？被驱逐，被抛弃？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123401,7 +123401,7 @@
   },
   "Queen's Recruit#666": {
    "src": "All the unanswered questions. Will you choose to let go? Dismiss the possibilities?",
-   "dst": "",
+   "dst": "所有那些没有答案的问题。你会选择放手吗？放弃那些可能性？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123411,7 +123411,7 @@
   },
   "Queen's Recruit#667": {
    "src": "And if not? What would you do for a glimpse of the truth? For a chance of receiving answers?",
-   "dst": "",
+   "dst": "如果不会呢？为了一窥真相，你愿意做什么？为了一个得到答案的机会？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123421,7 +123421,7 @@
   },
   "Queen's Recruit#668": {
    "src": "Hm. Whatever the case, the choice is yours. Perhaps you'll surprise me, after all! Wouldn't that be exciting?",
-   "dst": "",
+   "dst": "嗯。不管怎样，选择在你。说不定你终究会让我惊喜呢！那岂不是很令人兴奋？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123431,7 +123431,7 @@
   },
   "Queen's Recruit#669": {
    "src": "{u}, under order of Her Majesty, you are to be escorted out of Fruma, effective immediately.",
-   "dst": "",
+   "dst": "{u}，奉女王陛下之命，你即刻起将被护送出 Fruma。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123441,7 +123441,7 @@
   },
   "Queen's Recruit#670": {
    "src": "Any defiance will be seen as an official threat against Fruma from the Wynn province. Comply, and no one will be hurt.",
-   "dst": "",
+   "dst": "任何违抗都将被视为 Wynn 行省对 Fruma 的正式威胁。服从命令，就不会有人受伤。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123451,7 +123451,7 @@
   },
   "Queen's Recruit#671": {
    "src": "You hold no power here. This choice is not yours. You will follow orders, or face the consequences.",
-   "dst": "",
+   "dst": "你在这里没有任何权力。这个选择不属于你。你要么服从命令，要么承担后果。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -123461,7 +123461,7 @@
   },
   "Queen's Recruit#672": {
    "src": "...",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
