@@ -813,11 +813,16 @@ public final class DialogueRewriter {
             return null;
         }
         hit = fill(hit, parts);            // 佔位符換回真名、地名與數值
-        int limit = width * rows;
+        // 塞不塞得下要問 wrap 本身，不能只量總寬度。
+        //
+        // 總寬度量得到「字加起來有多寬」，量不到「斷行浪費掉的空間」：英文與俄文的
+        // 單字不從中間切，一行的尾巴常常空著一截。先前兩邊用的是不同的標準——這裡用
+        // 總寬度判定塞得下，呼叫端接著 wrap 卻攤不進去、回 null，整段就掉回英文。
+        // 俄文的單字長，玩家看到的「打字打到一半變回英文」就是這個。
         if (source.equals(typed)) {
-            // 講完了。塞不進框裡就不換——中文通常比英文短，真的塞不下時，
-            // 讓玩家看見完整的英文，比看見被切掉一半的中文好。
-            return measure(hit, style) <= limit ? hit : null;
+            // 講完了。塞不進框裡就不換——真的塞不下時，
+            // 讓玩家看見完整的英文，比看見被切掉一半的譯文好。
+            return wrap(hit, rows, style, width) != null ? hit : null;
         }
         // 還在逐字打字。譯文也照同樣的進度一個字一個字出來，看起來就跟原文一樣。
         //
@@ -825,8 +830,20 @@ public final class DialogueRewriter {
         // 通常只有一行，完整譯文要兩行，於是整句退回英文，要等最後一行出現才
         // 忽然跳成中文。玩家看到的「講到一半翻譯失效」就是這個。
         String part = typedSoFar(hit, typed.length(), source.length());
-        while (!part.isEmpty() && measure(part, style) > limit) {
-            part = typedSoFar(part, part.length() - 1, part.length());
+        if (wrap(part, rows, style, width) == null) {
+            // 找出還攤得進去的最長那一段。前綴越長越難塞，所以可以二分，
+            // 不必一個字一個字往回退（長句每一幀都要退幾十次）。
+            int lo = 0;
+            int hi = part.length();
+            while (lo < hi) {
+                int mid = (lo + hi + 1) / 2;
+                if (wrap(typedSoFar(part, mid, part.length()), rows, style, width) != null) {
+                    lo = mid;
+                } else {
+                    hi = mid - 1;
+                }
+            }
+            part = typedSoFar(part, lo, part.length());
         }
         return part.isEmpty() ? null : part;
     }
