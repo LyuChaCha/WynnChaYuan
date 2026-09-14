@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_cn` 简体中文 — 99.4%（28,549 / 28,714）
+## `zh_cn` 简体中文 — 99.7%（28,614 / 28,714）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -35,7 +35,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `profession-terms.json` | ██████████ 100% | 12 / 12 | 職業名稱<br>Profession names |
 | `guild.json` | ██████████ 100% | 12 / 12 | 公會選單<br>Guild menus |
 | `wynntils.json` | ██████████ 100% | 31 / 31 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
-| `gear-*.json` | █████████░ 93% | 923 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
+| `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
 ## `zh_tw` 繁體中文 — 92.1%（38,540 / 41,826）
 
