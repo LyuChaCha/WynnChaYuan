@@ -81,17 +81,17 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 32 / 32 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 6.6%（2,810 / 42,544）
+## `ja_jp` 日本語 — 8.3%（3,513 / 42,544）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
 | `ui-labels.json` | ██████████ 100% | 287 / 288 | 每次看物品都會看到（力量、戰鬥等級…）<br>Seen on every item tooltip (Strength, Combat Level, ...) |
-| `misc.json` | ░░░░░░░░░░ 4% | 220 / 6,172 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
+| `misc.json` | ░░░░░░░░░░ 4% | 224 / 6,172 | 物品說明、粉末、交易市場的零碎字串<br>Item lore, powders, and the trade market's odds and ends |
 | `label.json` | ██████████ 100% | 312 / 313 | 浮在世界裡的字（工作站、互動提示）<br>Text floating in the world (stations, interaction prompts) |
 | `npc.json` | ░░░░░░░░░░ 0% | 15 / 4,837 | 走在城裡就會看到<br>NPC names, seen while walking around town |
 | `gui.json` | ░░░░░░░░░░ 2% | 26 / 1,055 | 選單與介面<br>Menus and interface text |
 | `quest-ui.json` | ██████████ 99% | 93 / 94 | 任務開始、完成、獎勵那些訊息<br>Quest started/completed banners and reward lists |
-| `quest.json` | ░░░░░░░░░░ 0% | 0 / 354 | 任務介面<br>The quest interface |
+| `quest.json` | ██████████ 98% | 346 / 354 | 任務介面<br>The quest interface |
 | `quest-name.json` | ██████████ 100% | 154 / 154 | 任務名稱<br>Quest names |
 | `ability/*.json` | ░░░░░░░░░░ 0% | 4 / 1,574 | 開技能樹時<br>Ability tree |
 | `ability-labels.json` | ██████████ 100% | 248 / 249 | 技能樹的介面標籤<br>Ability tree interface labels |
@@ -103,7 +103,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `discovery.json` | ░░░░░░░░░░ 0% | 0 / 156 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 137 / 137 | 探索點的名稱<br>Discovery names |
 | `lootrun.json` | ░░░░░░░░░░ 0% | 1 / 1,006 | 跑 Lootrun 時<br>Seen during a lootrun |
-| `raid.json` | ░░░░░░░░░░ 0% | 0 / 361 | 打 Raid 時<br>Seen during a raid |
+| `raid.json` | ██████████ 98% | 353 / 361 | 打 Raid 時<br>Seen during a raid |
 | `dungeon.json` | ██████████ 100% | 22 / 22 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
