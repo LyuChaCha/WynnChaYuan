@@ -81,7 +81,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 32 / 32 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 38.1%（16,190 / 42,529）
+## `ru_ru` Русский — 40.8%（17,334 / 42,529）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -100,7 +100,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `major-id-terms.json` | ██████████ 100% | 3 / 3 | 特殊詞條裡的專有名詞<br>Proper nouns inside Major IDs |
 | `quest-dialogue.json` | ░░░░░░░░░░ 1% | 130 / 22,513 | 任務對話<br>NPC dialogue (by far the largest file) |
 | `secret-dialogue.json` | ░░░░░░░░░░ 0% | 0 / 68 | 祕密發現的故事<br>Secret discovery stories |
-| `discovery.json` | ░░░░░░░░░░ 0% | 0 / 156 | 探索點的說明<br>Discovery descriptions |
+| `discovery.json` | ██████████ 100% | 156 / 156 | 探索點的說明<br>Discovery descriptions |
 | `discovery-name.json` | ██████████ 100% | 137 / 137 | 探索點的名稱<br>Discovery names |
 | `lootrun.json` | ██████████ 100% | 1,006 / 1,006 | 跑 Lootrun 時<br>Seen during a lootrun |
 | `raid.json` | ██████████ 98% | 353 / 361 | 打 Raid 時<br>Seen during a raid |
@@ -116,7 +116,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `chat-terms.json` | ██████████ 100% | 2 / 2 | 聊天訊息裡的專有名詞<br>Proper nouns inside chat messages |
 | `dialogue-choice.json` | ██████████ 100% | 3 / 3 | 對話選項的介面<br>The dialogue choice interface |
 | `wynntils.json` | ██████████ 100% | 32 / 32 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
-| `gear-*.json` | ░░░░░░░░░░ 0% | 0 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
+| `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
 ## `ja_jp` 日本語 — 37.4%（15,920 / 42,529）
 
