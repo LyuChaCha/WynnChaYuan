@@ -139,7 +139,9 @@ public final class PlayerDataFilter {
             " gave you [+",
             " has given you ",
             // 「Party Finder: Hey MorphCascade, over here!」——後面接的是收訊者本人。
-            "Party Finder: Hey "
+            "Party Finder: Hey ",
+            // 市集篩選「- Name Contains: 某某」——冒號後面是玩家自己打的搜尋字。
+            "Name Contains: "
     );
 
     /**
