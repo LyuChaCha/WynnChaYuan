@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Recover the Past",
   "count": 273,
-  "translated": 252,
+  "translated": 273,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Recover the Past#000": {
    "src": "...he doesn't know. You have to break the news to him.",
-   "dst": "",
+   "dst": "……他还不知道。你得把消息告诉他。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -18,7 +18,7 @@
   },
   "Recover the Past#001": {
    "src": "Hmph. Maybe it just needs more power... If I increase the amount of mana I'm able to put into the spell, then-",
-   "dst": "",
+   "dst": "哼。也许只是力量不够……如果我能往法术里注入更多法力，那么——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -28,7 +28,7 @@
   },
   "Recover the Past#002": {
    "src": "In the meantime, with our subject gone, we'll have to make do with another. There is a Scout Reynauld on duty today, also from Fruma originally, just like yourself.",
-   "dst": "",
+   "dst": "与此同时，既然我们的实验对象不在了，只能找另一个将就一下。今天有位侦察兵 Reynauld 在值班，他和你一样，原本也来自 Fruma。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -38,7 +38,7 @@
   },
   "Recover the Past#003": {
    "src": "[+{~} Wrapped Package]",
-   "dst": "",
+   "dst": "[+{~} 包裹]",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -48,7 +48,7 @@
   },
   "Recover the Past#004": {
    "src": "It's puzzling, to be sure... if only we could see further. I'll get to work immediately- we must know more!",
-   "dst": "",
+   "dst": "这确实令人费解……要是我们能看得更远就好了。我马上开始工作——我们必须了解更多！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -58,7 +58,7 @@
   },
   "Recover the Past#005": {
    "src": "Use your Movement Keys to Preview your move, then press Jump to Confirm.",
-   "dst": "",
+   "dst": "使用移动键预览你的走法，然后按跳跃键确认。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -68,7 +68,7 @@
   },
   "Recover the Past#006": {
    "src": "Talk to Dr. Picard at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 [{~}, {~}, -{~}] 与 Picard 博士交谈。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -168,7 +168,7 @@
   },
   "Recover the Past#016": {
    "src": "Recover the sailor Caid near his boat at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [-{~}, {~}, -{~}] 他的船附近找回水手 Caid。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -248,7 +248,7 @@
   },
   "Recover the Past#024": {
    "src": "Hold Shift to Reset.",
-   "dst": "",
+   "dst": "按住 Shift 重置。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -298,7 +298,7 @@
   },
   "Recover the Past#029": {
    "src": "Steal the box from the Blacksmith's house at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "从 [-{~}, {~}, -{~}] 的铁匠家偷出箱子。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -318,7 +318,7 @@
   },
   "Recover the Past#031": {
    "src": "Bring the package to Caid at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "把包裹带给 [-{~}, {~}, -{~}] 的 Caid。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -408,7 +408,7 @@
   },
   "Recover the Past#040": {
    "src": "Bring Caid to Dr. Picard in his tower at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "带 Caid 去 [{~}, {~}, -{~}] 的塔里找 Picard 博士。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -778,7 +778,7 @@
   },
   "Recover the Past#077": {
    "src": "Find Scout Reynauld near the bridge to the {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 [{~}, {~}, -{~}] 通往 {p} 的桥附近找到侦察兵 Reynauld。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -888,7 +888,7 @@
   },
   "Recover the Past#088": {
    "src": "Return to Reynauld at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "回到 [{~}, {~}, -{~}] 找 Reynauld。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -908,7 +908,7 @@
   },
   "Recover the Past#090": {
    "src": "Convince Caid to keep watch over the bridge at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "前往 [-{~}, {~}, -{~}] 说服 Caid 看守桥梁。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -1018,7 +1018,7 @@
   },
   "Recover the Past#101": {
    "src": "Thank you for your help, Tasim and {u}. And Caid too...",
-   "dst": "",
+   "dst": "谢谢你们的帮助，Tasim 和 {u}。还有 Caid……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
@@ -1028,7 +1028,7 @@
   },
   "Recover the Past#102": {
    "src": "Bring Reynauld to Dr. Picard in his tower at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "带 Reynauld 去 [{~}, {~}, -{~}] 的塔里找 Picard 博士。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -1488,7 +1488,7 @@
   },
   "Recover the Past#148": {
    "src": "Rush to defend {p} from the incursion at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "赶往 [{~}, {~}, -{~}] 保卫 {p}，抵御入侵。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -1968,7 +1968,7 @@
   },
   "Recover the Past#196": {
    "src": "Bring Tasim to Dr. Picard in his tower at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "带 Tasim 去 [{~}, {~}, -{~}] 的塔里找 Picard 博士。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -2618,7 +2618,7 @@
   },
   "Recover the Past#261": {
    "src": "Find Tasim outside Dr. Picard's tower at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "在 Picard 博士的塔外 [{~}, {~}, -{~}] 找到 Tasim。",
    "role": "desc",
    "kind": "objective",
    "quest": "Recover the Past",
@@ -2728,7 +2728,7 @@
   },
   "Recover the Past#272": {
    "src": "It's the box Caid was talking about...",
-   "dst": "",
+   "dst": "这就是 Caid 说的那个箱子……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Recover the Past",
