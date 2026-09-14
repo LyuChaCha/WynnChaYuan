@@ -1,12 +1,32 @@
 {
  "_meta": {
   "quest": "Enter the Dojo",
-  "count": 34,
+  "count": 36,
   "translated": 34,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Enter the Dojo#000": {
+   "src": "The upturn of necromantic practices ended in {~} AP, with the outlawing of the technique. Defiling the dead and preventing their spirits from moving on...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#001": {
+   "src": "It is best to not add too much to the tea, for too many conflicting tastes will leave it muddled and foul-tasting. Three ingredients is a fine benchmark.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Enter the Dojo",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Enter the Dojo#002": {
    "src": "Talk to Sensei Miyagi at [{~}, {~}, -{~}].",
    "dst": "前往 [{~1}, {~2}, -{~3}] 與 Sensei Miyagi 對話。",
    "role": "desc",
@@ -16,7 +36,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Enter the Dojo#001": {
+  "Enter the Dojo#003": {
    "src": "Oh hohoho! So a human has found their way to my humble dojo? Intriguing! I am called Sensei Miyagi. I welcome you.",
    "dst": "喔呵呵呵！居然有人類找到了這間簡陋的道場？有意思！老朽名喚 Sensei Miyagi。歡迎你。",
    "role": "desc",
@@ -26,7 +46,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#002": {
+  "Enter the Dojo#004": {
    "src": "This dojo- I have dedicated to honing skills in all of the arts- from mental prowess and mental acuity, to craftsmanship and artistry.",
    "dst": "這間道場——是老朽磨練諸般技藝的地方，從心智的敏銳與洞察，到工匠的手藝與藝術。",
    "role": "desc",
@@ -36,7 +56,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#003": {
+  "Enter the Dojo#005": {
    "src": "Many have come- traveled from all corners of the earth to this humble one's dojo to train themselves and grow stronger. I am to presume you are the same?",
    "dst": "許多人從天涯海角遠道而來，只為在這老朽的道場中鍛鍊自己、變得更強。老朽猜想，你也是如此？",
    "role": "desc",
@@ -46,7 +66,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#004": {
+  "Enter the Dojo#006": {
    "src": "Although, while I have enjoyed my life's work here, I cannot deny I am getting on in years. I seek a successor, a master of many skills to take my place.",
    "dst": "不過，儘管老朽很享受在這裡的畢生志業，卻也不能否認年事已高。老朽在尋找一位繼承者，一位精通諸藝的人來接替。",
    "role": "desc",
@@ -56,7 +76,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#005": {
+  "Enter the Dojo#007": {
    "src": "To the one who should master the arts, I would bequeath the Master's Gi, a symbol of resolute skill. Of course, do not feel pressured to take over for me, hoho!",
    "dst": "若有人能通達諸般技藝，老朽便將「大師道服」相贈，那是堅定技藝的象徵。當然，你不必為此而有壓力，呵呵！",
    "role": "desc",
@@ -66,7 +86,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#006": {
+  "Enter the Dojo#008": {
    "src": "As long as I may teach others and bring them to new heights, I am satisfied. Whether your aim be merely to sharpen your skills or to allow me to retire, you are welcomed.",
    "dst": "只要老朽還能教導他人、帶他們攀上新的高度，老朽便心滿意足。無論你的目的只是磨練技藝，或是想讓老朽退休，都同樣歡迎。",
    "role": "desc",
@@ -76,7 +96,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#007": {
+  "Enter the Dojo#009": {
    "src": "When you are ready to begin, purify yourself in the waters of the spring behind the dojo, and I will guide you to your first challenge.",
    "dst": "你準備好開始時，就到道場後方的泉水中淨身，老朽便領你前往第一道試煉。",
    "role": "desc",
@@ -86,7 +106,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#008": {
+  "Enter the Dojo#010": {
    "src": "Jump down the water pit to begin the challenges.",
    "dst": "跳進水池，開始試煉。",
    "role": "desc",
@@ -96,7 +116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Enter the Dojo#009": {
+  "Enter the Dojo#011": {
    "src": "Ascend the Lufar Room in the physical strength challenge.",
    "dst": "在體能試煉中登上 Lufar 之間的頂端。",
    "role": "desc",
@@ -106,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Enter the Dojo#010": {
+  "Enter the Dojo#012": {
    "src": "Here we are then- The Lufar Room. Here tests your agility! Even these old bones can scale this room in short order- how shall you fare?",
    "dst": "我們到了——Lufar 之間。這裡考驗你的身手！老朽這把老骨頭都能三兩下爬上去——你又如何呢？",
    "role": "desc",
@@ -116,7 +136,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#011": {
+  "Enter the Dojo#013": {
    "src": "Fight your way through the Fiata Room in the combat challenge.",
    "dst": "在戰鬥試煉中殺出 Fiata 之間。",
    "role": "desc",
@@ -126,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Enter the Dojo#012": {
+  "Enter the Dojo#014": {
    "src": "I recognize your skill, and you have passed the challenge of the Lufar Room! Hoho, but the next challenge has defeated many an apprentice.",
    "dst": "老朽認可你的身手，你通過了 Lufar 之間的試煉！呵呵，不過下一道試煉，可打敗過不少學徒。",
    "role": "desc",
@@ -136,7 +156,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#013": {
+  "Enter the Dojo#015": {
    "src": "Now, comes the Fiata Room! Here, your combat prowess shall be put to the test. Martial skill comes easily to me...but what of your own?",
    "dst": "接下來，是 Fiata 之間！這裡將考驗你的戰鬥本領，武藝於老朽而言不算難事……那你自己呢？",
    "role": "desc",
@@ -146,7 +166,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#014": {
+  "Enter the Dojo#016": {
    "src": "I hear many things about human combat skill, so I believe I shall watch this challenger myself. Enter now, challenger!",
    "dst": "老朽聽過不少關於人類戰技的說法，所以這一場老朽要親自看著。進去吧，挑戰者！",
    "role": "desc",
@@ -156,7 +176,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#015": {
+  "Enter the Dojo#017": {
    "src": "Solve the puzzle of sight in the Cliste Room in the sight challenge.",
    "dst": "在 Cliste 之間的視野試煉中解開視覺的謎題。",
    "role": "desc",
@@ -166,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Enter the Dojo#016": {
+  "Enter the Dojo#018": {
    "src": "And I am to recognize your combat skill, and to proclaim your passage of the Fiata Room. Well done!",
    "dst": "老朽認可你的戰技，宣告你通過了 Fiata 之間。做得好！",
    "role": "desc",
@@ -176,7 +196,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#017": {
+  "Enter the Dojo#019": {
    "src": "Next, however, is not a challenge of physical skill, but of observation and logical reasoning, in this- the Cliste Room. Here, a puzzle awaits.",
    "dst": "不過接下來這關，考的不是體能，而是觀察與推理——這裡是 Cliste 之間，謎題正等著你。",
    "role": "desc",
@@ -186,7 +206,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#018": {
+  "Enter the Dojo#020": {
    "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as there are many things.",
    "dst": "你必須看出路徑，把紅色方塊送到金色方塊那裡。理論上很簡單……做起來就複雜了，世事多半如此。",
    "role": "desc",
@@ -196,7 +216,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#019": {
+  "Enter the Dojo#021": {
    "src": "Remember this as you work- Change your perspective, and the reality changes.",
    "dst": "解題時記住這句話——換一個視角，現實隨之改變。",
    "role": "desc",
@@ -206,7 +226,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#020": {
+  "Enter the Dojo#022": {
    "src": "Become at one with nature in the Sitheach Room and Cavern.",
    "dst": "在 Sitheach 之間與洞窟中與自然合而為一。",
    "role": "desc",
@@ -216,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Enter the Dojo#021": {
+  "Enter the Dojo#023": {
    "src": "And there, I recognize your mental acuity! You have passed the Cliste Room. You are doing quite well, but many have gotten to this point and had a single point stymie them.",
    "dst": "老朽在此認可你心智的敏銳！你通過了 Cliste 之間。你表現得很好，不過走到這一步而卡在最後一關的人，可不在少數。",
    "role": "desc",
@@ -226,7 +246,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#022": {
+  "Enter the Dojo#024": {
    "src": "Welcome then, to the last challenge I offer you, held within the Sitheach Room and cavern.",
    "dst": "那麼，歡迎來到老朽為你準備的最後一道試煉，就在 Sitheach 之間與其洞窟之中。",
    "role": "desc",
@@ -236,7 +256,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#023": {
+  "Enter the Dojo#025": {
    "src": "Your task here, is to become tranquil, and at peace with nature. What that entails... I leave up to you.",
    "dst": "你在這裡的任務，是讓自己歸於寧靜，與自然相安。至於那意味著什麼……老朽留給你自己去想。",
    "role": "desc",
@@ -246,7 +266,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#024": {
+  "Enter the Dojo#026": {
    "src": "There are many paths to tranquility. Whatever you choose, you will know when you have reached the point of success.",
    "dst": "通往寧靜的路有很多條。不論你選哪一條，成了的那一刻，你自己會知道。",
    "role": "desc",
@@ -256,7 +276,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#025": {
+  "Enter the Dojo#027": {
    "src": "Exit the Sitheach cave through the tunnel near the temple.",
    "dst": "從神殿附近的隧道離開 Sitheach 洞窟。",
    "role": "desc",
@@ -266,7 +286,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Enter the Dojo#026": {
+  "Enter the Dojo#028": {
    "src": "Speak to Sensei Miyagi.",
    "dst": "與 Sensei Miyagi 對話。",
    "role": "desc",
@@ -276,7 +296,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Enter the Dojo#027": {
+  "Enter the Dojo#029": {
    "src": "I see it now. The troubled heart you came here with is troubled no longer. I recognize your mastery of the Sitheach Room.",
    "dst": "老朽看見了。你來時那顆紛亂的心，如今已不再紛亂。老朽認可你對 Sitheach 之間的通達。",
    "role": "desc",
@@ -286,7 +306,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#028": {
+  "Enter the Dojo#030": {
    "src": "Oh hoho... It is just like a human to do what cannot be done. That is each challenge of my humble dojo, completed!",
    "dst": "喔呵呵……做到做不到的事，果然很有人類的作風。老朽這間簡陋道場的每一道試煉，你都完成了！",
    "role": "desc",
@@ -296,7 +316,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#029": {
+  "Enter the Dojo#031": {
    "src": "So! While I did advise you not to feel pressured of it, I am curious, young master. Do you wish to take my place here, so I may sit these old bones down?",
    "dst": "那麼！雖然老朽說過別讓你有壓力，但老朽還是好奇，年輕的大師。你願意接替老朽的位置，好讓這把老骨頭坐下來歇著嗎？",
    "role": "desc",
@@ -306,7 +326,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#030": {
+  "Enter the Dojo#032": {
    "src": "Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
    "dst": "啊，當然不願意。儘管你已通達諸藝，這也不過是你旅途中的一步而已。不必掛心，老朽完全明白。",
    "role": "desc",
@@ -316,7 +336,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#031": {
+  "Enter the Dojo#033": {
    "src": "I am certain that I will find a suitable successor before my time comes- and equally as certain that I've many a year to go, hoho!",
    "dst": "老朽相信大限來臨前，一定能找到合適的繼承者——也同樣相信老朽還有很多年可活，呵呵！",
    "role": "desc",
@@ -326,7 +346,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#032": {
+  "Enter the Dojo#034": {
    "src": "Nevertheless, you have completed the challenges of this humble Sensei, as such, I will provide you what was promised.",
    "dst": "無論如何，你完成了老朽這卑微老師的試煉，因此老朽會把答應過的東西給你。",
    "role": "desc",
@@ -336,7 +356,7 @@
    "speaker": "Sensei Miyagi",
    "source": "wiki"
   },
-  "Enter the Dojo#033": {
+  "Enter the Dojo#035": {
    "src": "Wear this [Master's Gi] with pride, and remember this final lesson- There is never a point in life that you will stop learning. See the world and its lessons every day of your life, young master.",
    "dst": "帶著榮耀穿上這件 Master's Gi，並記住這最後一課——學不可以已。用你生命中的每一天去看這個世界，看它教你的事，年輕的大師。",
    "role": "desc",
