@@ -113,11 +113,11 @@ needs**.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | █████████░ 92.3% | 39,164 / 42,432 |
-| `zh_cn` 简体中文 | █████████░ 91.4% | 38,767 / 42,432 |
-| `ja_jp` 日本語 | ░░░░░░░░░░ 3.7% | 1,580 / 42,432 |
-| `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 621 / 42,432 |
-| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 42,432 |
+| `zh_tw` 繁體中文 | █████████░ 92.5% | 39,354 / 42,544 |
+| `zh_cn` 简体中文 | █████████░ 91.6% | 38,957 / 42,544 |
+| `ja_jp` 日本語 | ░░░░░░░░░░ 4.2% | 1,795 / 42,544 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 621 / 42,544 |
+| `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 42,544 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
@@ -151,9 +151,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 988 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,858 | 1,920 | 1,920 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 12,141 | 15,338 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 12,331 | 15,450 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 50,592 lines estimated**, **42,432 collected** (84%), **39,164 translated** (77% of the estimate, 92.3% of what we have).
+> All together: **at least 50,704 lines estimated**, **42,544 collected** (84%), **39,354 translated** (78% of the estimate, 92.5% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->
