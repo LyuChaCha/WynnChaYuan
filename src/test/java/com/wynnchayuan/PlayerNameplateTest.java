@@ -138,6 +138,14 @@ public final class PlayerNameplateTest {
                 "{#} Yorikatsu{~} has been overtaken! Keep attacking The"
                         + " {#} Parasite to save them!",
                 "{#} userUwU has gotten a Steampunk Spear from their crate!",
+                // 聊天室折行折在 their 後面，下一片還補了符號
+                "{#} Sleepy toaster has gotten a Gray Wybel from their\n{#} crate!\n"
+                        + "{#} Get your own at wynncraft.com/store or type /store",
+                // Loot 以外的炸彈到期，主詞一樣是丟炸彈的人
+                "{#} Sleepy toaster Combat Experience Bomb has expired! \n"
+                        + "{#} Get your own bombs at wynncraft.com/store",
+                // 立牌署名，名字有空白
+                "Toaster Alleyway\nby Very Sleepy Toasters",
                 "{#}Crafted by Bunnub",
                 "{#}Crafted by creeper{~}",
                 "{#} HiSlIgHt_ has reconnected!",

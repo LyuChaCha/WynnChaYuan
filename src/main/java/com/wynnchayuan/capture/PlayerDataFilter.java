@@ -58,6 +58,10 @@ public final class PlayerDataFilter {
             // 同一則廣播的其餘幾片，名字散在不同片上：
             // 「{#} JC grindeando Loot Bomb has expired! …」
             " Loot Bomb has expired",
+            // 炸彈不只 Loot 一種：Combat Experience、Profession Speed…
+            // 每一種到期都是同一句廣播，主詞一樣是丟炸彈的人。
+            // 「{#} hp giving stick Combat Experience Bomb has expired!」就漏進過收件匣。
+            " Bomb has expired",
             // 「PoorChaCha has placed a mob totem in {p} at …」與
             // 「You are inside of PoorChaCha's mob totem.」——石碑是誰放的
             // 就寫誰的名字，而且句子裡還有座標。實機的 captured.json 裡
@@ -178,6 +182,10 @@ public final class PlayerDataFilter {
      */
     private static final Pattern THANK_SOMEONE =
             Pattern.compile("(?m)^(?:\\{#}\\s*)+Thank ");
+
+    /** 見 {@link #carriesPlayerData}：折行處連同後面補上的符號，併回一個空白。 */
+    private static final Pattern UNWRAP =
+            Pattern.compile("[ \\t]*\\n(?:[ \\t]*\\{#}[ \\t]*)*");
 
     /** 座標，例如 {@code [-781, 89, -5563]}。 */
     private static final Pattern COORDS =
@@ -309,6 +317,16 @@ public final class PlayerDataFilter {
             Pattern.compile("(?m)^(?:\\{#\\})*\\s*(?:Crafted )?by \\S+\\s*$");
 
     /**
+     * 立牌底下那一行署名，名字不只一個字：「Cats' Alleyway / by Late Night Cats」。
+     *
+     * <p>{@link #CRAFTED_BY} 只認一個字的名字，玩家或公會取的名字常常有空白，
+     * 整塊就穿了過去——收件匣的檢查擋下過這一筆。跟 {@code tools/check-leaks.py}
+     * 的 SIGN_SHAPES 用同一條規則：行首小寫 by、後面接大寫開頭。
+     */
+    private static final Pattern SIGNED_BY =
+            Pattern.compile("(?m)^(?:\\{#\\})*\\s*by [A-Z]");
+
+    /**
      * 經驗共享通知後面掛的那個人是誰，例如：
      *
      * <pre>
@@ -332,8 +350,12 @@ public final class PlayerDataFilter {
         if (text == null || text.isBlank()) {
             return false;
         }
+        // 聊天室會把長廣播折行，折點後面還補上符號：「… from their\n{#} crate!」。
+        // 片語要跨過折行比對，不然整則開箱廣播連同玩家名一起穿過去——
+        // 實機的 captured.json 裡就收進了兩筆。
+        String unwrapped = UNWRAP.matcher(text).replaceAll(" ");
         for (String marker : MARKERS) {
-            if (text.contains(marker)) {
+            if (text.contains(marker) || unwrapped.contains(marker)) {
                 return true;
             }
         }
@@ -342,6 +364,7 @@ public final class PlayerDataFilter {
                 || GUILD_TAG.matcher(text).find()
                 || RAID_DEATH.matcher(text).find()
                 || CRAFTED_BY.matcher(text).find()
+                || SIGNED_BY.matcher(text).find()
                 || XP_SHARE_TARGET.matcher(text).find()
                 || GUILD_HOLOGRAM.matcher(text).find()
                 || THANK_SOMEONE.matcher(text).find()
