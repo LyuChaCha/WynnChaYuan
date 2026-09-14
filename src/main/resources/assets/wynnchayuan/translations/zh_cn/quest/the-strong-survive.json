@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Strong Survive",
-  "count": 665,
-  "translated": 665,
+  "count": 660,
+  "translated": 649,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -524,56 +524,6 @@
    "quest": "The Strong Survive",
    "stage": "Stage 4",
    "speaker": "Uniform Tailor",
-   "source": "wiki"
-  },
-  "The Strong Survive#052": {
-   "src": "** The Shield room has five turrets the first day and seven on the second day. The turrets also use more complicated patterns.",
-   "dst": "** 盾牌室第一天有五座箭塔，第二天有七座。箭塔的射击模式也会更复杂。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Strong Survive",
-   "stage": "Stage 4",
-   "speaker": "Resilience",
-   "source": "wiki"
-  },
-  "The Strong Survive#053": {
-   "src": "** The Parkour room has smaller platforms and more precise timing.",
-   "dst": "** 跑酷室的平台更小，时机要求更精准。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Strong Survive",
-   "stage": "Stage 4",
-   "speaker": "Leap",
-   "source": "wiki"
-  },
-  "The Strong Survive#054": {
-   "src": "** Enables an optional secret fight with Adder on the second night.",
-   "dst": "** 第二天晚上会开启一场与 Adder 的可选隐藏战斗。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Strong Survive",
-   "stage": "Stage 4",
-   "speaker": "Adder",
-   "source": "wiki"
-  },
-  "The Strong Survive#055": {
-   "src": "** Commander Ferreo is instead fought as The Iron Commander.",
-   "dst": "** Ferreo 指挥官改为以铁指挥官的身份出战。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Strong Survive",
-   "stage": "Stage 4",
-   "speaker": "Tericen",
-   "source": "wiki"
-  },
-  "The Strong Survive#056": {
-   "src": "** Enables the effects of Adder, Tericen, Leap, and Resilience, and also grants the Iron Medallion necklace as a quest reward.",
-   "dst": "** 同时启用 Adder、Tericen、Leap 与 Resilience 的效果，并额外获得 Iron Medallion 项链作为任务奖励。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "The Strong Survive",
-   "stage": "Stage 4",
-   "speaker": "Cursed",
    "source": "wiki"
   },
   "The Strong Survive#057": {
@@ -1977,8 +1927,8 @@
    "source": "wiki"
   },
   "The Strong Survive#197": {
-   "src": "Don't worry , this one is the easiest of the three challenges.",
-   "dst": "别担心，这是三项挑战里最简单的一项。",
+   "src": "Don't worry {u}, this one is the easiest of the three challenges.",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -1997,8 +1947,8 @@
    "source": "wiki"
   },
   "The Strong Survive#199": {
-   "src": "It's your turn , stand on that plate to start the test.",
-   "dst": "轮到你了，站到那块踏板上开始测试。",
+   "src": "It's your turn {u}, stand on that plate to start the test.",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -2047,8 +1997,8 @@
    "source": "wiki"
   },
   "The Strong Survive#204": {
-   "src": "Hey , I am ashamed to say it, but things didn't go well for me...",
-   "dst": "嘿，说出来真丢脸，但我表现得不太好……",
+   "src": "Hey {u}, I am ashamed to say it, but things didn't go well for me...",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -2327,8 +2277,8 @@
    "source": "wiki"
   },
   "The Strong Survive#232": {
-   "src": "You're up , good luck!",
-   "dst": "轮到你了，祝你好运！",
+   "src": "You're up {u}, good luck!",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -2417,8 +2367,8 @@
    "source": "wiki"
   },
   "The Strong Survive#241": {
-   "src": "There you are , come sit next to me so we can talk about the second challenge.",
-   "dst": "你来了，过来坐我旁边，我们聊聊第二项挑战。",
+   "src": "There you are {u}, come sit next to me so we can talk about the second challenge.",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -3897,8 +3847,8 @@
    "source": "wiki"
   },
   "The Strong Survive#389": {
-   "src": "Hey, , are you awake? You slept through the alarm bell.",
-   "dst": "嘿，你醒了吗？你睡过了起床钟。",
+   "src": "Hey, {u}, are you awake? You slept through the alarm bell.",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -4157,8 +4107,8 @@
    "source": "wiki"
   },
   "The Strong Survive#415": {
-   "src": "You're up , do your best!",
-   "dst": "轮到你了，尽力而为！",
+   "src": "You're up {u}, do your best!",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -4217,8 +4167,8 @@
    "source": "wiki"
   },
   "The Strong Survive#421": {
-   "src": "Hey , I think the challenge went well. I managed to complete it at least, although I can't say for certain if I made a good time.",
-   "dst": "嘿，我觉得挑战进行得还不错。至少我完成了，虽然不敢肯定成绩好不好。",
+   "src": "Hey {u}, I think the challenge went well. I managed to complete it at least, although I can't say for certain if I made a good time.",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -4417,8 +4367,8 @@
    "source": "wiki"
   },
   "The Strong Survive#441": {
-   "src": "Thank you for being here to listen to me, , I don't know where I'd be right now without you...",
-   "dst": "谢谢你在这里听我说话，我不知道要是没有你，我现在会是什么样子……",
+   "src": "Thank you for being here to listen to me, {u}, I don't know where I'd be right now without you...",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -4497,8 +4447,8 @@
    "source": "wiki"
   },
   "The Strong Survive#449": {
-   "src": "Alright, , stand on that plate in front of you to start the test.",
-   "dst": "好，站到你面前那块踏板上开始测试。",
+   "src": "Alright, {u}, stand on that plate in front of you to start the test.",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",
@@ -4837,8 +4787,8 @@
    "source": "wiki"
   },
   "The Strong Survive#483": {
-   "src": "Ah, you're here, , come on, let's go ask Adder about how his duel went yesterday...",
-   "dst": "啊，你来了，走吧，我们去问问 Adder 昨天的决斗怎么样……",
+   "src": "Ah, you're here, {u}, come on, let's go ask Adder about how his duel went yesterday...",
+   "dst": "",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Strong Survive",

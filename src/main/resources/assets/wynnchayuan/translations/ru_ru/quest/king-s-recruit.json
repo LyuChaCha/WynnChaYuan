@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "King's Recruit",
-  "count": 124,
+  "count": 128,
   "translated": 0,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
@@ -187,7 +187,7 @@
    "source": "wiki"
   },
   "King's Recruit#018": {
-   "src": "{u}, why don't you do the honors? Go ahead and open that gate.",
+   "src": "{u}, why don't you do the honours? Go ahead and open that gate.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -457,7 +457,7 @@
    "source": "wiki"
   },
   "King's Recruit#045": {
-   "src": "No, but... We can worry about that later. For now, we need to find a way past this ravine. Aledar, {u}, you should look for a way across. I'll keep looking here.",
+   "src": "No, but... We can worry about that later. For now, we need to find a way past this ravine. Aledar, {u}, you should look around for a way across. I'll keep looking here.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -937,7 +937,7 @@
    "source": "wiki"
   },
   "King's Recruit#093": {
-   "src": "... That was close. Thanks for the save, recruits!",
+   "src": "That sure was close... Thanks for the save, {u}!",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -1187,7 +1187,7 @@
    "source": "wiki"
   },
   "King's Recruit#118": {
-   "src": "It's beautiful.... Oh! I almost forgot to tell you, {u}.",
+   "src": "It's beautiful... Oh! I almost forgot to tell you, {u}.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -1245,6 +1245,40 @@
    "stage": "Stage 22",
    "speaker": "Tasim",
    "source": "wiki"
+  },
+  "King's Recruit#124": {
+   "src": "What are you waiting for recruits? Go identify your helmet at the  Item Identifier and then equip it in your helmet slot!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "source": "capture"
+  },
+  "King's Recruit#125": {
+   "src": "Unless you'd rather stand around here all day, that's fine by me too.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "source": "capture"
+  },
+  "King's Recruit#126": {
+   "src": "Well, what are we waiting for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "source": "capture"
+  },
+  "King's Recruit#127": {
+   "src": "Good luck in there, recruits! You're gonna need it...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
+   "stage": "Stage 12",
+   "speaker": "Guard",
+   "source": "capture"
   }
  }
 }
