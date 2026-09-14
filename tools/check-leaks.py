@@ -111,6 +111,17 @@ SHAPES = [
     (r"took a shortcut to death's door", "誰死了"),
     (r"There's only ashes where\b", "誰死了"),
     (r"-- oops, other way around", "誰被怪物殺了"),
+    # 2026-09-14 那批收件匣又冒出六種死法，主詞一樣是死掉的玩家。
+    (r"\sfailed to evade\b", "誰死了"),
+    (r"\swas shot down by\b", "誰死了"),
+    (r"\swas de-animated by\b", "誰死了"),
+    (r"\sbecame swiss cheese\b", "誰死了"),
+    (r"\sto thank for their death\b", "誰死了"),
+    (r"\sgot a new skull piercing\b", "誰死了"),
+    # 通用的那一條：行首一個字黏著 {~}、空一格接小寫動詞——
+    # 「Sparkl{~} failed…」「zhanhua{~} was…」。帳號名尾巴的數字收集時變成 {~}，
+    # 遊戲自己的句子不會用「單字{~}」當主語開頭。
+    (r"(?m)^(?:\{#\}\s*)*[A-Za-z]{2,}\{~\}\s+[a-z]", "帳號名開頭的廣播"),
     # 升等廣播。主詞是別人的帳號名；自己的那一句會被匿名成 {u}，上面的
     # ALLOW 會放行。
     (r"\sis now combat level", "誰升等了"),

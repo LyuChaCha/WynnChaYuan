@@ -105,6 +105,13 @@ public final class PlayerDataFilter {
             "took a shortcut to death's door",
             "There's only ashes where ",
             "-- oops, other way around",
+            // 2026-09-14 收件匣又冒出的六種死法，跟 tools/check-leaks.py 同一批。
+            " failed to evade ",
+            " was shot down by ",
+            " was de-animated by ",
+            " became swiss cheese",
+            " to thank for their death",
+            " got a new skull piercing",
             // 升等廣播，主詞是別人的帳號名。
             " is now combat level",
             // 公會大廳／住宅島的招牌：撇號前面是玩家或公會取的名字。
@@ -184,6 +191,17 @@ public final class PlayerDataFilter {
      */
     private static final Pattern THANK_SOMEONE =
             Pattern.compile("(?m)^(?:\\{#}\\s*)+Thank ");
+
+    /**
+     * 行首一個字黏著數字、空一格接小寫動詞：「Sparkl{~} failed to evade …」、
+     * 「zhanhua{~} was de-animated by …」。
+     *
+     * <p>帳號名尾巴的數字收集時變成 {@code {~}}。遊戲自己的句子不會拿
+     * 「單字{~}」當主語開頭，所以不必一種死法一種死法地追——新的死法
+     * 只要主詞帶數字就擋得住。跟 {@code tools/check-leaks.py} 的同一條規則。
+     */
+    private static final Pattern ACCOUNT_LEAD =
+            Pattern.compile("(?m)^(?:\\{#}\\s*)*[A-Za-z]{2,}\\{~}\\s+[a-z]");
 
     /** 見 {@link #carriesPlayerData}：折行處連同後面補上的符號，併回一個空白。 */
     private static final Pattern UNWRAP =
@@ -367,6 +385,7 @@ public final class PlayerDataFilter {
                 || RAID_DEATH.matcher(text).find()
                 || CRAFTED_BY.matcher(text).find()
                 || SIGNED_BY.matcher(text).find()
+                || ACCOUNT_LEAD.matcher(text).find()
                 || XP_SHARE_TARGET.matcher(text).find()
                 || GUILD_HOLOGRAM.matcher(text).find()
                 || THANK_SOMEONE.matcher(text).find()
