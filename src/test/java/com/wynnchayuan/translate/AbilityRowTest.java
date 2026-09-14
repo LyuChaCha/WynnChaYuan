@@ -114,9 +114,9 @@ public final class AbilityRowTest {
         nothing(store, "Weird Made Up Label: Heal");
 
         // 標籤認得，但後面不是技能名而是查不到的東西：一樣放棄。
-        // market 的篩選列就是這樣（「- Name Contains: Insulators」），
-        // 那個標籤還沒收進語料，收進去之前不該硬翻一半。
-        nothing(store, "- Name Contains: Insulators");
+        // （市集篩選「- Name Contains:」後面是玩家打的字，照原樣留著是刻意的，
+        // 見 LabelColonTest。）
+        nothing(store, "Total Damage: Totally Made Up Thing");
 
         // 負號不是項目符號。剝掉的話「-{~} to -{~}」會少一個減號，
         // 玩家看到的傷害就從負變正。

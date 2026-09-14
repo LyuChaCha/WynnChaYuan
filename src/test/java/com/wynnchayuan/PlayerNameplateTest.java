@@ -146,6 +146,8 @@ public final class PlayerNameplateTest {
                         + "{#} Get your own bombs at wynncraft.com/store",
                 // 立牌署名，名字有空白
                 "Toaster Alleyway\nby Very Sleepy Toasters",
+                // 市集篩選：冒號後面是玩家打的搜尋字
+                "- Name Contains: Ripe Aureate Fruit",
                 "{#}Crafted by Bunnub",
                 "{#}Crafted by creeper{~}",
                 "{#} HiSlIgHt_ has reconnected!",
