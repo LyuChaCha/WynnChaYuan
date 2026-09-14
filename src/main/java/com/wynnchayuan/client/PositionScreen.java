@@ -95,13 +95,13 @@ public final class PositionScreen extends Screen {
     /**
      * 哪幾個框拉得動。
      *
-     * <p>只有<b>會折行</b>的框給拉：對話框與選項框的寬度決定字要在哪裡斷，
-     * 拉了看得到差別。名牌的寬度就是名字本身；翻譯面板與任務追蹤走的是
-     * 遊戲原本的 tooltip 元件，寬度由元件自己算——給它們一個抓不動的角落，
-     * 只會讓人以為壞了。
+     * <p>只有<b>會折行</b>的框給拉：對話框、選項框與任務追蹤的寬度決定字要在
+     * 哪裡斷，拉了看得到差別。名牌的寬度就是名字本身；翻譯面板走的是遊戲原本的
+     * tooltip 元件，寬度由元件自己算——給它一個抓不動的角落，只會讓人以為壞了。
      */
     private static boolean resizable(Overlay which) {
-        return which == Overlay.DIALOGUE || which == Overlay.CHOICES;
+        return which == Overlay.DIALOGUE || which == Overlay.CHOICES
+                || which == Overlay.TRACKER;
     }
 
     private final Screen parent;
