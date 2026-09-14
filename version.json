@@ -1,12 +1,45 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.9_1",
+ "latest": "0.1.9_2",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.9_2": {
+   "headline": "Translated text keeps the original colours; Russian added",
+   "items": [
+    "Translated text keeps the colour of each original segment: notes in parentheses, leading words, guild reward lists, Trade Market listing status and more",
+    "Russian: F6 menu, interface and ability tree",
+    "Russian quest dialogue uses the pixel font at the original position",
+    "Fixed numbers landing in the wrong place on some nameplates and chests",
+    "Added shared untranslated strings with Traditional Chinese translations",
+    "Updated the Archer Arrow Wall and Escape descriptions"
+   ],
+   "zh_tw": {
+    "headline": "譯文保留原文的顏色，新增俄文",
+    "items": [
+     "翻譯後的文字保留原文各段的顏色：括號註解、句首換色的詞、公會獎勵清單、交易市場掛單狀態等",
+     "新增俄文：F6 選單、介面、技能樹",
+     "俄文任務對話使用像素字型，位置與原文一致",
+     "修正部分 NPC 名牌與寶箱的數字接錯位置",
+     "收錄玩家分享回來的待譯字串，並補上繁體中文翻譯",
+     "弓手 Arrow Wall、Escape 的說明更新"
+    ]
+   },
+   "zh_cn": {
+    "headline": "译文保留原文的颜色，新增俄文",
+    "items": [
+     "翻译后的文字保留原文各段的颜色：括号注释、句首换色的词、公会奖励列表、交易市场挂单状态等",
+     "新增俄文：F6 菜单、界面、技能树",
+     "俄文任务对话使用像素字体，位置与原文一致",
+     "修正部分 NPC 名牌与宝箱的数字接错位置",
+     "收录玩家分享回来的待译字符串，并补上繁体中文翻译",
+     "弓手 Arrow Wall、Escape 的说明更新"
+    ]
+   }
+  },
   "0.1.9_1": {
    "headline": "The quest tracker panel can now be resized",
    "items": [

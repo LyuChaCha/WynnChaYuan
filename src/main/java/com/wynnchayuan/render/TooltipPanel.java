@@ -292,7 +292,18 @@ public final class TooltipPanel {
         // 整塊拉正。中文不能跟著斜（會糊），但只拉正中文那幾行會讓同一份說明
         // 裡「翻好的正、沒翻的斜」參差不齊——見 LineTranslator#unslantAll。
         out.replaceAll(LineTranslator::unslantAll);
-        return out;
+        // 譯文比英文寬（俄文）時整份撐開：靠右的數值收在同一條新右緣、置中的行
+        // 照新寬度重新置中。放得下的語言（中文、日文）原封不動。見 TooltipWiden。
+        //
+        // 放在拉正<b>之後</b>：量的是最後真正要畫的那一份。
+        return com.wynnchayuan.translate.TooltipWiden.fit(
+                tooltip, out, centered, leftAligned, TooltipPanel::measure);
+    }
+
+    /** 量一行畫出來多寬；沒有字型（headless）時是 0，撐寬那一步就什麼都不做。 */
+    private static int measure(Component line) {
+        Minecraft mc = Minecraft.getInstance();
+        return mc == null || mc.font == null ? 0 : mc.font.width(line);
     }
 
     /**
