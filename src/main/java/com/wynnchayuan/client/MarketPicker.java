@@ -47,10 +47,8 @@ public final class MarketPicker {
     private static final int ROW_H = 11;
     private static final int PAD = 4;
     private static final int COLUMN_GAP = 10;
-    private static final int PANEL_BG = 0xE0101018;
-    private static final int PANEL_BORDER = 0xFF3A1E5C;
-    private static final int ROW_SELECTED = 0x40FFD24A;
     private static final int ENGLISH = 0xFFAAAAAA;
+    // 底色、框線、選取列都跟著 F6 的主題色走，跟其他面板一致（見 Boxes）。
 
     private MarketPicker() {}
 
@@ -139,16 +137,19 @@ public final class MarketPicker {
             }
             Font font = chat.getFont();
             Layout at = layout(font);
+            int accent = WynnChaYuan.config().accentARGB();
+            int picked = (accent & 0x00FFFFFF) | 0x40000000;
             g.nextStratum();
-            g.fill(at.left, at.top, at.left + at.width, at.bottom, PANEL_BG);
-            g.renderOutline(at.left, at.top, at.width, at.bottom - at.top, PANEL_BORDER);
+            g.fill(at.left, at.top, at.left + at.width, at.bottom,
+                    WynnChaYuan.config().backgroundARGB());
+            g.renderOutline(at.left, at.top, at.width, at.bottom - at.top, accent);
 
             int hover = rowAt(mouseX, mouseY, at);
             for (int i = 0; i < rows.size(); i++) {
                 MarketSearch.Suggestion row = rows.get(i);
                 int y = at.top + PAD + i * ROW_H;
                 if (i == selected || i == hover) {
-                    g.fill(at.left + 1, y - 1, at.left + at.width - 1, y + ROW_H - 1, ROW_SELECTED);
+                    g.fill(at.left + 1, y - 1, at.left + at.width - 1, y + ROW_H - 1, picked);
                 }
                 g.drawString(font, row.chinese(), at.left + PAD, y, Colors.TEXT, false);
                 g.drawString(font, row.english(), at.left + PAD + at.zhWidth + COLUMN_GAP, y,

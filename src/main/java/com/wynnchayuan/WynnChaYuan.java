@@ -127,7 +127,9 @@ public final class WynnChaYuan implements ClientModInitializer {
         // captured.json 只該列「還沒翻的」。接上這一條之前它是照單全收——
         // 實機那份 308 條裡有 249 條語料早就翻好了，真正的缺口全被淹掉。
         // 用述詞接而不是把 store 交過去，收集端就不必認識翻譯端。
-        store.knowsTranslations(WynnChaYuan::alreadyCollected);
+        store.knowsTranslations(WynnChaYuan::alreadyTranslated);
+        // 語料收過、只是還沒翻的不當缺口，但照樣記次數——見 CaptureStore#knowsSources。
+        store.knowsSources(WynnChaYuan::alreadyCollected);
         // 同語族的語言先鋪一層當底，再把選定的那一種疊上去。
         //
         // 新語言是從 zh_tw 複製出來、dst 全部清空的骨架，剛開張時一條譯文
@@ -256,13 +258,21 @@ public final class WynnChaYuan implements ClientModInitializer {
      * <p>多數情況下畫面那一份就夠用：簡體底下墊著繁體，查得到就不會記。
      * 但<b>輔助語言設成「顯示原文」</b>時那一層不在，整份繁體語料就全變成
      * 「缺口」了——{@link #referenceKeys} 補的正是這個洞。
+     *
+     * <p>收過但畫面上沒有譯文的，收集端不當缺口，只記次數
+     * （見 {@code CaptureStore#knowsSources}）。
      */
     private static boolean alreadyCollected(String template) {
-        if (translations.hasTranslation(template)) {
+        if (alreadyTranslated(template)) {
             return true;
         }
         java.util.Set<String> keys = referenceKeys;
         return keys != null && template != null && keys.contains(template.strip());
+    }
+
+    /** 畫面上這幾層查得到譯文嗎。查得到的連次數都不必記。 */
+    private static boolean alreadyTranslated(String template) {
+        return translations.hasTranslation(template);
     }
 
     /**

@@ -334,6 +334,7 @@ public final class TranslationStoreTest {
             check("完全不相干的開頭也是沒有", store.hasLonger("Zzzz nothing here") == false);
             check("短句沒有更長的候選時不受影響", !store.hasLonger("Short one"));
             realCorpus();
+            looseMatching();
         } finally {
             delete(dir);
         }
@@ -342,6 +343,48 @@ public final class TranslationStoreTest {
                 ? "TranslationStore: 全部通過" : "TranslationStore: " + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
+        }
+    }
+
+    /**
+     * 只差標點、引號、大小寫的同一句話要查得到；有歧義的不能亂貼。
+     *
+     * <p>語料抄自 wiki，彎引號、省略號、句尾句號這種小差異會讓整句落空，
+     * 玩家看到的就是對話翻到一半冒出一句英文。
+     */
+    private static void looseMatching() throws IOException {
+        Path dir = Files.createTempDirectory("wynnchayuan-loose");
+        try {
+            write(dir, "quest.json", """
+                {
+                 "It's time for me to show the Growth Accelerator to the Corkians.":
+                     "該把生長加速器拿去給 Corkus 人看了。",
+                 "Well... I suppose that settles it, {u}.": "嗯……看來就這麼定了，{u}。",
+                 "No, it isn't over. Not yet!": "不，還沒結束。還沒！",
+                 "No, it isn't over. Not yet?": "不，還沒結束嗎？還沒？",
+                 "Short line.": "短句。"
+                }""");
+            TranslationStore store = new TranslationStore();
+            store.loadAll(dir);
+
+            String accelerator = "該把生長加速器拿去給 Corkus 人看了。";
+            check("彎引號、少了句號、多了空白也查得到", accelerator.equals(store.lookup(
+                    "It’s time for me to show the  Growth Accelerator to the Corkians")));
+            check("大小寫不同也查得到", accelerator.equals(store.lookup(
+                    "IT'S TIME FOR ME TO SHOW THE GROWTH ACCELERATOR TO THE CORKIANS.")));
+            check("… 與 ... 視為同一個", "嗯……看來就這麼定了，{u}。".equals(
+                    store.lookup("Well… I suppose that settles it, {u}.")));
+            check("鬆化後撞在一起、譯文又不同的不亂貼",
+                    store.lookup("No, it isn't over. Not yet") == null);
+            check("精確比對仍然優先", "不，還沒結束嗎？還沒？".equals(
+                    store.lookup("No, it isn't over. Not yet?")));
+            check("太短的不走寬鬆比對", store.lookup("short line") == null);
+            check("只差標點的不記成缺口", store.hasTranslation(
+                    "It's time for me to show the Growth Accelerator to the Corkians!"));
+            check("不同的句子還是查不到",
+                    store.lookup("It's time for me to show nothing to anyone.") == null);
+        } finally {
+            delete(dir);
         }
     }
 

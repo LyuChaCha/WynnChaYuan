@@ -1,12 +1,45 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.7",
+ "latest": "0.1.8",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.8": {
+   "headline": "Fewer lines falling back to English mid-conversation",
+   "items": [
+    "Lines that differ from the corpus only by quotes, ellipses, ending punctuation or letter case are now translated",
+    "captured.json now lists lines that are in the corpus but not yet translated, with how many times you saw each",
+    "The market search candidate list uses your theme colour",
+    "Market search no longer suggests quest names, places, NPCs or untradable items",
+    "Simplified Chinese: all quest dialogue is translated, plus the remaining weapon lore",
+    "Traditional Chinese: over a hundred more NPC nameplates, store offers and gathering nodes"
+   ],
+   "zh_tw": {
+    "headline": "對話翻到一半冒出英文的情況變少了",
+    "items": [
+     "原文只差引號、省略號、句尾標點或大小寫的句子，現在也翻得出來",
+     "captured.json 多了一段：語料裡有、但還沒翻的句子，以及各被看到幾次",
+     "市集搜尋的候選清單改用設定裡的主題色",
+     "市集搜尋不再列出任務、地點、NPC 名稱與不可交易的物品",
+     "簡體中文：任務對話全部翻完，另補齊武器敘述",
+     "繁體中文：補上一百多條 NPC 名牌、商城優惠與採集點"
+    ]
+   },
+   "zh_cn": {
+    "headline": "对话翻到一半冒出英文的情况变少了",
+    "items": [
+     "原文只差引号、省略号、句尾标点或大小写的句子，现在也翻得出来",
+     "captured.json 多了一段：语料里有、但还没翻的句子，以及各被看到几次",
+     "市场搜索的候选列表改用设置里的主题色",
+     "市场搜索不再列出任务、地点、NPC 名称与不可交易的物品",
+     "简体中文：任务对话全部翻完，另补齐武器描述",
+     "繁体中文：补上一百多条 NPC 名牌、商城优惠与采集点"
+    ]
+   }
+  },
   "0.1.7": {
    "headline": "Pick the item you mean in market search",
    "items": [

@@ -71,6 +71,7 @@ public final class MarketSearchTest {
                 corkian.size() == 1);
 
         sameItemOnce(market);
+        tradableOnly(market);
         shapes();
 
         report("查不到的回 null", market.lookup("這不是任何一個物品的名字") == null);
@@ -140,6 +141,39 @@ public final class MarketSearchTest {
             report("候選沒有裝飾符號（" + hit + "）",
                     hit.equals(hit.strip()) && Character.isLetterOrDigit(hit.charAt(0)));
         }
+    }
+
+    /**
+     * 只列市集上買賣得到的東西。
+     *
+     * <h2>實機回報</h2>
+     * 打「之心」跳出「鋼鐵之心 第一部」（任務）、「黯蝕之心」（探索點）、
+     * 「伊索特拉之心」（怪物名牌）。那些是扁平檔裡的名字，形狀像物品名就被收了，
+     * 打進市集一筆都搜不到。
+     */
+    private static void tradableOnly(MarketSearch market) {
+        List<String> hearts = market.suggestions("之心").stream()
+                .map(MarketSearch.Suggestion::english).toList();
+        for (String junk : new String[] {"An Iron Heart Part I", "The Heart of the Decay",
+                                         "Isoptera Heart"}) {
+            report("「之心」不列「" + junk + "」（實際：" + hearts + "）", !hearts.contains(junk));
+        }
+        report("素材還在（Snow Heart）", hearts.contains("Snow Heart"));
+        report("任務名不當候選", market.candidates("致命的失足").isEmpty());
+        report("NPC 名不當候選", market.candidates("鐵匠").isEmpty());
+        report("面向不當候選", market.candidates("城垛加固之相").isEmpty());
+        report("技能名不當候選", market.candidates("箭矢炸彈").isEmpty());
+
+        MarketSearch m = new MarketSearch();
+        m.addListed("Corkian Amplifier III", "Corkian 增幅器 III");
+        m.addListed("Silverbull Share", "Silverbull 股份");
+        m.addListed("{~} x Dragon Aura {#}{#}", "{~} x 龍之靈氣 {#}{#}");
+        m.addListed("Incompatible with Amplifiers", "與增幅器不相容");
+        m.addListed("Remove Powders", "移除粉末");
+        m.addListed("A Grave Mistake", "致命的失足");
+        m.addListed("Blacksmith", "鐵匠");
+        m.addListed("DecrepitÀÀÀSewers Key", "DecrepitÀÀÀSewers 鑰匙");
+        report("扁平檔只收物品類別與數量行（實際 " + m.size() + " 條）", m.size() == 3);
     }
 
     /**
