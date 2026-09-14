@@ -4578,22 +4578,14 @@ public final class LineTranslator {
             applied = true;
             for (int k = 0; k < target.size(); k++) {
                 String core = target.get(k).text().strip();
-                List<LineParts.Piece> runs = styles.get(k);
-                if (runs.size() == 1) {
-                    // 前面已經出現過同樣的字面，貼樣式那一步會先貼到前面去，不登記
-                    if (hasContent(core) && earlier.indexOf(core) < 0) {
-                        add(out, core, runs.get(0).style(), blockStyle, known);
+                // 前面已經出現過同樣的字面，貼樣式那一步會先貼到前面去，不登記
+                StringBuilder before = new StringBuilder(earlier);
+                for (LineParts.Piece piece : assign(source.get(k).text().strip(),
+                                                    styles.get(k), core)) {
+                    if (hasContent(piece.text()) && before.indexOf(piece.text()) < 0) {
+                        add(out, piece.text(), piece.style(), blockStyle, known);
                     }
-                } else if (runs.size() > 1 && core.equals(source.get(k).text().strip())) {
-                    // 這一段混了幾種顏色，但譯文照抄原文（「✖ Lv.」「: +」這種）——
-                    // 字面一樣，就逐段照原文的顏色貼
-                    StringBuilder before = new StringBuilder(earlier);
-                    for (LineParts.Piece run : runs) {
-                        if (hasContent(run.text()) && before.indexOf(run.text()) < 0) {
-                            add(out, run.text(), run.style(), blockStyle, known);
-                        }
-                        before.append(run.text());
-                    }
+                    before.append(piece.text());
                 }
                 earlier.append(target.get(k).text());
             }
@@ -4724,17 +4716,128 @@ public final class LineTranslator {
                                     List<List<LineParts.Piece>> styles) {
         java.util.Set<Style> distinct = new java.util.HashSet<>();
         for (int k = 0; k < target.size(); k++) {
-            List<LineParts.Piece> runs = styles.get(k);
-            String core = target.get(k).text().strip();
-            if (runs.size() == 1 && hasContent(core)) {
-                distinct.add(runs.get(0).style());
-            } else if (runs.size() > 1 && core.equals(source.get(k).text().strip())) {
-                for (LineParts.Piece run : runs) {
-                    distinct.add(run.style());
-                }
+            for (LineParts.Piece piece : assign(source.get(k).text().strip(), styles.get(k),
+                                                target.get(k).text().strip())) {
+                distinct.add(piece.style());
             }
         }
         return distinct.size();
+    }
+
+    /**
+     * 譯文的某一段該貼哪些顏色。
+     *
+     * <ul>
+     *   <li>原文那段同色：譯文整段貼那個顏色。</li>
+     *   <li>混色但譯文照抄原文（「✖ Lv.」）：逐段照原文貼。</li>
+     *   <li>混色、翻掉了，但兩邊的<b>標點一模一樣</b>（「Expired - Sold」→「已過期 - 已售出」）：
+     *       照標點切開，第 i 塊對第 i 塊。</li>
+     * </ul>
+     *
+     * @param runs 原文那段依顏色切開的小段，見 {@link #segmentStyles}
+     * @return 空清單代表這一段對不上
+     */
+    private static List<LineParts.Piece> assign(String source, List<LineParts.Piece> runs,
+                                                String target) {
+        if (runs.size() == 1) {
+            return hasContent(target) ? List.of(new LineParts.Piece(target, runs.get(0).style()))
+                                      : List.of();
+        }
+        if (runs.size() < 2) {
+            return List.of();
+        }
+        if (target.equals(source)) {
+            return runs;
+        }
+        return punctuationSplit(source, runs, target);
+    }
+
+    /** 見 {@link #assign}：兩邊照同樣的標點切開、逐塊對色。對不上就回傳空清單。 */
+    private static List<LineParts.Piece> punctuationSplit(String source,
+                                                          List<LineParts.Piece> runs,
+                                                          String target) {
+        // 把小段放回原文的位置，得到每個字元的顏色
+        Style[] at = new Style[source.length()];
+        int cursor = 0;
+        for (LineParts.Piece run : runs) {
+            int found = source.indexOf(run.text(), cursor);
+            if (found < 0) {
+                return List.of();
+            }
+            java.util.Arrays.fill(at, found, found + run.text().length(), run.style());
+            cursor = found + run.text().length();
+        }
+        List<int[]> ours = punctuationSpans(source);
+        List<int[]> theirs = punctuationSpans(target);
+        if (ours.isEmpty() || ours.size() != theirs.size()) {
+            return List.of();
+        }
+        for (int i = 0; i < ours.size(); i++) {
+            if (!source.substring(ours.get(i)[0], ours.get(i)[1])
+                    .equals(target.substring(theirs.get(i)[0], theirs.get(i)[1]))) {
+                return List.of();
+            }
+        }
+        List<LineParts.Piece> out = new ArrayList<>();
+        int from = 0;
+        int dstFrom = 0;
+        for (int i = 0; i <= ours.size(); i++) {
+            int to = i < ours.size() ? ours.get(i)[0] : source.length();
+            int dstTo = i < theirs.size() ? theirs.get(i)[0] : target.length();
+            String piece = target.substring(dstFrom, dstTo).strip();
+            if (hasContent(source.substring(from, to)) != hasContent(piece)) {
+                return List.of();              // 一邊有字一邊沒有，切法不是同一回事
+            }
+            Style style = uniformStyle(source, at, from, to);
+            if (style != null && hasContent(piece)) {
+                out.add(new LineParts.Piece(piece, style));
+            }
+            if (i < ours.size()) {
+                Style mark = uniformStyle(source, at, ours.get(i)[0], ours.get(i)[1]);
+                if (mark != null) {
+                    out.add(new LineParts.Piece(
+                            source.substring(ours.get(i)[0], ours.get(i)[1]), mark));
+                }
+                from = ours.get(i)[1];
+                dstFrom = theirs.get(i)[1];
+            }
+        }
+        return out;
+    }
+
+    /** 連續的標點符號（不是字母、數字、空白）各自的起訖位置。 */
+    private static List<int[]> punctuationSpans(String text) {
+        List<int[]> out = new ArrayList<>();
+        int i = 0;
+        while (i < text.length()) {
+            char c = text.charAt(i);
+            if (Character.isLetterOrDigit(c) || Character.isWhitespace(c)) {
+                i++;
+                continue;
+            }
+            int start = i;
+            while (i < text.length() && !Character.isLetterOrDigit(text.charAt(i))
+                    && !Character.isWhitespace(text.charAt(i))) {
+                i++;
+            }
+            out.add(new int[] {start, i});
+        }
+        return out;
+    }
+
+    /** 這一段實字的顏色都一樣的話回傳那個顏色，否則 {@code null}。 */
+    private static Style uniformStyle(String text, Style[] at, int from, int to) {
+        Style only = null;
+        for (int c = from; c < to; c++) {
+            if (Character.isWhitespace(text.charAt(c))) {
+                continue;
+            }
+            if (at[c] == null || (only != null && !java.util.Objects.equals(only, at[c]))) {
+                return null;
+            }
+            only = at[c];
+        }
+        return only;
     }
 
     /** 見 {@link #labelValueAccents}：剝掉佔位符之後還有字才登記。 */

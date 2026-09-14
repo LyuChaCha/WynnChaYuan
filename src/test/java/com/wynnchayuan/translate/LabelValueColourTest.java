@@ -90,6 +90,13 @@ public final class LabelValueColourTest {
                 new int[] {0xFF5555, WHITE, GREY},
                 new String[] {"✖", "Lv.", "新徽章"}, new int[] {0xFF5555, WHITE, GREY});
 
+        // 實機回報：交易市場的掛單狀態。「Expired」黃、「- Sold」深灰，兩個顏色在同一段裡，
+        // 譯文翻掉了字但留著同一個「-」，照這個標點切開對回去。
+        colours(store, "同一段混色時照相同的標點切開對色",
+                new String[] {"Expired", " - Sold ", "0", "/1 items"},
+                new int[] {0xFFFF55, DARK, WHITE, DARK},
+                new String[] {"已過期", "已售出"}, new int[] {0xFFFF55, DARK});
+
         // 實機 majorid-debug「可用的顏色 14」：譯文用了 {~1}{~2}，照順序的仍然對得上。
         colours(store, "照順序指名的數值也對得上",
                 new String[] {"- 3 Rows", " (2stx Total)"},
