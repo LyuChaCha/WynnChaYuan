@@ -104,6 +104,7 @@ public final class FlowedBlockTest {
         divider(store);
         majorId(store);
         superconductor(store);
+        napalm(store);
         raidPicker(store);
         grootslang(store);
 
@@ -212,6 +213,61 @@ public final class FlowedBlockTest {
         check("名稱跟著翻（實際：" + shorten(all) + "）",
                 zh != null && all.contains(zh));
         check("敘述也翻了", all.contains("閃電"));
+    }
+
+    /**
+     * 斷行之後<b>最後一行只剩圖示與數值</b>的 Major ID。
+     *
+     * <p>「🔥+65%.」抽成模板是 {@code {#}+{~}.}，沒有字母。先前只要有一行沒有
+     * 字母就當成整段夾著分隔線，攤平查表整個略過——名稱換掉了，敘述留英文。
+     */
+    private static void napalm(TranslationStore store) {
+        Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
+        Style icon = Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                net.minecraft.resources.Identifier.withDefaultNamespace("common")));
+
+        MutableComponent first = Component.empty();
+        first.append(Component.literal(SpaceOffset.encode(2))
+                .withStyle(SpaceOffset.styleFor(pink)));
+        first.append(Component.literal("Napalm: ").withStyle(pink));
+        first.append(Component.literal("Fire Creep increases").withStyle(grey));
+
+        MutableComponent byLine = Component.empty();
+        byLine.append(Component.literal("Arrow Bomb damage by ").withStyle(grey));
+        byLine.append(Component.literal(RULE).withStyle(icon));
+        byLine.append(Component.literal("+15%,").withStyle(grey));
+
+        MutableComponent last = Component.empty();
+        last.append(Component.literal(RULE).withStyle(icon));
+        last.append(Component.literal("+65%.").withStyle(grey));
+
+        List<StyledText> run = new ArrayList<>();
+        run.add(StyledText.fromComponent(first));
+        run.add(StyledText.fromComponent(byLine));
+        for (String line : new String[] {
+                "but deals 15 times the",
+                "self-damage and lowers",
+                "velocity. Scorched Earth",
+                "radius is increased and deals" }) {
+            run.add(StyledText.fromComponent(plain(line)));
+        }
+        run.add(StyledText.fromComponent(last));
+
+        check("最後一行的模板沒有字母（前提）",
+                !com.wynnchayuan.capture.GlyphSplitter.hasLetter(
+                        com.wynnchayuan.capture.LineParts.of(run.get(run.size() - 1)).template()));
+        List<Component> out = LineTranslator.translateBlock(
+                run, store, new boolean[run.size()]);
+        check("Napalm 的敘述翻得出來", out != null && !out.isEmpty());
+        if (out == null) {
+            return;
+        }
+        String all = out.stream().map(Component::getString)
+                .reduce("", String::concat);
+        String zh = store.lookup("Napalm");
+        check("名稱與敘述都翻了（實際：" + shorten(all) + "）",
+                zh != null && all.contains(zh) && !all.contains("times the"));
     }
 
     /**

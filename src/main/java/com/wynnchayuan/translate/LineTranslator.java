@@ -84,7 +84,10 @@ public final class LineTranslator {
             }
             // 純排版的行（分隔線、只有圖示與偏移的那種）也是同一件事，只是
             // 它的模板<b>不是空的</b>（「{#}{#}」），所以躲過上面那一關。見 layoutRow。
-            layoutRow |= !GlyphSplitter.hasLetter(p.template());
+            // 只看「拿掉圖示之後還剩不剩東西」：Major ID 敘述斷行後，最後一行常常
+            // 只剩「{#}+{~}.」，沒有字母但是內容，不能當成分隔線。
+            layoutRow |= p.template()
+                    .replace(GlyphSplitter.GLYPH_PLACEHOLDER, "").isBlank();
             parts.add(p);
             if (key.length() > 0) {
                 key.append('\n');
