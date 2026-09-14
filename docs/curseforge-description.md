@@ -124,7 +124,7 @@ already tells the project what players actually run into.
 | `zh_tw` 繁體中文 | █████████░ 93.5% | 39,778 / 42,529 |
 | `zh_cn` 简体中文 | █████████░ 91.8% | 39,058 / 42,529 |
 | `ja_jp` 日本語 | ████░░░░░░ 37.4% | 15,920 / 42,529 |
-| `ru_ru` Русский | █░░░░░░░░░ 8.3% | 3,512 / 42,529 |
+| `ru_ru` Русский | ██░░░░░░░░ 18.6% | 7,919 / 42,529 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 621 / 42,529 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
@@ -342,7 +342,7 @@ Wynncraft's; this mod only displays them.
 | `zh_tw` 繁體中文 | █████████░ 93.5% | 39,778 / 42,529 |
 | `zh_cn` 简体中文 | █████████░ 91.8% | 39,058 / 42,529 |
 | `ja_jp` 日本語 | ████░░░░░░ 37.4% | 15,920 / 42,529 |
-| `ru_ru` Русский | █░░░░░░░░░ 8.3% | 3,512 / 42,529 |
+| `ru_ru` Русский | ██░░░░░░░░ 18.6% | 7,919 / 42,529 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 621 / 42,529 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
