@@ -105,6 +105,7 @@ public final class FlowedBlockTest {
         majorId(store);
         superconductor(store);
         napalm(store);
+        wavebreak(store);
         raidPicker(store);
         grootslang(store);
 
@@ -268,6 +269,78 @@ public final class FlowedBlockTest {
         String zh = store.lookup("Napalm");
         check("名稱與敘述都翻了（實際：" + shorten(all) + "）",
                 zh != null && all.contains(zh) && !all.contains("times the"));
+    }
+
+    /**
+     * 官方改過措辭的 Major ID，照實機的斷行測。
+     *
+     * <p>語料的說明停在舊版：Wavebreak 前面還多一句「Meteor's damage is
+     * replaced by…」，Fallout 的 area 還寫成 range。遊戲裡整段對不上，
+     * 畫面上只剩名稱有翻、說明整段英文。斷行照抄 majorid-debug.txt。
+     *
+     * <p>後面接著的「֎: ֎」與分隔線也一起放進整份 tooltip：呼叫端是由長到短試，
+     * 要確定說明那七行單獨湊得出來，不會被後面幾行拖著一起落空。
+     */
+    private static void wavebreak(TranslationStore store) {
+        Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
+        Style icon = Style.EMPTY.withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                net.minecraft.resources.Identifier.withDefaultNamespace("common")));
+
+        MutableComponent first = Component.empty();
+        first.append(Component.literal(SpaceOffset.encode(2))
+                .withStyle(SpaceOffset.styleFor(pink)));
+        first.append(Component.literal("Wavebreak: ").withStyle(pink));
+        first.append(Component.literal("Psychokinesis can").withStyle(grey));
+
+        MutableComponent area = Component.empty();
+        area.append(Component.literal(RULE).withStyle(icon));
+        area.append(Component.literal("100% and ").withStyle(grey));
+        area.append(Component.literal(RULE).withStyle(icon));
+        area.append(Component.literal("50% area damage, as").withStyle(grey));
+
+        MutableComponent direct = Component.empty();
+        direct.append(Component.literal("well as ").withStyle(grey));
+        direct.append(Component.literal(RULE).withStyle(icon));
+        direct.append(Component.literal("200% and ").withStyle(grey));
+        direct.append(Component.literal(RULE).withStyle(icon));
+        direct.append(Component.literal("100% direct").withStyle(grey));
+
+        List<Component> rows = new ArrayList<>();
+        rows.add(first);
+        rows.add(plain("bounce up to 5 times, dealing"));
+        rows.add(area);
+        rows.add(direct);
+        rows.add(plain("hit damage, increasing by 10%"));
+        rows.add(plain("after each bounce. Mana Bank"));
+        rows.add(plain("gains 3 less mana from Meteor."));
+
+        List<StyledText> run = new ArrayList<>();
+        for (Component row : rows) {
+            run.add(StyledText.fromComponent(row));
+        }
+        String zh = store.lookup("Wavebreak");
+        String alone = joined(run, store);
+        check("Wavebreak 的敘述翻得出來（實際：" + shorten(alone) + "）",
+                alone != null && zh != null && alone.contains(zh)
+                        && !alone.contains("bounce up"));
+
+        List<Component> tip = new ArrayList<>();
+        tip.add(plain("Mana Steal +15/3s"));
+        tip.add(plain(""));
+        tip.addAll(rows);
+        tip.add(Component.literal("֎: ֎").withStyle(pink));
+        tip.add(rule());
+        tip.add(plain(""));
+        String all = com.wynnchayuan.render.TooltipPanel.translateLines(tip, store).stream()
+                .map(Component::getString).reduce("", (a, b) -> a + " " + b);
+        check("放進整份 tooltip 也翻得出來（實際：" + shorten(all) + "）",
+                zh != null && all.contains(zh) && !all.contains("bounce up"));
+
+        // 另一個改過措辭的：range → area。語料若停在舊版就查不到。
+        String fallout = store.lookupFlat(
+                "Bomb Arrow gains +{~} area, {#}+{~}, severely increased recoil, and {#}{~} self-damage.");
+        check("Fallout 的新措辭查得到（實際：" + fallout + "）", fallout != null);
     }
 
     /**
