@@ -70,6 +70,39 @@ public final class LabelValueColourTest {
         uniform(store, "整行同色不切", new String[] {"Type: ", "Grinding Mobs"},
                 new int[] {VALUE, VALUE}, VALUE);
 
+        // 實機回報：數值後面的括號註解是深灰，不能跟著數值變白。
+        // 行首的愛心是符號，語料的鍵是「{#} Total Damage: {~} (of your DPS, Attack)」。
+        colours(store, "括號註解不跟著數值變色",
+                new String[] {"\uE000", " Total Damage: ", "2400%", " (of your DPS, Attack)"},
+                new int[] {0xFF5555, GREY, WHITE, DARK},
+                new String[] {"總傷害", "每秒傷害"}, new int[] {GREY, DARK});
+
+        // 實機回報：句首的 grant 是粉紅，其餘是白。
+        colours(store, "句首換色的詞保住自己的顏色",
+                new String[] {"grant ", "2048", " Emeralds"},
+                new int[] {PINK, WHITE, WHITE},
+                new String[] {"給予", "綠寶石"}, new int[] {PINK, WHITE});
+
+        // 實機回報：公會獎勵清單。數字兩邊的「✖ Lv.」「: +」本身就混色，
+        // 譯文照抄這兩段，Lv. 要保住白色、後面的說明保住灰色。
+        colours(store, "數字兩邊混色的段落照抄時逐段貼色",
+                new String[] {"✖", " Lv. 90: ", "+5 New Badges"},
+                new int[] {0xFF5555, WHITE, GREY},
+                new String[] {"✖", "Lv.", "新徽章"}, new int[] {0xFF5555, WHITE, GREY});
+
+        // 實機回報：交易市場的掛單狀態。「Expired」黃、「- Sold」深灰，兩個顏色在同一段裡，
+        // 譯文翻掉了字但留著同一個「-」，照這個標點切開對回去。
+        colours(store, "同一段混色時照相同的標點切開對色",
+                new String[] {"Expired", " - Sold ", "0", "/1 items"},
+                new int[] {0xFFFF55, DARK, WHITE, DARK},
+                new String[] {"已過期", "已售出"}, new int[] {0xFFFF55, DARK});
+
+        // 實機 majorid-debug「可用的顏色 14」：譯文用了 {~1}{~2}，照順序的仍然對得上。
+        colours(store, "照順序指名的數值也對得上",
+                new String[] {"- 3 Rows", " (2stx Total)"},
+                new int[] {GREY, DARK},
+                new String[] {"排", "合計"}, new int[] {GREY, DARK});
+
         System.out.println(failures == 0
                 ? "標籤數值顏色：全部通過"
                 : "標籤數值顏色：" + failures + " 項失敗");
@@ -124,6 +157,38 @@ public final class LabelValueColourTest {
                 return java.util.Optional.empty();
             }, Style.EMPTY);
         }
+    }
+
+    private static final int GREY = 0xAAAAAA;   // 淺灰，技能面板的標籤
+    private static final int DARK = 0x555555;   // 深灰，括號註解
+    private static final int PINK = 0xFF55FF;   // 粉紅，句首換色的詞
+
+    /**
+     * 譯文裡含有 {@code probes[i]} 的那一段，顏色要是 {@code wantColours[i]}。
+     *
+     * <p>不比對整行怎麼切段：數值、單位與全形標點各自成段的方式跟這件事無關。
+     */
+    private static void colours(TranslationStore store, String what,
+                                String[] parts, int[] colours,
+                                String[] probes, int[] wantColours) {
+        List<String> text = new ArrayList<>();
+        List<Integer> got = new ArrayList<>();
+        dump(store, parts, colours, text, got);
+        boolean ok = true;
+        StringBuilder seen = new StringBuilder();
+        for (int i = 0; i < probes.length; i++) {
+            int found = -1;
+            for (int k = 0; k < text.size(); k++) {
+                if (text.get(k).contains(probes[i])) {
+                    found = got.get(k);
+                    break;
+                }
+            }
+            ok &= found == wantColours[i];
+            seen.append(probes[i]).append('=')
+                .append(found < 0 ? "（找不到）" : String.format("#%06X", found)).append(' ');
+        }
+        report(what + "（實際 " + text + " " + seen.toString().strip() + "）", ok);
     }
 
     private static String hex(List<Integer> colours) {

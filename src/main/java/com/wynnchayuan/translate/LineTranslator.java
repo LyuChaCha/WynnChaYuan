@@ -4534,6 +4534,312 @@ public final class LineTranslator {
         return out;
     }
 
+    /**
+     * 佔位符之間的每一段，各自沿用原文<b>對應那一段</b>的顏色。
+     *
+     * <h2>先前壞在哪</h2>
+     * 技能的「Total Damage: 2400% (of your DPS, Attack)」是三個顏色：標籤淺灰、
+     * 數值白、括號深灰。{@link #labelValueAccents} 照冒號切兩半，後半整段套上
+     * 數值的白色，括號就跟著變亮。「grant 2048 Emeralds」的 grant 是粉紅、
+     * 其餘是白；混色的行只拿得到多數色，譯文的「給予」就成了白的。
+     *
+     * <h2>做法</h2>
+     * 佔位符（{@code {~}}、{@code {#}}、{@code {p}}、{@code {u}}）在原文與譯文裡
+     * 是同一組錨點。兩邊照錨點切開，第 k 段對第 k 段：原文那一段只有一個顏色，
+     * 譯文那一段就貼上那個顏色。
+     *
+     * <h2>何時不做</h2>
+     * 行數不同、佔位符的種類或順序不同（譯者搬動了數值）、某一段一邊有字一邊沒字、
+     * 譯文自己寫了色碼——這些情況第 k 段指的不是同一件事，照舊交給原本的規則。
+     * 原文每一段都同色的行也不做，那本來就沒有東西要分。
+     *
+     * @return 沒有任何一行適用時回傳 {@code null}；適用但不必多登記時回傳空的
+     */
+    private static List<LineParts.Piece> segmentAccents(
+            List<LineParts> parts, String[] translated, Style blockStyle,
+            List<LineParts.Piece> known) {
+        String[] dst = String.join(NL, translated).split(NL, -1);
+        if (dst.length != parts.size()) {
+            return null;
+        }
+        List<LineParts.Piece> out = new ArrayList<>();
+        boolean applied = false;
+        StringBuilder earlier = new StringBuilder();
+        for (int i = 0; i < parts.size(); i++) {
+            List<Segment> source = segments(parts.get(i).template());
+            List<Segment> target = segments(dst[i]);
+            List<List<LineParts.Piece>> styles = source == null
+                    ? null : segmentStyles(source, parts.get(i).runs());
+            if (styles == null || target == null || !sameShape(source, target)
+                    || usableStyles(source, target, styles) < 2) {
+                earlier.append(dst[i]).append(NL);
+                continue;
+            }
+            applied = true;
+            for (int k = 0; k < target.size(); k++) {
+                String core = target.get(k).text().strip();
+                // 前面已經出現過同樣的字面，貼樣式那一步會先貼到前面去，不登記
+                StringBuilder before = new StringBuilder(earlier);
+                for (LineParts.Piece piece : assign(source.get(k).text().strip(),
+                                                    styles.get(k), core)) {
+                    if (hasContent(piece.text()) && before.indexOf(piece.text()) < 0) {
+                        add(out, piece.text(), piece.style(), blockStyle, known);
+                    }
+                    before.append(piece.text());
+                }
+                earlier.append(target.get(k).text());
+            }
+            earlier.append(NL);
+        }
+        return applied ? out : null;
+    }
+
+    /** 被佔位符切開的一段文字，連同緊接在它後面的佔位符種類（最後一段是 {@code null}）。 */
+    private record Segment(String text, String anchor) {}
+
+    /**
+     * 照佔位符切段。
+     *
+     * @return 遇到色碼或認不得的佔位符、或 {@code {~N}} 不是照 1、2、3 的順序時回傳 {@code null}
+     */
+    private static List<Segment> segments(String line) {
+        List<Segment> out = new ArrayList<>();
+        java.util.regex.Matcher m = PLACEHOLDER.matcher(line);
+        int from = 0;
+        int plainNumbers = 0;
+        int nextIndex = 1;
+        while (m.find()) {
+            String token = m.group();
+            String anchor;
+            if (token.equals(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+                anchor = "#";
+            } else if (token.equals(GlyphSplitter.PLACE_PLACEHOLDER)) {
+                anchor = "p";
+            } else if (token.equals(GlyphSplitter.PLAYER_PLACEHOLDER)) {
+                anchor = "u";
+            } else if (token.equals("{~}")) {
+                anchor = "~";
+                plainNumbers++;
+            } else if (token.matches("\\{~\\d+\\}")) {
+                // 指名第幾個的寫法，只接受照順序寫的——換過順序就對不上段落了
+                if (Integer.parseInt(token.substring(2, token.length() - 1)) != nextIndex++) {
+                    return null;
+                }
+                anchor = "~";
+            } else {
+                return null;
+            }
+            out.add(new Segment(line.substring(from, m.start()), anchor));
+            from = m.end();
+        }
+        if (plainNumbers > 0 && nextIndex > 1) {
+            return null;
+        }
+        out.add(new Segment(line.substring(from), null));
+        return out;
+    }
+
+    /** 兩邊的佔位符順序相同，而且每一段「有沒有字」也相同。 */
+    private static boolean sameShape(List<Segment> source, List<Segment> target) {
+        if (source.size() != target.size()) {
+            return false;
+        }
+        for (int k = 0; k < source.size(); k++) {
+            if (!java.util.Objects.equals(source.get(k).anchor(), target.get(k).anchor())
+                    || hasContent(source.get(k).text()) != hasContent(target.get(k).text())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 原文每一段依顏色切開的小段；整段同色就只有一個，空的段落是空清單。
+     *
+     * <p>模板裡的文字就是各片段接起來、數值與地名換成佔位符的樣子，
+     * 所以每一段都能依序在片段的原文裡找到。
+     *
+     * @return 某一段找不到時回傳 {@code null}
+     */
+    private static List<List<LineParts.Piece>> segmentStyles(List<Segment> source,
+                                                              List<LineParts.Piece> runs) {
+        StringBuilder plain = new StringBuilder();
+        List<Style> styleAt = new ArrayList<>();
+        for (LineParts.Piece run : runs) {
+            for (int c = 0; c < run.text().length(); c++) {
+                plain.append(run.text().charAt(c));
+                styleAt.add(run.style());
+            }
+        }
+        List<List<LineParts.Piece>> out = new ArrayList<>(source.size());
+        int cursor = 0;
+        for (Segment segment : source) {
+            String core = segment.text().strip();
+            if (core.isEmpty()) {
+                out.add(List.of());
+                continue;
+            }
+            int at = plain.indexOf(core, cursor);
+            if (at < 0) {
+                return null;
+            }
+            List<LineParts.Piece> pieces = new ArrayList<>();
+            StringBuilder text = new StringBuilder();
+            Style current = null;
+            for (int c = at; c < at + core.length(); c++) {
+                char ch = plain.charAt(c);
+                if (!Character.isWhitespace(ch)) {
+                    Style style = styleAt.get(c);
+                    if (current != null && !java.util.Objects.equals(current, style)) {
+                        pieces.add(new LineParts.Piece(text.toString().strip(), current));
+                        text.setLength(0);
+                    }
+                    current = style;
+                }
+                text.append(ch);
+            }
+            pieces.add(new LineParts.Piece(text.toString().strip(), current));
+            out.add(pieces);
+            cursor = at + core.length();
+        }
+        return out;
+    }
+
+    /**
+     * 這一行真正貼得上的顏色有幾種。
+     *
+     * <p>整段同色、譯文那段有字的算；混色的段落只有譯文<b>照抄原文</b>時才算。
+     * 少於兩種就沒有東西要分，交回原本的規則——「Type: Grinding Mobs」
+     * 這種整行翻掉、沒有佔位符的行，冒號那一刀才輪得到。
+     */
+    private static int usableStyles(List<Segment> source, List<Segment> target,
+                                    List<List<LineParts.Piece>> styles) {
+        java.util.Set<Style> distinct = new java.util.HashSet<>();
+        for (int k = 0; k < target.size(); k++) {
+            for (LineParts.Piece piece : assign(source.get(k).text().strip(), styles.get(k),
+                                                target.get(k).text().strip())) {
+                distinct.add(piece.style());
+            }
+        }
+        return distinct.size();
+    }
+
+    /**
+     * 譯文的某一段該貼哪些顏色。
+     *
+     * <ul>
+     *   <li>原文那段同色：譯文整段貼那個顏色。</li>
+     *   <li>混色但譯文照抄原文（「✖ Lv.」）：逐段照原文貼。</li>
+     *   <li>混色、翻掉了，但兩邊的<b>標點一模一樣</b>（「Expired - Sold」→「已過期 - 已售出」）：
+     *       照標點切開，第 i 塊對第 i 塊。</li>
+     * </ul>
+     *
+     * @param runs 原文那段依顏色切開的小段，見 {@link #segmentStyles}
+     * @return 空清單代表這一段對不上
+     */
+    private static List<LineParts.Piece> assign(String source, List<LineParts.Piece> runs,
+                                                String target) {
+        if (runs.size() == 1) {
+            return hasContent(target) ? List.of(new LineParts.Piece(target, runs.get(0).style()))
+                                      : List.of();
+        }
+        if (runs.size() < 2) {
+            return List.of();
+        }
+        if (target.equals(source)) {
+            return runs;
+        }
+        return punctuationSplit(source, runs, target);
+    }
+
+    /** 見 {@link #assign}：兩邊照同樣的標點切開、逐塊對色。對不上就回傳空清單。 */
+    private static List<LineParts.Piece> punctuationSplit(String source,
+                                                          List<LineParts.Piece> runs,
+                                                          String target) {
+        // 把小段放回原文的位置，得到每個字元的顏色
+        Style[] at = new Style[source.length()];
+        int cursor = 0;
+        for (LineParts.Piece run : runs) {
+            int found = source.indexOf(run.text(), cursor);
+            if (found < 0) {
+                return List.of();
+            }
+            java.util.Arrays.fill(at, found, found + run.text().length(), run.style());
+            cursor = found + run.text().length();
+        }
+        List<int[]> ours = punctuationSpans(source);
+        List<int[]> theirs = punctuationSpans(target);
+        if (ours.isEmpty() || ours.size() != theirs.size()) {
+            return List.of();
+        }
+        for (int i = 0; i < ours.size(); i++) {
+            if (!source.substring(ours.get(i)[0], ours.get(i)[1])
+                    .equals(target.substring(theirs.get(i)[0], theirs.get(i)[1]))) {
+                return List.of();
+            }
+        }
+        List<LineParts.Piece> out = new ArrayList<>();
+        int from = 0;
+        int dstFrom = 0;
+        for (int i = 0; i <= ours.size(); i++) {
+            int to = i < ours.size() ? ours.get(i)[0] : source.length();
+            int dstTo = i < theirs.size() ? theirs.get(i)[0] : target.length();
+            String piece = target.substring(dstFrom, dstTo).strip();
+            if (hasContent(source.substring(from, to)) != hasContent(piece)) {
+                return List.of();              // 一邊有字一邊沒有，切法不是同一回事
+            }
+            Style style = uniformStyle(source, at, from, to);
+            if (style != null && hasContent(piece)) {
+                out.add(new LineParts.Piece(piece, style));
+            }
+            if (i < ours.size()) {
+                Style mark = uniformStyle(source, at, ours.get(i)[0], ours.get(i)[1]);
+                if (mark != null) {
+                    out.add(new LineParts.Piece(
+                            source.substring(ours.get(i)[0], ours.get(i)[1]), mark));
+                }
+                from = ours.get(i)[1];
+                dstFrom = theirs.get(i)[1];
+            }
+        }
+        return out;
+    }
+
+    /** 連續的標點符號（不是字母、數字、空白）各自的起訖位置。 */
+    private static List<int[]> punctuationSpans(String text) {
+        List<int[]> out = new ArrayList<>();
+        int i = 0;
+        while (i < text.length()) {
+            char c = text.charAt(i);
+            if (Character.isLetterOrDigit(c) || Character.isWhitespace(c)) {
+                i++;
+                continue;
+            }
+            int start = i;
+            while (i < text.length() && !Character.isLetterOrDigit(text.charAt(i))
+                    && !Character.isWhitespace(text.charAt(i))) {
+                i++;
+            }
+            out.add(new int[] {start, i});
+        }
+        return out;
+    }
+
+    /** 這一段實字的顏色都一樣的話回傳那個顏色，否則 {@code null}。 */
+    private static Style uniformStyle(String text, Style[] at, int from, int to) {
+        Style only = null;
+        for (int c = from; c < to; c++) {
+            if (Character.isWhitespace(text.charAt(c))) {
+                continue;
+            }
+            if (at[c] == null || (only != null && !java.util.Objects.equals(only, at[c]))) {
+                return null;
+            }
+            only = at[c];
+        }
+        return only;
+    }
+
     /** 見 {@link #labelValueAccents}：剝掉佔位符之後還有字才登記。 */
     private static void add(List<LineParts.Piece> out, String text, Style style,
                             Style blockStyle, List<LineParts.Piece> known) {
@@ -4770,8 +5076,16 @@ public final class LineTranslator {
         // 譯文接成一整串再傳：詞幹要不要登記得看它在譯文裡有沒有自成一個詞，
         // 而換行不是詞的一部分（見 #addStem）。
         accents = withTranslations(accents, String.join(String.valueOf(NEWLINE), translated), store);
-        // 「標籤: 數值」兩半各自的顏色。見 #labelValueAccents。
-        accents.addAll(labelValueAccents(parts, translated, blockStyle, accents));
+        // 佔位符之間的每一段各自沿用原文那一段的顏色。見 #segmentAccents。
+        // 對得上的話它比「標籤: 數值」切得細，冒號那一刀就不必再切——
+        // 那一刀會把數值後面的括號註解一起染成數值的顏色。
+        List<LineParts.Piece> segmented = segmentAccents(parts, translated, blockStyle, accents);
+        if (segmented != null) {
+            accents.addAll(segmented);
+        } else {
+            // 「標籤: 數值」兩半各自的顏色。見 #labelValueAccents。
+            accents.addAll(labelValueAccents(parts, translated, blockStyle, accents));
+        }
         // 整行同色的那幾行，直接拿譯文那一行當重點段。見 #wholeLineAccents。
         accents.addAll(wholeLineAccents(parts, allRuns, translated, blockStyle, accents));
 
