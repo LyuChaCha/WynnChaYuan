@@ -1850,7 +1850,7 @@ public final class LineTranslator {
      * <p>本來是 4（一個半形空格）。技能樹的標籤改用半形冒號之後，冒號本身只有
      * 2px 寬、右邊也沒有全形字自帶的留白，4px 讀起來就像數值黏在冒號上。
      */
-    private static final int MIN_GAP = 6;
+    static final int MIN_GAP = 6;
 
     /** 要幾格空白才算「這是一個對齊欄」而不只是詞與詞之間的間隔。 */
     private static final int MIN_COLUMN_GAP = 2;
@@ -3633,7 +3633,7 @@ public final class LineTranslator {
      * <p>真正的欄界動輒數十像素（信標是 69px，素材 tooltip 把數值往回拉 12px），
      * 對齊圖示的微調則是個位數。以八像素為界——大約一個半字元寬。
      */
-    private static final int MIN_GAP_PX = 8;
+    static final int MIN_GAP_PX = 8;
 
     static boolean isColumnGap(Run r) {
         return r.space() && Math.abs(r.px()) >= MIN_GAP_PX;

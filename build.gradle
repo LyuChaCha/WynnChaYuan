@@ -615,6 +615,14 @@ tasks.register('runLabelValueColourChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runLabelValueColourChecks' }
 
+tasks.register('runTooltipWidenChecks', JavaExec) {
+    group = 'verification'
+    description = '譯文比英文寬時，靠右的數值收在同一條新右緣、置中的行重新置中'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.TooltipWidenTest'
+}
+tasks.named('check') { dependsOn 'runTooltipWidenChecks' }
+
 tasks.register('runPartyPanelChecks', JavaExec) {
     group = 'verification'
     description = '排隊找隊伍那一面板整片都要是中文'
