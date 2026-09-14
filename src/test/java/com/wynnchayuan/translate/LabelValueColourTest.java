@@ -83,6 +83,13 @@ public final class LabelValueColourTest {
                 new int[] {PINK, WHITE, WHITE},
                 new String[] {"給予", "綠寶石"}, new int[] {PINK, WHITE});
 
+        // 實機回報：公會獎勵清單。數字兩邊的「✖ Lv.」「: +」本身就混色，
+        // 譯文照抄這兩段，Lv. 要保住白色、後面的說明保住灰色。
+        colours(store, "數字兩邊混色的段落照抄時逐段貼色",
+                new String[] {"✖", " Lv. 90: ", "+5 New Badges"},
+                new int[] {0xFF5555, WHITE, GREY},
+                new String[] {"✖", "Lv.", "新徽章"}, new int[] {0xFF5555, WHITE, GREY});
+
         // 實機 majorid-debug「可用的顏色 14」：譯文用了 {~1}{~2}，照順序的仍然對得上。
         colours(store, "照順序指名的數值也對得上",
                 new String[] {"- 3 Rows", " (2stx Total)"},

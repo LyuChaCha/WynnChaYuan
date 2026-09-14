@@ -4568,19 +4568,32 @@ public final class LineTranslator {
         for (int i = 0; i < parts.size(); i++) {
             List<Segment> source = segments(parts.get(i).template());
             List<Segment> target = segments(dst[i]);
-            List<Style> styles = source == null
+            List<List<LineParts.Piece>> styles = source == null
                     ? null : segmentStyles(source, parts.get(i).runs());
-            if (styles == null || target == null || !sameShape(source, target)) {
+            if (styles == null || target == null || !sameShape(source, target)
+                    || usableStyles(source, target, styles) < 2) {
                 earlier.append(dst[i]).append(NL);
                 continue;
             }
             applied = true;
             for (int k = 0; k < target.size(); k++) {
                 String core = target.get(k).text().strip();
-                Style style = styles.get(k);
-                // 前面已經出現過同樣的字面，貼樣式那一步會先貼到前面去，不登記
-                if (style != null && hasContent(core) && earlier.indexOf(core) < 0) {
-                    add(out, core, style, blockStyle, known);
+                List<LineParts.Piece> runs = styles.get(k);
+                if (runs.size() == 1) {
+                    // 前面已經出現過同樣的字面，貼樣式那一步會先貼到前面去，不登記
+                    if (hasContent(core) && earlier.indexOf(core) < 0) {
+                        add(out, core, runs.get(0).style(), blockStyle, known);
+                    }
+                } else if (runs.size() > 1 && core.equals(source.get(k).text().strip())) {
+                    // 這一段混了幾種顏色，但譯文照抄原文（「✖ Lv.」「: +」這種）——
+                    // 字面一樣，就逐段照原文的顏色貼
+                    StringBuilder before = new StringBuilder(earlier);
+                    for (LineParts.Piece run : runs) {
+                        if (hasContent(run.text()) && before.indexOf(run.text()) < 0) {
+                            add(out, run.text(), run.style(), blockStyle, known);
+                        }
+                        before.append(run.text());
+                    }
                 }
                 earlier.append(target.get(k).text());
             }
@@ -4649,14 +4662,15 @@ public final class LineTranslator {
     }
 
     /**
-     * 原文每一段的顏色；那一段混了幾種就是 {@code null}。
+     * 原文每一段依顏色切開的小段；整段同色就只有一個，空的段落是空清單。
      *
      * <p>模板裡的文字就是各片段接起來、數值與地名換成佔位符的樣子，
      * 所以每一段都能依序在片段的原文裡找到。
      *
-     * @return 找不到、或整行只有一種顏色時回傳 {@code null}
+     * @return 某一段找不到時回傳 {@code null}
      */
-    private static List<Style> segmentStyles(List<Segment> source, List<LineParts.Piece> runs) {
+    private static List<List<LineParts.Piece>> segmentStyles(List<Segment> source,
+                                                              List<LineParts.Piece> runs) {
         StringBuilder plain = new StringBuilder();
         List<Style> styleAt = new ArrayList<>();
         for (LineParts.Piece run : runs) {
@@ -4665,40 +4679,62 @@ public final class LineTranslator {
                 styleAt.add(run.style());
             }
         }
-        List<Style> out = new ArrayList<>(source.size());
-        java.util.Set<Style> distinct = new java.util.HashSet<>();
+        List<List<LineParts.Piece>> out = new ArrayList<>(source.size());
         int cursor = 0;
         for (Segment segment : source) {
             String core = segment.text().strip();
             if (core.isEmpty()) {
-                out.add(null);
+                out.add(List.of());
                 continue;
             }
             int at = plain.indexOf(core, cursor);
             if (at < 0) {
                 return null;
             }
-            Style only = null;
-            boolean mixed = false;
+            List<LineParts.Piece> pieces = new ArrayList<>();
+            StringBuilder text = new StringBuilder();
+            Style current = null;
             for (int c = at; c < at + core.length(); c++) {
-                if (Character.isWhitespace(plain.charAt(c))) {
-                    continue;
+                char ch = plain.charAt(c);
+                if (!Character.isWhitespace(ch)) {
+                    Style style = styleAt.get(c);
+                    if (current != null && !java.util.Objects.equals(current, style)) {
+                        pieces.add(new LineParts.Piece(text.toString().strip(), current));
+                        text.setLength(0);
+                    }
+                    current = style;
                 }
-                Style style = styleAt.get(c);
-                if (only == null) {
-                    only = style;
-                } else if (!java.util.Objects.equals(only, style)) {
-                    mixed = true;
-                    break;
-                }
+                text.append(ch);
             }
-            out.add(mixed ? null : only);
-            if (!mixed && only != null) {
-                distinct.add(only);
-            }
+            pieces.add(new LineParts.Piece(text.toString().strip(), current));
+            out.add(pieces);
             cursor = at + core.length();
         }
-        return distinct.size() >= 2 ? out : null;
+        return out;
+    }
+
+    /**
+     * 這一行真正貼得上的顏色有幾種。
+     *
+     * <p>整段同色、譯文那段有字的算；混色的段落只有譯文<b>照抄原文</b>時才算。
+     * 少於兩種就沒有東西要分，交回原本的規則——「Type: Grinding Mobs」
+     * 這種整行翻掉、沒有佔位符的行，冒號那一刀才輪得到。
+     */
+    private static int usableStyles(List<Segment> source, List<Segment> target,
+                                    List<List<LineParts.Piece>> styles) {
+        java.util.Set<Style> distinct = new java.util.HashSet<>();
+        for (int k = 0; k < target.size(); k++) {
+            List<LineParts.Piece> runs = styles.get(k);
+            String core = target.get(k).text().strip();
+            if (runs.size() == 1 && hasContent(core)) {
+                distinct.add(runs.get(0).style());
+            } else if (runs.size() > 1 && core.equals(source.get(k).text().strip())) {
+                for (LineParts.Piece run : runs) {
+                    distinct.add(run.style());
+                }
+            }
+        }
+        return distinct.size();
     }
 
     /** 見 {@link #labelValueAccents}：剝掉佔位符之後還有字才登記。 */
