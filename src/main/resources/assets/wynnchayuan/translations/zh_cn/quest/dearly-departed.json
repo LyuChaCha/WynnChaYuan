@@ -1,14 +1,14 @@
 {
  "_meta": {
   "quest": "Dearly Departed",
-  "count": 45,
-  "translated": 40,
+  "count": 58,
+  "translated": 35,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Dearly Departed#000": {
-   "src": "Talk to Farmer Cevalus at",
-   "dst": "与农夫 Cevalus 对话",
+   "src": "Talk to Farmer Cevalus at [-{~}, {~}, -{~}]",
+   "dst": "",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -77,8 +77,8 @@
    "source": "wiki"
   },
   "Dearly Departed#007": {
-   "src": "Pick up the shovel at .",
-   "dst": "捡起铲子。",
+   "src": "Pick up the shovel at [-{~}, {~}, -{~}].",
+   "dst": "",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -97,8 +97,8 @@
    "source": "wiki"
   },
   "Dearly Departed#009": {
-   "src": "Return to Farmer Cevalus at",
-   "dst": "回到农夫 Cevalus 那里",
+   "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
+   "dst": "",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -157,7 +157,7 @@
    "source": "wiki"
   },
   "Dearly Departed#015": {
-   "src": "There's five of them. {u}, , , , and Agility, each with different bonuses.",
+   "src": "There's five of them. Strength, Dexterity, Intelligence, Defence, and Agility, each with different bonuses.",
    "dst": "",
    "role": "desc",
    "kind": "dialogue",
@@ -247,8 +247,8 @@
    "source": "wiki"
   },
   "Dearly Departed#024": {
-   "src": "Dig up the grave at .",
-   "dst": "挖开坟墓。",
+   "src": "Dig up the grave at [-{~}, {~}, -{~}].",
+   "dst": "",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -317,8 +317,8 @@
    "source": "wiki"
   },
   "Dearly Departed#031": {
-   "src": "Return to Farmer Cevalus at",
-   "dst": "回到农夫 Cevalus 那里",
+   "src": "Return to Farmer Cevalus at [-{~}, {~}, -{~}]",
+   "dst": "",
    "role": "desc",
    "kind": "objective",
    "quest": "Dearly Departed",
@@ -455,6 +455,110 @@
    "stage": "Stage 6",
    "speaker": "Farmer Kelri",
    "source": "wiki"
+  },
+  "Dearly Departed#045": {
+   "src": "You've used your Skill Points too, right? They could come in handy, should something happen.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#046": {
+   "src": "There's five of them.  Strength,  Dexterity,  Intelligence,  Defence, and  Agility, each with different bonuses.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#047": {
+   "src": "Why are you asking me that?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#048": {
+   "src": "What are Skill Points?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#049": {
+   "src": "I got it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#050": {
+   "src": "About Strength.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#051": {
+   "src": "About Dexterity.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#052": {
+   "src": "About Intelligence.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#053": {
+   "src": "Not yet...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#054": {
+   "src": "Dig up the grave?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#055": {
+   "src": "There you go...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#056": {
+   "src": "Now to see if you can find that ring Cevalus mentioned...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#057": {
+   "src": "You manage to pry the ring off the monster's finger...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
   }
  }
 }

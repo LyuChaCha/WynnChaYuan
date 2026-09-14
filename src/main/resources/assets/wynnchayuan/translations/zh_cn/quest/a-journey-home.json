@@ -1,12 +1,42 @@
 {
  "_meta": {
   "quest": "A Journey Home",
-  "count": 119,
+  "count": 124,
   "translated": 119,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Home#000": {
+   "src": "Maybe another spell?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#001": {
+   "src": "Is there anything I can do for you today?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#002": {
+   "src": "...something's prickling at the back of your mind. Weren't you asleep like this when you first arrived, too?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#003": {
    "src": "Investigate the Fruma Gate at [-{~}, {~}, -{~}].",
    "dst": "调查 [-{~}, {~}, -{~}] 的 Fruma 大门。",
    "role": "desc",
@@ -16,7 +46,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#001": {
+  "A Journey Home#004": {
    "src": "Explore near where you originally arrived in Wynn.",
    "dst": "在你最初抵达 Wynn 的地方附近探索。",
    "role": "desc",
@@ -26,7 +56,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#002": {
+  "A Journey Home#005": {
    "src": "Leave {p} through the door at [-{~}, {~}, -{~}].",
    "dst": "从 [-{~}, {~}, -{~}] 的门离开 {p}。",
    "role": "desc",
@@ -36,7 +66,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#003": {
+  "A Journey Home#006": {
    "src": "Continue back down the path to Fruma.",
    "dst": "沿着小路继续往回走向 Fruma。",
    "role": "desc",
@@ -46,7 +76,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#004": {
+  "A Journey Home#007": {
    "src": "This job is impossible!! Why am I even here?!",
    "dst": "这份工作根本不可能完成！！我到底为什么会在这里？！",
    "role": "desc",
@@ -56,7 +86,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#005": {
+  "A Journey Home#008": {
    "src": "Ah! You're a soldier, right? Look, I It's, it's just a really difficult time right now.",
    "dst": "啊！你是士兵，对吧？听着，我——那个，现在真的是很困难的时候。",
    "role": "desc",
@@ -66,7 +96,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#006": {
+  "A Journey Home#009": {
    "src": "This, this whole situation is definitely above my paygrade! I don't know how I'm going to deal with this...",
    "dst": "这、这整件事绝对超出我的职权范围了！我不知道该怎么处理……",
    "role": "desc",
@@ -76,7 +106,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#007": {
+  "A Journey Home#010": {
    "src": "Enough of that, I, ah, I suppose. What is it you need?",
    "dst": "不说这个了，我，呃，我想。你需要什么？",
    "role": "desc",
@@ -86,7 +116,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#008": {
+  "A Journey Home#011": {
    "src": "Oh. Oh no. Ah, I, you see, that'll be a problem, I think. What do you even need to do at the border anyway?",
    "dst": "噢。噢不。呃，我，你看，我想这会是个问题。你到底要去边境做什么？",
    "role": "desc",
@@ -96,7 +126,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#009": {
+  "A Journey Home#012": {
    "src": "I can't really imagine what you could need there, but, whatever it is, it'll need to wait! This Corkian drill won't work, and Paxon's stuck, and",
    "dst": "我实在想象不出你在那里能有什么事，但不管是什么，都得等等了！这台 Corkus 钻机不能用，Paxon 又被困住了，而且",
    "role": "desc",
@@ -106,7 +136,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#010": {
+  "A Journey Home#013": {
    "src": "Look, I'm...I'm sorry for snapping at you. I'm trained for military operation, not for cave-in clearance, but no one else was available!",
    "dst": "听着，我……我很抱歉对你发火。我受的是军事行动的训练，不是清理坍方的，可是没有别人能来了！",
    "role": "desc",
@@ -116,7 +146,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#011": {
+  "A Journey Home#014": {
    "src": "Even the demolitions expert I hired is stuck, so it's all just, it's all going wrong and I don't know what to do.",
    "dst": "就连我请来的爆破专家都被困住了，所以一切都、一切都不顺，我也不知道该怎么办。",
    "role": "desc",
@@ -126,7 +156,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#012": {
+  "A Journey Home#015": {
    "src": "You see that new entrance over there? The expert, Paxon, has been in there for almost as long as I was trying this dud machine.",
    "dst": "看到那边那个新的入口了吗？那位专家 Paxon 在里面待的时间，差不多跟我试这台废机器的时间一样久。",
    "role": "desc",
@@ -136,7 +166,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#013": {
+  "A Journey Home#016": {
    "src": "If you think you can do a job better than an expert, go ahead and talk with them, but I'm pretty sure you'll have to cancel whatever plans you had.",
    "dst": "如果你觉得你能比专家做得更好，就去跟他们谈谈吧，不过我很确定你得取消原本的计划了。",
    "role": "desc",
@@ -146,7 +176,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#014": {
+  "A Journey Home#017": {
    "src": "Talk to the Demolition Mage at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的爆破法师交谈。",
    "role": "desc",
@@ -156,7 +186,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#015": {
+  "A Journey Home#018": {
    "src": "If you really need to get to the border, your best bet is to talk to Paxon in the new cave entrance.",
    "dst": "如果你真的得去边境，最好的办法是去新的洞穴入口找 Paxon 谈谈。",
    "role": "desc",
@@ -166,7 +196,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#016": {
+  "A Journey Home#019": {
    "src": "But, they're an expert, so I think your business will have to wait. Really, really sorry about all this!",
    "dst": "不过，他们可是专家，所以我想你的事得先等等了。真的、真的很抱歉！",
    "role": "desc",
@@ -176,7 +206,7 @@
    "speaker": "Lieutenant Tolv",
    "source": "wiki"
   },
-  "A Journey Home#017": {
+  "A Journey Home#020": {
    "src": "Oh no, not another one I don't care what rank you are, what you're asking is impossible! Even for me, it",
    "dst": "噢不，又来一个，我不管你是什么军阶，你要求的事根本不可能！就算是我，也",
    "role": "desc",
@@ -186,7 +216,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#018": {
+  "A Journey Home#021": {
    "src": "Wait, you aren't part of the... You're just a regular soldier. You're just trying to get through here, aren't you?",
    "dst": "等等，你不是那个……你只是个普通士兵。你只是想从这里过去，对吧？",
    "role": "desc",
@@ -196,7 +226,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#019": {
+  "A Journey Home#022": {
    "src": "May as well give up now! Not happening. No way. You're wasting your time, and let me tell you exactly why.",
    "dst": "你还是现在就放弃吧！不可能的。门都没有。你是在浪费时间，我来告诉你到底为什么。",
    "role": "desc",
@@ -206,8 +236,8 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#020": {
-   "src": "You see that blue rock over there? It's a break point. If I could set off explosives at it, it'd open a path.",
+  "A Journey Home#023": {
+   "src": "You see that blue rock over there? It's a break point. If I could set off these explosives at it, it'd open a path.",
    "dst": "看到那边那块蓝色石头了吗？那是个突破点。如果我能在那里引爆炸药，就能打开一条路。",
    "role": "desc",
    "kind": "dialogue",
@@ -216,7 +246,17 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#021": {
+  "A Journey Home#024": {
+   "src": "They're gone. Hurry down the path!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#025": {
    "src": "But apparently all these structures set up are so important that any of it being damaged, or MOVED, is unacceptable!",
    "dst": "可是这里搭的这些建筑显然重要得不得了，任何一样被弄坏，或者被移动，都不可接受！",
    "role": "desc",
@@ -226,7 +266,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#022": {
+  "A Journey Home#026": {
    "src": "And to make sure I'm 'supervised' while the lieutenant is working on the drill, the detonator HAS to be here.",
    "dst": "而且为了确保中尉在弄钻机的时候我有人“监督”，引爆器必须放在这里。",
    "role": "desc",
@@ -236,7 +276,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#023": {
+  "A Journey Home#027": {
    "src": "So I have to daisy-chain a limited amount of explosives all the way over to the stone, without blasting any structures!",
    "dst": "所以我得用有限的炸药一路串联到那块石头，还不能炸到任何建筑！",
    "role": "desc",
@@ -246,7 +286,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#024": {
+  "A Journey Home#028": {
    "src": "I've been trying for hours and gotten absolutely nowhere! I'm one of the best in my field, even! It's ridiculous!!",
    "dst": "我试了好几个小时，一点进展都没有！我在这一行可是数一数二的！太离谱了！！",
    "role": "desc",
@@ -256,7 +296,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#025": {
+  "A Journey Home#029": {
    "src": "If you feel like wasting your time, here's my stock of explosives. Feel free to try your hand at it, but you really should just go.",
    "dst": "如果你想浪费时间，这是我的炸药存货。尽管去试试身手吧，不过你真的应该直接走人。",
    "role": "desc",
@@ -266,7 +306,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#026": {
+  "A Journey Home#030": {
    "src": "Use the TNT to open up a path through the cave.",
    "dst": "用 TNT 在洞穴里炸出一条路。",
    "role": "desc",
@@ -276,7 +316,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#027": {
+  "A Journey Home#031": {
    "src": "Still at it? What, do you need a reminder? I've got nothing better to do.",
    "dst": "还在弄？怎么，要我再提醒你一次吗？反正我也没更好的事可做。",
    "role": "desc",
@@ -286,7 +326,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#028": {
+  "A Journey Home#032": {
    "src": "So the blue rock is soft enough to crack with the explosives. But the detonator's stuck here.",
    "dst": "所以那块蓝色石头够软，炸药炸得裂。可是引爆器固定在这里。",
    "role": "desc",
@@ -296,7 +336,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#029": {
+  "A Journey Home#033": {
    "src": "So we need to use the TNT Placer to daisy-chain blasts from the detonator, without blasting any tents, crates, or walls.",
    "dst": "所以我们得用 TNT 放置器从引爆器一路串联引爆，而且不能炸到任何帐篷、箱子或墙壁。",
    "role": "desc",
@@ -306,7 +346,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#030": {
+  "A Journey Home#034": {
    "src": "You can look at placed TNT to see its blast radius, as well.",
    "dst": "你也可以看着放好的 TNT 查看它的爆炸范围。",
    "role": "desc",
@@ -316,7 +356,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#031": {
+  "A Journey Home#035": {
    "src": "But given how tight the squeeze between some of those structures is, there's just no way it's happening.",
    "dst": "可是有些建筑之间的空隙窄成那样，根本不可能办到。",
    "role": "desc",
@@ -326,7 +366,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#032": {
+  "A Journey Home#036": {
    "src": "Like I said, you really should just mosey on back to the castle. If I can't get anywhere, I don't think you'll fare better.",
    "dst": "就像我说的，你真的该慢慢晃回城堡去。连我都搞不定，我不认为你会比较好。",
    "role": "desc",
@@ -336,7 +376,7 @@
    "speaker": "Paxon",
    "source": "wiki"
   },
-  "A Journey Home#033": {
+  "A Journey Home#037": {
    "src": "Continue through the cave.",
    "dst": "继续穿过洞穴。",
    "role": "desc",
@@ -346,7 +386,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#034": {
+  "A Journey Home#038": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
    "dst": "与 [-{~}, {~}, -{~}] 的守卫交谈。",
    "role": "desc",
@@ -356,7 +396,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#035": {
+  "A Journey Home#039": {
    "src": "Halt! Where did you come from? There was a cave-in past here, wasn't there?",
    "dst": "站住！你从哪里来的？这里过去不是坍方了吗？",
    "role": "desc",
@@ -366,7 +406,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#036": {
+  "A Journey Home#040": {
    "src": "A new path, huh? I didn't think you'd have things to be doing back here, though I won't say I'm ungrateful.",
    "dst": "新的路，是吗？我没想到你在这后面还有事要做，不过我也不会说我不感激。",
    "role": "desc",
@@ -376,7 +416,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#037": {
+  "A Journey Home#041": {
    "src": "It even crushed the grook's nest there. I've been working off field rations for a few days. So where are you headed?",
    "dst": "坍方连那边的 grook 巢都压垮了。我已经靠野战口粮撑了好几天。那么你要去哪里？",
    "role": "desc",
@@ -386,7 +426,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#038": {
+  "A Journey Home#042": {
    "src": "The border? I suppose if you're headed there, it must be important, official business. Although, it might have to wait.",
    "dst": "边境？既然你要去那里，我想一定是重要的公务。不过，可能得等等了。",
    "role": "desc",
@@ -396,7 +436,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#039": {
+  "A Journey Home#043": {
    "src": "The bridge repair was something of a hackjob. It may not bear up your weight. Now that the cave-in's clear, we might be able to get it fixed proper...",
    "dst": "那座桥修得很马虎。它可能撑不住你的重量。现在坍方清掉了，我们也许能把它好好修一修……",
    "role": "desc",
@@ -406,7 +446,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#040": {
+  "A Journey Home#044": {
    "src": "But that'll take time. I'd just as soon turn back whatever business you have isn't worth your life, after all.",
    "dst": "不过那需要时间。换作是我就直接回头了，毕竟不管你有什么事，都不值得赔上性命。",
    "role": "desc",
@@ -416,7 +456,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#041": {
+  "A Journey Home#045": {
    "src": "Cross the repaired bridge at [-{~}, {~}, -{~}].",
    "dst": "走过 [-{~}, {~}, -{~}] 修好的桥。",
    "role": "desc",
@@ -426,7 +466,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#042": {
+  "A Journey Home#046": {
    "src": "Say, I think I recognize you, actually. That's a rarity for this line of work.",
    "dst": "说起来，我好像认得你。干这一行这种事很少见。",
    "role": "desc",
@@ -436,7 +476,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#043": {
+  "A Journey Home#047": {
    "src": "Are you sure that what you have to do is worth it? That bridge is awful rickety. Wouldn't want to lose you.",
    "dst": "你确定你要做的事值得吗？那座桥摇摇晃晃的。可不想失去你。",
    "role": "desc",
@@ -446,7 +486,7 @@
    "speaker": "Guard",
    "source": "wiki"
   },
-  "A Journey Home#044": {
+  "A Journey Home#048": {
    "src": "Continue back down the path to Fruma.",
    "dst": "沿着小路继续往回走向 Fruma。",
    "role": "desc",
@@ -456,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#045": {
+  "A Journey Home#049": {
    "src": "Hey, you there! Come talk to me before you pass through.",
    "dst": "嘿，你！过去之前先来跟我谈谈。",
    "role": "desc",
@@ -466,7 +506,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#046": {
+  "A Journey Home#050": {
    "src": "Hey, you! Come talk to me first, recruit!",
    "dst": "嘿，你！先来跟我谈谈，新兵！",
    "role": "desc",
@@ -476,7 +516,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#047": {
+  "A Journey Home#051": {
    "src": "Coming or going, I'm under strict orders to intercept soldiers and make sure they're equipped before heading on.",
    "dst": "不管是来是去，我都奉命拦下士兵，确保他们装备齐全才能继续前进。",
    "role": "desc",
@@ -486,7 +526,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#048": {
+  "A Journey Home#052": {
    "src": "No exceptions, not for any reason. Especially not since the cave-in across the river!",
    "dst": "没有例外，不管什么理由都一样。尤其是河对岸坍方之后更是如此！",
    "role": "desc",
@@ -496,7 +536,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#049": {
+  "A Journey Home#053": {
    "src": "Nothing's more important than your life, and moving on without being suited up could cost you it!",
    "dst": "没有什么比你的性命更重要，没穿好装备就往前走，可能会让你丢了命！",
    "role": "desc",
@@ -506,7 +546,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#050": {
+  "A Journey Home#054": {
    "src": "Well, let me take a look and see if this stuff is up to regulation.",
    "dst": "好，让我看看这些装备合不合规定。",
    "role": "desc",
@@ -516,7 +556,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#051": {
+  "A Journey Home#055": {
    "src": "Hmm... Ah, yep, signs of wear all over... Armor not polished... Weapon looks liable to fall apart any second...",
    "dst": "嗯……啊，没错，到处都是磨损的痕迹……盔甲没擦亮……武器看起来随时都会散架……",
    "role": "desc",
@@ -526,7 +566,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#052": {
+  "A Journey Home#056": {
    "src": "I'm surprised you made it ten feet out here with those rusty trinkets! This is no way to protect yourself!",
    "dst": "真没想到你带着这些生锈的玩意还能走出十英尺！这样根本保护不了自己！",
    "role": "desc",
@@ -536,7 +576,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#053": {
+  "A Journey Home#057": {
    "src": "Look, there's a loot chest in the cave just there, so you need to head in and get yourself some proper equipment.",
    "dst": "听着，那边的洞穴里有个战利品箱，你得进去给自己弄套像样的装备。",
    "role": "desc",
@@ -546,7 +586,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#054": {
+  "A Journey Home#058": {
    "src": "...that so, huh? Well, I think you should take a second look up ahead.",
    "dst": "……是这样吗，嗯？好吧，我觉得你该再往前看一眼。",
    "role": "desc",
@@ -556,7 +596,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#055": {
+  "A Journey Home#059": {
    "src": "See? Now no more guff about levels you either gear up properly, or you don't pass! I won't have you risking your life.",
    "dst": "看到了吧？现在别再跟我扯什么等级了，要么把装备穿好，要么就别过去！我不会让你拿命冒险。",
    "role": "desc",
@@ -566,7 +606,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#056": {
+  "A Journey Home#060": {
    "src": "You can find good stuff in caves, like the one just next to me, so hop to it.",
    "dst": "在洞穴里能找到好东西，就像我旁边这个，所以快去吧。",
    "role": "desc",
@@ -576,7 +616,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#057": {
+  "A Journey Home#061": {
    "src": "Like I said, coming or going. No matter what, you should gear up by looting the cave here before heading onwards.",
    "dst": "就像我说的，不管是来是去。无论如何，继续前进之前，你都该先搜刮这里的洞穴把装备穿好。",
    "role": "desc",
@@ -586,7 +626,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#058": {
+  "A Journey Home#062": {
    "src": "Good stuff. There's a loot chest in that cave there, so you should find everything you need. Get to it!",
    "dst": "很好。那边的洞穴里有个战利品箱，你需要的东西应该都找得到。去吧！",
    "role": "desc",
@@ -596,7 +636,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#059": {
+  "A Journey Home#063": {
    "src": "Explore the cave to find some loot.",
    "dst": "探索洞穴，找些战利品。",
    "role": "desc",
@@ -606,7 +646,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#060": {
+  "A Journey Home#064": {
    "src": "Enter the cave and open the loot chest.",
    "dst": "进入洞穴，打开战利品箱。",
    "role": "desc",
@@ -616,7 +656,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#061": {
+  "A Journey Home#065": {
    "src": "Continue back down the path to Fruma.",
    "dst": "沿着小路继续往回走向 Fruma。",
    "role": "desc",
@@ -626,7 +666,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#062": {
+  "A Journey Home#066": {
    "src": "That looks like the stuff. You can take that armor to an Item Identifier right there, and then you can wear it once identified.",
    "dst": "看起来就是那些了。你可以把那件盔甲拿给那边的物品鉴定师，鉴定完就能穿了。",
    "role": "desc",
@@ -636,7 +676,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#063": {
+  "A Journey Home#067": {
    "src": "Though... since you seem to be heading back to the border... I have to ask why. It's pretty unusual. Probably best you head back to {p}.",
    "dst": "不过……既然你好像是要回边境……我得问问为什么。这很少见。你最好还是回 {p} 吧。",
    "role": "desc",
@@ -646,7 +686,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#064": {
+  "A Journey Home#068": {
    "src": "If other recruits see you coming the other way, they might get confused, or discouraged. Wouldn't want to risk that, right?",
    "dst": "要是其他新兵看到你往反方向走，他们可能会困惑，或者泄气。我们可不想冒这个险，对吧？",
    "role": "desc",
@@ -656,7 +696,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#065": {
+  "A Journey Home#069": {
    "src": "Are you sure whatever you're doing is worth it? Maybe you should just head back to town.",
    "dst": "你确定你在做的事值得吗？也许你该直接回镇上去。",
    "role": "desc",
@@ -666,7 +706,7 @@
    "speaker": "Soldier",
    "source": "wiki"
   },
-  "A Journey Home#066": {
+  "A Journey Home#070": {
    "src": "Avoid the Fruman recruits on the path.",
    "dst": "避开小路上的 Fruma 新兵。",
    "role": "desc",
@@ -676,7 +716,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#067": {
+  "A Journey Home#071": {
    "src": "...been recruiting Fruman soldiers for the war effort. Apparently things are really bad over there. Makes me nervous...",
    "dst": "……一直在为战事招募 Fruma 的士兵。听说那边的情况真的很糟。让我有点紧张……",
    "role": "desc",
@@ -686,7 +726,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#068": {
+  "A Journey Home#072": {
    "src": "Walking corpses aren't anything I'm going to underestimate, but it can't be all doom and gloom, right?",
    "dst": "行尸走肉可不是我会小看的东西，不过总不会全是坏消息吧？",
    "role": "desc",
@@ -696,7 +736,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#069": {
+  "A Journey Home#073": {
    "src": "I suppose we'll see once we pass this gate. It marks the border... Deep breaths, deep breaths...",
    "dst": "我想等我们过了这道门就知道了。这里就是边境……深呼吸，深呼吸……",
    "role": "desc",
@@ -706,7 +746,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#070": {
+  "A Journey Home#074": {
    "src": "...know anything about Wynn? I didn't get any debriefing.",
    "dst": "……对 Wynn 有什么了解吗？我没听到任何简报。",
    "role": "desc",
@@ -716,7 +756,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#071": {
+  "A Journey Home#075": {
    "src": "I remember rumors... Something about a great hero. Name started with...and R?",
    "dst": "我记得有些传闻……关于一位伟大的英雄。名字开头是……R？",
    "role": "desc",
@@ -726,7 +766,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#072": {
+  "A Journey Home#076": {
    "src": "We'll make it a point to ask as soon as we can. Information's key to fighting wars.",
    "dst": "我们一有机会就去问问。情报是打仗的关键。",
    "role": "desc",
@@ -736,7 +776,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#073": {
+  "A Journey Home#077": {
    "src": "...rotten driver. I feel for the man, but he said he always hits that boulder. Sounds like his own fault to me.",
    "dst": "……烂透了的车夫。我同情那个人，可他说他每次都会撞上那块大石头。在我听来是他自己的错。",
    "role": "desc",
@@ -746,7 +786,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#074": {
+  "A Journey Home#078": {
    "src": "I'm thinking about meals more than wheels. I feel like I haven't eaten in days. Hope the walk's short...",
    "dst": "我现在想的是饭，不是车。我觉得我好几天没吃东西了。希望这段路不长……",
    "role": "desc",
@@ -756,7 +796,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#075": {
+  "A Journey Home#079": {
    "src": "Well, if he was a more competent driver you wouldn't have to walk so far on an empty stomach! Let's hurry so we can get you a feast, huh?",
    "dst": "嗯，要是他是个更称职的车夫，你就不用空着肚子走这么远了！我们快点走，好让你吃顿大餐，嗯？",
    "role": "desc",
@@ -766,7 +806,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#076": {
+  "A Journey Home#080": {
    "src": "Wait, who's that? Why are they coming from the border??",
    "dst": "等等，那是谁？他们为什么从边境那边过来？？",
    "role": "desc",
@@ -776,7 +816,7 @@
    "speaker": "Fruman Recruit",
    "source": "wiki"
   },
-  "A Journey Home#077": {
+  "A Journey Home#081": {
    "src": "Hide from the Caravan Driver.",
    "dst": "躲开商队车夫。",
    "role": "desc",
@@ -786,7 +826,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#078": {
+  "A Journey Home#082": {
    "src": "...and that's the last of them for today.",
    "dst": "……今天的最后一批就是他们了。",
    "role": "desc",
@@ -796,7 +836,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#079": {
+  "A Journey Home#083": {
    "src": "Lots of pairs today. Eight more in the wings... But that's for tomorrow.",
    "dst": "今天两两一组的真多。还有八个在后面等着……不过那是明天的事了。",
    "role": "desc",
@@ -806,7 +846,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#080": {
+  "A Journey Home#084": {
    "src": "Same darn boulder... Same darn line, too. Wonder if they'll let me shake it up one day. This is always a pain...",
    "dst": "又是那块该死的大石头……还是那句该死的台词。不知道他们哪天会不会让我换个说法。每次都烦死了……",
    "role": "desc",
@@ -816,7 +856,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#081": {
+  "A Journey Home#085": {
    "src": "And that's that about that. And now, to be off...to the home I choose. And there's no troubles to follow me there.",
    "dst": "就这样，没别的了。现在，出发……回我选择的家。没有烦恼会跟着我到那里。",
    "role": "desc",
@@ -826,7 +866,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#082": {
+  "A Journey Home#086": {
    "src": "Explore past the Fruma Gate.",
    "dst": "探索 Fruma 大门的另一边。",
    "role": "desc",
@@ -836,7 +876,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#083": {
+  "A Journey Home#087": {
    "src": "Just couldn't take the hint, huh?",
    "dst": "就是听不懂暗示，是吧？",
    "role": "desc",
@@ -846,7 +886,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#084": {
+  "A Journey Home#088": {
    "src": "Bet you think you're slick. Didn't even notice me hang back to watch, huh? I wasn't born yesterday.",
    "dst": "我打赌你觉得自己很机灵。连我留在后面盯着都没发现，是吧？我可不是昨天才出生的。",
    "role": "desc",
@@ -856,7 +896,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#085": {
+  "A Journey Home#089": {
    "src": "Listen, this isn't the first time something like this has happened Y'know. Someone gets curious, retraces their steps.",
    "dst": "听着，这种事已经不是第一次发生了，你知道吗。有人起了好奇心，就沿着原路走回来。",
    "role": "desc",
@@ -866,7 +906,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#086": {
+  "A Journey Home#090": {
    "src": "If you couldn't tell, this whole thing's meant to be a one way trip. The bridge, the cave-in, everyone trying to discourage you.",
    "dst": "如果你还没看出来，这整趟本来就是单程的。那座桥、那场坍方、每个人都想劝退你。",
    "role": "desc",
@@ -876,7 +916,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#087": {
+  "A Journey Home#091": {
    "src": "It's not wise to be here After all, you weren't the one out of your group of three that got permission to stay. Yeah, I heard about the tournament results.",
    "dst": "来这里不是明智之举，毕竟你们三人一组里，获准留下的那个人不是你。对，我听说比赛结果了。",
    "role": "desc",
@@ -886,8 +926,8 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#088": {
-   "src": "So...you got two choices, buddy. We can let this slide between us. We can. You can go marching back to {p} and my lips will be sealed.",
+  "A Journey Home#092": {
+   "src": "So...you got two choices, buddy. We can let this slide between us. We can. You can go marching right back to {p} and my lips will be sealed.",
    "dst": "所以……你有两个选择，老兄。这件事我们可以就当没发生过。真的可以。你可以走回 {p}，我会守口如瓶。",
    "role": "desc",
    "kind": "dialogue",
@@ -896,7 +936,17 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#089": {
+  "A Journey Home#093": {
+   "src": "Alas, I am afraid my hands are quite tied here. There is little I can do- you recall what I said in the meeting.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Home",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Journey Home#094": {
    "src": "Or, you can live life dangerously and follow me on the train to {p}. Better make your choice quick, though it's leaving soon.",
    "dst": "或者，你可以冒险跟着我搭上前往 {p} 的列车。不过最好快点决定，车马上就要开了。",
    "role": "desc",
@@ -906,7 +956,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#090": {
+  "A Journey Home#095": {
    "src": "If I see you in the passenger cabin, well...that'll be that, and you'll just have to wait and see what comes of it.",
    "dst": "要是我在乘客车厢里看到你，嗯……那就这样了，你只能等着看会有什么下场。",
    "role": "desc",
@@ -916,7 +966,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#091": {
+  "A Journey Home#096": {
    "src": "Join the Caravan Driver in the passenger car at [-{~}, {~}, -{~}].",
    "dst": "到 [-{~}, {~}, -{~}] 的乘客车厢与商队车夫会合。",
    "role": "desc",
@@ -926,7 +976,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#092": {
+  "A Journey Home#097": {
    "src": "Last chance to back out. This your choice?",
    "dst": "最后一次反悔的机会。这是你的选择？",
    "role": "desc",
@@ -936,7 +986,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#093": {
+  "A Journey Home#098": {
    "src": "Well, you better get headed on the long walk back to {p} then.",
    "dst": "嗯，那你最好开始走那段回 {p} 的长路了。",
    "role": "desc",
@@ -946,7 +996,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#094": {
+  "A Journey Home#099": {
    "src": "Arrive in Fruma.",
    "dst": "抵达 Fruma。",
    "role": "desc",
@@ -956,7 +1006,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#095": {
+  "A Journey Home#100": {
    "src": "Well. We've arrived.",
    "dst": "好了。我们到了。",
    "role": "desc",
@@ -966,7 +1016,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#096": {
+  "A Journey Home#101": {
    "src": "....",
    "dst": "……",
    "role": "desc",
@@ -976,7 +1026,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#097": {
+  "A Journey Home#102": {
    "src": "You know what they say about curiosity, and how it killed the cat. You the type to believe satisfaction'll bring it back?",
    "dst": "你知道大家怎么说好奇心吧，好奇心会害死猫。你是那种相信满足了好奇心就能让猫复活的人吗？",
    "role": "desc",
@@ -986,7 +1036,7 @@
    "speaker": "Caravan Driver",
    "source": "wiki"
   },
-  "A Journey Home#098": {
+  "A Journey Home#103": {
    "src": "Well, 'kittycat,' you didn't find the cream just the hound dogs.",
    "dst": "好啊，“小猫咪”，你没找到奶油，只找到了猎犬。",
    "role": "desc",
@@ -996,7 +1046,7 @@
    "speaker": "Fruman Guard",
    "source": "wiki"
   },
-  "A Journey Home#099": {
+  "A Journey Home#104": {
    "src": "Intruder to Fruma, you are under arrest! Now march!",
    "dst": "闯入 Fruma 的人，你被捕了！现在走！",
    "role": "desc",
@@ -1006,7 +1056,7 @@
    "speaker": "Fruman Guard",
    "source": "wiki"
   },
-  "A Journey Home#100": {
+  "A Journey Home#105": {
    "src": "You really thought the Driver was on your side, intruder? What a fool you are. We gave you every chance to quit this endeavor, but here you are. Let's go.",
    "dst": "你真以为车夫站在你这边吗，闯入者？你真是个傻瓜。我们给了你每一个放弃的机会，可你还是来了。走吧。",
    "role": "desc",
@@ -1016,7 +1066,7 @@
    "speaker": "Commander Lilles",
    "source": "wiki"
   },
-  "A Journey Home#101": {
+  "A Journey Home#106": {
    "src": "Commander! We must speak immediately!",
    "dst": "指挥官！我们必须马上谈谈！",
    "role": "desc",
@@ -1026,7 +1076,7 @@
    "speaker": "Guard Captain",
    "source": "wiki"
   },
-  "A Journey Home#102": {
+  "A Journey Home#107": {
    "src": "I have urgent news to report from the gate.",
    "dst": "我有紧急消息要从大门那边报告。",
    "role": "desc",
@@ -1036,7 +1086,7 @@
    "speaker": "Guard Captain",
    "source": "wiki"
   },
-  "A Journey Home#103": {
+  "A Journey Home#108": {
    "src": "If it is truly so urgent, let's speak.",
    "dst": "如果真的这么紧急，我们就谈吧。",
    "role": "desc",
@@ -1046,7 +1096,7 @@
    "speaker": "Commander Lilles",
    "source": "wiki"
   },
-  "A Journey Home#104": {
+  "A Journey Home#109": {
    "src": "Soldiers! Keep the intruder still. I've every faith in you.",
    "dst": "士兵们！看住闯入者。我完全信任你们。",
    "role": "desc",
@@ -1056,7 +1106,7 @@
    "speaker": "Commander Lilles",
    "source": "wiki"
   },
-  "A Journey Home#105": {
+  "A Journey Home#110": {
    "src": "Defeat the guards and escape.",
    "dst": "击败守卫并逃走。",
    "role": "desc",
@@ -1066,7 +1116,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#106": {
+  "A Journey Home#111": {
    "src": "Leave {p}.",
    "dst": "离开 {p}。",
    "role": "desc",
@@ -1076,7 +1126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Journey Home#107": {
+  "A Journey Home#112": {
    "src": "Mmn. Hey there, stranger.",
    "dst": "嗯。嘿，陌生人。",
    "role": "desc",
@@ -1086,7 +1136,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#108": {
+  "A Journey Home#113": {
    "src": "Anythin' I can help you with?",
    "dst": "有什么我能帮你的吗？",
    "role": "desc",
@@ -1096,7 +1146,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#109": {
+  "A Journey Home#114": {
    "src": "Hm. Suppose there's no harm. But watch yourself, alright?",
    "dst": "嗯。我想也无妨。不过你自己小心点，好吗？",
    "role": "desc",
@@ -1106,7 +1156,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#110": {
+  "A Journey Home#115": {
    "src": "This here's our home. I wouldn't take too kindly to you messin' anything up, understand?",
    "dst": "这里是我们的家。你要是把什么东西弄乱了，我可不会客气，懂吗？",
    "role": "desc",
@@ -1116,7 +1166,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#111": {
+  "A Journey Home#116": {
    "src": "...doin' alright, all things considered. Weather's nice, I suppose. Festival comin' up.",
    "dst": "……还过得去，考虑到各种情况的话。天气不错，我想。节日快到了。",
    "role": "desc",
@@ -1126,7 +1176,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#112": {
+  "A Journey Home#117": {
    "src": "But that ain't none of our business, really. If you didn't need anythin' else, I'll kindly ask you to take your leave.",
    "dst": "不过那真的不关我们的事。如果你没别的事，我就客气地请你离开了。",
    "role": "desc",
@@ -1136,7 +1186,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#113": {
+  "A Journey Home#118": {
    "src": "Hm. Good. Have a nice day, now.",
    "dst": "嗯。很好。祝你今天愉快。",
    "role": "desc",
@@ -1146,7 +1196,7 @@
    "speaker": "Kaio",
    "source": "wiki"
   },
-  "A Journey Home#114": {
+  "A Journey Home#119": {
    "src": "Hmm? And who may you be?",
    "dst": "嗯？你又是谁？",
    "role": "desc",
@@ -1156,7 +1206,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A Journey Home#115": {
+  "A Journey Home#120": {
    "src": "Hoh, oh well. Might I help you with something?",
    "dst": "呵，噢，好吧。有什么我能帮你的吗？",
    "role": "desc",
@@ -1166,7 +1216,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A Journey Home#116": {
+  "A Journey Home#121": {
    "src": "Ah, completing some assorted metalworking projects. There always seems to be something to replace or maintain around here...",
    "dst": "啊，在做些零零碎碎的金属加工活。这附近好像总有东西要换或要修……",
    "role": "desc",
@@ -1176,7 +1226,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A Journey Home#117": {
+  "A Journey Home#122": {
    "src": "Though, I certainly am no expert! But I can handle the tools well enough, and that is all that is needed for the task.",
    "dst": "不过我可算不上专家！但工具我还用得来，而这份工作需要的也就这些。",
    "role": "desc",
@@ -1186,7 +1236,7 @@
    "speaker": "Mora",
    "source": "wiki"
   },
-  "A Journey Home#118": {
+  "A Journey Home#123": {
    "src": "Farewell, stranger! I hope that you will return home safely.",
    "dst": "再见了，陌生人！希望你能平安回家。",
    "role": "desc",

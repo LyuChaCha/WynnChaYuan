@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "A Sandy Scandal",
-  "count": 66,
+  "count": 67,
   "translated": 0,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Sandy Scandal#000": {
+   "src": "Before anybody could hear me, a large explosion occurred inside of the house the bandits intruded.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Sandy Scandal",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "A Sandy Scandal#001": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
    "dst": "",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#001": {
+  "A Sandy Scandal#002": {
    "src": "You look like a hardy one! {p} army is it? Would you be willing to help {p} a bit?",
    "dst": "",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#002": {
+  "A Sandy Scandal#003": {
    "src": "{p} bank tends to be a prime target for bandits, and there's been a string of incidents that have made us suspicious.",
    "dst": "",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#003": {
+  "A Sandy Scandal#004": {
    "src": "We're looking into some witness reports to try and gain information on the bandits' plan.",
    "dst": "",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#004": {
+  "A Sandy Scandal#005": {
    "src": "If I give you some of the reports, will you help check them out for clues?",
    "dst": "",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#005": {
+  "A Sandy Scandal#006": {
    "src": "Great! The store from the first witness report is straight down the stairs, just past this building right behind me.",
    "dst": "",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#006": {
+  "A Sandy Scandal#007": {
    "src": "It's called \"Gibbs' Mining Supply Store\", and the owner reported a robbery a few days ago.",
    "dst": "",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#007": {
+  "A Sandy Scandal#008": {
    "src": "Good luck! Report back to me if you find any information.",
    "dst": "",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#008": {
+  "A Sandy Scandal#009": {
    "src": "Go to the witness report location at [{~}, {~}, -{~}].",
    "dst": "",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#009": {
+  "A Sandy Scandal#010": {
    "src": "Hello gentlemen! What can I interest you in today? Some industrial torches? Pickaxes?",
    "dst": "",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "Shopkeeper Gibbs",
    "source": "wiki"
   },
-  "A Sandy Scandal#010": {
+  "A Sandy Scandal#011": {
    "src": "Shut yer’ trap, old man. We came for a different kind of business.",
    "dst": "",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "A Sandy Scandal#011": {
+  "A Sandy Scandal#012": {
    "src": "Wha-? Look, fellows. Just step out of my store, and nobody gets hurt. I don't want any trouble.",
    "dst": "",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "Shopkeeper Gibbs",
    "source": "wiki"
   },
-  "A Sandy Scandal#012": {
+  "A Sandy Scandal#013": {
    "src": "Listen up old man, tell us the code to the TNT vault in the basement, or I decorate my necklace with your fingers!",
    "dst": "",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "A Sandy Scandal#013": {
+  "A Sandy Scandal#014": {
    "src": "Certainly not! That TNT is for licensed mining companies only, not your average amateur miner.",
    "dst": "",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "Shopkeeper Gibbs",
    "source": "wiki"
   },
-  "A Sandy Scandal#014": {
+  "A Sandy Scandal#015": {
    "src": "Well then! I guess you'll still be able to grasp a pick with four fingers, eh?",
    "dst": "",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "A Sandy Scandal#015": {
+  "A Sandy Scandal#016": {
    "src": "Gaaah! Alright, alright! No more violence, please!",
    "dst": "",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Shopkeeper Gibbs",
    "source": "wiki"
   },
-  "A Sandy Scandal#016": {
+  "A Sandy Scandal#017": {
    "src": "The code is {~}-{~}-{~}-{~}... please don't hurt me!",
    "dst": "",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Shopkeeper Gibbs",
    "source": "wiki"
   },
-  "A Sandy Scandal#017": {
+  "A Sandy Scandal#018": {
    "src": "{~}-{~}-{~}-{~}... thanks! We won't be needing you anymore... now go to sleep!",
    "dst": "",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Bandit",
    "source": "wiki"
   },
-  "A Sandy Scandal#018": {
+  "A Sandy Scandal#019": {
    "src": "Open the vault in the basement [Code: {~}].",
    "dst": "",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#019": {
+  "A Sandy Scandal#020": {
    "src": "Inspect the vault.",
    "dst": "",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#020": {
+  "A Sandy Scandal#021": {
    "src": "Exit the vault.",
    "dst": "",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#021": {
+  "A Sandy Scandal#022": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
    "dst": "",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#022": {
+  "A Sandy Scandal#023": {
    "src": "Ah, you're back! Did you find anything interesting in the report?",
    "dst": "",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#023": {
+  "A Sandy Scandal#024": {
    "src": "Missing TNT in the shop's vault? Looks like the shopkeeper was telling the truth.",
    "dst": "",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#024": {
+  "A Sandy Scandal#025": {
    "src": "We need to catch these criminals quickly if they have access to that amount of TNT - they could blow a hole right into the bank's vault!",
    "dst": "",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#025": {
+  "A Sandy Scandal#026": {
    "src": "You should check out another witness report, from after the attack on the shopkeeper.",
    "dst": "",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#026": {
+  "A Sandy Scandal#027": {
    "src": "It was taken from the rooftop garden of the Scroll Merchant's residence, you should take a look.",
    "dst": "",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#027": {
+  "A Sandy Scandal#028": {
    "src": "Be quick! We don't have much time if we want to stop these bandits.",
    "dst": "",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#028": {
+  "A Sandy Scandal#029": {
    "src": "Go to the witness report location at [{~}, {~}, -{~}].",
    "dst": "",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#029": {
+  "A Sandy Scandal#030": {
    "src": "Read the witness report.",
    "dst": "",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#030": {
+  "A Sandy Scandal#031": {
    "src": "Ey', what do you two blighters think you're doing with those dangerous explosives in the city?",
    "dst": "",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Scroll Merchant",
    "source": "wiki"
   },
-  "A Sandy Scandal#031": {
+  "A Sandy Scandal#032": {
    "src": "Guards! Guards! Robber! Come quick! Urgently!",
    "dst": "",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "Scroll Merchant",
    "source": "wiki"
   },
-  "A Sandy Scandal#032": {
+  "A Sandy Scandal#033": {
    "src": "Gaaah!",
    "dst": "",
    "role": "desc",
@@ -336,7 +346,7 @@
    "speaker": "Scroll Merchant",
    "source": "wiki"
   },
-  "A Sandy Scandal#033": {
+  "A Sandy Scandal#034": {
    "src": "Find the source of the detonation at [{~}, {~}, {~}].",
    "dst": "",
    "role": "desc",
@@ -346,7 +356,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#034": {
+  "A Sandy Scandal#035": {
    "src": "Inspect the safe.",
    "dst": "",
    "role": "desc",
@@ -356,7 +366,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#035": {
+  "A Sandy Scandal#036": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}].",
    "dst": "",
    "role": "desc",
@@ -366,7 +376,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#036": {
+  "A Sandy Scandal#037": {
    "src": "Were you able to uncover any new information regarding the status of the criminals?",
    "dst": "",
    "role": "desc",
@@ -376,7 +386,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#037": {
+  "A Sandy Scandal#038": {
    "src": "Ah... that's troubling. The criminals plundered two very powerful weapons.",
    "dst": "",
    "role": "desc",
@@ -386,7 +396,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#038": {
+  "A Sandy Scandal#039": {
    "src": "It won't be easy facing those criminals if they decide to raid the bank with those weapons.",
    "dst": "",
    "role": "desc",
@@ -396,7 +406,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#039": {
+  "A Sandy Scandal#040": {
    "src": "I'm not certain how to proceed from here, we didn't receive any more witness reports, and-",
    "dst": "",
    "role": "desc",
@@ -406,7 +416,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#040": {
+  "A Sandy Scandal#041": {
    "src": "Boss, I just received urgent reports of a robbery underway in the left residential area of {p}!",
    "dst": "",
    "role": "desc",
@@ -416,7 +426,7 @@
    "speaker": "Almuj Sentry",
    "source": "wiki"
   },
-  "A Sandy Scandal#041": {
+  "A Sandy Scandal#042": {
    "src": "Oh my… you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
    "dst": "",
    "role": "desc",
@@ -426,7 +436,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#042": {
+  "A Sandy Scandal#043": {
    "src": "There will be somebody waiting for you outside of the house once you get to the residential area!",
    "dst": "",
    "role": "desc",
@@ -436,7 +446,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#043": {
+  "A Sandy Scandal#044": {
    "src": "If you still can't find it, I've written the coordinates in your content book. Now quickly, get to the house!",
    "dst": "",
    "role": "desc",
@@ -446,7 +456,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#044": {
+  "A Sandy Scandal#045": {
    "src": "Quickly! Go to the house at [{~}, {~}, -{~}].",
    "dst": "",
    "role": "desc",
@@ -456,7 +466,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#045": {
+  "A Sandy Scandal#046": {
    "src": "Hello? Are you with the guards? Good! Hurry! Some bandits just ransacked my house, and left with lots of emeralds!",
    "dst": "",
    "role": "desc",
@@ -466,7 +476,7 @@
    "speaker": "Almuj Citizen",
    "source": "wiki"
   },
-  "A Sandy Scandal#046": {
+  "A Sandy Scandal#047": {
    "src": "Follow me to my house, hopefully you can find the bandits! They stole lots of my precious gems!",
    "dst": "",
    "role": "desc",
@@ -476,7 +486,7 @@
    "speaker": "Almuj Citizen",
    "source": "wiki"
   },
-  "A Sandy Scandal#047": {
+  "A Sandy Scandal#048": {
    "src": "Look for signs of the bandits' whereabouts.",
    "dst": "",
    "role": "desc",
@@ -486,7 +496,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#048": {
+  "A Sandy Scandal#049": {
    "src": "Listen to the bandits.",
    "dst": "",
    "role": "desc",
@@ -496,7 +506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#049": {
+  "A Sandy Scandal#050": {
    "src": "Ready, boys? We've got the TNT, weapons, and the fastest horses those emeralds could buy. Now we just-",
    "dst": "",
    "role": "desc",
@@ -506,7 +516,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#050": {
+  "A Sandy Scandal#051": {
    "src": "Ahah. I had a feeling we had a guard on our tail.",
    "dst": "",
    "role": "desc",
@@ -516,7 +526,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#051": {
+  "A Sandy Scandal#052": {
    "src": "No point wasting these brand-new weapons on you... since we're blowing up this hideout anyway!",
    "dst": "",
    "role": "desc",
@@ -526,7 +536,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#052": {
+  "A Sandy Scandal#053": {
    "src": "This whole thing'll go up in a few seconds, and any evidence will be buried in the sand. Good luck getting out of here!",
    "dst": "",
    "role": "desc",
@@ -536,7 +546,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#053": {
+  "A Sandy Scandal#054": {
    "src": "Escape the hideout!",
    "dst": "",
    "role": "desc",
@@ -546,7 +556,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#054": {
+  "A Sandy Scandal#055": {
    "src": "Find where the bandits blasted a hole to get into the bank at [{~}, {~}, -{~}].",
    "dst": "",
    "role": "desc",
@@ -556,7 +566,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#055": {
+  "A Sandy Scandal#056": {
    "src": "It’s too late to stop us now! We’re already about to bust out of here with the grand prize - the contents of the emerald vault!",
    "dst": "",
    "role": "desc",
@@ -566,7 +576,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#056": {
+  "A Sandy Scandal#057": {
    "src": "Follow the criminals into the other room.",
    "dst": "",
    "role": "desc",
@@ -576,7 +586,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#057": {
+  "A Sandy Scandal#058": {
    "src": "Look here, the soldier decided they wanted to follow us. Dumb move.",
    "dst": "",
    "role": "desc",
@@ -586,7 +596,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#058": {
+  "A Sandy Scandal#059": {
    "src": "I guess we can kill two birds with one stone: escaping the bank, and killing this pest.",
    "dst": "",
    "role": "desc",
@@ -596,7 +606,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#059": {
+  "A Sandy Scandal#060": {
    "src": "Block the entrance, bandits!",
    "dst": "",
    "role": "desc",
@@ -606,7 +616,7 @@
    "speaker": "Bandit Leader",
    "source": "wiki"
   },
-  "A Sandy Scandal#060": {
+  "A Sandy Scandal#061": {
    "src": "Don't let the bandits escape!",
    "dst": "",
    "role": "desc",
@@ -616,7 +626,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#061": {
+  "A Sandy Scandal#062": {
    "src": "Report back to the {p} Bank Guard at [{~}, {~}, -{~}].",
    "dst": "",
    "role": "desc",
@@ -626,7 +636,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "A Sandy Scandal#062": {
+  "A Sandy Scandal#063": {
    "src": "Soldier! Where did you disappear to? Did you hear those explosions, below the bank?",
    "dst": "",
    "role": "desc",
@@ -636,7 +646,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#063": {
+  "A Sandy Scandal#064": {
    "src": "We think those bandits might have made their first move in the heist, we're mobilising a troop to-",
    "dst": "",
    "role": "desc",
@@ -646,7 +656,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#064": {
+  "A Sandy Scandal#065": {
    "src": "You've already stopped them? And reclaimed the stolen weapons and explosives..?",
    "dst": "",
    "role": "desc",
@@ -656,7 +666,7 @@
    "speaker": "Almuj Bank Guard",
    "source": "wiki"
   },
-  "A Sandy Scandal#065": {
+  "A Sandy Scandal#066": {
    "src": "Wow. Excellent work, soldier. {p} is in your debt. Please accept these from our vault, as a token of our thanks.",
    "dst": "",
    "role": "desc",
