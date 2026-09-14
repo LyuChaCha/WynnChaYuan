@@ -40,11 +40,72 @@ public final class LayerWinsTest {
         failures += sweep("去折行索引 lookupUnwrapped", cn, tw, stacked,
                           TranslationStore::lookup, TranslationStore::lookupUnwrapped);
 
+        failures += variants();
+
         System.out.println(failures == 0
                 ? "疊層優先序：全部通過" : "疊層優先序：" + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 上面那一層翻的是<b>另一個寫法</b>的同一句話。
+     *
+     * <p>全庫掃描問的鍵本身就是簡體翻好的那一條，所以問不到這一種：畫面上的字
+     * 在繁體有精確的譯文、在簡體只有「只差標點或大小寫」的那一條。先前精確查表
+     * 先命中繁體，簡體那條永遠輪不到。逐字對話的校訂版替換也是一樣。
+     */
+    private static int variants() {
+        int lost = 0;
+        try {
+            Path tw = java.nio.file.Files.createTempDirectory("layer-tw");
+            Path cn = java.nio.file.Files.createTempDirectory("layer-cn");
+            java.nio.file.Files.writeString(tw.resolve("quest.json"), """
+                    {"Waiting for Others..": "等待其他人……",
+                     "Not yet, my good friend!": "還沒啦",
+                     "Not yet, my good friend?": "還沒嗎",
+                     "Hey, {u}! Are you alright in there? It looks like we've hit something.": "嘿，{u}！你在裡面還好嗎？"}
+                    """);
+            java.nio.file.Files.writeString(cn.resolve("quest.json"), """
+                    {"Waiting for others": "等待其他人",
+                     "Not yet, my good friend!": "还没呢"}
+                    """);
+            java.nio.file.Files.writeString(cn.resolve("npc.json"), """
+                    {"entries": {"a": {
+                      "src": "Hey, {u}! You alright in there? Looks like we hit something.",
+                      "dst": "嘿，{u}！你在里面还好吗？",
+                      "quest": "Layer Test", "source": "wiki"}}}
+                    """);
+
+            TranslationStore stacked = new TranslationStore();
+            stacked.loadAll(List.of(tw, cn));
+
+            lost += expect("只差標點與大小寫時用簡體",
+                    "等待其他人", stacked.lookup("Waiting for Others.."));
+            lost += expect("繁體層內撞鍵不會把簡體那條關掉",
+                    "还没呢", stacked.lookup("NOT YET, MY GOOD FRIEND"));
+            lost += expect("逐字對話不換到只有繁體翻的校訂版",
+                    "Hey, {u}! You alright in there? Looks like we hit something.",
+                    stacked.matchPrefix("Hey, {u}!", 9, "Layer Test"));
+
+            // 反面：只有一層時行為照舊
+            TranslationStore alone = new TranslationStore();
+            alone.loadAll(tw);
+            lost += expect("單層時精確鍵照舊",
+                    "等待其他人……", alone.lookup("Waiting for Others.."));
+        } catch (java.io.IOException e) {
+            System.out.println("  [FAIL] 建立暫存語料失敗：" + e.getMessage());
+            lost++;
+        }
+        return lost;
+    }
+
+    private static int expect(String what, String want, String got) {
+        boolean ok = want.equals(got);
+        System.out.println("  [" + (ok ? "PASS" : "FAIL") + "] " + what
+                + (ok ? "" : "（要 " + want + "，實際 " + got + "）"));
+        return ok ? 0 : 1;
     }
 
     private interface Look {

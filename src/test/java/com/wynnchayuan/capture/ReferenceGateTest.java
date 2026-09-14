@@ -31,27 +31,33 @@ public final class ReferenceGateTest {
     private static final Path ROOT =
             Path.of("src/main/resources/assets/wynnchayuan/translations");
 
-    /**
-     * 一句繁體翻好了、<b>簡體還沒翻</b>的台詞。
-     *
-     * <p>兩邊都有的句子測不出東西：簡體自己就查得到，舊行為也不會記。
-     * 要挑的正是「繁體有、簡體沒有」那一種——那才是被誤記成缺口的那一批。
-     */
-    private static final String KNOWN =
-            "Good luck in there, recruits! You're gonna need it...";
-
     public static void main(String[] args) throws Exception {
         TranslationStore tw = new TranslationStore();
         tw.loadAll(ROOT.resolve(Languages.DEFAULT));
+
+        // ---- 模擬「輔助語言＝顯示原文」：畫面上只鋪簡體 ----
+        TranslationStore alone = new TranslationStore();
+        alone.loadAll(ROOT.resolve("zh_cn"));
+
+        // 一句繁體翻好了、<b>簡體還沒翻</b>的台詞。兩邊都有的句子測不出東西：
+        // 簡體自己就查得到，舊行為也不會記。從語料當場挑，不寫死——簡體一直在補，
+        // 寫死的那一句遲早會被翻掉（先前那一句就是 #679 翻掉的）。
+        String picked = null;
+        for (String key : new java.util.TreeSet<>(tw.sourceKeys())) {
+            if (key.length() >= 20 && key.indexOf(' ') > 0
+                    && key.indexOf('{') < 0 && key.indexOf('\n') < 0
+                    && tw.hasTranslation(key) && !alone.hasTranslation(key)) {
+                picked = key;
+                break;
+            }
+        }
+        check("找得到一句繁體有、簡體沒翻的台詞（" + picked + "）", picked != null);
+        final String KNOWN = picked == null ? "" : picked;
         check("繁體本來就有這一句（" + tw.size() + " 條）", tw.hasTranslation(KNOWN));
 
         var keys = tw.sourceKeys();
         check("★ 拿得到繁體收過哪些原文（" + keys.size() + " 條）",
                 keys.size() > 1000 && keys.contains(KNOWN));
-
-        // ---- 模擬「輔助語言＝顯示原文」：畫面上只鋪簡體 ----
-        TranslationStore alone = new TranslationStore();
-        alone.loadAll(ROOT.resolve("zh_cn"));
         check("★ 只鋪簡體時畫面上查不到（輔助語言＝顯示原文的情境）",
                 !alone.hasTranslation(KNOWN));
 

@@ -184,12 +184,41 @@ public final class TranslationStore {
         looseDst.clear();
         looseClash.clear();
         thisLayer.clear();
+        layerOf.clear();
+        indexLayer.clear();
         loadedFiles = 0;
 
-        for (Path dir : dirs) {
-            readOne(dir);
+        topLayer = Math.max(0, dirs.size() - 1);
+        for (layer = 0; layer < dirs.size(); layer++) {
+            readOne(dirs.get(layer));
         }
+        layer = topLayer;
         report(dirs.isEmpty() ? null : dirs.get(dirs.size() - 1));
+    }
+
+    /** 正在讀第幾層（0 是最底下那層）。見 {@link #layerOf}。 */
+    private int layer = 0;
+
+    /** 最上面那一層的編號，也就是玩家選的語言。只有一層時是 0。 */
+    private int topLayer = 0;
+
+    /**
+     * 每一條原文的譯文<b>來自哪一層</b>。
+     *
+     * <h2>為什麼主查表之外還要記這個</h2>
+     * {@link #entries} 後來居上，精確鍵本身沒有問題。出問題的是「精確鍵只在墊底那層
+     * 有譯文、而上面那層翻的是<b>只差標點或大小寫的同一句話</b>」：精確查表先命中
+     * 繁體，就不會再走鬆化、記號那幾條路，簡體明明翻了卻顯示繁體。
+     * 逐字對話的校訂版替換也是同一回事——見 {@link #curatedRival}。
+     */
+    private final Map<String, Integer> layerOf = new ConcurrentHashMap<>();
+
+    /** 輔助索引裡每個鍵是哪一層寫的。鍵是 {@code tag + '\0' + key}，見 {@link #layered}。 */
+    private final Map<String, Integer> indexLayer = new ConcurrentHashMap<>();
+
+    private int layerOf(String src) {
+        Integer at = src == null ? null : layerOf.get(src);
+        return at == null ? -1 : at;
     }
 
     /**
@@ -221,6 +250,7 @@ public final class TranslationStore {
                          String key, String value) {
         if (thisLayer.add(tag + '\u0000' + key)) {
             index.put(key, value);
+            indexLayer.put(tag + '\0' + key, layer);
         }
     }
 
@@ -407,6 +437,7 @@ public final class TranslationStore {
             if (src != null && dst != null && !dst.isBlank()) {
                 String srcKey = src.strip();
                 entries.put(srcKey, dst.strip());
+                layerOf.put(srcKey, layer);
                 ordered.add(srcKey);
                 if (srcKey.length() >= MIN_PREFIX_LENGTH) {
                     prefixIndex.put(srcKey, dst.strip());
@@ -465,6 +496,7 @@ public final class TranslationStore {
             seenSources.add(key.strip());
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
                 entries.put(key.strip(), v.getAsString().strip());
+                layerOf.put(key.strip(), layer);
                 market.addListed(key.strip(), v.getAsString().strip());
                 ordered.add(key.strip());
                 // 逐字打字時靠這個索引找「目前打到一半的是哪一句」。
@@ -771,7 +803,20 @@ public final class TranslationStore {
         if (text == null || text.length() < MIN_FLAT_LENGTH) {
             return null;
         }
-        return unwrapped.get(unwrap(text));
+        String key = unwrap(text);
+        return preferTop(unwrapped.get(key), "unwrapped", key);
+    }
+
+    /**
+     * 輔助索引命中的是墊底那層時，先問最上面那層有沒有「只差標點或大小寫」的同一句。
+     * 理由同 {@link #lookup}。
+     */
+    private String preferTop(String hit, String tag, String key) {
+        if (hit == null || topLayer == 0 || fromTop(tag, key)) {
+            return hit;
+        }
+        String top = lookupChain(key, true);
+        return top != null ? top : hit;
     }
 
     /**
@@ -784,7 +829,8 @@ public final class TranslationStore {
         if (text == null || text.length() < MIN_FLAT_LENGTH) {
             return null;
         }
-        return flat.get(normalise(text));
+        String key = normalise(text);
+        return preferTop(flat.get(key), "flat", key);
     }
 
     /** 短於這個長度的不進正規化索引，見 {@link #noteFlat}。 */
@@ -1112,6 +1158,7 @@ public final class TranslationStore {
     private String settle(java.util.TreeMap<String, String> index, String key, String first) {
         String curated = null;
         int scanned = 0;
+        int best = -1;
         for (Map.Entry<String, String> e : index.tailMap(key).entrySet()) {
             if (!e.getKey().startsWith(key)) {
                 break;
@@ -1119,6 +1166,7 @@ public final class TranslationStore {
             if (++scanned > RIVAL_SCAN || !sameLine(first, e.getKey())) {
                 return null;                   // 真的是不同的句子，分不出來
             }
+            best = Math.max(best, layerOf(e.getKey()));
             if (!fromWiki.contains(e.getKey())) {
                 if (curated != null) {
                     return null;               // 兩條都是校訂版，也分不出來
@@ -1126,7 +1174,8 @@ public final class TranslationStore {
                 curated = e.getKey();
             }
         }
-        return curated;
+        // 校訂版來自比別的候選低的那一層時不換，理由同 #curatedRival
+        return curated != null && layerOf(curated) < best ? null : curated;
     }
 
     /**
@@ -1184,7 +1233,10 @@ public final class TranslationStore {
             if (fromWiki.contains(e.getKey()) || e.getKey().equals(wikiHit)) {
                 continue;
             }
-            if (sameLine(wikiHit, e.getKey())) {
+            // 校訂版只有墊底那層翻了、wiki 版卻是上面那層翻的：換過去等於
+            // 把簡體換成繁體。這時候留在命中的那條。
+            if (sameLine(wikiHit, e.getKey())
+                    && layerOf(e.getKey()) >= layerOf(wikiHit)) {
                 return e.getKey();
             }
         }
@@ -1336,32 +1388,76 @@ public final class TranslationStore {
             return null;                       // 使用者選擇不翻物品名稱
         }
 
-        String hit = entries.get(key);
+        if (topLayer > 0) {
+            // 疊層時先只收最上面那一層的答案。見 #layerOf：簡體翻的是只差標點或
+            // 大小寫的那一句時，繁體的精確鍵不能先搶走。
+            String top = lookupChain(key, true);
+            if (top != null) {
+                return top;
+            }
+        }
+        return lookupChain(key, false);
+    }
+
+    /**
+     * {@link #lookup} 的查法順序：精確、縮排、拼法、記號、鬆化。
+     *
+     * @param topOnly 每一步只收最上面那一層寫進去的答案
+     */
+    private String lookupChain(String key, boolean topOnly) {
+        String hit = exact(key, topOnly);
         if (hit == null) {
-            hit = lookupIndented(key);
+            hit = indented(key, topOnly);
         }
         if (hit == null) {
             String other = respell(key);
             if (!other.equals(key)) {
-                hit = entries.get(other);
+                hit = exact(other, topOnly);
                 if (hit == null) {
-                    hit = lookupIndented(other);
+                    hit = indented(other, topOnly);
                 }
             }
         }
-        if (hit == null) {
+        if (hit == null && (!topOnly || fromTop("marked", sameMarks(key)))) {
             hit = lookupMarked(key);
         }
         if (hit == null) {
-            hit = lookupLoose(key);
+            hit = loose(key, topOnly);
         }
         if (hit == null) {
             String other = respell(key);
             if (!other.equals(key)) {
-                hit = lookupLoose(other);
+                hit = loose(other, topOnly);
             }
         }
         return hit;
+    }
+
+    private String exact(String key, boolean topOnly) {
+        return topOnly && layerOf(key) != topLayer ? null : entries.get(key);
+    }
+
+    private String indented(String key, boolean topOnly) {
+        if (topOnly) {
+            int n = indentOf(key);
+            if (n == 0 || !fromTop("unindented", key.substring(n))) {
+                return null;
+            }
+        }
+        return lookupIndented(key);
+    }
+
+    private String loose(String key, boolean topOnly) {
+        if (topOnly && layerOf(looseSource(key)) != topLayer) {
+            return null;
+        }
+        return lookupLoose(key);
+    }
+
+    /** 輔助索引裡這個鍵是不是最上面那一層寫的。 */
+    private boolean fromTop(String tag, String key) {
+        Integer at = indexLayer.get(tag + '\0' + key);
+        return at != null && at == topLayer;
     }
 
     /** 符合／不符合的那兩個記號。見 {@link #lookupMarked}。 */
@@ -1501,9 +1597,14 @@ public final class TranslationStore {
         if (!looseEnough(loosened)) {
             return;
         }
-        String before = loose.putIfAbsent(loosened, src);
-        if (before == null) {
+        // 跟 #layered 同一條規則：層內先到先贏、跨層後來居上。先前是 putIfAbsent，
+        // 墊底那層先佔了鍵，上面那層翻的同一句話就只能進 looseClash——整條不給答案。
+        boolean firstHere = thisLayer.add("loose" + '\0' + loosened);
+        String before = loose.get(loosened);
+        if (before == null || firstHere) {
+            loose.put(loosened, src);
             looseDst.put(loosened, dst);
+            looseClash.remove(loosened);
         } else if (!before.equals(src) && !dst.equals(looseDst.get(loosened))) {
             looseClash.add(loosened);
         }

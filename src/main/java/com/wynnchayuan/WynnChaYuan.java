@@ -147,8 +147,17 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 抓不到就沿用剛剛載入的本機版本。
         if (config.source() == CollectorConfig.Source.GITHUB) {
             Thread sync = new Thread(() -> {
-                if (RemoteSync.fetchInto(trDir, language) > 0) {
-                    translations.loadAll(trDir);
+                int changed = RemoteSync.fetchInto(trDir, language);
+                // 墊底那一種也要跟著更新，而且重載要<b>整疊</b>重載。
+                // 先前這裡只 loadAll(trDir)：同步一完成，墊底那層就從記憶體裡消失，
+                // 而它的快取也從來沒有在啟動時更新過。
+                String under = fallbackLanguage();
+                if (under != null) {
+                    changed += RemoteSync.fetchInto(
+                            com.wynnchayuan.translate.Languages.dir(configDir, under), under);
+                }
+                if (changed > 0) {
+                    loadLayers();
                 }
                 System.out.println("[WynnChaYuan] " + RemoteSync.lastResult());
             }, MOD_ID + "-sync");
