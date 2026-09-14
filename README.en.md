@@ -11,7 +11,7 @@ left untouched.
 繁體中文說明請見 [README.md](README.md)。
 
 > [!IMPORTANT]
-> **This is a beta (0.1.0).** Features and translations are still being worked on. If you
+> **This is a beta (0.1.9_3).** Features and translations are still being worked on. If you
 > run into anything, find **LyuChaCha** on Discord — all reports are welcome.
 >
 > **The translations are mostly AI-generated; only some have been proofread by a
@@ -76,7 +76,7 @@ Five tabs; hover an entry for an explanation.
 | **Panel** | Follow the mouse or pin it, which side, gap, border colour |
 | **Dialogue** | Quest dialogue, dialogue choices, hold time, the dialogue/tracker boxes |
 | **World & chat** | Nameplates and floating text (with range and aim angle), chat, title text, copy chat |
-| **Data** | Translation source, reload, collect untranslated strings, collect GUI text, share with the translation team, debug dumps |
+| **Data** | Translation language, fallback language, interface language, translation source, reload, collect untranslated strings, collect GUI text, share with the translation team, debug dumps |
 
 All four boxes can be **dragged into position**, and are shown together while you
 arrange them so you can tell whether they overlap.
@@ -93,9 +93,19 @@ On first launch the translation working files are created under
 
 ## Languages
 
-Seven languages have a folder. Only Traditional Chinese has content so far —
-the rest are empty skeletons with the source strings in place, waiting for a
-translator.
+| Language | Status |
+|---|---|
+| `zh_tw` Traditional Chinese | Main language; the others are measured against it |
+| `zh_cn` Simplified Chinese | Interface, ability trees and quest dialogue |
+| `ja_jp` Japanese | Interface, ability trees, nameplates and item lore; quest dialogue in progress |
+| `ru_ru` Russian | Interface, ability trees, nameplates and item lore; quest dialogue in progress |
+| `ko_kr` Korean | A small part of the interface |
+
+Switch under **F6 → Data** — no need to change the game's own language or restart:
+
+- **Translation language**: which language's translations to show.
+- **Fallback language**: shown for lines the translation language does not have yet.
+- **Interface language**: the language of the F6 settings screen itself.
 
 A language with no translations at all is **not shipped in the jar** and does not
 appear in the game's language list; it joins automatically once it has its first
@@ -258,7 +268,7 @@ a word of it.
 ## Building
 
 ```bash
-./gradlew build
+gradle build
 ```
 
 Wynntils has no Maven coordinates, so download the Fabric jar from
@@ -266,7 +276,7 @@ Wynntils has no Maven coordinates, so download the Fabric jar from
 The build tells you if it is missing.
 
 ```bash
-./gradlew check          # 19 test suites
+gradle check             # test suites
 python tools/validate.py # corpus checks
 ```
 
@@ -304,11 +314,12 @@ GitHub, so there is nothing to download.
 See [LICENSE](LICENSE). Wynncraft content belongs to the Wynncraft team;
 this mod only ships translations of it.
 
-CJK glyphs inside the dialogue box use [Fusion Pixel 10px](https://github.com/TakWolf/fusion-pixel-font)
+CJK and Cyrillic glyphs inside the dialogue box use [Fusion Pixel 10px](https://github.com/TakWolf/fusion-pixel-font)
 (proportional), licensed under SIL OFL 1.1 — full text in
 `assets/wynnchayuan/font/ofl-fusion.txt`. Its cap height is exactly 7px, matching
 the Latin caps in Wynncraft's own dialogue font.
 Fonts are shipped **per language**, since the same codepoint is drawn differently
-across regions; only Traditional Chinese (`zh_tw`) is bundled today. No pixel font
+across regions; Traditional Chinese (`zh_tw`), Simplified Chinese (`zh_cn`),
+Japanese (`ja_jp`), Korean (`ko_kr`) and Russian (`ru_ru`) are bundled. No pixel font
 covers every ideograph, so a line whose translation contains a glyph the font
 lacks is left in English rather than drawn as boxes.
