@@ -148,6 +148,12 @@ public final class PlayerNameplateTest {
                 "Toaster Alleyway\nby Very Sleepy Toasters",
                 // 市集篩選：冒號後面是玩家打的搜尋字
                 "- Name Contains: Ripe Aureate Fruit",
+                // 地圖上的死亡快訊，主詞是死掉的玩家
+                "Sleepy Toaster has Scarlet Megabat to thank for their death",
+                "Toaster got a new skull piercing from T-{~} Overseer",
+                // 主詞帶數字的帳號名，任何動詞都擋
+                "Toaster{~} was sniped by T-{~} Overseer",
+                "{#} toaster{~} was de-animated by the powers of\n{#} Encroaching Tunneler",
                 "{#}Crafted by Bunnub",
                 "{#}Crafted by creeper{~}",
                 "{#} HiSlIgHt_ has reconnected!",
