@@ -30,9 +30,22 @@ public final class LanguageFallbackTest {
     private static final Path ROOT =
             Path.of("src/main/resources/assets/wynnchayuan/translations");
 
-    /** 一句只有繁體有、簡體還沒翻的台詞。 */
-    private static final String ONLY_TW =
-            "Good luck in there, recruits! You're gonna need it...";
+    /**
+     * 一句只有繁體有、簡體還沒翻的台詞。
+     *
+     * <p>從語料<b>當場挑</b>，不寫死：簡體一直在補，寫死的那一句遲早會被翻掉，
+     * 測試就跟著紅（King's Recruit 那一句就是這樣被 #679 翻掉的）。
+     */
+    static String pickOnlyTw(TranslationStore tw, TranslationStore cn) {
+        for (String key : new java.util.TreeSet<>(tw.sourceKeys())) {
+            if (key.length() >= 20 && key.indexOf(' ') > 0
+                    && key.indexOf('{') < 0 && key.indexOf('\n') < 0
+                    && tw.lookup(key) != null && !cn.hasTranslation(key)) {
+                return key;
+            }
+        }
+        return null;
+    }
 
     /** 一條簡體已經翻好的介面標籤。 */
     private static final String BOTH = "Combat Level";
@@ -49,11 +62,14 @@ public final class LanguageFallbackTest {
         TranslationStore tw = new TranslationStore();
         tw.loadAll(ROOT.resolve("zh_tw"));
         int alone = tw.size();
-        check("繁體本來就有那一句（" + alone + " 條）", tw.lookup(ONLY_TW) != null);
 
         TranslationStore cn = new TranslationStore();
         cn.loadAll(ROOT.resolve("zh_cn"));
-        check("簡體還沒翻那一句", cn.lookup(ONLY_TW) == null);
+        String onlyTw = pickOnlyTw(tw, cn);
+        check("找得到一句繁體有、簡體沒翻的台詞（" + onlyTw + "）", onlyTw != null);
+        String twLine = onlyTw == null ? null : tw.lookup(onlyTw);
+        check("繁體本來就有那一句（" + alone + " 條）", twLine != null);
+        check("簡體還沒翻那一句", onlyTw != null && cn.lookup(onlyTw) == null);
         check("簡體翻好了介面標籤", "战斗等级".equals(cn.lookup(BOTH)));
 
         // ---- 疊起來 ----
@@ -61,7 +77,7 @@ public final class LanguageFallbackTest {
         both.loadAll(List.of(ROOT.resolve("zh_tw"), ROOT.resolve("zh_cn")));
 
         check("★ 疊完之後，繁體那一層還在（先前這裡是 null）",
-                "祝你們好運，新兵們！你們會需要的……".equals(both.lookup(ONLY_TW)));
+                twLine != null && twLine.equals(both.lookup(onlyTw)));
         check("★ 簡體蓋過繁體，不是反過來（拿到 "
                         + both.lookup(BOTH) + "）",
                 "战斗等级".equals(both.lookup(BOTH)));
