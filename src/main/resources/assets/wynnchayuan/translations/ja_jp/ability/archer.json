@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "ja_jp",
   "count": 270,
-  "translated": 1,
+  "translated": 269,
   "note": "弓箭手的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-archer#0234": {
    "src": "Arrow Bomb{#}and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
-   "dst": "",
+   "dst": "Arrow Bomb{#}と Arrow Storm の反動がなくなり、\nArrow Bomb で自分がダメージを受けなくなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -25,7 +25,7 @@
   },
   "ability-archer#0231": {
    "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#}{#}stack on a target.",
-   "dst": "",
+   "dst": "効果が切れたとき、または F を使ったとき、マークしたすべての敵へ\n呪文の矢と通常攻撃の矢を放つ。\n矢は対象の Twilight {#}{#}のスタックごとに\n追加ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -39,7 +39,7 @@
   },
   "ability-archer#0235": {
    "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap{#}have no cooldown.",
-   "dst": "",
+   "dst": "光の力を呼び寄せ、{~}秒間\n攻撃を強化し、\nLeap{#}のクールダウンをなくす。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -53,7 +53,7 @@
   },
   "ability-archer#0236": {
    "src": "Gives Arrow Shield{#}+{~} extra charges.\nGuardian Angels will deal -{~} damage.",
-   "dst": "",
+   "dst": "Arrow Shield{#}のチャージが +{~} 増える。\nGuardian Angels のダメージは -{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -67,7 +67,7 @@
   },
   "ability-archer#0238": {
    "src": "Increase your maximum Focus {#}{#}by +{~}.",
-   "dst": "",
+   "dst": "Focus {#}{#}の上限が +{~} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -82,7 +82,7 @@
   },
   "ability-archer#0233": {
    "src": "Not missing with Phantom Ray{#}{~}{#}times\nin a row will transform your next\nMain Attack{#}into a Twain's Arc beam.",
-   "dst": "",
+   "dst": "Phantom Ray{#}を {~}{#}回連続で外さずに当てると、\n次の通常攻撃{#}が\nTwain's Arc のビームに変わる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -96,7 +96,7 @@
   },
   "ability-archer#0237": {
    "src": "While in this state, lose {~} Focus {#}{#}every {~}s.",
-   "dst": "",
+   "dst": "この状態の間、{~2}秒ごとに Focus {#}{#}を {~1} 失う。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -110,7 +110,7 @@
   },
   "ability-archer#0232": {
    "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#}{#}every {~}s. (Max {~})",
-   "dst": "",
+   "dst": "この状態の間、高く跳び、ゆっくり落ち、\n視界内のすべての敵が {~1}秒ごとに\nTwilight {#}{#}でマークされる。(上限 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -124,7 +124,7 @@
   },
   "ability-archer#0254": {
    "src": "{#}{#}Area of Effect: +{~} Block (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}効果範囲: +{~} ブロック (円形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -141,7 +141,7 @@
   },
   "ability-archer#0266": {
    "src": "{#}{#}Area of Effect: +{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}効果範囲: +{~} ブロック",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -156,7 +156,7 @@
   },
   "ability-archer#0265": {
    "src": "{#}{#}Damage Bonus: +{~} (per Focus)",
-   "dst": "",
+   "dst": "{#}{#}ダメージボーナス: +{~} (Focus ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -170,7 +170,7 @@
   },
   "ability-archer#0269": {
    "src": "{#}{#}Duration: +{~}s",
-   "dst": "",
+   "dst": "{#}{#}持続時間: +{~}秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -185,7 +185,7 @@
   },
   "ability-archer#0260": {
    "src": "{#}{#}Effect: +{~} Speed Bonus (➲) to Allies",
-   "dst": "",
+   "dst": "{#}{#}効果: 味方に速度ボーナス +{~} (➲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -200,7 +200,7 @@
   },
   "ability-archer#0262": {
    "src": "{#}{#}Effect: +{~} Walk Speed (➲) to Self",
-   "dst": "",
+   "dst": "{#}{#}効果: 自分の移動速度 +{~} (➲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -214,7 +214,7 @@
   },
   "ability-archer#0248": {
    "src": "{#}{#}Effect: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}効果: 敵の耐性ボーナス -{~} ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-archer#0264": {
    "src": "{#}{#}Effect: Blindness ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}効果: 敵に盲目 ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -244,7 +244,7 @@
   },
   "ability-archer#0250": {
    "src": "{#}{#}Effects: -{~}{#}Damage Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#}{#}効果: 敵のダメージボーナス -{~}{#} ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -259,7 +259,7 @@
   },
   "ability-archer#0267": {
    "src": "{#}{#}Main Attack Damage: -{~}",
-   "dst": "",
+   "dst": "{#}{#}通常攻撃ダメージ: -{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -273,7 +273,7 @@
   },
   "ability-archer#0261": {
    "src": "{#}{#}Main Attack Damage: -{~} (per arrow)",
-   "dst": "",
+   "dst": "{#}{#}通常攻撃ダメージ: -{~} (矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -287,7 +287,7 @@
   },
   "ability-archer#0268": {
    "src": "{#}{#}Range: ±{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}射程: ±{~} ブロック",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -302,7 +302,7 @@
   },
   "ability-archer#0241": {
    "src": "{#}{#}Total Damage: +{~} (Main Attack Damage, per Twilight)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (通常攻撃ダメージ、Twilight ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -316,7 +316,7 @@
   },
   "ability-archer#0243": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Arrow Shield)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (DPSに対して、Arrow Shield)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -330,7 +330,7 @@
   },
   "ability-archer#0240": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (DPSに対して、Buckshot、矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -344,7 +344,7 @@
   },
   "ability-archer#0239": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, for Guardian Angels, per shot)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (DPSに対して、Guardian Angels、1発ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -359,7 +359,7 @@
   },
   "ability-archer#0249": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per Twilight)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (DPSに対して、Twilight ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -373,7 +373,7 @@
   },
   "ability-archer#0252": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (DPSに対して、矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -388,7 +388,7 @@
   },
   "ability-archer#0256": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per ray)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (DPSに対して、光線1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -402,7 +402,7 @@
   },
   "ability-archer#0263": {
    "src": "{#}{#}Total Damage: -{~} (after piercing)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: -{~} (貫通後)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -416,7 +416,7 @@
   },
   "ability-archer#0253": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: -{~} (DPSに対して、矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -430,7 +430,7 @@
   },
   "ability-archer#0245": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS, per arrow/ray)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: -{~} (DPSに対して、矢／光線1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -444,7 +444,7 @@
   },
   "ability-archer#0244": {
    "src": "{#}{#}Total Damage: {~} (Main Attack Damage, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (通常攻撃ダメージ、矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -458,7 +458,7 @@
   },
   "ability-archer#0242": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, Arrow Bomb's smite)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、Arrow Bomb の天罰)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -472,7 +472,7 @@
   },
   "ability-archer#0246": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, for Arrow Bomb)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、Arrow Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -486,7 +486,7 @@
   },
   "ability-archer#0247": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, for Grape Bomb)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、Grape Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -500,7 +500,7 @@
   },
   "ability-archer#0255": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -517,7 +517,7 @@
   },
   "ability-archer#0259": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per hit)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、1ヒットごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -532,7 +532,7 @@
   },
   "ability-archer#0257": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per shot)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、1発ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -546,7 +546,7 @@
   },
   "ability-archer#0251": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per shrapnel)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、破片1つごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -560,7 +560,7 @@
   },
   "ability-archer#0258": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per wave)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、1波ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -574,7 +574,7 @@
   },
   "ability-archer#0000": {
    "src": "Arrow Bomb",
-   "dst": "",
+   "dst": "アローボム",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -586,7 +586,7 @@
   },
   "ability-archer#0001": {
    "src": "Click Combo: LEFT-RIGHT-RIGHT",
-   "dst": "",
+   "dst": "クリックコンボ: 左-右-右",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -601,7 +601,7 @@
   },
   "ability-archer#0002": {
    "src": "Shoots a long-ranged arrow that explodes\nand deals high damage over a large area.\n(Self-damage for {~} of your DPS)",
-   "dst": "",
+   "dst": "爆発する長射程の矢を放ち、\n広い範囲に大ダメージを与える。\n(自分にも DPS の {~} のダメージ)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -616,7 +616,7 @@
   },
   "ability-archer#0003": {
    "src": "{#} Range: ±{~} Blocks",
-   "dst": "",
+   "dst": "{#} 射程: ±{~} ブロック",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -630,7 +630,7 @@
   },
   "ability-archer#0004": {
    "src": "Bow Proficiency",
-   "dst": "",
+   "dst": "弓の習熟",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -642,7 +642,7 @@
   },
   "ability-archer#0005": {
    "src": "Improve your Main Attack's damage\nand range when using a bow.",
-   "dst": "",
+   "dst": "弓を使っているとき、\n通常攻撃のダメージと射程が上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -657,7 +657,7 @@
   },
   "ability-archer#0006": {
    "src": "Cheaper Arrow Bomb",
-   "dst": "",
+   "dst": "節約アローボム",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -669,7 +669,7 @@
   },
   "ability-archer#0007": {
    "src": "Reduce the Mana cost of Arrow Bomb.",
-   "dst": "",
+   "dst": "Arrow Bomb のマナコストが下がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -685,7 +685,7 @@
   },
   "ability-archer#0008": {
    "src": "Heart Shatter",
-   "dst": "",
+   "dst": "ハートシャッター",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -697,7 +697,7 @@
   },
   "ability-archer#0009": {
    "src": "Hitting a mob directly with Arrow Bomb\nwill shatter its heart and deal additional damage.",
-   "dst": "",
+   "dst": "Arrow Bomb をモブに直撃させると、\n心臓を砕いて追加ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -712,7 +712,7 @@
   },
   "ability-archer#0010": {
    "src": "Double Shots",
-   "dst": "",
+   "dst": "ダブルショット",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -724,7 +724,7 @@
   },
   "ability-archer#0011": {
    "src": "Doubles Main Attack arrows\nand reduces their damage.\n(Harder to hit distant enemies)",
-   "dst": "",
+   "dst": "通常攻撃の矢が2本になるが、\nダメージは下がる。\n(遠くの敵に当てにくくなる)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -739,7 +739,7 @@
   },
   "ability-archer#0012": {
    "src": "{#} Main Attack Damage: -{~} (per arrow)",
-   "dst": "",
+   "dst": "{#} 通常攻撃ダメージ: -{~} (矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -752,7 +752,7 @@
   },
   "ability-archer#0013": {
    "src": "Escape",
-   "dst": "",
+   "dst": "エスケープ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -764,7 +764,7 @@
   },
   "ability-archer#0014": {
    "src": "Click Combo: LEFT-LEFT-LEFT",
-   "dst": "",
+   "dst": "クリックコンボ: 左-左-左",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -779,7 +779,7 @@
   },
   "ability-archer#0015": {
    "src": "Throw yourself backward to avoid danger.\n(Hold shift while escaping to cancel)",
-   "dst": "",
+   "dst": "後ろへ跳んで危険を避ける。\n(跳んでいる間にシフトを押し続けるとキャンセル)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -794,7 +794,7 @@
   },
   "ability-archer#0016": {
    "src": "Power Shots",
-   "dst": "",
+   "dst": "パワーショット",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -806,7 +806,7 @@
   },
   "ability-archer#0017": {
    "src": "Your Main Attack arrows have\nincreased speed and knockback.",
-   "dst": "",
+   "dst": "通常攻撃の矢の速度と\nノックバックが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -821,7 +821,7 @@
   },
   "ability-archer#0018": {
    "src": "Arrow Storm",
-   "dst": "",
+   "dst": "アローストーム",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -833,7 +833,7 @@
   },
   "ability-archer#0019": {
    "src": "Click Combo: LEFT-RIGHT-LEFT",
-   "dst": "",
+   "dst": "クリックコンボ: 左-右-左",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -848,7 +848,7 @@
   },
   "ability-archer#0020": {
    "src": "Shoots a stream of {~} arrows,\ndealing significant damage to close\nmobs and pushing them away.",
-   "dst": "",
+   "dst": "{~} 本の矢を連続で放ち、\n近くのモブに大きなダメージを与えて\n押し返す。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -863,7 +863,7 @@
   },
   "ability-archer#0021": {
    "src": "{#} Total Damage: {~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -879,7 +879,7 @@
   },
   "ability-archer#0022": {
    "src": "Cheaper Escape",
-   "dst": "",
+   "dst": "節約エスケープ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -891,7 +891,7 @@
   },
   "ability-archer#0023": {
    "src": "Reduce the Mana cost of Escape.",
-   "dst": "",
+   "dst": "Escape のマナコストが下がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -907,7 +907,7 @@
   },
   "ability-archer#0024": {
    "src": "Arrow Shield",
-   "dst": "",
+   "dst": "アローシールド",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -919,7 +919,7 @@
   },
   "ability-archer#0025": {
    "src": "Click Combo: LEFT-LEFT-RIGHT",
-   "dst": "",
+   "dst": "クリックコンボ: 左-左-右",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -934,7 +934,7 @@
   },
   "ability-archer#0026": {
    "src": "Forms a shield around you that slightly reduces\nthe damage you take. Being hit will consume one\ncharge of the shield. Enemies that get too close\nwill take damage and be knocked away. ({~} charges)",
-   "dst": "",
+   "dst": "周囲に盾を作り、受けるダメージを少し減らす。\n攻撃を受けるとチャージをひとつ消費する。\n近づきすぎた敵は\nダメージを受けて弾き飛ばされる。(チャージ {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -949,7 +949,7 @@
   },
   "ability-archer#0027": {
    "src": "Windy Feet",
-   "dst": "",
+   "dst": "風の足",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -961,7 +961,7 @@
   },
   "ability-archer#0028": {
    "src": "Casting Escape grants a speed buff\nto you and nearby players.",
-   "dst": "",
+   "dst": "Escape を使うと、自分と近くのプレイヤーに\n速度バフを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -976,7 +976,7 @@
   },
   "ability-archer#0029": {
    "src": "{#} Effect: +{~} Speed Bonus (➲) to Allies",
-   "dst": "",
+   "dst": "{#} 効果: 味方に速度ボーナス +{~} (➲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -990,7 +990,7 @@
   },
   "ability-archer#0030": {
    "src": "Nimble String",
-   "dst": "",
+   "dst": "しなやかな弦",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1002,7 +1002,7 @@
   },
   "ability-archer#0031": {
    "src": "Arrow Storm fires twice as fast and\nshoots +{~} arrows per stream.",
-   "dst": "",
+   "dst": "Arrow Storm の発射速度が2倍になり、\n1回に放つ矢が +{~} 本増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1017,7 +1017,7 @@
   },
   "ability-archer#0032": {
    "src": "Phantom Ray hits twice as fast but lasts half as long.",
-   "dst": "",
+   "dst": "Phantom Ray のヒット速度が2倍になるが、持続時間は半分になる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1032,7 +1032,7 @@
   },
   "ability-archer#0033": {
    "src": "{#} Total Damage: -{~} (of your DPS, per arrow/ray)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: -{~} (DPSに対して、矢／光線1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1045,7 +1045,7 @@
   },
   "ability-archer#0034": {
    "src": "Buckshot",
-   "dst": "",
+   "dst": "バックショット",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1057,7 +1057,7 @@
   },
   "ability-archer#0035": {
    "src": "When Arrow Shield loses its last charge, spew\n{~} piercing arrows forth from your bow.",
-   "dst": "",
+   "dst": "Arrow Shield が最後のチャージを失うと、\n弓から貫通する矢を {~} 本撃ち出す。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1072,7 +1072,7 @@
   },
   "ability-archer#0036": {
    "src": "Triple Shots",
-   "dst": "",
+   "dst": "トリプルショット",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1084,7 +1084,7 @@
   },
   "ability-archer#0037": {
    "src": "Triples Main Attack arrows but they deal\n-{~} of normal Main Attack arrow damage.",
-   "dst": "",
+   "dst": "通常攻撃の矢が3本になるが、\n通常の矢のダメージより -{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1112,7 +1112,7 @@
   },
   "ability-archer#0039": {
    "src": "Bryophyte Roots",
-   "dst": "",
+   "dst": "苔の根",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1124,7 +1124,7 @@
   },
   "ability-archer#0040": {
    "src": "Hitting an enemy with Arrow Storm will\ncreate an area of effect that slows them\ndown and deals damage every {~}s.",
-   "dst": "",
+   "dst": "Arrow Storm を敵に当てると効果範囲を作り、\n敵を減速させて\n{~}秒ごとにダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1139,7 +1139,7 @@
   },
   "ability-archer#0041": {
    "src": "Fire Creep",
-   "dst": "",
+   "dst": "這う炎",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1151,7 +1151,7 @@
   },
   "ability-archer#0042": {
    "src": "Arrow Bomb will leave a trail of\nfire for {~}s. Enemies that walk\ninto it take damage every {~}s.",
-   "dst": "",
+   "dst": "Arrow Bomb が {~}秒間\n炎の跡を残す。踏み込んだ敵は\n{~}秒ごとにダメージを受ける。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1166,7 +1166,7 @@
   },
   "ability-archer#0043": {
    "src": "Phantom Ray",
-   "dst": "",
+   "dst": "ファントムレイ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1178,7 +1178,7 @@
   },
   "ability-archer#0044": {
    "src": "Condense Arrow Storm into a single ray\nthat damages enemies {~} times per second.",
-   "dst": "",
+   "dst": "Arrow Storm を一本の光線に凝縮し、\n毎秒 {~} 回敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1193,7 +1193,7 @@
   },
   "ability-archer#0045": {
    "src": "Guardian Angels",
-   "dst": "",
+   "dst": "ガーディアンエンジェル",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1205,7 +1205,7 @@
   },
   "ability-archer#0046": {
    "src": "Your Arrow Shield turns into {~} sentient bows\nthat fire at nearby enemies every {~}s, each\nwith {~} ammunition. (Arrow Shield will no longer\npush enemies away or provide resistance)",
-   "dst": "",
+   "dst": "Arrow Shield が意思を持つ弓 {~} 張に変わり、\n{~}秒ごとに近くの敵を撃つ。弾はそれぞれ\n{~} 発。(Arrow Shield は敵を押し返さず、\n耐性も与えなくなる)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1220,7 +1220,7 @@
   },
   "ability-archer#0047": {
    "src": "{#} Total Damage: {~} (of your DPS, per shot)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、1発ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1233,7 +1233,7 @@
   },
   "ability-archer#0048": {
    "src": "Basaltic Trap",
-   "dst": "",
+   "dst": "玄武岩の罠",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1245,7 +1245,7 @@
   },
   "ability-archer#0049": {
    "src": "When you hit the ground with Arrow Bomb, leave\na Trap that damages enemies. (Max {~} Traps)",
-   "dst": "",
+   "dst": "Arrow Bomb が地面に当たると、敵にダメージを\n与える罠を残す。(罠は最大 {~} 個)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1260,7 +1260,7 @@
   },
   "ability-archer#0050": {
    "src": "Focus",
-   "dst": "",
+   "dst": "フォーカス",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1272,7 +1272,7 @@
   },
   "ability-archer#0051": {
    "src": "When hitting an aggressive enemy {~}+\nblocks away, gain +{~} Focus {#}. (Max {~})\n(Lose {~} Focus if you miss once)",
-   "dst": "",
+   "dst": "{~} ブロック以上離れた敵対する敵に当てると、\nFocus {#} を +{~} 得る。(上限 {~})\n(一度外すと Focus を {~} 失う)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1287,7 +1287,7 @@
   },
   "ability-archer#0052": {
    "src": "{#} Damage Bonus: +{~} (per Focus)",
-   "dst": "",
+   "dst": "{#} ダメージボーナス: +{~} (Focus ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1300,7 +1300,7 @@
   },
   "ability-archer#0053": {
    "src": "Leap",
-   "dst": "",
+   "dst": "リープ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1312,7 +1312,7 @@
   },
   "ability-archer#0054": {
    "src": "Leap in the direction of your movement\nwhen you double jump.",
-   "dst": "",
+   "dst": "二段ジャンプすると、\n移動している方向へ跳ぶ。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1327,7 +1327,7 @@
   },
   "ability-archer#0055": {
    "src": "The distance scales with your Walk Speed.",
-   "dst": "",
+   "dst": "距離は移動速度に比例する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1342,7 +1342,7 @@
   },
   "ability-archer#0056": {
    "src": "Cheaper Arrow Storm",
-   "dst": "",
+   "dst": "節約アローストーム",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1354,7 +1354,7 @@
   },
   "ability-archer#0057": {
    "src": "Reduce the Mana cost of Arrow Storm.",
-   "dst": "",
+   "dst": "Arrow Storm のマナコストが下がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1370,7 +1370,7 @@
   },
   "ability-archer#0058": {
    "src": "Implosion",
-   "dst": "",
+   "dst": "インプロージョン",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1382,7 +1382,7 @@
   },
   "ability-archer#0059": {
    "src": "Arrow Bomb pulls enemies\ntowards you. If a Trap is nearby,\nit will pull them towards it instead.\nIncreases Heart Shatter's damage.",
-   "dst": "",
+   "dst": "Arrow Bomb が敵を\n自分のほうへ引き寄せる。近くに罠があれば\n代わりに罠のほうへ引き寄せる。\nHeart Shatter のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1397,7 +1397,7 @@
   },
   "ability-archer#0060": {
    "src": "Arrow Wall",
-   "dst": "",
+   "dst": "アローウォール",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1409,7 +1409,7 @@
   },
   "ability-archer#0061": {
    "src": "Gives Arrow Shield +{~} extra charges.\nGuardian Angels will deal -{~} damage.",
-   "dst": "",
+   "dst": "Arrow Shield のチャージが +{~} 増える。\nGuardian Angels のダメージは -{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1424,7 +1424,7 @@
   },
   "ability-archer#0062": {
    "src": "Arsenal Synergy",
-   "dst": "",
+   "dst": "兵装シナジー",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1436,7 +1436,7 @@
   },
   "ability-archer#0063": {
    "src": "For every {~} arrows shot by Arrow Storm\nrecently, your Main Attacks will additionally\nfire a flint arrow that damages enemies.\n(Max {~} flints per main attack)",
-   "dst": "",
+   "dst": "最近 Arrow Storm で放った矢 {~} 本ごとに、\n通常攻撃で追加の\n火打ち石の矢を放ち、敵にダメージを与える。\n(通常攻撃1回につき最大 {~} 本)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1451,7 +1451,7 @@
   },
   "ability-archer#0064": {
    "src": "{#} Total Damage: {~} (Main Attack Damage, per arrow)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (通常攻撃ダメージ、矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1464,7 +1464,7 @@
   },
   "ability-archer#0065": {
    "src": "Fierce Stomp",
-   "dst": "",
+   "dst": "猛烈な踏みつけ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1476,7 +1476,7 @@
   },
   "ability-archer#0066": {
    "src": "When using Escape, hold shift to\nquickly drop down to deal damage\nand blind enemies.",
-   "dst": "",
+   "dst": "Escape 中にシフトを押し続けると\nすばやく落下し、敵にダメージを与えて\n盲目にする。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1491,7 +1491,7 @@
   },
   "ability-archer#0067": {
    "src": "Patient Hunter",
-   "dst": "",
+   "dst": "忍耐の狩人",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1503,7 +1503,7 @@
   },
   "ability-archer#0068": {
    "src": "Increase your maximum Traps by +{~}.",
-   "dst": "",
+   "dst": "罠の上限が +{~} 増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1521,7 +1521,7 @@
   },
   "ability-archer#0069": {
    "src": "Your Traps will deal +{~} more damage\nfor every second it's active. (Max +{~})",
-   "dst": "",
+   "dst": "罠は設置されている1秒ごとに\nダメージが +{~} 上がる。(上限 +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1536,7 +1536,7 @@
   },
   "ability-archer#0070": {
    "src": "Grappling Hook",
-   "dst": "",
+   "dst": "グラップリングフック",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1548,7 +1548,7 @@
   },
   "ability-archer#0071": {
    "src": "Holding Shift while casting\nwill pull any enemy you hit.",
-   "dst": "",
+   "dst": "シフトを押しながら使うと、\n当たった敵を引き寄せる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1563,7 +1563,7 @@
   },
   "ability-archer#0072": {
    "src": "When casting Escape, throw a hook\nthat pulls you when hitting a block.\n(Escape will not throw you backward anymore)",
-   "dst": "",
+   "dst": "Escape を使うとフックを投げ、\nブロックに当たると自分を引き寄せる。\n(Escape で後ろへ跳ばなくなる)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1578,7 +1578,7 @@
   },
   "ability-archer#0073": {
    "src": "More Focus",
-   "dst": "",
+   "dst": "フォーカス増強",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1606,7 +1606,7 @@
   },
   "ability-archer#0075": {
    "src": "Murder Flock",
-   "dst": "",
+   "dst": "殺戮の群れ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1618,7 +1618,7 @@
   },
   "ability-archer#0076": {
    "src": "Basaltic Trap summons a Crow upon detonation that\nwill peck at aggressive enemies every {~}s. (Max {~})\nDamaged enemies will be distracted for {~}s.",
-   "dst": "",
+   "dst": "Basaltic Trap が起爆するとカラスを呼び出し、\n{~}秒ごとに敵対する敵をつつかせる。(上限 {~})\nダメージを受けた敵は {~}秒間気をそらされる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1633,7 +1633,7 @@
   },
   "ability-archer#0077": {
    "src": "Refined Gunpowder",
-   "dst": "",
+   "dst": "精製火薬",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1645,7 +1645,7 @@
   },
   "ability-archer#0078": {
    "src": "Increase the damage of Arrow Bomb.",
-   "dst": "",
+   "dst": "Arrow Bomb のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1660,7 +1660,7 @@
   },
   "ability-archer#0079": {
    "src": "Phantom Force",
-   "dst": "",
+   "dst": "ファントムフォース",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1672,7 +1672,7 @@
   },
   "ability-archer#0080": {
    "src": "Phantom Ray gains extra forward\nrange and becomes wider.",
-   "dst": "",
+   "dst": "Phantom Ray の前方への射程が伸び、\n幅も広がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1687,7 +1687,7 @@
   },
   "ability-archer#0081": {
    "src": "Windstorm",
-   "dst": "",
+   "dst": "暴風",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1699,7 +1699,7 @@
   },
   "ability-archer#0082": {
    "src": "Arrow Storm gains recoil while midair.",
-   "dst": "",
+   "dst": "空中で使う Arrow Storm に反動がつく。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1714,7 +1714,7 @@
   },
   "ability-archer#0083": {
    "src": "Arrow Storm will shoot +{~} stream\nof arrows and +{~} extra arrows per stream.",
-   "dst": "",
+   "dst": "Arrow Storm の矢の連射が +{~} 回増え、\n1回に放つ矢も +{~} 本増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1729,7 +1729,7 @@
   },
   "ability-archer#0084": {
    "src": "{#} Total Damage: -{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: -{~} (DPSに対して、矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1742,7 +1742,7 @@
   },
   "ability-archer#0085": {
    "src": "Grape Bomb",
-   "dst": "",
+   "dst": "グレープボム",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1754,7 +1754,7 @@
   },
   "ability-archer#0086": {
    "src": "Arrow Bomb will throw {~} additional\nsmaller bombs when exploding.",
-   "dst": "",
+   "dst": "Arrow Bomb が爆発するとき、\n小さな爆弾を {~} 個追加で投げる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1769,7 +1769,7 @@
   },
   "ability-archer#0087": {
    "src": "Ivyroot Mamba",
-   "dst": "",
+   "dst": "蔦根のマンバ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1781,7 +1781,7 @@
   },
   "ability-archer#0088": {
    "src": "Bryophyte Roots summons a Snake after\ndisappearing that will spit weakening\nvenom at aggressive enemies every {~}s. (Max {~})\nEnemies will be weakened for {~}s.",
-   "dst": "",
+   "dst": "Bryophyte Roots が消えると蛇を呼び出し、\n{~}秒ごとに敵対する敵へ\n弱体化の毒を吐きかける。(上限 {~})\n敵は {~}秒間弱体化する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1796,7 +1796,7 @@
   },
   "ability-archer#0089": {
    "src": "Twain's Arc",
-   "dst": "",
+   "dst": "Twain の弧",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1808,7 +1808,7 @@
   },
   "ability-archer#0090": {
    "src": "If you have {~}+ Focus {#}, holding shift will\nsummon Twain's Arc. Charge it up to\nshoot a destructive long-range beam.",
-   "dst": "",
+   "dst": "Focus {#} が {~} 以上あるとき、シフトを押し続けると\nTwain's Arc を呼び出す。チャージすると\n破壊的な長射程ビームを放つ。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1823,7 +1823,7 @@
   },
   "ability-archer#0091": {
    "src": "Frenzy",
-   "dst": "",
+   "dst": "狂乱",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1835,7 +1835,7 @@
   },
   "ability-archer#0092": {
    "src": "Hitting an enemy will give you a brief buff\nof +{~} Walk Speed, up to {~} per second. (Max +{~})\n-{~} of the bonus decays every second.",
-   "dst": "",
+   "dst": "敵に当てると、短いあいだ移動速度 +{~} のバフを得る。\n毎秒最大 {~}。(上限 +{~})\nボーナスは毎秒 -{~} ずつ減る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1850,7 +1850,7 @@
   },
   "ability-archer#0093": {
    "src": "Shrapnel Bomb",
-   "dst": "",
+   "dst": "榴散弾",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1862,7 +1862,7 @@
   },
   "ability-archer#0094": {
    "src": "Arrow Bomb's explosion will fling {~}\nshrapnel, dealing damage in a large area.\n(Each enemy can only be hit by three shrapnel)",
-   "dst": "",
+   "dst": "Arrow Bomb の爆発で破片を {~} 個飛ばし、\n広い範囲にダメージを与える。\n(敵1体に当たる破片は3つまで)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1877,7 +1877,7 @@
   },
   "ability-archer#0095": {
    "src": "{#} Total Damage: {~} (of your DPS, per shrapnel)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、破片1つごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1890,7 +1890,7 @@
   },
   "ability-archer#0096": {
    "src": "Rocket Jump",
-   "dst": "",
+   "dst": "ロケットジャンプ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1902,7 +1902,7 @@
   },
   "ability-archer#0097": {
    "src": "Arrow Bomb's recoil is increased, and\nits self-damage is reduced to {~}.",
-   "dst": "",
+   "dst": "Arrow Bomb の反動が大きくなり、\n自分へのダメージが {~} に下がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1917,7 +1917,7 @@
   },
   "ability-archer#0098": {
    "src": "Scorched Earth",
-   "dst": "",
+   "dst": "焦土",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1929,7 +1929,7 @@
   },
   "ability-archer#0099": {
    "src": "Fire Creep becomes much stronger.",
-   "dst": "",
+   "dst": "Fire Creep がはるかに強くなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1944,7 +1944,7 @@
   },
   "ability-archer#0100": {
    "src": "{#} Duration: +{~}s",
-   "dst": "",
+   "dst": "{#} 持続時間: +{~}秒",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1958,7 +1958,7 @@
   },
   "ability-archer#0101": {
    "src": "More Traps",
-   "dst": "",
+   "dst": "罠増強",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1970,7 +1970,7 @@
   },
   "ability-archer#0102": {
    "src": "Divine Intervention",
-   "dst": "",
+   "dst": "神の介入",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1982,7 +1982,7 @@
   },
   "ability-archer#0103": {
    "src": "Casting Arrow Bomb will cause them to\nshoot explosive shots, dealing +{~} damage.",
-   "dst": "",
+   "dst": "Arrow Bomb を使うと、\n弓が爆発する矢を撃ち、ダメージ +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1997,7 +1997,7 @@
   },
   "ability-archer#0104": {
    "src": "Casting Arrow Storm will cause them to\nshoot {~}x faster while Arrow Storm is active",
-   "dst": "",
+   "dst": "Arrow Storm を使うと、Arrow Storm の間\n弓の射撃が {~} 倍速くなる",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2012,7 +2012,7 @@
   },
   "ability-archer#0105": {
    "src": "Guardian Angels gain +{~} additional ammunition.\nWhenever you cast a spell, your Guardian Angels\nbecome briefly empowered.",
-   "dst": "",
+   "dst": "Guardian Angels の弾が +{~} 増える。\n呪文を使うたびに、Guardian Angels が\n少しのあいだ強化される。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2027,7 +2027,7 @@
   },
   "ability-archer#0106": {
    "src": "Cheaper Arrow Shield",
-   "dst": "",
+   "dst": "節約アローシールド",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2039,7 +2039,7 @@
   },
   "ability-archer#0107": {
    "src": "Reduce the Mana cost of Arrow Shield.",
-   "dst": "",
+   "dst": "Arrow Shield のマナコストが下がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2055,7 +2055,7 @@
   },
   "ability-archer#0108": {
    "src": "Honed Shield",
-   "dst": "",
+   "dst": "研ぎ澄ました盾",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2067,7 +2067,7 @@
   },
   "ability-archer#0109": {
    "src": "Arrow Shield's radius, knockback,\nand damage is increased.",
-   "dst": "",
+   "dst": "Arrow Shield の半径、ノックバック、\nダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2082,7 +2082,7 @@
   },
   "ability-archer#0110": {
    "src": "Guardian Angels' damage is increased.",
-   "dst": "",
+   "dst": "Guardian Angels のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2097,7 +2097,7 @@
   },
   "ability-archer#0111": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Arrow Shield)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (DPSに対して、Arrow Shield)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2110,7 +2110,7 @@
   },
   "ability-archer#0112": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Guardian Angels, per shot)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (DPSに対して、Guardian Angels、1発ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2124,7 +2124,7 @@
   },
   "ability-archer#0113": {
    "src": "Shocking Bomb",
-   "dst": "",
+   "dst": "ショックボム",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2136,7 +2136,7 @@
   },
   "ability-archer#0114": {
    "src": "Arrow Bomb will be unaffected by\ngravity and increase its explosion damage.",
-   "dst": "",
+   "dst": "Arrow Bomb が重力の影響を受けなくなり、\n爆発ダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2151,7 +2151,7 @@
   },
   "ability-archer#0115": {
    "src": "Stormy Feet",
-   "dst": "",
+   "dst": "嵐の足",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2163,7 +2163,7 @@
   },
   "ability-archer#0116": {
    "src": "Windy Feet will last longer and grant a stronger\nspeed buff.",
-   "dst": "",
+   "dst": "Windy Feet が長く続き、\n速度バフも強くなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2178,7 +2178,7 @@
   },
   "ability-archer#0117": {
    "src": "Bounding Stride",
-   "dst": "",
+   "dst": "跳躍の歩み",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2190,7 +2190,7 @@
   },
   "ability-archer#0118": {
    "src": "Leap will launch you further.",
-   "dst": "",
+   "dst": "Leap でより遠くへ跳ぶ。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2205,7 +2205,7 @@
   },
   "ability-archer#0119": {
    "src": "Homing Shots",
-   "dst": "",
+   "dst": "ホーミングショット",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2217,7 +2217,7 @@
   },
   "ability-archer#0120": {
    "src": "Your Main Attack arrows will follow nearby\nenemies and will be unaffected by gravity.",
-   "dst": "",
+   "dst": "通常攻撃の矢が近くの敵を追尾し、\n重力の影響を受けなくなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2232,7 +2232,7 @@
   },
   "ability-archer#0121": {
    "src": "Recycling",
-   "dst": "",
+   "dst": "リサイクル",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2244,7 +2244,7 @@
   },
   "ability-archer#0122": {
    "src": "When any of your projectiles miss, gain +{~} Mana.",
-   "dst": "",
+   "dst": "放ったものが外れるたびに、マナを +{~} 得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2259,7 +2259,7 @@
   },
   "ability-archer#0123": {
    "src": "Mana Trap",
-   "dst": "",
+   "dst": "マナトラップ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2271,7 +2271,7 @@
   },
   "ability-archer#0124": {
    "src": "Your Traps will give you {~} Mana\nper second and {~} Mana\nwhen they explode.",
-   "dst": "",
+   "dst": "罠が毎秒マナを {~}、\n爆発したときにマナを {~}\n与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2286,7 +2286,7 @@
   },
   "ability-archer#0125": {
    "src": "Cheaper Escape II",
-   "dst": "",
+   "dst": "節約エスケープ II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2298,7 +2298,7 @@
   },
   "ability-archer#0126": {
    "src": "Initiator",
-   "dst": "",
+   "dst": "先制",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2310,7 +2310,7 @@
   },
   "ability-archer#0127": {
    "src": "If you do not damage an enemy for\n{~}s or more, your next successful hit\nwill deal +{~} damage and add +{~} Focus {#}.",
-   "dst": "",
+   "dst": "{~}秒以上敵にダメージを与えていないと、\n次に当たった攻撃のダメージが +{~} 上がり、\nFocus {#} を +{~} 得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2325,7 +2325,7 @@
   },
   "ability-archer#0128": {
    "src": "Courier's Edict",
-   "dst": "",
+   "dst": "伝令の勅令",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2337,7 +2337,7 @@
   },
   "ability-archer#0129": {
    "src": "Fierce Stomp sends out {~} waves of\nheavenly light in front of you.",
-   "dst": "",
+   "dst": "Fierce Stomp が前方へ\n天の光の波を {~} 回放つ。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2352,7 +2352,7 @@
   },
   "ability-archer#0130": {
    "src": "Landing after Leap triggers Fierce Stomp.",
-   "dst": "",
+   "dst": "Leap の後に着地すると Fierce Stomp が発動する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2367,7 +2367,7 @@
   },
   "ability-archer#0131": {
    "src": "{#} Total Damage: {~} (of your DPS, per wave)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、1波ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2380,7 +2380,7 @@
   },
   "ability-archer#0132": {
    "src": "Vigilant Sentinels",
-   "dst": "",
+   "dst": "油断なき番兵",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2392,7 +2392,7 @@
   },
   "ability-archer#0133": {
    "src": "Casting Arrow Shield while Guardian Angels are active\nwill also cast Buckshot. Increase Buckshot's damage.",
-   "dst": "",
+   "dst": "Guardian Angels がいる間に Arrow Shield を使うと\nBuckshot も発動する。Buckshot のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2407,7 +2407,7 @@
   },
   "ability-archer#0134": {
    "src": "Increase Guardian Angels' range and damage.",
-   "dst": "",
+   "dst": "Guardian Angels の射程とダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2422,7 +2422,7 @@
   },
   "ability-archer#0135": {
    "src": "{#} Total Damage: +{~} (of your DPS, for Buckshot, per arrow)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (DPSに対して、Buckshot、矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2435,7 +2435,7 @@
   },
   "ability-archer#0136": {
    "src": "Call of the Hound",
-   "dst": "",
+   "dst": "猟犬の呼び声",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2447,7 +2447,7 @@
   },
   "ability-archer#0137": {
    "src": "Arrow Shield summons a Hound that will\nattack aggressive enemies every {~}s\nand drag them towards your traps.",
-   "dst": "",
+   "dst": "Arrow Shield が猟犬を呼び出し、\n{~}秒ごとに敵対する敵を攻撃して\n罠のほうへ引きずっていく。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2462,7 +2462,7 @@
   },
   "ability-archer#0138": {
    "src": "Decimator",
-   "dst": "",
+   "dst": "殲滅者",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2474,7 +2474,7 @@
   },
   "ability-archer#0139": {
    "src": "Phantom Ray gains extra forward range.",
-   "dst": "",
+   "dst": "Phantom Ray の前方への射程が伸びる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2489,7 +2489,7 @@
   },
   "ability-archer#0140": {
    "src": "Phantom Ray will increase its damage by {~}\nevery time you do not miss with it. (Max {~})",
-   "dst": "",
+   "dst": "Phantom Ray を外さずに当てるたびに、\nダメージが {~} 上がる。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2504,7 +2504,7 @@
   },
   "ability-archer#0141": {
    "src": "Phasing Beam",
-   "dst": "",
+   "dst": "位相ビーム",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2516,7 +2516,7 @@
   },
   "ability-archer#0142": {
    "src": "Twain's Arc charges {~} faster, and\ncan now pierce through up to {~} enemies,\ndealing reduced damage after piercing.\n(Damage is dealt as Main Attack Damage)",
-   "dst": "",
+   "dst": "Twain's Arc のチャージが {~} 速くなり、\n最大 {~} 体の敵を貫通できるようになる。\n貫通後はダメージが下がる。\n(ダメージは通常攻撃ダメージとして扱う)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2531,7 +2531,7 @@
   },
   "ability-archer#0143": {
    "src": "{#} Total Damage: -{~} (after piercing)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: -{~} (貫通後)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2544,7 +2544,7 @@
   },
   "ability-archer#0144": {
    "src": "Spectral Hover",
-   "dst": "",
+   "dst": "霊の浮遊",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2556,7 +2556,7 @@
   },
   "ability-archer#0145": {
    "src": "Slow Falling is applied upon using Escape.\nCrouching at any point will cancel this effect.\n(Effect cannot be refreshed mid-air)",
-   "dst": "",
+   "dst": "Escape を使うと落下速度低下がかかる。\nしゃがむといつでもこの効果を解除できる。\n(空中では効果を更新できない)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2571,7 +2571,7 @@
   },
   "ability-archer#0146": {
    "src": "Parting Gift",
-   "dst": "",
+   "dst": "置き土産",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2583,7 +2583,7 @@
   },
   "ability-archer#0147": {
    "src": "When casting Escape, release a\ncluster bomb mid-air that explodes,\nsending a payload of {~} arrows\nto your previous location.\n(Each enemy can only be hit by one arrow)",
-   "dst": "",
+   "dst": "Escape を使うと空中で\nクラスター爆弾を放ち、爆発して\n元いた場所へ\n{~} 本の矢を降らせる。\n(敵1体に当たる矢は1本まで)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2598,7 +2598,7 @@
   },
   "ability-archer#0148": {
    "src": "Bouncing Bomb",
-   "dst": "",
+   "dst": "バウンドボム",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2610,7 +2610,7 @@
   },
   "ability-archer#0149": {
    "src": "Arrow Bomb will travel {~} slower and\nbounce once when hitting a block or enemy.",
-   "dst": "",
+   "dst": "Arrow Bomb の速度が {~} 遅くなり、\nブロックか敵に当たると一度跳ねる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2625,7 +2625,7 @@
   },
   "ability-archer#0150": {
    "src": "Cheaper Arrow Storm II",
-   "dst": "",
+   "dst": "節約アローストーム II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2637,7 +2637,7 @@
   },
   "ability-archer#0151": {
    "src": "Cheaper Arrow Shield II",
-   "dst": "",
+   "dst": "節約アローシールド II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2649,7 +2649,7 @@
   },
   "ability-archer#0152": {
    "src": "Hookshot",
-   "dst": "",
+   "dst": "フックショット",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2661,7 +2661,7 @@
   },
   "ability-archer#0153": {
    "src": "Increases your Grappling Hook's\nrange, speed and strength.",
-   "dst": "",
+   "dst": "Grappling Hook の\n射程、速度、強さが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2676,7 +2676,7 @@
   },
   "ability-archer#0154": {
    "src": "Ghostly Trigger",
-   "dst": "",
+   "dst": "幽霊の引き金",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2688,7 +2688,7 @@
   },
   "ability-archer#0155": {
    "src": "While airborne after casting Escape, your\nnext {~} Main Attacks can be fired in quick\nsuccession regardless of attack speed,\nand will instantly fire from Twain's Arc.",
-   "dst": "",
+   "dst": "Escape を使った後に空中にいる間、\n次の {~} 回の通常攻撃は攻撃速度に関係なく\nすばやく連射でき、\nTwain's Arc から即座に放たれる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2703,7 +2703,7 @@
   },
   "ability-archer#0156": {
    "src": "Arrow Hurricane",
-   "dst": "",
+   "dst": "アローハリケーン",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2715,7 +2715,7 @@
   },
   "ability-archer#0157": {
    "src": "Arrow Storm will shoot +{~} extra streams of arrows.",
-   "dst": "",
+   "dst": "Arrow Storm の矢の連射が +{~} 回増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2730,7 +2730,7 @@
   },
   "ability-archer#0158": {
    "src": "Arrow Storm's recoil is doubled.",
-   "dst": "",
+   "dst": "Arrow Storm の反動が2倍になる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2745,7 +2745,7 @@
   },
   "ability-archer#0159": {
    "src": "Beast Lore",
-   "dst": "",
+   "dst": "獣の知識",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2757,7 +2757,7 @@
   },
   "ability-archer#0160": {
    "src": "Increase your maximum Snakes by +{~}.\nIncrease your maximum Crows by +{~}.\nIncrease the damage of your Hound.",
-   "dst": "",
+   "dst": "蛇の上限が +{~} 増える。\nカラスの上限が +{~} 増える。\n猟犬のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2772,7 +2772,7 @@
   },
   "ability-archer#0161": {
    "src": "Tangled Traps",
-   "dst": "",
+   "dst": "絡まる罠",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2784,7 +2784,7 @@
   },
   "ability-archer#0162": {
    "src": "Grape Bomb gains +{~} grape.",
-   "dst": "",
+   "dst": "Grape Bomb の小爆弾が +{~} 個増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2799,7 +2799,7 @@
   },
   "ability-archer#0163": {
    "src": "Your Traps will be connected by a rope\nthat deals damage to enemies every {~}s.",
-   "dst": "",
+   "dst": "罠どうしがロープでつながり、\n{~}秒ごとに敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2814,7 +2814,7 @@
   },
   "ability-archer#0164": {
    "src": "Coursing Restraints",
-   "dst": "",
+   "dst": "走る拘束",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2826,7 +2826,7 @@
   },
   "ability-archer#0165": {
    "src": "Shocking Bomb will temporarily shock\nenemies, reducing their defences.",
-   "dst": "",
+   "dst": "Shocking Bomb が敵を一時的に感電させ、\n防御を下げる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2841,7 +2841,7 @@
   },
   "ability-archer#0166": {
    "src": "{#} Effect: -{~} Resistance Bonus ({#}) to Enemies",
-   "dst": "",
+   "dst": "{#} 効果: 敵の耐性ボーナス -{~} ({#})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2854,7 +2854,7 @@
   },
   "ability-archer#0167": {
    "src": "Elusive",
-   "dst": "",
+   "dst": "捉えどころなし",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2866,7 +2866,7 @@
   },
   "ability-archer#0168": {
    "src": "Arrow Bomb and Arrow Storm will no longer have\nrecoil, and your Arrow Bombs will not deal self-damage.",
-   "dst": "",
+   "dst": "Arrow Bomb と Arrow Storm の反動がなくなり、\nArrow Bomb で自分がダメージを受けなくなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2881,7 +2881,7 @@
   },
   "ability-archer#0169": {
    "src": "Chilling Snare",
-   "dst": "",
+   "dst": "凍える罠",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2893,7 +2893,7 @@
   },
   "ability-archer#0170": {
    "src": "Attach an icy snare to Basaltic Trap,\ndrastically inhibiting and damaging nearby\nenemies every {~}s after it detonates.",
-   "dst": "",
+   "dst": "Basaltic Trap に氷の罠を付け、\n起爆後は {~}秒ごとに近くの敵の動きを\n大きく封じてダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2908,7 +2908,7 @@
   },
   "ability-archer#0171": {
    "src": "Feedback Loop",
-   "dst": "",
+   "dst": "フィードバックループ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2920,7 +2920,7 @@
   },
   "ability-archer#0172": {
    "src": "Hitting {~} flint arrow will make your next\nArrow Storm shoot +{~} arrow per stream. (Max {~})",
-   "dst": "",
+   "dst": "火打ち石の矢を {~} 本当てると、次の\nArrow Storm で1回に放つ矢が +{~} 本増える。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2935,7 +2935,7 @@
   },
   "ability-archer#0173": {
    "src": "Swift Primer",
-   "dst": "",
+   "dst": "速効の起爆剤",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2947,7 +2947,7 @@
   },
   "ability-archer#0174": {
    "src": "Patient Hunter will increase its damage by +{~}\nper second, and increase its Max Damage by +{~}.",
-   "dst": "",
+   "dst": "Patient Hunter のダメージが毎秒 +{~} 上がり、\nダメージ上限も +{~} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2962,7 +2962,7 @@
   },
   "ability-archer#0175": {
    "src": "Crepuscular Ray",
-   "dst": "",
+   "dst": "薄明光線",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2974,7 +2974,7 @@
   },
   "ability-archer#0176": {
    "src": "If you have {~}+ Focus {#}, casting Arrow Storm\nwhile {~}+ blocks above the ground will cause\nyou to levitate and shoot {~} homing arrows\nper second until you run out of Focus {#}.",
-   "dst": "",
+   "dst": "Focus {#} が {~} 以上あるとき、地面から {~} ブロック以上\nの高さで Arrow Storm を使うと\n宙に浮き、Focus {#} が尽きるまで\n毎秒 {~} 本の追尾する矢を放つ。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2989,7 +2989,7 @@
   },
   "ability-archer#0177": {
    "src": "While in this state, lose {~} Focus {#} every {~}s.",
-   "dst": "",
+   "dst": "この状態の間、{~2}秒ごとに Focus {#} を {~1} 失う。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3004,7 +3004,7 @@
   },
   "ability-archer#0178": {
    "src": "Transience",
-   "dst": "",
+   "dst": "刹那",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3016,7 +3016,7 @@
   },
   "ability-archer#0179": {
    "src": "Arrow Storm will pierce enemies.",
-   "dst": "",
+   "dst": "Arrow Storm が敵を貫通する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3031,7 +3031,7 @@
   },
   "ability-archer#0180": {
    "src": "Snow Storm",
-   "dst": "",
+   "dst": "吹雪",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3043,7 +3043,7 @@
   },
   "ability-archer#0181": {
    "src": "Enemies near you will be slowed down.",
-   "dst": "",
+   "dst": "近くの敵が減速する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3058,7 +3058,7 @@
   },
   "ability-archer#0182": {
    "src": "Cheaper Arrow Bomb II",
-   "dst": "",
+   "dst": "節約アローボム II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3070,7 +3070,7 @@
   },
   "ability-archer#0183": {
    "src": "More Focus II",
-   "dst": "",
+   "dst": "フォーカス増強 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3082,7 +3082,7 @@
   },
   "ability-archer#0184": {
    "src": "Wild Light",
-   "dst": "",
+   "dst": "野生の光",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3094,7 +3094,7 @@
   },
   "ability-archer#0185": {
    "src": "Increase your Main Attack's damage by +{~}\nfor every +{~} Walk Speed you gain from Frenzy.",
-   "dst": "",
+   "dst": "Frenzy で得た移動速度 +{~2} ごとに、\n通常攻撃ダメージが +{~1} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3109,7 +3109,7 @@
   },
   "ability-archer#0186": {
    "src": "Fimbulwinter",
-   "dst": "",
+   "dst": "フィンブルの冬",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3121,7 +3121,7 @@
   },
   "ability-archer#0187": {
    "src": "Enemies take additional damage after standing\ninside of Chilling Snare for {~}s.",
-   "dst": "",
+   "dst": "Chilling Snare の中に {~}秒間とどまった敵は\n追加ダメージを受ける。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3136,7 +3136,7 @@
   },
   "ability-archer#0188": {
    "src": "Warding Wisps",
-   "dst": "",
+   "dst": "守りの精",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3148,7 +3148,7 @@
   },
   "ability-archer#0189": {
    "src": "When Arrow Shield loses a charge,\nsummon a Wisp that follows and\nprotects you. (Max {~})",
-   "dst": "",
+   "dst": "Arrow Shield がチャージを失うと、\nついてきて守ってくれる\n精霊を呼び出す。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3163,7 +3163,7 @@
   },
   "ability-archer#0190": {
    "src": "Your Wisps can possess nearby\nenemies for {~}s, dealing damage\nevery {~}s and slowing them.",
-   "dst": "",
+   "dst": "精霊は近くの敵に {~}秒間\n憑依し、{~}秒ごとにダメージを与えて\n減速させる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3178,7 +3178,7 @@
   },
   "ability-archer#0191": {
    "src": "Shrieking Arrows",
-   "dst": "",
+   "dst": "鳴り響く矢",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3190,7 +3190,7 @@
   },
   "ability-archer#0192": {
    "src": "Arrow Storm and Phantom Ray will deal additional damage.",
-   "dst": "",
+   "dst": "Arrow Storm と Phantom Ray が追加ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3205,7 +3205,7 @@
   },
   "ability-archer#0193": {
    "src": "{#} Total Damage: +{~} (of your DPS, per arrow)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (DPSに対して、矢1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3219,7 +3219,7 @@
   },
   "ability-archer#0194": {
    "src": "{#} Total Damage: +{~} (of your DPS, per ray)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (DPSに対して、光線1本ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3232,7 +3232,7 @@
   },
   "ability-archer#0195": {
    "src": "Overgrowth",
-   "dst": "",
+   "dst": "繁茂",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3244,7 +3244,7 @@
   },
   "ability-archer#0196": {
    "src": "Bryophyte Roots spreads further\nand deals damage {~} faster.",
-   "dst": "",
+   "dst": "Bryophyte Roots がさらに広がり、\nダメージを {~} 速く与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3259,7 +3259,7 @@
   },
   "ability-archer#0197": {
    "src": "Quick Draw",
-   "dst": "",
+   "dst": "早撃ち",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3271,7 +3271,7 @@
   },
   "ability-archer#0198": {
    "src": "Not missing with Phantom Ray {~} times\nin a row will transform your next\nMain Attack into a Twain's Arc beam.",
-   "dst": "",
+   "dst": "Phantom Ray を {~} 回連続で外さずに当てると、\n次の通常攻撃が\nTwain's Arc のビームに変わる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3286,7 +3286,7 @@
   },
   "ability-archer#0199": {
    "src": "Sniffer Dog",
-   "dst": "",
+   "dst": "探知犬",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3298,7 +3298,7 @@
   },
   "ability-archer#0200": {
    "src": "Your Hound has a {~} chance to\ndig up a Trap when attacking enemies.",
-   "dst": "",
+   "dst": "猟犬は敵を攻撃するとき、{~} の確率で\n罠を掘り出す。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3313,7 +3313,7 @@
   },
   "ability-archer#0201": {
    "src": "Repel",
-   "dst": "",
+   "dst": "撃退",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3325,7 +3325,7 @@
   },
   "ability-archer#0202": {
    "src": "Casting Arrow Shield will push back nearby\nenemies and provide a brief burst of resistance.",
-   "dst": "",
+   "dst": "Arrow Shield を使うと近くの敵を押し返し、\n少しのあいだ耐性を得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3340,7 +3340,7 @@
   },
   "ability-archer#0203": {
    "src": "Reduce this ability's cooldown by {~}s\nevery time Arrow Shield loses a charge.",
-   "dst": "",
+   "dst": "Arrow Shield がチャージを失うたびに、\nこのアビリティのクールダウンが {~}秒短くなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3355,7 +3355,7 @@
   },
   "ability-archer#0204": {
    "src": "Pyrotechnics",
-   "dst": "",
+   "dst": "花火師",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3367,7 +3367,7 @@
   },
   "ability-archer#0205": {
    "src": "Arrow Bomb and Grape Bomb\nbecome much hotter, increasing\nthe damage of their explosion.",
-   "dst": "",
+   "dst": "Arrow Bomb と Grape Bomb が\nはるかに熱くなり、\n爆発ダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3382,7 +3382,7 @@
   },
   "ability-archer#0206": {
    "src": "{#} Total Damage: {~} (of your DPS, for Arrow Bomb)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、Arrow Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3395,7 +3395,7 @@
   },
   "ability-archer#0207": {
    "src": "{#} Total Damage: {~} (of your DPS, for Grape Bomb)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、Grape Bomb)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3408,7 +3408,7 @@
   },
   "ability-archer#0208": {
    "src": "Canine Colleague",
-   "dst": "",
+   "dst": "犬の同僚",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3420,7 +3420,7 @@
   },
   "ability-archer#0209": {
    "src": "Increase your maximum Hounds by +{~}.",
-   "dst": "",
+   "dst": "猟犬の上限が +{~} 増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3435,7 +3435,7 @@
   },
   "ability-archer#0210": {
    "src": "Mael's Quiver",
-   "dst": "",
+   "dst": "Mael の矢筒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3447,7 +3447,7 @@
   },
   "ability-archer#0211": {
    "src": "Increase the damage of Crepuscular Ray.",
-   "dst": "",
+   "dst": "Crepuscular Ray のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3462,7 +3462,7 @@
   },
   "ability-archer#0212": {
    "src": "Repositioning",
-   "dst": "",
+   "dst": "位置取り",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3474,7 +3474,7 @@
   },
   "ability-archer#0213": {
    "src": "Gain a brief speed boost\nafter shooting Twain's Arc.",
-   "dst": "",
+   "dst": "Twain's Arc を撃った後、\n少しのあいだ速度が上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3489,7 +3489,7 @@
   },
   "ability-archer#0214": {
    "src": "{#} Effect: +{~} Walk Speed (➲) to Self",
-   "dst": "",
+   "dst": "{#} 効果: 自分の移動速度 +{~} (➲)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3502,7 +3502,7 @@
   },
   "ability-archer#0215": {
    "src": "Angelic Ascension",
-   "dst": "",
+   "dst": "天使の昇天",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3514,7 +3514,7 @@
   },
   "ability-archer#0216": {
    "src": "Arrow Bomb will smite enemies it hits\ndirectly with a bolt from the heavens.",
-   "dst": "",
+   "dst": "Arrow Bomb が直撃した敵に\n天からの雷で天罰を下す。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3529,7 +3529,7 @@
   },
   "ability-archer#0217": {
    "src": "Arrow Storm last {~} times longer\nand releases in a tighter spread",
-   "dst": "",
+   "dst": "Arrow Storm が {~} 倍長く続き、\n矢の広がりが狭くなる",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3544,7 +3544,7 @@
   },
   "ability-archer#0218": {
    "src": "Call upon the power of the Light\nto empower your attacks for {~}s\nand make Leap have no cooldown.",
-   "dst": "",
+   "dst": "光の力を呼び寄せ、{~}秒間\n攻撃を強化し、\nLeap のクールダウンをなくす。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3559,7 +3559,7 @@
   },
   "ability-archer#0219": {
    "src": "Guardian Angels will have unlimited ammunition\nand trigger Buckshot after firing {~} volleys.",
-   "dst": "",
+   "dst": "Guardian Angels の弾が無限になり、\n{~} 回斉射すると Buckshot が発動する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3574,7 +3574,7 @@
   },
   "ability-archer#0220": {
    "src": "Main Attack will instead shoot Light Arrows\nthat deal {~} more damage over {~}s.",
-   "dst": "",
+   "dst": "通常攻撃が代わりに光の矢を放ち、\n{~2}秒かけて {~1} の追加ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3589,7 +3589,7 @@
   },
   "ability-archer#0221": {
    "src": "{#} Total Damage: {~} (of your DPS, Arrow Bomb's smite)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、Arrow Bomb の天罰)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3602,7 +3602,7 @@
   },
   "ability-archer#0222": {
    "src": "The Twilight Zone",
-   "dst": "",
+   "dst": "トワイライトゾーン",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3614,7 +3614,7 @@
   },
   "ability-archer#0223": {
    "src": "At the end of its duration, or by casting F, fire a Spell\nand a Main Attack arrow at every marked enemy.\nArrows will deal bonus damage for\neach Twilight {#} stack on a target.",
-   "dst": "",
+   "dst": "効果が切れたとき、または F を使ったとき、マークしたすべての敵へ\n呪文の矢と通常攻撃の矢を放つ。\n矢は対象の Twilight {#} のスタックごとに\n追加ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3629,7 +3629,7 @@
   },
   "ability-archer#0224": {
    "src": "Enter a focused state for {~}s.",
-   "dst": "",
+   "dst": "{~}秒間、集中状態に入る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3644,7 +3644,7 @@
   },
   "ability-archer#0225": {
    "src": "While in this state, you jump higher, fall slower,\nand all enemies within your line of sight are\nmarked by Twilight {#} every {~}s. (Max {~})",
-   "dst": "",
+   "dst": "この状態の間、高く跳び、ゆっくり落ち、\n視界内のすべての敵が {~1}秒ごとに\nTwilight {#} でマークされる。(上限 {~2})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3659,7 +3659,7 @@
   },
   "ability-archer#0226": {
    "src": "{#} Total Damage: +{~} (Main Attack Damage, per Twilight)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (通常攻撃ダメージ、Twilight ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3672,7 +3672,7 @@
   },
   "ability-archer#0227": {
    "src": "{#} Total Damage: +{~} (of your DPS, per Twilight)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (DPSに対して、Twilight ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3685,7 +3685,7 @@
   },
   "ability-archer#0228": {
    "src": "Extinction Event",
-   "dst": "",
+   "dst": "絶滅事変",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3697,7 +3697,7 @@
   },
   "ability-archer#0229": {
    "src": "Bombs will leave behind Basaltic Traps\nand occasionally Chilling Snares.",
-   "dst": "",
+   "dst": "爆弾が Basaltic Trap を残し、\nときどき Chilling Snare も残す。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3712,7 +3712,7 @@
   },
   "ability-archer#0230": {
    "src": "Calls forth a flock of tactical crows\nwhich will perform a carpet bombing of\na large area in front of you.",
-   "dst": "",
+   "dst": "戦術カラスの群れを呼び寄せ、\n前方の広い範囲に\n絨毯爆撃を行わせる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
