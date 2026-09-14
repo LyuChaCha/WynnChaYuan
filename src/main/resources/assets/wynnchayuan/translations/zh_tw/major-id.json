@@ -3,9 +3,9 @@
   "domain": "major-id",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 322,
+  "count": 331,
   "note": "Major ID。名稱一定對得上；說明會依畫面寬度自動斷行，整段多半對不上，但翻名稱時看得到上下文。由 tools/fetch-majorids.py 從官方 CDN 產生。",
-  "translated": 322
+  "translated": 331
  },
  "entries": {
   "Accretion Chain": {
@@ -21,6 +21,11 @@
   "Altruism": {
    "src": "Altruism",
    "dst": "利他主義",
+   "role": "name"
+  },
+  "Astrobleme": {
+   "src": "Astrobleme",
+   "dst": "隕石坑",
    "role": "name"
   },
   "Aubri's Tears": {
@@ -71,6 +76,11 @@
   "Cannulate": {
    "src": "Cannulate",
    "dst": "放血操術",
+   "role": "name"
+  },
+  "Chain Reaction": {
+   "src": "Chain Reaction",
+   "dst": "連鎖反應",
    "role": "name"
   },
   "Chaos Reach": {
@@ -558,6 +568,11 @@
    "dst": "幻影滑步",
    "role": "name"
   },
+  "Phase Vector": {
+   "src": "Phase Vector",
+   "dst": "相位向量",
+   "role": "name"
+  },
   "Phoenix-Born": {
    "src": "Phoenix-Born",
    "dst": "浴火而生",
@@ -666,6 +681,11 @@
   "Snowy Steps": {
    "src": "Snowy Steps",
    "dst": "雪之足跡",
+   "role": "name"
+  },
+  "Solar Fracture": {
+   "src": "Solar Fracture",
+   "dst": "太陽裂痕",
    "role": "name"
   },
   "Solar Wind": {
@@ -798,6 +818,11 @@
    "dst": "腐蝕",
    "role": "name"
   },
+  "Vivid Dreamscapes": {
+   "src": "Vivid Dreamscapes",
+   "dst": "鮮明夢境",
+   "role": "name"
+  },
   "Wavebreak": {
    "src": "Wavebreak",
    "dst": "破浪",
@@ -867,10 +892,10 @@
    "_raw": "Arrow Bomb's velocity is doubled but loses -66% radius and -20% damage."
   },
   "major-id#0170": {
-   "src": "Arrow Hurricane becomes a condensed stream of {~} arrows, dealing {#}{~}, {#}{~}, and {#}{~} each.",
-   "dst": "Arrow Hurricane 變成 {~1} 發密集箭矢的箭流，每一發造成 {#}{~2}、{#}{~3} 與 {#}{~4}。",
+   "src": "Arrow Hurricane becomes a condensed stream of {~} arrows, dealing {#}{~}, {#}{~}, and {#}{~} each. Feedback loop arrow cap is reduced by {~}",
+   "dst": "Arrow Hurricane 變成 {~1} 發密集箭矢的箭流，每一發造成 {#}{~2}、{#}{~3} 與 {#}{~4}。正向回饋的箭矢上限減少 {~5}。",
    "role": "desc",
-   "_raw": "Arrow Hurricane becomes a condensed stream of 25 arrows, dealing 45%, 6%, and 6% each."
+   "_raw": "Arrow Hurricane becomes a condensed stream of 25 arrows, dealing 45%, 6%, and 6% each. Feedback loop arrow cap is reduced by 90%"
   },
   "major-id#0171": {
    "src": "Arrow Hurricane becomes a consistent, straight stream of arrows with a slower fire rate, dealing greater knockback and triple damage per arrow. Additionally, Arsenal Synergy requires {~} less arrows for each flint arrow.",
@@ -924,10 +949,10 @@
    "role": "desc"
   },
   "major-id#0180": {
-   "src": "Awakened can be activated after saving {~} less mana, but its duration is reduced by {~}.",
-   "dst": "Awakened 的啟動門檻降低 {~1} 魔力，但持續時間縮短 {~2}。",
+   "src": "Mantra will overload Masks {~} faster, but also decay them {~} faster.",
+   "dst": "Mantra 使 Masks 超載的速度加快 {~1}，但衰退的速度也加快 {~2}。",
    "role": "desc",
-   "_raw": "Awakened can be activated after saving 40% less mana, but its duration is reduced by 25%."
+   "_raw": "Mantra will overload Masks 150% faster, but also decay them 100% faster."
   },
   "major-id#0181": {
    "src": "Bakal's Grasp and Enraged Blow have their caps doubled, but Corruption charges {~} as fast.",
@@ -994,10 +1019,10 @@
    "_raw": "Boiling Blood cooldown is reduced by 0.5s and inflicts 40% slowness, but deals no damage."
   },
   "major-id#0192": {
-   "src": "Bomb Arrow gains +{~} range, {#}+{~}, severely increased recoil, and {#}{~} self-damage.",
-   "dst": "Bomb Arrow 的射程增加 +{~1}、傷害提高 {#}+{~2}，但後座力大幅增強，並造成 {#}{~3} 自身傷害。",
+   "src": "Bomb Arrow gains +{~} area, {#}+{~}, severely increased recoil, and {#}{~} self-damage.",
+   "dst": "Bomb Arrow 的範圍增加 +{~1}、傷害提高 {#}+{~2}，但後座力大幅增強，並造成 {#}{~3} 自身傷害。",
    "role": "desc",
-   "_raw": "Bomb Arrow gains +7.5 range, +50%, severely increased recoil, and 25% self-damage."
+   "_raw": "Bomb Arrow gains +7.5 area, +50%, severely increased recoil, and 25% self-damage."
   },
   "Net Shot::desc": {
    "src": "Bryophyte Roots is now triggered from Buckshot, doubling its slowness and damage.",
@@ -1205,10 +1230,10 @@
    "_raw": "Friendly Fire now works on Totem as well. When Totem's timer runs out, it explodes, firing 5 beams in all directions, each dealing 500%."
   },
   "major-id#0229": {
-   "src": "Frog Dance triggers once with increased vertical velocity and knockback, and deals {#}+{~}.",
-   "dst": "Frog Dance 只觸發一次，但垂直衝力與擊退提高，並額外造成 {#}+{~}。",
+   "src": "Frog Dance's bounce triggers instantly, and deals {#}+{~}.",
+   "dst": "Frog Dance 的彈跳會立即觸發，並額外造成 {#}+{~}。",
    "role": "desc",
-   "_raw": "Frog Dance triggers once with increased vertical velocity and knockback, and deals +400%."
+   "_raw": "Frog Dance's bounce triggers instantly, and deals +400%."
   },
   "Battlefield Brilliance::desc": {
    "src": "Generalist instead makes your next Main Attack deal quadruple damage, followed by a tactical retreat.",
@@ -1251,10 +1276,10 @@
    "_raw": "Health Regeneration is increased by 0.75% for every 1% Health missing."
   },
   "major-id#0237": {
-   "src": "Hitting an enemy with Haunting Memory makes it Linked. You can have up to two targets Linked at once. When one Linked enemy takes damage, the other Linked enemy takes that damage as well. Haunted Memory's duration is increased by {~} seconds and its range is increased by {~} blocks.",
-   "dst": "Haunting Memory 命中敵人時會使其進入連結狀態，最多可同時連結兩個目標。其中一個連結目標受到傷害時，另一個也會受到相同傷害。Haunting Memory 的持續時間延長 {~1} 秒，射程增加 {~2} 格。",
+   "src": "Haunting Memory links up to {~} enemies together. While linked, enemies take +{~} damage from Malediction and share this damage with every other linked enemy.",
+   "dst": "Haunting Memory 最多可將 {~1} 個敵人連結在一起。連結期間，敵人受到 Malediction 的傷害提高 +{~2}，並將這份傷害分擔給其他所有連結中的敵人。",
    "role": "desc",
-   "_raw": "Hitting an enemy with Haunting Memory makes it Linked. You can have up to two targets Linked at once. When one Linked enemy takes damage, the other Linked enemy takes that damage as well. Haunted Memory's duration is increased by 5 seconds and its range is increased by 10 blocks."
+   "_raw": "Haunting Memory links up to 8 enemies together. While linked, enemies take +50% damage from Malediction and share this damage with every other linked enemy."
   },
   "Seeking Module::desc": {
    "src": "Homing Shots track towards nearby enemies much more aggressively.",
@@ -1318,10 +1343,10 @@
    "role": "desc"
   },
   "major-id#0249": {
-   "src": "Last Laugh instead casts Meteor. Malicious Mockery causes Meteor to apply {~} Trick stacks.",
-   "dst": "Last Laugh 改為施放 Meteor。Malicious Mockery 使 Meteor 施加 {~} 層 Trick。",
+   "src": "Mirror and Shadow clones will cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply {~} Trick stacks.",
+   "dst": "鏡中幻象與幽影幻象會在 Last Laugh 時施放 Meteor。Malicious Mockery 使 Meteor 施加 {~} 層 Trick。",
    "role": "desc",
-   "_raw": "Last Laugh instead casts Meteor. Malicious Mockery causes Meteor to apply 13 Trick stacks."
+   "_raw": "Mirror and Shadow clones will cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply 13 Trick stacks."
   },
   "Culicidae Creed::desc": {
    "src": "Leap becomes fully vertical, and Spectral Hover lasts twice as long.",
@@ -1340,10 +1365,10 @@
    "_raw": "Lightweaver Orbs gain +1 area of effect, 20%, and 20%, but move slower."
   },
   "major-id#0253": {
-   "src": "Masquerade now grants {~} Mana after switching between Masks {~} times.",
-   "dst": "Masquerade 在切換面具 {~2} 次之後，會提供 {~1} 魔力。",
+   "src": "Mystic Masks grant {~} Mana after switching between Masks {~} times.",
+   "dst": "Mystic Masks 在切換面具 {~2} 次之後，會提供 {~1} 魔力。",
    "role": "desc",
-   "_raw": "Masquerade now grants 75 Mana after switching between Masks 3 times."
+   "_raw": "Mystic Masks grant 25 Mana after switching between Masks 3 times."
   },
   "major-id#0254": {
    "src": "Memory Recollection speeds up Chaos Explosion by {~}s per spell but increases Chaos Explosion's mana bank requirement by {~}.",
@@ -1374,16 +1399,16 @@
    "_raw": "Meteor's speed is increased by 50%."
   },
   "major-id#0259": {
-   "src": "Meteor's {#} damage is replaced by {#} damage. Psychokinesis can bounce up to {~} times, dealing {#}{~} and {#}{~} area damage, as well as {#}{~} and {#}{~} direct hit damage, increasing by {~} after each bounce. Mana Bank gains {~} less mana from Meteor.",
-   "dst": "Meteor 的 {#} 傷害改為 {#} 傷害。Psychokinesis 最多可彈跳 {~1} 次，造成 {#}{~2} 與 {#}{~3} 範圍傷害，以及 {#}{~4} 與 {#}{~5} 直擊傷害，每次彈跳後再提高 {~6}。魔力儲庫從 Meteor 獲得的魔力減少 {~7}。",
+   "src": "Psychokinesis can bounce up to {~} times, dealing {#}{~} and {#}{~} area damage, as well as {#}{~} and {#}{~} direct hit damage, increasing by {~} after each bounce. Mana Bank gains {~} less mana from Meteor.",
+   "dst": "Psychokinesis 最多可彈跳 {~1} 次，造成 {#}{~2} 與 {#}{~3} 範圍傷害，以及 {#}{~4} 與 {#}{~5} 直擊傷害，每次彈跳後再提高 {~6}。魔力儲庫從 Meteor 獲得的魔力減少 {~7}。",
    "role": "desc",
-   "_raw": "Meteor's  damage is replaced by  damage. Psychokinesis can bounce up to 5 times, dealing 100% and 50% area damage, as well as 200% and 100% direct hit damage, increasing by 10% after each bounce. Mana Bank gains 3 less mana from Meteor."
+   "_raw": "Psychokinesis can bounce up to 5 times, dealing 100% and 50% area damage, as well as 200% and 100% direct hit damage, increasing by 10% after each bounce. Mana Bank gains 3 less mana from Meteor."
   },
   "major-id#0260": {
-   "src": "Mutilate adds an additional {~} hits. All hits are reduced by {#}-{~}.",
-   "dst": "Mutilate 額外多出 {~1} 段打擊，但每一段的傷害降低 {#}{~2}。",
+   "src": "Mutilate adds an additional {~} hits. All hits are reduced by {#}-{~} and {#}-{~}, and Finality's damage scaling is halved.",
+   "dst": "Mutilate 額外多出 {~1} 段打擊，但每一段的傷害降低 {#}-{~2} 與 {#}-{~3}，且 Finality 的傷害成長減半。",
    "role": "desc",
-   "_raw": "Mutilate adds an additional 12 hits. All hits are reduced by -10%."
+   "_raw": "Mutilate adds an additional 12 hits. All hits are reduced by -8% and -2%, and Finality's damage scaling is halved."
   },
   "major-id#0261": {
    "src": "Orphion's Pulse restores {~} more max health per pulse, but heals at a slower rate.",
@@ -1495,8 +1520,8 @@
    "_raw": "Reflected damage blinds enemies for 1s and makes them 10% more vulnerable to attacks for 3s."
   },
   "major-id#0280": {
-   "src": "Regeneration increases Totem's damage by {#}{~} {#}{~} instead of restoring health.",
-   "dst": "Regeneration 將會增加 Totem {#}{~1} 與 {#}{~2} 傷害，但無法讓你回血。",
+   "src": "Regeneration increases Totem's damage by {#}+{~} {#}+{~} instead of restoring health.",
+   "dst": "Regeneration 將會增加 Totem {#}+{~1} 與 {#}+{~2} 傷害，但無法讓你回血。",
    "role": "desc",
    "_raw": "Regeneration increases Totem's damage by +14% +6% instead of restoring health."
   },
@@ -1573,10 +1598,10 @@
    "role": "desc"
   },
   "major-id#0294": {
-   "src": "Thunderstorm disables Meteor, grants +{~} thunderbolts, +{~} radius and deals {#}{~} and {#}{~} each. Unstable now activates on Thunderstorm for {~} bonus damage.",
-   "dst": "Thunderstorm 停用 Meteor，改為多出 +{~1} 道雷擊、半徑增加 +{~2}，每道造成 {#}{~3} 與 {#}{~4}。Unstable 改由 Thunderstorm 觸發，提供 {~5} 額外傷害。",
+   "src": "Thunderstorm disables Meteor, grants +{~} mana bank per hit, +{~} thunderbolts, +{~} radius, and deals {#}{~} and {#}{~} each. Unstable now activates on Thunderstorm for {~} bonus damage.",
+   "dst": "Thunderstorm 停用 Meteor，改為每次命中魔力儲庫 +{~1}、多出 +{~2} 道雷擊、半徑增加 +{~3}，每道造成 {#}{~4} 與 {#}{~5}。Unstable 改由 Thunderstorm 觸發，提供 {~6} 額外傷害。",
    "role": "desc",
-   "_raw": "Thunderstorm disables Meteor, grants +3 thunderbolts, +3 radius and deals 100% and 110% each. Unstable now activates on Thunderstorm for 400% bonus damage."
+   "_raw": "Thunderstorm disables Meteor, grants +2 mana bank per hit, +2 thunderbolts, +3 radius, and deals 130% and 150% each. Unstable now activates on Thunderstorm for 300% bonus damage."
   },
   "Furious Effigy::desc": {
    "src": "Totem effects are twice as fast, but duration is halved.",
@@ -1683,8 +1708,8 @@
    "_raw": "While vanished, lose 5% of your max mana per second. Surprise Strike further increases your damage by 3% per mana lost from this effect, up to 70%."
   },
   "Old Spark::desc": {
-   "src": "Whirlwind transforms into a travelling projectile, exploding on contact and knocking enemies into the air. Crouch to rise with them.",
-   "dst": "Whirlwind 變成向前飛行的投射物，接觸時爆炸並把敵人擊飛。蹲下可隨之升空。",
+   "src": "Whirlwind transforms into a travelling projectile, dealing {#}+{~} and knocking enemies into the air. Crouch to rise with them.",
+   "dst": "Whirlwind 變成向前飛行的投射物，造成 {#}+{~} 並把敵人擊飛。蹲下可隨之升空。",
    "role": "desc"
   },
   "major-id#0314": {
@@ -1716,22 +1741,46 @@
    "role": "desc"
   },
   "major-id#0319": {
-   "src": "Your hound gains {~} more movement speed, attack speed and vision. Arrow Bomb's damage is reduced by {#}-{~}.",
-   "dst": "你的獵犬獲得 {~1} 移動速度、攻擊速度與視野，但 Arrow Bomb 的傷害降低 {#}{~2}。",
+   "src": "Call of the Hound gains {~} movement speed, attack speed and vision at the cost of a {#}-{~} damage penalty on Arrow Bomb.",
+   "dst": "Call of the Hound 獲得 {~1} 移動速度、攻擊速度與視野，但 Arrow Bomb 的傷害降低 {#}-{~2}。",
    "role": "desc",
-   "_raw": "Your hound gains 50% more movement speed, attack speed and vision. Arrow Bomb's damage is reduced by -30%."
+   "_raw": "Call of the Hound gains 50% movement speed, attack speed and vision at the cost of a -30% damage penalty on Arrow Bomb."
   },
   "major-id#0320": {
-   "src": "Your maximum Mana Bank is increased by {~}, but your spells now charge it by -{~} less per hit.",
-   "dst": "魔力儲庫的上限提高 {~1}，但技能每次命中的充能量減少 {~2}。",
+   "src": "Your maximum Mana Bank is increased by {~}, and Judrajim Mana cost and damage ramping is increased to {~}.",
+   "dst": "魔力儲庫的上限提高 {~1}，且 Judrajim 的魔力消耗與傷害遞增提高至 {~2}。",
    "role": "desc",
-   "_raw": "Your maximum Mana Bank is increased by 50, but your spells now charge it by -3 less per hit."
+   "_raw": "Your maximum Mana Bank is increased by 50, and Judrajim Mana cost and damage ramping is increased to 30%."
   },
   "major-id#0321": {
    "src": "Your puppets have a lifetime of {~} seconds and deal {~} increased damage with attacks and explosions.",
    "dst": "你的傀儡存在 {~1} 秒，且攻擊與爆炸的傷害提高 {~2}。",
    "role": "desc",
    "_raw": "Your puppets have a lifetime of 3 seconds and deal 50% increased damage with attacks and explosions."
+  },
+  "Astrobleme::desc": {
+   "src": "Final Crush further delays Bash's last hit, but increases its radius by an additional +{~}.",
+   "dst": "Final Crush 會讓 Bash 的最後一擊再延後，但其半徑額外增加 +{~}。",
+   "role": "desc",
+   "_raw": "Final Crush further delays Bash's last hit, but increases its radius by an additional +50%."
+  },
+  "Chain Reaction::desc": {
+   "src": "Basaltic Traps arm faster and detonate immediately after arming, gaining +{~} range.",
+   "dst": "玄武岩地雷布設得更快，布設完成後立即引爆，射程增加 +{~}。",
+   "role": "desc",
+   "_raw": "Basaltic Traps arm faster and detonate immediately after arming, gaining +2 range."
+  },
+  "Phase Vector::desc": {
+   "src": "Shocking Bomb and Arrow Storm become lightning fast with reduced spread.",
+   "dst": "Shocking Bomb 與 Arrow Storm 變得快如閃電，擴散範圍縮小。",
+   "role": "desc",
+   "_raw": "Shocking Bomb and Arrow Storm become lightning fast with reduced spread."
+  },
+  "Solar Fracture::desc": {
+   "src": "Hand of the Shaman gains +{~} beams.",
+   "dst": "Hand of the Shaman 的光束增加 +{~} 道。",
+   "role": "desc",
+   "_raw": "Hand of the Shaman gains +2 beams."
   }
  }
 }

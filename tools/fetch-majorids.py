@@ -83,16 +83,26 @@ def main(argv: list[str]) -> int:
     major = fetch()
     print(f"CDN 上共 {len(major)} 種 Major ID")
 
-    old = {}
+    # 舊譯文<b>照原文文字</b>帶回，不能照鍵：官方改了說明的措辭之後鍵還是同一個，
+    # 照鍵帶回會把舊句子的譯文貼到新句子上。Wavebreak 拿掉了第一句、Fallout 把
+    # range 改成 area，語料的原文卻停在舊版——遊戲裡整段對不上，只剩名稱有翻。
+    # 鍵也靠不住：說明的鍵有一部分被 renumber-corpus 改成 major-id#0192 那種，
+    # 照「名稱::desc」去對會整批落空。
+    old: dict[str, str] = {}
     if OUT.is_file():
         prev = json.loads(OUT.read_text(encoding="utf-8"))
-        old = {k: v.get("dst", "") for k, v in prev.get("entries", {}).items()}
+        for v in prev.get("entries", {}).values():
+            if v.get("src") and v.get("dst"):
+                old.setdefault(v["src"], v["dst"])
+
+    def carried(key: str, src: str) -> str:
+        return old.get(src, "")
 
     entries = {}
     for name, desc in major.items():
-        entries[name] = {"src": name, "dst": old.get(name, ""), "role": "name"}
+        entries[name] = {"src": name, "dst": carried(name, name), "role": "name"}
         key = f"{name}::desc"
-        entries[key] = {"src": desc, "dst": old.get(key, ""), "role": "desc"}
+        entries[key] = {"src": desc, "dst": carried(key, desc), "role": "desc"}
 
     payload = {
         "_meta": {
