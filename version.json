@@ -1,12 +1,42 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.9",
+ "latest": "0.1.9_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.9_1": {
+   "headline": "The quest tracker panel can now be resized",
+   "items": [
+    "The quest tracker panel can be resized in the panel layout screen, like the dialogue and choice panels",
+    "Major ID descriptions now match the current in-game wording",
+    "Dungeon names and dungeon keys are translated",
+    "The Trade Market filter menu is translated",
+    "Japanese: ability trees, menus, store, lootruns, raids, quests, NPC nametags and more"
+   ],
+   "zh_tw": {
+    "headline": "任務追蹤面板可以調整大小",
+    "items": [
+     "面板位置調整畫面裡，任務追蹤跟 NPC 對話、對話選項一樣可以拉右下角改大小",
+     "Major ID 的說明更新成遊戲裡目前的寫法",
+     "地城名稱與地城鑰匙改為翻譯",
+     "交易市場的篩選選單已翻譯",
+     "日文：技能樹、選單、商店、Lootrun、討伐戰、任務、NPC 名牌等"
+    ]
+   },
+   "zh_cn": {
+    "headline": "任务追踪面板可以调整大小",
+    "items": [
+     "面板位置调整画面里，任务追踪跟 NPC 对话、对话选项一样可以拉右下角改大小",
+     "Major ID 的描述更新为游戏里目前的写法",
+     "地牢名称与地牢钥匙改为翻译",
+     "交易市场的筛选菜单已翻译",
+     "日文：技能树、菜单、商店、Lootrun、副本、任务、NPC 名牌等"
+    ]
+   }
+  },
   "0.1.9": {
    "headline": "Simplified Chinese no longer mixes in Traditional Chinese",
    "items": [
