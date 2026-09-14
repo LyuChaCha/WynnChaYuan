@@ -4,14 +4,14 @@
   "itemNames": false,
   "lang": "ja_jp",
   "count": 278,
-  "translated": 0,
+  "translated": 276,
   "note": "戰士的技能樹。照遊戲裡的版面排序（頁 → 列 → 欄），也就是由上而下、由左而右。 技能名稱刻意保留英文（keep: en），見 GLOSSARY.md。",
   "legend": "ability = 這一條屬於哪個技能(共用的會列出全部)；code = 遊戲版面上的位置，P 頁 R 列 C 欄。排序即遊戲裡由上而下、由左而右。"
  },
  "entries": {
   "ability-warrior#0239": {
    "src": "Activate abilities or take damage to charge\nyour Ultimate Meter {#}{#}to {~}",
-   "dst": "",
+   "dst": "アビリティを使うかダメージを受けて\nアルティメットゲージ {#}{#}を {~} までチャージする",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -28,7 +28,7 @@
   },
   "ability-warrior#0235": {
    "src": "All nearby allies are granted +{~}{#}Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
-   "dst": "",
+   "dst": "消費した Holy Power ✧ 1ポイントごとに、\n近くの味方全員が +{~}{#}Overhealth ❤ を得る。\nOverhealth ❤ は {~}秒かけて減っていく。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -42,7 +42,7 @@
   },
   "ability-warrior#0233": {
    "src": "Casting Main Attack or Uppercut{#}on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "",
+   "dst": "トゲに Main Attack か Uppercut{#}を当てると\n起爆してダメージを与え、Corrupted 中でも\n{~} の Overhealth ❤ を得る。\n追加体力は {~}秒かけて減っていく。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -56,7 +56,7 @@
   },
   "ability-warrior#0234": {
    "src": "Casting War Scream while holding shift\nwith at least {~}{#}Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
-   "dst": "",
+   "dst": "Holy Power ✧ が {~}{#}以上あるとき\nShift を押しながら War Scream を使うと、\nすべて消費して守護のラッパを吹き鳴らす。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -70,7 +70,7 @@
   },
   "ability-warrior#0243": {
    "src": "Gain +{~} Damage per {~}{#}Harmony.",
-   "dst": "",
+   "dst": "Harmony {~2}{#}ごとにダメージ +{~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -84,7 +84,7 @@
   },
   "ability-warrior#0241": {
    "src": "Gain +{~} Raw Damage per {~}{#}Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "Corrupted {#} {~2}{#}ごとに固定ダメージ +{~1}。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -98,7 +98,7 @@
   },
   "ability-warrior#0242": {
    "src": "Gain +{~} damage per {~}{#}Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "Corrupted {#} {~2}{#}ごとにダメージ +{~1}。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -112,7 +112,7 @@
   },
   "ability-warrior#0238": {
    "src": "Gaining {~}{#}Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
-   "dst": "",
+   "dst": "Corrupted {#} を {~}{#}得ると、\n次の Uppercut でダメージが強化される。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -126,7 +126,7 @@
   },
   "ability-warrior#0240": {
    "src": "Increase Bash's damage by {~}\nper {~} {#}{#}Area of Effect it has.",
-   "dst": "",
+   "dst": "Bash の {#}{#}効果範囲 {~2} ごとに\nダメージが {~1} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -140,7 +140,7 @@
   },
   "ability-warrior#0236": {
    "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~}{#}Corrupted {#}.",
-   "dst": "",
+   "dst": "Corrupted {#} 中は回復できなくなり、\n体力を {~} 失うごとに\nCorrupted {#} +{~}{#}を得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -154,7 +154,7 @@
   },
   "ability-warrior#0237": {
    "src": "While you have {~}{#}Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "",
+   "dst": "Holy Power ✧ が {~}{#}あるとき、\nMain Attack が強化され、\nHoly Power を {~} 得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -168,7 +168,7 @@
   },
   "ability-warrior#0268": {
    "src": "{#}{#}Area of Effect: Circle-Shaped",
-   "dst": "",
+   "dst": "{#}{#}効果範囲: 円形",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -182,7 +182,7 @@
   },
   "ability-warrior#0270": {
    "src": "{#}{#}Area of Effect: {~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}効果範囲: {~} ブロック",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -199,7 +199,7 @@
   },
   "ability-warrior#0246": {
    "src": "{#}{#}Area of Effect: {~}-{~} Blocks (Cone-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}効果範囲: {~}-{~} ブロック (扇形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -214,7 +214,7 @@
   },
   "ability-warrior#0277": {
    "src": "{#}{#}Cooldown: {~}m",
-   "dst": "",
+   "dst": "{#}{#}クールダウン: {~}分",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -228,7 +228,7 @@
   },
   "ability-warrior#0266": {
    "src": "{#}{#}Cooldown: {~}s (for Holy Power)",
-   "dst": "",
+   "dst": "{#}{#}クールダウン: {~}秒 (Holy Power)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -242,7 +242,7 @@
   },
   "ability-warrior#0271": {
    "src": "{#}{#}Cooldown: {~}s (for hits)",
-   "dst": "",
+   "dst": "{#}{#}クールダウン: {~}秒 (命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -256,7 +256,7 @@
   },
   "ability-warrior#0272": {
    "src": "{#}{#}Damage Bonus: +{~} (Raw)",
-   "dst": "",
+   "dst": "{#}{#}ダメージボーナス: +{~} (固定値)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -270,7 +270,7 @@
   },
   "ability-warrior#0258": {
    "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Players",
-   "dst": "",
+   "dst": "{#}{#}効果: プレイヤーにダメージボーナス +{~} (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -284,7 +284,7 @@
   },
   "ability-warrior#0263": {
    "src": "{#}{#}Effect: +{~} Damage Bonus (⚔) to Self",
-   "dst": "",
+   "dst": "{#}{#}効果: 自分にダメージボーナス +{~} (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -299,7 +299,7 @@
   },
   "ability-warrior#0248": {
    "src": "{#}{#}Effect: +{~} ID Effectiveness (❈) to Allies",
-   "dst": "",
+   "dst": "{#}{#}効果: 味方に ID 効果 +{~} (❈)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -314,7 +314,7 @@
   },
   "ability-warrior#0249": {
    "src": "{#}{#}Effect: +{~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#}{#}効果: 味方に耐性ボーナス +{~} (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -328,7 +328,7 @@
   },
   "ability-warrior#0264": {
    "src": "{#}{#}Effect: Invincibility (☗) to Allies",
-   "dst": "",
+   "dst": "{#}{#}効果: 味方に無敵 (☗)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -342,7 +342,7 @@
   },
   "ability-warrior#0251": {
    "src": "{#}{#}Effect: {~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#}{#}効果: 味方に耐性ボーナス {~} (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -356,7 +356,7 @@
   },
   "ability-warrior#0259": {
    "src": "{#}{#}Effects: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#}{#}効果: 味方にダメージボーナス +{~} (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -370,7 +370,7 @@
   },
   "ability-warrior#0267": {
    "src": "{#}{#}Main Attack Damage Bonus: +{~}",
-   "dst": "",
+   "dst": "{#}{#}通常攻撃ダメージボーナス: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -384,7 +384,7 @@
   },
   "ability-warrior#0273": {
    "src": "{#}{#}Main Attack Range: +{~}",
-   "dst": "",
+   "dst": "{#}{#}通常攻撃の射程: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -398,7 +398,7 @@
   },
   "ability-warrior#0269": {
    "src": "{#}{#}Main Attack Range: +{~} Block",
-   "dst": "",
+   "dst": "{#}{#}通常攻撃の射程: +{~} ブロック",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -412,7 +412,7 @@
   },
   "ability-warrior#0275": {
    "src": "{#}{#}Range: +{~} Block",
-   "dst": "",
+   "dst": "{#}{#}射程: +{~} ブロック",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -427,7 +427,7 @@
   },
   "ability-warrior#0265": {
    "src": "{#}{#}Range: {~} Blocks (Circle-Shaped)",
-   "dst": "",
+   "dst": "{#}{#}射程: {~} ブロック (円形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -443,7 +443,7 @@
   },
   "ability-warrior#0274": {
    "src": "{#}{#}Range: {~}~{~} Blocks",
-   "dst": "",
+   "dst": "{#}{#}射程: {~}~{~} ブロック",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -457,7 +457,7 @@
   },
   "ability-warrior#0252": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, per bash)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (DPSに対して、バッシュごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -472,7 +472,7 @@
   },
   "ability-warrior#0253": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, to Comet)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (DPSに対して、Comet に)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -486,7 +486,7 @@
   },
   "ability-warrior#0245": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, to Fireworks)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (DPSに対して、Fireworks に)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -500,7 +500,7 @@
   },
   "ability-warrior#0247": {
    "src": "{#}{#}Total Damage: +{~} (of your DPS, to Tempest)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: +{~} (DPSに対して、Tempest に)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -514,7 +514,7 @@
   },
   "ability-warrior#0254": {
    "src": "{#}{#}Total Damage: -{~} (of your DPS, per bash)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: -{~} (DPSに対して、バッシュごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -529,7 +529,7 @@
   },
   "ability-warrior#0276": {
    "src": "{#}{#}Total Damage: {~}",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -543,7 +543,7 @@
   },
   "ability-warrior#0256": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, airborne)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、空中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -557,7 +557,7 @@
   },
   "ability-warrior#0257": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, detonate)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、起爆)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -571,7 +571,7 @@
   },
   "ability-warrior#0260": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, landing)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、着地)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -585,7 +585,7 @@
   },
   "ability-warrior#0255": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per Swipe)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、薙ぎ払いごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -599,7 +599,7 @@
   },
   "ability-warrior#0244": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per broken mantle)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、壊れたマントごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -613,7 +613,7 @@
   },
   "ability-warrior#0250": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, per ripple)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、波紋ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -627,7 +627,7 @@
   },
   "ability-warrior#0262": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, spell)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、呪文)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -641,7 +641,7 @@
   },
   "ability-warrior#0261": {
    "src": "{#}{#}Total Damage: {~} (of your DPS, summon)",
-   "dst": "",
+   "dst": "{#}{#}総ダメージ: {~} (DPSに対して、召喚)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -655,7 +655,7 @@
   },
   "ability-warrior#0000": {
    "src": "Bash",
-   "dst": "",
+   "dst": "バッシュ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -667,7 +667,7 @@
   },
   "ability-warrior#0001": {
    "src": "Violently bash the ground, dealing\nhigh damage in a large area.",
-   "dst": "",
+   "dst": "地面を激しく打ちつけ、\n広い範囲に大ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -682,7 +682,7 @@
   },
   "ability-warrior#0002": {
    "src": "Cheaper Bash",
-   "dst": "",
+   "dst": "節約バッシュ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -694,7 +694,7 @@
   },
   "ability-warrior#0003": {
    "src": "Reduce the Mana cost of Bash.",
-   "dst": "",
+   "dst": "Bash のマナコストが下がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -710,7 +710,7 @@
   },
   "ability-warrior#0004": {
    "src": "Spear Proficiency I",
-   "dst": "",
+   "dst": "槍の習熟 I",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -722,7 +722,7 @@
   },
   "ability-warrior#0005": {
    "src": "Improve your Main Attack's damage\nand range when using a spear.",
-   "dst": "",
+   "dst": "槍を使っているとき、\n通常攻撃のダメージと射程が上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -738,7 +738,7 @@
   },
   "ability-warrior#0006": {
    "src": "{#} Main Attack Range: +{~} Block",
-   "dst": "",
+   "dst": "{#} 通常攻撃の射程: +{~} ブロック",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -751,7 +751,7 @@
   },
   "ability-warrior#0007": {
    "src": "Double Bash",
-   "dst": "",
+   "dst": "ダブルバッシュ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -763,7 +763,7 @@
   },
   "ability-warrior#0008": {
    "src": "Bash will hit a second\ntime at a farther range.",
-   "dst": "",
+   "dst": "Bash が、より遠い位置に\nもう一度攻撃する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -778,7 +778,7 @@
   },
   "ability-warrior#0009": {
    "src": "{#} Total Damage: -{~} (of your DPS, per bash)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: -{~} (DPSに対して、バッシュごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -792,7 +792,7 @@
   },
   "ability-warrior#0010": {
    "src": "Vehement",
-   "dst": "",
+   "dst": "猛烈",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -804,7 +804,7 @@
   },
   "ability-warrior#0011": {
    "src": "For every {~} or {~} Raw Main\nAttack Damage you have from items,\ngain +{~} Walk Speed. (Max {~})",
-   "dst": "",
+   "dst": "アイテムの通常攻撃ダメージ {~} または\n固定値 {~} ごとに\n移動速度 +{~}。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -819,7 +819,7 @@
   },
   "ability-warrior#0012": {
    "src": "{#} Damage Bonus: +{~} (Raw)",
-   "dst": "",
+   "dst": "{#} ダメージボーナス: +{~} (固定値)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -832,7 +832,7 @@
   },
   "ability-warrior#0013": {
    "src": "Charge",
-   "dst": "",
+   "dst": "チャージ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -844,7 +844,7 @@
   },
   "ability-warrior#0014": {
    "src": "Charge forward at a high speed.\n(Hold shift while charging to cancel)",
-   "dst": "",
+   "dst": "高速で前方へ突進する。\n(突進中に Shift を押すとキャンセル)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -859,7 +859,7 @@
   },
   "ability-warrior#0015": {
    "src": "Tougher Skin",
-   "dst": "",
+   "dst": "強靭な皮膚",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -871,7 +871,7 @@
   },
   "ability-warrior#0016": {
    "src": "For every {~} or {~} Raw Health Regen you have\nfrom items, gain +{~} Health. (Max {~})",
-   "dst": "",
+   "dst": "アイテムの体力回復 {~} または固定値 {~} ごとに\n体力 +{~}。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -886,7 +886,7 @@
   },
   "ability-warrior#0017": {
    "src": "Harden your skin and gain\n+{~} Base Resistance.",
-   "dst": "",
+   "dst": "皮膚を硬くして\n基本耐性 +{~} を得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -901,7 +901,7 @@
   },
   "ability-warrior#0018": {
    "src": "Uppercut",
-   "dst": "",
+   "dst": "アッパーカット",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -913,7 +913,7 @@
   },
   "ability-warrior#0019": {
    "src": "Hurls enemies upwards and\ndeals massive damage.",
-   "dst": "",
+   "dst": "敵を上空へ打ち上げ、\n大ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -928,7 +928,7 @@
   },
   "ability-warrior#0020": {
    "src": "{#} Area of Effect: {~}-{~} Blocks (Cone-Shaped)",
-   "dst": "",
+   "dst": "{#} 効果範囲: {~}-{~} ブロック (扇形)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -942,7 +942,7 @@
   },
   "ability-warrior#0021": {
    "src": "Cheaper Charge",
-   "dst": "",
+   "dst": "節約チャージ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -954,7 +954,7 @@
   },
   "ability-warrior#0022": {
    "src": "Reduce the Mana cost of Charge.",
-   "dst": "",
+   "dst": "Charge のマナコストが下がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -969,7 +969,7 @@
   },
   "ability-warrior#0023": {
    "src": "War Scream",
-   "dst": "",
+   "dst": "ウォークライ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -981,7 +981,7 @@
   },
   "ability-warrior#0024": {
    "src": "Emits a roar that deals damage, pulls\nnearby enemies and gives you and\nnearby players resistance.",
-   "dst": "",
+   "dst": "咆哮を上げてダメージを与え、近くの敵を\n引き寄せ、自分と近くのプレイヤーに\n耐性を与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -996,7 +996,7 @@
   },
   "ability-warrior#0025": {
    "src": "{#} Effect: {~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#} 効果: 味方に耐性ボーナス {~} (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1009,7 +1009,7 @@
   },
   "ability-warrior#0026": {
    "src": "Flyby Slam",
-   "dst": "",
+   "dst": "フライバイスラム",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1021,7 +1021,7 @@
   },
   "ability-warrior#0027": {
    "src": "After using Charge, violently crash\ndown unto the ground and deal damage.",
-   "dst": "",
+   "dst": "Charge の後、地面に激しく\n叩きつけてダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1036,7 +1036,7 @@
   },
   "ability-warrior#0028": {
    "src": "Charge damages enemies in your way.",
-   "dst": "",
+   "dst": "Charge が進路上の敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1051,7 +1051,7 @@
   },
   "ability-warrior#0029": {
    "src": "{#} Area of Effect: {~} Blocks",
-   "dst": "",
+   "dst": "{#} 効果範囲: {~} ブロック",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1067,7 +1067,7 @@
   },
   "ability-warrior#0030": {
    "src": "{#} Total Damage: {~} (of your DPS, airborne)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、空中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1080,7 +1080,7 @@
   },
   "ability-warrior#0031": {
    "src": "{#} Total Damage: {~} (of your DPS, landing)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、着地)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1093,7 +1093,7 @@
   },
   "ability-warrior#0032": {
    "src": "Final Crush",
-   "dst": "",
+   "dst": "ファイナルクラッシュ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1105,7 +1105,7 @@
   },
   "ability-warrior#0033": {
    "src": "Bash's last hit is delayed, but deals\n+{~} damage and has +{~} radius.",
-   "dst": "",
+   "dst": "Bash の最後の一撃が遅れるが、\nダメージ +{~}、半径 +{~}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1120,7 +1120,7 @@
   },
   "ability-warrior#0034": {
    "src": "Fireworks",
-   "dst": "",
+   "dst": "花火",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1132,7 +1132,7 @@
   },
   "ability-warrior#0035": {
    "src": "Mobs hit by Uppercut will explode\nmid-air and receive additional damage.",
-   "dst": "",
+   "dst": "Uppercut を受けたモブが空中で爆発し、\n追加ダメージを受ける。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1147,7 +1147,7 @@
   },
   "ability-warrior#0036": {
    "src": "Quadruple Bash",
-   "dst": "",
+   "dst": "クアドラプルバッシュ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1159,7 +1159,7 @@
   },
   "ability-warrior#0037": {
    "src": "Bash will cast {~} times consecutively\nat double the speed.",
-   "dst": "",
+   "dst": "Bash が2倍の速さで\n{~} 回連続で発動する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1174,7 +1174,7 @@
   },
   "ability-warrior#0038": {
    "src": "Flaming Uppercut",
-   "dst": "",
+   "dst": "フレイミングアッパーカット",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1186,7 +1186,7 @@
   },
   "ability-warrior#0039": {
    "src": "Uppercut will light mobs on fire,\ndealing damage every {~} seconds.",
-   "dst": "",
+   "dst": "Uppercut がモブを燃やし、\n{~}秒ごとにダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1201,7 +1201,7 @@
   },
   "ability-warrior#0040": {
    "src": "Half-Moon Swipe",
-   "dst": "",
+   "dst": "半月斬り",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1213,7 +1213,7 @@
   },
   "ability-warrior#0041": {
    "src": "Uppercut will deal a footsweep\nattack at a longer and wider angle.",
-   "dst": "",
+   "dst": "Uppercut が、より長く広い角度で\n足払い攻撃を行う。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1228,7 +1228,7 @@
   },
   "ability-warrior#0042": {
    "src": "Iron Lungs",
-   "dst": "",
+   "dst": "鉄の肺",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1240,7 +1240,7 @@
   },
   "ability-warrior#0043": {
    "src": "War Scream will deal more damage.",
-   "dst": "",
+   "dst": "War Scream のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1255,7 +1255,7 @@
   },
   "ability-warrior#0044": {
    "src": "Generalist",
-   "dst": "",
+   "dst": "ジェネラリスト",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1267,7 +1267,7 @@
   },
   "ability-warrior#0045": {
    "src": "After casting {~} different spells\nin a row, your next spell will cost {~} Mana.",
-   "dst": "",
+   "dst": "異なる呪文を {~} 回続けて使うと、\n次の呪文のマナコストが {~} になる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1282,7 +1282,7 @@
   },
   "ability-warrior#0046": {
    "src": "Air Shout",
-   "dst": "",
+   "dst": "エアシャウト",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1294,7 +1294,7 @@
   },
   "ability-warrior#0047": {
    "src": "War Scream will fire a projectile that can\ngo through walls and deal damage up to {~} times.",
-   "dst": "",
+   "dst": "War Scream が壁を貫通する飛び道具を放ち、\n最大 {~} 回ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1309,7 +1309,7 @@
   },
   "ability-warrior#0048": {
    "src": "{#} Total Damage: {~}",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~}",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -1322,7 +1322,7 @@
   },
   "ability-warrior#0049": {
    "src": "Mantle of the Bovemists",
-   "dst": "",
+   "dst": "ボヴェミストのマント",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1334,7 +1334,7 @@
   },
   "ability-warrior#0050": {
    "src": "When casting War Scream, create a holy\nshield around you that reduces all\nincoming damage by -{~} for {~} hits.",
-   "dst": "",
+   "dst": "War Scream を使うと、周囲に聖なる\n盾を作り、{~2} 回の被弾の間\n受けるダメージを -{~1} 軽減する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1349,7 +1349,7 @@
   },
   "ability-warrior#0051": {
    "src": "Bak'al's Grasp",
-   "dst": "",
+   "dst": "Bak'al の掌握",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1361,7 +1361,7 @@
   },
   "ability-warrior#0052": {
    "src": "Casting War Scream will make you Corrupted {#},\nbut no longer grants resistance.\n(Shift + War Scream to cancel)",
-   "dst": "",
+   "dst": "War Scream を使うと Corrupted {#} になるが、\n耐性は得られなくなる。\n(Shift + War Scream でキャンセル)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1376,7 +1376,7 @@
   },
   "ability-warrior#0053": {
    "src": "Gain +{~} Raw Damage per {~} Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "Corrupted {#} {~2} ごとに固定ダメージ +{~1}。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1391,7 +1391,7 @@
   },
   "ability-warrior#0054": {
    "src": "While Corrupted {#}, you lose the ability\nto heal, and every {~} health you lose will\ngrant you +{~} Corrupted {#}.",
-   "dst": "",
+   "dst": "Corrupted {#} 中は回復できなくなり、\n体力を {~} 失うごとに\nCorrupted {#} +{~} を得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1406,7 +1406,7 @@
   },
   "ability-warrior#0055": {
    "src": "Spear Proficiency II",
-   "dst": "",
+   "dst": "槍の習熟 II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1418,7 +1418,7 @@
   },
   "ability-warrior#0056": {
    "src": "Cheaper Uppercut",
-   "dst": "",
+   "dst": "節約アッパーカット",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1430,7 +1430,7 @@
   },
   "ability-warrior#0057": {
    "src": "Reduce the Mana cost of Uppercut.",
-   "dst": "",
+   "dst": "Uppercut のマナコストが下がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1446,7 +1446,7 @@
   },
   "ability-warrior#0058": {
    "src": "Aerodynamics",
-   "dst": "",
+   "dst": "エアロダイナミクス",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1458,7 +1458,7 @@
   },
   "ability-warrior#0059": {
    "src": "During Charge, you can\nsteer and change direction.",
-   "dst": "",
+   "dst": "Charge 中に\n向きを変えて操れる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1473,7 +1473,7 @@
   },
   "ability-warrior#0060": {
    "src": "Manachism",
-   "dst": "",
+   "dst": "マナキズム",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1485,7 +1485,7 @@
   },
   "ability-warrior#0061": {
    "src": "If you receive a hit that's less than\n{~} of your max health, gain {~} Mana.",
-   "dst": "",
+   "dst": "最大体力の {~} 未満の攻撃を受けると、\nマナを {~} 得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1500,7 +1500,7 @@
   },
   "ability-warrior#0062": {
    "src": "Intoxicating Blood",
-   "dst": "",
+   "dst": "酩酊の血",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1512,7 +1512,7 @@
   },
   "ability-warrior#0063": {
    "src": "After leaving Corrupted {#}, gain {~} of\nmissing health back for each hit dealt and\nenemy killed while Corrupted {#}.",
-   "dst": "",
+   "dst": "Corrupted {#} を抜けると、Corrupted {#} 中に\n与えた攻撃と倒した敵ごとに\n失った体力の {~} を取り戻す。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1527,7 +1527,7 @@
   },
   "ability-warrior#0064": {
    "src": "{#} Cooldown: {~}s (for hits)",
-   "dst": "",
+   "dst": "{#} クールダウン: {~}秒 (命中)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1540,7 +1540,7 @@
   },
   "ability-warrior#0065": {
    "src": "Counter",
-   "dst": "",
+   "dst": "カウンター",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1552,7 +1552,7 @@
   },
   "ability-warrior#0066": {
    "src": "You take {~} reduced damage and\nattack back when hit by an enemy attack.",
-   "dst": "",
+   "dst": "受けるダメージが {~} 減り、\n敵の攻撃を受けると反撃する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1567,7 +1567,7 @@
   },
   "ability-warrior#0067": {
    "src": "Shield Strike",
-   "dst": "",
+   "dst": "シールドストライク",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1579,7 +1579,7 @@
   },
   "ability-warrior#0068": {
    "src": "Hitting an enemy with Bash sends all broken\nmantles at them, dealing damage to nearby enemies.",
-   "dst": "",
+   "dst": "Bash で敵を攻撃すると、壊れたマントを\nすべて飛ばし、近くの敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1594,7 +1594,7 @@
   },
   "ability-warrior#0069": {
    "src": "You gain a broken mantle whenever\nMantle of the Bovemists loses a charge.",
-   "dst": "",
+   "dst": "Mantle of the Bovemists のチャージが減るたびに\n壊れたマントを得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1609,7 +1609,7 @@
   },
   "ability-warrior#0070": {
    "src": "{#} Total Damage: {~} (of your DPS, per broken mantle)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、壊れたマントごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1622,7 +1622,7 @@
   },
   "ability-warrior#0071": {
    "src": "Blood Pact",
-   "dst": "",
+   "dst": "血の契約",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1634,7 +1634,7 @@
   },
   "ability-warrior#0072": {
    "src": "A spell cast using health will\ndeal +{~} to +{~} bonus damage, depending\non how much of its cost is paid in blood.",
-   "dst": "",
+   "dst": "体力を使って唱えた呪文は、コストのうち\n血で支払った割合に応じて\n+{~}～+{~} の追加ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1649,7 +1649,7 @@
   },
   "ability-warrior#0073": {
    "src": "If you do not have enough mana to\ncast a spell, spend health instead.\n({~} health per mana)",
-   "dst": "",
+   "dst": "呪文を唱えるマナが足りないとき、\n代わりに体力を消費する。\n(マナ1につき体力 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1664,7 +1664,7 @@
   },
   "ability-warrior#0074": {
    "src": "Flying Kick",
-   "dst": "",
+   "dst": "フライングキック",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1676,7 +1676,7 @@
   },
   "ability-warrior#0075": {
    "src": "Hitting mobs with Charge will halt your\nmomentum and knock them away.",
-   "dst": "",
+   "dst": "Charge でモブに当たると勢いが止まり、\nモブを吹き飛ばす。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1691,7 +1691,7 @@
   },
   "ability-warrior#0076": {
    "src": "Crushing Blow",
-   "dst": "",
+   "dst": "粉砕の一撃",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1703,7 +1703,7 @@
   },
   "ability-warrior#0077": {
    "src": "Increase the damage of Bash.",
-   "dst": "",
+   "dst": "Bash のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1718,7 +1718,7 @@
   },
   "ability-warrior#0078": {
    "src": "{#} Total Damage: +{~} (of your DPS, per bash)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (DPSに対して、バッシュごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -1732,7 +1732,7 @@
   },
   "ability-warrior#0079": {
    "src": "Rejuvenating Skin",
-   "dst": "",
+   "dst": "再生の皮膚",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1744,7 +1744,7 @@
   },
   "ability-warrior#0080": {
    "src": "For any damage you take,\nregenerate {~} of the\ndamage over the next {~}s.",
-   "dst": "",
+   "dst": "ダメージを受けると、\nその {~} を\n{~}秒かけて回復する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1759,7 +1759,7 @@
   },
   "ability-warrior#0081": {
    "src": "Enraged Blow",
-   "dst": "",
+   "dst": "激昂の一撃",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1771,7 +1771,7 @@
   },
   "ability-warrior#0082": {
    "src": "Gain +{~} damage per {~} Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "Corrupted {#} {~2} ごとにダメージ +{~1}。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1786,7 +1786,7 @@
   },
   "ability-warrior#0083": {
    "src": "Sparkling Hope",
-   "dst": "",
+   "dst": "きらめく希望",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1798,7 +1798,7 @@
   },
   "ability-warrior#0084": {
    "src": "Deals damage to all nearby enemies every\ntime you heal {~} of your max health.\n(Max {~} activations at once)",
-   "dst": "",
+   "dst": "最大体力の {~} を回復するたびに、\n近くのすべての敵にダメージを与える。\n(一度に最大 {~} 回発動)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1813,7 +1813,7 @@
   },
   "ability-warrior#0085": {
    "src": "Exhilarate",
-   "dst": "",
+   "dst": "高揚",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1825,7 +1825,7 @@
   },
   "ability-warrior#0086": {
    "src": "After leaving Corrupted {#}, restore {~}\nof your Corrupted {#} bar as max health.",
-   "dst": "",
+   "dst": "Corrupted {#} を抜けると、Corrupted {#} ゲージの\n{~} を最大体力として回復する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1840,7 +1840,7 @@
   },
   "ability-warrior#0087": {
    "src": "Comet",
-   "dst": "",
+   "dst": "コメット",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1852,7 +1852,7 @@
   },
   "ability-warrior#0088": {
    "src": "After being hit by Fireworks, enemies will crash\nunto the ground and receive more damage.",
-   "dst": "",
+   "dst": "Fireworks を受けた敵が地面に叩きつけられ、\nさらにダメージを受ける。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1867,7 +1867,7 @@
   },
   "ability-warrior#0089": {
    "src": "Spirit of the Rabbit",
-   "dst": "",
+   "dst": "兎の精神",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1879,7 +1879,7 @@
   },
   "ability-warrior#0090": {
    "src": "Reduce the Mana cost of Charge\nand increase your Walk Speed by +{~}.",
-   "dst": "",
+   "dst": "Charge のマナコストが下がり、\n移動速度が +{~} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1894,7 +1894,7 @@
   },
   "ability-warrior#0091": {
    "src": "Cleansing Breeze",
-   "dst": "",
+   "dst": "浄化の風",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1906,7 +1906,7 @@
   },
   "ability-warrior#0092": {
    "src": "Charge will cleanse you of all\nnegative effects and fire, as well\nas any allies you pass through.",
-   "dst": "",
+   "dst": "Charge で自分と通り抜けた味方の\n悪い効果と炎を\nすべて浄化する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1921,7 +1921,7 @@
   },
   "ability-warrior#0093": {
    "src": "Cheaper Bash II",
-   "dst": "",
+   "dst": "節約バッシュ II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1933,7 +1933,7 @@
   },
   "ability-warrior#0094": {
    "src": "Boiling Blood",
-   "dst": "",
+   "dst": "沸き立つ血",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1945,7 +1945,7 @@
   },
   "ability-warrior#0095": {
    "src": "Bash will leave a puddle of boiling blood\nafter its last explosion, slowing down and\ndamaging enemies in it every {~} seconds.",
-   "dst": "",
+   "dst": "Bash の最後の爆発の後に沸き立つ血だまりが残り、\n{~}秒ごとに中の敵を減速させ\nダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1960,7 +1960,7 @@
   },
   "ability-warrior#0096": {
    "src": "Collide",
-   "dst": "",
+   "dst": "激突",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1972,7 +1972,7 @@
   },
   "ability-warrior#0097": {
    "src": "Enemies thrown into walls from Flying Kick\nwill explode and receive additional damage.",
-   "dst": "",
+   "dst": "Flying Kick で壁に叩きつけられた敵が\n爆発し、追加ダメージを受ける。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -1987,7 +1987,7 @@
   },
   "ability-warrior#0098": {
    "src": "Sacred Surge",
-   "dst": "",
+   "dst": "聖なる奔流",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -1999,7 +1999,7 @@
   },
   "ability-warrior#0099": {
    "src": "Gain the ability to unleash a Sacred Surge ✧.\nWhenever any of your spells or abilities are\ntriggered, increase your Holy Power ✧ by {~}.",
-   "dst": "",
+   "dst": "Sacred Surge ✧ を放てるようになる。\n呪文やアビリティが発動するたびに\nHoly Power ✧ が {~} 増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2014,7 +2014,7 @@
   },
   "ability-warrior#0100": {
    "src": "Uppercut will spend {~} Holy Power ✧\nto smite hit enemies with holy energy,\ndealing extra damage.",
-   "dst": "",
+   "dst": "Uppercut が Holy Power ✧ を {~} 消費し、\n命中した敵を聖なる力で打ち据えて\n追加ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2029,7 +2029,7 @@
   },
   "ability-warrior#0101": {
    "src": "Massacre",
-   "dst": "",
+   "dst": "殺戮",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2041,7 +2041,7 @@
   },
   "ability-warrior#0102": {
    "src": "While Corrupted {#}, hitting an\nenemy with your Main Attack\nwill add +{~} Corruption {#},\nper second.\n(Powder Specials always add +{~})",
-   "dst": "",
+   "dst": "Corrupted {#} 中に通常攻撃を\n敵に当てると、\n毎秒 Corruption {#} +{~}。\n\n(Powder Specials は常に +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2056,7 +2056,7 @@
   },
   "ability-warrior#0103": {
    "src": "Emboldening Cry",
-   "dst": "",
+   "dst": "鼓舞の叫び",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2068,7 +2068,7 @@
   },
   "ability-warrior#0104": {
    "src": "War Scream bolsters courage,\ngranting players a damage bonus\nand additional resistance.",
-   "dst": "",
+   "dst": "War Scream が勇気を奮い立たせ、\nプレイヤーにダメージボーナスと\n追加の耐性を与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2083,7 +2083,7 @@
   },
   "ability-warrior#0105": {
    "src": "{#} Effect: +{~} Resistance Bonus (❁) to Allies",
-   "dst": "",
+   "dst": "{#} 効果: 味方に耐性ボーナス +{~} (❁)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2096,7 +2096,7 @@
   },
   "ability-warrior#0106": {
    "src": "Uncontainable Corruption",
-   "dst": "",
+   "dst": "抑えきれぬ腐敗",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2108,7 +2108,7 @@
   },
   "ability-warrior#0107": {
    "src": "Reduces the cooldown of Bak'al's Grasp\nby -{~}s, and increases the raw damage\ngained for every {~} of health lost by +{~}.",
-   "dst": "",
+   "dst": "Bak'al's Grasp のクールダウンが -{~}秒短くなり、\n失った体力 {~} ごとに得る\n固定ダメージが +{~} 増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2123,7 +2123,7 @@
   },
   "ability-warrior#0108": {
    "src": "Tempest",
-   "dst": "",
+   "dst": "テンペスト",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2135,7 +2135,7 @@
   },
   "ability-warrior#0109": {
    "src": "War Scream will ripple the ground and\ndeal damage to enemies {~} times\nover a large area every {~}s.",
-   "dst": "",
+   "dst": "War Scream が地面に波紋を起こし、\n{~2}秒ごとに広い範囲の敵に\n合計 {~1} 回ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2150,7 +2150,7 @@
   },
   "ability-warrior#0110": {
    "src": "{#} Total Damage: {~} (of your DPS, per ripple)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、波紋ごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2163,7 +2163,7 @@
   },
   "ability-warrior#0111": {
    "src": "Whirlwind Strike",
-   "dst": "",
+   "dst": "旋風撃",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2175,7 +2175,7 @@
   },
   "ability-warrior#0112": {
    "src": "Uppercut will create a strong gust of air,\nlaunching you upward with enemies.\n(Hold shift to stay grounded)",
-   "dst": "",
+   "dst": "Uppercut が強い突風を起こし、\n敵と一緒に自分も打ち上がる。\n(Shift を押すと地上にとどまる)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2190,7 +2190,7 @@
   },
   "ability-warrior#0113": {
    "src": "{#} Area of Effect: Circle-Shaped",
-   "dst": "",
+   "dst": "{#} 効果範囲: 円形",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2203,7 +2203,7 @@
   },
   "ability-warrior#0114": {
    "src": "Mythril Skin",
-   "dst": "",
+   "dst": "ミスリルの皮膚",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2215,7 +2215,7 @@
   },
   "ability-warrior#0115": {
    "src": "Gain +{~} Base Resistance and\nbecome immune to knockback.",
-   "dst": "",
+   "dst": "基本耐性 +{~} を得て、\nノックバックを無効にする。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2230,7 +2230,7 @@
   },
   "ability-warrior#0116": {
    "src": "Armour Breaker",
-   "dst": "",
+   "dst": "アーマーブレイカー",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2242,7 +2242,7 @@
   },
   "ability-warrior#0117": {
    "src": "Gaining {~} Corrupted {#} will make your\nnext Uppercut give you a damage boost.",
-   "dst": "",
+   "dst": "Corrupted {#} を {~} 得ると、\n次の Uppercut でダメージが強化される。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2257,7 +2257,7 @@
   },
   "ability-warrior#0118": {
    "src": "Radiant Devotee",
-   "dst": "",
+   "dst": "輝ける信徒",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2269,7 +2269,7 @@
   },
   "ability-warrior#0119": {
    "src": "For every {~} Reflection you have from\nitems, gain +{~}/{~}s Mana Regen. (Max {~}/{~}s)",
-   "dst": "",
+   "dst": "アイテムの反射 {~} ごとに\nマナ回復 +{~}/{~}秒。(上限 {~}/{~}秒)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2284,7 +2284,7 @@
   },
   "ability-warrior#0120": {
    "src": "Freestream Flow",
-   "dst": "",
+   "dst": "自由流",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2296,7 +2296,7 @@
   },
   "ability-warrior#0121": {
    "src": "You fall more slowly during Charge.",
-   "dst": "",
+   "dst": "Charge 中の落下が遅くなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2311,7 +2311,7 @@
   },
   "ability-warrior#0122": {
    "src": "Riposte",
-   "dst": "",
+   "dst": "リポスト",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2323,7 +2323,7 @@
   },
   "ability-warrior#0123": {
    "src": "Increase the damage of Counter and reduce its\ncooldown by -{~}s.",
-   "dst": "",
+   "dst": "Counter のダメージが上がり、\nクールダウンが -{~}秒短くなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2338,7 +2338,7 @@
   },
   "ability-warrior#0124": {
    "src": "Increase the damage reduction of Counter by +{~}.",
-   "dst": "",
+   "dst": "Counter のダメージ軽減が +{~} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2353,7 +2353,7 @@
   },
   "ability-warrior#0125": {
    "src": "Cheaper War Scream",
-   "dst": "",
+   "dst": "節約ウォークライ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2365,7 +2365,7 @@
   },
   "ability-warrior#0126": {
    "src": "Reduce the Mana cost of War Scream.",
-   "dst": "",
+   "dst": "War Scream のマナコストが下がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2382,7 +2382,7 @@
   },
   "ability-warrior#0127": {
    "src": "Luster Purge",
-   "dst": "",
+   "dst": "ラスターパージ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2394,7 +2394,7 @@
   },
   "ability-warrior#0128": {
    "src": "While you have {~} Holy Power ✧,\nyour Main Attacks are empowered,\nand grant you {~} Holy Power.",
-   "dst": "",
+   "dst": "Holy Power ✧ が {~} あるとき、\n通常攻撃が強化され、\nHoly Power を {~} 得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2409,7 +2409,7 @@
   },
   "ability-warrior#0129": {
    "src": "{#} Cooldown: {~}s (for Holy Power)",
-   "dst": "",
+   "dst": "{#} クールダウン: {~}秒 (Holy Power)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2422,7 +2422,7 @@
   },
   "ability-warrior#0130": {
    "src": "{#} Main Attack Damage Bonus: +{~}",
-   "dst": "",
+   "dst": "{#} 通常攻撃ダメージボーナス: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2435,7 +2435,7 @@
   },
   "ability-warrior#0131": {
    "src": "{#} Main Attack Range: +{~}",
-   "dst": "",
+   "dst": "{#} 通常攻撃の射程: +{~}",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2448,7 +2448,7 @@
   },
   "ability-warrior#0132": {
    "src": "Hallowed Blaze",
-   "dst": "",
+   "dst": "聖なる炎",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2460,7 +2460,7 @@
   },
   "ability-warrior#0133": {
    "src": "Flaming Uppercut will deal more damage\nand grant {~} Holy Power ✧ whenever\nit deals damage.",
-   "dst": "",
+   "dst": "Flaming Uppercut のダメージが上がり、\nダメージを与えるたびに\nHoly Power ✧ を {~} 得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2475,7 +2475,7 @@
   },
   "ability-warrior#0134": {
    "src": "Massive Bash",
-   "dst": "",
+   "dst": "マッシブバッシュ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2487,7 +2487,7 @@
   },
   "ability-warrior#0135": {
    "src": "Increase Bash's area of effect radius\nby +{~} per {~} Corrupted {#}. (Max +{~})",
-   "dst": "",
+   "dst": "Corrupted {#} {~2} ごとに\nBash の効果範囲の半径が +{~1} 広がる。(上限 +{~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2502,7 +2502,7 @@
   },
   "ability-warrior#0136": {
    "src": "Axe Kick",
-   "dst": "",
+   "dst": "かかと落とし",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2514,7 +2514,7 @@
   },
   "ability-warrior#0137": {
    "src": "Increases the damage and mana cost\nof Uppercut.",
-   "dst": "",
+   "dst": "Uppercut のダメージと\nマナコストが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2529,7 +2529,7 @@
   },
   "ability-warrior#0138": {
    "src": "Blessed Bulwark",
-   "dst": "",
+   "dst": "祝福の防壁",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2541,7 +2541,7 @@
   },
   "ability-warrior#0139": {
    "src": "Add +{~} additional charges and\n+{~} damage reduction to\nMantle of the Bovemists.",
-   "dst": "",
+   "dst": "Mantle of the Bovemists の\nチャージが +{~} 増え、\nダメージ軽減が +{~} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2556,7 +2556,7 @@
   },
   "ability-warrior#0140": {
    "src": "Mindless Slaughter",
-   "dst": "",
+   "dst": "無心の虐殺",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2568,7 +2568,7 @@
   },
   "ability-warrior#0141": {
    "src": "Massacre adds twice as much Corruption {#}.",
-   "dst": "",
+   "dst": "Massacre で得る Corruption {#} が2倍になる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2583,7 +2583,7 @@
   },
   "ability-warrior#0142": {
    "src": "While Corrupted, your Main Attack and\nPowder Specials now cost {~} health to\nuse, activating Blood Pact.",
-   "dst": "",
+   "dst": "Corrupted 中は、通常攻撃と\nPowder Specials に体力 {~} が必要になり、\nBlood Pact が発動する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2598,7 +2598,7 @@
   },
   "ability-warrior#0143": {
    "src": "Provoke",
-   "dst": "",
+   "dst": "挑発",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2610,7 +2610,7 @@
   },
   "ability-warrior#0144": {
    "src": "Enemies damaged by War Scream\nwill become Provoked {#}, targeting\nonly you for at least {~}s.",
-   "dst": "",
+   "dst": "War Scream でダメージを受けた敵は\nProvoked {#} になり、少なくとも\n{~}秒間あなただけを狙う。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2625,7 +2625,7 @@
   },
   "ability-warrior#0145": {
    "src": "Cheaper War Scream II",
-   "dst": "",
+   "dst": "節約ウォークライ II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2637,7 +2637,7 @@
   },
   "ability-warrior#0146": {
    "src": "Overwhelming Rage",
-   "dst": "",
+   "dst": "圧倒的な怒り",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2649,7 +2649,7 @@
   },
   "ability-warrior#0147": {
    "src": "Increase the cap of Enraged Blow by +{~}.",
-   "dst": "",
+   "dst": "Enraged Blow の上限が +{~} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2665,7 +2665,7 @@
   },
   "ability-warrior#0148": {
    "src": "Cyclone",
-   "dst": "",
+   "dst": "サイクロン",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2677,7 +2677,7 @@
   },
   "ability-warrior#0149": {
    "src": "After casting War Scream, envelop yourself with\na vortex that damages nearby enemies every {~}s.",
-   "dst": "",
+   "dst": "War Scream の後、渦をまとい、\n{~}秒ごとに近くの敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2692,7 +2692,7 @@
   },
   "ability-warrior#0150": {
    "src": "Pressure",
-   "dst": "",
+   "dst": "プレッシャー",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2704,7 +2704,7 @@
   },
   "ability-warrior#0151": {
    "src": "Bash gains {~}x as many hits and is {~}s faster.",
-   "dst": "",
+   "dst": "Bash の攻撃回数が {~}倍になり、{~}秒速くなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2719,7 +2719,7 @@
   },
   "ability-warrior#0152": {
    "src": "Uppercut deals additional damage.",
-   "dst": "",
+   "dst": "Uppercut が追加ダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2734,7 +2734,7 @@
   },
   "ability-warrior#0153": {
    "src": "War Scream grants a damage boost,\nbut effect duration is reduced.",
-   "dst": "",
+   "dst": "War Scream がダメージを強化するが、\n効果時間は短くなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2749,7 +2749,7 @@
   },
   "ability-warrior#0154": {
    "src": "When Generalist acts on a spell, it is enhanced.",
-   "dst": "",
+   "dst": "Generalist が働いた呪文は強化される。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2764,7 +2764,7 @@
   },
   "ability-warrior#0156": {
    "src": "{#} Effect: +{~} Damage Bonus (⚔) to Players",
-   "dst": "",
+   "dst": "{#} 効果: プレイヤーにダメージボーナス +{~} (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2777,7 +2777,7 @@
   },
   "ability-warrior#0155": {
    "src": "{#}({#}{#}{#}{#}{#}{#}Damage: +{~})",
-   "dst": "",
+   "dst": "{#}({#}{#}{#}{#}{#}{#}ダメージ: +{~})",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2790,7 +2790,7 @@
   },
   "ability-warrior#0157": {
    "src": "Thunderclap",
-   "dst": "",
+   "dst": "雷鳴",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2802,7 +2802,7 @@
   },
   "ability-warrior#0158": {
    "src": "Bash will cast at the player's position at\ndouble the speed and with an increased area of effect.",
-   "dst": "",
+   "dst": "Bash がプレイヤーの位置で、\n2倍の速さと広い効果範囲で発動する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2817,7 +2817,7 @@
   },
   "ability-warrior#0159": {
    "src": "With Quadruple Bash, gain less damage.",
-   "dst": "",
+   "dst": "Quadruple Bash と併用すると、上がるダメージが減る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2832,7 +2832,7 @@
   },
   "ability-warrior#0160": {
    "src": "Radiance",
-   "dst": "",
+   "dst": "ラディアンス",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2844,7 +2844,7 @@
   },
   "ability-warrior#0161": {
    "src": "Bash will buff positive IDs\nof yourself and allies.\n(Max Mana, XP Bonus, Loot Bonus, Loot Quality,\nGather XP Bonus, and Gather Speed Bonus\nare excluded)",
-   "dst": "",
+   "dst": "Bash が自分と味方の\nプラスの ID を強化する。\n(最大マナ、経験値ボーナス、戦利品ボーナス、戦利品の品質、\n採取経験値ボーナス、採取速度ボーナス\nは対象外)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2859,7 +2859,7 @@
   },
   "ability-warrior#0162": {
    "src": "{#} Effect: +{~} ID Effectiveness (❈) to Allies",
-   "dst": "",
+   "dst": "{#} 効果: 味方に ID 効果 +{~} (❈)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -2873,7 +2873,7 @@
   },
   "ability-warrior#0163": {
    "src": "Bloodlust",
-   "dst": "",
+   "dst": "ブラッドラスト",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2885,7 +2885,7 @@
   },
   "ability-warrior#0164": {
    "src": "After leaving Corrupted {#}, annihilate all\nenemies around you. For every {~} Corrupted {#}\nyou had, damage increases by {~}.",
-   "dst": "",
+   "dst": "Corrupted {#} を抜けると、周囲の敵を\nすべて殲滅する。持っていた Corrupted {#} {~1} ごとに\nダメージが {~2} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2900,7 +2900,7 @@
   },
   "ability-warrior#0165": {
    "src": "Discombobulate",
-   "dst": "",
+   "dst": "混乱",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2912,7 +2912,7 @@
   },
   "ability-warrior#0166": {
    "src": "Damaging enemies will inflict them\nwith +{~} Discombobulated ⚙. (Max {~})",
-   "dst": "",
+   "dst": "敵にダメージを与えると\nDiscombobulated ⚙ を +{~} 与える。(上限 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2927,7 +2927,7 @@
   },
   "ability-warrior#0167": {
    "src": "You will deal +{~} damage to enemies\nfor every Discombobulated ⚙ they have.\n-{~} of the bonus decays every second.",
-   "dst": "",
+   "dst": "敵の Discombobulated ⚙ 1つごとに\nその敵へのダメージ +{~}。\nボーナスは毎秒 -{~} 減っていく。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2942,7 +2942,7 @@
   },
   "ability-warrior#0168": {
    "src": "Reverberance",
-   "dst": "",
+   "dst": "残響",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2954,7 +2954,7 @@
   },
   "ability-warrior#0169": {
    "src": "Air Shout can hit +{~} times,\nand deals more damage.",
-   "dst": "",
+   "dst": "Air Shout の命中回数が +{~} 増え、\nダメージも上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2969,7 +2969,7 @@
   },
   "ability-warrior#0170": {
    "src": "Consecration",
-   "dst": "",
+   "dst": "聖別",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -2981,7 +2981,7 @@
   },
   "ability-warrior#0171": {
    "src": "Sacred Surge grants +{~} Holy Power ✧\nfor every spell or ability triggered\nand deals increased damage.",
-   "dst": "",
+   "dst": "呪文やアビリティが発動するたびに\nSacred Surge が Holy Power ✧ を +{~} 与え、\nダメージも上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -2996,7 +2996,7 @@
   },
   "ability-warrior#0172": {
    "src": "Haemorrhage",
-   "dst": "",
+   "dst": "大出血",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3008,7 +3008,7 @@
   },
   "ability-warrior#0173": {
    "src": "Reduce Blood Pact's health cost.\n({~} health per mana)",
-   "dst": "",
+   "dst": "Blood Pact の体力コストが下がる。\n(マナ1につき体力 {~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3023,7 +3023,7 @@
   },
   "ability-warrior#0174": {
    "src": "Brink of Madness",
-   "dst": "",
+   "dst": "狂気の淵",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3035,7 +3035,7 @@
   },
   "ability-warrior#0175": {
    "src": "You gain a +{~} Resistance buff\nif your health is at {~} or less.",
-   "dst": "",
+   "dst": "体力が {~2} 以下のとき、\n耐性 +{~1} のバフを得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3050,7 +3050,7 @@
   },
   "ability-warrior#0176": {
    "src": "Cheaper Uppercut II",
-   "dst": "",
+   "dst": "節約アッパーカット II",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3062,7 +3062,7 @@
   },
   "ability-warrior#0177": {
    "src": "Heavenly Trumpet",
-   "dst": "",
+   "dst": "天のラッパ",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3074,7 +3074,7 @@
   },
   "ability-warrior#0178": {
    "src": "All nearby allies are granted +{~} Overhealth ❤\nfor each point of Holy Power ✧ consumed.\nOverhealth ❤ decays over {~}s.",
-   "dst": "",
+   "dst": "消費した Holy Power ✧ 1ポイントごとに、\n近くの味方全員が Overhealth ❤ +{~} を得る。\nOverhealth ❤ は {~}秒かけて減っていく。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3089,7 +3089,7 @@
   },
   "ability-warrior#0179": {
    "src": "Casting War Scream while holding shift\nwith at least {~} Holy Power ✧ will spend\nall of it to sound off a protective trumpet.",
-   "dst": "",
+   "dst": "Holy Power ✧ が {~} 以上あるとき\nShift を押しながら War Scream を使うと、\nすべて消費して守護のラッパを吹き鳴らす。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3104,7 +3104,7 @@
   },
   "ability-warrior#0180": {
    "src": "Concussion",
-   "dst": "",
+   "dst": "脳震盪",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3116,7 +3116,7 @@
   },
   "ability-warrior#0181": {
    "src": "Final Crush will deal additional +{~} damage to\nenemies damaged by the previous Bash hit.",
-   "dst": "",
+   "dst": "Final Crush が、直前の Bash を受けた敵に\n追加で +{~} のダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3131,7 +3131,7 @@
   },
   "ability-warrior#0182": {
    "src": "Second Chance",
-   "dst": "",
+   "dst": "セカンドチャンス",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3143,7 +3143,7 @@
   },
   "ability-warrior#0183": {
    "src": "Keeps you alive with {~} of your health\nremaining and makes all nearby allies invincible\nafter receiving a fatal blow.",
-   "dst": "",
+   "dst": "致命的な攻撃を受けたとき、体力 {~} を残して\n生き延び、近くの味方全員を\n無敵にする。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3158,7 +3158,7 @@
   },
   "ability-warrior#0184": {
    "src": "{#} Cooldown: {~}m",
-   "dst": "",
+   "dst": "{#} クールダウン: {~}分",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3171,7 +3171,7 @@
   },
   "ability-warrior#0185": {
    "src": "{#} Effect: Invincibility (☗) to Allies",
-   "dst": "",
+   "dst": "{#} 効果: 味方に無敵 (☗)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3184,7 +3184,7 @@
   },
   "ability-warrior#0186": {
    "src": "Rumble",
-   "dst": "",
+   "dst": "地鳴り",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3196,7 +3196,7 @@
   },
   "ability-warrior#0187": {
    "src": "Increase Bash's damage by {~}\nper {~} {#} Area of Effect it has.",
-   "dst": "",
+   "dst": "Bash の {#} 効果範囲 {~2} ごとに\nダメージが {~1} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3211,7 +3211,7 @@
   },
   "ability-warrior#0188": {
    "src": "Tempestuous Winds",
-   "dst": "",
+   "dst": "荒れ狂う風",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3223,7 +3223,7 @@
   },
   "ability-warrior#0189": {
    "src": "Cyclone will deal damage {~}s faster.",
-   "dst": "",
+   "dst": "Cyclone のダメージ間隔が {~}秒速くなる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3238,7 +3238,7 @@
   },
   "ability-warrior#0190": {
    "src": "Increase Tempest's damage.",
-   "dst": "",
+   "dst": "Tempest のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3253,7 +3253,7 @@
   },
   "ability-warrior#0191": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Tempest)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (DPSに対して、Tempest に)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3278,7 +3278,7 @@
   },
   "ability-warrior#0193": {
    "src": "Increase Flying Kick's damage\nby +{~} per block travelled.\n(Max +{~})",
-   "dst": "",
+   "dst": "Flying Kick のダメージが\n移動した1ブロックごとに +{~}。\n(上限 +{~})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3293,7 +3293,7 @@
   },
   "ability-warrior#0194": {
    "src": "Shine",
-   "dst": "",
+   "dst": "シャイン",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3305,7 +3305,7 @@
   },
   "ability-warrior#0195": {
    "src": "Increase Radiance's effectiveness.",
-   "dst": "",
+   "dst": "Radiance の効果が上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3320,7 +3320,7 @@
   },
   "ability-warrior#0196": {
    "src": "Bloodied Armory",
-   "dst": "",
+   "dst": "血まみれの武器庫",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3332,7 +3332,7 @@
   },
   "ability-warrior#0197": {
    "src": "Activating Blood Pact adds a blood swipe\nto your next Main Attack. (Max {~})\n(Damage is dealt as Main Attack Damage)",
-   "dst": "",
+   "dst": "Blood Pact を発動すると、次の通常攻撃に\n血の薙ぎ払いが加わる。(上限 {~})\n(ダメージは通常攻撃ダメージとして扱う)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3347,7 +3347,7 @@
   },
   "ability-warrior#0198": {
    "src": "{#} Total Damage: {~} (of your DPS, per Swipe)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、薙ぎ払いごと)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3360,7 +3360,7 @@
   },
   "ability-warrior#0199": {
    "src": "Ecstasy",
-   "dst": "",
+   "dst": "恍惚",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3372,7 +3372,7 @@
   },
   "ability-warrior#0200": {
    "src": "Increase Bloodlust's bonus damage per\n{~} Corrupted {#} by +{~}.",
-   "dst": "",
+   "dst": "Bloodlust の Corrupted {#} {~} ごとの\nボーナスダメージが +{~} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3387,7 +3387,7 @@
   },
   "ability-warrior#0201": {
    "src": "Baffling Blows",
-   "dst": "",
+   "dst": "惑わす連撃",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3399,7 +3399,7 @@
   },
   "ability-warrior#0202": {
    "src": "Increase your maximum\nDiscombobulated ⚙ by +{~}.",
-   "dst": "",
+   "dst": "Discombobulated ⚙ の\n上限が +{~} 上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3414,7 +3414,7 @@
   },
   "ability-warrior#0203": {
    "src": "Harmony",
-   "dst": "",
+   "dst": "ハーモニー",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3426,7 +3426,7 @@
   },
   "ability-warrior#0204": {
    "src": "Activating Generalist grants\n+{~} Harmony for {~}s. (Max {~})",
-   "dst": "",
+   "dst": "Generalist が発動すると\n{~2}秒間 Harmony +{~1}。(上限 {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3441,7 +3441,7 @@
   },
   "ability-warrior#0205": {
    "src": "Gain +{~} Damage per {~} Harmony.",
-   "dst": "",
+   "dst": "Harmony {~2} ごとにダメージ +{~1}。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3456,7 +3456,7 @@
   },
   "ability-warrior#0206": {
    "src": "Buried Light",
-   "dst": "",
+   "dst": "埋もれた光",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3468,7 +3468,7 @@
   },
   "ability-warrior#0207": {
    "src": "Casting Bash while sneaking will consume\n{~} Holy Power ✧ to summon a beam\nof light which slowly moves forward,\ndamaging enemies every {~}s.",
-   "dst": "",
+   "dst": "スニーク中に Bash を使うと\nHoly Power ✧ を {~} 消費して、ゆっくり前進する\n光の柱を呼び出し、\n{~}秒ごとに敵にダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3483,7 +3483,7 @@
   },
   "ability-warrior#0208": {
    "src": "Spectacle",
-   "dst": "",
+   "dst": "スペクタクル",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3495,7 +3495,7 @@
   },
   "ability-warrior#0209": {
    "src": "Increase Fireworks' and Comet's damage.",
-   "dst": "",
+   "dst": "Fireworks と Comet のダメージが上がる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3510,7 +3510,7 @@
   },
   "ability-warrior#0210": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Comet)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (DPSに対して、Comet に)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3523,7 +3523,7 @@
   },
   "ability-warrior#0211": {
    "src": "{#} Total Damage: +{~} (of your DPS, to Fireworks)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: +{~} (DPSに対して、Fireworks に)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3536,7 +3536,7 @@
   },
   "ability-warrior#0212": {
    "src": "Devout Union",
-   "dst": "",
+   "dst": "敬虔なる結束",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3548,7 +3548,7 @@
   },
   "ability-warrior#0213": {
    "src": "Gain +{~} Base Resistance.",
-   "dst": "",
+   "dst": "基本耐性 +{~} を得る。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3563,7 +3563,7 @@
   },
   "ability-warrior#0214": {
    "src": "{~} of damage taken by nearby\nallies is redirected to you.",
-   "dst": "",
+   "dst": "近くの味方が受けるダメージの {~} を\n自分が肩代わりする。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3590,7 +3590,7 @@
   },
   "ability-warrior#0216": {
    "src": "Add +{~} additional charge\nto Mantle of the Bovemists.",
-   "dst": "",
+   "dst": "Mantle of the Bovemists の\nチャージが +{~} 増える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3605,7 +3605,7 @@
   },
   "ability-warrior#0217": {
    "src": "Shield Strike will deal more damage and grant\n{~} charge of Mantle of the Bovemists to nearby\nallies for every {~} broken mantles used. (Max {~})",
-   "dst": "",
+   "dst": "Shield Strike のダメージが上がり、\n使った壊れたマント {~2} ごとに、近くの味方に\nMantle of the Bovemists のチャージを {~1} 与える。(上限 {~3})",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3620,7 +3620,7 @@
   },
   "ability-warrior#0218": {
    "src": "Beyond Salvation",
-   "dst": "",
+   "dst": "救済の彼方",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3632,7 +3632,7 @@
   },
   "ability-warrior#0219": {
    "src": "Casting Main Attack or Uppercut on a spike\nwill detonate it, dealing damage and granting\n{~} Overhealth ❤ even while Corrupted.\nBonus health decays over {~}s.",
-   "dst": "",
+   "dst": "トゲに通常攻撃か Uppercut を当てると\n起爆してダメージを与え、Corrupted 中でも\n{~} の Overhealth ❤ を得る。\n追加体力は {~}秒かけて減っていく。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3647,7 +3647,7 @@
   },
   "ability-warrior#0220": {
    "src": "Summons {~} Corrupted Spikes that rise from\nthe earth around you, dealing damage.",
-   "dst": "",
+   "dst": "周囲の地面から腐敗のトゲを {~} 本呼び出し、\nダメージを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3662,7 +3662,7 @@
   },
   "ability-warrior#0221": {
    "src": "{#} Range: {~}~{~} Blocks",
-   "dst": "",
+   "dst": "{#} 射程: {~}~{~} ブロック",
    "role": "stat",
    "kind": "term",
    "ctx": [
@@ -3675,7 +3675,7 @@
   },
   "ability-warrior#0222": {
    "src": "{#} Total Damage: {~} (of your DPS, detonate)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、起爆)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3688,7 +3688,7 @@
   },
   "ability-warrior#0223": {
    "src": "{#} Total Damage: {~} (of your DPS, summon)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、召喚)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3701,7 +3701,7 @@
   },
   "ability-warrior#0224": {
    "src": "Judgement",
-   "dst": "",
+   "dst": "審判",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3713,7 +3713,7 @@
   },
   "ability-warrior#0225": {
    "src": "Call upon a blade from the heavens\nthat deals damage upon impact\nand grants buffs to nearby allies.",
-   "dst": "",
+   "dst": "天から刃を呼び寄せ、\n着弾時にダメージを与え、\n近くの味方にバフを与える。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3728,7 +3728,7 @@
   },
   "ability-warrior#0226": {
    "src": "À  +{~} Resistance Bonus (❁) to Allies\nÀ  +{~} ID Effectiveness (❈) to Allies",
-   "dst": "",
+   "dst": "À  味方に耐性ボーナス +{~} (❁)\nÀ  味方に ID 効果 +{~} (❈)",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3743,7 +3743,7 @@
   },
   "ability-warrior#0227": {
    "src": "{#} Effects: +{~} Damage Bonus (⚔) to Allies",
-   "dst": "",
+   "dst": "{#} 効果: 味方にダメージボーナス +{~} (⚔)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
@@ -3756,7 +3756,7 @@
   },
   "ability-warrior#0228": {
    "src": "Zenith Stance",
-   "dst": "",
+   "dst": "天頂の構え",
    "role": "name",
    "kind": "term",
    "ctx": [
@@ -3768,7 +3768,7 @@
   },
   "ability-warrior#0229": {
    "src": "Casting F switches them\nbetween Spell and Main Attack form.",
-   "dst": "",
+   "dst": "F を押すと\n呪文形態と通常攻撃形態が切り替わる。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3783,7 +3783,7 @@
   },
   "ability-warrior#0230": {
    "src": "In Spell form, casting a spell performs\nan attack. In Main Attack form,\nMain Attacks perform an attack instead.",
-   "dst": "",
+   "dst": "呪文形態では、呪文を唱えると\n攻撃を行う。通常攻撃形態では、\n代わりに通常攻撃で攻撃を行う。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3798,7 +3798,7 @@
   },
   "ability-warrior#0231": {
    "src": "Manifest your combat mastery as two floating\nfists that you freely command.",
-   "dst": "",
+   "dst": "戦闘の極意を、自在に操れる\n2つの浮遊する拳として具現化する。",
    "role": "desc",
    "kind": "block",
    "ctx": [
@@ -3813,7 +3813,7 @@
   },
   "ability-warrior#0232": {
    "src": "{#} Total Damage: {~} (of your DPS, spell)",
-   "dst": "",
+   "dst": "{#} 総ダメージ: {~} (DPSに対して、呪文)",
    "role": "stat",
    "kind": "sentence",
    "ctx": [
