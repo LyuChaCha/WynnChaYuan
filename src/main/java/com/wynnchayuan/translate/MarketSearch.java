@@ -79,6 +79,44 @@ public final class MarketSearch {
     }
 
     /**
+     * 扁平檔的名字。比 {@link #add} 嚴得多：只收<b>市集上買賣得到</b>的東西。
+     *
+     * <h2>為什麼</h2>
+     * 扁平檔沒有分類，任務名、探索點、NPC 名牌、按鈕文字全混在一起，形狀上都像名字。
+     * 先前全部收進索引，玩家打「之心」會跳出「鋼鐵之心 第一部」（任務）、
+     * 「黯蝕之心」（探索點）、「伊索特拉之心」（怪物）——打進市集一筆都搜不到。
+     *
+     * <p>所以扁平檔只收兩種：
+     * <ul>
+     *   <li>數量行（素材袋、背包清單）裡的名字，見 {@link #quantityName}。</li>
+     *   <li>結尾是市集物品類別的名字（{@code Corkian Amplifier III}、
+     *       {@code Silverbull Share}），見 {@link #LISTED}。</li>
+     * </ul>
+     */
+    public void addListed(String english, String chinese) {
+        if (english == null || chinese == null) {
+            return;
+        }
+        if (quantityName(english) == null && !LISTED.matcher(bare(english)).matches()) {
+            return;
+        }
+        add(english, chinese);
+    }
+
+    /**
+     * 見 {@link #addListed}。每個字都大寫開頭（擋掉「Incompatible with Amplifiers」
+     * 這種說明）、開頭不是動作或狀態（「Remove Powders」「Untradable Shares」
+     * 是按鈕與標籤）、只有 ASCII（「DecrepitÀÀÀSewers Key」的 À 是排版用的，
+     * 打進市集搜不到）。
+     */
+    private static final java.util.regex.Pattern LISTED = java.util.regex.Pattern.compile(
+            "^(?!(?:Remove|Upgrade|Trade|Get|Buy|Sell|Only|Incompatible|Untradable|Tradable"
+                    + "|Available|Converts)\\b)"
+                    + "(?:[A-Z][A-Za-z'-]* )*"
+                    + "(?:Amplifier|Insulator|Simulator|Share|Emerald|Powder|Rune|Key)s?"
+                    + "(?: [IVX]+)?$");
+
+    /**
      * 「{@code {~} x 名字 {#}{#}{#}}」那種數量行裡的名字。
      *
      * <h2>為什麼</h2>

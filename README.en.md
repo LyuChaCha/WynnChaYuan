@@ -113,8 +113,8 @@ needs**.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_cn` 简体中文 | ██████████ 99.4% | 28,549 / 28,714 |
-| `zh_tw` 繁體中文 | █████████░ 91.5% | 38,540 / 42,135 |
+| `zh_cn` 简体中文 | ██████████ 99.7% | 28,614 / 28,714 |
+| `zh_tw` 繁體中文 | █████████░ 91.7% | 38,642 / 42,132 |
 | `ja_jp` 日本語 | ░░░░░░░░░░ 2.1% | 612 / 28,671 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 2.1% | 612 / 28,671 |
 | `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,671 |
@@ -141,7 +141,7 @@ This table answers the other half:
 | Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
 | Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
 | Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 4,732 + 1,050 collected | **No official list** - only what players run into |
+| NPC nameplates, menus, system messages | — | 4,731 + 1,050 collected | **No official list** - only what players run into |
 
 Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
 
@@ -154,9 +154,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 988 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,858 | 1,920 | 1,920 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 11,581 | 15,079 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 11,683 | 15,076 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 50,295 lines estimated**, **42,135 collected** (84%), **38,540 translated** (77% of the estimate, 91.5% of what we have).
+> All together: **at least 50,292 lines estimated**, **42,132 collected** (84%), **38,642 translated** (77% of the estimate, 91.7% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->

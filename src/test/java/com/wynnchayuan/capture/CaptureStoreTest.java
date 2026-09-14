@@ -35,7 +35,51 @@ public final class CaptureStoreTest {
         newOnesAreSkipped();
         staleOnesArePruned();
         humanWorkSurvives();
+        untranslatedAreCounted();
         report();
+    }
+
+    /**
+     * 語料收過、只是還沒翻的：不當缺口，但要記次數。
+     *
+     * <p>先前這種句子一律略過、連次數都沒留，翻譯的人不知道哪幾句最常被看到。
+     */
+    private static void untranslatedAreCounted() throws Exception {
+        Path file = Files.createTempDirectory("wynnchayuan-cap").resolve("captured.json");
+        CaptureStore store = new CaptureStore(file);
+        store.knowsTranslations(t -> t.equals("Caravan Driver"));
+        store.knowsSources(t -> t.equals("Caravan Driver") || t.equals("Halt, recruits!"));
+
+        String ctx = "dialogue/King's Recruit#Guard";
+        check("語料收過的不當成缺口", !store.record("Halt, recruits!", "desc", "quest", ctx));
+        store.record("Halt, recruits!", "desc", "quest", ctx);
+        check("有譯文的照樣略過", !store.record("Caravan Driver", "name", "label", "label/floating"));
+        check("語料沒收過的照收", store.record("Brand new line", "desc", "quest", "dialogue/x"));
+        check("缺口清單只有真正的新句子（實際 " + store.size() + " 條）", store.size() == 1);
+        check("沒翻的那句記了兩次", store.untranslatedSeen("Halt, recruits!") == 2);
+        check("有譯文的不會跑進沒翻清單", store.untranslatedSeen("Caravan Driver") == 0);
+
+        store.flush();
+        JsonObject root = read(file);
+        check("檔案裡有 untranslated 一段",
+                root.has("untranslated") && root.getAsJsonArray("untranslated").size() == 1);
+        JsonObject row = root.getAsJsonArray("untranslated").get(0).getAsJsonObject();
+        check("那一段記了次數與任務", row.get("seen").getAsInt() == 2
+                && "King's Recruit".equals(row.get("quest").getAsString()));
+
+        CaptureStore again = new CaptureStore(file);
+        check("重開遊戲次數還在", again.untranslatedSeen("Halt, recruits!") == 2);
+
+        // 舊版當成缺口收進來、後來語料收了（還沒翻）的，要搬到沒翻清單。
+        Path oldFile = Files.createTempDirectory("wynnchayuan-cap").resolve("captured.json");
+        CaptureStore old = new CaptureStore(oldFile);
+        old.record("Halt, recruits!", "desc", "quest", "dialogue/x");
+        old.flush();
+        CaptureStore moved = new CaptureStore(oldFile);
+        moved.knowsSources(t -> t.equals("Halt, recruits!"));
+        moved.flush();
+        check("搬走之後缺口清單是空的（實際 " + moved.size() + " 條）", moved.size() == 0);
+        check("搬到沒翻清單", moved.untranslatedSeen("Halt, recruits!") == 1);
     }
 
     private static void newOnesAreSkipped() throws Exception {

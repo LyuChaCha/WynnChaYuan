@@ -116,6 +116,37 @@ public final class CaptureStore {
         translated = lookup == null ? t -> false : lookup;
     }
 
+    /** 語料<b>收過</b>哪些原文（不管翻了沒）。見 {@link #knowsSources}。 */
+    private volatile java.util.function.Predicate<String> known = t -> false;
+
+    /**
+     * 告訴收集端「語料收過哪些原文」。
+     *
+     * <p>收過但還沒有譯文的，不當成缺口（不進 {@link #entries}、不會分享出去），
+     * 只記它被看到幾次，見 {@link #untranslated}。
+     */
+    public void knowsSources(java.util.function.Predicate<String> lookup) {
+        known = lookup == null ? t -> false : lookup;
+    }
+
+    /**
+     * 語料收過、但還沒有譯文的字串，各被看到幾次。
+     *
+     * <h2>為什麼要另外記</h2>
+     * 這些句子不是缺口——語料早就收過，再收一次、再分享一次只是重複。
+     * 但它們正是玩家看到「翻到一半變英文」的那幾句。先前一律略過，連次數都沒留，
+     * 翻譯的人就無從知道哪幾句最常被看到、該先補。
+     *
+     * <p>寫在 {@code captured.json} 的 {@code untranslated}，照次數由多到少排。
+     */
+    private final Map<String, Captured> untranslated = new ConcurrentHashMap<>();
+
+    /** 某一句沒翻的被看到幾次；不在清單裡回傳 0。 */
+    int untranslatedSeen(String template) {
+        Captured c = untranslated.get(hash(template));
+        return c == null ? 0 : c.seen;
+    }
+
     /**
      * 記錄一段文字。已存在則只累加計數。
      *
@@ -138,6 +169,18 @@ public final class CaptureStore {
         // 記個數就好，這樣「為什麼那一行沒翻」看得到答案。
         if (com.wynnchayuan.render.ThirdPartyLiterals.reserved(template)) {
             noteEvent("skipped.thirdParty");
+            return false;
+        }
+        if (known.test(template)) {
+            // 語料收過、只是還沒翻。不是缺口，但要記次數——見 untranslated。
+            untranslated.compute(hash(template), (k, c) -> {
+                if (c == null) {
+                    return new Captured(template.strip(), role, classify(domain, ctx), ctx, 0);
+                }
+                c.seen++;
+                return c;
+            });
+            noteEvent("counted.untranslated");
             return false;
         }
         String key = hash(template);
@@ -244,7 +287,24 @@ public final class CaptureStore {
             eventCounts.computeIfAbsent("skipped.translated",
                     k -> new java.util.concurrent.atomic.AtomicInteger()).addAndGet(gone);
         }
-        return gone > 0;
+        // 當初收成缺口、後來語料收進去了（還沒翻）的，搬到沒翻清單，次數帶過去。
+        boolean moved = false;
+        for (var it = entries.entrySet().iterator(); it.hasNext(); ) {
+            Map.Entry<String, Captured> e = it.next();
+            Captured c = e.getValue();
+            if (c.src != null && (c.dst == null || c.dst.isBlank()) && known.test(c.src)) {
+                it.remove();
+                untranslated.merge(e.getKey(), c, (a, b) -> {
+                    a.seen += b.seen;
+                    return a;
+                });
+                moved = true;
+            }
+        }
+        int pending = untranslated.size();
+        untranslated.values().removeIf(c -> c.src == null
+                || translated.test(c.src) || nowFiltered(c));
+        return gone > 0 || moved || untranslated.size() != pending;
     }
 
     /** 把目前累積的內容寫到磁碟。沒有變動時直接跳過。 */
@@ -266,7 +326,10 @@ public final class CaptureStore {
                 + " 任務對話的鍵就是「任務名 #第幾句」，另外 quest／speaker／line "
                 + "三欄把同一件事拆開寫，不用自己去解 ctx。"
                 + " 認不出來歸屬的（含別的模組的字）集中在 ? 開頭的鍵，"
-                + "domain 是 unknown——那是<b>還沒分類</b>，不是一種分類。");
+                + "domain 是 unknown——那是<b>還沒分類</b>，不是一種分類。"
+                + " untranslated 是語料收過、但這個語言還沒翻的句子，seen 是看到幾次，"
+                + "照多到少排——最常出現的最該先補。這一段不會分享出去。");
+        meta.addProperty("untranslated", untranslated.size());
         JsonObject events = new JsonObject();
         eventCounts.entrySet().stream()
                 .sorted(Map.Entry.comparingByKey())
@@ -325,6 +388,28 @@ public final class CaptureStore {
             rows.add(unique, row);
         }
         root.add("entries", rows);
+        // 語料收過、還沒翻的，照看到的次數排——最常出現的就是最該先補的。
+        if (!untranslated.isEmpty()) {
+            JsonArray pending = new JsonArray();
+            untranslated.values().stream()
+                    .sorted(java.util.Comparator.comparingInt((Captured c) -> c.seen).reversed())
+                    .forEach(c -> {
+                        JsonObject row = new JsonObject();
+                        row.addProperty("src", c.src);
+                        row.addProperty("seen", c.seen);
+                        row.addProperty("ctx", c.ctx == null ? "" : c.ctx);
+                        String quest = questOf(c.ctx);
+                        if (quest != null) {
+                            row.addProperty("quest", quest);
+                        }
+                        String who = speakerOf(c.ctx);
+                        if (who != null) {
+                            row.addProperty("speaker", who);
+                        }
+                        pending.add(row);
+                    });
+            root.add("untranslated", pending);
+        }
 
         try {
             Files.createDirectories(file.getParent());
@@ -345,6 +430,15 @@ public final class CaptureStore {
         }
         try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
             JsonObject root = JsonParser.parseReader(r).getAsJsonObject();
+            JsonArray pending = root.getAsJsonArray("untranslated");
+            if (pending != null) {
+                for (var row : pending) {
+                    Captured c = GSON.fromJson(row, Captured.class);
+                    if (c.src != null && !c.src.isBlank()) {
+                        untranslated.put(hash(c.src), c);
+                    }
+                }
+            }
             JsonObject saved = root.getAsJsonObject("entries");
             if (saved == null) {
                 return;
