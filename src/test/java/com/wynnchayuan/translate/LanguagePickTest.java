@@ -30,7 +30,7 @@ public final class LanguagePickTest {
                         + "（譯文是啟動時從 GitHub 抓的，不靠 jar）",
                 "ja_jp".equals(Languages.pick("ja_jp", "zh_tw")));
         check("沒指定、遊戲語言也沒打包，退回預設",
-                Languages.DEFAULT.equals(Languages.pick("", "ru_ru")));
+                Languages.DEFAULT.equals(Languages.pick("", "de_de")));
         check("前後空白不算",
                 "zh_cn".equals(Languages.pick("  zh_cn  ", "zh_tw")));
 
