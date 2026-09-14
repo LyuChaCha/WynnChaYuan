@@ -21,8 +21,7 @@ wrong you get a comment saying exactly which line and why.
 src/main/resources/assets/wynnchayuan/translations/<language>/
 ```
 
-Use your own language folder — `de_de/`, `es_es/`, `fr_fr/`, `ja_jp/`, `ko_kr/`,
-`ru_ru/`, `zh_cn/`, `zh_tw/`. **Do not edit another language's folder**, and do not
+Use your own language folder — `ja_jp/`, `ko_kr/`, `ru_ru/`, `zh_cn/`, `zh_tw/`. **Do not edit another language's folder**, and do not
 put files directly under `translations/` — that was the layout before languages
 were split, and the checks will tell you to move them.
 

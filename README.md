@@ -97,9 +97,6 @@ Wynncraft 是多人遊戲。畫面上只剩中文的話，跟其他玩家討論�
 | `zh_tw` 繁體中文 | █████████░ 91.7% | 38,653 / 42,143 |
 | `ja_jp` 日本語 | ░░░░░░░░░░ 2.1% | 612 / 28,672 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 2.1% | 612 / 28,672 |
-| `de_de` Deutsch | ░░░░░░░░░░ 0.0% | 0 / 28,672 |
-| `es_es` Español | ░░░░░░░░░░ 0.0% | 0 / 28,672 |
-| `fr_fr` Français | ░░░░░░░░░░ 0.0% | 0 / 28,672 |
 | `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 28,672 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
