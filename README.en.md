@@ -114,7 +114,7 @@ needs**.
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
 | `zh_cn` 简体中文 | ██████████ 99.7% | 28,616 / 28,716 |
-| `zh_tw` 繁體中文 | █████████░ 91.1% | 38,655 / 42,423 |
+| `zh_tw` 繁體中文 | █████████░ 92.3% | 39,163 / 42,423 |
 | `ja_jp` 日本語 | ░░░░░░░░░░ 2.1% | 612 / 28,672 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 2.1% | 612 / 28,672 |
 | `ru_ru` Русский | ░░░░░░░░░░ 0.0% | 0 / 28,672 |
@@ -146,14 +146,14 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 
 | Category | Translated | Collected | Estimated total | Where the estimate comes from |
 |---|---:|---:|---:|---|
-| Quest dialogue | 22,442 | 22,513 | 22,513 | all 157/157 quests collected - what we have is all there is |
+| Quest dialogue | 22,506 | 22,513 | 22,513 | all 157/157 quests collected - what we have is all there is |
 | Secret discovery stories | 68 | 68 | ~8,228 | only 1 of 121 discoveries collected; scaled up from those (tiny sample - an order of magnitude, not a figure) |
 | Gear lore | 988 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,858 | 1,920 | 1,920 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 11,696 | 15,329 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 12,140 | 15,329 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 50,583 lines estimated**, **42,423 collected** (84%), **38,655 translated** (76% of the estimate, 91.1% of what we have).
+> All together: **at least 50,583 lines estimated**, **42,423 collected** (84%), **39,163 translated** (77% of the estimate, 92.3% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->
