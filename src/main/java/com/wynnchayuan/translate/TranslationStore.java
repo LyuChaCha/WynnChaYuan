@@ -180,6 +180,9 @@ public final class TranslationStore {
         playerKeys.clear();
         wordCount.clear();
         fromWiki.clear();
+        loose.clear();
+        looseDst.clear();
+        looseClash.clear();
         thisLayer.clear();
         loadedFiles = 0;
 
@@ -306,7 +309,8 @@ public final class TranslationStore {
             int before = entries.size();
 
             if (obj.has("entries") && obj.get("entries").isJsonObject()) {
-                readWorkspace(obj.getAsJsonObject("entries"), itemNames(obj), gearNames(obj));
+                readWorkspace(obj.getAsJsonObject("entries"), itemNames(obj), gearNames(obj),
+                        tradable(file));
             } else {
                 // 檔名以 -terms.json 結尾的，內容是<b>可以在別的句子裡自動替換的詞</b>
                 // （魔力儲庫、失衡、裂隙之裔…），不是一整行的譯文。
@@ -355,6 +359,19 @@ public final class TranslationStore {
         return metaFlag(root, "gearNames");
     }
 
+    /**
+     * 這個檔的名稱能不能拿去市集搜尋。
+     *
+     * <p>只有裝備、素材、材料。典籍與護符在 Wynntils 的物品資料裡全部標成不可交易，
+     * 面向不是背包裡的物品，技能與 Major ID 更不是——收進去只會讓候選清單
+     * 冒出市集搜不到的東西。扁平檔另外過濾，見 {@link MarketSearch#addListed}。
+     */
+    private static boolean tradable(Path file) {
+        String name = file.getFileName().toString();
+        return name.startsWith("gear-") || name.equals("ingredient.json")
+                || name.equals("material.json");
+    }
+
     /** 沒寫、寫壞、或不是布林值都算 true——見 {@link #itemNames} 談預設值。 */
     private static boolean metaFlag(JsonObject root, String name) {
         JsonElement meta = root.get("_meta");
@@ -365,7 +382,8 @@ public final class TranslationStore {
         return flag == null || !flag.isJsonPrimitive() || flag.getAsBoolean();
     }
 
-    private void readWorkspace(JsonObject entriesObj, boolean itemNames, boolean gearNames) {
+    private void readWorkspace(JsonObject entriesObj, boolean itemNames, boolean gearNames,
+                               boolean tradable) {
         for (String key : entriesObj.keySet()) {
             JsonElement el = entriesObj.get(key);
             if (!el.isJsonObject()) {
@@ -400,6 +418,7 @@ public final class TranslationStore {
                 noteUnwrapped(srcKey, dst.strip());
                 noteIndented(srcKey, dst.strip());
                 noteMarked(srcKey, dst.strip());
+                noteLoose(srcKey, dst.strip());
                 // 同一個任務的台詞另外建一份索引。全庫裡「Hey, {u}」撞到幾十句，
                 // 單一個任務裡通常只有一句。見 #matchPrefix(String, int, String)。
                 String quest = optString(e, "quest");
@@ -415,7 +434,9 @@ public final class TranslationStore {
                     speakers.put(srcKey, who.strip());
                 }
                 if ("name".equals(optString(e, "role"))) {
-                    market.add(srcKey, dst.strip());
+                    if (tradable) {
+                        market.add(srcKey, dst.strip());       // 見 #tradable
+                    }
                     if (!itemNames) {
                         // 技能名稱與 Major ID 名稱會出現在別的敘述裡；
                         // 裝備與素材名稱不會，收進來只會亂替換。
@@ -444,7 +465,7 @@ public final class TranslationStore {
             seenSources.add(key.strip());
             if (v.isJsonPrimitive() && !v.getAsString().isBlank()) {
                 entries.put(key.strip(), v.getAsString().strip());
-                market.add(key.strip(), v.getAsString().strip());
+                market.addListed(key.strip(), v.getAsString().strip());
                 ordered.add(key.strip());
                 // 逐字打字時靠這個索引找「目前打到一半的是哪一句」。
                 //
@@ -462,6 +483,9 @@ public final class TranslationStore {
                 noteUnwrapped(key.strip(), v.getAsString().strip());
                 noteIndented(key.strip(), v.getAsString().strip());
                 noteMarked(key.strip(), v.getAsString().strip());
+                if (!asTerms) {
+                    noteLoose(key.strip(), v.getAsString().strip());
+                }
                 if (asTerms) {
                     noteTerm(key.strip(), v.getAsString().strip());
                 }
@@ -1328,6 +1352,15 @@ public final class TranslationStore {
         if (hit == null) {
             hit = lookupMarked(key);
         }
+        if (hit == null) {
+            hit = lookupLoose(key);
+        }
+        if (hit == null) {
+            String other = respell(key);
+            if (!other.equals(key)) {
+                hit = lookupLoose(other);
+            }
+        }
         return hit;
     }
 
@@ -1420,6 +1453,122 @@ public final class TranslationStore {
     }
 
     /**
+     * 只差標點、引號或大小寫的同一句話。
+     *
+     * <h2>為什麼要有這一層</h2>
+     * 任務對話的語料九成八抄自 wiki，而 wiki 是人打的：彎引號寫成直引號、
+     * {@code …} 寫成 {@code ...}、句尾少一個句號、兩個字之間多一個空白。
+     * 差這麼一點，精確比對就整句落空——畫面上跟「沒人翻」一模一樣，
+     * 玩家看到的是一段對話翻到一半突然冒出一句英文。
+     *
+     * <p>所以前面幾層都查不到時，兩邊都{@link #loosen 鬆化}之後再查一次。
+     *
+     * <h2>怎麼避免貼錯</h2>
+     * <ul>
+     *   <li>只收夠長、有空白的句子（{@link #MIN_LOOSE_LENGTH}）：{@code Fire} 與
+     *       {@code fire} 這種短詞，大小寫一換可能就是另一個意思。</li>
+     *   <li>鬆化之後撞在一起、譯文又不同的（{@code Not yet!} 與 {@code Not yet?}），
+     *       這一層一律不給答案，見 {@link #looseClash}。</li>
+     *   <li>永遠排在最後：精確、縮排、拼法、記號都查不到才走這裡，
+     *       不會蓋掉任何本來查得到的結果。</li>
+     * </ul>
+     */
+    private String lookupLoose(String key) {
+        String src = looseSource(key);
+        if (src == null) {
+            return null;
+        }
+        if (!translateNames && nameKeys.contains(src)) {
+            return null;                       // 使用者選擇不翻物品名稱
+        }
+        return entries.get(src);
+    }
+
+    /** 鬆化之後對得上的語料原文；對不上或有歧義時回傳 {@code null}。 */
+    private String looseSource(String key) {
+        if (key == null) {
+            return null;
+        }
+        String loosened = loosen(key);
+        if (!looseEnough(loosened) || looseClash.contains(loosened)) {
+            return null;
+        }
+        return loose.get(loosened);
+    }
+
+    private void noteLoose(String src, String dst) {
+        String loosened = loosen(src);
+        if (!looseEnough(loosened)) {
+            return;
+        }
+        String before = loose.putIfAbsent(loosened, src);
+        if (before == null) {
+            looseDst.put(loosened, dst);
+        } else if (!before.equals(src) && !dst.equals(looseDst.get(loosened))) {
+            looseClash.add(loosened);
+        }
+    }
+
+    private static boolean looseEnough(String loosened) {
+        return loosened.length() >= MIN_LOOSE_LENGTH && loosened.indexOf(' ') >= 0;
+    }
+
+    /**
+     * 把只影響外觀、不影響句意的差異抹平。
+     *
+     * <p>彎引號換直引號，{@code …} 與兩個以上的句點一律寫成 {@code ...}，
+     * 連續空白併成一個，去掉句尾的 {@code . ! ? ~}，最後轉小寫。佔位符（{@code {u}}、
+     * {@code {~}}）本來就是小寫，不受影響。
+     *
+     * <p>句尾的冒號、逗號<b>不</b>去掉：{@code Spell Damage:} 與 {@code Spell Damage}
+     * 是標籤的兩種寫法，譯文一個帶冒號一個不帶，混在一起就會貼錯
+     * （見 {@code LabelColonTest}）。
+     */
+    static String loosen(String text) {
+        StringBuilder out = new StringBuilder(text.length());
+        boolean space = false;
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c == '‘' || c == '’' || c == 'ʼ') {
+                c = '\'';
+            } else if (c == '“' || c == '”') {
+                c = '"';
+            }
+            if (Character.isWhitespace(c)) {
+                space = out.length() > 0;
+                continue;
+            }
+            if (space) {
+                out.append(' ');
+                space = false;
+            }
+            if (c == '…') {
+                out.append("...");
+            } else {
+                out.append(c);
+            }
+        }
+        String flat = out.toString().replaceAll("\\.{2,}", "...");
+        int end = flat.length();
+        while (end > 0 && ".!?~".indexOf(flat.charAt(end - 1)) >= 0) {
+            end--;
+        }
+        return flat.substring(0, end).strip().toLowerCase(java.util.Locale.ROOT);
+    }
+
+    /** 短於這個長度（或沒有空白）的不進寬鬆索引，見 {@link #lookupLoose}。 */
+    private static final int MIN_LOOSE_LENGTH = 12;
+
+    /** 鬆化後的原文 → 語料原文。 */
+    private final Map<String, String> loose = new ConcurrentHashMap<>();
+
+    /** 鬆化後的原文 → 第一個收進來的譯文，只拿來判斷有沒有歧義。 */
+    private final Map<String, String> looseDst = new ConcurrentHashMap<>();
+
+    /** 鬆化之後撞在一起、而譯文又不同的鍵。這些不給寬鬆比對用。 */
+    private final java.util.Set<String> looseClash = ConcurrentHashMap.newKeySet();
+
+    /**
      * 語料裡到底有沒有這一條的譯文——<b>不管</b>使用者有沒有把
      * 「翻譯物品名稱」關掉。
      *
@@ -1450,6 +1599,9 @@ public final class TranslationStore {
         }
         if (lookupMarked(key) != null) {
             return true;                       // 換個記號就查得到，不是缺口
+        }
+        if (looseSource(key) != null || looseSource(respell(key)) != null) {
+            return true;                       // 只差標點或大小寫，不是缺口
         }
         // 屬性列不是整行收的，是「標籤 + 數值」拆開查的（見 LineTranslator#statRow）。
         //
