@@ -3787,7 +3787,9 @@ public final class LineTranslator {
             }
             String tail = rest.substring(name);
             if (zhLabel != null && !zhLabel.isBlank() && !tail.isBlank()) {
-                String zhName = lookupTrimmed(tail, store, false);
+                // 玩家自己打的字查到了也不換：畫面上要看到的是自己搜了什麼。
+                String zhName = TYPED_LABELS.contains(label.strip())
+                        ? tail : lookupTrimmed(tail, store, false);
                 if ((zhName == null || zhName.isBlank())
                         && NAME_LABELS.contains(label.strip())) {
                     zhName = tail;             // 還沒進語料的新技能，名字留原文
@@ -3819,7 +3821,18 @@ public final class LineTranslator {
             "Required Ability:", "Unlocked Ability:",
             // Lootrun 的洞窟清單「✔ Cave: Eyeball Gauntlet」十二條，
             // 冒號後面是洞窟的專有名詞，跟技能名一樣留原文。
-            "Cave:");
+            "Cave:",
+            // 市集的篩選說明「- Name Contains: a」，冒號後面是玩家自己打的搜尋字，
+            // 語料裡不可能有，只翻標籤。
+            "Name Contains:");
+
+    /**
+     * 見 {@link #nameRow}：冒號後面是<b>玩家自己打的字</b>，一律原樣留著，
+     * 就算剛好查得到譯文也不換——「- Name Contains: Insulators」要讓玩家看到
+     * 自己搜的是 Insulators，換成「絕緣器」就對不上輸入框裡的字了。
+     */
+    private static final java.util.Set<String> TYPED_LABELS = java.util.Set.of(
+            "Name Contains:");
 
     /**
      * 行首那個項目符號到哪裡結束（含它後面的空白）。

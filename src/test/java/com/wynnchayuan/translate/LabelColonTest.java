@@ -85,6 +85,16 @@ public final class LabelColonTest {
         String head = LineTranslator.labelHead(glyph + " Range:", store);
         check("名稱自帶冒號（" + head + "）", head != null && head.endsWith(":"));
 
+        // --- 冒號後面是玩家打的字 ---
+        // 市集篩選「- Name Contains: a」：搜尋字不可能在語料裡，只翻標籤。
+        String search = look("- Name Contains: a", store, false);
+        check("市集篩選只翻標籤、搜尋字留原文（拿到：[" + search + "]）",
+                search != null && search.contains("名稱包含") && search.endsWith(" a"));
+        // 搜尋字剛好是查得到的物品名，也不換——畫面要對得上輸入框裡打的字
+        String typed = look("- Name Contains: Insulators", store, false);
+        check("查得到的搜尋字也留原文（拿到：[" + typed + "]）",
+                typed != null && typed.contains("名稱包含") && typed.endsWith(" Insulators"));
+
         System.out.println(failures == 0
                 ? "LabelColon: 全部通過" : "LabelColon: " + failures + " 項失敗");
         if (failures > 0) {
