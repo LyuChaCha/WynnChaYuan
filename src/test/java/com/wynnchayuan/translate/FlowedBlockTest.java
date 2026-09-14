@@ -106,6 +106,7 @@ public final class FlowedBlockTest {
         superconductor(store);
         napalm(store);
         wavebreak(store);
+        starcrossed(store);
         raidPicker(store);
         grootslang(store);
 
@@ -341,6 +342,56 @@ public final class FlowedBlockTest {
         String fallout = store.lookupFlat(
                 "Bomb Arrow gains +{~} area, {#}+{~}, severely increased recoil, and {#}{~} self-damage.");
         check("Fallout 的新措辭查得到（實際：" + fallout + "）", fallout != null);
+    }
+
+    /**
+     * Starcrossed 也是改過措辭的一條，實機 tooltip 裡說明後面緊接著一整列
+     * 圖示（majorid-debug.txt 攤平後尾巴那九個 {#}）。斷行照抄 captured.json。
+     */
+    private static void starcrossed(TranslationStore store) {
+        Style pink = Style.EMPTY.withColor(TextColor.fromRgb(0xE0B3E6));
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(BODY));
+
+        MutableComponent first = Component.empty();
+        first.append(Component.literal(SpaceOffset.encode(2))
+                .withStyle(SpaceOffset.styleFor(pink)));
+        first.append(Component.literal("Starcrossed: ").withStyle(pink));
+        first.append(Component.literal("Haunting Memory").withStyle(grey));
+
+        MutableComponent icons = Component.empty();
+        for (int i = 0; i < 9; i++) {
+            icons.append(rule());
+        }
+
+        List<Component> rows = new ArrayList<>();
+        rows.add(first);
+        for (String s : new String[] {
+                "links up to 8 enemies", "together. While linked,",
+                "enemies take +50% damage from", "Malediction and share this",
+                "damage with every other", "linked enemy." }) {
+            rows.add(plain(s));
+        }
+
+        String zh = store.lookup("Starcrossed");
+        List<StyledText> run = new ArrayList<>();
+        for (Component row : rows) {
+            run.add(StyledText.fromComponent(row));
+        }
+        String alone = joined(run, store);
+        check("Starcrossed 的敘述翻得出來（實際：" + shorten(alone) + "）",
+                alone != null && zh != null && alone.contains(zh)
+                        && !alone.contains("links up"));
+
+        List<Component> tip = new ArrayList<>();
+        tip.add(plain("Uproot Cost -12"));
+        tip.add(plain(""));
+        tip.addAll(rows);
+        tip.add(icons);
+        tip.add(plain(""));
+        String all = com.wynnchayuan.render.TooltipPanel.translateLines(tip, store).stream()
+                .map(Component::getString).reduce("", (a, b) -> a + " " + b);
+        check("後面接著圖示列也翻得出來（實際：" + shorten(all) + "）",
+                zh != null && all.contains(zh) && !all.contains("links up"));
     }
 
     /**

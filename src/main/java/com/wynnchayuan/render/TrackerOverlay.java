@@ -123,8 +123,14 @@ public final class TrackerOverlay {
             x = WynnChaYuan.config().overlayX(CollectorConfig.Overlay.TRACKER);
             y = WynnChaYuan.config().overlayY(CollectorConfig.Overlay.TRACKER);
         }
+        // 拖曳畫面拉過大小的話，寬度就是折行寬度、高度是最小高度，跟對話框同一套。
+        CollectorConfig cfg = WynnChaYuan.config();
+        boolean sized = cfg.hasOverlaySize(CollectorConfig.Overlay.TRACKER);
+        int fixedW = sized ? cfg.overlayW(CollectorConfig.Overlay.TRACKER) : 0;
         // 第一行是放大的抬頭，量寬度要照放大後的算，所以換行寬度也要先縮回去。
-        int wrapAt = wrapWidth(x, graphics.guiWidth());
+        int wrapAt = sized
+                ? Math.max(MIN_WRAP, fixedW - PADDING * 2)
+                : wrapWidth(x, graphics.guiWidth());
         List<net.minecraft.util.FormattedCharSequence> wrapped =
                 new ArrayList<>();
         int firstRows = 0;
@@ -151,6 +157,13 @@ public final class TrackerOverlay {
             boxW = Math.max(boxW, i < firstRows ? Math.round(w * NAME_SCALE) : w);
         }
         boxW += PADDING * 2;
+        if (sized) {
+            boxW = Math.max(boxW, fixedW);
+            boxH = Math.max(boxH, cfg.overlayH(CollectorConfig.Overlay.TRACKER));
+        }
+        // 拉大之後可能超出畫面，拉回來，不然框會整個看不見
+        x = Math.max(2, Math.min(graphics.guiWidth() - boxW - 2, x));
+        y = Math.max(2, Math.min(graphics.guiHeight() - boxH - 2, y));
 
         Boxes.draw(graphics, x, y, boxW, boxH);
 
