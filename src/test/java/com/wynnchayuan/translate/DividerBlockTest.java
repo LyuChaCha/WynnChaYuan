@@ -139,11 +139,64 @@ public final class DividerBlockTest {
                         + zh.toString().replace('\n', '/').stripTrailing() + "」）",
               zh.toString().contains("淨化之光"));
 
+        weeklyObjectives(store);
+
         System.out.println(failures == 0
                 ? "分隔線：全部通過" : "分隔線：" + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 公會「每週目標」那份 tooltip（實機 tooltip-partial-3.json 的原文，一行不差）。
+     *
+     * <p>回報是「目前公會目標」與「目標獎勵」之間的空行不見了。對照那份診斷檔：
+     * 開頭三行併成一句中文之後，後面的列號全部往前挪兩格，而 {@code shown}
+     * 是照<b>列號</b>貼在原文旁邊的——原文第 5 行旁邊擺的是譯文第 5 行
+     * 「目標獎勵」，看起來就像空行被吃了。實際畫出去的四個空行都在。
+     *
+     * <p>併段會讓後面整份錯位，這種誤會下次還會發生，所以把整份畫出來逐行釘住：
+     * 空行一個不少、併段之後的順序也對。
+     */
+    private static void weeklyObjectives(TranslationStore store) {
+        List<Component> in = new ArrayList<>();
+        for (String line : new String[] {
+                "Weekly Objectives",
+                "Complete weekly objectives", "to win prizes for your guild", "and for yourself.",
+                " ",
+                "Current Guild Goal: 5/15",
+                " ",
+                "Goal Rewards:", "- 2 Banner Points", "- 4 Tomes", "- 2048 Emeralds",
+                "- 151184633 Guild XP",
+                " ",
+                "Your Objective:", "- Gather Fish: 0/200", "- Streak: 0",
+                "- Reward Multiplier: 1x",
+                " ",
+                "Complete personal objectives", "in a streak to receive", "better rewards!"}) {
+            in.add(Component.literal(line));
+        }
+        List<Component> out = com.wynnchayuan.render.TooltipPanel.translateLines(in, store);
+        StringBuilder shown = new StringBuilder();
+        for (Component c : out) {
+            shown.append('[').append(c.getString()).append(']');
+        }
+        // 兩段三行的說明各併成一行：21 - 2 - 2
+        check("★ 每週目標畫出 17 行（實際 " + out.size() + "：" + shown + "）",
+              out.size() == 17);
+        if (out.size() != 17) {
+            return;
+        }
+        for (int row : new int[] {2, 4, 10, 15}) {
+            check("★ 第 " + row + " 行是空行（實際「" + out.get(row).getString() + "」）",
+                  out.get(row).getString().isBlank());
+        }
+        check("併起來的說明在第 1 行（實際「" + out.get(1).getString() + "」）",
+              out.get(1).getString().contains("每週目標"));
+        check("★ 目前公會目標後面隔一個空行才是目標獎勵（實際「"
+                        + out.get(3).getString() + "」「" + out.get(5).getString() + "」）",
+              out.get(3).getString().contains("目前公會目標")
+                      && out.get(5).getString().contains("目標獎勵"));
     }
 
     private static void check(String what, boolean ok) {
