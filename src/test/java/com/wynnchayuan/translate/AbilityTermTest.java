@@ -68,6 +68,7 @@ public final class AbilityTermTest {
         swaps(store, "Bash", " gains +2x as many hits.", "重擊");
         swaps(store, "Charge", " deals damage and knocks back enemies.", "衝鋒");
         insideAccent(store);
+        underlineStopsAtName(store);
 
         System.out.println(failures == 0
                 ? "技能名稱替換：全部通過" : "技能名稱替換：" + failures + " 項失敗");
@@ -149,6 +150,105 @@ public final class AbilityTermTest {
             }, Style.EMPTY);
         }
         report("換上去的名稱保留水藍色", coloured[0]);
+        // ★ 0.1.9_4 實機回報：「2 層結晶化」的「層」也被染成水藍色。原文水藍色的只有
+        //   Crystallized，「層」是譯者加的量詞，要跟前後的正文同色。
+        Integer layer = colourAt(built, "層");
+        report("★ 譯者加的「層」是正文的灰色，不是名稱的水藍色（實際 "
+                        + (layer == null ? "null" : String.format("#%06X", layer)) + "）",
+               layer != null && layer == 0xAAAAAA);
+    }
+
+    /**
+     * 底線只能蓋在技能名稱上，不能延伸到後面的正文。
+     *
+     * <h2>0.1.9_4 實機回報</h2>
+     * 法師技能 Arcane Speed（秘法疾行）的敘述，原文兩行，「Heal」與「Arcane Transfer」
+     * 是灰色加底線：
+     *
+     * <pre>
+     *   You gain a walk speed buff after
+     *   casting Heal or Arcane Transfer.
+     * </pre>
+     *
+     * 譯文是一句「使用Heal和Arcane Transfer額外獲得移動速度。」，折回兩行畫出來是
+     * 「使用<u>治療</u>和<u>祕法回流</u>」換行「<u>額外獲得移動速度。</u>」——第二行整行都有底線。
+     *
+     * <p>要設量法：沒有字型時寬度量成 0、譯文不會折行，整句一行就測不到第二行。
+     * 中文算 12px（內附的像素字型），拉丁 6px——中文算窄的話整句放得進一行，一樣測不到。
+     */
+    private static void underlineStopsAtName(TranslationStore store) {
+        System.out.println("=== Arcane Speed 的底線 ===");
+        Style grey = Style.EMPTY.withColor(TextColor.fromRgb(NAME_COLOUR));
+        Style underlined = grey.withUnderlined(true);
+        MutableComponent second = Component.empty();
+        second.append(Component.literal("casting ").withStyle(grey));
+        second.append(Component.literal("Heal").withStyle(underlined));
+        second.append(Component.literal(" or ").withStyle(grey));
+        second.append(Component.literal("Arcane Transfer").withStyle(underlined));
+        second.append(Component.literal(".").withStyle(grey));
+        List<StyledText> run = List.of(
+                StyledText.fromComponent(Component.literal("You gain a walk speed buff after")
+                                                  .withStyle(grey)),
+                StyledText.fromComponent(second));
+        LineTranslator.measureForTest = c -> {
+            int px = 0;
+            for (int cp : c.getString().codePoints().toArray()) {
+                px += cp == ' ' ? 4 : cp >= 0x2E80 ? 12 : 6;
+            }
+            return px;
+        };
+        List<Component> out;
+        try {
+            out = LineTranslator.translateBlock(run, store, new boolean[run.size()]);
+        } finally {
+            LineTranslator.measureForTest = null;
+        }
+        report("整段查得到", out != null && !out.isEmpty());
+        if (out == null || out.isEmpty()) {
+            return;
+        }
+        for (int r = 0; r < out.size(); r++) {
+            StringBuilder sb = new StringBuilder("    [" + r + "] ");
+            out.get(r).visit((style, text) -> {
+                sb.append(style.isUnderlined() ? "_" + text + "_" : text);
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+            System.out.println(sb);
+        }
+        report("「治療」有底線", underlined(out, "治療") == Boolean.TRUE);
+        report("「祕法回流」有底線", underlined(out, "祕法回流") == Boolean.TRUE);
+        report("「和」沒有底線", underlined(out, "和") == Boolean.FALSE);
+        report("★ 名稱後面的「額外獲得」沒有底線", underlined(out, "額外獲得") == Boolean.FALSE);
+        report("★ 「移動速度。」沒有底線", underlined(out, "移動速度") == Boolean.FALSE);
+    }
+
+    /** 含有 {@code needle} 的第一個葉片段有沒有底線；找不到回傳 null。 */
+    private static Boolean underlined(List<Component> rows, String needle) {
+        Boolean[] found = {null};
+        for (Component row : rows) {
+            row.visit((style, text) -> {
+                if (found[0] == null && text.contains(needle)) {
+                    found[0] = style.isUnderlined();
+                }
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+        }
+        return found[0];
+    }
+
+    /** 含有 {@code needle} 的第一個葉片段的顏色；找不到回傳 null。 */
+    private static Integer colourAt(Component row, String needle) {
+        if (row == null) {
+            return null;
+        }
+        Integer[] found = {null};
+        row.visit((style, text) -> {
+            if (found[0] == null && text.contains(needle)) {
+                found[0] = style.getColor() == null ? 0 : style.getColor().getValue();
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return found[0];
     }
 
     private static void report(String what, boolean ok) {

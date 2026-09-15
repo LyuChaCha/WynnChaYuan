@@ -166,6 +166,8 @@ public final class WrapTest {
         oneLine();
         labelBreak();
         balanced();
+        balanceKeepsClause();
+        valueWithLabel();
 
         System.out.println(failures == 0 ? "Wrap: 全部通過" : "Wrap: " + failures + " 項失敗");
         if (failures > 0) {
@@ -250,6 +252,106 @@ public final class WrapTest {
 
         // 內容守恆：平均只重排，不能吃字。
         report("字沒有變少", bare(tight).equals(bare(withWord)));
+    }
+
+    /**
+     * 平均分配不能把「收在逗號上」換成「斷在詞中間」。
+     *
+     * <p>平均分配是把寬度一路收窄、取最後一個行數不變的結果。收到逗號放不進第一行時，
+     * 斷點就掉進詞裡，逗號被夾到第二行中間——行數一樣，所以先前照收：
+     *
+     * <pre>
+     *   本次剩餘的整段期
+     *   間，每提供一個信          ← 兩個接縫都在詞中間
+     *   標就增加一點傷害
+     * </pre>
+     */
+    private static void balanceKeepsClause() {
+        System.out.println("\n  -- 平均分配不丟掉標點上的斷點 --");
+        String text = "本次剩餘的整段期間，每提供一個信標就增加一點傷害";
+        String out = LineTranslator.wrapBalanced(text, 12, WrapTest::measure);
+        String[] rows = rowsOf(out);
+        report("第一行收在逗號上（實際：" + show(out) + "）",
+               rows.length == 3 && rows[0].endsWith("，"));
+        report("字沒有變少", bare(out).equals(bare(text)));
+    }
+
+    /**
+     * 數值跟它的屬性名不能拆到兩行。
+     *
+     * <p>玩家回報 Lootrun 賜福 Heavensent「排版有點怪」：
+     *
+     * <pre>
+     *   本次 Lootrun 剩餘期間，
+     *   每提供一個信標就 +4%
+     *   元素傷害 (最多 x15)          ← 加的是什麼要到下一行才知道
+     * </pre>
+     *
+     * <p>不挑寬度，掃過一整段：只要「數值＋屬性名」本身放得下一行，就不能有任何一個
+     * 寬度把它拆開。這裡行數不設限；有行數限制時可以退回舊的斷法，那一半由
+     * LootrunBoonTest 拿真的賜福去測。
+     */
+    private static void valueWithLabel() {
+        System.out.println("\n  -- 數值跟屬性名不分家 --");
+        String[][] cases = {
+            // {譯文, 不能拆開的那一段}
+            {"本次 Lootrun 剩餘期間，每提供一個信標就 +{~1} 元素傷害 (最多 x{~2})", "+{~1} 元素傷害"},
+            {"本次 Lootrun 剩餘期間，每提供一個信標就 +{~1} {#}防禦 (上限 x{~2})", "+{~1} {#}防禦"},
+            {"本次 Lootrun 剩餘期間，寶箱每提供 {~3} 件物品就 +{~1} 寶物品質 (最多 x{~2})",
+             "+{~1} 寶物品質"},
+            // 數值在屬性名<b>後面</b>：後面沒東西可黏，黏前面
+            {"本次 Lootrun 出現藍色或紫色信標超過 {~} 次之後，元素傷害 +{~}", "元素傷害 +{~}"},
+            {"このルートランで青か紫のビーコンが {~} 回より多く提示されると、属性ダメージ +{~}",
+             "属性ダメージ +{~}"},
+            // 每單位時間、倍率
+            {"每次命中回復 -{~}/5s 生命，並使周圍友軍獲得 x{~} 倍傷害", "-{~}/5s 生命"},
+            // 拉丁／西里爾字母：短介系詞後面才是屬性名
+            {"Когда в этом Lootrun вам предложат маяк более {~} раз, получите +{~} к стихийному урону",
+             "+{~} к стихийному"},
+        };
+        for (String[] c : cases) {
+            String text = c[0];
+            String unit = c[1];
+            int bad = 0;
+            String first = null;
+            boolean lost = false;
+            for (int px = additive(unit); px <= 320; px++) {
+                String wrapped = LineTranslator.wrapBalanced(text, px, WrapTest::additive);
+                if (!bare(wrapped).equals(bare(text))) {
+                    lost = true;
+                }
+                boolean kept = false;
+                for (String row : rowsOf(wrapped)) {
+                    kept |= row.contains(unit);
+                }
+                if (!kept) {
+                    bad++;
+                    if (first == null) {
+                        first = "寬度 " + px + "：" + show(wrapped);
+                    }
+                }
+            }
+            report("「" + unit + "」沒有被拆開" + (first == null ? "" : "（例如 " + first + "）"),
+                   bad == 0);
+            report("「" + unit + "」那句沒有掉字", !lost);
+        }
+    }
+
+    /**
+     * 可以相加的寬度：中日韓 9、空白 4、其他 5。
+     *
+     * <p>{@link #realistic} 把整個佔位符算成 8，但折行斷完之後是拿子字串逐字重量的，
+     * 兩種量法對不起來——「放得下」的判斷就會跟折行本身打架。這裡要的是
+     * 「單位本身放得下就不能拆」這條性質，量法必須一致。
+     */
+    private static int additive(String piece) {
+        int px = 0;
+        for (int i = 0; i < piece.length(); ) {
+            int cp = piece.codePointAt(i);
+            i += Character.charCount(cp);
+            px += cp == ' ' ? 4 : cp >= 0x2E80 ? 9 : 5;
+        }
+        return px;
     }
 
     /**

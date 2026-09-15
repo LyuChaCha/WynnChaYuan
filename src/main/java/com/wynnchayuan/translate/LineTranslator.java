@@ -771,11 +771,48 @@ public final class LineTranslator {
      */
     static String wrapBalanced(String text, int maxPx, int rows,
                                ToIntFunction<String> measure) {
+        String wrapped = wrapBalanced(text, maxPx, rows, measure, true);
+        if (rows == Integer.MAX_VALUE || widestRow(wrapped, measure) <= maxPx) {
+            return wrapped;
+        }
+        // 有行數上限（折回原文那一塊）時，寬度也不該超過原文。
+        //
+        // clauseAhead 為了把近在眼前的逗號收進來，會讓一行多撐兩成。賜福改譯成
+        // 「本次 Lootrun 剩餘期間，每出現一個信標，獲得 +{~1} 傷害 (最多 x{~2})」之後，
+        // 第一行就撐成「本次 Lootrun 剩餘期間，每出現一個信標，」——183px，原文最寬才 157px，
+        // 下一行卻短了一截。平均分配救不回來：每一次收窄，那一行都照比例再撐兩成。
+        //
+        // 不撐也放得進原文的行數，就用不撐的那一份；放不進才照舊撐寬。
+        String inside = wrapBalanced(text, maxPx, rows, measure, false);
+        return lines(inside) <= rows && widestRow(inside, measure) < widestRow(wrapped, measure)
+                ? inside : wrapped;
+    }
+
+    /** @param reach 要不要為了把標點收進來讓一行超出寬度，見 {@link #clauseAhead} */
+    private static String wrapBalanced(String text, int maxPx, int rows,
+                                       ToIntFunction<String> measure, boolean reach) {
+        // 先照最嚴的「不拆開」規則折（見 Keep），行數超過原文才一級一級放鬆，
+        // 三級都超過才放寬寬度。順序是刻意的：數值跟屬性名分家只是難讀，
+        // 面板比原文高、比原文寬卻是整份 tooltip 跟著變形。
         int width = maxPx;
-        String wrapped = wrapToWidth(text, width, measure);
-        for (int attempt = 0; attempt < WRAP_RETRIES && lines(wrapped) > rows; attempt++) {
+        Keep keep = Keep.NONE;
+        String wrapped = null;
+        for (int attempt = 0; ; attempt++) {
+            for (Keep level : Keep.values()) {
+                String tried = wrapToWidth(text, width, measure, level, reach);
+                if (lines(tried) <= rows) {
+                    keep = level;
+                    wrapped = tried;
+                    break;
+                }
+            }
+            if (wrapped != null || attempt >= WRAP_RETRIES) {
+                break;
+            }
             width = width * 11 / 10;
-            wrapped = wrapToWidth(text, width, measure);
+        }
+        if (wrapped == null) {
+            wrapped = wrapToWidth(text, width, measure, Keep.NONE, reach);
         }
         // ① 只差一點就放得下的，讓它留在同一行。
         //
@@ -785,11 +822,11 @@ public final class LineTranslator {
             return text;
         }
         // ② 斷在名稱後面。
-        String head = labelBreak(text, width, rows, measure);
+        String head = labelBreak(text, width, rows, measure, keep, reach);
         if (head != null && lines(head) <= lines(wrapped)) {
             return head;
         }
-        return balance(text, wrapped, width, measure);
+        return balance(text, wrapped, width, measure, keep, reach);
     }
 
     /**
@@ -799,7 +836,8 @@ public final class LineTranslator {
      * 或名稱長到不像名稱的，回傳 {@code null} 表示這條路不通。
      */
     private static String labelBreak(String text, int width, int rows,
-                                     ToIntFunction<String> measure) {
+                                     ToIntFunction<String> measure, Keep keep,
+                                     boolean reach) {
         int colon = text.indexOf(": ");
         if (colon <= 0 || colon > MAX_LABEL_LENGTH || text.indexOf(NEWLINE) >= 0) {
             return null;
@@ -811,8 +849,8 @@ public final class LineTranslator {
         // 剩下那半自己也要排得平均。名稱獨佔一行已經很短了，說明再折成
         // 「滿的一行 ＋ 零頭」，三行就會長短長，比不斷在名稱後面還醜。
         String body = text.substring(colon + 2);
-        String rest = wrapToWidth(body, width, measure);
-        rest = balance(body, rest, width, measure);
+        String rest = wrapToWidth(body, width, measure, keep, reach);
+        rest = balance(body, rest, width, measure, keep, reach);
         return 1 + lines(rest) > rows ? null : label + NEWLINE + rest;
     }
 
@@ -850,29 +888,128 @@ public final class LineTranslator {
      * @param wrapped 已經折好的結果；收不窄就原樣回傳
      */
     private static String balance(String text, String wrapped, int width,
-                                  ToIntFunction<String> measure) {
+                                  ToIntFunction<String> measure, Keep keep, boolean reach) {
         int rows = lines(wrapped);
         if (rows < 2) {
             return wrapped;                     // 一行沒得平均
         }
         String best = wrapped;
+        int bestCost = wrapCost(text, wrapped, keep);
         int at = width;
         for (int step = 0; step < BALANCE_STEPS; step++) {
             int narrower = at * 19 / 20;        // 每次收 5%
             if (narrower <= 0 || narrower == at) {
                 break;
             }
-            String tighter = wrapToWidth(text, narrower, measure);
+            String tighter = wrapToWidth(text, narrower, measure, keep, reach);
             if (lines(tighter) != rows) {
                 break;                          // 再收就會多一行，停在上一個
             }
             if (splitsWord(tighter) && !splitsWord(wrapped)) {
                 break;                          // 見 splitsWord：寧可不平均
             }
-            best = tighter;
             at = narrower;
+            // 行數一樣時先比「斷得好不好」，同分才取比較窄（比較平均）的。
+            // 先前一律取最窄的：收到逗號放不進上一行時，斷點就掉進詞中間——
+            // 「本次剩餘的整段期」換行「間，每提供一個信」，行數沒變所以照收。
+            // 不 break：再收窄一點，斷點可能又回到標點上。
+            int cost = wrapCost(text, tighter, keep);
+            if (cost <= bestCost) {
+                best = tighter;
+                bestCost = cost;
+            }
         }
         return best;
+    }
+
+    /**
+     * 平均分配拿來比較的分數：拆開一組數值＋屬性名很重（見 {@link #unitsSplit}），
+     * 其餘照 {@link #breakCost}。
+     *
+     * <h2>為什麼拆開要另外算</h2>
+     * 折行本身不會拆開放得下一行的那一組（見 {@link #keepUnitWhole}），但平均分配會把寬度
+     * 一路收窄——收到那一組從行首開始都放不下時，只好從中間斷。行數沒變、斷點也都在空白上，
+     * 單看 {@link #breakCost} 分不出來，於是「+{~} к стихийному」剛好放得下的寬度，
+     * 平均完變成「+{~} к」換行「стихийному」。
+     */
+    private static int wrapCost(String text, String wrapped, Keep keep) {
+        return unitsSplit(text, wrapped, keep) * 10 + breakCost(wrapped);
+    }
+
+    /**
+     * 折行結果拆開了幾組 {@link #valueUnits}（每一層都算）。
+     *
+     * <p>折行只插入換行、斷在空白上時吃掉那個空白，所以可以跟原文逐字對回去，
+     * 得到每個換行在原文裡的位置。
+     */
+    static int unitsSplit(String text, String wrapped, Keep keep) {
+        List<List<int[]>> units = valueUnits(text, keep);
+        if (units.isEmpty()) {
+            return 0;
+        }
+        int count = 0;
+        int t = 0;
+        for (int w = 0; w < wrapped.length() && t <= text.length(); w++) {
+            if (wrapped.charAt(w) != NEWLINE || (t < text.length() && text.charAt(t) == NEWLINE)) {
+                t++;
+                continue;
+            }
+            for (List<int[]> layer : units) {
+                for (int[] unit : layer) {
+                    if (unit[0] < t && t < unit[1]) {
+                        count++;
+                    }
+                }
+            }
+            // 斷在空白上時那個空白被行尾吃掉了，原文這邊跳過它
+            if (t < text.length() && text.charAt(t) == ' '
+                    && (w + 1 >= wrapped.length() || wrapped.charAt(w + 1) != ' '
+                        || (t + 1 < text.length() && text.charAt(t + 1) == ' '))) {
+                t++;
+            }
+        }
+        return count;
+    }
+
+    /**
+     * 一個折行結果的斷點有多難讀，越小越好。見 {@link #balance}。
+     *
+     * <ul>
+     *   <li>斷在標點後面（，、。；：或半形的 , ; :）：0——那是句子本來的接縫</li>
+     *   <li>一般的斷點（詞中間、空白上）：1</li>
+     *   <li>下一行從左括號開始：2——括號註解多半在補充上一行最後那個數值</li>
+     *   <li>下一行從收尾的標點開始：4——避頭本來就擋，這裡是保險</li>
+     * </ul>
+     *
+     * <p>拉丁字母的譯文每個斷點都在空白上、全部是 1，所以對它們而言跟先前一樣取最窄的；
+     * 只有碰到逗號才會多一個選擇。
+     */
+    static int breakCost(String wrapped) {
+        int cost = 0;
+        for (int at = wrapped.indexOf(NEWLINE); at >= 0; at = wrapped.indexOf(NEWLINE, at + 1)) {
+            int prev = at;
+            while (prev > 0 && wrapped.charAt(prev - 1) == ' ') {
+                prev--;
+            }
+            int next = at + 1;
+            while (next < wrapped.length() && wrapped.charAt(next) == ' ') {
+                next++;
+            }
+            if (prev == 0 || next >= wrapped.length() || wrapped.charAt(prev - 1) == NEWLINE
+                    || wrapped.charAt(next) == NEWLINE) {
+                continue;                       // 空行不是斷點
+            }
+            char before = wrapped.charAt(prev - 1);
+            char after = wrapped.charAt(next);
+            if (cannotStartLine(after)) {
+                cost += 4;
+            } else if (after == '(' || after == '（') {
+                cost += 2;
+            } else if (CLAUSE_END.indexOf(before) < 0 && ",;:".indexOf(before) < 0) {
+                cost += 1;
+            }
+        }
+        return cost;
     }
 
     /**
@@ -905,6 +1042,15 @@ public final class LineTranslator {
     /** 放寬幾次就放棄。每次一成，五次約多五成，量錯到這個程度另有問題。 */
     private static final int WRAP_RETRIES = 5;
 
+    /** 折好的結果裡最寬的那一行。 */
+    private static int widestRow(String wrapped, ToIntFunction<String> measure) {
+        int widest = 0;
+        for (String row : wrapped.split(NL, -1)) {
+            widest = Math.max(widest, measure.applyAsInt(row));
+        }
+        return widest;
+    }
+
     private static int lines(String text) {
         int n = 1;
         for (int i = text.indexOf(NEWLINE); i >= 0; i = text.indexOf(NEWLINE, i + 1)) {
@@ -933,9 +1079,22 @@ public final class LineTranslator {
      *                所有寬度都會量成 0，折行的邏輯就永遠不會被觸發。
      */
     static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure) {
+        return wrapToWidth(text, maxPx, measure, Keep.NOTE);
+    }
+
+    /** @param keep 哪些東西不能拆到兩行，見 {@link Keep} */
+    static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure,
+                              Keep keep) {
+        return wrapToWidth(text, maxPx, measure, keep, true);
+    }
+
+    /** @param reach 要不要為了把標點收進來讓一行超出寬度，見 {@link #clauseAhead} */
+    private static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure,
+                                      Keep keep, boolean reach) {
         if (maxPx <= 0) {
             return text;
         }
+        List<List<int[]>> units = valueUnits(text, keep);
         StringBuilder out = new StringBuilder(text.length() + 8);
         int lineStart = 0;
         int width = 0;
@@ -962,11 +1121,13 @@ public final class LineTranslator {
                 // 任何字之間斷，退回去只會讓整行提早結束——「✦ 利他主義: 16」
                 // 之後就換行、剩下的擠成三行，就是這樣來的。
                 int cut = breaksWord(text, i) && lastSpace > lineStart ? lastSpace : i;
-                int clause = clauseBreak(text, lineStart, i, lastClause, maxPx, measure);
+                int clause = clauseBreak(text, lineStart, i, lastClause, maxPx, measure,
+                                         reach);
                 if (clause > lineStart) {
                     cut = clause;
                 }
                 cut = avoidOrphan(text, cut, lineStart);
+                cut = keepUnitWhole(text, units, cut, lineStart);
                 out.append(text, lineStart, cut).append(NEWLINE);
                 boolean atSpace = cut < text.length() && text.charAt(cut) == ' ';
                 lineStart = atSpace ? cut + 1 : cut;
@@ -991,6 +1152,17 @@ public final class LineTranslator {
                     continue;
                 }
                 width = measure.applyAsInt(text.substring(lineStart, i));
+                // 斷點被往回挪過（見 keepUnitWhole、keepGlyphWithWord）時，新的一行
+                // 已經吃進了幾個字，裡面的空白與標點要重新記。先前一律歸零，
+                // 下一次斷行就找不到剛才那個空白，只好把單字切開：
+                // 「+{~} к стихийном」換行「у урону」。
+                for (int k = lineStart; k < i; k++) {
+                    if (text.charAt(k) == ' ') {
+                        lastSpace = k;
+                    } else if (CLAUSE_END.indexOf(text.charAt(k)) >= 0) {
+                        lastClause = k + 1;
+                    }
+                }
             }
             if (" ".equals(piece)) {
                 lastSpace = i;
@@ -1047,8 +1219,9 @@ public final class LineTranslator {
      * @return 該斷的位置；這一行不適合在標點處斷時回傳 {@code lineStart}
      */
     private static int clauseBreak(String text, int lineStart, int at, int lastClause,
-                                   int maxPx, ToIntFunction<String> measure) {
-        int ahead = clauseAhead(text, lineStart, at, maxPx, measure);
+                                   int maxPx, ToIntFunction<String> measure, boolean reach) {
+        // reach 關掉時不往前找：那一步會讓這一行超出寬度，見 wrapBalanced
+        int ahead = reach ? clauseAhead(text, lineStart, at, maxPx, measure) : lineStart;
         if (ahead > lineStart) {
             return ahead;
         }
@@ -1249,9 +1422,303 @@ public final class LineTranslator {
         return open > lineStart ? open : cut;
     }
 
-    /** 不能出現在行首的字元。全形標點、收尾符號、百分比與單位。 */
+    /**
+     * 折行時哪些東西不能拆到兩行。由嚴到鬆排，{@link #wrapBalanced} 依序試，
+     * 行數超過原文才退一級。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 玩家回報 Lootrun 賜福 Heavensent「排版有點怪」：
+     *
+     * <pre>
+     *   本次 Lootrun 剩餘期間，
+     *   每提供一個信標就 +4%
+     *   元素傷害 (最多 x15)          ← 加的是什麼要到下一行才知道
+     * </pre>
+     *
+     * 「+4% 元素傷害」是一件事，「(最多 x15)」是在補充它。折行只看寬度，而中文每個字
+     * 都能斷，斷點就落在數值與屬性名中間，括號註解也跟著離開了它的數值。
+     * {@link #keepValueWithGlyph} 只接得住「數值 圖示」那一種，這一條沒有圖示。
+     */
+    enum Keep {
+        /** 數值＋屬性名，連同緊跟在後的短括號註解：「+4% 元素傷害 (最多 x15)」 */
+        NOTE,
+        /** 只保數值＋屬性名：「+4% 元素傷害」 */
+        VALUE,
+        /** 只看寬度的舊斷法。行數怎樣都超過原文時的最後手段 */
+        NONE
+    }
+
+    /** 見 {@link #labelAfter}：中日文的屬性名最多黏幾個字。再長就是句子，不是名稱。 */
+    private static final int LABEL_MAX = 6;
+
+    /** 見 {@link #noteAfter}：括號註解最長幾個字元還算「短註解」。 */
+    private static final int NOTE_MAX = 16;
+
+    /**
+     * 找出譯文裡「數值跟它的屬性名」那幾段，折行時不能從中間斷。
+     *
+     * <h2>怎麼認</h2>
+     * <ul>
+     *   <li><b>數值</b>：{@code {~N}}，或帶正負號、倍率 x、百分比的數字；後面可以黏
+     *       {@code /5s}、{@code s} 這類單位。裸的數字不算——那多半只是句子裡的一個字。</li>
+     *   <li><b>屬性名</b>：數值後面（隔一個空白、可以先有一個 {@code {#}} 圖示）的那個詞。
+     *       中日文取連續的字，最多 {@link #LABEL_MAX} 個；拉丁與西里爾字母取一個單字，
+     *       太短的（俄文的「к」）是介系詞，再多帶一個。</li>
+     *   <li>後面沒有詞可黏時（「元素傷害 +{~}」、日文的「属性ダメージ +{~}」），黏<b>前面</b>
+     *       那個詞——但前面那串太長就是句子不是名稱，不黏。</li>
+     * </ul>
+     *
+     * @return 由外到內的幾層區間 {@code [start, end)}。{@link Keep#NOTE} 有兩層：
+     *         連註解的、只有數值＋屬性名的。外層從行首開始就放不下時退到內層，
+     *         見 {@link #keepUnitWhole}
+     */
+    static List<List<int[]>> valueUnits(String text, Keep keep) {
+        if (keep == Keep.NONE) {
+            return List.of();
+        }
+        List<int[]> values = new ArrayList<>();
+        List<int[]> notes = new ArrayList<>();
+        int i = 0;
+        while (i < text.length()) {
+            int end = valueEnd(text, i);
+            if (end <= i) {
+                i++;
+                continue;
+            }
+            int start = i;
+            int stop = labelAfter(text, end);
+            if (stop == end) {
+                start = labelBefore(text, i);
+            }
+            values.add(new int[] {start, stop});
+            notes.add(new int[] {start, noteAfter(text, stop)});
+            i = end;
+        }
+        return keep == Keep.VALUE ? List.of(merged(values))
+                                  : List.of(merged(notes), merged(values));
+    }
+
+    /** 重疊的區間併成一段。「+{~1} 元素傷害」與「(最多 x{~2})」連起來就是一整組。 */
+    private static List<int[]> merged(List<int[]> spans) {
+        spans.sort(java.util.Comparator.comparingInt(s -> s[0]));
+        List<int[]> out = new ArrayList<>();
+        for (int[] span : spans) {
+            int[] last = out.isEmpty() ? null : out.get(out.size() - 1);
+            if (last != null && span[0] < last[1]) {
+                last[1] = Math.max(last[1], span[1]);
+            } else {
+                out.add(new int[] {span[0], span[1]});
+            }
+        }
+        return out;
+    }
+
+    /**
+     * 斷點落在一組數值＋屬性名<b>裡面</b>時，挪到那一組的前面，整組到下一行。
+     *
+     * <p>那一組從行首開始就放不下的話，挪了也沒用（只會生出空行），改看內層那一組——
+     * 「+4% 元素傷害 (最多 x15)」整組塞不下，至少「+4% 元素傷害」不要拆。
+     */
+    private static int keepUnitWhole(String text, List<List<int[]>> units, int cut,
+                                     int lineStart) {
+        for (List<int[]> layer : units) {
+            for (int[] unit : layer) {
+                if (unit[0] < cut && cut < unit[1]) {
+                    if (unit[0] > lineStart) {
+                        // 「使用 {#} +{~}」的圖示也不能被留在行尾
+                        return keepGlyphWithWord(text, unit[0], lineStart);
+                    }
+                    break;
+                }
+            }
+        }
+        return cut;
+    }
+
+    /** 從 {@code i} 開始的數值到哪裡結束；這裡不是數值時回傳 -1。見 {@link #valueUnits}。 */
+    private static int valueEnd(String text, int i) {
+        int n = text.length();
+        char c = text.charAt(i);
+        boolean signed = false;
+        int j = i;
+        if (c == '+' || c == '-' || c == '−' || c == 'x' || c == '×') {
+            // x 與 - 緊貼在字母數字後面的話，是單字的一部分（box、10-20），不是號
+            if (c != '+' && i > 0 && isWordChar(text.charAt(i - 1))) {
+                return -1;
+            }
+            signed = true;
+            j++;
+        }
+        int k = numberEnd(text, j);
+        if (k <= j) {
+            return -1;
+        }
+        boolean placeholder = text.charAt(j) == '{';
+        if (k < n && (text.charAt(k) == '%' || text.charAt(k) == '‰')) {
+            k++;
+            signed = true;                     // 「250%」本身就是一個量
+        }
+        if (!signed && !placeholder) {
+            return -1;
+        }
+        if (k < n && text.charAt(k) == '/') {
+            // 每單位時間：「/5s」「/s」
+            int per = numberEnd(text, k + 1);
+            int from = per > k + 1 ? per : k + 1;
+            int letters = unitLetters(text, from);
+            if (letters > k + 1) {
+                k = letters;
+            }
+        }
+        return unitLetters(text, k);          // 緊貼的單位：「3s」「{~}m」
+    }
+
+    /** {@code from} 開始的單位字母（見 {@link #unitLength}）到哪裡；不是單位就是 {@code from}。 */
+    private static int unitLetters(String text, int from) {
+        int k = from;
+        while (k < text.length() && k - from < MAX_UNIT && isUnitLetter(text.charAt(k))) {
+            k++;
+        }
+        return k < text.length() && Character.isLetter(text.charAt(k)) ? from : k;
+    }
+
+    /** {@code {~N}} 或阿拉伯數字（可以帶小數點、千分位）到哪裡；不是數字回傳 -1。 */
+    private static int numberEnd(String text, int j) {
+        int n = text.length();
+        if (j >= n) {
+            return -1;
+        }
+        if (text.startsWith("{~", j)) {
+            int close = text.indexOf('}', j);
+            if (close < 0) {
+                return -1;
+            }
+            for (int d = j + 2; d < close; d++) {
+                if (text.charAt(d) < '0' || text.charAt(d) > '9') {
+                    return -1;                 // {~a} 不是數值佔位符
+                }
+            }
+            return close + 1;
+        }
+        int k = j;
+        while (k < n && text.charAt(k) >= '0' && text.charAt(k) <= '9') {
+            k++;
+            if (k + 1 < n && (text.charAt(k) == '.' || text.charAt(k) == ',')
+                    && text.charAt(k + 1) >= '0' && text.charAt(k + 1) <= '9') {
+                k++;
+            }
+        }
+        return k > j ? k : -1;
+    }
+
+    /** 數值後面那個屬性名的結尾；後面沒有名稱時回傳 {@code end}（有圖示就是圖示之後）。 */
+    private static int labelAfter(String text, int end) {
+        int n = text.length();
+        int j = end;
+        if (j < n && text.charAt(j) == ' ') {
+            j++;
+        }
+        int glyphEnd = -1;
+        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
+        if (text.startsWith(glyph, j)) {
+            j += glyph.length();
+            glyphEnd = j;
+            if (j < n && text.charAt(j) == ' ') {
+                j++;
+            }
+        }
+        if (j < n && isCjkLetter(text.charAt(j))) {
+            int k = j;
+            while (k < n && k - j < LABEL_MAX && isCjkLetter(text.charAt(k))) {
+                k++;
+            }
+            return k;
+        }
+        if (j < n && isLatinLetter(text.charAt(j))) {
+            int k = wordEndAt(text, j);
+            if (k - j <= 2 && k + 1 < n && text.charAt(k) == ' '
+                    && isLatinLetter(text.charAt(k + 1))) {
+                k = wordEndAt(text, k + 1);    // 「к стихийному」：介系詞後面才是名稱
+            }
+            return k;
+        }
+        return glyphEnd > 0 ? glyphEnd : end;
+    }
+
+    /**
+     * 數值前面那個屬性名的起點；前面不是名稱時回傳 {@code start}。
+     *
+     * <p>名稱前面緊貼的左括號也算進來——「(最多 x15)」拆成「(」與「最多 x15)」的話，
+     * 上一行就收在一個孤零零的左括號上。
+     */
+    private static int labelBefore(String text, int start) {
+        int j = start;
+        if (j > 0 && text.charAt(j - 1) == ' ') {
+            j--;
+        }
+        int k = j;
+        if (k > 0 && isCjkLetter(text.charAt(k - 1))) {
+            while (k > 0 && isCjkLetter(text.charAt(k - 1))) {
+                k--;
+            }
+            if (j - k > LABEL_MAX) {
+                return start;                  // 「每提供一個信標就 +{~}」前面是整句話
+            }
+            String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
+            if (k >= glyph.length() && text.startsWith(glyph, k - glyph.length())) {
+                k -= glyph.length();           // 「{#}防御 +{~}」
+            }
+        } else if (k > 0 && isLatinLetter(text.charAt(k - 1))) {
+            while (k > 0 && isWordChar(text.charAt(k - 1))) {
+                k--;
+            }
+        } else {
+            return start;
+        }
+        if (k > 0 && (text.charAt(k - 1) == '(' || text.charAt(k - 1) == '（')) {
+            k--;
+        }
+        return k;
+    }
+
+    /** 緊跟在 {@code stop} 後面的短括號註解的結尾；沒有就回傳 {@code stop}。 */
+    private static int noteAfter(String text, int stop) {
+        int j = stop;
+        if (j < text.length() && text.charAt(j) == ' ') {
+            j++;
+        }
+        if (j >= text.length() || (text.charAt(j) != '(' && text.charAt(j) != '（')) {
+            return stop;
+        }
+        int close = text.indexOf(text.charAt(j) == '(' ? ')' : '）', j);
+        return close > j && close - j <= NOTE_MAX ? close + 1 : stop;
+    }
+
+    private static int wordEndAt(String text, int from) {
+        int k = from;
+        while (k < text.length() && isWordChar(text.charAt(k))) {
+            k++;
+        }
+        return k;
+    }
+
+    /** 中日韓的「字」：漢字、假名（含長音符「ー」）、諺文。標點不算。 */
+    private static boolean isCjkLetter(char c) {
+        return c >= 0x2E80 && Character.isLetter(c);
+    }
+
+    /** 拉丁、希臘、西里爾字母。 */
+    private static boolean isLatinLetter(char c) {
+        return c < 0x2E80 && Character.isLetter(c);
+    }
+
+    /**
+     * 不能出現在行首的字元。全形標點、收尾符號、百分比與單位。
+     *
+     * <p>半形的右括號也算：「(最多 x15」換行「)」是實際折得出來的形狀。
+     */
     private static boolean cannotStartLine(char c) {
-        return "，。、；：！？）」』】〉》%‰°′″…・".indexOf(c) >= 0;
+        return "，。、；：！？）」』】〉》%‰°′″…・)]".indexOf(c) >= 0;
     }
 
     /** 在這裡斷行會不會把一個英文單字切成兩半。 */
@@ -4993,8 +5460,13 @@ public final class LineTranslator {
                 String core = target.get(k).text().strip();
                 // 前面已經出現過同樣的字面，貼樣式那一步會先貼到前面去，不登記
                 StringBuilder before = new StringBuilder(earlier);
-                for (LineParts.Piece piece : assign(source.get(k).text().strip(),
-                                                    styles.get(k), core)) {
+                // 譯者在這一段裡多加了字時，顏色只給原文那個名稱。見 #nameInside。
+                String name = nameInside(source.get(k).text().strip(), styles.get(k),
+                                         core, known);
+                List<LineParts.Piece> pieces = name != null
+                        ? List.of(new LineParts.Piece(name, styles.get(k).get(0).style()))
+                        : assign(source.get(k).text().strip(), styles.get(k), core);
+                for (LineParts.Piece piece : pieces) {
                     if (hasContent(piece.text()) && before.indexOf(piece.text()) < 0) {
                         add(out, piece.text(), piece.style(), blockStyle, known);
                     }
@@ -5005,6 +5477,44 @@ public final class LineTranslator {
             earlier.append(NL);
         }
         return applied ? out : null;
+    }
+
+    /**
+     * 原文這一段只有一個顏色、譯文那一段卻多了別的字時，找出譯文裡真正對應原文的那個名稱。
+     *
+     * <h2>0.1.9_4 實機回報</h2>
+     * 法師技能 Diffraction（晶化蔓延）：「Ophanim also applies +2 Crystallized {#}.」，
+     * 水藍色的只有 Crystallized。譯文「Ophanim 也會施加 {~} 層 Crystallized {#}.」照佔位符切段，
+     * {@code {~}} 與 {@code {#}} 之間那一段是「 層 Crystallized 」——整段登記成水藍色，
+     * 譯者加的量詞「層」就跟著變藍，畫面上是「2 層結晶化」四個字都是藍的。
+     *
+     * <p>原文那一段<b>就是</b>名稱本身（或它的譯名，見 {@link #withTranslations}）而且在
+     * 譯文那一段裡找得到時，只登記那個名稱；其餘的字照正文的顏色。找不到（譯者把整段
+     * 重寫了）才照舊整段上色——那時分不出哪幾個字對應原文。
+     *
+     * @return 要上色的名稱；不適用時回傳 {@code null}
+     */
+    private static String nameInside(String source, List<LineParts.Piece> runs, String target,
+                                     List<LineParts.Piece> known) {
+        if (runs.size() != 1 || target.equals(source)) {
+            return null;
+        }
+        Style style = runs.get(0).style();
+        List<String> names = new ArrayList<>();
+        names.add(source);
+        for (LineParts.Piece piece : known) {
+            if (java.util.Objects.equals(piece.style(), style)) {
+                names.add(piece.text().strip());
+            }
+        }
+        String best = null;
+        for (String name : names) {
+            if (hasContent(name) && !target.equals(name) && target.contains(name)
+                    && (best == null || name.length() > best.length())) {
+                best = name;
+            }
+        }
+        return best;
     }
 
     /** 被佔位符切開的一段文字，連同緊接在它後面的佔位符種類（最後一段是 {@code null}）。 */
@@ -5398,13 +5908,33 @@ public final class LineTranslator {
         return out;
     }
 
-    /** 一行裡每個顏色各佔幾個實字。見 {@link #fallback}。 */
+    /**
+     * 一行裡每個顏色各佔幾個實字。見 {@link #fallback}。
+     *
+     * <h2>累計時不看底線、粗體這些裝飾</h2>
+     * 0.1.9_4 實機回報：法師技能 Arcane Speed 的第二行原文是
+     * 「casting <u>Heal</u> or <u>Arcane Transfer</u>.」——底線的技能名 18 個字，
+     * 灰色的正文只有 10 個字。照樣式分開算，「灰＋底線」就成了這一行的多數色，
+     * {@link #fallback} 把它整行套到譯文的第二行，畫面上是
+     * 「使用<u>治療</u>和<u>祕法回流</u>」換行「<u>額外獲得移動速度。</u>」。
+     *
+     * <p>裝飾標的是<b>詞</b>（技能名、重點詞），從來不是整行的底色；而且譯文是我們自己
+     * 折回原文行數的，「第 i 行」兩邊本來就不是同一段字。所以跟 {@link #dominantStyle}
+     * 一樣併成同一個顏色來數，贏的時候回傳<b>沒有裝飾的那一個</b>原樣式。
+     */
     private static final class Tally {
         private final java.util.Map<Style, Integer> counts = new java.util.LinkedHashMap<>();
+        /** 每個顏色實際要回傳的樣式：有沒裝飾的就用它 */
+        private final java.util.Map<Style, Style> shown = new java.util.HashMap<>();
 
         void add(Style style, int solid) {
             if (style != null && solid > 0) {
-                counts.merge(style, solid, Integer::sum);
+                Style key = undecorated(style);
+                counts.merge(key, solid, Integer::sum);
+                Style seen = shown.get(key);
+                if (seen == null || (hasDecoration(seen) && !hasDecoration(style))) {
+                    shown.put(key, style);
+                }
             }
         }
 
@@ -5418,7 +5948,12 @@ public final class LineTranslator {
                     best = e.getKey();
                 }
             }
-            return best;
+            return best == null ? null : shown.get(best);
+        }
+
+        private static boolean hasDecoration(Style style) {
+            return style.isUnderlined() || style.isBold() || style.isItalic()
+                    || style.isStrikethrough() || style.isObfuscated();
         }
     }
 

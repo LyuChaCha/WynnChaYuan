@@ -1,12 +1,39 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.9_4",
+ "latest": "0.1.9_5",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.9_5": {
+   "headline": "Lootrun boon layout and ability text formatting",
+   "items": [
+    "Better line breaks in Lootrun boon descriptions: values stay with their stat name",
+    "Underlines in ability descriptions no longer run into the following text",
+    "Only the translated name keeps the highlight colour in ability descriptions",
+    "Boon names that are also gear names are now translated in the boon menu"
+   ],
+   "zh_tw": {
+    "headline": "Lootrun 賜福排版與技能說明格式修正",
+    "items": [
+     "Lootrun 賜福說明換行優化，數值與屬性名保持在同一行",
+     "技能說明中的底線不再延伸到後面的敘述",
+     "帶顏色的技能名稱翻譯後，只有名稱本身上色",
+     "與裝備同名的賜福名稱在賜福選單中會翻譯"
+    ]
+   },
+   "zh_cn": {
+    "headline": "Lootrun 赐福排版与技能说明格式修正",
+    "items": [
+     "Lootrun 赐福说明换行优化，数值与属性名保持在同一行",
+     "技能说明中的下划线不再延伸到后面的叙述",
+     "带颜色的技能名称翻译后，只有名称本身上色",
+     "与装备同名的赐福名称在赐福菜单中会翻译"
+    ]
+   }
+  },
   "0.1.9_4": {
    "headline": "Tooltip and chat layout fixes",
    "items": [
