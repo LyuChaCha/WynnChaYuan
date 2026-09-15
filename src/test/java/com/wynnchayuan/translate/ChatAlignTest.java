@@ -131,7 +131,88 @@ public final class ChatAlignTest {
 
         columns();
         panelSingles();
+        vibrantColumns();
         report();
+    }
+
+    /**
+     * 璀璨信標的名稱列：欄界偏移小於 8px 也要認得出來。
+     *
+     * <p>偏移取自實機 log：兩欄中心固定，名稱越長偏移越小，
+     * {@code <+0>Vibrant Dark Grey Beacon<+7>Vibrant Rainbow Beacon}。
+     * 先前 {@code MIN_GAP_PX} 把這些都當成「不是欄界」，整行沒對齊。
+     */
+    private static void vibrantColumns() {
+        java.util.Map<String, Integer> px = java.util.Map.of(
+                "Vibrant Dark Grey Beacon", 155, "Vibrant Rainbow Beacon", 140,
+                "Vibrant Crimson Beacon", 150, "Vibrant Aqua Beacon", 128,
+                "璀璨深灰信標", 57, "璀璨彩虹信標", 57, "璀璨緋紅信標", 57, "璀璨水藍信標", 57,
+                "- +1 ", 22, "🔒Unidentified Helmet", 120);
+        java.util.function.ToIntFunction<LineTranslator.Run> width =
+                r -> r.space() ? 0 : px.getOrDefault(r.text(), 0);
+
+        List<LineTranslator.Run> darkOrig = List.of(gap(0), word("Vibrant Dark Grey Beacon"),
+                                                    gap(7), word("Vibrant Rainbow Beacon"));
+        List<LineTranslator.Run> darkMade = List.of(gap(0), word("璀璨深灰信標"),
+                                                    gap(7), word("璀璨彩虹信標"));
+        centresKept("縮排 0、欄距 7", darkOrig, darkMade, width);
+
+        List<LineTranslator.Run> crimsonOrig = List.of(gap(7), word("Vibrant Crimson Beacon"),
+                                                       gap(23), word("Vibrant Aqua Beacon"));
+        List<LineTranslator.Run> crimsonMade = List.of(gap(7), word("璀璨緋紅信標"),
+                                                       gap(23), word("璀璨水藍信標"));
+        centresKept("縮排 7、欄距 23", crimsonOrig, crimsonMade, width);
+
+        // 反例：圖示前的 2px 微調仍然不算欄界。
+        List<LineTranslator.Run> helmet = List.of(word("- +1 "), gap(2),
+                                                  word("🔒Unidentified Helmet"));
+        int gaps = 0;
+        for (boolean g : LineTranslator.chatGaps(helmet)) {
+            gaps += g ? 1 : 0;
+        }
+        check("圖示前的 2px 微調不算欄界（實際 " + gaps + " 個）", gaps == 0);
+    }
+
+    private static void centresKept(String what, List<LineTranslator.Run> orig,
+                                    List<LineTranslator.Run> made,
+                                    java.util.function.ToIntFunction<LineTranslator.Run> width) {
+        int[] adjust = LineTranslator.chatColumnPad(orig, made, width);
+        check(what + "：認得兩個欄界（實際 " + adjust.length + " 個）", adjust.length == 2);
+        List<Integer> before = centres(orig, new int[adjust.length], width);
+        List<Integer> after = centres(made, adjust, width);
+        boolean kept = before.size() == 2 && after.size() == 2;
+        for (int i = 0; kept && i < 2; i++) {
+            kept = Math.abs(before.get(i) - after.get(i)) <= 1;
+        }
+        check(what + "：兩欄的中心不動（原文 " + before + "、譯文 " + after + "）", kept);
+    }
+
+    /** 套上欄距補正之後，每一段實字的中心在哪。 */
+    private static List<Integer> centres(List<LineTranslator.Run> row, int[] adjust,
+                                         java.util.function.ToIntFunction<LineTranslator.Run> width) {
+        boolean[] gaps = LineTranslator.chatGaps(row);
+        List<Integer> out = new ArrayList<>();
+        int pos = 0;
+        int index = 0;
+        for (int i = 0; i < row.size(); i++) {
+            LineTranslator.Run r = row.get(i);
+            if (r.space()) {
+                pos += r.px() + (gaps[i] && index < adjust.length ? adjust[index++] : 0);
+                continue;
+            }
+            int w = width.applyAsInt(r);
+            out.add(pos + w / 2);
+            pos += w;
+        }
+        return out;
+    }
+
+    private static LineTranslator.Run gap(int px) {
+        return new LineTranslator.Run(true, px, Style.EMPTY, SpaceOffset.encode(px));
+    }
+
+    private static LineTranslator.Run word(String text) {
+        return new LineTranslator.Run(false, 0, Style.EMPTY, text);
     }
 
     /**

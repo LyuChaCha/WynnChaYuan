@@ -3134,7 +3134,7 @@ public final class LineTranslator {
      */
     private static boolean columnPanel(List<List<Run>> rows) {
         for (List<Run> row : rows) {
-            if (columns(segmentWidths(row)) >= 2) {
+            if (columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
                 return true;
             }
         }
@@ -3157,7 +3157,7 @@ public final class LineTranslator {
         // 置中。兩邊都做的話整行會位移兩次。
         // 面板裡的單欄行也照原文的中心擺——原文是置中的，照抄左緣會往左偏。
         // 見 #columnPanel。
-        boolean single = columns(segmentWidths(orig)) < 2;
+        boolean single = columns(chatSegmentWidths(orig, LineTranslator::runWidth)) < 2;
         boolean centre = single && leadOrig > 0 && (centred || panel);
         int target = centre ? leadOrig + (bodyOrig - bodyMade) / 2 : leadOrig;
         int pad = target - leadMade;
@@ -3181,7 +3181,7 @@ public final class LineTranslator {
                 break;
             }
         }
-        row.append(apply(made, columns));
+        row.append(applyChat(made, columns));
         return row;
     }
 
@@ -3214,18 +3214,28 @@ public final class LineTranslator {
      * 這時候「第幾個間隔」配不起來，硬補只會補到別的地方去。
      */
     private static int[] columnPad(List<Run> orig, List<Run> made) {
-        int spaces = countSpaces(made);
-        if (countSpaces(orig) != spaces) {
+        return chatColumnPad(orig, made, LineTranslator::runWidth);
+    }
+
+    /**
+     * {@link #columnPad}，寬度的量法可以換掉。<b>測試用</b>——headless 沒有字型，
+     * {@link #widthOf} 一律是 0，欄界認不認得出來這件事就永遠測不到。
+     * 欄界用的是聊天專用的 {@link #chatGaps}。
+     */
+    static int[] chatColumnPad(List<Run> orig, List<Run> made, ToIntFunction<Run> width) {
+        boolean[] madeGaps = chatGaps(made);
+        int spaces = count(madeGaps);
+        if (count(chatGaps(orig)) != spaces) {
             return new int[spaces];
         }
         int[] px = new int[spaces];
         int index = 0;
-        for (Run r : made) {
-            if (isColumnGap(r)) {
-                px[index++] = r.px();
+        for (int i = 0; i < made.size(); i++) {
+            if (madeGaps[i]) {
+                px[index++] = made.get(i).px();
             }
         }
-        return columnDrift(segmentWidths(orig), segmentWidths(made), px);
+        return columnDrift(chatSegmentWidths(orig, width), chatSegmentWidths(made, width), px);
     }
 
     /**
@@ -3637,6 +3647,121 @@ public final class LineTranslator {
 
     static boolean isColumnGap(Run r) {
         return r.space() && Math.abs(r.px()) >= MIN_GAP_PX;
+    }
+
+    /**
+     * 聊天這條路的欄界：{@link #isColumnGap} 認得的，加上「行首或文字後面、
+     * 緊接著文字」的小偏移。
+     *
+     * <h2>為什麼聊天要另外判斷</h2>
+     * 獵殺信標面板兩欄的<b>中心</b>是伺服器固定好的（約 77px 與 232px），名稱越長，
+     * 縮排與欄距就越小。璀璨信標的名稱最長，實機收到的是
+     *
+     * <pre>
+     *   &lt;+0&gt;Vibrant Dark Grey Beacon&lt;+7&gt;Vibrant Rainbow Beacon
+     *   &lt;+7&gt;Vibrant Crimson Beacon&lt;+23&gt;…
+     *   &lt;+2&gt;Vibrant Obscured Beacon&lt;+4&gt;Vibrant Obscured Beacon
+     * </pre>
+     *
+     * 全都低於 {@link #MIN_GAP_PX}。欄界認不出來，兩個中文名就擠在一起、或整行往左偏
+     * ——玩家回報「璀璨的信標歪得很嚴重」。一般信標的名稱短，偏移都在 8px 以上，碰不到。
+     *
+     * <p>門檻本來要擋的是圖示前的微調（{@code - +1 <2px>🔒Unidentified Helmet}）。
+     * 那種偏移後面接的是圖示、不是字母，「後面緊接著有字母的文字」這一條照樣擋得住。
+     * tooltip 的 {@code realign} 也共用 {@link #isColumnGap}，所以不去動它。
+     */
+    static boolean[] chatGaps(List<Run> runs) {
+        boolean[] out = new boolean[runs.size()];
+        for (int i = 0; i < runs.size(); i++) {
+            Run r = runs.get(i);
+            if (!r.space()) {
+                continue;
+            }
+            if (isColumnGap(r)) {
+                out[i] = true;
+                continue;
+            }
+            if (r.px() < 0) {
+                continue;                      // 疊字用的負偏移，見 isBacktrack
+            }
+            out[i] = textBefore(runs, i) && startsWithLetter(runs, i + 1);
+        }
+        return out;
+    }
+
+    /** 往前第一段實字是有字母的，或前面根本沒有實字（行首）。 */
+    private static boolean textBefore(List<Run> runs, int at) {
+        for (int i = at - 1; i >= 0; i--) {
+            Run r = runs.get(i);
+            if (!r.space()) {
+                return GlyphSplitter.hasLetter(r.text());
+            }
+        }
+        return true;
+    }
+
+    /** 往後第一段實字是以字母開頭的。 */
+    private static boolean startsWithLetter(List<Run> runs, int from) {
+        for (int i = from; i < runs.size(); i++) {
+            Run r = runs.get(i);
+            if (r.space()) {
+                continue;
+            }
+            String text = r.text().stripLeading();
+            return !text.isEmpty() && Character.isLetter(text.codePointAt(0));
+        }
+        return false;
+    }
+
+    private static int count(boolean[] flags) {
+        int n = 0;
+        for (boolean f : flags) {
+            if (f) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    /** 一段文字畫出來多寬。 */
+    static int runWidth(Run r) {
+        return widthOf(literal(r.text(), r.style()));
+    }
+
+    /** {@link #segmentWidths} 的聊天版，欄界見 {@link #chatGaps}。 */
+    static List<Integer> chatSegmentWidths(List<Run> runs, ToIntFunction<Run> width) {
+        boolean[] gaps = chatGaps(runs);
+        List<Integer> out = new ArrayList<>();
+        int total = 0;
+        for (int i = 0; i < runs.size(); i++) {
+            if (gaps[i]) {
+                out.add(total);
+                total = 0;
+            } else if (!runs.get(i).space()) {
+                total += width.applyAsInt(runs.get(i));
+            }
+        }
+        out.add(total);
+        return out;
+    }
+
+    /** {@link #apply} 的聊天版，欄界見 {@link #chatGaps}。 */
+    private static Component applyChat(List<Run> runs, int[] adjust) {
+        boolean[] gaps = chatGaps(runs);
+        MutableComponent out = Component.empty();
+        int index = 0;
+        for (int i = 0; i < runs.size(); i++) {
+            Run r = runs.get(i);
+            if (!gaps[i]) {
+                out.append(literal(r.text(), r.style()));
+                continue;
+            }
+            String encoded = SpaceOffset.encode(r.px() + adjust[index++]);
+            if (!encoded.isEmpty()) {
+                out.append(literal(encoded, r.style()));
+            }
+        }
+        return out;
     }
 
     private static int countSpaces(List<Run> runs) {
