@@ -16,32 +16,34 @@
 
 ### What it translates
 
-- **Item tooltips**: a panel beside the tooltip, or written into the tooltip itself
-- **Quest dialogue and choices**: inside Wynncraft's own dialogue box (frame, nameplate and portrait kept), or a separate box
-- **NPC nameplates and floating text**: a box while you look at one, or replaced in place
-- **Quest tracker**, **ability trees** (all five classes) and **Major IDs**
-- **Lootruns, raids and dungeons**: missions, boons, beacons, aspects, gambits, loot panels
-- **Discoveries**, **server chat messages** and **title text** (player chat is never translated)
+- **Item tooltips**: gear lore, stats and Major IDs, in a panel beside the tooltip or written into the tooltip itself
+- **Ability trees**: nodes, descriptions and archetypes for all five classes
+- **Quest dialogue and choices**: inside Wynncraft's own dialogue box (frame, nameplate and portrait kept), typed out in step with the original; or a separate box
+- **Quest tracker** and **NPC nameplates and floating text**
+- **Chat messages**: server messages, with column layouts such as the Lootrun summary and beacons kept aligned (player chat is never translated)
+- **Menus and interfaces**: trade market, guild, store and other screens
+- **Lootruns, raids and dungeons**: missions, boons, beacons, aspects, gambits, loot panels, dungeon names
+- **Discoveries** and **title text**
 
 Gear names stay in English by default; they can be turned on in F6.
 
-### Other features
+### More
 
+- **Translations update themselves**: new translations are downloaded from GitHub on your next launch, no mod update needed
 - **Market search in your language**: type the translated name in the trade market, the English one is sent
-- **Translations sync from GitHub**: fixes arrive on your next launch, no new download
-- **Corpus sharing**: untranslated lines go to the translation team (see below)
 - **Copy chat**: copy recent chat lines for a report
 - **F9**: screenshot of the translation panel
 - **F6 settings**: a mode for each kind of text; translation, fallback and interface language; draggable and resizable boxes
+- **Update notice**: a one-time chat notice linking to GitHub Releases
 
 Client-side only. The server does not need it.
 
 ### Languages
 
 - **Traditional Chinese**: main language, everything
-- **Simplified Chinese** and **Japanese**: everything, on par with Traditional Chinese
-- **Russian**: interface, ability trees, nameplates, item lore; quest dialogue in progress
-- **Korean**: item tooltip labels and Major IDs only
+- **Simplified Chinese**: everything
+- **Japanese** and **Russian**: everything, quest dialogue included
+- **Korean**: item tooltip labels and Major IDs
 
 Switch under F6 → Data, without changing the game's language.
 
@@ -61,16 +63,6 @@ Switch under F6 → Data, without changing the game's language.
 各語言還缺哪些檔案 / Per-language breakdown: [PROGRESS.md](https://github.com/LyuChaCha/WynnChaYuan/blob/main/docs/PROGRESS.md)
 <!-- 進度:結束 -->
 
-### A line switches back to English halfway?
-
-**That is normal.** The sentence is not in the corpus yet, so the original is shown. Report it to **LyuChaCha** on Discord or on [GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues) and it will be filled; everyone gets it on their next launch.
-
-### How to help
-
-Press **F6 → Data → Export untranslated strings**. The folder with `captured.json` opens; look through the file, delete anything personal, then attach it to the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml) (**F6 → Data → How to submit**) or send it to **LyuChaCha** on Discord. You do not have to translate anything.
-
-The mod never sends anything by itself. The export already leaves out player names and guild, party, shout and private chat.
-
 ### Install
 
 - Minecraft **1.21.11**, **Fabric**
@@ -78,6 +70,16 @@ The mod never sends anything by itself. The export already leaves out player nam
 - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
 
 Put the jar in `mods/` and press **F6** in game.
+
+### A line switches back to English halfway?
+
+**That is normal.** The sentence is not in the corpus yet, so the original is shown. Export it and send it to us as described below; once it is added, everyone gets it on their next launch.
+
+### How to help
+
+Press **F6 → Data → Export untranslated strings**. The folder with `captured.json` opens; look through the file, delete anything personal, then attach it to the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml) (**F6 → Data → How to submit**) or send it to **LyuChaCha** on Discord. You do not have to translate anything.
+
+The mod never sends anything by itself. The export already leaves out player names and guild, party, shout and private chat.
 
 ### Sponsoring
 
@@ -97,32 +99,34 @@ Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): 3 USD/month o
 
 ### 翻譯範圍
 
-- **物品 tooltip**：旁邊另開面板，或寫進原本的 tooltip
-- **任務對話與選項**：寫進 Wynncraft 自己的對話框（框、名牌、頭像不動），或另開小框
-- **NPC 名牌與漂浮字**：注視時跳小框，或就地取代
-- **任務追蹤**、**技能樹**（五個職業）與 **Major ID**
-- **Lootrun、討伐戰、地城**：使命、增益、信標、Aspect、Gambit、戰利品面板
-- **探索點**、**伺服器聊天訊息**與**畫面中央大字**（玩家發言不翻）
+- **物品 tooltip**：裝備敘述、屬性與 Major ID，旁邊另開面板，或寫進原本的 tooltip
+- **技能樹**：五個職業的節點、說明與流派
+- **任務對話與選項**：寫進 Wynncraft 自己的對話框（框、名牌、頭像不動），逐字打出的節奏跟原文同步；也可另開小框
+- **任務追蹤**與 **NPC 名牌、漂浮字**
+- **聊天訊息**：伺服器訊息，Lootrun 結算、信標這類分欄訊息保持對齊（玩家發言不翻）
+- **選單與介面**：交易市場、公會、商城等畫面
+- **Lootrun、討伐戰、地城**：使命、賜福、信標、Aspect、Gambit、戰利品面板、地城名稱
+- **探索點**與**畫面中央大字**
 
 裝備名稱預設保留原文，F6 可以打開。
 
 ### 其他功能
 
+- **譯文自動更新**：新的翻譯下次進遊戲就從 GitHub 下載，不必更新模組
 - **市集搜尋**：在交易市集打譯名，送出前自動換回英文原名
-- **譯文從 GitHub 同步**：修正合併後下次進遊戲就生效，不必重新下載模組
-- **匯出語料**：沒翻到的句子匯出成檔案，自己看過再交給翻譯團隊（見下文）
 - **複製聊天**：複製最近的聊天訊息，方便回報
 - **F9**：譯文面板截圖
 - **F6 設定**：每一類文字各自的模式；譯文、輔助、介面語言；小框可拖曳、可改大小
+- **更新提示**：有新版時在聊天室提示一次，連到 GitHub Releases
 
 純客戶端，伺服器不需要裝。
 
-### 語言
+### 支援語言
 
 - **繁體中文**：主要語言，所有內容
-- **簡體中文**、**日文**：所有內容，進度與繁中相當
-- **俄文**：介面、技能樹、名牌、物品敘述；任務對話翻譯中
-- **韓文**：只有物品欄位標籤與 Major ID
+- **簡體中文**：所有內容
+- **日文**、**俄文**：所有內容，含任務對話
+- **韓文**：物品欄位標籤與 Major ID
 
 在 F6 →「資料」切換，不必改遊戲語言。
 
@@ -142,16 +146,6 @@ Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): 3 USD/month o
 各語言還缺哪些檔案 / Per-language breakdown: [PROGRESS.md](https://github.com/LyuChaCha/WynnChaYuan/blob/main/docs/PROGRESS.md)
 <!-- 進度:結束 -->
 
-### 翻到一半變回英文？
-
-**這是正常的**，代表那一句還不在語料裡，所以顯示原文。回報給 Discord 的 **LyuChaCha** 或 [GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues) 就會補上，所有人下次進遊戲就看得到。
-
-### 怎麼幫忙
-
-按 **F6 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。看過檔案、刪掉個人資訊之後，附到 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)（**F6 →「資料」→「如何提交」**），或在 Discord 傳給 **LyuChaCha**。不用翻任何東西。
-
-模組不會自動送出任何東西；匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊。
-
 ### 安裝
 
 - Minecraft **1.21.11**、**Fabric**
@@ -159,6 +153,16 @@ Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): 3 USD/month o
 - [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
 
 jar 放進 `mods/`，進遊戲按 **F6**。
+
+### 翻到一半變回英文？
+
+**這是正常的**，代表那一句還不在語料裡，所以顯示原文。照下面的方式匯出交給我們，補好之後所有人下次進遊戲就看得到。
+
+### 怎麼幫忙
+
+按 **F6 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。看過檔案、刪掉個人資訊之後，附到 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)（**F6 →「資料」→「如何提交」**），或在 Discord 傳給 **LyuChaCha**。不用翻任何東西。
+
+模組不會自動送出任何東西；匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊。
 
 ### 贊助
 

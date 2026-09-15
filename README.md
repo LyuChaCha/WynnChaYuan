@@ -6,45 +6,49 @@
 
 English: **[README.en.md](README.en.md)**
 
-Wynncraft 的多語言翻譯模組。**原文保留**，譯文顯示在旁邊，或直接寫進原本的位置。
+Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。**原文保留**，譯文顯示在旁邊，或直接寫進原本的位置。
+
+[下載](https://github.com/LyuChaCha/WynnChaYuan/releases/latest) ·
+[更新日誌](CHANGELOG.md) ·
+[回報問題](https://github.com/LyuChaCha/WynnChaYuan/issues) ·
+[Ko-fi](https://ko-fi.com/lyuchacha)
 
 > [!IMPORTANT]
 > **目前是 Beta。** 譯文大多由 AI 產出，只有一部分經過人工校稿，會有錯譯與用詞不一致。
 > 遇到問題請到 Discord 找 **LyuChaCha**，或到 [GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues) 回報。
 
-## 翻譯範圍
+## 功能
 
-| 內容 | 顯示方式 |
+### 翻譯範圍
+
+| 內容 | 翻了什麼、怎麼顯示 |
 |---|---|
-| 物品 tooltip | 旁邊另開面板，或寫進原本的 tooltip |
-| 任務對話、對話選項 | 寫進 **Wynncraft 自己的對話框**（框、名牌、頭像不動），或另開小框；兩者分開設 |
-| NPC 名牌、漂浮字 | 注視時跳小框，或就地取代；工作站與「空手右鍵」提示也算 |
-| 任務追蹤 | 獨立小框，抬頭照實際追蹤的東西顯示（任務、世界事件、洞窟、討伐戰…） |
+| 物品 tooltip | 裝備敘述、屬性、Major ID；旁邊另開面板，或寫進原本的 tooltip |
 | 技能樹 | 五個職業的節點、說明與流派 |
-| Major ID | 名稱與整段敘述 |
-| Lootrun、討伐戰、地城 | 使命、增益、信標、Aspect、Gambit、結算與戰利品面板、地城名稱 |
+| 任務對話、對話選項 | 寫進 **Wynncraft 自己的對話框**（框、名牌、頭像不動），逐字打出的節奏跟原文同步；也可另開小框 |
+| 任務追蹤 | 獨立小框，抬頭照實際追蹤的東西顯示（任務、世界事件、洞窟、討伐戰…） |
+| NPC 名牌、漂浮字 | 注視時跳小框，或就地取代；工作站與互動提示也算 |
+| 聊天訊息 | 伺服器發的訊息（任務完成、獎勵、進出區域），Lootrun 結算、信標這類分欄訊息保持對齊。玩家發言不翻 |
+| 選單與介面 | 交易市場、公會、商城等畫面 |
+| Lootrun、討伐戰、地城 | 使命、賜福、信標、Aspect、Gambit、結算與戰利品面板、地城名稱與鑰匙 |
 | 探索點、祕密發現 | 名稱、說明與故事 |
-| 聊天訊息 | 伺服器發的訊息（任務完成、獎勵、進出區域）；就地取代或原文加譯文。玩家發言不翻 |
 | 畫面中央大字 | 標題與副標題 |
 
 裝備名稱預設保留原文——那是專有名詞，交易市場與 wiki 都用英文。F6 可以打開。
 
-## 其他功能
+### 其他
 
-| 功能 | 說明 |
-|---|---|
-| 市集搜尋 | 在交易市集用你的語言搜尋，送出前自動換回英文原名；打字時列出候選，↑↓ 選、Tab 填入 |
-| 譯文自動同步 | 譯文從 GitHub 同步，修正合併後下次進遊戲就生效，**不必重新下載模組**。離線時用上次的快取或 jar 內建版本 |
-| 匯出語料 | 把沒翻到的句子匯出成檔案，自己看過再交給翻譯團隊（見[怎麼幫忙](#怎麼幫忙)） |
-| 複製聊天 | 列出最近的聊天訊息，點一則複製，方便回報（按鍵預設沒綁） |
-| 譯文截圖 | **F9** 把翻譯面板複製到剪貼簿或存成檔案（可改綁） |
-| 面板調整 | 所有小框都能拖曳定位；對話、選項、任務追蹤可拉右下角改大小；面板可跟隨滑鼠或固定、改框線顏色 |
-| 更新提示 | 有新版時在聊天室提示一次；F6 →「更新說明」看各版改了什麼 |
-| 貢獻者標記 | 名單上的人，名牌上方多一行標記，只有裝了本模組的人看得到（可關） |
+- **譯文自動更新**：譯文從 GitHub 下載，新的翻譯合併後下次進遊戲就生效，**不必更新模組**。離線時用上次的快取或 jar 內建版本
+- **市集搜尋**：在交易市集用你的語言搜尋，送出前自動換回英文原名；打字時列出候選，↑↓ 選、Tab 填入
+- **複製聊天**：列出最近的聊天訊息，點一則複製，方便回報（按鍵預設沒綁）
+- **譯文截圖**：**F9** 把翻譯面板複製到剪貼簿或存成檔案（可改綁）
+- **面板調整**：小框都能拖曳定位；對話、選項、任務追蹤可拉右下角改大小
+- **更新提示**：有新版時在聊天室提示一次，連到 GitHub Releases
+- **貢獻者標記**：名單上的人，名牌上方多一行標記，只有裝了本模組的人看得到（可關）
 
-**純客戶端。** 伺服器不需要裝。
+**純客戶端**，伺服器不需要裝。
 
-## F6 設定
+### F6 設定
 
 | 分頁 | 內容 |
 |---|---|
@@ -56,23 +60,21 @@ Wynncraft 的多語言翻譯模組。**原文保留**，譯文顯示在旁邊，
 
 滑鼠移到項目上會顯示說明。
 
-## 語言
+## 支援語言與進度
 
-| 語言 | 狀態 |
+| 語言 | 內容 |
 |---|---|
 | `zh_tw` 繁體中文 | 主要語言，所有內容 |
-| `zh_cn` 简体中文 | 所有內容，進度與繁中相當 |
-| `ja_jp` 日本語 | 所有內容，進度與繁中相當 |
-| `ru_ru` Русский | 介面、技能樹、名牌、物品敘述；任務對話翻譯中 |
-| `ko_kr` 한국어 | 只有物品欄位標籤與 Major ID |
+| `zh_cn` 简体中文 | 所有內容 |
+| `ja_jp` 日本語 | 所有內容，含任務對話 |
+| `ru_ru` Русский | 所有內容，含任務對話 |
+| `ko_kr` 한국어 | 物品欄位標籤與 Major ID |
 
 在 **F6 →「資料」** 切換，不必改遊戲語言，也不用重開：
 
 - **譯文語言**：看哪一種語言的翻譯
 - **輔助語言**：譯文語言還沒翻到的句子改顯示哪一種（或原文）
 - **介面語言**：F6 設定畫面本身的語言（另有英文）
-
-## 翻譯進度
 
 <!-- 進度:開始 -->
 更新於 2026-09-15。
@@ -88,38 +90,36 @@ Wynncraft 的多語言翻譯模組。**原文保留**，譯文顯示在旁邊，
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
 
-## 翻到一半變回英文？
-
-**這是正常的**，代表那一句還不在語料裡，模組找不到譯文就顯示原文。
-
-回報給翻譯團隊就會補上：Discord 找 **LyuChaCha**，或到
-[GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues)。
-補好之後所有人下次進遊戲就看得到，不必更新模組。附上英文原文最好——
-聊天訊息可以用「複製聊天」直接複製。
-
-## 怎麼幫忙
-
-任務對話與 NPC 名牌沒有官方資料可抓，只能靠玩家在遊戲裡遇到。**不用翻任何東西**，把你遇到的缺口交給我們就好：
-
-1. **F6 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。
-2. 打開檔案看一遍，刪掉任何個人資訊（別人的名字、公會名、私人對話）。
-3. **F6 →「資料」→「如何提交」**打開 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)，把檔案拖進去；或在 Discord 傳給 **LyuChaCha**。
-
-模組**不會自動送出任何東西**。匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊，但濾網是猜的，送出前請自己看過。
-
 ## 安裝
 
 | 需求 | 版本 |
 |---|---|
 | Minecraft | 1.21.11 |
 | 載入器 | Fabric |
-| 前置 | [Wynntils](https://modrinth.com/mod/wynntils) 4.2 以上、Fabric API |
+| 前置 | [Wynntils](https://modrinth.com/mod/wynntils) 4.2 以上、[Fabric API](https://modrinth.com/mod/fabric-api) |
 
-jar 放進 `mods/`，進遊戲按 **F6** 開設定。
+1. 下載 jar：[GitHub Releases](https://github.com/LyuChaCha/WynnChaYuan/releases/latest) ·
+   [Modrinth](https://modrinth.com/mod/wynnchayuan) ·
+   [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wynnchayuan)
+2. 放進 `mods/`，進遊戲按 **F6** 開設定。
 
-下載：[GitHub Releases](https://github.com/LyuChaCha/WynnChaYuan/releases/latest) ·
-[Modrinth](https://modrinth.com/mod/wynnchayuan) ·
-[CurseForge](https://www.curseforge.com/minecraft/mc-mods/wynnchayuan)
+## 翻到一半變回英文？
+
+**這是正常的**，代表那一句還不在語料裡，模組找不到譯文就顯示原文。
+
+照下面的[怎麼幫忙](#怎麼幫忙)把它匯出交給我們，補好之後所有人下次進遊戲就看得到，不必更新模組。
+
+## 怎麼幫忙
+
+任務對話與 NPC 名牌沒有官方資料可抓，只能靠玩家在遊戲裡遇到。**不用翻任何東西**，把你遇到的缺口交給我們就好：
+
+1. **F6 →「資料」→「匯出未翻譯字串」**，會打開 `config/wynnchayuan/export`，裡面是 `captured.json`。
+2. 打開檔案看一遍，刪掉任何個人資訊（別人的名字、公會名、私人對話）。
+3. **F6 →「資料」→「如何提交」**打開 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)，把檔案拖進去；或在 Discord 傳給 **LyuChaCha**。
+
+模組**不會自動送出任何東西**。匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊，但濾網是猜的，送出前請自己看過。
+
+翻錯或用詞不對，直接到 [GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues) 回報，附上英文原文最好——聊天訊息可以用「複製聊天」直接複製。
 
 ## 參與翻譯
 
@@ -131,27 +131,22 @@ jar 放進 `mods/`，進遊戲按 **F6** 開設定。
 
 想在遊戲裡試自己的譯文：F6 把「譯文來源」切成**本機**，改完按「重新載入」。
 
-## 建置
+## 從原始碼建置
 
 ```bash
 gradle build
 ```
 
-Wynntils 沒有 Maven 座標，要先從 [Modrinth](https://modrinth.com/mod/wynntils/versions)
+需要 JDK 21。Wynntils 沒有 Maven 座標，要先從 [Modrinth](https://modrinth.com/mod/wynntils/versions)
 下載 **Fabric 版** jar 放進 `libs/`（缺了建置會停下並說明）。語料檢查：`python tools/validate.py`。
 
 ## 贊助
 
 免費，也會一直免費。想請我們喝杯茶：**<https://ko-fi.com/lyuchacha>**
 
-| 方式 | 回饋 |
-|---|---|
-| 每月 **3 USD** 以上 | 列入贊助者名單 |
-| 單次 **10 USD** 以上 | 列入贊助者名單 |
+每月 **3 USD** 或單次 **10 USD** 以上列入贊助者名單：出現在下方、F6 →「關於／貢獻者」，名牌上方也會多一行標記。贊助不影響翻譯內容，沒有付費功能。
 
-名單出現在下方、F6 →「關於／貢獻者」，名牌上方也會多一行標記。贊助不影響翻譯內容，沒有付費功能。
-
-## 團隊
+## 翻譯團隊
 
 同一份名單也在遊戲內 **F6 →「關於／貢獻者」**。要加人改 [`credits.json`](src/main/resources/assets/wynnchayuan/credits.json)。
 
@@ -204,7 +199,7 @@ Wynntils 沒有 Maven 座標，要先從 [Modrinth](https://modrinth.com/mod/wyn
 
 <!-- credits:end -->
 
-## 資料來源與授權
+## 來源與授權
 
 - 物品與技能資料：[Wynntils](https://github.com/Wynntils/Wynntils) 使用的公開 CDN
 - 任務與祕密發現清單：[Wynncraft Wiki](https://wynncraft.wiki.gg/)（CC BY-SA）
