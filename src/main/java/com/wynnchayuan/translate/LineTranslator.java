@@ -1297,6 +1297,9 @@ public final class LineTranslator {
         List<Piece> pieces = new ArrayList<>();
         boolean any = false;
         boolean percent = hasPercentValue(line);
+        // 第一輪查不到、但整段只有數值與範圍小字（「 to 」「-60 tier」）的片段。
+        // 要等整行看完、確定有標籤翻成功了才動它們，見下面第二輪。
+        List<Integer> connectorAt = new ArrayList<>();
 
         for (StyledTextPart part : line) {
             String raw = part.getString(null, StyleType.NONE);
@@ -1326,6 +1329,9 @@ public final class LineTranslator {
             Component replaced = body.isEmpty()
                     ? null : translateOneSegment(body, style, store, percent);
             if (replaced == null) {
+                if (!body.isEmpty() && isConnectorSegment(body)) {
+                    connectorAt.add(pieces.size());
+                }
                 pieces.add(Piece.text(raw, style));
                 continue;
             }
@@ -1340,8 +1346,10 @@ public final class LineTranslator {
             }
         }
         if (!any) {
+            // 沒有任何標籤翻成功：句子裡零星的「to」不是範圍，整行保持原文。
             return null;
         }
+        translateConnectors(pieces, connectorAt, store);
 
         // 標籤與數值的交界若還沒有對齊空白，就補一個。
         //
@@ -4065,7 +4073,7 @@ public final class LineTranslator {
         if (zh == null || zh.isBlank()) {
             return null;
         }
-        return zh + translateTail(tail);
+        return zh + translateTail(tail, store);
     }
 
     /**
@@ -4105,12 +4113,17 @@ public final class LineTranslator {
         while (start > 0 && Character.isLetter(template.charAt(start - 1))) {
             start--;
         }
-        return start < at && TAIL_WORDS.containsKey(template.substring(start, at))
+        return start < at && CONNECTOR_KEYS.containsKey(template.substring(start, at))
                 ? start : -1;
     }
 
-    /** 數值段裡的小字也要換掉，不然「+1 tier」會留一個英文在中文中間。 */
-    private static String translateTail(String tail) {
+    /**
+     * 數值段裡的小字也要換掉，不然「+1 tier」會留一個英文在中文中間。
+     *
+     * <p>換成什麼由語料決定（見 {@link #connector}），查不到就留英文。
+     * 字前後的空白原樣保留。
+     */
+    private static String translateTail(String tail, TranslationStore store) {
         StringBuilder out = new StringBuilder(tail.length());
         int at = 0;
         while (at < tail.length()) {
@@ -4124,7 +4137,8 @@ public final class LineTranslator {
                 end++;
             }
             String word = tail.substring(at, end);
-            out.append(TAIL_WORDS.getOrDefault(word, word));
+            String local = connector(word, store);
+            out.append(local != null ? local : word);
             at = end;
         }
         return out.toString();
@@ -4137,13 +4151,106 @@ public final class LineTranslator {
     }
 
     /**
-     * 數值段裡唯一允許出現的英文字。
+     * 數值段裡唯一允許出現的英文字，以及它們在語料裡的連接詞鍵。
      *
-     * <p>{@code to} 是區間（{@code +100 to +200}），跟語料裡既有的兩百多條屬性列一樣用「到」、{@code tier} 是攻速階級
+     * <p>{@code to} 是區間（{@code +100 to +200}）、{@code tier} 是攻速階級
      * （{@code +1 tier}）。兩個都只出現在數值中間，不會讓句子被誤判成屬性列。
+     *
+     * <h2>為什麼不寫死譯文</h2>
+     * 先前這裡直接對應「到」「階」。那是繁中的字，而屬性列這條路每個語言都會走——
+     * 日文、俄文、韓文的標籤查到之後，數值中間照樣被塞進中文。
+     * 店家本身不知道自己是哪個語言，所以不在程式裡分語言，改查語料：
+     * 每個語言的 {@code ui-labels.json} 自己寫連接詞，簡體沒寫時照疊層規則退到繁體
+     * （見 {@code Languages#fallbackFor}），其他語言沒寫就留英文。
      */
-    private static final java.util.Map<String, String> TAIL_WORDS = java.util.Map.of(
-            "to", "到", "tier", "階", "tiers", "階");
+    private static final java.util.Map<String, String> CONNECTOR_KEYS = java.util.Map.of(
+            "to", "{~} to {~}", "tier", "{~} tier", "tiers", "{~} tier");
+
+    /** 連接詞譯文裡的數值佔位符，{@code {~}} 或照順序指名的 {@code {~1}}。 */
+    private static final java.util.regex.Pattern CONNECTOR_SLOT =
+            java.util.regex.Pattern.compile("\\{~\\d*}");
+
+    /**
+     * 範圍／單位小字在目前語言的說法：語料 {@code "{~} to {~}": "{~} 到 {~}"}
+     * 拿掉佔位符、去掉前後空白，得到「到」。
+     *
+     * @return 語料沒有這個鍵、或譯文是空的時回傳 {@code null}——呼叫端留英文
+     */
+    static String connector(String word, TranslationStore store) {
+        String key = CONNECTOR_KEYS.get(word);
+        if (key == null || store == null) {
+            return null;
+        }
+        String dst = store.lookup(key);
+        if (dst == null || dst.isBlank()) {
+            return null;
+        }
+        String local = CONNECTOR_SLOT.matcher(dst).replaceAll("").strip();
+        return local.isEmpty() ? null : local;
+    }
+
+    /**
+     * 這一段是不是只有數值與範圍小字：{@code " to "}、{@code "-60 tier"}。
+     *
+     * <p>至少要有一個 {@link #CONNECTOR_KEYS} 裡的字；有別的英文字就是句子，不算。
+     */
+    private static boolean isConnectorSegment(String body) {
+        boolean word = false;
+        int at = 0;
+        while (at < body.length()) {
+            char c = body.charAt(at);
+            if (Character.isLetter(c)) {
+                int end = at;
+                while (end < body.length() && Character.isLetter(body.charAt(end))) {
+                    end++;
+                }
+                if (!CONNECTOR_KEYS.containsKey(body.substring(at, end))) {
+                    return false;
+                }
+                word = true;
+                at = end;
+            } else if (isValueChar(c)) {
+                at++;
+            } else {
+                return false;
+            }
+        }
+        return word;
+    }
+
+    /**
+     * {@link #translateSegments} 的第二輪：標籤翻成功的行，數值之間獨立成段的
+     * 「 to 」「-60 tier」也換成目前語言的連接詞。
+     *
+     * <h2>為什麼第一輪收不到</h2>
+     * 未鑑定裝備的範圍是好幾個<b>不同顏色</b>的元件：{@code +2%}、{@code  to }、
+     * {@code +9%}。單獨一段「to」查不到鍵，也不是屬性列（前面沒有標籤），
+     * 於是原樣抄過去，畫面變成「移動速度 +2% to +9%」。
+     *
+     * <p>顏色照原段，字型換成預設——跟 {@link #rebuild} 對文字的處理一樣，
+     * 否則中文會用 Wynncraft 的字型畫成方框。
+     */
+    private static void translateConnectors(List<Piece> pieces, List<Integer> at,
+                                            TranslationStore store) {
+        // 從後面往前換：補回來的排版偏移會插一個片段，前面的位置才不會跑掉
+        for (int k = at.size() - 1; k >= 0; k--) {
+            int index = at.get(k);
+            Piece piece = pieces.get(index);
+            String raw = piece.text();
+            String tail = SpaceOffset.trailingOffsets(raw);
+            String body = raw.substring(0, raw.length() - tail.length());
+            String local = translateTail(body, store);
+            if (local.equals(body)) {
+                continue;                      // 語料沒有這個語言的連接詞，留英文
+            }
+            pieces.set(index, Piece.translated(literal(local, forDisplay(piece.style())),
+                                               literal(body, piece.style())));
+            if (!tail.isEmpty()) {
+                pieces.add(index + 1, Piece.space(SpaceOffset.decode(tail),
+                        SpaceOffset.styleFor(piece.style())));
+            }
+        }
+    }
 
     /** 見 {@link #lookup}：先剝首尾再查，這是原本那條路。 */
     private static String lookupTrimmed(String template, TranslationStore store,

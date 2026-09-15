@@ -93,9 +93,34 @@ public final class StatRowTest {
         keeps(store, "Fire Spell Damage {#}+{~} [{~}]", "{#}+{~} [{~}]");
         keeps(store, "Elemental Spell Damage {#}+{~} ★{~} ⇧{~} ⇩{~}", "★{~} ⇧{~} ⇩{~}");
 
-        // 數值中間的小字也要換掉，不然中文裡夾著一個英文
-        contains(store, "Water Spell Damage{#}-{~} to -{~}", "到");
-        contains(store, "Attack Speed {#}+{~} tier", "階");
+        // 數值中間的小字也要換掉，不然中文裡夾著一個英文。
+        //
+        // 連接詞來自語料（ui-labels.json 的「{~} to {~}」「{~} tier」）。那兩個鍵由
+        // 資料那邊的 PR 補進來，這裡先疊一層只有這兩條的暫存語料，免得測試跟著
+        // 資料合併的先後順序忽好忽壞。
+        TranslationStore zh = new TranslationStore();
+        zh.loadAll(List.of(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                                   Languages.DEFAULT),
+                           corpus("wynnchayuan-connectors", "{~} to {~}", "{~} 到 {~}",
+                                  "{~} tier", "{~} 階")));
+        contains(zh, "Water Spell Damage{#}-{~} to -{~}", "到");
+        contains(zh, "Attack Speed {#}+{~} tier", "階");
+
+        // 非中文的語言不能被塞進中文：先前小字是寫死的「到」「階」。
+        TranslationStore ru = new TranslationStore();
+        ru.loadAll(corpus("wynnchayuan-connectors-ru",
+                "Water Spell Damage", "Урон заклинаний Воды",
+                "Attack Speed", "Скорость атаки",
+                "{~} to {~}", "{~} до {~}"));
+        equals(ru, "Water Spell Damage{#}-{~} to -{~}", "Урон заклинаний Воды{#}-{~} до -{~}");
+        // 這個語言沒寫 tier：留英文，不退回中文
+        equals(ru, "Attack Speed {#}+{~} tier", "Скорость атаки {#}+{~} tier");
+
+        // 語料沒有連接詞的鍵：標籤照翻，「to」留英文，不拿寫死的中文頂上
+        TranslationStore bare = new TranslationStore();
+        bare.loadAll(corpus("wynnchayuan-connectors-none",
+                "Water Spell Damage", "水屬性法術傷害"));
+        equals(bare, "Water Spell Damage{#}-{~} to -{~}", "水屬性法術傷害{#}-{~} to -{~}");
 
         // 反面：句子不是屬性列。
         //
@@ -220,6 +245,22 @@ public final class StatRowTest {
         String hit = LineTranslator.lookup(row, store, false);
         report("「" + row + "」裡有「" + want + "」（實際：" + hit + "）",
                 hit != null && hit.contains(want));
+    }
+
+    private static void equals(TranslationStore store, String row, String want) {
+        String hit = LineTranslator.lookup(row, store, false);
+        report("「" + row + "」-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
+    }
+
+    /** 暫存語料：一個只有 {@code ui-labels.json} 的資料夾，內容是成對的原文與譯文。 */
+    static Path corpus(String name, String... pairs) throws IOException {
+        Path dir = Files.createTempDirectory(name);
+        JsonObject root = new JsonObject();
+        for (int i = 0; i + 1 < pairs.length; i += 2) {
+            root.addProperty(pairs[i], pairs[i + 1]);
+        }
+        Files.writeString(dir.resolve("ui-labels.json"), root.toString(), StandardCharsets.UTF_8);
+        return dir;
     }
 
     private static void nothing(TranslationStore store, String sentence) {
