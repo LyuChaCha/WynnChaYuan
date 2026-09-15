@@ -396,8 +396,40 @@ public final class TooltipPanel {
             return false;
         }
         char start = line.charAt(0);
-        return start >= 'a' && start <= 'z';
+        return start >= 'a' && start <= 'z' || endsMidPhrase(prev);
     }
+
+    /**
+     * 上一行停在一個<b>不可能收尾的字</b>上（冠詞、介系詞、連接詞）。
+     *
+     * <h2>為什麼光看小寫開頭不夠</h2>
+     * 地城鑰匙的說明是
+     *
+     * <pre>
+     *   Use this item at the
+     *   Forgery to craft a
+     *   Infested Pit Key
+     * </pre>
+     *
+     * 後兩行都是大寫開頭——接下去的是專有名詞。只認小寫的話三行各自成段，
+     * 於是語料裡單獨收著的「Infested Pit Key」自己翻成「蟲蝕深坑鑰匙」，
+     * 前兩行因為整段條目沒收而留英文：畫面上就是半句英文接一個中文名字。
+     *
+     * <p>句子不會停在「the」「a」「to」上，所以上一行這樣結尾，下一行不管大小寫
+     * 都是同一句。要求那個字前面還有別的字，免得單字的按鈕或標籤（「To」）被算進來。
+     */
+    private static boolean endsMidPhrase(String prev) {
+        int space = prev.lastIndexOf(' ');
+        if (space <= 0) {
+            return false;
+        }
+        return LINK_WORDS.contains(prev.substring(space + 1).toLowerCase(java.util.Locale.ROOT));
+    }
+
+    /** 見 {@link #endsMidPhrase}。 */
+    private static final java.util.Set<String> LINK_WORDS = java.util.Set.of(
+            "a", "an", "the", "of", "to", "at", "for", "with", "from", "into",
+            "by", "in", "on", "and", "or", "your");
 
     /**
      * 就地取代模式的截圖框。
@@ -537,8 +569,65 @@ public final class TooltipPanel {
         while (at < bare.length() && BULLETS.indexOf(bare.charAt(at)) >= 0) {
             at++;
         }
-        return store.isBareGearName(bare.substring(at).strip());
+        return store.isBareGearName(bare.substring(at).strip())
+                || guessList(line.getStringWithoutFormatting(), store);
     }
+
+    /**
+     * 這一行是 Wynntils「物品猜測」列出來的<b>候選裝備清單</b>嗎。
+     *
+     * <h2>實機回報</h2>
+     * 未鑑定靴子底下那份清單長這樣（前綴是 Wynntils 自己的語言檔，所以中文介面
+     * 看到的是「等級」）：
+     *
+     * <pre>
+     *   - 可能性：
+     *   - 等級 87 [113 ₑ]: Bloodlust
+     *   - 等級 88 [113 ₑ]: Sempiternal, Statue
+     * </pre>
+     *
+     * 畫出來是「- 等級 87 [113 ₑ]: 嗜血」——冒號後面那個是<b>靴子的名字</b>，
+     * 拿到的卻是戰士技能 Bloodlust 的譯名。旁邊兩件留著英文，只是因為
+     * 「Sempiternal, Statue」剛好沒有哪一條撞得上。
+     *
+     * <p>上面那道守門只認「剝掉項目符號之後<b>整行</b>就是一個名字」，而這一行前面
+     * 還掛著等級與價格，於是整行落到逐片段那條路，名字那一段被單獨拿去查表。
+     *
+     * <h2>為什麼整行不翻</h2>
+     * 前綴本來就是 Wynntils 照自己的語言檔寫好的，我們這邊沒有東西要翻；
+     * 整行留原樣，跟旁邊沒撞名的那幾行才會一樣。
+     *
+     * <p>形狀認得很窄：「短標籤 數字［方括號］: 名稱, 名稱」，而且名稱裡至少要有
+     * 一個<b>還沒翻的裝備名</b>——「- Streak: 0」「Current Guild Goal: 5/15」
+     * 都碰不到。用畫面上的純文字比對而不是模板：名字裡有地名時模板會把它換成
+     * {@code {p}}，就再也對不上裝備名清單了。
+     */
+    static boolean guessList(String plain, TranslationStore store) {
+        String text = com.wynnchayuan.capture.GlyphSplitter.stripGlyphChars(plain).strip();
+        int at = 0;
+        while (at < text.length() && (BULLETS.indexOf(text.charAt(at)) >= 0
+                || Character.isWhitespace(text.charAt(at)))) {
+            at++;
+        }
+        java.util.regex.Matcher row = GUESS_ROW.matcher(text.substring(at));
+        if (!row.matches()) {
+            return false;
+        }
+        for (String name : row.group(1).split(",")) {
+            if (store.isBareGearName(name.strip())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 見 {@link #guessList}：「Lv. 87 [113 ₑ]: 名稱」。標籤是 Wynntils 語言檔裡的
+     * 「Lv.」「等級」「等级」……所以不寫死字面，只限制它短、不含數字與冒號。
+     * 價格那一段是另一個開關打開才有，可有可無。
+     */
+    private static final java.util.regex.Pattern GUESS_ROW = java.util.regex.Pattern.compile(
+            "[^\\d:\\[\\]]{1,16} \\d+(?: \\[[^\\]]*\\])?: (.+)");
 
     /** 見 {@link #blockedGearName}。跟 {@code LineTranslator} 那一份是同一組。 */
     private static final String BULLETS = "-–—•*";
