@@ -2110,9 +2110,23 @@ public final class LineTranslator {
 
     /** 整段文字畫出來有多寬（像素）。 */
     private static int widthOf(Component component) {
+        if (measureForTest != null) {
+            return measureForTest.applyAsInt(component);
+        }
         Minecraft mc = Minecraft.getInstance();
         return mc == null || mc.font == null ? 0 : mc.font.width(component);
     }
+
+    /**
+     * 測試用的量法；{@code null} 表示照常問字型。
+     *
+     * <p>headless 沒有字型，{@link #widthOf} 一律是 0——聊天那一整條對齊（欄界、
+     * 置中、整行寬度）因此在測試裡全部退化成「什麼都不做」，只剩
+     * {@link #chatColumnPad} 那一小段算式測得到。Lootrun 結算那種整行的回報
+     * （欄位錯開、整行太寬被聊天折到下一行）得從 {@code translateChat} 一路量到底
+     * 才看得出來。
+     */
+    static ToIntFunction<Component> measureForTest;
 
     /** 原始行的寬度。 */
     private static int widthOf(StyledText line) {
@@ -3169,18 +3183,21 @@ public final class LineTranslator {
         boolean centre = single && leadOrig > 0 && (centred || panel);
         int target = centre ? leadOrig + (bodyOrig - bodyMade) / 2 : leadOrig;
         int pad = target - leadMade;
+        int[] columns = columnPad(orig, made);
+        int fitted = fitWidth(orig, made, pad, columns);
         log.append("  ").append(centre ? "置中" : "靠左")
            .append(" 原文縮排=").append(leadOrig).append(" 內容=").append(bodyOrig)
            .append("  譯文縮排=").append(leadMade).append(" 內容=").append(bodyMade)
            .append("  補=").append(pad)
+           .append(fitted != pad ? "（收寬後 " + fitted + "）" : "")
            .append("  譯文=").append(rowText(made))
            .append(System.lineSeparator());
+        pad = fitted;
         MutableComponent row = Component.empty();
         String encoded = SpaceOffset.encode(pad);
         if (!encoded.isEmpty()) {
             row.append(literal(encoded, SpaceOffset.styleFor(Style.EMPTY)));
         }
-        int[] columns = columnPad(orig, made);
         for (int px : columns) {
             if (px != 0) {
                 log.append("        欄距補正=")
@@ -3223,6 +3240,73 @@ public final class LineTranslator {
      */
     private static int[] columnPad(List<Run> orig, List<Run> made) {
         return chatColumnPad(orig, made, LineTranslator::runWidth);
+    }
+
+    /**
+     * 補正之後，這一行<b>不能比原文寬</b>；超出的部分從最右邊的欄距開始收回來。
+     *
+     * <h2>為什麼要收</h2>
+     * 聊天視窗的寬度是固定的，放不下的行原版會從最後一個空白折到下一行最左邊。
+     * Lootrun 結算那幾行本來就排到快滿（「300 Lootrun Experience ｜
+     * Challenges Completed: 5」寬 294px，聊天預設 320px），任何一點多出來的寬度
+     * 都會把右欄整段甩到下一行——issue #719 的「经验」孤零零掉到下一行最左邊。
+     *
+     * <p>{@link #centreColumns} 讓每一欄守住自己的中心。譯文比英文<b>窄</b>時整行
+     * 只會變短；但譯文比英文<b>寬</b>時（俄文「наградных вытягиваний」），右欄的
+     * 右緣就會跑出原文的右緣。這時候寧可右欄往左靠一點、跟上下幾行差幾像素，
+     * 也不能讓整行被折斷——折斷之後兩欄連在哪一行都分不清楚。
+     *
+     * <p>收的順序是由右往左：先收最後一個欄距（左欄的位置不動），但至少留一個
+     * 空白的寬度（{@link #MIN_CELL_GAP}），兩欄才不會黏在一起；還不夠才收行首的縮排。
+     * 行首的縮排可以收到 0。
+     *
+     * @param columns 每個欄界的補正，<b>會被就地改掉</b>
+     * @return 收過之後的行首補正
+     */
+    private static int fitWidth(List<Run> orig, List<Run> made, int pad, int[] columns) {
+        int over = rowWidth(made) + pad - rowWidth(orig);
+        for (int px : columns) {
+            over += px;
+        }
+        if (over <= 0) {
+            return pad;
+        }
+        boolean[] gaps = chatGaps(made);
+        int k = columns.length;
+        for (int i = made.size() - 1; i >= 0 && over > 0; i--) {
+            if (!gaps[i]) {
+                continue;
+            }
+            k--;
+            if (k < 0) {
+                break;
+            }
+            int floor = contentBefore(made, i) ? MIN_CELL_GAP : 0;
+            int room = made.get(i).px() + columns[k] - floor;
+            if (room <= 0) {
+                continue;                      // 已經貼著了，或是疊字用的負偏移
+            }
+            int take = Math.min(room, over);
+            columns[k] -= take;
+            over -= take;
+        }
+        if (over > 0 && pad > 0) {
+            pad -= Math.min(pad, over);
+        }
+        return pad;
+    }
+
+    /** 見 {@link #fitWidth}：收欄距時兩欄之間至少留這麼寬，大約一個半形空白。 */
+    private static final int MIN_CELL_GAP = 4;
+
+    /** 這個位置前面有沒有實字。沒有的話它是行首的縮排，不是欄與欄之間。 */
+    private static boolean contentBefore(List<Run> runs, int at) {
+        for (int i = at - 1; i >= 0; i--) {
+            if (!runs.get(i).space() && hasContent(runs.get(i).text())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
