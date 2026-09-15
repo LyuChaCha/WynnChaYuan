@@ -280,6 +280,27 @@ public final class LineTranslator {
             if (lead > 0) {
                 trimmed = true;
             }
+            // 圖示後面還可能接著一串 À——那是 Wynncraft 的<b>縮排字元</b>，
+            // 以一般文字的樣子出現，所以上面剝圖示那一步剝不到。
+            //
+            // Fabled 物品的 Major ID 就長這樣：續行前面墊兩格，對齊在「◆ 」後面。
+            //
+            // <pre>
+            //   {#}{#}Freerunner: When your sprint
+            //   ÀÀbar is under {~} full,
+            //   ÀÀincrease your sprint speed by
+            //   ÀÀ+{~}.
+            // </pre>
+            //
+            // 沒剝掉的話攤平的鍵夾著「ÀÀ」，跟語料裡乾淨的那一句永遠對不上。
+            // 使用者回報 Air In A Can 只有名稱是中文、說明整段英文，就是這個。
+            // 縮排跟行首偏移一樣是排版，不是內容；它不在符號池裡，剝掉不必動池子。
+            // 整行只剩縮排的不剝，理由同上面的分隔線。
+            int indent = TranslationStore.indentOf(line.substring(at));
+            if (indent > 0 && at + indent < line.length()) {
+                at += indent;
+                trimmed = true;
+            }
             if (joined.length() > 0) {
                 joined.append(' ');
             }
@@ -2739,6 +2760,19 @@ public final class LineTranslator {
                                                  boolean percent) {
         String core = raw.strip();
         if (core.isEmpty() || !GlyphSplitter.hasLetter(core)) {
+            return null;
+        }
+        // 只有 À 縮排的片段不是內容。
+        //
+        // À 是字母，躲得過上面那一關；而語料裡剛好有整行只剩縮排的條目
+        // （raid.json 那幾條結尾的「À」），於是 lookup("ÀÀ") 查到「ÀÀ」——
+        // 這一行就被算成「翻好了」，譯文卻跟原文一字不差。
+        //
+        // 算錯的代價在 TooltipPanel#evenOut：它靠「每一行有沒有翻到」判斷同一段
+        // 是不是翻了一半。Fabled 物品的 Major ID 續行都是「ÀÀ說明…」，三行全被算成
+        // 翻好了，只剩第一行自己換掉名稱的那一半沒被收回——畫面上就是
+        // 「自由跑者: When your sprint」接三行英文。
+        if (TranslationStore.indentOf(core) == core.length()) {
             return null;
         }
         int lead = raw.indexOf(core.charAt(0));

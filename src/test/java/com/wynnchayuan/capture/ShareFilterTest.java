@@ -1,19 +1,22 @@
 package com.wynnchayuan.capture;
 
 /**
- * 哪些收集到的字串可以分享出去。
+ * 哪些收集到的字串可以交給翻譯團隊（F6 匯出的檔案裡會有哪些）。
  *
  * <h2>為什麼這條測試特別重要</h2>
- * 其他測試錯了，畫面會怪；這一條錯了，是<b>別人的名字被推上公開倉庫</b>，
+ * 其他測試錯了，畫面會怪；這一條錯了，是<b>別人的名字被附到公開的 Issue 上</b>，
  * 而那種東西一旦進去就洗不掉。所以這裡釘的不只是「該過的有過」，
  * 更是「該擋的一條都沒漏」。
  *
- * <p>濾網一共三道：模組端（{@link CorpusUpload#shareable}，就是這裡測的）、
+ * <p>濾網一共三道：模組端（{@link ShareFilter#shareable}，就是這裡測的）、
  * 收集站（{@code tools/collector/worker.js} 的 {@code acceptable}）、
  * 以及進倉庫前的 {@code tools/import-captured.py}。三道都是獨立寫的，
  * 刻意重複——只要有一道擋得住就不會外流。
+ *
+ * <p>先前叫 {@code CorpusShareTest}，測的是自動上傳送出前那一關。自動上傳拿掉了，
+ * 同一套規則改套在匯出檔上，案例一條都沒刪。
  */
-public final class CorpusShareTest {
+public final class ShareFilterTest {
 
     private static int failures = 0;
 
@@ -29,7 +32,7 @@ public final class CorpusShareTest {
         yes("NPC 名牌", "Otium", "label/floating");
         yes("NPC 名牌帶地名", "{p}'s King", "label/floating");
 
-        // ---- 別人打的字：整類不送 ----
+        // ---- 別人打的字：整類不收 ----
         no("公會頻道", "anyone want to do a raid", "chat/GUILD");
         no("隊伍頻道", "im at the bank", "chat/PARTY");
         no("喊話", "WTS mythic cheap", "chat/SHOUT");
@@ -54,17 +57,17 @@ public final class CorpusShareTest {
                 "Hey, WYNNCHAYUAN! Are you alright in there?", "dialogue/X");
         no("大小寫不同也要擋",
                 "Great job, Wynnchayuan!", "dialogue/X");
-        yes("別句照樣可以送", "Great job, recruit!", "dialogue/X");
+        yes("別句照樣可以收", "Great job, recruit!", "dialogue/X");
 
         report();
     }
 
     private static void yes(String what, String src, String ctx) {
-        check("可以分享：" + what, CorpusUpload.shareable(one(src, ctx)));
+        check("可以交出去：" + what, ShareFilter.shareable(one(src, ctx)));
     }
 
     private static void no(String what, String src, String ctx) {
-        check("★ 不可分享：" + what, !CorpusUpload.shareable(one(src, ctx)));
+        check("★ 不可交出去：" + what, !ShareFilter.shareable(one(src, ctx)));
     }
 
     private static void check(String what, boolean ok) {
@@ -76,7 +79,7 @@ public final class CorpusShareTest {
 
     private static void report() {
         System.out.println(failures == 0
-                ? "CorpusShare: 全部通過" : "CorpusShare: " + failures + " 項失敗");
+                ? "ShareFilter: 全部通過" : "ShareFilter: " + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }

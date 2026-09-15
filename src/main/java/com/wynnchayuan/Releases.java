@@ -141,18 +141,20 @@ public final class Releases {
         return latest.equals(WynnChaYuan.version()) ? null : latest;
     }
 
-    /** 下載頁。GitHub 優先——使用者指定的：版本更新以 GitHub 為主。 */
+    /** 下載頁。GitHub——使用者指定的：版本更新以 GitHub 為主。 */
+    static final String DOWNLOAD = "https://github.com/LyuChaCha/WynnChaYuan/releases/latest";
+
+    /**
+     * 下載頁的網址。
+     *
+     * <h2>為什麼寫死，不照線上 version.json 的 {@code download}</h2>
+     * 先前是讀線上那一份的 {@code download} 欄位。那是遠端可改的，而這個網址
+     * 會變成聊天室裡可以點的連結——線上的檔案一旦被改，所有玩家的聊天室就會出現
+     * 一個指向別處的「下載」。模組會帶玩家去的網址一律寫死在 jar 裡，
+     * 線上的 version.json 只負責「最新是哪一版」與更新說明。
+     */
     public static String downloadUrl() {
-        JsonObject o = data;
-        if (o != null && o.has("download")) {
-            JsonObject urls = o.getAsJsonObject("download");
-            for (String key : new String[] {"github", "curseforge", "modrinth"}) {
-                if (urls.has(key) && !urls.get(key).getAsString().isBlank()) {
-                    return urls.get(key).getAsString();
-                }
-            }
-        }
-        return "https://github.com/LyuChaCha/WynnChaYuan/releases/latest";
+        return DOWNLOAD;
     }
 
     /**

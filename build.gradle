@@ -461,6 +461,14 @@ tasks.register('runMajorIdChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runMajorIdChecks' }
 
+tasks.register('runMajorIdWrapChecks', JavaExec) {
+    group = 'verification'
+    description = '每一條 Major ID 照遊戲的寬度斷行之後，說明都要翻得出來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.MajorIdWrapTest'
+}
+tasks.named('check') { dependsOn 'runMajorIdWrapChecks' }
+
 tasks.register('runLabelColonChecks', JavaExec) {
     group = 'verification'
     description = '面板裡的冒號只能有一種——標籤查表不會退回半形冒號'
@@ -534,13 +542,21 @@ tasks.register('runGlyphHugChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runGlyphHugChecks' }
 
-tasks.register('runCorpusShareChecks', JavaExec) {
+tasks.register('runShareFilterChecks', JavaExec) {
     group = 'verification'
-    description = '分享語料的個資濾網'
+    description = '匯出語料的個資濾網'
     classpath = sourceSets.test.runtimeClasspath
-    mainClass = 'com.wynnchayuan.capture.CorpusShareTest'
+    mainClass = 'com.wynnchayuan.capture.ShareFilterTest'
 }
-tasks.named('check') { dependsOn 'runCorpusShareChecks' }
+tasks.named('check') { dependsOn 'runShareFilterChecks' }
+
+tasks.register('runCorpusExportChecks', JavaExec) {
+    group = 'verification'
+    description = 'F6 匯出的檔案：放在哪、濾掉什麼，以及模組裡沒有任何上傳'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.capture.CorpusExportTest'
+}
+tasks.named('check') { dependsOn 'runCorpusExportChecks' }
 
 tasks.register('runCapturedShapeChecks', JavaExec) {
     group = 'verification'

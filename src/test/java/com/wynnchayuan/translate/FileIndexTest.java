@@ -61,6 +61,15 @@ public final class FileIndexTest {
         safe.addAll(FileIndex.inDirectory(dir));
         check("遠端清單壞掉時內建那份仍然保底", safe.size() >= bundled);
 
+        // 5. 清單被動了手腳：名字會拼進下載網址、也會當成快取檔名，
+        //    跳出資料夾或絕對路徑的一律不收
+        write(dir, "{\"files\": [\"ok.json\", \"../../evil.json\", \"/etc/evil.json\","
+                + " \"C:\\\\evil.json\", \"ability/mage.json\"]}");
+        List<String> guarded = FileIndex.inDirectory(dir);
+        check("★ 帶 .. 或絕對路徑的名字不收，一般的照收（實際 " + guarded + "）",
+                guarded.contains("ok.json") && guarded.contains("ability/mage.json")
+                        && guarded.size() == 2);
+
         report();
     }
 

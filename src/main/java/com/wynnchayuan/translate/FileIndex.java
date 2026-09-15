@@ -102,7 +102,10 @@ public final class FileIndex {
             }
             for (JsonElement el : arr) {
                 String name = el.getAsString().strip();
-                if (name.endsWith(".json") && !name.startsWith("_")) {
+                // 線上清單的名字會拼進下載網址，也會直接拿來當快取的檔名。
+                // 帶 ..、反斜線、冒號或絕對路徑的一律不收：清單被動了手腳時，
+                // 下載不會跑出譯文資料夾，檔案也寫不出快取資料夾。
+                if (name.endsWith(".json") && !name.startsWith("_") && safeName(name)) {
                     names.add(name);
                 }
             }
@@ -111,6 +114,18 @@ public final class FileIndex {
             return FALLBACK;
         }
         return names.isEmpty() ? FALLBACK : List.copyOf(names);
+    }
+
+    /**
+     * 清單裡的名字能不能拿來拼網址與檔名。
+     *
+     * <p>只收相對路徑，可以帶資料夾（{@code ability/mage.json}、{@code quest/…}），
+     * 但不能往上跳、不能是絕對路徑、不能帶網址的查詢或片段。
+     */
+    static boolean safeName(String name) {
+        return !name.isEmpty() && !name.startsWith("/") && !name.contains("..")
+                && !name.contains("\\") && !name.contains(":") && !name.contains("//")
+                && !name.contains("?") && !name.contains("#");
     }
 
     @FunctionalInterface

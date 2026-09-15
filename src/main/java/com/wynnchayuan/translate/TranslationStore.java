@@ -1795,7 +1795,14 @@ public final class TranslationStore {
     /** 去掉開頭縮排之後的索引。見 {@link #lookupIndented}。 */
     private final Map<String, String> unindented = new ConcurrentHashMap<>();
 
-    private static int indentOf(String text) {
+    /**
+     * 開頭有幾格縮排。
+     *
+     * <p>開放出去是因為跨行查表與段落判斷也得認得它：Fabled 物品的 Major ID
+     * 說明，續行開頭就是一串 {@code À}（讓續行對齊在「◆ 」後面）。見
+     * {@code LineTranslator#rejoin} 與 {@code TooltipPanel#translateLines}。
+     */
+    public static int indentOf(String text) {
         int n = 0;
         while (n < text.length() && text.charAt(n) == INDENT) {
             n++;

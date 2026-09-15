@@ -38,7 +38,7 @@ the English ones. F6 can turn them on.
 |---|---|
 | Market search | Search the trade market in your language; the English name is sent. Matches are listed as you type: ↑↓ to pick, Tab to fill |
 | Translations sync themselves | Translations come from GitHub, so fixes arrive on your next launch, **no new download**. Offline, the last cache or the copy in the jar is used |
-| Corpus sharing | Lines without a translation are sent to the translation team; on by default (see [Installing it helps](#installing-it-helps)) |
+| Corpus export | Export the lines without a translation to a file, check it, and hand it to the team yourself (see [How to help](#how-to-help)) |
 | Copy chat | Lists recent chat messages; click one to copy it for a report (key unbound by default) |
 | Panel screenshot | **F9** copies the translation panel to the clipboard or saves it to a file (rebindable) |
 | Adjustable panels | Every box can be dragged; dialogue, choices and the tracker can be resized from the corner; the panel can follow the mouse or be pinned, with a custom border colour |
@@ -55,7 +55,7 @@ the English ones. F6 can turn them on.
 | Panel | Follow the mouse or pin it, which side, gap, border colour, arrange the boxes |
 | Dialogue | Quest dialogue, dialogue choices (separate box / replace in place / off), hold time, dialogue/tracker boxes |
 | World & chat | Nameplates and floating text (with range and aim angle), chat messages, title text, copy chat |
-| Data | Translation language, fallback language, interface language, translation source, reload, collect untranslated strings, collect GUI text, share with the translation team, debug dumps |
+| Data | Translation language, fallback language, interface language, translation source, reload, collect untranslated strings, collect GUI text, export untranslated strings, how to submit, debug dumps |
 
 Hover a setting for an explanation.
 
@@ -100,23 +100,17 @@ Report it and it will be filled: **LyuChaCha** on Discord, or
 their next launch; no mod update needed. Include the English text if you can; chat lines can be
 copied with Copy chat.
 
-## Installing it helps
+## How to help
 
-**F6 → Data → Share with the translation team is on by default.** Lines you run into that have no
-translation are sent to the translation team, and once translated they show up for everyone. Quest
-dialogue and NPC nameplates have no official data source; they only arrive when players run into
-them. **You do not have to translate anything: playing with the mod installed already helps.**
+Quest dialogue and NPC nameplates have no official data source; they only arrive when players run
+into them. **You do not have to translate anything**, just hand us the gaps you found:
 
-| | |
-|---|---|
-| **Sent** | The game's own English text: quest dialogue, menus, item lore, NPC nameplates, server announcements |
-| **Never sent** | Your account, UUID, coordinates, which world you are on; guild, party, shout and private chat (anything other people typed) |
+1. **F6 → Data → Export untranslated strings** opens the folder with `captured.json`.
+2. Look through the file and delete anything personal (other players' names, guild names, private chat).
+3. **F6 → Data → How to submit** opens the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml); drag the file in. Or send it to **LyuChaCha** on Discord.
 
-Player names are removed by three independent filters (in the mod, in the collector, before anything
-reaches the repository). The mod explains this in chat once, on your first launch.
-
-To not share, turn it off and leave only **Collect untranslated strings** on: lines go to
-`config/wynnchayuan/captured.json` for you to review and attach to an issue yourself.
+The mod **never sends anything by itself**. The export already leaves out player names and guild,
+party, shout and private chat, but the filter is heuristic, so check it before you send it.
 
 ## Install
 

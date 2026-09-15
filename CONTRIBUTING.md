@@ -344,11 +344,12 @@ Health Regen = 生命回復
 
 任務對話與 NPC 名稱**沒有官方資料可抓**，只能靠玩家在遊戲裡實際遇到。
 
-模組會自動把沒翻到的句子記進
-`config/wynnchayuan/captured.json`。玩一段時間後把這個檔開 Issue 附上來，
+模組會把沒翻到的句子記進 `config/wynnchayuan/captured.json`（只在你自己的電腦上，不會自動送出）。
+玩一段時間後按 **F6 →「資料」→「匯出未翻譯字串」**，把匯出的檔案用
+[Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)附上來，
 就能變成大家共用的待翻條目。
 
-> **附上前請先看一眼。** 模組會過濾玩家名稱、好友名單、座標，
+> **附上前請先看一眼。** 匯出檔會過濾玩家名稱、好友名單、座標與公會／隊伍／喊話／私訊，
 > 但 Wynncraft 的通知格式很多，可能有漏網。看到別人的名字就刪掉那一條，
 > 順便回報一下，我們補過濾規則。
 
