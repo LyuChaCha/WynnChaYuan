@@ -461,6 +461,14 @@ tasks.register('runMajorIdChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runMajorIdChecks' }
 
+tasks.register('runMajorIdWrapChecks', JavaExec) {
+    group = 'verification'
+    description = '每一條 Major ID 照遊戲的寬度斷行之後，說明都要翻得出來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.MajorIdWrapTest'
+}
+tasks.named('check') { dependsOn 'runMajorIdWrapChecks' }
+
 tasks.register('runLabelColonChecks', JavaExec) {
     group = 'verification'
     description = '面板裡的冒號只能有一種——標籤查表不會退回半形冒號'
