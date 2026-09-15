@@ -4,266 +4,143 @@
 
 # WynnChaYuan
 
-A translation mod for Wynncraft. **It does not replace the original text** —
-translations appear in a separate panel next to it, and the game's own screen is
-left untouched.
+繁體中文：**[README.md](README.md)**
 
-繁體中文說明請見 [README.md](README.md)。
+A multi-language translation mod for Wynncraft. **The original text is kept**; the
+translation is shown beside it, or written in its place.
 
 > [!IMPORTANT]
-> **This is a beta (0.1.9_3).** Features and translations are still being worked on. If you
-> run into anything, find **LyuChaCha** on Discord — all reports are welcome.
->
-> **The translations are mostly AI-generated; only some have been proofread by a
-> human.** Expect mistranslations, unnatural phrasing, and inconsistent proper
-> nouns. If that bothers you, please hold off on using it for now.
+> **This is a beta.** The translations are mostly AI-generated and only partly proofread, so expect
+> mistranslations and inconsistent terms. Report problems to **LyuChaCha** on Discord or on
+> [GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues).
 
+## What it translates
 
-## Why not just swap the text
-
-Wynncraft is a multiplayer game. If your screen shows only your own language, you
-can no longer follow a conversation about "go see the Blacksmith" — everyone else
-knows the English names. On top of that, Wynncraft's layout leans heavily on
-resource-pack glyphs and invisible alignment characters, so a naive replacement
-breaks the display.
-
-So the **default** is: keep the original, show the translation beside it.
-
-If you don't need the English, **F6 → Item translation** can be switched to
-**replace in place**, writing the translation into the tooltip itself.
-Both modes use the same per-segment replacement, so glyphs, colours and column
-alignment stay intact either way.
-
-**Quest dialogue** has its own three-way setting: a separate box (default),
-**replace in place** — which writes the translation into Wynncraft's own dialogue
-box, keeping its frame, nameplate and portrait — or off.
-
-## What it does
-
-| Content | How |
+| Content | How it is shown |
 |---|---|
 | Item tooltips | A panel beside the tooltip, or written into the tooltip itself |
-| NPC dialogue | Translated **inside Wynncraft's own dialogue box** — frame, nameplate and portrait kept |
-| Dialogue choices | The same three modes as the dialogue, set separately |
-| NPC nameplates, floating text | Off / a box while you look at one / replaced in place (switchable). Crafting stations and the "Right-Click with an Empty Hand" prompts count too |
-| Quest tracker | A translated box on the left |
-| Ability tree | Every node, description and archetype, all five classes |
+| Quest dialogue, dialogue choices | Written into **Wynncraft's own dialogue box** (frame, nameplate and portrait kept), or a separate box; set separately |
+| NPC nameplates, floating text | A box while you look at one, or replaced in place; crafting stations and "Right-Click" prompts included |
+| Quest tracker | Its own box; the heading says what is tracked (quest, world event, cave, raid…) |
+| Ability trees | Nodes, descriptions and archetypes for all five classes |
 | Major IDs | Name and full description |
-| Dungeons and raids | Aspects, gambits, the loot panel |
-| Lootruns | Missions, boons, beacons, the end-of-run panel |
-| Discoveries and secret discoveries | Names and descriptions |
-| System messages | Quest completions, reward lists, area transitions — the chat ones |
-| Title text | The big text in the middle of the screen |
+| Lootruns, raids, dungeons | Missions, boons, beacons, aspects, gambits, end-of-run and loot panels, dungeon names |
+| Discoveries, secret discoveries | Names, descriptions and stories |
+| Chat messages | Server messages (quest completions, rewards, area transitions); replaced or original + translation. Player chat is never translated |
+| Title text | The big title and subtitle in the middle of the screen |
 
-### Beyond translating
+Gear names stay in English by default: they are proper nouns, and the trade market and the wiki use
+the English ones. F6 can turn them on.
+
+## Other features
 
 | Feature | What it does |
 |---|---|
-| **Market search in your language** | Type the translated name in the trade market and it is turned back into the English one before the search is sent |
-| **Translations update themselves** | Translations are not baked into the jar — once a change is merged everyone gets it on their next launch, **no new download** |
-| **Corpus sharing** | Lines the mod could not translate are sent back to the translation team so they can be translated for everyone (can be turned off) |
-| **Copy chat** | Lists recent chat messages; click one to copy (key unbound by default) |
-| **Screenshots** | **F9** captures the translation panel — clipboard or file (rebindable) |
-| **Contributor tags** | People who have translated get an extra line above their nameplate, visible only to others running this mod (can be turned off) |
+| Market search | Search the trade market in your language; the English name is sent. Matches are listed as you type: ↑↓ to pick, Tab to fill |
+| Translations sync themselves | Translations come from GitHub, so fixes arrive on your next launch, **no new download**. Offline, the last cache or the copy in the jar is used |
+| Corpus sharing | Lines without a translation are sent to the translation team; on by default (see [Installing it helps](#installing-it-helps)) |
+| Copy chat | Lists recent chat messages; click one to copy it for a report (key unbound by default) |
+| Panel screenshot | **F9** copies the translation panel to the clipboard or saves it to a file (rebindable) |
+| Adjustable panels | Every box can be dragged; dialogue, choices and the tracker can be resized from the corner; the panel can follow the mouse or be pinned, with a custom border colour |
+| Update notice | Says so once in chat when a new version is out; F6 → Changelog shows what changed |
+| Contributor tags | People on the credits list get an extra line above their nameplate, visible only to others running the mod (can be turned off) |
 
-### Settings (F6)
+**Client-side only.** The server does not need it.
 
-Five tabs; hover an entry for an explanation.
+## Settings (F6)
 
 | Tab | What's in it |
 |---|---|
-| **Items** | Tooltip mode, whether to translate gear names, market search, screenshots |
-| **Panel** | Follow the mouse or pin it, which side, gap, border colour |
-| **Dialogue** | Quest dialogue, dialogue choices, hold time, the dialogue/tracker boxes |
-| **World & chat** | Nameplates and floating text (with range and aim angle), chat, title text, copy chat |
-| **Data** | Translation language, fallback language, interface language, translation source, reload, collect untranslated strings, collect GUI text, share with the translation team, debug dumps |
+| Items | Item translation (separate panel / replace in place / off), translate item names, market search, panel screenshot |
+| Panel | Follow the mouse or pin it, which side, gap, border colour, arrange the boxes |
+| Dialogue | Quest dialogue, dialogue choices (separate box / replace in place / off), hold time, dialogue/tracker boxes |
+| World & chat | Nameplates and floating text (with range and aim angle), chat messages, title text, copy chat |
+| Data | Translation language, fallback language, interface language, translation source, reload, collect untranslated strings, collect GUI text, share with the translation team, debug dumps |
 
-All four boxes can be **dragged into position**, and are shown together while you
-arrange them so you can tell whether they overlap.
-
-**Client-side only.** The server does not need it and cannot tell you are using it.
-
-## Install
-
-Requires [Wynntils](https://modrinth.com/mod/wynntils) 4.2+ and Fabric API.
-
-Drop the jar into `mods/` and press **F6** in game for the settings.
-On first launch the translation working files are created under
-`config/wynnchayuan/translations/`.
+Hover a setting for an explanation.
 
 ## Languages
 
 | Language | Status |
 |---|---|
-| `zh_tw` Traditional Chinese | Main language; the others are measured against it |
-| `zh_cn` Simplified Chinese | Interface, ability trees and quest dialogue |
-| `ja_jp` Japanese | Interface, ability trees, nameplates and item lore; quest dialogue in progress |
-| `ru_ru` Russian | Interface, ability trees, nameplates and item lore; quest dialogue in progress |
-| `ko_kr` Korean | A small part of the interface |
+| `zh_tw` Traditional Chinese | Main language, everything |
+| `zh_cn` Simplified Chinese | Everything, on par with Traditional Chinese |
+| `ja_jp` Japanese | Everything, on par with Traditional Chinese |
+| `ru_ru` Russian | Interface, ability trees, nameplates, item lore; quest dialogue in progress |
+| `ko_kr` Korean | Item tooltip labels and Major IDs only |
 
-Switch under **F6 → Data** — no need to change the game's own language or restart:
+Switch under **F6 → Data**, without changing the game's language or restarting:
 
-- **Translation language**: which language's translations to show.
-- **Fallback language**: shown for lines the translation language does not have yet.
-- **Interface language**: the language of the F6 settings screen itself.
+- **Translation language**: which translations to show
+- **Fallback language**: what to show where that language has nothing yet (another language, or the original)
+- **Interface language**: the language of the F6 screens themselves (English included)
 
-A language with no translations at all is **not shipped in the jar** and does not
-appear in the game's language list; it joins automatically once it has its first
-line.
-
-See [docs/PROGRESS.md](docs/PROGRESS.md) for **which files each language still
-needs**.
-
-## Progress
-
-### How much of the collected corpus is translated
+## Translation progress
 
 <!-- 進度:開始 -->
 更新於 2026-09-15。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_cn` 简体中文 | █████████░ 93.7% | 39,840 / 42,529 |
-| `zh_tw` 繁體中文 | █████████░ 93.6% | 40,118 / 42,869 |
-| `ru_ru` Русский | ████░░░░░░ 40.8% | 17,334 / 42,529 |
-| `ja_jp` 日本語 | ████░░░░░░ 40.6% | 17,274 / 42,529 |
-| `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 621 / 42,529 |
+| `zh_cn` 简体中文 | █████████░ 93.8% | 40,082 / 42,712 |
+| `zh_tw` 繁體中文 | █████████░ 93.8% | 41,121 / 43,825 |
+| `ja_jp` 日本語 | █████████░ 93.6% | 39,999 / 42,712 |
+| `ru_ru` Русский | █████████░ 93.3% | 39,852 / 42,712 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 1.8% | 778 / 42,704 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
 
-### How much of the whole game has been collected
+## A line switches back to English halfway?
 
-The denominator above is **the lines we have**. A line nobody has ever run into
-sits in neither the numerator nor the denominator — so that percentage is not
-"this much left to go".
+**That is normal.** It means the sentence is not in the corpus yet, so the mod shows the original.
 
-This table answers the other half:
+Report it and it will be filled: **LyuChaCha** on Discord, or
+[GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues). Once it is added, everyone gets it on
+their next launch; no mod update needed. Include the English text if you can; chat lines can be
+copied with Copy chat.
 
-<!-- 涵蓋率:開始 -->
-| Category | Collected | Count | Where the denominator comes from |
-|---|---|---:|---|
-| Quest dialogue | ██████████ | 157 / 157 quests | Official quest list (wiki) |
-| Secret discovery stories | ░░░░░░░░░░ | 1 / 121 discoveries | Official secret discovery list (wiki) |
-| Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
-| Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
-| Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 4,925 + 1,055 collected | **No official list** - only what players run into |
+## Installing it helps
 
-Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
-
-> We know how much we **have**. We do not know how much there **is**.
-
-| Category | Translated | Collected | Estimated total | Where the estimate comes from |
-|---|---:|---:|---:|---|
-| Quest dialogue | 22,592 | 22,599 | 22,599 | all 157/157 quests collected - what we have is all there is |
-| Secret discovery stories | 68 | 68 | ~8,228 | only 1 of 121 discoveries collected; scaled up from those (tiny sample - an order of magnitude, not a figure) |
-| Gear lore | 988 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
-| Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
-| Ability trees | 1,858 | 1,920 | 1,920 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 13,009 | 15,689 | — | **no list exists** - only what players run into; cannot be estimated |
-
-> All together: **at least 51,029 lines estimated**, **42,869 collected** (84%), **40,118 translated** (79% of the estimate, 93.6% of what we have).
-
-"At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
-<!-- 涵蓋率:結束 -->
-
-## Installing the mod helps finish it
-
-Quest dialogue and NPC names **have no official data source**. There is no file to
-scrape — somebody has to walk up to that NPC in game.
-
-So the mod records the lines it could not translate and, **by default**, sends
-them back to the translation team (F6 → *Share with the translation team* turns
-this off). A hundred people each playing their own way add up to the whole game —
-**you do not have to translate anything; just playing with it on already helps.**
-
-What is sent:
+**F6 → Data → Share with the translation team is on by default.** Lines you run into that have no
+translation are sent to the translation team, and once translated they show up for everyone. Quest
+dialogue and NPC nameplates have no official data source; they only arrive when players run into
+them. **You do not have to translate anything: playing with the mod installed already helps.**
 
 | | |
 |---|---|
 | **Sent** | The game's own English text: quest dialogue, menus, item lore, NPC nameplates, server announcements |
-| **Never sent** | Your account, UUID, coordinates, which world you are on; guild, party, shout and private chat — **anything other people typed** |
+| **Never sent** | Your account, UUID, coordinates, which world you are on; guild, party, shout and private chat (anything other people typed) |
 
-There are three independent personal-data filters — one in the mod before sending,
-one in the collector, one before anything reaches the repository — each with its
-own tests. The mod explains this in chat once, on your first launch, and never
-again.
+Player names are removed by three independent filters (in the mod, in the collector, before anything
+reaches the repository). The mod explains this in chat once, on your first launch.
 
-If you would rather not share, you can turn sharing off and leave only **Collect
-untranslated strings** on: the lines go to `config/wynnchayuan/captured.json` for
-you to read through and attach to a
-[GitHub issue](https://github.com/LyuChaCha/WynnChaYuan/issues) yourself.
+To not share, turn it off and leave only **Collect untranslated strings** on: lines go to
+`config/wynnchayuan/captured.json` for you to review and attach to an issue yourself.
+
+## Install
+
+| Requirement | Version |
+|---|---|
+| Minecraft | 1.21.11 |
+| Loader | Fabric |
+| Dependencies | [Wynntils](https://modrinth.com/mod/wynntils) 4.2+, Fabric API |
+
+Put the jar in `mods/` and press **F6** in game.
+
+Download: [GitHub Releases](https://github.com/LyuChaCha/WynnChaYuan/releases/latest) ·
+[Modrinth](https://modrinth.com/mod/wynnchayuan) ·
+[CurseForge](https://www.curseforge.com/minecraft/mc-mods/wynnchayuan)
 
 ## Helping translate
 
-Everything lives in JSON under
-`src/main/resources/assets/wynnchayuan/translations/<language>/`.
-Edit the `dst` fields; leave `src` alone.
+No programming needed: translations are JSON, and you fill in `dst` on the GitHub website.
 
-```json
-"Dwelling Walls#003": {
-  "src": "Finally, the journal. It's out here somewhere, I assume.",
-  "dst": "",
-  "role": "desc",
-  "kind": "dialogue"
-}
-```
+- [CONTRIBUTING.en.md](CONTRIBUTING.en.md): workflow, placeholders, colour tags
+- [GLOSSARY.md](GLOSSARY.md): term glossary (Traditional Chinese)
+- [For translators](docs/for-translators.md): recent conventions and changes (Traditional Chinese)
 
-### Placeholders
-
-| Placeholder | Means | Rule |
-|---|---|---|
-| `{#}` | A resource-pack glyph (element icon, item symbol) | Keep the same count |
-| `{~}` | A number the game fills in | Keep the same count; `{~1}`–`{~9}` pick a specific one when your word order differs |
-| `{p}` `{u}` | Place name / player name | Keep exactly one of each |
-
-**Getting the count wrong makes the whole line silently fall back to English.**
-It looks identical to "not translated yet", so nobody notices. `tools/validate.py`
-catches this and runs on every pull request.
-
-### Colour placeholders
-
-Colour is normally recovered by matching the translated text against the coloured
-run in the original. That works while a term stays in English and breaks the moment
-it doesn't — the run falls back to the base colour. These go **in `dst` only**;
-putting one in `src` makes the line unmatchable forever.
-
-| Syntax | Means |
-|---|---|
-| `{c1}`–`{c9}` | The Nth style of the original, ordered by first appearance |
-| `{c:#FF55FF}` | An explicit hex colour |
-| `{c:gold}` | An explicit vanilla colour name (the 16 Minecraft ones) |
-| `{/}` | End the span; back to whatever that part was |
-
-```json
-"src": "[Cave Completed]\nGrook's Nest",
-"dst": "{c1}[Cave Completed]{/}\n{c2}Grook's Nest{/}"
-```
-
-A span runs until `{/}` or the next `{cN}`, and **may cross line breaks** — a wrapped
-sentence keeps its colour onto the next line. Omitting `{/}` colours through to the end
-of that entry and never reaches another one. An out-of-range index is treated as not
-written, so the line falls back to matching rather than breaking.
-
-### Place names stay in English
-
-`Detlas`, `Ragni`, `Nivla Woods` — players coordinate with each other using these.
-The validator warns when a place name disappears from a translation.
-
-### Starting a new language
-
-```bash
-python tools/new-language.py ko_kr
-```
-
-Use Minecraft's own language codes (`ja_jp`, not `jp`) — the mod picks a language
-by matching the game's setting, so a wrong code is never selected.
-
-The tool copies the structure, blanks every `dst`, and updates the language list.
-It deliberately does **not** machine-translate from another language: a converted
-file reads as "already done" in the progress table while nobody has actually read
-a word of it.
+To try your own translations in game: set F6 → Translation source to **Local**, then press Reload after editing.
 
 ## Building
 
@@ -271,55 +148,84 @@ a word of it.
 gradle build
 ```
 
-Wynntils has no Maven coordinates, so download the Fabric jar from
-[Modrinth](https://modrinth.com/mod/wynntils/versions) into `libs/` first.
-The build tells you if it is missing.
-
-```bash
-gradle check             # test suites
-python tools/validate.py # corpus checks
-```
+Wynntils has no Maven coordinates: download the **Fabric** jar from
+[Modrinth](https://modrinth.com/mod/wynntils/versions) into `libs/` first (the build stops and tells
+you if it is missing). Corpus checks: `python tools/validate.py`.
 
 ## Sponsoring
 
-This project is free and will stay free. If you would like to buy us a tea:
-
-**<https://ko-fi.com/lyuchacha>**
+Free, and it will stay free. To buy us a tea: **<https://ko-fi.com/lyuchacha>**
 
 | | |
 |---|---|
-| **3 USD/month** or more | Listed in the sponsor credits |
-| **10 USD** one-off or more | Listed in the sponsor credits |
+| **3 USD/month** or more | Listed as a sponsor |
+| **10 USD** one-off or more | Listed as a sponsor |
 
-The list appears in the [README](README.md), in game under **F6 → About /
-Contributors**, and as an extra line above your nameplate.
+The list appears below, under F6 → About / Credits, and as an extra line above your nameplate.
+Sponsoring does not influence translations, and there are no paid features.
 
-Sponsoring does not influence what gets translated, and there are no paid
-features.
+## Team
 
-## Versioning
+The same list is in game under **F6 → About / Credits**. To add someone, edit
+[`credits.json`](src/main/resources/assets/wynnchayuan/credits.json).
 
-Beta versions start at `0.1.0`:
+<!-- credits:begin -->
 
-| | |
+<!-- Generated by tools/sync-credits.py from credits.json - do not edit by hand. -->
+
+### Developers
+
+| Name | Minecraft ID |
 |---|---|
-| Major or notable update | `0.1.0` → `0.1.1` |
-| Bug fix, small change, test build | `0.1.0` → `0.1.0_1` |
+| LyuChaCha | `Green_teaTW` |
+| 芋圓YuYuan | `s103064` |
 
-**Translation-only updates are not released** — translations sync themselves from
-GitHub, so there is nothing to download.
+### Sponsors
 
-## Licence
+| Name | Minecraft ID |
+|---|---|
+| LyuChaCha | `Green_teaTW` |
+| ㄉ綠 | `MlyuL` |
 
-See [LICENSE](LICENSE). Wynncraft content belongs to the Wynncraft team;
-this mod only ships translations of it.
+### Contributors
 
-CJK and Cyrillic glyphs inside the dialogue box use [Fusion Pixel 10px](https://github.com/TakWolf/fusion-pixel-font)
-(proportional), licensed under SIL OFL 1.1 — full text in
-`assets/wynnchayuan/font/ofl-fusion.txt`. Its cap height is exactly 7px, matching
-the Latin caps in Wynncraft's own dialogue font.
-Fonts are shipped **per language**, since the same codepoint is drawn differently
-across regions; Traditional Chinese (`zh_tw`), Simplified Chinese (`zh_cn`),
-Japanese (`ja_jp`), Korean (`ko_kr`) and Russian (`ru_ru`) are bundled. No pixel font
-covers every ideograph, so a line whose translation contains a glyph the font
-lacks is left in English rather than drawn as boxes.
+| Name | Minecraft ID |
+|---|---|
+| suSCP | `SCP_Night_sky` |
+| 隨意 | `brine7459` |
+| Chicken_sky | `Chicken_sky` |
+| Pure | `21_Pure` |
+| 泥巴先生 | `MrMud8033112` |
+| 幻影Joker | `NOT_Joker` |
+| Pootato | `Pootato__` |
+| N02sAyLa | `eric18960` |
+| 鳥鳥 | `Smellybird_` |
+| 98 | `Jackandmina98` |
+| Jimmy | `0110jimmy` |
+| 雪花 | `ThEsnowF` |
+| Roy | `aaroye` |
+| Chq | `Chqrish` |
+| 邊緣安德 | `Enderchen2580` |
+
+### Data sources
+
+| Name | Minecraft ID |
+|---|---|
+| Wynntils (item / ability CDN) | — |
+| Wynncraft | — |
+
+Translate one line and you are on this list. See [CONTRIBUTING.en.md](CONTRIBUTING.en.md).
+
+<!-- credits:end -->
+
+## Data sources and licences
+
+- Item and ability data: the public CDN used by [Wynntils](https://github.com/Wynntils/Wynntils)
+- Quest and secret discovery lists: [Wynncraft Wiki](https://wynncraft.wiki.gg/) (CC BY-SA)
+- CJK and Cyrillic glyphs in the dialogue box: [Fusion Pixel 10px](https://github.com/TakWolf/fusion-pixel-font) (SIL OFL 1.1,
+  full text in `src/main/resources/assets/wynnchayuan/font/ofl-fusion.txt`). A line containing a glyph the font
+  lacks stays in English instead of drawing boxes
+- Resource-pack glyphs and layout belong to Wynncraft; this mod only displays them
+- Code: [MIT](LICENSE)
+
+**Not affiliated with Wynncraft or the Wynntils team.** A community translation project.

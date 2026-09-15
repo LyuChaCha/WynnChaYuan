@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Underwater",
   "count": 24,
-  "translated": 0,
+  "translated": 24,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Underwater#000": {
    "src": "Talk to Omango located at the North of {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "{p} の北 [-{~}, {~}, -{~}] にいる Omango と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "Underwater",
@@ -18,7 +18,7 @@
   },
   "Underwater#001": {
    "src": "Hi, my name is Omango. I am a resident of the {p} village, on top of the hill.",
-   "dst": "",
+   "dst": "やあ、私は Omango。丘の上の {p} 村の住人だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -28,7 +28,7 @@
   },
   "Underwater#002": {
    "src": "As you may know, our people came to your land years ago, and this is the ship they used.",
-   "dst": "",
+   "dst": "知っているかもしれないが、私たちの民は昔この地へ渡ってきた。これがその時の船だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -38,7 +38,7 @@
   },
   "Underwater#003": {
    "src": "They brought lots of luxurious goods with them. Most of them got lost in the wreck.",
-   "dst": "",
+   "dst": "彼らは贅沢品を大量に持ってきたが、ほとんどは難破で失われた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -48,7 +48,7 @@
   },
   "Underwater#004": {
    "src": "But recently, a small hole has opened in the shipwreck here. It is believed that fortune is hidden within it.",
-   "dst": "",
+   "dst": "だが最近、この難破船に小さな穴が開いた。中に財宝が眠っていると言われている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -58,7 +58,7 @@
   },
   "Underwater#005": {
    "src": "Unfortunately, nobody has been able to explore it. It is too deep, no creature can survive underwater that long!",
-   "dst": "",
+   "dst": "残念ながら、誰も探索できていない。深すぎて、そんなに長く水中にいられる生き物はいない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -68,7 +68,7 @@
   },
   "Underwater#006": {
    "src": "However, my old friend Sayrr is a fisherman, and I know that he has a very special helmet...",
-   "dst": "",
+   "dst": "だが旧友の Sayrr は漁師で、とても特別なヘルメットを持っているんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -78,7 +78,7 @@
   },
   "Underwater#007": {
    "src": "If you convince him to give you this helmet, and find the treasure, I'll give you a part of it!",
-   "dst": "",
+   "dst": "彼を説得してヘルメットをもらい、宝を見つけたら、分け前をあげよう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -88,7 +88,7 @@
   },
   "Underwater#008": {
    "src": "Sayrr is out on his boat, but the cave next to me is a quick way over to where he does his fishing. Be careful on the way, though.",
-   "dst": "",
+   "dst": "Sayrr は船で沖に出ているが、隣の洞窟を通れば彼の釣り場まですぐだ。道中は気をつけて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -98,7 +98,7 @@
   },
   "Underwater#009": {
    "src": "When you finally have the helmet, explore the ship and bring me back [{~} Ancient Treasure]. Good luck.",
-   "dst": "",
+   "dst": "ヘルメットを手に入れたら船を探索し、[{~} Ancient Treasure] を持ち帰ってくれ。幸運を。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -108,7 +108,7 @@
   },
   "Underwater#010": {
    "src": "Go through the cave at [-{~}, {~}, -{~}] to find Sayrr on his boat on the other side",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の洞窟を抜け、反対側の船にいる Sayrr を見つける",
    "role": "desc",
    "kind": "objective",
    "quest": "Underwater",
@@ -118,7 +118,7 @@
   },
   "Underwater#011": {
    "src": "Why ya looking at me like that? Is it cause I'm small, eh? I'll have you know that I caught fish that were twice your size!",
-   "dst": "",
+   "dst": "なんだその目は？俺が小さいからか、ええ？言っとくが、お前の倍はある魚を釣ったことがあるんだぜ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -128,7 +128,7 @@
   },
   "Underwater#012": {
    "src": "...or, well, I used to be able to. Nothing's biting recently- wait a sec, why'd you hop on my boat anyways, stranger?",
-   "dst": "",
+   "dst": "…いや、昔は釣れたんだ。最近はさっぱり食いつかねえ―待て、そもそもなんで俺の船に乗ってきた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -138,7 +138,7 @@
   },
   "Underwater#013": {
    "src": "Ahah! Yes, I still have that old breathing helmet. You want it? You'll have to do something for me first.",
-   "dst": "",
+   "dst": "あはっ！ああ、古い呼吸ヘルメットならまだある。欲しいのか？なら先に頼みを聞いてもらうぜ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -148,7 +148,7 @@
   },
   "Underwater#014": {
    "src": "I'm sure you heard me, but the fish just aren't biting around here anymore! I need to make a living somehow! There's some fish in that cave, but...",
-   "dst": "",
+   "dst": "聞こえてただろうが、この辺じゃもう魚が食いつかねえ！なんとか稼がなきゃならねえ！あの洞窟に魚はいるんだが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -158,7 +158,7 @@
   },
   "Underwater#015": {
    "src": "...it's a bit dangerous. Tell ya what, I'll give you my fishing rod, and you can go catch me, say, [{~} Gudgeon Meat] down there.",
-   "dst": "",
+   "dst": "…ちょっと危ねえんだ。そうだな、釣り竿を貸してやるから、下で [{~} Gudgeon Meat] でも釣ってきてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -168,7 +168,7 @@
   },
   "Underwater#016": {
    "src": "The helmet will be all yours after that.",
-   "dst": "",
+   "dst": "そしたらヘルメットはお前のもんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -178,7 +178,7 @@
   },
   "Underwater#017": {
    "src": "Bring back [{~} Gudgeon Meat] found in the cave at [-{~}, {~}, -{~}] to Sayrr",
-   "dst": "",
+   "dst": "[{~} Gudgeon Meat] を Sayrr に持ち帰る ([-{~}, {~}, -{~}] の洞窟で入手)",
    "role": "desc",
    "kind": "objective",
    "quest": "Underwater",
@@ -188,7 +188,7 @@
   },
   "Underwater#018": {
    "src": "Ah! Welcome back! Any luck with the fish?",
-   "dst": "",
+   "dst": "おう！おかえり！魚は釣れたか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -198,7 +198,7 @@
   },
   "Underwater#019": {
    "src": "Great, and I'll thank you kindly. Here's your helmet, have fun with that.",
-   "dst": "",
+   "dst": "いいね、恩に着るぜ。ほらヘルメットだ、楽しめよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -208,7 +208,7 @@
   },
   "Underwater#020": {
    "src": "Explore the crashed ship for a lost treasure at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の難破船を探索し、失われた宝を探す",
    "role": "desc",
    "kind": "objective",
    "quest": "Underwater",
@@ -218,7 +218,7 @@
   },
   "Underwater#021": {
    "src": "Break the crate and bring [{~} Old Treasure] to Omango at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "木箱を壊し、[{~} Old Treasure] を [-{~}, {~}, -{~}] の Omango に届ける",
    "role": "desc",
    "kind": "objective",
    "quest": "Underwater",
@@ -228,7 +228,7 @@
   },
   "Underwater#022": {
    "src": "You got it! You found the treasure!",
-   "dst": "",
+   "dst": "やった！宝を見つけたんだね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",
@@ -238,7 +238,7 @@
   },
   "Underwater#023": {
    "src": "As promised, here's your part of the loot.",
-   "dst": "",
+   "dst": "約束通り、これが君の分け前だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underwater",

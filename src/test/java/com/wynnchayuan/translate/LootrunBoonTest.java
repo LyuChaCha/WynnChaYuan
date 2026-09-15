@@ -52,7 +52,12 @@ public final class LootrunBoonTest {
         tip.add(line(GREY, "Persnickety"));
         tip.add(line(GREY, " "));
         tip.add(line(GREY, "Once you have been offered a"));
-        tip.add(line(GREY, "Blue or Purple Beacon more"));
+        // 這一行故意改成遊戲裡沒有的顏色組合。
+        //
+        // 原本用的是實機的「Blue or Purple Beacon more」，但語料後來補上了 Persnickety 的整段譯文，
+        // 整段一翻就收成較少行，這個測試要驗的「整段沒翻時一個字都不翻」就測不到了。
+        // 換成語料永遠不會有的句子，測的才一直是「查不到整段」這條路。
+        tip.add(line(GREY, "Grey or Silver Beacon more"));
         tip.add(join(part(GREY, "than "), part(AQUA, "20"), part(GREY, " times this Lootrun,")));
         tip.add(join(part(GREY, "gain "), part(AQUA, "+50%"), part(GREY, " Walk Speed")));
         tip.add(line(GREY, " "));

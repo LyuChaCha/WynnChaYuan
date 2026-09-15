@@ -20,6 +20,22 @@
 用法：
     python tools/import-captured.py 某人的-captured.json
     python tools/import-captured.py 某人的-captured.json --write
+    python tools/import-captured.py 某人的-captured.json --write --near-miss near-miss.json
+
+`--near-miss` 讀 `tools/near-miss.py --report` 的輸出。被它擋下（半截、
+佔位符不同、既有條目沒翻）或只到候選門檻的句子，這裡照樣收成 dst 留空的
+新條目，但會標出「語料裡有很像的一句」：
+
+* 任務檔／祕密發現檔（`entries` 格式）：條目多一個 `similar` 欄位，
+  `{"text": 相近的既有原文, "file": 它在哪個檔, "ratio": 相似度, "reason": 原因}`。
+  模組只讀 src／dst／role／quest／source／speaker，validate 只看 src／dst，
+  所以這個欄位不會被載入。刻意<b>不放譯文</b>：sync-languages.py 會把 dst
+  以外的欄位原樣帶到其他語言，放 zh_tw 的譯文進去等於把繁體字塞進簡中與日文檔；
+  各語言的譯者照 `text` 在自己的檔裡就找得到自己的譯法。
+* 扁平檔（`{原文: 譯文}`）一條只有一個字串，放不下提示，只寫回報告
+  （`imported`／`hint: body`），由 PR 說明列出來。
+
+報告檔本身會被寫回：每一條收進去的標上 `imported`（進了哪個檔）與 `hint`。
 
 分不出任務的一律進 `TARGET` 對應的檔，再分不出來就 `misc.json`——
 寧可集中在一個檔裡等人重新歸類，也不要散進錯的檔案，
@@ -34,6 +50,7 @@ import re
 import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parent.parent
 TRANSLATIONS = Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 
 # domain -> 要放進哪個檔
@@ -513,6 +530,25 @@ def merge_dialogue(quest: str, existing: dict, fresh: list[dict],
     return {f"{quest}#{i:03d}": entry for i, entry in enumerate(merged)}
 
 
+def near_miss_hints(report: dict) -> dict[str, dict]:
+    """原文 -> near-miss 報告裡的那一項。只收擋下與候選——改對的已經不是新句子。
+
+    同一句兩邊都有時以擋下的為準：那是相似度 0.90 以上的，參考價值比較高。
+    """
+    out: dict[str, dict] = {}
+    for bucket in ("blocked", "candidates"):
+        for item in report.get(bucket, []):
+            if isinstance(item, dict) and isinstance(item.get("src"), str):
+                out.setdefault(item["src"], item)
+    return out
+
+
+def similar_field(item: dict) -> dict:
+    """寫進條目的提示。不帶譯文，理由見檔頭 `--near-miss` 的說明。"""
+    return {"text": item.get("corpus_src", ""), "file": item.get("file", ""),
+            "ratio": item.get("ratio", 0), "reason": item.get("reason", "candidate")}
+
+
 def selftest() -> int:
     """merge_dialogue 的自我檢查：`python tools/import-captured.py --selftest`
 
@@ -557,7 +593,26 @@ def selftest() -> int:
     print(("  [PASS] " if ok else "  [FAIL] ") + "整份重新編號且連號"
           + ("" if ok else f"（實際 {keys}）"))
     bad += 0 if ok else 1
-    print("對話插入：" + ("全部通過" if bad == 0 else f"{bad} 項失敗"))
+    # near-miss 的提示
+    report = {
+        "fixed": [{"src": "F", "corpus_src": "F0", "file": "misc.json", "ratio": 0.95}],
+        "blocked": [{"src": "B", "corpus_src": "B0", "file": "quest/cook.json",
+                     "ratio": 0.93, "reason": "placeholders", "dst": "乙"}],
+        "candidates": [{"src": "C", "corpus_src": "C0", "file": "misc.json",
+                        "ratio": 0.84, "dst": "丙"},
+                       {"src": "B", "corpus_src": "B1", "file": "misc.json", "ratio": 0.81}],
+    }
+    hints = near_miss_hints(report)
+    ok = sorted(hints) == ["B", "C"] and hints["B"]["corpus_src"] == "B0"
+    print(("  [PASS] " if ok else "  [FAIL] ") + "提示只收擋下與候選，擋下的優先"
+          + ("" if ok else f"（實際 {hints}）"))
+    bad += 0 if ok else 1
+    got = similar_field(hints["C"])
+    ok = got == {"text": "C0", "file": "misc.json", "ratio": 0.84, "reason": "candidate"}
+    print(("  [PASS] " if ok else "  [FAIL] ") + "similar 欄位不帶譯文、候選標 candidate"
+          + ("" if ok else f"（實際 {got}）"))
+    bad += 0 if ok else 1
+    print("對話插入與提示：" + ("全部通過" if bad == 0 else f"{bad} 項失敗"))
     return 1 if bad else 0
 
 
@@ -565,10 +620,40 @@ def main(argv: list[str]) -> int:
     if "--selftest" in argv:
         return selftest()
     write = "--write" in argv
-    files = [a for a in argv if not a.startswith("--")]
+    report_path: Path | None = None
+    rest: list[str] = []
+    args = iter(argv)
+    for arg in args:
+        if arg == "--near-miss":
+            value = next(args, "")
+            report_path = Path(value) if value else None
+        elif arg.startswith("--near-miss="):
+            report_path = Path(arg.split("=", 1)[1])
+        else:
+            rest.append(arg)
+    files = [a for a in rest if not a.startswith("--")]
     if not files:
         print(__doc__)
         return 2
+
+    report: dict = {}
+    if report_path is not None:
+        try:
+            report = json.loads(report_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            # 提示是附加的；讀不到就照舊匯入，不要讓整晚的收件匣卡住
+            print(f"  ! 讀不到 near-miss 報告 {report_path}：{e}")
+            report_path = None
+    hints = near_miss_hints(report)
+    hinted = {"field": 0, "body": 0}
+
+    def note(entry: dict, target: str, how: str) -> dict | None:
+        item = hints.get(entry.get("src", ""))
+        if item is None:
+            return None
+        item["imported"], item["hint"] = target, how
+        hinted[how] += 1
+        return similar_field(item)
 
     have = existing()
     by_file: dict[str, list[tuple[str, dict]]] = collections.defaultdict(list)
@@ -641,15 +726,21 @@ def main(argv: list[str]) -> int:
             # 照收集順序排：同一段劇情的台詞本來就是照 seq 進來的
             rows.sort(key=lambda row: row[1].get("seq", 0))
             quest = data["_meta"].get("quest") or rows[0][1]["_quest"]
-            fresh = [{
-                "src": entry["src"], "dst": "",
-                "role": entry.get("role", "desc"),
-                "kind": "dialogue",
-                "quest": quest,
-                "stage": "",
-                "speaker": entry.get("_speaker", ""),
-                "source": "captured",
-            } for _, entry in rows]
+            fresh = []
+            for _, entry in rows:
+                row = {
+                    "src": entry["src"], "dst": "",
+                    "role": entry.get("role", "desc"),
+                    "kind": "dialogue",
+                    "quest": quest,
+                    "stage": "",
+                    "speaker": entry.get("_speaker", ""),
+                    "source": "captured",
+                }
+                similar = note(entry, target, "field")
+                if similar:
+                    row["similar"] = similar
+                fresh.append(row)
             data["entries"] = merge_dialogue(
                 quest, data["entries"], fresh, session.get(quest, []))
             data["_meta"]["count"] = len(data["entries"])
@@ -658,6 +749,8 @@ def main(argv: list[str]) -> int:
         elif flat:
             for _, entry in rows:
                 data[entry["src"]] = ""
+                # 扁平檔一條只有一個字串，放不下提示——只記在報告裡給 PR 說明用
+                note(entry, target, "body")
         else:
             for key, entry in rows:
                 data["entries"][key] = {
@@ -667,6 +760,9 @@ def main(argv: list[str]) -> int:
                     "ctx": [entry.get("ctx", "captured")],
                     "from": "captured",
                 }
+                similar = note(entry, target, "field")
+                if similar:
+                    data["entries"][key]["similar"] = similar
         total += len(rows)
         if write:
             path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n",
@@ -675,6 +771,11 @@ def main(argv: list[str]) -> int:
     print()
     print(f"新增 {total} 條，跳過 {skipped} 條（語料已有或不值得收）"
           + ("" if write else "（預覽，加 --write 才寫回）"))
+    if report_path is not None:
+        print(f"其中語料裡有很像的一句的：{hinted['field']} 條寫進 similar 欄位、"
+              f"{hinted['body']} 條在扁平檔（只列在 PR 說明）")
+        report_path.write_text(json.dumps(report, ensure_ascii=False, indent=1) + "\n",
+                               encoding="utf-8")
     return 0
 
 

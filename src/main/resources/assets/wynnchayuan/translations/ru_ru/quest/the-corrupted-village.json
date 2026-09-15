@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Corrupted Village",
   "count": 55,
-  "translated": 0,
+  "translated": 55,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Corrupted Village#000": {
    "src": "Speak to Orikal outside the {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Поговори с Orikal у {p} на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -18,7 +18,7 @@
   },
   "The Corrupted Village#001": {
    "src": "Go away! I know you're angry but there's nothing to gain her-",
-   "dst": "",
+   "dst": "Уходи! Знаю, ты злишься, но тут нечего взя-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -28,7 +28,7 @@
   },
   "The Corrupted Village#002": {
    "src": "Oh, you seem calm. What are you doing here? Bit close to the portal for a soldier isn't it?",
-   "dst": "",
+   "dst": "О, ты вроде не буйствуешь. Что ты тут делаешь? Для солдата близковато к порталу, нет?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -38,7 +38,7 @@
   },
   "The Corrupted Village#003": {
    "src": "I see, you were sent to aid the public. Perfect.",
-   "dst": "",
+   "dst": "Ясно, тебя прислали помочь людям. Отлично.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -48,7 +48,7 @@
   },
   "The Corrupted Village#004": {
    "src": "I am Orikal, I'm trying to stop everyone here from killing each other.",
-   "dst": "",
+   "dst": "Я Orikal. Пытаюсь не дать здешним поубивать друг друга.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -58,7 +58,7 @@
   },
   "The Corrupted Village#005": {
    "src": "Do you see all these spikes? I believe they are the thing spreading corruption.",
-   "dst": "",
+   "dst": "Видишь все эти шипы? Думаю, это они распространяют Скверну.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -68,7 +68,7 @@
   },
   "The Corrupted Village#006": {
    "src": "Corruption does not affect humans like other beings. It’s much much slower, more like an infection of the mind to us.",
-   "dst": "",
+   "dst": "Скверна действует на людей не так, как на других. Гораздо медленнее — для нас это скорее заражение разума.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -78,7 +78,7 @@
   },
   "The Corrupted Village#007": {
    "src": "Could you inspect the peak of the spike in the village for me? It might give me valuable insight. Thanks!",
-   "dst": "",
+   "dst": "Осмотришь для меня верхушку шипа в деревне? Может, узнаю что-то ценное. Спасибо!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -88,7 +88,7 @@
   },
   "The Corrupted Village#008": {
    "src": "Examine the nearby corrupted spike to the northeast at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Осмотри ближайший осквернённый шип на северо-востоке на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -98,7 +98,7 @@
   },
   "The Corrupted Village#009": {
    "src": "Climb the spike to see if you can find anything useful about it's existance.",
-   "dst": "",
+   "dst": "Взберись на шип и поищи что-нибудь полезное о его происхождении.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -108,7 +108,7 @@
   },
   "The Corrupted Village#010": {
    "src": "Report back to Orikal about your observations.",
-   "dst": "",
+   "dst": "Расскажи Orikal о своих наблюдениях.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -118,7 +118,7 @@
   },
   "The Corrupted Village#011": {
    "src": "That was quick... did you find anything?",
-   "dst": "",
+   "dst": "Быстро ты… нашлось что-нибудь?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -128,7 +128,7 @@
   },
   "The Corrupted Village#012": {
    "src": "Really, nothing? You didn't even feel anything?",
-   "dst": "",
+   "dst": "Совсем ничего? Даже не ощущалось ничего?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -138,7 +138,7 @@
   },
   "The Corrupted Village#013": {
    "src": "How can it be just a spike? It must be spreading corruption somehow.",
-   "dst": "",
+   "dst": "Как это может быть просто шип? Он же как-то распространяет Скверну.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -148,7 +148,7 @@
   },
   "The Corrupted Village#014": {
    "src": "Then perhaps my second theory was correct. I will have to send you underground.",
-   "dst": "",
+   "dst": "Тогда, может, права моя вторая теория. Придётся отправить тебя под землю.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -158,7 +158,7 @@
   },
   "The Corrupted Village#015": {
    "src": "There are old cave systems around here from the mining days. I sent two men down to excavate the spike, can you go down and help?",
-   "dst": "",
+   "dst": "Тут со времён добычи остались старые пещеры. Я послал двоих раскопать шип, спустишься помочь?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -168,7 +168,7 @@
   },
   "The Corrupted Village#016": {
    "src": "The entrance is a little to the northeast. In fact, you should have passed it on your way to the spike.",
-   "dst": "",
+   "dst": "Вход чуть к северо-востоку. По пути к шипу он был прямо у тебя на дороге.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -178,7 +178,7 @@
   },
   "The Corrupted Village#017": {
    "src": "Find the excavators inside the nearby cave to the northeast at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Найди землекопов в пещере на северо-востоке на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -188,7 +188,7 @@
   },
   "The Corrupted Village#018": {
    "src": "Find the excavators inside the cave.",
-   "dst": "",
+   "dst": "Найди землекопов в пещере.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -198,7 +198,7 @@
   },
   "The Corrupted Village#019": {
    "src": "This is insane, why are we here?! We're looking for corruption you know that right?",
-   "dst": "",
+   "dst": "Это безумие, зачем мы здесь?! Мы ищем Скверну, ты это понимаешь?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -208,7 +208,7 @@
   },
   "The Corrupted Village#020": {
    "src": "Calm down. All we have to do is keep digging. Besides, he did say he'd pay us a lot, so stop being mad.",
-   "dst": "",
+   "dst": "Спокойно. Нам надо просто копать. К тому же он обещал много заплатить, так что не злись.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -218,7 +218,7 @@
   },
   "The Corrupted Village#021": {
    "src": "Forget it, I don't care anymore, just prime the explosive and get clear of the blast!",
-   "dst": "",
+   "dst": "Забудь, мне уже всё равно, взводи заряд и отходи от взрыва!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -228,7 +228,7 @@
   },
   "The Corrupted Village#022": {
    "src": "Well, that did the trick. Let's take a look.",
-   "dst": "",
+   "dst": "Ну, сработало. Давай глянем.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -238,7 +238,7 @@
   },
   "The Corrupted Village#023": {
    "src": "Oh my... What... is this?",
-   "dst": "",
+   "dst": "Боже… Что… это такое?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -248,7 +248,7 @@
   },
   "The Corrupted Village#024": {
    "src": "It almost looks like a giant spike... Woah. How deep does this thing go?",
-   "dst": "",
+   "dst": "Похоже на гигантский шип… Ого. Как глубоко он уходит?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -258,7 +258,7 @@
   },
   "The Corrupted Village#025": {
    "src": "Well, you know what? We did our job, so honestly I don't care. Let's get out of he-",
-   "dst": "",
+   "dst": "Знаешь что? Работу мы сделали, так что мне честно плевать. Пошли отсю-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -268,7 +268,7 @@
   },
   "The Corrupted Village#026": {
    "src": "Orikal? We’re done! Pay up! I want out. This place is getting to me.",
-   "dst": "",
+   "dst": "Orikal? Мы закончили! Плати! Я ухожу. Это место давит на меня.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -278,7 +278,7 @@
   },
   "The Corrupted Village#027": {
    "src": "I came when I heard the explosion. I thought you'd hurt yourselves.",
-   "dst": "",
+   "dst": "Я пришёл, как услышал взрыв. Думал, вы покалечились.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -288,7 +288,7 @@
   },
   "The Corrupted Village#028": {
    "src": "Well, I'll be darned. The spike goes this far down? And it looks like it goes even deeper than this!",
-   "dst": "",
+   "dst": "Вот это да. Шип уходит так глубоко? И, похоже, ещё глубже!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -298,7 +298,7 @@
   },
   "The Corrupted Village#029": {
    "src": "Well, I don't know about you, but I say we blow it to shreds! That oughta get rid of this spike!",
-   "dst": "",
+   "dst": "Не знаю, как вы, а я говорю — взорвать его в клочья! Уж это избавит нас от шипа!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -308,7 +308,7 @@
   },
   "The Corrupted Village#030": {
    "src": "For once, I agree. I'll do it, you guys just get clear.",
-   "dst": "",
+   "dst": "На этот раз согласен. Я сам, а вы отойдите.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -318,7 +318,7 @@
   },
   "The Corrupted Village#031": {
    "src": "...Wow, that did nothing. We're going to need something MUCH more powerful than TNT...",
-   "dst": "",
+   "dst": "…Ого, ноль эффекта. Нам нужно что-то НАМНОГО мощнее TNT…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -328,7 +328,7 @@
   },
   "The Corrupted Village#032": {
    "src": "Oh yeah? And just what would you have in mind?",
-   "dst": "",
+   "dst": "Да ну? И что же ты задумал?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -338,7 +338,7 @@
   },
   "The Corrupted Village#033": {
    "src": "Well, it's sorta complicated. That's why I've decided to give our new friend here the job of acquiring this explosive.",
-   "dst": "",
+   "dst": "Ну, всё сложновато. Поэтому добыть эту взрывчатку я поручу нашему новому другу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -348,7 +348,7 @@
   },
   "The Corrupted Village#034": {
    "src": "Oh yeah, we were so busy with this spike, we forgot to address you! Sorry about that.",
-   "dst": "",
+   "dst": "Ах да, мы так возились с шипом, что забыли с тобой поздороваться! Прости.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -358,7 +358,7 @@
   },
   "The Corrupted Village#035": {
    "src": "Well if you don't need us anymore then we'll just be on our way... WITH our money! So hand it over please.",
-   "dst": "",
+   "dst": "Ну, раз мы больше не нужны, мы пойдём… С ДЕНЬГАМИ! Так что гони их, пожалуйста.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -368,7 +368,7 @@
   },
   "The Corrupted Village#036": {
    "src": "Alright, fine. Here's your pay. Thank you for your help.",
-   "dst": "",
+   "dst": "Ладно, ладно. Вот ваша плата. Спасибо за помощь.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -378,7 +378,7 @@
   },
   "The Corrupted Village#037": {
    "src": "Gah! That's hardly anything! I'm not even surprised. Let's just go.",
-   "dst": "",
+   "dst": "Ах! Да это же гроши! Я даже не удивлён. Пошли.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -388,7 +388,7 @@
   },
   "The Corrupted Village#038": {
    "src": "Anyway, come meet me back at my tent, friend. We will discuss what to do then.",
-   "dst": "",
+   "dst": "В общем, возвращайся ко мне в палатку, друг. Там и обсудим, что делать.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -398,7 +398,7 @@
   },
   "The Corrupted Village#039": {
    "src": "Exit the cave and speak to Orikal in his tent about his plan for destroying the spike.",
-   "dst": "",
+   "dst": "Выйди из пещеры и обсуди с Orikal в его палатке план уничтожения шипа.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -408,7 +408,7 @@
   },
   "The Corrupted Village#040": {
    "src": "Okay. I happen to know a recipe for creating an extremely lethal magical explosive.",
-   "dst": "",
+   "dst": "Итак. Я как раз знаю рецепт невероятно смертоносной магической взрывчатки.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -418,7 +418,7 @@
   },
   "The Corrupted Village#041": {
    "src": "There are {~} main ingredients you will need to get me: [Stabilized Corrupted Ore], [Incendiary Fluid], and a [Switch Fuse] to activate it.",
-   "dst": "",
+   "dst": "Добудь мне основные компоненты ({~}): [Stabilized Corrupted Ore], [Incendiary Fluid] и [Switch Fuse] для запуска.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -428,7 +428,7 @@
   },
   "The Corrupted Village#042": {
    "src": "There used to be a small mining camp a little east of this town. It's abandoned now, but you should still be able to find what you need there.",
-   "dst": "",
+   "dst": "Чуть восточнее этого города был маленький шахтёрский лагерь. Сейчас он заброшен, но нужное там ещё найдётся.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -438,7 +438,7 @@
   },
   "The Corrupted Village#043": {
    "src": "It's not the big ol' abandoned mines, mind you. It's a smaller camp, in fact you should be able to see it from this village.",
-   "dst": "",
+   "dst": "Только это не большие старые заброшенные шахты. Лагерь поменьше, его даже из деревни видно.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -448,7 +448,7 @@
   },
   "The Corrupted Village#044": {
    "src": "Best of luck! Oh, and also, try not to die please. These ingredients do indeed promote environmental hazards.",
-   "dst": "",
+   "dst": "Удачи! И ещё — постарайся не умереть, пожалуйста. Эти компоненты и правда опасны для окружающих.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -458,7 +458,7 @@
   },
   "The Corrupted Village#045": {
    "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid], and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Найди [Stabilized Corrupted Ore], [Incendiary Fluid] и [Switch Fuse] для TNT в шахтёрском лагере на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -468,7 +468,7 @@
   },
   "The Corrupted Village#047": {
    "src": "You got 'em all! Excellent, this is exactly what we need.",
-   "dst": "",
+   "dst": "Всё собрано! Отлично, это ровно то, что нужно.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -478,7 +478,7 @@
   },
   "The Corrupted Village#048": {
    "src": "Alright, stand back. I have actually never made this before, so let's hope I don't cause a disaster.",
-   "dst": "",
+   "dst": "Так, отойди. Я такое вообще никогда не делал, так что будем надеяться, обойдётся без катастрофы.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -488,7 +488,7 @@
   },
   "The Corrupted Village#049": {
    "src": "Phew, glad nothing tragic happened there. This should be it, now go take it back down to the spike and destroy it once and for all!",
-   "dst": "",
+   "dst": "Фух, хорошо, что обошлось без беды. Вот, должно быть готово. Неси это к шипу и уничтожь его раз и навсегда!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -498,7 +498,7 @@
   },
   "The Corrupted Village#050": {
    "src": "Bring the explosive to the spike in the cave and use it to destroy the spike.",
-   "dst": "",
+   "dst": "Отнеси взрывчатку к шипу в пещере и уничтожь шип.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -508,7 +508,7 @@
   },
   "The Corrupted Village#051": {
    "src": "Report to Orikal about your success.",
-   "dst": "",
+   "dst": "Доложи Orikal об успехе.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -518,7 +518,7 @@
   },
   "The Corrupted Village#052": {
    "src": "Oh, do you feel that? It's like a buzzing in my ears I never knew about has just vanished.",
-   "dst": "",
+   "dst": "О, чувствуешь? Будто в ушах гудело что-то, чего я не замечал, а теперь стихло.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -528,7 +528,7 @@
   },
   "The Corrupted Village#053": {
    "src": "I think that worked you know. It seems the power of the spike comes from the root...",
-   "dst": "",
+   "dst": "Знаешь, по-моему, сработало. Похоже, сила шипа идёт от корня…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -538,7 +538,7 @@
   },
   "The Corrupted Village#054": {
    "src": "But what is it connected to? That's for another day. The main thing is the village is safe.",
-   "dst": "",
+   "dst": "Но с чем он связан? Это в другой раз. Главное — деревня в безопасности.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -548,7 +548,7 @@
   },
   "The Corrupted Village#055": {
    "src": "Here, take this for your help. I found this potato in one of the houses around here, and I sure as heck don't want it!",
-   "dst": "",
+   "dst": "Вот, держи за помощь. Нашёл эту картошку в одном из домов тут, и мне она даром не нужна!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",

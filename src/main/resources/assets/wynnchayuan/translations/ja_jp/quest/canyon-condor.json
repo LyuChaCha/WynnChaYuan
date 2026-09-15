@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Canyon Condor",
   "count": 42,
-  "translated": 0,
+  "translated": 42,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Canyon Condor#000": {
    "src": "Talk to Svin in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p} の [{~}, {~}, -{~}] で Svin と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -18,7 +18,7 @@
   },
   "Canyon Condor#001": {
    "src": "I am one of the Keepers in the great {p}. There we hoard secrets about the world.",
-   "dst": "",
+   "dst": "私は偉大なる {p} の番人の一人。そこで世界の秘密を蓄えているのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -28,7 +28,7 @@
   },
   "Canyon Condor#002": {
    "src": "I am here to investigate an old tale of the canyon. Does that interest you? I'm sure it does!",
-   "dst": "",
+   "dst": "この峡谷の古い言い伝えを調べに来ました。興味はありますか？ あるに決まっていますね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -38,7 +38,7 @@
   },
   "Canyon Condor#003": {
    "src": "Legend has it that a ferocious beast lives among these cliffs. A dangerous bird that has survived for many years.",
-   "dst": "",
+   "dst": "伝説によれば、この崖に獰猛な獣が棲むといいます。長い年月を生き延びた危険な鳥です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -48,7 +48,7 @@
   },
   "Canyon Condor#004": {
    "src": "I would love to seek the beast out, but it seems the natives here are too busy thieving each other to inform me of it.",
-   "dst": "",
+   "dst": "ぜひその獣を探したいのですが、ここの住民は盗み合いに忙しくて教えてくれません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -58,7 +58,7 @@
   },
   "Canyon Condor#005": {
    "src": "I have heard of an old prospector nearby who has ventured throughout this mesa. He may have some information.",
-   "dst": "",
+   "dst": "この台地をくまなく歩いた老いた探鉱者が近くにいると聞きました。何か知っているかもしれません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -68,7 +68,7 @@
   },
   "Canyon Condor#006": {
    "src": "His name is Jankan and he lives east from {p}. Could you perhaps seek him out and ask him about this foul beast?",
-   "dst": "",
+   "dst": "名は Jankan、{p} の東に住んでいます。彼を訪ねて、この忌まわしい獣のことを聞いてもらえませんか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -78,7 +78,7 @@
   },
   "Canyon Condor#007": {
    "src": "If you help me, I'll let you use the elevators spread in the canyon. Well...",
-   "dst": "",
+   "dst": "手伝ってくれたら、峡谷の昇降機を使わせてあげましょう。ええと…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -88,7 +88,7 @@
   },
   "Canyon Condor#008": {
    "src": "A strange hermit decided to take control of them, but I'm sure we can reason with him.",
-   "dst": "",
+   "dst": "妙な隠者が昇降機を牛耳ってしまったのですが、話せばわかる相手のはずです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -98,7 +98,7 @@
   },
   "Canyon Condor#009": {
    "src": "I hope you are able to find the beast, and if you do, could you bring me back [{~} Beast Egg] as evidence?",
-   "dst": "",
+   "dst": "獣が見つかるといいのですが。見つけたら証拠に [{~} 獣の卵] を持ち帰ってもらえますか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -108,7 +108,7 @@
   },
   "Canyon Condor#010": {
    "src": "Talk to Jankan east from {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p} の東 [{~}, {~}, -{~}] で Jankan と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -118,7 +118,7 @@
   },
   "Canyon Condor#011": {
    "src": "Hello there, youngster! Ye must be the stranger folks 'been talkin' 'bout.",
-   "dst": "",
+   "dst": "おう、若いの！お前さんが噂のよそ者じゃな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -128,7 +128,7 @@
   },
   "Canyon Condor#012": {
    "src": "If yer lookin fer gold, I can promise ye that there ain' any for you in this here mineshaft!",
-   "dst": "",
+   "dst": "金を探しに来たんなら、この坑道にお前さんの分なんぞありゃせんと約束するわい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -138,7 +138,7 @@
   },
   "Canyon Condor#013": {
    "src": "Oh.. Yer lookin fer a winged wilder beast? Are ye out of yer mind?",
-   "dst": "",
+   "dst": "ほう… 翼の生えた獣を探しとる？ 正気か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -148,7 +148,7 @@
   },
   "Canyon Condor#014": {
    "src": "The devil of a bird is complete chaos! It can move mountains with a single screech! Men twice yer size 'ave weeped from the sight of it!",
-   "dst": "",
+   "dst": "あの悪魔みたいな鳥はまさに混沌じゃ！ひと鳴きで山を動かす！お前さんの倍はある男どもが見ただけで泣いたわい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -158,7 +158,7 @@
   },
   "Canyon Condor#015": {
    "src": "As it turns out, I did me back in trying to transport me earnin's from that there cave, left them right at the back did' I.",
-   "dst": "",
+   "dst": "実はな、あの洞窟から稼ぎを運ぼうとして腰をやってしもうて、一番奥に置きっぱなしなんじゃ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -168,7 +168,7 @@
   },
   "Canyon Condor#016": {
    "src": "Go fetch me Gold Chunk and I'll tell ye where ye need to go next.",
-   "dst": "",
+   "dst": "金塊を取ってきてくれたら、次に行く場所を教えてやろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -178,7 +178,7 @@
   },
   "Canyon Condor#017": {
    "src": "Collect [{~} Gold Chunks] for Jankan in the mineshaft at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~} 金塊] を Jankan のために [{~}, {~}, -{~}] の坑道で集める。",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -188,7 +188,7 @@
   },
   "Canyon Condor#018": {
    "src": "Finally! It took ye long enough, hand it over! Oh right.. yer want'n somethin'.",
-   "dst": "",
+   "dst": "やっとか！遅すぎるわい、よこせ！ おお、そうか… 何か聞きたいんじゃったな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -198,7 +198,7 @@
   },
   "Canyon Condor#019": {
    "src": "I ain' got any intention of help'n ye with yer demise, but I can send ye along to a young fellow who might help.",
-   "dst": "",
+   "dst": "お前さんの自滅に手を貸す気はないが、力になれそうな若いのを紹介してやろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -208,7 +208,7 @@
   },
   "Canyon Condor#020": {
    "src": "There's this Hermit feller ye wanna talk to, he is a right nutter, that one. Feeds the bird'n all.",
-   "dst": "",
+   "dst": "隠者のやつに話を聞くといい。あいつは正真正銘の変わり者じゃ。あの鳥に餌までやっとる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -218,7 +218,7 @@
   },
   "Canyon Condor#021": {
    "src": "I think ye can find him up the mountain and across the canyon abyss, he ain' a friendly fella, I can tell yer that much.",
-   "dst": "",
+   "dst": "山を登って峡谷の深淵を渡った先におるはずじゃ。愛想のいい奴じゃない、それだけは言っとく。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -228,7 +228,7 @@
   },
   "Canyon Condor#022": {
    "src": "Take the canyon elevator up to the Hermit at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "峡谷の昇降機で [{~}, {~}, -{~}] の隠者のもとへ上る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -238,7 +238,7 @@
   },
   "Canyon Condor#023": {
    "src": "What do you think you're doing here, kid? Think you can waltz in my humble abode and get across my bridge?",
-   "dst": "",
+   "dst": "ここで何してやがる、小僧？俺のささやかな住処にずかずか入って、橋を渡れるとでも？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -248,7 +248,7 @@
   },
   "Canyon Condor#024": {
    "src": "Oh, you want to know about the bird of the mountain? Hah, a little weed like you wouldn't stand a chance against it.",
-   "dst": "",
+   "dst": "ほう、山の鳥のことを知りたいって？ はっ、お前みたいなひよっこじゃ勝ち目はねえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -258,7 +258,7 @@
   },
   "Canyon Condor#025": {
    "src": "It doesn't take kindly to strangers you know. I once saw it turn a group of poachers to ash!",
-   "dst": "",
+   "dst": "あいつはよそ者が嫌いでな。密猟者の一団を灰にしちまったのを見たことがある！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -268,7 +268,7 @@
   },
   "Canyon Condor#026": {
    "src": "If you want to go through here, you'll need to pay. Oh, I don't want your money, why would I need money, I have everything!",
-   "dst": "",
+   "dst": "ここを通りたきゃ代価を払え。いや、金はいらん。金なんか何に使う、俺には何でもあるんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -278,7 +278,7 @@
   },
   "Canyon Condor#027": {
    "src": "If you want access to these plateaus then you will have to find me a rare flower for my little cave here.",
-   "dst": "",
+   "dst": "この台地に行きたきゃ、俺の小さな洞穴に飾る珍しい花を探してこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -288,7 +288,7 @@
   },
   "Canyon Condor#028": {
    "src": "It is found on top of one of the stacks in the mesa, it shouldn't be too hard to find.",
-   "dst": "",
+   "dst": "台地にある岩柱の一つのてっぺんに咲いてる。見つけるのは難しくないはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -298,7 +298,7 @@
   },
   "Canyon Condor#029": {
    "src": "Bring me [{~} Rare Rose] and I shall let you pass on to the creature of the mesa.",
-   "dst": "",
+   "dst": "[{~} 希少なバラ] を持ってきたら、台地の怪物のところへ通してやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -308,7 +308,7 @@
   },
   "Canyon Condor#030": {
    "src": "Find and collect [{~} Rare Rose] at [{~}, {~}, -{~}] for the Hermit",
-   "dst": "",
+   "dst": "隠者のために [{~2}, {~3}, -{~4}] で [{~1} 希少なバラ] を見つけて集める",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -318,7 +318,7 @@
   },
   "Canyon Condor#031": {
    "src": "A ha! This will do perfectly. My chickling will love it! I suppose you can cross the bridge now.",
-   "dst": "",
+   "dst": "あはっ！こいつは申し分ない。俺のひな鳥も大喜びだ！まあ、もう橋を渡っていいぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -328,7 +328,7 @@
   },
   "Canyon Condor#032": {
    "src": "The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.",
-   "dst": "",
+   "dst": "獣はこの台地のどれかのてっぺんに棲んでる。少し探せば見つかるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -338,7 +338,7 @@
   },
   "Canyon Condor#033": {
    "src": "I'll let you use my elevators too. After all, it's not like you will last long...",
-   "dst": "",
+   "dst": "昇降機も使わせてやる。どうせ長くはもたんだろうしな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -348,7 +348,7 @@
   },
   "Canyon Condor#034": {
    "src": "Only one traveler I have heard of could stand against the beast. I believe he took an egg from it for a pet, hah!",
-   "dst": "",
+   "dst": "あの獣に立ち向かえた旅人は一人しか聞いたことがない。そいつはペットにしようと卵を持ち帰ったらしい、はっ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -358,7 +358,7 @@
   },
   "Canyon Condor#035": {
    "src": "He is long gone now, just like you will be in a few moments. It was nice not knowing you, kid.",
-   "dst": "",
+   "dst": "そいつももういない、お前もじきにそうなる。知り合わずに済んでよかったよ、小僧。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -368,7 +368,7 @@
   },
   "Canyon Condor#036": {
    "src": "Defeat the Cockatrice at [{~}, {~}, -{~}] and collect an egg for Svin",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] で Cockatrice を倒し、Svin のために卵を手に入れる",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -378,7 +378,7 @@
   },
   "Canyon Condor#037": {
    "src": "Traveler! You have returned! Tell me, what have you learned?",
-   "dst": "",
+   "dst": "旅の方！戻られましたか！さあ、何がわかりました？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -388,7 +388,7 @@
   },
   "Canyon Condor#038": {
    "src": "You found it?! This is wonderful news! You collected an egg from it's nest as well? You are very brave indeed!",
-   "dst": "",
+   "dst": "見つけたのですか？！素晴らしい知らせです！巣から卵まで持ち帰ったと？ 実に勇敢な方だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -398,7 +398,7 @@
   },
   "Canyon Condor#039": {
    "src": "So the legend of the Cockatrice is true! You've seen it and battled it with your own courage!",
-   "dst": "",
+   "dst": "では Cockatrice の伝説は本当だったのですね！その目で見て、勇気をもって戦ったとは！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -408,7 +408,7 @@
   },
   "Canyon Condor#040": {
    "src": "If only you could enter the {p}, brave soul! But it would seem our paths are to part now.",
-   "dst": "",
+   "dst": "あなたが {p} に入れればよいのですが、勇敢な方！どうやらここでお別れのようです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -418,7 +418,7 @@
   },
   "Canyon Condor#041": {
    "src": "Do not worry, I shall keep the egg safe. One day your legend shall be as greatly told!",
-   "dst": "",
+   "dst": "ご心配なく、卵は大切に預かります。いつかあなたの伝説も同じように語り継がれるでしょう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",

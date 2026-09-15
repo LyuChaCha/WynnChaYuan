@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lost Soles",
   "count": 61,
-  "translated": 0,
+  "translated": 61,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost Soles#000": {
    "src": "Talk to Ferndor at [-{~}, {~}, -{~}], make sure to bring Abysso Galoshes with you.",
-   "dst": "",
+   "dst": "Поговори с Ferndor в [-{~}, {~}, -{~}], взяв с собой Abysso Galoshes.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -18,7 +18,7 @@
   },
   "Lost Soles#001": {
    "src": "Have you seen boots called Abysso Galoshes on your journey, a pirate stole them from us years ago! I could reward you if you could bring me the Abysso Galoshes and help us!",
-   "dst": "",
+   "dst": "Не встречали в пути сапоги Abysso Galoshes? Их у нас давно украл пират! Принесите мне Abysso Galoshes и помогите нам - я вас награжу!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -28,7 +28,7 @@
   },
   "Lost Soles#002": {
    "src": "Bring back Abysso Galoshes, received during the quest Beneath the Depths.",
-   "dst": "",
+   "dst": "Принеси Abysso Galoshes, полученные в задании «Глубже бездны».",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -38,7 +38,7 @@
   },
   "Lost Soles#003": {
    "src": "I see you have the infamous galoshes with you. But do you know even half of the story of them?",
-   "dst": "",
+   "dst": "Вижу, при вас те самые печально известные сапоги. Но знаете ли вы хоть половину их истории?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -48,7 +48,7 @@
   },
   "Lost Soles#004": {
    "src": "The boots were once owned by my ancestors, who decided to lock it away in this manor years ago.",
-   "dst": "",
+   "dst": "Когда-то сапоги принадлежали моим предкам, и много лет назад они заперли их в этом поместье.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -58,7 +58,7 @@
   },
   "Lost Soles#005": {
    "src": "Nobody knows why they decided to hide the boots just after they got into my family's hands. I was told they were acquired from a strange man with pale grey skin.",
-   "dst": "",
+   "dst": "Никто не знает, зачем их спрятали, едва они попали к моей семье. Мне говорили, их купили у странного типа с бледно-серой кожей.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -68,7 +68,7 @@
   },
   "Lost Soles#006": {
    "src": "We think they hid the boots in some kind of basement in the manor. You can get to it by following the river to the waterfall, but you will need some kind of code to open it...",
-   "dst": "",
+   "dst": "Думаем, их спрятали в каком-то подвале поместья. Туда ведёт река до водопада, но чтобы открыть вход, нужен какой-то код...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -78,7 +78,7 @@
   },
   "Lost Soles#007": {
    "src": "I remember Grandon saying that he found a book which is apparently a diary from one of my ancestors. Ever since that filthy pirate raided our home and stole our treasures, weird things have been happening.",
-   "dst": "",
+   "dst": "Помню, Grandon говорил, что нашёл книгу - похоже, дневник одного из моих предков. С тех пор как тот мерзкий пират разграбил наш дом и унёс сокровища, творятся странные вещи.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -88,7 +88,7 @@
   },
   "Lost Soles#008": {
    "src": "Grandon should already have finished reading it. If I allow you to enter my home, would you talk to him?",
-   "dst": "",
+   "dst": "Grandon, наверное, уже дочитал его. Если я пущу вас в дом, поговорите с ним?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -98,7 +98,7 @@
   },
   "Lost Soles#009": {
    "src": "There are strange things going on in this mansion and I hope that book reveals everything we need to know...",
-   "dst": "",
+   "dst": "В этом особняке творятся странности. Надеюсь, книга расскажет всё, что нам нужно знать...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -108,7 +108,7 @@
   },
   "Lost Soles#010": {
    "src": "I almost forgot to give you your boots back, I am not sure if I want to have them near me. Remember, it is imperative you find the {~} digit code to the basement.",
-   "dst": "",
+   "dst": "Чуть не забыл вернуть вам сапоги - не хочу держать их рядом. Помните: вам непременно нужно найти {~}-значный код от подвала.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -118,7 +118,7 @@
   },
   "Lost Soles#011": {
    "src": "Visit the mansion dining room and ask Grandon about the book",
-   "dst": "",
+   "dst": "Пройди в столовую особняка и спроси Grandon о книге",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -128,7 +128,7 @@
   },
   "Lost Soles#012": {
    "src": "Ferndor sent you here, correct? That must mean you’re here to help find the hidden {~} digit code in the manor.",
-   "dst": "",
+   "dst": "Вас прислал Ferndor, верно? Значит, вы пришли искать спрятанный в поместье {~}-значный код.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -138,7 +138,7 @@
   },
   "Lost Soles#013": {
    "src": "The book is actually a diary written by our ancestors decades ago. It is actually very interesting, how they remodeled almost the whole house.",
-   "dst": "",
+   "dst": "Эта книга - дневник наших предков, написанный десятки лет назад. Очень занятно: они перестроили почти весь дом.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -148,7 +148,7 @@
   },
   "Lost Soles#014": {
    "src": "Ferndor probably told you about the boots, right? The diary has some information about them...ah, here, on this page.",
-   "dst": "",
+   "dst": "Ferndor, наверное, рассказал вам о сапогах? В дневнике о них кое-что есть... а, вот, на этой странице.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -158,7 +158,7 @@
   },
   "Lost Soles#015": {
    "src": "Here...our family bought them from \"a dark and mysterious humanoid creature\" a long time ago.",
-   "dst": "",
+   "dst": "Вот... наша семья давным-давно купила их у «тёмного и загадочного человекоподобного существа».",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -168,7 +168,7 @@
   },
   "Lost Soles#016": {
    "src": "The boots were apparently so valuable that the creature as part of the deal, said they put some kind of spell on them, but that was a lie.",
-   "dst": "",
+   "dst": "Существо уверяло, что сапоги так ценны, что в придачу к сделке на них наложено заклятие. Но это была ложь.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -178,7 +178,7 @@
   },
   "Lost Soles#017": {
    "src": "It was found that the boots themselves were horrendously powerful, imbued with dark magic that will deteriorate and decay everything around it over time.",
-   "dst": "",
+   "dst": "Оказалось, сами сапоги ужасающе сильны: их тёмная магия со временем разрушает и губит всё вокруг.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -188,7 +188,7 @@
   },
   "Lost Soles#018": {
    "src": "They were given a special boot container with similar effects, but when the Galoshes are within the Container, they cancel each others' effects out.",
-   "dst": "",
+   "dst": "К ним дали особый контейнер с похожими свойствами, но когда Galoshes внутри, их действие взаимно гасится.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -198,7 +198,7 @@
   },
   "Lost Soles#019": {
    "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get them, maybe you can find out what they mean. Here, try this one:",
-   "dst": "",
+   "dst": "Сапоги спрятали в особняке вместе с футляром. Автор дневника оставил подсказки, как их достать - может, вы поймёте, что они значат. Вот, попробуйте эту:",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -208,7 +208,7 @@
   },
   "Lost Soles#020": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
-   "dst": "",
+   "dst": "«Лицо над залом владеет носом, который нужно утяжелить, чтобы открыть путь».",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -218,7 +218,7 @@
   },
   "Lost Soles#021": {
    "src": "Hmm, all the hints appear in a chapter about this room, the dining hall. Any idea what this meant? It feels like it should be obvious, but I can't for the life of me figure this out.",
-   "dst": "",
+   "dst": "Хм, все подсказки - в главе об этой комнате, столовой. Есть мысли, что это значит? Кажется, ответ очевиден, но хоть убей, не пойму.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -228,7 +228,7 @@
   },
   "Lost Soles#022": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\"",
-   "dst": "",
+   "dst": "«Лицо над залом владеет носом, который нужно утяжелить, чтобы открыть путь»",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -238,7 +238,7 @@
   },
   "Lost Soles#023": {
    "src": "Talk to Grandon and tell him about your findings",
-   "dst": "",
+   "dst": "Поговори с Grandon и расскажи о находках",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -248,7 +248,7 @@
   },
   "Lost Soles#024": {
    "src": "A room hidden underneath the big head? Why didn't I think of that!? I always wondered how self-centered they had to be to put that in, but who knew it actually had a valid purpose!",
-   "dst": "",
+   "dst": "Комната под большой головой? Как я сам не догадался!? Всё думал, какими самовлюблёнными надо быть, чтобы её повесить, а у неё, оказывается, была цель!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -258,7 +258,7 @@
   },
   "Lost Soles#025": {
    "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
-   "dst": "",
+   "dst": "Так там была табличка: ищи камень в углу? Хм... любопытно!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -268,7 +268,7 @@
   },
   "Lost Soles#026": {
    "src": "Whoever placed down that sign might have a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
-   "dst": "",
+   "dst": "Кто поставил табличку, мог знать тайный ход на второй этаж. Туда давно не попасть - с тех пор как рухнула лестница. Разве что Leacen, но она слегка чокнутая...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -278,7 +278,7 @@
   },
   "Lost Soles#027": {
    "src": "Anyway, seems they guessed that we would have to search for a way to return the boots, and made preparations. Good thing, that.",
-   "dst": "",
+   "dst": "В общем, похоже, они предвидели, что нам придётся возвращать сапоги, и подготовились. Это хорошо.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -288,7 +288,7 @@
   },
   "Lost Soles#028": {
    "src": "As I said, the stairs are all broken. I mean, I certainly couldn't climb up those rotten scraps of wood. Suppose it might be best to look for that stone, hm?",
-   "dst": "",
+   "dst": "Как я говорил, лестница вся сломана. По этим гнилым деревяшкам я точно не залезу. Пожалуй, лучше поискать тот камень, а?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -298,7 +298,7 @@
   },
   "Lost Soles#029": {
    "src": "But where could it be...oh? Is this a hint? I just noticed this on the next page.",
-   "dst": "",
+   "dst": "Но где же он... о? Это подсказка? Только сейчас заметил на следующей странице.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -308,7 +308,7 @@
   },
   "Lost Soles#030": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\".",
-   "dst": "",
+   "dst": "«Ковёр иного цвета укажет камень, что откроет тайну стола».",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -318,7 +318,7 @@
   },
   "Lost Soles#031": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\"",
-   "dst": "",
+   "dst": "«Ковёр иного цвета укажет камень, что откроет тайну стола»",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -328,7 +328,7 @@
   },
   "Lost Soles#032": {
    "src": "Talk to Grandon and tell him about your findings",
-   "dst": "",
+   "dst": "Поговори с Grandon и расскажи о находках",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -338,7 +338,7 @@
   },
   "Lost Soles#033": {
    "src": "Sheesh! Quite the engineers, these old fellows! Never would've imagined any of this in the house. Anyway, was there a message? What did it say?",
-   "dst": "",
+   "dst": "Ну и ну! Какие мастера были эти старики! Никогда бы не подумал, что в доме такое. Так, а послание было? Что там сказано?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -348,7 +348,7 @@
   },
   "Lost Soles#034": {
    "src": "The hole nobody wanted? He can only mean the little rat hole in the back part of this hall. Though, it's more just a hole anymore, all the rats are gone.",
-   "dst": "",
+   "dst": "Дыра, что никому не нужна? Это же мышиная нора в дальней части зала. Хотя теперь это просто дыра - крысы все ушли.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -358,7 +358,7 @@
   },
   "Lost Soles#035": {
    "src": "Well, details, details. We never checked it any more than just laying mouse traps, so I suppose there could be something in there given how complex these contraptions have been.",
-   "dst": "",
+   "dst": "Ну, мелочи. Мы там разве что мышеловки ставили, так что, учитывая, какие хитрые тут механизмы, внутри вполне может что-то быть.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -368,7 +368,7 @@
   },
   "Lost Soles#036": {
    "src": "I would say, you look into the hole and then search on top of the blue flags!",
-   "dst": "",
+   "dst": "Я бы сказал: загляните в нору, а потом поищите над синими флагами!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -378,7 +378,7 @@
   },
   "Lost Soles#037": {
    "src": "But if that's the way up to the second floor, what does the diary mean by this?",
-   "dst": "",
+   "dst": "Но если это путь на второй этаж, что тогда значит вот это?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -388,7 +388,7 @@
   },
   "Lost Soles#038": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"? Wait, that probably means the code to the basement! Come back to me at once when you've done that, I have more to tell you!",
-   "dst": "",
+   "dst": "«Брось что-нибудь за карту на стене, и откроется часть кода»? Постойте, это, наверное, код от подвала! Как сделаете - сразу ко мне, мне есть что ещё сказать!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -398,7 +398,7 @@
   },
   "Lost Soles#039": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"",
-   "dst": "",
+   "dst": "«Брось что-нибудь за карту на стене, и откроется часть кода»",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -408,7 +408,7 @@
   },
   "Lost Soles#040": {
    "src": "You found a piece of the code!? Hahah, excellent! I must say, you've made more progress in a few minutes than I have in a few years! You humans really are something!",
-   "dst": "",
+   "dst": "Вы нашли часть кода!? Ха-ха, отлично! Скажу честно, за пару минут вы продвинулись дальше, чем я за годы! Вы, люди, просто нечто!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -418,7 +418,7 @@
   },
   "Lost Soles#041": {
    "src": "Now, the diary now says you must make your way to the second floor to find the other {~} digits of the code.",
-   "dst": "",
+   "dst": "Дальше дневник говорит: остальные {~} цифры кода ищите на втором этаже.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -428,7 +428,7 @@
   },
   "Lost Soles#042": {
    "src": "Remember, to get up to the second floor you need to use the button in the rat hole to open the passage above the blue flags hanging from the ceiling.",
-   "dst": "",
+   "dst": "Помните: чтобы подняться, нажмите кнопку в мышиной норе - она откроет проход над синими флагами под потолком.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -438,7 +438,7 @@
   },
   "Lost Soles#043": {
    "src": "It doesn't say where they are, just that they're well hidden and that there are additional clues around the house. The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
-   "dst": "",
+   "dst": "Где они, не сказано - лишь то, что спрятаны хорошо и по дому есть ещё подсказки. Остальные {~} цифры должны быть на втором этаже! Может, Leacen что-то там видела, пока бродила наверху.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -448,7 +448,7 @@
   },
   "Lost Soles#044": {
    "src": "Once you've found the whole code, head to the basement. Just follow the path and signs outside the manor once you have it.",
-   "dst": "",
+   "dst": "Когда соберёте весь код, идите в подвал. Выйдите из поместья и следуйте по тропе и табличкам.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -458,7 +458,7 @@
   },
   "Lost Soles#045": {
    "src": "Open the secret passage above the flags by reaching into the unwanted hole",
-   "dst": "",
+   "dst": "Открой тайный ход над флагами, сунув руку в никому не нужную дыру",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -468,7 +468,7 @@
   },
   "Lost Soles#046": {
    "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor",
-   "dst": "",
+   "dst": "Принеси Ferndor [{~} Контейнер для сапог] и [Abysso Galoshes]",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -478,7 +478,7 @@
   },
   "Lost Soles#047": {
    "src": "Darn, I thought for sure one of these books would open a secret shelf...oh, heya Humie. Did you manage to climb up the stairs too?",
-   "dst": "",
+   "dst": "Блин, я была уверена, что одна из книг откроет тайную полку... о, привет, человечек. Тоже по лестнице сюда, да?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -488,7 +488,7 @@
   },
   "Lost Soles#048": {
    "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
-   "dst": "",
+   "dst": "Ого, тайный ход! Не так круто, как карабкаться, но всё равно молодец! Ищешь подсказки к коду, да?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -498,7 +498,7 @@
   },
   "Lost Soles#049": {
    "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a secret passage, can you believe it?",
-   "dst": "",
+   "dst": "Ага, я тоже давно ищу. Пару раз думала, что вот-вот найду! Как здесь. Ни одна из этих книг не открывает тайный ход, представляешь?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -508,7 +508,7 @@
   },
   "Lost Soles#050": {
    "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow for two seconds, and then it disappeared!",
-   "dst": "",
+   "dst": "А ещё я потеряла блокнот, даже записать ничего не могу. Положила его на подушку на две секунды - и он исчез!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -518,7 +518,7 @@
   },
   "Lost Soles#051": {
    "src": "Tell you what, Humie. You help us out, and I'll give you some information you might be interested in hearing. Sound good to you?",
-   "dst": "",
+   "dst": "Слушай, человечек. Поможешь нам - а я расскажу кое-что интересное для тебя. Идёт?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -528,7 +528,7 @@
   },
   "Lost Soles#052": {
    "src": "On the upper floor are some bedrooms, and a spiral staircase that starts at [-{~}, {~}, -{~}]. Head to the top of the staircase, which will take you to the roof of the manor. The sign can be found at [-{~}, {~}, -{~}], at the edge of the roof, and says \"{~} is the first\".",
-   "dst": "",
+   "dst": "На верхнем этаже есть спальни и винтовая лестница от [-{~}, {~}, -{~}]. Поднимитесь по ней на крышу поместья. Табличка у края крыши в [-{~}, {~}, -{~}] гласит: «{~} is the first».",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -538,7 +538,7 @@
   },
   "Lost Soles#053": {
    "src": "The second digit's sign is the one you find in stage {~}, revealing that the second digit is {~} when you throw any item into the map near Grandon.",
-   "dst": "",
+   "dst": "Табличка второй цифры - та, что вы нашли на этапе {~}: бросьте любой предмет в карту у Grandon, и увидите, что вторая цифра - {~}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -548,7 +548,7 @@
   },
   "Lost Soles#054": {
    "src": "On the second floor, at [-{~}, {~}, -{~}], there is an iron door with a button next to it. Press the button to open the door and enter the small room; you should find a sign which reads \"He told us that the blue flowers are special...\". Back in the area outside the iron door, there is one blue flower on a high shelf next to a button at [-{~}, {~}, -{~}]. The button opens up a ladder leading to a bedroom in the corner of the room, at [-{~}, {~}, -{~}]. The third sign is on the wall of the room the ladder leads to, at [-{~}, {~}, -{~}], and says \"{~} is the third\".",
-   "dst": "",
+   "dst": "На втором этаже, в [-{~}, {~}, -{~}], есть железная дверь с кнопкой. Нажмите её и войдите в комнатку; там табличка: «He told us that the blue flowers are special...». Снаружи у железной двери, в [-{~}, {~}, -{~}], на высокой полке стоит синий цветок рядом с кнопкой. Кнопка открывает лестницу в спальню в углу комнаты, в [-{~}, {~}, -{~}]. Третья табличка - на стене той комнаты, в [-{~}, {~}, -{~}]: «{~} is the third».",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -558,7 +558,7 @@
   },
   "Lost Soles#055": {
    "src": "On the third floor is a staircase that starts at [-{~}, {~}, -{~}] and leads to a walkway crossing over a hallway. Jumping off the walkway through a gap in the railings on the north side, you can get into a small hole with a sign saying \"He always hid something underneath his pillow...\". Drop back down to the Master Bedroom at [-{~}, {~}, -{~}], and, as the clue suggests, throw an emerald on the pillow. This opens up a small room behind a high shelf, at [-{~}, {~}, -{~}], leading to the final sign, which says \"{~} is the fourth\". Note that if you aren't quick enough to get into the room, you can throw an emerald over to the pillow while standing on top of the shelf.",
-   "dst": "",
+   "dst": "На третьем этаже лестница от [-{~}, {~}, -{~}] ведёт на мостик над коридором. Спрыгните с мостика в щель в перилах с северной стороны - попадёте в нишу с табличкой «He always hid something underneath his pillow...». Спуститесь в главную спальню в [-{~}, {~}, -{~}] и, как сказано в подсказке, бросьте изумруд на подушку. Откроется комнатка за высокой полкой в [-{~}, {~}, -{~}], где последняя табличка: «{~} is the fourth». Если не успеваете войти, бросьте изумруд на подушку, стоя на полке.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -568,7 +568,7 @@
   },
   "Lost Soles#056": {
    "src": "You found the container? I wish I would have gone with you...",
-   "dst": "",
+   "dst": "Вы нашли контейнер? Жаль, я не пошёл с вами...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -578,7 +578,7 @@
   },
   "Lost Soles#057": {
    "src": "At least we can stop the manor's slow decay! Let me just put the boots into the container...",
-   "dst": "",
+   "dst": "Хоть теперь поместье перестанет медленно гнить! Сейчас положу сапоги в контейнер...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -588,7 +588,7 @@
   },
   "Lost Soles#058": {
    "src": "That was easy. I still can not believe that such a small thing can cause so much trouble.",
-   "dst": "",
+   "dst": "Вот и всё. До сих пор не верится, что такая мелочь наделала столько бед.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -598,7 +598,7 @@
   },
   "Lost Soles#059": {
    "src": "Well, I can not just let you stand there without a reward, right?",
-   "dst": "",
+   "dst": "Ну, не могу же я отпустить вас без награды, верно?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -608,7 +608,7 @@
   },
   "Lost Soles#060": {
    "src": "Here, how about some emeralds, and these boots? They're heirlooms given to my family by the Sodeta Guild who once owned this mansion. I promise they aren’t evil! Feel free to visit us at any time!",
-   "dst": "",
+   "dst": "Вот, возьмите изумруды и эти сапоги. Это семейная реликвия от гильдии Sodeta, что когда-то владела особняком. Клянусь, они не злые! Заходите к нам в любое время!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
