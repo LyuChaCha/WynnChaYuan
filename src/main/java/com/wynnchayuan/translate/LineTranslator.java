@@ -4132,13 +4132,71 @@ public final class LineTranslator {
      */
     private static String statRow(String template, TranslationStore store, boolean percent) {
         int from = valueTailStart(template);
-        if (from <= 0 || from >= template.length()) {
-            return null;                       // 沒有數值尾巴，或整行都是數值
+        if (from <= 0) {
+            return null;                       // 整行都是數值
         }
         String label = template.substring(0, from);
         if (!GlyphSplitter.hasLetter(label)) {
             return null;
         }
+        String tail = template.substring(from);
+        if (!tail.isEmpty()) {
+            String zh = statLabel(label, store, percent);
+            if (zh != null) {
+                return zh + translateTail(tail, store);
+            }
+        }
+        // 數值在<b>前面</b>的那一種：
+        //
+        //   {~} Main Attack Damage {#} [{~}]
+        //   {~} Walk Speed {#} [{~}]
+        //
+        // 上面那一刀是從行尾往回切的，切到「Damage」就停，剩下的「{~} Main Attack
+        // Damage」當然不是標籤——於是這幾種排列一條都翻不出來，capture 裡每種都
+        // 被記了十來次缺口。標籤明明都在 ui-labels.json 裡。
+        //
+        // 所以行首那段純數值也切掉再查一次，數值原樣接回前面。
+        int head = valueHeadEnd(label);
+        String lead = label.substring(0, head);
+        if (lead.indexOf(GlyphSplitter.NUMBER_PLACEHOLDER) < 0) {
+            return null;                       // 前後都沒有數值，不是屬性列
+        }
+        String name = label.substring(head);
+        // 只有前面有數值、後面什麼都沒有的（逐片段那條路常常切成「+22 Main Attack
+        // Damage」一段），標籤必須<b>真的是介面標籤</b>。不然任何「數字 + 語料裡的詞」
+        // 都會被拼起來——「2 Guardian」就成了「2 守護者」。
+        if (tail.isEmpty() && !store.isUiLabel(name.strip())) {
+            return null;
+        }
+        String zh = statLabel(name, store, percent);
+        return zh == null ? null : translateTail(lead, store) + zh + translateTail(tail, store);
+    }
+
+    /**
+     * 行首那段純數值到哪裡為止。佔位符整組跳過，數值字元一個一個走。
+     * 見 {@link #statRow}「數值在前面」那一段。
+     */
+    private static int valueHeadEnd(String label) {
+        int at = 0;
+        while (at < label.length()) {
+            char c = label.charAt(at);
+            if (c == '{') {
+                int close = label.indexOf('}', at);
+                if (close < 0) {
+                    break;
+                }
+                at = close + 1;
+            } else if (c != '}' && isValueChar(c)) {
+                at++;
+            } else {
+                break;
+            }
+        }
+        return at;
+    }
+
+    /** 屬性標籤的譯名，百分比／實數分開挑。見 {@link #statRow}。 */
+    private static String statLabel(String label, TranslationStore store, boolean percent) {
         // 同一個屬性有三種標籤，畫面上是<b>三個不同的東西</b>：
         //
         //   Spell Damage +12%   -> 法術傷害百分比   （Spell Damage%）
@@ -4149,15 +4207,11 @@ public final class LineTranslator {
         // 百分比、哪個是實數——而那正是他要看的差別。
         //
         // 百分比與否只有呼叫端算得出來：模板裡的百分號常常已經被吃進 {~} 了。
-        String tail = template.substring(from);
         String zh = lookupTrimmed(label + (percent ? "%" : " Raw"), store, false);
         if (zh == null || zh.isBlank()) {
             zh = lookupTrimmed(label, store, percent);
         }
-        if (zh == null || zh.isBlank()) {
-            return null;
-        }
-        return zh + translateTail(tail, store);
+        return zh == null || zh.isBlank() ? null : zh;
     }
 
     /**

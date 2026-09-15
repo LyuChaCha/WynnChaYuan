@@ -88,6 +88,7 @@ public final class StatRowTest {
         everyLabel(store);
         ownerLabels(store);
         notAGap(store);
+        numberFirst(store);
 
         // 數值原樣留著——數字被吃掉的話畫面上就少了一個屬性
         keeps(store, "Fire Spell Damage {#}+{~} [{~}]", "{#}+{~} [{~}]");
@@ -219,6 +220,76 @@ public final class StatRowTest {
         // 反面：真的沒翻的還是要留在清單上，不然團隊就看不到了
         report("真的沒翻的還是缺口",
                 !store.hasTranslation("Grants extra courage to everyone nearby by +{~}."));
+    }
+
+    /**
+     * 數值在前面的屬性列。
+     *
+     * <h2>實機 capture</h2>
+     * 這六種排列各被記了 8～14 次缺口，標籤卻都在 {@code ui-labels.json} 裡：
+     *
+     * <pre>
+     *   {~} Main Attack Damage {#} [{~}]
+     *   {~} Thunder Damage {#} [{~}]
+     *   {~} Main Attack Damage Raw {#} [{~}]
+     *   {~} Walk Speed {#} [{~}]
+     *   {~} Exploding {#} [{~}]
+     *   {~} Earth Damage {#} [{~}]
+     * </pre>
+     *
+     * 屬性列那條路是從行尾往回切數值的，切到標籤最後一個字就停，前面的
+     * {@code {~}} 被當成標籤的一部分，當然查不到。
+     */
+    private static void numberFirst(TranslationStore store) {
+        String[][] rows = {
+            {"{~} Main Attack Damage {#} [{~}]", "普攻傷害"},
+            {"{~} Thunder Damage {#} [{~}]", "雷屬性傷害"},
+            {"{~} Main Attack Damage Raw {#} [{~}]", "普攻傷害值"},
+            {"{~} Walk Speed {#} [{~}]", "移動速度"},
+            {"{~} Exploding {#} [{~}]", "爆炸"},
+            {"{~} Earth Damage {#} [{~}]", "地屬性傷害"},
+        };
+        for (String[] r : rows) {
+            String hit = LineTranslator.lookup(r[0], store, false);
+            report("數值在前：「" + r[0] + "」-> 含「" + r[1] + "」（實際：" + hit + "）",
+                    hit != null && hit.contains(r[1]));
+            report("數值在前：「" + r[0] + "」數值原樣在前、括號原樣在後（實際：" + hit + "）",
+                    hit != null && hit.startsWith("{~} ") && hit.endsWith("{#} [{~}]"));
+            report("數值在前：「" + r[0] + "」不會被記成缺口", store.hasTranslation(r[0]));
+        }
+        // 百分比與實數照樣分開挑
+        starts(store, true, "{~} Main Attack Damage {#} [{~}]", "{~} 普攻傷害百分比");
+        starts(store, false, "{~} Main Attack Damage {#} [{~}]", "{~} 普攻傷害值");
+
+        // 逐片段那條路常常把「數值 + 標籤」切成同一段，後面什麼都沒有
+        String seg = LineTranslator.lookup("{~} Walk Speed", store, false);
+        report("只有「數值 + 標籤」的片段也翻得出來（實際：" + seg + "）",
+                seg != null && seg.contains("移動速度"));
+
+        // 反面：數字後面接的不是介面標籤就不拼——「2 Guardian」不能變成「2 守護者」
+        String gear = LineTranslator.lookup("{~} Guardian", store, false);
+        report("數字 + 不是介面標籤的詞不拼（實際：" + gear + "）", gear == null);
+        nothing(store, "{~} blocks away from the nearest city {#} [{~}]");
+
+        // 畫出來：數值、圖示、括號都留在原位，標籤換成中文
+        net.minecraft.network.chat.MutableComponent line =
+                net.minecraft.network.chat.Component.empty();
+        Object[] parts = {"+22 Main Attack Damage", 0x55FF55, " ", 0xAAAAAA,
+                          "", 0xFFFFFF, " [45%]", 0x555555};
+        for (int i = 0; i < parts.length; i += 2) {
+            line.append(net.minecraft.network.chat.Component.literal((String) parts[i])
+                    .withStyle(net.minecraft.network.chat.Style.EMPTY.withColor(
+                            net.minecraft.network.chat.TextColor.fromRgb((Integer) parts[i + 1]))));
+        }
+        com.wynntils.core.text.StyledText styled =
+                com.wynntils.core.text.StyledText.fromComponent(line);
+        net.minecraft.network.chat.Component built = LineTranslator.translate(styled, store);
+        String all = built == null ? "" : built.getString();
+        report("畫出來標籤是中文（模板 " + com.wynnchayuan.capture.LineParts.of(styled).template()
+                        + "，實際：" + all + "）",
+                all.contains("普攻傷害") && !all.contains("Main Attack"));
+        report("畫出來數值與括號原樣（實際：" + all + "）",
+                all.startsWith("+22 ") && all.endsWith("[45%]"));
     }
 
     private static void starts(TranslationStore store, boolean percent,
