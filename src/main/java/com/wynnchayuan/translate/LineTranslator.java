@@ -5941,11 +5941,56 @@ public final class LineTranslator {
             LineParts.Piece accent = accents.get(which);
             // 帶樣式的那一段如果剛好是個技能名稱，樣式與譯名兩個都要
             String shown = store == null ? null : store.lookupTerm(accent.text());
+            if (shown == null && store != null) {
+                // 重點段不一定<b>就是</b>那個詞，可能只是包著它。見 #termsWithin。
+                shown = termsWithin(accent.text(), store);
+            }
             out.append(literal(shown != null ? shown : accent.text(),
                                forDisplay(accent.style())));
             used[which] = true;
             from = at + accent.text().length();
         }
+    }
+
+    /**
+     * 把一段重點段<b>裡面</b>的技能名稱換掉，樣式由呼叫端照舊套上。
+     *
+     * <h2>實機回報</h2>
+     * 法師技能 Diffraction 的敘述畫出來是「奧法尼姆也會施加 2 層 Crystallized」，
+     * 藍色的 Crystallized 留著英文，而詞表裡明明有「結晶化」，上一行也換掉了。
+     *
+     * <h2>怎麼漏的</h2>
+     * 這一行是整行命中語料的（「Ophanim 也會施加 {~} 層 Crystallized {#}.」），
+     * 上色靠 {@link #segmentAccents}：原文與譯文照佔位符切段，第 k 段貼第 k 段的顏色。
+     * {@code {~}} 與 {@code {#}} 之間那一段在譯文裡是「 層 Crystallized 」，
+     * 於是登記進來的重點段是<b>包著</b>技能名的一整截，而不是那個詞本身。
+     *
+     * <p>{@link #appendText} 裡重點段比詞表先開始（位置較前），走的是重點段那條路；
+     * 那條路只問「整段是不是一個詞」，不是就原樣貼回英文。上一行換得掉，
+     * 是因為那一段剛好就只有「Crystallized」。
+     *
+     * @return 換過的文字；裡面沒有任何詞表裡的名稱時回傳 {@code null}
+     */
+    static String termsWithin(String text, TranslationStore store) {
+        StringBuilder out = new StringBuilder();
+        int from = 0;
+        boolean any = false;
+        TranslationStore.Term term;
+        while (from < text.length() && (term = store.findTerm(text, from)) != null) {
+            String before = text.substring(from, term.start());
+            // 跟 appendText 同一套空格規則：「層 結晶化」的半形空格是給英文用的
+            if (dropsSpaceBefore(before, term.translation())) {
+                before = before.substring(0, before.length() - 1);
+            }
+            out.append(before).append(term.translation());
+            from = term.end();
+            if (dropsSpaceAfter(term.translation(), text, from)) {
+                from++;
+            }
+            any = true;
+        }
+        return any ? out.append(text.substring(Math.min(from, text.length()))).toString()
+                   : null;
     }
 
     /**
