@@ -272,9 +272,14 @@ public final class TooltipPanel {
         // 「gain +50% Walk Speed」就這樣自己翻成「gain +50% 移動速度」，
         // 前三行留英文。測試裡的 Component.literal 沒有顏色，所以一直測不到。
         List<String> plain = new ArrayList<>(n);
+        //
+        // 行首的 À 縮排也要剝。Fabled 物品的 Major ID 續行是「ÀÀbar is under…」，
+        // 開頭不是小寫，段落就斷成一行一段——整段沒翻到時，第一行照樣自己把名稱
+        // 換成中文，畫面上變成「自由跑者: When your sprint」接三行英文。見 LineTranslator#rejoin。
         for (StyledText line : styled) {
-            plain.add(com.wynnchayuan.capture.GlyphSplitter
-                    .stripGlyphChars(line.getStringWithoutFormatting()).strip());
+            String text = com.wynnchayuan.capture.GlyphSplitter
+                    .stripGlyphChars(line.getStringWithoutFormatting()).strip();
+            plain.add(text.substring(TranslationStore.indentOf(text)).strip());
         }
         if (evenOut(plain, hit)) {
             anyTranslated = false;
