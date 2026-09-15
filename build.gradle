@@ -671,6 +671,14 @@ tasks.register('runMajorIdTermChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runMajorIdTermChecks' }
 
+tasks.register('runMajorIdTermWrapChecks', JavaExec) {
+    group = 'verification'
+    description = 'Major ID 敘述重新折行之後，技能名不能被拆到兩行、也不能只換一半'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.MajorIdTermWrapTest'
+}
+tasks.named('check') { dependsOn 'runMajorIdTermWrapChecks' }
+
 tasks.register('runUprightChecks', JavaExec) {
     group = 'verification'
     description = '方塊字不跟著原文一起斜'
