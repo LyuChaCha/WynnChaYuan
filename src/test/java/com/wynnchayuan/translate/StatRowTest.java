@@ -88,14 +88,40 @@ public final class StatRowTest {
         everyLabel(store);
         ownerLabels(store);
         notAGap(store);
+        numberFirst(store);
 
         // 數值原樣留著——數字被吃掉的話畫面上就少了一個屬性
         keeps(store, "Fire Spell Damage {#}+{~} [{~}]", "{#}+{~} [{~}]");
         keeps(store, "Elemental Spell Damage {#}+{~} ★{~} ⇧{~} ⇩{~}", "★{~} ⇧{~} ⇩{~}");
 
-        // 數值中間的小字也要換掉，不然中文裡夾著一個英文
-        contains(store, "Water Spell Damage{#}-{~} to -{~}", "到");
-        contains(store, "Attack Speed {#}+{~} tier", "階");
+        // 數值中間的小字也要換掉，不然中文裡夾著一個英文。
+        //
+        // 連接詞來自語料（ui-labels.json 的「{~} to {~}」「{~} tier」）。那兩個鍵由
+        // 資料那邊的 PR 補進來，這裡先疊一層只有這兩條的暫存語料，免得測試跟著
+        // 資料合併的先後順序忽好忽壞。
+        TranslationStore zh = new TranslationStore();
+        zh.loadAll(List.of(Path.of("src/main/resources/assets/wynnchayuan/translations",
+                                   Languages.DEFAULT),
+                           corpus("wynnchayuan-connectors", "{~} to {~}", "{~} 到 {~}",
+                                  "{~} tier", "{~} 階")));
+        contains(zh, "Water Spell Damage{#}-{~} to -{~}", "到");
+        contains(zh, "Attack Speed {#}+{~} tier", "階");
+
+        // 非中文的語言不能被塞進中文：先前小字是寫死的「到」「階」。
+        TranslationStore ru = new TranslationStore();
+        ru.loadAll(corpus("wynnchayuan-connectors-ru",
+                "Water Spell Damage", "Урон заклинаний Воды",
+                "Attack Speed", "Скорость атаки",
+                "{~} to {~}", "{~} до {~}"));
+        equals(ru, "Water Spell Damage{#}-{~} to -{~}", "Урон заклинаний Воды{#}-{~} до -{~}");
+        // 這個語言沒寫 tier：留英文，不退回中文
+        equals(ru, "Attack Speed {#}+{~} tier", "Скорость атаки {#}+{~} tier");
+
+        // 語料沒有連接詞的鍵：標籤照翻，「to」留英文，不拿寫死的中文頂上
+        TranslationStore bare = new TranslationStore();
+        bare.loadAll(corpus("wynnchayuan-connectors-none",
+                "Water Spell Damage", "水屬性法術傷害"));
+        equals(bare, "Water Spell Damage{#}-{~} to -{~}", "水屬性法術傷害{#}-{~} to -{~}");
 
         // 反面：句子不是屬性列。
         //
@@ -196,6 +222,76 @@ public final class StatRowTest {
                 !store.hasTranslation("Grants extra courage to everyone nearby by +{~}."));
     }
 
+    /**
+     * 數值在前面的屬性列。
+     *
+     * <h2>實機 capture</h2>
+     * 這六種排列各被記了 8～14 次缺口，標籤卻都在 {@code ui-labels.json} 裡：
+     *
+     * <pre>
+     *   {~} Main Attack Damage {#} [{~}]
+     *   {~} Thunder Damage {#} [{~}]
+     *   {~} Main Attack Damage Raw {#} [{~}]
+     *   {~} Walk Speed {#} [{~}]
+     *   {~} Exploding {#} [{~}]
+     *   {~} Earth Damage {#} [{~}]
+     * </pre>
+     *
+     * 屬性列那條路是從行尾往回切數值的，切到標籤最後一個字就停，前面的
+     * {@code {~}} 被當成標籤的一部分，當然查不到。
+     */
+    private static void numberFirst(TranslationStore store) {
+        String[][] rows = {
+            {"{~} Main Attack Damage {#} [{~}]", "普攻傷害"},
+            {"{~} Thunder Damage {#} [{~}]", "雷屬性傷害"},
+            {"{~} Main Attack Damage Raw {#} [{~}]", "普攻傷害值"},
+            {"{~} Walk Speed {#} [{~}]", "移動速度"},
+            {"{~} Exploding {#} [{~}]", "爆炸"},
+            {"{~} Earth Damage {#} [{~}]", "地屬性傷害"},
+        };
+        for (String[] r : rows) {
+            String hit = LineTranslator.lookup(r[0], store, false);
+            report("數值在前：「" + r[0] + "」-> 含「" + r[1] + "」（實際：" + hit + "）",
+                    hit != null && hit.contains(r[1]));
+            report("數值在前：「" + r[0] + "」數值原樣在前、括號原樣在後（實際：" + hit + "）",
+                    hit != null && hit.startsWith("{~} ") && hit.endsWith("{#} [{~}]"));
+            report("數值在前：「" + r[0] + "」不會被記成缺口", store.hasTranslation(r[0]));
+        }
+        // 百分比與實數照樣分開挑
+        starts(store, true, "{~} Main Attack Damage {#} [{~}]", "{~} 普攻傷害百分比");
+        starts(store, false, "{~} Main Attack Damage {#} [{~}]", "{~} 普攻傷害值");
+
+        // 逐片段那條路常常把「數值 + 標籤」切成同一段，後面什麼都沒有
+        String seg = LineTranslator.lookup("{~} Walk Speed", store, false);
+        report("只有「數值 + 標籤」的片段也翻得出來（實際：" + seg + "）",
+                seg != null && seg.contains("移動速度"));
+
+        // 反面：數字後面接的不是介面標籤就不拼——「2 Guardian」不能變成「2 守護者」
+        String gear = LineTranslator.lookup("{~} Guardian", store, false);
+        report("數字 + 不是介面標籤的詞不拼（實際：" + gear + "）", gear == null);
+        nothing(store, "{~} blocks away from the nearest city {#} [{~}]");
+
+        // 畫出來：數值、圖示、括號都留在原位，標籤換成中文
+        net.minecraft.network.chat.MutableComponent line =
+                net.minecraft.network.chat.Component.empty();
+        Object[] parts = {"+22 Main Attack Damage", 0x55FF55, " ", 0xAAAAAA,
+                          "", 0xFFFFFF, " [45%]", 0x555555};
+        for (int i = 0; i < parts.length; i += 2) {
+            line.append(net.minecraft.network.chat.Component.literal((String) parts[i])
+                    .withStyle(net.minecraft.network.chat.Style.EMPTY.withColor(
+                            net.minecraft.network.chat.TextColor.fromRgb((Integer) parts[i + 1]))));
+        }
+        com.wynntils.core.text.StyledText styled =
+                com.wynntils.core.text.StyledText.fromComponent(line);
+        net.minecraft.network.chat.Component built = LineTranslator.translate(styled, store);
+        String all = built == null ? "" : built.getString();
+        report("畫出來標籤是中文（模板 " + com.wynnchayuan.capture.LineParts.of(styled).template()
+                        + "，實際：" + all + "）",
+                all.contains("普攻傷害") && !all.contains("Main Attack"));
+        report("畫出來數值與括號原樣（實際：" + all + "）",
+                all.startsWith("+22 ") && all.endsWith("[45%]"));
+    }
+
     private static void starts(TranslationStore store, boolean percent,
                                String row, String head) {
         String hit = LineTranslator.lookup(row, store, percent);
@@ -220,6 +316,22 @@ public final class StatRowTest {
         String hit = LineTranslator.lookup(row, store, false);
         report("「" + row + "」裡有「" + want + "」（實際：" + hit + "）",
                 hit != null && hit.contains(want));
+    }
+
+    private static void equals(TranslationStore store, String row, String want) {
+        String hit = LineTranslator.lookup(row, store, false);
+        report("「" + row + "」-> 「" + want + "」（實際：" + hit + "）", want.equals(hit));
+    }
+
+    /** 暫存語料：一個只有 {@code ui-labels.json} 的資料夾，內容是成對的原文與譯文。 */
+    static Path corpus(String name, String... pairs) throws IOException {
+        Path dir = Files.createTempDirectory(name);
+        JsonObject root = new JsonObject();
+        for (int i = 0; i + 1 < pairs.length; i += 2) {
+            root.addProperty(pairs[i], pairs[i + 1]);
+        }
+        Files.writeString(dir.resolve("ui-labels.json"), root.toString(), StandardCharsets.UTF_8);
+        return dir;
     }
 
     private static void nothing(TranslationStore store, String sentence) {

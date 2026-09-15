@@ -78,11 +78,56 @@ public final class GuiBlockGapTest {
         report("單行段落不處理",
                 !GuiTextCapture.covered(single, GuiBlockGapTest::known)[0]);
 
+        mountFood();
+
         System.out.println(failures == 0
                 ? "整段缺口：全部通過" : "整段缺口：" + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    /**
+     * 置中的段落：每一行前面都有排版偏移，而且斷行位置跟語料不一樣。
+     *
+     * <p>實機 captured.json：「{#}Feed to your Mount to upgrade its」「{#}Can be used
+     * to purchase blocks in」各被記了 12 次缺口，而 material.json 裡那一段早就翻好了。
+     * 用的是真的判斷（{@code GuiTextCapture#whole}）配一份只有那一條的暫存語料。
+     */
+    private static void mountFood() {
+        com.wynnchayuan.translate.TranslationStore store =
+                new com.wynnchayuan.translate.TranslationStore();
+        try {
+            java.nio.file.Path dir = java.nio.file.Files.createTempDirectory("wynnchayuan-mount-food");
+            java.nio.file.Files.writeString(dir.resolve("material.json"), """
+                    {"_meta": {"itemNames": true, "gearNames": false},
+                     "entries": {"m1": {
+                       "src": "Feed to your Mount to upgrade its Acceleration, Toughness and Speed\\nCan be used to purchase blocks in Housing, or to craft {#} Spears, {#} Daggers, {#} Bows, {#} Reliks & {#} Wands",
+                       "dst": "餵給坐騎可提升加速、韌性與速度\\n可用來購買房屋方塊，或製作 {#} 長矛、{#} 匕首、{#} 弓、{#} 聖物與 {#} 法杖",
+                       "role": "desc"}}}
+                    """, java.nio.charset.StandardCharsets.UTF_8);
+            store.loadAll(dir);
+        } catch (java.io.IOException e) {
+            throw new RuntimeException(e);
+        }
+        List<String> food = java.util.Arrays.asList(
+                "{#}Bonder{#}",
+                null,
+                "{#}Feed to your Mount to upgrade its",
+                "{#}Acceleration, Toughness and Speed",
+                "{#}Can be used to purchase blocks in",
+                "{#}Housing, or to craft {#} Spears, {#}",
+                "{#}Daggers, {#} Bows, {#} Reliks & {#} Wands");
+        boolean[] out = GuiTextCapture.covered(food, lines -> GuiTextCapture.whole(lines, store));
+        report("★ 行首掛著偏移、斷行又不同的整段，每一行都不列成缺口",
+                out[2] && out[3] && out[4] && out[5] && out[6]);
+        report("標題照舊要收", !out[0]);
+
+        // 反面：剝掉偏移之後還是查不到的，照舊是缺口
+        List<String> other = java.util.Arrays.asList(
+                "{#}Feed to your Mount to upgrade", "{#}something nobody translated");
+        boolean[] none = GuiTextCapture.covered(other, lines -> GuiTextCapture.whole(lines, store));
+        report("剝掉偏移也查不到的照舊列成缺口", !none[0] && !none[1]);
     }
 
     private static void report(String what, boolean ok) {

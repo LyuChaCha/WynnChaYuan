@@ -170,6 +170,7 @@ public final class TranslationStore {
         speakers.clear();
         prefixIndex.clear();
         terms.clear();
+        uiLabels.clear();
         maxTermWords = 1;
         maxBlockLines = 1;
         nameKeys.clear();
@@ -348,6 +349,13 @@ public final class TranslationStore {
                 // 不是每個扁平檔都能這樣用：`gui.json` 那種收的是整行，
                 // 把它們全部當成詞會在不相干的句子裡亂換。所以用檔名明說。
                 readFlat(obj, file.getFileName().toString().endsWith("-terms.json"));
+                if (file.getFileName().toString().equals(UI_LABELS)) {
+                    for (String key : obj.keySet()) {
+                        if (!key.startsWith("_")) {
+                            uiLabels.add(key.strip());   // 見 #isUiLabel
+                        }
+                    }
+                }
             }
             loadedFiles++;
             System.out.println("[WynnChaYuan] 載入譯文 " + file.getFileName()
@@ -355,6 +363,24 @@ public final class TranslationStore {
         } catch (Exception e) {
             System.err.println("[WynnChaYuan] 略過 " + file.getFileName() + "：" + e.getMessage());
         }
+    }
+
+    /** 介面標籤檔。屬性標籤（Walk Speed、Main Attack Damage%…）都收在這裡。 */
+    private static final String UI_LABELS = "ui-labels.json";
+
+    /** {@link #UI_LABELS} 裡的每一條鍵，不管翻了沒。見 {@link #isUiLabel}。 */
+    private final java.util.Set<String> uiLabels = new java.util.HashSet<>();
+
+    /**
+     * 這個字是 {@code ui-labels.json} 裡的一條介面標籤嗎。
+     *
+     * <p>給「數值在前面」的屬性列用（{@code LineTranslator#statRow}）：逐片段那條路
+     * 常常把「+22 Main Attack Damage」切成一段，後面沒有數值尾巴可以當證據。
+     * 這時候只認介面標籤——任何「數字 + 語料裡的詞」都拼的話，
+     * 「2 Guardian」就成了「2 守護者」。
+     */
+    public boolean isUiLabel(String key) {
+        return key != null && uiLabels.contains(key.strip());
     }
 
     /**

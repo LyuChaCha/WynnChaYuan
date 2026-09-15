@@ -727,6 +727,14 @@ tasks.register('runGambitBlockChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runGambitBlockChecks' }
 
+tasks.register('runLootrunBoonChecks', JavaExec) {
+    group = 'verification'
+    description = 'Lootrun 賜福敘述：沒整段翻就不翻片段；折行不把圖示跟數值拆開'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LootrunBoonTest'
+}
+tasks.named('check') { dependsOn 'runLootrunBoonChecks' }
+
 tasks.register('runSelfNameChecks', JavaExec) {
     group = 'verification'
     description = 'Wynncraft 的暱稱也要抽成 {u}'

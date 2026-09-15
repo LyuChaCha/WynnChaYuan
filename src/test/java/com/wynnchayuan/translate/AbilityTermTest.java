@@ -67,6 +67,7 @@ public final class AbilityTermTest {
 
         swaps(store, "Bash", " gains +2x as many hits.", "重擊");
         swaps(store, "Charge", " deals damage and knocks back enemies.", "衝鋒");
+        insideAccent(store);
 
         System.out.println(failures == 0
                 ? "技能名稱替換：全部通過" : "技能名稱替換：" + failures + " 項失敗");
@@ -94,6 +95,60 @@ public final class AbilityTermTest {
         String all = built.getString();
         report("畫面上是「" + want + "」（實際：" + all + "）", all.contains(want));
         report("畫面上沒有留著英文的「" + name + "」（實際：" + all + "）", !all.contains(name));
+    }
+
+    /** 詞表的顏色：Crystallized 在原文裡是水藍色。 */
+    private static final int TERM_COLOUR = 0x55FFFF;
+
+    /**
+     * 帶顏色的那一段<b>包著</b>技能名時，名稱也要換。
+     *
+     * <h2>實機回報</h2>
+     * Diffraction 的敘述畫出來是「奧法尼姆也會施加 2 層 Crystallized」，水藍色的
+     * Crystallized 留英文。這一行是整行命中語料的，上色照佔位符切段：{@code {~}}
+     * 與 {@code {#}} 之間那一段在譯文裡是「 層 Crystallized 」，登記成重點段的是
+     * 這一整截，而重點段那條路只問「整段是不是一個詞」。
+     *
+     * <p>要點是走<b>整行命中</b>那條路——模板少一個空格就會落到逐片段，那條路本來
+     * 就換得掉，測了等於沒測。所以先釘住模板等於語料的鍵。
+     */
+    private static void insideAccent(TranslationStore store) {
+        String key = "Ophanim also applies +{~} Crystallized {#}.";
+        report("★ 語料收著這一句（實際：" + store.lookup(key) + "）", store.lookup(key) != null);
+
+        MutableComponent line = Component.empty();
+        // 名稱後面那個空格是灰的、圖示另成一段——空格跟圖示黏在同一段的話，
+        // 模板會少掉那個空格（「Crystallized{#}」），就對不上語料的鍵了。
+        Object[] parts = {"Ophanim also applies ", 0xAAAAAA, "+2", 0xFFFFFF, " ", 0xAAAAAA,
+                          "Crystallized", TERM_COLOUR, " ", 0xAAAAAA, "", TERM_COLOUR,
+                          ".", 0xAAAAAA};
+        for (int i = 0; i < parts.length; i += 2) {
+            line.append(Component.literal((String) parts[i]).withStyle(
+                    Style.EMPTY.withColor(TextColor.fromRgb((Integer) parts[i + 1]))));
+        }
+        StyledText styled = StyledText.fromComponent(line);
+        String template = com.wynnchayuan.capture.LineParts.of(styled).template();
+        report("★ 模板就是語料的鍵，走的是整行命中（實際：" + template + "）",
+               key.equals(template));
+
+        Component built = LineTranslator.translate(styled, store);
+        String all = built == null ? "" : built.getString();
+        report("整行翻得出來（實際：" + all + "）", built != null);
+        report("★ 水藍色那段裡的名稱換成「結晶化」（實際：" + all + "）",
+               all.contains("結晶化") && !all.contains("Crystallized"));
+        report("前面的技能名照舊換掉（實際：" + all + "）",
+               all.contains("奧法尼姆") && !all.contains("Ophanim"));
+        boolean[] coloured = {false};
+        if (built != null) {
+            built.visit((style, text) -> {
+                if (text.contains("結晶化") && style.getColor() != null
+                        && style.getColor().getValue() == TERM_COLOUR) {
+                    coloured[0] = true;
+                }
+                return java.util.Optional.empty();
+            }, Style.EMPTY);
+        }
+        report("換上去的名稱保留水藍色", coloured[0]);
     }
 
     private static void report(String what, boolean ok) {

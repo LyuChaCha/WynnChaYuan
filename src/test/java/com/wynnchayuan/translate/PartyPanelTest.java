@@ -172,11 +172,12 @@ public final class PartyPanelTest {
                 "3 challenges completed (max",
                 "+5). This boost is reset upon",
                 "taking a Green Beacon."}, "紅色信標");
-        block(store, "捨棄獎勵說明", new String[] {
+        // Sacrifice 譯「獻祭」，不是「捨棄」——使用者 2026-09-15 定的，語料已全面改過。
+        block(store, "獻祭獎勵說明", new String[] {
                 "Sacrificing your rewards",
                 "will add a percentage of your",
-                "pulls into your next lootrun"}, "捨棄");
-        block(store, "捨棄越多保留越多", new String[] {
+                "pulls into your next lootrun"}, "獻祭");
+        block(store, "獻祭越多保留越多", new String[] {
                 "A higher amount of sacrifices",
                 "increases the amount of pulls",
                 "saved for your next run"}, "抽數");

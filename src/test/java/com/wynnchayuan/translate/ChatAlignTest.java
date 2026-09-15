@@ -131,7 +131,278 @@ public final class ChatAlignTest {
 
         columns();
         panelSingles();
+        vibrantColumns();
+        try {
+            lootrunSummary();
+        } finally {
+            LineTranslator.measureForTest = null;
+        }
         report();
+    }
+
+    private static final int AQUA = 0x55FFFF;
+
+    /** 英文那兩欄的中心。量自 issue #719 的截圖（GUI 縮放 2）：左欄約 81、右欄約 234。 */
+    private static final int LEFT_CENTRE = 81;
+    private static final int RIGHT_CENTRE = 234;
+
+    /** 原版聊天字型的字寬，夠用來比較「原文 vs 譯文」就好。 */
+    private static int advance(int cp) {
+        if (cp >= 0x2E80) {
+            return 9;
+        }
+        return switch (cp) {
+            case 'i', '.', ':', ',', ';', '!', '\'' -> 2;
+            case 'l' -> 3;
+            case 't', 'I', ' ' -> 4;
+            case 'f', 'k' -> 5;
+            default -> 6;
+        };
+    }
+
+    private static int measure(Component component) {
+        int[] w = {0};
+        component.visit((style, text) -> {
+            if (SpaceOffset.isSpaceFont(style) && SpaceOffset.isOffsetRun(text)) {
+                w[0] += SpaceOffset.decode(text);
+            } else {
+                text.codePoints().forEach(cp -> w[0] += cp == '\n' ? 0 : advance(cp));
+            }
+            return java.util.Optional.empty();
+        }, Style.EMPTY);
+        return w[0];
+    }
+
+    /**
+     * Lootrun 結算的一行：左欄「數字 + 名稱」、右欄「標籤 + 數字」，兩欄各自置中。
+     * 形狀照 Wynntils LootrunModel 的正則：{@code §.(\d+)§7 Reward Rerolls§r}、
+     * {@code §7Mobs Killed: §.(\d+)}。
+     */
+    private static StyledText lootrunRow(String num, String rest, String label, String value) {
+        int left = measure(Component.literal(num + rest));
+        int right = measure(Component.literal(label + value));
+        int lead = LEFT_CENTRE - left / 2;
+        int gap = RIGHT_CENTRE - right / 2 - (lead + left);
+        MutableComponent all = Component.empty();
+        all.append(offset(lead));
+        all.append(lit(num, AQUA));
+        all.append(lit(rest, GREY));
+        all.append(offset(gap));
+        all.append(lit(label, GREY));
+        all.append(lit(value, AQUA));
+        return StyledText.fromComponent(all);
+    }
+
+    /** 一行裡被偏移隔開的每一欄：{起點, 終點}。 */
+    private static List<int[]> cells(Component line) {
+        List<int[]> out = new ArrayList<>();
+        int x = 0;
+        int[] open = null;
+        for (Component part : flatten(line)) {
+            if (!part.getSiblings().isEmpty() || part.getString().isEmpty()) {
+                continue;
+            }
+            String text = part.getString();
+            if (SpaceOffset.isSpaceFont(part.getStyle()) && SpaceOffset.isOffsetRun(text)) {
+                x += SpaceOffset.decode(text);
+                open = null;
+                continue;
+            }
+            int w = measure(part);
+            if (open == null) {
+                open = new int[] {x, x + w};
+                out.add(open);
+            } else {
+                open[1] = x + w;
+            }
+            x += w;
+        }
+        return out;
+    }
+
+    /**
+     * issue #719：Lootrun 結算面板，兩欄一行，四行。
+     *
+     * <h2>回報的畫面</h2>
+     * 「3 次奖励重抽｜击杀怪物数: 104」的右欄比上下幾行右偏一截；
+     * 「300 点 Lootrun｜经验」整行太寬，「经验」被聊天折到下一行最左邊。
+     *
+     * <p>0.1.9_3 的就地取代模式走的是 tooltip 那一支：整行置中補一次、欄距再補
+     * 一次、右緣又補一次。拿截圖量到的位置去套那套算式，兩行的左緣（58、63）與
+     * 右緣（293、336——超過聊天的 320）都對得上，所以病因就是那一支。
+     * 現在就地取代先走聊天專用的 {@code translateChat}（每欄守自己的中心），
+     * 這裡把整行從查表量到底，確保那兩種症狀不會回來。
+     *
+     * <h2>釘住什麼</h2>
+     * 不管整行翻好、只翻一欄、還是退回通用那一支（語料只有片段譯文時）：
+     * <ul>
+     *   <li>每一欄的中心跟英文那幾行在同一個位置（上下對得齊）；</li>
+     *   <li>整行不比原文寬（不會被聊天折斷）。譯文比英文寬的語言（俄文）
+     *       寧可右欄往左靠，也不能超出去，見 {@code LineTranslator#fitWidth}。</li>
+     * </ul>
+     *
+     * <p>「{#}{~} Reward Pulls{#}Time Elapsed: {~}:{~}」那一行在裝了 WynnMod 時
+     * 整行留英文（「Time Elapsed:」是它在解的字，見 ThirdPartyLiterals），
+     * 這裡量的是沒裝時的樣子。
+     */
+    private static void lootrunSummary() {
+        LineTranslator.measureForTest = ChatAlignTest::measure;
+        String[][] rows = {
+            {"46", " Reward Pulls", "Time Elapsed: ", "05:00"},
+            {"3", " Reward Rerolls", "Mobs Killed: ", "104"},
+            {"0", " Reward Sacrifices", "Chests Open: ", "5"},
+            {"300", " Lootrun Experience", "Challenges Completed: ", "5"},
+        };
+        for (String lang : new String[] {"zh_cn", "zh_tw", "ru_ru", "ja_jp", "partial"}) {
+            TranslationStore store = new TranslationStore();
+            if (lang.equals("partial")) {
+                // 兩欄都只有「片段」譯文、沒有整行也沒有單欄條目：退回通用那一支時的樣子
+                try {
+                    Path dir = Files.createTempDirectory("wynnchayuan-lootrun-partial");
+                    Files.writeString(dir.resolve("gui.json"),
+                            "{\"Reward Sacrifices\": \"奖励舍弃\", \"Chests Open:\": \"开启宝箱数:\","
+                            + " \"Mobs Killed:\": \"击杀怪物数:\", \"Reward Rerolls\": \"奖励重抽\"}",
+                            StandardCharsets.UTF_8);
+                    store.loadAll(dir);
+                } catch (java.io.IOException e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations", lang));
+            }
+            for (String[] r : rows) {
+                StyledText orig = lootrunRow(r[0], r[1], r[2], r[3]);
+                Component made = LineTranslator.translateChat(orig, store);
+                Component fallback = made != null ? null : LineTranslator.translate(orig, store);
+                Component shown = made != null ? made : fallback;
+                // 就地取代的順序：先聊天那一支，查不到才退回通用的（見 ChatListener）
+                if (shown != null) {
+                    String what = "[" + lang + "] " + r[1].strip();
+                    List<int[]> was = cells(orig.getComponent());
+                    List<int[]> now = cells(shown);
+                    check(what + "：還是兩欄（實際 " + now.size() + "）", now.size() == 2);
+                    if (now.size() == 2) {
+                        // 俄文的右欄比英文寬，收寬之後右欄的中心會往左移，只驗左欄
+                        boolean wider = now.get(1)[1] - now.get(1)[0] > was.get(1)[1] - was.get(1)[0];
+                        check(what + "：左欄中心跟英文一樣（" + describe(now) + "）",
+                              Math.abs(centre(now.get(0)) - LEFT_CENTRE) <= 1);
+                        check(what + "：右欄中心跟英文一樣（" + describe(now) + "）",
+                              wider || Math.abs(centre(now.get(1)) - RIGHT_CENTRE) <= 1);
+                        check(what + "：兩欄沒有黏在一起（" + describe(now) + "）",
+                              now.get(1)[0] - now.get(0)[1] >= 4);
+                    }
+                    check(what + "：★ 整行不比原文寬（原文 " + measure(orig.getComponent())
+                                  + "、譯文 " + measure(shown) + "）",
+                          measure(shown) <= measure(orig.getComponent()));
+                }
+                if (lang.equals("zh_cn") && made != null) {
+                    // 雙語模式是整塊攢起來、帶著「面板」旗標一行一行重譯的（見 ChatBlock）
+                    Component stacked = LineTranslator.translateChat(orig, store, Boolean.FALSE, true);
+                    check("[zh_cn 整塊] " + r[1].strip() + "：欄位置跟單則一樣",
+                          stacked != null && describe(cells(stacked)).equals(describe(cells(made))));
+                }
+                System.out.println("      [" + lang + "] " + r[1].strip() + " 原文欄 "
+                        + describe(cells(orig.getComponent())) + " 寬 "
+                        + measure(orig.getComponent())
+                        + (shown == null ? "  （沒翻）"
+                           : "  " + (made != null ? "chat" : "tooltip") + " 譯文欄 "
+                             + describe(cells(shown)) + " 寬 " + measure(shown)
+                             + " 「" + shown.getString().replaceAll("[\\x{CF000}-\\x{D1000}]", "|") + "」"));
+            }
+        }
+    }
+
+    private static int centre(int[] cell) {
+        return (cell[0] + cell[1]) / 2;
+    }
+
+    private static String describe(List<int[]> cells) {
+        StringBuilder sb = new StringBuilder();
+        for (int[] c : cells) {
+            sb.append('[').append(c[0]).append('-').append(c[1])
+              .append(" 中心 ").append((c[0] + c[1]) / 2).append(']');
+        }
+        return sb.toString();
+    }
+
+    /**
+     * 璀璨信標的名稱列：欄界偏移小於 8px 也要認得出來。
+     *
+     * <p>偏移取自實機 log：兩欄中心固定，名稱越長偏移越小，
+     * {@code <+0>Vibrant Dark Grey Beacon<+7>Vibrant Rainbow Beacon}。
+     * 先前 {@code MIN_GAP_PX} 把這些都當成「不是欄界」，整行沒對齊。
+     */
+    private static void vibrantColumns() {
+        java.util.Map<String, Integer> px = java.util.Map.of(
+                "Vibrant Dark Grey Beacon", 155, "Vibrant Rainbow Beacon", 140,
+                "Vibrant Crimson Beacon", 150, "Vibrant Aqua Beacon", 128,
+                "璀璨深灰信標", 57, "璀璨彩虹信標", 57, "璀璨緋紅信標", 57, "璀璨水藍信標", 57,
+                "- +1 ", 22, "🔒Unidentified Helmet", 120);
+        java.util.function.ToIntFunction<LineTranslator.Run> width =
+                r -> r.space() ? 0 : px.getOrDefault(r.text(), 0);
+
+        List<LineTranslator.Run> darkOrig = List.of(gap(0), word("Vibrant Dark Grey Beacon"),
+                                                    gap(7), word("Vibrant Rainbow Beacon"));
+        List<LineTranslator.Run> darkMade = List.of(gap(0), word("璀璨深灰信標"),
+                                                    gap(7), word("璀璨彩虹信標"));
+        centresKept("縮排 0、欄距 7", darkOrig, darkMade, width);
+
+        List<LineTranslator.Run> crimsonOrig = List.of(gap(7), word("Vibrant Crimson Beacon"),
+                                                       gap(23), word("Vibrant Aqua Beacon"));
+        List<LineTranslator.Run> crimsonMade = List.of(gap(7), word("璀璨緋紅信標"),
+                                                       gap(23), word("璀璨水藍信標"));
+        centresKept("縮排 7、欄距 23", crimsonOrig, crimsonMade, width);
+
+        // 反例：圖示前的 2px 微調仍然不算欄界。
+        List<LineTranslator.Run> helmet = List.of(word("- +1 "), gap(2),
+                                                  word("🔒Unidentified Helmet"));
+        int gaps = 0;
+        for (boolean g : LineTranslator.chatGaps(helmet)) {
+            gaps += g ? 1 : 0;
+        }
+        check("圖示前的 2px 微調不算欄界（實際 " + gaps + " 個）", gaps == 0);
+    }
+
+    private static void centresKept(String what, List<LineTranslator.Run> orig,
+                                    List<LineTranslator.Run> made,
+                                    java.util.function.ToIntFunction<LineTranslator.Run> width) {
+        int[] adjust = LineTranslator.chatColumnPad(orig, made, width);
+        check(what + "：認得兩個欄界（實際 " + adjust.length + " 個）", adjust.length == 2);
+        List<Integer> before = centres(orig, new int[adjust.length], width);
+        List<Integer> after = centres(made, adjust, width);
+        boolean kept = before.size() == 2 && after.size() == 2;
+        for (int i = 0; kept && i < 2; i++) {
+            kept = Math.abs(before.get(i) - after.get(i)) <= 1;
+        }
+        check(what + "：兩欄的中心不動（原文 " + before + "、譯文 " + after + "）", kept);
+    }
+
+    /** 套上欄距補正之後，每一段實字的中心在哪。 */
+    private static List<Integer> centres(List<LineTranslator.Run> row, int[] adjust,
+                                         java.util.function.ToIntFunction<LineTranslator.Run> width) {
+        boolean[] gaps = LineTranslator.chatGaps(row);
+        List<Integer> out = new ArrayList<>();
+        int pos = 0;
+        int index = 0;
+        for (int i = 0; i < row.size(); i++) {
+            LineTranslator.Run r = row.get(i);
+            if (r.space()) {
+                pos += r.px() + (gaps[i] && index < adjust.length ? adjust[index++] : 0);
+                continue;
+            }
+            int w = width.applyAsInt(r);
+            out.add(pos + w / 2);
+            pos += w;
+        }
+        return out;
+    }
+
+    private static LineTranslator.Run gap(int px) {
+        return new LineTranslator.Run(true, px, Style.EMPTY, SpaceOffset.encode(px));
+    }
+
+    private static LineTranslator.Run word(String text) {
+        return new LineTranslator.Run(false, 0, Style.EMPTY, text);
     }
 
     /**

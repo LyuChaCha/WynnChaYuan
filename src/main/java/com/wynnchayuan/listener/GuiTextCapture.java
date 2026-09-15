@@ -170,7 +170,46 @@ public final class GuiTextCapture {
 
     /** 這幾行接起來，語料裡有沒有。見 {@link #covered}。 */
     private static boolean whole(List<String> lines) {
-        return WynnChaYuan.translations().hasTranslation(String.join(" ", lines))
-                || WynnChaYuan.translations().hasTranslation(String.join("\n", lines));
+        return whole(lines, WynnChaYuan.translations());
+    }
+
+    /**
+     * 同上，語料由呼叫端給——測試用得到。
+     *
+     * <h2>置中的段落要先剝掉行首的偏移</h2>
+     * 坐騎飼料那種置中的說明，每一行前面都掛著一個推位置用的排版偏移，抽成模板
+     * 就是行首的 {@code {#}}：
+     *
+     * <pre>
+     *   {#}Feed to your Mount to upgrade its
+     *   {#}Acceleration, Toughness and Speed
+     *   {#}Can be used to purchase blocks in
+     * </pre>
+     *
+     * 那幾個 {@code {#}} 的數量取決於<b>斷成幾行</b>，是排版不是內容；語料裡的那一條
+     * 是乾淨的兩句話，而且斷行位置跟畫面上不一樣。原樣接起來怎麼問都是「沒有」，
+     * 於是畫面上明明是中文，captured.json 還是一行一行列成缺口（每一行十幾次）。
+     *
+     * <p>顯示那一端早就這樣查了（{@code LineTranslator#rejoin} 剝行首偏移、
+     * {@code lookupFlat} 不管斷行），這裡問同一個問題。
+     */
+    static boolean whole(List<String> lines, com.wynnchayuan.translate.TranslationStore store) {
+        if (store == null) {
+            return false;
+        }
+        if (store.hasTranslation(String.join(" ", lines))
+                || store.hasTranslation(String.join("\n", lines))) {
+            return true;
+        }
+        List<String> bare = new java.util.ArrayList<>(lines.size());
+        for (String line : lines) {
+            String cut = line;
+            while (cut.startsWith(GlyphSplitter.GLYPH_PLACEHOLDER)) {
+                cut = cut.substring(GlyphSplitter.GLYPH_PLACEHOLDER.length());
+            }
+            bare.add(cut.strip());
+        }
+        String joined = String.join(" ", bare);
+        return store.hasTranslation(joined) || store.lookupFlat(joined) != null;
     }
 }

@@ -1,12 +1,54 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.9_3",
+ "latest": "0.1.9_4",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.9_4": {
+   "headline": "Tooltip and chat layout fixes",
+   "items": [
+    "Gear names in Item Guess lists are no longer translated",
+    "Wrapped descriptions that only partly have a translation stay in English as a whole",
+    "Coloured names inside ability descriptions are now translated",
+    "Lootrun summary columns line up and no longer wrap",
+    "Stat rows with the value first can now be translated",
+    "Attribute icons stay on the same line as their value",
+    "Column alignment fixed for Vibrant Beacon and other chat messages",
+    "\"to\" and \"tier\" between stat range values are now translated",
+    "Brackets keep the right colour when they share the label's colour"
+   ],
+   "zh_tw": {
+    "headline": "tooltip 與聊天欄排版修正",
+    "items": [
+     "物品猜測清單裡的裝備名稱不再被翻譯",
+     "跨行說明只有部分句子有譯文時整句維持原文，不再半中半英",
+     "技能說明中帶顏色的名稱會照詞表翻譯",
+     "Lootrun 結算面板兩欄對齊，不再換行",
+     "數值在前的屬性列可以翻譯",
+     "翻譯後屬性圖示與數值保持在同一行",
+     "璀璨信標等聊天訊息的欄位對齊修正",
+     "數值範圍中的「to」「tier」改為翻譯",
+     "括號與標籤同色時，翻譯後顏色保持正確"
+    ]
+   },
+   "zh_cn": {
+    "headline": "tooltip 与聊天栏排版修正",
+    "items": [
+     "物品猜测列表里的装备名称不再被翻译",
+     "跨行说明只有部分句子有译文时整句保持原文，不再中英混杂",
+     "技能说明中带颜色的名称会按词表翻译",
+     "Lootrun 结算面板两栏对齐，不再换行",
+     "数值在前的属性行可以翻译",
+     "翻译后属性图标与数值保持在同一行",
+     "璀璨信标等聊天消息的栏位对齐修正",
+     "数值范围中的“to”“tier”改为翻译",
+     "括号与标签同色时，翻译后颜色保持正确"
+    ]
+   }
+  },
   "0.1.9_3": {
    "headline": "Translated dialogue no longer switches back to English",
    "items": [
