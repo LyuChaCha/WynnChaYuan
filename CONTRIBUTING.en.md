@@ -175,6 +175,8 @@ Ask a maintainer if you'd rather not run it yourself.
 
 ## Reporting missing text
 
-If you find game text that isn't in the corpus at all, turn on collection in the
-F6 settings, walk past it, and open an issue with the file it produced under
-`config/wynnchayuan/`.
+If you find game text that isn't in the corpus at all, keep collection on in the
+F6 settings and walk past it. Then press **F6 → Data → Export untranslated strings**,
+look through the exported file, and attach it with the
+[issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml).
+The mod never sends anything by itself.

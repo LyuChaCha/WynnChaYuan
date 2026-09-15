@@ -255,13 +255,50 @@ public final class CaptureStore {
     }
 
     /**
-     * 目前手上所有條目的快照。
+     * {@code entries} 那一段：照收集順序、用給人看的鍵。
      *
-     * <p>給 {@link CorpusUpload} 挑要分享哪些用的。拷貝一份而不是把
-     * {@code entries} 交出去——收集發生在渲染路徑上，邊走邊改會炸。
+     * <h2>為什麼抽出來</h2>
+     * 本機的 {@code captured.json}（{@link #flush}）與 F6 匯出的檔案
+     * （{@link CorpusExport}）要是<b>同一個格式</b>，{@code tools/import-captured.py}
+     * 才兩種都吃得下。各寫一份的話，哪天這邊加一欄、那邊忘了，交上來的檔案
+     * 就少了任務名或第幾句，而且不會有任何錯誤訊息。
+     *
+     * <p>{@code entries} 是 {@link ConcurrentHashMap}，走訪時收集端還在寫也不會炸，
+     * 頂多少掉剛收進來的那一條，下次再寫。
+     *
+     * @param keep 哪些要寫進去：本機檔案全收，匯出只收 {@link ShareFilter} 放行的
      */
-    java.util.List<Captured> snapshot() {
-        return java.util.List.copyOf(entries.values());
+    synchronized JsonObject rowsJson(java.util.function.Predicate<Captured> keep) {
+        JsonObject rows = new JsonObject();
+        java.util.List<Captured> ordered = entries.values().stream()
+                .filter(keep)
+                .sorted(java.util.Comparator.comparingInt(c -> c.seq))
+                .toList();
+        // 同一個任務／NPC 的台詞各自從 1 開始數，翻譯的人一眼就看得出這是第幾句。
+        Map<String, Integer> nth = new java.util.HashMap<>();
+        java.util.Set<String> used = new java.util.HashSet<>();
+        for (Captured c : ordered) {
+            String key = readableKey(c, nth);
+            // 理論上不會撞，但鍵撞了會<b>無聲吃掉</b>一條，所以還是保個底。
+            String unique = key;
+            for (int n = 2; !used.add(unique); n++) {
+                unique = key + "~" + n;
+            }
+            JsonObject row = GSON.toJsonTree(c).getAsJsonObject();
+            // 任務／說話者／第幾句各自一欄。ctx 是機器用的字串，
+            // 要譯者自己去解「dialogue/King's Recruit#Aledar」不合理。
+            String quest = questOf(c.ctx);
+            if (quest != null) {
+                row.addProperty("quest", quest);
+                row.addProperty("line", nth.get(quest));
+            }
+            String who = speakerOf(c.ctx);
+            if (who != null) {
+                row.addProperty("speaker", who);
+            }
+            rows.add(unique, row);
+        }
+        return rows;
     }
 
     public int size() {
@@ -328,7 +365,7 @@ public final class CaptureStore {
                 + " 認不出來歸屬的（含別的模組的字）集中在 ? 開頭的鍵，"
                 + "domain 是 unknown——那是<b>還沒分類</b>，不是一種分類。"
                 + " untranslated 是語料收過、但這個語言還沒翻的句子，seen 是看到幾次，"
-                + "照多到少排——最常出現的最該先補。這一段不會分享出去。");
+                + "照多到少排——最常出現的最該先補。這一段不會匯出。");
         meta.addProperty("untranslated", untranslated.size());
         JsonObject events = new JsonObject();
         eventCounts.entrySet().stream()
@@ -359,35 +396,7 @@ public final class CaptureStore {
         // 而缺的語料補進語料檔時，順序錯了就會突兀地插在中間。
         //
         // seq 本來就記了，只是沒有拿來排。
-        JsonObject rows = new JsonObject();
-        java.util.List<Captured> ordered = entries.values().stream()
-                .sorted(java.util.Comparator.comparingInt(c -> c.seq))
-                .toList();
-        // 同一個任務／NPC 的台詞各自從 1 開始數，翻譯的人一眼就看得出這是第幾句。
-        Map<String, Integer> nth = new java.util.HashMap<>();
-        java.util.Set<String> used = new java.util.HashSet<>();
-        for (Captured c : ordered) {
-            String key = readableKey(c, nth);
-            // 理論上不會撞，但鍵撞了會<b>無聲吃掉</b>一條，所以還是保個底。
-            String unique = key;
-            for (int n = 2; !used.add(unique); n++) {
-                unique = key + "~" + n;
-            }
-            JsonObject row = GSON.toJsonTree(c).getAsJsonObject();
-            // 任務／說話者／第幾句各自一欄。ctx 是機器用的字串，
-            // 要譯者自己去解「dialogue/King's Recruit#Aledar」不合理。
-            String quest = questOf(c.ctx);
-            if (quest != null) {
-                row.addProperty("quest", quest);
-                row.addProperty("line", nth.get(quest));
-            }
-            String who = speakerOf(c.ctx);
-            if (who != null) {
-                row.addProperty("speaker", who);
-            }
-            rows.add(unique, row);
-        }
-        root.add("entries", rows);
+        root.add("entries", rowsJson(c -> true));
         // 語料收過、還沒翻的，照看到的次數排——最常出現的就是最該先補的。
         if (!untranslated.isEmpty()) {
             JsonArray pending = new JsonArray();

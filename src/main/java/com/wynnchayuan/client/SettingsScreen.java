@@ -2,16 +2,21 @@ package com.wynnchayuan.client;
 
 import com.wynnchayuan.CollectorConfig;
 import com.wynnchayuan.WynnChaYuan;
+import com.wynnchayuan.capture.CaptureStore;
+import com.wynnchayuan.capture.CorpusExport;
 import com.wynnchayuan.render.Colors;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.client.gui.screens.ConfirmLinkScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
+import net.minecraft.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -535,13 +540,14 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().toggleCollectGuiText();
                     b.setMessage(guiCollectLabel());
                 });
-        cycle("data.share",
-                this::shareLabel, b -> {
-                    boolean on = WynnChaYuan.config().toggleShareCaptures();
-                    b.setMessage(shareLabel());
-                    say(T.c(on ? "data.share.on" : "data.share.off")
-                            .withStyle(on ? ChatFormatting.GREEN : ChatFormatting.GRAY));
-                });
+        // 先前這裡是「分享給翻譯團隊」的開關。模組現在不送任何東西出去，
+        // 改成兩顆按鈕：匯出成本機檔案、打開 Issue 表單——看不看、交不交由玩家決定。
+        action("data.export", T.s("data.export.hint"),
+                pick(T.s("data.export.button")), this::exportCorpus);
+        action("data.submit", T.s("data.submit.hint"),
+                pick(T.s("data.submit.button")),
+                // 跟原版開連結一樣先跳確認畫面：網址擺在玩家眼前，按了才開瀏覽器。
+                () -> ConfirmLinkScreen.confirmLinkNow(this, CorpusExport.ISSUE_URL));
         cycle("data.debug",
                 this::debugLabel, b -> {
                     WynnChaYuan.config().toggleDebugDumps();
@@ -1114,13 +1120,45 @@ public final class SettingsScreen extends Screen {
     }
 
     /**
-     * 分享語料的開關。
+     * 匯出給翻譯團隊的檔案，然後打開那個資料夾。
      *
-     * <p>這是唯一一個會把字串送出去的開關，所以預設關閉、說明寫在旁邊，
-     * 打開時還會在聊天室說一次到底送什麼。見 {@code CorpusUpload}。
+     * <h2>為什麼是按鈕，不是自動送</h2>
+     * 先前是背景自動上傳，CurseForge 審核把它判成「擷取的文字送往遠端可改的伺服器」。
+     * 現在模組不送任何東西：玩家按這一顆、打開檔案看過，再自己拖進 Issue。
+     *
+     * <p>寫檔丟到背景執行緒：{@code captured.json} 玩久了有好幾 MB，在繪製執行緒上寫
+     * 會讓畫面卡一下。寫完再回主執行緒更新狀態列、打開資料夾。
      */
-    private Component shareLabel() {
-        return ctrl(onOff(WynnChaYuan.config().shareCaptures()));
+    private void exportCorpus() {
+        CaptureStore store = WynnChaYuan.store();
+        java.nio.file.Path dir = WynnChaYuan.configDir();
+        if (store == null || dir == null) {
+            return;
+        }
+        say(T.c("data.export.working").withStyle(ChatFormatting.GRAY));
+        Minecraft client = Minecraft.getInstance();
+        Thread worker = new Thread(() -> {
+            try {
+                CorpusExport.Result result = CorpusExport.write(
+                        dir, store, WynnChaYuan.version(), WynnChaYuan.language());
+                client.execute(() -> {
+                    say(result.count() == 0
+                            ? T.c("data.export.empty").withStyle(ChatFormatting.GRAY)
+                            : T.c("data.export.done", result.count())
+                                    .withStyle(ChatFormatting.GREEN));
+                    // 開資料夾不開檔案：直接開 .json 會丟給系統的預設程式，有些電腦上
+                    // 那是一個「要用什麼開啟」的對話框；資料夾一定開得起來，
+                    // 而且要拖進瀏覽器的正是裡面那個檔。
+                    Util.getPlatform().openPath(result.file().getParent());
+                });
+            } catch (Exception e) {
+                client.execute(() -> say(T.c("data.export.failed",
+                                String.valueOf(e.getMessage()))
+                        .withStyle(ChatFormatting.RED)));
+            }
+        }, WynnChaYuan.MOD_ID + "-export");
+        worker.setDaemon(true);
+        worker.start();
     }
 
     /**

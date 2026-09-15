@@ -75,6 +75,11 @@ public final class WynnChaYuan implements ClientModInitializer {
         return store;
     }
 
+    /** 模組的設定資料夾（{@code config/wynnchayuan}）。F6 的匯出要知道檔案放在哪。 */
+    public static Path configDir() {
+        return configDir;
+    }
+
     public static CollectorConfig config() {
         return config;
     }
@@ -211,13 +216,8 @@ public final class WynnChaYuan implements ClientModInitializer {
         // 每秒檢查對話是否已經打完（打字停住夠久就送出），寫檔仍維持 30 秒一次
         flusher.scheduleWithFixedDelay(WynnChaYuan::tick, 1, 1, TimeUnit.SECONDS);
         flusher.scheduleWithFixedDelay(store::flush, 30, 30, TimeUnit.SECONDS);
-
-        // 分享語料：預設關閉，開了才會送。第一次延遲兩分鐘，不跟登入時的
-        // 譯文同步搶頻寬；之後十分鐘一次，沒有新的就什麼都不做。
-        com.wynnchayuan.capture.CorpusUpload.init(
-                dir, store, version(), language, () -> config.shareCaptures());
-        flusher.scheduleWithFixedDelay(
-                com.wynnchayuan.capture.CorpusUpload::push, 2, 10, TimeUnit.MINUTES);
+        // 收集到的東西只留在這一台。要交給翻譯團隊，由玩家在 F6 按「匯出」、
+        // 自己看過再附到 Issue——模組本身不把任何字串送出去（見 CorpusExport）。
 
         // 關遊戲時確保最後一批資料有落地
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -554,9 +554,6 @@ public final class WynnChaYuan implements ClientModInitializer {
             // 真正的拍照在這裡——tick 跑在兩幀之間，那時畫面裡才是
             // 上一幀完整合成後的結果。見 PanelShot#tick。
             com.wynnchayuan.render.PanelShot.tick();
-            // 第一次進遊戲說一次「語料會分享出去、要關在哪裡關」。
-            // 預設是開的，所以這一句不能省——見 CorpusUpload#greetOnce。
-            com.wynnchayuan.capture.CorpusUpload.greetOnce(client);
             // 有新版就在聊天室說一次，附下載連結。見 Releases#tellOnce。
             Releases.tellOnce(client);
         });

@@ -149,18 +149,8 @@ public final class CollectorConfig {
     /** 是否收集未翻譯字串。 */
     private boolean collect = true;
 
-    /**
-     * 收集到的缺口要不要分享回收集站。
-     *
-     * <p><b>預設開啟。</b>這個模組的翻譯進度一直被「要有人真的去跑那段任務」
-     * 卡著，而分享的內容是遊戲自己的英文文字——沒有帳號、沒有座標、
-     * 也沒有別人打的字（見 {@code CorpusUpload#shareable}）。
-     *
-     * <p>預設開啟不等於默默開著：第一次啟動會在聊天室說一次到底送什麼、
-     * 以及在哪裡關掉（見 {@code CorpusUpload#greetOnce}），之後不再提。
-     * F6 →「分享給翻譯團隊」隨時可以關。
-     */
-    private boolean shareCaptures = true;
+    // 先前這裡有 shareCaptures（自動分享語料的開關）。自動上傳整個拿掉了，
+    // 開關也跟著拿掉；舊設定檔裡留著那個欄位不影響讀取，下次存檔就消失。
 
     /**
      * 已經提示過「有新版」的那個版本號。
@@ -458,10 +448,6 @@ public final class CollectorConfig {
 
     public boolean collect() {
         return collect;
-    }
-
-    public boolean shareCaptures() {
-        return shareCaptures;
     }
 
     public String notifiedVersion() {
@@ -927,12 +913,6 @@ public final class CollectorConfig {
         return collect;
     }
 
-    public boolean toggleShareCaptures() {
-        shareCaptures = !shareCaptures;
-        save();
-        return shareCaptures;
-    }
-
     public boolean toggleDebugDumps() {
         debugDumps = !debugDumps;
         save();
@@ -985,9 +965,6 @@ public final class CollectorConfig {
             }
             if (o.has("collect")) {
                 collect = o.get("collect").getAsBoolean();
-            }
-            if (o.has("shareCaptures")) {
-                shareCaptures = o.get("shareCaptures").getAsBoolean();
             }
             if (o.has("notifiedVersion")) {
                 notifiedVersion = o.get("notifiedVersion").getAsString();
@@ -1090,7 +1067,6 @@ public final class CollectorConfig {
             o.addProperty("tooltipMode", tooltipMode.name());
             o.addProperty("showOverlays", showOverlays);
             o.addProperty("collect", collect);
-            o.addProperty("shareCaptures", shareCaptures);
             o.addProperty("notifiedVersion", notifiedVersion);
             o.addProperty("language", language);
             o.addProperty("fallbackLanguage", fallbackLanguage);

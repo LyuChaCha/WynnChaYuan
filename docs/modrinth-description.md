@@ -77,16 +77,11 @@ Switch under F6 → Data, without changing the game's language.
 
 **That is normal.** The sentence is not in the corpus yet, so the original is shown. Report it to **LyuChaCha** on Discord or on [GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues) and it will be filled; everyone gets it on their next launch.
 
-### Installing it helps
+### How to help
 
-**F6 → Data → Share with the translation team** is on by default. Lines you run into that have no translation are sent to the team and become translations for everyone. You do not have to translate anything.
+Press **F6 → Data → Export untranslated strings**. The folder with `captured.json` opens; look through the file, delete anything personal, then attach it to the [issue form](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml) (**F6 → Data → How to submit**) or send it to **LyuChaCha** on Discord. You do not have to translate anything.
 
-| | |
-|---|---|
-| **Sent** | The game's own English text: quest dialogue, menus, item lore, NPC nameplates, server announcements |
-| **Never sent** | Your account, UUID, coordinates; guild, party, shout and private chat. Player names are filtered out |
-
-You can turn it off at any time.
+The mod never sends anything by itself. The export already leaves out player names and guild, party, shout and private chat.
 
 ### Install
 
@@ -136,7 +131,7 @@ Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): 3 USD/month o
 |---|---|
 | 市集搜尋 | 在交易市集打譯名，送出前自動換回英文原名 |
 | 從 GitHub 同步 | 譯文修正合併後下次進遊戲就生效，不必重新下載模組 |
-| 分享語料 | 沒翻到的句子送回翻譯團隊（見下文） |
+| 匯出語料 | 沒翻到的句子匯出成檔案，自己看過再交給翻譯團隊（見下文） |
 | 複製聊天 | 複製最近的聊天訊息，方便回報 |
 | F9 截圖 | 把譯文面板複製到剪貼簿或存成檔案 |
 | F6 設定 | 每一類文字各自的模式；譯文、輔助、介面語言；小框可拖曳、可改大小 |
@@ -175,16 +170,11 @@ Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): 3 USD/month o
 
 **這是正常的**，代表那一句還不在語料裡，所以顯示原文。回報給 Discord 的 **LyuChaCha** 或 [GitHub Issues](https://github.com/LyuChaCha/WynnChaYuan/issues) 就會補上，所有人下次進遊戲就看得到。
 
-### 裝了就是在幫忙
+### 怎麼幫忙
 
-**F6 →「資料」→「分享給翻譯團隊」**預設開啟。你遇到、還沒翻到的句子會送回翻譯團隊，翻好之後變成所有人的譯文。不用翻任何東西。
+按 **F6 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。看過檔案、刪掉個人資訊之後，附到 [Issue 表單](https://github.com/LyuChaCha/WynnChaYuan/issues/new?template=corpus.yml)（**F6 →「資料」→「如何提交」**），或在 Discord 傳給 **LyuChaCha**。不用翻任何東西。
 
-| | |
-|---|---|
-| **會送** | 遊戲自己的英文字：任務對話、介面、物品說明、NPC 名牌、伺服器公告 |
-| **不會送** | 帳號、UUID、座標；公會、隊伍、喊話、私訊。玩家名字會被濾掉 |
-
-隨時可以關。
+模組不會自動送出任何東西；匯出檔已經濾掉玩家名字與公會、隊伍、喊話、私訊。
 
 ### 安裝
 

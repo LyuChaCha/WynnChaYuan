@@ -1,0 +1,57 @@
+name: 提交未翻譯字串 / Submit untranslated strings
+description: 附上 F6 匯出的 captured.json / Attach the captured.json exported from F6
+title: "[收集] "
+labels: ["captured"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        遊戲裡按 **F6 →「資料」→「匯出未翻譯字串」**，會打開放著 `captured.json` 的資料夾。
+        模組不會自動送出任何東西；檔案由你看過之後，自己決定要不要交。
+
+        In game, press **F6 → Data → Export untranslated strings** and the folder with `captured.json` opens.
+        The mod never sends anything by itself: look through the file, then decide whether to submit it.
+  - type: dropdown
+    id: language
+    attributes:
+      label: 遊戲語言 / Game language
+      description: F6 裡選的譯文語言 / The translation language selected in F6
+      options:
+        - 繁體中文 (zh_tw)
+        - 简体中文 (zh_cn)
+        - 日本語 (ja_jp)
+        - 한국어 (ko_kr)
+        - Русский (ru_ru)
+        - 其他 / Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 模組版本 / Mod version
+      description: F6 標題旁的版本號 / Shown next to the title in F6
+      placeholder: 0.1.9_5
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 簡短說明 / Short description
+      description: 大概跑了哪些任務或區域 / Roughly which quests or areas you played
+    validations:
+      required: false
+  - type: textarea
+    id: file
+    attributes:
+      label: captured.json
+      description: 把檔案直接拖進這一格 / Drag the file into this box
+      placeholder: 拖曳 captured.json 到這裡 / Drop captured.json here
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隱私 / Privacy
+      options:
+        - label: 我看過檔案，刪掉了個人資訊（玩家／公會名稱、私人對話） / I looked through the file and removed anything personal (player or guild names, private chat)
+          required: true
