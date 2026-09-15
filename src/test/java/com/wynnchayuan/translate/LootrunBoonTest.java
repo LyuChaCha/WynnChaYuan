@@ -8,6 +8,8 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,22 +24,25 @@ public final class LootrunBoonTest {
     private static final Style GREY = Style.EMPTY.withColor(TextColor.fromRgb(0xAAAAAA));
     private static final Style AQUA = Style.EMPTY.withColor(TextColor.fromRgb(0x55FFFF));
     private static final Style RED = Style.EMPTY.withColor(TextColor.fromRgb(0xFF5555));
+    private static final Style WHITE = Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF));
+    private static final String CORPUS = "src/main/resources/assets/wynnchayuan/translations";
     private static final Style SPRITE = Style.EMPTY.withFont(
             new net.minecraft.network.chat.FontDescription.Resource(
                     net.minecraft.resources.Identifier.withDefaultNamespace(
                             "tooltip/attribute/sprite")));
     private static final String ICON = "󯿿󰀁󰀂";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         TranslationStore store = new TranslationStore();
-        store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
-                            Languages.DEFAULT));
+        store.loadAll(Path.of(CORPUS, Languages.DEFAULT));
 
         persnickety(store);
         statRows(store);
         accentMove();
         heavensent(store);
         rewrapColour(store);
+        heavensentElemental();
+        corpusBoons();
 
         System.out.println(failures == 0
                 ? "Lootrun 賜福：全部通過" : "Lootrun 賜福：" + failures + " 項失敗");
@@ -112,11 +117,19 @@ public final class LootrunBoonTest {
               valueRow >= 0 && valueRow == iconRow);
         check("數值用原文數值的顏色", colourOf(out, "2") == 0x55FFFF);
         check("屬性名用原文屬性名的顏色", colourOf(out, "防禦") == 0xFF5555);
+        // 期望的字從語料取，不寫死措辭：翻譯團隊改譯法時這條不該跟著紅。
+        String dst = store.lookup("For the rest of your Lootrun,\ngain +{~} {#}Defence (Max x{~}) for"
+                + "\neach Beacon offered");
+        check("語料收著這一段", dst != null);
+        if (dst == null) {
+            return;
+        }
+        String want = dst.replaceAll("\\{~1\\}|\\{~\\}(?=[^~]*x\\{)", "2")
+                         .replaceAll("\\{~2\\}|\\{~\\}", "15")
+                         .replace("{#}", ICON);
         String all = String.join("", out.stream().map(Component::getString).toList());
-        check("字沒有變少（實際 " + all + "）",
-              all.replace(" ", "").equals(
-                      ("本次 Lootrun 剩餘期間，每提供一個信標就 +2 " + ICON + "防禦 (上限 x15)")
-                              .replace(" ", "")));
+        check("字沒有變少（實際 " + all + "，語料 " + want + "）",
+              all.replace(" ", "").equals(want.replace("\n", "").replace(" ", "")));
     }
 
     /**
@@ -168,9 +181,10 @@ public final class LootrunBoonTest {
             return;
         }
         dump(out);
-        check("「(上限 x」不會拿到原文最後一行的深灰（實際 #"
-                        + Integer.toHexString(colourOf(out, "(上限")) + "）",
-              colourOf(out, "(上限") != 0x555555);
+        // 找括號本身，不找「上限／最多」——那是措辭，翻譯團隊會改
+        int paren = colourOf(out, "(");
+        check("括號註解不會拿到原文最後一行的深灰（實際 #" + Integer.toHexString(paren) + "）",
+              paren != -1 && paren != 0x555555);
     }
 
     /**
@@ -194,6 +208,206 @@ public final class LootrunBoonTest {
                 List.of(new com.wynnchayuan.capture.LineParts.Piece("物品升級師", RED)));
         check("圖示前面是字時只搬圖示（實際 " + String.join(" ⏎ ", word) + "）",
               word[0].equals("可透過 ") && word[1].startsWith("{#}物品升級師"));
+    }
+
+    /**
+     * 玩家回報的那一塊：Heavensent 的元素傷害版。實機畫成
+     *
+     * <pre>
+     *   本次 Lootrun 剩餘期間，
+     *   每提供一個信標就 +4%
+     *   元素傷害 (最多 x15)
+     * </pre>
+     *
+     * <p>「+4%」跟「元素傷害」分家，「(最多 x15)」也跟著離開了它的數值。
+     * 這一條還沒進 src 的語料（實機那份是更新下來的），所以臨時做一層只有它的語料。
+     * 寬度用 {@link #mc}——拿它量，舊的折法斷出來的正是實機那三行。
+     */
+    private static void heavensentElemental() throws Exception {
+        System.out.println("=== Heavensent（元素傷害）===");
+        Path layer = Files.createTempDirectory("wcy-boon");
+        Path file = layer.resolve("lootrun.json");
+        Files.writeString(file, "{\n \"For the rest of your Lootrun,\\ngain +{~} Elemental Damage"
+                + "\\n(Max x{~}) for each Beacon\\noffered\": \"本次 Lootrun 剩餘期間，"
+                + "每提供一個信標就 +{~1} 元素傷害 (最多 x{~2})\"\n}\n", StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        try {
+            store.loadAll(layer);
+        } finally {
+            Files.deleteIfExists(file);
+            Files.deleteIfExists(layer);
+        }
+        List<StyledText> run = List.of(
+                st(line(GREY, "For the rest of your Lootrun,")),
+                st(join(part(GREY, "gain "), part(WHITE, "+4%"), part(GREY, " Elemental Damage"))),
+                st(line(GREY, "(Max x15) for each Beacon")),
+                st(line(GREY, "offered")));
+        List<Component> out = block(run, store);
+        checkBoon("Heavensent 元素傷害", run, out, "+4%", "元素傷害", true);
+        if (out == null) {
+            return;
+        }
+        check("★ 「(最多 x15)」跟它的數值在同一行",
+              rowOf(out, "(最多 x15)") >= 0 && rowOf(out, "(最多 x15)") == rowOf(out, "+4%"));
+        check("第一行收在逗號上（實際 " + out.get(0).getString() + "）",
+              out.get(0).getString().strip().endsWith("，"));
+        check("數值用原文數值的顏色", colourOf(out, "4%") == 0xFFFFFF);
+        check("屬性名用正文的顏色", colourOf(out, "元素傷害") == 0xAAAAAA);
+        String all = String.join("", out.stream().map(Component::getString).toList());
+        check("字沒有變少（實際 " + all + "）", all.replace(" ", "").equals(
+                "本次Lootrun剩餘期間，每提供一個信標就+4%元素傷害(最多x15)"));
+    }
+
+    /**
+     * 語料裡現有的幾個賜福，四個語言各跑一次。
+     *
+     * <p>中文是一句話、要我們自己折回原文的行數；日文與俄文是譯者自己排好行的，
+     * 不會重折——一起跑是為了確定新規則沒有去動它們。
+     */
+    private static void corpusBoons() {
+        String[][] labels = {
+            // 語言, Damage, Spell Damage, Defence, Elemental（藍紫信標次數那條）
+            {"zh_tw", "傷害", "法術傷害", "防禦", "元素傷害"},
+            {"zh_cn", "伤害", "法术伤害", "防御", "元素伤害"},
+            {"ja_jp", "ダメージ", "呪文ダメージ", "防御", "属性ダメージ"},
+            {"ru_ru", "урону", "урону заклинаний", "Защите", "стихийному урону"},
+        };
+        for (String[] lang : labels) {
+            System.out.println("=== 語料裡的賜福：" + lang[0] + " ===");
+            TranslationStore store = new TranslationStore();
+            store.loadAll(Path.of(CORPUS, lang[0]));
+            boolean ours = lang[0].startsWith("zh");
+            List<StyledText> damage = List.of(
+                    st(line(GREY, "For the rest of your Lootrun,")),
+                    st(join(part(GREY, "gain "), part(WHITE, "+3%"),
+                            part(GREY, " Damage (Max x15) for"))),
+                    st(line(GREY, "each Beacon offered")));
+            checkBoon(lang[0] + " Damage", damage, block(damage, store), "+3%", lang[1], ours);
+            List<StyledText> spell = List.of(
+                    st(line(GREY, "For the rest of your Lootrun,")),
+                    st(join(part(GREY, "gain "), part(WHITE, "+4%"),
+                            part(GREY, " Spell Damage (Max"))),
+                    st(line(GREY, "x15) for each Beacon offered")));
+            checkBoon(lang[0] + " Spell Damage", spell, block(spell, store), "+4%", lang[2], ours);
+            List<StyledText> defence = List.of(
+                    st(line(GREY, "For the rest of your Lootrun,")),
+                    st(join(part(GREY, "gain "), part(AQUA, "+2"), part(GREY, " "),
+                            part(SPRITE, ICON), part(RED, "Defence"),
+                            part(GREY, " (Max x15) for"))),
+                    st(line(GREY, "each Beacon offered")));
+            checkBoon(lang[0] + " Defence", defence, block(defence, store), "+2", lang[3], ours);
+            List<StyledText> once = List.of(
+                    st(line(GREY, "Once you have been offered a")),
+                    st(line(GREY, "Blue or Purple Beacon more")),
+                    st(join(part(GREY, "than "), part(AQUA, "20"),
+                            part(GREY, " times this Lootrun,"))),
+                    st(join(part(GREY, "gain "), part(AQUA, "+5%"),
+                            part(GREY, " Elemental Damage"))));
+            checkBoon(lang[0] + " Elemental", once, block(once, store), "+5%", lang[4], ours);
+            if (lang[0].equals("zh_tw")) {
+                List<StyledText> health = List.of(
+                        st(line(GREY, "For the rest of this Lootrun,")),
+                        st(join(part(GREY, "gain "), part(WHITE, "+100"),
+                                part(GREY, " Health (Max x15)"))),
+                        st(join(part(GREY, "for every "), part(WHITE, "3"),
+                                part(GREY, " items offered to"))),
+                        st(line(GREY, "you from a Chest")));
+                checkBoon("zh_tw Health", health, block(health, store), "+100", "生命", true);
+            }
+        }
+    }
+
+    /**
+     * 一塊賜福折完之後都該成立的事。
+     *
+     * @param ours 這一段是不是我們自己折的（中文）。譯者自己排好行的不量寬度——
+     *             那是譯者的決定，不是折行規則的。
+     */
+    private static void checkBoon(String name, List<StyledText> run, List<Component> out,
+                                  String value, String label, boolean ours) {
+        check(name + "：整段查得到", out != null);
+        if (out == null) {
+            return;
+        }
+        dump(out);
+        check(name + "：行數沒有超過原文（" + out.size() + " / " + run.size() + "）",
+              out.size() <= run.size());
+        int valueRow = rowOf(out, value);
+        int labelRow = rowOf(out, label);
+        check("★ " + name + "：「" + value + "」跟「" + label + "」在同一行（第 " + valueRow
+                        + " 行、第 " + labelRow + " 行）",
+              valueRow >= 0 && valueRow == labelRow);
+        int widest = 0;
+        for (StyledText row : run) {
+            widest = Math.max(widest, mc(row.getComponent()));
+        }
+        for (int r = 0; r < out.size(); r++) {
+            String s = out.get(r).getString();
+            String core = s.strip();
+            check(name + "：第 " + r + " 行不是從收尾的標點開頭（" + s + "）",
+                  core.isEmpty() || "，。、；：）)%".indexOf(core.charAt(0)) < 0);
+            if (ours) {
+                check(name + "：第 " + r + " 行沒有比原文最寬的一行寬（" + mc(out.get(r))
+                                + " / " + widest + "）",
+                      mc(out.get(r)) <= widest);
+            }
+        }
+    }
+
+    private static List<Component> block(List<StyledText> run, TranslationStore store) {
+        LineTranslator.measureForTest = LootrunBoonTest::mc;
+        try {
+            return LineTranslator.translateBlock(run, store, new boolean[run.size()]);
+        } finally {
+            LineTranslator.measureForTest = null;
+        }
+    }
+
+    /** 第一個包含 {@code needle} 的行；找不到是 -1。 */
+    private static int rowOf(List<Component> rows, String needle) {
+        for (int r = 0; r < rows.size(); r++) {
+            if (rows.get(r).getString().contains(needle)) {
+                return r;
+            }
+        }
+        return -1;
+    }
+
+    private static StyledText st(Component c) {
+        return StyledText.fromComponent(c);
+    }
+
+    /**
+     * 照 Minecraft 預設字型逐字的前進寬度（含 1px 字距）量；中日韓 9、屬性圖示 3。
+     *
+     * <p>{@link #width} 把拉丁字母一律算 6，原文量得偏寬，實機那種「剛好放不下」的斷法
+     * 就重現不出來。這一份把 i、l、t、括號這些窄字算對，舊的折法才會斷出實機的三行。
+     */
+    private static int mc(Component c) {
+        int px = 0;
+        String s = c.getString();
+        for (int i = 0; i < s.length(); ) {
+            int cp = s.codePointAt(i);
+            i += Character.charCount(cp);
+            if (com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(cp)) {
+                px += 3;
+            } else if (cp >= 0x2E80) {
+                px += 9;
+            } else if (cp == 'l') {
+                px += 3;
+            } else if ("i!|,.:;'".indexOf(cp) >= 0) {
+                px += 2;
+            } else if (cp == ' ' || "tI[]".indexOf(cp) >= 0) {
+                px += 4;
+            } else if ("fk(){}<>*\"".indexOf(cp) >= 0) {
+                px += 5;
+            } else if (cp == '~' || cp == '@') {
+                px += 7;
+            } else {
+                px += 6;
+            }
+        }
+        return px;
     }
 
     /** 包含 {@code needle} 的第一個片段的顏色；找不到是 -1。 */
