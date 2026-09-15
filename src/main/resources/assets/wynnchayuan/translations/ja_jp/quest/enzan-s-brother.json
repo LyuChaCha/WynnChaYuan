@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Enzan's Brother",
   "count": 25,
-  "translated": 0,
+  "translated": 25,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Enzan's Brother#000": {
    "src": "Welcome to the V.S.S. Seaskipper, from Seasail Enterprises! There's nothin' better than Seasail if you're lookin' to travel!",
-   "dst": "",
+   "dst": "Seasail 社の V.S.S. Seaskipper へようこそ！旅をするなら Seasail に勝るもんはないぜ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -18,7 +18,7 @@
   },
   "Enzan's Brother#001": {
    "src": "Just hop on the boat and buy a pass so you can get goin' to almost anywhere on the ocean!",
-   "dst": "",
+   "dst": "船に乗って通行証を買えば、海のほぼどこへでも行けるぜ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -28,7 +28,7 @@
   },
   "Enzan's Brother#002": {
    "src": "Talk to Enzan close to the exit of {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~1}, {~2}, -{~3}]、{p} の出口近くにいる Enzan と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Enzan's Brother",
@@ -38,7 +38,7 @@
   },
   "Enzan's Brother#003": {
    "src": "I see you want to venture into the wilderness!",
-   "dst": "",
+   "dst": "荒野へ出るつもりだな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -48,7 +48,7 @@
   },
   "Enzan's Brother#004": {
    "src": "My name is Enzan, and I am now a retired knight. I've spent most of my life fighting for {p}'s army, just like you.",
-   "dst": "",
+   "dst": "俺は Enzan、今は引退した騎士だ。お前と同じく、人生の大半を {p} の軍で戦ってきた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -58,7 +58,7 @@
   },
   "Enzan's Brother#005": {
    "src": "I know how hard it must be to be a recruit at this time, so I've got something that could help you! Well, I don't have it, but my brother does!",
-   "dst": "",
+   "dst": "今の新兵がどれほど大変か分かる。だから助けになる物がある！いや、持ってるのは俺の兄弟だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -68,7 +68,7 @@
   },
   "Enzan's Brother#006": {
    "src": "Follow this road, he's just past the item identifier, you can't miss him. Just head to the big set of stairs, past the item identifier.",
-   "dst": "",
+   "dst": "この道を行け。アイテム鑑定士の先にいるから、見逃すことはない。鑑定士の先の大きな階段を目指せ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -78,7 +78,7 @@
   },
   "Enzan's Brother#007": {
    "src": "Tell him I sent you! He can be such a jerk to strangers sometimes, especially when he's focused on his stairs...",
-   "dst": "",
+   "dst": "俺の紹介だと言え！あいつは時々よそ者に嫌な態度をとる。階段に夢中な時は特にな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -88,7 +88,7 @@
   },
   "Enzan's Brother#008": {
    "src": "Find Enzan's brother near the Item Identifier on the {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~1}, {~2}, -{~3}]、{p} のアイテム鑑定士の近くで Enzan の兄弟を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Enzan's Brother",
@@ -98,7 +98,7 @@
   },
   "Enzan's Brother#009": {
    "src": "Excuse me? Can't you see I'm busy?",
-   "dst": "",
+   "dst": "何だ？忙しいのが見えないのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -108,7 +108,7 @@
   },
   "Enzan's Brother#010": {
    "src": "Oh, my brother? Sorry, I didn't know.",
-   "dst": "",
+   "dst": "兄弟の紹介？悪い、知らなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -118,7 +118,7 @@
   },
   "Enzan's Brother#011": {
    "src": "Why yes, I actually have something that could help you...",
-   "dst": "",
+   "dst": "ああ、実はお前の助けになる物がある…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -128,7 +128,7 @@
   },
   "Enzan's Brother#012": {
    "src": "But before I give it to you, why don't you help me with something first?",
-   "dst": "",
+   "dst": "だが渡す前に、まず俺の頼みを聞いてくれないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -138,7 +138,7 @@
   },
   "Enzan's Brother#013": {
    "src": "You see, there's a special kind of mushroom that grows in this cave. I hear it has certain... energizing properties.",
-   "dst": "",
+   "dst": "この洞窟には特別なキノコが生えてる。何でも…元気が出る効能があるとか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -148,7 +148,7 @@
   },
   "Enzan's Brother#014": {
    "src": "If you can bring me [{~} Energy Mushroom], I'll help you out. Enter the cave down the stairs, and bring me that mushroom!",
-   "dst": "",
+   "dst": "[{~} Energy Mushroom] を持ってきたら助けてやる。階段を下りて洞窟に入り、キノコを取ってこい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -158,7 +158,7 @@
   },
   "Enzan's Brother#015": {
    "src": "Descend into the cave at [-{~}, {~}, -{~}] and bring [{~} Energy Mushroom] to Therck",
-   "dst": "",
+   "dst": "[-{~1}, {~2}, -{~3}] の洞窟に下り、[{~4} Energy Mushroom] を Therck に届ける",
    "role": "desc",
    "kind": "objective",
    "quest": "Enzan's Brother",
@@ -168,7 +168,7 @@
   },
   "Enzan's Brother#016": {
    "src": "Ah, you're back! Do you have the mushroom?",
-   "dst": "",
+   "dst": "おお、戻ったか！キノコはあるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -178,7 +178,7 @@
   },
   "Enzan's Brother#017": {
    "src": "Take this ring. It's an accessory item! You can identify it at the nearby Item Identifier.",
-   "dst": "",
+   "dst": "この指輪を持っていけ。アクセサリーだ！近くのアイテム鑑定士で鑑定できる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -188,7 +188,7 @@
   },
   "Enzan's Brother#018": {
    "src": "It's a very good ring for someone starting out like you. There's just one small issue...",
-   "dst": "",
+   "dst": "駆け出しのお前にはかなり良い指輪だ。ただ、ちょっとした問題が…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -198,7 +198,7 @@
   },
   "Enzan's Brother#019": {
    "src": "To wear it, you must help my friend back in {p}. He's been pestering me for days about needing help.",
-   "dst": "",
+   "dst": "着けるには、{p} にいる俺の友人を助けてくれ。何日も助けてくれとせっつかれてるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -208,7 +208,7 @@
   },
   "Enzan's Brother#020": {
    "src": "You should meet me there once you've gotten a little stronger. Well, see you around, {u} .",
-   "dst": "",
+   "dst": "もう少し強くなったら、そこで会おう。じゃあな、{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -216,7 +216,7 @@
   },
   "Enzan's Brother#021": {
    "src": "Ah, you're back. Do you have the mushroom?",
-   "dst": "",
+   "dst": "おお、戻ったか。キノコはあるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -224,7 +224,7 @@
   },
   "Enzan's Brother#022": {
    "src": "Excellent... Now I might finally be able to climb these stairs...",
-   "dst": "",
+   "dst": "上出来だ…これでやっとこの階段を登れるかもな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -232,7 +232,7 @@
   },
   "Enzan's Brother#023": {
    "src": "Who knows, maybe there's a treasure or something up there?",
-   "dst": "",
+   "dst": "上に宝か何かがあるかもしれないだろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
@@ -240,7 +240,7 @@
   },
   "Enzan's Brother#024": {
    "src": "Take this ring. It's an accessory item. You can identify it at the nearby Item Identifier.",
-   "dst": "",
+   "dst": "この指輪を持っていけ。アクセサリーだ。近くのアイテム鑑定士で鑑定できる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enzan's Brother",
