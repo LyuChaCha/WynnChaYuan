@@ -123,11 +123,11 @@ needs**.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_cn` 简体中文 | █████████░ 93.7% | 39,863 / 42,546 |
-| `zh_tw` 繁體中文 | █████████░ 93.7% | 40,902 / 43,659 |
-| `ja_jp` 日本語 | █████████░ 93.5% | 39,780 / 42,546 |
-| `ru_ru` Русский | ████░░░░░░ 40.8% | 17,357 / 42,546 |
-| `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 623 / 42,538 |
+| `zh_cn` 简体中文 | █████████░ 93.8% | 40,020 / 42,683 |
+| `zh_tw` 繁體中文 | █████████░ 93.8% | 41,059 / 43,796 |
+| `ja_jp` 日本語 | █████████░ 93.6% | 39,937 / 42,683 |
+| `ru_ru` Русский | ████░░░░░░ 41.0% | 17,514 / 42,683 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 1.8% | 778 / 42,675 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
@@ -148,7 +148,7 @@ This table answers the other half:
 | Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
 | Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
 | Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 5,158 + 1,055 collected | **No official list** - only what players run into |
+| NPC nameplates, menus, system messages | — | 5,160 + 1,062 collected | **No official list** - only what players run into |
 
 Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
 
@@ -161,9 +161,9 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | Gear lore | 988 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,858 | 1,920 | 1,920 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 13,591 | 16,267 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 13,748 | 16,404 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 51,819 lines estimated**, **43,659 collected** (84%), **40,902 translated** (79% of the estimate, 93.7% of what we have).
+> All together: **at least 51,956 lines estimated**, **43,796 collected** (84%), **41,059 translated** (79% of the estimate, 93.8% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 <!-- 涵蓋率:結束 -->
