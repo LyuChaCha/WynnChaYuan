@@ -30,6 +30,9 @@ DEFAULT_LANG = "zh_tw"
 START = "<!-- 進度:開始 -->"
 END = "<!-- 進度:結束 -->"
 
+# 商店頁的連結要寫完整網址，貼到 CurseForge／Modrinth 上相對路徑會斷。
+REPO = "https://github.com/LyuChaCha/WynnChaYuan"
+
 # 玩家看到的頻率。數字是自動算的，這裡只排順序與說明。
 #
 # 這張表就是分母——**漏列一個檔，它裡面沒翻的東西就不存在**。
@@ -396,14 +399,21 @@ def main(argv: list[str]) -> int:
                 f"每一種語言**還缺哪些檔案**見 "
                 f"[docs/PROGRESS.md](docs/PROGRESS.md)。<br>"
                 f"Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).")
+        # 商店頁（CurseForge、Modrinth）是整段貼到別的網站上的：
+        # 相對連結會斷，CurseForge 的編輯器也不吃 <br>。
+        store = (f"更新於 {stamp}。\n\n{language_table(rows)}\n\n"
+                 f"各語言還缺哪些檔案 / Per-language breakdown: "
+                 f"[PROGRESS.md]({REPO}/blob/main/docs/PROGRESS.md)")
     else:
         body = (f"**目前進度 {done:,} / {total:,}"
                 f"（{done / total:.1%}）**，更新於 {stamp}。\n\n{body}")
+        store = body
     stale = []
     for name in ("README.md", "README.en.md", "CONTRIBUTING.md",
                  "docs/modrinth-description.md", "docs/curseforge-description.md"):
         path = Path(name)
-        if path.is_file() and replace(path, body):
+        text = store if name.startswith("docs/") else body
+        if path.is_file() and replace(path, text):
             stale.append(name)
     if check:
         if stale:
