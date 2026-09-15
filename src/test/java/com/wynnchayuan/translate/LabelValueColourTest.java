@@ -77,6 +77,13 @@ public final class LabelValueColourTest {
                 new int[] {0xFF5555, GREY, WHITE, DARK},
                 new String[] {"總傷害", "每秒傷害"}, new int[] {GREY, DARK});
 
+        // 實機回報（簡中技能面板）：「(圆形)」該是灰色，卻跟著「7 格」變白。
+        // 標籤與括號同為灰；原文括號裡的連字號譯文沒有，標點數量對不上。
+        colours(store, "括號與標籤同色時不跟著數值變白",
+                new String[] {"", " Area of Effect: ", "7", " Blocks ", "(Circle-Shaped)"},
+                new int[] {0xFF5555, GREY, WHITE, WHITE, GREY},
+                new String[] {"作用範圍", "格", "圓形"}, new int[] {GREY, WHITE, GREY});
+
         // 實機回報：句首的 grant 是粉紅，其餘是白。
         colours(store, "句首換色的詞保住自己的顏色",
                 new String[] {"grant ", "2048", " Emeralds"},

@@ -5001,12 +5001,16 @@ public final class LineTranslator {
         }
         List<int[]> ours = punctuationSpans(source);
         List<int[]> theirs = punctuationSpans(target);
-        if (ours.isEmpty() || ours.size() != theirs.size()) {
-            return List.of();
-        }
-        for (int i = 0; i < ours.size(); i++) {
-            if (!source.substring(ours.get(i)[0], ours.get(i)[1])
-                    .equals(target.substring(theirs.get(i)[0], theirs.get(i)[1]))) {
+        if (!samePunctuation(source, ours, target, theirs)) {
+            // 標點對不上時只拿括號當錨點再試一次。
+            //
+            // 技能面板的「Area of Effect: 7 Blocks (Circle-Shaped)」：原文括號裡的
+            // 連字號也算標點，譯文「格 (圆形)」沒有，數量一不同就整行放棄，
+            // 退回「冒號後面整段是數值色」——括號跟著變白，本來是灰的。
+            // 括號內的逗號被換成全形、俄文多一個縮寫點，也是同一回事。
+            ours = bracketSpans(source);
+            theirs = bracketSpans(target);
+            if (!samePunctuation(source, ours, target, theirs)) {
                 return List.of();
             }
         }
@@ -5055,6 +5059,38 @@ public final class LineTranslator {
             out.add(new int[] {start, i});
         }
         return out;
+    }
+
+    /** 兩邊的標點段數量相同、而且逐組相同；全形括號當成半形比。 */
+    private static boolean samePunctuation(String source, List<int[]> ours,
+                                           String target, List<int[]> theirs) {
+        if (ours.isEmpty() || ours.size() != theirs.size()) {
+            return false;
+        }
+        for (int i = 0; i < ours.size(); i++) {
+            String a = halfWidthBrackets(source.substring(ours.get(i)[0], ours.get(i)[1]));
+            String b = halfWidthBrackets(target.substring(theirs.get(i)[0], theirs.get(i)[1]));
+            if (!a.equals(b)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /** 每一個括號字元自成一段；其他標點不算。 */
+    private static List<int[]> bracketSpans(String text) {
+        List<int[]> out = new ArrayList<>();
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c == '(' || c == ')' || c == '（' || c == '）') {
+                out.add(new int[] {i, i + 1});
+            }
+        }
+        return out;
+    }
+
+    private static String halfWidthBrackets(String text) {
+        return text.replace('（', '(').replace('）', ')');
     }
 
     /** 這一段實字的顏色都一樣的話回傳那個顏色，否則 {@code null}。 */
