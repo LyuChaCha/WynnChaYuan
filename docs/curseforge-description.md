@@ -121,11 +121,11 @@ already tells the project what players actually run into.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_cn` 简体中文 | █████████░ 93.7% | 39,863 / 42,546 |
-| `zh_tw` 繁體中文 | █████████░ 93.6% | 40,472 / 43,224 |
-| `ja_jp` 日本語 | █████████░ 93.5% | 39,780 / 42,546 |
-| `ru_ru` Русский | ████░░░░░░ 40.8% | 17,357 / 42,546 |
-| `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 623 / 42,538 |
+| `zh_cn` 简体中文 | █████████░ 93.7% | 39,854 / 42,537 |
+| `zh_tw` 繁體中文 | █████████░ 93.7% | 40,893 / 43,650 |
+| `ja_jp` 日本語 | █████████░ 93.5% | 39,771 / 42,537 |
+| `ru_ru` Русский | ████░░░░░░ 40.8% | 17,348 / 42,537 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 621 / 42,529 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
@@ -142,7 +142,7 @@ ever run into sits in neither the numerator nor the denominator.
 | Gear lore | ██████████ | all | Official CDN, downloaded wholesale |
 | Ingredients, materials, tomes, aspects | ██████████ | all | Official CDN, downloaded wholesale |
 | Ability trees | ██████████ | all | Official CDN, downloaded wholesale |
-| NPC nameplates, menus, system messages | — | 5,040 + 1,055 collected | **No official list** - only what players run into |
+| NPC nameplates, menus, system messages | — | 5,158 + 1,055 collected | **No official list** - only what players run into |
 
 Quest dialogue, NPC nameplates and menu text **have no public data source** - not in the Wynncraft API, not on Wynntils' CDN. They only arrive when a player actually runs into them in game, so the last row is an honest blank:
 
@@ -150,14 +150,14 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 
 | Category | Translated | Collected | Estimated total | Where the estimate comes from |
 |---|---:|---:|---:|---|
-| Quest dialogue | 22,666 | 22,680 | 22,680 | all 157/157 quests collected - what we have is all there is |
+| Quest dialogue | 22,794 | 22,811 | 22,811 | all 157/157 quests collected - what we have is all there is |
 | Secret discovery stories | 68 | 68 | ~8,228 | only 1 of 121 discoveries collected; scaled up from those (tiny sample - an order of magnitude, not a figure) |
 | Gear lore | 988 | 990 | 990 | official CDN, downloaded wholesale - what we have is all there is |
 | Ingredients, materials, tomes, aspects | 1,603 | 1,603 | 1,603 | official CDN, downloaded wholesale - what we have is all there is |
 | Ability trees | 1,858 | 1,920 | 1,920 | official CDN, downloaded wholesale - what we have is all there is |
-| NPC nameplates, menus, system messages | 13,289 | 15,963 | — | **no list exists** - only what players run into; cannot be estimated |
+| NPC nameplates, menus, system messages | 13,582 | 16,258 | — | **no list exists** - only what players run into; cannot be estimated |
 
-> All together: **at least 51,384 lines estimated**, **43,224 collected** (84%), **40,472 translated** (79% of the estimate, 93.6% of what we have).
+> All together: **at least 51,810 lines estimated**, **43,650 collected** (84%), **40,893 translated** (79% of the estimate, 93.7% of what we have).
 
 "At least" because nameplates and menu text have no list; that row counts only what has **already been collected**, so the real number is larger.
 
@@ -168,7 +168,7 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 | 裝備的傳說敘述 | ██████████ | 全部 | 官方 CDN，整批下載 |
 | 材料、素材、書卷、Aspect | ██████████ | 全部 | 官方 CDN，整批下載 |
 | 技能樹 | ██████████ | 全部 | 官方 CDN，整批下載 |
-| NPC 名牌、介面、系統訊息 | — | 已收 5,040 + 1,055 條 | **沒有官方清單**，只能靠玩家遇到 |
+| NPC 名牌、介面、系統訊息 | — | 已收 5,158 + 1,055 條 | **沒有官方清單**，只能靠玩家遇到 |
 
 任務對話、NPC 名牌與介面文字**沒有任何公開資料可以爬**——不在 Wynncraft API，也不在 Wynntils 的 CDN。只能靠玩家在遊戲裡實際遇到時由模組收集回來，所以「還差多少」這件事，名牌與介面那一列是誠實的空白：
 
@@ -176,14 +176,14 @@ Quest dialogue, NPC nameplates and menu text **have no public data source** - no
 
 | 類別 | 已翻譯 | 已收集 | 預估總數 | 這個預估怎麼來的 |
 |---|---:|---:|---:|---|
-| 任務對話 | 22,666 | 22,680 | 22,680 | 157/157 個任務都收齊了，收到的就是全部 |
+| 任務對話 | 22,794 | 22,811 | 22,811 | 157/157 個任務都收齊了，收到的就是全部 |
 | 祕密發現的故事 | 68 | 68 | ~8,228 | 121 個發現只收到 1 個，照那 1 個平均 68 句往外推（樣本很少，只是個量級） |
 | 裝備的傳說敘述 | 988 | 990 | 990 | 官方 CDN 整批下載，收到的就是全部 |
 | 材料、素材、書卷、Aspect | 1,603 | 1,603 | 1,603 | 官方 CDN 整批下載，收到的就是全部 |
 | 技能樹 | 1,858 | 1,920 | 1,920 | 官方 CDN 整批下載，收到的就是全部 |
-| NPC 名牌、介面、系統訊息 | 13,289 | 15,963 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
+| NPC 名牌、介面、系統訊息 | 13,582 | 16,258 | — | **沒有清單**，只能靠玩家遇到；估不出來 |
 
-> 全部加起來：**預估至少 51,384 句**，已收集 **43,224 句**（84%），已翻譯 **40,472 句**（佔預估的 79%、佔已收集的 93.6%）。
+> 全部加起來：**預估至少 51,810 句**，已收集 **43,650 句**（84%），已翻譯 **40,893 句**（佔預估的 79%、佔已收集的 93.7%）。
 
 「至少」是因為名牌與介面那一類沒有清單，它在總數裡只算了**已經收到的**——真正的數字只會更大。
 <!-- 涵蓋率:結束 -->
@@ -339,11 +339,11 @@ Wynncraft's; this mod only displays them.
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_cn` 简体中文 | █████████░ 93.7% | 39,863 / 42,546 |
-| `zh_tw` 繁體中文 | █████████░ 93.6% | 40,472 / 43,224 |
-| `ja_jp` 日本語 | █████████░ 93.5% | 39,780 / 42,546 |
-| `ru_ru` Русский | ████░░░░░░ 40.8% | 17,357 / 42,546 |
-| `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 623 / 42,538 |
+| `zh_cn` 简体中文 | █████████░ 93.7% | 39,854 / 42,537 |
+| `zh_tw` 繁體中文 | █████████░ 93.7% | 40,893 / 43,650 |
+| `ja_jp` 日本語 | █████████░ 93.5% | 39,771 / 42,537 |
+| `ru_ru` Русский | ████░░░░░░ 40.8% | 17,348 / 42,537 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 621 / 42,529 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
