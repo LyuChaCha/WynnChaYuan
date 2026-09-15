@@ -69,11 +69,20 @@ jobs:
           #
           # 這一步拿玩家收到的真實字串把 src 改對。它只動已經有譯文的條目、
           # 只改 src，相似度低於 0.9 或佔位符數量對不上都不寫——剩下的才是
-          # 真的新句子，交給下一行。
-          python tools/near-miss.py inbox.json --write
+          # 真的新句子，交給下一行。其他語言同一個檔裡的同一句原文也跟著改。
+          #
+          # 報告放在 RUNNER_TEMP：開 PR 那一步是 `git add -A`，放在倉庫裡會被提交。
+          #
+          # 這裡刻意<b>不跑</b> sync-languages.py --write：它是整份重新同步
+          # （照 zh_tw 重排結構、補空白條目、刪掉 zh_tw 沒有的檔），在乾淨的 main 上
+          # 跑一次就動到 181 個檔，會把這個 PR 淹掉。改名的那部分 near-miss 自己跟。
+          python tools/near-miss.py inbox.json --write --report "$RUNNER_TEMP/near-miss.json"
           # import-captured.py 自己會擋掉已經翻好的、拆得出來的、以及夾帶個資的。
           # 這是第三道濾網（模組端一道、收集站一道），刻意重複。
-          python tools/import-captured.py inbox.json --write
+          #
+          # 上一步擋下或只到候選的句子照樣收成新條目，但會帶著「語料裡有很像的一句」
+          # 的提示（任務檔寫 similar 欄位，扁平檔只列在 PR 說明），並把收進哪裡寫回報告。
+          python tools/import-captured.py inbox.json --write --near-miss "$RUNNER_TEMP/near-miss.json"
           python tools/quest-bundle.py
           python tools/quest-index.py
           python tools/update-docs.py
@@ -109,9 +118,16 @@ jobs:
           dst 全部留空等人翻。"
           git push -u origin "$BRANCH" --force
 
-          BODY="由 collect-inbox 自動產生，全部是 dst 留空的待譯條目。
-
-          合併前請掃一眼有沒有夾帶到玩家名或公會名——三道濾網都過了，但這是最後一次有人看得到的機會。"
+          # 說明寫成檔案再用 --body-file：摘要裡有原文，塞進引號參數會被反引號與 $ 咬壞。
+          BODY_FILE="$RUNNER_TEMP/pr-body.md"
+          {
+            echo "由 collect-inbox 自動產生，新收的全部是 dst 留空的待譯條目；"
+            echo "另外可能有既有條目的原文被改成遊戲實際送出的版本（見下方 near-miss 摘要）。"
+            echo
+            echo "合併前請掃一眼有沒有夾帶到玩家名或公會名——三道濾網都過了，但這是最後一次有人看得到的機會。"
+            echo
+            python tools/near-miss.py --render-body "$RUNNER_TEMP/near-miss.json"
+          } > "$BODY_FILE"
 
           # 已經有一個開著就不是錯誤，直接結束。
           if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
@@ -124,14 +140,14 @@ jobs:
           # 分支推上去了、佇列也 ack 掉了，但沒有人知道 PR 沒開成。
           # 2026-09-11 那一輪的 1000 條就是這樣躺在分支上沒人發現。
           if gh pr create --base main --head "$BRANCH" \
-               --title "收進大家分享的待譯字串" --body "$BODY"; then
+               --title "收進大家分享的待譯字串" --body-file "$BODY_FILE"; then
             exit 0
           fi
 
           echo "::warning::REBUILD_PAT 開不了 PR，改用 GITHUB_TOKEN 再試一次。"
           echo "::warning::用 GITHUB_TOKEN 開的 PR 不會自動跑檢查，合併前請手動觸發。"
           if GH_TOKEN="${{ secrets.GITHUB_TOKEN }}" gh pr create --base main --head "$BRANCH" \
-               --title "收進大家分享的待譯字串" --body "$BODY"; then
+               --title "收進大家分享的待譯字串" --body-file "$BODY_FILE"; then
             exit 0
           fi
 

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lost Tower",
   "count": 10,
-  "translated": 0,
+  "translated": 10,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost Tower#000": {
    "src": "Talk to Laen in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Поговори с Laen в {p}, [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Tower",
@@ -18,7 +18,7 @@
   },
   "Lost Tower#001": {
    "src": "Hey adventurer! Would you mind helping me for a second? I have a bit of a problem on my hands.",
-   "dst": "",
+   "dst": "Эй, путник! Не поможешь мне? У меня тут небольшая проблема.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -28,7 +28,7 @@
   },
   "Lost Tower#002": {
    "src": "A while ago, before {p} was destroyed, my family used to own quite an interesting book, that held knowledge of places and beings of great power.",
-   "dst": "",
+   "dst": "Давно, ещё до разрушения {p}, у моей семьи была очень любопытная книга - о местах и существах великой силы.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -38,7 +38,7 @@
   },
   "Lost Tower#003": {
    "src": "Unfortunately, a creature stole it from them during the attack that led to the destruction of {p}, and no one has seen it since.",
-   "dst": "",
+   "dst": "Увы, её украло какое-то существо во время нападения, погубившего {p}, и с тех пор её никто не видел.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -48,7 +48,7 @@
   },
   "Lost Tower#004": {
    "src": "If you are willing to help, bring me [{~} Book of the Bones], I believe this book is now between the hands of skeletons, in an old tower in {p}.",
-   "dst": "",
+   "dst": "Если хочешь помочь, принеси мне [{~} Book of the Bones]. Думаю, книга у скелетов в старой башне в {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -58,7 +58,7 @@
   },
   "Lost Tower#005": {
    "src": "See if you can find this tower, one of the skeletons probably has the book somewhere in there.",
-   "dst": "",
+   "dst": "Попробуй найти ту башню - книга, скорее всего, у одного из скелетов внутри.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",
@@ -68,7 +68,7 @@
   },
   "Lost Tower#006": {
    "src": "Find the lost tower in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Найди потерянную башню в {p}, [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Tower",
@@ -78,7 +78,7 @@
   },
   "Lost Tower#007": {
    "src": "Find the book in the tower, and bring it back to Laen.",
-   "dst": "",
+   "dst": "Найди книгу в башне и принеси её Laen.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Tower",
@@ -88,7 +88,7 @@
   },
   "Lost Tower#008": {
    "src": "Bring back the book to Laen.",
-   "dst": "",
+   "dst": "Принеси книгу Laen.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Tower",
@@ -98,7 +98,7 @@
   },
   "Lost Tower#009": {
    "src": "Great! This will be very interesting to read, thank you!",
-   "dst": "",
+   "dst": "Отлично! Будет очень интересно почитать, спасибо!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Tower",

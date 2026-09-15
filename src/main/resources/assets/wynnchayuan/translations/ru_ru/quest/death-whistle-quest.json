@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Death Whistle (Quest)",
   "count": 31,
-  "translated": 0,
+  "translated": 31,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Death Whistle (Quest)#000": {
    "src": "Talk to Voer at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Поговори с Voer в [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -18,7 +18,7 @@
   },
   "Death Whistle (Quest)#001": {
    "src": "Hello! Hmm, armour, weapon, look of grim despair... You must be from the Wynn province!",
-   "dst": "",
+   "dst": "Привет! Хм, броня, оружие, лицо мрачного отчаяния… Ты наверняка из провинции Wynn!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -28,7 +28,7 @@
   },
   "Death Whistle (Quest)#002": {
    "src": "My name is Voer, and I'm an exotic plant merchant. I sell all kinds of, uh, perfectly legal goods to the magicians of Gavel.",
-   "dst": "",
+   "dst": "Меня зовут Voer, я торгую экзотическими растениями. Продаю всякие, э, совершенно законные товары магам Gavel.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -38,7 +38,7 @@
   },
   "Death Whistle (Quest)#003": {
    "src": "Lately, this Decay has been making business rather tough. The magical plants that used to grow here are dying.",
-   "dst": "",
+   "dst": "В последнее время Тлен сильно мешает торговле. Волшебные растения, что тут росли, умирают.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -48,7 +48,7 @@
   },
   "Death Whistle (Quest)#004": {
    "src": "The need for magic has never been as big as it is now, and without supplies, the magicians of the swamp simply cannot operate!",
-   "dst": "",
+   "dst": "Нужда в магии никогда не была так велика, а без сырья маги болот просто не могут работать!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -58,7 +58,7 @@
   },
   "Death Whistle (Quest)#005": {
    "src": "I need Death Whistle in particular. It's not as deadly as it sounds, I promise- the name's just archaic, if I recall that from that- er, my book.",
-   "dst": "",
+   "dst": "Особенно мне нужен смертельный свист. Он не так смертелен, как звучит, честно — просто название древнее, если я верно помню из той… э, моей книги.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -68,7 +68,7 @@
   },
   "Death Whistle (Quest)#006": {
    "src": "It is a rather rare plant with all sorts of mystical properties, so much so that it can animate objects around it!",
-   "dst": "",
+   "dst": "Это редкое растение со всякими мистическими свойствами — оно даже оживляет предметы вокруг себя!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -78,7 +78,7 @@
   },
   "Death Whistle (Quest)#007": {
    "src": "Look for the highest mountain in the swamp south-east from here. The Decay hasn't reached the peaks yet, you see!",
-   "dst": "",
+   "dst": "Ищи самую высокую гору в болотах к юго-востоку отсюда. Тлен ещё не добрался до вершин, понимаешь!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -88,7 +88,7 @@
   },
   "Death Whistle (Quest)#008": {
    "src": "Find the mountain at [-{~}, {~}, -{~}] and a way up on it.",
-   "dst": "",
+   "dst": "Найди гору в [-{~}, {~}, -{~}] и путь наверх.",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -98,7 +98,7 @@
   },
   "Death Whistle (Quest)#009": {
    "src": "Go to the top of the mountain and get {~} Black Whistle Leaf.",
-   "dst": "",
+   "dst": "Поднимись на вершину горы и добудь {~} Black Whistle Leaf.",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -108,7 +108,7 @@
   },
   "Death Whistle (Quest)#010": {
    "src": "Return to Voer at [-{~}, {~}, -{~}] with [{~} Death Whistle Leaf].",
-   "dst": "",
+   "dst": "Вернись к Voer в [-{~}, {~}, -{~}] с [{~} Лист смертельного свиста].",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -118,7 +118,7 @@
   },
   "Death Whistle (Quest)#011": {
    "src": "You, Voer! Inconsiderate thief!",
-   "dst": "",
+   "dst": "Ты, Voer! Бессовестный вор!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -128,7 +128,7 @@
   },
   "Death Whistle (Quest)#012": {
    "src": "You've no idea what you even have done, do you? Your thoughtless actions will cost lives!",
-   "dst": "",
+   "dst": "Ты даже не понимаешь, что натворил, да? Твоё легкомыслие будет стоить жизней!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -138,7 +138,7 @@
   },
   "Death Whistle (Quest)#013": {
    "src": "Uhm... Excuse me? What do you want, elf girl? We're in the middle of a deal here?",
-   "dst": "",
+   "dst": "Эм… Простите? Что тебе нужно, эльфийка? У нас тут сделка вообще-то?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -148,7 +148,7 @@
   },
   "Death Whistle (Quest)#014": {
    "src": "You sold Pink Pelulite! Have you forgotten its enraging properties? Or shall I read from that herbology book you \"found\" in my camp?",
-   "dst": "",
+   "dst": "Ты продал Pink Pelulite! Забыл, что она вызывает бешенство? Или мне прочесть из той книги по травам, что ты «нашёл» в моём лагере?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -158,7 +158,7 @@
   },
   "Death Whistle (Quest)#015": {
    "src": "Wait, wh-what? A Pink PELULITE!? I sold that woman a Pink PELUTE for her luck charms! How dare- wait... wait, Pink Pelute has rounder petals... Oh no.",
-   "dst": "",
+   "dst": "Стой, ч-что? Pink PELULITE!? Я продал той женщине Pink PELUTE для амулетов удачи! Да как ты… стоп… у Pink Pelute лепестки круглее… О нет.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -168,7 +168,7 @@
   },
   "Death Whistle (Quest)#016": {
    "src": "You can't even say for certain. This kind of carelessness has no place! If you refuse to exercise the proper thought and caution, then those around you suffer.",
-   "dst": "",
+   "dst": "Ты даже не уверен. Такой беспечности не место! Если не думать и не проявлять осторожность, страдают те, кто рядом.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -178,7 +178,7 @@
   },
   "Death Whistle (Quest)#017": {
    "src": "I must... make a difficult choice, and leave this job to you. I've other things to tend to, though it pains me to leave a life in another's hands. Remember this, villager!",
-   "dst": "",
+   "dst": "Мне придётся… сделать трудный выбор и оставить это дело тебе. У меня другие заботы, хоть и больно отдавать жизнь в чужие руки. Запомни это, селянин!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -188,7 +188,7 @@
   },
   "Death Whistle (Quest)#018": {
    "src": "Aaah, this is a disaster! Human, please, Pink Pelulite acts quickly and intensely... Follow the pink trail on the ground, the flowers shed their petals. Get it back before something bad happens!",
-   "dst": "",
+   "dst": "Ааа, это катастрофа! Человек, прошу, Pink Pelulite действует быстро и сильно… Иди по розовому следу на земле, цветы роняют лепестки. Верни её, пока не случилась беда!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -198,7 +198,7 @@
   },
   "Death Whistle (Quest)#019": {
    "src": "Follow the path of residue to the buyer’s cave.",
-   "dst": "",
+   "dst": "Пройди по следу до пещеры покупательницы.",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -208,7 +208,7 @@
   },
   "Death Whistle (Quest)#020": {
    "src": "Ah, um, come back later please! Something strange is happening!",
-   "dst": "",
+   "dst": "Ой, эм, приходите позже, пожалуйста! Творится что-то странное!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -218,7 +218,7 @@
   },
   "Death Whistle (Quest)#021": {
    "src": "My body is a bit, um, not-in-my-control right now! I'd rather not hurt anyone!",
-   "dst": "",
+   "dst": "Моё тело сейчас, эм, меня не слушается! Не хочу никого поранить!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -228,7 +228,7 @@
   },
   "Death Whistle (Quest)#022": {
    "src": "Remove the flower from the woman in the cave.",
-   "dst": "",
+   "dst": "Сними цветок с женщины в пещере.",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -238,7 +238,7 @@
   },
   "Death Whistle (Quest)#023": {
    "src": "You're back, I see... and you're shedding petals! You got the Pink Pelulite back?",
-   "dst": "",
+   "dst": "Снова здесь, вижу… и роняешь лепестки! Pink Pelulite у тебя?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -248,7 +248,7 @@
   },
   "Death Whistle (Quest)#024": {
    "src": "And what of the woman who bought it? Was she...?",
-   "dst": "",
+   "dst": "А что с женщиной, которая её купила? Она…?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -258,7 +258,7 @@
   },
   "Death Whistle (Quest)#025": {
    "src": "Oh, thank goodness! You got in there in time. She's a regular of mine- and a bit of a looker, too. That Lari was right, to some extent, at least...",
-   "dst": "",
+   "dst": "Ох, слава богу! Помощь пришла вовремя. Она моя постоянная клиентка — и довольно миловидная. Эта Lari была права, хотя бы отчасти…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -268,7 +268,7 @@
   },
   "Death Whistle (Quest)#026": {
    "src": "I did take her book, and I should be more careful in the future, regarding this... but I can't just quit selling the herbs.",
-   "dst": "",
+   "dst": "Её книгу я правда взял, и впредь надо быть осторожнее… но бросить торговать травами я не могу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -278,7 +278,7 @@
   },
   "Death Whistle (Quest)#027": {
    "src": "I need an income, and the swamp isn't exactly the most resource-rich region here! Especially not any more.",
-   "dst": "",
+   "dst": "Мне нужен доход, а болота — не самый богатый край! Особенно теперь.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -288,7 +288,7 @@
   },
   "Death Whistle (Quest)#028": {
    "src": "And how dare she just walk away like that! It's a good thing you were around, human, otherwise... well, I would not think about it.",
-   "dst": "",
+   "dst": "И как она посмела вот так уйти! Хорошо, что ты тут, человек, иначе… даже думать не хочу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -298,7 +298,7 @@
   },
   "Death Whistle (Quest)#029": {
    "src": "Regardless, you helped me greatly. Got me my supplies and saved the life of a regular of mine, so I've got a gift for you!",
-   "dst": "",
+   "dst": "Так или иначе, твоя помощь неоценима. Товар добыт, моя постоянная клиентка спасена, так что у меня для тебя подарок!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -308,7 +308,7 @@
   },
   "Death Whistle (Quest)#030": {
    "src": "I'll offer you a sampler of my stock. Everything here is pre-primed to be safe for brewing, so there won't be any mishaps like today!",
-   "dst": "",
+   "dst": "Предлагаю пробный набор моих товаров. Всё заранее подготовлено для безопасной варки, так что таких казусов, как сегодня, не будет!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",

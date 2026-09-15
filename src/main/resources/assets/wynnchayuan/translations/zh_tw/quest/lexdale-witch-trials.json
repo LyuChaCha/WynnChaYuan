@@ -1,12 +1,22 @@
 {
  "_meta": {
   "quest": "Lexdale Witch Trials",
-  "count": 33,
-  "translated": 33,
+  "count": 34,
+  "translated": 34,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lexdale Witch Trials#000": {
+   "src": "You should follow the creature before it gets away!",
+   "dst": "你該趁那隻生物逃走之前追上去！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Lexdale Witch Trials",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Lexdale Witch Trials#001": {
    "src": "See what's going on in the center of {p} at [-{~}, {~}, -{~}].",
    "dst": "前往 [-{~1}, {~2}, -{~3}]，看看 {p} 中央發生了什麼事。",
    "role": "desc",
@@ -16,7 +26,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#001": {
+  "Lexdale Witch Trials#002": {
    "src": "We have an enemy amongst our own in {p}! This witch's illegal practice of magic threatens us!",
    "dst": "我們 {p} 之中出了內奸！這個女巫非法使用魔法，威脅到我們所有人！",
    "role": "desc",
@@ -26,7 +36,7 @@
    "speaker": "The Mayor",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#002": {
+  "Lexdale Witch Trials#003": {
    "src": "Ms. Amira's home was found to be plagued by spreading Decay! We must kill the witch to protect our sanctity!",
    "dst": "Amira 女士的住處被發現遭到不斷擴散的黯蝕侵襲！我們必須殺死這個女巫，守住我們的聖潔！",
    "role": "desc",
@@ -36,7 +46,7 @@
    "speaker": "The Mayor",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#003": {
+  "Lexdale Witch Trials#004": {
    "src": "WAIT! Let me GO already! I told you what was happening!",
    "dst": "等一下！放開我啦！我都跟你們說了到底發生什麼事了！",
    "role": "desc",
@@ -46,7 +56,7 @@
    "speaker": "Amira",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#004": {
+  "Lexdale Witch Trials#005": {
    "src": "The deceit of your dark magic won't work, Ms. Amira. Go quietly- leave us in peace!",
    "dst": "你那套黑魔法的花言巧語沒有用的，Amira 女士。安靜點——別再來打擾我們了！",
    "role": "desc",
@@ -56,7 +66,7 @@
    "speaker": "The Mayor",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#005": {
+  "Lexdale Witch Trials#006": {
    "src": "SHUT UP ALREADY! You can't just single people out like this!!",
    "dst": "你給我閉嘴！你不能就這樣隨便挑一個人出來針對！！",
    "role": "desc",
@@ -66,7 +76,7 @@
    "speaker": "Amira",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#006": {
+  "Lexdale Witch Trials#007": {
    "src": "Just hear me out for a second! It's not me, something infected my home! That's the reason it was so dark!!",
    "dst": "你就聽我說一下！不是我，是有東西感染了我家！那就是為什麼那裡那麼暗！！",
    "role": "desc",
@@ -76,7 +86,7 @@
    "speaker": "Amira",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#007": {
+  "Lexdale Witch Trials#008": {
    "src": "My basement, some outlandish thing dug into it! Wherever it went, the area withered and decayed!",
    "dst": "我的地下室，有個古怪的東西鑽了進來！它爬過的地方，全都枯萎腐朽！",
    "role": "desc",
@@ -86,7 +96,7 @@
    "speaker": "Amira",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#008": {
+  "Lexdale Witch Trials#009": {
    "src": "There's proof in my house that it wasn't me! It's the one that's decayed and barren! You'll see if you LOOK, you gorehound!!",
    "dst": "我家裡就有證據，證明不是我！那間房子才是又腐朽又寸草不生的！你只要肯看就會明白，你這個嗜血的傢伙！！",
    "role": "desc",
@@ -96,7 +106,7 @@
    "speaker": "Amira",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#009": {
+  "Lexdale Witch Trials#010": {
    "src": "Quit with the insults! We'll delay for now- If there's no proof of the witch's innocence she will be executed!",
    "dst": "別再罵人了！我們暫緩處刑——若拿不出這女巫清白的證據，她就要被處決！",
    "role": "desc",
@@ -106,7 +116,7 @@
    "speaker": "The Mayor",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#010": {
+  "Lexdale Witch Trials#011": {
    "src": "Explore the basement of the decayed and barren house.",
    "dst": "探索那間腐朽荒蕪的房屋的地下室。",
    "role": "desc",
@@ -116,7 +126,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#011": {
+  "Lexdale Witch Trials#012": {
    "src": "Follow the creature down the tunnels.",
    "dst": "沿著隧道追蹤那隻生物。",
    "role": "desc",
@@ -126,7 +136,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#012": {
+  "Lexdale Witch Trials#013": {
    "src": "Continue to follow the creature from the tunnel at [-{~}, {~}, -{~}].",
    "dst": "從 [-{~1}, {~2}, -{~3}] 的隧道繼續追蹤那隻生物。",
    "role": "desc",
@@ -136,7 +146,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#013": {
+  "Lexdale Witch Trials#014": {
    "src": "Continue to follow the creature from the tunnel at [-{~}, {~}, -{~}].",
    "dst": "從 [-{~1}, {~2}, -{~3}] 的隧道繼續追蹤那隻生物。",
    "role": "desc",
@@ -146,7 +156,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#014": {
+  "Lexdale Witch Trials#015": {
    "src": "...Further... intruders...? You are not of the worms... the parasites?",
    "dst": "……又有……入侵者……？你不是那些蟲……那些寄生蟲的一員？",
    "role": "desc",
@@ -156,7 +166,7 @@
    "speaker": "Tunnel Dweller Chieftain",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#015": {
+  "Lexdale Witch Trials#016": {
    "src": "Another stranger... You must have witnessed the tunnels. They blight the stone, wither the roots, make lifeless the land...",
    "dst": "又一個外來者……你一定看過那些隧道了。牠們讓石頭染上枯萎、讓根系凋零、讓土地失去生機……",
    "role": "desc",
@@ -166,7 +176,7 @@
    "speaker": "Tunnel Dweller Chieftain",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#016": {
+  "Lexdale Witch Trials#017": {
    "src": "And here, we starve in isolation. My people are lost, as the very earth itself warps and shifts.",
    "dst": "而我們在這裡，與世隔絕地挨餓。我的族人迷失了，因為大地本身正在扭曲、變形。",
    "role": "desc",
@@ -176,7 +186,7 @@
    "speaker": "Tunnel Dweller Chieftain",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#017": {
+  "Lexdale Witch Trials#018": {
    "src": "The water, stagnant and gray. Nothing but those horrid magic scourges, and the worms themselves to sustain ourselves.",
    "dst": "水，死寂而灰濁。除了那些可怕的魔法禍害，還有那些蟲本身，我們沒有別的東西可以活下去。",
    "role": "desc",
@@ -186,7 +196,7 @@
    "speaker": "Tunnel Dweller Chieftain",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#018": {
+  "Lexdale Witch Trials#019": {
    "src": "We cannot escape, for the sun scourges us. There is no place to go, no place to burrow that they do not wait.",
    "dst": "我們逃不出去，因為陽光會灼傷我們。無處可去，無處可掘，牠們處處守著。",
    "role": "desc",
@@ -196,7 +206,7 @@
    "speaker": "Tunnel Dweller Chieftain",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#019": {
+  "Lexdale Witch Trials#020": {
    "src": "You... You... You have life. You have a heart, and muscle, and meat... To survive till this torture ends...",
    "dst": "你……你……你有生命。你有心臟、有肌肉、有血肉……足以撐到這場折磨結束……",
    "role": "desc",
@@ -206,7 +216,7 @@
    "speaker": "Tunnel Dweller Chieftain",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#020": {
+  "Lexdale Witch Trials#021": {
    "src": "Stranger, you must perish.",
    "dst": "外來者，你必須死。",
    "role": "desc",
@@ -216,7 +226,7 @@
    "speaker": "Tunnel Dweller Chieftain",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#021": {
+  "Lexdale Witch Trials#022": {
    "src": "Defeat the Tunnel Dweller Chieftain.",
    "dst": "擊敗隧道居民族長。",
    "role": "desc",
@@ -226,7 +236,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#022": {
+  "Lexdale Witch Trials#023": {
    "src": "Wait... These earthquakes! IT'S THEM! AGHHHHHHHHHHH!!",
    "dst": "等等……這些地震！是牠們！啊啊啊啊啊啊——！！",
    "role": "desc",
@@ -236,7 +246,7 @@
    "speaker": "Tunnel Dweller Chieftain",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#023": {
+  "Lexdale Witch Trials#024": {
    "src": "Dig yourself out of the dirt. Then go after the creature.",
    "dst": "把自己從土裡挖出來，然後去追那隻生物。",
    "role": "desc",
@@ -246,7 +256,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#024": {
+  "Lexdale Witch Trials#025": {
    "src": "Return to {p} and try to show the mayor the creature at [-{~}, {~}, -{~}].",
    "dst": "回到 {p}，在 [-{~1}, {~2}, -{~3}] 試著把那隻生物拿給鎮長看。",
    "role": "desc",
@@ -256,7 +266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#025": {
+  "Lexdale Witch Trials#026": {
    "src": "You're back. Did- Wait, what in the nine hells is THAT?!",
    "dst": "你回來了。你有沒有——等等，那到底是什麼鬼東西？！",
    "role": "desc",
@@ -266,7 +276,7 @@
    "speaker": "The Mayor",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#026": {
+  "Lexdale Witch Trials#027": {
    "src": "That! That was the thing in my basement!! I knew that human could find it! Thank you!!",
    "dst": "就是那個！那就是我地下室裡的東西！！我就知道那個人類找得到！謝謝你！！",
    "role": "desc",
@@ -276,7 +286,7 @@
    "speaker": "Amira",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#027": {
+  "Lexdale Witch Trials#028": {
    "src": "That thing was spreading the decay through my house! It's NOT witches or magic like you suddenly DECIDED one day!!",
    "dst": "就是那東西把黯蝕散播到我家裡的！根本不是什麼女巫或魔法，不是你哪天心血來潮就認定的那樣！！",
    "role": "desc",
@@ -286,7 +296,7 @@
    "speaker": "Amira",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#028": {
+  "Lexdale Witch Trials#029": {
    "src": "...Fine then. This... creature... bug... leach? This whatever- it- is... I'll accept your explanation.",
    "dst": "……好吧。這個……生物……蟲子……水蛭？這個不管它是什麼——我接受你的說法。",
    "role": "desc",
@@ -296,7 +306,7 @@
    "speaker": "The Mayor",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#029": {
+  "Lexdale Witch Trials#030": {
    "src": "Step off the podium, Ms. Amira. You're innocent.",
    "dst": "從台上下來吧，Amira 女士。你是清白的。",
    "role": "desc",
@@ -306,7 +316,7 @@
    "speaker": "The Mayor",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#030": {
+  "Lexdale Witch Trials#031": {
    "src": "Gah, finally! You're seeing sense! It's almost like something just... took you over one day and never left 'til now!",
    "dst": "呿，總算！你終於講點道理了！簡直像是有什麼東西哪天……占據了你，一直到現在才走！",
    "role": "desc",
@@ -316,7 +326,7 @@
    "speaker": "Amira",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#031": {
+  "Lexdale Witch Trials#032": {
    "src": "...hm. That... Mmh. Regardless. Human, you've proven yourself to be trustworthy. We'll keep our doors open for you.",
    "dst": "……嗯。那……嗯哼。總之。人類，你證明了自己值得信任。我們的大門會為你敞開。",
    "role": "desc",
@@ -326,7 +336,7 @@
    "speaker": "The Mayor",
    "source": "wiki"
   },
-  "Lexdale Witch Trials#032": {
+  "Lexdale Witch Trials#033": {
    "src": "As for the... THING... Well... I'll be sure to inform the Gavel government.",
    "dst": "至於那個……東西……唉……我會確保把這件事通報 Gavel 政府。",
    "role": "desc",

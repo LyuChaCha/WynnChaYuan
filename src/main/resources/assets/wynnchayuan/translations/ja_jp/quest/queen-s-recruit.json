@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Queen's Recruit",
   "count": 675,
-  "translated": 0,
+  "translated": 667,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Queen's Recruit#000": {
    "src": "...He doesn't know.",
-   "dst": "",
+   "dst": "…彼は知らない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -18,7 +18,7 @@
   },
   "Queen's Recruit#001": {
    "src": "Tasim is looking to catch up in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Tasim が {p} の [{~}, {~}, -{~}] で話したがっている。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -28,7 +28,7 @@
   },
   "Queen's Recruit#002": {
    "src": "{u}! Hey! It's lucky I managed to catch you here.",
-   "dst": "",
+   "dst": "{u}！やあ！ここで会えるなんてついてるな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -38,7 +38,7 @@
   },
   "Queen's Recruit#003": {
    "src": "It's been a while, hasn't it? We should catch up! You've probably had lots of adventures, right?",
-   "dst": "",
+   "dst": "久しぶりだね？積もる話もあるし！君もたくさん冒険してきたんだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -48,7 +48,7 @@
   },
   "Queen's Recruit#004": {
    "src": "But before that... I've just got to find...",
-   "dst": "",
+   "dst": "でもその前に… 探さないと…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -58,7 +58,7 @@
   },
   "Queen's Recruit#005": {
    "src": "Huh? What am I oh, yeah. I'm trying to find Aledar.",
-   "dst": "",
+   "dst": "え？何を… ああそうだ。Aledar を探してるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -68,7 +68,7 @@
   },
   "Queen's Recruit#006": {
    "src": "He sent me a letter asking me to join him on some... scouting mission. But I haven't been able to find him.",
-   "dst": "",
+   "dst": "偵察任務に… 一緒に来てくれって手紙をくれたんだ。でも見つからなくて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -78,7 +78,7 @@
   },
   "Queen's Recruit#007": {
    "src": "It did take me a while to get here... so maybe he's gone somewhere else by now. Aegis did tell me the mission ended up being called off, so...",
-   "dst": "",
+   "dst": "ここに来るまで時間がかかったから… もう別の場所に行ったのかも。Aegis 提督も任務は中止になったって言ってたし…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -88,7 +88,7 @@
   },
   "Queen's Recruit#008": {
    "src": "But if he's not here, then I should probably stop trying to catch him on the streets, huh? I'll just leave a message for him at the barracks.",
-   "dst": "",
+   "dst": "でもここにいないなら、街中を探し回るのはやめたほうがいいか。兵舎に伝言を残しておくよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -98,7 +98,7 @@
   },
   "Queen's Recruit#009": {
    "src": "We can head to the tavern and catch up! Gods, I've missed the Rusty Recruit's drinks... that barkeeper, he says it's the same as anywhere else, but it really isn't! Nowhere else pours it like he does.",
-   "dst": "",
+   "dst": "酒場で話そう！ああ、Rusty Recruit の酒が恋しかった… あのバーテンはどこも同じだって言うけど、全然違うんだ！あんな風に注げる人は他にいない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -108,7 +108,7 @@
   },
   "Queen's Recruit#010": {
    "src": "Pardon me, excuse me coming through! Coming through! Ah, you two! Just the folks I was looking for.",
-   "dst": "",
+   "dst": "失礼、ちょっと通して！通りますよ！ああ、お二人さん！ちょうど探してたんです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -118,7 +118,7 @@
   },
   "Queen's Recruit#011": {
    "src": "Huh? Us two specifically?",
-   "dst": "",
+   "dst": "え？僕たちを名指しで？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -128,7 +128,7 @@
   },
   "Queen's Recruit#012": {
    "src": "Well, perhaps not specifically. I've got a list of folks to try and track down, and the two of you are on it! Tasim and {u}, right?",
-   "dst": "",
+   "dst": "いや、名指しってほどでも。探す人のリストがあって、お二人も載ってるんです！Tasim さんと {u} さんですよね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -138,7 +138,7 @@
   },
   "Queen's Recruit#013": {
    "src": "I've got an important missive from {p}. Direct from the King himself, yep yep!",
-   "dst": "",
+   "dst": "{p} から大事な書状です。王様直々ですよ、ええ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -148,7 +148,7 @@
   },
   "Queen's Recruit#014": {
    "src": "Really? I don't think I've even seen him since... what could he possibly want us for?",
-   "dst": "",
+   "dst": "本当に？あれ以来会ってもいないのに… 僕たちに何の用だろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -158,7 +158,7 @@
   },
   "Queen's Recruit#015": {
    "src": "I'm not privy to the details I'm afraid! He's summoning a number of you seasoned visitors to the castle, for some sort of meeting.",
-   "dst": "",
+   "dst": "詳しいことは存じません！ベテランの皆さんを何人も城に呼んで、何かの会議をなさるそうです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -168,7 +168,7 @@
   },
   "Queen's Recruit#016": {
    "src": "Anyway, I've got more to try and track down, so I'll give you the written letters and be on my way! Best of luck with whatever it is!",
-   "dst": "",
+   "dst": "とにかく、まだ探す人がいるので、手紙を渡して失礼しますね！何の件にせよ、ご健闘を！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -178,7 +178,7 @@
   },
   "Queen's Recruit#017": {
    "src": "Thanks...",
-   "dst": "",
+   "dst": "ありがとう…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -188,7 +188,7 @@
   },
   "Queen's Recruit#018": {
    "src": "Hm. That is strange, isn't it? I guess we'll have to call off drinks for later... probably for the best. Maybe I'll be able to catch him before...",
-   "dst": "",
+   "dst": "うーん。妙だよね？飲みに行くのはお預けか… そのほうがいいかも。その前に彼をつかまえられるかな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -198,7 +198,7 @@
   },
   "Queen's Recruit#019": {
    "src": "Oh, uh- you go on ahead. I have to stop by the barracks first. I'll meet you in {p}, then?",
-   "dst": "",
+   "dst": "あ、えっと… 先に行ってて。僕は兵舎に寄らないと。{p} で合流しよう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -208,7 +208,7 @@
   },
   "Queen's Recruit#020": {
    "src": "I'll meet you in {p}. I have to deal with some things at the barracks first.",
-   "dst": "",
+   "dst": "{p} で合流しよう。先に兵舎で片付けることがあるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -218,7 +218,7 @@
   },
   "Queen's Recruit#021": {
    "src": "Attend the meeting with the King in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p} の [-{~}, {~}, -{~}] で王との会議に出席する。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -228,7 +228,7 @@
   },
   "Queen's Recruit#022": {
    "src": "...oh, there you are. Didn't you head out before me?",
-   "dst": "",
+   "dst": "…あ、いた。僕より先に出たんじゃなかった？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -238,7 +238,7 @@
   },
   "Queen's Recruit#023": {
    "src": "I don't know most of the people here, so I'll stick with you for now.",
-   "dst": "",
+   "dst": "ここの人はほとんど知らないから、しばらく君と一緒にいるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -248,7 +248,7 @@
   },
   "Queen's Recruit#024": {
    "src": "...and it's all crashing down, right? So I knock the zombie back, grab the kid, and jump for",
-   "dst": "",
+   "dst": "…で、全部崩れてくるだろ？だからゾンビを押し返して、子供をつかんで跳んで",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -258,7 +258,7 @@
   },
   "Queen's Recruit#025": {
    "src": "Wait, wait wait wait you're tellin' me there was a kid involved? And you still set off the bombs?!",
-   "dst": "",
+   "dst": "待った待った待った、子供がいたってのかい？それでも爆弾を起動したって？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -268,7 +268,7 @@
   },
   "Queen's Recruit#026": {
    "src": "Yeah! I said that already, right? That was the whole reason I",
-   "dst": "",
+   "dst": "そうだよ！もう言ったよな？それこそが俺が",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -278,7 +278,7 @@
   },
   "Queen's Recruit#027": {
    "src": "Ahem. Pause the story for a bit, Linton. We have company.",
-   "dst": "",
+   "dst": "こほん。話は一旦止めて、Linton。お客さんよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -288,7 +288,7 @@
   },
   "Queen's Recruit#028": {
    "src": "Well if it ain't {u}! It's good to see someone else familiar 'round here.",
-   "dst": "",
+   "dst": "おや、{u} じゃないか！ここで顔なじみに会えて嬉しいよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -298,7 +298,7 @@
   },
   "Queen's Recruit#029": {
    "src": "What, and I'm not familiar?",
-   "dst": "",
+   "dst": "何だよ、俺は顔なじみじゃないのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -308,7 +308,7 @@
   },
   "Queen's Recruit#030": {
    "src": "I do try to keep my distance.",
-   "dst": "",
+   "dst": "あんたとは距離を置いてるからね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -318,7 +318,7 @@
   },
   "Queen's Recruit#031": {
    "src": "So, you received the summons too? The King has a lot of people here. It's interesting.",
-   "dst": "",
+   "dst": "あなたたちも召集を受けたの？王はずいぶん人を集めたみたい。興味深いわ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -328,7 +328,7 @@
   },
   "Queen's Recruit#032": {
    "src": "We did, yes. And it sounded like they had even more people on that list that they were searching for.",
-   "dst": "",
+   "dst": "うん、受けたよ。それに、名簿にはまだ探してる人がたくさんいるみたいだった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -338,7 +338,7 @@
   },
   "Queen's Recruit#033": {
    "src": "Oh, apologies, I hadn't noticed you there. You're a friend of {u}'s, I take it?",
-   "dst": "",
+   "dst": "あら、ごめんなさい、気づかなかったわ。{u} のお友達かしら？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -348,7 +348,7 @@
   },
   "Queen's Recruit#034": {
    "src": "I am! We arrived in Wynn on the same caravan. I'm Tasim.",
-   "dst": "",
+   "dst": "うん！Wynn へは同じ馬車で来たんだ。僕は Tasim。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -358,7 +358,7 @@
   },
   "Queen's Recruit#035": {
    "src": "Tasim?! You're Tasim?",
-   "dst": "",
+   "dst": "Tasim？！あんたが Tasim？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -368,7 +368,7 @@
   },
   "Queen's Recruit#036": {
    "src": "So you're the one Aledar was always talking about! I thought you were off in Gavel?",
-   "dst": "",
+   "dst": "じゃあお前が Aledar がいつも話してたやつか！Gavel に行ってたんじゃないのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -378,7 +378,7 @@
   },
   "Queen's Recruit#037": {
    "src": "I... was. How do you all know him?",
-   "dst": "",
+   "dst": "僕は… 行ってた。みんなはどうして彼を？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -388,7 +388,7 @@
   },
   "Queen's Recruit#038": {
    "src": "I believe we first met on a mission to reclaim {p}'s barracks from a treasonous commander. We've run into each other a few times since.",
-   "dst": "",
+   "dst": "初めて会ったのは、{p} の兵舎を反逆した指揮官から取り戻す任務だったと思う。それから何度か顔を合わせたわ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -398,7 +398,7 @@
   },
   "Queen's Recruit#039": {
    "src": "Still, it's good to finally get t' meet you! We've heard lots of stories! Including somethin' about not respondin' to letters...?",
-   "dst": "",
+   "dst": "とにかく、やっと会えて嬉しいよ！話はたくさん聞いてる！手紙に返事しないとか何とか…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -408,7 +408,7 @@
   },
   "Queen's Recruit#040": {
    "src": "Oh... right. We, uh... sorted that out.",
-   "dst": "",
+   "dst": "あ… うん。それは、その… 解決したよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -418,7 +418,7 @@
   },
   "Queen's Recruit#041": {
    "src": "But speaking of have any of you seen him recently?",
-   "dst": "",
+   "dst": "それより… 最近誰か彼を見た？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -428,7 +428,7 @@
   },
   "Queen's Recruit#042": {
    "src": "'fraid not. I don't think our paths've crossed since... was it the siege at {p}? Must've been.",
-   "dst": "",
+   "dst": "残念ながら。最後に会ったのは… {p} の包囲戦だったかな？たぶんそう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -438,7 +438,7 @@
   },
   "Queen's Recruit#043": {
    "src": "I saw him a month ago in {p}! I asked him what he was working on and if I could help and he just brushed me off. Weird, right?",
-   "dst": "",
+   "dst": "一か月前に {p} で見たぞ！何してるのか、手伝えるか聞いたらあしらわれた。変だろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -448,7 +448,7 @@
   },
   "Queen's Recruit#044": {
    "src": "Mmn. No, that sounds like him. I think he had enough of your antics last time.",
-   "dst": "",
+   "dst": "ふむ。いいえ、彼らしいわ。前回あなたの悪ふざけに懲りたのよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -458,7 +458,7 @@
   },
   "Queen's Recruit#045": {
    "src": "What?! I'm capable. C'mon, Mel, tell her I'm capable.",
-   "dst": "",
+   "dst": "何だと？！俺は有能だ。なあ Mel、俺は有能だって言ってくれよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -468,7 +468,7 @@
   },
   "Queen's Recruit#046": {
    "src": "Linton, y'were just tellin' us about how you caved in a whole temple by",
-   "dst": "",
+   "dst": "Linton、あんたさっき神殿をまるごと崩した話を",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -478,7 +478,7 @@
   },
   "Queen's Recruit#047": {
    "src": "Okay! Okay, okay okay, let's talk about literally anything else! Tasim, right? What's... uh...",
-   "dst": "",
+   "dst": "わかった！わかったわかった、他の話にしよう、何でもいい！Tasim だっけ？その… えーと…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -488,7 +488,7 @@
   },
   "Queen's Recruit#048": {
    "src": "...so, your... no, no, give me a moment you were... and... um... oh, right...",
-   "dst": "",
+   "dst": "…で、お前の… いや待て、ちょっと待って、お前は… で… えーと… あ、そうだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -498,7 +498,7 @@
   },
   "Queen's Recruit#049": {
    "src": "...d'you like guys?",
-   "dst": "",
+   "dst": "…男って好き？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -508,7 +508,7 @@
   },
   "Queen's Recruit#050": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -518,7 +518,7 @@
   },
   "Queen's Recruit#051": {
    "src": "Linton!! Y'can't just ask someone that!!",
-   "dst": "",
+   "dst": "Linton！！いきなり聞くことじゃないよ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -528,7 +528,7 @@
   },
   "Queen's Recruit#052": {
    "src": "...uh",
-   "dst": "",
+   "dst": "…あ",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -538,7 +538,7 @@
   },
   "Queen's Recruit#053": {
    "src": "It was nice meeting you, Tasim. I look forward to working with you during this mission.",
-   "dst": "",
+   "dst": "会えてよかったわ、Tasim。この任務で一緒に働けるのを楽しみにしてる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -548,7 +548,7 @@
   },
   "Queen's Recruit#054": {
    "src": "...likewise. It's always nice meeting friends of Aledar.",
-   "dst": "",
+   "dst": "…こちらこそ。Aledar の友達に会えるのはいつも嬉しいよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -558,7 +558,7 @@
   },
   "Queen's Recruit#055": {
    "src": "Well, look at you! It's been quite a time since we last spoke. Far above the task of cleaning out sewers now, eh?",
-   "dst": "",
+   "dst": "おう、見違えたな！最後に話してからずいぶん経つ。もう下水掃除なんぞする身分じゃないな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -568,7 +568,7 @@
   },
   "Queen's Recruit#056": {
    "src": "I've heard some tell of your accomplishments. Fine work, fine work.",
-   "dst": "",
+   "dst": "お前の活躍は耳にしてる。見事、見事だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -578,7 +578,7 @@
   },
   "Queen's Recruit#057": {
    "src": "And... hm. Aren't you the one who ran off to Gavel without sayin' a word? Didn't expect you to be one o' the ones picked out for this.",
-   "dst": "",
+   "dst": "それに… ふむ。お前は何も言わずに Gavel へ出ていったやつじゃないか？今回選ばれるとは思わなかったぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -588,7 +588,7 @@
   },
   "Queen's Recruit#058": {
    "src": "I... didn't expect it either. I didn't even realize the King still remembered me, truth be told.",
-   "dst": "",
+   "dst": "僕も… 思ってなかった。正直、王様が僕を覚えてるとも思わなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -598,7 +598,7 @@
   },
   "Queen's Recruit#059": {
    "src": "Mmn. Well, whatever the reason, you're here now. Don't suppose it matters much the path you took to get here. We need all the folks we can get or so Kymer's been sayin'.",
-   "dst": "",
+   "dst": "ふむ。まあ理由はどうあれ、今はここにいる。どういう道でたどり着いたかは大して問題じゃない。今は人手がいくらでも要る… と Kymer が言ってた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -608,7 +608,7 @@
   },
   "Queen's Recruit#060": {
    "src": "Well well! If my eyes don't deceive me! {u} and Tasim!",
-   "dst": "",
+   "dst": "おやおや！見間違いでなければ！{u} と Tasim ではないか！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -618,7 +618,7 @@
   },
   "Queen's Recruit#061": {
    "src": "I'll say, I didn't quite expect them to track you down! What with your... extended stint off in Gavel.",
-   "dst": "",
+   "dst": "いやはや、君たちを探し出せるとは思わなかった！なにせ Gavel での… 長い滞在があったからな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -628,7 +628,7 @@
   },
   "Queen's Recruit#062": {
    "src": "I should say the same about you, captain. Did {p} no longer have a use for you once the war ended?",
-   "dst": "",
+   "dst": "それはこっちのセリフだよ、隊長。戦争が終わって {p} では用済みになったのかい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -638,7 +638,7 @@
   },
   "Queen's Recruit#063": {
    "src": "Ah... nothing of the sort. You know, I was sent out there initially to serve as more of an envoy from {p}! If the King needs a diplomatic situation sorted, I'm the one he turns to first.",
-   "dst": "",
+   "dst": "ああ… そんなことはない。そもそも私はあちらへ {p} の使節として派遣されたのだよ！王が外交問題を片付けたいとき、真っ先に頼るのがこの私だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -648,7 +648,7 @@
   },
   "Queen's Recruit#064": {
    "src": "Which... is indeed why I am here now. I was recalled rather abruptly several weeks ago. It seems we've entered a tricky situation with our... neighboring province.",
-   "dst": "",
+   "dst": "だからこそ… 今ここにいるわけだ。数週間前、突然呼び戻されてね。どうやら我々は… 隣の地方と厄介な状況にあるらしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -658,7 +658,7 @@
   },
   "Queen's Recruit#065": {
    "src": "But! I shan't say more before the King arrives. He'll tell you all of the problem that hopefully we will be able to resolve.",
-   "dst": "",
+   "dst": "だが！王がお見えになるまでは何も言うまい。問題はすべて王が話してくださる。解決できるといいのだが。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -668,7 +668,7 @@
   },
   "Queen's Recruit#066": {
    "src": "...I see. We'll leave you to it, then.",
-   "dst": "",
+   "dst": "…なるほど。じゃあ僕たちはこれで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -678,7 +678,7 @@
   },
   "Queen's Recruit#067": {
    "src": "If we align the manaflow with Water, then nudge it to the side, maybe... ah Reynauld, pass me my notes on... damn, what was it oh, yes, the recovery period! Pass me those ones.",
-   "dst": "",
+   "dst": "マナの流れを水に合わせて、横に少しずらせば、あるいは… ああ Reynauld、例のメモを… くそ、何だったか… そうだ、回復期間だ！あれを取ってくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -688,7 +688,7 @@
   },
   "Queen's Recruit#068": {
    "src": "...You already have them on your left, doctor.",
-   "dst": "",
+   "dst": "…博士、それならもう左手に持っていますよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -698,7 +698,7 @@
   },
   "Queen's Recruit#069": {
    "src": "Do I now! It seems I do... oh, but this is only the first half where did I leave the rest...",
-   "dst": "",
+   "dst": "そうかね！確かに… おや、だがこれは前半だけだ… 残りはどこに置いたか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -708,7 +708,7 @@
   },
   "Queen's Recruit#070": {
    "src": "Sigh... If you'd just allow me to organize for you, maybe you wouldn't",
-   "dst": "",
+   "dst": "はあ… 整理を任せてくれれば、こんなことには",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -718,7 +718,7 @@
   },
   "Queen's Recruit#071": {
    "src": "And ruin my predefined sorting system?! No, Reynauld, I do think it works perfectly well as it is, thank you very much! Now, where could it have",
-   "dst": "",
+   "dst": "そして私の独自の分類法を台無しにしろと？！いや Reynauld、今のままで完璧に機能しているとも、どうもありがとう！さて、どこに",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -728,7 +728,7 @@
   },
   "Queen's Recruit#072": {
    "src": "Ah! You two! Good, good, you're here I was worried Reynauld would be the only other one with recovered memories around here!",
-   "dst": "",
+   "dst": "おお！君たち！よし、よく来た… ここで記憶を取り戻した者が Reynauld だけかと心配していたんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -738,7 +738,7 @@
   },
   "Queen's Recruit#073": {
    "src": "What, you didn't test it on anyone else after we left?",
-   "dst": "",
+   "dst": "えっ、僕たちが去ったあと、他の誰にも試さなかったの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -748,7 +748,7 @@
   },
   "Queen's Recruit#074": {
    "src": "Test it on no, of course not! After what I saw? No, no, that would certainly not have been worth the risk. No new test subjects until I am certain it's flawless!",
-   "dst": "",
+   "dst": "他人に試す… まさか！あんなものを見た後で？いやいや、そんな危険は冒せない。完璧だと確信するまで新しい被験者はなしだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -758,7 +758,7 @@
   },
   "Queen's Recruit#075": {
    "src": "I've been using it on myself instead! And, let me tell you the breakthroughs I have made... there is much to be learned.",
-   "dst": "",
+   "dst": "代わりに自分自身に使っているのだよ！しかも聞いてくれ、私が成し遂げた発見を… 学ぶべきことは山ほどある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -768,7 +768,7 @@
   },
   "Queen's Recruit#076": {
    "src": "And is that... safe?",
-   "dst": "",
+   "dst": "それって… 安全なの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -778,7 +778,7 @@
   },
   "Queen's Recruit#077": {
    "src": "Pah! \"Safety\" a meaningless term made only to stifle progress. Have there been side effects certainly! But it has all been worth it.",
-   "dst": "",
+   "dst": "ふん！「安全」… 進歩を妨げるためだけの無意味な言葉だ。副作用は… もちろんあった！だが全て報われたよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -788,7 +788,7 @@
   },
   "Queen's Recruit#078": {
    "src": "Now, I must return to the pages... I've some equations I need to perfect before the King arrives...",
-   "dst": "",
+   "dst": "さて、書類に戻らねば… 王がお見えになる前に仕上げたい式があるのでね…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -798,7 +798,7 @@
   },
   "Queen's Recruit#079": {
    "src": "Hm. I can't say I would have expected you to be here, Tasim.",
-   "dst": "",
+   "dst": "ふむ。君がここにいるとは思わなかったよ、Tasim。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -808,7 +808,7 @@
   },
   "Queen's Recruit#080": {
    "src": "Well... fate has other plans, I guess. How about you? Did you stay in {p}?",
-   "dst": "",
+   "dst": "まあ… 運命は別の計画を用意してたみたい。君は？ずっと {p} にいたの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -818,7 +818,7 @@
   },
   "Queen's Recruit#081": {
    "src": "Mostly. Moved around for a few assignments here and there, but I kept coming back.",
-   "dst": "",
+   "dst": "ほとんどね。任務であちこち移ったこともあるが、結局いつも戻ってきた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -828,7 +828,7 @@
   },
   "Queen's Recruit#082": {
    "src": "...we haven't spoken in a while. Are you... doing well? How have you been managing the memories?",
-   "dst": "",
+   "dst": "…しばらく話していなかったな。元気か…？記憶とはどう折り合いをつけている？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -838,7 +838,7 @@
   },
   "Queen's Recruit#083": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -848,7 +848,7 @@
   },
   "Queen's Recruit#084": {
    "src": "As well as I could be expected to, I guess. It was rough for the first few months. Eventually, I got used to it.",
-   "dst": "",
+   "dst": "まあ、それなりにね。最初の数か月はきつかった。そのうち慣れたよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -858,7 +858,7 @@
   },
   "Queen's Recruit#085": {
    "src": "How about you? I also wouldn't have expected you to show for a mission like this.",
-   "dst": "",
+   "dst": "君はどう？こんな任務に君が来るとも思わなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -868,7 +868,7 @@
   },
   "Queen's Recruit#086": {
    "src": "Same as you. Helped that Caid and I managed to talk it through. We meet every so often, talk about it. He talks about his sister, how he wants to find her one day.",
-   "dst": "",
+   "dst": "君と同じさ。Caid と話し合えたのが助けになった。時々会って、そのことを話すんだ。彼は妹の話をする。いつか見つけ出したいと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -878,7 +878,7 @@
   },
   "Queen's Recruit#087": {
    "src": "That's... good. Happy for you.",
-   "dst": "",
+   "dst": "それは… よかった。嬉しいよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -888,7 +888,7 @@
   },
   "Queen's Recruit#088": {
    "src": "Hm. Nothing stopping you from stopping by, yourself. It might even help you.",
-   "dst": "",
+   "dst": "ふむ。君も顔を出したらいい。助けになるかもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -898,7 +898,7 @@
   },
   "Queen's Recruit#089": {
    "src": "I'll... consider it. Good to see you again, Reynauld.",
-   "dst": "",
+   "dst": "考えて… おくよ。また会えてよかった、Reynauld。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -908,7 +908,7 @@
   },
   "Queen's Recruit#090": {
    "src": "Another soldier? Allow me to see your summons.",
-   "dst": "",
+   "dst": "また兵士か？召集状を見せてもらおう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -918,7 +918,7 @@
   },
   "Queen's Recruit#091": {
    "src": "...good. Come on in, {u}. The King will be arriving shortly.",
-   "dst": "",
+   "dst": "…よし。入れ、{u}。王はまもなくお見えになる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -928,7 +928,7 @@
   },
   "Queen's Recruit#092": {
    "src": "Right this way.",
-   "dst": "",
+   "dst": "こちらへどうぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -938,7 +938,7 @@
   },
   "Queen's Recruit#093": {
    "src": "If you insist. Don't take too long.",
-   "dst": "",
+   "dst": "どうしてもと言うなら。長くかかるなよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -948,7 +948,7 @@
   },
   "Queen's Recruit#094": {
    "src": "Ah... here we are. I thank you all for coming on such short notice. It has been some time since I have seen many of you.",
-   "dst": "",
+   "dst": "ああ… そろったな。急な呼び出しにもかかわらず来てくれて感謝する。多くの者と会うのは久しぶりだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -968,7 +968,7 @@
   },
   "Queen's Recruit#096": {
    "src": "We rely heavily on the flow of new recruits sent to us, but we have no means of contacting their province. Only they may reach out to us, and only once they have chosen to do so.",
-   "dst": "",
+   "dst": "我々は送られてくる新兵に大きく頼っているが、あちらと連絡を取る手段がない。向こうから、向こうがそう決めたときにしか接触できぬのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -978,7 +978,7 @@
   },
   "Queen's Recruit#097": {
    "src": "...several weeks ago, we received a cloaked visitor through the outskirts. She claimed to be of Fruma, one of their Sovereigns.",
-   "dst": "",
+   "dst": "…数週間前、外れからフードをかぶった訪問者が来た。Fruma の者で、君主の一人だと名乗った。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -988,7 +988,7 @@
   },
   "Queen's Recruit#098": {
    "src": "We were extended an invitation, of sorts. Of all the recruits we have ever received, we were to select the greatest, and send them into Fruma for some sort of celebration.",
-   "dst": "",
+   "dst": "我々はいわば招待を受けた。これまで受け入れた新兵の中から最も優れた者を選び、Fruma での何かの祝典に送れというのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -998,7 +998,7 @@
   },
   "Queen's Recruit#099": {
    "src": "Is that who we are? The greatest?",
-   "dst": "",
+   "dst": "それが僕たち？最も優れた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1008,7 +1008,7 @@
   },
   "Queen's Recruit#100": {
    "src": "The ones that could be reached, at the very least! Perhaps some were greater yet, but we all know the roaming habits of your sort, and tracking them down really can prove",
-   "dst": "",
+   "dst": "少なくとも連絡がついた中ではな！もっと優れた者もいたかもしれんが、君たちのような者の放浪癖は周知の通り、探し出すのは実に",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1028,7 +1028,7 @@
   },
   "Queen's Recruit#102": {
    "src": "Linton! You can't just",
-   "dst": "",
+   "dst": "Linton！そんな言い方",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1038,7 +1038,7 @@
   },
   "Queen's Recruit#103": {
    "src": "What? They're demanding something weird and obviously suspicious, so why should we just accept it?",
-   "dst": "",
+   "dst": "何だよ？怪しさ満点の妙な要求をしてきてるんだぞ、なんでそのまま受けなきゃならないんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1048,7 +1048,7 @@
   },
   "Queen's Recruit#104": {
    "src": "I'm afraid we don't have a choice in the matter. As I mentioned, the recruits we receive make all the difference in our province's continued survival. If we were to reject this invitation...",
-   "dst": "",
+   "dst": "残念だが、我々に選択の余地はない。言った通り、受け入れる新兵はこの地方の存続を左右する。もしこの招待を断れば…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1058,7 +1058,7 @@
   },
   "Queen's Recruit#105": {
    "src": "...who's to say they wouldn't just stop sendin' 'em, eh? Tough.",
-   "dst": "",
+   "dst": "…向こうが送るのをやめない保証はない、ってわけか。厳しいな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1068,7 +1068,7 @@
   },
   "Queen's Recruit#106": {
    "src": "Besides all that, think of the opportunity this presents! A true, freely-given view of what lies beyond those walls! We'd be fools not to accept it, no matter the implied threat!",
-   "dst": "",
+   "dst": "それに、この好機を考えてみたまえ！あの壁の向こうを、正式に招かれて見られるのだ！脅しがあろうと、受けないのは愚か者だけだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1078,7 +1078,7 @@
   },
   "Queen's Recruit#107": {
    "src": "Indeed. I regret that I must request this of you... but there is no other choice. You must accept this invitation.",
-   "dst": "",
+   "dst": "その通りだ。こんな頼みをせねばならぬのは心苦しいが… 他に道はない。この招待を受けてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1098,7 +1098,7 @@
   },
   "Queen's Recruit#109": {
    "src": "I apologize... but you must. My hands are tied.",
-   "dst": "",
+   "dst": "すまぬ… だが行ってもらわねばならん。私にはどうにもできぬのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1108,7 +1108,7 @@
   },
   "Queen's Recruit#110": {
    "src": "I take it we are expected to gather as much intelligence on Fruma as we can while we're in there?",
-   "dst": "",
+   "dst": "つまり、中にいる間に Fruma の情報をできる限り集めろということね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1118,7 +1118,7 @@
   },
   "Queen's Recruit#111": {
    "src": "That's the plan, indeed! I'll explain more once we're there, but I believe we're on a time limit, correct?",
-   "dst": "",
+   "dst": "まさにその通り！詳しくは向こうで説明するが、確か時間制限があるのでしたな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1128,7 +1128,7 @@
   },
   "Queen's Recruit#112": {
    "src": "You are correct, doctor. I have been told that a representative will greet you all at the royal gates of Fruma, situated on the western coast.",
-   "dst": "",
+   "dst": "その通りだ、博士。西岸にある Fruma の王家の門で、代表者が皆を出迎えると聞いている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1138,7 +1138,7 @@
   },
   "Queen's Recruit#113": {
    "src": "I've sent a courier ahead to {p} to inform the local captains of the destination they are to take you to.",
-   "dst": "",
+   "dst": "{p} へ先に使いを出し、地元の船長たちに行き先を伝えてある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1148,7 +1148,7 @@
   },
   "Queen's Recruit#114": {
    "src": "{p}... I know a captain there. {u}, want to join me?",
-   "dst": "",
+   "dst": "{p}… そこに知り合いの船長がいるんだ。{u}、一緒に来る？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1158,7 +1158,7 @@
   },
   "Queen's Recruit#115": {
    "src": "Finally... a glimpse at the province's inner workings... how long have I been seeking these answers?",
-   "dst": "",
+   "dst": "ついに… あの地方の内情を垣間見られる… この答えをどれほど探し求めてきたことか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1168,7 +1168,7 @@
   },
   "Queen's Recruit#116": {
    "src": "So many theories... how many will be proven right? How many will be wrong? I cannot wait to find out!",
-   "dst": "",
+   "dst": "数々の仮説… いくつが正しく、いくつが間違っているのか？知るのが待ちきれない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1178,7 +1178,7 @@
   },
   "Queen's Recruit#117": {
    "src": "Sigh... I did know this was coming. Why else would the doctor have been summoned? But I hoped I was wrong.",
-   "dst": "",
+   "dst": "はあ… こうなるとわかっていた。でなければ博士が呼ばれるはずがない。だが外れてほしかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1188,7 +1188,7 @@
   },
   "Queen's Recruit#118": {
    "src": "Tough situation, isn't it? Lots o' secrecy on part of the Frumans...",
-   "dst": "",
+   "dst": "厄介な状況だろう？Fruma の連中は隠し事だらけだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1198,7 +1198,7 @@
   },
   "Queen's Recruit#119": {
    "src": "But we'll handle it. Everyone here's plenty capable, after all.",
-   "dst": "",
+   "dst": "だがなんとかなる。ここにいるのは腕利きばかりだからな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1208,7 +1208,7 @@
   },
   "Queen's Recruit#120": {
    "src": "Hm... what a situation it is we find ourselves in! Diplomacy is my specialty, of course, but my expertise has not prepared me for... this.",
-   "dst": "",
+   "dst": "ふむ… 実に厄介な状況に置かれたものだ！外交は私の専門だが、私の経験もこれには… 備えがない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1218,7 +1218,7 @@
   },
   "Queen's Recruit#121": {
    "src": "Fruma knows what they want, and know they are strong enough that they can afford to let up their position.",
-   "dst": "",
+   "dst": "Fruma は望みをわかっているし、交渉を降りても困らぬほど強いと承知している。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1228,7 +1228,7 @@
   },
   "Queen's Recruit#122": {
    "src": "Another top secret mission already? And I'm not even allowed to bring my explosives?",
-   "dst": "",
+   "dst": "また極秘任務かよ？しかも爆薬の持ち込みも禁止？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1238,7 +1238,7 @@
   },
   "Queen's Recruit#123": {
    "src": "It's interesting, at least! Way better than that last assignment...",
-   "dst": "",
+   "dst": "まあ、面白くはあるな！前の任務よりずっとマシだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1248,7 +1248,7 @@
   },
   "Queen's Recruit#124": {
    "src": "This mission's a big deal, huh? Lot's o' strong folks recalled for it, at least.",
-   "dst": "",
+   "dst": "今回の任務は大ごとだね？少なくとも強い人がたくさん呼び戻されてる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1258,7 +1258,7 @@
   },
   "Queen's Recruit#125": {
    "src": "Makes me a bit nervous, honestly!",
-   "dst": "",
+   "dst": "正直、ちょっと緊張するよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1268,7 +1268,7 @@
   },
   "Queen's Recruit#126": {
    "src": "Fruma... I can't say it's been on my mind much. It's a mystery, yes, but not one with any available answers.",
-   "dst": "",
+   "dst": "Fruma… あまり考えたことはなかった。謎ではあるけど、答えの得られない謎だもの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1278,7 +1278,7 @@
   },
   "Queen's Recruit#127": {
    "src": "Well, until now, I suppose. I'll have to prepare a list of details to look out for...",
-   "dst": "",
+   "dst": "まあ、今までは、ね。注意すべき点のリストを作っておかないと…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1288,7 +1288,7 @@
   },
   "Queen's Recruit#128": {
    "src": "And yet again, I must send you all into danger... a different sort, this time around, but danger nonetheless.",
-   "dst": "",
+   "dst": "またしても、皆を危険へ送り出さねばならぬ… 今回は種類が違うが、危険には変わりない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1298,7 +1298,7 @@
   },
   "Queen's Recruit#129": {
    "src": "I remember each face which passes through my castle. I rarely see any of them again.",
-   "dst": "",
+   "dst": "この城を通った顔はすべて覚えている。再び会えることはめったにないが。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1308,7 +1308,7 @@
   },
   "Queen's Recruit#130": {
    "src": "But this time... I have faith we will meet once more. Go on, young hero. YOur mission lies ahead of you.",
-   "dst": "",
+   "dst": "だが今回は… また会えると信じている。行け、若き英雄よ。使命は君の前にある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1318,7 +1318,7 @@
   },
   "Queen's Recruit#131": {
    "src": "...back to Fruma. I've only just come back to Wynn, and now...",
-   "dst": "",
+   "dst": "…Fruma に戻る。Wynn に帰ってきたばかりなのに…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1328,7 +1328,7 @@
   },
   "Queen's Recruit#132": {
    "src": "But it had to happen eventually. And I do want answers. So... in we go.",
-   "dst": "",
+   "dst": "でもいつかはこうなるはずだった。答えも知りたいし。だから… 行こう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1338,7 +1338,7 @@
   },
   "Queen's Recruit#133": {
    "src": "I'll be heading to the {p} Seaskipper, if you want to tag along.",
-   "dst": "",
+   "dst": "{p} の Seaskipper に向かうよ、ついて来るならどうぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1348,7 +1348,7 @@
   },
   "Queen's Recruit#134": {
    "src": "Travel to the Gate of Fruma at [-{~}, {~}, -{~}] or meet up with Tasim in {p}.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Fruma の門へ行くか、{p} で Tasim と合流する。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -1358,7 +1358,7 @@
   },
   "Queen's Recruit#135": {
    "src": "...Oh! You're here! Lost in thought, sorry.",
-   "dst": "",
+   "dst": "…あっ！来てたんだ！ごめん、考え事してた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1368,7 +1368,7 @@
   },
   "Queen's Recruit#136": {
    "src": "It's all a little surreal, isn't it? I only just got back to Wynn, and now... Fruma!",
-   "dst": "",
+   "dst": "なんだか現実味がないよね？Wynn に戻ったばかりなのに… 今度は Fruma！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1378,7 +1378,7 @@
   },
   "Queen's Recruit#137": {
    "src": "Kind of make me wish we had Aledar here too. The three of us on an adventure again! Going back... home...",
-   "dst": "",
+   "dst": "Aledar もここにいればな。また三人で冒険だ！故郷に… 帰るんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1388,7 +1388,7 @@
   },
   "Queen's Recruit#138": {
    "src": "I guess we'll just have to tell him all about it when we get back. He'll be sad he missed it, I bet.",
-   "dst": "",
+   "dst": "帰ったら全部話してあげないとね。見逃したって残念がるだろうな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1398,7 +1398,7 @@
   },
   "Queen's Recruit#139": {
    "src": "Oi, there! Are those my two favorite customers I see?",
-   "dst": "",
+   "dst": "おう、そこの！俺のお気に入りの客が二人も来たか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1408,7 +1408,7 @@
   },
   "Queen's Recruit#140": {
    "src": "You call everyone your favorite customer, captain! Don't think I didn't notice!",
-   "dst": "",
+   "dst": "船長は誰にでもお気に入りって言うじゃないか！気づいてないと思った？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1418,7 +1418,7 @@
   },
   "Queen's Recruit#141": {
    "src": "Eheheheh, well, it's true, ain't it? I got lots o' favorites! Ah, anyhow, you're here for a trip, ain't'cha?",
-   "dst": "",
+   "dst": "えへへへ、でも本当だろ？お気に入りはたくさんいるのさ！ああ、とにかく、船に乗りに来たんだろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1428,7 +1428,7 @@
   },
   "Queen's Recruit#142": {
    "src": "We are! You've... probably heard the details already? There should have been something about a new destination.",
-   "dst": "",
+   "dst": "そうなんだ！たぶん… もう詳しい話は聞いてる？新しい行き先の話があったはずなんだけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1438,7 +1438,7 @@
   },
   "Queen's Recruit#143": {
    "src": "Aye. That I have. Some scrawny {p} courier wooshed past earlier! I barely got a word in before he was off again! Real interesting fellow.",
-   "dst": "",
+   "dst": "ああ。聞いてるとも。さっき痩せっぽちの {p} の使いがびゅーんと通っていったぜ！一言返す間もなく行っちまった！面白い奴だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1448,7 +1448,7 @@
   },
   "Queen's Recruit#144": {
    "src": "... Not a part o' the sea I like to visit, but I reckon I can make an exception this time.",
-   "dst": "",
+   "dst": "…あまり行きたくない海域だが、今回は特別だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1458,7 +1458,7 @@
   },
   "Queen's Recruit#145": {
    "src": "Hm... I can pay you extra for the trip, if you'd like.",
-   "dst": "",
+   "dst": "うーん… よければ、運賃を多めに払うよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1468,7 +1468,7 @@
   },
   "Queen's Recruit#146": {
    "src": "Ha! No, no, there's no need for that. It's free of charge for my two favorite customers, eheh!",
-   "dst": "",
+   "dst": "はっ！いやいや、その必要はない。お気に入りの二人はタダだ、えへへ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1478,7 +1478,7 @@
   },
   "Queen's Recruit#147": {
    "src": "...and, 'course, s'all paid for from {p}'s royal coffers anyhow. Now, hop on abour 'fore I change my mind and leave without ya!",
-   "dst": "",
+   "dst": "…それにまあ、どうせ {p} の王家の金庫持ちだしな。さあ、気が変わって置いてく前に乗った乗った！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1488,7 +1488,7 @@
   },
   "Queen's Recruit#148": {
    "src": "Yes, sir!",
-   "dst": "",
+   "dst": "はい、船長！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1498,7 +1498,7 @@
   },
   "Queen's Recruit#149": {
    "src": "...Oh! You're here! Lost in thought, sorry.",
-   "dst": "",
+   "dst": "…あっ！来てたんだ！ごめん、考え事してた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1508,7 +1508,7 @@
   },
   "Queen's Recruit#150": {
    "src": "It's all a little surreal, isn't it? I only just got back to Wynn, and now... Fruma!",
-   "dst": "",
+   "dst": "なんだか現実味がないよね？Wynn に戻ったばかりなのに… 今度は Fruma！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1518,7 +1518,7 @@
   },
   "Queen's Recruit#151": {
    "src": "Kind of make me wish we had Aledar here too. The three of us on an adventure again! Going back... home...",
-   "dst": "",
+   "dst": "Aledar もここにいればな。また三人で冒険だ！故郷に… 帰るんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1528,7 +1528,7 @@
   },
   "Queen's Recruit#152": {
    "src": "I guess we'll just have to tell him all about it when we get back. He'll be sad he missed it, I bet.",
-   "dst": "",
+   "dst": "帰ったら全部話してあげないとね。見逃したって残念がるだろうな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1538,7 +1538,7 @@
   },
   "Queen's Recruit#153": {
    "src": "Oi, there! Are those my two favorite customers I see?",
-   "dst": "",
+   "dst": "おう、そこの！俺のお気に入りの客が二人も来たか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1548,7 +1548,7 @@
   },
   "Queen's Recruit#154": {
    "src": "You call everyone your favorite customer, captain! Don't think I didn't notice!",
-   "dst": "",
+   "dst": "船長は誰にでもお気に入りって言うじゃないか！気づいてないと思った？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1558,7 +1558,7 @@
   },
   "Queen's Recruit#155": {
    "src": "Eheheheh, well, it's true, ain't it? I got lots o' favorites! Ah, anyhow, you're here for a trip, ain't'cha?",
-   "dst": "",
+   "dst": "えへへへ、でも本当だろ？お気に入りはたくさんいるのさ！ああ、とにかく、船に乗りに来たんだろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1568,7 +1568,7 @@
   },
   "Queen's Recruit#156": {
    "src": "We are! You've... probably heard the details already? There should have been something about a new destination.",
-   "dst": "",
+   "dst": "そうなんだ！たぶん… もう詳しい話は聞いてる？新しい行き先の話があったはずなんだけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1578,7 +1578,7 @@
   },
   "Queen's Recruit#157": {
    "src": "Aye. That I have. Some scrawny {p} courier wooshed past earlier! I barely got a word in before he was off again! Real interesting fellow.",
-   "dst": "",
+   "dst": "ああ。聞いてるとも。さっき痩せっぽちの {p} の使いがびゅーんと通っていったぜ！一言返す間もなく行っちまった！面白い奴だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1588,7 +1588,7 @@
   },
   "Queen's Recruit#158": {
    "src": "... Not a part o' the sea I like to visit, but I reckon I can make an exception this time.",
-   "dst": "",
+   "dst": "…あまり行きたくない海域だが、今回は特別だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1598,7 +1598,7 @@
   },
   "Queen's Recruit#159": {
    "src": "Hm... I can pay you extra for the trip, if you'd like.",
-   "dst": "",
+   "dst": "うーん… よければ、運賃を多めに払うよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1608,7 +1608,7 @@
   },
   "Queen's Recruit#160": {
    "src": "Ha! No, no, there's no need for that. It's free of charge for my two favorite customers, eheh!",
-   "dst": "",
+   "dst": "はっ！いやいや、その必要はない。お気に入りの二人はタダだ、えへへ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1618,7 +1618,7 @@
   },
   "Queen's Recruit#161": {
    "src": "...and, 'course, s'all paid for from {p}'s royal coffers anyhow. Now, hop on abour 'fore I change my mind and leave without ya!",
-   "dst": "",
+   "dst": "…それにまあ、どうせ {p} の王家の金庫持ちだしな。さあ、気が変わって置いてく前に乗った乗った！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1628,7 +1628,7 @@
   },
   "Queen's Recruit#162": {
    "src": "Yes, sir!",
-   "dst": "",
+   "dst": "はい、船長！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1638,7 +1638,7 @@
   },
   "Queen's Recruit#163": {
    "src": "...so, Fruma, eh? I'd ask what business ya've got there, but... figure it's top secret.",
-   "dst": "",
+   "dst": "…で、Fruma か？何の用か聞きたいところだが… 極秘なんだろうな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1648,7 +1648,7 @@
   },
   "Queen's Recruit#164": {
    "src": "We've been... invited into the province. Supposedly, it's for some sort of celebration, but...",
-   "dst": "",
+   "dst": "僕たちは… あの地方に招かれたんだ。何かの祝典らしいけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1658,7 +1658,7 @@
   },
   "Queen's Recruit#165": {
    "src": "Mmn. Aye, knowin' the rumors... not the kind o' place to just invite folks in, is it?",
-   "dst": "",
+   "dst": "ふむ。ああ、噂を聞く限り… 気軽に人を招く場所じゃないよな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1668,7 +1668,7 @@
   },
   "Queen's Recruit#166": {
    "src": "...no. It isn't.",
-   "dst": "",
+   "dst": "…うん。そうじゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1678,7 +1678,7 @@
   },
   "Queen's Recruit#167": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1688,7 +1688,7 @@
   },
   "Queen's Recruit#168": {
    "src": "Tell me, what's on yer mind then? The both o' you. Speakin' thoughts out tends to make 'em easier to manage, in my experience.",
-   "dst": "",
+   "dst": "なら、何を考えてるか話してみな。二人ともだ。俺の経験じゃ、口に出すと気持ちの整理がつきやすい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1698,7 +1698,7 @@
   },
   "Queen's Recruit#169": {
    "src": "Fruma went through all that trouble to erase our memories, to get rid of us... just to ask for us back out of nowhere.",
-   "dst": "",
+   "dst": "Fruma は僕たちの記憶を消して、追い出すためにあれだけ手間をかけたのに… 突然呼び戻すなんて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1708,7 +1708,7 @@
   },
   "Queen's Recruit#170": {
    "src": "I don't know why they're doing it, but I'm worried there's more going on.",
-   "dst": "",
+   "dst": "理由はわからないけど、裏に何かある気がして不安なんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1718,7 +1718,7 @@
   },
   "Queen's Recruit#171": {
    "src": "I've not got more of a clue than either o' you, but I reckon that suspicion is warranted.",
-   "dst": "",
+   "dst": "俺もお前らと同じで見当もつかんが、疑うのはもっともだと思うぜ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1728,7 +1728,7 @@
   },
   "Queen's Recruit#172": {
    "src": "But don't let it consume you, aye? Some suspicion is healthy, but if it colors everything ya do, it'll hurt ya just as bad as naivety would. Keep an open mind.",
-   "dst": "",
+   "dst": "だが疑いに呑まれるなよ？多少の疑いは健全だが、何もかもそれで染まっちまったら、世間知らずと同じくらい自分を傷つける。心は広く持て。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1738,7 +1738,7 @@
   },
   "Queen's Recruit#173": {
    "src": "...it's possible. I hope you're right, and it is all fine, and we are all overthinking it...",
-   "dst": "",
+   "dst": "…かもしれない。船長の言う通りで、何も問題なくて、僕たちの考えすぎだといいけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1748,7 +1748,7 @@
   },
   "Queen's Recruit#174": {
    "src": "But I can't let my guard down. Everything about this situation is screaming that something isn't right, and... I don't know what.",
-   "dst": "",
+   "dst": "でも油断はできない。この状況の何もかもが、何かおかしいって叫んでる。でも… それが何かわからない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1758,7 +1758,7 @@
   },
   "Queen's Recruit#175": {
    "src": "Nothin' wrong with hopin' for the best. Stayin' positive is all ya can really do, sometimes.",
-   "dst": "",
+   "dst": "最善を願うのは悪いことじゃない。前向きでいるしかないときもあるさ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1768,7 +1768,7 @@
   },
   "Queen's Recruit#176": {
    "src": "Out here on the sea, we have a saying... go searchin' for the storm, and it'll find ya itself. Don't expect the worst, or it'll find a way to come to pass.",
-   "dst": "",
+   "dst": "海の上じゃこう言うんだ… 嵐を探しに行けば、嵐のほうからやって来る。最悪を予想するな、でなきゃ本当になる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1778,7 +1778,7 @@
   },
   "Queen's Recruit#177": {
    "src": "... home? Home. I guess. It’ll be nice to have more memories of it than just… you know. Curses and all that.",
-   "dst": "",
+   "dst": "…故郷？故郷。そうかもね。記憶が… ほら、呪いとかそういうのだけじゃなくなるなら、いいかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1788,7 +1788,7 @@
   },
   "Queen's Recruit#178": {
    "src": "Hm. I don’t got much of a home to get back to, either. Had it taken from me by those I trusted, eheh!",
-   "dst": "",
+   "dst": "ふむ。俺にも帰る故郷なんてないさ。信じてた奴らに奪われちまった、えへへ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1798,7 +1798,7 @@
   },
   "Queen's Recruit#179": {
    "src": "... But, I made my own home, out here on the sea. Think even if I could go back now, I wouldn’t!",
-   "dst": "",
+   "dst": "…だがな、この海の上に自分の家を作った。今帰れるとしても、帰らないだろうな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1808,7 +1808,7 @@
   },
   "Queen's Recruit#180": {
    "src": "So, if y’don’t like what ya find... don’t feel forced to take it, y’hear?",
-   "dst": "",
+   "dst": "だから、向こうで見たものが気に入らなきゃ… 無理に受け入れるなよ、いいな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1818,7 +1818,7 @@
   },
   "Queen's Recruit#181": {
    "src": "...I'll keep that in mind. Thank you, captain.",
-   "dst": "",
+   "dst": "…覚えておくよ。ありがとう、船長。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1828,7 +1828,7 @@
   },
   "Queen's Recruit#182": {
    "src": "Ah, it's what I'm here for, ain't it? Givin' sage advice and salin' folks around the sea!",
-   "dst": "",
+   "dst": "ああ、それが俺の役目だろ？ありがたい助言をして、人を海の向こうへ運ぶのさ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1838,7 +1838,7 @@
   },
   "Queen's Recruit#183": {
    "src": "And look at that, on the horizon! Shinin' opulent docks... seems we've arrived.",
-   "dst": "",
+   "dst": "ほら見ろ、水平線だ！輝く豪華な港… 着いたようだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1848,7 +1848,7 @@
   },
   "Queen's Recruit#184": {
    "src": "Dunno what you'll be facin' in there... but good luck anyway, aye?",
-   "dst": "",
+   "dst": "中で何が待ってるか知らんが… とにかく幸運をな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1858,7 +1858,7 @@
   },
   "Queen's Recruit#185": {
    "src": "We'll need it. Thanks for bringing us here, captain.",
-   "dst": "",
+   "dst": "必要になりそうだ。連れてきてくれてありがとう、船長。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1868,7 +1868,7 @@
   },
   "Queen's Recruit#186": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1878,7 +1878,7 @@
   },
   "Queen's Recruit#187": {
    "src": "It's... impressive. To build something like this for a gate no one ever uses...",
-   "dst": "",
+   "dst": "これは… すごいね。誰も使わない門のためにこんなものを建てるなんて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1888,7 +1888,7 @@
   },
   "Queen's Recruit#188": {
    "src": "I guess they have the resources to spare.",
-   "dst": "",
+   "dst": "資源が有り余ってるんだろうね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1898,7 +1898,7 @@
   },
   "Queen's Recruit#189": {
    "src": "Meet up with the group at the gate at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の門で一行と合流する。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -1908,7 +1908,7 @@
   },
   "Queen's Recruit#190": {
    "src": "Finally! The stragglers arrive. You certainly took your time, didn't you?",
-   "dst": "",
+   "dst": "やっとか！遅れ組のご到着だ。ずいぶんのんびりしていたな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1918,7 +1918,7 @@
   },
   "Queen's Recruit#191": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1928,7 +1928,7 @@
   },
   "Queen's Recruit#192": {
    "src": "Not the time, Kymer. Leave the poor man be for an hour, eh? Got bigger fish to fry, n' all that.",
-   "dst": "",
+   "dst": "今はよせ、Kymer。一時間くらい放っておいてやれ。もっと大事なことがあるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1938,7 +1938,7 @@
   },
   "Queen's Recruit#193": {
    "src": "Yes, yes, fine. We've not been able to get a word out of any of these soldiers! Do we even have the right time and place?",
-   "dst": "",
+   "dst": "わかった、わかったとも。ここの兵士からは一言も聞き出せん！そもそも時間と場所は合っているのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1948,7 +1948,7 @@
   },
   "Queen's Recruit#194": {
    "src": "Nah, you just haven't been trying hard enough. Hey, tin can! This is Fruma, right?",
-   "dst": "",
+   "dst": "いや、あんたの努力が足りないだけさ。おい、ブリキ缶！ここ Fruma だよな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1958,7 +1958,7 @@
   },
   "Queen's Recruit#195": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1968,7 +1968,7 @@
   },
   "Queen's Recruit#196": {
    "src": "Wow. Nevermind, you were right.",
-   "dst": "",
+   "dst": "うわ。やっぱりあんたの言う通りだった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1978,7 +1978,7 @@
   },
   "Queen's Recruit#197": {
    "src": "As I often am!",
-   "dst": "",
+   "dst": "私はたいてい正しいのだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1988,7 +1988,7 @@
   },
   "Queen's Recruit#198": {
    "src": "It really is an impressive construction, isn't it? All this for a closed-off province.",
-   "dst": "",
+   "dst": "本当に見事な建造物ね。閉ざされた地方のために、これほどのものを。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -1998,7 +1998,7 @@
   },
   "Queen's Recruit#199": {
    "src": "Impressive or not, we have work to do! On your guard, everyone. We don't know what to expect, so watch your backs.",
-   "dst": "",
+   "dst": "見事だろうとなかろうと、仕事がある！皆、警戒を。何が起こるかわからん、背後に気をつけたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2008,7 +2008,7 @@
   },
   "Queen's Recruit#200": {
    "src": "S'anyone's guess when they'll actually let us in...",
-   "dst": "",
+   "dst": "いつ中に入れてくれるのか、見当もつかないね…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2018,7 +2018,7 @@
   },
   "Queen's Recruit#201": {
    "src": "Oh! The gate!!",
-   "dst": "",
+   "dst": "あっ！門が！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2028,7 +2028,7 @@
   },
   "Queen's Recruit#202": {
    "src": "Thank you, Xao. Now!",
-   "dst": "",
+   "dst": "ご苦労、Xao。では！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2038,7 +2038,7 @@
   },
   "Queen's Recruit#203": {
    "src": "Soldiers of Wynn! Her Majesty welcomes you to the province, as guests of the crown!",
-   "dst": "",
+   "dst": "Wynn の兵士たちよ！女王陛下は王家の客人として、諸君を我が地方に歓迎する！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2048,7 +2048,7 @@
   },
   "Queen's Recruit#204": {
    "src": "Follow me, and you will be escorted to the royal palace. Let's not keep her waiting you all are of great importance to her.",
-   "dst": "",
+   "dst": "ついて来い、王宮まで案内する。陛下を待たせるな… 諸君は陛下にとって非常に重要な存在だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2058,7 +2058,7 @@
   },
   "Queen's Recruit#205": {
    "src": "Listen to the introduction. Go to [-{~}, {~}, -{~}] to return to the palace.",
-   "dst": "",
+   "dst": "紹介を聞く。王宮に戻るには [-{~}, {~}, -{~}] へ。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -2068,7 +2068,7 @@
   },
   "Queen's Recruit#206": {
    "src": "Fruma's... a lot bigger than what I saw in my memories...",
-   "dst": "",
+   "dst": "Fruma って… 記憶で見たよりずっと大きいな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2078,7 +2078,7 @@
   },
   "Queen's Recruit#207": {
    "src": "I guess that makes sense. I probably didn't travel much, back then. But... still.",
-   "dst": "",
+   "dst": "当然か。あの頃はあまり出歩かなかったんだろう。でも… それでもね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2088,7 +2088,7 @@
   },
   "Queen's Recruit#208": {
    "src": "What'd you think?",
-   "dst": "",
+   "dst": "君はどう思った？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2098,7 +2098,7 @@
   },
   "Queen's Recruit#209": {
    "src": "It... was. I don't know what I expected going in, but... it was stunning.",
-   "dst": "",
+   "dst": "うん… そうだね。何を想像してたかわからないけど… 圧倒されたよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2108,7 +2108,7 @@
   },
   "Queen's Recruit#210": {
    "src": "Ha! Yeah, you know, I think you're right. It was impressive, but Gavel also has impressive sights.",
-   "dst": "",
+   "dst": "はは！うん、そうだね、君の言う通りかも。見事だったけど、Gavel にもすごい景色はある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2118,7 +2118,7 @@
   },
   "Queen's Recruit#211": {
    "src": "But let's not get distracted. The tour felt very... controlled. We were never let out of the carriages, and the Sovereign was keeping a watchful eye on us.",
-   "dst": "",
+   "dst": "でも気をそらさないようにしよう。あの案内はすごく… 管理されてた。馬車から一度も降ろしてもらえなかったし、君主もずっと僕たちを見張ってた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2128,7 +2128,7 @@
   },
   "Queen's Recruit#212": {
    "src": "I'm interested in what they're choosing not to show us...",
-   "dst": "",
+   "dst": "僕が気になるのは、彼らが見せないようにしてるものだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2138,7 +2138,7 @@
   },
   "Queen's Recruit#213": {
    "src": "Hey! Someone's coming!",
-   "dst": "",
+   "dst": "おい！誰か来るぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2148,7 +2148,7 @@
   },
   "Queen's Recruit#214": {
    "src": "Greetings, soldiers of Wynn.",
-   "dst": "",
+   "dst": "ようこそ、Wynn の兵士たち。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2158,7 +2158,7 @@
   },
   "Queen's Recruit#215": {
    "src": "It is my honor as Queen to facilitate your return to our wonderful province. Though long you have spent away, you will always remain children of Fruma!",
-   "dst": "",
+   "dst": "女王として、皆さんがこの素晴らしい地方へ戻る手助けができて光栄です。長く離れていても、皆さんは永遠に Fruma の子なのです！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2168,7 +2168,7 @@
   },
   "Queen's Recruit#216": {
    "src": "Your work to battle against the blight beyond our walls has been of great interest. You have certainly made our province proud.",
-   "dst": "",
+   "dst": "壁の外の災いと戦う皆さんの働きには、大いに注目してきました。皆さんは我が地方の誇りです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2178,7 +2178,7 @@
   },
   "Queen's Recruit#217": {
    "src": "You must have questions on the nature of your summons. All will be revealed but first, allow me to introduce two of my wonderful Sovereigns.",
-   "dst": "",
+   "dst": "召集の理由について疑問がおありでしょう。すべて明かします… ですがまず、わたくしの優秀な君主を二人紹介しましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2188,7 +2188,7 @@
   },
   "Queen's Recruit#218": {
    "src": "You heard my name, but let me introduce myself. I am",
-   "dst": "",
+   "dst": "名は聞いただろうが、改めて名乗ろう。私は",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2198,7 +2198,7 @@
   },
   "Queen's Recruit#219": {
    "src": "Majin of House Thalas, the Morning Star, Sovereign of our fair {p}. It's a pleasure, dear soldiers, to join our Queen for this ceremony!",
-   "dst": "",
+   "dst": "Thalas 家の Majin、明けの明星にして、麗しき {p} の君主だ。親愛なる兵士諸君、この式典に女王陛下とご一緒できて光栄だよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2208,7 +2208,7 @@
   },
   "Queen's Recruit#220": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2218,7 +2218,7 @@
   },
   "Queen's Recruit#221": {
    "src": "...Zhiraok Nasin, Sovereign of the {p}. The value of that title should speak for itself.",
-   "dst": "",
+   "dst": "…Zhiraok Nasin、{p} の君主。この称号の価値は言うまでもない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2228,7 +2228,7 @@
   },
   "Queen's Recruit#222": {
    "src": "Thank you, Sovereigns. These two, and the rest, are my council for ruling over our province. Each Sovereign is given governance over their own district, and works to serve the people there.",
-   "dst": "",
+   "dst": "ありがとう、君主たち。この二人と他の者たちが、地方を治めるわたくしの評議会です。君主はそれぞれ自分の地区を任され、その民に尽くしています。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2238,7 +2238,7 @@
   },
   "Queen's Recruit#223": {
    "src": "There are others. Though none could attend this event they find themselves occupied with various assignments.",
-   "dst": "",
+   "dst": "他にもいますが、今回は誰も出席できませんでした… 皆さまざまな任務に就いているのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2248,7 +2248,7 @@
   },
   "Queen's Recruit#224": {
    "src": "Enough of the boring talk! It is time for the welcoming feast!",
-   "dst": "",
+   "dst": "堅苦しい話はここまで！歓迎の宴の時間です！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2258,7 +2258,7 @@
   },
   "Queen's Recruit#225": {
    "src": "We would like to share a taste of what our province has to deliver. Please find your way to the grand dining hall, situated just behind me.",
-   "dst": "",
+   "dst": "我が地方の味をぜひ味わっていただきたいのです。わたくしの後ろにある大食堂へお進みください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2268,7 +2268,7 @@
   },
   "Queen's Recruit#226": {
    "src": "Head to the royal dining hall at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}] の王家の食堂へ向かう。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -2278,7 +2278,7 @@
   },
   "Queen's Recruit#227": {
    "src": "Make your way to the dining hall, the Queen will be starting her speech soon.",
-   "dst": "",
+   "dst": "食堂へお進みください、女王陛下のお話がまもなく始まります。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2288,7 +2288,7 @@
   },
   "Queen's Recruit#228": {
    "src": "...you can't even follow the order of operations while Her Majesty is watching?! What kind of expected value must the recruits ha",
-   "dst": "",
+   "dst": "…陛下の御前で演算の順序すら守れんのか？！新兵の期待値がこれでは",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2298,7 +2298,7 @@
   },
   "Queen's Recruit#229": {
    "src": "Now, now, Nasin, settle down. We wouldn't want to leave a poor impression on our guest, would we?",
-   "dst": "",
+   "dst": "まあまあ、Nasin、落ち着きたまえ。客人に悪い印象を与えたくはないだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2308,7 +2308,7 @@
   },
   "Queen's Recruit#230": {
    "src": "Quit interrupting my sequence, hypocr",
-   "dst": "",
+   "dst": "私の数列を遮るな、この偽善",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2318,7 +2318,7 @@
   },
   "Queen's Recruit#231": {
    "src": "Oh, you. You should report to the dining hall with the remainder of your group.",
-   "dst": "",
+   "dst": "ああ、お前か。仲間と一緒に食堂へ行け。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2328,7 +2328,7 @@
   },
   "Queen's Recruit#232": {
    "src": "Yes, yes, move along. You certainly don't want to keep Her Majesty waiting!",
-   "dst": "",
+   "dst": "そうそう、さっさと行きたまえ。女王陛下を待たせたくはないだろう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2338,7 +2338,7 @@
   },
   "Queen's Recruit#233": {
    "src": "Well, I have put it off long enough. Before the first course is served, I will reveal the purpose of your presence here today.",
-   "dst": "",
+   "dst": "さて、もう十分引き延ばしました。最初の料理が出る前に、皆さんが今日ここにいる目的を明かしましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2348,7 +2348,7 @@
   },
   "Queen's Recruit#234": {
    "src": "In celebration of your work in the Wynn Province, we shall be hosting a tournament! You will all partake in a set of duels in order to crown the greatest soldier among you.",
-   "dst": "",
+   "dst": "Wynn 地方での皆さんの働きを祝して、トーナメントを開催します！皆さんには一連の決闘に参加し、最強の兵士を決めていただきます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2358,7 +2358,7 @@
   },
   "Queen's Recruit#235": {
    "src": "You have all grown in your time spent beyond our walls, and what better way to show it?",
-   "dst": "",
+   "dst": "壁の外で過ごす間に皆さんは成長しました。それを示すのにこれ以上の方法がありますか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2368,7 +2368,7 @@
   },
   "Queen's Recruit#236": {
    "src": "We will, of course, provide compensation for all participants. A generous monetary reward shall be granted to each of you, no matter your placing in the tournament.",
-   "dst": "",
+   "dst": "もちろん、参加者全員に報酬を用意します。順位にかかわらず、一人ひとりに十分な賞金を授けましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2378,7 +2378,7 @@
   },
   "Queen's Recruit#237": {
    "src": "However, for whichever of you finds themselves crowned winner... a greater reward awaits. The specifics shall be revealed once the tournament has concluded.",
-   "dst": "",
+   "dst": "ですが、優勝の栄冠を手にした者には… さらに大きな褒美が待っています。詳細はトーナメント終了後に明かします。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2388,7 +2388,7 @@
   },
   "Queen's Recruit#238": {
    "src": "Ah, your majesty if I may... I am not much of a fighter my specialty is in research and study of magic.",
-   "dst": "",
+   "dst": "ああ、陛下… 失礼ながら、私は戦いが得意ではありません… 専門は魔法の研究でして。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2398,7 +2398,7 @@
   },
   "Queen's Recruit#239": {
    "src": "...very well. Accommodations shall be made. A different request may be made of you later, in exchange.",
-   "dst": "",
+   "dst": "…よろしい。配慮しましょう。代わりに、後ほど別のお願いをするかもしれません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2408,7 +2408,7 @@
   },
   "Queen's Recruit#240": {
    "src": "I thank you for your grace and understanding, your majesty.",
-   "dst": "",
+   "dst": "ご寛大なご理解に感謝いたします、陛下。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2418,7 +2418,7 @@
   },
   "Queen's Recruit#241": {
    "src": "Yes... now. Once the meal comes to a close, you shall all be assigned a room to stay in for the remainder of your stay in my palace.",
-   "dst": "",
+   "dst": "ええ… では。食事が済んだら、宮殿に滞在する間の部屋を皆さんに割り当てます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2428,7 +2428,7 @@
   },
   "Queen's Recruit#242": {
    "src": "Ah! It seems the first course has been prepared! Please, enjoy our province's finest cuisine.",
-   "dst": "",
+   "dst": "あら！最初の料理ができたようです！どうぞ、我が地方の最高の料理をお楽しみください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2438,7 +2438,7 @@
   },
   "Queen's Recruit#243": {
    "src": "...I can't say I was expecting that, of all things.",
-   "dst": "",
+   "dst": "…まさかそんな話になるとは思わなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2448,7 +2448,7 @@
   },
   "Queen's Recruit#244": {
    "src": "You'll be joining the tournament, right?",
-   "dst": "",
+   "dst": "君はトーナメントに出るよね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2458,7 +2458,7 @@
   },
   "Queen's Recruit#245": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2468,7 +2468,7 @@
   },
   "Queen's Recruit#246": {
    "src": "We'd better get going and find our rooms everyone else headed south.",
-   "dst": "",
+   "dst": "早く行って部屋を探そう… みんな南へ行ったよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2478,7 +2478,7 @@
   },
   "Queen's Recruit#247": {
    "src": "Get your assigned room from the representative at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}] の代表者から部屋の割り当てを受ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -2488,7 +2488,7 @@
   },
   "Queen's Recruit#248": {
    "src": "Welcome to the courtyard.",
-   "dst": "",
+   "dst": "中庭へようこそ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2498,7 +2498,7 @@
   },
   "Queen's Recruit#249": {
    "src": "Your rooms are located on the east and west side of here.",
-   "dst": "",
+   "dst": "皆さんの部屋はここの東側と西側にあります。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2508,7 +2508,7 @@
   },
   "Queen's Recruit#250": {
    "src": "Your rooms are on the other side of the castle. Please make your way over there.",
-   "dst": "",
+   "dst": "お部屋は城の反対側です。そちらへお進みください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2518,7 +2518,7 @@
   },
   "Queen's Recruit#251": {
    "src": "Guests. Hm...",
-   "dst": "",
+   "dst": "客人か。ふむ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2528,7 +2528,7 @@
   },
   "Queen's Recruit#252": {
    "src": "Allow me a moment.",
-   "dst": "",
+   "dst": "少々お待ちを。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2538,7 +2538,7 @@
   },
   "Queen's Recruit#253": {
    "src": "Name?",
-   "dst": "",
+   "dst": "お名前は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2548,7 +2548,7 @@
   },
   "Queen's Recruit#254": {
    "src": "...that's {u} and I'm Tasim.",
-   "dst": "",
+   "dst": "…こっちが {u}、僕は Tasim。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2558,7 +2558,7 @@
   },
   "Queen's Recruit#255": {
    "src": "Talk about a fancy feast, huh?",
-   "dst": "",
+   "dst": "豪勢なごちそうだったな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2568,7 +2568,7 @@
   },
   "Queen's Recruit#256": {
    "src": "They're really pullin' out all the stops, huh? Don't think I've had anythin' that good in a long while.",
-   "dst": "",
+   "dst": "本当に出し惜しみなしだね？あんなにおいしいもの、久しぶりに食べたよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2578,7 +2578,7 @@
   },
   "Queen's Recruit#257": {
    "src": "Yeah, that was probably the best meal I've had in a long time... Really tired me out. Can't wait for a long and good rest.",
-   "dst": "",
+   "dst": "うん、あんなにいい食事は久しぶりだったかも… おかげでくたくただ。ゆっくり休みたいな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2588,7 +2588,7 @@
   },
   "Queen's Recruit#258": {
    "src": "Ah, there we are. Tasim and {u}, you'll be in room W3... in the western wing.",
-   "dst": "",
+   "dst": "ああ、ありました。Tasim と {u}、西棟の W3 号室です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2598,7 +2598,7 @@
   },
   "Queen's Recruit#259": {
    "src": "How 'bout us? I'm Mel, and this is Linton.",
-   "dst": "",
+   "dst": "あたしたちは？あたしは Mel、こっちは Linton。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2608,7 +2608,7 @@
   },
   "Queen's Recruit#260": {
    "src": "Let's see...",
-   "dst": "",
+   "dst": "どれどれ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2618,7 +2618,7 @@
   },
   "Queen's Recruit#261": {
    "src": "...hm.",
-   "dst": "",
+   "dst": "…ふむ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2628,7 +2628,7 @@
   },
   "Queen's Recruit#262": {
    "src": "Mel and Lanu, you'll be in E2.",
-   "dst": "",
+   "dst": "Mel と Lanu は E2 です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2638,7 +2638,7 @@
   },
   "Queen's Recruit#263": {
    "src": "Uh hey, I think you forgot someone! Where am I staying?",
-   "dst": "",
+   "dst": "あの、おい、誰か忘れてないか！俺はどこに泊まるんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2648,7 +2648,7 @@
   },
   "Queen's Recruit#264": {
    "src": "Linton... let me see...",
-   "dst": "",
+   "dst": "Linton… ええと…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2658,7 +2658,7 @@
   },
   "Queen's Recruit#265": {
    "src": "Ehm..... Hm........ Oh....",
-   "dst": "",
+   "dst": "えー…… ふむ…… おや……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2668,7 +2668,7 @@
   },
   "Queen's Recruit#266": {
    "src": "Linton and Kymer are in W2.",
-   "dst": "",
+   "dst": "Linton と Kymer は W2 です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2678,7 +2678,7 @@
   },
   "Queen's Recruit#267": {
    "src": "Oh... uh, Kymer, huh? That's... hm. Okay.",
-   "dst": "",
+   "dst": "あ… えっと、Kymer と？それは… うーん。わかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2688,7 +2688,7 @@
   },
   "Queen's Recruit#268": {
    "src": "Ha. Good luck with that.",
-   "dst": "",
+   "dst": "はは。まあ頑張って。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2698,7 +2698,7 @@
   },
   "Queen's Recruit#269": {
    "src": "Head to your room, W-{~}, and check it out.",
-   "dst": "",
+   "dst": "自分の部屋 W-{~} へ行き、中を確かめる。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -2708,7 +2708,7 @@
   },
   "Queen's Recruit#270": {
    "src": "Room W3... Now get going. I have a lot of rooms to assign...",
-   "dst": "",
+   "dst": "W3 号室です… さあお行きなさい。割り当てる部屋がたくさんあるので…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2718,7 +2718,7 @@
   },
   "Queen's Recruit#271": {
    "src": "I'm just gonna wait here for Lanu.",
-   "dst": "",
+   "dst": "あたしはここで Lanu を待つよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2728,7 +2728,7 @@
   },
   "Queen's Recruit#272": {
    "src": "Hm... {u}? Think you've got the wrong room!",
-   "dst": "",
+   "dst": "ふむ… {u}？部屋を間違えてるぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2738,7 +2738,7 @@
   },
   "Queen's Recruit#273": {
    "src": "Odd that I've got a room all to myself... but eh, I won't complain.",
-   "dst": "",
+   "dst": "一人部屋ってのは妙だが… まあ文句は言わんさ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2748,7 +2748,7 @@
   },
   "Queen's Recruit#274": {
    "src": "Kymer. Sure! Cool, cool cool cool... I can stay with the... big biceps... yep. That's... fine. That's fine. Good, even.",
-   "dst": "",
+   "dst": "Kymer か。いいとも！いいね、いいいい… あの… でかい二の腕と一緒でも… うん。平気… 平気だ。むしろ最高。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2758,7 +2758,7 @@
   },
   "Queen's Recruit#275": {
    "src": "So, this is our room?",
-   "dst": "",
+   "dst": "じゃあ、ここが僕たちの部屋？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2768,7 +2768,7 @@
   },
   "Queen's Recruit#276": {
    "src": "It seems cozy enough, I guess... hard to relax, though, given... you know. all of it.",
-   "dst": "",
+   "dst": "居心地はよさそうだけど… くつろぐのは難しいね、だって… ほら。いろいろと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2778,7 +2778,7 @@
   },
   "Queen's Recruit#277": {
    "src": "...it's easier than I thought it would be, being in Fruma. There's enough distance from... the, uh, memories.",
-   "dst": "",
+   "dst": "…Fruma にいるのは思ったより楽だ。あの… 記憶からは十分離れてるから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2788,7 +2788,7 @@
   },
   "Queen's Recruit#278": {
    "src": "But, okay, we're in private now. So.. what do you actually think of the tournament? It's weird, right? Why would we be invited for this?",
-   "dst": "",
+   "dst": "さて、今は二人きりだ。で… トーナメントのこと、本当はどう思う？変だよね？なんで僕たちがこのために招かれたんだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2798,7 +2798,7 @@
   },
   "Queen's Recruit#279": {
    "src": "Me neither. I don't know what I was expecting when we were entering Fruma, but it wasn't... this.",
-   "dst": "",
+   "dst": "僕もだよ。Fruma に入るとき何を想像してたかわからないけど、こんなの… 予想外だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2808,7 +2808,7 @@
   },
   "Queen's Recruit#280": {
    "src": "I think we'll have to participate, but keep an eye out. Maybe the secret reward will have some answers..",
-   "dst": "",
+   "dst": "参加するしかないと思うけど、目は光らせておこう。秘密の褒美に答えがあるかも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2818,7 +2818,7 @@
   },
   "Queen's Recruit#281": {
    "src": "Hm... you're probably right, I just don't know what it could possibly be.",
-   "dst": "",
+   "dst": "うーん… たぶん君の言う通りだ、ただ何なのか見当もつかない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2828,7 +2828,7 @@
   },
   "Queen's Recruit#282": {
    "src": "Maybe there's something going on with that secret reward for the winner... we'll have to wait and see, I guess.",
-   "dst": "",
+   "dst": "優勝者への秘密の褒美に何かあるのかも… 様子を見るしかないね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2838,7 +2838,7 @@
   },
   "Queen's Recruit#283": {
    "src": "Ha! Yeah, alright. I’m a little excited, too. I haven’t had any friendly duels for a long time, so maybe it’ll be nice to test my strength.",
-   "dst": "",
+   "dst": "はは！うん、わかったよ。僕もちょっとわくわくしてる。親善試合なんて久しぶりだし、力試しにはいいかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2848,7 +2848,7 @@
   },
   "Queen's Recruit#284": {
    "src": "But don’t forget why we’re here. Keep your guard up. Something about that reward she mentioned... it makes me uneasy.",
-   "dst": "",
+   "dst": "でも、ここに来た理由を忘れないで。警戒は怠らずに。彼女が言ってた褒美… なんだか落ち着かないんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2858,7 +2858,7 @@
   },
   "Queen's Recruit#285": {
    "src": "It strikes me as the kind of thing Aledar would enjoy. What better way to prove himself than to win this big tournament?",
-   "dst": "",
+   "dst": "Aledar が喜びそうな話だよね。この大きなトーナメントで勝つ以上に、自分を証明する方法なんてある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2868,7 +2868,7 @@
   },
   "Queen's Recruit#286": {
    "src": "He'd get to use all his potions and tricks, too! He's always telling me about the horrific creations he's mixed together.",
-   "dst": "",
+   "dst": "薬や小細工も全部使えるしね！彼はいつも、自分が混ぜ合わせた恐ろしい代物の話をするんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2878,7 +2878,7 @@
   },
   "Queen's Recruit#287": {
    "src": "...I think I miss him.",
-   "dst": "",
+   "dst": "…彼に会いたいな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2888,7 +2888,7 @@
   },
   "Queen's Recruit#288": {
    "src": "So, this is our room?",
-   "dst": "",
+   "dst": "じゃあ、ここが僕たちの部屋？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2898,7 +2898,7 @@
   },
   "Queen's Recruit#289": {
    "src": "It seems cozy enough, I guess... hard to relax, though, given... you know. all of it.",
-   "dst": "",
+   "dst": "居心地はよさそうだけど… くつろぐのは難しいね、だって… ほら。いろいろと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2908,7 +2908,7 @@
   },
   "Queen's Recruit#290": {
    "src": "...it's easier than I thought it would be, being in Fruma. There's enough distance from... the, uh, memories.",
-   "dst": "",
+   "dst": "…Fruma にいるのは思ったより楽だ。あの… 記憶からは十分離れてるから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2918,7 +2918,7 @@
   },
   "Queen's Recruit#291": {
    "src": "But, okay, we're in private now. So.. what do you actually think of the tournament? It's weird, right? Why would we be invited for this?",
-   "dst": "",
+   "dst": "さて、今は二人きりだ。で… トーナメントのこと、本当はどう思う？変だよね？なんで僕たちがこのために招かれたんだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2928,7 +2928,7 @@
   },
   "Queen's Recruit#292": {
    "src": "Me neither. I don't know what I was expecting when we were entering Fruma, but it wasn't... this.",
-   "dst": "",
+   "dst": "僕もだよ。Fruma に入るとき何を想像してたかわからないけど、こんなの… 予想外だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2938,7 +2938,7 @@
   },
   "Queen's Recruit#293": {
    "src": "I think we'll have to participate, but keep an eye out. Maybe the secret reward will have some answers..",
-   "dst": "",
+   "dst": "参加するしかないと思うけど、目は光らせておこう。秘密の褒美に答えがあるかも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2948,7 +2948,7 @@
   },
   "Queen's Recruit#294": {
    "src": "Hm... you're probably right, I just don't know what it could possibly be.",
-   "dst": "",
+   "dst": "うーん… たぶん君の言う通りだ、ただ何なのか見当もつかない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2958,7 +2958,7 @@
   },
   "Queen's Recruit#295": {
    "src": "Maybe there's something going on with that secret reward for the winner... we'll have to wait and see, I guess.",
-   "dst": "",
+   "dst": "優勝者への秘密の褒美に何かあるのかも… 様子を見るしかないね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2968,7 +2968,7 @@
   },
   "Queen's Recruit#296": {
    "src": "Ha! Yeah, alright. I’m a little excited, too. I haven’t had any friendly duels for a long time, so maybe it’ll be nice to test my strength.",
-   "dst": "",
+   "dst": "はは！うん、わかったよ。僕もちょっとわくわくしてる。親善試合なんて久しぶりだし、力試しにはいいかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2978,7 +2978,7 @@
   },
   "Queen's Recruit#297": {
    "src": "But don’t forget why we’re here. Keep your guard up. Something about that reward she mentioned... it makes me uneasy.",
-   "dst": "",
+   "dst": "でも、ここに来た理由を忘れないで。警戒は怠らずに。彼女が言ってた褒美… なんだか落ち着かないんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2988,7 +2988,7 @@
   },
   "Queen's Recruit#298": {
    "src": "It strikes me as the kind of thing Aledar would enjoy. What better way to prove himself than to win this big tournament?",
-   "dst": "",
+   "dst": "Aledar が喜びそうな話だよね。この大きなトーナメントで勝つ以上に、自分を証明する方法なんてある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -2998,7 +2998,7 @@
   },
   "Queen's Recruit#299": {
    "src": "He'd get to use all his potions and tricks, too! He's always telling me about the horrific creations he's mixed together.",
-   "dst": "",
+   "dst": "薬や小細工も全部使えるしね！彼はいつも、自分が混ぜ合わせた恐ろしい代物の話をするんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3008,7 +3008,7 @@
   },
   "Queen's Recruit#300": {
    "src": "...I think I miss him.",
-   "dst": "",
+   "dst": "…彼に会いたいな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3018,7 +3018,7 @@
   },
   "Queen's Recruit#301": {
    "src": "Uh... come in?",
-   "dst": "",
+   "dst": "えっと… どうぞ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3028,7 +3028,7 @@
   },
   "Queen's Recruit#302": {
    "src": "Hey! You two!",
-   "dst": "",
+   "dst": "よう！二人とも！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3038,7 +3038,7 @@
   },
   "Queen's Recruit#303": {
    "src": "Linton? What's going on?",
-   "dst": "",
+   "dst": "Linton？どうしたの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3048,7 +3048,7 @@
   },
   "Queen's Recruit#304": {
    "src": "Oh, uh, nothing much. Just a secret meeting. In Jenprest's room that's W1, at the start of the corridor.",
-   "dst": "",
+   "dst": "あ、いや、大したことじゃない。ただの秘密会議さ。Jenprest の部屋… 廊下の入口の W1 だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3058,7 +3058,7 @@
   },
   "Queen's Recruit#305": {
    "src": "Picard says we should talk about what we've got so far. He also said to space out people coming to the room so wait a few minutes before stopping by!",
-   "dst": "",
+   "dst": "Picard が、今わかってることを話し合おうってさ。部屋に来るのは時間をずらせって… だから数分待ってから来てくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3068,7 +3068,7 @@
   },
   "Queen's Recruit#306": {
    "src": "I... guess that makes sense. But why are you here, and not",
-   "dst": "",
+   "dst": "それは… まあ、そうだね。でもなんで君が、他の",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3078,7 +3078,7 @@
   },
   "Queen's Recruit#307": {
    "src": "'Cause I'm fast and stealthy. Gotta run now, I don't want to draw the guards' attention. Remember, room W1!",
-   "dst": "",
+   "dst": "俺は速くて隠密だからな。もう行く、衛兵の目を引きたくない。いいか、W1 だぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3088,7 +3088,7 @@
   },
   "Queen's Recruit#308": {
    "src": "...he's energetic, huh. Okay, let's head over to the meeting. I wonder what the others have noticed.",
-   "dst": "",
+   "dst": "…元気だなあ。よし、会議に行こう。みんなは何に気づいたかな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3098,7 +3098,7 @@
   },
   "Queen's Recruit#309": {
    "src": "Meet up with the others in room W-{~} at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "W-{~} 号室 ([-{~}, {~}, {~}]) で皆と合流する。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -3108,7 +3108,7 @@
   },
   "Queen's Recruit#310": {
    "src": "Ah, good, they're here. Come in, come in. Quickly now.",
-   "dst": "",
+   "dst": "ああ、よし、来たな。入って、入って。急いで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3118,7 +3118,7 @@
   },
   "Queen's Recruit#311": {
    "src": "Are we the last ones in?",
-   "dst": "",
+   "dst": "僕たちが最後？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3128,7 +3128,7 @@
   },
   "Queen's Recruit#312": {
    "src": "That y'are. Now, Picard, mind tellin' me what was on your damned mind when you commandeered my room without sayin' a word ?!",
-   "dst": "",
+   "dst": "その通り。さて Picard、一言もなく俺の部屋を乗っ取ったとき、いったい何を考えてたのか聞かせてもらおうか？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3138,7 +3138,7 @@
   },
   "Queen's Recruit#313": {
    "src": "Ah, eheh, well I suppose it, er, may have slipped the mind... not important! We're under a time constraint!",
-   "dst": "",
+   "dst": "ああ、えへへ、まあ、その、うっかり忘れていたかもしれん… 大したことではない！時間がないのだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3148,7 +3148,7 @@
   },
   "Queen's Recruit#314": {
    "src": "We've made it this far, but we'll need to plan our next steps. Firstly, however let us start with what information we have gleaned thus far.",
-   "dst": "",
+   "dst": "ここまでは来たが、次の手を考えねば。だがまずは… これまでに得た情報から始めよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3158,7 +3158,7 @@
   },
   "Queen's Recruit#315": {
    "src": "Well, the crown certainly has money to spare! What we've seen thus far seems to rival even the richest of nobility I had the pleasure of working with in {p}.",
-   "dst": "",
+   "dst": "まあ、王家に金が有り余っているのは確かだ！これまで見たものは、{p} で私が関わった最も裕福な貴族にすら匹敵する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3168,7 +3168,7 @@
   },
   "Queen's Recruit#316": {
    "src": "And the architectrual style... it's unique. I haven't seen anything like it before. I suppose it would make sense, if the province has been closed off for so long...",
-   "dst": "",
+   "dst": "それに建築様式… 独特ね。こんなものは見たことがない。長い間閉ざされていた地方なら、当然かもしれないけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3178,7 +3178,7 @@
   },
   "Queen's Recruit#317": {
    "src": "Eh, enough of the unimportant details any of the rest o' you feelin' strange about the tournament? Seems an odd thing to invite us folks back for.",
-   "dst": "",
+   "dst": "おい、どうでもいい話はそのへんにしろ… トーナメントを妙だと思ってる奴は他にいないか？俺たちを呼び戻す理由にしちゃ変だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3188,7 +3188,7 @@
   },
   "Queen's Recruit#318": {
    "src": "I was thinking the same thing. And they're willing to pay all of us for participating, no matter how we do... I don't get why.",
-   "dst": "",
+   "dst": "僕も同じことを考えてた。しかも成績に関係なく全員に報酬を払うなんて… 理由がわからない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3198,7 +3198,7 @@
   },
   "Queen's Recruit#319": {
    "src": "Hm, well, in truth I am not overly concerned about it",
-   "dst": "",
+   "dst": "ふむ、まあ、正直に言うと私はそれほど気にしていない",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3208,7 +3208,7 @@
   },
   "Queen's Recruit#320": {
    "src": "Yes, actually, Picard, what was that back there in the dining hall? You're going to draw attention to yourself by opting out of it?",
-   "dst": "",
+   "dst": "そうだ、Picard、食堂でのあれは何だったんだ？辞退なんかしたら、かえって目立つだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3218,7 +3218,7 @@
   },
   "Queen's Recruit#321": {
    "src": "Oh, what use is there in placing me in such a combat scenario?! I'll be far more useful outside of that structure, free to look around the palace.",
-   "dst": "",
+   "dst": "おや、私を戦いの場に放り込んで何の役に立つ？！枠の外にいたほうがずっと有用だ、宮殿を自由に見て回れるからな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3228,7 +3228,7 @@
   },
   "Queen's Recruit#322": {
    "src": "And besides, they have me giving them a summary of my research notes, so it's not as though I'm free of it entirely, not to mention",
-   "dst": "",
+   "dst": "それに、研究メモの要約を提出させられているのだから、完全に自由というわけでもない、それに",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3238,7 +3238,7 @@
   },
   "Queen's Recruit#323": {
    "src": "Alright, settle down y'all! Limited time, remember? We've gone off track. They're rich, fancy, and want us fightin' for some reason. What else?",
-   "dst": "",
+   "dst": "はいはい、みんな落ち着いて！時間がないんでしょ？話がそれてる。金持ちで、派手で、なぜかあたしたちを戦わせたい。他には？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3248,7 +3248,7 @@
   },
   "Queen's Recruit#324": {
    "src": "...as I was saying before I was rudely interrupted- I don't believe there is much to be gleaned from the tournament just yet. It's a puzzle piece we'll have to connect later.",
-   "dst": "",
+   "dst": "…無礼にも遮られる前に言いかけたように… トーナメントからはまだ大した情報は得られないと思う。後でつなげるパズルの一片だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3258,7 +3258,7 @@
   },
   "Queen's Recruit#325": {
    "src": "Do we have anything on the Queen and her Sovereigns? It's an interesting governmental structure, but I suppose having a more direct line to the Queen has value for the districts.",
-   "dst": "",
+   "dst": "女王と君主たちについて何かわかった？興味深い統治体制ね。でも地区にとっては、女王に直接話が通じるのは価値があるんでしょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3268,7 +3268,7 @@
   },
   "Queen's Recruit#326": {
    "src": "Well, they're obviously putting on an act. They're definitely hiding something from us, and I don't think any of them are as happy to see us as they say they are.",
-   "dst": "",
+   "dst": "まあ、明らかに芝居だな。何か隠してるのは間違いないし、口で言うほど俺たちに会えて喜んでる奴なんて一人もいないと思う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3278,7 +3278,7 @@
   },
   "Queen's Recruit#327": {
    "src": "Yes, indeed... we were sent to Wynn as exiles, not as honored soldiers. So why are they pretending otherwise? They called us back here.",
-   "dst": "",
+   "dst": "確かに… 我々は名誉ある兵士ではなく、追放者として Wynn へ送られた。なのになぜそうでないふりを？呼び戻したのは彼らだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3288,7 +3288,7 @@
   },
   "Queen's Recruit#328": {
    "src": "Ah! Perhaps they're unaware that we've cracked that memory spell? For all they know, we still believe their lies.",
-   "dst": "",
+   "dst": "おお！記憶の呪文を破ったことを知らないのかもしれん！彼らからすれば、我々はまだ嘘を信じているのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3298,7 +3298,7 @@
   },
   "Queen's Recruit#329": {
    "src": "It'd explain some things, for certain...",
-   "dst": "",
+   "dst": "確かにそれで説明がつくね…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3308,7 +3308,7 @@
   },
   "Queen's Recruit#330": {
    "src": "So am I the only one confused by the amount of guards around?",
-   "dst": "",
+   "dst": "で、衛兵の数に戸惑ってるのは俺だけか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3318,7 +3318,7 @@
   },
   "Queen's Recruit#331": {
    "src": "You'd think that nine strangers entering the royal palace would be placed under more watchful eyes.",
-   "dst": "",
+   "dst": "見知らぬ九人が王宮に入ったら、もっと厳しく見張られると思うだろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3328,7 +3328,7 @@
   },
   "Queen's Recruit#332": {
    "src": "Now that you mention it... the only guards I saw on the way to our rooms were by the courtyard exit. There aren't any outside our rooms.",
-   "dst": "",
+   "dst": "言われてみれば… 部屋に行くまでに見た衛兵は中庭の出口のところだけだった。部屋の外には誰もいない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3338,7 +3338,7 @@
   },
   "Queen's Recruit#333": {
    "src": "...so we don't need to do the whole stealthy thing?",
-   "dst": "",
+   "dst": "…じゃあこそこそする必要なかったのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3348,7 +3348,7 @@
   },
   "Queen's Recruit#334": {
    "src": "I thought it was fun!",
-   "dst": "",
+   "dst": "あたしは楽しかったよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3368,7 +3368,7 @@
   },
   "Queen's Recruit#336": {
    "src": "Besides, they've got those two Sovereigns lookin' over us. Pretty strong, aren't they? Figure that's enough incentive not to cause trouble.",
-   "dst": "",
+   "dst": "それに、あの君主二人が俺たちを見張ってる。かなり強いだろう？騒ぎを起こさない理由には十分だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3378,7 +3378,7 @@
   },
   "Queen's Recruit#337": {
    "src": "Speakin' of the Sovereigns... and the guards by extension anyone else adept at readin' mana? It hardly feels like there's any of it in use at all!",
-   "dst": "",
+   "dst": "君主といえば… ついでに衛兵も… 誰かマナを読める人いる？ほとんど魔法が使われてない気がするんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3388,7 +3388,7 @@
   },
   "Queen's Recruit#338": {
    "src": "I was going to bring that up. I haven't seen any mages at all. The closest I've seen is the higher ranked soldiers wielding magical weapons.",
-   "dst": "",
+   "dst": "それを言おうと思ってた。魔術師を一人も見ていないの。せいぜい上位の兵士が魔法の武器を持っているくらい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3398,7 +3398,7 @@
   },
   "Queen's Recruit#339": {
    "src": "I'm not as good with reading mana, but... there's something wrong with the Sovereigns. They've got an incredibly powerful aura surrounding them. It feels... unnatural.",
-   "dst": "",
+   "dst": "僕はマナを読むのは得意じゃないけど… 君主たちは何かおかしい。ものすごく強いオーラをまとってる。なんだか… 不自然なんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3408,7 +3408,7 @@
   },
   "Queen's Recruit#340": {
    "src": "Yes, you're right. They, and the Queen, are the only ones I've seen here who possess innate magical abilities. If anything, all three of them seem closely linked in terms of energy...",
-   "dst": "",
+   "dst": "ええ、その通り。生まれつきの魔力を持っているのは、ここでは彼らと女王だけ。むしろ三人ともエネルギーの面で密接につながっているみたい…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3418,7 +3418,7 @@
   },
   "Queen's Recruit#341": {
    "src": "As interesting as that is, it doesn't leave much for the rest of us to go off of. Doctor, you're the one who organized us here. What are our plans?",
-   "dst": "",
+   "dst": "興味深いが、それだけでは我々には手がかりが少ない。博士、我々を集めたのはあなただ。計画は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3438,7 +3438,7 @@
   },
   "Queen's Recruit#343": {
    "src": "We've been running long enough, let's call it a day. Everyone, get some rest, we must be at our best performance tomorrow.",
-   "dst": "",
+   "dst": "もう十分長引いた、今日はここまでにしよう。皆、休んでくれ、明日は最高の状態でいなければ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3448,7 +3448,7 @@
   },
   "Queen's Recruit#344": {
    "src": "Let us gather here again tomorrow evening for another meeting. Goodnight, everyone.",
-   "dst": "",
+   "dst": "明日の夕方、またここに集まって会議をしよう。おやすみ、諸君。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3458,7 +3458,7 @@
   },
   "Queen's Recruit#345": {
    "src": "Make your way back to W-{~} and sleep.",
-   "dst": "",
+   "dst": "W-{~} 号室に戻って眠る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -3468,7 +3468,7 @@
   },
   "Queen's Recruit#346": {
    "src": "Those Sovereigns... they do concern me. If Fruma's leadership holds this much power, then...",
-   "dst": "",
+   "dst": "あの君主たち… 気がかりだ。Fruma の指導者がこれほどの力を持つなら…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3478,7 +3478,7 @@
   },
   "Queen's Recruit#347": {
    "src": "Hm. Perhaps our King is right not to get on their bad side.",
-   "dst": "",
+   "dst": "ふむ。我らが王が彼らの機嫌を損ねまいとするのも正しいのかもしれん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3488,7 +3488,7 @@
   },
   "Queen's Recruit#348": {
    "src": "Ah, great, now all o' you are lingerin'. Get out of my room! Not gonna get a lick o' sleep till you're gone...",
-   "dst": "",
+   "dst": "ああ、結構なこった、今度は全員居座りか。俺の部屋から出てけ！お前らがいなくならなきゃ一睡もできん…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3498,7 +3498,7 @@
   },
   "Queen's Recruit#349": {
    "src": "...damned Doctor should'a just used his own room!!",
-   "dst": "",
+   "dst": "…あの博士め、自分の部屋を使えばよかったんだ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3508,7 +3508,7 @@
   },
   "Queen's Recruit#350": {
    "src": "...sigh. What am I doing here? I should have stayed back in {p}.",
-   "dst": "",
+   "dst": "…はあ。俺は何をしてるんだ？{p} に残るべきだった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3518,7 +3518,7 @@
   },
   "Queen's Recruit#351": {
    "src": "I just hope nobody here knew me before. I'm not sure I could handle that.",
-   "dst": "",
+   "dst": "ここに昔の俺を知ってる人がいないといいが。耐えられる自信がない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3528,7 +3528,7 @@
   },
   "Queen's Recruit#352": {
    "src": "Hm... a shame I could not fight in the tournament. A monetary reward would be appreciated, given my dwindling research funds...",
-   "dst": "",
+   "dst": "ふむ… トーナメントに出られなかったのは残念だ。研究資金が減る一方だから、賞金はありがたかったのだが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3538,7 +3538,7 @@
   },
   "Queen's Recruit#353": {
    "src": "But, alas, I am no fighter. Perhaps the King would be willing to fund my future research...",
-   "dst": "",
+   "dst": "だが、ああ、私は戦士ではない。王が今後の研究に資金を出してくれるかもしれんな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3548,7 +3548,7 @@
   },
   "Queen's Recruit#354": {
    "src": "Gosh, I hope my match tomorrow goes well. I'm a bit nervous... never really dueled anyone before!",
-   "dst": "",
+   "dst": "ああ、明日の試合うまくいくといいな。ちょっと緊張する… 決闘なんてしたことないんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3558,7 +3558,7 @@
   },
   "Queen's Recruit#355": {
    "src": "yaaaawn",
-   "dst": "",
+   "dst": "ふわあぁ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3568,7 +3568,7 @@
   },
   "Queen's Recruit#356": {
    "src": "What? It's been a long day.",
-   "dst": "",
+   "dst": "何だよ？長い一日だったんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3578,7 +3578,7 @@
   },
   "Queen's Recruit#357": {
    "src": "That magic... why does it feel familiar? I can't pinpoint what it is, but...",
-   "dst": "",
+   "dst": "あの魔力… なぜ見覚えがあるの？何なのかはっきりしないけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3588,7 +3588,7 @@
   },
   "Queen's Recruit#358": {
    "src": "Let's just go get some sleep.",
-   "dst": "",
+   "dst": "とにかく寝よう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3598,7 +3598,7 @@
   },
   "Queen's Recruit#359": {
    "src": "Goodnight, {u}. I hope you'll sleep better than I will.",
-   "dst": "",
+   "dst": "おやすみ、{u}。僕よりよく眠れるといいね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3608,7 +3608,7 @@
   },
   "Queen's Recruit#360": {
    "src": "See you in the morning.",
-   "dst": "",
+   "dst": "また朝に。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3618,7 +3618,7 @@
   },
   "Queen's Recruit#361": {
    "src": "{u}! We're going to miss the first round if you sleep any longer!",
-   "dst": "",
+   "dst": "{u}！これ以上寝てたら一回戦に遅れるよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3628,7 +3628,7 @@
   },
   "Queen's Recruit#362": {
    "src": "Ah, you're up! Good morning.",
-   "dst": "",
+   "dst": "あ、起きた！おはよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3638,7 +3638,7 @@
   },
   "Queen's Recruit#363": {
    "src": "Sleep well?",
-   "dst": "",
+   "dst": "よく眠れた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3648,7 +3648,7 @@
   },
   "Queen's Recruit#364": {
    "src": "Well, I feel your pain. I don't think I got more than an hour or two. I kept... I should have expected it'd be worse here. I just hoped... well, it is what it is.",
-   "dst": "",
+   "dst": "そうか、わかるよ。僕も一、二時間しか眠れなかった。ずっと… ここではもっとひどくなるって予想すべきだった。ただ願ってたんだ… まあ、仕方ない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3658,7 +3658,7 @@
   },
   "Queen's Recruit#365": {
    "src": "But anyway, it's good you're up. A soldier just came by to tell us to head over to the tournament arena.",
-   "dst": "",
+   "dst": "とにかく、起きてくれてよかった。さっき兵士が来て、トーナメント会場へ行くよう言われたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3668,7 +3668,7 @@
   },
   "Queen's Recruit#366": {
    "src": "You... no, they just... knocked and slid the notice under the door.",
-   "dst": "",
+   "dst": "君… いや、ただ… ノックしてドアの下から通知を差し込んでいったんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3678,7 +3678,7 @@
   },
   "Queen's Recruit#367": {
    "src": "Was someone in our room during the night...?",
-   "dst": "",
+   "dst": "夜の間に誰か部屋に入ったのかな…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3688,7 +3688,7 @@
   },
   "Queen's Recruit#368": {
    "src": "I don't... like... that. Not at all.",
-   "dst": "",
+   "dst": "それは… 嫌だな… 本当に。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3698,7 +3698,7 @@
   },
   "Queen's Recruit#369": {
    "src": "Still. We need to head over to the arena. Apparently, it's in the northern part of the palace.",
-   "dst": "",
+   "dst": "とにかく。闘技場に行かないと。宮殿の北側にあるらしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3708,7 +3708,7 @@
   },
   "Queen's Recruit#370": {
    "src": "Find the location of the tournament in the northern side of the palace at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "宮殿北側の [-{~}, {~}, {~}] でトーナメント会場を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -3718,7 +3718,7 @@
   },
   "Queen's Recruit#371": {
    "src": "Well, well. Looks like we'll finally get to test which o' us is stronger, eh, captain?",
-   "dst": "",
+   "dst": "さてさて。ようやくどっちが強いか試せるな、隊長？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3728,7 +3728,7 @@
   },
   "Queen's Recruit#372": {
    "src": "Oh, finally? I wasn't aware there was even a question! Lieutenant, do you truly think you stand a chance against me?",
-   "dst": "",
+   "dst": "おや、ようやく？議論の余地があるとは知らなかった！中尉、本気で私に勝てると思っているのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3738,7 +3738,7 @@
   },
   "Queen's Recruit#373": {
    "src": "Ah, enough o' your posturin', Kymer! You might be all up n' fancy these days, but I still remember when you were but a rookie, all afraid of a lil' old zombie!",
-   "dst": "",
+   "dst": "ああ、気取るのはよせ、Kymer！今は立派になったもんだが、お前がちっぽけな老いぼれゾンビにびびってた新米の頃を覚えてるぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3748,7 +3748,7 @@
   },
   "Queen's Recruit#374": {
    "src": "Ha! Ah, good times. Good times. You'll get your recognition too one of these days, you know. Maybe you'll even surpass my rank someday!",
-   "dst": "",
+   "dst": "はっ！ああ、懐かしい。懐かしいな。君もいつか認められる日が来るさ。いずれ私の階級を超えるかもしれんぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3758,7 +3758,7 @@
   },
   "Queen's Recruit#375": {
    "src": "Eh, you say that every time. Besides, the lower ranks suit me well. Don't think I'd do well with all that \"responsibility\" the big wigs put on your shoulders.",
-   "dst": "",
+   "dst": "へっ、毎回そう言うな。それに下の階級のほうが性に合ってる。お偉いさんが背負わせる「責任」なんてのは向いてない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3768,7 +3768,7 @@
   },
   "Queen's Recruit#376": {
    "src": "...all that bein' said, you're still goin' down when it's our go! I got some new tricks since the last time we fought, so don't get too cocky!",
-   "dst": "",
+   "dst": "…とはいえ、俺たちの番になったらお前は負けだ！前回やり合ってから新しい技を覚えたんだ、調子に乗るなよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3778,7 +3778,7 @@
   },
   "Queen's Recruit#377": {
    "src": "Ha! Then I look forward to seeing them.",
-   "dst": "",
+   "dst": "はっ！楽しみにしていよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3788,7 +3788,7 @@
   },
   "Queen's Recruit#378": {
    "src": "If you're looking for the tournament arena, go down this corridor then turn to the left.",
-   "dst": "",
+   "dst": "トーナメント会場をお探しなら、この廊下を進んで左に曲がってください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3798,7 +3798,7 @@
   },
   "Queen's Recruit#379": {
    "src": "The tournament arena is further down the corridor.",
-   "dst": "",
+   "dst": "トーナメント会場はこの廊下の先です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3808,7 +3808,7 @@
   },
   "Queen's Recruit#380": {
    "src": "This area is unfortunately not accessible at this moment.",
-   "dst": "",
+   "dst": "申し訳ありませんが、この区域は現在立ち入りできません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3818,7 +3818,7 @@
   },
   "Queen's Recruit#381": {
    "src": "This is Her Majesty's own personal quarter.",
-   "dst": "",
+   "dst": "ここは女王陛下の私室です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3828,7 +3828,7 @@
   },
   "Queen's Recruit#382": {
    "src": "I'm afraid I can't let you in just yet. Not until",
-   "dst": "",
+   "dst": "残念ですが、まだお通しできません。それまでは",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3838,7 +3838,7 @@
   },
   "Queen's Recruit#383": {
    "src": "Yes, yes, my research notes, I am aware. It has been sorted already. May I visit the library now?",
-   "dst": "",
+   "dst": "はいはい、研究メモだろう、わかっている。もう済ませた。図書館へ行ってもいいかね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3848,7 +3848,7 @@
   },
   "Queen's Recruit#384": {
    "src": "Don't interrupt me. You can't enter until this round of tournament matches concludes. Her Majesty's orders.",
-   "dst": "",
+   "dst": "遮らないでください。今回の試合が終わるまで入れません。女王陛下のご命令です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3858,7 +3858,7 @@
   },
   "Queen's Recruit#385": {
    "src": "Pah. Fine! Fine, yes, I'll wait. Good grief.",
-   "dst": "",
+   "dst": "ふん。わかった！わかったとも、待つさ。やれやれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3868,7 +3868,7 @@
   },
   "Queen's Recruit#386": {
    "src": "You'd think I would have some level of freedom, but no! What does it matter if I don't want to watch the matches if there's nothing else to do?!",
-   "dst": "",
+   "dst": "少しは自由があると思うだろう、だがない！他にすることがないのに、試合を見たくないくらい何だというのだ？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3878,7 +3878,7 @@
   },
   "Queen's Recruit#387": {
    "src": "Oh, just go and get your match over with. Quit stalling.",
-   "dst": "",
+   "dst": "ああ、さっさと試合を済ませてきたまえ。ぐずぐずするな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3888,7 +3888,7 @@
   },
   "Queen's Recruit#388": {
    "src": "Hey! No entry!",
-   "dst": "",
+   "dst": "おい！立入禁止だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3898,7 +3898,7 @@
   },
   "Queen's Recruit#389": {
    "src": "Just head down these stairs to find the tournament arena.",
-   "dst": "",
+   "dst": "この階段を下りればトーナメント会場です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3908,7 +3908,7 @@
   },
   "Queen's Recruit#390": {
    "src": "The match ups will be announced once everyone is present.",
-   "dst": "",
+   "dst": "全員そろい次第、組み合わせを発表します。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3918,7 +3918,7 @@
   },
   "Queen's Recruit#391": {
    "src": "Uh. Sovereign... Majin? Sovereign Majin. We're all here.",
-   "dst": "",
+   "dst": "あー。君主… Majin？君主 Majin。全員そろったぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3928,7 +3928,7 @@
   },
   "Queen's Recruit#392": {
    "src": "My, it's about time! As guests of the crown, it would do you well to arrive on time for such things, hm? Tardiness is not a good look.",
-   "dst": "",
+   "dst": "おや、ようやくか！王家の客人たる者、こういう場には時間通りに来るべきではないかね？遅刻は見苦しいぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3938,7 +3938,7 @@
   },
   "Queen's Recruit#393": {
    "src": "Our apologies, Sovereign. It would seem we were not given the time to be here in advance a humble mistake, I'm certain.",
-   "dst": "",
+   "dst": "申し訳ありません、君主殿。どうやら前もって来る時間を知らされていなかったようで… ささいな手違いでしょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3948,7 +3948,7 @@
   },
   "Queen's Recruit#394": {
    "src": "Ah, the incompetence of our lessers... it never ceases to amaze! Nevertheless, the duty of arriving on schedule remains on your shoulders. Do better next time, would you?",
-   "dst": "",
+   "dst": "ああ、下々の者の無能さ… 本当に驚かされる！それでも、時間通りに来る責任は諸君にある。次はしっかりしてくれたまえ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3958,7 +3958,7 @@
   },
   "Queen's Recruit#395": {
    "src": "Now, I am a very busy man, so I will keep this brief. As Her Majesty has already explained, this tournament will consist of multiple duels! You are not required to watch each match.",
-   "dst": "",
+   "dst": "さて、私は非常に忙しい身なので手短に済ませよう。陛下がすでに説明された通り、このトーナメントは複数の決闘で構成される！各試合を観戦する必要はない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3968,7 +3968,7 @@
   },
   "Queen's Recruit#396": {
    "src": "The standard rules apply. No killing, no maiming, no attacking anyone outside the arena though, do try, I'd find much pleasure in watching you fail!",
-   "dst": "",
+   "dst": "通常のルールが適用される。殺しも、重傷を負わせるのも、場外への攻撃も禁止… まあ、やってみたまえ、失敗するのを見るのは実に愉快だろう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3978,7 +3978,7 @@
   },
   "Queen's Recruit#397": {
    "src": "With that settled, are there any questions? I would certainly hope not, I have much to return to once this is",
-   "dst": "",
+   "dst": "では、質問はあるかね？ないことを願うよ、これが終わったら戻らねばならん仕事が山ほど",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3988,7 +3988,7 @@
   },
   "Queen's Recruit#398": {
    "src": "Ah, I do I am not participating in the tournament. I had been told to expect some alternative today.",
-   "dst": "",
+   "dst": "ああ、あります… 私はトーナメントに参加しません。今日は代わりの何かがあると聞いていたのですが。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -3998,7 +3998,7 @@
   },
   "Queen's Recruit#399": {
    "src": "Oh, yes... you. What did you say you were again, a... researcher?",
-   "dst": "",
+   "dst": "ああ、そう… 君か。何と言ったかな、ええと… 研究者？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4008,7 +4008,7 @@
   },
   "Queen's Recruit#400": {
    "src": "Ahahaha! Oh, and they selected you as one of your province's greatest? Don't make me laugh! Ahahahahaha!",
-   "dst": "",
+   "dst": "あはははは！おや、それで君が地方でも指折りの者に選ばれたと？笑わせないでくれたまえ！あはははははは！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4018,7 +4018,7 @@
   },
   "Queen's Recruit#401": {
    "src": "Ah, but it's just as well, I suppose. Nine certainly doesn't fit cleanly for such a tournament. Better a researcher than a ninth fighter!",
-   "dst": "",
+   "dst": "ああ、だがそれも好都合か。九人ではトーナメントにきれいに収まらん。九人目の戦士より研究者のほうがましだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4038,7 +4038,7 @@
   },
   "Queen's Recruit#403": {
    "src": "Now! Any more questions?",
-   "dst": "",
+   "dst": "さて！他に質問は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4048,7 +4048,7 @@
   },
   "Queen's Recruit#404": {
    "src": "Yes, actua",
-   "dst": "",
+   "dst": "ええ、実は",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4058,7 +4058,7 @@
   },
   "Queen's Recruit#405": {
    "src": "Excellent! The first match up appears to be... {u} and Mel. Step forward, the two of you.",
-   "dst": "",
+   "dst": "結構！最初の組み合わせは… {u} と Mel だ。二人とも前へ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4068,7 +4068,7 @@
   },
   "Queen's Recruit#406": {
    "src": "That's me!",
-   "dst": "",
+   "dst": "あたしだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4078,7 +4078,7 @@
   },
   "Queen's Recruit#407": {
    "src": "How wonderful. Mel and {u}.",
-   "dst": "",
+   "dst": "素晴らしい。Mel と {u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4088,7 +4088,7 @@
   },
   "Queen's Recruit#408": {
    "src": "Well, hurry up now, get prepared! Choose a corridor each, north or south, and get to fighting already!",
-   "dst": "",
+   "dst": "さあ急いで準備したまえ！北か南の通路をそれぞれ選んで、さっさと戦いたまえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4098,7 +4098,7 @@
   },
   "Queen's Recruit#409": {
    "src": "As for the rest of you... oh, I can't be bothered. Read your matchups on the board yourselves.",
-   "dst": "",
+   "dst": "他の者は… ああ、面倒だ。組み合わせは掲示板で各自確認したまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4108,7 +4108,7 @@
   },
   "Queen's Recruit#410": {
    "src": "Uh... alrighty then. I guess I'll choose this one.",
-   "dst": "",
+   "dst": "え… わかったよ。じゃあこっちにする。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4118,7 +4118,7 @@
   },
   "Queen's Recruit#411": {
    "src": "Begin your fight against Mel in the southern waiting room.",
-   "dst": "",
+   "dst": "南の控え室で Mel との戦いを始める。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4128,7 +4128,7 @@
   },
   "Queen's Recruit#412": {
    "src": "Hey, good luck out there!",
-   "dst": "",
+   "dst": "ねえ、頑張ってね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4138,7 +4138,7 @@
   },
   "Queen's Recruit#413": {
    "src": "Just 'cause we've got a mission here, doesn't mean I'll go easy on ya!",
-   "dst": "",
+   "dst": "任務があるからって、手加減はしないよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4148,7 +4148,7 @@
   },
   "Queen's Recruit#414": {
    "src": "Ready to go?! Let's show them what we're made of!",
-   "dst": "",
+   "dst": "準備はいい？！あたしたちの実力を見せてやろう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4158,7 +4158,7 @@
   },
   "Queen's Recruit#415": {
    "src": "Phew! What a fight! Got my blood rushin'!",
-   "dst": "",
+   "dst": "ふう！すごい戦いだった！血が騒いだよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4168,7 +4168,7 @@
   },
   "Queen's Recruit#416": {
    "src": "What'd you think of my trick? Pretty good, right? Makes me less of a sittin' duck in combat!",
-   "dst": "",
+   "dst": "あたしの技どうだった？なかなかでしょ？これで戦闘中いい的にならずに済むんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4178,7 +4178,7 @@
   },
   "Queen's Recruit#417": {
    "src": "Ah, I didn't think I was gonna be winnin' anything, really. But it was fun givin' it a shot.",
-   "dst": "",
+   "dst": "まあ、勝てるとは思ってなかったけどね。でも挑戦するのは楽しかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4188,7 +4188,7 @@
   },
   "Queen's Recruit#418": {
    "src": "{u} has bested Mel in the first round, and will progress to the next!",
-   "dst": "",
+   "dst": "{u} が一回戦で Mel に勝利し、次の試合へ進みます！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4198,7 +4198,7 @@
   },
   "Queen's Recruit#419": {
    "src": "Hm, so what now?",
-   "dst": "",
+   "dst": "うーん、で、次は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4208,7 +4208,7 @@
   },
   "Queen's Recruit#420": {
    "src": "You will be permitted to remain in the palace for the duration of the tournament. You will be paid for your participation at the end of your stay.",
-   "dst": "",
+   "dst": "トーナメントの間は宮殿に滞在していただけます。参加報酬は滞在の最後にお支払いします。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4218,7 +4218,7 @@
   },
   "Queen's Recruit#421": {
    "src": "I figure that makes sense. I wonder when Lanu's match is...",
-   "dst": "",
+   "dst": "まあ、そうだよね。Lanu の試合はいつかな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4228,7 +4228,7 @@
   },
   "Queen's Recruit#422": {
    "src": "{u}, congratulations on your victory. You will be notified when your next match is. In the meantime, feel free to rest.",
-   "dst": "",
+   "dst": "{u}、勝利おめでとうございます。次の試合は追ってお知らせします。それまでご自由にお休みください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4238,7 +4238,7 @@
   },
   "Queen's Recruit#423": {
    "src": "Leave the arena waiting room and find Picard at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "闘技場の控え室を出て、[-{~}, {~}, {~}] で Picard を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4248,7 +4248,7 @@
   },
   "Queen's Recruit#424": {
    "src": "It was a good fight! But you'd better win in my honor now, y'hear?",
-   "dst": "",
+   "dst": "いい勝負だった！あたしの分まで勝ってよね、いい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4258,7 +4258,7 @@
   },
   "Queen's Recruit#425": {
    "src": "We will announce your next match later. Please feel free to rest or enjoy the palace in the meantime.",
-   "dst": "",
+   "dst": "次の試合は後ほど発表します。それまでご自由にお休みいただくか、宮殿をお楽しみください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4268,7 +4268,7 @@
   },
   "Queen's Recruit#426": {
    "src": "Ah, {u}, I saw the match! Very good technique, better than many soldiers I've seen pass through {p} in my time.",
-   "dst": "",
+   "dst": "おお、{u}、試合を見たぞ！実に見事な技だ、私が {p} で見てきた多くの兵士よりも上だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4278,7 +4278,7 @@
   },
   "Queen's Recruit#427": {
    "src": "I suppose I'm not surprised! When the tournament was announced, you came to mind as a potential winner. You, and one other person, that is.",
-   "dst": "",
+   "dst": "驚きはしないがね！トーナメントが発表されたとき、優勝候補として君が頭に浮かんだ。君と、もう一人な。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4288,7 +4288,7 @@
   },
   "Queen's Recruit#428": {
    "src": "Hm... maybe I could start taking bets on who will win... ah, no, no, I'm far too busy. Stay focused, Picard.",
-   "dst": "",
+   "dst": "ふむ… 誰が勝つか賭けを始めるのも… いや、いかんいかん、忙しすぎる。集中しろ、Picard。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4298,7 +4298,7 @@
   },
   "Queen's Recruit#429": {
    "src": "Hm? Oh dear, I'd forgotten you were here! Yes, I was going to do something...",
-   "dst": "",
+   "dst": "ん？おや、君がいるのを忘れていた！そうだ、何かしようとしていたんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4308,7 +4308,7 @@
   },
   "Queen's Recruit#430": {
    "src": "Oh! The library! Can you believe it, that damnable guard finally stepped away! It's ridiculous, really who even cares to guard a library of all things?!",
-   "dst": "",
+   "dst": "おお！図書館だ！信じられるか、あの忌々しい衛兵がついに離れたのだ！馬鹿げている… 図書館なんぞ誰が守りたがる？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4318,7 +4318,7 @@
   },
   "Queen's Recruit#431": {
    "src": "But. But but but. The way is open, and although the tournament round is still ongoing, I'd like to take the opportunity while I can!",
-   "dst": "",
+   "dst": "だが。だがだがだが。道は開いた、まだ試合は続いているが、この機会を逃したくない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4328,7 +4328,7 @@
   },
   "Queen's Recruit#432": {
    "src": "Care to join me? I'm sure there's something you'll find interesting in there. What sorts of knowledge have the Frumans kept hidden in these walls...",
-   "dst": "",
+   "dst": "一緒に来るかね？君が興味を持つものもきっとある。Fruma の者がこの壁の中にどんな知識を隠してきたのか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4338,7 +4338,7 @@
   },
   "Queen's Recruit#433": {
    "src": "Well, are you coming? Come now, quickly, before the guard returns!",
-   "dst": "",
+   "dst": "さあ、来るのか？ほら、急いで、衛兵が戻る前に！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4348,7 +4348,7 @@
   },
   "Queen's Recruit#434": {
    "src": "Follow Picard into the library.",
-   "dst": "",
+   "dst": "Picard について図書館に入る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4358,7 +4358,7 @@
   },
   "Queen's Recruit#435": {
    "src": "Goodness, where to even begin? There's so much here...",
-   "dst": "",
+   "dst": "やれやれ、どこから手をつけたものか？ここには山ほどある…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4368,7 +4368,7 @@
   },
   "Queen's Recruit#436": {
    "src": "I hereby introduce to you The Evermoving Zephyr, the ruler of the {p}, the latest in the line of one of Fruma's great noble houses! His lordship, Sovereign Zhiraok Nasin!",
-   "dst": "",
+   "dst": "ここにご紹介いたします、永遠に吹く風、{p} の統治者、Fruma の名家の当代当主！閣下、君主 Zhiraok Nasin！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4378,7 +4378,7 @@
   },
   "Queen's Recruit#437": {
    "src": "...and that we're rifling through the Cursed instead of our own citizens is an incalculable risk!",
-   "dst": "",
+   "dst": "…しかも自国民ではなく呪われし者を漁るなど、計り知れない危険だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4388,7 +4388,7 @@
   },
   "Queen's Recruit#438": {
    "src": "What was that?! Quickly, quickly now, follow me!",
-   "dst": "",
+   "dst": "今のは何だ？！急げ、急いで、ついて来い！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4398,7 +4398,7 @@
   },
   "Queen's Recruit#439": {
    "src": "Do you have eyes on the speaker? Who is it?",
-   "dst": "",
+   "dst": "話している者が見えるか？誰だ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4408,7 +4408,7 @@
   },
   "Queen's Recruit#440": {
    "src": "I can't find her angle for this hunt.",
-   "dst": "",
+   "dst": "彼女の狩りの角度が読めん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4418,7 +4418,7 @@
   },
   "Queen's Recruit#441": {
    "src": "Ah, it's like I'm talking with her again! It's so nostalgic to speak with a clueless Nasin trying their hardest, in spite of their incompe",
-   "dst": "",
+   "dst": "ああ、まるで彼女とまた話しているようだ！何も知らない Nasin が必死になるのは実に懐かしい、その無能さにもかかわら",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4428,7 +4428,7 @@
   },
   "Queen's Recruit#442": {
    "src": "I'M SORRY, YOU IGNORANT INTEGRAND? You really think now is the time for- Rrgh... Why. Do I even bother.",
-   "dst": "",
+   "dst": "何だと、この無知な被積分関数め？今がそんな時だと本気で… ぐぬ… なぜ。私はいちいち相手をするんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4438,7 +4438,7 @@
   },
   "Queen's Recruit#443": {
    "src": "Why, indeed! It truly is a bad habit. Something to work on while your seniors do the important work, hm?",
-   "dst": "",
+   "dst": "まったくだ！実に悪い癖だよ。先輩方が大事な仕事をしている間に直しておきたまえ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4448,7 +4448,7 @@
   },
   "Queen's Recruit#444": {
    "src": "Speaking of, I must put forth that I do find this all a bit strange. We most certainly aren't lacking in strength here, so why bother with the exiles?",
-   "dst": "",
+   "dst": "ところで、正直言ってこの件は少し妙だと思うのだがね。ここは力に困っていないのに、なぜわざわざ追放者を？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4458,7 +4458,7 @@
   },
   "Queen's Recruit#445": {
    "src": "...sigh... The risk factor is much greater than I'd bet on. She has to know more than we do, so maybe we'll get a summation later.",
-   "dst": "",
+   "dst": "…はあ… リスク要因は私の見積もりよりずっと大きい。彼女は我々より多くを知っているはずだ、後でその総和を聞けるかもしれん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4468,7 +4468,7 @@
   },
   "Queen's Recruit#446": {
    "src": "Are you two done?",
-   "dst": "",
+   "dst": "話は終わった？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4478,7 +4478,7 @@
   },
   "Queen's Recruit#447": {
    "src": "Ah, there she is. Fashionably late as always!",
-   "dst": "",
+   "dst": "ああ、来たか。相変わらずおしゃれな遅刻だね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4488,7 +4488,7 @@
   },
   "Queen's Recruit#448": {
    "src": "Hm. If anything, I was early.",
-   "dst": "",
+   "dst": "ふん。むしろ早いくらい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4498,7 +4498,7 @@
   },
   "Queen's Recruit#449": {
    "src": "I'd say your timing was golden- if you're here for that summation I mentioned, and this isn't anything else.",
-   "dst": "",
+   "dst": "タイミングは黄金比だと言いたいところだ… 私の言った総和のために来たのならな、他の用でなければ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4508,7 +4508,7 @@
   },
   "Queen's Recruit#450": {
    "src": "It's the former. But first, have you been watching the battles? Do any of the contestants stick out to you?",
-   "dst": "",
+   "dst": "前者よ。でもその前に、試合は見ていた？目立つ参加者はいた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4518,7 +4518,7 @@
   },
   "Queen's Recruit#451": {
    "src": "Stick out? Hardly. Thus far, I have been thoroughly unimpressed.",
-   "dst": "",
+   "dst": "目立つ？まさか。今のところ、まったく感心しないね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4528,7 +4528,7 @@
   },
   "Queen's Recruit#452": {
    "src": "Naturally you would be. I've seen some generally promising things, but I need to know the expected solution to narrow the pool",
-   "dst": "",
+   "dst": "お前ならそうだろう。私は有望そうなのをいくつか見たが、候補を絞るには期待される解を知る必要が",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4538,7 +4538,7 @@
   },
   "Queen's Recruit#453": {
    "src": "Ah, ah! Settle down, Nasin, your betters are speaking. Calculate yourself out of dead last, first.",
-   "dst": "",
+   "dst": "おっと、おっと！落ち着きたまえ Nasin、目上が話しているのだ。まずは計算で最下位から抜け出すことだね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4548,7 +4548,7 @@
   },
   "Queen's Recruit#454": {
    "src": "Later, then. We have problems. The contestants have been sneaking around. And the doctor has been taking meticulous notes.",
-   "dst": "",
+   "dst": "それは後で。問題があるの。参加者たちがこそこそ嗅ぎ回ってる。それに博士が綿密なメモを取っているわ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4558,7 +4558,7 @@
   },
   "Queen's Recruit#455": {
    "src": "...looks like you letting him sit out the problem was a miscalculation, huh?",
-   "dst": "",
+   "dst": "…あいつを問題から外したのは計算違いだったようだな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4568,7 +4568,7 @@
   },
   "Queen's Recruit#456": {
    "src": "For once, we appear to be in agreement. What a pity, what a hassle... it hardly seems worth the effort to me.",
-   "dst": "",
+   "dst": "珍しく意見が合ったね。なんとも残念、なんとも面倒… 私にはその労力に見合うとは思えんがね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4578,7 +4578,7 @@
   },
   "Queen's Recruit#457": {
    "src": "It will be. But I've spent too much time here already. You'll have to wait for answers.",
-   "dst": "",
+   "dst": "見合うわ。でもここに長居しすぎた。答えはもう少し待って。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4588,7 +4588,7 @@
   },
   "Queen's Recruit#458": {
    "src": "Of course. How much more irrational can we get, I wonder.",
-   "dst": "",
+   "dst": "もちろん。どこまで不合理になれるのやら。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4598,7 +4598,7 @@
   },
   "Queen's Recruit#459": {
    "src": "If you'd like something to look out for, one of the more promising candidates is set to have a match soon. Go watch it.",
-   "dst": "",
+   "dst": "注目したいなら、有望な候補の一人がまもなく試合をするわ。見に行きなさい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4608,7 +4608,7 @@
   },
   "Queen's Recruit#460": {
    "src": "A joy as always. Well, you heard her, Nasin! Chop chop, off to the stands we go!",
-   "dst": "",
+   "dst": "相変わらず楽しいね。さあ、聞いただろう Nasin！さっさと観覧席へ行こうじゃないか！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4618,7 +4618,7 @@
   },
   "Queen's Recruit#461": {
    "src": "...so not even the Sovereigns know what's happening. Fascinating. Very fascinating.",
-   "dst": "",
+   "dst": "…君主たちですら何が起きているか知らないのか。興味深い。実に興味深い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4628,7 +4628,7 @@
   },
   "Queen's Recruit#462": {
    "src": "And there was a third! Who were they? Another Sovereign...? Damn it, damn it all, how did I not notice?",
-   "dst": "",
+   "dst": "しかも三人目がいた！誰だったのだ？別の君主…？くそ、くそっ、なぜ気づかなかった？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4638,7 +4638,7 @@
   },
   "Queen's Recruit#463": {
    "src": "Well, they appear to be onto us. No matter. We'll need to be more careful.",
-   "dst": "",
+   "dst": "どうやら我々は目をつけられたらしい。構わん。もっと慎重にならねば。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4648,7 +4648,7 @@
   },
   "Queen's Recruit#464": {
    "src": "You'd best get back to the arena. In the meantime, I'll keep searching here... there must be something useful!",
-   "dst": "",
+   "dst": "君は闘技場に戻ったほうがいい。その間、私はここを探し続ける… 何か役立つものがあるはずだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4658,7 +4658,7 @@
   },
   "Queen's Recruit#465": {
    "src": "Leave the library.",
-   "dst": "",
+   "dst": "図書館を出る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4668,7 +4668,7 @@
   },
   "Queen's Recruit#466": {
    "src": "...hm? Oh, yes, fine, I'll tell the rest about what we heard. After I'm done here, of course.",
-   "dst": "",
+   "dst": "…ん？ああ、わかった、聞いたことは他の者に伝える。ここが終わってから、もちろんな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4678,7 +4678,7 @@
   },
   "Queen's Recruit#467": {
    "src": "The first round of the tournament has concluded!",
-   "dst": "",
+   "dst": "トーナメントの一回戦が終了しました！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4688,7 +4688,7 @@
   },
   "Queen's Recruit#468": {
    "src": "The names that will proceed to the next round... {u}! Tasim! Reynauld! Kymer!",
-   "dst": "",
+   "dst": "次の試合に進むのは… {u}！Tasim！Reynauld！Kymer！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4698,7 +4698,7 @@
   },
   "Queen's Recruit#469": {
    "src": "{u}, your match will begin shortly. Your opponent is already in the waiting room.",
-   "dst": "",
+   "dst": "{u}、まもなく試合が始まります。対戦相手はすでに控え室にいます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4708,7 +4708,7 @@
   },
   "Queen's Recruit#470": {
    "src": "Make your way to the arena.",
-   "dst": "",
+   "dst": "闘技場へお進みください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4718,7 +4718,7 @@
   },
   "Queen's Recruit#471": {
    "src": "Begin your next duel in the arena down the stairs.",
-   "dst": "",
+   "dst": "階段下の闘技場で次の決闘を始める。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4728,7 +4728,7 @@
   },
   "Queen's Recruit#472": {
    "src": "Please make your way to the arena by following the stairs down.",
-   "dst": "",
+   "dst": "階段を下りて闘技場へお進みください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4738,7 +4738,7 @@
   },
   "Queen's Recruit#473": {
    "src": "Please go to the waiting room and prepare for the battle.",
-   "dst": "",
+   "dst": "控え室へ行き、戦いの準備をしてください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4748,7 +4748,7 @@
   },
   "Queen's Recruit#474": {
    "src": "Ah, it's you.",
-   "dst": "",
+   "dst": "ああ、君か。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4758,7 +4758,7 @@
   },
   "Queen's Recruit#475": {
    "src": "Well, you'll likely prove more of a challenge than Linton, that's for sure.",
-   "dst": "",
+   "dst": "まあ、Linton よりは手ごたえがありそうだ、それは確かだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4768,7 +4768,7 @@
   },
   "Queen's Recruit#476": {
    "src": "You've come a long way since {p}, haven't you? Well, so have I! Let's battle.",
-   "dst": "",
+   "dst": "{p} の頃からずいぶん成長したんじゃないか？まあ、俺もだ！戦おう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4778,7 +4778,7 @@
   },
   "Queen's Recruit#477": {
    "src": "The battle is decided! {u} has come out victorious.",
-   "dst": "",
+   "dst": "勝負あり！{u} の勝利です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4788,7 +4788,7 @@
   },
   "Queen's Recruit#478": {
    "src": "Ah... good fighting, {u}. I even used some of my most powerful arrows.",
-   "dst": "",
+   "dst": "ああ… いい戦いだった、{u}。最強の矢まで使ったのにな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4798,7 +4798,7 @@
   },
   "Queen's Recruit#479": {
    "src": "Reynauld, you have been eliminated.",
-   "dst": "",
+   "dst": "Reynauld、あなたは敗退です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4808,7 +4808,7 @@
   },
   "Queen's Recruit#480": {
    "src": "I know, I know. You were a worthy opponent, {u}. Now, you'll be winning this whole thing, yes?",
-   "dst": "",
+   "dst": "わかってる、わかってる。手ごわい相手だったよ、{u}。このまま全部勝つんだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4818,7 +4818,7 @@
   },
   "Queen's Recruit#481": {
    "src": "{u}, congratulations on reaching the finals. All other opponents have been defeated, except for you and your fellow finalist.",
-   "dst": "",
+   "dst": "{u}、決勝進出おめでとうございます。あなたともう一人の決勝進出者を除き、全員が敗れました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4828,7 +4828,7 @@
   },
   "Queen's Recruit#482": {
    "src": "Hmph. That will be announced shortly. Please make your way to the courtyard and await further instructions.",
-   "dst": "",
+   "dst": "ふん。それはまもなく発表されます。中庭へ行き、次の指示をお待ちください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4838,7 +4838,7 @@
   },
   "Queen's Recruit#483": {
    "src": "Return to the courtyard at [-{~}, {~}, {~}] and find other contestants.",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}] の中庭に戻り、他の参加者を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -4848,7 +4848,7 @@
   },
   "Queen's Recruit#484": {
    "src": "I did well enough, I suppose. I'll be glad for this to all be over, anyway.",
-   "dst": "",
+   "dst": "まあ、よくやったほうだろう。とにかく全部終わってくれたらありがたい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4858,7 +4858,7 @@
   },
   "Queen's Recruit#485": {
    "src": "Please make your way to the courtyard and await further instructions.",
-   "dst": "",
+   "dst": "中庭へ行き、次の指示をお待ちください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4868,7 +4868,7 @@
   },
   "Queen's Recruit#486": {
    "src": "{u}, you return! Well, how did your match go?",
-   "dst": "",
+   "dst": "{u}、戻ったか！で、試合はどうだった？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4878,7 +4878,7 @@
   },
   "Queen's Recruit#487": {
    "src": "You? I suppose that would make sense. No offense intended, Reynauld, but I would have bet on {u} if I had the chance.",
-   "dst": "",
+   "dst": "君が？まあ納得だ。悪気はないがね Reynauld、賭けられるなら私は {u} に賭けていた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4888,7 +4888,7 @@
   },
   "Queen's Recruit#488": {
    "src": "Ha. For me, certainly! It felt like I could barely make a dent in your stamina.",
-   "dst": "",
+   "dst": "はっ。俺にとっては確かに手ごわかった！体力を削れた気がまるでしなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4898,7 +4898,7 @@
   },
   "Queen's Recruit#489": {
    "src": "Yes, yes, congratulations are in order, and all that we have problems.",
-   "dst": "",
+   "dst": "はいはい、おめでとう、何やかんや… 問題が起きた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4908,7 +4908,7 @@
   },
   "Queen's Recruit#490": {
    "src": "It was problem enough that he was called here in the first place... to think, he could",
-   "dst": "",
+   "dst": "そもそも彼がここに呼ばれたこと自体が問題だった… まさか、彼が",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4918,7 +4918,7 @@
   },
   "Queen's Recruit#491": {
    "src": "That is enough about the tournament. I don't want to hear about it anymore. The doctor is right.",
-   "dst": "",
+   "dst": "トーナメントの話はもう十分。これ以上聞きたくないわ。博士の言う通りよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4928,7 +4928,7 @@
   },
   "Queen's Recruit#492": {
    "src": "Yes, well, it's not your honour on the line... but fine, I admit, this third Sovereign is... troubling.",
-   "dst": "",
+   "dst": "ああ、まあ、懸かっているのは君の名誉ではないからな… だがいい、認めよう、三人目の君主は… 厄介だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4938,7 +4938,7 @@
   },
   "Queen's Recruit#493": {
    "src": "Hm. Have we been able to find the information we needed?",
-   "dst": "",
+   "dst": "ふむ。必要な情報は見つかったのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4948,7 +4948,7 @@
   },
   "Queen's Recruit#494": {
    "src": "No! And that is precisely our problem we are missing something, and we are running out of time! One final match, and then it's done.",
-   "dst": "",
+   "dst": "いいや！そしてそれこそが問題なのだ… 何かを見落としていて、しかも時間がない！決勝戦が終われば、それで終わりだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4958,7 +4958,7 @@
   },
   "Queen's Recruit#495": {
    "src": "...truthfully, I'm surprised you were on my side for that match.",
-   "dst": "",
+   "dst": "…正直、あの試合で君が僕の味方だったのは意外だったよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4968,7 +4968,7 @@
   },
   "Queen's Recruit#496": {
    "src": "Ah, well, someone had t' take him down a peg! Guess that someone was you.",
-   "dst": "",
+   "dst": "ああ、まあ、誰かがあいつの鼻をへし折らなきゃな！その誰かがお前だったってわけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4978,7 +4978,7 @@
   },
   "Queen's Recruit#497": {
    "src": "Oh, give me a break, lieutenant. Him? Of all people to",
-   "dst": "",
+   "dst": "おいおい、勘弁してくれ、中尉。彼が？よりによって",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4988,7 +4988,7 @@
   },
   "Queen's Recruit#498": {
    "src": "Hey, everyone's here! Is... this where they wanted everyone to gather up?",
-   "dst": "",
+   "dst": "やあ、みんないる！ここに… 全員集まれってことなのかな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -4998,7 +4998,7 @@
   },
   "Queen's Recruit#499": {
    "src": "Seems that way. You won your match?",
-   "dst": "",
+   "dst": "そうみたい。試合に勝ったの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5008,7 +5008,7 @@
   },
   "Queen's Recruit#500": {
    "src": "I did. It seems I'm a finalist now. So, who's the other one?",
-   "dst": "",
+   "dst": "うん。決勝進出だって。で、もう一人は誰？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5018,7 +5018,7 @@
   },
   "Queen's Recruit#501": {
    "src": "Oh! Well, congratulations! Though, I guess we'll be facing each other soon.",
-   "dst": "",
+   "dst": "おお！じゃあ、おめでとう！でも、もうすぐ対戦することになるね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5028,7 +5028,7 @@
   },
   "Queen's Recruit#502": {
    "src": "Good grief... yes, the tournament has happened, congratulations to the finalists, whatever where are Mel and Linton? We need to discuss what's next, before",
-   "dst": "",
+   "dst": "やれやれ… ああ、トーナメントは終わった、決勝進出者おめでとう、何でもいい… Mel と Linton はどこだ？次のことを話し合わねば、その前に",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5038,7 +5038,7 @@
   },
   "Queen's Recruit#503": {
    "src": "...and so, what, I'm not allowed to take a nap now? I wasn't even fighting!! Mel, back me up, come on!",
-   "dst": "",
+   "dst": "…で、何だよ、昼寝もしちゃいけないのか？俺は戦ってすらいないんだぞ！！Mel、味方してくれよ、なあ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5048,7 +5048,7 @@
   },
   "Queen's Recruit#504": {
    "src": "He's right, this hardly seems fair! We were told we could stay in our rooms until the tournament had concluded, so why the change?!",
-   "dst": "",
+   "dst": "その通りだよ、こんなの不公平だ！トーナメントが終わるまで部屋にいていいって言われたのに、なんで変わったのさ？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5058,7 +5058,7 @@
   },
   "Queen's Recruit#505": {
    "src": "...what's going on?",
-   "dst": "",
+   "dst": "…何が起きてるの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5068,7 +5068,7 @@
   },
   "Queen's Recruit#506": {
    "src": "Any competitors who have lost in the tournament are to be escorted out of Fruma, effective immediately.",
-   "dst": "",
+   "dst": "トーナメントで敗れた参加者は、ただちに Fruma から護送退去させる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5078,7 +5078,7 @@
   },
   "Queen's Recruit#507": {
    "src": "what is the meaning of this?!",
-   "dst": "",
+   "dst": "…これはどういうことだ？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5088,7 +5088,7 @@
   },
   "Queen's Recruit#508": {
    "src": "SILENCE! These are new orders from Her Majesty.",
-   "dst": "",
+   "dst": "静粛に！女王陛下からの新たなご命令だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5098,7 +5098,7 @@
   },
   "Queen's Recruit#509": {
    "src": "Only {u} and Tasim are permitted to remain in the palace. Any defiance will be seen as an official threat against Fruma from the Wynn province.",
-   "dst": "",
+   "dst": "宮殿に残ることを許されるのは {u} と Tasim のみ。反抗すれば、Wynn 地方から Fruma への正式な脅威とみなす。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5108,7 +5108,7 @@
   },
   "Queen's Recruit#510": {
    "src": "Comply, and no one will be hurt. You will still receive your promised reward for participation.",
-   "dst": "",
+   "dst": "従えば誰も傷つかない。約束された参加報酬は引き続き受け取れる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5118,7 +5118,7 @@
   },
   "Queen's Recruit#511": {
    "src": "...this is an outrage. The disrespect",
-   "dst": "",
+   "dst": "…言語道断だ。この無礼",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5128,7 +5128,7 @@
   },
   "Queen's Recruit#512": {
    "src": "Enough, Kymer. What's done is done. We have no choice.",
-   "dst": "",
+   "dst": "よせ、Kymer。済んだことだ。選択の余地はない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5138,7 +5138,7 @@
   },
   "Queen's Recruit#513": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5148,7 +5148,7 @@
   },
   "Queen's Recruit#514": {
    "src": "You two. Stay safe, and be on guard. I'll report back to the King with this news. If you're not released safely...",
-   "dst": "",
+   "dst": "君たち二人。気をつけて、警戒を怠るな。この知らせは王に報告する。君たちが無事に解放されなければ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5158,7 +5158,7 @@
   },
   "Queen's Recruit#515": {
    "src": "...{u}. Tasim. I've gotten what I came here for originally, but... I don't know what they're planning. You'll have to handle it on your own.",
-   "dst": "",
+   "dst": "…{u}。Tasim。もともとの目的は果たしたが… 彼らが何を企んでいるかはわからん。あとは君たちだけで対処してくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5168,7 +5168,7 @@
   },
   "Queen's Recruit#516": {
    "src": "Good luck.",
-   "dst": "",
+   "dst": "幸運を祈る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5178,7 +5178,7 @@
   },
   "Queen's Recruit#517": {
    "src": "Remaining finalists, you are expected in the dining hall shortly. Attend your last meal before the finals.",
-   "dst": "",
+   "dst": "残る決勝進出者は、まもなく食堂へ来るように。決勝前の最後の食事に出席せよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5188,7 +5188,7 @@
   },
   "Queen's Recruit#518": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5198,7 +5198,7 @@
   },
   "Queen's Recruit#519": {
    "src": "What was that? What just happened?",
-   "dst": "",
+   "dst": "今のは何？何が起きたの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5208,7 +5208,7 @@
   },
   "Queen's Recruit#520": {
    "src": "They've changed the rules on us, and now... ugh, we have no choice... We need to see it through.",
-   "dst": "",
+   "dst": "規則を勝手に変えられて、今は… うう、選択肢がない… 最後までやり抜くしかない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5218,7 +5218,7 @@
   },
   "Queen's Recruit#521": {
    "src": "Well... come on. Let's attend our final dinner here.",
-   "dst": "",
+   "dst": "さて… 行こう。ここでの最後の夕食に出よう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5228,7 +5228,7 @@
   },
   "Queen's Recruit#522": {
    "src": "Attend the royal dinner at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, {~}] で王家の晩餐に出席する。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -5238,7 +5238,7 @@
   },
   "Queen's Recruit#523": {
    "src": "What are we supposed to do...?",
-   "dst": "",
+   "dst": "僕たち、どうすればいいんだ…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5248,7 +5248,7 @@
   },
   "Queen's Recruit#524": {
    "src": "They'll let us out. They have to. It'd be a diplomatic disaster if they didn't.",
-   "dst": "",
+   "dst": "僕たちは出してもらえる。そうでなきゃ。出さなかったら外交上の大惨事だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5258,7 +5258,7 @@
   },
   "Queen's Recruit#525": {
    "src": "Finalists. Welcome.",
-   "dst": "",
+   "dst": "決勝進出者の皆さん。ようこそ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5268,7 +5268,7 @@
   },
   "Queen's Recruit#526": {
    "src": "If you were not already aware, your fellow soldiers have been returned to Wynn. Safely.",
-   "dst": "",
+   "dst": "まだご存じないなら、お仲間は Wynn に帰されました。無事にね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5278,7 +5278,7 @@
   },
   "Queen's Recruit#527": {
    "src": "...if you don't mind me asking, Your Majesty, I thought we had an agreement? We would all remain here until the tournament concluded with the finals.",
-   "dst": "",
+   "dst": "…お尋ねしてよろしければ、陛下、約束があったのでは？決勝でトーナメントが終わるまで、全員ここに残れるはずでした。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5288,7 +5288,7 @@
   },
   "Queen's Recruit#528": {
    "src": "Oh? And would you like to join the rest of them? That could certainly be arranged we could simply select a victor here and now, and be done with this whole",
-   "dst": "",
+   "dst": "おや？では君も彼らに加わりたいのかね？手配はたやすいとも… 今ここで優勝者を選んで、この件をすべて終わらせても",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5298,7 +5298,7 @@
   },
   "Queen's Recruit#529": {
    "src": "What is your problem, Thalas?! They're guests of Her Majesty! How irrational are you, trying to subtract them without her appr",
-   "dst": "",
+   "dst": "何が問題なんだ、Thalas？！陛下の客人だぞ！承認なしに彼らを引き算しようなど、どこまで不合理なんだ、陛下の承",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5308,7 +5308,7 @@
   },
   "Queen's Recruit#530": {
    "src": "Enough. Both of you.",
-   "dst": "",
+   "dst": "おやめなさい。二人とも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5318,7 +5318,7 @@
   },
   "Queen's Recruit#531": {
    "src": "To answer your question, the circumstances have changed. There is no need for the rest of your group to remain here.",
-   "dst": "",
+   "dst": "質問に答えましょう、状況が変わったのです。あなたの仲間がここに残る必要はもうありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5328,7 +5328,7 @@
   },
   "Queen's Recruit#532": {
    "src": "The remainder of the tournament will proceed as expected.",
-   "dst": "",
+   "dst": "トーナメントの残りは予定通り進めます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5338,7 +5338,7 @@
   },
   "Queen's Recruit#533": {
    "src": "I... see.",
-   "dst": "",
+   "dst": "そう… ですか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5348,7 +5348,7 @@
   },
   "Queen's Recruit#534": {
    "src": "Good. Now, let us enjoy the meal!",
-   "dst": "",
+   "dst": "よろしい。では、食事を楽しみましょう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5358,7 +5358,7 @@
   },
   "Queen's Recruit#535": {
    "src": "Another taste of Fruman cuisine... the meat was imported the {p}, and the vegetables came from the royal garden.",
-   "dst": "",
+   "dst": "再び Fruma の料理を… 肉は {p} から取り寄せ、野菜は王家の庭で採れたものです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5368,7 +5368,7 @@
   },
   "Queen's Recruit#536": {
    "src": "Now, to business. The final will take place tomorrow morning. But first, I would like to speak to each of you individually.",
-   "dst": "",
+   "dst": "では、本題に。決勝は明朝行います。ですがその前に、一人ずつお話がしたいのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5378,7 +5378,7 @@
   },
   "Queen's Recruit#537": {
    "src": "Let us begin with... {u}. Please come to the north-eastern wing when you are ready.",
-   "dst": "",
+   "dst": "まずは… {u} から。準備ができたら北東の棟へいらっしゃい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5388,7 +5388,7 @@
   },
   "Queen's Recruit#538": {
    "src": "Sigh... good luck out there.",
-   "dst": "",
+   "dst": "はあ… 頑張って。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5398,7 +5398,7 @@
   },
   "Queen's Recruit#539": {
    "src": "Talk to Her Majesty in the north-eastern wing of the palace at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "宮殿北東の棟 [-{~}, {~}, {~}] で女王陛下と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -5408,7 +5408,7 @@
   },
   "Queen's Recruit#540": {
    "src": "Good luck.",
-   "dst": "",
+   "dst": "幸運を祈る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5418,7 +5418,7 @@
   },
   "Queen's Recruit#541": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5428,7 +5428,7 @@
   },
   "Queen's Recruit#542": {
    "src": "Well. I suppose congratulations are in order, finalist.",
-   "dst": "",
+   "dst": "さて。おめでとうと言うべきでしょうね、決勝進出者。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5438,7 +5438,7 @@
   },
   "Queen's Recruit#543": {
    "src": "You're curious, surely? For what purpose would I call you soldiers back to our province?",
-   "dst": "",
+   "dst": "気になっているのでしょう？わたくしが何のために兵士たちをこの地方へ呼び戻したのか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5448,7 +5448,7 @@
   },
   "Queen's Recruit#544": {
    "src": "Certainly not for a vanity tournament. A meaningless celebration.",
-   "dst": "",
+   "dst": "もちろん見栄のためのトーナメントではありません。無意味な祝典でも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5458,7 +5458,7 @@
   },
   "Queen's Recruit#545": {
    "src": "Oh, let us drop the facade. I know what you have been doing in secret. I am not blind.",
-   "dst": "",
+   "dst": "ああ、取り繕うのはやめましょう。あなたたちが陰で何をしていたか知っています。わたくしの目は節穴ではありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5468,7 +5468,7 @@
   },
   "Queen's Recruit#546": {
    "src": "You chose this opportunity to seek out information on our province. What little you have learned, we have deemed an acceptable cost.",
-   "dst": "",
+   "dst": "あなたたちはこの機会に我が地方の情報を探ることを選んだ。わずかに知られたことは、許容できる代償と判断しました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5478,7 +5478,7 @@
   },
   "Queen's Recruit#547": {
    "src": "Given the circumstances, I would have sacrificed much, much more if necessary.",
-   "dst": "",
+   "dst": "この状況なら、必要とあらばもっと、ずっと多くを犠牲にしたでしょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5498,7 +5498,7 @@
   },
   "Queen's Recruit#549": {
    "src": "And now... two candidates remain. You have done well to make it this far. I have been watching the duels intently, and you are certainly not unimpressive.",
-   "dst": "",
+   "dst": "そして今… 残る候補は二人。ここまでよく勝ち残りました。決闘は注意深く見ていましたが、あなたは確かに見劣りしません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5508,7 +5508,7 @@
   },
   "Queen's Recruit#550": {
    "src": "Yet of the two of you... you certainly leave a lesser impression than him. You are one amongst hundreds, thousands... indistinguishable.",
-   "dst": "",
+   "dst": "けれど二人のうち… あなたの印象は彼より明らかに薄い。あなたは何百、何千のうちの一人… 他と見分けがつかない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5518,7 +5518,7 @@
   },
   "Queen's Recruit#551": {
    "src": "And still, here you stand. It intrigues me. What is so special about you? What strength has led you here?",
-   "dst": "",
+   "dst": "それでも、あなたはここに立っている。興味をそそられます。あなたの何が特別なのでしょう？どんな力がここへ導いたのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5528,7 +5528,7 @@
   },
   "Queen's Recruit#552": {
    "src": "But no matter. Answers will come with time... should you be selected. I can tell you have a question. Speak it.",
-   "dst": "",
+   "dst": "ですが構いません。答えはいずれ出ます… 選ばれればの話ですが。何か聞きたそうですね。言いなさい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5538,7 +5538,7 @@
   },
   "Queen's Recruit#553": {
    "src": "Hm. A blank slate... to be able to see the outside world, for all its splendor and all its faults, to witness firsthand the deep rooted seeds of its inevitable destruction... there is value to that.",
-   "dst": "",
+   "dst": "ふむ。白紙… 外の世界を、その輝きも欠点もすべて見ることができ、避けられぬ破滅の深く根ざした種を直に目撃できる… それには価値があるのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5548,7 +5548,7 @@
   },
   "Queen's Recruit#554": {
    "src": "You have seen it, haven't you? Forces beyond any of us vie for control of our world, caring not for what destruction they instill.",
-   "dst": "",
+   "dst": "あなたも見たでしょう？我々の誰をも超える力が世界の支配を争い、自らもたらす破壊など気にも留めない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5558,7 +5558,7 @@
   },
   "Queen's Recruit#555": {
    "src": "And it truly is a beautiful world, isn't it? To think, it could be destroyed, taken for their ceaseless war which holds no meaning, no purpose...",
-   "dst": "",
+   "dst": "そして、本当に美しい世界でしょう？それが意味も目的もない果てしない戦争のために壊され、奪われるかもしれないなんて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5568,7 +5568,7 @@
   },
   "Queen's Recruit#556": {
    "src": "Then you have seen firsthand the benefits. The province is unburdened by those who may cause problems, and Wynn's front in its war is bolstered.",
-   "dst": "",
+   "dst": "ならば利点も直に見たはずです。地方は問題を起こしかねない者から解放され、Wynn の戦線は強化される。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5578,7 +5578,7 @@
   },
   "Queen's Recruit#557": {
    "src": "Of course, many will refuse the call. Many more will grow stagnant in their newfound roles. Yet, in a select few... there is potential for much, much more.",
-   "dst": "",
+   "dst": "もちろん、多くは呼びかけを拒むでしょう。さらに多くは新たな役目で停滞する。けれど、ほんの一握りには… はるかに大きな可能性があるのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5588,7 +5588,7 @@
   },
   "Queen's Recruit#558": {
    "src": "I wonder... which are you?",
-   "dst": "",
+   "dst": "さて… あなたはどちらかしら？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5598,7 +5598,7 @@
   },
   "Queen's Recruit#559": {
    "src": "That will be all. Return to your chambers for the night. I will be sending for the other finalist shortly.",
-   "dst": "",
+   "dst": "以上です。今夜は部屋に戻りなさい。もう一人の決勝進出者もまもなく呼びにやります。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5608,7 +5608,7 @@
   },
   "Queen's Recruit#560": {
    "src": "Return to room W-{~} and talk to Tasim at [-{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "W-{~} 号室に戻り、[-{~}, {~}, {~}] で Tasim と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -5618,7 +5618,7 @@
   },
   "Queen's Recruit#561": {
    "src": "Please, make your exit.",
-   "dst": "",
+   "dst": "どうぞ、お下がりなさい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5628,7 +5628,7 @@
   },
   "Queen's Recruit#562": {
    "src": "You're back! Still in one piece?",
-   "dst": "",
+   "dst": "戻ったね！無事だった？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5638,7 +5638,7 @@
   },
   "Queen's Recruit#563": {
    "src": "...I was getting a little worried. You were up there a while.",
-   "dst": "",
+   "dst": "…ちょっと心配してたんだ。ずいぶん長くいたから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5648,7 +5648,7 @@
   },
   "Queen's Recruit#564": {
    "src": "What did she want?",
-   "dst": "",
+   "dst": "彼女は何の用だったの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5658,7 +5658,7 @@
   },
   "Queen's Recruit#565": {
    "src": "... right. A weird conversation, then?",
-   "dst": "",
+   "dst": "…そうか。変な会話だったんだね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5668,7 +5668,7 @@
   },
   "Queen's Recruit#566": {
    "src": "Ha. Well, now I'm a little nervous.",
-   "dst": "",
+   "dst": "はは。今度は僕が緊張してきた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5678,7 +5678,7 @@
   },
   "Queen's Recruit#567": {
    "src": "...really. A... blank slate...",
-   "dst": "",
+   "dst": "…本当に。白… 紙…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5688,7 +5688,7 @@
   },
   "Queen's Recruit#568": {
    "src": "I'll... need to ask some follow-up questions.",
-   "dst": "",
+   "dst": "僕も… いくつか聞いてみないと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5698,7 +5698,7 @@
   },
   "Queen's Recruit#569": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5708,7 +5708,7 @@
   },
   "Queen's Recruit#570": {
    "src": "Oh, this is a disaster. We've been separated, and now we're stuck in here.",
-   "dst": "",
+   "dst": "ああ、最悪だ。みんなと引き離されて、ここに閉じ込められた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5718,7 +5718,7 @@
   },
   "Queen's Recruit#571": {
    "src": "We need to come up with a plan... is there a way we could",
-   "dst": "",
+   "dst": "計画を立てないと… 何か方法は",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5728,7 +5728,7 @@
   },
   "Queen's Recruit#572": {
    "src": "Tasim! Her Majesty will speak with you now.",
-   "dst": "",
+   "dst": "Tasim！女王陛下がお呼びです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5738,7 +5738,7 @@
   },
   "Queen's Recruit#573": {
    "src": "Oh. There it is.",
-   "dst": "",
+   "dst": "あ。来たか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5748,7 +5748,7 @@
   },
   "Queen's Recruit#574": {
    "src": "Okay, wish me luck. I'll be back.",
-   "dst": "",
+   "dst": "よし、幸運を祈ってて。戻るよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5758,7 +5758,7 @@
   },
   "Queen's Recruit#575": {
    "src": "Don't... stay up waiting for me. You can go rest. I'll be... fine, probably.",
-   "dst": "",
+   "dst": "僕を… 待って起きてなくていいから。休んで。僕は… たぶん平気。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5768,7 +5768,7 @@
   },
   "Queen's Recruit#576": {
    "src": "Rest for the night.",
-   "dst": "",
+   "dst": "夜を過ごして休む。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -5778,7 +5778,7 @@
   },
   "Queen's Recruit#577": {
    "src": "Catch up with Tasim.",
-   "dst": "",
+   "dst": "Tasim と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -5788,7 +5788,7 @@
   },
   "Queen's Recruit#578": {
    "src": "...oh, you're up.",
-   "dst": "",
+   "dst": "…あ、起きたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5798,7 +5798,7 @@
   },
   "Queen's Recruit#579": {
    "src": "Sorry for waking you.",
-   "dst": "",
+   "dst": "起こしてごめん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5808,7 +5808,7 @@
   },
   "Queen's Recruit#580": {
    "src": "It went... fine, I guess. She probably said... most of the same things to you.",
-   "dst": "",
+   "dst": "まあ… 普通だったかな。君に言ったのと… ほとんど同じことを言われたと思う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5818,7 +5818,7 @@
   },
   "Queen's Recruit#581": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5828,7 +5828,7 @@
   },
   "Queen's Recruit#582": {
    "src": "Hey, {u}...",
-   "dst": "",
+   "dst": "ねえ、{u}…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5838,7 +5838,7 @@
   },
   "Queen's Recruit#583": {
    "src": "Could I ask you a favor?",
-   "dst": "",
+   "dst": "頼みがあるんだけど、いい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5848,7 +5848,7 @@
   },
   "Queen's Recruit#584": {
    "src": "Could we spar? A test match, before... before tomorrow. Just like old times.",
-   "dst": "",
+   "dst": "手合わせしない？試合だよ、その… 明日の前に。昔みたいに。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5858,7 +5858,7 @@
   },
   "Queen's Recruit#585": {
    "src": "Just, get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "準備ができたら闘技場で会おう。いい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5868,7 +5868,7 @@
   },
   "Queen's Recruit#586": {
    "src": "I yes. I'm okay. Just... could we spar? A test match, before... tomorrow. For old times' sake.",
-   "dst": "",
+   "dst": "僕… うん。大丈夫。ただ… 手合わせしない？試合を、明日の… 前に。昔のよしみでさ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5878,7 +5878,7 @@
   },
   "Queen's Recruit#587": {
    "src": "Just... get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "とにかく… 準備して闘技場で会おう。いい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5888,7 +5888,7 @@
   },
   "Queen's Recruit#588": {
    "src": "...oh, you're up.",
-   "dst": "",
+   "dst": "…あ、起きたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5898,7 +5898,7 @@
   },
   "Queen's Recruit#589": {
    "src": "Sorry for waking you.",
-   "dst": "",
+   "dst": "起こしてごめん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5908,7 +5908,7 @@
   },
   "Queen's Recruit#590": {
    "src": "It went... fine, I guess. She probably said... most of the same things to you.",
-   "dst": "",
+   "dst": "まあ… 普通だったかな。君に言ったのと… ほとんど同じことを言われたと思う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5918,7 +5918,7 @@
   },
   "Queen's Recruit#591": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5928,7 +5928,7 @@
   },
   "Queen's Recruit#592": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5938,7 +5938,7 @@
   },
   "Queen's Recruit#593": {
    "src": "I was going to ask if I could ask you a favor.",
-   "dst": "",
+   "dst": "頼みごとをしてもいいか聞こうとしてたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5948,7 +5948,7 @@
   },
   "Queen's Recruit#594": {
    "src": "Could we spar? A test match, before... before tomorrow. Just like old times.",
-   "dst": "",
+   "dst": "手合わせしない？試合だよ、その… 明日の前に。昔みたいに。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5958,7 +5958,7 @@
   },
   "Queen's Recruit#595": {
    "src": "Just, get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "準備ができたら闘技場で会おう。いい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5968,7 +5968,7 @@
   },
   "Queen's Recruit#596": {
    "src": "I yes. I'm okay. Just... could we spar? A test match, before... tomorrow. For old times' sake.",
-   "dst": "",
+   "dst": "僕… うん。大丈夫。ただ… 手合わせしない？試合を、明日の… 前に。昔のよしみでさ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5978,7 +5978,7 @@
   },
   "Queen's Recruit#597": {
    "src": "Just... get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "とにかく… 準備して闘技場で会おう。いい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5988,7 +5988,7 @@
   },
   "Queen's Recruit#598": {
    "src": "H... huh?",
-   "dst": "",
+   "dst": "え… え？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -5998,7 +5998,7 @@
   },
   "Queen's Recruit#599": {
    "src": "He's... n-no, that",
-   "dst": "",
+   "dst": "彼が… ち、違う、そんな",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6008,7 +6008,7 @@
   },
   "Queen's Recruit#600": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6018,7 +6018,7 @@
   },
   "Queen's Recruit#601": {
    "src": "What...?",
-   "dst": "",
+   "dst": "…何だって？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6028,7 +6028,7 @@
   },
   "Queen's Recruit#602": {
    "src": "I... I... I don't understand.",
-   "dst": "",
+   "dst": "僕… 僕… わからないよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6038,7 +6038,7 @@
   },
   "Queen's Recruit#603": {
    "src": "He's... what what happened? How do you know? How how could you know?",
-   "dst": "",
+   "dst": "彼が… 何… 何があったの？どうして知ってるの？どうして… どうして君が？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6048,7 +6048,7 @@
   },
   "Queen's Recruit#604": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6058,7 +6058,7 @@
   },
   "Queen's Recruit#605": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6068,7 +6068,7 @@
   },
   "Queen's Recruit#606": {
    "src": "...oh. That mission.",
-   "dst": "",
+   "dst": "…あ。あの任務か。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6078,7 +6078,7 @@
   },
   "Queen's Recruit#607": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6088,7 +6088,7 @@
   },
   "Queen's Recruit#608": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6098,7 +6098,7 @@
   },
   "Queen's Recruit#609": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6108,7 +6108,7 @@
   },
   "Queen's Recruit#610": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6118,7 +6118,7 @@
   },
   "Queen's Recruit#611": {
    "src": "I... Gods. And, you you've been tr-trying to",
-   "dst": "",
+   "dst": "僕は… なんてことだ。それに、君は… ずっと言お、言おうと",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6128,7 +6128,7 @@
   },
   "Queen's Recruit#612": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6138,7 +6138,7 @@
   },
   "Queen's Recruit#613": {
    "src": "I I need to go. I need some space. I'll I'm going to the arena. I need to... to...",
-   "dst": "",
+   "dst": "僕… 行かなきゃ。一人になりたい。僕は… 闘技場へ行く。少し… その…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6148,7 +6148,7 @@
   },
   "Queen's Recruit#614": {
    "src": "No. No, d-don't. Don't do that. Not now, not not now. If... if you need me... you'll you'll know where I am.",
-   "dst": "",
+   "dst": "いや。いや、や、やめて。そんなことしないで。今は、今は… やめて。もし… もし僕が必要なら… 居場所は、わかるよね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6158,7 +6158,7 @@
   },
   "Queen's Recruit#615": {
    "src": "Head to the arena for a training match against Tasim.",
-   "dst": "",
+   "dst": "闘技場へ行き、Tasim と練習試合をする。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -6168,7 +6168,7 @@
   },
   "Queen's Recruit#616": {
    "src": "Get ready and meet me at the arena. Okay?",
-   "dst": "",
+   "dst": "準備ができたら闘技場で会おう。いい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6178,7 +6178,7 @@
   },
   "Queen's Recruit#617": {
    "src": "It's... quiet. No guards in sight.",
-   "dst": "",
+   "dst": "静か… だね。衛兵もいない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6188,7 +6188,7 @@
   },
   "Queen's Recruit#618": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6198,7 +6198,7 @@
   },
   "Queen's Recruit#619": {
    "src": "Sigh. There's no point in trying to get out of here. We have to just see it through to the end.",
-   "dst": "",
+   "dst": "はあ。ここから逃げようとしても無駄だ。最後までやり抜くしかない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6208,7 +6208,7 @@
   },
   "Queen's Recruit#620": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6218,7 +6218,7 @@
   },
   "Queen's Recruit#621": {
    "src": "What do you think? About what she said? About... forces destroying the world.",
-   "dst": "",
+   "dst": "どう思う？彼女の話。世界を壊そうとしてる… 力のこと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6228,7 +6228,7 @@
   },
   "Queen's Recruit#622": {
    "src": "She's right. I've seen it I know you've seen it. It's... getting worse.",
-   "dst": "",
+   "dst": "彼女は正しい。僕も見た… 君も見たよね。どんどん… ひどくなってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6238,7 +6238,7 @@
   },
   "Queen's Recruit#623": {
    "src": "But... the recruits. The recruits. I can't get over that. It's so...",
-   "dst": "",
+   "dst": "でも… 新兵のこと。新兵のことが。どうしても受け入れられない。あまりにも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6248,7 +6248,7 @@
   },
   "Queen's Recruit#624": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6258,7 +6258,7 @@
   },
   "Queen's Recruit#625": {
    "src": "Let's just get down there and fight. Usual spots, right?",
-   "dst": "",
+   "dst": "とにかく下りて戦おう。いつもの位置でいいよね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6268,7 +6268,7 @@
   },
   "Queen's Recruit#626": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6278,7 +6278,7 @@
   },
   "Queen's Recruit#627": {
    "src": "...so you're here.",
-   "dst": "",
+   "dst": "…来たんだね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6288,7 +6288,7 @@
   },
   "Queen's Recruit#628": {
    "src": "No words. Let's fight. Just just a training battle. To... test our skills.",
-   "dst": "",
+   "dst": "言葉はいらない。戦おう。ただの… ただの練習試合だ。腕を… 試すための。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6298,7 +6298,7 @@
   },
   "Queen's Recruit#629": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6308,7 +6308,7 @@
   },
   "Queen's Recruit#630": {
    "src": "Ha. You've gotten strong, huh?",
-   "dst": "",
+   "dst": "はは。強くなったね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6318,7 +6318,7 @@
   },
   "Queen's Recruit#631": {
    "src": "Still can't beat you, huh...",
-   "dst": "",
+   "dst": "やっぱり君には勝てないか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6328,7 +6328,7 @@
   },
   "Queen's Recruit#632": {
    "src": "I guess we know how tomorrow will turn out, then.",
-   "dst": "",
+   "dst": "じゃあ、明日どうなるかはわかったね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6338,7 +6338,7 @@
   },
   "Queen's Recruit#633": {
    "src": "No don't deny it. We both know I'm right.",
-   "dst": "",
+   "dst": "いや… 否定しないで。お互いわかってるだろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6348,7 +6348,7 @@
   },
   "Queen's Recruit#634": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6358,7 +6358,7 @@
   },
   "Queen's Recruit#635": {
    "src": "She gave me a choice, you know?",
-   "dst": "",
+   "dst": "彼女は僕に選択肢をくれたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6368,7 +6368,7 @@
   },
   "Queen's Recruit#636": {
    "src": "A choice. I don't know what to do with it. And... I'm afraid of taking either option.",
-   "dst": "",
+   "dst": "選択肢。どうすればいいかわからない。それに… どちらを選ぶのも怖いんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6388,7 +6388,7 @@
   },
   "Queen's Recruit#638": {
    "src": "Huh? I... yes. I think I am. I just have a lot on my mind.",
-   "dst": "",
+   "dst": "え？僕は… うん。大丈夫だと思う。ただ考えることが多くて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6398,7 +6398,7 @@
   },
   "Queen's Recruit#639": {
    "src": "I'll... tell you in the morning. I just have a lot on my mind.",
-   "dst": "",
+   "dst": "朝に… 話すよ。ただ考えることが多くて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6408,7 +6408,7 @@
   },
   "Queen's Recruit#640": {
    "src": "Ha. You're you're good. Oof. I'll be feeling that one for... for a while.",
-   "dst": "",
+   "dst": "はは。君は… 強いね。うっ。これはしばらく… しばらく響きそうだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6418,7 +6418,7 @@
   },
   "Queen's Recruit#641": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6428,7 +6428,7 @@
   },
   "Queen's Recruit#642": {
    "src": "Why did it have to come to this? Why couldn't why couldn't we all have just been happy?",
-   "dst": "",
+   "dst": "どうしてこんなことに？どうして… どうしてみんなで幸せにいられなかったんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6438,7 +6438,7 @@
   },
   "Queen's Recruit#643": {
    "src": "He he sent me a letter for that mission, you know. Did I tell you that? It's why I went back to Wynn.",
-   "dst": "",
+   "dst": "彼は… 彼はあの任務のことで手紙をくれたんだ。話したっけ？だから僕は Wynn に戻ったんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6448,7 +6448,7 @@
   },
   "Queen's Recruit#644": {
    "src": "And, it turns out he was already... already gone. And you were there, and I wasn't.",
-   "dst": "",
+   "dst": "なのに、彼はもう… もういなかった。君はそこにいて、僕はいなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6458,7 +6458,7 @@
   },
   "Queen's Recruit#645": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6468,7 +6468,7 @@
   },
   "Queen's Recruit#646": {
    "src": "I want to blame you for it. I want to be able to be mad, to hate you. But... I can't. I just can't.",
-   "dst": "",
+   "dst": "君のせいにしたい。怒って、君を憎めたらいいのに。でも… できない。どうしてもできないんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6478,7 +6478,7 @@
   },
   "Queen's Recruit#647": {
    "src": "I wish I could've been there. I wish I could've done it better. Maybe I could have or maybe it would've just gone the same way.",
-   "dst": "",
+   "dst": "僕もその場にいたかった。もっとうまくやれたらよかった。できたかもしれない… それとも、同じ結果だったのかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6488,7 +6488,7 @@
   },
   "Queen's Recruit#648": {
    "src": "...maybe it'd have gone worse.",
-   "dst": "",
+   "dst": "…もっとひどかったかもね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6498,7 +6498,7 @@
   },
   "Queen's Recruit#649": {
    "src": "And now we're both here in the place we were all exiled from! But he's he isn't. He's gone, and and we're still here.",
-   "dst": "",
+   "dst": "そして今、僕たちは二人とも追放されたこの場所にいる！でも彼は… 彼はいない。いなくなって、僕たちは… まだここにいる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6508,7 +6508,7 @@
   },
   "Queen's Recruit#650": {
    "src": "...what am I supposed to do? What are we supposed to do? About all of this?",
-   "dst": "",
+   "dst": "…僕はどうすればいい？僕たちはどうすればいいんだ？この全部に。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6518,7 +6518,7 @@
   },
   "Queen's Recruit#651": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6528,7 +6528,7 @@
   },
   "Queen's Recruit#652": {
    "src": "She gave me a choice.",
-   "dst": "",
+   "dst": "彼女は僕に選択肢をくれた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6538,7 +6538,7 @@
   },
   "Queen's Recruit#653": {
    "src": "I asked a lot of questions. I didn't like all the answers, but... she left me with a choice.",
-   "dst": "",
+   "dst": "たくさん質問したよ。答えが全部気に入ったわけじゃないけど… 彼女は選択肢を残してくれた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6548,7 +6548,7 @@
   },
   "Queen's Recruit#654": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6558,7 +6558,7 @@
   },
   "Queen's Recruit#655": {
    "src": "I don't know what to do. I need to... to... I need to think.",
-   "dst": "",
+   "dst": "どうすればいいかわからない。僕は… その… 考えないと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6568,7 +6568,7 @@
   },
   "Queen's Recruit#656": {
    "src": "Give me some space, please. I'll see you in the morning.",
-   "dst": "",
+   "dst": "少し一人にしてほしい。また朝に。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6578,7 +6578,7 @@
   },
   "Queen's Recruit#657": {
    "src": "Return to your room and sleep for the night.",
-   "dst": "",
+   "dst": "部屋に戻って夜を過ごす。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -6588,7 +6588,7 @@
   },
   "Queen's Recruit#658": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6598,7 +6598,7 @@
   },
   "Queen's Recruit#659": {
    "src": "Read the note Tasim left you before heading out.",
-   "dst": "",
+   "dst": "出発する前に、Tasim が残したメモを読む。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -6608,7 +6608,7 @@
   },
   "Queen's Recruit#660": {
    "src": "Head to Her Majesty's office for her decision.",
-   "dst": "",
+   "dst": "女王陛下の執務室へ行き、決定を聞く。",
    "role": "desc",
    "kind": "objective",
    "quest": "Queen's Recruit",
@@ -6618,7 +6618,7 @@
   },
   "Queen's Recruit#661": {
    "src": "Choices, choices, choices, choices...",
-   "dst": "",
+   "dst": "選択、選択、選択、選択…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6628,7 +6628,7 @@
   },
   "Queen's Recruit#662": {
    "src": "You've already failed, you know. You did not meet her criteria for selection.",
-   "dst": "",
+   "dst": "あなたはもう失敗したのよ。彼女の選考基準を満たさなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6638,7 +6638,7 @@
   },
   "Queen's Recruit#663": {
    "src": "But is dismissing you outright an error? Certainly, you're powerful. Perhaps even more so than you should be, given the circumstances.",
-   "dst": "",
+   "dst": "でも、あなたを即座に切り捨てるのは誤りかしら？確かにあなたは強い。状況を考えれば、本来あるべき以上に。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6648,7 +6648,7 @@
   },
   "Queen's Recruit#664": {
    "src": "Still. You lack the drive, the perspective. The dedication. The understanding.",
-   "dst": "",
+   "dst": "それでも。あなたには意欲も、視点もない。献身も。理解も。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6658,7 +6658,7 @@
   },
   "Queen's Recruit#665": {
    "src": "And, most critically - you're unpredictable. And that makes you dangerous.",
-   "dst": "",
+   "dst": "そして何より… あなたは予測できない。だから危険なの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6668,7 +6668,7 @@
   },
   "Queen's Recruit#666": {
    "src": "Ah! It seems Her Majesty and I have come to the same conclusion. Wonderful.",
-   "dst": "",
+   "dst": "あら！陛下と私は同じ結論に至ったようね。素晴らしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6678,7 +6678,7 @@
   },
   "Queen's Recruit#667": {
    "src": "So, where does that leave you? Cast out, discarded?",
-   "dst": "",
+   "dst": "で、あなたはどうなるのかしら？追放、廃棄？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6688,7 +6688,7 @@
   },
   "Queen's Recruit#668": {
    "src": "All the unanswered questions. Will you choose to let go? Dismiss the possibilities?",
-   "dst": "",
+   "dst": "答えの出ない疑問の数々。あなたは手放すことを選ぶ？可能性を捨てる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6698,7 +6698,7 @@
   },
   "Queen's Recruit#669": {
    "src": "And if not? What would you do for a glimpse of the truth? For a chance of receiving answers?",
-   "dst": "",
+   "dst": "もしそうでないなら？真実を垣間見るために何をする？答えを得る機会のためなら？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6708,7 +6708,7 @@
   },
   "Queen's Recruit#670": {
    "src": "Hm. Whatever the case, the choice is yours. Perhaps you'll surprise me, after all! Wouldn't that be exciting?",
-   "dst": "",
+   "dst": "ふふ。いずれにせよ、選ぶのはあなた。もしかしたら驚かせてくれるかもね！わくわくするでしょう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6718,7 +6718,7 @@
   },
   "Queen's Recruit#671": {
    "src": "{u}, under order of Her Majesty, you are to be escorted out of Fruma, effective immediately.",
-   "dst": "",
+   "dst": "{u}、女王陛下の命により、ただちに Fruma から護送退去させる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6728,7 +6728,7 @@
   },
   "Queen's Recruit#672": {
    "src": "Any defiance will be seen as an official threat against Fruma from the Wynn province. Comply, and no one will be hurt.",
-   "dst": "",
+   "dst": "反抗すれば、Wynn 地方から Fruma への正式な脅威とみなす。従えば誰も傷つかない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6738,7 +6738,7 @@
   },
   "Queen's Recruit#673": {
    "src": "You hold no power here. This choice is not yours. You will follow orders, or face the consequences.",
-   "dst": "",
+   "dst": "ここにお前の権限はない。これはお前が選ぶことではない。命令に従うか、報いを受けるかだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6748,7 +6748,7 @@
   },
   "Queen's Recruit#674": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",

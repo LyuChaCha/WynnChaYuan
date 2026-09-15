@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Corrupted Betrayal",
   "count": 51,
-  "translated": 0,
+  "translated": 51,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Corrupted Betrayal#000": {
    "src": "Talk to Lanu at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] にいる Lanu と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Corrupted Betrayal",
@@ -18,7 +18,7 @@
   },
   "Corrupted Betrayal#001": {
    "src": "Hey, soldier! Yeah, you! Got some spare time to lend a hand?",
-   "dst": "",
+   "dst": "おい、兵士！そう、お前だ！手を貸す暇はあるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -28,7 +28,7 @@
   },
   "Corrupted Betrayal#002": {
    "src": "We've got a major issue with this old fortress. It keeps spewing out all these damned slimes, and their proximity to {p} is causing issues.",
-   "dst": "",
+   "dst": "この古い砦で大問題が起きててな。忌々しいスライムが次々湧いて、{p} に近いせいで困ってるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -38,7 +38,7 @@
   },
   "Corrupted Betrayal#003": {
    "src": "Soldiers are spending half their guard duty slicing the critters into sludge. Ideally we'd raid the cave, cut out the source, but...",
-   "dst": "",
+   "dst": "兵士は見張りの半分をスライムをぶった切るのに費やしてる。本当は洞窟に攻め込んで元を断ちたいが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -48,7 +48,7 @@
   },
   "Corrupted Betrayal#004": {
    "src": "This place has some history. Nasty stuff. I'd prefer not to head in blind, so I've been checking for any clues to what we might find inside.",
-   "dst": "",
+   "dst": "ここはいわくつきの場所だ。ろくでもない。何も知らずに入りたくないから、中に何があるか手がかりを探してた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -58,7 +58,7 @@
   },
   "Corrupted Betrayal#005": {
    "src": "Haven't found much... except this verse, 'scribed into the wall over there. Go on, check it out and let me know what you think.",
-   "dst": "",
+   "dst": "大して見つからなかった…あそこの壁に刻まれたこの詩以外はな。見て、どう思うか聞かせてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -68,7 +68,7 @@
   },
   "Corrupted Betrayal#006": {
    "src": "Nonsense, if you ask me. Most likely kids from {p} messing about. But we haven't found anything else, so... if you've got any time, fancy checking it out for me?",
-   "dst": "",
+   "dst": "俺に言わせりゃ戯言だ。たぶん {p} の子どものいたずらだろう。だが他に何もない…暇があれば、調べてくれないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -78,7 +78,7 @@
   },
   "Corrupted Betrayal#007": {
    "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
-   "dst": "",
+   "dst": "一行目は明らかに Great Bridge のことだが、残りはさっぱりだ。行って辺りを見て、面白い物があれば教えてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -88,7 +88,7 @@
   },
   "Corrupted Betrayal#008": {
    "src": "Found anything interesting around the riddle yet? Do you need to hear it again?",
-   "dst": "",
+   "dst": "謎の周りで何か見つかったか？もう一度聞くか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -98,7 +98,7 @@
   },
   "Corrupted Betrayal#009": {
    "src": "Near a corrupted bridge, a ruin past its prime..",
-   "dst": "",
+   "dst": "腐敗の橋のそば、盛りを過ぎた廃墟あり…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -108,7 +108,7 @@
   },
   "Corrupted Betrayal#010": {
    "src": "Lives a cursed sheep, with the color of lime...",
-   "dst": "",
+   "dst": "呪われし羊住む、ライムのごとき色をして…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -118,7 +118,7 @@
   },
   "Corrupted Betrayal#011": {
    "src": "Lead it down the trail, headed to the slime...",
-   "dst": "",
+   "dst": "小道を導き、スライムのもとへ連れゆき…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -128,7 +128,7 @@
   },
   "Corrupted Betrayal#012": {
    "src": "Sacrifice its soul, in the blood and the grime.",
-   "dst": "",
+   "dst": "その魂を捧げよ、血と泥の中にて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -138,7 +138,7 @@
   },
   "Corrupted Betrayal#013": {
    "src": "The first line is obviously talking about the Great Bridge, but I've no clue what the rest means. Head over there, take a look around, and tell me if you find anything interesting.",
-   "dst": "",
+   "dst": "一行目は明らかに Great Bridge のことだが、残りはさっぱりだ。行って辺りを見て、面白い物があれば教えてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -148,7 +148,7 @@
   },
   "Corrupted Betrayal#014": {
    "src": "Alrighty. Let me know what when you've got something then.",
-   "dst": "",
+   "dst": "よし。何か分かったら知らせてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -158,7 +158,7 @@
   },
   "Corrupted Betrayal#015": {
    "src": "Use the Mage's riddle to figure out where it leads",
-   "dst": "",
+   "dst": "魔術師の謎を解いて、行き先を突き止める",
    "role": "desc",
    "kind": "objective",
    "quest": "Corrupted Betrayal",
@@ -168,7 +168,7 @@
   },
   "Corrupted Betrayal#016": {
    "src": "If you are heading towards the Great Bridge, be cautious in the plains around the jungle entrance.",
-   "dst": "",
+   "dst": "Great Bridge へ向かうなら、ジャングル入口付近の平原では気をつけてください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -178,7 +178,7 @@
   },
   "Corrupted Betrayal#017": {
    "src": "I have received reports of a strange cursed sheep taking refuge in one of the more fortified ruins around there.",
-   "dst": "",
+   "dst": "あの辺りの堅固な遺跡の一つに、妙な呪われた羊が逃げ込んだと報告を受けています。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -188,7 +188,7 @@
   },
   "Corrupted Betrayal#018": {
    "src": "As far as I know, it is trapped in the ruins by some jungle growth, though if it was cut down it might escape...",
-   "dst": "",
+   "dst": "聞くところでは、ジャングルの草木で遺跡に閉じ込められているとか。刈り取れば逃げ出すかも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -198,7 +198,7 @@
   },
   "Corrupted Betrayal#019": {
    "src": "Explore the temple for a way to break the barrier.",
-   "dst": "",
+   "dst": "神殿を探索し、障壁を破る方法を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Corrupted Betrayal",
@@ -208,7 +208,7 @@
   },
   "Corrupted Betrayal#020": {
    "src": "Go to Slykaar's residence at [-{~}, {~}, -{~}] to find out what is hidden there.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Slykaar の住居へ行き、隠されたものを突き止める。",
    "role": "desc",
    "kind": "objective",
    "quest": "Corrupted Betrayal",
@@ -218,7 +218,7 @@
   },
   "Corrupted Betrayal#021": {
    "src": "By order of the city of {p}, I am here to keep other citizens from entering this house.",
-   "dst": "",
+   "dst": "{p} 市の命により、市民がこの家に入らぬよう見張っています。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -228,7 +228,7 @@
   },
   "Corrupted Betrayal#022": {
    "src": "From past experiences, everyone who has entered this house has vanished from existence...",
-   "dst": "",
+   "dst": "これまで、この家に入った者は皆、跡形もなく消えました…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -238,7 +238,7 @@
   },
   "Corrupted Betrayal#023": {
    "src": "I would advise not going inside unless you know what you are doing.",
-   "dst": "",
+   "dst": "何をしているか分かっていないなら、入らないことをお勧めします。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -248,7 +248,7 @@
   },
   "Corrupted Betrayal#024": {
    "src": "Well, I guess you must know who I am.",
-   "dst": "",
+   "dst": "さて、私が誰かは知っているはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -258,7 +258,7 @@
   },
   "Corrupted Betrayal#025": {
    "src": "Welcome to my domain. I am the hero of {p}, Slykaar.",
-   "dst": "",
+   "dst": "我が領域へようこそ。私は {p} の英雄、Slykaar だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -268,7 +268,7 @@
   },
   "Corrupted Betrayal#026": {
    "src": "Well, I used to be. Banished by the very people who asked for my help. Pathetic.",
-   "dst": "",
+   "dst": "いや、かつてはな。助けを求めた者たちに追放された。哀れなものだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -278,7 +278,7 @@
   },
   "Corrupted Betrayal#027": {
    "src": "They couldn't give me a few peasants for their safety? Weak.",
-   "dst": "",
+   "dst": "身の安全のために、農民を数人差し出すこともできんとは？軟弱な。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -288,7 +288,7 @@
   },
   "Corrupted Betrayal#028": {
    "src": "Journey through Slykaar's dimension.",
-   "dst": "",
+   "dst": "Slykaar の次元を進む。",
    "role": "desc",
    "kind": "objective",
    "quest": "Corrupted Betrayal",
@@ -298,7 +298,7 @@
   },
   "Corrupted Betrayal#029": {
    "src": "I experimented my shamanism for many years underground to create the perfect mix of monster.",
-   "dst": "",
+   "dst": "何年も地下でシャーマンの術を試し、完璧な怪物の配合を追い求めた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -308,7 +308,7 @@
   },
   "Corrupted Betrayal#030": {
    "src": "Most ended in horrific slimes. Aggressive and powerful, but alas, just slimes.",
-   "dst": "",
+   "dst": "ほとんどは恐ろしいスライムに終わった。凶暴で強いが、所詮スライムだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -318,7 +318,7 @@
   },
   "Corrupted Betrayal#031": {
    "src": "Then I found this place. A dark land. A dark god. A source of power.",
-   "dst": "",
+   "dst": "そして、この場所を見つけた。暗黒の地。暗黒の神。力の源。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -328,7 +328,7 @@
   },
   "Corrupted Betrayal#032": {
    "src": "You mediocre wielders of magic have no idea what this world holds.",
-   "dst": "",
+   "dst": "凡庸な魔法使いどもは、この世界の真実を知らぬ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -338,7 +338,7 @@
   },
   "Corrupted Betrayal#033": {
    "src": "You all strive to be that hero of heroes, “Bob”, but here's the truth. He's lost. You're lost.",
-   "dst": "",
+   "dst": "誰もが英雄の中の英雄「Bob」を目指す。だが真実を教えよう。奴は迷った。お前もだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -348,7 +348,7 @@
   },
   "Corrupted Betrayal#034": {
    "src": "No one in the Wynn province is willing to make the sacrifices I am to gain power.",
-   "dst": "",
+   "dst": "Wynn 地方に、私ほど力のために犠牲を払える者はいない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -358,7 +358,7 @@
   },
   "Corrupted Betrayal#035": {
    "src": "If you want power, you have to give some. Sacrifice a few to save many.",
-   "dst": "",
+   "dst": "力が欲しければ、何かを差し出せ。少数を犠牲に、多数を救え。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -368,7 +368,7 @@
   },
   "Corrupted Betrayal#036": {
    "src": "They were willing to give me a few peasants in {~}, when the hordes crossed the bridge.",
-   "dst": "",
+   "dst": "{~} 年、大群が橋を越えた時、奴らは農民を数人差し出したではないか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -378,7 +378,7 @@
   },
   "Corrupted Betrayal#037": {
    "src": "The king was happy to throw away lives to save his. But then the hero of Wynn waltzed in a few years later.",
-   "dst": "",
+   "dst": "王は自分の命のために喜んで他人を捨てた。だが数年後、Wynn の英雄がのこのこ現れた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -388,7 +388,7 @@
   },
   "Corrupted Betrayal#038": {
    "src": "They banished me like a rotten fruit. Their hero, their protector. So what if a few hundred nobodies died for it.",
-   "dst": "",
+   "dst": "奴らは私を腐った果実のように追放した。英雄であり守護者の私を。無名の者が数百死んだから何だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -398,7 +398,7 @@
   },
   "Corrupted Betrayal#039": {
    "src": "Looks like we have a Bob aspirer. Pale imitation.",
-   "dst": "",
+   "dst": "Bob の信奉者のお出ましか。粗悪な模倣品め。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -408,7 +408,7 @@
   },
   "Corrupted Betrayal#040": {
    "src": "So. Feel free to visit me down below, bring the entire might of the {p} army upon me. It will not be enough.",
-   "dst": "",
+   "dst": "さあ、下まで会いに来るがいい。{p} の全軍を引き連れてな。それでも足りぬ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -418,7 +418,7 @@
   },
   "Corrupted Betrayal#041": {
    "src": "I am ready. Soon, {p} will be in ruins. And I shall have my revenge.",
-   "dst": "",
+   "dst": "準備はできた。じきに {p} は廃墟となり、私は復讐を果たす。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -428,7 +428,7 @@
   },
   "Corrupted Betrayal#042": {
    "src": "Go have fun in while you can. It's not like you have much of a life to live, anyways.",
-   "dst": "",
+   "dst": "今のうちに楽しんでおけ。どうせ残りの人生など大してないのだから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -438,7 +438,7 @@
   },
   "Corrupted Betrayal#043": {
    "src": "Report back to Lanu about what you've learned.",
-   "dst": "",
+   "dst": "分かったことを Lanu に報告する。",
    "role": "desc",
    "kind": "objective",
    "quest": "Corrupted Betrayal",
@@ -448,7 +448,7 @@
   },
   "Corrupted Betrayal#044": {
    "src": "Ah, you're back. Find anything interesting? I've just been knocking back the occasional slime that pops up out of this cave.",
-   "dst": "",
+   "dst": "おお、戻ったか。何か見つかったか？俺はこの洞窟から出てくるスライムを時々叩いてただけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -458,7 +458,7 @@
   },
   "Corrupted Betrayal#045": {
    "src": "You... saw Slykaar? In another dimension?!",
-   "dst": "",
+   "dst": "Slykaar に…会った？別の次元で？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -468,7 +468,7 @@
   },
   "Corrupted Betrayal#046": {
    "src": "This is bad. If he can materialise outside of this cave, even psychoactively... he's getting stronger. It explains the slimes, the attacks on {p}...",
-   "dst": "",
+   "dst": "まずいな。精神だけでもこの洞窟の外に現れられるなら…奴は強くなってる。スライムも、{p} への襲撃も説明がつく…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -478,7 +478,7 @@
   },
   "Corrupted Betrayal#047": {
    "src": "He's an incredibly powerful shaman, {u}. He has to be stopped, but it would take forever for {p} to mobile a force against him.",
-   "dst": "",
+   "dst": "奴は恐ろしく強力なシャーマンだ、{u}。止めねばならんが、{p} が部隊を集めるには時間がかかりすぎる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -488,7 +488,7 @@
   },
   "Corrupted Betrayal#048": {
    "src": "If you can, you should head in there and... finish him off. Gear up first, though, and find some friends watch your back.",
-   "dst": "",
+   "dst": "できるなら、中に入って…奴を仕留めてくれ。だが先に装備を整えて、背中を守る仲間を見つけろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -498,7 +498,7 @@
   },
   "Corrupted Betrayal#049": {
    "src": "{u}, how's it going? Run into another shaman hallucination at all?",
-   "dst": "",
+   "dst": "{u}、調子はどうだ？また例のシャーマンの幻覚に出くわしたか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",
@@ -508,7 +508,7 @@
   },
   "Corrupted Betrayal#050": {
    "src": "Anyway, good luck in the cave. If you choose to go in, be careful.",
-   "dst": "",
+   "dst": "とにかく、洞窟では幸運を。入るなら気をつけろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Corrupted Betrayal",

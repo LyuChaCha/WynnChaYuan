@@ -13,11 +13,22 @@
 名牌、介面、聊天那些沒有任何公開清單，只能靠玩家跑到才知道——那就<b>老實
 寫「沒有清單」</b>，不要用猜的數字充版面。
 
+不再寫進文件
+------------
+這兩張表以前夾在 README 與商店頁的 ``<!-- 涵蓋率:開始 -->`` 標記之間。
+2026-09-15 改版文件時拿掉了：玩家讀不懂「預估總數」，而祕密發現那一列
+是從一個樣本往外推的量級，放在首頁看起來像知道的數字。現在只給維護者
+在終端機看。
+
+``--write`` 與 ``--check`` 留著，因為工作流程還在呼叫它們：
+``--write`` 什麼都不寫；``--check`` 確認沒有文件又把舊標記放回去
+——放回去的話那段數字不會再有人更新，只會慢慢變成謊話。
+
 用法：
     python tools/coverage.py            # 印出來看
-    python tools/coverage.py --write    # 寫進 README 等文件的標記之間
     python tools/coverage.py --refresh  # 重新抓官方任務清單（需要網路）
-    python tools/coverage.py --check    # CI 用：過期就非零退出
+    python tools/coverage.py --check    # CI 用：文件裡還有舊標記就非零退出
+    python tools/coverage.py --write    # 相容用，不寫任何東西
 """
 
 from __future__ import annotations
@@ -38,17 +49,16 @@ TRANSLATIONS = ROOT / "src/main/resources/assets/wynnchayuan/translations/zh_tw"
 CACHE = ROOT / "tools/coverage-data.json"
 DISCOVERIES = ROOT / "raw/discoveries.json"
 
+# 以前會被寫入的標記。現在只用來確認它們沒有被放回文件裡。
 START = "<!-- 涵蓋率:開始 -->"
 END = "<!-- 涵蓋率:結束 -->"
-
-# 檔案 -> 要寫哪一種語言的表。英文的 README 給不讀中文的譯者看，
-# 它需要的是同一份數字、不是同一段中文。
-TARGETS = {
-    "README.md": "zh",
-    "README.en.md": "en",
-    "docs/modrinth-description.md": "both",
-    "docs/curseforge-description.md": "both",
-}
+DOCS = (
+    "README.md",
+    "README.en.md",
+    "CONTRIBUTING.md",
+    "docs/modrinth-description.md",
+    "docs/curseforge-description.md",
+)
 
 API = "https://wynncraft.wiki.gg/index.php"
 PARAMS = {
@@ -266,9 +276,8 @@ _ROWS_CACHE: list | None = None
 def estimate_rows() -> list[tuple[str, int, int, int | None, str]]:
     """（類別, 已翻譯, 已收集, 預估總數, 依據）。
 
-    <p>算一次要把整份語料讀過一遍，其中 quest-dialogue.json 是兩萬多條。
-    四個檔案、每個檔案兩三份表，不記住的話同一份東西會被讀十幾次——
-    --write 就從兩秒變成兩分鐘。
+    <p>算一次要把整份語料讀過一遍，其中 quest-dialogue.json 是兩萬多條，
+    所以記住結果，同一次執行裡不重讀。
     """
     global _ROWS_CACHE
     if _ROWS_CACHE is not None:
@@ -296,49 +305,6 @@ def leftover() -> list[str]:
     for folder in ("quest", "secret"):
         everything -= {p.name for p in (TRANSLATIONS / folder).glob("*.json")}
     return sorted(everything - counted)
-
-
-EN = {
-    "任務對話": "Quest dialogue",
-    "祕密發現的故事": "Secret discovery stories",
-    "裝備的傳說敘述": "Gear lore",
-    "材料、素材、書卷、Aspect": "Ingredients, materials, tomes, aspects",
-    "技能樹": "Ability trees",
-    "NPC 名牌、介面、系統訊息": "NPC nameplates, menus, system messages",
-    "官方任務清單（wiki）": "Official quest list (wiki)",
-    "官方祕密發現清單（wiki）": "Official secret discovery list (wiki)",
-    "官方 CDN，整批下載": "Official CDN, downloaded wholesale",
-    "**沒有官方清單**，只能靠玩家遇到": "**No official list** - only what players run into",
-    "全部": "all",
-}
-
-
-def english(text: str) -> str:
-    """表格欄位的英文。查不到就原樣留著——寧可有一格中文，也不要瞎翻。"""
-    if text.endswith(" 個任務"):
-        return text[:-len(" 個任務")] + " quests"
-    if text.endswith(" 個發現"):
-        return text[:-len(" 個發現")] + " discoveries"
-    if text.startswith("已收 "):
-        return text.replace("已收 ", "").replace(" 條", "") + " collected"
-    return EN.get(text, text)
-
-
-def english_block() -> str:
-    lines = ["| Category | Collected | Count | Where the denominator comes from |",
-             "|---|---|---:|---|"]
-    for label, progress, number, note in rows():
-        lines.append(f"| {english(label)} | {progress} | {english(number)} "
-                     f"| {english(note)} |")
-    lines.append("")
-    lines.append("Quest dialogue, NPC nameplates and menu text **have no public "
-                 "data source** - not in the Wynncraft API, not on Wynntils' CDN. "
-                 "They only arrive when a player actually runs into them in game, "
-                 "so the last row is an honest blank:")
-    lines.append("")
-    lines.append("> We know how much we **have**. "
-                 "We do not know how much there **is**.")
-    return "\n".join(lines)
 
 
 def summary() -> tuple[int, int, int, bool]:
@@ -376,56 +342,6 @@ def estimate_block() -> str:
     return "\n".join(lines)
 
 
-def estimate_block_en() -> str:
-    lines = ["| Category | Translated | Collected | Estimated total "
-             "| Where the estimate comes from |",
-             "|---|---:|---:|---:|---|"]
-    for label, done, total, guess, why in estimate_rows():
-        shown = f"~{guess:,}" if guess is not None else "—"
-        if guess is not None and guess == total:
-            shown = f"{guess:,}"
-        lines.append(f"| {english(label)} | {done:,} | {total:,} | {shown} "
-                     f"| {english_why(label, guess, total)} |")
-    done, collected, guessed, partial = summary()
-    lines.append("")
-    lines.append(f"> All together: **{'at least ' if partial else ''}"
-                 f"{guessed:,} lines estimated**, **{collected:,} collected** "
-                 f"({collected / guessed * 100:.0f}%), "
-                 f"**{done:,} translated** ({done / guessed * 100:.0f}% of the "
-                 f"estimate, {done / collected * 100:.1f}% of what we have).")
-    if partial:
-        lines.append("")
-        lines.append("\"At least\" because nameplates and menu text have no "
-                     "list; that row counts only what has **already been "
-                     "collected**, so the real number is larger.")
-    return "\n".join(lines)
-
-
-def english_why(label: str, guess: int | None, total: int) -> str:
-    """預估依據的英文。每一類只有一句，直接寫死比翻譯那幾句中文可靠。"""
-    if label == "任務對話":
-        return "all 157/157 quests collected - what we have is all there is"
-    if label == "祕密發現的故事":
-        saved = cache()
-        got = len(glob.glob(str(TRANSLATIONS / "secret/*.json")))
-        return (f"only {got} of {saved.get('secrets', 0)} discoveries collected; "
-                f"scaled up from those (tiny sample - an order of magnitude, "
-                f"not a figure)")
-    if guess is not None:
-        return "official CDN, downloaded wholesale - what we have is all there is"
-    return "**no list exists** - only what players run into; cannot be estimated"
-
-
-def body_for(kind: str) -> str:
-    """這個檔要寫哪一種語言的表。"""
-    if kind == "en":
-        return english_block() + "\n\n" + estimate_block_en()
-    if kind == "both":
-        return (english_block() + "\n\n" + estimate_block_en()
-                + "\n\n" + block() + "\n\n" + estimate_block())
-    return block() + "\n\n" + estimate_block()
-
-
 def block() -> str:
     lines = ["| 類別 | 收集進度 | 數量 | 分母從哪來 |", "|---|---|---:|---|"]
     for label, progress, number, note in rows():
@@ -440,44 +356,42 @@ def block() -> str:
     return "\n".join(lines)
 
 
-def replace(path: Path, body: str) -> bool:
-    text = path.read_text(encoding="utf-8")
-    if START not in text or END not in text:
-        return False
-    out = []
-    rest = text
-    while START in rest and END in rest:
-        head, rest = rest.split(START, 1)
-        _, rest = rest.split(END, 1)
-        out.append(f"{head}{START}\n{body}\n{END}")
-    fresh = "".join(out) + rest
-    if fresh == text:
-        return False
-    path.write_text(fresh, encoding="utf-8", newline="\n")
-    return True
+def stale_markers() -> list[str]:
+    """哪些文件還留著舊的涵蓋率標記。"""
+    found = []
+    for name in DOCS:
+        path = ROOT / name
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        if START in text or END in text:
+            found.append(name)
+    return found
 
 
 def main(argv: list[str]) -> int:
     if "--refresh" in argv:
         return refresh()
+    if "--check" in argv:
+        found = stale_markers()
+        if found:
+            print("這些文件還有涵蓋率標記：" + "、".join(found))
+            print("涵蓋率表已經不寫進文件，標記之間的數字不會再更新——請整段拿掉。")
+            return 1
+        print("文件裡沒有涵蓋率標記")
+        return 0
+    if "--write" in argv:
+        print("涵蓋率表已經不寫進文件，沒有東西要更新。"
+              "要看數字請直接跑 python tools/coverage.py")
+        return 0
     if not CACHE.is_file():
         print(f"沒有 {CACHE.relative_to(ROOT)}，"
               f"先跑 python tools/coverage.py --refresh")
         return 2
-    if "--write" not in argv and "--check" not in argv:
-        print(body_for("zh"))
-        return 0
-    stale = [name for name, kind in TARGETS.items()
-             if (ROOT / name).is_file()
-             and replace(ROOT / name, body_for(kind))]
-    if "--check" in argv:
-        if stale:
-            print("涵蓋率表過期：" + "、".join(stale))
-            print("跑 python tools/coverage.py --write 更新")
-            return 1
-        print("涵蓋率表是新的")
-        return 0
-    print("更新了：" + ("、".join(stale) if stale else "（沒有變化）"))
+    print(block() + "\n\n" + estimate_block())
+    missing = leftover()
+    if missing:
+        print("\n沒有歸進任何一類的檔案：" + "、".join(missing))
     return 0
 
 

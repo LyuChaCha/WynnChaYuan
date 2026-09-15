@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Blazing Retribution",
   "count": 42,
-  "translated": 0,
+  "translated": 42,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Blazing Retribution#000": {
    "src": "Speak to Piere in the {p} Plains at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "{p} 平原の [-{~}, {~}, -{~}] にいる Piere と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -18,7 +18,7 @@
   },
   "Blazing Retribution#001": {
    "src": "Oh sweet baby bovine, my house, what am I going to do? Wait, who are you?",
-   "dst": "",
+   "dst": "ああ牛の神様、俺の家が… どうすりゃいい？待て、あんた誰だ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -28,7 +28,7 @@
   },
   "Blazing Retribution#002": {
    "src": "Oh, a Human. Did the {p} authorities send you?",
-   "dst": "",
+   "dst": "おっ、人間か。{p} の当局があんたを寄こしたのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -38,7 +38,7 @@
   },
   "Blazing Retribution#003": {
    "src": "Detective Jackson has already been here. Not that he's doing anything useful.",
-   "dst": "",
+   "dst": "Jackson 刑事ならもう来たよ。役に立つことは何もしてないがな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -48,7 +48,7 @@
   },
   "Blazing Retribution#004": {
    "src": "An Orc managed to find some fire-imbued magical axe and burned down my house! Jackson didn't even call a firefighter!!",
-   "dst": "",
+   "dst": "オークの奴が火の魔力の宿った斧を手に入れて、俺の家を燃やしたんだ！Jackson は消防も呼ばなかった！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -58,7 +58,7 @@
   },
   "Blazing Retribution#005": {
    "src": "I don't know what to do, but maybe if you find Detective Jackson, you can kick his sorry rear into gear...",
-   "dst": "",
+   "dst": "どうしたらいいか分からんが、Jackson 刑事を見つけて、あいつの尻を蹴飛ばしてやってくれ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -68,7 +68,7 @@
   },
   "Blazing Retribution#006": {
    "src": "The Orcs are already savage brutes. If they really have their hands on magical weapons, we're all in trouble!",
-   "dst": "",
+   "dst": "オークはただでさえ野蛮な連中だ。本当に魔法の武器を手にしたなら、俺たちみんなおしまいだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -78,7 +78,7 @@
   },
   "Blazing Retribution#007": {
    "src": "I believe Detective Jackson is by his cart \"planning his next move.\" He's not far from here. Just continue past my farm!",
-   "dst": "",
+   "dst": "Jackson 刑事は荷車のそばで「次の一手を練ってる」はずだ。遠くないよ。俺の農場を抜けて進めばいい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -88,7 +88,7 @@
   },
   "Blazing Retribution#008": {
    "src": "Report the attack to Detective Jackson at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Jackson 刑事に襲撃を報告する",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -98,7 +98,7 @@
   },
   "Blazing Retribution#009": {
    "src": "How can I go about this...? I can't get involved myself, and they won't let me near... Wait, a human?",
-   "dst": "",
+   "dst": "どう進めたものか…？私自身は手出しできないし、奴らは近寄らせてくれない… 待て、人間か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -108,7 +108,7 @@
   },
   "Blazing Retribution#010": {
    "src": "...what do you MEAN \"what am I doing?\" This is a delicate situation! I need to- wait...actually, you might just be the help I need.",
-   "dst": "",
+   "dst": "…「何をしているのか」とは何だ？これは微妙な状況なんだ！私は——待て… 実は、君こそ私が必要としていた助っ人かもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -118,7 +118,7 @@
   },
   "Blazing Retribution#011": {
    "src": "I'll give you the lowdown- we believe the orcs stole magical weaponry from within {p}, particularly a flaming axe.",
-   "dst": "",
+   "dst": "事情を話そう。オークが {p} から魔法の武器を盗んだと見ている。特に炎の斧だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -128,7 +128,7 @@
   },
   "Blazing Retribution#012": {
    "src": "However, that's a loophole in the ceasefire we had enacted with the Orcs. Theft isn't considered an act of aggression...",
-   "dst": "",
+   "dst": "だが、それはオークと結んだ停戦協定の抜け穴でな。盗みは侵略行為とみなされないんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -138,7 +138,7 @@
   },
   "Blazing Retribution#013": {
    "src": "And that means my hands are tied. Humans, however, were not mentioned in the notes, so you'll need to retrieve it.",
-   "dst": "",
+   "dst": "つまり私は手出しできない。だが条文に人間の記載はない。だから君に取り返してもらいたい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -148,7 +148,7 @@
   },
   "Blazing Retribution#014": {
    "src": "Our only saving grace is that it'll be impossible for them to replicate its power- Orcs are hilariously inept at magic.",
-   "dst": "",
+   "dst": "救いは、奴らにその力を複製するのは不可能なことだ。オークは魔法が笑えるほど下手だからな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -158,7 +158,7 @@
   },
   "Blazing Retribution#015": {
    "src": "But, to the primary problem- You've probably seen how many orc camps are around here. Searching will take a long while...",
-   "dst": "",
+   "dst": "だが本題だ。この辺りにオークの野営地がどれだけあるか見ただろう。探すにはかなり時間がかかる…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -168,7 +168,7 @@
   },
   "Blazing Retribution#016": {
    "src": "My only leads are that the \"Sablestone\" and \"Loamsprout\" camps seem to be celebrating recently. Best to start there, yes?",
-   "dst": "",
+   "dst": "手がかりは、「Sablestone」と「Loamsprout」の野営地が最近お祭り騒ぎらしいことだけだ。そこから始めるのがいいだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -178,7 +178,7 @@
   },
   "Blazing Retribution#017": {
    "src": "Just to review- You need to search those two camps for the Axe of {p}, and then return it to me if you find it.",
-   "dst": "",
+   "dst": "確認だ。その二つの野営地で {p} の斧を探し、見つけたら私に持ってきてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -188,7 +188,7 @@
   },
   "Blazing Retribution#018": {
    "src": "Sablestone is to the north, and Loamsprout to the south. They will be guarded, so don't be afraid to knock some heads.",
-   "dst": "",
+   "dst": "Sablestone は北、Loamsprout は南だ。見張りがいるから、遠慮なく頭を叩いてやれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -198,7 +198,7 @@
   },
   "Blazing Retribution#019": {
    "src": "Look for the stolen weapon at the Sablestone and Loamsprout Orc camps",
-   "dst": "",
+   "dst": "Sablestone と Loamsprout のオーク野営地で盗まれた武器を探す",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -208,7 +208,7 @@
   },
   "Blazing Retribution#020": {
    "src": "Return to Detective Jackson with the news",
-   "dst": "",
+   "dst": "Jackson 刑事に知らせを持ち帰る",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -218,7 +218,7 @@
   },
   "Blazing Retribution#021": {
    "src": "I see no axe in your hands, so I should assume neither Sablestone or Loamsprout had it.",
-   "dst": "",
+   "dst": "斧を持っていないな。Sablestone にも Loamsprout にもなかったということか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -228,7 +228,7 @@
   },
   "Blazing Retribution#022": {
    "src": "Wait, really? A stick was the most powerful weapon they had? And Loamsprout...threw their dinner at you...?",
-   "dst": "",
+   "dst": "待て、本当か？奴らの最強の武器が棒きれ？しかも Loamsprout は… 夕食を君に投げつけた…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -238,7 +238,7 @@
   },
   "Blazing Retribution#023": {
    "src": "I can't believe this! How are those...those THINGS outsmarting us?! Are they shuffling the axe between camps?",
-   "dst": "",
+   "dst": "信じられん！どうしてあんな… あんな連中に出し抜かれるんだ？！野営地の間で斧を回しているのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -248,7 +248,7 @@
   },
   "Blazing Retribution#024": {
    "src": "There are over a dozen camps between the Orcs and Goblins that they could be swapping it between!",
-   "dst": "",
+   "dst": "オークとゴブリンの野営地は十以上ある。どこで回されていてもおかしくない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -258,7 +258,7 @@
   },
   "Blazing Retribution#025": {
    "src": "What if the GOBLINS get a hold of it?! They're the cleverest by half of all of them, so that could actually be a threat!",
-   "dst": "",
+   "dst": "ゴブリンの手に渡ったらどうする？！奴らの中で一番賢い連中だ、本当に脅威になりかねん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -268,7 +268,7 @@
   },
   "Blazing Retribution#026": {
    "src": "Searching all the camps one by one will be far too slow, gah!! How am I going to fix this?!",
-   "dst": "",
+   "dst": "野営地を一つずつ探していたら遅すぎる、くそっ！！どう始末をつければいいんだ？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -278,7 +278,7 @@
   },
   "Blazing Retribution#027": {
    "src": "There's Earthpit, and Cliffhearth, Shineridge and Stonecave, Sunspark, Mudspring, Holehold, I-",
-   "dst": "",
+   "dst": "Earthpit に Cliffhearth、Shineridge に Stonecave、Sunspark、Mudspring、Holehold、それから——",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -288,7 +288,7 @@
   },
   "Blazing Retribution#028": {
    "src": "Fire! Stop!! I hold magic cutter! LISTEN TO POXPER!!",
-   "dst": "",
+   "dst": "火！止まれ！！オレ、魔法の切るやつ持ってる！Poxper の言うこと聞け！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -298,7 +298,7 @@
   },
   "Blazing Retribution#029": {
    "src": "I- I can't believe it, that has to be the one! AFTER THAT ORC, NOW!!",
-   "dst": "",
+   "dst": "し、信じられん、あれに違いない！あのオークを追え、今すぐ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -308,7 +308,7 @@
   },
   "Blazing Retribution#030": {
    "src": "Find the hidden camp in the water near Piere's house at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Piere の家の近く、水中に隠された野営地を見つける",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -318,7 +318,7 @@
   },
   "Blazing Retribution#031": {
    "src": "GRRRH!! What 'Uthniiazek' mean?!",
-   "dst": "",
+   "dst": "グルル！！「Uthniiazek」どういう意味！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -328,7 +328,7 @@
   },
   "Blazing Retribution#032": {
    "src": "Kill Orc Leader Poxper",
-   "dst": "",
+   "dst": "オークの首領 Poxper を倒す",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -338,7 +338,7 @@
   },
   "Blazing Retribution#033": {
    "src": "Uthniiazek! Uthniiazek!! WHY NO LISTEN TO Poxper?",
-   "dst": "",
+   "dst": "Uthniiazek！Uthniiazek！！なぜ Poxper の言うこと聞かない？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -348,7 +348,7 @@
   },
   "Blazing Retribution#034": {
    "src": "Stupid Villager magic thing! Why fire no listen?",
-   "dst": "",
+   "dst": "バカな村人の魔法のやつ！なぜ火、言うこと聞かない？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -358,7 +358,7 @@
   },
   "Blazing Retribution#035": {
    "src": "Poxper say thing and make fire...what else axe say? 'Azektoluth?'",
-   "dst": "",
+   "dst": "Poxper しゃべる、火が出る… 斧、他に何言った？「Azektoluth」？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -368,7 +368,7 @@
   },
   "Blazing Retribution#036": {
    "src": "Hraahah! Poxper control fire! Fire- kill human with Poxper! Uthniiazek! Azektoluth!",
-   "dst": "",
+   "dst": "フハハハ！Poxper、火を操る！火よ、Poxper と人間殺せ！Uthniiazek！Azektoluth！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -378,7 +378,7 @@
   },
   "Blazing Retribution#037": {
    "src": "Return the Magic Axe to the Detective",
-   "dst": "",
+   "dst": "魔法の斧を刑事に返す",
    "role": "desc",
    "kind": "objective",
    "quest": "Blazing Retribution",
@@ -388,7 +388,7 @@
   },
   "Blazing Retribution#038": {
    "src": "That looks like the axe of {p} to me! Blue finish, hot to the touch- well done! What Orc boss had stolen it?",
-   "dst": "",
+   "dst": "どう見ても {p} の斧だ！青い仕上げに、触れると熱い——よくやった！どのオークの親玉が盗んでいた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -398,7 +398,7 @@
   },
   "Blazing Retribution#039": {
    "src": "Poxper? That...hm. This could be bad. I've head that name, and he's a fairly prolific Orc chief. You killed him, right?",
-   "dst": "",
+   "dst": "Poxper？それは… むう。まずいかもしれん。聞いたことのある名だ、かなり名の知れたオークの族長だ。倒したんだよな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -408,7 +408,7 @@
   },
   "Blazing Retribution#040": {
    "src": "Mmm... Hopefully that Veretel won't catch wind of it. Regardless, you've done a great service for Villager-kind!",
-   "dst": "",
+   "dst": "うーむ… あの Veretel に嗅ぎつけられなければいいが。ともかく、村人のために大きな働きをしてくれた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
@@ -418,7 +418,7 @@
   },
   "Blazing Retribution#041": {
    "src": "Here's your compensation for that. Thank you for the aid!",
-   "dst": "",
+   "dst": "これが報酬だ。助けてくれてありがとう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Blazing Retribution",
