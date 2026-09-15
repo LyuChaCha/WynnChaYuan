@@ -154,7 +154,8 @@ public final class PartyPanelTest {
         row(store, "Crimson Beacon", "緋紅信標");
         row(store, "Obscured Beacon", "晦暗信標");
         // 統計列
-        row(store, "Offered: {~}", "提供次數");
+        // beacon "offered" 譯「出現」（data/boons-2），跟賜福敘述的「每出現一個信標」一致
+        row(store, "Offered: {~}", "出現次數");
         row(store, "Chosen: {~}/{~}", "選取次數");
         row(store, "Decay: {~} Challenges", "衰減");
         row(store, "Choices: +{~}", "信標選項");
