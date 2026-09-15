@@ -771,6 +771,26 @@ public final class LineTranslator {
      */
     static String wrapBalanced(String text, int maxPx, int rows,
                                ToIntFunction<String> measure) {
+        String wrapped = wrapBalanced(text, maxPx, rows, measure, true);
+        if (rows == Integer.MAX_VALUE || widestRow(wrapped, measure) <= maxPx) {
+            return wrapped;
+        }
+        // 有行數上限（折回原文那一塊）時，寬度也不該超過原文。
+        //
+        // clauseAhead 為了把近在眼前的逗號收進來，會讓一行多撐兩成。賜福改譯成
+        // 「本次 Lootrun 剩餘期間，每出現一個信標，獲得 +{~1} 傷害 (最多 x{~2})」之後，
+        // 第一行就撐成「本次 Lootrun 剩餘期間，每出現一個信標，」——183px，原文最寬才 157px，
+        // 下一行卻短了一截。平均分配救不回來：每一次收窄，那一行都照比例再撐兩成。
+        //
+        // 不撐也放得進原文的行數，就用不撐的那一份；放不進才照舊撐寬。
+        String inside = wrapBalanced(text, maxPx, rows, measure, false);
+        return lines(inside) <= rows && widestRow(inside, measure) < widestRow(wrapped, measure)
+                ? inside : wrapped;
+    }
+
+    /** @param reach 要不要為了把標點收進來讓一行超出寬度，見 {@link #clauseAhead} */
+    private static String wrapBalanced(String text, int maxPx, int rows,
+                                       ToIntFunction<String> measure, boolean reach) {
         // 先照最嚴的「不拆開」規則折（見 Keep），行數超過原文才一級一級放鬆，
         // 三級都超過才放寬寬度。順序是刻意的：數值跟屬性名分家只是難讀，
         // 面板比原文高、比原文寬卻是整份 tooltip 跟著變形。
@@ -779,7 +799,7 @@ public final class LineTranslator {
         String wrapped = null;
         for (int attempt = 0; ; attempt++) {
             for (Keep level : Keep.values()) {
-                String tried = wrapToWidth(text, width, measure, level);
+                String tried = wrapToWidth(text, width, measure, level, reach);
                 if (lines(tried) <= rows) {
                     keep = level;
                     wrapped = tried;
@@ -792,7 +812,7 @@ public final class LineTranslator {
             width = width * 11 / 10;
         }
         if (wrapped == null) {
-            wrapped = wrapToWidth(text, width, measure, Keep.NONE);
+            wrapped = wrapToWidth(text, width, measure, Keep.NONE, reach);
         }
         // ① 只差一點就放得下的，讓它留在同一行。
         //
@@ -802,11 +822,11 @@ public final class LineTranslator {
             return text;
         }
         // ② 斷在名稱後面。
-        String head = labelBreak(text, width, rows, measure, keep);
+        String head = labelBreak(text, width, rows, measure, keep, reach);
         if (head != null && lines(head) <= lines(wrapped)) {
             return head;
         }
-        return balance(text, wrapped, width, measure, keep);
+        return balance(text, wrapped, width, measure, keep, reach);
     }
 
     /**
@@ -816,7 +836,8 @@ public final class LineTranslator {
      * 或名稱長到不像名稱的，回傳 {@code null} 表示這條路不通。
      */
     private static String labelBreak(String text, int width, int rows,
-                                     ToIntFunction<String> measure, Keep keep) {
+                                     ToIntFunction<String> measure, Keep keep,
+                                     boolean reach) {
         int colon = text.indexOf(": ");
         if (colon <= 0 || colon > MAX_LABEL_LENGTH || text.indexOf(NEWLINE) >= 0) {
             return null;
@@ -828,8 +849,8 @@ public final class LineTranslator {
         // 剩下那半自己也要排得平均。名稱獨佔一行已經很短了，說明再折成
         // 「滿的一行 ＋ 零頭」，三行就會長短長，比不斷在名稱後面還醜。
         String body = text.substring(colon + 2);
-        String rest = wrapToWidth(body, width, measure, keep);
-        rest = balance(body, rest, width, measure, keep);
+        String rest = wrapToWidth(body, width, measure, keep, reach);
+        rest = balance(body, rest, width, measure, keep, reach);
         return 1 + lines(rest) > rows ? null : label + NEWLINE + rest;
     }
 
@@ -867,7 +888,7 @@ public final class LineTranslator {
      * @param wrapped 已經折好的結果；收不窄就原樣回傳
      */
     private static String balance(String text, String wrapped, int width,
-                                  ToIntFunction<String> measure, Keep keep) {
+                                  ToIntFunction<String> measure, Keep keep, boolean reach) {
         int rows = lines(wrapped);
         if (rows < 2) {
             return wrapped;                     // 一行沒得平均
@@ -880,7 +901,7 @@ public final class LineTranslator {
             if (narrower <= 0 || narrower == at) {
                 break;
             }
-            String tighter = wrapToWidth(text, narrower, measure, keep);
+            String tighter = wrapToWidth(text, narrower, measure, keep, reach);
             if (lines(tighter) != rows) {
                 break;                          // 再收就會多一行，停在上一個
             }
@@ -1021,6 +1042,15 @@ public final class LineTranslator {
     /** 放寬幾次就放棄。每次一成，五次約多五成，量錯到這個程度另有問題。 */
     private static final int WRAP_RETRIES = 5;
 
+    /** 折好的結果裡最寬的那一行。 */
+    private static int widestRow(String wrapped, ToIntFunction<String> measure) {
+        int widest = 0;
+        for (String row : wrapped.split(NL, -1)) {
+            widest = Math.max(widest, measure.applyAsInt(row));
+        }
+        return widest;
+    }
+
     private static int lines(String text) {
         int n = 1;
         for (int i = text.indexOf(NEWLINE); i >= 0; i = text.indexOf(NEWLINE, i + 1)) {
@@ -1055,6 +1085,12 @@ public final class LineTranslator {
     /** @param keep 哪些東西不能拆到兩行，見 {@link Keep} */
     static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure,
                               Keep keep) {
+        return wrapToWidth(text, maxPx, measure, keep, true);
+    }
+
+    /** @param reach 要不要為了把標點收進來讓一行超出寬度，見 {@link #clauseAhead} */
+    private static String wrapToWidth(String text, int maxPx, ToIntFunction<String> measure,
+                                      Keep keep, boolean reach) {
         if (maxPx <= 0) {
             return text;
         }
@@ -1085,7 +1121,8 @@ public final class LineTranslator {
                 // 任何字之間斷，退回去只會讓整行提早結束——「✦ 利他主義: 16」
                 // 之後就換行、剩下的擠成三行，就是這樣來的。
                 int cut = breaksWord(text, i) && lastSpace > lineStart ? lastSpace : i;
-                int clause = clauseBreak(text, lineStart, i, lastClause, maxPx, measure);
+                int clause = clauseBreak(text, lineStart, i, lastClause, maxPx, measure,
+                                         reach);
                 if (clause > lineStart) {
                     cut = clause;
                 }
@@ -1182,8 +1219,9 @@ public final class LineTranslator {
      * @return 該斷的位置；這一行不適合在標點處斷時回傳 {@code lineStart}
      */
     private static int clauseBreak(String text, int lineStart, int at, int lastClause,
-                                   int maxPx, ToIntFunction<String> measure) {
-        int ahead = clauseAhead(text, lineStart, at, maxPx, measure);
+                                   int maxPx, ToIntFunction<String> measure, boolean reach) {
+        // reach 關掉時不往前找：那一步會讓這一行超出寬度，見 wrapBalanced
+        int ahead = reach ? clauseAhead(text, lineStart, at, maxPx, measure) : lineStart;
         if (ahead > lineStart) {
             return ahead;
         }

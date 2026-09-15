@@ -8,8 +8,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +30,7 @@ public final class LootrunBoonTest {
                             "tooltip/attribute/sprite")));
     private static final String ICON = "󯿿󰀁󰀂";
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of(CORPUS, Languages.DEFAULT));
 
@@ -41,7 +39,7 @@ public final class LootrunBoonTest {
         accentMove();
         heavensent(store);
         rewrapColour(store);
-        heavensentElemental();
+        heavensentElemental(store);
         corpusBoons();
 
         System.out.println(failures == 0
@@ -220,22 +218,19 @@ public final class LootrunBoonTest {
      * </pre>
      *
      * <p>「+4%」跟「元素傷害」分家，「(最多 x15)」也跟著離開了它的數值。
-     * 這一條還沒進 src 的語料（實機那份是更新下來的），所以臨時做一層只有它的語料。
      * 寬度用 {@link #mc}——拿它量，舊的折法斷出來的正是實機那三行。
+     *
+     * <p>期望的字從語料取，不寫死措辭：譯法會改（「每提供一個信標就」後來改成
+     * 「每出現一個信標，獲得」），這條要盯的是折法，不是譯法。
      */
-    private static void heavensentElemental() throws Exception {
+    private static void heavensentElemental(TranslationStore store) {
         System.out.println("=== Heavensent（元素傷害）===");
-        Path layer = Files.createTempDirectory("wcy-boon");
-        Path file = layer.resolve("lootrun.json");
-        Files.writeString(file, "{\n \"For the rest of your Lootrun,\\ngain +{~} Elemental Damage"
-                + "\\n(Max x{~}) for each Beacon\\noffered\": \"本次 Lootrun 剩餘期間，"
-                + "每提供一個信標就 +{~1} 元素傷害 (最多 x{~2})\"\n}\n", StandardCharsets.UTF_8);
-        TranslationStore store = new TranslationStore();
-        try {
-            store.loadAll(layer);
-        } finally {
-            Files.deleteIfExists(file);
-            Files.deleteIfExists(layer);
+        String key = "For the rest of your Lootrun,\ngain +{~} Elemental Damage"
+                + "\n(Max x{~}) for each Beacon\noffered";
+        String dst = store.lookup(key);
+        check("語料收著這一段（實際 " + dst + "）", dst != null);
+        if (dst == null) {
+            return;
         }
         List<StyledText> run = List.of(
                 st(line(GREY, "For the rest of your Lootrun,")),
@@ -253,9 +248,11 @@ public final class LootrunBoonTest {
               out.get(0).getString().strip().endsWith("，"));
         check("數值用原文數值的顏色", colourOf(out, "4%") == 0xFFFFFF);
         check("屬性名用正文的顏色", colourOf(out, "元素傷害") == 0xAAAAAA);
+        String want = dst.replaceAll("\\{~1\\}|\\{~\\}(?=[^~]*x\\{)", "4%")
+                         .replaceAll("\\{~2\\}|\\{~\\}", "15");
         String all = String.join("", out.stream().map(Component::getString).toList());
-        check("字沒有變少（實際 " + all + "）", all.replace(" ", "").equals(
-                "本次Lootrun剩餘期間，每提供一個信標就+4%元素傷害(最多x15)"));
+        check("字沒有變少（實際 " + all + "，語料 " + want + "）",
+              all.replace(" ", "").equals(want.replace("\n", "").replace(" ", "")));
     }
 
     /**
