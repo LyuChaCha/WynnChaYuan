@@ -97,7 +97,7 @@ On first launch the translation working files are created under
 |---|---|
 | `zh_tw` Traditional Chinese | Main language; the others are measured against it |
 | `zh_cn` Simplified Chinese | Interface, ability trees and quest dialogue |
-| `ja_jp` Japanese | Interface, ability trees, nameplates and item lore; quest dialogue in progress |
+| `ja_jp` Japanese | Interface, ability trees, nameplates, item lore and quest dialogue |
 | `ru_ru` Russian | Interface, ability trees, nameplates and item lore; quest dialogue in progress |
 | `ko_kr` Korean | A small part of the interface |
 
