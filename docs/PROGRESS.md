@@ -7,7 +7,7 @@
 
 What is left to translate, per language. For the overview see the [README](../README.en.md).
 
-## `zh_cn` 简体中文 — 93.8%（40,020 / 42,655）
+## `zh_cn` 简体中文 — 93.8%（40,067 / 42,702）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -30,7 +30,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `discovery-name.json` | ██████████ 100% | 137 / 137 | 探索點的名稱<br>Discovery names |
 | `lootrun.json` | ██████████ 100% | 1,014 / 1,014 | 跑 Lootrun 時<br>Seen during a lootrun |
 | `raid.json` | ██████████ 98% | 353 / 361 | 打 Raid 時<br>Seen during a raid |
-| `dungeon.json` | ██████████ 100% | 22 / 22 | 打地城時<br>Seen during a dungeon |
+| `dungeon.json` | ██████████ 100% | 69 / 69 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
@@ -44,7 +44,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 32 / 32 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `zh_tw` 繁體中文 — 93.8%（41,059 / 43,768）
+## `zh_tw` 繁體中文 — 93.8%（41,106 / 43,815）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -67,7 +67,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `discovery-name.json` | ██████████ 100% | 137 / 137 | 探索點的名稱<br>Discovery names |
 | `lootrun.json` | ██████████ 100% | 1,014 / 1,014 | 跑 Lootrun 時<br>Seen during a lootrun |
 | `raid.json` | ██████████ 98% | 353 / 361 | 打 Raid 時<br>Seen during a raid |
-| `dungeon.json` | ██████████ 100% | 22 / 22 | 打地城時<br>Seen during a dungeon |
+| `dungeon.json` | ██████████ 100% | 69 / 69 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
@@ -81,7 +81,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 32 / 32 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ja_jp` 日本語 — 93.6%（39,937 / 42,655）
+## `ja_jp` 日本語 — 93.6%（39,984 / 42,702）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -104,7 +104,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `discovery-name.json` | ██████████ 100% | 137 / 137 | 探索點的名稱<br>Discovery names |
 | `lootrun.json` | ██████████ 100% | 1,014 / 1,014 | 跑 Lootrun 時<br>Seen during a lootrun |
 | `raid.json` | ██████████ 98% | 353 / 361 | 打 Raid 時<br>Seen during a raid |
-| `dungeon.json` | ██████████ 100% | 22 / 22 | 打地城時<br>Seen during a dungeon |
+| `dungeon.json` | ██████████ 100% | 69 / 69 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
@@ -118,7 +118,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 32 / 32 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ru_ru` Русский — 41.1%（17,514 / 42,655）
+## `ru_ru` Русский — 41.1%（17,561 / 42,702）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -141,7 +141,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `discovery-name.json` | ██████████ 100% | 137 / 137 | 探索點的名稱<br>Discovery names |
 | `lootrun.json` | ██████████ 100% | 1,014 / 1,014 | 跑 Lootrun 時<br>Seen during a lootrun |
 | `raid.json` | ██████████ 98% | 353 / 361 | 打 Raid 時<br>Seen during a raid |
-| `dungeon.json` | ██████████ 100% | 22 / 22 | 打地城時<br>Seen during a dungeon |
+| `dungeon.json` | ██████████ 100% | 69 / 69 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ██████████ 100% | 969 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ██████████ 100% | 136 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ██████████ 100% | 156 / 156 | 書卷<br>Tomes |
@@ -155,7 +155,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `wynntils.json` | ██████████ 100% | 32 / 32 | Wynntils 自己的介面字串<br>Wynntils' own interface strings |
 | `gear-*.json` | ██████████ 100% | 988 / 990 | 裝備的傳說敘述（名稱是專有名詞，不計入）<br>Gear lore (names stay in English, not counted) |
 
-## `ko_kr` 한국어 — 1.8%（778 / 42,647）
+## `ko_kr` 한국어 — 1.8%（778 / 42,694）
 
 | 檔案 / File | 進度 / Progress | 已翻 / Done | 什麼時候會看到 / Where it shows |
 |---|---|---:|---|
@@ -178,7 +178,7 @@ What is left to translate, per language. For the overview see the [README](../RE
 | `discovery-name.json` | ░░░░░░░░░░ 0% | 0 / 137 | 探索點的名稱<br>Discovery names |
 | `lootrun.json` | ░░░░░░░░░░ 0% | 0 / 1,006 | 跑 Lootrun 時<br>Seen during a lootrun |
 | `raid.json` | ░░░░░░░░░░ 0% | 0 / 361 | 打 Raid 時<br>Seen during a raid |
-| `dungeon.json` | ░░░░░░░░░░ 0% | 0 / 22 | 打地城時<br>Seen during a dungeon |
+| `dungeon.json` | ░░░░░░░░░░ 0% | 0 / 69 | 打地城時<br>Seen during a dungeon |
 | `ingredient.json` | ░░░░░░░░░░ 0% | 0 / 969 | 做職業時<br>Crafting ingredients |
 | `material.json` | ░░░░░░░░░░ 0% | 0 / 136 | 做職業時<br>Crafting materials |
 | `tome.json` | ░░░░░░░░░░ 0% | 0 / 156 | 書卷<br>Tomes |
