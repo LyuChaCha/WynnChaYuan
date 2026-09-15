@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lexdale Witch Trials",
   "count": 33,
-  "translated": 0,
+  "translated": 33,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lexdale Witch Trials#000": {
    "src": "See what's going on in the center of {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] で {p} の中心で何が起きているか確かめる。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -18,7 +18,7 @@
   },
   "Lexdale Witch Trials#001": {
    "src": "We have an enemy amongst our own in {p}! This witch's illegal practice of magic threatens us!",
-   "dst": "",
+   "dst": "{p} の中に敵がいる！この魔女の違法な魔法が我らを脅かしているのだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -28,7 +28,7 @@
   },
   "Lexdale Witch Trials#002": {
    "src": "Ms. Amira's home was found to be plagued by spreading Decay! We must kill the witch to protect our sanctity!",
-   "dst": "",
+   "dst": "Amira 氏の家は広がる腐朽に侵されていた！我らの神聖を守るため、魔女を殺さねばならん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -38,7 +38,7 @@
   },
   "Lexdale Witch Trials#003": {
    "src": "WAIT! Let me GO already! I told you what was happening!",
-   "dst": "",
+   "dst": "待って！いい加減放してよ！何が起きたか説明したでしょ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -48,7 +48,7 @@
   },
   "Lexdale Witch Trials#004": {
    "src": "The deceit of your dark magic won't work, Ms. Amira. Go quietly- leave us in peace!",
-   "dst": "",
+   "dst": "闇の魔術の欺きなど通じんぞ、Amira 氏。大人しく去れ――我らを放っておけ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -58,7 +58,7 @@
   },
   "Lexdale Witch Trials#005": {
    "src": "SHUT UP ALREADY! You can't just single people out like this!!",
-   "dst": "",
+   "dst": "いい加減黙って！こんな風に人を名指しで吊るし上げないでよ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -68,7 +68,7 @@
   },
   "Lexdale Witch Trials#006": {
    "src": "Just hear me out for a second! It's not me, something infected my home! That's the reason it was so dark!!",
-   "dst": "",
+   "dst": "ちょっとでいいから聞いて！私じゃない、何かが家に取り憑いたの！だからあんなに暗かったのよ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -78,7 +78,7 @@
   },
   "Lexdale Witch Trials#007": {
    "src": "My basement, some outlandish thing dug into it! Wherever it went, the area withered and decayed!",
-   "dst": "",
+   "dst": "地下室よ、何か変なものが掘り進んできたの！そいつが通った所は枯れて腐朽したの！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -88,7 +88,7 @@
   },
   "Lexdale Witch Trials#008": {
    "src": "There's proof in my house that it wasn't me! It's the one that's decayed and barren! You'll see if you LOOK, you gorehound!!",
-   "dst": "",
+   "dst": "私じゃない証拠は家にあるわ！腐朽して荒れ果てたのはあっちよ！見ればわかるわ、この血に飢えた奴！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -98,7 +98,7 @@
   },
   "Lexdale Witch Trials#009": {
    "src": "Quit with the insults! We'll delay for now- If there's no proof of the witch's innocence she will be executed!",
-   "dst": "",
+   "dst": "罵るのはやめろ！ひとまず延期だ――魔女の無実の証拠がなければ処刑する！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -108,7 +108,7 @@
   },
   "Lexdale Witch Trials#010": {
    "src": "Explore the basement of the decayed and barren house.",
-   "dst": "",
+   "dst": "腐朽して荒れ果てた家の地下室を調べる。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -118,7 +118,7 @@
   },
   "Lexdale Witch Trials#011": {
    "src": "Follow the creature down the tunnels.",
-   "dst": "",
+   "dst": "トンネルを進んで生き物を追う。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -128,7 +128,7 @@
   },
   "Lexdale Witch Trials#012": {
    "src": "Continue to follow the creature from the tunnel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] のトンネルから引き続き生き物を追う。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -138,7 +138,7 @@
   },
   "Lexdale Witch Trials#013": {
    "src": "Continue to follow the creature from the tunnel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] のトンネルから引き続き生き物を追う。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -148,7 +148,7 @@
   },
   "Lexdale Witch Trials#014": {
    "src": "...Further... intruders...? You are not of the worms... the parasites?",
-   "dst": "",
+   "dst": "…さらなる… 侵入者…？お前は虫ども… 寄生虫の仲間ではないのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -158,7 +158,7 @@
   },
   "Lexdale Witch Trials#015": {
    "src": "Another stranger... You must have witnessed the tunnels. They blight the stone, wither the roots, make lifeless the land...",
-   "dst": "",
+   "dst": "また余所者か… トンネルを見ただろう。奴らは石を蝕み、根を枯らし、大地から命を奪う…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -168,7 +168,7 @@
   },
   "Lexdale Witch Trials#016": {
    "src": "And here, we starve in isolation. My people are lost, as the very earth itself warps and shifts.",
-   "dst": "",
+   "dst": "そして我らはここで孤立し飢えている。大地そのものが歪み動く中、我が民は迷うばかり。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -178,7 +178,7 @@
   },
   "Lexdale Witch Trials#017": {
    "src": "The water, stagnant and gray. Nothing but those horrid magic scourges, and the worms themselves to sustain ourselves.",
-   "dst": "",
+   "dst": "水は淀み灰色。あの忌まわしい魔法の災いと、虫そのものしか糧がない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -188,7 +188,7 @@
   },
   "Lexdale Witch Trials#018": {
    "src": "We cannot escape, for the sun scourges us. There is no place to go, no place to burrow that they do not wait.",
-   "dst": "",
+   "dst": "日の光が我らを焼くゆえ、逃げられぬ。行く場所も、奴らが待ち構えぬ掘り場もない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -198,7 +198,7 @@
   },
   "Lexdale Witch Trials#019": {
    "src": "You... You... You have life. You have a heart, and muscle, and meat... To survive till this torture ends...",
-   "dst": "",
+   "dst": "お前は… お前は… 命を持っている。心臓も、筋肉も、肉も… この責め苦が終わるまで生き延びるための…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -208,7 +208,7 @@
   },
   "Lexdale Witch Trials#020": {
    "src": "Stranger, you must perish.",
-   "dst": "",
+   "dst": "余所者よ、死んでもらう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -218,7 +218,7 @@
   },
   "Lexdale Witch Trials#021": {
    "src": "Defeat the Tunnel Dweller Chieftain.",
-   "dst": "",
+   "dst": "トンネル住人の族長を倒す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -228,7 +228,7 @@
   },
   "Lexdale Witch Trials#022": {
    "src": "Wait... These earthquakes! IT'S THEM! AGHHHHHHHHHHH!!",
-   "dst": "",
+   "dst": "待て… この地震は！奴らだ！ぐああああああ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -238,7 +238,7 @@
   },
   "Lexdale Witch Trials#023": {
    "src": "Dig yourself out of the dirt. Then go after the creature.",
-   "dst": "",
+   "dst": "土から自力で抜け出し、生き物を追う。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -248,7 +248,7 @@
   },
   "Lexdale Witch Trials#024": {
    "src": "Return to {p} and try to show the mayor the creature at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p} に戻り、[-{~}, {~}, -{~}] で町長に生き物を見せる。",
    "role": "desc",
    "kind": "objective",
    "quest": "Lexdale Witch Trials",
@@ -258,7 +258,7 @@
   },
   "Lexdale Witch Trials#025": {
    "src": "You're back. Did- Wait, what in the nine hells is THAT?!",
-   "dst": "",
+   "dst": "戻ったか。どうだっ――待て、一体「それ」は何だ？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -268,7 +268,7 @@
   },
   "Lexdale Witch Trials#026": {
    "src": "That! That was the thing in my basement!! I knew that human could find it! Thank you!!",
-   "dst": "",
+   "dst": "それ！それが私の地下室にいたやつよ！！あの人間なら見つけられると思ってた！ありがとう！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -278,7 +278,7 @@
   },
   "Lexdale Witch Trials#027": {
    "src": "That thing was spreading the decay through my house! It's NOT witches or magic like you suddenly DECIDED one day!!",
-   "dst": "",
+   "dst": "こいつが家中に腐朽を広げてたのよ！あんたがある日突然「決めつけた」魔女や魔法なんかじゃない！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -288,7 +288,7 @@
   },
   "Lexdale Witch Trials#028": {
    "src": "...Fine then. This... creature... bug... leach? This whatever- it- is... I'll accept your explanation.",
-   "dst": "",
+   "dst": "…分かった。この… 生き物… 虫… ヒル？この得体の知れんものは… 説明を受け入れよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -298,7 +298,7 @@
   },
   "Lexdale Witch Trials#029": {
    "src": "Step off the podium, Ms. Amira. You're innocent.",
-   "dst": "",
+   "dst": "壇から降りなさい、Amira 氏。あなたは無実だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -308,7 +308,7 @@
   },
   "Lexdale Witch Trials#030": {
    "src": "Gah, finally! You're seeing sense! It's almost like something just... took you over one day and never left 'til now!",
-   "dst": "",
+   "dst": "はあ、やっと！やっと話が通じた！まるで、ある日何かに… 乗っ取られて、今まで出て行かなかったみたい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -318,7 +318,7 @@
   },
   "Lexdale Witch Trials#031": {
    "src": "...hm. That... Mmh. Regardless. Human, you've proven yourself to be trustworthy. We'll keep our doors open for you.",
-   "dst": "",
+   "dst": "…む。それは… うむ。ともかく。人間よ、信頼に足ると証明したな。我らの門はお前に開かれている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",
@@ -328,7 +328,7 @@
   },
   "Lexdale Witch Trials#032": {
    "src": "As for the... THING... Well... I'll be sure to inform the Gavel government.",
-   "dst": "",
+   "dst": "その… 「もの」については… まあ… Gavel 政府に必ず報告しておこう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lexdale Witch Trials",

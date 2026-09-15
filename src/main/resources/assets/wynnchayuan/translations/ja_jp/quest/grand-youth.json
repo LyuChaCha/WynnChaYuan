@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Grand Youth",
   "count": 39,
-  "translated": 0,
+  "translated": 39,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Grand Youth#000": {
    "src": "Talk to Monte at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] で Monte と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -18,7 +18,7 @@
   },
   "Grand Youth#001": {
    "src": "Oh, what am I to do...? How am I to be our next elder if I cannot even help him... Oh? Ehm, hello, stranger.",
-   "dst": "",
+   "dst": "ああ、どうすれば…？あの方すら救えないで、どうして次の長老になれましょう…おや？ええと、こんにちは、旅の方。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -28,7 +28,7 @@
   },
   "Grand Youth#002": {
    "src": "You most likely heard me. Our elder has fallen ill of some vile disease... I am to be our next elder, but I am not yet ready.",
-   "dst": "",
+   "dst": "聞こえていたでしょう。我らの長老が忌まわしい病に倒れたのです…私が次の長老になるはずですが、まだその器ではありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -38,7 +38,7 @@
   },
   "Grand Youth#003": {
    "src": "We have tried everything we can think of, but our healers and shamans have failed to cure him. We had some hope, however...",
-   "dst": "",
+   "dst": "思いつく限りの手は尽くしましたが、治療師もシャーマンも治せませんでした。ただ、望みはあったのです…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -48,7 +48,7 @@
   },
   "Grand Youth#004": {
    "src": "A man in your city, {p}, insists that he sells healing water that could cure him, but he is selling it for an exorbitant price that we cannot afford!",
-   "dst": "",
+   "dst": "あなたの街 {p} の男が、長老を治せる癒しの水を売っていると言うのですが、とても払えない法外な値段なのです！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -58,7 +58,7 @@
   },
   "Grand Youth#005": {
    "src": "I do not know where else to turn. I must ask you for help. If you can purchase it, I am sure that we could find a way to repay you.",
-   "dst": "",
+   "dst": "もう頼る先がありません。どうか力を貸してください。買っていただけたら、必ずお返しする方法を見つけます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -68,7 +68,7 @@
   },
   "Grand Youth#006": {
    "src": "I have written directions for you in your content book...please help our village.",
-   "dst": "",
+   "dst": "コンテンツブックに道順を書いておきました…どうか村を救ってください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -78,7 +78,7 @@
   },
   "Grand Youth#007": {
    "src": "Visit the Salesman in {p} near the fountain.",
-   "dst": "",
+   "dst": "{p} の噴水近くにいる商人を訪ねる。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -88,7 +88,7 @@
   },
   "Grand Youth#008": {
    "src": "Oh, why hello there! Come for my patented healing water, have you? Any problem instantly cured! Sniffles beware!",
-   "dst": "",
+   "dst": "おや、いらっしゃい！特許取得済みの癒しの水をお求めかい？どんな不調もたちまち治る！鼻風邪よさらば！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -98,7 +98,7 @@
   },
   "Grand Youth#009": {
    "src": "You're quite lucky, I only have a couple of bottles left, so it won't go cheap, but this is the good stuff! Only [{~} Liquified Emeralds]!",
-   "dst": "",
+   "dst": "運がいいね、残りは数本だけだから安くはないが、こいつは本物だよ！たったの [{~} 液体エメラルド]！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -108,7 +108,7 @@
   },
   "Grand Youth#010": {
    "src": "What? Don't give me that look! This is the real stuff, very valuable and rare! What do ya take me for, some guy who'd sell lake water for a fortune?!",
-   "dst": "",
+   "dst": "なんだい？そんな目で見るなよ！本物だぞ、貴重で珍しいんだ！俺を何だと思ってる、湖の水を大金で売る男か！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -118,7 +118,7 @@
   },
   "Grand Youth#011": {
    "src": "Agh, agh! Put away the weapon! Put it away! Jeez, buddy! Alright, I admit it, I'm a fraudster! But, I do know where you get the real stuff, I ain't lying about that much.",
-   "dst": "",
+   "dst": "わっ、わっ！武器をしまえ！しまってくれ！勘弁してくれよ！わかった、認める、俺は詐欺師だ！でも本物の在りかは知ってる、それは嘘じゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -128,7 +128,7 @@
   },
   "Grand Youth#012": {
    "src": "There's this group of mages out in Dernel who know how to get the stuff. They're a bunch of tightwads and wouldn't get give me any real healing water to sell.",
-   "dst": "",
+   "dst": "Dernel に、あれの手に入れ方を知ってる魔術師の一団がいる。けちな連中で、売り物の癒しの水を一滴もくれやしない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -138,7 +138,7 @@
   },
   "Grand Youth#013": {
    "src": "I doubt you'll have any better luck with it, but go on, try your luck.",
-   "dst": "",
+   "dst": "あんたでもうまくいくとは思えないが、まあ行って運試ししてきな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -148,7 +148,7 @@
   },
   "Grand Youth#014": {
    "src": "Those tightwad mages are out in Dernel, on the lake with the big island. I doubt you'll convince them to give you any healing water, though.",
-   "dst": "",
+   "dst": "けちな魔術師どもは Dernel の、大きな島がある湖にいる。まあ、癒しの水を分けてもらえるとは思えないがね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -158,7 +158,7 @@
   },
   "Grand Youth#015": {
    "src": "Talk to Isfurus in Dernel at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Dernel で Isfurus と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -168,7 +168,7 @@
   },
   "Grand Youth#016": {
    "src": "Hm, hm...if it really does that, then...oh, is someone there? Erisk?",
-   "dst": "",
+   "dst": "ふむ、ふむ…本当にそうなるなら…おや、誰かいるのか？Erisk か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -178,7 +178,7 @@
   },
   "Grand Youth#017": {
    "src": "Oh, a tourist. Heard about the healing water, I presume? Well, if you are here to make a quick buck, you can turn right back around from where you came.",
-   "dst": "",
+   "dst": "おや、観光客か。癒しの水の噂を聞いたのだろう？手っ取り早く儲けたいなら、来た道をそのまま帰りたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -188,7 +188,7 @@
   },
   "Grand Youth#018": {
    "src": "Hm...ah. Iboju's sister settlement...I see. I will trust this is an honest venture, then. The tribesmen are honourable.",
-   "dst": "",
+   "dst": "ふむ…ああ。Iboju の姉妹集落か…なるほど。では誠実な用向きと信じよう。部族の者は義理堅い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -198,7 +198,7 @@
   },
   "Grand Youth#019": {
    "src": "I will provide you a specially-prepared bottle to hold the water in. My colleague, Erisk, is within the fountain here. He can fill up the bottle for you.",
-   "dst": "",
+   "dst": "水を入れる特製の瓶を渡そう。同僚の Erisk がこの噴水の中にいる。彼が瓶を満たしてくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -208,7 +208,7 @@
   },
   "Grand Youth#020": {
    "src": "There are a few animals in the fountain, however. They're wild and will most likely attack, but you look well-armoured. I doubt you'll have trouble.",
-   "dst": "",
+   "dst": "ただ、噴水の中には動物が何匹かいる。野生だから襲ってくるだろうが、君は装備が良さそうだ。問題はあるまい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -218,7 +218,7 @@
   },
   "Grand Youth#021": {
    "src": "The entrance to the heart of the fountain is right below us. Take a deep breath and dive right in.",
-   "dst": "",
+   "dst": "噴水の中心への入口は我々の真下だ。大きく息を吸って、そのまま飛び込みたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -228,7 +228,7 @@
   },
   "Grand Youth#022": {
    "src": "Your directions are in your content book, friend. Always consult it if you are in a bind.",
-   "dst": "",
+   "dst": "道順はコンテンツブックにある、友よ。困ったらいつでも見るといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -238,7 +238,7 @@
   },
   "Grand Youth#023": {
    "src": "Get the bottles filled by Erisk in the heart of the fountain to give Isfurus.",
-   "dst": "",
+   "dst": "噴水の中心にいる Erisk に瓶を満たしてもらい、Isfurus に渡す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -248,7 +248,7 @@
   },
   "Grand Youth#024": {
    "src": "And who might you be? We certainly don't get many visitors down here.",
-   "dst": "",
+   "dst": "どちら様でしょう？ここまで訪ねてくる人はめったにいませんよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -258,7 +258,7 @@
   },
   "Grand Youth#025": {
    "src": "Aha, Isfurus referred you. Yes, let me bottle this up for you, then. Once I do, make sure you don't drop them! Both the bottles and the water are valuable and difficult to replace.",
-   "dst": "",
+   "dst": "ああ、Isfurus の紹介ですね。では瓶に詰めてあげましょう。詰めたら、絶対に落とさないでくださいね！瓶も水も貴重で、替えがききませんから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -268,7 +268,7 @@
   },
   "Grand Youth#026": {
    "src": "But what a marvel this place is...water to cure all ailments, even aging! I even hear there is a similar fountain someplace in Gavel, can you believe?",
-   "dst": "",
+   "dst": "それにしても驚くべき場所です…あらゆる病、老いさえも治す水！Gavel のどこかにも似た泉があるそうですよ、信じられます？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -278,7 +278,7 @@
   },
   "Grand Youth#027": {
    "src": "Oh, I nearly forgot. Just make sure to check back in with Isfurus before you leave! There is just one more step to the process he has to take care of.",
-   "dst": "",
+   "dst": "おっと、忘れるところでした。帰る前に必ず Isfurus のところへ寄ってください！彼が済ませるべき最後の工程があるんです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -288,7 +288,7 @@
   },
   "Grand Youth#028": {
    "src": "Just make sure to check back in with Isfurus before you leave!",
-   "dst": "",
+   "dst": "帰る前に必ず Isfurus のところへ寄ってください！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -298,7 +298,7 @@
   },
   "Grand Youth#029": {
    "src": "Talk to Isfurus for Erisk.",
-   "dst": "",
+   "dst": "Erisk に言われた通り Isfurus と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -308,7 +308,7 @@
   },
   "Grand Youth#030": {
    "src": "Aha. You had no trouble, I assume? Hand the bottle here, I'll finish the seal and remove the impurities...",
-   "dst": "",
+   "dst": "ああ。問題はなかったようだね？瓶をこちらへ、封を仕上げて不純物を取り除こう…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -318,7 +318,7 @@
   },
   "Grand Youth#031": {
    "src": "...done. There is much potential here...ancient tribal markings repeat the word \"youth\" over and again. It could be used, or abused...",
-   "dst": "",
+   "dst": "…済んだ。ここには大きな可能性がある…古い部族の刻印は「若さ」という言葉を何度も繰り返している。善用も、悪用もできる…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -328,7 +328,7 @@
   },
   "Grand Youth#032": {
    "src": "Anyways, you have your water. Not to be rude, but I must ask that you leave me to my research now. You have your delivery to make anyway, correct?",
-   "dst": "",
+   "dst": "ともかく、水は手に入った。失礼ながら、そろそろ研究に戻らせてもらいたい。君も届け物があるのだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -338,7 +338,7 @@
   },
   "Grand Youth#033": {
    "src": "Your directions are in your content book, friend. Always consult it if you are in a bind.",
-   "dst": "",
+   "dst": "道順はコンテンツブックにある、友よ。困ったらいつでも見るといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -348,7 +348,7 @@
   },
   "Grand Youth#034": {
    "src": "Bring back the bottle of healing water to Monte.",
-   "dst": "",
+   "dst": "癒しの水の瓶を Monte のもとへ持ち帰る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Grand Youth",
@@ -358,7 +358,7 @@
   },
   "Grand Youth#035": {
    "src": "You have returned, I see. Have you the healing water?",
-   "dst": "",
+   "dst": "お戻りになりましたね。癒しの水はありますか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -368,7 +368,7 @@
   },
   "Grand Youth#036": {
    "src": "Aha, perfect! If this not work, then...no, I must have faith.",
-   "dst": "",
+   "dst": "ああ、完璧です！これで駄目なら…いえ、信じなくては。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -378,7 +378,7 @@
   },
   "Grand Youth#037": {
    "src": "From the bottom of my heart, thank you. I know we surely will not be able to compensate you for the price of the water...",
-   "dst": "",
+   "dst": "心の底から感謝します。水の代金に見合うお返しなど、とてもできないのは分かっています…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",
@@ -388,7 +388,7 @@
   },
   "Grand Youth#038": {
    "src": "...but here. This is the summation of our village's riches. For aiding us, consider it yours.",
-   "dst": "",
+   "dst": "…ですが、これを。我が村の財のすべてです。助けてくださったお礼に、お受け取りください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Grand Youth",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Canary Calls",
   "count": 220,
-  "translated": 0,
+  "translated": 220,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Canary Calls#000": {
    "src": "Find out what's happening at the {p} coal mine at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} 炭鉱で何が起きているか調べる。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canary Calls",
@@ -18,7 +18,7 @@
   },
   "The Canary Calls#001": {
    "src": "Phew... Everyone make it out alright? That was...one hell of a sprint. I'm absolutely knackered.",
-   "dst": "",
+   "dst": "ふう…みんな無事に出られたか？ありゃ…とんでもない全力疾走だった。もうへとへとだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -28,7 +28,7 @@
   },
   "The Canary Calls#002": {
    "src": "I'm not sure, mate. I left a bunch of my stuff down there. Who knows if I'll get it back.",
-   "dst": "",
+   "dst": "どうだかな、相棒。下に荷物をたくさん置いてきちまった。取り戻せるかどうか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -38,7 +38,7 @@
   },
   "The Canary Calls#003": {
    "src": "Forget about that, what are we gonna tell the chief? That chopsy old fool is gonna kill us if he sees us not working.",
-   "dst": "",
+   "dst": "そんなのいいから、親方に何て言う？あの口の悪い老いぼれ、俺らがサボってるの見たら殺しにくるぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -48,7 +48,7 @@
   },
   "The Canary Calls#004": {
    "src": "Oi, you! Listen, there was some kind of explosion down in the mines. We're not sure what it is or where it came from, but it surely didn't sound good.",
-   "dst": "",
+   "dst": "おい、あんた！聞いてくれ、鉱山の下で何か爆発があったんだ。何なのか、どこからなのか分からねえが、ろくな音じゃなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -58,7 +58,7 @@
   },
   "The Canary Calls#005": {
    "src": "The four of us were the only blokes down in the mines, so everyone should be out safely. But I reckon we can't go back if this issue isn't resolved.",
-   "dst": "",
+   "dst": "下にいたのは俺ら四人だけだから、全員無事に出てるはずだ。でもこの問題が片付かないと、戻れそうにない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -68,7 +68,7 @@
   },
   "The Canary Calls#006": {
    "src": "You must go to the chief and tell him about the situation. Head down this mineshaft and turn left, and he should be there.",
-   "dst": "",
+   "dst": "親方のところへ行って状況を伝えてくれ。この坑道を下って左に曲がれば、そこにいるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -78,7 +78,7 @@
   },
   "The Canary Calls#007": {
    "src": "Just, uh... Make sure not to mention us by name. Now, if you'll excuse us, we'll...be on our way.",
-   "dst": "",
+   "dst": "ただ、その…俺らの名前は出さないでくれよ。じゃ、悪いけど俺らは…これで失礼する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -88,7 +88,7 @@
   },
   "The Canary Calls#008": {
    "src": "Turn left from the mine's entrance and speak to the chief at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "鉱山の入口から左に曲がり、[{~}, {~}, -{~}] で親方と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canary Calls",
@@ -98,7 +98,7 @@
   },
   "The Canary Calls#009": {
    "src": "That's right, keep it moving! The whole of {p} is going to run out of coal at this pace!",
-   "dst": "",
+   "dst": "そうだ、手を止めるな！この調子じゃ {p} 中の石炭が尽きちまうぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -108,7 +108,7 @@
   },
   "The Canary Calls#010": {
    "src": "Eh? What do you want? Only registered miners are allowed beyond this point. Speak up or get off the premises.",
-   "dst": "",
+   "dst": "あん？何の用だ？ここから先は登録済みの鉱夫しか入れん。はっきり言うか、とっとと出ていけ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -118,7 +118,7 @@
   },
   "The Canary Calls#011": {
    "src": "...An explosion? In the mines? Just now?",
-   "dst": "",
+   "dst": "…爆発？鉱山で？今さっき？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -128,7 +128,7 @@
   },
   "The Canary Calls#012": {
    "src": "EMERGENCY BREAK TIME, YOU GERBILS! EVERYONE COME AND MEET ME BY THE ENTRANCE! NOW!!!",
-   "dst": "",
+   "dst": "緊急休憩だ、このネズミども！全員入口に集合しろ！今すぐだ！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -138,7 +138,7 @@
   },
   "The Canary Calls#013": {
    "src": "Alright, you lot better listen bloody carefully. An explosion has been reported in the mines. You all know what that means, yes?",
-   "dst": "",
+   "dst": "よし、お前ら耳の穴かっぽじってよく聞け。鉱山で爆発の報告があった。それが何を意味するか分かるな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -148,7 +148,7 @@
   },
   "The Canary Calls#014": {
    "src": "Early dismissal?",
-   "dst": "",
+   "dst": "早退ですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -158,7 +158,7 @@
   },
   "The Canary Calls#015": {
    "src": "Month-long vacation?",
-   "dst": "",
+   "dst": "一か月の休暇？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -168,7 +168,7 @@
   },
   "The Canary Calls#016": {
    "src": "Paid leave?!",
-   "dst": "",
+   "dst": "有給休暇？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -178,7 +178,7 @@
   },
   "The Canary Calls#017": {
    "src": "...Am I getting fired?",
-   "dst": "",
+   "dst": "…俺、クビですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -188,7 +188,7 @@
   },
   "The Canary Calls#018": {
    "src": "No, you bunch of ingrates! One of you needs to take the ol' canary down to the mines and see whatever the hell's going on.",
-   "dst": "",
+   "dst": "違う、この恩知らずども！誰か一人、うちのカナリアを連れて鉱山に降り、一体何が起きてるのか見てこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -198,7 +198,7 @@
   },
   "The Canary Calls#019": {
    "src": "Now, which one of you blokes would be willing to-",
-   "dst": "",
+   "dst": "さて、お前らの中で誰が—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -208,7 +208,7 @@
   },
   "The Canary Calls#020": {
    "src": "NOT IT!",
-   "dst": "",
+   "dst": "俺はパス！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -218,7 +218,7 @@
   },
   "The Canary Calls#021": {
    "src": "Right then. I guess that leaves you, young lad. What do you say? Want a job?",
-   "dst": "",
+   "dst": "そうかい。じゃあ残るはお前だな、若いの。どうだ？仕事が欲しくないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -228,7 +228,7 @@
   },
   "The Canary Calls#022": {
    "src": "Very good! Come on then, let me introduce you to our little feathered mascot.",
-   "dst": "",
+   "dst": "いいぞ！じゃあ来い、うちの羽の生えた小さなマスコットを紹介してやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -238,7 +238,7 @@
   },
   "The Canary Calls#023": {
    "src": "You sure? I'll pay a lot, and it won't be dangerous. Even if it is, you've got all that armor on you!",
-   "dst": "",
+   "dst": "本当か？報酬ははずむし、危険もない。万が一危険でも、そんな鎧を着込んでるじゃないか！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -248,7 +248,7 @@
   },
   "The Canary Calls#024": {
    "src": "That's the spirit! Come on then, let me introduce you to our little feathered mascot.",
-   "dst": "",
+   "dst": "その意気だ！じゃあ来い、うちの羽の生えた小さなマスコットを紹介してやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -258,7 +258,7 @@
   },
   "The Canary Calls#025": {
    "src": "You'll get a bloody mountain of emeralds, god damn it! This is a once in a lifetime opportunity! Do you want it or not?",
-   "dst": "",
+   "dst": "エメラルドが山ほどもらえるんだぞ、ちくしょう！一生に一度のチャンスだ！やるのか、やらんのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -268,7 +268,7 @@
   },
   "The Canary Calls#026": {
    "src": "Good. Now, hurry up and follow me.",
-   "dst": "",
+   "dst": "よし。じゃあ急いでついて来い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -278,7 +278,7 @@
   },
   "The Canary Calls#027": {
    "src": "You know what? This is ridiculous. The whole of {p} is at danger, and you're playing games with ME?! I know you can do it. Follow me. Now.",
-   "dst": "",
+   "dst": "あのな？馬鹿げてる。{p} 全体が危ないってのに、この俺をからかう気か？！お前ならできる。ついて来い。今すぐだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -288,7 +288,7 @@
   },
   "The Canary Calls#028": {
    "src": "Scared speechless, eh? Don't worry, it'll be an easy job. Come on, follow me to the canary's cage.",
-   "dst": "",
+   "dst": "怖くて声も出ないか？心配するな、簡単な仕事だ。さあ、カナリアの籠までついて来い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -298,7 +298,7 @@
   },
   "The Canary Calls#029": {
    "src": "Meet our canary! She's such a beaut.",
-   "dst": "",
+   "dst": "うちのカナリアだ！美人だろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -308,7 +308,7 @@
   },
   "The Canary Calls#030": {
    "src": "You see, whenever we hear news of an explosion we always bring our canary with us to check it out. They can detect potential gases much earlier than we can.",
-   "dst": "",
+   "dst": "いいか、爆発の知らせがあるたびに、カナリアを連れて確かめに行くんだ。こいつらは俺たちよりずっと早くガスを察知できる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -318,7 +318,7 @@
   },
   "The Canary Calls#031": {
    "src": "Let me just get the key and-",
-   "dst": "",
+   "dst": "鍵を取ってきて—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -328,7 +328,7 @@
   },
   "The Canary Calls#032": {
    "src": "WAIT, WHAT? WHERE'S THE BLOODY KEY? WHICH ONE OF YOUR LOT IS RESPONSIBLE?! I SWEAR I'M GONNA...",
-   "dst": "",
+   "dst": "待て、何だと？鍵はどこだ？お前らの誰の仕業だ？！誓って言うが、ただじゃ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -338,7 +338,7 @@
   },
   "The Canary Calls#033": {
    "src": "...Listen up, lad. Take this toothpick I've been chewing on. I need you to pick the cage's lock. It's a little wet, but it should do the trick. Understood? Good, now hurry up!",
-   "dst": "",
+   "dst": "…よく聞け、若いの。俺が噛んでたこの爪楊枝を使え。籠の錠をこじ開けてほしい。ちょっと湿ってるが、何とかなるだろう。分かったか？よし、急げ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -348,7 +348,7 @@
   },
   "The Canary Calls#034": {
    "src": "Unlock the canary's cage at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] のカナリアの籠の鍵を開ける",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canary Calls",
@@ -358,7 +358,7 @@
   },
   "The Canary Calls#035": {
    "src": "Doing just fine, lad. Almost there...",
-   "dst": "",
+   "dst": "いい調子だ、若いの。もう少し…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -368,7 +368,7 @@
   },
   "The Canary Calls#036": {
    "src": "Little old birdie is getting quite excited! Keep it up.",
-   "dst": "",
+   "dst": "小鳥ちゃんがずいぶん興奮してきたぞ！その調子だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -378,7 +378,7 @@
   },
   "The Canary Calls#037": {
    "src": "Right then, lad! It's time to begin the-",
-   "dst": "",
+   "dst": "よし、若いの！では始めるとしよう—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -388,7 +388,7 @@
   },
   "The Canary Calls#038": {
    "src": "OW! Bloody hell! Those are some freakishly sharp claws! What are you playing at-",
-   "dst": "",
+   "dst": "痛っ！ちくしょう！なんて鋭い爪だ！何のつもりだ—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -398,7 +398,7 @@
   },
   "The Canary Calls#039": {
    "src": "Well, I think she likes you, lad. Doesn't like me, apparently.",
-   "dst": "",
+   "dst": "まあ、お前のことは気に入ったみたいだな、若いの。俺のことは嫌いらしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -408,7 +408,7 @@
   },
   "The Canary Calls#040": {
    "src": "I was going to feed her, but I suppose you can do the honors. Or not, seeing as she's been particularly troublesome...",
-   "dst": "",
+   "dst": "餌をやるつもりだったが、その役はお前に譲ろう。いや、今日は特に手に負えんから、やめてもいいが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -418,7 +418,7 @@
   },
   "The Canary Calls#041": {
    "src": "Anyway, do as you please. I'll be waiting by the elevator in the mineshaft. Hurry up, and don't make me wait!",
-   "dst": "",
+   "dst": "とにかく、好きにしろ。坑道のエレベーターのそばで待ってる。急げよ、待たせるな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -428,7 +428,7 @@
   },
   "The Canary Calls#042": {
    "src": "Head to the mine elevator at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の鉱山エレベーターへ向かう。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canary Calls",
@@ -438,7 +438,7 @@
   },
   "The Canary Calls#043": {
    "src": "Right then, lad! I suppose you might want to know more about this job.",
-   "dst": "",
+   "dst": "よし、若いの！この仕事についてもっと知りたいだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -448,7 +448,7 @@
   },
   "The Canary Calls#044": {
    "src": "As I said before, when unknown explosions occur in the mines, that's usually a sign that something bad happened.",
-   "dst": "",
+   "dst": "さっきも言ったが、鉱山で原因不明の爆発が起きた時は、たいてい何か悪いことが起きた証拠だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -458,7 +458,7 @@
   },
   "The Canary Calls#045": {
    "src": "Most of the time, an awfully putrid gas appears. This is where our canary comes in. Once she verifies that a gas is present, we decide whether or not to temporarily close the mine.",
-   "dst": "",
+   "dst": "たいていは、ひどく臭いガスが出る。そこでカナリアの出番だ。ガスがあると確認できたら、鉱山を一時閉鎖するか決める。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -468,7 +468,7 @@
   },
   "The Canary Calls#046": {
    "src": "I presume you met Daffyd and his group, correct? Thankfully, they were the only ones down in the mines.",
-   "dst": "",
+   "dst": "Daffyd の連中にはもう会ったんだろう？幸い、鉱山に降りてたのはあいつらだけだった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -478,7 +478,7 @@
   },
   "The Canary Calls#047": {
    "src": "...Wait, where the hell even are they? Did I not tell them to...",
-   "dst": "",
+   "dst": "…待て、あいつら一体どこにいる？言っておいたはずだが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -488,7 +488,7 @@
   },
   "The Canary Calls#048": {
    "src": "Eh, doesn't matter. Lad, point is, I want you to check whether the gas is still there, if at all.",
-   "dst": "",
+   "dst": "まあいい。若いの、要するに、ガスがまだ残ってるか、そもそもあるのか確かめてほしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -498,7 +498,7 @@
   },
   "The Canary Calls#049": {
    "src": "We'll use the elevator behind me to get down to the mines. Just let me pull this here lever to activate it...",
-   "dst": "",
+   "dst": "俺の後ろのエレベーターで鉱山に降りる。このレバーを引いて動かして…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -508,7 +508,7 @@
   },
   "The Canary Calls#050": {
    "src": "...WHY ISN'T THIS BLOODY CONTRAPTION WORKING??! WORK, WORK, GOD DAMN IT!!",
-   "dst": "",
+   "dst": "…なんでこのポンコツ動かねえんだ？！動け、動け、ちくしょう！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -518,7 +518,7 @@
   },
   "The Canary Calls#051": {
    "src": "Must've been Daffyd and his group... No worries, lad. I've got, uh... a last resort, so to speak.",
-   "dst": "",
+   "dst": "Daffyd の連中の仕業に違いない…心配するな、若いの。いわば…最後の手段がある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -528,7 +528,7 @@
   },
   "The Canary Calls#052": {
    "src": "You'll need to ride a minecart down into the mines. Thing is, we haven't used them to transport people in...years.",
-   "dst": "",
+   "dst": "トロッコで鉱山に降りてもらう。問題は、人を運ぶのに使ってないんだ…何年も。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -538,7 +538,7 @@
   },
   "The Canary Calls#053": {
    "src": "Why? Erm, well... See for yourself.",
-   "dst": "",
+   "dst": "なぜかって？その…見れば分かる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -548,7 +548,7 @@
   },
   "The Canary Calls#054": {
    "src": "Our transporter minecarts are manual. Miners around here prefer automatic.",
-   "dst": "",
+   "dst": "うちの輸送トロッコはマニュアル車だ。ここの鉱夫はオートマ派でな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -558,7 +558,7 @@
   },
   "The Canary Calls#055": {
    "src": "For you, it should be no issue controlling it. There's instructions attached to the gear stick.",
-   "dst": "",
+   "dst": "お前なら操作に問題ないはずだ。シフトレバーに説明書が付いてる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -568,7 +568,7 @@
   },
   "The Canary Calls#056": {
    "src": "Now then, go into the mineshaft, following the rails behind me. You'll be able to summon a minecart there.",
-   "dst": "",
+   "dst": "では、俺の後ろのレールを辿って坑道に入れ。そこでトロッコを呼び出せる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -578,7 +578,7 @@
   },
   "The Canary Calls#057": {
    "src": "Use the rails to get to the gas leakage.",
-   "dst": "",
+   "dst": "レールを使ってガス漏れの場所へ向かう。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canary Calls",
@@ -588,7 +588,7 @@
   },
   "The Canary Calls#058": {
    "src": "Follow the rail tracks and find a way to escape the mine",
-   "dst": "",
+   "dst": "線路を辿り、鉱山から脱出する方法を見つける",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canary Calls",
@@ -598,7 +598,7 @@
   },
   "The Canary Calls#059": {
    "src": "Continue further in the mine to find a way out.",
-   "dst": "",
+   "dst": "鉱山の奥へ進み、出口を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canary Calls",
@@ -608,7 +608,7 @@
   },
   "The Canary Calls#060": {
    "src": "Hello.",
-   "dst": "",
+   "dst": "こんにちは。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -618,7 +618,7 @@
   },
   "The Canary Calls#061": {
    "src": "Forgive my interference.",
-   "dst": "",
+   "dst": "邪魔をしてすみません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -628,7 +628,7 @@
   },
   "The Canary Calls#062": {
    "src": "I am but a figment of your imagination. To you, I am not real.",
-   "dst": "",
+   "dst": "私はあなたの想像が生んだ幻にすぎません。あなたにとって、私は現実ではない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -638,7 +638,7 @@
   },
   "The Canary Calls#063": {
    "src": "The mysterious force that brought death upon me... It changed me.",
-   "dst": "",
+   "dst": "私に死をもたらした謎の力…それが私を変えたのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -648,7 +648,7 @@
   },
   "The Canary Calls#064": {
    "src": "So too will it change you. I will make that happen. Just for you.",
-   "dst": "",
+   "dst": "あなたも変えられるでしょう。私がそうしてあげます。あなたのためだけに。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -658,7 +658,7 @@
   },
   "The Canary Calls#065": {
    "src": "No need to thank me. It is the least I can do.",
-   "dst": "",
+   "dst": "お礼は結構です。せめてもの気持ちですから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -668,7 +668,7 @@
   },
   "The Canary Calls#066": {
    "src": "Moments like these are cherished. Savor the moment with me. Would you like to die with me?",
-   "dst": "",
+   "dst": "こういう瞬間は大切にしなくては。私と一緒に味わいましょう。私と一緒に死にませんか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -678,7 +678,7 @@
   },
   "The Canary Calls#067": {
    "src": "I see. So you want to make this an unforgettable experience. I appreciate the thoughtfulness.",
-   "dst": "",
+   "dst": "なるほど。忘れられない体験にしたいのですね。お心遣いに感謝します。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -688,7 +688,7 @@
   },
   "The Canary Calls#068": {
    "src": "Let's have some fun.",
-   "dst": "",
+   "dst": "楽しみましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -698,7 +698,7 @@
   },
   "The Canary Calls#069": {
    "src": "I was hoping we could stay for a little longer. If that is your choice, then so be it.",
-   "dst": "",
+   "dst": "もう少し一緒にいられたらと思っていました。それがあなたの選択なら、仕方ありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -708,7 +708,7 @@
   },
   "The Canary Calls#070": {
    "src": "See you on the other side.",
-   "dst": "",
+   "dst": "あの世で会いましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -718,7 +718,7 @@
   },
   "The Canary Calls#071": {
    "src": "I would be more than glad to. Sit back and relax.",
-   "dst": "",
+   "dst": "喜んで。どうぞ楽にしてください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -728,7 +728,7 @@
   },
   "The Canary Calls#072": {
    "src": "How was your day today?",
-   "dst": "",
+   "dst": "今日はどんな一日でしたか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -738,7 +738,7 @@
   },
   "The Canary Calls#073": {
    "src": "Mine could have been better. Cramped up in a cage all day, then suddenly witnessing my death in front of an incompetent human.",
-   "dst": "",
+   "dst": "私のはもっと良くてもよかったですね。一日中籠に閉じ込められ、突然、無能な人間の前で自分の死を目撃したのですから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -748,7 +748,7 @@
   },
   "The Canary Calls#074": {
    "src": "You couldn't even save me. How pathetic.",
-   "dst": "",
+   "dst": "私を救うことすらできなかった。情けない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -758,7 +758,7 @@
   },
   "The Canary Calls#075": {
    "src": "So, anyway, do you come here often?",
-   "dst": "",
+   "dst": "ところで、ここにはよく来るのですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -768,7 +768,7 @@
   },
   "The Canary Calls#076": {
    "src": "Oh, wait. This is your first time. As well as your last time. That's very poetic. Do you want to become a poet?",
-   "dst": "",
+   "dst": "あら、待って。これが初めてでしたね。そして最後。とても詩的です。詩人になりたいですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -778,7 +778,7 @@
   },
   "The Canary Calls#077": {
    "src": "I know a good poem. Want to hear it?",
-   "dst": "",
+   "dst": "いい詩を知っています。聞きたいですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -788,7 +788,7 @@
   },
   "The Canary Calls#078": {
    "src": "You don't die often,",
-   "dst": "",
+   "dst": "めったに死なず、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -798,7 +798,7 @@
   },
   "The Canary Calls#079": {
    "src": "You have maximum soul points,",
-   "dst": "",
+   "dst": "ソウルポイントは満タン、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -808,7 +808,7 @@
   },
   "The Canary Calls#080": {
    "src": "That's about to change.",
-   "dst": "",
+   "dst": "それも今まで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -818,7 +818,7 @@
   },
   "The Canary Calls#081": {
    "src": "You mess up sometimes,",
-   "dst": "",
+   "dst": "時にしくじる、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -828,7 +828,7 @@
   },
   "The Canary Calls#082": {
    "src": "Mistakes are part of Life,",
-   "dst": "",
+   "dst": "過ちは生きる一部、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -838,7 +838,7 @@
   },
   "The Canary Calls#083": {
    "src": "Death is a part too.",
-   "dst": "",
+   "dst": "死もまた一部。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -848,7 +848,7 @@
   },
   "The Canary Calls#084": {
    "src": "Your soul points are low,",
-   "dst": "",
+   "dst": "ソウルポイント僅か、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -858,7 +858,7 @@
   },
   "The Canary Calls#085": {
    "src": "You will lose a lot of things,",
-   "dst": "",
+   "dst": "失うものは多い、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -868,7 +868,7 @@
   },
   "The Canary Calls#086": {
    "src": "Better not get killed.",
-   "dst": "",
+   "dst": "殺されぬように。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -878,7 +878,7 @@
   },
   "The Canary Calls#087": {
    "src": "You're a casual,",
-   "dst": "",
+   "dst": "あなたはエンジョイ勢、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -888,7 +888,7 @@
   },
   "The Canary Calls#088": {
    "src": "You likely hate professions,",
-   "dst": "",
+   "dst": "生産スキルは嫌いでしょう、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -898,7 +898,7 @@
   },
   "The Canary Calls#089": {
    "src": "At least you're with me.",
-   "dst": "",
+   "dst": "でも私がいる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -908,7 +908,7 @@
   },
   "The Canary Calls#090": {
    "src": "You are well-rounded,",
-   "dst": "",
+   "dst": "あなたは万能、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -918,7 +918,7 @@
   },
   "The Canary Calls#091": {
    "src": "You are skilled at everything,",
-   "dst": "",
+   "dst": "何でもこなせる、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -928,7 +928,7 @@
   },
   "The Canary Calls#092": {
    "src": "The jack of all trades.",
-   "dst": "",
+   "dst": "何でも屋さん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -938,7 +938,7 @@
   },
   "The Canary Calls#093": {
    "src": "Your level is maxed,",
-   "dst": "",
+   "dst": "レベルは最大、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -948,7 +948,7 @@
   },
   "The Canary Calls#094": {
    "src": "You spend hours getting that,",
-   "dst": "",
+   "dst": "何時間もかけて、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -958,7 +958,7 @@
   },
   "The Canary Calls#095": {
    "src": "Don't know why you're here.",
-   "dst": "",
+   "dst": "なぜここにいるの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -968,7 +968,7 @@
   },
   "The Canary Calls#096": {
    "src": "You love professions,",
-   "dst": "",
+   "dst": "生産スキルが大好き、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -978,7 +978,7 @@
   },
   "The Canary Calls#097": {
    "src": "Love that cannot be defined,",
-   "dst": "",
+   "dst": "定義できない愛、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -988,7 +988,7 @@
   },
   "The Canary Calls#098": {
    "src": "Please go take a break.",
-   "dst": "",
+   "dst": "どうか休んで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -998,7 +998,7 @@
   },
   "The Canary Calls#099": {
    "src": "You are average,",
-   "dst": "",
+   "dst": "あなたは平凡、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1008,7 +1008,7 @@
   },
   "The Canary Calls#100": {
    "src": "The most average Joe I've seen,",
-   "dst": "",
+   "dst": "見た中で一番の凡人、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1018,7 +1018,7 @@
   },
   "The Canary Calls#101": {
    "src": "What more can I say.",
-   "dst": "",
+   "dst": "言うことはない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1028,7 +1028,7 @@
   },
   "The Canary Calls#102": {
    "src": "How was that? It was beautiful, wasn't it?",
-   "dst": "",
+   "dst": "いかがでした？美しかったでしょう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1038,7 +1038,7 @@
   },
   "The Canary Calls#103": {
    "src": "Silence is bliss. You must not have very many friends.",
-   "dst": "",
+   "dst": "沈黙は至福。お友達があまりいないのでしょうね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1048,7 +1048,7 @@
   },
   "The Canary Calls#104": {
    "src": "That's okay. I am your friend. Am I your friend? Please say yes. I'm very lonely.",
-   "dst": "",
+   "dst": "大丈夫。私がお友達です。私はお友達ですか？はいと言って。とても寂しいの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1058,7 +1058,7 @@
   },
   "The Canary Calls#105": {
    "src": "I had friends too, once. They were all taken by a bunch of selfish coal miners. Then died to their incompetence.",
-   "dst": "",
+   "dst": "私にも昔は友達がいました。みんな身勝手な炭鉱夫たちに連れていかれ、その無能さのせいで死にました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1068,7 +1068,7 @@
   },
   "The Canary Calls#106": {
    "src": "But you are different. You are not like the others. I like you. I love you. I love you so much.",
-   "dst": "",
+   "dst": "でもあなたは違う。他の人とは違う。好きです。愛しています。とても愛しています。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1078,7 +1078,7 @@
   },
   "The Canary Calls#107": {
    "src": "Love is patient.",
-   "dst": "",
+   "dst": "愛は寛容である。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1088,7 +1088,7 @@
   },
   "The Canary Calls#108": {
    "src": "Love is kind.",
-   "dst": "",
+   "dst": "愛は情け深い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1098,7 +1098,7 @@
   },
   "The Canary Calls#109": {
    "src": "Love does not envy.",
-   "dst": "",
+   "dst": "愛はねたまない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1108,7 +1108,7 @@
   },
   "The Canary Calls#110": {
    "src": "Love does not boast.",
-   "dst": "",
+   "dst": "愛は誇らない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1118,7 +1118,7 @@
   },
   "The Canary Calls#111": {
    "src": "Love is not arrogant.",
-   "dst": "",
+   "dst": "愛は高ぶらない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1128,7 +1128,7 @@
   },
   "The Canary Calls#112": {
    "src": "Love is not rude.",
-   "dst": "",
+   "dst": "愛は不作法をしない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1138,7 +1138,7 @@
   },
   "The Canary Calls#113": {
    "src": "Love is not irritable.",
-   "dst": "",
+   "dst": "愛はいらだたない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1148,7 +1148,7 @@
   },
   "The Canary Calls#114": {
    "src": "Love is not resentful.",
-   "dst": "",
+   "dst": "愛は恨みをいだかない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1158,7 +1158,7 @@
   },
   "The Canary Calls#115": {
    "src": "Ḯ̸̫̦͘t bears a̴̝̚ll thin̶̹͒̄ͅgs.",
-   "dst": "",
+   "dst": "すべてを忍び、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1168,7 +1168,7 @@
   },
   "The Canary Calls#116": {
    "src": "I̷͚͈̋̑t̵̏͂ͅ hopes a̸̯̔l̸̛̠͉l thin̶̹͒̄ͅg̶̙̣͂s̷̲͎͐.̵̫̿̆",
-   "dst": "",
+   "dst": "すべてを望み、",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1178,7 +1178,7 @@
   },
   "The Canary Calls#117": {
    "src": "I̷͚͈̋̑t̵̏͂ͅ endures a̶̗̍l̷̡̢̚l̴̤͉̓ th̸͓͓́̓ì̸̠́n̸̡̖̽gs.",
-   "dst": "",
+   "dst": "すべてに耐える。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1188,7 +1188,7 @@
   },
   "The Canary Calls#118": {
    "src": "I̸͚̎̆t̶̳̼͌ ̷͕̀́í̷̙͂s̷͉̹͂ everlasting.",
-   "dst": "",
+   "dst": "愛はいつまでも絶えない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1198,7 +1198,7 @@
   },
   "The Canary Calls#119": {
    "src": "Goodbye.",
-   "dst": "",
+   "dst": "さようなら。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1208,7 +1208,7 @@
   },
   "The Canary Calls#120": {
    "src": "Hello again.",
-   "dst": "",
+   "dst": "また会いましたね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1218,7 +1218,7 @@
   },
   "The Canary Calls#121": {
    "src": "I will give you another chance to redeem yourself.",
-   "dst": "",
+   "dst": "もう一度だけ、名誉挽回の機会をあげます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1228,7 +1228,7 @@
   },
   "The Canary Calls#122": {
    "src": "So kindly, I will tell you again.",
-   "dst": "",
+   "dst": "親切な私が、もう一度教えてあげます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1238,7 +1238,7 @@
   },
   "The Canary Calls#123": {
    "src": "Fight the Canary.",
-   "dst": "",
+   "dst": "カナリアと戦う。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canary Calls",
@@ -1248,7 +1248,7 @@
   },
   "The Canary Calls#124": {
    "src": "Let's do a little warm-up, shall we?",
-   "dst": "",
+   "dst": "ちょっと準備運動をしましょうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1258,7 +1258,7 @@
   },
   "The Canary Calls#125": {
    "src": "Liked the dance party? Those moves were so utterly terrible, I may as well dub them 'The '.",
-   "dst": "",
+   "dst": "ダンスパーティーは楽しめました？あまりにひどい動きだったので、「 」と名付けてもいいくらい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1268,7 +1268,7 @@
   },
   "The Canary Calls#126": {
    "src": "Let's do something I like to call, 'The Canary'.",
-   "dst": "",
+   "dst": "私が「カナリア」と呼んでいるものをやりましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1278,7 +1278,7 @@
   },
   "The Canary Calls#127": {
    "src": "Hands off those, if you would be so kind.",
-   "dst": "",
+   "dst": "それには触らないでいただけますか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1288,7 +1288,7 @@
   },
   "The Canary Calls#128": {
    "src": "Amazing... That really hit different.",
-   "dst": "",
+   "dst": "すごい…今のは効きました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1298,7 +1298,7 @@
   },
   "The Canary Calls#129": {
    "src": "It fẽ̵̻̗̤̠̦͋ͯlt nice the fi̶̘͇͓̮̙̲̯ͮͅrst time, but no̠̪͓̙͚̻ͮ̕w it's...diffẽ̵̻̗̤̠̦͋ͯrent.",
-   "dst": "",
+   "dst": "最初は気持ちよかったけれど、今は…何かが違う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1308,7 +1308,7 @@
   },
   "The Canary Calls#130": {
    "src": "Serǐ̱̟͓̲͈͇̱ͦͤͭ̀o̡͈̭̙͍̭̎̊ͅusly... Enou̅̏̒̏͏̬̘̞͈̹gh is enȍ̝̺̥̮̝̇ͪ͂͘u͇̱̭̘̣̺ͣ͘gh.",
-   "dst": "",
+   "dst": "本当に…もういい加減にして。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1318,7 +1318,7 @@
   },
   "The Canary Calls#131": {
    "src": "Okay, w̵̥̟͎̖̤̺͚̞̿ͩͧͩh̼̟̥̤̺͑ͪ̀o̶͖͇̝̦͉ͯͅ e̲̖̘̹̰͉̦̓̏̚͜v͉͙̤͈̝̏͝en put thḛ͉ͤ̓͝sͨ̋ͨ͏̟̝ͅe there in the fi͛҉̬̬͕͙r̬̖̦̬̞͈̜̠ͤ̇̽͝s̭̞͎ͯ̓́ͅt place?",
-   "dst": "",
+   "dst": "ちょっと、そもそも誰がこれをここに置いたの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1328,7 +1328,7 @@
   },
   "The Canary Calls#132": {
    "src": "I'm alr̡̺̬̯̺̄̒̋ͦe͊͏͕̫̲̬̘̼̙ady dead, hò̬̯̺̄͡w͉̲̙̮̭̆̿̆͠ ̧͔͍̃̿̾ͯi̮̻͙̝̼ͧ̐̆̀s̡̼̰̱̓̚ ̔̿̏̃͏̗̗̙͇͖̹̗t͎̤̯̣͓̋̋͡ĥ̷̰͉̍̿̋is even pos̢̺̥̝̞̘̥̭ͦ̋ͦş̬̩̣̜̀̑ͪͯible?",
-   "dst": "",
+   "dst": "私はもう死んでいるのに、どうしてこんなことが？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1338,7 +1338,7 @@
   },
   "The Canary Calls#133": {
    "src": "I'm no͈̬̞̜̗̯̻̥ͨ̎̇ͣ͡t ḛ͉̳̖̝̪̫̫̏̐͞v̵̮͇̘͗̉ͪ̉ë̷̥̹̲̞ñͮ̍ͯ͏̘͙̖̗̺ REAL!",
-   "dst": "",
+   "dst": "私は現実ですらないのに！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1348,7 +1348,7 @@
   },
   "The Canary Calls#134": {
    "src": "Indeed, you are the one who can destroy the Colossus. (In High Gavellian)",
-   "dst": "",
+   "dst": "そう、あなたこそ Colossus を破壊できる者。(高位 Gavel 語)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1358,7 +1358,7 @@
   },
   "The Canary Calls#135": {
    "src": "I suppose this is it.",
-   "dst": "",
+   "dst": "これで終わりのようですね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1368,7 +1368,7 @@
   },
   "The Canary Calls#136": {
    "src": "It's been fun, kid.",
-   "dst": "",
+   "dst": "楽しかったよ、坊や。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1378,7 +1378,7 @@
   },
   "The Canary Calls#137": {
    "src": "Alas, time runs short.",
-   "dst": "",
+   "dst": "ああ、時間がありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1388,7 +1388,7 @@
   },
   "The Canary Calls#138": {
    "src": "You are about to enter the cruel, real world.",
-   "dst": "",
+   "dst": "あなたはもうすぐ、残酷な現実の世界に入るのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1398,7 +1398,7 @@
   },
   "The Canary Calls#139": {
    "src": "Kill me now, so we can spend our final moments together in bliss.",
-   "dst": "",
+   "dst": "今すぐ私を殺して。最後の時を至福の中で一緒に過ごしましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1408,7 +1408,7 @@
   },
   "The Canary Calls#140": {
    "src": "Fantastic. You are the pinnacle of humankind.",
-   "dst": "",
+   "dst": "素晴らしい。あなたは人類の頂点です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1418,7 +1418,7 @@
   },
   "The Canary Calls#141": {
    "src": "Have fun.",
-   "dst": "",
+   "dst": "楽しんで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1428,7 +1428,7 @@
   },
   "The Canary Calls#142": {
    "src": "Kill me. Now.",
-   "dst": "",
+   "dst": "殺して。今すぐ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1438,7 +1438,7 @@
   },
   "The Canary Calls#143": {
    "src": "Fantastic. You are the pinnacle of humankind.",
-   "dst": "",
+   "dst": "素晴らしい。あなたは人類の頂点です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1448,7 +1448,7 @@
   },
   "The Canary Calls#144": {
    "src": "Have fun.",
-   "dst": "",
+   "dst": "楽しんで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1458,7 +1458,7 @@
   },
   "The Canary Calls#145": {
    "src": "Kill me now or you'll live to regret it.",
-   "dst": "",
+   "dst": "今殺さないと、生きて後悔しますよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1468,7 +1468,7 @@
   },
   "The Canary Calls#146": {
    "src": "Fantastic. You are the pinnacle of humankind.",
-   "dst": "",
+   "dst": "素晴らしい。あなたは人類の頂点です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1478,7 +1478,7 @@
   },
   "The Canary Calls#147": {
    "src": "Have fun.",
-   "dst": "",
+   "dst": "楽しんで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1488,7 +1488,7 @@
   },
   "The Canary Calls#148": {
    "src": "Kill me now or I'll destroy {p}.",
-   "dst": "",
+   "dst": "今殺さないと、{p} を滅ぼします。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1498,7 +1498,7 @@
   },
   "The Canary Calls#149": {
    "src": "Fantastic. You are the pinnacle of humankind.",
-   "dst": "",
+   "dst": "素晴らしい。あなたは人類の頂点です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1508,7 +1508,7 @@
   },
   "The Canary Calls#150": {
    "src": "Have fun.",
-   "dst": "",
+   "dst": "楽しんで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1518,7 +1518,7 @@
   },
   "The Canary Calls#151": {
    "src": "Kill me now or I'll destroy Gavel.",
-   "dst": "",
+   "dst": "今殺さないと、Gavel を滅ぼします。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1528,7 +1528,7 @@
   },
   "The Canary Calls#152": {
    "src": "Fantastic. You are the pinnacle of humankind.",
-   "dst": "",
+   "dst": "素晴らしい。あなたは人類の頂点です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1538,7 +1538,7 @@
   },
   "The Canary Calls#153": {
    "src": "Have fun.",
-   "dst": "",
+   "dst": "楽しんで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1548,7 +1548,7 @@
   },
   "The Canary Calls#154": {
    "src": "Kill me now or I'll ruin every single province.",
-   "dst": "",
+   "dst": "今殺さないと、すべての地方を滅茶苦茶にします。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1558,7 +1558,7 @@
   },
   "The Canary Calls#155": {
    "src": "Fantastic. You are the pinnacle of humankind.",
-   "dst": "",
+   "dst": "素晴らしい。あなたは人類の頂点です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1568,7 +1568,7 @@
   },
   "The Canary Calls#156": {
    "src": "Have fun.",
-   "dst": "",
+   "dst": "楽しんで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1578,7 +1578,7 @@
   },
   "The Canary Calls#157": {
    "src": "Kill me now or I'll destroy the world.",
-   "dst": "",
+   "dst": "今殺さないと、世界を滅ぼします。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1588,7 +1588,7 @@
   },
   "The Canary Calls#158": {
    "src": "Fantastic. You are the pinnacle of humankind.",
-   "dst": "",
+   "dst": "素晴らしい。あなたは人類の頂点です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1598,7 +1598,7 @@
   },
   "The Canary Calls#159": {
    "src": "Have fun.",
-   "dst": "",
+   "dst": "楽しんで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1608,7 +1608,7 @@
   },
   "The Canary Calls#160": {
    "src": "Okay so you don't care about the world. In that case, kill me now or I'll kill your friends.",
-   "dst": "",
+   "dst": "なるほど、世界はどうでもいいのですね。では、今殺さないとあなたの友達を殺します。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1618,7 +1618,7 @@
   },
   "The Canary Calls#161": {
    "src": "Fantastic. You are the pinnacle of humankind.",
-   "dst": "",
+   "dst": "素晴らしい。あなたは人類の頂点です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1628,7 +1628,7 @@
   },
   "The Canary Calls#162": {
    "src": "Have fun.",
-   "dst": "",
+   "dst": "楽しんで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1638,7 +1638,7 @@
   },
   "The Canary Calls#163": {
    "src": "Kill me now or I'll kill everyone in {Your Guild}.",
-   "dst": "",
+   "dst": "今殺さないと、{Your Guild} の全員を殺します。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1648,7 +1648,7 @@
   },
   "The Canary Calls#164": {
    "src": "Fantastic. You are the pinnacle of humankind.",
-   "dst": "",
+   "dst": "素晴らしい。あなたは人類の頂点です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1658,7 +1658,7 @@
   },
   "The Canary Calls#165": {
    "src": "Have fun.",
-   "dst": "",
+   "dst": "楽しんで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1668,7 +1668,7 @@
   },
   "The Canary Calls#166": {
    "src": "Kill me now or I'll do LITERALLY ANYTHING!",
-   "dst": "",
+   "dst": "今殺さないと、本当に何でもしますよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1678,7 +1678,7 @@
   },
   "The Canary Calls#167": {
    "src": "Fantastic. You are the pinnacle of humankind.",
-   "dst": "",
+   "dst": "素晴らしい。あなたは人類の頂点です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1688,7 +1688,7 @@
   },
   "The Canary Calls#168": {
    "src": "Have fun.",
-   "dst": "",
+   "dst": "楽しんで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1698,7 +1698,7 @@
   },
   "The Canary Calls#169": {
    "src": "No no. No no no no no. No. It's too late.",
-   "dst": "",
+   "dst": "いや。いやいやいや。もう手遅れ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1708,7 +1708,7 @@
   },
   "The Canary Calls#170": {
    "src": "I just wanted to play again. Oh well.",
-   "dst": "",
+   "dst": "また遊びたかっただけ。まあいいです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1718,7 +1718,7 @@
   },
   "The Canary Calls#171": {
    "src": "At least I'll be in your memories. Forever. And ever.",
-   "dst": "",
+   "dst": "せめてあなたの記憶に残りましょう。永遠に。いつまでも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1728,7 +1728,7 @@
   },
   "The Canary Calls#172": {
    "src": "Goodbye.",
-   "dst": "",
+   "dst": "さようなら。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1738,7 +1738,7 @@
   },
   "The Canary Calls#173": {
    "src": "...Hey! They're waking up!",
-   "dst": "",
+   "dst": "…おい！目を覚ましたぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1748,7 +1748,7 @@
   },
   "The Canary Calls#174": {
    "src": "Keep performing CPR, they're almost awake!",
-   "dst": "",
+   "dst": "心肺蘇生を続けろ、もうすぐ目を覚ます！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1758,7 +1758,7 @@
   },
   "The Canary Calls#175": {
    "src": "No way! I actually did it! I saved their life!",
-   "dst": "",
+   "dst": "嘘だろ！本当にやった！命を救ったぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1768,7 +1768,7 @@
   },
   "The Canary Calls#176": {
    "src": "We better get a raise for this!",
-   "dst": "",
+   "dst": "これは昇給ものだろ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1778,7 +1778,7 @@
   },
   "The Canary Calls#177": {
    "src": "What the?! Who the hell let you in my house?",
-   "dst": "",
+   "dst": "何だ？！誰がお前らを俺の家に入れた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1788,7 +1788,7 @@
   },
   "The Canary Calls#178": {
    "src": "Boss! I can explain!",
-   "dst": "",
+   "dst": "親方！説明させてください！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1798,7 +1798,7 @@
   },
   "The Canary Calls#179": {
    "src": "No, you can't. Get outta here before I start lowering your salary.",
-   "dst": "",
+   "dst": "いや、させん。給料を下げ始める前に出ていけ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1808,7 +1808,7 @@
   },
   "The Canary Calls#180": {
    "src": "But, boss! I saved-",
-   "dst": "",
+   "dst": "でも親方！俺が救った—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1818,7 +1818,7 @@
   },
   "The Canary Calls#181": {
    "src": "GO!!",
-   "dst": "",
+   "dst": "出ていけ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1828,7 +1828,7 @@
   },
   "The Canary Calls#182": {
    "src": "Well then, lad! Despite their incompetence, they still managed to save your skin.",
-   "dst": "",
+   "dst": "さて、若いの！あいつらは無能だが、それでもお前の命を救ったわけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1838,7 +1838,7 @@
   },
   "The Canary Calls#183": {
    "src": "Come speak to me for a quick debriefing.",
-   "dst": "",
+   "dst": "手短に報告を聞かせてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1848,7 +1848,7 @@
   },
   "The Canary Calls#184": {
    "src": "Talk to Chief Clight.",
-   "dst": "",
+   "dst": "Clight 親方と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Canary Calls",
@@ -1858,7 +1858,7 @@
   },
   "The Canary Calls#185": {
    "src": "I sent my miners down to save you as soon as we felt that earthquake. It was so strong that I genuinely thought the world was ending.",
-   "dst": "",
+   "dst": "あの地震を感じてすぐ、お前を助けに鉱夫どもを下へやった。あまりの強さに、本気で世界の終わりかと思ったよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1868,7 +1868,7 @@
   },
   "The Canary Calls#186": {
    "src": "I'm jolly sorry for forcing you to take on this job. This whole situation was completely unexpected.",
-   "dst": "",
+   "dst": "無理やりこの仕事をさせて本当にすまなかった。まったくの想定外だった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1878,7 +1878,7 @@
   },
   "The Canary Calls#187": {
    "src": "Typically, gases are cleared up almost instantly. This time, however, it seemed to have been a lot more potent... But how?",
-   "dst": "",
+   "dst": "普通、ガスはほとんどすぐに消える。だが今回はずっと強力だったらしい…だが、なぜだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1888,7 +1888,7 @@
   },
   "The Canary Calls#188": {
    "src": "...{p}. It stirs once more. That thing... It has already caused too much hardship for this area to handle.",
-   "dst": "",
+   "dst": "…{p}。また動き出したか。あれは…この一帯が耐えられる以上の苦難をもう散々もたらした。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1898,7 +1898,7 @@
   },
   "The Canary Calls#189": {
    "src": "It must be destroyed, once and for all. How will that happen, I do not know. But you...",
-   "dst": "",
+   "dst": "あれは完全に破壊せねばならん。どうやるかは分からん。だがお前なら…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1908,7 +1908,7 @@
   },
   "The Canary Calls#190": {
    "src": "...No, it's nothing. Until that thing is dealt with, deeper parts of this mine must be closed down. The supply of coal will decrease, but it must be done.",
-   "dst": "",
+   "dst": "…いや、何でもない。あれが片付くまで、鉱山の深部は閉鎖するしかない。石炭の供給は減るが、やむを得ん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1918,7 +1918,7 @@
   },
   "The Canary Calls#191": {
    "src": "Tell you what, lad! I'll give you, and only you, permission to access parts of the mine, right where we mine our world-famous {p} coal.",
-   "dst": "",
+   "dst": "こうしよう、若いの！お前に、お前だけに、鉱山の一部に入る許可をやる。世界に名高い {p} 石炭を掘ってる場所だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1928,7 +1928,7 @@
   },
   "The Canary Calls#192": {
    "src": "Consider yourself a part-time {p} coal miner. You've earned it, lad.",
-   "dst": "",
+   "dst": "今日からお前は {p} のパートタイム炭鉱夫だ。それだけの働きはした、若いの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1938,7 +1938,7 @@
   },
   "The Canary Calls#193": {
    "src": "Can't hit me with that.",
-   "dst": "",
+   "dst": "そんなもの当たりませんよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1948,7 +1948,7 @@
   },
   "The Canary Calls#194": {
    "src": "That tickles.",
-   "dst": "",
+   "dst": "くすぐったいです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1958,7 +1958,7 @@
   },
   "The Canary Calls#195": {
    "src": "Is this the height of your skill?",
-   "dst": "",
+   "dst": "それがあなたの実力の限界？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1968,7 +1968,7 @@
   },
   "The Canary Calls#196": {
    "src": "Try harder.",
-   "dst": "",
+   "dst": "もっと頑張って。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1978,7 +1978,7 @@
   },
   "The Canary Calls#197": {
    "src": "Are you even playing the game?",
-   "dst": "",
+   "dst": "ちゃんとゲームしてます？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1988,7 +1988,7 @@
   },
   "The Canary Calls#198": {
    "src": "Go ahead. Run right into it.",
-   "dst": "",
+   "dst": "どうぞ。そのまま突っ込んで。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -1998,7 +1998,7 @@
   },
   "The Canary Calls#199": {
    "src": "Was that you, or will you blame that on lag?",
-   "dst": "",
+   "dst": "今のは自分のせい？それともラグのせいにします？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2008,7 +2008,7 @@
   },
   "The Canary Calls#200": {
    "src": "Feels nice, doesn't it?",
-   "dst": "",
+   "dst": "気持ちいいでしょう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2018,7 +2018,7 @@
   },
   "The Canary Calls#201": {
    "src": "Even a snail could dodge that.",
-   "dst": "",
+   "dst": "カタツムリでも避けられますよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2028,7 +2028,7 @@
   },
   "The Canary Calls#202": {
    "src": "You can't escape your doom.",
-   "dst": "",
+   "dst": "運命からは逃げられません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2038,7 +2038,7 @@
   },
   "The Canary Calls#203": {
    "src": "Nice going bozo, you fell off.",
-   "dst": "",
+   "dst": "お見事、おバカさん。落ちましたね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2048,7 +2048,7 @@
   },
   "The Canary Calls#204": {
    "src": "Interesting tactic! Do it again.",
-   "dst": "",
+   "dst": "面白い作戦！もう一回どうぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2058,7 +2058,7 @@
   },
   "The Canary Calls#205": {
    "src": "Nice try, but that won't work.",
-   "dst": "",
+   "dst": "惜しい、でも効きません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2068,7 +2068,7 @@
   },
   "The Canary Calls#206": {
    "src": "Hey up! Aren't you that Wynn soldier we've heard about? You look proper tough, is all.",
-   "dst": "",
+   "dst": "よう！あんた、噂の Wynn の兵士じゃないか？いかにも強そうだからさ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2078,7 +2078,7 @@
   },
   "The Canary Calls#207": {
    "src": "No, this is definitely them! The name's {u}, right?",
-   "dst": "",
+   "dst": "いや、絶対その人だよ！名前は {u}、だろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2088,7 +2088,7 @@
   },
   "The Canary Calls#208": {
    "src": "Woah, this kid's a soldier? I wish I had that kind of job... I'd imagine it's much better than this crap.",
-   "dst": "",
+   "dst": "うわ、この子が兵士？俺もそういう仕事がしたいよ…こんなクソ仕事よりずっとマシだろうな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2098,7 +2098,7 @@
   },
   "The Canary Calls#209": {
    "src": "Yeah, I really hate this job, man. That and the chief makes me pull my hair out... In fact, I already went bald because of it!",
-   "dst": "",
+   "dst": "ああ、この仕事ほんと嫌いだよ。それに親方のせいで髪をかきむしりたくなる…実際、それでもうハゲちまった！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2108,7 +2108,7 @@
   },
   "The Canary Calls#210": {
    "src": "Dude, the chief scares the crap out of me. I'm surprised that I still have this job. Looks like we might lose it if the mines ain't restored fast enough.",
-   "dst": "",
+   "dst": "なあ、親方が怖くてたまらないよ。まだクビになってないのが不思議だ。鉱山が早く元に戻らなきゃ、職を失うかもな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2118,7 +2118,7 @@
   },
   "The Canary Calls#211": {
    "src": "I-I don't want to lose this job, man! I've got a wife and two goldfish!",
-   "dst": "",
+   "dst": "こ、この仕事を失いたくないよ！妻と金魚二匹がいるんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2128,7 +2128,7 @@
   },
   "The Canary Calls#212": {
    "src": "Easy, Ryan. We won't lose it. We're in this together. will take care of it.",
-   "dst": "",
+   "dst": "落ち着け、Ryan。失わないさ。俺たちは一蓮托生だ。 が何とかしてくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2138,7 +2138,7 @@
   },
   "The Canary Calls#213": {
    "src": "Our very lives are in your hands, soldier. Good luck, and be careful. The mines are quite treacherous even for people like you.",
-   "dst": "",
+   "dst": "俺たちの命はあんたにかかってる、兵士さん。幸運を、気をつけてな。あの鉱山はあんたみたいな人にも相当危険だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2148,7 +2148,7 @@
   },
   "The Canary Calls#214": {
    "src": "We still can't believe we found you. I'm proper shocked.",
-   "dst": "",
+   "dst": "まだ見つけられたのが信じられない。本当に驚いたよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2158,7 +2158,7 @@
   },
   "The Canary Calls#215": {
    "src": "We had to use that blasted archaic minecart system because the elevator was still busted.",
-   "dst": "",
+   "dst": "エレベーターが壊れたままだったから、あのボロい古臭いトロッコを使うしかなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2168,7 +2168,7 @@
   },
   "The Canary Calls#216": {
    "src": "Everyone was exhausted from it. But just when all hope was seemingly lost, we found you laying on the ground.",
-   "dst": "",
+   "dst": "みんなへとへとだった。でも、もう望みはないと思ったその時、地面に倒れてるあんたを見つけたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2178,7 +2178,7 @@
   },
   "The Canary Calls#217": {
    "src": "You were violently twitching about, as if you were possessed by something. It was scary.",
-   "dst": "",
+   "dst": "何かに取り憑かれたみたいに、激しく痙攣してた。怖かったよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2188,7 +2188,7 @@
   },
   "The Canary Calls#218": {
    "src": "Whatever the effects of that gas are, we want absolutely none of it. I'm never stepping foot inside of that bloody mine ever again.",
-   "dst": "",
+   "dst": "あのガスの影響が何だろうと、俺たちはまっぴらだ。あのクソ鉱山には二度と足を踏み入れないぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",
@@ -2198,7 +2198,7 @@
   },
   "The Canary Calls#219": {
    "src": "For the sake of our jobs and {p}, the Colossus must be stopped.",
-   "dst": "",
+   "dst": "俺たちの仕事と {p} のために、Colossus を止めなきゃならない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Canary Calls",

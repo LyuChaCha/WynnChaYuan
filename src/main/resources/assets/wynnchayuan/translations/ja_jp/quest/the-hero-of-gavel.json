@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Hero of Gavel",
   "count": 196,
-  "translated": 0,
+  "translated": 196,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Hero of Gavel#000": {
    "src": "Find out what's happening in the center of {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} の中心で何が起きているのか調べる",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -18,7 +18,7 @@
   },
   "The Hero of Gavel#001": {
    "src": "Hmm.. I might have just enough for one tier {~}... Why are you standing there?",
-   "dst": "",
+   "dst": "うーん…ティア {~} の分ならギリギリ足りるかも…何でそこに突っ立ってるの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -28,7 +28,7 @@
   },
   "The Hero of Gavel#002": {
    "src": "What all these people are here for? Don't tell me you don't know about the Siegfried contest.",
-   "dst": "",
+   "dst": "この人たちが何しに来たかって？まさか Siegfried コンテストを知らないとか言わないよね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -38,7 +38,7 @@
   },
   "The Hero of Gavel#003": {
    "src": "Are you SERIOUS?! It's the biggest thing happening since the last contest last month!",
-   "dst": "",
+   "dst": "「本気」で言ってる？！先月のコンテスト以来の一大イベントだよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -48,7 +48,7 @@
   },
   "The Hero of Gavel#004": {
    "src": "Whoever wins the big scavenger hunt gets to go on an adventure with Siegfried himself.",
-   "dst": "",
+   "dst": "大宝探しで優勝した人は、Siegfried 本人と冒険に行けるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -58,7 +58,7 @@
   },
   "The Hero of Gavel#005": {
    "src": "This year, I think I even have a good chance to win!",
-   "dst": "",
+   "dst": "今年は優勝のチャンスがあると思うんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -68,7 +68,7 @@
   },
   "The Hero of Gavel#006": {
    "src": "Huh? Oh, you want this ticket? No way, this one's mine. Go get your own at that little shop.",
-   "dst": "",
+   "dst": "え？このチケットが欲しい？ダメ、これは僕のだ。あの小さな店で自分のを買いなよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -78,7 +78,7 @@
   },
   "The Hero of Gavel#007": {
    "src": "Hey, that's the mug I dropped!",
-   "dst": "",
+   "dst": "おい、それは私が落としたマグだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -88,7 +88,7 @@
   },
   "The Hero of Gavel#008": {
    "src": "No, this is mine.",
-   "dst": "",
+   "dst": "いや、これは私のだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -98,7 +98,7 @@
   },
   "The Hero of Gavel#009": {
    "src": "THIEF! GIVE IT BACK!",
-   "dst": "",
+   "dst": "泥棒！返せ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -108,7 +108,7 @@
   },
   "The Hero of Gavel#010": {
    "src": "Ow! Fine, take it!",
-   "dst": "",
+   "dst": "痛っ！わかった、持ってけ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -118,7 +118,7 @@
   },
   "The Hero of Gavel#011": {
    "src": "How can I win an adventure now?",
-   "dst": "",
+   "dst": "これじゃ冒険に当選できないよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -128,7 +128,7 @@
   },
   "The Hero of Gavel#012": {
    "src": "Get a Siegfried Scavenger Hunt ticket in the center of {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} の中心で Siegfried 宝探し大会のチケットを手に入れる",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -138,7 +138,7 @@
   },
   "The Hero of Gavel#013": {
    "src": "Tickets for sale! You! Would you like to join the great Siegfried Scavenger Hunt?",
-   "dst": "",
+   "dst": "チケット販売中！そこのあなた！偉大なる Siegfried 宝探し大会に参加しませんか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -148,7 +148,7 @@
   },
   "The Hero of Gavel#014": {
    "src": "Entry is completely free, and if you win, you'll get to adventure with Siegfried himself!",
-   "dst": "",
+   "dst": "参加は完全無料、優勝すれば Siegfried 本人と冒険に行けます！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -158,7 +158,7 @@
   },
   "The Hero of Gavel#015": {
    "src": "You're interested? Great! Here, it's all quite simple.",
-   "dst": "",
+   "dst": "興味あり？よかった！はい、とても簡単ですよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -168,7 +168,7 @@
   },
   "The Hero of Gavel#016": {
    "src": "The ticket shows what items you need to find. It's split into three tiers.",
-   "dst": "",
+   "dst": "チケットに探すべき品が書いてあります。3つのティアに分かれています。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -178,7 +178,7 @@
   },
   "The Hero of Gavel#017": {
    "src": "The first two, they're for the common folk. But if you REALLY want to win, you need a tier {~} item.",
-   "dst": "",
+   "dst": "最初の2つは一般向け。でも「本気」で勝ちたいなら、ティア {~} の品が必要です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -188,7 +188,7 @@
   },
   "The Hero of Gavel#018": {
    "src": "Heh, you can even bring all three and you're practically guaranteed to win!",
-   "dst": "",
+   "dst": "へへ、3つ全部持ってくれば、ほぼ優勝確定ですよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -198,7 +198,7 @@
   },
   "The Hero of Gavel#019": {
    "src": "Here, take the ticket. Come back with your items and you'll be entered into the draw.",
-   "dst": "",
+   "dst": "はい、チケットです。品を持って戻ってくれば、抽選に参加できます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -208,7 +208,7 @@
   },
   "The Hero of Gavel#020": {
    "src": "Bring all three limited Siegfried Collection items to the merchant in {p} Center at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} 中心にいる商人へ、限定 Siegfried コレクションの品を3つすべて届ける",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -218,7 +218,7 @@
   },
   "The Hero of Gavel#021": {
    "src": "You’re back! Let me see your items.",
-   "dst": "",
+   "dst": "おかえりなさい！品を見せてください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -228,7 +228,7 @@
   },
   "The Hero of Gavel#022": {
    "src": "This… Wow, all of them? Let me take a look at these…",
-   "dst": "",
+   "dst": "これは…わあ、全部？ちょっと見せてくださいね…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -238,7 +238,7 @@
   },
   "The Hero of Gavel#023": {
    "src": "They’re all authentic! You must be ri-I mean, you must be a huge fan of Siegfried!",
-   "dst": "",
+   "dst": "全部本物です！きっとお金持―いえ、Siegfried の大ファンなんですね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -248,7 +248,7 @@
   },
   "The Hero of Gavel#024": {
    "src": "Give me a moment here…",
-   "dst": "",
+   "dst": "少々お待ちを…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -258,7 +258,7 @@
   },
   "The Hero of Gavel#025": {
    "src": "Okay, I’ve entered you into the draw. The event’s taking place at the Golden Eagle Theatre.",
-   "dst": "",
+   "dst": "はい、抽選に登録しました。イベントは Golden Eagle Theatre で行われます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -268,7 +268,7 @@
   },
   "The Hero of Gavel#026": {
    "src": "Just turn toward the bank and follow the signs, the winner will be selected when everyone gets there.",
-   "dst": "",
+   "dst": "銀行の方へ曲がって、案内板に従ってください。全員そろったら優勝者が選ばれます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -278,7 +278,7 @@
   },
   "The Hero of Gavel#027": {
    "src": "Go to the Golden Eagle Theatre behind the Bank in {p} at [{~}, {~}, -{~}] for the winners to be announced.",
-   "dst": "",
+   "dst": "{p} の銀行裏手 [{~}, {~}, -{~}] にある Golden Eagle Theatre へ行き、優勝者の発表を待つ。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -288,7 +288,7 @@
   },
   "The Hero of Gavel#028": {
    "src": "Welcome, welcome everyone! We’re only waiting on a few more people before we begin.",
-   "dst": "",
+   "dst": "ようこそ、ようこそ皆さん！開始まで、あと数名をお待ちしております。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -298,7 +298,7 @@
   },
   "The Hero of Gavel#029": {
    "src": "Ah, there we go! I believe we’re all set now.",
-   "dst": "",
+   "dst": "ああ、来ましたね！これで準備完了のようです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -308,7 +308,7 @@
   },
   "The Hero of Gavel#030": {
    "src": "Welcome everyone, to the monthly SIEGFRIED FESTIVAL SCAVENGER HUNT!",
-   "dst": "",
+   "dst": "皆さん、毎月恒例「Siegfried 祭り宝探し大会」へようこそ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -318,7 +318,7 @@
   },
   "The Hero of Gavel#031": {
    "src": "Today, we are once again celebrating the heroic deeds of Siegfried!",
-   "dst": "",
+   "dst": "本日、我々は再び Siegfried の英雄的偉業を讃えます！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -328,7 +328,7 @@
   },
   "The Hero of Gavel#032": {
    "src": "All of you, my fellow gavellians, have adventured far and wide to gather rare items across the province.",
-   "dst": "",
+   "dst": "Gavel の同胞たる皆さんは、地方中の珍しい品を集めるため、遠く広く冒険してきました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -338,7 +338,7 @@
   },
   "The Hero of Gavel#033": {
    "src": "And yet, I cannot announce the winner…",
-   "dst": "",
+   "dst": "優勝者の発表は私ではありません…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -348,7 +348,7 @@
   },
   "The Hero of Gavel#034": {
    "src": "BECAUSE SIEGFRIED WILL!",
-   "dst": "",
+   "dst": "Siegfried 本人が発表します！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -358,7 +358,7 @@
   },
   "The Hero of Gavel#035": {
    "src": "SIEGFRIED!!",
-   "dst": "",
+   "dst": "SIEGFRIED！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -368,7 +368,7 @@
   },
   "The Hero of Gavel#036": {
    "src": "It's SIEGFRIED!",
-   "dst": "",
+   "dst": "SIEGFRIED だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -378,7 +378,7 @@
   },
   "The Hero of Gavel#037": {
    "src": "It's him!",
-   "dst": "",
+   "dst": "本人だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -388,7 +388,7 @@
   },
   "The Hero of Gavel#038": {
    "src": "SIEGFRIED PICK MEEE!",
-   "dst": "",
+   "dst": "SIEGFRIED、私を選んでぇ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -398,7 +398,7 @@
   },
   "The Hero of Gavel#039": {
    "src": "SIEEEGGFRIEED!",
-   "dst": "",
+   "dst": "SIEEEGGFRIEED！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -408,7 +408,7 @@
   },
   "The Hero of Gavel#040": {
    "src": "Stay back!",
-   "dst": "",
+   "dst": "下がれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -418,7 +418,7 @@
   },
   "The Hero of Gavel#041": {
    "src": "SIEEEGGFRIEED!",
-   "dst": "",
+   "dst": "SIEEEGGFRIEED！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -428,7 +428,7 @@
   },
   "The Hero of Gavel#042": {
    "src": "Hello, Citizens of Gavel!",
-   "dst": "",
+   "dst": "Gavel の市民諸君、こんにちは！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -438,7 +438,7 @@
   },
   "The Hero of Gavel#043": {
    "src": "Thank you all for participating in this fantastic scavenger hunt around Gavel! Siegfried: The winner of this hunt will have the privilege of going on a once-in-a-lifetime, fully authentic, adventure with me!",
-   "dst": "",
+   "dst": "Gavel を巡るこの素晴らしい宝探しに参加してくれてありがとう！Siegfried：この宝探しの優勝者には、一生に一度の、正真正銘の冒険に私と行く栄誉が与えられる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -448,7 +448,7 @@
   },
   "The Hero of Gavel#044": {
    "src": "Now, without further ado: I shall announce the winner!",
-   "dst": "",
+   "dst": "では早速：優勝者を発表しよう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -458,7 +458,7 @@
   },
   "The Hero of Gavel#045": {
    "src": "And the winner is…",
-   "dst": "",
+   "dst": "優勝者は…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -468,7 +468,7 @@
   },
   "The Hero of Gavel#046": {
    "src": "Finally!",
-   "dst": "",
+   "dst": "やっとか！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -478,7 +478,7 @@
   },
   "The Hero of Gavel#047": {
    "src": "I better win, I bought his mug!",
-   "dst": "",
+   "dst": "勝たなきゃ困る、彼のマグを買ったんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -488,7 +488,7 @@
   },
   "The Hero of Gavel#048": {
    "src": "Maybe I'll win this time?",
-   "dst": "",
+   "dst": "今度こそ優勝できるかも？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -498,7 +498,7 @@
   },
   "The Hero of Gavel#049": {
    "src": "{u}!! Congratulations!",
-   "dst": "",
+   "dst": "{u}！！おめでとう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -508,7 +508,7 @@
   },
   "The Hero of Gavel#050": {
    "src": "THE HUMAN?!",
-   "dst": "",
+   "dst": "あの人間が？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -518,7 +518,7 @@
   },
   "The Hero of Gavel#051": {
    "src": "{u}, please head to the backstage area to my right for your adventure. Thank you everyone!!",
-   "dst": "",
+   "dst": "{u}、冒険の準備のため、私の右手の舞台裏へ来てくれ。皆、ありがとう！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -528,7 +528,7 @@
   },
   "The Hero of Gavel#052": {
    "src": "Meet Siegfried backstage in the Golden Eagle Theatre to go on your adventure!",
-   "dst": "",
+   "dst": "Golden Eagle Theatre の舞台裏で Siegfried と会い、冒険に出発する！",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -538,7 +538,7 @@
   },
   "The Hero of Gavel#053": {
    "src": "Welcome ! Congratulations on winning the scavenger hunt!",
-   "dst": "",
+   "dst": "ようこそ ！宝探しの優勝おめでとう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -548,7 +548,7 @@
   },
   "The Hero of Gavel#054": {
    "src": "Today, you’ll be going with me on one of my glorious adventures.",
-   "dst": "",
+   "dst": "今日、君は私の輝かしい冒険の一つに同行する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -558,7 +558,7 @@
   },
   "The Hero of Gavel#055": {
    "src": "And to get there, we’ll ride in the great Siegfried Airship!",
-   "dst": "",
+   "dst": "現地へは、偉大なる Siegfried 飛行船で向かう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -568,7 +568,7 @@
   },
   "The Hero of Gavel#056": {
    "src": "It’s up at the airship docks – I’ll teleport us there!",
-   "dst": "",
+   "dst": "飛行船は発着場にある。私がテレポートで連れて行こう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -578,7 +578,7 @@
   },
   "The Hero of Gavel#057": {
    "src": "(translated: Gavellian) MAGICAL MAGICKY MAGIC MAGICSPELL. Teleport!",
-   "dst": "",
+   "dst": "(訳: Gavel 語) マジカル・マジッキー・マジック・マジックスペル。テレポート！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -588,7 +588,7 @@
   },
   "The Hero of Gavel#058": {
    "src": "TELEPORT!",
-   "dst": "",
+   "dst": "テレポート！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -598,7 +598,7 @@
   },
   "The Hero of Gavel#059": {
    "src": "Travel with Siegfried on his airship at the {p} airship docks at [{~}, {~},-{~}]",
-   "dst": "",
+   "dst": "{p} の飛行船発着場 [{~}, {~},-{~}] から Siegfried の飛行船で旅立つ",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -608,7 +608,7 @@
   },
   "The Hero of Gavel#060": {
    "src": "Here, follow me onto the airship!",
-   "dst": "",
+   "dst": "さあ、ついて来て飛行船に乗りたまえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -618,7 +618,7 @@
   },
   "The Hero of Gavel#061": {
    "src": "And away we go!",
-   "dst": "",
+   "dst": "いざ出発！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -628,7 +628,7 @@
   },
   "The Hero of Gavel#062": {
    "src": "Impressed by my piloting skills? Dodging these islands isn’t a challenge at all for the mighty Siegfried!",
-   "dst": "",
+   "dst": "私の操縦技術に感服したかね？島々を避けるなど、偉大なる Siegfried には造作もない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -638,7 +638,7 @@
   },
   "The Hero of Gavel#063": {
    "src": "I rode an airship much like this one when I saved {p} from the dragon.",
-   "dst": "",
+   "dst": "{p} をドラゴンから救った時も、これとよく似た飛行船に乗っていたのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -648,7 +648,7 @@
   },
   "The Hero of Gavel#064": {
    "src": "Right now we’re heading to a cave on the far east of the region.",
-   "dst": "",
+   "dst": "我々は今、この地方の東の果てにある洞窟へ向かっている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -658,7 +658,7 @@
   },
   "The Hero of Gavel#065": {
    "src": "We’ll have to navigate its treacherous corridors and defeat terrible beasts to get to the treasure at the end.",
-   "dst": "",
+   "dst": "危険な通路を抜け、恐ろしい獣を倒し、奥の財宝を手に入れねばならない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -668,7 +668,7 @@
   },
   "The Hero of Gavel#066": {
    "src": "Why don’t you go get my map from the upper level of the airship, and we’ll get ready for our adventure.",
-   "dst": "",
+   "dst": "飛行船の上の階から私の地図を取ってきてくれ。冒険の準備をしよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -678,7 +678,7 @@
   },
   "The Hero of Gavel#067": {
    "src": "How much lon- Oh, you brought the map!",
-   "dst": "",
+   "dst": "まだかか―おお、地図を持ってきたか！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -688,7 +688,7 @@
   },
   "The Hero of Gavel#068": {
    "src": "We’ll need to use this map to navigate the dangerous cave we’re going to.",
-   "dst": "",
+   "dst": "これから向かう危険な洞窟を進むには、この地図が必要だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -698,7 +698,7 @@
   },
   "The Hero of Gavel#069": {
    "src": "How did I get this? Well-er- I always prepare before my adventures!",
-   "dst": "",
+   "dst": "どうやって手に入れたか？それは―えー―私は冒険の前に必ず準備するのだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -708,7 +708,7 @@
   },
   "The Hero of Gavel#070": {
    "src": "Anyway, we’re about to land now – be careful not to fall off!",
-   "dst": "",
+   "dst": "ともかく、もうすぐ着陸だ。落ちないよう気をつけたまえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -718,7 +718,7 @@
   },
   "The Hero of Gavel#071": {
    "src": "Enter the perilous cave on the eastern edge of the {p} with Siegfried at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} 東端にある危険な洞窟へ Siegfried と共に入る",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -728,7 +728,7 @@
   },
   "The Hero of Gavel#072": {
    "src": "Here we are, the great Cave of Treasure-Hoarding Evil Creatures!",
-   "dst": "",
+   "dst": "着いたぞ、これぞ偉大なる「宝を溜め込む邪悪な魔物の洞窟」だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -738,7 +738,7 @@
   },
   "The Hero of Gavel#073": {
    "src": "Speak to me when you’re fully prepared for this dangerous adventure.",
-   "dst": "",
+   "dst": "この危険な冒険への準備が完全に整ったら、話しかけてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -748,7 +748,7 @@
   },
   "The Hero of Gavel#074": {
    "src": "This cave is exceedingly dangerous, so make sure to follow my instructions.",
-   "dst": "",
+   "dst": "この洞窟は極めて危険だ、私の指示に必ず従うように。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -758,7 +758,7 @@
   },
   "The Hero of Gavel#075": {
    "src": "I’ve got decades of experience bravely adventuring in these caves, so I know what I’m doing.",
-   "dst": "",
+   "dst": "私はこうした洞窟を何十年も勇敢に冒険してきた。任せておきたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -768,7 +768,7 @@
   },
   "The Hero of Gavel#076": {
    "src": "Onwards! {u}, stay right behind me!",
-   "dst": "",
+   "dst": "進め！{u}、私のすぐ後ろにいたまえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -778,7 +778,7 @@
   },
   "The Hero of Gavel#077": {
    "src": "Follow Siegfried through the cave on the eastern edge of the {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} 東端の洞窟を Siegfried について進む",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -788,7 +788,7 @@
   },
   "The Hero of Gavel#078": {
    "src": "You sure took your time getting here! No matter.",
-   "dst": "",
+   "dst": "ずいぶん時間がかかったな！まあいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -798,7 +798,7 @@
   },
   "The Hero of Gavel#079": {
    "src": "I adventure in caves such as these often to get rid of the evil beasts dwelling within.",
-   "dst": "",
+   "dst": "私はよくこうした洞窟を冒険し、中に棲む邪悪な獣を退治しているのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -808,7 +808,7 @@
   },
   "The Hero of Gavel#080": {
    "src": "If it wasn’t for me defeating them before they could even--",
-   "dst": "",
+   "dst": "私が奴らを倒していなければ、奴らは今ごろ―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -818,7 +818,7 @@
   },
   "The Hero of Gavel#081": {
    "src": "Woah, stop! This might look like a harmless decoration, but it’s a trap!",
-   "dst": "",
+   "dst": "おっと、止まれ！無害な飾りに見えるが、これは罠だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -828,7 +828,7 @@
   },
   "The Hero of Gavel#082": {
    "src": "Stay behind me, I’ll open it with my magic spell. (translated: Gavellian) OPEN!",
-   "dst": "",
+   "dst": "私の後ろにいたまえ、魔法の呪文で開けよう。(訳: Gavel 語) 開け！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -838,7 +838,7 @@
   },
   "The Hero of Gavel#083": {
    "src": "Aha! I’ll protect you from the guardian, you deal with the rat!",
-   "dst": "",
+   "dst": "ははっ！守護者からは私が守る、君はネズミを片付けたまえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -848,7 +848,7 @@
   },
   "The Hero of Gavel#084": {
    "src": "Take THIS!",
-   "dst": "",
+   "dst": "これでも食らえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -858,7 +858,7 @@
   },
   "The Hero of Gavel#085": {
    "src": "Ow- I mean, hah! That was easier than swatting a fly for the mighty Siegfried!",
-   "dst": "",
+   "dst": "痛っ―いや、はっ！偉大なる Siegfried にはハエを叩くより簡単だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -868,7 +868,7 @@
   },
   "The Hero of Gavel#086": {
    "src": "Seems like we’re done here! That must have been a very difficult fight for you.",
-   "dst": "",
+   "dst": "片付いたようだな！君にはさぞ厳しい戦いだっただろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -878,7 +878,7 @@
   },
   "The Hero of Gavel#087": {
    "src": "The caves I adventure in are filled with terrifying beasts similar to those.",
-   "dst": "",
+   "dst": "私が冒険する洞窟は、ああいう恐ろしい獣でいっぱいなのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -888,7 +888,7 @@
   },
   "The Hero of Gavel#088": {
    "src": "WAIT! Don’t move, that boulder is about to fall!",
-   "dst": "",
+   "dst": "待て！動くな、あの岩が落ちてくるぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -898,7 +898,7 @@
   },
   "The Hero of Gavel#089": {
    "src": "Wow, that was close! Of course, I saw that coming and had no risk at all.",
-   "dst": "",
+   "dst": "おお、危なかった！もちろん私は見抜いていたから、何の危険もなかったがね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -908,7 +908,7 @@
   },
   "The Hero of Gavel#090": {
    "src": "You might say that we can’t go further, as it’s blocking our way. But I can fix that!",
-   "dst": "",
+   "dst": "道が塞がれて先へ進めないと思うだろう。だが私に任せたまえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -918,7 +918,7 @@
   },
   "The Hero of Gavel#091": {
    "src": "And no more boulder! Only one as powerful as I can do that.",
-   "dst": "",
+   "dst": "岩は消えた！こんな芸当ができるのは私ほどの強者だけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -928,7 +928,7 @@
   },
   "The Hero of Gavel#092": {
    "src": "All we must do now is cross a perilous bridge over the Endless Chasm.",
-   "dst": "",
+   "dst": "あとは Endless Chasm に架かる危険な橋を渡るだけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -938,7 +938,7 @@
   },
   "The Hero of Gavel#093": {
    "src": "Aa, why did- Woah, careful! It looks like the bridge fell.",
-   "dst": "",
+   "dst": "ああ、なぜ―おっと、気をつけろ！橋が落ちたようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -948,7 +948,7 @@
   },
   "The Hero of Gavel#094": {
    "src": "But this is not such an obstacle as you might think, for I can, uh, jump over this chasm!",
-   "dst": "",
+   "dst": "だが、これは君が思うほどの障害ではない。私なら、えー、この裂け目を跳び越えられるのだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -958,7 +958,7 @@
   },
   "The Hero of Gavel#095": {
    "src": "Here I go!",
-   "dst": "",
+   "dst": "行くぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -968,7 +968,7 @@
   },
   "The Hero of Gavel#096": {
    "src": "WAIT!",
-   "dst": "",
+   "dst": "待って！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -978,7 +978,7 @@
   },
   "The Hero of Gavel#097": {
    "src": "The spell--",
-   "dst": "",
+   "dst": "呪文が―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -988,7 +988,7 @@
   },
   "The Hero of Gavel#098": {
    "src": "AAAAAAAAAAAAAH!",
-   "dst": "",
+   "dst": "うわああああああああああ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -998,7 +998,7 @@
   },
   "The Hero of Gavel#099": {
    "src": "Jump after Siegfried into the pit at the end of the cave.",
-   "dst": "",
+   "dst": "洞窟の奥の穴へ Siegfried を追って飛び込む。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1008,7 +1008,7 @@
   },
   "The Hero of Gavel#100": {
    "src": "Find a way to wake Siegfried.",
-   "dst": "",
+   "dst": "Siegfried を起こす方法を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1018,7 +1018,7 @@
   },
   "The Hero of Gavel#101": {
    "src": "AAAAAAGH!",
-   "dst": "",
+   "dst": "うああああああ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1028,7 +1028,7 @@
   },
   "The Hero of Gavel#102": {
    "src": "Aaaaggggh my LEGS MY LEGS AAAGGH SO COLD!",
-   "dst": "",
+   "dst": "ああああ僕の足が足があああ冷たい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1038,7 +1038,7 @@
   },
   "The Hero of Gavel#103": {
    "src": "SO COLD so PAINFUL…",
-   "dst": "",
+   "dst": "冷たい、痛い…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1048,7 +1048,7 @@
   },
   "The Hero of Gavel#104": {
    "src": "Why couldn’t I THINK when I signed that STUPID CONTRACT that I’d end up here!?",
-   "dst": "",
+   "dst": "あのバカな契約書にサインした時、こうなるって何で考えなかったんだ！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1058,7 +1058,7 @@
   },
   "The Hero of Gavel#105": {
    "src": "…Well, this is it.",
-   "dst": "",
+   "dst": "…もう、おしまいだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1068,7 +1068,7 @@
   },
   "The Hero of Gavel#106": {
    "src": "They aren’t gonna come rescue us, you know. We’re on our own.",
-   "dst": "",
+   "dst": "助けなんて来ないよ。僕らだけなんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1078,7 +1078,7 @@
   },
   "The Hero of Gavel#107": {
    "src": "Why are you so calm? DON’T YOU SEE?!",
-   "dst": "",
+   "dst": "何で落ち着いてる？分からないのか？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1088,7 +1088,7 @@
   },
   "The Hero of Gavel#108": {
    "src": "WE’RE ON OUR OWN! This is REAL now! No coming back after ‘dying’, no more obvious traps, no more Siegfried. If I die here, I DIE! No coming back!",
-   "dst": "",
+   "dst": "僕らだけなんだよ！今度は本物だ！『死んで』も復活しない、見え見えの罠もない、Siegfried もいない。ここで死んだら、本当に死ぬんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1098,7 +1098,7 @@
   },
   "The Hero of Gavel#109": {
    "src": "I.. I can’t do this. We’ll just starve here, in this cave… where nobody will ever find our bodies.",
-   "dst": "",
+   "dst": "ぼ…僕には無理だ。僕らはここで飢え死にするんだ、この洞窟で…誰にも死体を見つけてもらえずに。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1108,7 +1108,7 @@
   },
   "The Hero of Gavel#110": {
    "src": "Stop looking at me! You figure out how to get us out of here, I’m just a worthless actor! Tell me if you find anything, I- I need a moment alone.",
-   "dst": "",
+   "dst": "こっちを見るな！ここから出る方法は君が考えてくれ、僕はただの役立たずの役者なんだ！何か見つけたら教えて、ぼ、僕は少し一人になりたい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1118,7 +1118,7 @@
   },
   "The Hero of Gavel#111": {
    "src": "You found something? Ok. I’ll… follow you then.",
-   "dst": "",
+   "dst": "何か見つけた？分かった。じゃあ…ついて行くよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1128,7 +1128,7 @@
   },
   "The Hero of Gavel#112": {
    "src": "WHAT WAS THAT SOUND?! A- are you sure we should go into there?",
-   "dst": "",
+   "dst": "今の音は何だ？！ほ、本当にあそこに入るのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1138,7 +1138,7 @@
   },
   "The Hero of Gavel#113": {
    "src": "MY ARM! IT HIT MY ARM!",
-   "dst": "",
+   "dst": "腕が！腕に当たった！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1148,7 +1148,7 @@
   },
   "The Hero of Gavel#114": {
    "src": "… I think I can manage.. OW!",
-   "dst": "",
+   "dst": "…なんとか大丈夫…痛っ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1158,7 +1158,7 @@
   },
   "The Hero of Gavel#115": {
    "src": "Venture deeper into the cave with Siegfried.",
-   "dst": "",
+   "dst": "Siegfried と共に洞窟の奥へ進む。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1168,7 +1168,7 @@
   },
   "The Hero of Gavel#116": {
    "src": "You.. You got us out of there!",
-   "dst": "",
+   "dst": "き…君が僕らを助け出してくれた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1178,7 +1178,7 @@
   },
   "The Hero of Gavel#117": {
    "src": "I didn’t think we’d ever find a way out of there…",
-   "dst": "",
+   "dst": "あそこから出られるなんて思わなかった…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1188,7 +1188,7 @@
   },
   "The Hero of Gavel#118": {
    "src": "… Well, I guess we should keep going. M- Maybe there’s a way out?",
-   "dst": "",
+   "dst": "…まあ、進むしかないか。で、出口があるかも？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1198,7 +1198,7 @@
   },
   "The Hero of Gavel#119": {
    "src": "L- Look! There’s plants and light up ahead! A WAY OUT!",
-   "dst": "",
+   "dst": "み、見て！先に植物と光がある！出口だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1208,7 +1208,7 @@
   },
   "The Hero of Gavel#120": {
    "src": "Come on, follow me!",
-   "dst": "",
+   "dst": "ほら、ついて来て！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1218,7 +1218,7 @@
   },
   "The Hero of Gavel#121": {
    "src": "AAAH!",
-   "dst": "",
+   "dst": "うわあっ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1228,7 +1228,7 @@
   },
   "The Hero of Gavel#122": {
    "src": "Rescue Siegfried from the trap OR leave him there.",
-   "dst": "",
+   "dst": "Siegfried を罠から救い出す、または置き去りにする。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1238,7 +1238,7 @@
   },
   "The Hero of Gavel#123": {
    "src": "W- What just happened?! I’m trapped in here!",
-   "dst": "",
+   "dst": "な、何が起きたんだ？！閉じ込められた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1248,7 +1248,7 @@
   },
   "The Hero of Gavel#124": {
    "src": "… It’s… some sort of trap. I can feel the ground heating up!!",
-   "dst": "",
+   "dst": "…これは…何かの罠だ。地面が熱くなってきてる！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1258,7 +1258,7 @@
   },
   "The Hero of Gavel#125": {
    "src": "T-That was terrifying… Y-you saved my life. Thank you … I wasn’t prepared for real danger like this.",
-   "dst": "",
+   "dst": "こ、怖かった…き、君は命の恩人だ。ありがとう…こんな本物の危険には備えてなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1268,7 +1268,7 @@
   },
   "The Hero of Gavel#126": {
    "src": "Rest before continuing through the cave.",
-   "dst": "",
+   "dst": "洞窟を進む前に休む。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1278,7 +1278,7 @@
   },
   "The Hero of Gavel#127": {
    "src": "…What? Houses, and a well? All the way down here?",
-   "dst": "",
+   "dst": "…何だって？家と井戸？こんな地下深くに？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1288,7 +1288,7 @@
   },
   "The Hero of Gavel#128": {
    "src": "It’s… empty. And the houses sure don’t look like anyone’s lived here for.. centuries.",
-   "dst": "",
+   "dst": "…誰もいない。家も、何世紀も誰も住んでないみたいだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1298,7 +1298,7 @@
   },
   "The Hero of Gavel#129": {
    "src": "OW! MY LEGS! And my arms, too! E- Everything hurts so much.. I need to sit down. I think I turned my arm the wrong way.",
-   "dst": "",
+   "dst": "痛っ！足が！腕も！ぜ、全身がすごく痛い…座らないと。腕が変な方向に曲がった気がする。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1308,7 +1308,7 @@
   },
   "The Hero of Gavel#130": {
    "src": "I’ll just.. rest here a bit. W- would you mind taking a look around for something we can eat? I can.. hardly move.",
-   "dst": "",
+   "dst": "少し…ここで休むよ。な、何か食べられる物を探してきてくれないか？僕は…ほとんど動けない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1318,7 +1318,7 @@
   },
   "The Hero of Gavel#131": {
    "src": "… Was this a sandwich at some point?",
-   "dst": "",
+   "dst": "…これ、昔はサンドイッチだったのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1328,7 +1328,7 @@
   },
   "The Hero of Gavel#132": {
    "src": "It barely has any resemblance to one.",
-   "dst": "",
+   "dst": "サンドイッチの面影もほとんどない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1338,7 +1338,7 @@
   },
   "The Hero of Gavel#133": {
    "src": "Well… I doubt there’s anything better around here. I- I’ll take it.",
-   "dst": "",
+   "dst": "まあ…この辺にこれ以上の物はないだろうし。い、いただくよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1348,7 +1348,7 @@
   },
   "The Hero of Gavel#134": {
    "src": "OW!! I think I broke my teeth! This is like eating stone!",
-   "dst": "",
+   "dst": "痛っ！！歯が折れた！石を食べてるみたいだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1358,7 +1358,7 @@
   },
   "The Hero of Gavel#135": {
    "src": "… I th-ow-ink I’m ready to- ow- move on. Let’s get go-oow-ing.",
-   "dst": "",
+   "dst": "…いっ―痛―行ける気が―痛っ―する。出―いたた―発しよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1368,7 +1368,7 @@
   },
   "The Hero of Gavel#136": {
    "src": "... Is this the food you found?",
-   "dst": "",
+   "dst": "…これが見つけた食べ物？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1378,7 +1378,7 @@
   },
   "The Hero of Gavel#137": {
    "src": "I guess it's... the best that could be found here. You say you cooked it yourself?",
-   "dst": "",
+   "dst": "たぶん…ここで見つかる中では一番いい物か。自分で料理したって？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1388,7 +1388,7 @@
   },
   "The Hero of Gavel#138": {
    "src": "I'll give it a try, then. Doubt there's anything better around here.",
-   "dst": "",
+   "dst": "じゃあ、食べてみるよ。この辺にこれ以上の物はないだろうし。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1398,7 +1398,7 @@
   },
   "The Hero of Gavel#139": {
    "src": "These are... amazing!",
-   "dst": "",
+   "dst": "これは…すごくおいしい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1408,7 +1408,7 @@
   },
   "The Hero of Gavel#140": {
    "src": "Thank you, {u}! I feel much better. I can head deeper as soon as you're ready.",
-   "dst": "",
+   "dst": "ありがとう、{u}！だいぶ楽になった。準備ができたら、すぐにでも奥へ行けるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1418,7 +1418,7 @@
   },
   "The Hero of Gavel#141": {
    "src": "... These look disgusting.",
-   "dst": "",
+   "dst": "…これ、気持ち悪い見た目だな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1428,7 +1428,7 @@
   },
   "The Hero of Gavel#142": {
    "src": "I guess... I'll eat it, if it's the only food around.",
-   "dst": "",
+   "dst": "まあ…唯一の食べ物なら、食べるしかないか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1438,7 +1438,7 @@
   },
   "The Hero of Gavel#143": {
    "src": "Let's see... How do i even eat these?",
-   "dst": "",
+   "dst": "えっと…これ、どうやって食べるんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1448,7 +1448,7 @@
   },
   "The Hero of Gavel#144": {
    "src": "Ugh... These are awful.",
-   "dst": "",
+   "dst": "うえ…ひどい味だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1458,7 +1458,7 @@
   },
   "The Hero of Gavel#145": {
    "src": "Venture deeper into the cave.",
-   "dst": "",
+   "dst": "洞窟の奥へ進む。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1468,7 +1468,7 @@
   },
   "The Hero of Gavel#146": {
    "src": "You know… my name is actually Gurix.",
-   "dst": "",
+   "dst": "実はね…僕の本名は Gurix っていうんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1478,7 +1478,7 @@
   },
   "The Hero of Gavel#147": {
    "src": "Sound extremely Corkian, I know. They made me use Siegfried because it sounds less foreign, I suppose.",
-   "dst": "",
+   "dst": "すごく Corkus 人っぽい名前だろ。外国っぽくないからって、Siegfried を名乗らされてるんだと思う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1488,7 +1488,7 @@
   },
   "The Hero of Gavel#148": {
    "src": "AAAH! Get away!",
-   "dst": "",
+   "dst": "うわあっ！来るな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1498,7 +1498,7 @@
   },
   "The Hero of Gavel#149": {
    "src": "OW! {u}, I think this web is poisoned! Quick, get me out with one of your spells!",
-   "dst": "",
+   "dst": "痛っ！{u}、この巣には毒があるみたいだ！早く、呪文で助け出して！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1508,7 +1508,7 @@
   },
   "The Hero of Gavel#150": {
    "src": "Thank you . I’ll.. I’ll follow you from now on. Clearly you’re more prepared than I am.",
-   "dst": "",
+   "dst": "ありがとう 。これからは…君について行くよ。君の方がずっと準備ができてるみたいだし。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1518,7 +1518,7 @@
   },
   "The Hero of Gavel#151": {
    "src": "Find your way through the spider burrows.",
-   "dst": "",
+   "dst": "蜘蛛の巣穴を抜ける道を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1528,7 +1528,7 @@
   },
   "The Hero of Gavel#152": {
    "src": "{u}? I think that giant web there is being held up by the platforms on the walls.",
-   "dst": "",
+   "dst": "{u}？あの巨大な巣、壁の足場で支えられてるみたいだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1538,7 +1538,7 @@
   },
   "The Hero of Gavel#153": {
    "src": "I think… Maybe you can cut them down? I’ll stay here, I think it’s the safest place. I’ll call for you if a spider webs me again.",
-   "dst": "",
+   "dst": "たぶん…足場を壊せば落とせるんじゃないか？僕はここにいるよ、一番安全そうだし。また蜘蛛に絡まれたら呼ぶから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1548,7 +1548,7 @@
   },
   "The Hero of Gavel#154": {
    "src": "You did it! The web fell!",
-   "dst": "",
+   "dst": "やった！巣が落ちた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1558,7 +1558,7 @@
   },
   "The Hero of Gavel#155": {
    "src": "Let’s head onwards, I don’t want to deal with any more spiders.",
-   "dst": "",
+   "dst": "先へ進もう、もう蜘蛛はごめんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1568,7 +1568,7 @@
   },
   "The Hero of Gavel#156": {
    "src": "Venture deeper into the cave.",
-   "dst": "",
+   "dst": "洞窟の奥へ進む。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1578,7 +1578,7 @@
   },
   "The Hero of Gavel#157": {
    "src": "Hey, wait up! Thanks for saving me there.",
-   "dst": "",
+   "dst": "おい、待ってくれ！さっきは助けてくれてありがとう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1588,7 +1588,7 @@
   },
   "The Hero of Gavel#158": {
    "src": "Woah... This is enormous! Who knows what this used to be?",
-   "dst": "",
+   "dst": "わあ…すごく広い！昔は何だったんだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1598,7 +1598,7 @@
   },
   "The Hero of Gavel#159": {
    "src": "The path seems to be across those yellow shards, maybe we can reach them?",
-   "dst": "",
+   "dst": "道はあの黄色い欠片の向こうみたいだ、届くかな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1608,7 +1608,7 @@
   },
   "The Hero of Gavel#160": {
    "src": "Find a way to escape through the skylight at the end of the cave.",
-   "dst": "",
+   "dst": "洞窟の奥にある天窓から脱出する方法を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1618,7 +1618,7 @@
   },
   "The Hero of Gavel#161": {
    "src": "Another town? Or another part of the same one? I’m not sure..",
-   "dst": "",
+   "dst": "また別の町？それとも同じ町の別の場所？よく分からない…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1628,7 +1628,7 @@
   },
   "The Hero of Gavel#162": {
    "src": "This one even seems to have a forge and a tailor.. It was a full, proper village!",
-   "dst": "",
+   "dst": "ここには鍛冶場や仕立屋まである…立派な村だったんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1638,7 +1638,7 @@
   },
   "The Hero of Gavel#163": {
    "src": "That.. is that sunlight?",
-   "dst": "",
+   "dst": "あれは…日の光か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1648,7 +1648,7 @@
   },
   "The Hero of Gavel#164": {
    "src": "{u}, look! I can see the sky from here! M- maybe there’s a way to get up!",
-   "dst": "",
+   "dst": "{u}、見て！ここから空が見える！の、登る方法があるかも！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1658,7 +1658,7 @@
   },
   "The Hero of Gavel#165": {
    "src": "I think.. what if we can this geyser somehow? It looks dormant, but I feel like we can activate it again.",
-   "dst": "",
+   "dst": "思うんだけど…この間欠泉をどうにかできないかな？休止してるみたいだけど、また動かせる気がする。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1668,7 +1668,7 @@
   },
   "The Hero of Gavel#166": {
    "src": "You take a look around, I’ll be resting a little. I don’t think I’ve ever walked this much in my life…",
-   "dst": "",
+   "dst": "君は周りを見てきて、僕は少し休むよ。生まれてこのかた、こんなに歩いたことないよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1678,7 +1678,7 @@
   },
   "The Hero of Gavel#167": {
    "src": "Woah! The geyser’s active!",
-   "dst": "",
+   "dst": "わあ！間欠泉が動いた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1688,7 +1688,7 @@
   },
   "The Hero of Gavel#168": {
    "src": "W-Wait.. that’ll be quite a long fall after we get launched up. Can you try making some safety equipment, like a parachute or some really soft boots?",
-   "dst": "",
+   "dst": "ま、待って…打ち上げられた後、かなり長く落ちるよね。パラシュートとか、すごく柔らかいブーツとか、安全装備を作れないかな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1698,7 +1698,7 @@
   },
   "The Hero of Gavel#169": {
    "src": "You’ve already made something? Let me see.",
-   "dst": "",
+   "dst": "もう何か作ったの？見せて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1708,7 +1708,7 @@
   },
   "The Hero of Gavel#170": {
    "src": "This looks… usable? It’s something, at least.",
-   "dst": "",
+   "dst": "これは…使える、かな？まあ、無いよりはマシだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1718,7 +1718,7 @@
   },
   "The Hero of Gavel#171": {
    "src": "Probably the best we’ll get down here. Are you sure you don’t need anything for yourself? No? Okay.",
-   "dst": "",
+   "dst": "たぶんこの地下じゃこれが精一杯だね。君は自分用に何もいらないの？いらない？分かった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1728,7 +1728,7 @@
   },
   "The Hero of Gavel#172": {
    "src": "I can’t wait to see the look on their faces when we get back. We’ve just saved the legacy of Siegfried!",
-   "dst": "",
+   "dst": "戻った時のみんなの顔が楽しみだ。僕らは Siegfried の名声を救ったんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1738,7 +1738,7 @@
   },
   "The Hero of Gavel#173": {
    "src": "Escape the cave!",
-   "dst": "",
+   "dst": "洞窟から脱出せよ！",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1748,7 +1748,7 @@
   },
   "The Hero of Gavel#174": {
    "src": "Woah! The parachute worked!",
-   "dst": "",
+   "dst": "わあ！パラシュートが効いた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1758,7 +1758,7 @@
   },
   "The Hero of Gavel#175": {
    "src": "???",
-   "dst": "",
+   "dst": "？？？",
    "role": "desc",
    "kind": "objective",
    "quest": "The Hero of Gavel",
@@ -1768,7 +1768,7 @@
   },
   "The Hero of Gavel#176": {
    "src": "W-we made it? …, WE DID IT! WE’RE BACK! HAHAAA! I’M ALIVE!",
-   "dst": "",
+   "dst": "や、やった？…やったぞ！戻ってきた！ははは！生きてる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1778,7 +1778,7 @@
   },
   "The Hero of Gavel#177": {
    "src": "Hello there! It is I, Siegfried, and I just stopped the threat that was this cave!",
-   "dst": "",
+   "dst": "やあ！私こそ Siegfried、たった今この洞窟の脅威を退けたところだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1788,7 +1788,7 @@
   },
   "The Hero of Gavel#178": {
    "src": "Hah, that’s a great costume you have there! Looks just like me!",
-   "dst": "",
+   "dst": "はは、見事な衣装だね！私にそっくりだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1798,7 +1798,7 @@
   },
   "The Hero of Gavel#179": {
    "src": "What? I- I’ve been REPLACED?",
-   "dst": "",
+   "dst": "何？ぼ、僕は「取り替えられた」の？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1808,7 +1808,7 @@
   },
   "The Hero of Gavel#180": {
    "src": "Hah, don’t mind the jokester over there. He does have an impressive costume though!",
-   "dst": "",
+   "dst": "はは、あそこのお調子者は気にしないでくれ。衣装は見事だがね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1818,7 +1818,7 @@
   },
   "The Hero of Gavel#181": {
    "src": "W-what's going on here? You can't replace me!",
-   "dst": "",
+   "dst": "な、何が起きてるんだ？僕の代わりなんてさせないぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1828,7 +1828,7 @@
   },
   "The Hero of Gavel#182": {
    "src": "This way, please.",
-   "dst": "",
+   "dst": "こちらへどうぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1838,7 +1838,7 @@
   },
   "The Hero of Gavel#183": {
    "src": "Look over there! Those must be fireworks to celebrate my victory!",
-   "dst": "",
+   "dst": "あれを見たまえ！私の勝利を祝う花火に違いない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1848,7 +1848,7 @@
   },
   "The Hero of Gavel#184": {
    "src": "Wait, wha-",
-   "dst": "",
+   "dst": "待って、何―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1858,7 +1858,7 @@
   },
   "The Hero of Gavel#185": {
    "src": "Well, anyways! You had a really bad fall in that cave there. I carried you out myself, you must’ve had some wild hallucinations.",
-   "dst": "",
+   "dst": "ともかく！君はあの洞窟でひどく転落したんだ。私が自ら運び出したのだよ、きっとひどい幻覚を見ていたんだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1868,7 +1868,7 @@
   },
   "The Hero of Gavel#186": {
    "src": "Even though it was your own mistake, I’ll return you the emeralds you spent on the scavenger hunt.. and some more as compensation. That'll be.. [{~} Liquified Emeralds]!",
-   "dst": "",
+   "dst": "君自身の失敗だが、宝探しに使ったエメラルドは返そう…お詫びに少し上乗せしてね。つまり…[{~} 液体エメラルド] だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1878,7 +1878,7 @@
   },
   "The Hero of Gavel#187": {
    "src": "I must return to {p} for the celebration now. Perhaps we will meet again at the next scavenger hunt!",
-   "dst": "",
+   "dst": "私は祝賀会のため {p} に戻らねば。次の宝探しでまた会えるかもしれないな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1888,7 +1888,7 @@
   },
   "The Hero of Gavel#188": {
    "src": "Hello there, human! It is I, Siegfried! You must have just missed how I expertly ended the threat of this monster-ridden cave!",
-   "dst": "",
+   "dst": "やあ、人間よ！私こそ Siegfried！魔物だらけのこの洞窟の脅威を私が見事に終わらせたところを、ちょうど見逃したようだね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1898,7 +1898,7 @@
   },
   "The Hero of Gavel#189": {
    "src": "Wait!",
-   "dst": "",
+   "dst": "待って！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1908,7 +1908,7 @@
   },
   "The Hero of Gavel#190": {
    "src": "*inaudible*",
-   "dst": "",
+   "dst": "*聞き取れない*",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1918,7 +1918,7 @@
   },
   "The Hero of Gavel#191": {
    "src": "{u}, I'm glad to see you managed to get out alive. That must have been quite a fall into the chasm.",
-   "dst": "",
+   "dst": "{u}、無事に脱出できたようで何よりだ。あの裂け目に落ちるのはさぞ大変だっただろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1928,7 +1928,7 @@
   },
   "The Hero of Gavel#192": {
    "src": "Of course, I got out easily using my spells and great knowledge of caves! Well, I must be off now. Maybe we may meet again if you win the next scavenger hunt!",
-   "dst": "",
+   "dst": "もちろん私は呪文と洞窟の深い知識で楽々脱出したがね！さて、私はもう行かねば。次の宝探しで君が優勝すれば、また会えるかもしれないな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1938,7 +1938,7 @@
   },
   "The Hero of Gavel#193": {
    "src": "As compensation for your unfortunate accident, Siegfried will return you the emeralds spent on purchasing scavenger hunt items.",
-   "dst": "",
+   "dst": "不運な事故の補償として、Siegfried が宝探しの品の購入に使ったエメラルドを返金いたします。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1948,7 +1948,7 @@
   },
   "The Hero of Gavel#194": {
    "src": "That should amount to... {~} Liquid Emeralds. We apologize for the difficulties you encountered during your adventure with Siegfried!",
-   "dst": "",
+   "dst": "金額は…{~} 液体エメラルドになります。Siegfried との冒険中にご迷惑をおかけし、申し訳ございません！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",
@@ -1958,7 +1958,7 @@
   },
   "The Hero of Gavel#195": {
    "src": "- Sky's Kitchen: Cooking with Siegfried!",
-   "dst": "",
+   "dst": "- Sky's Kitchen: Siegfried と料理！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Hero of Gavel",

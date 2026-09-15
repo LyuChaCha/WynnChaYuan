@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Corrupted Village",
   "count": 55,
-  "translated": 0,
+  "translated": 55,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Corrupted Village#000": {
    "src": "Speak to Orikal outside the {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} の外で Orikal と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -18,7 +18,7 @@
   },
   "The Corrupted Village#001": {
    "src": "Go away! I know you're angry but there's nothing to gain her-",
-   "dst": "",
+   "dst": "あっちへ行け！怒ってるのはわかるが、ここで得るものは何も―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -28,7 +28,7 @@
   },
   "The Corrupted Village#002": {
    "src": "Oh, you seem calm. What are you doing here? Bit close to the portal for a soldier isn't it?",
-   "dst": "",
+   "dst": "おや、落ち着いてるね。ここで何を？兵士にしてはポータルに近すぎないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -38,7 +38,7 @@
   },
   "The Corrupted Village#003": {
    "src": "I see, you were sent to aid the public. Perfect.",
-   "dst": "",
+   "dst": "なるほど、民間人の支援に派遣されたのか。完璧だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -48,7 +48,7 @@
   },
   "The Corrupted Village#004": {
    "src": "I am Orikal, I'm trying to stop everyone here from killing each other.",
-   "dst": "",
+   "dst": "私は Orikal。ここの皆が殺し合わないよう、止めようとしているんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -58,7 +58,7 @@
   },
   "The Corrupted Village#005": {
    "src": "Do you see all these spikes? I believe they are the thing spreading corruption.",
-   "dst": "",
+   "dst": "この棘が全部見えるか？腐敗を広げているのはこれだと思う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -68,7 +68,7 @@
   },
   "The Corrupted Village#006": {
    "src": "Corruption does not affect humans like other beings. It’s much much slower, more like an infection of the mind to us.",
-   "dst": "",
+   "dst": "腐敗は人間には他の生き物と違う形で作用する。ずっと遅く、私たちには心の感染に近いんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -78,7 +78,7 @@
   },
   "The Corrupted Village#007": {
    "src": "Could you inspect the peak of the spike in the village for me? It might give me valuable insight. Thanks!",
-   "dst": "",
+   "dst": "村の棘の先端を調べてくれないか？貴重な手がかりになるかもしれない。ありがとう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -88,7 +88,7 @@
   },
   "The Corrupted Village#008": {
    "src": "Examine the nearby corrupted spike to the northeast at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "北東 [{~}, {~}, -{~}] にある近くの腐敗した棘を調べる。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -98,7 +98,7 @@
   },
   "The Corrupted Village#009": {
    "src": "Climb the spike to see if you can find anything useful about it's existance.",
-   "dst": "",
+   "dst": "棘に登り、その存在について役立つ手がかりがないか探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -108,7 +108,7 @@
   },
   "The Corrupted Village#010": {
    "src": "Report back to Orikal about your observations.",
-   "dst": "",
+   "dst": "観察の結果を Orikal に報告する。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -118,7 +118,7 @@
   },
   "The Corrupted Village#011": {
    "src": "That was quick... did you find anything?",
-   "dst": "",
+   "dst": "早いな…何か見つかった？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -128,7 +128,7 @@
   },
   "The Corrupted Village#012": {
    "src": "Really, nothing? You didn't even feel anything?",
-   "dst": "",
+   "dst": "本当に何も？何も感じなかったのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -138,7 +138,7 @@
   },
   "The Corrupted Village#013": {
    "src": "How can it be just a spike? It must be spreading corruption somehow.",
-   "dst": "",
+   "dst": "ただの棘のはずがない。何らかの形で腐敗を広げているはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -148,7 +148,7 @@
   },
   "The Corrupted Village#014": {
    "src": "Then perhaps my second theory was correct. I will have to send you underground.",
-   "dst": "",
+   "dst": "なら、二つ目の仮説が正しかったのかもしれない。君を地下に送らないと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -158,7 +158,7 @@
   },
   "The Corrupted Village#015": {
    "src": "There are old cave systems around here from the mining days. I sent two men down to excavate the spike, can you go down and help?",
-   "dst": "",
+   "dst": "この辺りには採掘時代の古い坑道がある。棘を掘り出すため二人を送り込んだんだが、下りて手伝ってくれるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -168,7 +168,7 @@
   },
   "The Corrupted Village#016": {
    "src": "The entrance is a little to the northeast. In fact, you should have passed it on your way to the spike.",
-   "dst": "",
+   "dst": "入口は少し北東だ。実のところ、棘へ行く途中で通り過ぎたはずだよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -178,7 +178,7 @@
   },
   "The Corrupted Village#017": {
    "src": "Find the excavators inside the nearby cave to the northeast at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "北東 [{~}, {~}, -{~}] の近くの洞窟で採掘者たちを探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -188,7 +188,7 @@
   },
   "The Corrupted Village#018": {
    "src": "Find the excavators inside the cave.",
-   "dst": "",
+   "dst": "洞窟の中で採掘者たちを探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -198,7 +198,7 @@
   },
   "The Corrupted Village#019": {
    "src": "This is insane, why are we here?! We're looking for corruption you know that right?",
-   "dst": "",
+   "dst": "正気じゃない、何でこんな所に！？俺たちが探してるのは腐敗だぞ、わかってるのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -208,7 +208,7 @@
   },
   "The Corrupted Village#020": {
    "src": "Calm down. All we have to do is keep digging. Besides, he did say he'd pay us a lot, so stop being mad.",
-   "dst": "",
+   "dst": "落ち着け。掘り続けりゃいいだけだ。それに、たっぷり払うって言ってたろ。怒るなよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -218,7 +218,7 @@
   },
   "The Corrupted Village#021": {
    "src": "Forget it, I don't care anymore, just prime the explosive and get clear of the blast!",
-   "dst": "",
+   "dst": "もういい、どうでもいい。爆薬をセットして、爆風から離れろ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -228,7 +228,7 @@
   },
   "The Corrupted Village#022": {
    "src": "Well, that did the trick. Let's take a look.",
-   "dst": "",
+   "dst": "よし、うまくいった。見てみようぜ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -238,7 +238,7 @@
   },
   "The Corrupted Village#023": {
    "src": "Oh my... What... is this?",
-   "dst": "",
+   "dst": "なんてこった…これは…何だ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -248,7 +248,7 @@
   },
   "The Corrupted Village#024": {
    "src": "It almost looks like a giant spike... Woah. How deep does this thing go?",
-   "dst": "",
+   "dst": "巨大な棘みたいだな…うわ。こいつ、どこまで深く続いてるんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -258,7 +258,7 @@
   },
   "The Corrupted Village#025": {
    "src": "Well, you know what? We did our job, so honestly I don't care. Let's get out of he-",
-   "dst": "",
+   "dst": "なあ、わかるか？俺たちの仕事は済んだ、正直どうでもいい。さっさと出よう―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -268,7 +268,7 @@
   },
   "The Corrupted Village#026": {
    "src": "Orikal? We’re done! Pay up! I want out. This place is getting to me.",
-   "dst": "",
+   "dst": "Orikal？終わったぞ！金を払え！もう出たい。ここは気が変になりそうだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -278,7 +278,7 @@
   },
   "The Corrupted Village#027": {
    "src": "I came when I heard the explosion. I thought you'd hurt yourselves.",
-   "dst": "",
+   "dst": "爆発音が聞こえたから来たんだ。怪我でもしたかと思ったよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -288,7 +288,7 @@
   },
   "The Corrupted Village#028": {
    "src": "Well, I'll be darned. The spike goes this far down? And it looks like it goes even deeper than this!",
-   "dst": "",
+   "dst": "こりゃ驚いた。棘がこんなに深くまで？しかもさらに深くまで続いているようだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -298,7 +298,7 @@
   },
   "The Corrupted Village#029": {
    "src": "Well, I don't know about you, but I say we blow it to shreds! That oughta get rid of this spike!",
-   "dst": "",
+   "dst": "あんたらはどうか知らんが、俺は粉々に吹っ飛ばすのに賛成だ！そうすりゃ棘も片付くだろ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -308,7 +308,7 @@
   },
   "The Corrupted Village#030": {
    "src": "For once, I agree. I'll do it, you guys just get clear.",
-   "dst": "",
+   "dst": "今回ばかりは賛成だ。私がやるから、君たちは離れていてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -318,7 +318,7 @@
   },
   "The Corrupted Village#031": {
    "src": "...Wow, that did nothing. We're going to need something MUCH more powerful than TNT...",
-   "dst": "",
+   "dst": "…うわ、びくともしない。TNT よりずっと強力なものが必要だな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -328,7 +328,7 @@
   },
   "The Corrupted Village#032": {
    "src": "Oh yeah? And just what would you have in mind?",
-   "dst": "",
+   "dst": "へえ？で、何か考えでもあるのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -338,7 +338,7 @@
   },
   "The Corrupted Village#033": {
    "src": "Well, it's sorta complicated. That's why I've decided to give our new friend here the job of acquiring this explosive.",
-   "dst": "",
+   "dst": "まあ、少し複雑でね。だから、その爆薬を手に入れる役目はこの新しい友人に任せることにした。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -348,7 +348,7 @@
   },
   "The Corrupted Village#034": {
    "src": "Oh yeah, we were so busy with this spike, we forgot to address you! Sorry about that.",
-   "dst": "",
+   "dst": "そうだ、棘に夢中であんたに挨拶するのを忘れてた！悪かったな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -358,7 +358,7 @@
   },
   "The Corrupted Village#035": {
    "src": "Well if you don't need us anymore then we'll just be on our way... WITH our money! So hand it over please.",
-   "dst": "",
+   "dst": "もう用がないなら、俺たちは帰らせてもらう…金を持ってな！だから払ってくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -368,7 +368,7 @@
   },
   "The Corrupted Village#036": {
    "src": "Alright, fine. Here's your pay. Thank you for your help.",
-   "dst": "",
+   "dst": "わかった、わかった。これが報酬だ。手伝ってくれてありがとう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -378,7 +378,7 @@
   },
   "The Corrupted Village#037": {
    "src": "Gah! That's hardly anything! I'm not even surprised. Let's just go.",
-   "dst": "",
+   "dst": "げっ！これっぽっちかよ！驚きもしないがな。もう行こうぜ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -388,7 +388,7 @@
   },
   "The Corrupted Village#038": {
    "src": "Anyway, come meet me back at my tent, friend. We will discuss what to do then.",
-   "dst": "",
+   "dst": "ともかく、友よ、私のテントに戻って来てくれ。そこで今後を話し合おう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -398,7 +398,7 @@
   },
   "The Corrupted Village#039": {
    "src": "Exit the cave and speak to Orikal in his tent about his plan for destroying the spike.",
-   "dst": "",
+   "dst": "洞窟を出て、テントにいる Orikal と棘を破壊する計画について話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -408,7 +408,7 @@
   },
   "The Corrupted Village#040": {
    "src": "Okay. I happen to know a recipe for creating an extremely lethal magical explosive.",
-   "dst": "",
+   "dst": "よし。実は、非常に強力な魔法爆薬の作り方を知っているんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -418,7 +418,7 @@
   },
   "The Corrupted Village#041": {
    "src": "There are {~} main ingredients you will need to get me: [Stabilized Corrupted Ore], [Incendiary Fluid], and a [Switch Fuse] to activate it.",
-   "dst": "",
+   "dst": "必要な主な材料は {~} つ。[Stabilized Corrupted Ore]、[Incendiary Fluid]、それに起爆用の [Switch Fuse] だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -428,7 +428,7 @@
   },
   "The Corrupted Village#042": {
    "src": "There used to be a small mining camp a little east of this town. It's abandoned now, but you should still be able to find what you need there.",
-   "dst": "",
+   "dst": "この町の少し東に、小さな採掘キャンプがあったんだ。今は廃墟だが、必要な物はまだ見つかるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -438,7 +438,7 @@
   },
   "The Corrupted Village#043": {
    "src": "It's not the big ol' abandoned mines, mind you. It's a smaller camp, in fact you should be able to see it from this village.",
-   "dst": "",
+   "dst": "言っておくが、あの大きな廃坑じゃないぞ。もっと小さなキャンプで、実はこの村からも見えるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -448,7 +448,7 @@
   },
   "The Corrupted Village#044": {
    "src": "Best of luck! Oh, and also, try not to die please. These ingredients do indeed promote environmental hazards.",
-   "dst": "",
+   "dst": "幸運を祈る！あと、できれば死なないでくれ。この材料は本当に周囲を危険にするからね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -458,7 +458,7 @@
   },
   "The Corrupted Village#045": {
    "src": "Find [Stabilized Corrupted Ore], [Incendiary Fluid], and [Switch Fuse] for the TNT at the mining camp at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の採掘キャンプで TNT 用の [Stabilized Corrupted Ore]、[Incendiary Fluid]、[Switch Fuse] を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -468,7 +468,7 @@
   },
   "The Corrupted Village#047": {
    "src": "You got 'em all! Excellent, this is exactly what we need.",
-   "dst": "",
+   "dst": "全部そろえたね！素晴らしい、まさに必要な物だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -478,7 +478,7 @@
   },
   "The Corrupted Village#048": {
    "src": "Alright, stand back. I have actually never made this before, so let's hope I don't cause a disaster.",
-   "dst": "",
+   "dst": "よし、下がって。実はこれを作るのは初めてなんだ、大惨事にならないよう祈ろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -488,7 +488,7 @@
   },
   "The Corrupted Village#049": {
    "src": "Phew, glad nothing tragic happened there. This should be it, now go take it back down to the spike and destroy it once and for all!",
-   "dst": "",
+   "dst": "ふう、何事もなくてよかった。これで完成のはずだ。さあ、洞窟の棘まで持って行って、今度こそ完全に破壊してくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -498,7 +498,7 @@
   },
   "The Corrupted Village#050": {
    "src": "Bring the explosive to the spike in the cave and use it to destroy the spike.",
-   "dst": "",
+   "dst": "爆薬を洞窟の棘まで運び、それで棘を破壊する。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -508,7 +508,7 @@
   },
   "The Corrupted Village#051": {
    "src": "Report to Orikal about your success.",
-   "dst": "",
+   "dst": "成功を Orikal に報告する。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Corrupted Village",
@@ -518,7 +518,7 @@
   },
   "The Corrupted Village#052": {
    "src": "Oh, do you feel that? It's like a buzzing in my ears I never knew about has just vanished.",
-   "dst": "",
+   "dst": "おお、感じるか？今まで気づかなかった耳鳴りが、急に消えたみたいだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -528,7 +528,7 @@
   },
   "The Corrupted Village#053": {
    "src": "I think that worked you know. It seems the power of the spike comes from the root...",
-   "dst": "",
+   "dst": "うまくいったと思うよ。どうやら棘の力は根元から来ていたらしい…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -538,7 +538,7 @@
   },
   "The Corrupted Village#054": {
    "src": "But what is it connected to? That's for another day. The main thing is the village is safe.",
-   "dst": "",
+   "dst": "だが、何につながっているんだ？それはまた今度だ。大事なのは村が無事だということだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",
@@ -548,7 +548,7 @@
   },
   "The Corrupted Village#055": {
    "src": "Here, take this for your help. I found this potato in one of the houses around here, and I sure as heck don't want it!",
-   "dst": "",
+   "dst": "ほら、手伝ってくれたお礼だ。この辺の家で見つけたジャガイモなんだが、私は絶対に要らない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Corrupted Village",

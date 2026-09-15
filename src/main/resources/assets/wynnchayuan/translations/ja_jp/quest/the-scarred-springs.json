@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Scarred Springs",
   "count": 137,
-  "translated": 0,
+  "translated": 137,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Scarred Springs#000": {
    "src": "Talk to Maripe at Pishlas at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Pishlas で Maripe と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -18,7 +18,7 @@
   },
   "The Scarred Springs#001": {
    "src": "Oh! Well, hello there, tourist! I have to assume you're a tourist, anyways. That doesn't look like local dress, anyways. I suppose you've heard about the hot springs!",
-   "dst": "",
+   "dst": "おっ！やあ、観光客さん！まあ観光客だと思うんだ。地元の服装には見えないし。温泉のことを聞いて来たんでしょ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -28,7 +28,7 @@
   },
   "The Scarred Springs#002": {
    "src": "Well, ah...unfortunately, Pishlas is closed for renovations. You see, it's been closed for a long time... My family has run it for generations, but trouble started.",
-   "dst": "",
+   "dst": "えっと、あー…残念ながら Pishlas は改装中で休業なんだ。もう長いこと閉まってて…うちの家族が代々経営してきたんだけど、問題が起きてね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -38,7 +38,7 @@
   },
   "The Scarred Springs#003": {
    "src": "With my mother having been stricken ill for so long, my father and all our family, we've had to abandon this place to care for her. It's fallen into disrepair.",
-   "dst": "",
+   "dst": "母さんが長いこと病気で、父さんも家族もみんなで看病するためにここを離れるしかなかった。それで荒れ果てちゃったんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -48,7 +48,7 @@
   },
   "The Scarred Springs#004": {
    "src": "She's well enough now that she doesn't need someone looking after her every hour, so I'm taking it on myself to return this place to its former glory!",
-   "dst": "",
+   "dst": "今はずっと付き添わなくていいくらい元気になったから、僕がこの場所を昔の輝きに戻すって決めたんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -58,7 +58,7 @@
   },
   "The Scarred Springs#005": {
    "src": "It's been hard work...and it should be opening soon- but I'm not quite done. Again, I'm so sorry you came all this way for nothing.",
-   "dst": "",
+   "dst": "大変な作業で…もうすぐ開けられるはずなんだけど、まだ終わってない。わざわざ来てくれたのに、本当にごめんね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -68,7 +68,7 @@
   },
   "The Scarred Springs#006": {
    "src": "I- excuse me? You want to...",
-   "dst": "",
+   "dst": "え―何だって？君が…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -78,7 +78,7 @@
   },
   "The Scarred Springs#007": {
    "src": "That'd... That'd be absolutely fantastic!! I've been working alone on this for months now!! I'm NEARLY done, but-",
-   "dst": "",
+   "dst": "そ…それは最高だよ！！何か月も一人でやってたんだ！！あとちょっとなんだけど―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -88,7 +88,7 @@
   },
   "The Scarred Springs#008": {
    "src": "Come on, come on! I'll show you around! Let's go, let's go!!",
-   "dst": "",
+   "dst": "さあ、さあ！案内するよ！行こう、行こう！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -98,7 +98,7 @@
   },
   "The Scarred Springs#009": {
    "src": "Hopefully you'll be able to visit before you have to go home then!",
-   "dst": "",
+   "dst": "帰る前に一度入りに来られるといいね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -108,7 +108,7 @@
   },
   "The Scarred Springs#010": {
    "src": "Okay, okay, what's next on the list... C'mon, think like Sovereign Zhiraok!",
-   "dst": "",
+   "dst": "よし、よし、リストの次は何だっけ…ほら、君主 Zhiraokみたいに考えろ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -118,7 +118,7 @@
   },
   "The Scarred Springs#011": {
    "src": "Let Maripe show you around at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] で Maripe に案内してもらう。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -128,7 +128,7 @@
   },
   "The Scarred Springs#012": {
    "src": "Okay, so! These are the main pools- Frankly, I have no idea how all these frogs got here, given the bog is clear across the whole forest...",
-   "dst": "",
+   "dst": "よし、じゃあ！ここが主浴場―正直、このカエルたちがどこから来たのか全然わからない。沼は森の反対側なのに…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -138,7 +138,7 @@
   },
   "The Scarred Springs#013": {
    "src": "But they've got to go. Sure, they're cute, but no one's going to want to take a soak with them... Or with all these fallen leaves in the pools.",
-   "dst": "",
+   "dst": "でも出てってもらわないと。可愛いけど、カエルと一緒に浸かりたい人はいないよ…湯に落ちた葉っぱとも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -148,7 +148,7 @@
   },
   "The Scarred Springs#014": {
    "src": "The side pool over here is just as important to clean out. Need to have clear pools for the guests! And maybe even for the Sovereign!",
-   "dst": "",
+   "dst": "こっちの脇の湯船も掃除が大事。お客さんには澄んだお湯じゃないと！君主様だって来るかも！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -158,7 +158,7 @@
   },
   "The Scarred Springs#015": {
    "src": "I've already put a lot of time into fixing up these huts. I do carpentry work. These used to be in so much worse shape... I'm a little glad my grandparents didn't end up seeing it like this.",
-   "dst": "",
+   "dst": "この小屋の修理にはもうずいぶん時間をかけた。僕、大工なんだ。前はもっとひどい状態で…祖父母がこの有様を見ずに済んで、ちょっとほっとしてる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -168,7 +168,7 @@
   },
   "The Scarred Springs#016": {
    "src": "I have such fond memories of playing around here when I was younger... What would they think, seeing it fall apart? That thought has been giving me motivation this whole time.",
-   "dst": "",
+   "dst": "小さい頃ここで遊んだ思い出がたくさんあって…崩れていくのを見たら、二人はどう思うかな？その思いがずっと僕の原動力なんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -178,7 +178,7 @@
   },
   "The Scarred Springs#017": {
    "src": "It'd be a disgrace to let Pishlas fall completely apart. Even Sovereign Zhiraok agreed! Did you know he dropped by, when I was first starting- Oh, wait! There's one other place!",
-   "dst": "",
+   "dst": "Pishlas を完全に崩れさせるなんて恥だよ。君主 Zhiraokも賛成してくれた！始めた頃に寄ってくれたって知ってる―あっ、待って！もう一か所あった！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -188,7 +188,7 @@
   },
   "The Scarred Springs#018": {
    "src": "The teahouse! Refreshments, hot drinks, a place to sit out of the water... This is one of the big remaining projects. I'll take care of this- but, back about the Sovereign?",
-   "dst": "",
+   "dst": "茶屋だ！軽食に温かい飲み物、湯から上がって座れる場所…これが残ってる大仕事の一つ。ここは僕がやる―で、君主の話だっけ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -198,7 +198,7 @@
   },
   "The Scarred Springs#019": {
    "src": "He visited one day, while I was starting on fixing the place, and he told me this would be a fantastic community service! Since it's been so long since Pishlas has been usable, I mean.",
-   "dst": "",
+   "dst": "改装を始めた頃のある日に来てくれて、これは素晴らしい地域奉仕になるって言ってくれたんだ！Pishlas がずっと使えなかったからね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -208,7 +208,7 @@
   },
   "The Scarred Springs#020": {
    "src": "This used to be a big community center. Losing it was a blow to all Auburn residents... He's promised some great things if I can clean this all up! So let's get to it!",
-   "dst": "",
+   "dst": "ここは昔、大事な地域の集いの場だった。失って Auburn の住民はみんな落ち込んだ…全部片付けたら、すごいご褒美を約束してくれたんだ！さあ始めよう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -218,7 +218,7 @@
   },
   "The Scarred Springs#021": {
    "src": "You go gather up the frogs! There's a pond to the you can drop them off at. Then...the leaves! Pick them out of the pools. Then...then come back and we'll see where we're at!",
-   "dst": "",
+   "dst": "君はカエルを集めてきて！の方に放せる池があるから。それから…葉っぱ！湯船から拾い出して。それから…戻ってきたら、進み具合を確認しよう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -228,7 +228,7 @@
   },
   "The Scarred Springs#022": {
    "src": "Pick up the frogs around [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] 周辺のカエルを拾う。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -238,7 +238,7 @@
   },
   "The Scarred Springs#023": {
    "src": "How's it coming? Still working on this. Will be for a bit, but I'm energized! Maybe I can get this done today, even! Uh...right, right! Frogs!",
-   "dst": "",
+   "dst": "調子はどう？こっちはまだ作業中。しばらくかかるけど、やる気満々！今日中に終わるかも！えっと…そうそう！カエル！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -248,7 +248,7 @@
   },
   "The Scarred Springs#024": {
    "src": "Okay, there were five, and you're holding... Alright, so there's left to get!",
-   "dst": "",
+   "dst": "よし、五匹いて、君が持ってるのは…よし、あと匹だね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -258,7 +258,7 @@
   },
   "The Scarred Springs#025": {
    "src": "Release the frogs at the pond in the back at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の奥の池でカエルを放す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -268,7 +268,7 @@
   },
   "The Scarred Springs#026": {
    "src": "Woah! That...that's sure a way to carry the frogs, haha! Y- Pfffkhhhaaahahahaa!! You look- Wahaha, that's fantastic!! Oh, Ohhkay, okay, right!",
-   "dst": "",
+   "dst": "うわ！それは…確かにカエルの運び方ではあるね、はは！き―ぷっはははははっ！！その格好―わはは、最高！！お、おっけー、よし！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -278,7 +278,7 @@
   },
   "The Scarred Springs#027": {
    "src": "There's a pond to the of Pishlas here you can drop them off at! Now, g-get out of here, eheheh! I gotta concentrate, and there's frogs on y- heehehahahahaaah!!",
-   "dst": "",
+   "dst": "Pishlas のの方に放せる池があるよ！さ、さあ行って、えへへ！集中しなきゃだし、君にカエルが―ひひははははっ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -288,7 +288,7 @@
   },
   "The Scarred Springs#028": {
    "src": "Pick up all the leaf piles around [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] 周辺の落ち葉の山をすべて拾う。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -298,7 +298,7 @@
   },
   "The Scarred Springs#029": {
    "src": "Okay, frogs are dealt with, now the leaves! There were ten big patches out there I saw. Get in there and scoop them up- Uh, lemme see. ...",
-   "dst": "",
+   "dst": "よし、カエルは片付いた、次は葉っぱ！外に大きな山が十か所あった。入ってすくい上げて―えっと、どれどれ。…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -308,7 +308,7 @@
   },
   "The Scarred Springs#030": {
    "src": "Okay, you got left! Hopefully once you do, I'll be all done over here, and we'll go from there!",
-   "dst": "",
+   "dst": "よし、あと残ってるね！それが終わる頃には僕もこっちを終わらせて、そこから進めよう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -318,7 +318,7 @@
   },
   "The Scarred Springs#031": {
    "src": "Report back to Maripe [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Maripe に報告する。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -328,7 +328,7 @@
   },
   "The Scarred Springs#032": {
    "src": "Okay, there! And STAY in, you darn board... So, how's the work going?",
-   "dst": "",
+   "dst": "よし、そこ！「ちゃんと」はまってろ、この板め…で、作業はどう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -338,7 +338,7 @@
   },
   "The Scarred Springs#033": {
    "src": "Frogs dealt with, check...and leaves out of the water, check! Which, ah...well, that means now I need you to get some leaves...to put IN the water, eheh!",
-   "dst": "",
+   "dst": "カエル、完了…葉っぱを湯から出す、完了！ってことは、あー…今度は葉っぱを取ってきて…湯に「入れて」ほしいんだ、えへへ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -348,7 +348,7 @@
   },
   "The Scarred Springs#034": {
    "src": "What I mean by that, is that I need fresh tea for the teahouse! I've already got some food stowed away for refreshments, but I'll need some drinks to go along with that.",
-   "dst": "",
+   "dst": "つまり、茶屋用の新鮮なお茶が必要なんだ！軽食の食べ物はもうしまってあるけど、一緒に出す飲み物がいる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -358,7 +358,7 @@
   },
   "The Scarred Springs#035": {
    "src": "I might be done in this building, but there's still plenty of things for me to take care of, so I've got to stay behind and really...really focus in on this!",
-   "dst": "",
+   "dst": "この建物は終わったかもしれないけど、まだやることが山ほどあるから、ここに残って…本気で集中しなきゃ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -368,7 +368,7 @@
   },
   "The Scarred Springs#036": {
    "src": "It's just that...a lot of this isn't heavy work, but there's just so many tasks on the list that I don't know where to start, so I just can't get it going. You taking care of the other things is helping with that!",
-   "dst": "",
+   "dst": "ただ…重労働じゃないことも多いんだけど、リストのやることが多すぎて、どこから手をつければいいかわからなくて、全然進まないんだ。君が他のことをやってくれて助かってる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -378,7 +378,7 @@
   },
   "The Scarred Springs#037": {
    "src": "So, uh, anyway! There's a teahouse off to the northwest, up on a ridge. I know the owner- her name's Marseled, and she makes the best tea in the whole forest!",
-   "dst": "",
+   "dst": "で、えっと、とにかく！北西の尾根の上に茶屋がある。店主と知り合いで―Marseled っていって、森一番のお茶を淹れるんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -388,7 +388,7 @@
   },
   "The Scarred Springs#038": {
    "src": "So, your job is to head there for a big bulk order, and then bring it back! I'll ask her about paying it off later, since we trade favors a lot. Tell her I sent you!",
-   "dst": "",
+   "dst": "だから君の仕事は、そこで大口の注文をして持って帰ること！お代は後で僕が相談するよ、よく助け合ってるから。僕の紹介だって言って！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -398,7 +398,7 @@
   },
   "The Scarred Springs#039": {
    "src": "Get some tea from [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] でお茶をもらう。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -408,7 +408,7 @@
   },
   "The Scarred Springs#040": {
    "src": "Okay, dust busted, cobwebs cleared, lanterns in the middle of being lit- Oh, hey! Did you get the tea?",
-   "dst": "",
+   "dst": "よし、埃は払った、蜘蛛の巣も取った、ランタンは点灯中―あ、やあ！お茶はもらえた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -418,7 +418,7 @@
   },
   "The Scarred Springs#041": {
    "src": "Marseled's teahouse is off to the northwest, up on the ridge. If you need the exact spot, look in your !",
-   "dst": "",
+   "dst": "Marseled の茶屋は北西の尾根の上だよ。正確な場所が知りたければ、クエストブックを見て！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -428,7 +428,7 @@
   },
   "The Scarred Springs#042": {
    "src": "Welcome, traveler, to my humble teahouse. My name is Marseled. It is always a pleasure to see a new customer.",
-   "dst": "",
+   "dst": "ようこそ旅の方、ささやかな茶屋へ。私は Marseled と申します。新しいお客様はいつでも嬉しいものです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -438,7 +438,7 @@
   },
   "The Scarred Springs#043": {
    "src": "So, what can I do for you?",
-   "dst": "",
+   "dst": "それで、ご用件は何でしょう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -448,7 +448,7 @@
   },
   "The Scarred Springs#044": {
    "src": "Oh, is that so? Why, that's wonderful! He's spoken with me a few times about working on old Pishlas there. If he wants fresh stock for drinks, he must be confident that it's nearly finished!",
-   "dst": "",
+   "dst": "まあ、そうなのですか？それは素晴らしい！あの古い Pishlas の修繕のことは何度か伺っていました。飲み物用に新しい茶葉をご所望なら、完成間近の自信があるのでしょうね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -458,7 +458,7 @@
   },
   "The Scarred Springs#045": {
    "src": "Admittedly, though, I'm facing some...difficulties. I've not got quite enough to fill up an order like he'll need. You see, ah...there's...",
-   "dst": "",
+   "dst": "ですが正直なところ、少し…困っておりまして。あの方が必要な量の注文に応えるだけの在庫がないのです。実は、その…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -468,7 +468,7 @@
   },
   "The Scarred Springs#046": {
    "src": "It's COCKROACHES! Filthy, ugly, disgusting COCKROACHES!! They keep getting all over the mushrooms and on the tea leaves and I CAN'T touch them, I can't I can't I CAN'T!!",
-   "dst": "",
+   "dst": "ゴキブリなんです！汚くて、醜くて、気持ち悪いゴキブリ！！キノコにも茶葉にもたかって、私は触れないんです、無理、無理、無理なんです！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -478,7 +478,7 @@
   },
   "The Scarred Springs#047": {
    "src": "They aren't even harming the plants or anything, but I go out to harvest them and they race up to me and crawl all over my feet and up my leggings and aahghguhgughuguhhhh!!!",
-   "dst": "",
+   "dst": "植物に害があるわけでもないのに、収穫に出ると駆け寄ってきて足を這い回って、レギンスの中まで上ってきて、ああああああっ！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -488,7 +488,7 @@
   },
   "The Scarred Springs#048": {
    "src": "I hate them I hate them I hate them, I hate them so much! I- Er. Um. S-sorry. I...shouldn't act so ill-mannered in front of my customers.",
-   "dst": "",
+   "dst": "大嫌い大嫌い大嫌い、本当に大嫌い！私―あ。その。す、すみません。お客様の前でこんな無作法を…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -498,7 +498,7 @@
   },
   "The Scarred Springs#049": {
    "src": "The musrooms are right out front and the leaves are down the side of the hill. and should be enough to get me started again.",
-   "dst": "",
+   "dst": "キノコは店のすぐ前、茶葉は丘の斜面の下にあります。とがあれば、また始められるはずです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -508,7 +508,7 @@
   },
   "The Scarred Springs#050": {
    "src": "I do hate to ask, but...if you could go out and harvest some of the ingredients for me? And deal with the pests? I've tried, but every time I just...panic.",
-   "dst": "",
+   "dst": "お願いするのは心苦しいのですが…材料を採ってきていただけませんか？害虫の始末も。私も試したのですが、毎回…取り乱してしまって。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -518,7 +518,7 @@
   },
   "The Scarred Springs#051": {
    "src": "If you could take care of that problem for me, I'll be able to fill out the order for Maripe... And, hopefully, I won't wake the whole of {p} shrieking over a roach in my pants.",
-   "dst": "",
+   "dst": "その問題を片付けていただければ、Maripe さんの注文に応えられます…それに、ズボンの中のゴキブリに悲鳴を上げて {p} 中を起こさずに済みそうです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -528,7 +528,7 @@
   },
   "The Scarred Springs#052": {
    "src": "The mushrooms are just out front, and the leaves are down the side of the hill. and should be enough to fill the order.",
-   "dst": "",
+   "dst": "キノコは店のすぐ前、茶葉は丘の斜面の下です。とがあれば注文に足りるはずです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -538,7 +538,7 @@
   },
   "The Scarred Springs#053": {
    "src": "Collect {~} mushrooms and {~} leaf batches from the tea farm at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~3}, {~4}, -{~5}] の茶畑でキノコ {~1} 個と茶葉 {~2} 束を集める。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -548,7 +548,7 @@
   },
   "The Scarred Springs#054": {
    "src": "Oh, hey! Did you get the tea yet? I'm trying to get everything in ship-shape here, but I'm running in circles a little...",
-   "dst": "",
+   "dst": "あっ、やあ！お茶はもらえた？ここを全部きちんとしようとしてるんだけど、ちょっと空回りしてて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -558,7 +558,7 @@
   },
   "The Scarred Springs#055": {
    "src": "Oh, ew. She's got roaches in the farm? Yeah, that's rough. Anyways, go get 'em! I'll be, uh... Well, hopefully I'll have this done by the time you deal with that!",
-   "dst": "",
+   "dst": "うわ、やだ。畑にゴキブリ？それはきついね。とにかく、やっつけてきて！僕は、えーと…まあ、君が片付ける頃にはこっちも終わってるといいな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -568,7 +568,7 @@
   },
   "The Scarred Springs#056": {
    "src": "Bring the tea you collected back to Marseled at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "集めたお茶を [-{~}, {~}, -{~}] の Marseled に届ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -578,7 +578,7 @@
   },
   "The Scarred Springs#057": {
    "src": "So, what can I do for you?",
-   "dst": "",
+   "dst": "それで、ご用件は何でしょう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -588,7 +588,7 @@
   },
   "The Scarred Springs#058": {
    "src": "They're gone? They're really gone?",
-   "dst": "",
+   "dst": "いなくなった？本当にいなくなった？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -598,7 +598,7 @@
   },
   "The Scarred Springs#059": {
    "src": "YES!! Take THAT, you dirty things! No more cockroooaches, no more cockroooaches, yeah, yeah- Er!",
-   "dst": "",
+   "dst": "やった！！思い知ったか、汚い虫め！ゴキブリはもういなーい、ゴキブリはもういなーい、やった、やった―あっ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -608,7 +608,7 @@
   },
   "The Scarred Springs#060": {
    "src": "...if you could. Um. Not tell anyone I was...doing that happy dance. Please. I don't think I've done that since I was a child.",
-   "dst": "",
+   "dst": "…できれば。その。私が…喜びの踊りをしていたこと、誰にも言わないでください。お願いします。子供の頃以来だと思います。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -618,7 +618,7 @@
   },
   "The Scarred Springs#061": {
    "src": "A-anyway, I'll pack up that order and bring it down to Pishlas on my own time. I know where it is. Perhaps I can be there for the opening celebrations, too!",
-   "dst": "",
+   "dst": "と、とにかく、注文は包んで、手が空いたら私が Pishlas へお届けします。場所は知っていますから。開店のお祝いにも行けるかもしれません！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -628,7 +628,7 @@
   },
   "The Scarred Springs#062": {
    "src": "I'll be sure to let my customers know. An entire generation has missed out on those hot springs, if my parents speak truly, so this will be an event to cherish, I think!",
-   "dst": "",
+   "dst": "お客様にも必ずお伝えします。両親の言う通りなら、ひと世代まるごとあの温泉を知らずに来たのですから、きっと心に残る催しになりますね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -638,7 +638,7 @@
   },
   "The Scarred Springs#063": {
    "src": "Okay, that's that now, so now- Oh, you're back! Did you get the order all filled out?",
-   "dst": "",
+   "dst": "よし、それは片付いた、次は―あっ、おかえり！注文は全部そろった？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -648,7 +648,7 @@
   },
   "The Scarred Springs#064": {
    "src": "...oops. You got confused, didn't you. Nah, those ingredients need to go to Marseled, and THEN come here. Good hustle, though! Get those to Marseled for processing!",
-   "dst": "",
+   "dst": "…あちゃー。混乱しちゃったね。いやいや、その材料はまず Marseled に届けて、「それから」ここに来るの。でも頑張ったね！加工してもらいに Marseled へ持っていって！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -658,7 +658,7 @@
   },
   "The Scarred Springs#065": {
    "src": "Bring the tea back to Maripe at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Maripe にお茶を届ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -668,7 +668,7 @@
   },
   "The Scarred Springs#066": {
    "src": "Oh my gosh, oh my gosh...L-Look! We have visitors!! Um, I know I'm not setting a great example, but...be quiet, okay? Don't disturb them!",
-   "dst": "",
+   "dst": "うわあ、うわあ…み、見て！お客さんだ！！えっと、僕が言えた義理じゃないけど…静かにね？邪魔しないで！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -678,7 +678,7 @@
   },
   "The Scarred Springs#067": {
    "src": "See? The foxes...! I haven't seen them around here since I was a kid! I- well, if you're a tourist you wouldn't know, I suppose, but this is exciting!",
-   "dst": "",
+   "dst": "ほら？狐たち…！子供の頃以来、この辺で見てなかったんだ！僕―まあ、観光客なら知らないよね、でもすごく嬉しい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -688,7 +688,7 @@
   },
   "The Scarred Springs#068": {
    "src": "There's a really common tale about foxes here- That they're the reincarnation of our ancestors, that their spirits inhabit them. I know it's...well, it's supposed to be just a tall tale, but...",
-   "dst": "",
+   "dst": "ここには狐にまつわるよくある言い伝えがあって―狐は先祖の生まれ変わりで、魂が宿ってるんだって。わかってる…ただの作り話のはずなんだけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -698,7 +698,7 @@
   },
   "The Scarred Springs#069": {
    "src": "I really can't help but feel like seeing them here is a good omen! It's like my grandparents are back again- Er, wait! The tea! I completely forgot, did you get the order placed?",
-   "dst": "",
+   "dst": "ここで見かけたのは、どうしても吉兆に思えるんだ！祖父母が帰ってきたみたいで―あ、待って！お茶！すっかり忘れてた、注文はできた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -708,7 +708,7 @@
   },
   "The Scarred Springs#070": {
    "src": "Oh, Marseled said she'd bring it by herself? Alright, fantastic! And she said she'd invite folks to the opening too... Funny she did, since that's what I was just about to ask you to do!",
-   "dst": "",
+   "dst": "あ、Marseled が自分で持ってきてくれるって？よし、最高！しかも開店にみんなを招待してくれるって…ちょうど君に頼もうとしてたことだから、面白いね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -718,7 +718,7 @@
   },
   "The Scarred Springs#071": {
    "src": "Pishlas is almost back to the way I remember it being when I was younger. I've still got a bit of decorating to do, so I want you to spread the word!",
-   "dst": "",
+   "dst": "Pishlas は、僕が小さい頃に覚えてる姿にほとんど戻った。まだ飾り付けが少し残ってるから、君には宣伝をお願いしたいんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -728,7 +728,7 @@
   },
   "The Scarred Springs#072": {
    "src": "I've got some notes here on where you could find folks I know in {p}. You tell them, put some notices up...",
-   "dst": "",
+   "dst": "{p} にいる僕の知り合いの居場所をメモしてある。伝えて、告知も貼ってきて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -738,7 +738,7 @@
   },
   "The Scarred Springs#073": {
    "src": "...and then after the big celebration re-opening, they'll tell their families, and then word will spread from there! Is it odd to say I'm looking forward to the work of maintaining the place?",
-   "dst": "",
+   "dst": "…で、盛大な再開のお祝いの後、みんなが家族に話して、そこから噂が広まる！この場所を維持していく仕事が楽しみって言ったら、変かな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -748,7 +748,7 @@
   },
   "The Scarred Springs#074": {
    "src": "Anyways, head off and start getting the word out! If you don't know where to look, just ! If you lose my notes you can come back and I'll copy them down again for you.",
-   "dst": "",
+   "dst": "とにかく、出発して宣伝を始めて！どこを探せばいいかわからなければ、確認して！メモをなくしたら、戻ってきてくれればまた書き写すよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -758,7 +758,7 @@
   },
   "The Scarred Springs#075": {
    "src": "Invite citizens of {p} at [-{~}, {~}, -{~}] to join the opening celebrations.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の {p} の住民を開店のお祝いに招待する。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -768,7 +768,7 @@
   },
   "The Scarred Springs#076": {
    "src": "Whew, okay... Whew. Gotta remember, I'm not the Sovereign. Can't be everywhere at once. Need to slow down...it's nearly done, no need to stress out- Oh, hey!",
-   "dst": "",
+   "dst": "ふう、よし…ふう。忘れるな、僕は君主じゃない。一度にあちこちには行けない。落ち着け…もうすぐ終わる、焦らなくていい―あ、やあ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -778,7 +778,7 @@
   },
   "The Scarred Springs#077": {
    "src": "Have you spread the word yet? to see where the people usually are, and get the news out! You're invited to the grand re-opening too, of course.",
-   "dst": "",
+   "dst": "もう宣伝してくれた？みんながいつもどこにいるか確認して、知らせてきて！もちろん君も盛大な再開に招待してるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -788,7 +788,7 @@
   },
   "The Scarred Springs#078": {
    "src": "Whew, okay... Whew. Gotta remember, I'm not the Sovereign. Can't be everywhere at once. Need to slow down...it's nearly done, no need to stress out- Oh, hey!",
-   "dst": "",
+   "dst": "ふう、よし…ふう。忘れるな、僕は君主じゃない。一度にあちこちには行けない。落ち着け…もうすぐ終わる、焦らなくていい―あ、やあ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -798,7 +798,7 @@
   },
   "The Scarred Springs#079": {
    "src": "Oh, you lost my notes. Don't worry, it happens. Do you think you can find the spots on your own, or do you want me to write a new copy down for you?",
-   "dst": "",
+   "dst": "あ、メモなくしちゃったんだ。大丈夫、よくあるよ。自分で場所を見つけられそう？それとも新しく書こうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -808,7 +808,7 @@
   },
   "The Scarred Springs#080": {
    "src": "Okay, one sec...and...here! Remember to for where to go!",
-   "dst": "",
+   "dst": "よし、ちょっと待って…はい、どうぞ！行き先は確認してね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -818,7 +818,7 @@
   },
   "The Scarred Springs#081": {
    "src": "All the spots I listed are {u}, but if you're having trouble, I'll write you up a new set if you ask!",
-   "dst": "",
+   "dst": "僕が挙げた場所はどれも {u} だけど、困ってたら言ってね、新しく書くよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -828,7 +828,7 @@
   },
   "The Scarred Springs#082": {
    "src": "Oh, hello there. I certainly haven't seen you around here before.",
-   "dst": "",
+   "dst": "おや、こんにちは。この辺りでは見かけない顔ですね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -838,7 +838,7 @@
   },
   "The Scarred Springs#083": {
    "src": "Is there something you wanted to speak with me about?",
-   "dst": "",
+   "dst": "何か私にお話でも？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -848,7 +848,7 @@
   },
   "The Scarred Springs#084": {
    "src": "E-excuse you? What's reopening soon?",
-   "dst": "",
+   "dst": "え、何ですって？何がもうすぐ再開？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -858,7 +858,7 @@
   },
   "The Scarred Springs#085": {
    "src": "Oh, OH! Pishlas? The hot springs? Sorry, it's been so long that I nearly forgot the name.",
-   "dst": "",
+   "dst": "あっ、ああ！Pishlas？あの温泉ですか？すみません、久しぶりすぎて名前を忘れかけていました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -868,7 +868,7 @@
   },
   "The Scarred Springs#086": {
    "src": "I have such vague memories of going there as a child, but I couldn't imagine them after seeing how the place was abandoned.",
-   "dst": "",
+   "dst": "子供の頃に行ったかすかな記憶はありますが、荒れ果てた姿を見た後では、思い描けませんでした。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -878,7 +878,7 @@
   },
   "The Scarred Springs#087": {
    "src": "Maripe did tell me some time ago he would be working on renovating it. I'm to suppose his work has paid off, then! I'd intended to visit him again soon, but this provides a nice excuse, as well.",
-   "dst": "",
+   "dst": "Maripe が改修すると以前話していました。努力が実ったのですね！近々また訪ねるつもりでしたが、ちょうどいい口実になります。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -888,7 +888,7 @@
   },
   "The Scarred Springs#088": {
    "src": "...I might have to spread the word to his family for him. Even if Maripe's father is too busy looking after his wife, I'm sure he'll be delighted to hear about this.",
-   "dst": "",
+   "dst": "…彼の代わりに、ご家族に知らせてあげたほうがいいかもしれませんね。お父さんが奥さんの看病で忙しくても、きっと喜ぶでしょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -898,7 +898,7 @@
   },
   "The Scarred Springs#089": {
    "src": "Well, I hope to see you there, stranger!",
-   "dst": "",
+   "dst": "では向こうで会いましょう、旅の方！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -908,7 +908,7 @@
   },
   "The Scarred Springs#090": {
    "src": "Well, this is a sight, for sure! What can we do for you, fella?",
-   "dst": "",
+   "dst": "おお、こりゃ珍しい客じゃ！何か用かね、若いの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -918,7 +918,7 @@
   },
   "The Scarred Springs#091": {
    "src": "Wait, Pishlas? The hot springs?",
-   "dst": "",
+   "dst": "待て、Pishlas？あの温泉？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -928,7 +928,7 @@
   },
   "The Scarred Springs#092": {
    "src": "It's been ages, right...? That place, it's been in a state of disrepair for as long as I can recall...",
-   "dst": "",
+   "dst": "ずいぶん昔の話だよね…？あそこは、覚えてる限りずっと荒れたままだった…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -938,7 +938,7 @@
   },
   "The Scarred Springs#093": {
    "src": "They're finally going to be open again? And fully renovated? Sounds-",
-   "dst": "",
+   "dst": "ついにまた開くのか？しかも全面改装じゃと？そりゃ―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -948,7 +948,7 @@
   },
   "The Scarred Springs#094": {
    "src": "Sounds tempting. It's been ages since I've been able to bathe in hot water or relax properly...",
-   "dst": "",
+   "dst": "そそられるねえ。お湯に浸かったり、ちゃんとくつろいだりなんて、もう何年もしてないよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -958,7 +958,7 @@
   },
   "The Scarred Springs#095": {
    "src": "We'll surely all be there! These old bones could use a nice, long soak, I think!",
-   "dst": "",
+   "dst": "わしら皆で必ず行くぞ！この老骨には、ゆっくり長湯がちょうどいいわい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -968,7 +968,7 @@
   },
   "The Scarred Springs#096": {
    "src": "The tourist returns! Anything else you wanted to talk about?",
-   "dst": "",
+   "dst": "観光客が戻ってきたか！他に話でもあるかね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -978,7 +978,7 @@
   },
   "The Scarred Springs#097": {
    "src": "Head back to Pishlas to participate in the celebrations at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Pishlas に戻り、お祝いに参加する。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -988,7 +988,7 @@
   },
   "The Scarred Springs#098": {
    "src": "Okay. Phew. Wow. Okay. Alright, alright, it's...",
-   "dst": "",
+   "dst": "よし。ふう。わあ。よし。よし、よし、これで…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -998,7 +998,7 @@
   },
   "The Scarred Springs#099": {
    "src": "It's...it's done. It's all... It's all done, wow, I... There's. There's people... And they're here, and they're enjoying it, and, and...",
-   "dst": "",
+   "dst": "で…できた。全部…全部終わった、わあ、僕…いる。人がいる…ここにいて、楽しんでて、それで、それで…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1008,7 +1008,7 @@
   },
   "The Scarred Springs#100": {
    "src": "And I don't have to think about this anymore, and my parents can relax about having let the place go, and...",
-   "dst": "",
+   "dst": "もうこのことを考えなくていいし、両親もここを手放したことを気に病まなくていいし、それで…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1018,7 +1018,7 @@
   },
   "The Scarred Springs#101": {
    "src": "And, and, and, the, the Sovereign, he'll, Ill get to tell him I'm done, and I'll get that, and... Ohhh my stars I'm done but I'm even more anxious now that it's done than I was before, aaah-",
-   "dst": "",
+   "dst": "それで、それで、それで、あの、君主様が、僕が終わったって伝えられて、あれがもらえて、それで…ああもう、終わったのに前より緊張してる、ああああ―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1028,7 +1028,7 @@
   },
   "The Scarred Springs#102": {
    "src": "Okay, come on, keep your head on straight, Maripe! Now's the time to relax a bit... Deep breaths now- Oh, hey!",
-   "dst": "",
+   "dst": "よし、しっかりしろ、Maripe！今は少し休む時だ…深呼吸―あ、やあ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1038,7 +1038,7 @@
   },
   "The Scarred Springs#103": {
    "src": "Uh, I...I need a minute, eheh. How about...you, uh, talk to everyone else, first, and just...yeah?",
-   "dst": "",
+   "dst": "あー、僕…ちょっと時間がほしいな、えへへ。先に…えっと、みんなと話してきたら、どう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1048,7 +1048,7 @@
   },
   "The Scarred Springs#104": {
    "src": "I'd say I barely recognize the place after all the renovations...but honestly, it feels like I'm right at home, like I'm that little fox kit I used to be.",
-   "dst": "",
+   "dst": "改装ですっかり見違えました…でも正直、まるで我が家にいるような、昔の小さな子狐に戻ったような気分です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1058,7 +1058,7 @@
   },
   "The Scarred Springs#105": {
    "src": "Maripe tried to talk you up like you did all the work! I practically had to pry a confession out of him that you just came in at the end to help with the finishing touches.",
-   "dst": "",
+   "dst": "Maripe ったら、全部あなたがやったみたいに持ち上げるんですよ！最後に仕上げを手伝っただけだと白状させるのに、ほとんど力ずくでした。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1068,7 +1068,7 @@
   },
   "The Scarred Springs#106": {
    "src": "He's always been a humble sort, but I think that just shows his gratitude. And believe me, I'm grateful to you as well! I think you gave him the kick he needed.",
-   "dst": "",
+   "dst": "昔から謙虚な子ですが、それこそ感謝の表れでしょう。私もあなたに感謝していますよ！彼に必要な一押しをしてくれたと思います。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1078,7 +1078,7 @@
   },
   "The Scarred Springs#107": {
    "src": "Ohhhohoho that's the spot. Man...I never knew what I was missing. Sort of an old style name, Pishlas, but...",
-   "dst": "",
+   "dst": "おおおほほ、そこそこ。いやあ…こんなにいいものを知らなかったなんて。Pishlas って古風な名前だけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1088,7 +1088,7 @@
   },
   "The Scarred Springs#108": {
    "src": "Phew, I'm definitely going to be coming back here again. A long day of Liff hunting, then a long night's soak... Oh, that sounds like a satisfying routine...",
-   "dst": "",
+   "dst": "ふう、絶対また来るぞ。一日 Liff を狩って、夜は長湯…ああ、最高の日課だな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1098,7 +1098,7 @@
   },
   "The Scarred Springs#109": {
    "src": "Maripe, hm. That boy has done good. Certainly couldn't have done better myself, at my age. He's got an eye for carpentry, for decoration, for the respect of his ancestors...",
-   "dst": "",
+   "dst": "Maripe か、ふむ。あの子はよくやったよ。あたしがあの歳でも、これ以上はできなかったね。大工の目も、飾り付けの目も、先祖への敬意もある…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1108,7 +1108,7 @@
   },
   "The Scarred Springs#110": {
    "src": "And heck, he's even got free towels provided! I'll be a regular from now on, that's for sure! Hope he's prepared for daily business!",
-   "dst": "",
+   "dst": "それに、なんとタオルまで無料だよ！これからは常連になるね、間違いない！毎日の商売の覚悟はできてるかね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1118,7 +1118,7 @@
   },
   "The Scarred Springs#111": {
    "src": "Wow... I'll have to tell Timot what he's missing out on. This is fantastic. Perfect view, perfect water, perfect service...",
-   "dst": "",
+   "dst": "わあ…Timot に何を逃したか教えてやらなきゃ。最高だ。完璧な景色、完璧なお湯、完璧なもてなし…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1128,7 +1128,7 @@
   },
   "The Scarred Springs#112": {
    "src": "Family concerns are dfinitely more important than a warm bath, but... I'll have to share some leaves with him, buy his ticket for next time. He deserves a free soak.",
-   "dst": "",
+   "dst": "家族のことは温かい風呂より大事に決まってるけど…茶葉を分けて、次の分の券を買ってやろう。あいつにはタダで浸かる資格がある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1138,7 +1138,7 @@
   },
   "The Scarred Springs#113": {
    "src": "Ahhh, that hits the spot... Youngster, do yourself a favor- never get as old as I am. {~} years, I've got...and this... Goodbye, aches, my dear old enemies...",
-   "dst": "",
+   "dst": "ああ、たまらん…若いの、悪いことは言わん、わしほど歳を取るな。{~} 年も生きてきて…これは…さらば痛みよ、わが旧敵よ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1148,7 +1148,7 @@
   },
   "The Scarred Springs#114": {
    "src": "It's heavenly to feel them wash away in the water, but boy would I love to not creak when I sit down to begin with. Good on you for helping out, by the way- especially for a tourist!",
-   "dst": "",
+   "dst": "湯に流されていくのは極楽じゃが、そもそも座る時に体がきしまんでくれたらのう。ところで手伝ってくれてありがとうよ―観光客なのに感心じゃ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1158,7 +1158,7 @@
   },
   "The Scarred Springs#115": {
    "src": "After the community notice board got vandalized so badly a couple years ago, I thought not to trust it again. I'm quite glad I broke with that and gave it a look now.",
-   "dst": "",
+   "dst": "数年前に地域の掲示板がひどく荒らされてから、もう信用しないと決めていたんだ。今回は破って見てみてよかったよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1168,7 +1168,7 @@
   },
   "The Scarred Springs#116": {
    "src": "Have you seen the owner of the springs, by the way? He's had a few foxes around him all day- normally, they're not the ones doing the chasing like that!",
-   "dst": "",
+   "dst": "ところで、温泉の主人を見たかい？一日中狐が何匹かついて回ってるんだ―普通、狐はあんなふうに追いかけたりしないのに！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1178,7 +1178,7 @@
   },
   "The Scarred Springs#117": {
    "src": "Oh, it's lovely to be back. Having visited this place as a teenager, it had always saddened me that it closed. My heart really does go out to Maripe's mother.",
-   "dst": "",
+   "dst": "ああ、戻ってこられて嬉しいわ。十代の頃に来たことがあって、閉まってしまったのがずっと悲しかったの。Maripe のお母さんには本当に同情するわ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1188,7 +1188,7 @@
   },
   "The Scarred Springs#118": {
    "src": "Honestly, if the Sovereign can manage all his business, his father should've been able to keep up. But either way, Maripe has outdone himself- and the Auburn Amaretto is such a fine vintage!",
-   "dst": "",
+   "dst": "正直、君主様があれだけの仕事をこなせるなら、お父さんも続けられたはずよ。でもともかく、Maripe は見事にやり遂げたわ―それにこの Auburn Amaretto、いい年代物ね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1198,7 +1198,7 @@
   },
   "The Scarred Springs#119": {
    "src": "I've enough years on me to remember how Maripe's grandparents used to run this place. Maripe has outdone himself- this is, at barest minimum, up to their standard. No one can say otherwise.",
-   "dst": "",
+   "dst": "Maripe さんの祖父母がここを営んでいた頃を覚えている歳です。Maripe さんは見事でした―少なくとも、お二人の水準には達しています。誰も否定できません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1208,7 +1208,7 @@
   },
   "The Scarred Springs#120": {
    "src": "It always was something of a...blemish, on his family's name, this place. I understand his mother fell ill, and that's certainly no one's fault, but abandoning a family business for any reason...",
-   "dst": "",
+   "dst": "この場所は、ご家族の名に付いた…汚点のようなものでした。お母様が病気になったのは誰のせいでもありませんが、理由はどうあれ家業を放り出すのは…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1218,7 +1218,7 @@
   },
   "The Scarred Springs#121": {
    "src": "People judged them all, whether they realized it or not. Hopefully now with Pishlas open, that will end. It feels as if a cloud has lifted, really. Hmhm, or maybe that's just the tea.",
-   "dst": "",
+   "dst": "本人たちが気づいていたかどうかはともかく、人々は彼らを批判していました。Pishlas が開いた今、それも終わるでしょう。本当に雲が晴れたようです。ふふ、お茶のせいかもしれませんが。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1228,7 +1228,7 @@
   },
   "The Scarred Springs#122": {
    "src": "Either way, this is marvelous work. And I can take my harvest without having to worry about disgusting cockroaches crawling all over me! So thank you for that, as well.",
-   "dst": "",
+   "dst": "何にせよ、素晴らしい仕事です。それに、気持ち悪いゴキブリに這われる心配なく収穫できるようになりました！そのことにもお礼を申し上げます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1238,7 +1238,7 @@
   },
   "The Scarred Springs#123": {
    "src": "Talk to Maripe at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Maripe と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "The Scarred Springs",
@@ -1248,7 +1248,7 @@
   },
   "The Scarred Springs#124": {
    "src": "I think I said earlier- with so many different little things piling up, I just couldn't think straight. i've been stuck at 'almost done' for a while now.",
-   "dst": "",
+   "dst": "前にも言ったと思うけど―細かいことが山積みで、頭が回らなくて。ずっと「もうすぐ終わる」で止まってたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1258,7 +1258,7 @@
   },
   "The Scarred Springs#125": {
    "src": "You showing up, offering to take care of all the little things cluttering up my brainspace...that made this...possible! I don't think I could've done it without you!",
-   "dst": "",
+   "dst": "君が来て、頭の中を埋め尽くしてた細かいことを引き受けてくれたから…これが…実現できた！君がいなかったら無理だったと思う！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1268,7 +1268,7 @@
   },
   "The Scarred Springs#126": {
    "src": "It really is jsut like I remembered it being. Everyone getting together and relaxing, talking about whatever strikes their fancy, just letting their woes disappear...",
-   "dst": "",
+   "dst": "本当に記憶の通りだ。みんなが集まってくつろいで、好きなことを話して、悩みを忘れて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1278,7 +1278,7 @@
   },
   "The Scarred Springs#127": {
    "src": "It even feels like I've got my grandparents right here with me. ...though, maybe that's just these two. These foxes have been following me all day...I hope they'll stick around.",
-   "dst": "",
+   "dst": "祖父母がすぐそばにいるような気さえする。…まあ、この二匹のせいかもしれないけど。この狐たち、一日中ついてくるんだ…このまま居てくれるといいな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1288,7 +1288,7 @@
   },
   "The Scarred Springs#128": {
    "src": "It's this feeling of... a weight off my chest, but the knowledge there's a new task ahead of me- keeping up with this place. With Pishlas. It's...refreshing, I think.",
-   "dst": "",
+   "dst": "この気持ちは…肩の荷が下りたけど、新しい仕事が待ってるってわかってる感じ―この場所を、Pishlas を守っていくこと。なんだか…清々しいな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1298,7 +1298,7 @@
   },
   "The Scarred Springs#129": {
    "src": "Do... I know you're just a tourist, but...do you think... Do you think my grandparents would be proud of me? For all this?",
-   "dst": "",
+   "dst": "その…君がただの観光客なのはわかってるけど…どう思う…祖父母は僕を誇りに思ってくれるかな？これ全部のこと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1308,7 +1308,7 @@
   },
   "The Scarred Springs#130": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1318,7 +1318,7 @@
   },
   "The Scarred Springs#131": {
    "src": "...oh gosh, I promised myself I wouldn't cry...a-and here I am doing it anyways. Haha... Stars, I'm tired after all this. So, so tired...but. But the good king of tired, you know?",
-   "dst": "",
+   "dst": "…ああもう、泣かないって決めてたのに…け、結局泣いてる。はは…はあ、全部終わって疲れた。すごく、すごく疲れた…でも。いい疲れなんだ、わかる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1328,7 +1328,7 @@
   },
   "The Scarred Springs#132": {
    "src": "You might need to go home soon, since you're just visiting...but come back any time. It'll be free, for you- and these should go pretty far in the {p}, I think. I just- Thank you...so much.",
-   "dst": "",
+   "dst": "旅行中だから、そろそろ帰らなきゃいけないよね…でもいつでも来て。君は無料だよ―それとこれ、{p} でけっこう役に立つと思う。僕―本当に…ありがとう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1338,7 +1338,7 @@
   },
   "The Scarred Springs#133": {
    "src": "...you know...you might have a point. I've been so weighed down by what everyone might think, that I could barely focus on the work. I should try and let that go, shouldn't I?",
-   "dst": "",
+   "dst": "…そうだね…一理あるかも。みんなにどう思われるかに押しつぶされて、作業に集中できなかった。そういうのは手放すべきだよね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1348,7 +1348,7 @@
   },
   "The Scarred Springs#134": {
    "src": "You know, for a tourist, you sure are generous with the help. So, I should be generous too! How's free access for life...and a personal gift from me sound? Again...thank you, so much!",
-   "dst": "",
+   "dst": "観光客なのに、本当に気前よく手伝ってくれるね。だから僕も気前よくしなきゃ！生涯無料入場と…僕からの贈り物でどう？改めて…本当にありがとう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1358,7 +1358,7 @@
   },
   "The Scarred Springs#135": {
    "src": "...heh. I guess that would make sense. But...I'd like to think they would be. I really would.",
-   "dst": "",
+   "dst": "…へへ。それもそうか。でも…誇りに思ってくれるって信じたいな。本当に。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",
@@ -1368,7 +1368,7 @@
   },
   "The Scarred Springs#136": {
    "src": "So... For one thing. You get free access! For another...here's a personal gift from me! After all, you didn't HAVE to help...but you did! You'll get a lot more use out of these than I will. SO...thank you, so much!",
-   "dst": "",
+   "dst": "それじゃ…まず一つ。君は無料で入れる！もう一つ…僕からの贈り物だよ！だって、手伝う「義務」はなかったのに…手伝ってくれた！これは僕より君のほうが役立てられる。だから…本当にありがとう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Scarred Springs",

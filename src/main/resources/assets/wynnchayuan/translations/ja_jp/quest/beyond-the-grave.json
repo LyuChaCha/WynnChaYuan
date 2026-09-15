@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Beyond the Grave",
   "count": 186,
-  "translated": 0,
+  "translated": 186,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Beyond the Grave#000": {
    "src": "Speak to Irlok in the {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p} の [{~}, {~}, -{~}] にいる Irlok と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -18,7 +18,7 @@
   },
   "Beyond the Grave#001": {
    "src": "Welcome to the Bantisu Temple, traveler. We guide lost souls onwards, be they wandering men to town or spirits unable to exit the canyon.",
-   "dst": "",
+   "dst": "Bantisu 寺院へようこそ、旅の方。私たちは迷える魂を導きます。町へ迷い込んだ人も、峡谷から出られぬ霊も。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -28,7 +28,7 @@
   },
   "Beyond the Grave#002": {
    "src": "However, recently, our job has become much more difficult. The canyon shakes, and changes. Often, long-buried creatures are released as the walls shift.",
-   "dst": "",
+   "dst": "しかし近頃、務めがずっと難しくなりました。峡谷が揺れ、姿を変えるのです。岩壁が動くたび、長く埋もれていた生き物が解き放たれます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38,7 +38,7 @@
   },
   "Beyond the Grave#003": {
    "src": "And unfortunately, the worst has come to pass, that one of these creatures is hostile. The Bantisu monks of old collapsed the entrance to its cave to seal it away...",
-   "dst": "",
+   "dst": "そして不幸にも、最悪の事態が起きました。その一体が凶暴なのです。昔の Bantisu の僧たちは洞窟の入口を崩して封じましたが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -48,7 +48,7 @@
   },
   "Beyond the Grave#004": {
    "src": "...but the rubble has shifted, and the cave is open once more. We were not strong enough to defeat it then, and we are not strong enough to defeat it now.",
-   "dst": "",
+   "dst": "…瓦礫が動き、洞窟が再び開いてしまいました。当時の私たちに倒す力はなく、今もありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -58,7 +58,7 @@
   },
   "Beyond the Grave#005": {
    "src": "Even trying to collapse the cave again has ended in failure, for the beast, Krolton, slays our mages and demolitionists in but an instant.",
-   "dst": "",
+   "dst": "洞窟を再び崩そうとしても失敗に終わりました。獣 Krolton が、魔術師も爆破師も一瞬で屠ってしまうのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -68,7 +68,7 @@
   },
   "Beyond the Grave#006": {
    "src": "However, the word on the wind tells tales of humans doing the impossible as a matter of rote. Krolton must be dealt with before it leaves the cave- I beg your assistance!",
-   "dst": "",
+   "dst": "ですが風の噂では、人間は不可能を当たり前のように成し遂げるとか。Krolton が洞窟を出る前に討たねばなりません。どうかお力を！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -78,7 +78,7 @@
   },
   "Beyond the Grave#007": {
    "src": "We've no time to spare. I will prepare a short spell to bring you to the cave- Please, wait outside, and prepare yourself.",
-   "dst": "",
+   "dst": "猶予はありません。洞窟へお送りする短い呪文を用意します。外でお待ちになり、備えてください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -88,7 +88,7 @@
   },
   "Beyond the Grave#008": {
    "src": "Seek out the creature in the mines at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の鉱山で怪物を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -98,7 +98,7 @@
   },
   "Beyond the Grave#009": {
    "src": "I apologize for the suddenness of this, but you must understand the urgency. We have no way of knowing when Krolton will emerge.",
-   "dst": "",
+   "dst": "突然で申し訳ありませんが、事の急を分かってください。Krolton がいつ現れるか、知る術はないのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -108,7 +108,7 @@
   },
   "Beyond the Grave#010": {
    "src": "We will pray for your safety, and that your spirit will not become among those we must guide out of the canyon.",
-   "dst": "",
+   "dst": "ご無事を祈ります。あなたの魂が、峡谷から導き出すべき者に加わりませんように。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -118,7 +118,7 @@
   },
   "Beyond the Grave#011": {
    "src": "Now, hold tight, and godspeed!!",
-   "dst": "",
+   "dst": "では、しっかり。ご武運を！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -128,7 +128,7 @@
   },
   "Beyond the Grave#012": {
    "src": "Explore the strange realm and bargain with Death.",
-   "dst": "",
+   "dst": "奇妙な領域を探索し、死神と交渉する。",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -138,7 +138,7 @@
   },
   "Beyond the Grave#013": {
    "src": "SO THAT IS YOUR FIRST INSTINCT? TO CLIMB THE VALLEY WALLS IN FRUITLESS SEARCH OF AN ESCAPE?",
-   "dst": "",
+   "dst": "最初の本能がそれか？出口を求めて、谷の壁を虚しく登ろうと？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -148,7 +148,7 @@
   },
   "Beyond the Grave#014": {
    "src": "AMUSING. BUT THIS IS WHERE YOU MUST BE. TAKE ALL THE TIME YOU LIKE, THOUGH. I WILL WAIT FOR YOU TO COME TO MY MANOR.",
-   "dst": "",
+   "dst": "面白い。だが、君がいるべき場所はここだ。とはいえ、好きなだけ時間をかけるといい。私の館に来るのを待っていよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -158,7 +158,7 @@
   },
   "Beyond the Grave#015": {
    "src": "SO MY MANSION IS DULL ENOUGH YOU'D RATHER GO ROCK CLIMBING?",
-   "dst": "",
+   "dst": "私の館は、岩登りのほうがましなほど退屈かね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -168,7 +168,7 @@
   },
   "Beyond the Grave#016": {
    "src": "OR DID I SIMPLY SCARE YOU OFF SAYING SUCH SERIOUS THINGS?",
-   "dst": "",
+   "dst": "それとも、真面目な話をしすぎて怖がらせてしまったか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -178,7 +178,7 @@
   },
   "Beyond the Grave#017": {
    "src": "NEVERTHELESS, YOU WILL BE BACK EVENTUALLY. THERE IS NOTHING FOR ANYONE OUT THERE.",
-   "dst": "",
+   "dst": "いずれにせよ、君はいずれ戻ってくる。外には誰のためのものも何もない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -188,7 +188,7 @@
   },
   "Beyond the Grave#018": {
    "src": "IT SEEMS I HAVE A NEW GUEST. WELCOME.",
-   "dst": "",
+   "dst": "新しい客人のようだ。ようこそ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -198,7 +198,7 @@
   },
   "Beyond the Grave#019": {
    "src": "MAKE YOURSELF COMFORTABLE. YOU'LL BE STAYING HERE FOR A WHILE.",
-   "dst": "",
+   "dst": "くつろいでくれたまえ。しばらくここに滞在するのだから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -208,7 +208,7 @@
   },
   "Beyond the Grave#020": {
    "src": "NOTHING IS STOPPING YOU FROM TAKING A LOOK AROUND. DON'T TOUCH ANYTHING THOUGH. AND TAKE OFF YOUR SHOES AS YOU ENTER.",
-   "dst": "",
+   "dst": "見て回るのを止めはしない。ただし、何にも触れないように。それと、入る時は靴を脱ぐこと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -218,7 +218,7 @@
   },
   "Beyond the Grave#021": {
    "src": "WHEN YOU FEEL LIKE IT, COME TO MY OFFICE UPSTAIRS. WE HAVE A LENGTHY TALK TO HAVE.",
-   "dst": "",
+   "dst": "気が向いたら、二階の執務室に来たまえ。長い話がある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -228,7 +228,7 @@
   },
   "Beyond the Grave#022": {
    "src": "THIS IS WHERE I SERVE MEALS TO MY GUESTS. THEY GIVE SUCH GLOWING REVIEWS.",
-   "dst": "",
+   "dst": "ここで客人に食事を振る舞っている。皆、口を揃えて絶賛してくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -238,7 +238,7 @@
   },
   "Beyond the Grave#023": {
    "src": "AFTER ALL, IT IS SAID ONE'S LAST MEAL IS THE SWEETEST, SO HAVING ANOTHER AFTER THAT IS SURELY TO DIE FOR. AH HA HA.",
-   "dst": "",
+   "dst": "何しろ、最後の晩餐は最も甘美だと言うからな。その後にもう一食となれば、まさに死ぬほど美味いはずだ。ははは。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -248,7 +248,7 @@
   },
   "Beyond the Grave#024": {
    "src": "IF I HAD BROUGHT ANY FLOUR THIS MORNING, I WOULD HAVE OFFERED A BISCUIT FOR DYING. I'M TOLD I MAKE THE BEST CHOCOLATE CHIP ONES.",
-   "dst": "",
+   "dst": "今朝小麦粉を持ってきていれば、死の祝いにビスケットでも出せたのだが。私のチョコチップは絶品らしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -258,7 +258,7 @@
   },
   "Beyond the Grave#025": {
    "src": "BUT ALAS. WE WILL HAVE TO CONTENT OURSELVES WITH A LAST DRINK FOR THE DEPARTED INSTEAD. I'LL PUT THE KETTLE ON.",
-   "dst": "",
+   "dst": "だが残念。代わりに、旅立った者への最後の一杯で我慢するとしよう。湯を沸かしてくる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -268,7 +268,7 @@
   },
   "Beyond the Grave#026": {
    "src": "FEET OFF THE TABLE, PLEASE.",
-   "dst": "",
+   "dst": "テーブルから足を下ろしたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -278,7 +278,7 @@
   },
   "Beyond the Grave#027": {
    "src": "THIS SECTION OF THE MANSION IS UNDERGOING RENOVATIONS. FOR THE TIME BEING, IT GOES EMPTY.",
-   "dst": "",
+   "dst": "館のこの区画は改装中だ。当面は空き部屋になっている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -288,7 +288,7 @@
   },
   "Beyond the Grave#028": {
    "src": "SOULS DO LINGER HERE. LINGERING EVER LONGER THAN BEFORE. AND WITH SO MANY ARRIVING...",
-   "dst": "",
+   "dst": "魂はここに留まる。以前よりもずっと長く。そして、これほど多くが訪れては…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -298,7 +298,7 @@
   },
   "Beyond the Grave#029": {
    "src": "IT IS, PERHAPS, A POINTLESS COMFORT TO GIVE. BUT I FEEL A GUEST ROOM WOULD BE APPRECIATED, UNDER THE CIRCUMSTANCES.",
-   "dst": "",
+   "dst": "意味のない気遣いかもしれない。だが、この状況なら客間はありがたがられるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -308,7 +308,7 @@
   },
   "Beyond the Grave#030": {
    "src": "PERHAPS GROWING THINGS IN A PLACE LIKE THIS IS A FOOL'S ERRAND.",
-   "dst": "",
+   "dst": "こんな場所で植物を育てるなど、愚か者の骨折りかもしれないな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -318,7 +318,7 @@
   },
   "Beyond the Grave#031": {
    "src": "IF IT IS, THEN I WILL MERRILY JINGLE MY BELLS AS I WATER THEM. IT IS FLEETING JOY TO CARE FOR THEM, BUT A JOY NONETHELESS.",
-   "dst": "",
+   "dst": "もしそうなら、鈴を陽気に鳴らしながら水をやるとしよう。世話の喜びは束の間だが、喜びには違いない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -328,7 +328,7 @@
   },
   "Beyond the Grave#032": {
    "src": "THESE ARE BUSHES. NOTHING YOU DON'T ALREADY KNOW.",
-   "dst": "",
+   "dst": "これは茂みだ。君の知らないことは何もない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -338,7 +338,7 @@
   },
   "Beyond the Grave#033": {
    "src": "WELCOME TO MY LIBRARY. I FIND MY GUESTS ARE DRAWN TO HERE. PERHAPS IT IS BECAUSE KNOWLEDGE IS POWER, AS I HAVE BEEN TOLD.",
-   "dst": "",
+   "dst": "私の書斎へようこそ。客人はなぜかここに惹かれる。知識は力なり、と聞くからかもしれないな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -348,7 +348,7 @@
   },
   "Beyond the Grave#034": {
    "src": "ALTHOUGH, GIVEN SO MANY OF MY BOOKS ARE WRITTEN IN DEAD LANGUAGES, THERE IS LITTLE POWER TO BE FOUND HERE.",
-   "dst": "",
+   "dst": "とはいえ、蔵書の多くは死語で書かれている。ここで得られる力はほとんどない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -358,7 +358,7 @@
   },
   "Beyond the Grave#035": {
    "src": "BUT I WILL NEVER BEGRUDGE A GUEST A REPRIEVE. HOWEVER MOMENTARY. MORTALITY CAN BE A HARSH LESSON.",
-   "dst": "",
+   "dst": "だが客人のひと息を惜しみはしない。どれほど短くとも。死すべき身とは、厳しい教訓なのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -368,7 +368,7 @@
   },
   "Beyond the Grave#036": {
    "src": "IT SEEMS YOU REALLY WANTED TO KNOW WHAT WAS BEHIND THIS DOOR.",
-   "dst": "",
+   "dst": "よほどこの扉の向こうが知りたかったようだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -378,7 +378,7 @@
   },
   "Beyond the Grave#037": {
    "src": "I GUESS YOU WILL GET WHAT YOU WANTED...",
-   "dst": "",
+   "dst": "望みは叶ったというわけだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -388,7 +388,7 @@
   },
   "Beyond the Grave#038": {
    "src": "ANOTHER DOOR.",
-   "dst": "",
+   "dst": "また扉だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -398,7 +398,7 @@
   },
   "Beyond the Grave#039": {
    "src": "DO YOU REALLY THINK IT WAS WORTH YOUR TIME?",
-   "dst": "",
+   "dst": "本当に時間をかける価値があったと思うかね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -408,7 +408,7 @@
   },
   "Beyond the Grave#040": {
    "src": "AH, I SEE YOU HAVE DISCOVERED THE HOURGLASSES. I SUPPOSE IT IS ONLY NATURAL THEY WOULD DRAW YOUR ATTENTION.",
-   "dst": "",
+   "dst": "ああ、砂時計を見つけたか。君の目を引くのも当然だろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -418,7 +418,7 @@
   },
   "Beyond the Grave#041": {
    "src": "EACH ONE MEASURES THE LIFE OF A BEING. WHEN ALL THE SAND REACHES THE BOTTOM, I RECEIVE A NEW GUEST.",
-   "dst": "",
+   "dst": "一つ一つが、ある存在の命を測っている。砂がすべて落ちきると、新たな客人が来る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -428,7 +428,7 @@
   },
   "Beyond the Grave#042": {
    "src": "BUT A MEASURED LIFESPAN IS NOT A GUARANTEE. IT IS ONLY AN ESTIMATE. THE RATE OF THE HOURGLASS WILL SHIFT IN RESPONSE TO ANY NUMBER OF FACTORS.",
-   "dst": "",
+   "dst": "だが測られた寿命は保証ではない。ただの見積もりにすぎない。砂時計の流れは、あらゆる要因によって変わるのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -438,7 +438,7 @@
   },
   "Beyond the Grave#043": {
    "src": "I AM SURE WE COULD FIND YOURS, IF WE SEARCHED HARD ENOUGH. BUT I FIND MOST VISITORS STRUGGLE TO GRAPPLE WITH SUCH A TANGIBLE DISPLAY.",
-   "dst": "",
+   "dst": "よく探せば君のものも見つかるだろう。だが、これほど目に見える形では、ほとんどの訪問者が受け止めきれないようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -448,7 +448,7 @@
   },
   "Beyond the Grave#044": {
    "src": "THIS ONE... IT IS SPECIAL. IT DISPLAYS SOMETHING FAR MORE IMPORTANT THAN INDIVIDUAL LIFESPANS.",
-   "dst": "",
+   "dst": "これは… 特別だ。個々の寿命より、はるかに重要なものを示している。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -458,7 +458,7 @@
   },
   "Beyond the Grave#045": {
    "src": "IT IS HERE TO MEASURE HOW MUCH TIME THE WORLD HAS LEFT.",
-   "dst": "",
+   "dst": "世界に残された時間を測るためのものだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -468,7 +468,7 @@
   },
   "Beyond the Grave#046": {
    "src": "AS WITH THE OTHERS, IT IS MERELY AN ESTIMATE. IT HAS BEEN SLOWED AND HALTED IN THE PAST.",
-   "dst": "",
+   "dst": "他と同じく、ただの見積もりにすぎない。かつて遅くなったことも、止まったこともある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -478,7 +478,7 @@
   },
   "Beyond the Grave#047": {
    "src": "BUT I FEAR THE COMING END IS INEVITABLE. IT WAS SET IN MOTION LONG, LONG AGO, BY ACTORS BEYOND THE BOTH OF US.",
-   "dst": "",
+   "dst": "だが迫る終わりは避けられまいと恐れている。遠い昔、我々二人の手の及ばぬ者たちによって動き出したのだから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -488,7 +488,7 @@
   },
   "Beyond the Grave#048": {
    "src": "I KEEP IT AS A REMINDER, TO CHERISH WHAT STILL IS LEFT. BEFORE IT, TOO, IS LOST.",
-   "dst": "",
+   "dst": "戒めとして置いている。まだ残るものを慈しむように。それもまた失われる前に。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -498,7 +498,7 @@
   },
   "Beyond the Grave#049": {
    "src": "PLEASE REFRAIN FROM TOUCHING ANY OF MY JARS. I KEEP THINGS VERY DEAR TO ME IN THEM.",
-   "dst": "",
+   "dst": "私の壺にはどれも触れないでくれたまえ。とても大切なものを入れているのでな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -508,7 +508,7 @@
   },
   "Beyond the Grave#050": {
    "src": "PARTICULARLY MY JAR OF SOIL. THAT IS A SOUVENIR FROM VERY, VERY LONG AGO.",
-   "dst": "",
+   "dst": "特に土の壺だ。あれは遠い、遠い昔の記念品なのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -518,7 +518,7 @@
   },
   "Beyond the Grave#051": {
    "src": "I HAVE NO NEED FOR SLEEP. SO, MY BEDROOM NOW SERVES MERELY A SYMBOLIC PURPOSE.",
-   "dst": "",
+   "dst": "私は眠る必要がない。ゆえに寝室は、今や象徴の役目しか果たしていない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -528,7 +528,7 @@
   },
   "Beyond the Grave#052": {
    "src": "SYMBOLIC OF WHAT, YOU ASK? MY LOVING MARRIAGE. JUST BECAUSE I DO NOT HAVE A HEART, IT DOES NOT MEAN I CANNOT LOVE.",
-   "dst": "",
+   "dst": "何の象徴か、と？愛ある結婚のだ。心臓がないからといって、愛せないわけではない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -538,7 +538,7 @@
   },
   "Beyond the Grave#053": {
    "src": "\"TIL DEATH DO US PART\" IS FOR QUITTERS, I SAY. I WILL LOVE HER BEYOND THE END OF TIME ITSELF.",
-   "dst": "",
+   "dst": "「死が二人を分かつまで」など、諦めの早い者の言葉だ。私は時の終わりの先まで彼女を愛する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -548,7 +548,7 @@
   },
   "Beyond the Grave#054": {
    "src": "THESE DAYS, THE CATS LAY CLAIM TO THE BED FOR THE MOST PART. AT LEAST SOMEONE IS GETTING USE OUT OF IT, IN THE END.",
-   "dst": "",
+   "dst": "近頃は、ベッドはほとんど猫たちのものだ。結局、誰かの役には立っているわけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -558,7 +558,7 @@
   },
   "Beyond the Grave#055": {
    "src": "THIS IS THE DARK LORD, SNUGGLEBUNS. GREET HIM WITH RESPECT, WITH A PAT ON THE HEAD AND A SCRATCH UNDER THE CHIN.",
-   "dst": "",
+   "dst": "こちらは闇の王、Snugglebuns だ。敬意をもって挨拶したまえ。頭を撫で、あごの下をかいてな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -568,7 +568,7 @@
   },
   "Beyond the Grave#056": {
    "src": "HE IS A GUEST, MUCH LIKE YOURSELF. UNLIKE YOU, HOWEVER, HE HAS BEEN HERE A VERY LONG TIME.",
-   "dst": "",
+   "dst": "彼も君と同じく客人だ。だが君とは違い、ずいぶん長くここにいる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -578,7 +578,7 @@
   },
   "Beyond the Grave#057": {
    "src": "HE IS ONE OF THE MORE STUBBORN BEASTS I HAVE ENCOUNTERED ACROSS THESE EONS. YOU SEE, HE IS WAITING FOR SOMEONE TO CROSS OVER. MUCH LIKE MYSELF, HE CAN BE VERY PATIENT.",
-   "dst": "",
+   "dst": "悠久の時の中で出会った獣の中でも、とりわけ頑固な一匹だ。彼は、ある者がこちらへ渡ってくるのを待っている。私と同じく、実に辛抱強い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -588,7 +588,7 @@
   },
   "Beyond the Grave#058": {
    "src": "TOO PATIENT FOR HIS OWN GOOD, PERHAPS.",
-   "dst": "",
+   "dst": "おそらく、自分のためにならないほどにな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -598,7 +598,7 @@
   },
   "Beyond the Grave#059": {
    "src": "...I DO NOT HAVE THE HEART TO TELL HIM THE TRUTH. AND SO, AS THE YEARS PASS, HIS CLAIM ON MY HOME CONTINUES TO GROW.",
-   "dst": "",
+   "dst": "…真実を告げる心など、私にはない。そうして年月が過ぎるにつれ、我が家での彼の縄張りは広がり続けている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -608,7 +608,7 @@
   },
   "Beyond the Grave#060": {
    "src": "AND I ALLOW IT. I FIND HIS COMPANIONSHIP WORTH THE HASSLE.",
-   "dst": "",
+   "dst": "そして私はそれを許している。彼がいてくれるなら、手間も惜しくない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -618,7 +618,7 @@
   },
   "Beyond the Grave#061": {
    "src": "IT MAY NOT SEEM AS SUCH FROM YOUR PERSPECTIVE. BUT LIFE IS LIMITED. STILL, SOULS PASS THROUGH THE CYCLE, AND THE WORLD KEEPS ON SPINNING.",
-   "dst": "",
+   "dst": "君から見ればそうは思えないかもしれない。だが命には限りがある。それでも魂は輪廻を巡り、世界は回り続ける。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -628,7 +628,7 @@
   },
   "Beyond the Grave#062": {
    "src": "...THEY WERE NOT MEANT TO BE LOST. TO PASS BEYOND MY REACH, TO REACH AN END SOMEWHERE I CANNOT FIND THEM.",
-   "dst": "",
+   "dst": "…彼らは迷うはずではなかった。私の手を離れ、見つけられない場所で終わりを迎えるはずでは。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -638,7 +638,7 @@
   },
   "Beyond the Grave#063": {
    "src": "AND YET, THROUGH MEANS BEYOND MY CONTROL, THEY DO. THEY HAVE. WITH EACH AND EVERY ONE, I LOSE A PIECE OF MYSELF. IRREVERSIBLY.",
-   "dst": "",
+   "dst": "だが私の力の及ばぬ手段で、そうなる。そうなってきた。一人失うたびに、私の一部が失われる。取り返しがつかぬほどに。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -648,7 +648,7 @@
   },
   "Beyond the Grave#064": {
    "src": "AND THE CYCLE MUST KEEP SPINNING, LESSENED EVEN AS IT MAY BE. BUT I STILL REMEMBER THEM, EACH LIFE THAT THEY LIVED.",
-   "dst": "",
+   "dst": "それでも輪廻は回り続けねばならない。欠けていようとも。だが私は覚えている。彼らの生きた一つ一つの生を。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -658,7 +658,7 @@
   },
   "Beyond the Grave#065": {
    "src": "SOMEONE HAS TO, AFTER ALL.",
-   "dst": "",
+   "dst": "誰かが覚えていなくてはな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -668,7 +668,7 @@
   },
   "Beyond the Grave#066": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -678,7 +678,7 @@
   },
   "Beyond the Grave#067": {
    "src": "THIS ONE SHOULD BE FAMILIAR TO YOU.",
-   "dst": "",
+   "dst": "これには見覚えがあるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -688,7 +688,7 @@
   },
   "Beyond the Grave#068": {
    "src": "FEW EVER HAVE THE CHANCE TO COME FACE TO FACE WITH A LIFE THEY THEMSELVES HAVE BROUGHT TO AN END. I WONDER HOW YOU FEEL NOW.",
-   "dst": "",
+   "dst": "自ら終わらせた命と対面する機会など、そうはない。今どんな気持ちか、気になるところだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -698,7 +698,7 @@
   },
   "Beyond the Grave#069": {
    "src": "HE WAS ONCE A GOOD MAN. BUT SUCH IS THE TRAVESTY OF THAT WAR-RAVAGED PROVINCE, THAT IT TWISTS THE MIND AND SPIRIT IN SUCH A WAY.",
-   "dst": "",
+   "dst": "かつては善き男だった。だがあの戦乱の地方の悲劇とは、心と魂をあのように歪めてしまうことなのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -708,7 +708,7 @@
   },
   "Beyond the Grave#070": {
    "src": "I WILL NOT PASS JUDGEMENT ON YOUR ACTIONS. BUT PERHAPS DEATH WAS A KINDER FATE THAN THE TURMOIL HE WAS DROWNING IN.",
-   "dst": "",
+   "dst": "君の行いを裁くつもりはない。だが彼が溺れていた混乱より、死のほうが優しい運命だったのかもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -718,7 +718,7 @@
   },
   "Beyond the Grave#071": {
    "src": "EVEN HERE, FREED OF ITS INFLUENCE, HE STRUGGLES TO RELEASE THAT ANGER THAT GRIPPED HIM SO TIGHTLY. HE REFUSES TO MOVE ON.",
-   "dst": "",
+   "dst": "影響から解き放たれたここでも、彼をきつく掴んだ怒りを手放せずにいる。先へ進むことを拒んでいるのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -728,7 +728,7 @@
   },
   "Beyond the Grave#072": {
    "src": "BUT HE WILL, EVENTUALLY. THEY ALL DO. IT IS ONLY A MATTER OF TIME.",
-   "dst": "",
+   "dst": "だがいずれは進む。皆そうだ。時間の問題にすぎない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -738,7 +738,7 @@
   },
   "Beyond the Grave#073": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -748,7 +748,7 @@
   },
   "Beyond the Grave#074": {
    "src": "HE IS NOT THE FIRST TO HAVE SUFFERED SUCH A FATE. THAT BLIGHT HAS TAKEN HOLD OF OH SO MANY OVER THE YEARS.",
-   "dst": "",
+   "dst": "こんな運命をたどったのは彼が初めてではない。あの災いは、長年のうちに実に多くの者を捕らえてきた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -758,7 +758,7 @@
   },
   "Beyond the Grave#075": {
    "src": "A MILLENNIUM IS A RAINDROP IN THE SEA COMPARED TO MY EXISTENCE. SO WHY HAVE THESE YEARS FELT SO MUCH LONGER THAN EVER BEFORE?",
-   "dst": "",
+   "dst": "千年など、私の存在に比べれば海に落ちる雨粒ひとつ。なのに、なぜこの年月はかつてないほど長く感じるのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -768,7 +768,7 @@
   },
   "Beyond the Grave#076": {
    "src": "IT IS FORTUNATE THAT IT ONLY TARGETS THE BODY, AND ONLY ONCE ITS SPARK FLICKERS OUT.",
-   "dst": "",
+   "dst": "幸い、それが狙うのは肉体だけで、しかも火花が消えた後に限られる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -778,7 +778,7 @@
   },
   "Beyond the Grave#077": {
    "src": "WHAT IT DOES IS BAD ENOUGH ALREADY. IF IT WERE TO TAKE THE SOUL, AS WELL...",
-   "dst": "",
+   "dst": "それだけでも十分ひどい。もし魂まで奪うとしたら…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -788,7 +788,7 @@
   },
   "Beyond the Grave#078": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -798,7 +798,7 @@
   },
   "Beyond the Grave#079": {
    "src": "AH HA HA. I WOULD RATHER NOT DWELL ON THAT ANY LONGER. IT ISN'T AS IF I COULD DO SOMETHING ABOUT IT, ANYWAY.",
-   "dst": "",
+   "dst": "ははは。これ以上考えるのはよそう。どのみち、私に何かできるわけでもないのだから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -808,7 +808,7 @@
   },
   "Beyond the Grave#080": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -818,7 +818,7 @@
   },
   "Beyond the Grave#081": {
    "src": "WELCOME TO MY OFFICE. GO ON, TAKE A GUESS AT WHAT I DO HERE.",
-   "dst": "",
+   "dst": "執務室へようこそ。ここで私が何をしているか、当ててみたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -828,7 +828,7 @@
   },
   "Beyond the Grave#082": {
    "src": "I DIE OF BOREDOM.",
-   "dst": "",
+   "dst": "退屈で死んでいる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -838,7 +838,7 @@
   },
   "Beyond the Grave#083": {
    "src": "...REALLY? NOTHING? PERHAPS I NEED SOME NEW MATERIAL.",
-   "dst": "",
+   "dst": "…本当に？反応なし？新しいネタが必要かもしれないな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -848,7 +848,7 @@
   },
   "Beyond the Grave#084": {
    "src": "PLEASE TAKE A SEAT. LET US REVIEW YOUR OPTIONS.",
-   "dst": "",
+   "dst": "掛けたまえ。君の選択肢を確認しよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -858,7 +858,7 @@
   },
   "Beyond the Grave#085": {
    "src": "PERHAPS SITTING IN FRONT OF DEATH MAY SEEM AN ODD PLACE TO BE. I APOLOGIZE FOR ANY DISCOMFORT.",
-   "dst": "",
+   "dst": "死神の前に座るのは妙な気分かもしれない。居心地が悪ければ、すまない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -868,7 +868,7 @@
   },
   "Beyond the Grave#086": {
    "src": "NOW, BEFORE WE BEGIN IN EARNEST. LIVING BEINGS ARE NOT SUBTLE ABOUT HAVING QUESTIONS. I AM SURE YOU HAVE THEM.",
-   "dst": "",
+   "dst": "では、本題に入る前に。生者は疑問を隠すのが下手だ。君にもあるのだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -878,7 +878,7 @@
   },
   "Beyond the Grave#087": {
    "src": "GO ON. ASK THEM NOW. I DO NOT WANT TO BE INTERRUPTED LATER.",
-   "dst": "",
+   "dst": "さあ、今のうちに聞きたまえ。後で話を遮られたくないのでな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -888,7 +888,7 @@
   },
   "Beyond the Grave#088": {
    "src": "SO IT WOULD SEEM.",
-   "dst": "",
+   "dst": "そのようだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -898,7 +898,7 @@
   },
   "Beyond the Grave#089": {
    "src": "FEEL FREE TO TAKE A MOMENT TO COME TO TERMS WITH YOUR MORTALITY, IF YOU NEED IT. I HAVE TIME.",
-   "dst": "",
+   "dst": "必要なら、己の死を受け入れる時間を取るといい。時間ならある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -908,7 +908,7 @@
   },
   "Beyond the Grave#090": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "他には？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -918,7 +918,7 @@
   },
   "Beyond the Grave#091": {
    "src": "MANY, MANY, MANY TIMES. AS HAS EVERY OTHER LIVING BEING.",
-   "dst": "",
+   "dst": "何度も、何度も、何度もだ。他のあらゆる生者と同じくな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -928,7 +928,7 @@
   },
   "Beyond the Grave#092": {
    "src": "ONCE A LIFE REACHES AN END, THE SOUL PASSES THROUGH THE VEIL, CROSSING OVER INTO DEATH.",
-   "dst": "",
+   "dst": "命が終わると、魂はヴェールを通り抜け、死へと渡る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -938,7 +938,7 @@
   },
   "Beyond the Grave#093": {
    "src": "HERE, THEY LINGER. MEMORIES FADE WITH TIME, AND THE SOUL IS REDUCED TO THE ESSENTIALS. PREPARED TO RETURN TO THE CYCLE.",
-   "dst": "",
+   "dst": "ここで彼らは留まる。記憶は時と共に薄れ、魂は本質だけになる。輪廻へ還る準備が整うのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -948,7 +948,7 @@
   },
   "Beyond the Grave#094": {
    "src": "LIFE AND DEATH ARE NOT IN OPPOSITION, AS YOU MORTALS OFTEN ASSUME. THEY ARE TWO PARTS OF THE SAME WHOLE.",
-   "dst": "",
+   "dst": "生と死は、君たち人間がよく思うように対立するものではない。同じ一つのものの二つの側面なのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -958,7 +958,7 @@
   },
   "Beyond the Grave#095": {
    "src": "YOU, THE ESSENCE AT THE CORE OF YOUR BEING, HAVE BEEN HERE MANY TIMES BEFORE. AND YOU WILL BE HERE MANY TIMES AGAIN.",
-   "dst": "",
+   "dst": "君という存在の核にある本質は、以前にも何度もここに来ている。そしてこれからも何度も来るだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -968,7 +968,7 @@
   },
   "Beyond the Grave#096": {
    "src": "...OR, SO I WOULD HOPE. BUT I DIGRESS.",
-   "dst": "",
+   "dst": "…と、そう願いたいものだ。話がそれたな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -978,7 +978,7 @@
   },
   "Beyond the Grave#097": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "他には？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -988,7 +988,7 @@
   },
   "Beyond the Grave#098": {
    "src": "IT IS DEATH. IT MAY BE HARD TO BELIEVE, I KNOW. AH HA HA. BUT I HAVE BEEN EXCEEDINGLY CLEAR, HAVEN'T I?",
-   "dst": "",
+   "dst": "ここは死だ。信じがたいのは分かる。ははは。だが、これ以上ないほどはっきり言ってきただろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -998,7 +998,7 @@
   },
   "Beyond the Grave#099": {
    "src": "BUT NOT EVERY SOUL WILL SEE IT THE SAME WAY. MOST LACK THE CAPACITY TO CONCEPTUALIZE IT AS ANYTHING MORE THAN A HAZE. A BLURRED STATE OF BEING.",
-   "dst": "",
+   "dst": "だが、すべての魂が同じように見るわけではない。多くは、ここをもやのような、ぼやけた在り方としか捉えられない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1008,7 +1008,7 @@
   },
   "Beyond the Grave#100": {
    "src": "IT IS RARE THAT I MAY HOST A GUEST WITH THE CLARITY OF MIND AND THE WILLPOWER REMAINING TO SEE THIS PLACE FOR WHAT IT TRULY IS.",
-   "dst": "",
+   "dst": "この場所の真の姿を見るだけの、澄んだ心と意志を残した客人を迎えられることは稀なのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1018,7 +1018,7 @@
   },
   "Beyond the Grave#101": {
    "src": "HOWEVER FLEETINGLY, I DO ENJOY WHEN IT HAPPENS. IT IS WORTH CELEBRATING. NOW IF ONLY I HAD SOME SPIRITS TO SHARE. AH HA HA.",
-   "dst": "",
+   "dst": "束の間でも、そんな時はうれしい。祝う価値がある。分かち合う酒でもあればな。霊ならいくらでもいるが。ははは。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1028,7 +1028,7 @@
   },
   "Beyond the Grave#102": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "他には？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1038,7 +1038,7 @@
   },
   "Beyond the Grave#103": {
    "src": "OH, IT CHANGES WITH THE TIMES. AND ACCORDING TO MY WHIMS.",
-   "dst": "",
+   "dst": "ああ、時代と共に変わる。私の気まぐれ次第でもある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1048,7 +1048,7 @@
   },
   "Beyond the Grave#104": {
    "src": "IT HAS PREVIOUSLY BEEN A TOWER, A CASTLE, A FOREST, A CAVERN... I WAS IN A VERY UNDERGROUND PHASE OF MY EXISTENCE BACK THEN.",
-   "dst": "",
+   "dst": "かつては塔、城、森、洞窟だったこともある… 当時の私は、かなりアンダーグラウンドな時期だったのでな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1058,7 +1058,7 @@
   },
   "Beyond the Grave#105": {
    "src": "FOR NOW, A MANOR SERVES ME WELL. I DO ADMIRE THE ARCHITECTURAL STYLE OF ITS TIME. VERY GOTHIC.",
-   "dst": "",
+   "dst": "今は館がちょうどいい。この時代の建築様式が気に入っている。実にゴシックだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1068,7 +1068,7 @@
   },
   "Beyond the Grave#106": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "他には？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1078,7 +1078,7 @@
   },
   "Beyond the Grave#107": {
    "src": "CERTAINLY NOT. WHEREVER WOULD I FIND THE TIME?",
-   "dst": "",
+   "dst": "まさか。そんな時間がどこにある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1088,7 +1088,7 @@
   },
   "Beyond the Grave#108": {
    "src": "FOR MOST SOULS, THERE IS LITTLE NEED TO INTERVENE. THEY WILL LINGER, BUT GIVEN TIME, THEY WILL FIND THEIR WAY FORWARD.",
-   "dst": "",
+   "dst": "ほとんどの魂には、介入の必要などない。留まりはするが、時間をかければ自ら先へ進む道を見つける。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1098,7 +1098,7 @@
   },
   "Beyond the Grave#109": {
    "src": "BUT ON OCCASION, AN ARRIVAL WILL DRAW MY INTEREST. ONE WHICH DEMANDS A PROPER WELCOME.",
-   "dst": "",
+   "dst": "だが時折、興味を惹かれる来訪者がいる。きちんと迎えるべき者がな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1108,7 +1108,7 @@
   },
   "Beyond the Grave#110": {
    "src": "THIS MEETING IN MY OFFICE IS NOT TRULY NECESSARY. THE PAPERWORK IS JUST FOR SHOW. BUT I LIKE TO INDULGE, ON OCCASION.",
-   "dst": "",
+   "dst": "執務室での面談は、本当は必要ない。書類も見せかけだ。だが時々は、こういう趣向を楽しみたくてね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1118,7 +1118,7 @@
   },
   "Beyond the Grave#111": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "他には？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1128,7 +1128,7 @@
   },
   "Beyond the Grave#112": {
    "src": "THAT SHOULD BE EVERYTHING, THEN. PERHAPS IF I GAVE YOU MORE TIME, YOU COULD THINK OF MORE.",
-   "dst": "",
+   "dst": "では、これで全部だな。時間をもっと与えれば、まだ思いつくかもしれないが。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1138,7 +1138,7 @@
   },
   "Beyond the Grave#113": {
    "src": "BUT IT IS BEST WE GET ON WITH OUR DISCUSSION, I WOULD SAY.",
-   "dst": "",
+   "dst": "だが、そろそろ話を進めたほうがいいだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1148,7 +1148,7 @@
   },
   "Beyond the Grave#114": {
    "src": "LET US BEGIN WITH THE BASICS.",
-   "dst": "",
+   "dst": "基本から始めよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1158,7 +1158,7 @@
   },
   "Beyond the Grave#115": {
    "src": "CAUSE OF DEATH: SLAIN BY THE HORROR KNOWN AS KROLTON. ANOTHER ADD TO THE TALLY.",
-   "dst": "",
+   "dst": "死因：Krolton と呼ばれる怪物に殺害。記録にまた一件追加だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1168,7 +1168,7 @@
   },
   "Beyond the Grave#116": {
    "src": "SWIFT AND UNAVOIDABLE. THERE IS NO SHAME IN LOSING TO SUCH A FORE. YOU ARE NOT THE FIRST, AND YOU WILL LIKELY NOT BE THE LAST.",
-   "dst": "",
+   "dst": "素早く、避けようがなかった。あのような敵に敗れても恥ではない。君が最初ではないし、おそらく最後でもない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1178,7 +1178,7 @@
   },
   "Beyond the Grave#117": {
    "src": "THOUGH PERHAPS I FIND MYSELF HOPING SOMEONE DOES MANAGE TO SUCCEED IN PUTTING AN END TO IT. IT HAS LIVED WELL BEYOND ITS MEAN, AND PROVES A NUISANCE EVERY TIME IT RE-EMERGES...",
-   "dst": "",
+   "dst": "もっとも、誰かがあれを終わらせてくれることを願っている自分もいる。あれは分をとうに越えて生き、蘇るたびに厄介事を起こすのだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1188,7 +1188,7 @@
   },
   "Beyond the Grave#118": {
    "src": "BUT I DIGRESS. NEXT, LET US PERUSE YOUR LIFE'S RECORD. IT IS A FORMALITY, FOR THE MOST PART. ONLY APPLICABLE IF YOU WISH TO RETURN TO THE CYCLE.",
-   "dst": "",
+   "dst": "話がそれた。次に、君の生涯の記録を見てみよう。ほとんど形式的なものだ。輪廻に還ることを望む場合にのみ関係する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1198,7 +1198,7 @@
   },
   "Beyond the Grave#119": {
    "src": "SELFISHLY, HOWEVER, I WOULD URGE YOU TO LINGER A WHILE. IT HAS BEEN SOME TIME SINCE I HAVE HAD GUEST. YOUR COMPANY WOULD NOT BE UNAPPRECIATED.",
-   "dst": "",
+   "dst": "だが私のわがままを言えば、しばらく留まってほしい。客人が来るのは久しぶりなのだ。君がいてくれるのはありがたい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1208,7 +1208,7 @@
   },
   "Beyond the Grave#120": {
    "src": "...YOU HAVE TIME TO DECIDE. FOR NOW, WE MAY...",
-   "dst": "",
+   "dst": "…決めるのは急がなくていい。ひとまず、我々は…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1218,7 +1218,7 @@
   },
   "Beyond the Grave#121": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1228,7 +1228,7 @@
   },
   "Beyond the Grave#122": {
    "src": "HM. HOW VERY INTERESTING. THAT WOULD EXPLAIN SOME THINGS.",
-   "dst": "",
+   "dst": "ふむ。実に興味深い。それなら説明がつくこともある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1238,7 +1238,7 @@
   },
   "Beyond the Grave#123": {
    "src": "SOMETHING HAS GONE WRONG. IT WOULD SEEM YOUR SPARK HAS PERSISTED EVEN THROUGH THE VEIL... EVEN THOUGH SUCH A THING SHOULD BE IMPOSSIBLE.",
-   "dst": "",
+   "dst": "何かがおかしい。君の火花は、ヴェールを越えてなお残っているようだ… そんなことはあり得ないはずなのに。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1248,7 +1248,7 @@
   },
   "Beyond the Grave#124": {
    "src": "IT HAS IMPRINTED ITSELF INTO YOUR VERY ESSENCE... HOW HAS THIS COME TO PASS? COULD IT HAVE BEEN...",
-   "dst": "",
+   "dst": "君の本質そのものに刻み込まれている… どうしてこうなった？まさか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1258,7 +1258,7 @@
   },
   "Beyond the Grave#125": {
    "src": "AH. I SEE... THIS COMPLICATES MATTERS.",
-   "dst": "",
+   "dst": "ああ。なるほど… これは厄介なことになった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1268,7 +1268,7 @@
   },
   "Beyond the Grave#126": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1278,7 +1278,7 @@
   },
   "Beyond the Grave#127": {
    "src": "I WOULD NOT WISH TO KEEP YOU HERE. IT WOULD NOT BE RIGHT. AND YET, I LACK THE MEANS TO RETURN YOU TO THE LIVING. SUCH AN ACT IS BEYOND MY OWN CAPABILITY.",
-   "dst": "",
+   "dst": "君をここに留めたくはない。それは正しくない。だが、君を生者の世界へ戻す手段が私にはない。それは私の力を超えている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1288,7 +1288,7 @@
   },
   "Beyond the Grave#128": {
    "src": "WHAT TO DO, WHAT TO DO...",
-   "dst": "",
+   "dst": "さて、どうしたものか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1298,7 +1298,7 @@
   },
   "Beyond the Grave#129": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1308,7 +1308,7 @@
   },
   "Beyond the Grave#130": {
    "src": "A THOUGHT OCCURS TO ME. THOUGH I LACK THE MEANS MYSELF, THERE IS AN OPTION YET OPEN TO US. A THREAD I MAY REACH OUT AND GRASP.",
-   "dst": "",
+   "dst": "ひとつ思いついた。私自身に手段はないが、まだ残された道がある。手を伸ばせば掴める糸が。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1318,7 +1318,7 @@
   },
   "Beyond the Grave#131": {
    "src": "THE WRETCHED KROLTON. ITS SPARK IS STRONG, HAVING TAKEN SO MANY LIVES TO MAINTAIN IT. IF IT IS SLAIN, THAT STRENGTH WILL QUICKLY DISPERSE.",
-   "dst": "",
+   "dst": "忌まわしき Krolton。あれの火花は強い。多くの命を奪って保ってきたからだ。あれが倒されれば、その力はすぐに散る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1328,7 +1328,7 @@
   },
   "Beyond the Grave#132": {
    "src": "BUT FOR ONE SHORT MOMENT, IT WILL BE WITHIN MY REACH. AND WITH IT, WE MAY REIGNITE YOUR OWN CRADLED SPARK.",
-   "dst": "",
+   "dst": "だがほんの一瞬、それは私の手の届くところに来る。それを使えば、君の中に守られた火花を再び灯せる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1338,7 +1338,7 @@
   },
   "Beyond the Grave#133": {
    "src": "...THIS IS NOT AN ACT I TAKE LIGHTLY. TO TWIST THE CYCLE IN SUCH A WAY... IT IS AGAINST MY VERY NATURE.",
-   "dst": "",
+   "dst": "…軽々しく行うことではない。こんな風に輪廻を歪めるなど… 私の本質に反する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1348,7 +1348,7 @@
   },
   "Beyond the Grave#134": {
    "src": "BUT, SELFISHLY, I FIND MYSELF CARING LESS ABOUT SUCH THINGS AS OF LATE.",
-   "dst": "",
+   "dst": "だが私的に言えば、近頃そういうことをあまり気にしなくなってきた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1358,7 +1358,7 @@
   },
   "Beyond the Grave#135": {
    "src": "SO IT IS DECIDED. I WILL GRANT YOU PASSAGE BACK BEYOND THE VEIL, WHERE YOU WILL RETURN TO THE BODY YOU HAD LEFT BEHIND.",
-   "dst": "",
+   "dst": "では決まりだ。君がヴェールの向こうへ戻ることを許そう。そこで君は、置いてきた体に戻る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1368,7 +1368,7 @@
   },
   "Beyond the Grave#136": {
    "src": "THERE, WITH WHAT STRENGTH YOU HAVE, YOU WILL BRING AND END TO THAT HORROR. AND THROUGH THAT END, WE SHALL STAVE OFF YOUR OWN.",
-   "dst": "",
+   "dst": "そこで残る力を振り絞り、あの怪物に終わりをもたらすのだ。その終わりによって、君自身の終わりを退けよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1378,7 +1378,7 @@
   },
   "Beyond the Grave#137": {
    "src": "IT WILL TAKE SOME TIME TO PREPARE. IN THE MEANTIME, YOU MAY EXPLORE THE MANSION FURTHER.",
-   "dst": "",
+   "dst": "準備には少し時間がかかる。その間、館をさらに探索するといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1388,7 +1388,7 @@
   },
   "Beyond the Grave#138": {
    "src": "THERE IS A GAME I HAD SET UP, IN THE OTHER UPSTAIRS ROOM. IT WAS MEANT TO BE A SURPRISE FOR YOU, BUT SINCE YOU WILL BE LEAVING, I SUPPOSE WE MAY PUSH IT FORWARD.",
-   "dst": "",
+   "dst": "二階のもう一つの部屋に、ゲームを用意しておいた。君へのサプライズのつもりだったが、もう帰るのだから、前倒しにしよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1398,7 +1398,7 @@
   },
   "Beyond the Grave#139": {
    "src": "YES? WHAT ELSE DO YOU NEED?",
-   "dst": "",
+   "dst": "何だね？他に何か用か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1408,7 +1408,7 @@
   },
   "Beyond the Grave#140": {
    "src": "HM.",
-   "dst": "",
+   "dst": "ふむ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1418,7 +1418,7 @@
   },
   "Beyond the Grave#141": {
    "src": "WHY INDEED.",
-   "dst": "",
+   "dst": "まったく、なぜだろうな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1428,7 +1428,7 @@
   },
   "Beyond the Grave#142": {
    "src": "I SUPPOSE I HAVE GROWN TIRED OF STANDING BY.",
-   "dst": "",
+   "dst": "傍観するのに疲れたのだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1438,7 +1438,7 @@
   },
   "Beyond the Grave#143": {
    "src": "IT IS DIFFICULT, WATCHING THE WORLD'S FATE UNFOLD, UNABLE TO LIFT EVEN A SINGLE SKELETAL FINGER TO MAKE A DIFFERENCE.",
-   "dst": "",
+   "dst": "世界の運命が展開していくのを見守りながら、変えるために骨の指一本すら上げられない。それはつらいものだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1448,7 +1448,7 @@
   },
   "Beyond the Grave#144": {
    "src": "YOU DO NOT YET UNDERSTAND, I TAKE IT. FEW EVER WILL. IT IS SOMETHING FAR BEYOND ANY MORTAL'S CAPACITY TO COMPREHEND.",
-   "dst": "",
+   "dst": "まだ分からないようだな。分かる者はほとんどいない。人間の理解をはるかに超えたものなのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1458,7 +1458,7 @@
   },
   "Beyond the Grave#145": {
    "src": "I SUSPECT YOU WILL SOMEDAY. I DO NOT BELIEVE IN DESTINY. BUT PERHAPS THIS IS CLOSE ENOUGH.",
-   "dst": "",
+   "dst": "いつか君には分かる気がする。私は運命を信じない。だが、これはそれに近いのかもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1468,7 +1468,7 @@
   },
   "Beyond the Grave#146": {
    "src": "IN TRUTH, YOU ARE RATHER FORTUNATE. YOU HAVE FOUND YOURSELF IN THE EXACT SET OF CIRCUMSTANCES TO ALLOW ME TO INTERVENE.",
-   "dst": "",
+   "dst": "実のところ、君はかなり幸運だ。私が介入できる、ちょうどその状況に居合わせたのだから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1478,7 +1478,7 @@
   },
   "Beyond the Grave#147": {
    "src": "IT WOULD NOT BE RIGHT TO LET THE OPPORTUNITY PASS ME BY.",
-   "dst": "",
+   "dst": "この機会を見過ごすのは正しくないだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1488,7 +1488,7 @@
   },
   "Beyond the Grave#148": {
    "src": "IN ANY OTHER CIRCUMSTANCE, I WOULD BE HAPPY TO OBLIGE. A LONG-TERM GUEST IS ALWAYS APPRECIATED IN THESE LONESOME TIMES.",
-   "dst": "",
+   "dst": "他のどんな状況でも、喜んで応じたところだ。この寂しい時代、長く滞在する客人はいつでも歓迎だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1498,7 +1498,7 @@
   },
   "Beyond the Grave#149": {
    "src": "BUT I CAN NOT. I WILL NOT.",
-   "dst": "",
+   "dst": "だが、できない。しない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1508,7 +1508,7 @@
   },
   "Beyond the Grave#150": {
    "src": "...I HOPE YOU WILL UNDERSTAND.",
-   "dst": "",
+   "dst": "…分かってくれるといいが。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1518,7 +1518,7 @@
   },
   "Beyond the Grave#151": {
    "src": "...GO. DO NOT LINGER HERE ANY LONGER.",
-   "dst": "",
+   "dst": "…行きたまえ。これ以上ここに留まるな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1528,7 +1528,7 @@
   },
   "Beyond the Grave#152": {
    "src": "THE GAME IS IN THE OTHER UPSTAIRS ROOM, ON THE OTHER END OF THE MANSION. I THINK YOU WILL ENJOY IT.",
-   "dst": "",
+   "dst": "ゲームは二階のもう一つの部屋、館の反対側だ。きっと楽しめるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1538,7 +1538,7 @@
   },
   "Beyond the Grave#153": {
    "src": "I CANNOT HELP BUT NOTICE YOU ARE STILL HERE. ARE YOU LOST? THE GAME IS READY FOR YOU IN THE OTHER UPSTAIRS ROOM, ON THE OTHER END OF THE MANSION.",
-   "dst": "",
+   "dst": "まだここにいるのが目についてしまうのだが。迷ったのかね？ゲームは二階のもう一つの部屋、館の反対側で君を待っている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1548,7 +1548,7 @@
   },
   "Beyond the Grave#154": {
    "src": "Find a way to exit the strange realm by looking around the mansion.",
-   "dst": "",
+   "dst": "館を調べ回り、奇妙な領域から出る方法を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -1558,7 +1558,7 @@
   },
   "Beyond the Grave#155": {
    "src": "WELL, I DID SAY YOU NEED TO BE SITTING ON THE COUCH. THE SCREEN TURNS OFF IF YOU MOVE TOO FAR AWAY. YOU'LL HAVE TO START OVER.",
-   "dst": "",
+   "dst": "ソファに座っている必要があると言っただろう。離れすぎると画面が消える。最初からやり直しだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1568,7 +1568,7 @@
   },
   "Beyond the Grave#156": {
    "src": "IMPRESSIVE. HOWEVER, THAT WAS SIMPLY ROUND {~}, OUT OF {~}. EACH ONE WILL BE PROGRESSIVELY MORE DIFFICULT THAN THE LAST. READY?",
-   "dst": "",
+   "dst": "見事だ。だが、今のは第 {~} ラウンドにすぎない。全 {~} ラウンド、回を追うごとに難しくなる。準備はいいか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1578,7 +1578,7 @@
   },
   "Beyond the Grave#157": {
    "src": "...AH, THE LOOK ON YOUR FACE. PRICELESS. GIVEN HOW MY SKULL IS SOLID, MY GUESTS HAVE TO MEET MY FILL OF MAKING FACES FOR ME.",
-   "dst": "",
+   "dst": "…ああ、その顔。最高だ。私の頭蓋骨は固くて表情が作れない。だから客人に存分に顔を作ってもらうのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1588,7 +1588,7 @@
   },
   "Beyond the Grave#158": {
    "src": "SEEING AS YOU NEED TO LEAVE SOON, I HAVE ELECTED TO CUT THE QUIZ SHOW SHORT. FOR NOW, WE WILL PICK BACK UP WHERE WE LEFT OFF ONCE YOU INEVITABLY RETURN.",
-   "dst": "",
+   "dst": "君はじきに帰らねばならないから、クイズ番組は早めに切り上げることにした。君がいずれ必ず戻った時に、続きから再開しよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1598,7 +1598,7 @@
   },
   "Beyond the Grave#159": {
    "src": "...WAS IT ENJOYABLE? I HAD PUT A GREAT DEAL OF WORK INTO IT.",
-   "dst": "",
+   "dst": "…楽しかったかね？かなり手間をかけたのだが。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1608,7 +1608,7 @@
   },
   "Beyond the Grave#160": {
    "src": "I AM GLAD. I PUT A LOT OF TIME INTO ENSURING MY GUESTS ARE ENTERTAINED HERE.",
-   "dst": "",
+   "dst": "それはよかった。客人が退屈しないよう、私は多くの時間を費やしているのでな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1618,7 +1618,7 @@
   },
   "Beyond the Grave#161": {
    "src": "I SEE. VERY WELL. YOUR FEEDBACK IS APPRECIATED. I WILL HAVE TO MAKE SOME REVISIONS.",
-   "dst": "",
+   "dst": "なるほど。よろしい。意見に感謝する。いくつか手直しが必要だな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1628,7 +1628,7 @@
   },
   "Beyond the Grave#162": {
    "src": "THEN THAT IS ALL. IF ONLY YOU COULD STAY LONGER- I DO ENJOY ACTIVITIES WITH LUCID GUESTS. COOK CLUBS, LITTLE PARADES... BUT IT WILL HAVE TO WAIT.",
-   "dst": "",
+   "dst": "では、以上だ。もっと長くいてくれればな。正気の客人との催しは楽しいのだ。料理クラブ、ささやかなパレード… だが、それはお預けだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1638,7 +1638,7 @@
   },
   "Beyond the Grave#163": {
    "src": "NOW. THIS MANOR HASN'T GOT A BACK DOOR, SO I WILL NEED TO MAKE ONE FOR YOU TO EXIT. EXCUSE THE NOISE FOR MOMENT, AND TAKE THE NEW EXIT ANY TIME YOU LIKE.",
-   "dst": "",
+   "dst": "さて。この館には裏口がないので、君が出られるよう一つ作らねばならない。少し騒がしくなるが許してくれ。新しい出口はいつでも使うといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1648,7 +1648,7 @@
   },
   "Beyond the Grave#164": {
    "src": "WELL, I DID SAY YOU NEED TO BE SITTING ON THE COUCH. THE SCREEN TURNS OFF IF YOU MOVE TOO FAR AWAY. YOU'LL HAVE TO START OVER.",
-   "dst": "",
+   "dst": "ソファに座っている必要があると言っただろう。離れすぎると画面が消える。最初からやり直しだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1658,7 +1658,7 @@
   },
   "Beyond the Grave#165": {
    "src": "SO, THERE YOU GO, WALKING BACK INTO THE LONG DREAM OF LIFE.",
-   "dst": "",
+   "dst": "そうして君は、生という長い夢の中へ歩いて戻っていくわけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1668,7 +1668,7 @@
   },
   "Beyond the Grave#166": {
    "src": "IT WAS A SHORT STAY. BUT, I DID ENJOY HAVING YOU HERE. I ALWAYS DO LIKE THE GUESTS WHO CAN SEE ME FOR WHAT I AM.",
-   "dst": "",
+   "dst": "短い滞在だった。だが、君がいて楽しかった。私のありのままの姿が見える客人は、いつだって好きだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1678,7 +1678,7 @@
   },
   "Beyond the Grave#167": {
    "src": "THE CIRCUMSTANCES HAVE NEVER ALIGNED FOR A GUEST TO LEAVE THIS WAY. TYPICALLY, THEY WILL MOVE ON AND EVENTUALLY RETURN TO THE CYCLE.",
-   "dst": "",
+   "dst": "客人がこのように去れる状況が揃ったことは、一度もない。普通は先へ進み、やがて輪廻へ還るものだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1688,7 +1688,7 @@
   },
   "Beyond the Grave#168": {
    "src": "SO IN A WAY, THIS CANNOT BE CALLED A \"GOODBYE.\" AH HA HA. NO, INSTEAD IT IS A \"SEE YOU SOON.\"",
-   "dst": "",
+   "dst": "だから、ある意味これは「さようなら」とは呼べない。ははは。いや、「またすぐに」だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1698,7 +1698,7 @@
   },
   "Beyond the Grave#169": {
    "src": "Defeat Krolton to earn your way back to the living.",
-   "dst": "",
+   "dst": "Krolton を倒し、生者の世界へ戻る権利を得る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -1708,7 +1708,7 @@
   },
   "Beyond the Grave#170": {
    "src": "...ONE LAST THING. YOU HAVE NOT YET ENTIRELY REINTEGRATED INTO YOUR BODY.",
-   "dst": "",
+   "dst": "…最後に一つ。君はまだ完全には体と一つになっていない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1718,7 +1718,7 @@
   },
   "Beyond the Grave#171": {
    "src": "AS SUCH, FOR THE TIME BEING, MORTALITY IS MERELY A SUGGESTION. SO BE AS RECKLESS AS YOU WANT.",
-   "dst": "",
+   "dst": "よって当面、死はただの目安にすぎない。好きなだけ無茶をするといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1728,7 +1728,7 @@
   },
   "Beyond the Grave#172": {
    "src": "SO LONG AS THE HORROR DIES, NOT MATTER THE CAUSE, IT WILL BE ENOUGH FOR OUR NEEDS. REMEMBER THAT.",
-   "dst": "",
+   "dst": "死因が何であれ、あの怪物が死にさえすれば我々の目的には足りる。覚えておきたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1738,7 +1738,7 @@
   },
   "Beyond the Grave#173": {
    "src": "AND THERE SHALL I DECLARE IT BE DONE. THE HORROR'S SPARK UNWOVEN.. AND YOU, BODY, SOUL, SPARK, KNITTED BACK TOGETHER. A NEW PATCH FOR THE TAPESTRY OF YOUR LIFE.",
-   "dst": "",
+   "dst": "そして、ここに成就を宣言しよう。怪物の火花はほどかれ… 君の体、魂、火花は再び縫い合わされた。君の人生という織物に、新たな継ぎ当てだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1748,7 +1748,7 @@
   },
   "Beyond the Grave#174": {
    "src": "IT WAS NICE TO SEE THIS PLACE IN PERSON AGAIN, EVEN IF I WAS ONLY VISITING FOR A MOMENT. BUT NOW I MUST RETURN TO MY OWN BUSINESS.",
-   "dst": "",
+   "dst": "束の間の訪問とはいえ、この場所をまた直に見られてよかった。だが、そろそろ自分の務めに戻らねばならない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1758,7 +1758,7 @@
   },
   "Beyond the Grave#175": {
    "src": "THIS MEANS FAREWELL, FOR THE TIME BEING. WHEN WE NEXT MEET, YOU WILL HAVE REACHED YOUR FINAL END.",
-   "dst": "",
+   "dst": "ひとまず、これでお別れだ。次に会う時、君は本当の最期を迎えているだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1768,7 +1768,7 @@
   },
   "Beyond the Grave#176": {
    "src": "TIL THEN, TREASURE YOUR LIFE AS YOU LIVE IT TO THE FULLEST. I LOOK FORWARD TO SHARING STORIES OVER TEA, AH HA HA.",
-   "dst": "",
+   "dst": "それまで、精一杯生きて命を大切にしたまえ。お茶を飲みながら土産話を聞くのを楽しみにしている。ははは。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1778,7 +1778,7 @@
   },
   "Beyond the Grave#177": {
    "src": "Take proof of Krolton's demise to Irlok at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Krolton を倒した証拠を [{~}, {~}, -{~}] の Irlok に届ける",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -1788,7 +1788,7 @@
   },
   "Beyond the Grave#178": {
    "src": "Oh, thank goodness. You've returned- not free of wear, but certainly alive. Did you need to flee from Krolton, or is he...?",
-   "dst": "",
+   "dst": "ああ、よかった。戻られたのですね。無傷ではないにせよ、確かに生きて。Krolton から逃げてきたのですか、それとも…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1798,7 +1798,7 @@
   },
   "Beyond the Grave#179": {
    "src": "Truly? The beast is dead?",
-   "dst": "",
+   "dst": "本当に？あの獣が死んだと？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1808,7 +1808,7 @@
   },
   "Beyond the Grave#180": {
    "src": "Gracious, I don't think I've ever been so relieved. Krolton was responsible for thousands of deaths long ago. You've prevented an oncoming massacre!",
-   "dst": "",
+   "dst": "なんと、これほど安堵したことはありません。Krolton は遠い昔、何千もの死をもたらしました。迫る虐殺を防いでくださった！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1818,7 +1818,7 @@
   },
   "Beyond the Grave#181": {
    "src": "Bantisu Temple owes you a great deal. Here then- a suitable reward.",
-   "dst": "",
+   "dst": "Bantisu 寺院は大きな恩を受けました。では、ふさわしい報酬を。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1828,7 +1828,7 @@
   },
   "Beyond the Grave#182": {
    "src": "A powerful Bantisu artifact, as a reward for defeating a beast that menaced in antiquated times.",
-   "dst": "",
+   "dst": "Bantisu の強力な遺物です。太古の時代に猛威を振るった獣を倒した報酬として。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1838,7 +1838,7 @@
   },
   "Beyond the Grave#183": {
    "src": "Safe travels, human. Whether it was luck or strength that had you prevail, I pray it will not fail you in the future.",
-   "dst": "",
+   "dst": "旅のご無事を、人間の方。勝利をもたらしたのが運でも力でも、それが今後もあなたを見放しませんように。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1848,7 +1848,7 @@
   },
   "Beyond the Grave#184": {
    "src": "REVISITING OLD MEMORIES, ARE WE?",
-   "dst": "",
+   "dst": "昔の思い出に浸っているのかね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1858,7 +1858,7 @@
   },
   "Beyond the Grave#185": {
    "src": "THIS BOOK IS SO BAD, EVEN THE LONG-WINDED AND PAINFUL DEATH OF SWEENEY S. GREENVILLE IS BETTER THAN THIS.",
-   "dst": "",
+   "dst": "この本はひどすぎる。Sweeney S. Greenville の長く苦しい死のほうがまだましだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "One Thousand Meters Under",
   "count": 105,
-  "translated": 0,
+  "translated": 105,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "One Thousand Meters Under#000": {
    "src": "Read the Help Wanted sign in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p} [{~}, {~}, -{~}] の求人の張り紙を読む。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -18,7 +18,7 @@
   },
   "One Thousand Meters Under#002": {
    "src": "Talk to The Secretary at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] で秘書と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -28,7 +28,7 @@
   },
   "One Thousand Meters Under#003": {
    "src": "Hello, welcome to Ynnos' facility.",
-   "dst": "",
+   "dst": "こんにちは、Ynnos の研究施設へようこそ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -38,7 +38,7 @@
   },
   "One Thousand Meters Under#004": {
    "src": "Oh, you're here about the job vacancy? Well, you're a little late.",
-   "dst": "",
+   "dst": "あら、求人の件ですか？少し遅かったですね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -48,7 +48,7 @@
   },
   "One Thousand Meters Under#005": {
    "src": "There might still be time, just sneak in to the conference room behind me.",
-   "dst": "",
+   "dst": "まだ間に合うかも。後ろの会議室にこっそり入ってください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -58,7 +58,7 @@
   },
   "One Thousand Meters Under#006": {
    "src": "Enter the conference room and listen to the scientist.",
-   "dst": "",
+   "dst": "会議室に入り、科学者の話を聞く。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -68,7 +68,7 @@
   },
   "One Thousand Meters Under#007": {
    "src": "*Ahem* Welcome, everyone.",
-   "dst": "",
+   "dst": "*コホン* 皆さん、ようこそ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -78,7 +78,7 @@
   },
   "One Thousand Meters Under#008": {
    "src": "I am Ynnos, one of the leading scientists in Gavel. You're here because... Well you read the help wanted sign.",
-   "dst": "",
+   "dst": "私は Ynnos、Gavel 屈指の科学者だ。君たちが来たのは…まあ、求人の張り紙を読んだからだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -88,7 +88,7 @@
   },
   "One Thousand Meters Under#009": {
    "src": "Allow me to explain the situation we're in. It's a series of unfortunate events. I study the amazing properties of crystals and other geodes.",
-   "dst": "",
+   "dst": "我々の状況を説明しよう。不運な出来事の連続でね。私は水晶や晶洞の驚くべき性質を研究している。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -98,7 +98,7 @@
   },
   "One Thousand Meters Under#010": {
    "src": "I am funded by a private organization, however that seems to have stopped. So... We had to make cuts in the budget.",
-   "dst": "",
+   "dst": "資金はある民間組織から出ていたが、それが止まったらしい。それで…予算を削るしかなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -108,7 +108,7 @@
   },
   "One Thousand Meters Under#011": {
    "src": "One of these, was using cheaper rope. While moving the crystal across {p}, well, it snapped. The crystal fell.",
-   "dst": "",
+   "dst": "その一つが安いロープだ。{p}を越えて水晶を運ぶ途中、切れてしまった。水晶は落ちた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -118,7 +118,7 @@
   },
   "One Thousand Meters Under#012": {
    "src": "I can not stress the value of that crystal. It had many unique properties that are allowing me to understand why the {p} float the way they do.",
-   "dst": "",
+   "dst": "あの水晶の価値は言い尽くせない。その特異な性質のおかげで、{p}がなぜ浮いているのか解明しつつあったのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -128,7 +128,7 @@
   },
   "One Thousand Meters Under#013": {
    "src": "They hold the very key to restoring this land to being whole once more... But it's gone.",
-   "dst": "",
+   "dst": "この地を再び一つにする鍵そのものなのだ…だが、失われた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -138,7 +138,7 @@
   },
   "One Thousand Meters Under#014": {
    "src": "Fortunately, I detected an impact. It's hit something down in the void. We're not sure what, however or how deep.",
-   "dst": "",
+   "dst": "幸い、衝撃を検知した。虚無の底で何かに当たったのだ。それが何か、どれほど深いかは不明だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -148,7 +148,7 @@
   },
   "One Thousand Meters Under#015": {
    "src": "Your mission will be to retrieve the crystal in a specially designed ship to withstand the void. We barely scraped it out of the budget, so try to bring it back in one piece.",
-   "dst": "",
+   "dst": "君の任務は、虚無に耐える特製の船で水晶を回収することだ。予算をやっと捻出した船だから、無傷で戻してくれよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -158,7 +158,7 @@
   },
   "One Thousand Meters Under#016": {
    "src": "If you think you are not up for the challenge, leave now...",
-   "dst": "",
+   "dst": "挑戦に自信がないなら、今すぐ去りたまえ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -168,7 +168,7 @@
   },
   "One Thousand Meters Under#017": {
    "src": "When you think you are ready, exit the room behind me and meet me at the dock as soon as possible.",
-   "dst": "",
+   "dst": "準備ができたら後ろの部屋から出て、すぐに船着き場へ来てくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -178,7 +178,7 @@
   },
   "One Thousand Meters Under#018": {
    "src": "Enter the submarine at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の潜水艇に乗り込む。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -188,7 +188,7 @@
   },
   "One Thousand Meters Under#019": {
    "src": "Wait for the submarine to arrive at the void islands.",
-   "dst": "",
+   "dst": "潜水艇が虚無の島々に着くのを待つ。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -198,7 +198,7 @@
   },
   "One Thousand Meters Under#020": {
    "src": "Attention crew members.",
-   "dst": "",
+   "dst": "乗組員に告ぐ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -208,7 +208,7 @@
   },
   "One Thousand Meters Under#021": {
    "src": "This is the ship's mechanic. There appears to be a fault on the lower deck. I request urgent assistance.",
-   "dst": "",
+   "dst": "こちら船の整備士。下層デッキで故障が発生したようだ。至急応援を頼む。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -218,7 +218,7 @@
   },
   "One Thousand Meters Under#022": {
    "src": "I wonder what the mechanic is doing?",
-   "dst": "",
+   "dst": "整備士さん、何してるのかしら？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -228,7 +228,7 @@
   },
   "One Thousand Meters Under#023": {
    "src": "He has been screaming and crying for a while now. I hope everything is alright down there.",
-   "dst": "",
+   "dst": "しばらく前から叫んだり泣いたりしてるの。下が無事だといいけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -238,7 +238,7 @@
   },
   "One Thousand Meters Under#024": {
    "src": "Ah finally! One of the air pipes has shattered, we need to patch it up ASAP!",
-   "dst": "",
+   "dst": "やっと来たか！空気管が一本割れた、すぐ塞がないと！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -248,7 +248,7 @@
   },
   "One Thousand Meters Under#025": {
    "src": "Quick, head into the room behind me and line up the white glass with the blue blocks. I'll control things from here!",
-   "dst": "",
+   "dst": "急げ、後ろの部屋に入って白いガラスを青いブロックに合わせてくれ。操作はこっちでやる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -258,7 +258,7 @@
   },
   "One Thousand Meters Under#026": {
    "src": "Take a nap in the resting room.",
-   "dst": "",
+   "dst": "休憩室で仮眠をとる。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -268,7 +268,7 @@
   },
   "One Thousand Meters Under#027": {
    "src": "Oh wow, thanks for the help! You should head up to the resting room and take a nap before we arrive at the first island.",
-   "dst": "",
+   "dst": "おお、助かったよ！最初の島に着くまで、上の休憩室で仮眠をとっておくといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -278,7 +278,7 @@
   },
   "One Thousand Meters Under#028": {
    "src": "Talk to the captain outside of the submarine.",
-   "dst": "",
+   "dst": "潜水艇の外で船長と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -288,7 +288,7 @@
   },
   "One Thousand Meters Under#029": {
    "src": "We have encountered out first island, {~}m down. Crew members, climb up the ladder and search the island for the crystal.",
-   "dst": "",
+   "dst": "最初の島に到達した、深さ {~}m だ。乗組員ははしごを登り、島で水晶を探せ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -298,7 +298,7 @@
   },
   "One Thousand Meters Under#030": {
    "src": "We've arrived at the next void island.",
-   "dst": "",
+   "dst": "次の虚無の島に着いたぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -308,7 +308,7 @@
   },
   "One Thousand Meters Under#031": {
    "src": "The void islands are really different from Gavel... Or are we still even in Gavel?",
-   "dst": "",
+   "dst": "虚無の島々は Gavel とはまるで違う…いや、ここはまだ Gavel なのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -318,7 +318,7 @@
   },
   "One Thousand Meters Under#032": {
    "src": "Anyway, let's explore the island, look for the void crystal, and return to {p}!",
-   "dst": "",
+   "dst": "ともかく島を探索して虚無の水晶を見つけ、{p}に戻ろう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -328,7 +328,7 @@
   },
   "One Thousand Meters Under#033": {
    "src": "Explore the island and look for the crystal.",
-   "dst": "",
+   "dst": "島を探索し、水晶を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -338,7 +338,7 @@
   },
   "One Thousand Meters Under#034": {
    "src": "Return to the submarine and continue your journey.",
-   "dst": "",
+   "dst": "潜水艇に戻り、旅を続ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -348,7 +348,7 @@
   },
   "One Thousand Meters Under#035": {
    "src": "Continue your journey.",
-   "dst": "",
+   "dst": "旅を続ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -358,7 +358,7 @@
   },
   "One Thousand Meters Under#036": {
    "src": "Oh my, what are these creatures!?",
-   "dst": "",
+   "dst": "なんだ、この生き物たちは！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -368,7 +368,7 @@
   },
   "One Thousand Meters Under#037": {
    "src": "They are attacking the windshield in the front room, it looks like it's about to break at any moment!",
-   "dst": "",
+   "dst": "前の部屋の風防を攻撃している、今にも割れそうだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -378,7 +378,7 @@
   },
   "One Thousand Meters Under#038": {
    "src": "Quick, you! Come into the cockpit and press on the window to scare them off!",
-   "dst": "",
+   "dst": "おい、急げ！操縦室に来て窓を押し、奴らを追い払え！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -388,7 +388,7 @@
   },
   "One Thousand Meters Under#039": {
    "src": "This is not good, the creatures destroyed part of the windshield.",
-   "dst": "",
+   "dst": "まずい、生き物に風防の一部を壊された。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -398,7 +398,7 @@
   },
   "One Thousand Meters Under#040": {
    "src": "We can't continue much longer with a broken windshield, we'll have to repair it at another island.",
-   "dst": "",
+   "dst": "風防が壊れたままでは長くもたない。別の島で修理しなければ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -408,7 +408,7 @@
   },
   "One Thousand Meters Under#041": {
    "src": "Ynnos said the void has pockets of toxic gas... Go take a nap, I'll wake you up when we're there.",
-   "dst": "",
+   "dst": "Ynnos によると虚無には有毒ガスの溜まりがあるそうだ…仮眠をとれ、着いたら起こす。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -418,7 +418,7 @@
   },
   "One Thousand Meters Under#042": {
    "src": "Head to the resting room.",
-   "dst": "",
+   "dst": "休憩室へ向かう。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -428,7 +428,7 @@
   },
   "One Thousand Meters Under#043": {
    "src": "Meet up with the captain outside the submarine.",
-   "dst": "",
+   "dst": "潜水艇の外で船長と合流する。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -438,7 +438,7 @@
   },
   "One Thousand Meters Under#044": {
    "src": "Attention crew. We have arrived at the second island, {~}m down. We cannot progress without making some emergency repairs.",
-   "dst": "",
+   "dst": "乗組員に告ぐ。深さ {~}m の第二の島に到着した。緊急修理をしなければ先へ進めない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -448,7 +448,7 @@
   },
   "One Thousand Meters Under#045": {
    "src": "Crew, please disembark and search resources to help repair the ship. We need glass and some kind of glue.",
-   "dst": "",
+   "dst": "乗組員は下船し、船の修理に使える資源を探してくれ。ガラスと何か接着剤が要る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -458,7 +458,7 @@
   },
   "One Thousand Meters Under#046": {
    "src": "The void creatures did heavy damage to our craft, we need to repair the submarine.",
-   "dst": "",
+   "dst": "虚無の生物に船をひどくやられた。潜水艇を修理しなければ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -468,7 +468,7 @@
   },
   "One Thousand Meters Under#047": {
    "src": "I'm not sure what we'll find here, but we'll need some glue and glass...",
-   "dst": "",
+   "dst": "ここで何が見つかるかわからんが、接着剤とガラスが要る…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -478,7 +478,7 @@
   },
   "One Thousand Meters Under#048": {
    "src": "I doubt we'll find those exact things, so get resourceful!",
-   "dst": "",
+   "dst": "そのものは見つからんだろう、工夫してくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -488,7 +488,7 @@
   },
   "One Thousand Meters Under#049": {
    "src": "Bring me [{~} Sand Substitutes] and [{~} Glue Substitutes], that should be enough.",
-   "dst": "",
+   "dst": "[{~} Sand Substitutes] と [{~} Glue Substitutes] を持ってきてくれ、それで足りるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -498,7 +498,7 @@
   },
   "One Thousand Meters Under#050": {
    "src": "Find [{~} Sand] and [{~} Glue] on the void island.",
-   "dst": "",
+   "dst": "虚無の島で [{~} Sand] と [{~} Glue] を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -508,7 +508,7 @@
   },
   "One Thousand Meters Under#051": {
    "src": "Ech! What is this stuff? Well, this should do the trick.",
-   "dst": "",
+   "dst": "うえっ！なんだこれは？まあ、これで何とかなるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -518,7 +518,7 @@
   },
   "One Thousand Meters Under#052": {
    "src": "Me and the mechanic will start repairing. It'll take a while, so enter the submarine and rest up.",
-   "dst": "",
+   "dst": "私と整備士で修理を始める。時間がかかるから、潜水艇に入って休んでいてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -528,7 +528,7 @@
   },
   "One Thousand Meters Under#053": {
    "src": "We'll continue the trip when we've repaired the ship.",
-   "dst": "",
+   "dst": "船の修理が済んだら旅を再開する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -538,7 +538,7 @@
   },
   "One Thousand Meters Under#054": {
    "src": "Continue your journey.",
-   "dst": "",
+   "dst": "旅を続ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -548,7 +548,7 @@
   },
   "One Thousand Meters Under#055": {
    "src": "This is the mechanic, requesting urgent assistence in the basement!",
-   "dst": "",
+   "dst": "こちら整備士、地下で至急応援を求む！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -558,7 +558,7 @@
   },
   "One Thousand Meters Under#056": {
    "src": "Toxic gas has leaked in through the submarine's vents, someone will have to manually close them.",
-   "dst": "",
+   "dst": "潜水艇の通気口から有毒ガスが漏れてきた、誰かが手動で閉めないと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -568,7 +568,7 @@
   },
   "One Thousand Meters Under#057": {
    "src": "I'll control things from here, someone get down to the lowest level and close those vents!",
-   "dst": "",
+   "dst": "操作はこっちでやる、誰か最下層に降りて通気口を閉めてくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -578,7 +578,7 @@
   },
   "One Thousand Meters Under#058": {
    "src": "Attention crew. We have arrived at the next island {~}m down.",
-   "dst": "",
+   "dst": "乗組員に告ぐ。深さ {~}m の次の島に到着した。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -588,7 +588,7 @@
   },
   "One Thousand Meters Under#059": {
    "src": "Disembark and start the search for the crystal.",
-   "dst": "",
+   "dst": "下船し、水晶の捜索を始めよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -598,7 +598,7 @@
   },
   "One Thousand Meters Under#060": {
    "src": "Let's hope it's here... I don't know how much more void my body can handle.",
-   "dst": "",
+   "dst": "今度こそあるといいが…この体があとどれだけ虚無に耐えられるか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -608,7 +608,7 @@
   },
   "One Thousand Meters Under#061": {
    "src": "Look out! {u}, we'll build a bridge to the other island whilst you defend us from the mobs!",
-   "dst": "",
+   "dst": "危ない！{u}、俺たちが向こうの島まで橋を架ける、その間モンスターから守ってくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -618,7 +618,7 @@
   },
   "One Thousand Meters Under#062": {
    "src": "Don't die back there!",
-   "dst": "",
+   "dst": "後ろで死ぬなよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -628,7 +628,7 @@
   },
   "One Thousand Meters Under#063": {
    "src": "Keep fighting! We're almost halfway to the other side!",
-   "dst": "",
+   "dst": "戦い続けろ！もうすぐ半分だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -638,7 +638,7 @@
   },
   "One Thousand Meters Under#064": {
    "src": "Almost done!",
-   "dst": "",
+   "dst": "もう少し！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -648,7 +648,7 @@
   },
   "One Thousand Meters Under#065": {
    "src": "Hey, the bridge is ready!",
-   "dst": "",
+   "dst": "おい、橋ができたぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -658,7 +658,7 @@
   },
   "One Thousand Meters Under#066": {
    "src": "Return to the submarine and continue the journey.",
-   "dst": "",
+   "dst": "潜水艇に戻り、旅を続ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -668,7 +668,7 @@
   },
   "One Thousand Meters Under#067": {
    "src": "We didn't find the crystal here either. Maybe it just fell in the void?",
-   "dst": "",
+   "dst": "ここにも水晶はなかったな。虚無に落ちただけじゃないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -678,7 +678,7 @@
   },
   "One Thousand Meters Under#068": {
    "src": "No, it must have hit an island. The scientist said he detected a collision.",
-   "dst": "",
+   "dst": "いや、どこかの島に当たったはずだ。科学者が衝突を検知したって言ってた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -688,7 +688,7 @@
   },
   "One Thousand Meters Under#069": {
    "src": "Wait... What's that sound?",
-   "dst": "",
+   "dst": "待て…何の音だ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -698,7 +698,7 @@
   },
   "One Thousand Meters Under#070": {
    "src": "The ropes are snapping! Quick! Abandon ship!",
-   "dst": "",
+   "dst": "ロープが切れる！急げ！船を捨てろ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -708,7 +708,7 @@
   },
   "One Thousand Meters Under#071": {
    "src": "Find a way out of the void.",
-   "dst": "",
+   "dst": "虚無から脱出する方法を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -718,7 +718,7 @@
   },
   "One Thousand Meters Under#072": {
    "src": "Whoooooooo are you!?",
-   "dst": "",
+   "dst": "おまえは だーーれーー！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -728,7 +728,7 @@
   },
   "One Thousand Meters Under#073": {
    "src": "A...HUUUUUUMAN!? In the void?",
-   "dst": "",
+   "dst": "に…にんげーーん！？虚無に？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -738,7 +738,7 @@
   },
   "One Thousand Meters Under#074": {
    "src": "Someone dropped a boooook about you people! Warriors! Workers!",
-   "dst": "",
+   "dst": "誰かがおまえたちの本ーーを落とした！戦士！働き手！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -748,7 +748,7 @@
   },
   "One Thousand Meters Under#075": {
    "src": "Ah. Yoooou want to know about this place?",
-   "dst": "",
+   "dst": "ああ。おまーーえ、この場所のことが知りたい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -758,7 +758,7 @@
   },
   "One Thousand Meters Under#076": {
    "src": "Well... We were once Villagers. I think we still are, a bit.",
-   "dst": "",
+   "dst": "そうだな…我々はかつて村人だった。今も少しはそうだと思う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -768,7 +768,7 @@
   },
   "One Thousand Meters Under#077": {
    "src": "For some reason, {~} years agoooo. The sky islands ruptured.",
-   "dst": "",
+   "dst": "なぜか {~} 年前ーー。空の島々が裂けた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -778,7 +778,7 @@
   },
   "One Thousand Meters Under#078": {
    "src": "Some stayed. Others fell. We somehow survived the fall into the vooooid.",
-   "dst": "",
+   "dst": "残った者もいた。落ちた者もいた。我々はなぜか虚無ーーへの落下を生き延びた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -788,7 +788,7 @@
   },
   "One Thousand Meters Under#079": {
    "src": "How we have lived for so long, I doooo not know. But one thing we know for sure. The void provides.",
-   "dst": "",
+   "dst": "なぜこんなに長く生きてこられたのか、わからーーない。だが一つ確かなことがある。虚無は恵みをくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -798,7 +798,7 @@
   },
   "One Thousand Meters Under#080": {
    "src": "We are stuck here now. The void has forever changed our physiology.",
-   "dst": "",
+   "dst": "今はここから出られない。虚無が我々の体を永遠に変えてしまった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -808,7 +808,7 @@
   },
   "One Thousand Meters Under#081": {
    "src": "The crystal yoooou are looking for fell on this island. But...",
-   "dst": "",
+   "dst": "おまーーえが探している水晶は、この島に落ちた。だが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -818,7 +818,7 @@
   },
   "One Thousand Meters Under#082": {
    "src": "We need it. It will aid us for years.",
-   "dst": "",
+   "dst": "我々には必要だ。何年も支えになる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -828,7 +828,7 @@
   },
   "One Thousand Meters Under#083": {
    "src": "We have very limited resources here. That's why a power source like this is soooo valuable.",
-   "dst": "",
+   "dst": "ここは資源がとても限られている。だからこういう動力源はとーーても貴重なのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -838,7 +838,7 @@
   },
   "One Thousand Meters Under#084": {
    "src": "If you go to the east, you will find Rontaid, our chief scientist. He'll know what to doooo.",
-   "dst": "",
+   "dst": "東へ行けば、首席科学者の Rontaid がいる。どうすればいいか知っているはずーーだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -848,7 +848,7 @@
   },
   "One Thousand Meters Under#085": {
    "src": "Talk to Rontaid outside the town at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の町の外で Rontaid と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -858,7 +858,7 @@
   },
   "One Thousand Meters Under#086": {
    "src": "WHAT...WHO...Humans in the void!?",
-   "dst": "",
+   "dst": "なっ…誰だ…虚無に人間！？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -868,7 +868,7 @@
   },
   "One Thousand Meters Under#087": {
    "src": "Well, looks like the book we found wasn't fiction after all!",
-   "dst": "",
+   "dst": "おお、拾った本は作り話じゃなかったんだな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -878,7 +878,7 @@
   },
   "One Thousand Meters Under#088": {
    "src": "This crystal is going toooo be our saviour. I was trying to create one of my own, you know.",
-   "dst": "",
+   "dst": "この水晶は我々の救いにーーなる。実はな、自分でも作ろうとしていたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -888,7 +888,7 @@
   },
   "One Thousand Meters Under#089": {
    "src": "I think I have the formula, but we don't have what we need to make it.",
-   "dst": "",
+   "dst": "製法はわかったと思うんだが、作るための材料がない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -898,7 +898,7 @@
   },
   "One Thousand Meters Under#090": {
    "src": "Instead of taking this crystal back, why don't I exchange it for the recipe?",
-   "dst": "",
+   "dst": "この水晶を持ち帰る代わりに、製法と交換しないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -908,7 +908,7 @@
   },
   "One Thousand Meters Under#091": {
    "src": "That way, you can make however many crystals youuuu want, and we can keep this one.",
-   "dst": "",
+   "dst": "そうすれば、君は好きなーーだけ水晶を作れるし、我々はこれを手元に置ける。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -918,7 +918,7 @@
   },
   "One Thousand Meters Under#092": {
    "src": "Here's the recipe, give it to a scientist or someone a bit...smarter than yourself. No offense.",
-   "dst": "",
+   "dst": "これが製法だ。科学者か、君より少し…賢い誰かに渡してくれ。悪く思うなよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -928,7 +928,7 @@
   },
   "One Thousand Meters Under#093": {
    "src": "A platform was lowered from the surface a while ago at your crash site, as well. If youuuu wish to return, follow this path, I made a shortcut.",
-   "dst": "",
+   "dst": "それと、少し前に地上から君たちの墜落地点へ足場が下ろされた。帰りたいならーーこの道を行け、近道を作っておいた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -938,7 +938,7 @@
   },
   "One Thousand Meters Under#094": {
    "src": "Return to the crash site by following the road.",
-   "dst": "",
+   "dst": "道をたどって墜落地点に戻る。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -948,7 +948,7 @@
   },
   "One Thousand Meters Under#095": {
    "src": "Return to the scientist and tell him the news.",
-   "dst": "",
+   "dst": "科学者のもとへ戻り、知らせを伝える。",
    "role": "desc",
    "kind": "objective",
    "quest": "One Thousand Meters Under",
@@ -958,7 +958,7 @@
   },
   "One Thousand Meters Under#096": {
    "src": "You survived! Where is everyone else?",
-   "dst": "",
+   "dst": "生きていたか！他の者は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -968,7 +968,7 @@
   },
   "One Thousand Meters Under#097": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -978,7 +978,7 @@
   },
   "One Thousand Meters Under#098": {
    "src": "I knew some must have died... But all of them?",
-   "dst": "",
+   "dst": "何人かは死んだと思っていたが…全員か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -988,7 +988,7 @@
   },
   "One Thousand Meters Under#099": {
    "src": "Well... At least I don't have to pay them! Hah!",
-   "dst": "",
+   "dst": "まあ…少なくとも給料を払わずに済む！ハハ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -998,7 +998,7 @@
   },
   "One Thousand Meters Under#100": {
    "src": "...That was heartless of me, I'm sorry. The rope we used was too weak to hold you down there.",
-   "dst": "",
+   "dst": "…今のは薄情だった、すまない。使ったロープが弱すぎて、下で君たちを支えきれなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1008,7 +1008,7 @@
   },
   "One Thousand Meters Under#101": {
    "src": "My calculations didn't account for the void's physics, it seems.",
-   "dst": "",
+   "dst": "どうやら私の計算は虚無の物理を考慮していなかったようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1018,7 +1018,7 @@
   },
   "One Thousand Meters Under#102": {
    "src": "At least we got you back in one piece. You can tell us what happened.",
-   "dst": "",
+   "dst": "少なくとも君は無事に戻った。何があったか聞かせてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1028,7 +1028,7 @@
   },
   "One Thousand Meters Under#103": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1038,7 +1038,7 @@
   },
   "One Thousand Meters Under#104": {
    "src": "Well I'll be damned. I'll start sending post down there! We can work together.",
-   "dst": "",
+   "dst": "なんとまあ。下へ郵便を送り始めよう！協力できるぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",
@@ -1048,7 +1048,7 @@
   },
   "One Thousand Meters Under#105": {
    "src": "Better to keep everything that happened here a secret. I don't want to lose what little funding I have. This recipe is genius! Here, take this as well as your money.",
-   "dst": "",
+   "dst": "ここで起きたことは秘密にしておいたほうがいい。わずかな資金まで失いたくない。この製法は天才的だ！ほら、報酬と一緒にこれも持っていけ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "One Thousand Meters Under",

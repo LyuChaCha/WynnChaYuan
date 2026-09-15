@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Temple of the Legends (Quest)",
   "count": 137,
-  "translated": 0,
+  "translated": 137,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Temple of the Legends (Quest)#000": {
    "src": "Talk to Kelight at the entrance of the Temple of the Legends, close to {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]、{p} 近くの伝説の神殿の入口で Kelight と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -18,7 +18,7 @@
   },
   "Temple of the Legends (Quest)#001": {
    "src": "I see you want to enter this mighty temple! Do not deny it, I see it in your eyes.",
-   "dst": "",
+   "dst": "この荘厳な神殿に入りたいようだな！否定しても無駄だ、目に書いてある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -28,7 +28,7 @@
   },
   "Temple of the Legends (Quest)#002": {
    "src": "It is only natural, after all, to want to join the esteemed ranks of the Legends, such as myself!",
-   "dst": "",
+   "dst": "当然だろう、何しろ私のような伝説の栄えある一員になりたいのだからな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -38,7 +38,7 @@
   },
   "Temple of the Legends (Quest)#003": {
    "src": "You will need to prove yourself by fighting a powerful beast, hidden deep in this cave beside me.",
-   "dst": "",
+   "dst": "力を示すには、私の傍らの洞窟の奥に潜む強大な獣と戦わねばならん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -48,7 +48,7 @@
   },
   "Temple of the Legends (Quest)#004": {
    "src": "However, as a Legend, I am very busy, autographs and the sort, and that's not to mention my guard duty! Let me see if you are even worth my time.",
-   "dst": "",
+   "dst": "だが伝説たる私は多忙でね、サインだの何だの、それに門番の務めもある！私の時間を割く価値があるか見てやろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -58,7 +58,7 @@
   },
   "Temple of the Legends (Quest)#005": {
    "src": "Hm... At a glance, you don't look anything special! Why, you may as well be a common soldier, for all I can imagine!",
-   "dst": "",
+   "dst": "ふむ…一見、何の取り柄もなさそうだ！どう見てもただの一兵卒ではないか！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -68,7 +68,7 @@
   },
   "Temple of the Legends (Quest)#006": {
    "src": "Tell me, why should I bother giving you this chance? Because thus far, I'm not impressed.",
-   "dst": "",
+   "dst": "言ってみたまえ、なぜ君に機会を与えねばならん？今のところ、感心できんな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -78,7 +78,7 @@
   },
   "Temple of the Legends (Quest)#007": {
    "src": "You're stubborn? Hah! Don't make me laugh. Do you think you are the first to attempt entry without anything great to show for it?",
-   "dst": "",
+   "dst": "頑固だと？はっ！笑わせるな。見せるものもなく入ろうとしたのが君が初めてだとでも？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -88,7 +88,7 @@
   },
   "Temple of the Legends (Quest)#008": {
    "src": "Of course you aren't. Run along, now. Return when you have something truly impressive to show for yourself.",
-   "dst": "",
+   "dst": "当然違う。さあ、行きたまえ。本当に感心させるものを持って出直すことだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -98,7 +98,7 @@
   },
   "Temple of the Legends (Quest)#009": {
    "src": "...And? Surely you do not hope to bribe me, do you? What use would I have for whatever meager wealth you have?",
-   "dst": "",
+   "dst": "…で？まさか買収する気ではあるまいな？君のわずかな財産など、私に何の役に立つ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -108,7 +108,7 @@
   },
   "Temple of the Legends (Quest)#010": {
    "src": "I'm a Legend! I have everything I could possibly need for the rest of my life! Now, run along. Return when you have something concrete to show me.",
-   "dst": "",
+   "dst": "私は伝説だぞ！一生分必要なものは全て揃っている！さあ行きたまえ。確かなものを見せられるようになったら戻ってこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -118,7 +118,7 @@
   },
   "Temple of the Legends (Quest)#011": {
    "src": "Ha! You? A Legend?! What a joke. You aren't the first to have tried that, by the way. I know each and every member of our ranks, and you are not one of them.",
-   "dst": "",
+   "dst": "はっ！君が？伝説だと？！笑わせる。ちなみにそう言ったのは君が初めてではない。仲間は一人残らず知っているが、君はその中にいない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -128,7 +128,7 @@
   },
   "Temple of the Legends (Quest)#012": {
    "src": "Ah, truly, being a gatekeeper of the Temple is an entertaining position. Run along, now. Return when you have something real to show me.",
-   "dst": "",
+   "dst": "ああ、神殿の門番とは実に愉快な役目だ。さあ行きたまえ。本物を見せられるようになったら戻ってこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -138,7 +138,7 @@
   },
   "Temple of the Legends (Quest)#013": {
    "src": "Hmph. Ridiculous. I don't need you to convince me of anything! Clearly, you are nothing but a pretender.",
-   "dst": "",
+   "dst": "ふん。馬鹿馬鹿しい。君に説得される必要などない！明らかに、君はただの偽物だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -148,7 +148,7 @@
   },
   "Temple of the Legends (Quest)#014": {
    "src": "Run along, now. If you don't have anything to show for yourself, don't waste my time!",
-   "dst": "",
+   "dst": "さあ、行きたまえ。見せるものがないなら、私の時間を無駄にするな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -158,7 +158,7 @@
   },
   "Temple of the Legends (Quest)#015": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -168,7 +168,7 @@
   },
   "Temple of the Legends (Quest)#016": {
    "src": "......",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -178,7 +178,7 @@
   },
   "Temple of the Legends (Quest)#017": {
    "src": "...But- ah. Since you are still here. Perhaps- no, no, don't be ridiculous, Kelight.",
-   "dst": "",
+   "dst": "…だが…ああ。まだいるのか。ひょっとして…いや、馬鹿を言うな、Kelight。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -188,7 +188,7 @@
   },
   "Temple of the Legends (Quest)#018": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -198,7 +198,7 @@
   },
   "Temple of the Legends (Quest)#019": {
    "src": "Come on, Kelight, don't do this, you can't just let them get you with the silent treatment...",
-   "dst": "",
+   "dst": "しっかりしろ、Kelight、黙っていられるだけで折れるわけにはいかんぞ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -208,7 +208,7 @@
   },
   "Temple of the Legends (Quest)#020": {
    "src": "......",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -218,7 +218,7 @@
   },
   "Temple of the Legends (Quest)#021": {
    "src": "Oh, fine. You've got me interested. What is special about you? You look like a common soldier, and yet...",
-   "dst": "",
+   "dst": "ええい、分かった。興味が湧いた。君の何が特別なんだ？ただの一兵卒に見えるが、それでも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -228,7 +228,7 @@
   },
   "Temple of the Legends (Quest)#022": {
    "src": "Very well. I will allow you to attempt the trial. Perhaps, then, you will be able to prove yourself.",
-   "dst": "",
+   "dst": "よろしい。試練への挑戦を許そう。そうすれば、力を証明できるかもしれん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -238,7 +238,7 @@
   },
   "Temple of the Legends (Quest)#023": {
    "src": "Hidden deep within a nearby cave is a beast beyond compare. Corrupted, yes, but nothing like the foes you may have faced before.",
-   "dst": "",
+   "dst": "近くの洞窟の奥深くに、比類なき獣が潜んでいる。腐敗してはいるが、これまでの敵とはまるで違う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -248,7 +248,7 @@
   },
   "Temple of the Legends (Quest)#024": {
    "src": "Rumor has it this creature was one of the miners which first ventured into the Nether Portal... Of course, as a Legend, I would usually disregard such things.",
-   "dst": "",
+   "dst": "噂では、その怪物は最初にネザーポータルへ踏み込んだ鉱夫の一人だとか…無論、伝説たる私はそんな話は気にせんがね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -258,7 +258,7 @@
   },
   "Temple of the Legends (Quest)#025": {
    "src": "In any case, its power cannot be underestimated. Simply entering its cave will greatly weaken you, even with the best equipment!",
-   "dst": "",
+   "dst": "いずれにせよ、その力は侮れん。洞窟に入るだけで、最高の装備でも大きく弱体化してしまう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -268,7 +268,7 @@
   },
   "Temple of the Legends (Quest)#026": {
    "src": "Getting close to it would quickly corrupt you, which is why you will need protection. Only a light which is from the same realm from which the beast arrived will do the trick.",
-   "dst": "",
+   "dst": "近づけばすぐに腐敗してしまう、だから守りが要る。獣がやって来たのと同じ領域の光でなければ効かんのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -278,7 +278,7 @@
   },
   "Temple of the Legends (Quest)#027": {
    "src": "As such, your very first step on your journey to become a Legend will be... to visit a friend of mine who studies the Nether.",
-   "dst": "",
+   "dst": "というわけで、伝説への旅の第一歩は…ネザーを研究している私の友人を訪ねることだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -288,7 +288,7 @@
   },
   "Temple of the Legends (Quest)#028": {
    "src": "His name is Jorkin, and he knows more about that realm than anyone else I know. Find him near the {p}, in {p}, and request his aid. Tell him I sent you.",
-   "dst": "",
+   "dst": "名は Jorkin、あの領域について私の知る誰よりも詳しい。{p} の {p} 近くで彼を探し、助力を頼め。私の紹介だと言うといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -298,7 +298,7 @@
   },
   "Temple of the Legends (Quest)#029": {
    "src": "Find a way to get Kelight to allow you entry into the Temple of the Legends at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Kelight に [-{~}, {~}, -{~}] の伝説の神殿へ入れてもらう方法を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -308,7 +308,7 @@
   },
   "Temple of the Legends (Quest)#030": {
    "src": "So you return! Very interesting. That certainly puts you a level beyond any others who have tried... But it is not enough.",
-   "dst": "",
+   "dst": "戻ってきたか！実に興味深い。確かにこれまでの挑戦者より一段上だ…だが、まだ足りん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -318,7 +318,7 @@
   },
   "Temple of the Legends (Quest)#031": {
    "src": "So? Tell me, why should I bother giving you this chance? Because thus far, I'm not impressed.",
-   "dst": "",
+   "dst": "で？言ってみたまえ、なぜ君に機会を与えねばならん？今のところ、感心できんな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -328,7 +328,7 @@
   },
   "Temple of the Legends (Quest)#032": {
    "src": "You're stubborn? Hah! Don't make me laugh. Do you think you are the first to attempt entry without anything great to show for it?",
-   "dst": "",
+   "dst": "頑固だと？はっ！笑わせるな。見せるものもなく入ろうとしたのが君が初めてだとでも？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -338,7 +338,7 @@
   },
   "Temple of the Legends (Quest)#033": {
    "src": "Of course you aren't. Run along, now. Return when you have something truly impressive to show for yourself.",
-   "dst": "",
+   "dst": "当然違う。さあ、行きたまえ。本当に感心させるものを持って出直すことだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -348,7 +348,7 @@
   },
   "Temple of the Legends (Quest)#034": {
    "src": "So you are! And so am I. You will not get past me that easily, I'm afraid.",
-   "dst": "",
+   "dst": "そうか！私もだ。残念だが、そう簡単に私は通さんぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -358,7 +358,7 @@
   },
   "Temple of the Legends (Quest)#035": {
    "src": "Off you go, then. Don't come back unless you have something to show!",
-   "dst": "",
+   "dst": "では行きたまえ。見せるものがないなら戻ってくるな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -368,7 +368,7 @@
   },
   "Temple of the Legends (Quest)#036": {
    "src": "Yes, I'm starting to get that impression. You are such a headache, you know that?",
-   "dst": "",
+   "dst": "ああ、そんな気がしてきたよ。君は本当に頭痛の種だな、分かっているか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -378,7 +378,7 @@
   },
   "Temple of the Legends (Quest)#037": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -388,7 +388,7 @@
   },
   "Temple of the Legends (Quest)#038": {
    "src": "Fine! Fine. I'll give you a chance. I'm certain you won't succeed, but anything to get you to stop bothering me.",
-   "dst": "",
+   "dst": "分かった！分かったよ。機会をやろう。成功するとは思えんが、君が付きまとうのをやめるなら何でもいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -398,7 +398,7 @@
   },
   "Temple of the Legends (Quest)#039": {
    "src": "Ahem. Hidden deep within a nearby cave is a beast beyond compare. Corrupted, yes, but nothing like the foes you may have faced before.",
-   "dst": "",
+   "dst": "コホン。近くの洞窟の奥深くに、比類なき獣が潜んでいる。腐敗してはいるが、これまでの敵とはまるで違う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -408,7 +408,7 @@
   },
   "Temple of the Legends (Quest)#040": {
    "src": "Rumor has it this creature was one of the miners which first ventured into the Nether Portal... Of course, as a Legend, I would usually disregard such things.",
-   "dst": "",
+   "dst": "噂では、その怪物は最初にネザーポータルへ踏み込んだ鉱夫の一人だとか…無論、伝説たる私はそんな話は気にせんがね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -418,7 +418,7 @@
   },
   "Temple of the Legends (Quest)#041": {
    "src": "In any case, its power cannot be underestimated. Simply entering its cave will greatly weaken you, even with the best equipment!",
-   "dst": "",
+   "dst": "いずれにせよ、その力は侮れん。洞窟に入るだけで、最高の装備でも大きく弱体化してしまう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -428,7 +428,7 @@
   },
   "Temple of the Legends (Quest)#042": {
    "src": "Getting close to it would quickly corrupt you, which is why you will need protection. Only a light which is from the same realm from which the beast arrived will do the trick.",
-   "dst": "",
+   "dst": "近づけばすぐに腐敗してしまう、だから守りが要る。獣がやって来たのと同じ領域の光でなければ効かんのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -438,7 +438,7 @@
   },
   "Temple of the Legends (Quest)#043": {
    "src": "As such, your very first step on your journey to become a Legend will be... to visit a friend of mine who studies the Nether.",
-   "dst": "",
+   "dst": "というわけで、伝説への旅の第一歩は…ネザーを研究している私の友人を訪ねることだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -448,7 +448,7 @@
   },
   "Temple of the Legends (Quest)#044": {
    "src": "His name is Jorkin, and he knows more about that realm than anyone else I know. Find him near the {p}, in {p}, and request his aid. Tell him I sent you.",
-   "dst": "",
+   "dst": "名は Jorkin、あの領域について私の知る誰よりも詳しい。{p} の {p} 近くで彼を探し、助力を頼め。私の紹介だと言うといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -458,7 +458,7 @@
   },
   "Temple of the Legends (Quest)#045": {
    "src": "...And? Surely you do not hope to bribe me, do you? What use would I have for whatever meager wealth you have?",
-   "dst": "",
+   "dst": "…で？まさか買収する気ではあるまいな？君のわずかな財産など、私に何の役に立つ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -468,7 +468,7 @@
   },
   "Temple of the Legends (Quest)#046": {
    "src": "I'm a Legend! I have everything I could possibly need for the rest of my life! Now, run along. Return when you have something concrete to show me.",
-   "dst": "",
+   "dst": "私は伝説だぞ！一生分必要なものは全て揃っている！さあ行きたまえ。確かなものを見せられるようになったら戻ってこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -478,7 +478,7 @@
   },
   "Temple of the Legends (Quest)#047": {
    "src": "Ha! You? A Legend?! What a joke. You aren't the first to have tried that, by the way. I know each and every member of our ranks, and you are not one of them.",
-   "dst": "",
+   "dst": "はっ！君が？伝説だと？！笑わせる。ちなみにそう言ったのは君が初めてではない。仲間は一人残らず知っているが、君はその中にいない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -488,7 +488,7 @@
   },
   "Temple of the Legends (Quest)#048": {
    "src": "Ah, truly, being a gatekeeper of the Temple is an entertaining position. Run along, now. Return when you have something real to show me.",
-   "dst": "",
+   "dst": "ああ、神殿の門番とは実に愉快な役目だ。さあ行きたまえ。本物を見せられるようになったら戻ってこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -498,7 +498,7 @@
   },
   "Temple of the Legends (Quest)#049": {
    "src": "Hmph. Ridiculous. I don't need you to convince me of anything! Clearly, you are nothing but a pretender.",
-   "dst": "",
+   "dst": "ふん。馬鹿馬鹿しい。君に説得される必要などない！明らかに、君はただの偽物だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -508,7 +508,7 @@
   },
   "Temple of the Legends (Quest)#050": {
    "src": "Run along, now. If you don't have anything to show for yourself, don't waste my time!",
-   "dst": "",
+   "dst": "さあ、行きたまえ。見せるものがないなら、私の時間を無駄にするな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -518,7 +518,7 @@
   },
   "Temple of the Legends (Quest)#051": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -528,7 +528,7 @@
   },
   "Temple of the Legends (Quest)#052": {
    "src": "......",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -538,7 +538,7 @@
   },
   "Temple of the Legends (Quest)#053": {
    "src": "...But- ah. Since you are still here. Perhaps- no, no, don't be ridiculous, Kelight.",
-   "dst": "",
+   "dst": "…だが…ああ。まだいるのか。ひょっとして…いや、馬鹿を言うな、Kelight。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -548,7 +548,7 @@
   },
   "Temple of the Legends (Quest)#054": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -558,7 +558,7 @@
   },
   "Temple of the Legends (Quest)#055": {
    "src": "Come on, Kelight, don't do this, you can't just let them get you with the silent treatment...",
-   "dst": "",
+   "dst": "しっかりしろ、Kelight、黙っていられるだけで折れるわけにはいかんぞ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -568,7 +568,7 @@
   },
   "Temple of the Legends (Quest)#056": {
    "src": "......",
-   "dst": "",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -578,7 +578,7 @@
   },
   "Temple of the Legends (Quest)#057": {
    "src": "Oh, fine. You've got me interested. What is special about you? You look like a common soldier, and yet...",
-   "dst": "",
+   "dst": "ええい、分かった。興味が湧いた。君の何が特別なんだ？ただの一兵卒に見えるが、それでも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -588,7 +588,7 @@
   },
   "Temple of the Legends (Quest)#058": {
    "src": "Very well. I will allow you to attempt the trial. Perhaps, then, you will be able to prove yourself.",
-   "dst": "",
+   "dst": "よろしい。試練への挑戦を許そう。そうすれば、力を証明できるかもしれん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -598,7 +598,7 @@
   },
   "Temple of the Legends (Quest)#059": {
    "src": "Hidden deep within a nearby cave is a beast beyond compare. Corrupted, yes, but nothing like the foes you may have faced before.",
-   "dst": "",
+   "dst": "近くの洞窟の奥深くに、比類なき獣が潜んでいる。腐敗してはいるが、これまでの敵とはまるで違う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -608,7 +608,7 @@
   },
   "Temple of the Legends (Quest)#060": {
    "src": "Rumor has it this creature was one of the miners which first ventured into the Nether Portal... Of course, as a Legend, I would usually disregard such things.",
-   "dst": "",
+   "dst": "噂では、その怪物は最初にネザーポータルへ踏み込んだ鉱夫の一人だとか…無論、伝説たる私はそんな話は気にせんがね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -618,7 +618,7 @@
   },
   "Temple of the Legends (Quest)#061": {
    "src": "In any case, its power cannot be underestimated. Simply entering its cave will greatly weaken you, even with the best equipment!",
-   "dst": "",
+   "dst": "いずれにせよ、その力は侮れん。洞窟に入るだけで、最高の装備でも大きく弱体化してしまう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -628,7 +628,7 @@
   },
   "Temple of the Legends (Quest)#062": {
    "src": "Getting close to it would quickly corrupt you, which is why you will need protection. Only a light which is from the same realm from which the beast arrived will do the trick.",
-   "dst": "",
+   "dst": "近づけばすぐに腐敗してしまう、だから守りが要る。獣がやって来たのと同じ領域の光でなければ効かんのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -638,7 +638,7 @@
   },
   "Temple of the Legends (Quest)#063": {
    "src": "As such, your very first step on your journey to become a Legend will be... to visit a friend of mine who studies the Nether.",
-   "dst": "",
+   "dst": "というわけで、伝説への旅の第一歩は…ネザーを研究している私の友人を訪ねることだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -648,7 +648,7 @@
   },
   "Temple of the Legends (Quest)#064": {
    "src": "His name is Jorkin, and he knows more about that realm than anyone else I know. Find him near the {p}, in {p}, and request his aid. Tell him I sent you.",
-   "dst": "",
+   "dst": "名は Jorkin、あの領域について私の知る誰よりも詳しい。{p} の {p} 近くで彼を探し、助力を頼め。私の紹介だと言うといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -658,7 +658,7 @@
   },
   "Temple of the Legends (Quest)#065": {
    "src": "Talk to Jorkin in {p} at [-{~}, {~}, -{~}] about Light Dust.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の {p} で Jorkin に Light Dust について聞く。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -668,7 +668,7 @@
   },
   "Temple of the Legends (Quest)#066": {
    "src": "Ah, hello soldier. What brings you to my humble abode today?",
-   "dst": "",
+   "dst": "やあ、兵士さん。今日はこのあばら家に何のご用で？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -678,7 +678,7 @@
   },
   "Temple of the Legends (Quest)#067": {
    "src": "Oh my. You...you want to attack HIM? Th-that horrid beast! Are you mad?!",
-   "dst": "",
+   "dst": "なんと。き、君は…「あいつ」を攻めたいと？あ、あの恐ろしい獣を！正気か？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -688,7 +688,7 @@
   },
   "Temple of the Legends (Quest)#068": {
    "src": "Urgh, Kelight keeps sending adventurers like you to their deaths with his asinine tasks!",
-   "dst": "",
+   "dst": "ああもう、Kelight はあの馬鹿げた課題で君みたいな冒険者を死に送り続けている！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -698,7 +698,7 @@
   },
   "Temple of the Legends (Quest)#069": {
    "src": "Fine. If you're really so determined to walk to your death, I can tell you where to go.",
-   "dst": "",
+   "dst": "わかった。そこまで死にに行きたいなら、行き先を教えよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -708,7 +708,7 @@
   },
   "Temple of the Legends (Quest)#070": {
    "src": "Down in the Roots, there is a cave full of the Light Dust you'll need.",
-   "dst": "",
+   "dst": "the Roots を下った先に、必要な Light Dust だらけの洞窟がある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -718,7 +718,7 @@
   },
   "Temple of the Legends (Quest)#071": {
    "src": "Powerful corrupteds live in that cave, so be very careful retrieving it, and bring it back to me once you find it.",
-   "dst": "",
+   "dst": "あの洞窟には強い腐敗者が棲んでいる。取る時はくれぐれも用心して、見つけたら持ってきてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -728,7 +728,7 @@
   },
   "Temple of the Legends (Quest)#072": {
    "src": "Find the lightdust cavern located near the Portal at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] のポータル近くにある光の塵の洞窟を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -738,7 +738,7 @@
   },
   "Temple of the Legends (Quest)#073": {
    "src": "Retrieve [{~} Light Dust] from the cave at [{~}, {~}, -{~}] and bring it back to Jorkin at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~} Light Dust] を [{~}, {~}, -{~}] の洞窟から取り、[-{~}, {~}, -{~}] の Jorkin に届ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -748,7 +748,7 @@
   },
   "Temple of the Legends (Quest)#074": {
    "src": "You have the Light Dust, then? Hand it here, I want to see something.",
-   "dst": "",
+   "dst": "Light Dust を手に入れたか？こっちへ。確かめたいことがある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -758,7 +758,7 @@
   },
   "Temple of the Legends (Quest)#075": {
    "src": "Ah, just as I thought. Even this light has been tainted by Corruption. Sorry, looks like you can't fight him, go home.",
-   "dst": "",
+   "dst": "ああ、思った通りだ。この光さえ腐敗に汚されている。残念だが戦うのは無理だ、帰りなさい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -768,7 +768,7 @@
   },
   "Temple of the Legends (Quest)#076": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -778,7 +778,7 @@
   },
   "Temple of the Legends (Quest)#077": {
    "src": "...urgh, there's no fooling you, is there? You really are committed to trying to fight him.",
-   "dst": "",
+   "dst": "…うう、君はごまかせないな？本気であいつと戦う気なんだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -788,7 +788,7 @@
   },
   "Temple of the Legends (Quest)#078": {
    "src": "Well, I wasn't lying when I said the Light Dust was corrupted, but there is a way to purify it.",
-   "dst": "",
+   "dst": "まあ、Light Dust が腐敗しているのは嘘じゃない。だが浄化する方法はある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -798,7 +798,7 @@
   },
   "Temple of the Legends (Quest)#079": {
    "src": "An old acquaintance of mine, Rayshyroth, has a method. He lives on {p}.",
-   "dst": "",
+   "dst": "古い知人の Rayshyroth が方法を知っている。{p} に住んでいる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -808,7 +808,7 @@
   },
   "Temple of the Legends (Quest)#080": {
    "src": "He knows even more about that...thing, than I do in my years of studying the Nether. Maybe he'll be able to talk you out of this.",
-   "dst": "",
+   "dst": "あの…ものについては、私が長年ネザーを研究してきた以上に詳しい。君を思いとどまらせてくれるかもな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -818,7 +818,7 @@
   },
   "Temple of the Legends (Quest)#081": {
    "src": "Visit Rayshyroth on {p} at [{~}, {~}, -{~}] to purify the dust",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} にいる Rayshyroth を訪ね、塵を浄化してもらう",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -828,7 +828,7 @@
   },
   "Temple of the Legends (Quest)#082": {
    "src": "Oh? Well, greetings. What brings you to our quiet lonely island, let alone all the way up here?",
-   "dst": "",
+   "dst": "おや？これはどうも。静かで寂しいこの島に、しかもこんな上まで何のご用です？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -838,7 +838,7 @@
   },
   "Temple of the Legends (Quest)#083": {
    "src": "...I see. Yes, the corruption of the blasted Nether Portal is rather potent. I'm not surprised this would need purification.",
-   "dst": "",
+   "dst": "…なるほど。ええ、忌々しいネザーポータルの腐敗はかなり強力です。浄化が必要なのも当然でしょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -848,7 +848,7 @@
   },
   "Temple of the Legends (Quest)#084": {
    "src": "Well, I can certainly do it, but I'll need the materials to do so. Shouldn't be anything you can't handle by now, right?",
-   "dst": "",
+   "dst": "もちろんできますが、材料が要ります。今のあなたなら難しくないはずですよ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -858,7 +858,7 @@
   },
   "Temple of the Legends (Quest)#085": {
    "src": "You see, below my house here, there is a wellspring from which a powerful magic flux generates.",
-   "dst": "",
+   "dst": "実はこの家の下に泉がありましてね、そこから強い魔力の流れが湧いているのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -868,7 +868,7 @@
   },
   "Temple of the Legends (Quest)#086": {
    "src": "It creates a unique magic vapor if disrupted, which I can use to purify the dust for you.",
-   "dst": "",
+   "dst": "それを乱すと独特の魔法の蒸気が生じます。それで塵を浄化してあげましょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -878,7 +878,7 @@
   },
   "Temple of the Legends (Quest)#087": {
    "src": "I would say, given how badly corrupted this is, I will need at least [{~} Sky Vapor] for the task.",
-   "dst": "",
+   "dst": "これほど腐敗がひどいと、少なくとも [{~} Sky Vapor] は必要ですね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -888,7 +888,7 @@
   },
   "Temple of the Legends (Quest)#088": {
    "src": "Find the cave on {p} where the Sky Flux gathers at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] にある、{p} の Sky Flux が集まる洞窟を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -898,7 +898,7 @@
   },
   "Temple of the Legends (Quest)#089": {
    "src": "Give [{~} Sky Vapor] to Rayshyroth at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~} Sky Vapor] を [{~}, {~}, -{~}] の Rayshyroth に渡す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -908,7 +908,7 @@
   },
   "Temple of the Legends (Quest)#090": {
    "src": "Aha, you're back with the Sky Vapor! Sorry about the climb, even I find it rather inconvenient at times.",
-   "dst": "",
+   "dst": "おお、Sky Vapor を持って戻りましたね！登るのは大変だったでしょう、私も時々不便に感じます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -918,7 +918,7 @@
   },
   "Temple of the Legends (Quest)#091": {
    "src": "While I perform the ritual to purify this, I'd like to ask you something. Do you know, exactly, what it is you'll be fighting?",
-   "dst": "",
+   "dst": "浄化の儀式をする間に、一つ聞きたい。あなたは自分が何と戦うのか、正確に分かっていますか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -928,7 +928,7 @@
   },
   "Temple of the Legends (Quest)#092": {
    "src": "Don't look so surprised, I know exactly what you need Light Dust for. The corruption warding helmet...to allow you to fight the Corrupter of Worlds.",
-   "dst": "",
+   "dst": "そう驚かないで。Light Dust の用途は分かっています。腐敗除けの兜…Corrupter of Worlds と戦うためでしょう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -938,7 +938,7 @@
   },
   "Temple of the Legends (Quest)#093": {
    "src": "Yes, yes. I imagine that Kelight didn't bother telling you that was his title. I also surmise that you were given few details of how he came to be...",
-   "dst": "",
+   "dst": "ええ、ええ。Kelight はそれが奴の称号だと教えなかったのでしょう。奴の成り立ちもろくに聞いていないはずだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -948,7 +948,7 @@
   },
   "Temple of the Legends (Quest)#094": {
    "src": "The beast now known as the Corrupter of Worlds used to be a simple mining captain, during the expeditions that uncovered the Nether Portal. He was the first to enter that wicked realm.",
-   "dst": "",
+   "dst": "今 Corrupter of Worlds と呼ばれる獣は、かつてネザーポータルを見つけた遠征の一介の採掘隊長でした。あの邪悪な領域に最初に入った男です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -958,7 +958,7 @@
   },
   "Temple of the Legends (Quest)#095": {
    "src": "The poor man was never heard from again...well, that is until the corrupted hordes began to pour from the Nether, with him leading the pack. A bit ironic, isn't it? Led the miners in life, the corrupteds in death.",
-   "dst": "",
+   "dst": "哀れな男は二度と消息がなかった…ネザーから腐敗者の群れが溢れ出すまでは。先頭にいたのが彼です。皮肉でしょう？生前は鉱夫を、死後は腐敗者を率いたのですから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -968,7 +968,7 @@
   },
   "Temple of the Legends (Quest)#096": {
    "src": "His mining crew there lasted hardly minutes. He personally slaughtered every single one of his original crew, and thousands more. The energies of the Nether have made him monstrously powerful.",
-   "dst": "",
+   "dst": "彼の採掘隊は数分ともたなかった。元の隊員を一人残らず自ら惨殺し、さらに何千もの命を奪った。ネザーの力が彼を途方もなく強くしたのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -978,7 +978,7 @@
   },
   "Temple of the Legends (Quest)#097": {
    "src": "...although, the stories differ. Some say that Bak'al was the first to enter the portal, and the Corrupter of Worlds was simply a beast from the Nether. But the unclear truth doesn't change his strength.",
-   "dst": "",
+   "dst": "…もっとも、話はさまざまです。最初にポータルに入ったのは Bak'al で、Corrupter of Worlds はネザーの獣にすぎないという説も。ですが真相が曖昧でも、奴の強さは変わりません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -988,7 +988,7 @@
   },
   "Temple of the Legends (Quest)#098": {
    "src": "Just remember that no one, aside from that snooty Kelight, will think less of you should you choose not to fight him.",
-   "dst": "",
+   "dst": "覚えておいて。あの高慢な Kelight 以外、戦わないと決めてもあなたを見下す者はいません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -998,7 +998,7 @@
   },
   "Temple of the Legends (Quest)#099": {
    "src": "Show the [Purified Light Dust] to Kelight at the entrance of the Temple of the Legends at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[Purified Light Dust] を [-{~}, {~}, -{~}] の伝説の神殿入口にいる Kelight に見せる。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -1008,7 +1008,7 @@
   },
   "Temple of the Legends (Quest)#100": {
    "src": "Hah. Took you long enough. This is the light dust, I presume?",
-   "dst": "",
+   "dst": "はっ。ずいぶんかかったな。これが光の塵かね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1018,7 +1018,7 @@
   },
   "Temple of the Legends (Quest)#101": {
    "src": "I'll hold onto this for now. While it is a vital ingredient for your protection, it is not enough on its own.",
-   "dst": "",
+   "dst": "これはひとまず預かろう。君の守りに欠かせない材料だが、これだけでは足りん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1028,7 +1028,7 @@
   },
   "Temple of the Legends (Quest)#102": {
    "src": "You'll need an item to focus the magic around yourself, preferably something you'd wear. Hm... How about a helmet? Certainly, it'd do wonders for your poor sense of style.",
-   "dst": "",
+   "dst": "魔力を身の回りに集める品が要る、身に着ける物がいい。ふむ…兜はどうだ？君のひどいセンスにも大いに役立つだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1038,7 +1038,7 @@
   },
   "Temple of the Legends (Quest)#103": {
    "src": "Ahem. As for creating it... I know only one man capable of crafting a piece of armor good enough to ensure your safety.",
-   "dst": "",
+   "dst": "コホン。作り手だが…君の安全を保証できる防具を作れる男は、一人しか知らん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1048,7 +1048,7 @@
   },
   "Temple of the Legends (Quest)#104": {
    "src": "Unfortunately, he will be hard to reach. His name was Garull, and he was the finest craftsman I'd ever met! A bit on the eccentric side, though.",
-   "dst": "",
+   "dst": "あいにく、会うのは難しい。名は Garull、私が会った中で最高の職人だった！少々変わり者だがね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1058,7 +1058,7 @@
   },
   "Temple of the Legends (Quest)#105": {
    "src": "He was always ranting and raving about Creepers... he really thought they were real, can you imagine? What complete and utter nonsense.",
-   "dst": "",
+   "dst": "いつもクリーパーのことをわめき散らしていてな…本当にいると思っていたんだ、信じられるか？まったくの戯言だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1068,7 +1068,7 @@
   },
   "Temple of the Legends (Quest)#106": {
    "src": "When I suggested the notion to be absurd, he seemed upset by my comments, and stopped visiting. Truly, I did not know what I did wrong. What a ridiculous man.",
-   "dst": "",
+   "dst": "馬鹿げていると言ったら機嫌を損ねたようで、来なくなった。私の何が悪かったのか、本当に分からん。困った男だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1078,7 +1078,7 @@
   },
   "Temple of the Legends (Quest)#107": {
    "src": "As it stands, I have no idea where you could find him. He spoke of wanting to research the Pigman Ravines several times, though none of our rank had ever seen him there.",
-   "dst": "",
+   "dst": "今となっては、どこにいるか見当もつかん。Pigman Ravines を研究したいと何度か言っていたが、仲間の誰もそこで彼を見ていない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1088,7 +1088,7 @@
   },
   "Temple of the Legends (Quest)#108": {
    "src": "In any case, it is somewhere to begin your search! Should you manage to find him, and convince him to craft you the helmet, return here and we can proceed.",
-   "dst": "",
+   "dst": "ともかく、探し始める場所にはなる！見つけて兜を作るよう説得できたら、ここに戻れ。そこから先へ進もう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1098,7 +1098,7 @@
   },
   "Temple of the Legends (Quest)#109": {
    "src": "Find Garull, the Creeper obsessed craftsman, somewhere in the {p} located around [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] 付近の {p} で、クリーパーに執着する職人 Garull を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -1108,7 +1108,7 @@
   },
   "Temple of the Legends (Quest)#110": {
    "src": "GWUH! Oh god, don't scare me like that! Who... Who even are you?!",
-   "dst": "",
+   "dst": "うわあっ！びっくりさせるなよ！だ…誰なんだあんた？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1118,7 +1118,7 @@
   },
   "Temple of the Legends (Quest)#111": {
    "src": "Ah, you were sent from Kelight for a protection helmet? I can do that, sure, but there's a few complications.",
-   "dst": "",
+   "dst": "ああ、Kelight に言われて防護の兜を？作れるとも、ただいくつか厄介なことがある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1128,7 +1128,7 @@
   },
   "Temple of the Legends (Quest)#112": {
    "src": "See, I usually use something called Touroto Hide to make my armor. It's extremely resilient, magic resistant and tough to break.",
-   "dst": "",
+   "dst": "俺は防具にふつう Touroto Hide ってのを使う。すごく丈夫で、魔法に強く、なかなか破れない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1138,7 +1138,7 @@
   },
   "Temple of the Legends (Quest)#113": {
    "src": "But, this also makes the Touroto themselves almost impossible to kill. Getting Touroto Hide is extremely difficult. I do know of a black market for it in {p}, but...",
-   "dst": "",
+   "dst": "でもそのせいで Touroto 自体がほぼ殺せない。Touroto Hide を手に入れるのは至難の業だ。{p} に闇市があるのは知ってるが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1148,7 +1148,7 @@
   },
   "Temple of the Legends (Quest)#114": {
    "src": "They only sell useless Old Touroto Hide, gotten from ones that died of old age. It's almost no better than just plain leather.",
-   "dst": "",
+   "dst": "売ってるのは老衰で死んだ個体から取った、役立たずの Old Touroto Hide だけ。ただの革とほとんど変わらない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1158,7 +1158,7 @@
   },
   "Temple of the Legends (Quest)#115": {
    "src": "So, for me to craft you this helmet, I'll need you to bring me not just the [Old Touroto Hide], but also the means to restore it to its previous power. Do listen up, there's a lot to tell you!",
-   "dst": "",
+   "dst": "だから兜を作るには、[Old Touroto Hide] だけじゃなく、元の力を取り戻す材料も持ってきてほしい。よく聞けよ、話すことは山ほどある！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1168,7 +1168,7 @@
   },
   "Temple of the Legends (Quest)#116": {
    "src": "There's the [Aseado Leaf], grown someplace in the {p}... it has powerful medicinal qualities, supposedly able to reverse aging.",
-   "dst": "",
+   "dst": "まず [Aseado Leaf]、{p} のどこかに生えてる…強い薬効があって、老化を逆戻りさせるらしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1178,7 +1178,7 @@
   },
   "Temple of the Legends (Quest)#117": {
    "src": "Then, a [Maro's Eye Jewel], which is an amazing magical focus from...well, where else, the {p}. Using its dust, I'll be able to return its magical resilience manually.",
-   "dst": "",
+   "dst": "次に [Maro's Eye Jewel]、すごい魔法の焦点具で…出どころはもちろん {p} だ。その粉で、魔法の耐性を手作業で戻せる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1188,7 +1188,7 @@
   },
   "Temple of the Legends (Quest)#118": {
    "src": "Finally, I'll need a [Coral of Nelfors], which can be found in the {p}. This is what I need to use to enchant the hide to be magically resistant.",
-   "dst": "",
+   "dst": "最後に [Coral of Nelfors]、{p} で見つかる。これで皮に魔法耐性の付呪をするんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1198,7 +1198,7 @@
   },
   "Temple of the Legends (Quest)#119": {
    "src": "I wrote all that down in your content book. If you can get it all, come back to see me, but don't be so sneaky about coming up to me please!",
-   "dst": "",
+   "dst": "全部コンテンツブックに書いといた。揃ったら会いに来てくれ、でも頼むからこっそり近づくのはやめてくれよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1208,7 +1208,7 @@
   },
   "Temple of the Legends (Quest)#120": {
    "src": "Bring the [Old Touroto Hide], [Aseado Leaf], [Maro's Eye Jewel], and [Coral of Nelfors] to Garull in the cave at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[Old Touroto Hide]、[Aseado Leaf]、[Maro's Eye Jewel]、[Coral of Nelfors] を [-{~}, {~}, -{~}] の洞窟にいる Garull に届ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -1218,7 +1218,7 @@
   },
   "Temple of the Legends (Quest)#121": {
    "src": "Thank you for listening to me about not being so quiet coming over here. I'm guessing you've got everything?",
-   "dst": "",
+   "dst": "今度はそっと来ないでくれてありがとな。全部揃ったんだろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1228,7 +1228,7 @@
   },
   "Temple of the Legends (Quest)#122": {
    "src": "Alright, this should go quickly. For however pompous Kelight is, he's right in sending you to me to craft this.",
-   "dst": "",
+   "dst": "よし、すぐ済む。Kelight はいくら偉そうでも、俺に作らせに来させたのは正解だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1238,7 +1238,7 @@
   },
   "Temple of the Legends (Quest)#123": {
    "src": "Now, I want to warn you about something. I've heard stories about the enemy you need this helmet to face, none of them good.",
-   "dst": "",
+   "dst": "さて、一つ警告しておきたい。その兜で立ち向かう敵の噂を聞いたが、どれもろくな話じゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1248,7 +1248,7 @@
   },
   "Temple of the Legends (Quest)#124": {
    "src": "While I have seen people return from killing the \"beast\" he talks about, it isn't often. Be very careful, should you choose to fight it.",
-   "dst": "",
+   "dst": "あいつの言う「獣」を倒して戻った奴も見たことはあるが、めったにいない。戦うなら十分気をつけろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1258,7 +1258,7 @@
   },
   "Temple of the Legends (Quest)#125": {
    "src": "Bring the [Helmet of the Legends] to Kelight at the entrance of the Temple of the Legends at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[Helmet of the Legends] を [-{~}, {~}, -{~}] の伝説の神殿入口にいる Kelight に届ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -1268,7 +1268,7 @@
   },
   "Temple of the Legends (Quest)#126": {
    "src": "...Hm? Oh, it's you again. Did you actually manage to find the blighter? Good to know he isn't dead, at least.",
-   "dst": "",
+   "dst": "…む？ああ、また君か。本当にあの変人を見つけたのか？少なくとも生きていると分かってよかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1278,7 +1278,7 @@
   },
   "Temple of the Legends (Quest)#127": {
    "src": "You have the helmet, I presume? Hand it over, here. I'll quickly apply the light dust. Then, you'll be able to enter the cave.",
-   "dst": "",
+   "dst": "兜は持っているのだろう？こちらへ。すぐに光の塵を施そう。そうすれば洞窟に入れる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1288,7 +1288,7 @@
   },
   "Temple of the Legends (Quest)#128": {
    "src": "Hopefully you'll do better than that last group that tried to fight him. Six fighters strong... never came back.",
-   "dst": "",
+   "dst": "奴に挑んだ前の一団よりはうまくやってほしいものだ。六人の戦士が…誰も戻らなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1298,7 +1298,7 @@
   },
   "Temple of the Legends (Quest)#129": {
    "src": "...Well, good luck! I'm certain you'll either succeed, or you'll fail spectacularly. Either or, really.",
-   "dst": "",
+   "dst": "…では、健闘を祈る！成功するか、盛大に失敗するか、どちらかだろう。まあ、どちらでも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1308,7 +1308,7 @@
   },
   "Temple of the Legends (Quest)#130": {
    "src": "Bring me concrete proof of your triumph over the beast, and I will grant you passage into the Temple of the Legends! Do be quick, would you?",
-   "dst": "",
+   "dst": "獣に勝った確かな証拠を持ってこい、そうすれば伝説の神殿への通行を許そう！急いでくれたまえよ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1318,7 +1318,7 @@
   },
   "Temple of the Legends (Quest)#131": {
    "src": "Kill the Corrupter of Worlds in the cave at [-{~}, {~}, -{~}] and bring proof of its death to Kelight at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の洞窟で Corrupter of Worlds を倒し、その死の証を [-{~}, {~}, -{~}] の Kelight に届ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Temple of the Legends (Quest)",
@@ -1328,7 +1328,7 @@
   },
   "Temple of the Legends (Quest)#132": {
    "src": "... You... You did it? H-how?!",
-   "dst": "",
+   "dst": "…き、君が…倒した？ど、どうやって？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1338,7 +1338,7 @@
   },
   "Temple of the Legends (Quest)#133": {
    "src": "Even one so brave and powerful as myself could not possibly survive against-",
-   "dst": "",
+   "dst": "私のように勇敢で強大な者でさえ、あれを相手に生き延びるなど―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1348,7 +1348,7 @@
   },
   "Temple of the Legends (Quest)#134": {
    "src": "Er... I mean, of course you were able to defeat the beast! I believed in you from the very start!",
-   "dst": "",
+   "dst": "あ…いや、もちろん君なら獣を倒せると思っていた！最初から信じていたとも！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1358,7 +1358,7 @@
   },
   "Temple of the Legends (Quest)#135": {
    "src": "...Ehm. I suppose you are welcome in the Temple of the Legends, now! You have... certainly proven yourself. My apologies for misjudging you. Feel proud of your accomplishment!",
-   "dst": "",
+   "dst": "…コホン。これで伝説の神殿に歓迎しよう！君は…確かに力を示した。見くびってすまなかった。その功績を誇りたまえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",
@@ -1368,7 +1368,7 @@
   },
   "Temple of the Legends (Quest)#136": {
    "src": "Hm? What are these oddities you have with you? Curious, yet useless. Allow me to dispose of them for you.",
-   "dst": "",
+   "dst": "む？その妙な物は何だ？珍しいが役に立たんな。私が処分してやろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Temple of the Legends (Quest)",

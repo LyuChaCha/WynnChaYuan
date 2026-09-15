@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Passage (Quest)",
   "count": 24,
-  "translated": 0,
+  "translated": 24,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Passage (Quest)#000": {
    "src": "Talk to Wirt in {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "{p} の [-{~}, {~}, -{~}] で Wirt と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "The Passage (Quest)",
@@ -18,7 +18,7 @@
   },
   "The Passage (Quest)#001": {
    "src": "Not so fast, you!",
-   "dst": "",
+   "dst": "ちょっと待った！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -28,7 +28,7 @@
   },
   "The Passage (Quest)#002": {
    "src": "My dad said I can't let any strangers through this passage!",
-   "dst": "",
+   "dst": "父ちゃんが、知らない人はこの通路を通すなって！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -38,7 +38,7 @@
   },
   "The Passage (Quest)#003": {
    "src": "If you want access, talk to him, he's the recruiter of the town! His name is Ildan. He's just southwest of here.",
-   "dst": "",
+   "dst": "通りたいなら父ちゃんと話して、町の勧誘係だから！名前は Ildan、ここの南西にいるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -48,7 +48,7 @@
   },
   "The Passage (Quest)#004": {
    "src": "Find Ildan in {p} at [-{~}, {~}, -{~}] and ask to be a member of the town",
-   "dst": "",
+   "dst": "{p} の [-{~}, {~}, -{~}] で Ildan を見つけ、町の一員にしてほしいと頼む",
    "role": "desc",
    "kind": "objective",
    "quest": "The Passage (Quest)",
@@ -58,7 +58,7 @@
   },
   "The Passage (Quest)#005": {
    "src": "Oh! So you want to become a member of this town?",
-   "dst": "",
+   "dst": "おお！この町の一員になりたいって？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -68,7 +68,7 @@
   },
   "The Passage (Quest)#006": {
    "src": "You will have to help us first, of course!",
-   "dst": "",
+   "dst": "もちろん、まずは手を貸してもらうぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -78,7 +78,7 @@
   },
   "The Passage (Quest)#007": {
    "src": "I'm sure you've noticed, but there is a tribe camp not too far from here.",
-   "dst": "",
+   "dst": "気づいてるだろうが、ここから遠くないところに部族の野営地がある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -88,7 +88,7 @@
   },
   "The Passage (Quest)#008": {
    "src": "They used to have a powerful chief, but he eventually died in battle.",
-   "dst": "",
+   "dst": "かつては強い族長がいたが、やがて戦で死んだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -98,7 +98,7 @@
   },
   "The Passage (Quest)#009": {
    "src": "The tribe couldn't bear the fact that he was dead. They performed some unethical necromancy spell on him.",
-   "dst": "",
+   "dst": "部族は彼の死を受け入れられず、非道な死霊術を彼にかけたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -108,7 +108,7 @@
   },
   "The Passage (Quest)#010": {
    "src": "They quickly realized that is was a bad idea, so they locked him in a tomb.",
-   "dst": "",
+   "dst": "すぐにまずいと気づいて、彼を墓に閉じ込めた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -118,7 +118,7 @@
   },
   "The Passage (Quest)#011": {
    "src": "He keeps reviving his minions and it's causing quite some problems to our army.",
-   "dst": "",
+   "dst": "彼は手下を蘇らせ続けていて、我が軍もかなり困ってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -128,7 +128,7 @@
   },
   "The Passage (Quest)#012": {
    "src": "You can access the tomb from a sacrificial shrine, I've heard, but I'm not sure how. There are probably hints nearby the shrine.",
-   "dst": "",
+   "dst": "生贄の祠から墓に入れると聞いたが、方法はわからん。祠の近くに手がかりがあるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -138,7 +138,7 @@
   },
   "The Passage (Quest)#013": {
    "src": "Bring me back [{~} Antic Bead] as a proof of its death, and I will let you become a citizen.",
-   "dst": "",
+   "dst": "死んだ証に [{~} 奇妙なビーズ] を持ち帰ってくれれば、町民にしてやろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -148,7 +148,7 @@
   },
   "The Passage (Quest)#014": {
    "src": "I've marked the direction to the shrine in your book. Remember, there should be hints right nearby the shrine. Good luck.",
-   "dst": "",
+   "dst": "祠への方角を君の本に記しておいた。いいか、手がかりは祠のすぐ近くにあるはずだ。幸運を。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -158,7 +158,7 @@
   },
   "The Passage (Quest)#015": {
    "src": "Search for clues near [-{~}, {~}, -{~}] and bring back [{~} Antic Bead] to Ildan.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の近くで手がかりを探し、[{~} 奇妙なビーズ] を Ildan に届ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Passage (Quest)",
@@ -168,7 +168,7 @@
   },
   "The Passage (Quest)#016": {
    "src": "Impressive! You got the bead!",
-   "dst": "",
+   "dst": "見事だ！ビーズを手に入れたな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -178,7 +178,7 @@
   },
   "The Passage (Quest)#017": {
    "src": "Well, welcome to this town, adventurer! You are now officially a citizen.",
-   "dst": "",
+   "dst": "では、この町へようこそ、冒険者！これで正式に町民だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -188,7 +188,7 @@
   },
   "The Passage (Quest)#018": {
    "src": "Oh, but before you go! I do have a few things to say. First, about the beads here.",
-   "dst": "",
+   "dst": "おっと、行く前に！いくつか話がある。まず、ここのビーズについてだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -198,7 +198,7 @@
   },
   "The Passage (Quest)#019": {
    "src": "The tribesmen accept these as currency, so if you collect enough, I've heard they can offer you powerful masks.",
-   "dst": "",
+   "dst": "部族の者はこれを通貨として受け取る。十分集めれば、強力な仮面をもらえるそうだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -208,7 +208,7 @@
   },
   "The Passage (Quest)#020": {
    "src": "Second, about the shrine. Now, this is just a rumor, but apparently that tomb is not unique.",
-   "dst": "",
+   "dst": "次に、祠について。これはただの噂だが、あの墓は一つだけではないらしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -218,7 +218,7 @@
   },
   "The Passage (Quest)#021": {
    "src": "There are supposed to be a bunch of these altars scattered around the province, even in Gavel too!",
-   "dst": "",
+   "dst": "こうした祭壇が地方中に散らばっていて、Gavel にまであるそうだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -228,7 +228,7 @@
   },
   "The Passage (Quest)#022": {
    "src": "If true, you should look for them. While the fights will be tough, I would imagine great rewards could be gotten from them!",
-   "dst": "",
+   "dst": "本当なら探してみるといい。戦いは厳しいだろうが、大きな報酬が得られると思うぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",
@@ -238,7 +238,7 @@
   },
   "The Passage (Quest)#023": {
    "src": "Anyway, I've talked enough. I'm proud to have such a powerful fighter join our town! I wish you luck, friend!",
-   "dst": "",
+   "dst": "さて、話しすぎたな。これほどの強者が町に加わってくれて誇りに思う！幸運を祈るよ、友よ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Passage (Quest)",

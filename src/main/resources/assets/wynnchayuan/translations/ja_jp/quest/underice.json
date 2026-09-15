@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Underice",
   "count": 56,
-  "translated": 0,
+  "translated": 56,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Underice#000": {
    "src": "Talk to Fredris in {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} にいる Fredris と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -18,7 +18,7 @@
   },
   "Underice#001": {
    "src": "I'm having trouble with the fish in our lake recently and I am sure the problem lies within the lake itself.",
-   "dst": "",
+   "dst": "最近湖の魚のことで困っていて、原因は湖そのものにあると確信しているんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -28,7 +28,7 @@
   },
   "Underice#002": {
    "src": "I would like to commission you to investigate, but since it's freezing cold in our lake you need something to protect you. I heard the people in {p} on the coast of Wynn have something that can help you.",
-   "dst": "",
+   "dst": "調査を頼みたいが、湖は凍えるほど冷たいから身を守る物が必要だ。Wynn の海岸にある {p} の人々が役立つ物を持っていると聞いた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -38,7 +38,7 @@
   },
   "Underice#003": {
    "src": "Would you mind coming back with a [Breathing Helmet I]? I think that should be everything you need.",
-   "dst": "",
+   "dst": "[Breathing Helmet I] を持ってきてくれないか？それさえあれば十分だと思う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -48,7 +48,7 @@
   },
   "Underice#004": {
    "src": "Return to {p} and bring Fredris a [Breathing Helmet I]",
-   "dst": "",
+   "dst": "{p} に戻り、Fredris に [Breathing Helmet I] を届ける",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -58,7 +58,7 @@
   },
   "Underice#005": {
    "src": "What is this thing supposed to be? You know, I would really appreciate your help, but this [Breathing Helmet I] does not look like it's going to keep you protected.",
-   "dst": "",
+   "dst": "これは何のつもりだ？手伝ってくれるのは本当にありがたいが、この [Breathing Helmet I] じゃ身を守れそうにない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -68,7 +68,7 @@
   },
   "Underice#006": {
    "src": "Would you mind heading to our local armour merchant and buying one of our [Breathing Helmet II]? I don't want you to drown. Just come back with the helmet and I will tell you about my problem.",
-   "dst": "",
+   "dst": "地元の防具商人から [Breathing Helmet II] を買ってきてくれないか？溺れられちゃ困る。ヘルメットを持ってきたら、問題を話そう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -78,7 +78,7 @@
   },
   "Underice#007": {
    "src": "Buy a [Breathing Helmet II] and find the underwater cave",
-   "dst": "",
+   "dst": "[Breathing Helmet II] を買い、水中洞窟を見つける",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -88,7 +88,7 @@
   },
   "Underice#008": {
    "src": "Explore the cave underneath the frozen lake in {p}",
-   "dst": "",
+   "dst": "{p} の凍った湖の下にある洞窟を探索する",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -98,7 +98,7 @@
   },
   "Underice#009": {
    "src": "Who are you? You don't look like one of those villagers we stole the fi... Wait, they didn't send you to retrieve \"their\" fish, did they?",
-   "dst": "",
+   "dst": "誰だ？俺たちが魚を盗んだ村人には見えないが…待て、まさか「奴らの」魚を取り返しに来たのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -108,7 +108,7 @@
   },
   "Underice#010": {
    "src": "For years we let them share the lake with us, the actual inhabitants of it, we were modest and took what we needed, we let them catch the rest. But then they went too far, they caught too much.",
-   "dst": "",
+   "dst": "何年も、この湖の本当の住人である俺たちは奴らと湖を分け合ってきた。控えめに必要な分だけ取り、残りは奴らに獲らせた。だが奴らはやり過ぎた、獲りすぎたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -118,7 +118,7 @@
   },
   "Underice#011": {
    "src": "We didn't have enough to eat, we were forced to steal their fish, we would have starved otherwise. And now they want their fish, our fish back? We can't do that, I hope you understand.",
-   "dst": "",
+   "dst": "食べる物が足りず、魚を盗むしかなかった。でなきゃ飢え死にだ。なのに奴らの魚、俺たちの魚を返せだと？それはできない、わかってくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -128,7 +128,7 @@
   },
   "Underice#012": {
    "src": "However, we don't have to fight over the fish in the lake, we just need a [Mythic Everlasting Pufferfish], that would be enough, nothing else. We never wanted to steal the fish.",
-   "dst": "",
+   "dst": "だが湖の魚を奪い合う必要はない。[Mythic Everlasting Pufferfish] が一匹あればそれで十分だ。魚を盗みたかったわけじゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -138,7 +138,7 @@
   },
   "Underice#013": {
    "src": "If you want to help us and the villagers, just follow the stream that flows into this lake to the south, you will find the best fishing ground there. The pufferfish should be around there too.",
-   "dst": "",
+   "dst": "俺たちと村人を助けたいなら、この湖に流れ込む川を南へたどれ。最高の釣り場がある。フグもその辺りにいるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -148,7 +148,7 @@
   },
   "Underice#014": {
    "src": "Follow the river south to find the fishing dock",
-   "dst": "",
+   "dst": "川を南へたどり、釣り場の桟橋を見つける",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -158,7 +158,7 @@
   },
   "Underice#015": {
    "src": "Oh you look a bit lost, let me help you, I've lived here for a long time, I know every corner and every snowflake.",
-   "dst": "",
+   "dst": "おや、迷ったようじゃな。手伝おう。わしは長くここに住み、隅々から雪のひとひらまで知っとる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -168,7 +168,7 @@
   },
   "Underice#016": {
    "src": "You're searching for a [Mythic Everlasting Pufferfish]? Hmm I heard that name before, my friend, Strato, told me about it years ago. If I remember correctly it is infinite, you can feed every single person in all the provinces from this single fish.",
-   "dst": "",
+   "dst": "[Mythic Everlasting Pufferfish] を探しとるのか？ふむ、聞いたことがある。友の Strato が昔話してくれた。確か尽きることのない魚で、その一匹で全地方の人々を養えるそうじゃ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -178,7 +178,7 @@
   },
   "Underice#017": {
    "src": "Sadly Strato is no longer alive. He used to work and live at the woodcutting camp northwest of {p}. We always met here, caught fish and told each other stories. I really miss those times...",
-   "dst": "",
+   "dst": "残念ながら Strato はもうおらん。{p} の北西にある伐採キャンプで働き、暮らしておった。わしらはいつもここで会い、魚を釣って話をしたものじゃ。あの頃が懐かしい…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -188,7 +188,7 @@
   },
   "Underice#018": {
    "src": "Maybe you can find some sort of bait there, he had some of the best bait I have ever seen. You should be able to acquire some and throw it in water, maybe that will attract the pufferfish.",
-   "dst": "",
+   "dst": "そこで何か餌が見つかるかもしれん。あやつの餌は見たこともないほど上等じゃった。手に入れて水に投げれば、フグが寄ってくるかもしれん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -198,7 +198,7 @@
   },
   "Underice#019": {
    "src": "Can I ask you something? As you might see I'm not the richest guy, or the youngest. If you manage to catch that fish, could you hand it over? I know we just met but you seem like somebody who would help an old man.",
-   "dst": "",
+   "dst": "ひとつ頼んでいいかの？見ての通り、わしは金持ちでも若くもない。その魚を釣れたら、譲ってくれんか？会ったばかりじゃが、あんたは年寄りを助けてくれる人に見える。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -208,7 +208,7 @@
   },
   "Underice#020": {
    "src": "Obtain the bait at the woodcutting camp northwest of {p}, use it to catch the fish and then give it to Calamaro or Gernald",
-   "dst": "",
+   "dst": "{p} の北西の伐採キャンプで餌を手に入れ、魚を釣って Calamaro か Gernald に渡す",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -218,7 +218,7 @@
   },
   "Underice#021": {
    "src": "Just look at those fish, I told you they love this bait.",
-   "dst": "",
+   "dst": "あの魚を見てみい、この餌が大好きだと言ったじゃろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -228,7 +228,7 @@
   },
   "Underice#022": {
    "src": "There it comes, the [Mythic Everlasting Pufferfish], I can't believe it!",
-   "dst": "",
+   "dst": "来たぞ、[Mythic Everlasting Pufferfish] じゃ、信じられん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -238,7 +238,7 @@
   },
   "Underice#023": {
    "src": "You decided to give me the fish? I wish Strato was still around, he would be so amazed. I can't show you how much this means to me, but take this little gift, please, promise me to never change.",
-   "dst": "",
+   "dst": "魚をわしにくれるのか？Strato がまだおったら、さぞ驚いたじゃろう。どれほど嬉しいか言い表せんが、このささやかな礼を受け取ってくれ。どうか変わらずにいておくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -248,7 +248,7 @@
   },
   "Underice#024": {
    "src": "You found a pufferfish! Who would have thought such a small thing could solve our problem. I will start bringing back the fish immediately, but first we will have a nice hot soup. Please take this as payback for your services.",
-   "dst": "",
+   "dst": "フグを見つけたか！こんな小さい物で問題が解決するとはな。すぐに魚を戻し始めるが、まずは熱いスープだ。手伝いの礼にこれを受け取ってくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -258,7 +258,7 @@
   },
   "Underice#025": {
    "src": "You can trade it at the shop right over there, it's hard to miss. I will give you a last advise, you don't want to eat that slimy fish.",
-   "dst": "",
+   "dst": "そこの店で交換できる、すぐわかるはずだ。最後に忠告だ、あのヌルヌルした魚は食べないほうがいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -268,7 +268,7 @@
   },
   "Underice#026": {
    "src": "Meet up with Fredris in {p} and claim your reward",
-   "dst": "",
+   "dst": "{p} の Fredris に会い、報酬を受け取る",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -278,7 +278,7 @@
   },
   "Underice#027": {
    "src": "Oh you are done with whatever you were doing? I heard you ran around the whole place, I don't know if you were the right person to ask for help...",
-   "dst": "",
+   "dst": "おや、用事は済んだのか？あちこち走り回っていたと聞いたぞ。頼む相手を間違えたかな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -288,7 +288,7 @@
   },
   "Underice#028": {
    "src": "I will just ask the next one who comes around, no need to have you run around all day. Take this, I appreciate your effort.",
-   "dst": "",
+   "dst": "次に来た人に頼むことにするよ、一日中走らせるのも悪い。これを受け取ってくれ、苦労に感謝する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -298,7 +298,7 @@
   },
   "Underice#029": {
    "src": "A real disaster! I can't believe this is happening to me!",
-   "dst": "",
+   "dst": "大災難だ！まさか自分にこんなことが！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -308,7 +308,7 @@
   },
   "Underice#030": {
    "src": "I've been fishing for the last few days and I caught nothing! Zilch! This isn't normal!",
-   "dst": "",
+   "dst": "ここ数日釣りをしてるのに一匹も釣れない！ゼロだ！こんなのおかしい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -318,7 +318,7 @@
   },
   "Underice#031": {
    "src": "I spent my entire life fishing in this area! I wish I could dive under this ice to fix the problem myself...",
-   "dst": "",
+   "dst": "この辺りで一生釣りをしてきたんだ！氷の下に潜って自分で解決できたらいいのに…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -328,7 +328,7 @@
   },
   "Underice#032": {
    "src": "Do you think you could help me? You might actually be exactly what I need!",
-   "dst": "",
+   "dst": "手伝ってくれないか？君こそ求めていた人かもしれない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -338,7 +338,7 @@
   },
   "Underice#033": {
    "src": "Enter my shack, there you will find the entrance... Good luck!",
-   "dst": "",
+   "dst": "小屋に入れば入口がある…幸運を！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -348,7 +348,7 @@
   },
   "Underice#034": {
    "src": "Explore under the ice to find a cause to the fish problem. You'll need the Breathing Helmet for this.",
-   "dst": "",
+   "dst": "氷の下を探索し、魚の問題の原因を見つける。Breathing Helmet が必要だ。",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -358,7 +358,7 @@
   },
   "Underice#035": {
    "src": "Talk to Squidward in the Squid Village.",
-   "dst": "",
+   "dst": "イカの村で Squidward と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -368,7 +368,7 @@
   },
   "Underice#036": {
    "src": "Have I seen any fish? No, of course not! I don't even know what a fish looks like!",
-   "dst": "",
+   "dst": "魚を見たか？まさか！魚がどんな姿かも知らないね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -378,7 +378,7 @@
   },
   "Underice#037": {
    "src": "Who could be stealing all those fish? I wonder! Actually...",
-   "dst": "",
+   "dst": "誰が魚を盗んでるんだろうな？不思議だ！実は…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -388,7 +388,7 @@
   },
   "Underice#038": {
    "src": "I'm sure Calamaro did it! He's just that kind of guy. He lives in that house down there.",
-   "dst": "",
+   "dst": "Calamaro の仕業に決まってる！あいつはそういう奴さ。下の家に住んでるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -398,7 +398,7 @@
   },
   "Underice#039": {
    "src": "Find Calamaro in the Squid Village.",
-   "dst": "",
+   "dst": "イカの村で Calamaro を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -408,7 +408,7 @@
   },
   "Underice#040": {
    "src": "Me? Stealing fish? You are out of your mind! It's obviously Kroken who is stealing them!",
-   "dst": "",
+   "dst": "俺が？魚泥棒？正気か！盗んでるのはどう見ても Kroken だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -418,7 +418,7 @@
   },
   "Underice#041": {
    "src": "He lives right on top of that waterfall right there, if you want to go talk to him.",
-   "dst": "",
+   "dst": "あいつはあの滝のすぐ上に住んでる。話したきゃ行ってみな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -428,7 +428,7 @@
   },
   "Underice#042": {
    "src": "Find Kroken in the Squid Village.",
-   "dst": "",
+   "dst": "イカの村で Kroken を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -438,7 +438,7 @@
   },
   "Underice#043": {
    "src": "Do I look like someone who steals fish?",
-   "dst": "",
+   "dst": "俺が魚泥棒に見えるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -448,7 +448,7 @@
   },
   "Underice#044": {
    "src": "It's obvious that Squidward did it, he has tons of crates full of fish!",
-   "dst": "",
+   "dst": "Squidward の仕業に決まってる、魚の詰まった木箱が山ほどある！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -458,7 +458,7 @@
   },
   "Underice#045": {
    "src": "Talk back to Squidward.",
-   "dst": "",
+   "dst": "Squidward のもとに戻って話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -468,7 +468,7 @@
   },
   "Underice#046": {
    "src": "Okay, okay, fine! It was me all along... I know, what a shock, right?",
-   "dst": "",
+   "dst": "わかった、わかったよ！全部俺だ…驚いただろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -478,7 +478,7 @@
   },
   "Underice#047": {
    "src": "Okay, I got a proposition for you. Bring me [{~} Raw Fish] and I will stop, deal?",
-   "dst": "",
+   "dst": "よし、取引だ。[{~} Raw Fish] を持ってきたらやめてやる、どうだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -488,7 +488,7 @@
   },
   "Underice#048": {
    "src": "Deal.",
-   "dst": "",
+   "dst": "決まりだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -498,7 +498,7 @@
   },
   "Underice#049": {
    "src": "Bring back {~} Raw Fish to Squidward.",
-   "dst": "",
+   "dst": "Squidward に Raw Fish を {~} 匹持っていく。",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -508,7 +508,7 @@
   },
   "Underice#050": {
    "src": "Good, you got the fish!",
-   "dst": "",
+   "dst": "よし、魚を持ってきたな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -518,7 +518,7 @@
   },
   "Underice#051": {
    "src": "You can trust me, I won't touch the fish in the frozen lake anymore!",
-   "dst": "",
+   "dst": "信じてくれ、凍った湖の魚にはもう手を出さない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -528,7 +528,7 @@
   },
   "Underice#052": {
    "src": "Talk to Fredris to collect your reward.",
-   "dst": "",
+   "dst": "Fredris から報酬を受け取る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Underice",
@@ -538,7 +538,7 @@
   },
   "Underice#053": {
    "src": "Your story really doesn't make sense. Villagers living in a squid village under the lake? Pff!",
-   "dst": "",
+   "dst": "その話は筋が通らない。湖の下のイカの村に村人が住んでる？ふん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -548,7 +548,7 @@
   },
   "Underice#054": {
    "src": "However, if you can garantee me that my problem is gone, I'll trust you.",
-   "dst": "",
+   "dst": "だが問題が消えたと保証してくれるなら、信じよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",
@@ -558,7 +558,7 @@
   },
   "Underice#055": {
    "src": "Thank you for your help. Here, take these...",
-   "dst": "",
+   "dst": "助けてくれてありがとう。さあ、これを…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Underice",

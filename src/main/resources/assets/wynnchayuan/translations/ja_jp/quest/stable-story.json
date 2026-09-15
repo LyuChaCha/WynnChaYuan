@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Stable Story",
   "count": 19,
-  "translated": 0,
+  "translated": 19,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Stable Story#000": {
    "src": "Talk to Enkser outside {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} の外で Enkser と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "Stable Story",
@@ -18,7 +18,7 @@
   },
   "Stable Story#001": {
    "src": "Looking for able-bodied adventurers! Preferably with no friends or family, but I'm not picky!",
-   "dst": "",
+   "dst": "体力自慢の冒険者募集！友達も家族もいないと尚よし、でも贅沢は言わないよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -28,7 +28,7 @@
   },
   "Stable Story#002": {
    "src": "You see, I'm a horse merchant. Make my living selling these beauties to adventurers like you.",
-   "dst": "",
+   "dst": "実は私は馬商人でね。この美しい馬たちを君みたいな冒険者に売って暮らしてる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -38,7 +38,7 @@
   },
   "Stable Story#003": {
    "src": "I work at this barn, selling the horses I raise in {p} out here to rich {p} folk.",
-   "dst": "",
+   "dst": "この納屋で、{p} で育てた馬を、ここ {p} の金持ちに売ってるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -48,7 +48,7 @@
   },
   "Stable Story#004": {
    "src": "Until these rabble-rousing troublemakers blew a tunnel through my barn and smuggled MY horses out.",
-   "dst": "",
+   "dst": "ところが騒ぎ好きの厄介者どもが納屋を爆破してトンネルを開け、私の馬を運び出したんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -58,7 +58,7 @@
   },
   "Stable Story#005": {
    "src": "Usually, I'd be charging a high price for these horses Not to be rude, but one you couldn't afford.",
-   "dst": "",
+   "dst": "普段ならこの馬には高値をつけるところだ。失礼ながら、君には払えない額でね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -68,7 +68,7 @@
   },
   "Stable Story#006": {
    "src": "So, let's cut a deal They stole my stable key. If you can go to my barn in {p}...",
-   "dst": "",
+   "dst": "そこで取引だ。奴らに厩舎の鍵を盗まれた。{p} の私の納屋に行って…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -78,7 +78,7 @@
   },
   "Stable Story#007": {
    "src": "And return the key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
-   "dst": "",
+   "dst": "…鍵を取り戻してくれたら、なんと寛大にも馬を一頭進呈しよう。この取引、君が思うよりずっとお得だよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -88,7 +88,7 @@
   },
   "Stable Story#008": {
    "src": "Betty'll be there to help! Strong as she is, don't you DARE let them touch her!",
-   "dst": "",
+   "dst": "Betty が手伝ってくれる！力持ちだけど、絶対に奴らに触らせるなよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -98,7 +98,7 @@
   },
   "Stable Story#009": {
    "src": "I'll be making my way to {p} myself to ensure Betty's safety.",
-   "dst": "",
+   "dst": "Betty の無事を確かめに、私も {p} へ向かうよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -108,7 +108,7 @@
   },
   "Stable Story#010": {
    "src": "Now, best be on your way. {p} is a fair bit down the {p} from here, off to the east.",
-   "dst": "",
+   "dst": "さあ、出発したまえ。{p} はここから {p} を東へしばらく行った所だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -118,7 +118,7 @@
   },
   "Stable Story#011": {
    "src": "Bring back [{~} Stable Key] to Enkser from the tunnel at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~2}, {~3}, -{~4}] のトンネルから [{~1} Stable Key] を Enkser に持ち帰る",
    "role": "desc",
    "kind": "objective",
    "quest": "Stable Story",
@@ -128,7 +128,7 @@
   },
   "Stable Story#012": {
    "src": "Hey, have you found my [{~} Stable Key] yet? It should be somewhere in {p} to the east.",
-   "dst": "",
+   "dst": "やあ、[{~} Stable Key] は見つかったかい？東の {p} のどこかにあるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -138,7 +138,7 @@
   },
   "Stable Story#013": {
    "src": "Looking for able-bodied adventurers, preferably with no friends or",
-   "dst": "",
+   "dst": "体力自慢の冒険者募集、友達も家族も",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -148,7 +148,7 @@
   },
   "Stable Story#014": {
    "src": "Hey, it's you! Got my barn key yet?",
-   "dst": "",
+   "dst": "やあ、君か！納屋の鍵は？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -158,7 +158,7 @@
   },
   "Stable Story#015": {
    "src": "Ah, god bless. And I presume Betty did all the work while you just lounged around.",
-   "dst": "",
+   "dst": "おお、ありがたい。どうせ Betty が全部働いて、君はのんびりしてたんだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -168,7 +168,7 @@
   },
   "Stable Story#016": {
    "src": "Hm. Cows, huh? Ah who knows!? Life is full of mysterious, huh?",
-   "dst": "",
+   "dst": "ふむ。牛、だって？まあ誰にわかる！？人生は謎だらけだね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -178,7 +178,7 @@
   },
   "Stable Story#017": {
    "src": "Either way. As the great bovine above is my witness if I see the smallest bruise I will",
-   "dst": "",
+   "dst": "ともかく。天の偉大なる牛に誓って、少しでも痣を見つけたら私は",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -188,7 +188,7 @@
   },
   "Stable Story#018": {
    "src": "Nevermind all that. A horse I promised, and a horse you shall have. Much thanks to you.",
-   "dst": "",
+   "dst": "まあそれはいい。約束どおり馬をやろう、受け取りたまえ。本当にありがとう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",

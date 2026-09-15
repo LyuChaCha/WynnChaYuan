@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Cluck Cluck",
   "count": 10,
-  "translated": 0,
+  "translated": 10,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Cluck Cluck#000": {
    "src": "Talk to Nohno on {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "{p} の [-{~}, {~}, -{~}] にいる Nohno と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "Cluck Cluck",
@@ -18,7 +18,7 @@
   },
   "Cluck Cluck#001": {
    "src": "Hey, you aren't a chicken! Wait, you're a human! You can help me! Maybe you are the guy who helped my brother Yahya, but who knows, you humans all look the same to me.",
-   "dst": "",
+   "dst": "おい、お前ニワトリじゃないな！待て、人間だ！助けてくれ！兄弟の Yahya を助けた奴かもしれないが、人間はみんな同じ顔に見えるからな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -28,7 +28,7 @@
   },
   "Cluck Cluck#002": {
    "src": "I really love my chickens, but there is one that I just cannot control...",
-   "dst": "",
+   "dst": "俺はニワトリが大好きなんだが、どうしても手に負えない奴が一羽いて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -38,7 +38,7 @@
   },
   "Cluck Cluck#003": {
    "src": "His name is Cluckles, he was given to me by a man named Bob before he went to war, but when Bob never came back, Cluckles got angry...",
-   "dst": "",
+   "dst": "名前は Cluckles。Bob って男が戦争に行く前にくれたんだが、Bob が帰ってこなくて、Cluckles は怒り出したんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -48,7 +48,7 @@
   },
   "Cluck Cluck#004": {
    "src": "He's really dangerous to keep on my lovely island, so I keep him in my basement...",
-   "dst": "",
+   "dst": "俺の素敵な島に置いておくには危なすぎて、地下室に入れてるんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -58,7 +58,7 @@
   },
   "Cluck Cluck#005": {
    "src": "I want to take care of him, but my wife says it's too dangerous. Where's my wife you say? Oh, I think she's around here eating some grain.",
-   "dst": "",
+   "dst": "面倒を見てやりたいが、妻が危ないって言うんだ。妻はどこかって？ああ、その辺で穀物を食べてると思うよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -68,7 +68,7 @@
   },
   "Cluck Cluck#006": {
    "src": "Anyway, I need you to go down there and... Take care of him for me. I would really appreciate it.",
-   "dst": "",
+   "dst": "とにかく、下に行って…あいつの面倒を見てきてくれ。すごく助かるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -78,7 +78,7 @@
   },
   "Cluck Cluck#007": {
    "src": "Bring back [{~} Cluckles' Favourite Feather] to Nohno.",
-   "dst": "",
+   "dst": "[{~} Cluckles' Favourite Feather] を Nohno に持ち帰る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cluck Cluck",
@@ -88,7 +88,7 @@
   },
   "Cluck Cluck#008": {
    "src": "What is this?! His feather? What did you do to Cluckles?! I wanted you to take care of him, not kill him!",
-   "dst": "",
+   "dst": "何だこれ？！あいつの羽根？Cluckles に何をした？！面倒を見てと頼んだんだ、殺せなんて言ってない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",
@@ -98,7 +98,7 @@
   },
   "Cluck Cluck#009": {
    "src": "You monster! Leave this place now, and keep that feather to remind you of your hideous crime!",
-   "dst": "",
+   "dst": "この人でなし！今すぐ出ていけ。その羽根を持って、自分の非道な罪を忘れるな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cluck Cluck",

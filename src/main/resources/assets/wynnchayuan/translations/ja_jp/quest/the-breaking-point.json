@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Breaking Point",
   "count": 281,
-  "translated": 0,
+  "translated": 281,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Breaking Point#000": {
    "src": "Speak to General Elix at [{~}, {~}, -{~}] in {p}.",
-   "dst": "",
+   "dst": "{p} の [{~}, {~}, -{~}] で Elix 将軍と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -18,7 +18,7 @@
   },
   "The Breaking Point#001": {
    "src": "... Alright, let's see here... Private! Give me a report!",
-   "dst": "",
+   "dst": "…よし、どれどれ…二等兵！報告しろ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -28,7 +28,7 @@
   },
   "The Breaking Point#002": {
    "src": "Sir, our readings are postive! Stablility is at {~}, and shows no sign of dropping.",
-   "dst": "",
+   "dst": "はっ、数値は良好です！安定度は {~}、低下の兆候はありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -38,7 +38,7 @@
   },
   "The Breaking Point#003": {
    "src": "Readings are positive!",
-   "dst": "",
+   "dst": "数値は良好です！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -48,7 +48,7 @@
   },
   "The Breaking Point#004": {
    "src": "Excellent. Keep an eye on everything, and let me know if something comes up. Now, I need to go find...-",
-   "dst": "",
+   "dst": "よろしい。全体から目を離すな、何かあれば報告しろ。さて、私は探しに—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -58,7 +58,7 @@
   },
   "The Breaking Point#005": {
    "src": "Hmph. And who exactly are you? This site is off-limits to civilians.",
-   "dst": "",
+   "dst": "ふん。で、貴様は何者だ？ここは民間人立入禁止だぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -68,7 +68,7 @@
   },
   "The Breaking Point#006": {
    "src": "Adventurer. Of course. Well, as it stands, we're doing rather dangerous work here. I'll have to ask you to-",
-   "dst": "",
+   "dst": "冒険者か。だろうな。とにかく、ここではかなり危険な作業をしている。悪いが—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -78,7 +78,7 @@
   },
   "The Breaking Point#007": {
    "src": "... The stabilizer? We're doing rather dangerous work here, keeping the thing beyond that cliff passive. So, I'll have to ask you to-",
-   "dst": "",
+   "dst": "…安定装置？崖の向こうのアレをおとなしくさせておく、危険な作業だ。だから悪いが—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -88,7 +88,7 @@
   },
   "The Breaking Point#008": {
    "src": "General! Stability is dropping, and fast!",
-   "dst": "",
+   "dst": "将軍！安定度が急低下しています！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -98,7 +98,7 @@
   },
   "The Breaking Point#009": {
    "src": "General!",
-   "dst": "",
+   "dst": "将軍！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -108,7 +108,7 @@
   },
   "The Breaking Point#010": {
    "src": "What?! Of all times for it to-",
-   "dst": "",
+   "dst": "何だと？！よりによってこんな時に—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -118,7 +118,7 @@
   },
   "The Breaking Point#011": {
    "src": "Urgh... Soldiers, follow protocol! Secure what you can, and leave what you can't! And- you! I haven't forgotten about you. As soon as this all cleans up, we'll-",
-   "dst": "",
+   "dst": "くっ…兵士たち、手順通りにしろ！守れる物は守り、無理なら捨てろ！それと—貴様！忘れてはおらんぞ。片付いたらすぐに—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -128,7 +128,7 @@
   },
   "The Breaking Point#012": {
    "src": "Gah! This damned Colossus! What I wouldn't give to...",
-   "dst": "",
+   "dst": "くそっ！忌々しい Colossus め！何を差し出してでも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -138,7 +138,7 @@
   },
   "The Breaking Point#013": {
    "src": "... It's over. Walder! Survey the damages to our equipment! Morec! Take count of injuries around the base, make sure everyone's safe!",
-   "dst": "",
+   "dst": "…収まったか。Walder！機材の損傷を調べろ！Morec！基地の負傷者を数え、全員の無事を確かめろ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -148,7 +148,7 @@
   },
   "The Breaking Point#014": {
    "src": "Yes sir!",
-   "dst": "",
+   "dst": "はっ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -158,7 +158,7 @@
   },
   "The Breaking Point#015": {
    "src": "General! We came as soon as we could- we were down in the library and the exit co- Oh. Wow.",
-   "dst": "",
+   "dst": "将軍！急いで来ました—下の図書館にいたら出口が—あ。うわぁ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -168,7 +168,7 @@
   },
   "The Breaking Point#016": {
    "src": "Well, Rhay, you're here now, yes? What do you think, can you fix it? We'll need to get it working before-",
-   "dst": "",
+   "dst": "まあ、Rhay、来てくれたな？どうだ、直せるか？手遅れになる前に動かさねば—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -178,7 +178,7 @@
   },
   "The Breaking Point#017": {
    "src": "Can I- No, of course I can't fix it! Not on my own, especially since we don't have the proper equipment around here! Ugh, how long has it even been since last time?",
-   "dst": "",
+   "dst": "直せるか—いや、無理に決まってる！一人じゃ無理だし、ここにはまともな設備もないんだから！ああもう、前回からどれくらい経った？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -188,7 +188,7 @@
   },
   "The Breaking Point#018": {
    "src": "It has been... three days... give or take. Rhay... you know we can't keep-",
-   "dst": "",
+   "dst": "もう…三日…ほどになる。Rhay…このまま続けるわけには—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -198,7 +198,7 @@
   },
   "The Breaking Point#019": {
    "src": "The stabilizer has been working so far, Ineos! It's some of the finest technology our province has had to offer, and it has been working!",
-   "dst": "",
+   "dst": "今まで安定装置は機能してたでしょ、Ineos！うちの地方の最高峰の技術で、ちゃんと機能してきたんだから！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -208,7 +208,7 @@
   },
   "The Breaking Point#020": {
    "src": "Rhay, you know... as well as I do... that it is getting worse. The Protector is... growing resistant to... your machines. We need... a new plan.",
-   "dst": "",
+   "dst": "Rhay…君も私と同じく…分かっているはずだ…悪化していると。守護者は…君の機械に…耐性をつけつつある。新たな…策が必要だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -218,7 +218,7 @@
   },
   "The Breaking Point#021": {
    "src": "Yes, well, as soon as you come up with one, I'll be glad to hear it! But so far, you've barely gotten anything-",
-   "dst": "",
+   "dst": "ええ、何か思いついたらぜひ聞かせて！でも今まで、ろくに何も—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -228,7 +228,7 @@
   },
   "The Breaking Point#022": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -238,7 +238,7 @@
   },
   "The Breaking Point#023": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -248,7 +248,7 @@
   },
   "The Breaking Point#024": {
    "src": "... Sorry. I'm sorry, I didn't mean that. General, to answer your question... The stabilizer itself is damaged, but you should have what's needed to repair it here.",
-   "dst": "",
+   "dst": "…ごめん。ごめんなさい、本気じゃなかった。将軍、お答えします…安定装置本体は損傷してますが、修理に必要な物はここに揃っているはずです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -258,7 +258,7 @@
   },
   "The Breaking Point#025": {
    "src": "The issue is that the controls look like they're fried! And we don't have any replacement parts stored here. We'll have to travel back to Corkus, and...",
-   "dst": "",
+   "dst": "問題は制御装置が焼き切れてるみたいなこと！ここに交換部品の備蓄はないし、Corkus まで戻らないと…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -268,7 +268,7 @@
   },
   "The Breaking Point#026": {
    "src": "...Right. You. You're an adventurer, yes? And you appear to be well-equipped. Then you'll be traveling to Corkus with Rhay, and assist with whatever is needed there.",
-   "dst": "",
+   "dst": "…そうか。貴様。冒険者だったな？装備も整っているようだ。では Rhay と共に Corkus へ行き、向こうで必要なことを手伝え。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -278,7 +278,7 @@
   },
   "The Breaking Point#027": {
    "src": "Huh?",
-   "dst": "",
+   "dst": "え？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -288,7 +288,7 @@
   },
   "The Breaking Point#028": {
    "src": "Wait, General-... Right. Alright. In that case... I'll give you time to prepare. We'll take the Hot Air Balloon to travel to Corkus, so I'll meet you there. We don't have any time to waste.",
-   "dst": "",
+   "dst": "待ってください、将軍—…はい。分かりました。それなら…準備の時間をあげる。Corkus へは熱気球で行くから、そこで落ち合おう。無駄にできる時間はないよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -298,7 +298,7 @@
   },
   "The Breaking Point#029": {
    "src": "And I will... return to the library. I trust... you will succeed... But we must... prepare for the... worst.",
-   "dst": "",
+   "dst": "私は…図書館に戻る。君たちなら…成功すると信じている…だが…最悪にも…備えねば。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -308,7 +308,7 @@
   },
   "The Breaking Point#030": {
    "src": "Alright...",
-   "dst": "",
+   "dst": "わかった…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -318,7 +318,7 @@
   },
   "The Breaking Point#031": {
    "src": "Meet Rhay at the Hot Air Balloon at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の熱気球で Rhay と合流する",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -328,7 +328,7 @@
   },
   "The Breaking Point#032": {
    "src": "Ah, you're here! Well, if you're ready, then we'd best be off. Just hop aboard this balloon, and the captain will take us where we need to go.",
-   "dst": "",
+   "dst": "あ、来たね！準備ができてるなら、すぐ出発しよう。この気球に乗って。船長が目的地まで連れてってくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -338,7 +338,7 @@
   },
   "The Breaking Point#033": {
    "src": "I can tell you more while we travel, but we need to get going quick. There's no telling how much time we have before-",
-   "dst": "",
+   "dst": "詳しいことは道中で話せるけど、とにかく急がないと。あとどれだけ時間があるか—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -348,7 +348,7 @@
   },
   "The Breaking Point#034": {
    "src": "Right, right. Don't mind me, I'm just a little on edge, for... well, obvious reasons. Just hop aboard.",
-   "dst": "",
+   "dst": "そうそう。気にしないで、ちょっと気が立ってるだけ…まあ、理由は明らかだよね。とにかく乗って。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -358,7 +358,7 @@
   },
   "The Breaking Point#035": {
    "src": "Travel to {p} via the Hot Air Balloon at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の熱気球で {p} へ向かう",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -368,7 +368,7 @@
   },
   "The Breaking Point#036": {
    "src": "Well, there it is! The Canyon Colossus itself. The source of all our problems here at {p}.",
-   "dst": "",
+   "dst": "ほら、あれ！あれが Canyon Colossus そのもの。ここ {p} のあらゆる問題の元凶だよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -378,7 +378,7 @@
   },
   "The Breaking Point#037": {
    "src": "So! How much do you already know? I know we dragged you into this without telling you much, so... I can fill you in on the details.",
-   "dst": "",
+   "dst": "さて！どこまで知ってる？ろくに説明もせず巻き込んじゃったし…詳しく教えてあげる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -388,7 +388,7 @@
   },
   "The Breaking Point#038": {
    "src": "Oh, he did? Right, that makes sense. Well, you're right in that it's the source of the earthquakes, but there's more to it than that.",
-   "dst": "",
+   "dst": "え、あの人が話したの？なるほどね。うん、地震の原因なのは確かだけど、それだけじゃないんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -398,7 +398,7 @@
   },
   "The Breaking Point#039": {
    "src": "You've seen the {p}, right? Heard of the Fracturing. From what I can tell, what happened to that region a thousand years ago is happening again, here and now.",
-   "dst": "",
+   "dst": "{p} は見たことあるよね？大分裂の話も聞いたでしょ。私の見る限り、千年前にあの地域で起きたことが、今ここで再び起きてる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -408,7 +408,7 @@
   },
   "The Breaking Point#040": {
    "src": "Yes, exactly. It's been malfunctioning for a long time now, and it's starting to tear the canyon apart. That's where we come in.",
-   "dst": "",
+   "dst": "そう、その通り。ずっと前から暴走してて、峡谷を引き裂き始めてる。そこで私たちの出番ってわけ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -418,7 +418,7 @@
   },
   "The Breaking Point#041": {
    "src": "Well... To start with, it's an ancient thing. It was built long before even the doguns can remember, and they've lived in this region for thousands of years.",
-   "dst": "",
+   "dst": "ええと…まず、あれは古代の存在なんだ。Dogun の記憶より昔に造られた。彼らはこの地に何千年も住んでるのにね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -428,7 +428,7 @@
   },
   "The Breaking Point#042": {
    "src": "According to Ineos, the doguns used to be responsible for keeping it calm, but ever since the dwarves came in and started their war, that knowledge has been lost to time.",
-   "dst": "",
+   "dst": "Ineos によると、昔は Dogun があれを鎮める役目を担ってた。でもドワーフが来て戦争を始めてから、その知識は失われてしまったの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -438,7 +438,7 @@
   },
   "The Breaking Point#043": {
    "src": "Which is... a problem! {p} has been malfunctioning for hundreds of years, and it's reaching its breaking point. If we don't stop it, it'll tear the canyon apart.",
-   "dst": "",
+   "dst": "それが…問題なの！{p} は何百年も暴走してて、限界点に近づいてる。止めなきゃ、峡谷ごと引き裂かれちゃう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -448,7 +448,7 @@
   },
   "The Breaking Point#044": {
    "src": "Oh? So you've traveled the canyon, then. Yeah, then you've seen how the canyon twists and changes.",
-   "dst": "",
+   "dst": "へえ？じゃあ峡谷を旅したんだ。なら、峡谷がねじれて形を変えるのを見たよね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -458,7 +458,7 @@
   },
   "The Breaking Point#045": {
    "src": "It destroys peoples' homes, it traps them deep within the maze-like valleys... And, more recently, it has been tearing a hole into the void.",
-   "dst": "",
+   "dst": "人々の家を壊し、迷路みたいな谷の奥に閉じ込める…それに最近は、虚無に穴まで開けてるの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -468,7 +468,7 @@
   },
   "The Breaking Point#046": {
    "src": "This thing is ancient, and we don't know how it works. The best we can do is try to keep it from reaching its breaking point, and prevent the canyon from meeting the same fate as the {p}.",
-   "dst": "",
+   "dst": "あれは古代の代物で、仕組みも分からない。できるのは限界点に達するのを防いで、峡谷が {p} と同じ運命を辿らないようにすることだけ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -478,7 +478,7 @@
   },
   "The Breaking Point#047": {
    "src": "So, Gavel's government contacted us in Corkus some time ago, requesting our help to deal with this threat.",
-   "dst": "",
+   "dst": "それで、少し前に Gavel の政府が Corkus に連絡してきて、この脅威への協力を求めてきたの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -488,7 +488,7 @@
   },
   "The Breaking Point#048": {
    "src": "Our council agreed, and we got to work designing a machine that could replicate the dogun magic that pacified that Colossus long ago.",
-   "dst": "",
+   "dst": "議会は承諾して、私たちは機械の設計に取りかかった。昔あの Colossus を鎮めた Dogun の魔法を再現する機械をね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -498,7 +498,7 @@
   },
   "The Breaking Point#049": {
    "src": "We've had Ineos' help on that front. He and I have been working here in {p} to ensure things are running smoothly. Which... evidently, they are not.",
-   "dst": "",
+   "dst": "その点では Ineos に協力してもらってる。彼と私は {p} で順調に動くよう見張ってきた。まあ…見ての通り、順調じゃないけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -508,7 +508,7 @@
   },
   "The Breaking Point#050": {
    "src": "... We'll be fine! We're going to meet up with my husband at Corkus, and he'll know what to do. He always does.",
-   "dst": "",
+   "dst": "…大丈夫！Corkus で夫と合流するから、どうすればいいか分かるはず。あの人はいつもそう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -518,7 +518,7 @@
   },
   "The Breaking Point#051": {
    "src": "Our people there will be able to get us the parts we need to repair the device. This... this isn't the first it's exploded. I had hoped that this time we would have gotten it stable, but...",
-   "dst": "",
+   "dst": "向こうの仲間なら、装置の修理に要る部品を用意できる。これ…爆発したのは初めてじゃないんだ。今度こそ安定させられたと思ってたのに…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -528,7 +528,7 @@
   },
   "The Breaking Point#052": {
    "src": "But, hey! We have it under control. We're always able to repair it quickly enough to keep it running while the Colossus is active.",
-   "dst": "",
+   "dst": "でも、ほら！ちゃんと対処できてる。Colossus が活動してる間も動かし続けられるよう、いつも素早く直してきたから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -538,7 +538,7 @@
   },
   "The Breaking Point#053": {
    "src": "Oh! Yeah. He's the one responsible for the design and production of this device. He's got a talent for designing these sorts of things, without him... well, we'd be in a much worse situation than we are now.",
-   "dst": "",
+   "dst": "あ！うん。この装置の設計と製造を担当したのが彼なの。こういう物を設計する才能があって、彼がいなかったら…今よりずっとひどい状況だったはず。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -548,7 +548,7 @@
   },
   "The Breaking Point#054": {
    "src": "I'll be glad to see him again. It's been a while since I last had to travel to Corkus, and... Well, I'm confident he'll know what to do here. He always does.",
-   "dst": "",
+   "dst": "また会えるのが嬉しい。Corkus に行くのは久しぶりだし…うん、あの人ならきっとどうにかしてくれる。いつもそうだから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -558,7 +558,7 @@
   },
   "The Breaking Point#055": {
    "src": "... Right! Hey, it looks like we're almost there. We'll be able to get this all sorted out, and we'll be back to {p} in no time.",
-   "dst": "",
+   "dst": "…よし！ほら、もうすぐ着くみたい。全部片付けて、すぐに {p} へ戻れるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -568,7 +568,7 @@
   },
   "The Breaking Point#056": {
    "src": "Find the contact in the factory at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の工場で連絡役を見つける",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -578,7 +578,7 @@
   },
   "The Breaking Point#057": {
    "src": "Alright, let's just head on in. My husband should be around here somewhere...",
-   "dst": "",
+   "dst": "よし、中に入ろう。夫はこのへんにいるはずなんだけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -588,7 +588,7 @@
   },
   "The Breaking Point#058": {
    "src": "Rhay, love! You're back already? Our next routine maitenance isn't for another- Wait, {u}? What are you doing here?",
-   "dst": "",
+   "dst": "Rhay、ダーリン！もう戻ったの？次の定期整備はまだ先—待って、{u}？どうしてここに？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -598,7 +598,7 @@
   },
   "The Breaking Point#059": {
    "src": "I... You two know each other?",
-   "dst": "",
+   "dst": "え…二人とも知り合い？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -608,7 +608,7 @@
   },
   "The Breaking Point#060": {
    "src": "Of course we do - they're the one who helped me with all the Factory stuff! How did you two meet?",
-   "dst": "",
+   "dst": "もちろん—工場の件で全部手伝ってくれたのがこの人だよ！二人はどうやって知り合ったの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -618,7 +618,7 @@
   },
   "The Breaking Point#061": {
    "src": "They just showed up at {p} and agreed to help us with... - Why didn't you bring this up earlier?",
-   "dst": "",
+   "dst": "{p} に突然現れて、手伝うって言ってくれて…—なんで早く言ってくれなかったの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -628,7 +628,7 @@
   },
   "The Breaking Point#062": {
    "src": "It must have...- right. Well, if anything that makes you even more qualified to help us out, I guess! I can't believe I didn't recognize you...?",
-   "dst": "",
+   "dst": "きっと…—そっか。まあ、それならなおさら頼りになるってことかな！気づかなかったなんて信じられない…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -638,7 +638,7 @@
   },
   "The Breaking Point#063": {
    "src": "Okay, right, back to the question - what are you two doing here already? There's another few days or so until our next routine maitenance, isn't there?",
-   "dst": "",
+   "dst": "よし、話を戻そう—二人ともなんでもう来たの？次の定期整備まで、まだ何日かあるよね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -648,7 +648,7 @@
   },
   "The Breaking Point#064": {
    "src": "I did send you an invite! I gave it to... you know, that that one captain who ferries people around! But then you didn't show up to the wedding, so I guess it didn't reach you...",
-   "dst": "",
+   "dst": "招待状は送ったんだよ！ほら…あの、人をあちこち運んでる船長に渡したの！でも結婚式に来なかったから、届かなかったんだろうね…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -658,7 +658,7 @@
   },
   "The Breaking Point#065": {
    "src": "Look, you're a hard person to reach! You've been all over the world at this point, including {p} of all places- speaking of, why are you two here?",
-   "dst": "",
+   "dst": "だって、あなたは捕まえにくいんだもん！世界中を回ってて、よりによって {p} にまで—そうだ、二人はなんでここに？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -668,7 +668,7 @@
   },
   "The Breaking Point#066": {
    "src": "!!!",
-   "dst": "",
+   "dst": "！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -678,7 +678,7 @@
   },
   "The Breaking Point#067": {
    "src": "Right! Right. Got a little distracted there... Uh, we've run into a problem back at {p}. We experienced an undetected seismic event, and the device was heavily damaged.",
-   "dst": "",
+   "dst": "そう！そうだった。ちょっと気が散っちゃって…ええと、{p} で問題が起きたの。探知できなかった地震が起きて、装置が大破しちゃった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -688,7 +688,7 @@
   },
   "The Breaking Point#068": {
    "src": "We should be able to finish most of the repairs with what materials we have there, but we're missing a Magmaflux Capacitor for the control panel.",
-   "dst": "",
+   "dst": "修理はほとんど向こうの資材で済むはずだけど、制御盤用の Magmaflux コンデンサーが足りないの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -698,7 +698,7 @@
   },
   "The Breaking Point#069": {
    "src": "... Oh. That's going to be a problem. We haven't had an opportunity to make more parts yet - it hasn't been long enough since our last maitenance. So... I'm not sure what we-",
-   "dst": "",
+   "dst": "…あー。それは困ったな。まだ部品を作り足す機会がなくて—前回の整備からあまり経ってないし。だから…どうすれば—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -708,7 +708,7 @@
   },
   "The Breaking Point#070": {
    "src": "I overheard the conversation from over there- good to see you Rhay, by the way- But. We may not have any capacitors left up here, but I know where you can get one.",
-   "dst": "",
+   "dst": "向こうで話が聞こえてね—ところで、久しぶりだね Rhay—さて。ここにはもうコンデンサーは残っていないが、手に入る場所なら知ってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -718,7 +718,7 @@
   },
   "The Breaking Point#071": {
    "src": "We repurposed this factory for our needs, but it was built here to process resources from the mines below.",
-   "dst": "",
+   "dst": "この工場は私たち用に改造したが、元は下の鉱山の資源を処理するために建てられたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -728,7 +728,7 @@
   },
   "The Breaking Point#072": {
    "src": "Though it was discontinued, it's still very likely that there are still miner mechs down there- and some of the more powerful models made use of very similar circuits to the capacitors we use today.",
-   "dst": "",
+   "dst": "もう稼働していないが、下には採掘メカがまだ残っている可能性が高い—上位モデルの一部は、今のコンデンサーによく似た回路を使っていた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -738,7 +738,7 @@
   },
   "The Breaking Point#073": {
    "src": "... You're right! If they're still down there, we should be able to scrap one of the bots and reuse its circuits. {u}, we can send you down into the mines to find what we need, while we prepare up here!",
-   "dst": "",
+   "dst": "…その通り！まだ下にいるなら、ボットを一体解体して回路を再利用できるはず。{u}、必要な物を探しに鉱山へ降りてもらえる？その間に私たちは上で準備するから！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -748,7 +748,7 @@
   },
   "The Breaking Point#074": {
    "src": "Alright... Good luck down there! Find the bot, destroy it, and bring the capacitor back up! Just step on the platform in the middle of the factory when you're ready.",
-   "dst": "",
+   "dst": "よし…気をつけてね！ボットを見つけて壊して、コンデンサーを持ち帰って！準備ができたら工場の中央にある台に乗って。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -758,7 +758,7 @@
   },
   "The Breaking Point#075": {
    "src": "Okay. That's fine, just make it quick! You know we can't waste any time here.",
-   "dst": "",
+   "dst": "分かった、でも急いでね！時間は無駄にできないよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -768,7 +768,7 @@
   },
   "The Breaking Point#076": {
    "src": "Retrieve the part from the cave at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の洞窟で部品を回収する",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -778,7 +778,7 @@
   },
   "The Breaking Point#077": {
    "src": "Door opening in {~}...",
-   "dst": "",
+   "dst": "扉が開くまで {~}…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -788,7 +788,7 @@
   },
   "The Breaking Point#078": {
    "src": "{~}...",
-   "dst": "",
+   "dst": "{~}…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -798,7 +798,7 @@
   },
   "The Breaking Point#079": {
    "src": "{~}...",
-   "dst": "",
+   "dst": "{~}…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -808,7 +808,7 @@
   },
   "The Breaking Point#080": {
    "src": "INTRUDER DETECTED. HOSTILE ENGAGEMENT AUTHORISED.",
-   "dst": "",
+   "dst": "侵入者ヲ検知。敵対行動ヲ許可。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -818,7 +818,7 @@
   },
   "The Breaking Point#081": {
    "src": "DEPLOYING SECONDARY ANTI-INTRUDER MEASURES.",
-   "dst": "",
+   "dst": "第二次侵入者対策ヲ展開。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -828,7 +828,7 @@
   },
   "The Breaking Point#082": {
    "src": "DIVERTING ALL AVAILABLE UNITS TO HALT INTRUDER.",
-   "dst": "",
+   "dst": "全稼働ユニットヲ侵入者阻止ニ転用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -838,7 +838,7 @@
   },
   "The Breaking Point#083": {
    "src": "THIS IS A RESTRICTED AREA. REQUESTING AUTHORISATION FOR USE OF LETHAL FORCE AGAINST INTRUDER.",
-   "dst": "",
+   "dst": "ココハ立入制限区域デアル。侵入者ニ対スル致死的武力ノ使用許可ヲ要請。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -848,7 +848,7 @@
   },
   "The Breaking Point#084": {
    "src": "AUTHORISATION GRANTED.",
-   "dst": "",
+   "dst": "許可ヲ承認。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -858,7 +858,7 @@
   },
   "The Breaking Point#085": {
    "src": "DIVERTING MINER MECHS TO HALT INTRUDER.",
-   "dst": "",
+   "dst": "採掘メカヲ侵入者阻止ニ転用。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -868,7 +868,7 @@
   },
   "The Breaking Point#086": {
    "src": "Return to the hot air balloon at [-{~}, {~}, -{~}] with the Magmaflux Capacitor.",
-   "dst": "",
+   "dst": "Magmaflux コンデンサーを持って [-{~}, {~}, -{~}] の熱気球に戻る。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -878,7 +878,7 @@
   },
   "The Breaking Point#087": {
    "src": "Amazing work! I'll get us back to {p} with that capacitor as quick as possible.",
-   "dst": "",
+   "dst": "お手柄！そのコンデンサーを持って、大急ぎで {p} に戻るよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -888,7 +888,7 @@
   },
   "The Breaking Point#088": {
    "src": "Good to see you again, {u}. Good luck with the colossus. And Rhay... come home as soon as you can.",
-   "dst": "",
+   "dst": "また会えて嬉しかったよ、{u}。Colossus のこと、頑張って。それと Rhay…できるだけ早く帰ってきてね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -898,7 +898,7 @@
   },
   "The Breaking Point#089": {
    "src": "Fly safe, both of you.",
-   "dst": "",
+   "dst": "二人とも、気をつけて。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -908,7 +908,7 @@
   },
   "The Breaking Point#090": {
    "src": "Return to General Elix with the Corkian Stabiliser",
-   "dst": "",
+   "dst": "Corkus の安定装置を持って Elix 将軍のもとへ戻る",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -918,7 +918,7 @@
   },
   "The Breaking Point#091": {
    "src": "Well... that went better than expected, really. I still can't believe you didn't tell me you already knew Maxie.",
-   "dst": "",
+   "dst": "ふう…正直、思ったよりうまくいったね。Maxie と知り合いだって黙ってたなんて、まだ信じられない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -928,7 +928,7 @@
   },
   "The Breaking Point#092": {
    "src": "Oh, wow. It looks like they've managed to fix up the machine pretty well, all things considered. Just this part left to get it running again...",
-   "dst": "",
+   "dst": "わあ。状況を考えれば、みんな機械をかなりちゃんと直してくれたみたい。あとはこの部品で再起動だ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -938,7 +938,7 @@
   },
   "The Breaking Point#093": {
    "src": "Hmph. Rhay, there you are. Seeing as you've returned, I gather everything went smoothly at Corkus?",
-   "dst": "",
+   "dst": "ふん。Rhay、戻ったか。戻ったということは、Corkus では首尾よくいったのだな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -948,7 +948,7 @@
   },
   "The Breaking Point#094": {
    "src": "Smoothly enough, General! We have what we need to repair the control panel. We'll be able to get the stabilizer running again!",
-   "dst": "",
+   "dst": "上々です、将軍！制御盤の修理に必要な物は手に入りました。安定装置を再稼働できます！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -958,7 +958,7 @@
   },
   "The Breaking Point#095": {
    "src": "Well?! What are you waiting for? Finish the repairs, we can't afford to lose any time with this damned Colossus looming over us.",
-   "dst": "",
+   "dst": "ならば？！何を待っている？修理を終わらせろ。この忌々しい Colossus が迫っている今、一刻も無駄にはできん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -968,7 +968,7 @@
   },
   "The Breaking Point#096": {
    "src": "Yes, sir! Alright. {u}, just slot the capacitor in right... there. I'll make sure it runs smoothly.",
-   "dst": "",
+   "dst": "はい！よし。{u}、コンデンサーを…そこに差し込んで。うまく動くよう私が見ておくから。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -978,7 +978,7 @@
   },
   "The Breaking Point#097": {
    "src": "There we are. Now, let's get this thing running again! Walder, keep an eye on stability! And... Rhay. You're confident this will work?",
-   "dst": "",
+   "dst": "よし。では、こいつを再起動するぞ！Walder、安定度を見張れ！それと…Rhay。本当にうまくいくのだな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -988,7 +988,7 @@
   },
   "The Breaking Point#098": {
    "src": "I-I'm sure. This is our last chance. We have to hold out hope that the stabilizer will hold.",
-   "dst": "",
+   "dst": "は、はい。これが最後のチャンスです。安定装置が持ちこたえると信じるしかありません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -998,7 +998,7 @@
   },
   "The Breaking Point#099": {
    "src": "Alright, alright... It's now or never... Hold, stabilizer, hold!",
-   "dst": "",
+   "dst": "よし、よし…今しかない…耐えて、安定装置、耐えて！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1008,7 +1008,7 @@
   },
   "The Breaking Point#100": {
    "src": "... Oh. That's... that's it, then. It's over. We failed.",
-   "dst": "",
+   "dst": "…あ。これで…終わりか。もう駄目。失敗したんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1018,7 +1018,7 @@
   },
   "The Breaking Point#101": {
    "src": "I... am sorry, Rhay. I had... hoped it would work. In truth... I do not have... a plan... either.",
-   "dst": "",
+   "dst": "私は…すまない、Rhay。成功を…願っていた。実を言えば…私にも…策はない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1028,7 +1028,7 @@
   },
   "The Breaking Point#102": {
    "src": "The Elders... would have known... what to do... But they are... long gone. Nothing but... ruins remain.",
-   "dst": "",
+   "dst": "長老たちなら…どうすべきか…分かっただろう…だが彼らは…とうにいない。残るは…廃墟のみ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1038,7 +1038,7 @@
   },
   "The Breaking Point#103": {
    "src": "The Elders... They were... the greatest... of doguns. As old... as the oldest stones... and wise... as the earth itself...",
-   "dst": "",
+   "dst": "長老たちは…Dogun で…最も偉大な者たち。最古の岩ほど…古く…大地そのもののように…賢かった…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1048,7 +1048,7 @@
   },
   "The Breaking Point#104": {
    "src": "They were capable... of magic... beyond what any... of us could achieve. They alone... could calm our... Protector.",
-   "dst": "",
+   "dst": "彼らは…我々の誰にも…及ばぬ…魔法を操った。我らが…守護者を鎮められたのは…彼らだけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1058,7 +1058,7 @@
   },
   "The Breaking Point#105": {
    "src": "They were... sealed away. Frozen in... the deepest... of ice. When the dwarves... slew Garaheth... the Elders... fell with him.",
-   "dst": "",
+   "dst": "彼らは…封じられた。最も深い…氷の中に…凍りついて。ドワーフが…Garaheth を倒した時…長老たちも…共に倒れた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1068,7 +1068,7 @@
   },
   "The Breaking Point#106": {
    "src": "Such atrocities... The war... My people... But it is not... to dwell on, now. There are... more important... things at hand.",
-   "dst": "",
+   "dst": "あのような残虐…あの戦争…我が同胞…だが今は…思い悩む時ではない。目の前に…もっと大事な…ことがある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1078,7 +1078,7 @@
   },
   "The Breaking Point#107": {
    "src": "I... I did not... know of this. My people... are free? How long... has it been... since I have seen... my home?",
-   "dst": "",
+   "dst": "私は…知らなかった。我が同胞が…自由に？故郷を…最後に見てから…どれほど経ったのだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1088,7 +1088,7 @@
   },
   "The Breaking Point#108": {
    "src": "You... Adventurer. We must... speak to my people. Our chieftain... will know... how we may free... the Elders.",
-   "dst": "",
+   "dst": "君…冒険者よ。同胞に…会わねばならぬ。族長なら…長老を解き放つ…術を知っているはず。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1098,7 +1098,7 @@
   },
   "The Breaking Point#109": {
    "src": "If there is a chance... We have to take it. Ineos, {u}, take the balloon. We'll do whatever we can here. Now, go! There's no time to waste!",
-   "dst": "",
+   "dst": "わずかでも望みがあるなら…賭けるしかない。Ineos、{u}、気球に乗れ。こちらはできる限りのことをする。さあ行け！時間がないぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1108,7 +1108,7 @@
   },
   "The Breaking Point#110": {
    "src": "Meet Ineos and Rhay at the Hot Air Balloon at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の熱気球で Ineos と Rhay と合流する。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -1118,7 +1118,7 @@
   },
   "The Breaking Point#111": {
    "src": "I have never... seen the Heights... from above. I wonder... if their glow... holds the same strength... it does from below...",
-   "dst": "",
+   "dst": "Heights を…空から…見たことはない。その輝きは…下から見るのと…同じ強さを…保っているだろうか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1128,7 +1128,7 @@
   },
   "The Breaking Point#112": {
    "src": "I only hope... the Elders... are not gone... for good. We greatly need... their wisdom.",
-   "dst": "",
+   "dst": "ただ願う…長老たちが…永遠に…失われてはいないことを。我々には…彼らの知恵が…必要だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1138,7 +1138,7 @@
   },
   "The Breaking Point#113": {
    "src": "Ah... I believe us... to be landing...",
-   "dst": "",
+   "dst": "ああ…着陸する…ようだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1148,7 +1148,7 @@
   },
   "The Breaking Point#114": {
    "src": "Travel to {p} with Ineos via the Hot Air Balloon at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の熱気球で Ineos と共に {p} へ向かう",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -1158,7 +1158,7 @@
   },
   "The Breaking Point#115": {
    "src": "... Hello. What a... strange sight... to see you landing... at our village... in such a contraption...",
-   "dst": "",
+   "dst": "…やあ。何とも…奇妙な光景だ…そのような乗り物で…我らの村に…降りてくるとは…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1168,7 +1168,7 @@
   },
   "The Breaking Point#116": {
    "src": "And... is that... Ineos? We thought... the dwarves... had turned you into rubble...",
-   "dst": "",
+   "dst": "しかも…あれは…Ineos か？ドワーフに…瓦礫にされたと…思っていた…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1178,7 +1178,7 @@
   },
   "The Breaking Point#117": {
    "src": "I escaped... It is a long... story, Korzim. We do not... have time. Where is... your father?",
-   "dst": "",
+   "dst": "逃げ延びたのだ…長い話になる、Korzim。時間が…ない。君の父上は…どこに？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1188,7 +1188,7 @@
   },
   "The Breaking Point#118": {
    "src": "He is... below. They are... freeing the frozen... in New Taloka. Why do you... wish to speak... with him?",
-   "dst": "",
+   "dst": "父は…下だ。New Taloka で…凍った者たちを…解放している。なぜ…父と話を…したい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1198,7 +1198,7 @@
   },
   "The Breaking Point#119": {
    "src": "The Protector... is angered. We must find... the Elders. They will know... how to calm it.",
-   "dst": "",
+   "dst": "守護者が…怒っている。長老たちを…探さねばならぬ。彼らなら…鎮め方を知っている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1208,7 +1208,7 @@
   },
   "The Breaking Point#120": {
    "src": "The... Protector... I understand. I will... bring you two... to him. Sidio... Raetin... I leave you two... in charge.",
-   "dst": "",
+   "dst": "守…護者が…分かった。二人を…父のもとへ…連れていこう。Sidio…Raetin…ここは二人に…任せる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1218,7 +1218,7 @@
   },
   "The Breaking Point#121": {
    "src": "Now, let us... travel. Through flame... and through stone...",
-   "dst": "",
+   "dst": "では…行こう。炎を抜け…岩を抜けて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1228,7 +1228,7 @@
   },
   "The Breaking Point#122": {
    "src": "Speak to {p}'s King and the Dogun Chieftain at New Taloka at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "New Taloka の [{~}, {~}, -{~}] で {p} の王と Dogun の族長と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -1238,7 +1238,7 @@
   },
   "The Breaking Point#123": {
    "src": "We are... here. Taloka was... one of the first to fall... in the war. We have been... working with the dwarves... to restore it.",
-   "dst": "",
+   "dst": "着いた…Taloka は…戦争で最初に…陥落した地の一つ。我々は…ドワーフと共に…再建を進めている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1248,7 +1248,7 @@
   },
   "The Breaking Point#124": {
    "src": "Are we all ready?",
-   "dst": "",
+   "dst": "皆、準備はいいか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1258,7 +1258,7 @@
   },
   "The Breaking Point#125": {
    "src": "Ready...",
-   "dst": "",
+   "dst": "準備…よし…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1268,7 +1268,7 @@
   },
   "The Breaking Point#126": {
    "src": "Ready!",
-   "dst": "",
+   "dst": "準備よし！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1278,7 +1278,7 @@
   },
   "The Breaking Point#127": {
    "src": "Very well. Begin on three. One... Two... Three!",
-   "dst": "",
+   "dst": "よろしい。三つ数えたら始めよ。一…二…三！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1288,7 +1288,7 @@
   },
   "The Breaking Point#128": {
    "src": "Beginning reheating cycle! Stand back from the subject.",
-   "dst": "",
+   "dst": "再加熱サイクル開始！対象から離れてください。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1298,7 +1298,7 @@
   },
   "The Breaking Point#129": {
    "src": "... Where... am... I? How long... has it... been...?",
-   "dst": "",
+   "dst": "…ここは…どこだ？どれほど…経った…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1308,7 +1308,7 @@
   },
   "The Breaking Point#130": {
    "src": "...Dwarf... You... you froze me... I will... I will...!",
-   "dst": "",
+   "dst": "…ドワーフ…貴様…私を凍らせた…許さん…許さんぞ…！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1318,7 +1318,7 @@
   },
   "The Breaking Point#131": {
    "src": "Calm yourself... Delg. Our war... has ended. We are... freed. You have been... freed.",
-   "dst": "",
+   "dst": "落ち着け…Delg。我らの戦争は…終わった。我らは…自由だ。お前も…解放されたのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1328,7 +1328,7 @@
   },
   "The Breaking Point#132": {
    "src": "... Freedom? Hundreds... of years... of war... And we are... free?",
-   "dst": "",
+   "dst": "…自由？何百年も…戦い続けて…我らは…自由に？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1338,7 +1338,7 @@
   },
   "The Breaking Point#133": {
    "src": "Yes. We are free... to roam our home... once more. Edac... Escort Delg... and help him re-adjust... to the heights.",
-   "dst": "",
+   "dst": "そうだ。再び…故郷を…歩けるのだ。Edac…Delg を送り…Heights に…慣れさせてやれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1348,7 +1348,7 @@
   },
   "The Breaking Point#134": {
    "src": "Ah, {u}! It's good to see you again. We haven't seen you around here since... since the end of it.",
-   "dst": "",
+   "dst": "おお、{u}！また会えて嬉しいよ。あの…あの戦いが終わって以来、この辺りでは見かけなかったね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1358,7 +1358,7 @@
   },
   "The Breaking Point#135": {
    "src": "Yes. We have been... hard at work... these past weeks. Taloka will soon... stand once more. And many... of our sealed bretheren... have been returned to life.",
-   "dst": "",
+   "dst": "うむ。この数週間…我々は…懸命に働いた。Taloka は…じきに再び…立ち上がる。封じられた…多くの同胞も…命を取り戻した。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1368,7 +1368,7 @@
   },
   "The Breaking Point#136": {
    "src": "Ah, but we can talk more about that later. Tell me, what brings you here today? Is there something you need from us?",
-   "dst": "",
+   "dst": "ああ、その話はまた後にしよう。さて、今日はどんな用件かな？何か我々に頼みたいことでも？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1378,7 +1378,7 @@
   },
   "The Breaking Point#137": {
    "src": "The situtation... is dire. The Great Protector... has been left alone... for far too long. We need... the wisdom... of our Elders. Do you know... where they are sealed?",
-   "dst": "",
+   "dst": "事態は…深刻だ。偉大なる守護者は…あまりに長く…放置された。長老たちの…知恵が…必要なのだ。彼らが…どこに封じられているか…知っているか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1388,7 +1388,7 @@
   },
   "The Breaking Point#138": {
    "src": "The Elders?! Yes, we know where they are sealed. However, retrieving them is no simple task. It would take us years to break past the defenses, and we have countless other doguns to release first.",
-   "dst": "",
+   "dst": "長老たちだと？！ああ、封印場所は分かっている。だが連れ出すのは簡単ではない。防御を突破するのに何年もかかるし、先に解放すべき Dogun も数え切れないほどいる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1398,7 +1398,7 @@
   },
   "The Breaking Point#139": {
    "src": "The Protector?!",
-   "dst": "",
+   "dst": "守護者が？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1408,7 +1408,7 @@
   },
   "The Breaking Point#140": {
    "src": "Ineos... I want our Elders free... as much as you do. But our Protector... has stood firm... for hundreds of years. It can stand... for another-",
-   "dst": "",
+   "dst": "Ineos…私も…お前と同じく…長老の解放を望む。だが守護者は…何百年も…揺るがず立ってきた。まだ…しばらくは—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1418,7 +1418,7 @@
   },
   "The Breaking Point#141": {
    "src": "No... Has it truly... fallen this far..?",
-   "dst": "",
+   "dst": "まさか…本当に…ここまで弱ったのか…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1428,7 +1428,7 @@
   },
   "The Breaking Point#142": {
    "src": "... That was your Protector? How powerful is it, if it can reach this far?",
-   "dst": "",
+   "dst": "…今のが守護者の仕業か？ここまで届くとは、どれほどの力なんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1438,7 +1438,7 @@
   },
   "The Breaking Point#143": {
    "src": "If the Protector... could shake even the Heights... It could destroy... half of this province.",
-   "dst": "",
+   "dst": "守護者が…Heights さえ…揺るがすなら…この地方の…半分を…滅ぼしかねない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1448,7 +1448,7 @@
   },
   "The Breaking Point#144": {
    "src": "Draani... the Elders must be freed. They alone... would know how to calm it.",
-   "dst": "",
+   "dst": "Draani…長老を解放せねばならぬ。鎮め方を…知るのは…彼らだけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1458,7 +1458,7 @@
   },
   "The Breaking Point#145": {
    "src": "Yes... I understand. Very well. {u}, I will take you to the Elders' vault. I hold the keys to open the way forward. Paku, gather your people. See if anyone has alternative solutions.",
-   "dst": "",
+   "dst": "うむ…分かった。いいだろう。{u}、長老たちの封印庫へ案内しよう。道を開く鍵は私が持っている。Paku、民を集めてくれ。他に解決策がないか探ってほしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1468,7 +1468,7 @@
   },
   "The Breaking Point#146": {
    "src": "We will... search for one. I cannot... promise that one exists.",
-   "dst": "",
+   "dst": "探しては…みよう。あるとは…約束できぬが。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1478,7 +1478,7 @@
   },
   "The Breaking Point#147": {
    "src": "{u}, let us go. It sounds as if we have very little time to waste.",
-   "dst": "",
+   "dst": "{u}、行こう。無駄にできる時間はほとんどないようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1488,7 +1488,7 @@
   },
   "The Breaking Point#148": {
    "src": "I will make preparations, and meet you at the Vault of Ice.",
-   "dst": "",
+   "dst": "準備をしてくる。氷の封印庫で会おう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1498,7 +1498,7 @@
   },
   "The Breaking Point#149": {
    "src": "Enter the Dogun Vault within the lower Freezing Heights at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]、Freezing Heights 下層にある Dogun の封印庫に入る",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -1508,7 +1508,7 @@
   },
   "The Breaking Point#150": {
    "src": "... Ahem. This is the entrance, then. One of our most closely guarded secrets... I was hoping not to have to confront this reminder for a while yet...",
-   "dst": "",
+   "dst": "…ゴホン。ここが入口だ。我が国で最も厳重に守られた秘密の一つ…この忌まわしい名残と向き合うのは、もう少し先であってほしかったが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1518,7 +1518,7 @@
   },
   "The Breaking Point#151": {
    "src": "But it seems we don't have much choice now. I have the keys, let's go inside.",
-   "dst": "",
+   "dst": "だが、もう選択肢はなさそうだ。鍵はある、中に入ろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1528,7 +1528,7 @@
   },
   "The Breaking Point#152": {
    "src": "Unlock the Dogun Vault to find the Elders.",
-   "dst": "",
+   "dst": "Dogun の封印庫の鍵を開け、長老たちを見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -1538,7 +1538,7 @@
   },
   "The Breaking Point#153": {
    "src": "Rather cold in here, isn't it? A vault carved into a drake's True Ice... I suppose my ancestors hoped to seal these doguns in here forever. I'll be glad to disappoint them.",
-   "dst": "",
+   "dst": "ここはかなり寒いな？ドレイクの True Ice に彫られた封印庫…祖先はここに Dogun を永遠に閉じ込めるつもりだったのだろう。その期待を裏切れるなら本望だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1548,7 +1548,7 @@
   },
   "The Breaking Point#154": {
    "src": "Quickly, then, let us proceed to the primary door. I pray the Elders will be responsive to our situation with the Colossus.",
-   "dst": "",
+   "dst": "では急いで正門へ進もう。長老たちが Colossus の件に耳を傾けてくれるよう祈るよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1558,7 +1558,7 @@
   },
   "The Breaking Point#155": {
    "src": "In any case... Let me see if I can open this second gate. It should be as simple as...",
-   "dst": "",
+   "dst": "ともかく…この第二の門を開けられるか試してみよう。これで簡単に…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1568,7 +1568,7 @@
   },
   "The Breaking Point#156": {
    "src": "Hm. That... didn't work. This magic is old, and I have never took the time to learn it properly... Alright. We have alternatives.",
-   "dst": "",
+   "dst": "む。…駄目だったか。この魔法は古くて、きちんと学ぶ時間を取ったことがなくてね…よし。他にも手はある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1578,7 +1578,7 @@
   },
   "The Breaking Point#157": {
    "src": "If my memory serves correctly, there should be a manual override on the other side of this chasm.",
-   "dst": "",
+   "dst": "記憶が正しければ、この裂け目の向こう側に手動の解除装置があるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1588,7 +1588,7 @@
   },
   "The Breaking Point#158": {
    "src": "The issue is that treacherous pool of lava on the way... and I don't think my knees are up to the task of jumping over it all.",
-   "dst": "",
+   "dst": "問題は途中にある危険な溶岩溜まりだ…この膝では、とても全部跳び越えられそうにない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1598,7 +1598,7 @@
   },
   "The Breaking Point#159": {
    "src": "I would usually never do this, but these are desperate times. Here, take my Trusty Grappling Hook. It should help you get over to the switch.",
-   "dst": "",
+   "dst": "普段なら絶対にしないが、非常時だ。ほら、私の愛用の Grappling Hook を持っていけ。スイッチまで渡る助けになるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1608,7 +1608,7 @@
   },
   "The Breaking Point#160": {
    "src": "It has limitations, though. It will only be able to latch onto those blue rocks on the walls - and I'll be taking it back once you're finished, thank you very much!",
-   "dst": "",
+   "dst": "ただし制限がある。壁の青い岩にしか引っ掛からない—それと、終わったら返してもらうからな、よろしく頼むよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1618,7 +1618,7 @@
   },
   "The Breaking Point#161": {
    "src": "Hey, {u}! Looks like you're doing good so far, but if you get stuck remember you can jump and then grapple mid-air, that might help on some of those trickier platforms!",
-   "dst": "",
+   "dst": "おーい、{u}！順調そうだな。行き詰まったら、ジャンプしてから空中でフックを使えるのを思い出すといい。厄介な足場で役立つかもしれん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1628,7 +1628,7 @@
   },
   "The Breaking Point#162": {
    "src": "Looks like that unlocked it, {u}! Get yourself back over here and I'll open the door.",
-   "dst": "",
+   "dst": "解除できたようだ、{u}！こっちに戻ってきてくれ、扉を開けよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1638,7 +1638,7 @@
   },
   "The Breaking Point#163": {
    "src": "There we are! Excellent work. You used that hook like a true expert! Ah, reminds me of the time-...",
-   "dst": "",
+   "dst": "開いたぞ！見事だ。本物の達人のようなフックさばきだったな！ああ、昔を思い出す—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1648,7 +1648,7 @@
   },
   "The Breaking Point#164": {
    "src": "...Ahem. Excellent work, indeed. With the override activated, I should be able to do the rest of the work to open the gate.",
-   "dst": "",
+   "dst": "…ゴホン。いや実に見事だった。解除装置が作動したから、門を開ける残りの作業は私にできるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1658,7 +1658,7 @@
   },
   "The Breaking Point#165": {
    "src": "First, though, I'll be having that grappling hook back! Think of what could happen if you had free reign of that all over.",
-   "dst": "",
+   "dst": "だがその前に、Grappling Hook は返してもらうぞ！君が好き勝手に使い回したら何が起きるか、考えてもみたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1668,7 +1668,7 @@
   },
   "The Breaking Point#166": {
    "src": "And so... I believe we have gone as far as we can.",
-   "dst": "",
+   "dst": "さて…行けるのはここまでのようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1678,7 +1678,7 @@
   },
   "The Breaking Point#167": {
    "src": "This is True Ice, {u}. It has scarred this part of the Heights for centuries, ever since it was created by an ice dragon in my ancestors' conquest.",
-   "dst": "",
+   "dst": "これが True Ice だ、{u}。祖先の征服の際に氷のドラゴンが生み出して以来、何世紀も Heights のこの一角を傷つけてきた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1688,7 +1688,7 @@
   },
   "The Breaking Point#168": {
    "src": "It cannot be melted or burned through any means. It is why this location was chosen for their tomb. I'm afraid there is nothing more we can do.",
-   "dst": "",
+   "dst": "どんな手段でも溶かすことも焼き切ることもできない。だからこそ、ここが彼らの墓に選ばれた。残念だが、もう打つ手はない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1698,7 +1698,7 @@
   },
   "The Breaking Point#169": {
    "src": "At the end of the war, I imagine.",
-   "dst": "",
+   "dst": "戦争の終わりだろうね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1708,7 +1708,7 @@
   },
   "The Breaking Point#170": {
    "src": "As the final dogun settlements fell, and as Garaheth was slain for the first time, my ancestors must have sealed them deep in this ice.",
-   "dst": "",
+   "dst": "最後の Dogun の集落が陥落し、Garaheth が初めて倒された時、祖先は彼らをこの氷の奥深くに封じたのだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1718,7 +1718,7 @@
   },
   "The Breaking Point#171": {
    "src": "The... actions of the Dwarves after winning the war are well documented. I would not be surprised if our accounts describe this imprisonment as a great victory.",
-   "dst": "",
+   "dst": "戦勝後のドワーフの…所業は、記録によく残っている。我々の記録がこの幽閉を偉大な勝利として書いていても、私は驚かないよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1728,7 +1728,7 @@
   },
   "The Breaking Point#172": {
    "src": "The Dwarves, of course. Who else?",
-   "dst": "",
+   "dst": "もちろんドワーフだ。他に誰がいる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1738,7 +1738,7 @@
   },
   "The Breaking Point#173": {
    "src": "I believe it was General Algard of the Dwarven army to order the Elders' imprisonments.",
-   "dst": "",
+   "dst": "長老たちの幽閉を命じたのは、ドワーフ軍の Algard 将軍だったはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1748,7 +1748,7 @@
   },
   "The Breaking Point#174": {
    "src": "He was lauded as a hero, naturally. Now... we must reap the consequences of such a decision.",
-   "dst": "",
+   "dst": "当然、彼は英雄と讃えられた。そして今…我々はその決断の報いを受けねばならない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1758,7 +1758,7 @@
   },
   "The Breaking Point#175": {
    "src": "True Ice is a material that cannot be melted or burned through by any means. Not even dogun magic has been able to make a dent.",
-   "dst": "",
+   "dst": "True Ice はどんな手段でも溶かせず焼き切れない物質だ。Dogun の魔法ですら傷一つつけられなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1768,7 +1768,7 @@
   },
   "The Breaking Point#176": {
    "src": "... I imagine why this location was chosen to hold the elders. A prison from which they would never be able to escape.",
-   "dst": "",
+   "dst": "…なぜここが長老を閉じ込める場所に選ばれたのか想像がつく。決して逃げ出せない牢獄だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1778,7 +1778,7 @@
   },
   "The Breaking Point#177": {
    "src": "It is known for it to form naturally under extreme conditions... But the ice here is nowhere near natural.",
-   "dst": "",
+   "dst": "極限の環境で自然にできることもあるらしいが…ここの氷は自然とは程遠い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1788,7 +1788,7 @@
   },
   "The Breaking Point#178": {
    "src": "It was formed by an Ice Drake's Breath partway through the war- and, well, as you can see, it has remained here ever since.",
-   "dst": "",
+   "dst": "戦争の途中、Ice Drake の息吹で生まれたものだ—そして、見ての通り、それ以来ずっとここにある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1798,7 +1798,7 @@
   },
   "The Breaking Point#179": {
    "src": "Just another remnant of our past mistakes, I suppose...",
-   "dst": "",
+   "dst": "過去の過ちの名残がまた一つ、というわけだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1808,7 +1808,7 @@
   },
   "The Breaking Point#180": {
    "src": "Ahem. In any case- as I said, True Ice is impossible to break through, even with the most scorching flames.",
-   "dst": "",
+   "dst": "ゴホン。ともかく—言った通り、True Ice は最も灼熱の炎でも突破できない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1818,7 +1818,7 @@
   },
   "The Breaking Point#181": {
    "src": "I... I suppose that a dragon's breath might be able to melt it. That logic does make sense.",
-   "dst": "",
+   "dst": "私…いや、ドラゴンの息吹なら溶かせるかもしれない。理屈は通っている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1828,7 +1828,7 @@
   },
   "The Breaking Point#182": {
    "src": "We have little knowledge of what dragons were like, though. As they went extinct, that information became... useless. And so, it was lost.",
-   "dst": "",
+   "dst": "だが、ドラゴンがどんな存在だったか、我々はほとんど知らない。絶滅して、その知識は…無用になった。そして失われたのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1838,7 +1838,7 @@
   },
   "The Breaking Point#183": {
    "src": "If anyone would know more about dragons, it would be the doguns.",
-   "dst": "",
+   "dst": "ドラゴンに詳しい者がいるとすれば、Dogun だろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1848,7 +1848,7 @@
   },
   "The Breaking Point#184": {
    "src": "But none of that matters. All the dragons are gone, after all. We still have no options.",
-   "dst": "",
+   "dst": "だが、どれも関係ない。ドラゴンは皆いなくなったのだから。やはり打つ手はない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1858,7 +1858,7 @@
   },
   "The Breaking Point#185": {
    "src": "Why, they died out. As Gavellian civilizations grew in size, the ferocity and size of a dragon was simply too much of a threat.",
-   "dst": "",
+   "dst": "なぜって、絶滅したのさ。Gavel の文明が大きくなるにつれ、ドラゴンの獰猛さと巨体は脅威すぎたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1868,7 +1868,7 @@
   },
   "The Breaking Point#186": {
    "src": "Some were hunted. Some died of starvation. Eggs were taken from nests and shattered over boulders for the birds to feed on.",
-   "dst": "",
+   "dst": "狩られたものもいた。飢え死にしたものもいた。卵は巣から奪われ、鳥の餌にと岩に叩きつけられた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1878,7 +1878,7 @@
   },
   "The Breaking Point#187": {
    "src": "Now all that are left are dragonlings - echoes of their once-great ancestors, with barely enough flames to singe your armor.",
-   "dst": "",
+   "dst": "今残っているのは幼竜だけだ—偉大な祖先のこだまで、鎧を焦がすのがやっとの炎しか吐けない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1888,7 +1888,7 @@
   },
   "The Breaking Point#188": {
    "src": "You- what? Near {p}?",
-   "dst": "",
+   "dst": "君—何だって？{p} の近くに？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1898,7 +1898,7 @@
   },
   "The Breaking Point#189": {
    "src": "A living dragon... You've done quite a lot, haven't you? Stopped a war, moved a dragon...",
-   "dst": "",
+   "dst": "生きたドラゴン…君はずいぶん色々やってきたんだな？戦争を止め、ドラゴンを動かし…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1908,7 +1908,7 @@
   },
   "The Breaking Point#190": {
    "src": "Well... if there is a living dragon at {p}... Then we still have hope! {u}, we must ask for its help.",
-   "dst": "",
+   "dst": "ならば…{p} に生きたドラゴンがいるなら…まだ希望はある！{u}、その力を借りに行こう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1918,7 +1918,7 @@
   },
   "The Breaking Point#191": {
    "src": "Let us return to the others. I asked them to wait outside of {p}... perhaps they'll be able to confirm that a dragon's breath would do the job.",
-   "dst": "",
+   "dst": "皆のところへ戻ろう。{p} の外で待つよう頼んである…ドラゴンの息吹で本当に溶かせるか、確かめてくれるかもしれん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1928,7 +1928,7 @@
   },
   "The Breaking Point#192": {
    "src": "Indeed. The fire dragons that sided with them during the war. I'm sure you've come across the skeleton just outside Freezing Heights?",
-   "dst": "",
+   "dst": "その通り。戦争中に彼らに味方した火のドラゴンたちだ。Freezing Heights のすぐ外にある骸骨は見たことがあるだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1938,7 +1938,7 @@
   },
   "The Breaking Point#193": {
    "src": "Yes, well... the Dwarves needed a counter to the sheer power of a fire dragon in battle, and so they resorted to enslaving dragons and drakes of other elements.",
-   "dst": "",
+   "dst": "ああ、それで…ドワーフは戦場での火のドラゴンの圧倒的な力に対抗する手段が必要だった。そこで他の属性のドラゴンやドレイクを奴隷にしたのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1948,7 +1948,7 @@
   },
   "The Breaking Point#194": {
    "src": "Like the Ice Drake that created this vault, and encased the Elders in the truest of ice.",
-   "dst": "",
+   "dst": "この封印庫を造り、長老たちを最も純粋な氷に閉じ込めた Ice Drake のようにね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1958,7 +1958,7 @@
   },
   "The Breaking Point#195": {
    "src": "... Well, there was this excellent novel of about one of those creatures from the Shiar, who had to travel to the Heights with this ring he had inherited-",
-   "dst": "",
+   "dst": "…そういえば、Shiar 出身のあの種族の一人を描いた素晴らしい小説があってね。受け継いだ指輪を持って Heights まで旅をする話で—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1968,7 +1968,7 @@
   },
   "The Breaking Point#196": {
    "src": "But I confess, these questions seem almost irrelevant. We have a more pressing issue at hand, {u}.",
-   "dst": "",
+   "dst": "だが正直、こんな疑問はもうどうでもいい。もっと差し迫った問題があるんだ、{u}。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1978,7 +1978,7 @@
   },
   "The Breaking Point#197": {
    "src": "This ice is harder than obsidian itself. The crystals which form the material are bonded by ancient magic.",
-   "dst": "",
+   "dst": "この氷は黒曜石より硬い。それを成す結晶は古代の魔法で結びついている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1988,7 +1988,7 @@
   },
   "The Breaking Point#198": {
    "src": "Shattering it with such tools isn't an option. Perhaps there is a weapon that could break through, somewhere deep in our armory- after all, this vault had to be carved somehow...",
-   "dst": "",
+   "dst": "そんな道具では砕けない。我々の武器庫の奥になら突破できる武器があるかもしれん—何しろ、この封印庫もどうにかして彫り出したはずだからな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -1998,7 +1998,7 @@
   },
   "The Breaking Point#199": {
    "src": "However, given the circumstances, I don't think we have the time to search for it. Even if we started now, our armory is enormous. It would take weeks to find what we need.",
-   "dst": "",
+   "dst": "だが、この状況で探している時間はないだろう。今から始めても、武器庫はとてつもなく広い。必要な物を見つけるには何週間もかかる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2008,7 +2008,7 @@
   },
   "The Breaking Point#200": {
    "src": "The lava of the Heights is nothing more than molten rock. Just a remnant of the shaping of these caverns.",
-   "dst": "",
+   "dst": "Heights の溶岩はただの溶けた岩だ。この洞窟が形作られた時の名残にすぎん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2018,7 +2018,7 @@
   },
   "The Breaking Point#201": {
    "src": "It's not nearly hot enough to melt True Ice. If it could, the Freezing Heights would have faded long ago.",
-   "dst": "",
+   "dst": "True Ice を溶かすほど熱くはない。溶かせるなら、Freezing Heights はとうに消えている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2028,7 +2028,7 @@
   },
   "The Breaking Point#202": {
    "src": "My... uhm... green is nice, I suppose? Though perhaps not very Dwarven...",
-   "dst": "",
+   "dst": "私の…ええと…緑はいい色だと思う？まあ、あまりドワーフらしくはないが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2038,7 +2038,7 @@
   },
   "The Breaking Point#203": {
    "src": "Red, then. Or orange! ...Although my bedsheets are the most wonderful shade of navy blue...",
-   "dst": "",
+   "dst": "では赤だ。いや橙！…でもシーツは最高に素敵な紺色なんだよなあ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2048,7 +2048,7 @@
   },
   "The Breaking Point#204": {
    "src": "Breakfast... I had some eggs, I suppose. Though, I had no idea that breakfast would be my last, did I..?",
-   "dst": "",
+   "dst": "朝食…卵を食べたかな。まさかそれが最後の朝食になるとは思いもしなかったが…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2058,7 +2058,7 @@
   },
   "The Breaking Point#205": {
    "src": "Hm... Had I known, maybe I would have chosen differently. Maybe I would have-... nevermind.",
-   "dst": "",
+   "dst": "む…分かっていたら、別の物を選んだかもしれん。もしかしたら—…いや、何でもない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2068,7 +2068,7 @@
   },
   "The Breaking Point#206": {
    "src": "Regroup at outside {p} at [{~}, {~}, -{~}] to figure out how to free the Elders.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} の外で合流し、長老たちを解放する方法を考える。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2078,7 +2078,7 @@
   },
   "The Breaking Point#207": {
    "src": "... so this is the situation we find ourselves in. Paku, what do you think? Would such a plan work?",
-   "dst": "",
+   "dst": "…というのが我々の置かれた状況だ。Paku、どう思う？この計画はうまくいくだろうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2088,7 +2088,7 @@
   },
   "The Breaking Point#208": {
    "src": "Hm... You may be correct... Draani. The magic in... a dragon's breath... was very potent. And to think... mighty Ozoth had survived... all these years...",
-   "dst": "",
+   "dst": "む…お前の言う通りかもしれぬ…Draani。ドラゴンの息吹の…魔法は…非常に強力だった。それに…偉大なる Ozoth が…今まで…生きていたとは…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2098,7 +2098,7 @@
   },
   "The Breaking Point#209": {
    "src": "If Ozoth is alive... we must seek her help. If the doguns ask... for her aid, she will... give it.",
-   "dst": "",
+   "dst": "Ozoth が生きているなら…助けを求めねば。Dogun が…助力を願えば…彼女は…応えてくれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2108,7 +2108,7 @@
   },
   "The Breaking Point#210": {
    "src": "Well, that's as good a plan as any. {u}, you'll travel to seek this dragon's counsel, along with... Ineos, was it? Good luck.",
-   "dst": "",
+   "dst": "ふむ、他に劣らぬ良い計画だ。{u}、そのドラゴンの助言を求めに行ってくれ…Ineos、だったかな？と一緒に。幸運を。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2118,7 +2118,7 @@
   },
   "The Breaking Point#211": {
    "src": "You should... take the Trading Tunnel... {u}. I will put the coordinates... in your Quest Book.",
-   "dst": "",
+   "dst": "交易トンネルを…使うといい…{u}。座標を…クエストブックに…記しておく。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2128,7 +2128,7 @@
   },
   "The Breaking Point#212": {
    "src": "Use the {p} trading tunnel at [{~}, {~}, -{~}] to travel to {p}.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} 交易トンネルを使って {p} へ向かう。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2138,7 +2138,7 @@
   },
   "The Breaking Point#213": {
    "src": "Travel to {p} at [{~}, {~}, -{~}] in an attempt to speak with her.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の {p} へ行き、彼女と話してみる。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2148,7 +2148,7 @@
   },
   "The Breaking Point#214": {
    "src": "Ah... it is... good to... see you. We must... proceed to Ozoth... with all haste.",
-   "dst": "",
+   "dst": "ああ…また…会えて…嬉しい。急いで…Ozoth のもとへ…向かわねば。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2158,7 +2158,7 @@
   },
   "The Breaking Point#215": {
    "src": "Ozoth the Dragon... Endless Kindler... we have come... to ask for your aid.",
-   "dst": "",
+   "dst": "ドラゴン Ozoth よ…果てなき灯し手よ…我らは…助力を…請いに来た。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2168,7 +2168,7 @@
   },
   "The Breaking Point#216": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2178,7 +2178,7 @@
   },
   "The Breaking Point#217": {
    "src": "We are searching... for a way... to melt the truest... of ice. The fate... of Gavel... hangs in the balance.",
-   "dst": "",
+   "dst": "我らは…最も純粋な…氷を溶かす…術を探している。Gavel の…命運が…かかっているのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2188,7 +2188,7 @@
   },
   "The Breaking Point#218": {
    "src": "Doguns... and Dragons... our fates have been entwined... for centuries. We call on you now... Endless Kindler... to save this province.",
-   "dst": "",
+   "dst": "Dogun と…ドラゴン…我らの運命は…何世紀も…絡み合ってきた。今こそ…果てなき灯し手よ…この地方を…救いたまえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2198,7 +2198,7 @@
   },
   "The Breaking Point#219": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2208,7 +2208,7 @@
   },
   "The Breaking Point#220": {
    "src": "I... see. ... Ozoth tells me... that an Everflame... will free the Elders.",
-   "dst": "",
+   "dst": "なるほど…Ozoth いわく…永炎が…長老を解き放つと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2218,7 +2218,7 @@
   },
   "The Breaking Point#221": {
    "src": "... well...",
-   "dst": "",
+   "dst": "…その…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2228,7 +2228,7 @@
   },
   "The Breaking Point#222": {
    "src": "The Endless Kindler... is willing to part... with hers. You must... retrieve it... from her stomach.",
-   "dst": "",
+   "dst": "果てなき灯し手は…自らの永炎を…譲ってくださる。君は…彼女の胃から…取り出さねばならぬ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2238,7 +2238,7 @@
   },
   "The Breaking Point#223": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2248,7 +2248,7 @@
   },
   "The Breaking Point#224": {
    "src": "I would advise you... not to think... too much about this. When... you are ready... enter Ozoth's mouth and retrieve... the flame.",
-   "dst": "",
+   "dst": "あまり…深く考えぬことを…勧める。準備が…できたら…Ozoth の口に入り…炎を…取ってくるのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2258,7 +2258,7 @@
   },
   "The Breaking Point#225": {
    "src": "Descend into Ozoth's belly to retrieve an Everflame.",
-   "dst": "",
+   "dst": "Ozoth の腹の中へ降り、永炎を手に入れる。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2268,7 +2268,7 @@
   },
   "The Breaking Point#226": {
    "src": "Travel to {p} at [{~}, {~}, -{~}] with an Everflame.",
-   "dst": "",
+   "dst": "永炎を持って [{~}, {~}, -{~}] の {p} へ向かう。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2278,7 +2278,7 @@
   },
   "The Breaking Point#227": {
    "src": "{u}! Have you retrieved... the Eternal Flame?",
-   "dst": "",
+   "dst": "{u}！永遠の炎は…手に入れたか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2288,7 +2288,7 @@
   },
   "The Breaking Point#228": {
    "src": "Excellent. Endless Kindler... thank you... for your sacrifice. I will ensure... that your flame... is returned to you.",
-   "dst": "",
+   "dst": "見事だ。果てなき灯し手よ…犠牲に…感謝する。その炎は…必ず…お返しする。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2298,7 +2298,7 @@
   },
   "The Breaking Point#229": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2308,7 +2308,7 @@
   },
   "The Breaking Point#230": {
    "src": "Ozoth apologises... if it was a bit hot... in there.",
-   "dst": "",
+   "dst": "Ozoth が…中が少し…熱かったなら…すまない、と。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2318,7 +2318,7 @@
   },
   "The Breaking Point#231": {
    "src": "Now, {u}... I was never the best... at the ancient magic... but I hope I have enough skill... to take us the short route back...",
-   "dst": "",
+   "dst": "さて、{u}…私は古代魔法が…得意では…なかったが…近道で…戻れるだけの…腕はあると…願いたい…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2328,7 +2328,7 @@
   },
   "The Breaking Point#232": {
    "src": "You have returned! Is there news from {p}? Did the dragon offer aid?",
-   "dst": "",
+   "dst": "戻ったか！{p} から知らせは？ドラゴンは力を貸してくれたか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2338,7 +2338,7 @@
   },
   "The Breaking Point#233": {
    "src": "She did... Ozoth has made a great sacrifice... for this province... but we have an Eternal Flame... to melt the ice.",
-   "dst": "",
+   "dst": "ああ…Ozoth は…この地方のために…大きな犠牲を…払った…だが氷を溶かす…永遠の炎を…得た。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2348,7 +2348,7 @@
   },
   "The Breaking Point#234": {
    "src": "Well done... both of you. I will ensure... that the doguns thank her... properly. The dwarves would do well... to do the same.",
-   "dst": "",
+   "dst": "よくやった…二人とも。Dogun が…彼女に…しかと礼を尽くすよう…計らおう。ドワーフも…そうするべきだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2358,7 +2358,7 @@
   },
   "The Breaking Point#235": {
    "src": "Yes, yes, but there's no time to worry about that now. Quick, let's get back to the-",
-   "dst": "",
+   "dst": "ああ、ああ、だが今それを気にしている暇はない。急ごう、戻って—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2368,7 +2368,7 @@
   },
   "The Breaking Point#236": {
    "src": "Be wary... of the Elders... Draani. It is unlikely they will react well... after their imprisonment. It is vital... you explain the situation... to them.",
-   "dst": "",
+   "dst": "長老には…気をつけよ…Draani。幽閉の後では…穏やかには…迎えてくれまい。状況を…しかと…説明するのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2378,7 +2378,7 @@
   },
   "The Breaking Point#237": {
    "src": "I would join you... both... but the ice is inhospitable... to my kind. I wish the both of you... the best of luck.",
-   "dst": "",
+   "dst": "私も…共に…行きたいが…あの氷は…我が種族には…過酷だ。二人の…幸運を…祈る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2388,7 +2388,7 @@
   },
   "The Breaking Point#238": {
    "src": "...right. Yes. Well, there's no getting around it. Come, {u}. We must unfreeze the elders and get them to listen to us. Bring the flame, I will meet you at the Vault.",
-   "dst": "",
+   "dst": "…そうだな。ああ。まあ、避けては通れない。行こう、{u}。長老たちを解凍して、話を聞いてもらわねば。炎を持ってきてくれ、封印庫で待っている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2398,7 +2398,7 @@
   },
   "The Breaking Point#239": {
    "src": "Return to the Dogun Vault at [{~}, {~}, -{~}] to free the Dogun Elders.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の Dogun の封印庫に戻り、Dogun の長老たちを解放する。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2408,7 +2408,7 @@
   },
   "The Breaking Point#240": {
    "src": "Well then, what are we waiting for! Let's free these elders, shall we?",
-   "dst": "",
+   "dst": "さて、何を待っている！長老たちを解放しようじゃないか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2418,7 +2418,7 @@
   },
   "The Breaking Point#241": {
    "src": "Just bring the Everflame to each of the cells, and melt through that True Ice.",
-   "dst": "",
+   "dst": "永炎を各独房に持っていき、True Ice を溶かしてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2428,7 +2428,7 @@
   },
   "The Breaking Point#242": {
    "src": "Excellent! We've done it! Now we just need to explain the situation-...",
-   "dst": "",
+   "dst": "素晴らしい！やったぞ！あとは状況を説明するだけ—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2438,7 +2438,7 @@
   },
   "The Breaking Point#243": {
    "src": "We are freed.",
-   "dst": "",
+   "dst": "我らは解き放たれた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2448,7 +2448,7 @@
   },
   "The Breaking Point#244": {
    "src": "...Ah. I suppose I did not... think this through. Ehm. Elders, I must apo-",
-   "dst": "",
+   "dst": "…あ。どうやら…よく考えていなかった。ええと。長老方、お詫びを—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2458,7 +2458,7 @@
   },
   "The Breaking Point#245": {
    "src": "Dwarf... Hm. The crimes... of your ancestors... must be repaid.",
-   "dst": "",
+   "dst": "ドワーフ…ふん。祖先の…罪は…償わねばならぬ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2468,7 +2468,7 @@
   },
   "The Breaking Point#246": {
    "src": "However. We have... heard you speak. We have... learned of... the Protector's state.",
-   "dst": "",
+   "dst": "だが。我らは…お前たちの話を…聞いた。守護者の…状態を…知った。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2478,7 +2478,7 @@
   },
   "The Breaking Point#247": {
    "src": "We will... settle your debt... later. This situation... is a more pressing... concern. The Protector... must be calmed.",
-   "dst": "",
+   "dst": "お前の…負債は…後で清算する。この事態の方が…差し迫っている。守護者を…鎮めねば。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2488,7 +2488,7 @@
   },
   "The Breaking Point#248": {
    "src": "...Yes. You. Human. That was... dragonfire... was it not?",
-   "dst": "",
+   "dst": "…そうだ。お前。人間。あれは…竜の炎…だな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2498,7 +2498,7 @@
   },
   "The Breaking Point#249": {
    "src": "Then allow me... to borrow it. Its strength... will allow us... to restore ours. Now... Who now holds... the title... of Chieftain?",
-   "dst": "",
+   "dst": "ならば…それを…借りよう。その力で…我らの力を…取り戻せる。さて…今…族長の座に…就いているのは…誰だ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2508,7 +2508,7 @@
   },
   "The Breaking Point#250": {
    "src": "A-ah! Paku is now the Dogun Chieftain. He would be at... At Taloka.",
-   "dst": "",
+   "dst": "あ、ああ！今は Paku が Dogun の族長です。彼なら…Taloka に。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2518,7 +2518,7 @@
   },
   "The Breaking Point#251": {
    "src": "Very well... We shall travel... through flame... and through stone...",
-   "dst": "",
+   "dst": "よかろう…行くぞ…炎を抜け…岩を抜けて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2528,7 +2528,7 @@
   },
   "The Breaking Point#252": {
    "src": "...The Elders... after all this time... to see you, again... in the flesh...",
-   "dst": "",
+   "dst": "…長老方…これほどの時を経て…再び…この目で…お会いできるとは…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2538,7 +2538,7 @@
   },
   "The Breaking Point#253": {
    "src": "Greetings, Paku. We have much... to discuss. But first... we must travel... to the Protector.",
-   "dst": "",
+   "dst": "息災か、Paku。話すことは…多い。だがまず…守護者のもとへ…向かわねば。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2548,7 +2548,7 @@
   },
   "The Breaking Point#254": {
    "src": "Join us... Ineos and Paku. There is... very little time... to waste.",
-   "dst": "",
+   "dst": "共に来い…Ineos、Paku。無駄にする…時間は…ほとんどない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2558,7 +2558,7 @@
   },
   "The Breaking Point#255": {
    "src": "Now, let us travel... (The following part of the line is High Gavellian) Through flame... and through stone...",
-   "dst": "",
+   "dst": "では、行くぞ…(ここから先は高位 Gavel 語)炎を抜け…岩を抜けて…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2568,7 +2568,7 @@
   },
   "The Breaking Point#256": {
    "src": "Korzim... my son... join us. The Elders must see... to the Protector.",
-   "dst": "",
+   "dst": "Korzim…我が息子よ…共に来い。長老方が…守護者を…診られる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2578,7 +2578,7 @@
   },
   "The Breaking Point#257": {
    "src": "Iscor... Astal... Desint... it has been... too long. I will come.",
-   "dst": "",
+   "dst": "Iscor…Astal…Desint…久しい…ことだ。私も行こう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2588,7 +2588,7 @@
   },
   "The Breaking Point#258": {
    "src": "Earth and flame... fire and stone... transport us through your form! (In High Gavellian)",
-   "dst": "",
+   "dst": "大地と炎…火と石…その身をもって我らを運べ！(高位 Gavel 語)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2598,7 +2598,7 @@
   },
   "The Breaking Point#259": {
    "src": "-have to trust that they'll return!",
-   "dst": "",
+   "dst": "—戻ってくると信じるしかないよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2608,7 +2608,7 @@
   },
   "The Breaking Point#260": {
    "src": "There's no time! I can feel the damned ground cracking beneath my feet, we have to turn to the final option. We've had demoltion mages on standby the past few days, our only choice is to-",
-   "dst": "",
+   "dst": "時間がない！足元の忌々しい地面が割れていくのが分かる、最終手段に移るしかない。この数日、爆破魔術師を待機させてある。唯一の選択肢は—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2618,7 +2618,7 @@
   },
   "The Breaking Point#261": {
    "src": "Rhay. Elix. My Elders... have been freed. They are here... to help... the Protector.",
-   "dst": "",
+   "dst": "Rhay。Elix。我が長老たちが…解放された。守護者を…助けるために…来てくれたのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2628,7 +2628,7 @@
   },
   "The Breaking Point#262": {
    "src": "Join us... brave ones. You will see... that your efforts to save this Province... have not been in vain.",
-   "dst": "",
+   "dst": "共に来い…勇敢なる者たちよ。この地方を救う…お前たちの努力は…無駄ではなかったと…分かるだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2638,7 +2638,7 @@
   },
   "The Breaking Point#263": {
    "src": "Flames of the earth... take us to the Great Protector... to make our plea! (In High Gavellian)",
-   "dst": "",
+   "dst": "大地の炎よ…我らを偉大なる守護者のもとへ…嘆願を届けさせよ！(高位 Gavel 語)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2648,7 +2648,7 @@
   },
   "The Breaking Point#264": {
    "src": "Travel to the Canyon Colossus at [{~}, {~}, -{~}] to attempt to calm it.",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の Canyon Colossus へ向かい、鎮めることを試みる。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Breaking Point",
@@ -2658,7 +2658,7 @@
   },
   "The Breaking Point#265": {
    "src": "Great Protector... It is furious.",
-   "dst": "",
+   "dst": "偉大なる守護者…激怒している。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2668,7 +2668,7 @@
   },
   "The Breaking Point#266": {
    "src": "Hmph. Foolish dwarves... This is what has come...of your needless war... You are fortunate...to have freed us now...",
-   "dst": "",
+   "dst": "ふん。愚かなドワーフめ…これが…無用な戦争の…結果だ…今我らを…解放できて…幸運だったな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2678,7 +2678,7 @@
   },
   "The Breaking Point#267": {
    "src": "Desint... Iscor... I will prepare... the ritual. Defend me... as I do so.",
-   "dst": "",
+   "dst": "Desint…Iscor…儀式を…準備する。その間…私を守れ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2688,7 +2688,7 @@
   },
   "The Breaking Point#268": {
    "src": "Human. We will pull the Protector... away from the brink. That is all we can do now. All the power... we can muster.",
-   "dst": "",
+   "dst": "人間。我らは守護者を…崖っぷちから…引き戻す。今できるのは…それだけだ。持てる力…すべてを以て。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2698,7 +2698,7 @@
   },
   "The Breaking Point#269": {
    "src": "You must enter... these sacred grounds. Battle through it to the end... Knock some sense... into it.",
-   "dst": "",
+   "dst": "お前は…この聖域に…入らねばならぬ。最後まで…戦い抜き…目を覚まさせてやれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2708,7 +2708,7 @@
   },
   "The Breaking Point#270": {
    "src": "Adventurer... We are counting...on you. We will try to...support you however we can.",
-   "dst": "",
+   "dst": "冒険者…君に…懸かっている。できる限り…支援しよう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2718,7 +2718,7 @@
   },
   "The Breaking Point#271": {
    "src": "We'll do the best we can out here! I have some ideas already...",
-   "dst": "",
+   "dst": "外でできる限りのことをするよ！もう考えがいくつかあるんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2728,7 +2728,7 @@
   },
   "The Breaking Point#272": {
    "src": "Rhay, this isn't the time. Human. We have your back. You can do this.",
-   "dst": "",
+   "dst": "Rhay、今はその時ではない。人間。背中は任せろ。貴様ならやれる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2738,7 +2738,7 @@
   },
   "The Breaking Point#273": {
    "src": "You have faced...worse odds before...have you not? You will face them...again.",
-   "dst": "",
+   "dst": "もっと…悪い状況も…乗り越えてきた…だろう？また…乗り越えるのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2748,7 +2748,7 @@
   },
   "The Breaking Point#274": {
    "src": "It is done. Desint... Iscor... Take your postions. We must... hold it back.",
-   "dst": "",
+   "dst": "完了した。Desint…Iscor…持ち場につけ。我らで…食い止めねば。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2758,7 +2758,7 @@
   },
   "The Breaking Point#275": {
    "src": "Great Protector, lord of stone, hear our burning call. Your fury clouds your vision, your anger burns and twists our home. (In High Gavellian)",
-   "dst": "",
+   "dst": "偉大なる守護者、岩の王よ、我らの燃ゆる呼び声を聞け。怒りは汝の目を曇らせ、憤りは我らが故郷を焼き歪める。(高位 Gavel 語)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2768,7 +2768,7 @@
   },
   "The Breaking Point#276": {
    "src": "We, the doguns, who now hold the final flame of a fallen god... We will hold you back. We will keep this land intact! (In High Gavellian)",
-   "dst": "",
+   "dst": "我ら Dogun は、今や堕ちた神の最後の炎を持つ者…汝を食い止め、この地を守り抜く！(高位 Gavel 語)",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2778,7 +2778,7 @@
   },
   "The Breaking Point#277": {
    "src": "We will... hold it from here... human. Now... go! We will not... be able to hold it... for long...",
-   "dst": "",
+   "dst": "我らは…ここで…食い止める…人間よ。さあ…行け！長くは…持たぬ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2788,7 +2788,7 @@
   },
   "The Breaking Point#278": {
    "src": "This crystal...will let you harness...our flame. Use it...to break through...its defenses.",
-   "dst": "",
+   "dst": "この水晶で…我らの炎を…操れる。それで…奴の守りを…打ち破れ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2798,7 +2798,7 @@
   },
   "The Breaking Point#279": {
    "src": "... Before you go. I will offer you... these powerful relics. Our people... have held them for... longer than I have lived. They may... help you on your quest.",
-   "dst": "",
+   "dst": "…行く前に。この…強力な遺物を…授けよう。我が民が…私の生涯より…長く…守ってきた物だ。旅の…助けと…なるやもしれぬ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",
@@ -2808,7 +2808,7 @@
   },
   "The Breaking Point#280": {
    "src": "I cannot give you something as unique as what Paku has offered, but I can still lend you a sum from our treasury. Use it as you must, so long as you can calm that thing. Good luck.",
-   "dst": "",
+   "dst": "Paku ほど貴重な物は渡せないが、国庫から資金を貸すことはできる。あれを鎮められるなら、好きに使ってくれ。幸運を。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Breaking Point",

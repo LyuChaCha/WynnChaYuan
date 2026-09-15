@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "A Journey Home",
   "count": 124,
-  "translated": 0,
+  "translated": 121,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Home#000": {
    "src": "Maybe another spell?",
-   "dst": "",
+   "dst": "別の呪文ならどうだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -18,7 +18,7 @@
   },
   "A Journey Home#001": {
    "src": "Is there anything I can do for you today?",
-   "dst": "",
+   "dst": "今日は何かご用ですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -28,7 +28,7 @@
   },
   "A Journey Home#002": {
    "src": "...something's prickling at the back of your mind. Weren't you asleep like this when you first arrived, too?",
-   "dst": "",
+   "dst": "…頭の奥で何かがちくりとする。初めてここに来た時も、こうして眠っていなかったか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -38,7 +38,7 @@
   },
   "A Journey Home#003": {
    "src": "Investigate the Fruma Gate at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Fruma Gate を調べる。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -48,7 +48,7 @@
   },
   "A Journey Home#004": {
    "src": "Explore near where you originally arrived in Wynn.",
-   "dst": "",
+   "dst": "初めて Wynn に着いた場所の近くを探索する。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -58,7 +58,7 @@
   },
   "A Journey Home#005": {
    "src": "Leave {p} through the door at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の扉から {p} を出る。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -68,7 +68,7 @@
   },
   "A Journey Home#006": {
    "src": "Continue back down the path to Fruma.",
-   "dst": "",
+   "dst": "道を戻って Fruma へ向かう。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -78,7 +78,7 @@
   },
   "A Journey Home#007": {
    "src": "This job is impossible!! Why am I even here?!",
-   "dst": "",
+   "dst": "こんな仕事無理だって！！ そもそも何で私がここに？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -88,7 +88,7 @@
   },
   "A Journey Home#008": {
    "src": "Ah! You're a soldier, right? Look, I It's, it's just a really difficult time right now.",
-   "dst": "",
+   "dst": "あっ！ 兵士の方ですよね？ その、私は…今は本当に大変な時でして。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -98,7 +98,7 @@
   },
   "A Journey Home#009": {
    "src": "This, this whole situation is definitely above my paygrade! I don't know how I'm going to deal with this...",
-   "dst": "",
+   "dst": "この、この事態は完全に私の手に負えません！ どう対処すればいいのか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -108,7 +108,7 @@
   },
   "A Journey Home#010": {
    "src": "Enough of that, I, ah, I suppose. What is it you need?",
-   "dst": "",
+   "dst": "いえ、それはともかく…ええと。何のご用でしょう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -118,7 +118,7 @@
   },
   "A Journey Home#011": {
    "src": "Oh. Oh no. Ah, I, you see, that'll be a problem, I think. What do you even need to do at the border anyway?",
-   "dst": "",
+   "dst": "あ。ああ、まずい。ええと、それは問題になりそうです。そもそも国境で何をするんですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -128,7 +128,7 @@
   },
   "A Journey Home#012": {
    "src": "I can't really imagine what you could need there, but, whatever it is, it'll need to wait! This Corkian drill won't work, and Paxon's stuck, and",
-   "dst": "",
+   "dst": "国境に何の用があるのか想像もつきませんが、何であれ後回しです！ Corkus 製のドリルは動かないし、Paxon は立ち往生、それに",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -138,7 +138,7 @@
   },
   "A Journey Home#013": {
    "src": "Look, I'm...I'm sorry for snapping at you. I'm trained for military operation, not for cave-in clearance, but no one else was available!",
-   "dst": "",
+   "dst": "すみません…つい当たってしまって。私は軍事作戦の訓練は受けても、落盤処理は専門外なんです。でも他に誰もいなくて！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -148,7 +148,7 @@
   },
   "A Journey Home#014": {
    "src": "Even the demolitions expert I hired is stuck, so it's all just, it's all going wrong and I don't know what to do.",
-   "dst": "",
+   "dst": "雇った爆破の専門家まで行き詰まってて、もう何もかもうまくいかない。どうしたらいいのか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -158,7 +158,7 @@
   },
   "A Journey Home#015": {
    "src": "You see that new entrance over there? The expert, Paxon, has been in there for almost as long as I was trying this dud machine.",
-   "dst": "",
+   "dst": "あそこに新しい入口があるでしょう？ 専門家の Paxon は、私がこのポンコツと格闘してたのと同じくらい長く中にいます。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -168,7 +168,7 @@
   },
   "A Journey Home#016": {
    "src": "If you think you can do a job better than an expert, go ahead and talk with them, but I'm pretty sure you'll have to cancel whatever plans you had.",
-   "dst": "",
+   "dst": "専門家よりうまくやれると思うなら話してみてください。でも、あなたの予定はきっと取り消しになりますよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -178,7 +178,7 @@
   },
   "A Journey Home#017": {
    "src": "Talk to the Demolition Mage at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Demolition Mage と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -188,7 +188,7 @@
   },
   "A Journey Home#018": {
    "src": "If you really need to get to the border, your best bet is to talk to Paxon in the new cave entrance.",
-   "dst": "",
+   "dst": "どうしても国境へ行きたいなら、新しい洞窟の入口にいる Paxon と話すのが一番です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -198,7 +198,7 @@
   },
   "A Journey Home#019": {
    "src": "But, they're an expert, so I think your business will have to wait. Really, really sorry about all this!",
-   "dst": "",
+   "dst": "でも専門家ですから、あなたの用事は待つことになるでしょう。本当に、本当にすみません！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -208,7 +208,7 @@
   },
   "A Journey Home#020": {
    "src": "Oh no, not another one I don't care what rank you are, what you're asking is impossible! Even for me, it",
-   "dst": "",
+   "dst": "ああもう、また来た。階級なんか関係ない、あんたの頼みは無理だって！ 私でさえ、これは",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -218,7 +218,7 @@
   },
   "A Journey Home#021": {
    "src": "Wait, you aren't part of the... You're just a regular soldier. You're just trying to get through here, aren't you?",
-   "dst": "",
+   "dst": "待って、あんたはあっちの…じゃない。ただの兵士か。ここを通りたいだけなんでしょ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -228,7 +228,7 @@
   },
   "A Journey Home#022": {
    "src": "May as well give up now! Not happening. No way. You're wasting your time, and let me tell you exactly why.",
-   "dst": "",
+   "dst": "今すぐ諦めな！ 無理。絶対に無理。時間の無駄だよ、その理由をきっちり教えてあげる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -238,7 +238,7 @@
   },
   "A Journey Home#023": {
    "src": "You see that blue rock over there? It's a break point. If I could set off these explosives at it, it'd open a path.",
-   "dst": "",
+   "dst": "あそこの青い岩が見える？ あれが破砕点。そこで爆薬を爆発させれば道が開く。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -248,7 +248,7 @@
   },
   "A Journey Home#024": {
    "src": "They're gone. Hurry down the path!",
-   "dst": "",
+   "dst": "行ったぞ。急いで道を下れ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -258,7 +258,7 @@
   },
   "A Journey Home#025": {
    "src": "But apparently all these structures set up are so important that any of it being damaged, or MOVED, is unacceptable!",
-   "dst": "",
+   "dst": "でも、ここにある設備は全部大事だから、少しでも壊したり「動かしたり」するのは許されないんだって！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -268,7 +268,7 @@
   },
   "A Journey Home#026": {
    "src": "And to make sure I'm 'supervised' while the lieutenant is working on the drill, the detonator HAS to be here.",
-   "dst": "",
+   "dst": "しかも中尉がドリルの作業中も私を「監督」できるように、起爆装置はここに置かなきゃだめ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -278,7 +278,7 @@
   },
   "A Journey Home#027": {
    "src": "So I have to daisy-chain a limited amount of explosives all the way over to the stone, without blasting any structures!",
-   "dst": "",
+   "dst": "だから限られた爆薬を岩までつなげて連鎖させなきゃいけない。設備は一つも吹き飛ばさずに！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -288,7 +288,7 @@
   },
   "A Journey Home#028": {
    "src": "I've been trying for hours and gotten absolutely nowhere! I'm one of the best in my field, even! It's ridiculous!!",
-   "dst": "",
+   "dst": "何時間もやってるのにまったく進まない！ これでもこの分野じゃ一流なのに！ ばかげてる！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -308,7 +308,7 @@
   },
   "A Journey Home#030": {
    "src": "Use the TNT to open up a path through the cave.",
-   "dst": "",
+   "dst": "TNT を使って洞窟に道を開く。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -318,7 +318,7 @@
   },
   "A Journey Home#031": {
    "src": "Still at it? What, do you need a reminder? I've got nothing better to do.",
-   "dst": "",
+   "dst": "まだやってるの？ 何、もう一回説明がいる？ どうせ暇だし。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -328,7 +328,7 @@
   },
   "A Journey Home#032": {
    "src": "So the blue rock is soft enough to crack with the explosives. But the detonator's stuck here.",
-   "dst": "",
+   "dst": "青い岩は爆薬で砕けるくらい柔らかい。でも起爆装置はここから動かせない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -338,7 +338,7 @@
   },
   "A Journey Home#033": {
    "src": "So we need to use the TNT Placer to daisy-chain blasts from the detonator, without blasting any tents, crates, or walls.",
-   "dst": "",
+   "dst": "だから TNT Placer で起爆装置から爆発を連鎖させる。テントも木箱も壁も吹き飛ばさずにね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -348,7 +348,7 @@
   },
   "A Journey Home#034": {
    "src": "You can look at placed TNT to see its blast radius, as well.",
-   "dst": "",
+   "dst": "置いた TNT を見れば、爆発範囲もわかるよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -358,7 +358,7 @@
   },
   "A Journey Home#035": {
    "src": "But given how tight the squeeze between some of those structures is, there's just no way it's happening.",
-   "dst": "",
+   "dst": "でも設備同士の隙間があれだけ狭いと、どうやっても無理だね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -368,7 +368,7 @@
   },
   "A Journey Home#036": {
    "src": "Like I said, you really should just mosey on back to the castle. If I can't get anywhere, I don't think you'll fare better.",
-   "dst": "",
+   "dst": "言ったでしょ、おとなしく城に戻ったほうがいい。私が無理なら、あんたもうまくいかないよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -378,7 +378,7 @@
   },
   "A Journey Home#037": {
    "src": "Continue through the cave.",
-   "dst": "",
+   "dst": "洞窟を進む。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -388,7 +388,7 @@
   },
   "A Journey Home#038": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の衛兵と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -398,7 +398,7 @@
   },
   "A Journey Home#039": {
    "src": "Halt! Where did you come from? There was a cave-in past here, wasn't there?",
-   "dst": "",
+   "dst": "止まれ！ どこから来た？ この先で落盤があったはずだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -408,7 +408,7 @@
   },
   "A Journey Home#040": {
    "src": "A new path, huh? I didn't think you'd have things to be doing back here, though I won't say I'm ungrateful.",
-   "dst": "",
+   "dst": "新しい道だと？ こんな所に用があるとは思わなかったが、ありがたくないとは言わんよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -418,7 +418,7 @@
   },
   "A Journey Home#041": {
    "src": "It even crushed the grook's nest there. I've been working off field rations for a few days. So where are you headed?",
-   "dst": "",
+   "dst": "grook の巣まで潰れてな。ここ数日は野戦食で食いつないでる。で、どこへ行くんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -428,7 +428,7 @@
   },
   "A Journey Home#042": {
    "src": "The border? I suppose if you're headed there, it must be important, official business. Although, it might have to wait.",
-   "dst": "",
+   "dst": "国境？ そこへ向かうなら、きっと重要な公務なんだろう。だが、待ってもらうことになるかもしれん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -438,7 +438,7 @@
   },
   "A Journey Home#043": {
    "src": "The bridge repair was something of a hackjob. It may not bear up your weight. Now that the cave-in's clear, we might be able to get it fixed proper...",
-   "dst": "",
+   "dst": "橋の修理はやっつけ仕事でな。君の重さに耐えられないかもしれん。落盤が片付いたから、ちゃんと直せるかもしれんが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -448,7 +448,7 @@
   },
   "A Journey Home#044": {
    "src": "But that'll take time. I'd just as soon turn back whatever business you have isn't worth your life, after all.",
-   "dst": "",
+   "dst": "だが時間がかかる。私なら引き返すね。どんな用事だろうと、命には代えられんよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -458,7 +458,7 @@
   },
   "A Journey Home#045": {
    "src": "Cross the repaired bridge at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の修理された橋を渡る。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -468,7 +468,7 @@
   },
   "A Journey Home#046": {
    "src": "Say, I think I recognize you, actually. That's a rarity for this line of work.",
-   "dst": "",
+   "dst": "そういえば、君に見覚えがある気がする。この仕事じゃ珍しいことだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -478,7 +478,7 @@
   },
   "A Journey Home#047": {
    "src": "Are you sure that what you have to do is worth it? That bridge is awful rickety. Wouldn't want to lose you.",
-   "dst": "",
+   "dst": "本当にそれだけの価値がある用事なのか？ あの橋はひどくぐらつく。君を失いたくはない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -488,7 +488,7 @@
   },
   "A Journey Home#048": {
    "src": "Continue back down the path to Fruma.",
-   "dst": "",
+   "dst": "道を戻って Fruma へ向かう。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -498,7 +498,7 @@
   },
   "A Journey Home#049": {
    "src": "Hey, you there! Come talk to me before you pass through.",
-   "dst": "",
+   "dst": "おい、そこのお前！ 通る前にこっちへ来い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -508,7 +508,7 @@
   },
   "A Journey Home#050": {
    "src": "Hey, you! Come talk to me first, recruit!",
-   "dst": "",
+   "dst": "おい！ まずこっちへ来い、新兵！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -518,7 +518,7 @@
   },
   "A Journey Home#051": {
    "src": "Coming or going, I'm under strict orders to intercept soldiers and make sure they're equipped before heading on.",
-   "dst": "",
+   "dst": "行きも帰りも関係ない。先へ進む兵士を呼び止めて装備を確認しろと厳命されている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -528,7 +528,7 @@
   },
   "A Journey Home#052": {
    "src": "No exceptions, not for any reason. Especially not since the cave-in across the river!",
-   "dst": "",
+   "dst": "例外はない、どんな理由でもだ。特に川向こうの落盤以来はな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -538,7 +538,7 @@
   },
   "A Journey Home#053": {
    "src": "Nothing's more important than your life, and moving on without being suited up could cost you it!",
-   "dst": "",
+   "dst": "命より大事なものはない。まともな装備なしで進めば、その命を落としかねんぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -548,7 +548,7 @@
   },
   "A Journey Home#054": {
    "src": "Well, let me take a look and see if this stuff is up to regulation.",
-   "dst": "",
+   "dst": "さて、その装備が規定を満たしているか見せてもらおう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -558,7 +558,7 @@
   },
   "A Journey Home#055": {
    "src": "Hmm... Ah, yep, signs of wear all over... Armor not polished... Weapon looks liable to fall apart any second...",
-   "dst": "",
+   "dst": "ふむ…ああ、やっぱり傷だらけだ…鎧は磨かれてない…武器は今にも壊れそうだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -568,7 +568,7 @@
   },
   "A Journey Home#056": {
    "src": "I'm surprised you made it ten feet out here with those rusty trinkets! This is no way to protect yourself!",
-   "dst": "",
+   "dst": "そんな錆びたガラクタでよくここまで来られたな！ それじゃ身を守れんぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -578,7 +578,7 @@
   },
   "A Journey Home#057": {
    "src": "Look, there's a loot chest in the cave just there, so you need to head in and get yourself some proper equipment.",
-   "dst": "",
+   "dst": "いいか、すぐそこの洞窟に宝箱がある。中に入って、まともな装備を手に入れてこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -588,7 +588,7 @@
   },
   "A Journey Home#058": {
    "src": "...that so, huh? Well, I think you should take a second look up ahead.",
-   "dst": "",
+   "dst": "…そうか？ なら、この先をもう一度よく見てみるんだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -598,7 +598,7 @@
   },
   "A Journey Home#059": {
    "src": "See? Now no more guff about levels you either gear up properly, or you don't pass! I won't have you risking your life.",
-   "dst": "",
+   "dst": "わかったか？ レベルがどうのと言い訳するな。装備を整えるか、通らないかだ！ 命を賭けさせはせん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -608,7 +608,7 @@
   },
   "A Journey Home#060": {
    "src": "You can find good stuff in caves, like the one just next to me, so hop to it.",
-   "dst": "",
+   "dst": "洞窟にはいい物がある。俺の隣のこれみたいにな。さっさと行け。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -618,7 +618,7 @@
   },
   "A Journey Home#061": {
    "src": "Like I said, coming or going. No matter what, you should gear up by looting the cave here before heading onwards.",
-   "dst": "",
+   "dst": "言っただろう、行きも帰りもだ。何があろうと、先へ進む前にこの洞窟で装備を整えろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -628,7 +628,7 @@
   },
   "A Journey Home#062": {
    "src": "Good stuff. There's a loot chest in that cave there, so you should find everything you need. Get to it!",
-   "dst": "",
+   "dst": "よし。その洞窟に宝箱があるから、必要な物は全部見つかるはずだ。行け！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -638,7 +638,7 @@
   },
   "A Journey Home#063": {
    "src": "Explore the cave to find some loot.",
-   "dst": "",
+   "dst": "洞窟を探索して戦利品を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -648,7 +648,7 @@
   },
   "A Journey Home#064": {
    "src": "Enter the cave and open the loot chest.",
-   "dst": "",
+   "dst": "洞窟に入って宝箱を開けろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -658,7 +658,7 @@
   },
   "A Journey Home#065": {
    "src": "Continue back down the path to Fruma.",
-   "dst": "",
+   "dst": "道を戻って Fruma へ向かう。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -668,7 +668,7 @@
   },
   "A Journey Home#066": {
    "src": "That looks like the stuff. You can take that armor to an Item Identifier right there, and then you can wear it once identified.",
-   "dst": "",
+   "dst": "それらしいな。その鎧はすぐそこの Item Identifier で鑑定すれば、装備できるようになる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -678,7 +678,7 @@
   },
   "A Journey Home#067": {
    "src": "Though... since you seem to be heading back to the border... I have to ask why. It's pretty unusual. Probably best you head back to {p}.",
-   "dst": "",
+   "dst": "しかし…国境へ戻ろうとしているようだが…理由を聞かねばならん。珍しいことだ。{p} へ戻ったほうがいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -688,7 +688,7 @@
   },
   "A Journey Home#068": {
    "src": "If other recruits see you coming the other way, they might get confused, or discouraged. Wouldn't want to risk that, right?",
-   "dst": "",
+   "dst": "逆方向へ行くお前を他の新兵が見たら、混乱したり、やる気をなくすかもしれん。そんな危険は冒したくないだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -698,7 +698,7 @@
   },
   "A Journey Home#069": {
    "src": "Are you sure whatever you're doing is worth it? Maybe you should just head back to town.",
-   "dst": "",
+   "dst": "本当にそれだけの価値があるのか？ 町へ戻ったほうがいいんじゃないか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -708,7 +708,7 @@
   },
   "A Journey Home#070": {
    "src": "Avoid the Fruman recruits on the path.",
-   "dst": "",
+   "dst": "道にいる Fruman Recruit を避ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -718,7 +718,7 @@
   },
   "A Journey Home#071": {
    "src": "...been recruiting Fruman soldiers for the war effort. Apparently things are really bad over there. Makes me nervous...",
-   "dst": "",
+   "dst": "…戦のために Fruma の兵士を集めてるんだ。向こうは相当ひどいらしい。不安になるよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -728,7 +728,7 @@
   },
   "A Journey Home#072": {
    "src": "Walking corpses aren't anything I'm going to underestimate, but it can't be all doom and gloom, right?",
-   "dst": "",
+   "dst": "歩く死体を甘く見る気はないけど、悪いことばかりってわけじゃないよな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -738,7 +738,7 @@
   },
   "A Journey Home#073": {
    "src": "I suppose we'll see once we pass this gate. It marks the border... Deep breaths, deep breaths...",
-   "dst": "",
+   "dst": "この門を越えればわかるさ。ここが国境だ…深呼吸、深呼吸…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -748,7 +748,7 @@
   },
   "A Journey Home#074": {
    "src": "...know anything about Wynn? I didn't get any debriefing.",
-   "dst": "",
+   "dst": "…Wynn のこと何か知ってる？ 説明を何も受けてないんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -758,7 +758,7 @@
   },
   "A Journey Home#075": {
    "src": "I remember rumors... Something about a great hero. Name started with...and R?",
-   "dst": "",
+   "dst": "噂を覚えてる…偉大な英雄がいるとか。名前は…R で始まる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -768,7 +768,7 @@
   },
   "A Journey Home#076": {
    "src": "We'll make it a point to ask as soon as we can. Information's key to fighting wars.",
-   "dst": "",
+   "dst": "機会があったらすぐ聞くことにしよう。戦いでは情報が鍵だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -778,7 +778,7 @@
   },
   "A Journey Home#077": {
    "src": "...rotten driver. I feel for the man, but he said he always hits that boulder. Sounds like his own fault to me.",
-   "dst": "",
+   "dst": "…ひどい御者だよ。気の毒だけど、いつもあの岩にぶつかるって本人が言ってた。自業自得じゃないか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -788,7 +788,7 @@
   },
   "A Journey Home#078": {
    "src": "I'm thinking about meals more than wheels. I feel like I haven't eaten in days. Hope the walk's short...",
-   "dst": "",
+   "dst": "車輪よりシャリのことで頭がいっぱいだ。何日も食べてない気がする。道が短いといいな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -798,7 +798,7 @@
   },
   "A Journey Home#079": {
    "src": "Well, if he was a more competent driver you wouldn't have to walk so far on an empty stomach! Let's hurry so we can get you a feast, huh?",
-   "dst": "",
+   "dst": "御者がもっとまともなら、空きっ腹でこんなに歩かずに済んだのに！ 急いでごちそうにありつこうぜ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -808,7 +808,7 @@
   },
   "A Journey Home#080": {
    "src": "Wait, who's that? Why are they coming from the border??",
-   "dst": "",
+   "dst": "待って、あれは誰？ なんで国境の方から来るんだ？？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -818,7 +818,7 @@
   },
   "A Journey Home#081": {
    "src": "Hide from the Caravan Driver.",
-   "dst": "",
+   "dst": "キャラバンの御者から隠れる。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -828,7 +828,7 @@
   },
   "A Journey Home#082": {
    "src": "...and that's the last of them for today.",
-   "dst": "",
+   "dst": "…これで今日の分は終わりだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -838,7 +838,7 @@
   },
   "A Journey Home#083": {
    "src": "Lots of pairs today. Eight more in the wings... But that's for tomorrow.",
-   "dst": "",
+   "dst": "今日は二人組が多かったな。あと八人控えてる…だがそいつは明日だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -848,7 +848,7 @@
   },
   "A Journey Home#084": {
    "src": "Same darn boulder... Same darn line, too. Wonder if they'll let me shake it up one day. This is always a pain...",
-   "dst": "",
+   "dst": "またあの岩か…またあの台詞だ。いつか変えさせてもらえねえかな。毎回うんざりだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -858,7 +858,7 @@
   },
   "A Journey Home#085": {
    "src": "And that's that about that. And now, to be off...to the home I choose. And there's no troubles to follow me there.",
-   "dst": "",
+   "dst": "まあ、そういうことだ。さて、行くとするか…自分で選んだ我が家へ。そこなら面倒も追ってこねえ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -868,7 +868,7 @@
   },
   "A Journey Home#086": {
    "src": "Explore past the Fruma Gate.",
-   "dst": "",
+   "dst": "Fruma Gate の先を探索する。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -878,7 +878,7 @@
   },
   "A Journey Home#087": {
    "src": "Just couldn't take the hint, huh?",
-   "dst": "",
+   "dst": "察しが悪いにもほどがあるな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -888,7 +888,7 @@
   },
   "A Journey Home#088": {
    "src": "Bet you think you're slick. Didn't even notice me hang back to watch, huh? I wasn't born yesterday.",
-   "dst": "",
+   "dst": "うまくやったつもりだろう。俺が残って見てたのにも気づかなかったろ？ 甘く見るなよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -908,7 +908,7 @@
   },
   "A Journey Home#090": {
    "src": "If you couldn't tell, this whole thing's meant to be a one way trip. The bridge, the cave-in, everyone trying to discourage you.",
-   "dst": "",
+   "dst": "わからなかったなら言うが、これは全部片道の旅のはずなんだ。橋も、落盤も、お前を引き止めようとする連中もな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -918,7 +918,7 @@
   },
   "A Journey Home#091": {
    "src": "It's not wise to be here After all, you weren't the one out of your group of three that got permission to stay. Yeah, I heard about the tournament results.",
-   "dst": "",
+   "dst": "ここにいるのは賢くない。なにせ三人組の中で残る許可を得たのはお前じゃない。ああ、大会の結果は聞いてる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -928,7 +928,7 @@
   },
   "A Journey Home#092": {
    "src": "So...you got two choices, buddy. We can let this slide between us. We can. You can go marching right back to {p} and my lips will be sealed.",
-   "dst": "",
+   "dst": "だから…選択肢は二つだ、相棒。この件は俺たちの間で水に流せる。本当だ。まっすぐ {p} へ戻れば、俺は口をつぐむ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -938,7 +938,7 @@
   },
   "A Journey Home#093": {
    "src": "Alas, I am afraid my hands are quite tied here. There is little I can do- you recall what I said in the meeting.",
-   "dst": "",
+   "dst": "残念ながら、この件では手が出せないのだ。私にできることはほとんどない。会議で私が言ったことを覚えているだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -948,7 +948,7 @@
   },
   "A Journey Home#094": {
    "src": "Or, you can live life dangerously and follow me on the train to {p}. Better make your choice quick, though it's leaving soon.",
-   "dst": "",
+   "dst": "あるいは、危ない橋を渡って俺と {p} 行きの列車に乗るかだ。早く決めな、もうすぐ出るぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -958,7 +958,7 @@
   },
   "A Journey Home#095": {
    "src": "If I see you in the passenger cabin, well...that'll be that, and you'll just have to wait and see what comes of it.",
-   "dst": "",
+   "dst": "客車でお前を見かけたら、まあ…そういうことだ。どうなるかは待ってのお楽しみだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -968,7 +968,7 @@
   },
   "A Journey Home#096": {
    "src": "Join the Caravan Driver in the passenger car at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の客車でキャラバンの御者と合流する。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -978,7 +978,7 @@
   },
   "A Journey Home#097": {
    "src": "Last chance to back out. This your choice?",
-   "dst": "",
+   "dst": "引き返す最後のチャンスだ。それがお前の選択か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -988,7 +988,7 @@
   },
   "A Journey Home#098": {
    "src": "Well, you better get headed on the long walk back to {p} then.",
-   "dst": "",
+   "dst": "なら、{p} までの長い道のりを歩いて帰るんだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -998,7 +998,7 @@
   },
   "A Journey Home#099": {
    "src": "Arrive in Fruma.",
-   "dst": "",
+   "dst": "Fruma に到着する。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -1008,7 +1008,7 @@
   },
   "A Journey Home#100": {
    "src": "Well. We've arrived.",
-   "dst": "",
+   "dst": "さて。着いたぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1018,7 +1018,7 @@
   },
   "A Journey Home#101": {
    "src": "....",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1028,7 +1028,7 @@
   },
   "A Journey Home#102": {
    "src": "You know what they say about curiosity, and how it killed the cat. You the type to believe satisfaction'll bring it back?",
-   "dst": "",
+   "dst": "好奇心は猫をも殺すって言うだろう。お前は満足すれば猫が生き返ると信じるクチか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1048,7 +1048,7 @@
   },
   "A Journey Home#104": {
    "src": "Intruder to Fruma, you are under arrest! Now march!",
-   "dst": "",
+   "dst": "Fruma への侵入者、お前を逮捕する！ さあ歩け！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1058,7 +1058,7 @@
   },
   "A Journey Home#105": {
    "src": "You really thought the Driver was on your side, intruder? What a fool you are. We gave you every chance to quit this endeavor, but here you are. Let's go.",
-   "dst": "",
+   "dst": "御者が味方だと本気で思ったのか、侵入者？ 愚か者め。手を引く機会は何度も与えたのに、ここまで来るとはな。行くぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1068,7 +1068,7 @@
   },
   "A Journey Home#106": {
    "src": "Commander! We must speak immediately!",
-   "dst": "",
+   "dst": "指揮官！ 至急お話が！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1078,7 +1078,7 @@
   },
   "A Journey Home#107": {
    "src": "I have urgent news to report from the gate.",
-   "dst": "",
+   "dst": "門から緊急の報告があります。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1088,7 +1088,7 @@
   },
   "A Journey Home#108": {
    "src": "If it is truly so urgent, let's speak.",
-   "dst": "",
+   "dst": "本当に急ぎなら、聞こう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1098,7 +1098,7 @@
   },
   "A Journey Home#109": {
    "src": "Soldiers! Keep the intruder still. I've every faith in you.",
-   "dst": "",
+   "dst": "兵士たち！ 侵入者を押さえておけ。お前たちを信頼している。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1108,7 +1108,7 @@
   },
   "A Journey Home#110": {
    "src": "Defeat the guards and escape.",
-   "dst": "",
+   "dst": "衛兵を倒して脱出する。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -1118,7 +1118,7 @@
   },
   "A Journey Home#111": {
    "src": "Leave {p}.",
-   "dst": "",
+   "dst": "{p} を離れる。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Home",
@@ -1128,7 +1128,7 @@
   },
   "A Journey Home#112": {
    "src": "Mmn. Hey there, stranger.",
-   "dst": "",
+   "dst": "んん。よう、よそ者さん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1138,7 +1138,7 @@
   },
   "A Journey Home#113": {
    "src": "Anythin' I can help you with?",
-   "dst": "",
+   "dst": "何か手伝えることはあるかい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1148,7 +1148,7 @@
   },
   "A Journey Home#114": {
    "src": "Hm. Suppose there's no harm. But watch yourself, alright?",
-   "dst": "",
+   "dst": "ふむ。まあ害はねえだろう。だが気をつけな、いいな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1158,7 +1158,7 @@
   },
   "A Journey Home#115": {
    "src": "This here's our home. I wouldn't take too kindly to you messin' anything up, understand?",
-   "dst": "",
+   "dst": "ここは俺たちの家だ。何か荒らされたら、あまりいい顔はできねえ。わかったか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1168,7 +1168,7 @@
   },
   "A Journey Home#116": {
    "src": "...doin' alright, all things considered. Weather's nice, I suppose. Festival comin' up.",
-   "dst": "",
+   "dst": "…まあ、なんだかんだでうまくやってるよ。天気もいいしな。祭りも近い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1178,7 +1178,7 @@
   },
   "A Journey Home#117": {
    "src": "But that ain't none of our business, really. If you didn't need anythin' else, I'll kindly ask you to take your leave.",
-   "dst": "",
+   "dst": "だが、それは俺たちの知ったこっちゃねえ。他に用がねえなら、そろそろお引き取り願おうか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1188,7 +1188,7 @@
   },
   "A Journey Home#118": {
    "src": "Hm. Good. Have a nice day, now.",
-   "dst": "",
+   "dst": "ふむ。よし。じゃあ、いい一日を。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1198,7 +1198,7 @@
   },
   "A Journey Home#119": {
    "src": "Hmm? And who may you be?",
-   "dst": "",
+   "dst": "あら？ どちら様でしょう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1208,7 +1208,7 @@
   },
   "A Journey Home#120": {
    "src": "Hoh, oh well. Might I help you with something?",
-   "dst": "",
+   "dst": "ほほ、まあいいでしょう。何かお手伝いしましょうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1218,7 +1218,7 @@
   },
   "A Journey Home#121": {
    "src": "Ah, completing some assorted metalworking projects. There always seems to be something to replace or maintain around here...",
-   "dst": "",
+   "dst": "ああ、ちょっとした金属加工の作業をしているんです。ここでは何かしら交換や手入れが必要でして…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1228,7 +1228,7 @@
   },
   "A Journey Home#122": {
    "src": "Though, I certainly am no expert! But I can handle the tools well enough, and that is all that is needed for the task.",
-   "dst": "",
+   "dst": "もっとも、私は専門家ではありませんよ！ でも道具はそれなりに扱えますし、この作業にはそれで十分です。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",
@@ -1238,7 +1238,7 @@
   },
   "A Journey Home#123": {
    "src": "Farewell, stranger! I hope that you will return home safely.",
-   "dst": "",
+   "dst": "さようなら、旅の方！ 無事に帰れますように。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Home",

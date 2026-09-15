@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Death Whistle (Quest)",
   "count": 31,
-  "translated": 0,
+  "translated": 31,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Death Whistle (Quest)#000": {
    "src": "Talk to Voer at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] で Voer と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -18,7 +18,7 @@
   },
   "Death Whistle (Quest)#001": {
    "src": "Hello! Hmm, armour, weapon, look of grim despair... You must be from the Wynn province!",
-   "dst": "",
+   "dst": "やあ！ふむ、防具に武器、絶望に満ちた顔…さては Wynn 地方の方ですね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -28,7 +28,7 @@
   },
   "Death Whistle (Quest)#002": {
    "src": "My name is Voer, and I'm an exotic plant merchant. I sell all kinds of, uh, perfectly legal goods to the magicians of Gavel.",
-   "dst": "",
+   "dst": "私は Voer、珍しい植物の商人です。Gavel の魔術師たちに、あー、完全に合法な品々を売っています。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -38,7 +38,7 @@
   },
   "Death Whistle (Quest)#003": {
    "src": "Lately, this Decay has been making business rather tough. The magical plants that used to grow here are dying.",
-   "dst": "",
+   "dst": "最近は腐朽のせいで商売が厳しくてね。ここに生えていた魔法の植物が枯れていくんです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -48,7 +48,7 @@
   },
   "Death Whistle (Quest)#004": {
    "src": "The need for magic has never been as big as it is now, and without supplies, the magicians of the swamp simply cannot operate!",
-   "dst": "",
+   "dst": "魔法の需要が今ほど高まったことはないのに、材料がなければ沼の魔術師たちは何もできません！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -58,7 +58,7 @@
   },
   "Death Whistle (Quest)#005": {
    "src": "I need Death Whistle in particular. It's not as deadly as it sounds, I promise- the name's just archaic, if I recall that from that- er, my book.",
-   "dst": "",
+   "dst": "特に Death Whistle が必要でして。名前ほど危険じゃありません、本当です。古い名前なだけで…あの…私の本によれば、ですが。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -68,7 +68,7 @@
   },
   "Death Whistle (Quest)#006": {
    "src": "It is a rather rare plant with all sorts of mystical properties, so much so that it can animate objects around it!",
-   "dst": "",
+   "dst": "かなり珍しい植物で、神秘的な性質が多く、周りの物に命を吹き込むほどなんです！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -78,7 +78,7 @@
   },
   "Death Whistle (Quest)#007": {
    "src": "Look for the highest mountain in the swamp south-east from here. The Decay hasn't reached the peaks yet, you see!",
-   "dst": "",
+   "dst": "ここから南東の沼で一番高い山を探してください。腐朽はまだ山頂まで届いていませんから！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -88,7 +88,7 @@
   },
   "Death Whistle (Quest)#008": {
    "src": "Find the mountain at [-{~}, {~}, -{~}] and a way up on it.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の山を見つけ、登る道を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -98,7 +98,7 @@
   },
   "Death Whistle (Quest)#009": {
    "src": "Go to the top of the mountain and get {~} Black Whistle Leaf.",
-   "dst": "",
+   "dst": "山頂へ行き、Black Whistle Leaf を {~} 枚手に入れる。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -108,7 +108,7 @@
   },
   "Death Whistle (Quest)#010": {
    "src": "Return to Voer at [-{~}, {~}, -{~}] with [{~} Death Whistle Leaf].",
-   "dst": "",
+   "dst": "[{~4} Death Whistle Leaf] を持って [-{~1}, {~2}, -{~3}] の Voer のもとへ戻る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -118,7 +118,7 @@
   },
   "Death Whistle (Quest)#011": {
    "src": "You, Voer! Inconsiderate thief!",
-   "dst": "",
+   "dst": "Voer、この無神経な泥棒め！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -128,7 +128,7 @@
   },
   "Death Whistle (Quest)#012": {
    "src": "You've no idea what you even have done, do you? Your thoughtless actions will cost lives!",
-   "dst": "",
+   "dst": "自分が何をしたか分かっていないのでしょう？その軽率な行いが命を奪うのです！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -138,7 +138,7 @@
   },
   "Death Whistle (Quest)#013": {
    "src": "Uhm... Excuse me? What do you want, elf girl? We're in the middle of a deal here?",
-   "dst": "",
+   "dst": "えーと…何です？何の用ですか、エルフのお嬢さん？今取引中なんですが？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -148,7 +148,7 @@
   },
   "Death Whistle (Quest)#014": {
    "src": "You sold Pink Pelulite! Have you forgotten its enraging properties? Or shall I read from that herbology book you \"found\" in my camp?",
-   "dst": "",
+   "dst": "あなたはピンクの Pelulite を売った！激昂させる性質を忘れたの？私の野営地で「拾った」薬草学の本を読み上げましょうか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -158,7 +158,7 @@
   },
   "Death Whistle (Quest)#015": {
    "src": "Wait, wh-what? A Pink PELULITE!? I sold that woman a Pink PELUTE for her luck charms! How dare- wait... wait, Pink Pelute has rounder petals... Oh no.",
-   "dst": "",
+   "dst": "待って、な、何？ピンクの PELULITE！？あの女性にはお守り用にピンクの PELUTE を売ったんだ！よくも…待てよ…Pelute は花びらが丸い…しまった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -168,7 +168,7 @@
   },
   "Death Whistle (Quest)#016": {
    "src": "You can't even say for certain. This kind of carelessness has no place! If you refuse to exercise the proper thought and caution, then those around you suffer.",
-   "dst": "",
+   "dst": "確信すら持てないのね。こんな不注意は許されない！きちんと考え注意を払わなければ、周りの人が苦しむのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -178,7 +178,7 @@
   },
   "Death Whistle (Quest)#017": {
    "src": "I must... make a difficult choice, and leave this job to you. I've other things to tend to, though it pains me to leave a life in another's hands. Remember this, villager!",
-   "dst": "",
+   "dst": "私は…苦しい決断をして、この件をあなたに任せます。他にすべきことがある。命を他人の手に委ねるのは心苦しいけれど。覚えておきなさい、村人よ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -188,7 +188,7 @@
   },
   "Death Whistle (Quest)#018": {
    "src": "Aaah, this is a disaster! Human, please, Pink Pelulite acts quickly and intensely... Follow the pink trail on the ground, the flowers shed their petals. Get it back before something bad happens!",
-   "dst": "",
+   "dst": "ああ、大惨事だ！人間さん、お願いです、ピンクの Pelulite は効き目が速くて強烈なんです…地面のピンクの跡を追ってください、花びらが落ちるんです。何か起きる前に取り返して！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -198,7 +198,7 @@
   },
   "Death Whistle (Quest)#019": {
    "src": "Follow the path of residue to the buyer’s cave.",
-   "dst": "",
+   "dst": "残った跡をたどって買い手の洞窟へ行く。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -208,7 +208,7 @@
   },
   "Death Whistle (Quest)#020": {
    "src": "Ah, um, come back later please! Something strange is happening!",
-   "dst": "",
+   "dst": "あ、あの、また後で来てください！何か変なことが起きてるんです！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -218,7 +218,7 @@
   },
   "Death Whistle (Quest)#021": {
    "src": "My body is a bit, um, not-in-my-control right now! I'd rather not hurt anyone!",
-   "dst": "",
+   "dst": "体がちょっと、その、言うことを聞かないんです！誰も傷つけたくないの！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -228,7 +228,7 @@
   },
   "Death Whistle (Quest)#022": {
    "src": "Remove the flower from the woman in the cave.",
-   "dst": "",
+   "dst": "洞窟の女性から花を取り除く。",
    "role": "desc",
    "kind": "objective",
    "quest": "Death Whistle (Quest)",
@@ -238,7 +238,7 @@
   },
   "Death Whistle (Quest)#023": {
    "src": "You're back, I see... and you're shedding petals! You got the Pink Pelulite back?",
-   "dst": "",
+   "dst": "戻りましたね…花びらを落としながら！ピンクの Pelulite を取り返したんですか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -248,7 +248,7 @@
   },
   "Death Whistle (Quest)#024": {
    "src": "And what of the woman who bought it? Was she...?",
-   "dst": "",
+   "dst": "で、買った女性は？彼女は…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -258,7 +258,7 @@
   },
   "Death Whistle (Quest)#025": {
    "src": "Oh, thank goodness! You got in there in time. She's a regular of mine- and a bit of a looker, too. That Lari was right, to some extent, at least...",
-   "dst": "",
+   "dst": "ああ、よかった！間に合ったんですね。彼女は常連で…なかなかの美人でもある。あの Lari の言うことも、少しは正しかったか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -268,7 +268,7 @@
   },
   "Death Whistle (Quest)#026": {
    "src": "I did take her book, and I should be more careful in the future, regarding this... but I can't just quit selling the herbs.",
-   "dst": "",
+   "dst": "確かに彼女の本は持ち出しましたし、今後はもっと気をつけるべきです…でも薬草を売るのはやめられません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -278,7 +278,7 @@
   },
   "Death Whistle (Quest)#027": {
    "src": "I need an income, and the swamp isn't exactly the most resource-rich region here! Especially not any more.",
-   "dst": "",
+   "dst": "収入が要るんです、この沼は資源が豊かな土地じゃありませんし！今となってはなおさら。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -288,7 +288,7 @@
   },
   "Death Whistle (Quest)#028": {
    "src": "And how dare she just walk away like that! It's a good thing you were around, human, otherwise... well, I would not think about it.",
-   "dst": "",
+   "dst": "それにしても、あんなふうに立ち去るなんて！あなたがいてくれて助かりましたよ、人間さん。でなければ…考えたくもない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -298,7 +298,7 @@
   },
   "Death Whistle (Quest)#029": {
    "src": "Regardless, you helped me greatly. Got me my supplies and saved the life of a regular of mine, so I've got a gift for you!",
-   "dst": "",
+   "dst": "ともかく、大いに助かりました。材料を集めて、常連の命まで救ってくれた。だから贈り物があります！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",
@@ -308,7 +308,7 @@
   },
   "Death Whistle (Quest)#030": {
    "src": "I'll offer you a sampler of my stock. Everything here is pre-primed to be safe for brewing, so there won't be any mishaps like today!",
-   "dst": "",
+   "dst": "私の品の詰め合わせを差し上げます。どれも調合しても安全なよう処理済みなので、今日のような事故は起きませんよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Death Whistle (Quest)",

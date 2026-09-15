@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "All Roads to Peace",
   "count": 402,
-  "translated": 0,
+  "translated": 402,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "All Roads to Peace#000": {
    "src": "Talk to Captain Goruca at [-{~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, -{~}] の Goruca 隊長と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -18,7 +18,7 @@
   },
   "All Roads to Peace#001": {
    "src": "Hm. It's been long enough, we should've heard back from the diplomacy squad by now...",
-   "dst": "",
+   "dst": "ふむ。もう十分経った。外交部隊から連絡があってもいい頃だが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -28,7 +28,7 @@
   },
   "All Roads to Peace#002": {
    "src": "Ah, hello there, Wynn soldier. You should stick around! We were just launching a counterattack against the orc citadel.",
-   "dst": "",
+   "dst": "おお、Wynn の兵士か。見ていくといい！ちょうどオークの城塞に反撃を仕掛けるところだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -38,7 +38,7 @@
   },
   "All Roads to Peace#003": {
    "src": "Since you've helped with curbing the orcs elsewhere, you can join in the festivities- Oh, that's them coming over the hills!",
-   "dst": "",
+   "dst": "よそでオーク退治に手を貸してくれたそうだし、祭りに加わるといい―お、奴らが丘を越えて戻ってきた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -48,7 +48,7 @@
   },
   "All Roads to Peace#004": {
    "src": "...A CATAPULT! Since when did the orcs have knowhow to make a CATAPULT?!",
-   "dst": "",
+   "dst": "…投石機だ！オークがいつから投石機なんて作れるようになったんだ？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -58,7 +58,7 @@
   },
   "All Roads to Peace#005": {
    "src": "I don't know, but they just decimated our golems with it. How are we supposed to deal with that chieftain without our protection?",
-   "dst": "",
+   "dst": "知るか。だがあれでゴーレムが全滅だ。守りもなしに、あの族長をどうしろってんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -68,7 +68,7 @@
   },
   "All Roads to Peace#006": {
    "src": "Let's just get to the medical tent and go from there. The captain will need to hear about this.",
-   "dst": "",
+   "dst": "とにかく医療テントへ行こう。話はそれからだ。隊長に報告しないと。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -78,7 +78,7 @@
   },
   "All Roads to Peace#007": {
    "src": "Nonono, you don't understand- a CATAPULT?! Seriously, I cannot get over this! Orc catapult! What's the world coming to?!",
-   "dst": "",
+   "dst": "違う違う、わかってない―投石機だぞ？！マジで信じられない！オークの投石機！世も末だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -88,7 +88,7 @@
   },
   "All Roads to Peace#008": {
    "src": "...why do you always have to embarrass me in front of the humans, you idiots...",
-   "dst": "",
+   "dst": "…なぜお前らはいつも人間の前で私に恥をかかせるんだ、この馬鹿どもが…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -98,7 +98,7 @@
   },
   "All Roads to Peace#009": {
    "src": "Obviously, it seems we need some backup, soldier. Would you mind coming along to the medical tent with me?",
-   "dst": "",
+   "dst": "どうやら援軍が必要なようだな、兵士。医療テントまで一緒に来てくれるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -108,7 +108,7 @@
   },
   "All Roads to Peace#010": {
    "src": "Follow the captain to the medical tent at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "隊長について [-{~}, {~}, -{~}] の医療テントへ向かう",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -118,7 +118,7 @@
   },
   "All Roads to Peace#011": {
    "src": "You lot are useless, you are! We had you sent off with thirty golems! THIRTY! And you come back with nothing to show? Do you have any idea how much that cost us?!",
-   "dst": "",
+   "dst": "お前らは本当に役立たずだ！ゴーレムを三十体つけてやったんだぞ！三十だ！それで手ぶらで帰ってくるとは！いくらかかったと思ってる？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -128,7 +128,7 @@
   },
   "All Roads to Peace#012": {
    "src": "ORC CATAPULT! I'm telling you, Captain! They crushed our golems with huge honking boulders! What are we supposed to do against that?!",
-   "dst": "",
+   "dst": "オークの投石機ですよ、隊長！でかい岩でゴーレムを潰されたんです！あんなのどうしろって言うんですか？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -138,7 +138,7 @@
   },
   "All Roads to Peace#013": {
    "src": "He's right, captain. After the golems were crushed, the orcs spilled out from the fortress. If we didn't retreat, we would've been killed, with just the four of us.",
-   "dst": "",
+   "dst": "こいつの言う通りです、隊長。ゴーレムが潰された後、砦からオークがあふれ出てきました。退かなければ、四人だけでは殺されていました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -148,7 +148,7 @@
   },
   "All Roads to Peace#014": {
    "src": "...fine. I suppose you have a point. And that means it's a good thing we have a human here to pick up all your slack.",
-   "dst": "",
+   "dst": "…まあいい。一理ある。つまり、お前らの尻拭いをしてくれる人間がここにいて助かったというわけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -158,7 +158,7 @@
   },
   "All Roads to Peace#015": {
    "src": "Human! Let me give you the lowdown. Since you've helped us reclaim the outpost up north, the orcs have gotten much more aggressive.",
-   "dst": "",
+   "dst": "人間！状況を説明しよう。お前が北の前哨基地の奪還を手伝ってから、オークはずっと攻撃的になった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -168,7 +168,7 @@
   },
   "All Roads to Peace#016": {
    "src": "There have been many attacks here at town, and we've been struggling to fend them off. Thanks to the incompetence of our troops, we haven't been able to-",
-   "dst": "",
+   "dst": "町は何度も襲われ、撃退に苦労している。我が部隊の無能のおかげで、いまだに―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -178,7 +178,7 @@
   },
   "All Roads to Peace#017": {
    "src": "ORC CATAPULT!! ORC CATAPULT!! Listen to the words I am telling you! ORC! CATAPULT!",
-   "dst": "",
+   "dst": "オークの投石機！！オークの投石機！！ちゃんと聞いてください！オーク！の！投石機！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -188,7 +188,7 @@
   },
   "All Roads to Peace#018": {
    "src": "...we haven't been able to get the orc chieftain to listen to reason and sign a new ceasefire yet. If this keeps up, we'll be overwhelmed. The brutes only seem to listen to force...",
-   "dst": "",
+   "dst": "…いまだにオークの族長を説得して、新たな停戦協定に署名させられていない。このままでは押し潰される。あの獣どもは力しかわからんらしい…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -198,7 +198,7 @@
   },
   "All Roads to Peace#019": {
    "src": "And that's where you come in, soldier. We need you to go to the orc fortress and break through their line of defenses. Maybe, if we show them we can equal their force, they'll listen, right?",
-   "dst": "",
+   "dst": "そこでお前の出番だ、兵士。オークの砦へ行き、奴らの防衛線を突破してくれ。我々にも同等の力があると示せば、話を聞くかもしれん、だろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -208,7 +208,7 @@
   },
   "All Roads to Peace#020": {
    "src": "The fortress is off to the northeast, it's visible from town. Don't come back without a ceasefire- Or the chieftain's head, if peace is out of the question!",
-   "dst": "",
+   "dst": "砦は北東だ。町からも見える。停戦協定を取るまで戻ってくるな―和平が無理なら、族長の首でもいい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -218,7 +218,7 @@
   },
   "All Roads to Peace#021": {
    "src": "Enter the Orcish Fortress at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] のオークの砦に入る",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -228,7 +228,7 @@
   },
   "All Roads to Peace#022": {
    "src": "Hmh! Human! Just like say, Serepe. Villager fail, then send human to kill.",
-   "dst": "",
+   "dst": "フン！人間！言った通り、Serepe。村人しくじる、人間よこして殺させる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -238,7 +238,7 @@
   },
   "All Roads to Peace#023": {
    "src": "Idiot big-noses! Human strong, but only one. Need more to break Centerworld!",
-   "dst": "",
+   "dst": "鼻でか馬鹿ども！人間強い、でも一人。Centerworld 破るにはもっといる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -248,7 +248,7 @@
   },
   "All Roads to Peace#024": {
    "src": "One against four... Human not even beat one. Ismikku! Hulve!",
-   "dst": "",
+   "dst": "一人対四人…人間、一人にも勝てない。Ismikku！Hulve！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -258,7 +258,7 @@
   },
   "All Roads to Peace#025": {
    "src": "KNOCK HUMAN DOWN!!",
-   "dst": "",
+   "dst": "人間、叩きのめせ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -268,7 +268,7 @@
   },
   "All Roads to Peace#026": {
    "src": "Idiot. Idiot human. Will die in open. Come.",
-   "dst": "",
+   "dst": "馬鹿。馬鹿人間。外にいたら死ぬ。来い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -278,7 +278,7 @@
   },
   "All Roads to Peace#027": {
    "src": "RRRGHH! Armor heavy! How human carry much weight, but so weak without?!",
-   "dst": "",
+   "dst": "ぐおお！鎧重い！人間なぜこんな重いの着れる、脱ぐとこんな弱いのに？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -288,7 +288,7 @@
   },
   "All Roads to Peace#028": {
    "src": "Need medicine for...urgh. Blood... Where yarrow root...",
-   "dst": "",
+   "dst": "薬がいる…うぐ。血…ノコギリソウの根、どこ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -298,7 +298,7 @@
   },
   "All Roads to Peace#029": {
    "src": "Hmh. Get up. Human! Get up! See human breathing, you awake!",
-   "dst": "",
+   "dst": "フン。起きろ。人間！起きろ！息してる見える、起きてる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -308,7 +308,7 @@
   },
   "All Roads to Peace#030": {
    "src": "Name Zuett. Your name, Idiot. But only because taught wrong. So will help idiot. Take medicine.",
-   "dst": "",
+   "dst": "名前 Zuett。お前の名前、馬鹿。でも教え間違えられただけ。だから馬鹿助ける。薬飲め。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -318,7 +318,7 @@
   },
   "All Roads to Peace#031": {
    "src": "Hmh! Better than silly magic potion. Earth heals best...",
-   "dst": "",
+   "dst": "フン！くだらない魔法の薬よりいい。大地が一番治す…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -328,7 +328,7 @@
   },
   "All Roads to Peace#032": {
    "src": "Anyway. Why you here? Why now? Give me good reason. Because orcs kill for \"peace\"?",
-   "dst": "",
+   "dst": "とにかく。なぜここ来た？なぜ今？いい理由言え。オークが「平和」のために殺すからか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -338,7 +338,7 @@
   },
   "All Roads to Peace#033": {
    "src": "Hmh. Mhm, mhm. Yes, idiot villagers come by, lots of metal villager too. Say want peace- just want kill. Evil war machines.",
-   "dst": "",
+   "dst": "フン。うむ、うむ。そう、馬鹿村人来た、金属の村人もたくさん。平和欲しい言う―殺したいだけ。邪悪な戦争機械。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -348,7 +348,7 @@
   },
   "All Roads to Peace#034": {
    "src": "Human really want peace? Then listen to Zuett. Killing not the way. Orcs strong, but not killers. Villager say, but villager wrong.",
-   "dst": "",
+   "dst": "人間、本当に平和欲しい？なら Zuett の話聞け。殺しは道じゃない。オーク強い、でも人殺しじゃない。村人そう言う、村人間違い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -358,7 +358,7 @@
   },
   "All Roads to Peace#035": {
    "src": "We... Orcs... Not listen to just force. Orcs see strength, not idiot-killing. Human been idiot-killing. Time to stop.",
-   "dst": "",
+   "dst": "我ら…オーク…力だけで聞かない。オーク見るのは強さ、馬鹿殺しじゃない。人間ずっと馬鹿殺し。もうやめる時。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -368,7 +368,7 @@
   },
   "All Roads to Peace#036": {
    "src": "Whole war stupid. War killing us. Not all Orcs meant to fight. Human need learn first.",
-   "dst": "",
+   "dst": "戦争全部馬鹿。戦争が我ら殺す。オーク全員戦うため生まれてない。人間まず学べ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -378,7 +378,7 @@
   },
   "All Roads to Peace#037": {
    "src": "Need talk with Arrai-Veretel. But first, need trust. To start trust, listen to Zuett.",
-   "dst": "",
+   "dst": "Arrai-Veretel と話す必要ある。でもまず信頼いる。信頼始めるなら、Zuett の話聞け。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -388,7 +388,7 @@
   },
   "All Roads to Peace#038": {
    "src": "Will give guards peace offer. [Elite Boar Meat]. Go hunt. Look bushes up north.",
-   "dst": "",
+   "dst": "見張りに和平の贈り物やる。[Elite Boar Meat]。狩ってこい。北の茂み探せ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -398,7 +398,7 @@
   },
   "All Roads to Peace#039": {
    "src": "If want walk away like coward, do now. If human trust me...meet by fort after get meat.",
-   "dst": "",
+   "dst": "臆病者みたいに去るなら、今去れ。Zuett 信じるなら…肉取ったら砦のそばで会う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -408,7 +408,7 @@
   },
   "All Roads to Peace#040": {
    "src": "Travel to the hunting grounds at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の狩り場へ向かう",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -418,7 +418,7 @@
   },
   "All Roads to Peace#041": {
    "src": "Speak to Zuett with the Elite Boar Meat at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Elite Boar Meat を持って [-{~}, {~}, -{~}] の Zuett と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -428,7 +428,7 @@
   },
   "All Roads to Peace#042": {
    "src": "Hmh. Hunt like child, but succeed anyway. Human should rely less on magic. Human serious, though.",
-   "dst": "",
+   "dst": "フン。子供みたいな狩り、でも成功した。人間、魔法に頼りすぎ。でも本気なのはわかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -438,7 +438,7 @@
   },
   "All Roads to Peace#043": {
    "src": "Good. Human really want peace. Help stop stupid war... Even though human and villager start anyway...",
-   "dst": "",
+   "dst": "よし。人間、本当に平和欲しい。馬鹿な戦争止めるの手伝え…始めたの人間と村人だけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -448,7 +448,7 @@
   },
   "All Roads to Peace#044": {
    "src": "Follow. We go Centerworld. Guards still angry, but can say good for you. Stay quiet- Zuett do talk.",
-   "dst": "",
+   "dst": "ついて来い。Centerworld 行く。見張りまだ怒ってる、でもお前のこといい言える。黙ってろ―Zuett が話す。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -458,7 +458,7 @@
   },
   "All Roads to Peace#045": {
    "src": "Zuett! What you do? Thought drag away human to kill for good! Why bringing back now?",
-   "dst": "",
+   "dst": "Zuett！何してる？人間引きずってって、殺したと思った！なぜ連れ戻す？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -468,7 +468,7 @@
   },
   "All Roads to Peace#046": {
    "src": "Zuett bleeding heart. Strong in compassion. Saw hurt, thought help. Stupid, but can respect.",
-   "dst": "",
+   "dst": "Zuett お人好し。思いやり強い。ケガ見た、助けようと思った。馬鹿、でも尊敬できる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -478,7 +478,7 @@
   },
   "All Roads to Peace#047": {
    "src": "Listen to Zuett! Human want peace. Came for peace, but was taught peace come from idiot-killing by villager.",
-   "dst": "",
+   "dst": "Zuett の話聞け！人間、平和欲しい。平和のため来た、でも村人に、平和は馬鹿殺しから来る教わった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -488,7 +488,7 @@
   },
   "All Roads to Peace#048": {
    "src": "Grrrh! All human say! What special about this human?",
-   "dst": "",
+   "dst": "ぐるる！人間みんなそう言う！この人間、何が特別？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -498,7 +498,7 @@
   },
   "All Roads to Peace#049": {
    "src": "Human listen to Zuett. Hunt spineback boar, bring meat. See? If human not care, human not listen. Not hunt.",
-   "dst": "",
+   "dst": "人間、Zuett の話聞いた。トゲ背イノシシ狩って、肉持ってきた。見ろ。気にしない人間なら聞かない。狩らない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -508,7 +508,7 @@
   },
   "All Roads to Peace#050": {
    "src": "...hm ... ... ...can respect human strength. Can hunt spineback, mean strong.",
-   "dst": "",
+   "dst": "…ふむ………人間の強さ尊敬できる。トゲ背狩れる、強いということ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -518,7 +518,7 @@
   },
   "All Roads to Peace#051": {
    "src": "But strong not mean trust! Strength of body only one thing.",
-   "dst": "",
+   "dst": "でも強い、信頼じゃない！体の強さ一つだけ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -528,7 +528,7 @@
   },
   "All Roads to Peace#052": {
    "src": "RESSINTER HURT! RESSINTER HURT BAD! NEED HELP!! HELP NOW!!",
-   "dst": "",
+   "dst": "Ressinter ケガ！Ressinter ひどいケガ！助けいる！！今すぐ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -538,7 +538,7 @@
   },
   "All Roads to Peace#053": {
    "src": "Onluk! Tell what happen! Ressinter...healer hurt?",
-   "dst": "",
+   "dst": "Onluk！何あった言え！Ressinter…治療師がケガ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -548,7 +548,7 @@
   },
   "All Roads to Peace#054": {
    "src": "{u}!! Ressinter only healer! Zuett want be healer, Creinu want be healer, but not!",
-   "dst": "",
+   "dst": "{u}！！Ressinter 唯一の治療師！Zuett 治療師なりたい、Creinu 治療師なりたい、でも違う！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -558,7 +558,7 @@
   },
   "All Roads to Peace#055": {
    "src": "KREIMU! Get Kreimu! Mudspring camp! She good healer!",
-   "dst": "",
+   "dst": "Kreimu！Kreimu 呼べ！Mudspring の野営地！あいつ腕のいい治療師！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -568,7 +568,7 @@
   },
   "All Roads to Peace#056": {
    "src": "Will go! Fast runner! Ressinter no die today! Serepe, deal with human!",
-   "dst": "",
+   "dst": "行く！足速い！Ressinter 今日死なない！Serepe、人間まかせた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -578,7 +578,7 @@
   },
   "All Roads to Peace#057": {
    "src": "Hm...HM!! Human, uh, human good healer! Heal own injury with medicine! Human will help!",
-   "dst": "",
+   "dst": "むう…ムウ！！人間、えっと、人間いい治療師！自分のケガ薬で治した！人間手伝う！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -588,7 +588,7 @@
   },
   "All Roads to Peace#058": {
    "src": "Gwuh?! Zuett! Lying bad! Human idiot no hea-",
-   "dst": "",
+   "dst": "ぐえ？！Zuett！嘘よくない！馬鹿人間治せな―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -598,7 +598,7 @@
   },
   "All Roads to Peace#059": {
    "src": "RESSINTER DYING! NO CARE IF LIE! ANY HEALER BETTER THAN NO HEALER!",
-   "dst": "",
+   "dst": "Ressinter 死にそう！嘘でも構わない！治療師いないより誰でもマシ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -608,7 +608,7 @@
   },
   "All Roads to Peace#060": {
    "src": "HEY! ONLUK IDIOT! NO LET HUMAN IN!",
-   "dst": "",
+   "dst": "おい！Onluk 馬鹿！人間入れるな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -618,7 +618,7 @@
   },
   "All Roads to Peace#061": {
    "src": "Onluk, tell! How Ressinter hurt?",
-   "dst": "",
+   "dst": "Onluk、言え！Ressinter どうケガした？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -628,7 +628,7 @@
   },
   "All Roads to Peace#062": {
    "src": "Follow Onluk to the Medicine Tent through the fortress",
-   "dst": "",
+   "dst": "Onluk について砦を抜け、薬のテントへ向かう",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -638,7 +638,7 @@
   },
   "All Roads to Peace#063": {
    "src": "Cannon backfire! Caught in blast! Cut up all over, bleeding bad! Healer already brought medicine tent!",
-   "dst": "",
+   "dst": "大砲暴発！爆発に巻き込まれた！全身切り傷、血がひどい！治療師もう薬のテント運んだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -648,7 +648,7 @@
   },
   "All Roads to Peace#064": {
    "src": "Hhhgh. Bad injury... Human. Heal Ressinter, fast!",
-   "dst": "",
+   "dst": "ぐうう。ひどいケガ…人間。Ressinter 治せ、早く！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -658,7 +658,7 @@
   },
   "All Roads to Peace#065": {
    "src": "Make balm to keep healer alive! Even if only keep alive for Kreimu to heal, keep Ressinter alive!",
-   "dst": "",
+   "dst": "治療師生かす軟膏作れ！Kreimu が治すまで持たせるだけでも、Ressinter 生かせ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -668,7 +668,7 @@
   },
   "All Roads to Peace#066": {
    "src": "Mix herbs. Use medicine book. And stay in tent!",
-   "dst": "",
+   "dst": "薬草混ぜろ。薬の本使え。あとテントから出るな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -678,7 +678,7 @@
   },
   "All Roads to Peace#067": {
    "src": "Save the injured orc, or keep it alive until rescue arrives",
-   "dst": "",
+   "dst": "負傷したオークを救うか、救援が来るまで持ちこたえさせる",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -688,7 +688,7 @@
   },
   "All Roads to Peace#068": {
    "src": "KREIMU HERE! HEAL RESSINTER!! NOW!!!",
-   "dst": "",
+   "dst": "Kreimu 来た！Ressinter 治せ！！今！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -698,7 +698,7 @@
   },
   "All Roads to Peace#069": {
    "src": "Gwuh, yes! Stop shouting! I- Urgh!",
-   "dst": "",
+   "dst": "ぐえ、わかった！怒鳴るな！あたし―うぐ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -708,7 +708,7 @@
   },
   "All Roads to Peace#070": {
    "src": "Here in time. Ressinter still alive...why other balm on cuts?",
-   "dst": "",
+   "dst": "間に合った。Ressinter まだ生きてる…なぜ傷に別の軟膏？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -718,7 +718,7 @@
   },
   "All Roads to Peace#071": {
    "src": "Wait, why human here? Ressinter hurt because human?",
-   "dst": "",
+   "dst": "待て、なぜ人間ここに？Ressinter のケガ、人間のせい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -728,7 +728,7 @@
   },
   "All Roads to Peace#072": {
    "src": "No, human try heal Ressinter!",
-   "dst": "",
+   "dst": "違う、人間 Ressinter 治そうとした！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -738,7 +738,7 @@
   },
   "All Roads to Peace#073": {
    "src": "Human try heal Ressinter. Thought better healer than Zuett. Try hard to keep Ressinter alive.",
-   "dst": "",
+   "dst": "人間 Ressinter 治そうとした。Zuett よりいい治療師と思った。Ressinter 生かそうと頑張った。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -748,7 +748,7 @@
   },
   "All Roads to Peace#074": {
    "src": "... ... ...Nunexetor. You sensible. Is true? Human try heal Ressinter?",
-   "dst": "",
+   "dst": "…………Nunexetor。お前、話わかる。本当か？人間 Ressinter 治そうとした？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -758,7 +758,7 @@
   },
   "All Roads to Peace#075": {
    "src": "Yes. The human made herb balms and tried to heal Ressinter.",
-   "dst": "",
+   "dst": "ああ。人間が薬草の軟膏を作って、Ressinter を治そうとしていた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -768,7 +768,7 @@
   },
   "All Roads to Peace#076": {
    "src": "So Zuett not lie. Human care about orc?",
-   "dst": "",
+   "dst": "Zuett 嘘じゃない。人間、オーク大事？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -778,7 +778,7 @@
   },
   "All Roads to Peace#077": {
    "src": "See? Human try. Maybe not heal Ressinter full, but try save life of someone call enemy by idiot Villager.",
-   "dst": "",
+   "dst": "見ろ。人間やってみた。Ressinter 全部治せなかったかも、でも馬鹿村人が敵と呼ぶ者の命、救おうとした。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -788,7 +788,7 @@
   },
   "All Roads to Peace#078": {
    "src": "Human learn Villagers lie. Trying learn about us. War only because Villagers trick! Not because human bad!",
-   "dst": "",
+   "dst": "人間、村人の嘘知った。我ら知ろうとしてる。戦争、村人が騙したから！人間悪いからじゃない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -798,7 +798,7 @@
   },
   "All Roads to Peace#079": {
    "src": "...hmh! Can respect. Strong in mind if able to learn.",
-   "dst": "",
+   "dst": "…フン！尊敬できる。学べるなら心が強い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -808,7 +808,7 @@
   },
   "All Roads to Peace#080": {
    "src": "Agree with Bitteliso and Zuett!",
-   "dst": "",
+   "dst": "Bitteliso と Zuett に賛成！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -818,7 +818,7 @@
   },
   "All Roads to Peace#081": {
    "src": "Agreed. We should get back to our tasks though.",
-   "dst": "",
+   "dst": "同感だ。だが、そろそろ持ち場に戻ったほうがいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -828,7 +828,7 @@
   },
   "All Roads to Peace#082": {
    "src": "Will stay for while in case Ressinter need medicine more.",
-   "dst": "",
+   "dst": "しばらく残る、Ressinter がもっと薬いるかもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -838,7 +838,7 @@
   },
   "All Roads to Peace#083": {
    "src": "Sorry to put human up to task sudden, but now more orc trust you.",
-   "dst": "",
+   "dst": "急に人間に仕事させて悪い、でもこれでもっとオークがお前信じる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -848,7 +848,7 @@
   },
   "All Roads to Peace#084": {
    "src": "Since orc trust...maybe can talk to Arrai-Veretel now. Follow.",
-   "dst": "",
+   "dst": "オーク信じるなら…今なら Arrai-Veretel と話せるかも。ついて来い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -858,7 +858,7 @@
   },
   "All Roads to Peace#085": {
    "src": "Whuh! LOMOSTER! LOMOSTER HURT!",
-   "dst": "",
+   "dst": "うお！Lomoster！Lomoster ケガ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -868,7 +868,7 @@
   },
   "All Roads to Peace#086": {
    "src": "No! Lomoster okay! Ressinter not okay- Wait. Ressinter sort of okay! Need rest still!",
-   "dst": "",
+   "dst": "違う！Lomoster 無事！Ressinter 無事じゃない―待て。Ressinter まあ無事！でもまだ休め！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -878,7 +878,7 @@
   },
   "All Roads to Peace#087": {
    "src": "But Lomoster at cannon when explode!",
-   "dst": "",
+   "dst": "でも爆発の時 Lomoster 大砲にいた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -888,7 +888,7 @@
   },
   "All Roads to Peace#088": {
    "src": "Lomoster wear armor. Armor took hurt, Lomoster okay!",
-   "dst": "",
+   "dst": "Lomoster 鎧着てた。鎧がケガ受けた、Lomoster 無事！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -898,7 +898,7 @@
   },
   "All Roads to Peace#089": {
    "src": "...mmmh, fine... Wait, why human here?",
-   "dst": "",
+   "dst": "…むう、わかった…待て、なぜ人間ここに？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -908,7 +908,7 @@
   },
   "All Roads to Peace#090": {
    "src": "Human heal Ressinter. See? Human good healer!",
-   "dst": "",
+   "dst": "人間 Ressinter 治した。見ろ。人間いい治療師！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -918,7 +918,7 @@
   },
   "All Roads to Peace#091": {
    "src": "I don't believe it. How did-",
-   "dst": "",
+   "dst": "信じられない。どうやって―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -928,7 +928,7 @@
   },
   "All Roads to Peace#092": {
    "src": "KREIMU HERE! HEAL RESSINTER!! NOW!!!",
-   "dst": "",
+   "dst": "Kreimu 来た！Ressinter 治せ！！今！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -938,7 +938,7 @@
   },
   "All Roads to Peace#093": {
    "src": "Gwuh, yes! Stop shouting, I- Whuh...",
-   "dst": "",
+   "dst": "ぐえ、わかった！怒鳴るな、あたし―うお…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -948,7 +948,7 @@
   },
   "All Roads to Peace#094": {
    "src": "Ressinter already okay! Bitteliso lying?!",
-   "dst": "",
+   "dst": "Ressinter もう無事！Bitteliso 嘘？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -958,7 +958,7 @@
   },
   "All Roads to Peace#095": {
    "src": "Wait, Ressinter okay? How did- HUMAN?! WHY HUMAN IN CAMP?!",
-   "dst": "",
+   "dst": "待て、Ressinter 無事？どうやって―人間？！なぜ人間野営地にいる？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -968,7 +968,7 @@
   },
   "All Roads to Peace#096": {
    "src": "Human heal Ressinter! Not know how, but human save Ressinter life!",
-   "dst": "",
+   "dst": "人間 Ressinter 治した！どうやったか知らない、でも人間 Ressinter の命救った！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -978,7 +978,7 @@
   },
   "All Roads to Peace#097": {
    "src": "Told Bitteliso. Human learning! Save life of orc, even though idiot Villager say kill.",
-   "dst": "",
+   "dst": "Bitteliso に言った。人間学んでる！馬鹿村人殺せ言っても、オークの命救った。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -988,7 +988,7 @@
   },
   "All Roads to Peace#098": {
    "src": "...how. How. HOW! How human so good at healing?! Why human help?",
-   "dst": "",
+   "dst": "…なぜ。なぜ。なぜ！人間なぜそんな治すのうまい？！なぜ助ける？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -998,7 +998,7 @@
   },
   "All Roads to Peace#099": {
    "src": "Can trust human. Human try unlearn bad villager teach.",
-   "dst": "",
+   "dst": "人間信じられる。人間、村人の悪い教え忘れようとしてる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1008,7 +1008,7 @@
   },
   "All Roads to Peace#100": {
    "src": "...fine. Good human, not stupid human. Bitteliso sorry for beating. Here.",
-   "dst": "",
+   "dst": "…わかった。いい人間、馬鹿人間じゃない。Bitteliso、殴ったこと謝る。これやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1018,7 +1018,7 @@
   },
   "All Roads to Peace#101": {
    "src": "Shouldn't we get back to what we were doing?",
-   "dst": "",
+   "dst": "そろそろ元の仕事に戻るべきじゃないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1028,7 +1028,7 @@
   },
   "All Roads to Peace#102": {
    "src": "...will stay in case Ressinter need help.",
-   "dst": "",
+   "dst": "…残る、Ressinter 助けいるかもしれない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1038,7 +1038,7 @@
   },
   "All Roads to Peace#103": {
    "src": "Ressinter not old man! No need sitter!",
-   "dst": "",
+   "dst": "Ressinter 年寄りじゃない！見張り不要！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1048,7 +1048,7 @@
   },
   "All Roads to Peace#104": {
    "src": "Not know that human actually good at heal! Very good! Healer, not hunter. More orc trust you now.",
-   "dst": "",
+   "dst": "人間本当に治すのうまいと知らなかった！すごくうまい！狩人じゃない、治療師。これでもっとオークがお前信じる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1058,7 +1058,7 @@
   },
   "All Roads to Peace#105": {
    "src": "Since orc trust...maybe can talk to Arrai-Veretel now. Follow!",
-   "dst": "",
+   "dst": "オーク信じるなら…今なら Arrai-Veretel と話せるかも。ついて来い！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1068,7 +1068,7 @@
   },
   "All Roads to Peace#106": {
    "src": "Follow Zuett through the Orcish Fortress",
-   "dst": "",
+   "dst": "Zuett についてオークの砦を抜ける",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -1078,7 +1078,7 @@
   },
   "All Roads to Peace#107": {
    "src": "No enter! Much camp see human heal, but still no trust human!",
-   "dst": "",
+   "dst": "入るな！野営地の多く、人間が治すの見た、でもまだ人間信じない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1088,7 +1088,7 @@
   },
   "All Roads to Peace#108": {
    "src": "Ureietun! Human help save Ressinter life! Why no trust?",
-   "dst": "",
+   "dst": "Ureietun！人間 Ressinter の命救うの手伝った！なぜ信じない？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1098,7 +1098,7 @@
   },
   "All Roads to Peace#109": {
    "src": "Human being led by you. Human led by villager too! Teach good thing, yes, but what if human just copying?",
-   "dst": "",
+   "dst": "人間、お前に連れられてるだけ。人間、村人にも連れられた！いいこと教えた、そう、でも人間真似してるだけなら？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1108,7 +1108,7 @@
   },
   "All Roads to Peace#110": {
    "src": "Human can earn trust alone! Zuett, stay in Arrai-room.",
-   "dst": "",
+   "dst": "人間、一人で信頼得られる！Zuett、Arrai の部屋にいろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1118,7 +1118,7 @@
   },
   "All Roads to Peace#111": {
    "src": "But-",
-   "dst": "",
+   "dst": "でも―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1128,7 +1128,7 @@
   },
   "All Roads to Peace#112": {
    "src": "RRRRRGH! STUPID ZUETT! WAR HAPPEN FOR REASON! GO AWAY!",
-   "dst": "",
+   "dst": "ぐおおおお！馬鹿 Zuett！戦争、理由あって起きた！あっち行け！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1138,7 +1138,7 @@
   },
   "All Roads to Peace#113": {
    "src": "...can trust human not kill. Human can walk around Centerworld. But human no see Arrai-Veretel!",
-   "dst": "",
+   "dst": "…人間殺さない、信じられる。人間 Centerworld 歩いていい。でも Arrai-Veretel に会うな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1148,7 +1148,7 @@
   },
   "All Roads to Peace#114": {
    "src": "Ask various orcs if they need any help at the Orcish Fortress at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] のオークの砦で、オークたちに手伝いが必要か聞いて回る。",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -1158,7 +1158,7 @@
   },
   "All Roads to Peace#115": {
    "src": "Hm! Human, hunter, healer, halfwit soldier. Many things! Human also runner?",
-   "dst": "",
+   "dst": "むう！人間、狩人、治療師、半人前の兵士。いろいろ！人間、走る者でもある？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1168,7 +1168,7 @@
   },
   "All Roads to Peace#116": {
    "src": "Peloros from Holehold. Camp home to messengers and runners. Have thing to deliver to Fruludir in green tower.",
-   "dst": "",
+   "dst": "Peloros、Holehold から来た。伝令と走る者の野営地。緑の塔の Fruludir に届け物ある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1178,7 +1178,7 @@
   },
   "All Roads to Peace#117": {
    "src": "Human do instead. Want see if human able. Supposed to be soldier- soldier must run to battlefield fast!",
-   "dst": "",
+   "dst": "人間が代わりにやれ。人間できるか見たい。兵士なんだろう―兵士、戦場へ速く走らないと！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1188,7 +1188,7 @@
   },
   "All Roads to Peace#118": {
    "src": "Then human run fast to green tower- deliver in {~} seconds! Or else come back. Not urgent delivery, so delay fine.",
-   "dst": "",
+   "dst": "なら人間、緑の塔まで速く走れ―{~} 秒で届けろ！だめなら戻れ。急ぎじゃない、遅れてもいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1198,7 +1198,7 @@
   },
   "All Roads to Peace#119": {
    "src": "Will know human delivered in time. How? Human will see if run fast!",
-   "dst": "",
+   "dst": "間に合ったかわかる。どうやって？速く走れば人間にも見える！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1208,7 +1208,7 @@
   },
   "All Roads to Peace#120": {
    "src": "RGH! Can understand just fine, just not speak as good! No mock us!",
-   "dst": "",
+   "dst": "ぐお！聞くのは問題ない、話すのうまくないだけ！馬鹿にするな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1218,7 +1218,7 @@
   },
   "All Roads to Peace#121": {
    "src": "Hm! Human have Peloros box. Peloros give human run training. Give here.",
-   "dst": "",
+   "dst": "むう！人間、Peloros の箱持ってる。Peloros、人間に走る訓練させた。よこせ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1228,7 +1228,7 @@
   },
   "All Roads to Peace#122": {
    "src": "More than Zuett with human? Good sign. Maybe fighting stop soon.",
-   "dst": "",
+   "dst": "人間のそば、Zuett だけじゃない？いい兆し。戦い、じき終わるかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1238,7 +1238,7 @@
   },
   "All Roads to Peace#123": {
    "src": "Patience, human. Box full of signal flare. Will light one to show Peloros human got here in time.",
-   "dst": "",
+   "dst": "焦るな、人間。箱の中、信号弾いっぱい。一発上げて、間に合ったと Peloros に知らせる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1248,7 +1248,7 @@
   },
   "All Roads to Peace#124": {
    "src": "Saw the firework. Human did well, finishing single morning exercise!",
-   "dst": "",
+   "dst": "花火見た。人間よくやった、朝の運動一回分やり遂げた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1258,7 +1258,7 @@
   },
   "All Roads to Peace#125": {
    "src": "Orc do much training to stay strong. Orc runners must be fast and not tire to become Marathon!",
-   "dst": "",
+   "dst": "オーク、強くいるためたくさん訓練する。オークの走る者、速くて疲れないと Marathon になれない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1268,7 +1268,7 @@
   },
   "All Roads to Peace#126": {
    "src": "Here. Human take. Train harder. Maybe visit Holehold- also place for relax, not just run. Stamina good for all.",
-   "dst": "",
+   "dst": "ほら。人間取れ。もっと鍛えろ。Holehold 来るといい―走るだけじゃない、休む場所でもある。体力、何にもいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1278,7 +1278,7 @@
   },
   "All Roads to Peace#128": {
    "src": "Oh. Human who help Ressinter. You are strange. Not like other human at all.",
-   "dst": "",
+   "dst": "おお。Ressinter 助けた人間。お前、変わってる。他の人間と全然違う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1288,7 +1288,7 @@
   },
   "All Roads to Peace#129": {
    "src": "This? This food storage. Mostly for meats and roots. Though, large ritual happening soon.",
-   "dst": "",
+   "dst": "これ？食料庫。ほとんど肉と根。でも、もうすぐ大きな儀式ある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1298,7 +1298,7 @@
   },
   "All Roads to Peace#130": {
    "src": "Festival with Earthpit. Will be coming soon- so stocking up food for that.",
-   "dst": "",
+   "dst": "Earthpit と一緒の祭り。もうすぐ来る―だから食料ためてる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1308,7 +1308,7 @@
   },
   "All Roads to Peace#131": {
    "src": "...human look like want help. You...really are strange. I suppose...if you want help with food, could do some fishing.",
-   "dst": "",
+   "dst": "…人間、手伝いたそうな顔。お前…本当に変わってる。そうだな…食料手伝いたいなら、釣りしてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1318,7 +1318,7 @@
   },
   "All Roads to Peace#132": {
    "src": "Won't ask human to do everything- just [{~} Carp Meat] enough to help. Though, could bring more if wanted.",
-   "dst": "",
+   "dst": "人間に全部やらせない―[{~} Carp Meat] で十分助かる。でも、もっと持ってきてもいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1328,7 +1328,7 @@
   },
   "All Roads to Peace#133": {
    "src": "If want bring more than {~}, will accept more than {~}.",
-   "dst": "",
+   "dst": "{~} より多く持ってくるなら、{~} より多く受け取る。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1338,7 +1338,7 @@
   },
   "All Roads to Peace#134": {
    "src": "Mhm, mhm. You are strange human, but not bad human. This enough meat.",
-   "dst": "",
+   "dst": "うむ、うむ。変な人間、でも悪い人間じゃない。肉これで足りる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1348,7 +1348,7 @@
   },
   "All Roads to Peace#135": {
    "src": "Festival will still be long time away, but here. Since human help, you get reward. Only fair.",
-   "dst": "",
+   "dst": "祭りまだずっと先、でもほら。人間手伝った、だから褒美。当然。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1358,7 +1358,7 @@
   },
   "All Roads to Peace#137": {
    "src": "Oh, you brought more fish than asked. Twice as much as asked!",
-   "dst": "",
+   "dst": "おお、頼んだより多く魚持ってきた。頼んだ倍！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1368,7 +1368,7 @@
   },
   "All Roads to Peace#138": {
    "src": "You are good human. Strange, but not bad. Willing to put in extra effort.",
-   "dst": "",
+   "dst": "お前いい人間。変わってる、でも悪くない。余計に頑張れる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1378,7 +1378,7 @@
   },
   "All Roads to Peace#139": {
    "src": "Here- will also share some meat that won't be for festival. Other rewards too.",
-   "dst": "",
+   "dst": "ほら―祭り用じゃない肉も分ける。他の褒美もある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1388,7 +1388,7 @@
   },
   "All Roads to Peace#141": {
    "src": "...that is...much fish. You heard me when I said five, right?",
-   "dst": "",
+   "dst": "…それは…たくさんの魚。五つと言ったの、聞いてたよな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1398,7 +1398,7 @@
   },
   "All Roads to Peace#142": {
    "src": "Four times as much as fair share. Why human like this?",
-   "dst": "",
+   "dst": "取り分の四倍。人間、なぜこうなの？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1408,7 +1408,7 @@
   },
   "All Roads to Peace#143": {
    "src": "Humans are supposed to be selfish. Listen to villager and kill orc. But you are not like that at all.",
-   "dst": "",
+   "dst": "人間、自分勝手なはず。村人の言うこと聞いてオーク殺す。でもお前、全然そうじゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1418,7 +1418,7 @@
   },
   "All Roads to Peace#144": {
    "src": "Then here- Will share extra meat. Not for festival, but still good. Other thing too. Thank you very much, human.",
-   "dst": "",
+   "dst": "ならほら―余った肉分ける。祭り用じゃない、でもうまい。他の物も。本当にありがとう、人間。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1428,7 +1428,7 @@
   },
   "All Roads to Peace#146": {
    "src": "I. What. Human, you... That.",
-   "dst": "",
+   "dst": "え。何。人間、お前…それ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1438,7 +1438,7 @@
   },
   "All Roads to Peace#147": {
    "src": "Said five. You have thirty. I...how and why.",
-   "dst": "",
+   "dst": "五つと言った。三十ある。え…どうやって、なぜ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1448,7 +1448,7 @@
   },
   "All Roads to Peace#148": {
    "src": "You just did work of six orc. You are...overachieving human. But that is not bad thing!",
-   "dst": "",
+   "dst": "オーク六人分の仕事した。お前…やりすぎ人間。でも悪いことじゃない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1458,7 +1458,7 @@
   },
   "All Roads to Peace#149": {
    "src": "Here, then. This meat not for festival, but you deserve hearty meal for all effort!",
-   "dst": "",
+   "dst": "ならほら。この肉、祭り用じゃない、でもそれだけ頑張ったなら、たらふく食べるべき！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1468,7 +1468,7 @@
   },
   "All Roads to Peace#150": {
    "src": "That much fish actually meet quota! Thank you so much, strange, kind human!",
-   "dst": "",
+   "dst": "その魚の量、ノルマ達成！本当にありがとう、変で優しい人間！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1478,7 +1478,7 @@
   },
   "All Roads to Peace#152": {
    "src": "Hey! Human who hunt spineback boar and help heal healer!",
-   "dst": "",
+   "dst": "おい！トゲ背イノシシ狩って、治療師治すの手伝った人間！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1488,7 +1488,7 @@
   },
   "All Roads to Peace#153": {
    "src": "Not stupid human who go around and kill other orc! Good human! Can trust. So trust, will ask for small thing.",
-   "dst": "",
+   "dst": "オーク殺して回る馬鹿人間じゃない！いい人間！信じられる。だから、小さい頼みある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1498,7 +1498,7 @@
   },
   "All Roads to Peace#154": {
    "src": "Human OFFERING help- Hmh! Very good human! Task simple. Southeast of fort, past ridge, Teiren old camp.",
-   "dst": "",
+   "dst": "人間から手伝う言う―フン！すごくいい人間！簡単。砦の南東、尾根の先、Teiren の昔の野営地。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1508,7 +1508,7 @@
   },
   "All Roads to Peace#155": {
    "src": "Used to live, but left because Freelancer jump down from mountain. Forgot important thing there!",
-   "dst": "",
+   "dst": "前住んでた、でも Freelancer が山から飛んできて出た。大事な物忘れてきた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1518,7 +1518,7 @@
   },
   "All Roads to Peace#156": {
    "src": "Need stay here, make sure stupid Peloros no run into firepit. Has done before. So, you go get!",
-   "dst": "",
+   "dst": "ここ残って、馬鹿 Peloros が焚き火に突っ込まないよう見てる。前にやった。だからお前取ってこい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1528,7 +1528,7 @@
   },
   "All Roads to Peace#157": {
    "src": "Oi, oi! Y'oughta gimme 'at back right now, li'l lady!",
-   "dst": "",
+   "dst": "おいおい！そいつを今すぐ返しな、お嬢ちゃん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1538,7 +1538,7 @@
   },
   "All Roads to Peace#158": {
    "src": "Absolutely NOT, you craven wind spirit! This belongs to me now!",
-   "dst": "",
+   "dst": "お断りですわ、臆病な風の精め！これはもうわたくしの物です！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1548,7 +1548,7 @@
   },
   "All Roads to Peace#159": {
    "src": "Lady, everything the wind touches is OURS! Not ta mention we're so close to the mountains we live on! This camp's our property, and that thing you got's part of our camp!",
-   "dst": "",
+   "dst": "嬢ちゃん、風が触れるモンは全部オレらのモンだ！しかもオレらの住む山はすぐそこだぜ！この野営地はオレらの財産、お前が持ってるそいつもその一部だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1558,7 +1558,7 @@
   },
   "All Roads to Peace#160": {
    "src": "Nonsense! This camp was built by those who respected the earth and its bounties. Now that its inhabitants have left, nature is free to reclaim it, as is right!",
-   "dst": "",
+   "dst": "戯言を！この野営地は大地とその恵みを敬う者たちが築いたもの。住人が去った今、自然が取り戻すのが道理ですわ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1568,7 +1568,7 @@
   },
   "All Roads to Peace#161": {
    "src": "Aw yeah? Issat it? You're a peach, gal, but I'll clip those petals, you don't give it up right now!",
-   "dst": "",
+   "dst": "へえ、そうかい？それだけか？可愛い顔してるが、今すぐ渡さねえならその花びら摘んでやるぜ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1578,7 +1578,7 @@
   },
   "All Roads to Peace#162": {
    "src": "What a brutish lout you are, threatening an embodiment of nature! I won't give this up without a fight!",
-   "dst": "",
+   "dst": "なんて野蛮な乱暴者、自然の化身を脅すなんて！戦わずに渡したりしませんわ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1588,7 +1588,7 @@
   },
   "All Roads to Peace#163": {
    "src": "One so brazen as yourself could never share in the bounties of nature! Now begone! And leave me be!",
-   "dst": "",
+   "dst": "あなたのような厚かましい者に、自然の恵みを分かち合う資格はありません！さあ去りなさい！放っておいて！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1598,7 +1598,7 @@
   },
   "All Roads to Peace#164": {
    "src": "...hm? And who might you be? What brings a human to this disused place?",
-   "dst": "",
+   "dst": "…あら？あなたはどなた？人間がこんな廃れた場所に何のご用かしら？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1608,7 +1608,7 @@
   },
   "All Roads to Peace#165": {
    "src": "Oh no, you want this too?! I have claimed it for my own! Leave me be, go! Get out of here!",
-   "dst": "",
+   "dst": "まあ、あなたもこれが欲しいの？！わたくしが手に入れたのです！放っておいて、お行きなさい！出ていって！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1618,7 +1618,7 @@
   },
   "All Roads to Peace#166": {
    "src": "Shouldn'ta crossed me, doll! Remember who spreads your pollen next time, huh?! Now to just take this back up the mountain...",
-   "dst": "",
+   "dst": "オレに逆らうからだぜ、お人形さん！次は誰が花粉運んでやってるか思い出しな！さて、こいつを山に持ち帰るか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1628,7 +1628,7 @@
   },
   "All Roads to Peace#167": {
    "src": "OI! Who's THIS joker now? You lookin' ta empty your wallet for me or something?",
-   "dst": "",
+   "dst": "おい！今度はどこの道化だ？オレに財布を空にしに来たってか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1638,7 +1638,7 @@
   },
   "All Roads to Peace#168": {
    "src": "What, you want this thing too?! It's mine, y'hear? MINE! You can't have it!",
-   "dst": "",
+   "dst": "なんだ、お前もこいつが欲しいのか？！オレのだ、聞こえたか？オレの！渡さねえぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1648,7 +1648,7 @@
   },
   "All Roads to Peace#169": {
    "src": "Human! Was right to send out. Peloros fall over chair and almost burn! Did find thing? Very distinctive, only thing left at camp.",
-   "dst": "",
+   "dst": "人間！行かせて正解。Peloros、椅子につまずいて燃えかけた！物見つけた？すごく目立つ、野営地に残ってる唯一の物。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1658,7 +1658,7 @@
   },
   "All Roads to Peace#170": {
    "src": "Hmhm!! Yes! This what looking for! Very good human! Human deserve reward for be good human!",
-   "dst": "",
+   "dst": "むむ！！そう！探してたのこれ！すごくいい人間！いい人間だから褒美もらうべき！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1668,7 +1668,7 @@
   },
   "All Roads to Peace#171": {
    "src": "Oh? Human not know what thing is? Want know?",
-   "dst": "",
+   "dst": "お？人間、これ何か知らない？知りたい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1678,7 +1678,7 @@
   },
   "All Roads to Peace#172": {
    "src": "Silly! If human not know what thing is, no tell! Can learn for self.",
-   "dst": "",
+   "dst": "おバカ！人間知らないなら、教えない！自分で学べ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1688,7 +1688,7 @@
   },
   "All Roads to Peace#173": {
    "src": "Still. Here, for good human!",
-   "dst": "",
+   "dst": "それでも。ほら、いい人間に！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1698,7 +1698,7 @@
   },
   "All Roads to Peace#175": {
    "src": "Grrh...stupid Jixy. Dumb human language!",
-   "dst": "",
+   "dst": "ぐる…馬鹿 Jixy。馬鹿な人間の言葉！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1708,7 +1708,7 @@
   },
   "All Roads to Peace#176": {
    "src": "Hrrh! Human! You language dumb! Name smart, flow like water in Orc language, look like dungpile on paper in human language!",
-   "dst": "",
+   "dst": "ぐおお！人間！お前の言葉馬鹿！名前賢い、オーク語だと水のように流れる、人間の言葉で書くと紙の上のフンの山！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1718,7 +1718,7 @@
   },
   "All Roads to Peace#177": {
    "src": "Say name! Look at spell, say name! Try!! TRY!!!",
-   "dst": "",
+   "dst": "名前言え！綴り見て、名前言え！やれ！！やれ！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1728,7 +1728,7 @@
   },
   "All Roads to Peace#178": {
    "src": "NO! Say wrong, all wrong! Sound even stupider than normal!",
-   "dst": "",
+   "dst": "違う！言い方違う、全部違う！いつもより馬鹿に聞こえる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1738,7 +1738,7 @@
   },
   "All Roads to Peace#179": {
    "src": "GRRRH! Confusing name! Not confusing in orcish! Human say all wrong!",
-   "dst": "",
+   "dst": "ぐるるる！ややこしい名前！オーク語ならややこしくない！人間全部言い間違える！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1748,7 +1748,7 @@
   },
   "All Roads to Peace#180": {
    "src": "Hmh. That right, human. Willing to try at least. See how bad name look?",
-   "dst": "",
+   "dst": "フン。それでいい、人間。やろうとはした。名前の見た目、ひどいだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1758,7 +1758,7 @@
   },
   "All Roads to Peace#181": {
    "src": "Said \"shoon-bur.\" Not even LOOK like that in human letter!",
-   "dst": "",
+   "dst": "「shoon-bur」と言った。人間の文字だと全然そう見えない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1768,7 +1768,7 @@
   },
   "All Roads to Peace#182": {
    "src": "Here. Needed show anger at stupid language, not show anger at human.",
-   "dst": "",
+   "dst": "ほら。馬鹿な言葉に怒りたかった、人間に怒りたかったんじゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1778,7 +1778,7 @@
   },
   "All Roads to Peace#184": {
    "src": "Stupid stupid STUPID! Not at all say like spell! See stupid language now?!",
-   "dst": "",
+   "dst": "馬鹿馬鹿馬鹿！綴りと全然違う！言葉の馬鹿さわかったか？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1788,7 +1788,7 @@
   },
   "All Roads to Peace#185": {
    "src": "GAAAH!! No, no, no, no!!! Why need learn human language?!",
-   "dst": "",
+   "dst": "があああ！！違う、違う、違う、違う！！！なぜ人間の言葉学ばないといけない？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1798,7 +1798,7 @@
   },
   "All Roads to Peace#186": {
    "src": "NAME NOT JOE! WHAT KIND NAME JOE?! JOE STUPID NAME!!! AAAAHH!!",
-   "dst": "",
+   "dst": "名前 JOE じゃない！JOE ってどんな名前？！JOE 馬鹿な名前！！！ああああ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1808,7 +1808,7 @@
   },
   "All Roads to Peace#187": {
    "src": "HRRRGH!",
-   "dst": "",
+   "dst": "ぐおおお！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1818,7 +1818,7 @@
   },
   "All Roads to Peace#188": {
    "src": "GRRGH! GRRGAAAH! MOOOOOOVE!",
-   "dst": "",
+   "dst": "ぐるる！ぐおおお！動けええ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1828,7 +1828,7 @@
   },
   "All Roads to Peace#189": {
    "src": "YUNELSU NOT BEATEN...HRRRK...BY ROCK!!",
-   "dst": "",
+   "dst": "Yunelsu…ぐぬ…石に負けない！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1838,7 +1838,7 @@
   },
   "All Roads to Peace#190": {
    "src": "Hrrf...haaah...hhhuman! Weird...weird kind human!",
-   "dst": "",
+   "dst": "はあ…はあ…に、人間！変…変な人間！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1848,7 +1848,7 @@
   },
   "All Roads to Peace#191": {
    "src": "Rock stuck. Trying to lift- for train strength! No one able to lift rock.",
-   "dst": "",
+   "dst": "石挟まってる。持ち上げようとしてる―力の訓練！誰もこの石持ち上げられない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1858,7 +1858,7 @@
   },
   "All Roads to Peace#192": {
    "src": "Yunelsu try throw rock into river! Have thrown other rock, not this one.",
-   "dst": "",
+   "dst": "Yunelsu、石を川に投げたい！他の石は投げた、これはまだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1868,7 +1868,7 @@
   },
   "All Roads to Peace#193": {
    "src": "Human! Try move rock!",
-   "dst": "",
+   "dst": "人間！石動かしてみろ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1878,7 +1878,7 @@
   },
   "All Roads to Peace#194": {
    "src": "Hmm...human magic strong, but rock still not moving.",
-   "dst": "",
+   "dst": "むう…人間の魔法強い、でも石まだ動かない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1888,7 +1888,7 @@
   },
   "All Roads to Peace#195": {
    "src": "Work together! Cast magic at rock, I try lift again! Ready!",
-   "dst": "",
+   "dst": "一緒にやる！石に魔法かけろ、また持ち上げる！いくぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1898,7 +1898,7 @@
   },
   "All Roads to Peace#196": {
    "src": "HGGGGRRK! GO!",
-   "dst": "",
+   "dst": "ぐぬぬぬ！いけ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1908,7 +1908,7 @@
   },
   "All Roads to Peace#197": {
    "src": "Hrrgh... Hrrf. Must be...old earth rock.",
-   "dst": "",
+   "dst": "ぐう…はあ。きっと…古い大地の石。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1918,7 +1918,7 @@
   },
   "All Roads to Peace#198": {
    "src": "Been here very long time. Stuck here, rock where earth wants rock to be.",
-   "dst": "",
+   "dst": "ずっと昔からここにある。ここにはまってる、大地が石を置きたい場所に。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1928,7 +1928,7 @@
   },
   "All Roads to Peace#199": {
    "src": "Yunelsu find other rock then. Sometimes rock break, though.",
-   "dst": "",
+   "dst": "なら Yunelsu 他の石探す。でも、たまに石割れる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1938,7 +1938,7 @@
   },
   "All Roads to Peace#200": {
    "src": "See? Many broken rock. Hear can be good for armor though. You take.",
-   "dst": "",
+   "dst": "見ろ。割れた石たくさん。鎧作るのにいい聞いた。お前持ってけ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1948,7 +1948,7 @@
   },
   "All Roads to Peace#202": {
    "src": "Oh! You! Saw Zuett dragging you to camp. And saw other thing.",
-   "dst": "",
+   "dst": "お！お前！Zuett がお前を野営地に引きずるの見た。他のことも見た。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1958,7 +1958,7 @@
   },
   "All Roads to Peace#203": {
    "src": "And you helped Ressinter! Will apologize later. Was my fault. Human seen Freelancers?",
-   "dst": "",
+   "dst": "それにお前 Ressinter 助けた！後で謝る。俺のせい。人間、Freelancer 見た？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1968,7 +1968,7 @@
   },
   "All Roads to Peace#204": {
    "src": "Freelancers think everything belong to them. Loiter around fortress a lot, try to jump in sometimes.",
-   "dst": "",
+   "dst": "Freelancer、何でも自分の物だと思ってる。砦のまわりよくうろつく、時々飛び込もうとする。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1978,7 +1978,7 @@
   },
   "All Roads to Peace#205": {
    "src": "Was trying to shoot flying one down, but cannon broke, and cannonball explode.",
-   "dst": "",
+   "dst": "飛んでるの撃ち落とそうとした、でも大砲壊れて、砲弾爆発。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1988,7 +1988,7 @@
   },
   "All Roads to Peace#206": {
    "src": "Now Ressinter okay, but still need repair cannon. Human feel like helping, will need [{~} Iron Ingots] to repair.",
-   "dst": "",
+   "dst": "Ressinter 無事、でも大砲まだ直す必要ある。人間手伝うなら、修理に [{~} Iron Ingots] いる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -1998,7 +1998,7 @@
   },
   "All Roads to Peace#207": {
    "src": "Long walk, but there iron in valley east of villager quarry. There also other villager there, with weapons. Not sure why.",
-   "dst": "",
+   "dst": "遠いけど、村人の採石場の東の谷に鉄ある。武器持った別の村人もいる。なぜかは知らない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2008,7 +2008,7 @@
   },
   "All Roads to Peace#208": {
    "src": "Human being weirdly helpful. That good though! Make Lomoster job of shooting enemy easier.",
-   "dst": "",
+   "dst": "人間、変に親切。でもそれいいこと！Lomoster の敵撃つ仕事楽になる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2018,7 +2018,7 @@
   },
   "All Roads to Peace#209": {
    "src": "Here. Freelancer like steal metal and other thing too, have found a lot from shooting. Human can have.",
-   "dst": "",
+   "dst": "ほら。Freelancer 金属とか他の物も盗む、撃ち落としてたくさん見つけた。人間にやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2028,7 +2028,7 @@
   },
   "All Roads to Peace#210": {
    "src": "Not good for repair cannon, but probably good for make other thing.",
-   "dst": "",
+   "dst": "大砲の修理には向かない、でも他の物作るにはいいかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2038,7 +2038,7 @@
   },
   "All Roads to Peace#212": {
    "src": "Grrmb. Dumb Kreimu. Stupid Wynn language...Gavel language, pfeh. Whatever language, not orc language.",
-   "dst": "",
+   "dst": "ぐむ。馬鹿 Kreimu。馬鹿な Wynn の言葉…Gavel の言葉、ふん。どの言葉でも、オーク語じゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2048,7 +2048,7 @@
   },
   "All Roads to Peace#213": {
    "src": "Her name, my name, sound same. Don't sound same in Orcish! But in YOUR language, sound same!",
-   "dst": "",
+   "dst": "あいつの名前、自分の名前、同じ音。オーク語だと違う！でもお前らの言葉だと、同じ音！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2058,7 +2058,7 @@
   },
   "All Roads to Peace#214": {
    "src": "Not just that-learning to be medicine orc. She medicine orc too! Healer, brewer, herbalist, whatever. Too much same!",
-   "dst": "",
+   "dst": "それだけじゃない―薬のオークになる修行中。あいつも薬のオーク！治療師、薬師、薬草師、何でも。同じすぎ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2068,7 +2068,7 @@
   },
   "All Roads to Peace#215": {
    "src": "Angry about it. Been distracting from training too. Human want help like help Ressinter? Get Creinu- Crei...nu...not Kreimu, ingredient for medicine.",
-   "dst": "",
+   "dst": "それで腹立つ。修行の邪魔にもなってる。Ressinter みたいに助けたい？Creinu に―Crei…nu…Kreimu じゃない、薬の材料取ってこい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2078,7 +2078,7 @@
   },
   "All Roads to Peace#216": {
    "src": "[{~} Leafy Stalks]. Need to learn how to make much medicine out of little herb. Easy?",
-   "dst": "",
+   "dst": "[{~} Leafy Stalks]。少ない草でたくさん薬作る方法、学ばないと。簡単だろ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2088,7 +2088,7 @@
   },
   "All Roads to Peace#217": {
    "src": "Grrmbl... Dumb Kreimu... Human have stalks?",
-   "dst": "",
+   "dst": "ぐむむ…馬鹿 Kreimu…人間、茎持ってる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2098,7 +2098,7 @@
   },
   "All Roads to Peace#218": {
    "src": "Good. Can take these, then- Alraune girl have sometimes. Tasty, but not good medicine.",
-   "dst": "",
+   "dst": "よし。ならこれ持ってけ―Alraune の娘がたまに持ってる。うまい、でもいい薬じゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2108,7 +2108,7 @@
   },
   "All Roads to Peace#219": {
    "src": "Durbeo might like, actually. Durbeo orc in food storage tower behind me. Maybe he want help too?",
-   "dst": "",
+   "dst": "実は Durbeo 喜ぶかも。Durbeo は後ろの食料庫の塔のオーク。あいつも手伝い欲しいかも？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2118,7 +2118,7 @@
   },
   "All Roads to Peace#221": {
    "src": "Oh, that human who healed Ressinter. Yes, I've heard of you already. News travels fast here.",
-   "dst": "",
+   "dst": "ああ、Ressinter を治した人間ですね。ええ、もう噂は聞いてます。ここでは噂が早いんです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2128,7 +2128,7 @@
   },
   "All Roads to Peace#222": {
    "src": "You have a weird face. Uh, a weird look on your face, I mean. What, not used to a more eloquent orc?",
-   "dst": "",
+   "dst": "変な顔してますね。あ、いや、変な表情って意味です。何です、話し上手なオークに慣れてないとか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2138,7 +2138,7 @@
   },
   "All Roads to Peace#223": {
    "src": "I'm studying languages, is why. I haven't got everything known yet, so if you feel like helping, I could use it.",
-   "dst": "",
+   "dst": "言語を勉強してるからですよ。まだ全部は覚えてないので、手伝ってもらえると助かります。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2148,7 +2148,7 @@
   },
   "All Roads to Peace#224": {
    "src": "I used to have a very smart hobbit friend who lived nearby. They've left, but I want you to check their hobbit hole to see if they've left behind any language books.",
-   "dst": "",
+   "dst": "昔、近くにとても賢いホビットの友人が住んでいたんです。もう去りましたが、その穴に言語の本が残ってないか見てきてほしいんです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2158,7 +2158,7 @@
   },
   "All Roads to Peace#225": {
    "src": "It should be close to the blue tower on the hill. That should be easy, right?",
-   "dst": "",
+   "dst": "丘の上の青い塔の近くのはずです。簡単でしょう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2168,7 +2168,7 @@
   },
   "All Roads to Peace#226": {
    "src": "Oh, good, they did leave a book behind. This even completes the collection I have. I have the first, second, fourth, fifth, and sixth volumes of this.",
-   "dst": "",
+   "dst": "ああ、よかった、本を残してくれてた。これでシリーズが揃います。一、二、四、五、六巻は持ってたんです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2178,7 +2178,7 @@
   },
   "All Roads to Peace#227": {
    "src": "Hopefully I can learn something new here. I still don't understand what all these weird \"figures of speech\" are supposed to mean...",
-   "dst": "",
+   "dst": "ここで何か新しいことが学べるといいな。この変な「慣用句」ってやつの意味、いまだにわからないんです…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2188,7 +2188,7 @@
   },
   "All Roads to Peace#228": {
    "src": "What does busting your hump mean? Or two shakes of a lamb tail? Well, anyway. You probably know, so me trying to guess is boring.",
-   "dst": "",
+   "dst": "「猫の手も借りたい」ってどういう意味です？「馬の耳に念仏」は？まあいいか。あなたは知ってるでしょうし、僕が当てても退屈ですよね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2198,7 +2198,7 @@
   },
   "All Roads to Peace#229": {
    "src": "Here, then. That friend of mine wrote everything he came across down in some diaries, and he gave me them to keep, but I can't read them.",
-   "dst": "",
+   "dst": "じゃあ、これを。その友人は出会ったことを全部日記に書いて、僕に預けてくれたんですが、僕には読めないんです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2208,7 +2208,7 @@
   },
   "All Roads to Peace#230": {
    "src": "The pages are too flimsy- I'll rip them if I turn them. It's a good thing the book you gave me is bound with strong leather, but I still need to be careful not to ruin it...",
-   "dst": "",
+   "dst": "紙が薄すぎて―めくると破れちゃうんです。もらった本は丈夫な革で綴じてあって助かりますが、それでも傷めないよう気をつけないと…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2218,7 +2218,7 @@
   },
   "All Roads to Peace#231": {
    "src": "Well, maybe if you read what these have written in them you can learn some things for yourself.",
-   "dst": "",
+   "dst": "まあ、中身を読めば、あなた自身も何か学べるかもしれませんね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2228,7 +2228,7 @@
   },
   "All Roads to Peace#233": {
    "src": "Huh. You again. That weird human who helped Ressinter. Something wrong?",
-   "dst": "",
+   "dst": "ん。またお前か。Ressinter を助けた変な人間。何かあったか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2238,7 +2238,7 @@
   },
   "All Roads to Peace#234": {
    "src": "Hm. Looking to help out still? What is it with you looking to be helpful? Have to say I'm not used to this. But, I can think of something.",
-   "dst": "",
+   "dst": "ふむ。まだ手伝いたいのか？なんでそんなに手伝いたがる？正直慣れないな。だが、思いつくことはある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2248,7 +2248,7 @@
   },
   "All Roads to Peace#235": {
    "src": "HEY! Any of you feel like playing a game?",
-   "dst": "",
+   "dst": "おい！誰かゲームしたい奴はいるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2258,7 +2258,7 @@
   },
   "All Roads to Peace#236": {
    "src": "Ugh, yeah! We're so BORED in here!",
-   "dst": "",
+   "dst": "うん、する！ここ退屈すぎるんだもん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2268,7 +2268,7 @@
   },
   "All Roads to Peace#237": {
    "src": "What in the... HEY! Why's one of the big, scary humans in here?! Nunny, I thought you said we were gonna play a game!",
-   "dst": "",
+   "dst": "なにこれ…ちょっと！なんででっかくて怖い人間がここにいるの？！Nunny、ゲームするって言ったじゃん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2278,7 +2278,7 @@
   },
   "All Roads to Peace#238": {
    "src": "We are. This human actually isn't so bad. Care to introduce yourselves?",
-   "dst": "",
+   "dst": "するさ。この人間は実はそう悪くない。自己紹介したらどうだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2288,7 +2288,7 @@
   },
   "All Roads to Peace#239": {
    "src": "Well, sure, but...even if you say this one isn't so scary, I know I don't wanna tell them my real name!",
-   "dst": "",
+   "dst": "そりゃいいけど…怖くないって言われても、本名は教えたくないよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2298,7 +2298,7 @@
   },
   "All Roads to Peace#240": {
    "src": "Didn't we just eat a bunch of fruit though? We can use those as fake names!",
-   "dst": "",
+   "dst": "さっき果物いっぱい食べたよね？それを偽名にしようよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2308,7 +2308,7 @@
   },
   "All Roads to Peace#241": {
    "src": "Okay then. Well, call me Mango then, weird human!",
-   "dst": "",
+   "dst": "じゃあいいよ。あたしのことは Mango って呼んで、変な人間！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2318,7 +2318,7 @@
   },
   "All Roads to Peace#242": {
    "src": "I just ate a bunch of blueberries, so I guess I'm Blueberry for now?",
-   "dst": "",
+   "dst": "ブルーベリーいっぱい食べたから、今は Blueberry ってことで？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2328,7 +2328,7 @@
   },
   "All Roads to Peace#243": {
    "src": "Hey, I wouldn't mind being called Grapes by anyone, really!",
-   "dst": "",
+   "dst": "ねえ、誰に Grapes って呼ばれても全然いいよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2338,7 +2338,7 @@
   },
   "All Roads to Peace#244": {
    "src": "Then I'm Peaches! So we're just doing a little hide and seek game?",
-   "dst": "",
+   "dst": "じゃあ Peaches ね！つまり、ちょっとしたかくれんぼ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2348,7 +2348,7 @@
   },
   "All Roads to Peace#245": {
    "src": "Yes. Just hide around the fort someplace. If the human doesn't find you, you win.",
-   "dst": "",
+   "dst": "そうだ。砦のどこかに隠れろ。人間に見つからなければお前らの勝ちだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2358,7 +2358,7 @@
   },
   "All Roads to Peace#246": {
    "src": "Well, that's kinda boring, so I'm gonna go find a really tough to reach spot!",
-   "dst": "",
+   "dst": "うーん、それちょっと退屈。だからすっごく行きにくい場所探してくる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2368,7 +2368,7 @@
   },
   "All Roads to Peace#247": {
    "src": "NYAHAHA! Everyone scatter!!",
-   "dst": "",
+   "dst": "にゃははは！みんな散れー！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2378,7 +2378,7 @@
   },
   "All Roads to Peace#248": {
    "src": "Well, there you go. I'll tell you how many you have left to find if you talk with me.",
-   "dst": "",
+   "dst": "さて、こんなところだ。俺に話しかければ、あと何人残ってるか教えてやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2388,7 +2388,7 @@
   },
   "All Roads to Peace#249": {
    "src": "...wow. You're good. I thought you might be able to see me up here, but I didn't think you'd be able to reach me!",
-   "dst": "",
+   "dst": "…わあ。やるじゃん。ここにいるのは見えるかもと思ったけど、まさか登ってこられるとは！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2398,7 +2398,7 @@
   },
   "All Roads to Peace#250": {
    "src": "I don't really care about the fact you're human. As long as I get my entertainment I'm happy. Which kinda isn't so great, cause there isn't a lot here to tinker with.",
-   "dst": "",
+   "dst": "人間かどうかなんてあんまり気にしない。楽しければそれでいい。ただ、ここってイジれる物があんまりないのが残念なんだよね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2408,7 +2408,7 @@
   },
   "All Roads to Peace#251": {
    "src": "Tinkernook is so much better about having machines and metals and things to experiment and build than here is.",
-   "dst": "",
+   "dst": "Tinkernook のほうが、実験したり作ったりできる機械や金属がずっと多いんだよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2418,7 +2418,7 @@
   },
   "All Roads to Peace#252": {
    "src": "Anyways, you win, I lose, so I better get back to stick-in-the-mud Nunexetor. See ya!",
-   "dst": "",
+   "dst": "とにかく、あんたの勝ち、あたしの負け。頑固な Nunexetor のとこに戻らなきゃ。じゃあね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2428,7 +2428,7 @@
   },
   "All Roads to Peace#253": {
    "src": "NYACK! For such a big human you really know how to sneak up on someone!!",
-   "dst": "",
+   "dst": "にゃっ！でっかい人間のくせに、忍び寄るのうますぎ！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2438,7 +2438,7 @@
   },
   "All Roads to Peace#254": {
    "src": "Gah, I thought I was a goner for a second there... If Nunny says you're okay then I'll trust him, but that doesn't make you less intimidating!",
-   "dst": "",
+   "dst": "うう、一瞬終わったと思った…Nunny が大丈夫って言うなら信じるけど、だからって怖くなくなるわけじゃないからね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2448,7 +2448,7 @@
   },
   "All Roads to Peace#255": {
    "src": "And, I guess out in the open like this, the other orcs wouldn't let you bully us, so...",
-   "dst": "",
+   "dst": "それに、こんな開けた場所なら、他のオークがいじめさせないだろうし…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2458,7 +2458,7 @@
   },
   "All Roads to Peace#256": {
    "src": "Suppose you're alright, maybe. But even still, you found me, so I lose. Unless you can't find everyone else!",
-   "dst": "",
+   "dst": "まあ、悪くない人かもね。でも見つかったから負け。他のみんなを見つけられなきゃだけど！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2468,7 +2468,7 @@
   },
   "All Roads to Peace#257": {
    "src": "I bet you'll NEVER find Mango, hahaah! She always takes these games SUPER seriously!",
-   "dst": "",
+   "dst": "Mango は「絶対」見つからないよ、あはは！あの子こういう遊び「超」本気なんだから！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2478,7 +2478,7 @@
   },
   "All Roads to Peace#258": {
    "src": "Aw darn it. I guess it's pretty easy to see me up here.",
-   "dst": "",
+   "dst": "あーあ、くやしい。上にいたらそりゃ見えるよね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2488,7 +2488,7 @@
   },
   "All Roads to Peace#259": {
    "src": "I mean, I knew that, but I thought you wouldn't think to climb the tower!",
-   "dst": "",
+   "dst": "わかってたけど、塔に登るとは思わないかなって！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2498,7 +2498,7 @@
   },
   "All Roads to Peace#260": {
    "src": "Well, anyway...you really went and tried to heal Ressinter? That's pretty admirable!",
-   "dst": "",
+   "dst": "それより…本当に Ressinter を治そうとしたの？それってすごく立派だよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2508,7 +2508,7 @@
   },
   "All Roads to Peace#261": {
    "src": "I hear most humans are bullies. It's why Veltu back at the Trunkstump camp was training us to be tougher.",
-   "dst": "",
+   "dst": "人間ってほとんどいじめっ子なんだって。だから Trunkstump 野営地の Veltu が、あたしたちを鍛えてくれてたの。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2518,7 +2518,7 @@
   },
   "All Roads to Peace#262": {
    "src": "Aaaand then a human went and killed her, because I guess they got told to do so! At least you seem halfway decent.",
-   "dst": "",
+   "dst": "で、人間が来て彼女を殺しちゃった、そうしろって言われたんだろうね！あんたはまだマシっぽいけど。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2528,7 +2528,7 @@
   },
   "All Roads to Peace#263": {
    "src": "Anyway, back to the quiet ol' grouch with me!",
-   "dst": "",
+   "dst": "とにかく、無口な頑固じいさんのとこに戻るね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2538,7 +2538,7 @@
   },
   "All Roads to Peace#264": {
    "src": "Ack! Thought you wouldn't notice me behind the stairs!",
-   "dst": "",
+   "dst": "わっ！階段の裏なら気づかれないと思ったのに！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2548,7 +2548,7 @@
   },
   "All Roads to Peace#265": {
    "src": "Ugh, you...you human types are scary up close. Is Nunexetor really sure you're not a bad guy?",
-   "dst": "",
+   "dst": "うう、人間って…近くで見ると怖い。Nunexetor、本当にこの人悪い人じゃないって言い切れる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2558,7 +2558,7 @@
   },
   "All Roads to Peace#266": {
    "src": "I mean, look at your armor! You, you look like you could splat me against the wall in a snap!",
-   "dst": "",
+   "dst": "だってその鎧見てよ！あ、あんた、あたしなんか一瞬で壁にペチャンコにできそう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2568,7 +2568,7 @@
   },
   "All Roads to Peace#267": {
    "src": "...I feel like I just gave you an idea and I'm not sticking around to find out! You win!",
-   "dst": "",
+   "dst": "…今なんか余計な考え与えちゃった気がする、結果見る前に逃げる！あんたの勝ち！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2578,7 +2578,7 @@
   },
   "All Roads to Peace#268": {
    "src": "Looks like the human wins. Guess I know how you managed to find that spineback boar.",
-   "dst": "",
+   "dst": "人間の勝ちらしいな。トゲ背イノシシを見つけられたわけがわかった気がする。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2588,7 +2588,7 @@
   },
   "All Roads to Peace#269": {
    "src": "There's no way you REALLY hunted one of those things. Those even give the orc hunters trouble!",
-   "dst": "",
+   "dst": "あんなのを「本当に」狩れるわけないって。オークの狩人だって手こずるんだから！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2598,7 +2598,7 @@
   },
   "All Roads to Peace#270": {
    "src": "Are you kidding me? Humans are terrifying, Blueberry! They've hunted way stronger stuff than some stupid pig!",
-   "dst": "",
+   "dst": "何言ってんの？人間ってすっごく怖いんだよ、Blueberry！バカな豚よりずっと強いのを狩ってきてるんだから！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2608,7 +2608,7 @@
   },
   "All Roads to Peace#271": {
    "src": "But, the game was fun, right?",
-   "dst": "",
+   "dst": "でも、遊び楽しかったよね？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2618,7 +2618,7 @@
   },
   "All Roads to Peace#272": {
    "src": "Yeah, I guess it wasn't as boring as I'd thought.",
-   "dst": "",
+   "dst": "うん、思ったほど退屈じゃなかったかな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2628,7 +2628,7 @@
   },
   "All Roads to Peace#273": {
    "src": "That's all I wanted from you. Can go back to whatever it was you were doing now.",
-   "dst": "",
+   "dst": "俺が求めてたのはそれだけだ。さっきまでやってたことに戻っていいぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2638,7 +2638,7 @@
   },
   "All Roads to Peace#274": {
    "src": "Yes, finally! I don't have to spend time wondering if the human's gonna try and poke my eyes out!",
-   "dst": "",
+   "dst": "やった、やっと！人間に目をくり抜かれるか心配しなくて済む！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2648,7 +2648,7 @@
   },
   "All Roads to Peace#275": {
    "src": "Oh, quit being such a scaredy-baby. This one's nice!",
-   "dst": "",
+   "dst": "もう、怖がりすぎ。この人はいい人だよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2658,7 +2658,7 @@
   },
   "All Roads to Peace#276": {
    "src": "Good game, I guess! Back to being bored again.",
-   "dst": "",
+   "dst": "いいゲームだった、かな！また退屈に逆戻り。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2668,7 +2668,7 @@
   },
   "All Roads to Peace#277": {
    "src": "...",
-   "dst": "",
+   "dst": "…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2678,7 +2678,7 @@
   },
   "All Roads to Peace#278": {
    "src": "What, nothing to say?",
-   "dst": "",
+   "dst": "なんだ、何も言うことないのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2688,7 +2688,7 @@
   },
   "All Roads to Peace#279": {
    "src": "... Your shoe's unlaced, human.",
-   "dst": "",
+   "dst": "…靴ひも、ほどけてるよ、人間。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2698,7 +2698,7 @@
   },
   "All Roads to Peace#280": {
    "src": "What? You aren't even wearing those kinds of shoes.",
-   "dst": "",
+   "dst": "は？お前そういう靴履いてないだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2708,7 +2708,7 @@
   },
   "All Roads to Peace#281": {
    "src": "Anyways, to the winner goes the spoils. Here, for entertaining them for a bit.",
-   "dst": "",
+   "dst": "とにかく、勝者には褒美だ。ほら、あいつらの相手をしてくれた礼だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2718,7 +2718,7 @@
   },
   "All Roads to Peace#282": {
    "src": "They have me watch the goblins but I'm no good at having fun with them, so thanks I suppose.",
-   "dst": "",
+   "dst": "ゴブリンの世話を任されてるが、一緒に遊ぶのは苦手でな。だから、まあ、感謝する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2728,7 +2728,7 @@
   },
   "All Roads to Peace#284": {
    "src": "Ah, the weird human. Why you looking to be helpful?",
-   "dst": "",
+   "dst": "ああ、変な人間。なぜ手伝おうとする？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2738,7 +2738,7 @@
   },
   "All Roads to Peace#285": {
    "src": "Must be some reason. Not sure if tired for fighting or some other reason, but if human feel like helping, can use some help.",
-   "dst": "",
+   "dst": "何か理由あるはず。戦いに疲れたか、他の理由か知らない、でも人間手伝いたいなら、手を借りたい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2748,7 +2748,7 @@
   },
   "All Roads to Peace#286": {
    "src": "Running low on blue dyes. Have plenty of other colors, but need blue. Know where to get them, too.",
-   "dst": "",
+   "dst": "青い染料少なくなってる。他の色たくさんある、でも青いる。どこで取れるかも知ってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2758,7 +2758,7 @@
   },
   "All Roads to Peace#287": {
    "src": "The cave outside the villager bridge, with the pond and arch by it. Go in, and there will be blue flowers.",
-   "dst": "",
+   "dst": "村人の橋の外の洞窟、池とアーチがそばにあるやつ。中に入ると、青い花ある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2768,7 +2768,7 @@
   },
   "All Roads to Peace#288": {
    "src": "Get [{~} Terramarine Buds] so can make more dyes. Don't know why you helping, but won't turn down help either.",
-   "dst": "",
+   "dst": "[{~} Terramarine Buds] 取ってこい、染料もっと作れる。なぜ手伝うか知らない、でも断りもしない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2778,7 +2778,7 @@
   },
   "All Roads to Peace#289": {
    "src": "The weird human again? You all covered in blue powder. You found the flowers then!",
-   "dst": "",
+   "dst": "また変な人間？全身青い粉まみれ。花見つけたんだな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2788,7 +2788,7 @@
   },
   "All Roads to Peace#290": {
    "src": "Here. Will get that for you. The buds are enough for what need, but you can keep the dust.",
-   "dst": "",
+   "dst": "ほら。受け取る。つぼみで足りる、粉は持ってていい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2798,7 +2798,7 @@
   },
   "All Roads to Peace#291": {
    "src": "Little more, too. But, again- why you looking to be helpful? Don't understand. Humans kill orcs a lot.",
-   "dst": "",
+   "dst": "もう少しおまけ。でも、もう一度―なぜ手伝おうとする？わからない。人間、オークたくさん殺す。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2808,7 +2808,7 @@
   },
   "All Roads to Peace#292": {
    "src": "You unlearn villager stupidity maybe? In the middle of unlearning? Perhaps a sign from the earth things will heal. Perhaps not. We will see.",
-   "dst": "",
+   "dst": "村人の愚かさ忘れようとしてる？忘れてる途中？大地が、傷癒える兆し見せてるのかも。違うかも。いずれわかる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2818,7 +2818,7 @@
   },
   "All Roads to Peace#294": {
    "src": "You that weird human helping instead killing, right? Nunexetor and little goblins talking about you.",
-   "dst": "",
+   "dst": "お前、殺さないで手伝う変な人間だろう？Nunexetor と小さいゴブリンたちが話してた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2828,7 +2828,7 @@
   },
   "All Roads to Peace#295": {
    "src": "Trying to make weapons and tools better. Training, but running out of grindstones. Etemitoro- that is me, my name... That how say it?",
-   "dst": "",
+   "dst": "武器と道具、もっとよくしようとしてる。訓練中、でも砥石足りない。Etemitoro―それ自分、名前…こう言う？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2838,7 +2838,7 @@
   },
   "All Roads to Peace#296": {
    "src": "Weird human language. Anyway, know where good grindstone is- top of mountain east of fortress.",
-   "dst": "",
+   "dst": "変な人間の言葉。とにかく、いい砥石ある場所知ってる―砦の東の山のてっぺん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2848,7 +2848,7 @@
   },
   "All Roads to Peace#297": {
    "src": "There shortcut running through top by Ledant cave. Maybe dangerous, but not too much. Follow dead bushes on road and can get to top quickly.",
-   "dst": "",
+   "dst": "Ledant 洞窟のそばのてっぺん通る近道ある。危ないかも、でもそれほどじゃない。道の枯れ茂みたどれば、すぐてっぺん着く。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2858,7 +2858,7 @@
   },
   "All Roads to Peace#298": {
    "src": "May have something useful if bring me [Leaden Stone] for grind metal.",
-   "dst": "",
+   "dst": "金属研ぐ [Leaden Stone] 持ってきたら、役立つ物あるかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2868,7 +2868,7 @@
   },
   "All Roads to Peace#299": {
    "src": "Look- human want help? Then get Etemitoro- that is me, my name... Get-",
-   "dst": "",
+   "dst": "おい―人間手伝いたい？なら Etemitoro に―それ自分、名前…取って―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2878,7 +2878,7 @@
   },
   "All Roads to Peace#300": {
    "src": "Oh! You have [Leaden Stone]! Was focusing on work, didn't notice.",
-   "dst": "",
+   "dst": "お！[Leaden Stone] 持ってる！仕事に夢中、気づかなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2888,7 +2888,7 @@
   },
   "All Roads to Peace#301": {
    "src": "Here. Human like green gem for money, right? Not good for smithing though.",
-   "dst": "",
+   "dst": "ほら。人間、緑の宝石をお金にするの好きだろう？鍛冶には向かない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2898,7 +2898,7 @@
   },
   "All Roads to Peace#302": {
    "src": "Broken weapon parts not good alone, but still sharp. Can be used to make other good weapons! Reuse good for earth- waste not!",
-   "dst": "",
+   "dst": "壊れた武器の部品、それだけだとだめ、でもまだ鋭い。他のいい武器作るのに使える！再利用、大地にいい―無駄なし！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2908,7 +2908,7 @@
   },
   "All Roads to Peace#304": {
    "src": "Hm, healer human. Could swear, saw you walking around plains some time ago. What here for? Ressinter hurt again?",
-   "dst": "",
+   "dst": "むう、治療師人間。前に平原歩いてるの見た、誓っていい。何しに来た？Ressinter またケガ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2918,7 +2918,7 @@
   },
   "All Roads to Peace#305": {
    "src": "No? Well, am curious now. You try heal Ressinter...luck, maybe? Or did human really know what herbs do?",
-   "dst": "",
+   "dst": "違う？なら、今気になる。お前 Ressinter 治そうとした…運かも？それとも人間、本当に薬草わかってた？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2928,7 +2928,7 @@
   },
   "All Roads to Peace#306": {
    "src": "Want review. Want see human medicine knowledge. Will ask questions, human give answer. Simple. Ready?",
-   "dst": "",
+   "dst": "試したい。人間の薬の知識見たい。質問する、人間答える。簡単。いい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2938,7 +2938,7 @@
   },
   "All Roads to Peace#307": {
    "src": "Good! So, first question. Ginkgo Leaf. What Gingko Leaf good for?",
-   "dst": "",
+   "dst": "よし！じゃ一問目。イチョウの葉。イチョウの葉、何にいい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2948,7 +2948,7 @@
   },
   "All Roads to Peace#308": {
    "src": "Yes! Good. Gingko leaf help brain. Make feel better when stress, but make blood runny. Can be good for sometimes, but can be dangerous.",
-   "dst": "",
+   "dst": "そう！いい。イチョウの葉、頭にいい。ストレスの時楽にする、でも血さらさらになる。いい時もある、でも危ない時もある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2958,7 +2958,7 @@
   },
   "All Roads to Peace#309": {
    "src": "So, second question. Sweetgale. What Sweetgale good for?",
-   "dst": "",
+   "dst": "じゃ二問目。ヤチヤナギ。ヤチヤナギ、何にいい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2968,7 +2968,7 @@
   },
   "All Roads to Peace#310": {
    "src": "Nope. Sweetgale not for helping with that. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "違う。ヤチヤナギ、それには効かない。むう、人間 Ressinter 治したの運かも…したいならもう一回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2978,7 +2978,7 @@
   },
   "All Roads to Peace#311": {
    "src": "Nope. Sweetgale not for helping with that. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "違う。ヤチヤナギ、それには効かない。むう、人間 Ressinter 治したの運かも…したいならもう一回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2988,7 +2988,7 @@
   },
   "All Roads to Peace#312": {
    "src": "Mhm. Good! Sweetgale pulp makes bugs avoid. Also make irritated skin soothe. Very good for bug bite.",
-   "dst": "",
+   "dst": "うむ。いい！ヤチヤナギの汁、虫よける。荒れた肌も落ち着かせる。虫刺されにすごくいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -2998,7 +2998,7 @@
   },
   "All Roads to Peace#313": {
    "src": "Here third question. Elderberry. Elderberry good for two thing. What Elderberry good for?",
-   "dst": "",
+   "dst": "三問目。ニワトコの実。ニワトコの実、二つにいい。ニワトコの実、何にいい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3008,7 +3008,7 @@
   },
   "All Roads to Peace#314": {
    "src": "No, Elderberry not good for those. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "違う、ニワトコの実、それにはよくない。むう、人間 Ressinter 治したの運かも…したいならもう一回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3018,7 +3018,7 @@
   },
   "All Roads to Peace#315": {
    "src": "Yes! Though, Elderberry also good for third thing. Can make good drink! Get drunk if ferment Elderberry, but that not medicine.",
-   "dst": "",
+   "dst": "そう！でもニワトコの実、三つ目もある。いい飲み物作れる！発酵させると酔う、でもそれ薬じゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3028,7 +3028,7 @@
   },
   "All Roads to Peace#316": {
    "src": "Last question for human. Feverfew. What Feverfew NOT help with?",
-   "dst": "",
+   "dst": "人間に最後の質問。ナツシロギク。ナツシロギクが「効かない」の、何？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3038,7 +3038,7 @@
   },
   "All Roads to Peace#317": {
    "src": "Feverfew very good for heal that. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "ナツシロギク、それ治すのすごくいい。むう、人間 Ressinter 治したの運かも…したいならもう一回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3048,7 +3048,7 @@
   },
   "All Roads to Peace#318": {
    "src": "Feverfew very good for heal that. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "ナツシロギク、それ治すのすごくいい。むう、人間 Ressinter 治したの運かも…したいならもう一回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3058,7 +3058,7 @@
   },
   "All Roads to Peace#319": {
    "src": "... ... ...",
-   "dst": "",
+   "dst": "… … …",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3068,7 +3068,7 @@
   },
   "All Roads to Peace#320": {
    "src": "Pfff...hawhawhawhaw!!! H-Human, yahoo! I- Harhar!",
-   "dst": "",
+   "dst": "ぷっ…がはははは！！！に、人間、やった！あた―がはは！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3078,7 +3078,7 @@
   },
   "All Roads to Peace#321": {
    "src": "That...correct! Not right, but correct! You...haha, you only help Ressinter through luck, right? Human not actually healer.",
-   "dst": "",
+   "dst": "それ…正解！正しくない、でも正解！お前…はは、Ressinter 助けたの運だけだろう？人間、本当は治療師じゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3088,7 +3088,7 @@
   },
   "All Roads to Peace#322": {
    "src": "Human have humor though! And human try hard to help. More than can say for most humans. Here then- try more heal, instead of be soldier.",
-   "dst": "",
+   "dst": "でも人間、ユーモアある！それに一生懸命助けようとする。ほとんどの人間よりマシ。ほら―兵士やるより、もっと治すの試せ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3098,7 +3098,7 @@
   },
   "All Roads to Peace#323": {
    "src": "World need more people to help other people. That human was willing to try mean many good thing.",
-   "dst": "",
+   "dst": "世界、人を助ける人もっと必要。人間が試そうとしたこと、いいことたくさん意味する。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3108,7 +3108,7 @@
   },
   "All Roads to Peace#324": {
    "src": "No, Elderberry not good for those. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "違う、ニワトコの実、それにはよくない。むう、人間 Ressinter 治したの運かも…したいならもう一回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3118,7 +3118,7 @@
   },
   "All Roads to Peace#325": {
    "src": "No. Gingko Leaf bad for that. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "違う。イチョウの葉、それには悪い。むう、人間 Ressinter 治したの運かも…したいならもう一回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3128,7 +3128,7 @@
   },
   "All Roads to Peace#326": {
    "src": "No. Gingko Leaf bad for that. Hm, maybe human heal Ressinter through luck... Can try again if want.",
-   "dst": "",
+   "dst": "違う。イチョウの葉、それには悪い。むう、人間 Ressinter 治したの運かも…したいならもう一回。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3138,7 +3138,7 @@
   },
   "All Roads to Peace#327": {
    "src": "Fine. Take your time. Will be here for while to make sure other healer okay.",
-   "dst": "",
+   "dst": "わかった。ゆっくりでいい。もう一人の治療師無事か見るため、しばらくここいる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3148,7 +3148,7 @@
   },
   "All Roads to Peace#329": {
    "src": "Human healer! Hello! This Onluk tower. Onluk tower two! Human help, so human welcome.",
-   "dst": "",
+   "dst": "治療師人間！こんにちは！ここ Onluk の塔。Onluk の塔二号！人間手伝った、だから人間歓迎。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3158,7 +3158,7 @@
   },
   "All Roads to Peace#330": {
    "src": "Tower one call tower one cause Onluk build tower one! This not usual spot for Onluk.",
-   "dst": "",
+   "dst": "一号塔、一号塔と呼ぶ、Onluk が一号塔建てたから！ここ Onluk のいつもの場所じゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3168,7 +3168,7 @@
   },
   "All Roads to Peace#331": {
    "src": "Usually at tower on small hill, across bridge. But because build tower by self, tower rickety.",
-   "dst": "",
+   "dst": "いつもは橋の向こう、小さい丘の塔。でも一人で建てた、だから塔ぐらぐら。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3178,7 +3178,7 @@
   },
   "All Roads to Peace#332": {
    "src": "Human helpful. Human get sturdy wood for fix tower? {p} has sturdy wood. Forest has wood too, but more magical than sturdy.",
-   "dst": "",
+   "dst": "人間、役に立つ。塔直す丈夫な木取ってくる？{p} に丈夫な木ある。森にも木ある、でも丈夫より魔法っぽい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3188,7 +3188,7 @@
   },
   "All Roads to Peace#333": {
    "src": "[{~} Willow Planks] enough to make tower better, maybe. Willow strong wood! Can get?",
-   "dst": "",
+   "dst": "[{~} Willow Planks] あれば塔よくなる、たぶん。柳、強い木！取れる？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3198,7 +3198,7 @@
   },
   "All Roads to Peace#334": {
    "src": "Aha! Human have willow wood! Onluk fix tower now!",
-   "dst": "",
+   "dst": "あはっ！人間、柳の木持ってる！Onluk、今塔直す！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3208,7 +3208,7 @@
   },
   "All Roads to Peace#335": {
    "src": "Will repair Onluk tower one! Come see after fix!",
-   "dst": "",
+   "dst": "Onluk の塔一号直す！直したら見に来い！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3218,7 +3218,7 @@
   },
   "All Roads to Peace#336": {
    "src": "TOWER ONE REPAIRED! Hrahaaah! Yes! Human very helpful!",
-   "dst": "",
+   "dst": "一号塔直った！ぐはははっ！やった！人間すごく役に立つ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3228,7 +3228,7 @@
   },
   "All Roads to Peace#337": {
    "src": "Should go and see! Climb tower, shoot crossbow at Freelancer!",
-   "dst": "",
+   "dst": "見に行け！塔に登って、Freelancer にクロスボウ撃て！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3238,7 +3238,7 @@
   },
   "All Roads to Peace#338": {
    "src": "See? Onluk tower one much better than Onluk tower two! Cozy up here, and can see Fruludir tower too!",
-   "dst": "",
+   "dst": "見ろ。Onluk の塔一号、Onluk の塔二号よりずっといい！上は居心地いい、Fruludir の塔も見える！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3248,7 +3248,7 @@
   },
   "All Roads to Peace#339": {
    "src": "Human very helpful. Healer and woodcutter! Repairer of tower- Well, human not repair tower. Helper of repairer of tower!",
-   "dst": "",
+   "dst": "人間すごく役に立つ。治療師で木こり！塔の修理屋―いや、人間塔直してない。塔の修理屋の手伝い屋！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3258,7 +3258,7 @@
   },
   "All Roads to Peace#340": {
    "src": "Here, for help repair Onluk tower one!",
-   "dst": "",
+   "dst": "ほら、Onluk の塔一号直すの手伝った礼！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3268,7 +3268,7 @@
   },
   "All Roads to Peace#342": {
    "src": "Speak to Ureietun at [-{~}, {~}, -{~}] to gain access to the Chieftess' hut",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の Ureietun と話し、女族長の小屋に入る許可をもらう",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -3278,7 +3278,7 @@
   },
   "All Roads to Peace#343": {
    "src": "... ... ...",
-   "dst": "",
+   "dst": "… … …",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3288,7 +3288,7 @@
   },
   "All Roads to Peace#344": {
    "src": "...fine. Maybe human not so bad.",
-   "dst": "",
+   "dst": "…わかった。人間、そう悪くないかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3298,7 +3298,7 @@
   },
   "All Roads to Peace#345": {
    "src": "Human want talk Arrai-Veretel. In hut. Follow.",
-   "dst": "",
+   "dst": "人間、Arrai-Veretel と話したい。小屋にいる。ついて来い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3308,7 +3308,7 @@
   },
   "All Roads to Peace#346": {
    "src": "Arrai-Veretel! Human try help orc around fortress. Want talk.",
-   "dst": "",
+   "dst": "Arrai-Veretel！人間、砦のまわりでオーク助けようとした。話したい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3318,7 +3318,7 @@
   },
   "All Roads to Peace#347": {
    "src": "Up to human now. Will not help more- choice is up to Arrai-Veretel.",
-   "dst": "",
+   "dst": "ここからは人間次第。これ以上助けない―決めるのは Arrai-Veretel。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3328,7 +3328,7 @@
   },
   "All Roads to Peace#348": {
    "src": "Hmh. Zuett spoke about you. So you are human trying to end war?",
-   "dst": "",
+   "dst": "フン。Zuett から聞いた。お前が戦争終わらせようとしてる人間か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3338,7 +3338,7 @@
   },
   "All Roads to Peace#349": {
    "src": "!!!",
-   "dst": "",
+   "dst": "！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3348,7 +3348,7 @@
   },
   "All Roads to Peace#350": {
    "src": "YOU! You human who kill Rai-Poxper! You human who attack other fort!",
-   "dst": "",
+   "dst": "お前！お前 Rai-Poxper 殺した人間！お前もう一つの砦襲った人間！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3358,7 +3358,7 @@
   },
   "All Roads to Peace#351": {
    "src": "Need talk with Zuett again. You follow. And you stay quiet. Understand?",
-   "dst": "",
+   "dst": "もう一度 Zuett と話す。お前ついて来い。そして黙ってろ。わかったか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3368,7 +3368,7 @@
   },
   "All Roads to Peace#352": {
    "src": "Follow Arrai-Veretel into the meeting room at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Arrai-Veretel について [-{~}, {~}, -{~}] の会議室に入る",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -3378,7 +3378,7 @@
   },
   "All Roads to Peace#353": {
    "src": "ZUETT! You say human want peace. Do you know who human is?!",
-   "dst": "",
+   "dst": "Zuett！人間平和欲しい言った。この人間誰か知ってるか？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3388,7 +3388,7 @@
   },
   "All Roads to Peace#354": {
    "src": "Whuh- This good human! Heal Ressinter-",
-   "dst": "",
+   "dst": "え―これいい人間！Ressinter 治した―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3398,7 +3398,7 @@
   },
   "All Roads to Peace#355": {
    "src": "Human ALSO kill Rai-Poxper!",
-   "dst": "",
+   "dst": "人間、Rai-Poxper も殺した！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3408,7 +3408,7 @@
   },
   "All Roads to Peace#356": {
    "src": "Wha- no-",
-   "dst": "",
+   "dst": "な―違う―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3418,7 +3418,7 @@
   },
   "All Roads to Peace#357": {
    "src": "Human ALSO attack other fort! Many orcs dead because this human!",
-   "dst": "",
+   "dst": "人間、もう一つの砦も襲った！この人間のせいで大勢のオーク死んだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3428,7 +3428,7 @@
   },
   "All Roads to Peace#358": {
    "src": "How can Zuett say human trying to end war, when human START WAR AGAIN?!",
-   "dst": "",
+   "dst": "人間また戦争始めたのに、なぜ Zuett は人間が戦争終わらせようとしてる言える？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3438,7 +3438,7 @@
   },
   "All Roads to Peace#359": {
    "src": "Only because villager-",
-   "dst": "",
+   "dst": "それは村人が―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3448,7 +3448,7 @@
   },
   "All Roads to Peace#360": {
    "src": "THAT. IS. THE. POINT!! Villager get human to fight for them! Cease-fire say Villager not attack orc. Then human come over ocean. Try make peace- get attack!",
-   "dst": "",
+   "dst": "それが。言いたい。こと！！村人、人間に代わりに戦わせる！停戦、村人オーク襲わない言う。そこへ人間海渡って来る。和平しようとした―襲われた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3458,7 +3458,7 @@
   },
   "All Roads to Peace#361": {
    "src": "See human attack. Villager get human to attack, say lies to trick humans. Orcs defend self. Then, three Rai-orc die at Earthpit, Cliffhearth, and Trunkstump goblin camp.",
-   "dst": "",
+   "dst": "人間襲うの見た。村人が人間に襲わせる、嘘で人間騙す。オーク身を守る。そして Rai のオーク三人、Earthpit、Cliffhearth、Trunkstump のゴブリン野営地で死んだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3468,7 +3468,7 @@
   },
   "All Roads to Peace#362": {
    "src": "Human attack! Rai-Poxper take rightful toll for break cease-fire, but not war yet. Take magic axe from Villager city while magic power gone bad.",
-   "dst": "",
+   "dst": "人間襲った！Rai-Poxper、停戦破った正当な代償取った、でもまだ戦争じゃない。魔力おかしくなってる間に、村人の町から魔法の斧取った。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3478,7 +3478,7 @@
   },
   "All Roads to Peace#363": {
    "src": "Villager and human attack first, but attack orc for take rightful toll like orc attack first! And human kill Rai-Poxper!",
-   "dst": "",
+   "dst": "村人と人間先に襲った、なのにオーク正当な代償取ったの、オーク先に襲ったみたいに攻める！そして人間 Rai-Poxper 殺した！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3488,7 +3488,7 @@
   },
   "All Roads to Peace#364": {
    "src": "Orc take human fort build in dying earth forest. Cannot know if human planning another attack! But not kill human. Hold human instead.",
-   "dst": "",
+   "dst": "オーク、死にゆく大地の森に人間建てた砦取った。人間また襲う計画してるかわからない！でも人間殺さない。捕まえておく。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3498,7 +3498,7 @@
   },
   "All Roads to Peace#365": {
    "src": "Then same human who kill Rai-Poxper come, kill bathing orc, break in fort, kill many Centerworld orc! Villager start, orc finish, villager no respect end!",
-   "dst": "",
+   "dst": "そして Rai-Poxper 殺した同じ人間来て、水浴びのオーク殺し、砦に押し入り、Centerworld のオーク大勢殺した！村人始め、オーク終わらせ、村人終わり尊重しない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3508,7 +3508,7 @@
   },
   "All Roads to Peace#366": {
    "src": "Yes, human tricked by Villager. But human still attack orc. Human still kill many orc! Human say want peace now?",
-   "dst": "",
+   "dst": "そう、人間村人に騙された。でも人間やっぱりオーク襲った。人間やっぱりオーク大勢殺した！なのに今平和欲しい？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3518,7 +3518,7 @@
   },
   "All Roads to Peace#367": {
    "src": "What human done? Hunt boar? Help healer? Done busywork for other orc? That not make up for life lost.",
-   "dst": "",
+   "dst": "人間何した？イノシシ狩り？治療師助け？他のオークの雑用？それで失われた命、埋め合わせにならない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3528,7 +3528,7 @@
   },
   "All Roads to Peace#368": {
    "src": "...Arrai-Veretel right. What human done good, not make up for that. But, human still trying. If one human try to stop, more human can try to stop.",
-   "dst": "",
+   "dst": "…Arrai-Veretel 正しい。人間のいい行い、それ埋め合わせない。でも、人間まだ努力してる。一人の人間止めようとすれば、もっと人間止めようとできる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3538,7 +3538,7 @@
   },
   "All Roads to Peace#369": {
    "src": "War only killing us! If tried talk human instead of go sharpen spear and fight back, maybe human would learned faster than now.",
-   "dst": "",
+   "dst": "戦争、我ら殺すだけ！槍研いで反撃する代わりに人間と話そうとしてたら、人間もっと早く学んでたかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3548,7 +3548,7 @@
   },
   "All Roads to Peace#370": {
    "src": "Maybe. Maybe more orc be dead instead. Zuett, you cannot say what would happened. Wishful thinking, and I wish would happened too!",
-   "dst": "",
+   "dst": "かもな。代わりにもっとオーク死んでたかも。Zuett、どうなってたかお前にはわからない。願望、私もそうなってほしかった！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3558,7 +3558,7 @@
   },
   "All Roads to Peace#371": {
    "src": "But with unfinished Wynnic, orc cannot talk well. YOU try learn language when idiot killing you! All sound stupid, and no time to learn for most!",
-   "dst": "",
+   "dst": "でも未完成の Wynn 語じゃ、オークうまく話せない。お前も馬鹿に殺されながら言葉学んでみろ！全部馬鹿に聞こえる、ほとんど学ぶ時間ない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3568,7 +3568,7 @@
   },
   "All Roads to Peace#372": {
    "src": "But human listen to Zuett, even if not sound smart. Arrai-Veretel not respect human. Justified, but still cause problem.",
-   "dst": "",
+   "dst": "でも人間、賢く聞こえなくても Zuett の話聞いた。Arrai-Veretel 人間尊重しない。当然、でも問題になる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3578,7 +3578,7 @@
   },
   "All Roads to Peace#373": {
    "src": "Grrh. FINE! Zuett want peace so bad? Human want peace so bad? Human spilled much orc blood. Only way out of war, is through. We will battle.",
-   "dst": "",
+   "dst": "ぐる。いいだろう！Zuett そんなに平和欲しい？人間そんなに平和欲しい？人間、オークの血たくさん流した。戦争抜ける道、戦い抜くだけ。勝負だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3588,7 +3588,7 @@
   },
   "All Roads to Peace#374": {
    "src": "No tricks. No backup. Nothing but battle between human and myself. If human can fight in ritual arena and win, then will listen.",
-   "dst": "",
+   "dst": "小細工なし。助けなし。人間と私の戦いだけ。人間、儀式の闘技場で戦って勝てたら、話聞く。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3598,7 +3598,7 @@
   },
   "All Roads to Peace#375": {
    "src": "Listen, Zuett. I want war stop too. But you must understand the risk here. Cannot make decision lightly. Villager go back on word- see writing, find way around writing.",
-   "dst": "",
+   "dst": "聞け、Zuett。私も戦争止めたい。でもここの危険わかれ。軽く決められない。村人約束破る―書いた物見て、抜け道探す。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3608,7 +3608,7 @@
   },
   "All Roads to Peace#376": {
    "src": "Try threaten us with iron corpse machine! So, battle will happen. Will prepare ritual and gather crowd. Prepare, human.",
-   "dst": "",
+   "dst": "鉄の死体の機械で脅してきた！だから、戦いやる。儀式準備して、観衆集める。備えろ、人間。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3618,7 +3618,7 @@
   },
   "All Roads to Peace#377": {
    "src": "...that right. Prepare, human. Arrai-Veretel strongest orc. Strong in everything. Mind, body, power, spirit.",
-   "dst": "",
+   "dst": "…その通り。備えろ、人間。Arrai-Veretel 一番強いオーク。すべてに強い。心、体、力、魂。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3628,7 +3628,7 @@
   },
   "All Roads to Peace#378": {
    "src": "Zuett still think human trying to be good. Still think can help stupid war end. Knock sense into Arrai-Veretel.",
-   "dst": "",
+   "dst": "Zuett、まだ人間いいことしようとしてる思う。まだ馬鹿な戦争終わらせる助けになる思う。Arrai-Veretel 目覚めさせろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3638,7 +3638,7 @@
   },
   "All Roads to Peace#379": {
    "src": "Defeat Arrai-Veretel in combat in the arena below the orcish meeting room.",
-   "dst": "",
+   "dst": "オークの会議室の下の闘技場で Arrai-Veretel を倒す。",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -3648,7 +3648,7 @@
   },
   "All Roads to Peace#380": {
    "src": "Before fight... Must perform ritual. This challenge need respect. I do not repect you, human, but will show respect anyway.",
-   "dst": "",
+   "dst": "戦う前に…儀式やる。この挑戦、敬意いる。人間、お前尊重しない、でも敬意は示す。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3658,7 +3658,7 @@
   },
   "All Roads to Peace#381": {
    "src": "May the earth herself hear us... Though we do not speak as we once have...",
-   "dst": "",
+   "dst": "大地よ、我らが声を聞き給え…かつての言葉はもはや話せぬとも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3668,7 +3668,7 @@
   },
   "All Roads to Peace#382": {
    "src": "We, as humble inhabitants of the land she has gifted us, pledge this show in honor of her.",
-   "dst": "",
+   "dst": "我ら、彼女より賜りし地に住まう卑しき者、彼女を讃えこの戦いを捧げん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3678,7 +3678,7 @@
   },
   "All Roads to Peace#383": {
    "src": "May she be sated, grow healthy, and honor us in turn for this offering.",
-   "dst": "",
+   "dst": "願わくは彼女が満ち足り、健やかに育ち、この捧げ物に報い給わんことを。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3688,7 +3688,7 @@
   },
   "All Roads to Peace#384": {
    "src": "HMH! HAH!",
-   "dst": "",
+   "dst": "フン！ハッ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3698,7 +3698,7 @@
   },
   "All Roads to Peace#385": {
    "src": "Now...begin!",
-   "dst": "",
+   "dst": "では…始め！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3708,7 +3708,7 @@
   },
   "All Roads to Peace#386": {
    "src": "HMH! Human tough. Fine- Will take battle seriously now!",
-   "dst": "",
+   "dst": "フン！人間しぶとい。いいだろう―これから本気で戦う！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3718,7 +3718,7 @@
   },
   "All Roads to Peace#387": {
    "src": "For sake of those killed before me, I will not lose!",
-   "dst": "",
+   "dst": "私より先に殺された者たちのため、負けない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3728,7 +3728,7 @@
   },
   "All Roads to Peace#388": {
    "src": "Ghh...hrrgh...",
-   "dst": "",
+   "dst": "ぐ…ぐぬ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3738,7 +3738,7 @@
   },
   "All Roads to Peace#389": {
    "src": "Arrai-Veretel...lose?!",
-   "dst": "",
+   "dst": "Arrai-Veretel…負けた？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3748,7 +3748,7 @@
   },
   "All Roads to Peace#390": {
    "src": "No, no! Arrai-Veretel hurt bad! Human try kill Arrai-Veretel!!",
-   "dst": "",
+   "dst": "違う、違う！Arrai-Veretel ひどいケガ！人間、Arrai-Veretel 殺そうとしてる！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3758,7 +3758,7 @@
   },
   "All Roads to Peace#391": {
    "src": "AM FINE! Stupid, idiot! No interrupting while ritual fight!",
-   "dst": "",
+   "dst": "平気だ！馬鹿、間抜け！儀式の戦いの邪魔するな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3768,7 +3768,7 @@
   },
   "All Roads to Peace#392": {
    "src": "Human win. Hate to say, but human win. Not even try kill me.",
-   "dst": "",
+   "dst": "人間の勝ち。言いたくない、でも人間の勝ち。私殺そうともしない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3778,7 +3778,7 @@
   },
   "All Roads to Peace#393": {
    "src": "Give time. Battle hard-fought- Need to wind down. Wait in meeting room. Will...discuss terms.",
-   "dst": "",
+   "dst": "時間くれ。激しい戦い―落ち着く必要ある。会議室で待て。…条件話す。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3788,7 +3788,7 @@
   },
   "All Roads to Peace#394": {
    "src": "Feel like insult to stop war we did not start. But, gave promise. Human strong. Still not make up for so much death...",
-   "dst": "",
+   "dst": "始めてない戦争止めるの、侮辱に感じる。でも、約束した。人間強い。それでも多くの死、埋め合わせない…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3798,7 +3798,7 @@
   },
   "All Roads to Peace#395": {
    "src": "But human trying. Really, really trying. Will admit, did not know about human killing all when saw... Still. If war ending, deaths also ending.",
-   "dst": "",
+   "dst": "でも人間努力してる。本当に、本当に。認める、見た時、人間がそんなに殺したと知らなかった…それでも。戦争終われば、死も終わる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3808,7 +3808,7 @@
   },
   "All Roads to Peace#396": {
    "src": "Hmh. Human probably trying to end war to start with. Just on wrong side. Can agree, Zuett.",
-   "dst": "",
+   "dst": "フン。人間、たぶん最初から戦争終わらせたかった。ただ味方間違えた。賛成する、Zuett。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3818,7 +3818,7 @@
   },
   "All Roads to Peace#397": {
    "src": "Will stop attacking cities. Orcs still defend selves! Will not turn bellies for spears. Still not trust villagers- only give cease-fire.",
-   "dst": "",
+   "dst": "町襲うのやめる。オークまだ自分守る！槍に腹見せない。まだ村人信じない―停戦だけやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3828,7 +3828,7 @@
   },
   "All Roads to Peace#398": {
    "src": "Give opportunity for human to learn and villager to show respect. They did not attack, then will be open to more negotiation.",
-   "dst": "",
+   "dst": "人間学ぶ機会、村人敬意示す機会やる。村人襲わなかったら、もっと交渉してもいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3838,7 +3838,7 @@
   },
   "All Roads to Peace#399": {
    "src": "Will say- many orc hold grudge, in plains. Many orc probably still attack. If so, human also can defend self. But, human should avoid fight there.",
-   "dst": "",
+   "dst": "言っておく―平原のオーク、恨み持つ者多い。まだ襲うオークたぶん多い。そうなら人間も身を守っていい。でも、あそこの戦い避けるべき。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3848,7 +3848,7 @@
   },
   "All Roads to Peace#400": {
    "src": "...if villager continue attack, will defend selves as before. Human, make sure villager know this.",
-   "dst": "",
+   "dst": "…村人襲い続けたら、前みたいに身を守る。人間、村人にこれ必ず伝えろ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3858,7 +3858,7 @@
   },
   "All Roads to Peace#401": {
    "src": "Mhm. Villager more stupid than human. Villager do many terrible thing. But endless war not help fix.",
-   "dst": "",
+   "dst": "うむ。村人、人間より馬鹿。村人ひどいことたくさんした。でも終わらない戦争、直すの助けない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3868,7 +3868,7 @@
   },
   "All Roads to Peace#402": {
    "src": "Peace first step to heal. ...unless villager to stupid thing. Then may need fight anyway.",
-   "dst": "",
+   "dst": "平和、癒しの第一歩。…村人が馬鹿なことしなければ。したら結局戦うかも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3878,7 +3878,7 @@
   },
   "All Roads to Peace#403": {
    "src": "So Zuett not naive. Some things...cannot...be...forgiven. Villager treading line close.",
-   "dst": "",
+   "dst": "なら Zuett 甘くない。許せない…ことも…ある。村人、ぎりぎりの線踏んでる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3888,7 +3888,7 @@
   },
   "All Roads to Peace#404": {
    "src": "Human seen earth rotting in north. Have to have, since took fort in rotting place. Forest used to be living thing. Now dying. Dead in north-east.",
-   "dst": "",
+   "dst": "人間、北で大地が腐ってるの見た。見たはず、腐った場所の砦取ったなら。森、昔生きてた。今死にかけ。北東もう死んだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3898,7 +3898,7 @@
   },
   "All Roads to Peace#405": {
    "src": "Start happening only few decades before Villager leave across ocean! Villager always run away from problem.",
-   "dst": "",
+   "dst": "村人が海渡って去るほんの数十年前に始まった！村人いつも問題から逃げる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3908,7 +3908,7 @@
   },
   "All Roads to Peace#406": {
    "src": "And villager create own problems. Can only mean villager hurt earth, and make her die, slow and sure. Many orc used to live there.",
-   "dst": "",
+   "dst": "そして村人、自分で問題作る。つまり村人が大地傷つけて、ゆっくり確実に死なせてる。昔たくさんオークあそこ住んでた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3918,7 +3918,7 @@
   },
   "All Roads to Peace#407": {
    "src": "Even after villager move in, try kick orc out, many orc live there...then earth start to die. Has not come south- and we are south!",
-   "dst": "",
+   "dst": "村人来て、オーク追い出そうとした後も、たくさんオーク住んでた…そして大地死に始めた。まだ南来てない―我ら南にいる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3928,7 +3928,7 @@
   },
   "All Roads to Peace#408": {
    "src": "But...that off-track. No more war. Give this to whatever villager need to see it.",
-   "dst": "",
+   "dst": "でも…話それた。もう戦争ない。これ、見る必要ある村人に渡せ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3938,7 +3938,7 @@
   },
   "All Roads to Peace#409": {
    "src": "Show Captain Goruca the Cease-Fire Agreement.",
-   "dst": "",
+   "dst": "Goruca 隊長に停戦協定を見せる。",
    "role": "desc",
    "kind": "objective",
    "quest": "All Roads to Peace",
@@ -3948,7 +3948,7 @@
   },
   "All Roads to Peace#410": {
    "src": "Human! You're back! That certainly took you a while. I suppose all things considered I shouldn't be surprised. Those orcs are tough.",
-   "dst": "",
+   "dst": "人間！戻ったか！ずいぶん時間がかかったな。まあ、事情を考えれば驚くことでもないか。あのオークどもは手強い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3958,7 +3958,7 @@
   },
   "All Roads to Peace#411": {
    "src": "What's this? You actually managed to get the brutes to sign a ceasefire?! I was expecting you to come back with a bloody prize, not a signature!",
-   "dst": "",
+   "dst": "これは何だ？本当にあの獣どもに停戦協定へ署名させたのか？！血まみれの戦利品でも持って帰ると思っていたぞ、署名とはな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3968,7 +3968,7 @@
   },
   "All Roads to Peace#412": {
    "src": "After the way they so savagely attacked our outpost and the way they rebuffed our diplomacy squads, I wasn't expecting this.",
-   "dst": "",
+   "dst": "前哨基地をあれほど野蛮に襲い、外交部隊を突っぱねた連中だ。こうなるとは思わなかった。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3978,7 +3978,7 @@
   },
   "All Roads to Peace#413": {
    "src": "Still, this is good! The terms are a bit more airtight than I'd prefer, but I suppose as long as they're out of our hair anything will do.",
-   "dst": "",
+   "dst": "それでも、これはいい！条件は思ったより隙がないが、奴らに煩わされなくなるなら何でもいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3988,7 +3988,7 @@
   },
   "All Roads to Peace#414": {
    "src": "Hm? The orcs were talking about the decay up north? Not sure how that matters. It isn't like anyone knows what's causing it.",
-   "dst": "",
+   "dst": "ん？オークが北の腐朽の話をしていた？それが何の関係がある。原因なんて誰もわかっていないんだぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -3998,7 +3998,7 @@
   },
   "All Roads to Peace#415": {
    "src": "I mean, have you heard the rumors flying from {p}? Saying witches are cursing the land, hah! Well, that's besides the point.",
-   "dst": "",
+   "dst": "{p} から流れてくる噂を聞いたか？魔女が土地を呪っているだとさ、はっ！まあ、それは本題じゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4008,7 +4008,7 @@
   },
   "All Roads to Peace#416": {
    "src": "Here- your reward. I'd intended on giving you the mask so you could try and sneak in like one of them, but I...well, I forgot about it til you'd already left.",
-   "dst": "",
+   "dst": "ほら―褒美だ。本当はこの仮面を渡して、奴らに化けて潜り込めるようにするつもりだったが…その、お前が発つまで忘れていた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
@@ -4018,7 +4018,7 @@
   },
   "All Roads to Peace#417": {
    "src": "But I DID magically fortify it into a potent piece of gear for you instead! So it ought to serve you well. We thank you for your service, human!",
-   "dst": "",
+   "dst": "だが代わりに、魔法で強力な装備に仕立ててやったぞ！きっと役に立つ。よく働いてくれた、感謝する、人間！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "All Roads to Peace",
