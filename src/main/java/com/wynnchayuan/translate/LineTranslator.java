@@ -5422,8 +5422,13 @@ public final class LineTranslator {
                 String core = target.get(k).text().strip();
                 // 前面已經出現過同樣的字面，貼樣式那一步會先貼到前面去，不登記
                 StringBuilder before = new StringBuilder(earlier);
-                for (LineParts.Piece piece : assign(source.get(k).text().strip(),
-                                                    styles.get(k), core)) {
+                // 譯者在這一段裡多加了字時，顏色只給原文那個名稱。見 #nameInside。
+                String name = nameInside(source.get(k).text().strip(), styles.get(k),
+                                         core, known);
+                List<LineParts.Piece> pieces = name != null
+                        ? List.of(new LineParts.Piece(name, styles.get(k).get(0).style()))
+                        : assign(source.get(k).text().strip(), styles.get(k), core);
+                for (LineParts.Piece piece : pieces) {
                     if (hasContent(piece.text()) && before.indexOf(piece.text()) < 0) {
                         add(out, piece.text(), piece.style(), blockStyle, known);
                     }
@@ -5434,6 +5439,44 @@ public final class LineTranslator {
             earlier.append(NL);
         }
         return applied ? out : null;
+    }
+
+    /**
+     * 原文這一段只有一個顏色、譯文那一段卻多了別的字時，找出譯文裡真正對應原文的那個名稱。
+     *
+     * <h2>0.1.9_4 實機回報</h2>
+     * 法師技能 Diffraction（晶化蔓延）：「Ophanim also applies +2 Crystallized {#}.」，
+     * 水藍色的只有 Crystallized。譯文「Ophanim 也會施加 {~} 層 Crystallized {#}.」照佔位符切段，
+     * {@code {~}} 與 {@code {#}} 之間那一段是「 層 Crystallized 」——整段登記成水藍色，
+     * 譯者加的量詞「層」就跟著變藍，畫面上是「2 層結晶化」四個字都是藍的。
+     *
+     * <p>原文那一段<b>就是</b>名稱本身（或它的譯名，見 {@link #withTranslations}）而且在
+     * 譯文那一段裡找得到時，只登記那個名稱；其餘的字照正文的顏色。找不到（譯者把整段
+     * 重寫了）才照舊整段上色——那時分不出哪幾個字對應原文。
+     *
+     * @return 要上色的名稱；不適用時回傳 {@code null}
+     */
+    private static String nameInside(String source, List<LineParts.Piece> runs, String target,
+                                     List<LineParts.Piece> known) {
+        if (runs.size() != 1 || target.equals(source)) {
+            return null;
+        }
+        Style style = runs.get(0).style();
+        List<String> names = new ArrayList<>();
+        names.add(source);
+        for (LineParts.Piece piece : known) {
+            if (java.util.Objects.equals(piece.style(), style)) {
+                names.add(piece.text().strip());
+            }
+        }
+        String best = null;
+        for (String name : names) {
+            if (hasContent(name) && !target.equals(name) && target.contains(name)
+                    && (best == null || name.length() > best.length())) {
+                best = name;
+            }
+        }
+        return best;
     }
 
     /** 被佔位符切開的一段文字，連同緊接在它後面的佔位符種類（最後一段是 {@code null}）。 */
@@ -5827,13 +5870,33 @@ public final class LineTranslator {
         return out;
     }
 
-    /** 一行裡每個顏色各佔幾個實字。見 {@link #fallback}。 */
+    /**
+     * 一行裡每個顏色各佔幾個實字。見 {@link #fallback}。
+     *
+     * <h2>累計時不看底線、粗體這些裝飾</h2>
+     * 0.1.9_4 實機回報：法師技能 Arcane Speed 的第二行原文是
+     * 「casting <u>Heal</u> or <u>Arcane Transfer</u>.」——底線的技能名 18 個字，
+     * 灰色的正文只有 10 個字。照樣式分開算，「灰＋底線」就成了這一行的多數色，
+     * {@link #fallback} 把它整行套到譯文的第二行，畫面上是
+     * 「使用<u>治療</u>和<u>祕法回流</u>」換行「<u>額外獲得移動速度。</u>」。
+     *
+     * <p>裝飾標的是<b>詞</b>（技能名、重點詞），從來不是整行的底色；而且譯文是我們自己
+     * 折回原文行數的，「第 i 行」兩邊本來就不是同一段字。所以跟 {@link #dominantStyle}
+     * 一樣併成同一個顏色來數，贏的時候回傳<b>沒有裝飾的那一個</b>原樣式。
+     */
     private static final class Tally {
         private final java.util.Map<Style, Integer> counts = new java.util.LinkedHashMap<>();
+        /** 每個顏色實際要回傳的樣式：有沒裝飾的就用它 */
+        private final java.util.Map<Style, Style> shown = new java.util.HashMap<>();
 
         void add(Style style, int solid) {
             if (style != null && solid > 0) {
-                counts.merge(style, solid, Integer::sum);
+                Style key = undecorated(style);
+                counts.merge(key, solid, Integer::sum);
+                Style seen = shown.get(key);
+                if (seen == null || (hasDecoration(seen) && !hasDecoration(style))) {
+                    shown.put(key, style);
+                }
             }
         }
 
@@ -5847,7 +5910,12 @@ public final class LineTranslator {
                     best = e.getKey();
                 }
             }
-            return best;
+            return best == null ? null : shown.get(best);
+        }
+
+        private static boolean hasDecoration(Style style) {
+            return style.isUnderlined() || style.isBold() || style.isItalic()
+                    || style.isStrikethrough() || style.isObfuscated();
         }
     }
 
