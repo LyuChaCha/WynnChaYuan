@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "A Sandy Scandal",
   "count": 67,
-  "translated": 0,
+  "translated": 67,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Sandy Scandal#000": {
    "src": "Before anybody could hear me, a large explosion occurred inside of the house the bandits intruded.",
-   "dst": "",
+   "dst": "誰かに声が届く前に、強盗たちが押し入った家の中で大爆発が起きた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -18,7 +18,7 @@
   },
   "A Sandy Scandal#001": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] にいる {p} の銀行警備員と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -28,7 +28,7 @@
   },
   "A Sandy Scandal#002": {
    "src": "You look like a hardy one! {p} army is it? Would you be willing to help {p} a bit?",
-   "dst": "",
+   "dst": "たくましそうだな！{p} 軍の人か？{p} にちょっと手を貸してくれないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -38,7 +38,7 @@
   },
   "A Sandy Scandal#003": {
    "src": "{p} bank tends to be a prime target for bandits, and there's been a string of incidents that have made us suspicious.",
-   "dst": "",
+   "dst": "{p} の銀行は強盗の格好の標的でな、立て続けに起きた事件のせいで怪しんでいるんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -48,7 +48,7 @@
   },
   "A Sandy Scandal#004": {
    "src": "We're looking into some witness reports to try and gain information on the bandits' plan.",
-   "dst": "",
+   "dst": "強盗の計画を探るため、いくつかの目撃報告を調べているところだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -58,7 +58,7 @@
   },
   "A Sandy Scandal#005": {
    "src": "If I give you some of the reports, will you help check them out for clues?",
-   "dst": "",
+   "dst": "報告書をいくつか渡すから、手がかりを調べてくれないか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -68,7 +68,7 @@
   },
   "A Sandy Scandal#006": {
    "src": "Great! The store from the first witness report is straight down the stairs, just past this building right behind me.",
-   "dst": "",
+   "dst": "助かる！最初の目撃報告の店は、階段を下りてすぐ、私の後ろの建物を過ぎたところだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -78,7 +78,7 @@
   },
   "A Sandy Scandal#007": {
    "src": "It's called \"Gibbs' Mining Supply Store\", and the owner reported a robbery a few days ago.",
-   "dst": "",
+   "dst": "店の名は「Gibbs' Mining Supply Store」、店主が数日前に強盗被害を届け出た。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -88,7 +88,7 @@
   },
   "A Sandy Scandal#008": {
    "src": "Good luck! Report back to me if you find any information.",
-   "dst": "",
+   "dst": "頼んだぞ！何か分かったら報告してくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -98,7 +98,7 @@
   },
   "A Sandy Scandal#009": {
    "src": "Go to the witness report location at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の目撃報告の場所へ行く。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -108,7 +108,7 @@
   },
   "A Sandy Scandal#010": {
    "src": "Hello gentlemen! What can I interest you in today? Some industrial torches? Pickaxes?",
-   "dst": "",
+   "dst": "いらっしゃい、お客さん方！今日は何をお探しで？工業用松明？ツルハシ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -118,7 +118,7 @@
   },
   "A Sandy Scandal#011": {
    "src": "Shut yer’ trap, old man. We came for a different kind of business.",
-   "dst": "",
+   "dst": "黙りな、じいさん。俺たちゃ別の用で来たんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -128,7 +128,7 @@
   },
   "A Sandy Scandal#012": {
    "src": "Wha-? Look, fellows. Just step out of my store, and nobody gets hurt. I don't want any trouble.",
-   "dst": "",
+   "dst": "な―？いいかい、あんたら。店から出てってくれれば誰もけがはしない。面倒はごめんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -138,7 +138,7 @@
   },
   "A Sandy Scandal#013": {
    "src": "Listen up old man, tell us the code to the TNT vault in the basement, or I decorate my necklace with your fingers!",
-   "dst": "",
+   "dst": "よく聞けじいさん、地下のTNT金庫の暗証番号を言え。さもなきゃ、てめえの指で首飾りを作るぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -148,7 +148,7 @@
   },
   "A Sandy Scandal#014": {
    "src": "Certainly not! That TNT is for licensed mining companies only, not your average amateur miner.",
-   "dst": "",
+   "dst": "断じてお断りだ！あのTNTは認可を受けた採掘会社専用で、素人の鉱夫向けじゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -158,7 +158,7 @@
   },
   "A Sandy Scandal#015": {
    "src": "Well then! I guess you'll still be able to grasp a pick with four fingers, eh?",
-   "dst": "",
+   "dst": "そうかい！指が四本でもツルハシは握れるよなあ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -168,7 +168,7 @@
   },
   "A Sandy Scandal#016": {
    "src": "Gaaah! Alright, alright! No more violence, please!",
-   "dst": "",
+   "dst": "ぎゃああ！分かった、分かった！もう乱暴はやめてくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -178,7 +178,7 @@
   },
   "A Sandy Scandal#017": {
    "src": "The code is {~}-{~}-{~}-{~}... please don't hurt me!",
-   "dst": "",
+   "dst": "番号は {~}-{~}-{~}-{~}… 頼む、傷つけないでくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -188,7 +188,7 @@
   },
   "A Sandy Scandal#018": {
    "src": "{~}-{~}-{~}-{~}... thanks! We won't be needing you anymore... now go to sleep!",
-   "dst": "",
+   "dst": "{~}-{~}-{~}-{~}… ありがとよ！もう用済みだ… さあ、おねんねしな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -198,7 +198,7 @@
   },
   "A Sandy Scandal#019": {
    "src": "Open the vault in the basement [Code: {~}].",
-   "dst": "",
+   "dst": "地下の金庫を開ける [暗証番号: {~}]。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -208,7 +208,7 @@
   },
   "A Sandy Scandal#020": {
    "src": "Inspect the vault.",
-   "dst": "",
+   "dst": "金庫を調べる。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -218,7 +218,7 @@
   },
   "A Sandy Scandal#021": {
    "src": "Exit the vault.",
-   "dst": "",
+   "dst": "金庫から出る。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -228,7 +228,7 @@
   },
   "A Sandy Scandal#022": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] にいる {p} の銀行警備員と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -238,7 +238,7 @@
   },
   "A Sandy Scandal#023": {
    "src": "Ah, you're back! Did you find anything interesting in the report?",
-   "dst": "",
+   "dst": "おお、戻ったか！報告の件で何か面白いことは見つかったか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -248,7 +248,7 @@
   },
   "A Sandy Scandal#024": {
    "src": "Missing TNT in the shop's vault? Looks like the shopkeeper was telling the truth.",
-   "dst": "",
+   "dst": "店の金庫からTNTが消えていた？店主の言っていたことは本当だったようだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -258,7 +258,7 @@
   },
   "A Sandy Scandal#025": {
    "src": "We need to catch these criminals quickly if they have access to that amount of TNT - they could blow a hole right into the bank's vault!",
-   "dst": "",
+   "dst": "あれだけのTNTを手にしているなら、急いで捕まえないと― 銀行の金庫に穴を開けられかねない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -268,7 +268,7 @@
   },
   "A Sandy Scandal#026": {
    "src": "You should check out another witness report, from after the attack on the shopkeeper.",
-   "dst": "",
+   "dst": "店主が襲われた後の、別の目撃報告も確かめてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -278,7 +278,7 @@
   },
   "A Sandy Scandal#027": {
    "src": "It was taken from the rooftop garden of the Scroll Merchant's residence, you should take a look.",
-   "dst": "",
+   "dst": "スクロール商人の屋敷の屋上庭園で記録されたものだ。見てきてくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -288,7 +288,7 @@
   },
   "A Sandy Scandal#028": {
    "src": "Be quick! We don't have much time if we want to stop these bandits.",
-   "dst": "",
+   "dst": "急いでくれ！この強盗どもを止めるには時間がない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -298,7 +298,7 @@
   },
   "A Sandy Scandal#029": {
    "src": "Go to the witness report location at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の目撃報告の場所へ行く。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -308,7 +308,7 @@
   },
   "A Sandy Scandal#030": {
    "src": "Read the witness report.",
-   "dst": "",
+   "dst": "目撃報告を読む。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -318,7 +318,7 @@
   },
   "A Sandy Scandal#031": {
    "src": "Ey', what do you two blighters think you're doing with those dangerous explosives in the city?",
-   "dst": "",
+   "dst": "おい、そこの悪党二人、そんな危ない爆薬を街中に持ち込んで何をするつもりだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -328,7 +328,7 @@
   },
   "A Sandy Scandal#032": {
    "src": "Guards! Guards! Robber! Come quick! Urgently!",
-   "dst": "",
+   "dst": "衛兵！衛兵！強盗だ！早く来てくれ！大至急！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -338,7 +338,7 @@
   },
   "A Sandy Scandal#033": {
    "src": "Gaaah!",
-   "dst": "",
+   "dst": "ぎゃああ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -348,7 +348,7 @@
   },
   "A Sandy Scandal#034": {
    "src": "Find the source of the detonation at [{~}, {~}, {~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, {~}] で爆発の発生源を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -358,7 +358,7 @@
   },
   "A Sandy Scandal#035": {
    "src": "Inspect the safe.",
-   "dst": "",
+   "dst": "金庫を調べる。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -368,7 +368,7 @@
   },
   "A Sandy Scandal#036": {
    "src": "Talk to the {p} Bank Guard at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] にいる {p} の銀行警備員と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -378,7 +378,7 @@
   },
   "A Sandy Scandal#037": {
    "src": "Were you able to uncover any new information regarding the status of the criminals?",
-   "dst": "",
+   "dst": "犯人どもの状況について、何か新しい情報はつかめたか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -388,7 +388,7 @@
   },
   "A Sandy Scandal#038": {
    "src": "Ah... that's troubling. The criminals plundered two very powerful weapons.",
-   "dst": "",
+   "dst": "ああ… それはまずい。犯人どもは強力な武器を二つも奪ったのか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -398,7 +398,7 @@
   },
   "A Sandy Scandal#039": {
    "src": "It won't be easy facing those criminals if they decide to raid the bank with those weapons.",
-   "dst": "",
+   "dst": "その武器で銀行を襲われたら、立ち向かうのは容易じゃないぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -408,7 +408,7 @@
   },
   "A Sandy Scandal#040": {
    "src": "I'm not certain how to proceed from here, we didn't receive any more witness reports, and-",
-   "dst": "",
+   "dst": "ここからどう動くべきか… これ以上の目撃報告は届いていないし―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -418,7 +418,7 @@
   },
   "A Sandy Scandal#041": {
    "src": "Boss, I just received urgent reports of a robbery underway in the left residential area of {p}!",
-   "dst": "",
+   "dst": "隊長、{p} の左側の住宅地で強盗が発生中との急報が入りました！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -428,7 +428,7 @@
   },
   "A Sandy Scandal#042": {
    "src": "Oh my… you! Soldier! Quick! The robbery is taking place across the bridge, next to the first house you visited today! It may be the bandits we're looking for.",
-   "dst": "",
+   "dst": "なんと… おい！兵士！急げ！強盗は橋の向こう、今日最初に訪ねた家の隣だ！探している強盗どもかもしれん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -438,7 +438,7 @@
   },
   "A Sandy Scandal#043": {
    "src": "There will be somebody waiting for you outside of the house once you get to the residential area!",
-   "dst": "",
+   "dst": "住宅地に着いたら、家の外で誰かが待っているはずだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -448,7 +448,7 @@
   },
   "A Sandy Scandal#044": {
    "src": "If you still can't find it, I've written the coordinates in your content book. Now quickly, get to the house!",
-   "dst": "",
+   "dst": "それでも見つからなければ、コンテンツブックに座標を書いておいた。さあ急いで、家へ向かえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -458,7 +458,7 @@
   },
   "A Sandy Scandal#045": {
    "src": "Quickly! Go to the house at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "急げ！[{~}, {~}, -{~}] の家へ向かう。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -468,7 +468,7 @@
   },
   "A Sandy Scandal#046": {
    "src": "Hello? Are you with the guards? Good! Hurry! Some bandits just ransacked my house, and left with lots of emeralds!",
-   "dst": "",
+   "dst": "もしもし？衛兵の方？よかった！急いで！強盗が家を荒らして、エメラルドをたくさん持っていったんです！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -478,7 +478,7 @@
   },
   "A Sandy Scandal#047": {
    "src": "Follow me to my house, hopefully you can find the bandits! They stole lots of my precious gems!",
-   "dst": "",
+   "dst": "家まで来てください、強盗を見つけてくれるといいんですが！大事な宝石をたくさん盗まれたんです！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -488,7 +488,7 @@
   },
   "A Sandy Scandal#048": {
    "src": "Look for signs of the bandits' whereabouts.",
-   "dst": "",
+   "dst": "強盗の行方の手がかりを探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -498,7 +498,7 @@
   },
   "A Sandy Scandal#049": {
    "src": "Listen to the bandits.",
-   "dst": "",
+   "dst": "強盗たちの話を聞く。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -508,7 +508,7 @@
   },
   "A Sandy Scandal#050": {
    "src": "Ready, boys? We've got the TNT, weapons, and the fastest horses those emeralds could buy. Now we just-",
-   "dst": "",
+   "dst": "準備はいいか、野郎ども？TNTに武器、エメラルドで買える一番速い馬もそろった。あとは―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -518,7 +518,7 @@
   },
   "A Sandy Scandal#051": {
    "src": "Ahah. I had a feeling we had a guard on our tail.",
-   "dst": "",
+   "dst": "はっ。衛兵に尾けられてる気がしてたぜ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -528,7 +528,7 @@
   },
   "A Sandy Scandal#052": {
    "src": "No point wasting these brand-new weapons on you... since we're blowing up this hideout anyway!",
-   "dst": "",
+   "dst": "この新品の武器をお前に使うのはもったいねえ… どうせこの隠れ家は爆破するんだからな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -538,7 +538,7 @@
   },
   "A Sandy Scandal#053": {
    "src": "This whole thing'll go up in a few seconds, and any evidence will be buried in the sand. Good luck getting out of here!",
-   "dst": "",
+   "dst": "ここはあと数秒で吹っ飛ぶ。証拠はみんな砂の下だ。せいぜい逃げ出してみな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -548,7 +548,7 @@
   },
   "A Sandy Scandal#054": {
    "src": "Escape the hideout!",
-   "dst": "",
+   "dst": "隠れ家から脱出しろ！",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -558,7 +558,7 @@
   },
   "A Sandy Scandal#055": {
    "src": "Find where the bandits blasted a hole to get into the bank at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] で強盗が銀行へ侵入するために爆破した穴を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -568,7 +568,7 @@
   },
   "A Sandy Scandal#056": {
    "src": "It’s too late to stop us now! We’re already about to bust out of here with the grand prize - the contents of the emerald vault!",
-   "dst": "",
+   "dst": "今さら止めても遅い！俺たちはもう最高のお宝― エメラルド金庫の中身を持って、ここから飛び出すところだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -578,7 +578,7 @@
   },
   "A Sandy Scandal#057": {
    "src": "Follow the criminals into the other room.",
-   "dst": "",
+   "dst": "犯人を追って隣の部屋に入る。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -588,7 +588,7 @@
   },
   "A Sandy Scandal#058": {
    "src": "Look here, the soldier decided they wanted to follow us. Dumb move.",
-   "dst": "",
+   "dst": "見ろよ、兵士さんがついて来やがった。バカな真似を。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -598,7 +598,7 @@
   },
   "A Sandy Scandal#059": {
    "src": "I guess we can kill two birds with one stone: escaping the bank, and killing this pest.",
-   "dst": "",
+   "dst": "一石二鳥といくか。銀行からの脱出と、この害虫の始末だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -608,7 +608,7 @@
   },
   "A Sandy Scandal#060": {
    "src": "Block the entrance, bandits!",
-   "dst": "",
+   "dst": "入口を塞げ、野郎ども！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -618,7 +618,7 @@
   },
   "A Sandy Scandal#061": {
    "src": "Don't let the bandits escape!",
-   "dst": "",
+   "dst": "強盗を逃がすな！",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -628,7 +628,7 @@
   },
   "A Sandy Scandal#062": {
    "src": "Report back to the {p} Bank Guard at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] にいる {p} の銀行警備員に報告する。",
    "role": "desc",
    "kind": "objective",
    "quest": "A Sandy Scandal",
@@ -638,7 +638,7 @@
   },
   "A Sandy Scandal#063": {
    "src": "Soldier! Where did you disappear to? Did you hear those explosions, below the bank?",
-   "dst": "",
+   "dst": "兵士！どこへ消えていた？銀行の下での爆発音を聞いたか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -648,7 +648,7 @@
   },
   "A Sandy Scandal#064": {
    "src": "We think those bandits might have made their first move in the heist, we're mobilising a troop to-",
-   "dst": "",
+   "dst": "強盗どもが計画の第一歩を踏み出したのかもしれん、部隊を動員して―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -658,7 +658,7 @@
   },
   "A Sandy Scandal#065": {
    "src": "You've already stopped them? And reclaimed the stolen weapons and explosives..?",
-   "dst": "",
+   "dst": "もう止めただと？奪われた武器と爆薬まで取り戻したのか…？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",
@@ -668,7 +668,7 @@
   },
   "A Sandy Scandal#066": {
    "src": "Wow. Excellent work, soldier. {p} is in your debt. Please accept these from our vault, as a token of our thanks.",
-   "dst": "",
+   "dst": "すごい。見事な働きだ、兵士。{p} は君に借りができた。感謝のしるしに、金庫からこれを受け取ってくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Sandy Scandal",

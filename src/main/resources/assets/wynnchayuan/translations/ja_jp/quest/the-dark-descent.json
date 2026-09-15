@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Dark Descent",
   "count": 49,
-  "translated": 0,
+  "translated": 49,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Dark Descent#000": {
    "src": "Talk to General Graken at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の Graken 将軍と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -18,7 +18,7 @@
   },
   "The Dark Descent#001": {
    "src": "Ah, hello there chap! I must say, I didn't expect to see a part of the old {p} regiment over 'ere.",
-   "dst": "",
+   "dst": "やあ、君！まさか {p} の古巣の連隊の者にこんな所で会えるとはな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -28,7 +28,7 @@
   },
   "The Dark Descent#002": {
    "src": "I am General Graken, leader of the {p} militia. Charmed to meet you!",
-   "dst": "",
+   "dst": "私は Graken 将軍、{p} 民兵団の長だ。お会いできて光栄だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -38,7 +38,7 @@
   },
   "The Dark Descent#003": {
    "src": "You've seen all the bloody zombies faffing about everywhere, yes? They're all seeming to come from this massive skull.",
-   "dst": "",
+   "dst": "そこら中をうろつくゾンビどもを見ただろう？どうもあの巨大な髑髏から湧いてくるらしい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -48,7 +48,7 @@
   },
   "The Dark Descent#004": {
    "src": "I'm putting together a crack team for an expedition inside, but we haven't got any bleedin' idea what's down there!",
-   "dst": "",
+   "dst": "中を探る精鋭部隊を編成中だが、下に何があるのか皆目見当がつかんのだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -58,7 +58,7 @@
   },
   "The Dark Descent#005": {
    "src": "If you're up for it, chap, we could absolutely do with some recon 'round the old town, look for clues and the like.",
-   "dst": "",
+   "dst": "もし乗り気なら、旧市街を偵察して手がかりを探してくれると大いに助かる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -68,7 +68,7 @@
   },
   "The Dark Descent#006": {
    "src": "I took a gander earlier, and one of the ol' houses caught my eye - it had a bloomin' great skull right over the door!",
-   "dst": "",
+   "dst": "さっき覗いてみたら、古い家の一軒が気になってな。扉の上にどでかい髑髏があったんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -78,7 +78,7 @@
   },
   "The Dark Descent#007": {
    "src": "I didn't have time to look in proper, but I'd start the investigation there, chap.",
-   "dst": "",
+   "dst": "じっくり見る暇はなかったが、調べるならまずそこからだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -88,7 +88,7 @@
   },
   "The Dark Descent#008": {
    "src": "It's just south of here. The house still had solid wood boarding in it, despite the age, so look lively, chum!",
-   "dst": "",
+   "dst": "ここのすぐ南だ。古い家だが板張りはまだ頑丈だ。気を引き締めていけよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -98,7 +98,7 @@
   },
   "The Dark Descent#009": {
    "src": "Investigate the house in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] にある {p} の家を調べる。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -108,7 +108,7 @@
   },
   "The Dark Descent#010": {
    "src": "Oh, sod it, I knew I was forgetting something! Steady there, chum! I'm on my way!",
-   "dst": "",
+   "dst": "しまった、何か忘れていると思ったんだ！踏ん張れ、君！今行くぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -118,7 +118,7 @@
   },
   "The Dark Descent#011": {
    "src": "Drat! Too late, it seems. Yes, I forgot to mention the floor was in poor condition. Up here! You took quite the tumble, are you alright?",
-   "dst": "",
+   "dst": "くそっ！遅かったか。そう、床が傷んでいると言い忘れていた。上だ！派手に落ちたな、大丈夫か？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -128,7 +128,7 @@
   },
   "The Dark Descent#012": {
    "src": "Well, there's some good news, I suppose. Still though, seems I sent you a ticket to a bit of a sticky wicket! Do you see a way out anywhere down there?",
-   "dst": "",
+   "dst": "まあ、良い知らせもあるにはある。とはいえ、とんだ窮地に送り込んでしまったな！下に出口は見えるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -138,7 +138,7 @@
   },
   "The Dark Descent#013": {
    "src": "There's a tunnel? Aha, spiffing! I suggest you take it immediately. I'll have to return to my post now, post-haste!",
-   "dst": "",
+   "dst": "トンネルがある？ははっ、上出来だ！すぐにそこを進みたまえ。私は急ぎ持ち場に戻らねばならん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -148,7 +148,7 @@
   },
   "The Dark Descent#014": {
    "src": "Good luck, chum! Now, back, you cads! Back I say!",
-   "dst": "",
+   "dst": "幸運を祈るぞ、君！さあ下がれ、この悪党ども！下がれと言っている！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -158,7 +158,7 @@
   },
   "The Dark Descent#015": {
    "src": "Keheh... Come further, little human... Step into the shadows...",
-   "dst": "",
+   "dst": "ケヘヘ…もっと奥へおいで、小さな人間…影の中へ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -168,7 +168,7 @@
   },
   "The Dark Descent#016": {
    "src": "Explore the tunnel in the basement of the house.",
-   "dst": "",
+   "dst": "家の地下室にあるトンネルを探索する。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -178,7 +178,7 @@
   },
   "The Dark Descent#017": {
    "src": "Investigate the strange dark realm.",
-   "dst": "",
+   "dst": "奇妙な闇の領域を調べる。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -188,7 +188,7 @@
   },
   "The Dark Descent#018": {
    "src": "Welcome...",
-   "dst": "",
+   "dst": "ようこそ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -198,7 +198,7 @@
   },
   "The Dark Descent#019": {
    "src": "Scout! Report your findings, immediately! How many corrupteds are coming?",
-   "dst": "",
+   "dst": "斥候！直ちに報告しろ！腐敗した者はどれだけ来ている？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -208,7 +208,7 @@
   },
   "The Dark Descent#020": {
    "src": "I...there...too many...th-thousands, at...at least...",
-   "dst": "",
+   "dst": "あっちに…多すぎる…す、数千は…少なくとも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -218,7 +218,7 @@
   },
   "The Dark Descent#021": {
    "src": "Thousands...? This is far worse than I expected. Men! Prepare for-",
-   "dst": "",
+   "dst": "数千…？思ったよりずっとひどい。総員！迎撃準備――",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -228,7 +228,7 @@
   },
   "The Dark Descent#022": {
    "src": "No point...we're...doomed...",
-   "dst": "",
+   "dst": "無駄だ…俺たちは…もう終わりだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -238,7 +238,7 @@
   },
   "The Dark Descent#023": {
    "src": "Wait, w-what's going on? What's happening to you?!",
-   "dst": "",
+   "dst": "待て、な、何だ？お前、どうしたんだ？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -248,7 +248,7 @@
   },
   "The Dark Descent#024": {
    "src": "Please, stop this! Whoever you are, leave me and my family in peace! What did we ever do to deserve this?!",
-   "dst": "",
+   "dst": "お願い、やめて！誰だか知らないけど、私と家族を放っておいて！私たちが何をしたっていうの？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -258,7 +258,7 @@
   },
   "The Dark Descent#025": {
    "src": "Ah, but if you had only said so sooner! They have already left this mortal coil...oh, what a shame.",
-   "dst": "",
+   "dst": "ああ、もっと早く言ってくれれば！彼らはもうこの世を去ったよ…いや、実に残念だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -268,7 +268,7 @@
   },
   "The Dark Descent#026": {
    "src": "Y-you...I thought they...oh, god, no...",
-   "dst": "",
+   "dst": "あ、あなた…家族は…ああ、そんな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -278,7 +278,7 @@
   },
   "The Dark Descent#027": {
    "src": "Hush now. I will ensure that you and your family are reunited. You will even be able to partake in...keheh...family outings, under my watchful eye...",
-   "dst": "",
+   "dst": "静かに。お前と家族は必ず再会させてやろう。私の見守る下で…ケヘヘ…家族でお出かけもできるぞ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -288,7 +288,7 @@
   },
   "The Dark Descent#028": {
    "src": "Wha...you mean... N-no, please! I don't want to hurt anyone! I don't want to die!!",
-   "dst": "",
+   "dst": "な…それって… い、いや、お願い！誰も傷つけたくない！死にたくない！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -298,7 +298,7 @@
   },
   "The Dark Descent#029": {
    "src": "Aha, naive girl. How cute, you believe you have a choice in the matter. What you want, is not what I need.",
-   "dst": "",
+   "dst": "はは、世間知らずの娘だ。選べると思っているとは可愛いものだ。お前の望みなど、私には関係ない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -308,7 +308,7 @@
   },
   "The Dark Descent#030": {
    "src": "Heheh...do you see now?",
-   "dst": "",
+   "dst": "ヘヘ…これで分かったか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -318,7 +318,7 @@
   },
   "The Dark Descent#031": {
    "src": "Do you see how easily this place fell? How quickly I became its master? And how I could simply dispose of you without a second thought?",
-   "dst": "",
+   "dst": "この地がいかに容易く落ちたか分かるか？私がいかに早く支配者となったか？そしてお前など造作もなく始末できることが？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -328,7 +328,7 @@
   },
   "The Dark Descent#032": {
    "src": "Hundreds slaughtered in mere moments... only to rise again as my soldiers in infinite amounts.",
-   "dst": "",
+   "dst": "数百人が一瞬で虐殺され…無尽蔵の我が兵として蘇ったのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -338,7 +338,7 @@
   },
   "The Dark Descent#033": {
    "src": "You can barely keep them at bay on the surface, and yet you think you can enter my own domain, to challenge me in the Underworld?",
-   "dst": "",
+   "dst": "地上ですら辛うじて食い止めているのに、私の領域に踏み込み、冥界で私に挑めると思っているのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -348,7 +348,7 @@
   },
   "The Dark Descent#034": {
    "src": "You will fail, and I will be free to string your body up like a puppet and make you dance for me.",
-   "dst": "",
+   "dst": "お前は敗れ、私はその体を操り人形のように吊るし、私のために踊らせてやろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -358,7 +358,7 @@
   },
   "The Dark Descent#035": {
    "src": "So enter the mouth of the skull, soldier, make your way below the ground. I look forward to our next meeting, keheheh...",
-   "dst": "",
+   "dst": "ならば髑髏の口に入れ、兵士よ。地の底へ進むがいい。次に会うのを楽しみにしているぞ、ケヘヘヘ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -368,7 +368,7 @@
   },
   "The Dark Descent#036": {
    "src": "Leave the strange dark realm.",
-   "dst": "",
+   "dst": "奇妙な闇の領域から出る。",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -378,7 +378,7 @@
   },
   "The Dark Descent#037": {
    "src": "Return the ruby to Graken at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}] の Graken にルビーを返す",
    "role": "desc",
    "kind": "objective",
    "quest": "The Dark Descent",
@@ -388,7 +388,7 @@
   },
   "The Dark Descent#038": {
    "src": "Return to your world, now. And if you still want to challenge me... I'll be waiting.",
-   "dst": "",
+   "dst": "さあ、自分の世界へ帰るがいい。それでもまだ私に挑むなら…待っているぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -398,7 +398,7 @@
   },
   "The Dark Descent#039": {
    "src": "Hey! Come on, come over here! Quit milling about with the zombies, chap!",
-   "dst": "",
+   "dst": "おい！こっちだ、こっちへ来い！ゾンビどもとうろうろするのはやめたまえ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -408,7 +408,7 @@
   },
   "The Dark Descent#040": {
    "src": "Oi! Hallo?! Chum? Why're you wandering round all bog-eyed? Come back to me now!",
-   "dst": "",
+   "dst": "おーい！聞こえるか？！君？なぜ虚ろな目でさまよっている？戻ってこい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -418,7 +418,7 @@
   },
   "The Dark Descent#041": {
    "src": "Come on, pip pip! Let's see a bit more colour in your eyes- There we are! Back now, chap?",
-   "dst": "",
+   "dst": "しっかりしろ、ほら！目に少し生気を――よし、それでいい！戻ったか、君？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -428,7 +428,7 @@
   },
   "The Dark Descent#042": {
    "src": "Capital! You had me quite worried for a spot, there. Do bubble about just what went on down there, mm?",
-   "dst": "",
+   "dst": "素晴らしい！一時はひどく心配したぞ。で、下で何があったのか聞かせてくれるか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -438,7 +438,7 @@
   },
   "The Dark Descent#043": {
    "src": "But, you were stumbling about like a senile biddy, eyes blank as cream, and you kept muttering something about a Charon.",
-   "dst": "",
+   "dst": "だが君はボケた老婆のようによろめいて、目は真っ白、Charon がどうとかずっと呟いていたぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -448,7 +448,7 @@
   },
   "The Dark Descent#044": {
    "src": "I'm supposing he was the one who took you for a spin there? Well, you certainly haven't carked it, so I might call this operation a jolly good success!",
-   "dst": "",
+   "dst": "君を連れ回したのはそいつか？まあ、死んではいないのだから、この作戦は大成功と言っていいだろう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -458,7 +458,7 @@
   },
   "The Dark Descent#045": {
    "src": "Your discoveries fit in jolly-well with what we already know - and I'm convinced. To stop all these bleedin' zombos, we're going to have to go down under.",
-   "dst": "",
+   "dst": "君の発見は我々の情報とぴたりと合う――確信したよ。この忌々しいゾンビどもを止めるには、地下へ行くしかない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -468,7 +468,7 @@
   },
   "The Dark Descent#046": {
    "src": "Preliminary expeditions have brought back some real nasty bits, brains and such - but also some fancy-as-you-like jewellery!",
-   "dst": "",
+   "dst": "先遣隊が脳みそなど実に不快な物を持ち帰ったが――なかなか見事な宝飾品もあったぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -478,7 +478,7 @@
   },
   "The Dark Descent#047": {
    "src": "Take some with you, remind you what we're up against. But keep your eyes on the prize!",
-   "dst": "",
+   "dst": "いくつか持っていけ。我々の敵を忘れぬようにな。だが目的は見失うなよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",
@@ -488,7 +488,7 @@
   },
   "The Dark Descent#048": {
    "src": "When you're ready, I'd be chuffed to have you along again in the expedition down into the depths, old bean!",
-   "dst": "",
+   "dst": "準備ができたら、また地の底への遠征に加わってもらえると嬉しいぞ、友よ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Dark Descent",

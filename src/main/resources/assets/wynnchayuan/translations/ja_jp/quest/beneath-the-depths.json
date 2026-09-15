@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Beneath the Depths",
   "count": 42,
-  "translated": 0,
+  "translated": 42,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Beneath the Depths#000": {
    "src": "Talk to Javier in the Pirate Cove at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の海賊の入り江にいる Javier と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -18,7 +18,7 @@
   },
   "Beneath the Depths#001": {
    "src": "Garh, you look like a mighty fine adventurer, lad. But perhaps your pockets are a little lighter than you want, eh?",
-   "dst": "",
+   "dst": "ガハッ、坊主、なかなか大した冒険者に見えるのう。だが懐はちと寂しいんじゃろ、ん？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -28,7 +28,7 @@
   },
   "Beneath the Depths#002": {
    "src": "Perhaps we be making a deal, lad, and it'll make us both rich!",
-   "dst": "",
+   "dst": "坊主、ひとつ取引といこうじゃないか。二人とも大金持ちになれるぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -38,7 +38,7 @@
   },
   "Beneath the Depths#003": {
    "src": "Ye see, lad, me treasure has been lost for quite some time, I kept it in a ocean village named Sarnfic, in a secret room.",
-   "dst": "",
+   "dst": "いいか坊主、わしの宝はとうに失くしたんじゃ。Sarnfic という海の村の隠し部屋に置いとったのよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -48,7 +48,7 @@
   },
   "Beneath the Depths#004": {
    "src": "Argh, but lad. The village vanished out of nowhere! Like some kind of dark magic! I swears to ye, I tell no lies!",
-   "dst": "",
+   "dst": "だがな坊主。その村が突然消えちまったんじゃ！黒魔法のようにな！誓って、嘘ではないぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -58,7 +58,7 @@
   },
   "Beneath the Depths#005": {
    "src": "So ye see, in me old age I could use a spot of me lawful gold to see me through me final years.",
-   "dst": "",
+   "dst": "じゃからな、この歳じゃ、わしの真っ当な金を少しでも取り戻して余生の足しにしたいのよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -68,7 +68,7 @@
   },
   "Beneath the Depths#006": {
    "src": "Don't fret though, chuck, old Javier always kept a back up plan.",
-   "dst": "",
+   "dst": "だが心配するな、若いの。Javier 爺さんはいつも奥の手を残しとる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -78,7 +78,7 @@
   },
   "Beneath the Depths#007": {
    "src": "I left me old sea fearin' map in me old hideout, it'll tell ye where we can find me old gold.",
-   "dst": "",
+   "dst": "わしの古い航海図を昔の隠れ家に置いてきた。そいつを見れば、わしの金のありかが分かる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -88,7 +88,7 @@
   },
   "Beneath the Depths#008": {
    "src": "So, lad. Are ya willin' to make ye'self mighty wealthy? Good.",
-   "dst": "",
+   "dst": "で、坊主。大金持ちになる気はあるか？よし。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -98,7 +98,7 @@
   },
   "Beneath the Depths#009": {
    "src": "Me old hideout's hidden inside that there skull at the entrance to our mighty fine establishment, Bring me that map, lad!",
-   "dst": "",
+   "dst": "隠れ家は、わしらのご立派な店の入口にある、あのドクロの中に隠してある。地図を持ってこい、坊主！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -108,7 +108,7 @@
   },
   "Beneath the Depths#010": {
    "src": "Find Javier's map, hidden in the skull tomb at the entrance of the island",
-   "dst": "",
+   "dst": "島の入口にあるドクロの墓に隠された Javier の地図を探す",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -118,7 +118,7 @@
   },
   "Beneath the Depths#011": {
    "src": "Halt it there, laddy! The wind has told us that yer looking for treasure map. Ah, ye'll not get it so easily.",
-   "dst": "",
+   "dst": "そこで止まれ、小僧！風の噂じゃ、宝の地図を探してるそうだな。へっ、そう簡単には渡さねえぜ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -128,7 +128,7 @@
   },
   "Beneath the Depths#012": {
    "src": "Ye see, us spirits are as greedy as our physical selves were. 'ere's no foolin' 'round there. We want yer money, and only then will we open the paths to the map.",
-   "dst": "",
+   "dst": "いいか、俺たち亡霊は生きてた頃と同じくらい強欲だ。ごまかしは効かねえ。金をよこせ。そうすりゃ地図への道を開いてやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -138,7 +138,7 @@
   },
   "Beneath the Depths#013": {
    "src": "One full stack of emeralds will satisfy our needs. Go to the front of this tomb if ye have what we want.",
-   "dst": "",
+   "dst": "エメラルドまるまる1スタックで満足してやる。持ってるなら、この墓の正面に来な。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -148,7 +148,7 @@
   },
   "Beneath the Depths#014": {
    "src": "Good luck on that petty journey of yers. Just find the whole path, and yerself'll be just fine...",
-   "dst": "",
+   "dst": "せいぜいちっぽけな旅を楽しみな。道を全部見つけりゃ、無事に済むさ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -158,7 +158,7 @@
   },
   "Beneath the Depths#015": {
    "src": "Argh, yer talented aren't you lad! Many thanks indeed, now we can see where me treasure be buried.",
-   "dst": "",
+   "dst": "ガハッ、坊主、やるじゃないか！恩に着るぞ。これでわしの宝がどこに埋まっとるか分かる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -168,7 +168,7 @@
   },
   "Beneath the Depths#016": {
    "src": "Hrmm, well, garr, blast it all",
-   "dst": "",
+   "dst": "むう、ガァ、くそったれめ",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -178,7 +178,7 @@
   },
   "Beneath the Depths#017": {
    "src": "I canne read me own darn map, lad! What'dya do with it? Scratch off the ink with yer pennies?",
-   "dst": "",
+   "dst": "自分の地図が読めんぞ、坊主！何をしたんじゃ？小銭でインクでも削ったか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -188,7 +188,7 @@
   },
   "Beneath the Depths#018": {
    "src": "Gar, sorry lad. It be the test of time that failed old Javier, not you.",
-   "dst": "",
+   "dst": "ガァ、すまん坊主。Javier 爺さんを裏切ったのは歳月じゃ、お前さんじゃない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -198,7 +198,7 @@
   },
   "Beneath the Depths#019": {
    "src": "Fear not, lad. There be an old friend of Javier's that can help decipher this old rag.",
-   "dst": "",
+   "dst": "心配いらん、坊主。Javier の古い友人に、このボロ布を解読できる者がおる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -208,7 +208,7 @@
   },
   "Beneath the Depths#020": {
    "src": "Go to the old {p}, there be a man by the name of Dalben who can restore me map to its former glory. Get it done lad, and bring me treasure back!",
-   "dst": "",
+   "dst": "古き {p} へ行け。Dalben という男が地図を元通りにしてくれる。やり遂げて、わしの宝を持ち帰れ、坊主！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -218,7 +218,7 @@
   },
   "Beneath the Depths#021": {
    "src": "Talk to Dalben on {p} about restoring the map",
-   "dst": "",
+   "dst": "地図の修復について {p} の Dalben と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -228,7 +228,7 @@
   },
   "Beneath the Depths#022": {
    "src": "What's this? A traveller? How might we assist you?",
-   "dst": "",
+   "dst": "これは？旅の方か？我々で何かお役に立てるかな？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -238,7 +238,7 @@
   },
   "Beneath the Depths#023": {
    "src": "Ah, I see, you wish to explore the ocean depths? But for what possible reason?",
-   "dst": "",
+   "dst": "ほう、海の深みを探りたいと？だが一体何のために？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -248,7 +248,7 @@
   },
   "Beneath the Depths#024": {
    "src": "This map... How did you acquire it? This is enchanted by our people.",
-   "dst": "",
+   "dst": "この地図… どこで手に入れた？我らの民がかけた魔法が宿っている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -258,7 +258,7 @@
   },
   "Beneath the Depths#025": {
    "src": "You... You seek Sarnfic, don't you?",
-   "dst": "",
+   "dst": "君は… Sarnfic を探しているのか？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -268,7 +268,7 @@
   },
   "Beneath the Depths#026": {
    "src": "Alas, that place has history. We, the Mage Council, banished that city long ago to hide the horrific power hidden within a treasure a pirate hid there.",
-   "dst": "",
+   "dst": "ああ、あの地には因縁がある。我々魔術師評議会は遠い昔、海賊が隠した宝に潜む恐ろしい力を封じるため、あの街を追放したのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -278,7 +278,7 @@
   },
   "Beneath the Depths#027": {
    "src": "A pair of boots, made from a black material fashioned from the stone of an evil place, incredibly dark magic. But we do not believe the filthy idiotic pirate knew what he'd found.",
-   "dst": "",
+   "dst": "一足のブーツだ。邪悪な地の石から作った黒い素材で、恐ろしく暗い魔法を帯びている。だがあの薄汚い愚かな海賊は、何を見つけたか分かっていなかったろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -288,7 +288,7 @@
   },
   "Beneath the Depths#028": {
    "src": "I must say, we, the council regret having to lay waste an entire village over a pair of boots. There was no other way.",
-   "dst": "",
+   "dst": "正直に言えば、我々評議会はブーツ一足のために村ひとつを滅ぼしたことを悔いている。他に手はなかったのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -298,7 +298,7 @@
   },
   "Beneath the Depths#029": {
    "src": "Who knows why he even kept the boots. If he had known about their power, I'm sure he would have used it for evil. But we sense no evil in you, so as such we will aid you in your quest.",
-   "dst": "",
+   "dst": "なぜ奴がブーツを持ち続けたのかは分からん。力を知っていれば悪用したはずだ。だが君には悪意を感じない。ゆえに君の探索に力を貸そう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -308,7 +308,7 @@
   },
   "Beneath the Depths#030": {
    "src": "We hope that you will use the boots for good, despite the dark intentions. We will lift the enchantment once lain upon the charts, but it will cost you.",
-   "dst": "",
+   "dst": "暗い意図のもとに生まれた物だが、君が善のために使うことを願う。海図にかけた魔法を解いてやろう。ただし、代償はいただく。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -318,7 +318,7 @@
   },
   "Beneath the Depths#031": {
    "src": "Give me [{~} Emerald Blocks], that should cover the cost.",
-   "dst": "",
+   "dst": "[{~} エメラルドブロック] をもらおう。それで足りるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -328,7 +328,7 @@
   },
   "Beneath the Depths#032": {
    "src": "Bring back [{~} Blocks of Emerald] to Dalben",
-   "dst": "",
+   "dst": "Dalben に [{~} エメラルドブロック] を持っていく",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -338,7 +338,7 @@
   },
   "Beneath the Depths#033": {
    "src": "Brilliant. That seems in order. Here you go.",
-   "dst": "",
+   "dst": "素晴らしい。確かに受け取った。さあ、どうぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -348,7 +348,7 @@
   },
   "Beneath the Depths#034": {
    "src": "We only hope that the treasure will never fall into the hands of that pirate again, we'd much rather they fall into yours.",
-   "dst": "",
+   "dst": "願わくは、宝が二度とあの海賊の手に渡らぬように。君の手に渡るほうがずっといい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -358,7 +358,7 @@
   },
   "Beneath the Depths#035": {
    "src": "Well? What does it say? Go to that location! Find the treasure!",
-   "dst": "",
+   "dst": "どうだ？何と書いてある？その場所へ行き、宝を見つけるのだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -368,7 +368,7 @@
   },
   "Beneath the Depths#036": {
    "src": "Explore the cave in the ocean, located at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] にある海中の洞窟を探索する",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -378,7 +378,7 @@
   },
   "Beneath the Depths#037": {
    "src": "Find [{~} Ocean Treasure] and bring it back to Javier in Pirate Cove",
-   "dst": "",
+   "dst": "[{~} 海の宝] を見つけ、海賊の入り江の Javier に届ける",
    "role": "desc",
    "kind": "objective",
    "quest": "Beneath the Depths",
@@ -388,7 +388,7 @@
   },
   "Beneath the Depths#038": {
    "src": "Gnar, you did it lad! Ye brought back old Javiers gold! And as I promised, heres yer share of the loot.",
-   "dst": "",
+   "dst": "ガハハ、やったな坊主！Javier 爺さんの金を取り戻してくれた！約束通り、これがお前さんの取り分じゃ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -398,7 +398,7 @@
   },
   "Beneath the Depths#039": {
    "src": "I threw in something extra for ye. It's an old key I salvaged a few years back, from the shipwreck of a legendary pirate.",
-   "dst": "",
+   "dst": "おまけも付けといたぞ。何年か前、伝説の海賊の難破船から引き揚げた古い鍵じゃ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -408,7 +408,7 @@
   },
   "Beneath the Depths#040": {
    "src": "Who knows what it leads to? Maybe a treasure hoard, or maybe the ol' swashbuckler wanted to lead someone into a trap.",
-   "dst": "",
+   "dst": "どこに通じとるかは分からん。財宝の山か、それとも古い海賊が誰かを罠にはめたかったのか。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",
@@ -418,7 +418,7 @@
   },
   "Beneath the Depths#041": {
    "src": "Me bones are too old for a grand adventure like that, guess ye'll have to figure it out for yerself.",
-   "dst": "",
+   "dst": "わしの骨はそんな大冒険には老いすぎとる。お前さんが自分で確かめるしかなかろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beneath the Depths",

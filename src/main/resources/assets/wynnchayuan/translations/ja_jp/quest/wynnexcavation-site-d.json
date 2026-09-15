@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "WynnExcavation Site D",
   "count": 97,
-  "translated": 0,
+  "translated": 97,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "WynnExcavation Site D#000": {
    "src": "Talk to Royal Advisor Carlos in {p} Castle at [-{~}, {~}, -{~}] (Requires shard from Site C)",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の {p} 城で Royal Advisor Carlos と話す (C 地点の欠片が必要)",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -18,7 +18,7 @@
   },
   "WynnExcavation Site D#001": {
    "src": "His majesty Lord King of {p} is indisposed at this moment.",
-   "dst": "",
+   "dst": "{p} 国王陛下は、ただいまご都合がつきません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -28,7 +28,7 @@
   },
   "WynnExcavation Site D#002": {
    "src": "He recieved a message and made his way frantically down to the panic room, which is somewhere inside of this throne room.",
-   "dst": "",
+   "dst": "伝令を受け取るや、慌てて緊急避難室へ降りていかれました。この玉座の間のどこかにあります。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -38,7 +38,7 @@
   },
   "WynnExcavation Site D#003": {
    "src": "He hasn't been seen since. Only the King knows how to get into the panic room, but I've had my suspicions about it for a while now.",
-   "dst": "",
+   "dst": "それ以来お姿を見た者はおりません。避難室への入り方は陛下しかご存じありませんが、私は以前から怪しいと思っていたのです。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -48,7 +48,7 @@
   },
   "WynnExcavation Site D#004": {
    "src": "He seemed to be expecting someone, but I'm fed up of waiting.",
-   "dst": "",
+   "dst": "誰かを待っておられたようですが、私はもう待ちくたびれました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -58,7 +58,7 @@
   },
   "WynnExcavation Site D#005": {
    "src": "I managed to hear a few things he was muttering to himself just before he disappeared, though.",
-   "dst": "",
+   "dst": "ですが、お姿を消される直前の独り言を、いくつか聞き取ることができました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -68,7 +68,7 @@
   },
   "WynnExcavation Site D#006": {
    "src": "He mentioned something about a fourth crystal... a green one.",
-   "dst": "",
+   "dst": "第四のクリスタルのことを…緑のものだと仰っていました。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -78,7 +78,7 @@
   },
   "WynnExcavation Site D#007": {
    "src": "And then he said \"The order of the crystals will open the way\".Maybe it's a clue as to how to find him?",
-   "dst": "",
+   "dst": "それから「クリスタルの順序が道を開く」と。陛下を見つける手がかりかもしれません。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -88,7 +88,7 @@
   },
   "WynnExcavation Site D#008": {
    "src": "Please, we need to find him, I'm sick of telling everyone he's indisposed!",
-   "dst": "",
+   "dst": "どうか陛下を見つけてください、ご不在の言い訳はもううんざりです！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -98,7 +98,7 @@
   },
   "WynnExcavation Site D#009": {
    "src": "Find the secret passageway inside of the throne room",
-   "dst": "",
+   "dst": "玉座の間にある隠し通路を見つける",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -108,7 +108,7 @@
   },
   "WynnExcavation Site D#010": {
    "src": "Oh my, a secret passage has opened up beneath the throne! Quickly, head inside!",
-   "dst": "",
+   "dst": "なんと、玉座の下に隠し通路が！さあ、早く中へ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -118,7 +118,7 @@
   },
   "WynnExcavation Site D#011": {
    "src": "Explore the secrets beneath {p} Castle",
-   "dst": "",
+   "dst": "{p} 城の地下の秘密を探る",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -128,7 +128,7 @@
   },
   "WynnExcavation Site D#012": {
    "src": "Talk to the King",
-   "dst": "",
+   "dst": "王と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -138,7 +138,7 @@
   },
   "WynnExcavation Site D#013": {
    "src": "I am impressed you managed to find me. Someone of my intellect is not normally found when he hasn't the intention of being so.",
-   "dst": "",
+   "dst": "よく私を見つけたものだ。私ほどの知性の持ち主は、見つかるつもりがなければ普通は見つからぬものなのだがな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -148,7 +148,7 @@
   },
   "WynnExcavation Site D#014": {
    "src": "I suppose I at least owe you the truth for getting this far, not that it matters.",
-   "dst": "",
+   "dst": "ここまで来た褒美に、せめて真実くらいは教えてやろう。どうせ何も変わらんがな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -158,7 +158,7 @@
   },
   "WynnExcavation Site D#015": {
    "src": "WynnExcavation, the Gavel company is a fake, a facade. It's not real....",
-   "dst": "",
+   "dst": "WynnExcavation、あの Gavel の会社は偽物、見せかけだ。実在などしない…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -168,7 +168,7 @@
   },
   "WynnExcavation Site D#016": {
    "src": "It's actually a secret society run by the high and mighty of Gavel.",
-   "dst": "",
+   "dst": "実際は Gavel の権力者どもが動かす秘密結社なのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -178,7 +178,7 @@
   },
   "WynnExcavation Site D#017": {
    "src": "They have one goal, complete control.",
-   "dst": "",
+   "dst": "目的はただ一つ、完全な支配だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -188,7 +188,7 @@
   },
   "WynnExcavation Site D#018": {
    "src": "You can't compete with them, kid. I tried to at first, but they had turned my inner circle before getting to me.",
-   "dst": "",
+   "dst": "奴らには敵わんよ、小僧。私も最初は抗ったが、奴らは私に迫る前に側近を寝返らせていた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -198,7 +198,7 @@
   },
   "WynnExcavation Site D#019": {
    "src": "Though I cannot admit I fought hard, their ideals are admirable.",
-   "dst": "",
+   "dst": "必死に戦ったとは言えんが、奴らの理想は立派なものだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -208,7 +208,7 @@
   },
   "WynnExcavation Site D#020": {
    "src": "So I hope you will forgive me, I act only for the greater good of the world.",
-   "dst": "",
+   "dst": "だから許してくれ。私はただ世界のより大きな善のために動いておるのだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -218,7 +218,7 @@
   },
   "WynnExcavation Site D#021": {
    "src": "As you will not be leaving the city, I wish you a fond farewell. When you leave, you will be accused of treason and will be hunted. It is the only way...",
-   "dst": "",
+   "dst": "お前はこの街から出られぬだろうから、心から別れを告げよう。ここを出れば反逆罪に問われ、追われる身となる。これしか道はないのだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -228,7 +228,7 @@
   },
   "WynnExcavation Site D#022": {
    "src": "Exit the King's room",
-   "dst": "",
+   "dst": "王の部屋を出る",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -238,7 +238,7 @@
   },
   "WynnExcavation Site D#023": {
    "src": "Time is short, so I'll have to spare you the details, but let's just say I'm on your side.",
-   "dst": "",
+   "dst": "時間がないから詳しくは話せないが、とにかく俺はあんたの味方だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -248,7 +248,7 @@
   },
   "WynnExcavation Site D#024": {
    "src": "The King just placed you under arrest for treason. They've locked down the entire city.",
-   "dst": "",
+   "dst": "王があんたを反逆罪で逮捕させた。街全体が封鎖されてる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -258,7 +258,7 @@
   },
   "WynnExcavation Site D#025": {
    "src": "Both the front gate and the Passage are closed down. So we've created another exit for you.",
-   "dst": "",
+   "dst": "正門も通路も閉鎖された。だから俺たちで別の出口を用意しておいた。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -268,7 +268,7 @@
   },
   "WynnExcavation Site D#026": {
    "src": "Just follow the path to your left around the city. Keep going until you see a villager next to a tunnel. We'll clear your name once you've escaped.",
-   "dst": "",
+   "dst": "左の道を進んで街を回り込め。トンネルの横に村人がいるから、そこまで行くんだ。逃げ延びたら俺たちが汚名を晴らしてやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -278,7 +278,7 @@
   },
   "WynnExcavation Site D#027": {
    "src": "You'll pass through the army headquarters on your way, so be prepared for a fight. I'm the only guard here to help you.",
-   "dst": "",
+   "dst": "途中で軍の本部を通るから、戦う覚悟をしておけ。ここで味方の衛兵は俺だけだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -288,7 +288,7 @@
   },
   "WynnExcavation Site D#028": {
    "src": "Now run! We don't have another moment to waste!",
-   "dst": "",
+   "dst": "さあ走れ！一刻も無駄にできない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -298,7 +298,7 @@
   },
   "WynnExcavation Site D#029": {
    "src": "Escape {p}",
-   "dst": "",
+   "dst": "{p} から脱出する",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -308,7 +308,7 @@
   },
   "WynnExcavation Site D#030": {
    "src": "Hey, psst. Come here!",
-   "dst": "",
+   "dst": "おい、しっ。こっちへ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -318,7 +318,7 @@
   },
   "WynnExcavation Site D#031": {
    "src": "Take this, and run! You need to get out!",
-   "dst": "",
+   "dst": "これを持って逃げろ！早く出るんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -328,7 +328,7 @@
   },
   "WynnExcavation Site D#032": {
    "src": "Head to those coordinates, there is no time to explain, now go! I'll close the tunnel behind you.",
-   "dst": "",
+   "dst": "その座標へ向かえ。説明してる暇はない、行け！トンネルは後ろで塞いでおく。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -338,7 +338,7 @@
   },
   "WynnExcavation Site D#033": {
    "src": "I'VE FOUND THE TRAITOR! THEY'RE OVER HERE!",
-   "dst": "",
+   "dst": "裏切り者を見つけたぞ！こっちだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -348,7 +348,7 @@
   },
   "WynnExcavation Site D#034": {
    "src": "Head to the location on the note",
-   "dst": "",
+   "dst": "メモに書かれた場所へ向かう",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -358,7 +358,7 @@
   },
   "WynnExcavation Site D#035": {
    "src": "Speak to Traitor Thomas",
-   "dst": "",
+   "dst": "Traitor Thomas と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -368,7 +368,7 @@
   },
   "WynnExcavation Site D#036": {
    "src": "I'm sorry, I can't let you in there.",
-   "dst": "",
+   "dst": "悪いけど、中には入れられないよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -378,7 +378,7 @@
   },
   "WynnExcavation Site D#037": {
    "src": "I can't let you in there, not until you have proven you are truly on our side.",
-   "dst": "",
+   "dst": "入れるわけにはいかない。本当に僕らの味方だと証明するまではね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -388,7 +388,7 @@
   },
   "WynnExcavation Site D#038": {
    "src": "We never know who to believe anymore. Unfortunately there is no way for you to prove your loyalty.",
-   "dst": "",
+   "dst": "もう誰を信じればいいかわからないんだ。残念だけど、君が忠誠を証明する方法はないよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -398,7 +398,7 @@
   },
   "WynnExcavation Site D#039": {
    "src": "Now if you would excuse me, I have to hunt for the lost map fragments of Dernel. I'm sure these eyes have something to do with it...",
-   "dst": "",
+   "dst": "じゃあ失礼するよ。Dernel の失われた地図の欠片を探さないと。きっとこの目玉たちが関係してるはずなんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -408,7 +408,7 @@
   },
   "WynnExcavation Site D#040": {
    "src": "Find the three map fragments by following the eyes and return to Thomas.",
-   "dst": "",
+   "dst": "目玉をたどって地図の欠片を3つ見つけ、Thomas のもとへ戻る。",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -418,7 +418,7 @@
   },
   "WynnExcavation Site D#041": {
    "src": "I can't let you in, we're busy looking for an important document, I'm sure these eyes have something to do with it...",
-   "dst": "",
+   "dst": "入れられないよ。大事な文書を探してて忙しいんだ。きっとこの目玉たちが関係してるはず…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -428,7 +428,7 @@
   },
   "WynnExcavation Site D#042": {
    "src": "Is that... The map fragments? You found them!",
-   "dst": "",
+   "dst": "それは…地図の欠片？見つけてくれたんだね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -438,7 +438,7 @@
   },
   "WynnExcavation Site D#043": {
    "src": "Oh my, you better come in.",
-   "dst": "",
+   "dst": "なんてこった、早く入って。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -448,7 +448,7 @@
   },
   "WynnExcavation Site D#044": {
    "src": "There's not enough time! We need to combine those fragments with ours!",
-   "dst": "",
+   "dst": "時間がない！その欠片を僕らのと合わせないと！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -458,7 +458,7 @@
   },
   "WynnExcavation Site D#045": {
    "src": "Hurry, get in the hideout!",
-   "dst": "",
+   "dst": "急いで、隠れ家に入って！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -468,7 +468,7 @@
   },
   "WynnExcavation Site D#046": {
    "src": "Enter the traitor camp",
-   "dst": "",
+   "dst": "裏切り者の野営地に入る",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -478,7 +478,7 @@
   },
   "WynnExcavation Site D#047": {
    "src": "Speak to Rebel Leader Amadel",
-   "dst": "",
+   "dst": "Rebel Leader Amadel と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -488,7 +488,7 @@
   },
   "WynnExcavation Site D#048": {
    "src": "Welcome, friend. I knew you would figure it all out.",
-   "dst": "",
+   "dst": "ようこそ、友よ。君ならすべて見抜くと思っていたよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -498,7 +498,7 @@
   },
   "WynnExcavation Site D#049": {
    "src": "You must be surprised to see me. The excavation crew at site C tried very hard to kill me.",
-   "dst": "",
+   "dst": "私に会って驚いただろう。C 地点の発掘隊は、本気で私を殺そうとしたからね。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -508,7 +508,7 @@
   },
   "WynnExcavation Site D#050": {
    "src": "They didn't succeed though. I got away, and I swiped a fragment of a map, and I found out what it's for.",
-   "dst": "",
+   "dst": "だが失敗した。私は逃げ出し、地図の欠片をひとつ盗んで、その用途を突き止めたんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -518,7 +518,7 @@
   },
   "WynnExcavation Site D#051": {
    "src": "If you made it this far, you know Wynn Excavation are not what they seem. They want to harness Wynn's ancient power.",
-   "dst": "",
+   "dst": "ここまで来たなら、Wynn Excavation が見かけ通りでないのはわかるだろう。奴らは Wynn の古の力を使おうとしている。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -528,7 +528,7 @@
   },
   "WynnExcavation Site D#052": {
    "src": "They control our governments, authorities and seem to be {~} steps ahead of any of us that oppose them.",
-   "dst": "",
+   "dst": "奴らは政府も当局も牛耳り、逆らう者の常に {~} 歩先を行っているようだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -538,7 +538,7 @@
   },
   "WynnExcavation Site D#053": {
    "src": "That is, unless we're able to beat the excavationists to the last crystal.",
-   "dst": "",
+   "dst": "ただし、最後のクリスタルを奴らより先に手に入れられれば話は別だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -548,7 +548,7 @@
   },
   "WynnExcavation Site D#054": {
    "src": "They cannot use a single shard of power without combining them all.",
-   "dst": "",
+   "dst": "すべてを揃えない限り、奴らは欠片の力を一つも使えない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -558,7 +558,7 @@
   },
   "WynnExcavation Site D#055": {
    "src": "Here, I've combined the map fragments behind me. It looks it's deep in the jungle, I wonder where...",
-   "dst": "",
+   "dst": "ほら、後ろにある地図の欠片を繋ぎ合わせた。ジャングルの奥地のようだが、いったいどこだろう…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -568,7 +568,7 @@
   },
   "WynnExcavation Site D#056": {
    "src": "WynnExcavation have done really horrible things, and I used to help...",
-   "dst": "",
+   "dst": "WynnExcavation は本当にひどいことをしてきた。僕も昔は手伝ってたんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -578,7 +578,7 @@
   },
   "WynnExcavation Site D#057": {
    "src": "WynnExcavation will be destroyed, no matter what!",
-   "dst": "",
+   "dst": "何があろうと、WynnExcavation は潰してやる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -588,7 +588,7 @@
   },
   "WynnExcavation Site D#058": {
    "src": "Go to Site D [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "D 地点 [-{~}, {~}, -{~}] へ向かう",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -598,7 +598,7 @@
   },
   "WynnExcavation Site D#059": {
    "src": "Solve the puzzle",
-   "dst": "",
+   "dst": "仕掛けを解く",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -608,7 +608,7 @@
   },
   "WynnExcavation Site D#060": {
    "src": "Search the excavation site",
-   "dst": "",
+   "dst": "発掘現場を捜索する",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -618,7 +618,7 @@
   },
   "WynnExcavation Site D#061": {
    "src": "Talk to Excavator Admin Uci.",
-   "dst": "",
+   "dst": "Excavator Admin Uci と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -628,7 +628,7 @@
   },
   "WynnExcavation Site D#062": {
    "src": "Oh my. It's you. I can't say I'm surprised to see you, we thought you might be stupid enough to come here.",
-   "dst": "",
+   "dst": "おやおや。お前か。驚きはしないな、ここに来るほど愚かだろうと思っていたよ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -638,7 +638,7 @@
   },
   "WynnExcavation Site D#063": {
    "src": "Stupid enough to come here, yet, smart enough to make it.",
-   "dst": "",
+   "dst": "ここに来るほど愚かで、辿り着けるほどには賢い。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -648,7 +648,7 @@
   },
   "WynnExcavation Site D#064": {
    "src": "You were at every site, taking shards and attempting to thwart us.",
-   "dst": "",
+   "dst": "お前はどの現場にも現れ、欠片を奪って我々の邪魔をしようとした。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -658,7 +658,7 @@
   },
   "WynnExcavation Site D#065": {
    "src": "This time we won, and you lost.",
-   "dst": "",
+   "dst": "今回は我々の勝ち、お前の負けだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -668,7 +668,7 @@
   },
   "WynnExcavation Site D#066": {
    "src": "What do your shards mean to us when we have all four crystals?",
-   "dst": "",
+   "dst": "クリスタルを4つとも揃えた我々に、お前の欠片が何の意味を持つ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -678,7 +678,7 @@
   },
   "WynnExcavation Site D#067": {
    "src": "Nothing, that's what.",
-   "dst": "",
+   "dst": "何の意味もない、そういうことだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -688,7 +688,7 @@
   },
   "WynnExcavation Site D#068": {
    "src": "The boss wants to speak to you, I don't recommend keeping him waiting, he's not a patient man.",
-   "dst": "",
+   "dst": "ボスがお前と話したいそうだ。待たせないほうがいい、気の長いお方じゃないからな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -698,7 +698,7 @@
   },
   "WynnExcavation Site D#069": {
    "src": "He'll be waiting for you, head through that door.",
-   "dst": "",
+   "dst": "ボスがお待ちだ。その扉を抜けて行け。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -708,7 +708,7 @@
   },
   "WynnExcavation Site D#070": {
    "src": "My boss Uci is a bit of a mean guy, but hey the perks of minionship aren't bad!",
-   "dst": "",
+   "dst": "Uci ボスはちょっと意地悪だけど、手下にもいい役得があるんだよな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -718,7 +718,7 @@
   },
   "WynnExcavation Site D#071": {
    "src": "This leads deeper into this dungeon, but it seems like it has to be activated from the other side.",
-   "dst": "",
+   "dst": "ここはダンジョンの奥へ続いてるけど、向こう側から起動しないといけないみたい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -728,7 +728,7 @@
   },
   "WynnExcavation Site D#072": {
    "src": "Enter The Ancient Dungeon",
-   "dst": "",
+   "dst": "The Ancient Dungeon に入る",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -738,7 +738,7 @@
   },
   "WynnExcavation Site D#073": {
    "src": "Complete the parkour",
-   "dst": "",
+   "dst": "パルクールをクリアする",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -748,7 +748,7 @@
   },
   "WynnExcavation Site D#074": {
    "src": "Solve The Yellow Puzzle",
-   "dst": "",
+   "dst": "黄色のパズルを解く",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -758,7 +758,7 @@
   },
   "WynnExcavation Site D#075": {
    "src": "Solve The Purple Puzzle",
-   "dst": "",
+   "dst": "紫のパズルを解く",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -768,7 +768,7 @@
   },
   "WynnExcavation Site D#076": {
    "src": "Solve The Red Puzzle",
-   "dst": "",
+   "dst": "赤のパズルを解く",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -778,7 +778,7 @@
   },
   "WynnExcavation Site D#077": {
    "src": "Escape The Green Room",
-   "dst": "",
+   "dst": "緑の部屋から脱出する",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -788,7 +788,7 @@
   },
   "WynnExcavation Site D#078": {
    "src": "Talk to Excavator Amadel",
-   "dst": "",
+   "dst": "Excavator Amadel と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -798,7 +798,7 @@
   },
   "WynnExcavation Site D#079": {
    "src": "Well, well. Looks like you've finally made it.",
-   "dst": "",
+   "dst": "ほう、ほう。ようやく辿り着いたようだな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -808,7 +808,7 @@
   },
   "WynnExcavation Site D#080": {
    "src": "You might be a little shocked to see me here...",
-   "dst": "",
+   "dst": "ここで私を見て、少々驚いているかもしれんな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -818,7 +818,7 @@
   },
   "WynnExcavation Site D#081": {
    "src": "Everything was planned you see...",
-   "dst": "",
+   "dst": "すべては計画通りだったのさ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -828,7 +828,7 @@
   },
   "WynnExcavation Site D#082": {
    "src": "You finding that old fool in the desert, you surviving that fall.",
-   "dst": "",
+   "dst": "砂漠であの老いぼれを見つけたのも、あの落下で生き延びたのも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -838,7 +838,7 @@
   },
   "WynnExcavation Site D#083": {
    "src": "You finding that notebook, and eventually meeting me.",
-   "dst": "",
+   "dst": "あの手帳を見つけたのも、そして最後に私と出会ったのも。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -848,7 +848,7 @@
   },
   "WynnExcavation Site D#084": {
    "src": "Everything that you have done has been planned by the mastermind behind this organisation, me.",
-   "dst": "",
+   "dst": "お前のしてきたことはすべて、この組織の黒幕が仕組んだもの。つまり、この私だ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -858,7 +858,7 @@
   },
   "WynnExcavation Site D#085": {
    "src": "You don't get it, do you? We needed you. The otherworldly crystals are a powerful magic, but a dangerous one at that.",
-   "dst": "",
+   "dst": "まだわからないのか？我々にはお前が必要だった。異界のクリスタルは強力な魔法だが、同時に危険でもある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -868,7 +868,7 @@
   },
   "WynnExcavation Site D#086": {
    "src": "We needed you, an unaware human with some form of pure intent to bring empowered shards here. Anyone else would have ran off with the shards, and turned against us. It's just how it all works. I don't expect you to understand.. Now. Enough talking.",
-   "dst": "",
+   "dst": "我々に必要だったのは、何も知らず、ある種の純粋な意志を持つ人間だ。力を得た欠片をここへ運ばせるためにな。他の者なら欠片を持ち逃げし、我々に歯向かっただろう。そういう仕組みなのだ。理解してもらおうとは思わん…さて。話は終わりだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -878,7 +878,7 @@
   },
   "WynnExcavation Site D#087": {
    "src": "Teleport to the Ancient City",
-   "dst": "",
+   "dst": "The Ancient City へテレポートする",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -888,7 +888,7 @@
   },
   "WynnExcavation Site D#088": {
    "src": "Explore The Ancient City",
-   "dst": "",
+   "dst": "The Ancient City を探索する",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -898,7 +898,7 @@
   },
   "WynnExcavation Site D#089": {
    "src": "Speak to Amadel's Assistant",
-   "dst": "",
+   "dst": "Amadel の助手と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -908,7 +908,7 @@
   },
   "WynnExcavation Site D#090": {
    "src": "Kill Corrupted Amadel",
-   "dst": "",
+   "dst": "Corrupted Amadel を倒す",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -918,7 +918,7 @@
   },
   "WynnExcavation Site D#091": {
    "src": "The crystals combine the power of the stars themselves.. an ultimate power... the power to reign over the entire WORLD!",
-   "dst": "",
+   "dst": "クリスタルは星々そのものの力を束ねる…究極の力…「全世界」を支配する力だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -928,7 +928,7 @@
   },
   "WynnExcavation Site D#092": {
    "src": "Kill Shadow Amadel",
-   "dst": "",
+   "dst": "Shadow Amadel を倒す",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -938,7 +938,7 @@
   },
   "WynnExcavation Site D#093": {
    "src": "I- I- I feel... unstoppable.. this power... will not aļ͢͠͠͡l̶̀͜͏͏ów me to lớ̀͠͝se..!!!",
-   "dst": "",
+   "dst": "わ、わ、私は…止められない…この力が…ま、負けを許さない…！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -948,7 +948,7 @@
   },
   "WynnExcavation Site D#094": {
    "src": "Kill Amadel",
-   "dst": "",
+   "dst": "Amadel を倒す",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",
@@ -958,7 +958,7 @@
   },
   "WynnExcavation Site D#095": {
    "src": "DID YOU REALLY THINK YOU COULD WIN?!?! YOU ARE NOTHING COMPARED TO ME! NOTHING!! I WILL EXTERMINATE ALL LIFE, STARTING WITH YOU!! NOW, PERISH!!!",
-   "dst": "",
+   "dst": "本気で勝てると思ったのか？！お前など私の足元にも及ばない！無に等しい！！あらゆる生命を根絶やしにしてやる、まずはお前からだ！！さあ、滅びろ！！！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "WynnExcavation Site D",
@@ -968,7 +968,7 @@
   },
   "WynnExcavation Site D#096": {
    "src": "Talk to The King of {p}",
-   "dst": "",
+   "dst": "{p} の王と話す",
    "role": "desc",
    "kind": "objective",
    "quest": "WynnExcavation Site D",

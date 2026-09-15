@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Heart of Llevigar",
   "count": 31,
-  "translated": 0,
+  "translated": 31,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Heart of Llevigar#000": {
    "src": "Find Zenam in the {p} power control center at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の {p} 電力制御センターで Zenam を探す",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -18,7 +18,7 @@
   },
   "Heart of Llevigar#001": {
    "src": "Aaah, no no no! This doesn't make any sense, what in the world is going on?! Nothing's working!",
-   "dst": "",
+   "dst": "ああっ、だめだめだめ！意味が分からない、一体どうなってるんだ！？何も動かない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -28,7 +28,7 @@
   },
   "Heart of Llevigar#002": {
    "src": "Gweh, a visitor? Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
-   "dst": "",
+   "dst": "うえっ、客？出ていってくれ！工場は保守で停止中――待って、あなたが雇った電磁魔法の専門家？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -38,7 +38,7 @@
   },
   "Heart of Llevigar#003": {
    "src": "You are, right? Right?! Cause we can't wait any longer! This system was supposed to be unbreakable, a flawless design!",
-   "dst": "",
+   "dst": "そうだよね？そうだよね！？もう待てないんだ！このシステムは絶対に壊れない、完璧な設計のはずだったのに！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -48,7 +48,7 @@
   },
   "Heart of Llevigar#004": {
    "src": "We didn't even need to get Corkian consultation on this, we had this system all figured out ourselves, but now nothing's working right!",
-   "dst": "",
+   "dst": "Corkus の助言すら要らなかった、全部自分たちで作り上げたんだ、なのに今は何もかもおかしい！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -58,7 +58,7 @@
   },
   "Heart of Llevigar#005": {
    "src": "You're seeing all these sparks and hearing all this crackling? We have no idea what could possibly be going wrong with this! That's why you're needed here!",
-   "dst": "",
+   "dst": "この火花とバチバチ音が分かるよね？何が悪いのかまったく見当もつかない！だからあなたが必要なんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -68,7 +68,7 @@
   },
   "Heart of Llevigar#006": {
    "src": "We don't have much time until full meltdown! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer!",
-   "dst": "",
+   "dst": "完全なメルトダウンまで時間がない！銀行の向かいに発電所への入口がある、そこで技師長に会って！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -78,7 +78,7 @@
   },
   "Heart of Llevigar#007": {
    "src": "Enter the sewers opposite of the bank of {p}.",
-   "dst": "",
+   "dst": "{p} の銀行の向かいから下水道に入る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -88,7 +88,7 @@
   },
   "Heart of Llevigar#008": {
    "src": "Find the head engineer at the {p} power plant",
-   "dst": "",
+   "dst": "{p} 発電所で技師長を探す",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -98,7 +98,7 @@
   },
   "Heart of Llevigar#009": {
    "src": "Whew, finally Zeman found a guy for the job. I told him weeks ago this was a two-person task...",
-   "dst": "",
+   "dst": "ふう、やっと Zeman が人を見つけたか。二人がかりの仕事だって何週間も前に言ったのに…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -108,7 +108,7 @@
   },
   "Heart of Llevigar#010": {
    "src": "Wait, it's Zenam? Eh, what does it matter? You knew who I was talkin' about. Lemme give you the lowdown real fast.",
-   "dst": "",
+   "dst": "待て、Zenam だっけ？まあ、どっちでもいいだろ？誰のことか分かったんだから。手短に説明するぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -118,7 +118,7 @@
   },
   "Heart of Llevigar#011": {
    "src": "About a month ago, there was a big blackout, and the generator here started acting up. Power surges, appliances overloading...heck, some of our lights turned purple!",
-   "dst": "",
+   "dst": "ひと月ほど前に大停電があって、ここの発電機がおかしくなりだした。電力サージ、機器の過負荷…しまいには照明が紫になったんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -128,7 +128,7 @@
   },
   "Heart of Llevigar#012": {
    "src": "My grandfather and his engineers jury-rigged the whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
-   "dst": "",
+   "dst": "じいさんとその技師たちがシステム全体を応急でこしらえた。リセットすれば直るはずだが、安全規定で俺がここで立ち会う必要がある。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -138,7 +138,7 @@
   },
   "Heart of Llevigar#013": {
    "src": "So that's your job- get through the system and find the reset button. These holes'll lead you around the generator rooms. Better get going!",
-   "dst": "",
+   "dst": "そこでお前の仕事だ――システムを抜けてリセットボタンを探せ。この穴を通れば発電機室を回れる。さっさと行け！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -148,7 +148,7 @@
   },
   "Heart of Llevigar#014": {
    "src": "Try to find a way into the machine",
-   "dst": "",
+   "dst": "機械の中へ入る方法を探す",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -158,7 +158,7 @@
   },
   "Heart of Llevigar#015": {
    "src": "Find a way to proceed to the inner parts of the machinery",
-   "dst": "",
+   "dst": "機械の内部へ進む方法を探す",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -168,7 +168,7 @@
   },
   "Heart of Llevigar#016": {
    "src": "Reach the center of the restricted area",
-   "dst": "",
+   "dst": "制限区域の中心にたどり着く",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -178,7 +178,7 @@
   },
   "Heart of Llevigar#017": {
    "src": "Find the reset button.",
-   "dst": "",
+   "dst": "リセットボタンを見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -188,7 +188,7 @@
   },
   "Heart of Llevigar#018": {
    "src": "Report back to the Head Engineer",
-   "dst": "",
+   "dst": "技師長に報告する",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -198,7 +198,7 @@
   },
   "Heart of Llevigar#019": {
    "src": "Alright, that should do it- Ah, you're back. The system reset just fine, like I said. Everything should be winding down now.",
-   "dst": "",
+   "dst": "よし、これでいいはず――おっ、戻ったか。言った通り、リセットはうまくいった。もう全部落ち着いてくるはずだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -208,7 +208,7 @@
   },
   "Heart of Llevigar#020": {
    "src": "It's purging the excess energy now- might have a few more power surges and crackles for a while, but it'll go back to normal soon enough.",
-   "dst": "",
+   "dst": "今は余分なエネルギーを排出してる――しばらくはサージやバチバチが残るかもしれんが、すぐ元に戻るさ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -218,7 +218,7 @@
   },
   "Heart of Llevigar#021": {
    "src": "Hm? What, there was a bug in the system? ...what, are you asleep or something? Of course there was a bug, we just fixed it!",
-   "dst": "",
+   "dst": "ん？何、システムの中に虫がいた？…寝ぼけてんのか？バグがあったから今直したんだろうが！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -228,7 +228,7 @@
   },
   "Heart of Llevigar#022": {
    "src": "Well, anyways, Zebra should have our payment all settled. You go on ahead- I still need to stay down here to make sure everything stays smooth.",
-   "dst": "",
+   "dst": "まあとにかく、報酬は Zebra が用意してるはずだ。先に行ってくれ――俺は全部うまく回るか見届けなきゃならん。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -238,7 +238,7 @@
   },
   "Heart of Llevigar#023": {
    "src": "...oh, it's Zenam? D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system, it hooks up to the sewer exit.",
-   "dst": "",
+   "dst": "…あ、Zenam だっけ？名前を正しく言うのがそんなに大事か？とにかく、出口は水冷システムの先で、下水道の出口につながってる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -248,7 +248,7 @@
   },
   "Heart of Llevigar#024": {
    "src": "Ask Zenam for your reward",
-   "dst": "",
+   "dst": "Zenam に報酬をもらう",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -258,7 +258,7 @@
   },
   "Heart of Llevigar#025": {
    "src": "Whew...welcome back. The power is back online- Everything is running at full capacity again. I think the system is just running excess through right now.",
-   "dst": "",
+   "dst": "ふう…おかえり。電力が戻った――すべてまたフル稼働だ。システムは今、余剰分を流しているだけだと思う。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -268,7 +268,7 @@
   },
   "Heart of Llevigar#026": {
    "src": "Glad you got here when you did though- some phony came through saying he was the expert. Clearly he was just here to take your contract money...",
-   "dst": "",
+   "dst": "でも間に合ってよかった――専門家を名乗る偽者が来たんだ。明らかにあなたの報酬を横取りしに来ただけだよ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -278,7 +278,7 @@
   },
   "Heart of Llevigar#027": {
    "src": "Though, I was panicking so much I probably would've believed him... Speaking of which, here's your cut of the pay, and something extra for the trouble.",
-   "dst": "",
+   "dst": "まあ、あんなに慌ててたら信じてたかもしれないけど…そうそう、これがあなたの取り分、それと迷惑料も少し。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -288,7 +288,7 @@
   },
   "Heart of Llevigar#028": {
    "src": "Here's to hoping that the system won't run into any more trouble in the future. I don't want to be faced with an impending cataclysm like that again...",
-   "dst": "",
+   "dst": "今後はシステムに何も起きないことを祈るよ。あんな差し迫った大惨事にまた直面するのはごめんだ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -298,7 +298,7 @@
   },
   "Heart of Llevigar#029": {
    "src": "Aah, this is bad, where's the keys to my toolbox?! Zenam said it was important, I need to find them!",
-   "dst": "",
+   "dst": "ああっ、まずい、工具箱の鍵はどこだ！？Zenam が重要だって言ってたんだ、見つけないと！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -308,7 +308,7 @@
   },
   "Heart of Llevigar#030": {
    "src": "I still can't believe it, a human has done my job and taken my emeralds... Just because I lost my keys...",
-   "dst": "",
+   "dst": "まだ信じられない、人間が私の仕事をしてエメラルドを持っていった…鍵をなくしただけで…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",

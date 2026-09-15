@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Cook Assistant",
   "count": 20,
-  "translated": 0,
+  "translated": 20,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Cook Assistant#000": {
    "src": "Talk to the Cook in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p} の [-{~}, {~}, -{~}] にいる料理人と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -18,7 +18,7 @@
   },
   "Cook Assistant#001": {
    "src": "I can't believe what is happening to me.",
-   "dst": "",
+   "dst": "なんてことだ、信じられない。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -28,7 +28,7 @@
   },
   "Cook Assistant#002": {
    "src": "The King ordered me to bake cakes for all those new recruits!",
-   "dst": "",
+   "dst": "王様に、新兵全員分のケーキを焼けと命じられたんだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -38,7 +38,7 @@
   },
   "Cook Assistant#003": {
    "src": "Unfortunately, a Grook took my last cake, and I ran out of ingredients!",
-   "dst": "",
+   "dst": "なのに Grook に最後のケーキを取られて、材料も切れた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -48,7 +48,7 @@
   },
   "Cook Assistant#004": {
    "src": "Now can you help...",
-   "dst": "",
+   "dst": "そこで、手伝って…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -58,7 +58,7 @@
   },
   "Cook Assistant#005": {
    "src": "That's the Grook! Go chase it down and get my cake back!",
-   "dst": "",
+   "dst": "あの Grook だ！追いかけてケーキを取り返してくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -68,7 +68,7 @@
   },
   "Cook Assistant#006": {
    "src": "Follow the pesky Grook.",
-   "dst": "",
+   "dst": "厄介な Grook を追う。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -78,7 +78,7 @@
   },
   "Cook Assistant#007": {
    "src": "The Grook got away! Return to the Cook at [-{~}, {~}, -{~}] to figure out what to do.",
-   "dst": "",
+   "dst": "Grook に逃げられた！[-{~}, {~}, -{~}] の料理人のもとへ戻り、どうするか考える。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -88,7 +88,7 @@
   },
   "Cook Assistant#008": {
    "src": "What are you doing? Go after the Grook...",
-   "dst": "",
+   "dst": "何をしてる？Grook を追ってくれ…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -98,7 +98,7 @@
   },
   "Cook Assistant#009": {
    "src": "It got away!",
-   "dst": "",
+   "dst": "逃げられた！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -108,7 +108,7 @@
   },
   "Cook Assistant#010": {
    "src": "Well, I guess you are going to have to help me find the ingredients and bake another...",
-   "dst": "",
+   "dst": "仕方ない、材料を探して、もう一つ焼くのを手伝ってもらうしかないな…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -118,7 +118,7 @@
   },
   "Cook Assistant#011": {
    "src": "There he is again! After him!",
-   "dst": "",
+   "dst": "また出た！追え！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -128,7 +128,7 @@
   },
   "Cook Assistant#012": {
    "src": "Find out where the Grook flew up to at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] で Grook が飛んでいった先を探す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -138,7 +138,7 @@
   },
   "Cook Assistant#013": {
    "src": "Return to the cook at [-{~}, {~}, -{~}]. Use a Scroll to get there faster.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の料理人のもとへ戻る。スクロールを使うと早い。",
    "role": "desc",
    "kind": "objective",
    "quest": "Cook Assistant",
@@ -148,7 +148,7 @@
   },
   "Cook Assistant#014": {
    "src": "Great! You got the cake!",
-   "dst": "",
+   "dst": "やった！ケーキを取り返したな！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -158,7 +158,7 @@
   },
   "Cook Assistant#015": {
    "src": "I can't thank you enough! Here, take these emeralds and armour for all your trouble.",
-   "dst": "",
+   "dst": "感謝してもしきれない！ほら、手間賃にエメラルドと防具を持っていってくれ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -168,7 +168,7 @@
   },
   "Cook Assistant#016": {
    "src": "You should explore around to become stronger. I hear there might be work to do in {p}.",
-   "dst": "",
+   "dst": "あちこち探索して強くなるといい。{p} に仕事があるかもしれないと聞いたぞ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -178,7 +178,7 @@
   },
   "Cook Assistant#017": {
    "src": "I can't believe what is happening to me...",
-   "dst": "",
+   "dst": "なんてことだ、信じられない…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -186,7 +186,7 @@
   },
   "Cook Assistant#018": {
    "src": "Now, how can you help...",
-   "dst": "",
+   "dst": "さて、どう手伝ってもらおうか…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",
@@ -194,7 +194,7 @@
   },
   "Cook Assistant#019": {
    "src": "Wait! That's the Grook! Go chase it down and get my cake back!",
-   "dst": "",
+   "dst": "待て！あの Grook だ！追いかけてケーキを取り返してくれ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cook Assistant",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Shattered Minds",
   "count": 51,
-  "translated": 0,
+  "translated": 51,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Shattered Minds#000": {
    "src": "Speak to Likeru in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の {p} にいる Likeru と話す。",
    "role": "desc",
    "kind": "objective",
    "quest": "Shattered Minds",
@@ -18,7 +18,7 @@
   },
   "Shattered Minds#001": {
    "src": "Aha, perfect! You'll be perfect! Lucky a human decided to come here!",
-   "dst": "",
+   "dst": "あはっ、完璧！君ならぴったり！人間が来てくれるなんてツイてる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -28,7 +28,7 @@
   },
   "Shattered Minds#002": {
    "src": "I'll get to the point- I want you to go get something for me, and then bring it back here. Simple, right?",
-   "dst": "",
+   "dst": "単刀直入に言うね。取ってきてほしい物があるの。ここへ持ち帰るだけ。簡単でしょ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -38,7 +38,7 @@
   },
   "Shattered Minds#003": {
    "src": "When you do that, I'm going to fix it up and try something out on you. Something magically enlightening!",
-   "dst": "",
+   "dst": "持ってきたら、それを加工して君で試したいことがあるんだ。魔法で悟りが開けるやつ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -48,7 +48,7 @@
   },
   "Shattered Minds#004": {
    "src": "Oh, don't give me that look, it should be perfectly safe! Unless you've been mired in darkness for the past however many years...",
-   "dst": "",
+   "dst": "ちょっと、そんな顔しないで、安全なはずだから！ここ何年も闇にどっぷり浸かってたなら別だけど…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -58,7 +58,7 @@
   },
   "Shattered Minds#005": {
    "src": "Anyway, what I need is a specific kind of mushroom that grows close by, the Bluecap Mushroom.",
-   "dst": "",
+   "dst": "とにかく、近くに生える特別なキノコが要るの。ブルーキャップっていうんだ。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -68,7 +68,7 @@
   },
   "Shattered Minds#006": {
    "src": "They grow underground- in a cave out the gate northwest of here. I'll even pay you if you bring it back, so what have you got to lose?",
-   "dst": "",
+   "dst": "地下に生えてるの。ここから北西の門を出た先の洞窟ね。持ってきたらお礼もするよ、損はないでしょ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -78,7 +78,7 @@
   },
   "Shattered Minds#007": {
    "src": "Bring Likeru the mushrooms from the cave at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の洞窟からキノコを Likeru に届ける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Shattered Minds",
@@ -88,7 +88,7 @@
   },
   "Shattered Minds#008": {
    "src": "Figure out how to get out of the cave, and return to Likeru.",
-   "dst": "",
+   "dst": "洞窟から出る方法を見つけ、Likeru の所へ戻る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Shattered Minds",
@@ -98,7 +98,7 @@
   },
   "Shattered Minds#009": {
    "src": "Looks like someone rolled about the air fuzz too much, so indeed hello! A light hello to yourself, {u}, and a greetings to Professor Eih, which is me!",
-   "dst": "",
+   "dst": "空の綿毛で転げ回りすぎた者がいるようだ、ならばこんにちは！{u}、君に軽やかな挨拶を、そして私こと Eih 教授にもご挨拶を！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -108,7 +108,7 @@
   },
   "Shattered Minds#010": {
    "src": "I don't rhyme all the instances, I feel the need to say. But what do you say? Very little! But I bet you're wondering where you are.",
-   "dst": "",
+   "dst": "毎回韻を踏むわけではないと言っておこう。で、君は何と言う？ほぼ無言！だがここがどこか気になっているだろう。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -118,7 +118,7 @@
   },
   "Shattered Minds#011": {
    "src": "I am no gambling man, but the chips are down and it is time to play {~}-Pickup with the puzzle pieces, and I'll eat my bowtie if you aren't ready.",
-   "dst": "",
+   "dst": "私は博打打ちではないが、勝負の時だ。パズルのピースで{~}枚拾いといこう。君の準備ができていなければ蝶ネクタイを食べてやる。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -128,7 +128,7 @@
   },
   "Shattered Minds#012": {
    "src": "The betting pool says the way to go is the opposite of in front, so that leaves someplace we can't talk about in front of the kids as your path!",
-   "dst": "",
+   "dst": "賭け屋いわく、進むべきは前の反対。つまり子供の前では口にできない場所こそ君の道だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -138,7 +138,7 @@
   },
   "Shattered Minds#013": {
    "src": "I will be around! Or asquare, as it were. Technically amultiplesquares, replete with alines! And abevels! And other some such things like-",
-   "dst": "",
+   "dst": "私はそこらに居る！いや、そこら四角に。正確には複数四角に、線も添えて！斜面も！その他もろもろ例えば―",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -148,7 +148,7 @@
   },
   "Shattered Minds#014": {
    "src": "The punks scramble like eggs, and your skillet is sizzling! Certainly the heat in the kitchen is too much- so where is the fire extinguisher?",
-   "dst": "",
+   "dst": "チンピラどもは卵のように散り、君のフライパンはジュウジュウ！台所は明らかに熱すぎる― では消火器はどこだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -158,7 +158,7 @@
   },
   "Shattered Minds#015": {
    "src": "It won't rocket you! The hole in the shape of a door looms out of your transparent grasp- frogs can't skip leg day, so be froggy! Bounce and jump!",
-   "dst": "",
+   "dst": "ロケットで飛ばしはしない！扉の形の穴が透明な手の先に迫る― カエルは脚の日をサボれない、カエルになれ！跳ねて跳べ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -168,7 +168,7 @@
   },
   "Shattered Minds#016": {
    "src": "Swoosh and sprint! Speed and non-slip shoes! With a CLICK upon me I give you all but one, as much as you need!",
-   "dst": "",
+   "dst": "シュッと走れ！速さと滑らない靴！私をカチッとすれば、一つを除いて全部、必要なだけ授けよう！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -178,7 +178,7 @@
   },
   "Shattered Minds#017": {
    "src": "The colors! Shimmering as a prism- oh, no one likes those things. The writing is on the wall, but the window mugs it for pocket change! The inhumanity!",
-   "dst": "",
+   "dst": "色だ！プリズムのように揺らめく― おっと、あれは誰も好かん。文字は壁に書いてあるが、窓が小銭目当てに襲う！なんと非道！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -188,7 +188,7 @@
   },
   "Shattered Minds#018": {
    "src": "Use your eyes as ears and hear what I shall write! The cockpit is missing ground control and the cornfields all look the same in endless rows!",
-   "dst": "",
+   "dst": "目を耳にして、私の書くことを聞け！操縦席には地上管制がなく、トウモロコシ畑は果てなく同じ列が続く！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -198,7 +198,7 @@
   },
   "Shattered Minds#019": {
    "src": "So Eih, esquire professor PhD, will provide the coordinates in helpfully non-literal fashion, and one's joystick shall lead the holder to bliss!",
-   "dst": "",
+   "dst": "ゆえに教授にして博士たる Eih 殿が、親切にも比喩で座標を授けよう。操縦桿は持つ者を至福へ導く！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -208,7 +208,7 @@
   },
   "Shattered Minds#020": {
    "src": "At one's boots, the colors paint themselves towards an orientation. Above one's head, the lights match and fling you the same!",
-   "dst": "",
+   "dst": "足元では色が自ら方角を描く。頭上では光が揃い、君を同じ方へ放り投げる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -218,7 +218,7 @@
   },
   "Shattered Minds#021": {
    "src": "I'm all out of airplane food, but the goal is more than peanuts- it's progress, just opposite our position. Fly well!",
-   "dst": "",
+   "dst": "機内食は品切れだが、目標はピーナッツ以上― 前進だ、我らの位置の真向かいにな。良い空の旅を！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -228,7 +228,7 @@
   },
   "Shattered Minds#022": {
    "src": "WOW. Just, WOW! Your brain being frazzled doesn't excuse this failure! Time is money and we're swimming in a river called DEBT!",
-   "dst": "",
+   "dst": "わお。ただただ、わお！脳が焦げていてもこの失敗は許されん！時は金なり、我々は「借金」という川で泳いでいる！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -238,7 +238,7 @@
   },
   "Shattered Minds#023": {
    "src": "I'm just going to stand here and you're gonna go into the teleporters I'm NOT in, and you're gonna like it!",
-   "dst": "",
+   "dst": "私はここに立っているから、君は私のいない転送装置に入るのだ、そして気に入るのだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -248,7 +248,7 @@
   },
   "Shattered Minds#024": {
    "src": "Explore the strange forest to find Likeru.",
-   "dst": "",
+   "dst": "奇妙な森を探索し、Likeru を見つける。",
    "role": "desc",
    "kind": "objective",
    "quest": "Shattered Minds",
@@ -258,7 +258,7 @@
   },
   "Shattered Minds#025": {
    "src": "Hey, look to your left for a moment.",
-   "dst": "",
+   "dst": "おい、ちょっと左を見てみな。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -268,7 +268,7 @@
   },
   "Shattered Minds#026": {
    "src": "I hope you've got a note pad with you, if you want me to teach you the ways of a master you'll need to write a lot down!",
-   "dst": "",
+   "dst": "メモ帳は持ってるか？俺に達人の道を教わりたいなら、たくさん書き留めることになるぞ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -278,7 +278,7 @@
   },
   "Shattered Minds#027": {
    "src": "It doesn't matter that we're on a {~}-match losing streak, we'll never give up!",
-   "dst": "",
+   "dst": "{~}連敗中だろうが関係ない、俺たちは絶対に諦めない！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -288,7 +288,7 @@
   },
   "Shattered Minds#028": {
    "src": "C'mon Beakmeister, we've ventured together for years now! Why won't you listen to me?",
-   "dst": "",
+   "dst": "頼むよ Beakmeister、何年も一緒に冒険してきたじゃないか！なんで言うこと聞いてくれないんだ？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -298,7 +298,7 @@
   },
   "Shattered Minds#029": {
    "src": "I don't think she's even listening to me anymore. She's a free spirit!",
-   "dst": "",
+   "dst": "もう俺の話なんて聞いてないな。自由な魂なんだよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -308,7 +308,7 @@
   },
   "Shattered Minds#030": {
    "src": "Familiar to the nursing home, with no IV in sight! Phenomenal, and now my gambling metaphors will be apropos!",
-   "dst": "",
+   "dst": "老人ホームにおなじみ、なのに点滴は見当たらない！素晴らしい、これで私の賭け事の比喩もぴったりだ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -318,7 +318,7 @@
   },
   "Shattered Minds#031": {
    "src": "A solid, {~} pure, statue-made-out-of-tons-of-things what looks like me! I call it, “Ill Of The Ooze, Young!” And it begets your path amongst the lilypads.",
-   "dst": "",
+   "dst": "堅牢で{~}純度、山ほどの物でできた私そっくりの像！名付けて「若き日の軟泥の病！」それが睡蓮の間の道を生む。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -328,7 +328,7 @@
   },
   "Shattered Minds#032": {
    "src": "Likeru? No, no, she can’t find you here- her eyes deceive her. But I won't! Not any more than the film reel degrades, and the theater is ahead!",
-   "dst": "",
+   "dst": "Likeru？いやいや、彼女はここで君を見つけられん― 目が欺いている。だが私は違う！フィルムが劣化するほどにはな、劇場は前方だ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -338,7 +338,7 @@
   },
   "Shattered Minds#033": {
    "src": "Now, don't tell the kids about this one either! The way forward is through my masterpiece- but I can't imagine a gullet glorious!",
-   "dst": "",
+   "dst": "さて、これも子供には内緒だ！進む道は私の傑作の中― だが栄光の喉袋など想像もつかん！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -348,7 +348,7 @@
   },
   "Shattered Minds#034": {
    "src": "Enter the giant frog and escape.",
-   "dst": "",
+   "dst": "巨大なカエルの中に入り、脱出する。",
    "role": "desc",
    "kind": "objective",
    "quest": "Shattered Minds",
@@ -358,7 +358,7 @@
   },
   "Shattered Minds#035": {
    "src": "Don't come any closer... I don't want to have to fight...",
-   "dst": "",
+   "dst": "それ以上近づかないで…戦いたくないの…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -368,7 +368,7 @@
   },
   "Shattered Minds#036": {
    "src": "I-I'm warning you. You'll stand no match against me...",
-   "dst": "",
+   "dst": "け、警告するよ。あなたじゃ私には敵わない…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -378,7 +378,7 @@
   },
   "Shattered Minds#037": {
    "src": "That's it...",
-   "dst": "",
+   "dst": "そこまで…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -388,7 +388,7 @@
   },
   "Shattered Minds#038": {
    "src": "There we are! Snapped out of it! Though perhaps writing in the mud was better- Soon it will dry.",
-   "dst": "",
+   "dst": "それでいい！正気に戻った！だが泥に書いた方が良かったかも― じきに乾く。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -398,7 +398,7 @@
   },
   "Shattered Minds#039": {
    "src": "Without the static of the fungal caps, the radio station will be off-air- and the device unplugged!",
-   "dst": "",
+   "dst": "菌の傘の雑音がなければ、ラジオ局は放送停止― そして装置のプラグも抜ける！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -408,7 +408,7 @@
   },
   "Shattered Minds#040": {
    "src": "Scratch it in your eyelids- the lightbulb screwed between the arches, and the feather-duster's sunset shades will reveal my deepest compatriot. Quick now, wake!",
-   "dst": "",
+   "dst": "まぶたに刻め― アーチの間にねじ込まれた電球、はたきの夕焼け色が、私の最も深い同胞を明かす。さあ急げ、目覚めよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -418,7 +418,7 @@
   },
   "Shattered Minds#041": {
    "src": "Ugh. Rats chewing the roots. They've their place, it simply isn't here. Neither is your place in the koi pond, stranger.",
-   "dst": "",
+   "dst": "やれやれ。根をかじるネズミだ。居場所はあるが、ここではない。お前の居場所も鯉の池ではないぞ、よそ者。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -428,7 +428,7 @@
   },
   "Shattered Minds#042": {
    "src": "I believe Likeru tossed you into the deep end without meaning, so to speak. I understand your being overwhelmed, but still...",
-   "dst": "",
+   "dst": "Likeru は悪気なくお前を深みに放り込んだのだろう、いわばな。圧倒されたのは分かるが、それでも…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -438,7 +438,7 @@
   },
   "Shattered Minds#043": {
    "src": "Speaking of which, it might behoove you to let her know you've recovered. Though, should you need rest, you may take it here.",
-   "dst": "",
+   "dst": "そういえば、回復したと彼女に知らせるとよい。だが休みが要るなら、ここで休んでいくがいい。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -448,7 +448,7 @@
   },
   "Shattered Minds#044": {
    "src": "Return to Likeru in {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] の {p} にいる Likeru の所へ戻る。",
    "role": "desc",
    "kind": "objective",
    "quest": "Shattered Minds",
@@ -458,7 +458,7 @@
   },
   "Shattered Minds#045": {
    "src": "Ehm. Okay, that was...a bad idea. Should NOT have done that with a human. Uh, noted for the futu- oh, you're actually alright?!",
-   "dst": "",
+   "dst": "えっと。うん、あれは…悪い考えだった。人間でやっちゃダメだった。今後のために記録― えっ、ほんとに無事なの？！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -468,7 +468,7 @@
   },
   "Shattered Minds#046": {
    "src": "You came back and just leapt into the koi pond! I thought you'd drowned down there!",
-   "dst": "",
+   "dst": "戻ってくるなり鯉の池に飛び込むんだもん！下で溺れたかと思ったよ！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -478,7 +478,7 @@
   },
   "Shattered Minds#047": {
    "src": "I guess the spores from the Bluecaps got to you before you could bring them back. I wonder what you saw?",
-   "dst": "",
+   "dst": "持ち帰る前にブルーキャップの胞子にやられちゃったみたいだね。何を見たんだろう？",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -488,7 +488,7 @@
   },
   "Shattered Minds#048": {
    "src": "You reacted like you were crazy when I tried to talk with you... You were supposed to get visions of the light! A deep connection!",
-   "dst": "",
+   "dst": "話しかけても、君はおかしくなったみたいに反応してた…光の幻視を見るはずだったのに！深いつながりを！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -498,7 +498,7 @@
   },
   "Shattered Minds#049": {
    "src": "Wait, maybe it's cause of that portal...the signals got mixed? I'll have to look into this more...but hey, I got the Bluecap, anyways, so...",
-   "dst": "",
+   "dst": "待って、あのポータルのせいかも…信号が混ざった？もっと調べなきゃ…でもまあ、ブルーキャップは手に入ったし…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
@@ -508,7 +508,7 @@
   },
   "Shattered Minds#050": {
    "src": "Here, your payment- and a little extra I whipped up too. Um, really sorry about all that!",
-   "dst": "",
+   "dst": "はい、お礼― それとちょっとしたおまけも作ったよ。えっと、ほんとにごめんね！",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Shattered Minds",
