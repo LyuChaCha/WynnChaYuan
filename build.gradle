@@ -695,6 +695,19 @@ tasks.register('runFileIndexChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runFileIndexChecks' }
 
+tasks.register('runUpgradeChecks', JavaExec) {
+    group = 'verification'
+    description = '留著舊版的 config/wynnchayuan 升級，遊戲也要開得起來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.UpgradeSafetyTest'
+    // -PplayerFolder=<某個玩家 config/wynnchayuan 的副本>：額外拿那一份完整跑一次啟動讀檔。
+    // 測試會先複製到暫存資料夾再跑，不會動到指定的那一份。
+    if (project.hasProperty('playerFolder')) {
+        systemProperty 'wcy.playerFolder', project.property('playerFolder')
+    }
+}
+tasks.named('check') { dependsOn 'runUpgradeChecks' }
+
 tasks.register('runDialogueBufferChecks', JavaExec) {
     group = 'verification'
     description = '逐字對話要收斂成完整一句，不能送出半截'
