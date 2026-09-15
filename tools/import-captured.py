@@ -50,6 +50,7 @@ import re
 import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parent.parent
 TRANSLATIONS = Path("src/main/resources/assets/wynnchayuan/translations/zh_tw")
 
 # domain -> 要放進哪個檔
