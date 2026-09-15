@@ -229,8 +229,9 @@ public final class TooltipPanel {
             //
             // 會被自動斷行的段落一定<b>接在空行後面，或從第一行開始</b>，
             // 所以起點落在段落中間的那些窗格本來就不是要查的東西，不必記。
+            // 一樣要剝色碼：帶顏色的空行 getString 是「§7」，不算 blank。
             boolean paragraphStart =
-                    i == 0 || styled.get(i - 1).getString().isBlank();
+                    i == 0 || styled.get(i - 1).getStringWithoutFormatting().isBlank();
             if (longest >= 2 && paragraphStart) {
                 StringBuilder key = new StringBuilder();
                 for (int k = i; k < i + longest; k++) {
@@ -264,10 +265,16 @@ public final class TooltipPanel {
             i++;
         }
         // 同一段不能一半中文一半英文，見 evenOut。
+        //
+        // 要拿<b>剝掉色碼</b>的字。StyledText#getString 會把每一段的顏色寫成
+        // 「§7」接在字前面，於是實機上每一行都是「§7gain …」——開頭不是小寫、
+        // 空行也不是空的，段落從來認不出來。Lootrun 賜福「Persnickety」的
+        // 「gain +50% Walk Speed」就這樣自己翻成「gain +50% 移動速度」，
+        // 前三行留英文。測試裡的 Component.literal 沒有顏色，所以一直測不到。
         List<String> plain = new ArrayList<>(n);
         for (StyledText line : styled) {
             plain.add(com.wynnchayuan.capture.GlyphSplitter
-                    .stripGlyphChars(line.getString()).strip());
+                    .stripGlyphChars(line.getStringWithoutFormatting()).strip());
         }
         if (evenOut(plain, hit)) {
             anyTranslated = false;

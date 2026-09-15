@@ -1126,6 +1126,7 @@ public final class LineTranslator {
             at--;
         }
         at = keepGlyphWithWord(text, at, lineStart);
+        at = keepValueWithGlyph(text, at, lineStart);
         int outside = outsidePlaceholder(text, at, lineStart);
         if (outside != at) {
             // 退進佔位符裡面了。退得到它前面就退；退不了（佔位符就從行首開始）
@@ -1204,6 +1205,48 @@ public final class LineTranslator {
             }
             at = back - glyph.length();
         }
+    }
+
+    /**
+     * 「數值 空白 圖示」是同一個東西，不能斷在數值與圖示中間。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * Lootrun 賜福 Heavensent 的譯文是一整句「……每提供一個信標就 +{~1} {#}防禦 (上限 x{~2})」，
+     * 折回原文的三行時斷點落在圖示前面：
+     *
+     * <pre>
+     *   每提供一個信標就 +2
+     *   ✤防禦 (上限 x15)        ← 屬性圖示跑到行首，跟 +2 分家
+     * </pre>
+     *
+     * <p>原文的「+2 ✤Defence」是一組：數值屬於那個屬性，圖示是屬性名的前綴。
+     * {@link #keepGlyphWithWord} 只管圖示不留在行尾，所以它讓圖示跟著後面的詞走——
+     * 但前面那個數值被留在上一行。這裡把斷點再往前挪到（帶號的）數值前面，
+     * 三樣東西一起到下一行。
+     *
+     * <p>只認「數值佔位符、空白、圖示」緊挨著的形狀。「使用 {#} 物品鑑定師」前面是字，
+     * 不受影響；挪完整行會空掉時放棄，照原本的斷點。
+     */
+    private static int keepValueWithGlyph(String text, int cut, int lineStart) {
+        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
+        if (!text.startsWith(glyph, cut)) {
+            return cut;
+        }
+        int back = cut;
+        while (back > lineStart && text.charAt(back - 1) == ' ') {
+            back--;
+        }
+        if (back == cut || back <= lineStart || text.charAt(back - 1) != '}') {
+            return cut;                        // 圖示前面沒有空白，或空白前面不是佔位符
+        }
+        int open = text.lastIndexOf('{', back - 1);
+        if (open < lineStart || !text.substring(open, back).matches("\\{~\\d*\\}")) {
+            return cut;                        // 是地名、玩家名或另一個圖示，不是數值
+        }
+        if (open > lineStart && (text.charAt(open - 1) == '+' || text.charAt(open - 1) == '-')) {
+            open--;                            // 正負號跟數值是同一個東西，見 wrapToWidth
+        }
+        return open > lineStart ? open : cut;
     }
 
     /** 不能出現在行首的字元。全形標點、收尾符號、百分比與單位。 */
@@ -5919,6 +5962,13 @@ public final class LineTranslator {
                 //
                 // 認得出來的形狀是「行尾是圖示，後面只有空白」。
                 move += trailingGlyph(out[i], out[i].length() - move);
+                // 圖示前面若是「+{~} 」，那個數值也是這個屬性的，一起搬。
+                //
+                // 實機回報的 Heavensent：折行斷在「+{~1} {#}防／禦」，這裡把「防」
+                // 連同圖示搬下去，數值卻留在上一行——「每提供一個信標就 +2」換行
+                // 「✤防禦 (上限 x15)」。見 keepValueWithGlyph。
+                move = out[i].length()
+                        - keepValueWithGlyph(out[i], out[i].length() - move, 0);
                 String moved = out[i].substring(out[i].length() - move);
                 out[i] = out[i].substring(0, out[i].length() - move);
                 out[i + 1] = moved + out[i + 1];
