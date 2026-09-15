@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Canyon Condor",
   "count": 42,
-  "translated": 0,
+  "translated": 42,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Canyon Condor#000": {
    "src": "Talk to Svin in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Поговори со Svin в {p}, в [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -18,7 +18,7 @@
   },
   "Canyon Condor#001": {
    "src": "I am one of the Keepers in the great {p}. There we hoard secrets about the world.",
-   "dst": "",
+   "dst": "Я один из Хранителей в {p}, великой сокровищнице тайн мира.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -28,7 +28,7 @@
   },
   "Canyon Condor#002": {
    "src": "I am here to investigate an old tale of the canyon. Does that interest you? I'm sure it does!",
-   "dst": "",
+   "dst": "Я здесь, чтобы изучить старое сказание о каньоне. Вам интересно? Уверен, что да!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -38,7 +38,7 @@
   },
   "Canyon Condor#003": {
    "src": "Legend has it that a ferocious beast lives among these cliffs. A dangerous bird that has survived for many years.",
-   "dst": "",
+   "dst": "Легенда гласит, что среди этих скал живёт свирепый зверь. Опасная птица, прожившая много лет.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -48,7 +48,7 @@
   },
   "Canyon Condor#004": {
    "src": "I would love to seek the beast out, but it seems the natives here are too busy thieving each other to inform me of it.",
-   "dst": "",
+   "dst": "Я бы разыскал зверя, но местные, похоже, так заняты воровством друг у друга, что им не до меня.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -58,7 +58,7 @@
   },
   "Canyon Condor#005": {
    "src": "I have heard of an old prospector nearby who has ventured throughout this mesa. He may have some information.",
-   "dst": "",
+   "dst": "Говорят, неподалёку живёт старый старатель, исходивший всё это плато. Может, он что-то знает.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -68,7 +68,7 @@
   },
   "Canyon Condor#006": {
    "src": "His name is Jankan and he lives east from {p}. Could you perhaps seek him out and ask him about this foul beast?",
-   "dst": "",
+   "dst": "Его зовут Jankan, он живёт к востоку от {p}. Не могли бы вы разыскать его и расспросить об этом мерзком звере?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -78,7 +78,7 @@
   },
   "Canyon Condor#007": {
    "src": "If you help me, I'll let you use the elevators spread in the canyon. Well...",
-   "dst": "",
+   "dst": "Поможете мне — пущу вас на подъёмники каньона. Ну…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -88,7 +88,7 @@
   },
   "Canyon Condor#008": {
    "src": "A strange hermit decided to take control of them, but I'm sure we can reason with him.",
-   "dst": "",
+   "dst": "Их прибрал к рукам какой-то странный отшельник, но уверен, с ним можно договориться.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -98,7 +98,7 @@
   },
   "Canyon Condor#009": {
    "src": "I hope you are able to find the beast, and if you do, could you bring me back [{~} Beast Egg] as evidence?",
-   "dst": "",
+   "dst": "Надеюсь, вы найдёте зверя, а если найдёте — не принесёте ли мне [{~} яйцо зверя] в доказательство?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -108,7 +108,7 @@
   },
   "Canyon Condor#010": {
    "src": "Talk to Jankan east from {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Поговори с Jankan к востоку от {p}, в [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -118,7 +118,7 @@
   },
   "Canyon Condor#011": {
    "src": "Hello there, youngster! Ye must be the stranger folks 'been talkin' 'bout.",
-   "dst": "",
+   "dst": "Здорово, молодой! Ты, видать, тот чужак, про которого все толкуют.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -128,7 +128,7 @@
   },
   "Canyon Condor#012": {
    "src": "If yer lookin fer gold, I can promise ye that there ain' any for you in this here mineshaft!",
-   "dst": "",
+   "dst": "Коли ищешь золото, так я те обещаю: в ентой шахте тебе ничего не светит!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -138,7 +138,7 @@
   },
   "Canyon Condor#013": {
    "src": "Oh.. Yer lookin fer a winged wilder beast? Are ye out of yer mind?",
-   "dst": "",
+   "dst": "О… Крылатую дикую тварь ищешь? Ты в своём уме?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -148,7 +148,7 @@
   },
   "Canyon Condor#014": {
    "src": "The devil of a bird is complete chaos! It can move mountains with a single screech! Men twice yer size 'ave weeped from the sight of it!",
-   "dst": "",
+   "dst": "Эта чёртова птица — сущий хаос! Одним криком горы двигает! Мужики вдвое крупней тебя рыдали, её завидев!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -158,7 +158,7 @@
   },
   "Canyon Condor#015": {
    "src": "As it turns out, I did me back in trying to transport me earnin's from that there cave, left them right at the back did' I.",
-   "dst": "",
+   "dst": "Я вот спину сорвал, пока таскал свою добычу из той пещеры, так всё в самой глубине и бросил.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -168,7 +168,7 @@
   },
   "Canyon Condor#016": {
    "src": "Go fetch me Gold Chunk and I'll tell ye where ye need to go next.",
-   "dst": "",
+   "dst": "Принеси-ка мне золотой самородок, и скажу, куда те дальше идти.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -178,7 +178,7 @@
   },
   "Canyon Condor#017": {
    "src": "Collect [{~} Gold Chunks] for Jankan in the mineshaft at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Собери для Jankan [{~} золотой самородок] в шахте в [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -188,7 +188,7 @@
   },
   "Canyon Condor#018": {
    "src": "Finally! It took ye long enough, hand it over! Oh right.. yer want'n somethin'.",
-   "dst": "",
+   "dst": "Наконец-то! Долго ж ты, давай сюда! А, точно… тебе ж чего-то надо.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -198,7 +198,7 @@
   },
   "Canyon Condor#019": {
    "src": "I ain' got any intention of help'n ye with yer demise, but I can send ye along to a young fellow who might help.",
-   "dst": "",
+   "dst": "Помогать тебе на тот свет отправиться я не собираюсь, но могу послать к одному молодцу, что, может, пособит.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -208,7 +208,7 @@
   },
   "Canyon Condor#020": {
    "src": "There's this Hermit feller ye wanna talk to, he is a right nutter, that one. Feeds the bird'n all.",
-   "dst": "",
+   "dst": "Есть тут один Отшельник, вот к нему и ступай. Чокнутый он, как есть. Птицу ту кормит и всё такое.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -218,7 +218,7 @@
   },
   "Canyon Condor#021": {
    "src": "I think ye can find him up the mountain and across the canyon abyss, he ain' a friendly fella, I can tell yer that much.",
-   "dst": "",
+   "dst": "Думаю, найдёшь его на горе, за пропастью каньона. Он не из приветливых, это я те точно говорю.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -228,7 +228,7 @@
   },
   "Canyon Condor#022": {
    "src": "Take the canyon elevator up to the Hermit at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Поднимись на подъёмнике каньона к Отшельнику в [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -238,7 +238,7 @@
   },
   "Canyon Condor#023": {
    "src": "What do you think you're doing here, kid? Think you can waltz in my humble abode and get across my bridge?",
-   "dst": "",
+   "dst": "Чего тебе тут надо, малец? Думаешь, можно заявиться в моё скромное жилище и пройти по моему мосту?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -248,7 +248,7 @@
   },
   "Canyon Condor#024": {
    "src": "Oh, you want to know about the bird of the mountain? Hah, a little weed like you wouldn't stand a chance against it.",
-   "dst": "",
+   "dst": "О, хочешь узнать о горной птице? Ха, у такого сорняка, как ты, против неё ни шанса.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -258,7 +258,7 @@
   },
   "Canyon Condor#025": {
    "src": "It doesn't take kindly to strangers you know. I once saw it turn a group of poachers to ash!",
-   "dst": "",
+   "dst": "Чужаков она не жалует, знаешь ли. Я как-то видел, как она обратила в пепел целую шайку браконьеров!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -268,7 +268,7 @@
   },
   "Canyon Condor#026": {
    "src": "If you want to go through here, you'll need to pay. Oh, I don't want your money, why would I need money, I have everything!",
-   "dst": "",
+   "dst": "Хочешь пройти — придётся заплатить. О, деньги твои мне не нужны, зачем мне деньги, у меня всё есть!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -278,7 +278,7 @@
   },
   "Canyon Condor#027": {
    "src": "If you want access to these plateaus then you will have to find me a rare flower for my little cave here.",
-   "dst": "",
+   "dst": "Хочешь попасть на эти плато — найди мне редкий цветок для моей пещерки.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -288,7 +288,7 @@
   },
   "Canyon Condor#028": {
    "src": "It is found on top of one of the stacks in the mesa, it shouldn't be too hard to find.",
-   "dst": "",
+   "dst": "Он растёт на вершине одного из столбов на плато, найти его несложно.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -298,7 +298,7 @@
   },
   "Canyon Condor#029": {
    "src": "Bring me [{~} Rare Rose] and I shall let you pass on to the creature of the mesa.",
-   "dst": "",
+   "dst": "Принеси мне [{~} редкая роза], и я пропущу тебя к твари с плато.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -308,7 +308,7 @@
   },
   "Canyon Condor#030": {
    "src": "Find and collect [{~} Rare Rose] at [{~}, {~}, -{~}] for the Hermit",
-   "dst": "",
+   "dst": "Найди и собери [{~} редкая роза] в [{~}, {~}, -{~}] для Отшельника",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -318,7 +318,7 @@
   },
   "Canyon Condor#031": {
    "src": "A ha! This will do perfectly. My chickling will love it! I suppose you can cross the bridge now.",
-   "dst": "",
+   "dst": "Ага! Это то, что надо. Моему цыплёночку понравится! Что ж, можешь переходить мост.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -328,7 +328,7 @@
   },
   "Canyon Condor#032": {
    "src": "The beast dwells on top of one of these plateaus. With a little searching, you should be able to find it.",
-   "dst": "",
+   "dst": "Зверь обитает на вершине одного из этих плато. Немного поищешь — и найдёшь.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -338,7 +338,7 @@
   },
   "Canyon Condor#033": {
    "src": "I'll let you use my elevators too. After all, it's not like you will last long...",
-   "dst": "",
+   "dst": "Пользуйся и моими подъёмниками. Всё равно долго ты не протянешь…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -348,7 +348,7 @@
   },
   "Canyon Condor#034": {
    "src": "Only one traveler I have heard of could stand against the beast. I believe he took an egg from it for a pet, hah!",
-   "dst": "",
+   "dst": "Я слышал лишь об одном путнике, что устоял против зверя. Кажется, он утащил у него яйцо себе в питомцы, ха!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -358,7 +358,7 @@
   },
   "Canyon Condor#035": {
    "src": "He is long gone now, just like you will be in a few moments. It was nice not knowing you, kid.",
-   "dst": "",
+   "dst": "Его давно нет, как и тебя скоро не будет. Приятно было не познакомиться, малец.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -368,7 +368,7 @@
   },
   "Canyon Condor#036": {
    "src": "Defeat the Cockatrice at [{~}, {~}, -{~}] and collect an egg for Svin",
-   "dst": "",
+   "dst": "Победи кокатрикса в [{~}, {~}, -{~}] и добудь для Svin яйцо",
    "role": "desc",
    "kind": "objective",
    "quest": "Canyon Condor",
@@ -378,7 +378,7 @@
   },
   "Canyon Condor#037": {
    "src": "Traveler! You have returned! Tell me, what have you learned?",
-   "dst": "",
+   "dst": "Путник! Вы вернулись! Скажите, что вы узнали?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -388,7 +388,7 @@
   },
   "Canyon Condor#038": {
    "src": "You found it?! This is wonderful news! You collected an egg from it's nest as well? You are very brave indeed!",
-   "dst": "",
+   "dst": "Вы нашли его?! Чудесная новость! И даже добыли яйцо из гнезда? Вы и впрямь очень храбры!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -398,7 +398,7 @@
   },
   "Canyon Condor#039": {
    "src": "So the legend of the Cockatrice is true! You've seen it and battled it with your own courage!",
-   "dst": "",
+   "dst": "Значит, легенда о кокатриксе правдива! Вы видели его и сразились с ним, полагаясь лишь на свою храбрость!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -408,7 +408,7 @@
   },
   "Canyon Condor#040": {
    "src": "If only you could enter the {p}, brave soul! But it would seem our paths are to part now.",
-   "dst": "",
+   "dst": "Если бы только вы могли войти в {p}, храбрая душа! Но, похоже, здесь наши пути расходятся.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",
@@ -418,7 +418,7 @@
   },
   "Canyon Condor#041": {
    "src": "Do not worry, I shall keep the egg safe. One day your legend shall be as greatly told!",
-   "dst": "",
+   "dst": "Не волнуйтесь, я сберегу яйцо. Однажды и о вас сложат такие же легенды!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Canyon Condor",

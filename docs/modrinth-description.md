@@ -67,7 +67,7 @@ Switch under F6 → Data, without changing the game's language.
 | `zh_cn` 简体中文 | █████████░ 93.8% | 40,067 / 42,702 |
 | `zh_tw` 繁體中文 | █████████░ 93.8% | 41,106 / 43,815 |
 | `ja_jp` 日本語 | █████████░ 93.6% | 39,984 / 42,702 |
-| `ru_ru` Русский | ████░░░░░░ 41.1% | 17,561 / 42,702 |
+| `ru_ru` Русский | █████████░ 93.1% | 39,771 / 42,702 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 1.8% | 778 / 42,694 |
 
 各語言還缺哪些檔案 / Per-language breakdown: [PROGRESS.md](https://github.com/LyuChaCha/WynnChaYuan/blob/main/docs/PROGRESS.md)
@@ -165,7 +165,7 @@ Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): 3 USD/month o
 | `zh_cn` 简体中文 | █████████░ 93.8% | 40,067 / 42,702 |
 | `zh_tw` 繁體中文 | █████████░ 93.8% | 41,106 / 43,815 |
 | `ja_jp` 日本語 | █████████░ 93.6% | 39,984 / 42,702 |
-| `ru_ru` Русский | ████░░░░░░ 41.1% | 17,561 / 42,702 |
+| `ru_ru` Русский | █████████░ 93.1% | 39,771 / 42,702 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 1.8% | 778 / 42,694 |
 
 各語言還缺哪些檔案 / Per-language breakdown: [PROGRESS.md](https://github.com/LyuChaCha/WynnChaYuan/blob/main/docs/PROGRESS.md)

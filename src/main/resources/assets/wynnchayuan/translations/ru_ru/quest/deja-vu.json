@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Deja Vu",
   "count": 87,
-  "translated": 0,
+  "translated": 87,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Deja Vu#000": {
    "src": "Talk to Asher near {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Поговори с Asher у {p}: [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -18,7 +18,7 @@
   },
   "Deja Vu#001": {
    "src": "Well well well, look who decided to come back with their tail between their legs.",
-   "dst": "",
+   "dst": "Так-так-так, кто это вернулся, поджав хвост?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -28,7 +28,7 @@
   },
   "Deja Vu#002": {
    "src": "Two weeks now and you still haven't found it? Ugh, I can't believe I ever trusted you with such a simple task.",
-   "dst": "",
+   "dst": "Две недели прошло, а лопаты всё нет? Ну и ну, как я доверил тебе такое простое дело?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -38,7 +38,7 @@
   },
   "Deja Vu#003": {
    "src": "Who am I? WHAT DO YOU MEAN WHO AM I? You offered to help find my shovel, and I've been waiting two weeks!",
-   "dst": "",
+   "dst": "Кто я? ЧТО ЗНАЧИТ «КТО Я»? Кто взялся найти мою лопату? Ты! А я жду уже две недели!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -48,7 +48,7 @@
   },
   "Deja Vu#004": {
    "src": "Forget about your payment. Unless you either pay me back or get my shovel right now!",
-   "dst": "",
+   "dst": "Забудь об оплате. Либо возмещай убыток, либо неси мою лопату сейчас же!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -58,7 +58,7 @@
   },
   "Deja Vu#005": {
    "src": "My shovel? That's why I sent you out in the first place! It's somewhere in {p}. I lost it while following a trail of flowers.",
-   "dst": "",
+   "dst": "Мою лопату? За ней я тебя и посылал! Она где-то в {p}. Я потерял её, идя по следу из цветов.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -68,7 +68,7 @@
   },
   "Deja Vu#006": {
    "src": "I think it was south west of the large ruined gate. Now go get it!",
-   "dst": "",
+   "dst": "Вроде к юго-западу от разрушенных ворот. Живо за ней!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -78,7 +78,7 @@
   },
   "Deja Vu#007": {
    "src": "Find Asher's Shovel near [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Найди лопату Asher около [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -88,7 +88,7 @@
   },
   "Deja Vu#008": {
    "src": "Return Asher's Shovel to Asher.",
-   "dst": "",
+   "dst": "Верни лопату владельцу, Asher.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -98,7 +98,7 @@
   },
   "Deja Vu#009": {
    "src": "Well hello there, stranger! Welcome to {p}! Always nice to see a new face around here.",
-   "dst": "",
+   "dst": "Здравствуй, странник! Добро пожаловать в {p}! Всегда рад новым лицам.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -108,7 +108,7 @@
   },
   "Deja Vu#010": {
    "src": "Mad at you? Why would I be mad at you? We've never met.",
-   "dst": "",
+   "dst": "Злюсь? С чего мне на тебя злиться? Мы же не знакомы.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -118,7 +118,7 @@
   },
   "Deja Vu#011": {
    "src": "I know this a bit forward, but I need to ask for your help with-",
-   "dst": "",
+   "dst": "Знаю, это дерзко, но мне нужна твоя помощь с—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -128,7 +128,7 @@
   },
   "Deja Vu#012": {
    "src": "Wait, is that-? It is! You've found my shovel! I recognize those markings anywhere.",
-   "dst": "",
+   "dst": "Постой, это же—? Точно! Моя лопата нашлась! Эти метки я узнаю где угодно.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -138,7 +138,7 @@
   },
   "Deja Vu#013": {
    "src": "But why is it so rusty? Ah, no matter. Give that to me and I'll head inside to get you a nice reward.",
-   "dst": "",
+   "dst": "Но почему она такая ржавая? А, неважно. Дай её мне, а я схожу в дом за хорошей наградой.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -148,7 +148,7 @@
   },
   "Deja Vu#014": {
    "src": "Thank you. Now, about that reward-",
-   "dst": "",
+   "dst": "Спасибо. Так вот, награда—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -158,7 +158,7 @@
   },
   "Deja Vu#015": {
    "src": "Wha- What's happening?",
-   "dst": "",
+   "dst": "Что— Что происходит?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -168,7 +168,7 @@
   },
   "Deja Vu#016": {
    "src": "Oh dear, there he goes again. Poor fool ignored my warnings and touched that shovel.",
-   "dst": "",
+   "dst": "Ох, опять он за своё. Бедолага не послушал меня и тронул ту лопату.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -178,7 +178,7 @@
   },
   "Deja Vu#017": {
    "src": "He's gone and got himself stuck in a loop.",
-   "dst": "",
+   "dst": "Вот и застрял в петле времени.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -188,7 +188,7 @@
   },
   "Deja Vu#018": {
    "src": "Head inside, soldier, and I'll explain what's happening here.",
-   "dst": "",
+   "dst": "Заходи в дом, солдат, и я объясню, что тут творится.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -198,7 +198,7 @@
   },
   "Deja Vu#019": {
    "src": "Enter Asher's house.",
-   "dst": "",
+   "dst": "Войди в дом Asher.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -208,7 +208,7 @@
   },
   "Deja Vu#020": {
    "src": "Without Asher, his house has vanished from time.",
-   "dst": "",
+   "dst": "Без Asher его дом исчез из времени.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -218,7 +218,7 @@
   },
   "Deja Vu#021": {
    "src": "Talk to Old Man Martyn.",
-   "dst": "",
+   "dst": "Поговори с Old Man Martyn.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -228,7 +228,7 @@
   },
   "Deja Vu#022": {
    "src": "Let me explain why Asher disappeared...",
-   "dst": "",
+   "dst": "Объясню, почему Asher исчез…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -238,7 +238,7 @@
   },
   "Deja Vu#023": {
    "src": "{p} was built many years ago by a long-lost civilization.",
-   "dst": "",
+   "dst": "{p} возвела давно исчезнувшая цивилизация.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -248,7 +248,7 @@
   },
   "Deja Vu#024": {
    "src": "They had odd powers. They ended up distorting time itself.",
-   "dst": "",
+   "dst": "У них были странные силы. В итоге они исказили само время.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -258,7 +258,7 @@
   },
   "Deja Vu#025": {
    "src": "The tools they used to make these structures are imbued with their power.",
-   "dst": "",
+   "dst": "Их строительные инструменты пропитаны этой силой.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -268,7 +268,7 @@
   },
   "Deja Vu#026": {
    "src": "Asher found one of these tools: the shovel.",
-   "dst": "",
+   "dst": "Asher нашёл один из них: ту самую лопату.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -278,7 +278,7 @@
   },
   "Deja Vu#027": {
    "src": "The shovel is tethering its time of influence to today. It keeps sending Asher back.",
-   "dst": "",
+   "dst": "Лопата привязывает своё время к сегодняшнему дню и раз за разом шлёт Asher назад.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -288,7 +288,7 @@
   },
   "Deja Vu#028": {
    "src": "The issue is, Asher died in the past. This creates a paradox.",
-   "dst": "",
+   "dst": "Беда в том, что в прошлом Asher погиб. Отсюда парадокс.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -298,7 +298,7 @@
   },
   "Deja Vu#029": {
    "src": "We can save him if I send you back to prevent his death. Go through this rift to join him in the past.",
-   "dst": "",
+   "dst": "Мы спасём его, если я пошлю тебя в прошлое предотвратить гибель. Пройди в разлом к нему.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -308,7 +308,7 @@
   },
   "Deja Vu#030": {
    "src": "Find a way to save Asher from his death.",
-   "dst": "",
+   "dst": "Найди способ спасти Asher от гибели.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -318,7 +318,7 @@
   },
   "Deja Vu#031": {
    "src": "Huh? Where is everyone?",
-   "dst": "",
+   "dst": "А? Где все?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -328,7 +328,7 @@
   },
   "Deja Vu#032": {
    "src": "Usually this place is filled with workers.",
-   "dst": "",
+   "dst": "Обычно здесь полно рабочих.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -338,7 +338,7 @@
   },
   "Deja Vu#033": {
    "src": "But no one's here. And this place is clearly not done.",
-   "dst": "",
+   "dst": "Но никого нет. И стройка явно не закончена.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -348,7 +348,7 @@
   },
   "Deja Vu#034": {
    "src": "Whatever the case, I should probably find my shovel.",
-   "dst": "",
+   "dst": "Как бы то ни было, надо найти мою лопату.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -358,7 +358,7 @@
   },
   "Deja Vu#035": {
    "src": "If I were a shovel, where would I be?",
-   "dst": "",
+   "dst": "Будь я лопатой, где бы я лежал?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -368,7 +368,7 @@
   },
   "Deja Vu#036": {
    "src": "Hmmm. Not around here.",
-   "dst": "",
+   "dst": "Хм. Здесь её нет.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -378,7 +378,7 @@
   },
   "Deja Vu#037": {
    "src": "This place... There's so much going on but no one here.",
-   "dst": "",
+   "dst": "Это место… Всё кипит, а людей нет.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -388,7 +388,7 @@
   },
   "Deja Vu#038": {
    "src": "What I don't understand, though, is why this place looks brand new.",
-   "dst": "",
+   "dst": "Не понимаю одного: почему тут всё как новенькое?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -398,7 +398,7 @@
   },
   "Deja Vu#039": {
    "src": "This place looks like it's just being built!",
-   "dst": "",
+   "dst": "Будто это место только строят!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -408,7 +408,7 @@
   },
   "Deja Vu#040": {
    "src": "This must be something to do with the valley's magic. Wouldn't be the first time.",
-   "dst": "",
+   "dst": "Наверняка дело в магии долины. Уже не впервой.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -418,7 +418,7 @@
   },
   "Deja Vu#041": {
    "src": "Heh, time.",
-   "dst": "",
+   "dst": "Хех, время.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -428,7 +428,7 @@
   },
   "Deja Vu#042": {
    "src": "In fact, whenever I hold that shovel, this kind of stuff seems to happen.",
-   "dst": "",
+   "dst": "Вообще, стоит мне взять ту лопату, как творится такое.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -438,7 +438,7 @@
   },
   "Deja Vu#043": {
    "src": "Maybe it's sent me way back. Back to the construction of this place.",
-   "dst": "",
+   "dst": "Может, она забросила меня далеко назад. Во времена стройки.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -448,7 +448,7 @@
   },
   "Deja Vu#044": {
    "src": "Then why is no one here?",
-   "dst": "",
+   "dst": "Но почему тут никого?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -458,7 +458,7 @@
   },
   "Deja Vu#045": {
    "src": "Woah, that tree looks like it might fall over!",
-   "dst": "",
+   "dst": "Ого, это дерево того и гляди рухнет!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -468,7 +468,7 @@
   },
   "Deja Vu#046": {
    "src": "That was a close one!",
-   "dst": "",
+   "dst": "Еле пронесло!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -478,7 +478,7 @@
   },
   "Deja Vu#047": {
    "src": "Uhf! How do they have a cannon? These guys must be super advanced.",
-   "dst": "",
+   "dst": "Уф! Откуда у них пушка? Они, видать, очень продвинутые.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -488,7 +488,7 @@
   },
   "Deja Vu#048": {
    "src": "I think I'm close now. I can just feel that shovel close by.",
-   "dst": "",
+   "dst": "Я уже близко. Чую, лопата где-то рядом.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -498,7 +498,7 @@
   },
   "Deja Vu#049": {
    "src": "Wait, what's that-?",
-   "dst": "",
+   "dst": "Постой, что это—?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -508,7 +508,7 @@
   },
   "Deja Vu#050": {
    "src": "My my, a crushing defeat to be sure. You'll have to find a way to stop that.",
-   "dst": "",
+   "dst": "Ну и ну, сокрушительный провал. Надо это предотвратить.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -518,7 +518,7 @@
   },
   "Deja Vu#051": {
    "src": "Go back through the rift and make sure Asher doesn't become a pancake this time.",
-   "dst": "",
+   "dst": "Вернись через разлом и проследи, чтобы Asher на этот раз не стал блином.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -528,7 +528,7 @@
   },
   "Deja Vu#052": {
    "src": "Wait, what's that-?",
-   "dst": "",
+   "dst": "Постой, что это—?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -538,7 +538,7 @@
   },
   "Deja Vu#053": {
    "src": "Well that was quite the explosive end to our friend there. There must be a way to prevent that.",
-   "dst": "",
+   "dst": "Что ж, взрывной финал у нашего друга. Должен быть способ этого избежать.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -548,7 +548,7 @@
   },
   "Deja Vu#054": {
    "src": "Head back in there. This time with less explosions.",
-   "dst": "",
+   "dst": "Возвращайся туда. На этот раз поменьше взрывов.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -558,7 +558,7 @@
   },
   "Deja Vu#055": {
    "src": "Oh, so close on that try. Who could've guessed that was how our friend met his end?",
-   "dst": "",
+   "dst": "Ох, почти получилось. Кто бы мог подумать, что наш друг кончит вот так?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -568,7 +568,7 @@
   },
   "Deja Vu#056": {
    "src": "I'm sure you'll nail it this time. Not sure how you will stop a cosmic event, though.",
-   "dst": "",
+   "dst": "Уверен, теперь-то справишься. Правда, не знаю, как ты остановишь небесное явление.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -578,7 +578,7 @@
   },
   "Deja Vu#057": {
    "src": "Oh there it is! My shovel!",
-   "dst": "",
+   "dst": "О, вот она! Моя лопата!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -588,7 +588,7 @@
   },
   "Deja Vu#058": {
    "src": "I'm surprised it took me back this far this time.",
-   "dst": "",
+   "dst": "Надо же, как далеко она меня закинула в этот раз.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -598,7 +598,7 @@
   },
   "Deja Vu#059": {
    "src": "Well, time to head on back-",
-   "dst": "",
+   "dst": "Что ж, пора назад—",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -608,7 +608,7 @@
   },
   "Deja Vu#060": {
    "src": "Wait, Martyn?",
-   "dst": "",
+   "dst": "Постойте, Martyn?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -618,7 +618,7 @@
   },
   "Deja Vu#061": {
    "src": "Ow! What was that for?",
-   "dst": "",
+   "dst": "Ай! За что?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -628,7 +628,7 @@
   },
   "Deja Vu#062": {
    "src": "Asher, you remember when I allowed you to live in the valley, I told you not to touch any odd objects.",
-   "dst": "",
+   "dst": "Asher, помнишь, когда я пустил тебя жить в долину, я велел не трогать странных вещей.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -638,7 +638,7 @@
   },
   "Deja Vu#063": {
    "src": "I... Might recall it.",
-   "dst": "",
+   "dst": "Я… Кажется, припоминаю.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -648,7 +648,7 @@
   },
   "Deja Vu#064": {
    "src": "You got yourself stuck hundreds of years ago. If it wasn't for this guard, you'd be removed from existence.",
-   "dst": "",
+   "dst": "Ты застрял на сотни лет в прошлом. Если бы не этот страж, ты бы исчез из бытия.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -658,7 +658,7 @@
   },
   "Deja Vu#065": {
    "src": "Oh... So that's where I am. I am so sorry Martyn. Please don't kick me out of the valley.",
-   "dst": "",
+   "dst": "Ох… Так вот где я. Простите, Martyn. Пожалуйста, не выгоняйте меня из долины.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -668,7 +668,7 @@
   },
   "Deja Vu#066": {
    "src": "I know time travel can be tempting. But it's far more dangerous than you can ever understand.",
-   "dst": "",
+   "dst": "Знаю, путешествия во времени манят. Но они куда опаснее, чем ты можешь представить.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -678,7 +678,7 @@
   },
   "Deja Vu#067": {
    "src": "The valley is banned for most citizens. I watch over this timeline because of poor souls like Asher.",
-   "dst": "",
+   "dst": "Долина закрыта почти для всех. Я берегу эту линию времени ради бедолаг вроде Asher.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -688,7 +688,7 @@
   },
   "Deja Vu#068": {
    "src": "Listen to Old Man Martyn.",
-   "dst": "",
+   "dst": "Выслушай Old Man Martyn.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -698,7 +698,7 @@
   },
   "Deja Vu#069": {
    "src": "Holy Bovine!",
-   "dst": "",
+   "dst": "Святая корова!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -708,7 +708,7 @@
   },
   "Deja Vu#070": {
    "src": "Ah, we're back.",
-   "dst": "",
+   "dst": "А, мы вернулись.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -718,7 +718,7 @@
   },
   "Deja Vu#071": {
    "src": "How did you get these powers? Are you even human?",
-   "dst": "",
+   "dst": "Откуда у вас такие силы? Вы вообще человек?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -728,7 +728,7 @@
   },
   "Deja Vu#072": {
    "src": "Oh you know. I've read a book or two in my time.",
-   "dst": "",
+   "dst": "Ну, знаешь ли. Прочёл пару книжек в своё время.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -738,7 +738,7 @@
   },
   "Deja Vu#073": {
    "src": "{u}, I'm sorry I got you dragged into this. I wish I could have done it myself.",
-   "dst": "",
+   "dst": "{u}, прости, что втянул тебя в это. Жаль, что не мог справиться сам.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -748,7 +748,7 @@
   },
   "Deja Vu#074": {
    "src": "I probably could have gotten myself out...",
-   "dst": "",
+   "dst": "Я бы, наверное, и сам выбрался…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -758,7 +758,7 @@
   },
   "Deja Vu#075": {
    "src": "You died in the past. Multiple times.",
-   "dst": "",
+   "dst": "Ты погибал в прошлом. Не раз.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -768,7 +768,7 @@
   },
   "Deja Vu#076": {
    "src": "I did?",
-   "dst": "",
+   "dst": "Правда?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -778,7 +778,7 @@
   },
   "Deja Vu#077": {
    "src": "Yes. In some surprising ways too.",
-   "dst": "",
+   "dst": "Да. И порой весьма неожиданно.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -788,7 +788,7 @@
   },
   "Deja Vu#078": {
    "src": "{u}, I'm sure we will meet again... in time.",
-   "dst": "",
+   "dst": "{u}, уверен, мы ещё встретимся… со временем.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -798,7 +798,7 @@
   },
   "Deja Vu#079": {
    "src": "See you around.",
-   "dst": "",
+   "dst": "Ещё увидимся.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -808,7 +808,7 @@
   },
   "Deja Vu#080": {
    "src": "Uh, you're still here.",
-   "dst": "",
+   "dst": "Э, вы всё ещё здесь.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -818,7 +818,7 @@
   },
   "Deja Vu#081": {
    "src": "Am I?",
-   "dst": "",
+   "dst": "Разве?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -828,7 +828,7 @@
   },
   "Deja Vu#082": {
    "src": "I don't understand Martyn. He seems to know everything about the past. Here, come closer, I want to whisper something.",
-   "dst": "",
+   "dst": "Не понимаю я Martyn. Он будто знает всё о прошлом. Подойди, хочу кое-что шепнуть.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -838,7 +838,7 @@
   },
   "Deja Vu#083": {
    "src": "Talk to Asher.",
-   "dst": "",
+   "dst": "Поговори с Asher.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -848,7 +848,7 @@
   },
   "Deja Vu#084": {
    "src": "I think he might have known Bob. I saw some letters in his house.",
-   "dst": "",
+   "dst": "По-моему, он знал Bob. Я видел письма у него дома.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -858,7 +858,7 @@
   },
   "Deja Vu#085": {
    "src": "Weird, right? Bob was a hard guy to know.",
-   "dst": "",
+   "dst": "Странно, да? Bob был нелюдимым.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -868,7 +868,7 @@
   },
   "Deja Vu#086": {
    "src": "Anyway, take this. It's the least I can do to pay you for saving me.",
-   "dst": "",
+   "dst": "В общем, держи. Это меньшее, чем я могу отплатить за спасение.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",

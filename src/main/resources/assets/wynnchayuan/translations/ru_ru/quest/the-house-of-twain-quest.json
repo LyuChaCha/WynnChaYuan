@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The House of Twain (Quest)",
   "count": 15,
-  "translated": 0,
+  "translated": 15,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The House of Twain (Quest)#000": {
    "src": "Talk to Twendle at The {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Поговори с Twendle в {p}, на [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "The House of Twain (Quest)",
@@ -18,7 +18,7 @@
   },
   "The House of Twain (Quest)#001": {
    "src": "Oh, hey you there! Are you heading down this road? You know it's a dead end, right?",
-   "dst": "",
+   "dst": "О, эй, ты! Идёшь по этой дороге? Знаешь ведь, что это тупик?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -28,7 +28,7 @@
   },
   "The House of Twain (Quest)#002": {
    "src": "It leads to an old mansion, that has fallen into decay.",
-   "dst": "",
+   "dst": "Она ведёт к старому особняку, пришедшему в упадок.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -38,7 +38,7 @@
   },
   "The House of Twain (Quest)#003": {
    "src": "That mansion is the house of my ancestor; Dwendle Twain. It was a house of incredible heritage and magical powers, Dwendle himself was adopted into it.",
-   "dst": "",
+   "dst": "Это особняк моего предка, Dwendle Twain. Род с великим наследием и магической силой, а сам Dwendle был в него принят.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -48,7 +48,7 @@
   },
   "The House of Twain (Quest)#004": {
    "src": "Marius Twain was the leader of the mansion; they fought against evil spirits, I think. The history of the house is not well-known, outside of a novel.",
-   "dst": "",
+   "dst": "Главой особняка был Marius Twain; кажется, они бились со злыми духами. История рода мало кому известна, разве что по роману.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -58,7 +58,7 @@
   },
   "The House of Twain (Quest)#005": {
    "src": "I want to know the history of the mansion and uncover its secrets, but every time I get close, dark beings prevent me from entering.",
-   "dst": "",
+   "dst": "Хочу узнать историю особняка и раскрыть его тайны, но стоит подойти - тёмные существа не пускают меня.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -68,7 +68,7 @@
   },
   "The House of Twain (Quest)#006": {
    "src": "I am no soldier, and I don't think I will ever uncover the truth without your help. I can greatly reward you for your help.",
-   "dst": "",
+   "dst": "Я не воин и без твоей помощи правды не узнаю. Я щедро тебя награжу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -78,7 +78,7 @@
   },
   "The House of Twain (Quest)#007": {
    "src": "My ancestor left our family a large amount of emeralds. Beware though, traveller, the mansion's secrets are incredibly difficult to uncover and the monsters are powerful.",
-   "dst": "",
+   "dst": "Мой предок оставил семье кучу изумрудов. Но берегись, путник: тайны особняка раскрыть крайне трудно, а чудища там сильны.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -88,7 +88,7 @@
   },
   "The House of Twain (Quest)#008": {
    "src": "Unravel the secrets of the mansion and help me uncover the secrets of my heritage. Bring me [{~} Twain Journal].",
-   "dst": "",
+   "dst": "Разгадай тайны особняка и помоги мне узнать о моих корнях. Принеси мне [{~} Дневник Twain].",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -98,7 +98,7 @@
   },
   "The House of Twain (Quest)#009": {
    "src": "This book has been hidden within the depths of the mansion and is protected by far more than puzzles or walls.",
-   "dst": "",
+   "dst": "Эта книга спрятана в глубинах особняка, и охраняют её не только загадки и стены.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -108,7 +108,7 @@
   },
   "The House of Twain (Quest)#010": {
    "src": "I believe the spirits that now haunt the mansion will do anything to protect the book. I'm sure they think it's their own, and the secrets it hides.",
-   "dst": "",
+   "dst": "Думаю, духи, что бродят по особняку, пойдут на всё ради книги. Уверен, они считают её и её тайны своими.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -118,7 +118,7 @@
   },
   "The House of Twain (Quest)#011": {
    "src": "Bring [{~} Twain Journal] to Twendle",
-   "dst": "",
+   "dst": "Принеси [{~} Дневник Twain] Twendle",
    "role": "desc",
    "kind": "objective",
    "quest": "The House of Twain (Quest)",
@@ -128,7 +128,7 @@
   },
   "The House of Twain (Quest)#012": {
    "src": "If you already have a Ghostly Cap, you can wear that one and do not have to do any previous steps in order for the quest to work.",
-   "dst": "",
+   "dst": "Если у вас уже есть Ghostly Cap, просто наденьте её - предыдущие шаги можно пропустить, задание всё равно сработает.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -138,7 +138,7 @@
   },
   "The House of Twain (Quest)#013": {
    "src": "I guess I put my faith in the right person. My history lies within these pages, and I don't intend to keep them secret. I shall make them public.",
-   "dst": "",
+   "dst": "Похоже, я доверился правильному человеку. Моя история на этих страницах, и я не стану их скрывать. Я их обнародую.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -148,7 +148,7 @@
   },
   "The House of Twain (Quest)#014": {
    "src": "Thank you traveller. As promised, here is your reward.",
-   "dst": "",
+   "dst": "Спасибо, путник. Как и обещал, вот награда.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",

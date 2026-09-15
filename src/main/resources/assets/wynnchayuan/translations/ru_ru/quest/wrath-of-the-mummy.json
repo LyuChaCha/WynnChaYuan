@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Wrath of the Mummy",
   "count": 33,
-  "translated": 0,
+  "translated": 33,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Wrath of the Mummy#000": {
    "src": "Talk to Ormrod in the desert of {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Поговори с Ormrod в пустыне {p} на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Wrath of the Mummy",
@@ -18,7 +18,7 @@
   },
   "Wrath of the Mummy#001": {
    "src": "Stay away, friend!",
-   "dst": "",
+   "dst": "Не подходи, друг!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -28,7 +28,7 @@
   },
   "Wrath of the Mummy#002": {
    "src": "I live in this camp by choice. A curse follows me... and now trouble starts wherever I go. I left civilization and made camp in the desert, where I could do no more harm.",
-   "dst": "",
+   "dst": "Я живу в этом лагере по своей воле. За мной тянется проклятие... и где я, там беда. Я ушёл от цивилизации в пустыню, где больше никому не наврежу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -38,7 +38,7 @@
   },
   "Wrath of the Mummy#003": {
    "src": "I do miss the comforts of {p} some days, though... you look like a learned adventurer. If I asked you to investigate this curse, perhaps you could help me rid myself of it?",
-   "dst": "",
+   "dst": "Хотя порой скучаю по уюту {p}... У тебя вид бывалого искателя приключений. Если попрошу разобраться с проклятием, поможешь от него избавиться?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -48,7 +48,7 @@
   },
   "Wrath of the Mummy#004": {
    "src": "It all started when I discovered an old tomb in the North of the desert. Upon entering it, the ground started shaking and I heard inhuman screams coming from deeper within.",
-   "dst": "",
+   "dst": "Всё началось, когда я нашёл старую гробницу на севере пустыни. Стоило войти, как земля задрожала, а из глубины донеслись нечеловеческие крики.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -58,7 +58,7 @@
   },
   "Wrath of the Mummy#005": {
    "src": "I ran as fast as I could, learning later the tomb housed the remains of an ancient Mummy... which I accidentally awoke. If the Mummy could be put back to rest, perhaps the curse would go away.",
-   "dst": "",
+   "dst": "Я бежал со всех ног, а позже узнал, что там покоились останки древней мумии... которую я случайно разбудил. Если упокоить мумию, может, и проклятие уйдёт.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -68,7 +68,7 @@
   },
   "Wrath of the Mummy#006": {
    "src": "I have heard of a scholar in {p}, Achper, who may know more about the tomb. I am reluctant to return to the city, in case my presence hurts anyone else.",
-   "dst": "",
+   "dst": "Слышал, в {p} есть учёный Achper, он может знать о гробнице больше. Возвращаться в город не хочу — вдруг из-за меня кто-то ещё пострадает.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -78,7 +78,7 @@
   },
   "Wrath of the Mummy#007": {
    "src": "If you would truly like to help, you should start by talking to him.",
-   "dst": "",
+   "dst": "Если правда хочешь помочь, начни с разговора с ним.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -88,7 +88,7 @@
   },
   "Wrath of the Mummy#008": {
    "src": "Talk to Achper in {p} about the curse at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Расспроси Achper о проклятии в {p} на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Wrath of the Mummy",
@@ -98,7 +98,7 @@
   },
   "Wrath of the Mummy#009": {
    "src": "If I know about mummies? Of course! I've spent my entire life studying them!",
-   "dst": "",
+   "dst": "Знаю ли я о мумиях? Конечно! Я всю жизнь их изучаю!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -108,7 +108,7 @@
   },
   "Wrath of the Mummy#010": {
    "src": "They usually are very hard to reach, hidden in their tomb... and they don't like being disturbed.",
-   "dst": "",
+   "dst": "Добраться до них обычно очень трудно, они прячутся в гробницах... и не любят, когда их тревожат.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -118,7 +118,7 @@
   },
   "Wrath of the Mummy#011": {
    "src": "I have heard of the curse that follows Ormrod, and the only way to remove its effects would be to kill the mummy.",
-   "dst": "",
+   "dst": "Я слышал о проклятии Ormrod, и снять его можно, лишь убив мумию.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -128,7 +128,7 @@
   },
   "Wrath of the Mummy#012": {
    "src": "The tomb lies in the North of the desert, but be very careful!",
-   "dst": "",
+   "dst": "Гробница на севере пустыни, но будь начеку!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -138,7 +138,7 @@
   },
   "Wrath of the Mummy#013": {
    "src": "Mummies aren't known to be weak... especially that one. It's demonic... pure evil, It's easily one of the most powerful specimens I've encountered.",
-   "dst": "",
+   "dst": "Мумии слабыми не бывают... особенно эта. Она демоническая... чистое зло, одна из сильнейших, что я встречал.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -148,7 +148,7 @@
   },
   "Wrath of the Mummy#014": {
    "src": "On top of that, the Creden Tibus bandit clan have been ransacking the tombs around the desert. You might run into trouble with them, so be prepared.",
-   "dst": "",
+   "dst": "К тому же банда Creden Tibus грабит гробницы по всей пустыне. С ними могут быть проблемы, так что готовься.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -158,7 +158,7 @@
   },
   "Wrath of the Mummy#015": {
    "src": "Attempt to enter the Mummy's tomb at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Попытайся войти в гробницу мумии на [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Wrath of the Mummy",
@@ -168,7 +168,7 @@
   },
   "Wrath of the Mummy#016": {
    "src": "Stop! If you're thinking about looting the tomb, you're too late. The Creden Tibus have laid claim here, and you're not getting past.",
-   "dst": "",
+   "dst": "Стоять! Хочешь обчистить гробницу — поздно. Её заняли Creden Tibus, и тебе не пройти.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -178,7 +178,7 @@
   },
   "Wrath of the Mummy#017": {
    "src": "Mummy? Curse? I don't know anything about that, but I can't let you in - how do I know you won't just grab the gold?",
-   "dst": "",
+   "dst": "Мумия? Проклятие? Ничего не знаю, но впустить не могу — вдруг ты просто стащишь золото?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -188,7 +188,7 @@
   },
   "Wrath of the Mummy#018": {
    "src": "Unless... look. I've been waiting to get my hands on some pink wool, and the only shop that sells it has just been restocked.",
-   "dst": "",
+   "dst": "Разве что... слушай. Я давно хочу раздобыть розовой шерсти, а единственная лавка с ней как раз пополнила запас.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -198,7 +198,7 @@
   },
   "Wrath of the Mummy#019": {
    "src": "Trouble is, the shop's over in {p} and I'm stuck guarding this tomb. If you go and grab me some before it sells out, I can look the other way.",
-   "dst": "",
+   "dst": "Беда в том, что лавка в {p}, а я застрял тут сторожить гробницу. Принесёшь, пока не раскупили, — я закрою глаза.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -208,7 +208,7 @@
   },
   "Wrath of the Mummy#020": {
    "src": "You can take my wagon over there, but you'll have to make your own way back. Give me [{~} Pink Wool] and I'll let you through.",
-   "dst": "",
+   "dst": "Можешь доехать туда на моей повозке, но обратно своим ходом. Дай мне [{~} Розовая шерсть], и я пропущу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -218,7 +218,7 @@
   },
   "Wrath of the Mummy#021": {
    "src": "Use the bandit's wagon at [{~}, {~}, -{~}] to get to {p}.",
-   "dst": "",
+   "dst": "Доедь на повозке бандита с [{~}, {~}, -{~}] до {p}.",
    "role": "desc",
    "kind": "objective",
    "quest": "Wrath of the Mummy",
@@ -228,7 +228,7 @@
   },
   "Wrath of the Mummy#022": {
    "src": "Bring back [{~} Pink Wool] to the bandit at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Принеси [{~} Розовая шерсть] бандиту на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Wrath of the Mummy",
@@ -238,7 +238,7 @@
   },
   "Wrath of the Mummy#023": {
    "src": "Well, whaddya know? You got some Pink Wool! Okay, hand it here and I'll look the other way and let you into the tomb.",
-   "dst": "",
+   "dst": "Гляди-ка! Розовая шерсть! Ладно, давай сюда, я отвернусь и пущу тебя в гробницу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -248,7 +248,7 @@
   },
   "Wrath of the Mummy#024": {
    "src": "Just don't touch any of the gold, hmm? And if I were you, I wouldn't go in too deep.",
-   "dst": "",
+   "dst": "Только золото не трогай, ага? И на твоём месте я бы далеко не заходил.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -258,7 +258,7 @@
   },
   "Wrath of the Mummy#025": {
    "src": "The clan was going to explore further inside, but the sounds...",
-   "dst": "",
+   "dst": "Банда хотела пойти глубже, но эти звуки...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -268,7 +268,7 @@
   },
   "Wrath of the Mummy#026": {
    "src": "Anyway, I'll still let you inside if you want. Just remember, if anyone asks, this conversation never happened.",
-   "dst": "",
+   "dst": "В общем, если хочешь, я всё равно пущу. Только помни: если спросят, этого разговора не было.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -278,7 +278,7 @@
   },
   "Wrath of the Mummy#027": {
    "src": "Enter the tomb at [{~}, {~}, -{~}] and kill the Mummy.",
-   "dst": "",
+   "dst": "Войди в гробницу на [{~}, {~}, -{~}] и убей мумию.",
    "role": "desc",
    "kind": "objective",
    "quest": "Wrath of the Mummy",
@@ -288,7 +288,7 @@
   },
   "Wrath of the Mummy#028": {
    "src": "Bring [{~} Mummy's Bandage] to Ormrod at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Принеси [{~} Бинт мумии] Ormrod на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Wrath of the Mummy",
@@ -298,7 +298,7 @@
   },
   "Wrath of the Mummy#029": {
    "src": "Hello, again... have you had any luck?",
-   "dst": "",
+   "dst": "Снова здравствуй... есть успехи?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -308,7 +308,7 @@
   },
   "Wrath of the Mummy#030": {
    "src": "Those are the Mummy's bandages?! You did it? My curse is finally lifted!",
-   "dst": "",
+   "dst": "Это бинты мумии?! Получилось? Проклятие наконец снято!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -318,7 +318,7 @@
   },
   "Wrath of the Mummy#031": {
    "src": "I can't thank you enough! As a reward, take this rag I got from the Mummy when I entered the tomb.",
-   "dst": "",
+   "dst": "Не знаю, как тебя благодарить! В награду возьми эту тряпку, что я снял с мумии в гробнице.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",
@@ -328,7 +328,7 @@
   },
   "Wrath of the Mummy#032": {
    "src": "I am not strong enough to wear it, but I'm sure you are! Take these emeralds too, that's the least I can do!",
-   "dst": "",
+   "dst": "Мне не хватит сил её носить, а тебе наверняка хватит! Возьми и изумруды, это самое малое!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Wrath of the Mummy",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Clearing the Camps",
   "count": 14,
-  "translated": 0,
+  "translated": 14,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Clearing the Camps#000": {
    "src": "Talk to Captain Kymer outside {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Поговори с Капитаном Kymer за пределами {p} в [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Clearing the Camps",
@@ -18,7 +18,7 @@
   },
   "Clearing the Camps#001": {
    "src": "Aha, another {p} soldier, eh? Well, a warm welcome to you.",
-   "dst": "",
+   "dst": "Ага, ещё один солдат из {p}, а? Что ж, добро пожаловать.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -28,7 +28,7 @@
   },
   "Clearing the Camps#002": {
    "src": "Did you hear about the requests from the Villagers we've gotten? They say these \"Orcs\" and \"Goblins\" are threatening their towns and cities.",
-   "dst": "",
+   "dst": "Знаешь о просьбах, что пришли от селян? Говорят, какие-то «Orcs» и «Goblins» угрожают их городам и сёлам.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -38,7 +38,7 @@
   },
   "Clearing the Camps#003": {
    "src": "Primitive, brutal creatures, apparently little better than the zombies we're used to, at least according to the {p} military.",
-   "dst": "",
+   "dst": "Первобытные, жестокие твари — по словам военных {p}, немногим лучше привычных нам зомби.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -48,7 +48,7 @@
   },
   "Clearing the Camps#004": {
    "src": "So, we figure if might makes right with them, then defeating their leaders should scare them into submission.",
-   "dst": "",
+   "dst": "Вот мы и решили: раз у них прав тот, кто сильнее, победа над вожаками их запугает.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -58,7 +58,7 @@
   },
   "Clearing the Camps#005": {
    "src": "Our scouts have identified three \"chief\" orcs in the area- Elisu, Ceifko and Veltu. Though, strangely Veltu is always surrounded by goblins...",
-   "dst": "",
+   "dst": "Разведчики нашли в округе трёх «вождей» орков — Elisu, Ceifko и Veltu. Хотя Veltu почему-то всегда окружён гоблинами…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -68,7 +68,7 @@
   },
   "Clearing the Camps#006": {
    "src": "Well, whatever the case, we're needed to defend {p} here. Can you handle the chiefs? They seem to hide in the camps with green flags- search the plains, return once they're dealt with!",
-   "dst": "",
+   "dst": "В общем, нам нужно оборонять {p}. Справишься с вождями? Они, похоже, прячутся в лагерях с зелёными флагами — обыщи равнины и возвращайся, когда разберёшься!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -78,7 +78,7 @@
   },
   "Clearing the Camps#007": {
    "src": "Find and kill Orc Chieftains Elisu, Veltu, and Ceifko in the camps around {p}- look for green flags",
-   "dst": "",
+   "dst": "Найди и убей вождей орков Elisu, Veltu и Ceifko в лагерях вокруг {p} — ищи зелёные флаги",
    "role": "desc",
    "kind": "objective",
    "quest": "Clearing the Camps",
@@ -88,7 +88,7 @@
   },
   "Clearing the Camps#008": {
    "src": "Report back to Captain Kymer once you have the three heads.",
-   "dst": "",
+   "dst": "Вернись к Капитану Kymer с тремя головами.",
    "role": "desc",
    "kind": "objective",
    "quest": "Clearing the Camps",
@@ -98,7 +98,7 @@
   },
   "Clearing the Camps#009": {
    "src": "Ah, the soldier from earlier! You're back, I see. Any luck defeating those- ...yeesh. Are those their heads?",
-   "dst": "",
+   "dst": "А, солдат из недавнего! Снова здесь, вижу. Как успехи с этими… брр. Это их головы?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -108,7 +108,7 @@
   },
   "Clearing the Camps#010": {
    "src": "That's...harsher than I intended, but it works... Not like the Villagers care if they're dead of alive, as long as they're dealt with. I have your share of the reward here.",
-   "dst": "",
+   "dst": "Это… жёстче, чем я задумывал, но сойдёт… Селянам всё равно, живы они или мертвы, лишь бы с ними покончили. Вот твоя доля награды.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -118,7 +118,7 @@
   },
   "Clearing the Camps#011": {
    "src": "This kind of surgical strike should help prevent an all-out war with the Orcs. Not sure we'd want a full-scale war to deal with in each province, hah!",
-   "dst": "",
+   "dst": "Такой точечный удар поможет избежать войны с орками. Не хватало нам ещё полномасштабной войны в каждой провинции, ха!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -128,7 +128,7 @@
   },
   "Clearing the Camps#012": {
    "src": "You saw that the creatures in Gavel aren't akin to Wynnic fare while you were out, yes? They're a bit, ah...livelier than usual. Better get used to it.",
-   "dst": "",
+   "dst": "Ты ведь видишь, что твари в Gavel — не чета тем, что в Wynn? Они, э-э… пободрее обычного. Привыкай.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",
@@ -138,7 +138,7 @@
   },
   "Clearing the Camps#013": {
    "src": "The next major settlement is {p}, in the swamp up north, but I hear the swamp ogres are a lot tougher than the plains' fare. I'd stick around here and train up, first.",
-   "dst": "",
+   "dst": "Следующее крупное поселение — {p}, в болоте на севере, но болотные огры, говорят, куда крепче равнинных. На твоём месте я бы сперва потренировался здесь.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Clearing the Camps",

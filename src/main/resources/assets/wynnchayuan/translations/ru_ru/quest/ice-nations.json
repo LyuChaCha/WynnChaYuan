@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Ice Nations",
   "count": 26,
-  "translated": 0,
+  "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Ice Nations#000": {
    "src": "Talk to Adigard on the {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Поговори с Adigard на {p} в [{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "Ice Nations",
@@ -18,7 +18,7 @@
   },
   "Ice Nations#001": {
    "src": "Welcome traveler, to our humble island...",
-   "dst": "",
+   "dst": "Добро пожаловать на наш остров...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -28,7 +28,7 @@
   },
   "Ice Nations#002": {
    "src": "My people and I landed here many years ago. Unfortunately, our ship didn't make it...",
-   "dst": "",
+   "dst": "Мы с моим народом высадились здесь много лет назад. Увы, наш корабль не уцелел...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -38,7 +38,7 @@
   },
   "Ice Nations#003": {
    "src": "We tried to build a nation on these islands but became divided through the years.",
-   "dst": "",
+   "dst": "Мы пытались построить на этих островах державу, но за годы раскололись.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -48,7 +48,7 @@
   },
   "Ice Nations#004": {
    "src": "Because of this, we are fighting a useless war with our neighbours.",
-   "dst": "",
+   "dst": "Потому мы и ведём бессмысленную войну с соседями.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -58,7 +58,7 @@
   },
   "Ice Nations#005": {
    "src": "I believe we should try to pass a peace treaty, but I am afraid of getting killed if I leave the island...",
-   "dst": "",
+   "dst": "Я думаю, надо заключить мир, но боюсь, что меня убьют, если я покину остров...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -68,7 +68,7 @@
   },
   "Ice Nations#006": {
    "src": "Would you mind helping us? Talk to Hallfred about this treaty. He lives on another ice island nearby.",
-   "dst": "",
+   "dst": "Поможешь нам? Поговори с Hallfred о договоре. Он живёт на соседнем ледяном острове.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -78,7 +78,7 @@
   },
   "Ice Nations#007": {
    "src": "Talk to Hallfred about the peace treaty",
-   "dst": "",
+   "dst": "Поговори с Hallfred о мирном договоре",
    "role": "desc",
    "kind": "objective",
    "quest": "Ice Nations",
@@ -88,7 +88,7 @@
   },
   "Ice Nations#008": {
    "src": "Welcome traveler! What brings you to our island?",
-   "dst": "",
+   "dst": "Добро пожаловать, путник! Что привело тебя на наш остров?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -98,7 +98,7 @@
   },
   "Ice Nations#009": {
    "src": "Oh, I see that Adigard now sends strangers through his cowardice! Worried he'll get killed?",
-   "dst": "",
+   "dst": "О, вижу, Adigard из трусости уже шлёт чужаков! Боится, что его убьют?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -108,7 +108,7 @@
   },
   "Ice Nations#010": {
    "src": "This is the last time I'll repeat it: We will sign the peace treaty the day Adigard and his nation will return to us... the treasure.",
-   "dst": "",
+   "dst": "Повторяю в последний раз: мы подпишем мир в тот день, когда Adigard и его народ вернут нам... сокровище.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -118,7 +118,7 @@
   },
   "Ice Nations#011": {
    "src": "The one that they kept and hid from us after the shipwreck.",
-   "dst": "",
+   "dst": "То, что они утаили от нас после крушения.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -128,7 +128,7 @@
   },
   "Ice Nations#012": {
    "src": "Pure gold, very valuable and rare! Tell him I'll be waiting for it. And none of that silly story again.",
-   "dst": "",
+   "dst": "Чистое золото, ценное и редкое! Передай, что я жду. И никаких больше глупых баек.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -138,7 +138,7 @@
   },
   "Ice Nations#013": {
    "src": "Talk back to Adigard about Hallfred's response",
-   "dst": "",
+   "dst": "Передай Adigard ответ Hallfred",
    "role": "desc",
    "kind": "objective",
    "quest": "Ice Nations",
@@ -148,7 +148,7 @@
   },
   "Ice Nations#014": {
    "src": "I should have expected that. Hallfred was always very greedy...",
-   "dst": "",
+   "dst": "Следовало ожидать. Hallfred всегда был жаден...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -158,7 +158,7 @@
   },
   "Ice Nations#015": {
    "src": "We tried to make him understand that we do not have the treasure, without much success.",
-   "dst": "",
+   "dst": "Мы пытались объяснить ему, что сокровища у нас нет, но без толку.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -168,7 +168,7 @@
   },
   "Ice Nations#016": {
    "src": "... You see, the reason why we became shipwrecked wasn't natural cause. We were attacked...",
-   "dst": "",
+   "dst": "...Видишь ли, кораблекрушение было не случайным. На нас напали...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -178,7 +178,7 @@
   },
   "Ice Nations#017": {
    "src": "By whom? The undead. Ghosts and demons navigating a monstrous ship. They got us by surprise.",
-   "dst": "",
+   "dst": "Кто? Нежить. Призраки и демоны на чудовищном корабле. Застали нас врасплох.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -188,7 +188,7 @@
   },
   "Ice Nations#018": {
    "src": "I believe they also stole our treasure during the attack.",
-   "dst": "",
+   "dst": "Думаю, сокровище они тоже украли тогда.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -198,7 +198,7 @@
   },
   "Ice Nations#019": {
    "src": "Would you help our nation come back together? Find this ship, and bring the treasure back to Hallfred so we can finally live in peace.",
-   "dst": "",
+   "dst": "Поможешь нашему народу вновь объединиться? Найди этот корабль и отнеси сокровище Hallfred, чтобы мы наконец жили в мире.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -208,7 +208,7 @@
   },
   "Ice Nations#020": {
    "src": "Sail north. That is where they attacked us many years ago. It should be easy to find, I'm sure they are anchored there in glory... Thank you.",
-   "dst": "",
+   "dst": "Плыви на север. Там они напали на нас много лет назад. Найти несложно — уверен, они там гордо стоят на якоре... Спасибо.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -218,7 +218,7 @@
   },
   "Ice Nations#021": {
    "src": "Find the ghost ship and bring back [Ancient Treasure] to Hallfred",
-   "dst": "",
+   "dst": "Найди корабль-призрак и отнеси [Ancient Treasure] Hallfred",
    "role": "desc",
    "kind": "objective",
    "quest": "Ice Nations",
@@ -228,7 +228,7 @@
   },
   "Ice Nations#022": {
    "src": "Incredible! He actually delivered the treasure!",
-   "dst": "",
+   "dst": "Невероятно! Он и правда отдал сокровище!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -238,7 +238,7 @@
   },
   "Ice Nations#023": {
    "src": "I suppose that means the end of the war between our nations!",
-   "dst": "",
+   "dst": "Значит, войне между нашими народами конец!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -248,7 +248,7 @@
   },
   "Ice Nations#024": {
    "src": "This is a great day! Here, take this as a reward for helping our nation.",
-   "dst": "",
+   "dst": "Великий день! Вот, возьми награду за помощь нашему народу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
@@ -258,7 +258,7 @@
   },
   "Ice Nations#025": {
    "src": "I'm sure you'll find a use for this helmet one day!",
-   "dst": "",
+   "dst": "Уверен, этот шлем тебе однажды пригодится!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Ice Nations",
