@@ -1095,13 +1095,13 @@
   },
   "major-id#0205": {
    "src": "Courage will immediately combust Guardian Angels, dealing {#}{~} and enkindling Buckshot's arrows with {#}{~} Main Attack damage.",
-   "dst": "Courage 會立即焚化 Guardian Angels，造成 {#}{~1} 傷害，並點燃散彈的箭矢，使其額外造成 {#}{~2} 普通攻擊傷害。",
+   "dst": "Courage 會立即焚化 Guardian Angels，造成 {#}{~1} 傷害，並點燃 Buckshot 的箭矢，降下懲戒，使其額外造成 {#}{~2} 普通攻擊傷害。",
    "role": "desc",
    "_raw": "Courage will immediately combust Guardian Angels, dealing 4000% and enkindling Buckshot's arrows with 20% Main Attack damage."
   },
   "major-id#0206": {
    "src": "Curse instead releases a calming wave with a radius of {~} blocks. Allies affected will have their Mana Regen and Mana Steal increased by {~} for {~}s.",
-   "dst": "Curse 改為釋放一道半徑 {~1} 格的安撫波。受影響的友軍魔力恢復與魔力竊取提高 {~2}，持續 {~3} 秒。",
+   "dst": "Curse 改為釋放一道半徑 {~1} 格的安撫波。受影響的友軍 Mana Regen 與 Mana Steal 提高 {~2}，持續 {~3} 秒。",
    "role": "desc",
    "_raw": "Curse instead releases a calming wave with a radius of 8 blocks. Allies affected will have their Mana Regen and Mana Steal increased by 25% for 6s."
   },
@@ -1159,7 +1159,7 @@
   },
   "Elven Current::desc": {
    "src": "Escape can be re-cast twice in mid-air.",
-   "dst": "Escape 可以在空中施放兩次。",
+   "dst": "可以在空中施放兩次 Escape 。",
    "role": "desc"
   },
   "Displace::desc": {
@@ -1344,7 +1344,7 @@
   },
   "major-id#0249": {
    "src": "Mirror and Shadow clones will cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply {~} Trick stacks.",
-   "dst": "鏡中幻象與幽影幻象會在 Last Laugh 時施放 Meteor。Malicious Mockery 使 Meteor 施加 {~} 層 Trick。",
+   "dst": "Mirror Clone 與 Shadow Clone 會在 Last Laugh 時施放 Meteor。Malicious Mockery 使 Meteor 施加 {~} 層 Trick。",
    "role": "desc",
    "_raw": "Mirror and Shadow clones will cast Meteor with Last Laugh. Malicious Mockery causes Meteor to apply 13 Trick stacks."
   },
@@ -1468,7 +1468,7 @@
   },
   "major-id#0271": {
    "src": "Powder Specials can no longer be charged manually, but accumulate {~} charge every second.",
-   "dst": "Powder Specials 不再能手動蓄力，改為每秒自動累積 {~} 充能。",
+   "dst": "Powder Specials 無法再手動蓄力，改為每秒自動累積 {~} 充能。",
    "role": "desc",
    "_raw": "Powder Specials can no longer be charged manually, but accumulate 8% charge every second."
   },
@@ -1486,7 +1486,7 @@
   },
   "Magnet::desc": {
    "src": "Pulls items dropped by mobs towards you.",
-   "dst": "敵人掉落的物品會被吸向你。",
+   "dst": "你將自動吸取敵人的掉落物。",
    "role": "desc"
   },
   "major-id#0275": {
