@@ -1126,6 +1126,7 @@ public final class LineTranslator {
             at--;
         }
         at = keepGlyphWithWord(text, at, lineStart);
+        at = keepValueWithGlyph(text, at, lineStart);
         int outside = outsidePlaceholder(text, at, lineStart);
         if (outside != at) {
             // 退進佔位符裡面了。退得到它前面就退；退不了（佔位符就從行首開始）
@@ -1204,6 +1205,48 @@ public final class LineTranslator {
             }
             at = back - glyph.length();
         }
+    }
+
+    /**
+     * 「數值 空白 圖示」是同一個東西，不能斷在數值與圖示中間。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * Lootrun 賜福 Heavensent 的譯文是一整句「……每提供一個信標就 +{~1} {#}防禦 (上限 x{~2})」，
+     * 折回原文的三行時斷點落在圖示前面：
+     *
+     * <pre>
+     *   每提供一個信標就 +2
+     *   ✤防禦 (上限 x15)        ← 屬性圖示跑到行首，跟 +2 分家
+     * </pre>
+     *
+     * <p>原文的「+2 ✤Defence」是一組：數值屬於那個屬性，圖示是屬性名的前綴。
+     * {@link #keepGlyphWithWord} 只管圖示不留在行尾，所以它讓圖示跟著後面的詞走——
+     * 但前面那個數值被留在上一行。這裡把斷點再往前挪到（帶號的）數值前面，
+     * 三樣東西一起到下一行。
+     *
+     * <p>只認「數值佔位符、空白、圖示」緊挨著的形狀。「使用 {#} 物品鑑定師」前面是字，
+     * 不受影響；挪完整行會空掉時放棄，照原本的斷點。
+     */
+    private static int keepValueWithGlyph(String text, int cut, int lineStart) {
+        String glyph = GlyphSplitter.GLYPH_PLACEHOLDER;
+        if (!text.startsWith(glyph, cut)) {
+            return cut;
+        }
+        int back = cut;
+        while (back > lineStart && text.charAt(back - 1) == ' ') {
+            back--;
+        }
+        if (back == cut || back <= lineStart || text.charAt(back - 1) != '}') {
+            return cut;                        // 圖示前面沒有空白，或空白前面不是佔位符
+        }
+        int open = text.lastIndexOf('{', back - 1);
+        if (open < lineStart || !text.substring(open, back).matches("\\{~\\d*\\}")) {
+            return cut;                        // 是地名、玩家名或另一個圖示，不是數值
+        }
+        if (open > lineStart && (text.charAt(open - 1) == '+' || text.charAt(open - 1) == '-')) {
+            open--;                            // 正負號跟數值是同一個東西，見 wrapToWidth
+        }
+        return open > lineStart ? open : cut;
     }
 
     /** 不能出現在行首的字元。全形標點、收尾符號、百分比與單位。 */
@@ -1297,6 +1340,9 @@ public final class LineTranslator {
         List<Piece> pieces = new ArrayList<>();
         boolean any = false;
         boolean percent = hasPercentValue(line);
+        // 第一輪查不到、但整段只有數值與範圍小字（「 to 」「-60 tier」）的片段。
+        // 要等整行看完、確定有標籤翻成功了才動它們，見下面第二輪。
+        List<Integer> connectorAt = new ArrayList<>();
 
         for (StyledTextPart part : line) {
             String raw = part.getString(null, StyleType.NONE);
@@ -1326,6 +1372,9 @@ public final class LineTranslator {
             Component replaced = body.isEmpty()
                     ? null : translateOneSegment(body, style, store, percent);
             if (replaced == null) {
+                if (!body.isEmpty() && isConnectorSegment(body)) {
+                    connectorAt.add(pieces.size());
+                }
                 pieces.add(Piece.text(raw, style));
                 continue;
             }
@@ -1340,8 +1389,10 @@ public final class LineTranslator {
             }
         }
         if (!any) {
+            // 沒有任何標籤翻成功：句子裡零星的「to」不是範圍，整行保持原文。
             return null;
         }
+        translateConnectors(pieces, connectorAt, store);
 
         // 標籤與數值的交界若還沒有對齊空白，就補一個。
         //
@@ -2102,9 +2153,23 @@ public final class LineTranslator {
 
     /** 整段文字畫出來有多寬（像素）。 */
     private static int widthOf(Component component) {
+        if (measureForTest != null) {
+            return measureForTest.applyAsInt(component);
+        }
         Minecraft mc = Minecraft.getInstance();
         return mc == null || mc.font == null ? 0 : mc.font.width(component);
     }
+
+    /**
+     * 測試用的量法；{@code null} 表示照常問字型。
+     *
+     * <p>headless 沒有字型，{@link #widthOf} 一律是 0——聊天那一整條對齊（欄界、
+     * 置中、整行寬度）因此在測試裡全部退化成「什麼都不做」，只剩
+     * {@link #chatColumnPad} 那一小段算式測得到。Lootrun 結算那種整行的回報
+     * （欄位錯開、整行太寬被聊天折到下一行）得從 {@code translateChat} 一路量到底
+     * 才看得出來。
+     */
+    static ToIntFunction<Component> measureForTest;
 
     /** 原始行的寬度。 */
     private static int widthOf(StyledText line) {
@@ -3134,7 +3199,7 @@ public final class LineTranslator {
      */
     private static boolean columnPanel(List<List<Run>> rows) {
         for (List<Run> row : rows) {
-            if (columns(segmentWidths(row)) >= 2) {
+            if (columns(chatSegmentWidths(row, LineTranslator::runWidth)) >= 2) {
                 return true;
             }
         }
@@ -3157,22 +3222,25 @@ public final class LineTranslator {
         // 置中。兩邊都做的話整行會位移兩次。
         // 面板裡的單欄行也照原文的中心擺——原文是置中的，照抄左緣會往左偏。
         // 見 #columnPanel。
-        boolean single = columns(segmentWidths(orig)) < 2;
+        boolean single = columns(chatSegmentWidths(orig, LineTranslator::runWidth)) < 2;
         boolean centre = single && leadOrig > 0 && (centred || panel);
         int target = centre ? leadOrig + (bodyOrig - bodyMade) / 2 : leadOrig;
         int pad = target - leadMade;
+        int[] columns = columnPad(orig, made);
+        int fitted = fitWidth(orig, made, pad, columns);
         log.append("  ").append(centre ? "置中" : "靠左")
            .append(" 原文縮排=").append(leadOrig).append(" 內容=").append(bodyOrig)
            .append("  譯文縮排=").append(leadMade).append(" 內容=").append(bodyMade)
            .append("  補=").append(pad)
+           .append(fitted != pad ? "（收寬後 " + fitted + "）" : "")
            .append("  譯文=").append(rowText(made))
            .append(System.lineSeparator());
+        pad = fitted;
         MutableComponent row = Component.empty();
         String encoded = SpaceOffset.encode(pad);
         if (!encoded.isEmpty()) {
             row.append(literal(encoded, SpaceOffset.styleFor(Style.EMPTY)));
         }
-        int[] columns = columnPad(orig, made);
         for (int px : columns) {
             if (px != 0) {
                 log.append("        欄距補正=")
@@ -3181,7 +3249,7 @@ public final class LineTranslator {
                 break;
             }
         }
-        row.append(apply(made, columns));
+        row.append(applyChat(made, columns));
         return row;
     }
 
@@ -3214,18 +3282,95 @@ public final class LineTranslator {
      * 這時候「第幾個間隔」配不起來，硬補只會補到別的地方去。
      */
     private static int[] columnPad(List<Run> orig, List<Run> made) {
-        int spaces = countSpaces(made);
-        if (countSpaces(orig) != spaces) {
+        return chatColumnPad(orig, made, LineTranslator::runWidth);
+    }
+
+    /**
+     * 補正之後，這一行<b>不能比原文寬</b>；超出的部分從最右邊的欄距開始收回來。
+     *
+     * <h2>為什麼要收</h2>
+     * 聊天視窗的寬度是固定的，放不下的行原版會從最後一個空白折到下一行最左邊。
+     * Lootrun 結算那幾行本來就排到快滿（「300 Lootrun Experience ｜
+     * Challenges Completed: 5」寬 294px，聊天預設 320px），任何一點多出來的寬度
+     * 都會把右欄整段甩到下一行——issue #719 的「经验」孤零零掉到下一行最左邊。
+     *
+     * <p>{@link #centreColumns} 讓每一欄守住自己的中心。譯文比英文<b>窄</b>時整行
+     * 只會變短；但譯文比英文<b>寬</b>時（俄文「наградных вытягиваний」），右欄的
+     * 右緣就會跑出原文的右緣。這時候寧可右欄往左靠一點、跟上下幾行差幾像素，
+     * 也不能讓整行被折斷——折斷之後兩欄連在哪一行都分不清楚。
+     *
+     * <p>收的順序是由右往左：先收最後一個欄距（左欄的位置不動），但至少留一個
+     * 空白的寬度（{@link #MIN_CELL_GAP}），兩欄才不會黏在一起；還不夠才收行首的縮排。
+     * 行首的縮排可以收到 0。
+     *
+     * @param columns 每個欄界的補正，<b>會被就地改掉</b>
+     * @return 收過之後的行首補正
+     */
+    private static int fitWidth(List<Run> orig, List<Run> made, int pad, int[] columns) {
+        int over = rowWidth(made) + pad - rowWidth(orig);
+        for (int px : columns) {
+            over += px;
+        }
+        if (over <= 0) {
+            return pad;
+        }
+        boolean[] gaps = chatGaps(made);
+        int k = columns.length;
+        for (int i = made.size() - 1; i >= 0 && over > 0; i--) {
+            if (!gaps[i]) {
+                continue;
+            }
+            k--;
+            if (k < 0) {
+                break;
+            }
+            int floor = contentBefore(made, i) ? MIN_CELL_GAP : 0;
+            int room = made.get(i).px() + columns[k] - floor;
+            if (room <= 0) {
+                continue;                      // 已經貼著了，或是疊字用的負偏移
+            }
+            int take = Math.min(room, over);
+            columns[k] -= take;
+            over -= take;
+        }
+        if (over > 0 && pad > 0) {
+            pad -= Math.min(pad, over);
+        }
+        return pad;
+    }
+
+    /** 見 {@link #fitWidth}：收欄距時兩欄之間至少留這麼寬，大約一個半形空白。 */
+    private static final int MIN_CELL_GAP = 4;
+
+    /** 這個位置前面有沒有實字。沒有的話它是行首的縮排，不是欄與欄之間。 */
+    private static boolean contentBefore(List<Run> runs, int at) {
+        for (int i = at - 1; i >= 0; i--) {
+            if (!runs.get(i).space() && hasContent(runs.get(i).text())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * {@link #columnPad}，寬度的量法可以換掉。<b>測試用</b>——headless 沒有字型，
+     * {@link #widthOf} 一律是 0，欄界認不認得出來這件事就永遠測不到。
+     * 欄界用的是聊天專用的 {@link #chatGaps}。
+     */
+    static int[] chatColumnPad(List<Run> orig, List<Run> made, ToIntFunction<Run> width) {
+        boolean[] madeGaps = chatGaps(made);
+        int spaces = count(madeGaps);
+        if (count(chatGaps(orig)) != spaces) {
             return new int[spaces];
         }
         int[] px = new int[spaces];
         int index = 0;
-        for (Run r : made) {
-            if (isColumnGap(r)) {
-                px[index++] = r.px();
+        for (int i = 0; i < made.size(); i++) {
+            if (madeGaps[i]) {
+                px[index++] = made.get(i).px();
             }
         }
-        return columnDrift(segmentWidths(orig), segmentWidths(made), px);
+        return columnDrift(chatSegmentWidths(orig, width), chatSegmentWidths(made, width), px);
     }
 
     /**
@@ -3639,6 +3784,121 @@ public final class LineTranslator {
         return r.space() && Math.abs(r.px()) >= MIN_GAP_PX;
     }
 
+    /**
+     * 聊天這條路的欄界：{@link #isColumnGap} 認得的，加上「行首或文字後面、
+     * 緊接著文字」的小偏移。
+     *
+     * <h2>為什麼聊天要另外判斷</h2>
+     * 獵殺信標面板兩欄的<b>中心</b>是伺服器固定好的（約 77px 與 232px），名稱越長，
+     * 縮排與欄距就越小。璀璨信標的名稱最長，實機收到的是
+     *
+     * <pre>
+     *   &lt;+0&gt;Vibrant Dark Grey Beacon&lt;+7&gt;Vibrant Rainbow Beacon
+     *   &lt;+7&gt;Vibrant Crimson Beacon&lt;+23&gt;…
+     *   &lt;+2&gt;Vibrant Obscured Beacon&lt;+4&gt;Vibrant Obscured Beacon
+     * </pre>
+     *
+     * 全都低於 {@link #MIN_GAP_PX}。欄界認不出來，兩個中文名就擠在一起、或整行往左偏
+     * ——玩家回報「璀璨的信標歪得很嚴重」。一般信標的名稱短，偏移都在 8px 以上，碰不到。
+     *
+     * <p>門檻本來要擋的是圖示前的微調（{@code - +1 <2px>🔒Unidentified Helmet}）。
+     * 那種偏移後面接的是圖示、不是字母，「後面緊接著有字母的文字」這一條照樣擋得住。
+     * tooltip 的 {@code realign} 也共用 {@link #isColumnGap}，所以不去動它。
+     */
+    static boolean[] chatGaps(List<Run> runs) {
+        boolean[] out = new boolean[runs.size()];
+        for (int i = 0; i < runs.size(); i++) {
+            Run r = runs.get(i);
+            if (!r.space()) {
+                continue;
+            }
+            if (isColumnGap(r)) {
+                out[i] = true;
+                continue;
+            }
+            if (r.px() < 0) {
+                continue;                      // 疊字用的負偏移，見 isBacktrack
+            }
+            out[i] = textBefore(runs, i) && startsWithLetter(runs, i + 1);
+        }
+        return out;
+    }
+
+    /** 往前第一段實字是有字母的，或前面根本沒有實字（行首）。 */
+    private static boolean textBefore(List<Run> runs, int at) {
+        for (int i = at - 1; i >= 0; i--) {
+            Run r = runs.get(i);
+            if (!r.space()) {
+                return GlyphSplitter.hasLetter(r.text());
+            }
+        }
+        return true;
+    }
+
+    /** 往後第一段實字是以字母開頭的。 */
+    private static boolean startsWithLetter(List<Run> runs, int from) {
+        for (int i = from; i < runs.size(); i++) {
+            Run r = runs.get(i);
+            if (r.space()) {
+                continue;
+            }
+            String text = r.text().stripLeading();
+            return !text.isEmpty() && Character.isLetter(text.codePointAt(0));
+        }
+        return false;
+    }
+
+    private static int count(boolean[] flags) {
+        int n = 0;
+        for (boolean f : flags) {
+            if (f) {
+                n++;
+            }
+        }
+        return n;
+    }
+
+    /** 一段文字畫出來多寬。 */
+    static int runWidth(Run r) {
+        return widthOf(literal(r.text(), r.style()));
+    }
+
+    /** {@link #segmentWidths} 的聊天版，欄界見 {@link #chatGaps}。 */
+    static List<Integer> chatSegmentWidths(List<Run> runs, ToIntFunction<Run> width) {
+        boolean[] gaps = chatGaps(runs);
+        List<Integer> out = new ArrayList<>();
+        int total = 0;
+        for (int i = 0; i < runs.size(); i++) {
+            if (gaps[i]) {
+                out.add(total);
+                total = 0;
+            } else if (!runs.get(i).space()) {
+                total += width.applyAsInt(runs.get(i));
+            }
+        }
+        out.add(total);
+        return out;
+    }
+
+    /** {@link #apply} 的聊天版，欄界見 {@link #chatGaps}。 */
+    private static Component applyChat(List<Run> runs, int[] adjust) {
+        boolean[] gaps = chatGaps(runs);
+        MutableComponent out = Component.empty();
+        int index = 0;
+        for (int i = 0; i < runs.size(); i++) {
+            Run r = runs.get(i);
+            if (!gaps[i]) {
+                out.append(literal(r.text(), r.style()));
+                continue;
+            }
+            String encoded = SpaceOffset.encode(r.px() + adjust[index++]);
+            if (!encoded.isEmpty()) {
+                out.append(literal(encoded, r.style()));
+            }
+        }
+        return out;
+    }
+
     private static int countSpaces(List<Run> runs) {
         int n = 0;
         for (Run r : runs) {
@@ -3915,13 +4175,71 @@ public final class LineTranslator {
      */
     private static String statRow(String template, TranslationStore store, boolean percent) {
         int from = valueTailStart(template);
-        if (from <= 0 || from >= template.length()) {
-            return null;                       // 沒有數值尾巴，或整行都是數值
+        if (from <= 0) {
+            return null;                       // 整行都是數值
         }
         String label = template.substring(0, from);
         if (!GlyphSplitter.hasLetter(label)) {
             return null;
         }
+        String tail = template.substring(from);
+        if (!tail.isEmpty()) {
+            String zh = statLabel(label, store, percent);
+            if (zh != null) {
+                return zh + translateTail(tail, store);
+            }
+        }
+        // 數值在<b>前面</b>的那一種：
+        //
+        //   {~} Main Attack Damage {#} [{~}]
+        //   {~} Walk Speed {#} [{~}]
+        //
+        // 上面那一刀是從行尾往回切的，切到「Damage」就停，剩下的「{~} Main Attack
+        // Damage」當然不是標籤——於是這幾種排列一條都翻不出來，capture 裡每種都
+        // 被記了十來次缺口。標籤明明都在 ui-labels.json 裡。
+        //
+        // 所以行首那段純數值也切掉再查一次，數值原樣接回前面。
+        int head = valueHeadEnd(label);
+        String lead = label.substring(0, head);
+        if (lead.indexOf(GlyphSplitter.NUMBER_PLACEHOLDER) < 0) {
+            return null;                       // 前後都沒有數值，不是屬性列
+        }
+        String name = label.substring(head);
+        // 只有前面有數值、後面什麼都沒有的（逐片段那條路常常切成「+22 Main Attack
+        // Damage」一段），標籤必須<b>真的是介面標籤</b>。不然任何「數字 + 語料裡的詞」
+        // 都會被拼起來——「2 Guardian」就成了「2 守護者」。
+        if (tail.isEmpty() && !store.isUiLabel(name.strip())) {
+            return null;
+        }
+        String zh = statLabel(name, store, percent);
+        return zh == null ? null : translateTail(lead, store) + zh + translateTail(tail, store);
+    }
+
+    /**
+     * 行首那段純數值到哪裡為止。佔位符整組跳過，數值字元一個一個走。
+     * 見 {@link #statRow}「數值在前面」那一段。
+     */
+    private static int valueHeadEnd(String label) {
+        int at = 0;
+        while (at < label.length()) {
+            char c = label.charAt(at);
+            if (c == '{') {
+                int close = label.indexOf('}', at);
+                if (close < 0) {
+                    break;
+                }
+                at = close + 1;
+            } else if (c != '}' && isValueChar(c)) {
+                at++;
+            } else {
+                break;
+            }
+        }
+        return at;
+    }
+
+    /** 屬性標籤的譯名，百分比／實數分開挑。見 {@link #statRow}。 */
+    private static String statLabel(String label, TranslationStore store, boolean percent) {
         // 同一個屬性有三種標籤，畫面上是<b>三個不同的東西</b>：
         //
         //   Spell Damage +12%   -> 法術傷害百分比   （Spell Damage%）
@@ -3932,15 +4250,11 @@ public final class LineTranslator {
         // 百分比、哪個是實數——而那正是他要看的差別。
         //
         // 百分比與否只有呼叫端算得出來：模板裡的百分號常常已經被吃進 {~} 了。
-        String tail = template.substring(from);
         String zh = lookupTrimmed(label + (percent ? "%" : " Raw"), store, false);
         if (zh == null || zh.isBlank()) {
             zh = lookupTrimmed(label, store, percent);
         }
-        if (zh == null || zh.isBlank()) {
-            return null;
-        }
-        return zh + translateTail(tail);
+        return zh == null || zh.isBlank() ? null : zh;
     }
 
     /**
@@ -3980,12 +4294,17 @@ public final class LineTranslator {
         while (start > 0 && Character.isLetter(template.charAt(start - 1))) {
             start--;
         }
-        return start < at && TAIL_WORDS.containsKey(template.substring(start, at))
+        return start < at && CONNECTOR_KEYS.containsKey(template.substring(start, at))
                 ? start : -1;
     }
 
-    /** 數值段裡的小字也要換掉，不然「+1 tier」會留一個英文在中文中間。 */
-    private static String translateTail(String tail) {
+    /**
+     * 數值段裡的小字也要換掉，不然「+1 tier」會留一個英文在中文中間。
+     *
+     * <p>換成什麼由語料決定（見 {@link #connector}），查不到就留英文。
+     * 字前後的空白原樣保留。
+     */
+    private static String translateTail(String tail, TranslationStore store) {
         StringBuilder out = new StringBuilder(tail.length());
         int at = 0;
         while (at < tail.length()) {
@@ -3999,7 +4318,8 @@ public final class LineTranslator {
                 end++;
             }
             String word = tail.substring(at, end);
-            out.append(TAIL_WORDS.getOrDefault(word, word));
+            String local = connector(word, store);
+            out.append(local != null ? local : word);
             at = end;
         }
         return out.toString();
@@ -4012,13 +4332,106 @@ public final class LineTranslator {
     }
 
     /**
-     * 數值段裡唯一允許出現的英文字。
+     * 數值段裡唯一允許出現的英文字，以及它們在語料裡的連接詞鍵。
      *
-     * <p>{@code to} 是區間（{@code +100 to +200}），跟語料裡既有的兩百多條屬性列一樣用「到」、{@code tier} 是攻速階級
+     * <p>{@code to} 是區間（{@code +100 to +200}）、{@code tier} 是攻速階級
      * （{@code +1 tier}）。兩個都只出現在數值中間，不會讓句子被誤判成屬性列。
+     *
+     * <h2>為什麼不寫死譯文</h2>
+     * 先前這裡直接對應「到」「階」。那是繁中的字，而屬性列這條路每個語言都會走——
+     * 日文、俄文、韓文的標籤查到之後，數值中間照樣被塞進中文。
+     * 店家本身不知道自己是哪個語言，所以不在程式裡分語言，改查語料：
+     * 每個語言的 {@code ui-labels.json} 自己寫連接詞，簡體沒寫時照疊層規則退到繁體
+     * （見 {@code Languages#fallbackFor}），其他語言沒寫就留英文。
      */
-    private static final java.util.Map<String, String> TAIL_WORDS = java.util.Map.of(
-            "to", "到", "tier", "階", "tiers", "階");
+    private static final java.util.Map<String, String> CONNECTOR_KEYS = java.util.Map.of(
+            "to", "{~} to {~}", "tier", "{~} tier", "tiers", "{~} tier");
+
+    /** 連接詞譯文裡的數值佔位符，{@code {~}} 或照順序指名的 {@code {~1}}。 */
+    private static final java.util.regex.Pattern CONNECTOR_SLOT =
+            java.util.regex.Pattern.compile("\\{~\\d*}");
+
+    /**
+     * 範圍／單位小字在目前語言的說法：語料 {@code "{~} to {~}": "{~} 到 {~}"}
+     * 拿掉佔位符、去掉前後空白，得到「到」。
+     *
+     * @return 語料沒有這個鍵、或譯文是空的時回傳 {@code null}——呼叫端留英文
+     */
+    static String connector(String word, TranslationStore store) {
+        String key = CONNECTOR_KEYS.get(word);
+        if (key == null || store == null) {
+            return null;
+        }
+        String dst = store.lookup(key);
+        if (dst == null || dst.isBlank()) {
+            return null;
+        }
+        String local = CONNECTOR_SLOT.matcher(dst).replaceAll("").strip();
+        return local.isEmpty() ? null : local;
+    }
+
+    /**
+     * 這一段是不是只有數值與範圍小字：{@code " to "}、{@code "-60 tier"}。
+     *
+     * <p>至少要有一個 {@link #CONNECTOR_KEYS} 裡的字；有別的英文字就是句子，不算。
+     */
+    private static boolean isConnectorSegment(String body) {
+        boolean word = false;
+        int at = 0;
+        while (at < body.length()) {
+            char c = body.charAt(at);
+            if (Character.isLetter(c)) {
+                int end = at;
+                while (end < body.length() && Character.isLetter(body.charAt(end))) {
+                    end++;
+                }
+                if (!CONNECTOR_KEYS.containsKey(body.substring(at, end))) {
+                    return false;
+                }
+                word = true;
+                at = end;
+            } else if (isValueChar(c)) {
+                at++;
+            } else {
+                return false;
+            }
+        }
+        return word;
+    }
+
+    /**
+     * {@link #translateSegments} 的第二輪：標籤翻成功的行，數值之間獨立成段的
+     * 「 to 」「-60 tier」也換成目前語言的連接詞。
+     *
+     * <h2>為什麼第一輪收不到</h2>
+     * 未鑑定裝備的範圍是好幾個<b>不同顏色</b>的元件：{@code +2%}、{@code  to }、
+     * {@code +9%}。單獨一段「to」查不到鍵，也不是屬性列（前面沒有標籤），
+     * 於是原樣抄過去，畫面變成「移動速度 +2% to +9%」。
+     *
+     * <p>顏色照原段，字型換成預設——跟 {@link #rebuild} 對文字的處理一樣，
+     * 否則中文會用 Wynncraft 的字型畫成方框。
+     */
+    private static void translateConnectors(List<Piece> pieces, List<Integer> at,
+                                            TranslationStore store) {
+        // 從後面往前換：補回來的排版偏移會插一個片段，前面的位置才不會跑掉
+        for (int k = at.size() - 1; k >= 0; k--) {
+            int index = at.get(k);
+            Piece piece = pieces.get(index);
+            String raw = piece.text();
+            String tail = SpaceOffset.trailingOffsets(raw);
+            String body = raw.substring(0, raw.length() - tail.length());
+            String local = translateTail(body, store);
+            if (local.equals(body)) {
+                continue;                      // 語料沒有這個語言的連接詞，留英文
+            }
+            pieces.set(index, Piece.translated(literal(local, forDisplay(piece.style())),
+                                               literal(body, piece.style())));
+            if (!tail.isEmpty()) {
+                pieces.add(index + 1, Piece.space(SpaceOffset.decode(tail),
+                        SpaceOffset.styleFor(piece.style())));
+            }
+        }
+    }
 
     /** 見 {@link #lookup}：先剝首尾再查，這是原本那條路。 */
     private static String lookupTrimmed(String template, TranslationStore store,
@@ -4769,12 +5182,16 @@ public final class LineTranslator {
         }
         List<int[]> ours = punctuationSpans(source);
         List<int[]> theirs = punctuationSpans(target);
-        if (ours.isEmpty() || ours.size() != theirs.size()) {
-            return List.of();
-        }
-        for (int i = 0; i < ours.size(); i++) {
-            if (!source.substring(ours.get(i)[0], ours.get(i)[1])
-                    .equals(target.substring(theirs.get(i)[0], theirs.get(i)[1]))) {
+        if (!samePunctuation(source, ours, target, theirs)) {
+            // 標點對不上時只拿括號當錨點再試一次。
+            //
+            // 技能面板的「Area of Effect: 7 Blocks (Circle-Shaped)」：原文括號裡的
+            // 連字號也算標點，譯文「格 (圆形)」沒有，數量一不同就整行放棄，
+            // 退回「冒號後面整段是數值色」——括號跟著變白，本來是灰的。
+            // 括號內的逗號被換成全形、俄文多一個縮寫點，也是同一回事。
+            ours = bracketSpans(source);
+            theirs = bracketSpans(target);
+            if (!samePunctuation(source, ours, target, theirs)) {
                 return List.of();
             }
         }
@@ -4823,6 +5240,38 @@ public final class LineTranslator {
             out.add(new int[] {start, i});
         }
         return out;
+    }
+
+    /** 兩邊的標點段數量相同、而且逐組相同；全形括號當成半形比。 */
+    private static boolean samePunctuation(String source, List<int[]> ours,
+                                           String target, List<int[]> theirs) {
+        if (ours.isEmpty() || ours.size() != theirs.size()) {
+            return false;
+        }
+        for (int i = 0; i < ours.size(); i++) {
+            String a = halfWidthBrackets(source.substring(ours.get(i)[0], ours.get(i)[1]));
+            String b = halfWidthBrackets(target.substring(theirs.get(i)[0], theirs.get(i)[1]));
+            if (!a.equals(b)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /** 每一個括號字元自成一段；其他標點不算。 */
+    private static List<int[]> bracketSpans(String text) {
+        List<int[]> out = new ArrayList<>();
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            if (c == '(' || c == ')' || c == '（' || c == '）') {
+                out.add(new int[] {i, i + 1});
+            }
+        }
+        return out;
+    }
+
+    private static String halfWidthBrackets(String text) {
+        return text.replace('（', '(').replace('）', ')');
     }
 
     /** 這一段實字的顏色都一樣的話回傳那個顏色，否則 {@code null}。 */
@@ -5513,6 +5962,13 @@ public final class LineTranslator {
                 //
                 // 認得出來的形狀是「行尾是圖示，後面只有空白」。
                 move += trailingGlyph(out[i], out[i].length() - move);
+                // 圖示前面若是「+{~} 」，那個數值也是這個屬性的，一起搬。
+                //
+                // 實機回報的 Heavensent：折行斷在「+{~1} {#}防／禦」，這裡把「防」
+                // 連同圖示搬下去，數值卻留在上一行——「每提供一個信標就 +2」換行
+                // 「✤防禦 (上限 x15)」。見 keepValueWithGlyph。
+                move = out[i].length()
+                        - keepValueWithGlyph(out[i], out[i].length() - move, 0);
                 String moved = out[i].substring(out[i].length() - move);
                 out[i] = out[i].substring(0, out[i].length() - move);
                 out[i + 1] = moved + out[i + 1];
@@ -5673,11 +6129,56 @@ public final class LineTranslator {
             LineParts.Piece accent = accents.get(which);
             // 帶樣式的那一段如果剛好是個技能名稱，樣式與譯名兩個都要
             String shown = store == null ? null : store.lookupTerm(accent.text());
+            if (shown == null && store != null) {
+                // 重點段不一定<b>就是</b>那個詞，可能只是包著它。見 #termsWithin。
+                shown = termsWithin(accent.text(), store);
+            }
             out.append(literal(shown != null ? shown : accent.text(),
                                forDisplay(accent.style())));
             used[which] = true;
             from = at + accent.text().length();
         }
+    }
+
+    /**
+     * 把一段重點段<b>裡面</b>的技能名稱換掉，樣式由呼叫端照舊套上。
+     *
+     * <h2>實機回報</h2>
+     * 法師技能 Diffraction 的敘述畫出來是「奧法尼姆也會施加 2 層 Crystallized」，
+     * 藍色的 Crystallized 留著英文，而詞表裡明明有「結晶化」，上一行也換掉了。
+     *
+     * <h2>怎麼漏的</h2>
+     * 這一行是整行命中語料的（「Ophanim 也會施加 {~} 層 Crystallized {#}.」），
+     * 上色靠 {@link #segmentAccents}：原文與譯文照佔位符切段，第 k 段貼第 k 段的顏色。
+     * {@code {~}} 與 {@code {#}} 之間那一段在譯文裡是「 層 Crystallized 」，
+     * 於是登記進來的重點段是<b>包著</b>技能名的一整截，而不是那個詞本身。
+     *
+     * <p>{@link #appendText} 裡重點段比詞表先開始（位置較前），走的是重點段那條路；
+     * 那條路只問「整段是不是一個詞」，不是就原樣貼回英文。上一行換得掉，
+     * 是因為那一段剛好就只有「Crystallized」。
+     *
+     * @return 換過的文字；裡面沒有任何詞表裡的名稱時回傳 {@code null}
+     */
+    static String termsWithin(String text, TranslationStore store) {
+        StringBuilder out = new StringBuilder();
+        int from = 0;
+        boolean any = false;
+        TranslationStore.Term term;
+        while (from < text.length() && (term = store.findTerm(text, from)) != null) {
+            String before = text.substring(from, term.start());
+            // 跟 appendText 同一套空格規則：「層 結晶化」的半形空格是給英文用的
+            if (dropsSpaceBefore(before, term.translation())) {
+                before = before.substring(0, before.length() - 1);
+            }
+            out.append(before).append(term.translation());
+            from = term.end();
+            if (dropsSpaceAfter(term.translation(), text, from)) {
+                from++;
+            }
+            any = true;
+        }
+        return any ? out.append(text.substring(Math.min(from, text.length()))).toString()
+                   : null;
     }
 
     /**

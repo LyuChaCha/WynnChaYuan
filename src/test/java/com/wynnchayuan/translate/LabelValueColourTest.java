@@ -77,6 +77,13 @@ public final class LabelValueColourTest {
                 new int[] {0xFF5555, GREY, WHITE, DARK},
                 new String[] {"總傷害", "每秒傷害"}, new int[] {GREY, DARK});
 
+        // 實機回報（簡中技能面板）：「(圆形)」該是灰色，卻跟著「7 格」變白。
+        // 標籤與括號同為灰；原文括號裡的連字號譯文沒有，標點數量對不上。
+        colours(store, "括號與標籤同色時不跟著數值變白",
+                new String[] {"", " Area of Effect: ", "7", " Blocks ", "(Circle-Shaped)"},
+                new int[] {0xFF5555, GREY, WHITE, WHITE, GREY},
+                new String[] {"作用範圍", "格", "圓形"}, new int[] {GREY, WHITE, GREY});
+
         // 實機回報：句首的 grant 是粉紅，其餘是白。
         colours(store, "句首換色的詞保住自己的顏色",
                 new String[] {"grant ", "2048", " Emeralds"},
@@ -103,12 +110,62 @@ public final class LabelValueColourTest {
                 new int[] {GREY, DARK},
                 new String[] {"排", "合計"}, new int[] {GREY, DARK});
 
+        ranges();
+
         System.out.println(failures == 0
                 ? "標籤數值顏色：全部通過"
                 : "標籤數值顏色：" + failures + " 項失敗");
         if (failures > 0) {
             System.exit(1);
         }
+    }
+
+    private static final int GREEN = 0x55FF55;  // 未鑑定裝備的數值
+
+    /**
+     * 未鑑定裝備的範圍：「Walk Speed +2% to +9%」是四個不同顏色的元件。
+     *
+     * <p>實機回報畫面是「移動速度 +2% to +9%」——標籤翻了，中間那段獨立的
+     * 「 to 」原樣抄過去。連接詞來自語料的「{~} to {~}」「{~} tier」，那兩個鍵
+     * 由資料 PR 補進來，所以這裡疊一層只有這兩條的暫存語料。
+     */
+    private static void ranges() throws Exception {
+        Path zhTw = Path.of("src/main/resources/assets/wynnchayuan/translations",
+                            Languages.DEFAULT);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(List.of(zhTw, StatRowTest.corpus("wynnchayuan-range",
+                "{~} to {~}", "{~} 到 {~}", "{~} tier", "{~} 階")));
+
+        row(store, "範圍中間獨立的 to 換成連接詞",
+                new String[] {"Walk Speed", "+2%", " to ", "+9%"},
+                new int[] {LABEL, GREEN, GREY, GREEN},
+                new String[] {"移動速度", "+2%", " 到 ", "+9%"},
+                new int[] {LABEL, GREEN, GREY, GREEN});
+
+        row(store, "攻速階級的 tier 與 to 都換掉",
+                new String[] {"Attack Speed", "-60 tier", " to ", "-60 tier"},
+                new int[] {LABEL, GREEN, GREY, GREEN},
+                new String[] {"攻擊速度", "-60 階", " 到 ", "-60 階"},
+                new int[] {LABEL, GREEN, GREY, GREEN});
+
+        // 反面：標籤查不到的行不動，句子裡零星的 to 不能被換掉
+        List<String> text = new ArrayList<>();
+        List<Integer> got = new ArrayList<>();
+        dump(store, List.of(
+                line(new String[] {"Walk Speed", "+2%"}, new int[] {LABEL, GREEN}),
+                line(new String[] {"Zorblax Frobnication", "+2%", " to ", "+9%"},
+                     new int[] {LABEL, GREEN, GREY, GREEN})), text, got);
+        report("標籤查不到的行，to 留英文（實際 " + text + "）",
+                text.contains(" to ") && text.stream().noneMatch(t -> t.contains("到")));
+
+        // 語料沒有連接詞的鍵：標籤照翻，to 留英文，不拿寫死的中文頂上
+        TranslationStore bare = new TranslationStore();
+        bare.loadAll(StatRowTest.corpus("wynnchayuan-range-none", "Walk Speed", "移動速度"));
+        row(bare, "沒有連接詞的語料留英文",
+                new String[] {"Walk Speed", "+2%", " to ", "+9%"},
+                new int[] {LABEL, GREEN, GREY, GREEN},
+                new String[] {"移動速度", "+2%", " to ", "+9%"},
+                new int[] {LABEL, GREEN, GREY, GREEN});
     }
 
     /** 翻完之後每一段的文字與顏色要剛好是 {@code wantText} / {@code wantColours}。 */
@@ -144,13 +201,22 @@ public final class LabelValueColourTest {
 
     private static void dump(TranslationStore store, String[] parts, int[] colours,
                              List<String> text, List<Integer> got) {
+        dump(store, List.of(line(parts, colours)), text, got);
+    }
+
+    private static Component line(String[] parts, int[] colours) {
         MutableComponent line = Component.empty();
         for (int i = 0; i < parts.length; i++) {
             line.append(Component.literal(parts[i])
                     .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(colours[i]))));
         }
+        return line;
+    }
+
+    private static void dump(TranslationStore store, List<Component> lines,
+                             List<String> text, List<Integer> got) {
         for (Component c : com.wynnchayuan.render.TooltipPanel
-                .translateLines(List.of(line), store)) {
+                .translateLines(lines, store)) {
             c.visit((style, run) -> {
                 text.add(run);
                 got.add(style.getColor() == null ? -1 : style.getColor().getValue());

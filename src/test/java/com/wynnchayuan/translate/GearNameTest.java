@@ -203,6 +203,70 @@ public final class GearNameTest {
                         store);
         String blocked = node.size() < 3 ? "" : node.get(2).getString();
         check("★ 技能樹的封鎖清單照樣翻（實際 " + blocked + "）", blocked.contains("悖論"));
+
+        guessLines(store);
+    }
+
+    /**
+     * Wynntils「物品猜測」的候選清單：冒號後面是<b>裝備名</b>。
+     *
+     * <h2>實機回報</h2>
+     * 未鑑定靴子底下畫出「- 等級 87 [113 ₑ]: 嗜血」——Bloodlust 是那雙靴子，
+     * 拿到的卻是戰士技能 Bloodlust 的譯名；旁邊的「Sempiternal, Statue」
+     * 只是剛好沒撞名才留著英文。整行守門只認「剝掉項目符號就是名字」，
+     * 這一行前面還掛著等級與價格，於是名字那一段被逐片段那條路單獨換掉。
+     *
+     * <p>前綴是 Wynntils 照它自己的語言檔寫的，英文介面是「Lv.」、中文介面是
+     * 「等級」，兩種都要擋。反方向是同一份 tooltip 裡的一般清單行照翻。
+     */
+    private static void guessLines(TranslationStore store) {
+        check("★ Bloodlust 是還沒翻的裝備名（守門會對它出手）",
+              store.isBareGearName("Bloodlust"));
+        check("★ Bloodlust 查得到同名技能的譯名（不然下面測的是空氣，實際 "
+                        + store.lookup("Bloodlust") + "）",
+              store.lookup("Bloodlust") != null);
+
+        java.util.List<net.minecraft.network.chat.Component> out =
+                com.wynnchayuan.render.TooltipPanel.translateLines(
+                        java.util.List.of(
+                                net.minecraft.network.chat.Component.literal("Unidentified Boots"),
+                                net.minecraft.network.chat.Component.literal("86-90 Level Range"),
+                                net.minecraft.network.chat.Component.literal(""),
+                                net.minecraft.network.chat.Component.literal("- Possibilities: "),
+                                guessRow("Lv. 87", "Bloodlust"),
+                                guessRow("等級 87", "Guardian"),
+                                guessRow("Lv. 88", "Sempiternal, Statue"),
+                                net.minecraft.network.chat.Component.literal("- Streak: 0")),
+                        store);
+        check("★ 候選清單那份 tooltip 有翻到東西（實際 " + out.size() + " 行）",
+              out.size() == 8);
+        if (out.size() != 8) {
+            return;
+        }
+        check("等級區間照翻（實際 " + out.get(1).getString() + "）",
+              out.get(1).getString().contains("等級區間"));
+        check("★ 英文前綴那一行留著裝備名（實際 " + out.get(4).getString() + "）",
+              out.get(4).getString().endsWith(": Bloodlust"));
+        check("★ Wynntils 中文前綴那一行也留著（實際 " + out.get(5).getString() + "）",
+              out.get(5).getString().endsWith(": Guardian"));
+        check("沒撞名的那一行本來就是原文（實際 " + out.get(6).getString() + "）",
+              out.get(6).getString().endsWith(": Sempiternal, Statue"));
+        check("同一份裡的一般清單行照翻（實際 " + out.get(7).getString() + "）",
+              out.get(7).getString().contains("連續"));
+    }
+
+    /** 候選清單的一行，顏色照實機的 line-debug：綠色符號、灰色等級、粉紅色名字。 */
+    private static net.minecraft.network.chat.Component guessRow(String level, String names) {
+        net.minecraft.network.chat.MutableComponent row =
+                net.minecraft.network.chat.Component.empty();
+        Object[] parts = {"    ", 0xFFFFFF, "- ", 0x55FF55, level, 0xAAAAAA, " [", 0xAAAAAA,
+                          "113 ²", 0x55FF55, "]", 0xAAAAAA, ": ", 0xAAAAAA, names, 0xFF55FF};
+        for (int i = 0; i < parts.length; i += 2) {
+            row.append(net.minecraft.network.chat.Component.literal((String) parts[i])
+                    .withStyle(net.minecraft.network.chat.Style.EMPTY.withColor(
+                            net.minecraft.network.chat.TextColor.fromRgb((Integer) parts[i + 1]))));
+        }
+        return row;
     }
 
     /** 技能樹節點的標題兩行都換成中文。 */

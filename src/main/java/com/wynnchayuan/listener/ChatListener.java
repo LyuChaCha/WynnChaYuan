@@ -75,7 +75,7 @@ public final class ChatListener {
                         message.getStringWithoutFormatting())
                 ? (mode == CollectorConfig.ChatMode.BOTH
                         ? LineTranslator.translateChat(message, WynnChaYuan.translations())
-                        : LineTranslator.translate(message, WynnChaYuan.translations()))
+                        : replaceInPlace(message))
                 : null;
 
         // 先記進複製用的緩衝區，再考慮要不要改畫面。
@@ -106,5 +106,25 @@ public final class ChatListener {
             return;                      // 查不到就別動，原文比半吊子好
         }
         event.setMessage(StyledText.fromComponent(hit));
+    }
+
+    /**
+     * 就地取代模式的譯文。
+     *
+     * <p>先走聊天專用的那一支，查不到才退回通用的 {@link LineTranslator#translate}。
+     *
+     * <p>先前這個模式直接用通用的那一支，Lootrun 的信標面板因此壞了兩處：
+     * <ul>
+     *   <li>那一支的對齊是給 tooltip 用的，遇到「兩欄各自置中」的行會把縮水量
+     *       補兩次，譯文比原文還寬，被原版聊天從字中間折到下一行最左邊
+     *       （「橘色信｜標」）。聊天專用的對齊每欄對自己的中心，只會變窄。</li>
+     *   <li>它沒有「一欄一欄查」：整行查不到就直接退到逐片段，於是
+     *       「Empower next Beacon」留英文、右欄只翻到「詛咒」一個詞。</li>
+     * </ul>
+     * 退回通用那一支是為了不讓先前翻得出來的單則訊息變回英文。
+     */
+    private static Component replaceInPlace(StyledText message) {
+        Component chat = LineTranslator.translateChat(message, WynnChaYuan.translations());
+        return chat != null ? chat : LineTranslator.translate(message, WynnChaYuan.translations());
     }
 }
