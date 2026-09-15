@@ -1,7 +1,7 @@
 {
  "_meta": {
   "quest": "Queen's Recruit",
-  "count": 684,
+  "count": 685,
   "translated": 684,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
@@ -3107,7 +3107,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#310": {
-   "src": "Picard says we should talk about what we've got so far. He also said to space out people coming to the room so wait a few minutes before stopping by!",
+   "src": "Picard says we should talk about what we've got so far. He also said to space out people coming to the room- so wait a few minutes before stopping by!",
    "dst": "Picard 說我們該把目前掌握到的東西碰個頭。他還說進房間的人要錯開時間——所以你們等個幾分鐘再過來！",
    "role": "desc",
    "kind": "dialogue",
@@ -5447,7 +5447,7 @@
    "source": "wiki"
   },
   "Queen's Recruit#544": {
-   "src": "Another taste of Fruman cuisine... the meat was imported the {p}, and the vegetables came from the royal garden.",
+   "src": "Another taste of Fruman cuisine... the meat was imported from the {p}, and the vegetables came from our royal garden.",
    "dst": "再嚐一次 Fruma 的菜色……肉品是從 {p} 進口的，蔬菜則出自皇家花園。",
    "role": "desc",
    "kind": "dialogue",
@@ -5457,6 +5457,16 @@
    "source": "wiki"
   },
   "Queen's Recruit#545": {
+   "src": "New Ch",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#546": {
    "src": "Now, to business. The final will take place tomorrow morning. But first, I would like to speak to each of you individually.",
    "dst": "好了，說正事。決賽將在明天早上舉行。但在那之前，我想單獨與你們各談一次。",
    "role": "desc",
@@ -5466,7 +5476,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#546": {
+  "Queen's Recruit#547": {
    "src": "Let us begin with... {u}. Please come to the north-eastern wing when you are ready.",
    "dst": "就從……{u} 開始吧。準備好了就到東北翼來。",
    "role": "desc",
@@ -5476,7 +5486,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#547": {
+  "Queen's Recruit#548": {
    "src": "Sigh... good luck out there.",
    "dst": "唉……去吧，祝你好運。",
    "role": "desc",
@@ -5486,7 +5496,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#548": {
+  "Queen's Recruit#549": {
    "src": "Talk to Her Majesty in the north-eastern wing of the palace at [-{~}, {~}, {~}].",
    "dst": "到皇宮東北翼 [-{~1}, {~2}, {~3}] 與女王陛下談話。",
    "role": "desc",
@@ -5496,7 +5506,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Queen's Recruit#549": {
+  "Queen's Recruit#550": {
    "src": "Good luck.",
    "dst": "祝你好運。",
    "role": "desc",
@@ -5506,7 +5516,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#550": {
+  "Queen's Recruit#551": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -5516,7 +5526,7 @@
    "speaker": "Gendarme Soldier",
    "source": "wiki"
   },
-  "Queen's Recruit#551": {
+  "Queen's Recruit#552": {
    "src": "Well. I suppose congratulations are in order, finalist.",
    "dst": "好。我想，是該恭喜你了，決賽選手。",
    "role": "desc",
@@ -5526,7 +5536,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#552": {
+  "Queen's Recruit#553": {
    "src": "You're curious, surely? For what purpose would I call you soldiers back to our province?",
    "dst": "你很好奇吧？我究竟為了什麼目的，把你們這些士兵召回本行省？",
    "role": "desc",
@@ -5536,7 +5546,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#553": {
+  "Queen's Recruit#554": {
    "src": "Certainly not for a vanity tournament. A meaningless celebration.",
    "dst": "當然不會是為了一場虛榮的錦標賽。一場毫無意義的慶典。",
    "role": "desc",
@@ -5546,7 +5556,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#554": {
+  "Queen's Recruit#555": {
    "src": "Oh, let us drop the facade. I know what you have been doing in secret. I am not blind.",
    "dst": "哦，別再演了。你們私下在做什麼，我一清二楚。我不瞎。",
    "role": "desc",
@@ -5556,7 +5566,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#555": {
+  "Queen's Recruit#556": {
    "src": "You chose this opportunity to seek out information on our province. What little you have learned, we have deemed an acceptable cost.",
    "dst": "你們選擇利用這次機會，來刺探本行省的情報。你們所學到的那一點皮毛，我們判定是可以接受的代價。",
    "role": "desc",
@@ -5566,7 +5576,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#556": {
+  "Queen's Recruit#557": {
    "src": "Given the circumstances, I would have sacrificed much, much more if necessary.",
    "dst": "以眼下的情勢而言，必要的話，我願意犧牲的遠遠不止於此。",
    "role": "desc",
@@ -5576,7 +5586,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#557": {
+  "Queen's Recruit#558": {
    "src": "The greatest that Wynn has... a broad category. We had to thin the numbers - a contest of strength did the job nicely.",
    "dst": "Wynn 最傑出的人物——這個範圍太寬了。我們必須把人數篩下來——一場實力的較量，正好辦到了這件事。",
    "role": "desc",
@@ -5586,7 +5596,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#558": {
+  "Queen's Recruit#559": {
    "src": "And now... two candidates remain. You have done well to make it this far. I have been watching the duels intently, and you are certainly not unimpressive.",
    "dst": "而如今……只剩兩位人選。你能走到這一步，表現得很好。我一直專注地看著那些決鬥，你確實不算平庸。",
    "role": "desc",
@@ -5596,7 +5606,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#559": {
+  "Queen's Recruit#560": {
    "src": "Yet of the two of you... you certainly leave a lesser impression than him. You are one amongst hundreds, thousands... indistinguishable.",
    "dst": "然而在你們兩人之間……你留下的印象，明顯不如他。你不過是數百、數千人之中的一個……毫無區別。",
    "role": "desc",
@@ -5606,7 +5616,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#560": {
+  "Queen's Recruit#561": {
    "src": "And still, here you stand. It intrigues me. What is so special about you? What strength has led you here?",
    "dst": "可你偏偏就站在這裡。這讓我很感興趣。你到底有什麼特別之處？是什麼樣的力量把你帶到這裡的？",
    "role": "desc",
@@ -5616,7 +5626,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#561": {
+  "Queen's Recruit#562": {
    "src": "But no matter. Answers will come with time... should you be selected. I can tell you have a question. Speak it.",
    "dst": "不過無妨。答案會隨時間浮現……前提是你被選上。我看得出你有話要問。說吧。",
    "role": "desc",
@@ -5626,7 +5636,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#562": {
+  "Queen's Recruit#563": {
    "src": "Hm. A blank slate... to be able to see the outside world, for all its splendor and all its faults, to witness firsthand the deep rooted seeds of its inevitable destruction... there is value to that.",
    "dst": "嗯。一張白紙……能夠親眼見識外面的世界，見識它一切的壯麗與一切的缺陷，親身見證它注定毀滅的那些深植的種子——那是有價值的。",
    "role": "desc",
@@ -5636,7 +5646,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#563": {
+  "Queen's Recruit#564": {
    "src": "You have seen it, haven't you? Forces beyond any of us vie for control of our world, caring not for what destruction they instill.",
    "dst": "你已經見過了，不是嗎？超乎我們任何人之上的力量，正在爭奪這個世界的控制權，全然不在乎自己造成了什麼樣的破壞。",
    "role": "desc",
@@ -5646,7 +5656,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#564": {
+  "Queen's Recruit#565": {
    "src": "And it truly is a beautiful world, isn't it? To think, it could be destroyed, taken for their ceaseless war which holds no meaning, no purpose...",
    "dst": "而這確實是個美麗的世界，不是嗎？想想看，它竟可能為了那場既無意義也無目的的無盡戰爭，被毀掉、被奪走……",
    "role": "desc",
@@ -5656,7 +5666,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#565": {
+  "Queen's Recruit#566": {
    "src": "Then you have seen firsthand the benefits. The province is unburdened by those who may cause problems, and Wynn's front in its war is bolstered.",
    "dst": "那麼你已經親眼看見它的好處了。本行省得以擺脫那些可能製造麻煩的人，而 Wynn 在戰場上的前線也得到了增援。",
    "role": "desc",
@@ -5666,7 +5676,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#566": {
+  "Queen's Recruit#567": {
    "src": "Of course, many will refuse the call. Many more will grow stagnant in their newfound roles. Yet, in a select few... there is potential for much, much more.",
    "dst": "當然，許多人會拒絕這份召喚。許多人會在新的位置上停滯不前。然而在極少數人身上……蘊藏著遠遠更多的可能。",
    "role": "desc",
@@ -5676,7 +5686,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#567": {
+  "Queen's Recruit#568": {
    "src": "I wonder... which are you?",
    "dst": "我很好奇……你是哪一種呢？",
    "role": "desc",
@@ -5686,7 +5696,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#568": {
+  "Queen's Recruit#569": {
    "src": "That will be all. Return to your chambers for the night. I will be sending for the other finalist shortly.",
    "dst": "就到這裡。今晚回你的房間去。我很快就會派人去請另一位決賽選手。",
    "role": "desc",
@@ -5696,7 +5706,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#569": {
+  "Queen's Recruit#570": {
    "src": "Return to room W-{~} and talk to Tasim at [-{~}, {~}, {~}].",
    "dst": "回到 W-{~1} 號房，在 [-{~2}, {~3}, {~4}] 與 Tasim 談話。",
    "role": "desc",
@@ -5706,7 +5716,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Queen's Recruit#570": {
+  "Queen's Recruit#571": {
    "src": "Please, make your exit.",
    "dst": "請離場。",
    "role": "desc",
@@ -5716,7 +5726,7 @@
    "speaker": "Her Majesty",
    "source": "wiki"
   },
-  "Queen's Recruit#571": {
+  "Queen's Recruit#572": {
    "src": "You're back! Still in one piece?",
    "dst": "你回來了！人還完整嗎？",
    "role": "desc",
@@ -5726,7 +5736,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#572": {
+  "Queen's Recruit#573": {
    "src": "...I was getting a little worried. You were up there a while.",
    "dst": "……我剛才有點擔心。你在上面待了好一陣子。",
    "role": "desc",
@@ -5736,7 +5746,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#573": {
+  "Queen's Recruit#574": {
    "src": "What did she want?",
    "dst": "她想做什麼？",
    "role": "desc",
@@ -5746,8 +5756,8 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#574": {
-   "src": "... right. A weird conversation, then?",
+  "Queen's Recruit#575": {
+   "src": "...right. A weird conversation, then?",
    "dst": "……原來如此。所以是一場很怪的對話囉？",
    "role": "desc",
    "kind": "dialogue",
@@ -5756,7 +5766,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#575": {
+  "Queen's Recruit#576": {
    "src": "Ha. Well, now I'm a little nervous.",
    "dst": "哈。這下換我有點緊張了。",
    "role": "desc",
@@ -5766,7 +5776,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#576": {
+  "Queen's Recruit#577": {
    "src": "...really. A... blank slate...",
    "dst": "……真的假的。一張……白紙……",
    "role": "desc",
@@ -5776,7 +5786,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#577": {
+  "Queen's Recruit#578": {
    "src": "I'll... need to ask some follow-up questions.",
    "dst": "我……得問幾個後續問題才行。",
    "role": "desc",
@@ -5786,7 +5796,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#578": {
+  "Queen's Recruit#579": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -5796,7 +5806,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#579": {
+  "Queen's Recruit#580": {
    "src": "Oh, this is a disaster. We've been separated, and now we're stuck in here.",
    "dst": "哦，這下糟了。我們被拆開了，現在又被困在這裡。",
    "role": "desc",
@@ -5806,7 +5816,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#580": {
+  "Queen's Recruit#581": {
    "src": "We need to come up with a plan... is there a way we could",
    "dst": "我們得想個辦法……有沒有可能我們可以——",
    "role": "desc",
@@ -5816,7 +5826,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#581": {
+  "Queen's Recruit#582": {
    "src": "Tasim! Her Majesty will speak with you now.",
    "dst": "Tasim！女王陛下現在要見你。",
    "role": "desc",
@@ -5826,7 +5836,7 @@
    "speaker": "Gendarme Soldier",
    "source": "wiki"
   },
-  "Queen's Recruit#582": {
+  "Queen's Recruit#583": {
    "src": "Oh. There it is.",
    "dst": "哦。來了。",
    "role": "desc",
@@ -5836,7 +5846,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#583": {
+  "Queen's Recruit#584": {
    "src": "Okay, wish me luck. I'll be back.",
    "dst": "好，祝我好運。我去去就回。",
    "role": "desc",
@@ -5846,7 +5856,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#584": {
+  "Queen's Recruit#585": {
    "src": "Don't... stay up waiting for me. You can go rest. I'll be... fine, probably.",
    "dst": "別……別熬夜等我。你去休息吧。我會……大概不會有事的。",
    "role": "desc",
@@ -5856,7 +5866,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#585": {
+  "Queen's Recruit#586": {
    "src": "Rest for the night.",
    "dst": "過夜休息。",
    "role": "desc",
@@ -5866,7 +5876,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Queen's Recruit#586": {
+  "Queen's Recruit#587": {
    "src": "Catch up with Tasim.",
    "dst": "去找 Tasim 談談。",
    "role": "desc",
@@ -5876,7 +5886,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Queen's Recruit#587": {
+  "Queen's Recruit#588": {
    "src": "...oh, you're up.",
    "dst": "……哦，你醒了。",
    "role": "desc",
@@ -5886,7 +5896,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#588": {
+  "Queen's Recruit#589": {
    "src": "Sorry for waking you.",
    "dst": "抱歉吵醒你。",
    "role": "desc",
@@ -5896,7 +5906,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#589": {
+  "Queen's Recruit#590": {
    "src": "It went... fine, I guess. She probably said... most of the same things to you.",
    "dst": "還算……順利吧。她跟你說的……大概也差不多。",
    "role": "desc",
@@ -5906,7 +5916,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#590": {
+  "Queen's Recruit#591": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -5916,7 +5926,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#591": {
+  "Queen's Recruit#592": {
    "src": "Hey, {u}...",
    "dst": "嘿，{u}……",
    "role": "desc",
@@ -5926,7 +5936,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#592": {
+  "Queen's Recruit#593": {
    "src": "Could I ask you a favor?",
    "dst": "我可以請你幫個忙嗎？",
    "role": "desc",
@@ -5936,7 +5946,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#593": {
+  "Queen's Recruit#594": {
    "src": "Could we spar? A test match, before... before tomorrow. Just like old times.",
    "dst": "我們能對練一場嗎？一場試手，在……在明天之前。就像以前那樣。",
    "role": "desc",
@@ -5946,7 +5956,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#594": {
+  "Queen's Recruit#595": {
    "src": "Just, get ready and meet me at the arena. Okay?",
    "dst": "你準備好就到競技場找我。好嗎？",
    "role": "desc",
@@ -5956,7 +5966,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#595": {
+  "Queen's Recruit#596": {
    "src": "I yes. I'm okay. Just... could we spar? A test match, before... tomorrow. For old times' sake.",
    "dst": "我——嗯。我沒事。只是……我們能對練一場嗎？一場試手，在……明天之前。就當是為了老交情。",
    "role": "desc",
@@ -5966,7 +5976,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#596": {
+  "Queen's Recruit#597": {
    "src": "Just... get ready and meet me at the arena. Okay?",
    "dst": "你……準備好就到競技場找我。好嗎？",
    "role": "desc",
@@ -5976,7 +5986,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#597": {
+  "Queen's Recruit#598": {
    "src": "...oh, you're up.",
    "dst": "……哦，你醒了。",
    "role": "desc",
@@ -5986,7 +5996,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#598": {
+  "Queen's Recruit#599": {
    "src": "Sorry for waking you.",
    "dst": "抱歉吵醒你。",
    "role": "desc",
@@ -5996,19 +6006,9 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#599": {
+  "Queen's Recruit#600": {
    "src": "It went... fine, I guess. She probably said... most of the same things to you.",
    "dst": "還算……順利吧。她跟你說的……大概也差不多。",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 22",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Queen's Recruit#600": {
-   "src": "...",
-   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6027,6 +6027,16 @@
    "source": "wiki"
   },
   "Queen's Recruit#602": {
+   "src": "...",
+   "dst": "……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Queen's Recruit#603": {
    "src": "I was going to ask if I could ask you a favor.",
    "dst": "我本來是想問你能不能幫我一個忙的。",
    "role": "desc",
@@ -6036,7 +6046,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#603": {
+  "Queen's Recruit#604": {
    "src": "Could we spar? A test match, before... before tomorrow. Just like old times.",
    "dst": "我們能對練一場嗎？一場試手，在……在明天之前。就像以前那樣。",
    "role": "desc",
@@ -6046,7 +6056,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#604": {
+  "Queen's Recruit#605": {
    "src": "Just, get ready and meet me at the arena. Okay?",
    "dst": "你準備好就到競技場找我。好嗎？",
    "role": "desc",
@@ -6056,7 +6066,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#605": {
+  "Queen's Recruit#606": {
    "src": "I yes. I'm okay. Just... could we spar? A test match, before... tomorrow. For old times' sake.",
    "dst": "我——嗯。我沒事。只是……我們能對練一場嗎？一場試手，在……明天之前。就當是為了老交情。",
    "role": "desc",
@@ -6066,7 +6076,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#606": {
+  "Queen's Recruit#607": {
    "src": "Just... get ready and meet me at the arena. Okay?",
    "dst": "你……準備好就到競技場找我。好嗎？",
    "role": "desc",
@@ -6076,7 +6086,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#607": {
+  "Queen's Recruit#608": {
    "src": "H... huh?",
    "dst": "什……什麼？",
    "role": "desc",
@@ -6086,7 +6096,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#608": {
+  "Queen's Recruit#609": {
    "src": "He's... n-no, that",
    "dst": "他……不、不會，那——",
    "role": "desc",
@@ -6096,7 +6106,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#609": {
+  "Queen's Recruit#610": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6106,7 +6116,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#610": {
+  "Queen's Recruit#611": {
    "src": "What...?",
    "dst": "你說什麼……？",
    "role": "desc",
@@ -6116,7 +6126,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#611": {
+  "Queen's Recruit#612": {
    "src": "I... I... I don't understand.",
    "dst": "我……我……我不懂。",
    "role": "desc",
@@ -6126,19 +6136,9 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#612": {
+  "Queen's Recruit#613": {
    "src": "He's... what what happened? How do you know? How how could you know?",
    "dst": "他……什麼——發生什麼事了？你怎麼知道的？你——你怎麼會知道？",
-   "role": "desc",
-   "kind": "dialogue",
-   "quest": "Queen's Recruit",
-   "stage": "Stage 22",
-   "speaker": "Tasim",
-   "source": "wiki"
-  },
-  "Queen's Recruit#613": {
-   "src": "...",
-   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6157,8 +6157,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#615": {
-   "src": "...oh. That mission.",
-   "dst": "……哦。那個任務。",
+   "src": "...",
+   "dst": "……",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6167,8 +6167,8 @@
    "source": "wiki"
   },
   "Queen's Recruit#616": {
-   "src": "...",
-   "dst": "……",
+   "src": "...oh. That mission.",
+   "dst": "……哦。那個任務。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Queen's Recruit",
@@ -6207,6 +6207,16 @@
    "source": "wiki"
   },
   "Queen's Recruit#620": {
+   "src": "...",
+   "dst": "……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 22",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Queen's Recruit#621": {
    "src": "I... Gods. And, you you've been tr-trying to",
    "dst": "我……天啊。而且，你——你一直在試著——",
    "role": "desc",
@@ -6216,7 +6226,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#621": {
+  "Queen's Recruit#622": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6226,7 +6236,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#622": {
+  "Queen's Recruit#623": {
    "src": "I I need to go. I need some space. I'll I'm going to the arena. I need to... to...",
    "dst": "我——我得走了。我需要一點空間。我要——我要去競技場。我需要……需要……",
    "role": "desc",
@@ -6236,7 +6246,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#623": {
+  "Queen's Recruit#624": {
    "src": "No. No, d-don't. Don't do that. Not now, not not now. If... if you need me... you'll you'll know where I am.",
    "dst": "不要。不、不要，別這樣。現在不要，現在——現在不要。如果……如果你需要我……你會——你會知道我在哪。",
    "role": "desc",
@@ -6246,7 +6256,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#624": {
+  "Queen's Recruit#625": {
    "src": "Head to the arena for a training match against Tasim.",
    "dst": "到競技場與 Tasim 進行練習賽。",
    "role": "desc",
@@ -6256,7 +6266,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Queen's Recruit#625": {
+  "Queen's Recruit#626": {
    "src": "Get ready and meet me at the arena. Okay?",
    "dst": "你準備好就到競技場找我。好嗎？",
    "role": "desc",
@@ -6266,7 +6276,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#626": {
+  "Queen's Recruit#627": {
    "src": "It's... quiet. No guards in sight.",
    "dst": "這裡……好安靜。連一個衛兵都沒有。",
    "role": "desc",
@@ -6276,7 +6286,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#627": {
+  "Queen's Recruit#628": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6286,7 +6296,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#628": {
+  "Queen's Recruit#629": {
    "src": "Sigh. There's no point in trying to get out of here. We have to just see it through to the end.",
    "dst": "唉。想逃出去是沒有意義的。我們只能走到最後，把它看完。",
    "role": "desc",
@@ -6296,7 +6306,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#629": {
+  "Queen's Recruit#630": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6306,7 +6316,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#630": {
+  "Queen's Recruit#631": {
    "src": "What do you think? About what she said? About... forces destroying the world.",
    "dst": "你怎麼想？關於她說的那些。關於……那些正在毀滅世界的力量。",
    "role": "desc",
@@ -6316,7 +6326,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#631": {
+  "Queen's Recruit#632": {
    "src": "She's right. I've seen it I know you've seen it. It's... getting worse.",
    "dst": "她說得對。我見過——我知道你也見過。而且……正在惡化。",
    "role": "desc",
@@ -6326,7 +6336,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#632": {
+  "Queen's Recruit#633": {
    "src": "But... the recruits. The recruits. I can't get over that. It's so...",
    "dst": "可是……那些新兵。那些新兵。那件事我過不去。實在太……",
    "role": "desc",
@@ -6336,7 +6346,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#633": {
+  "Queen's Recruit#634": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6346,7 +6356,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#634": {
+  "Queen's Recruit#635": {
    "src": "Let's just get down there and fight. Usual spots, right?",
    "dst": "我們就下去打吧。老位置，對吧？",
    "role": "desc",
@@ -6356,7 +6366,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#635": {
+  "Queen's Recruit#636": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6366,7 +6376,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#636": {
+  "Queen's Recruit#637": {
    "src": "...so you're here.",
    "dst": "……所以你來了。",
    "role": "desc",
@@ -6376,7 +6386,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#637": {
+  "Queen's Recruit#638": {
    "src": "No words. Let's fight. Just just a training battle. To... test our skills.",
    "dst": "不必多說。開打吧。就只是——就只是一場練習賽。用來……測試我們的身手。",
    "role": "desc",
@@ -6386,7 +6396,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#638": {
+  "Queen's Recruit#639": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6396,7 +6406,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#639": {
+  "Queen's Recruit#640": {
    "src": "Ha. You've gotten strong, huh?",
    "dst": "哈。你變強了啊？",
    "role": "desc",
@@ -6406,7 +6416,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#640": {
+  "Queen's Recruit#641": {
    "src": "Still can't beat you, huh...",
    "dst": "還是打不過你啊……",
    "role": "desc",
@@ -6416,7 +6426,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#641": {
+  "Queen's Recruit#642": {
    "src": "I guess we know how tomorrow will turn out, then.",
    "dst": "那我想我們都知道明天會是什麼結果了。",
    "role": "desc",
@@ -6426,8 +6436,8 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#642": {
-   "src": "No don't deny it. We both know I'm right.",
+  "Queen's Recruit#643": {
+   "src": "No- don't deny it. We both know I'm right.",
    "dst": "不——別否認。我們心裡都清楚我說得對。",
    "role": "desc",
    "kind": "dialogue",
@@ -6436,7 +6446,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#643": {
+  "Queen's Recruit#644": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6446,7 +6456,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#644": {
+  "Queen's Recruit#645": {
    "src": "She gave me a choice, you know?",
    "dst": "她給了我一個選擇，你知道嗎？",
    "role": "desc",
@@ -6456,7 +6466,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#645": {
+  "Queen's Recruit#646": {
    "src": "A choice. I don't know what to do with it. And... I'm afraid of taking either option.",
    "dst": "一個選擇。我不知道該拿它怎麼辦。而且……兩邊我都害怕去選。",
    "role": "desc",
@@ -6466,7 +6476,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#646": {
+  "Queen's Recruit#647": {
    "src": "I... I need to think it over some more. And we both need to rest.",
    "dst": "我……我需要再想一想。而且我們兩個都得休息了。",
    "role": "desc",
@@ -6476,7 +6486,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#647": {
+  "Queen's Recruit#648": {
    "src": "Huh? I... yes. I think I am. I just have a lot on my mind.",
    "dst": "嗯？我……嗯。我想我沒事。只是心裡壓著很多事。",
    "role": "desc",
@@ -6486,7 +6496,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#648": {
+  "Queen's Recruit#649": {
    "src": "I'll... tell you in the morning. I just have a lot on my mind.",
    "dst": "我……早上再告訴你。我只是心裡壓著很多事。",
    "role": "desc",
@@ -6496,7 +6506,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#649": {
+  "Queen's Recruit#650": {
    "src": "Ha. You're you're good. Oof. I'll be feeling that one for... for a while.",
    "dst": "哈。你——你真行。唔。這一下我大概要痛……痛上好一陣子了。",
    "role": "desc",
@@ -6506,7 +6516,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#650": {
+  "Queen's Recruit#651": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6516,7 +6526,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#651": {
+  "Queen's Recruit#652": {
    "src": "Why did it have to come to this? Why couldn't why couldn't we all have just been happy?",
    "dst": "為什麼事情非得走到這一步？為什麼——為什麼我們不能就這樣好好的？",
    "role": "desc",
@@ -6526,7 +6536,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#652": {
+  "Queen's Recruit#653": {
    "src": "He he sent me a letter for that mission, you know. Did I tell you that? It's why I went back to Wynn.",
    "dst": "他——他為了那個任務寄了封信給我，你知道嗎。我有跟你說過嗎？那就是我回 Wynn 的原因。",
    "role": "desc",
@@ -6536,7 +6546,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#653": {
+  "Queen's Recruit#654": {
    "src": "And, it turns out he was already... already gone. And you were there, and I wasn't.",
    "dst": "結果呢，他早就已經……已經走了。而你在場，我不在。",
    "role": "desc",
@@ -6546,7 +6556,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#654": {
+  "Queen's Recruit#655": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6556,7 +6566,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#655": {
+  "Queen's Recruit#656": {
    "src": "I want to blame you for it. I want to be able to be mad, to hate you. But... I can't. I just can't.",
    "dst": "我想怪你。我想有辦法生氣，有辦法恨你。可是……我做不到。我就是做不到。",
    "role": "desc",
@@ -6566,7 +6576,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#656": {
+  "Queen's Recruit#657": {
    "src": "I wish I could've been there. I wish I could've done it better. Maybe I could have or maybe it would've just gone the same way.",
    "dst": "我多希望當時我在場。我多希望我能做得更好。也許我可以——也許結果還是一樣。",
    "role": "desc",
@@ -6576,7 +6586,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#657": {
+  "Queen's Recruit#658": {
    "src": "...maybe it'd have gone worse.",
    "dst": "……也許還會更糟。",
    "role": "desc",
@@ -6586,7 +6596,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#658": {
+  "Queen's Recruit#659": {
    "src": "And now we're both here in the place we were all exiled from! But he's he isn't. He's gone, and and we're still here.",
    "dst": "而現在我們兩個都在這裡，在當初把我們全都流放出去的地方！可是他——他不在。他走了，而——而我們還在。",
    "role": "desc",
@@ -6596,7 +6606,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#659": {
+  "Queen's Recruit#660": {
    "src": "...what am I supposed to do? What are we supposed to do? About all of this?",
    "dst": "……我到底該怎麼辦？我們到底該怎麼辦？面對這一切。",
    "role": "desc",
@@ -6606,7 +6616,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#660": {
+  "Queen's Recruit#661": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6616,7 +6626,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#661": {
+  "Queen's Recruit#662": {
    "src": "She gave me a choice.",
    "dst": "她給了我一個選擇。",
    "role": "desc",
@@ -6626,7 +6636,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#662": {
+  "Queen's Recruit#663": {
    "src": "I asked a lot of questions. I didn't like all the answers, but... she left me with a choice.",
    "dst": "我問了很多問題。那些答案我不是每個都喜歡，但……她留給我一個選擇。",
    "role": "desc",
@@ -6636,7 +6646,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#663": {
+  "Queen's Recruit#664": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6646,7 +6656,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#664": {
+  "Queen's Recruit#665": {
    "src": "I don't know what to do. I need to... to... I need to think.",
    "dst": "我不知道該怎麼辦。我需要……需要……我需要想一想。",
    "role": "desc",
@@ -6656,7 +6666,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#665": {
+  "Queen's Recruit#666": {
    "src": "Give me some space, please. I'll see you in the morning.",
    "dst": "請給我一點空間。我們早上見。",
    "role": "desc",
@@ -6666,7 +6676,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#666": {
+  "Queen's Recruit#667": {
    "src": "Return to your room and sleep for the night.",
    "dst": "回房間過夜。",
    "role": "desc",
@@ -6676,7 +6686,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Queen's Recruit#667": {
+  "Queen's Recruit#668": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6686,7 +6696,7 @@
    "speaker": "Tasim",
    "source": "wiki"
   },
-  "Queen's Recruit#668": {
+  "Queen's Recruit#669": {
    "src": "Read the note Tasim left you before heading out.",
    "dst": "出發前讀一讀 Tasim 留給你的字條。",
    "role": "desc",
@@ -6696,7 +6706,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Queen's Recruit#669": {
+  "Queen's Recruit#670": {
    "src": "Head to Her Majesty's office for her decision.",
    "dst": "前往女王陛下的辦公室聽取她的決定。",
    "role": "desc",
@@ -6706,7 +6716,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Queen's Recruit#670": {
+  "Queen's Recruit#671": {
    "src": "Choices, choices, choices, choices...",
    "dst": "選擇，選擇，選擇，選擇……",
    "role": "desc",
@@ -6716,7 +6726,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Queen's Recruit#671": {
+  "Queen's Recruit#672": {
    "src": "You've already failed, you know. You did not meet her criteria for selection.",
    "dst": "你已經失敗了，你知道嗎。你沒有達到她的甄選標準。",
    "role": "desc",
@@ -6726,7 +6736,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Queen's Recruit#672": {
+  "Queen's Recruit#673": {
    "src": "But is dismissing you outright an error? Certainly, you're powerful. Perhaps even more so than you should be, given the circumstances.",
    "dst": "不過，直接把你排除掉會不會是個錯誤呢？你確實很強。以你的處境來說，甚至可能強得超出應有的程度。",
    "role": "desc",
@@ -6736,7 +6746,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Queen's Recruit#673": {
+  "Queen's Recruit#674": {
    "src": "Still. You lack the drive, the perspective. The dedication. The understanding.",
    "dst": "儘管如此。你缺少那股驅力、那份視野。那份投入。那份理解。",
    "role": "desc",
@@ -6746,7 +6756,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Queen's Recruit#674": {
+  "Queen's Recruit#675": {
    "src": "And, most critically - you're unpredictable. And that makes you dangerous.",
    "dst": "而且，最關鍵的是——你無法預測。這使你危險。",
    "role": "desc",
@@ -6756,7 +6766,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Queen's Recruit#675": {
+  "Queen's Recruit#676": {
    "src": "Ah! It seems Her Majesty and I have come to the same conclusion. Wonderful.",
    "dst": "啊！看來女王陛下和我得出了同樣的結論。太好了。",
    "role": "desc",
@@ -6766,7 +6776,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Queen's Recruit#676": {
+  "Queen's Recruit#677": {
    "src": "So, where does that leave you? Cast out, discarded?",
    "dst": "那麼，這讓你落到什麼境地呢？被逐出、被丟棄？",
    "role": "desc",
@@ -6776,7 +6786,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Queen's Recruit#677": {
+  "Queen's Recruit#678": {
    "src": "All the unanswered questions. Will you choose to let go? Dismiss the possibilities?",
    "dst": "那麼多沒有答案的問題。你會選擇放手嗎？把那些可能性拋在腦後？",
    "role": "desc",
@@ -6786,7 +6796,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Queen's Recruit#678": {
+  "Queen's Recruit#679": {
    "src": "And if not? What would you do for a glimpse of the truth? For a chance of receiving answers?",
    "dst": "如果不呢？為了瞥見真相一眼，你願意做到什麼地步？為了一次得到答案的機會？",
    "role": "desc",
@@ -6796,7 +6806,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Queen's Recruit#679": {
+  "Queen's Recruit#680": {
    "src": "Hm. Whatever the case, the choice is yours. Perhaps you'll surprise me, after all! Wouldn't that be exciting?",
    "dst": "嗯。無論如何，選擇權在你。說不定你會讓我意外呢！那不是很有意思嗎？",
    "role": "desc",
@@ -6806,7 +6816,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "Queen's Recruit#680": {
+  "Queen's Recruit#681": {
    "src": "{u}, under order of Her Majesty, you are to be escorted out of Fruma, effective immediately.",
    "dst": "{u}，奉女王陛下之命，你將即刻被護送離開 Fruma。",
    "role": "desc",
@@ -6816,7 +6826,7 @@
    "speaker": "Gendarme Commander",
    "source": "wiki"
   },
-  "Queen's Recruit#681": {
+  "Queen's Recruit#682": {
    "src": "Any defiance will be seen as an official threat against Fruma from the Wynn province. Comply, and no one will be hurt.",
    "dst": "任何違抗行為，都將被視為 Wynn 行省對 Fruma 的正式威脅。配合行事，就不會有人受傷。",
    "role": "desc",
@@ -6826,7 +6836,7 @@
    "speaker": "Gendarme Commander",
    "source": "wiki"
   },
-  "Queen's Recruit#682": {
+  "Queen's Recruit#683": {
    "src": "You hold no power here. This choice is not yours. You will follow orders, or face the consequences.",
    "dst": "你在這裡沒有任何權力。這不是你能選擇的。你要麼服從命令，要麼承擔後果。",
    "role": "desc",
@@ -6836,7 +6846,7 @@
    "speaker": "Gendarme Commander",
    "source": "wiki"
   },
-  "Queen's Recruit#683": {
+  "Queen's Recruit#684": {
    "src": "...",
    "dst": "……",
    "role": "desc",
