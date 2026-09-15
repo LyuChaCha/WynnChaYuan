@@ -57,7 +57,7 @@ English: **[CONTRIBUTING.en.md](CONTRIBUTING.en.md)**
 | `zh_cn` 简体中文 | █████████░ 93.7% | 39,863 / 42,546 |
 | `zh_tw` 繁體中文 | █████████░ 93.7% | 40,902 / 43,659 |
 | `ja_jp` 日本語 | █████████░ 93.5% | 39,780 / 42,546 |
-| `ru_ru` Русский | ████░░░░░░ 40.8% | 17,357 / 42,546 |
+| `ru_ru` Русский | █████████░ 93.0% | 39,567 / 42,546 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 1.5% | 623 / 42,538 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
