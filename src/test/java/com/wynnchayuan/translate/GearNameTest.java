@@ -143,6 +143,10 @@ public final class GearNameTest {
         // 一起測是為了讓五個使命的標題都有人看著。
         missionTitle(store, "Ostinato", "頑固音型");
 
+        // ★ 第三次：賜福選單。Heavensent 也是賜福名，選單上的標題一樣被守門擋住。
+        boonTitle(store, "Heavensent", "天賜", "Dynamic Boon");
+        boonTitle(store, "Heavensent", "天賜", "Static Boon");
+
         // ★ 反方向：真的是裝備時照樣擋住。裝備沒有 Ability Points 那一行。
         //
         // 第三行故意挑一條<b>翻得出來的</b>屬性列：translateLines 整份都沒翻到
@@ -298,6 +302,23 @@ public final class GearNameTest {
                         store);
         String line0 = out.isEmpty() ? "" : out.get(0).getString();
         check("使命「" + name + "」-> 「" + want + "」（實際 " + line0 + "）",
+              want.equals(line0));
+    }
+
+    /** Lootrun 賜福選單的標題要翻出來。用「Dynamic/Static Boon + Click to choose!」認出面板。 */
+    private static void boonTitle(TranslationStore store, String name, String want,
+                                  String kind) {
+        java.util.List<net.minecraft.network.chat.Component> out =
+                com.wynnchayuan.render.TooltipPanel.translateLines(
+                        java.util.List.of(
+                                net.minecraft.network.chat.Component.literal(name),
+                                net.minecraft.network.chat.Component.literal(" "),
+                                net.minecraft.network.chat.Component.literal(kind),
+                                net.minecraft.network.chat.Component.literal(" "),
+                                net.minecraft.network.chat.Component.literal("Click to choose!")),
+                        store);
+        String line0 = out.isEmpty() ? "" : out.get(0).getString();
+        check("賜福「" + name + "」(" + kind + ") -> 「" + want + "」（實際 " + line0 + "）",
               want.equals(line0));
     }
 

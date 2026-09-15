@@ -558,6 +558,10 @@ public final class TooltipPanel {
     private static final String[][] PANEL_MARKERS = {
         {"Ability Points:"},            // 技能樹的節點
         {"Objective:", "Reward:"},      // Lootrun 的使命
+        // Lootrun 的賜福選單。Heavensent 同時是使命名、賜福名與裝備名，
+        // 使命那組認得出來，賜福選單卻沒被認出，標題就被守門擋成英文。
+        {"Dynamic Boon", "Click to choose!"},
+        {"Static Boon", "Click to choose!"},
     };
 
     /**
