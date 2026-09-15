@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Elemental Exercise",
   "count": 65,
-  "translated": 0,
+  "translated": 65,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Elemental Exercise#000": {
    "src": "Talk to Captain Ragon in the {p} Barracks at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Поговори с капитаном Ragon в казармах {p} на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -18,7 +18,7 @@
   },
   "Elemental Exercise#001": {
    "src": "Ah! You must be one of the new recruits the Admiral told me to look out for! What was it... {u}, yes?",
-   "dst": "",
+   "dst": "А! Ты, должно быть, из новобранцев, о которых говорил адмирал! Как там... {u}, да?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -28,7 +28,7 @@
   },
   "Elemental Exercise#002": {
    "src": "You've done well to reach this city as quickly as you have, which must have required a great deal of fighting the undead.",
-   "dst": "",
+   "dst": "Хорошая работа - так быстро дойти до города! Наверняка пришлось немало биться с нежитью.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -38,7 +38,7 @@
   },
   "Elemental Exercise#003": {
    "src": "Now, I've heard from Sergeant Van of your aid in his assault on our overtaken fort- which, good work, very well done...",
-   "dst": "",
+   "dst": "Сержант Van рассказал о твоей помощи в штурме захваченного форта - хорошо, очень хорошо...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -48,7 +48,7 @@
   },
   "Elemental Exercise#004": {
    "src": "But the fact still stands that you lack experience. You can certainly fight, yes, but can you fight well?",
-   "dst": "",
+   "dst": "Но опыта тебе всё же не хватает. Драться ты умеешь, да, но умеешь ли хорошо?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -58,7 +58,7 @@
   },
   "Elemental Exercise#005": {
    "src": "Lucky for you, that's where I come in. You're just in time for today's training session! Come here, follow me.",
-   "dst": "",
+   "dst": "К счастью, тут вступаю я. Ты как раз к сегодняшней тренировке! Идём, за мной.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -68,7 +68,7 @@
   },
   "Elemental Exercise#006": {
    "src": "Follow Captain Ragon to the Training Room at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Следуй за капитаном Ragon в тренировочный зал на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -78,7 +78,7 @@
   },
   "Elemental Exercise#007": {
    "src": "...Oh! {u}, hello. Are you here for training as well?",
-   "dst": "",
+   "dst": "...О! {u}, привет. Ты тоже на тренировку?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -88,7 +88,7 @@
   },
   "Elemental Exercise#008": {
    "src": "Ahem. Now, in front of you, you'll see five special training dummies. Each one finely imbued with elemental magic. You are aware of the elements, yes? There's five of them in total.",
-   "dst": "",
+   "dst": "Кхм. Итак, перед вами пять особых манекенов, каждый напитан стихийной магией. Про стихии вы знаете, да? Их всего пять.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -98,7 +98,7 @@
   },
   "Elemental Exercise#009": {
    "src": "I am! The elements are... Fire, Air, Earth, Thunder, and... Water?",
-   "dst": "",
+   "dst": "Да! Стихии - это... Огонь, Воздух, Земля, Гром и... Вода?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -108,7 +108,7 @@
   },
   "Elemental Exercise#010": {
    "src": "That's right. And generally speaking, they're strong against each other in that order- Fire beats Air, Air beats Earth, and so on.",
-   "dst": "",
+   "dst": "Верно. И, как правило, они сильнее друг друга в этом порядке: Огонь бьёт Воздух, Воздух бьёт Землю и так далее.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -118,7 +118,7 @@
   },
   "Elemental Exercise#011": {
    "src": "Elemental weaknesses may vary based on the enemy, but that order holds true in most cases.",
-   "dst": "",
+   "dst": "Слабости к стихиям зависят от врага, но чаще всего этот порядок верен.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -128,7 +128,7 @@
   },
   "Elemental Exercise#012": {
    "src": "Enemies will take more damage from elements they're weak to, and take less damage from elements they resist. This change to your damage is always a flat value, and it varies from enemy to enemy.",
-   "dst": "",
+   "dst": "Урон от стихии, к которой враг слаб, выше, а от той, к которой он стоек, - ниже. Разница всегда фиксированная и у каждого врага своя.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -138,7 +138,7 @@
   },
   "Elemental Exercise#013": {
    "src": "Now. For training purposes, you'll be given an elemental weapon to try out on these training dummies. Take note of how each elemental defense and weakness affects your damage dealt. Speak to me once you feel you understand the concept.",
-   "dst": "",
+   "dst": "Итак. Для тренировки вы получите стихийное оружие - испытайте его на манекенах. Следите, как защита и слабости к стихиям влияют на урон. Как разберётесь - подойдите ко мне.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -148,7 +148,7 @@
   },
   "Elemental Exercise#014": {
    "src": "Test out the elemental training weapons on the dummies, then speak to Captain Ragon at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Испытай стихийное тренировочное оружие на манекенах, затем поговори с капитаном Ragon на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -158,7 +158,7 @@
   },
   "Elemental Exercise#015": {
    "src": "Well? Have you noted the effect of elemental defenses and weaknesses on your damage?",
-   "dst": "",
+   "dst": "Ну? Заметили, как защита и слабости к стихиям влияют на урон?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -168,7 +168,7 @@
   },
   "Elemental Exercise#016": {
    "src": "Excellent. I'll take those training weapons back from the two of you. Any questions?",
-   "dst": "",
+   "dst": "Отлично. Тренировочное оружие я у вас заберу. Вопросы есть?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -178,7 +178,7 @@
   },
   "Elemental Exercise#017": {
    "src": "I do have one. If our enemies are susceptible to elements in this way, would that also apply to us?",
-   "dst": "",
+   "dst": "Есть один. Если враги так уязвимы к стихиям, то и к нам это относится?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -188,7 +188,7 @@
   },
   "Elemental Exercise#018": {
    "src": "Ah, yes. A fine observation. Indeed, you are also bound by the rules of the elements. Elemental defenses and weaknesses from your equipment will affect you in the very same way.",
-   "dst": "",
+   "dst": "А, да. Хорошее замечание. Вы тоже подчиняетесь законам стихий. Защита и слабости к стихиям от снаряжения действуют на вас точно так же.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -198,7 +198,7 @@
   },
   "Elemental Exercise#019": {
    "src": "One final note before we move on from the elements- your weapon may not always be as effective against an enemy as you would like.",
-   "dst": "",
+   "dst": "И последнее о стихиях: ваше оружие не всегда будет против врага так эффективно, как хотелось бы.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -208,7 +208,7 @@
   },
   "Elemental Exercise#020": {
    "src": "However, you have another tool at your disposal in the form of your spells! Different spells will deal different elemental damage, even if your weapon does use that element by default.",
-   "dst": "",
+   "dst": "Но у вас есть и другой инструмент - заклинания! Разные заклинания наносят урон разных стихий, даже если оружие этой стихии не использует.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -218,7 +218,7 @@
   },
   "Elemental Exercise#021": {
    "src": "...Oh! So my Bash spell will still deal Earth damage even if my weapon only uses Water, right?",
-   "dst": "",
+   "dst": "...О! Значит, моё Сокрушение нанесёт урон Земли, даже если у оружия только Вода, так?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -228,7 +228,7 @@
   },
   "Elemental Exercise#022": {
    "src": "Correct! Now, let's see... We have the two of you here. Why don't we have a friendly duel? A chance to test your battle skills in a save environment.",
-   "dst": "",
+   "dst": "Верно! Так, посмотрим... Вас тут двое. Почему бы не устроить дружеский поединок? Проверите навыки в безопасной обстановке.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -238,7 +238,7 @@
   },
   "Elemental Exercise#023": {
    "src": "That sounds good to me! {u}, we've been traveling together for some time now... I can't say I haven't been curious to see how you fight. Let's see who comes out on top, shall we?",
-   "dst": "",
+   "dst": "Я только за! {u}, мы уже давно путешествуем вместе... Признаюсь, мне интересно, как ты сражаешься. Посмотрим, кто победит?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -248,7 +248,7 @@
   },
   "Elemental Exercise#024": {
    "src": "Alright! Let's do this!",
-   "dst": "",
+   "dst": "Отлично! Начнём!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -258,7 +258,7 @@
   },
   "Elemental Exercise#025": {
    "src": "Alright. I'll be waiting here when you're ready!",
-   "dst": "",
+   "dst": "Ладно. Я подожду здесь, приходи, когда соберёшься!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -268,7 +268,7 @@
   },
   "Elemental Exercise#026": {
    "src": "Go on, then. Just speak to me when you're ready to move on.",
-   "dst": "",
+   "dst": "Ну, ступай. Как соберёшься двигаться дальше - подойди ко мне.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -278,7 +278,7 @@
   },
   "Elemental Exercise#027": {
    "src": "Return to Tasim at [{~}, {~}, -{~}] for a duel.",
-   "dst": "",
+   "dst": "Вернись к Tasim на [{~}, {~}, -{~}] для поединка.",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -288,7 +288,7 @@
   },
   "Elemental Exercise#028": {
    "src": "There you are! Are you ready for our duel?",
-   "dst": "",
+   "dst": "Вот ты где! Ну что, начнём поединок?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -298,7 +298,7 @@
   },
   "Elemental Exercise#029": {
    "src": "Alright! Let's see which of us is the better fighter!",
-   "dst": "",
+   "dst": "Отлично! Посмотрим, кто из нас лучший боец!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -308,7 +308,7 @@
   },
   "Elemental Exercise#030": {
    "src": "Alright. I'll be waiting!",
-   "dst": "",
+   "dst": "Ладно. Я подожду!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -318,7 +318,7 @@
   },
   "Elemental Exercise#031": {
    "src": "Fight Tasim in a friendly duel.",
-   "dst": "",
+   "dst": "Сразись с Tasim в дружеском поединке.",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -328,7 +328,7 @@
   },
   "Elemental Exercise#032": {
    "src": "Speak to Captain Ragon at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Поговори с капитаном Ragon на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -338,7 +338,7 @@
   },
   "Elemental Exercise#033": {
    "src": "Phew! That was a good fight. You did well, {u}. We'll have to do this again- and maybe we can get Aledar to join!",
-   "dst": "",
+   "dst": "Фух! Хороший был бой. Ты молодец, {u}. Надо будет повторить - может, и Aledar позовём!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -348,7 +348,7 @@
   },
   "Elemental Exercise#034": {
    "src": "Woo! You fought well, {u}, but it looks like I'm still better! Wait until Aledar hears about this...",
-   "dst": "",
+   "dst": "Ура! Бой был достойный, {u}, но я всё же сильнее! Вот Aledar узнает...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -358,7 +358,7 @@
   },
   "Elemental Exercise#035": {
    "src": "Yes, yes, fine work, the two of you. Now-",
-   "dst": "",
+   "dst": "Да-да, хорошая работа, вы оба. А теперь -",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -368,7 +368,7 @@
   },
   "Elemental Exercise#036": {
    "src": "Captain! Captain Ragon! There's- there's corrupted forces! Advancing from {p}!",
-   "dst": "",
+   "dst": "Капитан! Капитан Ragon! Там... осквернённые! Наступают из {p}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -378,7 +378,7 @@
   },
   "Elemental Exercise#037": {
    "src": "Hm. And the Admiral is away... Very well. Mobilize the troops! We meet the forces at the north gate!",
-   "dst": "",
+   "dst": "Хм. А адмирала нет... Что ж. Поднять войска! Встретим их у северных ворот!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -388,7 +388,7 @@
   },
   "Elemental Exercise#038": {
    "src": "Yes sir!",
-   "dst": "",
+   "dst": "Так точно!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -398,7 +398,7 @@
   },
   "Elemental Exercise#039": {
    "src": "Captain- we're capable fighters too. Let us come along and help fight off these undead!",
-   "dst": "",
+   "dst": "Капитан, мы тоже умеем сражаться. Позвольте пойти с вами и помочь отбить нежить!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -408,7 +408,7 @@
   },
   "Elemental Exercise#040": {
    "src": "Hm... As I see it, this is a fine opportunity for you to gain some firsthand experience! Very well. Prepare yourselves, and come to {p}' north gate when you're ready.",
-   "dst": "",
+   "dst": "Хм... По-моему, это отличный шанс набраться опыта в деле! Что ж. Готовьтесь и приходите к северным воротам {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -418,7 +418,7 @@
   },
   "Elemental Exercise#041": {
    "src": "This is exciting! But... I'm a little bit nervous, still.",
-   "dst": "",
+   "dst": "Как волнующе! Но... я всё-таки немного нервничаю.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -428,7 +428,7 @@
   },
   "Elemental Exercise#042": {
    "src": "... We'll be alright. Come on, let's go follow the captain.",
-   "dst": "",
+   "dst": "... Всё будет хорошо. Идём, догоним капитана.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -438,7 +438,7 @@
   },
   "Elemental Exercise#043": {
    "src": "Follow Captain Ragon to {p}' north gate at [{~}, {~}, -{~}] to face the undead forces.",
-   "dst": "",
+   "dst": "Следуй за капитаном Ragon к северным воротам {p} на [{~}, {~}, -{~}], чтобы встретить войска нежити.",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -448,7 +448,7 @@
   },
   "Elemental Exercise#044": {
    "src": "There you are! Ready for battle?",
-   "dst": "",
+   "dst": "Вот и вы! К бою готовы?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -458,7 +458,7 @@
   },
   "Elemental Exercise#045": {
    "src": "I'm prepared as well. These corrupted won't stand a chance against us!",
-   "dst": "",
+   "dst": "Я тоже готов. У этих осквернённых против нас ни шанса!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -468,7 +468,7 @@
   },
   "Elemental Exercise#046": {
    "src": "Yes, yes, very good. Now, it shouldn't be long until-",
-   "dst": "",
+   "dst": "Да-да, очень хорошо. Так, ждать осталось недолго, пока -",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -478,7 +478,7 @@
   },
   "Elemental Exercise#047": {
    "src": "Captain! They're here!",
-   "dst": "",
+   "dst": "Капитан! Они здесь!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -488,7 +488,7 @@
   },
   "Elemental Exercise#048": {
    "src": "Hm... Take note of the leader. I expect if we can defeat it, the rest of the forces will disperse.",
-   "dst": "",
+   "dst": "Хм... Следите за вожаком. Думаю, если одолеем его, остальные разбегутся.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -498,7 +498,7 @@
   },
   "Elemental Exercise#049": {
    "src": "Stronger foes such as this one will cast spells one after the other, in a specific order. These spell combos can be dangerous, so make sure to take note of them.",
-   "dst": "",
+   "dst": "Сильные враги вроде этого читают заклинания одно за другим, в определённом порядке. Такие комбо опасны, так что запоминайте их.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -508,7 +508,7 @@
   },
   "Elemental Exercise#050": {
    "src": "We'll be fighting all around you, so shout if you're in need of aid. Alright, soldiers, let's defend our city!",
-   "dst": "",
+   "dst": "Мы будем сражаться рядом, так что зовите, если нужна помощь. Ну, солдаты, защитим наш город!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -518,7 +518,7 @@
   },
   "Elemental Exercise#051": {
    "src": "Alright {u}, let's do this!",
-   "dst": "",
+   "dst": "Ну, {u}, вперёд!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -528,7 +528,7 @@
   },
   "Elemental Exercise#052": {
    "src": "I understand. We have time until the corrupted forces arrive, so go prepare. Don't take too long, though.",
-   "dst": "",
+   "dst": "Понимаю. До прихода осквернённых время есть, иди готовься. Только не затягивай.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -538,7 +538,7 @@
   },
   "Elemental Exercise#053": {
    "src": "Defeat the Corrupted Captain and the force threatening {p}.",
-   "dst": "",
+   "dst": "Победи Осквернённого капитана и войска, угрожающие {p}.",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -548,7 +548,7 @@
   },
   "Elemental Exercise#054": {
    "src": "Return to the {p} Barracks and talk to Captain Ragon at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Вернись в казармы {p} и поговори с капитаном Ragon на [{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Elemental Exercise",
@@ -558,7 +558,7 @@
   },
   "Elemental Exercise#055": {
    "src": "Ah, there you two are. Come here.",
-   "dst": "",
+   "dst": "А, вот и вы двое. Подойдите.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -568,7 +568,7 @@
   },
   "Elemental Exercise#056": {
    "src": "Oh, Admiral! You're back already?",
-   "dst": "",
+   "dst": "О, адмирал! Вы уже вернулись?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -578,7 +578,7 @@
   },
   "Elemental Exercise#057": {
    "src": "Yes, my absence was never meant to take long. I was paying a visit to the desert city of {p}, for a meeting with an Admiral Amerigo...",
-   "dst": "",
+   "dst": "Да, я и не собирался уезжать надолго. Я был в пустынном городе {p}, на встрече с адмиралом Amerigo...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -588,7 +588,7 @@
   },
   "Elemental Exercise#058": {
    "src": "But I digress. I've been told the two of you were essential in the defense of our city! Excellent work.",
-   "dst": "",
+   "dst": "Но я отвлёкся. Мне сказали, что вы двое сыграли ключевую роль в обороне города! Отличная работа.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -598,7 +598,7 @@
   },
   "Elemental Exercise#059": {
    "src": "Our preparations for the assault on {p}' spider den are nearing completion. I'd like the two of you to join that mission.",
-   "dst": "",
+   "dst": "Подготовка к штурму паучьего логова {p} почти завершена. Я хочу, чтобы вы двое участвовали.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -608,7 +608,7 @@
   },
   "Elemental Exercise#060": {
    "src": "Sir- are you certain? I mean, we'd be happy to join, but surely there are many others more worthy of such a task.",
-   "dst": "",
+   "dst": "Сэр... вы уверены? Мы будем рады, но наверняка есть куда более достойные для такой задачи.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -618,7 +618,7 @@
   },
   "Elemental Exercise#061": {
    "src": "Nonsense! Captain Ragon has assessed your skills, and has deemed them sufficient. And I trust the Captain's judgement.",
-   "dst": "",
+   "dst": "Вздор! Капитан Ragon оценил ваши навыки и счёл их достаточными. А суждению капитана я доверяю.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -628,7 +628,7 @@
   },
   "Elemental Exercise#062": {
    "src": "Now, I must be off. I'll see the two of you when it's time for the mission.",
-   "dst": "",
+   "dst": "Что ж, мне пора. Увидимся, когда придёт время операции.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -638,7 +638,7 @@
   },
   "Elemental Exercise#063": {
    "src": "A big mission to take out the spiders, huh... You know, even though I'm a little worried, I think I'm excited.",
-   "dst": "",
+   "dst": "Большой поход против пауков, а... Знаешь, хоть я и волнуюсь, но, кажется, мне не терпится.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
@@ -648,7 +648,7 @@
   },
   "Elemental Exercise#064": {
    "src": "Ahem. Before the two of you return on your business, I have something for the two of you. Payment for your work today, and a special piece of equipment. Make good use of it.",
-   "dst": "",
+   "dst": "Кхм. Прежде чем вы вернётесь к своим делам, у меня кое-что для вас. Плата за сегодняшнюю работу и особое снаряжение. Используйте с толком.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Elemental Exercise",
