@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The Sewers of Ragni",
   "count": 31,
-  "translated": 0,
+  "translated": 31,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The Sewers of Ragni#000": {
    "src": "The Lieutenant at [-{~}, {~}, -{~}] needs help.",
-   "dst": "",
+   "dst": "Лейтенанту в [-{~}, {~}, -{~}] нужна помощь.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Sewers of Ragni",
@@ -18,7 +18,7 @@
   },
   "The Sewers of Ragni#001": {
    "src": "Soldier! Good timing. We've been requesting help for ages.",
-   "dst": "",
+   "dst": "Солдат! Вовремя. Мы уже целую вечность просим подмогу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -28,7 +28,7 @@
   },
   "The Sewers of Ragni#002": {
    "src": "With the corrupted hordes terrorising the Wynn Plains, more and more people are moving to {p}.",
-   "dst": "",
+   "dst": "Орды осквернённых терроризируют Wynn Plains, и всё больше людей переезжает в {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -38,7 +38,7 @@
   },
   "The Sewers of Ragni#003": {
    "src": "Issue is, a major sewage pipe's been blocked up. No wonder nobody wanted the job.",
-   "dst": "",
+   "dst": "Беда в том, что забило крупную сточную трубу. Неудивительно, что никто не брался.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -48,7 +48,7 @@
   },
   "The Sewers of Ragni#004": {
    "src": "I'm going to need you to get your hands dirty. I'll need some assistance with the blockage.",
-   "dst": "",
+   "dst": "Придётся тебе испачкать руки. Мне нужна помощь с засором.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -58,7 +58,7 @@
   },
   "The Sewers of Ragni#005": {
    "src": "Here's the brief. We get in, deploy some small explosives to dislodge the blockage, and get out.",
-   "dst": "",
+   "dst": "Задача такая. Заходим, закладываем немного взрывчатки, выбиваем засор и уходим.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -68,7 +68,7 @@
   },
   "The Sewers of Ragni#006": {
    "src": "We're using the side pipe. The larger one down the hill, well... you don't want to stray too far into that one.",
-   "dst": "",
+   "dst": "Пойдём через боковую трубу. А в ту, что побольше, под холмом… туда лучше далеко не соваться.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -78,7 +78,7 @@
   },
   "The Sewers of Ragni#007": {
    "src": "Keep your wits about you in there. All sorts of things could be lurking. Ready? Let's go!",
-   "dst": "",
+   "dst": "Будь там начеку. Затаиться там может что угодно. Ну что, вперёд!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -88,7 +88,7 @@
   },
   "The Sewers of Ragni#008": {
    "src": "Enter the sewer at [-{~}, {~}, -{~}] and find the blockage.",
-   "dst": "",
+   "dst": "Войди в канализацию в [-{~}, {~}, -{~}] и найди засор.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Sewers of Ragni",
@@ -98,7 +98,7 @@
   },
   "The Sewers of Ragni#009": {
    "src": "Explore the sewer and find the blockage.",
-   "dst": "",
+   "dst": "Исследуй канализацию и найди засор.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Sewers of Ragni",
@@ -108,7 +108,7 @@
   },
   "The Sewers of Ragni#010": {
    "src": "Good, you caught up. Watch your step around this place, soldier.",
-   "dst": "",
+   "dst": "Хорошо, ты здесь. Смотри под ноги, солдат.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -118,7 +118,7 @@
   },
   "The Sewers of Ragni#011": {
    "src": "Our scouts have confirmed that this area is clear, but a wrong turn could lead you into the old prison complex.",
-   "dst": "",
+   "dst": "Разведчики подтвердили, что тут чисто, но не туда свернёшь - и попадёшь в старую тюрьму.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -128,7 +128,7 @@
   },
   "The Sewers of Ragni#012": {
    "src": "I... we really don't want to end up there.",
-   "dst": "",
+   "dst": "Я… нам туда точно не надо.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -138,7 +138,7 @@
   },
   "The Sewers of Ragni#013": {
    "src": "Anyway, I've found the blockage. It's right up ahead.",
-   "dst": "",
+   "dst": "Как бы то ни было, засор я нашёл. Он прямо впереди.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -148,7 +148,7 @@
   },
   "The Sewers of Ragni#014": {
    "src": "Here's a small explosive. I placed this one at the blockage already, if that alone doesn't work, use this.",
-   "dst": "",
+   "dst": "Вот небольшой заряд. Один я уже заложил у засора; если его не хватит, используй этот.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -158,7 +158,7 @@
   },
   "The Sewers of Ragni#015": {
    "src": "Find a way to fix the blockage.",
-   "dst": "",
+   "dst": "Найди способ устранить засор.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Sewers of Ragni",
@@ -168,7 +168,7 @@
   },
   "The Sewers of Ragni#016": {
    "src": "Find a way out of the spooky sewer.",
-   "dst": "",
+   "dst": "Найди выход из жуткой канализации.",
    "role": "desc",
    "kind": "objective",
    "quest": "The Sewers of Ragni",
@@ -178,7 +178,7 @@
   },
   "The Sewers of Ragni#017": {
    "src": "Ah, you're alive. Looks like we underestimated the amount of sewage.",
-   "dst": "",
+   "dst": "А, с тобой всё в порядке. Похоже, мы недооценили объём стоков.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -188,7 +188,7 @@
   },
   "The Sewers of Ragni#018": {
    "src": "I lost you for a bit back there. It's lucky we found each other, to be honest.",
-   "dst": "",
+   "dst": "Я было тебя потерял. Честно, повезло, что мы снова вместе.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -198,7 +198,7 @@
   },
   "The Sewers of Ragni#019": {
    "src": "... ah. This sewer has some history, you know. Back during the {p} Raids, they used to hide civilians here, in the old prison.",
-   "dst": "",
+   "dst": "…ах. У этой канализации есть история. Во время набегов на {p} здесь, в старой тюрьме, прятали мирных жителей.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -208,7 +208,7 @@
   },
   "The Sewers of Ragni#020": {
    "src": "Sometimes... sometimes it wasn't enough. Some say there are still... things roaming there. Left over from the slaughters.",
-   "dst": "",
+   "dst": "Иногда… иногда этого было мало. Говорят, там до сих пор… что-то бродит. Оставшееся после резни.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -218,7 +218,7 @@
   },
   "The Sewers of Ragni#021": {
    "src": "Let's get out of here. Do you still have the explosive I gave you?",
-   "dst": "",
+   "dst": "Выбираемся. Взрывчатка, что я дал, ещё у тебя?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -228,7 +228,7 @@
   },
   "The Sewers of Ragni#022": {
    "src": "Good, let's use it on this wall, it looks like we can break right through...",
-   "dst": "",
+   "dst": "Хорошо, взорвём эту стену, похоже, её можно пробить насквозь…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -238,7 +238,7 @@
   },
   "The Sewers of Ragni#023": {
    "src": "Talk to Jenprest at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Поговори с Jenprest в [-{~}, {~}, -{~}]",
    "role": "desc",
    "kind": "objective",
    "quest": "The Sewers of Ragni",
@@ -248,7 +248,7 @@
   },
   "The Sewers of Ragni#024": {
    "src": "Phew! Looks like that first explosion cleared the pipe, and the {p} citizens are going to be happy.",
-   "dst": "",
+   "dst": "Фух! Похоже, первый взрыв прочистил трубу, и жители {p} будут довольны.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -258,7 +258,7 @@
   },
   "The Sewers of Ragni#025": {
    "src": "And count yourself lucky we didn't run into anything too nasty in there. Some of the stories...",
-   "dst": "",
+   "dst": "И считай, что тебе повезло: ничего особо мерзкого нам там не попалось. Некоторые истории…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -268,7 +268,7 @@
   },
   "The Sewers of Ragni#026": {
    "src": "... I don't exactly know what's in there, soldier.",
-   "dst": "",
+   "dst": "…я и сам толком не знаю, что там, солдат.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -278,7 +278,7 @@
   },
   "The Sewers of Ragni#027": {
    "src": "I can't stop you from exploring the dungeon, but I recommend you gear up first.",
-   "dst": "",
+   "dst": "Не могу запретить тебе исследовать подземелье, но советую сперва снарядиться.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -288,7 +288,7 @@
   },
   "The Sewers of Ragni#028": {
    "src": "Legend has it that Bob, the legendary warrior, was born in them during a raid on {p}.",
-   "dst": "",
+   "dst": "По легенде, Bob, легендарный воин, родился там во время набега на {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -298,7 +298,7 @@
   },
   "The Sewers of Ragni#029": {
    "src": "His mother died in childbirth, but some people said she lay down there for years. Rotting. Waiting.",
-   "dst": "",
+   "dst": "Его мать умерла в родах, но говорят, она пролежала там годы. Гния. Ожидая.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",
@@ -308,7 +308,7 @@
   },
   "The Sewers of Ragni#030": {
    "src": "But that's just a story! Thanks for your help, soldier, and good luck.",
-   "dst": "",
+   "dst": "Но это всего лишь байка! Спасибо за помощь, солдат, удачи.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The Sewers of Ragni",

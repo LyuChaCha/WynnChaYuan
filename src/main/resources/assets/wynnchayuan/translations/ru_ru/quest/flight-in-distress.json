@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Flight in Distress",
   "count": 103,
-  "translated": 0,
+  "translated": 103,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Flight in Distress#000": {
    "src": "Bring your Gavellian Passport to the Airship Clerk at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Отнеси паспорт Gavel служащему дирижаблей [-{~}, {~}, -{~}].",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -18,7 +18,7 @@
   },
   "Flight in Distress#001": {
    "src": "Good day, soldier! Will you be flying with us today?",
-   "dst": "",
+   "dst": "Добрый день, солдат! Полетите сегодня с нами?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -28,7 +28,7 @@
   },
   "Flight in Distress#002": {
    "src": "May I see your passport please?",
-   "dst": "",
+   "dst": "Можно ваш паспорт, пожалуйста?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -38,7 +38,7 @@
   },
   "Flight in Distress#003": {
    "src": "It's a bit dusty! It looks very old, but the picture looks like you.",
-   "dst": "",
+   "dst": "Пыльный немного! Совсем старый, но на фото вы.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -48,7 +48,7 @@
   },
   "Flight in Distress#004": {
    "src": "Well everything seems to be in order, climb aboard and I hope you have a pleasant journey.",
-   "dst": "",
+   "dst": "Что ж, всё в порядке, поднимайтесь на борт. Приятного полёта!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -58,7 +58,7 @@
   },
   "Flight in Distress#005": {
    "src": "Enter the airship.",
-   "dst": "",
+   "dst": "Поднимись на дирижабль.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -68,7 +68,7 @@
   },
   "Flight in Distress#006": {
    "src": "Please remain seated, passengers. We'll be taking off in a moment!",
-   "dst": "",
+   "dst": "Пассажиры, оставайтесь на местах. Скоро взлетаем!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -78,7 +78,7 @@
   },
   "Flight in Distress#007": {
    "src": "Speak to Captain Ackbar regarding the missing child.",
-   "dst": "",
+   "dst": "Поговори с капитаном Ackbar о пропавшем ребёнке.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -88,7 +88,7 @@
   },
   "Flight in Distress#008": {
    "src": "Attention passengers. There has been a missing person reported aboard. If there are any volunteers to help search for them, please report to the bridge and speak to the captain.",
-   "dst": "",
+   "dst": "Внимание, пассажиры. На борту пропал человек. Добровольцев, готовых помочь в поисках, просим пройти на мостик к капитану.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -98,7 +98,7 @@
   },
   "Flight in Distress#009": {
    "src": "This area is off limits to passengers during take off. Climb up to the passenger decks, there will be an attendee waiting at your cabin.",
-   "dst": "",
+   "dst": "Во время взлёта пассажирам сюда нельзя. Поднимайтесь на пассажирскую палубу, у вашей каюты ждёт стюард.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -108,7 +108,7 @@
   },
   "Flight in Distress#010": {
    "src": "I hope I do not get nauseous...",
-   "dst": "",
+   "dst": "Надеюсь, меня не укачает…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -118,7 +118,7 @@
   },
   "Flight in Distress#011": {
    "src": "Greetings, young adventurer. You haven't seen my glasses, have you?",
-   "dst": "",
+   "dst": "Приветствую, юный искатель приключений. Вы не видели мои очки?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -128,7 +128,7 @@
   },
   "Flight in Distress#012": {
    "src": "The interior of this ship is beautiful!",
-   "dst": "",
+   "dst": "Внутри этот корабль прекрасен!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -138,7 +138,7 @@
   },
   "Flight in Distress#013": {
    "src": "Good day to you, soldier! This will be your quarters for the flight. I wish you a pleasant trip with us!",
-   "dst": "",
+   "dst": "Добрый день, солдат! Это ваша каюта на время полёта. Приятного путешествия!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -148,7 +148,7 @@
   },
   "Flight in Distress#014": {
    "src": "You can sleep through your journey here if you have nothing else to do!",
-   "dst": "",
+   "dst": "Если больше нечем заняться, можете проспать тут весь полёт!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -158,7 +158,7 @@
   },
   "Flight in Distress#015": {
    "src": "The food they serve here is dreadful! As if it were meant for beasts they transport below deck.",
-   "dst": "",
+   "dst": "Еда здесь отвратительная! Будто её готовят для зверей, которых везут в трюме.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -168,7 +168,7 @@
   },
   "Flight in Distress#016": {
    "src": "*Sniff*... Have you seen my child? We were in our cabin, and then he just disappeared!",
-   "dst": "",
+   "dst": "*Всхлип*… Вы не видели моего ребёнка? Мы были в каюте, и он просто исчез!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -178,7 +178,7 @@
   },
   "Flight in Distress#017": {
    "src": "I heard that a big ship was approaching from north. I saw it from the entrance deck. I wonder what they are doing.",
-   "dst": "",
+   "dst": "Слышал, с севера приближается большой корабль. Я видел его с входной палубы. Интересно, что им нужно.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -188,7 +188,7 @@
   },
   "Flight in Distress#018": {
    "src": "Are you here to volunteer to search for the missing child?",
-   "dst": "",
+   "dst": "Вы пришли вызваться на поиски пропавшего ребёнка?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -198,7 +198,7 @@
   },
   "Flight in Distress#019": {
    "src": "We only just to set off and there is already an incident.",
-   "dst": "",
+   "dst": "Мы только взлетели, а уже происшествие.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -208,7 +208,7 @@
   },
   "Flight in Distress#020": {
    "src": "His mother informed us that her son disappeared soon after boarding.",
-   "dst": "",
+   "dst": "Мать сказала, что сын пропал вскоре после посадки.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -218,7 +218,7 @@
   },
   "Flight in Distress#021": {
    "src": "Poor parenting, if you ask me. Alas, we must find the lad.",
-   "dst": "",
+   "dst": "Плохо смотрела за ним, по-моему. Увы, парня надо найти.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -228,7 +228,7 @@
   },
   "Flight in Distress#022": {
    "src": "Since we don't have any leads, it might be best to ask some of the passengers for information.",
-   "dst": "",
+   "dst": "Зацепок у нас нет, так что лучше расспросить пассажиров.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -238,7 +238,7 @@
   },
   "Flight in Distress#023": {
    "src": "Most of them will be in the dining area or in the lounge.",
-   "dst": "",
+   "dst": "Большинство в столовой или в салоне.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -248,7 +248,7 @@
   },
   "Flight in Distress#024": {
    "src": "Thank you so much for your help; I hope you find the lad soon.",
-   "dst": "",
+   "dst": "Большое спасибо за помощь; надеюсь, вы скоро найдёте парня.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -258,7 +258,7 @@
   },
   "Flight in Distress#025": {
    "src": "Try and find out where the missing child is located by speaking to the passengers.",
-   "dst": "",
+   "dst": "Расспроси пассажиров и выясни, где пропавший ребёнок.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -268,7 +268,7 @@
   },
   "Flight in Distress#026": {
    "src": "Hey! Look at that ship over in the distance. It has been following the ship almost since we left off.",
-   "dst": "",
+   "dst": "Эй! Смотри на тот корабль вдали. Он летит за нами почти с самого вылета.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -278,7 +278,7 @@
   },
   "Flight in Distress#027": {
    "src": "I know I shouldn't be down here but...",
-   "dst": "",
+   "dst": "Знаю, мне нельзя сюда, но…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -288,7 +288,7 @@
   },
   "Flight in Distress#028": {
    "src": "I love airships, and I have never seen one like that.",
-   "dst": "",
+   "dst": "Я обожаю дирижабли, а такого ещё никогда не видел.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -298,7 +298,7 @@
   },
   "Flight in Distress#029": {
    "src": "Oh, my mummy wants me?",
-   "dst": "",
+   "dst": "Ой, меня мама ищет?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -308,7 +308,7 @@
   },
   "Flight in Distress#030": {
    "src": "Okay then, I will head back right now!",
-   "dst": "",
+   "dst": "Ладно, сейчас же вернусь!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -318,7 +318,7 @@
   },
   "Flight in Distress#031": {
    "src": "Return back to the Captain.",
-   "dst": "",
+   "dst": "Вернись к капитану.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -328,7 +328,7 @@
   },
   "Flight in Distress#032": {
    "src": "Thank you so much for finding my child! He will not be leaving my side for the rest of the trip.",
-   "dst": "",
+   "dst": "Огромное спасибо, что нашли моего ребёнка! До конца полёта он от меня ни на шаг.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -338,7 +338,7 @@
   },
   "Flight in Distress#033": {
    "src": "I'm sorry I caused such a worry earlier...",
-   "dst": "",
+   "dst": "Простите, что всех напугал…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -348,7 +348,7 @@
   },
   "Flight in Distress#034": {
    "src": "Hello again, did you find him?",
-   "dst": "",
+   "dst": "Снова здравствуйте, нашли его?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -358,7 +358,7 @@
   },
   "Flight in Distress#035": {
    "src": "How did he get down there?! There is supposed to be someone on duty!",
-   "dst": "",
+   "dst": "Как он туда попал?! Там должен быть дежурный!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -368,7 +368,7 @@
   },
   "Flight in Distress#036": {
    "src": "Thank you so much for finding him. You were the only volunteer.",
-   "dst": "",
+   "dst": "Большое спасибо, что нашли его. Вы единственный вызвались.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -378,7 +378,7 @@
   },
   "Flight in Distress#037": {
    "src": "Hopefully that is the only hiccup in the journey.",
-   "dst": "",
+   "dst": "Надеюсь, это единственная заминка в пути.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -388,7 +388,7 @@
   },
   "Flight in Distress#038": {
    "src": "What in good heavens was that? Crew, report!",
-   "dst": "",
+   "dst": "Боже правый, что это было? Экипаж, доложить!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -398,7 +398,7 @@
   },
   "Flight in Distress#039": {
    "src": "Sir! One of our engines blew out! We've lost all thrust on that side.",
-   "dst": "",
+   "dst": "Капитан! Взорвался один из двигателей! С той стороны тяги нет.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -408,7 +408,7 @@
   },
   "Flight in Distress#040": {
    "src": "Blast it all! We are sitting dead in the water without both engines.",
-   "dst": "",
+   "dst": "Проклятье! Без обоих двигателей мы застряли, как в штиль.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -418,7 +418,7 @@
   },
   "Flight in Distress#041": {
    "src": "Go check on the condition of the passengers.",
-   "dst": "",
+   "dst": "Проверьте, как там пассажиры.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -428,7 +428,7 @@
   },
   "Flight in Distress#042": {
    "src": "Soldier, go report to the Engineer in the engine room and see if there is anything you can do to help us get moving once again.",
-   "dst": "",
+   "dst": "Солдат, доложитесь инженеру в машинном отделении и узнайте, чем можете помочь, чтобы мы снова двинулись.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -438,7 +438,7 @@
   },
   "Flight in Distress#043": {
    "src": "Look if the engineer has something for you to do in order to help.",
-   "dst": "",
+   "dst": "Узнай у инженера, чем можно помочь.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -448,7 +448,7 @@
   },
   "Flight in Distress#044": {
    "src": "You must be the 'uman the captain done told me.",
-   "dst": "",
+   "dst": "Ты, стал быть, тот человек, про какого кэп сказывал.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -458,7 +458,7 @@
   },
   "Flight in Distress#045": {
    "src": "We sure are havin' quite the situation down 'ere.",
-   "dst": "",
+   "dst": "Ну и заваруха у нас тут внизу.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -468,7 +468,7 @@
   },
   "Flight in Distress#046": {
    "src": "I hafta stay here and man the 'ngines, else she might damage 'erself.",
-   "dst": "",
+   "dst": "Мне тут торчать надо, при движках, не то она себе навредит.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -478,7 +478,7 @@
   },
   "Flight in Distress#047": {
    "src": "If ye wanna help 'uman, go on up the riggin' and take a gander at the props.",
-   "dst": "",
+   "dst": "Хошь помочь, человече, — лезь по такелажу да глянь на винты.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -488,7 +488,7 @@
   },
   "Flight in Distress#048": {
    "src": "Ye can get to 'em through the access 'atches in the bridge.",
-   "dst": "",
+   "dst": "Туда пролезешь через люки на мостике.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -498,7 +498,7 @@
   },
   "Flight in Distress#049": {
    "src": "If'n they're stopped, just hit the breakers that are off.",
-   "dst": "",
+   "dst": "Коль встали — врубай рубильники, какие выключены.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -508,7 +508,7 @@
   },
   "Flight in Distress#050": {
    "src": "Come back here when ye done. I need ta stay here and keep her cool.",
-   "dst": "",
+   "dst": "Как управишься, вертайся. Мне тут надо её остужать.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -518,7 +518,7 @@
   },
   "Flight in Distress#051": {
    "src": "Go find and fix the issue with the airship's engines. They are located on top of the balloon through the bridge.",
-   "dst": "",
+   "dst": "Найди и устрани неполадку двигателей дирижабля. Они наверху баллона, путь через мостик.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -528,7 +528,7 @@
   },
   "Flight in Distress#052": {
    "src": "In event of shut-down, maitenence must be performed.",
-   "dst": "",
+   "dst": "При остановке необходимо провести обслуживание.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -538,7 +538,7 @@
   },
   "Flight in Distress#053": {
    "src": "Worker must restart all wooden switches before engine overheats.",
-   "dst": "",
+   "dst": "Включить все деревянные рычаги до перегрева двигателя.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -548,7 +548,7 @@
   },
   "Flight in Distress#054": {
    "src": "DO NOT PRESS THE STONE SWITCHES",
-   "dst": "",
+   "dst": "НЕ НАЖИМАТЬ КАМЕННЫЕ КНОПКИ",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -558,7 +558,7 @@
   },
   "Flight in Distress#055": {
    "src": "Report to Engineer Eric that you fixed the engines.",
-   "dst": "",
+   "dst": "Доложи инженеру Eric, что двигатели починены.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -568,7 +568,7 @@
   },
   "Flight in Distress#056": {
    "src": "Thank ye! The 'ngines are back up and running!",
-   "dst": "",
+   "dst": "Спасибо! Движки опять пашут!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -578,7 +578,7 @@
   },
   "Flight in Distress#057": {
    "src": "I couldn't have dun this without ye.",
-   "dst": "",
+   "dst": "Без тебя я б не сдюжил.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -588,7 +588,7 @@
   },
   "Flight in Distress#058": {
    "src": "You go back to yer quarters and get some rest. A passen'er like yerself shouldn' have to help the crew.",
-   "dst": "",
+   "dst": "Ступай в каюту, отдохни. Пассажиру вроде тебя не след помогать команде.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -598,7 +598,7 @@
   },
   "Flight in Distress#059": {
    "src": "I hope the rest of yer journey is good. I'll let the cap'n know so he can turn her up ta max and get us movin' again.",
-   "dst": "",
+   "dst": "Пусть остаток пути будет добрым. Скажу кэпу, чтоб дал полный ход, и мы снова двинем.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -608,7 +608,7 @@
   },
   "Flight in Distress#060": {
    "src": "Thanks 'uman.",
-   "dst": "",
+   "dst": "Спасибо, человече.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -618,7 +618,7 @@
   },
   "Flight in Distress#061": {
    "src": "Return back to your cabin.",
-   "dst": "",
+   "dst": "Вернись в свою каюту.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -628,7 +628,7 @@
   },
   "Flight in Distress#062": {
    "src": "muffled yelling",
-   "dst": "",
+   "dst": "приглушённые крики",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -638,7 +638,7 @@
   },
   "Flight in Distress#063": {
    "src": "All staff report to stations! This is not a drill! All staff report to stations!",
-   "dst": "",
+   "dst": "Всем по местам! Это не учения! Всем по местам!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -648,7 +648,7 @@
   },
   "Flight in Distress#064": {
    "src": "Explore the lower deck and find out what caused the explosion.",
-   "dst": "",
+   "dst": "Осмотри нижнюю палубу и выясни причину взрыва.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -658,7 +658,7 @@
   },
   "Flight in Distress#065": {
    "src": "Hol' togetha old girl, ye got this!",
-   "dst": "",
+   "dst": "Держись, старушка, ты сможешь!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -668,7 +668,7 @@
   },
   "Flight in Distress#066": {
    "src": "Men, hold her steady. We can still survive this! We just need to stop them following us.",
-   "dst": "",
+   "dst": "Держите её ровно, парни. Мы ещё выживем! Надо только стряхнуть погоню.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -678,7 +678,7 @@
   },
   "Flight in Distress#067": {
    "src": "Get to the other ship.",
-   "dst": "",
+   "dst": "Попади на другой корабль.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -688,7 +688,7 @@
   },
   "Flight in Distress#068": {
    "src": "Look here girls, the meat has come to us!",
-   "dst": "",
+   "dst": "Гляньте, девки, мясо само пришло!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -698,7 +698,7 @@
   },
   "Flight in Distress#069": {
    "src": "Send more in! They can't get all of us!",
-   "dst": "",
+   "dst": "Шлите ещё! Всех не перебьют!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -708,7 +708,7 @@
   },
   "Flight in Distress#070": {
    "src": "The rest of you all, get in here!",
-   "dst": "",
+   "dst": "Остальные, все сюда!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -718,7 +718,7 @@
   },
   "Flight in Distress#071": {
    "src": "Head below deck.",
-   "dst": "",
+   "dst": "Спустись под палубу.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -728,7 +728,7 @@
   },
   "Flight in Distress#072": {
    "src": "I heard fighting? Is someone there? I am in the jail cell!",
-   "dst": "",
+   "dst": "Я слышал бой? Там кто-то есть? Я в камере!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -738,7 +738,7 @@
   },
   "Flight in Distress#073": {
    "src": "Speak to the prisoner.",
-   "dst": "",
+   "dst": "Поговори с пленником.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -748,7 +748,7 @@
   },
   "Flight in Distress#074": {
    "src": "I heard fighting above, well done! Any chance to see those raiders get what's coming warms my old heart.",
-   "dst": "",
+   "dst": "Слышал бой наверху, молодец! Видеть, как налётчикам воздаётся, — бальзам для старого сердца.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -758,7 +758,7 @@
   },
   "Flight in Distress#075": {
    "src": "I used to be the greatest locksmith in all of Gavel! I was known all over, unfortunately.",
-   "dst": "",
+   "dst": "Когда-то я был лучшим мастером замков во всём Gavel! Меня знали повсюду, к несчастью.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -768,7 +768,7 @@
   },
   "Flight in Distress#076": {
    "src": "These fiends captured me, years ago, and made me create hundreds of keys for their raids.",
-   "dst": "",
+   "dst": "Эти изверги схватили меня много лет назад и заставили делать сотни ключей для их налётов.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -778,7 +778,7 @@
   },
   "Flight in Distress#077": {
    "src": "I am much too old now, but I would love to see them taken down before I leave this world.",
-   "dst": "",
+   "dst": "Я уже слишком стар, но хотел бы увидеть их падение, прежде чем покину этот мир.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -788,7 +788,7 @@
   },
   "Flight in Distress#078": {
    "src": "My key making gear is stored down the hall, behind the staircase. You can use them to craft a way inside the Queen's quarters.",
-   "dst": "",
+   "dst": "Мои инструменты хранятся в конце коридора, за лестницей. С их помощью сделаешь ключ в покои королевы.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -798,7 +798,7 @@
   },
   "Flight in Distress#079": {
    "src": "Just look into the keyhole to see how to make them. Good luck!",
-   "dst": "",
+   "dst": "Загляни в замочную скважину — поймёшь, как делать. Удачи!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -808,7 +808,7 @@
   },
   "Flight in Distress#080": {
    "src": "Make the key to reach the Skyraider Queen.",
-   "dst": "",
+   "dst": "Сделай ключ, чтобы добраться до королевы небесных налётчиков.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -818,7 +818,7 @@
   },
   "Flight in Distress#081": {
    "src": "So you think you can just come on my ship, huh?",
-   "dst": "",
+   "dst": "Думаешь, можно вот так заявиться на мой корабль, а?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -828,7 +828,7 @@
   },
   "Flight in Distress#082": {
    "src": "Kill my crew? Interrupt my plunder?",
-   "dst": "",
+   "dst": "Бить мою команду? Мешать грабежу?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -838,7 +838,7 @@
   },
   "Flight in Distress#083": {
    "src": "I know how to deal with 'problems' like you!",
-   "dst": "",
+   "dst": "Я знаю, как решать «проблемы» вроде тебя!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -848,7 +848,7 @@
   },
   "Flight in Distress#084": {
    "src": "Fight the Skyraider Queen and take one of her personal treasures with you.",
-   "dst": "",
+   "dst": "Победи королеву небесных налётчиков и забери одно из её сокровищ.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -858,7 +858,7 @@
   },
   "Flight in Distress#085": {
    "src": "Escape the ship and speak to Captain Ackbar.",
-   "dst": "",
+   "dst": "Сбеги с корабля и поговори с капитаном Ackbar.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -868,7 +868,7 @@
   },
   "Flight in Distress#086": {
    "src": "Wow, You single handedly took out a skyraider invasion.",
-   "dst": "",
+   "dst": "Ого, вы в одиночку отбили нападение небесных налётчиков.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -878,7 +878,7 @@
   },
   "Flight in Distress#087": {
    "src": "And you're a passenger! It's a good job you did...",
-   "dst": "",
+   "dst": "И вы ведь пассажир! Отличная работа…",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -888,7 +888,7 @@
   },
   "Flight in Distress#088": {
    "src": "We have no defense on this ship. We are a civilian carrier.",
-   "dst": "",
+   "dst": "У нас на борту нет защиты. Мы гражданское судно.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -898,7 +898,7 @@
   },
   "Flight in Distress#089": {
    "src": "What is this? A ring from the queen? It looks valuable. You should keep it.",
-   "dst": "",
+   "dst": "Что это? Кольцо королевы? Выглядит ценным. Оставьте себе.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -908,7 +908,7 @@
   },
   "Flight in Distress#090": {
    "src": "I still do not know how to thank you... We owe you so much.",
-   "dst": "",
+   "dst": "Даже не знаю, как вас отблагодарить… Мы стольким вам обязаны.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -918,7 +918,7 @@
   },
   "Flight in Distress#091": {
    "src": "Wait! I know! You can have free travel from {p} to {p}!",
-   "dst": "",
+   "dst": "Стойте! Придумал! Летайте бесплатно из {p} в {p}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -928,7 +928,7 @@
   },
   "Flight in Distress#092": {
    "src": "A private airship owner called Calo owes me big.",
-   "dst": "",
+   "dst": "Владелец частного дирижабля Calo мне крупно должен.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -938,7 +938,7 @@
   },
   "Flight in Distress#093": {
    "src": "I will tell him the deal. All you have to do is enter his ship and he'll take you back and forth!",
-   "dst": "",
+   "dst": "Я с ним договорюсь. Просто садитесь на его корабль, и он будет возить вас туда и обратно!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -948,7 +948,7 @@
   },
   "Flight in Distress#094": {
    "src": "Oh, and you will also be rewarded kindly monetarily. I will also personally send him the ring, so that it doesn't get damaged on the way, and you will receive it there.",
-   "dst": "",
+   "dst": "Да, и вы получите щедрую денежную награду. Кольцо я лично отправлю ему, чтобы оно не пострадало в пути, там его и получите.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -958,7 +958,7 @@
   },
   "Flight in Distress#095": {
    "src": "Just head down to the entrance deck, and we are about to arrive at {p} Airbase now.",
-   "dst": "",
+   "dst": "Спускайтесь на входную палубу, мы уже подлетаем к авиабазе {p}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -968,7 +968,7 @@
   },
   "Flight in Distress#096": {
    "src": "Thanks for helping us, really!",
-   "dst": "",
+   "dst": "Спасибо за помощь, правда!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -978,7 +978,7 @@
   },
   "Flight in Distress#097": {
    "src": "Head down to the entrance deck, and get off.",
-   "dst": "",
+   "dst": "Спустись на входную палубу и сойди с корабля.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -988,7 +988,7 @@
   },
   "Flight in Distress#098": {
    "src": "Speak to Calo next to the little ship at the {p} docks.",
-   "dst": "",
+   "dst": "Поговори с Calo у маленького корабля в доках {p}.",
    "role": "desc",
    "kind": "objective",
    "quest": "Flight in Distress",
@@ -998,7 +998,7 @@
   },
   "Flight in Distress#099": {
    "src": "Hey there. You must be the Human Ackbar told me about.",
-   "dst": "",
+   "dst": "Привет. Ты, должно быть, тот человек, о котором говорил Ackbar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -1008,7 +1008,7 @@
   },
   "Flight in Distress#100": {
    "src": "I heard what you did on the ship, very admirable. Fortunately for you, I owe Ackbar.",
-   "dst": "",
+   "dst": "Слышал про твои дела на корабле, достойно. На твоё счастье, я должен Ackbar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -1018,7 +1018,7 @@
   },
   "Flight in Distress#101": {
    "src": "I'll take you from {p} to {p} or vice versa whenever you want.",
-   "dst": "",
+   "dst": "Отвезу тебя из {p} в {p} или обратно, когда захочешь.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
@@ -1028,7 +1028,7 @@
   },
   "Flight in Distress#102": {
    "src": "All you have to do is board my ship. Oh, this was also from Ackbar.",
-   "dst": "",
+   "dst": "Просто садись на мой корабль. О, и это тоже от Ackbar.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Flight in Distress",
