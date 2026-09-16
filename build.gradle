@@ -671,6 +671,14 @@ tasks.register('runMajorIdTermChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runMajorIdTermChecks' }
 
+tasks.register('runMajorIdTermWrapChecks', JavaExec) {
+    group = 'verification'
+    description = 'Major ID 敘述重新折行之後，技能名不能被拆到兩行、也不能只換一半'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.MajorIdTermWrapTest'
+}
+tasks.named('check') { dependsOn 'runMajorIdTermWrapChecks' }
+
 tasks.register('runUprightChecks', JavaExec) {
     group = 'verification'
     description = '方塊字不跟著原文一起斜'
@@ -694,6 +702,19 @@ tasks.register('runFileIndexChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.FileIndexTest'
 }
 tasks.named('check') { dependsOn 'runFileIndexChecks' }
+
+tasks.register('runUpgradeChecks', JavaExec) {
+    group = 'verification'
+    description = '留著舊版的 config/wynnchayuan 升級，遊戲也要開得起來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.UpgradeSafetyTest'
+    // -PplayerFolder=<某個玩家 config/wynnchayuan 的副本>：額外拿那一份完整跑一次啟動讀檔。
+    // 測試會先複製到暫存資料夾再跑，不會動到指定的那一份。
+    if (project.hasProperty('playerFolder')) {
+        systemProperty 'wcy.playerFolder', project.property('playerFolder')
+    }
+}
+tasks.named('check') { dependsOn 'runUpgradeChecks' }
 
 tasks.register('runDialogueBufferChecks', JavaExec) {
     group = 'verification'

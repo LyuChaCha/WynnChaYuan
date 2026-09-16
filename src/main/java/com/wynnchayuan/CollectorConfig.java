@@ -2,13 +2,9 @@ package com.wynnchayuan;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
-import java.io.Reader;
-import java.io.Writer;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
@@ -921,148 +917,233 @@ public final class CollectorConfig {
 
 
 
+    /**
+     * 舊版寫過、這一版已經不用的欄位。
+     *
+     * <p>讀到就在載入後立刻重寫一次設定檔把它們清掉，不必等玩家下一次改設定。
+     * {@code showPanel} 是 tooltipMode／showOverlays 的前身，載入時先換算過來；
+     * {@code shareCaptures} 是 0.1.9_6 拿掉的自動分享開關。
+     */
+    static final java.util.Set<String> RETIRED = java.util.Set.of("shareCaptures", "showPanel");
+
+    /** 設定檔正常只有 1 KB 上下。大到這個程度一定不是這個模組寫的。 */
+    private static final long MAX_BYTES = 1L << 20;
+
+    /**
+     * 讀設定。
+     *
+     * <h2>為什麼每一欄各自讀</h2>
+     * 先前整份包在一個 try 裡，用 {@code getAsBoolean}／{@code valueOf} 直接讀。
+     * 任何一欄型別不對（手改成字串、寫成 null、較新版本才有的列舉值）就丟例外，
+     * <b>那一欄之後的全部</b>都退回預設——玩家的設定看起來像被隨機重設了一半。
+     * 整份讀不懂時則是靜靜用預設值，而壞掉的檔留在原地，下一次存檔就把它蓋掉。
+     *
+     * <p>現在每一欄讀不懂就只有那一欄用預設；整份讀不懂就改名放旁邊
+     * （見 {@link SafeFiles#readObject}）。
+     */
     private void load() {
-        if (!Files.exists(file)) {
-            return;
+        JsonObject o = SafeFiles.readObject(file, MAX_BYTES);
+        if (o == null) {
+            return;                            // 沒有檔、或讀不懂（已經移開）：全部用預設值
         }
-        try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
-            JsonObject o = JsonParser.parseReader(r).getAsJsonObject();
-            if (o.has("tooltipMode")) {
-                tooltipMode = TooltipMode.valueOf(o.get("tooltipMode").getAsString());
-            } else if (o.has("showPanel")) {
-                // 舊設定檔：showPanel 為 false 代表不翻 tooltip
-                tooltipMode = o.get("showPanel").getAsBoolean()
-                        ? TooltipMode.PANEL : TooltipMode.OFF;
+        Boolean showPanel = boolOrNull(o, "showPanel");
+        TooltipMode tooltip = enumOf(o, "tooltipMode", TooltipMode.class);
+        if (tooltip != null) {
+            tooltipMode = tooltip;
+        } else if (showPanel != null) {
+            // 舊設定檔：showPanel 為 false 代表不翻 tooltip
+            tooltipMode = showPanel ? TooltipMode.PANEL : TooltipMode.OFF;
+        }
+        shotMode = enumOr(o, "shotMode", ShotMode.class, shotMode);
+        // 舊設定檔沒有這個欄位時維持預設——升上來的人畫面不會突然變樣
+        DialogueMode dialogue = enumOf(o, "dialogueMode", DialogueMode.class);
+        if (dialogue != null) {
+            dialogueMode = dialogue;
+        }
+        DialogueMode choice = enumOf(o, "choiceMode", DialogueMode.class);
+        if (choice != null) {
+            choiceMode = choice;
+        } else if (dialogue != null) {
+            // 舊設定檔只有一個開關，選項是跟著內文走的。照那個值帶過來，
+            // 升上來的人畫面不會突然變樣。
+            choiceMode = dialogue;
+        }
+        chatCopy = bool(o, "chatCopy", chatCopy);
+        translateTitles = bool(o, "translateTitles", translateTitles);
+        marketSearch = bool(o, "marketSearch", marketSearch);
+        chatMode = enumOr(o, "chatMode", ChatMode.class, chatMode);
+        Boolean overlays = boolOrNull(o, "showOverlays");
+        if (overlays != null) {
+            showOverlays = overlays;
+        } else if (showPanel != null) {
+            showOverlays = showPanel;
+        }
+        collect = bool(o, "collect", collect);
+        notifiedVersion = str(o, "notifiedVersion", notifiedVersion);
+        language = str(o, "language", language).trim();
+        fallbackLanguage = str(o, "fallbackLanguage", fallbackLanguage).trim();
+        uiLanguage = str(o, "uiLanguage", uiLanguage).trim();
+        debugDumps = bool(o, "debugDumps", debugDumps);
+        collectGuiText = bool(o, "collectGuiText", collectGuiText);
+        source = enumOr(o, "source", Source.class, source);
+        translateNametags = bool(o, "translateNametags", translateNametags);
+        nametagMode = enumOr(o, "nametagMode", NametagMode.class, nametagMode);
+        panelSide = enumOr(o, "panelSide", PanelSide.class, panelSide);
+        translateItemNames = bool(o, "translateItemNames", translateItemNames);
+        // 數字一律夾回設定畫面允許的範圍。手改或別的版本寫出的極端值會讓小框
+        // 跑到畫面外、或一出現就消失，看起來就像翻譯壞了。
+        panelGap = clamp(integer(o, "panelGap", panelGap), 0, 200);
+        String accent = str(o, "accentColor", accentColor);
+        if (accent.matches("#[0-9a-fA-F]{6}")) {
+            accentColor = accent;
+        }
+        int hold = integer(o, "dialogueHoldMs", dialogueHoldMs);
+        // 跟 setDialogueHoldSeconds 一致：0 以下是「持續顯示」
+        dialogueHoldMs = hold <= 0 ? Integer.MAX_VALUE : hold;
+        nametagHoldMs = clamp(integer(o, "nametagHoldMs", nametagHoldMs), 0, 60_000);
+        panelAnchor = enumOr(o, "panelAnchor", PanelAnchor.class, panelAnchor);
+        readPairs(o, "overlayPos", overlayPos);
+        readPairs(o, "overlaySize", overlaySize);
+        showBadges = bool(o, "showBadges", showBadges);
+        badgeStyle = enumOr(o, "badgeStyle", BadgeStyle.class, badgeStyle);
+        nametagRange = clamp(number(o, "nametagRange", nametagRange), 2.0, 64.0);
+        nametagAngle = clamp(number(o, "nametagAngle", nametagAngle), 1.0, 45.0);
+        fixedX = integer(o, "fixedX", fixedX);
+        fixedY = integer(o, "fixedY", fixedY);
+
+        for (String old : RETIRED) {
+            if (o.has(old)) {
+                System.out.println("[WynnChaYuan] 設定檔帶著舊版的欄位 " + old + "，重寫一次把它清掉");
+                save();
+                break;
             }
-            if (o.has("shotMode")) {
-                shotMode = ShotMode.valueOf(o.get("shotMode").getAsString());
-            }
-            if (o.has("dialogueMode")) {
-                // 舊設定檔沒有這個欄位，維持 PANEL——升上來的人畫面不會突然變樣
-                dialogueMode = DialogueMode.valueOf(o.get("dialogueMode").getAsString());
-            }
-            if (o.has("choiceMode")) {
-                choiceMode = DialogueMode.valueOf(o.get("choiceMode").getAsString());
-            } else if (o.has("dialogueMode")) {
-                // 舊設定檔只有一個開關，選項是跟著內文走的。照那個值帶過來，
-                // 升上來的人畫面不會突然變樣。
-                choiceMode = dialogueMode;
-            }
-            if (o.has("chatCopy")) {
-                chatCopy = o.get("chatCopy").getAsBoolean();
-            }
-            if (o.has("translateTitles")) {
-                translateTitles = o.get("translateTitles").getAsBoolean();
-            }
-            if (o.has("chatMode")) {
-                // 舊設定檔沒有這個欄位，維持 OFF——不會有人升級之後聊天突然被換掉
-                chatMode = ChatMode.valueOf(o.get("chatMode").getAsString());
-            }
-            if (o.has("showOverlays")) {
-                showOverlays = o.get("showOverlays").getAsBoolean();
-            } else if (o.has("showPanel")) {
-                showOverlays = o.get("showPanel").getAsBoolean();
-            }
-            if (o.has("collect")) {
-                collect = o.get("collect").getAsBoolean();
-            }
-            if (o.has("notifiedVersion")) {
-                notifiedVersion = o.get("notifiedVersion").getAsString();
-            }
-            if (o.has("language")) {
-                language = o.get("language").getAsString().trim();
-            }
-            if (o.has("fallbackLanguage")) {
-                fallbackLanguage = o.get("fallbackLanguage").getAsString().trim();
-            }
-            if (o.has("debugDumps")) {
-                debugDumps = o.get("debugDumps").getAsBoolean();
-            }
-            if (o.has("collectGuiText")) {
-                collectGuiText = o.get("collectGuiText").getAsBoolean();
-            }
-            if (o.has("source")) {
-                source = Source.valueOf(o.get("source").getAsString());
-            }
-            if (o.has("translateNametags")) {
-                translateNametags = o.get("translateNametags").getAsBoolean();
-            }
-            if (o.has("nametagMode")) {
-                nametagMode = NametagMode.valueOf(o.get("nametagMode").getAsString());
-            }
-            if (o.has("panelSide")) {
-                panelSide = PanelSide.valueOf(o.get("panelSide").getAsString());
-            }
-            if (o.has("translateItemNames")) {
-                translateItemNames = o.get("translateItemNames").getAsBoolean();
-            }
-            if (o.has("panelGap")) {
-                panelGap = o.get("panelGap").getAsInt();
-            }
-            if (o.has("accentColor")) {
-                accentColor = o.get("accentColor").getAsString();
-            }
-            if (o.has("dialogueHoldMs")) {
-                dialogueHoldMs = o.get("dialogueHoldMs").getAsInt();
-            }
-            if (o.has("nametagHoldMs")) {
-                nametagHoldMs = o.get("nametagHoldMs").getAsInt();
-            }
-            if (o.has("panelAnchor")) {
-                panelAnchor = PanelAnchor.valueOf(o.get("panelAnchor").getAsString());
-            }
-            if (o.has("overlayPos")) {
-                com.google.gson.JsonObject positions = o.getAsJsonObject("overlayPos");
-                for (Overlay which : Overlay.values()) {
-                    if (!positions.has(which.name())) {
-                        continue;
-                    }
-                    com.google.gson.JsonArray xy = positions.getAsJsonArray(which.name());
-                    if (xy != null && xy.size() == 2) {
-                        overlayPos.put(which,
-                                new int[] {xy.get(0).getAsInt(), xy.get(1).getAsInt()});
-                    }
-                }
-            }
-            if (o.has("overlaySize")) {
-                com.google.gson.JsonObject sizes = o.getAsJsonObject("overlaySize");
-                for (Overlay which : Overlay.values()) {
-                    if (!sizes.has(which.name())) {
-                        continue;
-                    }
-                    com.google.gson.JsonArray wh = sizes.getAsJsonArray(which.name());
-                    if (wh != null && wh.size() == 2) {
-                        overlaySize.put(which,
-                                new int[] {wh.get(0).getAsInt(), wh.get(1).getAsInt()});
-                    }
-                }
-            }
-            if (o.has("showBadges")) {
-                showBadges = o.get("showBadges").getAsBoolean();
-            }
-            if (o.has("badgeStyle")) {
-                badgeStyle = BadgeStyle.valueOf(o.get("badgeStyle").getAsString());
-            }
-            if (o.has("nametagRange")) {
-                nametagRange = o.get("nametagRange").getAsDouble();
-            }
-            if (o.has("nametagAngle")) {
-                nametagAngle = o.get("nametagAngle").getAsDouble();
-            }
-            if (o.has("fixedX")) {
-                fixedX = o.get("fixedX").getAsInt();
-            }
-            if (o.has("fixedY")) {
-                fixedY = o.get("fixedY").getAsInt();
-            }
-        } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 設定讀取失敗，使用預設值: " + e.getMessage());
         }
     }
 
-    private void save() {
+    /** 不存在、是 JSON null、或不是單一值（陣列、物件）都當成沒寫。 */
+    private static JsonElement primitive(JsonObject o, String name) {
+        JsonElement el = o.get(name);
+        return el == null || !el.isJsonPrimitive() ? null : el;
+    }
+
+    /** 布林值；手改成 {@code "true"} 字串的也認。其他一律當成沒寫。 */
+    private static Boolean boolOrNull(JsonObject o, String name) {
+        JsonElement el = primitive(o, name);
+        if (el == null) {
+            return null;
+        }
+        if (el.getAsJsonPrimitive().isBoolean()) {
+            return el.getAsBoolean();
+        }
+        String s = el.getAsString().trim();
+        if (s.equalsIgnoreCase("true")) {
+            return true;
+        }
+        return s.equalsIgnoreCase("false") ? Boolean.FALSE : null;
+    }
+
+    private static boolean bool(JsonObject o, String name, boolean fallback) {
+        Boolean v = boolOrNull(o, name);
+        return v == null ? fallback : v;
+    }
+
+    /**
+     * 字串欄位。<b>只收真正的字串</b>。
+     *
+     * <p>Gson 的 {@code getAsString} 對數字與布林值也會給答案（{@code 5} 變成
+     * {@code "5"}）。但這幾欄是語言代碼、版本號、色碼——寫成數字一定是壞的，
+     * 拿著假值去查語言檔只會永遠落空，退回預設反而是對的。
+     */
+    private static String str(JsonObject o, String name, String fallback) {
+        JsonElement el = primitive(o, name);
+        return el == null || !el.getAsJsonPrimitive().isString() ? fallback : el.getAsString();
+    }
+
+    private static double number(JsonObject o, String name, double fallback) {
+        JsonElement el = primitive(o, name);
+        if (el == null) {
+            return fallback;
+        }
         try {
-            Files.createDirectories(file.getParent());
+            double v = el.getAsDouble();
+            return Double.isFinite(v) ? v : fallback;
+        } catch (RuntimeException e) {
+            return fallback;                   // "wide"、true 之類
+        }
+    }
+
+    private static int integer(JsonObject o, String name, int fallback) {
+        double v = number(o, name, Double.NaN);
+        if (Double.isNaN(v)) {
+            return fallback;
+        }
+        return (int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Math.round(v)));
+    }
+
+    /**
+     * 列舉值；不認得就回傳 {@code null}。
+     *
+     * <p>「不認得」多半是<b>較新版本</b>加的選項——玩家退回舊版測試時就會遇到。
+     * 以前這裡丟例外，連帶後面每一欄都退回預設。
+     */
+    private static <E extends Enum<E>> E enumOf(JsonObject o, String name, Class<E> type) {
+        JsonElement el = primitive(o, name);
+        if (el == null) {
+            return null;
+        }
+        try {
+            return Enum.valueOf(type, el.getAsString().trim().toUpperCase(java.util.Locale.ROOT));
+        } catch (IllegalArgumentException e) {
+            System.err.println("[WynnChaYuan] 設定 " + name + " 的值 " + el + " 這一版不認得，用預設值");
+            return null;
+        }
+    }
+
+    private static <E extends Enum<E>> E enumOr(JsonObject o, String name, Class<E> type, E fallback) {
+        E v = enumOf(o, name, type);
+        return v == null ? fallback : v;
+    }
+
+    private static int clamp(int v, int lo, int hi) {
+        return Math.max(lo, Math.min(hi, v));
+    }
+
+    private static double clamp(double v, double lo, double hi) {
+        return Math.max(lo, Math.min(hi, v));
+    }
+
+    /** 小框的位置／大小。哪一個框讀不懂，就只有那一個框回到預設。 */
+    private static void readPairs(JsonObject o, String name, java.util.EnumMap<Overlay, int[]> into) {
+        JsonElement el = o.get(name);
+        if (el == null || !el.isJsonObject()) {
+            return;
+        }
+        JsonObject all = el.getAsJsonObject();
+        for (Overlay which : Overlay.values()) {
+            JsonElement pair = all.get(which.name());
+            if (pair == null || !pair.isJsonArray() || pair.getAsJsonArray().size() != 2) {
+                continue;
+            }
+            try {
+                double a = pair.getAsJsonArray().get(0).getAsDouble();
+                double b = pair.getAsJsonArray().get(1).getAsDouble();
+                if (Double.isFinite(a) && Double.isFinite(b)) {
+                    into.put(which, new int[] {(int) a, (int) b});
+                }
+            } catch (RuntimeException ignored) {
+                // 這一個框用預設位置
+            }
+        }
+    }
+
+    /**
+     * 寫設定。
+     *
+     * <p>先寫暫存檔再換上去：先前是直接開檔覆寫，存到一半遊戲被關掉，下一次啟動
+     * 讀到的就是半截的 JSON。同步鎖是因為設定畫面（主執行緒）與更新提示可能同時存。
+     */
+    private synchronized void save() {
+        try {
             JsonObject o = new JsonObject();
             o.addProperty("tooltipMode", tooltipMode.name());
             o.addProperty("showOverlays", showOverlays);
@@ -1070,6 +1151,11 @@ public final class CollectorConfig {
             o.addProperty("notifiedVersion", notifiedVersion);
             o.addProperty("language", language);
             o.addProperty("fallbackLanguage", fallbackLanguage);
+            // uiLanguage 與 marketSearch 先前<b>只活在記憶體裡</b>：setUiLanguage 與
+            // toggleMarketSearch 都有呼叫 save()，但 save 沒寫這兩欄、load 也沒讀，
+            // 於是 F6 選的介面語言與市集搜尋開關每次重開遊戲都回到預設——
+            // 玩家看到的是「設定按了沒反應」。
+            o.addProperty("uiLanguage", uiLanguage);
             o.addProperty("source", source.name());
             o.addProperty("debugDumps", debugDumps);
             o.addProperty("collectGuiText", collectGuiText);
@@ -1085,6 +1171,7 @@ public final class CollectorConfig {
             o.addProperty("chatMode", chatMode.name());
             o.addProperty("translateTitles", translateTitles);
             o.addProperty("chatCopy", chatCopy);
+            o.addProperty("marketSearch", marketSearch);
             o.addProperty("shotMode", shotMode.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());
@@ -1110,9 +1197,7 @@ public final class CollectorConfig {
             o.addProperty("nametagAngle", nametagAngle);
             o.addProperty("fixedX", fixedX);
             o.addProperty("fixedY", fixedY);
-            try (Writer w = Files.newBufferedWriter(file, StandardCharsets.UTF_8)) {
-                GSON.toJson(o, w);
-            }
+            SafeFiles.writeAtomically(file, GSON.toJson(o));
         } catch (Exception e) {
             System.err.println("[WynnChaYuan] 設定寫入失敗: " + e.getMessage());
         }

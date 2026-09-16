@@ -70,7 +70,7 @@ public final class MajorIdWrapTest {
                     net.minecraft.resources.Identifier.withDefaultNamespace("common")));
 
     /** Fabled 物品續行開頭的縮排。在 Wynncraft 的字型裡 À 是一格固定寬度的空白。 */
-    private static final String INDENT = "ÀÀ";
+    static final String INDENT = "ÀÀ";
 
     /** 名稱前面那顆項目符號（材質包圖示）。 */
     private static final String BULLET = "";
@@ -237,7 +237,7 @@ public final class MajorIdWrapTest {
      * 有的把圖示寫成字面的「{#}」，有的整個漏掉圖示。所以換好圖示之後模板化一次，
      * 跟語料的 src 對不上就退回拿 src 自己填。
      */
-    private static String sample(String raw, String src) {
+    static String sample(String raw, String src) {
         if (raw != null) {
             String filled = raw.replace("{#}", ICON_CHAR);
             if (template(filled).equals(src)) {
@@ -271,7 +271,7 @@ public final class MajorIdWrapTest {
     }
 
     /** 模板化，跟語料的 src 同一個形狀。 */
-    private static String template(String text) {
+    static String template(String text) {
         return com.wynnchayuan.capture.LineParts.of(StyledText.fromComponent(parts(text, GREY)))
                 .template();
     }
@@ -316,7 +316,7 @@ public final class MajorIdWrapTest {
      * 遊戲送來的 Major ID 那幾行：第一行是「圖示＋偏移＋粉紅的名稱＋灰色的說明」，
      * 續行是灰色的說明，Fabled 物品的續行前面多一串 {@code À}。
      */
-    private static List<Component> majorIdRows(String name, String[] rows, String indent) {
+    static List<Component> majorIdRows(String name, String[] rows, String indent) {
         List<Component> out = new ArrayList<>();
         MutableComponent first = Component.empty();
         first.append(Component.literal(BULLET).withStyle(ICON.withColor(PINK.getColor())));
@@ -356,7 +356,7 @@ public final class MajorIdWrapTest {
     }
 
     /** Major ID 放進一份物品 tooltip 裡：前後有別的行、中間隔著空行。 */
-    private static List<Component> tooltip(List<Component> majorId) {
+    static List<Component> tooltip(List<Component> majorId) {
         List<Component> tip = new ArrayList<>();
         tip.add(Component.literal("Sample Bow").withStyle(PINK));
         tip.add(Component.literal(""));
@@ -368,7 +368,7 @@ public final class MajorIdWrapTest {
 
     // ------------------------------------------------------------------ 跑一次
 
-    private static String render(List<Component> tip, TranslationStore store,
+    static String render(List<Component> tip, TranslationStore store,
                                  ToIntFunction<Component> measure) {
         LineTranslator.measureForTest = measure;
         try {
@@ -398,7 +398,7 @@ public final class MajorIdWrapTest {
     }
 
     /** 粗略的 Minecraft 字寬：空白 4、方塊字 12、其他 6；À 縮排算一格空白。 */
-    private static int width(Component c) {
+    static int width(Component c) {
         int px = 0;
         for (int cp : c.getString().codePoints().toArray()) {
             px += cp == ' ' || cp == 'À' ? 4 : cp >= 0x2E80 ? 12 : 6;

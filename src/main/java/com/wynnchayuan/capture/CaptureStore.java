@@ -426,45 +426,86 @@ public final class CaptureStore {
             try (Writer w = Files.newBufferedWriter(tmp, StandardCharsets.UTF_8)) {
                 GSON.toJson(root, w);
             }
-            Files.move(tmp, file, StandardCopyOption.REPLACE_EXISTING);
+            com.wynnchayuan.SafeFiles.moveAtomically(tmp, file);
         } catch (IOException e) {
             dirty.set(true);   // 沒寫成功，下次再試
             System.err.println("[WynnChaYuan] 寫入失敗 " + file + ": " + e.getMessage());
         }
     }
 
+    /**
+     * 大到不合理的 captured.json 不讀。實機一份約 10 KB；再怎麼跑也到不了這個數字，
+     * 硬讀只會把啟動卡在主執行緒上。
+     */
+    static final long MAX_BYTES = 32L << 20;
+
+    /**
+     * 讀回上次存的內容。
+     *
+     * <h2>讀不懂時為什麼要把檔案移開</h2>
+     * 先前讀不懂就印一行「將重新開始」，檔案留在原地——30 秒後第一次存檔就用空的內容
+     * <b>蓋掉</b>它。遊戲被強制關掉而留下的半截檔、舊版格式，都會讓玩家收了好幾天的
+     * 缺口清單無聲消失。現在改名放旁邊（見 {@link com.wynnchayuan.SafeFiles#readObject}），
+     * 內容還在，要救可以救。
+     *
+     * <p>逐條讀：舊版少了欄位、某一條是 {@code null} 或不是物件，只跳過那一條。
+     */
     private void load() {
-        if (!Files.exists(file)) {
+        JsonObject root = com.wynnchayuan.SafeFiles.readObject(file, MAX_BYTES);
+        if (root == null) {
             return;
         }
-        try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
-            JsonObject root = JsonParser.parseReader(r).getAsJsonObject();
-            JsonArray pending = root.getAsJsonArray("untranslated");
-            if (pending != null) {
-                for (var row : pending) {
-                    Captured c = GSON.fromJson(row, Captured.class);
-                    if (c.src != null && !c.src.isBlank()) {
-                        untranslated.put(hash(c.src), c);
-                    }
+        com.google.gson.JsonElement pending = root.get("untranslated");
+        if (pending != null && pending.isJsonArray()) {
+            for (var row : pending.getAsJsonArray()) {
+                Captured c = row(row);
+                if (c != null) {
+                    untranslated.put(hash(c.src), c);
                 }
             }
-            JsonObject saved = root.getAsJsonObject("entries");
-            if (saved == null) {
-                return;
+        }
+        com.google.gson.JsonElement saved = root.get("entries");
+        if (saved == null || !saved.isJsonObject()) {
+            return;
+        }
+        for (var e : saved.getAsJsonObject().entrySet()) {
+            Captured c = row(e.getValue());
+            if (c == null) {
+                continue;
             }
-            for (String key : saved.keySet()) {
-                Captured c = GSON.fromJson(saved.get(key), Captured.class);
-                // 鍵用 src 重算，不信檔案裡寫的那個。
-                //
-                // 檔案裡的鍵是<b>給人看的</b>（見 flush 的 readableKey），
-                // 而去重是照 hash(src) 查的。直接沿用檔案裡的鍵，重開遊戲之後
-                // 同一句話會被當成新的再收一次。
-                entries.put(hash(c.src == null ? "" : c.src), c);
-                // 接續上次的流水號，重開遊戲之後收到的才會排在後面
-                nextSeq.updateAndGet(n -> Math.max(n, c.seq + 1));
+            // 鍵用 src 重算，不信檔案裡寫的那個。
+            //
+            // 檔案裡的鍵是<b>給人看的</b>（見 flush 的 readableKey），
+            // 而去重是照 hash(src) 查的。直接沿用檔案裡的鍵，重開遊戲之後
+            // 同一句話會被當成新的再收一次。
+            entries.put(hash(c.src), c);
+            // 接續上次的流水號，重開遊戲之後收到的才會排在後面
+            int seq = Math.max(0, c.seq);
+            nextSeq.updateAndGet(n -> Math.max(n, seq + 1));
+        }
+    }
+
+    /**
+     * 一條讀得懂的紀錄；讀不懂或沒有原文就回傳 {@code null}。
+     *
+     * <p>{@code dst} 要補成空字串：Gson 建物件時不跑欄位初始值，舊版沒寫 {@code dst}
+     * 的紀錄讀回來會是 {@code null}，後面判斷「有沒有人翻過」時就會踩到。
+     */
+    private static Captured row(com.google.gson.JsonElement el) {
+        if (el == null || !el.isJsonObject()) {
+            return null;
+        }
+        try {
+            Captured c = GSON.fromJson(el, Captured.class);
+            if (c == null || c.src == null || c.src.isBlank()) {
+                return null;
             }
-        } catch (Exception e) {
-            System.err.println("[WynnChaYuan] 讀取失敗，將重新開始 " + file + ": " + e.getMessage());
+            if (c.dst == null) {
+                c.dst = "";
+            }
+            return c;
+        } catch (RuntimeException e) {
+            return null;
         }
     }
 

@@ -129,6 +129,13 @@ public final class Languages {
             try (Stream<Path> files = Files.walk(root)) {
                 files.filter(Files::isRegularFile)
                      .filter(p -> p.getFileName().toString().endsWith(".json"))
+                     // 別的語言的資料夾不是「舊版的扁平目錄」。
+                     //
+                     // 先前這裡整個 translations/ 往下掃：玩家把遊戲語言從繁中切到簡中，
+                     // zh_cn/ 還不存在，於是 zh_tw/ 底下整份快取被當成扁平檔，
+                     // 搬進 zh_cn/zh_tw/…——繁中那層憑空消失，簡中資料夾裡多了二十幾 MB
+                     // 永遠不會被讀的東西。舊版的扁平目錄只會有 ability/、quest/ 這種子資料夾。
+                     .filter(p -> !inLanguageDir(root, p))
                      .forEach(loose::add);
             }
             if (loose.isEmpty()) {
@@ -146,6 +153,7 @@ public final class Languages {
             try (Stream<Path> rest = Files.walk(root)) {
                 rest.sorted(java.util.Comparator.reverseOrder())
                     .filter(p -> !p.equals(root) && Files.isDirectory(p))
+                    .filter(p -> !inLanguageDir(root, p) && !isLanguageDir(root, p))
                     .forEach(p -> {
                         try (Stream<Path> inside = Files.list(p)) {
                             if (inside.findAny().isEmpty()) {
@@ -163,6 +171,22 @@ public final class Languages {
             System.err.println("[WynnChaYuan] 搬移舊版譯文失敗：" + e.getMessage());
             return 0;
         }
+    }
+
+    /** 語言資料夾的名字：{@code zh_tw}、{@code ja_jp}、{@code pt_br}。 */
+    private static final java.util.regex.Pattern LANGUAGE_DIR =
+            java.util.regex.Pattern.compile("[a-z]{2,3}_[a-z0-9]{2,4}");
+
+    /** {@code translations/} 底下第一層就是語言資料夾。 */
+    private static boolean isLanguageDir(Path root, Path p) {
+        Path rel = root.relativize(p);
+        return rel.getNameCount() == 1 && LANGUAGE_DIR.matcher(rel.toString()).matches();
+    }
+
+    /** 這個檔或資料夾在某個語言資料夾<b>裡面</b>。 */
+    private static boolean inLanguageDir(Path root, Path p) {
+        Path rel = root.relativize(p);
+        return rel.getNameCount() > 1 && LANGUAGE_DIR.matcher(rel.getName(0).toString()).matches();
     }
 
     /**

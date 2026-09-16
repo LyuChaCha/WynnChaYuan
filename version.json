@@ -1,12 +1,48 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.9_6",
+ "latest": "0.1.9_7",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.9_7": {
+   "headline": "Upgrading over an old config folder is safe now",
+   "items": [
+    "Upgrading over an existing wynnchayuan folder no longer needs the folder deleted",
+    "Settings, captured strings and the translation cache are written atomically",
+    "Damaged files are set aside and rebuilt instead of being overwritten or lost",
+    "Downloaded translations are loaded on the main thread, avoiding hitches",
+    "Ability names are no longer split across rows or half-translated",
+    "Fixed an error that could happen while re-wrapping item descriptions",
+    "F6 settings such as the interface language now survive a restart"
+   ],
+   "zh_tw": {
+    "headline": "保留舊資料夾也能直接升級",
+    "items": [
+     "保留舊的 wynnchayuan 資料夾也能直接升級，不必刪除",
+     "設定檔、語料檔與譯文快取改為原子寫入",
+     "檔案損壞時改為另存備份並自動重建，不再覆蓋或遺失",
+     "同步譯文改為在主執行緒載入，避免卡頓",
+     "技能名稱不再因換行被拆開或只翻一半",
+     "修正物品說明重新排版時可能發生的錯誤",
+     "F6 的介面語言等設定重開遊戲後會保留"
+    ]
+   },
+   "zh_cn": {
+    "headline": "保留旧文件夹也能直接升级",
+    "items": [
+     "保留旧的 wynnchayuan 文件夹也能直接升级，不必删除",
+     "设置文件、语料文件与译文缓存改为原子写入",
+     "文件损坏时改为另存备份并自动重建，不再覆盖或丢失",
+     "同步译文改为在主线程载入，避免卡顿",
+     "技能名称不再因换行被拆开或只翻一半",
+     "修正物品说明重新排版时可能发生的错误",
+     "F6 的界面语言等设置重开游戏后会保留"
+    ]
+   }
+  },
   "0.1.9_6": {
    "headline": "No more automatic uploads; manual export in F6",
    "items": [
