@@ -500,6 +500,13 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().toggleTitles();
                     b.setMessage(titleLabel());
                 });
+        // 右上那一欄：每日目標、世界事件、Lootrun、團隊。
+        // 原文那一欄是 Wynntils 畫的，我們只在自己的追蹤小框底下補譯文。
+        cycle("world.scoreboard",
+                this::scoreboardLabel, b -> {
+                    WynnChaYuan.config().toggleScoreboard();
+                    b.setMessage(scoreboardLabel());
+                });
         cycle("world.chatcopy",
                 this::chatCopyLabel, b -> {
                     WynnChaYuan.config().toggleChatCopy();
@@ -808,6 +815,10 @@ public final class SettingsScreen extends Screen {
             case KEY -> T.s("mode.key", com.wynnchayuan.render.PanelShot.keyName());
             case AUTO -> T.s("mode.auto");
         });
+    }
+
+    private Component scoreboardLabel() {
+        return ctrl(onOff(WynnChaYuan.config().showScoreboard()));
     }
 
     private Component overlayLabel() {

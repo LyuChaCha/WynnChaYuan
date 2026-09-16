@@ -1,12 +1,39 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.9_9",
+ "latest": "0.1.9_10",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.9_10": {
+   "headline": "The right-hand objectives can be translated too",
+   "items": [
+    "New F6 switch: daily objectives, world events, lootrun and party lines from the top-right column appear translated under the quest tracker",
+    "Ability tree: names under \"Blocked by:\" are translated on unlocked nodes too",
+    "Russian tooltips no longer show an empty box where a dash should be",
+    "More translations: dash and arrow bomb cost rows, spell cost rows"
+   ],
+   "zh_tw": {
+    "headline": "右上那一欄也翻得出來了",
+    "items": [
+     "F6 新增開關：每日目標、世界事件、Lootrun 與隊伍那幾行，譯文接在任務追蹤小框底下",
+     "技能樹：已解鎖節點底下「被以下技能阻擋」的技能名也會翻譯",
+     "俄文物品說明不再出現一個空方框",
+     "補上語料：Dash 與箭矢炸彈的消耗、法術消耗那幾列"
+    ]
+   },
+   "zh_cn": {
+    "headline": "右上那一栏也翻得出来了",
+    "items": [
+     "F6 新增开关：每日目标、世界事件、Lootrun 与队伍那几行，译文接在任务追踪小框底下",
+     "技能树：已解锁节点底下「被以下技能阻挡」的技能名也会翻译",
+     "俄文物品说明不再出现一个空方框",
+     "补上语料：Dash 与箭矢炸弹的消耗、法术消耗那几列"
+    ]
+   }
+  },
   "0.1.9_9": {
    "headline": "Dialogue settles as soon as a line ends",
    "items": [
