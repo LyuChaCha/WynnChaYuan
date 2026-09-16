@@ -5504,6 +5504,20 @@ public final class LineTranslator {
         if (parts.size() != 1 || translated.length != 1) {
             return List.of();
         }
+        // 一「份」不等於一「行」。
+        //
+        // 名牌是<b>一份含換行</b>的文字（「Copper\n✔ Ⓑ Mining Lv Min: {~}\n
+        // ✖ Equipped Tool: Pickaxe」），parts 與 translated 都只有一個，
+        // 上面那道關卡因此攔不住它。於是冒號那一刀切在第<b>二</b>行的冒號上，
+        // 「數值」那一半成了「{~}\n✖ 裝備工具: 鎬」——整個第三行被登記成數值的
+        // 白色，紅色的叉與灰色的標籤全被蓋掉。玩家看到的是採集點名牌只有中間
+        // 那一行有顏色，而顏色正是那塊牌子的資訊（綠勾＝等級夠、紅叉＝工具不對）。
+        //
+        // 「哪一半」本來就只在單行的情況下說得通，所以有換行就不做。
+        if (translated[0].indexOf(NEWLINE) >= 0
+                || parts.get(0).template().indexOf(NEWLINE) >= 0) {
+            return List.of();
+        }
         Style label = null;
         Style value = null;
         for (LineParts.Piece run : parts.get(0).runs()) {
