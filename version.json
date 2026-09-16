@@ -1,12 +1,33 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.0_1",
+ "latest": "0.2.0_2",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.0_2": {
+   "headline": "Tracker title and welcome message colours fixed",
+   "items": [
+    "The translated quest tracker title no longer shows as boxes",
+    "Multi-line chat messages keep each line's own colour (such as the Trade Market lines in the welcome message)"
+   ],
+   "zh_tw": {
+    "headline": "修正追蹤欄標題與歡迎訊息的顏色",
+    "items": [
+     "右上任務追蹤的標題翻譯後不再顯示成方格",
+     "多行的聊天訊息每一行保留原本的顏色（例如歡迎訊息底下的交易市場那兩行）"
+    ]
+   },
+   "zh_cn": {
+    "headline": "修正追踪栏标题与欢迎消息的颜色",
+    "items": [
+     "右上任务追踪的标题翻译后不再显示成方格",
+     "多行的聊天消息每一行保留原本的颜色（例如欢迎消息下方的交易市场那两行）"
+    ]
+   }
+  },
   "0.2.0_1": {
    "headline": "Quest tracker titles and dialogue choices are translated",
    "items": [

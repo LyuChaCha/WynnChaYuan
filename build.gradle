@@ -813,6 +813,14 @@ tasks.register('runBlockedByChecks', JavaExec) {
 }
 tasks.named('check') { dependsOn 'runBlockedByChecks' }
 
+tasks.register('runTradeFeederColourChecks', JavaExec) {
+    group = 'verification'
+    description = '歡迎訊息的交易市場兩行各自保留原文顏色'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.TradeFeederColourTest'
+}
+tasks.named('check') { dependsOn 'runTradeFeederColourChecks' }
+
 tasks.register('runOverlayTextChecks', JavaExec) {
     group = 'verification'
     description = '就地取代 Wynntils 疊層裡的字：關掉時一個字都不動'

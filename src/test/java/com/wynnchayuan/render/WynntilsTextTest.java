@@ -79,6 +79,30 @@ public final class WynntilsTextTest {
         check("一整段的「Quest – 任務名」也換得掉（實際 " + got + "）",
               got.contains("任務") && got.contains("音容宛在"));
 
+        // 實機的標題帶著 Wynncraft 的 language/wynncraft 字型（ContentTrackerOverlay 的樣板
+        // 用 with_font 包起來），那份字型沒有中文字，照抄字型就是一排方框。
+        StyledText fonted = StyledText.fromComponent(net.minecraft.network.chat.Component
+                .literal("Quest – Dearly Departed")
+                .withStyle(net.minecraft.network.chat.Style.EMPTY
+                        .withColor(0x29CC96)
+                        .withFont(new net.minecraft.network.chat.FontDescription.Resource(
+                                net.minecraft.resources.Identifier.fromNamespaceAndPath(
+                                        "minecraft", "language/wynncraft")))));
+        StyledText[] withFont = WynntilsText.lines(
+                tracker, new StyledText[] {fonted}, config, store);
+        String[] font = {null};
+        Integer[] colour = {null};
+        withFont[0].getComponent().visit((style, text) -> {
+            if (text.contains("音容宛在")) {
+                font[0] = String.valueOf(style.getFont());
+                colour[0] = style.getColor() == null ? null : style.getColor().getValue();
+            }
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        check("標題換成中文時字型改回預設，不會變方框（實際 " + font[0] + "）",
+              font[0] != null && !font[0].contains("language/wynncraft"));
+        check("標題的顏色照抄", colour[0] != null && colour[0] == 0x29CC96);
+
         StyledText[] other = WynntilsText.lines(new InfoBoxOverlay(), lines, config, store);
         check("別的疊層原樣不動", other == lines);
 
