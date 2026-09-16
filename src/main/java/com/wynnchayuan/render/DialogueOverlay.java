@@ -114,10 +114,55 @@ public final class DialogueOverlay {
      *
      * <p>空的清單也要收：對話從「有選項」換到「沒有選項」時，
      * 得把上一段的選項清掉，否則會黏在畫面上。
+     *
+     * <h2>譯文也在這裡算</h2>
+     * 先前只是把原文記下來，真正翻譯與更新畫面的是 {@link #setCurrent}——
+     * 而那是<b>對話事件</b>驅動的。選項冒出來、或玩家選完換下一段時，
+     * NPC 那句話往往一個字都沒變，對話事件因此不發，面板上的那一塊就
+     * 慢半拍：該出現的沒出現、該收掉的還黏著。玩家回報的
+     * 「沒有正確跳到選項」就是這個。
+     *
+     * <p>選項本來就只有 action bar 看得到，而 action bar 每個 tick 都送——
+     * 那就讓這一塊<b>直接跟著它</b>，不必再等對話事件。
      */
     public static void noteChoices(List<String> raw, int selected) {
-        rawChoices = raw == null ? List.of() : List.copyOf(raw);
+        List<String> incoming = raw == null ? List.of() : List.copyOf(raw);
         picked = selected;
+        if (!incoming.isEmpty()) {
+            // 選項還在畫面上就一直算「剛更新過」，否則玩家還在挑，
+            // 框已經淡掉了（見 Fade 與 dialogueHoldMs）。
+            lastUpdate = System.currentTimeMillis();
+        }
+        if (incoming.equals(rawChoices)) {
+            return;                            // 沒變就不必重翻
+        }
+        if (scrolling(incoming)) {
+            return;                            // 跑馬燈捲到一半，見 #scrolling
+        }
+        rawChoices = incoming;
+        choices = incoming.isEmpty()
+                || WynnChaYuan.config().choiceMode() == CollectorConfig.DialogueMode.OFF
+                ? List.of()
+                : translateChoices(WynnChaYuan.translations());
+    }
+
+    /**
+     * 這一份選項是跑馬燈捲到一半的樣子。
+     *
+     * <p>太長的選項 Wynncraft 會一格一格往左捲，每一格都是<b>從字中間切開</b>的
+     * 視窗（「mber anything from before yo」）。照單全收的話，面板上那一塊
+     * 每個 tick 都換一次內容——玩家看到的就是選項在抖。
+     *
+     * <p>真正的選項都是寫成句子的，一律大寫字母或符號開頭。判準跟收集那邊
+     * 共用同一條，見 {@code ActionBarListener#looksClipped}。
+     */
+    private static boolean scrolling(List<String> picks) {
+        for (String pick : picks) {
+            if (!pick.isEmpty() && pick.charAt(0) >= 'a' && pick.charAt(0) <= 'z') {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** 對話內容變了就更新這裡；傳 null 或空的代表對話結束。 */
@@ -146,6 +191,9 @@ public final class DialogueOverlay {
             clear();                           // 快取也要跟著倒掉，否則下一段對話
             return;                            // 會拿上一段的結果去比對開頭
         }
+        // 字停下來了嗎。一次只能問一次（它自己在數），所以擺在這裡，
+        // 底下每一行共用同一個答案。
+        boolean steady = settled(dialogue.getString());
         List<Component> lines = new ArrayList<>();
         // 選項不從這段文字裡分——它們根本不在這裡。
         //
@@ -155,8 +203,9 @@ public final class DialogueOverlay {
         //（「Are you headed someplace?」）<b>一個號碼都沒有</b>。
         // 所以那個判斷從來沒有成立過——這正是選項一直沒被翻譯的原因。
         //
-        // 改成用 noteChoices 從原始 action bar 抽出來的那一份。
-        List<List<Component>> options = choiceOff ? List.of() : translateChoices(store);
+        // 改成用 noteChoices 從原始 action bar 抽出來的那一份——
+        // 連翻譯也在那邊做了，這裡只是讀它算到哪裡，見 #noteChoices。
+        List<List<Component>> options = choiceOff ? List.of() : choices;
         // any 只管<b>本文</b>有沒有翻出來。查不到的那幾行也會被擺進 lines，
         // 全靠這個旗標攔著不顯示——把選項也算進來，英文原文就會漏上面板。
         boolean any = false;
@@ -183,7 +232,7 @@ public final class DialogueOverlay {
                 continue;
             }
 
-            LineResult result = translateLine(line, template, store);
+            LineResult result = translateLine(line, template, store, steady);
             Component translated = result == null ? null : result.translated();
             String source = result == null ? null : result.source();
             if (translated != null) {
@@ -219,8 +268,8 @@ public final class DialogueOverlay {
         WynnChaYuan.store().noteEvent(any ? "dialogue.shown" : "dialogue.noMatch");
         current = any && !bodyOff ? List.copyOf(lines) : List.of();
         // 選項獨立於本文：NPC 那句查不到的時候，選項照樣要能顯示——
-        // 玩家等一下就得從裡面挑一個。
-        choices = options;
+        // 玩家等一下就得從裡面挑一個。它自己跟著 action bar 更新，
+        // 這裡不要再蓋一次（蓋了就又變成慢半拍的那一份）。
         if ((any && !bodyOff) || !options.isEmpty()) {
             lastUpdate = System.currentTimeMillis();
         }
@@ -228,8 +277,25 @@ public final class DialogueOverlay {
 
     /** 翻譯目前打到的這一行；抽成獨立入口，讓逐字輸入的 prefix 行為可以驗證。 */
     static LineResult translateLine(StyledText line, String template, TranslationStore store) {
+        return translateLine(line, template, store, true);
+    }
+
+    /**
+     * @param steady 畫面上的字已經停下來了。還在打字時，<b>剛好也是語料裡另一條</b>
+     *               的半句話不算數——見 {@link #unfinished}。
+     */
+    static LineResult translateLine(StyledText line, String template, TranslationStore store,
+                                    boolean steady) {
         Component translated = LineTranslator.translate(line, store);
         String source = translated == null ? null : template;
+        if (translated != null && !steady && unfinished(template, store)) {
+            // 這半句自己剛好也是語料裡的一條：「Not even death saw…」打到第二個字
+            // 是「No」，而「No」在語料裡是「不」。貼上去下一個字就得換掉，
+            // 小框於是閃一下別的字——就地取代那條路 0.1.9_8 已經補過
+            //（見 {@link DialogueRewriter#line}），面板這條路當時沒有跟上。
+            translated = null;
+            source = null;
+        }
         if (translated == null) {
             // NPC 是一個字一個字打出來的，打到一半的句子當然查不到。
             // 只要開頭夠獨特就先把<b>整句</b>譯文顯示出來——先前要等整句
@@ -250,6 +316,52 @@ public final class DialogueOverlay {
     }
 
     record LineResult(String source, Component translated) {}
+
+    /**
+     * 這半句<b>還會再長</b>，現在查到的那一條不能算數。
+     *
+     * <p>三個條件一起看：語料裡還有更長的候選、這幾個字還沒收尾、而且短到
+     * 不像一句話。三個都成立才當成「打到一半」——長句或已經收尾的句子
+     * 就算後面還會接下去，先貼上它自己的譯文也還是對的。
+     *
+     * <p>句末標點與長度的判準跟就地取代那條路共用，見
+     * {@link DialogueRewriter#sentenceEnd}。
+     */
+    private static boolean unfinished(String template, TranslationStore store) {
+        String typed = template == null ? "" : template.strip();
+        return typed.length() < LOOKS_WHOLE
+                && store.hasLonger(typed)
+                && !DialogueRewriter.sentenceEnd(typed);
+    }
+
+    /** 見 {@link #unfinished}：短於這個長度的半句話撞到別條的機會太高。 */
+    private static final int LOOKS_WHOLE = 12;
+
+    /**
+     * 畫面上的字停下來了嗎。一次 {@link #setCurrent} 問一次。
+     *
+     * <p>對話事件是跟著 action bar 走的，字停下來之後還會一直進來
+     *（Wynntils 的游標圖示每幀都在變，見 {@code CaptureListener}）。
+     * 所以這裡跟就地取代那條路一樣可以用「連續幾次沒變」當成講完了。
+     *
+     * <p>萬一事件真的停了也不會更糟：{@link #unfinished} 擋下的那一行本來
+     * 就顯示原文，只是沒有機會再翻出來而已。
+     */
+    private static boolean settled(String raw) {
+        if (raw.equals(lastRaw)) {
+            still++;
+        } else {
+            lastRaw = raw;
+            still = 0;
+        }
+        return still >= SETTLE_EVENTS;
+    }
+
+    private static String lastRaw = "";
+    private static int still = 0;
+
+    /** 見 {@link #settled}：連續這麼多次收到同樣的文字就當成講完了。 */
+    private static final int SETTLE_EVENTS = 6;
 
     /**
      * 這一行是不是「剛才那句、只是又長了幾個字」。
@@ -274,9 +386,17 @@ public final class DialogueOverlay {
         return canReuse(source, template) ? source : null;
     }
 
-    /** 已認出的完整原文是不是仍包含目前打到的這個開頭。 */
+    /**
+     * 已認出的完整原文是不是仍包含目前打到的這個開頭。
+     *
+     * <p>不能只看 {@code startsWith}：打到人名、地名或數值<b>中間</b>時，畫面上是
+     * 「…have you seen Green_te」，而認出來的那一條是「…have you seen {u}」——
+     * 名字整個打完才會收成佔位符，中間那十幾幀全部落空，小框就掉回原文再跳回來。
+     * 岔開的判斷跟就地取代那條路共用，見 {@link DialogueRewriter#within}。
+     */
     static boolean canReuse(String source, String template) {
-        return source != null && template != null && source.startsWith(template.strip());
+        return source != null && template != null
+                && DialogueRewriter.within(source, template.strip());
     }
 
     /**
@@ -349,6 +469,9 @@ public final class DialogueOverlay {
         if (alpha <= 0f) {
             current = List.of();               // 淡完了才真的清掉
             choices = List.of();
+            // 原文也要一起倒掉，否則下一次 noteChoices 會覺得「跟上次一樣、
+            // 不必重翻」，而畫面上那一份剛剛才被清空——選項就再也回不來了。
+            rawChoices = List.of();
             return;
         }
         Minecraft mc = Minecraft.getInstance();

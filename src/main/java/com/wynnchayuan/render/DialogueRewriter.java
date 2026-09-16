@@ -574,6 +574,78 @@ public final class DialogueRewriter {
     private static int still = 0;
 
     /**
+     * 畫面上的字已經是一個<b>講完的句子</b>了嗎。
+     *
+     * <h2>為什麼要問</h2>
+     * {@link #settled} 是靠「連續幾幀沒變」認出句子講完了——要等六幀。而那六幀
+     * 之內，只要這句話剛好也是語料裡另一條的開頭（{@link TranslationStore#hasLonger}），
+     * 整句查表就會被擋下來，畫面只好先留英文。
+     *
+     * <p>玩家看到的是：NPC 的話明明已經講完，最後那個句點打出來之後
+     * 英文還停了一下才變成中文。逐字模擬 1500 句抓到三句，語料裡
+     * 符合這個形狀（以句末標點收尾、又是另一條的開頭）的有三百多條，
+     * 而且都是「The answer...」「...what?」這種短句——短句本來就最容易撞。
+     *
+     * <p>但這一關本來是為<b>半句</b>寫的：打到「Block」先貼上技能表的「格擋」。
+     * 那種半句<b>不會</b>以句末標點收尾——收了尾就是一個完整的句子，
+     * 就算等一下真的又接下去，先貼上這一句的譯文也還是對的。
+     *
+     * <p>逗號不算：「Well,」那種明顯還有下文，等它接完才對。
+     *
+     * <h2>只當最後一條路</h2>
+     * 這一句擺在<b>所有</b>其他判斷之後（見 {@link #line} 的結尾）。前綴比對認得出
+     * 更長的那一條時就照它走——那才是真的「還在打字」；沿用上一幀的譯文也優先。
+     * 直接放行的話，「Wait.」會先貼上自己的譯文，等「Wait. What?」打完再換掉，
+     * 中文換成另一段中文（逐字模擬 1500 句從 29 句漲到 130 句）。
+     */
+    static boolean sentenceEnd(String text) {
+        if (text == null) {
+            return false;
+        }
+        String bare = text.strip();
+        // 一個字都沒有的不算「句子」。
+        //
+        // 台詞常常以「...」開頭，而「...」自己就是語料裡的一條。放行的話，
+        // 第三個點打出來就先貼上「……」，下一個字進來又被完整譯文的第一個
+        // 字取代——畫面上是「……」變「…」。逐字模擬 1500 句，光這一類就
+        // 讓「中文換成另一段中文」從 29 句漲到 90 句。
+        boolean word = false;
+        for (int i = 0; i < bare.length() && !word; i++) {
+            word = Character.isLetterOrDigit(bare.charAt(i));
+        }
+        if (!word || bare.length() < ENDED_LENGTH) {
+            return false;
+        }
+        // 收尾的引號、括號不算數：「"Goodbye."」的句點在引號<b>裡面</b>
+        int at = bare.length() - 1;
+        while (at >= 0 && CLOSERS.indexOf(bare.charAt(at)) >= 0) {
+            at--;
+        }
+        return at >= 0 && ENDINGS.indexOf(bare.charAt(at)) >= 0;
+    }
+
+    /** 見 {@link #sentenceEnd}：句子講完的標點。逗號與分號<b>不</b>在裡面。 */
+    private static final String ENDINGS = ".!?…。！？";
+
+    /**
+     * 見 {@link #sentenceEnd}：太短的「完整句子」不算數。
+     *
+     * <h2>為什麼要有長度</h2>
+     * 「Hm.」「No...」「Wait.」「NO!」這種嘆詞自己就是語料裡的一條，而台詞又
+     * 很愛拿它們開頭——「Hm. Convenient, that one of our…」。放行的話，
+     * 第三個字就先貼上「嗯。」，下一個字進來整句被換成別的譯文。
+     *
+     * <p>八個字元是實測分出來的：逐字模擬 1500 句，上面那幾類全部落在八個字元
+     * 以下，而真正「整句就是它」的（「The answer...」「...what?」）都在八個字元
+     * 以上。同一個道理也寫在 {@code TranslationStore#MIN_PREFIX_LENGTH}：
+     * 短句撞到別句的機會高得多。
+     */
+    private static final int ENDED_LENGTH = 8;
+
+    /** 見 {@link #sentenceEnd}：句點後面還可以跟著這些。 */
+    private static final String CLOSERS = "\"'”’）)』」]";
+
+    /**
      * 忘掉「上一句講到哪」。
      *
      * <p>只有測試用得到：這些狀態是 static 的，一句模擬完不清掉，
@@ -780,6 +852,9 @@ public final class DialogueRewriter {
         // 拉出來自己站一行，這一段才真的有在數。
         boolean steady = settled(raw);
         String hit = store.lookup(typed);
+        // 被下面那一關擋下來的整句譯文。擋歸擋，它終究是<b>這幾個字</b>自己的
+        // 譯文——別條路全部走不通時還輪得到它，見下面的 sentenceEnd。
+        String exact = hit;
         if (hit != null && !steady && store.hasLonger(typed)) {
             // 打到一半的那半句，本身剛好也是語料裡的另一條。
             //
@@ -881,7 +956,16 @@ public final class DialogueRewriter {
             // 已經貼上去的譯文留著就好：它不會變得比較不對，而畫面穩定。
             //
             // 只在原文<b>還是同一句</b>（繼續往後長）時沿用；換句話了就放手。
-            return kept(raw);
+            String held = kept(raw);
+            if (held != null || exact == null || !sentenceEnd(typed)) {
+                return held;
+            }
+            // 每一條路都走不通，而畫面上的字<b>已經是一個講完的句子</b>：
+            // 那就用它自己的譯文。見 {@link #sentenceEnd}。
+            hit = exact;
+            source = typed;
+            said = raw;
+            spoken = typed;
         }
         // 有字畫不出來就整段不換——一句話裡插幾個方框，比整句留著英文糟糕得多。
         if (!renderable(hit)) {
