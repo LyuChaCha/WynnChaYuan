@@ -121,7 +121,7 @@ public final class MajorIdTermWrapTest {
                     new String[] {"守護者", "Guardian", "Angels", "Courage", "Buckshot"}),
             new Case("Samsara", "Mana Surge", MajorIdWrapTest.INDENT,
                     "Curse instead releases a calming wave",
-                    new String[] {"魔力湧動", "魔力恢復", "魔力竊取"},
+                    new String[] {"魔力湧動", "魔力回復", "魔力竊取"},
                     new String[] {"Mana", "Regen", "Steal"}),
         };
         for (Case c : cases) {
