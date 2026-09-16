@@ -80,7 +80,7 @@ Switch under **F6 → Data**, without changing the game's language or restarting
 - **Interface language**: the language of the F6 screens themselves (English included)
 
 <!-- 進度:開始 -->
-更新於 2026-09-15。
+更新於 2026-09-16。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
