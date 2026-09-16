@@ -846,7 +846,7 @@
   },
   "major-id#0162": {
    "src": "{~} chance for spells to cost no mana and instead refund {~} of their original cost.",
-   "dst": "{~1} 機率使你的技能無消耗再次施放一次，並將返還 {~2} 原本技能所需的魔力消耗。",
+   "dst": "{~1} 機率使你的技能無消耗施放一次，並將返還 {~2} 原本技能所需的魔力消耗。",
    "role": "desc",
    "_raw": "25% chance for spells to cost no mana and instead refund 25% of their original cost."
   },
@@ -974,7 +974,7 @@
   },
   "major-id#0184": {
    "src": "Bash will hit +{~} times.",
-   "dst": "Bash 多打擊 +{~} 次。",
+   "dst": "Bash 增加 +{~} 打擊次數。",
    "role": "desc",
    "_raw": "Bash will hit +2 times."
   },
@@ -1031,7 +1031,7 @@
   },
   "major-id#0194": {
    "src": "Buckshot will heal allies for {~} of your total Health Regen.",
-   "dst": "Buckshot 會為友軍恢復相當於你生命恢復 {~} 的生命值。",
+   "dst": "Buckshot 會為友軍恢復相當於自身生命恢復 {~} 的生命值。",
    "role": "desc",
    "_raw": "Buckshot will heal allies for 100% of your total Health Regen."
   },
@@ -1061,13 +1061,13 @@
   },
   "major-id#0199": {
    "src": "Chain Lightning hits slower, rebounds, adds {~} chains, and pulls mobs closer for a {#}{~} explosion spell.",
-   "dst": "連鎖閃電 變得更強且更慢，增加到 {~1} 條鎖鏈，並聚集怪物，隨後造成 {#}{~2} 爆炸傷害。",
+   "dst": "Chain Lightning 變得更強且更慢，增加到 {~1} 條鎖鏈，並聚集怪物，隨後造成 {#}{~2} 爆炸傷害。",
    "role": "desc",
    "_raw": "Chain Lightning hits slower, rebounds, adds 6 chains, and pulls mobs closer for a {#}9999% explosion spell."
   },
   "major-id#0200": {
    "src": "Chain Lightning hits slower, rebounds, adds {~} chains, and pulls mobs closer for a {#}{~} explosion spell.",
-   "dst": "連鎖閃電 變得更強且更慢，增加到 {~1} 條鎖鏈，並聚集怪物，隨後造成 {#}{~2} 爆炸傷害。",
+   "dst": "Chain Lightning 變得更強且更慢，增加到 {~1} 條鎖鏈，並聚集怪物，隨後造成 {#}{~2} 爆炸傷害。",
    "role": "desc",
    "_raw": "Chain Lightning hits slower, rebounds, adds 6 chains, and pulls mobs closer for a 8000% explosion spell."
   },
@@ -1095,7 +1095,7 @@
   },
   "major-id#0205": {
    "src": "Courage will immediately combust Guardian Angels, dealing {#}{~} and enkindling Buckshot's arrows with {#}{~} Main Attack damage.",
-   "dst": "Courage 會立即焚化 Guardian Angels，造成 {#}{~1} 傷害，並點燃 Buckshot 的箭矢，使其額外造成 {#}{~2} 普通攻擊傷害。",
+   "dst": "Courage 會立即將 Guardian Angels 燃燒殆盡，造成 {#}{~1} 傷害，並點燃 Buckshot 的箭矢，降下懲戒，使其額外造成 {#}{~2} 普通攻擊傷害。",
    "role": "desc",
    "_raw": "Courage will immediately combust Guardian Angels, dealing 4000% and enkindling Buckshot's arrows with 20% Main Attack damage."
   },
@@ -1288,7 +1288,7 @@
   },
   "Lunge::desc": {
    "src": "Hop and Leap's horizontal velocity is greatly increased.",
-   "dst": "躍空與 Leap 的水平衝力大幅提升。",
+   "dst": "Hop 與 Leap 的水平衝力大幅提升。",
    "role": "desc"
   },
   "major-id#0240": {
@@ -1766,7 +1766,7 @@
   },
   "Chain Reaction::desc": {
    "src": "Basaltic Traps arm faster and detonate immediately after arming, gaining +{~} range.",
-   "dst": "玄武岩地雷布設得更快，布設完成後立即引爆，射程增加 +{~}。",
+   "dst": "Basaltic Traps 布設得更快，布設完成後立即引爆，射程增加 +{~}。",
    "role": "desc",
    "_raw": "Basaltic Traps arm faster and detonate immediately after arming, gaining +2 range."
   },
