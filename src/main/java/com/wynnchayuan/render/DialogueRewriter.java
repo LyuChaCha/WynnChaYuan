@@ -516,6 +516,7 @@ public final class DialogueRewriter {
     private static String join(String text, TranslationStore store) {
         StringBuilder out = new StringBuilder();
         String rest = text.strip();
+        int taken = 0;
         for (int part = 0; part < PARTS && !rest.isEmpty(); part++) {
             String head = null;
             String piece = null;
@@ -537,9 +538,14 @@ public final class DialogueRewriter {
                 out.append(' ');
             }
             out.append(piece);
+            taken++;
             rest = rest.substring(head.length()).strip();
         }
-        return rest.isEmpty() && out.length() > 0 ? out.toString() : null;
+        // 只拆出一截的話，這裡做的事跟呼叫端一開始的整句查表一模一樣——
+        // 而那一次是<b>被擋下來</b>才走到 join 的（見呼叫處）。放行等於把
+        // 剛擋掉的東西從後門放進來，玩家看到的就是「打了兩個字閃一下中文」。
+        // join 本來就是為「拼出來的訊息」寫的，至少要有兩截才算數。
+        return rest.isEmpty() && taken >= 2 && out.length() > 0 ? out.toString() : null;
     }
 
     /**
@@ -566,6 +572,22 @@ public final class DialogueRewriter {
 
     private static String lastRaw = "";
     private static int still = 0;
+
+    /**
+     * 忘掉「上一句講到哪」。
+     *
+     * <p>只有測試用得到：這些狀態是 static 的，一句模擬完不清掉，
+     * 下一句會沿用上一句的判斷。實機不需要——換句話時
+     * {@link #line} 自己會發現原文不再是舊的延長而清掉。
+     */
+    static void forget() {
+        lastRaw = "";
+        still = 0;
+        said = "";
+        spoken = null;
+        held = null;
+        heldRaw = "";
+    }
 
     /**
      * 停幾幀才算停下來。
@@ -720,7 +742,7 @@ public final class DialogueRewriter {
      * 全部留在英文。{@link #wrap} 本來就是為了攤成多行才寫的，
      * 攤不進去它會回 {@code null}，所以這裡不必再擋一次。
      */
-    private static String line(String text, TranslationStore store, int rows,
+    static String line(String text, TranslationStore store, int rows,
             Style style, int width) {
         // 先參數化再查表。
         //
@@ -747,8 +769,18 @@ public final class DialogueRewriter {
         }
         String typed = parts.template().strip();
         String source = typed;
+        // 「字停下來了嗎」一幀只能問一次，而且<b>每一幀都要問</b>。
+        //
+        // 先前這一句是寫在下面那個 && 的第二格：{@code hit != null && !settled(raw)}。
+        // Java 會短路，於是整句查得到的那幾幀才會呼叫到它——而打字途中整句本來就
+        // 查不到，計數器一次都沒有往前走。結果是 {@link #settled} 永遠回 false，
+        // SETTLE_FRAMES 形同不存在：一句話只要是語料裡另一條的開頭
+        //（{@link TranslationStore#hasLonger}），就<b>連打完了都不准定案</b>。
+        //
+        // 拉出來自己站一行，這一段才真的有在數。
+        boolean steady = settled(raw);
         String hit = store.lookup(typed);
-        if (hit != null && !settled(raw) && store.hasLonger(typed)) {
+        if (hit != null && !steady && store.hasLonger(typed)) {
             // 打到一半的那半句，本身剛好也是語料裡的另一條。
             //
             // 逐字模擬全部 5749 句台詞，這樣的情形有 105 句：打到「Block」先貼上
@@ -803,14 +835,57 @@ public final class DialogueRewriter {
             // 打字打到一半時前綴還對得上，名字一出來就整句掉回英文，
             // 看起來就是「翻譯翻到一半變英文」。
             hit = join(typed, store);
+            // 拼出來的那條也要受「還在打字就別定案」那一關管。
+            //
+            // <h2>玩家回報的「前面跳一下英文」就是這裡</h2>
+            // 逐字模擬語料裡 1500 句台詞：1500 句裡有 190 句在<b>開頭那兩三幀</b>
+            // 閃出一段跟這句話無關的中文，再掉回英文，等到第六個字左右才換成
+            // 正確的譯文。例如
+            //
+            // <pre>
+            //   「Not even death saw the end of my misfortunes…」打到「No」 → 「不」
+            //   「Wait...it...it's n-not holding?!」打到「Wait.」         → 「等等。」
+            //   「...hm. Dang it...」打到「.」                            → 「.」
+            // </pre>
+            //
+            // join 是為「一句話 + 一個名字」寫的（任務開始那則訊息），它<b>不管</b>
+            // 現在畫面上的字還會不會繼續長。上面那道 hasLonger 的關卡攔下的
+            // 短句，走到這裡就被 join 用同一份語料原封不動地放行了。
+            //
+            // 兩道一起補：
+            // <ul>
+            //   <li>還在打字、而且語料裡還有更長的候選 → 不定案，等它長完。</li>
+            //   <li>join 只拆出<b>一截</b>時等於重做一次整句查表，那正是上面
+            //       剛擋掉的那一條；要求至少兩截，join 才回到它本來的用途。</li>
+            // </ul>
+            if (hit != null && !steady && store.hasLonger(typed)) {
+                hit = null;
+            }
             source = hit == null ? null : typed;
         }
         if (hit == null || hit.isBlank()) {
-            return null;
+            // 認不出是哪一句時，沿用上一幀<b>已經貼在畫面上</b>的那段譯文。
+            //
+            // <h2>為什麼</h2>
+            // 這一幀認不出來，不代表上一幀認錯了——原文只是又長了一個字，
+            // 而那個字剛好讓前綴變得不再獨特，或是讓拼出來的那條湊不滿。
+            // 任務開始那則訊息就是現成的例子：
+            //
+            // <pre>
+            //   New Quest Started:            → 「新任務開始：」（整句查得到）
+            //   New Quest Started: Ki         → 認不出來（任務名還沒打完）
+            //   New Quest Started: King's Recruit → 「新任務開始：國王的新兵」
+            // </pre>
+            //
+            // 中間那十幾幀先前一律掉回英文，畫面上就是中文閃一下不見再回來。
+            // 已經貼上去的譯文留著就好：它不會變得比較不對，而畫面穩定。
+            //
+            // 只在原文<b>還是同一句</b>（繼續往後長）時沿用；換句話了就放手。
+            return kept(raw);
         }
         // 有字畫不出來就整段不換——一句話裡插幾個方框，比整句留著英文糟糕得多。
         if (!renderable(hit)) {
-            return null;
+            return drop();
         }
         hit = fill(hit, parts);            // 佔位符換回真名、地名與數值
         // 塞不塞得下要問 wrap 本身，不能只量總寬度。
@@ -822,7 +897,9 @@ public final class DialogueRewriter {
         if (source.equals(typed)) {
             // 講完了。塞不進框裡就不換——真的塞不下時，
             // 讓玩家看見完整的英文，比看見被切掉一半的譯文好。
-            return wrap(hit, rows, style, width) != null ? hit : null;
+            // 這一條是<b>刻意</b>不沿用上一幀的：那會讓畫面停在半句中文，
+            // 正是這裡要避免的東西。
+            return wrap(hit, rows, style, width) != null ? show(raw, hit) : drop();
         }
         // 還在逐字打字。譯文也照同樣的進度一個字一個字出來，看起來就跟原文一樣。
         //
@@ -845,7 +922,43 @@ public final class DialogueRewriter {
             }
             part = typedSoFar(part, lo, part.length());
         }
-        return part.isEmpty() ? null : part;
+        return part.isEmpty() ? kept(raw) : show(raw, part);
+    }
+
+    /** 上一幀貼上畫面的譯文，以及當時原文打到哪。見 {@link #kept}。 */
+    private static String held;
+    private static String heldRaw = "";
+
+    /**
+     * 記住這一幀貼上去的譯文。
+     *
+     * @return 原樣回傳 {@code text}，讓呼叫端可以寫成 {@code return show(raw, text)}
+     */
+    private static String show(String raw, String text) {
+        heldRaw = raw;
+        held = text;
+        return text;
+    }
+
+    /**
+     * 這一幀認不出來時，沿用上一幀已經貼上去的譯文。
+     *
+     * <p>只在原文<b>還是同一句</b>時沿用：原文是一個字一個字加上去的，
+     * 所以「還是同一句」就是「這一幀的原文以上一幀的原文開頭」。
+     * 換句話了（或字變短了）就放手，不然會把上一句的中文黏在下一句上。
+     */
+    private static String kept(String raw) {
+        if (held == null || heldRaw.isEmpty() || !raw.startsWith(heldRaw)) {
+            return drop();
+        }
+        return held;
+    }
+
+    /** 這一幀就是要留英文：把沿用的那份也倒掉，不然下一幀又會被撿回來。 */
+    private static String drop() {
+        held = null;
+        heldRaw = "";
+        return null;
     }
 
     /** 名牌：說話者的名字，語料裡本來就有（npc.json）。 */
