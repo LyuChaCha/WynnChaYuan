@@ -53,6 +53,7 @@ public final class DialogueTypingTest {
 
         fragments();
         composite();
+        glyphs();
 
         TranslationStore store = new TranslationStore();
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
@@ -123,6 +124,23 @@ public final class DialogueTypingTest {
         check("拼出來的整句翻得出來（實際 " + frames.get(frames.size() - 1) + "）",
               "新任務開始：國王的新兵".equals(frames.get(frames.size() - 1)));
         check("任務名打到一半不會掉回英文", steady(frames));
+    }
+
+    /**
+     * 譯文裡的 {@code {#}} 不准原樣印出來。
+     *
+     * <p>實機回報：對話框直接印出「{#}敏捷嘛，那是給愛冒險的人的」。屬性名前面
+     * 有個小圖示，模板於是是「{#} Agility, now…」，整句查不到時拼出來的那條
+     * 把「{#}」當成不用翻的一截原樣接上，而 {@code fill} 從來不認得它。
+     */
+    private static void glyphs() {
+        com.wynnchayuan.capture.LineParts parts = com.wynnchayuan.capture.LineParts.of(
+                com.wynntils.core.text.StyledText.fromString("Agility, now"));
+        String out = DialogueRewriter.fill("{#} 敏捷嘛，那是給愛冒險的人的。", parts);
+        check("對話框不會印出「{#}」（實際 " + out + "）",
+              !out.contains("{#}") && out.startsWith("敏捷"));
+        String middle = DialogueRewriter.fill("點 {#} 敏捷", parts);
+        check("句中的圖示一樣拿掉（實際 " + middle + "）", !middle.contains("{#}"));
     }
 
     /** 只有這幾條的倉庫：驗的是行為，不受語料增減影響。 */
