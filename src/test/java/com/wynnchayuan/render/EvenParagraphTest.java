@@ -101,6 +101,7 @@ public final class EvenParagraphTest {
              new boolean[] {true, false});
 
         keyTooltip();
+        skillPointTooltip();
 
         System.out.println(failures == 0
                 ? "整段一致：全部通過"
@@ -159,6 +160,151 @@ public final class EvenParagraphTest {
               !out.get(0).getString().equals("Infested Pit Key"));
         check("★ 句子裡的鑰匙名跟著整句留英文（實際 " + out.get(3).getString() + "）",
               out.get(3).getString().equals("Infested Pit Key"));
+    }
+
+    /**
+     * 技能點數選單的 tooltip（「Upgrade your  Strength skill」那一格），照實機的 layout-debug 組。
+     *
+     * <h2>實機回報</h2>
+     * 就地取代模式下滑過去，error-debug 記到
+     * {@code IndexOutOfBoundsException: Index 15 out of bounds for length 15}，
+     * 丟在 {@code translateLines} 的 {@code out.set}。
+     *
+     * <p>說明那四行在語料裡是<b>一整句</b>（gui.json 的扁平條目），譯文比原文少行，
+     * 所以 {@code out} 比原文短。之後「同一段不能翻一半」要把某一段退回原文時，
+     * 拿的卻是<b>原文的行號</b>去改 {@code out}——前面少了幾行，行號就對不上：
+     * 運氣好改錯一行，運氣不好直接超出範圍。
+     */
+    private static void skillPointTooltip() {
+        // 出貨的語料裡「You cannot change your」還是空的，所以那一段兩行都沒翻、不必拉平，
+        // 例外躲過去了。但它就躺在 misc.json 等人填——填了第一行、第二行
+        // 「skill points at the moment」沒人收，這一段就成了「一半中文」，每個玩家都會踩到。
+        // 這裡疊一層只補那一行，把那個狀態釘住。
+        java.nio.file.Path layer = java.nio.file.Path.of("build", "test-layers", "skill-point");
+        try {
+            java.nio.file.Files.createDirectories(layer);
+            java.nio.file.Files.writeString(layer.resolve("misc.json"),
+                    "{\"You cannot change your\": \"你目前無法更改你的\"}",
+                    java.nio.charset.StandardCharsets.UTF_8);
+        } catch (java.io.IOException e) {
+            check("建得出測試用的語料層（" + e + "）", false);
+            return;
+        }
+        com.wynnchayuan.translate.TranslationStore store =
+                new com.wynnchayuan.translate.TranslationStore();
+        store.loadAll(List.of(java.nio.file.Path.of(
+                "src/main/resources/assets/wynnchayuan/translations",
+                com.wynnchayuan.translate.Languages.DEFAULT), layer));
+        check("★ 疊上去的那一行查得到（不然下面測的是空氣）",
+              "你目前無法更改你的".equals(store.lookup("You cannot change your")));
+
+        for (String[] skill : new String[][] {
+                {"Strength", "increase", "any damage you deal,", "and increase the ", "Earth", " damage"},
+                {"Agility", "increase", "the chance to dodge attacks (90% damage reduction),",
+                        "and increase the ", "Air", " damage"}}) {
+            for (boolean locked : new boolean[] {true, false}) {
+                List<net.minecraft.network.chat.Component> tip = skillRows(skill, locked);
+                String label = skill[0] + (locked ? "（不能改點）" : "（可以改點）");
+                List<net.minecraft.network.chat.Component> out;
+                try {
+                    out = TooltipPanel.translateLines(tip, store);
+                } catch (RuntimeException e) {
+                    check(label + "：不會丟例外（實際 " + e + "）", false);
+                    continue;
+                }
+                check(label + "：不會丟例外", true);
+                StringBuilder shown = new StringBuilder();
+                for (net.minecraft.network.chat.Component c : out) {
+                    shown.append(c.getString()).append(" | ");
+                }
+                check(label + "：標題照翻（實際 " + shown + "）",
+                      out.isEmpty() || !shown.toString().contains("Upgrade your"));
+                // 行數不能比原文多：少是整句收短，多就表示同一行被畫了兩次
+                check(label + "：行數沒有比原文多（原文 " + tip.size() + "、實際 " + out.size() + "）",
+                      out.size() <= tip.size());
+                check(label + "：說明那一整句照樣是中文",
+                      shown.toString().contains("這項屬性每加一點"));
+                if (locked) {
+                    // 半句中文接半句英文要整段退回英文，而且退的是<b>這兩行</b>，不是被行號
+                    // 錯位之後的別行
+                    check(label + "：只翻到一半的那一段整段留英文",
+                          shown.toString().contains("You cannot change your")
+                                  && shown.toString().contains("skill points at the moment")
+                                  && !shown.toString().contains("你目前無法更改你的"));
+                }
+            }
+        }
+        // 就地取代那條路：出了任何事都要回傳空的（= 原文不動），不能把例外往外丟
+        List<net.minecraft.network.chat.Component> broken = new java.util.ArrayList<>();
+        broken.add(null);
+        try {
+            check("就地取代遇到壞掉的 tooltip 回傳空的（= 原文不動）",
+                  TooltipPanel.translateInPlace(broken, store).isEmpty());
+        } catch (RuntimeException e) {
+            check("就地取代遇到壞掉的 tooltip 不丟例外（實際 " + e + "）", false);
+        }
+    }
+
+    /** 見 {@link #skillPointTooltip}：layout-debug 裡 Agility 那一份的形狀。 */
+    private static List<net.minecraft.network.chat.Component> skillRows(String[] skill,
+                                                                        boolean locked) {
+        net.minecraft.network.chat.Style grey = net.minecraft.network.chat.Style.EMPTY
+                .withColor(net.minecraft.network.chat.TextColor.fromRgb(0xAAAAAA));
+        net.minecraft.network.chat.Style pink = net.minecraft.network.chat.Style.EMPTY
+                .withColor(net.minecraft.network.chat.TextColor.fromRgb(0xFF55FF));
+        net.minecraft.network.chat.Style red = net.minecraft.network.chat.Style.EMPTY
+                .withColor(net.minecraft.network.chat.TextColor.fromRgb(0xFF5555));
+        net.minecraft.network.chat.Style icon = net.minecraft.network.chat.Style.EMPTY.withFont(
+                new net.minecraft.network.chat.FontDescription.Resource(
+                        net.minecraft.resources.Identifier.withDefaultNamespace("common")));
+        List<net.minecraft.network.chat.Component> rows = new java.util.ArrayList<>();
+        rows.add(row(offset(15, grey), text("Upgrade your ", grey), text("", icon),
+                     text(" " + skill[0], grey), text(" skill", grey)));
+        rows.add(text(" ".repeat(42), grey));
+        rows.add(row(offset(18, grey), text("Now", grey), offset(31, grey), offset(30, grey),
+                     offset(28, grey), text("Next", grey)));
+        rows.add(row(offset(15, grey), text("57.8%", grey), offset(28, grey), text(">>>>>>", grey),
+                     offset(28, grey), text("58.3%", grey)));
+        rows.add(row(offset(5, grey), text("70 points", grey), offset(18, grey), offset(30, grey),
+                     offset(18, grey), text("71 points", grey)));
+        rows.add(row(offset(10, grey), text("* Modified by your gear (+24)", grey)));
+        rows.add(text("", icon));                          // 分隔線
+        rows.add(text("Each point in this skill will", grey));
+        rows.add(row(text(skill[1] + " ", pink), text(skill[2], grey)));
+        rows.add(row(text(skill[3], grey), text("", icon), text(" " + skill[4], grey),
+                     text(skill[5], grey)));
+        rows.add(text("you may inflict", grey));
+        rows.add(text("", icon));                          // 分隔線
+        if (locked) {
+            rows.add(text("You cannot change your", red));
+            rows.add(text("skill points at the moment", red));
+        } else {
+            rows.add(row(text("", icon), text(" Left-Click to add 1 point", grey)));
+            rows.add(row(text("", icon), text(" Right-Click to remove 1 point", grey)));
+            rows.add(row(text("", icon), text(" Hold Shift to modify by 5", grey)));
+        }
+        return rows;
+    }
+
+    private static net.minecraft.network.chat.MutableComponent text(
+            String text, net.minecraft.network.chat.Style style) {
+        return net.minecraft.network.chat.Component.literal(text).withStyle(style);
+    }
+
+    private static net.minecraft.network.chat.MutableComponent offset(
+            int px, net.minecraft.network.chat.Style style) {
+        return text(com.wynnchayuan.translate.SpaceOffset.encode(px),
+                    com.wynnchayuan.translate.SpaceOffset.styleFor(style));
+    }
+
+    private static net.minecraft.network.chat.Component row(
+            net.minecraft.network.chat.Component... parts) {
+        net.minecraft.network.chat.MutableComponent line =
+                net.minecraft.network.chat.Component.empty();
+        for (net.minecraft.network.chat.Component part : parts) {
+            line.append(part);
+        }
+        return line;
     }
 
     private static String show(boolean[] a) {

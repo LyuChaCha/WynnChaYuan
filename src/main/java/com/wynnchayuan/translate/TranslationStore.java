@@ -989,6 +989,14 @@ public final class TranslationStore {
         return core == null ? null : core + key.substring(end);
     }
 
+    /**
+     * 詞表裡所有的名稱（唯讀）。<b>測試用</b>：整份語料檢查「多字的技能名有沒有被拆到
+     * 兩行、有沒有只換了前半」時，要知道哪些名稱是多字的。
+     */
+    java.util.Set<String> termNames() {
+        return java.util.Collections.unmodifiableSet(terms.keySet());
+    }
+
     /** 找到的名稱在原文的哪一段，以及它的譯名。 */
     public record Term(int start, int end, String translation) {}
 
