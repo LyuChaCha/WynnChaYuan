@@ -1,12 +1,39 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.0",
+ "latest": "0.2.0_1",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.0_1": {
+   "headline": "Quest tracker titles and dialogue choices are translated",
+   "items": [
+    "The first line of the top-right quest tracker (Quest – quest name) is translated too",
+    "Coloured dialogue choices such as \"About Strength.\" are translated in place",
+    "Dialogue no longer shows a literal \"{#}\" in some lines",
+    "More translations: ability unlock titles, unused skill point reminder, world event announcements"
+   ],
+   "zh_tw": {
+    "headline": "任務追蹤標題與對話選項也會翻譯",
+    "items": [
+     "右上任務追蹤的第一行（任務 – 任務名稱）也會翻譯",
+     "帶顏色的對話選項（例如「About Strength.」）可以就地翻譯",
+     "部分對話不再印出「{#}」",
+     "補上語料：技能解鎖標題、未使用屬性點提示、世界事件公告"
+    ]
+   },
+   "zh_cn": {
+    "headline": "任务追踪标题与对话选项也会翻译",
+    "items": [
+     "右上任务追踪的第一行（任务 – 任务名称）也会翻译",
+     "带颜色的对话选项（例如「About Strength.」）可以就地翻译",
+     "部分对话不再显示「{#}」",
+     "补充语料：技能解锁标题、未使用属性点提示、世界事件公告"
+    ]
+   }
+  },
   "0.2.0": {
    "headline": "The top-right tracker and objective bars can be translated in place",
    "items": [

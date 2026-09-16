@@ -255,33 +255,59 @@ public final class DialogueRewriter {
         //
         // 每一列有自己的字型（choice_1／2／3），行號烘在 ascent 裡（97／84／71），
         // 所以換完要配對應的中文字型，不然三列會疊在一起。見 paired()。
+        //
+        // <h2>一列不一定只有一段</h2>
+        // 「About <u>Strength</u>.」的屬性名有自己的顏色，Wynncraft 會把它切成
+        // 「About 」「Strength」「.」三段送過來——中間那幾段的鄰居是<b>文字</b>，
+        // 不是位移字元。先前要求左右兩側都是位移，於是這種列一段都不合格，
+        // 玩家看到的是整份選項都留在英文（實機回報：音容宛在的四個「About …」）。
+        // 跟內文同一個做法：收「兩個位移之間、連續的文字段」當一列，
+        // 代價一樣是整列只剩第一段的顏色。
         for (int i = 1; doChoice && i + 1 < texts.size(); i++) {
             if (!fontOf(styles.get(i)).contains(CHOICE) || !readable(texts.get(i))) {
                 continue;
             }
-            Integer lead = offsetOf(texts.get(i - 1));
-            Integer trail = offsetOf(texts.get(i + 1));
-            if (lead == null || trail == null) {
-                continue;
+            if (offsetOf(texts.get(i - 1)) == null) {
+                continue;                       // 這裡不是一列的開頭
             }
-            String pick = store.lookup(texts.get(i).strip());
+            int end = i;
+            while (end + 1 < texts.size() && offsetOf(texts.get(end + 1)) == null) {
+                end++;                          // 一路吃到下一個位移字元
+            }
+            if (end + 1 >= texts.size()) {
+                continue;                       // 收不到結尾的位移
+            }
+            Integer trail = offsetOf(texts.get(end + 1));
+            String row = rowText(texts, i, end);
+            String pick = store.lookup(row.strip());
             if (pick == null || pick.isBlank() || !renderable(pick)) {
+                i = end;
                 continue;                       // 查不到就留英文，不要換一半
             }
             if (!drawable(pick) && fontMissing(fontOf(styles.get(i)))) {
+                i = end;
                 continue;                       // 沒有這一列的中文字型，換了是一排方框
             }
-            int was = width(texts.get(i), styles.get(i));
+            int was = 0;
+            for (int k = i; k <= end; k++) {
+                was += width(texts.get(k), styles.get(k));
+            }
             // 跟內文一樣只補長度差：這一列縮短多少就還回去多少，
             // 後面幾列與外框的位置才不會被推走。
             String back = offset(trail + was - width(pick, styles.get(i)));
             if (back == null) {
+                i = end;
                 continue;                       // 補不回去就別動這一列，見 offset
             }
             texts.set(i, pick);
-            texts.set(i + 1, back);
+            for (int k = i + 1; k <= end; k++) {
+                texts.set(k, "");               // 整列併到第一段，其餘清空
+                swapped[k] = true;
+            }
+            texts.set(end + 1, back);
             swapped[i] = true;
             changed = true;
+            i = end;
         }
         if (rows != null) {
             for (int n = 0; n < body.size(); n++) {
@@ -458,7 +484,17 @@ public final class DialogueRewriter {
         int user = 0;
         int number = 0;
         for (int i = 0; i < translated.length(); ) {
-            if (translated.startsWith("{p}", i)) {
+            if (translated.startsWith("{#}", i)) {
+                // 圖示在對話框裡<b>畫不出來</b>：換過的那一段用的是中文字型，
+                // 材質包的私用區字元到了那裡就是一個方框。原樣抄「{#}」更糟——
+                // 實機回報畫面上直接印出「{#}敏捷嘛，那是給愛冒險的人的」。
+                // 那個圖示只是屬性名旁邊的小裝飾，拿掉不影響意思。
+                i += 3;
+                while (i < translated.length() && translated.charAt(i) == ' '
+                        && out.length() == 0) {
+                    i++;                           // 行首的圖示後面那個空白一起拿掉
+                }
+            } else if (translated.startsWith("{p}", i)) {
                 out.append(pick(parts.places(), place++));
                 i += 3;
             } else if (translated.startsWith("{u}", i)) {

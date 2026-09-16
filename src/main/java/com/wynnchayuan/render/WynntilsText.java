@@ -103,11 +103,85 @@ public final class WynntilsText {
         for (com.wynntils.core.text.StyledTextPart part : line) {
             StyledText one = StyledText.fromPart(part);
             parts++;
-            var done = one.isBlank() ? null : LineTranslator.translate(one, store);
+            if (one.isBlank()) {
+                out.append(one.getComponent());
+                continue;
+            }
+            net.minecraft.network.chat.Component done = LineTranslator.translate(one, store);
+            if (done == null) {
+                // 這一段自己就是「類型 - 名稱」：實機的追蹤欄整行只有一個顏色，
+                // Wynntils 送過來就是一整段，上面那道「一段一段查」沒有東西可以拆。
+                String split = splitHeader(one.getStringWithoutFormatting(), store);
+                if (split != null) {
+                    done = net.minecraft.network.chat.Component.literal(split)
+                            .withStyle(styleOf(one));
+                }
+            }
             any |= done != null;
             out.append(done != null ? done : one.getComponent());
         }
-        return any && parts > 1 ? StyledText.fromComponent(out) : line;
+        return any ? StyledText.fromComponent(out) : line;
+    }
+
+    /**
+     * 「Quest – Dearly Departed」這種一段裡的兩半各自查。
+     *
+     * <h2>實機回報</h2>
+     * 0.2.0 的追蹤欄第二行（任務目標）換成中文了，第一行「Quest – Dearly Departed」
+     * 還是英文。測試裡那一行是三段不同顏色，一段一段查就過了；實機那一行
+     * <b>整行同一個顏色</b>，Wynntils 送來的是一整段，上面那道拆不開。
+     *
+     * @return 至少一半查得到時回傳換好的字；兩半都查不到回傳 {@code null}
+     */
+    static String splitHeader(String text, TranslationStore store) {
+        for (String dash : DASHES) {
+            int at = text.indexOf(dash);
+            if (at <= 0) {
+                continue;
+            }
+            String left = text.substring(0, at);
+            String right = text.substring(at + dash.length());
+            String l = half(left, store);
+            String r = half(right, store);
+            if (l == null && r == null) {
+                return null;
+            }
+            return (l != null ? l : left) + dash + (r != null ? r : right);
+        }
+        return null;
+    }
+
+    /** 見 {@link #splitHeader}：Wynntils 拼標題用過的幾種破折號，兩邊都有空白。 */
+    private static final String[] DASHES = {" - ", " – ", " — "};
+
+    /** 一半：前面的圖示與空白原樣留著，只查中間那段字。 */
+    private static String half(String text, TranslationStore store) {
+        int start = 0;
+        while (start < text.length()
+                && (Character.isWhitespace(text.charAt(start))
+                    || com.wynnchayuan.capture.GlyphSplitter.isGlyphCodePoint(
+                            text.codePointAt(start)))) {
+            start += Character.charCount(text.codePointAt(start));
+        }
+        String core = text.substring(start).strip();
+        if (core.isEmpty()) {
+            return null;
+        }
+        String hit = store.lookup(core);
+        return hit == null || hit.isBlank() ? null : text.substring(0, start) + hit;
+    }
+
+    /** 這一段原本的樣式（顏色、粗體）；換字的時候照抄。 */
+    private static net.minecraft.network.chat.Style styleOf(StyledText one) {
+        net.minecraft.network.chat.Style[] found = {net.minecraft.network.chat.Style.EMPTY};
+        one.getComponent().visit((style, text) -> {
+            if (!text.isEmpty()) {
+                found[0] = style;
+                return java.util.Optional.of(Boolean.TRUE);
+            }
+            return java.util.Optional.empty();
+        }, net.minecraft.network.chat.Style.EMPTY);
+        return found[0];
     }
 
     /** mixin 的入口；設定與語料從全域拿，順便記一筆診斷。 */

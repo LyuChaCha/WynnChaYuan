@@ -71,6 +71,14 @@ public final class WynntilsTextTest {
               shown.contains("任務") && shown.contains("竊星者"));
         check("顏色沒有被抹掉", header[0].getString().contains("§b"));
 
+        // 實機那一行整行同一個顏色，Wynntils 送來的是<b>一整段</b>，破折號是 en dash。
+        StyledText single = StyledText.fromString("§aQuest – Dearly Departed");
+        StyledText[] one = WynntilsText.lines(
+                tracker, new StyledText[] {single}, config, store);
+        String got = one[0].getStringWithoutFormatting();
+        check("一整段的「Quest – 任務名」也換得掉（實際 " + got + "）",
+              got.contains("任務") && got.contains("音容宛在"));
+
         StyledText[] other = WynntilsText.lines(new InfoBoxOverlay(), lines, config, store);
         check("別的疊層原樣不動", other == lines);
 
