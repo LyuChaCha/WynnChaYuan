@@ -1,12 +1,38 @@
 {
  "_meta": {
   "quest": "Dwarves and Doguns Part II",
-  "count": 85,
+  "count": 87,
   "translated": 85,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Dwarves and Doguns Part II#000": {
+   "src": "The Royal Guards escort you and Axelus out of the palace.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#001": {
+   "src": "Aval...would have us...leave the Heights... But we...would not survive...in large numbers.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Aval... would have us... leave the Heights... But we... would not survive.",
+    "file": "quest/dwarves-and-doguns-part-ii.json",
+    "ratio": 0.866,
+    "reason": "candidate"
+   }
+  },
+  "Dwarves and Doguns Part II#002": {
    "src": "Return to the Dogun village with a Dogun Badge of Trust and talk to the leader of the town",
    "dst": "帶著 Dogun Badge of Trust 回到 Dogun 村，與村中的領袖對話",
    "role": "desc",
@@ -16,7 +42,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "Dwarves and Doguns Part II#001": {
+  "Dwarves and Doguns Part II#003": {
    "src": "You are so young...to be fighting...a war so old. Still...it is appreciated.",
    "dst": "你如此年輕……卻要投身……一場如此古老的戰爭。即便如此……我們心懷感激。",
    "role": "desc",
@@ -26,7 +52,7 @@
    "speaker": "Dogun Chieftain",
    "source": "wiki"
   },
-  "Dwarves and Doguns Part II#003": {
+  "Dwarves and Doguns Part II#004": {
    "src": "Why...would we trust... Why...would we trust... you...of all Dwarves?",
    "dst": "為什麼……我們要相信……為什麼……偏偏是你這個 Dwarf……我們要相信你？",
    "role": "desc",
@@ -36,7 +62,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Dwarves and Doguns Part II#004": {
+  "Dwarves and Doguns Part II#005": {
    "src": "We heard what happened, {u}.",
    "dst": "我們聽說出事了，{u}。",
    "role": "desc",
@@ -46,7 +72,7 @@
    "speaker": "",
    "source": "captured"
   },
-  "Dwarves and Doguns Part II#005": {
+  "Dwarves and Doguns Part II#006": {
    "src": "The war...to you, it would be...ages ago. But...when one has lived for...{~} years...",
    "dst": "那場戰爭……對你而言……已是久遠之前。但是……當一個人活了……{~} 年之後……",
    "role": "desc",

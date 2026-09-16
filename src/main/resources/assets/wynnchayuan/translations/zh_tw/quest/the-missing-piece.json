@@ -1,8 +1,8 @@
 {
  "_meta": {
   "quest": "The Missing Piece",
-  "count": 602,
-  "translated": 602,
+  "count": 615,
+  "translated": 611,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。",
   "review": {
    "translator": "claude",
@@ -4731,7 +4731,7 @@
    "source": "wiki"
   },
   "The Missing Piece#472": {
-   "src": "Hm. It's strange. All day, I've been... reminiscing, I suppose. And now, seeing this view... it fills me with that same nostalgic feeling.",
+   "src": "Hm. It's strange. All day, I've been... reminiscing, I suppose. And now, seeing this view... it fills me with that same, nostalgic feeling.",
    "dst": "嗯。好奇怪。這一整天，我一直在……回想，我想是吧。現在看著這片景色……又是同樣那股懷念的感覺。",
    "role": "desc",
    "kind": "dialogue",
@@ -4741,6 +4741,58 @@
    "source": "wiki"
   },
   "The Missing Piece#473": {
+   "src": "HEY! What are you doing?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "What are you doing?",
+    "file": "quest/shrouded-in-mist.json",
+    "ratio": 0.884,
+    "reason": "candidate"
+   }
+  },
+  "The Missing Piece#474": {
+   "src": "{u}... what's happening?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "... what's happening?",
+    "file": "quest/the-missing-piece.json",
+    "ratio": 0.933,
+    "reason": "placeholders"
+   }
+  },
+  "The Missing Piece#475": {
+   "src": "[-{~} Grate Key]",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Missing Piece#476": {
+   "src": "You should probably take your place at the front of the line.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "The Missing Piece",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "The Missing Piece#477": {
    "src": "All day, I've been having these... visions of the past. Of these things I can't recall ever happening.",
    "dst": "這一整天，我一直看見過去的畫面。那些我不記得發生過的事。",
    "role": "desc",
@@ -4750,7 +4802,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#474": {
+  "The Missing Piece#478": {
    "src": "And I... well, truthfully, I'm not sure how to feel about it...",
    "dst": "而我……老實說，我不知道該怎麼看待這件事……",
    "role": "desc",
@@ -4760,7 +4812,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#475": {
+  "The Missing Piece#479": {
    "src": "But I know- I know in my heart, that there's something missing... a piece that would make it all fit.",
    "dst": "但我知道——我心裡知道，有什麼東西不見了……少了那一塊，一切就拼不起來。",
    "role": "desc",
@@ -4770,7 +4822,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#476": {
+  "The Missing Piece#480": {
    "src": "Who is she?",
    "dst": "她是誰？",
    "role": "desc",
@@ -4780,7 +4832,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#477": {
+  "The Missing Piece#481": {
    "src": "In every dream she's there beside me... but I don't even remember her name. I can't even recall her face...",
    "dst": "每一個夢裡她都在我身邊……可是我連她的名字都不記得。我連她的臉都想不起來……",
    "role": "desc",
@@ -4790,7 +4842,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#478": {
+  "The Missing Piece#482": {
    "src": "If she was this important to me... then how could I forget?",
    "dst": "如果她對我這麼重要……那我怎麼可能忘記？",
    "role": "desc",
@@ -4800,7 +4852,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#479": {
+  "The Missing Piece#483": {
    "src": "How could I forget...",
    "dst": "我怎麼可能忘記……",
    "role": "desc",
@@ -4810,7 +4862,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#480": {
+  "The Missing Piece#484": {
    "src": "Wait!",
    "dst": "等等！",
    "role": "desc",
@@ -4820,7 +4872,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#481": {
+  "The Missing Piece#485": {
    "src": "Hurgh... hurgh... One second, I need to catch my breath.",
    "dst": "呼……呼……等一下，我得喘口氣。",
    "role": "desc",
@@ -4830,7 +4882,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#482": {
+  "The Missing Piece#486": {
    "src": "Hm... Do you know this person? They're not an inspector... are they?",
    "dst": "嗯……你認識這個人嗎？他該不會是督察吧……？",
    "role": "desc",
@@ -4840,7 +4892,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#483": {
+  "The Missing Piece#487": {
    "src": "So, as I was going to say-",
    "dst": "那麼，我剛剛要說的是——",
    "role": "desc",
@@ -4850,7 +4902,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#484": {
+  "The Missing Piece#488": {
    "src": "Okay, fine! I'll get straight to the point.",
    "dst": "好啦好啦！我直接講重點。",
    "role": "desc",
@@ -4860,7 +4912,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#485": {
+  "The Missing Piece#489": {
    "src": "I found more letters to deliver, and I was on my way to deliver them when I saw you two running out! Can you imagine how shocked I was?",
    "dst": "我又找到一些要送的信，正要拿去送的時候看到你們兩個跑出來！你能想像我有多震驚嗎？",
    "role": "desc",
@@ -4870,7 +4922,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#486": {
+  "The Missing Piece#490": {
    "src": "That being that, I naturally decided to follow you, the good postmaster that I am. You sure didn't make it easy though! I barely managed to make it up here... It's a nice spot, by the way.",
    "dst": "既然如此，身為一個稱職的郵政局長，我當然決定跟上來。你們可真不好跟！我差點爬不上來……順帶一提，這地方不錯。",
    "role": "desc",
@@ -4880,7 +4932,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#487": {
+  "The Missing Piece#491": {
    "src": "But... how could you have possibly made it up here...?",
    "dst": "可是……你到底是怎麼上來的……？",
    "role": "desc",
@@ -4890,7 +4942,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#488": {
+  "The Missing Piece#492": {
    "src": "Getting up here is nothing to a university graduate like me!",
    "dst": "對我這種大學畢業生來說，爬上來根本不算什麼！",
    "role": "desc",
@@ -4900,7 +4952,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#489": {
+  "The Missing Piece#493": {
    "src": "Here, your letter.",
    "dst": "來，你的信。",
    "role": "desc",
@@ -4910,7 +4962,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#490": {
+  "The Missing Piece#494": {
    "src": "Thank you...?",
    "dst": "謝謝你……？",
    "role": "desc",
@@ -4920,7 +4972,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#491": {
+  "The Missing Piece#495": {
    "src": "Well, that was all that I came for I suppose. So...",
    "dst": "好了，我要做的大概就這些。那麼……",
    "role": "desc",
@@ -4930,7 +4982,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#492": {
+  "The Missing Piece#496": {
    "src": "You came all this way just for that!? At least have a piece of bread, or something...!",
    "dst": "你大老遠跑這一趟就為了這個！？至少吃塊麵包再走吧……！",
    "role": "desc",
@@ -4940,7 +4992,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#493": {
+  "The Missing Piece#497": {
    "src": "No, no. I couldn't possibly! Duty calls, the post isn't going to sort itself, and all that... Oh, by Her Majesty, the backlog...",
    "dst": "不不，我怎麼好意思！職責在身，郵件不會自己分好，之類的……喔，天啊，那堆積壓的信……",
    "role": "desc",
@@ -4950,7 +5002,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#494": {
+  "The Missing Piece#498": {
    "src": "Right! You! I hate to admit it, but it seems you've done your job well enough.",
    "dst": "對了！你！我不想承認，不過看來你這份工作做得還行。",
    "role": "desc",
@@ -4960,7 +5012,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#495": {
+  "The Missing Piece#499": {
    "src": "I happened to double check the records and it seems like my substitute, well, may have been someone else entirely!",
    "dst": "我剛好又去核對了一下紀錄，看來我那個代班的，嗯，可能根本是另外一個人！",
    "role": "desc",
@@ -4970,7 +5022,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#496": {
+  "The Missing Piece#500": {
    "src": "No harm, no foul, right? The work's already done! No takesies-backsies! Okay?",
    "dst": "沒造成傷害就不算犯規，對吧？反正工作都做完了！不能反悔喔！好嗎？",
    "role": "desc",
@@ -4980,7 +5032,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#497": {
+  "The Missing Piece#501": {
    "src": "So... What do you say?",
    "dst": "所以……你覺得呢？",
    "role": "desc",
@@ -4990,7 +5042,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#498": {
+  "The Missing Piece#502": {
    "src": "Huh, what was that? I couldn't hear you! Okay, bye!",
    "dst": "咦，你說什麼？我聽不到！好，掰！",
    "role": "desc",
@@ -5000,7 +5052,7 @@
    "speaker": "Postmaster",
    "source": "wiki"
   },
-  "The Missing Piece#499": {
+  "The Missing Piece#503": {
    "src": "What a strange person...",
    "dst": "真是個奇怪的人……",
    "role": "desc",
@@ -5010,7 +5062,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#500": {
+  "The Missing Piece#504": {
    "src": "But it was certainly nice of them to deliver this letter. Let me take a look.",
    "dst": "不過他特地把這封信送來，人是真的不錯。我來看看。",
    "role": "desc",
@@ -5020,7 +5072,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#501": {
+  "The Missing Piece#505": {
    "src": "Hmm...",
    "dst": "唔……",
    "role": "desc",
@@ -5030,7 +5082,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#502": {
+  "The Missing Piece#506": {
    "src": "Oh, I don't understand... What would she have to apologize for?",
    "dst": "喔，我不懂……她有什麼好道歉的？",
    "role": "desc",
@@ -5040,7 +5092,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#503": {
+  "The Missing Piece#507": {
    "src": "Please... {u}, take a breath. You're shaking.",
    "dst": "拜託……{u}，深呼吸。你在發抖。",
    "role": "desc",
@@ -5050,7 +5102,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#504": {
+  "The Missing Piece#508": {
    "src": "Elise...",
    "dst": "Elise……",
    "role": "desc",
@@ -5060,7 +5112,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#505": {
+  "The Missing Piece#509": {
    "src": "Getting caught in a storm like that... really, I could have waited a few hours! You didn't need to push yourself to get here.",
    "dst": "淋著那樣的暴雨跑來……真是的，我等個幾小時也沒關係！你不用硬撐著趕過來。",
    "role": "desc",
@@ -5070,7 +5122,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#506": {
+  "The Missing Piece#510": {
    "src": "You... don't understand...",
    "dst": "你……不明白……",
    "role": "desc",
@@ -5080,7 +5132,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#507": {
+  "The Missing Piece#511": {
    "src": "Yes, I know the weather's bad now... but eventually, it'll get better again. The clouds will clear and the sun will shine again. Right?",
    "dst": "對，我知道現在天氣很糟……但總會好起來的。雲會散，太陽會再出來。對吧？",
    "role": "desc",
@@ -5090,7 +5142,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#508": {
+  "The Missing Piece#512": {
    "src": "I...",
    "dst": "我……",
    "role": "desc",
@@ -5100,7 +5152,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#509": {
+  "The Missing Piece#513": {
    "src": "You know, it's not so bad with rain once in a while. Means we don't have to water the flowers, at least! And nothing beats the smell of wet grass after rain, don't you agree?",
    "dst": "你知道嗎，偶爾下下雨也不壞。至少我們不用去澆花了！而且雨後濕草的味道最棒了，你不覺得嗎？",
    "role": "desc",
@@ -5110,7 +5162,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#510": {
+  "The Missing Piece#514": {
    "src": "We could do something after it clears up. It's been a while since you visited, so why not go to our spot? I should still have some leftover bread lying around...",
    "dst": "等天氣放晴我們可以做點什麼。你好久沒來了，不如去我們那個老地方？我應該還有剩一些麵包……",
    "role": "desc",
@@ -5120,7 +5172,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#511": {
+  "The Missing Piece#515": {
    "src": "Elise. You're- please, forgive me- you're in danger. I-",
    "dst": "Elise。你——拜託，原諒我——你有危險。我——",
    "role": "desc",
@@ -5130,7 +5182,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#512": {
+  "The Missing Piece#516": {
    "src": "I'm in danger? I'm just an ordinary worker, what reason would anyone have to harm me? I'll be fine.",
    "dst": "我有危險？我只是個普通的工人，誰會有理由要害我？我不會有事的。",
    "role": "desc",
@@ -5140,7 +5192,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#513": {
+  "The Missing Piece#517": {
    "src": "{u}, you're the one pushing herself through this weather, clearly panicking...",
    "dst": "{u}，冒著這種天氣硬撐的人是你，而且明顯在慌張……",
    "role": "desc",
@@ -5150,7 +5202,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#514": {
+  "The Missing Piece#518": {
    "src": "I barely get to see you anymore. And now, out of nowhere, you're here in this state... What's going on? Please, just talk to me.",
    "dst": "我現在很難得才見得到你。而你突然出現，還是這副樣子……到底怎麼了？拜託，跟我說。",
    "role": "desc",
@@ -5160,7 +5212,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#515": {
+  "The Missing Piece#519": {
    "src": "...ha. I- I haven't been truthful with you, Elise, and- I can explain later. We need to get out of here, before they-",
    "dst": "……哈。我——我一直沒對你說實話，Elise，而且——我之後再解釋。我們得離開這裡，趁他們還沒——",
    "role": "desc",
@@ -5170,7 +5222,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#516": {
+  "The Missing Piece#520": {
    "src": "...no. No... no, no, no...",
    "dst": "……不。不……不、不、不……",
    "role": "desc",
@@ -5180,7 +5232,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#517": {
+  "The Missing Piece#521": {
    "src": "... what's happening?",
    "dst": "……發生什麼事了？",
    "role": "desc",
@@ -5190,7 +5242,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#518": {
+  "The Missing Piece#522": {
    "src": "Why would they... no, this doesn't make any sense...",
    "dst": "他們為什麼會……不，這說不通……",
    "role": "desc",
@@ -5200,7 +5252,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#519": {
+  "The Missing Piece#523": {
    "src": "Hm. Well, then maybe it's nothing. I'll go see who it is.",
    "dst": "嗯。那也許沒什麼。我去看看是誰。",
    "role": "desc",
@@ -5210,7 +5262,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#520": {
+  "The Missing Piece#524": {
    "src": "As if one wasn't enough... who could possibly be foolish enough to brave a storm just to come visit this little place? Whatever it is, it can wait.",
    "dst": "一個還不夠嗎……到底是誰會傻到冒著暴風雨跑來這種小地方？不管是什麼事，都可以等。",
    "role": "desc",
@@ -5220,7 +5272,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#521": {
+  "The Missing Piece#525": {
    "src": "Yes, yes. I'm coming!",
    "dst": "好了好了。我來了！",
    "role": "desc",
@@ -5230,7 +5282,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#522": {
+  "The Missing Piece#526": {
    "src": "...what? No...",
    "dst": "……什麼？不……",
    "role": "desc",
@@ -5240,7 +5292,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#523": {
+  "The Missing Piece#527": {
    "src": "No... No... What are you... Why are you-",
    "dst": "不……不……你們是要……你們為什麼要——",
    "role": "desc",
@@ -5250,7 +5302,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#524": {
+  "The Missing Piece#528": {
    "src": "Apologies for the disturbance, madam. But I'm afraid we have business to attend to.",
    "dst": "抱歉打擾了，夫人。恐怕我們有公務在身。",
    "role": "desc",
@@ -5260,7 +5312,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#525": {
+  "The Missing Piece#529": {
    "src": "What... ... what's going on?",
    "dst": "什麼……這……這是怎麼回事？",
    "role": "desc",
@@ -5270,7 +5322,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#526": {
+  "The Missing Piece#530": {
    "src": "{u}, {u}, why are they here? Why... why won't you answer me...?",
    "dst": "{u}，{u}，他們為什麼會在這裡？為什麼……你為什麼不回答我……？",
    "role": "desc",
@@ -5280,7 +5332,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#527": {
+  "The Missing Piece#531": {
    "src": "What have you done? I... Please, just explain... I- I...",
    "dst": "你做了什麼？我……拜託，解釋一下……我——我……",
    "role": "desc",
@@ -5290,7 +5342,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#528": {
+  "The Missing Piece#532": {
    "src": "I... how did I overlook this...?",
    "dst": "我……我怎麼會漏掉這一點……？",
    "role": "desc",
@@ -5300,7 +5352,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#529": {
+  "The Missing Piece#533": {
    "src": "Seems you're not quite the strategic mastermind you though yourself, Lioness.",
    "dst": "看來你也沒有自己以為的那麼足智多謀嘛，母獅。",
    "role": "desc",
@@ -5310,7 +5362,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#530": {
+  "The Missing Piece#534": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -5320,7 +5372,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#531": {
+  "The Missing Piece#535": {
    "src": "Elise... if you... if you just cooperate...",
    "dst": "Elise……如果你……如果你願意配合……",
    "role": "desc",
@@ -5330,7 +5382,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#532": {
+  "The Missing Piece#536": {
    "src": "Then... everything will be fine. It... it will.",
    "dst": "那麼……一切都會沒事的。一定……一定會的。",
    "role": "desc",
@@ -5340,7 +5392,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#533": {
+  "The Missing Piece#537": {
    "src": "I promise...",
    "dst": "我保證……",
    "role": "desc",
@@ -5350,7 +5402,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#534": {
+  "The Missing Piece#538": {
    "src": "I...",
    "dst": "我……",
    "role": "desc",
@@ -5360,7 +5412,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#535": {
+  "The Missing Piece#539": {
    "src": "She... What did she do? Why did she wrap me up in it?",
    "dst": "她……她做了什麼？她為什麼要把我也牽扯進去？",
    "role": "desc",
@@ -5370,7 +5422,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#536": {
+  "The Missing Piece#540": {
    "src": "Everything I remember... it just leaves me with more questions than answers. Why can't I remember her...? Why!?",
    "dst": "我想起來的每一件事……都只讓我有更多疑問，沒有答案。我為什麼想不起她……？為什麼！？",
    "role": "desc",
@@ -5380,7 +5432,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#537": {
+  "The Missing Piece#541": {
    "src": "I- I'm just an ordinary factory worker! I woke up early, worked late, slept late... then did it all over again the next day.",
    "dst": "我——我只是個普通的工廠女工！我早起、晚歸、很晚才睡……然後隔天再重來一遍。",
    "role": "desc",
@@ -5390,7 +5442,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#538": {
+  "The Missing Piece#542": {
    "src": "I've never said a word about the Crown! Why would they possibly care about... me...?",
    "dst": "我從來沒說過王室半句不是！他們到底為什麼會在意……我……？",
    "role": "desc",
@@ -5400,7 +5452,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#539": {
+  "The Missing Piece#543": {
    "src": "They... they took everything from me. My youth, my body, my time, and... and I never demanded anything in return.",
    "dst": "他們……他們奪走了我的一切。我的青春、我的身體、我的時間，而……而我從來沒有要求過任何回報。",
    "role": "desc",
@@ -5410,7 +5462,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#540": {
+  "The Missing Piece#544": {
    "src": "So, why... why can't I just have this? This one little thing? Why can't I remember her...?",
    "dst": "所以，為什麼……為什麼我連這個都不能有？就這麼一件小事？我為什麼不能記得她……？",
    "role": "desc",
@@ -5420,7 +5472,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#541": {
+  "The Missing Piece#545": {
    "src": "...oh, it might sound sad... but, looking back at it all like this...",
    "dst": "……唉，這樣講可能有點感傷……不過這樣回頭看下來……",
    "role": "desc",
@@ -5430,7 +5482,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#542": {
+  "The Missing Piece#546": {
    "src": "My life doesn't seem all that great, does it? Ha. Toiling away in a factory for someone else's bread...",
    "dst": "我這一生好像也沒多精彩，對吧？在工廠裡為別人的麵包耗盡一生……",
    "role": "desc",
@@ -5440,7 +5492,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#543": {
+  "The Missing Piece#547": {
    "src": "But I can feel her. Even if... even if I can't remember her face, or her name, or her touch... I still feel her. Lingering in my heart. Shining.",
    "dst": "可是我感覺得到她。就算……就算我想不起她的臉、她的名字、她的觸碰……我還是感覺得到她。留在我心裡。發著光。",
    "role": "desc",
@@ -5450,7 +5502,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#544": {
+  "The Missing Piece#548": {
    "src": "...it's all some sort of sick joke, isn't it?",
    "dst": "……這一切根本是個惡劣的玩笑，不是嗎？",
    "role": "desc",
@@ -5460,7 +5512,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#545": {
+  "The Missing Piece#549": {
    "src": "They weren't content with all I sacrificed... they had to take even my memories? Is that it...?",
    "dst": "我犧牲的那些他們還不滿足……連我的記憶都要拿走？是這樣嗎……？",
    "role": "desc",
@@ -5470,7 +5522,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#546": {
+  "The Missing Piece#550": {
    "src": "Ha...",
    "dst": "哈……",
    "role": "desc",
@@ -5480,7 +5532,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#547": {
+  "The Missing Piece#551": {
    "src": "Wherever you are now... whatever you did... whatever secrets you kept... I hope it was worth it.",
    "dst": "不管你現在在哪裡……不管你做了什麼……不管你守著什麼秘密……我希望那一切都值得。",
    "role": "desc",
@@ -5490,7 +5542,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#548": {
+  "The Missing Piece#552": {
    "src": "I hope you burn this entire place to the ground.",
    "dst": "我希望你把這個地方燒個精光。",
    "role": "desc",
@@ -5500,7 +5552,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#549": {
+  "The Missing Piece#553": {
    "src": "I...",
    "dst": "我……",
    "role": "desc",
@@ -5510,7 +5562,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#550": {
+  "The Missing Piece#554": {
    "src": "I just wish... we could have spent more time together.",
    "dst": "我只希望……我們能多相處一些時間。",
    "role": "desc",
@@ -5520,7 +5572,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#551": {
+  "The Missing Piece#555": {
    "src": "For a long time, I went along the path that had been laid before me. I did what was right.",
    "dst": "很長一段時間裡，我都走在別人為我鋪好的路上。我做著所謂正確的事。",
    "role": "desc",
@@ -5530,7 +5582,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#552": {
+  "The Missing Piece#556": {
    "src": "But then... I met you, Elise.",
    "dst": "但後來……我遇見了你，Elise。",
    "role": "desc",
@@ -5540,7 +5592,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#553": {
+  "The Missing Piece#557": {
    "src": "I... I don't know what to say, {u}...",
    "dst": "我……我不知道該說什麼，{u}……",
    "role": "desc",
@@ -5550,7 +5602,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#554": {
+  "The Missing Piece#558": {
    "src": "Close your eyes.",
    "dst": "閉上眼睛。",
    "role": "desc",
@@ -5560,7 +5612,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#555": {
+  "The Missing Piece#559": {
    "src": "What do you see?",
    "dst": "你看到什麼？",
    "role": "desc",
@@ -5570,7 +5622,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#556": {
+  "The Missing Piece#560": {
    "src": "I see... a bird. A pigeon, it's old and gray. Its wings no longer work like they used to...",
    "dst": "我看到……一隻鳥。一隻鴿子，又老又灰。牠的翅膀已經不像從前那樣了……",
    "role": "desc",
@@ -5580,7 +5632,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#557": {
+  "The Missing Piece#561": {
    "src": "It wants to fly, but it can't... It's struggling...",
    "dst": "牠想飛，卻飛不起來……牠很吃力……",
    "role": "desc",
@@ -5590,7 +5642,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#558": {
+  "The Missing Piece#562": {
    "src": "What is it doing, Elise?",
    "dst": "牠在做什麼，Elise？",
    "role": "desc",
@@ -5600,7 +5652,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#559": {
+  "The Missing Piece#563": {
    "src": "No, I can't! It's too sad...",
    "dst": "不，我做不到！太難過了……",
    "role": "desc",
@@ -5610,7 +5662,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#560": {
+  "The Missing Piece#564": {
    "src": "Try.",
    "dst": "試試看。",
    "role": "desc",
@@ -5620,7 +5672,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#561": {
+  "The Missing Piece#565": {
    "src": "It's sitting beneath the shade of a canopy, singing. Like a cry, almost, mourning.",
    "dst": "牠坐在樹蔭底下唱著歌。幾乎像在哭，像在哀悼。",
    "role": "desc",
@@ -5630,7 +5682,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#562": {
+  "The Missing Piece#566": {
    "src": "The clouds, dark clouds are gathering. A storm is coming. The bird is looking around, frantically searching. It's scared.",
    "dst": "烏雲，濃厚的烏雲正在聚集。暴風雨要來了。那隻鳥四處張望，慌張地找著什麼。牠很害怕。",
    "role": "desc",
@@ -5640,7 +5692,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#563": {
+  "The Missing Piece#567": {
    "src": "It... It calls out, for something... or someone...",
    "dst": "牠……牠在呼喚著什麼……或是某個人……",
    "role": "desc",
@@ -5650,7 +5702,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#564": {
+  "The Missing Piece#568": {
    "src": "Who is it calling for, Elise?",
    "dst": "牠在呼喚誰，Elise？",
    "role": "desc",
@@ -5660,7 +5712,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#565": {
+  "The Missing Piece#569": {
    "src": "I... I don't know!",
    "dst": "我……我不知道！",
    "role": "desc",
@@ -5670,7 +5722,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#566": {
+  "The Missing Piece#570": {
    "src": "Who is it looking for?",
    "dst": "牠在找誰？",
    "role": "desc",
@@ -5680,7 +5732,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#567": {
+  "The Missing Piece#571": {
    "src": "I... I-I can't remember!",
    "dst": "我……我想不起來！",
    "role": "desc",
@@ -5690,7 +5742,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#568": {
+  "The Missing Piece#572": {
    "src": "Who did you forget?",
    "dst": "你忘了誰？",
    "role": "desc",
@@ -5700,7 +5752,7 @@
    "speaker": "?̵̗̀?̴̭͑?̵̳̫͘?̷̲̳̌̊?̵̆ͅ?̵͔͎́",
    "source": "wiki"
   },
-  "The Missing Piece#569": {
+  "The Missing Piece#573": {
    "src": "I won't forget! I won't forget! I won't! I promised! I promised I'd never forget you!",
    "dst": "我不會忘記！我不會忘記！我不會！我答應過！我答應過我永遠不會忘記你！",
    "role": "desc",
@@ -5710,7 +5762,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#570": {
+  "The Missing Piece#574": {
    "src": "Open your eyes.",
    "dst": "睜開眼睛。",
    "role": "desc",
@@ -5720,7 +5772,7 @@
    "speaker": "???",
    "source": "wiki"
   },
-  "The Missing Piece#571": {
+  "The Missing Piece#575": {
    "src": "No... No... Wh-Where is this?",
    "dst": "不……不……這、這是哪裡？",
    "role": "desc",
@@ -5730,7 +5782,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#572": {
+  "The Missing Piece#576": {
    "src": "You are an ordinary worker from the Roughworks. You work an ordinary job, and lead an ordinary but solitary life.",
    "dst": "你是 Roughworks 一名普通的工人。你做著普通的工作，過著普通而孤獨的生活。",
    "role": "desc",
@@ -5740,7 +5792,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#573": {
+  "The Missing Piece#577": {
    "src": "I'm... No, I'm me!",
    "dst": "我是……不，我是我自己！",
    "role": "desc",
@@ -5750,7 +5802,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#574": {
+  "The Missing Piece#578": {
    "src": "She is nothing to you. You have never met her. You will never meet her.",
    "dst": "她對你來說什麼都不是。你從未見過她。你也永遠不會見到她。",
    "role": "desc",
@@ -5760,7 +5812,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#575": {
+  "The Missing Piece#579": {
    "src": "I won't forget!",
    "dst": "我不會忘記！",
    "role": "desc",
@@ -5770,7 +5822,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#576": {
+  "The Missing Piece#580": {
    "src": "Silence!",
    "dst": "住口！",
    "role": "desc",
@@ -5780,7 +5832,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#577": {
+  "The Missing Piece#581": {
    "src": "You are nothing to her! She is nothing to you! Soon you'll forget she ever existed.",
    "dst": "你對她來說什麼都不是！她對你來說什麼都不是！你很快就會忘記她曾經存在過。",
    "role": "desc",
@@ -5790,7 +5842,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#578": {
+  "The Missing Piece#582": {
    "src": "No, I will never forget! She was everything to me! She is everything to me! I will never forget her!",
    "dst": "不，我永遠不會忘記！她曾是我的一切！她現在也是我的一切！我永遠不會忘記她！",
    "role": "desc",
@@ -5800,7 +5852,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#579": {
+  "The Missing Piece#583": {
    "src": "She is nothing to you. You have never met her. You will never meet her.",
    "dst": "她對你來說什麼都不是。你從未見過她。你也永遠不會見到她。",
    "role": "desc",
@@ -5810,7 +5862,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#580": {
+  "The Missing Piece#584": {
    "src": "You do not know her face, nor her voice, nor her touch.",
    "dst": "你不認得她的臉，不認得她的聲音，也不認得她的觸碰。",
    "role": "desc",
@@ -5820,7 +5872,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#581": {
+  "The Missing Piece#585": {
    "src": "No... I... won't...",
    "dst": "不……我……不要……",
    "role": "desc",
@@ -5830,7 +5882,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#582": {
+  "The Missing Piece#586": {
    "src": "She is nothing to you. You have never met her. You will never meet her. You have always been ordinary, you will always be ordinary.",
    "dst": "她對你來說什麼都不是。你從未見過她。你也永遠不會見到她。你一直都是個普通人，你也將永遠是個普通人。",
    "role": "desc",
@@ -5840,7 +5892,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#583": {
+  "The Missing Piece#587": {
    "src": "Understood?",
    "dst": "明白了嗎？",
    "role": "desc",
@@ -5850,7 +5902,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#584": {
+  "The Missing Piece#588": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -5860,7 +5912,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#585": {
+  "The Missing Piece#589": {
    "src": "I will ask once more. Is your directive understood?",
    "dst": "我再問一次。你的指令，明白了嗎？",
    "role": "desc",
@@ -5870,7 +5922,7 @@
    "speaker": "Inquisitor",
    "source": "wiki"
   },
-  "The Missing Piece#586": {
+  "The Missing Piece#590": {
    "src": "I'll never forget her!",
    "dst": "我永遠不會忘記她！",
    "role": "desc",
@@ -5880,7 +5932,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#587": {
+  "The Missing Piece#591": {
    "src": "S-Syndra!",
    "dst": "S——Syndra！",
    "role": "desc",
@@ -5890,7 +5942,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#588": {
+  "The Missing Piece#592": {
    "src": "Syndra! Syndra!?",
    "dst": "Syndra！Syndra！？",
    "role": "desc",
@@ -5900,7 +5952,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#589": {
+  "The Missing Piece#593": {
    "src": "Where... Where are you... I...",
    "dst": "你在……你在哪裡……我……",
    "role": "desc",
@@ -5910,7 +5962,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#590": {
+  "The Missing Piece#594": {
    "src": "Syndra...",
    "dst": "Syndra……",
    "role": "desc",
@@ -5920,7 +5972,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#591": {
+  "The Missing Piece#595": {
    "src": "Hm? What is it, Elise?",
    "dst": "嗯？怎麼了，Elise？",
    "role": "desc",
@@ -5930,7 +5982,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Missing Piece#592": {
+  "The Missing Piece#596": {
    "src": "No... Nothing... I just...",
    "dst": "不……沒事……我只是……",
    "role": "desc",
@@ -5940,7 +5992,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#593": {
+  "The Missing Piece#597": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -5950,7 +6002,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#594": {
+  "The Missing Piece#598": {
    "src": "It's just...",
    "dst": "只是……",
    "role": "desc",
@@ -5960,7 +6012,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#595": {
+  "The Missing Piece#599": {
    "src": "I remembered I love you.",
    "dst": "我想起我愛你。",
    "role": "desc",
@@ -5970,7 +6022,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#596": {
+  "The Missing Piece#600": {
    "src": "And I'll never forget it, Elise.",
    "dst": "而我永遠不會忘記，Elise。",
    "role": "desc",
@@ -5980,7 +6032,7 @@
    "speaker": "Syndra",
    "source": "wiki"
   },
-  "The Missing Piece#597": {
+  "The Missing Piece#601": {
    "src": "Syndra...",
    "dst": "Syndra……",
    "role": "desc",
@@ -5990,7 +6042,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#598": {
+  "The Missing Piece#602": {
    "src": "Ha...",
    "dst": "哈……",
    "role": "desc",
@@ -6000,7 +6052,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#599": {
+  "The Missing Piece#603": {
    "src": "My legs... feel funny... I think... I think I'm in need of some rest. A long, long rest... I deserve that... don't I?",
    "dst": "我的腿……感覺怪怪的……我想……我想我需要休息一下。長長的、長長的休息……這是我應得的……對吧？",
    "role": "desc",
@@ -6010,7 +6062,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#600": {
+  "The Missing Piece#604": {
    "src": "You'll take me home... won't you? I want to see it, at least once more... The tree.",
    "dst": "你會帶我回家……對吧？我想再看它一次，至少一次……那棵樹。",
    "role": "desc",
@@ -6020,7 +6072,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#601": {
+  "The Missing Piece#605": {
    "src": "Pick up Elise at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] 抱起 Elise。",
    "role": "desc",
@@ -6030,7 +6082,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Missing Piece#602": {
+  "The Missing Piece#606": {
    "src": "Bring Elise home to [-{~}, {~}, -{~}].",
    "dst": "帶 Elise 回到 [-{~}, {~}, -{~}] 的家。",
    "role": "desc",
@@ -6040,7 +6092,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Missing Piece#603": {
+  "The Missing Piece#607": {
    "src": "Ah... there it is.",
    "dst": "啊……它在那裡。",
    "role": "desc",
@@ -6050,7 +6102,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#604": {
+  "The Missing Piece#608": {
    "src": "It's grown so tall... and so beautiful. Hasn't it, Syndra...?",
    "dst": "它長得好高……好美。是不是啊，Syndra……？",
    "role": "desc",
@@ -6060,7 +6112,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#605": {
+  "The Missing Piece#609": {
    "src": "If... If only... you could have seen it... like this...",
    "dst": "要是……要是你能……看到它現在的樣子……",
    "role": "desc",
@@ -6070,7 +6122,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#606": {
+  "The Missing Piece#610": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6080,7 +6132,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#607": {
+  "The Missing Piece#611": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6090,7 +6142,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#608": {
+  "The Missing Piece#612": {
    "src": "Pick some of Elise's flowers around her house at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] Elise 家周圍摘一些她的花。",
    "role": "desc",
@@ -6100,7 +6152,7 @@
    "speaker": "",
    "source": "wiki"
   },
-  "The Missing Piece#609": {
+  "The Missing Piece#613": {
    "src": "...",
    "dst": "……",
    "role": "desc",
@@ -6110,7 +6162,7 @@
    "speaker": "Elise",
    "source": "wiki"
   },
-  "The Missing Piece#610": {
+  "The Missing Piece#614": {
    "src": "Bury Elise at [-{~}, {~}, -{~}].",
    "dst": "在 [-{~}, {~}, -{~}] 安葬 Elise。",
    "role": "desc",
