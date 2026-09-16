@@ -113,8 +113,11 @@ public final class WynntilsText {
                 // Wynntils 送過來就是一整段，上面那道「一段一段查」沒有東西可以拆。
                 String split = splitHeader(one.getStringWithoutFormatting(), store);
                 if (split != null) {
+                    // 字型要換回預設：Wynntils 的標題樣板用 with_font 包成
+                    // language/wynncraft，那份字型沒有中文字，照抄就是一排方框。
                     done = net.minecraft.network.chat.Component.literal(split)
-                            .withStyle(styleOf(one));
+                            .withStyle(styleOf(one).withFont(
+                                    net.minecraft.network.chat.FontDescription.DEFAULT));
                 }
             }
             any |= done != null;

@@ -3337,7 +3337,85 @@ public final class LineTranslator {
                                  "佔位符數量對不上，整塊放棄");
             return null;
         }
+        rebuilt = rowColours(message, rebuilt, dominantStyle(List.of(parts)));
         return unslant(realignChat(message, rebuilt, centred, inPanel));
+    }
+
+    /**
+     * 多行訊息裡，<b>原文根本沒用到主色</b>的那幾行，改用那一行自己的顏色。
+     *
+     * <h2>實機回報</h2>
+     * 登入的歡迎訊息底下有交易市場兩行：
+     * <pre>
+     *   §d§l1§r §5item was sold on the Trade Market
+     *   §#8f663dand §#bc8f62§l2§#8f663d mounts have §#bc8f62no food§#8f663d in their feeder
+     * </pre>
+     * 整塊的主色是第一行的紫色，譯文每一行的正文都畫主色，
+     * 於是第二行「另有 2 匹坐騎……」整行變紫，跟原文的棕色對不起來。
+     *
+     * <h2>為什麼只動「沒用到主色」的行</h2>
+     * 一行裡只要出現過主色，譯文那一行畫主色就有根據；換成那一行最多的顏色，
+     * 反而可能把一個很長的名字的顏色染到整行。只有主色在原文那一行
+     * <b>一個字都沒有</b>時，畫主色才一定是錯的。
+     *
+     * @return 行數對不上或不需要動時原樣回傳
+     */
+    static Component rowColours(StyledText original, Component rebuilt, Style blockStyle) {
+        TextColor block = blockStyle == null ? null : blockStyle.getColor();
+        if (block == null) {
+            return rebuilt;
+        }
+        List<List<Run>> origRows = splitRows(runs(original.getComponent()));
+        List<List<Run>> madeRows = splitRows(runs(rebuilt));
+        int[] keepOrig = solidRows(origRows);
+        int[] keepMade = solidRows(madeRows);
+        int count = keepOrig[1] - keepOrig[0];
+        if (count < 2 || count != keepMade[1] - keepMade[0]) {
+            return rebuilt;
+        }
+        TextColor[] rowColour = new TextColor[count];
+        boolean any = false;
+        for (int k = 0; k < count; k++) {
+            java.util.Map<TextColor, Integer> weight = new java.util.LinkedHashMap<>();
+            boolean usesBlock = false;
+            for (Run run : origRows.get(keepOrig[0] + k)) {
+                TextColor colour = run.style() == null ? null : run.style().getColor();
+                if (run.space() || colour == null || !hasContent(run.text())) {
+                    continue;
+                }
+                if (colour.equals(block)) {
+                    usesBlock = true;
+                    break;
+                }
+                weight.merge(colour, run.text().strip().length(), Integer::sum);
+            }
+            if (usesBlock || weight.isEmpty()) {
+                continue;
+            }
+            rowColour[k] = java.util.Collections.max(weight.entrySet(),
+                    java.util.Map.Entry.comparingByValue()).getKey();
+            any = true;
+        }
+        if (!any) {
+            return rebuilt;
+        }
+        MutableComponent out = Component.empty();
+        for (int r = 0; r < madeRows.size(); r++) {
+            if (r > 0) {
+                out.append(Component.literal("\n"));
+            }
+            int k = r - keepMade[0];
+            TextColor colour = k >= 0 && k < count ? rowColour[k] : null;
+            for (Run run : madeRows.get(r)) {
+                Style style = run.style();
+                if (colour != null && !run.space() && style != null
+                        && block.equals(style.getColor())) {
+                    style = style.withColor(colour);
+                }
+                out.append(Component.literal(run.text()).withStyle(style));
+            }
+        }
+        return out;
     }
 
     /**
