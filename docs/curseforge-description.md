@@ -50,7 +50,7 @@ Switch under F6 → Data, without changing the game's language.
 ### Progress
 
 <!-- 進度:開始 -->
-更新於 2026-09-15。
+更新於 2026-09-16。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
@@ -133,7 +133,7 @@ Free, and it will stay free. [Ko-fi](https://ko-fi.com/lyuchacha): 3 USD/month o
 ### 翻譯進度
 
 <!-- 進度:開始 -->
-更新於 2026-09-15。
+更新於 2026-09-16。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
