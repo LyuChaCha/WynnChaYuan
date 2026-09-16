@@ -786,3 +786,13 @@ tasks.register('runNickFromCorpusChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.PlayerNameFromCorpusTest'
 }
 tasks.named('check') { dependsOn 'runNickFromCorpusChecks' }
+
+tasks.register('runDialogueTypingChecks', JavaExec) {
+    group = 'verification'
+    description = '逐字模擬對話：不在中英之間來回跳、被打斷也不掉回英文'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.DialogueTypingTest'
+    // 排查時可以用 -PquestScope=0 模擬「沒在追蹤任務」那條路
+    systemProperty 'wcy.questScope', findProperty('questScope') ?: '1'
+}
+tasks.named('check') { dependsOn 'runDialogueTypingChecks' }
