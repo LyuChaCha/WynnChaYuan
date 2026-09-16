@@ -80,15 +80,15 @@ Switch under **F6 → Data**, without changing the game's language or restarting
 - **Interface language**: the language of the F6 screens themselves (English included)
 
 <!-- 進度:開始 -->
-更新於 2026-09-15。
+更新於 2026-09-16。
 
 | 語言 | 進度 | 已翻 / 總數 |
 |---|---|---:|
-| `zh_tw` 繁體中文 | ██████████ 96.0% | 41,958 / 43,727 |
-| `zh_cn` 简体中文 | █████████░ 94.1% | 40,095 / 42,624 |
-| `ja_jp` 日本語 | █████████░ 93.9% | 40,012 / 42,624 |
-| `ru_ru` Русский | █████████░ 93.5% | 39,865 / 42,624 |
-| `ko_kr` 한국어 | ░░░░░░░░░░ 1.8% | 778 / 42,616 |
+| `zh_tw` 繁體中文 | ██████████ 95.4% | 41,958 / 44,003 |
+| `zh_cn` 简体中文 | █████████░ 94.0% | 40,095 / 42,647 |
+| `ja_jp` 日本語 | █████████░ 93.8% | 40,012 / 42,647 |
+| `ru_ru` Русский | █████████░ 93.5% | 39,865 / 42,647 |
+| `ko_kr` 한국어 | ░░░░░░░░░░ 1.8% | 778 / 42,639 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
 <!-- 進度:結束 -->
