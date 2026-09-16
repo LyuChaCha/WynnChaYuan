@@ -76,9 +76,24 @@ public final class RemoteSync {
 
     private RemoteSync() {}
 
-    /** 依序試每個來源，任一成功就算數。 */
-    private static boolean fetchOne(HttpClient client, Path cacheDir,
-                                    String lang, String name) {
+    /** {@link #fetchOne} 抓不到。 */
+    private static final int FAILED = 0;
+
+    /** 抓到了，但跟快取裡那份一模一樣——不必重新載入。 */
+    private static final int SAME = 1;
+
+    /** 抓到了，而且換掉了快取裡的舊檔。 */
+    private static final int CHANGED = 2;
+
+    /**
+     * 依序試每個來源，任一成功就算數。
+     *
+     * @return {@link #FAILED}、{@link #SAME} 或 {@link #CHANGED}
+     */
+    private static int fetchOne(HttpClient client, Path cacheDir,
+                                String lang, String name) {
+        Path target = cacheDir.resolve(name);
+        Path tmp = cacheDir.resolve(name + ".tmp");
         for (String base : SOURCES) {
             try {
                 HttpRequest request = HttpRequest.newBuilder(
@@ -95,7 +110,6 @@ public final class RemoteSync {
                 if (response.statusCode() != 200) {
                     continue;
                 }
-                Path tmp = cacheDir.resolve(name + ".tmp");
                 // 清單裡的名字可能帶資料夾（`ability/mage.json`）。資料夾不存在的話
                 // 這裡會丟 NoSuchFileException，兩個來源都失敗，那個檔就<b>整個沒下載</b>——
                 // GitHub 上明明有譯文，遊戲裡卻一條都沒有。
@@ -103,20 +117,33 @@ public final class RemoteSync {
                 try (InputStream in = response.body()) {
                     Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
                 }
-                // 先確認是合法 JSON 再蓋上去。半截或錯誤頁面蓋掉舊檔的話，
+                // 先確認<b>整份</b>是合法 JSON 再蓋上去。半截或錯誤頁面蓋掉舊檔的話，
                 // 使用者會從「翻譯有點舊」變成「翻譯全沒了」。
-                String body = Files.readString(tmp, StandardCharsets.UTF_8);
-                if (body.isBlank() || !body.stripLeading().startsWith("{")) {
+                //
+                // 先前只看開頭是不是「{」：連線中途斷掉的半截檔照樣過關，
+                // 那個檔的譯文就一直不見，直到下一次同步剛好抓完整。
+                if (!com.wynnchayuan.SafeFiles.parsesAsObject(tmp)) {
                     Files.deleteIfExists(tmp);
                     continue;
                 }
-                Files.move(tmp, cacheDir.resolve(name), StandardCopyOption.REPLACE_EXISTING);
-                return true;
+                // 跟快取一模一樣就不換，並回報「沒變」。呼叫端靠這個決定要不要重載——
+                // 重載一次一兩秒，而大多數時候 GitHub 上什麼都沒改。
+                if (Files.isRegularFile(target) && Files.mismatch(tmp, target) == -1L) {
+                    Files.deleteIfExists(tmp);
+                    return SAME;
+                }
+                com.wynnchayuan.SafeFiles.moveAtomically(tmp, target);
+                return CHANGED;
             } catch (Exception e) {
-                // 這個來源不通就試下一個
+                // 這個來源不通就試下一個。寫到一半的暫存檔別留著。
+                try {
+                    Files.deleteIfExists(tmp);
+                } catch (Exception ignored) {
+                    // 刪不掉的話下次啟動 ConfigFolder 會清
+                }
             }
         }
-        return false;
+        return FAILED;
     }
 
     public static String lastResult() {
@@ -128,7 +155,7 @@ public final class RemoteSync {
      *
      * <p>每個檔案先寫暫存檔再原子搬移，中途失敗不會留下半截 JSON 蓋掉舊的好檔案。
      *
-     * @return 成功更新的檔案數
+     * @return 內容真的有變的檔案數（抓到但跟快取一樣的不算）。0 表示不必重新載入
      */
     public static int fetchInto(Path cacheDir) {
         return fetchInto(cacheDir, Languages.DEFAULT);
@@ -162,6 +189,7 @@ public final class RemoteSync {
     public static int fetchInto(Path cacheDir, String lang, Progress progress) {
         int ok = 0;
         int failed = 0;
+        int changed = 0;
         try {
             Files.createDirectories(cacheDir);
         } catch (Exception e) {
@@ -176,30 +204,41 @@ public final class RemoteSync {
 
             // 先抓清單本身，後面才知道 repo 上有沒有新增譯文檔。
             // 這一步失敗不算錯——那就只是沿用內建清單而已。
-            fetchOne(client, cacheDir, lang, INDEX);
+            int index = fetchOne(client, cacheDir, lang, INDEX);
+            if (index == CHANGED) {
+                changed++;                     // 清單的順序就是載入順序，變了也要重載
+            }
 
             List<String> names = files(cacheDir, lang);
+            java.util.Set<String> fetched = new java.util.HashSet<>();
             if (progress != null) {
                 progress.at(0, names.size());
             }
             for (String name : names) {
-                if (fetchOne(client, cacheDir, lang, name)) {
-                    ok++;
-                } else {
+                int got = fetchOne(client, cacheDir, lang, name);
+                if (got == FAILED) {
                     failed++;
+                } else {
+                    ok++;
+                    fetched.add(name);
+                    if (got == CHANGED) {
+                        changed++;
+                    }
                 }
                 if (progress != null) {
                     progress.at(ok + failed, names.size());
                 }
             }
+            // 蓋上快取戳記，順便刪掉 repo 已經不列的舊檔——見 TranslationCache。
+            changed += TranslationCache.record(cacheDir, fetched, names, index != FAILED);
         } catch (Exception e) {
             lastResult = "連線失敗：" + e.getMessage() + "（改用本機快取）";
-            return ok;
+            return changed;
         }
 
         lastResult = failed == 0
-                ? "已從 GitHub 同步 " + ok + " 個檔案"
+                ? "已從 GitHub 同步 " + ok + " 個檔案（" + changed + " 個有更新）"
                 : "同步 " + ok + " 個檔案，" + failed + " 個失敗（失敗的用舊快取）";
-        return ok;
+        return changed;
     }
 }

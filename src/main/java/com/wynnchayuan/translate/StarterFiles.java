@@ -1,5 +1,8 @@
 package com.wynnchayuan.translate;
 
+import com.wynnchayuan.SafeFiles;
+
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,15 +21,25 @@ import java.util.List;
  * 介面標籤。{@code dst} 全部留空，等人填。
  *
  * <h2>只在資料夾是空的時候寫入</h2>
- * 已經有任何 .json 就完全不碰——否則每次啟動都會蓋掉玩家翻好的內容。
+ * 已經有譯文檔就不碰——否則每次啟動都會蓋掉玩家翻好的內容。
  * 想拿回原始檔就把資料夾清空再啟動一次。
+ *
+ * <h2>倒到一半被關掉</h2>
+ * 第一次啟動要倒出四十幾個檔、二十幾 MB，比平常久得多——實際上就有玩家以為當掉了
+ * 而把遊戲關掉。先前那樣關掉之後，資料夾裡已經「有 .json」，於是永遠不會再補：
+ * 缺的檔一直缺，寫到一半的那個檔一直是半截。
+ *
+ * <p>現在每個檔先寫暫存檔再換上去（不會有半截），而清單 {@code _index.json} 排在
+ * <b>最後</b>寫：有譯文檔卻沒有清單，就代表上次沒倒完，把缺的補上——已經在的一個都不蓋。
  */
 public final class StarterFiles {
+
+    private static final String INDEX = "_index.json";
 
     /** 清單來自 _index.json —— 新增譯文檔不必改這裡。 */
     private static List<String> bundled(String lang) {
         List<String> names = new java.util.ArrayList<>(FileIndex.bundled(lang));
-        names.add("_index.json");              // 清單本身也要放出去，使用者才能自己加檔案
+        names.add(INDEX);                      // 清單本身也要放出去，使用者才能自己加檔案；排最後，見類別說明
         return names;
     }
 
@@ -43,10 +56,14 @@ public final class StarterFiles {
      * @param lang 要倒出哪一種語言的工作檔
      */
     public static int installIfEmpty(Path dir, String lang) {
+        boolean resume = false;
         try {
             Files.createDirectories(dir);
-            if (hasJson(dir)) {
-                return 0;                      // 已有內容，不覆蓋
+            if (hasTranslations(dir)) {
+                if (Files.isRegularFile(dir.resolve(INDEX))) {
+                    return 0;                  // 已有內容，不覆蓋
+                }
+                resume = true;                 // 上次沒倒完，見類別說明
             }
         } catch (Exception e) {
             System.err.println("[WynnChaYuan] 無法準備譯文資料夾 " + dir + ": " + e.getMessage());
@@ -55,29 +72,66 @@ public final class StarterFiles {
 
         int written = 0;
         for (String name : bundled(lang)) {
+            Path out = dir.resolve(name);
+            if (resume && Files.exists(out)) {
+                continue;                      // 已經在的不蓋——可能是玩家翻過的
+            }
             try (InputStream in = StarterFiles.class.getResourceAsStream(
                     Languages.resource(lang) + name)) {
                 if (in == null) {
                     continue;
                 }
-                Path out = dir.resolve(name);
-                // 清單裡的名字可能帶資料夾（`ability/mage.json`），先把它建出來
-                Files.createDirectories(out.getParent());
-                Files.copy(in, out, StandardCopyOption.REPLACE_EXISTING);
+                copyAtomically(in, out);
                 written++;
             } catch (Exception e) {
                 System.err.println("[WynnChaYuan] 寫出 " + name + " 失敗: " + e.getMessage());
             }
         }
         if (written > 0) {
-            System.out.println("[WynnChaYuan] 已放入 " + written + " 個翻譯工作檔於 " + dir);
+            System.out.println("[WynnChaYuan] " + (resume ? "補上上次沒倒完的 " : "已放入 ")
+                    + written + " 個翻譯工作檔於 " + dir);
         }
         return written;
     }
 
-    private static boolean hasJson(Path dir) throws Exception {
+    /**
+     * 從 jar 補回一個檔，蓋掉原本那份。
+     *
+     * <p>給讀不懂的快取檔用（見 {@link TranslationCache#loadRepairing}）：半截的檔
+     * 已經改名放旁邊了，這裡把內建的那份放回去，那個檔的譯文才不會整片消失。
+     *
+     * @return 有沒有補回來；jar 裡沒有這個檔時回傳 {@code false}
+     */
+    public static boolean restore(Path dir, String lang, String name) {
+        if (!FileIndex.safeName(name)) {
+            return false;
+        }
+        try (InputStream in = StarterFiles.class.getResourceAsStream(
+                Languages.resource(lang) + name)) {
+            if (in == null) {
+                return false;
+            }
+            copyAtomically(in, dir.resolve(name));
+            return true;
+        } catch (Exception e) {
+            System.err.println("[WynnChaYuan] 補回 " + name + " 失敗: " + e.getMessage());
+            return false;
+        }
+    }
+
+    private static void copyAtomically(InputStream in, Path out) throws IOException {
+        // 清單裡的名字可能帶資料夾（`ability/mage.json`），先把它建出來
+        Files.createDirectories(out.toAbsolutePath().getParent());
+        Path tmp = out.resolveSibling(out.getFileName() + ".tmp");
+        Files.copy(in, tmp, StandardCopyOption.REPLACE_EXISTING);
+        SafeFiles.moveAtomically(tmp, out);
+    }
+
+    /** 有沒有譯文檔。底線開頭的（清單、快取記錄）不算——只有那些的資料夾等於是空的。 */
+    private static boolean hasTranslations(Path dir) throws IOException {
         try (var files = Files.list(dir)) {
-            return files.anyMatch(p -> p.getFileName().toString().endsWith(".json"));
+            return files.map(p -> p.getFileName().toString())
+                        .anyMatch(n -> n.endsWith(".json") && !n.startsWith("_"));
         }
     }
 }

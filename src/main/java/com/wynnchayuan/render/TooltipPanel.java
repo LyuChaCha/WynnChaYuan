@@ -159,6 +159,14 @@ public final class TooltipPanel {
         boolean[] hit = new boolean[n];
 
         int i = 0;
+        // 每一塊在原文與輸出各佔哪幾行：{原文起, 原文迄, 輸出起, 輸出迄}。
+        //
+        // 輸出<b>不一定</b>跟原文一行對一行。整段查到的譯文可以比原文少行
+        // （技能點數的說明四行英文收成一句中文），之後的每一行在 out 裡的位置
+        // 就比原文往前挪了。先前「同一段不能翻一半」拿原文的行號直接去改 out，
+        // 前面收掉幾行就錯位幾行：改到別的行，或者乾脆超出範圍——
+        // 實機 error-debug 的 IndexOutOfBoundsException 就是這個。見 #regroup。
+        List<int[]> spans = new ArrayList<>(n);
         // 物品名稱那一行：還沒翻的裝備名一律保持原文。
         //
         // 名稱後面可能掛著 Wynntils 加的註記，所以要先剝掉——見 #bareName。
@@ -177,6 +185,7 @@ public final class TooltipPanel {
                 com.wynnchayuan.capture.LineParts.of(styled.get(0)).template());
         if (gearName != null && store.isBareGearName(gearName)) {
             out.add(LineTranslator.untranslated(styled.get(0)));
+            spans.add(new int[] {0, 1, 0, 1});
             i = 1;
             // 名稱其實是<b>兩行</b>：第 0 行寬度是 0，玩家看不到；
             // 看得到的名字在第 1 行。實機 layout-debug 記得很清楚：
@@ -196,6 +205,7 @@ public final class TooltipPanel {
             if (n > 1 && gearName.equals(bareName(
                     com.wynnchayuan.capture.LineParts.of(styled.get(1)).template()))) {
                 out.add(LineTranslator.untranslated(styled.get(1)));
+                spans.add(new int[] {1, 2, 1, 2});
                 i = 2;
             }
         }
@@ -211,6 +221,7 @@ public final class TooltipPanel {
                 used = len;
             }
             if (block != null) {
+                spans.add(new int[] {i, i + used, out.size(), out.size() + block.size()});
                 out.addAll(block);
                 anyTranslated = true;
                 for (int k = i; k < i + used; k++) {
@@ -255,6 +266,7 @@ public final class TooltipPanel {
                     ? null
                     : LineTranslator.translate(styled.get(i), store, centered[i],
                                                leftAligned);
+            spans.add(new int[] {i, i + 1, out.size(), out.size() + 1});
             if (translated != null) {
                 anyTranslated = true;
                 hit[i] = true;
@@ -282,13 +294,11 @@ public final class TooltipPanel {
             plain.add(text.substring(TranslationStore.indentOf(text)).strip());
         }
         if (evenOut(plain, hit)) {
+            // 不能拿原文行號直接改 out——整段收短過的話行號對不上。照每一塊重組，見 #regroup。
+            out = regroup(out, spans, styled, plain, hit);
             anyTranslated = false;
             for (int k = 0; k < n; k++) {
-                if (hit[k]) {
-                    anyTranslated = true;
-                } else {
-                    out.set(k, LineTranslator.untranslated(styled.get(k)));
-                }
+                anyTranslated |= hit[k];
             }
         }
         // 一行都沒翻到就別畫了，不然只是把原文再灰色複製一遍
@@ -672,8 +682,78 @@ public final class TooltipPanel {
      */
     public static List<Component> translateInPlace(List<Component> tooltip,
                                                    TranslationStore store) {
-        List<Component> translated = translateLines(tooltip, store);
-        return translated.isEmpty() ? List.of() : translated;
+        // 就地取代是<b>把譯文寫回事件</b>，出一次錯遊戲就畫不出那份 tooltip。
+        // 這裡出任何事都回傳空的，呼叫端的約定是「空的 = 原文不動」。
+        //
+        // 外層 RenderListener 雖然也包了 catch，但那一層只負責「別讓遊戲崩潰」；
+        // 「退回原文」是這個方法自己的承諾，不該靠呼叫端剛好寫對。
+        // 例外照樣記進 error-debug，否則又回到「只知道沒翻、不知道為什麼」。
+        try {
+            List<Component> translated = translateLines(tooltip, store);
+            return translated.isEmpty() ? List.of() : translated;
+        } catch (RuntimeException e) {
+            Component first = tooltip == null || tooltip.isEmpty() ? null : tooltip.get(0);
+            com.wynnchayuan.translate.ErrorDebug.note("tooltip.inPlace",
+                    first == null ? null : first.getString(), e);
+            return List.of();
+        }
+    }
+
+    /**
+     * 「同一段不能翻一半」退回原文之後，照<b>每一塊</b>重組輸出。
+     *
+     * <h2>為什麼不能照行號改</h2>
+     * 輸出跟原文不一定一行對一行：整段查到的譯文可以比原文少行（技能點數的說明
+     * 四行英文收成一句中文）。先前是 {@code out.set(原文行號, 原文)}，前面收掉幾行
+     * 就錯位幾行——改到別的行，或者超出範圍丟例外。實機回報的
+     * {@code IndexOutOfBoundsException: Index 15 out of bounds for length 15} 就是這個。
+     *
+     * <h2>一塊要嘛整塊翻、要嘛整塊不翻</h2>
+     * 收短過的那一塊沒辦法「只退其中一行」——那一行在輸出裡已經不存在了。所以塊裡
+     * 只要有一行被退回，整塊都退回原文。退了之後別的段落可能因此變成一半，
+     * 所以跟 {@link #evenOut} 交替做到不再變動為止（每一輪只會把「翻了」改成「沒翻」，一定停得下來）。
+     *
+     * @param spans 每一塊 {原文起, 原文迄, 輸出起, 輸出迄}，照原文順序、首尾相接
+     * @param hit   每一行有沒有翻；<b>會被就地改掉</b>
+     */
+    static List<Component> regroup(List<Component> out, List<int[]> spans,
+                                   List<StyledText> styled, List<String> plain, boolean[] hit) {
+        boolean changed;
+        do {
+            changed = false;
+            for (int[] span : spans) {
+                boolean some = false;
+                boolean all = true;
+                for (int k = span[0]; k < span[1]; k++) {
+                    some |= hit[k];
+                    all &= hit[k];
+                }
+                if (some && !all) {
+                    for (int k = span[0]; k < span[1]; k++) {
+                        hit[k] = false;
+                    }
+                    changed = true;
+                }
+            }
+            if (changed) {
+                evenOut(plain, hit);
+            }
+        } while (changed);
+
+        List<Component> rebuilt = new ArrayList<>(hit.length);
+        for (int[] span : spans) {
+            boolean kept = span[0] < span[1] && hit[span[0]]
+                    && span[2] <= span[3] && span[3] <= out.size();
+            if (kept) {
+                rebuilt.addAll(out.subList(span[2], span[3]));
+            } else {
+                for (int k = span[0]; k < span[1]; k++) {
+                    hit[k] = false;
+                    rebuilt.add(LineTranslator.untranslated(styled.get(k)));
+                }
+            }
+        }
+        return rebuilt;
     }
 
     // 曾經在這裡用 Font.split 把過寬的面板折行，但那會把 Nori、Wynnpool 那類

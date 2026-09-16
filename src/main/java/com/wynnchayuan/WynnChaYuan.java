@@ -92,6 +92,11 @@ public final class WynnChaYuan implements ClientModInitializer {
     public void onInitializeClient() {
         Path dir = FabricLoader.getInstance().getConfigDir().resolve(MOD_ID);
         configDir = dir;
+        // 升級時玩家不會刪這個資料夾，也不該需要刪。先清掉舊版留下的暫存檔與
+        // 不再使用的記錄，再讓任何人讀它——見 ConfigFolder。後面每一個讀檔的地方
+        // 讀不懂都會把檔案改名放旁邊、用預設值繼續（見 SafeFiles），不會擋住啟動。
+        ConfigFolder.tidy(dir);
+        com.wynnchayuan.translate.TranslationCache.modVersion = version();
         store = new CaptureStore(dir.resolve("captured.json"));
         config = new CollectorConfig(dir.resolve("config.json"));
         com.wynnchayuan.render.ThirdPartySections.load(dir);
@@ -126,7 +131,13 @@ public final class WynnChaYuan implements ClientModInitializer {
                 config.language(), gameLanguage());
         com.wynnchayuan.translate.Languages.migrateFlat(dir, language);
         Path trDir = com.wynnchayuan.translate.Languages.dir(dir, language);
-        StarterFiles.installIfEmpty(trDir, language);
+        // 別的版本寫的快取整包移開、上次沒倒完的補齊。墊底那一層也一樣——見 TranslationCache。
+        com.wynnchayuan.translate.TranslationCache.prepare(trDir, language);
+        String underneath = fallbackLanguage();
+        if (underneath != null) {
+            com.wynnchayuan.translate.TranslationCache.prepare(
+                    com.wynnchayuan.translate.Languages.dir(dir, underneath), underneath);
+        }
         translations = new TranslationStore();
         translations.setTranslateNames(config.translateItemNames());
         // captured.json 只該列「還沒翻的」。接上這一條之前它是照單全收——
@@ -162,7 +173,7 @@ public final class WynnChaYuan implements ClientModInitializer {
                             com.wynnchayuan.translate.Languages.dir(configDir, under), under);
                 }
                 if (changed > 0) {
-                    loadLayers();
+                    reloadOnMainThread();
                 }
                 System.out.println("[WynnChaYuan] " + RemoteSync.lastResult());
             }, MOD_ID + "-sync");
@@ -215,13 +226,13 @@ public final class WynnChaYuan implements ClientModInitializer {
         });
         // 每秒檢查對話是否已經打完（打字停住夠久就送出），寫檔仍維持 30 秒一次
         flusher.scheduleWithFixedDelay(WynnChaYuan::tick, 1, 1, TimeUnit.SECONDS);
-        flusher.scheduleWithFixedDelay(store::flush, 30, 30, TimeUnit.SECONDS);
+        flusher.scheduleWithFixedDelay(WynnChaYuan::flushQuietly, 30, 30, TimeUnit.SECONDS);
         // 收集到的東西只留在這一台。要交給翻譯團隊，由玩家在 F6 按「匯出」、
         // 自己看過再附到 Issue——模組本身不把任何字串送出去（見 CorpusExport）。
 
         // 關遊戲時確保最後一批資料有落地
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            store.flush();
+            flushQuietly();
             System.out.println("[WynnChaYuan] 已收集 " + store.size() + " 條字串");
         }, MOD_ID + "-shutdown"));
 
@@ -332,8 +343,45 @@ public final class WynnChaYuan implements ClientModInitializer {
         Path dir = com.wynnchayuan.translate.Languages.dir(configDir, language);
         StarterFiles.installIfEmpty(dir, language);   // 被清空的話順手補回來
         layers.add(dir);
-        translations.loadAll(layers);
+        // 讀不懂的檔（上次被關掉時寫到一半）改名放旁邊、從 jar 補回來再載一次
+        com.wynnchayuan.translate.TranslationCache.loadRepairing(translations, layers);
         loadReferenceKeys(layers);
+    }
+
+    /**
+     * 同步完在主執行緒重載。
+     *
+     * <h2>為什麼不在同步的執行緒上直接載</h2>
+     * {@code loadAll} 是先清空再一條一條填回去，而且裡面有幾張表不是執行緒安全的
+     * （前綴比對的 TreeMap、介面標籤的 HashSet）。先前是在同步執行緒上直接載，
+     * 同一時間主執行緒正在畫 tooltip、對話框、查這幾張表——輕則那一幀查到半空的表，
+     * 重則 TreeMap 在走訪途中被改掉而丟例外、甚至卡在迴圈裡。切語言、重新同步那幾條路
+     * 早就是「背景抓、主執行緒載」，這裡跟它們一致。
+     *
+     * <p>只有真的抓到新內容才會走到這裡（見 {@link RemoteSync#fetchInto}），
+     * 所以大多數啟動根本不會重載。
+     */
+    private static void reloadOnMainThread() {
+        try {
+            net.minecraft.client.Minecraft.getInstance().execute(WynnChaYuan::loadLayers);
+        } catch (Throwable t) {
+            System.err.println("[WynnChaYuan] 同步完排不進主執行緒，下次啟動才會套用：" + t);
+        }
+    }
+
+    /**
+     * 寫 captured.json，出錯只記一筆。
+     *
+     * <p>排程的工作只要丟出一次例外，之後每一次都會被<b>安靜地取消</b>——
+     * captured.json 從此不再更新，而且沒有任何訊息。關遊戲時的那一次也一樣：
+     * 讓例外從關閉掛鉤裡飛出去沒有任何好處。
+     */
+    private static void flushQuietly() {
+        try {
+            store.flush();
+        } catch (Throwable t) {
+            System.err.println("[WynnChaYuan] captured.json 寫入失敗: " + t);
+        }
     }
 
     /**

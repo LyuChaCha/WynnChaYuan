@@ -123,6 +123,18 @@ public final class TranslationStore {
             java.util.concurrent.ConcurrentHashMap.newKeySet();
     private volatile int loadedFiles = 0;
 
+    /**
+     * 這一次載入時<b>內容讀不懂</b>的檔（半截、空檔、不是物件）。
+     *
+     * <p>讀檔本身失敗（被防毒軟體鎖住之類）不算，那種下次開遊戲可能就好了。
+     * 見 {@link TranslationCache#loadRepairing}。
+     */
+    private final List<Path> broken = new java.util.concurrent.CopyOnWriteArrayList<>();
+
+    public List<Path> brokenFiles() {
+        return List.copyOf(broken);
+    }
+
     /** 上一次載入的結果，供設定面板顯示。 */
     private volatile String lastResult = "尚未載入";
 
@@ -188,8 +200,9 @@ public final class TranslationStore {
         layerOf.clear();
         indexLayer.clear();
         loadedFiles = 0;
+        broken.clear();
 
-        topLayer = Math.max(0, dirs.size() - 1);
+        topLayer =Math.max(0, dirs.size() - 1);
         for (layer = 0; layer < dirs.size(); layer++) {
             readOne(dirs.get(layer));
         }
@@ -334,6 +347,10 @@ public final class TranslationStore {
         try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
             JsonElement root = JsonParser.parseReader(r);
             if (!root.isJsonObject()) {
+                // 空檔也走這裡（JsonParser 讀到空內容回傳 JsonNull）。先前是安靜地略過，
+                // 那個檔的譯文就一直不見，而且完全看不出原因。
+                broken.add(file);
+                System.err.println("[WynnChaYuan] 略過 " + file.getFileName() + "：不是 JSON 物件");
                 return;
             }
             JsonObject obj = root.getAsJsonObject();
@@ -360,6 +377,14 @@ public final class TranslationStore {
             loadedFiles++;
             System.out.println("[WynnChaYuan] 載入譯文 " + file.getFileName()
                     + "：+" + (entries.size() - before) + " 條");
+        } catch (com.google.gson.JsonParseException e) {
+            // 半截的檔（下載或第一次倒工作檔時被關掉）。JsonIOException 是讀檔本身失敗，
+            // 只有編碼不對才算內容壞了。
+            if (!(e instanceof com.google.gson.JsonIOException)
+                    || e.getCause() instanceof java.nio.charset.CharacterCodingException) {
+                broken.add(file);
+            }
+            System.err.println("[WynnChaYuan] 略過 " + file.getFileName() + "：" + e.getMessage());
         } catch (Exception e) {
             System.err.println("[WynnChaYuan] 略過 " + file.getFileName() + "：" + e.getMessage());
         }
@@ -962,6 +987,14 @@ public final class TranslationStore {
         }
         String core = terms.get(key.substring(0, end).strip());
         return core == null ? null : core + key.substring(end);
+    }
+
+    /**
+     * 詞表裡所有的名稱（唯讀）。<b>測試用</b>：整份語料檢查「多字的技能名有沒有被拆到
+     * 兩行、有沒有只換了前半」時，要知道哪些名稱是多字的。
+     */
+    java.util.Set<String> termNames() {
+        return java.util.Collections.unmodifiableSet(terms.keySet());
     }
 
     /** 找到的名稱在原文的哪一段，以及它的譯名。 */

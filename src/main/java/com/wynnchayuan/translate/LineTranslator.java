@@ -160,6 +160,24 @@ public final class LineTranslator {
         FlowedDebug.note(run, extra.isEmpty() ? null : extra.get(0).text(),
                          labelStyleOf(run.get(0)), dominantStyle(parts));
         if (needsWrap(translated, run.size(), flowed)) {
+            // 技能名要在<b>折行之前</b>、對整句換掉。
+            //
+            // 語料裡說明刻意留著英文技能名，畫的時候才由詞表換（見 appendText）。先前是
+            // 先折行、再逐行換詞，兩件事都壞：
+            //
+            //   1. 折行量的是還帶著英文名的譯文。「Malicious Mockery」比「譏世弄人」寬得多，
+            //      斷點全算在錯的位置，換完只剩「譏世弄人使」一小截自己佔一行。
+            //   2. 多字的名稱被斷在兩行之間，逐行找詞時兩行各只有半個名字：「Last」「Laugh」
+            //      都不是詞而留英文；「Guardian」剛好是另一個詞（Major ID 名稱「守護者」），
+            //      畫面上就成了「焚化守護者」換行「Angels」。
+            //
+            // 整句先換好，折行看到的就是最後要畫的字；rebuildAll 裡逐行那一次找不到英文名，
+            // 什麼都不會做。名稱原本的樣式由 withTranslations 登記的「譯文版」重點段接手。
+            // 見 MajorIdTermWrapTest。
+            String swapped = termsWithin(translated, store);
+            if (swapped != null) {
+                translated = swapped;
+            }
             translated = wrapToBlock(translated, run);
         }
         String[] dst = translated.split("\n", -1);
@@ -1149,6 +1167,12 @@ public final class LineTranslator {
                 }
                 cut = avoidOrphan(text, cut, lineStart);
                 cut = keepUnitWhole(text, units, cut, lineStart);
+                // 中文句子裡留著的英文名稱整串跟著走，見 keepLatinRunWhole。
+                // 挪完之後名稱前面若是圖示，圖示也要一起到下一行。
+                int run = keepLatinRunWhole(text, cut, lineStart);
+                if (run != cut) {
+                    cut = keepGlyphWithWord(text, run, lineStart);
+                }
                 out.append(text, lineStart, cut).append(NEWLINE);
                 boolean atSpace = cut < text.length() && text.charAt(cut) == ' ';
                 lineStart = atSpace ? cut + 1 : cut;
@@ -1554,6 +1578,75 @@ public final class LineTranslator {
             }
         }
         return cut;
+    }
+
+    /**
+     * 中文句子裡留著的<b>英文名稱</b>（幾個單字連在一起）不能從中間斷開。
+     *
+     * <h2>畫面上長什麼樣</h2>
+     * 語料刻意把技能名、人名留英文（詞表換不到的就一直是英文）。先前只保護
+     * <b>一個</b>英文單字不被切成兩半（{@link #breaksWord}），單字之間的空白照樣是合法斷點：
+     *
+     * <pre>
+     *   鮮血共鳴與 Eldritch
+     *   Call 的傳送將會變得更高更遠。     ← 名字被拆成兩行，讀起來像兩個東西
+     * </pre>
+     *
+     * <p>做法是斷點落在一串英文<b>中間的空白</b>上時，挪到那串英文的前面，整串到下一行。
+     *
+     * <h2>什麼時候不挪</h2>
+     * <ul>
+     *   <li>整句沒有中日韓文字——西、德、法、俄文的譯文每個字都是英文字母，
+     *       整句會變成一串，那樣就不斷行了。</li>
+     *   <li>那串英文從行首開始就放不下——挪了只會生出空行，只好照舊在空白上斷。</li>
+     * </ul>
+     *
+     * @return 挪過的斷點；不必挪時原樣回傳
+     */
+    static int keepLatinRunWhole(String text, int cut, int lineStart) {
+        if (cut <= lineStart || cut >= text.length() || !hasCjkLetter(text)) {
+            return cut;
+        }
+        int left = cut;
+        while (left > lineStart && text.charAt(left - 1) == ' ') {
+            left--;
+        }
+        int right = cut;
+        while (right < text.length() && text.charAt(right) == ' ') {
+            right++;
+        }
+        // 兩邊都得是英數字，而且中間剛好隔一個空白。沒有空白是單字本身太長，交給 breaksWord；
+        // 隔好幾個空白多半是排版用的間距，不是同一個名字。
+        if (left <= lineStart || right >= text.length() || right - left != 1
+                || !isWordChar(text.charAt(left - 1)) || !isWordChar(text.charAt(right))) {
+            return cut;
+        }
+        int start = left;
+        while (start > lineStart) {
+            char c = text.charAt(start - 1);
+            if (isWordChar(c)) {
+                start--;
+            } else if (c == ' ' && start - 2 >= lineStart && isWordChar(text.charAt(start - 2))) {
+                start--;                        // 單一空白隔開的上一個字，還是同一串
+            } else {
+                break;
+            }
+        }
+        if (start <= lineStart) {
+            return cut;                         // 從行首開始就放不下
+        }
+        // 名稱前面那個空白是給英文用的，斷在它上面，不要留在行尾
+        return text.charAt(start - 1) == ' ' && start - 1 > lineStart ? start - 1 : start;
+    }
+
+    /** 有沒有中日韓文字。見 {@link #keepLatinRunWhole}。 */
+    private static boolean hasCjkLetter(String text) {
+        for (int i = 0; i < text.length(); i++) {
+            if (isCjkLetter(text.charAt(i))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /** 從 {@code i} 開始的數值到哪裡結束；這裡不是數值時回傳 -1。見 {@link #valueUnits}。 */

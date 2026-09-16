@@ -168,6 +168,7 @@ public final class WrapTest {
         balanced();
         balanceKeepsClause();
         valueWithLabel();
+        latinRunsWhole();
 
         System.out.println(failures == 0 ? "Wrap: 全部通過" : "Wrap: " + failures + " 項失敗");
         if (failures > 0) {
@@ -628,6 +629,54 @@ public final class WrapTest {
                "{#}{~} 場挑戰".equals(
                        LineTranslator.stripColourTokens("{#}{c1}{~} 場挑戰{/}")));
         report("null 不會炸", LineTranslator.stripColourTokens(null) == null);
+    }
+
+    /**
+     * 中文句子裡留著的英文名稱（幾個單字連在一起）不能被斷在兩行之間。
+     *
+     * <p>先前只保護<b>一個</b>英文單字不被切開，單字之間的空白照樣可以斷。
+     * 實機回報的 Major ID「蟲洞」就斷成「…會在 Last」換行「Laugh 的期間…」——
+     * 兩半各自都不是詞，讀起來也不像一個名字。
+     *
+     * <p>掃過所有放得下最長那個名稱的寬度；反面也釘住：整句都是英文（西、德、法文的譯文）
+     * 時不能因此變成整句不斷。
+     */
+    private static void latinRunsWhole() {
+        System.out.println("\n  -- 英文名稱整串不斷開 --");
+        String text = "Arrow Shield 的層數固定為 {~1}，但傷害加倍。Arrow Wall 改為讓 "
+                + "Arrow Shield 的傷害變為三倍，並使 Mask of the Lunatic 的彈藥加倍。";
+        int longest = "Mask of the Lunatic".length();
+        int bad = 0;
+        String first = null;
+        boolean lost = false;
+        for (int px = longest; px <= 80; px++) {
+            for (String wrapped : new String[] {
+                    LineTranslator.wrapToWidth(text, px, WrapTest::measure),
+                    LineTranslator.wrapBalanced(text, px, WrapTest::measure)}) {
+                lost |= !bare(wrapped).equals(bare(text));
+                String[] rows = rowsOf(wrapped);
+                for (int i = 0; i + 1 < rows.length; i++) {
+                    String a = rows[i].stripTrailing();
+                    String b = rows[i + 1].stripLeading();
+                    if (!a.isEmpty() && !b.isEmpty()
+                            && latin(a.charAt(a.length() - 1)) && latin(b.charAt(0))) {
+                        bad++;
+                        if (first == null) {
+                            first = "寬度 " + px + "：" + show(wrapped);
+                        }
+                    }
+                }
+            }
+        }
+        report("放得下的英文名稱不會被斷在兩行之間"
+                + (first == null ? "" : "（例如 " + first + "）"), bad == 0);
+        report("字沒有變少", !lost);
+
+        String english = LineTranslator.wrapToWidth(
+                "Arrow Shield is set to two charges but deals doubled damage", 20,
+                WrapTest::measure);
+        report("整句英文照樣在空白上折行（實際：" + show(english) + "）",
+                rowsOf(english).length >= 3);
     }
 
     /** 折行結果拆成幾行。 */
