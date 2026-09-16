@@ -1,12 +1,42 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.9_10",
+ "latest": "0.2.0",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.0": {
+   "headline": "The top-right tracker and objective bars can be translated in place",
+   "items": [
+    "New F6 setting for the quest tracker: replace in place, separate panel, or off",
+    "New F6 switch for the objective bars (Finish Quests, Gather Fish and so on)",
+    "Ability tree: names under \"Blocked by:\" are translated on unlocked nodes too",
+    "Russian item descriptions no longer show an empty box where a dash should be",
+    "More translations: quest dialogue, objective rows, dash and arrow bomb cost rows"
+   ],
+   "zh_tw": {
+    "headline": "右上的任務追蹤與目標進度條可以就地換成中文",
+    "items": [
+     "F6 新增任務追蹤三段設定：就地取代、另開面板、不翻譯",
+     "F6 新增目標進度條開關（完成任務、採集魚類那幾條）",
+     "技能樹：已解鎖節點底下「被以下技能阻擋」的技能名也會翻譯",
+     "俄文物品說明不再出現一個空方框",
+     "補上語料：任務對話、目標列、Dash 與箭矢炸彈的消耗"
+    ]
+   },
+   "zh_cn": {
+    "headline": "右上的任务追踪与目标进度条可以就地换成中文",
+    "items": [
+     "F6 新增任务追踪三段设置：就地替换、另开面板、不翻译",
+     "F6 新增目标进度条开关（完成任务、采集鱼类那几条）",
+     "技能树：已解锁节点底下「被以下技能阻挡」的技能名也会翻译",
+     "俄文物品说明不再出现一个空方框",
+     "补上语料：任务对话、目标列、Dash 与箭矢炸弹的消耗"
+    ]
+   }
+  },
   "0.1.9_10": {
    "headline": "The right-hand objectives can be translated too",
    "items": [
