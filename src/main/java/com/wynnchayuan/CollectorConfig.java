@@ -90,6 +90,15 @@ public final class CollectorConfig {
     private boolean translateTitles = true;
 
     /**
+     * 右上那一欄（每日目標、世界事件、Lootrun、團隊）要不要跟著翻。
+     *
+     * <p>譯文接在任務追蹤小框底下，原文那一欄不動——那是 Wynntils 自己畫的
+     * 疊層，要換掉裡面的字只能 mixin 進別的模組的算繪流程，它一改版就會
+     * 讓遊戲開不起來。見 {@code ScoreboardListener}。
+     */
+    private boolean showScoreboard = true;
+
+    /**
      * 要不要記下最近的聊天訊息，供「複製聊天」使用。
      *
      * <p>跟聊天<b>翻譯</b>是兩回事：翻譯關掉的人一樣可能想複製原文，
@@ -346,6 +355,17 @@ public final class CollectorConfig {
         translateTitles = !translateTitles;
         save();
         return translateTitles;
+    }
+
+    /** 見 {@link #showScoreboard}。 */
+    public boolean showScoreboard() {
+        return showScoreboard;
+    }
+
+    public boolean toggleScoreboard() {
+        showScoreboard = !showScoreboard;
+        save();
+        return showScoreboard;
     }
 
     public boolean marketSearch() {
@@ -970,6 +990,7 @@ public final class CollectorConfig {
         }
         chatCopy = bool(o, "chatCopy", chatCopy);
         translateTitles = bool(o, "translateTitles", translateTitles);
+        showScoreboard = bool(o, "showScoreboard", showScoreboard);
         marketSearch = bool(o, "marketSearch", marketSearch);
         chatMode = enumOr(o, "chatMode", ChatMode.class, chatMode);
         Boolean overlays = boolOrNull(o, "showOverlays");
@@ -1170,6 +1191,7 @@ public final class CollectorConfig {
             o.addProperty("choiceMode", choiceMode.name());
             o.addProperty("chatMode", chatMode.name());
             o.addProperty("translateTitles", translateTitles);
+            o.addProperty("showScoreboard", showScoreboard);
             o.addProperty("chatCopy", chatCopy);
             o.addProperty("marketSearch", marketSearch);
             o.addProperty("shotMode", shotMode.name());

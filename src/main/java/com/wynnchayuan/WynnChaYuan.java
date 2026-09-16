@@ -9,6 +9,7 @@ import com.wynnchayuan.listener.TitleListener;
 import com.wynnchayuan.listener.CaptureListener;
 import com.wynnchayuan.listener.RenderListener;
 import com.wynnchayuan.client.SettingsScreen;
+import com.wynnchayuan.listener.ScoreboardListener;
 import com.wynnchayuan.listener.TrackerListener;
 import com.wynnchayuan.translate.RemoteSync;
 import com.wynnchayuan.translate.StarterFiles;
@@ -637,6 +638,8 @@ public final class WynnChaYuan implements ClientModInitializer {
             WynntilsMod.registerEventListener(new RenderListener());
             WynntilsMod.registerEventListener(new ActionBarListener());
             WynntilsMod.registerEventListener(new TrackerListener());
+            // 右上那一欄（每日目標、世界事件）走計分板，跟追蹤欄是兩個事件
+            WynntilsMod.registerEventListener(new ScoreboardListener());
             WynntilsMod.registerEventListener(new BadgeListener());
             WynntilsMod.registerEventListener(new ChatListener());
             WynntilsMod.registerEventListener(new TitleListener());

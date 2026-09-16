@@ -106,14 +106,40 @@ public final class TrackerOverlay {
         }
     }
 
+    /**
+     * 右上那一欄的其他段落（每日目標、世界事件、Lootrun、團隊）。
+     *
+     * <p>由 {@link com.wynnchayuan.listener.ScoreboardListener} 餵進來，
+     * 接在追蹤中的任務底下畫成同一個框——那一欄在遊戲裡本來就是同一塊。
+     */
+    private static volatile List<Component> extras = List.of();
+
+    /** 見 {@link #extras}；空的清單代表那一欄現在沒有別的東西。 */
+    public static void setExtras(List<Component> lines) {
+        extras = lines == null ? List.of() : List.copyOf(lines);
+    }
+
     public static void render(GuiGraphics graphics) {
         List<Component> lines = current;
-        if (lines.isEmpty()) {
+        List<Component> more = WynnChaYuan.config().showScoreboard()
+                ? extras : List.of();
+        if (lines.isEmpty() && more.isEmpty()) {
             return;
         }
         if (!stillTracking()) {
             current = List.of();      // 原文那一欄沒了，譯文也跟著收
-            return;
+            lines = List.of();
+            // 但右上那一欄的其他段落（每日目標、世界事件）跟追蹤任務無關，
+            // 沒在追蹤任務時照樣要畫。
+            if (more.isEmpty()) {
+                return;
+            }
+        }
+        if (!more.isEmpty()) {
+            List<Component> both = new ArrayList<>(lines.size() + more.size());
+            both.addAll(lines);
+            both.addAll(more);
+            lines = both;
         }
         Minecraft mc = Minecraft.getInstance();
         int lineHeight = mc.font.lineHeight + 1;

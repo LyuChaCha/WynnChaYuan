@@ -572,6 +572,14 @@ public final class TooltipPanel {
      */
     private static final String[][] PANEL_MARKERS = {
         {"Ability Points:"},            // 技能樹的節點
+        // 已經解鎖的節點<b>沒有</b>「Ability Points:」那一行——那是還沒點的
+        // 節點才有的花費。於是 Wall of Smoke 這種已解鎖的節點認不出是技能面板，
+        // 底下「Blocked by:」列出的技能名就被撞名的裝備守門擋成英文
+        //（Duplicity 同時是刺客技能與一把還沒翻的武器）。
+        // 這兩行只有技能樹會出現，拿來認同一件事。
+        {"Blocked by:"},
+        {"Blocked by another ability"},
+        {"Click to unlock this ability"},
         {"Objective:", "Reward:"},      // Lootrun 的使命
         // Lootrun 的賜福選單。Heavensent 同時是使命名、賜福名與裝備名，
         // 使命那組認得出來，賜福選單卻沒被認出，標題就被守門擋成英文。
