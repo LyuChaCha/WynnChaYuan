@@ -970,6 +970,7 @@ public final class CollectorConfig {
         }
         chatCopy = bool(o, "chatCopy", chatCopy);
         translateTitles = bool(o, "translateTitles", translateTitles);
+        marketSearch = bool(o, "marketSearch", marketSearch);
         chatMode = enumOr(o, "chatMode", ChatMode.class, chatMode);
         Boolean overlays = boolOrNull(o, "showOverlays");
         if (overlays != null) {
@@ -981,6 +982,7 @@ public final class CollectorConfig {
         notifiedVersion = str(o, "notifiedVersion", notifiedVersion);
         language = str(o, "language", language).trim();
         fallbackLanguage = str(o, "fallbackLanguage", fallbackLanguage).trim();
+        uiLanguage = str(o, "uiLanguage", uiLanguage).trim();
         debugDumps = bool(o, "debugDumps", debugDumps);
         collectGuiText = bool(o, "collectGuiText", collectGuiText);
         source = enumOr(o, "source", Source.class, source);
@@ -1045,9 +1047,16 @@ public final class CollectorConfig {
         return v == null ? fallback : v;
     }
 
+    /**
+     * 字串欄位。<b>只收真正的字串</b>。
+     *
+     * <p>Gson 的 {@code getAsString} 對數字與布林值也會給答案（{@code 5} 變成
+     * {@code "5"}）。但這幾欄是語言代碼、版本號、色碼——寫成數字一定是壞的，
+     * 拿著假值去查語言檔只會永遠落空，退回預設反而是對的。
+     */
     private static String str(JsonObject o, String name, String fallback) {
         JsonElement el = primitive(o, name);
-        return el == null ? fallback : el.getAsString();
+        return el == null || !el.getAsJsonPrimitive().isString() ? fallback : el.getAsString();
     }
 
     private static double number(JsonObject o, String name, double fallback) {
@@ -1142,6 +1151,11 @@ public final class CollectorConfig {
             o.addProperty("notifiedVersion", notifiedVersion);
             o.addProperty("language", language);
             o.addProperty("fallbackLanguage", fallbackLanguage);
+            // uiLanguage 與 marketSearch 先前<b>只活在記憶體裡</b>：setUiLanguage 與
+            // toggleMarketSearch 都有呼叫 save()，但 save 沒寫這兩欄、load 也沒讀，
+            // 於是 F6 選的介面語言與市集搜尋開關每次重開遊戲都回到預設——
+            // 玩家看到的是「設定按了沒反應」。
+            o.addProperty("uiLanguage", uiLanguage);
             o.addProperty("source", source.name());
             o.addProperty("debugDumps", debugDumps);
             o.addProperty("collectGuiText", collectGuiText);
@@ -1157,6 +1171,7 @@ public final class CollectorConfig {
             o.addProperty("chatMode", chatMode.name());
             o.addProperty("translateTitles", translateTitles);
             o.addProperty("chatCopy", chatCopy);
+            o.addProperty("marketSearch", marketSearch);
             o.addProperty("shotMode", shotMode.name());
             o.addProperty("nametagHoldMs", nametagHoldMs);
             o.addProperty("panelAnchor", panelAnchor.name());

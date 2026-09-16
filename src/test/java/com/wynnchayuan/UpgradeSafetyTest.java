@@ -84,6 +84,7 @@ public final class UpgradeSafetyTest {
         oldSchemaCaptured();
         obsoleteFilesAreRemoved();
         brokenCopiesAreCapped();
+        settingsThatUsedToReset();
         downloadValidation();
         partialStarterInstall();
         otherLanguageIsNotSwallowed();
@@ -187,8 +188,48 @@ public final class UpgradeSafetyTest {
                 && c.source() == CollectorConfig.Source.GITHUB);
         JsonObject expected = JsonParser.parseString(PLAYER_CONFIG).getAsJsonObject();
         expected.remove("shareCaptures");
+        // 這兩欄先前從來沒被寫出去過（見 settingsThatUsedToReset），舊設定檔裡不會有，
+        // 重寫之後會帶著預設值出現。
+        expected.addProperty("uiLanguage", "");
+        expected.addProperty("marketSearch", true);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
-        check("重寫後只少了 shareCaptures，其他每一欄都一樣", expected.equals(rewritten));
+        check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
+                expected.equals(rewritten));
+    }
+
+    /**
+     * F6 選的介面語言與市集搜尋開關要記得住。
+     *
+     * <h2>先前壞在哪</h2>
+     * {@code setUiLanguage} 與 {@code toggleMarketSearch} 都有呼叫 {@code save()}，
+     * 但 {@code save} 沒寫這兩欄、{@code load} 也沒讀——設定檔裡從來沒有它們，
+     * 於是每次重開遊戲都回到預設。日文、韓文的介面檔早就翻好了，選了卻留不住。
+     */
+    private static void settingsThatUsedToReset() throws Exception {
+        Path dir = Files.createTempDirectory("wcy-up-keep");
+        Path file = dir.resolve("config.json");
+        CollectorConfig first = new CollectorConfig(file);
+        first.setUiLanguage("ja_jp");
+        boolean market = first.toggleMarketSearch();   // 預設開著，切成關
+        check("市集搜尋預設是開的，切過之後是關的", !market);
+
+        CollectorConfig reopened = new CollectorConfig(file);
+        check("★ 重開之後介面語言還是 ja_jp（先前會變回跟著譯文語言）",
+                "ja_jp".equals(reopened.uiLanguage()));
+        check("★ 重開之後市集搜尋還是關的（先前會變回開啟）", !reopened.marketSearch());
+
+        // 手寫的設定檔也讀得到
+        Files.writeString(file, "{\"uiLanguage\": \" ko_kr \", \"marketSearch\": false}");
+        CollectorConfig handWritten = new CollectorConfig(file);
+        check("手寫的設定檔讀得到這兩欄，前後空白照樣去掉",
+                "ko_kr".equals(handWritten.uiLanguage()) && !handWritten.marketSearch());
+
+        // 型別不對時跟別的欄位一樣：只有那一欄回預設
+        Files.writeString(file, "{\"uiLanguage\": 5, \"marketSearch\": \"nope\", \"collect\": false}");
+        CollectorConfig wrongTypes = new CollectorConfig(file);
+        check("型別不對的那兩欄用預設，別的欄位照讀",
+                wrongTypes.uiLanguage().isEmpty() && wrongTypes.marketSearch()
+                        && !wrongTypes.collect());
     }
 
     // ── captured.json ──────────────────────────────────────────────────
