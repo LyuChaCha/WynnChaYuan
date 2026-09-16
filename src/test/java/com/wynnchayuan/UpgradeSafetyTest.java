@@ -192,8 +192,10 @@ public final class UpgradeSafetyTest {
         // 重寫之後會帶著預設值出現。
         expected.addProperty("uiLanguage", "");
         expected.addProperty("marketSearch", true);
-        // 0.1.9_10 加的：右上那一欄的譯文開關。舊設定檔沒有，重寫時補上預設值。
-        expected.addProperty("showScoreboard", true);
+        // 0.2.0 加的：右上那一欄怎麼翻、目標進度條要不要翻。
+        // 舊設定檔沒有，重寫時補上預設值。
+        expected.addProperty("trackerMode", "REPLACE");
+        expected.addProperty("translateObjectives", true);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
                 expected.equals(rewritten));

@@ -121,8 +121,14 @@ public final class TrackerOverlay {
 
     public static void render(GuiGraphics graphics) {
         List<Component> lines = current;
-        List<Component> more = WynnChaYuan.config().showScoreboard()
-                ? extras : List.of();
+        // 就地取代模式下，右上那一欄本身已經是中文了（見 WynntilsText），
+        // 這裡再畫一份就是同一件事出現兩次。
+        boolean panel = WynnChaYuan.config().trackerMode()
+                == CollectorConfig.DialogueMode.PANEL;
+        if (!panel) {
+            return;
+        }
+        List<Component> more = extras;
         if (lines.isEmpty() && more.isEmpty()) {
             return;
         }

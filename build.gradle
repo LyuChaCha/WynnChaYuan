@@ -812,3 +812,11 @@ tasks.register('runBlockedByChecks', JavaExec) {
     mainClass = 'com.wynnchayuan.translate.BlockedByTest'
 }
 tasks.named('check') { dependsOn 'runBlockedByChecks' }
+
+tasks.register('runOverlayTextChecks', JavaExec) {
+    group = 'verification'
+    description = '就地取代 Wynntils 疊層裡的字：關掉時一個字都不動'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.render.WynntilsTextTest'
+}
+tasks.named('check') { dependsOn 'runOverlayTextChecks' }

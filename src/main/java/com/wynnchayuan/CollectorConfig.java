@@ -90,13 +90,30 @@ public final class CollectorConfig {
     private boolean translateTitles = true;
 
     /**
-     * 右上那一欄（每日目標、世界事件、Lootrun、團隊）要不要跟著翻。
+     * 右上那一欄（任務追蹤、每日目標、世界事件、Lootrun、團隊）怎麼翻。
      *
-     * <p>譯文接在任務追蹤小框底下，原文那一欄不動——那是 Wynntils 自己畫的
-     * 疊層，要換掉裡面的字只能 mixin 進別的模組的算繪流程，它一改版就會
-     * 讓遊戲開不起來。見 {@code ScoreboardListener}。
+     * <ul>
+     *   <li>{@code PANEL}：譯文畫在我們自己的小框裡，原文那一欄不動。</li>
+     *   <li>{@code REPLACE}：直接換掉 Wynntils 疊層裡的字（見
+     *       {@code com.wynnchayuan.mixin}）。畫面上只有一份，位置與樣式
+     *       都是 Wynntils 排好的。</li>
+     *   <li>{@code OFF}：不翻。</li>
+     * </ul>
+     *
+     * <p>預設 {@code REPLACE}——使用者要的是「右上那一欄變成中文」，
+     * 多一個框只是折衷。
      */
-    private boolean showScoreboard = true;
+    private DialogueMode trackerMode = DialogueMode.REPLACE;
+
+    /**
+     * 右上那一欄底下的<b>每日／公會目標</b>（「Finish Quests: 2/3」那幾條）
+     * 要不要就地換成中文。
+     *
+     * <p>跟上面分開是因為它們走的是另一條路：Wynntils 把目標畫成進度條，
+     * 字是從 {@code WynnObjective#asObjectiveString} 來的，跟追蹤欄那個
+     * 樣板系統無關。只有開與關——那幾條是進度條上的字，沒有地方再開一個框。
+     */
+    private boolean translateObjectives = true;
 
     /**
      * 要不要記下最近的聊天訊息，供「複製聊天」使用。
@@ -357,15 +374,31 @@ public final class CollectorConfig {
         return translateTitles;
     }
 
-    /** 見 {@link #showScoreboard}。 */
-    public boolean showScoreboard() {
-        return showScoreboard;
+    /** 見 {@link #trackerMode}。 */
+    public DialogueMode trackerMode() {
+        return trackerMode;
     }
 
-    public boolean toggleScoreboard() {
-        showScoreboard = !showScoreboard;
+    public DialogueMode cycleTrackerMode() {
+        return cycleTrackerMode(1);
+    }
+
+    public DialogueMode cycleTrackerMode(int step) {
+        DialogueMode[] all = DialogueMode.values();
+        trackerMode = all[Math.floorMod(trackerMode.ordinal() + step, all.length)];
         save();
-        return showScoreboard;
+        return trackerMode;
+    }
+
+    /** 見 {@link #translateObjectives}。 */
+    public boolean translateObjectives() {
+        return translateObjectives;
+    }
+
+    public boolean toggleObjectives() {
+        translateObjectives = !translateObjectives;
+        save();
+        return translateObjectives;
     }
 
     public boolean marketSearch() {
@@ -990,7 +1023,15 @@ public final class CollectorConfig {
         }
         chatCopy = bool(o, "chatCopy", chatCopy);
         translateTitles = bool(o, "translateTitles", translateTitles);
-        showScoreboard = bool(o, "showScoreboard", showScoreboard);
+        // 0.1.9_10 的 showScoreboard 是「右上那一欄要不要進面板」，0.2.0 換成
+        // 三段模式。舊設定檔關掉的人維持關掉，其餘照新的預設（就地取代）。
+        DialogueMode tracker = enumOf(o, "trackerMode", DialogueMode.class);
+        if (tracker != null) {
+            trackerMode = tracker;
+        } else if (Boolean.FALSE.equals(boolOrNull(o, "showScoreboard"))) {
+            trackerMode = DialogueMode.OFF;
+        }
+        translateObjectives = bool(o, "translateObjectives", translateObjectives);
         marketSearch = bool(o, "marketSearch", marketSearch);
         chatMode = enumOr(o, "chatMode", ChatMode.class, chatMode);
         Boolean overlays = boolOrNull(o, "showOverlays");
@@ -1191,7 +1232,8 @@ public final class CollectorConfig {
             o.addProperty("choiceMode", choiceMode.name());
             o.addProperty("chatMode", chatMode.name());
             o.addProperty("translateTitles", translateTitles);
-            o.addProperty("showScoreboard", showScoreboard);
+            o.addProperty("trackerMode", trackerMode.name());
+            o.addProperty("translateObjectives", translateObjectives);
             o.addProperty("chatCopy", chatCopy);
             o.addProperty("marketSearch", marketSearch);
             o.addProperty("shotMode", shotMode.name());

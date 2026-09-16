@@ -500,12 +500,21 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().toggleTitles();
                     b.setMessage(titleLabel());
                 });
-        // 右上那一欄：每日目標、世界事件、Lootrun、團隊。
-        // 原文那一欄是 Wynntils 畫的，我們只在自己的追蹤小框底下補譯文。
-        cycle("world.scoreboard",
-                this::scoreboardLabel, b -> {
-                    WynnChaYuan.config().toggleScoreboard();
-                    b.setMessage(scoreboardLabel());
+        // 右上那一欄：任務追蹤、每日目標、世界事件、Lootrun、團隊。
+        // 三段：就地取代 Wynntils 疊層裡的字／畫在我們自己的小框／不翻。
+        back(cycle("world.tracker",
+                this::trackerModeLabel, b -> {
+                    WynnChaYuan.config().cycleTrackerMode();
+                    b.setMessage(trackerModeLabel());
+                }), b -> {
+                    WynnChaYuan.config().cycleTrackerMode(-1);
+                    b.setMessage(trackerModeLabel());
+                });
+        // 目標那幾條是進度條上的字，沒有地方再開一個框，所以只有開與關。
+        cycle("world.objectives",
+                this::objectiveLabel, b -> {
+                    WynnChaYuan.config().toggleObjectives();
+                    b.setMessage(objectiveLabel());
                 });
         cycle("world.chatcopy",
                 this::chatCopyLabel, b -> {
@@ -817,8 +826,17 @@ public final class SettingsScreen extends Screen {
         });
     }
 
-    private Component scoreboardLabel() {
-        return ctrl(onOff(WynnChaYuan.config().showScoreboard()));
+    private Component trackerModeLabel() {
+        return ctrlNarrow(switch (WynnChaYuan.config().trackerMode()) {
+            case REPLACE -> T.s("mode.replace");
+            case PANEL -> T.s("mode.panel");
+            case OFF -> T.s("mode.off");
+        });
+    }
+
+    private Component objectiveLabel() {
+        return ctrl(WynnChaYuan.config().translateObjectives()
+                ? T.s("mode.replace") : T.s("mode.off"));
     }
 
     private Component overlayLabel() {
