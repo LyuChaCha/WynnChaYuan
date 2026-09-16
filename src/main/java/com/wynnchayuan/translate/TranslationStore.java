@@ -570,7 +570,7 @@ public final class TranslationStore {
                     noteLoose(key.strip(), v.getAsString().strip());
                 }
                 if (asTerms) {
-                    noteTerm(key.strip(), v.getAsString().strip());
+                    noteTerm(key.strip(), v.getAsString().strip(), true);
                 }
             }
         }
@@ -894,7 +894,19 @@ public final class TranslationStore {
      * 換錯比沒換更糟。含佔位符或換行的也不收，那不是一個名稱。
      */
     private void noteTerm(String name, String translation) {
-        if (name.length() < MIN_TERM_LENGTH || translation.isBlank()
+        noteTerm(name, translation, false);
+    }
+
+    /**
+     * @param curated 這個詞是<b>人挑進 {@code *-terms.json} 的</b>，不是從
+     *                {@code role:name} 的條目自動收來的。長度下限只擋自動收的
+     *                那一批：技能名裡真的有三個字母的（刺客的 {@code Hop}），
+     *                被擋掉之後 Major ID 的敘述換不掉它，畫面上就留著一個
+     *                英文單字（「Hop 與 Leap 的水平衝力大幅提升」）。
+     *                人挑的詞不必替它擔心誤中——那本來就是一個一個決定收的。
+     */
+    private void noteTerm(String name, String translation, boolean curated) {
+        if ((!curated && name.length() < MIN_TERM_LENGTH) || translation.isBlank()
                 || name.indexOf('{') >= 0 || name.indexOf('\n') >= 0) {
             return;
         }

@@ -58,6 +58,7 @@ public final class DialogueTypingTest {
         store.loadAll(Path.of("src/main/resources/assets/wynnchayuan/translations",
                 Languages.DEFAULT));
         corpus(store);
+        panel(store);
 
         System.out.println(failures == 0 ? "\n逐字模擬：全部通過"
                 : "\n逐字模擬：" + failures + " 項失敗");
@@ -159,8 +160,9 @@ public final class DialogueTypingTest {
             }
             if (!noSwap(frames)) {
                 swapped++;
-                if (rivals.size() < 4) {
-                    rivals.add(row[0] + "\n        " + shorten(frames));
+                if (rivals.size() < 12) {
+                    // 整句幾十幀印出來沒人看得完，只留<b>換掉的那一刀</b>
+                    rivals.add(swapPoint(frames) + "\n        （" + row[0] + "）");
                 }
             }
             if (last(frames) == null && frames.stream().anyMatch(f -> f != null)) {
@@ -190,6 +192,58 @@ public final class DialogueTypingTest {
         // 增減而動，釘死只會讓語料 PR 無辜地紅掉；印出來讓人看得到就夠了。
 
         interrupted(store, lines);
+        tail(store, lines);
+    }
+
+    /**
+     * 講完之後那幾幀。
+     *
+     * <p>最後一個字進來時畫面並不會停——action bar 每 tick 都會再送一次同樣的
+     * 文字。玩家真正盯著看的就是這幾幀：句子已經講完、字不會再動了，
+     * 畫面上的譯文<b>也不該再動</b>。
+     *
+     * <p>先前這裡沒有測。實機回報「句子收尾那一下會變」——最後一個字
+     *（往往是句點或逗號）進來之後，譯文先出一個版本，過幾幀又換成另一個。
+     */
+    private static void tail(TranslationStore store, List<String[]> lines) {
+        int churn = 0;
+        int wrong = 0;
+        int slow = 0;
+        List<String> shaky = new ArrayList<>();
+        for (String[] row : lines) {
+            CurrentQuest.set(QUEST_SCOPE ? row[2] : null);
+            List<String> frames = typeOut(row[0], store, row[0].length());
+            List<String> still = frames.subList(row[0].length(), frames.size());
+            String settledAt = last(frames);
+            if (settledAt == null) {
+                continue;                      // 這句從頭到尾沒翻出來，不是這裡的事
+            }
+            boolean moved = false;
+            for (String frame : still) {
+                if (!settledAt.equals(frame)) {
+                    moved = true;
+                }
+            }
+            if (moved) {
+                churn++;
+                if (shaky.size() < 8) {
+                    shaky.add(row[0] + "\n        " + shorten(still));
+                }
+            }
+            if (!settledAt.equals(row[1])) {
+                wrong++;
+            }
+            if (!moved && !settledAt.equals(frames.get(row[0].length() - 1))) {
+                slow++;
+            }
+        }
+        System.out.println("  講完之後譯文還在變：" + churn);
+        System.out.println("  講完之後的譯文不是這句的譯文：" + wrong);
+        System.out.println("  最後一個字那一幀還沒定案：" + slow);
+        for (String s : shaky) {
+            System.out.println("   [尾] " + s);
+        }
+        check("講完之後譯文不會再變（實際 " + churn + " 句）", churn == 0);
     }
 
     /**
@@ -296,6 +350,103 @@ public final class DialogueTypingTest {
             grown = frame;
         }
         return true;
+    }
+
+    // ------------------------------------------------------------------
+    // 另一條路：翻譯畫在自己的小框裡（dialogueMode=面板）
+    // ------------------------------------------------------------------
+
+    /**
+     * 小框模式的逐字模擬。
+     *
+     * <h2>為什麼要分開測</h2>
+     * 就地取代（{@link DialogueRewriter}）與小框（{@link DialogueOverlay}）是
+     * <b>兩份</b>程式，各自決定這一幀要畫什麼。issue #735 只修了前者，
+     * 玩家換成小框模式就又看到閃爍——同一個毛病，另一條路。
+     *
+     * <p>這裡照 {@code DialogueOverlay#setCurrent} 的樣子模擬：先問快取
+     *（{@code canReuse}），問不到才重算，重算不出來就擺原文。
+     */
+    private static void panel(TranslationStore store) throws Exception {
+        List<String[]> lines = dialogueLines();
+        System.out.println("=== 小框模式 " + lines.size() + " 句台詞 ===");
+        int flipped = 0;
+        int swapped = 0;
+        int never = 0;
+        List<String> worst = new ArrayList<>();
+        for (String[] row : lines) {
+            CurrentQuest.set(QUEST_SCOPE ? row[2] : null);
+            List<String> frames = panelFrames(row[0], store);
+            if (!noFlip(frames)) {
+                flipped++;
+                if (worst.size() < 6) {
+                    worst.add(swapPoint(frames) + "\n        （" + row[0] + "）");
+                }
+            }
+            if (!noSwap(frames)) {
+                swapped++;
+            }
+            if (frames.stream().allMatch(f -> f == null)) {
+                never++;
+            }
+        }
+        System.out.println("  中→英→中：" + flipped);
+        System.out.println("  中文換成另一段中文：" + swapped);
+        System.out.println("  從頭到尾沒翻出來：" + never);
+        for (String s : worst) {
+            System.out.println("   [框] " + s);
+        }
+        check("小框模式不會在中英之間來回跳（實際 " + flipped + " 句）", flipped == 0);
+        check("小框模式講完之後翻得出來（實際 " + never + " 句沒翻出來）",
+              never <= lines.size() / 100);
+    }
+
+    /** 照 {@code DialogueOverlay#setCurrent} 的流程跑一句話的每一幀。 */
+    private static List<String> panelFrames(String src, TranslationStore store) {
+        List<String> frames = new ArrayList<>();
+        String[] cache = new String[2];            // [0] 認出來的原文 [1] 畫上去的譯文
+        for (int at = 1; at <= src.length(); at++) {
+            frames.add(panelFrame(src.substring(0, at), store, cache, false));
+        }
+        for (int again = 0; again < STILL_FRAMES; again++) {
+            // 字停下來之後對話事件照樣會進來，第六次起算「講完了」
+            frames.add(panelFrame(src, store, cache, again >= 6));
+        }
+        return frames;
+    }
+
+    private static String panelFrame(String raw, TranslationStore store,
+                                     String[] cache, boolean steady) {
+        com.wynntils.core.text.StyledText line =
+                com.wynntils.core.text.StyledText.fromString(raw);
+        String template = com.wynnchayuan.capture.GlyphSplitter.toTemplate(line);
+        if (DialogueOverlay.canReuse(cache[0], template)) {
+            return cache[1];
+        }
+        DialogueOverlay.LineResult result =
+                DialogueOverlay.translateLine(line, template, store, steady);
+        if (result == null) {
+            return null;                           // 認不出來：小框擺原文
+        }
+        cache[0] = result.source();
+        cache[1] = result.translated().getString();
+        return cache[1];
+    }
+
+    /** 第一次「不是往前長」的那一刀：換掉之前是什麼、之後變成什麼。 */
+    private static String swapPoint(List<String> frames) {
+        String grown = null;
+        for (int at = 0; at < frames.size(); at++) {
+            String frame = frames.get(at);
+            if (frame == null) {
+                continue;
+            }
+            if (grown != null && !frame.startsWith(grown)) {
+                return "第 " + (at + 1) + " 幀　" + grown + "　→　" + frame;
+            }
+            grown = frame;
+        }
+        return "";
     }
 
     private static String last(List<String> frames) {

@@ -796,3 +796,11 @@ tasks.register('runDialogueTypingChecks', JavaExec) {
     systemProperty 'wcy.questScope', findProperty('questScope') ?: '1'
 }
 tasks.named('check') { dependsOn 'runDialogueTypingChecks' }
+
+tasks.register('runLabelColourChecks', JavaExec) {
+    group = 'verification'
+    description = '採集點名牌：每一段的顏色要跟原文對得起來'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.wynnchayuan.translate.LabelColourTest'
+}
+tasks.named('check') { dependsOn 'runLabelColourChecks' }

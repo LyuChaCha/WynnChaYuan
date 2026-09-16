@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 22828,
-  "translated": 22794,
+  "count": 22830,
+  "translated": 22796,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -51282,6 +51282,22 @@
   "Dearly Departed#057": {
    "src": "You manage to pry the ring off the monster's finger...",
    "dst": "你費了點力，總算把戒指從怪物的手指上撬了下來……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#058": {
+   "src": "About Defence.",
+   "dst": "說說防禦。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "source": "capture"
+  },
+  "Dearly Departed#059": {
+   "src": "About Agility.",
+   "dst": "說說敏捷。",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Dearly Departed",

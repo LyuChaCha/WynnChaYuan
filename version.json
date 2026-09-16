@@ -1,12 +1,42 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.1.9_8",
+ "latest": "0.1.9_9",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.1.9_9": {
+   "headline": "Dialogue settles as soon as a line ends",
+   "items": [
+    "A finished line no longer waits in English before switching to the translation",
+    "The translation panel no longer flickers while an NPC is typing",
+    "The answer list now appears and clears with the game's own, and holds still while you pick",
+    "Gathering-spot nameplates keep the original colours on every row",
+    "More translations: level-up and bank messages, two missing answers in Dearly Departed, cosmetic and mount-coat names"
+   ],
+   "zh_tw": {
+    "headline": "句子講完就馬上定案",
+    "items": [
+     "講完的句子不會再停在英文一下才跳成中文",
+     "小框模式在 NPC 打字途中不再閃爍",
+     "選項框跟著遊戲自己的選單出現與收起，挑選時不會抖動",
+     "採集點名牌每一行都保留原本的顏色",
+     "補上語料：升級與銀行訊息、音容宛在少收的兩個選項、外觀特效與坐騎毛色"
+    ]
+   },
+   "zh_cn": {
+    "headline": "句子讲完就马上定案",
+    "items": [
+     "讲完的句子不会再停在英文一下才跳成中文",
+     "小窗模式在 NPC 打字途中不再闪烁",
+     "选项框跟着游戏自己的菜单出现与收起，挑选时不会抖动",
+     "采集点名牌每一行都保留原本的颜色",
+     "补上语料：升级与银行消息、音容宛在少收的两个选项、外观特效与坐骑毛色"
+    ]
+   }
+  },
   "0.1.9_8": {
    "headline": "Dialogue no longer flickers between languages",
    "items": [
