@@ -39,6 +39,8 @@ public final class WynntilsTextTest {
 
         tracker(config, store);
         objectives(config, store);
+        markers(config, store);
+        heldItem(config, store);
 
         System.out.println(failures == 0 ? "\n就地取代：全部通過"
                 : "\n就地取代：" + failures + " 項失敗");
@@ -140,6 +142,36 @@ public final class WynntilsTextTest {
               WynntilsText.objective("Slay Mobs: 12/100", config, store)
                       .equals("Slay Mobs: 12/100"));
         config.toggleObjectives();
+    }
+
+    private static void markers(CollectorConfig config, TranslationStore store) {
+        while (config.trackerMode() != CollectorConfig.DialogueMode.REPLACE) {
+            config.cycleTrackerMode();
+        }
+        String name = WynntilsText.marker("Cook Assistant", config, store);
+        check("任務指引的任務名翻得出來（實際 " + name + "）", name.contains("廚師助理"));
+        String odd = "Qwertyuiop Zxcv";
+        check("翻不出來的標記原樣回去", WynntilsText.marker(odd, config, store).equals(odd));
+        while (config.trackerMode() != CollectorConfig.DialogueMode.OFF) {
+            config.cycleTrackerMode();
+        }
+        check("追蹤欄關掉時指引也照原文",
+              WynntilsText.marker("Cook Assistant", config, store).equals("Cook Assistant"));
+        while (config.trackerMode() != CollectorConfig.DialogueMode.REPLACE) {
+            config.cycleTrackerMode();
+        }
+    }
+
+    private static void heldItem(CollectorConfig config, TranslationStore store) {
+        net.minecraft.network.chat.Component scroll =
+                net.minecraft.network.chat.Component.literal("Ragni Teleportation Scroll [3/3]");
+        check("手持物品名稱預設不翻", !config.translateHeldItem()
+                && WynntilsText.heldItemName(scroll, config, store) == scroll);
+        config.toggleHeldItem();
+        String shown = WynntilsText.heldItemName(scroll, config, store).getString();
+        check("打開之後手持物品名稱翻得出來（實際 " + shown + "）",
+              shown.contains("傳送卷軸") && shown.contains("3/3"));
+        config.toggleHeldItem();
     }
 
     private static void check(String what, boolean ok) {

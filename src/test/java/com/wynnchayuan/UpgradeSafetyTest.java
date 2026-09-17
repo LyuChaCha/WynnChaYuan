@@ -196,6 +196,7 @@ public final class UpgradeSafetyTest {
         // 舊設定檔沒有，重寫時補上預設值。
         expected.addProperty("trackerMode", "REPLACE");
         expected.addProperty("translateObjectives", true);
+        expected.addProperty("translateHeldItem", false);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
                 expected.equals(rewritten));

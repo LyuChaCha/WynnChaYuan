@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "ru_ru",
-  "count": 22516,
-  "translated": 22347,
+  "count": 22534,
+  "translated": 22365,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -46342,6 +46342,186 @@
    "kind": "dialogue",
    "quest": "Cook Assistant",
    "source": "capture"
+  },
+  "Cook Assistant#020": {
+   "src": "Hey there! You must be new around here too, right? I'm Afelis, and you are...?",
+   "dst": "Привет! Ты ведь тоже здесь новенький? Я Afelis, а ты...?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#021": {
+   "src": "{u}! Nice to meet you! I haven't been here in {p} for long myself... still trying to figure things out.",
+   "dst": "{u}! Рада знакомству! Я и сама недавно в {p}... всё ещё осваиваюсь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#022": {
+   "src": "It's a bit overwhelming, isn't it? A whole new world to explore, and so many people who need help.",
+   "dst": "Немного ошеломляет, правда? Целый новый мир, и столько людей, которым нужна помощь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#023": {
+   "src": "I just... I really want to do something that matters, you know? I mean, I came all this way for a reason.",
+   "dst": "Я просто... очень хочу делать что-то важное, понимаешь? Я ведь проделала весь этот путь не просто так.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#024": {
+   "src": "I want to protect people, make their lives better, if I can. Maybe we can figure this out together?",
+   "dst": "Я хочу защищать людей и, если получится, делать их жизнь лучше. Может, разберёмся во всём вместе?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#025": {
+   "src": "Maybe we can figure this out together?",
+   "dst": "Может, разберёмся во всём вместе?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#026": {
+   "src": "Oh, well, nice to meet you!",
+   "dst": "О, ну, рада знакомству!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#027": {
+   "src": "Hey {u}! What's up?",
+   "dst": "Привет, {u}! Как дела?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#028": {
+   "src": "Hmm... honestly, no. It's strange, isn't it? I don't remember much of anything.",
+   "dst": "Хм... честно говоря, нет. Странно, правда? Я почти ничего не помню.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#029": {
+   "src": "Just a vague feeling of... something, maybe, but nothing I could describe.",
+   "dst": "Только смутное ощущение... чего-то, но описать это я не могу.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#030": {
+   "src": "So, here I am, I guess! Wynn's where I'll start making memories that count!",
+   "dst": "Так что вот она я! В Wynn я начну создавать воспоминания, которые чего-то стоят!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#031": {
+   "src": "Oh, there's so much I want to do! I thought I'd begin by helping out around {p}, maybe even in {p} once I've gotten stronger.",
+   "dst": "О, я столько всего хочу сделать! Думаю начать с помощи в окрестностях {p}, а когда окрепну, может, и в {p}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#032": {
+   "src": "I've heard {p} needs all the help it can get, and I want to make sure I'm ready.",
+   "dst": "Я слышала, что {p} нужна любая помощь, и хочу быть готовой.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#033": {
+   "src": "And then... who knows! Anywhere people need someone to lend a hand, I'll be there!",
+   "dst": "А потом... кто знает! Где бы ни понадобилась помощь, я буду там!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#034": {
+   "src": "Oh, well... I think it's because there's so much good we can do, even in a place like this.",
+   "dst": "Ну... думаю, потому что даже в таком месте мы можем сделать столько хорошего.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#035": {
+   "src": "It's not just about fighting, it's about being there for people, making sure they feel safe.",
+   "dst": "Дело не только в сражениях, а в том, чтобы быть рядом с людьми и дарить им чувство безопасности.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#036": {
+   "src": "I know the world has its dark parts, but I'd like to think that maybe, if I keep looking for the good, I can help others see it too.",
+   "dst": "Я знаю, что в мире есть тьма, но хочу верить: если я буду искать хорошее, то смогу помочь и другим его увидеть.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#037": {
+   "src": "Doesn't that sound worth fighting for?",
+   "dst": "Разве за это не стоит бороться?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
   },
   "Corrupted Betrayal#000": {
    "src": "Talk to Lanu at [-{~}, {~}, -{~}].",
