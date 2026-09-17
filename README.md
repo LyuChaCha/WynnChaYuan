@@ -85,6 +85,7 @@ Wynncraft 的多語言翻譯模組（Fabric 1.21.11）。**原文保留**，譯�
 | `zh_cn` 简体中文 | █████████░ 94.2% | 41,204 / 43,724 |
 | `ja_jp` 日本語 | █████████░ 94.0% | 41,119 / 43,722 |
 | `ru_ru` Русский | █████████░ 93.7% | 40,970 / 43,721 |
+| `es_es` Español | █░░░░░░░░░ 5.5% | 2,478 / 45,398 |
 | `ko_kr` 한국어 | ░░░░░░░░░░ 1.8% | 778 / 43,582 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).

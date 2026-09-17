@@ -90,6 +90,7 @@ public final class UpgradeSafetyTest {
         otherLanguageIsNotSwallowed();
         obsoleteSyncedFilesAreRemoved();
         newerCacheFormatIsSetAside();
+        staleCacheRefreshedOnUpgrade();
         brokenCacheFileIsRestored();
         oldVersionFolder();
         playerFolder();
@@ -196,7 +197,7 @@ public final class UpgradeSafetyTest {
         // 舊設定檔沒有，重寫時補上預設值。
         expected.addProperty("trackerMode", "REPLACE");
         expected.addProperty("translateObjectives", true);
-        expected.addProperty("translateHeldItem", false);
+        expected.addProperty("translateHeldItem", true);
         JsonObject rewritten = JsonParser.parseString(Files.readString(file)).getAsJsonObject();
         check("重寫後少了 shareCaptures、多了兩欄補寫的，其他每一欄都一樣",
                 expected.equals(rewritten));
@@ -416,6 +417,34 @@ public final class UpgradeSafetyTest {
         JsonObject stamp = JsonParser.parseString(
                 Files.readString(dir.resolve("_cache.json"))).getAsJsonObject();
         check("戳記寫著格式版本", stamp.get("format").getAsInt() == TranslationCache.FORMAT);
+    }
+
+    /** 0.2.0_4 實機回報：舊版同步下來的快取蓋住了新版 jar 內建的譯文。 */
+    private static void staleCacheRefreshedOnUpgrade() throws Exception {
+        Path config = Files.createTempDirectory("wcy-up-stale");
+        String before = TranslationCache.modVersion;
+        try {
+            Path dir = Languages.dir(config, "zh_tw");
+            StarterFiles.installIfEmpty(dir, "zh_tw");
+            Files.writeString(dir.resolve("misc.json"), "{\"Win Dungeons\": \"WCY_STALE_MARKER\"}");
+            Files.writeString(dir.resolve("mine.json"), "{\"Mine\": \"我的\"}");
+            Files.writeString(dir.resolve("_cache.json"),
+                    "{\"format\": 1, \"mod\": \"0.0.1\", \"files\": [\"misc.json\"]}");
+            TranslationCache.modVersion = "9.9.9";
+            TranslationCache.prepare(dir, "zh_tw");
+            String misc = Files.readString(dir.resolve("misc.json"));
+            check("換版本後同步來的舊檔換回內建的", !misc.contains("WCY_STALE_MARKER") && misc.length() > 1000);
+            check("自己放的檔不動", Files.readString(dir.resolve("mine.json")).contains("我的"));
+            check("戳記的版本改成這一版",
+                    Files.readString(dir.resolve("_cache.json")).contains("9.9.9"));
+            Files.writeString(dir.resolve("misc.json"), "{\"Win Dungeons\": \"同步來的新譯文\"}");
+            TranslationCache.prepare(dir, "zh_tw");
+            check("同一版再啟動不重做（同步來的檔留著）",
+                    Files.readString(dir.resolve("misc.json")).contains("同步來的新譯文"));
+        } finally {
+            TranslationCache.modVersion = before;
+            deleteTree(config);
+        }
     }
 
     private static void newerCacheFormatIsSetAside() throws Exception {

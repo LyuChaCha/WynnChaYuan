@@ -1,0 +1,384 @@
+{
+ "_meta": {
+  "quest": "Cook Assistant",
+  "count": 38,
+  "translated": 0,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Cook Assistant#000": {
+   "src": "Talk to the Cook in {p} at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cook Assistant#001": {
+   "src": "I can't believe what is happening to me.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#002": {
+   "src": "The King ordered me to bake cakes for all those new recruits!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#003": {
+   "src": "Unfortunately, a Grook took my last cake, and I ran out of ingredients!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#004": {
+   "src": "Now can you help...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#005": {
+   "src": "That's the Grook! Go chase it down and get my cake back!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 1",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#006": {
+   "src": "Follow the pesky Grook.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cook Assistant#007": {
+   "src": "The Grook got away! Return to the Cook at [-{~}, {~}, -{~}] to figure out what to do.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cook Assistant#008": {
+   "src": "What are you doing? Go after the Grook...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#009": {
+   "src": "It got away!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#010": {
+   "src": "Well, I guess you are going to have to help me find the ingredients and bake another...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#011": {
+   "src": "There he is again! After him!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 2",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#012": {
+   "src": "Find out where the Grook flew up to at [-{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cook Assistant",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cook Assistant#013": {
+   "src": "Return to the cook at [-{~}, {~}, -{~}]. Use a Scroll to get there faster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Cook Assistant#014": {
+   "src": "Great! You got the cake!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#015": {
+   "src": "I can't thank you enough! Here, take these emeralds and armour for all your trouble.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#016": {
+   "src": "You should explore around to become stronger. I hear there might be work to do in {p}.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "Stage 4",
+   "speaker": "The Cook",
+   "source": "wiki"
+  },
+  "Cook Assistant#017": {
+   "src": "I can't believe what is happening to me...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "source": "capture"
+  },
+  "Cook Assistant#018": {
+   "src": "Now, how can you help...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "source": "capture"
+  },
+  "Cook Assistant#019": {
+   "src": "Wait! That's the Grook! Go chase it down and get my cake back!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "source": "capture"
+  },
+  "Cook Assistant#020": {
+   "src": "Hey there! You must be new around here too, right? I'm Afelis, and you are...?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#021": {
+   "src": "{u}! Nice to meet you! I haven't been here in {p} for long myself... still trying to figure things out.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#022": {
+   "src": "It's a bit overwhelming, isn't it? A whole new world to explore, and so many people who need help.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#023": {
+   "src": "I just... I really want to do something that matters, you know? I mean, I came all this way for a reason.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#024": {
+   "src": "I want to protect people, make their lives better, if I can. Maybe we can figure this out together?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#025": {
+   "src": "Maybe we can figure this out together?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#026": {
+   "src": "Oh, well, nice to meet you!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#027": {
+   "src": "Hey {u}! What's up?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#028": {
+   "src": "Hmm... honestly, no. It's strange, isn't it? I don't remember much of anything.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#029": {
+   "src": "Just a vague feeling of... something, maybe, but nothing I could describe.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#030": {
+   "src": "So, here I am, I guess! Wynn's where I'll start making memories that count!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#031": {
+   "src": "Oh, there's so much I want to do! I thought I'd begin by helping out around {p}, maybe even in {p} once I've gotten stronger.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#032": {
+   "src": "I've heard {p} needs all the help it can get, and I want to make sure I'm ready.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#033": {
+   "src": "And then... who knows! Anywhere people need someone to lend a hand, I'll be there!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#034": {
+   "src": "Oh, well... I think it's because there's so much good we can do, even in a place like this.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#035": {
+   "src": "It's not just about fighting, it's about being there for people, making sure they feel safe.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#036": {
+   "src": "I know the world has its dark parts, but I'd like to think that maybe, if I keep looking for the good, I can help others see it too.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#037": {
+   "src": "Doesn't that sound worth fighting for?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  }
+ }
+}

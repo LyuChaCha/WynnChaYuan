@@ -1,0 +1,610 @@
+{
+ "_meta": {
+  "quest": "Kingdom of Sand",
+  "count": 60,
+  "translated": 0,
+  "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
+ },
+ "entries": {
+  "Kingdom of Sand#000": {
+   "src": "Talk to Junes at [{~}, {~}, -{~}]",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#001": {
+   "src": "A {p} soldier! I imagine you're here to investigate the tomb up the hill?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#002": {
+   "src": "It's believed to house the remains of Prince Hashr, the son of the old Desert Emperor, but it's far too dangerous for me to explore personally.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#003": {
+   "src": "Instead I've been looking into a related legend - the Emperor's Sceptre.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#004": {
+   "src": "It was the source of his power, and potentially one of the most important artifacts in history.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#005": {
+   "src": "When the Emperor was slain by his son, Hashr, it is said that the sceptre was lost amongst the raging sandstorm that followed.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#006": {
+   "src": "... Until now. I believe I have been able to trace its possession to a nearby group of bandits. They probably have no idea what they're sitting on.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#007": {
+   "src": "I'm not prepared to confront them myself, but... this artifact belongs in a museum, in the hands of careful and respectful researchers.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#008": {
+   "src": "I would be in your debt if you could try to retrieve it, for the sake of history.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 1",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#009": {
+   "src": "Attempt to enter the bandit hideout at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 2",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#010": {
+   "src": "What, wanna enter the hideout?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 2",
+   "speaker": "Vault Guard",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#011": {
+   "src": "Even if yer a crooked soldier, we can't jus let yer in.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 2",
+   "speaker": "Vault Guard",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#012": {
+   "src": "That is, unless yer got the password?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 2",
+   "speaker": "Vault Guard",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#013": {
+   "src": "Didn’t think so. Now get lost, wasted enough of my t-",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 2",
+   "speaker": "Vault Guard",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#014": {
+   "src": "Now would you look at that... Even soldiers think they can waltz in ere.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 2",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#015": {
+   "src": "Having fun thinking of a password? Sorry to spoil your lunch, but there isn’t one!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 2",
+   "speaker": "Geo",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#016": {
+   "src": "We could use a few more officials on the roster.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 2",
+   "speaker": "Geo",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#017": {
+   "src": "If yer are on the liberal side of the law, talk to us outside.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 2",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#018": {
+   "src": "Meet with Geo & Tarek at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 3",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#019": {
+   "src": "Looks like yer in. Look, there ain't a password cause we're meant to be the best thieves in the land, right?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 3",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#020": {
+   "src": "So what good are words? Yer gotta give the guard somethin' stolen, aintcha!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 3",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#021": {
+   "src": "And we just so happen to have the opportunity of a lifetime for you. {p} has gone soft see, a new Mayor is cleaning things up.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 3",
+   "speaker": "Geo",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#022": {
+   "src": "Well, we can't have government not under our control. {p} will always be bandit capital.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 3",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#023": {
+   "src": "So how about we give him a taste of his own medicine, and get hold of that journal he keeps? I'm sure that’ll dig up some dirt on him.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 3",
+   "speaker": "Geo",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#024": {
+   "src": "And by \"we\", we mean you. You'll have to sneak through the mansion and avoid guards.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 3",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#025": {
+   "src": "He keeps his journal in the highest room. Might need to distract some guards too. It's the biggest mansion in {p}, can't miss it.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 3",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#026": {
+   "src": "Sneak into the highest room of the {p} Mansion at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 4",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#027": {
+   "src": "Arh, there's the thief I saw a-sneakin' round the Mansion! Get them!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 4",
+   "speaker": "Mansion Guard",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#028": {
+   "src": "Yer know you could get kicked out of the army fer this.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 4",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#029": {
+   "src": "Heh, guess yer the real thing. Hop in, lets get out of ‘ere.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 4",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#030": {
+   "src": "That journal is more valuable than any gem, you'll be able to get in fer sure.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 4",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#031": {
+   "src": "Bring the journal from the {p} Mansion to the Vault Guard to enter the hideout.",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 5",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#032": {
+   "src": "Off we go!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 5",
+   "speaker": "Tarek",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#033": {
+   "src": "Password?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 5",
+   "speaker": "Vault Guard",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#034": {
+   "src": "Oh, this is quite the password, \"soldier\". I think this will do nicely, on you go.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 5",
+   "speaker": "Vault Guard",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#035": {
+   "src": "Look for the sceptre within the bandit hideout at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 6",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#036": {
+   "src": "Right, then, you lot. Give me your reports.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 6",
+   "speaker": "Bandit Leader",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#037": {
+   "src": "Gold relieved from Mesa travellers last week counted just over {~} bars.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 6",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#038": {
+   "src": "Good, good. And?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 6",
+   "speaker": "Bandit Leader",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#039": {
+   "src": "We're working on exposing that blasted {p} Mayor with a stolen journal. {p} should be back under Creden Tibus control within the week.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 6",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#040": {
+   "src": "Fine work. Anything else?",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 6",
+   "speaker": "Bandit Leader",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#041": {
+   "src": "Well... someone's been hanging around the old tomb. An archaeologist, looks like. I reckon she's lookin' for the sceptre.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 6",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#042": {
+   "src": "Ah... that sceptre's too valuable for us to lose. Maybe we pay 'er a visit, persuade her to... stop lookin'.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 6",
+   "speaker": "Bandit Leader",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#043": {
+   "src": "Right you are, boss. Good thing no one will think to look for it in that broken cart by the river, ey?!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 6",
+   "speaker": "Bandit",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#044": {
+   "src": "Shut it, you fool! What did I just say? Anyway, I'll decide what to do with this archaeologist. Dismissed!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 6",
+   "speaker": "Bandit Leader",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#045": {
+   "src": "Search the broken cart at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 7",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#046": {
+   "src": "I knew someone was listening.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 7",
+   "speaker": "Bandit Leader",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#047": {
+   "src": "We might be bandits, but we’re not stupid. That sceptre is left better off alone.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 7",
+   "speaker": "Bandit Leader",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#048": {
+   "src": "Get ‘em!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 7",
+   "speaker": "Desert Raider",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#049": {
+   "src": "Search the abandoned house at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 8",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#050": {
+   "src": "Return to the tomb and give Junes the sceptre at [{~}, {~}, -{~}].",
+   "dst": "",
+   "role": "desc",
+   "kind": "objective",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 9",
+   "speaker": "",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#051": {
+   "src": "Ah, {u}. I couldn't help myself - I simply had to see the tomb up close.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 9",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#052": {
+   "src": "You have no idea how tempted I am to go inside, but I doubt I'd make it out alive.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 9",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#053": {
+   "src": "You... you found the sceptre? Oh! This is incredible! I can't believe it!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 9",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#054": {
+   "src": "This artifact, it witnessed the rise and fall of the Empire, thousands of years ago. And you've just been... holding it, without gloves...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 9",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#055": {
+   "src": "Under the circumstances, I think I can let that slide. But the things I could learn from studying it...",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 9",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#056": {
+   "src": "I should get to {p} right away. Thank you, {u}. You have my eternal gratitude.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 9",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#057": {
+   "src": "Are you thinking of exploring the tomb? I'm sure you can learn so much about the Empire... but you best be careful.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 9",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#058": {
+   "src": "There are nasty legends of what it holds. Silverfish, skeletons... even Prince Hashr himself. Make sure to gear up!",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 9",
+   "speaker": "Junes",
+   "source": "wiki"
+  },
+  "Kingdom of Sand#059": {
+   "src": "I have little to offer you for your help, but please accept these emeralds, and a fossil bone I found around here.",
+   "dst": "",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Kingdom of Sand",
+   "stage": "Stage 9",
+   "speaker": "Junes",
+   "source": "wiki"
+  }
+ }
+}
