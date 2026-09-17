@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "A Journey Beyond",
   "count": 247,
-  "translated": 0,
+  "translated": 254,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "A Journey Beyond#000": {
    "src": "Join Elphaba on a mission in {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p}에서 Elphaba의 임무에 합류하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -18,7 +18,7 @@
   },
   "A Journey Beyond#001": {
    "src": "...Hm? Oh- uh, hello there. Sorry, we have this space reserved for...",
-   "dst": "",
+   "dst": "...음? 아- 어, 안녕하세요. 죄송해요, 이 자리는 예약된...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -28,7 +28,7 @@
   },
   "A Journey Beyond#002": {
    "src": "Wait. You might be just what we're looking for. You look like you're capable in combat. How would you like to join a dangerous top secret mission?",
-   "dst": "",
+   "dst": "잠깐만요. 딱 우리가 찾던 사람일지도 몰라요. 싸움 좀 하게 생겼네요. 위험한 일급 기밀 임무에 합류해 볼래요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -38,7 +38,7 @@
   },
   "A Journey Beyond#003": {
    "src": "...I could have phrased that better. Look, the point is- we need a fourth. Let me give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
-   "dst": "",
+   "dst": "...말을 좀 더 잘할 걸 그랬네요. 요점은- 네 번째 사람이 필요해요. 브리핑을 해 줄 테니, 합류하기 싫으면... 다른 사람을 찾을게요. 어때요? 좋아요, 이쪽으로 따라와요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -48,7 +48,7 @@
   },
   "A Journey Beyond#004": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
-   "dst": "",
+   "dst": "이건 또 누구야? 진짜 네 번째를 찾았어? 아 좀, 필요 없다고 했잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -58,7 +58,7 @@
   },
   "A Journey Beyond#005": {
    "src": "And we both keep telling you why you're wrong. This is... sorry. I didn't catch your name. {u}? .",
-   "dst": "",
+   "dst": "그리고 우리 둘이 계속 네가 틀렸다고 말하잖아. 이쪽은... 미안해요. 이름을 못 들었네요. {u}? .",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -68,7 +68,7 @@
   },
   "A Journey Beyond#006": {
    "src": "... {u}, is that you? Wow, it's been a while. Sorry, I don't have time to chat right now. We're preparing for a dangerous mission, and...",
-   "dst": "",
+   "dst": "... {u}, 당신이에요? 와, 오랜만이네요. 미안해요, 지금은 얘기할 시간이 없어요. 위험한 임무를 준비 중이라...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -78,7 +78,7 @@
   },
   "A Journey Beyond#007": {
    "src": "Well. Actually, we were looking for a fourth person to join us. And... you look like you fit the requirements for that position. If- if you'd like to join, that is.",
-   "dst": "",
+   "dst": "음. 사실 우리와 함께할 네 번째 사람을 찾고 있었어요. 그리고... 당신이 그 자리에 딱 맞아 보여요. 그- 그러니까, 합류하고 싶다면요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -88,7 +88,7 @@
   },
   "A Journey Beyond#008": {
    "src": "Tell you what. I'll give you the briefing, and if you don't want to join us... then we'll find someone else. How does that sound? Alright, here, follow me.",
-   "dst": "",
+   "dst": "이렇게 하죠. 브리핑을 해 줄 테니, 합류하기 싫으면... 다른 사람을 찾을게요. 어때요? 좋아요, 이쪽으로 따라와요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -98,7 +98,7 @@
   },
   "A Journey Beyond#009": {
    "src": "And who's this? Did you really find a fourth? Come on, I told you we don't need one!",
-   "dst": "",
+   "dst": "이건 또 누구야? 진짜 네 번째를 찾았어? 아 좀, 필요 없다고 했잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -108,7 +108,7 @@
   },
   "A Journey Beyond#010": {
    "src": "And we both keep telling you why you're wrong. This is {u}, we've worked together before.",
-   "dst": "",
+   "dst": "그리고 우리 둘이 계속 네가 틀렸다고 말하잖아. 이쪽은 {u}, 전에 같이 일한 적이 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -118,7 +118,7 @@
   },
   "A Journey Beyond#011": {
    "src": "Anyway, I want to give them the briefing before we head",
-   "dst": "",
+   "dst": "아무튼, 출발하기 전에 브리핑부터 해 주고 싶은데",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -128,7 +128,7 @@
   },
   "A Journey Beyond#012": {
    "src": "Elphie, I'm back! I finally managed to catch Aegis, but he's not... happy. He thinks we should",
-   "dst": "",
+   "dst": "Elphie, 나 왔어! 드디어 Aegis를 붙잡았는데, 별로... 기분이 안 좋아. 우리가 해야 한다고",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -138,7 +138,7 @@
   },
   "A Journey Beyond#013": {
    "src": "Oh. {u}? What are you doing here? Gods, it's been a while, hasn't it?",
-   "dst": "",
+   "dst": "어. {u}? 여긴 웬일이야? 세상에, 정말 오랜만이다, 그렇지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -148,7 +148,7 @@
   },
   "A Journey Beyond#014": {
    "src": "They're our fourth. What were you saying about the Admiral?",
-   "dst": "",
+   "dst": "이쪽이 우리 네 번째야. Admiral이 뭐라고 했다고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -158,7 +158,7 @@
   },
   "A Journey Beyond#015": {
    "src": "...",
-   "dst": "",
+   "dst": "...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -168,7 +168,7 @@
   },
   "A Journey Beyond#016": {
    "src": "Nothing. If we have our fourth, we should be all set to go, shouldn't we?",
-   "dst": "",
+   "dst": "아무것도 아니야. 네 번째도 찾았으니 출발 준비는 다 된 거지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -178,7 +178,7 @@
   },
   "A Journey Beyond#017": {
    "src": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
-   "dst": "",
+   "dst": "음... 그렇긴 한데, 세부 사항부터 브리핑하고 싶어. 위험한 임무니까... 제대로 알려 주는 게 좋겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -188,7 +188,7 @@
   },
   "A Journey Beyond#018": {
    "src": "So! You're aware of the {p}, yes? Hundreds of years ago, mining operations took place to extract emeralds from the earth. Until, for some unknown reason, they were halted.",
-   "dst": "",
+   "dst": "자! {p}은(는) 알죠? 수백 년 전, 땅에서 에메랄드를 캐내는 채굴 작업이 있었어요. 그런데 알 수 없는 이유로 중단됐죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -198,7 +198,7 @@
   },
   "A Journey Beyond#019": {
    "src": "We don't know everything, but... evidence suggests they broke through to an undiscovered section of the Wynn province. There, they found... something.",
-   "dst": "",
+   "dst": "다 알진 못하지만... 증거로 보아 Wynn 지방의 미발견 구역까지 뚫고 들어갔던 것 같아요. 거기서... 무언가를 찾았죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -208,7 +208,7 @@
   },
   "A Journey Beyond#020": {
    "src": "The land itself was said to be cursed. Not corrupted they were very clear on that.",
-   "dst": "",
+   "dst": "그 땅 자체가 저주받았다고 했어요. 타락이 아니라고 아주 분명히 적어 뒀죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -218,7 +218,7 @@
   },
   "A Journey Beyond#021": {
    "src": "Some other force makes its home in that place. The few reports we could find refer to it only as the Silent Expanse.",
-   "dst": "",
+   "dst": "다른 어떤 힘이 그곳에 자리 잡고 있어요. 몇 안 되는 보고서에선 그곳을 Silent Expanse라고만 불러요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -228,7 +228,7 @@
   },
   "A Journey Beyond#022": {
    "src": "The mines were sealed to prevent the spread of this new threat, but the cracks are beginning to show.",
-   "dst": "",
+   "dst": "새로운 위협이 퍼지지 않게 광산을 봉인했지만, 이제 균열이 드러나기 시작했어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -238,7 +238,7 @@
   },
   "A Journey Beyond#023": {
    "src": "Strange and otherworldly creatures have begun to find their way through, threatening our province.",
-   "dst": "",
+   "dst": "기묘한 이계의 생물들이 틈을 찾아 넘어오며 우리 지방을 위협하고 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -248,7 +248,7 @@
   },
   "A Journey Beyond#024": {
    "src": "The existence of this place has been kept on a strict need-to-know basis.",
-   "dst": "",
+   "dst": "이곳의 존재는 꼭 알아야 할 사람만 아는 극비예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -258,7 +258,7 @@
   },
   "A Journey Beyond#025": {
    "src": "That's where we come in! We're to battle our way through the mines, and scout out the potential danger level.",
-   "dst": "",
+   "dst": "그래서 우리가 나선 거야! 광산을 뚫고 싸워 나가면서 위험 수준을 정찰하는 거지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -268,7 +268,7 @@
   },
   "A Journey Beyond#026": {
    "src": "And we aren't going to be able to do it if we keep sitting around! The newbie's been briefed, let's get going already!",
-   "dst": "",
+   "dst": "계속 앉아만 있으면 아무것도 못 한다고! 신입 브리핑도 끝났으니 얼른 가자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -278,7 +278,7 @@
   },
   "A Journey Beyond#027": {
    "src": "H-hey! What're you doing to my fine establishment!",
-   "dst": "",
+   "dst": "야-야! 내 멋진 가게에 무슨 짓이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -288,7 +288,7 @@
   },
   "A Journey Beyond#028": {
    "src": "...Shoot. Forgot he was still here. Sorry, barkeep! I'll fix it!",
-   "dst": "",
+   "dst": "...이런. 아직 있는 걸 깜빡했네. 미안, 주인장! 고쳐 놓을게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -298,7 +298,7 @@
   },
   "A Journey Beyond#029": {
    "src": "Lucio, you can't keep... ugh, forget it. I'll gather our supplies... Aledar, can you get us to the mines?",
-   "dst": "",
+   "dst": "Lucio, 너 계속 그러면... 으, 됐다. 보급품은 내가 챙길게... Aledar, 광산까지 데려다줄래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -308,7 +308,7 @@
   },
   "A Journey Beyond#030": {
    "src": "Yes, ma'am! {u}, when you're ready, let's get going.",
-   "dst": "",
+   "dst": "네, 대장님! {u}, 준비되면 출발하자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -318,7 +318,7 @@
   },
   "A Journey Beyond#031": {
    "src": "Follow your team towards the Silent Expanse's entrance.",
-   "dst": "",
+   "dst": "팀을 따라 Silent Expanse 입구로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -328,7 +328,7 @@
   },
   "A Journey Beyond#032": {
    "src": "Everyone ready? I'll lead.",
-   "dst": "",
+   "dst": "다들 준비됐지? 내가 앞장설게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -338,7 +338,7 @@
   },
   "A Journey Beyond#033": {
    "src": "It's a twist of fate that our paths have converged here, {u}. We started our journey together and now...",
-   "dst": "",
+   "dst": "우리 길이 여기서 다시 만나다니 운명의 장난이네, {u}. 함께 여정을 시작했는데 이제...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -348,7 +348,7 @@
   },
   "A Journey Beyond#034": {
    "src": "Aledar...",
-   "dst": "",
+   "dst": "Aledar...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -358,7 +358,7 @@
   },
   "A Journey Beyond#035": {
    "src": "I hear them too.",
-   "dst": "",
+   "dst": "나도 들려.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -368,7 +368,7 @@
   },
   "A Journey Beyond#036": {
    "src": "Ah, no problem. I'll take care of these.",
-   "dst": "",
+   "dst": "아, 문제없어. 이놈들은 내가 맡을게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -378,7 +378,7 @@
   },
   "A Journey Beyond#037": {
    "src": "No more running for us, huh ? Ah, we're here.",
-   "dst": "",
+   "dst": "이제 도망칠 일은 없겠지? 아, 다 왔다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -388,7 +388,7 @@
   },
   "A Journey Beyond#038": {
    "src": "This is actually our second attempt. The first time, it didn't go too well.",
-   "dst": "",
+   "dst": "사실 이번이 두 번째 시도예요. 처음엔 잘 안 풀렸거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -398,7 +398,7 @@
   },
   "A Journey Beyond#039": {
    "src": "We have more numbers now, Lucio and yourself should help us overpower it.",
-   "dst": "",
+   "dst": "이젠 인원이 늘었으니 Lucio랑 당신이 제압하는 걸 도와줄 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -408,7 +408,7 @@
   },
   "A Journey Beyond#040": {
    "src": "Can't be that strong, bet I can take it myself.",
-   "dst": "",
+   "dst": "강해 봤자지, 나 혼자서도 해치울걸.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -418,7 +418,7 @@
   },
   "A Journey Beyond#041": {
    "src": "We managed to seal it in but with the {~} of us I'm sure we ca-",
-   "dst": "",
+   "dst": "간신히 가둬 두긴 했지만 {~}명이면 분명 할 수-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -428,7 +428,7 @@
   },
   "A Journey Beyond#042": {
    "src": "Let's just do it!",
-   "dst": "",
+   "dst": "그냥 해치우자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -438,7 +438,7 @@
   },
   "A Journey Beyond#043": {
    "src": "Wait... No!",
-   "dst": "",
+   "dst": "잠깐... 안 돼!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -448,7 +448,7 @@
   },
   "A Journey Beyond#044": {
    "src": "Lucio! You FOOL!",
-   "dst": "",
+   "dst": "Lucio! 이 멍청아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -458,7 +458,7 @@
   },
   "A Journey Beyond#045": {
    "src": "What's the big deal? You said yourself we can take it!",
-   "dst": "",
+   "dst": "뭐가 대수라고? 이길 수 있다고 너도 말했잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -468,7 +468,7 @@
   },
   "A Journey Beyond#046": {
    "src": "Ouch...",
-   "dst": "",
+   "dst": "아야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -478,7 +478,7 @@
   },
   "A Journey Beyond#047": {
    "src": "We need a PLAN.",
-   "dst": "",
+   "dst": "계획이 필요하다고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -488,7 +488,7 @@
   },
   "A Journey Beyond#048": {
    "src": "Defeat the Beast",
-   "dst": "",
+   "dst": "Beast를 처치하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -498,7 +498,7 @@
   },
   "A Journey Beyond#049": {
    "src": "The plan is attack!",
-   "dst": "",
+   "dst": "계획은 공격이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -508,7 +508,7 @@
   },
   "A Journey Beyond#050": {
    "src": "Argh!",
-   "dst": "",
+   "dst": "으악!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -518,7 +518,7 @@
   },
   "A Journey Beyond#051": {
    "src": "Lucio!",
-   "dst": "",
+   "dst": "Lucio!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -528,7 +528,7 @@
   },
   "A Journey Beyond#052": {
    "src": "Ahh!",
-   "dst": "",
+   "dst": "으아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -538,7 +538,7 @@
   },
   "A Journey Beyond#053": {
    "src": "No! Stop hurting them!",
-   "dst": "",
+   "dst": "안 돼! 그만 괴롭혀!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -548,7 +548,7 @@
   },
   "A Journey Beyond#054": {
    "src": "Ouch! This isn't working...",
-   "dst": "",
+   "dst": "아야! 이러면 안 되는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -558,7 +558,7 @@
   },
   "A Journey Beyond#055": {
    "src": "Is it just me or are our attacks doing NOTHING?",
-   "dst": "",
+   "dst": "나만 그래, 아니면 우리 공격이 전혀 안 먹혀?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -568,7 +568,7 @@
   },
   "A Journey Beyond#056": {
    "src": "Lucio's right! Change of plan. Lucio, help me hold it in place.",
-   "dst": "",
+   "dst": "Lucio 말이 맞아요! 계획 변경. Lucio, 저놈 붙잡는 거 도와줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -578,7 +578,7 @@
   },
   "A Journey Beyond#057": {
    "src": "Aledar, you know what to do.",
-   "dst": "",
+   "dst": "Aledar, 할 일 알지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -588,7 +588,7 @@
   },
   "A Journey Beyond#058": {
    "src": "{u}, come with me! Cast a spell to block the cave's entrance so the monster can't leave.",
-   "dst": "",
+   "dst": "{u}, 따라와! 괴물이 못 나가게 주문을 써서 동굴 입구를 막아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -598,7 +598,7 @@
   },
   "A Journey Beyond#059": {
    "src": "I'll block it from attacking, you block it up with a spell.",
-   "dst": "",
+   "dst": "공격은 내가 막을 테니, 넌 주문으로 입구를 막아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -608,7 +608,7 @@
   },
   "A Journey Beyond#060": {
    "src": "They won't be able to hold it for long.",
-   "dst": "",
+   "dst": "저 둘은 오래 못 버텨.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -618,7 +618,7 @@
   },
   "A Journey Beyond#061": {
    "src": "Ready?! Cast any spell!",
-   "dst": "",
+   "dst": "준비됐어?! 아무 주문이나 써!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -628,7 +628,7 @@
   },
   "A Journey Beyond#062": {
    "src": "Lucio, Elphaba! Run!",
-   "dst": "",
+   "dst": "Lucio, Elphaba! 뛰어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -638,7 +638,7 @@
   },
   "A Journey Beyond#063": {
    "src": "Plan a way of killing the beast.",
-   "dst": "",
+   "dst": "야수를 죽일 방법을 계획하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -648,7 +648,7 @@
   },
   "A Journey Beyond#064": {
    "src": "We all here? Where's Lucio?",
-   "dst": "",
+   "dst": "다 모였어요? Lucio는요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -658,7 +658,7 @@
   },
   "A Journey Beyond#065": {
    "src": "Guys... Any help? I'm stuck!",
-   "dst": "",
+   "dst": "얘들아... 좀 도와줄래? 끼었어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -668,7 +668,7 @@
   },
   "A Journey Beyond#066": {
    "src": "Phew, here. Let me get you out.",
-   "dst": "",
+   "dst": "휴, 자. 꺼내 줄게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -678,7 +678,7 @@
   },
   "A Journey Beyond#067": {
    "src": "I'm sorry, team. I've never seen a monster like that before.",
-   "dst": "",
+   "dst": "미안해, 다들. 저런 괴물은 처음 봤어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -688,7 +688,7 @@
   },
   "A Journey Beyond#068": {
    "src": "It looks like our problem isn't fire power. It's something else. It's like our weapons just didn't affect it at all.",
-   "dst": "",
+   "dst": "문제는 화력이 아닌 것 같아. 다른 뭔가가 있어. 우리 무기가 전혀 안 통하는 것 같았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -698,7 +698,7 @@
   },
   "A Journey Beyond#069": {
    "src": "I know someone who might be able to help us. A blacksmith on {p}.",
-   "dst": "",
+   "dst": "도와줄 만한 사람을 알아. {p}에 사는 대장장이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -708,7 +708,7 @@
   },
   "A Journey Beyond#070": {
    "src": "{u}, I've written the house's coordinates on your book. Meet us there.",
-   "dst": "",
+   "dst": "{u}, 그 집 좌표를 책에 적어 뒀어요. 거기서 만나요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -718,7 +718,7 @@
   },
   "A Journey Beyond#071": {
    "src": "Meet the other soldiers at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에서 다른 병사들과 만나세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -728,7 +728,7 @@
   },
   "A Journey Beyond#072": {
    "src": "Just in time. We're all here.",
-   "dst": "",
+   "dst": "딱 맞춰 왔네요. 다 모였어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -738,7 +738,7 @@
   },
   "A Journey Beyond#073": {
    "src": "It looks like the Blacksmith knows what's wrong...",
-   "dst": "",
+   "dst": "대장장이가 뭐가 문제인지 아는 것 같아요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -748,7 +748,7 @@
   },
   "A Journey Beyond#074": {
    "src": "So, Dren. Do you know why we can't damage the beast?",
-   "dst": "",
+   "dst": "그래서, Dren. 왜 저 야수에게 피해를 못 주는지 알아요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -758,7 +758,7 @@
   },
   "A Journey Beyond#075": {
    "src": "Certainly! Your issue is elemental. As you know, there are {~} elements...",
-   "dst": "",
+   "dst": "물론이죠! 문제는 원소예요. 알다시피 원소는 {~}가지가 있죠...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -768,7 +768,7 @@
   },
   "A Journey Beyond#076": {
    "src": "Earth...",
-   "dst": "",
+   "dst": "대지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -778,7 +778,7 @@
   },
   "A Journey Beyond#077": {
    "src": "Fire...",
-   "dst": "",
+   "dst": "화염...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -788,7 +788,7 @@
   },
   "A Journey Beyond#078": {
    "src": "Air...",
-   "dst": "",
+   "dst": "바람...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -798,7 +798,7 @@
   },
   "A Journey Beyond#079": {
    "src": "Water...",
-   "dst": "",
+   "dst": "물...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -808,7 +808,7 @@
   },
   "A Journey Beyond#080": {
    "src": "And Thunder...",
-   "dst": "",
+   "dst": "그리고 번개...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -818,7 +818,7 @@
   },
   "A Journey Beyond#081": {
    "src": "But.. There is a hidden element, Darkness .",
-   "dst": "",
+   "dst": "하지만.. 숨겨진 원소가 있어요, 어둠 .",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -828,7 +828,7 @@
   },
   "A Journey Beyond#082": {
    "src": "Thank grook for that. I was wondering if we'd ever be rid of this nightmare.",
-   "dst": "",
+   "dst": "다행이다. 이 악몽에서 벗어날 수 있을까 싶었어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -838,7 +838,7 @@
   },
   "A Journey Beyond#083": {
    "src": "And we both keep telling you why you're wrong. This is... sorry, I didn't catch your name. {u}? {u}.",
-   "dst": "",
+   "dst": "그리고 우리 둘이 계속 네가 틀렸다고 말하잖아. 이쪽은... 미안, 이름을 못 들었네요. {u}? {u}.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -848,7 +848,7 @@
   },
   "A Journey Beyond#085": {
    "src": "In order to damage a creature of Darkness, you must remove that influence from your soul.",
-   "dst": "",
+   "dst": "어둠의 생물에게 피해를 주려면 그 영향을 영혼에서 없애야 해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -858,7 +858,7 @@
   },
   "A Journey Beyond#086": {
    "src": "Some Dark creatures use a sort of synchronous barrier that prevents them being harmed by other creatures influenced with Darkness.",
-   "dst": "",
+   "dst": "어떤 어둠의 생물은 일종의 동조 장벽을 써서, 어둠의 영향을 받은 다른 생물의 공격을 막아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -868,7 +868,7 @@
   },
   "A Journey Beyond#087": {
    "src": "In order to purify you, I will need {~} powerful items.",
-   "dst": "",
+   "dst": "여러분을 정화하려면 강력한 물건 {~}개가 필요해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -878,7 +878,7 @@
   },
   "A Journey Beyond#088": {
    "src": "Firstly, a shard from a Dernic Beast. There is one living in the depths of the {p}.",
-   "dst": "",
+   "dst": "먼저, Dernic Beast의 파편. {p} 깊은 곳에 한 마리가 살고 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -888,7 +888,7 @@
   },
   "A Journey Beyond#089": {
    "src": "I will use this to reveal the darkness element in you all.",
-   "dst": "",
+   "dst": "이걸로 여러분 안의 어둠 원소를 드러낼 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -898,7 +898,7 @@
   },
   "A Journey Beyond#090": {
    "src": "And then, of course, a Light item, to purify all of you...",
-   "dst": "",
+   "dst": "그리고 당연히 여러분을 정화할 빛의 물건도...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -908,7 +908,7 @@
   },
   "A Journey Beyond#091": {
    "src": "Wait... what do you mean a Light item?",
-   "dst": "",
+   "dst": "잠깐... 빛의 물건이라니 무슨 소리야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -918,7 +918,7 @@
   },
   "A Journey Beyond#092": {
    "src": "Something from any Light creature would work, you could get some dust from Gavel fairies if you wanted.",
-   "dst": "",
+   "dst": "빛의 생물에게서 나온 거면 뭐든 돼요. 원한다면 Gavel 요정의 가루를 구해 와도 되고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -928,7 +928,7 @@
   },
   "A Journey Beyond#093": {
    "src": "{u}! {u}!",
-   "dst": "",
+   "dst": "{u}! {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -938,7 +938,7 @@
   },
   "A Journey Beyond#094": {
    "src": "Alright. Aledar, you get the darkness item with {u}, and I'll go get the Light item with Lucio.",
-   "dst": "",
+   "dst": "좋아. Aledar, 넌 {u}와(과) 어둠의 물건을 구해 와. 난 Lucio랑 빛의 물건을 구할게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -948,7 +948,7 @@
   },
   "A Journey Beyond#095": {
    "src": "Yes ma'am! Let's go !",
-   "dst": "",
+   "dst": "네, 대장님! 가자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -958,7 +958,7 @@
   },
   "A Journey Beyond#096": {
    "src": "Get the Shard with Aledar.",
-   "dst": "",
+   "dst": "Aledar와 함께 파편을 구하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -968,7 +968,7 @@
   },
   "A Journey Beyond#097": {
    "src": "Here we are, the roots of Corruption. Let's go, {u}!",
-   "dst": "",
+   "dst": "여기야, 타락의 뿌리. 가자, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -978,7 +978,7 @@
   },
   "A Journey Beyond#098": {
    "src": "We found that the caves around the roots are far more complex than we thought...",
-   "dst": "",
+   "dst": "뿌리 주변 동굴들이 생각보다 훨씬 복잡하다는 걸 알아냈어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -988,7 +988,7 @@
   },
   "A Journey Beyond#099": {
    "src": "There's one with far more powerful creatures... Somewhere... Here!",
-   "dst": "",
+   "dst": "훨씬 강한 생물들이 사는 곳이 있어... 어딘가에... 여기다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -998,7 +998,7 @@
   },
   "A Journey Beyond#100": {
    "src": "What are you waiting for? Let's go!",
-   "dst": "",
+   "dst": "뭘 기다려? 가자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1008,7 +1008,7 @@
   },
   "A Journey Beyond#101": {
    "src": "I don't think we can spell our way across, {u}! We need something like... Wings!",
-   "dst": "",
+   "dst": "주문으로는 못 건너갈 것 같아, {u}! 뭔가... 날개 같은 게 필요해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1018,7 +1018,7 @@
   },
   "A Journey Beyond#102": {
    "src": "I've never used wings like this before...",
-   "dst": "",
+   "dst": "이런 날개는 처음 써 봐...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1028,7 +1028,7 @@
   },
   "A Journey Beyond#103": {
    "src": "I think if we just hold them and walk normally, it should help us glide across.",
-   "dst": "",
+   "dst": "들고서 그냥 걸으면 활공해서 건널 수 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1038,7 +1038,7 @@
   },
   "A Journey Beyond#104": {
    "src": "Don't drop them and don't get hit by the lava geysers, obviously.",
-   "dst": "",
+   "dst": "당연하지만, 떨어뜨리지 말고 용암 분출에 맞지 마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1048,7 +1048,7 @@
   },
   "A Journey Beyond#105": {
    "src": "Don't forget why we are here, we're looking for a creature of darkness. Shout for me if you find one.",
-   "dst": "",
+   "dst": "여기 온 이유를 잊지 마, 우린 어둠의 생물을 찾고 있어. 찾으면 불러.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1058,7 +1058,7 @@
   },
   "A Journey Beyond#106": {
    "src": "Go deeper into the cave at [{~}, {~}, -{~}] for the Shard.",
-   "dst": "",
+   "dst": "파편을 찾아 [{~}, {~}, -{~}]의 동굴 깊숙이 들어가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1068,7 +1068,7 @@
   },
   "A Journey Beyond#107": {
    "src": "That's our target! Go after it!",
-   "dst": "",
+   "dst": "저게 목표야! 쫓아가!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1078,7 +1078,7 @@
   },
   "A Journey Beyond#108": {
    "src": "Wait, why isn't it fighting us here? Careful! It might be trapped!",
-   "dst": "",
+   "dst": "잠깐, 왜 여기선 안 싸우지? 조심해! 함정일지도 몰라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1088,7 +1088,7 @@
   },
   "A Journey Beyond#109": {
    "src": "Chase the beast for the Shard.",
-   "dst": "",
+   "dst": "파편을 얻으려면 야수를 쫓으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1098,7 +1098,7 @@
   },
   "A Journey Beyond#110": {
    "src": "Kill the Progenitors to open up the entrance.",
-   "dst": "",
+   "dst": "Progenitor를 처치해 입구를 여세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1108,7 +1108,7 @@
   },
   "A Journey Beyond#111": {
    "src": "Kill the Mangled Progeny for the [{~} Corrupted Pearl].",
-   "dst": "",
+   "dst": "Mangled Progeny를 처치해 [{~} Corrupted Pearl]을(를) 얻으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1118,7 +1118,7 @@
   },
   "A Journey Beyond#112": {
    "src": "Wow, I'm impressed . I honestly thought you would need my help.",
-   "dst": "",
+   "dst": "와, 대단한데 . 솔직히 내 도움이 필요할 줄 알았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1128,7 +1128,7 @@
   },
   "A Journey Beyond#113": {
    "src": "Well, we got what we came for. Let's head back to Dren.",
-   "dst": "",
+   "dst": "자, 필요한 건 얻었어. Dren에게 돌아가자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1138,7 +1138,7 @@
   },
   "A Journey Beyond#114": {
    "src": "Return to the Blacksmith with the Darkness Item.",
-   "dst": "",
+   "dst": "어둠의 물건을 가지고 대장장이에게 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1148,7 +1148,7 @@
   },
   "A Journey Beyond#115": {
    "src": "Looks like we lucked out on this one. Did you get an item of darkness?",
-   "dst": "",
+   "dst": "이번엔 운이 좋았나 보네요. 어둠의 물건은 구했어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1158,7 +1158,7 @@
   },
   "A Journey Beyond#116": {
    "src": "That should do it. Let's see if this will work. Come here !",
-   "dst": "",
+   "dst": "이거면 되겠네요. 효과가 있는지 봅시다. 이리 와요 !",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1168,7 +1168,7 @@
   },
   "A Journey Beyond#117": {
    "src": "It's done! You ought to be free of the dark influence. You ought to be able to break through that barrier that was giving you trouble.",
-   "dst": "",
+   "dst": "다 됐어요! 이제 어둠의 영향에서 벗어났을 거예요. 골치 아프던 그 장벽도 뚫을 수 있을 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1178,7 +1178,7 @@
   },
   "A Journey Beyond#118": {
    "src": "Are you sure? I don't feel that different. Well... I guess there's only one way to find out.",
-   "dst": "",
+   "dst": "정말요? 별로 달라진 느낌이 없는데. 음... 확인할 방법은 하나뿐이겠네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1188,7 +1188,7 @@
   },
   "A Journey Beyond#119": {
    "src": "Re-open the closed entrance with the other warriors.",
-   "dst": "",
+   "dst": "다른 전사들과 함께 닫힌 입구를 다시 여세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1198,7 +1198,7 @@
   },
   "A Journey Beyond#120": {
    "src": "Everyone here? Great! Time to finish what I started!",
-   "dst": "",
+   "dst": "다 모였어? 좋아! 내가 시작한 걸 끝낼 시간이다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1208,7 +1208,7 @@
   },
   "A Journey Beyond#121": {
    "src": "Lucio! No! When will you learn?",
-   "dst": "",
+   "dst": "Lucio! 안 돼! 언제 정신 차릴래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1218,7 +1218,7 @@
   },
   "A Journey Beyond#122": {
    "src": "Right, yes. Sorry, what's the plan?",
-   "dst": "",
+   "dst": "아, 그래. 미안, 계획이 뭐야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1228,7 +1228,7 @@
   },
   "A Journey Beyond#123": {
    "src": "We don't want that thing to escape, it could cause widespread panic.",
-   "dst": "",
+   "dst": "저게 빠져나가면 안 돼, 큰 혼란이 일어날 수 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1238,7 +1238,7 @@
   },
   "A Journey Beyond#124": {
    "src": "We'll open up a small entrance to get in, and fight it once inside.",
-   "dst": "",
+   "dst": "작은 입구만 열고 들어가서 안에서 싸울 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1248,7 +1248,7 @@
   },
   "A Journey Beyond#125": {
    "src": "Fine...",
-   "dst": "",
+   "dst": "알았어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1258,7 +1258,7 @@
   },
   "A Journey Beyond#126": {
    "src": "Let's go!",
-   "dst": "",
+   "dst": "가자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1268,7 +1268,7 @@
   },
   "A Journey Beyond#127": {
    "src": "Kill the Black Geist.",
-   "dst": "",
+   "dst": "Black Geist를 처치하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1278,7 +1278,7 @@
   },
   "A Journey Beyond#128": {
    "src": "We... We actually did it!",
-   "dst": "",
+   "dst": "우리가... 우리가 진짜 해냈어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1288,7 +1288,7 @@
   },
   "A Journey Beyond#129": {
    "src": "We have an extremely old map of the mines to help us, but we have no idea what's waiting for us.",
-   "dst": "",
+   "dst": "아주 오래된 광산 지도가 있긴 하지만, 뭐가 기다리고 있을지는 전혀 몰라요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1298,7 +1298,7 @@
   },
   "A Journey Beyond#130": {
    "src": "I want to warn you, this may well be a one way ticket for all of us.",
-   "dst": "",
+   "dst": "경고해 두지, 이건 우리 모두에게 편도 여행일지도 몰라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1308,7 +1308,7 @@
   },
   "A Journey Beyond#131": {
    "src": "Yeah right! Check this out!",
-   "dst": "",
+   "dst": "퍽이나! 이거나 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1318,7 +1318,7 @@
   },
   "A Journey Beyond#132": {
    "src": "Rocks are one thing, Lucio. The creatures we're about to face require more than brute strength. You need force of mind.",
-   "dst": "",
+   "dst": "바위는 그렇다 쳐도, Lucio. 곧 마주할 생물들은 완력만으론 안 돼. 정신력이 필요해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1328,7 +1328,7 @@
   },
   "A Journey Beyond#133": {
    "src": "Oh my. Maybe this isn't the best idea.",
-   "dst": "",
+   "dst": "이런. 좋은 생각이 아니었나 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1338,7 +1338,7 @@
   },
   "A Journey Beyond#134": {
    "src": "It's too late now. We've got to finish this mission.",
-   "dst": "",
+   "dst": "이젠 너무 늦었어. 이 임무는 끝내야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1348,7 +1348,7 @@
   },
   "A Journey Beyond#135": {
    "src": "Explore the Silent Expanse.",
-   "dst": "",
+   "dst": "Silent Expanse를 탐험하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -1358,7 +1358,7 @@
   },
   "A Journey Beyond#136": {
    "src": "Remember the goal Elphie, we must reach the end of the expanse.",
-   "dst": "",
+   "dst": "목표를 잊지 마, Elphie. 이 지대 끝까지 가야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1368,7 +1368,7 @@
   },
   "A Journey Beyond#137": {
    "src": "It's still empty here. But it looks like they were here only yesterday.",
-   "dst": "",
+   "dst": "여긴 아직 비어 있네. 그런데 겨우 어제까지 있었던 것처럼 보여.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1378,7 +1378,7 @@
   },
   "A Journey Beyond#138": {
    "src": "I thought you said the miners were here hundreds of years ago?",
-   "dst": "",
+   "dst": "광부들이 여기 있었던 건 수백 년 전이라며?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1388,7 +1388,7 @@
   },
   "A Journey Beyond#139": {
    "src": "They were. I don't know why it would be so well presevered. It's as if nothing has touched it.",
-   "dst": "",
+   "dst": "맞아. 왜 이렇게 잘 보존됐는지 모르겠어. 마치 아무것도 손대지 않은 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1398,7 +1398,7 @@
   },
   "A Journey Beyond#140": {
    "src": "According to the documents, we need to make our way to the end of the road.",
-   "dst": "",
+   "dst": "문서에 따르면, 이 길 끝까지 가야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1408,7 +1408,7 @@
   },
   "A Journey Beyond#141": {
    "src": "Argh! Bugs! Get off!",
-   "dst": "",
+   "dst": "으악! 벌레! 떨어져!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1418,7 +1418,7 @@
   },
   "A Journey Beyond#142": {
    "src": "So much for nothing being here.",
-   "dst": "",
+   "dst": "아무것도 없다더니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1428,7 +1428,7 @@
   },
   "A Journey Beyond#143": {
    "src": "Why are they only going for me?",
-   "dst": "",
+   "dst": "왜 나만 노리는 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1438,7 +1438,7 @@
   },
   "A Journey Beyond#144": {
    "src": "Aledar, how far is it to the end?",
-   "dst": "",
+   "dst": "Aledar, 끝까지 얼마나 남았어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1448,7 +1448,7 @@
   },
   "A Journey Beyond#145": {
    "src": "I read the same map as you. It didn't even have scale. There should be a bridge ahead, though.",
-   "dst": "",
+   "dst": "나도 같은 지도를 봤어. 축척도 없더라. 그래도 앞에 다리가 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1458,7 +1458,7 @@
   },
   "A Journey Beyond#146": {
    "src": "Uhh... A destroyed one. And it wasn't cause I blew it up this time!",
-   "dst": "",
+   "dst": "어... 부서진 다리네. 이번엔 내가 폭파한 거 아니야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1468,7 +1468,7 @@
   },
   "A Journey Beyond#147": {
    "src": "Hmm, well we will have to go around.",
-   "dst": "",
+   "dst": "흠, 돌아가야겠군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1478,7 +1478,7 @@
   },
   "A Journey Beyond#148": {
    "src": "This doesn't really look like corruption, does it?",
-   "dst": "",
+   "dst": "이건 타락처럼 보이진 않지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1488,7 +1488,7 @@
   },
   "A Journey Beyond#149": {
    "src": "Uhhh... I'm not feeling very wel-... Aahhh!",
-   "dst": "",
+   "dst": "으으... 몸이 좀 안 좋- ... 아아악!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1498,7 +1498,7 @@
   },
   "A Journey Beyond#150": {
    "src": "Aaahhh! My liver! It took my liver!",
-   "dst": "",
+   "dst": "아아악! 내 간! 내 간을 가져갔어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1508,7 +1508,7 @@
   },
   "A Journey Beyond#151": {
    "src": "Elphaba! No! It's an illusion!",
-   "dst": "",
+   "dst": "Elphaba! 안 돼! 그건 환각이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1518,7 +1518,7 @@
   },
   "A Journey Beyond#152": {
    "src": "Where has she gone? ELPHABA?",
-   "dst": "",
+   "dst": "어디 간 거지? ELPHABA?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1528,7 +1528,7 @@
   },
   "A Journey Beyond#153": {
    "src": "Aledar, maybe we should just double back now?",
-   "dst": "",
+   "dst": "Aledar, 지금이라도 되돌아가는 게 어때?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1538,7 +1538,7 @@
   },
   "A Journey Beyond#154": {
    "src": "Elphaba is an extremely able warrior. We will fight on and find her.",
-   "dst": "",
+   "dst": "Elphaba는 아주 유능한 전사야. 계속 싸우며 찾아낼 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1548,7 +1548,7 @@
   },
   "A Journey Beyond#155": {
    "src": "Do you really think it was just an illusion?",
-   "dst": "",
+   "dst": "정말 그냥 환각이었다고 생각해?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1558,7 +1558,7 @@
   },
   "A Journey Beyond#156": {
    "src": "I'm not sure. I hope so.",
-   "dst": "",
+   "dst": "모르겠어. 그러길 바라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1568,7 +1568,7 @@
   },
   "A Journey Beyond#157": {
    "src": "What if we're infected too? Shouldn't we just go back?",
-   "dst": "",
+   "dst": "우리도 감염됐으면 어떡해? 그냥 돌아가야 하지 않아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1578,7 +1578,7 @@
   },
   "A Journey Beyond#158": {
    "src": "We can't, Lucio! We have a mission, as you very well know. We continue.",
-   "dst": "",
+   "dst": "안 돼, Lucio! 너도 잘 알다시피 우린 임무 중이야. 계속 간다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1588,7 +1588,7 @@
   },
   "A Journey Beyond#159": {
    "src": "Besides, we might be carrying some of those things too. We can't risk them infesting Wynn.",
-   "dst": "",
+   "dst": "게다가 우리가 그것들을 옮기고 있을지도 몰라. Wynn에 퍼질 위험은 못 감수해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1598,7 +1598,7 @@
   },
   "A Journey Beyond#160": {
    "src": "Looks like we need to go around to the right, here?",
-   "dst": "",
+   "dst": "여기서 오른쪽으로 돌아가야 할 것 같은데?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1608,7 +1608,7 @@
   },
   "A Journey Beyond#161": {
    "src": "It feels like something is watching us...",
-   "dst": "",
+   "dst": "뭔가가 우릴 지켜보는 느낌이야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1618,7 +1618,7 @@
   },
   "A Journey Beyond#162": {
    "src": "Aledar, what is this place? You didn't tell me there was a city here.",
-   "dst": "",
+   "dst": "Aledar, 여긴 뭐야? 여기 도시가 있단 말은 안 했잖아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1628,7 +1628,7 @@
   },
   "A Journey Beyond#163": {
    "src": "There is. A big one, too; there's more ahead. But it doesn't look like anyone's home. The map doesn't have a name for it either.",
-   "dst": "",
+   "dst": "있긴 해. 그것도 커다란 게; 앞에 더 있어. 그런데 아무도 없는 것 같아. 지도에도 이름이 없고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1638,7 +1638,7 @@
   },
   "A Journey Beyond#164": {
    "src": "Wait a sec, is that one of the miners? Is she hurt? HEEEEY! YOU OVER THERE!",
-   "dst": "",
+   "dst": "잠깐, 저거 광부 중 하나 아니야? 다친 건가? 어어어이! 거기 당신!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1648,7 +1648,7 @@
   },
   "A Journey Beyond#165": {
    "src": "Lucio, no! It's a trap!",
-   "dst": "",
+   "dst": "Lucio, 안 돼! 함정이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1658,7 +1658,7 @@
   },
   "A Journey Beyond#166": {
    "src": "LUCIO! Don't get closer!",
-   "dst": "",
+   "dst": "LUCIO! 더 가까이 가지 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1668,7 +1668,7 @@
   },
   "A Journey Beyond#167": {
    "src": "Wait, what's going on? Why can't I move?",
-   "dst": "",
+   "dst": "잠깐, 뭐야? 왜 못 움직이지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1678,7 +1678,7 @@
   },
   "A Journey Beyond#168": {
    "src": "Please, you have to understand!",
-   "dst": "",
+   "dst": "제발, 이해해 줘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1688,7 +1688,7 @@
   },
   "A Journey Beyond#169": {
    "src": "It's so dangerous here!",
-   "dst": "",
+   "dst": "여긴 너무 위험해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1698,7 +1698,7 @@
   },
   "A Journey Beyond#170": {
    "src": "We can't live alone like this!",
-   "dst": "",
+   "dst": "이렇게 혼자 살 수는 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1708,7 +1708,7 @@
   },
   "A Journey Beyond#171": {
    "src": "It's too painful!",
-   "dst": "",
+   "dst": "너무 고통스러워!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1718,7 +1718,7 @@
   },
   "A Journey Beyond#172": {
    "src": "Listen to me!",
-   "dst": "",
+   "dst": "내 말 들어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1728,7 +1728,7 @@
   },
   "A Journey Beyond#173": {
    "src": "You need to come with us!",
-   "dst": "",
+   "dst": "우리와 함께 가야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1738,7 +1738,7 @@
   },
   "A Journey Beyond#174": {
    "src": "It's the only way to keep you safe!",
-   "dst": "",
+   "dst": "그래야만 안전할 수 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1748,7 +1748,7 @@
   },
   "A Journey Beyond#175": {
    "src": "It's the only way to make you happy here!",
-   "dst": "",
+   "dst": "그래야만 여기서 행복할 수 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1758,7 +1758,7 @@
   },
   "A Journey Beyond#176": {
    "src": "It's the only way to make us feel whole!",
-   "dst": "",
+   "dst": "그래야만 우리가 온전해질 수 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1768,7 +1768,7 @@
   },
   "A Journey Beyond#177": {
    "src": "IT'S THE ONLY WAY, DO YOU UNDERSTAND?!",
-   "dst": "",
+   "dst": "이 방법밖에 없어, 알아들어?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1778,7 +1778,7 @@
   },
   "A Journey Beyond#178": {
    "src": "AAAH! S-Stop screaming at me! I can't understand!!",
-   "dst": "",
+   "dst": "으아아! 소-소리 좀 그만 질러! 못 알아듣겠다고!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1788,7 +1788,7 @@
   },
   "A Journey Beyond#179": {
    "src": "WHY CAN'T YOU UNDERSTAND?",
-   "dst": "",
+   "dst": "왜 못 알아들어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1798,7 +1798,7 @@
   },
   "A Journey Beyond#180": {
    "src": "AM I NOT SPEAKING CLEARLY?",
-   "dst": "",
+   "dst": "내 말이 안 들려?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1808,7 +1808,7 @@
   },
   "A Journey Beyond#181": {
    "src": "CAN'T YOU HEAR WHAT I'M SAYING?",
-   "dst": "",
+   "dst": "내가 하는 말 안 들려?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1818,7 +1818,7 @@
   },
   "A Journey Beyond#182": {
    "src": "YOU STAY OUT OF THIS?",
-   "dst": "",
+   "dst": "넌 빠져 있어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1828,7 +1828,7 @@
   },
   "A Journey Beyond#183": {
    "src": "No! How did she disable my spell?!",
-   "dst": "",
+   "dst": "안 돼! 어떻게 내 주문을 풀었지?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1838,7 +1838,7 @@
   },
   "A Journey Beyond#184": {
    "src": "PLEASE, WE NEED THIS!",
-   "dst": "",
+   "dst": "제발, 우린 이게 필요해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1848,7 +1848,7 @@
   },
   "A Journey Beyond#185": {
    "src": "YOU'LL BE SO MUCH HAPPIER IF YOU COME ALONG!",
-   "dst": "",
+   "dst": "같이 가면 훨씬 더 행복해질 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1858,7 +1858,7 @@
   },
   "A Journey Beyond#186": {
    "src": "YOU'LL NEVER HAVE TO WORRY AGAIN!",
-   "dst": "",
+   "dst": "다시는 걱정할 일 없을 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1868,7 +1868,7 @@
   },
   "A Journey Beyond#187": {
    "src": "WE'LL KEEP YOU SAFE!",
-   "dst": "",
+   "dst": "우리가 지켜 줄게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1878,7 +1878,7 @@
   },
   "A Journey Beyond#188": {
    "src": "...aaaah... Stop talking... H-help...",
-   "dst": "",
+   "dst": "...아아아... 그만 말해... 사-살려 줘...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1888,7 +1888,7 @@
   },
   "A Journey Beyond#189": {
    "src": "Just please, stand still a little longer!",
-   "dst": "",
+   "dst": "제발, 조금만 더 가만히 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1898,7 +1898,7 @@
   },
   "A Journey Beyond#190": {
    "src": "We'll bring you someplace warm!",
-   "dst": "",
+   "dst": "따뜻한 곳으로 데려가 줄게!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1908,7 +1908,7 @@
   },
   "A Journey Beyond#191": {
    "src": "You won't be hunted! We promise! No one hunts us!",
-   "dst": "",
+   "dst": "쫓길 일 없을 거야! 약속해! 아무도 우릴 쫓지 않아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1918,7 +1918,7 @@
   },
   "A Journey Beyond#192": {
    "src": "You agree? YOU AGREE!",
-   "dst": "",
+   "dst": "동의하는 거지? 동의했어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1928,7 +1928,7 @@
   },
   "A Journey Beyond#193": {
    "src": "THANK YOU! WE WILL GO TOGETHER!",
-   "dst": "",
+   "dst": "고마워! 우리 함께 가자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1938,7 +1938,7 @@
   },
   "A Journey Beyond#194": {
    "src": "YOU'LL BE SAFE WITH US!",
-   "dst": "",
+   "dst": "우리와 함께면 안전해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1948,7 +1948,7 @@
   },
   "A Journey Beyond#195": {
    "src": "NO MORE FEAR! NO MORE CONCERN!",
-   "dst": "",
+   "dst": "두려움도! 걱정도 이제 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1958,7 +1958,7 @@
   },
   "A Journey Beyond#196": {
    "src": "Foreeeever...",
-   "dst": "",
+   "dst": "영원히이이...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1968,7 +1968,7 @@
   },
   "A Journey Beyond#197": {
    "src": "No no no!! This is bad, really bad! We have to go ! Quick!",
-   "dst": "",
+   "dst": "안 돼 안 돼!! 큰일이야, 정말 큰일이야! 가야 해 ! 빨리!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1978,7 +1978,7 @@
   },
   "A Journey Beyond#198": {
    "src": "We can't stay here.",
-   "dst": "",
+   "dst": "여기 있으면 안 돼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1988,7 +1988,7 @@
   },
   "A Journey Beyond#199": {
    "src": "Who's that?! Elphaba?! Lucio?!",
-   "dst": "",
+   "dst": "누구야?! Elphaba?! Lucio?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -1998,7 +1998,7 @@
   },
   "A Journey Beyond#200": {
    "src": "Wait, you're just one of the miners. This doesn't feel like an illusion...",
-   "dst": "",
+   "dst": "잠깐, 그냥 광부잖아. 이건 환각 같지 않은데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2008,7 +2008,7 @@
   },
   "A Journey Beyond#201": {
    "src": "Look, you need to get out of here. It's not safe- Wait, what's that noise...?",
-   "dst": "",
+   "dst": "이봐, 여기서 나가야 해. 안전하지 않- 잠깐, 무슨 소리지...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2018,7 +2018,7 @@
   },
   "A Journey Beyond#202": {
    "src": "OURGURGH!",
-   "dst": "",
+   "dst": "우르그르르!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2028,7 +2028,7 @@
   },
   "A Journey Beyond#203": {
    "src": "AAHHHHHHH!",
-   "dst": "",
+   "dst": "으아아아아아악!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2038,7 +2038,7 @@
   },
   "A Journey Beyond#204": {
    "src": "Find Aledar, Lucio and Elphaba in the Fallen City.",
-   "dst": "",
+   "dst": "Fallen City에서 Aledar, Lucio, Elphaba를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -2048,7 +2048,7 @@
   },
   "A Journey Beyond#205": {
    "src": "{u}! She was completely right. You ought to come with us...",
-   "dst": "",
+   "dst": "{u}! 그녀 말이 전부 맞았어. 너도 우리랑 같이 가야 해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2058,7 +2058,7 @@
   },
   "A Journey Beyond#206": {
    "src": "Find Aledar and Elphaba in the Fallen City.",
-   "dst": "",
+   "dst": "Fallen City에서 Aledar와 Elphaba를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -2068,7 +2068,7 @@
   },
   "A Journey Beyond#207": {
    "src": "Find Aledar in the Fallen City.",
-   "dst": "",
+   "dst": "Fallen City에서 Aledar를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -2078,7 +2078,7 @@
   },
   "A Journey Beyond#208": {
    "src": "! !",
-   "dst": "",
+   "dst": "! !",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2088,7 +2088,7 @@
   },
   "A Journey Beyond#209": {
    "src": "I think my leg is broken. I have a potion to fix it, but I dropped it back up there.",
-   "dst": "",
+   "dst": "다리가 부러진 것 같아. 고칠 물약이 있었는데, 저 위에서 떨어뜨렸어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2098,7 +2098,7 @@
   },
   "A Journey Beyond#210": {
    "src": "I feel a bit better.. But something is still wrong.",
-   "dst": "",
+   "dst": "좀 나아졌어.. 그래도 아직 뭔가 이상해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2108,7 +2108,7 @@
   },
   "A Journey Beyond#211": {
    "src": "Let's just get out of here, soldier on. There's only one way out.",
-   "dst": "",
+   "dst": "일단 여기서 나가자, 버텨 보자고. 나가는 길은 하나뿐이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2118,7 +2118,7 @@
   },
   "A Journey Beyond#212": {
    "src": "Jump with me, come on!",
-   "dst": "",
+   "dst": "나랑 같이 뛰어, 어서!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2128,7 +2128,7 @@
   },
   "A Journey Beyond#213": {
    "src": "Aaaaaaaaaaahhhhhhh!!!",
-   "dst": "",
+   "dst": "으아아아아아아아악!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2138,7 +2138,7 @@
   },
   "A Journey Beyond#214": {
    "src": "Urrrgh. {u}, this hasn't gone to plan. According to my map we aren't even half way.",
-   "dst": "",
+   "dst": "으으으. {u}, 계획대로 안 됐어. 내 지도로는 아직 절반도 못 왔어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2148,7 +2148,7 @@
   },
   "A Journey Beyond#215": {
    "src": "I can't walk. But equally we can't stay here.",
-   "dst": "",
+   "dst": "난 못 걸어. 그렇다고 여기 있을 수도 없고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2158,7 +2158,7 @@
   },
   "A Journey Beyond#216": {
    "src": "The mission must be carried out. The plan has changed, but it's imperative we get to the end of this expanse, together.",
-   "dst": "",
+   "dst": "임무는 완수해야 해. 계획은 바뀌었지만, 반드시 함께 이 지대 끝까지 가야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2168,7 +2168,7 @@
   },
   "A Journey Beyond#217": {
    "src": "No more running for us, huh {u}? Ah, we're here.",
-   "dst": "",
+   "dst": "이제 도망칠 일은 없겠지, {u}? 아, 다 왔다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2178,7 +2178,7 @@
   },
   "A Journey Beyond#218": {
    "src": "There has to be a way.. Even if you have to push me in this thing!",
-   "dst": "",
+   "dst": "방법이 있을 거야.. 네가 이걸로 날 밀고 가야 한대도!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2188,7 +2188,7 @@
   },
   "A Journey Beyond#219": {
    "src": "No, I'm not joking. You guard the cart, I'll lead the way.",
-   "dst": "",
+   "dst": "아니, 농담 아니야. 넌 수레를 지켜, 길은 내가 안내할게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2198,7 +2198,7 @@
   },
   "A Journey Beyond#220": {
    "src": "Escort Aledar through the {p} to {p} at ({~}, -{~}).",
-   "dst": "",
+   "dst": "Aledar를 호위해 {p}을(를) 지나 ({~}, -{~})의 {p}(으)로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "A Journey Beyond",
@@ -2208,7 +2208,7 @@
   },
   "A Journey Beyond#221": {
    "src": "According to the map, the miners started a town a little ahead.",
-   "dst": "",
+   "dst": "지도에 따르면, 조금 앞에 광부들이 세운 마을이 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2218,7 +2218,7 @@
   },
   "A Journey Beyond#222": {
    "src": "Who knows what's left, but it's got to be safer than here.",
-   "dst": "",
+   "dst": "뭐가 남았을지 모르지만, 여기보단 안전하겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2228,7 +2228,7 @@
   },
   "A Journey Beyond#223": {
    "src": "I think the Small Monsters will try to Kill me.",
-   "dst": "",
+   "dst": "작은 괴물들은 날 죽이려 할 것 같아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2238,7 +2238,7 @@
   },
   "A Journey Beyond#224": {
    "src": "While the Big Monsters will try to Kill you.",
-   "dst": "",
+   "dst": "큰 괴물들은 널 죽이려 할 거고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2248,7 +2248,7 @@
   },
   "A Journey Beyond#225": {
    "src": "It's going to be on you to make sure we both get through this.",
-   "dst": "",
+   "dst": "우리 둘 다 무사히 지나가는 건 너한테 달렸어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2258,7 +2258,7 @@
   },
   "A Journey Beyond#226": {
    "src": "The fate of the mission relies on the two of us working together.",
-   "dst": "",
+   "dst": "임무의 운명은 우리 둘의 협력에 달렸어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2268,7 +2268,7 @@
   },
   "A Journey Beyond#227": {
    "src": "Are those... Eyes on the trees?",
-   "dst": "",
+   "dst": "저건... 나무에 눈이 달린 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2278,7 +2278,7 @@
   },
   "A Journey Beyond#228": {
    "src": "Look out, {u}!",
-   "dst": "",
+   "dst": "조심해, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2288,7 +2288,7 @@
   },
   "A Journey Beyond#229": {
    "src": "Watch out, the small monsters are coming for me! I can't fight in this thing!",
-   "dst": "",
+   "dst": "조심해, 작은 괴물들이 나한테 와! 여기선 못 싸워!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2298,7 +2298,7 @@
   },
   "A Journey Beyond#230": {
    "src": "Another one's coming! Pay attention!",
-   "dst": "",
+   "dst": "또 온다! 집중해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2308,7 +2308,7 @@
   },
   "A Journey Beyond#231": {
    "src": "Great job! It looks like they've stopped coming. Let's keep going.",
-   "dst": "",
+   "dst": "잘했어! 더는 안 오는 것 같아. 계속 가자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2318,7 +2318,7 @@
   },
   "A Journey Beyond#232": {
    "src": "They're here again, {u}!",
-   "dst": "",
+   "dst": "또 왔어, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2328,7 +2328,7 @@
   },
   "A Journey Beyond#233": {
    "src": "Let's keep going! Before they come back.",
-   "dst": "",
+   "dst": "계속 가자! 놈들이 돌아오기 전에.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2338,7 +2338,7 @@
   },
   "A Journey Beyond#234": {
    "src": "A lot of those small ones are coming for me!",
-   "dst": "",
+   "dst": "작은 놈들이 잔뜩 나한테 몰려와!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2348,7 +2348,7 @@
   },
   "A Journey Beyond#235": {
    "src": "This one was close! We're getting close to the town.",
-   "dst": "",
+   "dst": "아슬아슬했어! 마을이 가까워지고 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2358,7 +2358,7 @@
   },
   "A Journey Beyond#236": {
    "src": "We'll have to stop again! We can't go past so many monsters.",
-   "dst": "",
+   "dst": "또 멈춰야겠어! 괴물이 너무 많아서 못 지나가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2368,7 +2368,7 @@
   },
   "A Journey Beyond#237": {
    "src": "We're almost there! I can see the town from here!",
-   "dst": "",
+   "dst": "거의 다 왔어! 여기서 마을이 보여!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2378,7 +2378,7 @@
   },
   "A Journey Beyond#238": {
    "src": "Oh no!",
-   "dst": "",
+   "dst": "이런!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2388,7 +2388,7 @@
   },
   "A Journey Beyond#239": {
    "src": "Great job! It looks like they've stopped coming. Let's keep going.",
-   "dst": "",
+   "dst": "잘했어! 더는 안 오는 것 같아. 계속 가자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2398,7 +2398,7 @@
   },
   "A Journey Beyond#240": {
    "src": "Ouch! I got hit! Be careful, {u}!",
-   "dst": "",
+   "dst": "아야! 맞았어! 조심해, {u}!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2408,7 +2408,7 @@
   },
   "A Journey Beyond#241": {
    "src": "Finally, we've arrived... It's not exactly the town on the map.",
-   "dst": "",
+   "dst": "드디어 도착했어... 지도에 있던 마을과는 좀 다르네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2418,7 +2418,7 @@
   },
   "A Journey Beyond#242": {
    "src": "The lost miners are here... How? they must be hundreds of years old!",
-   "dst": "",
+   "dst": "실종된 광부들이 여기 있어... 어떻게? 수백 살은 됐을 텐데!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2428,7 +2428,7 @@
   },
   "A Journey Beyond#243": {
    "src": "What is this obelisk? It's.. comforting. I recognise this feeling from my time in Gavel.",
-   "dst": "",
+   "dst": "이 오벨리스크는 뭐지? 뭔가.. 마음이 편해져. Gavel에 있을 때 느꼈던 기분이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2438,7 +2438,7 @@
   },
   "A Journey Beyond#244": {
    "src": "Maybe.. It's been touched by the light? If so.. It could heal me.",
-   "dst": "",
+   "dst": "혹시.. 빛의 손길이 닿은 건가? 그렇다면.. 날 치유할 수 있을지도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2448,7 +2448,7 @@
   },
   "A Journey Beyond#245": {
    "src": "Let's see if it does anything to me...",
-   "dst": "",
+   "dst": "나한테 효과가 있는지 보자...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2458,7 +2458,7 @@
   },
   "A Journey Beyond#246": {
    "src": "It worked... Kind of. I feel at least {~}.. We still have a ways to go.",
-   "dst": "",
+   "dst": "효과가 있어... 조금은. 적어도 {~}쯤은 된 것 같아.. 아직 갈 길이 멀어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",
@@ -2468,7 +2468,83 @@
   },
   "A Journey Beyond#247": {
    "src": "Let's take some time to gather ourselves before we press on. I'll meet you on the other side of town.",
-   "dst": "",
+   "dst": "계속 가기 전에 잠시 정비하자. 마을 반대편에서 만나.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 18",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Beyond#000~1": {
+   "src": "Well... we are, but I'd like to brief {u} on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+   "dst": "뭐... 그렇긴 한데, 먼저 {u}에게 자세한 내용을 알려 주고 싶어. 위험한 임무니까... 제대로 설명해 두는 게 좋겠어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Well... we are, but I'd like to brief on the details first. This is a dangerous mission, so... I think it's best to fill them in.",
+    "file": "quest/a-journey-beyond.json",
+    "ratio": 0.985,
+    "reason": "placeholders"
+   }
+  },
+  "A Journey Beyond#021~1": {
+   "src": "The land itself was said to be cursed. Not corrupted- they were very clear on that.",
+   "dst": "그 땅 자체가 저주받았다고 했다. 타락이 아니라- 그 점은 아주 분명히 했다.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 1",
+   "speaker": "Elphaba",
+   "source": "wiki"
+  },
+  "A Journey Beyond#069~1": {
+   "src": "It looks like our problem isn't firepower. It's something else. It's like our weapons just didn't affect it at all.",
+   "dst": "문제는 화력이 아닌 것 같아. 다른 뭔가야. 우리 무기가 그것에 전혀 먹히지 않는 것 같았어.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 4",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Beyond#094~1": {
+   "src": "Alright. Aledar, you get the Darkness item with {u}, and I'll go get the Light item with Lucio.",
+   "dst": "좋아. Aledar, 너는 {u}와(과) 어둠의 물건을 가져와. 난 Lucio와 빛의 물건을 가지러 갈게.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 5",
+   "speaker": "Elphaba",
+   "source": "wiki"
+  },
+  "A Journey Beyond#149~1": {
+   "src": "Uhhh... I'm not feeling really wel-... Aahhh!",
+   "dst": "으으... 몸이 좀 안 좋-... 으아아!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 14",
+   "speaker": "Elphaba",
+   "source": "wiki"
+  },
+  "A Journey Beyond#210~1": {
+   "src": "I feel a bit better.. But something's still wrong.",
+   "dst": "조금 나아졌어.. 그래도 아직 뭔가 이상해.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "A Journey Beyond",
+   "stage": "Stage 17",
+   "speaker": "Aledar",
+   "source": "wiki"
+  },
+  "A Journey Beyond#246~1": {
+   "src": "It worked... Kind of. I feel at least {~}. We still have a ways to go.",
+   "dst": "효과가 있었어... 어느 정도는. 적어도 {~}은 된 것 같아. 아직 갈 길이 멀어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "A Journey Beyond",

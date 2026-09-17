@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Overture to Despair",
   "count": 603,
-  "translated": 598,
+  "translated": 653,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -6035,6 +6035,568 @@
    "stage": "Stage 20",
    "speaker": "Sovereign Tasim",
    "source": "wiki"
+  },
+  "Overture to Despair#000~1": {
+   "src": "- No weaponry or blessed equipment in common areas.",
+   "dst": "- Никакого оружия и благословлённого снаряжения в общих зонах.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#001~1": {
+   "src": "{p} Gardening {~}",
+   "dst": "Садоводство {p} {~}",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#002~1": {
+   "src": "No matter, it can be sorted ou-",
+   "dst": "Неважно, можно всё уладит-",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#003~1": {
+   "src": "The horse bit you!",
+   "dst": "Лошадь тебя укусила!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#004~1": {
+   "src": "Fire, air, water clear",
+   "dst": "Огонь, воздух, чистая вода",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#005~1": {
+   "src": "May we unearth the truth long buried and bring forth change.",
+   "dst": "Да откроем мы давно погребённую правду и принесём перемены.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "May we unearth the truth long buried and bring forth change. Never forget that.",
+    "file": "quest/overture-to-despair.json",
+    "ratio": 0.863,
+    "reason": "candidate"
+   }
+  },
+  "Overture to Despair#006~1": {
+   "src": "Different plants require different soils, temperatures and water requirements.",
+   "dst": "Разным растениям нужны разные почва, температура и полив.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#007~1": {
+   "src": "At first, I was afraid of being labeled as cursed. But power does not come without risk. I am willing to risk everything for power.",
+   "dst": "Поначалу пугало, что назовут проклятым. Но сила не бывает без риска. Ради силы я рискну всем.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#008~1": {
+   "src": "Shock! No colors?",
+   "dst": "Шок! Нет цветов?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#009~1": {
+   "src": "Mini-Quest Started: Collect White Lilies",
+   "dst": "Начато мини-задание: Сбор белых лилий",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Mini-Quest Started: Collect Liff Leaves",
+    "file": "quest.json",
+    "ratio": 0.835,
+    "reason": "candidate"
+   }
+  },
+  "Overture to Despair#010~1": {
+   "src": "I only serve customers with something to show me.",
+   "dst": "Обслуживаю только тех, кому есть что мне показать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#011~1": {
+   "src": "Now playing: Status ({p})...",
+   "dst": "Сейчас играет: Status ({p})…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#012~1": {
+   "src": "Do you want to play a song?",
+   "dst": "Сыграть песню?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#013~1": {
+   "src": "- Late checkout will come with a {~}  fine.",
+   "dst": "- За поздний выезд - штраф {~} .",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#014~1": {
+   "src": "You open a page at random...",
+   "dst": "Открываешь случайную страницу…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#015~1": {
+   "src": "Unsurprisingly, it's talking about Majin's love life. You look inside.",
+   "dst": "Неудивительно: тут о личной жизни Majin. Заглядываешь внутрь.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#016~1": {
+   "src": "- No pets allowed.",
+   "dst": "- С животными нельзя.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#017~1": {
+   "src": "The painting most likely symbolises the destruction of the Auburn of old and the hope of a better time to come.",
+   "dst": "Картина, скорее всего, символизирует гибель старого Auburn и надежду на лучшие времена.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#018~1": {
+   "src": "Painted in {~}NA by Piju Rae. This oil masterpiece embraces revolutionary color techniques using pigments sourced from the highland dye production.",
+   "dst": "Написана в {~}NA художником Piju Rae. Этот шедевр маслом использует новаторские техники цвета и пигменты с горных красильных производств.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#019~1": {
+   "src": "Yes, hello, you staring at me from across the desk, give me a moment I've ran out of ink.",
+   "dst": "Да, здравствуй, ты, что пялишься на меня через стол, дай минутку, у меня кончились чернила.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#020~1": {
+   "src": "To a lesser extent we also monitor trade between the other districts in Fruma, including anything transported via rail.",
+   "dst": "Также мы следим за торговлей между районами Fruma, включая всё, что везут по железной дороге.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#021~1": {
+   "src": "Elemental Magic",
+   "dst": "Магия стихий",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#022~1": {
+   "src": "Life is built for strength",
+   "dst": "Жизнь создана для силы",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#023~1": {
+   "src": "Heather is a simple starting plant to grow in the {p}. Any acidic soil from the {p} can be used in the gardening bed or flower pot.",
+   "dst": "Heather - простое растение для начинающих в {p}. Любую кислую почву из {p} можно брать для грядки или горшка.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#024~1": {
+   "src": "Excuse me. It has been a long day. Again, any questions?",
+   "dst": "Прошу прощения. День был долгим. Итак, ещё вопросы?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#025~1": {
+   "src": "To keep it working as intended, the power to issue death sentences should be limited. Giving one trusted official, besides Her Majesty, the right to pass",
+   "dst": "Чтобы всё работало как задумано, право на смертные приговоры надо ограничить. Дать одному доверенному чиновнику, кроме Её Величества, право выносить",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#026~1": {
+   "src": "Petals fall upon our fate",
+   "dst": "Лепестки падают на нашу судьбу",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#027~1": {
+   "src": "Would you like to keep reading?",
+   "dst": "Читать дальше?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#028~1": {
+   "src": "Right. that is the thirty first time I have had to write that sentence today, the third pot of ink I've been through, and my hands are starting to shake.",
+   "dst": "Так. Это тридцать первый раз за сегодня, когда я пишу это предложение, третья банка чернил, и у меня начинают трястись руки.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#029~1": {
+   "src": "Do you want to get some ice?",
+   "dst": "Хочешь раздобыть льда?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#030~1": {
+   "src": "Paper published and written by Majin in {~}IA.",
+   "dst": "Статья написана и опубликована Majin в {~}IA.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#031~1": {
+   "src": "The Hope in the Depths",
+   "dst": "Надежда в глубинах",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#032~1": {
+   "src": "[+{~} {p} Clothes]",
+   "dst": "[+{~} Одежда {p}]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#033~1": {
+   "src": "You are gripped by terror. You can't bear to read more.",
+   "dst": "Тебя охватывает ужас. Читать дальше невыносимо.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#034~1": {
+   "src": "\"SO YEAH, OF COURSE WE'RE GOING TO REPEAT A FEW QUESTIONS. ALRIGHT? GET OVER YOURSELVES.\"",
+   "dst": "«ТАК ЧТО ДА, КОНЕЧНО, МЫ ПОВТОРИМ ПАРУ ВОПРОСОВ. ЯСНО? НЕ ЗАДИРАЙТЕ НОС.»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#035~1": {
+   "src": "There's a picture of a funny looking fish. The headline reads as follows:",
+   "dst": "Там фото смешной рыбы. Заголовок гласит:",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#036~1": {
+   "src": "New Chapter Started: Blossom of Blades",
+   "dst": "Новая глава: Цветение клинков",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#037~1": {
+   "src": "\"Fish Experts Warn Dangerous New Invasive Fish Headed For {p}. Its Diet? Your-\"",
+   "dst": "«Рыбоведы предупреждают: опасная новая инвазивная рыба движется к {p}. Чем она питается? Вашими-»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#106~1": {
+   "src": "Here, the cheapest I have available. In total, that will cost you... {~} .",
+   "dst": "Вот, самое дешёвое, что у меня есть. Итого с тебя… {~} .",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 2",
+   "speaker": "Clothes Merchant",
+   "source": "wiki"
+  },
+  "Overture to Despair#107~1": {
+   "src": "Where regions meet through lines of burrowed steel.",
+   "dst": "Где края встречаются по линиям зарытой стали.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#125~1": {
+   "src": "I see. I see. That certainly complicates things...",
+   "dst": "Понятно. Понятно. Это, конечно, всё усложняет…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 3",
+   "speaker": "Receptionist",
+   "source": "wiki"
+  },
+  "Overture to Despair#126~1": {
+   "src": "\"Day after day, the voices greet the seekers. Identify the truth, and read the secrets printed.\"",
+   "dst": "«День за днём голоса встречают ищущих. Распознай правду и прочти напечатанные тайны.»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#227~1": {
+   "src": "I'm... feeling a lot better now. Um... what should we do now, then? While we... wait for midnight.",
+   "dst": "Мне… гораздо лучше. Эм… и что нам теперь делать? Пока мы… ждём полуночи.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 10",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "Overture to Despair#228~1": {
+   "src": "I long for a worthy opponent, someone I can fully explore the depths of the endless cosmos with. Maybe then my hunger will be satiated.",
+   "dst": "Я жажду достойного противника, с кем можно познать глубины бескрайнего космоса. Может, тогда мой голод утихнет.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#242~1": {
+   "src": "I'm... ugh. I'm still so angry. At... everything! The crown, the sovereigns, the... the people of {p}, too!! For... for still living their lives, even... even when it feels like the world's ended.",
+   "dst": "Я… ух. Во мне всё ещё столько злости. На… всё! На корону, суверенов, на… на жителей {p} тоже!! За то… что они живут себе дальше, даже… даже когда кажется, что мир рухнул.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 11",
+   "speaker": "Sui",
+   "source": "wiki"
+  },
+  "Overture to Despair#243~1": {
+   "src": "[+{~} Letter]",
+   "dst": "[+{~} Письмо]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#392~1": {
+   "src": "I mean, really, what use could I actually have had for those two? Waste my efforts pulling information out of them that I already know?",
+   "dst": "Ну правда, какой мне был толк от этих двоих? Тратить силы, вытягивая из них то, что я и так знаю?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 15",
+   "speaker": "Sovereign Majin",
+   "source": "wiki"
+  },
+  "Overture to Despair#393~1": {
+   "src": "You tell her how you finally killed it. How it fought, and fought, and fought, but could not take you down. How the Light was freed from the Shadows.",
+   "dst": "Ты рассказываешь, как в итоге удалось его убить. Как оно билось, билось и билось, но не одолело тебя. Как Свет освободился от Теней.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#642": {
+   "src": "...from the moment of conception, It was given nothing. It was Their hatred, Their disdain, Their battlefield, suddenly given the mind to think and form to feel.",
+   "dst": "…с момента зачатия Ему не дали ничего. Оно было Их ненавистью, Их презрением, Их полем битвы, вдруг получившим разум, чтобы думать, и форму, чтобы чувствовать.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "Stage 20",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "Overture to Despair#643": {
+   "src": "...but we have some hope. F-finally. Rex and Zeph... there's still a chance. There's still a chance we'll get to see them again.",
+   "dst": "…но у нас есть надежда. Н-наконец. Rex и Zeph… ещё есть шанс. Шанс, что мы снова их увидим.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#644": {
+   "src": "\"Rooted deep atop the house of wealth and greed, the branches hear the whispers on the breeze.\"",
+   "dst": "«Укоренившись на вершине дома богатства и жадности, ветви слышат шёпот ветра.»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#645": {
+   "src": "You tell her about entering the portal with Lari. About seeing the realm's connections severed, made smaller.",
+   "dst": "Ты рассказываешь ей, как вы с Lari вошли в портал. Как стало видно, что связи царства разорваны и сжаты.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#646": {
+   "src": "\"The whispers speak of unity, called forth where regions meet through lines of burrowed steel.\"",
+   "dst": "«Шёпот говорит о единстве, призванном там, где края встречаются по линиям зарытой стали.»",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#647": {
+   "src": "You tell her about fighting through the nexus. About the battle between Light and Dark ongoing within.",
+   "dst": "Ты рассказываешь ей о бое на пути через средоточие. О битве Света и Тьмы, что идёт внутри.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Overture to Despair#648": {
+   "src": "Casting simple spells drawing power from the cosmos feels like holding fragile explosives in my hand. One wrong move and I'm afraid it will swallow me, or the world, whole.",
+   "dst": "Творить простые чары силой космоса - всё равно что держать в руке хрупкую взрывчатку. Один неверный шаг, и, боюсь, она поглотит меня или весь мир.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Overture to Despair",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
   }
  }
 }

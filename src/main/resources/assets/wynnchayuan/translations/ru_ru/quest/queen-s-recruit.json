@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Queen's Recruit",
   "count": 675,
-  "translated": 666,
+  "translated": 697,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -6754,6 +6754,322 @@
    "quest": "Queen's Recruit",
    "stage": "Stage 26",
    "speaker": "Aelumia Guard",
+   "source": "wiki"
+  },
+  "Queen's Recruit#000~1": {
+   "src": "Mel and Lanu, you'll be in E{~}.",
+   "dst": "Mel и Lanu, вы в E{~}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#001~1": {
+   "src": "Room W{~}... Now get going. I have a lot of rooms to assign...",
+   "dst": "Комната W{~}… А теперь идите. Мне ещё много комнат распределять…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#012~1": {
+   "src": "Pardon me, excuse me- coming through! Coming through! Ah, you two! Just the folks I was looking for.",
+   "dst": "Простите, извините - дайте пройти! Дайте пройти! А, вы двое! Как раз вас-то мне и надо.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 1",
+   "speaker": "Ragni Courier",
+   "source": "wiki"
+  },
+  "Queen's Recruit#098~1": {
+   "src": "...I'll get right to the point. We find ourselves in a very delicate position when it comes to our relations with our neighboring province, Fruma.",
+   "dst": "…Перейду сразу к делу. Наши отношения с соседней провинцией Fruma сейчас весьма щекотливы.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 2",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "Queen's Recruit#099~1": {
+   "src": "....hm.",
+   "dst": "….хм.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#100~1": {
+   "src": "Someone's at the door.",
+   "dst": "Кто-то у двери.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#101~1": {
+   "src": "Good. I guess that makes two of us.",
+   "dst": "Хорошо. Похоже, нас двое таких.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#102~1": {
+   "src": "It sounds very suspicious. Why the sudden interest? Why now?",
+   "dst": "Звучит очень подозрительно. Откуда вдруг интерес? Почему сейчас?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#108~1": {
+   "src": "Ugh, we're not just going along with this, are we?",
+   "dst": "Ух, мы ведь не станем просто подыгрывать?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Linton",
+   "source": "wiki"
+  },
+  "Queen's Recruit#115~1": {
+   "src": "...even those of us with bad experiences with the province?",
+   "dst": "…даже те, у кого с провинцией плохой опыт?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Reynauld",
+   "source": "wiki"
+  },
+  "Queen's Recruit#118~1": {
+   "src": "That is the plan, indeed! I'll explain more once we're there, but I believe we're on a time limit, correct?",
+   "dst": "Именно таков план! Подробнее объясню на месте, но у нас ведь мало времени, верно?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Dr. Picard",
+   "source": "wiki"
+  },
+  "Queen's Recruit#186~1": {
+   "src": "Linton and Kymer are in W{~}.",
+   "dst": "Linton и Kymer в W{~}.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Linton and Kymer are in W2.",
+    "file": "quest/queen-s-recruit.json",
+    "ratio": 0.929,
+    "reason": "placeholders"
+   }
+  },
+  "Queen's Recruit#232~1": {
+   "src": "There are others. Though, none could attend this event - they find themselves occupied with various assignments.",
+   "dst": "Есть и другие. Но никто не смог прийти - у всех свои поручения.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 5",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "Queen's Recruit#233~1": {
+   "src": "Ah, there we are. Tasim and {u}, you'll be in room W{~}... in the western wing.",
+   "dst": "А, вот. Tasim и {u}, вы в комнате W{~}… в западном крыле.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#234~1": {
+   "src": "'Cause I'm fast and stealthy. Gotta run now, I don't want to draw the guards' attention. Remember, room W{~}!",
+   "dst": "Потому что скорость и скрытность - моё всё. Мне пора, не хочу привлечь стражу. Помните, комната W{~}!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#235~1": {
+   "src": "New Chapter Started: Homecoming",
+   "dst": "Новая глава: Возвращение домой",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#291~1": {
+   "src": "But, okay, we're in private now. So... what do you actually think of the tournament? It's weird, right? Why would we be invited just for this?",
+   "dst": "Но ладно, теперь мы одни. Так… что ты на самом деле думаешь о турнире? Странно же? Зачем звать нас ради этого?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Queen's Recruit#309~1": {
+   "src": "Ha! Yeah, alright. I’m a little excited, too. I haven’t had any friendly duels for a long time, so maybe it’ll be nice to test my strength.",
+   "dst": "Ха! Да, ладно. Я тоже немного волнуюсь. Давно не было дружеских поединков, может, и приятно будет проверить силы.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Queen's Recruit#319~1": {
+   "src": "Picard says we should talk about what we've got so far. He also said to space out people coming to the room- so wait a few minutes before stopping by!",
+   "dst": "Picard говорит, надо обсудить, что мы уже узнали. И велел не идти в комнату толпой - так что подождите пару минут!",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Linton",
+   "source": "wiki"
+  },
+  "Queen's Recruit#349~1": {
+   "src": "Seems likely to me they want us t' feel safe and trusted. They've got to know we'll be talkin' about everything we see, so why not leave a good impression, eh?",
+   "dst": "По-моему, они хотят, чтоб мы чувствовали себя в безопасности. Знают ведь, что мы всё расскажем, так чего б не произвести хорошее впечатление?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 9",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "Queen's Recruit#350~1": {
+   "src": "A strong spell should get through this wood without a problem.",
+   "dst": "Сильное заклинание должно без труда пробить эти доски.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#357~1": {
+   "src": "Yes, that I am... well, it seems our most promising lead is the Sovereigns. We'll want to focus on them- though, do not neglect general information. We still want to know as much about Fruma as possible.",
+   "dst": "Да, это я… что ж, самая многообещающая зацепка - Суверены. На них и сосредоточимся, но не пренебрегайте общими сведениями. Нам нужно узнать о Fruma как можно больше.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 9",
+   "speaker": "Dr. Picard",
+   "source": "wiki"
+  },
+  "Queen's Recruit#417~1": {
+   "src": "Yes, someone will be with you shortly. Just sit on the sidelines and twiddle your thumbs, or whatever you do- you certainly aren't my problem anymore.",
+   "dst": "Да, скоро к тебе подойдут. Сиди в сторонке и крути пальцами или что ты там делаешь - ты теперь точно не моя забота.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 11",
+   "speaker": "Sovereign Majin",
+   "source": "wiki"
+  },
+  "Queen's Recruit#418~1": {
+   "src": "Tasim must be back...",
+   "dst": "Tasim, должно быть, вернулся…",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#419~1": {
+   "src": "There's no response.",
+   "dst": "Никто не отвечает.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#420~1": {
+   "src": "Names?",
+   "dst": "Имена?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#554~1": {
+   "src": "Another taste of Fruman cuisine... the meat was imported from the {p}, and the vegetables came from our royal garden.",
+   "dst": "Ещё одно блюдо кухни Fruma… мясо из {p}, а овощи из королевского сада.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "Queen's Recruit#567~1": {
+   "src": "The greatest that Wynn has... a broad category. We had to thin the numbers - a contest of strength did the job nicely.",
+   "dst": "Лучшие, что есть в Wynn… широкое понятие. Пришлось сократить число - состязание силы отлично справилось.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 19",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "Queen's Recruit#585~1": {
+   "src": "...right. A weird conversation, then?",
+   "dst": "…ясно. Значит, странный разговор?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 20",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Queen's Recruit#654~1": {
+   "src": "No- don't deny it. We both know I'm right.",
+   "dst": "Нет - не отрицай. Мы оба знаем, что это так.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 23",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Queen's Recruit#658~1": {
+   "src": "I... I need to think it over some more. And we both need to rest.",
+   "dst": "Мне… мне нужно ещё подумать. И нам обоим нужно отдохнуть.",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 23",
+   "speaker": "Tasim",
    "source": "wiki"
   }
  }

@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Dwarves and Doguns Part II",
   "count": 80,
-  "translated": 80,
+  "translated": 92,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -803,6 +803,132 @@
    "kind": "dialogue",
    "quest": "Dwarves and Doguns Part II",
    "stage": "Stage 12",
+   "speaker": "Axelus",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#000~1": {
+   "src": "The Royal Guards escort you and Axelus out of the palace.",
+   "dst": "皇家卫兵把你和 Axelus 押出了宫殿。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#001~1": {
+   "src": "Aval...would have us...leave the Heights... But we...would not survive...in large numbers.",
+   "dst": "Aval……希望我们……离开高地……但我们……大批迁徙的话……活不下去。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Aval... would have us... leave the Heights... But we... would not survive.",
+    "file": "quest/dwarves-and-doguns-part-ii.json",
+    "ratio": 0.866,
+    "reason": "candidate"
+   }
+  },
+  "Dwarves and Doguns Part II#003~1": {
+   "src": "You are so young...to be fighting...a war so old. Still...it is appreciated.",
+   "dst": "你如此年轻……却要投身……一场如此古老的战争。即便如此……我们心怀感激。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 1",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#004~1": {
+   "src": "Why...would we trust... Why...would we trust... you...of all Dwarves?",
+   "dst": "为什么……我们要相信……为什么……我们要相信……偏偏是你这个矮人？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#005~1": {
+   "src": "We heard what happened, {u}.",
+   "dst": "我们听说发生的事了，{u}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#006~1": {
+   "src": "The war...to you, it would be...ages ago. But...when one has lived for...{~} years...",
+   "dst": "那场战争……对你而言……已是很久以前。但是……当一个人活了……{~} 年……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 1",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#007~1": {
+   "src": "Are you lost? Why would anyone ever come down here?",
+   "dst": "你迷路了吗？怎么会有人跑到这底下来？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#010~1": {
+   "src": "I am sorry...to welcome you all...in such troubled times.",
+   "dst": "很抱歉……要在这样艰难的时刻……欢迎各位。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#013~1": {
+   "src": "We must...evacuate the settlement...immediately. They...are coming...again.",
+   "dst": "我们必须……立刻……撤离聚落。他们……又要来了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
+   "speaker": "Dogun Chieftain",
+   "source": "wiki"
+  },
+  "Dwarves and Doguns Part II#014~1": {
+   "src": "[New Quest Started: Dwarves and Doguns Part II]",
+   "dst": "[新任务开始：矮人与 Dogun 第二部]",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#015~1": {
+   "src": "If you can get up there you can help yourself to it.",
+   "dst": "你要是爬得上去，就尽管自己拿吧。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Dwarves and Doguns Part II#025~1": {
+   "src": "The human and I will sneak into the armoury and sabotage their equipment. Korzim will help you Doguns evacuate someplace safer.",
+   "dst": "我和这个人类潜入兵工厂，破坏他们的装备。Korzim 会帮你们 Dogun 撤到更安全的地方。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dwarves and Doguns Part II",
+   "stage": "Stage 2",
    "speaker": "Axelus",
    "source": "wiki"
   }

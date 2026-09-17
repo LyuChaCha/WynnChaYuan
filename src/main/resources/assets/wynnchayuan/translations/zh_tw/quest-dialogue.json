@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 22916,
-  "translated": 22859,
+  "count": 22917,
+  "translated": 22860,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -51724,6 +51724,16 @@
    "kind": "dialogue",
    "quest": "Dearly Departed",
    "source": "capture"
+  },
+  "Dearly Departed#060": {
+   "src": "{#} Strength is handy if you're having a tough time taking down enemies. It makes your attacks hit harder, simple as.",
+   "dst": "{#} 力量在你打不動敵人的時候很有用。它讓你的攻擊更痛，就這麼簡單。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Dearly Departed",
+   "stage": "Stage 3",
+   "speaker": "Farmer Cevalus",
+   "source": "captured"
   },
   "Death Whistle (Quest)#000": {
    "src": "Talk to Voer at [-{~}, {~}, -{~}].",

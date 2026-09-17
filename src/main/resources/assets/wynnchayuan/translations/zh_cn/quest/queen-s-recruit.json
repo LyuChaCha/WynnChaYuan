@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "Queen's Recruit",
   "count": 675,
-  "translated": 675,
+  "translated": 706,
   "note": "一个任务一个文件。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -6754,6 +6754,322 @@
    "quest": "Queen's Recruit",
    "stage": "Stage 26",
    "speaker": "Aelumia Guard",
+   "source": "wiki"
+  },
+  "Queen's Recruit#000~1": {
+   "src": "Mel and Lanu, you'll be in E{~}.",
+   "dst": "Mel 和 Lanu，你们住 E{~}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#001~1": {
+   "src": "Room W{~}... Now get going. I have a lot of rooms to assign...",
+   "dst": "W{~} 号房……好了快走吧。我还有一大堆房间要分……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#012~1": {
+   "src": "Pardon me, excuse me- coming through! Coming through! Ah, you two! Just the folks I was looking for.",
+   "dst": "抱歉借过，借过一下！借过！啊，你们两位！我正要找你们。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 1",
+   "speaker": "Ragni Courier",
+   "source": "wiki"
+  },
+  "Queen's Recruit#098~1": {
+   "src": "...I'll get right to the point. We find ourselves in a very delicate position when it comes to our relations with our neighboring province, Fruma.",
+   "dst": "……我就直说了。在与邻近行省 Fruma 的关系上，我们正处于极其微妙的位置。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 2",
+   "speaker": "King of Ragni",
+   "source": "wiki"
+  },
+  "Queen's Recruit#099~1": {
+   "src": "....hm.",
+   "dst": "……唔。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#100~1": {
+   "src": "Someone's at the door.",
+   "dst": "有人在门口。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#101~1": {
+   "src": "Good. I guess that makes two of us.",
+   "dst": "很好。看来我们两个想的一样。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#102~1": {
+   "src": "It sounds very suspicious. Why the sudden interest? Why now?",
+   "dst": "这听起来非常可疑。为什么突然感兴趣？为什么偏偏是现在？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#108~1": {
+   "src": "Ugh, we're not just going along with this, are we?",
+   "dst": "唉，我们不会真的要照办吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Linton",
+   "source": "wiki"
+  },
+  "Queen's Recruit#115~1": {
+   "src": "...even those of us with bad experiences with the province?",
+   "dst": "……就连我们这些在那个行省有过不好经历的人也是？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Reynauld",
+   "source": "wiki"
+  },
+  "Queen's Recruit#118~1": {
+   "src": "That is the plan, indeed! I'll explain more once we're there, but I believe we're on a time limit, correct?",
+   "dst": "正是这个打算！细节等我们到了那边再说明，不过我们应该有时间限制，对吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 2",
+   "speaker": "Dr. Picard",
+   "source": "wiki"
+  },
+  "Queen's Recruit#186~1": {
+   "src": "Linton and Kymer are in W{~}.",
+   "dst": "Linton 和 Kymer 住 W{~}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured",
+   "similar": {
+    "text": "Linton and Kymer are in W2.",
+    "file": "quest/queen-s-recruit.json",
+    "ratio": 0.929,
+    "reason": "placeholders"
+   }
+  },
+  "Queen's Recruit#232~1": {
+   "src": "There are others. Though, none could attend this event - they find themselves occupied with various assignments.",
+   "dst": "还有其他人。不过这次都没能出席，他们手上各有任务在身。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 5",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "Queen's Recruit#233~1": {
+   "src": "Ah, there we are. Tasim and {u}, you'll be in room W{~}... in the western wing.",
+   "dst": "啊，找到了。Tasim 和 {u}，你们住 W{~} 号房……在西翼。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#234~1": {
+   "src": "'Cause I'm fast and stealthy. Gotta run now, I don't want to draw the guards' attention. Remember, room W{~}!",
+   "dst": "因为我腿脚快又擅长潜行。我得走了，不想引起卫兵注意。记住，W{~} 号房！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#235~1": {
+   "src": "New Chapter Started: Homecoming",
+   "dst": "新章节开始：归乡",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#291~1": {
+   "src": "But, okay, we're in private now. So... what do you actually think of the tournament? It's weird, right? Why would we be invited just for this?",
+   "dst": "不过，好了，现在就我们两个。所以……你到底怎么看这场锦标赛？很怪吧？为什么要为了这个把我们请来？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Queen's Recruit#309~1": {
+   "src": "Ha! Yeah, alright. I’m a little excited, too. I haven’t had any friendly duels for a long time, so maybe it’ll be nice to test my strength.",
+   "dst": "哈！好吧，说得也是。我也有点期待。我很久没跟人友好地切磋了，能试试自己的实力说不定挺好的。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Queen's Recruit#319~1": {
+   "src": "Picard says we should talk about what we've got so far. He also said to space out people coming to the room- so wait a few minutes before stopping by!",
+   "dst": "Picard 说我们该把目前掌握的东西汇总一下。他还说进房间的人要错开时间，所以等几分钟再过来！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 8",
+   "speaker": "Linton",
+   "source": "wiki"
+  },
+  "Queen's Recruit#349~1": {
+   "src": "Seems likely to me they want us t' feel safe and trusted. They've got to know we'll be talkin' about everything we see, so why not leave a good impression, eh?",
+   "dst": "看来他们是想让我们觉得安全、受到信任。他们肯定知道我们会把看到的一切都说出去，那何不留个好印象，是吧？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 9",
+   "speaker": "Jenprest",
+   "source": "wiki"
+  },
+  "Queen's Recruit#350~1": {
+   "src": "A strong spell should get through this wood without a problem.",
+   "dst": "用强一点的法术，应该能轻松打穿这块木头。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#357~1": {
+   "src": "Yes, that I am... well, it seems our most promising lead is the Sovereigns. We'll want to focus on them- though, do not neglect general information. We still want to know as much about Fruma as possible.",
+   "dst": "是，正是我……嗯，看来我们最有希望的线索就是那几位统领。我们要把重心放在他们身上，不过，一般情报也别忽略。我们还是想尽可能多了解 Fruma。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 9",
+   "speaker": "Dr. Picard",
+   "source": "wiki"
+  },
+  "Queen's Recruit#417~1": {
+   "src": "Yes, someone will be with you shortly. Just sit on the sidelines and twiddle your thumbs, or whatever you do- you certainly aren't my problem anymore.",
+   "dst": "是的，很快就会有人来找你。你就坐在场边玩手指，或者随便你干什么，反正你已经不是我的问题了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 11",
+   "speaker": "Sovereign Majin",
+   "source": "wiki"
+  },
+  "Queen's Recruit#418~1": {
+   "src": "Tasim must be back...",
+   "dst": "Tasim 肯定回来了……",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#419~1": {
+   "src": "There's no response.",
+   "dst": "没有回应。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#420~1": {
+   "src": "Names?",
+   "dst": "名字？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "",
+   "speaker": "",
+   "source": "captured"
+  },
+  "Queen's Recruit#554~1": {
+   "src": "Another taste of Fruman cuisine... the meat was imported from the {p}, and the vegetables came from our royal garden.",
+   "dst": "再尝一次 Fruma 的菜肴……肉是从 {p} 进口的，蔬菜则出自皇家花园。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 18",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "Queen's Recruit#567~1": {
+   "src": "The greatest that Wynn has... a broad category. We had to thin the numbers - a contest of strength did the job nicely.",
+   "dst": "Wynn 最杰出的人，这个范围太宽了。我们必须把人数筛下来，一场实力的较量正好办到了这件事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 19",
+   "speaker": "Her Majesty",
+   "source": "wiki"
+  },
+  "Queen's Recruit#585~1": {
+   "src": "...right. A weird conversation, then?",
+   "dst": "……原来如此。所以是一场很怪的对话？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 20",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Queen's Recruit#654~1": {
+   "src": "No- don't deny it. We both know I'm right.",
+   "dst": "不，别否认。我们心里都清楚我说得对。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 23",
+   "speaker": "Tasim",
+   "source": "wiki"
+  },
+  "Queen's Recruit#658~1": {
+   "src": "I... I need to think it over some more. And we both need to rest.",
+   "dst": "我……我需要再想想。而且我们两个都得休息了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Queen's Recruit",
+   "stage": "Stage 23",
+   "speaker": "Tasim",
    "source": "wiki"
   }
  }

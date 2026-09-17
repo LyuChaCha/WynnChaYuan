@@ -2,7 +2,7 @@
  "_meta": {
   "quest": "King's Recruit",
   "count": 128,
-  "translated": 0,
+  "translated": 3,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
@@ -548,7 +548,7 @@
   },
   "King's Recruit#054": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 경비병과 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -648,7 +648,7 @@
   },
   "King's Recruit#064": {
    "src": "Talk to the Guard at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 경비병과 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "King's Recruit",
@@ -1278,6 +1278,14 @@
    "quest": "King's Recruit",
    "stage": "Stage 12",
    "speaker": "Guard",
+   "source": "capture"
+  },
+  "King's Recruit#126~1": {
+   "src": "Well, what are you waiting for?",
+   "dst": "자, 뭘 기다리는 거야?",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "King's Recruit",
    "source": "capture"
   }
  }
