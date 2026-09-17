@@ -1,12 +1,39 @@
 {
  "note": "目前最新的版本與各版的更新內容。模組會在啟動時讀線上這一份（跟譯文同一套來源），所以發了新版只要改這個檔，玩家進遊戲就會看到提示——不必等他們自己去逛下載頁。同一份也打包進 jar，斷網時 F6 的『本版更新內容』照樣看得到。notes 的每一版預設寫英文；要哪一種語言另一套說法，就在那一版底下加一個語言代碼的物件（見 0.1.1 的 zh_tw / zh_cn）。latest 必須跟 gradle.properties 的 mod_version 一致，validate 會檢查。",
- "latest": "0.2.0_3",
+ "latest": "0.2.0_4",
  "download": {
   "curseforge": "https://www.curseforge.com/minecraft/mc-mods/wynnchayuan",
   "modrinth": "https://modrinth.com/mod/wynnchayuan",
   "github": "https://github.com/LyuChaCha/WynnChaYuan/releases/latest"
  },
  "notes": {
+  "0.2.0_4": {
+   "headline": "Quest guide names, held item names and aspect sockets are translated",
+   "items": [
+    "Wynntils quest guide markers show the translated quest name",
+    "New F6 switch: translate the item name shown when you switch held items (off by default)",
+    "\"+ New Quest\" in level-up messages keeps its light grey colour",
+    "More translations: new Cook Assistant dialogue, locked and empty aspect sockets, class requirements on aspects, objective and quest item lines"
+   ],
+   "zh_tw": {
+    "headline": "任務指引、手持物品名稱與意象插槽也會翻譯",
+    "items": [
+     "Wynntils 任務指引的標記顯示翻譯後的任務名",
+     "F6 新增開關：切換手持物品時跳出的名稱也翻譯（預設關閉）",
+     "升級訊息裡的「+ 新任務」維持原本的淺灰色",
+     "補上語料：Cook Assistant 新對話、鎖定與空的意象插槽、意象的職業需求、目標與任務物品訊息"
+    ]
+   },
+   "zh_cn": {
+    "headline": "任务指引、手持物品名称与特质插槽也会翻译",
+    "items": [
+     "Wynntils 任务指引的标记显示翻译后的任务名",
+     "F6 新增开关：切换手持物品时弹出的名称也翻译（默认关闭）",
+     "升级消息里的「+ 新任务」保持原本的浅灰色",
+     "补充语料：Cook Assistant 新对话、锁定与空的特质插槽、特质的职业需求、目标与任务物品消息"
+    ]
+   }
+  },
   "0.2.0_3": {
    "headline": "Dialogue no longer freezes halfway",
    "items": [

@@ -4,8 +4,8 @@
   "domain": "quest-dialogue",
   "itemNames": false,
   "lang": "zh_tw",
-  "count": 22898,
-  "translated": 22841,
+  "count": 22916,
+  "translated": 22859,
   "note": "任務對話。這個檔案是<b>產生物</b>——請改 quest/ 底下對應任務的檔案，再跑 tools/quest-bundle.py。直接改這裡下次會被蓋掉。"
  },
  "entries": {
@@ -47260,6 +47260,186 @@
    "kind": "dialogue",
    "quest": "Cook Assistant",
    "source": "capture"
+  },
+  "Cook Assistant#020": {
+   "src": "Hey there! You must be new around here too, right? I'm Afelis, and you are...?",
+   "dst": "嘿！你也是剛來這裡的吧？我是 Afelis，你是……？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#021": {
+   "src": "{u}! Nice to meet you! I haven't been here in {p} for long myself... still trying to figure things out.",
+   "dst": "{u}！很高興認識你！我自己也才來 {p} 沒多久……還在摸索中。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#022": {
+   "src": "It's a bit overwhelming, isn't it? A whole new world to explore, and so many people who need help.",
+   "dst": "有點讓人不知所措，對吧？一整個等著探索的新世界，還有好多需要幫助的人。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#023": {
+   "src": "I just... I really want to do something that matters, you know? I mean, I came all this way for a reason.",
+   "dst": "我只是……我真的很想做點有意義的事，你懂嗎？我是說，我大老遠跑來總有個理由。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#024": {
+   "src": "I want to protect people, make their lives better, if I can. Maybe we can figure this out together?",
+   "dst": "如果可以的話，我想保護大家，讓他們過得更好。也許我們可以一起想辦法？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#025": {
+   "src": "Maybe we can figure this out together?",
+   "dst": "也許我們可以一起想辦法？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#026": {
+   "src": "Oh, well, nice to meet you!",
+   "dst": "喔，那，很高興認識你！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#027": {
+   "src": "Hey {u}! What's up?",
+   "dst": "嘿，{u}！怎麼啦？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#028": {
+   "src": "Hmm... honestly, no. It's strange, isn't it? I don't remember much of anything.",
+   "dst": "嗯……老實說，不記得。很奇怪吧？我幾乎什麼都想不起來。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#029": {
+   "src": "Just a vague feeling of... something, maybe, but nothing I could describe.",
+   "dst": "只有一種模糊的感覺……好像有什麼，但我說不上來。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#030": {
+   "src": "So, here I am, I guess! Wynn's where I'll start making memories that count!",
+   "dst": "所以我就在這裡啦！我要在 Wynn 開始留下真正重要的回憶！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#031": {
+   "src": "Oh, there's so much I want to do! I thought I'd begin by helping out around {p}, maybe even in {p} once I've gotten stronger.",
+   "dst": "喔，我想做的事可多了！我打算先從在 {p} 附近幫忙開始，等我變強一點，說不定還能去 {p}。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#032": {
+   "src": "I've heard {p} needs all the help it can get, and I want to make sure I'm ready.",
+   "dst": "我聽說 {p} 非常需要人手，我想確定自己準備好了。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#033": {
+   "src": "And then... who knows! Anywhere people need someone to lend a hand, I'll be there!",
+   "dst": "然後呢……誰知道！只要有人需要幫忙，我就會出現！",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#034": {
+   "src": "Oh, well... I think it's because there's so much good we can do, even in a place like this.",
+   "dst": "喔，這個嘛……我想是因為，就算在這種地方，我們還是能做很多好事。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#035": {
+   "src": "It's not just about fighting, it's about being there for people, making sure they feel safe.",
+   "dst": "重點不只是戰鬥，而是陪在大家身邊，讓他們覺得安心。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#036": {
+   "src": "I know the world has its dark parts, but I'd like to think that maybe, if I keep looking for the good, I can help others see it too.",
+   "dst": "我知道這世界有它黑暗的一面，但我願意相信，只要我一直去尋找美好，也許就能幫別人看見它。",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
+  },
+  "Cook Assistant#037": {
+   "src": "Doesn't that sound worth fighting for?",
+   "dst": "這難道不值得為之奮鬥嗎？",
+   "role": "desc",
+   "kind": "dialogue",
+   "quest": "Cook Assistant",
+   "stage": "",
+   "speaker": "Afelis",
+   "source": "captured"
   },
   "Corrupted Betrayal#000": {
    "src": "In {~} AP, {p} was on its knees. Hordes of undead were crippling the army and castle.",

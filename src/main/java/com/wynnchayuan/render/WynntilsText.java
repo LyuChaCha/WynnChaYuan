@@ -216,6 +216,74 @@ public final class WynntilsText {
         return translated == null ? text : translated.getString();
     }
 
+    /** mixin 的入口：Wynntils 任務指引標記底下那行字。見 {@code WaypointTextMixin}。 */
+    public static String marker(String text) {
+        try {
+            return marker(text, WynnChaYuan.config(), WynnChaYuan.translations());
+        } catch (Throwable t) {
+            return text;
+        }
+    }
+
+    /**
+     * 任務指引的標記文字（通常就是任務名）。
+     *
+     * <p>跟追蹤欄同一個開關：追蹤欄關掉翻譯的人，指引也照原文。
+     * 每一幀每個標記都會問一次，所以記住上一次的答案——語料換了就整份清掉。
+     *
+     * @return 翻好的字；不該換或翻不出來時原樣回傳
+     */
+    static String marker(String text, CollectorConfig config, TranslationStore store) {
+        if (text == null || text.isBlank() || store == null || config == null
+                || config.trackerMode() == CollectorConfig.DialogueMode.OFF) {
+            return text;
+        }
+        synchronized (MARKERS) {
+            if (markerStore != store) {
+                MARKERS.clear();
+                markerStore = store;
+            }
+            String hit = MARKERS.get(text);
+            if (hit == null) {
+                var translated = LineTranslator.translate(StyledText.fromString(text), store);
+                hit = translated == null ? text : StyledText.fromComponent(translated).getString();
+                if (MARKERS.size() > 256) {
+                    MARKERS.clear();
+                }
+                MARKERS.put(text, hit);
+            }
+            return hit;
+        }
+    }
+
+    private static final java.util.Map<String, String> MARKERS = new java.util.HashMap<>();
+    private static TranslationStore markerStore;
+
+    /** mixin 的入口：快捷列上方那行手持物品名稱。見 {@code HeldItemNameMixin}。 */
+    public static net.minecraft.network.chat.Component heldItemName(
+            net.minecraft.network.chat.Component name) {
+        try {
+            return heldItemName(name, WynnChaYuan.config(), WynnChaYuan.translations());
+        } catch (Throwable t) {
+            return name;
+        }
+    }
+
+    /**
+     * 手持物品名稱。F6 開關預設關閉（名稱慣例留英文）。
+     *
+     * @return 翻好的名稱；關掉或翻不出來時原樣回傳
+     */
+    static net.minecraft.network.chat.Component heldItemName(
+            net.minecraft.network.chat.Component name, CollectorConfig config,
+            TranslationStore store) {
+        if (name == null || store == null || config == null || !config.translateHeldItem()) {
+            return name;
+        }
+        var translated = LineTranslator.translate(StyledText.fromComponent(name), store);
+        return translated == null ? name : translated;
+    }
+
     /** 這一塊是追蹤欄嗎。用類別名比對，不必把 Wynntils 的型別帶進來。 */
     private static boolean tracker(Object overlay) {
         return overlay != null && TRACKER.equals(overlay.getClass().getSimpleName());

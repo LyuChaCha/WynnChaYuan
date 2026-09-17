@@ -116,6 +116,14 @@ public final class CollectorConfig {
     private boolean translateObjectives = true;
 
     /**
+     * 切換手上物品時，快捷列上方跳出來的那行名稱要不要翻。
+     *
+     * <p>預設關閉：裝備名稱照慣例留英文，對得上 wiki 與交易市場；
+     * 這個開關給想連那一行都看中文的人自己打開。
+     */
+    private boolean translateHeldItem = false;
+
+    /**
      * 要不要記下最近的聊天訊息，供「複製聊天」使用。
      *
      * <p>跟聊天<b>翻譯</b>是兩回事：翻譯關掉的人一樣可能想複製原文，
@@ -399,6 +407,17 @@ public final class CollectorConfig {
         translateObjectives = !translateObjectives;
         save();
         return translateObjectives;
+    }
+
+    /** 見 {@link #translateHeldItem}。 */
+    public boolean translateHeldItem() {
+        return translateHeldItem;
+    }
+
+    public boolean toggleHeldItem() {
+        translateHeldItem = !translateHeldItem;
+        save();
+        return translateHeldItem;
     }
 
     public boolean marketSearch() {
@@ -1032,6 +1051,7 @@ public final class CollectorConfig {
             trackerMode = DialogueMode.OFF;
         }
         translateObjectives = bool(o, "translateObjectives", translateObjectives);
+        translateHeldItem = bool(o, "translateHeldItem", translateHeldItem);
         marketSearch = bool(o, "marketSearch", marketSearch);
         chatMode = enumOr(o, "chatMode", ChatMode.class, chatMode);
         Boolean overlays = boolOrNull(o, "showOverlays");
@@ -1234,6 +1254,7 @@ public final class CollectorConfig {
             o.addProperty("translateTitles", translateTitles);
             o.addProperty("trackerMode", trackerMode.name());
             o.addProperty("translateObjectives", translateObjectives);
+            o.addProperty("translateHeldItem", translateHeldItem);
             o.addProperty("chatCopy", chatCopy);
             o.addProperty("marketSearch", marketSearch);
             o.addProperty("shotMode", shotMode.name());

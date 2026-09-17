@@ -6,7 +6,9 @@
   "plugin": "com.wynnchayuan.mixin.WynntilsGate",
   "client": [
     "TextOverlayMixin",
-    "WynnObjectiveMixin"
+    "WynnObjectiveMixin",
+    "WaypointTextMixin",
+    "HeldItemNameMixin"
   ],
   "injectors": {
     "defaultRequire": 0

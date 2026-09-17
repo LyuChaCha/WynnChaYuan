@@ -516,6 +516,11 @@ public final class SettingsScreen extends Screen {
                     WynnChaYuan.config().toggleObjectives();
                     b.setMessage(objectiveLabel());
                 });
+        cycle("world.helditem",
+                this::heldItemLabel, b -> {
+                    WynnChaYuan.config().toggleHeldItem();
+                    b.setMessage(heldItemLabel());
+                });
         cycle("world.chatcopy",
                 this::chatCopyLabel, b -> {
                     WynnChaYuan.config().toggleChatCopy();
@@ -837,6 +842,10 @@ public final class SettingsScreen extends Screen {
     private Component objectiveLabel() {
         return ctrl(WynnChaYuan.config().translateObjectives()
                 ? T.s("mode.replace") : T.s("mode.off"));
+    }
+
+    private Component heldItemLabel() {
+        return ctrl(onOff(WynnChaYuan.config().translateHeldItem()));
     }
 
     private Component overlayLabel() {

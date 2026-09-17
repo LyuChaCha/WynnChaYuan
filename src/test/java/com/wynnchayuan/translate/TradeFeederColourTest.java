@@ -88,9 +88,42 @@ public final class TradeFeederColourTest {
                   colourOf(out, c[4]) != PURPLE && colourOf(out, c[4]) != PINK);
         }
 
+        newQuest();
+
         System.out.println(failures == 0 ? "\n交易市場訊息顏色：全部通過"
                 : "\n交易市場訊息顏色：" + failures + " 項失敗");
         System.exit(failures == 0 ? 0 : 1);
+    }
+
+    /**
+     * 升級時的「+ New Quest [Mini-Quest - Slay Spiders]」：前半淺灰、括號深灰。
+     *
+     * <p>括號那段比較長，整行的主色於是是深灰；「+ 新任務」要靠語料裡
+     * 「+ New Quest」那一條認出來，才拿得回淺灰。實機回報整行變深灰。
+     */
+    private static void newQuest() throws Exception {
+        Path dir = Files.createTempDirectory("wynnchayuan-newquest");
+        FlowedDebug.init(dir);
+        com.google.gson.JsonObject root = new com.google.gson.JsonObject();
+        root.addProperty("+ New Quest [Mini-Quest - Slay Spiders]", "+ 新任務 [迷你任務 - 獵殺蜘蛛]");
+        root.addProperty("+ New Quest", "+ 新任務");
+        Files.writeString(dir.resolve("misc.json"), root.toString(), StandardCharsets.UTF_8);
+        TranslationStore store = new TranslationStore();
+        store.loadAll(dir);
+        MutableComponent line = Component.empty();
+        line.append(lit("+ New Quest ", GREY, false));
+        line.append(lit("[Mini-Quest - Slay Spiders]", 0x555555, false));
+        Component out = LineTranslator.translateChat(StyledText.fromComponent(line), store);
+        System.out.println("== 新任務");
+        if (out != null) {
+            for (String row : describe(out)) {
+                System.out.println("  " + row);
+            }
+        }
+        check("「+ 新任務」是淺灰（實際 " + hex(out == null ? -1 : colourOf(out, "新任務")) + "）",
+              out != null && colourOf(out, "新任務") == GREY);
+        check("括號是深灰（實際 " + hex(out == null ? -1 : colourOf(out, "獵殺")) + "）",
+              out != null && colourOf(out, "獵殺") == 0x555555);
     }
 
     /** 實機那則訊息，照 majorid-debug 的「聊天對齊」原文拼回來。 */
