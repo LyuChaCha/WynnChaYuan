@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lost Soles",
   "count": 61,
-  "translated": 0,
+  "translated": 61,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost Soles#000": {
    "src": "Talk to Ferndor at [-{~}, {~}, -{~}], make sure to bring Abysso Galoshes with you.",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에 있는 Ferndor에게 말을 거세요. Abysso Galoshes를 꼭 가져가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -18,7 +18,7 @@
   },
   "Lost Soles#001": {
    "src": "Have you seen boots called Abysso Galoshes on your journey, a pirate stole them from us years ago! I could reward you if you could bring me the Abysso Galoshes and help us!",
-   "dst": "",
+   "dst": "여행 중에 Abysso Galoshes라는 부츠를 본 적 있나요? 몇 년 전 해적이 우리에게서 훔쳐 갔어요! Abysso Galoshes를 가져와 도와주시면 보답할게요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -28,7 +28,7 @@
   },
   "Lost Soles#002": {
    "src": "Bring back Abysso Galoshes, received during the quest Beneath the Depths.",
-   "dst": "",
+   "dst": "퀘스트 Beneath the Depths에서 받은 Abysso Galoshes를 가져오세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -38,7 +38,7 @@
   },
   "Lost Soles#003": {
    "src": "I see you have the infamous galoshes with you. But do you know even half of the story of them?",
-   "dst": "",
+   "dst": "그 악명 높은 부츠를 가지고 계시군요. 하지만 그 이야기를 절반이라도 아세요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -48,7 +48,7 @@
   },
   "Lost Soles#004": {
    "src": "The boots were once owned by my ancestors, who decided to lock it away in this manor years ago.",
-   "dst": "",
+   "dst": "그 부츠는 원래 제 조상들의 것이었는데, 몇 년 전 이 저택에 봉인하기로 했죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -58,7 +58,7 @@
   },
   "Lost Soles#005": {
    "src": "Nobody knows why they decided to hide the boots just after they got into my family's hands. I was told they were acquired from a strange man with pale grey skin.",
-   "dst": "",
+   "dst": "가문 손에 들어오자마자 왜 부츠를 숨겼는지는 아무도 몰라요. 잿빛 피부를 한 이상한 남자에게서 얻었다고만 들었어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -68,7 +68,7 @@
   },
   "Lost Soles#006": {
    "src": "We think they hid the boots in some kind of basement in the manor. You can get to it by following the river to the waterfall, but you will need some kind of code to open it...",
-   "dst": "",
+   "dst": "저택 어딘가의 지하실에 숨긴 것 같아요. 강을 따라 폭포까지 가면 되지만, 열려면 무슨 암호가 필요할 거예요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -78,7 +78,7 @@
   },
   "Lost Soles#007": {
    "src": "I remember Grandon saying that he found a book which is apparently a diary from one of my ancestors. Ever since that filthy pirate raided our home and stole our treasures, weird things have been happening.",
-   "dst": "",
+   "dst": "Grandon이 제 조상 중 한 분의 일기로 보이는 책을 찾았다고 했어요. 그 더러운 해적이 우리 집을 털고 보물을 훔쳐 간 뒤로 이상한 일들이 벌어지고 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -88,7 +88,7 @@
   },
   "Lost Soles#008": {
    "src": "Grandon should already have finished reading it. If I allow you to enter my home, would you talk to him?",
-   "dst": "",
+   "dst": "Grandon은 벌써 다 읽었을 거예요. 집에 들어가게 해 드리면 그와 이야기해 주실래요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -98,7 +98,7 @@
   },
   "Lost Soles#009": {
    "src": "There are strange things going on in this mansion and I hope that book reveals everything we need to know...",
-   "dst": "",
+   "dst": "이 저택에서 이상한 일이 벌어지고 있어요. 그 책에 우리가 알아야 할 모든 게 담겨 있으면 좋겠네요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -108,7 +108,7 @@
   },
   "Lost Soles#010": {
    "src": "I almost forgot to give you your boots back, I am not sure if I want to have them near me. Remember, it is imperative you find the {~} digit code to the basement.",
-   "dst": "",
+   "dst": "부츠 돌려드리는 걸 깜빡할 뻔했네요, 제 곁에 두고 싶진 않거든요. 꼭 지하실의 {~}자리 암호를 찾아야 해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -118,7 +118,7 @@
   },
   "Lost Soles#011": {
    "src": "Visit the mansion dining room and ask Grandon about the book",
-   "dst": "",
+   "dst": "저택 식당에 가서 Grandon에게 책에 대해 물어보세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -128,7 +128,7 @@
   },
   "Lost Soles#012": {
    "src": "Ferndor sent you here, correct? That must mean you’re here to help find the hidden {~} digit code in the manor.",
-   "dst": "",
+   "dst": "Ferndor가 보냈죠? 그럼 저택에 숨겨진 {~}자리 암호를 찾는 걸 도와주러 오신 거군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -138,7 +138,7 @@
   },
   "Lost Soles#013": {
    "src": "The book is actually a diary written by our ancestors decades ago. It is actually very interesting, how they remodeled almost the whole house.",
-   "dst": "",
+   "dst": "그 책은 사실 수십 년 전 조상들이 쓴 일기예요. 집을 거의 통째로 개조한 이야기가 정말 흥미롭죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -148,7 +148,7 @@
   },
   "Lost Soles#014": {
    "src": "Ferndor probably told you about the boots, right? The diary has some information about them...ah, here, on this page.",
-   "dst": "",
+   "dst": "Ferndor가 부츠 얘기를 했죠? 일기에 그에 관한 내용이 좀 있어요... 아, 여기, 이 페이지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -158,7 +158,7 @@
   },
   "Lost Soles#015": {
    "src": "Here...our family bought them from \"a dark and mysterious humanoid creature\" a long time ago.",
-   "dst": "",
+   "dst": "여기... 우리 가문은 오래전 \"어둡고 수상한 인간형 생물\"에게서 그걸 샀대요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -168,7 +168,7 @@
   },
   "Lost Soles#016": {
    "src": "The boots were apparently so valuable that the creature as part of the deal, said they put some kind of spell on them, but that was a lie.",
-   "dst": "",
+   "dst": "부츠가 워낙 귀해서, 그 생물은 거래 조건으로 무슨 주문을 걸어 뒀다고 했는데, 그건 거짓말이었어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -178,7 +178,7 @@
   },
   "Lost Soles#017": {
    "src": "It was found that the boots themselves were horrendously powerful, imbued with dark magic that will deteriorate and decay everything around it over time.",
-   "dst": "",
+   "dst": "알고 보니 부츠 자체가 무시무시하게 강력했어요. 시간이 지나며 주변 모든 걸 썩게 하는 어둠의 마법이 깃들어 있었죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -188,7 +188,7 @@
   },
   "Lost Soles#018": {
    "src": "They were given a special boot container with similar effects, but when the Galoshes are within the Container, they cancel each others' effects out.",
-   "dst": "",
+   "dst": "비슷한 효과를 지닌 특별한 부츠 보관함도 함께 받았는데, Galoshes를 보관함에 넣으면 서로의 효과가 상쇄돼요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -198,7 +198,7 @@
   },
   "Lost Soles#019": {
    "src": "They hid the boots in the mansion, along with the case. The writer of this diary wrote down some hints as to how to get them, maybe you can find out what they mean. Here, try this one:",
-   "dst": "",
+   "dst": "그들은 부츠를 보관함과 함께 저택에 숨겼어요. 일기를 쓴 사람이 찾는 법에 대한 힌트를 남겼는데, 무슨 뜻인지 알아내실지도요. 자, 이것부터 보세요:",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -208,7 +208,7 @@
   },
   "Lost Soles#020": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\".",
-   "dst": "",
+   "dst": "\"홀 위의 얼굴이 가진 코가 더 무거워져야 길이 열린다\".",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -218,7 +218,7 @@
   },
   "Lost Soles#021": {
    "src": "Hmm, all the hints appear in a chapter about this room, the dining hall. Any idea what this meant? It feels like it should be obvious, but I can't for the life of me figure this out.",
-   "dst": "",
+   "dst": "음, 힌트는 전부 이 방, 식당에 관한 장에 나와요. 무슨 뜻인지 아시겠어요? 뻔할 것 같은데 저는 도무지 모르겠어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -228,7 +228,7 @@
   },
   "Lost Soles#022": {
    "src": "\"The face above the hall owns the nose that needs to be heavier to open the way\"",
-   "dst": "",
+   "dst": "\"홀 위의 얼굴이 가진 코가 더 무거워져야 길이 열린다\"",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -238,7 +238,7 @@
   },
   "Lost Soles#023": {
    "src": "Talk to Grandon and tell him about your findings",
-   "dst": "",
+   "dst": "Grandon에게 발견한 것을 알려 주세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -248,7 +248,7 @@
   },
   "Lost Soles#024": {
    "src": "A room hidden underneath the big head? Why didn't I think of that!? I always wondered how self-centered they had to be to put that in, but who knew it actually had a valid purpose!",
-   "dst": "",
+   "dst": "큰 머리 밑에 숨겨진 방이요? 왜 그 생각을 못 했지!? 저걸 달아 놓다니 얼마나 자기중심적인가 했는데, 진짜 쓸모가 있었네요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -258,7 +258,7 @@
   },
   "Lost Soles#025": {
    "src": "So, there was a sign telling you to look for stone in the corner? Hm...intriguing!",
-   "dst": "",
+   "dst": "그럼 구석에서 돌을 찾으라는 표지판이 있었다고요? 흠... 흥미롭네요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -268,7 +268,7 @@
   },
   "Lost Soles#026": {
    "src": "Whoever placed down that sign might have a secret way up to the second floor. It hasn't been accessible for a fairly long while, not since the stairs collapsed. Except for Leacen, but she's a bit crazy...",
-   "dst": "",
+   "dst": "그 표지판을 둔 사람은 2층으로 가는 비밀 통로를 알지도 몰라요. 계단이 무너진 뒤로 꽤 오래 못 올라갔거든요. Leacen만 빼고요, 그 애는 좀 이상해서...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -278,7 +278,7 @@
   },
   "Lost Soles#027": {
    "src": "Anyway, seems they guessed that we would have to search for a way to return the boots, and made preparations. Good thing, that.",
-   "dst": "",
+   "dst": "아무튼 조상들은 우리가 부츠를 돌려놓을 방법을 찾게 될 걸 예상하고 준비해 둔 것 같네요. 다행이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -288,7 +288,7 @@
   },
   "Lost Soles#028": {
    "src": "As I said, the stairs are all broken. I mean, I certainly couldn't climb up those rotten scraps of wood. Suppose it might be best to look for that stone, hm?",
-   "dst": "",
+   "dst": "말했듯이 계단은 다 부서졌어요. 저는 그 썩은 나무 조각을 타고 절대 못 올라가요. 그 돌을 찾는 게 제일 나을 것 같죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -298,7 +298,7 @@
   },
   "Lost Soles#029": {
    "src": "But where could it be...oh? Is this a hint? I just noticed this on the next page.",
-   "dst": "",
+   "dst": "그런데 어디 있을까... 오? 이게 힌트인가? 다음 페이지에서 방금 발견했어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -308,7 +308,7 @@
   },
   "Lost Soles#030": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\".",
-   "dst": "",
+   "dst": "\"색이 다른 카펫이 식탁의 비밀을 드러낼 돌을 알려 주리라\".",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -318,7 +318,7 @@
   },
   "Lost Soles#031": {
    "src": "\"The carpet of different colour will show you the stone to reveal the tables secret\"",
-   "dst": "",
+   "dst": "\"색이 다른 카펫이 식탁의 비밀을 드러낼 돌을 알려 주리라\"",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -328,7 +328,7 @@
   },
   "Lost Soles#032": {
    "src": "Talk to Grandon and tell him about your findings",
-   "dst": "",
+   "dst": "Grandon에게 발견한 것을 알려 주세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -338,7 +338,7 @@
   },
   "Lost Soles#033": {
    "src": "Sheesh! Quite the engineers, these old fellows! Never would've imagined any of this in the house. Anyway, was there a message? What did it say?",
-   "dst": "",
+   "dst": "세상에! 옛 조상들, 대단한 기술자였네요! 집에 이런 게 있을 줄은 상상도 못 했어요. 그래서, 메시지가 있었나요? 뭐라고 써 있었어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -348,7 +348,7 @@
   },
   "Lost Soles#034": {
    "src": "The hole nobody wanted? He can only mean the little rat hole in the back part of this hall. Though, it's more just a hole anymore, all the rats are gone.",
-   "dst": "",
+   "dst": "아무도 원치 않은 구멍? 이 홀 뒤쪽의 작은 쥐구멍밖에 없어요. 쥐가 다 사라져서 이젠 그냥 구멍이지만요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -358,7 +358,7 @@
   },
   "Lost Soles#035": {
    "src": "Well, details, details. We never checked it any more than just laying mouse traps, so I suppose there could be something in there given how complex these contraptions have been.",
-   "dst": "",
+   "dst": "뭐, 사소한 건 넘어가죠. 쥐덫 놓는 것 말고는 제대로 본 적이 없으니, 이 장치들이 이렇게 복잡한 걸 보면 뭔가 있을지도요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -368,7 +368,7 @@
   },
   "Lost Soles#036": {
    "src": "I would say, you look into the hole and then search on top of the blue flags!",
-   "dst": "",
+   "dst": "구멍 안을 살펴보고 파란 깃발 위를 찾아보세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -378,7 +378,7 @@
   },
   "Lost Soles#037": {
    "src": "But if that's the way up to the second floor, what does the diary mean by this?",
-   "dst": "",
+   "dst": "그런데 그게 2층으로 가는 길이라면, 일기의 이 말은 무슨 뜻일까요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -388,7 +388,7 @@
   },
   "Lost Soles#038": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"? Wait, that probably means the code to the basement! Come back to me at once when you've done that, I have more to tell you!",
-   "dst": "",
+   "dst": "\"벽의 지도 뒤로 무언가를 던지면 암호 한 조각이 드러난다\"? 잠깐, 아마 지하실 암호 얘기일 거예요! 하고 나면 바로 돌아오세요, 더 할 얘기가 있어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -398,7 +398,7 @@
   },
   "Lost Soles#039": {
    "src": "\"Throw something behind the map on the wall to uncover a piece of the code\"",
-   "dst": "",
+   "dst": "\"벽의 지도 뒤로 무언가를 던지면 암호 한 조각이 드러난다\"",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -408,7 +408,7 @@
   },
   "Lost Soles#040": {
    "src": "You found a piece of the code!? Hahah, excellent! I must say, you've made more progress in a few minutes than I have in a few years! You humans really are something!",
-   "dst": "",
+   "dst": "암호 한 조각을 찾았다고요!? 하하, 훌륭해요! 몇 분 만에 제가 몇 년 걸려 한 것보다 더 해내셨네요! 인간들은 정말 대단해요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -418,7 +418,7 @@
   },
   "Lost Soles#041": {
    "src": "Now, the diary now says you must make your way to the second floor to find the other {~} digits of the code.",
-   "dst": "",
+   "dst": "이제 일기에 따르면 나머지 {~}자리 암호를 찾으려면 2층으로 가야 해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -428,7 +428,7 @@
   },
   "Lost Soles#042": {
    "src": "Remember, to get up to the second floor you need to use the button in the rat hole to open the passage above the blue flags hanging from the ceiling.",
-   "dst": "",
+   "dst": "기억하세요, 2층에 가려면 쥐구멍 안의 버튼으로 천장에 걸린 파란 깃발 위의 통로를 열어야 해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -438,7 +438,7 @@
   },
   "Lost Soles#043": {
    "src": "It doesn't say where they are, just that they're well hidden and that there are additional clues around the house. The other {~} digits should all be up there on the second floor! Maybe Leacen has seen something about them while she's been up there, as well.",
-   "dst": "",
+   "dst": "어디 있는지는 안 써 있고, 잘 숨겨져 있으며 집 곳곳에 단서가 더 있다고만 해요. 나머지 {~}자리는 전부 2층에 있을 거예요! Leacen이 위에 있을 때 뭔가 봤을지도 몰라요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -448,7 +448,7 @@
   },
   "Lost Soles#044": {
    "src": "Once you've found the whole code, head to the basement. Just follow the path and signs outside the manor once you have it.",
-   "dst": "",
+   "dst": "암호를 전부 찾으면 지하실로 가세요. 찾고 나면 저택 밖의 길과 표지판만 따라가면 돼요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -458,7 +458,7 @@
   },
   "Lost Soles#045": {
    "src": "Open the secret passage above the flags by reaching into the unwanted hole",
-   "dst": "",
+   "dst": "아무도 원치 않은 구멍에 손을 넣어 깃발 위의 비밀 통로를 여세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -468,7 +468,7 @@
   },
   "Lost Soles#046": {
    "src": "Bring back [{~} Boot Container] and [Abysso Galoshes] to Ferndor",
-   "dst": "",
+   "dst": "[{~} 부츠 보관함]과 [Abysso Galoshes]를 Ferndor에게 가져가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Soles",
@@ -478,7 +478,7 @@
   },
   "Lost Soles#047": {
    "src": "Darn, I thought for sure one of these books would open a secret shelf...oh, heya Humie. Did you manage to climb up the stairs too?",
-   "dst": "",
+   "dst": "에이, 이 책들 중 하나는 분명 비밀 책장을 열 줄 알았는데... 오, 안녕 인간. 너도 계단 타고 올라왔어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -488,7 +488,7 @@
   },
   "Lost Soles#048": {
    "src": "Oh wow, a secret passage! Not as impressive as gettin' to climb the way up, but still nice job! I'm guessing that you're looking for the code hints?",
-   "dst": "",
+   "dst": "와, 비밀 통로네! 기어 올라오는 것만큼 멋지진 않지만 그래도 잘했어! 암호 힌트 찾는 중이지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -498,7 +498,7 @@
   },
   "Lost Soles#049": {
    "src": "Yeah, I've been trying for a while too. I thought I was on to somethin' a couple of times, too! Like in here. Not one of these books opens a secret passage, can you believe it?",
-   "dst": "",
+   "dst": "응, 나도 한참 찾고 있었어. 몇 번은 뭔가 알아낸 줄 알았다니까! 여기처럼. 이 책들 중 비밀 통로 여는 게 하나도 없다니, 믿겨져?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -508,7 +508,7 @@
   },
   "Lost Soles#050": {
    "src": "Plus, I lost my notebook, so I can't even write down my notes. I just put it on the pillow for two seconds, and then it disappeared!",
-   "dst": "",
+   "dst": "게다가 공책을 잃어버려서 메모도 못 해. 베개 위에 딱 2초 올려놨는데 사라졌다니까!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -518,7 +518,7 @@
   },
   "Lost Soles#051": {
    "src": "Tell you what, Humie. You help us out, and I'll give you some information you might be interested in hearing. Sound good to you?",
-   "dst": "",
+   "dst": "이렇게 하자, 인간. 우리를 도와주면 네가 솔깃할 만한 정보를 알려 줄게. 어때?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -528,7 +528,7 @@
   },
   "Lost Soles#052": {
    "src": "On the upper floor are some bedrooms, and a spiral staircase that starts at [-{~}, {~}, -{~}]. Head to the top of the staircase, which will take you to the roof of the manor. The sign can be found at [-{~}, {~}, -{~}], at the edge of the roof, and says \"{~} is the first\".",
-   "dst": "",
+   "dst": "위층에는 침실 몇 개와 [-{~}, {~}, -{~}]에서 시작하는 나선 계단이 있습니다. 계단 꼭대기로 가면 저택 지붕이 나옵니다. 표지판은 지붕 가장자리 [-{~}, {~}, -{~}]에 있으며 \"{~} is the first\"라고 적혀 있습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -538,7 +538,7 @@
   },
   "Lost Soles#053": {
    "src": "The second digit's sign is the one you find in stage {~}, revealing that the second digit is {~} when you throw any item into the map near Grandon.",
-   "dst": "",
+   "dst": "두 번째 숫자의 표지판은 {~}단계에서 찾은 것으로, Grandon 근처 지도에 아무 아이템이나 던지면 두 번째 숫자가 {~}임을 알려 줍니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -548,7 +548,7 @@
   },
   "Lost Soles#054": {
    "src": "On the second floor, at [-{~}, {~}, -{~}], there is an iron door with a button next to it. Press the button to open the door and enter the small room; you should find a sign which reads \"He told us that the blue flowers are special...\". Back in the area outside the iron door, there is one blue flower on a high shelf next to a button at [-{~}, {~}, -{~}]. The button opens up a ladder leading to a bedroom in the corner of the room, at [-{~}, {~}, -{~}]. The third sign is on the wall of the room the ladder leads to, at [-{~}, {~}, -{~}], and says \"{~} is the third\".",
-   "dst": "",
+   "dst": "2층 [-{~}, {~}, -{~}]에 옆에 버튼이 달린 철문이 있습니다. 버튼을 눌러 문을 열고 작은 방에 들어가면 \"He told us that the blue flowers are special...\"이라고 적힌 표지판이 있습니다. 철문 밖으로 돌아가면 [-{~}, {~}, -{~}]의 버튼 옆 높은 선반에 파란 꽃이 한 송이 있습니다. 이 버튼을 누르면 방 구석 [-{~}, {~}, -{~}]의 침실로 이어지는 사다리가 열립니다. 세 번째 표지판은 사다리로 이어지는 방의 벽 [-{~}, {~}, -{~}]에 있으며 \"{~} is the third\"라고 적혀 있습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -558,7 +558,7 @@
   },
   "Lost Soles#055": {
    "src": "On the third floor is a staircase that starts at [-{~}, {~}, -{~}] and leads to a walkway crossing over a hallway. Jumping off the walkway through a gap in the railings on the north side, you can get into a small hole with a sign saying \"He always hid something underneath his pillow...\". Drop back down to the Master Bedroom at [-{~}, {~}, -{~}], and, as the clue suggests, throw an emerald on the pillow. This opens up a small room behind a high shelf, at [-{~}, {~}, -{~}], leading to the final sign, which says \"{~} is the fourth\". Note that if you aren't quick enough to get into the room, you can throw an emerald over to the pillow while standing on top of the shelf.",
-   "dst": "",
+   "dst": "3층에는 [-{~}, {~}, -{~}]에서 시작해 복도 위를 가로지르는 통로로 이어지는 계단이 있습니다. 통로 북쪽 난간의 틈으로 뛰어내리면 \"He always hid something underneath his pillow...\"라고 적힌 표지판이 있는 작은 구멍에 들어갈 수 있습니다. [-{~}, {~}, -{~}]의 안방으로 내려가 단서대로 베개 위에 에메랄드를 던지세요. 그러면 높은 선반 뒤 [-{~}, {~}, -{~}]에 작은 방이 열리고, 마지막 표지판에 \"{~} is the fourth\"라고 적혀 있습니다. 방에 제때 들어가지 못했다면 선반 위에 서서 베개 쪽으로 에메랄드를 던져도 됩니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -568,7 +568,7 @@
   },
   "Lost Soles#056": {
    "src": "You found the container? I wish I would have gone with you...",
-   "dst": "",
+   "dst": "보관함을 찾으셨어요? 저도 같이 갈 걸 그랬네요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -578,7 +578,7 @@
   },
   "Lost Soles#057": {
    "src": "At least we can stop the manor's slow decay! Let me just put the boots into the container...",
-   "dst": "",
+   "dst": "적어도 저택이 서서히 썩어 가는 건 막을 수 있겠어요! 부츠를 보관함에 넣어 볼게요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -588,7 +588,7 @@
   },
   "Lost Soles#058": {
    "src": "That was easy. I still can not believe that such a small thing can cause so much trouble.",
-   "dst": "",
+   "dst": "간단하네요. 이렇게 작은 물건이 그렇게 많은 문제를 일으켰다니 아직도 믿기지 않아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -598,7 +598,7 @@
   },
   "Lost Soles#059": {
    "src": "Well, I can not just let you stand there without a reward, right?",
-   "dst": "",
+   "dst": "자, 보상도 없이 그냥 서 계시게 할 순 없죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",
@@ -608,7 +608,7 @@
   },
   "Lost Soles#060": {
    "src": "Here, how about some emeralds, and these boots? They're heirlooms given to my family by the Sodeta Guild who once owned this mansion. I promise they aren’t evil! Feel free to visit us at any time!",
-   "dst": "",
+   "dst": "여기, 에메랄드 좀 받으시고, 이 부츠도요. 한때 이 저택을 소유했던 Sodeta 길드가 우리 가문에 준 가보예요. 사악하지 않다고 약속해요! 언제든 놀러 오세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Soles",

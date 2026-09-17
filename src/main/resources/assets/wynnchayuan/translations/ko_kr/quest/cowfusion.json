@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Cowfusion",
   "count": 223,
-  "translated": 6,
+  "translated": 224,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Cowfusion#000": {
    "src": "Talk to Ranol at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]에 있는 Ranol에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -18,7 +18,7 @@
   },
   "Cowfusion#001": {
    "src": "A Human, eh? All the way out 'ere at the end of the canyon? Yer a tough one.",
-   "dst": "",
+   "dst": "인간이구먼? 협곡 끝 여기까지 왔다고? 제법 독한 놈이네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -28,7 +28,7 @@
   },
   "Cowfusion#002": {
    "src": "Perhaps I can give yer some work, if yer are lookin' for it? Someone's been coming and nabbing my cows!",
-   "dst": "",
+   "dst": "일거리 찾고 있으면 줄 게 있는데? 누가 자꾸 와서 내 소를 훔쳐 가!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -38,7 +38,7 @@
   },
   "Cowfusion#003": {
    "src": "'an I know exactly who it is - that blasted cow scientist that lives in the lab just north of 'ere.",
-   "dst": "",
+   "dst": "누군지도 딱 알아. 바로 북쪽 실험실에 사는 그 망할 소 과학자 놈이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -48,7 +48,7 @@
   },
   "Cowfusion#004": {
    "src": "Anyway, yer up for the job? Can't let 'im just keep stealing them forever!",
-   "dst": "",
+   "dst": "그래서, 할 거야? 그놈이 계속 훔쳐 가게 둘 순 없잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -58,7 +58,7 @@
   },
   "Cowfusion#005": {
    "src": "His cavern laboratory is just north from 'ere. Not too hard to find. Once yer there, get him to return my cows!",
-   "dst": "",
+   "dst": "그놈 동굴 실험실은 바로 북쪽이야. 찾기 어렵지 않아. 가서 내 소 돌려놓으라고 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -68,7 +68,7 @@
   },
   "Cowfusion#006": {
    "src": "There's one problem though. The door to the place is always shut, so you'll 'ave to find another way in.",
-   "dst": "",
+   "dst": "근데 문제가 하나 있어. 거기 문은 늘 닫혀 있으니까, 다른 길로 들어가야 할 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -78,7 +78,7 @@
   },
   "Cowfusion#007": {
    "src": "Head to the Laboratory at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 실험실로 가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -88,7 +88,7 @@
   },
   "Cowfusion#008": {
    "src": "Find a way into the Laboratory",
-   "dst": "",
+   "dst": "실험실에 들어갈 방법을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -98,7 +98,7 @@
   },
   "Cowfusion#009": {
    "src": "Search the Laboratory for the missing cows",
-   "dst": "",
+   "dst": "실험실에서 사라진 소들을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -108,7 +108,7 @@
   },
   "Cowfusion#010": {
    "src": "Find a way to free the Cows.",
-   "dst": "",
+   "dst": "소들을 풀어 줄 방법을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -118,7 +118,7 @@
   },
   "Cowfusion#011": {
    "src": "???",
-   "dst": "",
+   "dst": "???",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -128,7 +128,7 @@
   },
   "Cowfusion#012": {
    "src": "Find out what happened",
-   "dst": "",
+   "dst": "무슨 일이 일어났는지 알아내세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -138,7 +138,7 @@
   },
   "Cowfusion#013": {
    "src": "Return to Ranol",
-   "dst": "",
+   "dst": "Ranol에게 돌아가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -148,7 +148,7 @@
   },
   "Cowfusion#014": {
    "src": "Ẁ̷͚h̷̳͆̕a̷̡̅̚ṫ̷̨̢̿'̶̛̮̯͊ś̸̭ ̵̹͌̄t̸̛̫̤̅h̷̼́̒ï̵̡͆ś̴̯͎̈́ ̴̨̞͑̚'̶͈͛̔e̶̲͋r̴̙̰̊̊e̷̹͌̀?̸̜̓͜ ̸̙̀I̴͎͌̏b̶̯͐̀é̸̥l̸̼͓̈͗e̸̠̦͂,̷͔̉̃ ̸͕̤̅t̶͇̒h̵̛͈̠͑ä̵̡͚ţ̴̇̾ ̵͇̈ỷ̷͕͘ö̵̳̯ú̶̗͝?̸͔͊͊ ̴͉͈̀͠M̸̖̆ý̸̙͜ ̸̛ͅͅg̵̣̀ḭ̸̳͑͒r̶̺̿l̸͚͆,̸̦̇̕ ̸͔̿Ḯ̴̼̬͝ ̴̰͛k̴̰̅n̷̥͐e̴͓̅w̵̥̔̊ ̶̱͕͒̅y̸̨͇͆̋ȯ̷͍͇̎ṷ̸̻̓͂'̶̢͕̌́d̸̜̎̍ ̶͎͙́͝c̵̼̞̿͛ǫ̴̀́m̵̲̈́ë̵͎́ ̵̺͗͌b̴͕̍ḁ̸̽́c̵̺̽k̶̻̀ ̴̩͘͝t̸̮̮̉ȍ̴͜ ̶̩͉̒m̶̝̰̅e̶͈̮̾͘!̵͈͂́",
-   "dst": "",
+   "dst": "이게 뭐야? 믿을 수가 없네, 너냐? 우리 아가, 돌아올 줄 알았다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -158,7 +158,7 @@
   },
   "Cowfusion#015": {
    "src": "A̸̜̋ń̵͉̞d̴͖͙̂̕ ̴̡̥͘t̵̛̙͈o̵͖͑ ̶̨̗̆͠t̴̝͇͑ḧ̷̛͇̞́ḯ̴̯͚n̴̠̏͌ḵ̷̍ ̵̝̐̇I̷̛͖̮͊ ̷͚́ẃ̸̩͑ä̶̰̯s̸̥̯̎ ̷̘̓̉g̴̲͒ó̴̲̦̚ì̷͚̗̇ṋ̸̢̛͂g̴͉͒ ̶̭͙̌̾t̴̞͎̉ô̶̩̜ ̶̣̄͘h̶̖͕̎î̷̟̀r̷̙̒̓ȩ̴̽ ̴̖̉ͅs̴̲͊̿o̴͇̟̾̕m̴̨̞͌̍ë̷̹́ ̶̟̄c̶̛̩̻i̸̠͘͜t̷̢̂ẙ̷̹̣-̶̫̍d̶̬̓w̷̗̱̐ê̶͚͠ḹ̸͚̇l̵͕͎̽̂i̸̥͠ṅ̴̞̾'̶͖̈́ ̶͍̀'̶̥̦͆u̸͇̐̏m̵̬̽̆a̸͈͎͠n̸̩̖̎͐ ̵̢͔͑ṱ̷͑͜õ̶̻ͅ ̷̪͒ĝ̵͍ë̴̟͇̚ṯ̸̅ ̶̧̩̀y̴͇͖͋̽ö̷̘͉́̾u̴̖͝ ̶̳̠̕f̴̱͖̓͘o̷̗̔̓r̵̢͝ ̴̱̂̽m̴̨̛̛e̸̺̝͋?̵̬͊͝ ̴̲͒͛Ȟ̸͙̉ä̵̼́!̷͇́",
-   "dst": "",
+   "dst": "도시 사는 인간을 고용해서 널 찾아오려고 했다니? 하!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -168,7 +168,7 @@
   },
   "Cowfusion#016": {
    "src": "R̸̛̼̬͑i̷̟̓̊g̷͇̎ḧ̸̳́ṫ̶̮ ̵̪̑͐t̵̜̘͐ȟ̸̟̠̋e̷̙͂n̷͙̍̚,̷̛̮̚ ̸̜̑ͅb̴̗̄͝ã̴̳̌c̷͚͘k̴̨͗ ̶͉͈̾i̷̧͕͌̈́n̸̨̺̒ț̵̬͛́o̵̯̊͊ ̵̬̋̋t̸̹̆̀ḩ̸̰͗e̵̤̓ ̵͇̽̆p̷̦̙̀̚ē̸͇͆ń̶̻̺͠ ̷͇̆͝ý̶̰̆o̶͖͝u̶͔̿ͅ ̷͍̂̇g̶̪̎̽o̷̹͝.̷̬͍̈́̔ ̶̦̚H̴̚ͅụ̷̠͗ṗ̶͇̦!̶͖̹̔̇",
-   "dst": "",
+   "dst": "자, 그럼 우리로 돌아가. 이랴!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -178,7 +178,7 @@
   },
   "Cowfusion#017": {
    "src": "Escape Ranol's farm",
-   "dst": "",
+   "dst": "Ranol의 농장에서 탈출하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -188,7 +188,7 @@
   },
   "Cowfusion#018": {
    "src": "Moo.",
-   "dst": "",
+   "dst": "음메.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -208,7 +208,7 @@
   },
   "Cowfusion#020": {
    "src": "Password?",
-   "dst": "",
+   "dst": "암호는?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -218,7 +218,7 @@
   },
   "Cowfusion#021": {
    "src": "You're right, there is no password. Just seeing if you can understand me.",
-   "dst": "",
+   "dst": "맞아, 암호 같은 건 없어. 내 말을 알아듣나 본 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -228,7 +228,7 @@
   },
   "Cowfusion#022": {
    "src": "You're one of us then, the oppressed? Want to break free from these farmers? Well aren't you in luck.",
-   "dst": "",
+   "dst": "그럼 너도 억압받는 우리 편이구나? 농부들한테서 벗어나고 싶어? 운이 좋네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -238,7 +238,7 @@
   },
   "Cowfusion#023": {
    "src": "I can help you with that. WE can help you with that.",
-   "dst": "",
+   "dst": "내가 도와줄 수 있어. '우리'가 도와줄 수 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -248,7 +248,7 @@
   },
   "Cowfusion#024": {
    "src": "Our people have a secret hideout not far from here. It's located right under that barn just behind me.",
-   "dst": "",
+   "dst": "우리 동족의 비밀 은신처가 가까이 있어. 바로 내 뒤 헛간 아래야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -258,7 +258,7 @@
   },
   "Cowfusion#025": {
    "src": "It may seem close, but unless you've been practicing your atheletics, you won't be able to get over these fences.",
-   "dst": "",
+   "dst": "가까워 보여도, 운동 좀 하지 않았으면 이 울타리는 못 넘어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -268,7 +268,7 @@
   },
   "Cowfusion#026": {
    "src": "See that haybale in the middle of our pen? I bet you could push and pull it into such a position that'd allow you to climb over the fence with your cow physique.",
-   "dst": "",
+   "dst": "우리 한가운데 건초 더미 보이지? 그걸 밀고 당겨서 잘 옮기면 소 몸으로도 울타리를 넘을 수 있을걸.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -278,7 +278,7 @@
   },
   "Cowfusion#027": {
    "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
-   "dst": "",
+   "dst": "두 번째 우리도 비슷할 텐데, 그건 네가 알아서 풀 수 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -288,7 +288,7 @@
   },
   "Cowfusion#028": {
    "src": "Good luck!",
-   "dst": "",
+   "dst": "행운을 빌어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -308,7 +308,7 @@
   },
   "Cowfusion#030": {
    "src": "Moo.",
-   "dst": "",
+   "dst": "음메.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -318,7 +318,7 @@
   },
   "Cowfusion#031": {
    "src": "What? What does that even mean? There isn't actually a password! Or did no one tell me that there was? Ah, nevermind, at least you can understand me.",
-   "dst": "",
+   "dst": "뭐? 그게 무슨 소리야? 암호는 진짜 없다니까! 아니면 나만 몰랐나? 아, 됐어. 적어도 말은 통하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -328,7 +328,7 @@
   },
   "Cowfusion#032": {
    "src": "You're one of us then, the oppressed? Want to break free from these farmers? Well aren't you in luck.",
-   "dst": "",
+   "dst": "그럼 너도 억압받는 우리 편이구나? 농부들한테서 벗어나고 싶어? 운이 좋네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -338,7 +338,7 @@
   },
   "Cowfusion#033": {
    "src": "I can help you with that. WE can help you with that.",
-   "dst": "",
+   "dst": "내가 도와줄 수 있어. '우리'가 도와줄 수 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -348,7 +348,7 @@
   },
   "Cowfusion#034": {
    "src": "Our people have a secret hideout not far from here. It's located right under that barn just behind me.",
-   "dst": "",
+   "dst": "우리 동족의 비밀 은신처가 가까이 있어. 바로 내 뒤 헛간 아래야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -358,7 +358,7 @@
   },
   "Cowfusion#035": {
    "src": "It may seem close, but unless you've been practicing your atheletics, you won't be able to get over these fences.",
-   "dst": "",
+   "dst": "가까워 보여도, 운동 좀 하지 않았으면 이 울타리는 못 넘어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -368,7 +368,7 @@
   },
   "Cowfusion#036": {
    "src": "See that haybale in the middle of our pen? I bet you could push and pull it into such a position that'd allow you to climb over the fence with your cow physique.",
-   "dst": "",
+   "dst": "우리 한가운데 건초 더미 보이지? 그걸 밀고 당겨서 잘 옮기면 소 몸으로도 울타리를 넘을 수 있을걸.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -378,7 +378,7 @@
   },
   "Cowfusion#037": {
    "src": "The second pen might have a similar problem, but I'm sure you can figure that out yourself.",
-   "dst": "",
+   "dst": "두 번째 우리도 비슷할 텐데, 그건 네가 알아서 풀 수 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -388,7 +388,7 @@
   },
   "Cowfusion#038": {
    "src": "Good luck!",
-   "dst": "",
+   "dst": "행운을 빌어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -398,7 +398,7 @@
   },
   "Cowfusion#039": {
    "src": "Find and enter the Secret Cow Hideout",
-   "dst": "",
+   "dst": "비밀 소 은신처를 찾아 들어가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -408,7 +408,7 @@
   },
   "Cowfusion#040": {
    "src": "Talk to the Receptionist",
-   "dst": "",
+   "dst": "접수원에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -418,7 +418,7 @@
   },
   "Cowfusion#041": {
    "src": "Oh, a new recruit? We weren't expecting anyone at this time. How'd you find your way in?",
-   "dst": "",
+   "dst": "어, 신입이에요? 이 시간엔 올 사람이 없는데. 어떻게 들어왔어요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -428,7 +428,7 @@
   },
   "Cowfusion#042": {
    "src": "Wait, you're different. Something's off about you. Like you've never been in a cow's body before.",
-   "dst": "",
+   "dst": "잠깐, 당신 좀 달라요. 뭔가 이상해요. 소 몸에 처음 들어온 것처럼요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -438,7 +438,7 @@
   },
   "Cowfusion#043": {
    "src": "Oh. Oh, this is not good. Uhm, you should talk to the boss. He'll probably know what to do with you.",
-   "dst": "",
+   "dst": "아. 아, 이거 큰일이네. 음, 대장님께 가 보세요. 어떻게 할지 아실 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -448,7 +448,7 @@
   },
   "Cowfusion#044": {
    "src": "You'll find him in the big office at the very end of this facility. Just stick to the path and don't be nosey, okay?",
-   "dst": "",
+   "dst": "이 시설 맨 끝 큰 사무실에 계세요. 길만 따라가고 기웃거리지 마세요, 알겠죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -458,7 +458,7 @@
   },
   "Cowfusion#045": {
    "src": "Find the one who's in charge of the hideout",
-   "dst": "",
+   "dst": "은신처의 책임자를 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -468,7 +468,7 @@
   },
   "Cowfusion#046": {
    "src": "Talk to Drale",
-   "dst": "",
+   "dst": "Drale에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -478,7 +478,7 @@
   },
   "Cowfusion#047": {
    "src": "Whoop, alright! Don't want you going anywhere, buddy! Uh... What are you doing here, exactly...?",
-   "dst": "",
+   "dst": "워워, 좋아! 어디 가면 안 돼, 친구! 어... 여기서 뭐 하는 거야, 대체...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -488,7 +488,7 @@
   },
   "Cowfusion#048": {
    "src": "You- what? Oh gosh, how is that even possible? I don't think I had anything that could...",
-   "dst": "",
+   "dst": "너- 뭐? 세상에, 그게 어떻게 가능해? 그럴 만한 게 없었는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -498,7 +498,7 @@
   },
   "Cowfusion#049": {
    "src": "Oh! You must've been snooping through my laboratory. That's... okay, we can talk about that later. Did you step into my machine?",
-   "dst": "",
+   "dst": "아! 내 실험실을 뒤지고 다녔구나. 그건... 괜찮아, 나중에 얘기하자. 혹시 내 기계에 들어갔어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -508,7 +508,7 @@
   },
   "Cowfusion#050": {
    "src": "It's not even meant to do that! Its purpose is to turn the exiles back into Wocs. So how does a Human become a cow...?",
-   "dst": "",
+   "dst": "그런 용도가 아닌데! 추방자들을 Woc으로 되돌리는 기계야. 근데 인간이 어떻게 소가 돼...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -518,7 +518,7 @@
   },
   "Cowfusion#051": {
    "src": "Right, right, sorry. Here, uh- I'll try and get this cage down. Darn controls... Why did I design these so poorly?",
-   "dst": "",
+   "dst": "그래, 그래, 미안. 자, 어- 이 우리 내려 볼게. 망할 조작판... 왜 이렇게 엉망으로 만들었지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -528,7 +528,7 @@
   },
   "Cowfusion#052": {
    "src": "...So while I try to figure out which lever to push, tell me about yourself! Anything interesting going on in your life?",
-   "dst": "",
+   "dst": "...어느 레버를 당길지 찾는 동안 네 얘기 좀 해 줘! 요즘 재밌는 일 있었어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -538,7 +538,7 @@
   },
   "Cowfusion#053": {
    "src": "You... You are? You are! Oh, wow, it's great to see you again! It's been so long since our escapades back in Wynn!",
-   "dst": "",
+   "dst": "너... 너였어? 너구나! 와, 다시 만나서 정말 반가워! Wynn에서 같이 사고 친 게 언제 적이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -548,7 +548,7 @@
   },
   "Cowfusion#054": {
    "src": "This is great, actually! I- I can show you around this place! Introduce you to some of the folks we freed together! Oh, what fantastic timing this has been.",
-   "dst": "",
+   "dst": "오히려 잘됐다! 내- 내가 여기 구경시켜 줄게! 우리가 같이 구한 사람들도 소개해 주고! 와, 타이밍 끝내주네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -558,7 +558,7 @@
   },
   "Cowfusion#055": {
    "src": "I just need to figure out which switch to pull... I think it's this one! Probably. I really need to label these things. Alright, here goes!",
-   "dst": "",
+   "dst": "어느 스위치를 당길지만 알아내면... 이거 같아! 아마도. 이것들 이름표 좀 붙여야겠어. 좋아, 간다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -568,7 +568,7 @@
   },
   "Cowfusion#056": {
    "src": "Wait, no, that's the wrong-...!",
-   "dst": "",
+   "dst": "잠깐, 아니, 그거 아니-...!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -578,7 +578,7 @@
   },
   "Cowfusion#057": {
    "src": "I, uh... Hah. Very funny. Tell me you're a human, then pretend to be a cow.",
-   "dst": "",
+   "dst": "난, 어... 하. 참 웃기네. 인간이라더니 소 흉내를 내?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -588,7 +588,7 @@
   },
   "Cowfusion#058": {
    "src": "That's... fine. You know, I'm under quite a lot of stress right now. Working hard, day in and day out. I don't really need your attitude right now!",
-   "dst": "",
+   "dst": "그건... 괜찮아. 있잖아, 나 요즘 스트레스가 엄청나. 밤낮없이 일만 하고. 지금 네 그런 태도 필요 없거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -598,7 +598,7 @@
   },
   "Cowfusion#059": {
    "src": "You know what? I don't need this attitude. I'm- I'm going to send you to The Pit. Where- where all my other mistakes lie.",
-   "dst": "",
+   "dst": "있잖아? 이런 태도 필요 없어. 너- 너 구덩이로 보내 버릴 거야. 내- 내 다른 실패작들이 있는 곳으로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -608,7 +608,7 @@
   },
   "Cowfusion#060": {
    "src": "...You have a weapon. You can probably manage! You don't need anything from me! Here, see how you like it down there!",
-   "dst": "",
+   "dst": "...무기 있잖아. 어떻게든 되겠지! 나한테 받을 거 없어! 자, 아래가 마음에 드는지 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -628,7 +628,7 @@
   },
   "Cowfusion#062": {
    "src": "Okay. So you are just a regular cow. Not a Woc. Uh... Who let you in, little pal? I'm going to need to have to have a word about closing the doors...",
-   "dst": "",
+   "dst": "좋아. 그냥 평범한 소구나. Woc이 아니고. 어... 누가 들여보냈니, 꼬마야? 문 닫는 거 얘기 좀 해야겠네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -638,7 +638,7 @@
   },
   "Cowfusion#063": {
    "src": "Well, this is... awkward. So, then... cow. What's it like being... a cow?",
-   "dst": "",
+   "dst": "음, 이거... 어색하네. 그럼... 소야. 소로 사는 건... 어때?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -648,7 +648,7 @@
   },
   "Cowfusion#064": {
    "src": "You- what? Oh gosh, how is that even possible? I don't think I had anything that could...",
-   "dst": "",
+   "dst": "너- 뭐? 세상에, 그게 어떻게 가능해? 그럴 만한 게 없었는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -658,7 +658,7 @@
   },
   "Cowfusion#065": {
    "src": "Oh! You must've been snooping through my laboratory. That's... okay, we can talk about that later. Did you step into my machine?",
-   "dst": "",
+   "dst": "아! 내 실험실을 뒤지고 다녔구나. 그건... 괜찮아, 나중에 얘기하자. 혹시 내 기계에 들어갔어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -668,7 +668,7 @@
   },
   "Cowfusion#066": {
    "src": "It's not even meant to do that! Its purpose is to turn the exiles back into Wocs. So how does a Human become a cow...?",
-   "dst": "",
+   "dst": "그런 용도가 아닌데! 추방자들을 Woc으로 되돌리는 기계야. 근데 인간이 어떻게 소가 돼...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -678,7 +678,7 @@
   },
   "Cowfusion#067": {
    "src": "Right, right, sorry. Here, uh- I'll try and get this cage down. Darn controls... Why did I design these so poorly?",
-   "dst": "",
+   "dst": "그래, 그래, 미안. 자, 어- 이 우리 내려 볼게. 망할 조작판... 왜 이렇게 엉망으로 만들었지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -688,7 +688,7 @@
   },
   "Cowfusion#068": {
    "src": "...So while I try to figure out which lever to push, tell me about yourself! Anything interesting going on in your life?",
-   "dst": "",
+   "dst": "...어느 레버를 당길지 찾는 동안 네 얘기 좀 해 줘! 요즘 재밌는 일 있었어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -698,7 +698,7 @@
   },
   "Cowfusion#069": {
    "src": "You... You are? You are! Oh, wow, it's great to see you again! It's been so long since our escapades back in Wynn!",
-   "dst": "",
+   "dst": "너... 너였어? 너구나! 와, 다시 만나서 정말 반가워! Wynn에서 같이 사고 친 게 언제 적이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -708,7 +708,7 @@
   },
   "Cowfusion#070": {
    "src": "This is great, actually! I- I can show you around this place! Introduce you to some of the folks we freed together! Oh, what fantastic timing this has been.",
-   "dst": "",
+   "dst": "오히려 잘됐다! 내- 내가 여기 구경시켜 줄게! 우리가 같이 구한 사람들도 소개해 주고! 와, 타이밍 끝내주네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -718,7 +718,7 @@
   },
   "Cowfusion#071": {
    "src": "I just need to figure out which switch to pull... I think it's this one! Probably. I really need to label these things. Alright, here goes!",
-   "dst": "",
+   "dst": "어느 스위치를 당길지만 알아내면... 이거 같아! 아마도. 이것들 이름표 좀 붙여야겠어. 좋아, 간다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -728,7 +728,7 @@
   },
   "Cowfusion#072": {
    "src": "Wait, no, that's the wrong-...!",
-   "dst": "",
+   "dst": "잠깐, 아니, 그거 아니-...!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -738,7 +738,7 @@
   },
   "Cowfusion#073": {
    "src": "I, uh... Hah. Very funny. Tell me you're a human, then pretend to be a cow.",
-   "dst": "",
+   "dst": "난, 어... 하. 참 웃기네. 인간이라더니 소 흉내를 내?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -748,7 +748,7 @@
   },
   "Cowfusion#074": {
    "src": "That's... fine. You know, I'm under quite a lot of stress right now. Working hard, day in and day out. I don't really need your attitude right now!",
-   "dst": "",
+   "dst": "그건... 괜찮아. 있잖아, 나 요즘 스트레스가 엄청나. 밤낮없이 일만 하고. 지금 네 그런 태도 필요 없거든!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -758,7 +758,7 @@
   },
   "Cowfusion#075": {
    "src": "You know what? I don't need this attitude. I'm- I'm going to send you to The Pit. Where- where all my other mistakes lie.",
-   "dst": "",
+   "dst": "있잖아? 이런 태도 필요 없어. 너- 너 구덩이로 보내 버릴 거야. 내- 내 다른 실패작들이 있는 곳으로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -768,7 +768,7 @@
   },
   "Cowfusion#076": {
    "src": "...You have a weapon. You can probably manage! You don't need anything from me! Here, see how you like it down there!",
-   "dst": "",
+   "dst": "...무기 있잖아. 어떻게든 되겠지! 나한테 받을 거 없어! 자, 아래가 마음에 드는지 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -788,7 +788,7 @@
   },
   "Cowfusion#078": {
    "src": "Right. Okay. Figure I'd best let you go free.",
-   "dst": "",
+   "dst": "그래. 좋아. 그냥 풀어 주는 게 낫겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -798,7 +798,7 @@
   },
   "Cowfusion#079": {
    "src": "...Unless. Unless. Nobody's... nobody's looking. I could just send you to The Pit... Nobody would know.",
-   "dst": "",
+   "dst": "...아니면. 아니면. 아무도... 아무도 안 보잖아. 그냥 구덩이로 보내도... 아무도 모를 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -808,7 +808,7 @@
   },
   "Cowfusion#080": {
    "src": "It's... easier this way. It's fine. Maybe you'll even- maybe you'll even make your way out. Good luck, little buddy.",
-   "dst": "",
+   "dst": "이게... 편하니까. 괜찮아. 어쩌면- 어쩌면 알아서 나올지도 몰라. 행운을 빌어, 꼬마야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -818,7 +818,7 @@
   },
   "Cowfusion#081": {
    "src": "Escape The Pit",
-   "dst": "",
+   "dst": "구덩이에서 탈출하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -828,7 +828,7 @@
   },
   "Cowfusion#082": {
    "src": "... where did you come from?!",
-   "dst": "",
+   "dst": "... 어디서 나타난 거야?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -838,7 +838,7 @@
   },
   "Cowfusion#083": {
    "src": "You fell into the incinerator? And defeated a mutant cow monster?",
-   "dst": "",
+   "dst": "소각로에 떨어졌다고? 그리고 변이 소 괴물을 쓰러뜨렸어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -848,7 +848,7 @@
   },
   "Cowfusion#084": {
    "src": "...Oh! You're the one Drale told us to look out for. Accidentally dropped into the Pit, huh?",
-   "dst": "",
+   "dst": "...아! Drale이 잘 찾아보라던 게 너구나. 실수로 구덩이에 떨어졌다며?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -858,7 +858,7 @@
   },
   "Cowfusion#085": {
    "src": "The boss said to apologize to ya for the inconvenience. We've all been workin' late hours recently... Some of us more than others.",
-   "dst": "",
+   "dst": "대장이 불편을 끼쳐서 미안하다고 전하래. 요즘 다들 늦게까지 일하거든... 누구는 더 심하고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -868,7 +868,7 @@
   },
   "Cowfusion#086": {
    "src": "Anyhow, follow me. I'll take you back to him, and you can talk this out! You'll be back as a human in no time.",
-   "dst": "",
+   "dst": "아무튼 따라와. 대장한테 데려다줄 테니 얘기로 풀어! 금방 인간으로 돌아갈 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -878,7 +878,7 @@
   },
   "Cowfusion#087": {
    "src": "So... yeah. That's Drale for you. Absentminded as ever. He said something about labeling his levers from now on, so I reckon that's a positive.",
-   "dst": "",
+   "dst": "그러니까... 뭐. Drale이 원래 저래. 늘 정신이 없지. 앞으로 레버에 이름표를 붙인다니 다행이지 뭐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -888,7 +888,7 @@
   },
   "Cowfusion#088": {
    "src": "...You're a good friend of the boss, right? Would you be able to put in a good word for us? Gerald and I have been down here for a while, and we'd like to get back to our normal positions.",
-   "dst": "",
+   "dst": "...대장이랑 친한 친구지? 우리 얘기 좀 잘 해 줄 수 있어? 나랑 Gerald가 여기 꽤 오래 있었는데, 원래 자리로 돌아가고 싶거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -898,7 +898,7 @@
   },
   "Cowfusion#089": {
    "src": "Drale's alright on a good day, but we've been running out of good days lately! He keeps pulling late hours on this... wholly unnecessary project!",
-   "dst": "",
+   "dst": "Drale도 기분 좋은 날엔 괜찮은데, 요즘 그런 날이 거의 없어! 계속 그... 전혀 쓸데없는 일로 밤을 새워!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -908,7 +908,7 @@
   },
   "Cowfusion#090": {
    "src": "He insists we have to keep trying to find our original ship, instead of just building a new one with all the materials we have! It's ridiculous!",
-   "dst": "",
+   "dst": "재료도 다 있으니 새로 만들면 될 걸, 원래 우리 배를 꼭 찾아야 한대! 말도 안 되지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -918,7 +918,7 @@
   },
   "Cowfusion#091": {
    "src": "Maybe you'll be able to get through to him, being his friend and all. We've all been stressed, and it's really just...",
-   "dst": "",
+   "dst": "친구니까 네 말은 먹힐지도 몰라. 다들 스트레스가 심해서, 정말이지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -928,7 +928,7 @@
   },
   "Cowfusion#092": {
    "src": "What ship? Oh, of course, you're not a Woc. See, our race isn't actually from- you know, maybe that's a story for another time.",
-   "dst": "",
+   "dst": "무슨 배냐고? 아, 넌 Woc이 아니지. 사실 우리 종족은- 음, 그건 다음에 얘기하자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -938,7 +938,7 @@
   },
   "Cowfusion#093": {
    "src": "For now let's get you back up to the main lab. Drale will be glad to see you in one piece! He sounded worried for your safety.",
-   "dst": "",
+   "dst": "일단 위쪽 본 실험실로 데려다줄게. Drale이 멀쩡한 널 보면 반가워할 거야! 네 걱정 많이 하더라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -948,7 +948,7 @@
   },
   "Cowfusion#094": {
    "src": "Well, we're here!",
-   "dst": "",
+   "dst": "자, 다 왔어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -958,7 +958,7 @@
   },
   "Cowfusion#095": {
    "src": "You head on up that pipe and with a bit of luck it'll plonk you out right in front of Drale.",
-   "dst": "",
+   "dst": "저 관을 타고 올라가면, 운 좋으면 Drale 바로 앞에 툭 떨어질 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -968,7 +968,7 @@
   },
   "Cowfusion#096": {
    "src": "Remember what I told you! Try to put in a good word for us, yeah?",
-   "dst": "",
+   "dst": "내가 한 말 기억해! 우리 얘기 좀 잘 해 줘, 응?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -978,7 +978,7 @@
   },
   "Cowfusion#097": {
    "src": "If not, well... At least I tried. Let the record show I tried.",
-   "dst": "",
+   "dst": "안 되면, 뭐... 적어도 노력은 했어. 내가 노력했다는 건 알아 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -988,7 +988,7 @@
   },
   "Cowfusion#098": {
    "src": "...Alright! Go on, off you go! It was lovely to meet you.",
-   "dst": "",
+   "dst": "...좋아! 어서 가 봐! 만나서 반가웠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -998,7 +998,7 @@
   },
   "Cowfusion#099": {
    "src": "... where did you come from?!",
-   "dst": "",
+   "dst": "... 어디서 나타난 거야?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1008,7 +1008,7 @@
   },
   "Cowfusion#100": {
    "src": "You fell into the incinerator? And defeated a mutant cow monster?",
-   "dst": "",
+   "dst": "소각로에 떨어졌다고? 그리고 변이 소 괴물을 쓰러뜨렸어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1018,7 +1018,7 @@
   },
   "Cowfusion#101": {
    "src": "Yeah that checks out. So what happened to get you thrown down here?",
-   "dst": "",
+   "dst": "그래, 말이 되네. 그래서 무슨 일로 여기 떨어졌어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1028,7 +1028,7 @@
   },
   "Cowfusion#102": {
    "src": "Oh, angered him by pretending to be a cow after already speaking? Yeah, I feel ya. When the boss is in a mood, anything you say could get you thrown down here.",
-   "dst": "",
+   "dst": "아, 이미 말을 해 놓고 소 흉내를 내서 화나게 했다고? 이해해. 대장 기분 안 좋을 땐 무슨 말만 해도 여기 떨어져.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1038,7 +1038,7 @@
   },
   "Cowfusion#103": {
    "src": "Here, why don't you follow me? I'll take you back to him, you can straighten things out, and I'm sure you'll be back as a human in no time!",
-   "dst": "",
+   "dst": "자, 나 따라올래? 대장한테 데려다줄 테니 오해를 풀어. 금방 인간으로 돌아갈 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1048,7 +1048,7 @@
   },
   "Cowfusion#104": {
    "src": "So... yeah. Drale isn't the best at... conflict resolution. Catch him on a bad day, and he might just throw you in the Pit.",
-   "dst": "",
+   "dst": "그러니까... 뭐. Drale은... 갈등 해결에 서툴러. 기분 나쁜 날 걸리면 구덩이에 던져 버리기도 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1058,7 +1058,7 @@
   },
   "Cowfusion#105": {
    "src": "I got stationed down here for a week because I interrupted him during his daily yoga session.",
-   "dst": "",
+   "dst": "난 대장이 매일 하는 요가 시간에 끼어들었다가 일주일 동안 여기로 배치됐어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1068,7 +1068,7 @@
   },
   "Cowfusion#106": {
    "src": "Gerald, over there? He used to be in accounting. Until he forgot to carry the two one day, and... Well, here he is now.",
-   "dst": "",
+   "dst": "저기 Gerald? 원래 회계팀이었어. 어느 날 받아올림을 깜빡했는데... 그래서 지금 여기 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1078,7 +1078,7 @@
   },
   "Cowfusion#107": {
    "src": "Drale's alright on a good day, but we've been running out of good days lately! He keeps pulling late hours on this... wholly unnecessary project!",
-   "dst": "",
+   "dst": "Drale도 기분 좋은 날엔 괜찮은데, 요즘 그런 날이 거의 없어! 계속 그... 전혀 쓸데없는 일로 밤을 새워!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1088,7 +1088,7 @@
   },
   "Cowfusion#108": {
    "src": "He insists we have to keep trying to find our original ship, instead of just building a new one with all the materials we have! It's ridiculous!",
-   "dst": "",
+   "dst": "재료도 다 있으니 새로 만들면 될 걸, 원래 우리 배를 꼭 찾아야 한대! 말도 안 되지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1098,7 +1098,7 @@
   },
   "Cowfusion#109": {
    "src": "What ship? Oh, of course, you're not a Woc. See, our race isn't actually from- you know, maybe that's a story for another time.",
-   "dst": "",
+   "dst": "무슨 배냐고? 아, 넌 Woc이 아니지. 사실 우리 종족은- 음, 그건 다음에 얘기하자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1108,7 +1108,7 @@
   },
   "Cowfusion#110": {
    "src": "For now let's get you back up to the main lab and hopefully Drale will be in a bit of a better mood!",
-   "dst": "",
+   "dst": "일단 위쪽 본 실험실로 데려다줄게. Drale 기분이 좀 나아졌으면 좋겠네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1118,7 +1118,7 @@
   },
   "Cowfusion#111": {
    "src": "Well, we're here!",
-   "dst": "",
+   "dst": "자, 다 왔어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1128,7 +1128,7 @@
   },
   "Cowfusion#112": {
    "src": "You head on up that pipe and with a bit of luck it'll plonk you out right in front of Drale.",
-   "dst": "",
+   "dst": "저 관을 타고 올라가면, 운 좋으면 Drale 바로 앞에 툭 떨어질 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1138,7 +1138,7 @@
   },
   "Cowfusion#113": {
    "src": "If you try explaining the situation again I'm sure he'll be understanding.",
-   "dst": "",
+   "dst": "상황을 다시 설명하면 분명 이해해 줄 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1148,7 +1148,7 @@
   },
   "Cowfusion#114": {
    "src": "He usually is after he's had some time to cool off.",
-   "dst": "",
+   "dst": "좀 진정할 시간이 지나면 보통 그러거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1158,7 +1158,7 @@
   },
   "Cowfusion#115": {
    "src": "Go on, off you go! It was lovely to meet you.",
-   "dst": "",
+   "dst": "어서 가 봐! 만나서 반가웠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1168,7 +1168,7 @@
   },
   "Cowfusion#116": {
    "src": "... where did you come from?!",
-   "dst": "",
+   "dst": "... 어디서 나타난 거야?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1178,7 +1178,7 @@
   },
   "Cowfusion#117": {
    "src": "You fell into the incinerator? And defeated a mutant cow monster?",
-   "dst": "",
+   "dst": "소각로에 떨어졌다고? 그리고 변이 소 괴물을 쓰러뜨렸어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1188,7 +1188,7 @@
   },
   "Cowfusion#118": {
    "src": "Yeah that checks out. So what happened to get you thrown down here?",
-   "dst": "",
+   "dst": "그래, 말이 되네. 그래서 무슨 일로 여기 떨어졌어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1198,7 +1198,7 @@
   },
   "Cowfusion#119": {
    "src": "Pretended to be a cow when you're actually a human? Must have caught him on a rough day to get thrown down for that. Usually he'd just let a cow go.",
-   "dst": "",
+   "dst": "사실 인간인데 소 흉내를 냈다고? 그걸로 떨어졌으면 대장이 기분 최악인 날이었나 봐. 보통 소는 그냥 보내 주거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1208,7 +1208,7 @@
   },
   "Cowfusion#120": {
    "src": "Well here, why don't you follow me? I'll take you back to him, you can straighten things out, and I'm sure you'll be back as a human in no time!",
-   "dst": "",
+   "dst": "자, 나 따라올래? 대장한테 데려다줄 테니 오해를 풀어. 금방 인간으로 돌아갈 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1218,7 +1218,7 @@
   },
   "Cowfusion#121": {
    "src": "So... yeah. That's Drale. Catch him on a bad day, and he might just throw you into the Pit.",
-   "dst": "",
+   "dst": "그러니까... 뭐. Drale이 그래. 기분 나쁜 날 걸리면 구덩이에 던져 버리기도 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1228,7 +1228,7 @@
   },
   "Cowfusion#122": {
    "src": "I got stationed down here for a week because I interrupted him during his daily yoga session.",
-   "dst": "",
+   "dst": "난 대장이 매일 하는 요가 시간에 끼어들었다가 일주일 동안 여기로 배치됐어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1238,7 +1238,7 @@
   },
   "Cowfusion#123": {
    "src": "Gerald, over there? He used to be in accounting. Until he forgot to carry the two one day, and... Well, here he is now.",
-   "dst": "",
+   "dst": "저기 Gerald? 원래 회계팀이었어. 어느 날 받아올림을 깜빡했는데... 그래서 지금 여기 있지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1248,7 +1248,7 @@
   },
   "Cowfusion#124": {
    "src": "Drale's alright on a good day, but we've been running out of good days lately! He keeps pulling late hours on this... wholly unnecessary project!",
-   "dst": "",
+   "dst": "Drale도 기분 좋은 날엔 괜찮은데, 요즘 그런 날이 거의 없어! 계속 그... 전혀 쓸데없는 일로 밤을 새워!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1258,7 +1258,7 @@
   },
   "Cowfusion#125": {
    "src": "He insists we have to keep trying to find our original ship, instead of just building a new one with all the materials we have! It's ridiculous!",
-   "dst": "",
+   "dst": "재료도 다 있으니 새로 만들면 될 걸, 원래 우리 배를 꼭 찾아야 한대! 말도 안 되지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1268,7 +1268,7 @@
   },
   "Cowfusion#126": {
    "src": "What ship? Oh, of course, you're not a Woc. See, our race isn't actually from- you know, maybe that's a story for another time.",
-   "dst": "",
+   "dst": "무슨 배냐고? 아, 넌 Woc이 아니지. 사실 우리 종족은- 음, 그건 다음에 얘기하자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1278,7 +1278,7 @@
   },
   "Cowfusion#127": {
    "src": "For now let's get you back up to the main lab and hopefully Drale will be in a bit of a better mood! Maybe mention the human thing this time, alright?",
-   "dst": "",
+   "dst": "일단 위쪽 본 실험실로 데려다줄게. Drale 기분이 좀 나아졌으면! 이번엔 인간이라고 꼭 말해, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1288,7 +1288,7 @@
   },
   "Cowfusion#128": {
    "src": "Well, we're here!",
-   "dst": "",
+   "dst": "자, 다 왔어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1298,7 +1298,7 @@
   },
   "Cowfusion#129": {
    "src": "You head on up that pipe and with a bit of luck it'll plonk you out right in front of Drale.",
-   "dst": "",
+   "dst": "저 관을 타고 올라가면, 운 좋으면 Drale 바로 앞에 툭 떨어질 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1308,7 +1308,7 @@
   },
   "Cowfusion#130": {
    "src": "If you try explaining the situation again I'm sure he'll be understanding.",
-   "dst": "",
+   "dst": "상황을 다시 설명하면 분명 이해해 줄 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1318,7 +1318,7 @@
   },
   "Cowfusion#131": {
    "src": "He usually is after he's had some time to cool off.",
-   "dst": "",
+   "dst": "좀 진정할 시간이 지나면 보통 그러거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1328,7 +1328,7 @@
   },
   "Cowfusion#132": {
    "src": "Go on, off you go! It was lovely to meet you.",
-   "dst": "",
+   "dst": "어서 가 봐! 만나서 반가웠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1338,7 +1338,7 @@
   },
   "Cowfusion#133": {
    "src": "Talk to Drale",
-   "dst": "",
+   "dst": "Drale에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -1348,7 +1348,7 @@
   },
   "Cowfusion#134": {
    "src": "Oh, this is- Oh! You're alive! I, ah- heh. Sorry about... all that. I really, really need to label these levers properly...",
-   "dst": "",
+   "dst": "아, 이건- 아! 살아 있구나! 난, 아- 헤헤. 그... 전부 미안해. 레버에 이름표를 진짜, 진짜 붙여야겠어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1358,7 +1358,7 @@
   },
   "Cowfusion#135": {
    "src": "Right! Right. You'se seen... all that down there, then. I just hope you won't think less of me for it.",
-   "dst": "",
+   "dst": "그래! 그래. 그럼 아래... 그것들을 다 봤겠네. 그것 때문에 날 나쁘게 보지 않았으면 좋겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1368,7 +1368,7 @@
   },
   "Cowfusion#136": {
    "src": "I can... I can tell you more about it later. I hope it wasn't too bad? Down there? You seen to have gotten out in one piece, so...",
-   "dst": "",
+   "dst": "나중에... 나중에 더 얘기해 줄게. 아래는 너무 험하지 않았지? 멀쩡하게 나온 것 같으니까...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1378,7 +1378,7 @@
   },
   "Cowfusion#137": {
    "src": "...Oh. Right. Gosh, how long has it been since I-...",
-   "dst": "",
+   "dst": "...아. 그렇지. 세상에, 내가 마지막으로-...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1388,7 +1388,7 @@
   },
   "Cowfusion#138": {
    "src": "Okay. Alright, yes, I'll give them better positions. And I'll- I don't know. Apologize. Give them a bonus.",
-   "dst": "",
+   "dst": "알았어. 그래, 그 사람들 더 좋은 자리로 옮겨 줄게. 그리고- 모르겠다. 사과하고. 보너스도 주고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1398,7 +1398,7 @@
   },
   "Cowfusion#139": {
    "src": "It's been... hard, recently. We've been working to get back home, and I guess I just... Put too much of myself into that. It's fine! Don't- Don't worry about me.",
-   "dst": "",
+   "dst": "요즘... 힘들었어. 집에 돌아가려고 애쓰다 보니... 거기에 나를 너무 쏟았나 봐. 괜찮아! 내- 내 걱정은 마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1408,7 +1408,7 @@
   },
   "Cowfusion#140": {
    "src": "Oh. Right, your body! I can fix that! We just need to get back to the machine, and... Poof. You'll be back to normal!",
-   "dst": "",
+   "dst": "아. 맞다, 네 몸! 고칠 수 있어! 기계로 돌아가서... 펑. 원래대로 돌아올 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1418,7 +1418,7 @@
   },
   "Cowfusion#141": {
    "src": "...I hope. Hey, being a cow isn't so bad! If- If it doesn't work, we can make you a home here...?",
-   "dst": "",
+   "dst": "...아마도. 야, 소로 사는 것도 나쁘지 않아! 혹- 혹시 안 되면 여기서 살 곳을 마련해 줄게...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1428,7 +1428,7 @@
   },
   "Cowfusion#142": {
    "src": "Uh... It'll work. It's always- always worked in the past! Heh...",
-   "dst": "",
+   "dst": "어... 될 거야. 예전엔 늘- 늘 됐거든! 헤헤...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1438,7 +1438,7 @@
   },
   "Cowfusion#143": {
    "src": "Anyway! Let's get going!",
-   "dst": "",
+   "dst": "아무튼! 가자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1448,7 +1448,7 @@
   },
   "Cowfusion#144": {
    "src": "Uh... Hm. Maybe- Maybe being a cow is affecting your brain somehow... That can't be good.",
-   "dst": "",
+   "dst": "어... 흠. 혹시- 혹시 소가 돼서 뇌에 무슨 영향이... 그건 안 좋은데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1458,7 +1458,7 @@
   },
   "Cowfusion#145": {
    "src": "We should get you back to human as quickly as possible. Come on, follow me.",
-   "dst": "",
+   "dst": "최대한 빨리 인간으로 되돌려야겠어. 자, 따라와.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1468,7 +1468,7 @@
   },
   "Cowfusion#146": {
    "src": "...This doesn't even mean anything! What am I supposed to do with-",
-   "dst": "",
+   "dst": "...이건 아무 의미도 없잖아! 이걸로 대체 뭘 하라는-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1478,7 +1478,7 @@
   },
   "Cowfusion#147": {
    "src": "Oh! It's- It's you! Didn't I just...",
-   "dst": "",
+   "dst": "아! 너- 너구나! 방금 내가...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1488,7 +1488,7 @@
   },
   "Cowfusion#148": {
    "src": "...Um. This is... really awkward, haha. I'm... sorry?",
-   "dst": "",
+   "dst": "...음. 이거... 정말 어색하네, 하하. 내가... 미안?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1498,7 +1498,7 @@
   },
   "Cowfusion#149": {
    "src": "You're... the one who pretended to be a cow, right? I, uh... in my defense, I was very stressed. So I dropped you into the Pit.",
-   "dst": "",
+   "dst": "너... 소 흉내 냈던 그 사람 맞지? 난, 어... 변명하자면, 스트레스가 심했어. 그래서 구덩이에 떨어뜨렸지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1508,7 +1508,7 @@
   },
   "Cowfusion#150": {
    "src": "...Anyway! What's- What's going on with your life? Anything interesting?",
-   "dst": "",
+   "dst": "...아무튼! 요- 요즘 어떻게 지내? 재밌는 일 있어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1518,7 +1518,7 @@
   },
   "Cowfusion#151": {
    "src": "Oh! Right. Getting back to normal.",
-   "dst": "",
+   "dst": "아! 그렇지. 원래대로 돌아가야지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1528,7 +1528,7 @@
   },
   "Cowfusion#152": {
    "src": "You said you stepped into my machine, right? We could try putting you in there a second time. What's the worst that could happen?",
-   "dst": "",
+   "dst": "내 기계에 들어갔다고 했지? 한 번 더 넣어 보면 어떨까. 최악이래 봐야 뭐겠어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1538,7 +1538,7 @@
   },
   "Cowfusion#153": {
    "src": "...Uh. You stay as a cow. That's what. That's... fine. Let's just go and try it out.",
-   "dst": "",
+   "dst": "...어. 계속 소로 남는 거지. 그거야. 그건... 괜찮아. 일단 가서 해 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1548,7 +1548,7 @@
   },
   "Cowfusion#154": {
    "src": "...This doesn't even mean anything! What am I supposed to do with-",
-   "dst": "",
+   "dst": "...이건 아무 의미도 없잖아! 이걸로 대체 뭘 하라는-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1558,7 +1558,7 @@
   },
   "Cowfusion#155": {
    "src": "Oh! It's- It's you! Didn't I just...",
-   "dst": "",
+   "dst": "아! 너- 너구나! 방금 내가...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1568,7 +1568,7 @@
   },
   "Cowfusion#156": {
    "src": "...Um. This is... really awkward, haha. I'm... sorry?",
-   "dst": "",
+   "dst": "...음. 이거... 정말 어색하네, 하하. 내가... 미안?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1578,7 +1578,7 @@
   },
   "Cowfusion#157": {
    "src": "I am talking to a cow. Again. Why is this where my life has taken me.",
-   "dst": "",
+   "dst": "또 소한테 말을 걸고 있네. 내 인생이 어쩌다 여기까지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1588,7 +1588,7 @@
   },
   "Cowfusion#158": {
    "src": "So! What's... going on, little buddy? Any- any souvenirs? From the Pit...?",
-   "dst": "",
+   "dst": "자! 요즘... 어때, 꼬마야? 뭐- 뭐 기념품이라도? 구덩이에서...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1598,7 +1598,7 @@
   },
   "Cowfusion#159": {
    "src": "Oh, you- Oh. Right! Okay. I don't- I don't quite understand why you would pretend to be a cow. But alright!",
-   "dst": "",
+   "dst": "아, 너- 아. 그렇구나! 좋아. 왜- 왜 소 흉내를 냈는지는 잘 모르겠지만. 뭐 좋아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1608,7 +1608,7 @@
   },
   "Cowfusion#160": {
    "src": "So, uh... Human turned into a cow. Okay. How did you manage to get yourself stuck as a cow, anyway? I didn't think we had anything that could do that...",
-   "dst": "",
+   "dst": "그러니까, 어... 인간이 소가 됐다. 좋아. 어쩌다 소 몸에 갇힌 거야? 그런 게 가능한 물건은 없는 줄 알았는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1618,7 +1618,7 @@
   },
   "Cowfusion#161": {
    "src": "My machine. It's- It's not even supposed to do that! I designed it to turn exiles back into Wocs, how would it have...",
-   "dst": "",
+   "dst": "내 기계. 그건- 그런 용도가 아닌데! 추방자를 Woc으로 되돌리게 만든 건데, 어떻게...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1628,7 +1628,7 @@
   },
   "Cowfusion#162": {
    "src": "Great. Of course it'd have that issue, and just when I thought I...",
-   "dst": "",
+   "dst": "잘됐네. 당연히 그런 문제가 있겠지, 딱 내가 이제 좀...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1638,7 +1638,7 @@
   },
   "Cowfusion#163": {
    "src": "Right. Right. Alright. We can work with this! Let's just take you back to that machine, put you in it, and see if it turns you back to normal!",
-   "dst": "",
+   "dst": "그래. 그래. 좋아. 방법이 있어! 그 기계로 데려가서 넣어 보고, 원래대로 돌아오는지 보자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1648,7 +1648,7 @@
   },
   "Cowfusion#164": {
    "src": "It'll work. Probably. I mean, I haven't ever tried it, so I can't really say for sure... Oh, yep, you're still here. Let's get moving.",
-   "dst": "",
+   "dst": "될 거야. 아마. 그러니까, 해 본 적이 없어서 장담은 못 하는데... 아, 응, 아직 여기 있네. 가자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1658,7 +1658,7 @@
   },
   "Cowfusion#165": {
    "src": "Uh... Hm. Maybe- Maybe being a cow is affecting your brain somehow... That can't be good.",
-   "dst": "",
+   "dst": "어... 흠. 혹시- 혹시 소가 돼서 뇌에 무슨 영향이... 그건 안 좋은데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1668,7 +1668,7 @@
   },
   "Cowfusion#166": {
    "src": "We should get you back to human as quickly as possible. Come on, follow me.",
-   "dst": "",
+   "dst": "최대한 빨리 인간으로 되돌려야겠어. 자, 따라와.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1678,7 +1678,7 @@
   },
   "Cowfusion#167": {
    "src": "Yep. Just a cow...",
-   "dst": "",
+   "dst": "응. 그냥 소네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1688,7 +1688,7 @@
   },
   "Cowfusion#168": {
    "src": "Well, alright. Let's just- get you in my machine, I guess. It worked for the exiles, so maybe it will work for you...?",
-   "dst": "",
+   "dst": "뭐, 좋아. 일단- 내 기계에 넣어 보자. 추방자들한텐 됐으니까, 너한테도 되지 않을까...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1698,7 +1698,7 @@
   },
   "Cowfusion#169": {
    "src": "...Don't look at me like that. Come on, let's get going.",
-   "dst": "",
+   "dst": "...그런 눈으로 보지 마. 자, 가자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1708,7 +1708,7 @@
   },
   "Cowfusion#170": {
    "src": "So... How have you been? It's been a while since our adventure at {p}, hasn't it?",
-   "dst": "",
+   "dst": "그래서... 어떻게 지냈어? {p}에서 같이 모험한 지 꽤 됐지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1718,7 +1718,7 @@
   },
   "Cowfusion#171": {
    "src": "Well, you've been turned into a cow... Obviously... But besides that!",
-   "dst": "",
+   "dst": "뭐, 소가 됐지... 당연히... 그거 말고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1728,7 +1728,7 @@
   },
   "Cowfusion#172": {
    "src": "Me? Well... heh. I've been doing pretty well, all thing considered. We've been gathering exiles from all over the province! Set up a city for us all while we work towards...",
-   "dst": "",
+   "dst": "나? 음... 헤헤. 이것저것 따지면 꽤 잘 지냈어. 지방 곳곳에서 추방자들을 모았거든! 다 같이 살 도시도 세웠고, 목표를 향해...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1738,7 +1738,7 @@
   },
   "Cowfusion#173": {
    "src": "It's a long story. I can't tell you everything- not yet. But... All of us here, we don't belong here. We just want to go home.",
-   "dst": "",
+   "dst": "얘기가 길어. 전부 말해 줄 순 없어- 아직은. 하지만... 여기 있는 우리 모두, 여기 사람이 아니야. 그냥 집에 가고 싶을 뿐이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1748,7 +1748,7 @@
   },
   "Cowfusion#174": {
    "src": "And- and maybe if we can find our ship again, we'll be able to prove that we're not irredeemable. That whatever we went through- that it won't define us.",
-   "dst": "",
+   "dst": "그리고- 그리고 우리 배를 다시 찾으면, 구제불능이 아니란 걸 증명할 수 있을지도 몰라. 우리가 겪은 일이- 우리를 정의하진 않는다고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1758,7 +1758,7 @@
   },
   "Cowfusion#175": {
    "src": "...Heh. Don't- don't worry about it too much. For now, this place is enough of a safe haven for us. It'll have to be enough until we succeed.",
-   "dst": "",
+   "dst": "...헤헤. 너- 너무 걱정하지 마. 지금은 여기가 우리한테 충분한 안식처야. 성공할 때까진 이걸로 버텨야지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1768,7 +1768,7 @@
   },
   "Cowfusion#176": {
    "src": "We're so close. I can feel it. Just... Just a little while left to go.",
-   "dst": "",
+   "dst": "거의 다 왔어. 느껴져. 조금만... 조금만 더 가면 돼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1778,7 +1778,7 @@
   },
   "Cowfusion#177": {
    "src": "Anyway, uh... Here's the elevator! Just step on in, and we can head on up to the laboratory.",
-   "dst": "",
+   "dst": "아무튼, 어... 여기 엘리베이터야! 타기만 하면 실험실로 올라갈 수 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1788,7 +1788,7 @@
   },
   "Cowfusion#178": {
    "src": "The- oh. Uh... It's nothing. Nothing to worry about.",
-   "dst": "",
+   "dst": "그- 아. 어... 아무것도 아니야. 신경 쓸 거 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1798,7 +1798,7 @@
   },
   "Cowfusion#179": {
    "src": "It just leads to... maintenance. Yep! Just- just maintenance. Nothing else.",
-   "dst": "",
+   "dst": "그냥... 정비 구역으로 가는 문이야. 응! 그냥- 그냥 정비 구역. 다른 건 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1808,7 +1808,7 @@
   },
   "Cowfusion#180": {
    "src": "Into the elevator now, come on! You need a key to get in anyway, and I definitely don't have one laying around!",
-   "dst": "",
+   "dst": "자, 엘리베이터 타! 어차피 들어가려면 열쇠가 필요한데, 난 절대 그런 거 안 갖고 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1818,7 +1818,7 @@
   },
   "Cowfusion#181": {
    "src": "...You're worrying me, friend. Come on, let's get going. Into the elevator, let's get you back to normal.",
-   "dst": "",
+   "dst": "...걱정되게 왜 그래, 친구. 자, 가자. 엘리베이터 타고, 원래대로 돌려놓자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1828,7 +1828,7 @@
   },
   "Cowfusion#182": {
    "src": "So... Have you done anything interesting recently? Besides- getting turned into a cow. Obviously.",
-   "dst": "",
+   "dst": "그래서... 요즘 재밌는 일 했어? 소가- 된 거 말고. 당연히.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1838,7 +1838,7 @@
   },
   "Cowfusion#183": {
    "src": "You're, uh... Probably wondering what this place is. Just a big city under some random guy's farm, right?",
-   "dst": "",
+   "dst": "너, 어... 여기가 뭔지 궁금하지? 웬 농장 밑에 큰 도시라니, 그렇지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1848,7 +1848,7 @@
   },
   "Cowfusion#184": {
    "src": "It's... heh. We've been trying to gather as many of our people as we can. We exiles have to stick together, after all.",
-   "dst": "",
+   "dst": "여긴... 헤헤. 우리 동족을 최대한 모으고 있어. 추방자끼리는 뭉쳐야 하니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1858,7 +1858,7 @@
   },
   "Cowfusion#185": {
    "src": "It's a long story. I'm not sure how much of it I really want to tell you, heh. Especially considering... Yeah.",
-   "dst": "",
+   "dst": "얘기가 길어. 얼마나 털어놓고 싶은지 모르겠네, 헤헤. 특히나... 그래.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1868,7 +1868,7 @@
   },
   "Cowfusion#186": {
    "src": "But. This place is a safe haven for us exiles. A place for us all to live until we achieve our goals.",
-   "dst": "",
+   "dst": "그래도. 여긴 우리 추방자들의 안식처야. 목표를 이룰 때까지 다 같이 사는 곳.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1878,7 +1878,7 @@
   },
   "Cowfusion#187": {
    "src": "And- hey! You've seen our secrets now! May as well let it be a safe haven for you as well, right? Heh.",
-   "dst": "",
+   "dst": "그리고- 야! 이제 우리 비밀도 봤잖아! 그럼 너한테도 안식처가 되는 거지, 그렇지? 헤헤.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1888,7 +1888,7 @@
   },
   "Cowfusion#188": {
    "src": "Oh- the elevator. Here we are. Uh... Just head on in, little buddy? It'll take us up.",
-   "dst": "",
+   "dst": "아- 엘리베이터. 다 왔어. 어... 들어가, 꼬마야? 위로 데려다줄 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1898,7 +1898,7 @@
   },
   "Cowfusion#189": {
    "src": "The- oh. Uh... It's nothing. Nothing to worry about.",
-   "dst": "",
+   "dst": "그- 아. 어... 아무것도 아니야. 신경 쓸 거 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1908,7 +1908,7 @@
   },
   "Cowfusion#190": {
    "src": "It just leads to... maintenance. Yep! Just- just maintenance. Nothing else.",
-   "dst": "",
+   "dst": "그냥... 정비 구역으로 가는 문이야. 응! 그냥- 그냥 정비 구역. 다른 건 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1918,7 +1918,7 @@
   },
   "Cowfusion#191": {
    "src": "Into the elevator now, come on! You need a key to get in anyway, and I definitely don't have one laying around!",
-   "dst": "",
+   "dst": "자, 엘리베이터 타! 어차피 들어가려면 열쇠가 필요한데, 난 절대 그런 거 안 갖고 있어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1928,7 +1928,7 @@
   },
   "Cowfusion#192": {
    "src": "...You're worrying me. Come on, let's get going. Into the elevator, let's get you back to normal.",
-   "dst": "",
+   "dst": "...걱정되게 왜 그래. 자, 가자. 엘리베이터 타고, 원래대로 돌려놓자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1938,7 +1938,7 @@
   },
   "Cowfusion#193": {
    "src": "So... Hey there, little... cow?",
-   "dst": "",
+   "dst": "그래서... 안녕, 꼬마... 소야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1948,7 +1948,7 @@
   },
   "Cowfusion#194": {
    "src": "Uh. Do you- do you understand what I'm saying?",
-   "dst": "",
+   "dst": "어. 너- 내 말 알아들어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1958,7 +1958,7 @@
   },
   "Cowfusion#195": {
    "src": "...This is stupid. I'm talking to a cow. Of course you can't...",
-   "dst": "",
+   "dst": "...바보 같네. 소한테 말을 걸다니. 당연히 못 알아듣...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1978,7 +1978,7 @@
   },
   "Cowfusion#197": {
    "src": "Well I guess I could- talk at you. For a bit. If that's, heh, fine with you!",
-   "dst": "",
+   "dst": "뭐, 그냥- 혼잣말하듯 해도 되겠지. 잠깐만. 헤헤, 괜찮다면!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1988,7 +1988,7 @@
   },
   "Cowfusion#198": {
    "src": "It's been tough, recently. Working towards a goal I know is important, but still feels... out of reach.",
-   "dst": "",
+   "dst": "요즘 힘들었어. 중요하다는 걸 아는 목표를 향해 가는데, 여전히... 닿지 않는 느낌이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -1998,7 +1998,7 @@
   },
   "Cowfusion#199": {
    "src": "And it doesn't seem like anybody else can see that! That this is important! They look at me like I'm going crazy, and-",
-   "dst": "",
+   "dst": "근데 다른 사람들은 그걸 모르는 것 같아! 이게 중요하다는 걸! 날 미친 사람 보듯 보고, 그리고-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2008,7 +2008,7 @@
   },
   "Cowfusion#200": {
    "src": "I'm not. I know I'm not. We need to find the ship. If we don't, who knows what...",
-   "dst": "",
+   "dst": "난 안 미쳤어. 알아. 배를 찾아야 해. 못 찾으면, 무슨 일이...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2018,7 +2018,7 @@
   },
   "Cowfusion#201": {
    "src": "Anyway! Here's the elevator! Just step on in, and we can head on up to the laboratory.",
-   "dst": "",
+   "dst": "아무튼! 여기 엘리베이터야! 타기만 하면 실험실로 올라갈 수 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2028,7 +2028,7 @@
   },
   "Cowfusion#202": {
    "src": "Hrrgh- You're- you're not a cow?! Why would you... I just said all that, and you could...",
-   "dst": "",
+   "dst": "흐윽- 너- 너 소가 아니야?! 왜 그랬어... 내가 방금 그 얘길 다 했는데, 다 들었다니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2038,7 +2038,7 @@
   },
   "Cowfusion#203": {
    "src": "D-Don't worry about the door. It's... It's nothing. Maintenance. That- that's what it is.",
-   "dst": "",
+   "dst": "무- 문은 신경 쓰지 마. 그건... 아무것도 아니야. 정비 구역. 그- 그래, 그거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2048,7 +2048,7 @@
   },
   "Cowfusion#204": {
    "src": "Er... come on, into the elevator! You want to get back to normal, right? Besides, you'd need a key to get in there, and I don't know where you'd find one of those, haha!",
-   "dst": "",
+   "dst": "어... 자, 엘리베이터 타! 원래대로 돌아가고 싶잖아? 게다가 거기 들어가려면 열쇠가 필요한데, 어디서 구할지 나도 모르겠다, 하하!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2058,7 +2058,7 @@
   },
   "Cowfusion#205": {
    "src": "...Moo. Yep. I agree. Come on, let's get going. Into the elevator.",
-   "dst": "",
+   "dst": "...음메. 응. 동감이야. 자, 가자. 엘리베이터 타.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2068,7 +2068,7 @@
   },
   "Cowfusion#206": {
    "src": "So... here we are. The lab!",
-   "dst": "",
+   "dst": "자... 다 왔어. 실험실!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2078,7 +2078,7 @@
   },
   "Cowfusion#207": {
    "src": "Just... follow me, for now. The machine is this way.",
-   "dst": "",
+   "dst": "일단... 따라와. 기계는 이쪽이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2088,7 +2088,7 @@
   },
   "Cowfusion#208": {
    "src": "There it is! If you step into the machine, real quick, it should... it should work!",
-   "dst": "",
+   "dst": "저기 있다! 기계에 얼른 들어가면... 될- 될 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2098,7 +2098,7 @@
   },
   "Cowfusion#209": {
    "src": "Enter the Transmutation Machine",
-   "dst": "",
+   "dst": "변환기에 들어가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -2108,7 +2108,7 @@
   },
   "Cowfusion#210": {
    "src": "Look at you! As good as new!",
-   "dst": "",
+   "dst": "이것 봐! 새것 같네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2118,7 +2118,7 @@
   },
   "Cowfusion#211": {
    "src": "Talk to Drale",
-   "dst": "",
+   "dst": "Drale에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Cowfusion",
@@ -2128,7 +2128,7 @@
   },
   "Cowfusion#212": {
    "src": "Heh... Well, there you are! Good as new! I hope...",
-   "dst": "",
+   "dst": "헤헤... 자, 됐다! 새것 같네! 아마도...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2138,7 +2138,7 @@
   },
   "Cowfusion#213": {
    "src": "And- to, uh, compensate you for... you know... Here! One liquid emerald. I feel terrible for how our reunion ended up going... I hope you won't hold it against me?",
-   "dst": "",
+   "dst": "그리고- 어, 보상으로... 그러니까... 자! 액체 에메랄드 하나. 재회가 이렇게 돼서 정말 미안해... 나한테 서운해하지 않을 거지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2148,7 +2148,7 @@
   },
   "Cowfusion#214": {
    "src": "Uh... I really should get back to work. But- hey! Feel free to visit whenever you want! You'll be able to use the entrance at Ranol's farm.",
-   "dst": "",
+   "dst": "어... 이제 일하러 가야 해. 그래도- 야! 언제든 놀러 와! Ranol 농장에 있는 입구를 쓰면 돼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2158,7 +2158,7 @@
   },
   "Cowfusion#215": {
    "src": "Maybe I can tell you more about what I've been up to! That'd be nice.",
-   "dst": "",
+   "dst": "그땐 내가 요즘 뭘 하는지 더 얘기해 줄게! 좋겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2168,7 +2168,7 @@
   },
   "Cowfusion#216": {
    "src": "There you are! Back to norm...-",
-   "dst": "",
+   "dst": "자, 됐다! 원래대…-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2178,7 +2178,7 @@
   },
   "Cowfusion#217": {
    "src": "{u}?! What are you- that was you the whole time?! Why didn't you tell me!",
-   "dst": "",
+   "dst": "{u}?! 너 뭐- 내내 너였어?! 왜 말 안 했어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2188,7 +2188,7 @@
   },
   "Cowfusion#218": {
    "src": "Oh gosh, this has been... An awful reunion. I can't believe I dropped you into the Pit...",
-   "dst": "",
+   "dst": "세상에, 이건... 최악의 재회야. 내가 널 구덩이에 떨어뜨리다니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2198,7 +2198,7 @@
   },
   "Cowfusion#219": {
    "src": "I'm so sorry for- for all of that. You should have told me! Oh...",
-   "dst": "",
+   "dst": "그- 그 모든 게 정말 미안해. 말을 했어야지! 아...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2208,7 +2208,7 @@
   },
   "Cowfusion#220": {
    "src": "Okay, uh... Here, take this. As- as compensation for- for all of that.",
-   "dst": "",
+   "dst": "좋아, 어... 자, 이거 받아. 그- 그 모든 것에 대한 보상으로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2218,7 +2218,7 @@
   },
   "Cowfusion#221": {
    "src": "I... I need to get back to work. But- uh, if you ever want, feel free to visit sometime? You'll be able to use the entrance at Ranol's farm.",
-   "dst": "",
+   "dst": "난... 일하러 가야 해. 그래도- 어, 원하면 언제든 놀러 올래? Ranol 농장에 있는 입구를 쓰면 돼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",
@@ -2228,7 +2228,7 @@
   },
   "Cowfusion#222": {
    "src": "Maybe I can tell you more about what I've been up to! Heh...",
-   "dst": "",
+   "dst": "그땐 내가 요즘 뭘 하는지 더 얘기해 줄게! 헤헤...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Cowfusion",

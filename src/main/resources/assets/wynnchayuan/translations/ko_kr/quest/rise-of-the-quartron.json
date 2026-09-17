@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Rise of the Quartron",
   "count": 86,
-  "translated": 1,
+  "translated": 86,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Rise of the Quartron#000": {
    "src": "Talk to Nasea in the {p}.",
-   "dst": "",
+   "dst": "{p}에서 Nasea와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Rise of the Quartron",
@@ -18,7 +18,7 @@
   },
   "Rise of the Quartron#001": {
    "src": "Shipment {~}A and {~}B, fully accounted for... shipments {~}C and {~}A...missing {~} of quartz content?!",
-   "dst": "",
+   "dst": "{~}A랑 {~}B 화물, 수량 확인 완료... {~}C랑 {~}A 화물... 석영이 {~}만큼 없어?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -28,7 +28,7 @@
   },
   "Rise of the Quartron#002": {
    "src": "Agh, this is getting worse! There's never been so much loss...whoever this is, thy're getting bold...",
-   "dst": "",
+   "dst": "으, 점점 심해지잖아! 이렇게 많이 없어진 적은 없었어... 누군진 몰라도 점점 대담해지네...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -38,7 +38,7 @@
   },
   "Rise of the Quartron#003": {
    "src": "Ugh, go AWAY! Quit hovering over my shoulder like that- wait, a Human? Since when did you get here?",
-   "dst": "",
+   "dst": "으, 저리 가! 어깨 너머로 그렇게 기웃거리지 좀- 잠깐, 인간? 언제 여기 왔어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -48,7 +48,7 @@
   },
   "Rise of the Quartron#004": {
    "src": "What, you like listening to the melodious sound of my voice or something? Or do you intend to help out?",
-   "dst": "",
+   "dst": "뭐야, 내 아름다운 목소리라도 듣고 싶은 거야? 아니면 도와줄 생각이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -58,7 +58,7 @@
   },
   "Rise of the Quartron#005": {
    "src": "Well, I'm flattered either way, and I could certainly use the help. Quartz is going missing from my shipments.",
-   "dst": "",
+   "dst": "뭐, 어느 쪽이든 기분은 좋네. 도움이 필요하긴 해. 내 화물에서 석영이 자꾸 사라지거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -68,7 +68,7 @@
   },
   "Rise of the Quartron#006": {
    "src": "Obviously one of the laborers is siphoning it to someplace, and I can't have that happening. So, be a private eye, humie.",
-   "dst": "",
+   "dst": "분명 일꾼 중 하나가 어딘가로 빼돌리는 거야. 그냥 둘 순 없지. 그러니까 탐정 노릇 좀 해 봐, 인간.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -78,7 +78,7 @@
   },
   "Rise of the Quartron#007": {
    "src": "This is actually pretty dire- quartz has some magicality to it, see. It likes to soak up magic power, which means it can be weaponized.",
-   "dst": "",
+   "dst": "이거 꽤 심각해- 석영엔 마력이 좀 있거든. 마력을 빨아들이는 성질이 있어서 무기로 쓸 수 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -88,7 +88,7 @@
   },
   "Rise of the Quartron#008": {
    "src": "We tend not to use it for weapons since it can overcharge, but that's neither here nor there, is it?",
-   "dst": "",
+   "dst": "과부하가 걸릴 수 있어서 보통 무기엔 안 쓰지만, 그건 지금 중요한 게 아니지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -98,7 +98,7 @@
   },
   "Rise of the Quartron#009": {
    "src": "Every siphoned shipment has gone through Dado. Interrogate him! He hangs out past the big red tent, near the house with red flags.",
-   "dst": "",
+   "dst": "빼돌려진 화물은 전부 Dado를 거쳤어. 걔를 추궁해! 빨간 큰 천막 너머, 빨간 깃발 달린 집 근처에 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -108,7 +108,7 @@
   },
   "Rise of the Quartron#010": {
    "src": "Talk to Dado and see if he is the culprit.",
-   "dst": "",
+   "dst": "Dado와 대화해 범인인지 알아보세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Rise of the Quartron",
@@ -118,7 +118,7 @@
   },
   "Rise of the Quartron#011": {
    "src": "Okay, these go to division P, and...look, I'm busy allocating these deliveries to {p}. Go pester someone else, okay?",
-   "dst": "",
+   "dst": "좋아, 이건 P 구역으로 가고... 이봐, 난 {p}에 보낼 배송을 나누느라 바빠. 딴 사람 괴롭혀, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -128,7 +128,7 @@
   },
   "Rise of the Quartron#012": {
    "src": "...what. You...think I... Pfff... Pffhahaaaah! Ohhh, that's RICH coming from a human of all things!",
-   "dst": "",
+   "dst": "...뭐. 네가... 내가... 푸흡... 푸하하하하! 오, 하필 인간이 그런 말을 하다니 웃기네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -138,7 +138,7 @@
   },
   "Rise of the Quartron#013": {
    "src": "\"Oh, me, the hired gun species that kills for money, will accuse you, a storied worker of seven years, of illegal activity!\" Wow, you HYPOCRITE!",
-   "dst": "",
+   "dst": "\"오, 돈 받고 살인하는 용병 종족인 내가, 7년 차 베테랑 일꾼인 너를 불법 행위로 고발하겠다!\" 와, 이 위선자!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -148,7 +148,7 @@
   },
   "Rise of the Quartron#014": {
    "src": "I'm hardly even angry about this! But, yeah, you freak. You got the wrong guy, surprise! Your brain workin' right in there?",
-   "dst": "",
+   "dst": "화도 안 난다! 하지만, 그래, 이 괴짜야. 사람 잘못 짚었어, 놀랐지! 머리는 제대로 돌아가는 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -158,7 +158,7 @@
   },
   "Rise of the Quartron#015": {
    "src": "I bet you got some wires crossed in there, huh? Go scuttle on back to town and kill someone's Wybel for pocket change or something.",
-   "dst": "",
+   "dst": "머릿속 전선이 꼬였나 보지? 마을로 쪼르르 돌아가서 푼돈 벌게 남의 Wybel이나 잡아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -168,7 +168,7 @@
   },
   "Rise of the Quartron#016": {
    "src": "Go back to Nasea and tell her about Dado’s response.",
-   "dst": "",
+   "dst": "Nasea에게 돌아가 Dado의 반응을 알려 주세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Rise of the Quartron",
@@ -178,7 +178,7 @@
   },
   "Rise of the Quartron#017": {
    "src": "I'm just going to take a wild guess and say that asking him nicely whether he committed theft didn't bring up any answers.",
-   "dst": "",
+   "dst": "대충 찍어 보자면, 도둑질했냐고 좋게 물어봤더니 아무 답도 안 나왔다는 거지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -188,7 +188,7 @@
   },
   "Rise of the Quartron#018": {
    "src": "What, he brushed you off like THAT? Jeez, I knew he was a jerk, but really? That's just uncalled for.",
-   "dst": "",
+   "dst": "뭐, 그렇게 쫓아냈다고? 참나, 재수 없는 놈인 건 알았지만, 진짜? 그건 너무했다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -198,7 +198,7 @@
   },
   "Rise of the Quartron#019": {
    "src": "We have to make him talk...if shipments keep going missing, my contractors are going to look elsewhere!",
-   "dst": "",
+   "dst": "입을 열게 해야 해... 화물이 계속 사라지면 거래처들이 딴 데로 갈 거라고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -208,7 +208,7 @@
   },
   "Rise of the Quartron#020": {
    "src": "We need to prove that he's guilty...wait, you came to ME for ideas? This is why I asked you for help! Am I really back to square one?",
-   "dst": "",
+   "dst": "유죄를 증명해야 해... 잠깐, 나한테 아이디어를 물으러 온 거야? 그래서 도와 달라고 한 거잖아! 진짜 원점이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -218,7 +218,7 @@
   },
   "Rise of the Quartron#021": {
    "src": "Aah, Nasea!",
-   "dst": "",
+   "dst": "아아, Nasea!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -228,7 +228,7 @@
   },
   "Rise of the Quartron#022": {
    "src": "I...what are you doing here, uh...Larry? Were you missing quartz too??",
-   "dst": "",
+   "dst": "나... 여긴 웬일이야, 어... Larry? 너도 석영이 없어졌어??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -238,7 +238,7 @@
   },
   "Rise of the Quartron#023": {
    "src": "Ah, it's...Lari. No, the quartz shipment found its way fine...",
-   "dst": "",
+   "dst": "아, 저는... Lari예요. 아뇨, 석영 화물은 잘 도착했어요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -248,7 +248,7 @@
   },
   "Rise of the Quartron#024": {
    "src": "But, there was hardly an effect. Your idea was, unfortunately, a dead end.",
-   "dst": "",
+   "dst": "하지만 효과가 거의 없었어요. 안타깝게도 당신 생각은 막다른 길이었죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -258,7 +258,7 @@
   },
   "Rise of the Quartron#025": {
    "src": "Well, I did warn you that it was only an idea. I manage the mine, I don't practice purification magic. Don't pin anything on me for that.",
-   "dst": "",
+   "dst": "뭐, 그냥 아이디어일 뿐이라고 경고했잖아. 난 광산 관리자지, 정화 마법사가 아니야. 그걸 내 탓으로 돌리지 마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -268,7 +268,7 @@
   },
   "Rise of the Quartron#026": {
    "src": "I did not intend to imply that. Your help was appreciated, fate simply had opposing plans...",
-   "dst": "",
+   "dst": "그런 뜻은 아니었어요. 도와줘서 고마웠어요, 운명이 다른 계획을 가졌을 뿐...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -278,7 +278,7 @@
   },
   "Rise of the Quartron#027": {
    "src": "...is this human a part of your operations, miss?",
-   "dst": "",
+   "dst": "...이 인간은 당신 일꾼인가요, 아가씨?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -288,7 +288,7 @@
   },
   "Rise of the Quartron#028": {
    "src": "Well, in a sense. Someone's siphoning quartz, but our suspect wasn't intimidated by the ten tons of armor, so we're at a loss. Any ideas?",
-   "dst": "",
+   "dst": "뭐, 어떤 의미론. 누가 석영을 빼돌리는데, 용의자가 이 10톤짜리 갑옷을 보고도 겁을 안 먹어서 막혔어. 좋은 생각 있어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -298,7 +298,7 @@
   },
   "Rise of the Quartron#029": {
    "src": "...as a matter of fact, I do have a solution. Elven botany describes a flower that grows decently close by, the \"Tattytale\" flower.",
-   "dst": "",
+   "dst": "...사실, 방법이 있어요. 엘프 식물학에 이 근처에서 자라는 꽃이 나와요. \"Tattytale\" 꽃이죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -308,7 +308,7 @@
   },
   "Rise of the Quartron#030": {
    "src": "It weakens the will of those who catch a whiff of its petals, making them pliable to questions. It's...unpleasant, but if it is needed, I suppose.",
-   "dst": "",
+   "dst": "꽃잎 냄새를 맡은 사람은 의지가 약해져서 질문에 순순히 답해요. 썩... 유쾌하진 않지만, 필요하다면 어쩔 수 없겠죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -318,7 +318,7 @@
   },
   "Rise of the Quartron#031": {
    "src": "There is a cave infested with spiders, and covered with webs in the western mountain. It is the only place it grows outside of {p}, unfortunately.",
-   "dst": "",
+   "dst": "서쪽 산에 거미가 들끓고 거미줄로 뒤덮인 동굴이 있어요. 안타깝게도 {p} 밖에서 그 꽃이 자라는 유일한 곳이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -328,7 +328,7 @@
   },
   "Rise of the Quartron#032": {
    "src": "Nasea, since it didn't help, I've returned the quartz. I thank you for your help...and I shall bid you both adieu.",
-   "dst": "",
+   "dst": "Nasea, 도움이 안 됐으니 석영은 돌려 드렸어요. 도와줘서 고마워요... 그럼 두 분, 안녕히.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -338,7 +338,7 @@
   },
   "Rise of the Quartron#033": {
    "src": "Find the Tattytale Flower.",
-   "dst": "",
+   "dst": "Tattytale 꽃을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Rise of the Quartron",
@@ -348,7 +348,7 @@
   },
   "Rise of the Quartron#034": {
    "src": "Make Dado confess by using the Tattytale Flower.",
-   "dst": "",
+   "dst": "Tattytale 꽃으로 Dado의 자백을 받아 내세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Rise of the Quartron",
@@ -358,7 +358,7 @@
   },
   "Rise of the Quartron#035": {
    "src": "Hey, everyone's least-favorite attack dog! Here boy! You want the emerald? Go kill all the flies in my house! Come on boy!",
-   "dst": "",
+   "dst": "야, 모두가 제일 싫어하는 사냥개잖아! 이리 와! 에메랄드 줄까? 우리 집 파리나 다 잡아 와! 이리 와, 멍멍!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -368,7 +368,7 @@
   },
   "Rise of the Quartron#036": {
    "src": "Aw, flowers. How sweet of you! Sorry, but I don't cave to psychopaths or flattery, hehehee!",
-   "dst": "",
+   "dst": "어머, 꽃이네. 참 다정하기도 해라! 미안하지만 난 사이코나 아첨엔 안 넘어가, 헤헤헤!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -378,7 +378,7 @@
   },
   "Rise of the Quartron#037": {
    "src": "I...huff... What was THAT for?! Are you offended that I don't like your flo- What? What am I doing with the quartz?",
-   "dst": "",
+   "dst": "나... 헉... 이게 뭐 하는 짓이야?! 네 꽃이 싫다고 삐진- 뭐? 석영으로 뭘 하냐고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -388,7 +388,7 @@
   },
   "Rise of the Quartron#038": {
    "src": "Uh, isn't it obvious? I'm working overtime and sending it up to Popo, duh. Where else would I be sending it?",
-   "dst": "",
+   "dst": "어, 뻔하잖아? 야근하면서 Popo한테 올려 보내지, 당연히. 그럼 어디로 보내겠어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -398,7 +398,7 @@
   },
   "Rise of the Quartron#039": {
    "src": "What- Where's Popo sending it? Um...no clue. Whoever it is, they're super rich though. They pay me more than my house is worth every shipment!",
-   "dst": "",
+   "dst": "뭐- Popo는 어디로 보내냐고? 음... 몰라. 누군진 몰라도 엄청난 부자야. 화물 하나당 우리 집값보다 많이 준다니까!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -408,7 +408,7 @@
   },
   "Rise of the Quartron#040": {
    "src": "Not sure why you need to- What? Where's Popo? Uh, he said he'd meet me at the cart track overpass, near the teal flags.",
-   "dst": "",
+   "dst": "왜 그런 걸- 뭐? Popo가 어디 있냐고? 어, 청록색 깃발 근처 수레 선로 육교에서 만나자고 했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -418,7 +418,7 @@
   },
   "Rise of the Quartron#041": {
    "src": "This was going to be our first meeting, so I don't know what he looks like, and likewise he's never seen me.",
-   "dst": "",
+   "dst": "첫 만남이 될 참이라 난 그 녀석 얼굴을 모르고, 그 녀석도 날 본 적 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -428,7 +428,7 @@
   },
   "Rise of the Quartron#042": {
    "src": "...uh. Okay, I haave no clue why I told you all of that...um, have you got any more of those flowers though? It was actually really good...",
-   "dst": "",
+   "dst": "...어. 좋아, 내가 왜 그걸 다 말했는지 모르겠네... 음, 근데 그 꽃 더 있어? 사실 진짜 좋았는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -438,7 +438,7 @@
   },
   "Rise of the Quartron#043": {
    "src": "Go up the minecart hill and find Popo.",
-   "dst": "",
+   "dst": "광산 수레 언덕을 올라가 Popo를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Rise of the Quartron",
@@ -448,7 +448,7 @@
   },
   "Rise of the Quartron#044": {
    "src": "Ah, you must- Wait, never mind. I was expecting a visit from someone else.",
-   "dst": "",
+   "dst": "아, 네가 바로- 잠깐, 아니다. 다른 사람을 기다리고 있었거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -458,7 +458,7 @@
   },
   "Rise of the Quartron#045": {
    "src": "Wait, you're Dado? I guess humans have more brain capacity than orcs after all, hehah!",
-   "dst": "",
+   "dst": "잠깐, 네가 Dado라고? 인간이 오크보다 머리가 좋긴 한가 보네, 헤하!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -468,7 +468,7 @@
   },
   "Rise of the Quartron#046": {
    "src": "Okay, down to business. I'm gonna look busy to cover for you while you get to the base for briefing. You'll get the details there.",
-   "dst": "",
+   "dst": "좋아, 본론. 네가 기지로 가서 설명을 듣는 동안 난 바쁜 척하며 엄호할게. 자세한 건 거기서 들어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -478,7 +478,7 @@
   },
   "Rise of the Quartron#047": {
    "src": "You stick out like a sore thumb, but thankfully humans like to get into lots of weird spots, so it won't look too out of place.",
-   "dst": "",
+   "dst": "너 엄청 튀긴 하는데, 다행히 인간들은 이상한 데 기어들어 가는 걸 좋아하니까 크게 어색해 보이진 않을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -488,7 +488,7 @@
   },
   "Rise of the Quartron#048": {
    "src": "Use the small rail here, flick the lever. It'll look like you're just...doing what humans do, instead of drawing suspicion.",
-   "dst": "",
+   "dst": "여기 작은 선로를 타고 레버를 당겨. 의심받기는커녕... 그냥 인간다운 짓 하는 걸로 보일 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -498,7 +498,7 @@
   },
   "Rise of the Quartron#049": {
    "src": "Ride the minecart to the bandit mansion.",
-   "dst": "",
+   "dst": "광산 수레를 타고 도적 저택으로 가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Rise of the Quartron",
@@ -508,7 +508,7 @@
   },
   "Rise of the Quartron#050": {
    "src": "Hop on the minecart, it's leaving! But act natural!",
-   "dst": "",
+   "dst": "수레에 타, 출발한다! 근데 자연스럽게 행동해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -518,7 +518,7 @@
   },
   "Rise of the Quartron#051": {
    "src": "Interesting, a human's been swept up in our plans. Hadn't expected the work force to diversify so fast.",
-   "dst": "",
+   "dst": "흥미롭군, 인간이 우리 계획에 휘말렸어. 인력이 이렇게 빨리 다양해질 줄은 몰랐는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -528,7 +528,7 @@
   },
   "Rise of the Quartron#052": {
    "src": "Time for the rundown, oh I love explaining this! I think you'll find what I have to say quite interesting, yes yes!",
-   "dst": "",
+   "dst": "설명할 시간이군, 오 난 이거 설명하는 게 정말 좋아! 내 얘기가 꽤 흥미로울 거다, 그렇고말고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -538,7 +538,7 @@
   },
   "Rise of the Quartron#053": {
    "src": "You see, quartz is a powerful magical material- moreso than many know! It can absorb and harness magical energy, but what more? I had to find out!",
-   "dst": "",
+   "dst": "보다시피 석영은 강력한 마법 재료다- 다들 아는 것 이상으로! 마력을 흡수하고 다룰 수 있지, 하지만 그 이상은? 알아내야만 했지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -548,7 +548,7 @@
   },
   "Rise of the Quartron#054": {
    "src": "The rubes in my research department got me kicked out for suggesting we further our research. What kind of scientist is scared to make advancements?!",
-   "dst": "",
+   "dst": "연구 부서의 멍청이들은 연구를 더 진행하자고 했다고 날 쫓아냈다. 발전을 두려워하는 과학자가 어디 있나?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -558,7 +558,7 @@
   },
   "Rise of the Quartron#055": {
    "src": "But without a board of directors breathing down my neck, my research has led me exactly where I'd hoped, and even more, yes yes!",
-   "dst": "",
+   "dst": "하지만 목을 조르던 이사회가 없으니, 내 연구는 바라던 곳에, 아니 그 이상에 닿았지, 그렇고말고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -568,7 +568,7 @@
   },
   "Rise of the Quartron#056": {
    "src": "Oi. Got a guest taking the secret passage.",
-   "dst": "",
+   "dst": "어이. 비밀 통로로 손님이 들어왔다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -588,7 +588,7 @@
   },
   "Rise of the Quartron#058": {
    "src": "Harnort! I'M Dado! This sicko mugged me for info! They're gonna ruin us both!",
-   "dst": "",
+   "dst": "Harnort! 내가 Dado야! 이 미친놈이 날 털어 정보를 캐냈어! 우리 둘 다 끝장이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -598,7 +598,7 @@
   },
   "Rise of the Quartron#059": {
    "src": "Guards!! GUARDS!! Capture them! Stop them! Tie them up, do something!! Our research can't go to waste, not at this vital point!!",
-   "dst": "",
+   "dst": "경비!! 경비!! 잡아! 막아! 묶어, 뭐라도 해!! 이 중요한 순간에 우리 연구가 헛되게 할 순 없어!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -608,7 +608,7 @@
   },
   "Rise of the Quartron#060": {
    "src": "HA! That's what you get for showing me that amazi- HORRIBLE flower! Outta here!",
-   "dst": "",
+   "dst": "하! 그 끝내주- 끔찍한 꽃을 보여 준 대가다! 난 간다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -618,7 +618,7 @@
   },
   "Rise of the Quartron#061": {
    "src": "Break into the laboratory and stop Harnort.",
-   "dst": "",
+   "dst": "실험실에 잠입해 Harnort를 막으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Rise of the Quartron",
@@ -628,7 +628,7 @@
   },
   "Rise of the Quartron#062": {
    "src": "...so, it's come to this then. I knew the names of all those guards. I didn't hurt anyone to meet my goal.",
-   "dst": "",
+   "dst": "...결국 이렇게 됐군. 난 경비들 이름을 다 알았다. 목표를 위해 아무도 해치지 않았어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -638,7 +638,7 @@
   },
   "Rise of the Quartron#063": {
    "src": "You...I won't let their sacrifices be in vain! {p} needs to see what quartz is truly capable of! I MUST show them.",
-   "dst": "",
+   "dst": "너... 그들의 희생을 헛되게 두지 않겠다! {p}은(는) 석영의 진짜 힘을 봐야 해! 반드시 보여 주고 말겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -648,7 +648,7 @@
   },
   "Rise of the Quartron#064": {
    "src": "My Quartrons are the future! They need to see it! It will have been worth the scheming, and the thieving, and the burnt bridges!",
-   "dst": "",
+   "dst": "내 Quartron이 미래다! 그들은 봐야 해! 음모도, 도둑질도, 끊어진 관계도 전부 가치가 있었을 거다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -658,7 +658,7 @@
   },
   "Rise of the Quartron#065": {
    "src": "But you- you couldn't leave well enough alone. You stepped in, and callously threw away a hundred lives to stop the inevitable!",
-   "dst": "",
+   "dst": "그런데 넌- 넌 가만두질 못했지. 끼어들어서 필연을 막겠다고 백 명의 목숨을 냉정하게 내던졌어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -668,7 +668,7 @@
   },
   "Rise of the Quartron#066": {
    "src": "One live for a hundred is a fair trade!!",
-   "dst": "",
+   "dst": "백 명을 위해 하나 죽는 건 공정해!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -678,7 +678,7 @@
   },
   "Rise of the Quartron#067": {
    "src": "Take down the Quartron and return to nasea with the news.",
-   "dst": "",
+   "dst": "Quartron을 쓰러뜨리고 Nasea에게 돌아가 소식을 전하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Rise of the Quartron",
@@ -688,7 +688,7 @@
   },
   "Rise of the Quartron#068": {
    "src": "Aaah! Not responding?! You- You... YOU! You've destroyed the future! MY future! GAVEL'S future!!!",
-   "dst": "",
+   "dst": "아악! 반응이 없어?! 너- 너... 너! 네가 미래를 파괴했어! 내 미래를! Gavel의 미래를!!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -698,7 +698,7 @@
   },
   "Rise of the Quartron#069": {
    "src": "The futures of a hundred men or more!! You humans deserve to burn in hell for your careless destruction!",
-   "dst": "",
+   "dst": "백 명 넘는 이들의 미래를!! 무모하게 파괴하는 너희 인간은 지옥불에 타야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -708,7 +708,7 @@
   },
   "Rise of the Quartron#070": {
    "src": "The energy output by the detonations is overcharging the quartz in the walls... This entire lab is a deathtrap now! Do us all a favor- SIT STILL AND DIE ALREADY!!",
-   "dst": "",
+   "dst": "폭발 에너지가 벽 속 석영을 과부하시키고 있다... 이 실험실 전체가 이제 죽음의 덫이야! 모두를 위해- 가만히 앉아서 그냥 죽어!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -718,7 +718,7 @@
   },
   "Rise of the Quartron#071": {
    "src": "...you've got some serious explaining to do. First you disappear to get that Tattle flower, or whatever it was.",
-   "dst": "",
+   "dst": "...설명할 게 한가득이겠지. 먼저 넌 그 Tattle 꽃인지 뭔지 가지러 가서 사라졌어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -728,7 +728,7 @@
   },
   "Rise of the Quartron#072": {
    "src": "Then Dado ran through here screaming that he was drugged or nugged, and ran off to the east ridge.",
-   "dst": "",
+   "dst": "그러더니 Dado가 약에 취했다느니 뭐라느니 소리치면서 여길 뛰어가더니 동쪽 능선으로 달아났어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -738,7 +738,7 @@
   },
   "Rise of the Quartron#073": {
    "src": "Then, he came back, asking me if I'd found any more of those flowers, and while he was blabbering the ENTIRE MOUNTAIN SHOOK.",
-   "dst": "",
+   "dst": "그러고는 돌아와서 그 꽃 더 찾았냐고 묻더라. 그렇게 횡설수설하는데 산 전체가 흔들렸어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -748,7 +748,7 @@
   },
   "Rise of the Quartron#074": {
    "src": "So, spill it. I wanted you to figure out where my quartz was going, and you made one of my workers an addict and caused a freaking landslide!!",
-   "dst": "",
+   "dst": "그러니까 털어놔. 내 석영이 어디로 가는지 알아보랬더니, 일꾼 하나를 중독자로 만들고 산사태까지 일으켰잖아!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -758,7 +758,7 @@
   },
   "Rise of the Quartron#075": {
    "src": "...uh huh. Mhm. ... ...yeah, go on. Uh, okay, I can buy that... I'd never believe you if you hadn't given me the proof.",
-   "dst": "",
+   "dst": "...음. 응. ... ...그래, 계속해. 어, 좋아, 믿어 줄게... 증거가 없었으면 절대 안 믿었을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -768,7 +768,7 @@
   },
   "Rise of the Quartron#076": {
    "src": "A militarized quartz mech...yeesh. That guy sounds like a piece of work. Guess that wasn't really your fault after all.",
-   "dst": "",
+   "dst": "군사용 석영 기계라니... 으. 그 녀석 참 대단한 물건이네. 결국 네 잘못은 아니었나 보다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -778,7 +778,7 @@
   },
   "Rise of the Quartron#077": {
    "src": "I'll round up the police to get all those guards and them. ...what's with that look? Almost looks like you don't think anyone'll be there. Anyways...",
-   "dst": "",
+   "dst": "경비대를 불러서 그 경비들이랑 전부 잡아들일게. ...표정이 왜 그래? 거기 아무도 없을 거라는 표정이네. 아무튼...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -788,7 +788,7 @@
   },
   "Rise of the Quartron#078": {
    "src": "Okay, so I'll out you a quick deal. I'll pay you now for figuring this out, and if you do justt one more thing for me then you'll get something extra.",
-   "dst": "",
+   "dst": "좋아, 간단히 거래하자. 이걸 알아낸 대가는 지금 주고, 하나만 더 해 주면 뭔가 더 줄게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -798,7 +798,7 @@
   },
   "Rise of the Quartron#079": {
    "src": "Take the elevator past the yellow flags and go into the private site, you have my permission. I'll meet you up there.",
-   "dst": "",
+   "dst": "노란 깃발 너머 승강기를 타고 사유지로 들어가. 내가 허락할게. 위에서 만나자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -808,7 +808,7 @@
   },
   "Rise of the Quartron#080": {
    "src": "Join Nasea at the end of the minecart track.",
-   "dst": "",
+   "dst": "광산 수레 선로 끝에서 Nasea와 합류하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Rise of the Quartron",
@@ -818,7 +818,7 @@
   },
   "Rise of the Quartron#081": {
    "src": "Coming up behind you.",
-   "dst": "",
+   "dst": "뒤따라 올라가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -828,7 +828,7 @@
   },
   "Rise of the Quartron#082": {
    "src": "This is the newest mining annex, but we've hit a bit of a brick wall. Well...a gravel wall.",
-   "dst": "",
+   "dst": "여긴 새 채굴 구역인데, 벽에 좀 부딪혔어. 그러니까... 자갈 벽에.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -838,7 +838,7 @@
   },
   "Rise of the Quartron#083": {
    "src": "So, if you can open up this area, you'll get access to the mine and whatever you find in it.",
-   "dst": "",
+   "dst": "그러니 이 구역을 뚫어 주면 광산이랑 거기서 찾은 건 네 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -848,7 +848,7 @@
   },
   "Rise of the Quartron#084": {
    "src": "I have to be off though, lots of work to get to. Hm. It looks like the core you showed me folded up into a ring. Really high-tech stuff, but I can't use it, so you can take it.",
-   "dst": "",
+   "dst": "근데 난 가 봐야 해, 할 일이 산더미거든. 흠. 네가 보여 준 코어가 반지 모양으로 접힌 것 같네. 진짜 첨단 기술인데 난 못 쓰니까 가져가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",
@@ -858,7 +858,7 @@
   },
   "Rise of the Quartron#085": {
    "src": "Suppose that's all, then! Here's your payment. I'll see you around.",
-   "dst": "",
+   "dst": "그럼 이걸로 끝이네! 여기 보수야. 또 보자.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Rise of the Quartron",

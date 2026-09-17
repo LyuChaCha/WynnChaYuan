@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Heart of Llevigar",
   "count": 31,
-  "translated": 0,
+  "translated": 31,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Heart of Llevigar#000": {
    "src": "Find Zenam in the {p} power control center at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 {p} 전력 제어 센터에서 Zenam을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -18,7 +18,7 @@
   },
   "Heart of Llevigar#001": {
    "src": "Aaah, no no no! This doesn't make any sense, what in the world is going on?! Nothing's working!",
-   "dst": "",
+   "dst": "으아아, 안 돼 안 돼! 말도 안 돼, 대체 무슨 일이야?! 아무것도 안 돌아가잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -28,7 +28,7 @@
   },
   "Heart of Llevigar#002": {
    "src": "Gweh, a visitor? Get out of here! The plant is shut down for maintenance- wait, are you the electromagic expert we're paying for?",
-   "dst": "",
+   "dst": "으악, 손님? 나가세요! 발전소는 점검 중이라 멈춰- 잠깐, 우리가 돈 주고 부른 전자기 마법 전문가세요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -38,7 +38,7 @@
   },
   "Heart of Llevigar#003": {
    "src": "You are, right? Right?! Cause we can't wait any longer! This system was supposed to be unbreakable, a flawless design!",
-   "dst": "",
+   "dst": "맞죠? 맞죠?! 더는 못 기다리거든요! 이 시스템은 절대 고장 안 나는 완벽한 설계였다고요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -48,7 +48,7 @@
   },
   "Heart of Llevigar#004": {
    "src": "We didn't even need to get Corkian consultation on this, we had this system all figured out ourselves, but now nothing's working right!",
-   "dst": "",
+   "dst": "Corkus 사람들한테 자문도 안 받고 우리끼리 다 알아서 만든 시스템인데, 지금은 제대로 되는 게 없어요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -58,7 +58,7 @@
   },
   "Heart of Llevigar#005": {
    "src": "You're seeing all these sparks and hearing all this crackling? We have no idea what could possibly be going wrong with this! That's why you're needed here!",
-   "dst": "",
+   "dst": "이 불꽃이랑 지지직 소리 보이고 들리죠? 대체 뭐가 잘못됐는지 전혀 모르겠어요! 그래서 당신이 필요한 거예요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -68,7 +68,7 @@
   },
   "Heart of Llevigar#006": {
    "src": "We don't have much time until full meltdown! There is an entrance to the power plant opposite the bank, go there and meet with the Head Engineer!",
-   "dst": "",
+   "dst": "완전히 녹아내리기까지 시간이 얼마 없어요! 은행 맞은편에 발전소 입구가 있으니 거기 가서 수석 기술자를 만나세요!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -78,7 +78,7 @@
   },
   "Heart of Llevigar#007": {
    "src": "Enter the sewers opposite of the bank of {p}.",
-   "dst": "",
+   "dst": "{p} 은행 맞은편 하수도로 들어가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -88,7 +88,7 @@
   },
   "Heart of Llevigar#008": {
    "src": "Find the head engineer at the {p} power plant",
-   "dst": "",
+   "dst": "{p} 발전소에서 수석 기술자를 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -98,7 +98,7 @@
   },
   "Heart of Llevigar#009": {
    "src": "Whew, finally Zeman found a guy for the job. I told him weeks ago this was a two-person task...",
-   "dst": "",
+   "dst": "휴, Zeman이 드디어 사람을 구했구먼. 이건 두 사람이 할 일이라고 몇 주 전에 말했는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -108,7 +108,7 @@
   },
   "Heart of Llevigar#010": {
    "src": "Wait, it's Zenam? Eh, what does it matter? You knew who I was talkin' about. Lemme give you the lowdown real fast.",
-   "dst": "",
+   "dst": "잠깐, Zenam이라고? 에, 뭐 어때? 누군지 알아들었잖아. 빠르게 상황을 설명해 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -118,7 +118,7 @@
   },
   "Heart of Llevigar#011": {
    "src": "About a month ago, there was a big blackout, and the generator here started acting up. Power surges, appliances overloading...heck, some of our lights turned purple!",
-   "dst": "",
+   "dst": "한 달쯤 전에 대정전이 있었는데, 그 뒤로 여기 발전기가 말썽이야. 전력 급증에 가전 과부하... 젠장, 전등 몇 개는 보라색이 됐다니까!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -128,7 +128,7 @@
   },
   "Heart of Llevigar#012": {
    "src": "My grandfather and his engineers jury-rigged the whole system. A reset should fix all this, but as a security measure, I need to be here to oversee the reset.",
-   "dst": "",
+   "dst": "우리 할아버지랑 기술자들이 시스템 전체를 임시변통으로 짰어. 초기화하면 고쳐질 텐데, 보안상 내가 여기서 지켜봐야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -138,7 +138,7 @@
   },
   "Heart of Llevigar#013": {
    "src": "So that's your job- get through the system and find the reset button. These holes'll lead you around the generator rooms. Better get going!",
-   "dst": "",
+   "dst": "그러니 네 일은 이거야- 시스템을 통과해서 초기화 버튼을 찾아. 이 구멍들이 발전기실을 돌아 안내해 줄 거야. 어서 가!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -148,7 +148,7 @@
   },
   "Heart of Llevigar#014": {
    "src": "Try to find a way into the machine",
-   "dst": "",
+   "dst": "기계 안으로 들어갈 방법을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -158,7 +158,7 @@
   },
   "Heart of Llevigar#015": {
    "src": "Find a way to proceed to the inner parts of the machinery",
-   "dst": "",
+   "dst": "기계 내부 깊숙이 나아갈 방법을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -168,7 +168,7 @@
   },
   "Heart of Llevigar#016": {
    "src": "Reach the center of the restricted area",
-   "dst": "",
+   "dst": "제한 구역의 중심에 도달하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -178,7 +178,7 @@
   },
   "Heart of Llevigar#017": {
    "src": "Find the reset button.",
-   "dst": "",
+   "dst": "초기화 버튼을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -188,7 +188,7 @@
   },
   "Heart of Llevigar#018": {
    "src": "Report back to the Head Engineer",
-   "dst": "",
+   "dst": "수석 기술자에게 돌아가 보고하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -198,7 +198,7 @@
   },
   "Heart of Llevigar#019": {
    "src": "Alright, that should do it- Ah, you're back. The system reset just fine, like I said. Everything should be winding down now.",
-   "dst": "",
+   "dst": "좋아, 이제 됐을- 아, 돌아왔군. 내 말대로 시스템이 잘 초기화됐어. 이제 다 잠잠해질 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -208,7 +208,7 @@
   },
   "Heart of Llevigar#020": {
    "src": "It's purging the excess energy now- might have a few more power surges and crackles for a while, but it'll go back to normal soon enough.",
-   "dst": "",
+   "dst": "지금 남는 에너지를 빼내는 중이야- 한동안 전력 급증이랑 지지직 소리가 좀 더 나겠지만, 곧 정상으로 돌아올 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -218,7 +218,7 @@
   },
   "Heart of Llevigar#021": {
    "src": "Hm? What, there was a bug in the system? ...what, are you asleep or something? Of course there was a bug, we just fixed it!",
-   "dst": "",
+   "dst": "응? 뭐, 시스템에 벌레가 있었다고? ...뭐야, 잠이라도 덜 깼어? 당연히 버그가 있었지, 방금 고쳤잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -228,7 +228,7 @@
   },
   "Heart of Llevigar#022": {
    "src": "Well, anyways, Zebra should have our payment all settled. You go on ahead- I still need to stay down here to make sure everything stays smooth.",
-   "dst": "",
+   "dst": "뭐, 아무튼 Zebra가 보수를 다 정리해 뒀을 거야. 먼저 가 봐- 난 여기 남아서 다 잘 돌아가는지 봐야 하거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -238,7 +238,7 @@
   },
   "Heart of Llevigar#023": {
    "src": "...oh, it's Zenam? D'you really care about getting his name right, or what? Anyways, the exit's through the water cooling system, it hooks up to the sewer exit.",
-   "dst": "",
+   "dst": "...아, Zenam이라고? 이름 제대로 부르는 게 그렇게 중요해? 아무튼 출구는 수냉 시스템 쪽이야. 하수도 출구로 이어져.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -248,7 +248,7 @@
   },
   "Heart of Llevigar#024": {
    "src": "Ask Zenam for your reward",
-   "dst": "",
+   "dst": "Zenam에게 보상을 받으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Heart of Llevigar",
@@ -258,7 +258,7 @@
   },
   "Heart of Llevigar#025": {
    "src": "Whew...welcome back. The power is back online- Everything is running at full capacity again. I think the system is just running excess through right now.",
-   "dst": "",
+   "dst": "휴... 어서 오세요. 전력이 복구됐어요- 전부 다시 최대로 돌아가요. 지금은 시스템이 남는 전력을 흘려보내는 중인 것 같아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -268,7 +268,7 @@
   },
   "Heart of Llevigar#026": {
    "src": "Glad you got here when you did though- some phony came through saying he was the expert. Clearly he was just here to take your contract money...",
-   "dst": "",
+   "dst": "그래도 딱 맞춰 와 주셔서 다행이에요- 어떤 사기꾼이 와서 자기가 전문가라고 하더라고요. 분명 당신 보수를 가로채려던 거죠...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -278,7 +278,7 @@
   },
   "Heart of Llevigar#027": {
    "src": "Though, I was panicking so much I probably would've believed him... Speaking of which, here's your cut of the pay, and something extra for the trouble.",
-   "dst": "",
+   "dst": "사실 너무 당황해서 그 말을 믿었을지도 몰라요... 아무튼, 여기 당신 몫의 보수랑 수고비 조금 더 얹었어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -288,7 +288,7 @@
   },
   "Heart of Llevigar#028": {
    "src": "Here's to hoping that the system won't run into any more trouble in the future. I don't want to be faced with an impending cataclysm like that again...",
-   "dst": "",
+   "dst": "앞으로 시스템에 더는 문제가 없길 바라야죠. 그런 대재앙이 코앞에 닥치는 일은 다시 겪고 싶지 않아요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -298,7 +298,7 @@
   },
   "Heart of Llevigar#029": {
    "src": "Aah, this is bad, where's the keys to my toolbox?! Zenam said it was important, I need to find them!",
-   "dst": "",
+   "dst": "으아, 큰일이다, 내 공구함 열쇠 어디 갔지?! Zenam이 중요한 일이라고 했는데, 꼭 찾아야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",
@@ -308,7 +308,7 @@
   },
   "Heart of Llevigar#030": {
    "src": "I still can't believe it, a human has done my job and taken my emeralds... Just because I lost my keys...",
-   "dst": "",
+   "dst": "아직도 못 믿겠어, 인간이 내 일을 하고 내 에메랄드를 가져가다니... 열쇠 좀 잃어버렸다고...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Heart of Llevigar",

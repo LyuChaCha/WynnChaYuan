@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Bob's Lost Soul",
   "count": 75,
-  "translated": 0,
+  "translated": 75,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Bob's Lost Soul#000": {
    "src": "Talk to Tarod in {p}'s Forest at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 {p} 숲에서 Tarod와 대화하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -18,7 +18,7 @@
   },
   "Bob's Lost Soul#001": {
    "src": "You're one of those soldier types, right? My name is Tarod, and I could really use your assistance here.",
-   "dst": "",
+   "dst": "너 군인 같은 부류지? 난 Tarod야. 여기서 네 도움이 정말 필요해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -28,7 +28,7 @@
   },
   "Bob's Lost Soul#002": {
    "src": "Years ago, I met a very powerful and legendary warrior by the name of Bob. Yes, that Bob.",
-   "dst": "",
+   "dst": "몇 년 전, Bob이라는 아주 강한 전설의 전사를 만났어. 그래, 바로 그 Bob.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -38,7 +38,7 @@
   },
   "Bob's Lost Soul#003": {
    "src": "It's safe to say he was a very, well, admirable man. Him and I slowly became close friends over the years.",
-   "dst": "",
+   "dst": "그러니까, 음, 정말 존경스러운 사람이었지. 세월이 흐르며 우린 점점 절친이 됐어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -48,7 +48,7 @@
   },
   "Bob's Lost Soul#004": {
    "src": "That is, until one night, he vanished without a trace. The accepted story is that he was murdered by a pack of ravenous wolves...",
-   "dst": "",
+   "dst": "그러다 어느 날 밤, 그가 흔적도 없이 사라졌어. 굶주린 늑대 떼에게 죽었다는 게 정설이지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -58,7 +58,7 @@
   },
   "Bob's Lost Soul#005": {
    "src": "Now, I don't buy that story, but... look, the point here is that he's gone now, and I want to find out where the hell he ended up. That depressing zombie lumbering around {p} clearly isn't him.",
-   "dst": "",
+   "dst": "난 그 얘기 안 믿지만... 아무튼 중요한 건, 그가 사라졌고 대체 어디로 갔는지 알고 싶다는 거야. {p} 주변을 어슬렁대는 그 우울한 좀비는 분명 그가 아니야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -68,7 +68,7 @@
   },
   "Bob's Lost Soul#006": {
    "src": "I believe he died in this area, and I have been looking for his body for quite a while now, with... less than success.",
-   "dst": "",
+   "dst": "그가 이 근처에서 죽었다고 믿고 꽤 오래 시신을 찾았는데... 결과가 영 별로야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -78,7 +78,7 @@
   },
   "Bob's Lost Soul#007": {
    "src": "Rumors have spread that a tomb lies somewhere east of {p}, but I've never been able to find it. This is where I need you to help me out, yeah?",
-   "dst": "",
+   "dst": "{p} 동쪽 어딘가에 무덤이 있다는 소문이 도는데, 난 끝내 못 찾았어. 그래서 네 도움이 필요한 거야, 알지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -88,7 +88,7 @@
   },
   "Bob's Lost Soul#008": {
    "src": "Do you think you could help me out here? Search around that area, and report back to me if you see anything noteworthy.",
-   "dst": "",
+   "dst": "도와줄 수 있겠어? 그 근처를 뒤져 보고, 눈에 띄는 게 있으면 돌아와서 알려 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -98,7 +98,7 @@
   },
   "Bob's Lost Soul#009": {
    "src": "I'd be eternally grateful if you could help me uncover my old friend's true story.",
-   "dst": "",
+   "dst": "내 옛 친구의 진짜 이야기를 밝혀 준다면 평생 고마워할게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -108,7 +108,7 @@
   },
   "Bob's Lost Soul#010": {
    "src": "Find Bob's Tomb",
-   "dst": "",
+   "dst": "Bob의 무덤을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -118,7 +118,7 @@
   },
   "Bob's Lost Soul#011": {
    "src": "Report what you've found to Tarod at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 Tarod에게 발견한 것을 보고하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -128,7 +128,7 @@
   },
   "Bob's Lost Soul#012": {
    "src": "Welcome back. Did you find anything worthwhile?",
-   "dst": "",
+   "dst": "돌아왔구나. 쓸 만한 거라도 찾았어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -138,7 +138,7 @@
   },
   "Bob's Lost Soul#013": {
    "src": "Oh? Yeah, that definitely sounds like the tomb! Were you able to see what's inside?",
-   "dst": "",
+   "dst": "오? 그래, 그건 분명 그 무덤이야! 안에 뭐가 있는지 봤어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -148,7 +148,7 @@
   },
   "Bob's Lost Soul#014": {
    "src": "No? There's... a magical barrier? Great... just GREAT...",
-   "dst": "",
+   "dst": "못 봤다고? 마법 장벽이...? 좋네... 아주 좋아...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -158,7 +158,7 @@
   },
   "Bob's Lost Soul#015": {
    "src": "I have a feeling whoever made that tomb didn't want anyone attempting to get to him, but... Forget it, we have no other options. This is the only way we can place Bob's soul to rest for good.",
-   "dst": "",
+   "dst": "그 무덤을 만든 자는 아무도 접근 못 하게 하려 한 것 같지만... 됐어, 다른 방법이 없어. Bob의 영혼을 영원히 잠재울 유일한 길이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -168,7 +168,7 @@
   },
   "Bob's Lost Soul#016": {
    "src": "Listen, I have a guy who can help us out. His name is Wedyf, a sorcerer type. If anyone could get rid of that barrier, it would be him.",
-   "dst": "",
+   "dst": "들어 봐, 도와줄 만한 녀석이 있어. 이름은 Wedyf, 마법사 같은 녀석이지. 그 장벽을 없앨 수 있는 건 그뿐일 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -178,7 +178,7 @@
   },
   "Bob's Lost Soul#017": {
    "src": "He lives in {p}, a small town close to {p}. Go meet him, I'll wait for your return.",
-   "dst": "",
+   "dst": "{p} 근처 작은 마을 {p}에 살아. 가서 만나 봐, 여기서 기다릴게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -188,7 +188,7 @@
   },
   "Bob's Lost Soul#018": {
    "src": "Talk to the sorcerer Wedyf in {p}.",
-   "dst": "",
+   "dst": "{p}에 있는 마법사 Wedyf와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -198,7 +198,7 @@
   },
   "Bob's Lost Soul#019": {
    "src": "Welcome traveler. Are you looking for something?",
-   "dst": "",
+   "dst": "어서 와요, 여행자. 뭔가 찾고 있나요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -208,7 +208,7 @@
   },
   "Bob's Lost Soul#020": {
    "src": "Ooh, it has been a long time since I've released an undead...",
-   "dst": "",
+   "dst": "오, 언데드를 풀어 준 지 참 오래됐네요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -218,7 +218,7 @@
   },
   "Bob's Lost Soul#021": {
    "src": "The spirit of your dead friend must still be somewhere in this world. This is why we are unable to get close to his body. Soul magic works in mysterious ways.",
-   "dst": "",
+   "dst": "죽은 친구의 영혼이 아직 이 세상 어딘가에 있을 거예요. 그래서 시신에 다가갈 수 없는 거죠. 영혼 마법은 알 수 없게 작용하거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -228,7 +228,7 @@
   },
   "Bob's Lost Soul#022": {
    "src": "Don't worry, I can do it. I've heard a little bit of Bob's story before. What a tragedy. His own infallible protection used against him...",
-   "dst": "",
+   "dst": "걱정 마요, 할 수 있어요. Bob의 이야기는 조금 들었어요. 참 비극이죠. 완벽한 자기 방어구가 오히려 그를 해쳤으니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -238,7 +238,7 @@
   },
   "Bob's Lost Soul#023": {
    "src": "...Anyways, there's no need to lament on the past. Now, we need two items. The first is something from Bob himself. The other is the last thing that made his blood drop.",
-   "dst": "",
+   "dst": "...아무튼, 지난 일을 한탄할 필요는 없죠. 물건이 두 개 필요해요. 하나는 Bob 본인의 물건. 다른 하나는 마지막으로 그에게 피를 흘리게 한 것이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -248,7 +248,7 @@
   },
   "Bob's Lost Soul#024": {
    "src": "Out past the other side of {p} there are two farm houses with an old cave inbetween then. An old florist used to live there, she has a rose that Bob had once cut himself on.",
-   "dst": "",
+   "dst": "{p} 반대편 너머에 농가 두 채가 있고 그 사이에 오래된 동굴이 있어요. 거기 살던 늙은 꽃집 주인이 Bob이 베였던 장미를 갖고 있죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -258,7 +258,7 @@
   },
   "Bob's Lost Soul#025": {
    "src": "I will warn you, though; she was corrupted some time ago. It may not be that easy to take the rose, so do be prepared.",
-   "dst": "",
+   "dst": "하지만 경고할게요. 그녀는 얼마 전 타락했어요. 장미를 얻기 쉽지 않을 테니 단단히 준비해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -268,7 +268,7 @@
   },
   "Bob's Lost Soul#026": {
    "src": "Secondly... something of Bob's. I've heard rumors of a visage of him wandering around {p}, perhaps you can find something of use from it? Killing enemies in the {p} region may be worth your time, as well.",
-   "dst": "",
+   "dst": "둘째로... Bob의 물건. {p} 주변을 떠도는 그의 형상에 대한 소문을 들었는데, 거기서 쓸 만한 걸 찾을지도 몰라요. {p} 지역에서 적을 처치하는 것도 해 볼 만하고요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -278,7 +278,7 @@
   },
   "Bob's Lost Soul#027": {
    "src": "Bring me [{~} Rose] and [{~} Bob's Tear].",
-   "dst": "",
+   "dst": "[{~} Rose]와(과) [{~} Bob's Tear]를 가져와요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -288,7 +288,7 @@
   },
   "Bob's Lost Soul#028": {
    "src": "Bring [{~} Bob's Tear] from {p} and [{~} Rose] from the house in the {p} forest around [{~}, {~}, -{~}] to Wedyf",
-   "dst": "",
+   "dst": "{p}의 [{~1} Bob's Tear]와(과) [{~3}, {~4}, -{~5}] 근처 {p} 숲속 집의 [{~2} Rose]를 Wedyf에게 가져가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -298,7 +298,7 @@
   },
   "Bob's Lost Soul#029": {
    "src": "Great, you got everything.",
-   "dst": "",
+   "dst": "좋아요, 다 구해 왔군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -308,7 +308,7 @@
   },
   "Bob's Lost Soul#030": {
    "src": "Although... I might have forgot to tell you about something else too...",
-   "dst": "",
+   "dst": "그런데... 말 안 한 게 하나 더 있는 것 같네요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -318,7 +318,7 @@
   },
   "Bob's Lost Soul#031": {
    "src": "We also need a part of the soul of your dead friend.",
-   "dst": "",
+   "dst": "죽은 친구의 영혼 일부도 필요해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -328,7 +328,7 @@
   },
   "Bob's Lost Soul#032": {
    "src": "This is something I unfortunately cannot do myself. There is a blacksmith close to {p} who does this kind of stuff.",
-   "dst": "",
+   "dst": "안타깝게도 이건 제가 직접 못 해요. {p} 근처에 이런 일을 하는 대장장이가 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -338,7 +338,7 @@
   },
   "Bob's Lost Soul#033": {
    "src": "He can extract the soul from someone's weapon. Very useful in those situations. Go talk to him.",
-   "dst": "",
+   "dst": "누군가의 무기에서 영혼을 뽑아낼 수 있죠. 이럴 때 아주 유용해요. 가서 얘기해 봐요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -348,7 +348,7 @@
   },
   "Bob's Lost Soul#034": {
    "src": "Bring me the soul, and I'll be able to remove the spell preventing you from entering the tomb.",
-   "dst": "",
+   "dst": "영혼을 가져오면 무덤 입구를 막는 주문을 풀어 줄게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -358,7 +358,7 @@
   },
   "Bob's Lost Soul#035": {
    "src": "Talk to the blacksmith in the small settlement southwest of {p} at [{~}, {~}, -{~}] about Bob's lost soul",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p} 남서쪽 작은 정착지에 있는 대장장이와 Bob의 잃어버린 영혼에 대해 대화하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -368,7 +368,7 @@
   },
   "Bob's Lost Soul#036": {
    "src": "What can I do for ya?",
-   "dst": "",
+   "dst": "뭘 도와줄까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -378,7 +378,7 @@
   },
   "Bob's Lost Soul#037": {
    "src": "Oh yes! I can extract the soul from weapons!",
-   "dst": "",
+   "dst": "아, 그럼! 무기에서 영혼을 뽑아낼 수 있지!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -388,7 +388,7 @@
   },
   "Bob's Lost Soul#038": {
    "src": "Bring me the weapons of your friend, and I'll see if I can do something with it!",
-   "dst": "",
+   "dst": "친구의 무기를 가져와. 뭘 할 수 있을지 보자고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -398,7 +398,7 @@
   },
   "Bob's Lost Soul#039": {
    "src": "Oh it's... those weapons. Well, if you know what you're doing...",
-   "dst": "",
+   "dst": "아, 그... 그 무기들이군. 뭐, 알고 하는 거라면야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -408,7 +408,7 @@
   },
   "Bob's Lost Soul#040": {
    "src": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shears] will do the trick.",
-   "dst": "",
+   "dst": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow], [{~} Depressing Shears]면 돼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -418,7 +418,7 @@
   },
   "Bob's Lost Soul#041": {
    "src": "Be careful with the weapons, you will only get [ONE] of each. If you lose one, you will have to ask around if anyone has a spare.",
-   "dst": "",
+   "dst": "무기 조심해, 하나씩 [ONE]개만 얻을 수 있어. 잃어버리면 여분 있는 사람을 찾아 물어봐야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -428,7 +428,7 @@
   },
   "Bob's Lost Soul#042": {
    "src": "Maybe someone will be selling one on the Trade Market in {p}, who knows.",
-   "dst": "",
+   "dst": "{p} 거래소에서 누가 팔지도 모르지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -438,7 +438,7 @@
   },
   "Bob's Lost Soul#043": {
    "src": "My apprentice over there has traveled around a lot, they might know where the items are, but I warn you, they are a little bit quirky.",
-   "dst": "",
+   "dst": "저기 내 견습생이 여기저기 많이 돌아다녀서 물건 위치를 알지도 몰라. 근데 좀 괴짜니까 각오해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -448,7 +448,7 @@
   },
   "Bob's Lost Soul#044": {
    "src": "Weapons of the depressed kind? Oh, of course, of course, I know of the set! Around {p}, I hear they are kept.",
-   "dst": "",
+   "dst": "우울한 무기들이라? 오, 물론, 물론, 그 세트 알지! {p} 근처에 보관돼 있다 들었네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -458,7 +458,7 @@
   },
   "Bob's Lost Soul#045": {
    "src": "An army of Linx you must clear, in a cave you shall find this spear!",
-   "dst": "",
+   "dst": "Linx의 군대를 쓸어버려라, 동굴에서 창을 찾으리라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -468,7 +468,7 @@
   },
   "Bob's Lost Soul#046": {
    "src": "To a skilled archer you must go, best her in a lumberyard and you will have her bow!",
-   "dst": "",
+   "dst": "솜씨 좋은 궁수를 찾아가, 벌목장에서 이기면 활이 네 것!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -478,7 +478,7 @@
   },
   "Bob's Lost Soul#047": {
    "src": "On an altar, effervescence leers, complete the sacrifice and you will gain your shears...",
-   "dst": "",
+   "dst": "제단 위에 거품이 음흉히 번뜩이니, 제물을 바치면 가위를 얻으리...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -488,7 +488,7 @@
   },
   "Bob's Lost Soul#048": {
    "src": "In the forest, a house frozen in spikes thick, outsmart the contraption and be gifted a stick!",
-   "dst": "",
+   "dst": "숲속에 두꺼운 가시에 얼어붙은 집, 장치를 꾀로 이기면 막대기를 받으리!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -498,7 +498,7 @@
   },
   "Bob's Lost Soul#049": {
    "src": "But beware, beware! Danger lies ahead, and will try to halt you in your stead!",
-   "dst": "",
+   "dst": "허나 조심, 조심하라! 앞길엔 위험이 도사려, 네 길을 막으려 하리라!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -508,7 +508,7 @@
   },
   "Bob's Lost Soul#050": {
    "src": "Bring [{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow] and [{~} Depressing Shear] to the Blacksmith.",
-   "dst": "",
+   "dst": "[{~} Depressing Stick], [{~} Depressing Spear], [{~} Depressing Bow], [{~} Depressing Shear]를 대장장이에게 가져가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -518,7 +518,7 @@
   },
   "Bob's Lost Soul#051": {
    "src": "Yo, what's up, bud?",
-   "dst": "",
+   "dst": "요, 잘 지냈냐, 친구?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -528,7 +528,7 @@
   },
   "Bob's Lost Soul#052": {
    "src": "I've just been hangin' down here working on my teleportation device. The teleporters got partially frozen over, but I'm pretty damn sure they still work.",
-   "dst": "",
+   "dst": "여기 아래서 순간이동 장치를 만지고 있었어. 텔레포터가 일부 얼어붙었지만, 아직 작동하는 건 확실해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -538,7 +538,7 @@
   },
   "Bob's Lost Soul#053": {
    "src": "Hey, if you want to test it out, be my guest! You can use the teleporter core next to me to start it.",
-   "dst": "",
+   "dst": "야, 시험해 보고 싶으면 마음대로 해! 내 옆의 텔레포터 코어로 작동시키면 돼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -548,7 +548,7 @@
   },
   "Bob's Lost Soul#054": {
    "src": "Right click with it while on the center of the iced over teleporter chamber, and it will teleport you in a direction over to the next chamber.",
-   "dst": "",
+   "dst": "얼어붙은 텔레포터 방 한가운데서 그걸 들고 우클릭하면, 한 방향으로 다음 방까지 순간이동시켜 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -558,7 +558,7 @@
   },
   "Bob's Lost Soul#055": {
    "src": "It will then teleport you again in a direction {~} degrees clockwise, and it will keep doin' that forever.",
-   "dst": "",
+   "dst": "그다음엔 시계 방향으로 {~}도 돌린 방향으로 또 보내 주고, 그걸 영원히 반복해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -568,7 +568,7 @@
   },
   "Bob's Lost Soul#056": {
    "src": "Some of the ice walls have holes in them, and I believe if you use the teleporter core correctly you will be able to make it to the other side where the gold platform is.",
-   "dst": "",
+   "dst": "얼음벽 몇 군데에 구멍이 나 있어서, 코어를 제대로 쓰면 금색 발판이 있는 반대편까지 갈 수 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -578,7 +578,7 @@
   },
   "Bob's Lost Soul#057": {
    "src": "The core is unstable, though, and it will break if you run too far away. Keep that in mind, yeah?",
-   "dst": "",
+   "dst": "근데 코어가 불안정해서 너무 멀리 뛰어가면 깨져. 명심해, 알았지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -588,7 +588,7 @@
   },
   "Bob's Lost Soul#058": {
    "src": "Oh, and I left an old wand of mine down at the gold platform. The thing was very depressing, though, so it ain't too much of an issue. But hey, if you can get to it, it's all yours, bud, free of cost!",
-   "dst": "",
+   "dst": "아, 그리고 금색 발판에 내 낡은 완드를 두고 왔어. 워낙 우울한 물건이라 별로 아깝진 않아. 근데 거기까지 가면 네 거야, 친구, 공짜로!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -598,7 +598,7 @@
   },
   "Bob's Lost Soul#059": {
    "src": "... Hi again. I see you got the weapons.",
-   "dst": "",
+   "dst": "... 또 왔군. 무기를 구했구나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -608,7 +608,7 @@
   },
   "Bob's Lost Soul#060": {
    "src": "These weapons emanate so much sadness... I'm sure you heard about Bob's story...",
-   "dst": "",
+   "dst": "이 무기들, 슬픔이 잔뜩 배어 나오네... Bob 이야기는 들었겠지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -618,7 +618,7 @@
   },
   "Bob's Lost Soul#061": {
    "src": "Here is the soul. It's a little bit crushed, but it can do the trick.",
-   "dst": "",
+   "dst": "여기 영혼이야. 좀 으스러졌지만 쓸 만할 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -628,7 +628,7 @@
   },
   "Bob's Lost Soul#062": {
    "src": "Good luck on your quest. Bob was a great hero, anything to help him is good in my book.",
-   "dst": "",
+   "dst": "퀘스트 행운을 빌어. Bob은 위대한 영웅이었지. 그를 돕는 일이라면 뭐든 좋은 일이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -638,7 +638,7 @@
   },
   "Bob's Lost Soul#063": {
    "src": "Bring back [{~} Bob's Crushed Soul] to Wedyf.",
-   "dst": "",
+   "dst": "[{~} Bob's Crushed Soul]을(를) Wedyf에게 가져가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -648,7 +648,7 @@
   },
   "Bob's Lost Soul#064": {
    "src": "I'm glad to see you again.",
-   "dst": "",
+   "dst": "다시 만나서 반가워요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -658,7 +658,7 @@
   },
   "Bob's Lost Soul#065": {
    "src": "I only need a part of the soul, you can keep the rest.",
-   "dst": "",
+   "dst": "영혼은 일부만 필요해요, 나머지는 가져요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -668,7 +668,7 @@
   },
   "Bob's Lost Soul#066": {
    "src": "Give me a minute, I need to concentrate...",
-   "dst": "",
+   "dst": "잠깐만요, 집중해야 해요...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -678,7 +678,7 @@
   },
   "Bob's Lost Soul#067": {
    "src": "... . .. .",
-   "dst": "",
+   "dst": "... . .. .",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -688,7 +688,7 @@
   },
   "Bob's Lost Soul#068": {
    "src": "..... .. ..... . . . . ...",
-   "dst": "",
+   "dst": "..... .. ..... . . . . ...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -698,7 +698,7 @@
   },
   "Bob's Lost Soul#069": {
    "src": "It is done. You should be able to enter the tomb now. Be careful.",
-   "dst": "",
+   "dst": "다 됐어요. 이제 무덤에 들어갈 수 있을 거예요. 조심해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -708,7 +708,7 @@
   },
   "Bob's Lost Soul#070": {
    "src": "Find Bob's corpse in his tomb.",
-   "dst": "",
+   "dst": "무덤에서 Bob의 시신을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -718,7 +718,7 @@
   },
   "Bob's Lost Soul#071": {
    "src": "Report back what you've seen to Tarod",
-   "dst": "",
+   "dst": "Tarod에게 돌아가 본 것을 보고하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Bob's Lost Soul",
@@ -728,7 +728,7 @@
   },
   "Bob's Lost Soul#072": {
    "src": "You're back... Has he... has he finally been put to rest?",
-   "dst": "",
+   "dst": "돌아왔구나... 그는... 그는 드디어 편히 잠들었어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -738,7 +738,7 @@
   },
   "Bob's Lost Soul#073": {
    "src": "It's... hard to hear, knowing that my old friend is really gone, this time, but... I'm happy he won't have to suffer on this war-torn world for another second.",
-   "dst": "",
+   "dst": "듣기... 힘드네. 내 옛 친구가 이번엔 정말 떠났다는 게. 그래도... 이 전쟁투성이 세상에서 더는 1초도 고통받지 않아도 된다니 다행이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",
@@ -748,7 +748,7 @@
   },
   "Bob's Lost Soul#074": {
    "src": "...I want you to have something. This is his old battle chesplate; he gave it to me a few days before he vanished. I think if he were still here, he'd want you to have this. Please, take good care of it for me...",
-   "dst": "",
+   "dst": "...줄 게 있어. 그의 낡은 전투 흉갑이야. 사라지기 며칠 전에 나한테 줬지. 그가 아직 있었다면 네가 갖길 원했을 거야. 부탁이야, 나 대신 잘 간직해 줘...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Bob's Lost Soul",

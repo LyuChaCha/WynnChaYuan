@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Beyond the Grave",
   "count": 186,
-  "translated": 7,
+  "translated": 186,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Beyond the Grave#000": {
    "src": "Speak to Irlok in the {p} at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p}에서 Irlok과 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -18,7 +18,7 @@
   },
   "Beyond the Grave#001": {
    "src": "Welcome to the Bantisu Temple, traveler. We guide lost souls onwards, be they wandering men to town or spirits unable to exit the canyon.",
-   "dst": "",
+   "dst": "Bantisu 사원에 오신 것을 환영합니다, 여행자여. 저희는 길 잃은 영혼을 인도합니다. 길 잃은 사람이든, 협곡을 못 벗어나는 영혼이든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -28,7 +28,7 @@
   },
   "Beyond the Grave#002": {
    "src": "However, recently, our job has become much more difficult. The canyon shakes, and changes. Often, long-buried creatures are released as the walls shift.",
-   "dst": "",
+   "dst": "그런데 최근 저희 일이 훨씬 어려워졌습니다. 협곡이 흔들리며 모습을 바꿉니다. 벽이 움직일 때마다 오래 묻혀 있던 존재가 풀려나곤 하지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -38,7 +38,7 @@
   },
   "Beyond the Grave#003": {
    "src": "And unfortunately, the worst has come to pass, that one of these creatures is hostile. The Bantisu monks of old collapsed the entrance to its cave to seal it away...",
-   "dst": "",
+   "dst": "그리고 불행히도 최악의 일이 벌어졌습니다. 그중 하나가 적대적인 존재였지요. 옛 Bantisu 수도승들이 그 동굴 입구를 무너뜨려 봉인했었는데...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -48,7 +48,7 @@
   },
   "Beyond the Grave#004": {
    "src": "...but the rubble has shifted, and the cave is open once more. We were not strong enough to defeat it then, and we are not strong enough to defeat it now.",
-   "dst": "",
+   "dst": "...잔해가 움직여 동굴이 다시 열렸습니다. 그때도 저희는 그것을 물리칠 힘이 없었고, 지금도 없습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -58,7 +58,7 @@
   },
   "Beyond the Grave#005": {
    "src": "Even trying to collapse the cave again has ended in failure, for the beast, Krolton, slays our mages and demolitionists in but an instant.",
-   "dst": "",
+   "dst": "동굴을 다시 무너뜨리려는 시도도 실패했습니다. 그 짐승 Krolton이 저희 마법사와 폭파공을 순식간에 죽여 버리니까요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -68,7 +68,7 @@
   },
   "Beyond the Grave#006": {
    "src": "However, the word on the wind tells tales of humans doing the impossible as a matter of rote. Krolton must be dealt with before it leaves the cave- I beg your assistance!",
-   "dst": "",
+   "dst": "하지만 바람결에 들리기를, 인간들은 불가능한 일도 예사로 해낸다더군요. Krolton이 동굴을 나오기 전에 처치해야 합니다. 부디 도와주십시오!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -78,7 +78,7 @@
   },
   "Beyond the Grave#007": {
    "src": "We've no time to spare. I will prepare a short spell to bring you to the cave- Please, wait outside, and prepare yourself.",
-   "dst": "",
+   "dst": "지체할 시간이 없습니다. 동굴로 보내 드릴 짧은 주문을 준비하겠습니다. 부디 밖에서 기다리며 채비하십시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -88,7 +88,7 @@
   },
   "Beyond the Grave#008": {
    "src": "Seek out the creature in the mines at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 광산에서 그 존재를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -98,7 +98,7 @@
   },
   "Beyond the Grave#009": {
    "src": "I apologize for the suddenness of this, but you must understand the urgency. We have no way of knowing when Krolton will emerge.",
-   "dst": "",
+   "dst": "갑작스러워 죄송합니다만, 이 급박함을 이해해 주십시오. Krolton이 언제 나올지 알 방법이 없습니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -108,7 +108,7 @@
   },
   "Beyond the Grave#010": {
    "src": "We will pray for your safety, and that your spirit will not become among those we must guide out of the canyon.",
-   "dst": "",
+   "dst": "무사하시길 기도하겠습니다. 당신의 영혼이 저희가 협곡 밖으로 인도할 영혼이 되지 않기를.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -118,7 +118,7 @@
   },
   "Beyond the Grave#011": {
    "src": "Now, hold tight, and godspeed!!",
-   "dst": "",
+   "dst": "자, 꽉 잡으십시오. 무운을 빕니다!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -128,7 +128,7 @@
   },
   "Beyond the Grave#012": {
    "src": "Explore the strange realm and bargain with Death.",
-   "dst": "",
+   "dst": "기묘한 영역을 탐험하고 죽음과 협상하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -138,7 +138,7 @@
   },
   "Beyond the Grave#013": {
    "src": "SO THAT IS YOUR FIRST INSTINCT? TO CLIMB THE VALLEY WALLS IN FRUITLESS SEARCH OF AN ESCAPE?",
-   "dst": "",
+   "dst": "그래서 그게 그대의 첫 본능이오? 부질없이 출구를 찾아 골짜기 벽을 오르는 것이?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -148,7 +148,7 @@
   },
   "Beyond the Grave#014": {
    "src": "AMUSING. BUT THIS IS WHERE YOU MUST BE. TAKE ALL THE TIME YOU LIKE, THOUGH. I WILL WAIT FOR YOU TO COME TO MY MANOR.",
-   "dst": "",
+   "dst": "재미있군. 하지만 그대가 있을 곳은 여기요. 그래도 얼마든지 시간을 쓰시오. 그대가 내 저택에 오기를 기다리겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -158,7 +158,7 @@
   },
   "Beyond the Grave#015": {
    "src": "SO MY MANSION IS DULL ENOUGH YOU'D RATHER GO ROCK CLIMBING?",
-   "dst": "",
+   "dst": "내 저택이 그리 따분해서 차라리 암벽 등반을 하겠다는 거요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -168,7 +168,7 @@
   },
   "Beyond the Grave#016": {
    "src": "OR DID I SIMPLY SCARE YOU OFF SAYING SUCH SERIOUS THINGS?",
-   "dst": "",
+   "dst": "아니면 내가 너무 진지한 말을 해서 겁을 먹은 거요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -178,7 +178,7 @@
   },
   "Beyond the Grave#017": {
    "src": "NEVERTHELESS, YOU WILL BE BACK EVENTUALLY. THERE IS NOTHING FOR ANYONE OUT THERE.",
-   "dst": "",
+   "dst": "어쨌든 그대는 결국 돌아올 거요. 저 밖에는 누구를 위한 것도 없으니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -188,7 +188,7 @@
   },
   "Beyond the Grave#018": {
    "src": "IT SEEMS I HAVE A NEW GUEST. WELCOME.",
-   "dst": "",
+   "dst": "새 손님이 온 모양이군. 어서 오시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -198,7 +198,7 @@
   },
   "Beyond the Grave#019": {
    "src": "MAKE YOURSELF COMFORTABLE. YOU'LL BE STAYING HERE FOR A WHILE.",
-   "dst": "",
+   "dst": "편히 계시오. 한동안 여기 머물게 될 테니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -208,7 +208,7 @@
   },
   "Beyond the Grave#020": {
    "src": "NOTHING IS STOPPING YOU FROM TAKING A LOOK AROUND. DON'T TOUCH ANYTHING THOUGH. AND TAKE OFF YOUR SHOES AS YOU ENTER.",
-   "dst": "",
+   "dst": "둘러보는 건 막지 않겠소. 다만 아무것도 만지지 마시오. 그리고 들어올 땐 신발을 벗으시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -218,7 +218,7 @@
   },
   "Beyond the Grave#021": {
    "src": "WHEN YOU FEEL LIKE IT, COME TO MY OFFICE UPSTAIRS. WE HAVE A LENGTHY TALK TO HAVE.",
-   "dst": "",
+   "dst": "내킬 때 위층 내 집무실로 오시오. 긴 이야기를 나눠야 하니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -228,7 +228,7 @@
   },
   "Beyond the Grave#022": {
    "src": "THIS IS WHERE I SERVE MEALS TO MY GUESTS. THEY GIVE SUCH GLOWING REVIEWS.",
-   "dst": "",
+   "dst": "여기서 손님들께 식사를 대접하오. 다들 극찬을 아끼지 않지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -238,7 +238,7 @@
   },
   "Beyond the Grave#023": {
    "src": "AFTER ALL, IT IS SAID ONE'S LAST MEAL IS THE SWEETEST, SO HAVING ANOTHER AFTER THAT IS SURELY TO DIE FOR. AH HA HA.",
-   "dst": "",
+   "dst": "무릇 마지막 식사가 가장 달콤하다 하니, 그 뒤에 한 끼 더 먹는 건 분명 죽여주는 일이겠지. 아하하.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -248,7 +248,7 @@
   },
   "Beyond the Grave#024": {
    "src": "IF I HAD BROUGHT ANY FLOUR THIS MORNING, I WOULD HAVE OFFERED A BISCUIT FOR DYING. I'M TOLD I MAKE THE BEST CHOCOLATE CHIP ONES.",
-   "dst": "",
+   "dst": "오늘 아침 밀가루를 가져왔다면 죽음 축하 비스킷을 대접했을 텐데. 내 초코칩 비스킷이 최고라더군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -258,7 +258,7 @@
   },
   "Beyond the Grave#025": {
    "src": "BUT ALAS. WE WILL HAVE TO CONTENT OURSELVES WITH A LAST DRINK FOR THE DEPARTED INSTEAD. I'LL PUT THE KETTLE ON.",
-   "dst": "",
+   "dst": "하지만 아쉽게도. 대신 망자를 위한 마지막 한잔으로 만족해야겠소. 물을 올리겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -268,7 +268,7 @@
   },
   "Beyond the Grave#026": {
    "src": "FEET OFF THE TABLE, PLEASE.",
-   "dst": "",
+   "dst": "탁자에서 발 좀 내리시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -278,7 +278,7 @@
   },
   "Beyond the Grave#027": {
    "src": "THIS SECTION OF THE MANSION IS UNDERGOING RENOVATIONS. FOR THE TIME BEING, IT GOES EMPTY.",
-   "dst": "",
+   "dst": "저택의 이 구역은 보수 공사 중이오. 당분간은 비어 있소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -288,7 +288,7 @@
   },
   "Beyond the Grave#028": {
    "src": "SOULS DO LINGER HERE. LINGERING EVER LONGER THAN BEFORE. AND WITH SO MANY ARRIVING...",
-   "dst": "",
+   "dst": "영혼들은 이곳에 머무르오. 전보다 더 오래 머무르지. 게다가 이리 많이 오니...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -298,7 +298,7 @@
   },
   "Beyond the Grave#029": {
    "src": "IT IS, PERHAPS, A POINTLESS COMFORT TO GIVE. BUT I FEEL A GUEST ROOM WOULD BE APPRECIATED, UNDER THE CIRCUMSTANCES.",
-   "dst": "",
+   "dst": "어쩌면 무의미한 위안일지도 모르오. 하지만 지금 같은 때엔 객실이 반가울 거라 생각하오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -308,7 +308,7 @@
   },
   "Beyond the Grave#030": {
    "src": "PERHAPS GROWING THINGS IN A PLACE LIKE THIS IS A FOOL'S ERRAND.",
-   "dst": "",
+   "dst": "이런 곳에서 뭘 기르는 건 어리석은 짓일지도 모르지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -318,7 +318,7 @@
   },
   "Beyond the Grave#031": {
    "src": "IF IT IS, THEN I WILL MERRILY JINGLE MY BELLS AS I WATER THEM. IT IS FLEETING JOY TO CARE FOR THEM, BUT A JOY NONETHELESS.",
-   "dst": "",
+   "dst": "그렇다면 즐겁게 방울을 딸랑이며 물을 주겠소. 돌보는 기쁨은 덧없지만, 그래도 기쁨이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -328,7 +328,7 @@
   },
   "Beyond the Grave#032": {
    "src": "THESE ARE BUSHES. NOTHING YOU DON'T ALREADY KNOW.",
-   "dst": "",
+   "dst": "이건 덤불이오. 그대도 이미 아는 것뿐이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -338,7 +338,7 @@
   },
   "Beyond the Grave#033": {
    "src": "WELCOME TO MY LIBRARY. I FIND MY GUESTS ARE DRAWN TO HERE. PERHAPS IT IS BECAUSE KNOWLEDGE IS POWER, AS I HAVE BEEN TOLD.",
-   "dst": "",
+   "dst": "내 서재에 온 걸 환영하오. 손님들은 이곳에 끌리더군. 듣자니 아는 것이 힘이라서 그런가 보오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -348,7 +348,7 @@
   },
   "Beyond the Grave#034": {
    "src": "ALTHOUGH, GIVEN SO MANY OF MY BOOKS ARE WRITTEN IN DEAD LANGUAGES, THERE IS LITTLE POWER TO BE FOUND HERE.",
-   "dst": "",
+   "dst": "하지만 내 책 대부분이 죽은 언어로 쓰였으니, 여기서 얻을 힘은 별로 없을 거요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -358,7 +358,7 @@
   },
   "Beyond the Grave#035": {
    "src": "BUT I WILL NEVER BEGRUDGE A GUEST A REPRIEVE. HOWEVER MOMENTARY. MORTALITY CAN BE A HARSH LESSON.",
-   "dst": "",
+   "dst": "그래도 손님이 잠시 쉬어 가는 건 결코 아까워하지 않소. 아무리 짧아도. 필멸은 가혹한 교훈일 수 있으니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -368,7 +368,7 @@
   },
   "Beyond the Grave#036": {
    "src": "IT SEEMS YOU REALLY WANTED TO KNOW WHAT WAS BEHIND THIS DOOR.",
-   "dst": "",
+   "dst": "이 문 뒤에 뭐가 있는지 정말 궁금했던 모양이군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -378,7 +378,7 @@
   },
   "Beyond the Grave#037": {
    "src": "I GUESS YOU WILL GET WHAT YOU WANTED...",
-   "dst": "",
+   "dst": "그럼 원하던 걸 얻게 되겠지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -388,7 +388,7 @@
   },
   "Beyond the Grave#038": {
    "src": "ANOTHER DOOR.",
-   "dst": "",
+   "dst": "또 다른 문이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -398,7 +398,7 @@
   },
   "Beyond the Grave#039": {
    "src": "DO YOU REALLY THINK IT WAS WORTH YOUR TIME?",
-   "dst": "",
+   "dst": "정말 시간을 쓸 만한 가치가 있었소?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -408,7 +408,7 @@
   },
   "Beyond the Grave#040": {
    "src": "AH, I SEE YOU HAVE DISCOVERED THE HOURGLASSES. I SUPPOSE IT IS ONLY NATURAL THEY WOULD DRAW YOUR ATTENTION.",
-   "dst": "",
+   "dst": "아, 모래시계를 발견했군. 그대의 눈길을 끄는 것도 당연한 일이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -418,7 +418,7 @@
   },
   "Beyond the Grave#041": {
    "src": "EACH ONE MEASURES THE LIFE OF A BEING. WHEN ALL THE SAND REACHES THE BOTTOM, I RECEIVE A NEW GUEST.",
-   "dst": "",
+   "dst": "하나하나가 한 존재의 생명을 재는 것이오. 모래가 전부 바닥에 닿으면 새 손님이 오지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -428,7 +428,7 @@
   },
   "Beyond the Grave#042": {
    "src": "BUT A MEASURED LIFESPAN IS NOT A GUARANTEE. IT IS ONLY AN ESTIMATE. THE RATE OF THE HOURGLASS WILL SHIFT IN RESPONSE TO ANY NUMBER OF FACTORS.",
-   "dst": "",
+   "dst": "하지만 정해진 수명이 보장은 아니오. 추정일 뿐이지. 모래시계의 속도는 온갖 요인에 따라 바뀌오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -438,7 +438,7 @@
   },
   "Beyond the Grave#043": {
    "src": "I AM SURE WE COULD FIND YOURS, IF WE SEARCHED HARD ENOUGH. BUT I FIND MOST VISITORS STRUGGLE TO GRAPPLE WITH SUCH A TANGIBLE DISPLAY.",
-   "dst": "",
+   "dst": "잘 찾아보면 그대의 것도 찾을 수 있을 거요. 하지만 대부분의 방문객은 이리 생생한 광경을 감당하기 힘들어하더군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -448,7 +448,7 @@
   },
   "Beyond the Grave#044": {
    "src": "THIS ONE... IT IS SPECIAL. IT DISPLAYS SOMETHING FAR MORE IMPORTANT THAN INDIVIDUAL LIFESPANS.",
-   "dst": "",
+   "dst": "이건... 특별하오. 개개인의 수명보다 훨씬 중요한 것을 보여 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -458,7 +458,7 @@
   },
   "Beyond the Grave#045": {
    "src": "IT IS HERE TO MEASURE HOW MUCH TIME THE WORLD HAS LEFT.",
-   "dst": "",
+   "dst": "이 세계에 남은 시간을 재는 것이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -468,7 +468,7 @@
   },
   "Beyond the Grave#046": {
    "src": "AS WITH THE OTHERS, IT IS MERELY AN ESTIMATE. IT HAS BEEN SLOWED AND HALTED IN THE PAST.",
-   "dst": "",
+   "dst": "다른 것들처럼 추정일 뿐이오. 예전에 느려진 적도, 멈춘 적도 있었지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -478,7 +478,7 @@
   },
   "Beyond the Grave#047": {
    "src": "BUT I FEAR THE COMING END IS INEVITABLE. IT WAS SET IN MOTION LONG, LONG AGO, BY ACTORS BEYOND THE BOTH OF US.",
-   "dst": "",
+   "dst": "하지만 다가오는 끝은 피할 수 없을 것 같소. 아주 먼 옛날, 우리 둘을 넘어선 자들이 움직여 놓은 것이니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -488,7 +488,7 @@
   },
   "Beyond the Grave#048": {
    "src": "I KEEP IT AS A REMINDER, TO CHERISH WHAT STILL IS LEFT. BEFORE IT, TOO, IS LOST.",
-   "dst": "",
+   "dst": "남은 것을 소중히 여기라는 뜻으로 두고 있소. 그것마저 잃기 전에.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -498,7 +498,7 @@
   },
   "Beyond the Grave#049": {
    "src": "PLEASE REFRAIN FROM TOUCHING ANY OF MY JARS. I KEEP THINGS VERY DEAR TO ME IN THEM.",
-   "dst": "",
+   "dst": "내 항아리는 하나도 만지지 마시오. 내게 아주 소중한 것들을 담아 두었으니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -508,7 +508,7 @@
   },
   "Beyond the Grave#050": {
    "src": "PARTICULARLY MY JAR OF SOIL. THAT IS A SOUVENIR FROM VERY, VERY LONG AGO.",
-   "dst": "",
+   "dst": "특히 흙 항아리. 아주, 아주 오래전의 기념품이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -518,7 +518,7 @@
   },
   "Beyond the Grave#051": {
    "src": "I HAVE NO NEED FOR SLEEP. SO, MY BEDROOM NOW SERVES MERELY A SYMBOLIC PURPOSE.",
-   "dst": "",
+   "dst": "나는 잠이 필요 없소. 그러니 내 침실은 이제 상징적인 의미뿐이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -528,7 +528,7 @@
   },
   "Beyond the Grave#052": {
    "src": "SYMBOLIC OF WHAT, YOU ASK? MY LOVING MARRIAGE. JUST BECAUSE I DO NOT HAVE A HEART, IT DOES NOT MEAN I CANNOT LOVE.",
-   "dst": "",
+   "dst": "무엇의 상징이냐고? 내 사랑스러운 결혼 생활이오. 심장이 없다고 사랑하지 못하는 건 아니오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -538,7 +538,7 @@
   },
   "Beyond the Grave#053": {
    "src": "\"TIL DEATH DO US PART\" IS FOR QUITTERS, I SAY. I WILL LOVE HER BEYOND THE END OF TIME ITSELF.",
-   "dst": "",
+   "dst": "\"죽음이 우리를 갈라놓을 때까지\"는 포기하는 자들 말이오. 나는 시간의 끝 너머까지 그녀를 사랑할 거요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -548,7 +548,7 @@
   },
   "Beyond the Grave#054": {
    "src": "THESE DAYS, THE CATS LAY CLAIM TO THE BED FOR THE MOST PART. AT LEAST SOMEONE IS GETTING USE OUT OF IT, IN THE END.",
-   "dst": "",
+   "dst": "요즘은 고양이들이 침대를 거의 차지했소. 결국 누군가는 쓰고 있으니 다행이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -558,7 +558,7 @@
   },
   "Beyond the Grave#055": {
    "src": "THIS IS THE DARK LORD, SNUGGLEBUNS. GREET HIM WITH RESPECT, WITH A PAT ON THE HEAD AND A SCRATCH UNDER THE CHIN.",
-   "dst": "",
+   "dst": "이쪽은 어둠의 군주, Snugglebuns요. 경의를 담아 인사하시오. 머리를 쓰다듬고 턱 밑을 긁어 주는 걸로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -568,7 +568,7 @@
   },
   "Beyond the Grave#056": {
    "src": "HE IS A GUEST, MUCH LIKE YOURSELF. UNLIKE YOU, HOWEVER, HE HAS BEEN HERE A VERY LONG TIME.",
-   "dst": "",
+   "dst": "그대처럼 손님이오. 하지만 그대와 달리 아주 오랫동안 여기 있었지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -578,7 +578,7 @@
   },
   "Beyond the Grave#057": {
    "src": "HE IS ONE OF THE MORE STUBBORN BEASTS I HAVE ENCOUNTERED ACROSS THESE EONS. YOU SEE, HE IS WAITING FOR SOMEONE TO CROSS OVER. MUCH LIKE MYSELF, HE CAN BE VERY PATIENT.",
-   "dst": "",
+   "dst": "영겁의 세월 동안 만난 짐승 중 가장 고집 센 녀석이오. 누군가 건너오기를 기다리고 있거든. 나처럼 아주 참을성이 많지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -588,7 +588,7 @@
   },
   "Beyond the Grave#058": {
    "src": "TOO PATIENT FOR HIS OWN GOOD, PERHAPS.",
-   "dst": "",
+   "dst": "어쩌면 제 좋을 게 없을 만큼 말이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -598,7 +598,7 @@
   },
   "Beyond the Grave#059": {
    "src": "...I DO NOT HAVE THE HEART TO TELL HIM THE TRUTH. AND SO, AS THE YEARS PASS, HIS CLAIM ON MY HOME CONTINUES TO GROW.",
-   "dst": "",
+   "dst": "...차마 진실을 말해 줄 수가 없소. 그래서 해가 갈수록 내 집에 대한 녀석의 지분이 늘어 가지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -608,7 +608,7 @@
   },
   "Beyond the Grave#060": {
    "src": "AND I ALLOW IT. I FIND HIS COMPANIONSHIP WORTH THE HASSLE.",
-   "dst": "",
+   "dst": "그리고 난 그걸 허락하오. 녀석과 함께하는 건 번거로움을 감수할 가치가 있으니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -618,7 +618,7 @@
   },
   "Beyond the Grave#061": {
    "src": "IT MAY NOT SEEM AS SUCH FROM YOUR PERSPECTIVE. BUT LIFE IS LIMITED. STILL, SOULS PASS THROUGH THE CYCLE, AND THE WORLD KEEPS ON SPINNING.",
-   "dst": "",
+   "dst": "그대 입장에선 그리 안 보일지 모르지만, 생명은 유한하오. 그래도 영혼은 순환을 거치고, 세상은 계속 돌아가지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -628,7 +628,7 @@
   },
   "Beyond the Grave#062": {
    "src": "...THEY WERE NOT MEANT TO BE LOST. TO PASS BEYOND MY REACH, TO REACH AN END SOMEWHERE I CANNOT FIND THEM.",
-   "dst": "",
+   "dst": "...그들은 사라져선 안 됐소. 내 손이 닿지 않는 곳으로, 내가 찾을 수 없는 곳에서 끝을 맞아선 안 됐지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -638,7 +638,7 @@
   },
   "Beyond the Grave#063": {
    "src": "AND YET, THROUGH MEANS BEYOND MY CONTROL, THEY DO. THEY HAVE. WITH EACH AND EVERY ONE, I LOSE A PIECE OF MYSELF. IRREVERSIBLY.",
-   "dst": "",
+   "dst": "하지만 내 힘이 닿지 않는 방법으로 그리되고, 그리됐소. 하나하나 잃을 때마다 내 일부를 잃지. 되돌릴 수 없게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -648,7 +648,7 @@
   },
   "Beyond the Grave#064": {
    "src": "AND THE CYCLE MUST KEEP SPINNING, LESSENED EVEN AS IT MAY BE. BUT I STILL REMEMBER THEM, EACH LIFE THAT THEY LIVED.",
-   "dst": "",
+   "dst": "줄어들지언정 순환은 계속 돌아야 하오. 하지만 난 여전히 그들을, 그들이 살았던 삶 하나하나를 기억하오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -658,7 +658,7 @@
   },
   "Beyond the Grave#065": {
    "src": "SOMEONE HAS TO, AFTER ALL.",
-   "dst": "",
+   "dst": "누군가는 기억해야 하니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -678,7 +678,7 @@
   },
   "Beyond the Grave#067": {
    "src": "THIS ONE SHOULD BE FAMILIAR TO YOU.",
-   "dst": "",
+   "dst": "이건 그대에게 낯익을 거요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -688,7 +688,7 @@
   },
   "Beyond the Grave#068": {
    "src": "FEW EVER HAVE THE CHANCE TO COME FACE TO FACE WITH A LIFE THEY THEMSELVES HAVE BROUGHT TO AN END. I WONDER HOW YOU FEEL NOW.",
-   "dst": "",
+   "dst": "자기가 끝낸 생명과 마주할 기회는 드물지. 지금 그대의 기분이 어떤지 궁금하군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -698,7 +698,7 @@
   },
   "Beyond the Grave#069": {
    "src": "HE WAS ONCE A GOOD MAN. BUT SUCH IS THE TRAVESTY OF THAT WAR-RAVAGED PROVINCE, THAT IT TWISTS THE MIND AND SPIRIT IN SUCH A WAY.",
-   "dst": "",
+   "dst": "한때는 좋은 사람이었소. 하지만 전쟁에 짓밟힌 그 지방의 비극이란, 그렇게 마음과 영혼을 뒤틀어 놓는 것이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -708,7 +708,7 @@
   },
   "Beyond the Grave#070": {
    "src": "I WILL NOT PASS JUDGEMENT ON YOUR ACTIONS. BUT PERHAPS DEATH WAS A KINDER FATE THAN THE TURMOIL HE WAS DROWNING IN.",
-   "dst": "",
+   "dst": "그대의 행동을 심판하진 않겠소. 하지만 그가 빠져 있던 혼란보다는 죽음이 더 자비로운 운명이었을지도 모르지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -718,7 +718,7 @@
   },
   "Beyond the Grave#071": {
    "src": "EVEN HERE, FREED OF ITS INFLUENCE, HE STRUGGLES TO RELEASE THAT ANGER THAT GRIPPED HIM SO TIGHTLY. HE REFUSES TO MOVE ON.",
-   "dst": "",
+   "dst": "그 영향에서 벗어난 여기서도, 그를 꽉 움켜쥔 분노를 놓지 못하고 있소. 떠나기를 거부하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -728,7 +728,7 @@
   },
   "Beyond the Grave#072": {
    "src": "BUT HE WILL, EVENTUALLY. THEY ALL DO. IT IS ONLY A MATTER OF TIME.",
-   "dst": "",
+   "dst": "하지만 결국엔 떠날 거요. 다들 그러니. 시간문제일 뿐이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -748,7 +748,7 @@
   },
   "Beyond the Grave#074": {
    "src": "HE IS NOT THE FIRST TO HAVE SUFFERED SUCH A FATE. THAT BLIGHT HAS TAKEN HOLD OF OH SO MANY OVER THE YEARS.",
-   "dst": "",
+   "dst": "그런 운명을 겪은 건 그가 처음이 아니오. 그 병폐는 오랜 세월 수많은 이들을 사로잡았지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -758,7 +758,7 @@
   },
   "Beyond the Grave#075": {
    "src": "A MILLENNIUM IS A RAINDROP IN THE SEA COMPARED TO MY EXISTENCE. SO WHY HAVE THESE YEARS FELT SO MUCH LONGER THAN EVER BEFORE?",
-   "dst": "",
+   "dst": "내 존재에 비하면 천 년은 바다의 빗방울 하나요. 그런데 왜 요 몇 해는 그 어느 때보다 길게 느껴지는 거요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -768,7 +768,7 @@
   },
   "Beyond the Grave#076": {
    "src": "IT IS FORTUNATE THAT IT ONLY TARGETS THE BODY, AND ONLY ONCE ITS SPARK FLICKERS OUT.",
-   "dst": "",
+   "dst": "그게 육신만 노리고, 그것도 불꽃이 꺼진 뒤에만 노린다는 게 다행이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -778,7 +778,7 @@
   },
   "Beyond the Grave#077": {
    "src": "WHAT IT DOES IS BAD ENOUGH ALREADY. IF IT WERE TO TAKE THE SOUL, AS WELL...",
-   "dst": "",
+   "dst": "하는 짓만으로도 충분히 끔찍하오. 만약 영혼까지 가져간다면...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -798,7 +798,7 @@
   },
   "Beyond the Grave#079": {
    "src": "AH HA HA. I WOULD RATHER NOT DWELL ON THAT ANY LONGER. IT ISN'T AS IF I COULD DO SOMETHING ABOUT IT, ANYWAY.",
-   "dst": "",
+   "dst": "아하하. 더는 그 생각 하고 싶지 않소. 어차피 내가 어떻게 할 수 있는 일도 아니니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -818,7 +818,7 @@
   },
   "Beyond the Grave#081": {
    "src": "WELCOME TO MY OFFICE. GO ON, TAKE A GUESS AT WHAT I DO HERE.",
-   "dst": "",
+   "dst": "내 집무실에 온 걸 환영하오. 자, 내가 여기서 뭘 하는지 맞혀 보시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -828,7 +828,7 @@
   },
   "Beyond the Grave#082": {
    "src": "I DIE OF BOREDOM.",
-   "dst": "",
+   "dst": "지루해 죽는 일이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -838,7 +838,7 @@
   },
   "Beyond the Grave#083": {
    "src": "...REALLY? NOTHING? PERHAPS I NEED SOME NEW MATERIAL.",
-   "dst": "",
+   "dst": "...정말? 반응이 없소? 새 개그가 필요한가 보군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -848,7 +848,7 @@
   },
   "Beyond the Grave#084": {
    "src": "PLEASE TAKE A SEAT. LET US REVIEW YOUR OPTIONS.",
-   "dst": "",
+   "dst": "앉으시오. 그대의 선택지를 검토해 봅시다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -858,7 +858,7 @@
   },
   "Beyond the Grave#085": {
    "src": "PERHAPS SITTING IN FRONT OF DEATH MAY SEEM AN ODD PLACE TO BE. I APOLOGIZE FOR ANY DISCOMFORT.",
-   "dst": "",
+   "dst": "죽음 앞에 앉아 있는 게 묘한 기분일지도 모르겠소. 불편하다면 사과하오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -868,7 +868,7 @@
   },
   "Beyond the Grave#086": {
    "src": "NOW, BEFORE WE BEGIN IN EARNEST. LIVING BEINGS ARE NOT SUBTLE ABOUT HAVING QUESTIONS. I AM SURE YOU HAVE THEM.",
-   "dst": "",
+   "dst": "그럼, 본격적으로 시작하기 전에. 산 자들은 궁금한 게 있으면 티가 나지. 그대도 분명 있을 거요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -878,7 +878,7 @@
   },
   "Beyond the Grave#087": {
    "src": "GO ON. ASK THEM NOW. I DO NOT WANT TO BE INTERRUPTED LATER.",
-   "dst": "",
+   "dst": "어서. 지금 물어보시오. 나중에 방해받고 싶지 않으니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -888,7 +888,7 @@
   },
   "Beyond the Grave#088": {
    "src": "SO IT WOULD SEEM.",
-   "dst": "",
+   "dst": "그런 듯하오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -898,7 +898,7 @@
   },
   "Beyond the Grave#089": {
    "src": "FEEL FREE TO TAKE A MOMENT TO COME TO TERMS WITH YOUR MORTALITY, IF YOU NEED IT. I HAVE TIME.",
-   "dst": "",
+   "dst": "필요하다면 잠시 자신의 필멸을 받아들일 시간을 가지시오. 난 시간이 많소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -908,7 +908,7 @@
   },
   "Beyond the Grave#090": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "더 있소?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -918,7 +918,7 @@
   },
   "Beyond the Grave#091": {
    "src": "MANY, MANY, MANY TIMES. AS HAS EVERY OTHER LIVING BEING.",
-   "dst": "",
+   "dst": "아주, 아주, 아주 여러 번. 다른 모든 산 존재가 그렇듯이.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -928,7 +928,7 @@
   },
   "Beyond the Grave#092": {
    "src": "ONCE A LIFE REACHES AN END, THE SOUL PASSES THROUGH THE VEIL, CROSSING OVER INTO DEATH.",
-   "dst": "",
+   "dst": "생명이 끝에 이르면 영혼은 장막을 지나 죽음으로 건너오오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -938,7 +938,7 @@
   },
   "Beyond the Grave#093": {
    "src": "HERE, THEY LINGER. MEMORIES FADE WITH TIME, AND THE SOUL IS REDUCED TO THE ESSENTIALS. PREPARED TO RETURN TO THE CYCLE.",
-   "dst": "",
+   "dst": "여기서 영혼들은 머무르오. 기억은 시간과 함께 흐려지고, 영혼은 본질만 남지. 순환으로 돌아갈 채비를 하는 거요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -948,7 +948,7 @@
   },
   "Beyond the Grave#094": {
    "src": "LIFE AND DEATH ARE NOT IN OPPOSITION, AS YOU MORTALS OFTEN ASSUME. THEY ARE TWO PARTS OF THE SAME WHOLE.",
-   "dst": "",
+   "dst": "그대들 필멸자가 흔히 여기듯 삶과 죽음은 대립하지 않소. 한 전체의 두 부분이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -958,7 +958,7 @@
   },
   "Beyond the Grave#095": {
    "src": "YOU, THE ESSENCE AT THE CORE OF YOUR BEING, HAVE BEEN HERE MANY TIMES BEFORE. AND YOU WILL BE HERE MANY TIMES AGAIN.",
-   "dst": "",
+   "dst": "그대, 그대 존재의 핵심에 있는 본질은 전에도 여러 번 여기 왔소. 앞으로도 여러 번 오겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -968,7 +968,7 @@
   },
   "Beyond the Grave#096": {
    "src": "...OR, SO I WOULD HOPE. BUT I DIGRESS.",
-   "dst": "",
+   "dst": "...아니, 그러길 바라오. 하지만 이야기가 샜군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -978,7 +978,7 @@
   },
   "Beyond the Grave#097": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "더 있소?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -988,7 +988,7 @@
   },
   "Beyond the Grave#098": {
    "src": "IT IS DEATH. IT MAY BE HARD TO BELIEVE, I KNOW. AH HA HA. BUT I HAVE BEEN EXCEEDINGLY CLEAR, HAVEN'T I?",
-   "dst": "",
+   "dst": "여기는 죽음이오. 믿기 어렵겠지, 아오. 아하하. 하지만 내가 아주 분명히 말하지 않았소?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -998,7 +998,7 @@
   },
   "Beyond the Grave#099": {
    "src": "BUT NOT EVERY SOUL WILL SEE IT THE SAME WAY. MOST LACK THE CAPACITY TO CONCEPTUALIZE IT AS ANYTHING MORE THAN A HAZE. A BLURRED STATE OF BEING.",
-   "dst": "",
+   "dst": "하지만 모든 영혼이 이렇게 보는 건 아니오. 대부분은 이곳을 안개 이상으로 인식하지 못하지. 흐릿한 존재의 상태로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1008,7 +1008,7 @@
   },
   "Beyond the Grave#100": {
    "src": "IT IS RARE THAT I MAY HOST A GUEST WITH THE CLARITY OF MIND AND THE WILLPOWER REMAINING TO SEE THIS PLACE FOR WHAT IT TRULY IS.",
-   "dst": "",
+   "dst": "이곳의 참모습을 볼 만큼 맑은 정신과 의지가 남은 손님을 맞는 일은 드물지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1018,7 +1018,7 @@
   },
   "Beyond the Grave#101": {
    "src": "HOWEVER FLEETINGLY, I DO ENJOY WHEN IT HAPPENS. IT IS WORTH CELEBRATING. NOW IF ONLY I HAD SOME SPIRITS TO SHARE. AH HA HA.",
-   "dst": "",
+   "dst": "아무리 덧없어도 그런 때는 즐겁소. 축하할 만하지. 나눠 마실 '영혼'의 술이라도 있으면 좋으련만. 아하하.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1028,7 +1028,7 @@
   },
   "Beyond the Grave#102": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "더 있소?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1038,7 +1038,7 @@
   },
   "Beyond the Grave#103": {
    "src": "OH, IT CHANGES WITH THE TIMES. AND ACCORDING TO MY WHIMS.",
-   "dst": "",
+   "dst": "아, 시대에 따라 바뀌오. 그리고 내 기분에 따라서도.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1048,7 +1048,7 @@
   },
   "Beyond the Grave#104": {
    "src": "IT HAS PREVIOUSLY BEEN A TOWER, A CASTLE, A FOREST, A CAVERN... I WAS IN A VERY UNDERGROUND PHASE OF MY EXISTENCE BACK THEN.",
-   "dst": "",
+   "dst": "전에는 탑, 성, 숲, 동굴이기도 했소... 그땐 내 존재가 아주 지하에 파묻힌 시기였지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1058,7 +1058,7 @@
   },
   "Beyond the Grave#105": {
    "src": "FOR NOW, A MANOR SERVES ME WELL. I DO ADMIRE THE ARCHITECTURAL STYLE OF ITS TIME. VERY GOTHIC.",
-   "dst": "",
+   "dst": "지금은 저택이 딱 좋소. 그 시대의 건축 양식을 참 좋아하오. 아주 고딕하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1068,7 +1068,7 @@
   },
   "Beyond the Grave#106": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "더 있소?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1078,7 +1078,7 @@
   },
   "Beyond the Grave#107": {
    "src": "CERTAINLY NOT. WHEREVER WOULD I FIND THE TIME?",
-   "dst": "",
+   "dst": "물론 아니오. 내가 어디서 그럴 시간을 내겠소?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1088,7 +1088,7 @@
   },
   "Beyond the Grave#108": {
    "src": "FOR MOST SOULS, THERE IS LITTLE NEED TO INTERVENE. THEY WILL LINGER, BUT GIVEN TIME, THEY WILL FIND THEIR WAY FORWARD.",
-   "dst": "",
+   "dst": "대부분의 영혼에겐 개입할 필요가 거의 없소. 머무르긴 해도 시간이 지나면 스스로 나아갈 길을 찾지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1098,7 +1098,7 @@
   },
   "Beyond the Grave#109": {
    "src": "BUT ON OCCASION, AN ARRIVAL WILL DRAW MY INTEREST. ONE WHICH DEMANDS A PROPER WELCOME.",
-   "dst": "",
+   "dst": "하지만 가끔 내 흥미를 끄는 손님이 오오. 제대로 맞이해야 할 손님이.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1108,7 +1108,7 @@
   },
   "Beyond the Grave#110": {
    "src": "THIS MEETING IN MY OFFICE IS NOT TRULY NECESSARY. THE PAPERWORK IS JUST FOR SHOW. BUT I LIKE TO INDULGE, ON OCCASION.",
-   "dst": "",
+   "dst": "집무실에서의 이 만남은 사실 꼭 필요한 건 아니오. 서류는 보여 주기일 뿐이지. 하지만 가끔은 즐기고 싶어서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1118,7 +1118,7 @@
   },
   "Beyond the Grave#111": {
    "src": "ANYTHING ELSE?",
-   "dst": "",
+   "dst": "더 있소?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1128,7 +1128,7 @@
   },
   "Beyond the Grave#112": {
    "src": "THAT SHOULD BE EVERYTHING, THEN. PERHAPS IF I GAVE YOU MORE TIME, YOU COULD THINK OF MORE.",
-   "dst": "",
+   "dst": "그럼 이게 전부인 듯하오. 시간을 더 주면 더 생각해 낼지도 모르겠지만.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1138,7 +1138,7 @@
   },
   "Beyond the Grave#113": {
    "src": "BUT IT IS BEST WE GET ON WITH OUR DISCUSSION, I WOULD SAY.",
-   "dst": "",
+   "dst": "하지만 이제 본론으로 들어가는 게 좋겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1148,7 +1148,7 @@
   },
   "Beyond the Grave#114": {
    "src": "LET US BEGIN WITH THE BASICS.",
-   "dst": "",
+   "dst": "기본부터 시작합시다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1158,7 +1158,7 @@
   },
   "Beyond the Grave#115": {
    "src": "CAUSE OF DEATH: SLAIN BY THE HORROR KNOWN AS KROLTON. ANOTHER ADD TO THE TALLY.",
-   "dst": "",
+   "dst": "사인: Krolton이라 불리는 괴물에게 살해됨. 명단에 한 명 추가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1168,7 +1168,7 @@
   },
   "Beyond the Grave#116": {
    "src": "SWIFT AND UNAVOIDABLE. THERE IS NO SHAME IN LOSING TO SUCH A FORE. YOU ARE NOT THE FIRST, AND YOU WILL LIKELY NOT BE THE LAST.",
-   "dst": "",
+   "dst": "신속하고 피할 수 없었지. 그런 적에게 진 건 부끄러운 일이 아니오. 그대가 처음도 아니고, 아마 마지막도 아닐 거요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1178,7 +1178,7 @@
   },
   "Beyond the Grave#117": {
    "src": "THOUGH PERHAPS I FIND MYSELF HOPING SOMEONE DOES MANAGE TO SUCCEED IN PUTTING AN END TO IT. IT HAS LIVED WELL BEYOND ITS MEAN, AND PROVES A NUISANCE EVERY TIME IT RE-EMERGES...",
-   "dst": "",
+   "dst": "하지만 누군가 그걸 끝장내 주길 바라는 마음도 있소. 제 분수를 한참 넘게 살았고, 다시 나타날 때마다 골칫거리지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1188,7 +1188,7 @@
   },
   "Beyond the Grave#118": {
    "src": "BUT I DIGRESS. NEXT, LET US PERUSE YOUR LIFE'S RECORD. IT IS A FORMALITY, FOR THE MOST PART. ONLY APPLICABLE IF YOU WISH TO RETURN TO THE CYCLE.",
-   "dst": "",
+   "dst": "이야기가 샜군. 다음은 그대의 생애 기록을 살펴봅시다. 대체로 형식적인 절차요. 순환으로 돌아가길 원할 때만 해당되지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1198,7 +1198,7 @@
   },
   "Beyond the Grave#119": {
    "src": "SELFISHLY, HOWEVER, I WOULD URGE YOU TO LINGER A WHILE. IT HAS BEEN SOME TIME SINCE I HAVE HAD GUEST. YOUR COMPANY WOULD NOT BE UNAPPRECIATED.",
-   "dst": "",
+   "dst": "하지만 이기적으로 말하자면, 한동안 머물기를 권하오. 손님을 맞은 지 꽤 되었소. 그대가 함께해 준다면 반갑겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1208,7 +1208,7 @@
   },
   "Beyond the Grave#120": {
    "src": "...YOU HAVE TIME TO DECIDE. FOR NOW, WE MAY...",
-   "dst": "",
+   "dst": "...결정할 시간은 있소. 지금은 우선...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1228,7 +1228,7 @@
   },
   "Beyond the Grave#122": {
    "src": "HM. HOW VERY INTERESTING. THAT WOULD EXPLAIN SOME THINGS.",
-   "dst": "",
+   "dst": "흠. 참으로 흥미롭군. 그러면 몇 가지가 설명되오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1238,7 +1238,7 @@
   },
   "Beyond the Grave#123": {
    "src": "SOMETHING HAS GONE WRONG. IT WOULD SEEM YOUR SPARK HAS PERSISTED EVEN THROUGH THE VEIL... EVEN THOUGH SUCH A THING SHOULD BE IMPOSSIBLE.",
-   "dst": "",
+   "dst": "뭔가 잘못됐소. 그대의 불꽃이 장막을 지나서도 남아 있는 것 같군... 그런 일은 불가능해야 하는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1248,7 +1248,7 @@
   },
   "Beyond the Grave#124": {
    "src": "IT HAS IMPRINTED ITSELF INTO YOUR VERY ESSENCE... HOW HAS THIS COME TO PASS? COULD IT HAVE BEEN...",
-   "dst": "",
+   "dst": "그대의 본질 깊숙이 새겨져 있소... 어떻게 이런 일이? 설마...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1258,7 +1258,7 @@
   },
   "Beyond the Grave#125": {
    "src": "AH. I SEE... THIS COMPLICATES MATTERS.",
-   "dst": "",
+   "dst": "아. 알겠군... 일이 복잡해졌소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1278,7 +1278,7 @@
   },
   "Beyond the Grave#127": {
    "src": "I WOULD NOT WISH TO KEEP YOU HERE. IT WOULD NOT BE RIGHT. AND YET, I LACK THE MEANS TO RETURN YOU TO THE LIVING. SUCH AN ACT IS BEYOND MY OWN CAPABILITY.",
-   "dst": "",
+   "dst": "그대를 여기 붙잡아 두고 싶진 않소. 옳지 않으니. 하지만 그대를 산 자들에게 돌려보낼 방법이 없소. 그건 내 능력 밖의 일이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1288,7 +1288,7 @@
   },
   "Beyond the Grave#128": {
    "src": "WHAT TO DO, WHAT TO DO...",
-   "dst": "",
+   "dst": "어쩐다, 어쩐다...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1308,7 +1308,7 @@
   },
   "Beyond the Grave#130": {
    "src": "A THOUGHT OCCURS TO ME. THOUGH I LACK THE MEANS MYSELF, THERE IS AN OPTION YET OPEN TO US. A THREAD I MAY REACH OUT AND GRASP.",
-   "dst": "",
+   "dst": "생각이 하나 떠오르오. 나 혼자선 방법이 없지만, 아직 열린 선택지가 있소. 내가 손을 뻗어 잡을 수 있는 실 한 가닥이.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1318,7 +1318,7 @@
   },
   "Beyond the Grave#131": {
    "src": "THE WRETCHED KROLTON. ITS SPARK IS STRONG, HAVING TAKEN SO MANY LIVES TO MAINTAIN IT. IF IT IS SLAIN, THAT STRENGTH WILL QUICKLY DISPERSE.",
-   "dst": "",
+   "dst": "저 비열한 Krolton. 수많은 목숨을 빼앗아 유지해 온 그 불꽃은 강하오. 놈이 죽으면 그 힘은 빠르게 흩어지지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1328,7 +1328,7 @@
   },
   "Beyond the Grave#132": {
    "src": "BUT FOR ONE SHORT MOMENT, IT WILL BE WITHIN MY REACH. AND WITH IT, WE MAY REIGNITE YOUR OWN CRADLED SPARK.",
-   "dst": "",
+   "dst": "하지만 아주 잠깐은 내 손이 닿는 곳에 있을 거요. 그걸로 그대가 품은 불꽃을 다시 지필 수 있소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1338,7 +1338,7 @@
   },
   "Beyond the Grave#133": {
    "src": "...THIS IS NOT AN ACT I TAKE LIGHTLY. TO TWIST THE CYCLE IN SUCH A WAY... IT IS AGAINST MY VERY NATURE.",
-   "dst": "",
+   "dst": "...가볍게 할 일이 아니오. 순환을 이렇게 비트는 건... 내 본성에 어긋나오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1348,7 +1348,7 @@
   },
   "Beyond the Grave#134": {
    "src": "BUT, SELFISHLY, I FIND MYSELF CARING LESS ABOUT SUCH THINGS AS OF LATE.",
-   "dst": "",
+   "dst": "하지만 이기적이게도, 요즘은 그런 것에 점점 덜 신경 쓰게 되더군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1358,7 +1358,7 @@
   },
   "Beyond the Grave#135": {
    "src": "SO IT IS DECIDED. I WILL GRANT YOU PASSAGE BACK BEYOND THE VEIL, WHERE YOU WILL RETURN TO THE BODY YOU HAD LEFT BEHIND.",
-   "dst": "",
+   "dst": "그럼 결정됐소. 그대가 장막 너머로 돌아가게 해 주겠소. 두고 온 몸으로 돌아가게 될 거요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1368,7 +1368,7 @@
   },
   "Beyond the Grave#136": {
    "src": "THERE, WITH WHAT STRENGTH YOU HAVE, YOU WILL BRING AND END TO THAT HORROR. AND THROUGH THAT END, WE SHALL STAVE OFF YOUR OWN.",
-   "dst": "",
+   "dst": "거기서 남은 힘으로 그 괴물을 끝장내시오. 그리고 그 끝을 통해 그대의 끝을 막아 낼 거요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1378,7 +1378,7 @@
   },
   "Beyond the Grave#137": {
    "src": "IT WILL TAKE SOME TIME TO PREPARE. IN THE MEANTIME, YOU MAY EXPLORE THE MANSION FURTHER.",
-   "dst": "",
+   "dst": "준비엔 시간이 좀 걸리오. 그동안 저택을 더 둘러봐도 좋소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1388,7 +1388,7 @@
   },
   "Beyond the Grave#138": {
    "src": "THERE IS A GAME I HAD SET UP, IN THE OTHER UPSTAIRS ROOM. IT WAS MEANT TO BE A SURPRISE FOR YOU, BUT SINCE YOU WILL BE LEAVING, I SUPPOSE WE MAY PUSH IT FORWARD.",
-   "dst": "",
+   "dst": "위층의 다른 방에 게임을 준비해 두었소. 그대를 위한 깜짝 선물이었는데, 곧 떠날 테니 앞당겨도 되겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1398,7 +1398,7 @@
   },
   "Beyond the Grave#139": {
    "src": "YES? WHAT ELSE DO YOU NEED?",
-   "dst": "",
+   "dst": "그래? 또 뭐가 필요하오?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1408,7 +1408,7 @@
   },
   "Beyond the Grave#140": {
    "src": "HM.",
-   "dst": "",
+   "dst": "흠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1418,7 +1418,7 @@
   },
   "Beyond the Grave#141": {
    "src": "WHY INDEED.",
-   "dst": "",
+   "dst": "그러게 말이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1428,7 +1428,7 @@
   },
   "Beyond the Grave#142": {
    "src": "I SUPPOSE I HAVE GROWN TIRED OF STANDING BY.",
-   "dst": "",
+   "dst": "그저 지켜보기만 하는 데 지친 것 같소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1438,7 +1438,7 @@
   },
   "Beyond the Grave#143": {
    "src": "IT IS DIFFICULT, WATCHING THE WORLD'S FATE UNFOLD, UNABLE TO LIFT EVEN A SINGLE SKELETAL FINGER TO MAKE A DIFFERENCE.",
-   "dst": "",
+   "dst": "세계의 운명이 펼쳐지는 걸 보면서 뼈 손가락 하나 들어 바꿀 수 없다는 건 괴로운 일이오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1448,7 +1448,7 @@
   },
   "Beyond the Grave#144": {
    "src": "YOU DO NOT YET UNDERSTAND, I TAKE IT. FEW EVER WILL. IT IS SOMETHING FAR BEYOND ANY MORTAL'S CAPACITY TO COMPREHEND.",
-   "dst": "",
+   "dst": "아직 이해 못 한 모양이군. 이해하는 이는 드물지. 필멸자가 이해할 수 있는 범위를 한참 넘어선 일이니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1458,7 +1458,7 @@
   },
   "Beyond the Grave#145": {
    "src": "I SUSPECT YOU WILL SOMEDAY. I DO NOT BELIEVE IN DESTINY. BUT PERHAPS THIS IS CLOSE ENOUGH.",
-   "dst": "",
+   "dst": "언젠가는 이해할 것 같소. 난 운명을 믿지 않소. 하지만 이 정도면 그에 가깝겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1468,7 +1468,7 @@
   },
   "Beyond the Grave#146": {
    "src": "IN TRUTH, YOU ARE RATHER FORTUNATE. YOU HAVE FOUND YOURSELF IN THE EXACT SET OF CIRCUMSTANCES TO ALLOW ME TO INTERVENE.",
-   "dst": "",
+   "dst": "사실 그대는 꽤 운이 좋소. 내가 개입할 수 있는 딱 맞는 상황에 놓였으니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1478,7 +1478,7 @@
   },
   "Beyond the Grave#147": {
    "src": "IT WOULD NOT BE RIGHT TO LET THE OPPORTUNITY PASS ME BY.",
-   "dst": "",
+   "dst": "이 기회를 그냥 흘려보내는 건 옳지 않소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1488,7 +1488,7 @@
   },
   "Beyond the Grave#148": {
    "src": "IN ANY OTHER CIRCUMSTANCE, I WOULD BE HAPPY TO OBLIGE. A LONG-TERM GUEST IS ALWAYS APPRECIATED IN THESE LONESOME TIMES.",
-   "dst": "",
+   "dst": "다른 상황이었다면 기꺼이 들어줬을 거요. 이 쓸쓸한 시절엔 오래 머무는 손님이 늘 반가우니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1498,7 +1498,7 @@
   },
   "Beyond the Grave#149": {
    "src": "BUT I CAN NOT. I WILL NOT.",
-   "dst": "",
+   "dst": "하지만 그럴 수 없소. 그러지 않겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1508,7 +1508,7 @@
   },
   "Beyond the Grave#150": {
    "src": "...I HOPE YOU WILL UNDERSTAND.",
-   "dst": "",
+   "dst": "...이해해 주길 바라오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1518,7 +1518,7 @@
   },
   "Beyond the Grave#151": {
    "src": "...GO. DO NOT LINGER HERE ANY LONGER.",
-   "dst": "",
+   "dst": "...가시오. 더는 여기 머물지 마시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1528,7 +1528,7 @@
   },
   "Beyond the Grave#152": {
    "src": "THE GAME IS IN THE OTHER UPSTAIRS ROOM, ON THE OTHER END OF THE MANSION. I THINK YOU WILL ENJOY IT.",
-   "dst": "",
+   "dst": "게임은 위층 다른 방, 저택 반대편 끝에 있소. 마음에 들 거요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1538,7 +1538,7 @@
   },
   "Beyond the Grave#153": {
    "src": "I CANNOT HELP BUT NOTICE YOU ARE STILL HERE. ARE YOU LOST? THE GAME IS READY FOR YOU IN THE OTHER UPSTAIRS ROOM, ON THE OTHER END OF THE MANSION.",
-   "dst": "",
+   "dst": "아직 여기 있는 게 눈에 띄는군. 길을 잃었소? 게임은 위층 다른 방, 저택 반대편 끝에 준비돼 있소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1548,7 +1548,7 @@
   },
   "Beyond the Grave#154": {
    "src": "Find a way to exit the strange realm by looking around the mansion.",
-   "dst": "",
+   "dst": "저택을 둘러보며 기묘한 영역을 빠져나갈 방법을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -1558,7 +1558,7 @@
   },
   "Beyond the Grave#155": {
    "src": "WELL, I DID SAY YOU NEED TO BE SITTING ON THE COUCH. THE SCREEN TURNS OFF IF YOU MOVE TOO FAR AWAY. YOU'LL HAVE TO START OVER.",
-   "dst": "",
+   "dst": "분명 소파에 앉아 있어야 한다고 했소. 너무 멀리 가면 화면이 꺼지지. 처음부터 다시 해야겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1568,7 +1568,7 @@
   },
   "Beyond the Grave#156": {
    "src": "IMPRESSIVE. HOWEVER, THAT WAS SIMPLY ROUND {~}, OUT OF {~}. EACH ONE WILL BE PROGRESSIVELY MORE DIFFICULT THAN THE LAST. READY?",
-   "dst": "",
+   "dst": "인상적이군. 하지만 {~}라운드일 뿐이오, 총 {~}라운드 중. 라운드마다 점점 어려워지지. 준비됐소?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1578,7 +1578,7 @@
   },
   "Beyond the Grave#157": {
    "src": "...AH, THE LOOK ON YOUR FACE. PRICELESS. GIVEN HOW MY SKULL IS SOLID, MY GUESTS HAVE TO MEET MY FILL OF MAKING FACES FOR ME.",
-   "dst": "",
+   "dst": "...아, 그 표정. 값을 매길 수 없군. 내 두개골은 단단해서, 표정은 손님들이 대신 지어 줘야 하오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1588,7 +1588,7 @@
   },
   "Beyond the Grave#158": {
    "src": "SEEING AS YOU NEED TO LEAVE SOON, I HAVE ELECTED TO CUT THE QUIZ SHOW SHORT. FOR NOW, WE WILL PICK BACK UP WHERE WE LEFT OFF ONCE YOU INEVITABLY RETURN.",
-   "dst": "",
+   "dst": "곧 떠나야 하니 퀴즈 쇼는 짧게 끝내기로 했소. 그대가 필연적으로 돌아오면 멈춘 곳부터 이어 갑시다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1598,7 +1598,7 @@
   },
   "Beyond the Grave#159": {
    "src": "...WAS IT ENJOYABLE? I HAD PUT A GREAT DEAL OF WORK INTO IT.",
-   "dst": "",
+   "dst": "...재미있었소? 공을 많이 들였는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1608,7 +1608,7 @@
   },
   "Beyond the Grave#160": {
    "src": "I AM GLAD. I PUT A LOT OF TIME INTO ENSURING MY GUESTS ARE ENTERTAINED HERE.",
-   "dst": "",
+   "dst": "다행이오. 손님들이 여기서 즐겁게 지내도록 시간을 많이 들였소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1618,7 +1618,7 @@
   },
   "Beyond the Grave#161": {
    "src": "I SEE. VERY WELL. YOUR FEEDBACK IS APPRECIATED. I WILL HAVE TO MAKE SOME REVISIONS.",
-   "dst": "",
+   "dst": "알겠소. 좋소. 의견 고맙소. 좀 고쳐야겠군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1628,7 +1628,7 @@
   },
   "Beyond the Grave#162": {
    "src": "THEN THAT IS ALL. IF ONLY YOU COULD STAY LONGER- I DO ENJOY ACTIVITIES WITH LUCID GUESTS. COOK CLUBS, LITTLE PARADES... BUT IT WILL HAVE TO WAIT.",
-   "dst": "",
+   "dst": "그럼 이걸로 끝이오. 더 머물 수 있다면 좋을 텐데- 맑은 정신의 손님과 하는 활동이 즐겁거든. 요리 모임, 작은 행진... 하지만 다음으로 미뤄야겠군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1638,7 +1638,7 @@
   },
   "Beyond the Grave#163": {
    "src": "NOW. THIS MANOR HASN'T GOT A BACK DOOR, SO I WILL NEED TO MAKE ONE FOR YOU TO EXIT. EXCUSE THE NOISE FOR MOMENT, AND TAKE THE NEW EXIT ANY TIME YOU LIKE.",
-   "dst": "",
+   "dst": "자. 이 저택엔 뒷문이 없으니 나갈 문을 만들어 줘야겠소. 잠시 시끄러운 건 양해하시고, 새 출구로 언제든 나가시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1648,7 +1648,7 @@
   },
   "Beyond the Grave#164": {
    "src": "WELL, I DID SAY YOU NEED TO BE SITTING ON THE COUCH. THE SCREEN TURNS OFF IF YOU MOVE TOO FAR AWAY. YOU'LL HAVE TO START OVER.",
-   "dst": "",
+   "dst": "분명 소파에 앉아 있어야 한다고 했소. 너무 멀리 가면 화면이 꺼지지. 처음부터 다시 해야겠소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1658,7 +1658,7 @@
   },
   "Beyond the Grave#165": {
    "src": "SO, THERE YOU GO, WALKING BACK INTO THE LONG DREAM OF LIFE.",
-   "dst": "",
+   "dst": "자, 그렇게 삶이라는 긴 꿈속으로 걸어 돌아가는군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1668,7 +1668,7 @@
   },
   "Beyond the Grave#166": {
    "src": "IT WAS A SHORT STAY. BUT, I DID ENJOY HAVING YOU HERE. I ALWAYS DO LIKE THE GUESTS WHO CAN SEE ME FOR WHAT I AM.",
-   "dst": "",
+   "dst": "짧은 방문이었소. 하지만 그대가 있어 즐거웠소. 나를 있는 그대로 볼 수 있는 손님은 언제나 좋지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1678,7 +1678,7 @@
   },
   "Beyond the Grave#167": {
    "src": "THE CIRCUMSTANCES HAVE NEVER ALIGNED FOR A GUEST TO LEAVE THIS WAY. TYPICALLY, THEY WILL MOVE ON AND EVENTUALLY RETURN TO THE CYCLE.",
-   "dst": "",
+   "dst": "손님이 이런 식으로 떠날 수 있는 상황은 한 번도 없었소. 보통은 떠나서 결국 순환으로 돌아가지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1688,7 +1688,7 @@
   },
   "Beyond the Grave#168": {
    "src": "SO IN A WAY, THIS CANNOT BE CALLED A \"GOODBYE.\" AH HA HA. NO, INSTEAD IT IS A \"SEE YOU SOON.\"",
-   "dst": "",
+   "dst": "그러니 어떤 의미에선 \"작별\"이라 할 수 없소. 아하하. 아니, \"곧 또 봅시다\"라고 해야겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1698,7 +1698,7 @@
   },
   "Beyond the Grave#169": {
    "src": "Defeat Krolton to earn your way back to the living.",
-   "dst": "",
+   "dst": "Krolton을 처치하고 산 자의 세계로 돌아갈 자격을 얻으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -1708,7 +1708,7 @@
   },
   "Beyond the Grave#170": {
    "src": "...ONE LAST THING. YOU HAVE NOT YET ENTIRELY REINTEGRATED INTO YOUR BODY.",
-   "dst": "",
+   "dst": "...마지막으로 하나. 그대는 아직 몸과 완전히 다시 합쳐지지 않았소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1718,7 +1718,7 @@
   },
   "Beyond the Grave#171": {
    "src": "AS SUCH, FOR THE TIME BEING, MORTALITY IS MERELY A SUGGESTION. SO BE AS RECKLESS AS YOU WANT.",
-   "dst": "",
+   "dst": "그러니 당분간 죽음은 그저 권고 사항일 뿐이오. 마음껏 무모하게 굴어도 되오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1728,7 +1728,7 @@
   },
   "Beyond the Grave#172": {
    "src": "SO LONG AS THE HORROR DIES, NOT MATTER THE CAUSE, IT WILL BE ENOUGH FOR OUR NEEDS. REMEMBER THAT.",
-   "dst": "",
+   "dst": "원인이 무엇이든 그 괴물만 죽으면 우리 목적엔 충분하오. 그걸 기억하시오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1738,7 +1738,7 @@
   },
   "Beyond the Grave#173": {
    "src": "AND THERE SHALL I DECLARE IT BE DONE. THE HORROR'S SPARK UNWOVEN.. AND YOU, BODY, SOUL, SPARK, KNITTED BACK TOGETHER. A NEW PATCH FOR THE TAPESTRY OF YOUR LIFE.",
-   "dst": "",
+   "dst": "이로써 다 끝났음을 선언하오. 괴물의 불꽃은 풀려나고.. 그대의 몸, 영혼, 불꽃은 다시 엮였소. 그대 삶의 태피스트리에 새 조각 하나.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1748,7 +1748,7 @@
   },
   "Beyond the Grave#174": {
    "src": "IT WAS NICE TO SEE THIS PLACE IN PERSON AGAIN, EVEN IF I WAS ONLY VISITING FOR A MOMENT. BUT NOW I MUST RETURN TO MY OWN BUSINESS.",
-   "dst": "",
+   "dst": "잠깐 들른 것뿐이지만, 이곳을 다시 직접 보니 좋았소. 하지만 이제 내 일로 돌아가야 하오.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1758,7 +1758,7 @@
   },
   "Beyond the Grave#175": {
    "src": "THIS MEANS FAREWELL, FOR THE TIME BEING. WHEN WE NEXT MEET, YOU WILL HAVE REACHED YOUR FINAL END.",
-   "dst": "",
+   "dst": "그럼 당분간 작별이오. 다음에 만날 땐 그대가 진짜 끝에 이르렀을 때겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1768,7 +1768,7 @@
   },
   "Beyond the Grave#176": {
    "src": "TIL THEN, TREASURE YOUR LIFE AS YOU LIVE IT TO THE FULLEST. I LOOK FORWARD TO SHARING STORIES OVER TEA, AH HA HA.",
-   "dst": "",
+   "dst": "그때까지 삶을 소중히, 한껏 살아가시오. 차를 마시며 이야기 나눌 날을 기대하겠소, 아하하.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1778,7 +1778,7 @@
   },
   "Beyond the Grave#177": {
    "src": "Take proof of Krolton's demise to Irlok at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "Krolton이 죽었다는 증거를 [{~}, {~}, -{~}]의 Irlok에게 가져가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Beyond the Grave",
@@ -1788,7 +1788,7 @@
   },
   "Beyond the Grave#178": {
    "src": "Oh, thank goodness. You've returned- not free of wear, but certainly alive. Did you need to flee from Krolton, or is he...?",
-   "dst": "",
+   "dst": "오, 다행입니다. 돌아오셨군요- 멀쩡하진 않아도 분명 살아서요. Krolton에게서 달아나셨습니까, 아니면 그것이...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1798,7 +1798,7 @@
   },
   "Beyond the Grave#179": {
    "src": "Truly? The beast is dead?",
-   "dst": "",
+   "dst": "정말입니까? 그 짐승이 죽었다고요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1808,7 +1808,7 @@
   },
   "Beyond the Grave#180": {
    "src": "Gracious, I don't think I've ever been so relieved. Krolton was responsible for thousands of deaths long ago. You've prevented an oncoming massacre!",
-   "dst": "",
+   "dst": "세상에, 이렇게 안도한 적은 없는 것 같습니다. Krolton은 오래전 수천 명을 죽였지요. 다가오던 학살을 막으셨습니다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1818,7 +1818,7 @@
   },
   "Beyond the Grave#181": {
    "src": "Bantisu Temple owes you a great deal. Here then- a suitable reward.",
-   "dst": "",
+   "dst": "Bantisu 사원은 당신께 큰 빚을 졌습니다. 자, 여기- 합당한 보상입니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1828,7 +1828,7 @@
   },
   "Beyond the Grave#182": {
    "src": "A powerful Bantisu artifact, as a reward for defeating a beast that menaced in antiquated times.",
-   "dst": "",
+   "dst": "강력한 Bantisu 유물입니다. 아득한 옛날 사람들을 위협한 짐승을 물리친 보상이지요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1838,7 +1838,7 @@
   },
   "Beyond the Grave#183": {
    "src": "Safe travels, human. Whether it was luck or strength that had you prevail, I pray it will not fail you in the future.",
-   "dst": "",
+   "dst": "평안한 여행 되십시오, 인간이여. 운이든 힘이든, 당신을 승리로 이끈 것이 앞으로도 당신을 저버리지 않기를.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1848,7 +1848,7 @@
   },
   "Beyond the Grave#184": {
    "src": "REVISITING OLD MEMORIES, ARE WE?",
-   "dst": "",
+   "dst": "옛 기억을 되새기는 중이오?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",
@@ -1858,7 +1858,7 @@
   },
   "Beyond the Grave#185": {
    "src": "THIS BOOK IS SO BAD, EVEN THE LONG-WINDED AND PAINFUL DEATH OF SWEENEY S. GREENVILLE IS BETTER THAN THIS.",
-   "dst": "",
+   "dst": "이 책은 너무 형편없어서, Sweeney S. Greenville의 길고 고통스러운 죽음조차 이것보단 낫소.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Beyond the Grave",

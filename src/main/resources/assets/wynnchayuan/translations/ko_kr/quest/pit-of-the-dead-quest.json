@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Pit of the Dead (Quest)",
   "count": 12,
-  "translated": 0,
+  "translated": 12,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Pit of the Dead (Quest)#000": {
    "src": "Talk to Merloni in {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "{p}의 [{~}, {~}, -{~}]에 있는 Merloni에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -18,7 +18,7 @@
   },
   "Pit of the Dead (Quest)#001": {
    "src": "Would you like to hear the tale of the pit of the dead?",
-   "dst": "",
+   "dst": "망자의 구덩이 이야기를 들어 보겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -28,7 +28,7 @@
   },
   "Pit of the Dead (Quest)#002": {
    "src": "It is the pit where the corpses of the poor miners who discovered the Portal by the {p} are buried.",
-   "dst": "",
+   "dst": "{p} 옆에서 차원문을 발견한 불쌍한 광부들의 시신이 묻힌 구덩이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -38,7 +38,7 @@
   },
   "Pit of the Dead (Quest)#003": {
    "src": "Those that had not already died had to be executed due to the insanity brought on from the corruption.",
-   "dst": "",
+   "dst": "죽지 않은 자들도 타락이 불러온 광기 때문에 처형당해야 했네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -48,7 +48,7 @@
   },
   "Pit of the Dead (Quest)#004": {
    "src": "Their spirits still haunt the grave and infect the minds of people who disturb them. It isn't pretty.",
-   "dst": "",
+   "dst": "그들의 영혼은 아직도 무덤을 떠돌며 방해하는 자의 정신을 좀먹지. 끔찍한 광경이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -58,7 +58,7 @@
   },
   "Pit of the Dead (Quest)#005": {
    "src": "However, I heard rumours of those who were able to bathe in their waters and be accepted by them, to show no fear of the dead is to be admired.",
-   "dst": "",
+   "dst": "하지만 그 물에 몸을 담그고 그들에게 받아들여진 자들이 있다는 소문을 들었네. 망자를 두려워하지 않는 건 존경할 일이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -68,7 +68,7 @@
   },
   "Pit of the Dead (Quest)#006": {
    "src": "Maybe this shrine that I keep hearing about has something to do with it? It's apparently hidden deep inside the pit.",
-   "dst": "",
+   "dst": "자꾸 듣게 되는 그 성소가 뭔가 관련이 있을지도 모르겠군. 구덩이 깊숙이 숨겨져 있다더군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -78,7 +78,7 @@
   },
   "Pit of the Dead (Quest)#007": {
    "src": "Soldier, the pit is located south east of {p}, across the bridge behind us. I will write down the coordinates inside your quest book.",
-   "dst": "",
+   "dst": "병사, 구덩이는 {p} 남동쪽, 우리 뒤 다리 건너에 있네. 좌표는 자네 퀘스트 북에 적어 두지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -88,7 +88,7 @@
   },
   "Pit of the Dead (Quest)#008": {
    "src": "Enter the pit. Learn it's mysteries, then come back to me.",
-   "dst": "",
+   "dst": "구덩이에 들어가게. 그곳의 비밀을 알아내고 돌아오게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",
@@ -98,7 +98,7 @@
   },
   "Pit of the Dead (Quest)#009": {
    "src": "Explore the pit at [{~}, {~}, -{~}] and find the shrine",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 구덩이를 탐색해 성소를 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -108,7 +108,7 @@
   },
   "Pit of the Dead (Quest)#010": {
    "src": "Go back to {p} and tell Merloni that you succeeded",
-   "dst": "",
+   "dst": "{p}(으)로 돌아가 Merloni에게 성공을 알리세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Pit of the Dead (Quest)",
@@ -118,7 +118,7 @@
   },
   "Pit of the Dead (Quest)#011": {
    "src": "Very impressive! Here's your reward. I found it a while ago while walking around {p}. It probably fell off a skeleton!",
-   "dst": "",
+   "dst": "정말 대단하군! 여기 보상일세. 얼마 전 {p} 근처를 걷다 주웠지. 해골한테서 떨어졌나 봐!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pit of the Dead (Quest)",

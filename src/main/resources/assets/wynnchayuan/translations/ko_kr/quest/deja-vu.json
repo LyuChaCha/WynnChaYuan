@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Deja Vu",
   "count": 87,
-  "translated": 0,
+  "translated": 87,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Deja Vu#000": {
    "src": "Talk to Asher near {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "Asher에게 말을 거세요. ({p} 근처 [-{~}, {~}, -{~}])",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -18,7 +18,7 @@
   },
   "Deja Vu#001": {
    "src": "Well well well, look who decided to come back with their tail between their legs.",
-   "dst": "",
+   "dst": "이런이런, 꼬리 내리고 돌아온 게 누군지 좀 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -28,7 +28,7 @@
   },
   "Deja Vu#002": {
    "src": "Two weeks now and you still haven't found it? Ugh, I can't believe I ever trusted you with such a simple task.",
-   "dst": "",
+   "dst": "2주나 지났는데 아직도 못 찾았어? 하, 이런 간단한 일을 너한테 맡겼다니.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -38,7 +38,7 @@
   },
   "Deja Vu#003": {
    "src": "Who am I? WHAT DO YOU MEAN WHO AM I? You offered to help find my shovel, and I've been waiting two weeks!",
-   "dst": "",
+   "dst": "내가 누구냐고? 그게 무슨 소리야? 내 삽 찾아 준다며! 2주나 기다렸다고!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -48,7 +48,7 @@
   },
   "Deja Vu#004": {
    "src": "Forget about your payment. Unless you either pay me back or get my shovel right now!",
-   "dst": "",
+   "dst": "보수는 잊어. 당장 돈을 물어내든지 내 삽을 찾아오든지 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -58,7 +58,7 @@
   },
   "Deja Vu#005": {
    "src": "My shovel? That's why I sent you out in the first place! It's somewhere in {p}. I lost it while following a trail of flowers.",
-   "dst": "",
+   "dst": "내 삽? 그것 때문에 보낸 거잖아! {p} 어딘가에 있어. 꽃길을 따라가다 잃어버렸어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -68,7 +68,7 @@
   },
   "Deja Vu#006": {
    "src": "I think it was south west of the large ruined gate. Now go get it!",
-   "dst": "",
+   "dst": "커다란 폐허 관문 남서쪽이었던 것 같아. 얼른 찾아와!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -78,7 +78,7 @@
   },
   "Deja Vu#007": {
    "src": "Find Asher's Shovel near [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}] 근처에서 Asher의 삽을 찾으세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -88,7 +88,7 @@
   },
   "Deja Vu#008": {
    "src": "Return Asher's Shovel to Asher.",
-   "dst": "",
+   "dst": "Asher에게 삽을 돌려주세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -98,7 +98,7 @@
   },
   "Deja Vu#009": {
    "src": "Well hello there, stranger! Welcome to {p}! Always nice to see a new face around here.",
-   "dst": "",
+   "dst": "어이, 낯선 사람! {p}에 온 걸 환영해! 새 얼굴은 언제 봐도 반갑다니까.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -108,7 +108,7 @@
   },
   "Deja Vu#010": {
    "src": "Mad at you? Why would I be mad at you? We've never met.",
-   "dst": "",
+   "dst": "화났냐고? 내가 왜 화를 내? 우린 처음 보는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -118,7 +118,7 @@
   },
   "Deja Vu#011": {
    "src": "I know this a bit forward, but I need to ask for your help with-",
-   "dst": "",
+   "dst": "좀 갑작스럽지만, 부탁할 게 있는데-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -128,7 +128,7 @@
   },
   "Deja Vu#012": {
    "src": "Wait, is that-? It is! You've found my shovel! I recognize those markings anywhere.",
-   "dst": "",
+   "dst": "잠깐, 그거-? 맞아! 내 삽을 찾았구나! 저 무늬는 어디서든 알아보지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -138,7 +138,7 @@
   },
   "Deja Vu#013": {
    "src": "But why is it so rusty? Ah, no matter. Give that to me and I'll head inside to get you a nice reward.",
-   "dst": "",
+   "dst": "근데 왜 이렇게 녹슬었지? 뭐, 상관없어. 이리 줘, 안에서 보상 가져올게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -148,7 +148,7 @@
   },
   "Deja Vu#014": {
    "src": "Thank you. Now, about that reward-",
-   "dst": "",
+   "dst": "고마워. 자, 그럼 보상 말인데-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -158,7 +158,7 @@
   },
   "Deja Vu#015": {
    "src": "Wha- What's happening?",
-   "dst": "",
+   "dst": "뭐- 뭐야, 이게?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -168,7 +168,7 @@
   },
   "Deja Vu#016": {
    "src": "Oh dear, there he goes again. Poor fool ignored my warnings and touched that shovel.",
-   "dst": "",
+   "dst": "이런, 또 저러는군. 가엾은 녀석, 내 경고를 무시하고 그 삽을 만졌어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -178,7 +178,7 @@
   },
   "Deja Vu#017": {
    "src": "He's gone and got himself stuck in a loop.",
-   "dst": "",
+   "dst": "결국 스스로 순환에 갇혀 버렸지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -188,7 +188,7 @@
   },
   "Deja Vu#018": {
    "src": "Head inside, soldier, and I'll explain what's happening here.",
-   "dst": "",
+   "dst": "안으로 들어오게, 병사. 무슨 일인지 설명해 주지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -198,7 +198,7 @@
   },
   "Deja Vu#019": {
    "src": "Enter Asher's house.",
-   "dst": "",
+   "dst": "Asher의 집에 들어가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -208,7 +208,7 @@
   },
   "Deja Vu#020": {
    "src": "Without Asher, his house has vanished from time.",
-   "dst": "",
+   "dst": "Asher가 없으니 그의 집도 시간 속에서 사라졌네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -218,7 +218,7 @@
   },
   "Deja Vu#021": {
    "src": "Talk to Old Man Martyn.",
-   "dst": "",
+   "dst": "Old Man Martyn에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -228,7 +228,7 @@
   },
   "Deja Vu#022": {
    "src": "Let me explain why Asher disappeared...",
-   "dst": "",
+   "dst": "Asher가 왜 사라졌는지 설명해 주지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -238,7 +238,7 @@
   },
   "Deja Vu#023": {
    "src": "{p} was built many years ago by a long-lost civilization.",
-   "dst": "",
+   "dst": "{p}은(는) 오래전 잊힌 문명이 지은 곳이네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -248,7 +248,7 @@
   },
   "Deja Vu#024": {
    "src": "They had odd powers. They ended up distorting time itself.",
-   "dst": "",
+   "dst": "그들은 기이한 힘을 지녔고, 결국 시간 자체를 비틀었지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -258,7 +258,7 @@
   },
   "Deja Vu#025": {
    "src": "The tools they used to make these structures are imbued with their power.",
-   "dst": "",
+   "dst": "이 건축물을 지을 때 쓴 도구엔 그들의 힘이 깃들어 있네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -268,7 +268,7 @@
   },
   "Deja Vu#026": {
    "src": "Asher found one of these tools: the shovel.",
-   "dst": "",
+   "dst": "Asher가 그 도구 중 하나를 찾았지. 바로 그 삽일세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -278,7 +278,7 @@
   },
   "Deja Vu#027": {
    "src": "The shovel is tethering its time of influence to today. It keeps sending Asher back.",
-   "dst": "",
+   "dst": "삽이 자기 영향이 미치는 시간을 오늘에 묶어 두고 있어. 그래서 Asher를 계속 되돌려 보내지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -288,7 +288,7 @@
   },
   "Deja Vu#028": {
    "src": "The issue is, Asher died in the past. This creates a paradox.",
-   "dst": "",
+   "dst": "문제는 Asher가 과거에 죽었다는 걸세. 그래서 역설이 생기지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -298,7 +298,7 @@
   },
   "Deja Vu#029": {
    "src": "We can save him if I send you back to prevent his death. Go through this rift to join him in the past.",
-   "dst": "",
+   "dst": "자네를 과거로 보내 그의 죽음을 막으면 구할 수 있네. 이 균열을 지나 과거의 그에게 가게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -308,7 +308,7 @@
   },
   "Deja Vu#030": {
    "src": "Find a way to save Asher from his death.",
-   "dst": "",
+   "dst": "Asher를 죽음에서 구할 방법을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -318,7 +318,7 @@
   },
   "Deja Vu#031": {
    "src": "Huh? Where is everyone?",
-   "dst": "",
+   "dst": "응? 다들 어디 갔지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -328,7 +328,7 @@
   },
   "Deja Vu#032": {
    "src": "Usually this place is filled with workers.",
-   "dst": "",
+   "dst": "보통 여긴 일꾼들로 북적이는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -338,7 +338,7 @@
   },
   "Deja Vu#033": {
    "src": "But no one's here. And this place is clearly not done.",
-   "dst": "",
+   "dst": "근데 아무도 없네. 게다가 여긴 딱 봐도 미완성이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -348,7 +348,7 @@
   },
   "Deja Vu#034": {
    "src": "Whatever the case, I should probably find my shovel.",
-   "dst": "",
+   "dst": "어쨌든 삽부터 찾아야겠다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -358,7 +358,7 @@
   },
   "Deja Vu#035": {
    "src": "If I were a shovel, where would I be?",
-   "dst": "",
+   "dst": "내가 삽이라면 어디 있을까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -368,7 +368,7 @@
   },
   "Deja Vu#036": {
    "src": "Hmmm. Not around here.",
-   "dst": "",
+   "dst": "흠. 이 근처는 아니네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -378,7 +378,7 @@
   },
   "Deja Vu#037": {
    "src": "This place... There's so much going on but no one here.",
-   "dst": "",
+   "dst": "여긴... 온갖 게 돌아가는데 사람이 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -388,7 +388,7 @@
   },
   "Deja Vu#038": {
    "src": "What I don't understand, though, is why this place looks brand new.",
-   "dst": "",
+   "dst": "근데 이해가 안 되는 건, 여기가 왜 새것처럼 보이냐는 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -398,7 +398,7 @@
   },
   "Deja Vu#039": {
    "src": "This place looks like it's just being built!",
-   "dst": "",
+   "dst": "꼭 지금 짓고 있는 곳 같잖아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -408,7 +408,7 @@
   },
   "Deja Vu#040": {
    "src": "This must be something to do with the valley's magic. Wouldn't be the first time.",
-   "dst": "",
+   "dst": "분명 골짜기의 마법과 관련이 있을 거야. 처음 있는 일도 아니고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -418,7 +418,7 @@
   },
   "Deja Vu#041": {
    "src": "Heh, time.",
-   "dst": "",
+   "dst": "하, 시간이라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -428,7 +428,7 @@
   },
   "Deja Vu#042": {
    "src": "In fact, whenever I hold that shovel, this kind of stuff seems to happen.",
-   "dst": "",
+   "dst": "사실 그 삽만 쥐면 꼭 이런 일이 생기는 것 같단 말이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -438,7 +438,7 @@
   },
   "Deja Vu#043": {
    "src": "Maybe it's sent me way back. Back to the construction of this place.",
-   "dst": "",
+   "dst": "어쩌면 한참 전으로 보내진 걸지도. 여길 짓던 시절로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -448,7 +448,7 @@
   },
   "Deja Vu#044": {
    "src": "Then why is no one here?",
-   "dst": "",
+   "dst": "그럼 왜 아무도 없지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -458,7 +458,7 @@
   },
   "Deja Vu#045": {
    "src": "Woah, that tree looks like it might fall over!",
-   "dst": "",
+   "dst": "우와, 저 나무 곧 쓰러질 것 같아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -468,7 +468,7 @@
   },
   "Deja Vu#046": {
    "src": "That was a close one!",
-   "dst": "",
+   "dst": "큰일 날 뻔했다!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -478,7 +478,7 @@
   },
   "Deja Vu#047": {
    "src": "Uhf! How do they have a cannon? These guys must be super advanced.",
-   "dst": "",
+   "dst": "윽! 대포가 있다고? 이 사람들 엄청 발전했나 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -488,7 +488,7 @@
   },
   "Deja Vu#048": {
    "src": "I think I'm close now. I can just feel that shovel close by.",
-   "dst": "",
+   "dst": "거의 다 온 것 같아. 삽이 가까이 있는 게 느껴져.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -498,7 +498,7 @@
   },
   "Deja Vu#049": {
    "src": "Wait, what's that-?",
-   "dst": "",
+   "dst": "잠깐, 저건 뭐-?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -508,7 +508,7 @@
   },
   "Deja Vu#050": {
    "src": "My my, a crushing defeat to be sure. You'll have to find a way to stop that.",
-   "dst": "",
+   "dst": "저런, 아주 납작하게 깨졌구먼. 그걸 막을 방법을 찾아야겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -518,7 +518,7 @@
   },
   "Deja Vu#051": {
    "src": "Go back through the rift and make sure Asher doesn't become a pancake this time.",
-   "dst": "",
+   "dst": "균열을 지나 돌아가서, 이번엔 Asher가 납작해지지 않게 하게.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -528,7 +528,7 @@
   },
   "Deja Vu#052": {
    "src": "Wait, what's that-?",
-   "dst": "",
+   "dst": "잠깐, 저건 뭐-?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -538,7 +538,7 @@
   },
   "Deja Vu#053": {
    "src": "Well that was quite the explosive end to our friend there. There must be a way to prevent that.",
-   "dst": "",
+   "dst": "우리 친구가 아주 폭발적인 최후를 맞았구먼. 막을 방법이 있을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -548,7 +548,7 @@
   },
   "Deja Vu#054": {
    "src": "Head back in there. This time with less explosions.",
-   "dst": "",
+   "dst": "다시 가 보게. 이번엔 폭발은 좀 줄이고.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -558,7 +558,7 @@
   },
   "Deja Vu#055": {
    "src": "Oh, so close on that try. Who could've guessed that was how our friend met his end?",
-   "dst": "",
+   "dst": "아, 이번엔 아깝구먼. 우리 친구가 그렇게 최후를 맞을 줄 누가 알았겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -568,7 +568,7 @@
   },
   "Deja Vu#056": {
    "src": "I'm sure you'll nail it this time. Not sure how you will stop a cosmic event, though.",
-   "dst": "",
+   "dst": "이번엔 분명 해낼 걸세. 다만 우주적 사건을 어떻게 막을지는 모르겠군.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -578,7 +578,7 @@
   },
   "Deja Vu#057": {
    "src": "Oh there it is! My shovel!",
-   "dst": "",
+   "dst": "오, 저기 있다! 내 삽!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -588,7 +588,7 @@
   },
   "Deja Vu#058": {
    "src": "I'm surprised it took me back this far this time.",
-   "dst": "",
+   "dst": "이번엔 이렇게 멀리까지 보내질 줄은 몰랐네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -598,7 +598,7 @@
   },
   "Deja Vu#059": {
    "src": "Well, time to head on back-",
-   "dst": "",
+   "dst": "자, 이제 돌아가 볼까-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -608,7 +608,7 @@
   },
   "Deja Vu#060": {
    "src": "Wait, Martyn?",
-   "dst": "",
+   "dst": "잠깐, Martyn?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -618,7 +618,7 @@
   },
   "Deja Vu#061": {
    "src": "Ow! What was that for?",
-   "dst": "",
+   "dst": "아야! 왜 때려요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -628,7 +628,7 @@
   },
   "Deja Vu#062": {
    "src": "Asher, you remember when I allowed you to live in the valley, I told you not to touch any odd objects.",
-   "dst": "",
+   "dst": "Asher, 골짜기에 살게 해 줄 때 이상한 물건은 만지지 말라고 했던 거 기억하나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -638,7 +638,7 @@
   },
   "Deja Vu#063": {
    "src": "I... Might recall it.",
-   "dst": "",
+   "dst": "그게... 기억날 것도 같아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -648,7 +648,7 @@
   },
   "Deja Vu#064": {
    "src": "You got yourself stuck hundreds of years ago. If it wasn't for this guard, you'd be removed from existence.",
-   "dst": "",
+   "dst": "자넨 수백 년 전에 갇혀 버렸네. 이 경비병이 아니었으면 존재 자체가 지워졌을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -658,7 +658,7 @@
   },
   "Deja Vu#065": {
    "src": "Oh... So that's where I am. I am so sorry Martyn. Please don't kick me out of the valley.",
-   "dst": "",
+   "dst": "아... 그래서 여기 있는 거군요. 정말 죄송해요, Martyn. 골짜기에서 쫓아내지 마세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -668,7 +668,7 @@
   },
   "Deja Vu#066": {
    "src": "I know time travel can be tempting. But it's far more dangerous than you can ever understand.",
-   "dst": "",
+   "dst": "시간 여행이 솔깃한 건 아네. 하지만 자네가 상상하는 것보다 훨씬 위험하지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -678,7 +678,7 @@
   },
   "Deja Vu#067": {
    "src": "The valley is banned for most citizens. I watch over this timeline because of poor souls like Asher.",
-   "dst": "",
+   "dst": "골짜기는 대부분의 주민에게 금지된 곳이네. Asher 같은 가엾은 이들 때문에 이 시간선을 지키지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -688,7 +688,7 @@
   },
   "Deja Vu#068": {
    "src": "Listen to Old Man Martyn.",
-   "dst": "",
+   "dst": "Old Man Martyn의 말을 들으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -698,7 +698,7 @@
   },
   "Deja Vu#069": {
    "src": "Holy Bovine!",
-   "dst": "",
+   "dst": "신성한 소여!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -708,7 +708,7 @@
   },
   "Deja Vu#070": {
    "src": "Ah, we're back.",
-   "dst": "",
+   "dst": "아, 돌아왔구먼.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -718,7 +718,7 @@
   },
   "Deja Vu#071": {
    "src": "How did you get these powers? Are you even human?",
-   "dst": "",
+   "dst": "그런 힘은 어떻게 얻었어요? 사람은 맞아요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -728,7 +728,7 @@
   },
   "Deja Vu#072": {
    "src": "Oh you know. I've read a book or two in my time.",
-   "dst": "",
+   "dst": "오, 뭐. 살면서 책 한두 권쯤은 읽었지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -738,7 +738,7 @@
   },
   "Deja Vu#073": {
    "src": "{u}, I'm sorry I got you dragged into this. I wish I could have done it myself.",
-   "dst": "",
+   "dst": "{u}, 이 일에 끌어들여 미안하네. 내가 직접 할 수 있었으면 좋았을 텐데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -748,7 +748,7 @@
   },
   "Deja Vu#074": {
    "src": "I probably could have gotten myself out...",
-   "dst": "",
+   "dst": "나 혼자서도 빠져나올 수 있었을걸...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -758,7 +758,7 @@
   },
   "Deja Vu#075": {
    "src": "You died in the past. Multiple times.",
-   "dst": "",
+   "dst": "자넨 과거에서 죽었네. 여러 번.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -768,7 +768,7 @@
   },
   "Deja Vu#076": {
    "src": "I did?",
-   "dst": "",
+   "dst": "제가요?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -778,7 +778,7 @@
   },
   "Deja Vu#077": {
    "src": "Yes. In some surprising ways too.",
-   "dst": "",
+   "dst": "그래. 꽤 놀라운 방식으로도 말이지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -788,7 +788,7 @@
   },
   "Deja Vu#078": {
    "src": "{u}, I'm sure we will meet again... in time.",
-   "dst": "",
+   "dst": "{u}, 분명 다시 만날 걸세... 때가 되면.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -798,7 +798,7 @@
   },
   "Deja Vu#079": {
    "src": "See you around.",
-   "dst": "",
+   "dst": "또 보세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -808,7 +808,7 @@
   },
   "Deja Vu#080": {
    "src": "Uh, you're still here.",
-   "dst": "",
+   "dst": "어, 아직 여기 계시네요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -818,7 +818,7 @@
   },
   "Deja Vu#081": {
    "src": "Am I?",
-   "dst": "",
+   "dst": "그런가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -828,7 +828,7 @@
   },
   "Deja Vu#082": {
    "src": "I don't understand Martyn. He seems to know everything about the past. Here, come closer, I want to whisper something.",
-   "dst": "",
+   "dst": "Martyn은 도통 모르겠어. 과거 일을 전부 아는 것 같아. 이리 와 봐, 귓속말할 게 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -838,7 +838,7 @@
   },
   "Deja Vu#083": {
    "src": "Talk to Asher.",
-   "dst": "",
+   "dst": "Asher에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Deja Vu",
@@ -848,7 +848,7 @@
   },
   "Deja Vu#084": {
    "src": "I think he might have known Bob. I saw some letters in his house.",
-   "dst": "",
+   "dst": "그 사람 Bob을 알았던 것 같아. 집에서 편지를 몇 통 봤거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -858,7 +858,7 @@
   },
   "Deja Vu#085": {
    "src": "Weird, right? Bob was a hard guy to know.",
-   "dst": "",
+   "dst": "이상하지? Bob은 알기 힘든 사람이었는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",
@@ -868,7 +868,7 @@
   },
   "Deja Vu#086": {
    "src": "Anyway, take this. It's the least I can do to pay you for saving me.",
-   "dst": "",
+   "dst": "아무튼 이거 받아. 날 구해 준 보답으로 이 정도는 해야지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Deja Vu",

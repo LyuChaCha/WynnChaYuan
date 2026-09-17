@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Lost Royalty",
   "count": 26,
-  "translated": 0,
+  "translated": 26,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Lost Royalty#000": {
    "src": "Talk to Yavlis in {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]에 있는 {p}의 Yavlis에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -18,7 +18,7 @@
   },
   "Lost Royalty#001": {
    "src": "Oh, hello there! I had hoped not to bother you, adventurer, but this is urgent.",
-   "dst": "",
+   "dst": "오, 안녕하세요! 폐를 끼치고 싶진 않았지만, 급한 일이에요, 모험가님.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -28,7 +28,7 @@
   },
   "Lost Royalty#002": {
    "src": "You see, the king is very... erm, distracted, and you are just the kind of willing, able-bodied person I need.",
-   "dst": "",
+   "dst": "그게, 왕께서 지금... 음, 경황이 없으시고, 당신은 딱 제게 필요한 의욕 있고 튼튼한 사람이거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -38,7 +38,7 @@
   },
   "Lost Royalty#003": {
    "src": "You see, the king's son has gone missing, and with him worrying so much, the problems of the city have festered unsolved.",
-   "dst": "",
+   "dst": "사실 왕자님이 실종되셨어요. 왕께서 걱정만 하시니 도시의 문제들은 해결되지 못하고 곪아 가고 있죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -48,7 +48,7 @@
   },
   "Lost Royalty#004": {
    "src": "We believe he was kidnapped by the splinter cell mercenaries in the jungle... Unfortunate, too. They used to be quite honourable.",
-   "dst": "",
+   "dst": "정글의 분리파 용병들에게 납치된 것 같아요... 안타깝죠. 예전엔 꽤 명예로운 자들이었는데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -58,7 +58,7 @@
   },
   "Lost Royalty#005": {
    "src": "Well, anyway, they're usually spotted outside the run-down farm outside of town. Go there and see what they want in return for the young prince.",
-   "dst": "",
+   "dst": "아무튼, 그들은 주로 마을 밖 허물어진 농장 근처에서 목격돼요. 거기 가서 왕자님을 돌려주는 대가로 뭘 원하는지 알아봐 주세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -68,7 +68,7 @@
   },
   "Lost Royalty#006": {
    "src": "Talk to the Mercenary Leader in their hideout outside {p}",
-   "dst": "",
+   "dst": "{p} 외곽의 은신처에 있는 용병 대장에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -78,7 +78,7 @@
   },
   "Lost Royalty#007": {
    "src": "Excuse me?! What are you doing here, how did you find our secret hideout?",
-   "dst": "",
+   "dst": "뭐야?! 여기서 뭐 하는 거지, 우리 비밀 은신처는 어떻게 찾았어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -88,7 +88,7 @@
   },
   "Lost Royalty#008": {
    "src": "Oh, you're here for the boy? A mighty fine steal, that one! The boy won't be leaving this establishment for free. I'll need some nice loot for him.",
-   "dst": "",
+   "dst": "오, 그 꼬마 때문에 왔나? 그 녀석은 아주 괜찮은 수확이지! 공짜로는 못 내보내. 쓸 만한 전리품을 좀 가져와야겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -98,7 +98,7 @@
   },
   "Lost Royalty#009": {
    "src": "Ah, but what to have you fetch...oh, haha! This would be a perfect opportunity to obtain that... Alright, ears open!",
-   "dst": "",
+   "dst": "아, 근데 뭘 가져오라고 할까... 오, 하하! 그걸 손에 넣을 절호의 기회로군... 좋아, 잘 들어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -108,7 +108,7 @@
   },
   "Lost Royalty#010": {
    "src": "There's a certain talisman that we aren't able to get to in the temple not far from here. It has special abilities that allow my men to be strengthened, see.",
-   "dst": "",
+   "dst": "여기서 멀지 않은 신전에 우리가 못 가져오는 호부이 하나 있어. 내 부하들을 강화해 주는 특별한 힘이 있거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -118,7 +118,7 @@
   },
   "Lost Royalty#011": {
    "src": "The guardians there pack quite the punch, and there's some nasty mechanism in the way that we just can't crack.",
-   "dst": "",
+   "dst": "거기 수호자들은 꽤 세고, 길목엔 도저히 못 뚫는 고약한 장치가 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -128,7 +128,7 @@
   },
   "Lost Royalty#012": {
    "src": "The temple is found just across the waterway, in a crevice in the mountain. It used to be blocked until those WynnExcavation fellows tried digging there.",
-   "dst": "",
+   "dst": "신전은 수로 바로 건너편 산 틈새에 있어. 원래 막혀 있었는데 WynnExcavation 녀석들이 거길 파헤쳤지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -138,7 +138,7 @@
   },
   "Lost Royalty#013": {
    "src": "You get that talisman in my hands, and the king's boy is yours. Now off you pip! I'm a very busy man.",
-   "dst": "",
+   "dst": "그 호부을 내 손에 쥐여 주면 왕자는 네 거다. 자, 어서 가! 난 아주 바쁜 사람이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -148,7 +148,7 @@
   },
   "Lost Royalty#014": {
    "src": "Go to the jungle temple and retrieve the talisman at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 정글 신전으로 가서 호부을 회수하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -158,7 +158,7 @@
   },
   "Lost Royalty#015": {
    "src": "Bring the talisman back to the Mercenary Leader.",
-   "dst": "",
+   "dst": "호부을 용병 대장에게 가져가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -168,7 +168,7 @@
   },
   "Lost Royalty#016": {
    "src": "You've gotten the talisman! I can't believe you actually got through that puzzle!",
-   "dst": "",
+   "dst": "호부을 가져왔군! 그 퍼즐을 정말 풀었다니 믿기지 않는데!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -178,7 +178,7 @@
   },
   "Lost Royalty#017": {
    "src": "At this point I would usually keep the kid and throw you out of here, but since you've done what I've asked in such a timely fashion, he's all yours.",
-   "dst": "",
+   "dst": "보통 이쯤이면 꼬마는 잡아 두고 널 쫓아내겠지만, 부탁한 걸 이렇게 빨리 해 줬으니 녀석은 데려가.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -188,7 +188,7 @@
   },
   "Lost Royalty#018": {
    "src": "When you get back to whoever asked you to do this, tell him to leave my men and I alone! We guildsmen lay down our lives every day, we don't need any more hostile onlookers!",
-   "dst": "",
+   "dst": "이 일 시킨 놈한테 돌아가거든, 나와 내 부하들 좀 내버려 두라고 전해! 우린 매일 목숨 걸고 산다고, 적대적인 구경꾼은 더 필요 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -198,7 +198,7 @@
   },
   "Lost Royalty#019": {
    "src": "Talk to the Prince of {p} in the jail cell",
-   "dst": "",
+   "dst": "감옥에 갇힌 {p}의 왕자와 이야기하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -208,7 +208,7 @@
   },
   "Lost Royalty#020": {
    "src": "Report back to Yavlis with the news",
-   "dst": "",
+   "dst": "Yavlis에게 돌아가 소식을 전하세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Lost Royalty",
@@ -218,7 +218,7 @@
   },
   "Lost Royalty#021": {
    "src": "Ah, finally! You're back. Did they let you bring him back? Those mercenaries have an awful habit of failing to honour their deals.",
-   "dst": "",
+   "dst": "아, 드디어! 돌아오셨군요. 왕자님을 데려가게 해 줬나요? 그 용병들은 약속을 안 지키는 고약한 버릇이 있거든요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -228,7 +228,7 @@
   },
   "Lost Royalty#022": {
    "src": "Wait, the prince said what? He truly wants to be a mercenary? Oh my... then he must have escaped on his own.",
-   "dst": "",
+   "dst": "잠깐, 왕자님이 뭐라고요? 정말 용병이 되고 싶으시대요? 세상에... 그럼 스스로 도망치신 거군요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -238,7 +238,7 @@
   },
   "Lost Royalty#023": {
    "src": "Alright then, if that's the path the king's son chooses to walk, then there's nothing we can do.",
-   "dst": "",
+   "dst": "그래요, 그게 왕자님이 택한 길이라면 우리가 어쩔 수 없죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -248,7 +248,7 @@
   },
   "Lost Royalty#024": {
    "src": "I can only hope that he chose to join them out of a will to protect the people, rather than simply brutishness or money.",
-   "dst": "",
+   "dst": "단순한 폭력이나 돈이 아니라, 백성을 지키려는 마음으로 합류하셨기를 바랄 뿐이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",
@@ -258,7 +258,7 @@
   },
   "Lost Royalty#025": {
    "src": "Such a shame that old guild has stooped to such a level. Well, we must thank you for your help. You can have the emerald ransom we had intended to pay.",
-   "dst": "",
+   "dst": "그 오래된 길드가 이렇게까지 타락하다니 안타깝네요. 아무튼 도와주셔서 감사해요. 몸값으로 준비한 에메랄드를 드릴게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Lost Royalty",

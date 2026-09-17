@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Pirate's Trove",
   "count": 16,
-  "translated": 0,
+  "translated": 16,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Pirate's Trove#000": {
    "src": "Talk to Damiral, outside {p} at [-{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "{p} 밖 [-{~}, {~}, -{~}]에 있는 Damiral에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -18,7 +18,7 @@
   },
   "Pirate's Trove#001": {
    "src": "Lo, adventurer! Welcome to the great province of Gavel, home of the villager race, and yours truly. You'll be headed into the grand citadel of {p} soon!",
-   "dst": "",
+   "dst": "여어, 모험가! 주민들의 고향이자 이 몸의 고향, 위대한 Gavel 지방에 온 걸 환영하네. 곧 웅장한 성채 {p}에 들어가게 될 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -28,7 +28,7 @@
   },
   "Pirate's Trove#002": {
    "src": "But enough with the pleasantries. Tell me... have you ever heard the tale of the great pirate, Captain Hastor? Sailed the seas a long time ago.",
-   "dst": "",
+   "dst": "인사는 이쯤 하지. 말해 보게... 대해적 Hastor 선장 이야기를 들어 본 적 있나? 아주 옛날에 바다를 누빈 자지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -38,7 +38,7 @@
   },
   "Pirate's Trove#003": {
    "src": "Legend says that when {p} was rebuilt all those years ago, he hid his fortune within the walls someplace!",
-   "dst": "",
+   "dst": "전설에 따르면 오래전 {p}을(를) 재건할 때, 그가 성벽 어딘가에 재산을 숨겼다더군!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -48,7 +48,7 @@
   },
   "Pirate's Trove#004": {
    "src": "I'm a retired sailor now, but I could still do with a few extra emeralds from that treasure. Perhaps, if you're up to it... we could come to an agreement?",
-   "dst": "",
+   "dst": "난 이제 은퇴한 선원이지만, 그 보물에서 에메랄드 좀 더 챙기는 것도 나쁘지 않지. 자네만 괜찮다면... 우리 거래 하나 할까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -58,7 +58,7 @@
   },
   "Pirate's Trove#005": {
    "src": "I have a riddle, the first of a number of clues that are supposed to lead to where Hastor hid his fortune, but I can't for the life of me figure it out.",
-   "dst": "",
+   "dst": "수수께끼가 하나 있네. Hastor가 재산을 숨긴 곳으로 이어지는 여러 단서 중 첫 번째인데, 난 도무지 풀 수가 없어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -68,7 +68,7 @@
   },
   "Pirate's Trove#006": {
    "src": "Maybe you'll be able to solve it. If you can, I'll make sure to split the treasure with you!",
-   "dst": "",
+   "dst": "자네라면 풀 수 있을지도 모르지. 풀어낸다면 보물은 꼭 나눠 주겠네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -78,7 +78,7 @@
   },
   "Pirate's Trove#007": {
    "src": "This first riddle goes like so: “Toward the sunset, among the northern flowers shaded by quartz”.",
-   "dst": "",
+   "dst": "첫 번째 수수께끼는 이렇다네: \"해 지는 쪽, 석영 그늘 아래 북쪽 꽃들 사이\".",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -88,7 +88,7 @@
   },
   "Pirate's Trove#008": {
    "src": "I do wish you good luck, adventurer! Remember, everything you need to solve the clues should be found somewhere inside {p}.",
-   "dst": "",
+   "dst": "행운을 비네, 모험가! 기억하게, 단서를 푸는 데 필요한 건 전부 {p} 안 어딘가에 있을 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -98,7 +98,7 @@
   },
   "Pirate's Trove#009": {
    "src": "Clue I: Toward the sunset, among northern flowers shaded by quartz",
-   "dst": "",
+   "dst": "단서 I: 해 지는 쪽, 석영 그늘 아래 북쪽 꽃들 사이",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -108,7 +108,7 @@
   },
   "Pirate's Trove#010": {
    "src": "Clue II: In a place of identity, above the leaves and between the glass",
-   "dst": "",
+   "dst": "단서 II: 정체성의 장소, 나뭇잎 위 유리 사이",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -118,7 +118,7 @@
   },
   "Pirate's Trove#011": {
    "src": "Clue III: In an emerald fountain, surrounded by the wealth of the villagers",
-   "dst": "",
+   "dst": "단서 III: 에메랄드 샘 속, 주민들의 부에 둘러싸인 곳",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -128,7 +128,7 @@
   },
   "Pirate's Trove#012": {
    "src": "Clue IV: Beneath the cowl of an eastern titan, keeping watch over our heads",
-   "dst": "",
+   "dst": "단서 IV: 동쪽 거인의 두건 아래, 우리 머리 위를 지켜보는 곳",
    "role": "desc",
    "kind": "objective",
    "quest": "Pirate's Trove",
@@ -138,7 +138,7 @@
   },
   "Pirate's Trove#013": {
    "src": "Aha! I'd come to ask how it was coming when I saw you jump over here!",
-   "dst": "",
+   "dst": "아하! 어떻게 돼 가나 물으러 왔더니 자네가 이리 뛰어오는 게 보이더군!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -148,7 +148,7 @@
   },
   "Pirate's Trove#014": {
    "src": "Phenomenal work, my compatriot. Though, do remember our deal?",
-   "dst": "",
+   "dst": "훌륭한 솜씨네, 동지. 그런데 우리 거래는 기억하겠지?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",
@@ -158,7 +158,7 @@
   },
   "Pirate's Trove#015": {
    "src": "You find the treasure, I give you a cut. I'll just take my part and be on my way!",
-   "dst": "",
+   "dst": "자네가 보물을 찾으면 몫을 나눠 준다. 난 내 몫만 챙겨서 가겠네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Pirate's Trove",

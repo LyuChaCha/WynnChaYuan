@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "The House of Twain (Quest)",
   "count": 15,
-  "translated": 0,
+  "translated": 15,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "The House of Twain (Quest)#000": {
    "src": "Talk to Twendle at The {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p}에서 Twendle에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The House of Twain (Quest)",
@@ -18,7 +18,7 @@
   },
   "The House of Twain (Quest)#001": {
    "src": "Oh, hey you there! Are you heading down this road? You know it's a dead end, right?",
-   "dst": "",
+   "dst": "오, 거기 당신! 이 길로 가요? 막다른 길인 건 알죠?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -28,7 +28,7 @@
   },
   "The House of Twain (Quest)#002": {
    "src": "It leads to an old mansion, that has fallen into decay.",
-   "dst": "",
+   "dst": "폐허가 된 오래된 저택으로 이어지는 길이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -38,7 +38,7 @@
   },
   "The House of Twain (Quest)#003": {
    "src": "That mansion is the house of my ancestor; Dwendle Twain. It was a house of incredible heritage and magical powers, Dwendle himself was adopted into it.",
-   "dst": "",
+   "dst": "그 저택은 제 조상 Dwendle Twain의 집이에요. 대단한 유산과 마법의 힘을 지닌 가문이었고, Dwendle은 입양됐죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -48,7 +48,7 @@
   },
   "The House of Twain (Quest)#004": {
    "src": "Marius Twain was the leader of the mansion; they fought against evil spirits, I think. The history of the house is not well-known, outside of a novel.",
-   "dst": "",
+   "dst": "Marius Twain이 저택의 주인이었어요. 악령과 싸웠던 것 같아요. 소설 한 권 말고는 이 가문의 역사는 잘 알려지지 않았죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -58,7 +58,7 @@
   },
   "The House of Twain (Quest)#005": {
    "src": "I want to know the history of the mansion and uncover its secrets, but every time I get close, dark beings prevent me from entering.",
-   "dst": "",
+   "dst": "저택의 역사를 알고 비밀을 밝히고 싶은데, 가까이 갈 때마다 어둠의 존재들이 들어가지 못하게 막아요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -68,7 +68,7 @@
   },
   "The House of Twain (Quest)#006": {
    "src": "I am no soldier, and I don't think I will ever uncover the truth without your help. I can greatly reward you for your help.",
-   "dst": "",
+   "dst": "전 전사가 아니라서, 당신 도움 없인 진실을 못 밝힐 거예요. 도와주면 크게 보답할게요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -78,7 +78,7 @@
   },
   "The House of Twain (Quest)#007": {
    "src": "My ancestor left our family a large amount of emeralds. Beware though, traveller, the mansion's secrets are incredibly difficult to uncover and the monsters are powerful.",
-   "dst": "",
+   "dst": "조상님이 가문에 에메랄드를 많이 남기셨어요. 하지만 조심해요, 여행자. 저택의 비밀은 밝히기 무척 어렵고 괴물들도 강해요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -88,7 +88,7 @@
   },
   "The House of Twain (Quest)#008": {
    "src": "Unravel the secrets of the mansion and help me uncover the secrets of my heritage. Bring me [{~} Twain Journal].",
-   "dst": "",
+   "dst": "저택의 비밀을 풀고 제 가문의 내력을 밝혀 주세요. [{~} Twain Journal]을 가져다주세요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -98,7 +98,7 @@
   },
   "The House of Twain (Quest)#009": {
    "src": "This book has been hidden within the depths of the mansion and is protected by far more than puzzles or walls.",
-   "dst": "",
+   "dst": "그 책은 저택 깊은 곳에 숨겨져 있고, 퍼즐이나 벽보다 훨씬 강한 것들이 지키고 있어요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -108,7 +108,7 @@
   },
   "The House of Twain (Quest)#010": {
    "src": "I believe the spirits that now haunt the mansion will do anything to protect the book. I'm sure they think it's their own, and the secrets it hides.",
-   "dst": "",
+   "dst": "지금 저택에 떠도는 영혼들은 무슨 짓을 해서라도 그 책을 지킬 거예요. 책도, 그 속의 비밀도 자기 것이라 여기겠죠.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -118,7 +118,7 @@
   },
   "The House of Twain (Quest)#011": {
    "src": "Bring [{~} Twain Journal] to Twendle",
-   "dst": "",
+   "dst": "Twendle에게 [{~} Twain Journal]을 가져다주세요",
    "role": "desc",
    "kind": "objective",
    "quest": "The House of Twain (Quest)",
@@ -128,7 +128,7 @@
   },
   "The House of Twain (Quest)#012": {
    "src": "If you already have a Ghostly Cap, you can wear that one and do not have to do any previous steps in order for the quest to work.",
-   "dst": "",
+   "dst": "Ghostly Cap이 이미 있다면 그걸 쓰면 되고, 퀘스트 진행을 위해 앞 단계를 하지 않아도 됩니다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -138,7 +138,7 @@
   },
   "The House of Twain (Quest)#013": {
    "src": "I guess I put my faith in the right person. My history lies within these pages, and I don't intend to keep them secret. I shall make them public.",
-   "dst": "",
+   "dst": "사람을 제대로 믿었네요. 제 역사가 이 페이지들에 담겨 있어요. 비밀로 두지 않고 모두에게 공개할 거예요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",
@@ -148,7 +148,7 @@
   },
   "The House of Twain (Quest)#014": {
    "src": "Thank you traveller. As promised, here is your reward.",
-   "dst": "",
+   "dst": "고마워요, 여행자. 약속한 보상이에요.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "The House of Twain (Quest)",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Stable Story",
   "count": 19,
-  "translated": 0,
+  "translated": 19,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Stable Story#000": {
    "src": "Talk to Enkser outside {p} at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 {p} 밖에 있는 Enkser에게 말을 거세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Stable Story",
@@ -18,7 +18,7 @@
   },
   "Stable Story#001": {
    "src": "Looking for able-bodied adventurers! Preferably with no friends or family, but I'm not picky!",
-   "dst": "",
+   "dst": "튼튼한 모험가 구함! 친구나 가족이 없으면 더 좋고. 뭐, 까다롭게 굴진 않아!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -28,7 +28,7 @@
   },
   "Stable Story#002": {
    "src": "You see, I'm a horse merchant. Make my living selling these beauties to adventurers like you.",
-   "dst": "",
+   "dst": "난 말 장수야. 이 멋진 녀석들을 너 같은 모험가한테 팔아서 먹고살지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -38,7 +38,7 @@
   },
   "Stable Story#003": {
    "src": "I work at this barn, selling the horses I raise in {p} out here to rich {p} folk.",
-   "dst": "",
+   "dst": "{p}에서 키운 말을 이 헛간에서 {p}의 부자들한테 팔고 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -48,7 +48,7 @@
   },
   "Stable Story#004": {
    "src": "Until these rabble-rousing troublemakers blew a tunnel through my barn and smuggled MY horses out.",
-   "dst": "",
+   "dst": "그런데 말썽꾼들이 헛간 밑으로 터널을 뚫고 내 말들을 빼돌렸지 뭐야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -58,7 +58,7 @@
   },
   "Stable Story#005": {
    "src": "Usually, I'd be charging a high price for these horses Not to be rude, but one you couldn't afford.",
-   "dst": "",
+   "dst": "평소라면 이 말들 값을 비싸게 받지. 실례지만 네가 감당 못 할 값으로.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -68,7 +68,7 @@
   },
   "Stable Story#006": {
    "src": "So, let's cut a deal They stole my stable key. If you can go to my barn in {p}...",
-   "dst": "",
+   "dst": "그러니 거래하자. 놈들이 마구간 열쇠를 훔쳐 갔어. {p}에 있는 내 헛간에 가서...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -78,7 +78,7 @@
   },
   "Stable Story#007": {
    "src": "And return the key to me, I'll so charitably bestow upon you one of my horses. This deal is sweeter than you realize, too...",
-   "dst": "",
+   "dst": "열쇠를 되찾아 오면, 내 말 한 마리를 너그러이 내어 주지. 이 거래, 네 생각보다 훨씬 달콤할걸...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -88,7 +88,7 @@
   },
   "Stable Story#008": {
    "src": "Betty'll be there to help! Strong as she is, don't you DARE let them touch her!",
-   "dst": "",
+   "dst": "Betty가 거기서 도와줄 거야! 힘은 세지만 놈들이 손대게 두면 가만 안 둬!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -98,7 +98,7 @@
   },
   "Stable Story#009": {
    "src": "I'll be making my way to {p} myself to ensure Betty's safety.",
-   "dst": "",
+   "dst": "Betty가 무사한지 나도 직접 {p}에 가 볼 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -108,7 +108,7 @@
   },
   "Stable Story#010": {
    "src": "Now, best be on your way. {p} is a fair bit down the {p} from here, off to the east.",
-   "dst": "",
+   "dst": "자, 이제 가 봐. {p}은(는) 여기서 {p}을(를) 따라 동쪽으로 꽤 가야 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -118,7 +118,7 @@
   },
   "Stable Story#011": {
    "src": "Bring back [{~} Stable Key] to Enkser from the tunnel at [{~}, {~}, -{~}]",
-   "dst": "",
+   "dst": "[{~2}, {~3}, -{~4}]의 터널에서 [{~1} Stable Key]를 찾아 Enkser에게 가져가세요",
    "role": "desc",
    "kind": "objective",
    "quest": "Stable Story",
@@ -128,7 +128,7 @@
   },
   "Stable Story#012": {
    "src": "Hey, have you found my [{~} Stable Key] yet? It should be somewhere in {p} to the east.",
-   "dst": "",
+   "dst": "이봐, 내 [{~} Stable Key] 찾았어? 동쪽 {p} 어딘가에 있을 텐데.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -138,7 +138,7 @@
   },
   "Stable Story#013": {
    "src": "Looking for able-bodied adventurers, preferably with no friends or",
-   "dst": "",
+   "dst": "튼튼한 모험가 구함, 되도록 친구도 가족도",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -148,7 +148,7 @@
   },
   "Stable Story#014": {
    "src": "Hey, it's you! Got my barn key yet?",
-   "dst": "",
+   "dst": "어, 너구나! 헛간 열쇠 찾았어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -158,7 +158,7 @@
   },
   "Stable Story#015": {
    "src": "Ah, god bless. And I presume Betty did all the work while you just lounged around.",
-   "dst": "",
+   "dst": "아, 다행이다. 보나 마나 Betty가 다 하고 넌 빈둥거렸겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -168,7 +168,7 @@
   },
   "Stable Story#016": {
    "src": "Hm. Cows, huh? Ah who knows!? Life is full of mysterious, huh?",
-   "dst": "",
+   "dst": "흠. 소라고? 아, 누가 알겠어!? 인생은 수수께끼투성이잖아?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -178,7 +178,7 @@
   },
   "Stable Story#017": {
    "src": "Either way. As the great bovine above is my witness if I see the smallest bruise I will",
-   "dst": "",
+   "dst": "어쨌든. 저 위의 위대한 소님께 맹세컨대, 멍 자국 하나라도 보이면 내가",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",
@@ -188,7 +188,7 @@
   },
   "Stable Story#018": {
    "src": "Nevermind all that. A horse I promised, and a horse you shall have. Much thanks to you.",
-   "dst": "",
+   "dst": "됐다, 그 얘긴 그만. 말을 약속했으니 말을 줘야지. 정말 고마워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Stable Story",

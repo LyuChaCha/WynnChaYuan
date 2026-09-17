@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Purple and Blue",
   "count": 84,
-  "translated": 0,
+  "translated": 84,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Purple and Blue#000": {
    "src": "Talk to Korun near {p} at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "{p} 근처 [-{~}, {~}, -{~}]에 있는 Korun에게 말을 거세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -18,7 +18,7 @@
   },
   "Purple and Blue#001": {
    "src": "W-Woah there, short nose! What are you doing, barging into my home?!",
-   "dst": "",
+   "dst": "우, 우와, 코 짧은 녀석! 뭐 하는 거야, 남의 집에 불쑥 쳐들어와서?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -28,7 +28,7 @@
   },
   "Purple and Blue#002": {
    "src": "Did {p} send you? Well, welcome to {p}! I could actually make use of some assistance.",
-   "dst": "",
+   "dst": "{p}에서 보냈어? 뭐, {p}에 온 걸 환영해! 마침 일손이 좀 필요했거든.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -38,7 +38,7 @@
   },
   "Purple and Blue#003": {
    "src": "The magic here in this place is so potent; you can actually see the mystical properties!",
-   "dst": "",
+   "dst": "이곳의 마력은 정말 강해서, 신비한 성질이 눈에 직접 보일 정도야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -48,7 +48,7 @@
   },
   "Purple and Blue#004": {
    "src": "I've been a scientist for many years, but I have never seen anything like this lake.",
-   "dst": "",
+   "dst": "과학자로 오래 일했지만, 이런 호수는 처음 봐.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -58,7 +58,7 @@
   },
   "Purple and Blue#005": {
    "src": "That's why I set up a small laboratory and started living here to study the place. It's pretty rudimentary but it does the job done.",
-   "dst": "",
+   "dst": "그래서 작은 실험실을 차리고 여기 살면서 이곳을 연구하고 있지. 꽤 조잡하지만 쓸 만은 해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -68,7 +68,7 @@
   },
   "Purple and Blue#006": {
    "src": "The deeper into the lake you dive, the stronger the magical power becomes. I think something strange is happening at the heart of the lake. I believe a lot of answers lie inside.",
-   "dst": "",
+   "dst": "호수 깊이 잠수할수록 마력이 강해져. 호수 중심에서 뭔가 이상한 일이 벌어지고 있는 것 같아. 많은 답이 그 안에 있을 거야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -78,7 +78,7 @@
   },
   "Purple and Blue#007": {
    "src": "Alright, that's enough context! You see, there's another... \"scientist\" across the lake. We're kind of rivals? The guy's awful, I hate him, AND... Well...",
-   "dst": "",
+   "dst": "자, 배경 설명은 이만! 사실 호수 건너편에 또 다른... \"과학자\"가 있어. 라이벌이라고 할까? 끔찍한 녀석이라 싫어하는데, 그리고... 음...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -88,7 +88,7 @@
   },
   "Purple and Blue#008": {
    "src": "He's been missing.",
-   "dst": "",
+   "dst": "그 녀석이 실종됐어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -98,7 +98,7 @@
   },
   "Purple and Blue#009": {
    "src": "And while I somewhat hope he's gotten himself in trouble, he might've figured out something about the lake.",
-   "dst": "",
+   "dst": "사고라도 쳤으면 싶긴 한데, 그 녀석이 호수에 대해 뭔가 알아냈을지도 몰라.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -108,7 +108,7 @@
   },
   "Purple and Blue#010": {
    "src": "I suspect he's gone in to the heart of the lake... Come with me a moment, please.",
-   "dst": "",
+   "dst": "아무래도 호수 중심으로 들어간 것 같아... 잠깐 나 좀 따라와 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -118,7 +118,7 @@
   },
   "Purple and Blue#011": {
    "src": "Alright, this leads underwater where the heart is. How about you try and enter?",
-   "dst": "",
+   "dst": "좋아, 여기가 물속 중심으로 이어져. 한번 들어가 볼래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -128,7 +128,7 @@
   },
   "Purple and Blue#012": {
    "src": "...just as I thought, you can't get in just like me. We'll need to gather more information.",
-   "dst": "",
+   "dst": "...역시, 너도 나처럼 못 들어가는구나. 정보를 더 모아야겠어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -138,7 +138,7 @@
   },
   "Purple and Blue#013": {
    "src": "Human, investigate Nikoler's house for me. It's north down the coast.",
-   "dst": "",
+   "dst": "인간, Nikoler의 집을 조사해 줘. 해안을 따라 북쪽에 있어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -148,7 +148,7 @@
   },
   "Purple and Blue#014": {
    "src": "Where could he be... There's no way he found access to- Hey!",
-   "dst": "",
+   "dst": "어디 있는 거지... 거기 들어갈 방법을 찾았을 리가- 야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -158,7 +158,7 @@
   },
   "Purple and Blue#015": {
    "src": "Don't just listen to me mumbling! Have you found Nikoler?!",
-   "dst": "",
+   "dst": "내 혼잣말만 듣고 있지 말고! Nikoler는 찾았어?!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -168,7 +168,7 @@
   },
   "Purple and Blue#016": {
    "src": "Investigate Nikoler's house for clues at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 Nikoler 집을 조사해 단서를 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -178,7 +178,7 @@
   },
   "Purple and Blue#017": {
    "src": "Follow the hints in the cellar to the mysterious cave.",
-   "dst": "",
+   "dst": "지하실의 힌트를 따라 신비한 동굴을 찾으세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -188,7 +188,7 @@
   },
   "Purple and Blue#018": {
    "src": "Enter and explore the mysterious cave at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 신비한 동굴에 들어가 탐색하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -198,7 +198,7 @@
   },
   "Purple and Blue#019": {
    "src": "Return to Korun in his home at [-{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[-{~}, {~}, -{~}]의 집에 있는 Korun에게 돌아가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -208,7 +208,7 @@
   },
   "Purple and Blue#020": {
    "src": "Y-you've actually found a lead?! There was clues in his basement? And you found a... talisman? This must be it, then!",
-   "dst": "",
+   "dst": "지, 진짜 단서를 찾았어?! 그 녀석 지하실에 단서가 있었다고? 그리고... 호부도 찾았어? 그럼 이게 틀림없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -218,7 +218,7 @@
   },
   "Purple and Blue#021": {
    "src": "This might very well be the key to enter the heart, especially if it was as well-guarded with cosmic creatures as you say.",
-   "dst": "",
+   "dst": "이게 중심에 들어갈 열쇠일지도 몰라. 네 말대로 우주 생물들이 그렇게 삼엄하게 지키고 있었다면 더더욱.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -228,7 +228,7 @@
   },
   "Purple and Blue#022": {
    "src": "Alright then! This might be too dangerous for me, so I'm entrusting this task to you once more. Enter the tunnel in my basement, and explore as much as you can!",
-   "dst": "",
+   "dst": "좋아! 나한텐 너무 위험할지도 모르니 이번에도 너한테 맡길게. 우리 집 지하실 터널로 들어가서 최대한 탐색해 줘!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -238,7 +238,7 @@
   },
   "Purple and Blue#023": {
    "src": "If you can bring me samples of any kind, I'll try to reward you handsomely. However, if you find Nikoler alive... Please bring him back.",
-   "dst": "",
+   "dst": "어떤 샘플이든 가져오면 두둑이 보상할게. 그리고 Nikoler가 살아 있다면... 부디 데려와 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -248,7 +248,7 @@
   },
   "Purple and Blue#024": {
    "src": "As for the talisman, make sure to hold it whilst in the tunnel. Be careful, you're in uncharted territory from now on.",
-   "dst": "",
+   "dst": "호부은 터널 안에서 꼭 손에 들고 있어. 조심해, 여기부턴 미지의 영역이야.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -258,7 +258,7 @@
   },
   "Purple and Blue#025": {
    "src": "Good luck, human. Please bring me back Nikoler, or any sample you might find.",
-   "dst": "",
+   "dst": "행운을 빌어, 인간. Nikoler나 찾은 샘플을 꼭 가져와 줘.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -268,7 +268,7 @@
   },
   "Purple and Blue#026": {
    "src": "Enter the heart of Gylia from under the lake.",
-   "dst": "",
+   "dst": "호수 아래로 Gylia의 심장에 들어가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -278,7 +278,7 @@
   },
   "Purple and Blue#027": {
    "src": "Explore the Heart of Gylia.",
-   "dst": "",
+   "dst": "Gylia의 심장을 탐색하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -288,7 +288,7 @@
   },
   "Purple and Blue#028": {
    "src": "The drill should be ready by now... In just a little bit, I'll have single-handedly conquered the heart of the mountain...!",
-   "dst": "",
+   "dst": "드릴은 이제 준비됐겠지... 조금만 더 있으면, 나 혼자 힘으로 산의 심장을 정복하는 거야...!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -298,7 +298,7 @@
   },
   "Purple and Blue#029": {
    "src": "A human!? W...What? Did you read the notes I left for Korun? I'll have you know that's theft!! I - you...!",
-   "dst": "",
+   "dst": "인간!? 뭐... 뭐야? Korun한테 남긴 내 메모 읽었어? 그거 도둑질인 거 알아?! 나 - 너...!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -308,7 +308,7 @@
   },
   "Purple and Blue#030": {
    "src": "Don't get any closer!! I'll destroy the path if I have to!!",
-   "dst": "",
+   "dst": "더 다가오지 마!! 필요하면 길을 부숴 버릴 거야!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -318,7 +318,7 @@
   },
   "Purple and Blue#031": {
    "src": "This is MY story! Don't you dare interfere!!",
-   "dst": "",
+   "dst": "이건 내 이야기야! 감히 끼어들지 마!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -328,7 +328,7 @@
   },
   "Purple and Blue#032": {
    "src": "You're... persistent. Are you trying to steal from these meteors I'VE found?! Do you have any idea how much research I did to get this far??",
-   "dst": "",
+   "dst": "너... 끈질기구나. 내가 찾은 이 운석들을 훔치려는 거야?! 여기까지 오려고 내가 얼마나 연구했는지 알아??",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -338,7 +338,7 @@
   },
   "Purple and Blue#033": {
    "src": "It's too late! I've already drilled a piece. Once I show Korun, I'll be known as the better researcher...",
-   "dst": "",
+   "dst": "너무 늦었어! 벌써 한 조각 뚫어 냈지. Korun한테 보여 주면 내가 더 뛰어난 연구자로 인정받을 거야...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -348,7 +348,7 @@
   },
   "Purple and Blue#034": {
    "src": "Ah... how good this'll b-",
-   "dst": "",
+   "dst": "아... 이제 얼마나 좋을-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -358,7 +358,7 @@
   },
   "Purple and Blue#035": {
    "src": "N-no!",
-   "dst": "",
+   "dst": "아, 안 돼!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -368,7 +368,7 @@
   },
   "Purple and Blue#036": {
    "src": "No no no no no no! This CAN'T be happening!",
-   "dst": "",
+   "dst": "안 돼 안 돼 안 돼 안 돼! 이럴 리가 없어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -378,7 +378,7 @@
   },
   "Purple and Blue#037": {
    "src": "Tampering with the meteors must be making the cave instable! I... I thought this'd happen and yet-",
-   "dst": "",
+   "dst": "운석을 건드려서 동굴이 불안정해진 게 분명해! 나... 나도 이럴 줄 알았는데-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -388,7 +388,7 @@
   },
   "Purple and Blue#038": {
    "src": "This is all YOUR fault! Why'd you have to come and make me panic? We're both DOOMED!",
-   "dst": "",
+   "dst": "이건 다 네 탓이야! 왜 와서 날 당황하게 만들어? 우리 둘 다 끝장이야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -398,7 +398,7 @@
   },
   "Purple and Blue#039": {
    "src": "No... I can't die here, I can't die now, what will he think...",
-   "dst": "",
+   "dst": "안 돼... 여기서 죽을 순 없어, 지금은 안 돼, 그 녀석이 뭐라고 생각하겠어...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -408,7 +408,7 @@
   },
   "Purple and Blue#040": {
    "src": "I... We might still have a shot at escaping... And then, human, I'll report you to the authorities!!",
-   "dst": "",
+   "dst": "나... 우리 아직 탈출할 수 있을지도... 그리고 인간, 널 당국에 신고할 거야!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -418,7 +418,7 @@
   },
   "Purple and Blue#041": {
    "src": "I'm STUCK! Urgh... No... Not like this, please, not like this...",
-   "dst": "",
+   "dst": "끼었어! 으윽... 안 돼... 이렇게는 싫어, 제발, 이렇게는...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -428,7 +428,7 @@
   },
   "Purple and Blue#042": {
    "src": "You... Why? You came to get me? Not the... meteors?",
-   "dst": "",
+   "dst": "너... 왜? 날 구하러 왔다고? 운석이... 아니라?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -438,7 +438,7 @@
   },
   "Purple and Blue#043": {
    "src": "I... Fine then. Let's make a run for it, human!",
-   "dst": "",
+   "dst": "나... 그래 좋아. 같이 뛰자, 인간!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -448,7 +448,7 @@
   },
   "Purple and Blue#044": {
    "src": "Escape the Heart of Gylia.",
-   "dst": "",
+   "dst": "Gylia의 심장에서 탈출하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Purple and Blue",
@@ -458,7 +458,7 @@
   },
   "Purple and Blue#045": {
    "src": "Rats! That dynamite went and backfired on us! Quick, try to run in to the rubble with me, we need to hurry!",
-   "dst": "",
+   "dst": "젠장! 다이너마이트가 역효과를 냈어! 빨리, 나랑 같이 잔해 쪽으로 뛰어, 서둘러야 해!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -468,7 +468,7 @@
   },
   "Purple and Blue#046": {
    "src": "AH-",
-   "dst": "",
+   "dst": "으악-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -478,7 +478,7 @@
   },
   "Purple and Blue#047": {
    "src": "Welcome back! I see you're completely drenched! How did things go? I assume you explored the place thoroughly.",
-   "dst": "",
+   "dst": "어서 와! 완전히 흠뻑 젖었네! 어떻게 됐어? 그곳을 샅샅이 탐색했겠지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -488,7 +488,7 @@
   },
   "Purple and Blue#048": {
    "src": "YOU! Y-You're alive!!",
-   "dst": "",
+   "dst": "너! 사, 살아 있었구나!!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -498,7 +498,7 @@
   },
   "Purple and Blue#049": {
    "src": "...were you worrying about me? What a fool. This mountain could never do so much as scratch me!",
-   "dst": "",
+   "dst": "...내 걱정 했어? 바보 같긴. 이 산 따위가 날 긁을 수나 있겠어!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -508,7 +508,7 @@
   },
   "Purple and Blue#050": {
    "src": "This human right here actually saved me, right after endangering me. You don't mean to tell me you sent him for me?",
-   "dst": "",
+   "dst": "여기 이 인간이 날 구해 줬어, 날 위험에 빠뜨린 직후에. 설마 네가 날 찾으라고 보낸 거야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -518,7 +518,7 @@
   },
   "Purple and Blue#051": {
    "src": "Well, it's very simple. Where's the fun in our rivalry if you just go off and die somewhere?",
-   "dst": "",
+   "dst": "뭐, 간단해. 네가 어디서 죽어 버리면 우리 라이벌 관계가 무슨 재미야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -528,7 +528,7 @@
   },
   "Purple and Blue#052": {
    "src": "That aside, what did you find in there? What happened?",
-   "dst": "",
+   "dst": "그건 그렇고, 안에서 뭘 찾았어? 무슨 일이 있었어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -538,7 +538,7 @@
   },
   "Purple and Blue#053": {
    "src": "I found them, Korun. I found the meteors! The still seemed potent somehow, but the cave collapsed and...",
-   "dst": "",
+   "dst": "찾았어, Korun. 운석을 찾았다고! 아직 힘이 남아 있는 것 같았는데, 동굴이 무너져서...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -548,7 +548,7 @@
   },
   "Purple and Blue#054": {
    "src": "That's... fine. We can always go back and try clearing the rubble. There's always opportunities to take a hold of. Next time, please don't just go off on your own!",
-   "dst": "",
+   "dst": "그건... 괜찮아. 언제든 돌아가서 잔해를 치워 보면 돼. 잡을 기회는 늘 있으니까. 다음엔 제발 혼자 가 버리지 마!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -558,7 +558,7 @@
   },
   "Purple and Blue#055": {
    "src": "Human, you made the right choice... Without Nikoler, our efforts would have been in vain. I'll try to work with him a bit more, as it seems the logical course of action now. Thank you.",
-   "dst": "",
+   "dst": "인간, 옳은 선택을 했어... Nikoler가 없었다면 우리 노력은 헛수고였을 거야. 지금은 그게 합리적이니, 그 녀석이랑 좀 더 협력해 볼게. 고마워.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -568,7 +568,7 @@
   },
   "Purple and Blue#056": {
    "src": "H-Hey! I never agreed to-",
-   "dst": "",
+   "dst": "야, 야! 난 동의한 적 없-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -578,7 +578,7 @@
   },
   "Purple and Blue#057": {
    "src": "I see you're completely drenched! There's this odd aura around you... What happened?",
-   "dst": "",
+   "dst": "완전히 흠뻑 젖었네! 주위에 이상한 기운이 감도는데... 무슨 일이야?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -588,7 +588,7 @@
   },
   "Purple and Blue#058": {
    "src": "You... You actually found a meteor shard! That's amazing! That's... that's... um...",
-   "dst": "",
+   "dst": "너... 진짜 운석 조각을 찾았구나! 굉장해! 그건... 그건... 음...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -598,7 +598,7 @@
   },
   "Purple and Blue#059": {
    "src": "Uh, what did you say j-just now? The cave collapsed and Nikoler d-died...?",
-   "dst": "",
+   "dst": "어, 바, 방금 뭐라고 했어? 동굴이 무너져서 Nikoler가 주, 죽었다고...?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -608,7 +608,7 @@
   },
   "Purple and Blue#060": {
    "src": "That's, um, haha... That doesn't sound right, he can't die, he can't leave like that, he can't-",
-   "dst": "",
+   "dst": "그건, 음, 하하... 말이 안 돼, 그 녀석이 죽을 리 없어, 그렇게 떠날 리가, 그럴 리가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -618,7 +618,7 @@
   },
   "Purple and Blue#061": {
    "src": "S-Sorry. I'm just a little shocked is all. I do have to thank you for the shard...",
-   "dst": "",
+   "dst": "미, 미안. 그냥 좀 충격받아서 그래. 조각은 고마워...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -628,7 +628,7 @@
   },
   "Purple and Blue#062": {
    "src": "A-at the very least, you saw this through... I have to commend you for that... I think.",
-   "dst": "",
+   "dst": "저, 적어도 넌 끝까지 해냈어... 그건 칭찬해야겠지... 아마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -638,7 +638,7 @@
   },
   "Purple and Blue#063": {
    "src": "Just take these, and go. I have much to think about.",
-   "dst": "",
+   "dst": "이거 받고, 가 줘. 생각할 게 많아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -648,7 +648,7 @@
   },
   "Purple and Blue#064": {
    "src": "You explored thoroughly, and couldn't find a shard? Well, we still have much to discover I suppose.",
-   "dst": "",
+   "dst": "샅샅이 탐색했는데 조각을 못 찾았어? 뭐, 아직 알아낼 게 많은가 보네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -658,7 +658,7 @@
   },
   "Purple and Blue#065": {
    "src": "Uh, what did you say j-just now? The cave collapsed and Nikoler d-died..?",
-   "dst": "",
+   "dst": "어, 바, 방금 뭐라고 했어? 동굴이 무너져서 Nikoler가 주, 죽었다고..?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -668,7 +668,7 @@
   },
   "Purple and Blue#066": {
    "src": "That's, um, haha... That doesn't sound right, he can't die, he can't leave like that, he can't-",
-   "dst": "",
+   "dst": "그건, 음, 하하... 말이 안 돼, 그 녀석이 죽을 리 없어, 그렇게 떠날 리가, 그럴 리가-",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -678,7 +678,7 @@
   },
   "Purple and Blue#067": {
    "src": "S-Sorry. I'm just a little shocked is all. And you came back empty-handed... This was just a loss with everyone involved.",
-   "dst": "",
+   "dst": "미, 미안. 그냥 좀 충격받아서 그래. 게다가 빈손으로 돌아왔고... 모두에게 손해뿐이었네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -688,7 +688,7 @@
   },
   "Purple and Blue#068": {
    "src": "A-at the very least, you saw this through... I have to commend you for that... I think.",
-   "dst": "",
+   "dst": "저, 적어도 넌 끝까지 해냈어... 그건 칭찬해야겠지... 아마.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -698,7 +698,7 @@
   },
   "Purple and Blue#069": {
    "src": "Just take these, and go. I have much to think about.",
-   "dst": "",
+   "dst": "이거 받고, 가 줘. 생각할 게 많아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -708,7 +708,7 @@
   },
   "Purple and Blue#070": {
    "src": "I see you're completely drenched, so I suppose you thoroughly explored the place. How did it go?",
-   "dst": "",
+   "dst": "완전히 흠뻑 젖은 걸 보니 그곳을 샅샅이 탐색했나 보네. 어떻게 됐어?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -718,7 +718,7 @@
   },
   "Purple and Blue#071": {
    "src": "You found... Nothing? Really? And the meteors were too unstable to temper with?",
-   "dst": "",
+   "dst": "아무것도... 못 찾았다고? 정말? 운석이 너무 불안정해서 손댈 수 없었다고?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -728,7 +728,7 @@
   },
   "Purple and Blue#072": {
    "src": "Actually, how would you know about tempering with the- wait...",
-   "dst": "",
+   "dst": "그런데 손댈 수 있는지 네가 어떻게- 잠깐...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -738,7 +738,7 @@
   },
   "Purple and Blue#073": {
    "src": "Did you find him? Please... please tell me you found him, there's no way he'd die just like that. I...",
-   "dst": "",
+   "dst": "그 녀석 찾았어? 제발... 찾았다고 말해 줘, 그렇게 죽을 녀석이 아니야. 난...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -748,7 +748,7 @@
   },
   "Purple and Blue#074": {
    "src": "W-what? The whole cave COLLAPSED on him? And you couldn't even save him?! N-no, it can't be your fault, I... I'm sorry.",
-   "dst": "",
+   "dst": "뭐, 뭐? 동굴 전체가 그 녀석 위로 무너졌다고? 구하지도 못했어?! 아, 아니, 네 잘못일 리 없지, 나... 미안해.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -758,7 +758,7 @@
   },
   "Purple and Blue#075": {
    "src": "This is all way too much to take in for me, but I suppose you've explored and served the purpose I gave you.",
-   "dst": "",
+   "dst": "나한텐 너무 벅찬 일이지만, 넌 탐색을 마쳤고 내가 맡긴 일도 해냈지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -768,7 +768,7 @@
   },
   "Purple and Blue#076": {
    "src": "Here's your reward, then. Now please, just leave me be. There's a lot I have to think about.",
-   "dst": "",
+   "dst": "그럼 여기 보상이야. 이제 제발, 날 혼자 있게 해 줘. 생각할 게 많아.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -778,7 +778,7 @@
   },
   "Purple and Blue#077": {
    "src": "It's you! Glad to have crossed paths again!",
-   "dst": "",
+   "dst": "너구나! 다시 만나서 반가워!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -788,7 +788,7 @@
   },
   "Purple and Blue#078": {
    "src": "Since the incident, I've decided to start fishing as a hobby.",
-   "dst": "",
+   "dst": "그 사건 이후로 취미로 낚시를 시작했어.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -798,7 +798,7 @@
   },
   "Purple and Blue#079": {
    "src": "Take this- for all I care, you can own this!",
-   "dst": "",
+   "dst": "이거 받아- 난 상관없으니 네가 가져!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -808,7 +808,7 @@
   },
   "Purple and Blue#080": {
    "src": "Thank you... for saving me.",
-   "dst": "",
+   "dst": "고마워... 날 구해 줘서.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -818,7 +818,7 @@
   },
   "Purple and Blue#081": {
    "src": "Check up on Korun from time to time for me, will you?",
-   "dst": "",
+   "dst": "가끔 나 대신 Korun 좀 들여다봐 줄래?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -828,7 +828,7 @@
   },
   "Purple and Blue#082": {
    "src": "I'm still taking a break from all the science stuff... But he definitely hasn't seen the last of me!",
-   "dst": "",
+   "dst": "과학 일은 아직 쉬는 중이지만... 그 녀석은 절대 날 마지막으로 본 게 아닐 거야!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",
@@ -838,7 +838,7 @@
   },
   "Purple and Blue#083": {
    "src": "After all, I'm the one who got to the heart of the mountain! I'm even able to sleep soundly knowing that I've won...",
-   "dst": "",
+   "dst": "어쨌든 산의 심장에 도달한 건 나니까! 내가 이겼다는 걸 알아서 잠도 푹 잘 수 있지...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Purple and Blue",

@@ -2,13 +2,13 @@
  "_meta": {
   "quest": "Enter the Dojo",
   "count": 36,
-  "translated": 0,
+  "translated": 36,
   "note": "一個任務一個檔。改完跑 tools/quest-bundle.py。"
  },
  "entries": {
   "Enter the Dojo#000": {
    "src": "The upturn of necromantic practices ended in {~} AP, with the outlawing of the technique. Defiling the dead and preventing their spirits from moving on...",
-   "dst": "",
+   "dst": "강령술의 유행은 {~} AP에 그 기술이 금지되며 끝났다. 죽은 자를 모독하고 그 영혼이 떠나지 못하게 하는 짓...",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -18,7 +18,7 @@
   },
   "Enter the Dojo#001": {
    "src": "It is best to not add too much to the tea, for too many conflicting tastes will leave it muddled and foul-tasting. Three ingredients is a fine benchmark.",
-   "dst": "",
+   "dst": "차에 너무 많이 넣지 않는 게 좋다. 맛이 서로 부딪치면 탁하고 역해지니까. 재료 세 가지가 적당한 기준이다.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -28,7 +28,7 @@
   },
   "Enter the Dojo#002": {
    "src": "Talk to Sensei Miyagi at [{~}, {~}, -{~}].",
-   "dst": "",
+   "dst": "[{~}, {~}, -{~}]의 Sensei Miyagi와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Enter the Dojo",
@@ -38,7 +38,7 @@
   },
   "Enter the Dojo#003": {
    "src": "Oh hohoho! So a human has found their way to my humble dojo? Intriguing! I am called Sensei Miyagi. I welcome you.",
-   "dst": "",
+   "dst": "오호호호! 인간이 이 소박한 도장까지 찾아왔다고? 흥미롭군! 나는 Sensei Miyagi라네. 환영하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -48,7 +48,7 @@
   },
   "Enter the Dojo#004": {
    "src": "This dojo- I have dedicated to honing skills in all of the arts- from mental prowess and mental acuity, to craftsmanship and artistry.",
-   "dst": "",
+   "dst": "이 도장은 모든 기예를 연마하는 곳이라네. 정신의 기량과 예리함부터 손기술과 예술까지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -58,7 +58,7 @@
   },
   "Enter the Dojo#005": {
    "src": "Many have come- traveled from all corners of the earth to this humble one's dojo to train themselves and grow stronger. I am to presume you are the same?",
-   "dst": "",
+   "dst": "세상 곳곳에서 많은 이가 이 늙은이의 도장을 찾아와 수련하며 강해졌지. 자네도 그런가 보군?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -68,7 +68,7 @@
   },
   "Enter the Dojo#006": {
    "src": "Although, while I have enjoyed my life's work here, I cannot deny I am getting on in years. I seek a successor, a master of many skills to take my place.",
-   "dst": "",
+   "dst": "허나 평생의 일을 즐겨 왔어도 나이는 못 속이지. 내 자리를 이을 후계자, 여러 기예의 달인을 찾고 있다네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -78,7 +78,7 @@
   },
   "Enter the Dojo#007": {
    "src": "To the one who should master the arts, I would bequeath the Master's Gi, a symbol of resolute skill. Of course, do not feel pressured to take over for me, hoho!",
-   "dst": "",
+   "dst": "기예를 통달한 자에게는 굳건한 기량의 상징인 Master's Gi를 물려주겠네. 물론 내 뒤를 이으라는 부담은 갖지 말게, 호호!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -88,7 +88,7 @@
   },
   "Enter the Dojo#008": {
    "src": "As long as I may teach others and bring them to new heights, I am satisfied. Whether your aim be merely to sharpen your skills or to allow me to retire, you are welcomed.",
-   "dst": "",
+   "dst": "남을 가르치고 새 경지로 이끌 수만 있다면 난 만족하네. 기량을 갈고닦든, 나를 은퇴시켜 주든, 자네를 환영하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -98,7 +98,7 @@
   },
   "Enter the Dojo#009": {
    "src": "When you are ready to begin, purify yourself in the waters of the spring behind the dojo, and I will guide you to your first challenge.",
-   "dst": "",
+   "dst": "시작할 준비가 되면 도장 뒤 샘물에 몸을 정화하게. 그러면 첫 시험으로 안내하겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -108,7 +108,7 @@
   },
   "Enter the Dojo#010": {
    "src": "Jump down the water pit to begin the challenges.",
-   "dst": "",
+   "dst": "물웅덩이로 뛰어내려 시험을 시작하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Enter the Dojo",
@@ -118,7 +118,7 @@
   },
   "Enter the Dojo#011": {
    "src": "Ascend the Lufar Room in the physical strength challenge.",
-   "dst": "",
+   "dst": "체력 시험에서 Lufar의 방 꼭대기까지 오르세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Enter the Dojo",
@@ -128,7 +128,7 @@
   },
   "Enter the Dojo#012": {
    "src": "Here we are then- The Lufar Room. Here tests your agility! Even these old bones can scale this room in short order- how shall you fare?",
-   "dst": "",
+   "dst": "자, 여기가 Lufar의 방이라네. 자네의 몸놀림을 시험하지! 이 늙은 뼈로도 금방 오르는 곳인데, 자네는 어떨까?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -138,7 +138,7 @@
   },
   "Enter the Dojo#013": {
    "src": "Fight your way through the Fiata Room in the combat challenge.",
-   "dst": "",
+   "dst": "전투 시험에서 Fiata의 방을 싸워서 돌파하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Enter the Dojo",
@@ -148,7 +148,7 @@
   },
   "Enter the Dojo#014": {
    "src": "I recognize your skill, and you have passed the challenge of the Lufar Room! Hoho, but the next challenge has defeated many an apprentice.",
-   "dst": "",
+   "dst": "자네의 기량을 인정하네. Lufar의 방 시험을 통과했군! 호호, 하지만 다음 시험에선 많은 제자가 쓰러졌지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -158,7 +158,7 @@
   },
   "Enter the Dojo#015": {
    "src": "Now, comes the Fiata Room! Here, your combat prowess shall be put to the test. Martial skill comes easily to me...but what of your own?",
-   "dst": "",
+   "dst": "이제 Fiata의 방이라네! 여기선 전투 실력을 시험하지. 무예라면 내겐 쉬운 일이지만... 자네는 어떤가?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -168,7 +168,7 @@
   },
   "Enter the Dojo#016": {
    "src": "I hear many things about human combat skill, so I believe I shall watch this challenger myself. Enter now, challenger!",
-   "dst": "",
+   "dst": "인간의 전투 실력에 대해 이런저런 얘길 들어서 말이야, 직접 지켜보겠네. 들어가게, 도전자여!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -178,7 +178,7 @@
   },
   "Enter the Dojo#017": {
    "src": "Solve the puzzle of sight in the Cliste Room in the sight challenge.",
-   "dst": "",
+   "dst": "시각 시험에서 Cliste의 방에 있는 시각 퍼즐을 푸세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Enter the Dojo",
@@ -188,7 +188,7 @@
   },
   "Enter the Dojo#018": {
    "src": "And I am to recognize your combat skill, and to proclaim your passage of the Fiata Room. Well done!",
-   "dst": "",
+   "dst": "자네의 전투 실력을 인정하고, Fiata의 방 통과를 선언하네. 잘했네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -198,7 +198,7 @@
   },
   "Enter the Dojo#019": {
    "src": "Next, however, is not a challenge of physical skill, but of observation and logical reasoning, in this- the Cliste Room. Here, a puzzle awaits.",
-   "dst": "",
+   "dst": "허나 다음은 몸이 아니라 관찰력과 논리적 추론을 시험하지. 여기 Cliste의 방에서 퍼즐이 기다린다네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -208,7 +208,7 @@
   },
   "Enter the Dojo#020": {
    "src": "You must discern the path in order to bring the red block to the gold block. Simple in theory...complex in practice, as there are many things.",
-   "dst": "",
+   "dst": "빨간 블록을 금 블록까지 옮길 길을 찾아내야 하네. 이론은 간단하지만... 실제론 복잡하지, 세상일이 다 그렇듯.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -218,7 +218,7 @@
   },
   "Enter the Dojo#021": {
    "src": "Remember this as you work- Change your perspective, and the reality changes.",
-   "dst": "",
+   "dst": "풀면서 이걸 기억하게. 관점을 바꾸면 현실도 바뀐다네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -228,7 +228,7 @@
   },
   "Enter the Dojo#022": {
    "src": "Become at one with nature in the Sitheach Room and Cavern.",
-   "dst": "",
+   "dst": "Sitheach의 방과 동굴에서 자연과 하나가 되세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Enter the Dojo",
@@ -238,7 +238,7 @@
   },
   "Enter the Dojo#023": {
    "src": "And there, I recognize your mental acuity! You have passed the Cliste Room. You are doing quite well, but many have gotten to this point and had a single point stymie them.",
-   "dst": "",
+   "dst": "자네의 예리한 정신을 인정하네! Cliste의 방을 통과했군. 아주 잘하고 있지만, 여기까지 와서 한 가지에 막힌 이가 많았지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -248,7 +248,7 @@
   },
   "Enter the Dojo#024": {
    "src": "Welcome then, to the last challenge I offer you, held within the Sitheach Room and cavern.",
-   "dst": "",
+   "dst": "그럼 내가 내는 마지막 시험에 온 걸 환영하네. Sitheach의 방과 동굴에서 치러지지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -258,7 +258,7 @@
   },
   "Enter the Dojo#025": {
    "src": "Your task here, is to become tranquil, and at peace with nature. What that entails... I leave up to you.",
-   "dst": "",
+   "dst": "여기서 자네가 할 일은 마음을 고요히 하고 자연과 화합하는 걸세. 그게 뭘 뜻하는지는... 자네에게 맡기지.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -268,7 +268,7 @@
   },
   "Enter the Dojo#026": {
    "src": "There are many paths to tranquility. Whatever you choose, you will know when you have reached the point of success.",
-   "dst": "",
+   "dst": "고요에 이르는 길은 많다네. 무엇을 택하든 성공에 닿으면 스스로 알게 될 걸세.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -278,7 +278,7 @@
   },
   "Enter the Dojo#027": {
    "src": "Exit the Sitheach cave through the tunnel near the temple.",
-   "dst": "",
+   "dst": "신전 근처 터널로 Sitheach 동굴을 빠져나가세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Enter the Dojo",
@@ -288,7 +288,7 @@
   },
   "Enter the Dojo#028": {
    "src": "Speak to Sensei Miyagi.",
-   "dst": "",
+   "dst": "Sensei Miyagi와 대화하세요.",
    "role": "desc",
    "kind": "objective",
    "quest": "Enter the Dojo",
@@ -298,7 +298,7 @@
   },
   "Enter the Dojo#029": {
    "src": "I see it now. The troubled heart you came here with is troubled no longer. I recognize your mastery of the Sitheach Room.",
-   "dst": "",
+   "dst": "이제 보이는군. 올 때 어지럽던 자네의 마음이 더는 어지럽지 않아. Sitheach의 방을 통달했음을 인정하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -308,7 +308,7 @@
   },
   "Enter the Dojo#030": {
    "src": "Oh hoho... It is just like a human to do what cannot be done. That is each challenge of my humble dojo, completed!",
-   "dst": "",
+   "dst": "오호호... 안 되는 일을 해내다니, 과연 인간답군. 이로써 내 소박한 도장의 모든 시험을 마쳤네!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -318,7 +318,7 @@
   },
   "Enter the Dojo#031": {
    "src": "So! While I did advise you not to feel pressured of it, I am curious, young master. Do you wish to take my place here, so I may sit these old bones down?",
-   "dst": "",
+   "dst": "자! 부담 갖지 말라곤 했지만 궁금하군, 젊은 달인. 내 자리를 이어서 이 늙은 뼈를 좀 쉬게 해 주겠나?",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -328,7 +328,7 @@
   },
   "Enter the Dojo#032": {
    "src": "Ah, of course not. Despite your mastery, this is merely a single step on your journey. Needn't worry, I understand completely.",
-   "dst": "",
+   "dst": "아, 물론 아니겠지. 통달했어도 이건 자네 여정의 한 걸음일 뿐이니. 걱정 말게, 충분히 이해하네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -338,7 +338,7 @@
   },
   "Enter the Dojo#033": {
    "src": "I am certain that I will find a suitable successor before my time comes- and equally as certain that I've many a year to go, hoho!",
-   "dst": "",
+   "dst": "때가 오기 전에 알맞은 후계자를 분명 찾을 걸세. 그리고 아직 살날이 한참 남았다는 것도 분명하지, 호호!",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -348,7 +348,7 @@
   },
   "Enter the Dojo#034": {
    "src": "Nevertheless, you have completed the challenges of this humble Sensei, as such, I will provide you what was promised.",
-   "dst": "",
+   "dst": "어쨌든 이 보잘것없는 스승의 시험을 모두 마쳤으니, 약속한 것을 주겠네.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",
@@ -358,7 +358,7 @@
   },
   "Enter the Dojo#035": {
    "src": "Wear this [Master's Gi] with pride, and remember this final lesson- There is never a point in life that you will stop learning. See the world and its lessons every day of your life, young master.",
-   "dst": "",
+   "dst": "이 [Master's Gi]를 자랑스럽게 입고 마지막 가르침을 기억하게. 배움에 끝은 없다네. 평생 날마다 세상과 그 가르침을 보게, 젊은 달인.",
    "role": "desc",
    "kind": "dialogue",
    "quest": "Enter the Dojo",

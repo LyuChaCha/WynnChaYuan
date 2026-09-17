@@ -88,7 +88,7 @@ Switch under **F6 → Data**, without changing the game's language or restarting
 | `zh_cn` 简体中文 | █████████░ 94.5% | 42,981 / 45,499 |
 | `ja_jp` 日本語 | █████████░ 94.3% | 42,898 / 45,499 |
 | `ru_ru` Русский | █████████░ 94.0% | 42,750 / 45,499 |
-| `ko_kr` 한국어 | █████░░░░░ 54.7% | 24,879 / 45,500 |
+| `ko_kr` 한국어 | █████████░ 92.9% | 42,275 / 45,500 |
 | `es_es` Español | █░░░░░░░░░ 5.6% | 2,534 / 45,450 |
 
 每一種語言**還缺哪些檔案**見 [docs/PROGRESS.md](docs/PROGRESS.md)。<br>Per-language breakdown: [docs/PROGRESS.md](docs/PROGRESS.md).
